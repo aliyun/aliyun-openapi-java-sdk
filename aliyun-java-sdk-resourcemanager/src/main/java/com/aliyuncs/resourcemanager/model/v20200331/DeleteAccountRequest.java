@@ -34,7 +34,7 @@ public class DeleteAccountRequest extends RpcAcsRequest<DeleteAccountResponse> {
 
 	private String accountId;
 	public DeleteAccountRequest() {
-		super("ResourceManager", "2020-03-31", "DeleteAccount");
+		super("ResourceManager", "2020-03-31", "DeleteAccount", "resourcemanager");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

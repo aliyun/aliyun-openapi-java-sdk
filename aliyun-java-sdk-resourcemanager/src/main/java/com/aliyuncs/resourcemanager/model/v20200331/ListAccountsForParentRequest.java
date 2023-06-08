@@ -39,7 +39,7 @@ public class ListAccountsForParentRequest extends RpcAcsRequest<ListAccountsForP
 
 	private List<Tag> tag;
 	public ListAccountsForParentRequest() {
-		super("ResourceManager", "2020-03-31", "ListAccountsForParent");
+		super("ResourceManager", "2020-03-31", "ListAccountsForParent", "resourcemanager");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

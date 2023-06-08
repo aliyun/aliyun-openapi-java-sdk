@@ -30,7 +30,7 @@ public class GetRoleRequest extends RpcAcsRequest<GetRoleResponse> {
 
 	private String language;
 	public GetRoleRequest() {
-		super("ResourceManager", "2020-03-31", "GetRole");
+		super("ResourceManager", "2020-03-31", "GetRole", "resourcemanager");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

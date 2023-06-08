@@ -32,7 +32,7 @@ public class CreatePolicyVersionRequest extends RpcAcsRequest<CreatePolicyVersio
 
 	private String policyDocument;
 	public CreatePolicyVersionRequest() {
-		super("ResourceManager", "2020-03-31", "CreatePolicyVersion");
+		super("ResourceManager", "2020-03-31", "CreatePolicyVersion", "resourcemanager");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

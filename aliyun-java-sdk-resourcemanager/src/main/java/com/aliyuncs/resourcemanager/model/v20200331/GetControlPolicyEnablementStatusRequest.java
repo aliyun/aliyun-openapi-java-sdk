@@ -26,7 +26,7 @@ import com.aliyuncs.resourcemanager.Endpoint;
 public class GetControlPolicyEnablementStatusRequest extends RpcAcsRequest<GetControlPolicyEnablementStatusResponse> {
 	   
 	public GetControlPolicyEnablementStatusRequest() {
-		super("ResourceManager", "2020-03-31", "GetControlPolicyEnablementStatus");
+		super("ResourceManager", "2020-03-31", "GetControlPolicyEnablementStatus", "resourcemanager");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

@@ -32,7 +32,7 @@ public class BindSecureMobilePhoneRequest extends RpcAcsRequest<BindSecureMobile
 
 	private String verificationCode;
 	public BindSecureMobilePhoneRequest() {
-		super("ResourceManager", "2020-03-31", "BindSecureMobilePhone");
+		super("ResourceManager", "2020-03-31", "BindSecureMobilePhone", "resourcemanager");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

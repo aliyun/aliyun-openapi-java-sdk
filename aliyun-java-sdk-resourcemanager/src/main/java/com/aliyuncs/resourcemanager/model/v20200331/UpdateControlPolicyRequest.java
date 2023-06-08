@@ -34,7 +34,7 @@ public class UpdateControlPolicyRequest extends RpcAcsRequest<UpdateControlPolic
 
 	private String newDescription;
 	public UpdateControlPolicyRequest() {
-		super("ResourceManager", "2020-03-31", "UpdateControlPolicy");
+		super("ResourceManager", "2020-03-31", "UpdateControlPolicy", "resourcemanager");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

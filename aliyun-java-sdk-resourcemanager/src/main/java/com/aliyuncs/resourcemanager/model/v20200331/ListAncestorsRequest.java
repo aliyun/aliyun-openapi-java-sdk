@@ -28,7 +28,7 @@ public class ListAncestorsRequest extends RpcAcsRequest<ListAncestorsResponse> {
 
 	private String childId;
 	public ListAncestorsRequest() {
-		super("ResourceManager", "2020-03-31", "ListAncestors");
+		super("ResourceManager", "2020-03-31", "ListAncestors", "resourcemanager");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

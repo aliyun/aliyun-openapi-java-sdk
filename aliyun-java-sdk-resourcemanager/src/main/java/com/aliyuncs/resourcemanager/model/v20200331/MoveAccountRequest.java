@@ -30,7 +30,7 @@ public class MoveAccountRequest extends RpcAcsRequest<MoveAccountResponse> {
 
 	private String destinationFolderId;
 	public MoveAccountRequest() {
-		super("ResourceManager", "2020-03-31", "MoveAccount");
+		super("ResourceManager", "2020-03-31", "MoveAccount", "resourcemanager");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

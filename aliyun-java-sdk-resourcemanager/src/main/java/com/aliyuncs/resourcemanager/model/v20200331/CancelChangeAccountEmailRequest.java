@@ -28,7 +28,7 @@ public class CancelChangeAccountEmailRequest extends RpcAcsRequest<CancelChangeA
 
 	private String accountId;
 	public CancelChangeAccountEmailRequest() {
-		super("ResourceManager", "2020-03-31", "CancelChangeAccountEmail");
+		super("ResourceManager", "2020-03-31", "CancelChangeAccountEmail", "resourcemanager");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

@@ -27,7 +27,7 @@ public class GetServiceLinkedRoleDeletionStatusRequest extends RpcAcsRequest<Get
 
 	private String deletionTaskId;
 	public GetServiceLinkedRoleDeletionStatusRequest() {
-		super("ResourceManager", "2020-03-31", "GetServiceLinkedRoleDeletionStatus");
+		super("ResourceManager", "2020-03-31", "GetServiceLinkedRoleDeletionStatus", "resourcemanager");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

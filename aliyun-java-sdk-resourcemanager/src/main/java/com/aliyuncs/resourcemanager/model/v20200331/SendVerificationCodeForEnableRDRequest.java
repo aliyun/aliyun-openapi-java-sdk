@@ -28,7 +28,7 @@ public class SendVerificationCodeForEnableRDRequest extends RpcAcsRequest<SendVe
 
 	private String secureMobilePhone;
 	public SendVerificationCodeForEnableRDRequest() {
-		super("ResourceManager", "2020-03-31", "SendVerificationCodeForEnableRD");
+		super("ResourceManager", "2020-03-31", "SendVerificationCodeForEnableRD", "resourcemanager");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

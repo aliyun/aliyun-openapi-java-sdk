@@ -37,7 +37,7 @@ public class ListTagResourcesRequest extends RpcAcsRequest<ListTagResourcesRespo
 
 	private List<Tag> tag;
 	public ListTagResourcesRequest() {
-		super("ResourceManager", "2020-03-31", "ListTagResources");
+		super("ResourceManager", "2020-03-31", "ListTagResources", "resourcemanager");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

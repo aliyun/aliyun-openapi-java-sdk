@@ -30,7 +30,7 @@ public class DeletePolicyVersionRequest extends RpcAcsRequest<DeletePolicyVersio
 
 	private String policyName;
 	public DeletePolicyVersionRequest() {
-		super("ResourceManager", "2020-03-31", "DeletePolicyVersion");
+		super("ResourceManager", "2020-03-31", "DeletePolicyVersion", "resourcemanager");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
