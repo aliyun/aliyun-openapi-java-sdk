@@ -21,42 +21,42 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class ListEventStreamingsRequest extends RpcAcsRequest<ListEventStreamingsResponse> {
+public class ListTargetsRequest extends RpcAcsRequest<ListTargetsResponse> {
 	   
 
-	private String sourceArn;
+	private String ruleName;
 
-	private String sinkArn;
+	private String eventBusName;
 
 	private String nextToken;
 
 	private Integer limit;
 
-	private String namePrefix;
-	public ListEventStreamingsRequest() {
-		super("eventbridge", "2020-04-01", "ListEventStreamings");
+	private String arn;
+	public ListTargetsRequest() {
+		super("eventbridge", "2020-04-01", "ListTargets");
 		setMethod(MethodType.POST);
 	}
 
-	public String getSourceArn() {
-		return this.sourceArn;
+	public String getRuleName() {
+		return this.ruleName;
 	}
 
-	public void setSourceArn(String sourceArn) {
-		this.sourceArn = sourceArn;
-		if(sourceArn != null){
-			putBodyParameter("SourceArn", sourceArn);
+	public void setRuleName(String ruleName) {
+		this.ruleName = ruleName;
+		if(ruleName != null){
+			putQueryParameter("RuleName", ruleName);
 		}
 	}
 
-	public String getSinkArn() {
-		return this.sinkArn;
+	public String getEventBusName() {
+		return this.eventBusName;
 	}
 
-	public void setSinkArn(String sinkArn) {
-		this.sinkArn = sinkArn;
-		if(sinkArn != null){
-			putBodyParameter("SinkArn", sinkArn);
+	public void setEventBusName(String eventBusName) {
+		this.eventBusName = eventBusName;
+		if(eventBusName != null){
+			putQueryParameter("EventBusName", eventBusName);
 		}
 	}
 
@@ -67,7 +67,7 @@ public class ListEventStreamingsRequest extends RpcAcsRequest<ListEventStreaming
 	public void setNextToken(String nextToken) {
 		this.nextToken = nextToken;
 		if(nextToken != null){
-			putBodyParameter("NextToken", nextToken);
+			putQueryParameter("NextToken", nextToken);
 		}
 	}
 
@@ -78,24 +78,24 @@ public class ListEventStreamingsRequest extends RpcAcsRequest<ListEventStreaming
 	public void setLimit(Integer limit) {
 		this.limit = limit;
 		if(limit != null){
-			putBodyParameter("Limit", limit.toString());
+			putQueryParameter("Limit", limit.toString());
 		}
 	}
 
-	public String getNamePrefix() {
-		return this.namePrefix;
+	public String getArn() {
+		return this.arn;
 	}
 
-	public void setNamePrefix(String namePrefix) {
-		this.namePrefix = namePrefix;
-		if(namePrefix != null){
-			putBodyParameter("NamePrefix", namePrefix);
+	public void setArn(String arn) {
+		this.arn = arn;
+		if(arn != null){
+			putQueryParameter("Arn", arn);
 		}
 	}
 
 	@Override
-	public Class<ListEventStreamingsResponse> getResponseClass() {
-		return ListEventStreamingsResponse.class;
+	public Class<ListTargetsResponse> getResponseClass() {
+		return ListTargetsResponse.class;
 	}
 
 }
