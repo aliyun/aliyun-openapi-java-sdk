@@ -1,0 +1,37 @@
+/*
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.aliyuncs.avatar.transform.v20220130;
+
+import com.aliyuncs.avatar.model.v20220130.SubmitAudioTo3DAvatarVideoTaskResponse;
+import com.aliyuncs.avatar.model.v20220130.SubmitAudioTo3DAvatarVideoTaskResponse.Data;
+import com.aliyuncs.transform.UnmarshallerContext;
+
+
+public class SubmitAudioTo3DAvatarVideoTaskResponseUnmarshaller {
+
+	public static SubmitAudioTo3DAvatarVideoTaskResponse unmarshall(SubmitAudioTo3DAvatarVideoTaskResponse submitAudioTo3DAvatarVideoTaskResponse, UnmarshallerContext _ctx) {
+		
+		submitAudioTo3DAvatarVideoTaskResponse.setRequestId(_ctx.stringValue("SubmitAudioTo3DAvatarVideoTaskResponse.RequestId"));
+		submitAudioTo3DAvatarVideoTaskResponse.setCode(_ctx.stringValue("SubmitAudioTo3DAvatarVideoTaskResponse.Code"));
+		submitAudioTo3DAvatarVideoTaskResponse.setMessage(_ctx.stringValue("SubmitAudioTo3DAvatarVideoTaskResponse.Message"));
+		submitAudioTo3DAvatarVideoTaskResponse.setSuccess(_ctx.stringValue("SubmitAudioTo3DAvatarVideoTaskResponse.Success"));
+
+		Data data = new Data();
+		data.setTaskUuid(_ctx.stringValue("SubmitAudioTo3DAvatarVideoTaskResponse.Data.TaskUuid"));
+		submitAudioTo3DAvatarVideoTaskResponse.setData(data);
+	 
+	 	return submitAudioTo3DAvatarVideoTaskResponse;
+	}
+}
