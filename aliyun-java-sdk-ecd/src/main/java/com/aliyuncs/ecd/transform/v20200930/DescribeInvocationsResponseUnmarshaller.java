@@ -56,6 +56,7 @@ public class DescribeInvocationsResponseUnmarshaller {
 				invokeDesktop.setExitCode(_ctx.longValue("DescribeInvocationsResponse.Invocations["+ i +"].InvokeDesktops["+ j +"].ExitCode"));
 				invokeDesktop.setErrorCode(_ctx.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].InvokeDesktops["+ j +"].ErrorCode"));
 				invokeDesktop.setErrorInfo(_ctx.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].InvokeDesktops["+ j +"].ErrorInfo"));
+				invokeDesktop.setDesktopName(_ctx.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].InvokeDesktops["+ j +"].DesktopName"));
 
 				invokeDesktops.add(invokeDesktop);
 			}

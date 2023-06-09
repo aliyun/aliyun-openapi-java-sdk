@@ -87,6 +87,7 @@ public class DescribeDesktopsResponseUnmarshaller {
 			desktop.setBindAmount(_ctx.integerValue("DescribeDesktopsResponse.Desktops["+ i +"].BindAmount"));
 			desktop.setHibernationOptionsConfigured(_ctx.booleanValue("DescribeDesktopsResponse.Desktops["+ i +"].HibernationOptionsConfigured"));
 			desktop.setSupportHibernation(_ctx.booleanValue("DescribeDesktopsResponse.Desktops["+ i +"].SupportHibernation"));
+			desktop.setHibernationBeta(_ctx.booleanValue("DescribeDesktopsResponse.Desktops["+ i +"].HibernationBeta"));
 
 			List<String> endUserIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDesktopsResponse.Desktops["+ i +"].EndUserIds.Length"); j++) {

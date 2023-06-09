@@ -155,6 +155,8 @@ public class DescribeInvocationsResponse extends AcsResponse {
 
 			private String errorInfo;
 
+			private String desktopName;
+
 			public String getInvocationStatus() {
 				return this.invocationStatus;
 			}
@@ -257,6 +259,14 @@ public class DescribeInvocationsResponse extends AcsResponse {
 
 			public void setErrorInfo(String errorInfo) {
 				this.errorInfo = errorInfo;
+			}
+
+			public String getDesktopName() {
+				return this.desktopName;
+			}
+
+			public void setDesktopName(String desktopName) {
+				this.desktopName = desktopName;
 			}
 		}
 	}

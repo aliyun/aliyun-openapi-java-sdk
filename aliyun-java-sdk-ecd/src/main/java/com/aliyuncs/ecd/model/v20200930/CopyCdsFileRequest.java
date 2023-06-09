@@ -25,6 +25,10 @@ import com.aliyuncs.ecd.Endpoint;
 public class CopyCdsFileRequest extends RpcAcsRequest<CopyCdsFileResponse> {
 	   
 
+	private String fileReceiverId;
+
+	private String fileReceiverType;
+
 	private Boolean autoRename;
 
 	private String cdsId;
@@ -41,6 +45,28 @@ public class CopyCdsFileRequest extends RpcAcsRequest<CopyCdsFileResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getFileReceiverId() {
+		return this.fileReceiverId;
+	}
+
+	public void setFileReceiverId(String fileReceiverId) {
+		this.fileReceiverId = fileReceiverId;
+		if(fileReceiverId != null){
+			putQueryParameter("FileReceiverId", fileReceiverId);
+		}
+	}
+
+	public String getFileReceiverType() {
+		return this.fileReceiverType;
+	}
+
+	public void setFileReceiverType(String fileReceiverType) {
+		this.fileReceiverType = fileReceiverType;
+		if(fileReceiverType != null){
+			putQueryParameter("FileReceiverType", fileReceiverType);
+		}
 	}
 
 	public Boolean getAutoRename() {
