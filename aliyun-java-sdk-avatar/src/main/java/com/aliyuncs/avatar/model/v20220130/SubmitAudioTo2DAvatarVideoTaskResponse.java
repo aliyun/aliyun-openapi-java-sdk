@@ -15,14 +15,16 @@
 package com.aliyuncs.avatar.model.v20220130;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.avatar.transform.v20220130.SubmitTextToSignVideoTaskResponseUnmarshaller;
+import com.aliyuncs.avatar.transform.v20220130.SubmitAudioTo2DAvatarVideoTaskResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class SubmitTextToSignVideoTaskResponse extends AcsResponse {
+public class SubmitAudioTo2DAvatarVideoTaskResponse extends AcsResponse {
+
+	private String requestId;
 
 	private String code;
 
@@ -30,9 +32,15 @@ public class SubmitTextToSignVideoTaskResponse extends AcsResponse {
 
 	private String success;
 
-	private String requestId;
-
 	private Data data;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
 	public String getCode() {
 		return this.code;
@@ -58,14 +66,6 @@ public class SubmitTextToSignVideoTaskResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Data getData() {
 		return this.data;
 	}
@@ -88,8 +88,8 @@ public class SubmitTextToSignVideoTaskResponse extends AcsResponse {
 	}
 
 	@Override
-	public SubmitTextToSignVideoTaskResponse getInstance(UnmarshallerContext context) {
-		return	SubmitTextToSignVideoTaskResponseUnmarshaller.unmarshall(this, context);
+	public SubmitAudioTo2DAvatarVideoTaskResponse getInstance(UnmarshallerContext context) {
+		return	SubmitAudioTo2DAvatarVideoTaskResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

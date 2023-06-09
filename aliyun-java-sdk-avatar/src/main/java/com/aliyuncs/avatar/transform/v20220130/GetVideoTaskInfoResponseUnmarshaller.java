@@ -41,6 +41,7 @@ public class GetVideoTaskInfoResponseUnmarshaller {
 		taskResult.setWordSubtitlesUrl(_ctx.stringValue("GetVideoTaskInfoResponse.Data.TaskResult.WordSubtitlesUrl"));
 		taskResult.setFailReason(_ctx.stringValue("GetVideoTaskInfoResponse.Data.TaskResult.FailReason"));
 		taskResult.setFailCode(_ctx.stringValue("GetVideoTaskInfoResponse.Data.TaskResult.FailCode"));
+		taskResult.setVideoDuration(_ctx.integerValue("GetVideoTaskInfoResponse.Data.TaskResult.VideoDuration"));
 		data.setTaskResult(taskResult);
 		getVideoTaskInfoResponse.setData(data);
 	 

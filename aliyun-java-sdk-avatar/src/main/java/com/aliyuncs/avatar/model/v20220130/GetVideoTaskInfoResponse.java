@@ -138,6 +138,8 @@ public class GetVideoTaskInfoResponse extends AcsResponse {
 
 			private String failCode;
 
+			private Integer videoDuration;
+
 			public String getVideoUrl() {
 				return this.videoUrl;
 			}
@@ -176,6 +178,14 @@ public class GetVideoTaskInfoResponse extends AcsResponse {
 
 			public void setFailCode(String failCode) {
 				this.failCode = failCode;
+			}
+
+			public Integer getVideoDuration() {
+				return this.videoDuration;
+			}
+
+			public void setVideoDuration(Integer videoDuration) {
+				this.videoDuration = videoDuration;
 			}
 		}
 	}

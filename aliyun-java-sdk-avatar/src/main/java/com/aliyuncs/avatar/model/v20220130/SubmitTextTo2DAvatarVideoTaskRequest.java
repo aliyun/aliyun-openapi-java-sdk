@@ -150,6 +150,12 @@ public class SubmitTextTo2DAvatarVideoTaskRequest extends RpcAcsRequest<SubmitTe
 		@SerializedName("IsSubtitles")
 		private Boolean isSubtitles;
 
+		@SerializedName("Resolution")
+		private Integer resolution;
+
+		@SerializedName("AlphaFormat")
+		private Integer alphaFormat;
+
 		public Boolean getIsAlpha() {
 			return this.isAlpha;
 		}
@@ -172,6 +178,22 @@ public class SubmitTextTo2DAvatarVideoTaskRequest extends RpcAcsRequest<SubmitTe
 
 		public void setIsSubtitles(Boolean isSubtitles) {
 			this.isSubtitles = isSubtitles;
+		}
+
+		public Integer getResolution() {
+			return this.resolution;
+		}
+
+		public void setResolution(Integer resolution) {
+			this.resolution = resolution;
+		}
+
+		public Integer getAlphaFormat() {
+			return this.alphaFormat;
+		}
+
+		public void setAlphaFormat(Integer alphaFormat) {
+			this.alphaFormat = alphaFormat;
 		}
 	}
 

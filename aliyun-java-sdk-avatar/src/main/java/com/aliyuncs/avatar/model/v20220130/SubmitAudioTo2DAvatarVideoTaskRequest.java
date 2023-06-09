@@ -23,7 +23,7 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class SubmitTextToSignVideoTaskRequest extends RpcAcsRequest<SubmitTextToSignVideoTaskResponse> {
+public class SubmitAudioTo2DAvatarVideoTaskRequest extends RpcAcsRequest<SubmitAudioTo2DAvatarVideoTaskResponse> {
 	   
 
 	@SerializedName("app")
@@ -32,13 +32,16 @@ public class SubmitTextToSignVideoTaskRequest extends RpcAcsRequest<SubmitTextTo
 	@SerializedName("videoInfo")
 	private VideoInfo videoInfo;
 
+	@SerializedName("avatarInfo")
+	private AvatarInfo avatarInfo;
+
 	private Long tenantId;
 
-	private String text;
-
 	private String title;
-	public SubmitTextToSignVideoTaskRequest() {
-		super("avatar", "2022-01-30", "SubmitTextToSignVideoTask");
+
+	private String url;
+	public SubmitAudioTo2DAvatarVideoTaskRequest() {
+		super("avatar", "2022-01-30", "SubmitAudioTo2DAvatarVideoTask");
 		setMethod(MethodType.POST);
 	}
 
@@ -64,6 +67,17 @@ public class SubmitTextToSignVideoTaskRequest extends RpcAcsRequest<SubmitTextTo
 		}	
 	}
 
+	public AvatarInfo getAvatarInfo() {
+		return this.avatarInfo;
+	}
+
+	public void setAvatarInfo(AvatarInfo avatarInfo) {
+		this.avatarInfo = avatarInfo;	
+		if (avatarInfo != null) {
+			putQueryParameter("AvatarInfo" , new Gson().toJson(avatarInfo));
+		}	
+	}
+
 	public Long getTenantId() {
 		return this.tenantId;
 	}
@@ -75,17 +89,6 @@ public class SubmitTextToSignVideoTaskRequest extends RpcAcsRequest<SubmitTextTo
 		}
 	}
 
-	public String getText() {
-		return this.text;
-	}
-
-	public void setText(String text) {
-		this.text = text;
-		if(text != null){
-			putQueryParameter("Text", text);
-		}
-	}
-
 	public String getTitle() {
 		return this.title;
 	}
@@ -94,6 +97,17 @@ public class SubmitTextToSignVideoTaskRequest extends RpcAcsRequest<SubmitTextTo
 		this.title = title;
 		if(title != null){
 			putQueryParameter("Title", title);
+		}
+	}
+
+	public String getUrl() {
+		return this.url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
+		if(url != null){
+			putQueryParameter("Url", url);
 		}
 	}
 
@@ -116,11 +130,14 @@ public class SubmitTextToSignVideoTaskRequest extends RpcAcsRequest<SubmitTextTo
 		@SerializedName("IsAlpha")
 		private Boolean isAlpha;
 
-		@SerializedName("IsSubtitles")
-		private Boolean isSubtitles;
+		@SerializedName("BackgroundImageUrl")
+		private String backgroundImageUrl;
 
 		@SerializedName("Resolution")
 		private Integer resolution;
+
+		@SerializedName("AlphaFormat")
+		private Integer alphaFormat;
 
 		public Boolean getIsAlpha() {
 			return this.isAlpha;
@@ -130,12 +147,12 @@ public class SubmitTextToSignVideoTaskRequest extends RpcAcsRequest<SubmitTextTo
 			this.isAlpha = isAlpha;
 		}
 
-		public Boolean getIsSubtitles() {
-			return this.isSubtitles;
+		public String getBackgroundImageUrl() {
+			return this.backgroundImageUrl;
 		}
 
-		public void setIsSubtitles(Boolean isSubtitles) {
-			this.isSubtitles = isSubtitles;
+		public void setBackgroundImageUrl(String backgroundImageUrl) {
+			this.backgroundImageUrl = backgroundImageUrl;
 		}
 
 		public Integer getResolution() {
@@ -145,11 +162,33 @@ public class SubmitTextToSignVideoTaskRequest extends RpcAcsRequest<SubmitTextTo
 		public void setResolution(Integer resolution) {
 			this.resolution = resolution;
 		}
+
+		public Integer getAlphaFormat() {
+			return this.alphaFormat;
+		}
+
+		public void setAlphaFormat(Integer alphaFormat) {
+			this.alphaFormat = alphaFormat;
+		}
+	}
+
+	public static class AvatarInfo {
+
+		@SerializedName("Code")
+		private String code;
+
+		public String getCode() {
+			return this.code;
+		}
+
+		public void setCode(String code) {
+			this.code = code;
+		}
 	}
 
 	@Override
-	public Class<SubmitTextToSignVideoTaskResponse> getResponseClass() {
-		return SubmitTextToSignVideoTaskResponse.class;
+	public Class<SubmitAudioTo2DAvatarVideoTaskResponse> getResponseClass() {
+		return SubmitAudioTo2DAvatarVideoTaskResponse.class;
 	}
 
 }
