@@ -31,6 +31,8 @@ public class DescribeIpv6AddressesRequest extends RpcAcsRequest<DescribeIpv6Addr
 
 	private String networkType;
 
+	private Boolean includeReservationData;
+
 	private Integer pageNumber;
 
 	private String associatedInstanceType;
@@ -93,6 +95,17 @@ public class DescribeIpv6AddressesRequest extends RpcAcsRequest<DescribeIpv6Addr
 		this.networkType = networkType;
 		if(networkType != null){
 			putQueryParameter("NetworkType", networkType);
+		}
+	}
+
+	public Boolean getIncludeReservationData() {
+		return this.includeReservationData;
+	}
+
+	public void setIncludeReservationData(Boolean includeReservationData) {
+		this.includeReservationData = includeReservationData;
+		if(includeReservationData != null){
+			putQueryParameter("IncludeReservationData", includeReservationData.toString());
 		}
 	}
 

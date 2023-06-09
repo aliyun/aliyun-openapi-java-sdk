@@ -55,6 +55,11 @@ public class DescribeIpv6AddressesResponseUnmarshaller {
 			ipv6InternetBandwidth.setBandwidth(_ctx.integerValue("DescribeIpv6AddressesResponse.Ipv6Addresses["+ i +"].Ipv6InternetBandwidth.Bandwidth"));
 			ipv6InternetBandwidth.setIpv6InternetBandwidthId(_ctx.stringValue("DescribeIpv6AddressesResponse.Ipv6Addresses["+ i +"].Ipv6InternetBandwidth.Ipv6InternetBandwidthId"));
 			ipv6InternetBandwidth.setInstanceChargeType(_ctx.stringValue("DescribeIpv6AddressesResponse.Ipv6Addresses["+ i +"].Ipv6InternetBandwidth.InstanceChargeType"));
+			ipv6InternetBandwidth.setHasReservationData(_ctx.booleanValue("DescribeIpv6AddressesResponse.Ipv6Addresses["+ i +"].Ipv6InternetBandwidth.HasReservationData"));
+			ipv6InternetBandwidth.setReservationInternetChargeType(_ctx.stringValue("DescribeIpv6AddressesResponse.Ipv6Addresses["+ i +"].Ipv6InternetBandwidth.ReservationInternetChargeType"));
+			ipv6InternetBandwidth.setReservationOrderType(_ctx.stringValue("DescribeIpv6AddressesResponse.Ipv6Addresses["+ i +"].Ipv6InternetBandwidth.ReservationOrderType"));
+			ipv6InternetBandwidth.setReservationActiveTime(_ctx.stringValue("DescribeIpv6AddressesResponse.Ipv6Addresses["+ i +"].Ipv6InternetBandwidth.ReservationActiveTime"));
+			ipv6InternetBandwidth.setReservationBandwidth(_ctx.longValue("DescribeIpv6AddressesResponse.Ipv6Addresses["+ i +"].Ipv6InternetBandwidth.ReservationBandwidth"));
 			ipv6Address.setIpv6InternetBandwidth(ipv6InternetBandwidth);
 
 			ipv6Addresses.add(ipv6Address);

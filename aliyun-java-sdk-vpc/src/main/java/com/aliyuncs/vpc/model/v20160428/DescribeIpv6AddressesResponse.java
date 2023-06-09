@@ -229,6 +229,16 @@ public class DescribeIpv6AddressesResponse extends AcsResponse {
 
 			private String instanceChargeType;
 
+			private Boolean hasReservationData;
+
+			private String reservationInternetChargeType;
+
+			private String reservationOrderType;
+
+			private String reservationActiveTime;
+
+			private Long reservationBandwidth;
+
 			public String getInternetChargeType() {
 				return this.internetChargeType;
 			}
@@ -267,6 +277,46 @@ public class DescribeIpv6AddressesResponse extends AcsResponse {
 
 			public void setInstanceChargeType(String instanceChargeType) {
 				this.instanceChargeType = instanceChargeType;
+			}
+
+			public Boolean getHasReservationData() {
+				return this.hasReservationData;
+			}
+
+			public void setHasReservationData(Boolean hasReservationData) {
+				this.hasReservationData = hasReservationData;
+			}
+
+			public String getReservationInternetChargeType() {
+				return this.reservationInternetChargeType;
+			}
+
+			public void setReservationInternetChargeType(String reservationInternetChargeType) {
+				this.reservationInternetChargeType = reservationInternetChargeType;
+			}
+
+			public String getReservationOrderType() {
+				return this.reservationOrderType;
+			}
+
+			public void setReservationOrderType(String reservationOrderType) {
+				this.reservationOrderType = reservationOrderType;
+			}
+
+			public String getReservationActiveTime() {
+				return this.reservationActiveTime;
+			}
+
+			public void setReservationActiveTime(String reservationActiveTime) {
+				this.reservationActiveTime = reservationActiveTime;
+			}
+
+			public Long getReservationBandwidth() {
+				return this.reservationBandwidth;
+			}
+
+			public void setReservationBandwidth(Long reservationBandwidth) {
+				this.reservationBandwidth = reservationBandwidth;
 			}
 		}
 	}

@@ -33,6 +33,8 @@ public class AllocateEipSegmentAddressRequest extends RpcAcsRequest<AllocateEipS
 
 	private String resourceGroupId;
 
+	private String zone;
+
 	private String netmode;
 
 	private String resourceOwnerAccount;
@@ -96,6 +98,17 @@ public class AllocateEipSegmentAddressRequest extends RpcAcsRequest<AllocateEipS
 		this.resourceGroupId = resourceGroupId;
 		if(resourceGroupId != null){
 			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getZone() {
+		return this.zone;
+	}
+
+	public void setZone(String zone) {
+		this.zone = zone;
+		if(zone != null){
+			putQueryParameter("Zone", zone);
 		}
 	}
 

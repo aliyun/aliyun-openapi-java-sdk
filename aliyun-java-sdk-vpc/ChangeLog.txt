@@ -1,3 +1,15 @@
+2023-06-09 Version: 3.2.24
+- RegionId Field is required.
+- Supported Zone for AllocateEipSegmentAddress.
+- Supported ReservationData for DescribeIpv6Addresses.
+- Add ErrorCode.
+- Supported ClientIp Ram check For AddPublicIpAddressPoolCidrBlock.
+- Supported InstanceId and IpAddress For AllocateEipAddress.
+- Support error code for the port range of SSL VPN server.
+- Modify api timeout.
+- Support Ha Vpn.
+- Add error code.
+
 2023-05-22 Version: 3.2.23
 - Add ErrorCode.
 - AssociateRouteTable and UnassociateRouteTable Supported Idempotence.
