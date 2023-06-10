@@ -33,9 +33,9 @@ public class DescribeDistributionProductsLinkResponseUnmarshaller {
 		List<Item> result = new ArrayList<Item>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDistributionProductsLinkResponse.Result.Length"); i++) {
 			Item item = new Item();
-			item.setUrl(_ctx.stringValue("DescribeDistributionProductsLinkResponse.Result["+ i +"].url"));
-			item.setCode(_ctx.stringValue("DescribeDistributionProductsLinkResponse.Result["+ i +"].code"));
-			item.setName(_ctx.stringValue("DescribeDistributionProductsLinkResponse.Result["+ i +"].name"));
+			item.setUrl(_ctx.stringValue("DescribeDistributionProductsLinkResponse.Result["+ i +"].Url"));
+			item.setCode(_ctx.stringValue("DescribeDistributionProductsLinkResponse.Result["+ i +"].Code"));
+			item.setName(_ctx.stringValue("DescribeDistributionProductsLinkResponse.Result["+ i +"].Name"));
 
 			result.add(item);
 		}
