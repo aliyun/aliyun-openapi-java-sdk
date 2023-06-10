@@ -35,7 +35,7 @@ public class ModifyCustomBlockRecordRequest extends RpcAcsRequest<ModifyCustomBl
 
 	private String uuids;
 	public ModifyCustomBlockRecordRequest() {
-		super("Sas", "2018-12-03", "ModifyCustomBlockRecord");
+		super("Sas", "2018-12-03", "ModifyCustomBlockRecord", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

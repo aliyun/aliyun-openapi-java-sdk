@@ -30,7 +30,7 @@ public class DeleteSecurityEventMarkMissListRequest extends RpcAcsRequest<Delete
 
 	private List<Long> idss;
 	public DeleteSecurityEventMarkMissListRequest() {
-		super("Sas", "2018-12-03", "DeleteSecurityEventMarkMissList");
+		super("Sas", "2018-12-03", "DeleteSecurityEventMarkMissList", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

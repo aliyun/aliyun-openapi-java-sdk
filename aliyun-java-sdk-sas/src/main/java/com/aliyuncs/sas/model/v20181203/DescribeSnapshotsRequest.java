@@ -43,7 +43,7 @@ public class DescribeSnapshotsRequest extends RpcAcsRequest<DescribeSnapshotsRes
 
 	private String isAliYunEcs;
 	public DescribeSnapshotsRequest() {
-		super("Sas", "2018-12-03", "DescribeSnapshots");
+		super("Sas", "2018-12-03", "DescribeSnapshots", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

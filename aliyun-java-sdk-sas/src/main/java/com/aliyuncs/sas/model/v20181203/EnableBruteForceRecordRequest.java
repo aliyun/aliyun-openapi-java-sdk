@@ -37,7 +37,7 @@ public class EnableBruteForceRecordRequest extends RpcAcsRequest<EnableBruteForc
 
 	private String port;
 	public EnableBruteForceRecordRequest() {
-		super("Sas", "2018-12-03", "EnableBruteForceRecord");
+		super("Sas", "2018-12-03", "EnableBruteForceRecord", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

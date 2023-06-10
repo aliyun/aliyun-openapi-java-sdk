@@ -31,7 +31,7 @@ public class ConfirmVirusEventsRequest extends RpcAcsRequest<ConfirmVirusEventsR
 
 	private Integer operationAll;
 	public ConfirmVirusEventsRequest() {
-		super("Sas", "2018-12-03", "ConfirmVirusEvents");
+		super("Sas", "2018-12-03", "ConfirmVirusEvents", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

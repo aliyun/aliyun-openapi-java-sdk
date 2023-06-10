@@ -29,7 +29,7 @@ public class ExecStrategyRequest extends RpcAcsRequest<ExecStrategyResponse> {
 
 	private String lang;
 	public ExecStrategyRequest() {
-		super("Sas", "2018-12-03", "ExecStrategy");
+		super("Sas", "2018-12-03", "ExecStrategy", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

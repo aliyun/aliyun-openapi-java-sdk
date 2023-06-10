@@ -27,7 +27,7 @@ public class AddVpcHoneyPotRequest extends RpcAcsRequest<AddVpcHoneyPotResponse>
 
 	private String vpcId;
 	public AddVpcHoneyPotRequest() {
-		super("Sas", "2018-12-03", "AddVpcHoneyPot");
+		super("Sas", "2018-12-03", "AddVpcHoneyPot", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

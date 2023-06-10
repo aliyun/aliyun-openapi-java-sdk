@@ -34,7 +34,7 @@ public class UpdateHoneypotNodeRequest extends RpcAcsRequest<UpdateHoneypotNodeR
 
 	private List<String> securityGroupProbeIpLists;
 	public UpdateHoneypotNodeRequest() {
-		super("Sas", "2018-12-03", "UpdateHoneypotNode");
+		super("Sas", "2018-12-03", "UpdateHoneypotNode", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

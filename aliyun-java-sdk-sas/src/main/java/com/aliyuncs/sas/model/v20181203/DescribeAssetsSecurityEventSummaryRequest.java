@@ -35,7 +35,7 @@ public class DescribeAssetsSecurityEventSummaryRequest extends RpcAcsRequest<Des
 
 	private String clusterId;
 	public DescribeAssetsSecurityEventSummaryRequest() {
-		super("Sas", "2018-12-03", "DescribeAssetsSecurityEventSummary");
+		super("Sas", "2018-12-03", "DescribeAssetsSecurityEventSummary", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

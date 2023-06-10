@@ -27,7 +27,7 @@ public class ModifyRefreshProcessInfoRequest extends RpcAcsRequest<ModifyRefresh
 
 	private String uuid;
 	public ModifyRefreshProcessInfoRequest() {
-		super("Sas", "2018-12-03", "ModifyRefreshProcessInfo");
+		super("Sas", "2018-12-03", "ModifyRefreshProcessInfo", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

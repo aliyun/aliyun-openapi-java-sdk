@@ -31,7 +31,7 @@ public class DescribeWebPathRequest extends RpcAcsRequest<DescribeWebPathRespons
 
 	private Integer currentPage;
 	public DescribeWebPathRequest() {
-		super("Sas", "2018-12-03", "DescribeWebPath");
+		super("Sas", "2018-12-03", "DescribeWebPath", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

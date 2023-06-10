@@ -41,7 +41,7 @@ public class ModifyInterceptionRuleRequest extends RpcAcsRequest<ModifyIntercept
 
 	private String srcTarget;
 	public ModifyInterceptionRuleRequest() {
-		super("Sas", "2018-12-03", "ModifyInterceptionRule");
+		super("Sas", "2018-12-03", "ModifyInterceptionRule", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class DescribeServiceLinkedRoleStatusRequest extends RpcAcsRequest<Descri
 
 	private String serviceLinkedRole;
 	public DescribeServiceLinkedRoleStatusRequest() {
-		super("Sas", "2018-12-03", "DescribeServiceLinkedRoleStatus");
+		super("Sas", "2018-12-03", "DescribeServiceLinkedRoleStatus", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

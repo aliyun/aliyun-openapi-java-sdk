@@ -31,7 +31,7 @@ public class StartPreCheckDatabaseRequest extends RpcAcsRequest<StartPreCheckDat
 
 	private String uniRegionId;
 	public StartPreCheckDatabaseRequest() {
-		super("Sas", "2018-12-03", "StartPreCheckDatabase");
+		super("Sas", "2018-12-03", "StartPreCheckDatabase", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

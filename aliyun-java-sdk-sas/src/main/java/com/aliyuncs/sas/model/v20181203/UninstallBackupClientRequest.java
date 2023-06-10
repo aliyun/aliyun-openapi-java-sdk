@@ -32,7 +32,7 @@ public class UninstallBackupClientRequest extends RpcAcsRequest<UninstallBackupC
 
 	private String policyVersion;
 	public UninstallBackupClientRequest() {
-		super("Sas", "2018-12-03", "UninstallBackupClient");
+		super("Sas", "2018-12-03", "UninstallBackupClient", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

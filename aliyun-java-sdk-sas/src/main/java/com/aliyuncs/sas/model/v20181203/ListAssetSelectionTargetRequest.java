@@ -31,7 +31,7 @@ public class ListAssetSelectionTargetRequest extends RpcAcsRequest<ListAssetSele
 
 	private String selectionKey;
 	public ListAssetSelectionTargetRequest() {
-		super("Sas", "2018-12-03", "ListAssetSelectionTarget");
+		super("Sas", "2018-12-03", "ListAssetSelectionTarget", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

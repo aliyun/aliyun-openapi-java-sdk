@@ -27,7 +27,7 @@ public class DescribeFieldStatisticsRequest extends RpcAcsRequest<DescribeFieldS
 
 	private String machineTypes;
 	public DescribeFieldStatisticsRequest() {
-		super("Sas", "2018-12-03", "DescribeFieldStatistics");
+		super("Sas", "2018-12-03", "DescribeFieldStatistics", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

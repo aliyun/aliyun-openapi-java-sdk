@@ -31,7 +31,7 @@ public class CreateContainerScanTaskRequest extends RpcAcsRequest<CreateContaine
 
 	private String containerIds;
 	public CreateContainerScanTaskRequest() {
-		super("Sas", "2018-12-03", "CreateContainerScanTask");
+		super("Sas", "2018-12-03", "CreateContainerScanTask", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

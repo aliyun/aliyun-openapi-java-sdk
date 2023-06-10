@@ -33,7 +33,7 @@ public class DescribeUniRecoverableListRequest extends RpcAcsRequest<DescribeUni
 
 	private Integer currentPage;
 	public DescribeUniRecoverableListRequest() {
-		super("Sas", "2018-12-03", "DescribeUniRecoverableList");
+		super("Sas", "2018-12-03", "DescribeUniRecoverableList", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

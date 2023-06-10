@@ -39,7 +39,7 @@ public class CreateUniRestorePlanRequest extends RpcAcsRequest<CreateUniRestoreP
 
 	private Long timePoint;
 	public CreateUniRestorePlanRequest() {
-		super("Sas", "2018-12-03", "CreateUniRestorePlan");
+		super("Sas", "2018-12-03", "CreateUniRestorePlan", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

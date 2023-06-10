@@ -27,7 +27,7 @@ public class QueryDiscoverDatabaseRequest extends RpcAcsRequest<QueryDiscoverDat
 
 	private String createMark;
 	public QueryDiscoverDatabaseRequest() {
-		super("Sas", "2018-12-03", "QueryDiscoverDatabase");
+		super("Sas", "2018-12-03", "QueryDiscoverDatabase", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class UpgradeBackupPolicyVersionRequest extends RpcAcsRequest<UpgradeBack
 
 	private Long id;
 	public UpgradeBackupPolicyVersionRequest() {
-		super("Sas", "2018-12-03", "UpgradeBackupPolicyVersion");
+		super("Sas", "2018-12-03", "UpgradeBackupPolicyVersion", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

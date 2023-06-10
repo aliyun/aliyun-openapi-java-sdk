@@ -31,7 +31,7 @@ public class DescribeBackupMachineStatusRequest extends RpcAcsRequest<DescribeBa
 
 	private String policyVersion;
 	public DescribeBackupMachineStatusRequest() {
-		super("Sas", "2018-12-03", "DescribeBackupMachineStatus");
+		super("Sas", "2018-12-03", "DescribeBackupMachineStatus", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

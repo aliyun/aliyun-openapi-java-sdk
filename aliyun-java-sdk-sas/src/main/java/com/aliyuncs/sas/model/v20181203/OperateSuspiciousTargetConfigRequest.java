@@ -35,7 +35,7 @@ public class OperateSuspiciousTargetConfigRequest extends RpcAcsRequest<OperateS
 
 	private String lang;
 	public OperateSuspiciousTargetConfigRequest() {
-		super("Sas", "2018-12-03", "OperateSuspiciousTargetConfig");
+		super("Sas", "2018-12-03", "OperateSuspiciousTargetConfig", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -48,6 +48,7 @@ public class DescribeAntiBruteForceRulesResponseUnmarshaller {
 			antiBruteForceRule.setName(_ctx.stringValue("DescribeAntiBruteForceRulesResponse.Rules["+ i +"].Name"));
 			antiBruteForceRule.setId(_ctx.longValue("DescribeAntiBruteForceRulesResponse.Rules["+ i +"].Id"));
 			antiBruteForceRule.setCreateTime(_ctx.stringValue("DescribeAntiBruteForceRulesResponse.Rules["+ i +"].CreateTime"));
+			antiBruteForceRule.setCreateTimestamp(_ctx.longValue("DescribeAntiBruteForceRulesResponse.Rules["+ i +"].CreateTimestamp"));
 
 			List<String> uuidList = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeAntiBruteForceRulesResponse.Rules["+ i +"].UuidList.Length"); j++) {

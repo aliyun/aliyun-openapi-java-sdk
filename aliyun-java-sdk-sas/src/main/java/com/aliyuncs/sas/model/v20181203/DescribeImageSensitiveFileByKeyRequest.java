@@ -41,7 +41,7 @@ public class DescribeImageSensitiveFileByKeyRequest extends RpcAcsRequest<Descri
 
 	private Integer currentPage;
 	public DescribeImageSensitiveFileByKeyRequest() {
-		super("Sas", "2018-12-03", "DescribeImageSensitiveFileByKey");
+		super("Sas", "2018-12-03", "DescribeImageSensitiveFileByKey", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

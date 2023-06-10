@@ -29,7 +29,7 @@ public class DeleteVulWhitelistRequest extends RpcAcsRequest<DeleteVulWhitelistR
 
 	private String id;
 	public DeleteVulWhitelistRequest() {
-		super("Sas", "2018-12-03", "DeleteVulWhitelist");
+		super("Sas", "2018-12-03", "DeleteVulWhitelist", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

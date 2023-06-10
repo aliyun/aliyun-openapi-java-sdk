@@ -33,7 +33,7 @@ public class SaveImageBaselineStrategyRequest extends RpcAcsRequest<SaveImageBas
 
 	private Long strategyId;
 	public SaveImageBaselineStrategyRequest() {
-		super("Sas", "2018-12-03", "SaveImageBaselineStrategy");
+		super("Sas", "2018-12-03", "SaveImageBaselineStrategy", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

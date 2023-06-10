@@ -27,7 +27,7 @@ public class DescribeHcExportInfoRequest extends RpcAcsRequest<DescribeHcExportI
 
 	private Long exportId;
 	public DescribeHcExportInfoRequest() {
-		super("Sas", "2018-12-03", "DescribeHcExportInfo");
+		super("Sas", "2018-12-03", "DescribeHcExportInfo", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

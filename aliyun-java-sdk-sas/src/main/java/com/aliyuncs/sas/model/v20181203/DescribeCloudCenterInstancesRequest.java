@@ -41,7 +41,7 @@ public class DescribeCloudCenterInstancesRequest extends RpcAcsRequest<DescribeC
 
 	private Boolean noGroupTrace;
 	public DescribeCloudCenterInstancesRequest() {
-		super("Sas", "2018-12-03", "DescribeCloudCenterInstances");
+		super("Sas", "2018-12-03", "DescribeCloudCenterInstances", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

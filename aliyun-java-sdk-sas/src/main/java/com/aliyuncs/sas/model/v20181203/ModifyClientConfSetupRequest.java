@@ -31,7 +31,7 @@ public class ModifyClientConfSetupRequest extends RpcAcsRequest<ModifyClientConf
 
 	private String strategyTagValue;
 	public ModifyClientConfSetupRequest() {
-		super("Sas", "2018-12-03", "ModifyClientConfSetup");
+		super("Sas", "2018-12-03", "ModifyClientConfSetup", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

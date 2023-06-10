@@ -29,7 +29,7 @@ public class DeleteHoneypotPresetRequest extends RpcAcsRequest<DeleteHoneypotPre
 
 	private String honeypotPresetId;
 	public DeleteHoneypotPresetRequest() {
-		super("Sas", "2018-12-03", "DeleteHoneypotPreset");
+		super("Sas", "2018-12-03", "DeleteHoneypotPreset", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

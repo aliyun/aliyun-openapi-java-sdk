@@ -33,7 +33,7 @@ public class DescribeSuspEventDetailRequest extends RpcAcsRequest<DescribeSuspEv
 
 	private Integer suspiciousEventId;
 	public DescribeSuspEventDetailRequest() {
-		super("Sas", "2018-12-03", "DescribeSuspEventDetail");
+		super("Sas", "2018-12-03", "DescribeSuspEventDetail", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -25,7 +25,7 @@ import com.aliyuncs.sas.Endpoint;
 public class GetRulesCountRequest extends RpcAcsRequest<GetRulesCountResponse> {
 	   
 	public GetRulesCountRequest() {
-		super("Sas", "2018-12-03", "GetRulesCount");
+		super("Sas", "2018-12-03", "GetRulesCount", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

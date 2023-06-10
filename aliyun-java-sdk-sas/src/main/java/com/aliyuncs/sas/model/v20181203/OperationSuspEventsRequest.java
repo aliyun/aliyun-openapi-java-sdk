@@ -37,7 +37,7 @@ public class OperationSuspEventsRequest extends RpcAcsRequest<OperationSuspEvent
 
 	private String operation;
 	public OperationSuspEventsRequest() {
-		super("Sas", "2018-12-03", "OperationSuspEvents");
+		super("Sas", "2018-12-03", "OperationSuspEvents", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

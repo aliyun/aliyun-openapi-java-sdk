@@ -53,7 +53,7 @@ public class DescribeGroupedVulRequest extends RpcAcsRequest<DescribeGroupedVulR
 
 	private String searchTags;
 	public DescribeGroupedVulRequest() {
-		super("Sas", "2018-12-03", "DescribeGroupedVul");
+		super("Sas", "2018-12-03", "DescribeGroupedVul", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

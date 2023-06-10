@@ -29,7 +29,7 @@ public class DescribeWebLockProcessBlockStatisticsRequest extends RpcAcsRequest<
 
 	private Integer currentPage;
 	public DescribeWebLockProcessBlockStatisticsRequest() {
-		super("Sas", "2018-12-03", "DescribeWebLockProcessBlockStatistics");
+		super("Sas", "2018-12-03", "DescribeWebLockProcessBlockStatistics", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

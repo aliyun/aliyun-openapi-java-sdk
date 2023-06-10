@@ -29,7 +29,7 @@ public class GetClusterSuspEventStatisticsRequest extends RpcAcsRequest<GetClust
 
 	private String from;
 	public GetClusterSuspEventStatisticsRequest() {
-		super("Sas", "2018-12-03", "GetClusterSuspEventStatistics");
+		super("Sas", "2018-12-03", "GetClusterSuspEventStatistics", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

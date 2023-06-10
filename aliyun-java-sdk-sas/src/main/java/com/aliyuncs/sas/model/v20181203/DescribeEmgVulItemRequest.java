@@ -39,7 +39,7 @@ public class DescribeEmgVulItemRequest extends RpcAcsRequest<DescribeEmgVulItemR
 
 	private String riskStatus;
 	public DescribeEmgVulItemRequest() {
-		super("Sas", "2018-12-03", "DescribeEmgVulItem");
+		super("Sas", "2018-12-03", "DescribeEmgVulItem", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

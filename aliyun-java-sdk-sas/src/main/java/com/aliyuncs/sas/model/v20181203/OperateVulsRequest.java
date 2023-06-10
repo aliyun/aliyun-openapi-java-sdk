@@ -34,7 +34,7 @@ public class OperateVulsRequest extends RpcAcsRequest<OperateVulsResponse> {
 
 	private List<String> uuidss;
 	public OperateVulsRequest() {
-		super("Sas", "2018-12-03", "OperateVuls");
+		super("Sas", "2018-12-03", "OperateVuls", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

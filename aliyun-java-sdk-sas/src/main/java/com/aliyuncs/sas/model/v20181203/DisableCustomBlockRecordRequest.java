@@ -31,7 +31,7 @@ public class DisableCustomBlockRecordRequest extends RpcAcsRequest<DisableCustom
 
 	private String bound;
 	public DisableCustomBlockRecordRequest() {
-		super("Sas", "2018-12-03", "DisableCustomBlockRecord");
+		super("Sas", "2018-12-03", "DisableCustomBlockRecord", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

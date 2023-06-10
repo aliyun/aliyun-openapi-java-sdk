@@ -30,7 +30,7 @@ public class GetCloudAssetCriteriaRequest extends RpcAcsRequest<GetCloudAssetCri
 
 	private String value;
 	public GetCloudAssetCriteriaRequest() {
-		super("Sas", "2018-12-03", "GetCloudAssetCriteria");
+		super("Sas", "2018-12-03", "GetCloudAssetCriteria", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

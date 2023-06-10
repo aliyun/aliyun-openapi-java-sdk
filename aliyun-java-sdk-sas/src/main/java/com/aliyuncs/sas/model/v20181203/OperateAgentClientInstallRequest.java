@@ -35,7 +35,7 @@ public class OperateAgentClientInstallRequest extends RpcAcsRequest<OperateAgent
 
 	private String uuids;
 	public OperateAgentClientInstallRequest() {
-		super("Sas", "2018-12-03", "OperateAgentClientInstall");
+		super("Sas", "2018-12-03", "OperateAgentClientInstall", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

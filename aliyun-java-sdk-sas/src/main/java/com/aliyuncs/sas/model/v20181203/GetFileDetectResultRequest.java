@@ -32,7 +32,7 @@ public class GetFileDetectResultRequest extends RpcAcsRequest<GetFileDetectResul
 
 	private String sourceIp;
 	public GetFileDetectResultRequest() {
-		super("Sas", "2018-12-03", "GetFileDetectResult");
+		super("Sas", "2018-12-03", "GetFileDetectResult", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

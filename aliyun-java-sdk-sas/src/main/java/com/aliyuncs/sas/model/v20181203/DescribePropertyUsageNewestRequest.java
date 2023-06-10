@@ -27,7 +27,7 @@ public class DescribePropertyUsageNewestRequest extends RpcAcsRequest<DescribePr
 
 	private String type;
 	public DescribePropertyUsageNewestRequest() {
-		super("Sas", "2018-12-03", "DescribePropertyUsageNewest");
+		super("Sas", "2018-12-03", "DescribePropertyUsageNewest", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

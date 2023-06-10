@@ -27,7 +27,7 @@ public class GetInterceptionSummaryRequest extends RpcAcsRequest<GetInterception
 
 	private String clusterId;
 	public GetInterceptionSummaryRequest() {
-		super("Sas", "2018-12-03", "GetInterceptionSummary");
+		super("Sas", "2018-12-03", "GetInterceptionSummary", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

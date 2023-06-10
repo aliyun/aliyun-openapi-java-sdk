@@ -45,7 +45,7 @@ public class DescribePropertyProcDetailRequest extends RpcAcsRequest<DescribePro
 
 	private String user;
 	public DescribePropertyProcDetailRequest() {
-		super("Sas", "2018-12-03", "DescribePropertyProcDetail");
+		super("Sas", "2018-12-03", "DescribePropertyProcDetail", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

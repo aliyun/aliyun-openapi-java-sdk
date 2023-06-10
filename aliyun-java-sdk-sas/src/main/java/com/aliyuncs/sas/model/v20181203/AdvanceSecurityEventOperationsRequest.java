@@ -33,7 +33,7 @@ public class AdvanceSecurityEventOperationsRequest extends RpcAcsRequest<Advance
 
 	private Integer ruleId;
 	public AdvanceSecurityEventOperationsRequest() {
-		super("Sas", "2018-12-03", "AdvanceSecurityEventOperations");
+		super("Sas", "2018-12-03", "AdvanceSecurityEventOperations", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

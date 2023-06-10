@@ -42,7 +42,7 @@ public class ListInterceptionHistoryRequest extends RpcAcsRequest<ListIntercepti
 
 	private String clusterId;
 	public ListInterceptionHistoryRequest() {
-		super("Sas", "2018-12-03", "ListInterceptionHistory");
+		super("Sas", "2018-12-03", "ListInterceptionHistory", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

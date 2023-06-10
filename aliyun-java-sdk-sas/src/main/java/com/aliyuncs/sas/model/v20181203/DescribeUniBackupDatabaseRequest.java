@@ -37,7 +37,7 @@ public class DescribeUniBackupDatabaseRequest extends RpcAcsRequest<DescribeUniB
 
 	private String uniRegionId;
 	public DescribeUniBackupDatabaseRequest() {
-		super("Sas", "2018-12-03", "DescribeUniBackupDatabase");
+		super("Sas", "2018-12-03", "DescribeUniBackupDatabase", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

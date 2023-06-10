@@ -40,7 +40,7 @@ public class ListSystemAggregationRulesRequest extends RpcAcsRequest<ListSystemA
 
 	private Integer currentPage;
 	public ListSystemAggregationRulesRequest() {
-		super("Sas", "2018-12-03", "ListSystemAggregationRules");
+		super("Sas", "2018-12-03", "ListSystemAggregationRules", "sas");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

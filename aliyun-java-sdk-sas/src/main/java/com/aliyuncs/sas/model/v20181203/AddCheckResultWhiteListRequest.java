@@ -28,7 +28,7 @@ public class AddCheckResultWhiteListRequest extends RpcAcsRequest<AddCheckResult
 
 	private List<Long> checkIdss;
 	public AddCheckResultWhiteListRequest() {
-		super("Sas", "2018-12-03", "AddCheckResultWhiteList");
+		super("Sas", "2018-12-03", "AddCheckResultWhiteList", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

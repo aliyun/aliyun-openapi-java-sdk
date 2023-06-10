@@ -29,7 +29,7 @@ public class PauseClientRequest extends RpcAcsRequest<PauseClientResponse> {
 
 	private String uuids;
 	public PauseClientRequest() {
-		super("Sas", "2018-12-03", "PauseClient");
+		super("Sas", "2018-12-03", "PauseClient", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

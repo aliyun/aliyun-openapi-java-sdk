@@ -25,7 +25,7 @@ import com.aliyuncs.sas.Endpoint;
 public class DescribeModuleConfigRequest extends RpcAcsRequest<DescribeModuleConfigResponse> {
 	   
 	public DescribeModuleConfigRequest() {
-		super("Sas", "2018-12-03", "DescribeModuleConfig");
+		super("Sas", "2018-12-03", "DescribeModuleConfig", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

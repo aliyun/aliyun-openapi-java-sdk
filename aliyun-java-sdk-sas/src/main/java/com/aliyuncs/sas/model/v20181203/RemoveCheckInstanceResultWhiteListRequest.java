@@ -30,7 +30,7 @@ public class RemoveCheckInstanceResultWhiteListRequest extends RpcAcsRequest<Rem
 
 	private Long checkId;
 	public RemoveCheckInstanceResultWhiteListRequest() {
-		super("Sas", "2018-12-03", "RemoveCheckInstanceResultWhiteList");
+		super("Sas", "2018-12-03", "RemoveCheckInstanceResultWhiteList", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

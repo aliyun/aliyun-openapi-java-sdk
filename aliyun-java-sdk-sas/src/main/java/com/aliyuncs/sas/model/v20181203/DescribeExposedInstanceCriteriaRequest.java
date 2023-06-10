@@ -27,7 +27,7 @@ public class DescribeExposedInstanceCriteriaRequest extends RpcAcsRequest<Descri
 
 	private String value;
 	public DescribeExposedInstanceCriteriaRequest() {
-		super("Sas", "2018-12-03", "DescribeExposedInstanceCriteria");
+		super("Sas", "2018-12-03", "DescribeExposedInstanceCriteria", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

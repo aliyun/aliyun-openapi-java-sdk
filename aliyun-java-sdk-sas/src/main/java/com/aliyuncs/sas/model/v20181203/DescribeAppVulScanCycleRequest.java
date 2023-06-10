@@ -25,7 +25,7 @@ import com.aliyuncs.sas.Endpoint;
 public class DescribeAppVulScanCycleRequest extends RpcAcsRequest<DescribeAppVulScanCycleResponse> {
 	   
 	public DescribeAppVulScanCycleRequest() {
-		super("Sas", "2018-12-03", "DescribeAppVulScanCycle");
+		super("Sas", "2018-12-03", "DescribeAppVulScanCycle", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

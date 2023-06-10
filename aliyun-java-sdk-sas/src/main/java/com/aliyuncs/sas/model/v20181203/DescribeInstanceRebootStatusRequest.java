@@ -27,7 +27,7 @@ public class DescribeInstanceRebootStatusRequest extends RpcAcsRequest<DescribeI
 
 	private String uuids;
 	public DescribeInstanceRebootStatusRequest() {
-		super("Sas", "2018-12-03", "DescribeInstanceRebootStatus");
+		super("Sas", "2018-12-03", "DescribeInstanceRebootStatus", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -25,7 +25,7 @@ import com.aliyuncs.sas.Endpoint;
 public class DescribeVendorListRequest extends RpcAcsRequest<DescribeVendorListResponse> {
 	   
 	public DescribeVendorListRequest() {
-		super("Sas", "2018-12-03", "DescribeVendorList");
+		super("Sas", "2018-12-03", "DescribeVendorList", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -52,7 +52,7 @@ public class ListCheckResultRequest extends RpcAcsRequest<ListCheckResultRespons
 
 	private List<String> statusess;
 	public ListCheckResultRequest() {
-		super("Sas", "2018-12-03", "ListCheckResult");
+		super("Sas", "2018-12-03", "ListCheckResult", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

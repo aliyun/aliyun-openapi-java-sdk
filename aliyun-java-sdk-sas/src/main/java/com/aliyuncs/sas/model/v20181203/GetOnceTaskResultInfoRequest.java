@@ -31,7 +31,7 @@ public class GetOnceTaskResultInfoRequest extends RpcAcsRequest<GetOnceTaskResul
 
 	private String taskType;
 	public GetOnceTaskResultInfoRequest() {
-		super("Sas", "2018-12-03", "GetOnceTaskResultInfo");
+		super("Sas", "2018-12-03", "GetOnceTaskResultInfo", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

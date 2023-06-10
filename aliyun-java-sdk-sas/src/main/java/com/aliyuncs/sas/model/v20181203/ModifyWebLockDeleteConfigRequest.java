@@ -33,7 +33,7 @@ public class ModifyWebLockDeleteConfigRequest extends RpcAcsRequest<ModifyWebLoc
 
 	private String lang;
 	public ModifyWebLockDeleteConfigRequest() {
-		super("Sas", "2018-12-03", "ModifyWebLockDeleteConfig");
+		super("Sas", "2018-12-03", "ModifyWebLockDeleteConfig", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -33,7 +33,7 @@ public class DescribeVulListPageRequest extends RpcAcsRequest<DescribeVulListPag
 
 	private String vulNameLike;
 	public DescribeVulListPageRequest() {
-		super("Sas", "2018-12-03", "DescribeVulListPage");
+		super("Sas", "2018-12-03", "DescribeVulListPage", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

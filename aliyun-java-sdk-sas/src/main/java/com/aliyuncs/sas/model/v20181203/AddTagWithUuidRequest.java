@@ -29,7 +29,7 @@ public class AddTagWithUuidRequest extends RpcAcsRequest<AddTagWithUuidResponse>
 
 	private String uuidList;
 	public AddTagWithUuidRequest() {
-		super("Sas", "2018-12-03", "AddTagWithUuid");
+		super("Sas", "2018-12-03", "AddTagWithUuid", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

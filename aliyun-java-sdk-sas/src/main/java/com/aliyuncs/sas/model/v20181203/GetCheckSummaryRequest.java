@@ -29,7 +29,7 @@ public class GetCheckSummaryRequest extends RpcAcsRequest<GetCheckSummaryRespons
 
 	private String resourceDirectoryAccountId;
 	public GetCheckSummaryRequest() {
-		super("Sas", "2018-12-03", "GetCheckSummary");
+		super("Sas", "2018-12-03", "GetCheckSummary", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

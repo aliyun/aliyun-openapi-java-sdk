@@ -31,7 +31,7 @@ public class DescribeUniBackupPoliciesRequest extends RpcAcsRequest<DescribeUniB
 
 	private String policyName;
 	public DescribeUniBackupPoliciesRequest() {
-		super("Sas", "2018-12-03", "DescribeUniBackupPolicies");
+		super("Sas", "2018-12-03", "DescribeUniBackupPolicies", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

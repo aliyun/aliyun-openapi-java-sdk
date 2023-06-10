@@ -29,7 +29,7 @@ public class DescribeDomainDetailRequest extends RpcAcsRequest<DescribeDomainDet
 
 	private String sourceIp;
 	public DescribeDomainDetailRequest() {
-		super("Sas", "2018-12-03", "DescribeDomainDetail");
+		super("Sas", "2018-12-03", "DescribeDomainDetail", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

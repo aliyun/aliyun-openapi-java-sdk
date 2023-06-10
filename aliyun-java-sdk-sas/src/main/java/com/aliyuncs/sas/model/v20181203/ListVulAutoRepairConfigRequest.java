@@ -33,7 +33,7 @@ public class ListVulAutoRepairConfigRequest extends RpcAcsRequest<ListVulAutoRep
 
 	private String aliasName;
 	public ListVulAutoRepairConfigRequest() {
-		super("Sas", "2018-12-03", "ListVulAutoRepairConfig");
+		super("Sas", "2018-12-03", "ListVulAutoRepairConfig", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

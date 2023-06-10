@@ -32,7 +32,7 @@ public class OperateWebLockFileEventsRequest extends RpcAcsRequest<OperateWebLoc
 
 	private Integer dealAll;
 	public OperateWebLockFileEventsRequest() {
-		super("Sas", "2018-12-03", "OperateWebLockFileEvents");
+		super("Sas", "2018-12-03", "OperateWebLockFileEvents", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

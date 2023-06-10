@@ -25,7 +25,7 @@ import com.aliyuncs.sas.Endpoint;
 public class GetCheckConfigRequest extends RpcAcsRequest<GetCheckConfigResponse> {
 	   
 	public GetCheckConfigRequest() {
-		super("Sas", "2018-12-03", "GetCheckConfig");
+		super("Sas", "2018-12-03", "GetCheckConfig", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

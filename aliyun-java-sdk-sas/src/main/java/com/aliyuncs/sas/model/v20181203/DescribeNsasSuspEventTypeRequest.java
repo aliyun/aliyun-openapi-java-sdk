@@ -41,7 +41,7 @@ public class DescribeNsasSuspEventTypeRequest extends RpcAcsRequest<DescribeNsas
 
 	private String uuids;
 	public DescribeNsasSuspEventTypeRequest() {
-		super("Sas", "2018-12-03", "DescribeNsasSuspEventType");
+		super("Sas", "2018-12-03", "DescribeNsasSuspEventType", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

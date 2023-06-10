@@ -60,7 +60,7 @@ public class DescribeImageListWithBaselineNameRequest extends RpcAcsRequest<Desc
 
 	private String containerId;
 	public DescribeImageListWithBaselineNameRequest() {
-		super("Sas", "2018-12-03", "DescribeImageListWithBaselineName");
+		super("Sas", "2018-12-03", "DescribeImageListWithBaselineName", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

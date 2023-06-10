@@ -29,7 +29,7 @@ public class DescribeAssetDetailByUuidsRequest extends RpcAcsRequest<DescribeAss
 
 	private String uuids;
 	public DescribeAssetDetailByUuidsRequest() {
-		super("Sas", "2018-12-03", "DescribeAssetDetailByUuids");
+		super("Sas", "2018-12-03", "DescribeAssetDetailByUuids", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

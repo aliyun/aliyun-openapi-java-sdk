@@ -38,7 +38,7 @@ public class ListHoneypotAlarmEventsRequest extends RpcAcsRequest<ListHoneypotAl
 
 	private Integer currentPage;
 	public ListHoneypotAlarmEventsRequest() {
-		super("Sas", "2018-12-03", "ListHoneypotAlarmEvents");
+		super("Sas", "2018-12-03", "ListHoneypotAlarmEvents", "sas");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

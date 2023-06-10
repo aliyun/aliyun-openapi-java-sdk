@@ -29,7 +29,7 @@ public class DescribeClientConfStrategyRequest extends RpcAcsRequest<DescribeCli
 
 	private String tagValue;
 	public DescribeClientConfStrategyRequest() {
-		super("Sas", "2018-12-03", "DescribeClientConfStrategy");
+		super("Sas", "2018-12-03", "DescribeClientConfStrategy", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class GetPropertyScheduleConfigRequest extends RpcAcsRequest<GetPropertyS
 
 	private String uuid;
 	public GetPropertyScheduleConfigRequest() {
-		super("Sas", "2018-12-03", "GetPropertyScheduleConfig");
+		super("Sas", "2018-12-03", "GetPropertyScheduleConfig", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

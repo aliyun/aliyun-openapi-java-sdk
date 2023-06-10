@@ -30,7 +30,7 @@ public class ListPluginForUuidRequest extends RpcAcsRequest<ListPluginForUuidRes
 
 	private String uuid;
 	public ListPluginForUuidRequest() {
-		super("Sas", "2018-12-03", "ListPluginForUuid");
+		super("Sas", "2018-12-03", "ListPluginForUuid", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

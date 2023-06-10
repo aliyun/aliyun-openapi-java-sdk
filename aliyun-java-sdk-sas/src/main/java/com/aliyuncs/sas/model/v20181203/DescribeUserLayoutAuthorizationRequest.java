@@ -31,7 +31,7 @@ public class DescribeUserLayoutAuthorizationRequest extends RpcAcsRequest<Descri
 
 	private String lang;
 	public DescribeUserLayoutAuthorizationRequest() {
-		super("Sas", "2018-12-03", "DescribeUserLayoutAuthorization");
+		super("Sas", "2018-12-03", "DescribeUserLayoutAuthorization", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -33,7 +33,7 @@ public class DescribeImageRequest extends RpcAcsRequest<DescribeImageResponse> {
 
 	private String imageTag;
 	public DescribeImageRequest() {
-		super("Sas", "2018-12-03", "DescribeImage");
+		super("Sas", "2018-12-03", "DescribeImage", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

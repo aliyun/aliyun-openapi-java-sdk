@@ -29,7 +29,7 @@ public class DescribeVersionConfigRequest extends RpcAcsRequest<DescribeVersionC
 
 	private String resourceDirectoryAccountId;
 	public DescribeVersionConfigRequest() {
-		super("Sas", "2018-12-03", "DescribeVersionConfig");
+		super("Sas", "2018-12-03", "DescribeVersionConfig", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

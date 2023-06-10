@@ -31,7 +31,7 @@ public class ModifyPushAllTaskRequest extends RpcAcsRequest<ModifyPushAllTaskRes
 
 	private String uuids;
 	public ModifyPushAllTaskRequest() {
-		super("Sas", "2018-12-03", "ModifyPushAllTask");
+		super("Sas", "2018-12-03", "ModifyPushAllTask", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

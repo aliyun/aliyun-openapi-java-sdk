@@ -27,7 +27,7 @@ public class SetRegistryScanDayNumRequest extends RpcAcsRequest<SetRegistryScanD
 
 	private Integer scanDayNum;
 	public SetRegistryScanDayNumRequest() {
-		super("Sas", "2018-12-03", "SetRegistryScanDayNum");
+		super("Sas", "2018-12-03", "SetRegistryScanDayNum", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

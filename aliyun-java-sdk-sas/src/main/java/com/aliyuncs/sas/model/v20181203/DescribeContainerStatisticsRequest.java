@@ -27,7 +27,7 @@ public class DescribeContainerStatisticsRequest extends RpcAcsRequest<DescribeCo
 
 	private String clusterId;
 	public DescribeContainerStatisticsRequest() {
-		super("Sas", "2018-12-03", "DescribeContainerStatistics");
+		super("Sas", "2018-12-03", "DescribeContainerStatistics", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

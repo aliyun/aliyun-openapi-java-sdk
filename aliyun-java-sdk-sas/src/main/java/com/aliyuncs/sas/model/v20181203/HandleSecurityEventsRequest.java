@@ -30,6 +30,8 @@ public class HandleSecurityEventsRequest extends RpcAcsRequest<HandleSecurityEve
 
 	private List<String> securityEventIdss;
 
+	private String remark;
+
 	private String sourceIp;
 
 	private String operationCode;
@@ -38,7 +40,7 @@ public class HandleSecurityEventsRequest extends RpcAcsRequest<HandleSecurityEve
 
 	private String markBatch;
 	public HandleSecurityEventsRequest() {
-		super("Sas", "2018-12-03", "HandleSecurityEvents");
+		super("Sas", "2018-12-03", "HandleSecurityEvents", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -68,6 +70,17 @@ public class HandleSecurityEventsRequest extends RpcAcsRequest<HandleSecurityEve
 				putQueryParameter("SecurityEventIds." + (i + 1) , securityEventIdss.get(i));
 			}
 		}	
+	}
+
+	public String getRemark() {
+		return this.remark;
+	}
+
+	public void setRemark(String remark) {
+		this.remark = remark;
+		if(remark != null){
+			putQueryParameter("Remark", remark);
+		}
 	}
 
 	public String getSourceIp() {

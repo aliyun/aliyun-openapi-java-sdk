@@ -31,7 +31,7 @@ public class DescribeSuspEventUserSettingRequest extends RpcAcsRequest<DescribeS
 
 	private Integer id;
 	public DescribeSuspEventUserSettingRequest() {
-		super("Sas", "2018-12-03", "DescribeSuspEventUserSetting");
+		super("Sas", "2018-12-03", "DescribeSuspEventUserSetting", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -33,7 +33,7 @@ public class DescribePropertySoftwareItemRequest extends RpcAcsRequest<DescribeP
 
 	private String name;
 	public DescribePropertySoftwareItemRequest() {
-		super("Sas", "2018-12-03", "DescribePropertySoftwareItem");
+		super("Sas", "2018-12-03", "DescribePropertySoftwareItem", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class RefreshAssetsRequest extends RpcAcsRequest<RefreshAssetsResponse> {
 
 	private Integer cloudAssetType;
 	public RefreshAssetsRequest() {
-		super("Sas", "2018-12-03", "RefreshAssets");
+		super("Sas", "2018-12-03", "RefreshAssets", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

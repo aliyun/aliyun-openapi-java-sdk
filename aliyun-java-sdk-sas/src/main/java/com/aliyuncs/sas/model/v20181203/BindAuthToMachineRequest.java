@@ -40,7 +40,7 @@ public class BindAuthToMachineRequest extends RpcAcsRequest<BindAuthToMachineRes
 
 	private List<String> unBinds;
 	public BindAuthToMachineRequest() {
-		super("Sas", "2018-12-03", "BindAuthToMachine");
+		super("Sas", "2018-12-03", "BindAuthToMachine", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

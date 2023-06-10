@@ -42,7 +42,7 @@ public class CreateAntiBruteForceRuleRequest extends RpcAcsRequest<CreateAntiBru
 
 	private Boolean defaultRule;
 	public CreateAntiBruteForceRuleRequest() {
-		super("Sas", "2018-12-03", "CreateAntiBruteForceRule");
+		super("Sas", "2018-12-03", "CreateAntiBruteForceRule", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

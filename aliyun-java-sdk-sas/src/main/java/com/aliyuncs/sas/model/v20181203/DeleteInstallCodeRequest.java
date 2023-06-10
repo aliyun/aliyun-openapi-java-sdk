@@ -27,7 +27,7 @@ public class DeleteInstallCodeRequest extends RpcAcsRequest<DeleteInstallCodeRes
 
 	private String captchaCode;
 	public DeleteInstallCodeRequest() {
-		super("Sas", "2018-12-03", "DeleteInstallCode");
+		super("Sas", "2018-12-03", "DeleteInstallCode", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

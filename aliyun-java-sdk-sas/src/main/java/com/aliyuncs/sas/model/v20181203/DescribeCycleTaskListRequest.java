@@ -33,7 +33,7 @@ public class DescribeCycleTaskListRequest extends RpcAcsRequest<DescribeCycleTas
 
 	private Integer currentPage;
 	public DescribeCycleTaskListRequest() {
-		super("Sas", "2018-12-03", "DescribeCycleTaskList");
+		super("Sas", "2018-12-03", "DescribeCycleTaskList", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

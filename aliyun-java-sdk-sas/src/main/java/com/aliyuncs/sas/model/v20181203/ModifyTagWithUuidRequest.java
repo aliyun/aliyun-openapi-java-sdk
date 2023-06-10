@@ -33,7 +33,7 @@ public class ModifyTagWithUuidRequest extends RpcAcsRequest<ModifyTagWithUuidRes
 
 	private String machineTypes;
 	public ModifyTagWithUuidRequest() {
-		super("Sas", "2018-12-03", "ModifyTagWithUuid");
+		super("Sas", "2018-12-03", "ModifyTagWithUuid", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

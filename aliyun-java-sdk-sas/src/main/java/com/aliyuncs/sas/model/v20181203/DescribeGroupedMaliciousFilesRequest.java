@@ -58,7 +58,7 @@ public class DescribeGroupedMaliciousFilesRequest extends RpcAcsRequest<Describe
 
 	private String repoRegionId;
 	public DescribeGroupedMaliciousFilesRequest() {
-		super("Sas", "2018-12-03", "DescribeGroupedMaliciousFiles");
+		super("Sas", "2018-12-03", "DescribeGroupedMaliciousFiles", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

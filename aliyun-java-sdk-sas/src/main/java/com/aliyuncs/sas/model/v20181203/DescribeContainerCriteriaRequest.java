@@ -29,7 +29,7 @@ public class DescribeContainerCriteriaRequest extends RpcAcsRequest<DescribeCont
 
 	private String value;
 	public DescribeContainerCriteriaRequest() {
-		super("Sas", "2018-12-03", "DescribeContainerCriteria");
+		super("Sas", "2018-12-03", "DescribeContainerCriteria", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

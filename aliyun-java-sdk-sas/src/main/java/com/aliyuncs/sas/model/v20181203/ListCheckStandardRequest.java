@@ -36,7 +36,7 @@ public class ListCheckStandardRequest extends RpcAcsRequest<ListCheckStandardRes
 
 	private List<String> instanceIdss;
 	public ListCheckStandardRequest() {
-		super("Sas", "2018-12-03", "ListCheckStandard");
+		super("Sas", "2018-12-03", "ListCheckStandard", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

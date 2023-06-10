@@ -27,7 +27,7 @@ public class DescribeWarningExportInfoRequest extends RpcAcsRequest<DescribeWarn
 
 	private Long exportId;
 	public DescribeWarningExportInfoRequest() {
-		super("Sas", "2018-12-03", "DescribeWarningExportInfo");
+		super("Sas", "2018-12-03", "DescribeWarningExportInfo", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

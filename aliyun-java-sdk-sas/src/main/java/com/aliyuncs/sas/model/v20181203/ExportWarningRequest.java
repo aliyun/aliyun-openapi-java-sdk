@@ -55,7 +55,7 @@ public class ExportWarningRequest extends RpcAcsRequest<ExportWarningResponse> {
 
 	private String uuids;
 	public ExportWarningRequest() {
-		super("Sas", "2018-12-03", "ExportWarning");
+		super("Sas", "2018-12-03", "ExportWarning", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

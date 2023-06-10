@@ -31,7 +31,7 @@ public class DescribeDingTalkRequest extends RpcAcsRequest<DescribeDingTalkRespo
 
 	private Integer currentPage;
 	public DescribeDingTalkRequest() {
-		super("Sas", "2018-12-03", "DescribeDingTalk");
+		super("Sas", "2018-12-03", "DescribeDingTalk", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

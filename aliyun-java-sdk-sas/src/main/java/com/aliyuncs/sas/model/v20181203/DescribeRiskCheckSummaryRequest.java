@@ -33,7 +33,7 @@ public class DescribeRiskCheckSummaryRequest extends RpcAcsRequest<DescribeRiskC
 
 	private String resourceDirectoryAccountId;
 	public DescribeRiskCheckSummaryRequest() {
-		super("Sas", "2018-12-03", "DescribeRiskCheckSummary");
+		super("Sas", "2018-12-03", "DescribeRiskCheckSummary", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

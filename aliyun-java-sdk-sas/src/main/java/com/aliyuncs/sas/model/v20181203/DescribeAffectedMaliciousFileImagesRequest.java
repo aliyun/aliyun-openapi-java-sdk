@@ -66,7 +66,7 @@ public class DescribeAffectedMaliciousFileImagesRequest extends RpcAcsRequest<De
 
 	private String repoRegionId;
 	public DescribeAffectedMaliciousFileImagesRequest() {
-		super("Sas", "2018-12-03", "DescribeAffectedMaliciousFileImages");
+		super("Sas", "2018-12-03", "DescribeAffectedMaliciousFileImages", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

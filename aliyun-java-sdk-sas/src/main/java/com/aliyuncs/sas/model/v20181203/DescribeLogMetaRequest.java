@@ -31,7 +31,7 @@ public class DescribeLogMetaRequest extends RpcAcsRequest<DescribeLogMetaRespons
 
 	private String lang;
 	public DescribeLogMetaRequest() {
-		super("Sas", "2018-12-03", "DescribeLogMeta");
+		super("Sas", "2018-12-03", "DescribeLogMeta", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class ModifyAssetImportantRequest extends RpcAcsRequest<ModifyAssetImport
 
 	private String uuidList;
 	public ModifyAssetImportantRequest() {
-		super("Sas", "2018-12-03", "ModifyAssetImportant");
+		super("Sas", "2018-12-03", "ModifyAssetImportant", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

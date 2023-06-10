@@ -33,7 +33,7 @@ public class DescribeImageRepoDetailListRequest extends RpcAcsRequest<DescribeIm
 
 	private Integer currentPage;
 	public DescribeImageRepoDetailListRequest() {
-		super("Sas", "2018-12-03", "DescribeImageRepoDetailList");
+		super("Sas", "2018-12-03", "DescribeImageRepoDetailList", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

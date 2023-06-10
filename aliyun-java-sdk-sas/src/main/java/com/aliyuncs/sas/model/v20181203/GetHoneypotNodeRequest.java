@@ -29,7 +29,7 @@ public class GetHoneypotNodeRequest extends RpcAcsRequest<GetHoneypotNodeRespons
 
 	private String nodeId;
 	public GetHoneypotNodeRequest() {
-		super("Sas", "2018-12-03", "GetHoneypotNode");
+		super("Sas", "2018-12-03", "GetHoneypotNode", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

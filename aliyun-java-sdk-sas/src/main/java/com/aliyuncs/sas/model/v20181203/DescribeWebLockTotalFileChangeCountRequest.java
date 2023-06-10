@@ -25,7 +25,7 @@ import com.aliyuncs.sas.Endpoint;
 public class DescribeWebLockTotalFileChangeCountRequest extends RpcAcsRequest<DescribeWebLockTotalFileChangeCountResponse> {
 	   
 	public DescribeWebLockTotalFileChangeCountRequest() {
-		super("Sas", "2018-12-03", "DescribeWebLockTotalFileChangeCount");
+		super("Sas", "2018-12-03", "DescribeWebLockTotalFileChangeCount", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

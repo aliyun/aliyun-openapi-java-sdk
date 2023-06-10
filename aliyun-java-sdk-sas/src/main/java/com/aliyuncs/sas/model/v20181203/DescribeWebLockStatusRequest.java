@@ -31,7 +31,7 @@ public class DescribeWebLockStatusRequest extends RpcAcsRequest<DescribeWebLockS
 
 	private String lang;
 	public DescribeWebLockStatusRequest() {
-		super("Sas", "2018-12-03", "DescribeWebLockStatus");
+		super("Sas", "2018-12-03", "DescribeWebLockStatus", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

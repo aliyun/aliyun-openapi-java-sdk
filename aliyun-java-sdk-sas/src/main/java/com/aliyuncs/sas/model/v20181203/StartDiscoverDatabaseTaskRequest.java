@@ -25,7 +25,7 @@ import com.aliyuncs.sas.Endpoint;
 public class StartDiscoverDatabaseTaskRequest extends RpcAcsRequest<StartDiscoverDatabaseTaskResponse> {
 	   
 	public StartDiscoverDatabaseTaskRequest() {
-		super("Sas", "2018-12-03", "StartDiscoverDatabaseTask");
+		super("Sas", "2018-12-03", "StartDiscoverDatabaseTask", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

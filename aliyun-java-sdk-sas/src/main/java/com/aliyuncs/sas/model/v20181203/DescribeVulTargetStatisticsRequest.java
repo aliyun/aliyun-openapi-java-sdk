@@ -27,7 +27,7 @@ public class DescribeVulTargetStatisticsRequest extends RpcAcsRequest<DescribeVu
 
 	private String type;
 	public DescribeVulTargetStatisticsRequest() {
-		super("Sas", "2018-12-03", "DescribeVulTargetStatistics");
+		super("Sas", "2018-12-03", "DescribeVulTargetStatistics", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

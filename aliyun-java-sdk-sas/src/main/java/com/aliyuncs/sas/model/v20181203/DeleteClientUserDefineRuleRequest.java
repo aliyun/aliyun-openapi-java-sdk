@@ -28,7 +28,7 @@ public class DeleteClientUserDefineRuleRequest extends RpcAcsRequest<DeleteClien
 
 	private List<Long> idLists;
 	public DeleteClientUserDefineRuleRequest() {
-		super("Sas", "2018-12-03", "DeleteClientUserDefineRule");
+		super("Sas", "2018-12-03", "DeleteClientUserDefineRule", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

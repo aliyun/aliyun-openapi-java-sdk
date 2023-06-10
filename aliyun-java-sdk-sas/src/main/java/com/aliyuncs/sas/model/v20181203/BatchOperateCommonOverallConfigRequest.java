@@ -30,7 +30,7 @@ public class BatchOperateCommonOverallConfigRequest extends RpcAcsRequest<BatchO
 
 	private String config;
 	public BatchOperateCommonOverallConfigRequest() {
-		super("Sas", "2018-12-03", "BatchOperateCommonOverallConfig");
+		super("Sas", "2018-12-03", "BatchOperateCommonOverallConfig", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

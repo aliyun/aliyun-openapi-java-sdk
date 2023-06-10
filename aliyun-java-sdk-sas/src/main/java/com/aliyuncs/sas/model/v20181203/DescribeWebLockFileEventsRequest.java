@@ -39,7 +39,7 @@ public class DescribeWebLockFileEventsRequest extends RpcAcsRequest<DescribeWebL
 
 	private Long tsBegin;
 	public DescribeWebLockFileEventsRequest() {
-		super("Sas", "2018-12-03", "DescribeWebLockFileEvents");
+		super("Sas", "2018-12-03", "DescribeWebLockFileEvents", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

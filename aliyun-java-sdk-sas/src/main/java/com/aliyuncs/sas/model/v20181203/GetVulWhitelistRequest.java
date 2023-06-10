@@ -27,7 +27,7 @@ public class GetVulWhitelistRequest extends RpcAcsRequest<GetVulWhitelistRespons
 
 	private Long vulWhitelistId;
 	public GetVulWhitelistRequest() {
-		super("Sas", "2018-12-03", "GetVulWhitelist");
+		super("Sas", "2018-12-03", "GetVulWhitelist", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

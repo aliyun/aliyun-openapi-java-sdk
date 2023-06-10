@@ -36,7 +36,7 @@ public class IgnoreCheckItemsRequest extends RpcAcsRequest<IgnoreCheckItemsRespo
 
 	private List<CheckAndRiskTypeList> checkAndRiskTypeLists;
 	public IgnoreCheckItemsRequest() {
-		super("Sas", "2018-12-03", "IgnoreCheckItems");
+		super("Sas", "2018-12-03", "IgnoreCheckItems", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

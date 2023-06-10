@@ -27,7 +27,7 @@ public class DescribeBackupClientsRequest extends RpcAcsRequest<DescribeBackupCl
 
 	private String supportRegionId;
 	public DescribeBackupClientsRequest() {
-		super("Sas", "2018-12-03", "DescribeBackupClients");
+		super("Sas", "2018-12-03", "DescribeBackupClients", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

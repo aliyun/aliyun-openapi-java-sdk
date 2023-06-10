@@ -35,7 +35,7 @@ public class DescribeDomainListRequest extends RpcAcsRequest<DescribeDomainListR
 
 	private String fuzzyDomain;
 	public DescribeDomainListRequest() {
-		super("Sas", "2018-12-03", "DescribeDomainList");
+		super("Sas", "2018-12-03", "DescribeDomainList", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

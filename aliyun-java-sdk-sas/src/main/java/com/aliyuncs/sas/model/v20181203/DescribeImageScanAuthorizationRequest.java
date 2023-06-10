@@ -25,7 +25,7 @@ import com.aliyuncs.sas.Endpoint;
 public class DescribeImageScanAuthorizationRequest extends RpcAcsRequest<DescribeImageScanAuthorizationResponse> {
 	   
 	public DescribeImageScanAuthorizationRequest() {
-		super("Sas", "2018-12-03", "DescribeImageScanAuthorization");
+		super("Sas", "2018-12-03", "DescribeImageScanAuthorization", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

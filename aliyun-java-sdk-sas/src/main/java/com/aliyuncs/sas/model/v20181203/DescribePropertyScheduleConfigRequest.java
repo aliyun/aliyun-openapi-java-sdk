@@ -27,7 +27,7 @@ public class DescribePropertyScheduleConfigRequest extends RpcAcsRequest<Describ
 
 	private String type;
 	public DescribePropertyScheduleConfigRequest() {
-		super("Sas", "2018-12-03", "DescribePropertyScheduleConfig");
+		super("Sas", "2018-12-03", "DescribePropertyScheduleConfig", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

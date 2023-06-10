@@ -41,7 +41,7 @@ public class CreateRestoreJobRequest extends RpcAcsRequest<CreateRestoreJobRespo
 
 	private String target;
 	public CreateRestoreJobRequest() {
-		super("Sas", "2018-12-03", "CreateRestoreJob");
+		super("Sas", "2018-12-03", "CreateRestoreJob", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

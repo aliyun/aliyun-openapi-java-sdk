@@ -25,7 +25,7 @@ import com.aliyuncs.sas.Endpoint;
 public class SubmitCheckRequest extends RpcAcsRequest<SubmitCheckResponse> {
 	   
 	public SubmitCheckRequest() {
-		super("Sas", "2018-12-03", "SubmitCheck");
+		super("Sas", "2018-12-03", "SubmitCheck", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

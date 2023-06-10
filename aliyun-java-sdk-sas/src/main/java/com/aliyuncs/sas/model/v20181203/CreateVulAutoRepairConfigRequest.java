@@ -32,7 +32,7 @@ public class CreateVulAutoRepairConfigRequest extends RpcAcsRequest<CreateVulAut
 
 	private List<VulAutoRepairConfigList> vulAutoRepairConfigLists;
 	public CreateVulAutoRepairConfigRequest() {
-		super("Sas", "2018-12-03", "CreateVulAutoRepairConfig");
+		super("Sas", "2018-12-03", "CreateVulAutoRepairConfig", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

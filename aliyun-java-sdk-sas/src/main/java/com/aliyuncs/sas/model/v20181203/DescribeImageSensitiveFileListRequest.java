@@ -45,7 +45,7 @@ public class DescribeImageSensitiveFileListRequest extends RpcAcsRequest<Describ
 
 	private String riskLevel;
 	public DescribeImageSensitiveFileListRequest() {
-		super("Sas", "2018-12-03", "DescribeImageSensitiveFileList");
+		super("Sas", "2018-12-03", "DescribeImageSensitiveFileList", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

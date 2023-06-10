@@ -27,7 +27,7 @@ public class DeleteSuspEventNodeRequest extends RpcAcsRequest<DeleteSuspEventNod
 
 	private Long noteId;
 	public DeleteSuspEventNodeRequest() {
-		super("Sas", "2018-12-03", "DeleteSuspEventNode");
+		super("Sas", "2018-12-03", "DeleteSuspEventNode", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

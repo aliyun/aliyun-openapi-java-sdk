@@ -27,8 +27,10 @@ public class OperationCancelIgnoreSuspEventRequest extends RpcAcsRequest<Operati
 	   
 
 	private List<Long> securityEventIdss;
+
+	private String remark;
 	public OperationCancelIgnoreSuspEventRequest() {
-		super("Sas", "2018-12-03", "OperationCancelIgnoreSuspEvent");
+		super("Sas", "2018-12-03", "OperationCancelIgnoreSuspEvent", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -47,6 +49,17 @@ public class OperationCancelIgnoreSuspEventRequest extends RpcAcsRequest<Operati
 				putQueryParameter("SecurityEventIds." + (i + 1) , securityEventIdss.get(i));
 			}
 		}	
+	}
+
+	public String getRemark() {
+		return this.remark;
+	}
+
+	public void setRemark(String remark) {
+		this.remark = remark;
+		if(remark != null){
+			putQueryParameter("Remark", remark);
+		}
 	}
 
 	@Override

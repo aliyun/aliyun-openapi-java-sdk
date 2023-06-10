@@ -30,7 +30,7 @@ public class JoinWebLockProcessWhiteListRequest extends RpcAcsRequest<JoinWebLoc
 
 	private String uuids;
 	public JoinWebLockProcessWhiteListRequest() {
-		super("Sas", "2018-12-03", "JoinWebLockProcessWhiteList");
+		super("Sas", "2018-12-03", "JoinWebLockProcessWhiteList", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

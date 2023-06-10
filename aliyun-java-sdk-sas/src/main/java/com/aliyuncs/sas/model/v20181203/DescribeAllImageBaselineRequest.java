@@ -27,7 +27,7 @@ public class DescribeAllImageBaselineRequest extends RpcAcsRequest<DescribeAllIm
 
 	private String lang;
 	public DescribeAllImageBaselineRequest() {
-		super("Sas", "2018-12-03", "DescribeAllImageBaseline");
+		super("Sas", "2018-12-03", "DescribeAllImageBaseline", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

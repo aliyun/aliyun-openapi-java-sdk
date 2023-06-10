@@ -27,7 +27,7 @@ public class DescribeCommonTargetConfigRequest extends RpcAcsRequest<DescribeCom
 
 	private String type;
 	public DescribeCommonTargetConfigRequest() {
-		super("Sas", "2018-12-03", "DescribeCommonTargetConfig");
+		super("Sas", "2018-12-03", "DescribeCommonTargetConfig", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class DescribeSuspiciousUUIDConfigRequest extends RpcAcsRequest<DescribeS
 
 	private String type;
 	public DescribeSuspiciousUUIDConfigRequest() {
-		super("Sas", "2018-12-03", "DescribeSuspiciousUUIDConfig");
+		super("Sas", "2018-12-03", "DescribeSuspiciousUUIDConfig", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

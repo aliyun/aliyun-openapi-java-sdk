@@ -43,7 +43,7 @@ public class PublicPreCheckImageScanTaskRequest extends RpcAcsRequest<PublicPreC
 
 	private String repoNames;
 	public PublicPreCheckImageScanTaskRequest() {
-		super("Sas", "2018-12-03", "PublicPreCheckImageScanTask");
+		super("Sas", "2018-12-03", "PublicPreCheckImageScanTask", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

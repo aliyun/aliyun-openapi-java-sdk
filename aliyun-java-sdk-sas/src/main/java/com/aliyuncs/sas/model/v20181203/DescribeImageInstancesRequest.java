@@ -35,7 +35,7 @@ public class DescribeImageInstancesRequest extends RpcAcsRequest<DescribeImageIn
 
 	private Integer currentPage;
 	public DescribeImageInstancesRequest() {
-		super("Sas", "2018-12-03", "DescribeImageInstances");
+		super("Sas", "2018-12-03", "DescribeImageInstances", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -33,7 +33,7 @@ public class GenerateOnceTaskRequest extends RpcAcsRequest<GenerateOnceTaskRespo
 
 	private String taskType;
 	public GenerateOnceTaskRequest() {
-		super("Sas", "2018-12-03", "GenerateOnceTask");
+		super("Sas", "2018-12-03", "GenerateOnceTask", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

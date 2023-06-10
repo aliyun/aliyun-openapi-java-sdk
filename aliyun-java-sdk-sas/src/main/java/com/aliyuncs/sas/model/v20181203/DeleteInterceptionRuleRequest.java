@@ -30,7 +30,7 @@ public class DeleteInterceptionRuleRequest extends RpcAcsRequest<DeleteIntercept
 
 	private List<Long> ruleIdss;
 	public DeleteInterceptionRuleRequest() {
-		super("Sas", "2018-12-03", "DeleteInterceptionRule");
+		super("Sas", "2018-12-03", "DeleteInterceptionRule", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

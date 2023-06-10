@@ -25,7 +25,7 @@ import com.aliyuncs.sas.Endpoint;
 public class GetFileDetectApiInvokeInfoRequest extends RpcAcsRequest<GetFileDetectApiInvokeInfoResponse> {
 	   
 	public GetFileDetectApiInvokeInfoRequest() {
-		super("Sas", "2018-12-03", "GetFileDetectApiInvokeInfo");
+		super("Sas", "2018-12-03", "GetFileDetectApiInvokeInfo", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

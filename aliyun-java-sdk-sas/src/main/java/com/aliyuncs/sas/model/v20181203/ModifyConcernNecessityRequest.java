@@ -27,7 +27,7 @@ public class ModifyConcernNecessityRequest extends RpcAcsRequest<ModifyConcernNe
 
 	private String concernNecessity;
 	public ModifyConcernNecessityRequest() {
-		super("Sas", "2018-12-03", "ModifyConcernNecessity");
+		super("Sas", "2018-12-03", "ModifyConcernNecessity", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

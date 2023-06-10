@@ -27,7 +27,7 @@ public class OpenSensitiveFileScanRequest extends RpcAcsRequest<OpenSensitiveFil
 
 	private String switchOn;
 	public OpenSensitiveFileScanRequest() {
-		super("Sas", "2018-12-03", "OpenSensitiveFileScan");
+		super("Sas", "2018-12-03", "OpenSensitiveFileScan", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

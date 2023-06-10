@@ -29,7 +29,7 @@ public class DescribeRiskTypeRequest extends RpcAcsRequest<DescribeRiskTypeRespo
 
 	private String lang;
 	public DescribeRiskTypeRequest() {
-		super("Sas", "2018-12-03", "DescribeRiskType");
+		super("Sas", "2018-12-03", "DescribeRiskType", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

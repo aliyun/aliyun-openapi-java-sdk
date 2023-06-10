@@ -29,6 +29,8 @@ public class HandleSimilarSecurityEventsRequest extends RpcAcsRequest<HandleSimi
 
 	private Long resourceOwnerId;
 
+	private String remark;
+
 	private String sourceIp;
 
 	private String operationCode;
@@ -37,7 +39,7 @@ public class HandleSimilarSecurityEventsRequest extends RpcAcsRequest<HandleSimi
 
 	private String operationParams;
 	public HandleSimilarSecurityEventsRequest() {
-		super("Sas", "2018-12-03", "HandleSimilarSecurityEvents");
+		super("Sas", "2018-12-03", "HandleSimilarSecurityEvents", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -64,6 +66,17 @@ public class HandleSimilarSecurityEventsRequest extends RpcAcsRequest<HandleSimi
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getRemark() {
+		return this.remark;
+	}
+
+	public void setRemark(String remark) {
+		this.remark = remark;
+		if(remark != null){
+			putQueryParameter("Remark", remark);
 		}
 	}
 

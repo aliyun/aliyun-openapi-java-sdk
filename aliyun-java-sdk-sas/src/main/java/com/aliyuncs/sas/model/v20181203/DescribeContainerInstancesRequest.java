@@ -33,7 +33,7 @@ public class DescribeContainerInstancesRequest extends RpcAcsRequest<DescribeCon
 
 	private Integer currentPage;
 	public DescribeContainerInstancesRequest() {
-		super("Sas", "2018-12-03", "DescribeContainerInstances");
+		super("Sas", "2018-12-03", "DescribeContainerInstances", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class DeleteBackupPolicyRequest extends RpcAcsRequest<DeleteBackupPolicyR
 
 	private String policyVersion;
 	public DeleteBackupPolicyRequest() {
-		super("Sas", "2018-12-03", "DeleteBackupPolicy");
+		super("Sas", "2018-12-03", "DeleteBackupPolicy", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

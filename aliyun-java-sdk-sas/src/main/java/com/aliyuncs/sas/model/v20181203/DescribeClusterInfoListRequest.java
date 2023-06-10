@@ -31,7 +31,7 @@ public class DescribeClusterInfoListRequest extends RpcAcsRequest<DescribeCluste
 
 	private String target;
 	public DescribeClusterInfoListRequest() {
-		super("Sas", "2018-12-03", "DescribeClusterInfoList");
+		super("Sas", "2018-12-03", "DescribeClusterInfoList", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

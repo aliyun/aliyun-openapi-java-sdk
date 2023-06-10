@@ -27,7 +27,7 @@ public class DescribeTaskErrorLogRequest extends RpcAcsRequest<DescribeTaskError
 
 	private String buildTaskId;
 	public DescribeTaskErrorLogRequest() {
-		super("Sas", "2018-12-03", "DescribeTaskErrorLog");
+		super("Sas", "2018-12-03", "DescribeTaskErrorLog", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

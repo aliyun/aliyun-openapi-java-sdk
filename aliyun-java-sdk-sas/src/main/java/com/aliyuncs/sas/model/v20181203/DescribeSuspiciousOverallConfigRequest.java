@@ -29,7 +29,7 @@ public class DescribeSuspiciousOverallConfigRequest extends RpcAcsRequest<Descri
 
 	private String sourceIp;
 	public DescribeSuspiciousOverallConfigRequest() {
-		super("Sas", "2018-12-03", "DescribeSuspiciousOverallConfig");
+		super("Sas", "2018-12-03", "DescribeSuspiciousOverallConfig", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

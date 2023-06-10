@@ -31,7 +31,7 @@ public class DescribeRiskItemTypeRequest extends RpcAcsRequest<DescribeRiskItemT
 
 	private String lang;
 	public DescribeRiskItemTypeRequest() {
-		super("Sas", "2018-12-03", "DescribeRiskItemType");
+		super("Sas", "2018-12-03", "DescribeRiskItemType", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

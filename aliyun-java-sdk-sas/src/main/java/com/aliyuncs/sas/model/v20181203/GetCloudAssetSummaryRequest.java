@@ -25,7 +25,7 @@ import com.aliyuncs.sas.Endpoint;
 public class GetCloudAssetSummaryRequest extends RpcAcsRequest<GetCloudAssetSummaryResponse> {
 	   
 	public GetCloudAssetSummaryRequest() {
-		super("Sas", "2018-12-03", "GetCloudAssetSummary");
+		super("Sas", "2018-12-03", "GetCloudAssetSummary", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

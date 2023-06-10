@@ -27,7 +27,7 @@ public class RefreshContainerAssetsRequest extends RpcAcsRequest<RefreshContaine
 
 	private String assetType;
 	public RefreshContainerAssetsRequest() {
-		super("Sas", "2018-12-03", "RefreshContainerAssets");
+		super("Sas", "2018-12-03", "RefreshContainerAssets", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

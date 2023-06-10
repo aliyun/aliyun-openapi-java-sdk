@@ -36,7 +36,7 @@ public class StartBaselineSecurityCheckRequest extends RpcAcsRequest<StartBaseli
 
 	private List<Long> itemIdss;
 	public StartBaselineSecurityCheckRequest() {
-		super("Sas", "2018-12-03", "StartBaselineSecurityCheck");
+		super("Sas", "2018-12-03", "StartBaselineSecurityCheck", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

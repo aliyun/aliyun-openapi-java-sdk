@@ -31,7 +31,7 @@ public class ModifyWebPathRequest extends RpcAcsRequest<ModifyWebPathResponse> {
 
 	private String config;
 	public ModifyWebPathRequest() {
-		super("Sas", "2018-12-03", "ModifyWebPath");
+		super("Sas", "2018-12-03", "ModifyWebPath", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

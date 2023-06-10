@@ -27,7 +27,7 @@ public class ListAvailableHoneypotRequest extends RpcAcsRequest<ListAvailableHon
 
 	private String nodeId;
 	public ListAvailableHoneypotRequest() {
-		super("Sas", "2018-12-03", "ListAvailableHoneypot");
+		super("Sas", "2018-12-03", "ListAvailableHoneypot", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

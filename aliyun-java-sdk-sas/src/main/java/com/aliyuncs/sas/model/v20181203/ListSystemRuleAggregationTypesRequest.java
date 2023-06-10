@@ -27,7 +27,7 @@ public class ListSystemRuleAggregationTypesRequest extends RpcAcsRequest<ListSys
 
 	private String lang;
 	public ListSystemRuleAggregationTypesRequest() {
-		super("Sas", "2018-12-03", "ListSystemRuleAggregationTypes");
+		super("Sas", "2018-12-03", "ListSystemRuleAggregationTypes", "sas");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class DeleteInterceptionTargetRequest extends RpcAcsRequest<DeleteInterce
 
 	private String targetIds;
 	public DeleteInterceptionTargetRequest() {
-		super("Sas", "2018-12-03", "DeleteInterceptionTarget");
+		super("Sas", "2018-12-03", "DeleteInterceptionTarget", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

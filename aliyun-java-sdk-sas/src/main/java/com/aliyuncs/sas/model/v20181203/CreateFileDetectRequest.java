@@ -35,7 +35,7 @@ public class CreateFileDetectRequest extends RpcAcsRequest<CreateFileDetectRespo
 
 	private String downloadUrl;
 	public CreateFileDetectRequest() {
-		super("Sas", "2018-12-03", "CreateFileDetect");
+		super("Sas", "2018-12-03", "CreateFileDetect", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -37,7 +37,7 @@ public class ListImageRiskRequest extends RpcAcsRequest<ListImageRiskResponse> {
 
 	private String namespace;
 	public ListImageRiskRequest() {
-		super("Sas", "2018-12-03", "ListImageRisk");
+		super("Sas", "2018-12-03", "ListImageRisk", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

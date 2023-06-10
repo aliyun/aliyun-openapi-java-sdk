@@ -35,7 +35,7 @@ public class ListInterceptionRulePageRequest extends RpcAcsRequest<ListIntercept
 
 	private String clusterId;
 	public ListInterceptionRulePageRequest() {
-		super("Sas", "2018-12-03", "ListInterceptionRulePage");
+		super("Sas", "2018-12-03", "ListInterceptionRulePage", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

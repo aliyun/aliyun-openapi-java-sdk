@@ -29,7 +29,7 @@ public class ListQueryRaspAppInfoRequest extends RpcAcsRequest<ListQueryRaspAppI
 
 	private String uuids;
 	public ListQueryRaspAppInfoRequest() {
-		super("Sas", "2018-12-03", "ListQueryRaspAppInfo");
+		super("Sas", "2018-12-03", "ListQueryRaspAppInfo", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

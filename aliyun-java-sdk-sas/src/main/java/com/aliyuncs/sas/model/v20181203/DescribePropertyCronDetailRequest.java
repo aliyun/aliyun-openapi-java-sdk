@@ -39,7 +39,7 @@ public class DescribePropertyCronDetailRequest extends RpcAcsRequest<DescribePro
 
 	private String user;
 	public DescribePropertyCronDetailRequest() {
-		super("Sas", "2018-12-03", "DescribePropertyCronDetail");
+		super("Sas", "2018-12-03", "DescribePropertyCronDetail", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

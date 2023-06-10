@@ -35,7 +35,7 @@ public class DescribeBackupFilesRequest extends RpcAcsRequest<DescribeBackupFile
 
 	private String currentPage;
 	public DescribeBackupFilesRequest() {
-		super("Sas", "2018-12-03", "DescribeBackupFiles");
+		super("Sas", "2018-12-03", "DescribeBackupFiles", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

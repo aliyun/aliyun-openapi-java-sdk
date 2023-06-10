@@ -31,7 +31,7 @@ public class DescribePropertyTypeScaItemRequest extends RpcAcsRequest<DescribePr
 
 	private Integer currentPage;
 	public DescribePropertyTypeScaItemRequest() {
-		super("Sas", "2018-12-03", "DescribePropertyTypeScaItem");
+		super("Sas", "2018-12-03", "DescribePropertyTypeScaItem", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

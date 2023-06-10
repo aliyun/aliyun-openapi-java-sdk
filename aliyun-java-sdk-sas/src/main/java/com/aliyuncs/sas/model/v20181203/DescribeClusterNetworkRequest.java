@@ -29,7 +29,7 @@ public class DescribeClusterNetworkRequest extends RpcAcsRequest<DescribeCluster
 
 	private Long startTime;
 	public DescribeClusterNetworkRequest() {
-		super("Sas", "2018-12-03", "DescribeClusterNetwork");
+		super("Sas", "2018-12-03", "DescribeClusterNetwork", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

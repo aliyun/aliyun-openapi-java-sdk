@@ -27,7 +27,7 @@ public class GetClusterRuleSummaryRequest extends RpcAcsRequest<GetClusterRuleSu
 
 	private String clusterId;
 	public GetClusterRuleSummaryRequest() {
-		super("Sas", "2018-12-03", "GetClusterRuleSummary");
+		super("Sas", "2018-12-03", "GetClusterRuleSummary", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

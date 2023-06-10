@@ -27,7 +27,7 @@ public class DescribeCheckEcsWarningsRequest extends RpcAcsRequest<DescribeCheck
 
 	private String sourceIp;
 	public DescribeCheckEcsWarningsRequest() {
-		super("Sas", "2018-12-03", "DescribeCheckEcsWarnings");
+		super("Sas", "2018-12-03", "DescribeCheckEcsWarnings", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class DescribeImageLatestScanTaskRequest extends RpcAcsRequest<DescribeIm
 
 	private String digest;
 	public DescribeImageLatestScanTaskRequest() {
-		super("Sas", "2018-12-03", "DescribeImageLatestScanTask");
+		super("Sas", "2018-12-03", "DescribeImageLatestScanTask", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

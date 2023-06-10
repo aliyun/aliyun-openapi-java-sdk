@@ -37,7 +37,7 @@ public class DisableBruteForceRecordRequest extends RpcAcsRequest<DisableBruteFo
 
 	private String port;
 	public DisableBruteForceRecordRequest() {
-		super("Sas", "2018-12-03", "DisableBruteForceRecord");
+		super("Sas", "2018-12-03", "DisableBruteForceRecord", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

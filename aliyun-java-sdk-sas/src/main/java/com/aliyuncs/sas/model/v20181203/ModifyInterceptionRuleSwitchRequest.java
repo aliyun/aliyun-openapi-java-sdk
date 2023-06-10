@@ -31,7 +31,7 @@ public class ModifyInterceptionRuleSwitchRequest extends RpcAcsRequest<ModifyInt
 
 	private Integer ruleSwitch;
 	public ModifyInterceptionRuleSwitchRequest() {
-		super("Sas", "2018-12-03", "ModifyInterceptionRuleSwitch");
+		super("Sas", "2018-12-03", "ModifyInterceptionRuleSwitch", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
