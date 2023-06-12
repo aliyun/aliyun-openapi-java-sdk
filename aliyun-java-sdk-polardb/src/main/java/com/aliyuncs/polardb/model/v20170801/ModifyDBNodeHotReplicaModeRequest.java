@@ -22,12 +22,12 @@ import com.aliyuncs.polardb.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeDBClusterParametersRequest extends RpcAcsRequest<DescribeDBClusterParametersResponse> {
+public class ModifyDBNodeHotReplicaModeRequest extends RpcAcsRequest<ModifyDBNodeHotReplicaModeResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String describeType;
+	private String dBNodeId;
 
 	private String resourceOwnerAccount;
 
@@ -36,8 +36,10 @@ public class DescribeDBClusterParametersRequest extends RpcAcsRequest<DescribeDB
 	private String ownerAccount;
 
 	private Long ownerId;
-	public DescribeDBClusterParametersRequest() {
-		super("polardb", "2017-08-01", "DescribeDBClusterParameters", "polardb");
+
+	private String hotReplicaMode;
+	public ModifyDBNodeHotReplicaModeRequest() {
+		super("polardb", "2017-08-01", "ModifyDBNodeHotReplicaMode", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -56,14 +58,14 @@ public class DescribeDBClusterParametersRequest extends RpcAcsRequest<DescribeDB
 		}
 	}
 
-	public String getDescribeType() {
-		return this.describeType;
+	public String getDBNodeId() {
+		return this.dBNodeId;
 	}
 
-	public void setDescribeType(String describeType) {
-		this.describeType = describeType;
-		if(describeType != null){
-			putQueryParameter("DescribeType", describeType);
+	public void setDBNodeId(String dBNodeId) {
+		this.dBNodeId = dBNodeId;
+		if(dBNodeId != null){
+			putQueryParameter("DBNodeId", dBNodeId);
 		}
 	}
 
@@ -111,9 +113,20 @@ public class DescribeDBClusterParametersRequest extends RpcAcsRequest<DescribeDB
 		}
 	}
 
+	public String getHotReplicaMode() {
+		return this.hotReplicaMode;
+	}
+
+	public void setHotReplicaMode(String hotReplicaMode) {
+		this.hotReplicaMode = hotReplicaMode;
+		if(hotReplicaMode != null){
+			putQueryParameter("HotReplicaMode", hotReplicaMode);
+		}
+	}
+
 	@Override
-	public Class<DescribeDBClusterParametersResponse> getResponseClass() {
-		return DescribeDBClusterParametersResponse.class;
+	public Class<ModifyDBNodeHotReplicaModeResponse> getResponseClass() {
+		return ModifyDBNodeHotReplicaModeResponse.class;
 	}
 
 }

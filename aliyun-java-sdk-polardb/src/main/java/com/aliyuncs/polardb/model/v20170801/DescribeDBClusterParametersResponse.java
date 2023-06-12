@@ -33,7 +33,13 @@ public class DescribeDBClusterParametersResponse extends AcsResponse {
 
 	private String engine;
 
+	private String dBClusterId;
+
+	private String parameterNumbers;
+
 	private List<Parameter> runningParameters;
+
+	private List<ParametersItem> parameters;
 
 	public String getDBVersion() {
 		return this.dBVersion;
@@ -67,12 +73,36 @@ public class DescribeDBClusterParametersResponse extends AcsResponse {
 		this.engine = engine;
 	}
 
+	public String getDBClusterId() {
+		return this.dBClusterId;
+	}
+
+	public void setDBClusterId(String dBClusterId) {
+		this.dBClusterId = dBClusterId;
+	}
+
+	public String getParameterNumbers() {
+		return this.parameterNumbers;
+	}
+
+	public void setParameterNumbers(String parameterNumbers) {
+		this.parameterNumbers = parameterNumbers;
+	}
+
 	public List<Parameter> getRunningParameters() {
 		return this.runningParameters;
 	}
 
 	public void setRunningParameters(List<Parameter> runningParameters) {
 		this.runningParameters = runningParameters;
+	}
+
+	public List<ParametersItem> getParameters() {
+		return this.parameters;
+	}
+
+	public void setParameters(List<ParametersItem> parameters) {
+		this.parameters = parameters;
 	}
 
 	public static class Parameter {
@@ -195,6 +225,99 @@ public class DescribeDBClusterParametersResponse extends AcsResponse {
 
 		public void setFactor(String factor) {
 			this.factor = factor;
+		}
+	}
+
+	public static class ParametersItem {
+
+		private String rdsParameterName;
+
+		private String rdsParameterValue;
+
+		private String rdsParameterOptional;
+
+		private String distParameterName;
+
+		private String distParameterValue;
+
+		private String distParameterOptional;
+
+		private String isEqual;
+
+		private String distParameterDescription;
+
+		private String rdsParameterDescription;
+
+		public String getRdsParameterName() {
+			return this.rdsParameterName;
+		}
+
+		public void setRdsParameterName(String rdsParameterName) {
+			this.rdsParameterName = rdsParameterName;
+		}
+
+		public String getRdsParameterValue() {
+			return this.rdsParameterValue;
+		}
+
+		public void setRdsParameterValue(String rdsParameterValue) {
+			this.rdsParameterValue = rdsParameterValue;
+		}
+
+		public String getRdsParameterOptional() {
+			return this.rdsParameterOptional;
+		}
+
+		public void setRdsParameterOptional(String rdsParameterOptional) {
+			this.rdsParameterOptional = rdsParameterOptional;
+		}
+
+		public String getDistParameterName() {
+			return this.distParameterName;
+		}
+
+		public void setDistParameterName(String distParameterName) {
+			this.distParameterName = distParameterName;
+		}
+
+		public String getDistParameterValue() {
+			return this.distParameterValue;
+		}
+
+		public void setDistParameterValue(String distParameterValue) {
+			this.distParameterValue = distParameterValue;
+		}
+
+		public String getDistParameterOptional() {
+			return this.distParameterOptional;
+		}
+
+		public void setDistParameterOptional(String distParameterOptional) {
+			this.distParameterOptional = distParameterOptional;
+		}
+
+		public String getIsEqual() {
+			return this.isEqual;
+		}
+
+		public void setIsEqual(String isEqual) {
+			this.isEqual = isEqual;
+		}
+
+		public String getDistParameterDescription() {
+			return this.distParameterDescription;
+		}
+
+		public void setDistParameterDescription(String distParameterDescription) {
+			this.distParameterDescription = distParameterDescription;
+		}
+
+		public String getRdsParameterDescription() {
+			return this.rdsParameterDescription;
+		}
+
+		public void setRdsParameterDescription(String rdsParameterDescription) {
+			this.rdsParameterDescription = rdsParameterDescription;
 		}
 	}
 

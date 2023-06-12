@@ -40,6 +40,8 @@ public class DescribeBackupsResponseUnmarshaller {
 			backup.setBackupStatus(_ctx.stringValue("DescribeBackupsResponse.Items["+ i +"].BackupStatus"));
 			backup.setBackupType(_ctx.stringValue("DescribeBackupsResponse.Items["+ i +"].BackupType"));
 			backup.setBackupStartTime(_ctx.stringValue("DescribeBackupsResponse.Items["+ i +"].BackupStartTime"));
+			backup.setExpectExpireTime(_ctx.stringValue("DescribeBackupsResponse.Items["+ i +"].ExpectExpireTime"));
+			backup.setExpectExpireType(_ctx.stringValue("DescribeBackupsResponse.Items["+ i +"].ExpectExpireType"));
 			backup.setIsAvail(_ctx.stringValue("DescribeBackupsResponse.Items["+ i +"].IsAvail"));
 			backup.setBackupEndTime(_ctx.stringValue("DescribeBackupsResponse.Items["+ i +"].BackupEndTime"));
 			backup.setBackupId(_ctx.stringValue("DescribeBackupsResponse.Items["+ i +"].BackupId"));

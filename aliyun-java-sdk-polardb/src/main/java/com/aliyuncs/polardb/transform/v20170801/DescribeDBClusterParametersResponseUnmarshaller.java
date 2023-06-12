@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.polardb.model.v20170801.DescribeDBClusterParametersResponse;
 import com.aliyuncs.polardb.model.v20170801.DescribeDBClusterParametersResponse.Parameter;
+import com.aliyuncs.polardb.model.v20170801.DescribeDBClusterParametersResponse.ParametersItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -30,6 +31,8 @@ public class DescribeDBClusterParametersResponseUnmarshaller {
 		describeDBClusterParametersResponse.setDBVersion(_ctx.stringValue("DescribeDBClusterParametersResponse.DBVersion"));
 		describeDBClusterParametersResponse.setDBType(_ctx.stringValue("DescribeDBClusterParametersResponse.DBType"));
 		describeDBClusterParametersResponse.setEngine(_ctx.stringValue("DescribeDBClusterParametersResponse.Engine"));
+		describeDBClusterParametersResponse.setDBClusterId(_ctx.stringValue("DescribeDBClusterParametersResponse.DBClusterId"));
+		describeDBClusterParametersResponse.setParameterNumbers(_ctx.stringValue("DescribeDBClusterParametersResponse.ParameterNumbers"));
 
 		List<Parameter> runningParameters = new ArrayList<Parameter>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDBClusterParametersResponse.RunningParameters.Length"); i++) {
@@ -50,6 +53,23 @@ public class DescribeDBClusterParametersResponseUnmarshaller {
 			runningParameters.add(parameter);
 		}
 		describeDBClusterParametersResponse.setRunningParameters(runningParameters);
+
+		List<ParametersItem> parameters = new ArrayList<ParametersItem>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeDBClusterParametersResponse.Parameters.Length"); i++) {
+			ParametersItem parametersItem = new ParametersItem();
+			parametersItem.setRdsParameterName(_ctx.stringValue("DescribeDBClusterParametersResponse.Parameters["+ i +"].rdsParameterName"));
+			parametersItem.setRdsParameterValue(_ctx.stringValue("DescribeDBClusterParametersResponse.Parameters["+ i +"].rdsParameterValue"));
+			parametersItem.setRdsParameterOptional(_ctx.stringValue("DescribeDBClusterParametersResponse.Parameters["+ i +"].rdsParameterOptional"));
+			parametersItem.setDistParameterName(_ctx.stringValue("DescribeDBClusterParametersResponse.Parameters["+ i +"].distParameterName"));
+			parametersItem.setDistParameterValue(_ctx.stringValue("DescribeDBClusterParametersResponse.Parameters["+ i +"].distParameterValue"));
+			parametersItem.setDistParameterOptional(_ctx.stringValue("DescribeDBClusterParametersResponse.Parameters["+ i +"].distParameterOptional"));
+			parametersItem.setIsEqual(_ctx.stringValue("DescribeDBClusterParametersResponse.Parameters["+ i +"].IsEqual"));
+			parametersItem.setDistParameterDescription(_ctx.stringValue("DescribeDBClusterParametersResponse.Parameters["+ i +"].distParameterDescription"));
+			parametersItem.setRdsParameterDescription(_ctx.stringValue("DescribeDBClusterParametersResponse.Parameters["+ i +"].rdsParameterDescription"));
+
+			parameters.add(parametersItem);
+		}
+		describeDBClusterParametersResponse.setParameters(parameters);
 	 
 	 	return describeDBClusterParametersResponse;
 	}

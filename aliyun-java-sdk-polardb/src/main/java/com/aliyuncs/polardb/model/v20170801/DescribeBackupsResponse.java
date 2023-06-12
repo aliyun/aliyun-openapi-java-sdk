@@ -89,6 +89,10 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 		private String backupStartTime;
 
+		private String expectExpireTime;
+
+		private String expectExpireType;
+
 		private String isAvail;
 
 		private String backupEndTime;
@@ -149,6 +153,22 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 		public void setBackupStartTime(String backupStartTime) {
 			this.backupStartTime = backupStartTime;
+		}
+
+		public String getExpectExpireTime() {
+			return this.expectExpireTime;
+		}
+
+		public void setExpectExpireTime(String expectExpireTime) {
+			this.expectExpireTime = expectExpireTime;
+		}
+
+		public String getExpectExpireType() {
+			return this.expectExpireType;
+		}
+
+		public void setExpectExpireType(String expectExpireType) {
+			this.expectExpireType = expectExpireType;
 		}
 
 		public String getIsAvail() {

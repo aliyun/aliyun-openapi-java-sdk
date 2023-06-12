@@ -1,3 +1,6 @@
+2023-06-12 Version: 1.8.30
+- Associate OpenAPI Error Code.
+
 2023-05-25 Version: 1.8.29
 - CreateDBCluster support xengine and binlog feature.
 
