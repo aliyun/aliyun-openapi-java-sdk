@@ -12,17 +12,17 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.dataworks_public.model.v20180601;
+package com.aliyuncs.dataworks_public.model.v20200518;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.dataworks_public.transform.v20180601.DeleteFileResponseUnmarshaller;
+import com.aliyuncs.dataworks_public.transform.v20200518.DeleteLineageRelationResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DeleteFileResponse extends AcsResponse {
+public class DeleteLineageRelationResponse extends AcsResponse {
 
 	private Integer httpStatusCode;
 
@@ -30,9 +30,11 @@ public class DeleteFileResponse extends AcsResponse {
 
 	private String requestId;
 
+	private Boolean success;
+
 	private String errorCode;
 
-	private Boolean success;
+	private Boolean status;
 
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
@@ -58,14 +60,6 @@ public class DeleteFileResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
-	}
-
 	public Boolean getSuccess() {
 		return this.success;
 	}
@@ -74,9 +68,25 @@ public class DeleteFileResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
+	public Boolean getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(Boolean status) {
+		this.status = status;
+	}
+
 	@Override
-	public DeleteFileResponse getInstance(UnmarshallerContext context) {
-		return	DeleteFileResponseUnmarshaller.unmarshall(this, context);
+	public DeleteLineageRelationResponse getInstance(UnmarshallerContext context) {
+		return	DeleteLineageRelationResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
