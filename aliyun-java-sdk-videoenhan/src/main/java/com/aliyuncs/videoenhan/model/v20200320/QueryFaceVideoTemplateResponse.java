@@ -89,6 +89,8 @@ public class QueryFaceVideoTemplateResponse extends AcsResponse {
 
 			private String templateURL;
 
+			private List<FaceInfosItem> faceInfos;
+
 			public String getCreateTime() {
 				return this.createTime;
 			}
@@ -127,6 +129,37 @@ public class QueryFaceVideoTemplateResponse extends AcsResponse {
 
 			public void setTemplateURL(String templateURL) {
 				this.templateURL = templateURL;
+			}
+
+			public List<FaceInfosItem> getFaceInfos() {
+				return this.faceInfos;
+			}
+
+			public void setFaceInfos(List<FaceInfosItem> faceInfos) {
+				this.faceInfos = faceInfos;
+			}
+
+			public static class FaceInfosItem {
+
+				private String templateFaceID;
+
+				private String templateFaceURL;
+
+				public String getTemplateFaceID() {
+					return this.templateFaceID;
+				}
+
+				public void setTemplateFaceID(String templateFaceID) {
+					this.templateFaceID = templateFaceID;
+				}
+
+				public String getTemplateFaceURL() {
+					return this.templateFaceURL;
+				}
+
+				public void setTemplateFaceURL(String templateFaceURL) {
+					this.templateFaceURL = templateFaceURL;
+				}
 			}
 		}
 	}

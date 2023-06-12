@@ -14,6 +14,7 @@
 
 package com.aliyuncs.videoenhan.model.v20200320;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.videoenhan.transform.v20200320.AddFaceVideoTemplateResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -68,12 +69,45 @@ public class AddFaceVideoTemplateResponse extends AcsResponse {
 
 		private String templateId;
 
+		private List<FaceInfosItem> faceInfos;
+
 		public String getTemplateId() {
 			return this.templateId;
 		}
 
 		public void setTemplateId(String templateId) {
 			this.templateId = templateId;
+		}
+
+		public List<FaceInfosItem> getFaceInfos() {
+			return this.faceInfos;
+		}
+
+		public void setFaceInfos(List<FaceInfosItem> faceInfos) {
+			this.faceInfos = faceInfos;
+		}
+
+		public static class FaceInfosItem {
+
+			private String templateFaceID;
+
+			private String templateFaceURL;
+
+			public String getTemplateFaceID() {
+				return this.templateFaceID;
+			}
+
+			public void setTemplateFaceID(String templateFaceID) {
+				this.templateFaceID = templateFaceID;
+			}
+
+			public String getTemplateFaceURL() {
+				return this.templateFaceURL;
+			}
+
+			public void setTemplateFaceURL(String templateFaceURL) {
+				this.templateFaceURL = templateFaceURL;
+			}
 		}
 	}
 
