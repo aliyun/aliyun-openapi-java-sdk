@@ -1,3 +1,6 @@
+2023-06-13 Version: 4.24.64
+- CreateAutoProvisioningGroup support NetworkInterface.
+
 2023-05-25 Version: 4.24.63
 - DescribeDemands add PrivatePoolId.
 

@@ -37,6 +37,7 @@ public class CreateAutoProvisioningGroupResponseUnmarshaller {
 			launchResult.setInstanceType(_ctx.stringValue("CreateAutoProvisioningGroupResponse.LaunchResults["+ i +"].InstanceType"));
 			launchResult.setErrorCode(_ctx.stringValue("CreateAutoProvisioningGroupResponse.LaunchResults["+ i +"].ErrorCode"));
 			launchResult.setSpotStrategy(_ctx.stringValue("CreateAutoProvisioningGroupResponse.LaunchResults["+ i +"].SpotStrategy"));
+			launchResult.setAmount(_ctx.integerValue("CreateAutoProvisioningGroupResponse.LaunchResults["+ i +"].Amount"));
 
 			List<String> instanceIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("CreateAutoProvisioningGroupResponse.LaunchResults["+ i +"].InstanceIds.Length"); j++) {

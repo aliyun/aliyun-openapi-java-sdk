@@ -667,6 +667,11 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 					}
 				}
 				putQueryParameter("LaunchTemplateConfig." + (depth1 + 1) + ".BurstablePerformance" , launchTemplateConfigs.get(depth1).getBurstablePerformance());
+				if (launchTemplateConfigs.get(depth1).getSecondaryNetworkInterfaces() != null) {
+					for (int depth2 = 0; depth2 < launchTemplateConfigs.get(depth1).getSecondaryNetworkInterfaces().size(); depth2++) {
+						putQueryParameter("LaunchTemplateConfig." + (depth1 + 1) + ".SecondaryNetworkInterface." + (depth2 + 1) + ".VSwitchId" , launchTemplateConfigs.get(depth1).getSecondaryNetworkInterfaces().get(depth2).getVSwitchId());
+					}
+				}
 			}
 		}	
 	}
@@ -1093,6 +1098,8 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 
 		private String burstablePerformance;
 
+		private List<SecondaryNetworkInterface> secondaryNetworkInterfaces;
+
 		public String getVSwitchId() {
 			return this.vSwitchId;
 		}
@@ -1187,6 +1194,27 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 
 		public void setBurstablePerformance(String burstablePerformance) {
 			this.burstablePerformance = burstablePerformance;
+		}
+
+		public List<SecondaryNetworkInterface> getSecondaryNetworkInterfaces() {
+			return this.secondaryNetworkInterfaces;
+		}
+
+		public void setSecondaryNetworkInterfaces(List<SecondaryNetworkInterface> secondaryNetworkInterfaces) {
+			this.secondaryNetworkInterfaces = secondaryNetworkInterfaces;
+		}
+
+		public static class SecondaryNetworkInterface {
+
+			private String vSwitchId;
+
+			public String getVSwitchId() {
+				return this.vSwitchId;
+			}
+
+			public void setVSwitchId(String vSwitchId) {
+				this.vSwitchId = vSwitchId;
+			}
 		}
 	}
 

@@ -67,6 +67,8 @@ public class CreateAutoProvisioningGroupResponse extends AcsResponse {
 
 		private String spotStrategy;
 
+		private Integer amount;
+
 		private List<String> instanceIds;
 
 		public String getZoneId() {
@@ -107,6 +109,14 @@ public class CreateAutoProvisioningGroupResponse extends AcsResponse {
 
 		public void setSpotStrategy(String spotStrategy) {
 			this.spotStrategy = spotStrategy;
+		}
+
+		public Integer getAmount() {
+			return this.amount;
+		}
+
+		public void setAmount(Integer amount) {
+			this.amount = amount;
 		}
 
 		public List<String> getInstanceIds() {
