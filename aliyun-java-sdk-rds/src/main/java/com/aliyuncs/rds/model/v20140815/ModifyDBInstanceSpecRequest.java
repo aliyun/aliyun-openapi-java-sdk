@@ -60,6 +60,8 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 
 	private Long usedTime;
 
+	private Boolean burstingEnabled;
+
 	private String dBInstanceClass;
 
 	private String zoneId;
@@ -249,6 +251,17 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 		this.usedTime = usedTime;
 		if(usedTime != null){
 			putQueryParameter("UsedTime", usedTime.toString());
+		}
+	}
+
+	public Boolean getBurstingEnabled() {
+		return this.burstingEnabled;
+	}
+
+	public void setBurstingEnabled(Boolean burstingEnabled) {
+		this.burstingEnabled = burstingEnabled;
+		if(burstingEnabled != null){
+			putQueryParameter("BurstingEnabled", burstingEnabled.toString());
 		}
 	}
 
