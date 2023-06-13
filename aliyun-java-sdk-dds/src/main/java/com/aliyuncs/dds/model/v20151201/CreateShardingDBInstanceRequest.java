@@ -47,6 +47,8 @@ public class CreateShardingDBInstanceRequest extends RpcAcsRequest<CreateShardin
 
 	private Integer period;
 
+	private String encryptionKey;
+
 	private List<ConfigServer> configServers;
 
 	private Long ownerId;
@@ -78,6 +80,8 @@ public class CreateShardingDBInstanceRequest extends RpcAcsRequest<CreateShardin
 	private String ownerAccount;
 
 	private String accountPassword;
+
+	private Boolean encrypted;
 
 	private String vpcId;
 
@@ -211,6 +215,17 @@ public class CreateShardingDBInstanceRequest extends RpcAcsRequest<CreateShardin
 		this.period = period;
 		if(period != null){
 			putQueryParameter("Period", period.toString());
+		}
+	}
+
+	public String getEncryptionKey() {
+		return this.encryptionKey;
+	}
+
+	public void setEncryptionKey(String encryptionKey) {
+		this.encryptionKey = encryptionKey;
+		if(encryptionKey != null){
+			putQueryParameter("EncryptionKey", encryptionKey);
 		}
 	}
 
@@ -392,6 +407,17 @@ public class CreateShardingDBInstanceRequest extends RpcAcsRequest<CreateShardin
 		this.accountPassword = accountPassword;
 		if(accountPassword != null){
 			putQueryParameter("AccountPassword", accountPassword);
+		}
+	}
+
+	public Boolean getEncrypted() {
+		return this.encrypted;
+	}
+
+	public void setEncrypted(Boolean encrypted) {
+		this.encrypted = encrypted;
+		if(encrypted != null){
+			putQueryParameter("Encrypted", encrypted.toString());
 		}
 	}
 

@@ -52,6 +52,8 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 
 	private String backupId;
 
+	private String encryptionKey;
+
 	private Long ownerId;
 
 	private String dBInstanceClass;
@@ -89,6 +91,8 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 	private String clusterId;
 
 	private String accountPassword;
+
+	private Boolean encrypted;
 
 	private String vpcId;
 
@@ -249,6 +253,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.backupId = backupId;
 		if(backupId != null){
 			putQueryParameter("BackupId", backupId);
+		}
+	}
+
+	public String getEncryptionKey() {
+		return this.encryptionKey;
+	}
+
+	public void setEncryptionKey(String encryptionKey) {
+		this.encryptionKey = encryptionKey;
+		if(encryptionKey != null){
+			putQueryParameter("EncryptionKey", encryptionKey);
 		}
 	}
 
@@ -458,6 +473,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.accountPassword = accountPassword;
 		if(accountPassword != null){
 			putQueryParameter("AccountPassword", accountPassword);
+		}
+	}
+
+	public Boolean getEncrypted() {
+		return this.encrypted;
+	}
+
+	public void setEncrypted(Boolean encrypted) {
+		this.encrypted = encrypted;
+		if(encrypted != null){
+			putQueryParameter("Encrypted", encrypted.toString());
 		}
 	}
 

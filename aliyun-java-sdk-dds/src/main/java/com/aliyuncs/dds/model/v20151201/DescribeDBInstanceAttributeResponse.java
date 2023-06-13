@@ -131,6 +131,10 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		private String dBInstanceOrderStatus;
 
+		private Boolean encrypted;
+
+		private String encryptionKey;
+
 		private List<ReplicaSet> replicaSets;
 
 		private List<Tag> tags;
@@ -477,6 +481,22 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		public void setDBInstanceOrderStatus(String dBInstanceOrderStatus) {
 			this.dBInstanceOrderStatus = dBInstanceOrderStatus;
+		}
+
+		public Boolean getEncrypted() {
+			return this.encrypted;
+		}
+
+		public void setEncrypted(Boolean encrypted) {
+			this.encrypted = encrypted;
+		}
+
+		public String getEncryptionKey() {
+			return this.encryptionKey;
+		}
+
+		public void setEncryptionKey(String encryptionKey) {
+			this.encryptionKey = encryptionKey;
 		}
 
 		public List<ReplicaSet> getReplicaSets() {

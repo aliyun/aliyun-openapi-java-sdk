@@ -79,6 +79,8 @@ public class DescribeDBInstanceAttributeResponseUnmarshaller {
 			dBInstance.setDestroyTime(_ctx.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].DestroyTime"));
 			dBInstance.setPaymentType(_ctx.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].PaymentType"));
 			dBInstance.setDBInstanceOrderStatus(_ctx.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].DBInstanceOrderStatus"));
+			dBInstance.setEncrypted(_ctx.booleanValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].Encrypted"));
+			dBInstance.setEncryptionKey(_ctx.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].EncryptionKey"));
 
 			List<ReplicaSet> replicaSets = new ArrayList<ReplicaSet>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].ReplicaSets.Length"); j++) {
