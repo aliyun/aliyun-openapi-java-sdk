@@ -113,6 +113,10 @@ public class ListAcceleratorsResponse extends AcsResponse {
 
 		private String crossBorderMode;
 
+		private Boolean crossBorderStatus;
+
+		private String upgradableStatus;
+
 		private List<TagsItem> tags;
 
 		private BasicBandwidthPackage basicBandwidthPackage;
@@ -263,6 +267,22 @@ public class ListAcceleratorsResponse extends AcsResponse {
 
 		public void setCrossBorderMode(String crossBorderMode) {
 			this.crossBorderMode = crossBorderMode;
+		}
+
+		public Boolean getCrossBorderStatus() {
+			return this.crossBorderStatus;
+		}
+
+		public void setCrossBorderStatus(Boolean crossBorderStatus) {
+			this.crossBorderStatus = crossBorderStatus;
+		}
+
+		public String getUpgradableStatus() {
+			return this.upgradableStatus;
+		}
+
+		public void setUpgradableStatus(String upgradableStatus) {
+			this.upgradableStatus = upgradableStatus;
 		}
 
 		public List<TagsItem> getTags() {

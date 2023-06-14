@@ -22,10 +22,10 @@ import com.aliyuncs.ga.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryCrossPrivatePermissionRequest extends RpcAcsRequest<QueryCrossPrivatePermissionResponse> {
+public class QueryCrossBorderApprovalStatusRequest extends RpcAcsRequest<QueryCrossBorderApprovalStatusResponse> {
 	   
-	public QueryCrossPrivatePermissionRequest() {
-		super("Ga", "2019-11-20", "QueryCrossPrivatePermission", "gaplus");
+	public QueryCrossBorderApprovalStatusRequest() {
+		super("Ga", "2019-11-20", "QueryCrossBorderApprovalStatus", "gaplus");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -34,8 +34,8 @@ public class QueryCrossPrivatePermissionRequest extends RpcAcsRequest<QueryCross
 	}
 
 	@Override
-	public Class<QueryCrossPrivatePermissionResponse> getResponseClass() {
-		return QueryCrossPrivatePermissionResponse.class;
+	public Class<QueryCrossBorderApprovalStatusResponse> getResponseClass() {
+		return QueryCrossBorderApprovalStatusResponse.class;
 	}
 
 }

@@ -53,6 +53,8 @@ public class GetBasicAcceleratorResponse extends AcsResponse {
 
 	private String crossPrivateState;
 
+	private Boolean crossBorderStatus;
+
 	private String resourceGroupId;
 
 	private List<TagsItem> tags;
@@ -171,6 +173,14 @@ public class GetBasicAcceleratorResponse extends AcsResponse {
 
 	public void setCrossPrivateState(String crossPrivateState) {
 		this.crossPrivateState = crossPrivateState;
+	}
+
+	public Boolean getCrossBorderStatus() {
+		return this.crossBorderStatus;
+	}
+
+	public void setCrossBorderStatus(Boolean crossBorderStatus) {
+		this.crossBorderStatus = crossBorderStatus;
 	}
 
 	public String getResourceGroupId() {

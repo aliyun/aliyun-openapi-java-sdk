@@ -14,17 +14,16 @@
 
 package com.aliyuncs.ga.transform.v20191120;
 
-import com.aliyuncs.ga.model.v20191120.QueryCrossPrivatePermissionResponse;
+import com.aliyuncs.ga.model.v20191120.UpdateAcceleratorCrossBorderModeResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class QueryCrossPrivatePermissionResponseUnmarshaller {
+public class UpdateAcceleratorCrossBorderModeResponseUnmarshaller {
 
-	public static QueryCrossPrivatePermissionResponse unmarshall(QueryCrossPrivatePermissionResponse queryCrossPrivatePermissionResponse, UnmarshallerContext _ctx) {
+	public static UpdateAcceleratorCrossBorderModeResponse unmarshall(UpdateAcceleratorCrossBorderModeResponse updateAcceleratorCrossBorderModeResponse, UnmarshallerContext _ctx) {
 		
-		queryCrossPrivatePermissionResponse.setRequestId(_ctx.stringValue("QueryCrossPrivatePermissionResponse.RequestId"));
-		queryCrossPrivatePermissionResponse.setCrossPrivatePermission(_ctx.booleanValue("QueryCrossPrivatePermissionResponse.CrossPrivatePermission"));
+		updateAcceleratorCrossBorderModeResponse.setRequestId(_ctx.stringValue("UpdateAcceleratorCrossBorderModeResponse.RequestId"));
 	 
-	 	return queryCrossPrivatePermissionResponse;
+	 	return updateAcceleratorCrossBorderModeResponse;
 	}
 }

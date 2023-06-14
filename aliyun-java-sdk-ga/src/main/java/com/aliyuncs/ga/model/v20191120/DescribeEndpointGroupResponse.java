@@ -43,8 +43,6 @@ public class DescribeEndpointGroupResponse extends AcsResponse {
 
 	private String endpointGroupRegion;
 
-	private Integer totalCount;
-
 	private String state;
 
 	private String healthCheckProtocol;
@@ -153,14 +151,6 @@ public class DescribeEndpointGroupResponse extends AcsResponse {
 
 	public void setEndpointGroupRegion(String endpointGroupRegion) {
 		this.endpointGroupRegion = endpointGroupRegion;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public String getState() {

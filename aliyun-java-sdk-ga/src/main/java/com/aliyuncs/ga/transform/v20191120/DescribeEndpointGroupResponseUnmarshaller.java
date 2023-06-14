@@ -37,7 +37,6 @@ public class DescribeEndpointGroupResponseUnmarshaller {
 		describeEndpointGroupResponse.setThresholdCount(_ctx.integerValue("DescribeEndpointGroupResponse.ThresholdCount"));
 		describeEndpointGroupResponse.setName(_ctx.stringValue("DescribeEndpointGroupResponse.Name"));
 		describeEndpointGroupResponse.setEndpointGroupRegion(_ctx.stringValue("DescribeEndpointGroupResponse.EndpointGroupRegion"));
-		describeEndpointGroupResponse.setTotalCount(_ctx.integerValue("DescribeEndpointGroupResponse.TotalCount"));
 		describeEndpointGroupResponse.setState(_ctx.stringValue("DescribeEndpointGroupResponse.State"));
 		describeEndpointGroupResponse.setHealthCheckProtocol(_ctx.stringValue("DescribeEndpointGroupResponse.HealthCheckProtocol"));
 		describeEndpointGroupResponse.setHealthCheckPort(_ctx.integerValue("DescribeEndpointGroupResponse.HealthCheckPort"));

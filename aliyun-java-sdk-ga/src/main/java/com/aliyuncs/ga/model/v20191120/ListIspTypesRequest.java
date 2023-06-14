@@ -28,6 +28,8 @@ public class ListIspTypesRequest extends RpcAcsRequest<ListIspTypesResponse> {
 	private String acceleratorType;
 
 	private String businessRegionId;
+
+	private String acceleratorId;
 	public ListIspTypesRequest() {
 		super("Ga", "2019-11-20", "ListIspTypes", "gaplus");
 		setMethod(MethodType.POST);
@@ -56,6 +58,17 @@ public class ListIspTypesRequest extends RpcAcsRequest<ListIspTypesResponse> {
 		this.businessRegionId = businessRegionId;
 		if(businessRegionId != null){
 			putQueryParameter("BusinessRegionId", businessRegionId);
+		}
+	}
+
+	public String getAcceleratorId() {
+		return this.acceleratorId;
+	}
+
+	public void setAcceleratorId(String acceleratorId) {
+		this.acceleratorId = acceleratorId;
+		if(acceleratorId != null){
+			putQueryParameter("AcceleratorId", acceleratorId);
 		}
 	}
 

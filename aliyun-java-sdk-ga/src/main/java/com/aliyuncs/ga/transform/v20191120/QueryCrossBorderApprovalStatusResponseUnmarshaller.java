@@ -14,17 +14,17 @@
 
 package com.aliyuncs.ga.transform.v20191120;
 
-import com.aliyuncs.ga.model.v20191120.UpdateCrossPrivateStateResponse;
+import com.aliyuncs.ga.model.v20191120.QueryCrossBorderApprovalStatusResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class UpdateCrossPrivateStateResponseUnmarshaller {
+public class QueryCrossBorderApprovalStatusResponseUnmarshaller {
 
-	public static UpdateCrossPrivateStateResponse unmarshall(UpdateCrossPrivateStateResponse updateCrossPrivateStateResponse, UnmarshallerContext _ctx) {
+	public static QueryCrossBorderApprovalStatusResponse unmarshall(QueryCrossBorderApprovalStatusResponse queryCrossBorderApprovalStatusResponse, UnmarshallerContext _ctx) {
 		
-		updateCrossPrivateStateResponse.setRequestId(_ctx.stringValue("UpdateCrossPrivateStateResponse.RequestId"));
-		updateCrossPrivateStateResponse.setCrossPrivateState(_ctx.booleanValue("UpdateCrossPrivateStateResponse.CrossPrivateState"));
+		queryCrossBorderApprovalStatusResponse.setRequestId(_ctx.stringValue("QueryCrossBorderApprovalStatusResponse.RequestId"));
+		queryCrossBorderApprovalStatusResponse.setApprovalStatus(_ctx.stringValue("QueryCrossBorderApprovalStatusResponse.ApprovalStatus"));
 	 
-	 	return updateCrossPrivateStateResponse;
+	 	return queryCrossBorderApprovalStatusResponse;
 	}
 }

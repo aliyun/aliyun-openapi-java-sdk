@@ -15,18 +15,18 @@
 package com.aliyuncs.ga.model.v20191120;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ga.transform.v20191120.QueryCrossPrivatePermissionResponseUnmarshaller;
+import com.aliyuncs.ga.transform.v20191120.QueryCrossBorderApprovalStatusResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class QueryCrossPrivatePermissionResponse extends AcsResponse {
+public class QueryCrossBorderApprovalStatusResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean crossPrivatePermission;
+	private String approvalStatus;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,17 +36,17 @@ public class QueryCrossPrivatePermissionResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getCrossPrivatePermission() {
-		return this.crossPrivatePermission;
+	public String getApprovalStatus() {
+		return this.approvalStatus;
 	}
 
-	public void setCrossPrivatePermission(Boolean crossPrivatePermission) {
-		this.crossPrivatePermission = crossPrivatePermission;
+	public void setApprovalStatus(String approvalStatus) {
+		this.approvalStatus = approvalStatus;
 	}
 
 	@Override
-	public QueryCrossPrivatePermissionResponse getInstance(UnmarshallerContext context) {
-		return	QueryCrossPrivatePermissionResponseUnmarshaller.unmarshall(this, context);
+	public QueryCrossBorderApprovalStatusResponse getInstance(UnmarshallerContext context) {
+		return	QueryCrossBorderApprovalStatusResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

@@ -56,6 +56,8 @@ public class ListAcceleratorsResponseUnmarshaller {
 			acceleratorsItem.setName(_ctx.stringValue("ListAcceleratorsResponse.Accelerators["+ i +"].Name"));
 			acceleratorsItem.setResourceGroupId(_ctx.stringValue("ListAcceleratorsResponse.Accelerators["+ i +"].ResourceGroupId"));
 			acceleratorsItem.setCrossBorderMode(_ctx.stringValue("ListAcceleratorsResponse.Accelerators["+ i +"].CrossBorderMode"));
+			acceleratorsItem.setCrossBorderStatus(_ctx.booleanValue("ListAcceleratorsResponse.Accelerators["+ i +"].CrossBorderStatus"));
+			acceleratorsItem.setUpgradableStatus(_ctx.stringValue("ListAcceleratorsResponse.Accelerators["+ i +"].UpgradableStatus"));
 
 			BasicBandwidthPackage basicBandwidthPackage = new BasicBandwidthPackage();
 			basicBandwidthPackage.setBandwidth(_ctx.integerValue("ListAcceleratorsResponse.Accelerators["+ i +"].BasicBandwidthPackage.Bandwidth"));

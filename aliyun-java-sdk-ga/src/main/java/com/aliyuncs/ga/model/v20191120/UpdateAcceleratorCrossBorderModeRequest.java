@@ -22,14 +22,16 @@ import com.aliyuncs.ga.Endpoint;
  * @author auto create
  * @version 
  */
-public class UpdateCrossPrivateStateRequest extends RpcAcsRequest<UpdateCrossPrivateStateResponse> {
+public class UpdateAcceleratorCrossBorderModeRequest extends RpcAcsRequest<UpdateAcceleratorCrossBorderModeResponse> {
 	   
 
-	private Boolean crossPrivateState;
+	private String clientToken;
+
+	private String crossBorderMode;
 
 	private String acceleratorId;
-	public UpdateCrossPrivateStateRequest() {
-		super("Ga", "2019-11-20", "UpdateCrossPrivateState", "gaplus");
+	public UpdateAcceleratorCrossBorderModeRequest() {
+		super("Ga", "2019-11-20", "UpdateAcceleratorCrossBorderMode", "gaplus");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,14 +39,25 @@ public class UpdateCrossPrivateStateRequest extends RpcAcsRequest<UpdateCrossPri
 		} catch (Exception e) {}
 	}
 
-	public Boolean getCrossPrivateState() {
-		return this.crossPrivateState;
+	public String getClientToken() {
+		return this.clientToken;
 	}
 
-	public void setCrossPrivateState(Boolean crossPrivateState) {
-		this.crossPrivateState = crossPrivateState;
-		if(crossPrivateState != null){
-			putQueryParameter("CrossPrivateState", crossPrivateState.toString());
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getCrossBorderMode() {
+		return this.crossBorderMode;
+	}
+
+	public void setCrossBorderMode(String crossBorderMode) {
+		this.crossBorderMode = crossBorderMode;
+		if(crossBorderMode != null){
+			putQueryParameter("CrossBorderMode", crossBorderMode);
 		}
 	}
 
@@ -60,8 +73,8 @@ public class UpdateCrossPrivateStateRequest extends RpcAcsRequest<UpdateCrossPri
 	}
 
 	@Override
-	public Class<UpdateCrossPrivateStateResponse> getResponseClass() {
-		return UpdateCrossPrivateStateResponse.class;
+	public Class<UpdateAcceleratorCrossBorderModeResponse> getResponseClass() {
+		return UpdateAcceleratorCrossBorderModeResponse.class;
 	}
 
 }

@@ -15,18 +15,16 @@
 package com.aliyuncs.ga.model.v20191120;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ga.transform.v20191120.UpdateCrossPrivateStateResponseUnmarshaller;
+import com.aliyuncs.ga.transform.v20191120.UpdateAcceleratorCrossBorderModeResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class UpdateCrossPrivateStateResponse extends AcsResponse {
+public class UpdateAcceleratorCrossBorderModeResponse extends AcsResponse {
 
 	private String requestId;
-
-	private Boolean crossPrivateState;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,17 +34,9 @@ public class UpdateCrossPrivateStateResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getCrossPrivateState() {
-		return this.crossPrivateState;
-	}
-
-	public void setCrossPrivateState(Boolean crossPrivateState) {
-		this.crossPrivateState = crossPrivateState;
-	}
-
 	@Override
-	public UpdateCrossPrivateStateResponse getInstance(UnmarshallerContext context) {
-		return	UpdateCrossPrivateStateResponseUnmarshaller.unmarshall(this, context);
+	public UpdateAcceleratorCrossBorderModeResponse getInstance(UnmarshallerContext context) {
+		return	UpdateAcceleratorCrossBorderModeResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
