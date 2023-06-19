@@ -197,6 +197,8 @@ public class GetWirelessCloudConnectorResponse extends AcsResponse {
 
 		private String status;
 
+		private String type;
+
 		private String aPN;
 
 		private String iSP;
@@ -247,6 +249,14 @@ public class GetWirelessCloudConnectorResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
 		}
 
 		public String getAPN() {

@@ -55,6 +55,7 @@ public class GetWirelessCloudConnectorResponseUnmarshaller {
 			netLink.setName(_ctx.stringValue("GetWirelessCloudConnectorResponse.NetLinks["+ i +"].Name"));
 			netLink.setDescription(_ctx.stringValue("GetWirelessCloudConnectorResponse.NetLinks["+ i +"].Description"));
 			netLink.setStatus(_ctx.stringValue("GetWirelessCloudConnectorResponse.NetLinks["+ i +"].Status"));
+			netLink.setType(_ctx.stringValue("GetWirelessCloudConnectorResponse.NetLinks["+ i +"].Type"));
 			netLink.setAPN(_ctx.stringValue("GetWirelessCloudConnectorResponse.NetLinks["+ i +"].APN"));
 			netLink.setISP(_ctx.stringValue("GetWirelessCloudConnectorResponse.NetLinks["+ i +"].ISP"));
 			netLink.setVpcId(_ctx.stringValue("GetWirelessCloudConnectorResponse.NetLinks["+ i +"].VpcId"));
