@@ -38,7 +38,6 @@ public class GetApplicationResponseUnmarshaller {
 		data.setImageURL(_ctx.stringValue("GetApplicationResponse.Data.ImageURL"));
 		data.setApplicationId(_ctx.stringValue("GetApplicationResponse.Data.ApplicationId"));
 		data.setName(_ctx.stringValue("GetApplicationResponse.Data.Name"));
-		data.setTopoURL(_ctx.stringValue("GetApplicationResponse.Data.TopoURL"));
 		data.setTemplateId(_ctx.stringValue("GetApplicationResponse.Data.TemplateId"));
 		data.setCreateTime(_ctx.stringValue("GetApplicationResponse.Data.CreateTime"));
 		data.setResourceGroupId(_ctx.stringValue("GetApplicationResponse.Data.ResourceGroupId"));

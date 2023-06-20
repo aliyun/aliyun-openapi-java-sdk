@@ -35,7 +35,6 @@ public class GetTemplateResponseUnmarshaller {
 		data.setDescription(_ctx.stringValue("GetTemplateResponse.Data.Description"));
 		data.setImageURL(_ctx.stringValue("GetTemplateResponse.Data.ImageURL"));
 		data.setName(_ctx.stringValue("GetTemplateResponse.Data.Name"));
-		data.setTopoURL(_ctx.stringValue("GetTemplateResponse.Data.TopoURL"));
 		data.setTemplateId(_ctx.stringValue("GetTemplateResponse.Data.TemplateId"));
 		data.setCreateTime(_ctx.stringValue("GetTemplateResponse.Data.CreateTime"));
 		data.setResourceGroupId(_ctx.stringValue("GetTemplateResponse.Data.ResourceGroupId"));

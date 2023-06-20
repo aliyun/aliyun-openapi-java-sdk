@@ -75,8 +75,6 @@ public class GetApplicationResponse extends AcsResponse {
 
 		private String name;
 
-		private String topoURL;
-
 		private String templateId;
 
 		private String createTime;
@@ -123,14 +121,6 @@ public class GetApplicationResponse extends AcsResponse {
 
 		public void setName(String name) {
 			this.name = name;
-		}
-
-		public String getTopoURL() {
-			return this.topoURL;
-		}
-
-		public void setTopoURL(String topoURL) {
-			this.topoURL = topoURL;
 		}
 
 		public String getTemplateId() {

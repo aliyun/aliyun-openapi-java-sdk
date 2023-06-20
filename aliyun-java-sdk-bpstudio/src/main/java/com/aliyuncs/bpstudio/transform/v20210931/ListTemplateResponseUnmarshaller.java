@@ -39,7 +39,6 @@ public class ListTemplateResponseUnmarshaller {
 			item.setTagId(_ctx.integerValue("ListTemplateResponse.Data["+ i +"].TagId"));
 			item.setTagName(_ctx.stringValue("ListTemplateResponse.Data["+ i +"].TagName"));
 			item.setName(_ctx.stringValue("ListTemplateResponse.Data["+ i +"].Name"));
-			item.setTopoURL(_ctx.stringValue("ListTemplateResponse.Data["+ i +"].TopoURL"));
 			item.setTemplateId(_ctx.stringValue("ListTemplateResponse.Data["+ i +"].TemplateId"));
 			item.setCreateTime(_ctx.stringValue("ListTemplateResponse.Data["+ i +"].CreateTime"));
 			item.setResourceGroupId(_ctx.stringValue("ListTemplateResponse.Data["+ i +"].ResourceGroupId"));

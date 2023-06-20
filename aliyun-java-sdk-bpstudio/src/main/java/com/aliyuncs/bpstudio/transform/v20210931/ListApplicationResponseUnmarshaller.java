@@ -39,7 +39,6 @@ public class ListApplicationResponseUnmarshaller {
 			item.setStatus(_ctx.stringValue("ListApplicationResponse.Data["+ i +"].Status"));
 			item.setApplicationId(_ctx.stringValue("ListApplicationResponse.Data["+ i +"].ApplicationId"));
 			item.setName(_ctx.stringValue("ListApplicationResponse.Data["+ i +"].Name"));
-			item.setTopoURL(_ctx.stringValue("ListApplicationResponse.Data["+ i +"].TopoURL"));
 			item.setCreateTime(_ctx.stringValue("ListApplicationResponse.Data["+ i +"].CreateTime"));
 			item.setResourceGroupId(_ctx.stringValue("ListApplicationResponse.Data["+ i +"].ResourceGroupId"));
 
