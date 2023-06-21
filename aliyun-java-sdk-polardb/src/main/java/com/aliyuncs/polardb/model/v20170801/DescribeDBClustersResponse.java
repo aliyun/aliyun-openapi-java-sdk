@@ -384,6 +384,10 @@ public class DescribeDBClustersResponse extends AcsResponse {
 
 			private String serverless;
 
+			private String imciSwitch;
+
+			private String hotReplicaMode;
+
 			public String getDBNodeClass() {
 				return this.dBNodeClass;
 			}
@@ -430,6 +434,22 @@ public class DescribeDBClustersResponse extends AcsResponse {
 
 			public void setServerless(String serverless) {
 				this.serverless = serverless;
+			}
+
+			public String getImciSwitch() {
+				return this.imciSwitch;
+			}
+
+			public void setImciSwitch(String imciSwitch) {
+				this.imciSwitch = imciSwitch;
+			}
+
+			public String getHotReplicaMode() {
+				return this.hotReplicaMode;
+			}
+
+			public void setHotReplicaMode(String hotReplicaMode) {
+				this.hotReplicaMode = hotReplicaMode;
 			}
 		}
 	}

@@ -81,6 +81,8 @@ public class DescribeDBClustersResponseUnmarshaller {
 				dBNode.setDBNodeId(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].DBNodes["+ j +"].DBNodeId"));
 				dBNode.setRegionId(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].DBNodes["+ j +"].RegionId"));
 				dBNode.setServerless(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].DBNodes["+ j +"].Serverless"));
+				dBNode.setImciSwitch(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].DBNodes["+ j +"].ImciSwitch"));
+				dBNode.setHotReplicaMode(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].DBNodes["+ j +"].HotReplicaMode"));
 
 				dBNodes.add(dBNode);
 			}

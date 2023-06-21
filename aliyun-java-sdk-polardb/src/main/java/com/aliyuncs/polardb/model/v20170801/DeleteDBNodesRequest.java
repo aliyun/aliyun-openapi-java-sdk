@@ -32,6 +32,8 @@ public class DeleteDBNodesRequest extends RpcAcsRequest<DeleteDBNodesResponse> {
 
 	private String clientToken;
 
+	private String dBNodeType;
+
 	private String resourceOwnerAccount;
 
 	private String dBClusterId;
@@ -80,6 +82,17 @@ public class DeleteDBNodesRequest extends RpcAcsRequest<DeleteDBNodesResponse> {
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getDBNodeType() {
+		return this.dBNodeType;
+	}
+
+	public void setDBNodeType(String dBNodeType) {
+		this.dBNodeType = dBNodeType;
+		if(dBNodeType != null){
+			putQueryParameter("DBNodeType", dBNodeType);
 		}
 	}
 

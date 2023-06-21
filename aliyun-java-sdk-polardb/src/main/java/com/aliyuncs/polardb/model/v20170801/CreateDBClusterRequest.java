@@ -94,6 +94,8 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 
 	private String loosePolarLogBin;
 
+	private String architecture;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -504,6 +506,17 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		this.loosePolarLogBin = loosePolarLogBin;
 		if(loosePolarLogBin != null){
 			putQueryParameter("LoosePolarLogBin", loosePolarLogBin);
+		}
+	}
+
+	public String getArchitecture() {
+		return this.architecture;
+	}
+
+	public void setArchitecture(String architecture) {
+		this.architecture = architecture;
+		if(architecture != null){
+			putQueryParameter("Architecture", architecture);
 		}
 	}
 
