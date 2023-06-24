@@ -115,6 +115,10 @@ public class DescribeContainerInstancesResponse extends AcsResponse {
 
 		private Long createTimestamp;
 
+		private Integer exposed;
+
+		private String exposedDetail;
+
 		public String getImageRepoTag() {
 			return this.imageRepoTag;
 		}
@@ -345,6 +349,22 @@ public class DescribeContainerInstancesResponse extends AcsResponse {
 
 		public void setCreateTimestamp(Long createTimestamp) {
 			this.createTimestamp = createTimestamp;
+		}
+
+		public Integer getExposed() {
+			return this.exposed;
+		}
+
+		public void setExposed(Integer exposed) {
+			this.exposed = exposed;
+		}
+
+		public String getExposedDetail() {
+			return this.exposedDetail;
+		}
+
+		public void setExposedDetail(String exposedDetail) {
+			this.exposedDetail = exposedDetail;
 		}
 	}
 

@@ -28,6 +28,8 @@ public class ChangeCheckConfigRequest extends RpcAcsRequest<ChangeCheckConfigRes
 
 	private List<Long> standardIdss;
 
+	private List<Integer> cycleDayss;
+
 	private Integer startTime;
 
 	private Integer endTime;
@@ -49,6 +51,19 @@ public class ChangeCheckConfigRequest extends RpcAcsRequest<ChangeCheckConfigRes
 		if (standardIdss != null) {
 			for (int i = 0; i < standardIdss.size(); i++) {
 				putQueryParameter("StandardIds." + (i + 1) , standardIdss.get(i));
+			}
+		}	
+	}
+
+	public List<Integer> getCycleDayss() {
+		return this.cycleDayss;
+	}
+
+	public void setCycleDayss(List<Integer> cycleDayss) {
+		this.cycleDayss = cycleDayss;	
+		if (cycleDayss != null) {
+			for (int i = 0; i < cycleDayss.size(); i++) {
+				putQueryParameter("CycleDays." + (i + 1) , cycleDayss.get(i));
 			}
 		}	
 	}

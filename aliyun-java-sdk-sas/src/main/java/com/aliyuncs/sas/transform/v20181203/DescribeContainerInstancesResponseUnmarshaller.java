@@ -68,6 +68,8 @@ public class DescribeContainerInstancesResponseUnmarshaller {
 			containerInstance.setRiskCount(_ctx.stringValue("DescribeContainerInstancesResponse.ContainerInstanceList["+ i +"].RiskCount"));
 			containerInstance.setAlarmCount(_ctx.integerValue("DescribeContainerInstancesResponse.ContainerInstanceList["+ i +"].AlarmCount"));
 			containerInstance.setCreateTimestamp(_ctx.longValue("DescribeContainerInstancesResponse.ContainerInstanceList["+ i +"].CreateTimestamp"));
+			containerInstance.setExposed(_ctx.integerValue("DescribeContainerInstancesResponse.ContainerInstanceList["+ i +"].Exposed"));
+			containerInstance.setExposedDetail(_ctx.stringValue("DescribeContainerInstancesResponse.ContainerInstanceList["+ i +"].ExposedDetail"));
 
 			containerInstanceList.add(containerInstance);
 		}
