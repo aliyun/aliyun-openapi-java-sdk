@@ -29,7 +29,7 @@ public class RequestDecisionRequest extends RpcAcsRequest<RequestDecisionRespons
 
 	private String eventCode;
 	public RequestDecisionRequest() {
-		super("saf", "2019-05-21", "RequestDecision");
+		super("saf", "2019-05-21", "RequestDecision", "saf");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

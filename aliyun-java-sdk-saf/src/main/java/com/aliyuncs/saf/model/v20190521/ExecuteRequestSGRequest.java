@@ -32,7 +32,7 @@ public class ExecuteRequestSGRequest extends RpcAcsRequest<ExecuteRequestSGRespo
 
 	private String lang;
 	public ExecuteRequestSGRequest() {
-		super("saf", "2019-05-21", "ExecuteRequestSG");
+		super("saf", "2019-05-21", "ExecuteRequestSG", "saf");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
