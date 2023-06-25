@@ -14,11 +14,8 @@
 
 package com.aliyuncs.dytnsapi.transform.v20200217;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.aliyuncs.dytnsapi.model.v20200217.DescribePhoneNumberAnalysisResponse;
-import com.aliyuncs.dytnsapi.model.v20200217.DescribePhoneNumberAnalysisResponse.DataList;
+import com.aliyuncs.dytnsapi.model.v20200217.DescribePhoneNumberAnalysisResponse.Data;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -27,17 +24,12 @@ public class DescribePhoneNumberAnalysisResponseUnmarshaller {
 	public static DescribePhoneNumberAnalysisResponse unmarshall(DescribePhoneNumberAnalysisResponse describePhoneNumberAnalysisResponse, UnmarshallerContext _ctx) {
 		
 		describePhoneNumberAnalysisResponse.setRequestId(_ctx.stringValue("DescribePhoneNumberAnalysisResponse.RequestId"));
-		describePhoneNumberAnalysisResponse.setCode(_ctx.stringValue("DescribePhoneNumberAnalysisResponse.Code"));
 		describePhoneNumberAnalysisResponse.setMessage(_ctx.stringValue("DescribePhoneNumberAnalysisResponse.Message"));
+		describePhoneNumberAnalysisResponse.setCode(_ctx.stringValue("DescribePhoneNumberAnalysisResponse.Code"));
 
-		List<DataList> data = new ArrayList<DataList>();
-		for (int i = 0; i < _ctx.lengthValue("DescribePhoneNumberAnalysisResponse.Data.Length"); i++) {
-			DataList dataList = new DataList();
-			dataList.setCode(_ctx.stringValue("DescribePhoneNumberAnalysisResponse.Data["+ i +"].Code"));
-			dataList.setNumber(_ctx.stringValue("DescribePhoneNumberAnalysisResponse.Data["+ i +"].Number"));
-
-			data.add(dataList);
-		}
+		Data data = new Data();
+		data.setNumber(_ctx.stringValue("DescribePhoneNumberAnalysisResponse.Data.Number"));
+		data.setCode(_ctx.stringValue("DescribePhoneNumberAnalysisResponse.Data.Code"));
 		describePhoneNumberAnalysisResponse.setData(data);
 	 
 	 	return describePhoneNumberAnalysisResponse;

@@ -1,3 +1,15 @@
+2023-06-25 Version: 1.1.8
+- Support better trace logging for error locating.
+- Improve API definition.
+- Better logging.
+- Log response data.
+- Blacklist certain user.
+- Publish document.
+- Optimize RAM authentication.
+- Fix billing pop service.
+- Regular RAM error message.
+- Improve RAM authentication.
+
 2023-05-17 Version: 1.1.7
 - Account Halt Check by Default.
 
