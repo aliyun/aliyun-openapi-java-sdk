@@ -157,6 +157,8 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private String readOnlyCount;
 
+		private String shardClass;
+
 		private List<Tag> tags;
 
 		public String getVpcId() {
@@ -477,6 +479,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		public void setReadOnlyCount(String readOnlyCount) {
 			this.readOnlyCount = readOnlyCount;
+		}
+
+		public String getShardClass() {
+			return this.shardClass;
+		}
+
+		public void setShardClass(String shardClass) {
+			this.shardClass = shardClass;
 		}
 
 		public List<Tag> getTags() {

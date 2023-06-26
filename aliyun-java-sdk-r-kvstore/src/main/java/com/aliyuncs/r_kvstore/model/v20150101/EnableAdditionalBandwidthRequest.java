@@ -52,6 +52,8 @@ public class EnableAdditionalBandwidthRequest extends RpcAcsRequest<EnableAdditi
 	private String instanceId;
 
 	private Boolean autoRenew;
+
+	private String chargeType;
 	public EnableAdditionalBandwidthRequest() {
 		super("R-kvstore", "2015-01-01", "EnableAdditionalBandwidth", "redisa");
 		setMethod(MethodType.POST);
@@ -212,6 +214,17 @@ public class EnableAdditionalBandwidthRequest extends RpcAcsRequest<EnableAdditi
 		this.autoRenew = autoRenew;
 		if(autoRenew != null){
 			putQueryParameter("AutoRenew", autoRenew.toString());
+		}
+	}
+
+	public String getChargeType() {
+		return this.chargeType;
+	}
+
+	public void setChargeType(String chargeType) {
+		this.chargeType = chargeType;
+		if(chargeType != null){
+			putQueryParameter("ChargeType", chargeType);
 		}
 	}
 

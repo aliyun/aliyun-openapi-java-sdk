@@ -44,6 +44,8 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	private List<Tag> tags;
 
+	private String globalSecurityGroupIds;
+
 	private String businessInfo;
 
 	private Integer shardCount;
@@ -69,6 +71,8 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 	private String port;
 
 	private String zoneId;
+
+	private String appendonly;
 
 	private String autoUseCoupon;
 
@@ -208,6 +212,17 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 			}
 		}	
+	}
+
+	public String getGlobalSecurityGroupIds() {
+		return this.globalSecurityGroupIds;
+	}
+
+	public void setGlobalSecurityGroupIds(String globalSecurityGroupIds) {
+		this.globalSecurityGroupIds = globalSecurityGroupIds;
+		if(globalSecurityGroupIds != null){
+			putQueryParameter("GlobalSecurityGroupIds", globalSecurityGroupIds);
+		}
 	}
 
 	public String getBusinessInfo() {
@@ -350,6 +365,17 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		this.zoneId = zoneId;
 		if(zoneId != null){
 			putQueryParameter("ZoneId", zoneId);
+		}
+	}
+
+	public String getAppendonly() {
+		return this.appendonly;
+	}
+
+	public void setAppendonly(String appendonly) {
+		this.appendonly = appendonly;
+		if(appendonly != null){
+			putQueryParameter("Appendonly", appendonly);
 		}
 	}
 

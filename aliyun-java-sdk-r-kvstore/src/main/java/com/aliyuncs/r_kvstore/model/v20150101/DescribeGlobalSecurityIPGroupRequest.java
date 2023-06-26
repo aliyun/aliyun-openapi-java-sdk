@@ -22,10 +22,14 @@ import com.aliyuncs.r_kvstore.Endpoint;
  * @author auto create
  * @version 
  */
-public class FlushInstanceRequest extends RpcAcsRequest<FlushInstanceResponse> {
+public class DescribeGlobalSecurityIPGroupRequest extends RpcAcsRequest<DescribeGlobalSecurityIPGroupResponse> {
 	   
 
 	private Long resourceOwnerId;
+
+	private String resourceGroupId;
+
+	private String globalSecurityGroupId;
 
 	private String securityToken;
 
@@ -34,11 +38,9 @@ public class FlushInstanceRequest extends RpcAcsRequest<FlushInstanceResponse> {
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	private String instanceId;
-	public FlushInstanceRequest() {
-		super("R-kvstore", "2015-01-01", "FlushInstance", "redisa");
-		setMethod(MethodType.POST);
+	public DescribeGlobalSecurityIPGroupRequest() {
+		super("R-kvstore", "2015-01-01", "DescribeGlobalSecurityIPGroup", "redisa");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -53,6 +55,28 @@ public class FlushInstanceRequest extends RpcAcsRequest<FlushInstanceResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getGlobalSecurityGroupId() {
+		return this.globalSecurityGroupId;
+	}
+
+	public void setGlobalSecurityGroupId(String globalSecurityGroupId) {
+		this.globalSecurityGroupId = globalSecurityGroupId;
+		if(globalSecurityGroupId != null){
+			putQueryParameter("GlobalSecurityGroupId", globalSecurityGroupId);
 		}
 	}
 
@@ -100,20 +124,9 @@ public class FlushInstanceRequest extends RpcAcsRequest<FlushInstanceResponse> {
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
 	@Override
-	public Class<FlushInstanceResponse> getResponseClass() {
-		return FlushInstanceResponse.class;
+	public Class<DescribeGlobalSecurityIPGroupResponse> getResponseClass() {
+		return DescribeGlobalSecurityIPGroupResponse.class;
 	}
 
 }

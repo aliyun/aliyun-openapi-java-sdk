@@ -22,10 +22,14 @@ import com.aliyuncs.r_kvstore.Endpoint;
  * @author auto create
  * @version 
  */
-public class FlushInstanceRequest extends RpcAcsRequest<FlushInstanceResponse> {
+public class CreateGlobalSecurityIPGroupRequest extends RpcAcsRequest<CreateGlobalSecurityIPGroupResponse> {
 	   
 
 	private Long resourceOwnerId;
+
+	private String gIpList;
+
+	private String resourceGroupId;
 
 	private String securityToken;
 
@@ -35,9 +39,9 @@ public class FlushInstanceRequest extends RpcAcsRequest<FlushInstanceResponse> {
 
 	private Long ownerId;
 
-	private String instanceId;
-	public FlushInstanceRequest() {
-		super("R-kvstore", "2015-01-01", "FlushInstance", "redisa");
+	private String globalIgName;
+	public CreateGlobalSecurityIPGroupRequest() {
+		super("R-kvstore", "2015-01-01", "CreateGlobalSecurityIPGroup", "redisa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -53,6 +57,28 @@ public class FlushInstanceRequest extends RpcAcsRequest<FlushInstanceResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getGIpList() {
+		return this.gIpList;
+	}
+
+	public void setGIpList(String gIpList) {
+		this.gIpList = gIpList;
+		if(gIpList != null){
+			putQueryParameter("GIpList", gIpList);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 
@@ -100,20 +126,20 @@ public class FlushInstanceRequest extends RpcAcsRequest<FlushInstanceResponse> {
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public String getGlobalIgName() {
+		return this.globalIgName;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
+	public void setGlobalIgName(String globalIgName) {
+		this.globalIgName = globalIgName;
+		if(globalIgName != null){
+			putQueryParameter("GlobalIgName", globalIgName);
 		}
 	}
 
 	@Override
-	public Class<FlushInstanceResponse> getResponseClass() {
-		return FlushInstanceResponse.class;
+	public Class<CreateGlobalSecurityIPGroupResponse> getResponseClass() {
+		return CreateGlobalSecurityIPGroupResponse.class;
 	}
 
 }

@@ -44,6 +44,8 @@ public class CreateTairInstanceRequest extends RpcAcsRequest<CreateTairInstanceR
 
 	private List<Tag> tags;
 
+	private String globalSecurityGroupIds;
+
 	private String businessInfo;
 
 	private Integer shardCount;
@@ -206,6 +208,17 @@ public class CreateTairInstanceRequest extends RpcAcsRequest<CreateTairInstanceR
 				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 			}
 		}	
+	}
+
+	public String getGlobalSecurityGroupIds() {
+		return this.globalSecurityGroupIds;
+	}
+
+	public void setGlobalSecurityGroupIds(String globalSecurityGroupIds) {
+		this.globalSecurityGroupIds = globalSecurityGroupIds;
+		if(globalSecurityGroupIds != null){
+			putQueryParameter("GlobalSecurityGroupIds", globalSecurityGroupIds);
+		}
 	}
 
 	public String getBusinessInfo() {

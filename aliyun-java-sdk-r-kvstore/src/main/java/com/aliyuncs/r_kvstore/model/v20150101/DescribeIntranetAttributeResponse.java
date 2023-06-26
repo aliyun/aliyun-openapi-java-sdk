@@ -24,8 +24,6 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeIntranetAttributeResponse extends AcsResponse {
 
-	private String bandwidthExpireTime;
-
 	private Boolean autoRenewal;
 
 	private String requestId;
@@ -36,13 +34,9 @@ public class DescribeIntranetAttributeResponse extends AcsResponse {
 
 	private Boolean hasPrePaidBandWidthOrderRunning;
 
-	public String getBandwidthExpireTime() {
-		return this.bandwidthExpireTime;
-	}
+	private String bandwidthExpireTime;
 
-	public void setBandwidthExpireTime(String bandwidthExpireTime) {
-		this.bandwidthExpireTime = bandwidthExpireTime;
-	}
+	private String bandwidthPrePaid;
 
 	public Boolean getAutoRenewal() {
 		return this.autoRenewal;
@@ -82,6 +76,22 @@ public class DescribeIntranetAttributeResponse extends AcsResponse {
 
 	public void setHasPrePaidBandWidthOrderRunning(Boolean hasPrePaidBandWidthOrderRunning) {
 		this.hasPrePaidBandWidthOrderRunning = hasPrePaidBandWidthOrderRunning;
+	}
+
+	public String getBandwidthExpireTime() {
+		return this.bandwidthExpireTime;
+	}
+
+	public void setBandwidthExpireTime(String bandwidthExpireTime) {
+		this.bandwidthExpireTime = bandwidthExpireTime;
+	}
+
+	public String getBandwidthPrePaid() {
+		return this.bandwidthPrePaid;
+	}
+
+	public void setBandwidthPrePaid(String bandwidthPrePaid) {
+		this.bandwidthPrePaid = bandwidthPrePaid;
 	}
 
 	@Override

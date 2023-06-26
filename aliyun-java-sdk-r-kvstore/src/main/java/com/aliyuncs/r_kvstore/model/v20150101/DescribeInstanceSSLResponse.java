@@ -34,6 +34,8 @@ public class DescribeInstanceSSLResponse extends AcsResponse {
 
 	private String certCommonName;
 
+	private String certDownloadURL;
+
 	public String getInstanceId() {
 		return this.instanceId;
 	}
@@ -72,6 +74,14 @@ public class DescribeInstanceSSLResponse extends AcsResponse {
 
 	public void setCertCommonName(String certCommonName) {
 		this.certCommonName = certCommonName;
+	}
+
+	public String getCertDownloadURL() {
+		return this.certDownloadURL;
+	}
+
+	public void setCertDownloadURL(String certDownloadURL) {
+		this.certDownloadURL = certDownloadURL;
 	}
 
 	@Override
