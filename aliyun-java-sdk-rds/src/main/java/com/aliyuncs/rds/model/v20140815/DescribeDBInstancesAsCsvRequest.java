@@ -27,13 +27,17 @@ public class DescribeDBInstancesAsCsvRequest extends RpcAcsRequest<DescribeDBIns
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
-	private Long ownerId;
+	private String exportKey;
 
 	private String resourceGroupId;
 
 	private String dBInstanceId;
+
+	private String resourceOwnerAccount;
+
+	private Boolean cachedAsync;
+
+	private Long ownerId;
 	public DescribeDBInstancesAsCsvRequest() {
 		super("Rds", "2014-08-15", "DescribeDBInstancesAsCsv", "rds");
 		setMethod(MethodType.POST);
@@ -54,25 +58,14 @@ public class DescribeDBInstancesAsCsvRequest extends RpcAcsRequest<DescribeDBIns
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
+	public String getExportKey() {
+		return this.exportKey;
 	}
 
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
+	public void setExportKey(String exportKey) {
+		this.exportKey = exportKey;
+		if(exportKey != null){
+			putQueryParameter("ExportKey", exportKey);
 		}
 	}
 
@@ -95,6 +88,39 @@ public class DescribeDBInstancesAsCsvRequest extends RpcAcsRequest<DescribeDBIns
 		this.dBInstanceId = dBInstanceId;
 		if(dBInstanceId != null){
 			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public Boolean getCachedAsync() {
+		return this.cachedAsync;
+	}
+
+	public void setCachedAsync(Boolean cachedAsync) {
+		this.cachedAsync = cachedAsync;
+		if(cachedAsync != null){
+			putQueryParameter("CachedAsync", cachedAsync.toString());
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

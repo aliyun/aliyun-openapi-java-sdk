@@ -129,6 +129,10 @@ public class DescribeDBInstancesAsCsvResponse extends AcsResponse {
 
 		private String engine;
 
+		private String exportKey;
+
+		private List<String> slaveZones;
+
 		public String getVpcId() {
 			return this.vpcId;
 		}
@@ -455,6 +459,22 @@ public class DescribeDBInstancesAsCsvResponse extends AcsResponse {
 
 		public void setEngine(String engine) {
 			this.engine = engine;
+		}
+
+		public String getExportKey() {
+			return this.exportKey;
+		}
+
+		public void setExportKey(String exportKey) {
+			this.exportKey = exportKey;
+		}
+
+		public List<String> getSlaveZones() {
+			return this.slaveZones;
+		}
+
+		public void setSlaveZones(List<String> slaveZones) {
+			this.slaveZones = slaveZones;
 		}
 	}
 

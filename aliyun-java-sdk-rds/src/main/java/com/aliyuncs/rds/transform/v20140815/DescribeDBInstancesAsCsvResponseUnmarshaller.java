@@ -72,6 +72,13 @@ public class DescribeDBInstancesAsCsvResponseUnmarshaller {
 			dBInstanceAttribute.setDBInstanceId(_ctx.stringValue("DescribeDBInstancesAsCsvResponse.Items["+ i +"].DBInstanceId"));
 			dBInstanceAttribute.setDBInstanceClass(_ctx.stringValue("DescribeDBInstancesAsCsvResponse.Items["+ i +"].DBInstanceClass"));
 			dBInstanceAttribute.setEngine(_ctx.stringValue("DescribeDBInstancesAsCsvResponse.Items["+ i +"].Engine"));
+			dBInstanceAttribute.setExportKey(_ctx.stringValue("DescribeDBInstancesAsCsvResponse.Items["+ i +"].ExportKey"));
+
+			List<String> slaveZones = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeDBInstancesAsCsvResponse.Items["+ i +"].SlaveZones.Length"); j++) {
+				slaveZones.add(_ctx.stringValue("DescribeDBInstancesAsCsvResponse.Items["+ i +"].SlaveZones["+ j +"]"));
+			}
+			dBInstanceAttribute.setSlaveZones(slaveZones);
 
 			items.add(dBInstanceAttribute);
 		}

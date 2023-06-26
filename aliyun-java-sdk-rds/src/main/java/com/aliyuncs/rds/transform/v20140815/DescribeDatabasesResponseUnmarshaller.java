@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.rds.model.v20140815.DescribeDatabasesResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeDatabasesResponse.Database;
 import com.aliyuncs.rds.model.v20140815.DescribeDatabasesResponse.Database.AccountPrivilegeInfo;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -46,6 +47,15 @@ public class DescribeDatabasesResponseUnmarshaller {
 			database.setPageNumber(_ctx.integerValue("DescribeDatabasesResponse.Databases["+ i +"].PageNumber"));
 			database.setPageSize(_ctx.integerValue("DescribeDatabasesResponse.Databases["+ i +"].PageSize"));
 			database.setTotalCount(_ctx.integerValue("DescribeDatabasesResponse.Databases["+ i +"].TotalCount"));
+
+			List<Map<Object, Object>> basicInfo = _ctx.listMapValue("DescribeDatabasesResponse.Databases["+ i +"].BasicInfo");
+			database.setBasicInfo(basicInfo);
+
+			List<Map<Object, Object>> runtimeInfo = _ctx.listMapValue("DescribeDatabasesResponse.Databases["+ i +"].RuntimeInfo");
+			database.setRuntimeInfo(runtimeInfo);
+
+			List<Map<Object, Object>> advancedInfo = _ctx.listMapValue("DescribeDatabasesResponse.Databases["+ i +"].AdvancedInfo");
+			database.setAdvancedInfo(advancedInfo);
 
 			List<AccountPrivilegeInfo> accounts = new ArrayList<AccountPrivilegeInfo>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDatabasesResponse.Databases["+ i +"].Accounts.Length"); j++) {

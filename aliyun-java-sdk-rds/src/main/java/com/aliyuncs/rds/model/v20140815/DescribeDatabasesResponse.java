@@ -15,6 +15,7 @@
 package com.aliyuncs.rds.model.v20140815;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.rds.transform.v20140815.DescribeDatabasesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -76,6 +77,12 @@ public class DescribeDatabasesResponse extends AcsResponse {
 		private Integer totalCount;
 
 		private List<AccountPrivilegeInfo> accounts;
+
+		private List<Map<Object,Object>> basicInfo;
+
+		private List<Map<Object,Object>> runtimeInfo;
+
+		private List<Map<Object,Object>> advancedInfo;
 
 		public String getDBDescription() {
 			return this.dBDescription;
@@ -195,6 +202,30 @@ public class DescribeDatabasesResponse extends AcsResponse {
 
 		public void setAccounts(List<AccountPrivilegeInfo> accounts) {
 			this.accounts = accounts;
+		}
+
+		public List<Map<Object,Object>> getBasicInfo() {
+			return this.basicInfo;
+		}
+
+		public void setBasicInfo(List<Map<Object,Object>> basicInfo) {
+			this.basicInfo = basicInfo;
+		}
+
+		public List<Map<Object,Object>> getRuntimeInfo() {
+			return this.runtimeInfo;
+		}
+
+		public void setRuntimeInfo(List<Map<Object,Object>> runtimeInfo) {
+			this.runtimeInfo = runtimeInfo;
+		}
+
+		public List<Map<Object,Object>> getAdvancedInfo() {
+			return this.advancedInfo;
+		}
+
+		public void setAdvancedInfo(List<Map<Object,Object>> advancedInfo) {
+			this.advancedInfo = advancedInfo;
 		}
 
 		public static class AccountPrivilegeInfo {
