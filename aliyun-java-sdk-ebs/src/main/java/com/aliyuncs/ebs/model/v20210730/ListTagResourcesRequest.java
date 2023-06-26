@@ -22,48 +22,31 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class DescribeDiskReplicaGroupsRequest extends RpcAcsRequest<DescribeDiskReplicaGroupsResponse> {
+public class ListTagResourcesRequest extends RpcAcsRequest<ListTagResourcesResponse> {
 	   
 
-	private Integer pageNumber;
-
-	private String resourceGroupId;
+	private String clientToken;
 
 	private String nextToken;
 
-	private Integer pageSize;
-
 	private List<Tag> tags;
 
-	private String site;
+	private List<String> resourceIds;
 
-	private String groupIds;
-
-	private Long maxResults;
-	public DescribeDiskReplicaGroupsRequest() {
-		super("ebs", "2021-07-30", "DescribeDiskReplicaGroups", "ebs");
+	private String resourceType;
+	public ListTagResourcesRequest() {
+		super("ebs", "2021-07-30", "ListTagResources", "ebs");
 		setMethod(MethodType.POST);
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getClientToken() {
+		return this.clientToken;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
-	}
-
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
@@ -75,17 +58,6 @@ public class DescribeDiskReplicaGroupsRequest extends RpcAcsRequest<DescribeDisk
 		this.nextToken = nextToken;
 		if(nextToken != null){
 			putQueryParameter("NextToken", nextToken);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -103,36 +75,27 @@ public class DescribeDiskReplicaGroupsRequest extends RpcAcsRequest<DescribeDisk
 		}	
 	}
 
-	public String getSite() {
-		return this.site;
+	public List<String> getResourceIds() {
+		return this.resourceIds;
 	}
 
-	public void setSite(String site) {
-		this.site = site;
-		if(site != null){
-			putQueryParameter("Site", site);
-		}
+	public void setResourceIds(List<String> resourceIds) {
+		this.resourceIds = resourceIds;	
+		if (resourceIds != null) {
+			for (int i = 0; i < resourceIds.size(); i++) {
+				putQueryParameter("ResourceId." + (i + 1) , resourceIds.get(i));
+			}
+		}	
 	}
 
-	public String getGroupIds() {
-		return this.groupIds;
+	public String getResourceType() {
+		return this.resourceType;
 	}
 
-	public void setGroupIds(String groupIds) {
-		this.groupIds = groupIds;
-		if(groupIds != null){
-			putQueryParameter("GroupIds", groupIds);
-		}
-	}
-
-	public Long getMaxResults() {
-		return this.maxResults;
-	}
-
-	public void setMaxResults(Long maxResults) {
-		this.maxResults = maxResults;
-		if(maxResults != null){
-			putQueryParameter("MaxResults", maxResults.toString());
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType);
 		}
 	}
 
@@ -160,8 +123,8 @@ public class DescribeDiskReplicaGroupsRequest extends RpcAcsRequest<DescribeDisk
 	}
 
 	@Override
-	public Class<DescribeDiskReplicaGroupsResponse> getResponseClass() {
-		return DescribeDiskReplicaGroupsResponse.class;
+	public Class<ListTagResourcesResponse> getResponseClass() {
+		return ListTagResourcesResponse.class;
 	}
 
 }

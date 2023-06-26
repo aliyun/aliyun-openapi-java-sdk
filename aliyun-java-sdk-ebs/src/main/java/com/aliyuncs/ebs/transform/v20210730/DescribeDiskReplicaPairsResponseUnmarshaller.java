@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.ebs.model.v20210730.DescribeDiskReplicaPairsResponse;
 import com.aliyuncs.ebs.model.v20210730.DescribeDiskReplicaPairsResponse.ReplicaPair;
+import com.aliyuncs.ebs.model.v20210730.DescribeDiskReplicaPairsResponse.ReplicaPair.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -59,6 +60,23 @@ public class DescribeDiskReplicaPairsResponseUnmarshaller {
 			replicaPair.setStandbyZone(_ctx.stringValue("DescribeDiskReplicaPairsResponse.ReplicaPairs["+ i +"].StandbyZone"));
 			replicaPair.setChargeType(_ctx.stringValue("DescribeDiskReplicaPairsResponse.ReplicaPairs["+ i +"].ChargeType"));
 			replicaPair.setExpiredTime(_ctx.longValue("DescribeDiskReplicaPairsResponse.ReplicaPairs["+ i +"].ExpiredTime"));
+			replicaPair.setSourceCloudId(_ctx.stringValue("DescribeDiskReplicaPairsResponse.ReplicaPairs["+ i +"].SourceCloudId"));
+			replicaPair.setDestinationCloudId(_ctx.stringValue("DescribeDiskReplicaPairsResponse.ReplicaPairs["+ i +"].DestinationCloudId"));
+			replicaPair.setPrimaryCloudId(_ctx.stringValue("DescribeDiskReplicaPairsResponse.ReplicaPairs["+ i +"].PrimaryCloudId"));
+			replicaPair.setStandbyCloudId(_ctx.stringValue("DescribeDiskReplicaPairsResponse.ReplicaPairs["+ i +"].StandbyCloudId"));
+			replicaPair.setPrimaryUid(_ctx.stringValue("DescribeDiskReplicaPairsResponse.ReplicaPairs["+ i +"].PrimaryUid"));
+			replicaPair.setStandbyUid(_ctx.stringValue("DescribeDiskReplicaPairsResponse.ReplicaPairs["+ i +"].StandbyUid"));
+			replicaPair.setResourceGroupId(_ctx.stringValue("DescribeDiskReplicaPairsResponse.ReplicaPairs["+ i +"].ResourceGroupId"));
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeDiskReplicaPairsResponse.ReplicaPairs["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setTagKey(_ctx.stringValue("DescribeDiskReplicaPairsResponse.ReplicaPairs["+ i +"].Tags["+ j +"].TagKey"));
+				tag.setTagValue(_ctx.stringValue("DescribeDiskReplicaPairsResponse.ReplicaPairs["+ i +"].Tags["+ j +"].TagValue"));
+
+				tags.add(tag);
+			}
+			replicaPair.setTags(tags);
 
 			replicaPairs.add(replicaPair);
 		}

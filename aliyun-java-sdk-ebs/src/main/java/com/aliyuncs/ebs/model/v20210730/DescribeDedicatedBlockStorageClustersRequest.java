@@ -25,13 +25,21 @@ import com.aliyuncs.http.MethodType;
 public class DescribeDedicatedBlockStorageClustersRequest extends RpcAcsRequest<DescribeDedicatedBlockStorageClustersResponse> {
 	   
 
-	private List<String> dedicatedBlockStorageClusterIds;
-
 	private String clientToken;
+
+	private Integer pageNumber;
+
+	private String resourceGroupId;
 
 	private String azoneId;
 
 	private String nextToken;
+
+	private Integer pageSize;
+
+	private List<Tag> tags;
+
+	private List<String> dedicatedBlockStorageClusterIds;
 
 	private Integer maxResults;
 
@@ -43,19 +51,6 @@ public class DescribeDedicatedBlockStorageClustersRequest extends RpcAcsRequest<
 		setMethod(MethodType.POST);
 	}
 
-	public List<String> getDedicatedBlockStorageClusterIds() {
-		return this.dedicatedBlockStorageClusterIds;
-	}
-
-	public void setDedicatedBlockStorageClusterIds(List<String> dedicatedBlockStorageClusterIds) {
-		this.dedicatedBlockStorageClusterIds = dedicatedBlockStorageClusterIds;	
-		if (dedicatedBlockStorageClusterIds != null) {
-			for (int i = 0; i < dedicatedBlockStorageClusterIds.size(); i++) {
-				putBodyParameter("DedicatedBlockStorageClusterId." + (i + 1) , dedicatedBlockStorageClusterIds.get(i));
-			}
-		}	
-	}
-
 	public String getClientToken() {
 		return this.clientToken;
 	}
@@ -64,6 +59,28 @@ public class DescribeDedicatedBlockStorageClustersRequest extends RpcAcsRequest<
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putBodyParameter("ClientToken", clientToken);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 
@@ -87,6 +104,44 @@ public class DescribeDedicatedBlockStorageClustersRequest extends RpcAcsRequest<
 		if(nextToken != null){
 			putBodyParameter("NextToken", nextToken);
 		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
+	}
+
+	public List<String> getDedicatedBlockStorageClusterIds() {
+		return this.dedicatedBlockStorageClusterIds;
+	}
+
+	public void setDedicatedBlockStorageClusterIds(List<String> dedicatedBlockStorageClusterIds) {
+		this.dedicatedBlockStorageClusterIds = dedicatedBlockStorageClusterIds;	
+		if (dedicatedBlockStorageClusterIds != null) {
+			for (int i = 0; i < dedicatedBlockStorageClusterIds.size(); i++) {
+				putBodyParameter("DedicatedBlockStorageClusterId." + (i + 1) , dedicatedBlockStorageClusterIds.get(i));
+			}
+		}	
 	}
 
 	public Integer getMaxResults() {
@@ -122,6 +177,29 @@ public class DescribeDedicatedBlockStorageClustersRequest extends RpcAcsRequest<
 				putBodyParameter("Status." + (i + 1) , statuss.get(i));
 			}
 		}	
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
 	}
 
 	@Override

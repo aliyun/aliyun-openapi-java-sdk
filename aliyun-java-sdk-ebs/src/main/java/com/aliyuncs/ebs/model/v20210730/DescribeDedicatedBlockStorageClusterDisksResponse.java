@@ -129,6 +129,12 @@ public class DescribeDedicatedBlockStorageClusterDisksResponse extends AcsRespon
 
 			private Long iOPS;
 
+			private Long throughput;
+
+			private Long provisionedIops;
+
+			private Boolean burstingEnabled;
+
 			private List<TagsItem> tags;
 
 			public String getDiskId() {
@@ -369,6 +375,30 @@ public class DescribeDedicatedBlockStorageClusterDisksResponse extends AcsRespon
 
 			public void setIOPS(Long iOPS) {
 				this.iOPS = iOPS;
+			}
+
+			public Long getThroughput() {
+				return this.throughput;
+			}
+
+			public void setThroughput(Long throughput) {
+				this.throughput = throughput;
+			}
+
+			public Long getProvisionedIops() {
+				return this.provisionedIops;
+			}
+
+			public void setProvisionedIops(Long provisionedIops) {
+				this.provisionedIops = provisionedIops;
+			}
+
+			public Boolean getBurstingEnabled() {
+				return this.burstingEnabled;
+			}
+
+			public void setBurstingEnabled(Boolean burstingEnabled) {
+				this.burstingEnabled = burstingEnabled;
 			}
 
 			public List<TagsItem> getTags() {

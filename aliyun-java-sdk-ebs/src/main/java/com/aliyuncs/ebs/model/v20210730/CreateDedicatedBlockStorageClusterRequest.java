@@ -15,6 +15,7 @@
 package com.aliyuncs.ebs.model.v20210730;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 
 /**
@@ -28,11 +29,19 @@ public class CreateDedicatedBlockStorageClusterRequest extends RpcAcsRequest<Cre
 
 	private Long capacity;
 
+	private String resourceGroupId;
+
 	private String dbscId;
+
+	private List<Tag> tags;
 
 	private String azone;
 
+	private Integer period;
+
 	private String dbscName;
+
+	private String periodUnit;
 	public CreateDedicatedBlockStorageClusterRequest() {
 		super("ebs", "2021-07-30", "CreateDedicatedBlockStorageCluster", "ebs");
 		setMethod(MethodType.POST);
@@ -60,6 +69,17 @@ public class CreateDedicatedBlockStorageClusterRequest extends RpcAcsRequest<Cre
 		}
 	}
 
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
 	public String getDbscId() {
 		return this.dbscId;
 	}
@@ -69,6 +89,20 @@ public class CreateDedicatedBlockStorageClusterRequest extends RpcAcsRequest<Cre
 		if(dbscId != null){
 			putQueryParameter("DbscId", dbscId);
 		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
 	}
 
 	public String getAzone() {
@@ -82,6 +116,17 @@ public class CreateDedicatedBlockStorageClusterRequest extends RpcAcsRequest<Cre
 		}
 	}
 
+	public Integer getPeriod() {
+		return this.period;
+	}
+
+	public void setPeriod(Integer period) {
+		this.period = period;
+		if(period != null){
+			putQueryParameter("Period", period.toString());
+		}
+	}
+
 	public String getDbscName() {
 		return this.dbscName;
 	}
@@ -90,6 +135,40 @@ public class CreateDedicatedBlockStorageClusterRequest extends RpcAcsRequest<Cre
 		this.dbscName = dbscName;
 		if(dbscName != null){
 			putQueryParameter("DbscName", dbscName);
+		}
+	}
+
+	public String getPeriodUnit() {
+		return this.periodUnit;
+	}
+
+	public void setPeriodUnit(String periodUnit) {
+		this.periodUnit = periodUnit;
+		if(periodUnit != null){
+			putQueryParameter("PeriodUnit", periodUnit);
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

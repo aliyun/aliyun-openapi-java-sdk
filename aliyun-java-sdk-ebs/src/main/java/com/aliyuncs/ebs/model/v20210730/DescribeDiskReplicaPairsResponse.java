@@ -135,6 +135,22 @@ public class DescribeDiskReplicaPairsResponse extends AcsResponse {
 
 		private Long expiredTime;
 
+		private String sourceCloudId;
+
+		private String destinationCloudId;
+
+		private String primaryCloudId;
+
+		private String standbyCloudId;
+
+		private String primaryUid;
+
+		private String standbyUid;
+
+		private String resourceGroupId;
+
+		private List<Tag> tags;
+
 		public String getReplicaPairId() {
 			return this.replicaPairId;
 		}
@@ -325,6 +341,93 @@ public class DescribeDiskReplicaPairsResponse extends AcsResponse {
 
 		public void setExpiredTime(Long expiredTime) {
 			this.expiredTime = expiredTime;
+		}
+
+		public String getSourceCloudId() {
+			return this.sourceCloudId;
+		}
+
+		public void setSourceCloudId(String sourceCloudId) {
+			this.sourceCloudId = sourceCloudId;
+		}
+
+		public String getDestinationCloudId() {
+			return this.destinationCloudId;
+		}
+
+		public void setDestinationCloudId(String destinationCloudId) {
+			this.destinationCloudId = destinationCloudId;
+		}
+
+		public String getPrimaryCloudId() {
+			return this.primaryCloudId;
+		}
+
+		public void setPrimaryCloudId(String primaryCloudId) {
+			this.primaryCloudId = primaryCloudId;
+		}
+
+		public String getStandbyCloudId() {
+			return this.standbyCloudId;
+		}
+
+		public void setStandbyCloudId(String standbyCloudId) {
+			this.standbyCloudId = standbyCloudId;
+		}
+
+		public String getPrimaryUid() {
+			return this.primaryUid;
+		}
+
+		public void setPrimaryUid(String primaryUid) {
+			this.primaryUid = primaryUid;
+		}
+
+		public String getStandbyUid() {
+			return this.standbyUid;
+		}
+
+		public void setStandbyUid(String standbyUid) {
+			this.standbyUid = standbyUid;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
+		public static class Tag {
+
+			private String tagKey;
+
+			private String tagValue;
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
+			}
+
+			public String getTagValue() {
+				return this.tagValue;
+			}
+
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
+			}
 		}
 	}
 

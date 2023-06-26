@@ -29,6 +29,12 @@ public class DescribeDiskReplicaGroupsResponse extends AcsResponse {
 
 	private String nextToken;
 
+	private Integer pageNumber;
+
+	private Integer pageSize;
+
+	private Long totalCount;
+
 	private List<ReplicaGroup> replicaGroups;
 
 	public String getRequestId() {
@@ -45,6 +51,30 @@ public class DescribeDiskReplicaGroupsResponse extends AcsResponse {
 
 	public void setNextToken(String nextToken) {
 		this.nextToken = nextToken;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public Long getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Long totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<ReplicaGroup> getReplicaGroups() {
@@ -90,6 +120,22 @@ public class DescribeDiskReplicaGroupsResponse extends AcsResponse {
 		private String standbyZone;
 
 		private Long bandwidth;
+
+		private String resourceGroupId;
+
+		private String sourceCloudId;
+
+		private String destinationCloudId;
+
+		private String primaryCloudId;
+
+		private String standbyCloudId;
+
+		private String primaryUid;
+
+		private String standbyUid;
+
+		private List<Tag> tags;
 
 		private List<String> pairIds;
 
@@ -229,12 +275,99 @@ public class DescribeDiskReplicaGroupsResponse extends AcsResponse {
 			this.bandwidth = bandwidth;
 		}
 
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getSourceCloudId() {
+			return this.sourceCloudId;
+		}
+
+		public void setSourceCloudId(String sourceCloudId) {
+			this.sourceCloudId = sourceCloudId;
+		}
+
+		public String getDestinationCloudId() {
+			return this.destinationCloudId;
+		}
+
+		public void setDestinationCloudId(String destinationCloudId) {
+			this.destinationCloudId = destinationCloudId;
+		}
+
+		public String getPrimaryCloudId() {
+			return this.primaryCloudId;
+		}
+
+		public void setPrimaryCloudId(String primaryCloudId) {
+			this.primaryCloudId = primaryCloudId;
+		}
+
+		public String getStandbyCloudId() {
+			return this.standbyCloudId;
+		}
+
+		public void setStandbyCloudId(String standbyCloudId) {
+			this.standbyCloudId = standbyCloudId;
+		}
+
+		public String getPrimaryUid() {
+			return this.primaryUid;
+		}
+
+		public void setPrimaryUid(String primaryUid) {
+			this.primaryUid = primaryUid;
+		}
+
+		public String getStandbyUid() {
+			return this.standbyUid;
+		}
+
+		public void setStandbyUid(String standbyUid) {
+			this.standbyUid = standbyUid;
+		}
+
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
 		public List<String> getPairIds() {
 			return this.pairIds;
 		}
 
 		public void setPairIds(List<String> pairIds) {
 			this.pairIds = pairIds;
+		}
+
+		public static class Tag {
+
+			private String tagKey;
+
+			private String tagValue;
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
+			}
+
+			public String getTagValue() {
+				return this.tagValue;
+			}
+
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
+			}
 		}
 	}
 

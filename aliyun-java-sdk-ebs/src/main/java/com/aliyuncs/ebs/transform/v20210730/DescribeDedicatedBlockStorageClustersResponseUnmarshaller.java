@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.ebs.model.v20210730.DescribeDedicatedBlockStorageClustersResponse;
 import com.aliyuncs.ebs.model.v20210730.DescribeDedicatedBlockStorageClustersResponse.Dbsc;
 import com.aliyuncs.ebs.model.v20210730.DescribeDedicatedBlockStorageClustersResponse.Dbsc.DedicatedBlockStorageClusterCapacity;
+import com.aliyuncs.ebs.model.v20210730.DescribeDedicatedBlockStorageClustersResponse.Dbsc.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -29,6 +30,9 @@ public class DescribeDedicatedBlockStorageClustersResponseUnmarshaller {
 		
 		describeDedicatedBlockStorageClustersResponse.setRequestId(_ctx.stringValue("DescribeDedicatedBlockStorageClustersResponse.RequestId"));
 		describeDedicatedBlockStorageClustersResponse.setNextToken(_ctx.stringValue("DescribeDedicatedBlockStorageClustersResponse.NextToken"));
+		describeDedicatedBlockStorageClustersResponse.setPageNumber(_ctx.integerValue("DescribeDedicatedBlockStorageClustersResponse.PageNumber"));
+		describeDedicatedBlockStorageClustersResponse.setPageSize(_ctx.integerValue("DescribeDedicatedBlockStorageClustersResponse.PageSize"));
+		describeDedicatedBlockStorageClustersResponse.setTotalCount(_ctx.longValue("DescribeDedicatedBlockStorageClustersResponse.TotalCount"));
 
 		List<Dbsc> dedicatedBlockStorageClusters = new ArrayList<Dbsc>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDedicatedBlockStorageClustersResponse.DedicatedBlockStorageClusters.Length"); i++) {
@@ -45,6 +49,7 @@ public class DescribeDedicatedBlockStorageClustersResponseUnmarshaller {
 			dbsc.setSupportedCategory(_ctx.stringValue("DescribeDedicatedBlockStorageClustersResponse.DedicatedBlockStorageClusters["+ i +"].SupportedCategory"));
 			dbsc.setCreateTime(_ctx.stringValue("DescribeDedicatedBlockStorageClustersResponse.DedicatedBlockStorageClusters["+ i +"].CreateTime"));
 			dbsc.setExpiredTime(_ctx.stringValue("DescribeDedicatedBlockStorageClustersResponse.DedicatedBlockStorageClusters["+ i +"].ExpiredTime"));
+			dbsc.setResourceGroupId(_ctx.stringValue("DescribeDedicatedBlockStorageClustersResponse.DedicatedBlockStorageClusters["+ i +"].ResourceGroupId"));
 
 			DedicatedBlockStorageClusterCapacity dedicatedBlockStorageClusterCapacity = new DedicatedBlockStorageClusterCapacity();
 			dedicatedBlockStorageClusterCapacity.setAvailableCapacity(_ctx.longValue("DescribeDedicatedBlockStorageClustersResponse.DedicatedBlockStorageClusters["+ i +"].DedicatedBlockStorageClusterCapacity.AvailableCapacity"));
@@ -52,6 +57,16 @@ public class DescribeDedicatedBlockStorageClustersResponseUnmarshaller {
 			dedicatedBlockStorageClusterCapacity.setDeliveryCapacity(_ctx.longValue("DescribeDedicatedBlockStorageClustersResponse.DedicatedBlockStorageClusters["+ i +"].DedicatedBlockStorageClusterCapacity.DeliveryCapacity"));
 			dedicatedBlockStorageClusterCapacity.setUsedCapacity(_ctx.longValue("DescribeDedicatedBlockStorageClustersResponse.DedicatedBlockStorageClusters["+ i +"].DedicatedBlockStorageClusterCapacity.UsedCapacity"));
 			dbsc.setDedicatedBlockStorageClusterCapacity(dedicatedBlockStorageClusterCapacity);
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeDedicatedBlockStorageClustersResponse.DedicatedBlockStorageClusters["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setTagKey(_ctx.stringValue("DescribeDedicatedBlockStorageClustersResponse.DedicatedBlockStorageClusters["+ i +"].Tags["+ j +"].TagKey"));
+				tag.setTagValue(_ctx.stringValue("DescribeDedicatedBlockStorageClustersResponse.DedicatedBlockStorageClusters["+ i +"].Tags["+ j +"].TagValue"));
+
+				tags.add(tag);
+			}
+			dbsc.setTags(tags);
 
 			dedicatedBlockStorageClusters.add(dbsc);
 		}

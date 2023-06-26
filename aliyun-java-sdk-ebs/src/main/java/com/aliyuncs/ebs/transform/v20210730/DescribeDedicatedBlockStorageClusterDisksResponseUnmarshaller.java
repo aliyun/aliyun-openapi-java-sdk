@@ -66,6 +66,9 @@ public class DescribeDedicatedBlockStorageClusterDisksResponseUnmarshaller {
 			diskItem.setMultiAttach(_ctx.stringValue("DescribeDedicatedBlockStorageClusterDisksResponse.Disks.Disk["+ i +"].MultiAttach"));
 			diskItem.setDiskChargeType(_ctx.stringValue("DescribeDedicatedBlockStorageClusterDisksResponse.Disks.Disk["+ i +"].DiskChargeType"));
 			diskItem.setIOPS(_ctx.longValue("DescribeDedicatedBlockStorageClusterDisksResponse.Disks.Disk["+ i +"].IOPS"));
+			diskItem.setThroughput(_ctx.longValue("DescribeDedicatedBlockStorageClusterDisksResponse.Disks.Disk["+ i +"].Throughput"));
+			diskItem.setProvisionedIops(_ctx.longValue("DescribeDedicatedBlockStorageClusterDisksResponse.Disks.Disk["+ i +"].ProvisionedIops"));
+			diskItem.setBurstingEnabled(_ctx.booleanValue("DescribeDedicatedBlockStorageClusterDisksResponse.Disks.Disk["+ i +"].BurstingEnabled"));
 
 			List<TagsItem> tags = new ArrayList<TagsItem>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDedicatedBlockStorageClusterDisksResponse.Disks.Disk["+ i +"].Tags.Length"); j++) {

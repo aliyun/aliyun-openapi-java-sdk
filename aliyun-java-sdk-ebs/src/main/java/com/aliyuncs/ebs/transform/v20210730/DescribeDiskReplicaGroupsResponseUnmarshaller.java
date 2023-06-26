@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.ebs.model.v20210730.DescribeDiskReplicaGroupsResponse;
 import com.aliyuncs.ebs.model.v20210730.DescribeDiskReplicaGroupsResponse.ReplicaGroup;
+import com.aliyuncs.ebs.model.v20210730.DescribeDiskReplicaGroupsResponse.ReplicaGroup.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -28,6 +29,9 @@ public class DescribeDiskReplicaGroupsResponseUnmarshaller {
 		
 		describeDiskReplicaGroupsResponse.setRequestId(_ctx.stringValue("DescribeDiskReplicaGroupsResponse.RequestId"));
 		describeDiskReplicaGroupsResponse.setNextToken(_ctx.stringValue("DescribeDiskReplicaGroupsResponse.NextToken"));
+		describeDiskReplicaGroupsResponse.setPageNumber(_ctx.integerValue("DescribeDiskReplicaGroupsResponse.PageNumber"));
+		describeDiskReplicaGroupsResponse.setPageSize(_ctx.integerValue("DescribeDiskReplicaGroupsResponse.PageSize"));
+		describeDiskReplicaGroupsResponse.setTotalCount(_ctx.longValue("DescribeDiskReplicaGroupsResponse.TotalCount"));
 
 		List<ReplicaGroup> replicaGroups = new ArrayList<ReplicaGroup>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDiskReplicaGroupsResponse.ReplicaGroups.Length"); i++) {
@@ -49,12 +53,29 @@ public class DescribeDiskReplicaGroupsResponseUnmarshaller {
 			replicaGroup.setPrimaryZone(_ctx.stringValue("DescribeDiskReplicaGroupsResponse.ReplicaGroups["+ i +"].PrimaryZone"));
 			replicaGroup.setStandbyZone(_ctx.stringValue("DescribeDiskReplicaGroupsResponse.ReplicaGroups["+ i +"].StandbyZone"));
 			replicaGroup.setBandwidth(_ctx.longValue("DescribeDiskReplicaGroupsResponse.ReplicaGroups["+ i +"].Bandwidth"));
+			replicaGroup.setResourceGroupId(_ctx.stringValue("DescribeDiskReplicaGroupsResponse.ReplicaGroups["+ i +"].ResourceGroupId"));
+			replicaGroup.setSourceCloudId(_ctx.stringValue("DescribeDiskReplicaGroupsResponse.ReplicaGroups["+ i +"].SourceCloudId"));
+			replicaGroup.setDestinationCloudId(_ctx.stringValue("DescribeDiskReplicaGroupsResponse.ReplicaGroups["+ i +"].DestinationCloudId"));
+			replicaGroup.setPrimaryCloudId(_ctx.stringValue("DescribeDiskReplicaGroupsResponse.ReplicaGroups["+ i +"].PrimaryCloudId"));
+			replicaGroup.setStandbyCloudId(_ctx.stringValue("DescribeDiskReplicaGroupsResponse.ReplicaGroups["+ i +"].StandbyCloudId"));
+			replicaGroup.setPrimaryUid(_ctx.stringValue("DescribeDiskReplicaGroupsResponse.ReplicaGroups["+ i +"].PrimaryUid"));
+			replicaGroup.setStandbyUid(_ctx.stringValue("DescribeDiskReplicaGroupsResponse.ReplicaGroups["+ i +"].StandbyUid"));
 
 			List<String> pairIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDiskReplicaGroupsResponse.ReplicaGroups["+ i +"].PairIds.Length"); j++) {
 				pairIds.add(_ctx.stringValue("DescribeDiskReplicaGroupsResponse.ReplicaGroups["+ i +"].PairIds["+ j +"]"));
 			}
 			replicaGroup.setPairIds(pairIds);
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeDiskReplicaGroupsResponse.ReplicaGroups["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setTagKey(_ctx.stringValue("DescribeDiskReplicaGroupsResponse.ReplicaGroups["+ i +"].Tags["+ j +"].TagKey"));
+				tag.setTagValue(_ctx.stringValue("DescribeDiskReplicaGroupsResponse.ReplicaGroups["+ i +"].Tags["+ j +"].TagValue"));
+
+				tags.add(tag);
+			}
+			replicaGroup.setTags(tags);
 
 			replicaGroups.add(replicaGroup);
 		}

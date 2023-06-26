@@ -29,6 +29,12 @@ public class DescribeDedicatedBlockStorageClustersResponse extends AcsResponse {
 
 	private String nextToken;
 
+	private Integer pageNumber;
+
+	private Integer pageSize;
+
+	private Long totalCount;
+
 	private List<Dbsc> dedicatedBlockStorageClusters;
 
 	public String getRequestId() {
@@ -45,6 +51,30 @@ public class DescribeDedicatedBlockStorageClustersResponse extends AcsResponse {
 
 	public void setNextToken(String nextToken) {
 		this.nextToken = nextToken;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public Long getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Long totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<Dbsc> getDedicatedBlockStorageClusters() {
@@ -80,6 +110,10 @@ public class DescribeDedicatedBlockStorageClustersResponse extends AcsResponse {
 		private String createTime;
 
 		private String expiredTime;
+
+		private String resourceGroupId;
+
+		private List<Tag> tags;
 
 		private DedicatedBlockStorageClusterCapacity dedicatedBlockStorageClusterCapacity;
 
@@ -179,12 +213,51 @@ public class DescribeDedicatedBlockStorageClustersResponse extends AcsResponse {
 			this.expiredTime = expiredTime;
 		}
 
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
 		public DedicatedBlockStorageClusterCapacity getDedicatedBlockStorageClusterCapacity() {
 			return this.dedicatedBlockStorageClusterCapacity;
 		}
 
 		public void setDedicatedBlockStorageClusterCapacity(DedicatedBlockStorageClusterCapacity dedicatedBlockStorageClusterCapacity) {
 			this.dedicatedBlockStorageClusterCapacity = dedicatedBlockStorageClusterCapacity;
+		}
+
+		public static class Tag {
+
+			private String tagKey;
+
+			private String tagValue;
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
+			}
+
+			public String getTagValue() {
+				return this.tagValue;
+			}
+
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
+			}
 		}
 
 		public static class DedicatedBlockStorageClusterCapacity {

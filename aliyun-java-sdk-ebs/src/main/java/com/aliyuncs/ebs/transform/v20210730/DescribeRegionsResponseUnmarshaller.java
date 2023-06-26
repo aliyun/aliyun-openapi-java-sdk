@@ -42,6 +42,12 @@ public class DescribeRegionsResponseUnmarshaller {
 				zone.setLocalName(_ctx.stringValue("DescribeRegionsResponse.Regions["+ i +"].Zones["+ j +"].LocalName"));
 				zone.setZoneId(_ctx.stringValue("DescribeRegionsResponse.Regions["+ i +"].Zones["+ j +"].ZoneId"));
 
+				List<String> resourceTypes = new ArrayList<String>();
+				for (int k = 0; k < _ctx.lengthValue("DescribeRegionsResponse.Regions["+ i +"].Zones["+ j +"].ResourceTypes.Length"); k++) {
+					resourceTypes.add(_ctx.stringValue("DescribeRegionsResponse.Regions["+ i +"].Zones["+ j +"].ResourceTypes["+ k +"]"));
+				}
+				zone.setResourceTypes(resourceTypes);
+
 				zones.add(zone);
 			}
 			region.setZones(zones);

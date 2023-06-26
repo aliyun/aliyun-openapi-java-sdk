@@ -93,6 +93,8 @@ public class DescribeRegionsResponse extends AcsResponse {
 
 			private String zoneId;
 
+			private List<String> resourceTypes;
+
 			public String getLocalName() {
 				return this.localName;
 			}
@@ -107,6 +109,14 @@ public class DescribeRegionsResponse extends AcsResponse {
 
 			public void setZoneId(String zoneId) {
 				this.zoneId = zoneId;
+			}
+
+			public List<String> getResourceTypes() {
+				return this.resourceTypes;
+			}
+
+			public void setResourceTypes(List<String> resourceTypes) {
+				this.resourceTypes = resourceTypes;
 			}
 		}
 	}
