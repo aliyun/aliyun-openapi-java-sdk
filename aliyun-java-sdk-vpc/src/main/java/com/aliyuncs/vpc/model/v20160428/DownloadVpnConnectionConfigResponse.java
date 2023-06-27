@@ -14,6 +14,7 @@
 
 package com.aliyuncs.vpc.model.v20160428;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.vpc.transform.v20160428.DownloadVpnConnectionConfigResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -54,6 +55,8 @@ public class DownloadVpnConnectionConfigResponse extends AcsResponse {
 
 		private String localSubnet;
 
+		private List<TunnelConfig> tunnelsConfig;
+
 		private IkeConfig ikeConfig;
 
 		private IpsecConfig ipsecConfig;
@@ -90,6 +93,14 @@ public class DownloadVpnConnectionConfigResponse extends AcsResponse {
 			this.localSubnet = localSubnet;
 		}
 
+		public List<TunnelConfig> getTunnelsConfig() {
+			return this.tunnelsConfig;
+		}
+
+		public void setTunnelsConfig(List<TunnelConfig> tunnelsConfig) {
+			this.tunnelsConfig = tunnelsConfig;
+		}
+
 		public IkeConfig getIkeConfig() {
 			return this.ikeConfig;
 		}
@@ -104,6 +115,205 @@ public class DownloadVpnConnectionConfigResponse extends AcsResponse {
 
 		public void setIpsecConfig(IpsecConfig ipsecConfig) {
 			this.ipsecConfig = ipsecConfig;
+		}
+
+		public static class TunnelConfig {
+
+			private String tunnelId;
+
+			private String local;
+
+			private String remote;
+
+			private String rightCaCert;
+
+			private IkeConfig1 ikeConfig1;
+
+			private IpsecConfig2 ipsecConfig2;
+
+			public String getTunnelId() {
+				return this.tunnelId;
+			}
+
+			public void setTunnelId(String tunnelId) {
+				this.tunnelId = tunnelId;
+			}
+
+			public String getLocal() {
+				return this.local;
+			}
+
+			public void setLocal(String local) {
+				this.local = local;
+			}
+
+			public String getRemote() {
+				return this.remote;
+			}
+
+			public void setRemote(String remote) {
+				this.remote = remote;
+			}
+
+			public String getRightCaCert() {
+				return this.rightCaCert;
+			}
+
+			public void setRightCaCert(String rightCaCert) {
+				this.rightCaCert = rightCaCert;
+			}
+
+			public IkeConfig1 getIkeConfig1() {
+				return this.ikeConfig1;
+			}
+
+			public void setIkeConfig1(IkeConfig1 ikeConfig1) {
+				this.ikeConfig1 = ikeConfig1;
+			}
+
+			public IpsecConfig2 getIpsecConfig2() {
+				return this.ipsecConfig2;
+			}
+
+			public void setIpsecConfig2(IpsecConfig2 ipsecConfig2) {
+				this.ipsecConfig2 = ipsecConfig2;
+			}
+
+			public static class IkeConfig1 {
+
+				private String psk;
+
+				private String ikeVersion;
+
+				private String ikeMode;
+
+				private String ikeEncAlg;
+
+				private String ikeAuthAlg;
+
+				private String ikePfs;
+
+				private Long ikeLifetime;
+
+				private String localId;
+
+				private String remoteId;
+
+				public String getPsk() {
+					return this.psk;
+				}
+
+				public void setPsk(String psk) {
+					this.psk = psk;
+				}
+
+				public String getIkeVersion() {
+					return this.ikeVersion;
+				}
+
+				public void setIkeVersion(String ikeVersion) {
+					this.ikeVersion = ikeVersion;
+				}
+
+				public String getIkeMode() {
+					return this.ikeMode;
+				}
+
+				public void setIkeMode(String ikeMode) {
+					this.ikeMode = ikeMode;
+				}
+
+				public String getIkeEncAlg() {
+					return this.ikeEncAlg;
+				}
+
+				public void setIkeEncAlg(String ikeEncAlg) {
+					this.ikeEncAlg = ikeEncAlg;
+				}
+
+				public String getIkeAuthAlg() {
+					return this.ikeAuthAlg;
+				}
+
+				public void setIkeAuthAlg(String ikeAuthAlg) {
+					this.ikeAuthAlg = ikeAuthAlg;
+				}
+
+				public String getIkePfs() {
+					return this.ikePfs;
+				}
+
+				public void setIkePfs(String ikePfs) {
+					this.ikePfs = ikePfs;
+				}
+
+				public Long getIkeLifetime() {
+					return this.ikeLifetime;
+				}
+
+				public void setIkeLifetime(Long ikeLifetime) {
+					this.ikeLifetime = ikeLifetime;
+				}
+
+				public String getLocalId() {
+					return this.localId;
+				}
+
+				public void setLocalId(String localId) {
+					this.localId = localId;
+				}
+
+				public String getRemoteId() {
+					return this.remoteId;
+				}
+
+				public void setRemoteId(String remoteId) {
+					this.remoteId = remoteId;
+				}
+			}
+
+			public static class IpsecConfig2 {
+
+				private String ipsecEncAlg;
+
+				private String ipsecAuthAlg;
+
+				private String ipsecPfs;
+
+				private Long ipsecLifetime;
+
+				public String getIpsecEncAlg() {
+					return this.ipsecEncAlg;
+				}
+
+				public void setIpsecEncAlg(String ipsecEncAlg) {
+					this.ipsecEncAlg = ipsecEncAlg;
+				}
+
+				public String getIpsecAuthAlg() {
+					return this.ipsecAuthAlg;
+				}
+
+				public void setIpsecAuthAlg(String ipsecAuthAlg) {
+					this.ipsecAuthAlg = ipsecAuthAlg;
+				}
+
+				public String getIpsecPfs() {
+					return this.ipsecPfs;
+				}
+
+				public void setIpsecPfs(String ipsecPfs) {
+					this.ipsecPfs = ipsecPfs;
+				}
+
+				public Long getIpsecLifetime() {
+					return this.ipsecLifetime;
+				}
+
+				public void setIpsecLifetime(Long ipsecLifetime) {
+					this.ipsecLifetime = ipsecLifetime;
+				}
+			}
 		}
 
 		public static class IkeConfig {

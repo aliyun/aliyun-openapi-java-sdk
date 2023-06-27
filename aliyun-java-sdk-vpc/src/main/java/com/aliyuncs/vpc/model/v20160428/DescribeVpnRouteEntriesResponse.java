@@ -97,6 +97,8 @@ public class DescribeVpnRouteEntriesResponse extends AcsResponse {
 
 		private String vpnInstanceId;
 
+		private String nextHopTunnelId;
+
 		public String getRouteEntryType() {
 			return this.routeEntryType;
 		}
@@ -175,6 +177,14 @@ public class DescribeVpnRouteEntriesResponse extends AcsResponse {
 
 		public void setVpnInstanceId(String vpnInstanceId) {
 			this.vpnInstanceId = vpnInstanceId;
+		}
+
+		public String getNextHopTunnelId() {
+			return this.nextHopTunnelId;
+		}
+
+		public void setNextHopTunnelId(String nextHopTunnelId) {
+			this.nextHopTunnelId = nextHopTunnelId;
 		}
 	}
 

@@ -57,8 +57,6 @@ public class DescribeVpnConnectionResponseUnmarshaller {
 		describeVpnConnectionResponse.setTransitRouterId(_ctx.stringValue("DescribeVpnConnectionResponse.TransitRouterId"));
 		describeVpnConnectionResponse.setTransitRouterName(_ctx.stringValue("DescribeVpnConnectionResponse.TransitRouterName"));
 		describeVpnConnectionResponse.setCrossAccountAuthorized(_ctx.booleanValue("DescribeVpnConnectionResponse.CrossAccountAuthorized"));
-		describeVpnConnectionResponse.setDisasterRecoveryZoneNo(_ctx.stringValue("DescribeVpnConnectionResponse.DisasterRecoveryZoneNo"));
-		describeVpnConnectionResponse.setDisasterRecoveryInternetIp(_ctx.stringValue("DescribeVpnConnectionResponse.DisasterRecoveryInternetIp"));
 		describeVpnConnectionResponse.setEnableTunnelsBgp(_ctx.booleanValue("DescribeVpnConnectionResponse.EnableTunnelsBgp"));
 
 		IkeConfig ikeConfig = new IkeConfig();

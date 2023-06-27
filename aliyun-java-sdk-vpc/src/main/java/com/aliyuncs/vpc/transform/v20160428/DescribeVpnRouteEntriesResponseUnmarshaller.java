@@ -44,6 +44,7 @@ public class DescribeVpnRouteEntriesResponseUnmarshaller {
 			vpnRouteEntry.setCommunity(_ctx.stringValue("DescribeVpnRouteEntriesResponse.VpnRouteEntries["+ i +"].Community"));
 			vpnRouteEntry.setSource(_ctx.stringValue("DescribeVpnRouteEntriesResponse.VpnRouteEntries["+ i +"].Source"));
 			vpnRouteEntry.setVpnInstanceId(_ctx.stringValue("DescribeVpnRouteEntriesResponse.VpnRouteEntries["+ i +"].VpnInstanceId"));
+			vpnRouteEntry.setNextHopTunnelId(_ctx.stringValue("DescribeVpnRouteEntriesResponse.VpnRouteEntries["+ i +"].NextHopTunnelId"));
 
 			vpnRouteEntries.add(vpnRouteEntry);
 		}

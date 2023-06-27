@@ -24,17 +24,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpenTrafficMirrorServiceResponse extends AcsResponse {
 
-	private String orderId;
-
 	private String requestId;
 
-	public String getOrderId() {
-		return this.orderId;
-	}
+	private String code;
 
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
-	}
+	private String message;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,6 +36,22 @@ public class OpenTrafficMirrorServiceResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	@Override

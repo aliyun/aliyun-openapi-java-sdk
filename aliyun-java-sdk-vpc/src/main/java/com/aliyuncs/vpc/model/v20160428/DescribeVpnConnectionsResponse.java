@@ -119,6 +119,8 @@ public class DescribeVpnConnectionsResponse extends AcsResponse {
 
 		private String internetIp;
 
+		private Boolean enableTunnelsBgp;
+
 		private List<TagItem> tag;
 
 		private List<TunnelOptions> tunnelOptionsSpecification;
@@ -297,6 +299,14 @@ public class DescribeVpnConnectionsResponse extends AcsResponse {
 
 		public void setInternetIp(String internetIp) {
 			this.internetIp = internetIp;
+		}
+
+		public Boolean getEnableTunnelsBgp() {
+			return this.enableTunnelsBgp;
+		}
+
+		public void setEnableTunnelsBgp(Boolean enableTunnelsBgp) {
+			this.enableTunnelsBgp = enableTunnelsBgp;
 		}
 
 		public List<TagItem> getTag() {

@@ -22,20 +22,24 @@ import com.aliyuncs.vpc.Endpoint;
  * @author auto create
  * @version 
  */
-public class OpenTrafficMirrorServiceRequest extends RpcAcsRequest<OpenTrafficMirrorServiceResponse> {
+public class DescribeSslVpnClientsRequest extends RpcAcsRequest<DescribeSslVpnClientsResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String clientToken;
+	private Integer pageNumber;
+
+	private Integer pageSize;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
+	private String vpnGatewayId;
+
 	private Long ownerId;
-	public OpenTrafficMirrorServiceRequest() {
-		super("Vpc", "2016-04-28", "OpenTrafficMirrorService", "vpc");
+	public DescribeSslVpnClientsRequest() {
+		super("Vpc", "2016-04-28", "DescribeSslVpnClients", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -54,14 +58,25 @@ public class OpenTrafficMirrorServiceRequest extends RpcAcsRequest<OpenTrafficMi
 		}
 	}
 
-	public String getClientToken() {
-		return this.clientToken;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -87,6 +102,17 @@ public class OpenTrafficMirrorServiceRequest extends RpcAcsRequest<OpenTrafficMi
 		}
 	}
 
+	public String getVpnGatewayId() {
+		return this.vpnGatewayId;
+	}
+
+	public void setVpnGatewayId(String vpnGatewayId) {
+		this.vpnGatewayId = vpnGatewayId;
+		if(vpnGatewayId != null){
+			putQueryParameter("VpnGatewayId", vpnGatewayId);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -99,8 +125,8 @@ public class OpenTrafficMirrorServiceRequest extends RpcAcsRequest<OpenTrafficMi
 	}
 
 	@Override
-	public Class<OpenTrafficMirrorServiceResponse> getResponseClass() {
-		return OpenTrafficMirrorServiceResponse.class;
+	public Class<DescribeSslVpnClientsResponse> getResponseClass() {
+		return DescribeSslVpnClientsResponse.class;
 	}
 
 }

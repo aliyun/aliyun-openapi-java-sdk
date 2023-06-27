@@ -31,6 +31,8 @@ public class ListTrafficMirrorFiltersResponseUnmarshaller {
 		listTrafficMirrorFiltersResponse.setRequestId(_ctx.stringValue("ListTrafficMirrorFiltersResponse.RequestId"));
 		listTrafficMirrorFiltersResponse.setNextToken(_ctx.stringValue("ListTrafficMirrorFiltersResponse.NextToken"));
 		listTrafficMirrorFiltersResponse.setTotalCount(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TotalCount"));
+		listTrafficMirrorFiltersResponse.setMaxResults(_ctx.integerValue("ListTrafficMirrorFiltersResponse.MaxResults"));
+		listTrafficMirrorFiltersResponse.setCount(_ctx.integerValue("ListTrafficMirrorFiltersResponse.Count"));
 
 		List<TrafficMirrorFilter> trafficMirrorFilters = new ArrayList<TrafficMirrorFilter>();
 		for (int i = 0; i < _ctx.lengthValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters.Length"); i++) {

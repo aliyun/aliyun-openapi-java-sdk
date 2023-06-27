@@ -1,3 +1,17 @@
+2023-06-27 Version: 3.2.25
+- Add error code.
+- Add ErrorCode.
+- Add errorCode for ListPublicIpAddressPoolsForCommonBuy.
+- Add new errorcode.
+- Modify parameter type.
+- Change parameter instanceId  of DeleteVSwitchCidrReservation to requeired, add error code, and add tags in DescribeCommonBandwidthPackages response.
+- Update traffic mirror service api.
+- Add error code for MoveResourceGroup and AllocateVpcIpv6Cidr.
+- Api tag.
+- Support tag when create resources.
+- Add errorCode.
+- Change API RAM meta.
+
 2023-06-09 Version: 3.2.24
 - RegionId Field is required.
 - Supported Zone for AllocateEipSegmentAddress.

@@ -71,10 +71,6 @@ public class DescribeVpnConnectionResponse extends AcsResponse {
 
 	private Boolean crossAccountAuthorized;
 
-	private String disasterRecoveryZoneNo;
-
-	private String disasterRecoveryInternetIp;
-
 	private Boolean enableTunnelsBgp;
 
 	private List<Tag> tags;
@@ -271,22 +267,6 @@ public class DescribeVpnConnectionResponse extends AcsResponse {
 
 	public void setCrossAccountAuthorized(Boolean crossAccountAuthorized) {
 		this.crossAccountAuthorized = crossAccountAuthorized;
-	}
-
-	public String getDisasterRecoveryZoneNo() {
-		return this.disasterRecoveryZoneNo;
-	}
-
-	public void setDisasterRecoveryZoneNo(String disasterRecoveryZoneNo) {
-		this.disasterRecoveryZoneNo = disasterRecoveryZoneNo;
-	}
-
-	public String getDisasterRecoveryInternetIp() {
-		return this.disasterRecoveryInternetIp;
-	}
-
-	public void setDisasterRecoveryInternetIp(String disasterRecoveryInternetIp) {
-		this.disasterRecoveryInternetIp = disasterRecoveryInternetIp;
 	}
 
 	public Boolean getEnableTunnelsBgp() {

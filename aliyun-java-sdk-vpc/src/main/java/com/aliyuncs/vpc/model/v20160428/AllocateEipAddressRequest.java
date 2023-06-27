@@ -26,6 +26,8 @@ import com.aliyuncs.vpc.Endpoint;
 public class AllocateEipAddressRequest extends RpcAcsRequest<AllocateEipAddressResponse> {
 	   
 
+	private String ipAddress;
+
 	private Long resourceOwnerId;
 
 	private String publicIpAddressPoolId;
@@ -58,6 +60,8 @@ public class AllocateEipAddressRequest extends RpcAcsRequest<AllocateEipAddressR
 
 	private Long activityId;
 
+	private String instanceId;
+
 	private String internetChargeType;
 
 	private String name;
@@ -72,6 +76,17 @@ public class AllocateEipAddressRequest extends RpcAcsRequest<AllocateEipAddressR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getIpAddress() {
+		return this.ipAddress;
+	}
+
+	public void setIpAddress(String ipAddress) {
+		this.ipAddress = ipAddress;
+		if(ipAddress != null){
+			putQueryParameter("IpAddress", ipAddress);
+		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -247,6 +262,17 @@ public class AllocateEipAddressRequest extends RpcAcsRequest<AllocateEipAddressR
 		this.activityId = activityId;
 		if(activityId != null){
 			putQueryParameter("ActivityId", activityId.toString());
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

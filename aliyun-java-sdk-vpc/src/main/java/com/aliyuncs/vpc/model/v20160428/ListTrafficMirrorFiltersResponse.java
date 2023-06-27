@@ -31,6 +31,10 @@ public class ListTrafficMirrorFiltersResponse extends AcsResponse {
 
 	private String totalCount;
 
+	private Integer maxResults;
+
+	private Integer count;
+
 	private List<TrafficMirrorFilter> trafficMirrorFilters;
 
 	public String getNextToken() {
@@ -55,6 +59,22 @@ public class ListTrafficMirrorFiltersResponse extends AcsResponse {
 
 	public void setTotalCount(String totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public Integer getMaxResults() {
+		return this.maxResults;
+	}
+
+	public void setMaxResults(Integer maxResults) {
+		this.maxResults = maxResults;
+	}
+
+	public Integer getCount() {
+		return this.count;
+	}
+
+	public void setCount(Integer count) {
+		this.count = count;
 	}
 
 	public List<TrafficMirrorFilter> getTrafficMirrorFilters() {
