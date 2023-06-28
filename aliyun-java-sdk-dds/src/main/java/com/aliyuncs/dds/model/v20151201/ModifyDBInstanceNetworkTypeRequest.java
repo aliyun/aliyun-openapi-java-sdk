@@ -45,6 +45,8 @@ public class ModifyDBInstanceNetworkTypeRequest extends RpcAcsRequest<ModifyDBIn
 	private String retainClassic;
 
 	private String vpcId;
+
+	private String zoneId;
 	public ModifyDBInstanceNetworkTypeRequest() {
 		super("Dds", "2015-12-01", "ModifyDBInstanceNetworkType", "dds");
 		setMethod(MethodType.POST);
@@ -168,6 +170,17 @@ public class ModifyDBInstanceNetworkTypeRequest extends RpcAcsRequest<ModifyDBIn
 		this.vpcId = vpcId;
 		if(vpcId != null){
 			putQueryParameter("VpcId", vpcId);
+		}
+	}
+
+	public String getZoneId() {
+		return this.zoneId;
+	}
+
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+		if(zoneId != null){
+			putQueryParameter("ZoneId", zoneId);
 		}
 	}
 
