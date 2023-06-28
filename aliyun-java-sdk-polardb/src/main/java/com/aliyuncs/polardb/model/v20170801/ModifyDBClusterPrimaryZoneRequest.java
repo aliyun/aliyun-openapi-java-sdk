@@ -41,6 +41,8 @@ public class ModifyDBClusterPrimaryZoneRequest extends RpcAcsRequest<ModifyDBClu
 
 	private String plannedStartTime;
 
+	private String vPCId;
+
 	private String zoneId;
 
 	private Boolean fromTimeService;
@@ -138,6 +140,17 @@ public class ModifyDBClusterPrimaryZoneRequest extends RpcAcsRequest<ModifyDBClu
 		this.plannedStartTime = plannedStartTime;
 		if(plannedStartTime != null){
 			putQueryParameter("PlannedStartTime", plannedStartTime);
+		}
+	}
+
+	public String getVPCId() {
+		return this.vPCId;
+	}
+
+	public void setVPCId(String vPCId) {
+		this.vPCId = vPCId;
+		if(vPCId != null){
+			putQueryParameter("VPCId", vPCId);
 		}
 	}
 

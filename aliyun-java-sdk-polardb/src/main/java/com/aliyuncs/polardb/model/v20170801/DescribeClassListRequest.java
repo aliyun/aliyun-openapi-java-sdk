@@ -37,6 +37,8 @@ public class DescribeClassListRequest extends RpcAcsRequest<DescribeClassListRes
 
 	private Long ownerId;
 
+	private String masterHa;
+
 	private String orderType;
 	public DescribeClassListRequest() {
 		super("polardb", "2017-08-01", "DescribeClassList", "polardb");
@@ -110,6 +112,17 @@ public class DescribeClassListRequest extends RpcAcsRequest<DescribeClassListRes
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getMasterHa() {
+		return this.masterHa;
+	}
+
+	public void setMasterHa(String masterHa) {
+		this.masterHa = masterHa;
+		if(masterHa != null){
+			putQueryParameter("MasterHa", masterHa);
 		}
 	}
 

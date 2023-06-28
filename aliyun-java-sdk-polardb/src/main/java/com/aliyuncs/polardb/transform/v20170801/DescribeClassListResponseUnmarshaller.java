@@ -36,6 +36,7 @@ public class DescribeClassListResponseUnmarshaller {
 			itemsItem.setClassTypeLevel(_ctx.stringValue("DescribeClassListResponse.Items["+ i +"].ClassTypeLevel"));
 			itemsItem.setCpu(_ctx.stringValue("DescribeClassListResponse.Items["+ i +"].Cpu"));
 			itemsItem.setReferencePrice(_ctx.stringValue("DescribeClassListResponse.Items["+ i +"].ReferencePrice"));
+			itemsItem.setReferenceExtPrice(_ctx.stringValue("DescribeClassListResponse.Items["+ i +"].ReferenceExtPrice"));
 			itemsItem.setMaxConnections(_ctx.stringValue("DescribeClassListResponse.Items["+ i +"].MaxConnections"));
 			itemsItem.setMemoryClass(_ctx.stringValue("DescribeClassListResponse.Items["+ i +"].MemoryClass"));
 			itemsItem.setClassCode(_ctx.stringValue("DescribeClassListResponse.Items["+ i +"].ClassCode"));

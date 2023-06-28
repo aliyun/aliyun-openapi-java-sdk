@@ -65,6 +65,8 @@ public class DescribeClassListResponse extends AcsResponse {
 
 		private String referencePrice;
 
+		private String referenceExtPrice;
+
 		private String maxConnections;
 
 		private String memoryClass;
@@ -115,6 +117,14 @@ public class DescribeClassListResponse extends AcsResponse {
 
 		public void setReferencePrice(String referencePrice) {
 			this.referencePrice = referencePrice;
+		}
+
+		public String getReferenceExtPrice() {
+			return this.referenceExtPrice;
+		}
+
+		public void setReferenceExtPrice(String referenceExtPrice) {
+			this.referenceExtPrice = referenceExtPrice;
 		}
 
 		public String getMaxConnections() {

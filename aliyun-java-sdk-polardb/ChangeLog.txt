@@ -1,3 +1,7 @@
+2023-06-28 Version: 1.8.33
+- DescribeClassList support masterHa.
+- ModifyDBClusterPrimaryZone support VPCId.
+
 2023-06-21 Version: 1.8.32
 - Support new feature.
 
