@@ -39,6 +39,8 @@ public class GetLindormInstanceResponse extends AcsResponse {
 
 	private Boolean enableKms;
 
+	private Boolean enableML;
+
 	private String diskUsage;
 
 	private String diskCategory;
@@ -85,11 +87,15 @@ public class GetLindormInstanceResponse extends AcsResponse {
 
 	private Boolean enableSSL;
 
+	private Boolean enableMLCtrl;
+
 	private Boolean enableCdc;
 
 	private Boolean enableStream;
 
 	private Boolean enableShs;
+
+	private Boolean enableBlob;
 
 	private String maintainStartTime;
 
@@ -187,6 +193,14 @@ public class GetLindormInstanceResponse extends AcsResponse {
 
 	public void setEnableKms(Boolean enableKms) {
 		this.enableKms = enableKms;
+	}
+
+	public Boolean getEnableML() {
+		return this.enableML;
+	}
+
+	public void setEnableML(Boolean enableML) {
+		this.enableML = enableML;
 	}
 
 	public String getDiskUsage() {
@@ -373,6 +387,14 @@ public class GetLindormInstanceResponse extends AcsResponse {
 		this.enableSSL = enableSSL;
 	}
 
+	public Boolean getEnableMLCtrl() {
+		return this.enableMLCtrl;
+	}
+
+	public void setEnableMLCtrl(Boolean enableMLCtrl) {
+		this.enableMLCtrl = enableMLCtrl;
+	}
+
 	public Boolean getEnableCdc() {
 		return this.enableCdc;
 	}
@@ -395,6 +417,14 @@ public class GetLindormInstanceResponse extends AcsResponse {
 
 	public void setEnableShs(Boolean enableShs) {
 		this.enableShs = enableShs;
+	}
+
+	public Boolean getEnableBlob() {
+		return this.enableBlob;
+	}
+
+	public void setEnableBlob(Boolean enableBlob) {
+		this.enableBlob = enableBlob;
 	}
 
 	public String getMaintainStartTime() {

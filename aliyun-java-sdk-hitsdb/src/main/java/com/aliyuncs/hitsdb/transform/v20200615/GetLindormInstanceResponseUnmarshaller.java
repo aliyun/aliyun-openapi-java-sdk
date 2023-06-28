@@ -34,6 +34,7 @@ public class GetLindormInstanceResponseUnmarshaller {
 		getLindormInstanceResponse.setNetworkType(_ctx.stringValue("GetLindormInstanceResponse.NetworkType"));
 		getLindormInstanceResponse.setServiceType(_ctx.stringValue("GetLindormInstanceResponse.ServiceType"));
 		getLindormInstanceResponse.setEnableKms(_ctx.booleanValue("GetLindormInstanceResponse.EnableKms"));
+		getLindormInstanceResponse.setEnableML(_ctx.booleanValue("GetLindormInstanceResponse.EnableML"));
 		getLindormInstanceResponse.setDiskUsage(_ctx.stringValue("GetLindormInstanceResponse.DiskUsage"));
 		getLindormInstanceResponse.setDiskCategory(_ctx.stringValue("GetLindormInstanceResponse.DiskCategory"));
 		getLindormInstanceResponse.setColdStorage(_ctx.integerValue("GetLindormInstanceResponse.ColdStorage"));
@@ -56,9 +57,11 @@ public class GetLindormInstanceResponseUnmarshaller {
 		getLindormInstanceResponse.setInstanceStatus(_ctx.stringValue("GetLindormInstanceResponse.InstanceStatus"));
 		getLindormInstanceResponse.setEnableCompute(_ctx.booleanValue("GetLindormInstanceResponse.EnableCompute"));
 		getLindormInstanceResponse.setEnableSSL(_ctx.booleanValue("GetLindormInstanceResponse.EnableSSL"));
+		getLindormInstanceResponse.setEnableMLCtrl(_ctx.booleanValue("GetLindormInstanceResponse.EnableMLCtrl"));
 		getLindormInstanceResponse.setEnableCdc(_ctx.booleanValue("GetLindormInstanceResponse.EnableCdc"));
 		getLindormInstanceResponse.setEnableStream(_ctx.booleanValue("GetLindormInstanceResponse.EnableStream"));
 		getLindormInstanceResponse.setEnableShs(_ctx.booleanValue("GetLindormInstanceResponse.EnableShs"));
+		getLindormInstanceResponse.setEnableBlob(_ctx.booleanValue("GetLindormInstanceResponse.EnableBlob"));
 		getLindormInstanceResponse.setMaintainStartTime(_ctx.stringValue("GetLindormInstanceResponse.MaintainStartTime"));
 		getLindormInstanceResponse.setMaintainEndTime(_ctx.stringValue("GetLindormInstanceResponse.MaintainEndTime"));
 		getLindormInstanceResponse.setResourceGroupId(_ctx.stringValue("GetLindormInstanceResponse.ResourceGroupId"));
