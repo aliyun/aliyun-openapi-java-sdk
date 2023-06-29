@@ -28,6 +28,8 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	private Long resourceOwnerId;
 
+	private String connectionStringPrefix;
+
 	private String secondaryZoneId;
 
 	private String couponNo;
@@ -120,6 +122,17 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getConnectionStringPrefix() {
+		return this.connectionStringPrefix;
+	}
+
+	public void setConnectionStringPrefix(String connectionStringPrefix) {
+		this.connectionStringPrefix = connectionStringPrefix;
+		if(connectionStringPrefix != null){
+			putQueryParameter("ConnectionStringPrefix", connectionStringPrefix);
 		}
 	}
 
