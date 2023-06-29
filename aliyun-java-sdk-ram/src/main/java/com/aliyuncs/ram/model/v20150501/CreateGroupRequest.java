@@ -30,7 +30,7 @@ public class CreateGroupRequest extends RpcAcsRequest<CreateGroupResponse> {
 
 	private String groupName;
 	public CreateGroupRequest() {
-		super("Ram", "2015-05-01", "CreateGroup", "Ram");
+		super("Ram", "2015-05-01", "CreateGroup");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

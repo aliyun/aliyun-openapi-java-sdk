@@ -32,7 +32,7 @@ public class DetachPolicyFromGroupRequest extends RpcAcsRequest<DetachPolicyFrom
 
 	private String policyName;
 	public DetachPolicyFromGroupRequest() {
-		super("Ram", "2015-05-01", "DetachPolicyFromGroup", "Ram");
+		super("Ram", "2015-05-01", "DetachPolicyFromGroup");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

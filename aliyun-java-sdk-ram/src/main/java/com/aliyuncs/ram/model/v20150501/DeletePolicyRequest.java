@@ -28,7 +28,7 @@ public class DeletePolicyRequest extends RpcAcsRequest<DeletePolicyResponse> {
 
 	private String policyName;
 	public DeletePolicyRequest() {
-		super("Ram", "2015-05-01", "DeletePolicy", "Ram");
+		super("Ram", "2015-05-01", "DeletePolicy");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

@@ -28,7 +28,7 @@ public class GetUserRequest extends RpcAcsRequest<GetUserResponse> {
 
 	private String userName;
 	public GetUserRequest() {
-		super("Ram", "2015-05-01", "GetUser", "Ram");
+		super("Ram", "2015-05-01", "GetUser");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

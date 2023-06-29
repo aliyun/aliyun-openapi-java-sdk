@@ -26,7 +26,7 @@ import com.aliyuncs.ram.Endpoint;
 public class GetPasswordPolicyRequest extends RpcAcsRequest<GetPasswordPolicyResponse> {
 	   
 	public GetPasswordPolicyRequest() {
-		super("Ram", "2015-05-01", "GetPasswordPolicy", "Ram");
+		super("Ram", "2015-05-01", "GetPasswordPolicy");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

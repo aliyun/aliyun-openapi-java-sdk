@@ -30,7 +30,7 @@ public class DeleteAccessKeyRequest extends RpcAcsRequest<DeleteAccessKeyRespons
 
 	private String userName;
 	public DeleteAccessKeyRequest() {
-		super("Ram", "2015-05-01", "DeleteAccessKey", "Ram");
+		super("Ram", "2015-05-01", "DeleteAccessKey");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

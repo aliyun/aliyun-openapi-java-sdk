@@ -32,7 +32,7 @@ public class AttachPolicyToUserRequest extends RpcAcsRequest<AttachPolicyToUserR
 
 	private String userName;
 	public AttachPolicyToUserRequest() {
-		super("Ram", "2015-05-01", "AttachPolicyToUser", "Ram");
+		super("Ram", "2015-05-01", "AttachPolicyToUser");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

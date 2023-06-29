@@ -28,7 +28,7 @@ public class GetLoginProfileRequest extends RpcAcsRequest<GetLoginProfileRespons
 
 	private String userName;
 	public GetLoginProfileRequest() {
-		super("Ram", "2015-05-01", "GetLoginProfile", "Ram");
+		super("Ram", "2015-05-01", "GetLoginProfile");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

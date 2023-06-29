@@ -34,7 +34,7 @@ public class UpdateRoleRequest extends RpcAcsRequest<UpdateRoleResponse> {
 
 	private String roleName;
 	public UpdateRoleRequest() {
-		super("Ram", "2015-05-01", "UpdateRole", "Ram");
+		super("Ram", "2015-05-01", "UpdateRole");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

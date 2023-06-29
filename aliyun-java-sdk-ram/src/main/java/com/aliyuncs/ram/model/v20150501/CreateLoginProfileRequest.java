@@ -34,7 +34,7 @@ public class CreateLoginProfileRequest extends RpcAcsRequest<CreateLoginProfileR
 
 	private String userName;
 	public CreateLoginProfileRequest() {
-		super("Ram", "2015-05-01", "CreateLoginProfile", "Ram");
+		super("Ram", "2015-05-01", "CreateLoginProfile");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

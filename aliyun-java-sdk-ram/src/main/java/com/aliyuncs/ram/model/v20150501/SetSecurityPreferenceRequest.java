@@ -40,7 +40,7 @@ public class SetSecurityPreferenceRequest extends RpcAcsRequest<SetSecurityPrefe
 
 	private Boolean allowUserToManageMFADevices;
 	public SetSecurityPreferenceRequest() {
-		super("Ram", "2015-05-01", "SetSecurityPreference", "Ram");
+		super("Ram", "2015-05-01", "SetSecurityPreference");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

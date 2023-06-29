@@ -1,3 +1,6 @@
+2023-06-29 Version: 3.3.2
+- Fix 44273543. publish DecodeDiagnosticMessage
+
 2022-11-02 Version: 3.3.1
 - Support LICENSE.
 

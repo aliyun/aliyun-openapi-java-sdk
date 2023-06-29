@@ -28,7 +28,7 @@ public class CreateVirtualMFADeviceRequest extends RpcAcsRequest<CreateVirtualMF
 
 	private String virtualMFADeviceName;
 	public CreateVirtualMFADeviceRequest() {
-		super("Ram", "2015-05-01", "CreateVirtualMFADevice", "Ram");
+		super("Ram", "2015-05-01", "CreateVirtualMFADevice");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

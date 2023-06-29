@@ -23,12 +23,12 @@ import com.aliyuncs.ram.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteUserRequest extends RpcAcsRequest<DeleteUserResponse> {
+public class DecodeDiagnosticMessageRequest extends RpcAcsRequest<DecodeDiagnosticMessageResponse> {
 	   
 
-	private String userName;
-	public DeleteUserRequest() {
-		super("Ram", "2015-05-01", "DeleteUser");
+	private String encodedDiagnosticMessage;
+	public DecodeDiagnosticMessageRequest() {
+		super("Ram", "2015-05-01", "DecodeDiagnosticMessage");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
@@ -37,20 +37,20 @@ public class DeleteUserRequest extends RpcAcsRequest<DeleteUserResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getUserName() {
-		return this.userName;
+	public String getEncodedDiagnosticMessage() {
+		return this.encodedDiagnosticMessage;
 	}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
-		if(userName != null){
-			putQueryParameter("UserName", userName);
+	public void setEncodedDiagnosticMessage(String encodedDiagnosticMessage) {
+		this.encodedDiagnosticMessage = encodedDiagnosticMessage;
+		if(encodedDiagnosticMessage != null){
+			putQueryParameter("EncodedDiagnosticMessage", encodedDiagnosticMessage);
 		}
 	}
 
 	@Override
-	public Class<DeleteUserResponse> getResponseClass() {
-		return DeleteUserResponse.class;
+	public Class<DecodeDiagnosticMessageResponse> getResponseClass() {
+		return DecodeDiagnosticMessageResponse.class;
 	}
 
 }

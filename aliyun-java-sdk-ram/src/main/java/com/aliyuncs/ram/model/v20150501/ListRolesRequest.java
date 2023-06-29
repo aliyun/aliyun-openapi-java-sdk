@@ -30,7 +30,7 @@ public class ListRolesRequest extends RpcAcsRequest<ListRolesResponse> {
 
 	private Integer maxItems;
 	public ListRolesRequest() {
-		super("Ram", "2015-05-01", "ListRoles", "Ram");
+		super("Ram", "2015-05-01", "ListRoles");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

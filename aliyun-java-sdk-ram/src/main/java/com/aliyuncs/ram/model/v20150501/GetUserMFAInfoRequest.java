@@ -28,7 +28,7 @@ public class GetUserMFAInfoRequest extends RpcAcsRequest<GetUserMFAInfoResponse>
 
 	private String userName;
 	public GetUserMFAInfoRequest() {
-		super("Ram", "2015-05-01", "GetUserMFAInfo", "Ram");
+		super("Ram", "2015-05-01", "GetUserMFAInfo");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

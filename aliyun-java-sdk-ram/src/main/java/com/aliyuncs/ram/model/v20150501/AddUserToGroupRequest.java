@@ -30,7 +30,7 @@ public class AddUserToGroupRequest extends RpcAcsRequest<AddUserToGroupResponse>
 
 	private String userName;
 	public AddUserToGroupRequest() {
-		super("Ram", "2015-05-01", "AddUserToGroup", "Ram");
+		super("Ram", "2015-05-01", "AddUserToGroup");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

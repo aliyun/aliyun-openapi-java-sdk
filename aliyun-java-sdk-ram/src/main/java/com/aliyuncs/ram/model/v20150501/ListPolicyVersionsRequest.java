@@ -30,7 +30,7 @@ public class ListPolicyVersionsRequest extends RpcAcsRequest<ListPolicyVersionsR
 
 	private String policyName;
 	public ListPolicyVersionsRequest() {
-		super("Ram", "2015-05-01", "ListPolicyVersions", "Ram");
+		super("Ram", "2015-05-01", "ListPolicyVersions");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

@@ -30,7 +30,7 @@ public class ListGroupsRequest extends RpcAcsRequest<ListGroupsResponse> {
 
 	private Integer maxItems;
 	public ListGroupsRequest() {
-		super("Ram", "2015-05-01", "ListGroups", "Ram");
+		super("Ram", "2015-05-01", "ListGroups");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

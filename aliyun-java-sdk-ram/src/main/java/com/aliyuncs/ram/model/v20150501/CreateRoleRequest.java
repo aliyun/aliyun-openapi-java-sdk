@@ -34,7 +34,7 @@ public class CreateRoleRequest extends RpcAcsRequest<CreateRoleResponse> {
 
 	private String roleName;
 	public CreateRoleRequest() {
-		super("Ram", "2015-05-01", "CreateRole", "Ram");
+		super("Ram", "2015-05-01", "CreateRole");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

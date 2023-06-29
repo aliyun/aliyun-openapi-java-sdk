@@ -32,7 +32,7 @@ public class UpdateGroupRequest extends RpcAcsRequest<UpdateGroupResponse> {
 
 	private String newComments;
 	public UpdateGroupRequest() {
-		super("Ram", "2015-05-01", "UpdateGroup", "Ram");
+		super("Ram", "2015-05-01", "UpdateGroup");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

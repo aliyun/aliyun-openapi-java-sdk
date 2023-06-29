@@ -44,7 +44,7 @@ public class SetPasswordPolicyRequest extends RpcAcsRequest<SetPasswordPolicyRes
 
 	private Boolean requireSymbols;
 	public SetPasswordPolicyRequest() {
-		super("Ram", "2015-05-01", "SetPasswordPolicy", "Ram");
+		super("Ram", "2015-05-01", "SetPasswordPolicy");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

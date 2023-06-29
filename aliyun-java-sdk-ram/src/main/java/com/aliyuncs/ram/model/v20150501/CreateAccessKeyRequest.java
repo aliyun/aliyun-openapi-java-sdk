@@ -28,7 +28,7 @@ public class CreateAccessKeyRequest extends RpcAcsRequest<CreateAccessKeyRespons
 
 	private String userName;
 	public CreateAccessKeyRequest() {
-		super("Ram", "2015-05-01", "CreateAccessKey", "Ram");
+		super("Ram", "2015-05-01", "CreateAccessKey");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

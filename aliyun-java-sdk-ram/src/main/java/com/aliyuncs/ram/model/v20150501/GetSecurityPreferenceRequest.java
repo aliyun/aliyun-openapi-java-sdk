@@ -26,7 +26,7 @@ import com.aliyuncs.ram.Endpoint;
 public class GetSecurityPreferenceRequest extends RpcAcsRequest<GetSecurityPreferenceResponse> {
 	   
 	public GetSecurityPreferenceRequest() {
-		super("Ram", "2015-05-01", "GetSecurityPreference", "Ram");
+		super("Ram", "2015-05-01", "GetSecurityPreference");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

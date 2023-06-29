@@ -28,7 +28,7 @@ public class GetRoleRequest extends RpcAcsRequest<GetRoleResponse> {
 
 	private String roleName;
 	public GetRoleRequest() {
-		super("Ram", "2015-05-01", "GetRole", "Ram");
+		super("Ram", "2015-05-01", "GetRole");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

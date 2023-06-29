@@ -30,7 +30,7 @@ public class SetDefaultPolicyVersionRequest extends RpcAcsRequest<SetDefaultPoli
 
 	private String policyName;
 	public SetDefaultPolicyVersionRequest() {
-		super("Ram", "2015-05-01", "SetDefaultPolicyVersion", "Ram");
+		super("Ram", "2015-05-01", "SetDefaultPolicyVersion");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

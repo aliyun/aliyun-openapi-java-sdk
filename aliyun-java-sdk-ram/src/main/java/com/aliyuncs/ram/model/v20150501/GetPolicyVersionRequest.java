@@ -32,7 +32,7 @@ public class GetPolicyVersionRequest extends RpcAcsRequest<GetPolicyVersionRespo
 
 	private String policyName;
 	public GetPolicyVersionRequest() {
-		super("Ram", "2015-05-01", "GetPolicyVersion", "Ram");
+		super("Ram", "2015-05-01", "GetPolicyVersion");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

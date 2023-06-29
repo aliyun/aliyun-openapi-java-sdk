@@ -28,7 +28,7 @@ public class ListAccessKeysRequest extends RpcAcsRequest<ListAccessKeysResponse>
 
 	private String userName;
 	public ListAccessKeysRequest() {
-		super("Ram", "2015-05-01", "ListAccessKeys", "Ram");
+		super("Ram", "2015-05-01", "ListAccessKeys");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

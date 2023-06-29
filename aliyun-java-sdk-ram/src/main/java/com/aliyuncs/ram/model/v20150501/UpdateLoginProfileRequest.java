@@ -34,7 +34,7 @@ public class UpdateLoginProfileRequest extends RpcAcsRequest<UpdateLoginProfileR
 
 	private String userName;
 	public UpdateLoginProfileRequest() {
-		super("Ram", "2015-05-01", "UpdateLoginProfile", "Ram");
+		super("Ram", "2015-05-01", "UpdateLoginProfile");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

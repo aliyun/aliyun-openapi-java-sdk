@@ -26,7 +26,7 @@ import com.aliyuncs.ram.Endpoint;
 public class ListVirtualMFADevicesRequest extends RpcAcsRequest<ListVirtualMFADevicesResponse> {
 	   
 	public ListVirtualMFADevicesRequest() {
-		super("Ram", "2015-05-01", "ListVirtualMFADevices", "Ram");
+		super("Ram", "2015-05-01", "ListVirtualMFADevices");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
