@@ -31,6 +31,8 @@ public class CreateDBInstanceEndpointRequest extends RpcAcsRequest<CreateDBInsta
 
 	private String clientToken;
 
+	private String resourceGroupId;
+
 	private String dBInstanceId;
 
 	private String dBInstanceEndpointDescription;
@@ -85,6 +87,17 @@ public class CreateDBInstanceEndpointRequest extends RpcAcsRequest<CreateDBInsta
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

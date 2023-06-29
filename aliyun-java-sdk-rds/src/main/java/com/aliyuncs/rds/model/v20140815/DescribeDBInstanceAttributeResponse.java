@@ -213,6 +213,8 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		private String bpeEnabled;
 
+		private String pGBouncerEnabled;
+
 		private List<SlaveZone> slaveZones;
 
 		private List<ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
@@ -887,6 +889,14 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		public void setBpeEnabled(String bpeEnabled) {
 			this.bpeEnabled = bpeEnabled;
+		}
+
+		public String getPGBouncerEnabled() {
+			return this.pGBouncerEnabled;
+		}
+
+		public void setPGBouncerEnabled(String pGBouncerEnabled) {
+			this.pGBouncerEnabled = pGBouncerEnabled;
 		}
 
 		public List<SlaveZone> getSlaveZones() {

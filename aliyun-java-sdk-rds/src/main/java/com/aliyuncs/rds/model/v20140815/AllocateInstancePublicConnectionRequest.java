@@ -29,6 +29,8 @@ public class AllocateInstancePublicConnectionRequest extends RpcAcsRequest<Alloc
 
 	private String connectionStringPrefix;
 
+	private String pGBouncerPort;
+
 	private String generalGroupName;
 
 	private String dBInstanceId;
@@ -70,6 +72,17 @@ public class AllocateInstancePublicConnectionRequest extends RpcAcsRequest<Alloc
 		this.connectionStringPrefix = connectionStringPrefix;
 		if(connectionStringPrefix != null){
 			putQueryParameter("ConnectionStringPrefix", connectionStringPrefix);
+		}
+	}
+
+	public String getPGBouncerPort() {
+		return this.pGBouncerPort;
+	}
+
+	public void setPGBouncerPort(String pGBouncerPort) {
+		this.pGBouncerPort = pGBouncerPort;
+		if(pGBouncerPort != null){
+			putQueryParameter("PGBouncerPort", pGBouncerPort);
 		}
 	}
 

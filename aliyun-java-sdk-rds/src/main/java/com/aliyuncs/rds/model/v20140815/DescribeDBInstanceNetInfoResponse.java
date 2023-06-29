@@ -91,6 +91,8 @@ public class DescribeDBInstanceNetInfoResponse extends AcsResponse {
 
 		private String iPAddress;
 
+		private String pGBouncerPort;
+
 		private List<SecurityIPGroup> securityIPGroups;
 
 		private List<DBInstanceWeight> dBInstanceWeights;
@@ -189,6 +191,14 @@ public class DescribeDBInstanceNetInfoResponse extends AcsResponse {
 
 		public void setIPAddress(String iPAddress) {
 			this.iPAddress = iPAddress;
+		}
+
+		public String getPGBouncerPort() {
+			return this.pGBouncerPort;
+		}
+
+		public void setPGBouncerPort(String pGBouncerPort) {
+			this.pGBouncerPort = pGBouncerPort;
 		}
 
 		public List<SecurityIPGroup> getSecurityIPGroups() {

@@ -31,6 +31,8 @@ public class CreateDBInstanceEndpointAddressRequest extends RpcAcsRequest<Create
 
 	private String clientToken;
 
+	private String resourceGroupId;
+
 	private String dBInstanceId;
 
 	private String ipType;
@@ -77,6 +79,17 @@ public class CreateDBInstanceEndpointAddressRequest extends RpcAcsRequest<Create
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 
