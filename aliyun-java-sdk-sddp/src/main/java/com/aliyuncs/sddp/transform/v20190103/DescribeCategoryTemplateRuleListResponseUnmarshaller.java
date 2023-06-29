@@ -46,6 +46,7 @@ public class DescribeCategoryTemplateRuleListResponseUnmarshaller {
 			dataLimit.setTemplateId(_ctx.longValue("DescribeCategoryTemplateRuleListResponse.Items["+ i +"].TemplateId"));
 			dataLimit.setId(_ctx.longValue("DescribeCategoryTemplateRuleListResponse.Items["+ i +"].Id"));
 			dataLimit.setCategoryLevel(_ctx.integerValue("DescribeCategoryTemplateRuleListResponse.Items["+ i +"].CategoryLevel"));
+			dataLimit.setParentModelId(_ctx.longValue("DescribeCategoryTemplateRuleListResponse.Items["+ i +"].ParentModelId"));
 
 			items.add(dataLimit);
 		}

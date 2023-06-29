@@ -36,6 +36,7 @@ public class DescribeRulesResponseUnmarshaller {
 			Rule rule = new Rule();
 			rule.setDisplayName(_ctx.stringValue("DescribeRulesResponse.Items["+ i +"].DisplayName"));
 			rule.setStatus(_ctx.integerValue("DescribeRulesResponse.Items["+ i +"].Status"));
+			rule.setSupportForm(_ctx.integerValue("DescribeRulesResponse.Items["+ i +"].SupportForm"));
 			rule.setWarnLevel(_ctx.integerValue("DescribeRulesResponse.Items["+ i +"].WarnLevel"));
 			rule.setUserId(_ctx.longValue("DescribeRulesResponse.Items["+ i +"].UserId"));
 			rule.setDepartName(_ctx.stringValue("DescribeRulesResponse.Items["+ i +"].DepartName"));
@@ -59,6 +60,7 @@ public class DescribeRulesResponseUnmarshaller {
 			rule.setMajorKey(_ctx.stringValue("DescribeRulesResponse.Items["+ i +"].MajorKey"));
 			rule.setId(_ctx.longValue("DescribeRulesResponse.Items["+ i +"].Id"));
 			rule.setProductCode(_ctx.stringValue("DescribeRulesResponse.Items["+ i +"].ProductCode"));
+			rule.setMatchType(_ctx.integerValue("DescribeRulesResponse.Items["+ i +"].MatchType"));
 
 			items.add(rule);
 		}

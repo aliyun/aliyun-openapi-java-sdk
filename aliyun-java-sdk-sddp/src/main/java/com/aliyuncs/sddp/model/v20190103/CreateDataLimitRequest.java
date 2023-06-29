@@ -47,6 +47,8 @@ public class CreateDataLimitRequest extends RpcAcsRequest<CreateDataLimitRespons
 
 	private Integer logStoreDay;
 
+	private String certificatePermission;
+
 	private Integer resourceType;
 
 	private Integer port;
@@ -181,6 +183,17 @@ public class CreateDataLimitRequest extends RpcAcsRequest<CreateDataLimitRespons
 		this.logStoreDay = logStoreDay;
 		if(logStoreDay != null){
 			putQueryParameter("LogStoreDay", logStoreDay.toString());
+		}
+	}
+
+	public String getCertificatePermission() {
+		return this.certificatePermission;
+	}
+
+	public void setCertificatePermission(String certificatePermission) {
+		this.certificatePermission = certificatePermission;
+		if(certificatePermission != null){
+			putQueryParameter("CertificatePermission", certificatePermission);
 		}
 	}
 

@@ -157,6 +157,12 @@ public class DescribeDataLimitsResponse extends AcsResponse {
 
 		private Integer enable;
 
+		private String vpcId;
+
+		private List<String> securityGroupIdList;
+
+		private List<String> vSwitchIdList;
+
 		public Boolean getSupportEvent() {
 			return this.supportEvent;
 		}
@@ -475,6 +481,30 @@ public class DescribeDataLimitsResponse extends AcsResponse {
 
 		public void setEnable(Integer enable) {
 			this.enable = enable;
+		}
+
+		public String getVpcId() {
+			return this.vpcId;
+		}
+
+		public void setVpcId(String vpcId) {
+			this.vpcId = vpcId;
+		}
+
+		public List<String> getSecurityGroupIdList() {
+			return this.securityGroupIdList;
+		}
+
+		public void setSecurityGroupIdList(List<String> securityGroupIdList) {
+			this.securityGroupIdList = securityGroupIdList;
+		}
+
+		public List<String> getVSwitchIdList() {
+			return this.vSwitchIdList;
+		}
+
+		public void setVSwitchIdList(List<String> vSwitchIdList) {
+			this.vSwitchIdList = vSwitchIdList;
 		}
 	}
 

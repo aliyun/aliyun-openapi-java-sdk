@@ -15,6 +15,7 @@
 package com.aliyuncs.sddp.model.v20190103;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.sddp.Endpoint;
 
@@ -26,6 +27,8 @@ public class ModifyDataLimitRequest extends RpcAcsRequest<ModifyDataLimitRespons
 	   
 
 	private Boolean modifyPassword;
+
+	private List<String> vSwitchIdLists;
 
 	private Integer samplingSize;
 
@@ -43,11 +46,15 @@ public class ModifyDataLimitRequest extends RpcAcsRequest<ModifyDataLimitRespons
 
 	private Integer autoScan;
 
+	private List<String> securityGroupIdLists;
+
 	private Integer logStoreDay;
 
 	private Integer resourceType;
 
 	private Integer port;
+
+	private String vpcId;
 
 	private String userName;
 	public ModifyDataLimitRequest() {
@@ -68,6 +75,19 @@ public class ModifyDataLimitRequest extends RpcAcsRequest<ModifyDataLimitRespons
 		if(modifyPassword != null){
 			putQueryParameter("ModifyPassword", modifyPassword.toString());
 		}
+	}
+
+	public List<String> getVSwitchIdLists() {
+		return this.vSwitchIdLists;
+	}
+
+	public void setVSwitchIdLists(List<String> vSwitchIdLists) {
+		this.vSwitchIdLists = vSwitchIdLists;	
+		if (vSwitchIdLists != null) {
+			for (int i = 0; i < vSwitchIdLists.size(); i++) {
+				putQueryParameter("VSwitchIdList." + (i + 1) , vSwitchIdLists.get(i));
+			}
+		}	
 	}
 
 	public Integer getSamplingSize() {
@@ -158,6 +178,19 @@ public class ModifyDataLimitRequest extends RpcAcsRequest<ModifyDataLimitRespons
 		}
 	}
 
+	public List<String> getSecurityGroupIdLists() {
+		return this.securityGroupIdLists;
+	}
+
+	public void setSecurityGroupIdLists(List<String> securityGroupIdLists) {
+		this.securityGroupIdLists = securityGroupIdLists;	
+		if (securityGroupIdLists != null) {
+			for (int i = 0; i < securityGroupIdLists.size(); i++) {
+				putQueryParameter("SecurityGroupIdList." + (i + 1) , securityGroupIdLists.get(i));
+			}
+		}	
+	}
+
 	public Integer getLogStoreDay() {
 		return this.logStoreDay;
 	}
@@ -188,6 +221,17 @@ public class ModifyDataLimitRequest extends RpcAcsRequest<ModifyDataLimitRespons
 		this.port = port;
 		if(port != null){
 			putQueryParameter("Port", port.toString());
+		}
+	}
+
+	public String getVpcId() {
+		return this.vpcId;
+	}
+
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+		if(vpcId != null){
+			putQueryParameter("VpcId", vpcId);
 		}
 	}
 

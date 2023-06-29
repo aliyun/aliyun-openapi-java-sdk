@@ -22,14 +22,18 @@ import com.aliyuncs.sddp.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeOssObjectsRequest extends RpcAcsRequest<DescribeOssObjectsResponse> {
+public class DescribeDataObjectsRequest extends RpcAcsRequest<DescribeDataObjectsResponse> {
 	   
 
-	private Integer riskLevelId;
+	private String riskLevels;
 
-	private Long lastScanTimeEnd;
+	private String queryName;
 
-	private Long lastScanTimeStart;
+	private Long domainId;
+
+	private String parentCategoryIds;
+
+	private String productIds;
 
 	private Integer pageSize;
 
@@ -37,17 +41,13 @@ public class DescribeOssObjectsRequest extends RpcAcsRequest<DescribeOssObjectsR
 
 	private String serviceRegionId;
 
+	private String modelTagIds;
+
 	private Integer currentPage;
 
 	private Long templateId;
-
-	private String instanceId;
-
-	private String name;
-
-	private Long ruleId;
-	public DescribeOssObjectsRequest() {
-		super("Sddp", "2019-01-03", "DescribeOssObjects", "sddp");
+	public DescribeDataObjectsRequest() {
+		super("Sddp", "2019-01-03", "DescribeDataObjects", "sddp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -55,36 +55,58 @@ public class DescribeOssObjectsRequest extends RpcAcsRequest<DescribeOssObjectsR
 		} catch (Exception e) {}
 	}
 
-	public Integer getRiskLevelId() {
-		return this.riskLevelId;
+	public String getRiskLevels() {
+		return this.riskLevels;
 	}
 
-	public void setRiskLevelId(Integer riskLevelId) {
-		this.riskLevelId = riskLevelId;
-		if(riskLevelId != null){
-			putQueryParameter("RiskLevelId", riskLevelId.toString());
+	public void setRiskLevels(String riskLevels) {
+		this.riskLevels = riskLevels;
+		if(riskLevels != null){
+			putQueryParameter("RiskLevels", riskLevels);
 		}
 	}
 
-	public Long getLastScanTimeEnd() {
-		return this.lastScanTimeEnd;
+	public String getQueryName() {
+		return this.queryName;
 	}
 
-	public void setLastScanTimeEnd(Long lastScanTimeEnd) {
-		this.lastScanTimeEnd = lastScanTimeEnd;
-		if(lastScanTimeEnd != null){
-			putQueryParameter("LastScanTimeEnd", lastScanTimeEnd.toString());
+	public void setQueryName(String queryName) {
+		this.queryName = queryName;
+		if(queryName != null){
+			putQueryParameter("QueryName", queryName);
 		}
 	}
 
-	public Long getLastScanTimeStart() {
-		return this.lastScanTimeStart;
+	public Long getDomainId() {
+		return this.domainId;
 	}
 
-	public void setLastScanTimeStart(Long lastScanTimeStart) {
-		this.lastScanTimeStart = lastScanTimeStart;
-		if(lastScanTimeStart != null){
-			putQueryParameter("LastScanTimeStart", lastScanTimeStart.toString());
+	public void setDomainId(Long domainId) {
+		this.domainId = domainId;
+		if(domainId != null){
+			putQueryParameter("DomainId", domainId.toString());
+		}
+	}
+
+	public String getParentCategoryIds() {
+		return this.parentCategoryIds;
+	}
+
+	public void setParentCategoryIds(String parentCategoryIds) {
+		this.parentCategoryIds = parentCategoryIds;
+		if(parentCategoryIds != null){
+			putQueryParameter("ParentCategoryIds", parentCategoryIds);
+		}
+	}
+
+	public String getProductIds() {
+		return this.productIds;
+	}
+
+	public void setProductIds(String productIds) {
+		this.productIds = productIds;
+		if(productIds != null){
+			putQueryParameter("ProductIds", productIds);
 		}
 	}
 
@@ -121,6 +143,17 @@ public class DescribeOssObjectsRequest extends RpcAcsRequest<DescribeOssObjectsR
 		}
 	}
 
+	public String getModelTagIds() {
+		return this.modelTagIds;
+	}
+
+	public void setModelTagIds(String modelTagIds) {
+		this.modelTagIds = modelTagIds;
+		if(modelTagIds != null){
+			putQueryParameter("ModelTagIds", modelTagIds);
+		}
+	}
+
 	public Integer getCurrentPage() {
 		return this.currentPage;
 	}
@@ -143,42 +176,9 @@ public class DescribeOssObjectsRequest extends RpcAcsRequest<DescribeOssObjectsR
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
-	}
-
-	public Long getRuleId() {
-		return this.ruleId;
-	}
-
-	public void setRuleId(Long ruleId) {
-		this.ruleId = ruleId;
-		if(ruleId != null){
-			putQueryParameter("RuleId", ruleId.toString());
-		}
-	}
-
 	@Override
-	public Class<DescribeOssObjectsResponse> getResponseClass() {
-		return DescribeOssObjectsResponse.class;
+	public Class<DescribeDataObjectsResponse> getResponseClass() {
+		return DescribeDataObjectsResponse.class;
 	}
 
 }

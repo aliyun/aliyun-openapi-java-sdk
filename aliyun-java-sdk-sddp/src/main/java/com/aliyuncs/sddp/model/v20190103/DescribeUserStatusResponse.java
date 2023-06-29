@@ -128,6 +128,18 @@ public class DescribeUserStatusResponse extends AcsResponse {
 
 		private Integer dataManagerRole;
 
+		private Integer releaseDays;
+
+		private Boolean auditClosable;
+
+		private Boolean auditReleasable;
+
+		private Long releaseTime;
+
+		private Long instanceTotalCount;
+
+		private Long ossTotalSize;
+
 		public Long getUseOssSize() {
 			return this.useOssSize;
 		}
@@ -454,6 +466,54 @@ public class DescribeUserStatusResponse extends AcsResponse {
 
 		public void setDataManagerRole(Integer dataManagerRole) {
 			this.dataManagerRole = dataManagerRole;
+		}
+
+		public Integer getReleaseDays() {
+			return this.releaseDays;
+		}
+
+		public void setReleaseDays(Integer releaseDays) {
+			this.releaseDays = releaseDays;
+		}
+
+		public Boolean getAuditClosable() {
+			return this.auditClosable;
+		}
+
+		public void setAuditClosable(Boolean auditClosable) {
+			this.auditClosable = auditClosable;
+		}
+
+		public Boolean getAuditReleasable() {
+			return this.auditReleasable;
+		}
+
+		public void setAuditReleasable(Boolean auditReleasable) {
+			this.auditReleasable = auditReleasable;
+		}
+
+		public Long getReleaseTime() {
+			return this.releaseTime;
+		}
+
+		public void setReleaseTime(Long releaseTime) {
+			this.releaseTime = releaseTime;
+		}
+
+		public Long getInstanceTotalCount() {
+			return this.instanceTotalCount;
+		}
+
+		public void setInstanceTotalCount(Long instanceTotalCount) {
+			this.instanceTotalCount = instanceTotalCount;
+		}
+
+		public Long getOssTotalSize() {
+			return this.ossTotalSize;
+		}
+
+		public void setOssTotalSize(Long ossTotalSize) {
+			this.ossTotalSize = ossTotalSize;
 		}
 	}
 

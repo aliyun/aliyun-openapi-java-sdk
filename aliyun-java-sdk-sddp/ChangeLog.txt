@@ -1,3 +1,6 @@
+2023-06-29 Version: 1.0.9
+- Add some public api.
+
 2022-05-25 Version: 1.0.8
 - SampleSize add.
 

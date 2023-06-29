@@ -22,19 +22,60 @@ import com.aliyuncs.sddp.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeRiskLevelsRequest extends RpcAcsRequest<DescribeRiskLevelsResponse> {
+public class DescribeDataObjectColumnDetailRequest extends RpcAcsRequest<DescribeDataObjectColumnDetailResponse> {
 	   
+
+	private Long productId;
+
+	private Integer pageSize;
+
+	private Long id;
 
 	private String lang;
 
+	private Integer currentPage;
+
 	private Long templateId;
-	public DescribeRiskLevelsRequest() {
-		super("Sddp", "2019-01-03", "DescribeRiskLevels", "sddp");
+	public DescribeDataObjectColumnDetailRequest() {
+		super("Sddp", "2019-01-03", "DescribeDataObjectColumnDetail", "sddp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Long getProductId() {
+		return this.productId;
+	}
+
+	public void setProductId(Long productId) {
+		this.productId = productId;
+		if(productId != null){
+			putQueryParameter("ProductId", productId.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Long getId() {
+		return this.id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+		if(id != null){
+			putQueryParameter("Id", id.toString());
+		}
 	}
 
 	public String getLang() {
@@ -45,6 +86,17 @@ public class DescribeRiskLevelsRequest extends RpcAcsRequest<DescribeRiskLevelsR
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
 		}
 	}
 
@@ -60,8 +112,8 @@ public class DescribeRiskLevelsRequest extends RpcAcsRequest<DescribeRiskLevelsR
 	}
 
 	@Override
-	public Class<DescribeRiskLevelsResponse> getResponseClass() {
-		return DescribeRiskLevelsResponse.class;
+	public Class<DescribeDataObjectColumnDetailResponse> getResponseClass() {
+		return DescribeDataObjectColumnDetailResponse.class;
 	}
 
 }

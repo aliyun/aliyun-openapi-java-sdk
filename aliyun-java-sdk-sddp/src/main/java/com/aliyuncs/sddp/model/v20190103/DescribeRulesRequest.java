@@ -35,6 +35,8 @@ public class DescribeRulesRequest extends RpcAcsRequest<DescribeRulesResponse> {
 
 	private Integer pageSize;
 
+	private Integer matchType;
+
 	private String lang;
 
 	private Boolean keywordCompatible;
@@ -115,6 +117,17 @@ public class DescribeRulesRequest extends RpcAcsRequest<DescribeRulesResponse> {
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Integer getMatchType() {
+		return this.matchType;
+	}
+
+	public void setMatchType(Integer matchType) {
+		this.matchType = matchType;
+		if(matchType != null){
+			putQueryParameter("MatchType", matchType.toString());
 		}
 	}
 

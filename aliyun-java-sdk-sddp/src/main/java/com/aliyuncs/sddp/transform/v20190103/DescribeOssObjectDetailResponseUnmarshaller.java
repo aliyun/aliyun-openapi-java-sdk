@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.sddp.model.v20190103.DescribeOssObjectDetailResponse;
 import com.aliyuncs.sddp.model.v20190103.DescribeOssObjectDetailResponse.OssObjectDetail;
 import com.aliyuncs.sddp.model.v20190103.DescribeOssObjectDetailResponse.OssObjectDetail.Rule;
+import com.aliyuncs.sddp.model.v20190103.DescribeOssObjectDetailResponse.OssObjectDetail.Rule.ModelTagsItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -51,6 +52,16 @@ public class DescribeOssObjectDetailResponseUnmarshaller {
 				sampleList.add(_ctx.stringValue("DescribeOssObjectDetailResponse.OssObjectDetail.RuleList["+ i +"].SampleList["+ j +"]"));
 			}
 			rule.setSampleList(sampleList);
+
+			List<ModelTagsItem> modelTags = new ArrayList<ModelTagsItem>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeOssObjectDetailResponse.OssObjectDetail.RuleList["+ i +"].ModelTags.Length"); j++) {
+				ModelTagsItem modelTagsItem = new ModelTagsItem();
+				modelTagsItem.setId(_ctx.longValue("DescribeOssObjectDetailResponse.OssObjectDetail.RuleList["+ i +"].ModelTags["+ j +"].Id"));
+				modelTagsItem.setName(_ctx.stringValue("DescribeOssObjectDetailResponse.OssObjectDetail.RuleList["+ i +"].ModelTags["+ j +"].Name"));
+
+				modelTags.add(modelTagsItem);
+			}
+			rule.setModelTags(modelTags);
 
 			ruleList.add(rule);
 		}

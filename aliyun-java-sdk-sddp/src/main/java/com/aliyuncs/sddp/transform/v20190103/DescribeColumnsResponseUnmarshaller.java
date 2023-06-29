@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.sddp.model.v20190103.DescribeColumnsResponse;
 import com.aliyuncs.sddp.model.v20190103.DescribeColumnsResponse.Column;
+import com.aliyuncs.sddp.model.v20190103.DescribeColumnsResponse.Column.ModelTagsItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -60,6 +61,16 @@ public class DescribeColumnsResponseUnmarshaller {
 				sampleList.add(_ctx.stringValue("DescribeColumnsResponse.Items["+ i +"].SampleList["+ j +"]"));
 			}
 			column.setSampleList(sampleList);
+
+			List<ModelTagsItem> modelTags = new ArrayList<ModelTagsItem>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeColumnsResponse.Items["+ i +"].ModelTags.Length"); j++) {
+				ModelTagsItem modelTagsItem = new ModelTagsItem();
+				modelTagsItem.setId(_ctx.longValue("DescribeColumnsResponse.Items["+ i +"].ModelTags["+ j +"].Id"));
+				modelTagsItem.setName(_ctx.stringValue("DescribeColumnsResponse.Items["+ i +"].ModelTags["+ j +"].Name"));
+
+				modelTags.add(modelTagsItem);
+			}
+			column.setModelTags(modelTags);
 
 			items.add(column);
 		}
