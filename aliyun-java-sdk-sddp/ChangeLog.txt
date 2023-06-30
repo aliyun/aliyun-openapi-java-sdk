@@ -1,3 +1,7 @@
+2023-06-30 Version: 1.0.10
+- Add DescribeCategoryTemplateList api.
+- Modify some api directory.
+
 2023-06-29 Version: 1.0.9
 - Add some public api.
 
