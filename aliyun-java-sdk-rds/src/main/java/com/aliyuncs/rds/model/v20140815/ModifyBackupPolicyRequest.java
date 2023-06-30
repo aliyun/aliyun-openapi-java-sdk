@@ -29,6 +29,8 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 
 	private String localLogRetentionHours;
 
+	private Integer backupPriority;
+
 	private String logBackupFrequency;
 
 	private Integer archiveBackupKeepCount;
@@ -104,6 +106,17 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 		this.localLogRetentionHours = localLogRetentionHours;
 		if(localLogRetentionHours != null){
 			putQueryParameter("LocalLogRetentionHours", localLogRetentionHours);
+		}
+	}
+
+	public Integer getBackupPriority() {
+		return this.backupPriority;
+	}
+
+	public void setBackupPriority(Integer backupPriority) {
+		this.backupPriority = backupPriority;
+		if(backupPriority != null){
+			putQueryParameter("BackupPriority", backupPriority.toString());
 		}
 	}
 

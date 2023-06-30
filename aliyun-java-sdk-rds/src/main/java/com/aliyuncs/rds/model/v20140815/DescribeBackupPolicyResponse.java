@@ -76,6 +76,10 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 
 	private Boolean enableIncrementDataBackup;
 
+	private Boolean supportModifyBackupPriority;
+
+	private Integer backupPriority;
+
 	private DuplicationLocation duplicationLocation;
 
 	public Integer getLogBackupRetentionPeriod() {
@@ -284,6 +288,22 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 
 	public void setEnableIncrementDataBackup(Boolean enableIncrementDataBackup) {
 		this.enableIncrementDataBackup = enableIncrementDataBackup;
+	}
+
+	public Boolean getSupportModifyBackupPriority() {
+		return this.supportModifyBackupPriority;
+	}
+
+	public void setSupportModifyBackupPriority(Boolean supportModifyBackupPriority) {
+		this.supportModifyBackupPriority = supportModifyBackupPriority;
+	}
+
+	public Integer getBackupPriority() {
+		return this.backupPriority;
+	}
+
+	public void setBackupPriority(Integer backupPriority) {
+		this.backupPriority = backupPriority;
 	}
 
 	public DuplicationLocation getDuplicationLocation() {
