@@ -38,8 +38,6 @@ public class EnableLoadBalancerIpv6InternetResponse extends AcsResponse {
 
 	private String dynamicMessage;
 
-	private String jobId;
-
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -94,14 +92,6 @@ public class EnableLoadBalancerIpv6InternetResponse extends AcsResponse {
 
 	public void setDynamicMessage(String dynamicMessage) {
 		this.dynamicMessage = dynamicMessage;
-	}
-
-	public String getJobId() {
-		return this.jobId;
-	}
-
-	public void setJobId(String jobId) {
-		this.jobId = jobId;
 	}
 
 	@Override

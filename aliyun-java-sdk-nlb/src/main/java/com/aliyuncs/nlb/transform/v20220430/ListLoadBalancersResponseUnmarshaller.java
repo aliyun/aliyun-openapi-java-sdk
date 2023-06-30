@@ -107,6 +107,7 @@ public class ListLoadBalancersResponseUnmarshaller {
 				zoneMapping.setVSwitchId(_ctx.stringValue("ListLoadBalancersResponse.LoadBalancers["+ i +"].ZoneMappings["+ j +"].VSwitchId"));
 				zoneMapping.setZoneId(_ctx.stringValue("ListLoadBalancersResponse.LoadBalancers["+ i +"].ZoneMappings["+ j +"].ZoneId"));
 				zoneMapping.setEipType(_ctx.stringValue("ListLoadBalancersResponse.LoadBalancers["+ i +"].ZoneMappings["+ j +"].EipType"));
+				zoneMapping.setStatus(_ctx.stringValue("ListLoadBalancersResponse.LoadBalancers["+ i +"].ZoneMappings["+ j +"].Status"));
 
 				List<LoadBalancerAddress> loadBalancerAddresses = new ArrayList<LoadBalancerAddress>();
 				for (int k = 0; k < _ctx.lengthValue("ListLoadBalancersResponse.LoadBalancers["+ i +"].ZoneMappings["+ j +"].LoadBalancerAddresses.Length"); k++) {
@@ -116,6 +117,8 @@ public class ListLoadBalancersResponseUnmarshaller {
 					loadBalancerAddress.setAllocationId(_ctx.stringValue("ListLoadBalancersResponse.LoadBalancers["+ i +"].ZoneMappings["+ j +"].LoadBalancerAddresses["+ k +"].AllocationId"));
 					loadBalancerAddress.setPublicIPv4Address(_ctx.stringValue("ListLoadBalancersResponse.LoadBalancers["+ i +"].ZoneMappings["+ j +"].LoadBalancerAddresses["+ k +"].PublicIPv4Address"));
 					loadBalancerAddress.setIpv6Address(_ctx.stringValue("ListLoadBalancersResponse.LoadBalancers["+ i +"].ZoneMappings["+ j +"].LoadBalancerAddresses["+ k +"].Ipv6Address"));
+					loadBalancerAddress.setPrivateIPv4HcStatus(_ctx.stringValue("ListLoadBalancersResponse.LoadBalancers["+ i +"].ZoneMappings["+ j +"].LoadBalancerAddresses["+ k +"].PrivateIPv4HcStatus"));
+					loadBalancerAddress.setPrivateIPv6HcStatus(_ctx.stringValue("ListLoadBalancersResponse.LoadBalancers["+ i +"].ZoneMappings["+ j +"].LoadBalancerAddresses["+ k +"].PrivateIPv6HcStatus"));
 
 					loadBalancerAddresses.add(loadBalancerAddress);
 				}

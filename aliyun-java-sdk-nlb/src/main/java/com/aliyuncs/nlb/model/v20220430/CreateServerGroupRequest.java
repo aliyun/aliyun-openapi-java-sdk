@@ -42,6 +42,8 @@ public class CreateServerGroupRequest extends RpcAcsRequest<CreateServerGroupRes
 
 	private String protocol;
 
+	private List<Tag> tags;
+
 	private Boolean dryRun;
 
 	private Boolean connectionDrainEnabled;
@@ -163,6 +165,20 @@ public class CreateServerGroupRequest extends RpcAcsRequest<CreateServerGroupRes
 		if(protocol != null){
 			putBodyParameter("Protocol", protocol);
 		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putBodyParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+				putBodyParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+			}
+		}	
 	}
 
 	public Boolean getDryRun() {
@@ -341,6 +357,29 @@ public class CreateServerGroupRequest extends RpcAcsRequest<CreateServerGroupRes
 
 		public void setHttpCheckMethod(String httpCheckMethod) {
 			this.httpCheckMethod = httpCheckMethod;
+		}
+	}
+
+	public static class Tag {
+
+		private String key;
+
+		private String value;
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
 		}
 	}
 

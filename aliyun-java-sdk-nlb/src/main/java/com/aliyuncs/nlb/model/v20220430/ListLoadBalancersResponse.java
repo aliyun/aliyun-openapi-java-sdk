@@ -428,6 +428,8 @@ public class ListLoadBalancersResponse extends AcsResponse {
 
 			private String eipType;
 
+			private String status;
+
 			private List<LoadBalancerAddress> loadBalancerAddresses;
 
 			public String getVSwitchId() {
@@ -454,6 +456,14 @@ public class ListLoadBalancersResponse extends AcsResponse {
 				this.eipType = eipType;
 			}
 
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
 			public List<LoadBalancerAddress> getLoadBalancerAddresses() {
 				return this.loadBalancerAddresses;
 			}
@@ -473,6 +483,10 @@ public class ListLoadBalancersResponse extends AcsResponse {
 				private String publicIPv4Address;
 
 				private String ipv6Address;
+
+				private String privateIPv4HcStatus;
+
+				private String privateIPv6HcStatus;
 
 				public String getEniId() {
 					return this.eniId;
@@ -512,6 +526,22 @@ public class ListLoadBalancersResponse extends AcsResponse {
 
 				public void setIpv6Address(String ipv6Address) {
 					this.ipv6Address = ipv6Address;
+				}
+
+				public String getPrivateIPv4HcStatus() {
+					return this.privateIPv4HcStatus;
+				}
+
+				public void setPrivateIPv4HcStatus(String privateIPv4HcStatus) {
+					this.privateIPv4HcStatus = privateIPv4HcStatus;
+				}
+
+				public String getPrivateIPv6HcStatus() {
+					return this.privateIPv6HcStatus;
+				}
+
+				public void setPrivateIPv6HcStatus(String privateIPv6HcStatus) {
+					this.privateIPv6HcStatus = privateIPv6HcStatus;
 				}
 			}
 		}

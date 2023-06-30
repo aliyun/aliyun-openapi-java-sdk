@@ -42,6 +42,8 @@ public class CreateLoadBalancerRequest extends RpcAcsRequest<CreateLoadBalancerR
 
 	private String addressType;
 
+	private List<Tag> tags;
+
 	private String bandwidthPackageId;
 
 	private Boolean dryRun;
@@ -151,6 +153,20 @@ public class CreateLoadBalancerRequest extends RpcAcsRequest<CreateLoadBalancerR
 		if(addressType != null){
 			putBodyParameter("AddressType", addressType);
 		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putBodyParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+				putBodyParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+			}
+		}	
 	}
 
 	public String getBandwidthPackageId() {
@@ -272,6 +288,29 @@ public class CreateLoadBalancerRequest extends RpcAcsRequest<CreateLoadBalancerR
 
 		public void setReason(String reason) {
 			this.reason = reason;
+		}
+	}
+
+	public static class Tag {
+
+		private String key;
+
+		private String value;
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
 		}
 	}
 

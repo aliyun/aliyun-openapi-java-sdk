@@ -15,14 +15,14 @@
 package com.aliyuncs.nlb.model.v20220430;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.nlb.transform.v20220430.DisableLoadBalancerIpv6InternetResponseUnmarshaller;
+import com.aliyuncs.nlb.transform.v20220430.DisassociateAdditionalCertificatesWithListenerResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DisableLoadBalancerIpv6InternetResponse extends AcsResponse {
+public class DisassociateAdditionalCertificatesWithListenerResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -37,6 +37,8 @@ public class DisableLoadBalancerIpv6InternetResponse extends AcsResponse {
 	private String dynamicCode;
 
 	private String dynamicMessage;
+
+	private String jobId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -94,9 +96,17 @@ public class DisableLoadBalancerIpv6InternetResponse extends AcsResponse {
 		this.dynamicMessage = dynamicMessage;
 	}
 
+	public String getJobId() {
+		return this.jobId;
+	}
+
+	public void setJobId(String jobId) {
+		this.jobId = jobId;
+	}
+
 	@Override
-	public DisableLoadBalancerIpv6InternetResponse getInstance(UnmarshallerContext context) {
-		return	DisableLoadBalancerIpv6InternetResponseUnmarshaller.unmarshall(this, context);
+	public DisassociateAdditionalCertificatesWithListenerResponse getInstance(UnmarshallerContext context) {
+		return	DisassociateAdditionalCertificatesWithListenerResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

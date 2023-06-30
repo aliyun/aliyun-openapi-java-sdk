@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.nlb.model.v20220430.ListListenerCertificatesResponse;
+import com.aliyuncs.nlb.model.v20220430.ListListenerCertificatesResponse.Certificate;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -41,6 +42,18 @@ public class ListListenerCertificatesResponseUnmarshaller {
 			certificateIds.add(_ctx.stringValue("ListListenerCertificatesResponse.CertificateIds["+ i +"]"));
 		}
 		listListenerCertificatesResponse.setCertificateIds(certificateIds);
+
+		List<Certificate> certificates = new ArrayList<Certificate>();
+		for (int i = 0; i < _ctx.lengthValue("ListListenerCertificatesResponse.Certificates.Length"); i++) {
+			Certificate certificate = new Certificate();
+			certificate.setCertificateId(_ctx.stringValue("ListListenerCertificatesResponse.Certificates["+ i +"].CertificateId"));
+			certificate.setIsDefault(_ctx.booleanValue("ListListenerCertificatesResponse.Certificates["+ i +"].IsDefault"));
+			certificate.setStatus(_ctx.stringValue("ListListenerCertificatesResponse.Certificates["+ i +"].Status"));
+			certificate.setCertificateType(_ctx.stringValue("ListListenerCertificatesResponse.Certificates["+ i +"].CertificateType"));
+
+			certificates.add(certificate);
+		}
+		listListenerCertificatesResponse.setCertificates(certificates);
 	 
 	 	return listListenerCertificatesResponse;
 	}

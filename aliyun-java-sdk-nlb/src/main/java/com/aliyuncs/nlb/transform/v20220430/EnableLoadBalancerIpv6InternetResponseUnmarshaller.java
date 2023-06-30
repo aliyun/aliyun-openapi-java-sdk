@@ -29,7 +29,6 @@ public class EnableLoadBalancerIpv6InternetResponseUnmarshaller {
 		enableLoadBalancerIpv6InternetResponse.setHttpStatusCode(_ctx.integerValue("EnableLoadBalancerIpv6InternetResponse.HttpStatusCode"));
 		enableLoadBalancerIpv6InternetResponse.setDynamicCode(_ctx.stringValue("EnableLoadBalancerIpv6InternetResponse.DynamicCode"));
 		enableLoadBalancerIpv6InternetResponse.setDynamicMessage(_ctx.stringValue("EnableLoadBalancerIpv6InternetResponse.DynamicMessage"));
-		enableLoadBalancerIpv6InternetResponse.setJobId(_ctx.stringValue("EnableLoadBalancerIpv6InternetResponse.JobId"));
 	 
 	 	return enableLoadBalancerIpv6InternetResponse;
 	}

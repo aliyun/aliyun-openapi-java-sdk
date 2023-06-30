@@ -175,6 +175,8 @@ public class ListListenersResponse extends AcsResponse {
 
 		private Integer mss;
 
+		private List<TagModels> tags;
+
 		private List<String> certificateIds;
 
 		private List<String> caCertificateIds;
@@ -331,6 +333,14 @@ public class ListListenersResponse extends AcsResponse {
 			this.mss = mss;
 		}
 
+		public List<TagModels> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<TagModels> tags) {
+			this.tags = tags;
+		}
+
 		public List<String> getCertificateIds() {
 			return this.certificateIds;
 		}
@@ -345,6 +355,29 @@ public class ListListenersResponse extends AcsResponse {
 
 		public void setCaCertificateIds(List<String> caCertificateIds) {
 			this.caCertificateIds = caCertificateIds;
+		}
+
+		public static class TagModels {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
 		}
 	}
 

@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.nlb.model.v20220430.GetListenerAttributeResponse;
+import com.aliyuncs.nlb.model.v20220430.GetListenerAttributeResponse.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -63,6 +64,16 @@ public class GetListenerAttributeResponseUnmarshaller {
 			caCertificateIds.add(_ctx.stringValue("GetListenerAttributeResponse.CaCertificateIds["+ i +"]"));
 		}
 		getListenerAttributeResponse.setCaCertificateIds(caCertificateIds);
+
+		List<Tag> tags = new ArrayList<Tag>();
+		for (int i = 0; i < _ctx.lengthValue("GetListenerAttributeResponse.Tags.Length"); i++) {
+			Tag tag = new Tag();
+			tag.setTagKey(_ctx.stringValue("GetListenerAttributeResponse.Tags["+ i +"].TagKey"));
+			tag.setTagValue(_ctx.stringValue("GetListenerAttributeResponse.Tags["+ i +"].TagValue"));
+
+			tags.add(tag);
+		}
+		getListenerAttributeResponse.setTags(tags);
 	 
 	 	return getListenerAttributeResponse;
 	}

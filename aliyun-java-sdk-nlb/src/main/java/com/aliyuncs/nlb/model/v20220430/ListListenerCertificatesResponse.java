@@ -45,6 +45,8 @@ public class ListListenerCertificatesResponse extends AcsResponse {
 
 	private Integer maxResults;
 
+	private List<Certificate> certificates;
+
 	private List<String> certificateIds;
 
 	public String getRequestId() {
@@ -127,12 +129,63 @@ public class ListListenerCertificatesResponse extends AcsResponse {
 		this.maxResults = maxResults;
 	}
 
+	public List<Certificate> getCertificates() {
+		return this.certificates;
+	}
+
+	public void setCertificates(List<Certificate> certificates) {
+		this.certificates = certificates;
+	}
+
 	public List<String> getCertificateIds() {
 		return this.certificateIds;
 	}
 
 	public void setCertificateIds(List<String> certificateIds) {
 		this.certificateIds = certificateIds;
+	}
+
+	public static class Certificate {
+
+		private String certificateId;
+
+		private Boolean isDefault;
+
+		private String status;
+
+		private String certificateType;
+
+		public String getCertificateId() {
+			return this.certificateId;
+		}
+
+		public void setCertificateId(String certificateId) {
+			this.certificateId = certificateId;
+		}
+
+		public Boolean getIsDefault() {
+			return this.isDefault;
+		}
+
+		public void setIsDefault(Boolean isDefault) {
+			this.isDefault = isDefault;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getCertificateType() {
+			return this.certificateType;
+		}
+
+		public void setCertificateType(String certificateType) {
+			this.certificateType = certificateType;
+		}
 	}
 
 	@Override

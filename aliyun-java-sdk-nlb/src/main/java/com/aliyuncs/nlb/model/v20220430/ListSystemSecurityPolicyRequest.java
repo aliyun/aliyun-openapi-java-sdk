@@ -24,20 +24,6 @@ import com.aliyuncs.nlb.Endpoint;
  */
 public class ListSystemSecurityPolicyRequest extends RpcAcsRequest<ListSystemSecurityPolicyResponse> {
 	   
-
-	private String channel;
-
-	private String ownerIdLoginEmail;
-
-	private String callerBidLoginEmail;
-
-	private String callerUidLoginEmail;
-
-	private String requestContent;
-
-	private String resourceOwnerAccount;
-
-	private String ownerAccount;
 	public ListSystemSecurityPolicyRequest() {
 		super("Nlb", "2022-04-30", "ListSystemSecurityPolicy", "nlb");
 		setMethod(MethodType.POST);
@@ -45,83 +31,6 @@ public class ListSystemSecurityPolicyRequest extends RpcAcsRequest<ListSystemSec
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getChannel() {
-		return this.channel;
-	}
-
-	public void setChannel(String channel) {
-		this.channel = channel;
-		if(channel != null){
-			putBodyParameter("Channel", channel);
-		}
-	}
-
-	public String getOwnerIdLoginEmail() {
-		return this.ownerIdLoginEmail;
-	}
-
-	public void setOwnerIdLoginEmail(String ownerIdLoginEmail) {
-		this.ownerIdLoginEmail = ownerIdLoginEmail;
-		if(ownerIdLoginEmail != null){
-			putBodyParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
-		}
-	}
-
-	public String getCallerBidLoginEmail() {
-		return this.callerBidLoginEmail;
-	}
-
-	public void setCallerBidLoginEmail(String callerBidLoginEmail) {
-		this.callerBidLoginEmail = callerBidLoginEmail;
-		if(callerBidLoginEmail != null){
-			putBodyParameter("CallerBidLoginEmail", callerBidLoginEmail);
-		}
-	}
-
-	public String getCallerUidLoginEmail() {
-		return this.callerUidLoginEmail;
-	}
-
-	public void setCallerUidLoginEmail(String callerUidLoginEmail) {
-		this.callerUidLoginEmail = callerUidLoginEmail;
-		if(callerUidLoginEmail != null){
-			putBodyParameter("CallerUidLoginEmail", callerUidLoginEmail);
-		}
-	}
-
-	public String getRequestContent() {
-		return this.requestContent;
-	}
-
-	public void setRequestContent(String requestContent) {
-		this.requestContent = requestContent;
-		if(requestContent != null){
-			putBodyParameter("RequestContent", requestContent);
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putBodyParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putBodyParameter("OwnerAccount", ownerAccount);
-		}
 	}
 
 	@Override

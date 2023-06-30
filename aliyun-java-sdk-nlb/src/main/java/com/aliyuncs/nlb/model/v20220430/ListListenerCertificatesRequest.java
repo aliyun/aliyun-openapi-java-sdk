@@ -27,13 +27,11 @@ public class ListListenerCertificatesRequest extends RpcAcsRequest<ListListenerC
 
 	private String listenerId;
 
+	private String certType;
+
 	private String nextToken;
 
-	private Integer pageSize;
-
 	private Integer maxResults;
-
-	private Integer page;
 	public ListListenerCertificatesRequest() {
 		super("Nlb", "2022-04-30", "ListListenerCertificates", "nlb");
 		setMethod(MethodType.POST);
@@ -54,6 +52,17 @@ public class ListListenerCertificatesRequest extends RpcAcsRequest<ListListenerC
 		}
 	}
 
+	public String getCertType() {
+		return this.certType;
+	}
+
+	public void setCertType(String certType) {
+		this.certType = certType;
+		if(certType != null){
+			putBodyParameter("CertType", certType);
+		}
+	}
+
 	public String getNextToken() {
 		return this.nextToken;
 	}
@@ -65,17 +74,6 @@ public class ListListenerCertificatesRequest extends RpcAcsRequest<ListListenerC
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putBodyParameter("PageSize", pageSize.toString());
-		}
-	}
-
 	public Integer getMaxResults() {
 		return this.maxResults;
 	}
@@ -84,17 +82,6 @@ public class ListListenerCertificatesRequest extends RpcAcsRequest<ListListenerC
 		this.maxResults = maxResults;
 		if(maxResults != null){
 			putBodyParameter("MaxResults", maxResults.toString());
-		}
-	}
-
-	public Integer getPage() {
-		return this.page;
-	}
-
-	public void setPage(Integer page) {
-		this.page = page;
-		if(page != null){
-			putBodyParameter("Page", page.toString());
 		}
 	}
 

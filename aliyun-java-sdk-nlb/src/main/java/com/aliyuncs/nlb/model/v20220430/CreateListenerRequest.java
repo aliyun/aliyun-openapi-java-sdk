@@ -42,6 +42,8 @@ public class CreateListenerRequest extends RpcAcsRequest<CreateListenerResponse>
 
 	private List<String> certificateIdss;
 
+	private List<Tag> tags;
+
 	private Boolean alpnEnabled;
 
 	private Integer endPort;
@@ -162,6 +164,20 @@ public class CreateListenerRequest extends RpcAcsRequest<CreateListenerResponse>
 		if (certificateIdss != null) {
 			for (int i = 0; i < certificateIdss.size(); i++) {
 				putBodyParameter("CertificateIds." + (i + 1) , certificateIdss.get(i));
+			}
+		}	
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putBodyParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+				putBodyParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
 			}
 		}	
 	}
@@ -295,6 +311,29 @@ public class CreateListenerRequest extends RpcAcsRequest<CreateListenerResponse>
 		this.caEnabled = caEnabled;
 		if(caEnabled != null){
 			putBodyParameter("CaEnabled", caEnabled.toString());
+		}
+	}
+
+	public static class Tag {
+
+		private String key;
+
+		private String value;
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
 		}
 	}
 

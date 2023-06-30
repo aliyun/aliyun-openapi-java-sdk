@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.nlb.model.v20220430.ListListenersResponse;
 import com.aliyuncs.nlb.model.v20220430.ListListenersResponse.ListenerInfo;
+import com.aliyuncs.nlb.model.v20220430.ListListenersResponse.ListenerInfo.TagModels;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -71,6 +72,16 @@ public class ListListenersResponseUnmarshaller {
 				caCertificateIds.add(_ctx.stringValue("ListListenersResponse.Listeners["+ i +"].CaCertificateIds["+ j +"]"));
 			}
 			listenerInfo.setCaCertificateIds(caCertificateIds);
+
+			List<TagModels> tags = new ArrayList<TagModels>();
+			for (int j = 0; j < _ctx.lengthValue("ListListenersResponse.Listeners["+ i +"].Tags.Length"); j++) {
+				TagModels tagModels = new TagModels();
+				tagModels.setKey(_ctx.stringValue("ListListenersResponse.Listeners["+ i +"].Tags["+ j +"].Key"));
+				tagModels.setValue(_ctx.stringValue("ListListenersResponse.Listeners["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tagModels);
+			}
+			listenerInfo.setTags(tags);
 
 			listeners.add(listenerInfo);
 		}

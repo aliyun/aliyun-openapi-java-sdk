@@ -81,6 +81,8 @@ public class GetLoadBalancerAttributeResponse extends AcsResponse {
 
 	private List<ZoneMapping> zoneMappings;
 
+	private List<Tag> tags;
+
 	private List<String> securityGroupIds;
 
 	private LoadBalancerBillingConfig loadBalancerBillingConfig;
@@ -313,6 +315,14 @@ public class GetLoadBalancerAttributeResponse extends AcsResponse {
 		this.zoneMappings = zoneMappings;
 	}
 
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;
+	}
+
 	public List<String> getSecurityGroupIds() {
 		return this.securityGroupIds;
 	}
@@ -376,6 +386,8 @@ public class GetLoadBalancerAttributeResponse extends AcsResponse {
 
 		private String eipType;
 
+		private String status;
+
 		private List<LoadBalancerAddress> loadBalancerAddresses;
 
 		public String getVSwitchId() {
@@ -402,6 +414,14 @@ public class GetLoadBalancerAttributeResponse extends AcsResponse {
 			this.eipType = eipType;
 		}
 
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
 		public List<LoadBalancerAddress> getLoadBalancerAddresses() {
 			return this.loadBalancerAddresses;
 		}
@@ -421,6 +441,10 @@ public class GetLoadBalancerAttributeResponse extends AcsResponse {
 			private String publicIPv4Address;
 
 			private String ipv6Address;
+
+			private String privateIPv4HcStatus;
+
+			private String privateIPv6HcStatus;
 
 			public String getEniId() {
 				return this.eniId;
@@ -461,6 +485,45 @@ public class GetLoadBalancerAttributeResponse extends AcsResponse {
 			public void setIpv6Address(String ipv6Address) {
 				this.ipv6Address = ipv6Address;
 			}
+
+			public String getPrivateIPv4HcStatus() {
+				return this.privateIPv4HcStatus;
+			}
+
+			public void setPrivateIPv4HcStatus(String privateIPv4HcStatus) {
+				this.privateIPv4HcStatus = privateIPv4HcStatus;
+			}
+
+			public String getPrivateIPv6HcStatus() {
+				return this.privateIPv6HcStatus;
+			}
+
+			public void setPrivateIPv6HcStatus(String privateIPv6HcStatus) {
+				this.privateIPv6HcStatus = privateIPv6HcStatus;
+			}
+		}
+	}
+
+	public static class Tag {
+
+		private String tagKey;
+
+		private String tagValue;
+
+		public String getTagKey() {
+			return this.tagKey;
+		}
+
+		public void setTagKey(String tagKey) {
+			this.tagKey = tagKey;
+		}
+
+		public String getTagValue() {
+			return this.tagValue;
+		}
+
+		public void setTagValue(String tagValue) {
+			this.tagValue = tagValue;
 		}
 	}
 

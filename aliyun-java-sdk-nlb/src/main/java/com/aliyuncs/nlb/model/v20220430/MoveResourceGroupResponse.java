@@ -15,28 +15,22 @@
 package com.aliyuncs.nlb.model.v20220430;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.nlb.transform.v20220430.DisableLoadBalancerIpv6InternetResponseUnmarshaller;
+import com.aliyuncs.nlb.transform.v20220430.MoveResourceGroupResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DisableLoadBalancerIpv6InternetResponse extends AcsResponse {
+public class MoveResourceGroupResponse extends AcsResponse {
 
 	private String requestId;
 
 	private Boolean success;
 
-	private String code;
-
-	private String message;
-
 	private Integer httpStatusCode;
 
-	private String dynamicCode;
-
-	private String dynamicMessage;
+	private Data data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -54,22 +48,6 @@ public class DisableLoadBalancerIpv6InternetResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
 	}
@@ -78,25 +56,40 @@ public class DisableLoadBalancerIpv6InternetResponse extends AcsResponse {
 		this.httpStatusCode = httpStatusCode;
 	}
 
-	public String getDynamicCode() {
-		return this.dynamicCode;
+	public Data getData() {
+		return this.data;
 	}
 
-	public void setDynamicCode(String dynamicCode) {
-		this.dynamicCode = dynamicCode;
+	public void setData(Data data) {
+		this.data = data;
 	}
 
-	public String getDynamicMessage() {
-		return this.dynamicMessage;
-	}
+	public static class Data {
 
-	public void setDynamicMessage(String dynamicMessage) {
-		this.dynamicMessage = dynamicMessage;
+		private String jobId;
+
+		private String resourceId;
+
+		public String getJobId() {
+			return this.jobId;
+		}
+
+		public void setJobId(String jobId) {
+			this.jobId = jobId;
+		}
+
+		public String getResourceId() {
+			return this.resourceId;
+		}
+
+		public void setResourceId(String resourceId) {
+			this.resourceId = resourceId;
+		}
 	}
 
 	@Override
-	public DisableLoadBalancerIpv6InternetResponse getInstance(UnmarshallerContext context) {
-		return	DisableLoadBalancerIpv6InternetResponseUnmarshaller.unmarshall(this, context);
+	public MoveResourceGroupResponse getInstance(UnmarshallerContext context) {
+		return	MoveResourceGroupResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

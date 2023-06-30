@@ -22,6 +22,7 @@ import com.aliyuncs.nlb.model.v20220430.GetLoadBalancerAttributeResponse.Deletio
 import com.aliyuncs.nlb.model.v20220430.GetLoadBalancerAttributeResponse.LoadBalancerBillingConfig;
 import com.aliyuncs.nlb.model.v20220430.GetLoadBalancerAttributeResponse.ModificationProtectionConfig;
 import com.aliyuncs.nlb.model.v20220430.GetLoadBalancerAttributeResponse.OperationLock;
+import com.aliyuncs.nlb.model.v20220430.GetLoadBalancerAttributeResponse.Tag;
 import com.aliyuncs.nlb.model.v20220430.GetLoadBalancerAttributeResponse.ZoneMapping;
 import com.aliyuncs.nlb.model.v20220430.GetLoadBalancerAttributeResponse.ZoneMapping.LoadBalancerAddress;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -98,6 +99,7 @@ public class GetLoadBalancerAttributeResponseUnmarshaller {
 			zoneMapping.setVSwitchId(_ctx.stringValue("GetLoadBalancerAttributeResponse.ZoneMappings["+ i +"].VSwitchId"));
 			zoneMapping.setZoneId(_ctx.stringValue("GetLoadBalancerAttributeResponse.ZoneMappings["+ i +"].ZoneId"));
 			zoneMapping.setEipType(_ctx.stringValue("GetLoadBalancerAttributeResponse.ZoneMappings["+ i +"].EipType"));
+			zoneMapping.setStatus(_ctx.stringValue("GetLoadBalancerAttributeResponse.ZoneMappings["+ i +"].Status"));
 
 			List<LoadBalancerAddress> loadBalancerAddresses = new ArrayList<LoadBalancerAddress>();
 			for (int j = 0; j < _ctx.lengthValue("GetLoadBalancerAttributeResponse.ZoneMappings["+ i +"].LoadBalancerAddresses.Length"); j++) {
@@ -107,6 +109,8 @@ public class GetLoadBalancerAttributeResponseUnmarshaller {
 				loadBalancerAddress.setAllocationId(_ctx.stringValue("GetLoadBalancerAttributeResponse.ZoneMappings["+ i +"].LoadBalancerAddresses["+ j +"].AllocationId"));
 				loadBalancerAddress.setPublicIPv4Address(_ctx.stringValue("GetLoadBalancerAttributeResponse.ZoneMappings["+ i +"].LoadBalancerAddresses["+ j +"].PublicIPv4Address"));
 				loadBalancerAddress.setIpv6Address(_ctx.stringValue("GetLoadBalancerAttributeResponse.ZoneMappings["+ i +"].LoadBalancerAddresses["+ j +"].Ipv6Address"));
+				loadBalancerAddress.setPrivateIPv4HcStatus(_ctx.stringValue("GetLoadBalancerAttributeResponse.ZoneMappings["+ i +"].LoadBalancerAddresses["+ j +"].PrivateIPv4HcStatus"));
+				loadBalancerAddress.setPrivateIPv6HcStatus(_ctx.stringValue("GetLoadBalancerAttributeResponse.ZoneMappings["+ i +"].LoadBalancerAddresses["+ j +"].PrivateIPv6HcStatus"));
 
 				loadBalancerAddresses.add(loadBalancerAddress);
 			}
@@ -115,6 +119,16 @@ public class GetLoadBalancerAttributeResponseUnmarshaller {
 			zoneMappings.add(zoneMapping);
 		}
 		getLoadBalancerAttributeResponse.setZoneMappings(zoneMappings);
+
+		List<Tag> tags = new ArrayList<Tag>();
+		for (int i = 0; i < _ctx.lengthValue("GetLoadBalancerAttributeResponse.Tags.Length"); i++) {
+			Tag tag = new Tag();
+			tag.setTagKey(_ctx.stringValue("GetLoadBalancerAttributeResponse.Tags["+ i +"].TagKey"));
+			tag.setTagValue(_ctx.stringValue("GetLoadBalancerAttributeResponse.Tags["+ i +"].TagValue"));
+
+			tags.add(tag);
+		}
+		getLoadBalancerAttributeResponse.setTags(tags);
 	 
 	 	return getLoadBalancerAttributeResponse;
 	}
