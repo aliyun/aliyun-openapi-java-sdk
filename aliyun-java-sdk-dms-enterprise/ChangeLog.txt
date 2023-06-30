@@ -1,3 +1,7 @@
+2023-06-30 Version: 1.51.0
+- Modify ListTaskFlowsByPage API. Add output parameter: DagOwnerId.
+- Modify ReRunTaskFlowInstance, ReSumeTaskFlowInstance: input parameter DagVersion is not required.
+
 2023-05-26 Version: 1.49.0
 - Modify ListTaskFlowsByPage API. Add output parameters: CronBeginDate, CronEndDate. Modified input parameter CronParam as ScheduleParam.
 

@@ -54,6 +54,7 @@ public class ListTaskFlowsByPageResponseUnmarshaller {
 			taskFlow.setCronBeginDate(_ctx.stringValue("ListTaskFlowsByPageResponse.TaskFlowList["+ i +"].CronBeginDate"));
 			taskFlow.setCronEndDate(_ctx.stringValue("ListTaskFlowsByPageResponse.TaskFlowList["+ i +"].CronEndDate"));
 			taskFlow.setTimeZoneId(_ctx.stringValue("ListTaskFlowsByPageResponse.TaskFlowList["+ i +"].TimeZoneId"));
+			taskFlow.setDagOwnerId(_ctx.stringValue("ListTaskFlowsByPageResponse.TaskFlowList["+ i +"].DagOwnerId"));
 
 			taskFlowList.add(taskFlow);
 		}

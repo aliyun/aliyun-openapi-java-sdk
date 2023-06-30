@@ -125,6 +125,8 @@ public class ListTaskFlowsByPageResponse extends AcsResponse {
 
 		private String timeZoneId;
 
+		private String dagOwnerId;
+
 		public Long getId() {
 			return this.id;
 		}
@@ -275,6 +277,14 @@ public class ListTaskFlowsByPageResponse extends AcsResponse {
 
 		public void setTimeZoneId(String timeZoneId) {
 			this.timeZoneId = timeZoneId;
+		}
+
+		public String getDagOwnerId() {
+			return this.dagOwnerId;
+		}
+
+		public void setDagOwnerId(String dagOwnerId) {
+			this.dagOwnerId = dagOwnerId;
 		}
 	}
 
