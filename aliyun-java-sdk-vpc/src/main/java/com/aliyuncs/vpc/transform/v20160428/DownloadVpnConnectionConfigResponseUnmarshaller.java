@@ -53,8 +53,8 @@ public class DownloadVpnConnectionConfigResponseUnmarshaller {
 
 		IpsecConfig ipsecConfig = new IpsecConfig();
 		ipsecConfig.setIpsecAuthAlg(_ctx.stringValue("DownloadVpnConnectionConfigResponse.VpnConnectionConfig.IpsecConfig.IpsecAuthAlg"));
-		ipsecConfig.setIpsecLifetime(_ctx.longValue("DownloadVpnConnectionConfigResponse.VpnConnectionConfig.IpsecConfig.IpsecLifetime"));
 		ipsecConfig.setIpsecEncAlg(_ctx.stringValue("DownloadVpnConnectionConfigResponse.VpnConnectionConfig.IpsecConfig.IpsecEncAlg"));
+		ipsecConfig.setIpsecLifetime(_ctx.longValue("DownloadVpnConnectionConfigResponse.VpnConnectionConfig.IpsecConfig.IpsecLifetime"));
 		ipsecConfig.setIpsecPfs(_ctx.stringValue("DownloadVpnConnectionConfigResponse.VpnConnectionConfig.IpsecConfig.IpsecPfs"));
 		vpnConnectionConfig.setIpsecConfig(ipsecConfig);
 
@@ -79,8 +79,8 @@ public class DownloadVpnConnectionConfigResponseUnmarshaller {
 			tunnelConfig.setIkeConfig1(ikeConfig1);
 
 			IpsecConfig2 ipsecConfig2 = new IpsecConfig2();
-			ipsecConfig2.setIpsecEncAlg(_ctx.stringValue("DownloadVpnConnectionConfigResponse.VpnConnectionConfig.TunnelsConfig["+ i +"].IpsecConfig.IpsecEncAlg"));
 			ipsecConfig2.setIpsecAuthAlg(_ctx.stringValue("DownloadVpnConnectionConfigResponse.VpnConnectionConfig.TunnelsConfig["+ i +"].IpsecConfig.IpsecAuthAlg"));
+			ipsecConfig2.setIpsecEncAlg(_ctx.stringValue("DownloadVpnConnectionConfigResponse.VpnConnectionConfig.TunnelsConfig["+ i +"].IpsecConfig.IpsecEncAlg"));
 			ipsecConfig2.setIpsecPfs(_ctx.stringValue("DownloadVpnConnectionConfigResponse.VpnConnectionConfig.TunnelsConfig["+ i +"].IpsecConfig.IpsecPfs"));
 			ipsecConfig2.setIpsecLifetime(_ctx.longValue("DownloadVpnConnectionConfigResponse.VpnConnectionConfig.TunnelsConfig["+ i +"].IpsecConfig.IpsecLifetime"));
 			tunnelConfig.setIpsecConfig2(ipsecConfig2);

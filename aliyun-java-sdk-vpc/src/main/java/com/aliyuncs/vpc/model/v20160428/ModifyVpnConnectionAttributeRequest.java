@@ -15,6 +15,7 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.vpc.Endpoint;
 
@@ -41,6 +42,8 @@ public class ModifyVpnConnectionAttributeRequest extends RpcAcsRequest<ModifyVpn
 
 	private String localSubnet;
 
+	private Boolean enableTunnelsBgp;
+
 	private String remoteSubnet;
 
 	private Boolean effectImmediately;
@@ -52,6 +55,8 @@ public class ModifyVpnConnectionAttributeRequest extends RpcAcsRequest<ModifyVpn
 	private Long ownerId;
 
 	private Boolean enableDpd;
+
+	private List<TunnelOptionsSpecification> tunnelOptionsSpecification;
 
 	private String remoteCaCertificate;
 
@@ -157,6 +162,17 @@ public class ModifyVpnConnectionAttributeRequest extends RpcAcsRequest<ModifyVpn
 		}
 	}
 
+	public Boolean getEnableTunnelsBgp() {
+		return this.enableTunnelsBgp;
+	}
+
+	public void setEnableTunnelsBgp(Boolean enableTunnelsBgp) {
+		this.enableTunnelsBgp = enableTunnelsBgp;
+		if(enableTunnelsBgp != null){
+			putQueryParameter("EnableTunnelsBgp", enableTunnelsBgp.toString());
+		}
+	}
+
 	public String getRemoteSubnet() {
 		return this.remoteSubnet;
 	}
@@ -223,6 +239,50 @@ public class ModifyVpnConnectionAttributeRequest extends RpcAcsRequest<ModifyVpn
 		}
 	}
 
+	public List<TunnelOptionsSpecification> getTunnelOptionsSpecification() {
+		return this.tunnelOptionsSpecification;
+	}
+
+	public void setTunnelOptionsSpecification(List<TunnelOptionsSpecification> tunnelOptionsSpecification) {
+		this.tunnelOptionsSpecification = tunnelOptionsSpecification;	
+		if (tunnelOptionsSpecification != null) {
+			for (int depth1 = 0; depth1 < tunnelOptionsSpecification.size(); depth1++) {
+				if (tunnelOptionsSpecification.get(depth1) != null) {
+					
+						if (tunnelOptionsSpecification.get(depth1).getTunnelIpsecConfig() != null) {
+							
+								putBodyParameter("TunnelOptionsSpecification." + (depth1 + 1) + ".TunnelIpsecConfig.IpsecPfs" , tunnelOptionsSpecification.get(depth1).getTunnelIpsecConfig().getIpsecPfs());
+								putBodyParameter("TunnelOptionsSpecification." + (depth1 + 1) + ".TunnelIpsecConfig.IpsecLifetime" , tunnelOptionsSpecification.get(depth1).getTunnelIpsecConfig().getIpsecLifetime());
+								putBodyParameter("TunnelOptionsSpecification." + (depth1 + 1) + ".TunnelIpsecConfig.IpsecAuthAlg" , tunnelOptionsSpecification.get(depth1).getTunnelIpsecConfig().getIpsecAuthAlg());
+								putBodyParameter("TunnelOptionsSpecification." + (depth1 + 1) + ".TunnelIpsecConfig.IpsecEncAlg" , tunnelOptionsSpecification.get(depth1).getTunnelIpsecConfig().getIpsecEncAlg());
+						}
+						if (tunnelOptionsSpecification.get(depth1).getTunnelBgpConfig() != null) {
+							
+								putBodyParameter("TunnelOptionsSpecification." + (depth1 + 1) + ".TunnelBgpConfig.LocalAsn" , tunnelOptionsSpecification.get(depth1).getTunnelBgpConfig().getLocalAsn());
+								putBodyParameter("TunnelOptionsSpecification." + (depth1 + 1) + ".TunnelBgpConfig.TunnelCidr" , tunnelOptionsSpecification.get(depth1).getTunnelBgpConfig().getTunnelCidr());
+								putBodyParameter("TunnelOptionsSpecification." + (depth1 + 1) + ".TunnelBgpConfig.LocalBgpIp" , tunnelOptionsSpecification.get(depth1).getTunnelBgpConfig().getLocalBgpIp());
+						}
+						putBodyParameter("TunnelOptionsSpecification." + (depth1 + 1) + ".RemoteCaCertificate" , tunnelOptionsSpecification.get(depth1).getRemoteCaCertificate());
+						putBodyParameter("TunnelOptionsSpecification." + (depth1 + 1) + ".TunnelId" , tunnelOptionsSpecification.get(depth1).getTunnelId());
+						if (tunnelOptionsSpecification.get(depth1).getTunnelIkeConfig() != null) {
+							
+								putBodyParameter("TunnelOptionsSpecification." + (depth1 + 1) + ".TunnelIkeConfig.IkeVersion" , tunnelOptionsSpecification.get(depth1).getTunnelIkeConfig().getIkeVersion());
+								putBodyParameter("TunnelOptionsSpecification." + (depth1 + 1) + ".TunnelIkeConfig.IkeMode" , tunnelOptionsSpecification.get(depth1).getTunnelIkeConfig().getIkeMode());
+								putBodyParameter("TunnelOptionsSpecification." + (depth1 + 1) + ".TunnelIkeConfig.IkeAuthAlg" , tunnelOptionsSpecification.get(depth1).getTunnelIkeConfig().getIkeAuthAlg());
+								putBodyParameter("TunnelOptionsSpecification." + (depth1 + 1) + ".TunnelIkeConfig.Psk" , tunnelOptionsSpecification.get(depth1).getTunnelIkeConfig().getPsk());
+								putBodyParameter("TunnelOptionsSpecification." + (depth1 + 1) + ".TunnelIkeConfig.IkePfs" , tunnelOptionsSpecification.get(depth1).getTunnelIkeConfig().getIkePfs());
+								putBodyParameter("TunnelOptionsSpecification." + (depth1 + 1) + ".TunnelIkeConfig.IkeLifetime" , tunnelOptionsSpecification.get(depth1).getTunnelIkeConfig().getIkeLifetime());
+								putBodyParameter("TunnelOptionsSpecification." + (depth1 + 1) + ".TunnelIkeConfig.LocalId" , tunnelOptionsSpecification.get(depth1).getTunnelIkeConfig().getLocalId());
+								putBodyParameter("TunnelOptionsSpecification." + (depth1 + 1) + ".TunnelIkeConfig.IkeEncAlg" , tunnelOptionsSpecification.get(depth1).getTunnelIkeConfig().getIkeEncAlg());
+								putBodyParameter("TunnelOptionsSpecification." + (depth1 + 1) + ".TunnelIkeConfig.RemoteId" , tunnelOptionsSpecification.get(depth1).getTunnelIkeConfig().getRemoteId());
+						}
+						putBodyParameter("TunnelOptionsSpecification." + (depth1 + 1) + ".EnableNatTraversal" , tunnelOptionsSpecification.get(depth1).getEnableNatTraversal());
+						putBodyParameter("TunnelOptionsSpecification." + (depth1 + 1) + ".EnableDpd" , tunnelOptionsSpecification.get(depth1).getEnableDpd());
+				}
+			}
+		}	
+	}
+
 	public String getRemoteCaCertificate() {
 		return this.remoteCaCertificate;
 	}
@@ -264,6 +324,248 @@ public class ModifyVpnConnectionAttributeRequest extends RpcAcsRequest<ModifyVpn
 		this.enableNatTraversal = enableNatTraversal;
 		if(enableNatTraversal != null){
 			putQueryParameter("EnableNatTraversal", enableNatTraversal.toString());
+		}
+	}
+
+	public static class TunnelOptionsSpecification {
+
+		private TunnelIpsecConfig tunnelIpsecConfig;
+
+		private TunnelBgpConfig tunnelBgpConfig;
+
+		private String remoteCaCertificate;
+
+		private String tunnelId;
+
+		private TunnelIkeConfig tunnelIkeConfig;
+
+		private Boolean enableNatTraversal;
+
+		private Boolean enableDpd;
+
+		public TunnelIpsecConfig getTunnelIpsecConfig() {
+			return this.tunnelIpsecConfig;
+		}
+
+		public void setTunnelIpsecConfig(TunnelIpsecConfig tunnelIpsecConfig) {
+			this.tunnelIpsecConfig = tunnelIpsecConfig;
+		}
+
+		public TunnelBgpConfig getTunnelBgpConfig() {
+			return this.tunnelBgpConfig;
+		}
+
+		public void setTunnelBgpConfig(TunnelBgpConfig tunnelBgpConfig) {
+			this.tunnelBgpConfig = tunnelBgpConfig;
+		}
+
+		public String getRemoteCaCertificate() {
+			return this.remoteCaCertificate;
+		}
+
+		public void setRemoteCaCertificate(String remoteCaCertificate) {
+			this.remoteCaCertificate = remoteCaCertificate;
+		}
+
+		public String getTunnelId() {
+			return this.tunnelId;
+		}
+
+		public void setTunnelId(String tunnelId) {
+			this.tunnelId = tunnelId;
+		}
+
+		public TunnelIkeConfig getTunnelIkeConfig() {
+			return this.tunnelIkeConfig;
+		}
+
+		public void setTunnelIkeConfig(TunnelIkeConfig tunnelIkeConfig) {
+			this.tunnelIkeConfig = tunnelIkeConfig;
+		}
+
+		public Boolean getEnableNatTraversal() {
+			return this.enableNatTraversal;
+		}
+
+		public void setEnableNatTraversal(Boolean enableNatTraversal) {
+			this.enableNatTraversal = enableNatTraversal;
+		}
+
+		public Boolean getEnableDpd() {
+			return this.enableDpd;
+		}
+
+		public void setEnableDpd(Boolean enableDpd) {
+			this.enableDpd = enableDpd;
+		}
+
+		public static class TunnelIpsecConfig {
+
+			private String ipsecPfs;
+
+			private Integer ipsecLifetime;
+
+			private String ipsecAuthAlg;
+
+			private String ipsecEncAlg;
+
+			public String getIpsecPfs() {
+				return this.ipsecPfs;
+			}
+
+			public void setIpsecPfs(String ipsecPfs) {
+				this.ipsecPfs = ipsecPfs;
+			}
+
+			public Integer getIpsecLifetime() {
+				return this.ipsecLifetime;
+			}
+
+			public void setIpsecLifetime(Integer ipsecLifetime) {
+				this.ipsecLifetime = ipsecLifetime;
+			}
+
+			public String getIpsecAuthAlg() {
+				return this.ipsecAuthAlg;
+			}
+
+			public void setIpsecAuthAlg(String ipsecAuthAlg) {
+				this.ipsecAuthAlg = ipsecAuthAlg;
+			}
+
+			public String getIpsecEncAlg() {
+				return this.ipsecEncAlg;
+			}
+
+			public void setIpsecEncAlg(String ipsecEncAlg) {
+				this.ipsecEncAlg = ipsecEncAlg;
+			}
+		}
+
+		public static class TunnelBgpConfig {
+
+			private Long localAsn;
+
+			private String tunnelCidr;
+
+			private String localBgpIp;
+
+			public Long getLocalAsn() {
+				return this.localAsn;
+			}
+
+			public void setLocalAsn(Long localAsn) {
+				this.localAsn = localAsn;
+			}
+
+			public String getTunnelCidr() {
+				return this.tunnelCidr;
+			}
+
+			public void setTunnelCidr(String tunnelCidr) {
+				this.tunnelCidr = tunnelCidr;
+			}
+
+			public String getLocalBgpIp() {
+				return this.localBgpIp;
+			}
+
+			public void setLocalBgpIp(String localBgpIp) {
+				this.localBgpIp = localBgpIp;
+			}
+		}
+
+		public static class TunnelIkeConfig {
+
+			private String ikeVersion;
+
+			private String ikeMode;
+
+			private String ikeAuthAlg;
+
+			private String psk;
+
+			private String ikePfs;
+
+			private Long ikeLifetime;
+
+			private String localId;
+
+			private String ikeEncAlg;
+
+			private String remoteId;
+
+			public String getIkeVersion() {
+				return this.ikeVersion;
+			}
+
+			public void setIkeVersion(String ikeVersion) {
+				this.ikeVersion = ikeVersion;
+			}
+
+			public String getIkeMode() {
+				return this.ikeMode;
+			}
+
+			public void setIkeMode(String ikeMode) {
+				this.ikeMode = ikeMode;
+			}
+
+			public String getIkeAuthAlg() {
+				return this.ikeAuthAlg;
+			}
+
+			public void setIkeAuthAlg(String ikeAuthAlg) {
+				this.ikeAuthAlg = ikeAuthAlg;
+			}
+
+			public String getPsk() {
+				return this.psk;
+			}
+
+			public void setPsk(String psk) {
+				this.psk = psk;
+			}
+
+			public String getIkePfs() {
+				return this.ikePfs;
+			}
+
+			public void setIkePfs(String ikePfs) {
+				this.ikePfs = ikePfs;
+			}
+
+			public Long getIkeLifetime() {
+				return this.ikeLifetime;
+			}
+
+			public void setIkeLifetime(Long ikeLifetime) {
+				this.ikeLifetime = ikeLifetime;
+			}
+
+			public String getLocalId() {
+				return this.localId;
+			}
+
+			public void setLocalId(String localId) {
+				this.localId = localId;
+			}
+
+			public String getIkeEncAlg() {
+				return this.ikeEncAlg;
+			}
+
+			public void setIkeEncAlg(String ikeEncAlg) {
+				this.ikeEncAlg = ikeEncAlg;
+			}
+
+			public String getRemoteId() {
+				return this.remoteId;
+			}
+
+			public void setRemoteId(String remoteId) {
+				this.remoteId = remoteId;
+			}
 		}
 	}
 

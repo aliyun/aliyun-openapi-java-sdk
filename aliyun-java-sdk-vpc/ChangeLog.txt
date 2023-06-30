@@ -1,3 +1,12 @@
+2023-06-30 Version: 3.2.26
+- Support HA VPN.
+- Api Type tag.
+- Api Type Tag.
+- Add ErrorCode.
+- Support HA-VPN.
+- Disuse some nat64 interface.
+- Optimize CreateNatGateway.
+
 2023-06-27 Version: 3.2.25
 - Add error code.
 - Add ErrorCode.

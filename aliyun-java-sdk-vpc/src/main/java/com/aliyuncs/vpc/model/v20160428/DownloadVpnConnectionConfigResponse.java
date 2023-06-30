@@ -274,21 +274,13 @@ public class DownloadVpnConnectionConfigResponse extends AcsResponse {
 
 			public static class IpsecConfig2 {
 
-				private String ipsecEncAlg;
-
 				private String ipsecAuthAlg;
+
+				private String ipsecEncAlg;
 
 				private String ipsecPfs;
 
 				private Long ipsecLifetime;
-
-				public String getIpsecEncAlg() {
-					return this.ipsecEncAlg;
-				}
-
-				public void setIpsecEncAlg(String ipsecEncAlg) {
-					this.ipsecEncAlg = ipsecEncAlg;
-				}
 
 				public String getIpsecAuthAlg() {
 					return this.ipsecAuthAlg;
@@ -296,6 +288,14 @@ public class DownloadVpnConnectionConfigResponse extends AcsResponse {
 
 				public void setIpsecAuthAlg(String ipsecAuthAlg) {
 					this.ipsecAuthAlg = ipsecAuthAlg;
+				}
+
+				public String getIpsecEncAlg() {
+					return this.ipsecEncAlg;
+				}
+
+				public void setIpsecEncAlg(String ipsecEncAlg) {
+					this.ipsecEncAlg = ipsecEncAlg;
 				}
 
 				public String getIpsecPfs() {
@@ -413,9 +413,9 @@ public class DownloadVpnConnectionConfigResponse extends AcsResponse {
 
 			private String ipsecAuthAlg;
 
-			private Long ipsecLifetime;
-
 			private String ipsecEncAlg;
+
+			private Long ipsecLifetime;
 
 			private String ipsecPfs;
 
@@ -427,20 +427,20 @@ public class DownloadVpnConnectionConfigResponse extends AcsResponse {
 				this.ipsecAuthAlg = ipsecAuthAlg;
 			}
 
-			public Long getIpsecLifetime() {
-				return this.ipsecLifetime;
-			}
-
-			public void setIpsecLifetime(Long ipsecLifetime) {
-				this.ipsecLifetime = ipsecLifetime;
-			}
-
 			public String getIpsecEncAlg() {
 				return this.ipsecEncAlg;
 			}
 
 			public void setIpsecEncAlg(String ipsecEncAlg) {
 				this.ipsecEncAlg = ipsecEncAlg;
+			}
+
+			public Long getIpsecLifetime() {
+				return this.ipsecLifetime;
+			}
+
+			public void setIpsecLifetime(Long ipsecLifetime) {
+				this.ipsecLifetime = ipsecLifetime;
 			}
 
 			public String getIpsecPfs() {

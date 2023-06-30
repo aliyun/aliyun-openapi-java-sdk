@@ -43,6 +43,8 @@ public class DescribeVpnConnectionLogsRequest extends RpcAcsRequest<DescribeVpnC
 
 	private String vpnConnectionId;
 
+	private String tunnelId;
+
 	private Integer to;
 	public DescribeVpnConnectionLogsRequest() {
 		super("Vpc", "2016-04-28", "DescribeVpnConnectionLogs", "vpc");
@@ -149,6 +151,17 @@ public class DescribeVpnConnectionLogsRequest extends RpcAcsRequest<DescribeVpnC
 		this.vpnConnectionId = vpnConnectionId;
 		if(vpnConnectionId != null){
 			putQueryParameter("VpnConnectionId", vpnConnectionId);
+		}
+	}
+
+	public String getTunnelId() {
+		return this.tunnelId;
+	}
+
+	public void setTunnelId(String tunnelId) {
+		this.tunnelId = tunnelId;
+		if(tunnelId != null){
+			putQueryParameter("TunnelId", tunnelId);
 		}
 	}
 

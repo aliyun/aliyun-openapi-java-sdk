@@ -350,6 +350,8 @@ public class DescribeVpnConnectionResponse extends AcsResponse {
 
 	public static class TunnelOptions {
 
+		private String tunnelId;
+
 		private String customerGatewayId;
 
 		private String enableDpd;
@@ -366,8 +368,6 @@ public class DescribeVpnConnectionResponse extends AcsResponse {
 
 		private String status;
 
-		private String tunnelId;
-
 		private String zoneNo;
 
 		private TunnelBgpConfig tunnelBgpConfig;
@@ -375,6 +375,14 @@ public class DescribeVpnConnectionResponse extends AcsResponse {
 		private TunnelIkeConfig tunnelIkeConfig;
 
 		private TunnelIpsecConfig tunnelIpsecConfig;
+
+		public String getTunnelId() {
+			return this.tunnelId;
+		}
+
+		public void setTunnelId(String tunnelId) {
+			this.tunnelId = tunnelId;
+		}
 
 		public String getCustomerGatewayId() {
 			return this.customerGatewayId;
@@ -438,14 +446,6 @@ public class DescribeVpnConnectionResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
-		}
-
-		public String getTunnelId() {
-			return this.tunnelId;
-		}
-
-		public void setTunnelId(String tunnelId) {
-			this.tunnelId = tunnelId;
 		}
 
 		public String getZoneNo() {

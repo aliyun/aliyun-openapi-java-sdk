@@ -45,6 +45,8 @@ public class CreateVpnGatewayRequest extends RpcAcsRequest<CreateVpnGatewayRespo
 
 	private String ownerAccount;
 
+	private String disasterRecoveryVSwitchId;
+
 	private Long ownerId;
 
 	private String vpnType;
@@ -174,6 +176,17 @@ public class CreateVpnGatewayRequest extends RpcAcsRequest<CreateVpnGatewayRespo
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getDisasterRecoveryVSwitchId() {
+		return this.disasterRecoveryVSwitchId;
+	}
+
+	public void setDisasterRecoveryVSwitchId(String disasterRecoveryVSwitchId) {
+		this.disasterRecoveryVSwitchId = disasterRecoveryVSwitchId;
+		if(disasterRecoveryVSwitchId != null){
+			putQueryParameter("DisasterRecoveryVSwitchId", disasterRecoveryVSwitchId);
 		}
 	}
 

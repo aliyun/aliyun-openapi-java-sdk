@@ -112,6 +112,7 @@ public class DescribeVpnConnectionResponseUnmarshaller {
 		List<TunnelOptions> tunnelOptionsSpecification = new ArrayList<TunnelOptions>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeVpnConnectionResponse.TunnelOptionsSpecification.Length"); i++) {
 			TunnelOptions tunnelOptions = new TunnelOptions();
+			tunnelOptions.setTunnelId(_ctx.stringValue("DescribeVpnConnectionResponse.TunnelOptionsSpecification["+ i +"].TunnelId"));
 			tunnelOptions.setCustomerGatewayId(_ctx.stringValue("DescribeVpnConnectionResponse.TunnelOptionsSpecification["+ i +"].CustomerGatewayId"));
 			tunnelOptions.setEnableDpd(_ctx.stringValue("DescribeVpnConnectionResponse.TunnelOptionsSpecification["+ i +"].EnableDpd"));
 			tunnelOptions.setEnableNatTraversal(_ctx.stringValue("DescribeVpnConnectionResponse.TunnelOptionsSpecification["+ i +"].EnableNatTraversal"));
@@ -120,7 +121,6 @@ public class DescribeVpnConnectionResponseUnmarshaller {
 			tunnelOptions.setRole(_ctx.stringValue("DescribeVpnConnectionResponse.TunnelOptionsSpecification["+ i +"].Role"));
 			tunnelOptions.setState(_ctx.stringValue("DescribeVpnConnectionResponse.TunnelOptionsSpecification["+ i +"].State"));
 			tunnelOptions.setStatus(_ctx.stringValue("DescribeVpnConnectionResponse.TunnelOptionsSpecification["+ i +"].Status"));
-			tunnelOptions.setTunnelId(_ctx.stringValue("DescribeVpnConnectionResponse.TunnelOptionsSpecification["+ i +"].TunnelId"));
 			tunnelOptions.setZoneNo(_ctx.stringValue("DescribeVpnConnectionResponse.TunnelOptionsSpecification["+ i +"].ZoneNo"));
 
 			TunnelBgpConfig tunnelBgpConfig = new TunnelBgpConfig();
