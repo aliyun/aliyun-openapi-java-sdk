@@ -31,7 +31,7 @@ public class DescribeDBInstanceAttributeRequest extends RpcAcsRequest<DescribeDB
 
 	private String dBInstanceId;
 	public DescribeDBInstanceAttributeRequest() {
-		super("Rds", "2014-08-15", "DescribeDBInstanceAttribute", "rds");
+		super("Rds", "2014-08-15", "DescribeDBInstanceAttribute");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

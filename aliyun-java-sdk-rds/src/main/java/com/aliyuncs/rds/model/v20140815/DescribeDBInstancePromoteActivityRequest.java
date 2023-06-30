@@ -37,7 +37,7 @@ public class DescribeDBInstancePromoteActivityRequest extends RpcAcsRequest<Desc
 
 	private String aliUid;
 	public DescribeDBInstancePromoteActivityRequest() {
-		super("Rds", "2014-08-15", "DescribeDBInstancePromoteActivity", "rds");
+		super("Rds", "2014-08-15", "DescribeDBInstancePromoteActivity");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

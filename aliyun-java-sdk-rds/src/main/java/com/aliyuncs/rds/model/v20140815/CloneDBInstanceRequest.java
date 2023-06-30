@@ -84,7 +84,7 @@ public class CloneDBInstanceRequest extends RpcAcsRequest<CloneDBInstanceRespons
 
 	private String bpeEnabled;
 	public CloneDBInstanceRequest() {
-		super("Rds", "2014-08-15", "CloneDBInstance", "rds");
+		super("Rds", "2014-08-15", "CloneDBInstance");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

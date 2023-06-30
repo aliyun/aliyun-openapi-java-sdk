@@ -39,7 +39,7 @@ public class ModifyDBInstanceDeletionProtectionRequest extends RpcAcsRequest<Mod
 
 	private Long ownerId;
 	public ModifyDBInstanceDeletionProtectionRequest() {
-		super("Rds", "2014-08-15", "ModifyDBInstanceDeletionProtection", "rds");
+		super("Rds", "2014-08-15", "ModifyDBInstanceDeletionProtection");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

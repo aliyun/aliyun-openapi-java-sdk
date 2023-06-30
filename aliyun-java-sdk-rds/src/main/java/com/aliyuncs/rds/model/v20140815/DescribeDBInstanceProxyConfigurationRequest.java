@@ -33,7 +33,7 @@ public class DescribeDBInstanceProxyConfigurationRequest extends RpcAcsRequest<D
 
 	private String dBInstanceId;
 	public DescribeDBInstanceProxyConfigurationRequest() {
-		super("Rds", "2014-08-15", "DescribeDBInstanceProxyConfiguration", "rds");
+		super("Rds", "2014-08-15", "DescribeDBInstanceProxyConfiguration");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

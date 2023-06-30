@@ -40,7 +40,7 @@ public class UntagResourcesRequest extends RpcAcsRequest<UntagResourcesResponse>
 
 	private List<String> tagKeys;
 	public UntagResourcesRequest() {
-		super("Rds", "2014-08-15", "UntagResources", "rds");
+		super("Rds", "2014-08-15", "UntagResources");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

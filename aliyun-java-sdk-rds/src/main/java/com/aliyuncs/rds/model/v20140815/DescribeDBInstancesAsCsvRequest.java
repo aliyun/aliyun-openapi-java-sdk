@@ -39,7 +39,7 @@ public class DescribeDBInstancesAsCsvRequest extends RpcAcsRequest<DescribeDBIns
 
 	private Long ownerId;
 	public DescribeDBInstancesAsCsvRequest() {
-		super("Rds", "2014-08-15", "DescribeDBInstancesAsCsv", "rds");
+		super("Rds", "2014-08-15", "DescribeDBInstancesAsCsv");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

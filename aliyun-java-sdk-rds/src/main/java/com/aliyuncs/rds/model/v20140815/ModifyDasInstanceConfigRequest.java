@@ -41,7 +41,7 @@ public class ModifyDasInstanceConfigRequest extends RpcAcsRequest<ModifyDasInsta
 
 	private String storageAutoScale;
 	public ModifyDasInstanceConfigRequest() {
-		super("Rds", "2014-08-15", "ModifyDasInstanceConfig", "rds");
+		super("Rds", "2014-08-15", "ModifyDasInstanceConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

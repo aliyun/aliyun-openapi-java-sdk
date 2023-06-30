@@ -33,7 +33,7 @@ public class DescribeHASwitchConfigRequest extends RpcAcsRequest<DescribeHASwitc
 
 	private String dBInstanceId;
 	public DescribeHASwitchConfigRequest() {
-		super("Rds", "2014-08-15", "DescribeHASwitchConfig", "rds");
+		super("Rds", "2014-08-15", "DescribeHASwitchConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -49,7 +49,7 @@ public class CreateDBInstanceEndpointRequest extends RpcAcsRequest<CreateDBInsta
 
 	private String vpcId;
 	public CreateDBInstanceEndpointRequest() {
-		super("Rds", "2014-08-15", "CreateDBInstanceEndpoint", "rds");
+		super("Rds", "2014-08-15", "CreateDBInstanceEndpoint");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -33,7 +33,7 @@ public class DescribeAnalyticdbByPrimaryDBInstanceRequest extends RpcAcsRequest<
 
 	private String dBInstanceId;
 	public DescribeAnalyticdbByPrimaryDBInstanceRequest() {
-		super("Rds", "2014-08-15", "DescribeAnalyticdbByPrimaryDBInstance", "rds");
+		super("Rds", "2014-08-15", "DescribeAnalyticdbByPrimaryDBInstance");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

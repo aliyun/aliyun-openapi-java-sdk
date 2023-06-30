@@ -43,7 +43,7 @@ public class DescribeUpgradeMajorVersionTasksRequest extends RpcAcsRequest<Descr
 
 	private String targetMajorVersion;
 	public DescribeUpgradeMajorVersionTasksRequest() {
-		super("Rds", "2014-08-15", "DescribeUpgradeMajorVersionTasks", "rds");
+		super("Rds", "2014-08-15", "DescribeUpgradeMajorVersionTasks");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

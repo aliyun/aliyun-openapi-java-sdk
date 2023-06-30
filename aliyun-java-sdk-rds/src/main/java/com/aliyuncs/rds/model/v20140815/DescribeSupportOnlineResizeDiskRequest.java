@@ -29,7 +29,7 @@ public class DescribeSupportOnlineResizeDiskRequest extends RpcAcsRequest<Descri
 
 	private String ownerAccount;
 	public DescribeSupportOnlineResizeDiskRequest() {
-		super("Rds", "2014-08-15", "DescribeSupportOnlineResizeDisk", "rds");
+		super("Rds", "2014-08-15", "DescribeSupportOnlineResizeDisk");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -22,16 +22,16 @@ import com.aliyuncs.rds.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeSQLLogReportListRequest extends RpcAcsRequest<DescribeSQLLogReportListResponse> {
+public class ModifyDBInstanceConfigRequest extends RpcAcsRequest<ModifyDBInstanceConfigResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String startTime;
+	private String clientToken;
 
-	private Integer pageNumber;
+	private String resourceGroupId;
 
-	private Integer pageSize;
+	private String configName;
 
 	private String dBInstanceId;
 
@@ -39,11 +39,11 @@ public class DescribeSQLLogReportListRequest extends RpcAcsRequest<DescribeSQLLo
 
 	private String ownerAccount;
 
-	private String endTime;
+	private String configValue;
 
 	private Long ownerId;
-	public DescribeSQLLogReportListRequest() {
-		super("Rds", "2014-08-15", "DescribeSQLLogReportList");
+	public ModifyDBInstanceConfigRequest() {
+		super("Rds", "2014-08-15", "ModifyDBInstanceConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -62,36 +62,36 @@ public class DescribeSQLLogReportListRequest extends RpcAcsRequest<DescribeSQLLo
 		}
 	}
 
-	public String getStartTime() {
-		return this.startTime;
+	public String getClientToken() {
+		return this.clientToken;
 	}
 
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public String getConfigName() {
+		return this.configName;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
+	public void setConfigName(String configName) {
+		this.configName = configName;
+		if(configName != null){
+			putQueryParameter("ConfigName", configName);
 		}
 	}
 
@@ -128,14 +128,14 @@ public class DescribeSQLLogReportListRequest extends RpcAcsRequest<DescribeSQLLo
 		}
 	}
 
-	public String getEndTime() {
-		return this.endTime;
+	public String getConfigValue() {
+		return this.configValue;
 	}
 
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
+	public void setConfigValue(String configValue) {
+		this.configValue = configValue;
+		if(configValue != null){
+			putQueryParameter("ConfigValue", configValue);
 		}
 	}
 
@@ -151,8 +151,8 @@ public class DescribeSQLLogReportListRequest extends RpcAcsRequest<DescribeSQLLo
 	}
 
 	@Override
-	public Class<DescribeSQLLogReportListResponse> getResponseClass() {
-		return DescribeSQLLogReportListResponse.class;
+	public Class<ModifyDBInstanceConfigResponse> getResponseClass() {
+		return ModifyDBInstanceConfigResponse.class;
 	}
 
 }

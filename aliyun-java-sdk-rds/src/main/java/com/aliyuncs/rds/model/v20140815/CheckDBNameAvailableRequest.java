@@ -39,7 +39,7 @@ public class CheckDBNameAvailableRequest extends RpcAcsRequest<CheckDBNameAvaila
 
 	private String dBName;
 	public CheckDBNameAvailableRequest() {
-		super("Rds", "2014-08-15", "CheckDBNameAvailable", "rds");
+		super("Rds", "2014-08-15", "CheckDBNameAvailable");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

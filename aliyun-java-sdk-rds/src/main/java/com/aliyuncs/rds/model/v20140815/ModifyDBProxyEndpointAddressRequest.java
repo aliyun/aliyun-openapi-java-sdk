@@ -43,7 +43,7 @@ public class ModifyDBProxyEndpointAddressRequest extends RpcAcsRequest<ModifyDBP
 
 	private String dBProxyNewConnectString;
 	public ModifyDBProxyEndpointAddressRequest() {
-		super("Rds", "2014-08-15", "ModifyDBProxyEndpointAddress", "rds");
+		super("Rds", "2014-08-15", "ModifyDBProxyEndpointAddress");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

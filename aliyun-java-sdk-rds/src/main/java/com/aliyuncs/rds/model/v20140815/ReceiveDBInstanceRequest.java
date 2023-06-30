@@ -37,7 +37,7 @@ public class ReceiveDBInstanceRequest extends RpcAcsRequest<ReceiveDBInstanceRes
 
 	private String guardDBInstanceId;
 	public ReceiveDBInstanceRequest() {
-		super("Rds", "2014-08-15", "ReceiveDBInstance", "rds");
+		super("Rds", "2014-08-15", "ReceiveDBInstance");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

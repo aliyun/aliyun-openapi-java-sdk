@@ -33,7 +33,7 @@ public class ModifyActionEventPolicyRequest extends RpcAcsRequest<ModifyActionEv
 
 	private String enableEventLog;
 	public ModifyActionEventPolicyRequest() {
-		super("Rds", "2014-08-15", "ModifyActionEventPolicy", "rds");
+		super("Rds", "2014-08-15", "ModifyActionEventPolicy");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

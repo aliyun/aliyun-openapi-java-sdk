@@ -41,7 +41,7 @@ public class ModifySQLCollectorRetentionRequest extends RpcAcsRequest<ModifySQLC
 
 	private Long ownerId;
 	public ModifySQLCollectorRetentionRequest() {
-		super("Rds", "2014-08-15", "ModifySQLCollectorRetention", "rds");
+		super("Rds", "2014-08-15", "ModifySQLCollectorRetention");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

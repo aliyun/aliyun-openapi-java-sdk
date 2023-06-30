@@ -43,7 +43,7 @@ public class DescribeModifyPGHbaConfigLogRequest extends RpcAcsRequest<DescribeM
 
 	private Long ownerId;
 	public DescribeModifyPGHbaConfigLogRequest() {
-		super("Rds", "2014-08-15", "DescribeModifyPGHbaConfigLog", "rds");
+		super("Rds", "2014-08-15", "DescribeModifyPGHbaConfigLog");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

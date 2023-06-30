@@ -61,7 +61,7 @@ public class RemoveTagsFromResourceRequest extends RpcAcsRequest<RemoveTagsFromR
 
 	private String tag4key;
 	public RemoveTagsFromResourceRequest() {
-		super("Rds", "2014-08-15", "RemoveTagsFromResource", "rds");
+		super("Rds", "2014-08-15", "RemoveTagsFromResource");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -37,7 +37,7 @@ public class ModifyDBInstanceAutoUpgradeMinorVersionRequest extends RpcAcsReques
 
 	private String dBInstanceId;
 	public ModifyDBInstanceAutoUpgradeMinorVersionRequest() {
-		super("Rds", "2014-08-15", "ModifyDBInstanceAutoUpgradeMinorVersion", "rds");
+		super("Rds", "2014-08-15", "ModifyDBInstanceAutoUpgradeMinorVersion");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

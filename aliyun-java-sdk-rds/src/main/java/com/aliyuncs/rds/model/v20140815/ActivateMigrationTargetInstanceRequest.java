@@ -35,7 +35,7 @@ public class ActivateMigrationTargetInstanceRequest extends RpcAcsRequest<Activa
 
 	private String switchTime;
 	public ActivateMigrationTargetInstanceRequest() {
-		super("Rds", "2014-08-15", "ActivateMigrationTargetInstance", "rds");
+		super("Rds", "2014-08-15", "ActivateMigrationTargetInstance");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

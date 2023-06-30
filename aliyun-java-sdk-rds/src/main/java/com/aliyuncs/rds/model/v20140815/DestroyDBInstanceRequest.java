@@ -37,7 +37,7 @@ public class DestroyDBInstanceRequest extends RpcAcsRequest<DestroyDBInstanceRes
 
 	private String dBInstanceId;
 	public DestroyDBInstanceRequest() {
-		super("Rds", "2014-08-15", "DestroyDBInstance", "rds");
+		super("Rds", "2014-08-15", "DestroyDBInstance");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
