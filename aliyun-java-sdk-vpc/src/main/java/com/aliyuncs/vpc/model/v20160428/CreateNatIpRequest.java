@@ -25,8 +25,6 @@ import com.aliyuncs.vpc.Endpoint;
 public class CreateNatIpRequest extends RpcAcsRequest<CreateNatIpResponse> {
 	   
 
-	private String natIpCidrId;
-
 	private Long resourceOwnerId;
 
 	private String natIpName;
@@ -55,17 +53,6 @@ public class CreateNatIpRequest extends RpcAcsRequest<CreateNatIpResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getNatIpCidrId() {
-		return this.natIpCidrId;
-	}
-
-	public void setNatIpCidrId(String natIpCidrId) {
-		this.natIpCidrId = natIpCidrId;
-		if(natIpCidrId != null){
-			putQueryParameter("NatIpCidrId", natIpCidrId);
-		}
 	}
 
 	public Long getResourceOwnerId() {
