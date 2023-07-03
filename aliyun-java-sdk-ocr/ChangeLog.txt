@@ -1,3 +1,13 @@
+2023-07-03 Version: 1.0.24
+- Update TrimDocument.
+- Update RecognizeTakeoutOrder.
+- Update RecognizePassportMRZ.
+- Update RecognizeChinapassport.
+- Update DetectCardScreenshot.
+- Update RecognizeVerificationcode.
+- Update RecognizePoiName.
+- Update RecognizeAccountPage.
+
 2023-02-15 Version: 1.0.23
 - Update RecognizeVideoCharacter.
 
