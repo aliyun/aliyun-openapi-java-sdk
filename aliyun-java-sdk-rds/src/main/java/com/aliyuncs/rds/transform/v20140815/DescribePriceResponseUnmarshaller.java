@@ -31,6 +31,8 @@ public class DescribePriceResponseUnmarshaller {
 		
 		describePriceResponse.setRequestId(_ctx.stringValue("DescribePriceResponse.RequestId"));
 		describePriceResponse.setShowDiscount(_ctx.booleanValue("DescribePriceResponse.ShowDiscount"));
+		describePriceResponse.setTradeMaxRCUAmount(_ctx.floatValue("DescribePriceResponse.TradeMaxRCUAmount"));
+		describePriceResponse.setTradeMinRCUAmount(_ctx.floatValue("DescribePriceResponse.TradeMinRCUAmount"));
 
 		PriceInfo priceInfo = new PriceInfo();
 		priceInfo.setOriginalPrice(_ctx.floatValue("DescribePriceResponse.PriceInfo.OriginalPrice"));

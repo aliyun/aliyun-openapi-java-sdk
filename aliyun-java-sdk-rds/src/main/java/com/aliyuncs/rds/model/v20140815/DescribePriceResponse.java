@@ -29,6 +29,10 @@ public class DescribePriceResponse extends AcsResponse {
 
 	private Boolean showDiscount;
 
+	private Float tradeMaxRCUAmount;
+
+	private Float tradeMinRCUAmount;
+
 	private List<Rule> rules;
 
 	private PriceInfo priceInfo;
@@ -47,6 +51,22 @@ public class DescribePriceResponse extends AcsResponse {
 
 	public void setShowDiscount(Boolean showDiscount) {
 		this.showDiscount = showDiscount;
+	}
+
+	public Float getTradeMaxRCUAmount() {
+		return this.tradeMaxRCUAmount;
+	}
+
+	public void setTradeMaxRCUAmount(Float tradeMaxRCUAmount) {
+		this.tradeMaxRCUAmount = tradeMaxRCUAmount;
+	}
+
+	public Float getTradeMinRCUAmount() {
+		return this.tradeMinRCUAmount;
+	}
+
+	public void setTradeMinRCUAmount(Float tradeMinRCUAmount) {
+		this.tradeMinRCUAmount = tradeMinRCUAmount;
 	}
 
 	public List<Rule> getRules() {
