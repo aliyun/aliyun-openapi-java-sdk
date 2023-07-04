@@ -35,7 +35,7 @@ public class SwitchDBInstanceVpcRequest extends RpcAcsRequest<SwitchDBInstanceVp
 
 	private String vPCId;
 	public SwitchDBInstanceVpcRequest() {
-		super("Rds", "2014-08-15", "SwitchDBInstanceVpc");
+		super("Rds", "2014-08-15", "SwitchDBInstanceVpc", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

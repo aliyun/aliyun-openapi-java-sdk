@@ -45,7 +45,7 @@ public class DescribeSecretsRequest extends RpcAcsRequest<DescribeSecretsRespons
 
 	private String acceptLanguage;
 	public DescribeSecretsRequest() {
-		super("Rds", "2014-08-15", "DescribeSecrets");
+		super("Rds", "2014-08-15", "DescribeSecrets", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -57,7 +57,7 @@ public class RecoveryDBInstanceRequest extends RpcAcsRequest<RecoveryDBInstanceR
 
 	private String instanceNetworkType;
 	public RecoveryDBInstanceRequest() {
-		super("Rds", "2014-08-15", "RecoveryDBInstance");
+		super("Rds", "2014-08-15", "RecoveryDBInstance", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -47,7 +47,7 @@ public class TransformDBInstancePayTypeRequest extends RpcAcsRequest<TransformDB
 
 	private String payType;
 	public TransformDBInstancePayTypeRequest() {
-		super("Rds", "2014-08-15", "TransformDBInstancePayType");
+		super("Rds", "2014-08-15", "TransformDBInstancePayType", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

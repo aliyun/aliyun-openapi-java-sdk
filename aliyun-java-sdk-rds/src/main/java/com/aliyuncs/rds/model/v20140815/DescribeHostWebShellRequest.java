@@ -39,7 +39,7 @@ public class DescribeHostWebShellRequest extends RpcAcsRequest<DescribeHostWebSh
 
 	private String accountPassword;
 	public DescribeHostWebShellRequest() {
-		super("Rds", "2014-08-15", "DescribeHostWebShell");
+		super("Rds", "2014-08-15", "DescribeHostWebShell", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

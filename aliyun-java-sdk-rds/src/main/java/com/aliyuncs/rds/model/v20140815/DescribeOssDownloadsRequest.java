@@ -37,7 +37,7 @@ public class DescribeOssDownloadsRequest extends RpcAcsRequest<DescribeOssDownlo
 
 	private String dBInstanceId;
 	public DescribeOssDownloadsRequest() {
-		super("Rds", "2014-08-15", "DescribeOssDownloads");
+		super("Rds", "2014-08-15", "DescribeOssDownloads", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -44,7 +44,7 @@ public class CreateGADInstanceRequest extends RpcAcsRequest<CreateGADInstanceRes
 
 	private String centralRdsDtsAdminPassword;
 	public CreateGADInstanceRequest() {
-		super("Rds", "2014-08-15", "CreateGADInstance");
+		super("Rds", "2014-08-15", "CreateGADInstance", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

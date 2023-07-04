@@ -51,7 +51,7 @@ public class ModifyDBInstanceNetworkTypeRequest extends RpcAcsRequest<ModifyDBIn
 
 	private Integer readWriteSplittingClassicExpiredDays;
 	public ModifyDBInstanceNetworkTypeRequest() {
-		super("Rds", "2014-08-15", "ModifyDBInstanceNetworkType");
+		super("Rds", "2014-08-15", "ModifyDBInstanceNetworkType", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

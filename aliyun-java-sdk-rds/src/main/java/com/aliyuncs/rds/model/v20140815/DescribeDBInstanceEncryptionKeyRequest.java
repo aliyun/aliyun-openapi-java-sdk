@@ -41,7 +41,7 @@ public class DescribeDBInstanceEncryptionKeyRequest extends RpcAcsRequest<Descri
 
 	private String targetRegionId;
 	public DescribeDBInstanceEncryptionKeyRequest() {
-		super("Rds", "2014-08-15", "DescribeDBInstanceEncryptionKey");
+		super("Rds", "2014-08-15", "DescribeDBInstanceEncryptionKey", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

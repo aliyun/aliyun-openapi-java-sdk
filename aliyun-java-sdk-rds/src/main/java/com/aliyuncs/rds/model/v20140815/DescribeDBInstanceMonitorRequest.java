@@ -37,7 +37,7 @@ public class DescribeDBInstanceMonitorRequest extends RpcAcsRequest<DescribeDBIn
 
 	private String dBInstanceId;
 	public DescribeDBInstanceMonitorRequest() {
-		super("Rds", "2014-08-15", "DescribeDBInstanceMonitor");
+		super("Rds", "2014-08-15", "DescribeDBInstanceMonitor", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

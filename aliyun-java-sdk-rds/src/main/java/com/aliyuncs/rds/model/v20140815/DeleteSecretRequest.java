@@ -41,7 +41,7 @@ public class DeleteSecretRequest extends RpcAcsRequest<DeleteSecretResponse> {
 
 	private String secretName;
 	public DeleteSecretRequest() {
-		super("Rds", "2014-08-15", "DeleteSecret");
+		super("Rds", "2014-08-15", "DeleteSecret", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

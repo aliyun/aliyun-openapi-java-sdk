@@ -39,7 +39,7 @@ public class ImportDatabaseBetweenInstancesRequest extends RpcAcsRequest<ImportD
 
 	private String sourceDBInstanceId;
 	public ImportDatabaseBetweenInstancesRequest() {
-		super("Rds", "2014-08-15", "ImportDatabaseBetweenInstances");
+		super("Rds", "2014-08-15", "ImportDatabaseBetweenInstances", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

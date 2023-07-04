@@ -31,7 +31,7 @@ public class DescribeActionEventPolicyRequest extends RpcAcsRequest<DescribeActi
 
 	private Long ownerId;
 	public DescribeActionEventPolicyRequest() {
-		super("Rds", "2014-08-15", "DescribeActionEventPolicy");
+		super("Rds", "2014-08-15", "DescribeActionEventPolicy", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

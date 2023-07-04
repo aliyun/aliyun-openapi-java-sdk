@@ -43,7 +43,7 @@ public class DescribeDBInstanceByTagsRequest extends RpcAcsRequest<DescribeDBIns
 
 	private Long ownerId;
 	public DescribeDBInstanceByTagsRequest() {
-		super("Rds", "2014-08-15", "DescribeDBInstanceByTags");
+		super("Rds", "2014-08-15", "DescribeDBInstanceByTags", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
