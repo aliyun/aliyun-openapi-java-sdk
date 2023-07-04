@@ -55,7 +55,7 @@ public class DescribeSQLLogRecordsRequest extends RpcAcsRequest<DescribeSQLLogRe
 
 	private String user;
 	public DescribeSQLLogRecordsRequest() {
-		super("Rds", "2014-08-15", "DescribeSQLLogRecords", "rds");
+		super("Rds", "2014-08-15", "DescribeSQLLogRecords");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -35,7 +35,7 @@ public class DescribeADInfoRequest extends RpcAcsRequest<DescribeADInfoResponse>
 
 	private String dBInstanceId;
 	public DescribeADInfoRequest() {
-		super("Rds", "2014-08-15", "DescribeADInfo", "rds");
+		super("Rds", "2014-08-15", "DescribeADInfo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -35,7 +35,7 @@ public class ModifyDBInstancePayTypeRequest extends RpcAcsRequest<ModifyDBInstan
 
 	private String payType;
 	public ModifyDBInstancePayTypeRequest() {
-		super("Rds", "2014-08-15", "ModifyDBInstancePayType", "rds");
+		super("Rds", "2014-08-15", "ModifyDBInstancePayType");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

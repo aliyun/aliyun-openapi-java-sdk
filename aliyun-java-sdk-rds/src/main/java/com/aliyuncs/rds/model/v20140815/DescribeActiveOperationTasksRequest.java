@@ -57,7 +57,7 @@ public class DescribeActiveOperationTasksRequest extends RpcAcsRequest<DescribeA
 
 	private Integer status;
 	public DescribeActiveOperationTasksRequest() {
-		super("Rds", "2014-08-15", "DescribeActiveOperationTasks", "rds");
+		super("Rds", "2014-08-15", "DescribeActiveOperationTasks");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

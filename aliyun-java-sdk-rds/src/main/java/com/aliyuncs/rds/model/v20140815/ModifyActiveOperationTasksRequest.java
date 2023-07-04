@@ -41,7 +41,7 @@ public class ModifyActiveOperationTasksRequest extends RpcAcsRequest<ModifyActiv
 
 	private Integer immediateStart;
 	public ModifyActiveOperationTasksRequest() {
-		super("Rds", "2014-08-15", "ModifyActiveOperationTasks", "rds");
+		super("Rds", "2014-08-15", "ModifyActiveOperationTasks");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

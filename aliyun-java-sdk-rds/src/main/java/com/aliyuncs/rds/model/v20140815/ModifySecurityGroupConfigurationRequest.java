@@ -35,7 +35,7 @@ public class ModifySecurityGroupConfigurationRequest extends RpcAcsRequest<Modif
 
 	private String dBInstanceId;
 	public ModifySecurityGroupConfigurationRequest() {
-		super("Rds", "2014-08-15", "ModifySecurityGroupConfiguration", "rds");
+		super("Rds", "2014-08-15", "ModifySecurityGroupConfiguration");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

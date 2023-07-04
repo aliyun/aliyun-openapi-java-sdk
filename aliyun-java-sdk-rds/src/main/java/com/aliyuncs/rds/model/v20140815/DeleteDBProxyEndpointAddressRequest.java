@@ -33,7 +33,7 @@ public class DeleteDBProxyEndpointAddressRequest extends RpcAcsRequest<DeleteDBP
 
 	private String dBProxyEndpointId;
 	public DeleteDBProxyEndpointAddressRequest() {
-		super("Rds", "2014-08-15", "DeleteDBProxyEndpointAddress", "rds");
+		super("Rds", "2014-08-15", "DeleteDBProxyEndpointAddress");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

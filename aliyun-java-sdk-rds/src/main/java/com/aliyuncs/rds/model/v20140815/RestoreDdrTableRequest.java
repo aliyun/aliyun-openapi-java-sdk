@@ -49,7 +49,7 @@ public class RestoreDdrTableRequest extends RpcAcsRequest<RestoreDdrTableRespons
 
 	private String sourceRegion;
 	public RestoreDdrTableRequest() {
-		super("Rds", "2014-08-15", "RestoreDdrTable", "rds");
+		super("Rds", "2014-08-15", "RestoreDdrTable");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -39,7 +39,7 @@ public class DescribeSQLCollectorRetentionRequest extends RpcAcsRequest<Describe
 
 	private Long ownerId;
 	public DescribeSQLCollectorRetentionRequest() {
-		super("Rds", "2014-08-15", "DescribeSQLCollectorRetention", "rds");
+		super("Rds", "2014-08-15", "DescribeSQLCollectorRetention");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -1,3 +1,8 @@
+2023-07-04 Version: 2.7.21
+- Fix bugs for  DescribeDedicatedHosts.
+- Fixed bugs add ERRORCODE.
+- Added serverless config to support serverless price query.
+
 2023-07-04 Version: 2.7.20
 - ModifyBackupPolicy API support parameter BackupPriority.
 - DescribeBackupPolicy API add return parameters: BackupPriority and SupportModifyBackupPriority.

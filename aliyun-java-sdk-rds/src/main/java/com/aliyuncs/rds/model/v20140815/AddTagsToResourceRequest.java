@@ -61,7 +61,7 @@ public class AddTagsToResourceRequest extends RpcAcsRequest<AddTagsToResourceRes
 
 	private String tag4key;
 	public AddTagsToResourceRequest() {
-		super("Rds", "2014-08-15", "AddTagsToResource", "rds");
+		super("Rds", "2014-08-15", "AddTagsToResource");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

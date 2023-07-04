@@ -39,7 +39,7 @@ public class ListClassesRequest extends RpcAcsRequest<ListClassesResponse> {
 
 	private String orderType;
 	public ListClassesRequest() {
-		super("Rds", "2014-08-15", "ListClasses", "rds");
+		super("Rds", "2014-08-15", "ListClasses");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

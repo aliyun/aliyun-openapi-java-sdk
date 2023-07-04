@@ -37,7 +37,7 @@ public class ReleaseInstancePublicConnectionRequest extends RpcAcsRequest<Releas
 
 	private String dBInstanceId;
 	public ReleaseInstancePublicConnectionRequest() {
-		super("Rds", "2014-08-15", "ReleaseInstancePublicConnection", "rds");
+		super("Rds", "2014-08-15", "ReleaseInstancePublicConnection");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

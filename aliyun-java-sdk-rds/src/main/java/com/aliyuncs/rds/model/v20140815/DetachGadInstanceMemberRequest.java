@@ -29,7 +29,7 @@ public class DetachGadInstanceMemberRequest extends RpcAcsRequest<DetachGadInsta
 
 	private String gadInstanceName;
 	public DetachGadInstanceMemberRequest() {
-		super("Rds", "2014-08-15", "DetachGadInstanceMember", "rds");
+		super("Rds", "2014-08-15", "DetachGadInstanceMember");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

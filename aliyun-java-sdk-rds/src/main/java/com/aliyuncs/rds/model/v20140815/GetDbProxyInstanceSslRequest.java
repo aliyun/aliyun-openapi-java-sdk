@@ -29,7 +29,7 @@ public class GetDbProxyInstanceSslRequest extends RpcAcsRequest<GetDbProxyInstan
 
 	private String dbInstanceId;
 	public GetDbProxyInstanceSslRequest() {
-		super("Rds", "2014-08-15", "GetDbProxyInstanceSsl", "rds");
+		super("Rds", "2014-08-15", "GetDbProxyInstanceSsl");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

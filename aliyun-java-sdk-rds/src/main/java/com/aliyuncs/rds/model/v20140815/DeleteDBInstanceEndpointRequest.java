@@ -33,7 +33,7 @@ public class DeleteDBInstanceEndpointRequest extends RpcAcsRequest<DeleteDBInsta
 
 	private String dBInstanceId;
 	public DeleteDBInstanceEndpointRequest() {
-		super("Rds", "2014-08-15", "DeleteDBInstanceEndpoint", "rds");
+		super("Rds", "2014-08-15", "DeleteDBInstanceEndpoint");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

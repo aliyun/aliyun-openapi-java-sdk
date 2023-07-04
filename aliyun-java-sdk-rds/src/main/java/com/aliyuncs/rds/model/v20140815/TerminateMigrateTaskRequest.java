@@ -35,7 +35,7 @@ public class TerminateMigrateTaskRequest extends RpcAcsRequest<TerminateMigrateT
 
 	private String dBInstanceId;
 	public TerminateMigrateTaskRequest() {
-		super("Rds", "2014-08-15", "TerminateMigrateTask", "rds");
+		super("Rds", "2014-08-15", "TerminateMigrateTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

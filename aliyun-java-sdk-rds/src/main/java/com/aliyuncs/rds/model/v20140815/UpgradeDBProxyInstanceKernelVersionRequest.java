@@ -39,7 +39,7 @@ public class UpgradeDBProxyInstanceKernelVersionRequest extends RpcAcsRequest<Up
 
 	private String upgradeTime;
 	public UpgradeDBProxyInstanceKernelVersionRequest() {
-		super("Rds", "2014-08-15", "UpgradeDBProxyInstanceKernelVersion", "rds");
+		super("Rds", "2014-08-15", "UpgradeDBProxyInstanceKernelVersion");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

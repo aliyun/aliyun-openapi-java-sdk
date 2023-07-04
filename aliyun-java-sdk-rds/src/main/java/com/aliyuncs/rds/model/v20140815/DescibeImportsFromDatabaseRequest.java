@@ -49,7 +49,7 @@ public class DescibeImportsFromDatabaseRequest extends RpcAcsRequest<DescibeImpo
 
 	private Long ownerId;
 	public DescibeImportsFromDatabaseRequest() {
-		super("Rds", "2014-08-15", "DescibeImportsFromDatabase", "rds");
+		super("Rds", "2014-08-15", "DescibeImportsFromDatabase");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
