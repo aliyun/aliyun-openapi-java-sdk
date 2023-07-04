@@ -1,3 +1,6 @@
+2023-07-04 Version: 0.0.15
+- 新增模型预测高性能版本
+
 2023-07-03 Version: 0.0.14
 - Add The billingCount return value to the RunPreTrainService Api.
 
