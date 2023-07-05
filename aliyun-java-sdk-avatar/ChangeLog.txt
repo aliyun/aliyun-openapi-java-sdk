@@ -1,3 +1,6 @@
+2023-07-05 Version: 1.0.22
+-offline add voice and industrycode
+
 2023-06-13 Version: 1.0.21
 -stream text
 

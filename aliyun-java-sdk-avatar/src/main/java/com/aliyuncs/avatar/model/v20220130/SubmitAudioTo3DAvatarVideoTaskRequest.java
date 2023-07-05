@@ -29,17 +29,23 @@ public class SubmitAudioTo3DAvatarVideoTaskRequest extends RpcAcsRequest<SubmitA
 	@SerializedName("app")
 	private App app;
 
-	@SerializedName("videoInfo")
-	private VideoInfo videoInfo;
-
 	@SerializedName("avatarInfo")
 	private AvatarInfo avatarInfo;
 
-	private Long tenantId;
-
 	private String title;
 
+	private String extParams;
+
 	private String url;
+
+	@SerializedName("videoInfo")
+	private VideoInfo videoInfo;
+
+	private String callbackParams;
+
+	private Long tenantId;
+
+	private Boolean callback;
 	public SubmitAudioTo3DAvatarVideoTaskRequest() {
 		super("avatar", "2022-01-30", "SubmitAudioTo3DAvatarVideoTask");
 		setMethod(MethodType.POST);
@@ -56,17 +62,6 @@ public class SubmitAudioTo3DAvatarVideoTaskRequest extends RpcAcsRequest<SubmitA
 		}	
 	}
 
-	public VideoInfo getVideoInfo() {
-		return this.videoInfo;
-	}
-
-	public void setVideoInfo(VideoInfo videoInfo) {
-		this.videoInfo = videoInfo;	
-		if (videoInfo != null) {
-			putQueryParameter("VideoInfo" , new Gson().toJson(videoInfo));
-		}	
-	}
-
 	public AvatarInfo getAvatarInfo() {
 		return this.avatarInfo;
 	}
@@ -78,17 +73,6 @@ public class SubmitAudioTo3DAvatarVideoTaskRequest extends RpcAcsRequest<SubmitA
 		}	
 	}
 
-	public Long getTenantId() {
-		return this.tenantId;
-	}
-
-	public void setTenantId(Long tenantId) {
-		this.tenantId = tenantId;
-		if(tenantId != null){
-			putQueryParameter("TenantId", tenantId.toString());
-		}
-	}
-
 	public String getTitle() {
 		return this.title;
 	}
@@ -97,6 +81,17 @@ public class SubmitAudioTo3DAvatarVideoTaskRequest extends RpcAcsRequest<SubmitA
 		this.title = title;
 		if(title != null){
 			putQueryParameter("Title", title);
+		}
+	}
+
+	public String getExtParams() {
+		return this.extParams;
+	}
+
+	public void setExtParams(String extParams) {
+		this.extParams = extParams;
+		if(extParams != null){
+			putQueryParameter("ExtParams", extParams);
 		}
 	}
 
@@ -111,6 +106,50 @@ public class SubmitAudioTo3DAvatarVideoTaskRequest extends RpcAcsRequest<SubmitA
 		}
 	}
 
+	public VideoInfo getVideoInfo() {
+		return this.videoInfo;
+	}
+
+	public void setVideoInfo(VideoInfo videoInfo) {
+		this.videoInfo = videoInfo;	
+		if (videoInfo != null) {
+			putQueryParameter("VideoInfo" , new Gson().toJson(videoInfo));
+		}	
+	}
+
+	public String getCallbackParams() {
+		return this.callbackParams;
+	}
+
+	public void setCallbackParams(String callbackParams) {
+		this.callbackParams = callbackParams;
+		if(callbackParams != null){
+			putQueryParameter("CallbackParams", callbackParams);
+		}
+	}
+
+	public Long getTenantId() {
+		return this.tenantId;
+	}
+
+	public void setTenantId(Long tenantId) {
+		this.tenantId = tenantId;
+		if(tenantId != null){
+			putQueryParameter("TenantId", tenantId.toString());
+		}
+	}
+
+	public Boolean getCallback() {
+		return this.callback;
+	}
+
+	public void setCallback(Boolean callback) {
+		this.callback = callback;
+		if(callback != null){
+			putQueryParameter("Callback", callback.toString());
+		}
+	}
+
 	public static class App {
 
 		@SerializedName("AppId")
@@ -122,6 +161,53 @@ public class SubmitAudioTo3DAvatarVideoTaskRequest extends RpcAcsRequest<SubmitA
 
 		public void setAppId(String appId) {
 			this.appId = appId;
+		}
+	}
+
+	public static class AvatarInfo {
+
+		@SerializedName("Code")
+		private String code;
+
+		@SerializedName("Locate")
+		private Integer locate;
+
+		@SerializedName("Angle")
+		private Integer angle;
+
+		@SerializedName("IndustryCode")
+		private String industryCode;
+
+		public String getCode() {
+			return this.code;
+		}
+
+		public void setCode(String code) {
+			this.code = code;
+		}
+
+		public Integer getLocate() {
+			return this.locate;
+		}
+
+		public void setLocate(Integer locate) {
+			this.locate = locate;
+		}
+
+		public Integer getAngle() {
+			return this.angle;
+		}
+
+		public void setAngle(Integer angle) {
+			this.angle = angle;
+		}
+
+		public String getIndustryCode() {
+			return this.industryCode;
+		}
+
+		public void setIndustryCode(String industryCode) {
+			this.industryCode = industryCode;
 		}
 	}
 
@@ -169,42 +255,6 @@ public class SubmitAudioTo3DAvatarVideoTaskRequest extends RpcAcsRequest<SubmitA
 
 		public void setAlphaFormat(Integer alphaFormat) {
 			this.alphaFormat = alphaFormat;
-		}
-	}
-
-	public static class AvatarInfo {
-
-		@SerializedName("Code")
-		private String code;
-
-		@SerializedName("Locate")
-		private Integer locate;
-
-		@SerializedName("Angle")
-		private Integer angle;
-
-		public String getCode() {
-			return this.code;
-		}
-
-		public void setCode(String code) {
-			this.code = code;
-		}
-
-		public Integer getLocate() {
-			return this.locate;
-		}
-
-		public void setLocate(Integer locate) {
-			this.locate = locate;
-		}
-
-		public Integer getAngle() {
-			return this.angle;
-		}
-
-		public void setAngle(Integer angle) {
-			this.angle = angle;
 		}
 	}
 

@@ -29,20 +29,26 @@ public class SubmitTextTo2DAvatarVideoTaskRequest extends RpcAcsRequest<SubmitTe
 	@SerializedName("app")
 	private App app;
 
-	@SerializedName("videoInfo")
-	private VideoInfo videoInfo;
-
 	@SerializedName("audioInfo")
 	private AudioInfo audioInfo;
 
 	@SerializedName("avatarInfo")
 	private AvatarInfo avatarInfo;
 
+	private String title;
+
+	private String extParams;
+
+	@SerializedName("videoInfo")
+	private VideoInfo videoInfo;
+
+	private String callbackParams;
+
 	private Long tenantId;
 
-	private String text;
+	private Boolean callback;
 
-	private String title;
+	private String text;
 	public SubmitTextTo2DAvatarVideoTaskRequest() {
 		super("avatar", "2022-01-30", "SubmitTextTo2DAvatarVideoTask");
 		setMethod(MethodType.POST);
@@ -56,17 +62,6 @@ public class SubmitTextTo2DAvatarVideoTaskRequest extends RpcAcsRequest<SubmitTe
 		this.app = app;	
 		if (app != null) {
 			putQueryParameter("App" , new Gson().toJson(app));
-		}	
-	}
-
-	public VideoInfo getVideoInfo() {
-		return this.videoInfo;
-	}
-
-	public void setVideoInfo(VideoInfo videoInfo) {
-		this.videoInfo = videoInfo;	
-		if (videoInfo != null) {
-			putQueryParameter("VideoInfo" , new Gson().toJson(videoInfo));
 		}	
 	}
 
@@ -92,6 +87,50 @@ public class SubmitTextTo2DAvatarVideoTaskRequest extends RpcAcsRequest<SubmitTe
 		}	
 	}
 
+	public String getTitle() {
+		return this.title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+		if(title != null){
+			putQueryParameter("Title", title);
+		}
+	}
+
+	public String getExtParams() {
+		return this.extParams;
+	}
+
+	public void setExtParams(String extParams) {
+		this.extParams = extParams;
+		if(extParams != null){
+			putQueryParameter("ExtParams", extParams);
+		}
+	}
+
+	public VideoInfo getVideoInfo() {
+		return this.videoInfo;
+	}
+
+	public void setVideoInfo(VideoInfo videoInfo) {
+		this.videoInfo = videoInfo;	
+		if (videoInfo != null) {
+			putQueryParameter("VideoInfo" , new Gson().toJson(videoInfo));
+		}	
+	}
+
+	public String getCallbackParams() {
+		return this.callbackParams;
+	}
+
+	public void setCallbackParams(String callbackParams) {
+		this.callbackParams = callbackParams;
+		if(callbackParams != null){
+			putQueryParameter("CallbackParams", callbackParams);
+		}
+	}
+
 	public Long getTenantId() {
 		return this.tenantId;
 	}
@@ -100,6 +139,17 @@ public class SubmitTextTo2DAvatarVideoTaskRequest extends RpcAcsRequest<SubmitTe
 		this.tenantId = tenantId;
 		if(tenantId != null){
 			putQueryParameter("TenantId", tenantId.toString());
+		}
+	}
+
+	public Boolean getCallback() {
+		return this.callback;
+	}
+
+	public void setCallback(Boolean callback) {
+		this.callback = callback;
+		if(callback != null){
+			putQueryParameter("Callback", callback.toString());
 		}
 	}
 
@@ -114,17 +164,6 @@ public class SubmitTextTo2DAvatarVideoTaskRequest extends RpcAcsRequest<SubmitTe
 		}
 	}
 
-	public String getTitle() {
-		return this.title;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
-		if(title != null){
-			putQueryParameter("Title", title);
-		}
-	}
-
 	public static class App {
 
 		@SerializedName("AppId")
@@ -136,64 +175,6 @@ public class SubmitTextTo2DAvatarVideoTaskRequest extends RpcAcsRequest<SubmitTe
 
 		public void setAppId(String appId) {
 			this.appId = appId;
-		}
-	}
-
-	public static class VideoInfo {
-
-		@SerializedName("IsAlpha")
-		private Boolean isAlpha;
-
-		@SerializedName("BackgroundImageUrl")
-		private String backgroundImageUrl;
-
-		@SerializedName("IsSubtitles")
-		private Boolean isSubtitles;
-
-		@SerializedName("Resolution")
-		private Integer resolution;
-
-		@SerializedName("AlphaFormat")
-		private Integer alphaFormat;
-
-		public Boolean getIsAlpha() {
-			return this.isAlpha;
-		}
-
-		public void setIsAlpha(Boolean isAlpha) {
-			this.isAlpha = isAlpha;
-		}
-
-		public String getBackgroundImageUrl() {
-			return this.backgroundImageUrl;
-		}
-
-		public void setBackgroundImageUrl(String backgroundImageUrl) {
-			this.backgroundImageUrl = backgroundImageUrl;
-		}
-
-		public Boolean getIsSubtitles() {
-			return this.isSubtitles;
-		}
-
-		public void setIsSubtitles(Boolean isSubtitles) {
-			this.isSubtitles = isSubtitles;
-		}
-
-		public Integer getResolution() {
-			return this.resolution;
-		}
-
-		public void setResolution(Integer resolution) {
-			this.resolution = resolution;
-		}
-
-		public Integer getAlphaFormat() {
-			return this.alphaFormat;
-		}
-
-		public void setAlphaFormat(Integer alphaFormat) {
-			this.alphaFormat = alphaFormat;
 		}
 	}
 
@@ -255,6 +236,64 @@ public class SubmitTextTo2DAvatarVideoTaskRequest extends RpcAcsRequest<SubmitTe
 
 		public void setCode(String code) {
 			this.code = code;
+		}
+	}
+
+	public static class VideoInfo {
+
+		@SerializedName("IsAlpha")
+		private Boolean isAlpha;
+
+		@SerializedName("BackgroundImageUrl")
+		private String backgroundImageUrl;
+
+		@SerializedName("IsSubtitles")
+		private Boolean isSubtitles;
+
+		@SerializedName("Resolution")
+		private Integer resolution;
+
+		@SerializedName("AlphaFormat")
+		private Integer alphaFormat;
+
+		public Boolean getIsAlpha() {
+			return this.isAlpha;
+		}
+
+		public void setIsAlpha(Boolean isAlpha) {
+			this.isAlpha = isAlpha;
+		}
+
+		public String getBackgroundImageUrl() {
+			return this.backgroundImageUrl;
+		}
+
+		public void setBackgroundImageUrl(String backgroundImageUrl) {
+			this.backgroundImageUrl = backgroundImageUrl;
+		}
+
+		public Boolean getIsSubtitles() {
+			return this.isSubtitles;
+		}
+
+		public void setIsSubtitles(Boolean isSubtitles) {
+			this.isSubtitles = isSubtitles;
+		}
+
+		public Integer getResolution() {
+			return this.resolution;
+		}
+
+		public void setResolution(Integer resolution) {
+			this.resolution = resolution;
+		}
+
+		public Integer getAlphaFormat() {
+			return this.alphaFormat;
+		}
+
+		public void setAlphaFormat(Integer alphaFormat) {
+			this.alphaFormat = alphaFormat;
 		}
 	}
 
