@@ -36,8 +36,6 @@ public class BindInputBucketRequest extends RpcAcsRequest<BindInputBucketRespons
 	private Long ownerId;
 
 	private String bucket;
-
-	private String roleArn;
 	public BindInputBucketRequest() {
 		super("Mts", "2014-06-18", "BindInputBucket", "mts");
 		setMethod(MethodType.POST);
@@ -110,17 +108,6 @@ public class BindInputBucketRequest extends RpcAcsRequest<BindInputBucketRespons
 		this.bucket = bucket;
 		if(bucket != null){
 			putQueryParameter("Bucket", bucket);
-		}
-	}
-
-	public String getRoleArn() {
-		return this.roleArn;
-	}
-
-	public void setRoleArn(String roleArn) {
-		this.roleArn = roleArn;
-		if(roleArn != null){
-			putQueryParameter("RoleArn", roleArn);
 		}
 	}
 

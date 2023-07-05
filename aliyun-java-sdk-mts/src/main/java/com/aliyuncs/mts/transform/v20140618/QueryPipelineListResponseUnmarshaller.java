@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.mts.model.v20140618.QueryPipelineListResponse;
 import com.aliyuncs.mts.model.v20140618.QueryPipelineListResponse.Pipeline;
+import com.aliyuncs.mts.model.v20140618.QueryPipelineListResponse.Pipeline.ExtendConfig;
 import com.aliyuncs.mts.model.v20140618.QueryPipelineListResponse.Pipeline.NotifyConfig;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -52,6 +53,12 @@ public class QueryPipelineListResponseUnmarshaller {
 			notifyConfig.setMqTag(_ctx.stringValue("QueryPipelineListResponse.PipelineList["+ i +"].NotifyConfig.MqTag"));
 			notifyConfig.setTopic(_ctx.stringValue("QueryPipelineListResponse.PipelineList["+ i +"].NotifyConfig.Topic"));
 			pipeline.setNotifyConfig(notifyConfig);
+
+			ExtendConfig extendConfig = new ExtendConfig();
+			extendConfig.setIsBoostNew(_ctx.booleanValue("QueryPipelineListResponse.PipelineList["+ i +"].ExtendConfig.IsBoostNew"));
+			extendConfig.setMaxMultiSpeed(_ctx.integerValue("QueryPipelineListResponse.PipelineList["+ i +"].ExtendConfig.MaxMultiSpeed"));
+			extendConfig.setMultiSpeedDowngradePolicy(_ctx.stringValue("QueryPipelineListResponse.PipelineList["+ i +"].ExtendConfig.MultiSpeedDowngradePolicy"));
+			pipeline.setExtendConfig(extendConfig);
 
 			pipelineList.add(pipeline);
 		}

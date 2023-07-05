@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.mts.model.v20140618.SearchPipelineResponse;
 import com.aliyuncs.mts.model.v20140618.SearchPipelineResponse.Pipeline;
+import com.aliyuncs.mts.model.v20140618.SearchPipelineResponse.Pipeline.ExtendConfig;
 import com.aliyuncs.mts.model.v20140618.SearchPipelineResponse.Pipeline.NotifyConfig;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -42,6 +43,7 @@ public class SearchPipelineResponseUnmarshaller {
 			pipeline.setName(_ctx.stringValue("SearchPipelineResponse.PipelineList["+ i +"].Name"));
 			pipeline.setId(_ctx.stringValue("SearchPipelineResponse.PipelineList["+ i +"].Id"));
 			pipeline.setQuotaAllocate(_ctx.longValue("SearchPipelineResponse.PipelineList["+ i +"].QuotaAllocate"));
+			pipeline.setGmtCreate(_ctx.stringValue("SearchPipelineResponse.PipelineList["+ i +"].GmtCreate"));
 
 			NotifyConfig notifyConfig = new NotifyConfig();
 			notifyConfig.setMqTopic(_ctx.stringValue("SearchPipelineResponse.PipelineList["+ i +"].NotifyConfig.MqTopic"));
@@ -49,6 +51,12 @@ public class SearchPipelineResponseUnmarshaller {
 			notifyConfig.setMqTag(_ctx.stringValue("SearchPipelineResponse.PipelineList["+ i +"].NotifyConfig.MqTag"));
 			notifyConfig.setTopic(_ctx.stringValue("SearchPipelineResponse.PipelineList["+ i +"].NotifyConfig.Topic"));
 			pipeline.setNotifyConfig(notifyConfig);
+
+			ExtendConfig extendConfig = new ExtendConfig();
+			extendConfig.setIsBoostNew(_ctx.booleanValue("SearchPipelineResponse.PipelineList["+ i +"].ExtendConfig.IsBoostNew"));
+			extendConfig.setMaxMultiSpeed(_ctx.integerValue("SearchPipelineResponse.PipelineList["+ i +"].ExtendConfig.MaxMultiSpeed"));
+			extendConfig.setMultiSpeedDowngradePolicy(_ctx.stringValue("SearchPipelineResponse.PipelineList["+ i +"].ExtendConfig.MultiSpeedDowngradePolicy"));
+			pipeline.setExtendConfig(extendConfig);
 
 			pipelineList.add(pipeline);
 		}

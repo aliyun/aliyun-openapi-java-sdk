@@ -1,3 +1,6 @@
+2023-07-05 Version: 3.3.58
+- Add CreateCustomGroup api sdk.
+
 2023-02-14 Version: 3.3.56
 - Update QueryFpShotJobList add duration.
 

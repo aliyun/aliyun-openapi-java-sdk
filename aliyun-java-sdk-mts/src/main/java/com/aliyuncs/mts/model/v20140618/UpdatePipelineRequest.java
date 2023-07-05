@@ -31,6 +31,8 @@ public class UpdatePipelineRequest extends RpcAcsRequest<UpdatePipelineResponse>
 
 	private String state;
 
+	private String extendConfig;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -81,6 +83,17 @@ public class UpdatePipelineRequest extends RpcAcsRequest<UpdatePipelineResponse>
 		this.state = state;
 		if(state != null){
 			putQueryParameter("State", state);
+		}
+	}
+
+	public String getExtendConfig() {
+		return this.extendConfig;
+	}
+
+	public void setExtendConfig(String extendConfig) {
+		this.extendConfig = extendConfig;
+		if(extendConfig != null){
+			putQueryParameter("ExtendConfig", extendConfig);
 		}
 	}
 

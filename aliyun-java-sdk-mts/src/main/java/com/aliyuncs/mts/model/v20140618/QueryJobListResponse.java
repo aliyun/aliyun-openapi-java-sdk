@@ -79,6 +79,8 @@ public class QueryJobListResponse extends AcsResponse {
 
 		private MNSMessageResult mNSMessageResult;
 
+		private Pipeline pipeline;
+
 		public String getCreationTime() {
 			return this.creationTime;
 		}
@@ -167,6 +169,14 @@ public class QueryJobListResponse extends AcsResponse {
 			this.mNSMessageResult = mNSMessageResult;
 		}
 
+		public Pipeline getPipeline() {
+			return this.pipeline;
+		}
+
+		public void setPipeline(Pipeline pipeline) {
+			this.pipeline = pipeline;
+		}
+
 		public static class Output {
 
 			private String waterMarkConfigUrl;
@@ -222,6 +232,8 @@ public class QueryJobListResponse extends AcsResponse {
 			private SubtitleConfig subtitleConfig;
 
 			private Properties properties;
+
+			private MultiSpeedInfo multiSpeedInfo;
 
 			public String getWaterMarkConfigUrl() {
 				return this.waterMarkConfigUrl;
@@ -437,6 +449,14 @@ public class QueryJobListResponse extends AcsResponse {
 
 			public void setProperties(Properties properties) {
 				this.properties = properties;
+			}
+
+			public MultiSpeedInfo getMultiSpeedInfo() {
+				return this.multiSpeedInfo;
+			}
+
+			public void setMultiSpeedInfo(MultiSpeedInfo multiSpeedInfo) {
+				this.multiSpeedInfo = multiSpeedInfo;
 			}
 
 			public static class WaterMark {
@@ -2326,6 +2346,89 @@ public class QueryJobListResponse extends AcsResponse {
 					}
 				}
 			}
+
+			public static class MultiSpeedInfo {
+
+				private String enable;
+
+				private String code;
+
+				private String message;
+
+				private Integer settingSpeed;
+
+				private String downgradePolicy;
+
+				private Double realSpeed;
+
+				private Double duration;
+
+				private Double timeCost;
+
+				public String getEnable() {
+					return this.enable;
+				}
+
+				public void setEnable(String enable) {
+					this.enable = enable;
+				}
+
+				public String getCode() {
+					return this.code;
+				}
+
+				public void setCode(String code) {
+					this.code = code;
+				}
+
+				public String getMessage() {
+					return this.message;
+				}
+
+				public void setMessage(String message) {
+					this.message = message;
+				}
+
+				public Integer getSettingSpeed() {
+					return this.settingSpeed;
+				}
+
+				public void setSettingSpeed(Integer settingSpeed) {
+					this.settingSpeed = settingSpeed;
+				}
+
+				public String getDowngradePolicy() {
+					return this.downgradePolicy;
+				}
+
+				public void setDowngradePolicy(String downgradePolicy) {
+					this.downgradePolicy = downgradePolicy;
+				}
+
+				public Double getRealSpeed() {
+					return this.realSpeed;
+				}
+
+				public void setRealSpeed(Double realSpeed) {
+					this.realSpeed = realSpeed;
+				}
+
+				public Double getDuration() {
+					return this.duration;
+				}
+
+				public void setDuration(Double duration) {
+					this.duration = duration;
+				}
+
+				public Double getTimeCost() {
+					return this.timeCost;
+				}
+
+				public void setTimeCost(Double timeCost) {
+					this.timeCost = timeCost;
+				}
+			}
 		}
 
 		public static class Input {
@@ -2391,6 +2494,92 @@ public class QueryJobListResponse extends AcsResponse {
 
 			public void setErrorCode(String errorCode) {
 				this.errorCode = errorCode;
+			}
+		}
+
+		public static class Pipeline {
+
+			private String id;
+
+			private String name;
+
+			private String speed;
+
+			private String state;
+
+			private ExtendConfig extendConfig;
+
+			public String getId() {
+				return this.id;
+			}
+
+			public void setId(String id) {
+				this.id = id;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getSpeed() {
+				return this.speed;
+			}
+
+			public void setSpeed(String speed) {
+				this.speed = speed;
+			}
+
+			public String getState() {
+				return this.state;
+			}
+
+			public void setState(String state) {
+				this.state = state;
+			}
+
+			public ExtendConfig getExtendConfig() {
+				return this.extendConfig;
+			}
+
+			public void setExtendConfig(ExtendConfig extendConfig) {
+				this.extendConfig = extendConfig;
+			}
+
+			public static class ExtendConfig {
+
+				private Boolean isBoostNew;
+
+				private Integer maxMultiSpeed;
+
+				private String multiSpeedDowngradePolicy;
+
+				public Boolean getIsBoostNew() {
+					return this.isBoostNew;
+				}
+
+				public void setIsBoostNew(Boolean isBoostNew) {
+					this.isBoostNew = isBoostNew;
+				}
+
+				public Integer getMaxMultiSpeed() {
+					return this.maxMultiSpeed;
+				}
+
+				public void setMaxMultiSpeed(Integer maxMultiSpeed) {
+					this.maxMultiSpeed = maxMultiSpeed;
+				}
+
+				public String getMultiSpeedDowngradePolicy() {
+					return this.multiSpeedDowngradePolicy;
+				}
+
+				public void setMultiSpeedDowngradePolicy(String multiSpeedDowngradePolicy) {
+					this.multiSpeedDowngradePolicy = multiSpeedDowngradePolicy;
+				}
 			}
 		}
 	}

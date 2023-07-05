@@ -31,6 +31,8 @@ public class AddPipelineRequest extends RpcAcsRequest<AddPipelineResponse> {
 
 	private String speed;
 
+	private String extendConfig;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -81,6 +83,17 @@ public class AddPipelineRequest extends RpcAcsRequest<AddPipelineResponse> {
 		this.speed = speed;
 		if(speed != null){
 			putQueryParameter("Speed", speed);
+		}
+	}
+
+	public String getExtendConfig() {
+		return this.extendConfig;
+	}
+
+	public void setExtendConfig(String extendConfig) {
+		this.extendConfig = extendConfig;
+		if(extendConfig != null){
+			putQueryParameter("ExtendConfig", extendConfig);
 		}
 	}
 
