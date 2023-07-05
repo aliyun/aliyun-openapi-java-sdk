@@ -31,6 +31,8 @@ public class ListVpcEndpointServiceUsersResponse extends AcsResponse {
 
 	private Integer maxResults;
 
+	private String totalCount;
+
 	private List<User> users;
 
 	private List<UserARN> userARNs;
@@ -57,6 +59,14 @@ public class ListVpcEndpointServiceUsersResponse extends AcsResponse {
 
 	public void setMaxResults(Integer maxResults) {
 		this.maxResults = maxResults;
+	}
+
+	public String getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(String totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<User> getUsers() {

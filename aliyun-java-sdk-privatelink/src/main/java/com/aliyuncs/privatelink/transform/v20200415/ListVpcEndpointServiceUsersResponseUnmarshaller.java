@@ -30,6 +30,7 @@ public class ListVpcEndpointServiceUsersResponseUnmarshaller {
 		listVpcEndpointServiceUsersResponse.setRequestId(_ctx.stringValue("ListVpcEndpointServiceUsersResponse.RequestId"));
 		listVpcEndpointServiceUsersResponse.setNextToken(_ctx.stringValue("ListVpcEndpointServiceUsersResponse.NextToken"));
 		listVpcEndpointServiceUsersResponse.setMaxResults(_ctx.integerValue("ListVpcEndpointServiceUsersResponse.MaxResults"));
+		listVpcEndpointServiceUsersResponse.setTotalCount(_ctx.stringValue("ListVpcEndpointServiceUsersResponse.TotalCount"));
 
 		List<User> users = new ArrayList<User>();
 		for (int i = 0; i < _ctx.lengthValue("ListVpcEndpointServiceUsersResponse.Users.Length"); i++) {

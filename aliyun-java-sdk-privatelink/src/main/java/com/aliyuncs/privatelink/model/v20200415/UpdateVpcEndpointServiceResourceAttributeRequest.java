@@ -34,6 +34,8 @@ public class UpdateVpcEndpointServiceResourceAttributeRequest extends RpcAcsRequ
 
 	private Boolean dryRun;
 
+	private String zoneId;
+
 	private String serviceId;
 	public UpdateVpcEndpointServiceResourceAttributeRequest() {
 		super("Privatelink", "2020-04-15", "UpdateVpcEndpointServiceResourceAttribute", "privatelink");
@@ -86,6 +88,17 @@ public class UpdateVpcEndpointServiceResourceAttributeRequest extends RpcAcsRequ
 		this.dryRun = dryRun;
 		if(dryRun != null){
 			putQueryParameter("DryRun", dryRun.toString());
+		}
+	}
+
+	public String getZoneId() {
+		return this.zoneId;
+	}
+
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+		if(zoneId != null){
+			putQueryParameter("ZoneId", zoneId);
 		}
 	}
 

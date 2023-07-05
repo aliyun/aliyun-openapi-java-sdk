@@ -30,6 +30,7 @@ public class ListVpcEndpointConnectionsResponseUnmarshaller {
 		listVpcEndpointConnectionsResponse.setRequestId(_ctx.stringValue("ListVpcEndpointConnectionsResponse.RequestId"));
 		listVpcEndpointConnectionsResponse.setNextToken(_ctx.stringValue("ListVpcEndpointConnectionsResponse.NextToken"));
 		listVpcEndpointConnectionsResponse.setMaxResults(_ctx.integerValue("ListVpcEndpointConnectionsResponse.MaxResults"));
+		listVpcEndpointConnectionsResponse.setTotalCount(_ctx.stringValue("ListVpcEndpointConnectionsResponse.TotalCount"));
 
 		List<Connection> connections = new ArrayList<Connection>();
 		for (int i = 0; i < _ctx.lengthValue("ListVpcEndpointConnectionsResponse.Connections.Length"); i++) {

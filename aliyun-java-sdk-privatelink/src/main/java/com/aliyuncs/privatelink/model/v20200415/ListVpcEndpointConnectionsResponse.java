@@ -31,6 +31,8 @@ public class ListVpcEndpointConnectionsResponse extends AcsResponse {
 
 	private Integer maxResults;
 
+	private String totalCount;
+
 	private List<Connection> connections;
 
 	public String getNextToken() {
@@ -55,6 +57,14 @@ public class ListVpcEndpointConnectionsResponse extends AcsResponse {
 
 	public void setMaxResults(Integer maxResults) {
 		this.maxResults = maxResults;
+	}
+
+	public String getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(String totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<Connection> getConnections() {

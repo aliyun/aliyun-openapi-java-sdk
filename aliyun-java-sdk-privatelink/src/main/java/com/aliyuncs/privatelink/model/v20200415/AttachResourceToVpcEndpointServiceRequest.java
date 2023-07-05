@@ -34,6 +34,8 @@ public class AttachResourceToVpcEndpointServiceRequest extends RpcAcsRequest<Att
 
 	private String resourceType;
 
+	private String zoneId;
+
 	private String serviceId;
 	public AttachResourceToVpcEndpointServiceRequest() {
 		super("Privatelink", "2020-04-15", "AttachResourceToVpcEndpointService", "privatelink");
@@ -86,6 +88,17 @@ public class AttachResourceToVpcEndpointServiceRequest extends RpcAcsRequest<Att
 		this.resourceType = resourceType;
 		if(resourceType != null){
 			putQueryParameter("ResourceType", resourceType);
+		}
+	}
+
+	public String getZoneId() {
+		return this.zoneId;
+	}
+
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+		if(zoneId != null){
+			putQueryParameter("ZoneId", zoneId);
 		}
 	}
 

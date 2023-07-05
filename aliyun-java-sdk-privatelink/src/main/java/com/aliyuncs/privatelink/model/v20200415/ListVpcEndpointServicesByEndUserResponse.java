@@ -31,6 +31,8 @@ public class ListVpcEndpointServicesByEndUserResponse extends AcsResponse {
 
 	private Integer maxResults;
 
+	private String totalCount;
+
 	private List<Service> services;
 
 	public String getNextToken() {
@@ -55,6 +57,14 @@ public class ListVpcEndpointServicesByEndUserResponse extends AcsResponse {
 
 	public void setMaxResults(Integer maxResults) {
 		this.maxResults = maxResults;
+	}
+
+	public String getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(String totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<Service> getServices() {
@@ -84,6 +94,8 @@ public class ListVpcEndpointServicesByEndUserResponse extends AcsResponse {
 		private Boolean serviceSupportIPv6;
 
 		private String resourceGroupId;
+
+		private String serviceResourceType;
 
 		private List<TagModel> tags;
 
@@ -159,6 +171,14 @@ public class ListVpcEndpointServicesByEndUserResponse extends AcsResponse {
 
 		public void setResourceGroupId(String resourceGroupId) {
 			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getServiceResourceType() {
+			return this.serviceResourceType;
+		}
+
+		public void setServiceResourceType(String serviceResourceType) {
+			this.serviceResourceType = serviceResourceType;
 		}
 
 		public List<TagModel> getTags() {
