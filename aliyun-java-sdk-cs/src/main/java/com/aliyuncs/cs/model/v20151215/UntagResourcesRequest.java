@@ -30,6 +30,10 @@ public class UntagResourcesRequest extends RoaAcsRequest<UntagResourcesResponse>
 	private String region_id;
 
 	private String resource_type;
+
+	private String resource_ids;
+
+	private String tag_keys;
 	public UntagResourcesRequest() {
 		super("CS", "2015-12-15", "UntagResources");
 		setUriPattern("/tags");
@@ -70,6 +74,28 @@ public class UntagResourcesRequest extends RoaAcsRequest<UntagResourcesResponse>
 		this.resource_type = resource_type;
 		if(resource_type != null){
 			putQueryParameter("resource_type", resource_type);
+		}
+	}
+
+	public String getResource_ids() {
+		return this.resource_ids;
+	}
+
+	public void setResource_ids(String resource_ids) {
+		this.resource_ids = resource_ids;
+		if(resource_ids != null){
+			putQueryParameter("resource_ids", resource_ids);
+		}
+	}
+
+	public String getTag_keys() {
+		return this.tag_keys;
+	}
+
+	public void setTag_keys(String tag_keys) {
+		this.tag_keys = tag_keys;
+		if(tag_keys != null){
+			putQueryParameter("tag_keys", tag_keys);
 		}
 	}
 
