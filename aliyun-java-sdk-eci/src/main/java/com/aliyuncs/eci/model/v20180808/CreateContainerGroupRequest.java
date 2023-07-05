@@ -730,6 +730,7 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 				putQueryParameter("Volume." + (depth1 + 1) + ".NFSVolume.ReadOnly", volumes.get(depth1).getNFSVolumeReadOnly());
 
 				putQueryParameter("Volume." + (depth1 + 1) + ".EmptyDirVolume.Medium", volumes.get(depth1).getEmptyDirVolumeMedium());
+				putQueryParameter("Volume." + (depth1 + 1) + ".EmptyDirVolume.SizeLimit", volumes.get(depth1).getEmptyDirVolumeSizeLimit());
 
 				if (volumes.get(depth1).getConfigFileVolumeConfigFileToPaths() != null) {
 					for (int depth2 = 0; depth2 < volumes.get(depth1).getConfigFileVolumeConfigFileToPaths().size(); depth2++) {
@@ -1728,6 +1729,8 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 
 		private String emptyDirVolumeMedium;
 
+		private String emptyDirVolumeSizeLimit;
+
 		private String diskVolumeDiskId;
 
 		private String diskVolumeFsType;
@@ -1784,6 +1787,14 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 
 		public void setEmptyDirVolumeMedium(String emptyDirVolumeMedium) {
 			this.emptyDirVolumeMedium = emptyDirVolumeMedium;
+		}
+
+		public String getEmptyDirVolumeSizeLimit() {
+			return emptyDirVolumeSizeLimit;
+		}
+
+		public void setEmptyDirVolumeSizeLimit(String emptyDirVolumeSizeLimit) {
+			this.emptyDirVolumeSizeLimit = emptyDirVolumeSizeLimit;
 		}
 
 		public String getDiskVolumeDiskId() {

@@ -727,6 +727,7 @@ public class BatchCreateContainerGroupsRequest extends RpcAcsRequest<BatchCreate
                 putQueryParameter("Volume." + (depth1 + 1) + ".NFSVolume.ReadOnly", volumes.get(depth1).getNFSVolumeReadOnly());
 
                 putQueryParameter("Volume." + (depth1 + 1) + ".EmptyDirVolume.Medium", volumes.get(depth1).getEmptyDirVolumeMedium());
+                putQueryParameter("Volume." + (depth1 + 1) + ".EmptyDirVolumeSizeLimit", volumes.get(depth1).getEmptyDirVolumeSizeLimit());
 
                 if (volumes.get(depth1).getConfigFileVolumeConfigFileToPaths() != null) {
                     for (int depth2 = 0; depth2 < volumes.get(depth1).getConfigFileVolumeConfigFileToPaths().size(); depth2++) {
