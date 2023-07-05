@@ -86,9 +86,8 @@ public class BatchGetFileMetaResponseUnmarshaller {
 			filesItem.setPerformer(_ctx.stringValue("BatchGetFileMetaResponse.Files["+ i +"].Performer"));
 			filesItem.setLanguage(_ctx.stringValue("BatchGetFileMetaResponse.Files["+ i +"].Language"));
 			filesItem.setAlbum(_ctx.stringValue("BatchGetFileMetaResponse.Files["+ i +"].Album"));
-			filesItem.setDocumentLanguage(_ctx.stringValue("BatchGetFileMetaResponse.Files["+ i +"].DocumentLanguage"));
 			filesItem.setPageCount(_ctx.longValue("BatchGetFileMetaResponse.Files["+ i +"].PageCount"));
-			filesItem.setDocumentContent(_ctx.stringValue("BatchGetFileMetaResponse.Files["+ i +"].DocumentContent"));
+			filesItem.setDocumentText(_ctx.stringValue("BatchGetFileMetaResponse.Files["+ i +"].DocumentText"));
 			filesItem.setETag(_ctx.stringValue("BatchGetFileMetaResponse.Files["+ i +"].ETag"));
 			filesItem.setCacheControl(_ctx.stringValue("BatchGetFileMetaResponse.Files["+ i +"].CacheControl"));
 			filesItem.setContentDisposition(_ctx.stringValue("BatchGetFileMetaResponse.Files["+ i +"].ContentDisposition"));

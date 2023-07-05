@@ -107,9 +107,8 @@ public class BatchGetFigureClusterResponseUnmarshaller {
 			cover.setPerformer(_ctx.stringValue("BatchGetFigureClusterResponse.FigureClusters["+ i +"].Cover.Performer"));
 			cover.setLanguage(_ctx.stringValue("BatchGetFigureClusterResponse.FigureClusters["+ i +"].Cover.Language"));
 			cover.setAlbum(_ctx.stringValue("BatchGetFigureClusterResponse.FigureClusters["+ i +"].Cover.Album"));
-			cover.setDocumentLanguage(_ctx.stringValue("BatchGetFigureClusterResponse.FigureClusters["+ i +"].Cover.DocumentLanguage"));
 			cover.setPageCount(_ctx.longValue("BatchGetFigureClusterResponse.FigureClusters["+ i +"].Cover.PageCount"));
-			cover.setDocumentContent(_ctx.stringValue("BatchGetFigureClusterResponse.FigureClusters["+ i +"].Cover.DocumentContent"));
+			cover.setDocumentText(_ctx.stringValue("BatchGetFigureClusterResponse.FigureClusters["+ i +"].Cover.DocumentText"));
 			cover.setETag(_ctx.stringValue("BatchGetFigureClusterResponse.FigureClusters["+ i +"].Cover.ETag"));
 			cover.setCacheControl(_ctx.stringValue("BatchGetFigureClusterResponse.FigureClusters["+ i +"].Cover.CacheControl"));
 			cover.setContentDisposition(_ctx.stringValue("BatchGetFigureClusterResponse.FigureClusters["+ i +"].Cover.ContentDisposition"));

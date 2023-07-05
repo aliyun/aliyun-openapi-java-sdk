@@ -310,11 +310,9 @@ public class QueryStoriesResponse extends AcsResponse {
 
 			private String album;
 
-			private String documentLanguage;
-
 			private Long pageCount;
 
-			private String documentContent;
+			private String documentText;
 
 			private String eTag;
 
@@ -678,14 +676,6 @@ public class QueryStoriesResponse extends AcsResponse {
 				this.album = album;
 			}
 
-			public String getDocumentLanguage() {
-				return this.documentLanguage;
-			}
-
-			public void setDocumentLanguage(String documentLanguage) {
-				this.documentLanguage = documentLanguage;
-			}
-
 			public Long getPageCount() {
 				return this.pageCount;
 			}
@@ -694,12 +684,12 @@ public class QueryStoriesResponse extends AcsResponse {
 				this.pageCount = pageCount;
 			}
 
-			public String getDocumentContent() {
-				return this.documentContent;
+			public String getDocumentText() {
+				return this.documentText;
 			}
 
-			public void setDocumentContent(String documentContent) {
-				this.documentContent = documentContent;
+			public void setDocumentText(String documentText) {
+				this.documentText = documentText;
 			}
 
 			public String getETag() {
@@ -2643,11 +2633,9 @@ public class QueryStoriesResponse extends AcsResponse {
 
 			private String album;
 
-			private String documentLanguage;
-
 			private Long pageCount;
 
-			private String documentContent;
+			private String documentText;
 
 			private String eTag;
 
@@ -3011,14 +2999,6 @@ public class QueryStoriesResponse extends AcsResponse {
 				this.album = album;
 			}
 
-			public String getDocumentLanguage() {
-				return this.documentLanguage;
-			}
-
-			public void setDocumentLanguage(String documentLanguage) {
-				this.documentLanguage = documentLanguage;
-			}
-
 			public Long getPageCount() {
 				return this.pageCount;
 			}
@@ -3027,12 +3007,12 @@ public class QueryStoriesResponse extends AcsResponse {
 				this.pageCount = pageCount;
 			}
 
-			public String getDocumentContent() {
-				return this.documentContent;
+			public String getDocumentText() {
+				return this.documentText;
 			}
 
-			public void setDocumentContent(String documentContent) {
-				this.documentContent = documentContent;
+			public void setDocumentText(String documentText) {
+				this.documentText = documentText;
 			}
 
 			public String getETag() {

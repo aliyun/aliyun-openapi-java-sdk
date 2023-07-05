@@ -105,9 +105,8 @@ public class GetFigureClusterResponseUnmarshaller {
 		cover.setPerformer(_ctx.stringValue("GetFigureClusterResponse.FigureCluster.Cover.Performer"));
 		cover.setLanguage(_ctx.stringValue("GetFigureClusterResponse.FigureCluster.Cover.Language"));
 		cover.setAlbum(_ctx.stringValue("GetFigureClusterResponse.FigureCluster.Cover.Album"));
-		cover.setDocumentLanguage(_ctx.stringValue("GetFigureClusterResponse.FigureCluster.Cover.DocumentLanguage"));
 		cover.setPageCount(_ctx.longValue("GetFigureClusterResponse.FigureCluster.Cover.PageCount"));
-		cover.setDocumentContent(_ctx.stringValue("GetFigureClusterResponse.FigureCluster.Cover.DocumentContent"));
+		cover.setDocumentText(_ctx.stringValue("GetFigureClusterResponse.FigureCluster.Cover.DocumentText"));
 		cover.setETag(_ctx.stringValue("GetFigureClusterResponse.FigureCluster.Cover.ETag"));
 		cover.setCacheControl(_ctx.stringValue("GetFigureClusterResponse.FigureCluster.Cover.CacheControl"));
 		cover.setContentDisposition(_ctx.stringValue("GetFigureClusterResponse.FigureCluster.Cover.ContentDisposition"));

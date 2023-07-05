@@ -87,9 +87,8 @@ public class SemanticQueryResponseUnmarshaller {
 			filesItem.setPerformer(_ctx.stringValue("SemanticQueryResponse.Files["+ i +"].Performer"));
 			filesItem.setLanguage(_ctx.stringValue("SemanticQueryResponse.Files["+ i +"].Language"));
 			filesItem.setAlbum(_ctx.stringValue("SemanticQueryResponse.Files["+ i +"].Album"));
-			filesItem.setDocumentLanguage(_ctx.stringValue("SemanticQueryResponse.Files["+ i +"].DocumentLanguage"));
 			filesItem.setPageCount(_ctx.longValue("SemanticQueryResponse.Files["+ i +"].PageCount"));
-			filesItem.setDocumentContent(_ctx.stringValue("SemanticQueryResponse.Files["+ i +"].DocumentContent"));
+			filesItem.setDocumentText(_ctx.stringValue("SemanticQueryResponse.Files["+ i +"].DocumentText"));
 			filesItem.setETag(_ctx.stringValue("SemanticQueryResponse.Files["+ i +"].ETag"));
 			filesItem.setCacheControl(_ctx.stringValue("SemanticQueryResponse.Files["+ i +"].CacheControl"));
 			filesItem.setContentDisposition(_ctx.stringValue("SemanticQueryResponse.Files["+ i +"].ContentDisposition"));

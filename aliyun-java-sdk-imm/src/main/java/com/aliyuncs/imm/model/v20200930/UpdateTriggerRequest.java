@@ -29,9 +29,6 @@ import com.aliyuncs.imm.Endpoint;
 public class UpdateTriggerRequest extends RpcAcsRequest<UpdateTriggerResponse> {
 	   
 
-	@SerializedName("notification")
-	private Notification notification;
-
 	private String id;
 
 	private String projectName;
@@ -51,17 +48,6 @@ public class UpdateTriggerRequest extends RpcAcsRequest<UpdateTriggerResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Notification getNotification() {
-		return this.notification;
-	}
-
-	public void setNotification(Notification notification) {
-		this.notification = notification;	
-		if (notification != null) {
-			putBodyParameter("Notification" , new Gson().toJson(notification));
-		}	
 	}
 
 	public String getId() {
@@ -117,31 +103,6 @@ public class UpdateTriggerRequest extends RpcAcsRequest<UpdateTriggerResponse> {
 		if (actions != null) {
 			putBodyParameter("Actions" , new Gson().toJson(actions));
 		}	
-	}
-
-	public static class Notification {
-
-		@SerializedName("Endpoint")
-		private String endpoint;
-
-		@SerializedName("Topic")
-		private String topic;
-
-		public String getEndpoint() {
-			return this.endpoint;
-		}
-
-		public void setEndpoint(String endpoint) {
-			this.endpoint = endpoint;
-		}
-
-		public String getTopic() {
-			return this.topic;
-		}
-
-		public void setTopic(String topic) {
-			this.topic = topic;
-		}
 	}
 
 	public static class Input {

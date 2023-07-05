@@ -109,9 +109,8 @@ public class QueryFigureClustersResponseUnmarshaller {
 			cover.setPerformer(_ctx.stringValue("QueryFigureClustersResponse.FigureClusters["+ i +"].Cover.Performer"));
 			cover.setLanguage(_ctx.stringValue("QueryFigureClustersResponse.FigureClusters["+ i +"].Cover.Language"));
 			cover.setAlbum(_ctx.stringValue("QueryFigureClustersResponse.FigureClusters["+ i +"].Cover.Album"));
-			cover.setDocumentLanguage(_ctx.stringValue("QueryFigureClustersResponse.FigureClusters["+ i +"].Cover.DocumentLanguage"));
 			cover.setPageCount(_ctx.longValue("QueryFigureClustersResponse.FigureClusters["+ i +"].Cover.PageCount"));
-			cover.setDocumentContent(_ctx.stringValue("QueryFigureClustersResponse.FigureClusters["+ i +"].Cover.DocumentContent"));
+			cover.setDocumentText(_ctx.stringValue("QueryFigureClustersResponse.FigureClusters["+ i +"].Cover.DocumentText"));
 			cover.setETag(_ctx.stringValue("QueryFigureClustersResponse.FigureClusters["+ i +"].Cover.ETag"));
 			cover.setCacheControl(_ctx.stringValue("QueryFigureClustersResponse.FigureClusters["+ i +"].Cover.CacheControl"));
 			cover.setContentDisposition(_ctx.stringValue("QueryFigureClustersResponse.FigureClusters["+ i +"].Cover.ContentDisposition"));

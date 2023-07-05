@@ -124,6 +124,12 @@ public class CreateBatchRequest extends RpcAcsRequest<CreateBatchResponse> {
 		@SerializedName("Endpoint")
 		private String endpoint;
 
+		@SerializedName("MNS")
+		private MNS mNS;
+
+		@SerializedName("RocketMQ")
+		private RocketMQ rocketMQ;
+
 		@SerializedName("Topic")
 		private String topic;
 
@@ -135,12 +141,89 @@ public class CreateBatchRequest extends RpcAcsRequest<CreateBatchResponse> {
 			this.endpoint = endpoint;
 		}
 
+		public MNS getMNS() {
+			return this.mNS;
+		}
+
+		public void setMNS(MNS mNS) {
+			this.mNS = mNS;
+		}
+
+		public RocketMQ getRocketMQ() {
+			return this.rocketMQ;
+		}
+
+		public void setRocketMQ(RocketMQ rocketMQ) {
+			this.rocketMQ = rocketMQ;
+		}
+
 		public String getTopic() {
 			return this.topic;
 		}
 
 		public void setTopic(String topic) {
 			this.topic = topic;
+		}
+
+		public static class MNS {
+
+			@SerializedName("Endpoint")
+			private String endpoint;
+
+			@SerializedName("TopicName")
+			private String topicName;
+
+			public String getEndpoint() {
+				return this.endpoint;
+			}
+
+			public void setEndpoint(String endpoint) {
+				this.endpoint = endpoint;
+			}
+
+			public String getTopicName() {
+				return this.topicName;
+			}
+
+			public void setTopicName(String topicName) {
+				this.topicName = topicName;
+			}
+		}
+
+		public static class RocketMQ {
+
+			@SerializedName("Endpoint")
+			private String endpoint;
+
+			@SerializedName("InstanceId")
+			private String instanceId;
+
+			@SerializedName("TopicName")
+			private String topicName;
+
+			public String getEndpoint() {
+				return this.endpoint;
+			}
+
+			public void setEndpoint(String endpoint) {
+				this.endpoint = endpoint;
+			}
+
+			public String getInstanceId() {
+				return this.instanceId;
+			}
+
+			public void setInstanceId(String instanceId) {
+				this.instanceId = instanceId;
+			}
+
+			public String getTopicName() {
+				return this.topicName;
+			}
+
+			public void setTopicName(String topicName) {
+				this.topicName = topicName;
+			}
 		}
 	}
 

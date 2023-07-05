@@ -89,9 +89,8 @@ public class SimpleQueryResponseUnmarshaller {
 			filesItem.setPerformer(_ctx.stringValue("SimpleQueryResponse.Files["+ i +"].Performer"));
 			filesItem.setLanguage(_ctx.stringValue("SimpleQueryResponse.Files["+ i +"].Language"));
 			filesItem.setAlbum(_ctx.stringValue("SimpleQueryResponse.Files["+ i +"].Album"));
-			filesItem.setDocumentLanguage(_ctx.stringValue("SimpleQueryResponse.Files["+ i +"].DocumentLanguage"));
 			filesItem.setPageCount(_ctx.longValue("SimpleQueryResponse.Files["+ i +"].PageCount"));
-			filesItem.setDocumentContent(_ctx.stringValue("SimpleQueryResponse.Files["+ i +"].DocumentContent"));
+			filesItem.setDocumentText(_ctx.stringValue("SimpleQueryResponse.Files["+ i +"].DocumentText"));
 			filesItem.setETag(_ctx.stringValue("SimpleQueryResponse.Files["+ i +"].ETag"));
 			filesItem.setCacheControl(_ctx.stringValue("SimpleQueryResponse.Files["+ i +"].CacheControl"));
 			filesItem.setContentDisposition(_ctx.stringValue("SimpleQueryResponse.Files["+ i +"].ContentDisposition"));

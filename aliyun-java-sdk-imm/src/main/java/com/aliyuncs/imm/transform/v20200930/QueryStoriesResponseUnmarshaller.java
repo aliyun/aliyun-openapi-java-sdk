@@ -131,9 +131,8 @@ public class QueryStoriesResponseUnmarshaller {
 			cover.setPerformer(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.Performer"));
 			cover.setLanguage(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.Language"));
 			cover.setAlbum(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.Album"));
-			cover.setDocumentLanguage(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.DocumentLanguage"));
 			cover.setPageCount(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.PageCount"));
-			cover.setDocumentContent(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.DocumentContent"));
+			cover.setDocumentText(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.DocumentText"));
 			cover.setETag(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.ETag"));
 			cover.setCacheControl(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.CacheControl"));
 			cover.setContentDisposition(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.ContentDisposition"));
@@ -449,9 +448,8 @@ public class QueryStoriesResponseUnmarshaller {
 				filesItem.setPerformer(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Files["+ j +"].Performer"));
 				filesItem.setLanguage(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Files["+ j +"].Language"));
 				filesItem.setAlbum(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Files["+ j +"].Album"));
-				filesItem.setDocumentLanguage(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Files["+ j +"].DocumentLanguage"));
 				filesItem.setPageCount(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Files["+ j +"].PageCount"));
-				filesItem.setDocumentContent(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Files["+ j +"].DocumentContent"));
+				filesItem.setDocumentText(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Files["+ j +"].DocumentText"));
 				filesItem.setETag(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Files["+ j +"].ETag"));
 				filesItem.setCacheControl(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Files["+ j +"].CacheControl"));
 				filesItem.setContentDisposition(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Files["+ j +"].ContentDisposition"));

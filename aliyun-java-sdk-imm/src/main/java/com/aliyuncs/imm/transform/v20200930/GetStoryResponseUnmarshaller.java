@@ -128,9 +128,8 @@ public class GetStoryResponseUnmarshaller {
 		cover.setPerformer(_ctx.stringValue("GetStoryResponse.Story.Cover.Performer"));
 		cover.setLanguage(_ctx.stringValue("GetStoryResponse.Story.Cover.Language"));
 		cover.setAlbum(_ctx.stringValue("GetStoryResponse.Story.Cover.Album"));
-		cover.setDocumentLanguage(_ctx.stringValue("GetStoryResponse.Story.Cover.DocumentLanguage"));
 		cover.setPageCount(_ctx.longValue("GetStoryResponse.Story.Cover.PageCount"));
-		cover.setDocumentContent(_ctx.stringValue("GetStoryResponse.Story.Cover.DocumentContent"));
+		cover.setDocumentText(_ctx.stringValue("GetStoryResponse.Story.Cover.DocumentText"));
 		cover.setETag(_ctx.stringValue("GetStoryResponse.Story.Cover.ETag"));
 		cover.setCacheControl(_ctx.stringValue("GetStoryResponse.Story.Cover.CacheControl"));
 		cover.setContentDisposition(_ctx.stringValue("GetStoryResponse.Story.Cover.ContentDisposition"));
@@ -446,9 +445,8 @@ public class GetStoryResponseUnmarshaller {
 			filesItem.setPerformer(_ctx.stringValue("GetStoryResponse.Story.Files["+ i +"].Performer"));
 			filesItem.setLanguage(_ctx.stringValue("GetStoryResponse.Story.Files["+ i +"].Language"));
 			filesItem.setAlbum(_ctx.stringValue("GetStoryResponse.Story.Files["+ i +"].Album"));
-			filesItem.setDocumentLanguage(_ctx.stringValue("GetStoryResponse.Story.Files["+ i +"].DocumentLanguage"));
 			filesItem.setPageCount(_ctx.longValue("GetStoryResponse.Story.Files["+ i +"].PageCount"));
-			filesItem.setDocumentContent(_ctx.stringValue("GetStoryResponse.Story.Files["+ i +"].DocumentContent"));
+			filesItem.setDocumentText(_ctx.stringValue("GetStoryResponse.Story.Files["+ i +"].DocumentText"));
 			filesItem.setETag(_ctx.stringValue("GetStoryResponse.Story.Files["+ i +"].ETag"));
 			filesItem.setCacheControl(_ctx.stringValue("GetStoryResponse.Story.Files["+ i +"].CacheControl"));
 			filesItem.setContentDisposition(_ctx.stringValue("GetStoryResponse.Story.Files["+ i +"].ContentDisposition"));
