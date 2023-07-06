@@ -53,6 +53,8 @@ public class ModifyInstanceSpecRequest extends RpcAcsRequest<ModifyInstanceSpecR
 
 	private Long ownerId;
 
+	private Boolean forceTrans;
+
 	private String instanceId;
 
 	private Integer readOnlyCount;
@@ -220,6 +222,17 @@ public class ModifyInstanceSpecRequest extends RpcAcsRequest<ModifyInstanceSpecR
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Boolean getForceTrans() {
+		return this.forceTrans;
+	}
+
+	public void setForceTrans(Boolean forceTrans) {
+		this.forceTrans = forceTrans;
+		if(forceTrans != null){
+			putQueryParameter("ForceTrans", forceTrans.toString());
 		}
 	}
 

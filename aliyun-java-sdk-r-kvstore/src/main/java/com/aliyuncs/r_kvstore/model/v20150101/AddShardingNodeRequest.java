@@ -45,6 +45,8 @@ public class AddShardingNodeRequest extends RpcAcsRequest<AddShardingNodeRespons
 
 	private Long ownerId;
 
+	private Boolean forceTrans;
+
 	private String instanceId;
 	public AddShardingNodeRequest() {
 		super("R-kvstore", "2015-01-01", "AddShardingNode", "redisa");
@@ -162,6 +164,17 @@ public class AddShardingNodeRequest extends RpcAcsRequest<AddShardingNodeRespons
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Boolean getForceTrans() {
+		return this.forceTrans;
+	}
+
+	public void setForceTrans(Boolean forceTrans) {
+		this.forceTrans = forceTrans;
+		if(forceTrans != null){
+			putQueryParameter("ForceTrans", forceTrans.toString());
 		}
 	}
 

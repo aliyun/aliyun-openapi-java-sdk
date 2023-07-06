@@ -39,6 +39,8 @@ public class DeleteShardingNodeRequest extends RpcAcsRequest<DeleteShardingNodeR
 
 	private Long ownerId;
 
+	private Boolean forceTrans;
+
 	private String instanceId;
 	public DeleteShardingNodeRequest() {
 		super("R-kvstore", "2015-01-01", "DeleteShardingNode", "redisa");
@@ -123,6 +125,17 @@ public class DeleteShardingNodeRequest extends RpcAcsRequest<DeleteShardingNodeR
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Boolean getForceTrans() {
+		return this.forceTrans;
+	}
+
+	public void setForceTrans(Boolean forceTrans) {
+		this.forceTrans = forceTrans;
+		if(forceTrans != null){
+			putQueryParameter("ForceTrans", forceTrans.toString());
 		}
 	}
 
