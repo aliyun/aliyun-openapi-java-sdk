@@ -29,7 +29,7 @@ public class GetApplicationResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Integer code;
+	private String code;
 
 	private Data data;
 
@@ -49,11 +49,11 @@ public class GetApplicationResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getCode() {
+	public String getCode() {
 		return this.code;
 	}
 
-	public void setCode(Integer code) {
+	public void setCode(String code) {
 		this.code = code;
 	}
 
@@ -215,6 +215,8 @@ public class GetApplicationResponse extends AcsResponse {
 
 			private String remark;
 
+			private String type;
+
 			public String getResourceCode() {
 				return this.resourceCode;
 			}
@@ -317,6 +319,14 @@ public class GetApplicationResponse extends AcsResponse {
 
 			public void setRemark(String remark) {
 				this.remark = remark;
+			}
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
 			}
 		}
 

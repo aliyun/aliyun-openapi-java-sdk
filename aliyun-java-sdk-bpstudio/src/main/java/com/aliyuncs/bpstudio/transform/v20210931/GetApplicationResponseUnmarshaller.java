@@ -31,7 +31,7 @@ public class GetApplicationResponseUnmarshaller {
 		
 		getApplicationResponse.setRequestId(_ctx.stringValue("GetApplicationResponse.RequestId"));
 		getApplicationResponse.setMessage(_ctx.stringValue("GetApplicationResponse.Message"));
-		getApplicationResponse.setCode(_ctx.integerValue("GetApplicationResponse.Code"));
+		getApplicationResponse.setCode(_ctx.stringValue("GetApplicationResponse.Code"));
 
 		Data data = new Data();
 		data.setDescription(_ctx.stringValue("GetApplicationResponse.Data.Description"));
@@ -60,6 +60,7 @@ public class GetApplicationResponseUnmarshaller {
 			item.setSpecification(_ctx.stringValue("GetApplicationResponse.Data.PriceList["+ i +"].Specification"));
 			item.setLifecycle(_ctx.stringValue("GetApplicationResponse.Data.PriceList["+ i +"].Lifecycle"));
 			item.setRemark(_ctx.stringValue("GetApplicationResponse.Data.PriceList["+ i +"].Remark"));
+			item.setType(_ctx.stringValue("GetApplicationResponse.Data.PriceList["+ i +"].type"));
 
 			priceList.add(item);
 		}
