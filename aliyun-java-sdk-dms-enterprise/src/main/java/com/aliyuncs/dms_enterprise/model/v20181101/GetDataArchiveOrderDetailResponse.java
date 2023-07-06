@@ -15,6 +15,7 @@
 package com.aliyuncs.dms_enterprise.model.v20181101;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.dms_enterprise.transform.v20181101.GetDataArchiveOrderDetailResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -245,6 +246,8 @@ public class GetDataArchiveOrderDetailResponse extends AcsResponse {
 
 			private Long pageSize;
 
+			private Map<Object,Object> tempTableNameMap;
+
 			private List<InstancesItem> instances;
 
 			private DagInfo dagInfo;
@@ -275,6 +278,14 @@ public class GetDataArchiveOrderDetailResponse extends AcsResponse {
 
 			public void setPageSize(Long pageSize) {
 				this.pageSize = pageSize;
+			}
+
+			public Map<Object,Object> getTempTableNameMap() {
+				return this.tempTableNameMap;
+			}
+
+			public void setTempTableNameMap(Map<Object,Object> tempTableNameMap) {
+				this.tempTableNameMap = tempTableNameMap;
 			}
 
 			public List<InstancesItem> getInstances() {

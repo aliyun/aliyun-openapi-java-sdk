@@ -27,6 +27,7 @@ import com.aliyuncs.dms_enterprise.model.v20181101.GetDataArchiveOrderDetailResp
 import com.aliyuncs.dms_enterprise.model.v20181101.GetDataArchiveOrderDetailResponse.DataArchiveOrderDetail.PluginExtraData.NextFireTimeResult;
 import com.aliyuncs.dms_enterprise.model.v20181101.GetDataArchiveOrderDetailResponse.DataArchiveOrderDetail.PluginParam;
 import com.aliyuncs.dms_enterprise.model.v20181101.GetDataArchiveOrderDetailResponse.DataArchiveOrderDetail.PluginParam.IncludeTables;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -69,6 +70,7 @@ public class GetDataArchiveOrderDetailResponseUnmarshaller {
 		pluginExtraData.setInstanceTotal(_ctx.longValue("GetDataArchiveOrderDetailResponse.DataArchiveOrderDetail.PluginExtraData.InstanceTotal"));
 		pluginExtraData.setPageIndex(_ctx.longValue("GetDataArchiveOrderDetailResponse.DataArchiveOrderDetail.PluginExtraData.PageIndex"));
 		pluginExtraData.setPageSize(_ctx.longValue("GetDataArchiveOrderDetailResponse.DataArchiveOrderDetail.PluginExtraData.PageSize"));
+		pluginExtraData.setTempTableNameMap(_ctx.mapValue("GetDataArchiveOrderDetailResponse.DataArchiveOrderDetail.PluginExtraData.TempTableNameMap"));
 
 		DagInfo dagInfo = new DagInfo();
 		dagInfo.setCreatorId(_ctx.stringValue("GetDataArchiveOrderDetailResponse.DataArchiveOrderDetail.PluginExtraData.DagInfo.CreatorId"));

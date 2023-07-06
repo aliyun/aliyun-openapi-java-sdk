@@ -1,3 +1,6 @@
+2023-07-06 Version: 1.52.0
+- Modify GetDataArchiveOrderDetail API. Add output parameter: TempTableNameMap.
+
 2023-06-30 Version: 1.51.0
 - Modify ListTaskFlowsByPage API. Add output parameter: DagOwnerId.
 - Modify ReRunTaskFlowInstance, ReSumeTaskFlowInstance: input parameter DagVersion is not required.
