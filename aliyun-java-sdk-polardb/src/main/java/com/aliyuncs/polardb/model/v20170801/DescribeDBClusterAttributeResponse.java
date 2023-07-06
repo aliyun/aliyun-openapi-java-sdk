@@ -41,6 +41,12 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 	private Boolean isLatestVersion;
 
+	private Boolean hasCompleteStandbyRes;
+
+	private String dataSyncMode;
+
+	private String standbyHAMode;
+
 	private Long storageMax;
 
 	private String dBVersion;
@@ -93,6 +99,8 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 	private String subCategory;
 
+	private String deployUnit;
+
 	private Boolean isProxyLatestVersion;
 
 	private String storageType;
@@ -112,6 +120,8 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 	private String featureHTAPSupported;
 
 	private String proxyServerlessType;
+
+	private String aiType;
 
 	private List<DBNode> dBNodes;
 
@@ -181,6 +191,30 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 	public void setIsLatestVersion(Boolean isLatestVersion) {
 		this.isLatestVersion = isLatestVersion;
+	}
+
+	public Boolean getHasCompleteStandbyRes() {
+		return this.hasCompleteStandbyRes;
+	}
+
+	public void setHasCompleteStandbyRes(Boolean hasCompleteStandbyRes) {
+		this.hasCompleteStandbyRes = hasCompleteStandbyRes;
+	}
+
+	public String getDataSyncMode() {
+		return this.dataSyncMode;
+	}
+
+	public void setDataSyncMode(String dataSyncMode) {
+		this.dataSyncMode = dataSyncMode;
+	}
+
+	public String getStandbyHAMode() {
+		return this.standbyHAMode;
+	}
+
+	public void setStandbyHAMode(String standbyHAMode) {
+		this.standbyHAMode = standbyHAMode;
 	}
 
 	public Long getStorageMax() {
@@ -391,6 +425,14 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 		this.subCategory = subCategory;
 	}
 
+	public String getDeployUnit() {
+		return this.deployUnit;
+	}
+
+	public void setDeployUnit(String deployUnit) {
+		this.deployUnit = deployUnit;
+	}
+
 	public Boolean getIsProxyLatestVersion() {
 		return this.isProxyLatestVersion;
 	}
@@ -469,6 +511,14 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 	public void setProxyServerlessType(String proxyServerlessType) {
 		this.proxyServerlessType = proxyServerlessType;
+	}
+
+	public String getAiType() {
+		return this.aiType;
+	}
+
+	public void setAiType(String aiType) {
+		this.aiType = aiType;
 	}
 
 	public List<DBNode> getDBNodes() {

@@ -1,3 +1,6 @@
+2023-07-06 Version: 1.8.34
+- DescribeDBClusterAttribute support new feature.
+
 2023-06-28 Version: 1.8.33
 - DescribeClassList support masterHa.
 - ModifyDBClusterPrimaryZone support VPCId.
