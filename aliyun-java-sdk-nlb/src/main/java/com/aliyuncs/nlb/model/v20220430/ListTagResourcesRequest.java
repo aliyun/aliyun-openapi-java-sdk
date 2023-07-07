@@ -28,8 +28,6 @@ public class ListTagResourcesRequest extends RpcAcsRequest<ListTagResourcesRespo
 
 	private String nextToken;
 
-	private Integer pageSize;
-
 	private List<Tag> tag;
 
 	private List<String> resourceId;
@@ -37,8 +35,6 @@ public class ListTagResourcesRequest extends RpcAcsRequest<ListTagResourcesRespo
 	private String resourceType;
 
 	private Integer maxResults;
-
-	private Integer page;
 	public ListTagResourcesRequest() {
 		super("Nlb", "2022-04-30", "ListTagResources", "nlb");
 		setMethod(MethodType.POST);
@@ -56,17 +52,6 @@ public class ListTagResourcesRequest extends RpcAcsRequest<ListTagResourcesRespo
 		this.nextToken = nextToken;
 		if(nextToken != null){
 			putBodyParameter("NextToken", nextToken);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putBodyParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -119,17 +104,6 @@ public class ListTagResourcesRequest extends RpcAcsRequest<ListTagResourcesRespo
 		this.maxResults = maxResults;
 		if(maxResults != null){
 			putBodyParameter("MaxResults", maxResults.toString());
-		}
-	}
-
-	public Integer getPage() {
-		return this.page;
-	}
-
-	public void setPage(Integer page) {
-		this.page = page;
-		if(page != null){
-			putBodyParameter("Page", page.toString());
 		}
 	}
 
