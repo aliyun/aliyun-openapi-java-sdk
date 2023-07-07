@@ -27,6 +27,8 @@ public class UpdateExecutionRequest extends RpcAcsRequest<UpdateExecutionRespons
 
 	private String clientToken;
 
+	private String description;
+
 	private String executionId;
 
 	private String parameters;
@@ -47,6 +49,17 @@ public class UpdateExecutionRequest extends RpcAcsRequest<UpdateExecutionRespons
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
 		}
 	}
 

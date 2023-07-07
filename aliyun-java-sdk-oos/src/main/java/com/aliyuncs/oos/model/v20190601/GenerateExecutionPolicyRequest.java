@@ -27,6 +27,8 @@ public class GenerateExecutionPolicyRequest extends RpcAcsRequest<GenerateExecut
 
 	private String templateVersion;
 
+	private String ramRole;
+
 	private String templateName;
 	public GenerateExecutionPolicyRequest() {
 		super("oos", "2019-06-01", "GenerateExecutionPolicy", "oos");
@@ -45,6 +47,17 @@ public class GenerateExecutionPolicyRequest extends RpcAcsRequest<GenerateExecut
 		this.templateVersion = templateVersion;
 		if(templateVersion != null){
 			putQueryParameter("TemplateVersion", templateVersion);
+		}
+	}
+
+	public String getRamRole() {
+		return this.ramRole;
+	}
+
+	public void setRamRole(String ramRole) {
+		this.ramRole = ramRole;
+		if(ramRole != null){
+			putQueryParameter("RamRole", ramRole);
 		}
 	}
 

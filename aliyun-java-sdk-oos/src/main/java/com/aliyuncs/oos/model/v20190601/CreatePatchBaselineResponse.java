@@ -14,6 +14,7 @@
 
 package com.aliyuncs.oos.model.v20190601;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.oos.transform.v20190601.CreatePatchBaselineResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -65,6 +66,10 @@ public class CreatePatchBaselineResponse extends AcsResponse {
 		private String id;
 
 		private String shareType;
+
+		private String rejectedPatchesAction;
+
+		private List<String> rejectedPatches;
 
 		public String getOperationSystem() {
 			return this.operationSystem;
@@ -144,6 +149,22 @@ public class CreatePatchBaselineResponse extends AcsResponse {
 
 		public void setShareType(String shareType) {
 			this.shareType = shareType;
+		}
+
+		public String getRejectedPatchesAction() {
+			return this.rejectedPatchesAction;
+		}
+
+		public void setRejectedPatchesAction(String rejectedPatchesAction) {
+			this.rejectedPatchesAction = rejectedPatchesAction;
+		}
+
+		public List<String> getRejectedPatches() {
+			return this.rejectedPatches;
+		}
+
+		public void setRejectedPatches(List<String> rejectedPatches) {
+			this.rejectedPatches = rejectedPatches;
 		}
 	}
 

@@ -14,6 +14,9 @@
 
 package com.aliyuncs.oos.transform.v20190601;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.oos.model.v20190601.CreatePatchBaselineResponse;
 import com.aliyuncs.oos.model.v20190601.CreatePatchBaselineResponse.PatchBaseline;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -36,6 +39,13 @@ public class CreatePatchBaselineResponseUnmarshaller {
 		patchBaseline.setApprovalRules(_ctx.stringValue("CreatePatchBaselineResponse.PatchBaseline.ApprovalRules"));
 		patchBaseline.setId(_ctx.stringValue("CreatePatchBaselineResponse.PatchBaseline.Id"));
 		patchBaseline.setShareType(_ctx.stringValue("CreatePatchBaselineResponse.PatchBaseline.ShareType"));
+		patchBaseline.setRejectedPatchesAction(_ctx.stringValue("CreatePatchBaselineResponse.PatchBaseline.RejectedPatchesAction"));
+
+		List<String> rejectedPatches = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("CreatePatchBaselineResponse.PatchBaseline.RejectedPatches.Length"); i++) {
+			rejectedPatches.add(_ctx.stringValue("CreatePatchBaselineResponse.PatchBaseline.RejectedPatches["+ i +"]"));
+		}
+		patchBaseline.setRejectedPatches(rejectedPatches);
 		createPatchBaselineResponse.setPatchBaseline(patchBaseline);
 	 
 	 	return createPatchBaselineResponse;

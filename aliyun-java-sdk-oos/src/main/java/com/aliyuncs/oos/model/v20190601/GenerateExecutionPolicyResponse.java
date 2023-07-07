@@ -28,6 +28,8 @@ public class GenerateExecutionPolicyResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String missingPolicy;
+
 	public String getPolicy() {
 		return this.policy;
 	}
@@ -42,6 +44,14 @@ public class GenerateExecutionPolicyResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getMissingPolicy() {
+		return this.missingPolicy;
+	}
+
+	public void setMissingPolicy(String missingPolicy) {
+		this.missingPolicy = missingPolicy;
 	}
 
 	@Override

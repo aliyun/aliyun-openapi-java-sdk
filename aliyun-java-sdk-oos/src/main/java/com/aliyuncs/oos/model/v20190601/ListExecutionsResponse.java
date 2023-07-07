@@ -128,6 +128,10 @@ public class ListExecutionsResponse extends AcsResponse {
 
 		private String resourceStatus;
 
+		private String lastTriggerStatusMessage;
+
+		private String lastTriggerOutputs;
+
 		private List<CurrentTask> currentTasks;
 
 		public String getStatus() {
@@ -368,6 +372,22 @@ public class ListExecutionsResponse extends AcsResponse {
 
 		public void setResourceStatus(String resourceStatus) {
 			this.resourceStatus = resourceStatus;
+		}
+
+		public String getLastTriggerStatusMessage() {
+			return this.lastTriggerStatusMessage;
+		}
+
+		public void setLastTriggerStatusMessage(String lastTriggerStatusMessage) {
+			this.lastTriggerStatusMessage = lastTriggerStatusMessage;
+		}
+
+		public String getLastTriggerOutputs() {
+			return this.lastTriggerOutputs;
+		}
+
+		public void setLastTriggerOutputs(String lastTriggerOutputs) {
+			this.lastTriggerOutputs = lastTriggerOutputs;
 		}
 
 		public List<CurrentTask> getCurrentTasks() {

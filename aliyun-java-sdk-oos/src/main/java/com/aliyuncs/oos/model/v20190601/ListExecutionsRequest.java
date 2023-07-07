@@ -31,6 +31,8 @@ public class ListExecutionsRequest extends RpcAcsRequest<ListExecutionsResponse>
 
 	private Boolean includeChildExecution;
 
+	private String description;
+
 	private String mode;
 
 	private String executionId;
@@ -47,6 +49,8 @@ public class ListExecutionsRequest extends RpcAcsRequest<ListExecutionsResponse>
 
 	private String sortOrder;
 
+	private String categories;
+
 	private String resourceId;
 
 	private String startDateAfter;
@@ -56,6 +60,8 @@ public class ListExecutionsRequest extends RpcAcsRequest<ListExecutionsResponse>
 	private Map<Object,Object> tags;
 
 	private String parentExecutionId;
+
+	private String depth;
 
 	private String endDateAfter;
 
@@ -96,6 +102,17 @@ public class ListExecutionsRequest extends RpcAcsRequest<ListExecutionsResponse>
 		this.includeChildExecution = includeChildExecution;
 		if(includeChildExecution != null){
 			putQueryParameter("IncludeChildExecution", includeChildExecution.toString());
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
 		}
 	}
 
@@ -187,6 +204,17 @@ public class ListExecutionsRequest extends RpcAcsRequest<ListExecutionsResponse>
 		}
 	}
 
+	public String getCategories() {
+		return this.categories;
+	}
+
+	public void setCategories(String categories) {
+		this.categories = categories;
+		if(categories != null){
+			putQueryParameter("Categories", categories);
+		}
+	}
+
 	public String getResourceId() {
 		return this.resourceId;
 	}
@@ -239,6 +267,17 @@ public class ListExecutionsRequest extends RpcAcsRequest<ListExecutionsResponse>
 		this.parentExecutionId = parentExecutionId;
 		if(parentExecutionId != null){
 			putQueryParameter("ParentExecutionId", parentExecutionId);
+		}
+	}
+
+	public String getDepth() {
+		return this.depth;
+	}
+
+	public void setDepth(String depth) {
+		this.depth = depth;
+		if(depth != null){
+			putQueryParameter("Depth", depth);
 		}
 	}
 

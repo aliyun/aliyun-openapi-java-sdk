@@ -15,6 +15,9 @@
 package com.aliyuncs.oos.model.v20190601;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.oos.Endpoint;
 
@@ -30,6 +33,11 @@ public class UpdatePatchBaselineRequest extends RpcAcsRequest<UpdatePatchBaselin
 	private String approvalRules;
 
 	private String description;
+
+	@SerializedName("rejectedPatches")
+	private List<String> rejectedPatches;
+
+	private String rejectedPatchesAction;
 
 	private String name;
 	public UpdatePatchBaselineRequest() {
@@ -71,6 +79,28 @@ public class UpdatePatchBaselineRequest extends RpcAcsRequest<UpdatePatchBaselin
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public List<String> getRejectedPatches() {
+		return this.rejectedPatches;
+	}
+
+	public void setRejectedPatches(List<String> rejectedPatches) {
+		this.rejectedPatches = rejectedPatches;	
+		if (rejectedPatches != null) {
+			putQueryParameter("RejectedPatches" , new Gson().toJson(rejectedPatches));
+		}	
+	}
+
+	public String getRejectedPatchesAction() {
+		return this.rejectedPatchesAction;
+	}
+
+	public void setRejectedPatchesAction(String rejectedPatchesAction) {
+		this.rejectedPatchesAction = rejectedPatchesAction;
+		if(rejectedPatchesAction != null){
+			putQueryParameter("RejectedPatchesAction", rejectedPatchesAction);
 		}
 	}
 
