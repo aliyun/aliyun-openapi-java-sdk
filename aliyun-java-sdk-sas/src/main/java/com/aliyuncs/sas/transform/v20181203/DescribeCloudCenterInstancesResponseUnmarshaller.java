@@ -35,6 +35,7 @@ public class DescribeCloudCenterInstancesResponseUnmarshaller {
 		pageInfo.setPageSize(_ctx.integerValue("DescribeCloudCenterInstancesResponse.PageInfo.PageSize"));
 		pageInfo.setTotalCount(_ctx.integerValue("DescribeCloudCenterInstancesResponse.PageInfo.TotalCount"));
 		pageInfo.setCount(_ctx.integerValue("DescribeCloudCenterInstancesResponse.PageInfo.Count"));
+		pageInfo.setNextToken(_ctx.stringValue("DescribeCloudCenterInstancesResponse.PageInfo.NextToken"));
 		describeCloudCenterInstancesResponse.setPageInfo(pageInfo);
 
 		List<Instance> instances = new ArrayList<Instance>();

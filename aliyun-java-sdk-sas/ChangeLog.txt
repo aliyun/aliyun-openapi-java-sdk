@@ -1,3 +1,12 @@
+2023-07-08 Version: 1.1.36
+- Supported tag.
+- Support RAM action.
+- Support NextToken.
+- Fixed bugs for os statistics.
+- Support api for vul auth.
+- Add GetCheckSale.
+- Add Vul,CSPM,RASP.
+
 2023-07-01 Version: 1.1.35
 - Supported API For ECS.
 - Service online.
