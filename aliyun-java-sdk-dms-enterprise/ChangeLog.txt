@@ -1,3 +1,6 @@
+2023-07-10 Version: 1.52.3
+- Change API CreateDataArchiveOrder and GetDataArchiveCount to public.
+
 2023-07-07 Version: 1.52.2
 - Add new API CreateDataArchiveOrder. 
 
