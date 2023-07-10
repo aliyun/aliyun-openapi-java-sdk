@@ -42,7 +42,7 @@ public class ModifyPGHbaConfigRequest extends RpcAcsRequest<ModifyPGHbaConfigRes
 
 	private List<HbaItem> hbaItems;
 	public ModifyPGHbaConfigRequest() {
-		super("Rds", "2014-08-15", "ModifyPGHbaConfig");
+		super("Rds", "2014-08-15", "ModifyPGHbaConfig", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

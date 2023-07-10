@@ -33,7 +33,7 @@ public class CreateServiceLinkedRoleRequest extends RpcAcsRequest<CreateServiceL
 
 	private String serviceLinkedRole;
 	public CreateServiceLinkedRoleRequest() {
-		super("Rds", "2014-08-15", "CreateServiceLinkedRole");
+		super("Rds", "2014-08-15", "CreateServiceLinkedRole", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

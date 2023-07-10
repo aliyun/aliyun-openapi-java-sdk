@@ -37,7 +37,7 @@ public class UpdateUserBackupFileRequest extends RpcAcsRequest<UpdateUserBackupF
 
 	private String comment;
 	public UpdateUserBackupFileRequest() {
-		super("Rds", "2014-08-15", "UpdateUserBackupFile");
+		super("Rds", "2014-08-15", "UpdateUserBackupFile", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

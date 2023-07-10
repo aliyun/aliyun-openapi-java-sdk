@@ -37,7 +37,7 @@ public class DescribeDBProxyRequest extends RpcAcsRequest<DescribeDBProxyRespons
 
 	private Long ownerId;
 	public DescribeDBProxyRequest() {
-		super("Rds", "2014-08-15", "DescribeDBProxy");
+		super("Rds", "2014-08-15", "DescribeDBProxy", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -33,7 +33,7 @@ public class ConfirmNotifyRequest extends RpcAcsRequest<ConfirmNotifyResponse> {
 
 	private Long confirmor;
 	public ConfirmNotifyRequest() {
-		super("Rds", "2014-08-15", "ConfirmNotify");
+		super("Rds", "2014-08-15", "ConfirmNotify", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

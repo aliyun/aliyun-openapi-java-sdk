@@ -37,7 +37,7 @@ public class ModifyDBInstanceProxyConfigurationRequest extends RpcAcsRequest<Mod
 
 	private String dBInstanceId;
 	public ModifyDBInstanceProxyConfigurationRequest() {
-		super("Rds", "2014-08-15", "ModifyDBInstanceProxyConfiguration");
+		super("Rds", "2014-08-15", "ModifyDBInstanceProxyConfiguration", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

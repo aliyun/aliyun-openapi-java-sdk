@@ -47,7 +47,7 @@ public class DescribeDetachedBackupsRequest extends RpcAcsRequest<DescribeDetach
 
 	private String region;
 	public DescribeDetachedBackupsRequest() {
-		super("Rds", "2014-08-15", "DescribeDetachedBackups");
+		super("Rds", "2014-08-15", "DescribeDetachedBackups", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -37,7 +37,7 @@ public class DescribeAccountsRequest extends RpcAcsRequest<DescribeAccountsRespo
 
 	private String resourceOwnerAccount;
 	public DescribeAccountsRequest() {
-		super("Rds", "2014-08-15", "DescribeAccounts");
+		super("Rds", "2014-08-15", "DescribeAccounts", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

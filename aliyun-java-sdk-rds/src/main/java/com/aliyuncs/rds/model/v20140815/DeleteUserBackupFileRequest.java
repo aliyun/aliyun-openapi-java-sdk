@@ -33,7 +33,7 @@ public class DeleteUserBackupFileRequest extends RpcAcsRequest<DeleteUserBackupF
 
 	private Long ownerId;
 	public DeleteUserBackupFileRequest() {
-		super("Rds", "2014-08-15", "DeleteUserBackupFile");
+		super("Rds", "2014-08-15", "DeleteUserBackupFile", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

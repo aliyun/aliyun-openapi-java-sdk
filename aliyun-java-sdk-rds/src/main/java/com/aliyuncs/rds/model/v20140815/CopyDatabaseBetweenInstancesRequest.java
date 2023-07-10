@@ -39,7 +39,7 @@ public class CopyDatabaseBetweenInstancesRequest extends RpcAcsRequest<CopyDatab
 
 	private String targetDBInstanceId;
 	public CopyDatabaseBetweenInstancesRequest() {
-		super("Rds", "2014-08-15", "CopyDatabaseBetweenInstances");
+		super("Rds", "2014-08-15", "CopyDatabaseBetweenInstances", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

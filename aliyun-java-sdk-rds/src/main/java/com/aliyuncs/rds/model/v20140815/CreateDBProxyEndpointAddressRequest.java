@@ -43,7 +43,7 @@ public class CreateDBProxyEndpointAddressRequest extends RpcAcsRequest<CreateDBP
 
 	private String vPCId;
 	public CreateDBProxyEndpointAddressRequest() {
-		super("Rds", "2014-08-15", "CreateDBProxyEndpointAddress");
+		super("Rds", "2014-08-15", "CreateDBProxyEndpointAddress", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

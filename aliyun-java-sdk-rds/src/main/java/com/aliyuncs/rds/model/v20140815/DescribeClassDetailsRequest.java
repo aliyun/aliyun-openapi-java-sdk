@@ -22,22 +22,26 @@ import com.aliyuncs.rds.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeDBInstanceDetailRequest extends RpcAcsRequest<DescribeDBInstanceDetailResponse> {
+public class DescribeClassDetailsRequest extends RpcAcsRequest<DescribeClassDetailsResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
 	private String clientToken;
 
+	private String engineVersion;
+
+	private String engine;
+
+	private String classCode;
+
+	private String resourceOwnerAccount;
+
+	private String commodityCode;
+
 	private Long ownerId;
-
-	private String resourceGroupId;
-
-	private String dBInstanceId;
-	public DescribeDBInstanceDetailRequest() {
-		super("Rds", "2014-08-15", "DescribeDBInstanceDetail", "rds");
+	public DescribeClassDetailsRequest() {
+		super("Rds", "2014-08-15", "DescribeClassDetails", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -56,6 +60,50 @@ public class DescribeDBInstanceDetailRequest extends RpcAcsRequest<DescribeDBIns
 		}
 	}
 
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getEngineVersion() {
+		return this.engineVersion;
+	}
+
+	public void setEngineVersion(String engineVersion) {
+		this.engineVersion = engineVersion;
+		if(engineVersion != null){
+			putQueryParameter("EngineVersion", engineVersion);
+		}
+	}
+
+	public String getEngine() {
+		return this.engine;
+	}
+
+	public void setEngine(String engine) {
+		this.engine = engine;
+		if(engine != null){
+			putQueryParameter("Engine", engine);
+		}
+	}
+
+	public String getClassCode() {
+		return this.classCode;
+	}
+
+	public void setClassCode(String classCode) {
+		this.classCode = classCode;
+		if(classCode != null){
+			putQueryParameter("ClassCode", classCode);
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -67,14 +115,14 @@ public class DescribeDBInstanceDetailRequest extends RpcAcsRequest<DescribeDBIns
 		}
 	}
 
-	public String getClientToken() {
-		return this.clientToken;
+	public String getCommodityCode() {
+		return this.commodityCode;
 	}
 
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
+	public void setCommodityCode(String commodityCode) {
+		this.commodityCode = commodityCode;
+		if(commodityCode != null){
+			putQueryParameter("CommodityCode", commodityCode);
 		}
 	}
 
@@ -89,31 +137,9 @@ public class DescribeDBInstanceDetailRequest extends RpcAcsRequest<DescribeDBIns
 		}
 	}
 
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
-	}
-
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
-		}
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
-		}
-	}
-
 	@Override
-	public Class<DescribeDBInstanceDetailResponse> getResponseClass() {
-		return DescribeDBInstanceDetailResponse.class;
+	public Class<DescribeClassDetailsResponse> getResponseClass() {
+		return DescribeClassDetailsResponse.class;
 	}
 
 }

@@ -43,7 +43,7 @@ public class SwitchDBInstanceNetTypeRequest extends RpcAcsRequest<SwitchDBInstan
 
 	private String port;
 	public SwitchDBInstanceNetTypeRequest() {
-		super("Rds", "2014-08-15", "SwitchDBInstanceNetType");
+		super("Rds", "2014-08-15", "SwitchDBInstanceNetType", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -43,7 +43,7 @@ public class DeleteSlotRequest extends RpcAcsRequest<DeleteSlotResponse> {
 
 	private String slotStatus;
 	public DeleteSlotRequest() {
-		super("Rds", "2014-08-15", "DeleteSlot");
+		super("Rds", "2014-08-15", "DeleteSlot", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -43,7 +43,7 @@ public class DescribeDBProxyPerformanceRequest extends RpcAcsRequest<DescribeDBP
 
 	private String dBProxyInstanceType;
 	public DescribeDBProxyPerformanceRequest() {
-		super("Rds", "2014-08-15", "DescribeDBProxyPerformance");
+		super("Rds", "2014-08-15", "DescribeDBProxyPerformance", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -33,7 +33,7 @@ public class DescribeRegionInfosRequest extends RpcAcsRequest<DescribeRegionInfo
 
 	private Long ownerId;
 	public DescribeRegionInfosRequest() {
-		super("Rds", "2014-08-15", "DescribeRegionInfos");
+		super("Rds", "2014-08-15", "DescribeRegionInfos", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -41,7 +41,7 @@ public class DescribeDBInstanceNetInfoForChannelRequest extends RpcAcsRequest<De
 
 	private String dBInstanceNetRWSplitType;
 	public DescribeDBInstanceNetInfoForChannelRequest() {
-		super("Rds", "2014-08-15", "DescribeDBInstanceNetInfoForChannel");
+		super("Rds", "2014-08-15", "DescribeDBInstanceNetInfoForChannel", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

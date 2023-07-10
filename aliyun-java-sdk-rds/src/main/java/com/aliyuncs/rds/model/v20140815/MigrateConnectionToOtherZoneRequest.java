@@ -31,7 +31,7 @@ public class MigrateConnectionToOtherZoneRequest extends RpcAcsRequest<MigrateCo
 
 	private String dBInstanceId;
 	public MigrateConnectionToOtherZoneRequest() {
-		super("Rds", "2014-08-15", "MigrateConnectionToOtherZone");
+		super("Rds", "2014-08-15", "MigrateConnectionToOtherZone", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
