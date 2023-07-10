@@ -25,21 +25,9 @@ import com.aliyuncs.dbs.Endpoint;
 public class ConfigureBackupPlanRequest extends RpcAcsRequest<ConfigureBackupPlanResponse> {
 	   
 
-	private String sourceEndpointRegion;
-
 	private Long backupGatewayId;
 
-	private String sourceEndpointInstanceID;
-
 	private String sourceEndpointUserName;
-
-	private String clientToken;
-
-	private String backupPlanId;
-
-	private String sourceEndpointDatabaseName;
-
-	private Integer duplicationInfrequentAccessPeriod;
 
 	private String resourceGroupId;
 
@@ -49,27 +37,17 @@ public class ConfigureBackupPlanRequest extends RpcAcsRequest<ConfigureBackupPla
 
 	private String crossRoleName;
 
-	private Boolean enableBackupLog;
-
 	private String backupStorageType;
 
 	private Integer duplicationArchivePeriod;
 
 	private Integer backupLogIntervalSeconds;
 
-	private String crossAliyunId;
-
 	private Boolean autoStartBackup;
 
 	private String sourceEndpointPassword;
 
-	private String backupObjects;
-
-	private Long backupRateLimit;
-
 	private String ownerId;
-
-	private Integer sourceEndpointPort;
 
 	private Integer backupRetentionPeriod;
 
@@ -81,9 +59,31 @@ public class ConfigureBackupPlanRequest extends RpcAcsRequest<ConfigureBackupPla
 
 	private String backupPlanName;
 
-	private String sourceEndpointOracleSID;
-
 	private String oSSBucketName;
+
+	private String sourceEndpointRegion;
+
+	private String sourceEndpointInstanceID;
+
+	private String clientToken;
+
+	private String backupPlanId;
+
+	private String sourceEndpointDatabaseName;
+
+	private Integer duplicationInfrequentAccessPeriod;
+
+	private Boolean enableBackupLog;
+
+	private String crossAliyunId;
+
+	private String backupObjects;
+
+	private Long backupRateLimit;
+
+	private Integer sourceEndpointPort;
+
+	private String sourceEndpointOracleSID;
 
 	private String backupStrategyType;
 	public ConfigureBackupPlanRequest() {
@@ -93,17 +93,6 @@ public class ConfigureBackupPlanRequest extends RpcAcsRequest<ConfigureBackupPla
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getSourceEndpointRegion() {
-		return this.sourceEndpointRegion;
-	}
-
-	public void setSourceEndpointRegion(String sourceEndpointRegion) {
-		this.sourceEndpointRegion = sourceEndpointRegion;
-		if(sourceEndpointRegion != null){
-			putQueryParameter("SourceEndpointRegion", sourceEndpointRegion);
-		}
 	}
 
 	public Long getBackupGatewayId() {
@@ -117,17 +106,6 @@ public class ConfigureBackupPlanRequest extends RpcAcsRequest<ConfigureBackupPla
 		}
 	}
 
-	public String getSourceEndpointInstanceID() {
-		return this.sourceEndpointInstanceID;
-	}
-
-	public void setSourceEndpointInstanceID(String sourceEndpointInstanceID) {
-		this.sourceEndpointInstanceID = sourceEndpointInstanceID;
-		if(sourceEndpointInstanceID != null){
-			putQueryParameter("SourceEndpointInstanceID", sourceEndpointInstanceID);
-		}
-	}
-
 	public String getSourceEndpointUserName() {
 		return this.sourceEndpointUserName;
 	}
@@ -136,50 +114,6 @@ public class ConfigureBackupPlanRequest extends RpcAcsRequest<ConfigureBackupPla
 		this.sourceEndpointUserName = sourceEndpointUserName;
 		if(sourceEndpointUserName != null){
 			putQueryParameter("SourceEndpointUserName", sourceEndpointUserName);
-		}
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
-	public String getBackupPlanId() {
-		return this.backupPlanId;
-	}
-
-	public void setBackupPlanId(String backupPlanId) {
-		this.backupPlanId = backupPlanId;
-		if(backupPlanId != null){
-			putQueryParameter("BackupPlanId", backupPlanId);
-		}
-	}
-
-	public String getSourceEndpointDatabaseName() {
-		return this.sourceEndpointDatabaseName;
-	}
-
-	public void setSourceEndpointDatabaseName(String sourceEndpointDatabaseName) {
-		this.sourceEndpointDatabaseName = sourceEndpointDatabaseName;
-		if(sourceEndpointDatabaseName != null){
-			putQueryParameter("SourceEndpointDatabaseName", sourceEndpointDatabaseName);
-		}
-	}
-
-	public Integer getDuplicationInfrequentAccessPeriod() {
-		return this.duplicationInfrequentAccessPeriod;
-	}
-
-	public void setDuplicationInfrequentAccessPeriod(Integer duplicationInfrequentAccessPeriod) {
-		this.duplicationInfrequentAccessPeriod = duplicationInfrequentAccessPeriod;
-		if(duplicationInfrequentAccessPeriod != null){
-			putQueryParameter("DuplicationInfrequentAccessPeriod", duplicationInfrequentAccessPeriod.toString());
 		}
 	}
 
@@ -227,17 +161,6 @@ public class ConfigureBackupPlanRequest extends RpcAcsRequest<ConfigureBackupPla
 		}
 	}
 
-	public Boolean getEnableBackupLog() {
-		return this.enableBackupLog;
-	}
-
-	public void setEnableBackupLog(Boolean enableBackupLog) {
-		this.enableBackupLog = enableBackupLog;
-		if(enableBackupLog != null){
-			putQueryParameter("EnableBackupLog", enableBackupLog.toString());
-		}
-	}
-
 	public String getBackupStorageType() {
 		return this.backupStorageType;
 	}
@@ -271,17 +194,6 @@ public class ConfigureBackupPlanRequest extends RpcAcsRequest<ConfigureBackupPla
 		}
 	}
 
-	public String getCrossAliyunId() {
-		return this.crossAliyunId;
-	}
-
-	public void setCrossAliyunId(String crossAliyunId) {
-		this.crossAliyunId = crossAliyunId;
-		if(crossAliyunId != null){
-			putQueryParameter("CrossAliyunId", crossAliyunId);
-		}
-	}
-
 	public Boolean getAutoStartBackup() {
 		return this.autoStartBackup;
 	}
@@ -304,28 +216,6 @@ public class ConfigureBackupPlanRequest extends RpcAcsRequest<ConfigureBackupPla
 		}
 	}
 
-	public String getBackupObjects() {
-		return this.backupObjects;
-	}
-
-	public void setBackupObjects(String backupObjects) {
-		this.backupObjects = backupObjects;
-		if(backupObjects != null){
-			putQueryParameter("BackupObjects", backupObjects);
-		}
-	}
-
-	public Long getBackupRateLimit() {
-		return this.backupRateLimit;
-	}
-
-	public void setBackupRateLimit(Long backupRateLimit) {
-		this.backupRateLimit = backupRateLimit;
-		if(backupRateLimit != null){
-			putQueryParameter("BackupRateLimit", backupRateLimit.toString());
-		}
-	}
-
 	public String getOwnerId() {
 		return this.ownerId;
 	}
@@ -334,17 +224,6 @@ public class ConfigureBackupPlanRequest extends RpcAcsRequest<ConfigureBackupPla
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId);
-		}
-	}
-
-	public Integer getSourceEndpointPort() {
-		return this.sourceEndpointPort;
-	}
-
-	public void setSourceEndpointPort(Integer sourceEndpointPort) {
-		this.sourceEndpointPort = sourceEndpointPort;
-		if(sourceEndpointPort != null){
-			putQueryParameter("SourceEndpointPort", sourceEndpointPort.toString());
 		}
 	}
 
@@ -403,17 +282,6 @@ public class ConfigureBackupPlanRequest extends RpcAcsRequest<ConfigureBackupPla
 		}
 	}
 
-	public String getSourceEndpointOracleSID() {
-		return this.sourceEndpointOracleSID;
-	}
-
-	public void setSourceEndpointOracleSID(String sourceEndpointOracleSID) {
-		this.sourceEndpointOracleSID = sourceEndpointOracleSID;
-		if(sourceEndpointOracleSID != null){
-			putQueryParameter("SourceEndpointOracleSID", sourceEndpointOracleSID);
-		}
-	}
-
 	public String getOSSBucketName() {
 		return this.oSSBucketName;
 	}
@@ -422,6 +290,138 @@ public class ConfigureBackupPlanRequest extends RpcAcsRequest<ConfigureBackupPla
 		this.oSSBucketName = oSSBucketName;
 		if(oSSBucketName != null){
 			putQueryParameter("OSSBucketName", oSSBucketName);
+		}
+	}
+
+	public String getSourceEndpointRegion() {
+		return this.sourceEndpointRegion;
+	}
+
+	public void setSourceEndpointRegion(String sourceEndpointRegion) {
+		this.sourceEndpointRegion = sourceEndpointRegion;
+		if(sourceEndpointRegion != null){
+			putQueryParameter("SourceEndpointRegion", sourceEndpointRegion);
+		}
+	}
+
+	public String getSourceEndpointInstanceID() {
+		return this.sourceEndpointInstanceID;
+	}
+
+	public void setSourceEndpointInstanceID(String sourceEndpointInstanceID) {
+		this.sourceEndpointInstanceID = sourceEndpointInstanceID;
+		if(sourceEndpointInstanceID != null){
+			putQueryParameter("SourceEndpointInstanceID", sourceEndpointInstanceID);
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getBackupPlanId() {
+		return this.backupPlanId;
+	}
+
+	public void setBackupPlanId(String backupPlanId) {
+		this.backupPlanId = backupPlanId;
+		if(backupPlanId != null){
+			putQueryParameter("BackupPlanId", backupPlanId);
+		}
+	}
+
+	public String getSourceEndpointDatabaseName() {
+		return this.sourceEndpointDatabaseName;
+	}
+
+	public void setSourceEndpointDatabaseName(String sourceEndpointDatabaseName) {
+		this.sourceEndpointDatabaseName = sourceEndpointDatabaseName;
+		if(sourceEndpointDatabaseName != null){
+			putQueryParameter("SourceEndpointDatabaseName", sourceEndpointDatabaseName);
+		}
+	}
+
+	public Integer getDuplicationInfrequentAccessPeriod() {
+		return this.duplicationInfrequentAccessPeriod;
+	}
+
+	public void setDuplicationInfrequentAccessPeriod(Integer duplicationInfrequentAccessPeriod) {
+		this.duplicationInfrequentAccessPeriod = duplicationInfrequentAccessPeriod;
+		if(duplicationInfrequentAccessPeriod != null){
+			putQueryParameter("DuplicationInfrequentAccessPeriod", duplicationInfrequentAccessPeriod.toString());
+		}
+	}
+
+	public Boolean getEnableBackupLog() {
+		return this.enableBackupLog;
+	}
+
+	public void setEnableBackupLog(Boolean enableBackupLog) {
+		this.enableBackupLog = enableBackupLog;
+		if(enableBackupLog != null){
+			putQueryParameter("EnableBackupLog", enableBackupLog.toString());
+		}
+	}
+
+	public String getCrossAliyunId() {
+		return this.crossAliyunId;
+	}
+
+	public void setCrossAliyunId(String crossAliyunId) {
+		this.crossAliyunId = crossAliyunId;
+		if(crossAliyunId != null){
+			putQueryParameter("CrossAliyunId", crossAliyunId);
+		}
+	}
+
+	public String getBackupObjects() {
+		return this.backupObjects;
+	}
+
+	public void setBackupObjects(String backupObjects) {
+		this.backupObjects = backupObjects;
+		if(backupObjects != null){
+			putQueryParameter("BackupObjects", backupObjects);
+		}
+	}
+
+	public Long getBackupRateLimit() {
+		return this.backupRateLimit;
+	}
+
+	public void setBackupRateLimit(Long backupRateLimit) {
+		this.backupRateLimit = backupRateLimit;
+		if(backupRateLimit != null){
+			putQueryParameter("BackupRateLimit", backupRateLimit.toString());
+		}
+	}
+
+	public Integer getSourceEndpointPort() {
+		return this.sourceEndpointPort;
+	}
+
+	public void setSourceEndpointPort(Integer sourceEndpointPort) {
+		this.sourceEndpointPort = sourceEndpointPort;
+		if(sourceEndpointPort != null){
+			putQueryParameter("SourceEndpointPort", sourceEndpointPort.toString());
+		}
+	}
+
+	public String getSourceEndpointOracleSID() {
+		return this.sourceEndpointOracleSID;
+	}
+
+	public void setSourceEndpointOracleSID(String sourceEndpointOracleSID) {
+		this.sourceEndpointOracleSID = sourceEndpointOracleSID;
+		if(sourceEndpointOracleSID != null){
+			putQueryParameter("SourceEndpointOracleSID", sourceEndpointOracleSID);
 		}
 	}
 

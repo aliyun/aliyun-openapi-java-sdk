@@ -25,15 +25,15 @@ import com.aliyuncs.dbs.Endpoint;
 public class DescribeBackupGatewayListRequest extends RpcAcsRequest<DescribeBackupGatewayListResponse> {
 	   
 
-	private String identifier;
-
 	private String clientToken;
 
 	private Integer pageNum;
 
-	private String ownerId;
-
 	private Integer pageSize;
+
+	private String identifier;
+
+	private String ownerId;
 
 	private String region;
 	public DescribeBackupGatewayListRequest() {
@@ -43,17 +43,6 @@ public class DescribeBackupGatewayListRequest extends RpcAcsRequest<DescribeBack
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getIdentifier() {
-		return this.identifier;
-	}
-
-	public void setIdentifier(String identifier) {
-		this.identifier = identifier;
-		if(identifier != null){
-			putQueryParameter("Identifier", identifier);
-		}
 	}
 
 	public String getClientToken() {
@@ -78,17 +67,6 @@ public class DescribeBackupGatewayListRequest extends RpcAcsRequest<DescribeBack
 		}
 	}
 
-	public String getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(String ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId);
-		}
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -97,6 +75,28 @@ public class DescribeBackupGatewayListRequest extends RpcAcsRequest<DescribeBack
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getIdentifier() {
+		return this.identifier;
+	}
+
+	public void setIdentifier(String identifier) {
+		this.identifier = identifier;
+		if(identifier != null){
+			putQueryParameter("Identifier", identifier);
+		}
+	}
+
+	public String getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(String ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId);
 		}
 	}
 

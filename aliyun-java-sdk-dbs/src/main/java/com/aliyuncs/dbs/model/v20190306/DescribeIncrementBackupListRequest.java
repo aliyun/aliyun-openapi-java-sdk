@@ -31,8 +31,6 @@ public class DescribeIncrementBackupListRequest extends RpcAcsRequest<DescribeIn
 
 	private Integer pageNum;
 
-	private String ownerId;
-
 	private Long startTimestamp;
 
 	private Long endTimestamp;
@@ -40,6 +38,8 @@ public class DescribeIncrementBackupListRequest extends RpcAcsRequest<DescribeIn
 	private Boolean showStorageType;
 
 	private Integer pageSize;
+
+	private String ownerId;
 	public DescribeIncrementBackupListRequest() {
 		super("Dbs", "2019-03-06", "DescribeIncrementBackupList");
 		setMethod(MethodType.POST);
@@ -79,17 +79,6 @@ public class DescribeIncrementBackupListRequest extends RpcAcsRequest<DescribeIn
 		this.pageNum = pageNum;
 		if(pageNum != null){
 			putQueryParameter("PageNum", pageNum.toString());
-		}
-	}
-
-	public String getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(String ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId);
 		}
 	}
 
@@ -134,6 +123,17 @@ public class DescribeIncrementBackupListRequest extends RpcAcsRequest<DescribeIn
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(String ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId);
 		}
 	}
 

@@ -27,15 +27,15 @@ public class DescribeRestoreRangeInfoRequest extends RpcAcsRequest<DescribeResto
 
 	private Long beginTimestampForRestore;
 
-	private Long endTimestampForRestore;
-
 	private String clientToken;
 
 	private String backupPlanId;
 
-	private String ownerId;
-
 	private Boolean recentlyRestore;
+
+	private Long endTimestampForRestore;
+
+	private String ownerId;
 	public DescribeRestoreRangeInfoRequest() {
 		super("Dbs", "2019-03-06", "DescribeRestoreRangeInfo");
 		setMethod(MethodType.POST);
@@ -53,17 +53,6 @@ public class DescribeRestoreRangeInfoRequest extends RpcAcsRequest<DescribeResto
 		this.beginTimestampForRestore = beginTimestampForRestore;
 		if(beginTimestampForRestore != null){
 			putQueryParameter("BeginTimestampForRestore", beginTimestampForRestore.toString());
-		}
-	}
-
-	public Long getEndTimestampForRestore() {
-		return this.endTimestampForRestore;
-	}
-
-	public void setEndTimestampForRestore(Long endTimestampForRestore) {
-		this.endTimestampForRestore = endTimestampForRestore;
-		if(endTimestampForRestore != null){
-			putQueryParameter("EndTimestampForRestore", endTimestampForRestore.toString());
 		}
 	}
 
@@ -89,17 +78,6 @@ public class DescribeRestoreRangeInfoRequest extends RpcAcsRequest<DescribeResto
 		}
 	}
 
-	public String getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(String ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId);
-		}
-	}
-
 	public Boolean getRecentlyRestore() {
 		return this.recentlyRestore;
 	}
@@ -108,6 +86,28 @@ public class DescribeRestoreRangeInfoRequest extends RpcAcsRequest<DescribeResto
 		this.recentlyRestore = recentlyRestore;
 		if(recentlyRestore != null){
 			putQueryParameter("RecentlyRestore", recentlyRestore.toString());
+		}
+	}
+
+	public Long getEndTimestampForRestore() {
+		return this.endTimestampForRestore;
+	}
+
+	public void setEndTimestampForRestore(Long endTimestampForRestore) {
+		this.endTimestampForRestore = endTimestampForRestore;
+		if(endTimestampForRestore != null){
+			putQueryParameter("EndTimestampForRestore", endTimestampForRestore.toString());
+		}
+	}
+
+	public String getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(String ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId);
 		}
 	}
 

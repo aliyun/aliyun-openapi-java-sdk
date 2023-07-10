@@ -33,11 +33,11 @@ public class CreateGetDBListFromAgentTaskRequest extends RpcAcsRequest<CreateGet
 
 	private String clientToken;
 
+	private String sourceEndpointIP;
+
 	private String ownerId;
 
 	private Integer sourceEndpointPort;
-
-	private String sourceEndpointIP;
 	public CreateGetDBListFromAgentTaskRequest() {
 		super("Dbs", "2019-03-06", "CreateGetDBListFromAgentTask");
 		setMethod(MethodType.POST);
@@ -91,6 +91,17 @@ public class CreateGetDBListFromAgentTaskRequest extends RpcAcsRequest<CreateGet
 		}
 	}
 
+	public String getSourceEndpointIP() {
+		return this.sourceEndpointIP;
+	}
+
+	public void setSourceEndpointIP(String sourceEndpointIP) {
+		this.sourceEndpointIP = sourceEndpointIP;
+		if(sourceEndpointIP != null){
+			putQueryParameter("SourceEndpointIP", sourceEndpointIP);
+		}
+	}
+
 	public String getOwnerId() {
 		return this.ownerId;
 	}
@@ -110,17 +121,6 @@ public class CreateGetDBListFromAgentTaskRequest extends RpcAcsRequest<CreateGet
 		this.sourceEndpointPort = sourceEndpointPort;
 		if(sourceEndpointPort != null){
 			putQueryParameter("SourceEndpointPort", sourceEndpointPort.toString());
-		}
-	}
-
-	public String getSourceEndpointIP() {
-		return this.sourceEndpointIP;
-	}
-
-	public void setSourceEndpointIP(String sourceEndpointIP) {
-		this.sourceEndpointIP = sourceEndpointIP;
-		if(sourceEndpointIP != null){
-			putQueryParameter("SourceEndpointIP", sourceEndpointIP);
 		}
 	}
 

@@ -29,11 +29,7 @@ public class DescribeFullBackupListRequest extends RpcAcsRequest<DescribeFullBac
 
 	private String backupPlanId;
 
-	private String backupSetId;
-
 	private Integer pageNum;
-
-	private String ownerId;
 
 	private Long startTimestamp;
 
@@ -42,6 +38,10 @@ public class DescribeFullBackupListRequest extends RpcAcsRequest<DescribeFullBac
 	private Boolean showStorageType;
 
 	private Integer pageSize;
+
+	private String backupSetId;
+
+	private String ownerId;
 	public DescribeFullBackupListRequest() {
 		super("Dbs", "2019-03-06", "DescribeFullBackupList");
 		setMethod(MethodType.POST);
@@ -73,17 +73,6 @@ public class DescribeFullBackupListRequest extends RpcAcsRequest<DescribeFullBac
 		}
 	}
 
-	public String getBackupSetId() {
-		return this.backupSetId;
-	}
-
-	public void setBackupSetId(String backupSetId) {
-		this.backupSetId = backupSetId;
-		if(backupSetId != null){
-			putQueryParameter("BackupSetId", backupSetId);
-		}
-	}
-
 	public Integer getPageNum() {
 		return this.pageNum;
 	}
@@ -92,17 +81,6 @@ public class DescribeFullBackupListRequest extends RpcAcsRequest<DescribeFullBac
 		this.pageNum = pageNum;
 		if(pageNum != null){
 			putQueryParameter("PageNum", pageNum.toString());
-		}
-	}
-
-	public String getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(String ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId);
 		}
 	}
 
@@ -147,6 +125,28 @@ public class DescribeFullBackupListRequest extends RpcAcsRequest<DescribeFullBac
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getBackupSetId() {
+		return this.backupSetId;
+	}
+
+	public void setBackupSetId(String backupSetId) {
+		this.backupSetId = backupSetId;
+		if(backupSetId != null){
+			putQueryParameter("BackupSetId", backupSetId);
+		}
+	}
+
+	public String getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(String ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId);
 		}
 	}
 

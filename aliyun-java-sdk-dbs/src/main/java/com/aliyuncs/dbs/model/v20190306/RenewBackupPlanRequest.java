@@ -25,11 +25,11 @@ import com.aliyuncs.dbs.Endpoint;
 public class RenewBackupPlanRequest extends RpcAcsRequest<RenewBackupPlanResponse> {
 	   
 
-	private String period;
-
 	private String clientToken;
 
 	private String backupPlanId;
+
+	private String period;
 
 	private String ownerId;
 
@@ -41,17 +41,6 @@ public class RenewBackupPlanRequest extends RpcAcsRequest<RenewBackupPlanRespons
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getPeriod() {
-		return this.period;
-	}
-
-	public void setPeriod(String period) {
-		this.period = period;
-		if(period != null){
-			putQueryParameter("Period", period);
-		}
 	}
 
 	public String getClientToken() {
@@ -73,6 +62,17 @@ public class RenewBackupPlanRequest extends RpcAcsRequest<RenewBackupPlanRespons
 		this.backupPlanId = backupPlanId;
 		if(backupPlanId != null){
 			putQueryParameter("BackupPlanId", backupPlanId);
+		}
+	}
+
+	public String getPeriod() {
+		return this.period;
+	}
+
+	public void setPeriod(String period) {
+		this.period = period;
+		if(period != null){
+			putQueryParameter("Period", period);
 		}
 	}
 

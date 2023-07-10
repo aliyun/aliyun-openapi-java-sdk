@@ -29,9 +29,9 @@ public class DescribeBackupPlanBillingRequest extends RpcAcsRequest<DescribeBack
 
 	private String backupPlanId;
 
-	private String ownerId;
-
 	private Boolean showStorageType;
+
+	private String ownerId;
 	public DescribeBackupPlanBillingRequest() {
 		super("Dbs", "2019-03-06", "DescribeBackupPlanBilling");
 		setMethod(MethodType.POST);
@@ -63,17 +63,6 @@ public class DescribeBackupPlanBillingRequest extends RpcAcsRequest<DescribeBack
 		}
 	}
 
-	public String getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(String ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId);
-		}
-	}
-
 	public Boolean getShowStorageType() {
 		return this.showStorageType;
 	}
@@ -82,6 +71,17 @@ public class DescribeBackupPlanBillingRequest extends RpcAcsRequest<DescribeBack
 		this.showStorageType = showStorageType;
 		if(showStorageType != null){
 			putQueryParameter("ShowStorageType", showStorageType.toString());
+		}
+	}
+
+	public String getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(String ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId);
 		}
 	}
 

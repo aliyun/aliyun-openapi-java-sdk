@@ -27,11 +27,11 @@ public class CreateFullBackupSetDownloadRequest extends RpcAcsRequest<CreateFull
 
 	private String clientToken;
 
+	private String backupSetDataFormat;
+
 	private String backupSetId;
 
 	private String ownerId;
-
-	private String backupSetDataFormat;
 	public CreateFullBackupSetDownloadRequest() {
 		super("Dbs", "2019-03-06", "CreateFullBackupSetDownload");
 		setMethod(MethodType.POST);
@@ -49,6 +49,17 @@ public class CreateFullBackupSetDownloadRequest extends RpcAcsRequest<CreateFull
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getBackupSetDataFormat() {
+		return this.backupSetDataFormat;
+	}
+
+	public void setBackupSetDataFormat(String backupSetDataFormat) {
+		this.backupSetDataFormat = backupSetDataFormat;
+		if(backupSetDataFormat != null){
+			putQueryParameter("BackupSetDataFormat", backupSetDataFormat);
 		}
 	}
 
@@ -71,17 +82,6 @@ public class CreateFullBackupSetDownloadRequest extends RpcAcsRequest<CreateFull
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId);
-		}
-	}
-
-	public String getBackupSetDataFormat() {
-		return this.backupSetDataFormat;
-	}
-
-	public void setBackupSetDataFormat(String backupSetDataFormat) {
-		this.backupSetDataFormat = backupSetDataFormat;
-		if(backupSetDataFormat != null){
-			putQueryParameter("BackupSetDataFormat", backupSetDataFormat);
 		}
 	}
 

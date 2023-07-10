@@ -35,15 +35,15 @@ public class ModifyBackupSetDownloadRulesRequest extends RpcAcsRequest<ModifyBac
 
 	private String backupPlanId;
 
+	private String backupSetDownloadTargetTypeLocation;
+
+	private String backupSetDownloadDir;
+
 	private String ownerId;
 
 	private Boolean openAutoDownload;
 
 	private String incrementDataFormat;
-
-	private String backupSetDownloadTargetTypeLocation;
-
-	private String backupSetDownloadDir;
 	public ModifyBackupSetDownloadRulesRequest() {
 		super("Dbs", "2019-03-06", "ModifyBackupSetDownloadRules");
 		setMethod(MethodType.POST);
@@ -108,6 +108,28 @@ public class ModifyBackupSetDownloadRulesRequest extends RpcAcsRequest<ModifyBac
 		}
 	}
 
+	public String getBackupSetDownloadTargetTypeLocation() {
+		return this.backupSetDownloadTargetTypeLocation;
+	}
+
+	public void setBackupSetDownloadTargetTypeLocation(String backupSetDownloadTargetTypeLocation) {
+		this.backupSetDownloadTargetTypeLocation = backupSetDownloadTargetTypeLocation;
+		if(backupSetDownloadTargetTypeLocation != null){
+			putQueryParameter("BackupSetDownloadTargetTypeLocation", backupSetDownloadTargetTypeLocation);
+		}
+	}
+
+	public String getBackupSetDownloadDir() {
+		return this.backupSetDownloadDir;
+	}
+
+	public void setBackupSetDownloadDir(String backupSetDownloadDir) {
+		this.backupSetDownloadDir = backupSetDownloadDir;
+		if(backupSetDownloadDir != null){
+			putQueryParameter("BackupSetDownloadDir", backupSetDownloadDir);
+		}
+	}
+
 	public String getOwnerId() {
 		return this.ownerId;
 	}
@@ -138,28 +160,6 @@ public class ModifyBackupSetDownloadRulesRequest extends RpcAcsRequest<ModifyBac
 		this.incrementDataFormat = incrementDataFormat;
 		if(incrementDataFormat != null){
 			putQueryParameter("IncrementDataFormat", incrementDataFormat);
-		}
-	}
-
-	public String getBackupSetDownloadTargetTypeLocation() {
-		return this.backupSetDownloadTargetTypeLocation;
-	}
-
-	public void setBackupSetDownloadTargetTypeLocation(String backupSetDownloadTargetTypeLocation) {
-		this.backupSetDownloadTargetTypeLocation = backupSetDownloadTargetTypeLocation;
-		if(backupSetDownloadTargetTypeLocation != null){
-			putQueryParameter("BackupSetDownloadTargetTypeLocation", backupSetDownloadTargetTypeLocation);
-		}
-	}
-
-	public String getBackupSetDownloadDir() {
-		return this.backupSetDownloadDir;
-	}
-
-	public void setBackupSetDownloadDir(String backupSetDownloadDir) {
-		this.backupSetDownloadDir = backupSetDownloadDir;
-		if(backupSetDownloadDir != null){
-			putQueryParameter("BackupSetDownloadDir", backupSetDownloadDir);
 		}
 	}
 

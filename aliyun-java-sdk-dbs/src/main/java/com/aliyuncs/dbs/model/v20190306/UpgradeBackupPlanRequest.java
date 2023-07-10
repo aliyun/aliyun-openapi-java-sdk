@@ -29,9 +29,9 @@ public class UpgradeBackupPlanRequest extends RpcAcsRequest<UpgradeBackupPlanRes
 
 	private String backupPlanId;
 
-	private String ownerId;
-
 	private String instanceClass;
+
+	private String ownerId;
 	public UpgradeBackupPlanRequest() {
 		super("Dbs", "2019-03-06", "UpgradeBackupPlan");
 		setMethod(MethodType.POST);
@@ -63,17 +63,6 @@ public class UpgradeBackupPlanRequest extends RpcAcsRequest<UpgradeBackupPlanRes
 		}
 	}
 
-	public String getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(String ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId);
-		}
-	}
-
 	public String getInstanceClass() {
 		return this.instanceClass;
 	}
@@ -82,6 +71,17 @@ public class UpgradeBackupPlanRequest extends RpcAcsRequest<UpgradeBackupPlanRes
 		this.instanceClass = instanceClass;
 		if(instanceClass != null){
 			putQueryParameter("InstanceClass", instanceClass);
+		}
+	}
+
+	public String getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(String ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId);
 		}
 	}
 

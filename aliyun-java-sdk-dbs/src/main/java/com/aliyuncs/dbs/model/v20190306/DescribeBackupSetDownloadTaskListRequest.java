@@ -27,15 +27,15 @@ public class DescribeBackupSetDownloadTaskListRequest extends RpcAcsRequest<Desc
 
 	private String clientToken;
 
-	private String backupSetDownloadTaskId;
-
 	private String backupPlanId;
 
 	private Integer pageNum;
 
-	private String ownerId;
-
 	private Integer pageSize;
+
+	private String backupSetDownloadTaskId;
+
+	private String ownerId;
 	public DescribeBackupSetDownloadTaskListRequest() {
 		super("Dbs", "2019-03-06", "DescribeBackupSetDownloadTaskList");
 		setMethod(MethodType.POST);
@@ -53,17 +53,6 @@ public class DescribeBackupSetDownloadTaskListRequest extends RpcAcsRequest<Desc
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
-	public String getBackupSetDownloadTaskId() {
-		return this.backupSetDownloadTaskId;
-	}
-
-	public void setBackupSetDownloadTaskId(String backupSetDownloadTaskId) {
-		this.backupSetDownloadTaskId = backupSetDownloadTaskId;
-		if(backupSetDownloadTaskId != null){
-			putQueryParameter("BackupSetDownloadTaskId", backupSetDownloadTaskId);
 		}
 	}
 
@@ -89,17 +78,6 @@ public class DescribeBackupSetDownloadTaskListRequest extends RpcAcsRequest<Desc
 		}
 	}
 
-	public String getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(String ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId);
-		}
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -108,6 +86,28 @@ public class DescribeBackupSetDownloadTaskListRequest extends RpcAcsRequest<Desc
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getBackupSetDownloadTaskId() {
+		return this.backupSetDownloadTaskId;
+	}
+
+	public void setBackupSetDownloadTaskId(String backupSetDownloadTaskId) {
+		this.backupSetDownloadTaskId = backupSetDownloadTaskId;
+		if(backupSetDownloadTaskId != null){
+			putQueryParameter("BackupSetDownloadTaskId", backupSetDownloadTaskId);
+		}
+	}
+
+	public String getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(String ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId);
 		}
 	}
 

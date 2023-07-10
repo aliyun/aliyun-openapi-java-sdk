@@ -31,9 +31,9 @@ public class GetDBListFromAgentRequest extends RpcAcsRequest<GetDBListFromAgentR
 
 	private String clientToken;
 
-	private String ownerId;
-
 	private Long taskId;
+
+	private String ownerId;
 	public GetDBListFromAgentRequest() {
 		super("Dbs", "2019-03-06", "GetDBListFromAgent");
 		setMethod(MethodType.POST);
@@ -76,17 +76,6 @@ public class GetDBListFromAgentRequest extends RpcAcsRequest<GetDBListFromAgentR
 		}
 	}
 
-	public String getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(String ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId);
-		}
-	}
-
 	public Long getTaskId() {
 		return this.taskId;
 	}
@@ -95,6 +84,17 @@ public class GetDBListFromAgentRequest extends RpcAcsRequest<GetDBListFromAgentR
 		this.taskId = taskId;
 		if(taskId != null){
 			putQueryParameter("TaskId", taskId.toString());
+		}
+	}
+
+	public String getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(String ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId);
 		}
 	}
 

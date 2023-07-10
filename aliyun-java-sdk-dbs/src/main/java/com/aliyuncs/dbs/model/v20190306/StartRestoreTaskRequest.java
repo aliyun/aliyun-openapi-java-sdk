@@ -27,9 +27,9 @@ public class StartRestoreTaskRequest extends RpcAcsRequest<StartRestoreTaskRespo
 
 	private String clientToken;
 
-	private String ownerId;
-
 	private String restoreTaskId;
+
+	private String ownerId;
 	public StartRestoreTaskRequest() {
 		super("Dbs", "2019-03-06", "StartRestoreTask");
 		setMethod(MethodType.POST);
@@ -50,17 +50,6 @@ public class StartRestoreTaskRequest extends RpcAcsRequest<StartRestoreTaskRespo
 		}
 	}
 
-	public String getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(String ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId);
-		}
-	}
-
 	public String getRestoreTaskId() {
 		return this.restoreTaskId;
 	}
@@ -69,6 +58,17 @@ public class StartRestoreTaskRequest extends RpcAcsRequest<StartRestoreTaskRespo
 		this.restoreTaskId = restoreTaskId;
 		if(restoreTaskId != null){
 			putQueryParameter("RestoreTaskId", restoreTaskId);
+		}
+	}
+
+	public String getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(String ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId);
 		}
 	}
 

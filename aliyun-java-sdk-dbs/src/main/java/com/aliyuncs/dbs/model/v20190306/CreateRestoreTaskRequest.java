@@ -27,31 +27,13 @@ public class CreateRestoreTaskRequest extends RpcAcsRequest<CreateRestoreTaskRes
 
 	private Long backupGatewayId;
 
-	private String destinationEndpointInstanceType;
-
-	private String clientToken;
-
-	private String backupPlanId;
-
-	private String destinationEndpointRegion;
-
 	private String crossRoleName;
 
 	private String destinationEndpointUserName;
 
-	private String restoreObjects;
-
 	private String restoreTaskName;
 
-	private String restoreHome;
-
 	private String destinationEndpointOracleSID;
-
-	private Long restoreTime;
-
-	private String crossAliyunId;
-
-	private String destinationEndpointInstanceID;
 
 	private Integer destinationEndpointPort;
 
@@ -63,9 +45,27 @@ public class CreateRestoreTaskRequest extends RpcAcsRequest<CreateRestoreTaskRes
 
 	private String destinationEndpointIP;
 
-	private String destinationEndpointDatabaseName;
-
 	private String duplicateConflict;
+
+	private String destinationEndpointInstanceType;
+
+	private String clientToken;
+
+	private String backupPlanId;
+
+	private String destinationEndpointRegion;
+
+	private String restoreObjects;
+
+	private String restoreHome;
+
+	private Long restoreTime;
+
+	private String crossAliyunId;
+
+	private String destinationEndpointInstanceID;
+
+	private String destinationEndpointDatabaseName;
 
 	private String destinationEndpointPassword;
 	public CreateRestoreTaskRequest() {
@@ -85,50 +85,6 @@ public class CreateRestoreTaskRequest extends RpcAcsRequest<CreateRestoreTaskRes
 		this.backupGatewayId = backupGatewayId;
 		if(backupGatewayId != null){
 			putQueryParameter("BackupGatewayId", backupGatewayId.toString());
-		}
-	}
-
-	public String getDestinationEndpointInstanceType() {
-		return this.destinationEndpointInstanceType;
-	}
-
-	public void setDestinationEndpointInstanceType(String destinationEndpointInstanceType) {
-		this.destinationEndpointInstanceType = destinationEndpointInstanceType;
-		if(destinationEndpointInstanceType != null){
-			putQueryParameter("DestinationEndpointInstanceType", destinationEndpointInstanceType);
-		}
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
-	public String getBackupPlanId() {
-		return this.backupPlanId;
-	}
-
-	public void setBackupPlanId(String backupPlanId) {
-		this.backupPlanId = backupPlanId;
-		if(backupPlanId != null){
-			putQueryParameter("BackupPlanId", backupPlanId);
-		}
-	}
-
-	public String getDestinationEndpointRegion() {
-		return this.destinationEndpointRegion;
-	}
-
-	public void setDestinationEndpointRegion(String destinationEndpointRegion) {
-		this.destinationEndpointRegion = destinationEndpointRegion;
-		if(destinationEndpointRegion != null){
-			putQueryParameter("DestinationEndpointRegion", destinationEndpointRegion);
 		}
 	}
 
@@ -154,17 +110,6 @@ public class CreateRestoreTaskRequest extends RpcAcsRequest<CreateRestoreTaskRes
 		}
 	}
 
-	public String getRestoreObjects() {
-		return this.restoreObjects;
-	}
-
-	public void setRestoreObjects(String restoreObjects) {
-		this.restoreObjects = restoreObjects;
-		if(restoreObjects != null){
-			putQueryParameter("RestoreObjects", restoreObjects);
-		}
-	}
-
 	public String getRestoreTaskName() {
 		return this.restoreTaskName;
 	}
@@ -176,17 +121,6 @@ public class CreateRestoreTaskRequest extends RpcAcsRequest<CreateRestoreTaskRes
 		}
 	}
 
-	public String getRestoreHome() {
-		return this.restoreHome;
-	}
-
-	public void setRestoreHome(String restoreHome) {
-		this.restoreHome = restoreHome;
-		if(restoreHome != null){
-			putQueryParameter("RestoreHome", restoreHome);
-		}
-	}
-
 	public String getDestinationEndpointOracleSID() {
 		return this.destinationEndpointOracleSID;
 	}
@@ -195,39 +129,6 @@ public class CreateRestoreTaskRequest extends RpcAcsRequest<CreateRestoreTaskRes
 		this.destinationEndpointOracleSID = destinationEndpointOracleSID;
 		if(destinationEndpointOracleSID != null){
 			putQueryParameter("DestinationEndpointOracleSID", destinationEndpointOracleSID);
-		}
-	}
-
-	public Long getRestoreTime() {
-		return this.restoreTime;
-	}
-
-	public void setRestoreTime(Long restoreTime) {
-		this.restoreTime = restoreTime;
-		if(restoreTime != null){
-			putQueryParameter("RestoreTime", restoreTime.toString());
-		}
-	}
-
-	public String getCrossAliyunId() {
-		return this.crossAliyunId;
-	}
-
-	public void setCrossAliyunId(String crossAliyunId) {
-		this.crossAliyunId = crossAliyunId;
-		if(crossAliyunId != null){
-			putQueryParameter("CrossAliyunId", crossAliyunId);
-		}
-	}
-
-	public String getDestinationEndpointInstanceID() {
-		return this.destinationEndpointInstanceID;
-	}
-
-	public void setDestinationEndpointInstanceID(String destinationEndpointInstanceID) {
-		this.destinationEndpointInstanceID = destinationEndpointInstanceID;
-		if(destinationEndpointInstanceID != null){
-			putQueryParameter("DestinationEndpointInstanceID", destinationEndpointInstanceID);
 		}
 	}
 
@@ -286,17 +187,6 @@ public class CreateRestoreTaskRequest extends RpcAcsRequest<CreateRestoreTaskRes
 		}
 	}
 
-	public String getDestinationEndpointDatabaseName() {
-		return this.destinationEndpointDatabaseName;
-	}
-
-	public void setDestinationEndpointDatabaseName(String destinationEndpointDatabaseName) {
-		this.destinationEndpointDatabaseName = destinationEndpointDatabaseName;
-		if(destinationEndpointDatabaseName != null){
-			putQueryParameter("DestinationEndpointDatabaseName", destinationEndpointDatabaseName);
-		}
-	}
-
 	public String getDuplicateConflict() {
 		return this.duplicateConflict;
 	}
@@ -305,6 +195,116 @@ public class CreateRestoreTaskRequest extends RpcAcsRequest<CreateRestoreTaskRes
 		this.duplicateConflict = duplicateConflict;
 		if(duplicateConflict != null){
 			putQueryParameter("DuplicateConflict", duplicateConflict);
+		}
+	}
+
+	public String getDestinationEndpointInstanceType() {
+		return this.destinationEndpointInstanceType;
+	}
+
+	public void setDestinationEndpointInstanceType(String destinationEndpointInstanceType) {
+		this.destinationEndpointInstanceType = destinationEndpointInstanceType;
+		if(destinationEndpointInstanceType != null){
+			putQueryParameter("DestinationEndpointInstanceType", destinationEndpointInstanceType);
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getBackupPlanId() {
+		return this.backupPlanId;
+	}
+
+	public void setBackupPlanId(String backupPlanId) {
+		this.backupPlanId = backupPlanId;
+		if(backupPlanId != null){
+			putQueryParameter("BackupPlanId", backupPlanId);
+		}
+	}
+
+	public String getDestinationEndpointRegion() {
+		return this.destinationEndpointRegion;
+	}
+
+	public void setDestinationEndpointRegion(String destinationEndpointRegion) {
+		this.destinationEndpointRegion = destinationEndpointRegion;
+		if(destinationEndpointRegion != null){
+			putQueryParameter("DestinationEndpointRegion", destinationEndpointRegion);
+		}
+	}
+
+	public String getRestoreObjects() {
+		return this.restoreObjects;
+	}
+
+	public void setRestoreObjects(String restoreObjects) {
+		this.restoreObjects = restoreObjects;
+		if(restoreObjects != null){
+			putQueryParameter("RestoreObjects", restoreObjects);
+		}
+	}
+
+	public String getRestoreHome() {
+		return this.restoreHome;
+	}
+
+	public void setRestoreHome(String restoreHome) {
+		this.restoreHome = restoreHome;
+		if(restoreHome != null){
+			putQueryParameter("RestoreHome", restoreHome);
+		}
+	}
+
+	public Long getRestoreTime() {
+		return this.restoreTime;
+	}
+
+	public void setRestoreTime(Long restoreTime) {
+		this.restoreTime = restoreTime;
+		if(restoreTime != null){
+			putQueryParameter("RestoreTime", restoreTime.toString());
+		}
+	}
+
+	public String getCrossAliyunId() {
+		return this.crossAliyunId;
+	}
+
+	public void setCrossAliyunId(String crossAliyunId) {
+		this.crossAliyunId = crossAliyunId;
+		if(crossAliyunId != null){
+			putQueryParameter("CrossAliyunId", crossAliyunId);
+		}
+	}
+
+	public String getDestinationEndpointInstanceID() {
+		return this.destinationEndpointInstanceID;
+	}
+
+	public void setDestinationEndpointInstanceID(String destinationEndpointInstanceID) {
+		this.destinationEndpointInstanceID = destinationEndpointInstanceID;
+		if(destinationEndpointInstanceID != null){
+			putQueryParameter("DestinationEndpointInstanceID", destinationEndpointInstanceID);
+		}
+	}
+
+	public String getDestinationEndpointDatabaseName() {
+		return this.destinationEndpointDatabaseName;
+	}
+
+	public void setDestinationEndpointDatabaseName(String destinationEndpointDatabaseName) {
+		this.destinationEndpointDatabaseName = destinationEndpointDatabaseName;
+		if(destinationEndpointDatabaseName != null){
+			putQueryParameter("DestinationEndpointDatabaseName", destinationEndpointDatabaseName);
 		}
 	}
 

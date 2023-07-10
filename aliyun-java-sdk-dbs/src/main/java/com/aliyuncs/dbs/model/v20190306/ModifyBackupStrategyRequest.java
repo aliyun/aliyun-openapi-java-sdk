@@ -25,17 +25,17 @@ import com.aliyuncs.dbs.Endpoint;
 public class ModifyBackupStrategyRequest extends RpcAcsRequest<ModifyBackupStrategyResponse> {
 	   
 
-	private Integer backupLogIntervalSeconds;
-
 	private String clientToken;
 
 	private String backupPlanId;
 
+	private String backupStartTime;
+
+	private Integer backupLogIntervalSeconds;
+
 	private String ownerId;
 
 	private String backupPeriod;
-
-	private String backupStartTime;
 
 	private String backupStrategyType;
 	public ModifyBackupStrategyRequest() {
@@ -45,17 +45,6 @@ public class ModifyBackupStrategyRequest extends RpcAcsRequest<ModifyBackupStrat
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Integer getBackupLogIntervalSeconds() {
-		return this.backupLogIntervalSeconds;
-	}
-
-	public void setBackupLogIntervalSeconds(Integer backupLogIntervalSeconds) {
-		this.backupLogIntervalSeconds = backupLogIntervalSeconds;
-		if(backupLogIntervalSeconds != null){
-			putQueryParameter("BackupLogIntervalSeconds", backupLogIntervalSeconds.toString());
-		}
 	}
 
 	public String getClientToken() {
@@ -80,6 +69,28 @@ public class ModifyBackupStrategyRequest extends RpcAcsRequest<ModifyBackupStrat
 		}
 	}
 
+	public String getBackupStartTime() {
+		return this.backupStartTime;
+	}
+
+	public void setBackupStartTime(String backupStartTime) {
+		this.backupStartTime = backupStartTime;
+		if(backupStartTime != null){
+			putQueryParameter("BackupStartTime", backupStartTime);
+		}
+	}
+
+	public Integer getBackupLogIntervalSeconds() {
+		return this.backupLogIntervalSeconds;
+	}
+
+	public void setBackupLogIntervalSeconds(Integer backupLogIntervalSeconds) {
+		this.backupLogIntervalSeconds = backupLogIntervalSeconds;
+		if(backupLogIntervalSeconds != null){
+			putQueryParameter("BackupLogIntervalSeconds", backupLogIntervalSeconds.toString());
+		}
+	}
+
 	public String getOwnerId() {
 		return this.ownerId;
 	}
@@ -99,17 +110,6 @@ public class ModifyBackupStrategyRequest extends RpcAcsRequest<ModifyBackupStrat
 		this.backupPeriod = backupPeriod;
 		if(backupPeriod != null){
 			putQueryParameter("BackupPeriod", backupPeriod);
-		}
-	}
-
-	public String getBackupStartTime() {
-		return this.backupStartTime;
-	}
-
-	public void setBackupStartTime(String backupStartTime) {
-		this.backupStartTime = backupStartTime;
-		if(backupStartTime != null){
-			putQueryParameter("BackupStartTime", backupStartTime);
 		}
 	}
 
