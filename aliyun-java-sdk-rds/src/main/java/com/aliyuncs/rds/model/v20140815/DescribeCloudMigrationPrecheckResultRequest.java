@@ -41,7 +41,7 @@ public class DescribeCloudMigrationPrecheckResultRequest extends RpcAcsRequest<D
 
 	private String sourceIpAddress;
 	public DescribeCloudMigrationPrecheckResultRequest() {
-		super("Rds", "2014-08-15", "DescribeCloudMigrationPrecheckResult", "rds");
+		super("Rds", "2014-08-15", "DescribeCloudMigrationPrecheckResult");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

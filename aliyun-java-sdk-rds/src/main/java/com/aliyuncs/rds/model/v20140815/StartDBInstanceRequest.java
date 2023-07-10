@@ -57,7 +57,7 @@ public class StartDBInstanceRequest extends RpcAcsRequest<StartDBInstanceRespons
 
 	private String zoneId;
 	public StartDBInstanceRequest() {
-		super("Rds", "2014-08-15", "StartDBInstance", "rds");
+		super("Rds", "2014-08-15", "StartDBInstance");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

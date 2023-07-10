@@ -40,7 +40,7 @@ public class CreateGadInstanceMemberRequest extends RpcAcsRequest<CreateGadInsta
 
 	private List<UnitNode> unitNodes;
 	public CreateGadInstanceMemberRequest() {
-		super("Rds", "2014-08-15", "CreateGadInstanceMember", "rds");
+		super("Rds", "2014-08-15", "CreateGadInstanceMember");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

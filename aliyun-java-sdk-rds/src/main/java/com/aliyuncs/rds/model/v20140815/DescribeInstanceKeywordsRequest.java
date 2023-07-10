@@ -35,7 +35,7 @@ public class DescribeInstanceKeywordsRequest extends RpcAcsRequest<DescribeInsta
 
 	private String key;
 	public DescribeInstanceKeywordsRequest() {
-		super("Rds", "2014-08-15", "DescribeInstanceKeywords", "rds");
+		super("Rds", "2014-08-15", "DescribeInstanceKeywords");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

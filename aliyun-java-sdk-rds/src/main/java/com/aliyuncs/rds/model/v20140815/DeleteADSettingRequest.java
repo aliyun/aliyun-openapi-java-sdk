@@ -35,7 +35,7 @@ public class DeleteADSettingRequest extends RpcAcsRequest<DeleteADSettingRespons
 
 	private String dBInstanceId;
 	public DeleteADSettingRequest() {
-		super("Rds", "2014-08-15", "DeleteADSetting", "rds");
+		super("Rds", "2014-08-15", "DeleteADSetting");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

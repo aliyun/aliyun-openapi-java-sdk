@@ -37,7 +37,7 @@ public class DescribeDBInstanceIpHostnameRequest extends RpcAcsRequest<DescribeD
 
 	private Long ownerId;
 	public DescribeDBInstanceIpHostnameRequest() {
-		super("Rds", "2014-08-15", "DescribeDBInstanceIpHostname", "rds");
+		super("Rds", "2014-08-15", "DescribeDBInstanceIpHostname");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

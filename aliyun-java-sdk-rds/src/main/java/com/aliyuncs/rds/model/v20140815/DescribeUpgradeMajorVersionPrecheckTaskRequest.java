@@ -43,7 +43,7 @@ public class DescribeUpgradeMajorVersionPrecheckTaskRequest extends RpcAcsReques
 
 	private String targetMajorVersion;
 	public DescribeUpgradeMajorVersionPrecheckTaskRequest() {
-		super("Rds", "2014-08-15", "DescribeUpgradeMajorVersionPrecheckTask", "rds");
+		super("Rds", "2014-08-15", "DescribeUpgradeMajorVersionPrecheckTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

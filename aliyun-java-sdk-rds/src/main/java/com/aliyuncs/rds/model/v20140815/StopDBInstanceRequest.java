@@ -33,7 +33,7 @@ public class StopDBInstanceRequest extends RpcAcsRequest<StopDBInstanceResponse>
 
 	private String dBInstanceId;
 	public StopDBInstanceRequest() {
-		super("Rds", "2014-08-15", "StopDBInstance", "rds");
+		super("Rds", "2014-08-15", "StopDBInstance");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

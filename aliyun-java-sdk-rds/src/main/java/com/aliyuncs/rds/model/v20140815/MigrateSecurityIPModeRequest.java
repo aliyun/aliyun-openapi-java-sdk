@@ -33,7 +33,7 @@ public class MigrateSecurityIPModeRequest extends RpcAcsRequest<MigrateSecurityI
 
 	private String dBInstanceId;
 	public MigrateSecurityIPModeRequest() {
-		super("Rds", "2014-08-15", "MigrateSecurityIPMode", "rds");
+		super("Rds", "2014-08-15", "MigrateSecurityIPMode");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

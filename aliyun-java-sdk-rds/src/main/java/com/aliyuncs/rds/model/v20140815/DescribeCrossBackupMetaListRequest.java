@@ -45,7 +45,7 @@ public class DescribeCrossBackupMetaListRequest extends RpcAcsRequest<DescribeCr
 
 	private String region;
 	public DescribeCrossBackupMetaListRequest() {
-		super("Rds", "2014-08-15", "DescribeCrossBackupMetaList", "rds");
+		super("Rds", "2014-08-15", "DescribeCrossBackupMetaList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

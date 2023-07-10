@@ -37,7 +37,7 @@ public class PurgeDBInstanceLogRequest extends RpcAcsRequest<PurgeDBInstanceLogR
 
 	private String dBInstanceId;
 	public PurgeDBInstanceLogRequest() {
-		super("Rds", "2014-08-15", "PurgeDBInstanceLog", "rds");
+		super("Rds", "2014-08-15", "PurgeDBInstanceLog");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

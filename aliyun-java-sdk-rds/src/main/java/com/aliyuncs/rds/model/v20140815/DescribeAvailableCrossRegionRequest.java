@@ -31,7 +31,7 @@ public class DescribeAvailableCrossRegionRequest extends RpcAcsRequest<DescribeA
 
 	private Long ownerId;
 	public DescribeAvailableCrossRegionRequest() {
-		super("Rds", "2014-08-15", "DescribeAvailableCrossRegion", "rds");
+		super("Rds", "2014-08-15", "DescribeAvailableCrossRegion");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

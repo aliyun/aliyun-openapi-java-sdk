@@ -41,7 +41,7 @@ public class DescribeDBMiniEngineVersionsRequest extends RpcAcsRequest<DescribeD
 
 	private String dedicatedHostGroupId;
 	public DescribeDBMiniEngineVersionsRequest() {
-		super("Rds", "2014-08-15", "DescribeDBMiniEngineVersions", "rds");
+		super("Rds", "2014-08-15", "DescribeDBMiniEngineVersions");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

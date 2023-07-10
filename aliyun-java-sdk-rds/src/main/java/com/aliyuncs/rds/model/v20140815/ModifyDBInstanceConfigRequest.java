@@ -43,7 +43,7 @@ public class ModifyDBInstanceConfigRequest extends RpcAcsRequest<ModifyDBInstanc
 
 	private Long ownerId;
 	public ModifyDBInstanceConfigRequest() {
-		super("Rds", "2014-08-15", "ModifyDBInstanceConfig", "rds");
+		super("Rds", "2014-08-15", "ModifyDBInstanceConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

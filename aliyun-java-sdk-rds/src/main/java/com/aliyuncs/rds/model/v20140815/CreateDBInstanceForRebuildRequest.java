@@ -65,7 +65,7 @@ public class CreateDBInstanceForRebuildRequest extends RpcAcsRequest<CreateDBIns
 
 	private String instanceNetworkType;
 	public CreateDBInstanceForRebuildRequest() {
-		super("Rds", "2014-08-15", "CreateDBInstanceForRebuild", "rds");
+		super("Rds", "2014-08-15", "CreateDBInstanceForRebuild");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -41,7 +41,7 @@ public class CreateDBInstanceEndpointAddressRequest extends RpcAcsRequest<Create
 
 	private String port;
 	public CreateDBInstanceEndpointAddressRequest() {
-		super("Rds", "2014-08-15", "CreateDBInstanceEndpointAddress", "rds");
+		super("Rds", "2014-08-15", "CreateDBInstanceEndpointAddress");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

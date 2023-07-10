@@ -45,7 +45,7 @@ public class ModifyDBInstanceEndpointAddressRequest extends RpcAcsRequest<Modify
 
 	private String vpcId;
 	public ModifyDBInstanceEndpointAddressRequest() {
-		super("Rds", "2014-08-15", "ModifyDBInstanceEndpointAddress", "rds");
+		super("Rds", "2014-08-15", "ModifyDBInstanceEndpointAddress");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -43,7 +43,7 @@ public class DescribeErrorLogsRequest extends RpcAcsRequest<DescribeErrorLogsRes
 
 	private Long ownerId;
 	public DescribeErrorLogsRequest() {
-		super("Rds", "2014-08-15", "DescribeErrorLogs", "rds");
+		super("Rds", "2014-08-15", "DescribeErrorLogs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

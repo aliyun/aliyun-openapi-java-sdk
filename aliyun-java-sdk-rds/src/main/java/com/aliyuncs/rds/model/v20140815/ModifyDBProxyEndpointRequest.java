@@ -53,7 +53,7 @@ public class ModifyDBProxyEndpointRequest extends RpcAcsRequest<ModifyDBProxyEnd
 
 	private String readOnlyInstanceDistributionType;
 	public ModifyDBProxyEndpointRequest() {
-		super("Rds", "2014-08-15", "ModifyDBProxyEndpoint", "rds");
+		super("Rds", "2014-08-15", "ModifyDBProxyEndpoint");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

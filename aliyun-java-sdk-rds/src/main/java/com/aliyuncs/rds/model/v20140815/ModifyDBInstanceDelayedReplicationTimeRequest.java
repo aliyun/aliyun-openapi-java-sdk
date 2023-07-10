@@ -35,7 +35,7 @@ public class ModifyDBInstanceDelayedReplicationTimeRequest extends RpcAcsRequest
 
 	private String dBInstanceId;
 	public ModifyDBInstanceDelayedReplicationTimeRequest() {
-		super("Rds", "2014-08-15", "ModifyDBInstanceDelayedReplicationTime", "rds");
+		super("Rds", "2014-08-15", "ModifyDBInstanceDelayedReplicationTime");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
