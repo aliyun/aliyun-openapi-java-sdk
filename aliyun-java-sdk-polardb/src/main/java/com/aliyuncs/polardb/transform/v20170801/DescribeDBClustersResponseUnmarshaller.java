@@ -37,6 +37,7 @@ public class DescribeDBClustersResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeDBClustersResponse.Items.Length"); i++) {
 			DBCluster dBCluster = new DBCluster();
 			dBCluster.setVpcId(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].VpcId"));
+			dBCluster.setVswitchId(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].VswitchId"));
 			dBCluster.setExpireTime(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].ExpireTime"));
 			dBCluster.setExpired(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].Expired"));
 			dBCluster.setDBNodeNumber(_ctx.integerValue("DescribeDBClustersResponse.Items["+ i +"].DBNodeNumber"));
@@ -61,6 +62,7 @@ public class DescribeDBClustersResponseUnmarshaller {
 			dBCluster.setZoneId(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].ZoneId"));
 			dBCluster.setEngine(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].Engine"));
 			dBCluster.setCategory(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].Category"));
+			dBCluster.setAiType(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].AiType"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDBClustersResponse.Items["+ i +"].Tags.Length"); j++) {

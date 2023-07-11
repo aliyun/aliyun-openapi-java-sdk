@@ -37,6 +37,8 @@ public class ModifyDBClusterPrimaryZoneRequest extends RpcAcsRequest<ModifyDBClu
 
 	private Long ownerId;
 
+	private String isSwitchOverForDisaster;
+
 	private String vSwitchId;
 
 	private String plannedStartTime;
@@ -118,6 +120,17 @@ public class ModifyDBClusterPrimaryZoneRequest extends RpcAcsRequest<ModifyDBClu
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getIsSwitchOverForDisaster() {
+		return this.isSwitchOverForDisaster;
+	}
+
+	public void setIsSwitchOverForDisaster(String isSwitchOverForDisaster) {
+		this.isSwitchOverForDisaster = isSwitchOverForDisaster;
+		if(isSwitchOverForDisaster != null){
+			putQueryParameter("IsSwitchOverForDisaster", isSwitchOverForDisaster);
 		}
 	}
 

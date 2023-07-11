@@ -79,6 +79,8 @@ public class DescribeDBClustersResponse extends AcsResponse {
 
 		private String vpcId;
 
+		private String vswitchId;
+
 		private String expireTime;
 
 		private String expired;
@@ -127,6 +129,8 @@ public class DescribeDBClustersResponse extends AcsResponse {
 
 		private String category;
 
+		private String aiType;
+
 		private List<Tag> tags;
 
 		private List<DBNode> dBNodes;
@@ -137,6 +141,14 @@ public class DescribeDBClustersResponse extends AcsResponse {
 
 		public void setVpcId(String vpcId) {
 			this.vpcId = vpcId;
+		}
+
+		public String getVswitchId() {
+			return this.vswitchId;
+		}
+
+		public void setVswitchId(String vswitchId) {
+			this.vswitchId = vswitchId;
 		}
 
 		public String getExpireTime() {
@@ -329,6 +341,14 @@ public class DescribeDBClustersResponse extends AcsResponse {
 
 		public void setCategory(String category) {
 			this.category = category;
+		}
+
+		public String getAiType() {
+			return this.aiType;
+		}
+
+		public void setAiType(String aiType) {
+			this.aiType = aiType;
 		}
 
 		public List<Tag> getTags() {
