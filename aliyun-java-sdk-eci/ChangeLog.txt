@@ -1,3 +1,7 @@
+2023-07-12 Version: 1.4.1
+1、hotfix describeStatusApi Boolean type
+2、add parameter emptyDirVolumeSizeLimit response
+
 2023-06-05 Version: 1.4.0
 1、Support DataCache Api
 2、Support volume EmptyDirVolumeSizeLimit parameter
