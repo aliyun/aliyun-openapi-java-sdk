@@ -333,6 +333,8 @@ public class DescribeContainerGroupsResponseUnmarshaller {
                 volume.setFlexVolumeDriver(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups[" + i + "].Volumes[" + j + "].FlexVolumeDriver"));
                 volume.setFlexVolumeFsType(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups[" + i + "].Volumes[" + j + "].FlexVolumeFsType"));
                 volume.setFlexVolumeOptions(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups[" + i + "].Volumes[" + j + "].FlexVolumeOptions"));
+                volume.setEmptyDirVolumeMedium(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups[" + i + "].Volumes[" + j + "].EmptyDirVolumeMedium"));
+                volume.setEmptyDirVolumeSizeLimit(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups[" + i + "].Volumes[" + j + "].EmptyDirVolumeSizeLimit"));
 
                 List<ConfigFileVolumeConfigFileToPath> configFileVolumeConfigFileToPaths = new ArrayList<ConfigFileVolumeConfigFileToPath>();
                 for (int k = 0; k < context.lengthValue("DescribeContainerGroupsResponse.ContainerGroups[" + i + "].Volumes[" + j + "].ConfigFileVolumeConfigFileToPaths.Length"); k++) {

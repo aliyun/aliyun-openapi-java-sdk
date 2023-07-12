@@ -326,11 +326,11 @@ public class DescribeContainerGroupStatusResponse extends AcsResponse {
 
                 private String name;
 
-                private boolean ready;
+                private Boolean ready;
 
                 private Integer restartCount;
 
-                private boolean started;
+                private Boolean started;
 
                 private State state;
 
@@ -368,14 +368,6 @@ public class DescribeContainerGroupStatusResponse extends AcsResponse {
                     this.name = name;
                 }
 
-                public boolean isReady() {
-                    return this.ready;
-                }
-
-                public void setReady(boolean ready) {
-                    this.ready = ready;
-                }
-
                 public Integer getRestartCount() {
                     return this.restartCount;
                 }
@@ -384,11 +376,19 @@ public class DescribeContainerGroupStatusResponse extends AcsResponse {
                     this.restartCount = restartCount;
                 }
 
-                public boolean isStarted() {
-                    return this.started;
+                public Boolean getReady() {
+                    return ready;
                 }
 
-                public void setStarted(boolean started) {
+                public void setReady(Boolean ready) {
+                    this.ready = ready;
+                }
+
+                public Boolean getStarted() {
+                    return started;
+                }
+
+                public void setStarted(Boolean started) {
                     this.started = started;
                 }
 

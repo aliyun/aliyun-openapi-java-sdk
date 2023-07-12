@@ -1184,6 +1184,10 @@ public class DescribeContainerGroupsResponse extends AcsResponse {
 
             private String flexVolumeOptions;
 
+            private String emptyDirVolumeMedium;
+
+            private String emptyDirVolumeSizeLimit;
+
             private List<ConfigFileVolumeConfigFileToPath> configFileVolumeConfigFileToPaths;
 
             public String getType() {
@@ -1200,6 +1204,22 @@ public class DescribeContainerGroupsResponse extends AcsResponse {
 
             public void setName(String name) {
                 this.name = name;
+            }
+
+            public String getEmptyDirVolumeMedium() {
+                return emptyDirVolumeMedium;
+            }
+
+            public void setEmptyDirVolumeMedium(String emptyDirVolumeMedium) {
+                this.emptyDirVolumeMedium = emptyDirVolumeMedium;
+            }
+
+            public String getEmptyDirVolumeSizeLimit() {
+                return emptyDirVolumeSizeLimit;
+            }
+
+            public void setEmptyDirVolumeSizeLimit(String emptyDirVolumeSizeLimit) {
+                this.emptyDirVolumeSizeLimit = emptyDirVolumeSizeLimit;
             }
 
             public String getNFSVolumePath() {
