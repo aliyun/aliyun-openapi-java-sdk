@@ -22,10 +22,8 @@ import com.aliyuncs.eais.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateEaiRequest extends RpcAcsRequest<CreateEaiResponse> {
+public class CreateEaisEiRequest extends RpcAcsRequest<CreateEaisEiResponse> {
 	   
-
-	private String image;
 
 	private String clientToken;
 
@@ -38,24 +36,13 @@ public class CreateEaiRequest extends RpcAcsRequest<CreateEaiResponse> {
 	private String instanceName;
 
 	private String instanceType;
-	public CreateEaiRequest() {
-		super("eais", "2019-06-24", "CreateEai", "eais");
+	public CreateEaisEiRequest() {
+		super("eais", "2019-06-24", "CreateEaisEi", "eais");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getImage() {
-		return this.image;
-	}
-
-	public void setImage(String image) {
-		this.image = image;
-		if(image != null){
-			putQueryParameter("Image", image);
-		}
 	}
 
 	public String getClientToken() {
@@ -125,8 +112,8 @@ public class CreateEaiRequest extends RpcAcsRequest<CreateEaiResponse> {
 	}
 
 	@Override
-	public Class<CreateEaiResponse> getResponseClass() {
-		return CreateEaiResponse.class;
+	public Class<CreateEaisEiResponse> getResponseClass() {
+		return CreateEaisEiResponse.class;
 	}
 
 }

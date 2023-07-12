@@ -40,6 +40,8 @@ public class CreateEaiJupyterRequest extends RpcAcsRequest<CreateEaiJupyterRespo
 
 	@SerializedName("environmentVar")
 	private List<EnvironmentVar> environmentVar;
+
+	private String eaisName;
 	public CreateEaiJupyterRequest() {
 		super("eais", "2019-06-24", "CreateEaiJupyter", "eais");
 		setMethod(MethodType.POST);
@@ -113,6 +115,17 @@ public class CreateEaiJupyterRequest extends RpcAcsRequest<CreateEaiJupyterRespo
 		if (environmentVar != null) {
 			putQueryParameter("EnvironmentVar" , new Gson().toJson(environmentVar));
 		}	
+	}
+
+	public String getEaisName() {
+		return this.eaisName;
+	}
+
+	public void setEaisName(String eaisName) {
+		this.eaisName = eaisName;
+		if(eaisName != null){
+			putQueryParameter("EaisName", eaisName);
+		}
 	}
 
 	public static class EnvironmentVar {

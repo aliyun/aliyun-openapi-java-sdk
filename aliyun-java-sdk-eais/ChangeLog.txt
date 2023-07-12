@@ -1,3 +1,11 @@
+2023-07-12 Version: 2.1.2
+- Add openapi CreateEaisEi.
+- Add openapi AttachEaisEi.
+- Add openapi StartEaisEi.
+- Add openapi StopEaisEi.
+- Add openapi DetachEaisEi.
+- Add openapi DeleteEaisEi.
+
 2023-01-10 Version: 2.1.1
 - Support ResourceGroup.
 
