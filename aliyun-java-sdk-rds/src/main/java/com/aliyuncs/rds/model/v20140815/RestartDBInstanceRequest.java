@@ -31,6 +31,8 @@ public class RestartDBInstanceRequest extends RpcAcsRequest<RestartDBInstanceRes
 
 	private String dBInstanceId;
 
+	private String nodeId;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -75,6 +77,17 @@ public class RestartDBInstanceRequest extends RpcAcsRequest<RestartDBInstanceRes
 		this.dBInstanceId = dBInstanceId;
 		if(dBInstanceId != null){
 			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public String getNodeId() {
+		return this.nodeId;
+	}
+
+	public void setNodeId(String nodeId) {
+		this.nodeId = nodeId;
+		if(nodeId != null){
+			putQueryParameter("NodeId", nodeId);
 		}
 	}
 
