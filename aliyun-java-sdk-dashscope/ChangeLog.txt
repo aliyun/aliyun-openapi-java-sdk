@@ -1,3 +1,6 @@
+2023-07-13 Version: 1.0.2
+- Generated 2023-03-20 for `dashscope`.
+
 2023-04-07 Version: 1.0.1
 - Generated 2023-03-20 for `dashscope`.
 
