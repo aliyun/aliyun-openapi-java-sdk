@@ -29,8 +29,6 @@ public class CreateOrUpdateSwimmingLaneGroupRequest extends RpcAcsRequest<Create
 
 	private Boolean dbGrayEnable;
 
-	private Boolean enable;
-
 	private Long id;
 
 	private String name;
@@ -78,17 +76,6 @@ public class CreateOrUpdateSwimmingLaneGroupRequest extends RpcAcsRequest<Create
 		this.dbGrayEnable = dbGrayEnable;
 		if(dbGrayEnable != null){
 			putQueryParameter("DbGrayEnable", dbGrayEnable.toString());
-		}
-	}
-
-	public Boolean getEnable() {
-		return this.enable;
-	}
-
-	public void setEnable(Boolean enable) {
-		this.enable = enable;
-		if(enable != null){
-			putQueryParameter("Enable", enable.toString());
 		}
 	}
 

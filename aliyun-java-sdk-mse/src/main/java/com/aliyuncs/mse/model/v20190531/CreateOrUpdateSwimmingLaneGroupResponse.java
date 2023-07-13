@@ -29,11 +29,7 @@ public class CreateOrUpdateSwimmingLaneGroupResponse extends AcsResponse {
 
 	private Boolean success;
 
-	private Integer code;
-
 	private String errorCode;
-
-	private Integer httpStatusCode;
 
 	private String message;
 
@@ -55,28 +51,12 @@ public class CreateOrUpdateSwimmingLaneGroupResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public Integer getCode() {
-		return this.code;
-	}
-
-	public void setCode(Integer code) {
-		this.code = code;
-	}
-
 	public String getErrorCode() {
 		return this.errorCode;
 	}
 
 	public void setErrorCode(String errorCode) {
 		this.errorCode = errorCode;
-	}
-
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
-
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
 	}
 
 	public String getMessage() {

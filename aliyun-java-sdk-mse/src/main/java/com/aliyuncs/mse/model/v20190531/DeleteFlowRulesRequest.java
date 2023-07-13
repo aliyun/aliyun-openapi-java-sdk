@@ -15,6 +15,9 @@
 package com.aliyuncs.mse.model.v20190531;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.mse.Endpoint;
 
@@ -22,42 +25,24 @@ import com.aliyuncs.mse.Endpoint;
  * @author auto create
  * @version 
  */
-public class ExportNacosConfigRequest extends RpcAcsRequest<ExportNacosConfigResponse> {
+public class DeleteFlowRulesRequest extends RpcAcsRequest<DeleteFlowRulesResponse> {
 	   
-
-	private String dataIds;
 
 	private String appName;
 
-	private String namespaceId;
-
-	private String group;
-
-	private String instanceId;
-
-	private String dataId;
+	private String namespace;
 
 	private String acceptLanguage;
 
-	private String ids;
-	public ExportNacosConfigRequest() {
-		super("mse", "2019-05-31", "ExportNacosConfig", "mse");
+	@SerializedName("ids")
+	private List<Long> ids;
+	public DeleteFlowRulesRequest() {
+		super("mse", "2019-05-31", "DeleteFlowRules", "mse");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getDataIds() {
-		return this.dataIds;
-	}
-
-	public void setDataIds(String dataIds) {
-		this.dataIds = dataIds;
-		if(dataIds != null){
-			putQueryParameter("DataIds", dataIds);
-		}
 	}
 
 	public String getAppName() {
@@ -71,47 +56,14 @@ public class ExportNacosConfigRequest extends RpcAcsRequest<ExportNacosConfigRes
 		}
 	}
 
-	public String getNamespaceId() {
-		return this.namespaceId;
+	public String getNamespace() {
+		return this.namespace;
 	}
 
-	public void setNamespaceId(String namespaceId) {
-		this.namespaceId = namespaceId;
-		if(namespaceId != null){
-			putQueryParameter("NamespaceId", namespaceId);
-		}
-	}
-
-	public String getGroup() {
-		return this.group;
-	}
-
-	public void setGroup(String group) {
-		this.group = group;
-		if(group != null){
-			putQueryParameter("Group", group);
-		}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getDataId() {
-		return this.dataId;
-	}
-
-	public void setDataId(String dataId) {
-		this.dataId = dataId;
-		if(dataId != null){
-			putQueryParameter("DataId", dataId);
+	public void setNamespace(String namespace) {
+		this.namespace = namespace;
+		if(namespace != null){
+			putQueryParameter("Namespace", namespace);
 		}
 	}
 
@@ -126,20 +78,20 @@ public class ExportNacosConfigRequest extends RpcAcsRequest<ExportNacosConfigRes
 		}
 	}
 
-	public String getIds() {
+	public List<Long> getIds() {
 		return this.ids;
 	}
 
-	public void setIds(String ids) {
-		this.ids = ids;
-		if(ids != null){
-			putQueryParameter("Ids", ids);
-		}
+	public void setIds(List<Long> ids) {
+		this.ids = ids;	
+		if (ids != null) {
+			putQueryParameter("Ids" , new Gson().toJson(ids));
+		}	
 	}
 
 	@Override
-	public Class<ExportNacosConfigResponse> getResponseClass() {
-		return ExportNacosConfigResponse.class;
+	public Class<DeleteFlowRulesResponse> getResponseClass() {
+		return DeleteFlowRulesResponse.class;
 	}
 
 }

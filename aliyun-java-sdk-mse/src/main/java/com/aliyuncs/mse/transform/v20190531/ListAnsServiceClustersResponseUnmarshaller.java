@@ -33,6 +33,7 @@ public class ListAnsServiceClustersResponseUnmarshaller {
 		listAnsServiceClustersResponse.setMessage(_ctx.stringValue("ListAnsServiceClustersResponse.Message"));
 		listAnsServiceClustersResponse.setErrorCode(_ctx.stringValue("ListAnsServiceClustersResponse.ErrorCode"));
 		listAnsServiceClustersResponse.setSuccess(_ctx.booleanValue("ListAnsServiceClustersResponse.Success"));
+		listAnsServiceClustersResponse.setHttpCode(_ctx.stringValue("ListAnsServiceClustersResponse.HttpCode"));
 
 		Data data = new Data();
 		data.setProtectThreshold(_ctx.floatValue("ListAnsServiceClustersResponse.Data.ProtectThreshold"));

@@ -19,6 +19,8 @@ import java.util.List;
 
 import com.aliyuncs.mse.model.v20190531.QueryAllSwimmingLaneResponse;
 import com.aliyuncs.mse.model.v20190531.QueryAllSwimmingLaneResponse.SwimmingLaneGroup;
+import com.aliyuncs.mse.model.v20190531.QueryAllSwimmingLaneResponse.SwimmingLaneGroup.EntryRule;
+import com.aliyuncs.mse.model.v20190531.QueryAllSwimmingLaneResponse.SwimmingLaneGroup.EntryRule.RestItemsItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -54,8 +56,48 @@ public class QueryAllSwimmingLaneResponseUnmarshaller {
 			swimmingLaneGroup.setGmtCreate(_ctx.stringValue("QueryAllSwimmingLaneResponse.Data["+ i +"].gmtCreate"));
 			swimmingLaneGroup.setGmtModified(_ctx.stringValue("QueryAllSwimmingLaneResponse.Data["+ i +"].gmtModified"));
 			swimmingLaneGroup.setGroupId(_ctx.stringValue("QueryAllSwimmingLaneResponse.Data["+ i +"].groupId"));
+			swimmingLaneGroup.setGroupId6(_ctx.stringValue("QueryAllSwimmingLaneResponse.Data["+ i +"].GroupId"));
 			swimmingLaneGroup.setTag(_ctx.stringValue("QueryAllSwimmingLaneResponse.Data["+ i +"].tag"));
-			swimmingLaneGroup.setTag6(_ctx.stringValue("QueryAllSwimmingLaneResponse.Data["+ i +"].Tag"));
+			swimmingLaneGroup.setTag7(_ctx.stringValue("QueryAllSwimmingLaneResponse.Data["+ i +"].Tag"));
+
+			List<EntryRule> entryRules = new ArrayList<EntryRule>();
+			for (int j = 0; j < _ctx.lengthValue("QueryAllSwimmingLaneResponse.Data["+ i +"].EntryRules.Length"); j++) {
+				EntryRule entryRule = new EntryRule();
+				entryRule.setPath(_ctx.stringValue("QueryAllSwimmingLaneResponse.Data["+ i +"].EntryRules["+ j +"].path"));
+				entryRule.setCondition(_ctx.stringValue("QueryAllSwimmingLaneResponse.Data["+ i +"].EntryRules["+ j +"].condition"));
+
+				List<String> paths = new ArrayList<String>();
+				for (int k = 0; k < _ctx.lengthValue("QueryAllSwimmingLaneResponse.Data["+ i +"].EntryRules["+ j +"].paths.Length"); k++) {
+					paths.add(_ctx.stringValue("QueryAllSwimmingLaneResponse.Data["+ i +"].EntryRules["+ j +"].paths["+ k +"]"));
+				}
+				entryRule.setPaths(paths);
+
+				List<RestItemsItem> restItems = new ArrayList<RestItemsItem>();
+				for (int k = 0; k < _ctx.lengthValue("QueryAllSwimmingLaneResponse.Data["+ i +"].EntryRules["+ j +"].restItems.Length"); k++) {
+					RestItemsItem restItemsItem = new RestItemsItem();
+					restItemsItem.setType(_ctx.stringValue("QueryAllSwimmingLaneResponse.Data["+ i +"].EntryRules["+ j +"].restItems["+ k +"].type"));
+					restItemsItem.setName(_ctx.stringValue("QueryAllSwimmingLaneResponse.Data["+ i +"].EntryRules["+ j +"].restItems["+ k +"].name"));
+					restItemsItem.setOperator(_ctx.stringValue("QueryAllSwimmingLaneResponse.Data["+ i +"].EntryRules["+ j +"].restItems["+ k +"].operator"));
+					restItemsItem.setDatum(_ctx.stringValue("QueryAllSwimmingLaneResponse.Data["+ i +"].EntryRules["+ j +"].restItems["+ k +"].datum"));
+					restItemsItem.setCond(_ctx.stringValue("QueryAllSwimmingLaneResponse.Data["+ i +"].EntryRules["+ j +"].restItems["+ k +"].cond"));
+					restItemsItem.setDivisor(_ctx.integerValue("QueryAllSwimmingLaneResponse.Data["+ i +"].EntryRules["+ j +"].restItems["+ k +"].divisor"));
+					restItemsItem.setRemainder(_ctx.integerValue("QueryAllSwimmingLaneResponse.Data["+ i +"].EntryRules["+ j +"].restItems["+ k +"].remainder"));
+					restItemsItem.setRate(_ctx.integerValue("QueryAllSwimmingLaneResponse.Data["+ i +"].EntryRules["+ j +"].restItems["+ k +"].rate"));
+					restItemsItem.setValue(_ctx.stringValue("QueryAllSwimmingLaneResponse.Data["+ i +"].EntryRules["+ j +"].restItems["+ k +"].value"));
+
+					List<String> nameList = new ArrayList<String>();
+					for (int l = 0; l < _ctx.lengthValue("QueryAllSwimmingLaneResponse.Data["+ i +"].EntryRules["+ j +"].restItems["+ k +"].nameList.Length"); l++) {
+						nameList.add(_ctx.stringValue("QueryAllSwimmingLaneResponse.Data["+ i +"].EntryRules["+ j +"].restItems["+ k +"].nameList["+ l +"]"));
+					}
+					restItemsItem.setNameList(nameList);
+
+					restItems.add(restItemsItem);
+				}
+				entryRule.setRestItems(restItems);
+
+				entryRules.add(entryRule);
+			}
+			swimmingLaneGroup.setEntryRules(entryRules);
 
 			data.add(swimmingLaneGroup);
 		}

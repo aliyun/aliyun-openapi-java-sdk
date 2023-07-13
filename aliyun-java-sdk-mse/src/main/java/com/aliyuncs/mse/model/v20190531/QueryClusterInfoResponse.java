@@ -150,6 +150,8 @@ public class QueryClusterInfoResponse extends AcsResponse {
 
 		private List<InstanceModel> instanceModels;
 
+		private List<String> expectZones;
+
 		public String getVpcId() {
 			return this.vpcId;
 		}
@@ -436,6 +438,14 @@ public class QueryClusterInfoResponse extends AcsResponse {
 
 		public void setInstanceModels(List<InstanceModel> instanceModels) {
 			this.instanceModels = instanceModels;
+		}
+
+		public List<String> getExpectZones() {
+			return this.expectZones;
+		}
+
+		public void setExpectZones(List<String> expectZones) {
+			this.expectZones = expectZones;
 		}
 
 		public static class InstanceModel {

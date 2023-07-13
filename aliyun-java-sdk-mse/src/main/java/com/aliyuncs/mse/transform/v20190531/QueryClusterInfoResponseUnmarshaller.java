@@ -70,6 +70,12 @@ public class QueryClusterInfoResponseUnmarshaller {
 		data.setChargeType(_ctx.stringValue("QueryClusterInfoResponse.Data.ChargeType"));
 		data.setTags(_ctx.mapValue("QueryClusterInfoResponse.Data.Tags"));
 
+		List<String> expectZones = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("QueryClusterInfoResponse.Data.ExpectZones.Length"); i++) {
+			expectZones.add(_ctx.stringValue("QueryClusterInfoResponse.Data.ExpectZones["+ i +"]"));
+		}
+		data.setExpectZones(expectZones);
+
 		List<InstanceModel> instanceModels = new ArrayList<InstanceModel>();
 		for (int i = 0; i < _ctx.lengthValue("QueryClusterInfoResponse.Data.InstanceModels.Length"); i++) {
 			InstanceModel instanceModel = new InstanceModel();

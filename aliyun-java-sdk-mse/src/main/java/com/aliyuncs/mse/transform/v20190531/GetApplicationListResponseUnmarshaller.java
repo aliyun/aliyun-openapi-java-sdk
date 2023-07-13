@@ -28,10 +28,11 @@ public class GetApplicationListResponseUnmarshaller {
 	public static GetApplicationListResponse unmarshall(GetApplicationListResponse getApplicationListResponse, UnmarshallerContext _ctx) {
 		
 		getApplicationListResponse.setRequestId(_ctx.stringValue("GetApplicationListResponse.RequestId"));
+		getApplicationListResponse.setErrorCode(_ctx.stringValue("GetApplicationListResponse.ErrorCode"));
+		getApplicationListResponse.setSuccess(_ctx.booleanValue("GetApplicationListResponse.Success"));
 		getApplicationListResponse.setHttpStatusCode(_ctx.integerValue("GetApplicationListResponse.HttpStatusCode"));
 		getApplicationListResponse.setMessage(_ctx.stringValue("GetApplicationListResponse.Message"));
 		getApplicationListResponse.setCode(_ctx.integerValue("GetApplicationListResponse.Code"));
-		getApplicationListResponse.setSuccess(_ctx.booleanValue("GetApplicationListResponse.Success"));
 
 		Data data = new Data();
 		data.setTotalSize(_ctx.integerValue("GetApplicationListResponse.Data.TotalSize"));
@@ -52,6 +53,7 @@ public class GetApplicationListResponseUnmarshaller {
 			applicationList.setLanguage(_ctx.stringValue("GetApplicationListResponse.Data.Result["+ i +"].Language"));
 			applicationList.setRegionId(_ctx.stringValue("GetApplicationListResponse.Data.Result["+ i +"].RegionId"));
 			applicationList.setNamespace(_ctx.stringValue("GetApplicationListResponse.Data.Result["+ i +"].Namespace"));
+			applicationList.setTagCount(_ctx.longValue("GetApplicationListResponse.Data.Result["+ i +"].TagCount"));
 
 			result.add(applicationList);
 		}

@@ -43,17 +43,18 @@ public class GetApplicationListWithMetircsResponseUnmarshaller {
 		List<ApplicationList> result = new ArrayList<ApplicationList>();
 		for (int i = 0; i < _ctx.lengthValue("GetApplicationListWithMetircsResponse.Data.Result.Length"); i++) {
 			ApplicationList applicationList = new ApplicationList();
+			applicationList.setRegionId(_ctx.stringValue("GetApplicationListWithMetircsResponse.Data.Result["+ i +"].RegionId"));
+			applicationList.setNamespace(_ctx.stringValue("GetApplicationListWithMetircsResponse.Data.Result["+ i +"].Namespace"));
+			applicationList.setAppName(_ctx.stringValue("GetApplicationListWithMetircsResponse.Data.Result["+ i +"].AppName"));
+			applicationList.setAppId(_ctx.stringValue("GetApplicationListWithMetircsResponse.Data.Result["+ i +"].AppId"));
 			applicationList.setStatus(_ctx.longValue("GetApplicationListWithMetircsResponse.Data.Result["+ i +"].Status"));
 			applicationList.setExtraInfo(_ctx.stringValue("GetApplicationListWithMetircsResponse.Data.Result["+ i +"].ExtraInfo"));
-			applicationList.setAppName(_ctx.stringValue("GetApplicationListWithMetircsResponse.Data.Result["+ i +"].AppName"));
 			applicationList.setLicenseKey(_ctx.stringValue("GetApplicationListWithMetircsResponse.Data.Result["+ i +"].LicenseKey"));
-			applicationList.setAppId(_ctx.stringValue("GetApplicationListWithMetircsResponse.Data.Result["+ i +"].AppId"));
 			applicationList.setUserId(_ctx.stringValue("GetApplicationListWithMetircsResponse.Data.Result["+ i +"].UserId"));
 			applicationList.setInstancesNumber(_ctx.integerValue("GetApplicationListWithMetircsResponse.Data.Result["+ i +"].InstancesNumber"));
 			applicationList.setSource(_ctx.stringValue("GetApplicationListWithMetircsResponse.Data.Result["+ i +"].Source"));
 			applicationList.setLanguage(_ctx.stringValue("GetApplicationListWithMetircsResponse.Data.Result["+ i +"].Language"));
-			applicationList.setRegionId(_ctx.stringValue("GetApplicationListWithMetircsResponse.Data.Result["+ i +"].RegionId"));
-			applicationList.setNamespace(_ctx.stringValue("GetApplicationListWithMetircsResponse.Data.Result["+ i +"].Namespace"));
+			applicationList.setTagCount(_ctx.longValue("GetApplicationListWithMetircsResponse.Data.Result["+ i +"].TagCount"));
 			applicationList.setAppType(_ctx.integerValue("GetApplicationListWithMetircsResponse.Data.Result["+ i +"].AppType"));
 
 			List<String> tags = new ArrayList<String>();

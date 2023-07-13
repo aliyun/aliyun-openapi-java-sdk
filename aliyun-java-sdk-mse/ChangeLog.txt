@@ -1,3 +1,20 @@
+2023-07-13 Version: 3.0.41
+- Public API ListAppBySwimmingLaneGroupTags.
+- Update APIs.
+- Support Pod distributed flag.
+- Support expected zone list.
+- Optimize UpdateXXXRulesStatus.
+- Fix QueryAppRPCMacMetrics result.
+- Add dataids param for config export.
+- Support get current client ip.
+- Change GetGateway timeout to 20s.
+- Update APIs for 2023-07-10.
+- Supported VPC and SecurityGroup params for service test.
+- API Type Tag.
+- Add API Type Tag.
+- Open Response Log.
+- Fixed url.
+
 2023-05-23 Version: 3.0.40
 - Rebuild.
 

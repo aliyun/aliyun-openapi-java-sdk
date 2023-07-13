@@ -44,6 +44,7 @@ public class QueryInstancesInfoResponseUnmarshaller {
 			instanceModels.setCreationTimestamp(_ctx.stringValue("QueryInstancesInfoResponse.Data["+ i +"].CreationTimestamp"));
 			instanceModels.setClientPort(_ctx.stringValue("QueryInstancesInfoResponse.Data["+ i +"].ClientPort"));
 			instanceModels.setZone(_ctx.stringValue("QueryInstancesInfoResponse.Data["+ i +"].Zone"));
+			instanceModels.setZoneDistributed(_ctx.booleanValue("QueryInstancesInfoResponse.Data["+ i +"].ZoneDistributed"));
 
 			data.add(instanceModels);
 		}

@@ -25,6 +25,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetApplicationListResponse extends AcsResponse {
 
+	private String errorCode;
+
+	private Boolean success;
+
 	private Integer httpStatusCode;
 
 	private String message;
@@ -33,9 +37,23 @@ public class GetApplicationListResponse extends AcsResponse {
 
 	private Integer code;
 
-	private Boolean success;
-
 	private Data data;
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
 
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
@@ -67,14 +85,6 @@ public class GetApplicationListResponse extends AcsResponse {
 
 	public void setCode(Integer code) {
 		this.code = code;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	public Data getData() {
@@ -150,6 +160,8 @@ public class GetApplicationListResponse extends AcsResponse {
 			private String regionId;
 
 			private String namespace;
+
+			private Long tagCount;
 
 			public Long getStatus() {
 				return this.status;
@@ -237,6 +249,14 @@ public class GetApplicationListResponse extends AcsResponse {
 
 			public void setNamespace(String namespace) {
 				this.namespace = namespace;
+			}
+
+			public Long getTagCount() {
+				return this.tagCount;
+			}
+
+			public void setTagCount(Long tagCount) {
+				this.tagCount = tagCount;
 			}
 		}
 	}

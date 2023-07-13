@@ -31,8 +31,6 @@ public class ListApplicationsWithTagRulesResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Integer code;
-
 	private Boolean success;
 
 	private Data data;
@@ -59,14 +57,6 @@ public class ListApplicationsWithTagRulesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getCode() {
-		return this.code;
-	}
-
-	public void setCode(Integer code) {
-		this.code = code;
 	}
 
 	public Boolean getSuccess() {

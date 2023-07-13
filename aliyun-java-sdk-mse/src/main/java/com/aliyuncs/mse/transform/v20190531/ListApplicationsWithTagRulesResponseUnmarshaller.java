@@ -31,7 +31,6 @@ public class ListApplicationsWithTagRulesResponseUnmarshaller {
 		listApplicationsWithTagRulesResponse.setRequestId(_ctx.stringValue("ListApplicationsWithTagRulesResponse.RequestId"));
 		listApplicationsWithTagRulesResponse.setHttpStatusCode(_ctx.integerValue("ListApplicationsWithTagRulesResponse.HttpStatusCode"));
 		listApplicationsWithTagRulesResponse.setMessage(_ctx.stringValue("ListApplicationsWithTagRulesResponse.Message"));
-		listApplicationsWithTagRulesResponse.setCode(_ctx.integerValue("ListApplicationsWithTagRulesResponse.Code"));
 		listApplicationsWithTagRulesResponse.setSuccess(_ctx.booleanValue("ListApplicationsWithTagRulesResponse.Success"));
 
 		Data data = new Data();

@@ -72,7 +72,7 @@ public class DeleteSwimmingLaneGroupRequest extends RpcAcsRequest<DeleteSwimming
 	public void setName(String name) {
 		this.name = name;
 		if(name != null){
-			putQueryParameter("name", name);
+			putQueryParameter("Name", name);
 		}
 	}
 

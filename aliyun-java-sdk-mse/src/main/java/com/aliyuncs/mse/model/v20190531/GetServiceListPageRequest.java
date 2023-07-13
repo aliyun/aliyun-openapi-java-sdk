@@ -22,16 +22,18 @@ import com.aliyuncs.mse.Endpoint;
  * @author auto create
  * @version 
  */
-public class ApplyTagPoliciesRequest extends RpcAcsRequest<ApplyTagPoliciesResponse> {
+public class GetServiceListPageRequest extends RpcAcsRequest<GetServiceListPageResponse> {
 	   
 
-	private String rules;
+	private Integer pageNumber;
 
-	private String appName;
+	private Integer pageSize;
 
-	private String namespaceId;
+	private String serviceName;
 
-	private Boolean enable;
+	private String ip;
+
+	private String serviceType;
 
 	private String appId;
 
@@ -40,8 +42,8 @@ public class ApplyTagPoliciesRequest extends RpcAcsRequest<ApplyTagPoliciesRespo
 	private String acceptLanguage;
 
 	private String region;
-	public ApplyTagPoliciesRequest() {
-		super("mse", "2019-05-31", "ApplyTagPolicies", "mse");
+	public GetServiceListPageRequest() {
+		super("mse", "2019-05-31", "GetServiceListPage", "mse");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -49,47 +51,58 @@ public class ApplyTagPoliciesRequest extends RpcAcsRequest<ApplyTagPoliciesRespo
 		} catch (Exception e) {}
 	}
 
-	public String getRules() {
-		return this.rules;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setRules(String rules) {
-		this.rules = rules;
-		if(rules != null){
-			putQueryParameter("Rules", rules);
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
-	public String getAppName() {
-		return this.appName;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setAppName(String appName) {
-		this.appName = appName;
-		if(appName != null){
-			putQueryParameter("AppName", appName);
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
-	public String getNamespaceId() {
-		return this.namespaceId;
+	public String getServiceName() {
+		return this.serviceName;
 	}
 
-	public void setNamespaceId(String namespaceId) {
-		this.namespaceId = namespaceId;
-		if(namespaceId != null){
-			putQueryParameter("NamespaceId", namespaceId);
+	public void setServiceName(String serviceName) {
+		this.serviceName = serviceName;
+		if(serviceName != null){
+			putQueryParameter("ServiceName", serviceName);
 		}
 	}
 
-	public Boolean getEnable() {
-		return this.enable;
+	public String getIp() {
+		return this.ip;
 	}
 
-	public void setEnable(Boolean enable) {
-		this.enable = enable;
-		if(enable != null){
-			putQueryParameter("Enable", enable.toString());
+	public void setIp(String ip) {
+		this.ip = ip;
+		if(ip != null){
+			putQueryParameter("Ip", ip);
+		}
+	}
+
+	public String getServiceType() {
+		return this.serviceType;
+	}
+
+	public void setServiceType(String serviceType) {
+		this.serviceType = serviceType;
+		if(serviceType != null){
+			putQueryParameter("ServiceType", serviceType);
 		}
 	}
 
@@ -138,8 +151,8 @@ public class ApplyTagPoliciesRequest extends RpcAcsRequest<ApplyTagPoliciesRespo
 	}
 
 	@Override
-	public Class<ApplyTagPoliciesResponse> getResponseClass() {
-		return ApplyTagPoliciesResponse.class;
+	public Class<GetServiceListPageResponse> getResponseClass() {
+		return GetServiceListPageResponse.class;
 	}
 
 }

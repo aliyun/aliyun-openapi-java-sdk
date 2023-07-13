@@ -129,15 +129,19 @@ public class GetApplicationListWithMetircsResponse extends AcsResponse {
 
 		public static class ApplicationList {
 
+			private String regionId;
+
+			private String namespace;
+
+			private String appName;
+
+			private String appId;
+
 			private Long status;
 
 			private String extraInfo;
 
-			private String appName;
-
 			private String licenseKey;
-
-			private String appId;
 
 			private String userId;
 
@@ -147,9 +151,7 @@ public class GetApplicationListWithMetircsResponse extends AcsResponse {
 
 			private String language;
 
-			private String regionId;
-
-			private String namespace;
+			private Long tagCount;
 
 			private Integer appType;
 
@@ -158,6 +160,38 @@ public class GetApplicationListWithMetircsResponse extends AcsResponse {
 			private List<String> tags;
 
 			private CurMetricsFm curMetricsFm;
+
+			public String getRegionId() {
+				return this.regionId;
+			}
+
+			public void setRegionId(String regionId) {
+				this.regionId = regionId;
+			}
+
+			public String getNamespace() {
+				return this.namespace;
+			}
+
+			public void setNamespace(String namespace) {
+				this.namespace = namespace;
+			}
+
+			public String getAppName() {
+				return this.appName;
+			}
+
+			public void setAppName(String appName) {
+				this.appName = appName;
+			}
+
+			public String getAppId() {
+				return this.appId;
+			}
+
+			public void setAppId(String appId) {
+				this.appId = appId;
+			}
 
 			public Long getStatus() {
 				return this.status;
@@ -175,28 +209,12 @@ public class GetApplicationListWithMetircsResponse extends AcsResponse {
 				this.extraInfo = extraInfo;
 			}
 
-			public String getAppName() {
-				return this.appName;
-			}
-
-			public void setAppName(String appName) {
-				this.appName = appName;
-			}
-
 			public String getLicenseKey() {
 				return this.licenseKey;
 			}
 
 			public void setLicenseKey(String licenseKey) {
 				this.licenseKey = licenseKey;
-			}
-
-			public String getAppId() {
-				return this.appId;
-			}
-
-			public void setAppId(String appId) {
-				this.appId = appId;
 			}
 
 			public String getUserId() {
@@ -231,20 +249,12 @@ public class GetApplicationListWithMetircsResponse extends AcsResponse {
 				this.language = language;
 			}
 
-			public String getRegionId() {
-				return this.regionId;
+			public Long getTagCount() {
+				return this.tagCount;
 			}
 
-			public void setRegionId(String regionId) {
-				this.regionId = regionId;
-			}
-
-			public String getNamespace() {
-				return this.namespace;
-			}
-
-			public void setNamespace(String namespace) {
-				this.namespace = namespace;
+			public void setTagCount(Long tagCount) {
+				this.tagCount = tagCount;
 			}
 
 			public Integer getAppType() {

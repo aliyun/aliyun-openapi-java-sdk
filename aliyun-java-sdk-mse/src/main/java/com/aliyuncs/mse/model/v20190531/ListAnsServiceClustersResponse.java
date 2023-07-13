@@ -34,6 +34,8 @@ public class ListAnsServiceClustersResponse extends AcsResponse {
 
 	private Boolean success;
 
+	private String httpCode;
+
 	private Data data;
 
 	public String getMessage() {
@@ -66,6 +68,14 @@ public class ListAnsServiceClustersResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getHttpCode() {
+		return this.httpCode;
+	}
+
+	public void setHttpCode(String httpCode) {
+		this.httpCode = httpCode;
 	}
 
 	public Data getData() {

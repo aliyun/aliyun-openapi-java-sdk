@@ -105,6 +105,8 @@ public class QueryInstancesInfoResponse extends AcsResponse {
 
 		private String zone;
 
+		private Boolean zoneDistributed;
+
 		public String getHealthStatus() {
 			return this.healthStatus;
 		}
@@ -175,6 +177,14 @@ public class QueryInstancesInfoResponse extends AcsResponse {
 
 		public void setZone(String zone) {
 			this.zone = zone;
+		}
+
+		public Boolean getZoneDistributed() {
+			return this.zoneDistributed;
+		}
+
+		public void setZoneDistributed(Boolean zoneDistributed) {
+			this.zoneDistributed = zoneDistributed;
 		}
 	}
 

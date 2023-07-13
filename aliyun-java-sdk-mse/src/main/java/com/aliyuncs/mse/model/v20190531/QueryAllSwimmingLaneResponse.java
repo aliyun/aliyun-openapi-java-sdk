@@ -117,9 +117,13 @@ public class QueryAllSwimmingLaneResponse extends AcsResponse {
 
 		private String groupId;
 
+		private String groupId6;
+
 		private String tag;
 
-		private String tag6;
+		private String tag7;
+
+		private List<EntryRule> entryRules;
 
 		public String getName() {
 			return this.name;
@@ -281,6 +285,14 @@ public class QueryAllSwimmingLaneResponse extends AcsResponse {
 			this.groupId = groupId;
 		}
 
+		public String getGroupId6() {
+			return this.groupId6;
+		}
+
+		public void setGroupId6(String groupId6) {
+			this.groupId6 = groupId6;
+		}
+
 		public String getTag() {
 			return this.tag;
 		}
@@ -289,12 +301,166 @@ public class QueryAllSwimmingLaneResponse extends AcsResponse {
 			this.tag = tag;
 		}
 
-		public String getTag6() {
-			return this.tag6;
+		public String getTag7() {
+			return this.tag7;
 		}
 
-		public void setTag6(String tag6) {
-			this.tag6 = tag6;
+		public void setTag7(String tag7) {
+			this.tag7 = tag7;
+		}
+
+		public List<EntryRule> getEntryRules() {
+			return this.entryRules;
+		}
+
+		public void setEntryRules(List<EntryRule> entryRules) {
+			this.entryRules = entryRules;
+		}
+
+		public static class EntryRule {
+
+			private String path;
+
+			private String condition;
+
+			private List<RestItemsItem> restItems;
+
+			private List<String> paths;
+
+			public String getPath() {
+				return this.path;
+			}
+
+			public void setPath(String path) {
+				this.path = path;
+			}
+
+			public String getCondition() {
+				return this.condition;
+			}
+
+			public void setCondition(String condition) {
+				this.condition = condition;
+			}
+
+			public List<RestItemsItem> getRestItems() {
+				return this.restItems;
+			}
+
+			public void setRestItems(List<RestItemsItem> restItems) {
+				this.restItems = restItems;
+			}
+
+			public List<String> getPaths() {
+				return this.paths;
+			}
+
+			public void setPaths(List<String> paths) {
+				this.paths = paths;
+			}
+
+			public static class RestItemsItem {
+
+				private String type;
+
+				private String name;
+
+				private String operator;
+
+				private String datum;
+
+				private String cond;
+
+				private Integer divisor;
+
+				private Integer remainder;
+
+				private Integer rate;
+
+				private String value;
+
+				private List<String> nameList;
+
+				public String getType() {
+					return this.type;
+				}
+
+				public void setType(String type) {
+					this.type = type;
+				}
+
+				public String getName() {
+					return this.name;
+				}
+
+				public void setName(String name) {
+					this.name = name;
+				}
+
+				public String getOperator() {
+					return this.operator;
+				}
+
+				public void setOperator(String operator) {
+					this.operator = operator;
+				}
+
+				public String getDatum() {
+					return this.datum;
+				}
+
+				public void setDatum(String datum) {
+					this.datum = datum;
+				}
+
+				public String getCond() {
+					return this.cond;
+				}
+
+				public void setCond(String cond) {
+					this.cond = cond;
+				}
+
+				public Integer getDivisor() {
+					return this.divisor;
+				}
+
+				public void setDivisor(Integer divisor) {
+					this.divisor = divisor;
+				}
+
+				public Integer getRemainder() {
+					return this.remainder;
+				}
+
+				public void setRemainder(Integer remainder) {
+					this.remainder = remainder;
+				}
+
+				public Integer getRate() {
+					return this.rate;
+				}
+
+				public void setRate(Integer rate) {
+					this.rate = rate;
+				}
+
+				public String getValue() {
+					return this.value;
+				}
+
+				public void setValue(String value) {
+					this.value = value;
+				}
+
+				public List<String> getNameList() {
+					return this.nameList;
+				}
+
+				public void setNameList(List<String> nameList) {
+					this.nameList = nameList;
+				}
+			}
 		}
 	}
 
