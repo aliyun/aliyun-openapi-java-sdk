@@ -87,6 +87,10 @@ public class ListTransitRouterMulticastDomainsResponse extends AcsResponse {
 
 		private String transitRouterId;
 
+		private String regionId;
+
+		private String cenId;
+
 		private List<Tag> tags;
 
 		public String getTransitRouterMulticastDomainId() {
@@ -127,6 +131,22 @@ public class ListTransitRouterMulticastDomainsResponse extends AcsResponse {
 
 		public void setTransitRouterId(String transitRouterId) {
 			this.transitRouterId = transitRouterId;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public String getCenId() {
+			return this.cenId;
+		}
+
+		public void setCenId(String cenId) {
+			this.cenId = cenId;
 		}
 
 		public List<Tag> getTags() {

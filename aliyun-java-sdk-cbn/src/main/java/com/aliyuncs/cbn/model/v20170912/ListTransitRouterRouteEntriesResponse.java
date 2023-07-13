@@ -109,6 +109,14 @@ public class ListTransitRouterRouteEntriesResponse extends AcsResponse {
 
 		private String prefixListId;
 
+		private Integer preference;
+
+		private List<String> communities;
+
+		private List<String> asPaths;
+
+		private PathAttributes pathAttributes;
+
 		public String getTransitRouterRouteEntryId() {
 			return this.transitRouterRouteEntryId;
 		}
@@ -235,6 +243,101 @@ public class ListTransitRouterRouteEntriesResponse extends AcsResponse {
 
 		public void setPrefixListId(String prefixListId) {
 			this.prefixListId = prefixListId;
+		}
+
+		public Integer getPreference() {
+			return this.preference;
+		}
+
+		public void setPreference(Integer preference) {
+			this.preference = preference;
+		}
+
+		public List<String> getCommunities() {
+			return this.communities;
+		}
+
+		public void setCommunities(List<String> communities) {
+			this.communities = communities;
+		}
+
+		public List<String> getAsPaths() {
+			return this.asPaths;
+		}
+
+		public void setAsPaths(List<String> asPaths) {
+			this.asPaths = asPaths;
+		}
+
+		public PathAttributes getPathAttributes() {
+			return this.pathAttributes;
+		}
+
+		public void setPathAttributes(PathAttributes pathAttributes) {
+			this.pathAttributes = pathAttributes;
+		}
+
+		public static class PathAttributes {
+
+			private String originInstanceId;
+
+			private String originInstanceType;
+
+			private String originRouteType;
+
+			private Integer preference;
+
+			private List<String> communities1;
+
+			private List<String> asPaths2;
+
+			public String getOriginInstanceId() {
+				return this.originInstanceId;
+			}
+
+			public void setOriginInstanceId(String originInstanceId) {
+				this.originInstanceId = originInstanceId;
+			}
+
+			public String getOriginInstanceType() {
+				return this.originInstanceType;
+			}
+
+			public void setOriginInstanceType(String originInstanceType) {
+				this.originInstanceType = originInstanceType;
+			}
+
+			public String getOriginRouteType() {
+				return this.originRouteType;
+			}
+
+			public void setOriginRouteType(String originRouteType) {
+				this.originRouteType = originRouteType;
+			}
+
+			public Integer getPreference() {
+				return this.preference;
+			}
+
+			public void setPreference(Integer preference) {
+				this.preference = preference;
+			}
+
+			public List<String> getCommunities1() {
+				return this.communities1;
+			}
+
+			public void setCommunities1(List<String> communities1) {
+				this.communities1 = communities1;
+			}
+
+			public List<String> getAsPaths2() {
+				return this.asPaths2;
+			}
+
+			public void setAsPaths2(List<String> asPaths2) {
+				this.asPaths2 = asPaths2;
+			}
 		}
 	}
 

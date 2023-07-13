@@ -31,6 +31,8 @@ public class DescribeCenInterRegionBandwidthLimitsRequest extends RpcAcsRequest<
 
 	private Integer pageNumber;
 
+	private String trRegionId;
+
 	private Integer pageSize;
 
 	private String resourceOwnerAccount;
@@ -77,6 +79,17 @@ public class DescribeCenInterRegionBandwidthLimitsRequest extends RpcAcsRequest<
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getTrRegionId() {
+		return this.trRegionId;
+	}
+
+	public void setTrRegionId(String trRegionId) {
+		this.trRegionId = trRegionId;
+		if(trRegionId != null){
+			putQueryParameter("TrRegionId", trRegionId);
 		}
 	}
 
