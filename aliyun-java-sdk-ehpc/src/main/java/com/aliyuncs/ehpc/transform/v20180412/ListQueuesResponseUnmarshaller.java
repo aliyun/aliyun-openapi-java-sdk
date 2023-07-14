@@ -40,6 +40,7 @@ public class ListQueuesResponseUnmarshaller {
 			queueInfo.setImageId(_ctx.stringValue("ListQueuesResponse.Queues["+ i +"].ImageId"));
 			queueInfo.setHostNameSuffix(_ctx.stringValue("ListQueuesResponse.Queues["+ i +"].HostNameSuffix"));
 			queueInfo.setSpotStrategy(_ctx.stringValue("ListQueuesResponse.Queues["+ i +"].SpotStrategy"));
+			queueInfo.setDeploymentSetId(_ctx.stringValue("ListQueuesResponse.Queues["+ i +"].DeploymentSetId"));
 
 			List<String> computeInstanceType = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListQueuesResponse.Queues["+ i +"].ComputeInstanceType.Length"); j++) {

@@ -26,29 +26,13 @@ import com.aliyuncs.ehpc.Endpoint;
 public class AddNodesRequest extends RpcAcsRequest<AddNodesResponse> {
 	   
 
-	private String imageId;
-
-	private String systemDiskLevel;
-
-	private String clientToken;
-
-	private Boolean allocatePublicAddress;
-
-	private Integer internetMaxBandWidthOut;
-
-	private String jobQueue;
+	private String dnsConfig;
 
 	private String imageOwnerAlias;
 
-	private String systemDiskType;
-
 	private List<DataDisks> dataDiskss;
 
-	private Integer minCount;
-
 	private Integer systemDiskSize;
-
-	private String instanceType;
 
 	private String hostNamePrefix;
 
@@ -62,27 +46,19 @@ public class AddNodesRequest extends RpcAcsRequest<AddNodesResponse> {
 
 	private Integer count;
 
-	private String clusterId;
-
 	private String computeSpotStrategy;
 
 	private String hostNameSuffix;
 
 	private Boolean sync;
 
-	private String networkInterfaceTrafficMode;
-
 	private String vSwitchId;
-
-	private Integer computeSpotDuration;
 
 	private String periodUnit;
 
 	private Boolean computeEnableHt;
 
 	private String autoRenew;
-
-	private String ecsChargeType;
 
 	private String internetChargeType;
 
@@ -91,6 +67,32 @@ public class AddNodesRequest extends RpcAcsRequest<AddNodesResponse> {
 	private String zoneId;
 
 	private Integer internetMaxBandWidthIn;
+
+	private String imageId;
+
+	private String systemDiskLevel;
+
+	private String clientToken;
+
+	private Boolean allocatePublicAddress;
+
+	private Integer internetMaxBandWidthOut;
+
+	private String jobQueue;
+
+	private String systemDiskType;
+
+	private Integer minCount;
+
+	private String instanceType;
+
+	private String clusterId;
+
+	private String networkInterfaceTrafficMode;
+
+	private Integer computeSpotDuration;
+
+	private String ecsChargeType;
 	public AddNodesRequest() {
 		super("EHPC", "2018-04-12", "AddNodes");
 		setMethod(MethodType.GET);
@@ -100,69 +102,14 @@ public class AddNodesRequest extends RpcAcsRequest<AddNodesResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getImageId() {
-		return this.imageId;
+	public String getDnsConfig() {
+		return this.dnsConfig;
 	}
 
-	public void setImageId(String imageId) {
-		this.imageId = imageId;
-		if(imageId != null){
-			putQueryParameter("ImageId", imageId);
-		}
-	}
-
-	public String getSystemDiskLevel() {
-		return this.systemDiskLevel;
-	}
-
-	public void setSystemDiskLevel(String systemDiskLevel) {
-		this.systemDiskLevel = systemDiskLevel;
-		if(systemDiskLevel != null){
-			putQueryParameter("SystemDiskLevel", systemDiskLevel);
-		}
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
-	public Boolean getAllocatePublicAddress() {
-		return this.allocatePublicAddress;
-	}
-
-	public void setAllocatePublicAddress(Boolean allocatePublicAddress) {
-		this.allocatePublicAddress = allocatePublicAddress;
-		if(allocatePublicAddress != null){
-			putQueryParameter("AllocatePublicAddress", allocatePublicAddress.toString());
-		}
-	}
-
-	public Integer getInternetMaxBandWidthOut() {
-		return this.internetMaxBandWidthOut;
-	}
-
-	public void setInternetMaxBandWidthOut(Integer internetMaxBandWidthOut) {
-		this.internetMaxBandWidthOut = internetMaxBandWidthOut;
-		if(internetMaxBandWidthOut != null){
-			putQueryParameter("InternetMaxBandWidthOut", internetMaxBandWidthOut.toString());
-		}
-	}
-
-	public String getJobQueue() {
-		return this.jobQueue;
-	}
-
-	public void setJobQueue(String jobQueue) {
-		this.jobQueue = jobQueue;
-		if(jobQueue != null){
-			putQueryParameter("JobQueue", jobQueue);
+	public void setDnsConfig(String dnsConfig) {
+		this.dnsConfig = dnsConfig;
+		if(dnsConfig != null){
+			putQueryParameter("DnsConfig", dnsConfig);
 		}
 	}
 
@@ -174,17 +121,6 @@ public class AddNodesRequest extends RpcAcsRequest<AddNodesResponse> {
 		this.imageOwnerAlias = imageOwnerAlias;
 		if(imageOwnerAlias != null){
 			putQueryParameter("ImageOwnerAlias", imageOwnerAlias);
-		}
-	}
-
-	public String getSystemDiskType() {
-		return this.systemDiskType;
-	}
-
-	public void setSystemDiskType(String systemDiskType) {
-		this.systemDiskType = systemDiskType;
-		if(systemDiskType != null){
-			putQueryParameter("SystemDiskType", systemDiskType);
 		}
 	}
 
@@ -206,17 +142,6 @@ public class AddNodesRequest extends RpcAcsRequest<AddNodesResponse> {
 		}	
 	}
 
-	public Integer getMinCount() {
-		return this.minCount;
-	}
-
-	public void setMinCount(Integer minCount) {
-		this.minCount = minCount;
-		if(minCount != null){
-			putQueryParameter("MinCount", minCount.toString());
-		}
-	}
-
 	public Integer getSystemDiskSize() {
 		return this.systemDiskSize;
 	}
@@ -225,17 +150,6 @@ public class AddNodesRequest extends RpcAcsRequest<AddNodesResponse> {
 		this.systemDiskSize = systemDiskSize;
 		if(systemDiskSize != null){
 			putQueryParameter("SystemDiskSize", systemDiskSize.toString());
-		}
-	}
-
-	public String getInstanceType() {
-		return this.instanceType;
-	}
-
-	public void setInstanceType(String instanceType) {
-		this.instanceType = instanceType;
-		if(instanceType != null){
-			putQueryParameter("InstanceType", instanceType);
 		}
 	}
 
@@ -305,17 +219,6 @@ public class AddNodesRequest extends RpcAcsRequest<AddNodesResponse> {
 		}
 	}
 
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putQueryParameter("ClusterId", clusterId);
-		}
-	}
-
 	public String getComputeSpotStrategy() {
 		return this.computeSpotStrategy;
 	}
@@ -349,17 +252,6 @@ public class AddNodesRequest extends RpcAcsRequest<AddNodesResponse> {
 		}
 	}
 
-	public String getNetworkInterfaceTrafficMode() {
-		return this.networkInterfaceTrafficMode;
-	}
-
-	public void setNetworkInterfaceTrafficMode(String networkInterfaceTrafficMode) {
-		this.networkInterfaceTrafficMode = networkInterfaceTrafficMode;
-		if(networkInterfaceTrafficMode != null){
-			putQueryParameter("NetworkInterfaceTrafficMode", networkInterfaceTrafficMode);
-		}
-	}
-
 	public String getVSwitchId() {
 		return this.vSwitchId;
 	}
@@ -368,17 +260,6 @@ public class AddNodesRequest extends RpcAcsRequest<AddNodesResponse> {
 		this.vSwitchId = vSwitchId;
 		if(vSwitchId != null){
 			putQueryParameter("VSwitchId", vSwitchId);
-		}
-	}
-
-	public Integer getComputeSpotDuration() {
-		return this.computeSpotDuration;
-	}
-
-	public void setComputeSpotDuration(Integer computeSpotDuration) {
-		this.computeSpotDuration = computeSpotDuration;
-		if(computeSpotDuration != null){
-			putQueryParameter("ComputeSpotDuration", computeSpotDuration.toString());
 		}
 	}
 
@@ -412,17 +293,6 @@ public class AddNodesRequest extends RpcAcsRequest<AddNodesResponse> {
 		this.autoRenew = autoRenew;
 		if(autoRenew != null){
 			putQueryParameter("AutoRenew", autoRenew);
-		}
-	}
-
-	public String getEcsChargeType() {
-		return this.ecsChargeType;
-	}
-
-	public void setEcsChargeType(String ecsChargeType) {
-		this.ecsChargeType = ecsChargeType;
-		if(ecsChargeType != null){
-			putQueryParameter("EcsChargeType", ecsChargeType);
 		}
 	}
 
@@ -467,6 +337,149 @@ public class AddNodesRequest extends RpcAcsRequest<AddNodesResponse> {
 		this.internetMaxBandWidthIn = internetMaxBandWidthIn;
 		if(internetMaxBandWidthIn != null){
 			putQueryParameter("InternetMaxBandWidthIn", internetMaxBandWidthIn.toString());
+		}
+	}
+
+	public String getImageId() {
+		return this.imageId;
+	}
+
+	public void setImageId(String imageId) {
+		this.imageId = imageId;
+		if(imageId != null){
+			putQueryParameter("ImageId", imageId);
+		}
+	}
+
+	public String getSystemDiskLevel() {
+		return this.systemDiskLevel;
+	}
+
+	public void setSystemDiskLevel(String systemDiskLevel) {
+		this.systemDiskLevel = systemDiskLevel;
+		if(systemDiskLevel != null){
+			putQueryParameter("SystemDiskLevel", systemDiskLevel);
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public Boolean getAllocatePublicAddress() {
+		return this.allocatePublicAddress;
+	}
+
+	public void setAllocatePublicAddress(Boolean allocatePublicAddress) {
+		this.allocatePublicAddress = allocatePublicAddress;
+		if(allocatePublicAddress != null){
+			putQueryParameter("AllocatePublicAddress", allocatePublicAddress.toString());
+		}
+	}
+
+	public Integer getInternetMaxBandWidthOut() {
+		return this.internetMaxBandWidthOut;
+	}
+
+	public void setInternetMaxBandWidthOut(Integer internetMaxBandWidthOut) {
+		this.internetMaxBandWidthOut = internetMaxBandWidthOut;
+		if(internetMaxBandWidthOut != null){
+			putQueryParameter("InternetMaxBandWidthOut", internetMaxBandWidthOut.toString());
+		}
+	}
+
+	public String getJobQueue() {
+		return this.jobQueue;
+	}
+
+	public void setJobQueue(String jobQueue) {
+		this.jobQueue = jobQueue;
+		if(jobQueue != null){
+			putQueryParameter("JobQueue", jobQueue);
+		}
+	}
+
+	public String getSystemDiskType() {
+		return this.systemDiskType;
+	}
+
+	public void setSystemDiskType(String systemDiskType) {
+		this.systemDiskType = systemDiskType;
+		if(systemDiskType != null){
+			putQueryParameter("SystemDiskType", systemDiskType);
+		}
+	}
+
+	public Integer getMinCount() {
+		return this.minCount;
+	}
+
+	public void setMinCount(Integer minCount) {
+		this.minCount = minCount;
+		if(minCount != null){
+			putQueryParameter("MinCount", minCount.toString());
+		}
+	}
+
+	public String getInstanceType() {
+		return this.instanceType;
+	}
+
+	public void setInstanceType(String instanceType) {
+		this.instanceType = instanceType;
+		if(instanceType != null){
+			putQueryParameter("InstanceType", instanceType);
+		}
+	}
+
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
+		}
+	}
+
+	public String getNetworkInterfaceTrafficMode() {
+		return this.networkInterfaceTrafficMode;
+	}
+
+	public void setNetworkInterfaceTrafficMode(String networkInterfaceTrafficMode) {
+		this.networkInterfaceTrafficMode = networkInterfaceTrafficMode;
+		if(networkInterfaceTrafficMode != null){
+			putQueryParameter("NetworkInterfaceTrafficMode", networkInterfaceTrafficMode);
+		}
+	}
+
+	public Integer getComputeSpotDuration() {
+		return this.computeSpotDuration;
+	}
+
+	public void setComputeSpotDuration(Integer computeSpotDuration) {
+		this.computeSpotDuration = computeSpotDuration;
+		if(computeSpotDuration != null){
+			putQueryParameter("ComputeSpotDuration", computeSpotDuration.toString());
+		}
+	}
+
+	public String getEcsChargeType() {
+		return this.ecsChargeType;
+	}
+
+	public void setEcsChargeType(String ecsChargeType) {
+		this.ecsChargeType = ecsChargeType;
+		if(ecsChargeType != null){
+			putQueryParameter("EcsChargeType", ecsChargeType);
 		}
 	}
 

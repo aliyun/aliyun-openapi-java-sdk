@@ -133,6 +133,8 @@ public class ListClustersResponse extends AcsResponse {
 
 		private String clientVersion;
 
+		private String resourceGroupId;
+
 		private Boolean hasPlugin;
 
 		private Managers managers;
@@ -365,6 +367,14 @@ public class ListClustersResponse extends AcsResponse {
 
 		public void setClientVersion(String clientVersion) {
 			this.clientVersion = clientVersion;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 
 		public Boolean getHasPlugin() {

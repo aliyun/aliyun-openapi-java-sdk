@@ -19,12 +19,15 @@ import java.util.List;
 
 import com.aliyuncs.ehpc.model.v20180412.DescribeClusterResponse;
 import com.aliyuncs.ehpc.model.v20180412.DescribeClusterResponse.ClusterInfo;
+import com.aliyuncs.ehpc.model.v20180412.DescribeClusterResponse.ClusterInfo.AddOnsInfoItem;
 import com.aliyuncs.ehpc.model.v20180412.DescribeClusterResponse.ClusterInfo.ApplicationInfo;
 import com.aliyuncs.ehpc.model.v20180412.DescribeClusterResponse.ClusterInfo.EcsInfo;
 import com.aliyuncs.ehpc.model.v20180412.DescribeClusterResponse.ClusterInfo.EcsInfo.Compute;
 import com.aliyuncs.ehpc.model.v20180412.DescribeClusterResponse.ClusterInfo.EcsInfo.Login;
 import com.aliyuncs.ehpc.model.v20180412.DescribeClusterResponse.ClusterInfo.EcsInfo.Manager;
 import com.aliyuncs.ehpc.model.v20180412.DescribeClusterResponse.ClusterInfo.EcsInfo.ProxyMgr;
+import com.aliyuncs.ehpc.model.v20180412.DescribeClusterResponse.ClusterInfo.InitialImage;
+import com.aliyuncs.ehpc.model.v20180412.DescribeClusterResponse.ClusterInfo.NodesInfo;
 import com.aliyuncs.ehpc.model.v20180412.DescribeClusterResponse.ClusterInfo.OnPremiseInfoItem;
 import com.aliyuncs.ehpc.model.v20180412.DescribeClusterResponse.ClusterInfo.PostInstallScriptInfo;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -65,8 +68,23 @@ public class DescribeClusterResponseUnmarshaller {
 		clusterInfo.setLocation(_ctx.stringValue("DescribeClusterResponse.ClusterInfo.Location"));
 		clusterInfo.setId(_ctx.stringValue("DescribeClusterResponse.ClusterInfo.Id"));
 		clusterInfo.setClientVersion(_ctx.stringValue("DescribeClusterResponse.ClusterInfo.ClientVersion"));
+		clusterInfo.setZoneId(_ctx.stringValue("DescribeClusterResponse.ClusterInfo.ZoneId"));
+		clusterInfo.setResourceGroupId(_ctx.stringValue("DescribeClusterResponse.ClusterInfo.ResourceGroupId"));
 		clusterInfo.setRamRoleName(_ctx.stringValue("DescribeClusterResponse.ClusterInfo.RamRoleName"));
 		clusterInfo.setRamNodeTypes(_ctx.stringValue("DescribeClusterResponse.ClusterInfo.RamNodeTypes"));
+		clusterInfo.setClusterVersion(_ctx.stringValue("DescribeClusterResponse.ClusterInfo.ClusterVersion"));
+		clusterInfo.setWithoutAgent(_ctx.integerValue("DescribeClusterResponse.ClusterInfo.WithoutAgent"));
+		clusterInfo.setPlugin(_ctx.stringValue("DescribeClusterResponse.ClusterInfo.Plugin"));
+		clusterInfo.setSchedulerPreInstall(_ctx.integerValue("DescribeClusterResponse.ClusterInfo.SchedulerPreInstall"));
+		clusterInfo.setDomain(_ctx.stringValue("DescribeClusterResponse.ClusterInfo.Domain"));
+		clusterInfo.setOpenldapPar(_ctx.stringValue("DescribeClusterResponse.ClusterInfo.OpenldapPar"));
+		clusterInfo.setWinAdPar(_ctx.stringValue("DescribeClusterResponse.ClusterInfo.WinAdPar"));
+		clusterInfo.setPeriod(_ctx.stringValue("DescribeClusterResponse.ClusterInfo.Period"));
+		clusterInfo.setPeriodUnit(_ctx.stringValue("DescribeClusterResponse.ClusterInfo.PeriodUnit"));
+		clusterInfo.setAutoRenewPeriod(_ctx.stringValue("DescribeClusterResponse.ClusterInfo.AutoRenewPeriod"));
+		clusterInfo.setAutoRenew(_ctx.stringValue("DescribeClusterResponse.ClusterInfo.AutoRenew"));
+		clusterInfo.setComputeSpotStrategy(_ctx.stringValue("DescribeClusterResponse.ClusterInfo.ComputeSpotStrategy"));
+		clusterInfo.setComputeSpotPriceLimit(_ctx.stringValue("DescribeClusterResponse.ClusterInfo.ComputeSpotPriceLimit"));
 
 		EcsInfo ecsInfo = new EcsInfo();
 
@@ -90,6 +108,12 @@ public class DescribeClusterResponseUnmarshaller {
 		proxyMgr.setCount(_ctx.integerValue("DescribeClusterResponse.ClusterInfo.EcsInfo.ProxyMgr.Count"));
 		ecsInfo.setProxyMgr(proxyMgr);
 		clusterInfo.setEcsInfo(ecsInfo);
+
+		InitialImage initialImage = new InitialImage();
+		initialImage.setOsTag(_ctx.stringValue("DescribeClusterResponse.ClusterInfo.InitialImage.OsTag"));
+		initialImage.setImageOwnerAlias(_ctx.stringValue("DescribeClusterResponse.ClusterInfo.InitialImage.ImageOwnerAlias"));
+		initialImage.setImageId(_ctx.stringValue("DescribeClusterResponse.ClusterInfo.InitialImage.ImageId"));
+		clusterInfo.setInitialImage(initialImage);
 
 		List<ApplicationInfo> applications = new ArrayList<ApplicationInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeClusterResponse.ClusterInfo.Applications.Length"); i++) {
@@ -122,6 +146,33 @@ public class DescribeClusterResponseUnmarshaller {
 			onPremiseInfo.add(onPremiseInfoItem);
 		}
 		clusterInfo.setOnPremiseInfo(onPremiseInfo);
+
+		List<AddOnsInfoItem> addOnsInfo = new ArrayList<AddOnsInfoItem>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeClusterResponse.ClusterInfo.AddOnsInfo.Length"); i++) {
+			AddOnsInfoItem addOnsInfoItem = new AddOnsInfoItem();
+			addOnsInfoItem.setSoftwareId(_ctx.stringValue("DescribeClusterResponse.ClusterInfo.AddOnsInfo["+ i +"].SoftwareId"));
+			addOnsInfoItem.setDeployMode(_ctx.stringValue("DescribeClusterResponse.ClusterInfo.AddOnsInfo["+ i +"].DeployMode"));
+			addOnsInfoItem.setPort(_ctx.integerValue("DescribeClusterResponse.ClusterInfo.AddOnsInfo["+ i +"].Port"));
+			addOnsInfoItem.setStatus(_ctx.stringValue("DescribeClusterResponse.ClusterInfo.AddOnsInfo["+ i +"].Status"));
+			addOnsInfoItem.setURL(_ctx.stringValue("DescribeClusterResponse.ClusterInfo.AddOnsInfo["+ i +"].URL"));
+
+			addOnsInfo.add(addOnsInfoItem);
+		}
+		clusterInfo.setAddOnsInfo(addOnsInfo);
+
+		List<NodesInfo> nodes = new ArrayList<NodesInfo>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeClusterResponse.ClusterInfo.Nodes.Length"); i++) {
+			NodesInfo nodesInfo = new NodesInfo();
+			nodesInfo.setRole(_ctx.stringValue("DescribeClusterResponse.ClusterInfo.Nodes["+ i +"].Role"));
+			nodesInfo.setHostName(_ctx.stringValue("DescribeClusterResponse.ClusterInfo.Nodes["+ i +"].HostName"));
+			nodesInfo.setIpAddress(_ctx.stringValue("DescribeClusterResponse.ClusterInfo.Nodes["+ i +"].IpAddress"));
+			nodesInfo.setAccountType(_ctx.stringValue("DescribeClusterResponse.ClusterInfo.Nodes["+ i +"].AccountType"));
+			nodesInfo.setDir(_ctx.stringValue("DescribeClusterResponse.ClusterInfo.Nodes["+ i +"].Dir"));
+			nodesInfo.setSchedulerType(_ctx.stringValue("DescribeClusterResponse.ClusterInfo.Nodes["+ i +"].SchedulerType"));
+
+			nodes.add(nodesInfo);
+		}
+		clusterInfo.setNodes(nodes);
 		describeClusterResponse.setClusterInfo(clusterInfo);
 	 
 	 	return describeClusterResponse;

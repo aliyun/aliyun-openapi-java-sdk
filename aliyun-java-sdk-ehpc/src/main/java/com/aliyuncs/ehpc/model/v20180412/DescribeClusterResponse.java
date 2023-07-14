@@ -103,9 +103,39 @@ public class DescribeClusterResponse extends AcsResponse {
 
 		private String clientVersion;
 
+		private String zoneId;
+
+		private String resourceGroupId;
+
 		private String ramRoleName;
 
 		private String ramNodeTypes;
+
+		private String clusterVersion;
+
+		private Integer withoutAgent;
+
+		private String plugin;
+
+		private Integer schedulerPreInstall;
+
+		private String domain;
+
+		private String openldapPar;
+
+		private String winAdPar;
+
+		private String period;
+
+		private String periodUnit;
+
+		private String autoRenewPeriod;
+
+		private String autoRenew;
+
+		private String computeSpotStrategy;
+
+		private String computeSpotPriceLimit;
 
 		private List<ApplicationInfo> applications;
 
@@ -113,7 +143,13 @@ public class DescribeClusterResponse extends AcsResponse {
 
 		private List<OnPremiseInfoItem> onPremiseInfo;
 
+		private List<AddOnsInfoItem> addOnsInfo;
+
+		private List<NodesInfo> nodes;
+
 		private EcsInfo ecsInfo;
+
+		private InitialImage initialImage;
 
 		public String getStatus() {
 			return this.status;
@@ -339,6 +375,22 @@ public class DescribeClusterResponse extends AcsResponse {
 			this.clientVersion = clientVersion;
 		}
 
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
 		public String getRamRoleName() {
 			return this.ramRoleName;
 		}
@@ -353,6 +405,110 @@ public class DescribeClusterResponse extends AcsResponse {
 
 		public void setRamNodeTypes(String ramNodeTypes) {
 			this.ramNodeTypes = ramNodeTypes;
+		}
+
+		public String getClusterVersion() {
+			return this.clusterVersion;
+		}
+
+		public void setClusterVersion(String clusterVersion) {
+			this.clusterVersion = clusterVersion;
+		}
+
+		public Integer getWithoutAgent() {
+			return this.withoutAgent;
+		}
+
+		public void setWithoutAgent(Integer withoutAgent) {
+			this.withoutAgent = withoutAgent;
+		}
+
+		public String getPlugin() {
+			return this.plugin;
+		}
+
+		public void setPlugin(String plugin) {
+			this.plugin = plugin;
+		}
+
+		public Integer getSchedulerPreInstall() {
+			return this.schedulerPreInstall;
+		}
+
+		public void setSchedulerPreInstall(Integer schedulerPreInstall) {
+			this.schedulerPreInstall = schedulerPreInstall;
+		}
+
+		public String getDomain() {
+			return this.domain;
+		}
+
+		public void setDomain(String domain) {
+			this.domain = domain;
+		}
+
+		public String getOpenldapPar() {
+			return this.openldapPar;
+		}
+
+		public void setOpenldapPar(String openldapPar) {
+			this.openldapPar = openldapPar;
+		}
+
+		public String getWinAdPar() {
+			return this.winAdPar;
+		}
+
+		public void setWinAdPar(String winAdPar) {
+			this.winAdPar = winAdPar;
+		}
+
+		public String getPeriod() {
+			return this.period;
+		}
+
+		public void setPeriod(String period) {
+			this.period = period;
+		}
+
+		public String getPeriodUnit() {
+			return this.periodUnit;
+		}
+
+		public void setPeriodUnit(String periodUnit) {
+			this.periodUnit = periodUnit;
+		}
+
+		public String getAutoRenewPeriod() {
+			return this.autoRenewPeriod;
+		}
+
+		public void setAutoRenewPeriod(String autoRenewPeriod) {
+			this.autoRenewPeriod = autoRenewPeriod;
+		}
+
+		public String getAutoRenew() {
+			return this.autoRenew;
+		}
+
+		public void setAutoRenew(String autoRenew) {
+			this.autoRenew = autoRenew;
+		}
+
+		public String getComputeSpotStrategy() {
+			return this.computeSpotStrategy;
+		}
+
+		public void setComputeSpotStrategy(String computeSpotStrategy) {
+			this.computeSpotStrategy = computeSpotStrategy;
+		}
+
+		public String getComputeSpotPriceLimit() {
+			return this.computeSpotPriceLimit;
+		}
+
+		public void setComputeSpotPriceLimit(String computeSpotPriceLimit) {
+			this.computeSpotPriceLimit = computeSpotPriceLimit;
 		}
 
 		public List<ApplicationInfo> getApplications() {
@@ -379,12 +535,36 @@ public class DescribeClusterResponse extends AcsResponse {
 			this.onPremiseInfo = onPremiseInfo;
 		}
 
+		public List<AddOnsInfoItem> getAddOnsInfo() {
+			return this.addOnsInfo;
+		}
+
+		public void setAddOnsInfo(List<AddOnsInfoItem> addOnsInfo) {
+			this.addOnsInfo = addOnsInfo;
+		}
+
+		public List<NodesInfo> getNodes() {
+			return this.nodes;
+		}
+
+		public void setNodes(List<NodesInfo> nodes) {
+			this.nodes = nodes;
+		}
+
 		public EcsInfo getEcsInfo() {
 			return this.ecsInfo;
 		}
 
 		public void setEcsInfo(EcsInfo ecsInfo) {
 			this.ecsInfo = ecsInfo;
+		}
+
+		public InitialImage getInitialImage() {
+			return this.initialImage;
+		}
+
+		public void setInitialImage(InitialImage initialImage) {
+			this.initialImage = initialImage;
 		}
 
 		public static class ApplicationInfo {
@@ -473,6 +653,122 @@ public class DescribeClusterResponse extends AcsResponse {
 
 			public void setIP(String iP) {
 				this.iP = iP;
+			}
+		}
+
+		public static class AddOnsInfoItem {
+
+			private String softwareId;
+
+			private String deployMode;
+
+			private Integer port;
+
+			private String status;
+
+			private String uRL;
+
+			public String getSoftwareId() {
+				return this.softwareId;
+			}
+
+			public void setSoftwareId(String softwareId) {
+				this.softwareId = softwareId;
+			}
+
+			public String getDeployMode() {
+				return this.deployMode;
+			}
+
+			public void setDeployMode(String deployMode) {
+				this.deployMode = deployMode;
+			}
+
+			public Integer getPort() {
+				return this.port;
+			}
+
+			public void setPort(Integer port) {
+				this.port = port;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
+			public String getURL() {
+				return this.uRL;
+			}
+
+			public void setURL(String uRL) {
+				this.uRL = uRL;
+			}
+		}
+
+		public static class NodesInfo {
+
+			private String role;
+
+			private String hostName;
+
+			private String ipAddress;
+
+			private String accountType;
+
+			private String dir;
+
+			private String schedulerType;
+
+			public String getRole() {
+				return this.role;
+			}
+
+			public void setRole(String role) {
+				this.role = role;
+			}
+
+			public String getHostName() {
+				return this.hostName;
+			}
+
+			public void setHostName(String hostName) {
+				this.hostName = hostName;
+			}
+
+			public String getIpAddress() {
+				return this.ipAddress;
+			}
+
+			public void setIpAddress(String ipAddress) {
+				this.ipAddress = ipAddress;
+			}
+
+			public String getAccountType() {
+				return this.accountType;
+			}
+
+			public void setAccountType(String accountType) {
+				this.accountType = accountType;
+			}
+
+			public String getDir() {
+				return this.dir;
+			}
+
+			public void setDir(String dir) {
+				this.dir = dir;
+			}
+
+			public String getSchedulerType() {
+				return this.schedulerType;
+			}
+
+			public void setSchedulerType(String schedulerType) {
+				this.schedulerType = schedulerType;
 			}
 		}
 
@@ -608,6 +904,39 @@ public class DescribeClusterResponse extends AcsResponse {
 				public void setCount(Integer count) {
 					this.count = count;
 				}
+			}
+		}
+
+		public static class InitialImage {
+
+			private String osTag;
+
+			private String imageOwnerAlias;
+
+			private String imageId;
+
+			public String getOsTag() {
+				return this.osTag;
+			}
+
+			public void setOsTag(String osTag) {
+				this.osTag = osTag;
+			}
+
+			public String getImageOwnerAlias() {
+				return this.imageOwnerAlias;
+			}
+
+			public void setImageOwnerAlias(String imageOwnerAlias) {
+				this.imageOwnerAlias = imageOwnerAlias;
+			}
+
+			public String getImageId() {
+				return this.imageId;
+			}
+
+			public void setImageId(String imageId) {
+				this.imageId = imageId;
 			}
 		}
 	}

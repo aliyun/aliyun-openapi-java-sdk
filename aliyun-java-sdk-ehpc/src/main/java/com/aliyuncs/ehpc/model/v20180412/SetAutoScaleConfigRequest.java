@@ -28,6 +28,8 @@ public class SetAutoScaleConfigRequest extends RpcAcsRequest<SetAutoScaleConfigR
 
 	private String imageId;
 
+	private String dnsConfig;
+
 	private Float spotPriceLimit;
 
 	private String excludeNodes;
@@ -47,6 +49,8 @@ public class SetAutoScaleConfigRequest extends RpcAcsRequest<SetAutoScaleConfigR
 	private String spotStrategy;
 
 	private Integer maxNodesInCluster;
+
+	private Boolean computeEnableHt;
 
 	private Integer shrinkIntervalInMinutes;
 
@@ -72,6 +76,17 @@ public class SetAutoScaleConfigRequest extends RpcAcsRequest<SetAutoScaleConfigR
 		this.imageId = imageId;
 		if(imageId != null){
 			putQueryParameter("ImageId", imageId);
+		}
+	}
+
+	public String getDnsConfig() {
+		return this.dnsConfig;
+	}
+
+	public void setDnsConfig(String dnsConfig) {
+		this.dnsConfig = dnsConfig;
+		if(dnsConfig != null){
+			putQueryParameter("DnsConfig", dnsConfig);
 		}
 	}
 
@@ -185,6 +200,17 @@ public class SetAutoScaleConfigRequest extends RpcAcsRequest<SetAutoScaleConfigR
 		}
 	}
 
+	public Boolean getComputeEnableHt() {
+		return this.computeEnableHt;
+	}
+
+	public void setComputeEnableHt(Boolean computeEnableHt) {
+		this.computeEnableHt = computeEnableHt;
+		if(computeEnableHt != null){
+			putQueryParameter("ComputeEnableHt", computeEnableHt.toString());
+		}
+	}
+
 	public Integer getShrinkIntervalInMinutes() {
 		return this.shrinkIntervalInMinutes;
 	}
@@ -206,6 +232,7 @@ public class SetAutoScaleConfigRequest extends RpcAcsRequest<SetAutoScaleConfigR
 			for (int depth1 = 0; depth1 < queuess.size(); depth1++) {
 				putQueryParameter("Queues." + (depth1 + 1) + ".QueueName" , queuess.get(depth1).getQueueName());
 				putQueryParameter("Queues." + (depth1 + 1) + ".SystemDiskLevel" , queuess.get(depth1).getSystemDiskLevel());
+				putQueryParameter("Queues." + (depth1 + 1) + ".SortedByInventory" , queuess.get(depth1).getSortedByInventory());
 				if (queuess.get(depth1).getInstanceTypess() != null) {
 					for (int depth2 = 0; depth2 < queuess.get(depth1).getInstanceTypess().size(); depth2++) {
 						putQueryParameter("Queues." + (depth1 + 1) + ".InstanceTypes." + (depth2 + 1) + ".VSwitchId" , queuess.get(depth1).getInstanceTypess().get(depth2).getVSwitchId());
@@ -273,6 +300,8 @@ public class SetAutoScaleConfigRequest extends RpcAcsRequest<SetAutoScaleConfigR
 
 		private String systemDiskLevel;
 
+		private Boolean sortedByInventory;
+
 		private List<InstanceTypes> instanceTypess;
 
 		private Boolean enableAutoGrow;
@@ -319,6 +348,14 @@ public class SetAutoScaleConfigRequest extends RpcAcsRequest<SetAutoScaleConfigR
 
 		public void setSystemDiskLevel(String systemDiskLevel) {
 			this.systemDiskLevel = systemDiskLevel;
+		}
+
+		public Boolean getSortedByInventory() {
+			return this.sortedByInventory;
+		}
+
+		public void setSortedByInventory(Boolean sortedByInventory) {
+			this.sortedByInventory = sortedByInventory;
 		}
 
 		public List<InstanceTypes> getInstanceTypess() {

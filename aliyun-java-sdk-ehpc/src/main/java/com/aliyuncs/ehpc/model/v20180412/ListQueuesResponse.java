@@ -63,6 +63,8 @@ public class ListQueuesResponse extends AcsResponse {
 
 		private String spotStrategy;
 
+		private String deploymentSetId;
+
 		private List<Instance> spotInstanceTypes;
 
 		private List<String> computeInstanceType;
@@ -129,6 +131,14 @@ public class ListQueuesResponse extends AcsResponse {
 
 		public void setSpotStrategy(String spotStrategy) {
 			this.spotStrategy = spotStrategy;
+		}
+
+		public String getDeploymentSetId() {
+			return this.deploymentSetId;
+		}
+
+		public void setDeploymentSetId(String deploymentSetId) {
+			this.deploymentSetId = deploymentSetId;
 		}
 
 		public List<Instance> getSpotInstanceTypes() {

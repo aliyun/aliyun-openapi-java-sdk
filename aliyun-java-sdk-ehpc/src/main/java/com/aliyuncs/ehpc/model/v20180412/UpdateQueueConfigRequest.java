@@ -25,6 +25,8 @@ import com.aliyuncs.ehpc.Endpoint;
 public class UpdateQueueConfigRequest extends RpcAcsRequest<UpdateQueueConfigResponse> {
 	   
 
+	private String deploymentSetId;
+
 	private String queueName;
 
 	private String clusterId;
@@ -39,6 +41,17 @@ public class UpdateQueueConfigRequest extends RpcAcsRequest<UpdateQueueConfigRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getDeploymentSetId() {
+		return this.deploymentSetId;
+	}
+
+	public void setDeploymentSetId(String deploymentSetId) {
+		this.deploymentSetId = deploymentSetId;
+		if(deploymentSetId != null){
+			putQueryParameter("DeploymentSetId", deploymentSetId);
+		}
 	}
 
 	public String getQueueName() {

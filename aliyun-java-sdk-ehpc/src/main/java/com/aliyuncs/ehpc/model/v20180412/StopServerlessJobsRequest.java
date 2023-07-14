@@ -15,6 +15,7 @@
 package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ehpc.Endpoint;
 
@@ -22,45 +23,19 @@ import com.aliyuncs.ehpc.Endpoint;
  * @author auto create
  * @version 
  */
-public class AddQueueRequest extends RpcAcsRequest<AddQueueResponse> {
+public class StopServerlessJobsRequest extends RpcAcsRequest<StopServerlessJobsResponse> {
 	   
-
-	private String deploymentSetId;
-
-	private String queueName;
 
 	private String clusterId;
 
-	private String networkInterfaceTrafficMode;
-	public AddQueueRequest() {
-		super("EHPC", "2018-04-12", "AddQueue");
-		setMethod(MethodType.GET);
+	private List<String> jobIds;
+	public StopServerlessJobsRequest() {
+		super("EHPC", "2018-04-12", "StopServerlessJobs");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getDeploymentSetId() {
-		return this.deploymentSetId;
-	}
-
-	public void setDeploymentSetId(String deploymentSetId) {
-		this.deploymentSetId = deploymentSetId;
-		if(deploymentSetId != null){
-			putQueryParameter("DeploymentSetId", deploymentSetId);
-		}
-	}
-
-	public String getQueueName() {
-		return this.queueName;
-	}
-
-	public void setQueueName(String queueName) {
-		this.queueName = queueName;
-		if(queueName != null){
-			putQueryParameter("QueueName", queueName);
-		}
 	}
 
 	public String getClusterId() {
@@ -74,20 +49,22 @@ public class AddQueueRequest extends RpcAcsRequest<AddQueueResponse> {
 		}
 	}
 
-	public String getNetworkInterfaceTrafficMode() {
-		return this.networkInterfaceTrafficMode;
+	public List<String> getJobIds() {
+		return this.jobIds;
 	}
 
-	public void setNetworkInterfaceTrafficMode(String networkInterfaceTrafficMode) {
-		this.networkInterfaceTrafficMode = networkInterfaceTrafficMode;
-		if(networkInterfaceTrafficMode != null){
-			putQueryParameter("NetworkInterfaceTrafficMode", networkInterfaceTrafficMode);
-		}
+	public void setJobIds(List<String> jobIds) {
+		this.jobIds = jobIds;	
+		if (jobIds != null) {
+			for (int depth1 = 0; depth1 < jobIds.size(); depth1++) {
+				putQueryParameter("JobIds." + (depth1 + 1) , jobIds.get(depth1));
+			}
+		}	
 	}
 
 	@Override
-	public Class<AddQueueResponse> getResponseClass() {
-		return AddQueueResponse.class;
+	public Class<StopServerlessJobsResponse> getResponseClass() {
+		return StopServerlessJobsResponse.class;
 	}
 
 }

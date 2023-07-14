@@ -42,6 +42,8 @@ public class CreateHybridClusterRequest extends RpcAcsRequest<CreateHybridCluste
 
 	private String password;
 
+	private String hybridClusterOpMode;
+
 	private WinAdPar winAdPar;
 
 	private Float computeSpotPriceLimit;
@@ -199,6 +201,17 @@ public class CreateHybridClusterRequest extends RpcAcsRequest<CreateHybridCluste
 		this.password = password;
 		if(password != null){
 			putQueryParameter("Password", password);
+		}
+	}
+
+	public String getHybridClusterOpMode() {
+		return this.hybridClusterOpMode;
+	}
+
+	public void setHybridClusterOpMode(String hybridClusterOpMode) {
+		this.hybridClusterOpMode = hybridClusterOpMode;
+		if(hybridClusterOpMode != null){
+			putQueryParameter("HybridClusterOpMode", hybridClusterOpMode);
 		}
 	}
 
@@ -404,6 +417,7 @@ public class CreateHybridClusterRequest extends RpcAcsRequest<CreateHybridCluste
 		this.openldapPar = openldapPar;	
 		if (openldapPar != null) {
 			
+				putQueryParameter("OpenldapPar.FallbackHomeDir" , openldapPar.getFallbackHomeDir());
 				putQueryParameter("OpenldapPar.BaseDn" , openldapPar.getBaseDn());
 				putQueryParameter("OpenldapPar.LdapServerIp" , openldapPar.getLdapServerIp());
 		}	
@@ -640,9 +654,19 @@ public class CreateHybridClusterRequest extends RpcAcsRequest<CreateHybridCluste
 
 	public static class OpenldapPar {
 
+		private String fallbackHomeDir;
+
 		private String baseDn;
 
 		private String ldapServerIp;
+
+		public String getFallbackHomeDir() {
+			return this.fallbackHomeDir;
+		}
+
+		public void setFallbackHomeDir(String fallbackHomeDir) {
+			this.fallbackHomeDir = fallbackHomeDir;
+		}
 
 		public String getBaseDn() {
 			return this.baseDn;

@@ -45,6 +45,8 @@ public class GetAutoScaleConfigResponseUnmarshaller {
 		getAutoScaleConfigResponse.setGrowRatio(_ctx.integerValue("GetAutoScaleConfigResponse.GrowRatio"));
 		getAutoScaleConfigResponse.setClusterId(_ctx.stringValue("GetAutoScaleConfigResponse.ClusterId"));
 		getAutoScaleConfigResponse.setUid(_ctx.stringValue("GetAutoScaleConfigResponse.Uid"));
+		getAutoScaleConfigResponse.setComputeEnableHt(_ctx.booleanValue("GetAutoScaleConfigResponse.ComputeEnableHt"));
+		getAutoScaleConfigResponse.setDnsConfig(_ctx.stringValue("GetAutoScaleConfigResponse.DnsConfig"));
 
 		List<QueueInfo> queues = new ArrayList<QueueInfo>();
 		for (int i = 0; i < _ctx.lengthValue("GetAutoScaleConfigResponse.Queues.Length"); i++) {
@@ -66,6 +68,7 @@ public class GetAutoScaleConfigResponseUnmarshaller {
 			queueInfo.setSpotPriceLimit(_ctx.floatValue("GetAutoScaleConfigResponse.Queues["+ i +"].SpotPriceLimit"));
 			queueInfo.setMaxNodesPerCycle(_ctx.longValue("GetAutoScaleConfigResponse.Queues["+ i +"].MaxNodesPerCycle"));
 			queueInfo.setMinNodesPerCycle(_ctx.longValue("GetAutoScaleConfigResponse.Queues["+ i +"].MinNodesPerCycle"));
+			queueInfo.setSortedByInventory(_ctx.booleanValue("GetAutoScaleConfigResponse.Queues["+ i +"].SortedByInventory"));
 
 			List<InstanceTypeInfo> instanceTypes = new ArrayList<InstanceTypeInfo>();
 			for (int j = 0; j < _ctx.lengthValue("GetAutoScaleConfigResponse.Queues["+ i +"].InstanceTypes.Length"); j++) {

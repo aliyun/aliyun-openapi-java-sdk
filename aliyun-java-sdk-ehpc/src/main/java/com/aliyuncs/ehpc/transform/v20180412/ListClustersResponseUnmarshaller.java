@@ -66,6 +66,7 @@ public class ListClustersResponseUnmarshaller {
 			clusterInfoSimple.setId(_ctx.stringValue("ListClustersResponse.Clusters["+ i +"].Id"));
 			clusterInfoSimple.setLocation(_ctx.stringValue("ListClustersResponse.Clusters["+ i +"].Location"));
 			clusterInfoSimple.setClientVersion(_ctx.stringValue("ListClustersResponse.Clusters["+ i +"].ClientVersion"));
+			clusterInfoSimple.setResourceGroupId(_ctx.stringValue("ListClustersResponse.Clusters["+ i +"].ResourceGroupId"));
 			clusterInfoSimple.setHasPlugin(_ctx.booleanValue("ListClustersResponse.Clusters["+ i +"].HasPlugin"));
 
 			Managers managers = new Managers();

@@ -48,6 +48,7 @@ public class UpdateClusterVolumesRequest extends RpcAcsRequest<UpdateClusterVolu
 			for (int depth1 = 0; depth1 < additionalVolumess.size(); depth1++) {
 				putQueryParameter("AdditionalVolumes." + (depth1 + 1) + ".VolumeType" , additionalVolumess.get(depth1).getVolumeType());
 				putQueryParameter("AdditionalVolumes." + (depth1 + 1) + ".VolumeProtocol" , additionalVolumess.get(depth1).getVolumeProtocol());
+				putQueryParameter("AdditionalVolumes." + (depth1 + 1) + ".VolumeMountOption" , additionalVolumess.get(depth1).getVolumeMountOption());
 				putQueryParameter("AdditionalVolumes." + (depth1 + 1) + ".LocalDirectory" , additionalVolumess.get(depth1).getLocalDirectory());
 				putQueryParameter("AdditionalVolumes." + (depth1 + 1) + ".RemoteDirectory" , additionalVolumess.get(depth1).getRemoteDirectory());
 				if (additionalVolumess.get(depth1).getRoless() != null) {
@@ -80,6 +81,8 @@ public class UpdateClusterVolumesRequest extends RpcAcsRequest<UpdateClusterVolu
 
 		private String volumeProtocol;
 
+		private String volumeMountOption;
+
 		private String localDirectory;
 
 		private String remoteDirectory;
@@ -108,6 +111,14 @@ public class UpdateClusterVolumesRequest extends RpcAcsRequest<UpdateClusterVolu
 
 		public void setVolumeProtocol(String volumeProtocol) {
 			this.volumeProtocol = volumeProtocol;
+		}
+
+		public String getVolumeMountOption() {
+			return this.volumeMountOption;
+		}
+
+		public void setVolumeMountOption(String volumeMountOption) {
+			this.volumeMountOption = volumeMountOption;
 		}
 
 		public String getLocalDirectory() {

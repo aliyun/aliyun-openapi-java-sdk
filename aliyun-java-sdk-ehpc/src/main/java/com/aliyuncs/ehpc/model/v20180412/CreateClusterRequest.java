@@ -28,11 +28,15 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 
 	private List<AdditionalVolumes> additionalVolumess;
 
+	private List<AddOns> addOnss;
+
 	private String ecsOrderManagerInstanceType;
 
 	private String keyPairName;
 
 	private String securityGroupName;
+
+	private Boolean withoutNas;
 
 	private String imageOwnerAlias;
 
@@ -112,6 +116,8 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 
 	private String systemDiskType;
 
+	private String deploymentSetId;
+
 	private String volumeProtocol;
 
 	private String clientVersion;
@@ -180,6 +186,25 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 		}	
 	}
 
+	public List<AddOns> getAddOnss() {
+		return this.addOnss;
+	}
+
+	public void setAddOnss(List<AddOns> addOnss) {
+		this.addOnss = addOnss;	
+		if (addOnss != null) {
+			for (int depth1 = 0; depth1 < addOnss.size(); depth1++) {
+				putQueryParameter("AddOns." + (depth1 + 1) + ".DeployMode" , addOnss.get(depth1).getDeployMode());
+				putQueryParameter("AddOns." + (depth1 + 1) + ".Port" , addOnss.get(depth1).getPort());
+				putQueryParameter("AddOns." + (depth1 + 1) + ".ConfigFile" , addOnss.get(depth1).getConfigFile());
+				putQueryParameter("AddOns." + (depth1 + 1) + ".DefaultStart" , addOnss.get(depth1).getDefaultStart());
+				putQueryParameter("AddOns." + (depth1 + 1) + ".Name" , addOnss.get(depth1).getName());
+				putQueryParameter("AddOns." + (depth1 + 1) + ".DBType" , addOnss.get(depth1).getDBType());
+				putQueryParameter("AddOns." + (depth1 + 1) + ".Version" , addOnss.get(depth1).getVersion());
+			}
+		}	
+	}
+
 	public String getEcsOrderManagerInstanceType() {
 		return this.ecsOrderManagerInstanceType;
 	}
@@ -210,6 +235,17 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 		this.securityGroupName = securityGroupName;
 		if(securityGroupName != null){
 			putQueryParameter("SecurityGroupName", securityGroupName);
+		}
+	}
+
+	public Boolean getWithoutNas() {
+		return this.withoutNas;
+	}
+
+	public void setWithoutNas(Boolean withoutNas) {
+		this.withoutNas = withoutNas;
+		if(withoutNas != null){
+			putQueryParameter("WithoutNas", withoutNas.toString());
 		}
 	}
 
@@ -650,6 +686,17 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 		}
 	}
 
+	public String getDeploymentSetId() {
+		return this.deploymentSetId;
+	}
+
+	public void setDeploymentSetId(String deploymentSetId) {
+		this.deploymentSetId = deploymentSetId;
+		if(deploymentSetId != null){
+			putQueryParameter("DeploymentSetId", deploymentSetId);
+		}
+	}
+
 	public String getVolumeProtocol() {
 		return this.volumeProtocol;
 	}
@@ -952,6 +999,79 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 			public void setName(String name) {
 				this.name = name;
 			}
+		}
+	}
+
+	public static class AddOns {
+
+		private String deployMode;
+
+		private Float port;
+
+		private String configFile;
+
+		private Boolean defaultStart;
+
+		private String name;
+
+		private String dBType;
+
+		private String version;
+
+		public String getDeployMode() {
+			return this.deployMode;
+		}
+
+		public void setDeployMode(String deployMode) {
+			this.deployMode = deployMode;
+		}
+
+		public Float getPort() {
+			return this.port;
+		}
+
+		public void setPort(Float port) {
+			this.port = port;
+		}
+
+		public String getConfigFile() {
+			return this.configFile;
+		}
+
+		public void setConfigFile(String configFile) {
+			this.configFile = configFile;
+		}
+
+		public Boolean getDefaultStart() {
+			return this.defaultStart;
+		}
+
+		public void setDefaultStart(Boolean defaultStart) {
+			this.defaultStart = defaultStart;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getDBType() {
+			return this.dBType;
+		}
+
+		public void setDBType(String dBType) {
+			this.dBType = dBType;
+		}
+
+		public String getVersion() {
+			return this.version;
+		}
+
+		public void setVersion(String version) {
+			this.version = version;
 		}
 	}
 

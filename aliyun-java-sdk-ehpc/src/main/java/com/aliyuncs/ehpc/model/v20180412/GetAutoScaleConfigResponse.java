@@ -59,6 +59,10 @@ public class GetAutoScaleConfigResponse extends AcsResponse {
 
 	private String uid;
 
+	private Boolean computeEnableHt;
+
+	private String dnsConfig;
+
 	private List<QueueInfo> queues;
 
 	public Integer getMaxNodesInCluster() {
@@ -197,6 +201,22 @@ public class GetAutoScaleConfigResponse extends AcsResponse {
 		this.uid = uid;
 	}
 
+	public Boolean getComputeEnableHt() {
+		return this.computeEnableHt;
+	}
+
+	public void setComputeEnableHt(Boolean computeEnableHt) {
+		this.computeEnableHt = computeEnableHt;
+	}
+
+	public String getDnsConfig() {
+		return this.dnsConfig;
+	}
+
+	public void setDnsConfig(String dnsConfig) {
+		this.dnsConfig = dnsConfig;
+	}
+
 	public List<QueueInfo> getQueues() {
 		return this.queues;
 	}
@@ -240,6 +260,8 @@ public class GetAutoScaleConfigResponse extends AcsResponse {
 		private Long maxNodesPerCycle;
 
 		private Long minNodesPerCycle;
+
+		private Boolean sortedByInventory;
 
 		private List<InstanceTypeInfo> instanceTypes;
 
@@ -379,6 +401,14 @@ public class GetAutoScaleConfigResponse extends AcsResponse {
 
 		public void setMinNodesPerCycle(Long minNodesPerCycle) {
 			this.minNodesPerCycle = minNodesPerCycle;
+		}
+
+		public Boolean getSortedByInventory() {
+			return this.sortedByInventory;
+		}
+
+		public void setSortedByInventory(Boolean sortedByInventory) {
+			this.sortedByInventory = sortedByInventory;
 		}
 
 		public List<InstanceTypeInfo> getInstanceTypes() {
