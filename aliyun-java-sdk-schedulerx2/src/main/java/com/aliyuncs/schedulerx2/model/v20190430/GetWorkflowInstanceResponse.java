@@ -194,6 +194,8 @@ public class GetWorkflowInstanceResponse extends AcsResponse {
 
 				private Integer status;
 
+				private String jobName;
+
 				public Long getJobInstanceId() {
 					return this.jobInstanceId;
 				}
@@ -272,6 +274,14 @@ public class GetWorkflowInstanceResponse extends AcsResponse {
 
 				public void setStatus(Integer status) {
 					this.status = status;
+				}
+
+				public String getJobName() {
+					return this.jobName;
+				}
+
+				public void setJobName(String jobName) {
+					this.jobName = jobName;
 				}
 			}
 

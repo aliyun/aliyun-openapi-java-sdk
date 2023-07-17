@@ -60,6 +60,7 @@ public class GetWorkflowInstanceResponseUnmarshaller {
 			node.setResult(_ctx.stringValue("GetWorkflowInstanceResponse.Data.WfInstanceDag.Nodes["+ i +"].Result"));
 			node.setAttempt(_ctx.integerValue("GetWorkflowInstanceResponse.Data.WfInstanceDag.Nodes["+ i +"].Attempt"));
 			node.setStatus(_ctx.integerValue("GetWorkflowInstanceResponse.Data.WfInstanceDag.Nodes["+ i +"].Status"));
+			node.setJobName(_ctx.stringValue("GetWorkflowInstanceResponse.Data.WfInstanceDag.Nodes["+ i +"].JobName"));
 
 			nodes.add(node);
 		}
