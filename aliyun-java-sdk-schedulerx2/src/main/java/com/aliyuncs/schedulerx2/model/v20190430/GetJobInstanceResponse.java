@@ -114,6 +114,12 @@ public class GetJobInstanceResponse extends AcsResponse {
 
 			private String workAddr;
 
+			private String parameters;
+
+			private String jobName;
+
+			private String traceId;
+
 			public Integer getStatus() {
 				return this.status;
 			}
@@ -216,6 +222,30 @@ public class GetJobInstanceResponse extends AcsResponse {
 
 			public void setWorkAddr(String workAddr) {
 				this.workAddr = workAddr;
+			}
+
+			public String getParameters() {
+				return this.parameters;
+			}
+
+			public void setParameters(String parameters) {
+				this.parameters = parameters;
+			}
+
+			public String getJobName() {
+				return this.jobName;
+			}
+
+			public void setJobName(String jobName) {
+				this.jobName = jobName;
+			}
+
+			public String getTraceId() {
+				return this.traceId;
+			}
+
+			public void setTraceId(String traceId) {
+				this.traceId = traceId;
 			}
 		}
 	}

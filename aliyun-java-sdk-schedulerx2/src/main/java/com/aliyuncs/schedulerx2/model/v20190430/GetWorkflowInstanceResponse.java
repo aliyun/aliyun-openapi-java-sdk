@@ -192,6 +192,8 @@ public class GetWorkflowInstanceResponse extends AcsResponse {
 
 				private Integer attempt;
 
+				private Integer status;
+
 				public Long getJobInstanceId() {
 					return this.jobInstanceId;
 				}
@@ -262,6 +264,14 @@ public class GetWorkflowInstanceResponse extends AcsResponse {
 
 				public void setAttempt(Integer attempt) {
 					this.attempt = attempt;
+				}
+
+				public Integer getStatus() {
+					return this.status;
+				}
+
+				public void setStatus(Integer status) {
+					this.status = status;
 				}
 			}
 
