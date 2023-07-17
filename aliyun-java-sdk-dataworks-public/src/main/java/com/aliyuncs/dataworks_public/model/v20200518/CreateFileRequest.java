@@ -51,6 +51,8 @@ public class CreateFileRequest extends RpcAcsRequest<CreateFileResponse> {
 
 	private String inputList;
 
+	private Boolean createFolderIfNotExists;
+
 	private String rerunMode;
 
 	private String connectionName;
@@ -233,6 +235,17 @@ public class CreateFileRequest extends RpcAcsRequest<CreateFileResponse> {
 		this.inputList = inputList;
 		if(inputList != null){
 			putBodyParameter("InputList", inputList);
+		}
+	}
+
+	public Boolean getCreateFolderIfNotExists() {
+		return this.createFolderIfNotExists;
+	}
+
+	public void setCreateFolderIfNotExists(Boolean createFolderIfNotExists) {
+		this.createFolderIfNotExists = createFolderIfNotExists;
+		if(createFolderIfNotExists != null){
+			putBodyParameter("CreateFolderIfNotExists", createFolderIfNotExists.toString());
 		}
 	}
 
