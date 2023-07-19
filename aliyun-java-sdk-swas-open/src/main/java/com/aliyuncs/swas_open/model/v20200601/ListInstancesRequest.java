@@ -33,6 +33,8 @@ public class ListInstancesRequest extends RpcAcsRequest<ListInstancesResponse> {
 	private String publicIpAddresses;
 
 	private String chargeType;
+
+	private String status;
 	public ListInstancesRequest() {
 		super("SWAS-OPEN", "2020-06-01", "ListInstances", "SWAS-OPEN");
 		setMethod(MethodType.POST);
@@ -90,6 +92,17 @@ public class ListInstancesRequest extends RpcAcsRequest<ListInstancesResponse> {
 		this.chargeType = chargeType;
 		if(chargeType != null){
 			putQueryParameter("ChargeType", chargeType);
+		}
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status);
 		}
 	}
 
