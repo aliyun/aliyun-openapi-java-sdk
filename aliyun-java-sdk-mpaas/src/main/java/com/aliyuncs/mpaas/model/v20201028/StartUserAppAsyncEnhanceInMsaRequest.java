@@ -49,6 +49,8 @@ public class StartUserAppAsyncEnhanceInMsaRequest extends RpcAcsRequest<StartUse
 
 	private Integer packageTampered;
 
+	private Boolean useAShield;
+
 	private String soFileList;
 
 	private Integer memoryDump;
@@ -200,6 +202,17 @@ public class StartUserAppAsyncEnhanceInMsaRequest extends RpcAcsRequest<StartUse
 		this.packageTampered = packageTampered;
 		if(packageTampered != null){
 			putBodyParameter("PackageTampered", packageTampered.toString());
+		}
+	}
+
+	public Boolean getUseAShield() {
+		return this.useAShield;
+	}
+
+	public void setUseAShield(Boolean useAShield) {
+		this.useAShield = useAShield;
+		if(useAShield != null){
+			putBodyParameter("UseAShield", useAShield.toString());
 		}
 	}
 

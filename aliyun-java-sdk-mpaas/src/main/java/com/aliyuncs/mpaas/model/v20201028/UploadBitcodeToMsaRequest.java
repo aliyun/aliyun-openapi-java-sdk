@@ -22,24 +22,22 @@ import com.aliyuncs.mpaas.Endpoint;
  * @author auto create
  * @version 
  */
-public class ExportMappCenterAppConfigRequest extends RpcAcsRequest<ExportMappCenterAppConfigResponse> {
+public class UploadBitcodeToMsaRequest extends RpcAcsRequest<UploadBitcodeToMsaResponse> {
 	   
 
-	private String systemType;
+	private String tenantId;
 
-	private Boolean onexFlag;
+	private String bitcode;
 
-	private String identifier;
+	private String codeVersion;
 
-	private String certRsaBase64;
+	private String license;
 
 	private String appId;
 
-	private String apkFileUrl;
-
 	private String workspaceId;
-	public ExportMappCenterAppConfigRequest() {
-		super("mPaaS", "2020-10-28", "ExportMappCenterAppConfig");
+	public UploadBitcodeToMsaRequest() {
+		super("mPaaS", "2020-10-28", "UploadBitcodeToMsa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -47,47 +45,47 @@ public class ExportMappCenterAppConfigRequest extends RpcAcsRequest<ExportMappCe
 		} catch (Exception e) {}
 	}
 
-	public String getSystemType() {
-		return this.systemType;
+	public String getTenantId() {
+		return this.tenantId;
 	}
 
-	public void setSystemType(String systemType) {
-		this.systemType = systemType;
-		if(systemType != null){
-			putBodyParameter("SystemType", systemType);
+	public void setTenantId(String tenantId) {
+		this.tenantId = tenantId;
+		if(tenantId != null){
+			putBodyParameter("TenantId", tenantId);
 		}
 	}
 
-	public Boolean getOnexFlag() {
-		return this.onexFlag;
+	public String getBitcode() {
+		return this.bitcode;
 	}
 
-	public void setOnexFlag(Boolean onexFlag) {
-		this.onexFlag = onexFlag;
-		if(onexFlag != null){
-			putBodyParameter("OnexFlag", onexFlag.toString());
+	public void setBitcode(String bitcode) {
+		this.bitcode = bitcode;
+		if(bitcode != null){
+			putBodyParameter("Bitcode", bitcode);
 		}
 	}
 
-	public String getIdentifier() {
-		return this.identifier;
+	public String getCodeVersion() {
+		return this.codeVersion;
 	}
 
-	public void setIdentifier(String identifier) {
-		this.identifier = identifier;
-		if(identifier != null){
-			putBodyParameter("Identifier", identifier);
+	public void setCodeVersion(String codeVersion) {
+		this.codeVersion = codeVersion;
+		if(codeVersion != null){
+			putBodyParameter("CodeVersion", codeVersion);
 		}
 	}
 
-	public String getCertRsaBase64() {
-		return this.certRsaBase64;
+	public String getLicense() {
+		return this.license;
 	}
 
-	public void setCertRsaBase64(String certRsaBase64) {
-		this.certRsaBase64 = certRsaBase64;
-		if(certRsaBase64 != null){
-			putBodyParameter("CertRsaBase64", certRsaBase64);
+	public void setLicense(String license) {
+		this.license = license;
+		if(license != null){
+			putBodyParameter("License", license);
 		}
 	}
 
@@ -99,17 +97,6 @@ public class ExportMappCenterAppConfigRequest extends RpcAcsRequest<ExportMappCe
 		this.appId = appId;
 		if(appId != null){
 			putBodyParameter("AppId", appId);
-		}
-	}
-
-	public String getApkFileUrl() {
-		return this.apkFileUrl;
-	}
-
-	public void setApkFileUrl(String apkFileUrl) {
-		this.apkFileUrl = apkFileUrl;
-		if(apkFileUrl != null){
-			putBodyParameter("ApkFileUrl", apkFileUrl);
 		}
 	}
 
@@ -125,8 +112,8 @@ public class ExportMappCenterAppConfigRequest extends RpcAcsRequest<ExportMappCe
 	}
 
 	@Override
-	public Class<ExportMappCenterAppConfigResponse> getResponseClass() {
-		return ExportMappCenterAppConfigResponse.class;
+	public Class<UploadBitcodeToMsaResponse> getResponseClass() {
+		return UploadBitcodeToMsaResponse.class;
 	}
 
 }
