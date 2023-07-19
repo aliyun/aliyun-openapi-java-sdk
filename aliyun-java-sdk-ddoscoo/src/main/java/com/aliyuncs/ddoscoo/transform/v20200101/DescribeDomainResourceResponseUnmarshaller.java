@@ -49,6 +49,7 @@ public class DescribeDomainResourceResponseUnmarshaller {
 			webRule.setCertName(_ctx.stringValue("DescribeDomainResourceResponse.WebRules["+ i +"].CertName"));
 			webRule.setPolicyMode(_ctx.stringValue("DescribeDomainResourceResponse.WebRules["+ i +"].PolicyMode"));
 			webRule.setCname(_ctx.stringValue("DescribeDomainResourceResponse.WebRules["+ i +"].Cname"));
+			webRule.setOcspEnabled(_ctx.booleanValue("DescribeDomainResourceResponse.WebRules["+ i +"].OcspEnabled"));
 			webRule.setHttp2Enable(_ctx.booleanValue("DescribeDomainResourceResponse.WebRules["+ i +"].Http2Enable"));
 			webRule.setHttps2HttpEnable(_ctx.booleanValue("DescribeDomainResourceResponse.WebRules["+ i +"].Https2HttpEnable"));
 

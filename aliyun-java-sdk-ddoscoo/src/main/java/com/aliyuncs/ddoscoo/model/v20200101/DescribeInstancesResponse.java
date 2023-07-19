@@ -83,6 +83,8 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private Long isFirstOpenQps;
 
+		private String ip;
+
 		public Integer getStatus() {
 			return this.status;
 		}
@@ -185,6 +187,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		public void setIsFirstOpenQps(Long isFirstOpenQps) {
 			this.isFirstOpenQps = isFirstOpenQps;
+		}
+
+		public String getIp() {
+			return this.ip;
+		}
+
+		public void setIp(String ip) {
+			this.ip = ip;
 		}
 	}
 

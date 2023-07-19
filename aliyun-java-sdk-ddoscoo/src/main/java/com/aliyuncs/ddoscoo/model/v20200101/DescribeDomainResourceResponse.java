@@ -89,6 +89,8 @@ public class DescribeDomainResourceResponse extends AcsResponse {
 
 		private String cname;
 
+		private Boolean ocspEnabled;
+
 		private Boolean http2Enable;
 
 		private Boolean https2HttpEnable;
@@ -231,6 +233,14 @@ public class DescribeDomainResourceResponse extends AcsResponse {
 
 		public void setCname(String cname) {
 			this.cname = cname;
+		}
+
+		public Boolean getOcspEnabled() {
+			return this.ocspEnabled;
+		}
+
+		public void setOcspEnabled(Boolean ocspEnabled) {
+			this.ocspEnabled = ocspEnabled;
 		}
 
 		public Boolean getHttp2Enable() {

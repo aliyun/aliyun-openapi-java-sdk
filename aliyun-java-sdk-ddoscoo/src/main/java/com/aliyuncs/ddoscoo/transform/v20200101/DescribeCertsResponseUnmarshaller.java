@@ -38,6 +38,7 @@ public class DescribeCertsResponseUnmarshaller {
 			certItem.setName(_ctx.stringValue("DescribeCertsResponse.Certs["+ i +"].Name"));
 			certItem.setCommon(_ctx.stringValue("DescribeCertsResponse.Certs["+ i +"].Common"));
 			certItem.setId(_ctx.integerValue("DescribeCertsResponse.Certs["+ i +"].Id"));
+			certItem.setCertIdentifier(_ctx.stringValue("DescribeCertsResponse.Certs["+ i +"].CertIdentifier"));
 
 			certs.add(certItem);
 		}

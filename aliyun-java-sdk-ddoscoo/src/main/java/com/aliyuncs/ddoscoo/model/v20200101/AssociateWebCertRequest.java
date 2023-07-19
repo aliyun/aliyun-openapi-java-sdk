@@ -33,7 +33,11 @@ public class AssociateWebCertRequest extends RpcAcsRequest<AssociateWebCertRespo
 
 	private String key;
 
+	private String certRegion;
+
 	private String certName;
+
+	private String certIdentifier;
 
 	private String domain;
 	public AssociateWebCertRequest() {
@@ -89,6 +93,17 @@ public class AssociateWebCertRequest extends RpcAcsRequest<AssociateWebCertRespo
 		}
 	}
 
+	public String getCertRegion() {
+		return this.certRegion;
+	}
+
+	public void setCertRegion(String certRegion) {
+		this.certRegion = certRegion;
+		if(certRegion != null){
+			putQueryParameter("CertRegion", certRegion);
+		}
+	}
+
 	public String getCertName() {
 		return this.certName;
 	}
@@ -97,6 +112,17 @@ public class AssociateWebCertRequest extends RpcAcsRequest<AssociateWebCertRespo
 		this.certName = certName;
 		if(certName != null){
 			putQueryParameter("CertName", certName);
+		}
+	}
+
+	public String getCertIdentifier() {
+		return this.certIdentifier;
+	}
+
+	public void setCertIdentifier(String certIdentifier) {
+		this.certIdentifier = certIdentifier;
+		if(certIdentifier != null){
+			putQueryParameter("CertIdentifier", certIdentifier);
 		}
 	}
 
