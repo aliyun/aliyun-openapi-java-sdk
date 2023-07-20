@@ -57,78 +57,54 @@ public class DescribeServerlessJobsResponse extends AcsResponse {
 
 	public static class JobInfo {
 
-		private Long endTime;
+		private String jobId;
 
-		private String id;
+		private String jobName;
 
-		private Boolean isArrayJob;
-
-		private Long lastModifyTime;
-
-		private String name;
-
-		private String owner;
+		private String state;
 
 		private Long priority;
 
 		private String queue;
 
-		private Long startTime;
-
-		private String state;
+		private String user;
 
 		private Long submitTime;
+
+		private Long startTime;
+
+		private Long endTime;
+
+		private Long lastModifyTime;
+
+		private Boolean isArrayJob;
 
 		private List<ContainerGroup> containerGroups;
 
 		private ArrayProperties arrayProperties;
 
-		public Long getEndTime() {
-			return this.endTime;
+		public String getJobId() {
+			return this.jobId;
 		}
 
-		public void setEndTime(Long endTime) {
-			this.endTime = endTime;
+		public void setJobId(String jobId) {
+			this.jobId = jobId;
 		}
 
-		public String getId() {
-			return this.id;
+		public String getJobName() {
+			return this.jobName;
 		}
 
-		public void setId(String id) {
-			this.id = id;
+		public void setJobName(String jobName) {
+			this.jobName = jobName;
 		}
 
-		public Boolean getIsArrayJob() {
-			return this.isArrayJob;
+		public String getState() {
+			return this.state;
 		}
 
-		public void setIsArrayJob(Boolean isArrayJob) {
-			this.isArrayJob = isArrayJob;
-		}
-
-		public Long getLastModifyTime() {
-			return this.lastModifyTime;
-		}
-
-		public void setLastModifyTime(Long lastModifyTime) {
-			this.lastModifyTime = lastModifyTime;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getOwner() {
-			return this.owner;
-		}
-
-		public void setOwner(String owner) {
-			this.owner = owner;
+		public void setState(String state) {
+			this.state = state;
 		}
 
 		public Long getPriority() {
@@ -147,20 +123,12 @@ public class DescribeServerlessJobsResponse extends AcsResponse {
 			this.queue = queue;
 		}
 
-		public Long getStartTime() {
-			return this.startTime;
+		public String getUser() {
+			return this.user;
 		}
 
-		public void setStartTime(Long startTime) {
-			this.startTime = startTime;
-		}
-
-		public String getState() {
-			return this.state;
-		}
-
-		public void setState(String state) {
-			this.state = state;
+		public void setUser(String user) {
+			this.user = user;
 		}
 
 		public Long getSubmitTime() {
@@ -169,6 +137,38 @@ public class DescribeServerlessJobsResponse extends AcsResponse {
 
 		public void setSubmitTime(Long submitTime) {
 			this.submitTime = submitTime;
+		}
+
+		public Long getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(Long startTime) {
+			this.startTime = startTime;
+		}
+
+		public Long getEndTime() {
+			return this.endTime;
+		}
+
+		public void setEndTime(Long endTime) {
+			this.endTime = endTime;
+		}
+
+		public Long getLastModifyTime() {
+			return this.lastModifyTime;
+		}
+
+		public void setLastModifyTime(Long lastModifyTime) {
+			this.lastModifyTime = lastModifyTime;
+		}
+
+		public Boolean getIsArrayJob() {
+			return this.isArrayJob;
+		}
+
+		public void setIsArrayJob(Boolean isArrayJob) {
+			this.isArrayJob = isArrayJob;
 		}
 
 		public List<ContainerGroup> getContainerGroups() {
@@ -193,9 +193,25 @@ public class DescribeServerlessJobsResponse extends AcsResponse {
 
 			private String containerGroupName;
 
+			private String status;
+
+			private String instanceType;
+
+			private String spotStrategy;
+
+			private Float spotPriceLimit;
+
 			private Float cpu;
 
+			private Float memory;
+
 			private String creationTime;
+
+			private String succeededTime;
+
+			private String expiredTime;
+
+			private String failedTime;
 
 			private Long discount;
 
@@ -203,19 +219,11 @@ public class DescribeServerlessJobsResponse extends AcsResponse {
 
 			private Long ephemeralStorage;
 
-			private String expiredTime;
-
-			private String failedTime;
-
-			private String instanceType;
-
 			private String internetIp;
 
 			private String intranetIp;
 
 			private String ipv6Address;
-
-			private Float memory;
 
 			private String ramRoleName;
 
@@ -226,14 +234,6 @@ public class DescribeServerlessJobsResponse extends AcsResponse {
 			private String restartPolicy;
 
 			private String securityGroupId;
-
-			private Float spotPriceLimit;
-
-			private String spotStrategy;
-
-			private String status;
-
-			private String succeededTime;
 
 			private String tenantEniInstanceId;
 
@@ -251,6 +251,8 @@ public class DescribeServerlessJobsResponse extends AcsResponse {
 
 			private List<Container> containers;
 
+			private List<Volume> volumes;
+
 			private List<Event> events;
 
 			private List<HostAlias> hostAliases;
@@ -258,8 +260,6 @@ public class DescribeServerlessJobsResponse extends AcsResponse {
 			private List<InitContainer> initContainers;
 
 			private List<Tag> tags;
-
-			private List<Volume> volumes;
 
 			private DnsConfig dnsConfig;
 
@@ -281,6 +281,38 @@ public class DescribeServerlessJobsResponse extends AcsResponse {
 				this.containerGroupName = containerGroupName;
 			}
 
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
+			public String getInstanceType() {
+				return this.instanceType;
+			}
+
+			public void setInstanceType(String instanceType) {
+				this.instanceType = instanceType;
+			}
+
+			public String getSpotStrategy() {
+				return this.spotStrategy;
+			}
+
+			public void setSpotStrategy(String spotStrategy) {
+				this.spotStrategy = spotStrategy;
+			}
+
+			public Float getSpotPriceLimit() {
+				return this.spotPriceLimit;
+			}
+
+			public void setSpotPriceLimit(Float spotPriceLimit) {
+				this.spotPriceLimit = spotPriceLimit;
+			}
+
 			public Float getCpu() {
 				return this.cpu;
 			}
@@ -289,12 +321,44 @@ public class DescribeServerlessJobsResponse extends AcsResponse {
 				this.cpu = cpu;
 			}
 
+			public Float getMemory() {
+				return this.memory;
+			}
+
+			public void setMemory(Float memory) {
+				this.memory = memory;
+			}
+
 			public String getCreationTime() {
 				return this.creationTime;
 			}
 
 			public void setCreationTime(String creationTime) {
 				this.creationTime = creationTime;
+			}
+
+			public String getSucceededTime() {
+				return this.succeededTime;
+			}
+
+			public void setSucceededTime(String succeededTime) {
+				this.succeededTime = succeededTime;
+			}
+
+			public String getExpiredTime() {
+				return this.expiredTime;
+			}
+
+			public void setExpiredTime(String expiredTime) {
+				this.expiredTime = expiredTime;
+			}
+
+			public String getFailedTime() {
+				return this.failedTime;
+			}
+
+			public void setFailedTime(String failedTime) {
+				this.failedTime = failedTime;
 			}
 
 			public Long getDiscount() {
@@ -321,30 +385,6 @@ public class DescribeServerlessJobsResponse extends AcsResponse {
 				this.ephemeralStorage = ephemeralStorage;
 			}
 
-			public String getExpiredTime() {
-				return this.expiredTime;
-			}
-
-			public void setExpiredTime(String expiredTime) {
-				this.expiredTime = expiredTime;
-			}
-
-			public String getFailedTime() {
-				return this.failedTime;
-			}
-
-			public void setFailedTime(String failedTime) {
-				this.failedTime = failedTime;
-			}
-
-			public String getInstanceType() {
-				return this.instanceType;
-			}
-
-			public void setInstanceType(String instanceType) {
-				this.instanceType = instanceType;
-			}
-
 			public String getInternetIp() {
 				return this.internetIp;
 			}
@@ -367,14 +407,6 @@ public class DescribeServerlessJobsResponse extends AcsResponse {
 
 			public void setIpv6Address(String ipv6Address) {
 				this.ipv6Address = ipv6Address;
-			}
-
-			public Float getMemory() {
-				return this.memory;
-			}
-
-			public void setMemory(Float memory) {
-				this.memory = memory;
 			}
 
 			public String getRamRoleName() {
@@ -415,38 +447,6 @@ public class DescribeServerlessJobsResponse extends AcsResponse {
 
 			public void setSecurityGroupId(String securityGroupId) {
 				this.securityGroupId = securityGroupId;
-			}
-
-			public Float getSpotPriceLimit() {
-				return this.spotPriceLimit;
-			}
-
-			public void setSpotPriceLimit(Float spotPriceLimit) {
-				this.spotPriceLimit = spotPriceLimit;
-			}
-
-			public String getSpotStrategy() {
-				return this.spotStrategy;
-			}
-
-			public void setSpotStrategy(String spotStrategy) {
-				this.spotStrategy = spotStrategy;
-			}
-
-			public String getStatus() {
-				return this.status;
-			}
-
-			public void setStatus(String status) {
-				this.status = status;
-			}
-
-			public String getSucceededTime() {
-				return this.succeededTime;
-			}
-
-			public void setSucceededTime(String succeededTime) {
-				this.succeededTime = succeededTime;
 			}
 
 			public String getTenantEniInstanceId() {
@@ -513,6 +513,14 @@ public class DescribeServerlessJobsResponse extends AcsResponse {
 				this.containers = containers;
 			}
 
+			public List<Volume> getVolumes() {
+				return this.volumes;
+			}
+
+			public void setVolumes(List<Volume> volumes) {
+				this.volumes = volumes;
+			}
+
 			public List<Event> getEvents() {
 				return this.events;
 			}
@@ -543,14 +551,6 @@ public class DescribeServerlessJobsResponse extends AcsResponse {
 
 			public void setTags(List<Tag> tags) {
 				this.tags = tags;
-			}
-
-			public List<Volume> getVolumes() {
-				return this.volumes;
-			}
-
-			public void setVolumes(List<Volume> volumes) {
-				this.volumes = volumes;
 			}
 
 			public DnsConfig getDnsConfig() {
@@ -1417,6 +1417,162 @@ public class DescribeServerlessJobsResponse extends AcsResponse {
 				}
 			}
 
+			public static class Volume {
+
+				private String diskVolumeDiskId;
+
+				private String diskVolumeFsType;
+
+				private String emptyDirVolumeMedium;
+
+				private String emptyDirVolumeSizeLimit;
+
+				private String flexVolumeDriver;
+
+				private String flexVolumeFsType;
+
+				private String flexVolumeOptions;
+
+				private String nFSVolumePath;
+
+				private Boolean nFSVolumeReadOnly;
+
+				private String nFSVolumeServer;
+
+				private String name;
+
+				private String type;
+
+				private List<ConfigFileVolumeConfigFileToPath> configFileVolumeConfigFileToPaths;
+
+				public String getDiskVolumeDiskId() {
+					return this.diskVolumeDiskId;
+				}
+
+				public void setDiskVolumeDiskId(String diskVolumeDiskId) {
+					this.diskVolumeDiskId = diskVolumeDiskId;
+				}
+
+				public String getDiskVolumeFsType() {
+					return this.diskVolumeFsType;
+				}
+
+				public void setDiskVolumeFsType(String diskVolumeFsType) {
+					this.diskVolumeFsType = diskVolumeFsType;
+				}
+
+				public String getEmptyDirVolumeMedium() {
+					return this.emptyDirVolumeMedium;
+				}
+
+				public void setEmptyDirVolumeMedium(String emptyDirVolumeMedium) {
+					this.emptyDirVolumeMedium = emptyDirVolumeMedium;
+				}
+
+				public String getEmptyDirVolumeSizeLimit() {
+					return this.emptyDirVolumeSizeLimit;
+				}
+
+				public void setEmptyDirVolumeSizeLimit(String emptyDirVolumeSizeLimit) {
+					this.emptyDirVolumeSizeLimit = emptyDirVolumeSizeLimit;
+				}
+
+				public String getFlexVolumeDriver() {
+					return this.flexVolumeDriver;
+				}
+
+				public void setFlexVolumeDriver(String flexVolumeDriver) {
+					this.flexVolumeDriver = flexVolumeDriver;
+				}
+
+				public String getFlexVolumeFsType() {
+					return this.flexVolumeFsType;
+				}
+
+				public void setFlexVolumeFsType(String flexVolumeFsType) {
+					this.flexVolumeFsType = flexVolumeFsType;
+				}
+
+				public String getFlexVolumeOptions() {
+					return this.flexVolumeOptions;
+				}
+
+				public void setFlexVolumeOptions(String flexVolumeOptions) {
+					this.flexVolumeOptions = flexVolumeOptions;
+				}
+
+				public String getNFSVolumePath() {
+					return this.nFSVolumePath;
+				}
+
+				public void setNFSVolumePath(String nFSVolumePath) {
+					this.nFSVolumePath = nFSVolumePath;
+				}
+
+				public Boolean getNFSVolumeReadOnly() {
+					return this.nFSVolumeReadOnly;
+				}
+
+				public void setNFSVolumeReadOnly(Boolean nFSVolumeReadOnly) {
+					this.nFSVolumeReadOnly = nFSVolumeReadOnly;
+				}
+
+				public String getNFSVolumeServer() {
+					return this.nFSVolumeServer;
+				}
+
+				public void setNFSVolumeServer(String nFSVolumeServer) {
+					this.nFSVolumeServer = nFSVolumeServer;
+				}
+
+				public String getName() {
+					return this.name;
+				}
+
+				public void setName(String name) {
+					this.name = name;
+				}
+
+				public String getType() {
+					return this.type;
+				}
+
+				public void setType(String type) {
+					this.type = type;
+				}
+
+				public List<ConfigFileVolumeConfigFileToPath> getConfigFileVolumeConfigFileToPaths() {
+					return this.configFileVolumeConfigFileToPaths;
+				}
+
+				public void setConfigFileVolumeConfigFileToPaths(List<ConfigFileVolumeConfigFileToPath> configFileVolumeConfigFileToPaths) {
+					this.configFileVolumeConfigFileToPaths = configFileVolumeConfigFileToPaths;
+				}
+
+				public static class ConfigFileVolumeConfigFileToPath {
+
+					private String content;
+
+					private String path;
+
+					public String getContent() {
+						return this.content;
+					}
+
+					public void setContent(String content) {
+						this.content = content;
+					}
+
+					public String getPath() {
+						return this.path;
+					}
+
+					public void setPath(String path) {
+						this.path = path;
+					}
+				}
+			}
+
 			public static class Event {
 
 				private Integer count;
@@ -2043,162 +2199,6 @@ public class DescribeServerlessJobsResponse extends AcsResponse {
 
 				public void setValue(String value) {
 					this.value = value;
-				}
-			}
-
-			public static class Volume {
-
-				private String diskVolumeDiskId;
-
-				private String diskVolumeFsType;
-
-				private String emptyDirVolumeMedium;
-
-				private String emptyDirVolumeSizeLimit;
-
-				private String flexVolumeDriver;
-
-				private String flexVolumeFsType;
-
-				private String flexVolumeOptions;
-
-				private String nFSVolumePath;
-
-				private Boolean nFSVolumeReadOnly;
-
-				private String nFSVolumeServer;
-
-				private String name;
-
-				private String type;
-
-				private List<ConfigFileVolumeConfigFileToPath> configFileVolumeConfigFileToPaths;
-
-				public String getDiskVolumeDiskId() {
-					return this.diskVolumeDiskId;
-				}
-
-				public void setDiskVolumeDiskId(String diskVolumeDiskId) {
-					this.diskVolumeDiskId = diskVolumeDiskId;
-				}
-
-				public String getDiskVolumeFsType() {
-					return this.diskVolumeFsType;
-				}
-
-				public void setDiskVolumeFsType(String diskVolumeFsType) {
-					this.diskVolumeFsType = diskVolumeFsType;
-				}
-
-				public String getEmptyDirVolumeMedium() {
-					return this.emptyDirVolumeMedium;
-				}
-
-				public void setEmptyDirVolumeMedium(String emptyDirVolumeMedium) {
-					this.emptyDirVolumeMedium = emptyDirVolumeMedium;
-				}
-
-				public String getEmptyDirVolumeSizeLimit() {
-					return this.emptyDirVolumeSizeLimit;
-				}
-
-				public void setEmptyDirVolumeSizeLimit(String emptyDirVolumeSizeLimit) {
-					this.emptyDirVolumeSizeLimit = emptyDirVolumeSizeLimit;
-				}
-
-				public String getFlexVolumeDriver() {
-					return this.flexVolumeDriver;
-				}
-
-				public void setFlexVolumeDriver(String flexVolumeDriver) {
-					this.flexVolumeDriver = flexVolumeDriver;
-				}
-
-				public String getFlexVolumeFsType() {
-					return this.flexVolumeFsType;
-				}
-
-				public void setFlexVolumeFsType(String flexVolumeFsType) {
-					this.flexVolumeFsType = flexVolumeFsType;
-				}
-
-				public String getFlexVolumeOptions() {
-					return this.flexVolumeOptions;
-				}
-
-				public void setFlexVolumeOptions(String flexVolumeOptions) {
-					this.flexVolumeOptions = flexVolumeOptions;
-				}
-
-				public String getNFSVolumePath() {
-					return this.nFSVolumePath;
-				}
-
-				public void setNFSVolumePath(String nFSVolumePath) {
-					this.nFSVolumePath = nFSVolumePath;
-				}
-
-				public Boolean getNFSVolumeReadOnly() {
-					return this.nFSVolumeReadOnly;
-				}
-
-				public void setNFSVolumeReadOnly(Boolean nFSVolumeReadOnly) {
-					this.nFSVolumeReadOnly = nFSVolumeReadOnly;
-				}
-
-				public String getNFSVolumeServer() {
-					return this.nFSVolumeServer;
-				}
-
-				public void setNFSVolumeServer(String nFSVolumeServer) {
-					this.nFSVolumeServer = nFSVolumeServer;
-				}
-
-				public String getName() {
-					return this.name;
-				}
-
-				public void setName(String name) {
-					this.name = name;
-				}
-
-				public String getType() {
-					return this.type;
-				}
-
-				public void setType(String type) {
-					this.type = type;
-				}
-
-				public List<ConfigFileVolumeConfigFileToPath> getConfigFileVolumeConfigFileToPaths() {
-					return this.configFileVolumeConfigFileToPaths;
-				}
-
-				public void setConfigFileVolumeConfigFileToPaths(List<ConfigFileVolumeConfigFileToPath> configFileVolumeConfigFileToPaths) {
-					this.configFileVolumeConfigFileToPaths = configFileVolumeConfigFileToPaths;
-				}
-
-				public static class ConfigFileVolumeConfigFileToPath {
-
-					private String content;
-
-					private String path;
-
-					public String getContent() {
-						return this.content;
-					}
-
-					public void setContent(String content) {
-						this.content = content;
-					}
-
-					public String getPath() {
-						return this.path;
-					}
-
-					public void setPath(String path) {
-						this.path = path;
-					}
 				}
 			}
 

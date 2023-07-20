@@ -77,15 +77,17 @@ public class ListServerlessJobsResponse extends AcsResponse {
 
 	public static class JobInfo {
 
-		private String id;
+		private String jobId;
 
-		private String name;
-
-		private String owner;
-
-		private Boolean isArrayJob;
+		private String jobName;
 
 		private String state;
+
+		private String priority;
+
+		private String queue;
+
+		private String user;
 
 		private String submitTime;
 
@@ -93,40 +95,22 @@ public class ListServerlessJobsResponse extends AcsResponse {
 
 		private String endTime;
 
-		private String priority;
+		private Boolean isArrayJob;
 
-		private String queue;
-
-		public String getId() {
-			return this.id;
+		public String getJobId() {
+			return this.jobId;
 		}
 
-		public void setId(String id) {
-			this.id = id;
+		public void setJobId(String jobId) {
+			this.jobId = jobId;
 		}
 
-		public String getName() {
-			return this.name;
+		public String getJobName() {
+			return this.jobName;
 		}
 
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getOwner() {
-			return this.owner;
-		}
-
-		public void setOwner(String owner) {
-			this.owner = owner;
-		}
-
-		public Boolean getIsArrayJob() {
-			return this.isArrayJob;
-		}
-
-		public void setIsArrayJob(Boolean isArrayJob) {
-			this.isArrayJob = isArrayJob;
+		public void setJobName(String jobName) {
+			this.jobName = jobName;
 		}
 
 		public String getState() {
@@ -135,6 +119,30 @@ public class ListServerlessJobsResponse extends AcsResponse {
 
 		public void setState(String state) {
 			this.state = state;
+		}
+
+		public String getPriority() {
+			return this.priority;
+		}
+
+		public void setPriority(String priority) {
+			this.priority = priority;
+		}
+
+		public String getQueue() {
+			return this.queue;
+		}
+
+		public void setQueue(String queue) {
+			this.queue = queue;
+		}
+
+		public String getUser() {
+			return this.user;
+		}
+
+		public void setUser(String user) {
+			this.user = user;
 		}
 
 		public String getSubmitTime() {
@@ -161,20 +169,12 @@ public class ListServerlessJobsResponse extends AcsResponse {
 			this.endTime = endTime;
 		}
 
-		public String getPriority() {
-			return this.priority;
+		public Boolean getIsArrayJob() {
+			return this.isArrayJob;
 		}
 
-		public void setPriority(String priority) {
-			this.priority = priority;
-		}
-
-		public String getQueue() {
-			return this.queue;
-		}
-
-		public void setQueue(String queue) {
-			this.queue = queue;
+		public void setIsArrayJob(Boolean isArrayJob) {
+			this.isArrayJob = isArrayJob;
 		}
 	}
 

@@ -34,16 +34,16 @@ public class ListServerlessJobsResponseUnmarshaller {
 		List<JobInfo> jobs = new ArrayList<JobInfo>();
 		for (int i = 0; i < _ctx.lengthValue("ListServerlessJobsResponse.Jobs.Length"); i++) {
 			JobInfo jobInfo = new JobInfo();
-			jobInfo.setId(_ctx.stringValue("ListServerlessJobsResponse.Jobs["+ i +"].Id"));
-			jobInfo.setName(_ctx.stringValue("ListServerlessJobsResponse.Jobs["+ i +"].Name"));
-			jobInfo.setOwner(_ctx.stringValue("ListServerlessJobsResponse.Jobs["+ i +"].Owner"));
-			jobInfo.setIsArrayJob(_ctx.booleanValue("ListServerlessJobsResponse.Jobs["+ i +"].IsArrayJob"));
+			jobInfo.setJobId(_ctx.stringValue("ListServerlessJobsResponse.Jobs["+ i +"].JobId"));
+			jobInfo.setJobName(_ctx.stringValue("ListServerlessJobsResponse.Jobs["+ i +"].JobName"));
 			jobInfo.setState(_ctx.stringValue("ListServerlessJobsResponse.Jobs["+ i +"].State"));
+			jobInfo.setPriority(_ctx.stringValue("ListServerlessJobsResponse.Jobs["+ i +"].Priority"));
+			jobInfo.setQueue(_ctx.stringValue("ListServerlessJobsResponse.Jobs["+ i +"].Queue"));
+			jobInfo.setUser(_ctx.stringValue("ListServerlessJobsResponse.Jobs["+ i +"].User"));
 			jobInfo.setSubmitTime(_ctx.stringValue("ListServerlessJobsResponse.Jobs["+ i +"].SubmitTime"));
 			jobInfo.setStartTime(_ctx.stringValue("ListServerlessJobsResponse.Jobs["+ i +"].StartTime"));
 			jobInfo.setEndTime(_ctx.stringValue("ListServerlessJobsResponse.Jobs["+ i +"].EndTime"));
-			jobInfo.setPriority(_ctx.stringValue("ListServerlessJobsResponse.Jobs["+ i +"].Priority"));
-			jobInfo.setQueue(_ctx.stringValue("ListServerlessJobsResponse.Jobs["+ i +"].Queue"));
+			jobInfo.setIsArrayJob(_ctx.booleanValue("ListServerlessJobsResponse.Jobs["+ i +"].IsArrayJob"));
 
 			jobs.add(jobInfo);
 		}

@@ -40,13 +40,9 @@ public class ListServerlessJobsRequest extends RpcAcsRequest<ListServerlessJobsR
 
 	private List<String> jobNames;
 
-	private List<String> users;
-
 	private String startOrder;
 
 	private String submitTimeEnd;
-
-	private List<String> queues;
 
 	private List<String> jobIds;
 	public ListServerlessJobsRequest() {
@@ -137,19 +133,6 @@ public class ListServerlessJobsRequest extends RpcAcsRequest<ListServerlessJobsR
 		}	
 	}
 
-	public List<String> getUsers() {
-		return this.users;
-	}
-
-	public void setUsers(List<String> users) {
-		this.users = users;	
-		if (users != null) {
-			for (int depth1 = 0; depth1 < users.size(); depth1++) {
-				putQueryParameter("Users." + (depth1 + 1) , users.get(depth1));
-			}
-		}	
-	}
-
 	public String getStartOrder() {
 		return this.startOrder;
 	}
@@ -170,19 +153,6 @@ public class ListServerlessJobsRequest extends RpcAcsRequest<ListServerlessJobsR
 		if(submitTimeEnd != null){
 			putQueryParameter("SubmitTimeEnd", submitTimeEnd);
 		}
-	}
-
-	public List<String> getQueues() {
-		return this.queues;
-	}
-
-	public void setQueues(List<String> queues) {
-		this.queues = queues;	
-		if (queues != null) {
-			for (int depth1 = 0; depth1 < queues.size(); depth1++) {
-				putQueryParameter("Queues." + (depth1 + 1) , queues.get(depth1));
-			}
-		}	
 	}
 
 	public List<String> getJobIds() {

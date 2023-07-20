@@ -1,3 +1,6 @@
+2023-07-20 Version: 1.14.18
+- Parameter changes in ListServerlessJobs and DescribeServerlessJobs.
+
 2023-07-14 Version: 1.14.17
 - Support Serverless Job API.
 
