@@ -1,3 +1,6 @@
+2023-07-20 Version: 2.7.37
+- Fix bug of lack fill resourceOwnerId in DescribeHostWebshell.
+
 2023-07-19 Version: 2.7.36
 - Add openapis for whitelist template.
 
