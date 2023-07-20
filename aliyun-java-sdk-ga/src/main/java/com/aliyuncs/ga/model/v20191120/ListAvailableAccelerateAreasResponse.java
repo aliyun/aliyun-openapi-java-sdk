@@ -83,6 +83,12 @@ public class ListAvailableAccelerateAreasResponse extends AcsResponse {
 
 			private String regionId;
 
+			private Boolean chinaMainland;
+
+			private Boolean supportIpv6;
+
+			private List<String> ispTypeList;
+
 			public String getLocalName() {
 				return this.localName;
 			}
@@ -97,6 +103,30 @@ public class ListAvailableAccelerateAreasResponse extends AcsResponse {
 
 			public void setRegionId(String regionId) {
 				this.regionId = regionId;
+			}
+
+			public Boolean getChinaMainland() {
+				return this.chinaMainland;
+			}
+
+			public void setChinaMainland(Boolean chinaMainland) {
+				this.chinaMainland = chinaMainland;
+			}
+
+			public Boolean getSupportIpv6() {
+				return this.supportIpv6;
+			}
+
+			public void setSupportIpv6(Boolean supportIpv6) {
+				this.supportIpv6 = supportIpv6;
+			}
+
+			public List<String> getIspTypeList() {
+				return this.ispTypeList;
+			}
+
+			public void setIspTypeList(List<String> ispTypeList) {
+				this.ispTypeList = ispTypeList;
 			}
 		}
 	}

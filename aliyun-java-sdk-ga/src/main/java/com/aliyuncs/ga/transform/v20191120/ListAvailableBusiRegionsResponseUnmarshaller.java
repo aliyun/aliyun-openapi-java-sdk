@@ -34,6 +34,7 @@ public class ListAvailableBusiRegionsResponseUnmarshaller {
 			regionsItem.setLocalName(_ctx.stringValue("ListAvailableBusiRegionsResponse.Regions["+ i +"].LocalName"));
 			regionsItem.setRegionId(_ctx.stringValue("ListAvailableBusiRegionsResponse.Regions["+ i +"].RegionId"));
 			regionsItem.setPop(_ctx.booleanValue("ListAvailableBusiRegionsResponse.Regions["+ i +"].Pop"));
+			regionsItem.setChinaMainland(_ctx.booleanValue("ListAvailableBusiRegionsResponse.Regions["+ i +"].ChinaMainland"));
 
 			regions.add(regionsItem);
 		}

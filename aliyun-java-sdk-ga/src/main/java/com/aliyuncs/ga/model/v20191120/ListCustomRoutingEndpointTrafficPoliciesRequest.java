@@ -29,11 +29,11 @@ public class ListCustomRoutingEndpointTrafficPoliciesRequest extends RpcAcsReque
 
 	private String endpointId;
 
-	private String pageNumber;
+	private Integer pageNumber;
 
 	private String listenerId;
 
-	private String pageSize;
+	private Integer pageSize;
 
 	private String acceleratorId;
 
@@ -69,14 +69,14 @@ public class ListCustomRoutingEndpointTrafficPoliciesRequest extends RpcAcsReque
 		}
 	}
 
-	public String getPageNumber() {
+	public Integer getPageNumber() {
 		return this.pageNumber;
 	}
 
-	public void setPageNumber(String pageNumber) {
+	public void setPageNumber(Integer pageNumber) {
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber);
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
@@ -91,14 +91,14 @@ public class ListCustomRoutingEndpointTrafficPoliciesRequest extends RpcAcsReque
 		}
 	}
 
-	public String getPageSize() {
+	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
-	public void setPageSize(String pageSize) {
+	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
 		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize);
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

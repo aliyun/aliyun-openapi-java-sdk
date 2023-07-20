@@ -29,9 +29,9 @@ public class ListCustomRoutingPortMappingsByDestinationRequest extends RpcAcsReq
 
 	private String destinationAddress;
 
-	private String pageNumber;
+	private Integer pageNumber;
 
-	private String pageSize;
+	private Integer pageSize;
 	public ListCustomRoutingPortMappingsByDestinationRequest() {
 		super("Ga", "2019-11-20", "ListCustomRoutingPortMappingsByDestination", "gaplus");
 		setMethod(MethodType.POST);
@@ -63,25 +63,25 @@ public class ListCustomRoutingPortMappingsByDestinationRequest extends RpcAcsReq
 		}
 	}
 
-	public String getPageNumber() {
+	public Integer getPageNumber() {
 		return this.pageNumber;
 	}
 
-	public void setPageNumber(String pageNumber) {
+	public void setPageNumber(Integer pageNumber) {
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber);
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
-	public String getPageSize() {
+	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
-	public void setPageSize(String pageSize) {
+	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
 		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize);
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

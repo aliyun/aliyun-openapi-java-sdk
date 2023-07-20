@@ -40,6 +40,14 @@ public class ListAvailableAccelerateAreasResponseUnmarshaller {
 				RegionListItem regionListItem = new RegionListItem();
 				regionListItem.setLocalName(_ctx.stringValue("ListAvailableAccelerateAreasResponse.Areas["+ i +"].RegionList["+ j +"].LocalName"));
 				regionListItem.setRegionId(_ctx.stringValue("ListAvailableAccelerateAreasResponse.Areas["+ i +"].RegionList["+ j +"].RegionId"));
+				regionListItem.setChinaMainland(_ctx.booleanValue("ListAvailableAccelerateAreasResponse.Areas["+ i +"].RegionList["+ j +"].ChinaMainland"));
+				regionListItem.setSupportIpv6(_ctx.booleanValue("ListAvailableAccelerateAreasResponse.Areas["+ i +"].RegionList["+ j +"].SupportIpv6"));
+
+				List<String> ispTypeList = new ArrayList<String>();
+				for (int k = 0; k < _ctx.lengthValue("ListAvailableAccelerateAreasResponse.Areas["+ i +"].RegionList["+ j +"].IspTypeList.Length"); k++) {
+					ispTypeList.add(_ctx.stringValue("ListAvailableAccelerateAreasResponse.Areas["+ i +"].RegionList["+ j +"].IspTypeList["+ k +"]"));
+				}
+				regionListItem.setIspTypeList(ispTypeList);
 
 				regionList.add(regionListItem);
 			}

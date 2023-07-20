@@ -53,6 +53,8 @@ public class ListAvailableBusiRegionsResponse extends AcsResponse {
 
 		private Boolean pop;
 
+		private Boolean chinaMainland;
+
 		public String getLocalName() {
 			return this.localName;
 		}
@@ -75,6 +77,14 @@ public class ListAvailableBusiRegionsResponse extends AcsResponse {
 
 		public void setPop(Boolean pop) {
 			this.pop = pop;
+		}
+
+		public Boolean getChinaMainland() {
+			return this.chinaMainland;
+		}
+
+		public void setChinaMainland(Boolean chinaMainland) {
+			this.chinaMainland = chinaMainland;
 		}
 	}
 

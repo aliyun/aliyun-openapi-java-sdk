@@ -26,13 +26,13 @@ import com.aliyuncs.ga.Endpoint;
 public class ListCustomRoutingEndpointGroupDestinationsRequest extends RpcAcsRequest<ListCustomRoutingEndpointGroupDestinationsResponse> {
 	   
 
-	private String pageNumber;
+	private Integer pageNumber;
 
 	private String listenerId;
 
 	private Integer fromPort;
 
-	private String pageSize;
+	private Integer pageSize;
 
 	private String acceleratorId;
 
@@ -50,14 +50,14 @@ public class ListCustomRoutingEndpointGroupDestinationsRequest extends RpcAcsReq
 		} catch (Exception e) {}
 	}
 
-	public String getPageNumber() {
+	public Integer getPageNumber() {
 		return this.pageNumber;
 	}
 
-	public void setPageNumber(String pageNumber) {
+	public void setPageNumber(Integer pageNumber) {
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber);
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
@@ -83,14 +83,14 @@ public class ListCustomRoutingEndpointGroupDestinationsRequest extends RpcAcsReq
 		}
 	}
 
-	public String getPageSize() {
+	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
-	public void setPageSize(String pageSize) {
+	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
 		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize);
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
