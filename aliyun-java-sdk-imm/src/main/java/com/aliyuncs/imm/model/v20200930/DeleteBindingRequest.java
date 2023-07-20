@@ -30,8 +30,6 @@ public class DeleteBindingRequest extends RpcAcsRequest<DeleteBindingResponse> {
 	private String projectName;
 
 	private String uRI;
-
-	private Boolean cleanup;
 	public DeleteBindingRequest() {
 		super("imm", "2020-09-30", "DeleteBinding", "imm");
 		setMethod(MethodType.POST);
@@ -71,17 +69,6 @@ public class DeleteBindingRequest extends RpcAcsRequest<DeleteBindingResponse> {
 		this.uRI = uRI;
 		if(uRI != null){
 			putQueryParameter("URI", uRI);
-		}
-	}
-
-	public Boolean getCleanup() {
-		return this.cleanup;
-	}
-
-	public void setCleanup(Boolean cleanup) {
-		this.cleanup = cleanup;
-		if(cleanup != null){
-			putQueryParameter("Cleanup", cleanup.toString());
 		}
 	}
 

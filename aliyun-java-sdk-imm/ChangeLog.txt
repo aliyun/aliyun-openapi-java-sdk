@@ -1,3 +1,8 @@
+2023-07-20 Version: 2.1.17
+- Support new api about model training.
+- Change GenerateVideoPlaylist and LiveTranscoding to private.
+- Remove DeleteBinding Cleanup params.
+
 2023-07-05 Version: 2.1.16
 - Hidden ResumeBinding and StopBinding API.
 - Hide DRM api.
