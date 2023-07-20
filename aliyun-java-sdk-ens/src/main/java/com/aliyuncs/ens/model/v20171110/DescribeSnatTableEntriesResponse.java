@@ -89,6 +89,12 @@ public class DescribeSnatTableEntriesResponse extends AcsResponse {
 
 		private String status;
 
+		private String standbySnatIp;
+
+		private String standbyStatus;
+
+		private List<SnatIp> snatIps;
+
 		public String getNatGatewayId() {
 			return this.natGatewayId;
 		}
@@ -135,6 +141,73 @@ public class DescribeSnatTableEntriesResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public String getStandbySnatIp() {
+			return this.standbySnatIp;
+		}
+
+		public void setStandbySnatIp(String standbySnatIp) {
+			this.standbySnatIp = standbySnatIp;
+		}
+
+		public String getStandbyStatus() {
+			return this.standbyStatus;
+		}
+
+		public void setStandbyStatus(String standbyStatus) {
+			this.standbyStatus = standbyStatus;
+		}
+
+		public List<SnatIp> getSnatIps() {
+			return this.snatIps;
+		}
+
+		public void setSnatIps(List<SnatIp> snatIps) {
+			this.snatIps = snatIps;
+		}
+
+		public static class SnatIp {
+
+			private String ip;
+
+			private String isp;
+
+			private String ensRegionId;
+
+			private Boolean standby;
+
+			public String getIp() {
+				return this.ip;
+			}
+
+			public void setIp(String ip) {
+				this.ip = ip;
+			}
+
+			public String getIsp() {
+				return this.isp;
+			}
+
+			public void setIsp(String isp) {
+				this.isp = isp;
+			}
+
+			public String getEnsRegionId() {
+				return this.ensRegionId;
+			}
+
+			public void setEnsRegionId(String ensRegionId) {
+				this.ensRegionId = ensRegionId;
+			}
+
+			public Boolean getStandby() {
+				return this.standby;
+			}
+
+			public void setStandby(Boolean standby) {
+				this.standby = standby;
+			}
 		}
 	}
 

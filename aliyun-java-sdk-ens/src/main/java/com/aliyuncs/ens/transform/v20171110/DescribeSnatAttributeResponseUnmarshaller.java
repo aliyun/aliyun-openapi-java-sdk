@@ -34,6 +34,8 @@ public class DescribeSnatAttributeResponseUnmarshaller {
 		describeSnatAttributeResponse.setSnatEntryName(_ctx.stringValue("DescribeSnatAttributeResponse.SnatEntryName"));
 		describeSnatAttributeResponse.setStatus(_ctx.stringValue("DescribeSnatAttributeResponse.Status"));
 		describeSnatAttributeResponse.setCreationTime(_ctx.stringValue("DescribeSnatAttributeResponse.CreationTime"));
+		describeSnatAttributeResponse.setStandbySnatIp(_ctx.stringValue("DescribeSnatAttributeResponse.StandbySnatIp"));
+		describeSnatAttributeResponse.setStandbyStatus(_ctx.stringValue("DescribeSnatAttributeResponse.StandbyStatus"));
 
 		List<Snatip> snatIps = new ArrayList<Snatip>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSnatAttributeResponse.SnatIps.Length"); i++) {

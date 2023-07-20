@@ -15,35 +15,39 @@
 package com.aliyuncs.ens.model.v20171110;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeSnatAttributeRequest extends RpcAcsRequest<DescribeSnatAttributeResponse> {
+public class TerminateWorkflowRequest extends RpcAcsRequest<TerminateWorkflowResponse> {
 	   
 
-	private String snatEntryId;
-	public DescribeSnatAttributeRequest() {
-		super("Ens", "2017-11-10", "DescribeSnatAttribute", "ens");
+	@SerializedName("workflowIds")
+	private List<String> workflowIds;
+	public TerminateWorkflowRequest() {
+		super("Ens", "2017-11-10", "TerminateWorkflow", "ens");
 		setMethod(MethodType.POST);
 	}
 
-	public String getSnatEntryId() {
-		return this.snatEntryId;
+	public List<String> getWorkflowIds() {
+		return this.workflowIds;
 	}
 
-	public void setSnatEntryId(String snatEntryId) {
-		this.snatEntryId = snatEntryId;
-		if(snatEntryId != null){
-			putQueryParameter("SnatEntryId", snatEntryId);
-		}
+	public void setWorkflowIds(List<String> workflowIds) {
+		this.workflowIds = workflowIds;	
+		if (workflowIds != null) {
+			putQueryParameter("WorkflowIds" , new Gson().toJson(workflowIds));
+		}	
 	}
 
 	@Override
-	public Class<DescribeSnatAttributeResponse> getResponseClass() {
-		return DescribeSnatAttributeResponse.class;
+	public Class<TerminateWorkflowResponse> getResponseClass() {
+		return TerminateWorkflowResponse.class;
 	}
 
 }

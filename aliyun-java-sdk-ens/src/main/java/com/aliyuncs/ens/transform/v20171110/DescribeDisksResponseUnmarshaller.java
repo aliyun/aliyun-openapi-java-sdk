@@ -48,6 +48,7 @@ public class DescribeDisksResponseUnmarshaller {
 			disksItem.setType(_ctx.stringValue("DescribeDisksResponse.Disks["+ i +"].Type"));
 			disksItem.setPortable(_ctx.booleanValue("DescribeDisksResponse.Disks["+ i +"].Portable"));
 			disksItem.setSnapshotId(_ctx.stringValue("DescribeDisksResponse.Disks["+ i +"].SnapshotId"));
+			disksItem.setSerialId(_ctx.stringValue("DescribeDisksResponse.Disks["+ i +"].SerialId"));
 
 			disks.add(disksItem);
 		}

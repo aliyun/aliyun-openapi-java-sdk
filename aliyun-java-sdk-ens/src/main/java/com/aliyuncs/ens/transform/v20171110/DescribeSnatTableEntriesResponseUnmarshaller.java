@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.ens.model.v20171110.DescribeSnatTableEntriesResponse;
 import com.aliyuncs.ens.model.v20171110.DescribeSnatTableEntriesResponse.SnatTableEntry;
+import com.aliyuncs.ens.model.v20171110.DescribeSnatTableEntriesResponse.SnatTableEntry.SnatIp;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -40,6 +41,20 @@ public class DescribeSnatTableEntriesResponseUnmarshaller {
 			snatTableEntry.setSourceCIDR(_ctx.stringValue("DescribeSnatTableEntriesResponse.SnatTableEntries["+ i +"].SourceCIDR"));
 			snatTableEntry.setSnatEntryName(_ctx.stringValue("DescribeSnatTableEntriesResponse.SnatTableEntries["+ i +"].SnatEntryName"));
 			snatTableEntry.setStatus(_ctx.stringValue("DescribeSnatTableEntriesResponse.SnatTableEntries["+ i +"].Status"));
+			snatTableEntry.setStandbySnatIp(_ctx.stringValue("DescribeSnatTableEntriesResponse.SnatTableEntries["+ i +"].StandbySnatIp"));
+			snatTableEntry.setStandbyStatus(_ctx.stringValue("DescribeSnatTableEntriesResponse.SnatTableEntries["+ i +"].StandbyStatus"));
+
+			List<SnatIp> snatIps = new ArrayList<SnatIp>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeSnatTableEntriesResponse.SnatTableEntries["+ i +"].SnatIps.Length"); j++) {
+				SnatIp snatIp = new SnatIp();
+				snatIp.setIp(_ctx.stringValue("DescribeSnatTableEntriesResponse.SnatTableEntries["+ i +"].SnatIps["+ j +"].Ip"));
+				snatIp.setIsp(_ctx.stringValue("DescribeSnatTableEntriesResponse.SnatTableEntries["+ i +"].SnatIps["+ j +"].Isp"));
+				snatIp.setEnsRegionId(_ctx.stringValue("DescribeSnatTableEntriesResponse.SnatTableEntries["+ i +"].SnatIps["+ j +"].EnsRegionId"));
+				snatIp.setStandby(_ctx.booleanValue("DescribeSnatTableEntriesResponse.SnatTableEntries["+ i +"].SnatIps["+ j +"].Standby"));
+
+				snatIps.add(snatIp);
+			}
+			snatTableEntry.setSnatIps(snatIps);
 
 			snatTableEntries.add(snatTableEntry);
 		}

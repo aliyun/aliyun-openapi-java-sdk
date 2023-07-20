@@ -30,6 +30,8 @@ public class DescribeEnsEipAddressesRequest extends RpcAcsRequest<DescribeEnsEip
 
 	private String ensRegionId;
 
+	private String standby;
+
 	private String allocationId;
 
 	private Integer pageNumber;
@@ -74,6 +76,17 @@ public class DescribeEnsEipAddressesRequest extends RpcAcsRequest<DescribeEnsEip
 		this.ensRegionId = ensRegionId;
 		if(ensRegionId != null){
 			putQueryParameter("EnsRegionId", ensRegionId);
+		}
+	}
+
+	public String getStandby() {
+		return this.standby;
+	}
+
+	public void setStandby(String standby) {
+		this.standby = standby;
+		if(standby != null){
+			putQueryParameter("Standby", standby);
 		}
 	}
 

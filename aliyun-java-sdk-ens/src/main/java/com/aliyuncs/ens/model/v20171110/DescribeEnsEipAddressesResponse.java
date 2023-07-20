@@ -103,6 +103,10 @@ public class DescribeEnsEipAddressesResponse extends AcsResponse {
 
 		private String isp;
 
+		private Boolean standby;
+
+		private String ipStatus;
+
 		public String getAllocationId() {
 			return this.allocationId;
 		}
@@ -205,6 +209,22 @@ public class DescribeEnsEipAddressesResponse extends AcsResponse {
 
 		public void setIsp(String isp) {
 			this.isp = isp;
+		}
+
+		public Boolean getStandby() {
+			return this.standby;
+		}
+
+		public void setStandby(Boolean standby) {
+			this.standby = standby;
+		}
+
+		public String getIpStatus() {
+			return this.ipStatus;
+		}
+
+		public void setIpStatus(String ipStatus) {
+			this.ipStatus = ipStatus;
 		}
 	}
 

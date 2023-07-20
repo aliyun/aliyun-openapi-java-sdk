@@ -19,8 +19,8 @@ import java.util.List;
 
 import com.aliyuncs.ens.model.v20171110.DescribeRegionBandwidthQuotaResponse;
 import com.aliyuncs.ens.model.v20171110.DescribeRegionBandwidthQuotaResponse.带宽配额;
-import com.aliyuncs.ens.model.v20171110.DescribeRegionBandwidthQuotaResponse.带宽配额.BandwidthInfo;
 import com.aliyuncs.ens.model.v20171110.DescribeRegionBandwidthQuotaResponse.带宽配额.实例信息;
+import com.aliyuncs.ens.model.v20171110.DescribeRegionBandwidthQuotaResponse.带宽配额.带宽信息;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -36,13 +36,6 @@ public class DescribeRegionBandwidthQuotaResponseUnmarshaller {
 			带宽配额.setRegionId(_ctx.stringValue("DescribeRegionBandwidthQuotaResponse.BandwidthQuota["+ i +"].RegionId"));
 			带宽配额.setDate(_ctx.stringValue("DescribeRegionBandwidthQuotaResponse.BandwidthQuota["+ i +"].Date"));
 
-			BandwidthInfo bandwidthInfo = new BandwidthInfo();
-			bandwidthInfo.setMonthMax(_ctx.longValue("DescribeRegionBandwidthQuotaResponse.BandwidthQuota["+ i +"].BandwidthInfo.MonthMax"));
-			bandwidthInfo.setWeekMax(_ctx.longValue("DescribeRegionBandwidthQuotaResponse.BandwidthQuota["+ i +"].BandwidthInfo.WeekMax"));
-			bandwidthInfo.setMonthAverageQuota(_ctx.longValue("DescribeRegionBandwidthQuotaResponse.BandwidthQuota["+ i +"].BandwidthInfo.MonthAverageQuota"));
-			bandwidthInfo.setWeekAverageQuota(_ctx.longValue("DescribeRegionBandwidthQuotaResponse.BandwidthQuota["+ i +"].BandwidthInfo.WeekAverageQuota"));
-			带宽配额.setBandwidthInfo(bandwidthInfo);
-
 			List<实例信息> instanceInfo = new ArrayList<实例信息>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeRegionBandwidthQuotaResponse.BandwidthQuota["+ i +"].InstanceInfo.Length"); j++) {
 				实例信息 实例信息 = new 实例信息();
@@ -52,6 +45,19 @@ public class DescribeRegionBandwidthQuotaResponseUnmarshaller {
 				instanceInfo.add(实例信息);
 			}
 			带宽配额.setInstanceInfo(instanceInfo);
+
+			List<带宽信息> bandwidthInfo = new ArrayList<带宽信息>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeRegionBandwidthQuotaResponse.BandwidthQuota["+ i +"].BandwidthInfo.Length"); j++) {
+				带宽信息 带宽信息 = new 带宽信息();
+				带宽信息.setMonthMax(_ctx.longValue("DescribeRegionBandwidthQuotaResponse.BandwidthQuota["+ i +"].BandwidthInfo["+ j +"].MonthMax"));
+				带宽信息.setWeekMax(_ctx.longValue("DescribeRegionBandwidthQuotaResponse.BandwidthQuota["+ i +"].BandwidthInfo["+ j +"].WeekMax"));
+				带宽信息.setMonthAverageQuota(_ctx.longValue("DescribeRegionBandwidthQuotaResponse.BandwidthQuota["+ i +"].BandwidthInfo["+ j +"].MonthAverageQuota"));
+				带宽信息.setWeekAverageQuota(_ctx.longValue("DescribeRegionBandwidthQuotaResponse.BandwidthQuota["+ i +"].BandwidthInfo["+ j +"].WeekAverageQuota"));
+				带宽信息.setIsp(_ctx.stringValue("DescribeRegionBandwidthQuotaResponse.BandwidthQuota["+ i +"].BandwidthInfo["+ j +"].Isp"));
+
+				bandwidthInfo.add(带宽信息);
+			}
+			带宽配额.setBandwidthInfo(bandwidthInfo);
 
 			bandwidthQuota.add(带宽配额);
 		}

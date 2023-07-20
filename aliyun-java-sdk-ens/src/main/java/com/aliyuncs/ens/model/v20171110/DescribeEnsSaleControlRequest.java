@@ -24,6 +24,8 @@ import com.aliyuncs.http.MethodType;
 public class DescribeEnsSaleControlRequest extends RpcAcsRequest<DescribeEnsSaleControlResponse> {
 	   
 
+	private String customAccount;
+
 	private String commodityCode;
 
 	private String moduleCode;
@@ -34,6 +36,17 @@ public class DescribeEnsSaleControlRequest extends RpcAcsRequest<DescribeEnsSale
 	public DescribeEnsSaleControlRequest() {
 		super("Ens", "2017-11-10", "DescribeEnsSaleControl", "ens");
 		setMethod(MethodType.POST);
+	}
+
+	public String getCustomAccount() {
+		return this.customAccount;
+	}
+
+	public void setCustomAccount(String customAccount) {
+		this.customAccount = customAccount;
+		if(customAccount != null){
+			putQueryParameter("CustomAccount", customAccount);
+		}
 	}
 
 	public String getCommodityCode() {

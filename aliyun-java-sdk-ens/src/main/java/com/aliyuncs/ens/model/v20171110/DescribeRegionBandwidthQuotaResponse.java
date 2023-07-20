@@ -53,7 +53,7 @@ public class DescribeRegionBandwidthQuotaResponse extends AcsResponse {
 
 		private List<实例信息> instanceInfo;
 
-		private BandwidthInfo bandwidthInfo;
+		private List<带宽信息> bandwidthInfo;
 
 		public String getRegionId() {
 			return this.regionId;
@@ -79,11 +79,11 @@ public class DescribeRegionBandwidthQuotaResponse extends AcsResponse {
 			this.instanceInfo = instanceInfo;
 		}
 
-		public BandwidthInfo getBandwidthInfo() {
+		public List<带宽信息> getBandwidthInfo() {
 			return this.bandwidthInfo;
 		}
 
-		public void setBandwidthInfo(BandwidthInfo bandwidthInfo) {
+		public void setBandwidthInfo(List<带宽信息> bandwidthInfo) {
 			this.bandwidthInfo = bandwidthInfo;
 		}
 
@@ -110,7 +110,7 @@ public class DescribeRegionBandwidthQuotaResponse extends AcsResponse {
 			}
 		}
 
-		public static class BandwidthInfo {
+		public static class 带宽信息 {
 
 			private Long monthMax;
 
@@ -119,6 +119,8 @@ public class DescribeRegionBandwidthQuotaResponse extends AcsResponse {
 			private Long monthAverageQuota;
 
 			private Long weekAverageQuota;
+
+			private String isp;
 
 			public Long getMonthMax() {
 				return this.monthMax;
@@ -150,6 +152,14 @@ public class DescribeRegionBandwidthQuotaResponse extends AcsResponse {
 
 			public void setWeekAverageQuota(Long weekAverageQuota) {
 				this.weekAverageQuota = weekAverageQuota;
+			}
+
+			public String getIsp() {
+				return this.isp;
+			}
+
+			public void setIsp(String isp) {
+				this.isp = isp;
 			}
 		}
 	}

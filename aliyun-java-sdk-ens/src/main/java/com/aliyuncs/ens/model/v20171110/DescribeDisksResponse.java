@@ -113,6 +113,8 @@ public class DescribeDisksResponse extends AcsResponse {
 
 		private String snapshotId;
 
+		private String serialId;
+
 		public String getCategory() {
 			return this.category;
 		}
@@ -215,6 +217,14 @@ public class DescribeDisksResponse extends AcsResponse {
 
 		public void setSnapshotId(String snapshotId) {
 			this.snapshotId = snapshotId;
+		}
+
+		public String getSerialId() {
+			return this.serialId;
+		}
+
+		public void setSerialId(String serialId) {
+			this.serialId = serialId;
 		}
 	}
 

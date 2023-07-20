@@ -24,6 +24,8 @@ import com.aliyuncs.http.MethodType;
 public class AssociateEnsEipAddressRequest extends RpcAcsRequest<AssociateEnsEipAddressResponse> {
 	   
 
+	private Boolean standby;
+
 	private String allocationId;
 
 	private String instanceType;
@@ -32,6 +34,17 @@ public class AssociateEnsEipAddressRequest extends RpcAcsRequest<AssociateEnsEip
 	public AssociateEnsEipAddressRequest() {
 		super("Ens", "2017-11-10", "AssociateEnsEipAddress", "ens");
 		setMethod(MethodType.POST);
+	}
+
+	public Boolean getStandby() {
+		return this.standby;
+	}
+
+	public void setStandby(Boolean standby) {
+		this.standby = standby;
+		if(standby != null){
+			putQueryParameter("Standby", standby.toString());
+		}
 	}
 
 	public String getAllocationId() {

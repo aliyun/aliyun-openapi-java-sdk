@@ -428,12 +428,23 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		@SerializedName("Size")
 		private Long size;
 
+		@SerializedName("Category")
+		private String category;
+
 		public Long getSize() {
 			return this.size;
 		}
 
 		public void setSize(Long size) {
 			this.size = size;
+		}
+
+		public String getCategory() {
+			return this.category;
+		}
+
+		public void setCategory(String category) {
+			this.category = category;
 		}
 	}
 

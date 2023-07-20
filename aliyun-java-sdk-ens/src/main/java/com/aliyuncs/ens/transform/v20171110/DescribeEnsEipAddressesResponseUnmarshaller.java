@@ -47,6 +47,8 @@ public class DescribeEnsEipAddressesResponseUnmarshaller {
 			eipAddress.setEnsRegionId(_ctx.stringValue("DescribeEnsEipAddressesResponse.EipAddresses["+ i +"].EnsRegionId"));
 			eipAddress.setStatus(_ctx.stringValue("DescribeEnsEipAddressesResponse.EipAddresses["+ i +"].Status"));
 			eipAddress.setIsp(_ctx.stringValue("DescribeEnsEipAddressesResponse.EipAddresses["+ i +"].Isp"));
+			eipAddress.setStandby(_ctx.booleanValue("DescribeEnsEipAddressesResponse.EipAddresses["+ i +"].Standby"));
+			eipAddress.setIpStatus(_ctx.stringValue("DescribeEnsEipAddressesResponse.EipAddresses["+ i +"].IpStatus"));
 
 			eipAddresses.add(eipAddress);
 		}

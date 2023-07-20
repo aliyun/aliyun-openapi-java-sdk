@@ -41,6 +41,10 @@ public class DescribeSnatAttributeResponse extends AcsResponse {
 
 	private String creationTime;
 
+	private String standbySnatIp;
+
+	private String standbyStatus;
+
 	private List<Snatip> snatIps;
 
 	public String getRequestId() {
@@ -105,6 +109,22 @@ public class DescribeSnatAttributeResponse extends AcsResponse {
 
 	public void setCreationTime(String creationTime) {
 		this.creationTime = creationTime;
+	}
+
+	public String getStandbySnatIp() {
+		return this.standbySnatIp;
+	}
+
+	public void setStandbySnatIp(String standbySnatIp) {
+		this.standbySnatIp = standbySnatIp;
+	}
+
+	public String getStandbyStatus() {
+		return this.standbyStatus;
+	}
+
+	public void setStandbyStatus(String standbyStatus) {
+		this.standbyStatus = standbyStatus;
 	}
 
 	public List<Snatip> getSnatIps() {

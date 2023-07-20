@@ -21,29 +21,29 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class DescribeSnatAttributeRequest extends RpcAcsRequest<DescribeSnatAttributeResponse> {
+public class DescribeWorkflowActivityRequest extends RpcAcsRequest<DescribeWorkflowActivityResponse> {
 	   
 
-	private String snatEntryId;
-	public DescribeSnatAttributeRequest() {
-		super("Ens", "2017-11-10", "DescribeSnatAttribute", "ens");
+	private String workFlowId;
+	public DescribeWorkflowActivityRequest() {
+		super("Ens", "2017-11-10", "DescribeWorkflowActivity", "ens");
 		setMethod(MethodType.POST);
 	}
 
-	public String getSnatEntryId() {
-		return this.snatEntryId;
+	public String getWorkFlowId() {
+		return this.workFlowId;
 	}
 
-	public void setSnatEntryId(String snatEntryId) {
-		this.snatEntryId = snatEntryId;
-		if(snatEntryId != null){
-			putQueryParameter("SnatEntryId", snatEntryId);
+	public void setWorkFlowId(String workFlowId) {
+		this.workFlowId = workFlowId;
+		if(workFlowId != null){
+			putQueryParameter("WorkFlowId", workFlowId);
 		}
 	}
 
 	@Override
-	public Class<DescribeSnatAttributeResponse> getResponseClass() {
-		return DescribeSnatAttributeResponse.class;
+	public Class<DescribeWorkflowActivityResponse> getResponseClass() {
+		return DescribeWorkflowActivityResponse.class;
 	}
 
 }

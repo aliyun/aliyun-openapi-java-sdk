@@ -24,12 +24,25 @@ import com.aliyuncs.http.MethodType;
 public class DescribeEnsSaleControlAvailableResourceRequest extends RpcAcsRequest<DescribeEnsSaleControlAvailableResourceResponse> {
 	   
 
+	private String customAccount;
+
 	private String commodityCode;
 
 	private String orderType;
 	public DescribeEnsSaleControlAvailableResourceRequest() {
 		super("Ens", "2017-11-10", "DescribeEnsSaleControlAvailableResource", "ens");
 		setMethod(MethodType.POST);
+	}
+
+	public String getCustomAccount() {
+		return this.customAccount;
+	}
+
+	public void setCustomAccount(String customAccount) {
+		this.customAccount = customAccount;
+		if(customAccount != null){
+			putQueryParameter("CustomAccount", customAccount);
+		}
 	}
 
 	public String getCommodityCode() {
