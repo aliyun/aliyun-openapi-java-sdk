@@ -95,6 +95,10 @@ public class DescribeServiceResponse extends AcsResponse {
 
 	private String safetyLock;
 
+	private String secondaryInternetEndpoint;
+
+	private String secondaryIntranetEndpoint;
+
 	private List<LabelsItem> labels;
 
 	public String getRequestId() {
@@ -375,6 +379,22 @@ public class DescribeServiceResponse extends AcsResponse {
 
 	public void setSafetyLock(String safetyLock) {
 		this.safetyLock = safetyLock;
+	}
+
+	public String getSecondaryInternetEndpoint() {
+		return this.secondaryInternetEndpoint;
+	}
+
+	public void setSecondaryInternetEndpoint(String secondaryInternetEndpoint) {
+		this.secondaryInternetEndpoint = secondaryInternetEndpoint;
+	}
+
+	public String getSecondaryIntranetEndpoint() {
+		return this.secondaryIntranetEndpoint;
+	}
+
+	public void setSecondaryIntranetEndpoint(String secondaryIntranetEndpoint) {
+		this.secondaryIntranetEndpoint = secondaryIntranetEndpoint;
 	}
 
 	public List<LabelsItem> getLabels() {

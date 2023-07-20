@@ -61,6 +61,8 @@ public class DescribeServiceResponseUnmarshaller {
 		describeServiceResponse.setRole(_ctx.stringValue("DescribeServiceResponse.Role"));
 		describeServiceResponse.setRoleAttrs(_ctx.stringValue("DescribeServiceResponse.RoleAttrs"));
 		describeServiceResponse.setSafetyLock(_ctx.stringValue("DescribeServiceResponse.SafetyLock"));
+		describeServiceResponse.setSecondaryInternetEndpoint(_ctx.stringValue("DescribeServiceResponse.SecondaryInternetEndpoint"));
+		describeServiceResponse.setSecondaryIntranetEndpoint(_ctx.stringValue("DescribeServiceResponse.SecondaryIntranetEndpoint"));
 
 		List<LabelsItem> labels = new ArrayList<LabelsItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeServiceResponse.Labels.Length"); i++) {

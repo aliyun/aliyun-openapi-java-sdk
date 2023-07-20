@@ -22,47 +22,32 @@ import com.aliyuncs.eas.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteServiceInstancesRequest extends RoaAcsRequest<DeleteServiceInstancesResponse> {
+public class ListServiceContainersRequest extends RoaAcsRequest<ListServiceContainersResponse> {
 	   
 
-	private String container;
-
-	private String instanceList;
+	private String instanceName;
 
 	private String serviceName;
 
 	private String clusterId;
-
-	private Boolean softRestart;
-	public DeleteServiceInstancesRequest() {
-		super("eas", "2021-07-01", "DeleteServiceInstances", "eas");
-		setUriPattern("/api/v2/services/[ClusterId]/[ServiceName]/instances");
-		setMethod(MethodType.DELETE);
+	public ListServiceContainersRequest() {
+		super("eas", "2021-07-01", "ListServiceContainers", "eas");
+		setUriPattern("/api/v2/services/[ClusterId]/[ServiceName]/instances/[InstanceName]/containers");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public String getContainer() {
-		return this.container;
+	public String getInstanceName() {
+		return this.instanceName;
 	}
 
-	public void setContainer(String container) {
-		this.container = container;
-		if(container != null){
-			putQueryParameter("Container", container);
-		}
-	}
-
-	public String getInstanceList() {
-		return this.instanceList;
-	}
-
-	public void setInstanceList(String instanceList) {
-		this.instanceList = instanceList;
-		if(instanceList != null){
-			putQueryParameter("InstanceList", instanceList);
+	public void setInstanceName(String instanceName) {
+		this.instanceName = instanceName;
+		if(instanceName != null){
+			putPathParameter("InstanceName", instanceName);
 		}
 	}
 
@@ -88,20 +73,9 @@ public class DeleteServiceInstancesRequest extends RoaAcsRequest<DeleteServiceIn
 		}
 	}
 
-	public Boolean getSoftRestart() {
-		return this.softRestart;
-	}
-
-	public void setSoftRestart(Boolean softRestart) {
-		this.softRestart = softRestart;
-		if(softRestart != null){
-			putQueryParameter("SoftRestart", softRestart.toString());
-		}
-	}
-
 	@Override
-	public Class<DeleteServiceInstancesResponse> getResponseClass() {
-		return DeleteServiceInstancesResponse.class;
+	public Class<ListServiceContainersResponse> getResponseClass() {
+		return ListServiceContainersResponse.class;
 	}
 
 }

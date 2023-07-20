@@ -70,6 +70,8 @@ public class ListResourceServicesResponseUnmarshaller {
 			servicesItem.setRole(_ctx.stringValue("ListResourceServicesResponse.Services["+ i +"].Role"));
 			servicesItem.setRoleAttrs(_ctx.stringValue("ListResourceServicesResponse.Services["+ i +"].RoleAttrs"));
 			servicesItem.setSafetyLock(_ctx.stringValue("ListResourceServicesResponse.Services["+ i +"].SafetyLock"));
+			servicesItem.setSecondaryInternetEndpoint(_ctx.stringValue("ListResourceServicesResponse.Services["+ i +"].SecondaryInternetEndpoint"));
+			servicesItem.setSecondaryIntranetEndpoint(_ctx.stringValue("ListResourceServicesResponse.Services["+ i +"].SecondaryIntranetEndpoint"));
 
 			List<LabelsItem> labels = new ArrayList<LabelsItem>();
 			for (int j = 0; j < _ctx.lengthValue("ListResourceServicesResponse.Services["+ i +"].Labels.Length"); j++) {
