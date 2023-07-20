@@ -35,7 +35,6 @@ public class DescribeContainerGroupStatusResponseUnmarshaller {
         describeContainerGroupStatusResponse.setRequestId(context.stringValue("DescribeContainerGroupStatusResponse.RequestId"));
         describeContainerGroupStatusResponse.setNextToken(context.stringValue("DescribeContainerGroupStatusResponse.NextToken"));
         describeContainerGroupStatusResponse.setTotalCount(context.integerValue("DescribeContainerGroupStatusResponse.TotalCount"));
-        System.out.println(context.getResponseMap());
 
         List<Data> datas = new ArrayList<Data>();
         for (int i = 0; i < context.lengthValue("DescribeContainerGroupStatusResponse.Data.Length"); i++) {
