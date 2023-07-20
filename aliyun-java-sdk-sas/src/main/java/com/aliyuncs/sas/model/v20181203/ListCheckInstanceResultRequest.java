@@ -46,7 +46,7 @@ public class ListCheckInstanceResultRequest extends RpcAcsRequest<ListCheckInsta
 
 	private List<String> statusess;
 	public ListCheckInstanceResultRequest() {
-		super("Sas", "2018-12-03", "ListCheckInstanceResult", "sas");
+		super("Sas", "2018-12-03", "ListCheckInstanceResult");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class ListRuleTargetAllRequest extends RpcAcsRequest<ListRuleTargetAllRes
 
 	private String clusterId;
 	public ListRuleTargetAllRequest() {
-		super("Sas", "2018-12-03", "ListRuleTargetAll", "sas");
+		super("Sas", "2018-12-03", "ListRuleTargetAll");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

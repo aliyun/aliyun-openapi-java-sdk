@@ -34,7 +34,7 @@ public class ListClientUserDefineRulesRequest extends RpcAcsRequest<ListClientUs
 
 	private String name;
 	public ListClientUserDefineRulesRequest() {
-		super("Sas", "2018-12-03", "ListClientUserDefineRules", "sas");
+		super("Sas", "2018-12-03", "ListClientUserDefineRules");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

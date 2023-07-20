@@ -35,7 +35,7 @@ public class CreateHoneypotPresetRequest extends RpcAcsRequest<CreateHoneypotPre
 
 	private String honeypotImageName;
 	public CreateHoneypotPresetRequest() {
-		super("Sas", "2018-12-03", "CreateHoneypotPreset", "sas");
+		super("Sas", "2018-12-03", "CreateHoneypotPreset");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

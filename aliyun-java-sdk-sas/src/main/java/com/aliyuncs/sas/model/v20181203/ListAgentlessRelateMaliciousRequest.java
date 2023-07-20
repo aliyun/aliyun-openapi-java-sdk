@@ -31,7 +31,7 @@ public class ListAgentlessRelateMaliciousRequest extends RpcAcsRequest<ListAgent
 
 	private Integer currentPage;
 	public ListAgentlessRelateMaliciousRequest() {
-		super("Sas", "2018-12-03", "ListAgentlessRelateMalicious", "sas");
+		super("Sas", "2018-12-03", "ListAgentlessRelateMalicious");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

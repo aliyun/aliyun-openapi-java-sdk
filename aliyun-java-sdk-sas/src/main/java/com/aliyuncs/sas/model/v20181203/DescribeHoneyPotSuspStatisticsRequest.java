@@ -33,7 +33,7 @@ public class DescribeHoneyPotSuspStatisticsRequest extends RpcAcsRequest<Describ
 
 	private String statisticsKeyType;
 	public DescribeHoneyPotSuspStatisticsRequest() {
-		super("Sas", "2018-12-03", "DescribeHoneyPotSuspStatistics", "sas");
+		super("Sas", "2018-12-03", "DescribeHoneyPotSuspStatistics");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

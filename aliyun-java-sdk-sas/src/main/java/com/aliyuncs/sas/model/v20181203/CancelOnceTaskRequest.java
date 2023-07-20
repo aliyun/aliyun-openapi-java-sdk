@@ -27,7 +27,7 @@ public class CancelOnceTaskRequest extends RpcAcsRequest<CancelOnceTaskResponse>
 
 	private String taskId;
 	public CancelOnceTaskRequest() {
-		super("Sas", "2018-12-03", "CancelOnceTask", "sas");
+		super("Sas", "2018-12-03", "CancelOnceTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

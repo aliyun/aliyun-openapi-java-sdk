@@ -33,7 +33,7 @@ public class CreateSimilarSecurityEventsQueryTaskRequest extends RpcAcsRequest<C
 
 	private String similarEventScenarioCode;
 	public CreateSimilarSecurityEventsQueryTaskRequest() {
-		super("Sas", "2018-12-03", "CreateSimilarSecurityEventsQueryTask", "sas");
+		super("Sas", "2018-12-03", "CreateSimilarSecurityEventsQueryTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

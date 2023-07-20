@@ -27,7 +27,7 @@ public class StartVirusScanTaskRequest extends RpcAcsRequest<StartVirusScanTaskR
 
 	private String targetInfo;
 	public StartVirusScanTaskRequest() {
-		super("Sas", "2018-12-03", "StartVirusScanTask", "sas");
+		super("Sas", "2018-12-03", "StartVirusScanTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

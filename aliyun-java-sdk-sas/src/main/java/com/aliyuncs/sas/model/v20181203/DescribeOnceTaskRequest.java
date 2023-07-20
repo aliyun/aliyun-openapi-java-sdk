@@ -39,7 +39,7 @@ public class DescribeOnceTaskRequest extends RpcAcsRequest<DescribeOnceTaskRespo
 
 	private Integer currentPage;
 	public DescribeOnceTaskRequest() {
-		super("Sas", "2018-12-03", "DescribeOnceTask", "sas");
+		super("Sas", "2018-12-03", "DescribeOnceTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

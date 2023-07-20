@@ -41,7 +41,7 @@ public class DescribeAttackAnalysisDataRequest extends RpcAcsRequest<DescribeAtt
 
 	private Integer currentPage;
 	public DescribeAttackAnalysisDataRequest() {
-		super("Sas", "2018-12-03", "DescribeAttackAnalysisData", "sas");
+		super("Sas", "2018-12-03", "DescribeAttackAnalysisData");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

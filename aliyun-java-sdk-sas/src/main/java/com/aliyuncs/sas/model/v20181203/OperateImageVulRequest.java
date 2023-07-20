@@ -31,7 +31,7 @@ public class OperateImageVulRequest extends RpcAcsRequest<OperateImageVulRespons
 
 	private String operateType;
 	public OperateImageVulRequest() {
-		super("Sas", "2018-12-03", "OperateImageVul", "sas");
+		super("Sas", "2018-12-03", "OperateImageVul");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

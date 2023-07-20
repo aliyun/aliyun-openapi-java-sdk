@@ -27,7 +27,7 @@ public class InstallUniBackupAgentRequest extends RpcAcsRequest<InstallUniBackup
 
 	private Long policyId;
 	public InstallUniBackupAgentRequest() {
-		super("Sas", "2018-12-03", "InstallUniBackupAgent", "sas");
+		super("Sas", "2018-12-03", "InstallUniBackupAgent");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

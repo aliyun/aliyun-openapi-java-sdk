@@ -25,7 +25,7 @@ import com.aliyuncs.sas.Endpoint;
 public class DescribeLoginSwitchConfigsRequest extends RpcAcsRequest<DescribeLoginSwitchConfigsResponse> {
 	   
 	public DescribeLoginSwitchConfigsRequest() {
-		super("Sas", "2018-12-03", "DescribeLoginSwitchConfigs", "sas");
+		super("Sas", "2018-12-03", "DescribeLoginSwitchConfigs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -25,7 +25,7 @@ import com.aliyuncs.sas.Endpoint;
 public class DescribeVulFixStatisticsRequest extends RpcAcsRequest<DescribeVulFixStatisticsResponse> {
 	   
 	public DescribeVulFixStatisticsRequest() {
-		super("Sas", "2018-12-03", "DescribeVulFixStatistics", "sas");
+		super("Sas", "2018-12-03", "DescribeVulFixStatistics");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

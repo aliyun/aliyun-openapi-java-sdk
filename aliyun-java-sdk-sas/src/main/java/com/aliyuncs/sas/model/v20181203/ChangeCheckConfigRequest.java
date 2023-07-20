@@ -32,9 +32,17 @@ public class ChangeCheckConfigRequest extends RpcAcsRequest<ChangeCheckConfigRes
 
 	private Integer startTime;
 
+	private List<RemovedCheck> removedCheck;
+
+	private Boolean enableAddCheck;
+
+	private Boolean enableAutoCheck;
+
 	private Integer endTime;
+
+	private List<AddedCheck> addedCheck;
 	public ChangeCheckConfigRequest() {
-		super("Sas", "2018-12-03", "ChangeCheckConfig", "sas");
+		super("Sas", "2018-12-03", "ChangeCheckConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -79,6 +87,45 @@ public class ChangeCheckConfigRequest extends RpcAcsRequest<ChangeCheckConfigRes
 		}
 	}
 
+	public List<RemovedCheck> getRemovedCheck() {
+		return this.removedCheck;
+	}
+
+	public void setRemovedCheck(List<RemovedCheck> removedCheck) {
+		this.removedCheck = removedCheck;	
+		if (removedCheck != null) {
+			for (int depth1 = 0; depth1 < removedCheck.size(); depth1++) {
+				if (removedCheck.get(depth1) != null) {
+					
+						putQueryParameter("RemovedCheck." + (depth1 + 1) + ".SectionId" , removedCheck.get(depth1).getSectionId());
+						putQueryParameter("RemovedCheck." + (depth1 + 1) + ".CheckId" , removedCheck.get(depth1).getCheckId());
+				}
+			}
+		}	
+	}
+
+	public Boolean getEnableAddCheck() {
+		return this.enableAddCheck;
+	}
+
+	public void setEnableAddCheck(Boolean enableAddCheck) {
+		this.enableAddCheck = enableAddCheck;
+		if(enableAddCheck != null){
+			putQueryParameter("EnableAddCheck", enableAddCheck.toString());
+		}
+	}
+
+	public Boolean getEnableAutoCheck() {
+		return this.enableAutoCheck;
+	}
+
+	public void setEnableAutoCheck(Boolean enableAutoCheck) {
+		this.enableAutoCheck = enableAutoCheck;
+		if(enableAutoCheck != null){
+			putQueryParameter("EnableAutoCheck", enableAutoCheck.toString());
+		}
+	}
+
 	public Integer getEndTime() {
 		return this.endTime;
 	}
@@ -87,6 +134,69 @@ public class ChangeCheckConfigRequest extends RpcAcsRequest<ChangeCheckConfigRes
 		this.endTime = endTime;
 		if(endTime != null){
 			putQueryParameter("EndTime", endTime.toString());
+		}
+	}
+
+	public List<AddedCheck> getAddedCheck() {
+		return this.addedCheck;
+	}
+
+	public void setAddedCheck(List<AddedCheck> addedCheck) {
+		this.addedCheck = addedCheck;	
+		if (addedCheck != null) {
+			for (int depth1 = 0; depth1 < addedCheck.size(); depth1++) {
+				if (addedCheck.get(depth1) != null) {
+					
+						putQueryParameter("AddedCheck." + (depth1 + 1) + ".SectionId" , addedCheck.get(depth1).getSectionId());
+						putQueryParameter("AddedCheck." + (depth1 + 1) + ".CheckId" , addedCheck.get(depth1).getCheckId());
+				}
+			}
+		}	
+	}
+
+	public static class RemovedCheck {
+
+		private Long sectionId;
+
+		private Long checkId;
+
+		public Long getSectionId() {
+			return this.sectionId;
+		}
+
+		public void setSectionId(Long sectionId) {
+			this.sectionId = sectionId;
+		}
+
+		public Long getCheckId() {
+			return this.checkId;
+		}
+
+		public void setCheckId(Long checkId) {
+			this.checkId = checkId;
+		}
+	}
+
+	public static class AddedCheck {
+
+		private Long sectionId;
+
+		private Long checkId;
+
+		public Long getSectionId() {
+			return this.sectionId;
+		}
+
+		public void setSectionId(Long sectionId) {
+			this.sectionId = sectionId;
+		}
+
+		public Long getCheckId() {
+			return this.checkId;
+		}
+
+		public void setCheckId(Long checkId) {
+			this.checkId = checkId;
 		}
 	}
 

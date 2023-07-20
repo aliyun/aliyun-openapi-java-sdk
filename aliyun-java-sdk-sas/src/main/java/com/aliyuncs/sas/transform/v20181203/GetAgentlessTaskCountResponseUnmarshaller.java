@@ -28,6 +28,9 @@ public class GetAgentlessTaskCountResponseUnmarshaller {
 		getAgentlessTaskCountResponse.setMaliciousFile(_ctx.integerValue("GetAgentlessTaskCountResponse.MaliciousFile"));
 		getAgentlessTaskCountResponse.setVulnerability(_ctx.integerValue("GetAgentlessTaskCountResponse.Vulnerability"));
 		getAgentlessTaskCountResponse.setLastTaskTime(_ctx.longValue("GetAgentlessTaskCountResponse.LastTaskTime"));
+		getAgentlessTaskCountResponse.setBaselineCheckCount(_ctx.integerValue("GetAgentlessTaskCountResponse.BaselineCheckCount"));
+		getAgentlessTaskCountResponse.setScaVulCount(_ctx.integerValue("GetAgentlessTaskCountResponse.ScaVulCount"));
+		getAgentlessTaskCountResponse.setCveVulCount(_ctx.integerValue("GetAgentlessTaskCountResponse.CveVulCount"));
 	 
 	 	return getAgentlessTaskCountResponse;
 	}

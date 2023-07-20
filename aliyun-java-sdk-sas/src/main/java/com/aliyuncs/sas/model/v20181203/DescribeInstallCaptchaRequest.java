@@ -31,7 +31,7 @@ public class DescribeInstallCaptchaRequest extends RpcAcsRequest<DescribeInstall
 
 	private String deadline;
 	public DescribeInstallCaptchaRequest() {
-		super("Sas", "2018-12-03", "DescribeInstallCaptcha", "sas");
+		super("Sas", "2018-12-03", "DescribeInstallCaptcha");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

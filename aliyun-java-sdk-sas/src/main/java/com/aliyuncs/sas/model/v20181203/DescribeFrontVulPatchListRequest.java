@@ -33,7 +33,7 @@ public class DescribeFrontVulPatchListRequest extends RpcAcsRequest<DescribeFron
 
 	private String operateType;
 	public DescribeFrontVulPatchListRequest() {
-		super("Sas", "2018-12-03", "DescribeFrontVulPatchList", "sas");
+		super("Sas", "2018-12-03", "DescribeFrontVulPatchList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

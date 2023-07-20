@@ -27,7 +27,7 @@ public class UnbindAegisRequest extends RpcAcsRequest<UnbindAegisResponse> {
 
 	private String uuids;
 	public UnbindAegisRequest() {
-		super("Sas", "2018-12-03", "UnbindAegis", "sas");
+		super("Sas", "2018-12-03", "UnbindAegis");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

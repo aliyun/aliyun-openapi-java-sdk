@@ -27,7 +27,7 @@ public class DescribeConcernNecessityRequest extends RpcAcsRequest<DescribeConce
 
 	private String lang;
 	public DescribeConcernNecessityRequest() {
-		super("Sas", "2018-12-03", "DescribeConcernNecessity", "sas");
+		super("Sas", "2018-12-03", "DescribeConcernNecessity");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

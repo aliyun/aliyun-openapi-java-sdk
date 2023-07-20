@@ -37,7 +37,7 @@ public class OperateCommonTargetConfigRequest extends RpcAcsRequest<OperateCommo
 
 	private String fieldName;
 	public OperateCommonTargetConfigRequest() {
-		super("Sas", "2018-12-03", "OperateCommonTargetConfig", "sas");
+		super("Sas", "2018-12-03", "OperateCommonTargetConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

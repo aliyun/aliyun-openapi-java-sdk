@@ -31,7 +31,7 @@ public class DescribeCheckWarningDetailRequest extends RpcAcsRequest<DescribeChe
 
 	private Long checkWarningId;
 	public DescribeCheckWarningDetailRequest() {
-		super("Sas", "2018-12-03", "DescribeCheckWarningDetail", "sas");
+		super("Sas", "2018-12-03", "DescribeCheckWarningDetail");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

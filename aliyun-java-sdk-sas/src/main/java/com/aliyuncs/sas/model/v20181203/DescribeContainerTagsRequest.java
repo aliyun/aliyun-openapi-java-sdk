@@ -39,7 +39,7 @@ public class DescribeContainerTagsRequest extends RpcAcsRequest<DescribeContaine
 
 	private String namespace;
 	public DescribeContainerTagsRequest() {
-		super("Sas", "2018-12-03", "DescribeContainerTags", "sas");
+		super("Sas", "2018-12-03", "DescribeContainerTags");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

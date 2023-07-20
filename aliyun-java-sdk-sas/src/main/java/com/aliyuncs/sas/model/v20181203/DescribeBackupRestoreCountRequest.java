@@ -25,7 +25,7 @@ import com.aliyuncs.sas.Endpoint;
 public class DescribeBackupRestoreCountRequest extends RpcAcsRequest<DescribeBackupRestoreCountResponse> {
 	   
 	public DescribeBackupRestoreCountRequest() {
-		super("Sas", "2018-12-03", "DescribeBackupRestoreCount", "sas");
+		super("Sas", "2018-12-03", "DescribeBackupRestoreCount");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

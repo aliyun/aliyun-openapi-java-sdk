@@ -33,7 +33,7 @@ public class ModifyLogMetaStatusRequest extends RpcAcsRequest<ModifyLogMetaStatu
 
 	private String status;
 	public ModifyLogMetaStatusRequest() {
-		super("Sas", "2018-12-03", "ModifyLogMetaStatus", "sas");
+		super("Sas", "2018-12-03", "ModifyLogMetaStatus");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

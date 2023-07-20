@@ -38,7 +38,7 @@ public class UpdateHoneypotProbeRequest extends RpcAcsRequest<UpdateHoneypotProb
 
 	private String displayName;
 	public UpdateHoneypotProbeRequest() {
-		super("Sas", "2018-12-03", "UpdateHoneypotProbe", "sas");
+		super("Sas", "2018-12-03", "UpdateHoneypotProbe");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

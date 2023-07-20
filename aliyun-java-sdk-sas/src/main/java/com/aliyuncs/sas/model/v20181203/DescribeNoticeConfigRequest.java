@@ -27,7 +27,7 @@ public class DescribeNoticeConfigRequest extends RpcAcsRequest<DescribeNoticeCon
 
 	private String sourceIp;
 	public DescribeNoticeConfigRequest() {
-		super("Sas", "2018-12-03", "DescribeNoticeConfig", "sas");
+		super("Sas", "2018-12-03", "DescribeNoticeConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

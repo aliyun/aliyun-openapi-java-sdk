@@ -27,7 +27,7 @@ public class QueryJenkinsImageRegistryPersistenceDayRequest extends RpcAcsReques
 
 	private String sourceIp;
 	public QueryJenkinsImageRegistryPersistenceDayRequest() {
-		super("Sas", "2018-12-03", "QueryJenkinsImageRegistryPersistenceDay", "sas");
+		super("Sas", "2018-12-03", "QueryJenkinsImageRegistryPersistenceDay");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

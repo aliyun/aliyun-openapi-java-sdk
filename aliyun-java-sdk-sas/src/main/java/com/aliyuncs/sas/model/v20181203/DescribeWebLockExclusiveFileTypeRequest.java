@@ -25,7 +25,7 @@ import com.aliyuncs.sas.Endpoint;
 public class DescribeWebLockExclusiveFileTypeRequest extends RpcAcsRequest<DescribeWebLockExclusiveFileTypeResponse> {
 	   
 	public DescribeWebLockExclusiveFileTypeRequest() {
-		super("Sas", "2018-12-03", "DescribeWebLockExclusiveFileType", "sas");
+		super("Sas", "2018-12-03", "DescribeWebLockExclusiveFileType");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

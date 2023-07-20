@@ -29,7 +29,7 @@ public class ModifyPropertyScheduleConfigRequest extends RpcAcsRequest<ModifyPro
 
 	private String scheduleTime;
 	public ModifyPropertyScheduleConfigRequest() {
-		super("Sas", "2018-12-03", "ModifyPropertyScheduleConfig", "sas");
+		super("Sas", "2018-12-03", "ModifyPropertyScheduleConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

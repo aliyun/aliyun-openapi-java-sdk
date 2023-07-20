@@ -25,7 +25,7 @@ import com.aliyuncs.sas.Endpoint;
 public class DeleteServiceTrailRequest extends RpcAcsRequest<DeleteServiceTrailResponse> {
 	   
 	public DeleteServiceTrailRequest() {
-		super("Sas", "2018-12-03", "DeleteServiceTrail", "sas");
+		super("Sas", "2018-12-03", "DeleteServiceTrail");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

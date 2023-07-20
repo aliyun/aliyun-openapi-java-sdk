@@ -27,7 +27,7 @@ public class DescribeBackupPolicyRequest extends RpcAcsRequest<DescribeBackupPol
 
 	private Long id;
 	public DescribeBackupPolicyRequest() {
-		super("Sas", "2018-12-03", "DescribeBackupPolicy", "sas");
+		super("Sas", "2018-12-03", "DescribeBackupPolicy");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

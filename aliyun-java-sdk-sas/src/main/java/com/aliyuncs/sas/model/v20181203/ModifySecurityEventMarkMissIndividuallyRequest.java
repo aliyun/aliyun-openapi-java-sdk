@@ -35,7 +35,7 @@ public class ModifySecurityEventMarkMissIndividuallyRequest extends RpcAcsReques
 
 	private String deleteMarkMissParam;
 	public ModifySecurityEventMarkMissIndividuallyRequest() {
-		super("Sas", "2018-12-03", "ModifySecurityEventMarkMissIndividually", "sas");
+		super("Sas", "2018-12-03", "ModifySecurityEventMarkMissIndividually");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -68,6 +68,8 @@ public class DescribeSuspEventsRequest extends RpcAcsRequest<DescribeSuspEventsR
 
 	private String lang;
 
+	private Long resourceDirectoryAccountId;
+
 	private String dealed;
 
 	private String currentPage;
@@ -88,7 +90,7 @@ public class DescribeSuspEventsRequest extends RpcAcsRequest<DescribeSuspEventsR
 
 	private String parentEventTypes;
 	public DescribeSuspEventsRequest() {
-		super("Sas", "2018-12-03", "DescribeSuspEvents", "sas");
+		super("Sas", "2018-12-03", "DescribeSuspEvents");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -324,6 +326,17 @@ public class DescribeSuspEventsRequest extends RpcAcsRequest<DescribeSuspEventsR
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public Long getResourceDirectoryAccountId() {
+		return this.resourceDirectoryAccountId;
+	}
+
+	public void setResourceDirectoryAccountId(Long resourceDirectoryAccountId) {
+		this.resourceDirectoryAccountId = resourceDirectoryAccountId;
+		if(resourceDirectoryAccountId != null){
+			putQueryParameter("ResourceDirectoryAccountId", resourceDirectoryAccountId.toString());
 		}
 	}
 

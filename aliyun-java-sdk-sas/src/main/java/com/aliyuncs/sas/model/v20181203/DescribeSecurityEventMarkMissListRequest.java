@@ -37,7 +37,7 @@ public class DescribeSecurityEventMarkMissListRequest extends RpcAcsRequest<Desc
 
 	private Integer currentPage;
 	public DescribeSecurityEventMarkMissListRequest() {
-		super("Sas", "2018-12-03", "DescribeSecurityEventMarkMissList", "sas");
+		super("Sas", "2018-12-03", "DescribeSecurityEventMarkMissList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

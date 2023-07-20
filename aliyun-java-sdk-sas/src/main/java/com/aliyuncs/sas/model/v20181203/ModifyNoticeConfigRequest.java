@@ -33,7 +33,7 @@ public class ModifyNoticeConfigRequest extends RpcAcsRequest<ModifyNoticeConfigR
 
 	private Integer route;
 	public ModifyNoticeConfigRequest() {
-		super("Sas", "2018-12-03", "ModifyNoticeConfig", "sas");
+		super("Sas", "2018-12-03", "ModifyNoticeConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

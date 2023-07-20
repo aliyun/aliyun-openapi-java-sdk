@@ -31,7 +31,7 @@ public class DescribeCheckFixDetailsRequest extends RpcAcsRequest<DescribeCheckF
 
 	private Long riskId;
 	public DescribeCheckFixDetailsRequest() {
-		super("Sas", "2018-12-03", "DescribeCheckFixDetails", "sas");
+		super("Sas", "2018-12-03", "DescribeCheckFixDetails");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

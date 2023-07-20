@@ -37,7 +37,7 @@ public class DescribeEventLevelCountRequest extends RpcAcsRequest<DescribeEventL
 
 	private String containerIds;
 	public DescribeEventLevelCountRequest() {
-		super("Sas", "2018-12-03", "DescribeEventLevelCount", "sas");
+		super("Sas", "2018-12-03", "DescribeEventLevelCount");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

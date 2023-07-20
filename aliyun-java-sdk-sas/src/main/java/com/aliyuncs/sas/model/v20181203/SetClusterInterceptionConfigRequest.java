@@ -31,7 +31,7 @@ public class SetClusterInterceptionConfigRequest extends RpcAcsRequest<SetCluste
 
 	private Integer switchOn;
 	public SetClusterInterceptionConfigRequest() {
-		super("Sas", "2018-12-03", "SetClusterInterceptionConfig", "sas");
+		super("Sas", "2018-12-03", "SetClusterInterceptionConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

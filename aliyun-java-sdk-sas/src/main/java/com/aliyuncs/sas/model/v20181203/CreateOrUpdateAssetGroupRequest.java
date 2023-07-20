@@ -31,7 +31,7 @@ public class CreateOrUpdateAssetGroupRequest extends RpcAcsRequest<CreateOrUpdat
 
 	private String uuids;
 	public CreateOrUpdateAssetGroupRequest() {
-		super("Sas", "2018-12-03", "CreateOrUpdateAssetGroup", "sas");
+		super("Sas", "2018-12-03", "CreateOrUpdateAssetGroup");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

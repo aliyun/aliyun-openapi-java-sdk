@@ -38,7 +38,7 @@ public class ListHoneypotRequest extends RpcAcsRequest<ListHoneypotResponse> {
 
 	private List<String> honeypotIdss;
 	public ListHoneypotRequest() {
-		super("Sas", "2018-12-03", "ListHoneypot", "sas");
+		super("Sas", "2018-12-03", "ListHoneypot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

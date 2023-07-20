@@ -33,7 +33,7 @@ public class DescribeInstanceStatisticsRequest extends RpcAcsRequest<DescribeIns
 
 	private String lang;
 	public DescribeInstanceStatisticsRequest() {
-		super("Sas", "2018-12-03", "DescribeInstanceStatistics", "sas");
+		super("Sas", "2018-12-03", "DescribeInstanceStatistics");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

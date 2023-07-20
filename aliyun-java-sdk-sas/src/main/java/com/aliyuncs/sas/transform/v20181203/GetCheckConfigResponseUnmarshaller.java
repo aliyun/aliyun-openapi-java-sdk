@@ -18,7 +18,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.sas.model.v20181203.GetCheckConfigResponse;
-import com.aliyuncs.sas.model.v20181203.GetCheckConfigResponse.StandardsItem;
+import com.aliyuncs.sas.model.v20181203.GetCheckConfigResponse.SelectedCheck;
+import com.aliyuncs.sas.model.v20181203.GetCheckConfigResponse.Standard;
 import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -31,6 +32,8 @@ public class GetCheckConfigResponseUnmarshaller {
 		getCheckConfigResponse.setStartTime(_ctx.integerValue("GetCheckConfigResponse.StartTime"));
 		getCheckConfigResponse.setEndTime(_ctx.integerValue("GetCheckConfigResponse.EndTime"));
 		getCheckConfigResponse.setData(_ctx.mapValue("GetCheckConfigResponse.Data"));
+		getCheckConfigResponse.setEnableAutoCheck(_ctx.booleanValue("GetCheckConfigResponse.EnableAutoCheck"));
+		getCheckConfigResponse.setEnableAddCheck(_ctx.booleanValue("GetCheckConfigResponse.EnableAddCheck"));
 
 		List<Integer> cycleDays = new ArrayList<Integer>();
 		for (int i = 0; i < _ctx.lengthValue("GetCheckConfigResponse.CycleDays.Length"); i++) {
@@ -38,17 +41,27 @@ public class GetCheckConfigResponseUnmarshaller {
 		}
 		getCheckConfigResponse.setCycleDays(cycleDays);
 
-		List<StandardsItem> standards = new ArrayList<StandardsItem>();
+		List<Standard> standards = new ArrayList<Standard>();
 		for (int i = 0; i < _ctx.lengthValue("GetCheckConfigResponse.Standards.Length"); i++) {
-			StandardsItem standardsItem = new StandardsItem();
-			standardsItem.setId(_ctx.longValue("GetCheckConfigResponse.Standards["+ i +"].Id"));
-			standardsItem.setShowName(_ctx.stringValue("GetCheckConfigResponse.Standards["+ i +"].ShowName"));
-			standardsItem.setType(_ctx.stringValue("GetCheckConfigResponse.Standards["+ i +"].Type"));
-			standardsItem.setStatus(_ctx.stringValue("GetCheckConfigResponse.Standards["+ i +"].Status"));
+			Standard standard = new Standard();
+			standard.setId(_ctx.longValue("GetCheckConfigResponse.Standards["+ i +"].Id"));
+			standard.setShowName(_ctx.stringValue("GetCheckConfigResponse.Standards["+ i +"].ShowName"));
+			standard.setType(_ctx.stringValue("GetCheckConfigResponse.Standards["+ i +"].Type"));
+			standard.setStatus(_ctx.stringValue("GetCheckConfigResponse.Standards["+ i +"].Status"));
 
-			standards.add(standardsItem);
+			standards.add(standard);
 		}
 		getCheckConfigResponse.setStandards(standards);
+
+		List<SelectedCheck> selectedChecks = new ArrayList<SelectedCheck>();
+		for (int i = 0; i < _ctx.lengthValue("GetCheckConfigResponse.SelectedChecks.Length"); i++) {
+			SelectedCheck selectedCheck = new SelectedCheck();
+			selectedCheck.setCheckId(_ctx.longValue("GetCheckConfigResponse.SelectedChecks["+ i +"].CheckId"));
+			selectedCheck.setSectionId(_ctx.longValue("GetCheckConfigResponse.SelectedChecks["+ i +"].SectionId"));
+
+			selectedChecks.add(selectedCheck);
+		}
+		getCheckConfigResponse.setSelectedChecks(selectedChecks);
 	 
 	 	return getCheckConfigResponse;
 	}

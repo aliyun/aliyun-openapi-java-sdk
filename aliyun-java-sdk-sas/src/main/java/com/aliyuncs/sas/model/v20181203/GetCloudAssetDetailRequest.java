@@ -34,7 +34,7 @@ public class GetCloudAssetDetailRequest extends RpcAcsRequest<GetCloudAssetDetai
 
 	private List<CloudAssetInstances> cloudAssetInstancess;
 	public GetCloudAssetDetailRequest() {
-		super("Sas", "2018-12-03", "GetCloudAssetDetail", "sas");
+		super("Sas", "2018-12-03", "GetCloudAssetDetail");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

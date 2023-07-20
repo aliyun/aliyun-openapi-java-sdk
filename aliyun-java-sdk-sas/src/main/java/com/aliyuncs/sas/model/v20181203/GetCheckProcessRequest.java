@@ -27,7 +27,7 @@ public class GetCheckProcessRequest extends RpcAcsRequest<GetCheckProcessRespons
 
 	private String taskId;
 	public GetCheckProcessRequest() {
-		super("Sas", "2018-12-03", "GetCheckProcess", "sas");
+		super("Sas", "2018-12-03", "GetCheckProcess");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

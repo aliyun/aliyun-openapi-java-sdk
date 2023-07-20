@@ -27,7 +27,7 @@ public class GetAlarmMachineCountRequest extends RpcAcsRequest<GetAlarmMachineCo
 
 	private String from;
 	public GetAlarmMachineCountRequest() {
-		super("Sas", "2018-12-03", "GetAlarmMachineCount", "sas");
+		super("Sas", "2018-12-03", "GetAlarmMachineCount");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

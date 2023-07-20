@@ -32,7 +32,7 @@ public class UpdateJenkinsImageRegistryNameRequest extends RpcAcsRequest<UpdateJ
 
 	private String registryName;
 	public UpdateJenkinsImageRegistryNameRequest() {
-		super("Sas", "2018-12-03", "UpdateJenkinsImageRegistryName", "sas");
+		super("Sas", "2018-12-03", "UpdateJenkinsImageRegistryName");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

@@ -31,7 +31,7 @@ public class DeleteStrategyRequest extends RpcAcsRequest<DeleteStrategyResponse>
 
 	private String lang;
 	public DeleteStrategyRequest() {
-		super("Sas", "2018-12-03", "DeleteStrategy", "sas");
+		super("Sas", "2018-12-03", "DeleteStrategy");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

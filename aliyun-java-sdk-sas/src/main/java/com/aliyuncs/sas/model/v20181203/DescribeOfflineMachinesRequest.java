@@ -41,7 +41,7 @@ public class DescribeOfflineMachinesRequest extends RpcAcsRequest<DescribeOfflin
 
 	private String regionIdStr;
 	public DescribeOfflineMachinesRequest() {
-		super("Sas", "2018-12-03", "DescribeOfflineMachines", "sas");
+		super("Sas", "2018-12-03", "DescribeOfflineMachines");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -33,7 +33,7 @@ public class InstallPmAgentRequest extends RpcAcsRequest<InstallPmAgentResponse>
 
 	private String uuids;
 	public InstallPmAgentRequest() {
-		super("Sas", "2018-12-03", "InstallPmAgent", "sas");
+		super("Sas", "2018-12-03", "InstallPmAgent");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

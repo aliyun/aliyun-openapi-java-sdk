@@ -45,7 +45,7 @@ public class DescribeGroupedInstancesRequest extends RpcAcsRequest<DescribeGroup
 
 	private String saleVersionCheckCode;
 	public DescribeGroupedInstancesRequest() {
-		super("Sas", "2018-12-03", "DescribeGroupedInstances", "sas");
+		super("Sas", "2018-12-03", "DescribeGroupedInstances");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

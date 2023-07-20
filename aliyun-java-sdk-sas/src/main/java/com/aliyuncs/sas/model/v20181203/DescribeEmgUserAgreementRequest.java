@@ -25,7 +25,7 @@ import com.aliyuncs.sas.Endpoint;
 public class DescribeEmgUserAgreementRequest extends RpcAcsRequest<DescribeEmgUserAgreementResponse> {
 	   
 	public DescribeEmgUserAgreementRequest() {
-		super("Sas", "2018-12-03", "DescribeEmgUserAgreement", "sas");
+		super("Sas", "2018-12-03", "DescribeEmgUserAgreement");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

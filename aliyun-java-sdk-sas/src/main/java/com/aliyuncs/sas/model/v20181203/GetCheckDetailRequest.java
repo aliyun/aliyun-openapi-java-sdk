@@ -29,7 +29,7 @@ public class GetCheckDetailRequest extends RpcAcsRequest<GetCheckDetailResponse>
 
 	private Long checkId;
 	public GetCheckDetailRequest() {
-		super("Sas", "2018-12-03", "GetCheckDetail", "sas");
+		super("Sas", "2018-12-03", "GetCheckDetail");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

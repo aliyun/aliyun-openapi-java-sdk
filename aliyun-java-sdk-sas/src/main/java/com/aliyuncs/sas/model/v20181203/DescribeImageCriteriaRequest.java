@@ -27,7 +27,7 @@ public class DescribeImageCriteriaRequest extends RpcAcsRequest<DescribeImageCri
 
 	private String value;
 	public DescribeImageCriteriaRequest() {
-		super("Sas", "2018-12-03", "DescribeImageCriteria", "sas");
+		super("Sas", "2018-12-03", "DescribeImageCriteria");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

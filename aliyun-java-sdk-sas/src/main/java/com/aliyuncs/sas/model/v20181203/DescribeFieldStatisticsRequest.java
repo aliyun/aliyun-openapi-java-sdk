@@ -25,14 +25,27 @@ import com.aliyuncs.sas.Endpoint;
 public class DescribeFieldStatisticsRequest extends RpcAcsRequest<DescribeFieldStatisticsResponse> {
 	   
 
+	private Long resourceDirectoryAccountId;
+
 	private String machineTypes;
 	public DescribeFieldStatisticsRequest() {
-		super("Sas", "2018-12-03", "DescribeFieldStatistics", "sas");
+		super("Sas", "2018-12-03", "DescribeFieldStatistics");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Long getResourceDirectoryAccountId() {
+		return this.resourceDirectoryAccountId;
+	}
+
+	public void setResourceDirectoryAccountId(Long resourceDirectoryAccountId) {
+		this.resourceDirectoryAccountId = resourceDirectoryAccountId;
+		if(resourceDirectoryAccountId != null){
+			putQueryParameter("ResourceDirectoryAccountId", resourceDirectoryAccountId.toString());
+		}
 	}
 
 	public String getMachineTypes() {

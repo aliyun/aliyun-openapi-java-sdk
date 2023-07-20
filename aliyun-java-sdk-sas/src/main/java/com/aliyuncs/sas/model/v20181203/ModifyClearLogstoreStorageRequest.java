@@ -33,7 +33,7 @@ public class ModifyClearLogstoreStorageRequest extends RpcAcsRequest<ModifyClear
 
 	private String userProject;
 	public ModifyClearLogstoreStorageRequest() {
-		super("Sas", "2018-12-03", "ModifyClearLogstoreStorage", "sas");
+		super("Sas", "2018-12-03", "ModifyClearLogstoreStorage");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

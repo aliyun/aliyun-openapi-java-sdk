@@ -45,7 +45,7 @@ public class ModifyCycleTaskRequest extends RpcAcsRequest<ModifyCycleTaskRespons
 
 	private String configId;
 	public ModifyCycleTaskRequest() {
-		super("Sas", "2018-12-03", "ModifyCycleTask", "sas");
+		super("Sas", "2018-12-03", "ModifyCycleTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class GetCheckRiskStatisticsRequest extends RpcAcsRequest<GetCheckRiskSta
 
 	private Integer currentPage;
 	public GetCheckRiskStatisticsRequest() {
-		super("Sas", "2018-12-03", "GetCheckRiskStatistics", "sas");
+		super("Sas", "2018-12-03", "GetCheckRiskStatistics");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

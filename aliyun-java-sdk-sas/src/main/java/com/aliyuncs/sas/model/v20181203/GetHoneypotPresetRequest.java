@@ -29,7 +29,7 @@ public class GetHoneypotPresetRequest extends RpcAcsRequest<GetHoneypotPresetRes
 
 	private String honeypotPresetId;
 	public GetHoneypotPresetRequest() {
-		super("Sas", "2018-12-03", "GetHoneypotPreset", "sas");
+		super("Sas", "2018-12-03", "GetHoneypotPreset");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

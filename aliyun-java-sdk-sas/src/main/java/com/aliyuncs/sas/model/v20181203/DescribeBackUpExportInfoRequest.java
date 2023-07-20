@@ -33,7 +33,7 @@ public class DescribeBackUpExportInfoRequest extends RpcAcsRequest<DescribeBackU
 
 	private Integer currentPage;
 	public DescribeBackUpExportInfoRequest() {
-		super("Sas", "2018-12-03", "DescribeBackUpExportInfo", "sas");
+		super("Sas", "2018-12-03", "DescribeBackUpExportInfo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

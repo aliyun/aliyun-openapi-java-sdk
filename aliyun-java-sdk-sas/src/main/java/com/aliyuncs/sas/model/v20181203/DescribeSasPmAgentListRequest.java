@@ -29,7 +29,7 @@ public class DescribeSasPmAgentListRequest extends RpcAcsRequest<DescribeSasPmAg
 
 	private String uuids;
 	public DescribeSasPmAgentListRequest() {
-		super("Sas", "2018-12-03", "DescribeSasPmAgentList", "sas");
+		super("Sas", "2018-12-03", "DescribeSasPmAgentList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

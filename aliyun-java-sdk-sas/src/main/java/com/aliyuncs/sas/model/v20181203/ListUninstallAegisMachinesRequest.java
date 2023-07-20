@@ -41,7 +41,7 @@ public class ListUninstallAegisMachinesRequest extends RpcAcsRequest<ListUninsta
 
 	private String regionIdStr;
 	public ListUninstallAegisMachinesRequest() {
-		super("Sas", "2018-12-03", "ListUninstallAegisMachines", "sas");
+		super("Sas", "2018-12-03", "ListUninstallAegisMachines");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

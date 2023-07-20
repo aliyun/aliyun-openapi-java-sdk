@@ -29,7 +29,7 @@ public class DeleteCustomBlockRecordRequest extends RpcAcsRequest<DeleteCustomBl
 
 	private Long id;
 	public DeleteCustomBlockRecordRequest() {
-		super("Sas", "2018-12-03", "DeleteCustomBlockRecord", "sas");
+		super("Sas", "2018-12-03", "DeleteCustomBlockRecord");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

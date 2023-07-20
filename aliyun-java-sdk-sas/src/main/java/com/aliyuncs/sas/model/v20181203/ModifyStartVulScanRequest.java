@@ -29,7 +29,7 @@ public class ModifyStartVulScanRequest extends RpcAcsRequest<ModifyStartVulScanR
 
 	private String uuids;
 	public ModifyStartVulScanRequest() {
-		super("Sas", "2018-12-03", "ModifyStartVulScan", "sas");
+		super("Sas", "2018-12-03", "ModifyStartVulScan");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

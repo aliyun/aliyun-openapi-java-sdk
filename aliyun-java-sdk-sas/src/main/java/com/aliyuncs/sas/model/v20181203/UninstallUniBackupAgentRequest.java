@@ -27,7 +27,7 @@ public class UninstallUniBackupAgentRequest extends RpcAcsRequest<UninstallUniBa
 
 	private Long policyId;
 	public UninstallUniBackupAgentRequest() {
-		super("Sas", "2018-12-03", "UninstallUniBackupAgent", "sas");
+		super("Sas", "2018-12-03", "UninstallUniBackupAgent");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

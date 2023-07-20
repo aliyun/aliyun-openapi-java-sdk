@@ -27,7 +27,7 @@ public class ModifyAutoDelConfigRequest extends RpcAcsRequest<ModifyAutoDelConfi
 
 	private Integer days;
 	public ModifyAutoDelConfigRequest() {
-		super("Sas", "2018-12-03", "ModifyAutoDelConfig", "sas");
+		super("Sas", "2018-12-03", "ModifyAutoDelConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

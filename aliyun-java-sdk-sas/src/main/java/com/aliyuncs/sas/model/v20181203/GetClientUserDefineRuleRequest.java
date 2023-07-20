@@ -27,7 +27,7 @@ public class GetClientUserDefineRuleRequest extends RpcAcsRequest<GetClientUserD
 
 	private Long id;
 	public GetClientUserDefineRuleRequest() {
-		super("Sas", "2018-12-03", "GetClientUserDefineRule", "sas");
+		super("Sas", "2018-12-03", "GetClientUserDefineRule");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

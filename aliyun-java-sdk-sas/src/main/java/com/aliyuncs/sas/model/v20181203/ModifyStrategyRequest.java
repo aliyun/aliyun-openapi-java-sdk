@@ -47,7 +47,7 @@ public class ModifyStrategyRequest extends RpcAcsRequest<ModifyStrategyResponse>
 
 	private String name;
 	public ModifyStrategyRequest() {
-		super("Sas", "2018-12-03", "ModifyStrategy", "sas");
+		super("Sas", "2018-12-03", "ModifyStrategy");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

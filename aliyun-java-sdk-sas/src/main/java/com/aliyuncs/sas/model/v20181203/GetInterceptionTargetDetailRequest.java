@@ -27,7 +27,7 @@ public class GetInterceptionTargetDetailRequest extends RpcAcsRequest<GetInterce
 
 	private Long targetId;
 	public GetInterceptionTargetDetailRequest() {
-		super("Sas", "2018-12-03", "GetInterceptionTargetDetail", "sas");
+		super("Sas", "2018-12-03", "GetInterceptionTargetDetail");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

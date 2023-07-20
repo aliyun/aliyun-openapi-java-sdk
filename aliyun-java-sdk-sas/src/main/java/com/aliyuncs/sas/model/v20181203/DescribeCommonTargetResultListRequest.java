@@ -29,7 +29,7 @@ public class DescribeCommonTargetResultListRequest extends RpcAcsRequest<Describ
 
 	private String sourceIp;
 	public DescribeCommonTargetResultListRequest() {
-		super("Sas", "2018-12-03", "DescribeCommonTargetResultList", "sas");
+		super("Sas", "2018-12-03", "DescribeCommonTargetResultList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

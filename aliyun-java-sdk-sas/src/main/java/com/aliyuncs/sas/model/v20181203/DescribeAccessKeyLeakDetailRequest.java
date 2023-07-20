@@ -27,7 +27,7 @@ public class DescribeAccessKeyLeakDetailRequest extends RpcAcsRequest<DescribeAc
 
 	private Long id;
 	public DescribeAccessKeyLeakDetailRequest() {
-		super("Sas", "2018-12-03", "DescribeAccessKeyLeakDetail", "sas");
+		super("Sas", "2018-12-03", "DescribeAccessKeyLeakDetail");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

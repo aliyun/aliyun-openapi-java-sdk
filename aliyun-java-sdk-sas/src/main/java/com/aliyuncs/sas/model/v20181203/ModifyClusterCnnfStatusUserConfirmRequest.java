@@ -30,7 +30,7 @@ public class ModifyClusterCnnfStatusUserConfirmRequest extends RpcAcsRequest<Mod
 
 	private Boolean userConfirm;
 	public ModifyClusterCnnfStatusUserConfirmRequest() {
-		super("Sas", "2018-12-03", "ModifyClusterCnnfStatusUserConfirm", "sas");
+		super("Sas", "2018-12-03", "ModifyClusterCnnfStatusUserConfirm");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

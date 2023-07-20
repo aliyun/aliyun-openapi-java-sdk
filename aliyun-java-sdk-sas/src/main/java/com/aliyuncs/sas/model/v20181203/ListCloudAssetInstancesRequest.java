@@ -36,7 +36,7 @@ public class ListCloudAssetInstancesRequest extends RpcAcsRequest<ListCloudAsset
 
 	private Integer currentPage;
 	public ListCloudAssetInstancesRequest() {
-		super("Sas", "2018-12-03", "ListCloudAssetInstances", "sas");
+		super("Sas", "2018-12-03", "ListCloudAssetInstances");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

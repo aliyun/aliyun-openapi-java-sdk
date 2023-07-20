@@ -39,7 +39,7 @@ public class PageImageRegistryRequest extends RpcAcsRequest<PageImageRegistryRes
 
 	private List<String> registryTypeInLists;
 	public PageImageRegistryRequest() {
-		super("Sas", "2018-12-03", "PageImageRegistry", "sas");
+		super("Sas", "2018-12-03", "PageImageRegistry");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

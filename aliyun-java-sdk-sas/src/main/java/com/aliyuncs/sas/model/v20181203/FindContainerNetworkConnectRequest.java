@@ -44,7 +44,7 @@ public class FindContainerNetworkConnectRequest extends RpcAcsRequest<FindContai
 	@SerializedName("srcNode")
 	private SrcNode srcNode;
 	public FindContainerNetworkConnectRequest() {
-		super("Sas", "2018-12-03", "FindContainerNetworkConnect", "sas");
+		super("Sas", "2018-12-03", "FindContainerNetworkConnect");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

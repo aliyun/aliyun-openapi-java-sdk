@@ -42,7 +42,7 @@ public class DescribeImageBaselineCheckResultRequest extends RpcAcsRequest<Descr
 
 	private String riskLevel;
 	public DescribeImageBaselineCheckResultRequest() {
-		super("Sas", "2018-12-03", "DescribeImageBaselineCheckResult", "sas");
+		super("Sas", "2018-12-03", "DescribeImageBaselineCheckResult");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

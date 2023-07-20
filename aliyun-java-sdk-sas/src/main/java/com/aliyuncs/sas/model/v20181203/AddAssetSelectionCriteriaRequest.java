@@ -34,7 +34,7 @@ public class AddAssetSelectionCriteriaRequest extends RpcAcsRequest<AddAssetSele
 
 	private String selectionKey;
 	public AddAssetSelectionCriteriaRequest() {
-		super("Sas", "2018-12-03", "AddAssetSelectionCriteria", "sas");
+		super("Sas", "2018-12-03", "AddAssetSelectionCriteria");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

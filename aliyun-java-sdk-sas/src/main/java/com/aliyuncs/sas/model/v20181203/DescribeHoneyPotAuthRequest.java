@@ -27,7 +27,7 @@ public class DescribeHoneyPotAuthRequest extends RpcAcsRequest<DescribeHoneyPotA
 
 	private String lang;
 	public DescribeHoneyPotAuthRequest() {
-		super("Sas", "2018-12-03", "DescribeHoneyPotAuth", "sas");
+		super("Sas", "2018-12-03", "DescribeHoneyPotAuth");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

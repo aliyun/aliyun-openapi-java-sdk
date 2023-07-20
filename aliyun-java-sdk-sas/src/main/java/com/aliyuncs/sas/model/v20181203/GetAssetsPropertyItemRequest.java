@@ -39,7 +39,7 @@ public class GetAssetsPropertyItemRequest extends RpcAcsRequest<GetAssetsPropert
 
 	private Integer currentPage;
 	public GetAssetsPropertyItemRequest() {
-		super("Sas", "2018-12-03", "GetAssetsPropertyItem", "sas");
+		super("Sas", "2018-12-03", "GetAssetsPropertyItem");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

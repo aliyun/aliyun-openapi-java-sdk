@@ -29,7 +29,7 @@ public class PublicSyncAndCreateImageScanTaskRequest extends RpcAcsRequest<Publi
 
 	private String sourceIp;
 	public PublicSyncAndCreateImageScanTaskRequest() {
-		super("Sas", "2018-12-03", "PublicSyncAndCreateImageScanTask", "sas");
+		super("Sas", "2018-12-03", "PublicSyncAndCreateImageScanTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

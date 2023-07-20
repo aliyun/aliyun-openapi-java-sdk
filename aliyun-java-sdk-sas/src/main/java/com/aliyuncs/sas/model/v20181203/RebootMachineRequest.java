@@ -27,7 +27,7 @@ public class RebootMachineRequest extends RpcAcsRequest<RebootMachineResponse> {
 
 	private String uuid;
 	public RebootMachineRequest() {
-		super("Sas", "2018-12-03", "RebootMachine", "sas");
+		super("Sas", "2018-12-03", "RebootMachine");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

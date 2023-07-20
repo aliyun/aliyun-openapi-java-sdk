@@ -33,7 +33,7 @@ public class ListUuidsByWebPathRequest extends RpcAcsRequest<ListUuidsByWebPathR
 
 	private Integer currentPage;
 	public ListUuidsByWebPathRequest() {
-		super("Sas", "2018-12-03", "ListUuidsByWebPath", "sas");
+		super("Sas", "2018-12-03", "ListUuidsByWebPath");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

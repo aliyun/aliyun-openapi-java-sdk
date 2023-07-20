@@ -76,7 +76,7 @@ public class DescribeImageVulListRequest extends RpcAcsRequest<DescribeImageVulL
 
 	private String repoRegionId;
 	public DescribeImageVulListRequest() {
-		super("Sas", "2018-12-03", "DescribeImageVulList", "sas");
+		super("Sas", "2018-12-03", "DescribeImageVulList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

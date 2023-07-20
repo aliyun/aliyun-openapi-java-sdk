@@ -31,7 +31,7 @@ public class DescribeCriteriaRequest extends RpcAcsRequest<DescribeCriteriaRespo
 
 	private String machineTypes;
 	public DescribeCriteriaRequest() {
-		super("Sas", "2018-12-03", "DescribeCriteria", "sas");
+		super("Sas", "2018-12-03", "DescribeCriteria");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

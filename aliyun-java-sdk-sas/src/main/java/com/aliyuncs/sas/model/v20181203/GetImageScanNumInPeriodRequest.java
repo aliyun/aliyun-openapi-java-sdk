@@ -27,7 +27,7 @@ public class GetImageScanNumInPeriodRequest extends RpcAcsRequest<GetImageScanNu
 
 	private String pastDay;
 	public GetImageScanNumInPeriodRequest() {
-		super("Sas", "2018-12-03", "GetImageScanNumInPeriod", "sas");
+		super("Sas", "2018-12-03", "GetImageScanNumInPeriod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

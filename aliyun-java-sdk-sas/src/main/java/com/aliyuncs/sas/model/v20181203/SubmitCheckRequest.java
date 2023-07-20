@@ -24,13 +24,26 @@ import com.aliyuncs.sas.Endpoint;
  */
 public class SubmitCheckRequest extends RpcAcsRequest<SubmitCheckResponse> {
 	   
+
+	private String scanRange;
 	public SubmitCheckRequest() {
-		super("Sas", "2018-12-03", "SubmitCheck", "sas");
+		super("Sas", "2018-12-03", "SubmitCheck");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getScanRange() {
+		return this.scanRange;
+	}
+
+	public void setScanRange(String scanRange) {
+		this.scanRange = scanRange;
+		if(scanRange != null){
+			putQueryParameter("ScanRange", scanRange);
+		}
 	}
 
 	@Override

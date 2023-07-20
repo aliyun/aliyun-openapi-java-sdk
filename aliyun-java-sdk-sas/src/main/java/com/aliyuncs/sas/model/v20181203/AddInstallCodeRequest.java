@@ -37,7 +37,7 @@ public class AddInstallCodeRequest extends RpcAcsRequest<AddInstallCodeResponse>
 
 	private String vendorName;
 	public AddInstallCodeRequest() {
-		super("Sas", "2018-12-03", "AddInstallCode", "sas");
+		super("Sas", "2018-12-03", "AddInstallCode");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

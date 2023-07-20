@@ -29,7 +29,7 @@ public class DescribeVulWhitelistRequest extends RpcAcsRequest<DescribeVulWhitel
 
 	private Integer pageSize;
 	public DescribeVulWhitelistRequest() {
-		super("Sas", "2018-12-03", "DescribeVulWhitelist", "sas");
+		super("Sas", "2018-12-03", "DescribeVulWhitelist");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -28,7 +28,7 @@ public class DeleteAntiBruteForceRuleRequest extends RpcAcsRequest<DeleteAntiBru
 
 	private List<Long> idss;
 	public DeleteAntiBruteForceRuleRequest() {
-		super("Sas", "2018-12-03", "DeleteAntiBruteForceRule", "sas");
+		super("Sas", "2018-12-03", "DeleteAntiBruteForceRule");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

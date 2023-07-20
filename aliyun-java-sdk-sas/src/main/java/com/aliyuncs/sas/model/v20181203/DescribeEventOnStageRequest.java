@@ -27,7 +27,7 @@ public class DescribeEventOnStageRequest extends RpcAcsRequest<DescribeEventOnSt
 
 	private String lang;
 	public DescribeEventOnStageRequest() {
-		super("Sas", "2018-12-03", "DescribeEventOnStage", "sas");
+		super("Sas", "2018-12-03", "DescribeEventOnStage");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

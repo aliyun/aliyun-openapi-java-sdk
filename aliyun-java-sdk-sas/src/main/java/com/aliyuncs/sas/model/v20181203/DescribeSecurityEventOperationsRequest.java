@@ -33,7 +33,7 @@ public class DescribeSecurityEventOperationsRequest extends RpcAcsRequest<Descri
 
 	private Long securityEventId;
 	public DescribeSecurityEventOperationsRequest() {
-		super("Sas", "2018-12-03", "DescribeSecurityEventOperations", "sas");
+		super("Sas", "2018-12-03", "DescribeSecurityEventOperations");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -41,7 +41,7 @@ public class DescribeTraceInfoNodeRequest extends RpcAcsRequest<DescribeTraceInf
 
 	private Long incidentTime;
 	public DescribeTraceInfoNodeRequest() {
-		super("Sas", "2018-12-03", "DescribeTraceInfoNode", "sas");
+		super("Sas", "2018-12-03", "DescribeTraceInfoNode");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

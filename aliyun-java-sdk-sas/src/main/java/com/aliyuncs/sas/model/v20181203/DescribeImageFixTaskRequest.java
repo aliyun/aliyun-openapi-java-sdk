@@ -35,7 +35,7 @@ public class DescribeImageFixTaskRequest extends RpcAcsRequest<DescribeImageFixT
 
 	private String status;
 	public DescribeImageFixTaskRequest() {
-		super("Sas", "2018-12-03", "DescribeImageFixTask", "sas");
+		super("Sas", "2018-12-03", "DescribeImageFixTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

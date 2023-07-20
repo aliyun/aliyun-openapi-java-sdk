@@ -45,6 +45,8 @@ public class DescribeGroupedVulRequest extends RpcAcsRequest<DescribeGroupedVulR
 
 	private String lang;
 
+	private Long resourceDirectoryAccountId;
+
 	private String assetType;
 
 	private String dealed;
@@ -53,7 +55,7 @@ public class DescribeGroupedVulRequest extends RpcAcsRequest<DescribeGroupedVulR
 
 	private String searchTags;
 	public DescribeGroupedVulRequest() {
-		super("Sas", "2018-12-03", "DescribeGroupedVul", "sas");
+		super("Sas", "2018-12-03", "DescribeGroupedVul");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -168,6 +170,17 @@ public class DescribeGroupedVulRequest extends RpcAcsRequest<DescribeGroupedVulR
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public Long getResourceDirectoryAccountId() {
+		return this.resourceDirectoryAccountId;
+	}
+
+	public void setResourceDirectoryAccountId(Long resourceDirectoryAccountId) {
+		this.resourceDirectoryAccountId = resourceDirectoryAccountId;
+		if(resourceDirectoryAccountId != null){
+			putQueryParameter("ResourceDirectoryAccountId", resourceDirectoryAccountId.toString());
 		}
 	}
 

@@ -29,7 +29,7 @@ public class SaveSuspEventUserSettingRequest extends RpcAcsRequest<SaveSuspEvent
 
 	private String levelsOn;
 	public SaveSuspEventUserSettingRequest() {
-		super("Sas", "2018-12-03", "SaveSuspEventUserSetting", "sas");
+		super("Sas", "2018-12-03", "SaveSuspEventUserSetting");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

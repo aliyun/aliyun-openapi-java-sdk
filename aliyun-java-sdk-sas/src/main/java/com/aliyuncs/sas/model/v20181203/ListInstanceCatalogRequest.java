@@ -34,7 +34,7 @@ public class ListInstanceCatalogRequest extends RpcAcsRequest<ListInstanceCatalo
 
 	private List<Long> requirementIdss;
 	public ListInstanceCatalogRequest() {
-		super("Sas", "2018-12-03", "ListInstanceCatalog", "sas");
+		super("Sas", "2018-12-03", "ListInstanceCatalog");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

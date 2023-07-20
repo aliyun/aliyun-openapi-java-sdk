@@ -41,7 +41,7 @@ public class DescribePropertyPortDetailRequest extends RpcAcsRequest<DescribePro
 
 	private String procName;
 	public DescribePropertyPortDetailRequest() {
-		super("Sas", "2018-12-03", "DescribePropertyPortDetail", "sas");
+		super("Sas", "2018-12-03", "DescribePropertyPortDetail");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

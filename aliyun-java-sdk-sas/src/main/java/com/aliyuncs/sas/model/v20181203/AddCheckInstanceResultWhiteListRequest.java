@@ -32,7 +32,7 @@ public class AddCheckInstanceResultWhiteListRequest extends RpcAcsRequest<AddChe
 
 	private List<String> instanceIdss;
 	public AddCheckInstanceResultWhiteListRequest() {
-		super("Sas", "2018-12-03", "AddCheckInstanceResultWhiteList", "sas");
+		super("Sas", "2018-12-03", "AddCheckInstanceResultWhiteList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

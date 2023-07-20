@@ -30,7 +30,7 @@ public class CheckQuaraFileIdRequest extends RpcAcsRequest<CheckQuaraFileIdRespo
 
 	private String uuid;
 	public CheckQuaraFileIdRequest() {
-		super("Sas", "2018-12-03", "CheckQuaraFileId", "sas");
+		super("Sas", "2018-12-03", "CheckQuaraFileId");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

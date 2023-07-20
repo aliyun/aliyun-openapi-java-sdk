@@ -52,6 +52,7 @@ public class ListCheckInstanceResultResponseUnmarshaller {
 			basicDataItem.setRegionId(_ctx.stringValue("ListCheckInstanceResultResponse.BasicData["+ i +"].RegionId"));
 			basicDataItem.setInstanceId(_ctx.stringValue("ListCheckInstanceResultResponse.BasicData["+ i +"].InstanceId"));
 			basicDataItem.setInstanceName(_ctx.stringValue("ListCheckInstanceResultResponse.BasicData["+ i +"].InstanceName"));
+			basicDataItem.setStatusMessage(_ctx.stringValue("ListCheckInstanceResultResponse.BasicData["+ i +"].StatusMessage"));
 
 			basicData.add(basicDataItem);
 		}

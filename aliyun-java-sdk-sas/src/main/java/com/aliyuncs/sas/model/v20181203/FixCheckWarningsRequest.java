@@ -35,7 +35,7 @@ public class FixCheckWarningsRequest extends RpcAcsRequest<FixCheckWarningsRespo
 
 	private String uuids;
 	public FixCheckWarningsRequest() {
-		super("Sas", "2018-12-03", "FixCheckWarnings", "sas");
+		super("Sas", "2018-12-03", "FixCheckWarnings");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

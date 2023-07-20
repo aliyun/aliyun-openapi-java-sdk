@@ -29,7 +29,7 @@ public class DescribeTargetRequest extends RpcAcsRequest<DescribeTargetResponse>
 
 	private String config;
 	public DescribeTargetRequest() {
-		super("Sas", "2018-12-03", "DescribeTarget", "sas");
+		super("Sas", "2018-12-03", "DescribeTarget");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

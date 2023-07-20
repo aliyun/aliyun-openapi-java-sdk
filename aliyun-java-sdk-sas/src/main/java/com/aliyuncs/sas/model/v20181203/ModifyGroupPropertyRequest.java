@@ -27,7 +27,7 @@ public class ModifyGroupPropertyRequest extends RpcAcsRequest<ModifyGroupPropert
 
 	private String data;
 	public ModifyGroupPropertyRequest() {
-		super("Sas", "2018-12-03", "ModifyGroupProperty", "sas");
+		super("Sas", "2018-12-03", "ModifyGroupProperty");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -39,7 +39,7 @@ public class ListAgentlessRiskUuidRequest extends RpcAcsRequest<ListAgentlessRis
 
 	private String intranetIp;
 	public ListAgentlessRiskUuidRequest() {
-		super("Sas", "2018-12-03", "ListAgentlessRiskUuid", "sas");
+		super("Sas", "2018-12-03", "ListAgentlessRiskUuid");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

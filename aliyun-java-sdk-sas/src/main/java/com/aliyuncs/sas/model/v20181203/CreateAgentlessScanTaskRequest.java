@@ -30,9 +30,13 @@ public class CreateAgentlessScanTaskRequest extends RpcAcsRequest<CreateAgentles
 
 	private List<String> uuidLists;
 
+	private Boolean scanDataDisk;
+
+	private Boolean releaseAfterScan;
+
 	private Integer autoDeleteDays;
 	public CreateAgentlessScanTaskRequest() {
-		super("Sas", "2018-12-03", "CreateAgentlessScanTask", "sas");
+		super("Sas", "2018-12-03", "CreateAgentlessScanTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -62,6 +66,28 @@ public class CreateAgentlessScanTaskRequest extends RpcAcsRequest<CreateAgentles
 				putQueryParameter("UuidList." + (i + 1) , uuidLists.get(i));
 			}
 		}	
+	}
+
+	public Boolean getScanDataDisk() {
+		return this.scanDataDisk;
+	}
+
+	public void setScanDataDisk(Boolean scanDataDisk) {
+		this.scanDataDisk = scanDataDisk;
+		if(scanDataDisk != null){
+			putQueryParameter("ScanDataDisk", scanDataDisk.toString());
+		}
+	}
+
+	public Boolean getReleaseAfterScan() {
+		return this.releaseAfterScan;
+	}
+
+	public void setReleaseAfterScan(Boolean releaseAfterScan) {
+		this.releaseAfterScan = releaseAfterScan;
+		if(releaseAfterScan != null){
+			putQueryParameter("ReleaseAfterScan", releaseAfterScan.toString());
+		}
 	}
 
 	public Integer getAutoDeleteDays() {

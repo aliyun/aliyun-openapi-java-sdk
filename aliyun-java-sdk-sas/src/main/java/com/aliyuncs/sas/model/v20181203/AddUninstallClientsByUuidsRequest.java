@@ -35,7 +35,7 @@ public class AddUninstallClientsByUuidsRequest extends RpcAcsRequest<AddUninstal
 
 	private String uuids;
 	public AddUninstallClientsByUuidsRequest() {
-		super("Sas", "2018-12-03", "AddUninstallClientsByUuids", "sas");
+		super("Sas", "2018-12-03", "AddUninstallClientsByUuids");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

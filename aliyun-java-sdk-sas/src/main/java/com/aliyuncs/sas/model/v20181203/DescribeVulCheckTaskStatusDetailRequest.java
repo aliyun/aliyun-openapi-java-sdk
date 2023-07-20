@@ -32,7 +32,7 @@ public class DescribeVulCheckTaskStatusDetailRequest extends RpcAcsRequest<Descr
 
 	private List<String> typess;
 	public DescribeVulCheckTaskStatusDetailRequest() {
-		super("Sas", "2018-12-03", "DescribeVulCheckTaskStatusDetail", "sas");
+		super("Sas", "2018-12-03", "DescribeVulCheckTaskStatusDetail");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

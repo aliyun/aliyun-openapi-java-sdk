@@ -31,7 +31,7 @@ public class GetVulStatisticsRequest extends RpcAcsRequest<GetVulStatisticsRespo
 
 	private String sourceIp;
 	public GetVulStatisticsRequest() {
-		super("Sas", "2018-12-03", "GetVulStatistics", "sas");
+		super("Sas", "2018-12-03", "GetVulStatistics");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

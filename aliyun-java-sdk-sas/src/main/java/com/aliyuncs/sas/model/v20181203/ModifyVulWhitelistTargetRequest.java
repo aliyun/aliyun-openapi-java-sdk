@@ -33,7 +33,7 @@ public class ModifyVulWhitelistTargetRequest extends RpcAcsRequest<ModifyVulWhit
 
 	private String targetInfo;
 	public ModifyVulWhitelistTargetRequest() {
-		super("Sas", "2018-12-03", "ModifyVulWhitelistTarget", "sas");
+		super("Sas", "2018-12-03", "ModifyVulWhitelistTarget");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

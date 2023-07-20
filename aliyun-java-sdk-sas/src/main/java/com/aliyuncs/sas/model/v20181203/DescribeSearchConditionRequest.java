@@ -31,7 +31,7 @@ public class DescribeSearchConditionRequest extends RpcAcsRequest<DescribeSearch
 
 	private String lang;
 	public DescribeSearchConditionRequest() {
-		super("Sas", "2018-12-03", "DescribeSearchCondition", "sas");
+		super("Sas", "2018-12-03", "DescribeSearchCondition");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

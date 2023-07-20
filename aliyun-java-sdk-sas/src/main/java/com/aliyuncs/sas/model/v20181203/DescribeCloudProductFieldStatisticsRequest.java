@@ -25,7 +25,7 @@ import com.aliyuncs.sas.Endpoint;
 public class DescribeCloudProductFieldStatisticsRequest extends RpcAcsRequest<DescribeCloudProductFieldStatisticsResponse> {
 	   
 	public DescribeCloudProductFieldStatisticsRequest() {
-		super("Sas", "2018-12-03", "DescribeCloudProductFieldStatistics", "sas");
+		super("Sas", "2018-12-03", "DescribeCloudProductFieldStatistics");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

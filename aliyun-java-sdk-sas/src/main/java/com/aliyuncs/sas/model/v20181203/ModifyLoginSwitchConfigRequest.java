@@ -29,7 +29,7 @@ public class ModifyLoginSwitchConfigRequest extends RpcAcsRequest<ModifyLoginSwi
 
 	private Integer status;
 	public ModifyLoginSwitchConfigRequest() {
-		super("Sas", "2018-12-03", "ModifyLoginSwitchConfig", "sas");
+		super("Sas", "2018-12-03", "ModifyLoginSwitchConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -25,7 +25,7 @@ import com.aliyuncs.sas.Endpoint;
 public class GetServiceTrailRequest extends RpcAcsRequest<GetServiceTrailResponse> {
 	   
 	public GetServiceTrailRequest() {
-		super("Sas", "2018-12-03", "GetServiceTrail", "sas");
+		super("Sas", "2018-12-03", "GetServiceTrail");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

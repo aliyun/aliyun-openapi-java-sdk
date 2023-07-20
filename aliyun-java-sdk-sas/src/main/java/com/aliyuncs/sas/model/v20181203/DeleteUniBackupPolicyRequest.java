@@ -29,7 +29,7 @@ public class DeleteUniBackupPolicyRequest extends RpcAcsRequest<DeleteUniBackupP
 
 	private Long policyId;
 	public DeleteUniBackupPolicyRequest() {
-		super("Sas", "2018-12-03", "DeleteUniBackupPolicy", "sas");
+		super("Sas", "2018-12-03", "DeleteUniBackupPolicy");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

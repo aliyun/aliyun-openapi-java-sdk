@@ -32,7 +32,7 @@ public class CreateFileDetectUploadUrlRequest extends RpcAcsRequest<CreateFileDe
 
 	private List<HashKeyContextList> hashKeyContextLists;
 	public CreateFileDetectUploadUrlRequest() {
-		super("Sas", "2018-12-03", "CreateFileDetectUploadUrl", "sas");
+		super("Sas", "2018-12-03", "CreateFileDetectUploadUrl");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

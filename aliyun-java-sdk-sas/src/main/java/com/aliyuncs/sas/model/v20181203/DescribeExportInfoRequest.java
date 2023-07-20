@@ -27,7 +27,7 @@ public class DescribeExportInfoRequest extends RpcAcsRequest<DescribeExportInfoR
 
 	private Long exportId;
 	public DescribeExportInfoRequest() {
-		super("Sas", "2018-12-03", "DescribeExportInfo", "sas");
+		super("Sas", "2018-12-03", "DescribeExportInfo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

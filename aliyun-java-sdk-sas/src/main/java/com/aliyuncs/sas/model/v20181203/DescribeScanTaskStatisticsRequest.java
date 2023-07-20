@@ -27,7 +27,7 @@ public class DescribeScanTaskStatisticsRequest extends RpcAcsRequest<DescribeSca
 
 	private String levels;
 	public DescribeScanTaskStatisticsRequest() {
-		super("Sas", "2018-12-03", "DescribeScanTaskStatistics", "sas");
+		super("Sas", "2018-12-03", "DescribeScanTaskStatistics");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

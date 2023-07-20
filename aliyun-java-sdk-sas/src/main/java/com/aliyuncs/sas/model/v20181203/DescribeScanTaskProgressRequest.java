@@ -27,7 +27,7 @@ public class DescribeScanTaskProgressRequest extends RpcAcsRequest<DescribeScanT
 
 	private Long taskId;
 	public DescribeScanTaskProgressRequest() {
-		super("Sas", "2018-12-03", "DescribeScanTaskProgress", "sas");
+		super("Sas", "2018-12-03", "DescribeScanTaskProgress");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

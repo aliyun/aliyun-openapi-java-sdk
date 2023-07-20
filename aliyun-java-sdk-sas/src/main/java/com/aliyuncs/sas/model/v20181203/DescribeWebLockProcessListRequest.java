@@ -33,7 +33,7 @@ public class DescribeWebLockProcessListRequest extends RpcAcsRequest<DescribeWeb
 
 	private Integer status;
 	public DescribeWebLockProcessListRequest() {
-		super("Sas", "2018-12-03", "DescribeWebLockProcessList", "sas");
+		super("Sas", "2018-12-03", "DescribeWebLockProcessList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

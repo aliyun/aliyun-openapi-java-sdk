@@ -42,7 +42,7 @@ public class ListSystemClientRulesRequest extends RpcAcsRequest<ListSystemClient
 
 	private Integer currentPage;
 	public ListSystemClientRulesRequest() {
-		super("Sas", "2018-12-03", "ListSystemClientRules", "sas");
+		super("Sas", "2018-12-03", "ListSystemClientRules");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

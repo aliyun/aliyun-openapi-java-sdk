@@ -35,7 +35,7 @@ public class DescribeBruteForceRecordsRequest extends RpcAcsRequest<DescribeBrut
 
 	private Integer status;
 	public DescribeBruteForceRecordsRequest() {
-		super("Sas", "2018-12-03", "DescribeBruteForceRecords", "sas");
+		super("Sas", "2018-12-03", "DescribeBruteForceRecords");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

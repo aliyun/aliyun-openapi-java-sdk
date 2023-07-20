@@ -55,7 +55,7 @@ public class ListAgentlessTaskRequest extends RpcAcsRequest<ListAgentlessTaskRes
 
 	private String intranetIp;
 	public ListAgentlessTaskRequest() {
-		super("Sas", "2018-12-03", "ListAgentlessTask", "sas");
+		super("Sas", "2018-12-03", "ListAgentlessTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -25,7 +25,7 @@ import com.aliyuncs.sas.Endpoint;
 public class DescribeAssetSummaryRequest extends RpcAcsRequest<DescribeAssetSummaryResponse> {
 	   
 	public DescribeAssetSummaryRequest() {
-		super("Sas", "2018-12-03", "DescribeAssetSummary", "sas");
+		super("Sas", "2018-12-03", "DescribeAssetSummary");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

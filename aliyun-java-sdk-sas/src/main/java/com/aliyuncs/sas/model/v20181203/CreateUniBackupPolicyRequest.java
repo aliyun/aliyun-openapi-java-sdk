@@ -49,7 +49,7 @@ public class CreateUniBackupPolicyRequest extends RpcAcsRequest<CreateUniBackupP
 
 	private String uniRegionId;
 	public CreateUniBackupPolicyRequest() {
-		super("Sas", "2018-12-03", "CreateUniBackupPolicy", "sas");
+		super("Sas", "2018-12-03", "CreateUniBackupPolicy");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

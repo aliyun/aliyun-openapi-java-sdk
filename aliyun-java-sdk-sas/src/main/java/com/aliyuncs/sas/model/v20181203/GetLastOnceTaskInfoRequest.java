@@ -31,7 +31,7 @@ public class GetLastOnceTaskInfoRequest extends RpcAcsRequest<GetLastOnceTaskInf
 
 	private String taskType;
 	public GetLastOnceTaskInfoRequest() {
-		super("Sas", "2018-12-03", "GetLastOnceTaskInfo", "sas");
+		super("Sas", "2018-12-03", "GetLastOnceTaskInfo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

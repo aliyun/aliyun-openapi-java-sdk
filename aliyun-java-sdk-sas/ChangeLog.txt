@@ -1,3 +1,6 @@
+2023-07-20 Version: 1.1.37
+- Support rd sdk.
+
 2023-07-08 Version: 1.1.36
 - Supported tag.
 - Support RAM action.

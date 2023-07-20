@@ -44,7 +44,7 @@ public class DescribeOnceTaskLeafRecordPageRequest extends RpcAcsRequest<Describ
 
 	private Integer currentPage;
 	public DescribeOnceTaskLeafRecordPageRequest() {
-		super("Sas", "2018-12-03", "DescribeOnceTaskLeafRecordPage", "sas");
+		super("Sas", "2018-12-03", "DescribeOnceTaskLeafRecordPage");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

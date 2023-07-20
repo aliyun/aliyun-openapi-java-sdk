@@ -31,7 +31,7 @@ public class UpdateJenkinsImageRegistryPersistenceDayRequest extends RpcAcsReque
 
 	private Integer persistenceDay;
 	public UpdateJenkinsImageRegistryPersistenceDayRequest() {
-		super("Sas", "2018-12-03", "UpdateJenkinsImageRegistryPersistenceDay", "sas");
+		super("Sas", "2018-12-03", "UpdateJenkinsImageRegistryPersistenceDay");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

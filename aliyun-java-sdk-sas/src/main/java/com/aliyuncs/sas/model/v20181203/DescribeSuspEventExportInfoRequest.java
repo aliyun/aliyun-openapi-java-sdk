@@ -27,7 +27,7 @@ public class DescribeSuspEventExportInfoRequest extends RpcAcsRequest<DescribeSu
 
 	private Integer exportId;
 	public DescribeSuspEventExportInfoRequest() {
-		super("Sas", "2018-12-03", "DescribeSuspEventExportInfo", "sas");
+		super("Sas", "2018-12-03", "DescribeSuspEventExportInfo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

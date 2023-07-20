@@ -36,6 +36,12 @@ public class GetAgentlessTaskCountResponse extends AcsResponse {
 
 	private Long lastTaskTime;
 
+	private Integer baselineCheckCount;
+
+	private Integer scaVulCount;
+
+	private Integer cveVulCount;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -82,6 +88,30 @@ public class GetAgentlessTaskCountResponse extends AcsResponse {
 
 	public void setLastTaskTime(Long lastTaskTime) {
 		this.lastTaskTime = lastTaskTime;
+	}
+
+	public Integer getBaselineCheckCount() {
+		return this.baselineCheckCount;
+	}
+
+	public void setBaselineCheckCount(Integer baselineCheckCount) {
+		this.baselineCheckCount = baselineCheckCount;
+	}
+
+	public Integer getScaVulCount() {
+		return this.scaVulCount;
+	}
+
+	public void setScaVulCount(Integer scaVulCount) {
+		this.scaVulCount = scaVulCount;
+	}
+
+	public Integer getCveVulCount() {
+		return this.cveVulCount;
+	}
+
+	public void setCveVulCount(Integer cveVulCount) {
+		this.cveVulCount = cveVulCount;
 	}
 
 	@Override

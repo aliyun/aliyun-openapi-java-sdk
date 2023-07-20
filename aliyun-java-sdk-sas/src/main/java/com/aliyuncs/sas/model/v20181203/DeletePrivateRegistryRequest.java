@@ -27,7 +27,7 @@ public class DeletePrivateRegistryRequest extends RpcAcsRequest<DeletePrivateReg
 
 	private Long registryId;
 	public DeletePrivateRegistryRequest() {
-		super("Sas", "2018-12-03", "DeletePrivateRegistry", "sas");
+		super("Sas", "2018-12-03", "DeletePrivateRegistry");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class DescribeTotalStatisticsRequest extends RpcAcsRequest<DescribeTotalS
 
 	private String from;
 	public DescribeTotalStatisticsRequest() {
-		super("Sas", "2018-12-03", "DescribeTotalStatistics", "sas");
+		super("Sas", "2018-12-03", "DescribeTotalStatistics");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

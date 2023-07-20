@@ -35,7 +35,7 @@ public class DescribeCustomBlockRecordsRequest extends RpcAcsRequest<DescribeCus
 
 	private Integer status;
 	public DescribeCustomBlockRecordsRequest() {
-		super("Sas", "2018-12-03", "DescribeCustomBlockRecords", "sas");
+		super("Sas", "2018-12-03", "DescribeCustomBlockRecords");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

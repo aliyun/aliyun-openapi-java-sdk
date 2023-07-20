@@ -29,7 +29,7 @@ public class DescribePropertyCountRequest extends RpcAcsRequest<DescribeProperty
 
 	private String uuidList;
 	public DescribePropertyCountRequest() {
-		super("Sas", "2018-12-03", "DescribePropertyCount", "sas");
+		super("Sas", "2018-12-03", "DescribePropertyCount");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

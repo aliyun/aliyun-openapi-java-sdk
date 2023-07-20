@@ -53,6 +53,7 @@ public class ListCheckResultResponseUnmarshaller {
 			checksItem.setTaskId(_ctx.stringValue("ListCheckResultResponse.Checks["+ i +"].TaskId"));
 			checksItem.setLastCheckTime(_ctx.longValue("ListCheckResultResponse.Checks["+ i +"].LastCheckTime"));
 			checksItem.setTrialPermission(_ctx.booleanValue("ListCheckResultResponse.Checks["+ i +"].TrialPermission"));
+			checksItem.setStatusMessage(_ctx.stringValue("ListCheckResultResponse.Checks["+ i +"].StatusMessage"));
 
 			List<CheckPolicie> checkPolicies = new ArrayList<CheckPolicie>();
 			for (int j = 0; j < _ctx.lengthValue("ListCheckResultResponse.Checks["+ i +"].CheckPolicies.Length"); j++) {

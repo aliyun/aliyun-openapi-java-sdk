@@ -28,7 +28,7 @@ public class VerifyCheckResultRequest extends RpcAcsRequest<VerifyCheckResultRes
 
 	private List<Long> checkIdss;
 	public VerifyCheckResultRequest() {
-		super("Sas", "2018-12-03", "VerifyCheckResult", "sas");
+		super("Sas", "2018-12-03", "VerifyCheckResult");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

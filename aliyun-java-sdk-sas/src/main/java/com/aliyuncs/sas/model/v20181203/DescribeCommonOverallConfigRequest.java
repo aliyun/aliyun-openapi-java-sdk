@@ -29,7 +29,7 @@ public class DescribeCommonOverallConfigRequest extends RpcAcsRequest<DescribeCo
 
 	private String sourceIp;
 	public DescribeCommonOverallConfigRequest() {
-		super("Sas", "2018-12-03", "DescribeCommonOverallConfig", "sas");
+		super("Sas", "2018-12-03", "DescribeCommonOverallConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

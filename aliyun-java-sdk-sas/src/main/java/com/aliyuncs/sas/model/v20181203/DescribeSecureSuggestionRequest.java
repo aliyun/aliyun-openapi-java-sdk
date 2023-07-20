@@ -29,7 +29,7 @@ public class DescribeSecureSuggestionRequest extends RpcAcsRequest<DescribeSecur
 
 	private String lang;
 	public DescribeSecureSuggestionRequest() {
-		super("Sas", "2018-12-03", "DescribeSecureSuggestion", "sas");
+		super("Sas", "2018-12-03", "DescribeSecureSuggestion");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class DescribeAffectedAssetsRequest extends RpcAcsRequest<DescribeAffecte
 
 	private String levels;
 	public DescribeAffectedAssetsRequest() {
-		super("Sas", "2018-12-03", "DescribeAffectedAssets", "sas");
+		super("Sas", "2018-12-03", "DescribeAffectedAssets");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

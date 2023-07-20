@@ -29,7 +29,7 @@ public class DeleteHoneypotProbeRequest extends RpcAcsRequest<DeleteHoneypotProb
 
 	private String lang;
 	public DeleteHoneypotProbeRequest() {
-		super("Sas", "2018-12-03", "DeleteHoneypotProbe", "sas");
+		super("Sas", "2018-12-03", "DeleteHoneypotProbe");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

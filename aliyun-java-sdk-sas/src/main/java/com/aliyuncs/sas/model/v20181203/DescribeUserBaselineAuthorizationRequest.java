@@ -31,7 +31,7 @@ public class DescribeUserBaselineAuthorizationRequest extends RpcAcsRequest<Desc
 
 	private String lang;
 	public DescribeUserBaselineAuthorizationRequest() {
-		super("Sas", "2018-12-03", "DescribeUserBaselineAuthorization", "sas");
+		super("Sas", "2018-12-03", "DescribeUserBaselineAuthorization");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

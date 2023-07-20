@@ -45,7 +45,7 @@ public class ExportVulRequest extends RpcAcsRequest<ExportVulResponse> {
 
 	private String searchTags;
 	public ExportVulRequest() {
-		super("Sas", "2018-12-03", "ExportVul", "sas");
+		super("Sas", "2018-12-03", "ExportVul");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -42,7 +42,7 @@ public class ListInterceptionTargetPageRequest extends RpcAcsRequest<ListInterce
 
 	private String namespace;
 	public ListInterceptionTargetPageRequest() {
-		super("Sas", "2018-12-03", "ListInterceptionTargetPage", "sas");
+		super("Sas", "2018-12-03", "ListInterceptionTargetPage");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

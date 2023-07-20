@@ -42,7 +42,7 @@ public class CreateInterceptionTargetRequest extends RpcAcsRequest<CreateInterce
 
 	private String namespace;
 	public CreateInterceptionTargetRequest() {
-		super("Sas", "2018-12-03", "CreateInterceptionTarget", "sas");
+		super("Sas", "2018-12-03", "CreateInterceptionTarget");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

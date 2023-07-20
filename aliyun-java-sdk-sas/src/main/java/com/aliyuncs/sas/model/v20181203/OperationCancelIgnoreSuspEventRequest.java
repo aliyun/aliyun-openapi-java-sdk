@@ -30,7 +30,7 @@ public class OperationCancelIgnoreSuspEventRequest extends RpcAcsRequest<Operati
 
 	private String remark;
 	public OperationCancelIgnoreSuspEventRequest() {
-		super("Sas", "2018-12-03", "OperationCancelIgnoreSuspEvent", "sas");
+		super("Sas", "2018-12-03", "OperationCancelIgnoreSuspEvent");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

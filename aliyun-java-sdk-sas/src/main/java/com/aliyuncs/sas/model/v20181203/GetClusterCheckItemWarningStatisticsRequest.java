@@ -27,7 +27,7 @@ public class GetClusterCheckItemWarningStatisticsRequest extends RpcAcsRequest<G
 
 	private String clusterId;
 	public GetClusterCheckItemWarningStatisticsRequest() {
-		super("Sas", "2018-12-03", "GetClusterCheckItemWarningStatistics", "sas");
+		super("Sas", "2018-12-03", "GetClusterCheckItemWarningStatistics");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

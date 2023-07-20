@@ -33,7 +33,7 @@ public class DescribeLoginBaseConfigsRequest extends RpcAcsRequest<DescribeLogin
 
 	private String target;
 	public DescribeLoginBaseConfigsRequest() {
-		super("Sas", "2018-12-03", "DescribeLoginBaseConfigs", "sas");
+		super("Sas", "2018-12-03", "DescribeLoginBaseConfigs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

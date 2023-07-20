@@ -27,9 +27,11 @@ public class DescribeAssetDetailByUuidsRequest extends RpcAcsRequest<DescribeAss
 
 	private String lang;
 
+	private Long resourceDirectoryAccountId;
+
 	private String uuids;
 	public DescribeAssetDetailByUuidsRequest() {
-		super("Sas", "2018-12-03", "DescribeAssetDetailByUuids", "sas");
+		super("Sas", "2018-12-03", "DescribeAssetDetailByUuids");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -45,6 +47,17 @@ public class DescribeAssetDetailByUuidsRequest extends RpcAcsRequest<DescribeAss
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public Long getResourceDirectoryAccountId() {
+		return this.resourceDirectoryAccountId;
+	}
+
+	public void setResourceDirectoryAccountId(Long resourceDirectoryAccountId) {
+		this.resourceDirectoryAccountId = resourceDirectoryAccountId;
+		if(resourceDirectoryAccountId != null){
+			putQueryParameter("ResourceDirectoryAccountId", resourceDirectoryAccountId.toString());
 		}
 	}
 

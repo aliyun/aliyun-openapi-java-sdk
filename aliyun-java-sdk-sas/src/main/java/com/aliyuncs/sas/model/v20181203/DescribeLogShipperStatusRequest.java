@@ -27,7 +27,7 @@ public class DescribeLogShipperStatusRequest extends RpcAcsRequest<DescribeLogSh
 
 	private String from;
 	public DescribeLogShipperStatusRequest() {
-		super("Sas", "2018-12-03", "DescribeLogShipperStatus", "sas");
+		super("Sas", "2018-12-03", "DescribeLogShipperStatus");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

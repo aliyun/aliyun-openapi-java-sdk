@@ -29,7 +29,7 @@ public class DescribeExcludeSystemPathRequest extends RpcAcsRequest<DescribeExcl
 
 	private Integer currentPage;
 	public DescribeExcludeSystemPathRequest() {
-		super("Sas", "2018-12-03", "DescribeExcludeSystemPath", "sas");
+		super("Sas", "2018-12-03", "DescribeExcludeSystemPath");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

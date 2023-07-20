@@ -49,7 +49,7 @@ public class AddPrivateRegistryRequest extends RpcAcsRequest<AddPrivateRegistryR
 
 	private String userName;
 	public AddPrivateRegistryRequest() {
-		super("Sas", "2018-12-03", "AddPrivateRegistry", "sas");
+		super("Sas", "2018-12-03", "AddPrivateRegistry");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

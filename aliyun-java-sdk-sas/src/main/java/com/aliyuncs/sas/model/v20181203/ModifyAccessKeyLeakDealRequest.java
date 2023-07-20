@@ -34,7 +34,7 @@ public class ModifyAccessKeyLeakDealRequest extends RpcAcsRequest<ModifyAccessKe
 
 	private Long id;
 	public ModifyAccessKeyLeakDealRequest() {
-		super("Sas", "2018-12-03", "ModifyAccessKeyLeakDeal", "sas");
+		super("Sas", "2018-12-03", "ModifyAccessKeyLeakDeal");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -56,7 +56,7 @@ public class DescribeUuidsByVulNamesRequest extends RpcAcsRequest<DescribeUuidsB
 
 	private String necessity;
 	public DescribeUuidsByVulNamesRequest() {
-		super("Sas", "2018-12-03", "DescribeUuidsByVulNames", "sas");
+		super("Sas", "2018-12-03", "DescribeUuidsByVulNames");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class DescribeMachineCanRebootRequest extends RpcAcsRequest<DescribeMachi
 
 	private String uuid;
 	public DescribeMachineCanRebootRequest() {
-		super("Sas", "2018-12-03", "DescribeMachineCanReboot", "sas");
+		super("Sas", "2018-12-03", "DescribeMachineCanReboot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

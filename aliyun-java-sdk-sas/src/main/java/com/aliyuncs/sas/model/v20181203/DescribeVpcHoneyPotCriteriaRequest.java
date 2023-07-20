@@ -27,7 +27,7 @@ public class DescribeVpcHoneyPotCriteriaRequest extends RpcAcsRequest<DescribeVp
 
 	private String lang;
 	public DescribeVpcHoneyPotCriteriaRequest() {
-		super("Sas", "2018-12-03", "DescribeVpcHoneyPotCriteria", "sas");
+		super("Sas", "2018-12-03", "DescribeVpcHoneyPotCriteria");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

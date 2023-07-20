@@ -34,7 +34,7 @@ public class DescribeSecurityEventOperationStatusRequest extends RpcAcsRequest<D
 
 	private Long taskId;
 	public DescribeSecurityEventOperationStatusRequest() {
-		super("Sas", "2018-12-03", "DescribeSecurityEventOperationStatus", "sas");
+		super("Sas", "2018-12-03", "DescribeSecurityEventOperationStatus");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

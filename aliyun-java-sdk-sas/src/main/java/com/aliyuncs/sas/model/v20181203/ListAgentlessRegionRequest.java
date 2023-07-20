@@ -25,7 +25,7 @@ import com.aliyuncs.sas.Endpoint;
 public class ListAgentlessRegionRequest extends RpcAcsRequest<ListAgentlessRegionResponse> {
 	   
 	public ListAgentlessRegionRequest() {
-		super("Sas", "2018-12-03", "ListAgentlessRegion", "sas");
+		super("Sas", "2018-12-03", "ListAgentlessRegion");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

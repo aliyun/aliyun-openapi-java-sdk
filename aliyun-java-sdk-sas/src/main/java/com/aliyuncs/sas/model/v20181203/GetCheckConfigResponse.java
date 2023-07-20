@@ -34,7 +34,13 @@ public class GetCheckConfigResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<StandardsItem> standards;
+	private Boolean enableAutoCheck;
+
+	private Boolean enableAddCheck;
+
+	private List<Standard> standards;
+
+	private List<SelectedCheck> selectedChecks;
 
 	private List<Integer> cycleDays;
 
@@ -70,12 +76,36 @@ public class GetCheckConfigResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<StandardsItem> getStandards() {
+	public Boolean getEnableAutoCheck() {
+		return this.enableAutoCheck;
+	}
+
+	public void setEnableAutoCheck(Boolean enableAutoCheck) {
+		this.enableAutoCheck = enableAutoCheck;
+	}
+
+	public Boolean getEnableAddCheck() {
+		return this.enableAddCheck;
+	}
+
+	public void setEnableAddCheck(Boolean enableAddCheck) {
+		this.enableAddCheck = enableAddCheck;
+	}
+
+	public List<Standard> getStandards() {
 		return this.standards;
 	}
 
-	public void setStandards(List<StandardsItem> standards) {
+	public void setStandards(List<Standard> standards) {
 		this.standards = standards;
+	}
+
+	public List<SelectedCheck> getSelectedChecks() {
+		return this.selectedChecks;
+	}
+
+	public void setSelectedChecks(List<SelectedCheck> selectedChecks) {
+		this.selectedChecks = selectedChecks;
 	}
 
 	public List<Integer> getCycleDays() {
@@ -86,7 +116,7 @@ public class GetCheckConfigResponse extends AcsResponse {
 		this.cycleDays = cycleDays;
 	}
 
-	public static class StandardsItem {
+	public static class Standard {
 
 		private Long id;
 
@@ -126,6 +156,29 @@ public class GetCheckConfigResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+	}
+
+	public static class SelectedCheck {
+
+		private Long checkId;
+
+		private Long sectionId;
+
+		public Long getCheckId() {
+			return this.checkId;
+		}
+
+		public void setCheckId(Long checkId) {
+			this.checkId = checkId;
+		}
+
+		public Long getSectionId() {
+			return this.sectionId;
+		}
+
+		public void setSectionId(Long sectionId) {
+			this.sectionId = sectionId;
 		}
 	}
 

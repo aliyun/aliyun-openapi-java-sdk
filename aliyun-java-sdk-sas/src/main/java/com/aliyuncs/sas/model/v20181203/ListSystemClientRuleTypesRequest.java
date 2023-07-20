@@ -25,7 +25,7 @@ import com.aliyuncs.sas.Endpoint;
 public class ListSystemClientRuleTypesRequest extends RpcAcsRequest<ListSystemClientRuleTypesResponse> {
 	   
 	public ListSystemClientRuleTypesRequest() {
-		super("Sas", "2018-12-03", "ListSystemClientRuleTypes", "sas");
+		super("Sas", "2018-12-03", "ListSystemClientRuleTypes");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

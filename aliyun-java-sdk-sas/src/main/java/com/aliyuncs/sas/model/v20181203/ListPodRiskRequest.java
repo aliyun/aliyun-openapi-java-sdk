@@ -37,7 +37,7 @@ public class ListPodRiskRequest extends RpcAcsRequest<ListPodRiskResponse> {
 
 	private String namespace;
 	public ListPodRiskRequest() {
-		super("Sas", "2018-12-03", "ListPodRisk", "sas");
+		super("Sas", "2018-12-03", "ListPodRisk");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

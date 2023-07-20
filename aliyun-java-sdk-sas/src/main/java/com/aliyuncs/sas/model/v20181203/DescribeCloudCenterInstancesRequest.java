@@ -37,6 +37,8 @@ public class DescribeCloudCenterInstancesRequest extends RpcAcsRequest<DescribeC
 
 	private String lang;
 
+	private Long resourceDirectoryAccountId;
+
 	private Boolean useNextToken;
 
 	private Integer currentPage;
@@ -45,7 +47,7 @@ public class DescribeCloudCenterInstancesRequest extends RpcAcsRequest<DescribeC
 
 	private Boolean noGroupTrace;
 	public DescribeCloudCenterInstancesRequest() {
-		super("Sas", "2018-12-03", "DescribeCloudCenterInstances", "sas");
+		super("Sas", "2018-12-03", "DescribeCloudCenterInstances");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -116,6 +118,17 @@ public class DescribeCloudCenterInstancesRequest extends RpcAcsRequest<DescribeC
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public Long getResourceDirectoryAccountId() {
+		return this.resourceDirectoryAccountId;
+	}
+
+	public void setResourceDirectoryAccountId(Long resourceDirectoryAccountId) {
+		this.resourceDirectoryAccountId = resourceDirectoryAccountId;
+		if(resourceDirectoryAccountId != null){
+			putQueryParameter("ResourceDirectoryAccountId", resourceDirectoryAccountId.toString());
 		}
 	}
 

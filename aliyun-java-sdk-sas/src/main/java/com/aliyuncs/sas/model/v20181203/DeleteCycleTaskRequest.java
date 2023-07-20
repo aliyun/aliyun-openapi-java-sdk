@@ -27,7 +27,7 @@ public class DeleteCycleTaskRequest extends RpcAcsRequest<DeleteCycleTaskRespons
 
 	private String configId;
 	public DeleteCycleTaskRequest() {
-		super("Sas", "2018-12-03", "DeleteCycleTask", "sas");
+		super("Sas", "2018-12-03", "DeleteCycleTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

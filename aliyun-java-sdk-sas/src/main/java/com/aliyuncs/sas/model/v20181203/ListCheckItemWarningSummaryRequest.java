@@ -47,7 +47,7 @@ public class ListCheckItemWarningSummaryRequest extends RpcAcsRequest<ListCheckI
 
 	private String checkLevel;
 	public ListCheckItemWarningSummaryRequest() {
-		super("Sas", "2018-12-03", "ListCheckItemWarningSummary", "sas");
+		super("Sas", "2018-12-03", "ListCheckItemWarningSummary");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

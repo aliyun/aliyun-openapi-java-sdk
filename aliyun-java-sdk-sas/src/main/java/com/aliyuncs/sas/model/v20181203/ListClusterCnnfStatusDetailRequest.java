@@ -28,7 +28,7 @@ public class ListClusterCnnfStatusDetailRequest extends RpcAcsRequest<ListCluste
 
 	private List<String> clusterIdss;
 	public ListClusterCnnfStatusDetailRequest() {
-		super("Sas", "2018-12-03", "ListClusterCnnfStatusDetail", "sas");
+		super("Sas", "2018-12-03", "ListClusterCnnfStatusDetail");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

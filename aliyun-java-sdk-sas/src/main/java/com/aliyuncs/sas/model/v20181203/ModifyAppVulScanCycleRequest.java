@@ -27,7 +27,7 @@ public class ModifyAppVulScanCycleRequest extends RpcAcsRequest<ModifyAppVulScan
 
 	private String cycle;
 	public ModifyAppVulScanCycleRequest() {
-		super("Sas", "2018-12-03", "ModifyAppVulScanCycle", "sas");
+		super("Sas", "2018-12-03", "ModifyAppVulScanCycle");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

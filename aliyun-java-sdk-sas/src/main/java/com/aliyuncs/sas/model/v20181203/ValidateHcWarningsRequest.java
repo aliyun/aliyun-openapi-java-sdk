@@ -31,7 +31,7 @@ public class ValidateHcWarningsRequest extends RpcAcsRequest<ValidateHcWarningsR
 
 	private String uuids;
 	public ValidateHcWarningsRequest() {
-		super("Sas", "2018-12-03", "ValidateHcWarnings", "sas");
+		super("Sas", "2018-12-03", "ValidateHcWarnings");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

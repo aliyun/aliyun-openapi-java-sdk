@@ -33,7 +33,7 @@ public class ModifyVulTargetConfigRequest extends RpcAcsRequest<ModifyVulTargetC
 
 	private String config;
 	public ModifyVulTargetConfigRequest() {
-		super("Sas", "2018-12-03", "ModifyVulTargetConfig", "sas");
+		super("Sas", "2018-12-03", "ModifyVulTargetConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

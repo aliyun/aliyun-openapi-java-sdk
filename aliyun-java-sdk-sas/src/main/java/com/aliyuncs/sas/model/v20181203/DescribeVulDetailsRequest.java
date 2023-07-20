@@ -29,11 +29,13 @@ public class DescribeVulDetailsRequest extends RpcAcsRequest<DescribeVulDetailsR
 
 	private String lang;
 
+	private Long resourceDirectoryAccountId;
+
 	private String aliasName;
 
 	private String name;
 	public DescribeVulDetailsRequest() {
-		super("Sas", "2018-12-03", "DescribeVulDetails", "sas");
+		super("Sas", "2018-12-03", "DescribeVulDetails");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -60,6 +62,17 @@ public class DescribeVulDetailsRequest extends RpcAcsRequest<DescribeVulDetailsR
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public Long getResourceDirectoryAccountId() {
+		return this.resourceDirectoryAccountId;
+	}
+
+	public void setResourceDirectoryAccountId(Long resourceDirectoryAccountId) {
+		this.resourceDirectoryAccountId = resourceDirectoryAccountId;
+		if(resourceDirectoryAccountId != null){
+			putQueryParameter("ResourceDirectoryAccountId", resourceDirectoryAccountId.toString());
 		}
 	}
 

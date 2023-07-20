@@ -25,7 +25,7 @@ import com.aliyuncs.sas.Endpoint;
 public class DescribeSupportRegionRequest extends RpcAcsRequest<DescribeSupportRegionResponse> {
 	   
 	public DescribeSupportRegionRequest() {
-		super("Sas", "2018-12-03", "DescribeSupportRegion", "sas");
+		super("Sas", "2018-12-03", "DescribeSupportRegion");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

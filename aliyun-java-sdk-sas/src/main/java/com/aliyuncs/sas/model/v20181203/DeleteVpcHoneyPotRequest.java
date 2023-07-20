@@ -27,7 +27,7 @@ public class DeleteVpcHoneyPotRequest extends RpcAcsRequest<DeleteVpcHoneyPotRes
 
 	private String vpcId;
 	public DeleteVpcHoneyPotRequest() {
-		super("Sas", "2018-12-03", "DeleteVpcHoneyPot", "sas");
+		super("Sas", "2018-12-03", "DeleteVpcHoneyPot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

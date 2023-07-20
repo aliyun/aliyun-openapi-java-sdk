@@ -29,7 +29,7 @@ public class CreateAssetSelectionConfigRequest extends RpcAcsRequest<CreateAsset
 
 	private String businessType;
 	public CreateAssetSelectionConfigRequest() {
-		super("Sas", "2018-12-03", "CreateAssetSelectionConfig", "sas");
+		super("Sas", "2018-12-03", "CreateAssetSelectionConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

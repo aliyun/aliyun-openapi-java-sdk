@@ -62,7 +62,7 @@ public class ExportSuspEventsRequest extends RpcAcsRequest<ExportSuspEventsRespo
 
 	private String status;
 	public ExportSuspEventsRequest() {
-		super("Sas", "2018-12-03", "ExportSuspEvents", "sas");
+		super("Sas", "2018-12-03", "ExportSuspEvents");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

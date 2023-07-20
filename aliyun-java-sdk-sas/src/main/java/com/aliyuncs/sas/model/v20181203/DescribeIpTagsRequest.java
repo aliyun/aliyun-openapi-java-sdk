@@ -29,7 +29,7 @@ public class DescribeIpTagsRequest extends RpcAcsRequest<DescribeIpTagsResponse>
 
 	private String securityEventId;
 	public DescribeIpTagsRequest() {
-		super("Sas", "2018-12-03", "DescribeIpTags", "sas");
+		super("Sas", "2018-12-03", "DescribeIpTags");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

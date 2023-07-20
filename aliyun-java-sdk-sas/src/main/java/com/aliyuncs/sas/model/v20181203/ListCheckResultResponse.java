@@ -79,6 +79,8 @@ public class ListCheckResultResponse extends AcsResponse {
 
 		private Boolean trialPermission;
 
+		private String statusMessage;
+
 		private List<CheckPolicie> checkPolicies;
 
 		public Long getCheckId() {
@@ -167,6 +169,14 @@ public class ListCheckResultResponse extends AcsResponse {
 
 		public void setTrialPermission(Boolean trialPermission) {
 			this.trialPermission = trialPermission;
+		}
+
+		public String getStatusMessage() {
+			return this.statusMessage;
+		}
+
+		public void setStatusMessage(String statusMessage) {
+			this.statusMessage = statusMessage;
 		}
 
 		public List<CheckPolicie> getCheckPolicies() {

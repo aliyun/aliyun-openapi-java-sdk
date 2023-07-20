@@ -36,7 +36,7 @@ public class OperateImageBaselineWhitelistRequest extends RpcAcsRequest<OperateI
 
 	private String operation;
 	public OperateImageBaselineWhitelistRequest() {
-		super("Sas", "2018-12-03", "OperateImageBaselineWhitelist", "sas");
+		super("Sas", "2018-12-03", "OperateImageBaselineWhitelist");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

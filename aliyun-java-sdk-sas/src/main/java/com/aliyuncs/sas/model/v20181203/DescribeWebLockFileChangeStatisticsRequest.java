@@ -29,7 +29,7 @@ public class DescribeWebLockFileChangeStatisticsRequest extends RpcAcsRequest<De
 
 	private Integer currentPage;
 	public DescribeWebLockFileChangeStatisticsRequest() {
-		super("Sas", "2018-12-03", "DescribeWebLockFileChangeStatistics", "sas");
+		super("Sas", "2018-12-03", "DescribeWebLockFileChangeStatistics");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

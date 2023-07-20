@@ -27,7 +27,7 @@ public class DescribeVulNumStatisticsRequest extends RpcAcsRequest<DescribeVulNu
 
 	private String from;
 	public DescribeVulNumStatisticsRequest() {
-		super("Sas", "2018-12-03", "DescribeVulNumStatistics", "sas");
+		super("Sas", "2018-12-03", "DescribeVulNumStatistics");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

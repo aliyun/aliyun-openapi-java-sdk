@@ -28,11 +28,13 @@ public class GetClientRatioStatisticRequest extends RpcAcsRequest<GetClientRatio
 
 	private Long timeEnd;
 
+	private Long resourceDirectoryAccountId;
+
 	private List<String> statisticTypes;
 
 	private Long timeStart;
 	public GetClientRatioStatisticRequest() {
-		super("Sas", "2018-12-03", "GetClientRatioStatistic", "sas");
+		super("Sas", "2018-12-03", "GetClientRatioStatistic");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -48,6 +50,17 @@ public class GetClientRatioStatisticRequest extends RpcAcsRequest<GetClientRatio
 		this.timeEnd = timeEnd;
 		if(timeEnd != null){
 			putQueryParameter("TimeEnd", timeEnd.toString());
+		}
+	}
+
+	public Long getResourceDirectoryAccountId() {
+		return this.resourceDirectoryAccountId;
+	}
+
+	public void setResourceDirectoryAccountId(Long resourceDirectoryAccountId) {
+		this.resourceDirectoryAccountId = resourceDirectoryAccountId;
+		if(resourceDirectoryAccountId != null){
+			putQueryParameter("ResourceDirectoryAccountId", resourceDirectoryAccountId.toString());
 		}
 	}
 

@@ -31,7 +31,7 @@ public class OperateVirusEventsRequest extends RpcAcsRequest<OperateVirusEventsR
 
 	private Integer operationAll;
 	public OperateVirusEventsRequest() {
-		super("Sas", "2018-12-03", "OperateVirusEvents", "sas");
+		super("Sas", "2018-12-03", "OperateVirusEvents");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

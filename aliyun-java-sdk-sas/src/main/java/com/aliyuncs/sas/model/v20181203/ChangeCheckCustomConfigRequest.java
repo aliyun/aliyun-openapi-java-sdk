@@ -30,7 +30,7 @@ public class ChangeCheckCustomConfigRequest extends RpcAcsRequest<ChangeCheckCus
 
 	private List<CustomConfigs> customConfigss;
 	public ChangeCheckCustomConfigRequest() {
-		super("Sas", "2018-12-03", "ChangeCheckCustomConfig", "sas");
+		super("Sas", "2018-12-03", "ChangeCheckCustomConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

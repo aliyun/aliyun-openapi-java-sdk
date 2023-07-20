@@ -31,7 +31,7 @@ public class ModifyLoginBaseConfigRequest extends RpcAcsRequest<ModifyLoginBaseC
 
 	private String config;
 	public ModifyLoginBaseConfigRequest() {
-		super("Sas", "2018-12-03", "ModifyLoginBaseConfig", "sas");
+		super("Sas", "2018-12-03", "ModifyLoginBaseConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class GetAppNetworkRequest extends RpcAcsRequest<GetAppNetworkResponse> {
 
 	private String clusterId;
 	public GetAppNetworkRequest() {
-		super("Sas", "2018-12-03", "GetAppNetwork", "sas");
+		super("Sas", "2018-12-03", "GetAppNetwork");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

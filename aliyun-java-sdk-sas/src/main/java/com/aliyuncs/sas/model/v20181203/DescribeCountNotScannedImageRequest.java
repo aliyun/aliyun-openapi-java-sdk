@@ -25,7 +25,7 @@ import com.aliyuncs.sas.Endpoint;
 public class DescribeCountNotScannedImageRequest extends RpcAcsRequest<DescribeCountNotScannedImageResponse> {
 	   
 	public DescribeCountNotScannedImageRequest() {
-		super("Sas", "2018-12-03", "DescribeCountNotScannedImage", "sas");
+		super("Sas", "2018-12-03", "DescribeCountNotScannedImage");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

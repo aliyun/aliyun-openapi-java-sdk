@@ -29,7 +29,7 @@ public class GetInterceptionRuleDetailRequest extends RpcAcsRequest<GetIntercept
 
 	private String ruleId;
 	public GetInterceptionRuleDetailRequest() {
-		super("Sas", "2018-12-03", "GetInterceptionRuleDetail", "sas");
+		super("Sas", "2018-12-03", "GetInterceptionRuleDetail");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

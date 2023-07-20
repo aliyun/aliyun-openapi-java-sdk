@@ -45,7 +45,7 @@ public class CreateCycleTaskRequest extends RpcAcsRequest<CreateCycleTaskRespons
 
 	private String periodUnit;
 	public CreateCycleTaskRequest() {
-		super("Sas", "2018-12-03", "CreateCycleTask", "sas");
+		super("Sas", "2018-12-03", "CreateCycleTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

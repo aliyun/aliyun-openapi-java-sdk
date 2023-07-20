@@ -36,7 +36,7 @@ public class InstallCloudMonitorRequest extends RpcAcsRequest<InstallCloudMonito
 
 	private List<String> instanceIdLists;
 	public InstallCloudMonitorRequest() {
-		super("Sas", "2018-12-03", "InstallCloudMonitor", "sas");
+		super("Sas", "2018-12-03", "InstallCloudMonitor");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

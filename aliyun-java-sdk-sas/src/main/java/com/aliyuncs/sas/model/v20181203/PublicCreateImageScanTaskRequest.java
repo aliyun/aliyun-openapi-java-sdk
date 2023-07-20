@@ -43,7 +43,7 @@ public class PublicCreateImageScanTaskRequest extends RpcAcsRequest<PublicCreate
 
 	private String repoNames;
 	public PublicCreateImageScanTaskRequest() {
-		super("Sas", "2018-12-03", "PublicCreateImageScanTask", "sas");
+		super("Sas", "2018-12-03", "PublicCreateImageScanTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

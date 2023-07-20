@@ -27,7 +27,7 @@ public class ListPrivateRegistryTypeRequest extends RpcAcsRequest<ListPrivateReg
 
 	private String lang;
 	public ListPrivateRegistryTypeRequest() {
-		super("Sas", "2018-12-03", "ListPrivateRegistryType", "sas");
+		super("Sas", "2018-12-03", "ListPrivateRegistryType");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

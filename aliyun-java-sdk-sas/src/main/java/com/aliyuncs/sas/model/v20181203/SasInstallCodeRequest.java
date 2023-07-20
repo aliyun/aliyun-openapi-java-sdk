@@ -27,7 +27,7 @@ public class SasInstallCodeRequest extends RpcAcsRequest<SasInstallCodeResponse>
 
 	private String sourceIp;
 	public SasInstallCodeRequest() {
-		super("Sas", "2018-12-03", "SasInstallCode", "sas");
+		super("Sas", "2018-12-03", "SasInstallCode");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

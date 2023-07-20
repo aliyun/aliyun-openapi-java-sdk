@@ -41,7 +41,7 @@ public class QueryGroupedSecurityEventMarkMissListRequest extends RpcAcsRequest<
 
 	private Integer currentPage;
 	public QueryGroupedSecurityEventMarkMissListRequest() {
-		super("Sas", "2018-12-03", "QueryGroupedSecurityEventMarkMissList", "sas");
+		super("Sas", "2018-12-03", "QueryGroupedSecurityEventMarkMissList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -25,7 +25,7 @@ import com.aliyuncs.sas.Endpoint;
 public class GetAgentlessTaskCountRequest extends RpcAcsRequest<GetAgentlessTaskCountResponse> {
 	   
 	public GetAgentlessTaskCountRequest() {
-		super("Sas", "2018-12-03", "GetAgentlessTaskCount", "sas");
+		super("Sas", "2018-12-03", "GetAgentlessTaskCount");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

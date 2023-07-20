@@ -32,6 +32,8 @@ public class ListCheckResultRequest extends RpcAcsRequest<ListCheckResultRespons
 
 	private List<String> instanceTypess;
 
+	private Boolean customParam;
+
 	private String checkKey;
 
 	private Integer pageSize;
@@ -52,7 +54,7 @@ public class ListCheckResultRequest extends RpcAcsRequest<ListCheckResultRespons
 
 	private List<String> statusess;
 	public ListCheckResultRequest() {
-		super("Sas", "2018-12-03", "ListCheckResult", "sas");
+		super("Sas", "2018-12-03", "ListCheckResult");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -97,6 +99,17 @@ public class ListCheckResultRequest extends RpcAcsRequest<ListCheckResultRespons
 				putQueryParameter("InstanceTypes." + (i + 1) , instanceTypess.get(i));
 			}
 		}	
+	}
+
+	public Boolean getCustomParam() {
+		return this.customParam;
+	}
+
+	public void setCustomParam(Boolean customParam) {
+		this.customParam = customParam;
+		if(customParam != null){
+			putQueryParameter("CustomParam", customParam.toString());
+		}
 	}
 
 	public String getCheckKey() {

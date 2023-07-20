@@ -25,7 +25,7 @@ import com.aliyuncs.sas.Endpoint;
 public class GetBackupStorageCountRequest extends RpcAcsRequest<GetBackupStorageCountResponse> {
 	   
 	public GetBackupStorageCountRequest() {
-		super("Sas", "2018-12-03", "GetBackupStorageCount", "sas");
+		super("Sas", "2018-12-03", "GetBackupStorageCount");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

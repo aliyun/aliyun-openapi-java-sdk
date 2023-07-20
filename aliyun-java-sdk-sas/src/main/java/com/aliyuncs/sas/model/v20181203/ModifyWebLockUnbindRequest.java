@@ -27,7 +27,7 @@ public class ModifyWebLockUnbindRequest extends RpcAcsRequest<ModifyWebLockUnbin
 
 	private String uuid;
 	public ModifyWebLockUnbindRequest() {
-		super("Sas", "2018-12-03", "ModifyWebLockUnbind", "sas");
+		super("Sas", "2018-12-03", "ModifyWebLockUnbind");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

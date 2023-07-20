@@ -49,7 +49,7 @@ public class DescribeImageListBySensitiveFileRequest extends RpcAcsRequest<Descr
 
 	private String repoInstanceId;
 	public DescribeImageListBySensitiveFileRequest() {
-		super("Sas", "2018-12-03", "DescribeImageListBySensitiveFile", "sas");
+		super("Sas", "2018-12-03", "DescribeImageListBySensitiveFile");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

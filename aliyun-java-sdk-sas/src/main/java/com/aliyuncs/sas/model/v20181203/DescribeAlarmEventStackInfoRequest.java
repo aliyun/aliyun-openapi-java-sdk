@@ -33,9 +33,11 @@ public class DescribeAlarmEventStackInfoRequest extends RpcAcsRequest<DescribeAl
 
 	private String lang;
 
+	private Long resourceDirectoryAccountId;
+
 	private String uniqueInfo;
 	public DescribeAlarmEventStackInfoRequest() {
-		super("Sas", "2018-12-03", "DescribeAlarmEventStackInfo", "sas");
+		super("Sas", "2018-12-03", "DescribeAlarmEventStackInfo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -84,6 +86,17 @@ public class DescribeAlarmEventStackInfoRequest extends RpcAcsRequest<DescribeAl
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public Long getResourceDirectoryAccountId() {
+		return this.resourceDirectoryAccountId;
+	}
+
+	public void setResourceDirectoryAccountId(Long resourceDirectoryAccountId) {
+		this.resourceDirectoryAccountId = resourceDirectoryAccountId;
+		if(resourceDirectoryAccountId != null){
+			putQueryParameter("ResourceDirectoryAccountId", resourceDirectoryAccountId.toString());
 		}
 	}
 

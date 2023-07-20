@@ -29,7 +29,7 @@ public class DescribeQuaraFileDownloadInfoRequest extends RpcAcsRequest<Describe
 
 	private Integer quaraFileId;
 	public DescribeQuaraFileDownloadInfoRequest() {
-		super("Sas", "2018-12-03", "DescribeQuaraFileDownloadInfo", "sas");
+		super("Sas", "2018-12-03", "DescribeQuaraFileDownloadInfo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
