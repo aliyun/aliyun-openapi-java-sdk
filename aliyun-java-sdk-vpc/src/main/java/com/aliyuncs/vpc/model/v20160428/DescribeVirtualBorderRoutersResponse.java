@@ -143,9 +143,13 @@ public class DescribeVirtualBorderRoutersResponse extends AcsResponse {
 
 		private Integer bandwidth;
 
+		private String resourceGroupId;
+
 		private List<AssociatedPhysicalConnection> associatedPhysicalConnections;
 
 		private List<AssociatedCen> associatedCens;
+
+		private List<TagsItem> tags;
 
 		public String getCreationTime() {
 			return this.creationTime;
@@ -411,6 +415,14 @@ public class DescribeVirtualBorderRoutersResponse extends AcsResponse {
 			this.bandwidth = bandwidth;
 		}
 
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
 		public List<AssociatedPhysicalConnection> getAssociatedPhysicalConnections() {
 			return this.associatedPhysicalConnections;
 		}
@@ -425,6 +437,14 @@ public class DescribeVirtualBorderRoutersResponse extends AcsResponse {
 
 		public void setAssociatedCens(List<AssociatedCen> associatedCens) {
 			this.associatedCens = associatedCens;
+		}
+
+		public List<TagsItem> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<TagsItem> tags) {
+			this.tags = tags;
 		}
 
 		public static class AssociatedPhysicalConnection {
@@ -610,6 +630,29 @@ public class DescribeVirtualBorderRoutersResponse extends AcsResponse {
 
 			public void setCenStatus(String cenStatus) {
 				this.cenStatus = cenStatus;
+			}
+		}
+
+		public static class TagsItem {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
 			}
 		}
 	}

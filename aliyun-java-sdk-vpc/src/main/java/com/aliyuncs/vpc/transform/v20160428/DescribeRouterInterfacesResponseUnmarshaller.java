@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.vpc.model.v20160428.DescribeRouterInterfacesResponse;
 import com.aliyuncs.vpc.model.v20160428.DescribeRouterInterfacesResponse.RouterInterfaceType;
+import com.aliyuncs.vpc.model.v20160428.DescribeRouterInterfacesResponse.RouterInterfaceType.TagsItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -73,6 +74,17 @@ public class DescribeRouterInterfacesResponseUnmarshaller {
 			routerInterfaceType.setAccessPointId(_ctx.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].AccessPointId"));
 			routerInterfaceType.setIpv6Status(_ctx.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].Ipv6Status"));
 			routerInterfaceType.setFastLinkMode(_ctx.booleanValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].FastLinkMode"));
+			routerInterfaceType.setResourceGroupId(_ctx.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].ResourceGroupId"));
+
+			List<TagsItem> tags = new ArrayList<TagsItem>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].Tags.Length"); j++) {
+				TagsItem tagsItem = new TagsItem();
+				tagsItem.setKey(_ctx.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].Tags["+ j +"].Key"));
+				tagsItem.setValue(_ctx.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tagsItem);
+			}
+			routerInterfaceType.setTags(tags);
 
 			routerInterfaceSet.add(routerInterfaceType);
 		}

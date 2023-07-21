@@ -107,6 +107,8 @@ public class DescribeVSwitchesResponse extends AcsResponse {
 
 		private String shareType;
 
+		private Boolean enabledIpv6;
+
 		private List<Tag> tags;
 
 		private RouteTable routeTable;
@@ -229,6 +231,14 @@ public class DescribeVSwitchesResponse extends AcsResponse {
 
 		public void setShareType(String shareType) {
 			this.shareType = shareType;
+		}
+
+		public Boolean getEnabledIpv6() {
+			return this.enabledIpv6;
+		}
+
+		public void setEnabledIpv6(Boolean enabledIpv6) {
+			this.enabledIpv6 = enabledIpv6;
 		}
 
 		public List<Tag> getTags() {

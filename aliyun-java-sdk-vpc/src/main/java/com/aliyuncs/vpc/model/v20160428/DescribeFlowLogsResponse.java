@@ -117,6 +117,10 @@ public class DescribeFlowLogsResponse extends AcsResponse {
 
 		private String resourceGroupId;
 
+		private String flowLogDeliverStatus;
+
+		private String flowLogDeliverErrorMessage;
+
 		private List<Tag> tags;
 
 		private List<String> trafficPath;
@@ -239,6 +243,22 @@ public class DescribeFlowLogsResponse extends AcsResponse {
 
 		public void setResourceGroupId(String resourceGroupId) {
 			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getFlowLogDeliverStatus() {
+			return this.flowLogDeliverStatus;
+		}
+
+		public void setFlowLogDeliverStatus(String flowLogDeliverStatus) {
+			this.flowLogDeliverStatus = flowLogDeliverStatus;
+		}
+
+		public String getFlowLogDeliverErrorMessage() {
+			return this.flowLogDeliverErrorMessage;
+		}
+
+		public void setFlowLogDeliverErrorMessage(String flowLogDeliverErrorMessage) {
+			this.flowLogDeliverErrorMessage = flowLogDeliverErrorMessage;
 		}
 
 		public List<Tag> getTags() {

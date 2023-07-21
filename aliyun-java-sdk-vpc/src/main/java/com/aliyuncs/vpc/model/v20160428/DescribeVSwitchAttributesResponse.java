@@ -57,6 +57,8 @@ public class DescribeVSwitchAttributesResponse extends AcsResponse {
 
 	private String shareType;
 
+	private Boolean enabledIpv6;
+
 	private List<CloudResourceSetType> cloudResources;
 
 	private List<Tag> tags;
@@ -189,6 +191,14 @@ public class DescribeVSwitchAttributesResponse extends AcsResponse {
 
 	public void setShareType(String shareType) {
 		this.shareType = shareType;
+	}
+
+	public Boolean getEnabledIpv6() {
+		return this.enabledIpv6;
+	}
+
+	public void setEnabledIpv6(Boolean enabledIpv6) {
+		this.enabledIpv6 = enabledIpv6;
 	}
 
 	public List<CloudResourceSetType> getCloudResources() {

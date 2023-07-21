@@ -15,6 +15,7 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.vpc.Endpoint;
 
@@ -27,11 +28,33 @@ public class CreateRouterInterfaceRequest extends RpcAcsRequest<CreateRouterInte
 
 	private String accessPointId;
 
-	private String oppositeRouterId;
-
 	private String oppositeAccessPointId;
 
 	private Long resourceOwnerId;
+
+	private String spec;
+
+	private String resourceGroupId;
+
+	private Integer period;
+
+	private String oppositeRegionId;
+
+	private Long ownerId;
+
+	private String oppositeInterfaceOwnerId;
+
+	private List<Tags> tagss;
+
+	private Boolean autoRenew;
+
+	private String oppositeRouterType;
+
+	private String name;
+
+	private String pricingCycle;
+
+	private String oppositeRouterId;
 
 	private String role;
 
@@ -41,41 +64,23 @@ public class CreateRouterInterfaceRequest extends RpcAcsRequest<CreateRouterInte
 
 	private String description;
 
-	private String spec;
-
 	private Boolean fastLinkMode;
 
 	private String oppositeInterfaceId;
 
 	private String instanceChargeType;
 
-	private Integer period;
-
 	private Boolean autoPay;
 
 	private String resourceOwnerAccount;
 
-	private String oppositeRegionId;
-
 	private String ownerAccount;
 
-	private Long ownerId;
-
-	private String oppositeInterfaceOwnerId;
-
 	private String routerType;
-
-	private Boolean autoRenew;
 
 	private String healthCheckSourceIp;
 
 	private String routerId;
-
-	private String oppositeRouterType;
-
-	private String name;
-
-	private String pricingCycle;
 	public CreateRouterInterfaceRequest() {
 		super("Vpc", "2016-04-28", "CreateRouterInterface", "vpc");
 		setMethod(MethodType.POST);
@@ -93,17 +98,6 @@ public class CreateRouterInterfaceRequest extends RpcAcsRequest<CreateRouterInte
 		this.accessPointId = accessPointId;
 		if(accessPointId != null){
 			putQueryParameter("AccessPointId", accessPointId);
-		}
-	}
-
-	public String getOppositeRouterId() {
-		return this.oppositeRouterId;
-	}
-
-	public void setOppositeRouterId(String oppositeRouterId) {
-		this.oppositeRouterId = oppositeRouterId;
-		if(oppositeRouterId != null){
-			putQueryParameter("OppositeRouterId", oppositeRouterId);
 		}
 	}
 
@@ -126,6 +120,141 @@ public class CreateRouterInterfaceRequest extends RpcAcsRequest<CreateRouterInte
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getSpec() {
+		return this.spec;
+	}
+
+	public void setSpec(String spec) {
+		this.spec = spec;
+		if(spec != null){
+			putQueryParameter("Spec", spec);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public Integer getPeriod() {
+		return this.period;
+	}
+
+	public void setPeriod(Integer period) {
+		this.period = period;
+		if(period != null){
+			putQueryParameter("Period", period.toString());
+		}
+	}
+
+	public String getOppositeRegionId() {
+		return this.oppositeRegionId;
+	}
+
+	public void setOppositeRegionId(String oppositeRegionId) {
+		this.oppositeRegionId = oppositeRegionId;
+		if(oppositeRegionId != null){
+			putQueryParameter("OppositeRegionId", oppositeRegionId);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getOppositeInterfaceOwnerId() {
+		return this.oppositeInterfaceOwnerId;
+	}
+
+	public void setOppositeInterfaceOwnerId(String oppositeInterfaceOwnerId) {
+		this.oppositeInterfaceOwnerId = oppositeInterfaceOwnerId;
+		if(oppositeInterfaceOwnerId != null){
+			putQueryParameter("OppositeInterfaceOwnerId", oppositeInterfaceOwnerId);
+		}
+	}
+
+	public List<Tags> getTagss() {
+		return this.tagss;
+	}
+
+	public void setTagss(List<Tags> tagss) {
+		this.tagss = tagss;	
+		if (tagss != null) {
+			for (int depth1 = 0; depth1 < tagss.size(); depth1++) {
+				putQueryParameter("Tags." + (depth1 + 1) + ".Value" , tagss.get(depth1).getValue());
+				putQueryParameter("Tags." + (depth1 + 1) + ".Key" , tagss.get(depth1).getKey());
+			}
+		}	
+	}
+
+	public Boolean getAutoRenew() {
+		return this.autoRenew;
+	}
+
+	public void setAutoRenew(Boolean autoRenew) {
+		this.autoRenew = autoRenew;
+		if(autoRenew != null){
+			putQueryParameter("AutoRenew", autoRenew.toString());
+		}
+	}
+
+	public String getOppositeRouterType() {
+		return this.oppositeRouterType;
+	}
+
+	public void setOppositeRouterType(String oppositeRouterType) {
+		this.oppositeRouterType = oppositeRouterType;
+		if(oppositeRouterType != null){
+			putQueryParameter("OppositeRouterType", oppositeRouterType);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
+		}
+	}
+
+	public String getPricingCycle() {
+		return this.pricingCycle;
+	}
+
+	public void setPricingCycle(String pricingCycle) {
+		this.pricingCycle = pricingCycle;
+		if(pricingCycle != null){
+			putQueryParameter("PricingCycle", pricingCycle);
+		}
+	}
+
+	public String getOppositeRouterId() {
+		return this.oppositeRouterId;
+	}
+
+	public void setOppositeRouterId(String oppositeRouterId) {
+		this.oppositeRouterId = oppositeRouterId;
+		if(oppositeRouterId != null){
+			putQueryParameter("OppositeRouterId", oppositeRouterId);
 		}
 	}
 
@@ -173,17 +302,6 @@ public class CreateRouterInterfaceRequest extends RpcAcsRequest<CreateRouterInte
 		}
 	}
 
-	public String getSpec() {
-		return this.spec;
-	}
-
-	public void setSpec(String spec) {
-		this.spec = spec;
-		if(spec != null){
-			putQueryParameter("Spec", spec);
-		}
-	}
-
 	public Boolean getFastLinkMode() {
 		return this.fastLinkMode;
 	}
@@ -217,17 +335,6 @@ public class CreateRouterInterfaceRequest extends RpcAcsRequest<CreateRouterInte
 		}
 	}
 
-	public Integer getPeriod() {
-		return this.period;
-	}
-
-	public void setPeriod(Integer period) {
-		this.period = period;
-		if(period != null){
-			putQueryParameter("Period", period.toString());
-		}
-	}
-
 	public Boolean getAutoPay() {
 		return this.autoPay;
 	}
@@ -250,17 +357,6 @@ public class CreateRouterInterfaceRequest extends RpcAcsRequest<CreateRouterInte
 		}
 	}
 
-	public String getOppositeRegionId() {
-		return this.oppositeRegionId;
-	}
-
-	public void setOppositeRegionId(String oppositeRegionId) {
-		this.oppositeRegionId = oppositeRegionId;
-		if(oppositeRegionId != null){
-			putQueryParameter("OppositeRegionId", oppositeRegionId);
-		}
-	}
-
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -272,28 +368,6 @@ public class CreateRouterInterfaceRequest extends RpcAcsRequest<CreateRouterInte
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getOppositeInterfaceOwnerId() {
-		return this.oppositeInterfaceOwnerId;
-	}
-
-	public void setOppositeInterfaceOwnerId(String oppositeInterfaceOwnerId) {
-		this.oppositeInterfaceOwnerId = oppositeInterfaceOwnerId;
-		if(oppositeInterfaceOwnerId != null){
-			putQueryParameter("OppositeInterfaceOwnerId", oppositeInterfaceOwnerId);
-		}
-	}
-
 	public String getRouterType() {
 		return this.routerType;
 	}
@@ -302,17 +376,6 @@ public class CreateRouterInterfaceRequest extends RpcAcsRequest<CreateRouterInte
 		this.routerType = routerType;
 		if(routerType != null){
 			putQueryParameter("RouterType", routerType);
-		}
-	}
-
-	public Boolean getAutoRenew() {
-		return this.autoRenew;
-	}
-
-	public void setAutoRenew(Boolean autoRenew) {
-		this.autoRenew = autoRenew;
-		if(autoRenew != null){
-			putQueryParameter("AutoRenew", autoRenew.toString());
 		}
 	}
 
@@ -338,36 +401,26 @@ public class CreateRouterInterfaceRequest extends RpcAcsRequest<CreateRouterInte
 		}
 	}
 
-	public String getOppositeRouterType() {
-		return this.oppositeRouterType;
-	}
+	public static class Tags {
 
-	public void setOppositeRouterType(String oppositeRouterType) {
-		this.oppositeRouterType = oppositeRouterType;
-		if(oppositeRouterType != null){
-			putQueryParameter("OppositeRouterType", oppositeRouterType);
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
 		}
-	}
 
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
+		public void setValue(String value) {
+			this.value = value;
 		}
-	}
 
-	public String getPricingCycle() {
-		return this.pricingCycle;
-	}
+		public String getKey() {
+			return this.key;
+		}
 
-	public void setPricingCycle(String pricingCycle) {
-		this.pricingCycle = pricingCycle;
-		if(pricingCycle != null){
-			putQueryParameter("PricingCycle", pricingCycle);
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

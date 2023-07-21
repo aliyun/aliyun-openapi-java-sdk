@@ -14,6 +14,7 @@
 
 package com.aliyuncs.vpc.model.v20160428;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.vpc.transform.v20160428.DescribeRouterInterfaceAttributeResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -109,6 +110,10 @@ public class DescribeRouterInterfaceAttributeResponse extends AcsResponse {
 	private String hasReservationData;
 
 	private String accessPointId;
+
+	private String resourceGroupId;
+
+	private List<TagsItem> tags;
 
 	public String getReservationActiveTime() {
 		return this.reservationActiveTime;
@@ -452,6 +457,45 @@ public class DescribeRouterInterfaceAttributeResponse extends AcsResponse {
 
 	public void setAccessPointId(String accessPointId) {
 		this.accessPointId = accessPointId;
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+	}
+
+	public List<TagsItem> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<TagsItem> tags) {
+		this.tags = tags;
+	}
+
+	public static class TagsItem {
+
+		private String key;
+
+		private String value;
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
 	}
 
 	@Override

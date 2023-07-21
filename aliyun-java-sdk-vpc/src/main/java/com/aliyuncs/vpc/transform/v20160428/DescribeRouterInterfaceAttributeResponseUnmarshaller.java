@@ -14,7 +14,11 @@
 
 package com.aliyuncs.vpc.transform.v20160428;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.vpc.model.v20160428.DescribeRouterInterfaceAttributeResponse;
+import com.aliyuncs.vpc.model.v20160428.DescribeRouterInterfaceAttributeResponse.TagsItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -65,6 +69,17 @@ public class DescribeRouterInterfaceAttributeResponseUnmarshaller {
 		describeRouterInterfaceAttributeResponse.setRole(_ctx.stringValue("DescribeRouterInterfaceAttributeResponse.Role"));
 		describeRouterInterfaceAttributeResponse.setHasReservationData(_ctx.stringValue("DescribeRouterInterfaceAttributeResponse.HasReservationData"));
 		describeRouterInterfaceAttributeResponse.setAccessPointId(_ctx.stringValue("DescribeRouterInterfaceAttributeResponse.AccessPointId"));
+		describeRouterInterfaceAttributeResponse.setResourceGroupId(_ctx.stringValue("DescribeRouterInterfaceAttributeResponse.ResourceGroupId"));
+
+		List<TagsItem> tags = new ArrayList<TagsItem>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeRouterInterfaceAttributeResponse.Tags.Length"); i++) {
+			TagsItem tagsItem = new TagsItem();
+			tagsItem.setKey(_ctx.stringValue("DescribeRouterInterfaceAttributeResponse.Tags["+ i +"].Key"));
+			tagsItem.setValue(_ctx.stringValue("DescribeRouterInterfaceAttributeResponse.Tags["+ i +"].Value"));
+
+			tags.add(tagsItem);
+		}
+		describeRouterInterfaceAttributeResponse.setTags(tags);
 	 
 	 	return describeRouterInterfaceAttributeResponse;
 	}
