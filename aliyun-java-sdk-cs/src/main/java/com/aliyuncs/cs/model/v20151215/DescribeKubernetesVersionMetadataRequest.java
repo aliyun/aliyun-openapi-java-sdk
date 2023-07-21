@@ -27,6 +27,8 @@ public class DescribeKubernetesVersionMetadataRequest extends RoaAcsRequest<Desc
 
 	private String clusterType;
 
+	private String mode;
+
 	private String kubernetesVersion;
 
 	private String profile;
@@ -52,6 +54,17 @@ public class DescribeKubernetesVersionMetadataRequest extends RoaAcsRequest<Desc
 		this.clusterType = clusterType;
 		if(clusterType != null){
 			putQueryParameter("ClusterType", clusterType);
+		}
+	}
+
+	public String getMode() {
+		return this.mode;
+	}
+
+	public void setMode(String mode) {
+		this.mode = mode;
+		if(mode != null){
+			putQueryParameter("Mode", mode);
 		}
 	}
 
