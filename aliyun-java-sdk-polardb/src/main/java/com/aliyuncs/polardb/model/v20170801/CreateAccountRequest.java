@@ -48,6 +48,8 @@ public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
 	private String accountPassword;
 
 	private String dBName;
+
+	private String privForAllDB;
 	public CreateAccountRequest() {
 		super("polardb", "2017-08-01", "CreateAccount", "polardb");
 		setMethod(MethodType.POST);
@@ -186,6 +188,17 @@ public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
 		this.dBName = dBName;
 		if(dBName != null){
 			putQueryParameter("DBName", dBName);
+		}
+	}
+
+	public String getPrivForAllDB() {
+		return this.privForAllDB;
+	}
+
+	public void setPrivForAllDB(String privForAllDB) {
+		this.privForAllDB = privForAllDB;
+		if(privForAllDB != null){
+			putQueryParameter("PrivForAllDB", privForAllDB);
 		}
 	}
 
