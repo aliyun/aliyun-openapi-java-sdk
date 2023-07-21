@@ -27,13 +27,15 @@ public class DescribeCharacterSetNameRequest extends RpcAcsRequest<DescribeChara
 
 	private Long resourceOwnerId;
 
+	private String resourceGroupId;
+
+	private String engine;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	private String engine;
 	public DescribeCharacterSetNameRequest() {
 		super("Rds", "2014-08-15", "DescribeCharacterSetName");
 		setMethod(MethodType.POST);
@@ -51,6 +53,28 @@ public class DescribeCharacterSetNameRequest extends RpcAcsRequest<DescribeChara
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getEngine() {
+		return this.engine;
+	}
+
+	public void setEngine(String engine) {
+		this.engine = engine;
+		if(engine != null){
+			putQueryParameter("Engine", engine);
 		}
 	}
 
@@ -84,17 +108,6 @@ public class DescribeCharacterSetNameRequest extends RpcAcsRequest<DescribeChara
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getEngine() {
-		return this.engine;
-	}
-
-	public void setEngine(String engine) {
-		this.engine = engine;
-		if(engine != null){
-			putQueryParameter("Engine", engine);
 		}
 	}
 
