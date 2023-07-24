@@ -397,6 +397,12 @@ public class GetLoadBalancerAttributeResponse extends AcsResponse {
 
 		private String zoneId;
 
+		private String status;
+
+		private String allocationId;
+
+		private String eipType;
+
 		private List<LoadBalancerAddress> loadBalancerAddresses;
 
 		public String getVSwitchId() {
@@ -415,6 +421,30 @@ public class GetLoadBalancerAttributeResponse extends AcsResponse {
 			this.zoneId = zoneId;
 		}
 
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getAllocationId() {
+			return this.allocationId;
+		}
+
+		public void setAllocationId(String allocationId) {
+			this.allocationId = allocationId;
+		}
+
+		public String getEipType() {
+			return this.eipType;
+		}
+
+		public void setEipType(String eipType) {
+			this.eipType = eipType;
+		}
+
 		public List<LoadBalancerAddress> getLoadBalancerAddresses() {
 			return this.loadBalancerAddresses;
 		}
@@ -429,7 +459,11 @@ public class GetLoadBalancerAttributeResponse extends AcsResponse {
 
 			private String ipv6Address;
 
+			private String ipv6AddressHcStatus;
+
 			private String intranetAddress;
+
+			private String intranetAddressHcStatus;
 
 			private String allocationId;
 
@@ -451,12 +485,28 @@ public class GetLoadBalancerAttributeResponse extends AcsResponse {
 				this.ipv6Address = ipv6Address;
 			}
 
+			public String getIpv6AddressHcStatus() {
+				return this.ipv6AddressHcStatus;
+			}
+
+			public void setIpv6AddressHcStatus(String ipv6AddressHcStatus) {
+				this.ipv6AddressHcStatus = ipv6AddressHcStatus;
+			}
+
 			public String getIntranetAddress() {
 				return this.intranetAddress;
 			}
 
 			public void setIntranetAddress(String intranetAddress) {
 				this.intranetAddress = intranetAddress;
+			}
+
+			public String getIntranetAddressHcStatus() {
+				return this.intranetAddressHcStatus;
+			}
+
+			public void setIntranetAddressHcStatus(String intranetAddressHcStatus) {
+				this.intranetAddressHcStatus = intranetAddressHcStatus;
 			}
 
 			public String getAllocationId() {
