@@ -15,18 +15,18 @@
 package com.aliyuncs.retailadvqa.model.v20230417;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.retailadvqa.transform.v20230417.AddMemberBasicInfoResponseUnmarshaller;
+import com.aliyuncs.retailadvqa.transform.v20230417.MemberPointChangeResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class AddMemberBasicInfoResponse extends AcsResponse {
+public class MemberPointChangeResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String success;
 
 	private String httpStatusCode;
 
@@ -34,7 +34,9 @@ public class AddMemberBasicInfoResponse extends AcsResponse {
 
 	private String errorMessage;
 
-	private String outerMemberId;
+	private String currentQuantity;
+
+	private String levelName;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,11 +46,11 @@ public class AddMemberBasicInfoResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
+	public String getSuccess() {
 		return this.success;
 	}
 
-	public void setSuccess(Boolean success) {
+	public void setSuccess(String success) {
 		this.success = success;
 	}
 
@@ -76,17 +78,25 @@ public class AddMemberBasicInfoResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public String getOuterMemberId() {
-		return this.outerMemberId;
+	public String getCurrentQuantity() {
+		return this.currentQuantity;
 	}
 
-	public void setOuterMemberId(String outerMemberId) {
-		this.outerMemberId = outerMemberId;
+	public void setCurrentQuantity(String currentQuantity) {
+		this.currentQuantity = currentQuantity;
+	}
+
+	public String getLevelName() {
+		return this.levelName;
+	}
+
+	public void setLevelName(String levelName) {
+		this.levelName = levelName;
 	}
 
 	@Override
-	public AddMemberBasicInfoResponse getInstance(UnmarshallerContext context) {
-		return	AddMemberBasicInfoResponseUnmarshaller.unmarshall(this, context);
+	public MemberPointChangeResponse getInstance(UnmarshallerContext context) {
+		return	MemberPointChangeResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

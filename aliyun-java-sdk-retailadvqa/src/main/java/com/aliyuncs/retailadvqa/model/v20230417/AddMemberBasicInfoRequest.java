@@ -30,7 +30,7 @@ public class AddMemberBasicInfoRequest extends RpcAcsRequest<AddMemberBasicInfoR
 	@SerializedName("body")
 	private Body body;
 	public AddMemberBasicInfoRequest() {
-		super("retailadvqa", "2023-04-17", "AddMemberBasicInfo");
+		super("retailadvqa", "2023-04-17", "AddMemberBasicInfo", "qucikmember");
 		setMethod(MethodType.POST);
 	}
 
@@ -50,32 +50,41 @@ public class AddMemberBasicInfoRequest extends RpcAcsRequest<AddMemberBasicInfoR
 		@SerializedName("Birthday")
 		private String birthday;
 
-		@SerializedName("CreateTime")
-		private String createTime;
+		@SerializedName("Area")
+		private String area;
+
+		@SerializedName("Country")
+		private String country;
 
 		@SerializedName("OpenMerchantId")
 		private String openMerchantId;
 
-		@SerializedName("Gender")
-		private String gender;
-
 		@SerializedName("City")
 		private String city;
 
+		@SerializedName("Sex")
+		private String sex;
+
 		@SerializedName("Mobile")
 		private String mobile;
+
+		@SerializedName("Avatar")
+		private String avatar;
+
+		@SerializedName("GmtCreate")
+		private String gmtCreate;
 
 		@SerializedName("FirstEntryChannel")
 		private String firstEntryChannel;
 
 		@SerializedName("Point")
-		private String point;
+		private Double point;
 
 		@SerializedName("DimensionType")
 		private String dimensionType;
 
 		@SerializedName("GrowthPoint")
-		private String growthPoint;
+		private Long growthPoint;
 
 		@SerializedName("DimensionId")
 		private String dimensionId;
@@ -89,8 +98,14 @@ public class AddMemberBasicInfoRequest extends RpcAcsRequest<AddMemberBasicInfoR
 		@SerializedName("Extra")
 		private String extra;
 
-		@SerializedName("Name")
-		private String name;
+		@SerializedName("PlatFromType")
+		private String platFromType;
+
+		@SerializedName("MemberName")
+		private String memberName;
+
+		@SerializedName("Email")
+		private String email;
 
 		public String getBirthday() {
 			return this.birthday;
@@ -100,12 +115,20 @@ public class AddMemberBasicInfoRequest extends RpcAcsRequest<AddMemberBasicInfoR
 			this.birthday = birthday;
 		}
 
-		public String getCreateTime() {
-			return this.createTime;
+		public String getArea() {
+			return this.area;
 		}
 
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
+		public void setArea(String area) {
+			this.area = area;
+		}
+
+		public String getCountry() {
+			return this.country;
+		}
+
+		public void setCountry(String country) {
+			this.country = country;
 		}
 
 		public String getOpenMerchantId() {
@@ -116,20 +139,20 @@ public class AddMemberBasicInfoRequest extends RpcAcsRequest<AddMemberBasicInfoR
 			this.openMerchantId = openMerchantId;
 		}
 
-		public String getGender() {
-			return this.gender;
-		}
-
-		public void setGender(String gender) {
-			this.gender = gender;
-		}
-
 		public String getCity() {
 			return this.city;
 		}
 
 		public void setCity(String city) {
 			this.city = city;
+		}
+
+		public String getSex() {
+			return this.sex;
+		}
+
+		public void setSex(String sex) {
+			this.sex = sex;
 		}
 
 		public String getMobile() {
@@ -140,6 +163,22 @@ public class AddMemberBasicInfoRequest extends RpcAcsRequest<AddMemberBasicInfoR
 			this.mobile = mobile;
 		}
 
+		public String getAvatar() {
+			return this.avatar;
+		}
+
+		public void setAvatar(String avatar) {
+			this.avatar = avatar;
+		}
+
+		public String getGmtCreate() {
+			return this.gmtCreate;
+		}
+
+		public void setGmtCreate(String gmtCreate) {
+			this.gmtCreate = gmtCreate;
+		}
+
 		public String getFirstEntryChannel() {
 			return this.firstEntryChannel;
 		}
@@ -148,11 +187,11 @@ public class AddMemberBasicInfoRequest extends RpcAcsRequest<AddMemberBasicInfoR
 			this.firstEntryChannel = firstEntryChannel;
 		}
 
-		public String getPoint() {
+		public Double getPoint() {
 			return this.point;
 		}
 
-		public void setPoint(String point) {
+		public void setPoint(Double point) {
 			this.point = point;
 		}
 
@@ -164,11 +203,11 @@ public class AddMemberBasicInfoRequest extends RpcAcsRequest<AddMemberBasicInfoR
 			this.dimensionType = dimensionType;
 		}
 
-		public String getGrowthPoint() {
+		public Long getGrowthPoint() {
 			return this.growthPoint;
 		}
 
-		public void setGrowthPoint(String growthPoint) {
+		public void setGrowthPoint(Long growthPoint) {
 			this.growthPoint = growthPoint;
 		}
 
@@ -204,12 +243,28 @@ public class AddMemberBasicInfoRequest extends RpcAcsRequest<AddMemberBasicInfoR
 			this.extra = extra;
 		}
 
-		public String getName() {
-			return this.name;
+		public String getPlatFromType() {
+			return this.platFromType;
 		}
 
-		public void setName(String name) {
-			this.name = name;
+		public void setPlatFromType(String platFromType) {
+			this.platFromType = platFromType;
+		}
+
+		public String getMemberName() {
+			return this.memberName;
+		}
+
+		public void setMemberName(String memberName) {
+			this.memberName = memberName;
+		}
+
+		public String getEmail() {
+			return this.email;
+		}
+
+		public void setEmail(String email) {
+			this.email = email;
 		}
 
 		public static class ChannelsItem {

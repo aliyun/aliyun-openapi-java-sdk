@@ -30,7 +30,7 @@ public class SyncCardInfoRequest extends RpcAcsRequest<SyncCardInfoResponse> {
 	@SerializedName("body")
 	private Body body;
 	public SyncCardInfoRequest() {
-		super("retailadvqa", "2023-04-17", "SyncCardInfo");
+		super("retailadvqa", "2023-04-17", "SyncCardInfo", "qucikmember");
 		setMethod(MethodType.POST);
 	}
 

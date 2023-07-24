@@ -14,36 +14,29 @@
 
 package com.aliyuncs.retailadvqa.model.v20230417;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.retailadvqa.transform.v20230417.PageIncrementMembersResponseUnmarshaller;
+import com.aliyuncs.retailadvqa.transform.v20230417.QueryMemberBasicInfoResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class PageIncrementMembersResponse extends AcsResponse {
-
-	private Integer totalCount;
+public class QueryMemberBasicInfoResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String success;
+	private Boolean success;
+
+	private String httpStatusCode;
 
 	private String errorCode;
 
 	private String errorMessage;
 
-	private List<DataItem> data;
+	private String message;
 
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
-	}
+	private OpenMemberBasicInfoDTO openMemberBasicInfoDTO;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -53,12 +46,20 @@ public class PageIncrementMembersResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getSuccess() {
+	public Boolean getSuccess() {
 		return this.success;
 	}
 
-	public void setSuccess(String success) {
+	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(String httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
 	public String getErrorCode() {
@@ -77,47 +78,55 @@ public class PageIncrementMembersResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public List<DataItem> getData() {
-		return this.data;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setData(List<DataItem> data) {
-		this.data = data;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
-	public static class DataItem {
+	public OpenMemberBasicInfoDTO getOpenMemberBasicInfoDTO() {
+		return this.openMemberBasicInfoDTO;
+	}
+
+	public void setOpenMemberBasicInfoDTO(OpenMemberBasicInfoDTO openMemberBasicInfoDTO) {
+		this.openMemberBasicInfoDTO = openMemberBasicInfoDTO;
+	}
+
+	public static class OpenMemberBasicInfoDTO {
 
 		private String openMerchantId;
 
 		private String outerMemberId;
 
-		private String name;
+		private String memberName;
 
 		private String mobile;
 
-		private String mixMobile;
+		private String sex;
 
 		private String birthday;
+
+		private String country;
 
 		private String province;
 
 		private String city;
 
-		private String sex;
-
 		private String email;
 
-		private Integer status;
+		private String avatar;
 
-		private String entryChannel;
+		private String levelNum;
 
-		private Integer levelNum;
+		private String levelName;
 
-		private String levelPoints;
+		private String points;
 
-		private String consumePoints;
+		private String score;
 
-		private String siteUsers;
+		private String extra;
 
 		public String getOpenMerchantId() {
 			return this.openMerchantId;
@@ -135,12 +144,12 @@ public class PageIncrementMembersResponse extends AcsResponse {
 			this.outerMemberId = outerMemberId;
 		}
 
-		public String getName() {
-			return this.name;
+		public String getMemberName() {
+			return this.memberName;
 		}
 
-		public void setName(String name) {
-			this.name = name;
+		public void setMemberName(String memberName) {
+			this.memberName = memberName;
 		}
 
 		public String getMobile() {
@@ -151,12 +160,12 @@ public class PageIncrementMembersResponse extends AcsResponse {
 			this.mobile = mobile;
 		}
 
-		public String getMixMobile() {
-			return this.mixMobile;
+		public String getSex() {
+			return this.sex;
 		}
 
-		public void setMixMobile(String mixMobile) {
-			this.mixMobile = mixMobile;
+		public void setSex(String sex) {
+			this.sex = sex;
 		}
 
 		public String getBirthday() {
@@ -165,6 +174,14 @@ public class PageIncrementMembersResponse extends AcsResponse {
 
 		public void setBirthday(String birthday) {
 			this.birthday = birthday;
+		}
+
+		public String getCountry() {
+			return this.country;
+		}
+
+		public void setCountry(String country) {
+			this.country = country;
 		}
 
 		public String getProvince() {
@@ -183,14 +200,6 @@ public class PageIncrementMembersResponse extends AcsResponse {
 			this.city = city;
 		}
 
-		public String getSex() {
-			return this.sex;
-		}
-
-		public void setSex(String sex) {
-			this.sex = sex;
-		}
-
 		public String getEmail() {
 			return this.email;
 		}
@@ -199,58 +208,58 @@ public class PageIncrementMembersResponse extends AcsResponse {
 			this.email = email;
 		}
 
-		public Integer getStatus() {
-			return this.status;
+		public String getAvatar() {
+			return this.avatar;
 		}
 
-		public void setStatus(Integer status) {
-			this.status = status;
+		public void setAvatar(String avatar) {
+			this.avatar = avatar;
 		}
 
-		public String getEntryChannel() {
-			return this.entryChannel;
-		}
-
-		public void setEntryChannel(String entryChannel) {
-			this.entryChannel = entryChannel;
-		}
-
-		public Integer getLevelNum() {
+		public String getLevelNum() {
 			return this.levelNum;
 		}
 
-		public void setLevelNum(Integer levelNum) {
+		public void setLevelNum(String levelNum) {
 			this.levelNum = levelNum;
 		}
 
-		public String getLevelPoints() {
-			return this.levelPoints;
+		public String getLevelName() {
+			return this.levelName;
 		}
 
-		public void setLevelPoints(String levelPoints) {
-			this.levelPoints = levelPoints;
+		public void setLevelName(String levelName) {
+			this.levelName = levelName;
 		}
 
-		public String getConsumePoints() {
-			return this.consumePoints;
+		public String getPoints() {
+			return this.points;
 		}
 
-		public void setConsumePoints(String consumePoints) {
-			this.consumePoints = consumePoints;
+		public void setPoints(String points) {
+			this.points = points;
 		}
 
-		public String getSiteUsers() {
-			return this.siteUsers;
+		public String getScore() {
+			return this.score;
 		}
 
-		public void setSiteUsers(String siteUsers) {
-			this.siteUsers = siteUsers;
+		public void setScore(String score) {
+			this.score = score;
+		}
+
+		public String getExtra() {
+			return this.extra;
+		}
+
+		public void setExtra(String extra) {
+			this.extra = extra;
 		}
 	}
 
 	@Override
-	public PageIncrementMembersResponse getInstance(UnmarshallerContext context) {
-		return	PageIncrementMembersResponseUnmarshaller.unmarshall(this, context);
+	public QueryMemberBasicInfoResponse getInstance(UnmarshallerContext context) {
+		return	QueryMemberBasicInfoResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

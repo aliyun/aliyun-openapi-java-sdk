@@ -29,7 +29,7 @@ public class MemberPointConsumeRequest extends RpcAcsRequest<MemberPointConsumeR
 	@SerializedName("body")
 	private Body body;
 	public MemberPointConsumeRequest() {
-		super("retailadvqa", "2023-04-17", "MemberPointConsume");
+		super("retailadvqa", "2023-04-17", "MemberPointConsume", "qucikmember");
 		setMethod(MethodType.POST);
 	}
 

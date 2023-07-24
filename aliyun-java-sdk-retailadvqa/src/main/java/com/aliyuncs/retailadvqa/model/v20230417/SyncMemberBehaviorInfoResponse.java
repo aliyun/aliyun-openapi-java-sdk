@@ -15,14 +15,14 @@
 package com.aliyuncs.retailadvqa.model.v20230417;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.retailadvqa.transform.v20230417.AddMemberBasicInfoResponseUnmarshaller;
+import com.aliyuncs.retailadvqa.transform.v20230417.SyncMemberBehaviorInfoResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class AddMemberBasicInfoResponse extends AcsResponse {
+public class SyncMemberBehaviorInfoResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -34,7 +34,7 @@ public class AddMemberBasicInfoResponse extends AcsResponse {
 
 	private String errorMessage;
 
-	private String outerMemberId;
+	private String message;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -76,17 +76,17 @@ public class AddMemberBasicInfoResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public String getOuterMemberId() {
-		return this.outerMemberId;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setOuterMemberId(String outerMemberId) {
-		this.outerMemberId = outerMemberId;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	@Override
-	public AddMemberBasicInfoResponse getInstance(UnmarshallerContext context) {
-		return	AddMemberBasicInfoResponseUnmarshaller.unmarshall(this, context);
+	public SyncMemberBehaviorInfoResponse getInstance(UnmarshallerContext context) {
+		return	SyncMemberBehaviorInfoResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

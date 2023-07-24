@@ -17,19 +17,21 @@ package com.aliyuncs.retailadvqa.model.v20230417;
 import com.aliyuncs.RpcAcsRequest;
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
-public class MemberPointAddRequest extends RpcAcsRequest<MemberPointAddResponse> {
+public class QueryMemberBasicInfoRequest extends RpcAcsRequest<QueryMemberBasicInfoResponse> {
 	   
 
 	@SerializedName("body")
 	private Body body;
-	public MemberPointAddRequest() {
-		super("retailadvqa", "2023-04-17", "MemberPointAdd", "qucikmember");
+	public QueryMemberBasicInfoRequest() {
+		super("retailadvqa", "2023-04-17", "QueryMemberBasicInfo", "qucikmember");
+		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
 
@@ -46,29 +48,40 @@ public class MemberPointAddRequest extends RpcAcsRequest<MemberPointAddResponse>
 
 	public static class Body {
 
+		@SerializedName("DimensionType")
+		private String dimensionType;
+
 		@SerializedName("OpenMerchantId")
 		private String openMerchantId;
-
-		@SerializedName("Quantity")
-		private Long quantity;
 
 		@SerializedName("DimensionId")
 		private String dimensionId;
 
-		@SerializedName("QuantityType")
-		private String quantityType;
+		@SerializedName("OpenId")
+		private String openId;
 
-		@SerializedName("Extra")
-		private String extra;
+		@SerializedName("Mobile")
+		private String mobile;
+
+		@SerializedName("PlatFromType")
+		private String platFromType;
+
+		@SerializedName("Type")
+		private String type;
+
+		@SerializedName("ChannelCode")
+		private String channelCode;
 
 		@SerializedName("OuterMemberId")
 		private String outerMemberId;
 
-		@SerializedName("Scene")
-		private String scene;
+		public String getDimensionType() {
+			return this.dimensionType;
+		}
 
-		@SerializedName("SerialNo")
-		private String serialNo;
+		public void setDimensionType(String dimensionType) {
+			this.dimensionType = dimensionType;
+		}
 
 		public String getOpenMerchantId() {
 			return this.openMerchantId;
@@ -76,14 +89,6 @@ public class MemberPointAddRequest extends RpcAcsRequest<MemberPointAddResponse>
 
 		public void setOpenMerchantId(String openMerchantId) {
 			this.openMerchantId = openMerchantId;
-		}
-
-		public Long getQuantity() {
-			return this.quantity;
-		}
-
-		public void setQuantity(Long quantity) {
-			this.quantity = quantity;
 		}
 
 		public String getDimensionId() {
@@ -94,20 +99,44 @@ public class MemberPointAddRequest extends RpcAcsRequest<MemberPointAddResponse>
 			this.dimensionId = dimensionId;
 		}
 
-		public String getQuantityType() {
-			return this.quantityType;
+		public String getOpenId() {
+			return this.openId;
 		}
 
-		public void setQuantityType(String quantityType) {
-			this.quantityType = quantityType;
+		public void setOpenId(String openId) {
+			this.openId = openId;
 		}
 
-		public String getExtra() {
-			return this.extra;
+		public String getMobile() {
+			return this.mobile;
 		}
 
-		public void setExtra(String extra) {
-			this.extra = extra;
+		public void setMobile(String mobile) {
+			this.mobile = mobile;
+		}
+
+		public String getPlatFromType() {
+			return this.platFromType;
+		}
+
+		public void setPlatFromType(String platFromType) {
+			this.platFromType = platFromType;
+		}
+
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
+		}
+
+		public String getChannelCode() {
+			return this.channelCode;
+		}
+
+		public void setChannelCode(String channelCode) {
+			this.channelCode = channelCode;
 		}
 
 		public String getOuterMemberId() {
@@ -117,27 +146,11 @@ public class MemberPointAddRequest extends RpcAcsRequest<MemberPointAddResponse>
 		public void setOuterMemberId(String outerMemberId) {
 			this.outerMemberId = outerMemberId;
 		}
-
-		public String getScene() {
-			return this.scene;
-		}
-
-		public void setScene(String scene) {
-			this.scene = scene;
-		}
-
-		public String getSerialNo() {
-			return this.serialNo;
-		}
-
-		public void setSerialNo(String serialNo) {
-			this.serialNo = serialNo;
-		}
 	}
 
 	@Override
-	public Class<MemberPointAddResponse> getResponseClass() {
-		return MemberPointAddResponse.class;
+	public Class<QueryMemberBasicInfoResponse> getResponseClass() {
+		return QueryMemberBasicInfoResponse.class;
 	}
 
 }

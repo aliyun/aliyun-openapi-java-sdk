@@ -26,7 +26,7 @@ public class AddMemberBasicInfoResponseUnmarshaller {
 		addMemberBasicInfoResponse.setSuccess(_ctx.booleanValue("AddMemberBasicInfoResponse.Success"));
 		addMemberBasicInfoResponse.setHttpStatusCode(_ctx.stringValue("AddMemberBasicInfoResponse.HttpStatusCode"));
 		addMemberBasicInfoResponse.setErrorCode(_ctx.stringValue("AddMemberBasicInfoResponse.ErrorCode"));
-		addMemberBasicInfoResponse.setErrorMesssage(_ctx.stringValue("AddMemberBasicInfoResponse.ErrorMesssage"));
+		addMemberBasicInfoResponse.setErrorMessage(_ctx.stringValue("AddMemberBasicInfoResponse.ErrorMessage"));
 		addMemberBasicInfoResponse.setOuterMemberId(_ctx.stringValue("AddMemberBasicInfoResponse.OuterMemberId"));
 	 
 	 	return addMemberBasicInfoResponse;

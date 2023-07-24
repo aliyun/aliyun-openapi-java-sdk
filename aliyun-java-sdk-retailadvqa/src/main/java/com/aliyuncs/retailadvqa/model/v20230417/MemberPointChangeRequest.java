@@ -15,18 +15,20 @@
 package com.aliyuncs.retailadvqa.model.v20230417;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
-public class PageMembersRequest extends RpcAcsRequest<PageMembersResponse> {
+public class MemberPointChangeRequest extends RpcAcsRequest<MemberPointChangeResponse> {
 	   
 
 	private String body;
-	public PageMembersRequest() {
-		super("retailadvqa", "2023-04-17", "PageMembers");
+	public MemberPointChangeRequest() {
+		super("retailadvqa", "2023-04-17", "MemberPointChange", "qucikmember");
+		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
 
@@ -42,8 +44,8 @@ public class PageMembersRequest extends RpcAcsRequest<PageMembersResponse> {
 	}
 
 	@Override
-	public Class<PageMembersResponse> getResponseClass() {
-		return PageMembersResponse.class;
+	public Class<MemberPointChangeResponse> getResponseClass() {
+		return MemberPointChangeResponse.class;
 	}
 
 }
