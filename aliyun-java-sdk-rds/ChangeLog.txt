@@ -1,3 +1,7 @@
+2023-07-24 Version: 2.7.41
+- Add error code.
+- Add error code for CreateDBNodes.
+
 2023-07-23 Version: 2.7.40
 - Fix 500 for CreateOrder.
 - Support sts.
