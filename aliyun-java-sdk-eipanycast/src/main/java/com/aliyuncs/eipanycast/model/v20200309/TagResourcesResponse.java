@@ -15,22 +15,26 @@
 package com.aliyuncs.eipanycast.model.v20200309;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.eipanycast.transform.v20200309.AllocateAnycastEipAddressResponseUnmarshaller;
+import com.aliyuncs.eipanycast.transform.v20200309.TagResourcesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class AllocateAnycastEipAddressResponse extends AcsResponse {
+public class TagResourcesResponse extends AcsResponse {
+
+	private Boolean success;
 
 	private String requestId;
 
-	private String anycastId;
+	public Boolean getSuccess() {
+		return this.success;
+	}
 
-	private String resourceGroupId;
-
-	private String orderId;
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,33 +44,9 @@ public class AllocateAnycastEipAddressResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getAnycastId() {
-		return this.anycastId;
-	}
-
-	public void setAnycastId(String anycastId) {
-		this.anycastId = anycastId;
-	}
-
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
-	}
-
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-	}
-
-	public String getOrderId() {
-		return this.orderId;
-	}
-
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
-	}
-
 	@Override
-	public AllocateAnycastEipAddressResponse getInstance(UnmarshallerContext context) {
-		return	AllocateAnycastEipAddressResponseUnmarshaller.unmarshall(this, context);
+	public TagResourcesResponse getInstance(UnmarshallerContext context) {
+		return	TagResourcesResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

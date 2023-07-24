@@ -42,6 +42,7 @@ public class DescribeAnycastEipAddressResponseUnmarshaller {
 		describeAnycastEipAddressResponse.setIpAddress(_ctx.stringValue("DescribeAnycastEipAddressResponse.IpAddress"));
 		describeAnycastEipAddressResponse.setBid(_ctx.stringValue("DescribeAnycastEipAddressResponse.Bid"));
 		describeAnycastEipAddressResponse.setAliUid(_ctx.longValue("DescribeAnycastEipAddressResponse.AliUid"));
+		describeAnycastEipAddressResponse.setResourceGroupId(_ctx.stringValue("DescribeAnycastEipAddressResponse.ResourceGroupId"));
 
 		List<AnycastEipBindInfo> anycastEipBindInfoList = new ArrayList<AnycastEipBindInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAnycastEipAddressResponse.AnycastEipBindInfoList.Length"); i++) {

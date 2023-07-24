@@ -53,6 +53,8 @@ public class DescribeAnycastEipAddressResponse extends AcsResponse {
 
 	private Long aliUid;
 
+	private String resourceGroupId;
+
 	private List<AnycastEipBindInfo> anycastEipBindInfoList;
 
 	private List<Tag> tags;
@@ -167,6 +169,14 @@ public class DescribeAnycastEipAddressResponse extends AcsResponse {
 
 	public void setAliUid(Long aliUid) {
 		this.aliUid = aliUid;
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
 	}
 
 	public List<AnycastEipBindInfo> getAnycastEipBindInfoList() {

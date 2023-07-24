@@ -33,6 +33,8 @@ public class AllocateAnycastEipAddressRequest extends RpcAcsRequest<AllocateAnyc
 
 	private String description;
 
+	private String resourceGroupId;
+
 	private String internetChargeType;
 
 	private String name;
@@ -88,6 +90,17 @@ public class AllocateAnycastEipAddressRequest extends RpcAcsRequest<AllocateAnyc
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

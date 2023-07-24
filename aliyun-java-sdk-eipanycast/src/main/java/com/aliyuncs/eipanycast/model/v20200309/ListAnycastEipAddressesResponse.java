@@ -95,6 +95,8 @@ public class ListAnycastEipAddressesResponse extends AcsResponse {
 
 		private Integer serviceManaged;
 
+		private String resourceGroupId;
+
 		private List<AnycastEipBindInfo> anycastEipBindInfoList;
 
 		private List<Tag> tags;
@@ -209,6 +211,14 @@ public class ListAnycastEipAddressesResponse extends AcsResponse {
 
 		public void setServiceManaged(Integer serviceManaged) {
 			this.serviceManaged = serviceManaged;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 
 		public List<AnycastEipBindInfo> getAnycastEipBindInfoList() {

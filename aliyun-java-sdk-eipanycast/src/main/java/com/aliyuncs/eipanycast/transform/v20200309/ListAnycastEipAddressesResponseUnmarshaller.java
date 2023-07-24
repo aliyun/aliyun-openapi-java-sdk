@@ -49,6 +49,7 @@ public class ListAnycastEipAddressesResponseUnmarshaller {
 			anycast.setBusinessStatus(_ctx.stringValue("ListAnycastEipAddressesResponse.AnycastList["+ i +"].BusinessStatus"));
 			anycast.setName(_ctx.stringValue("ListAnycastEipAddressesResponse.AnycastList["+ i +"].Name"));
 			anycast.setServiceManaged(_ctx.integerValue("ListAnycastEipAddressesResponse.AnycastList["+ i +"].ServiceManaged"));
+			anycast.setResourceGroupId(_ctx.stringValue("ListAnycastEipAddressesResponse.AnycastList["+ i +"].ResourceGroupId"));
 
 			List<AnycastEipBindInfo> anycastEipBindInfoList = new ArrayList<AnycastEipBindInfo>();
 			for (int j = 0; j < _ctx.lengthValue("ListAnycastEipAddressesResponse.AnycastList["+ i +"].AnycastEipBindInfoList.Length"); j++) {
