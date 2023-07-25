@@ -1,3 +1,6 @@
+2023-07-25 Version: 1.0.2
+- Add move resource group api.
+
 2023-05-30 Version: 1.0.1
 - Adapt timeout.
 - Adapt rpc timeout.
