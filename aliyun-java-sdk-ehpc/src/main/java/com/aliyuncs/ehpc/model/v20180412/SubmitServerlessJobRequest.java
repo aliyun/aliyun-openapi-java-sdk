@@ -351,11 +351,8 @@ public class SubmitServerlessJobRequest extends RpcAcsRequest<SubmitServerlessJo
 
 		public static class VolumeMountItem {
 
-			@SerializedName("FlexVolumeOptions")
-			private String flexVolumeOptions;
-
-			@SerializedName("NFSVolumeServer")
-			private String nFSVolumeServer;
+			@SerializedName("FlexVolumeDriver")
+			private String flexVolumeDriver;
 
 			@SerializedName("MountPath")
 			private String mountPath;
@@ -375,26 +372,21 @@ public class SubmitServerlessJobRequest extends RpcAcsRequest<SubmitServerlessJo
 			@SerializedName("Type")
 			private String type;
 
+			@SerializedName("FlexVolumeOptions")
+			private String flexVolumeOptions;
+
 			@SerializedName("NFSVolumeReadOnly")
 			private Boolean nFSVolumeReadOnly;
 
-			@SerializedName("FlexVolumeDriver")
-			private String flexVolumeDriver;
+			@SerializedName("NFSVolumeServer")
+			private String nFSVolumeServer;
 
-			public String getFlexVolumeOptions() {
-				return this.flexVolumeOptions;
+			public String getFlexVolumeDriver() {
+				return this.flexVolumeDriver;
 			}
 
-			public void setFlexVolumeOptions(String flexVolumeOptions) {
-				this.flexVolumeOptions = flexVolumeOptions;
-			}
-
-			public String getNFSVolumeServer() {
-				return this.nFSVolumeServer;
-			}
-
-			public void setNFSVolumeServer(String nFSVolumeServer) {
-				this.nFSVolumeServer = nFSVolumeServer;
+			public void setFlexVolumeDriver(String flexVolumeDriver) {
+				this.flexVolumeDriver = flexVolumeDriver;
 			}
 
 			public String getMountPath() {
@@ -445,6 +437,14 @@ public class SubmitServerlessJobRequest extends RpcAcsRequest<SubmitServerlessJo
 				this.type = type;
 			}
 
+			public String getFlexVolumeOptions() {
+				return this.flexVolumeOptions;
+			}
+
+			public void setFlexVolumeOptions(String flexVolumeOptions) {
+				this.flexVolumeOptions = flexVolumeOptions;
+			}
+
 			public Boolean getNFSVolumeReadOnly() {
 				return this.nFSVolumeReadOnly;
 			}
@@ -453,12 +453,12 @@ public class SubmitServerlessJobRequest extends RpcAcsRequest<SubmitServerlessJo
 				this.nFSVolumeReadOnly = nFSVolumeReadOnly;
 			}
 
-			public String getFlexVolumeDriver() {
-				return this.flexVolumeDriver;
+			public String getNFSVolumeServer() {
+				return this.nFSVolumeServer;
 			}
 
-			public void setFlexVolumeDriver(String flexVolumeDriver) {
-				this.flexVolumeDriver = flexVolumeDriver;
+			public void setNFSVolumeServer(String nFSVolumeServer) {
+				this.nFSVolumeServer = nFSVolumeServer;
 			}
 		}
 
@@ -489,19 +489,11 @@ public class SubmitServerlessJobRequest extends RpcAcsRequest<SubmitServerlessJo
 
 		public static class EnvironmentVarItem {
 
-			@SerializedName("Name")
-			private String name;
-
 			@SerializedName("Value")
 			private String value;
 
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
+			@SerializedName("Key")
+			private String key;
 
 			public String getValue() {
 				return this.value;
@@ -509,6 +501,14 @@ public class SubmitServerlessJobRequest extends RpcAcsRequest<SubmitServerlessJo
 
 			public void setValue(String value) {
 				this.value = value;
+			}
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
 			}
 		}
 	}
