@@ -29,6 +29,8 @@ public class ImportUserBackupFileRequest extends RpcAcsRequest<ImportUserBackupF
 
 	private String engineVersion;
 
+	private String resourceGroupId;
+
 	private Integer retention;
 
 	private String resourceOwnerAccount;
@@ -72,6 +74,17 @@ public class ImportUserBackupFileRequest extends RpcAcsRequest<ImportUserBackupF
 		this.engineVersion = engineVersion;
 		if(engineVersion != null){
 			putQueryParameter("EngineVersion", engineVersion);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

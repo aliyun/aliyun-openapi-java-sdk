@@ -31,6 +31,8 @@ public class DescribeClassDetailsRequest extends RpcAcsRequest<DescribeClassDeta
 
 	private String engineVersion;
 
+	private String resourceGroupId;
+
 	private String engine;
 
 	private String classCode;
@@ -79,6 +81,17 @@ public class DescribeClassDetailsRequest extends RpcAcsRequest<DescribeClassDeta
 		this.engineVersion = engineVersion;
 		if(engineVersion != null){
 			putQueryParameter("EngineVersion", engineVersion);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

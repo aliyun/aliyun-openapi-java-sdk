@@ -31,6 +31,8 @@ public class DeleteSecretRequest extends RpcAcsRequest<DeleteSecretResponse> {
 
 	private String secretArn;
 
+	private String resourceGroupId;
+
 	private String engine;
 
 	private String dbInstanceId;
@@ -79,6 +81,17 @@ public class DeleteSecretRequest extends RpcAcsRequest<DeleteSecretResponse> {
 		this.secretArn = secretArn;
 		if(secretArn != null){
 			putQueryParameter("SecretArn", secretArn);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

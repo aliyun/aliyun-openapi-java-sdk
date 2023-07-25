@@ -27,11 +27,13 @@ public class DeleteParameterGroupRequest extends RpcAcsRequest<DeleteParameterGr
 
 	private Long resourceOwnerId;
 
+	private String resourceGroupId;
+
+	private String parameterGroupId;
+
 	private String resourceOwnerAccount;
 
 	private Long ownerId;
-
-	private String parameterGroupId;
 	public DeleteParameterGroupRequest() {
 		super("Rds", "2014-08-15", "DeleteParameterGroup");
 		setMethod(MethodType.POST);
@@ -49,6 +51,28 @@ public class DeleteParameterGroupRequest extends RpcAcsRequest<DeleteParameterGr
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getParameterGroupId() {
+		return this.parameterGroupId;
+	}
+
+	public void setParameterGroupId(String parameterGroupId) {
+		this.parameterGroupId = parameterGroupId;
+		if(parameterGroupId != null){
+			putQueryParameter("ParameterGroupId", parameterGroupId);
 		}
 	}
 
@@ -71,17 +95,6 @@ public class DeleteParameterGroupRequest extends RpcAcsRequest<DeleteParameterGr
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getParameterGroupId() {
-		return this.parameterGroupId;
-	}
-
-	public void setParameterGroupId(String parameterGroupId) {
-		this.parameterGroupId = parameterGroupId;
-		if(parameterGroupId != null){
-			putQueryParameter("ParameterGroupId", parameterGroupId);
 		}
 	}
 

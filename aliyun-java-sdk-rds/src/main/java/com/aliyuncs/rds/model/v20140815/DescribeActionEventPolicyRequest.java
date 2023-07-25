@@ -27,6 +27,8 @@ public class DescribeActionEventPolicyRequest extends RpcAcsRequest<DescribeActi
 
 	private Long resourceOwnerId;
 
+	private String resourceGroupId;
+
 	private String resourceOwnerAccount;
 
 	private Long ownerId;
@@ -47,6 +49,17 @@ public class DescribeActionEventPolicyRequest extends RpcAcsRequest<DescribeActi
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

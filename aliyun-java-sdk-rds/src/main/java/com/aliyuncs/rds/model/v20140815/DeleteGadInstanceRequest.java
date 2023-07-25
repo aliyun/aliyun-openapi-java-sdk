@@ -25,6 +25,8 @@ import com.aliyuncs.rds.Endpoint;
 public class DeleteGadInstanceRequest extends RpcAcsRequest<DeleteGadInstanceResponse> {
 	   
 
+	private String resourceGroupId;
+
 	private String gadInstanceName;
 	public DeleteGadInstanceRequest() {
 		super("Rds", "2014-08-15", "DeleteGadInstance");
@@ -33,6 +35,17 @@ public class DeleteGadInstanceRequest extends RpcAcsRequest<DeleteGadInstanceRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
 	}
 
 	public String getGadInstanceName() {

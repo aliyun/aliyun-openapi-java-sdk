@@ -33,6 +33,8 @@ public class CheckCreateDdrDBInstanceRequest extends RpcAcsRequest<CheckCreateDd
 
 	private String engineVersion;
 
+	private String resourceGroupId;
+
 	private String engine;
 
 	private String restoreTime;
@@ -98,6 +100,17 @@ public class CheckCreateDdrDBInstanceRequest extends RpcAcsRequest<CheckCreateDd
 		this.engineVersion = engineVersion;
 		if(engineVersion != null){
 			putQueryParameter("EngineVersion", engineVersion);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

@@ -29,13 +29,13 @@ public class DescribeDBInstancePromoteActivityRequest extends RpcAcsRequest<Desc
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
-	private Long ownerId;
-
 	private String resourceGroupId;
 
 	private String aliUid;
+
+	private String resourceOwnerAccount;
+
+	private Long ownerId;
 	public DescribeDBInstancePromoteActivityRequest() {
 		super("Rds", "2014-08-15", "DescribeDBInstancePromoteActivity");
 		setMethod(MethodType.POST);
@@ -67,28 +67,6 @@ public class DescribeDBInstancePromoteActivityRequest extends RpcAcsRequest<Desc
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
 	public String getResourceGroupId() {
 		return this.resourceGroupId;
 	}
@@ -108,6 +86,28 @@ public class DescribeDBInstancePromoteActivityRequest extends RpcAcsRequest<Desc
 		this.aliUid = aliUid;
 		if(aliUid != null){
 			putQueryParameter("AliUid", aliUid);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
