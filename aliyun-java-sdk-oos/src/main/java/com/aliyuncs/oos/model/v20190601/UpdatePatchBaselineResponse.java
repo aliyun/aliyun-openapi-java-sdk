@@ -69,7 +69,15 @@ public class UpdatePatchBaselineResponse extends AcsResponse {
 
 		private String rejectedPatchesAction;
 
+		private Boolean approvedPatchesEnableNonSecurity;
+
+		private List<TagsItem> tags;
+
 		private List<String> rejectedPatches;
+
+		private List<String> approvedPatches;
+
+		private List<String> sources;
 
 		public String getOperationSystem() {
 			return this.operationSystem;
@@ -159,12 +167,67 @@ public class UpdatePatchBaselineResponse extends AcsResponse {
 			this.rejectedPatchesAction = rejectedPatchesAction;
 		}
 
+		public Boolean getApprovedPatchesEnableNonSecurity() {
+			return this.approvedPatchesEnableNonSecurity;
+		}
+
+		public void setApprovedPatchesEnableNonSecurity(Boolean approvedPatchesEnableNonSecurity) {
+			this.approvedPatchesEnableNonSecurity = approvedPatchesEnableNonSecurity;
+		}
+
+		public List<TagsItem> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<TagsItem> tags) {
+			this.tags = tags;
+		}
+
 		public List<String> getRejectedPatches() {
 			return this.rejectedPatches;
 		}
 
 		public void setRejectedPatches(List<String> rejectedPatches) {
 			this.rejectedPatches = rejectedPatches;
+		}
+
+		public List<String> getApprovedPatches() {
+			return this.approvedPatches;
+		}
+
+		public void setApprovedPatches(List<String> approvedPatches) {
+			this.approvedPatches = approvedPatches;
+		}
+
+		public List<String> getSources() {
+			return this.sources;
+		}
+
+		public void setSources(List<String> sources) {
+			this.sources = sources;
+		}
+
+		public static class TagsItem {
+
+			private String tagKey;
+
+			private String tagValue;
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
+			}
+
+			public String getTagValue() {
+				return this.tagValue;
+			}
+
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
+			}
 		}
 	}
 

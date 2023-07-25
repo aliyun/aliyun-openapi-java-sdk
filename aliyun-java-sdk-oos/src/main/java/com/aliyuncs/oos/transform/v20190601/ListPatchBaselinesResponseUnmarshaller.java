@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.oos.model.v20190601.ListPatchBaselinesResponse;
 import com.aliyuncs.oos.model.v20190601.ListPatchBaselinesResponse.PatchBaseline;
+import com.aliyuncs.oos.model.v20190601.ListPatchBaselinesResponse.PatchBaseline.TagsItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -43,6 +44,29 @@ public class ListPatchBaselinesResponseUnmarshaller {
 			patchBaseline.setName(_ctx.stringValue("ListPatchBaselinesResponse.PatchBaselines["+ i +"].Name"));
 			patchBaseline.setId(_ctx.stringValue("ListPatchBaselinesResponse.PatchBaselines["+ i +"].Id"));
 			patchBaseline.setShareType(_ctx.stringValue("ListPatchBaselinesResponse.PatchBaselines["+ i +"].ShareType"));
+			patchBaseline.setApprovedPatchesEnableNonSecurity(_ctx.booleanValue("ListPatchBaselinesResponse.PatchBaselines["+ i +"].ApprovedPatchesEnableNonSecurity"));
+
+			List<String> approvedPatches = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("ListPatchBaselinesResponse.PatchBaselines["+ i +"].ApprovedPatches.Length"); j++) {
+				approvedPatches.add(_ctx.stringValue("ListPatchBaselinesResponse.PatchBaselines["+ i +"].ApprovedPatches["+ j +"]"));
+			}
+			patchBaseline.setApprovedPatches(approvedPatches);
+
+			List<String> sources = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("ListPatchBaselinesResponse.PatchBaselines["+ i +"].Sources.Length"); j++) {
+				sources.add(_ctx.stringValue("ListPatchBaselinesResponse.PatchBaselines["+ i +"].Sources["+ j +"]"));
+			}
+			patchBaseline.setSources(sources);
+
+			List<TagsItem> tags = new ArrayList<TagsItem>();
+			for (int j = 0; j < _ctx.lengthValue("ListPatchBaselinesResponse.PatchBaselines["+ i +"].Tags.Length"); j++) {
+				TagsItem tagsItem = new TagsItem();
+				tagsItem.setTagKey(_ctx.stringValue("ListPatchBaselinesResponse.PatchBaselines["+ i +"].Tags["+ j +"].TagKey"));
+				tagsItem.setTagValue(_ctx.stringValue("ListPatchBaselinesResponse.PatchBaselines["+ i +"].Tags["+ j +"].TagValue"));
+
+				tags.add(tagsItem);
+			}
+			patchBaseline.setTags(tags);
 
 			patchBaselines.add(patchBaseline);
 		}

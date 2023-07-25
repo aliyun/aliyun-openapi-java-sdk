@@ -15,6 +15,9 @@
 package com.aliyuncs.oos.model.v20190601;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.oos.Endpoint;
 
@@ -25,15 +28,26 @@ import com.aliyuncs.oos.Endpoint;
 public class ListPatchBaselinesRequest extends RpcAcsRequest<ListPatchBaselinesResponse> {
 	   
 
-	private String operationSystem;
+	@SerializedName("sources")
+	private List<String> sources;
 
 	private String nextToken;
+
+	private String shareType;
+
+	private Boolean approvedPatchesEnableNonSecurity;
+
+	@SerializedName("tags")
+	private List<Tags> tags;
+
+	private String operationSystem;
 
 	private String name;
 
 	private Integer maxResults;
 
-	private String shareType;
+	@SerializedName("approvedPatches")
+	private List<String> approvedPatches;
 	public ListPatchBaselinesRequest() {
 		super("oos", "2019-06-01", "ListPatchBaselines", "oos");
 		setMethod(MethodType.POST);
@@ -43,15 +57,15 @@ public class ListPatchBaselinesRequest extends RpcAcsRequest<ListPatchBaselinesR
 		} catch (Exception e) {}
 	}
 
-	public String getOperationSystem() {
-		return this.operationSystem;
+	public List<String> getSources() {
+		return this.sources;
 	}
 
-	public void setOperationSystem(String operationSystem) {
-		this.operationSystem = operationSystem;
-		if(operationSystem != null){
-			putQueryParameter("OperationSystem", operationSystem);
-		}
+	public void setSources(List<String> sources) {
+		this.sources = sources;	
+		if (sources != null) {
+			putQueryParameter("Sources" , new Gson().toJson(sources));
+		}	
 	}
 
 	public String getNextToken() {
@@ -62,6 +76,50 @@ public class ListPatchBaselinesRequest extends RpcAcsRequest<ListPatchBaselinesR
 		this.nextToken = nextToken;
 		if(nextToken != null){
 			putQueryParameter("NextToken", nextToken);
+		}
+	}
+
+	public String getShareType() {
+		return this.shareType;
+	}
+
+	public void setShareType(String shareType) {
+		this.shareType = shareType;
+		if(shareType != null){
+			putQueryParameter("ShareType", shareType);
+		}
+	}
+
+	public Boolean getApprovedPatchesEnableNonSecurity() {
+		return this.approvedPatchesEnableNonSecurity;
+	}
+
+	public void setApprovedPatchesEnableNonSecurity(Boolean approvedPatchesEnableNonSecurity) {
+		this.approvedPatchesEnableNonSecurity = approvedPatchesEnableNonSecurity;
+		if(approvedPatchesEnableNonSecurity != null){
+			putQueryParameter("ApprovedPatchesEnableNonSecurity", approvedPatchesEnableNonSecurity.toString());
+		}
+	}
+
+	public List<Tags> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tags> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			putQueryParameter("Tags" , new Gson().toJson(tags));
+		}	
+	}
+
+	public String getOperationSystem() {
+		return this.operationSystem;
+	}
+
+	public void setOperationSystem(String operationSystem) {
+		this.operationSystem = operationSystem;
+		if(operationSystem != null){
+			putQueryParameter("OperationSystem", operationSystem);
 		}
 	}
 
@@ -87,14 +145,39 @@ public class ListPatchBaselinesRequest extends RpcAcsRequest<ListPatchBaselinesR
 		}
 	}
 
-	public String getShareType() {
-		return this.shareType;
+	public List<String> getApprovedPatches() {
+		return this.approvedPatches;
 	}
 
-	public void setShareType(String shareType) {
-		this.shareType = shareType;
-		if(shareType != null){
-			putQueryParameter("ShareType", shareType);
+	public void setApprovedPatches(List<String> approvedPatches) {
+		this.approvedPatches = approvedPatches;	
+		if (approvedPatches != null) {
+			putQueryParameter("ApprovedPatches" , new Gson().toJson(approvedPatches));
+		}	
+	}
+
+	public static class Tags {
+
+		@SerializedName("Value")
+		private String value;
+
+		@SerializedName("Key")
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

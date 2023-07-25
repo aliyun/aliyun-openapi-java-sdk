@@ -87,6 +87,14 @@ public class ListPatchBaselinesResponse extends AcsResponse {
 
 		private String shareType;
 
+		private Boolean approvedPatchesEnableNonSecurity;
+
+		private List<TagsItem> tags;
+
+		private List<String> approvedPatches;
+
+		private List<String> sources;
+
 		public String getOperationSystem() {
 			return this.operationSystem;
 		}
@@ -165,6 +173,61 @@ public class ListPatchBaselinesResponse extends AcsResponse {
 
 		public void setShareType(String shareType) {
 			this.shareType = shareType;
+		}
+
+		public Boolean getApprovedPatchesEnableNonSecurity() {
+			return this.approvedPatchesEnableNonSecurity;
+		}
+
+		public void setApprovedPatchesEnableNonSecurity(Boolean approvedPatchesEnableNonSecurity) {
+			this.approvedPatchesEnableNonSecurity = approvedPatchesEnableNonSecurity;
+		}
+
+		public List<TagsItem> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<TagsItem> tags) {
+			this.tags = tags;
+		}
+
+		public List<String> getApprovedPatches() {
+			return this.approvedPatches;
+		}
+
+		public void setApprovedPatches(List<String> approvedPatches) {
+			this.approvedPatches = approvedPatches;
+		}
+
+		public List<String> getSources() {
+			return this.sources;
+		}
+
+		public void setSources(List<String> sources) {
+			this.sources = sources;
+		}
+
+		public static class TagsItem {
+
+			private String tagKey;
+
+			private String tagValue;
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
+			}
+
+			public String getTagValue() {
+				return this.tagValue;
+			}
+
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
+			}
 		}
 	}
 

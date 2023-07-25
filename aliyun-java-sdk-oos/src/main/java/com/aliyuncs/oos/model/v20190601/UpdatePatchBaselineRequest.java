@@ -28,18 +28,29 @@ import com.aliyuncs.oos.Endpoint;
 public class UpdatePatchBaselineRequest extends RpcAcsRequest<UpdatePatchBaselineResponse> {
 	   
 
+	@SerializedName("sources")
+	private List<String> sources;
+
 	private String clientToken;
 
 	private String approvalRules;
 
 	private String description;
 
+	private String rejectedPatchesAction;
+
+	private Boolean approvedPatchesEnableNonSecurity;
+
+	@SerializedName("tags")
+	private List<Tags> tags;
+
 	@SerializedName("rejectedPatches")
 	private List<String> rejectedPatches;
 
-	private String rejectedPatchesAction;
-
 	private String name;
+
+	@SerializedName("approvedPatches")
+	private List<String> approvedPatches;
 	public UpdatePatchBaselineRequest() {
 		super("oos", "2019-06-01", "UpdatePatchBaseline", "oos");
 		setMethod(MethodType.POST);
@@ -47,6 +58,17 @@ public class UpdatePatchBaselineRequest extends RpcAcsRequest<UpdatePatchBaselin
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public List<String> getSources() {
+		return this.sources;
+	}
+
+	public void setSources(List<String> sources) {
+		this.sources = sources;	
+		if (sources != null) {
+			putQueryParameter("Sources" , new Gson().toJson(sources));
+		}	
 	}
 
 	public String getClientToken() {
@@ -82,17 +104,6 @@ public class UpdatePatchBaselineRequest extends RpcAcsRequest<UpdatePatchBaselin
 		}
 	}
 
-	public List<String> getRejectedPatches() {
-		return this.rejectedPatches;
-	}
-
-	public void setRejectedPatches(List<String> rejectedPatches) {
-		this.rejectedPatches = rejectedPatches;	
-		if (rejectedPatches != null) {
-			putQueryParameter("RejectedPatches" , new Gson().toJson(rejectedPatches));
-		}	
-	}
-
 	public String getRejectedPatchesAction() {
 		return this.rejectedPatchesAction;
 	}
@@ -104,6 +115,39 @@ public class UpdatePatchBaselineRequest extends RpcAcsRequest<UpdatePatchBaselin
 		}
 	}
 
+	public Boolean getApprovedPatchesEnableNonSecurity() {
+		return this.approvedPatchesEnableNonSecurity;
+	}
+
+	public void setApprovedPatchesEnableNonSecurity(Boolean approvedPatchesEnableNonSecurity) {
+		this.approvedPatchesEnableNonSecurity = approvedPatchesEnableNonSecurity;
+		if(approvedPatchesEnableNonSecurity != null){
+			putQueryParameter("ApprovedPatchesEnableNonSecurity", approvedPatchesEnableNonSecurity.toString());
+		}
+	}
+
+	public List<Tags> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tags> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			putQueryParameter("Tags" , new Gson().toJson(tags));
+		}	
+	}
+
+	public List<String> getRejectedPatches() {
+		return this.rejectedPatches;
+	}
+
+	public void setRejectedPatches(List<String> rejectedPatches) {
+		this.rejectedPatches = rejectedPatches;	
+		if (rejectedPatches != null) {
+			putQueryParameter("RejectedPatches" , new Gson().toJson(rejectedPatches));
+		}	
+	}
+
 	public String getName() {
 		return this.name;
 	}
@@ -112,6 +156,42 @@ public class UpdatePatchBaselineRequest extends RpcAcsRequest<UpdatePatchBaselin
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
+		}
+	}
+
+	public List<String> getApprovedPatches() {
+		return this.approvedPatches;
+	}
+
+	public void setApprovedPatches(List<String> approvedPatches) {
+		this.approvedPatches = approvedPatches;	
+		if (approvedPatches != null) {
+			putQueryParameter("ApprovedPatches" , new Gson().toJson(approvedPatches));
+		}	
+	}
+
+	public static class Tags {
+
+		@SerializedName("Value")
+		private String value;
+
+		@SerializedName("Key")
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

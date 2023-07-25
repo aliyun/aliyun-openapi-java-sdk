@@ -59,6 +59,8 @@ public class GetApplicationResponse extends AcsResponse {
 
 		private String createDate;
 
+		private String applicationType;
+
 		public String getDescription() {
 			return this.description;
 		}
@@ -105,6 +107,14 @@ public class GetApplicationResponse extends AcsResponse {
 
 		public void setCreateDate(String createDate) {
 			this.createDate = createDate;
+		}
+
+		public String getApplicationType() {
+			return this.applicationType;
+		}
+
+		public void setApplicationType(String applicationType) {
+			this.applicationType = applicationType;
 		}
 	}
 
