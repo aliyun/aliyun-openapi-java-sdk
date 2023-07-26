@@ -15,6 +15,7 @@
 package com.aliyuncs.polardb.model.v20170801;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.polardb.Endpoint;
 
@@ -22,30 +23,19 @@ import com.aliyuncs.polardb.Endpoint;
  * @author auto create
  * @version 
  */
-public class OpenAITaskRequest extends RpcAcsRequest<OpenAITaskResponse> {
+public class CheckServiceLinkedRoleRequest extends RpcAcsRequest<CheckServiceLinkedRoleResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String nodeType;
-
-	private String describeType;
-
-	private String resourceGroupId;
-
-	private String password;
-
 	private String resourceOwnerAccount;
-
-	private String dBClusterId;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	private String username;
-	public OpenAITaskRequest() {
-		super("polardb", "2017-08-01", "OpenAITask", "polardb");
+	public CheckServiceLinkedRoleRequest() {
+		super("polardb", "2017-08-01", "CheckServiceLinkedRole", "polardb");
+		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -64,50 +54,6 @@ public class OpenAITaskRequest extends RpcAcsRequest<OpenAITaskResponse> {
 		}
 	}
 
-	public String getNodeType() {
-		return this.nodeType;
-	}
-
-	public void setNodeType(String nodeType) {
-		this.nodeType = nodeType;
-		if(nodeType != null){
-			putQueryParameter("NodeType", nodeType);
-		}
-	}
-
-	public String getDescribeType() {
-		return this.describeType;
-	}
-
-	public void setDescribeType(String describeType) {
-		this.describeType = describeType;
-		if(describeType != null){
-			putQueryParameter("DescribeType", describeType);
-		}
-	}
-
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
-	}
-
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
-		}
-	}
-
-	public String getPassword() {
-		return this.password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-		if(password != null){
-			putQueryParameter("Password", password);
-		}
-	}
-
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -116,17 +62,6 @@ public class OpenAITaskRequest extends RpcAcsRequest<OpenAITaskResponse> {
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getDBClusterId() {
-		return this.dBClusterId;
-	}
-
-	public void setDBClusterId(String dBClusterId) {
-		this.dBClusterId = dBClusterId;
-		if(dBClusterId != null){
-			putQueryParameter("DBClusterId", dBClusterId);
 		}
 	}
 
@@ -152,20 +87,9 @@ public class OpenAITaskRequest extends RpcAcsRequest<OpenAITaskResponse> {
 		}
 	}
 
-	public String getUsername() {
-		return this.username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
-		if(username != null){
-			putQueryParameter("Username", username);
-		}
-	}
-
 	@Override
-	public Class<OpenAITaskResponse> getResponseClass() {
-		return OpenAITaskResponse.class;
+	public Class<CheckServiceLinkedRoleResponse> getResponseClass() {
+		return CheckServiceLinkedRoleResponse.class;
 	}
 
 }

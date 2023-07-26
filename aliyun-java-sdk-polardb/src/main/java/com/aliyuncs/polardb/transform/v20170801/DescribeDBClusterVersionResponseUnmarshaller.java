@@ -14,7 +14,11 @@
 
 package com.aliyuncs.polardb.transform.v20170801;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.polardb.model.v20170801.DescribeDBClusterVersionResponse;
+import com.aliyuncs.polardb.model.v20170801.DescribeDBClusterVersionResponse.DBRevisionVersionListItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -34,6 +38,18 @@ public class DescribeDBClusterVersionResponseUnmarshaller {
 		describeDBClusterVersionResponse.setProxyVersionStatus(_ctx.stringValue("DescribeDBClusterVersionResponse.ProxyVersionStatus"));
 		describeDBClusterVersionResponse.setProxyLatestVersion(_ctx.stringValue("DescribeDBClusterVersionResponse.ProxyLatestVersion"));
 		describeDBClusterVersionResponse.setDBLatestVersion(_ctx.stringValue("DescribeDBClusterVersionResponse.DBLatestVersion"));
+
+		List<DBRevisionVersionListItem> dBRevisionVersionList = new ArrayList<DBRevisionVersionListItem>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeDBClusterVersionResponse.DBRevisionVersionList.Length"); i++) {
+			DBRevisionVersionListItem dBRevisionVersionListItem = new DBRevisionVersionListItem();
+			dBRevisionVersionListItem.setReleaseType(_ctx.stringValue("DescribeDBClusterVersionResponse.DBRevisionVersionList["+ i +"].ReleaseType"));
+			dBRevisionVersionListItem.setRevisionVersionCode(_ctx.stringValue("DescribeDBClusterVersionResponse.DBRevisionVersionList["+ i +"].RevisionVersionCode"));
+			dBRevisionVersionListItem.setRevisionVersionName(_ctx.stringValue("DescribeDBClusterVersionResponse.DBRevisionVersionList["+ i +"].RevisionVersionName"));
+			dBRevisionVersionListItem.setReleaseNote(_ctx.stringValue("DescribeDBClusterVersionResponse.DBRevisionVersionList["+ i +"].ReleaseNote"));
+
+			dBRevisionVersionList.add(dBRevisionVersionListItem);
+		}
+		describeDBClusterVersionResponse.setDBRevisionVersionList(dBRevisionVersionList);
 	 
 	 	return describeDBClusterVersionResponse;
 	}

@@ -14,6 +14,7 @@
 
 package com.aliyuncs.polardb.model.v20170801;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.polardb.transform.v20170801.DescribeDBClusterVersionResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -47,6 +48,8 @@ public class DescribeDBClusterVersionResponse extends AcsResponse {
 	private String proxyLatestVersion;
 
 	private String dBLatestVersion;
+
+	private List<DBRevisionVersionListItem> dBRevisionVersionList;
 
 	public String getIsLatestVersion() {
 		return this.isLatestVersion;
@@ -142,6 +145,57 @@ public class DescribeDBClusterVersionResponse extends AcsResponse {
 
 	public void setDBLatestVersion(String dBLatestVersion) {
 		this.dBLatestVersion = dBLatestVersion;
+	}
+
+	public List<DBRevisionVersionListItem> getDBRevisionVersionList() {
+		return this.dBRevisionVersionList;
+	}
+
+	public void setDBRevisionVersionList(List<DBRevisionVersionListItem> dBRevisionVersionList) {
+		this.dBRevisionVersionList = dBRevisionVersionList;
+	}
+
+	public static class DBRevisionVersionListItem {
+
+		private String releaseType;
+
+		private String revisionVersionCode;
+
+		private String revisionVersionName;
+
+		private String releaseNote;
+
+		public String getReleaseType() {
+			return this.releaseType;
+		}
+
+		public void setReleaseType(String releaseType) {
+			this.releaseType = releaseType;
+		}
+
+		public String getRevisionVersionCode() {
+			return this.revisionVersionCode;
+		}
+
+		public void setRevisionVersionCode(String revisionVersionCode) {
+			this.revisionVersionCode = revisionVersionCode;
+		}
+
+		public String getRevisionVersionName() {
+			return this.revisionVersionName;
+		}
+
+		public void setRevisionVersionName(String revisionVersionName) {
+			this.revisionVersionName = revisionVersionName;
+		}
+
+		public String getReleaseNote() {
+			return this.releaseNote;
+		}
+
+		public void setReleaseNote(String releaseNote) {
+			this.releaseNote = releaseNote;
+		}
 	}
 
 	@Override

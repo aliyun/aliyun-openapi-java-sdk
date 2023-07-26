@@ -43,6 +43,8 @@ public class UpgradeDBClusterVersionRequest extends RpcAcsRequest<UpgradeDBClust
 
 	private String plannedStartTime;
 
+	private String targetDBRevisionVersionCode;
+
 	private String upgradePolicy;
 
 	private Boolean fromTimeService;
@@ -151,6 +153,17 @@ public class UpgradeDBClusterVersionRequest extends RpcAcsRequest<UpgradeDBClust
 		this.plannedStartTime = plannedStartTime;
 		if(plannedStartTime != null){
 			putQueryParameter("PlannedStartTime", plannedStartTime);
+		}
+	}
+
+	public String getTargetDBRevisionVersionCode() {
+		return this.targetDBRevisionVersionCode;
+	}
+
+	public void setTargetDBRevisionVersionCode(String targetDBRevisionVersionCode) {
+		this.targetDBRevisionVersionCode = targetDBRevisionVersionCode;
+		if(targetDBRevisionVersionCode != null){
+			putQueryParameter("TargetDBRevisionVersionCode", targetDBRevisionVersionCode);
 		}
 	}
 
