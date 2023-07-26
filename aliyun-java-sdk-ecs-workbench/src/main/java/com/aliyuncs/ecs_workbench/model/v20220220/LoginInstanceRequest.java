@@ -70,8 +70,10 @@ public class LoginInstanceRequest extends RpcAcsRequest<LoginInstanceResponse> {
 				putQueryParameter("InstanceLoginInfo.Host" , instanceLoginInfo.getHost());
 				if (instanceLoginInfo.getOptions() != null) {
 					
+						putQueryParameter("InstanceLoginInfo.Options.OperationDisableSeconds" , instanceLoginInfo.getOptions().getOperationDisableSeconds());
 						putQueryParameter("InstanceLoginInfo.Options.NotificationRecipientUrl" , instanceLoginInfo.getOptions().getNotificationRecipientUrl());
 						putQueryParameter("InstanceLoginInfo.Options.SessionControl" , instanceLoginInfo.getOptions().getSessionControl());
+						putQueryParameter("InstanceLoginInfo.Options.VideoFreezeSeconds" , instanceLoginInfo.getOptions().getVideoFreezeSeconds());
 						if (instanceLoginInfo.getOptions().getContainerInfo() != null) {
 							
 								if (instanceLoginInfo.getOptions().getContainerInfo().getHeaders() != null) {
@@ -88,6 +90,7 @@ public class LoginInstanceRequest extends RpcAcsRequest<LoginInstanceResponse> {
 								putQueryParameter("InstanceLoginInfo.Options.ContainerInfo.Deployment" , instanceLoginInfo.getOptions().getContainerInfo().getDeployment());
 						}
 						putQueryParameter("InstanceLoginInfo.Options.NotificationRetryIntervalSeconds" , instanceLoginInfo.getOptions().getNotificationRetryIntervalSeconds());
+						putQueryParameter("InstanceLoginInfo.Options.AudioMuteSeconds" , instanceLoginInfo.getOptions().getAudioMuteSeconds());
 						putQueryParameter("InstanceLoginInfo.Options.NotificationEventTypes" , instanceLoginInfo.getOptions().getNotificationEventTypes());
 						putQueryParameter("InstanceLoginInfo.Options.NotificationRetryLimit" , instanceLoginInfo.getOptions().getNotificationRetryLimit());
 				}
@@ -309,17 +312,31 @@ public class LoginInstanceRequest extends RpcAcsRequest<LoginInstanceResponse> {
 
 		public static class Options {
 
+			private Integer operationDisableSeconds;
+
 			private String notificationRecipientUrl;
 
 			private String sessionControl;
+
+			private Integer videoFreezeSeconds;
 
 			private ContainerInfo containerInfo;
 
 			private Integer notificationRetryIntervalSeconds;
 
+			private Integer audioMuteSeconds;
+
 			private String notificationEventTypes;
 
 			private Integer notificationRetryLimit;
+
+			public Integer getOperationDisableSeconds() {
+				return this.operationDisableSeconds;
+			}
+
+			public void setOperationDisableSeconds(Integer operationDisableSeconds) {
+				this.operationDisableSeconds = operationDisableSeconds;
+			}
 
 			public String getNotificationRecipientUrl() {
 				return this.notificationRecipientUrl;
@@ -337,6 +354,14 @@ public class LoginInstanceRequest extends RpcAcsRequest<LoginInstanceResponse> {
 				this.sessionControl = sessionControl;
 			}
 
+			public Integer getVideoFreezeSeconds() {
+				return this.videoFreezeSeconds;
+			}
+
+			public void setVideoFreezeSeconds(Integer videoFreezeSeconds) {
+				this.videoFreezeSeconds = videoFreezeSeconds;
+			}
+
 			public ContainerInfo getContainerInfo() {
 				return this.containerInfo;
 			}
@@ -351,6 +376,14 @@ public class LoginInstanceRequest extends RpcAcsRequest<LoginInstanceResponse> {
 
 			public void setNotificationRetryIntervalSeconds(Integer notificationRetryIntervalSeconds) {
 				this.notificationRetryIntervalSeconds = notificationRetryIntervalSeconds;
+			}
+
+			public Integer getAudioMuteSeconds() {
+				return this.audioMuteSeconds;
+			}
+
+			public void setAudioMuteSeconds(Integer audioMuteSeconds) {
+				this.audioMuteSeconds = audioMuteSeconds;
 			}
 
 			public String getNotificationEventTypes() {
