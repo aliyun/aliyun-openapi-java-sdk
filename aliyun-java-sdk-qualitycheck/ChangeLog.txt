@@ -1,3 +1,6 @@
+2023-07-26 Version: 4.7.7
+- Add pvalues for GetRuleV4.
+
 2023-04-27 Version: 4.7.6
 - Add Api. UploadDataV4.
 
