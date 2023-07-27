@@ -64,6 +64,8 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 
 	private Boolean burstingEnabled;
 
+	private String targetMinorVersion;
+
 	private String dBInstanceClass;
 
 	private String zoneId;
@@ -275,6 +277,17 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 		this.burstingEnabled = burstingEnabled;
 		if(burstingEnabled != null){
 			putQueryParameter("BurstingEnabled", burstingEnabled.toString());
+		}
+	}
+
+	public String getTargetMinorVersion() {
+		return this.targetMinorVersion;
+	}
+
+	public void setTargetMinorVersion(String targetMinorVersion) {
+		this.targetMinorVersion = targetMinorVersion;
+		if(targetMinorVersion != null){
+			putQueryParameter("TargetMinorVersion", targetMinorVersion);
 		}
 	}
 
