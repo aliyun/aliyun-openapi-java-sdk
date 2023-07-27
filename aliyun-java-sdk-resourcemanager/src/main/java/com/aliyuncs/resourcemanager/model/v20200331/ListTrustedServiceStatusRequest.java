@@ -32,7 +32,7 @@ public class ListTrustedServiceStatusRequest extends RpcAcsRequest<ListTrustedSe
 
 	private Integer pageSize;
 	public ListTrustedServiceStatusRequest() {
-		super("ResourceManager", "2020-03-31", "ListTrustedServiceStatus", "resourcemanager");
+		super("ResourceManager", "2020-03-31", "ListTrustedServiceStatus");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

@@ -32,7 +32,7 @@ public class ListRolesRequest extends RpcAcsRequest<ListRolesResponse> {
 
 	private Integer pageSize;
 	public ListRolesRequest() {
-		super("ResourceManager", "2020-03-31", "ListRoles", "resourcemanager");
+		super("ResourceManager", "2020-03-31", "ListRoles");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

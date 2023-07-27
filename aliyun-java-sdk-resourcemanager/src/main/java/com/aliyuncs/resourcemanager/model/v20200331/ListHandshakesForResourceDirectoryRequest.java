@@ -30,7 +30,7 @@ public class ListHandshakesForResourceDirectoryRequest extends RpcAcsRequest<Lis
 
 	private Integer pageSize;
 	public ListHandshakesForResourceDirectoryRequest() {
-		super("ResourceManager", "2020-03-31", "ListHandshakesForResourceDirectory", "resourcemanager");
+		super("ResourceManager", "2020-03-31", "ListHandshakesForResourceDirectory");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

@@ -15,6 +15,7 @@
 package com.aliyuncs.resourcemanager.model.v20200331;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.resourcemanager.Endpoint;
@@ -34,13 +35,15 @@ public class ListResourcesRequest extends RpcAcsRequest<ListResourcesResponse> {
 
 	private String resourceId;
 
+	private List<ResourceTypes> resourceTypes;
+
 	private String resourceType;
 
 	private String service;
 
 	private String region;
 	public ListResourcesRequest() {
-		super("ResourceManager", "2020-03-31", "ListResources", "resourcemanager");
+		super("ResourceManager", "2020-03-31", "ListResources");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
@@ -93,6 +96,23 @@ public class ListResourcesRequest extends RpcAcsRequest<ListResourcesResponse> {
 		}
 	}
 
+	public List<ResourceTypes> getResourceTypes() {
+		return this.resourceTypes;
+	}
+
+	public void setResourceTypes(List<ResourceTypes> resourceTypes) {
+		this.resourceTypes = resourceTypes;	
+		if (resourceTypes != null) {
+			for (int depth1 = 0; depth1 < resourceTypes.size(); depth1++) {
+				if (resourceTypes.get(depth1) != null) {
+					
+						putQueryParameter("ResourceTypes." + (depth1 + 1) + ".Service" , resourceTypes.get(depth1).getService());
+						putQueryParameter("ResourceTypes." + (depth1 + 1) + ".ResourceType" , resourceTypes.get(depth1).getResourceType());
+				}
+			}
+		}	
+	}
+
 	public String getResourceType() {
 		return this.resourceType;
 	}
@@ -123,6 +143,29 @@ public class ListResourcesRequest extends RpcAcsRequest<ListResourcesResponse> {
 		this.region = region;
 		if(region != null){
 			putQueryParameter("Region", region);
+		}
+	}
+
+	public static class ResourceTypes {
+
+		private String service;
+
+		private String resourceType;
+
+		public String getService() {
+			return this.service;
+		}
+
+		public void setService(String service) {
+			this.service = service;
+		}
+
+		public String getResourceType() {
+			return this.resourceType;
+		}
+
+		public void setResourceType(String resourceType) {
+			this.resourceType = resourceType;
 		}
 	}
 

@@ -28,7 +28,7 @@ public class RetryChangeAccountEmailRequest extends RpcAcsRequest<RetryChangeAcc
 
 	private String accountId;
 	public RetryChangeAccountEmailRequest() {
-		super("ResourceManager", "2020-03-31", "RetryChangeAccountEmail", "resourcemanager");
+		super("ResourceManager", "2020-03-31", "RetryChangeAccountEmail");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

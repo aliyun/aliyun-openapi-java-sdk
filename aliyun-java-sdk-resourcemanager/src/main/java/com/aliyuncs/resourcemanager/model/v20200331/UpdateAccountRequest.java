@@ -32,7 +32,7 @@ public class UpdateAccountRequest extends RpcAcsRequest<UpdateAccountResponse> {
 
 	private String accountId;
 	public UpdateAccountRequest() {
-		super("ResourceManager", "2020-03-31", "UpdateAccount", "resourcemanager");
+		super("ResourceManager", "2020-03-31", "UpdateAccount");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

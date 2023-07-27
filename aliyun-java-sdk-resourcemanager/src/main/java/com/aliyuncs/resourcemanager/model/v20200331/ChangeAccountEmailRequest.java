@@ -30,7 +30,7 @@ public class ChangeAccountEmailRequest extends RpcAcsRequest<ChangeAccountEmailR
 
 	private String email;
 	public ChangeAccountEmailRequest() {
-		super("ResourceManager", "2020-03-31", "ChangeAccountEmail", "resourcemanager");
+		super("ResourceManager", "2020-03-31", "ChangeAccountEmail");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

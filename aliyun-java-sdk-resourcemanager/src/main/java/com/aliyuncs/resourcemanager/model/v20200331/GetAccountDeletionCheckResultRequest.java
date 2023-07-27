@@ -28,7 +28,7 @@ public class GetAccountDeletionCheckResultRequest extends RpcAcsRequest<GetAccou
 
 	private String accountId;
 	public GetAccountDeletionCheckResultRequest() {
-		super("ResourceManager", "2020-03-31", "GetAccountDeletionCheckResult", "resourcemanager");
+		super("ResourceManager", "2020-03-31", "GetAccountDeletionCheckResult");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

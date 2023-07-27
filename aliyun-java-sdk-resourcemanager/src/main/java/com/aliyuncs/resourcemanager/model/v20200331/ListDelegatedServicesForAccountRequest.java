@@ -27,7 +27,7 @@ public class ListDelegatedServicesForAccountRequest extends RpcAcsRequest<ListDe
 
 	private String accountId;
 	public ListDelegatedServicesForAccountRequest() {
-		super("ResourceManager", "2020-03-31", "ListDelegatedServicesForAccount", "resourcemanager");
+		super("ResourceManager", "2020-03-31", "ListDelegatedServicesForAccount");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

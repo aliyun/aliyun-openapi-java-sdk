@@ -30,7 +30,7 @@ public class GetAccountRequest extends RpcAcsRequest<GetAccountResponse> {
 
 	private Boolean includeTags;
 	public GetAccountRequest() {
-		super("ResourceManager", "2020-03-31", "GetAccount", "resourcemanager");
+		super("ResourceManager", "2020-03-31", "GetAccount");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

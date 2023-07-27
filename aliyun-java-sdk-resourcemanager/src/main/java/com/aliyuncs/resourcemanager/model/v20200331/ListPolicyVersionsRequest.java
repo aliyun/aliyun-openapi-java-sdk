@@ -30,7 +30,7 @@ public class ListPolicyVersionsRequest extends RpcAcsRequest<ListPolicyVersionsR
 
 	private String policyName;
 	public ListPolicyVersionsRequest() {
-		super("ResourceManager", "2020-03-31", "ListPolicyVersions", "resourcemanager");
+		super("ResourceManager", "2020-03-31", "ListPolicyVersions");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

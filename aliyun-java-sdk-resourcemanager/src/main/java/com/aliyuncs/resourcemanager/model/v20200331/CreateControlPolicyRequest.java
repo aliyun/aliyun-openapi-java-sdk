@@ -34,7 +34,7 @@ public class CreateControlPolicyRequest extends RpcAcsRequest<CreateControlPolic
 
 	private String policyDocument;
 	public CreateControlPolicyRequest() {
-		super("ResourceManager", "2020-03-31", "CreateControlPolicy", "resourcemanager");
+		super("ResourceManager", "2020-03-31", "CreateControlPolicy");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

@@ -34,7 +34,7 @@ public class CreateCloudAccountRequest extends RpcAcsRequest<CreateCloudAccountR
 
 	private String payerAccountId;
 	public CreateCloudAccountRequest() {
-		super("ResourceManager", "2020-03-31", "CreateCloudAccount", "resourcemanager");
+		super("ResourceManager", "2020-03-31", "CreateCloudAccount");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

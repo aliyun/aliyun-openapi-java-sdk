@@ -30,7 +30,7 @@ public class MoveResourcesRequest extends RpcAcsRequest<MoveResourcesResponse> {
 
 	private String resourceGroupId;
 	public MoveResourcesRequest() {
-		super("ResourceManager", "2020-03-31", "MoveResources", "resourcemanager");
+		super("ResourceManager", "2020-03-31", "MoveResources");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

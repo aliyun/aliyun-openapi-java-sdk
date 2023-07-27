@@ -45,7 +45,7 @@ public class ListResourceGroupsRequest extends RpcAcsRequest<ListResourceGroupsR
 
 	private String status;
 	public ListResourceGroupsRequest() {
-		super("ResourceManager", "2020-03-31", "ListResourceGroups", "resourcemanager");
+		super("ResourceManager", "2020-03-31", "ListResourceGroups");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

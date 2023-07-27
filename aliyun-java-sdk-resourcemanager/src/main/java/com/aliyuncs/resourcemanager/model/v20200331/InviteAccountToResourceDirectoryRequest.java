@@ -35,7 +35,7 @@ public class InviteAccountToResourceDirectoryRequest extends RpcAcsRequest<Invit
 
 	private String targetEntity;
 	public InviteAccountToResourceDirectoryRequest() {
-		super("ResourceManager", "2020-03-31", "InviteAccountToResourceDirectory", "resourcemanager");
+		super("ResourceManager", "2020-03-31", "InviteAccountToResourceDirectory");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

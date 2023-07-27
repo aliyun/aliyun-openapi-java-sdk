@@ -28,7 +28,7 @@ public class GetHandshakeRequest extends RpcAcsRequest<GetHandshakeResponse> {
 
 	private String handshakeId;
 	public GetHandshakeRequest() {
-		super("ResourceManager", "2020-03-31", "GetHandshake", "resourcemanager");
+		super("ResourceManager", "2020-03-31", "GetHandshake");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

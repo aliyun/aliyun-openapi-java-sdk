@@ -34,7 +34,7 @@ public class ListPoliciesRequest extends RpcAcsRequest<ListPoliciesResponse> {
 
 	private Integer pageSize;
 	public ListPoliciesRequest() {
-		super("ResourceManager", "2020-03-31", "ListPolicies", "resourcemanager");
+		super("ResourceManager", "2020-03-31", "ListPolicies");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

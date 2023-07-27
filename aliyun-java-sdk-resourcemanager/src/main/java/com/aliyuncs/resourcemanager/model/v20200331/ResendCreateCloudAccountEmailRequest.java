@@ -28,7 +28,7 @@ public class ResendCreateCloudAccountEmailRequest extends RpcAcsRequest<ResendCr
 
 	private String recordId;
 	public ResendCreateCloudAccountEmailRequest() {
-		super("ResourceManager", "2020-03-31", "ResendCreateCloudAccountEmail", "resourcemanager");
+		super("ResourceManager", "2020-03-31", "ResendCreateCloudAccountEmail");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

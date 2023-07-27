@@ -34,7 +34,7 @@ public class ListFoldersForParentRequest extends RpcAcsRequest<ListFoldersForPar
 
 	private Integer pageSize;
 	public ListFoldersForParentRequest() {
-		super("ResourceManager", "2020-03-31", "ListFoldersForParent", "resourcemanager");
+		super("ResourceManager", "2020-03-31", "ListFoldersForParent");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

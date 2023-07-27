@@ -26,7 +26,7 @@ import com.aliyuncs.resourcemanager.Endpoint;
 public class DestroyResourceDirectoryRequest extends RpcAcsRequest<DestroyResourceDirectoryResponse> {
 	   
 	public DestroyResourceDirectoryRequest() {
-		super("ResourceManager", "2020-03-31", "DestroyResourceDirectory", "resourcemanager");
+		super("ResourceManager", "2020-03-31", "DestroyResourceDirectory");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

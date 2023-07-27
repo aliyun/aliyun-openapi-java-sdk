@@ -34,7 +34,7 @@ public class ListTagKeysRequest extends RpcAcsRequest<ListTagKeysResponse> {
 
 	private String keyFilter;
 	public ListTagKeysRequest() {
-		super("ResourceManager", "2020-03-31", "ListTagKeys", "resourcemanager");
+		super("ResourceManager", "2020-03-31", "ListTagKeys");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

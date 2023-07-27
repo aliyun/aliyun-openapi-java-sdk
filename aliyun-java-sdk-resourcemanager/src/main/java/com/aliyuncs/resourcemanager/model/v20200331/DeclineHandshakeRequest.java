@@ -28,7 +28,7 @@ public class DeclineHandshakeRequest extends RpcAcsRequest<DeclineHandshakeRespo
 
 	private String handshakeId;
 	public DeclineHandshakeRequest() {
-		super("ResourceManager", "2020-03-31", "DeclineHandshake", "resourcemanager");
+		super("ResourceManager", "2020-03-31", "DeclineHandshake");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

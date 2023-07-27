@@ -28,7 +28,7 @@ public class SetMemberDeletionPermissionRequest extends RpcAcsRequest<SetMemberD
 
 	private String status;
 	public SetMemberDeletionPermissionRequest() {
-		super("ResourceManager", "2020-03-31", "SetMemberDeletionPermission", "resourcemanager");
+		super("ResourceManager", "2020-03-31", "SetMemberDeletionPermission");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

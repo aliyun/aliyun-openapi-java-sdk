@@ -34,7 +34,7 @@ public class EnableResourceDirectoryRequest extends RpcAcsRequest<EnableResource
 
 	private String verificationCode;
 	public EnableResourceDirectoryRequest() {
-		super("ResourceManager", "2020-03-31", "EnableResourceDirectory", "resourcemanager");
+		super("ResourceManager", "2020-03-31", "EnableResourceDirectory");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
