@@ -91,6 +91,8 @@ public class LoginInstanceRequest extends RpcAcsRequest<LoginInstanceResponse> {
 						}
 						putQueryParameter("InstanceLoginInfo.Options.NotificationRetryIntervalSeconds" , instanceLoginInfo.getOptions().getNotificationRetryIntervalSeconds());
 						putQueryParameter("InstanceLoginInfo.Options.AudioMuteSeconds" , instanceLoginInfo.getOptions().getAudioMuteSeconds());
+						putQueryParameter("InstanceLoginInfo.Options.FixedHeight" , instanceLoginInfo.getOptions().getFixedHeight());
+						putQueryParameter("InstanceLoginInfo.Options.FixedWidth" , instanceLoginInfo.getOptions().getFixedWidth());
 						putQueryParameter("InstanceLoginInfo.Options.NotificationEventTypes" , instanceLoginInfo.getOptions().getNotificationEventTypes());
 						putQueryParameter("InstanceLoginInfo.Options.NotificationRetryLimit" , instanceLoginInfo.getOptions().getNotificationRetryLimit());
 				}
@@ -326,6 +328,10 @@ public class LoginInstanceRequest extends RpcAcsRequest<LoginInstanceResponse> {
 
 			private Integer audioMuteSeconds;
 
+			private Integer fixedHeight;
+
+			private Integer fixedWidth;
+
 			private String notificationEventTypes;
 
 			private Integer notificationRetryLimit;
@@ -384,6 +390,22 @@ public class LoginInstanceRequest extends RpcAcsRequest<LoginInstanceResponse> {
 
 			public void setAudioMuteSeconds(Integer audioMuteSeconds) {
 				this.audioMuteSeconds = audioMuteSeconds;
+			}
+
+			public Integer getFixedHeight() {
+				return this.fixedHeight;
+			}
+
+			public void setFixedHeight(Integer fixedHeight) {
+				this.fixedHeight = fixedHeight;
+			}
+
+			public Integer getFixedWidth() {
+				return this.fixedWidth;
+			}
+
+			public void setFixedWidth(Integer fixedWidth) {
+				this.fixedWidth = fixedWidth;
 			}
 
 			public String getNotificationEventTypes() {
