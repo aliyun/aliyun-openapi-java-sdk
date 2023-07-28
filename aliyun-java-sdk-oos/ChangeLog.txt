@@ -1,3 +1,6 @@
+2023-07-28 Version: 1.5.13
+- PatchBaseline Support Tags.
+
 2023-07-25 Version: 1.5.12
 - PatchBaseline Support Tags.
 

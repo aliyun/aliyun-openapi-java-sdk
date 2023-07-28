@@ -15,6 +15,9 @@
 package com.aliyuncs.oos.model.v20190601;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.oos.Endpoint;
 
@@ -28,6 +31,9 @@ public class CreateApplicationRequest extends RpcAcsRequest<CreateApplicationRes
 	private String clientToken;
 
 	private String description;
+
+	@SerializedName("alarmConfig")
+	private AlarmConfig alarmConfig;
 
 	private String resourceGroupId;
 
@@ -65,6 +71,17 @@ public class CreateApplicationRequest extends RpcAcsRequest<CreateApplicationRes
 		}
 	}
 
+	public AlarmConfig getAlarmConfig() {
+		return this.alarmConfig;
+	}
+
+	public void setAlarmConfig(AlarmConfig alarmConfig) {
+		this.alarmConfig = alarmConfig;	
+		if (alarmConfig != null) {
+			putQueryParameter("AlarmConfig" , new Gson().toJson(alarmConfig));
+		}	
+	}
+
 	public String getResourceGroupId() {
 		return this.resourceGroupId;
 	}
@@ -95,6 +112,42 @@ public class CreateApplicationRequest extends RpcAcsRequest<CreateApplicationRes
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
+		}
+	}
+
+	public static class AlarmConfig {
+
+		@SerializedName("TemplateIds")
+		private List<String> templateIds;
+
+		@SerializedName("ContactGroups")
+		private List<String> contactGroups;
+
+		@SerializedName("HealthCheckUrl")
+		private String healthCheckUrl;
+
+		public List<String> getTemplateIds() {
+			return this.templateIds;
+		}
+
+		public void setTemplateIds(List<String> templateIds) {
+			this.templateIds = templateIds;
+		}
+
+		public List<String> getContactGroups() {
+			return this.contactGroups;
+		}
+
+		public void setContactGroups(List<String> contactGroups) {
+			this.contactGroups = contactGroups;
+		}
+
+		public String getHealthCheckUrl() {
+			return this.healthCheckUrl;
+		}
+
+		public void setHealthCheckUrl(String healthCheckUrl) {
+			this.healthCheckUrl = healthCheckUrl;
 		}
 	}
 

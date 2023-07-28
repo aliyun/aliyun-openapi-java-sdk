@@ -14,6 +14,7 @@
 
 package com.aliyuncs.oos.model.v20190601;
 
+import java.util.List;
 import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.oos.transform.v20190601.GetApplicationResponseUnmarshaller;
@@ -60,6 +61,8 @@ public class GetApplicationResponse extends AcsResponse {
 		private String createDate;
 
 		private String applicationType;
+
+		private AlarmConfig alarmConfig;
 
 		public String getDescription() {
 			return this.description;
@@ -115,6 +118,47 @@ public class GetApplicationResponse extends AcsResponse {
 
 		public void setApplicationType(String applicationType) {
 			this.applicationType = applicationType;
+		}
+
+		public AlarmConfig getAlarmConfig() {
+			return this.alarmConfig;
+		}
+
+		public void setAlarmConfig(AlarmConfig alarmConfig) {
+			this.alarmConfig = alarmConfig;
+		}
+
+		public static class AlarmConfig {
+
+			private String healthCheckUrl;
+
+			private List<String> contactGroups;
+
+			private List<String> templateIds;
+
+			public String getHealthCheckUrl() {
+				return this.healthCheckUrl;
+			}
+
+			public void setHealthCheckUrl(String healthCheckUrl) {
+				this.healthCheckUrl = healthCheckUrl;
+			}
+
+			public List<String> getContactGroups() {
+				return this.contactGroups;
+			}
+
+			public void setContactGroups(List<String> contactGroups) {
+				this.contactGroups = contactGroups;
+			}
+
+			public List<String> getTemplateIds() {
+				return this.templateIds;
+			}
+
+			public void setTemplateIds(List<String> templateIds) {
+				this.templateIds = templateIds;
+			}
 		}
 	}
 
