@@ -74,20 +74,8 @@ public class AddMemberBasicInfoRequest extends RpcAcsRequest<AddMemberBasicInfoR
 		@SerializedName("GmtCreate")
 		private String gmtCreate;
 
-		@SerializedName("FirstEntryChannel")
-		private String firstEntryChannel;
-
-		@SerializedName("Point")
-		private Double point;
-
-		@SerializedName("DimensionType")
-		private String dimensionType;
-
-		@SerializedName("GrowthPoint")
-		private Long growthPoint;
-
-		@SerializedName("DimensionId")
-		private String dimensionId;
+		@SerializedName("MemberNickName")
+		private String memberNickName;
 
 		@SerializedName("Province")
 		private String province;
@@ -98,8 +86,8 @@ public class AddMemberBasicInfoRequest extends RpcAcsRequest<AddMemberBasicInfoR
 		@SerializedName("Extra")
 		private String extra;
 
-		@SerializedName("PlatFromType")
-		private String platFromType;
+		@SerializedName("PlatFormType")
+		private String platFormType;
 
 		@SerializedName("MemberName")
 		private String memberName;
@@ -179,44 +167,12 @@ public class AddMemberBasicInfoRequest extends RpcAcsRequest<AddMemberBasicInfoR
 			this.gmtCreate = gmtCreate;
 		}
 
-		public String getFirstEntryChannel() {
-			return this.firstEntryChannel;
+		public String getMemberNickName() {
+			return this.memberNickName;
 		}
 
-		public void setFirstEntryChannel(String firstEntryChannel) {
-			this.firstEntryChannel = firstEntryChannel;
-		}
-
-		public Double getPoint() {
-			return this.point;
-		}
-
-		public void setPoint(Double point) {
-			this.point = point;
-		}
-
-		public String getDimensionType() {
-			return this.dimensionType;
-		}
-
-		public void setDimensionType(String dimensionType) {
-			this.dimensionType = dimensionType;
-		}
-
-		public Long getGrowthPoint() {
-			return this.growthPoint;
-		}
-
-		public void setGrowthPoint(Long growthPoint) {
-			this.growthPoint = growthPoint;
-		}
-
-		public String getDimensionId() {
-			return this.dimensionId;
-		}
-
-		public void setDimensionId(String dimensionId) {
-			this.dimensionId = dimensionId;
+		public void setMemberNickName(String memberNickName) {
+			this.memberNickName = memberNickName;
 		}
 
 		public String getProvince() {
@@ -243,12 +199,12 @@ public class AddMemberBasicInfoRequest extends RpcAcsRequest<AddMemberBasicInfoR
 			this.extra = extra;
 		}
 
-		public String getPlatFromType() {
-			return this.platFromType;
+		public String getPlatFormType() {
+			return this.platFormType;
 		}
 
-		public void setPlatFromType(String platFromType) {
-			this.platFromType = platFromType;
+		public void setPlatFormType(String platFormType) {
+			this.platFormType = platFormType;
 		}
 
 		public String getMemberName() {
@@ -269,37 +225,37 @@ public class AddMemberBasicInfoRequest extends RpcAcsRequest<AddMemberBasicInfoR
 
 		public static class ChannelsItem {
 
-			@SerializedName("UnionId")
-			private String unionId;
+			@SerializedName("ChannelOpenId")
+			private String channelOpenId;
 
-			@SerializedName("OpenId")
-			private String openId;
+			@SerializedName("ChannelUnionId")
+			private String channelUnionId;
 
-			@SerializedName("ChannelType")
-			private String channelType;
+			@SerializedName("ChannelCode")
+			private String channelCode;
 
-			public String getUnionId() {
-				return this.unionId;
+			public String getChannelOpenId() {
+				return this.channelOpenId;
 			}
 
-			public void setUnionId(String unionId) {
-				this.unionId = unionId;
+			public void setChannelOpenId(String channelOpenId) {
+				this.channelOpenId = channelOpenId;
 			}
 
-			public String getOpenId() {
-				return this.openId;
+			public String getChannelUnionId() {
+				return this.channelUnionId;
 			}
 
-			public void setOpenId(String openId) {
-				this.openId = openId;
+			public void setChannelUnionId(String channelUnionId) {
+				this.channelUnionId = channelUnionId;
 			}
 
-			public String getChannelType() {
-				return this.channelType;
+			public String getChannelCode() {
+				return this.channelCode;
 			}
 
-			public void setChannelType(String channelType) {
-				this.channelType = channelType;
+			public void setChannelCode(String channelCode) {
+				this.channelCode = channelCode;
 			}
 		}
 	}

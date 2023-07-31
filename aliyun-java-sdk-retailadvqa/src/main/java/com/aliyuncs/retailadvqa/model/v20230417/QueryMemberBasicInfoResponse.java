@@ -36,7 +36,7 @@ public class QueryMemberBasicInfoResponse extends AcsResponse {
 
 	private String message;
 
-	private OpenMemberBasicInfoDTO openMemberBasicInfoDTO;
+	private Data data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -86,15 +86,15 @@ public class QueryMemberBasicInfoResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public OpenMemberBasicInfoDTO getOpenMemberBasicInfoDTO() {
-		return this.openMemberBasicInfoDTO;
+	public Data getData() {
+		return this.data;
 	}
 
-	public void setOpenMemberBasicInfoDTO(OpenMemberBasicInfoDTO openMemberBasicInfoDTO) {
-		this.openMemberBasicInfoDTO = openMemberBasicInfoDTO;
+	public void setData(Data data) {
+		this.data = data;
 	}
 
-	public static class OpenMemberBasicInfoDTO {
+	public static class Data {
 
 		private String openMerchantId;
 
@@ -127,6 +127,10 @@ public class QueryMemberBasicInfoResponse extends AcsResponse {
 		private String score;
 
 		private String extra;
+
+		private String area;
+
+		private String memberNickName;
 
 		public String getOpenMerchantId() {
 			return this.openMerchantId;
@@ -254,6 +258,22 @@ public class QueryMemberBasicInfoResponse extends AcsResponse {
 
 		public void setExtra(String extra) {
 			this.extra = extra;
+		}
+
+		public String getArea() {
+			return this.area;
+		}
+
+		public void setArea(String area) {
+			this.area = area;
+		}
+
+		public String getMemberNickName() {
+			return this.memberNickName;
+		}
+
+		public void setMemberNickName(String memberNickName) {
+			this.memberNickName = memberNickName;
 		}
 	}
 

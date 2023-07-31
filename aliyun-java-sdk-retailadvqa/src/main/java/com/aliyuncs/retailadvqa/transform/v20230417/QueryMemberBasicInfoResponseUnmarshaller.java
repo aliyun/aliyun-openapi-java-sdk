@@ -15,7 +15,7 @@
 package com.aliyuncs.retailadvqa.transform.v20230417;
 
 import com.aliyuncs.retailadvqa.model.v20230417.QueryMemberBasicInfoResponse;
-import com.aliyuncs.retailadvqa.model.v20230417.QueryMemberBasicInfoResponse.OpenMemberBasicInfoDTO;
+import com.aliyuncs.retailadvqa.model.v20230417.QueryMemberBasicInfoResponse.Data;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -30,24 +30,26 @@ public class QueryMemberBasicInfoResponseUnmarshaller {
 		queryMemberBasicInfoResponse.setErrorMessage(_ctx.stringValue("QueryMemberBasicInfoResponse.ErrorMessage"));
 		queryMemberBasicInfoResponse.setMessage(_ctx.stringValue("QueryMemberBasicInfoResponse.Message"));
 
-		OpenMemberBasicInfoDTO openMemberBasicInfoDTO = new OpenMemberBasicInfoDTO();
-		openMemberBasicInfoDTO.setOpenMerchantId(_ctx.stringValue("QueryMemberBasicInfoResponse.OpenMemberBasicInfoDTO.OpenMerchantId"));
-		openMemberBasicInfoDTO.setOuterMemberId(_ctx.stringValue("QueryMemberBasicInfoResponse.OpenMemberBasicInfoDTO.OuterMemberId"));
-		openMemberBasicInfoDTO.setMemberName(_ctx.stringValue("QueryMemberBasicInfoResponse.OpenMemberBasicInfoDTO.MemberName"));
-		openMemberBasicInfoDTO.setMobile(_ctx.stringValue("QueryMemberBasicInfoResponse.OpenMemberBasicInfoDTO.Mobile"));
-		openMemberBasicInfoDTO.setSex(_ctx.stringValue("QueryMemberBasicInfoResponse.OpenMemberBasicInfoDTO.Sex"));
-		openMemberBasicInfoDTO.setBirthday(_ctx.stringValue("QueryMemberBasicInfoResponse.OpenMemberBasicInfoDTO.Birthday"));
-		openMemberBasicInfoDTO.setCountry(_ctx.stringValue("QueryMemberBasicInfoResponse.OpenMemberBasicInfoDTO.Country"));
-		openMemberBasicInfoDTO.setProvince(_ctx.stringValue("QueryMemberBasicInfoResponse.OpenMemberBasicInfoDTO.Province"));
-		openMemberBasicInfoDTO.setCity(_ctx.stringValue("QueryMemberBasicInfoResponse.OpenMemberBasicInfoDTO.City"));
-		openMemberBasicInfoDTO.setEmail(_ctx.stringValue("QueryMemberBasicInfoResponse.OpenMemberBasicInfoDTO.Email"));
-		openMemberBasicInfoDTO.setAvatar(_ctx.stringValue("QueryMemberBasicInfoResponse.OpenMemberBasicInfoDTO.Avatar"));
-		openMemberBasicInfoDTO.setLevelNum(_ctx.stringValue("QueryMemberBasicInfoResponse.OpenMemberBasicInfoDTO.LevelNum"));
-		openMemberBasicInfoDTO.setLevelName(_ctx.stringValue("QueryMemberBasicInfoResponse.OpenMemberBasicInfoDTO.LevelName"));
-		openMemberBasicInfoDTO.setPoints(_ctx.stringValue("QueryMemberBasicInfoResponse.OpenMemberBasicInfoDTO.Points"));
-		openMemberBasicInfoDTO.setScore(_ctx.stringValue("QueryMemberBasicInfoResponse.OpenMemberBasicInfoDTO.Score"));
-		openMemberBasicInfoDTO.setExtra(_ctx.stringValue("QueryMemberBasicInfoResponse.OpenMemberBasicInfoDTO.Extra"));
-		queryMemberBasicInfoResponse.setOpenMemberBasicInfoDTO(openMemberBasicInfoDTO);
+		Data data = new Data();
+		data.setOpenMerchantId(_ctx.stringValue("QueryMemberBasicInfoResponse.Data.OpenMerchantId"));
+		data.setOuterMemberId(_ctx.stringValue("QueryMemberBasicInfoResponse.Data.OuterMemberId"));
+		data.setMemberName(_ctx.stringValue("QueryMemberBasicInfoResponse.Data.MemberName"));
+		data.setMobile(_ctx.stringValue("QueryMemberBasicInfoResponse.Data.Mobile"));
+		data.setSex(_ctx.stringValue("QueryMemberBasicInfoResponse.Data.Sex"));
+		data.setBirthday(_ctx.stringValue("QueryMemberBasicInfoResponse.Data.Birthday"));
+		data.setCountry(_ctx.stringValue("QueryMemberBasicInfoResponse.Data.Country"));
+		data.setProvince(_ctx.stringValue("QueryMemberBasicInfoResponse.Data.Province"));
+		data.setCity(_ctx.stringValue("QueryMemberBasicInfoResponse.Data.City"));
+		data.setEmail(_ctx.stringValue("QueryMemberBasicInfoResponse.Data.Email"));
+		data.setAvatar(_ctx.stringValue("QueryMemberBasicInfoResponse.Data.Avatar"));
+		data.setLevelNum(_ctx.stringValue("QueryMemberBasicInfoResponse.Data.LevelNum"));
+		data.setLevelName(_ctx.stringValue("QueryMemberBasicInfoResponse.Data.LevelName"));
+		data.setPoints(_ctx.stringValue("QueryMemberBasicInfoResponse.Data.Points"));
+		data.setScore(_ctx.stringValue("QueryMemberBasicInfoResponse.Data.Score"));
+		data.setExtra(_ctx.stringValue("QueryMemberBasicInfoResponse.Data.Extra"));
+		data.setArea(_ctx.stringValue("QueryMemberBasicInfoResponse.Data.Area"));
+		data.setMemberNickName(_ctx.stringValue("QueryMemberBasicInfoResponse.Data.MemberNickName"));
+		queryMemberBasicInfoResponse.setData(data);
 	 
 	 	return queryMemberBasicInfoResponse;
 	}

@@ -24,10 +24,8 @@ public class SyncMemberBehaviorInfoResponseUnmarshaller {
 		
 		syncMemberBehaviorInfoResponse.setRequestId(_ctx.stringValue("SyncMemberBehaviorInfoResponse.RequestId"));
 		syncMemberBehaviorInfoResponse.setSuccess(_ctx.booleanValue("SyncMemberBehaviorInfoResponse.Success"));
-		syncMemberBehaviorInfoResponse.setHttpStatusCode(_ctx.stringValue("SyncMemberBehaviorInfoResponse.HttpStatusCode"));
 		syncMemberBehaviorInfoResponse.setErrorCode(_ctx.stringValue("SyncMemberBehaviorInfoResponse.ErrorCode"));
 		syncMemberBehaviorInfoResponse.setErrorMessage(_ctx.stringValue("SyncMemberBehaviorInfoResponse.ErrorMessage"));
-		syncMemberBehaviorInfoResponse.setMessage(_ctx.stringValue("SyncMemberBehaviorInfoResponse.Message"));
 	 
 	 	return syncMemberBehaviorInfoResponse;
 	}

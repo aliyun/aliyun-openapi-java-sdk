@@ -27,7 +27,7 @@ public class MemberPointChangeResponseUnmarshaller {
 		memberPointChangeResponse.setHttpStatusCode(_ctx.stringValue("MemberPointChangeResponse.HttpStatusCode"));
 		memberPointChangeResponse.setErrorCode(_ctx.stringValue("MemberPointChangeResponse.ErrorCode"));
 		memberPointChangeResponse.setErrorMessage(_ctx.stringValue("MemberPointChangeResponse.ErrorMessage"));
-		memberPointChangeResponse.setCurrentQuantity(_ctx.stringValue("MemberPointChangeResponse.CurrentQuantity"));
+		memberPointChangeResponse.setAccountBalance(_ctx.stringValue("MemberPointChangeResponse.AccountBalance"));
 		memberPointChangeResponse.setLevelName(_ctx.stringValue("MemberPointChangeResponse.LevelName"));
 	 
 	 	return memberPointChangeResponse;

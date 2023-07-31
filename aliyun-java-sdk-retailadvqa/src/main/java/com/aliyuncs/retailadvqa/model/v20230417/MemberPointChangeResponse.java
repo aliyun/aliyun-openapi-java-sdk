@@ -34,7 +34,7 @@ public class MemberPointChangeResponse extends AcsResponse {
 
 	private String errorMessage;
 
-	private String currentQuantity;
+	private String accountBalance;
 
 	private String levelName;
 
@@ -78,12 +78,12 @@ public class MemberPointChangeResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public String getCurrentQuantity() {
-		return this.currentQuantity;
+	public String getAccountBalance() {
+		return this.accountBalance;
 	}
 
-	public void setCurrentQuantity(String currentQuantity) {
-		this.currentQuantity = currentQuantity;
+	public void setAccountBalance(String accountBalance) {
+		this.accountBalance = accountBalance;
 	}
 
 	public String getLevelName() {

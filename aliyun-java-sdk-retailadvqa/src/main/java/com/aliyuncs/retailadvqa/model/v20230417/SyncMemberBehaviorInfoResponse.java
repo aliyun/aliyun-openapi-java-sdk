@@ -28,13 +28,9 @@ public class SyncMemberBehaviorInfoResponse extends AcsResponse {
 
 	private Boolean success;
 
-	private String httpStatusCode;
-
 	private String errorCode;
 
 	private String errorMessage;
-
-	private String message;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -52,14 +48,6 @@ public class SyncMemberBehaviorInfoResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
-
-	public void setHttpStatusCode(String httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
-	}
-
 	public String getErrorCode() {
 		return this.errorCode;
 	}
@@ -74,14 +62,6 @@ public class SyncMemberBehaviorInfoResponse extends AcsResponse {
 
 	public void setErrorMessage(String errorMessage) {
 		this.errorMessage = errorMessage;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
 	}
 
 	@Override

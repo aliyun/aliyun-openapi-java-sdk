@@ -28,8 +28,6 @@ public class AddMemberBasicInfoResponse extends AcsResponse {
 
 	private Boolean success;
 
-	private String httpStatusCode;
-
 	private String errorCode;
 
 	private String errorMessage;
@@ -50,14 +48,6 @@ public class AddMemberBasicInfoResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
-	}
-
-	public String getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
-
-	public void setHttpStatusCode(String httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
 	}
 
 	public String getErrorCode() {

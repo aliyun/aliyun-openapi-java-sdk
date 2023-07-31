@@ -24,13 +24,13 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class QueryMemberBasicInfoRequest extends RpcAcsRequest<QueryMemberBasicInfoResponse> {
+public class MemberAccountDetailPageQueryRequest extends RpcAcsRequest<MemberAccountDetailPageQueryResponse> {
 	   
 
 	@SerializedName("body")
 	private Body body;
-	public QueryMemberBasicInfoRequest() {
-		super("retailadvqa", "2023-04-17", "QueryMemberBasicInfo", "qucikmember");
+	public MemberAccountDetailPageQueryRequest() {
+		super("retailadvqa", "2023-04-17", "MemberAccountDetailPageQuery", "qucikmember");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -51,20 +51,23 @@ public class QueryMemberBasicInfoRequest extends RpcAcsRequest<QueryMemberBasicI
 		@SerializedName("OpenMerchantId")
 		private String openMerchantId;
 
-		@SerializedName("Mobile")
-		private String mobile;
+		@SerializedName("AccountType")
+		private Integer accountType;
 
-		@SerializedName("ChannelOpenId")
-		private String channelOpenId;
+		@SerializedName("PageSize")
+		private Integer pageSize;
 
 		@SerializedName("PlatFormType")
 		private String platFormType;
 
-		@SerializedName("Type")
-		private String type;
+		@SerializedName("EndTime")
+		private String endTime;
 
-		@SerializedName("ChannelCode")
-		private String channelCode;
+		@SerializedName("StartTime")
+		private String startTime;
+
+		@SerializedName("Page")
+		private Integer page;
 
 		@SerializedName("OuterMemberId")
 		private String outerMemberId;
@@ -77,20 +80,20 @@ public class QueryMemberBasicInfoRequest extends RpcAcsRequest<QueryMemberBasicI
 			this.openMerchantId = openMerchantId;
 		}
 
-		public String getMobile() {
-			return this.mobile;
+		public Integer getAccountType() {
+			return this.accountType;
 		}
 
-		public void setMobile(String mobile) {
-			this.mobile = mobile;
+		public void setAccountType(Integer accountType) {
+			this.accountType = accountType;
 		}
 
-		public String getChannelOpenId() {
-			return this.channelOpenId;
+		public Integer getPageSize() {
+			return this.pageSize;
 		}
 
-		public void setChannelOpenId(String channelOpenId) {
-			this.channelOpenId = channelOpenId;
+		public void setPageSize(Integer pageSize) {
+			this.pageSize = pageSize;
 		}
 
 		public String getPlatFormType() {
@@ -101,20 +104,28 @@ public class QueryMemberBasicInfoRequest extends RpcAcsRequest<QueryMemberBasicI
 			this.platFormType = platFormType;
 		}
 
-		public String getType() {
-			return this.type;
+		public String getEndTime() {
+			return this.endTime;
 		}
 
-		public void setType(String type) {
-			this.type = type;
+		public void setEndTime(String endTime) {
+			this.endTime = endTime;
 		}
 
-		public String getChannelCode() {
-			return this.channelCode;
+		public String getStartTime() {
+			return this.startTime;
 		}
 
-		public void setChannelCode(String channelCode) {
-			this.channelCode = channelCode;
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
+		}
+
+		public Integer getPage() {
+			return this.page;
+		}
+
+		public void setPage(Integer page) {
+			this.page = page;
 		}
 
 		public String getOuterMemberId() {
@@ -127,8 +138,8 @@ public class QueryMemberBasicInfoRequest extends RpcAcsRequest<QueryMemberBasicI
 	}
 
 	@Override
-	public Class<QueryMemberBasicInfoResponse> getResponseClass() {
-		return QueryMemberBasicInfoResponse.class;
+	public Class<MemberAccountDetailPageQueryResponse> getResponseClass() {
+		return MemberAccountDetailPageQueryResponse.class;
 	}
 
 }

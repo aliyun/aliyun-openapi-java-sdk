@@ -25,21 +25,21 @@ import com.aliyuncs.http.MethodType;
 public class SyncMemberBehaviorInfoRequest extends RpcAcsRequest<SyncMemberBehaviorInfoResponse> {
 	   
 
-	private String syncMemberBehaviorCommand;
+	private String body;
 	public SyncMemberBehaviorInfoRequest() {
 		super("retailadvqa", "2023-04-17", "SyncMemberBehaviorInfo", "qucikmember");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
 
-	public String getSyncMemberBehaviorCommand() {
-		return this.syncMemberBehaviorCommand;
+	public String getBody() {
+		return this.body;
 	}
 
-	public void setSyncMemberBehaviorCommand(String syncMemberBehaviorCommand) {
-		this.syncMemberBehaviorCommand = syncMemberBehaviorCommand;
-		if(syncMemberBehaviorCommand != null){
-			putQueryParameter("SyncMemberBehaviorCommand", syncMemberBehaviorCommand);
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putQueryParameter("body", body);
 		}
 	}
 
