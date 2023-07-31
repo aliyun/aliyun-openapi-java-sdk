@@ -143,6 +143,10 @@ public class QueryAvatarListResponse extends AcsResponse {
 
 			private String modelType;
 
+			private String makeStatus;
+
+			private String makeFailReason;
+
 			private SupportedResolutions supportedResolutions;
 
 			public String getCode() {
@@ -199,6 +203,22 @@ public class QueryAvatarListResponse extends AcsResponse {
 
 			public void setModelType(String modelType) {
 				this.modelType = modelType;
+			}
+
+			public String getMakeStatus() {
+				return this.makeStatus;
+			}
+
+			public void setMakeStatus(String makeStatus) {
+				this.makeStatus = makeStatus;
+			}
+
+			public String getMakeFailReason() {
+				return this.makeFailReason;
+			}
+
+			public void setMakeFailReason(String makeFailReason) {
+				this.makeFailReason = makeFailReason;
 			}
 
 			public SupportedResolutions getSupportedResolutions() {

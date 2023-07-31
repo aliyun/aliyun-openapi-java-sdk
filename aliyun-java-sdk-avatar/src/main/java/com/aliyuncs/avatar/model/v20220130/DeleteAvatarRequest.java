@@ -21,14 +21,14 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class QueryAvatarRequest extends RpcAcsRequest<QueryAvatarResponse> {
+public class DeleteAvatarRequest extends RpcAcsRequest<DeleteAvatarResponse> {
 	   
 
 	private String code;
 
 	private Long tenantId;
-	public QueryAvatarRequest() {
-		super("avatar", "2022-01-30", "QueryAvatar");
+	public DeleteAvatarRequest() {
+		super("avatar", "2022-01-30", "DeleteAvatar");
 		setMethod(MethodType.POST);
 	}
 
@@ -55,8 +55,8 @@ public class QueryAvatarRequest extends RpcAcsRequest<QueryAvatarResponse> {
 	}
 
 	@Override
-	public Class<QueryAvatarResponse> getResponseClass() {
-		return QueryAvatarResponse.class;
+	public Class<DeleteAvatarResponse> getResponseClass() {
+		return DeleteAvatarResponse.class;
 	}
 
 }

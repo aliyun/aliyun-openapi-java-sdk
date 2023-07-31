@@ -89,6 +89,10 @@ public class QueryAvatarResponse extends AcsResponse {
 
 		private String avatarType;
 
+		private String makeStatus;
+
+		private String makeFailReason;
+
 		private SupportedResolutions supportedResolutions;
 
 		public String getName() {
@@ -137,6 +141,22 @@ public class QueryAvatarResponse extends AcsResponse {
 
 		public void setAvatarType(String avatarType) {
 			this.avatarType = avatarType;
+		}
+
+		public String getMakeStatus() {
+			return this.makeStatus;
+		}
+
+		public void setMakeStatus(String makeStatus) {
+			this.makeStatus = makeStatus;
+		}
+
+		public String getMakeFailReason() {
+			return this.makeFailReason;
+		}
+
+		public void setMakeFailReason(String makeFailReason) {
+			this.makeFailReason = makeFailReason;
 		}
 
 		public SupportedResolutions getSupportedResolutions() {

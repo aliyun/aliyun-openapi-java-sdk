@@ -51,6 +51,8 @@ public class QueryAvatarListResponseUnmarshaller {
 			listItem.setDescription(_ctx.stringValue("QueryAvatarListResponse.Data.List["+ i +"].Description"));
 			listItem.setAvatarType(_ctx.stringValue("QueryAvatarListResponse.Data.List["+ i +"].AvatarType"));
 			listItem.setModelType(_ctx.stringValue("QueryAvatarListResponse.Data.List["+ i +"].ModelType"));
+			listItem.setMakeStatus(_ctx.stringValue("QueryAvatarListResponse.Data.List["+ i +"].MakeStatus"));
+			listItem.setMakeFailReason(_ctx.stringValue("QueryAvatarListResponse.Data.List["+ i +"].MakeFailReason"));
 
 			SupportedResolutions supportedResolutions = new SupportedResolutions();
 
