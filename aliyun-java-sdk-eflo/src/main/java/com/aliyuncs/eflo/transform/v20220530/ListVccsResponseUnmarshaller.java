@@ -65,6 +65,7 @@ public class ListVccsResponseUnmarshaller {
 			dataItem.setExpirationDate(_ctx.stringValue("ListVccsResponse.Content.Data["+ i +"].ExpirationDate"));
 			dataItem.setResourceGroupId(_ctx.stringValue("ListVccsResponse.Content.Data["+ i +"].ResourceGroupId"));
 			dataItem.setConnectionType(_ctx.stringValue("ListVccsResponse.Content.Data["+ i +"].ConnectionType"));
+			dataItem.setCenOwnerId(_ctx.stringValue("ListVccsResponse.Content.Data["+ i +"].CenOwnerId"));
 
 			VpdBaseInfo vpdBaseInfo = new VpdBaseInfo();
 			vpdBaseInfo.setVpdId(_ctx.stringValue("ListVccsResponse.Content.Data["+ i +"].VpdBaseInfo.VpdId"));

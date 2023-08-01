@@ -49,11 +49,18 @@ public class ListVpdsResponseUnmarshaller {
 			dataItem.setStatus(_ctx.stringValue("ListVpdsResponse.Content.Data["+ i +"].Status"));
 			dataItem.setMessage(_ctx.stringValue("ListVpdsResponse.Content.Data["+ i +"].Message"));
 			dataItem.setNcCount(_ctx.integerValue("ListVpdsResponse.Content.Data["+ i +"].NcCount"));
+			dataItem.setNetworkInterfaceCount(_ctx.integerValue("ListVpdsResponse.Content.Data["+ i +"].NetworkInterfaceCount"));
 			dataItem.setSubnetCount(_ctx.integerValue("ListVpdsResponse.Content.Data["+ i +"].SubnetCount"));
 			dataItem.setCreateTime(_ctx.stringValue("ListVpdsResponse.Content.Data["+ i +"].CreateTime"));
 			dataItem.setGmtModified(_ctx.stringValue("ListVpdsResponse.Content.Data["+ i +"].GmtModified"));
 			dataItem.setDependence(_ctx.mapValue("ListVpdsResponse.Content.Data["+ i +"].Dependence"));
 			dataItem.setResourceGroupId(_ctx.stringValue("ListVpdsResponse.Content.Data["+ i +"].ResourceGroupId"));
+
+			List<String> secondaryCidrBlocks = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("ListVpdsResponse.Content.Data["+ i +"].SecondaryCidrBlocks.Length"); j++) {
+				secondaryCidrBlocks.add(_ctx.stringValue("ListVpdsResponse.Content.Data["+ i +"].SecondaryCidrBlocks["+ j +"]"));
+			}
+			dataItem.setSecondaryCidrBlocks(secondaryCidrBlocks);
 
 			List<ErInfo> erInfos = new ArrayList<ErInfo>();
 			for (int j = 0; j < _ctx.lengthValue("ListVpdsResponse.Content.Data["+ i +"].ErInfos.Length"); j++) {

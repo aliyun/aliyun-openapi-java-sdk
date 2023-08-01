@@ -75,6 +75,7 @@ public class GetNetworkInterfaceResponseUnmarshaller {
 			privateIpAddressMacGroupItem.setPrivateIpAddress(_ctx.stringValue("GetNetworkInterfaceResponse.Content.PrivateIpAddressMacGroup["+ i +"].PrivateIpAddress"));
 			privateIpAddressMacGroupItem.setIpAddressMac(_ctx.stringValue("GetNetworkInterfaceResponse.Content.PrivateIpAddressMacGroup["+ i +"].IpAddressMac"));
 			privateIpAddressMacGroupItem.setStatus(_ctx.stringValue("GetNetworkInterfaceResponse.Content.PrivateIpAddressMacGroup["+ i +"].Status"));
+			privateIpAddressMacGroupItem.setDescription(_ctx.stringValue("GetNetworkInterfaceResponse.Content.PrivateIpAddressMacGroup["+ i +"].Description"));
 			privateIpAddressMacGroupItem.setMessage(_ctx.stringValue("GetNetworkInterfaceResponse.Content.PrivateIpAddressMacGroup["+ i +"].Message"));
 
 			privateIpAddressMacGroup.add(privateIpAddressMacGroupItem);

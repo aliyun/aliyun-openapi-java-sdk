@@ -1,3 +1,14 @@
+2023-08-01 Version: 1.0.4
+- Support second cidr for vpd.
+- Support ignore 32 routeentry.
+- Supported support show private ip count.
+- Supported description for PrivateIpAddress.
+- Supported vcc loading cen across accounts.
+- Supported changing vcc connection type and instance.
+- Supperted querying fabric topology and ncd.
+- Supported ncCount for vpd subnet.
+- Add white list for ncd.
+
 2023-04-26 Version: 1.0.3
 - Update for lingjunnetworkinterface.
 

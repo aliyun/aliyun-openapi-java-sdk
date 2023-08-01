@@ -35,6 +35,7 @@ public class GetLniPrivateIpAddressResponseUnmarshaller {
 		content.setPrivateIpAddress(_ctx.stringValue("GetLniPrivateIpAddressResponse.Content.PrivateIpAddress"));
 		content.setIpAddressMac(_ctx.stringValue("GetLniPrivateIpAddressResponse.Content.IpAddressMac"));
 		content.setStatus(_ctx.stringValue("GetLniPrivateIpAddressResponse.Content.Status"));
+		content.setDescription(_ctx.stringValue("GetLniPrivateIpAddressResponse.Content.Description"));
 		content.setMessage(_ctx.stringValue("GetLniPrivateIpAddressResponse.Content.Message"));
 		getLniPrivateIpAddressResponse.setContent(content);
 	 

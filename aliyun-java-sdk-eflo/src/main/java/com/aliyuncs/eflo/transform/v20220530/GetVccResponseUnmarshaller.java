@@ -66,6 +66,7 @@ public class GetVccResponseUnmarshaller {
 		content.setAttachErStatus(_ctx.booleanValue("GetVccResponse.Content.AttachErStatus"));
 		content.setResourceGroupId(_ctx.stringValue("GetVccResponse.Content.ResourceGroupId"));
 		content.setConnectionType(_ctx.stringValue("GetVccResponse.Content.ConnectionType"));
+		content.setCenOwnerId(_ctx.stringValue("GetVccResponse.Content.CenOwnerId"));
 
 		VpdBaseInfo vpdBaseInfo = new VpdBaseInfo();
 		vpdBaseInfo.setVpdId(_ctx.stringValue("GetVccResponse.Content.VpdBaseInfo.VpdId"));

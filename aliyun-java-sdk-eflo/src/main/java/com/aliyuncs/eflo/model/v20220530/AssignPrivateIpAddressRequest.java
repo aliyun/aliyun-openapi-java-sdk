@@ -24,11 +24,13 @@ import com.aliyuncs.http.MethodType;
 public class AssignPrivateIpAddressRequest extends RpcAcsRequest<AssignPrivateIpAddressResponse> {
 	   
 
+	private String description;
+
+	private Boolean assignMac;
+
 	private String subnetId;
 
 	private Boolean skipConfig;
-
-	private Boolean assignMac;
 
 	private String privateIpAddress;
 
@@ -36,6 +38,28 @@ public class AssignPrivateIpAddressRequest extends RpcAcsRequest<AssignPrivateIp
 	public AssignPrivateIpAddressRequest() {
 		super("eflo", "2022-05-30", "AssignPrivateIpAddress", "eflo");
 		setMethod(MethodType.POST);
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putBodyParameter("Description", description);
+		}
+	}
+
+	public Boolean getAssignMac() {
+		return this.assignMac;
+	}
+
+	public void setAssignMac(Boolean assignMac) {
+		this.assignMac = assignMac;
+		if(assignMac != null){
+			putBodyParameter("AssignMac", assignMac.toString());
+		}
 	}
 
 	public String getSubnetId() {
@@ -57,17 +81,6 @@ public class AssignPrivateIpAddressRequest extends RpcAcsRequest<AssignPrivateIp
 		this.skipConfig = skipConfig;
 		if(skipConfig != null){
 			putBodyParameter("SkipConfig", skipConfig.toString());
-		}
-	}
-
-	public Boolean getAssignMac() {
-		return this.assignMac;
-	}
-
-	public void setAssignMac(Boolean assignMac) {
-		this.assignMac = assignMac;
-		if(assignMac != null){
-			putBodyParameter("AssignMac", assignMac.toString());
 		}
 	}
 

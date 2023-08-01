@@ -91,11 +91,15 @@ public class GetSubnetResponse extends AcsResponse {
 
 		private String message;
 
-		private Long ncCount;
+		private Integer ncCount;
+
+		private Integer networkInterfaceCount;
 
 		private Long lbCount;
 
 		private String resourceGroupId;
+
+		private Long privateIpCount;
 
 		private Integer availableIps;
 
@@ -199,12 +203,20 @@ public class GetSubnetResponse extends AcsResponse {
 			this.message = message;
 		}
 
-		public Long getNcCount() {
+		public Integer getNcCount() {
 			return this.ncCount;
 		}
 
-		public void setNcCount(Long ncCount) {
+		public void setNcCount(Integer ncCount) {
 			this.ncCount = ncCount;
+		}
+
+		public Integer getNetworkInterfaceCount() {
+			return this.networkInterfaceCount;
+		}
+
+		public void setNetworkInterfaceCount(Integer networkInterfaceCount) {
+			this.networkInterfaceCount = networkInterfaceCount;
 		}
 
 		public Long getLbCount() {
@@ -221,6 +233,14 @@ public class GetSubnetResponse extends AcsResponse {
 
 		public void setResourceGroupId(String resourceGroupId) {
 			this.resourceGroupId = resourceGroupId;
+		}
+
+		public Long getPrivateIpCount() {
+			return this.privateIpCount;
+		}
+
+		public void setPrivateIpCount(Long privateIpCount) {
+			this.privateIpCount = privateIpCount;
 		}
 
 		public Integer getAvailableIps() {

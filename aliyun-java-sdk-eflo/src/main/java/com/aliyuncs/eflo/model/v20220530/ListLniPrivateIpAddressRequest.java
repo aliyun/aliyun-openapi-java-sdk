@@ -24,6 +24,8 @@ import com.aliyuncs.http.MethodType;
 public class ListLniPrivateIpAddressRequest extends RpcAcsRequest<ListLniPrivateIpAddressResponse> {
 	   
 
+	private String description;
+
 	private Integer pageNumber;
 
 	private Integer pageSize;
@@ -38,6 +40,17 @@ public class ListLniPrivateIpAddressRequest extends RpcAcsRequest<ListLniPrivate
 	public ListLniPrivateIpAddressRequest() {
 		super("eflo", "2022-05-30", "ListLniPrivateIpAddress", "eflo");
 		setMethod(MethodType.POST);
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putBodyParameter("Description", description);
+		}
 	}
 
 	public Integer getPageNumber() {

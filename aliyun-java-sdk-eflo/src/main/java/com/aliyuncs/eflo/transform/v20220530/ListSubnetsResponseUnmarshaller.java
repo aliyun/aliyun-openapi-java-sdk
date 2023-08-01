@@ -51,7 +51,8 @@ public class ListSubnetsResponseUnmarshaller {
 			dataItem.setVpdId(_ctx.stringValue("ListSubnetsResponse.Content.Data["+ i +"].VpdId"));
 			dataItem.setStatus(_ctx.stringValue("ListSubnetsResponse.Content.Data["+ i +"].Status"));
 			dataItem.setMessage(_ctx.stringValue("ListSubnetsResponse.Content.Data["+ i +"].Message"));
-			dataItem.setNcCount(_ctx.longValue("ListSubnetsResponse.Content.Data["+ i +"].NcCount"));
+			dataItem.setNcCount(_ctx.integerValue("ListSubnetsResponse.Content.Data["+ i +"].NcCount"));
+			dataItem.setNetworkInterfaceCount(_ctx.integerValue("ListSubnetsResponse.Content.Data["+ i +"].NetworkInterfaceCount"));
 			dataItem.setResourceGroupId(_ctx.stringValue("ListSubnetsResponse.Content.Data["+ i +"].ResourceGroupId"));
 
 			VpdBaseInfo vpdBaseInfo = new VpdBaseInfo();

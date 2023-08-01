@@ -103,6 +103,8 @@ public class ListLniPrivateIpAddressResponse extends AcsResponse {
 
 			private String status;
 
+			private String description;
+
 			private String message;
 
 			public String getRegionId() {
@@ -159,6 +161,14 @@ public class ListLniPrivateIpAddressResponse extends AcsResponse {
 
 			public void setStatus(String status) {
 				this.status = status;
+			}
+
+			public String getDescription() {
+				return this.description;
+			}
+
+			public void setDescription(String description) {
+				this.description = description;
 			}
 
 			public String getMessage() {

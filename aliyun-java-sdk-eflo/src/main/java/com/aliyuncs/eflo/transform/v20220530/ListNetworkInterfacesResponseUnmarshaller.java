@@ -81,6 +81,7 @@ public class ListNetworkInterfacesResponseUnmarshaller {
 				privateIpAddressMacGroupItem.setPrivateIpAddress(_ctx.stringValue("ListNetworkInterfacesResponse.Content.Data["+ i +"].PrivateIpAddressMacGroup["+ j +"].PrivateIpAddress"));
 				privateIpAddressMacGroupItem.setIpAddressMac(_ctx.stringValue("ListNetworkInterfacesResponse.Content.Data["+ i +"].PrivateIpAddressMacGroup["+ j +"].IpAddressMac"));
 				privateIpAddressMacGroupItem.setStatus(_ctx.stringValue("ListNetworkInterfacesResponse.Content.Data["+ i +"].PrivateIpAddressMacGroup["+ j +"].Status"));
+				privateIpAddressMacGroupItem.setDescription(_ctx.stringValue("ListNetworkInterfacesResponse.Content.Data["+ i +"].PrivateIpAddressMacGroup["+ j +"].Description"));
 				privateIpAddressMacGroupItem.setMessage(_ctx.stringValue("ListNetworkInterfacesResponse.Content.Data["+ i +"].PrivateIpAddressMacGroup["+ j +"].Message"));
 
 				privateIpAddressMacGroup.add(privateIpAddressMacGroupItem);

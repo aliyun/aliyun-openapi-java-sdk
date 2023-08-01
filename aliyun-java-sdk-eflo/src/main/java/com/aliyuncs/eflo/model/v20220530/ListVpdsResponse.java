@@ -108,6 +108,8 @@ public class ListVpdsResponse extends AcsResponse {
 
 			private Integer ncCount;
 
+			private Integer networkInterfaceCount;
+
 			private Integer subnetCount;
 
 			private String createTime;
@@ -121,6 +123,8 @@ public class ListVpdsResponse extends AcsResponse {
 			private List<ErInfo> erInfos;
 
 			private List<Tag> tags;
+
+			private List<String> secondaryCidrBlocks;
 
 			public String getTenantId() {
 				return this.tenantId;
@@ -194,6 +198,14 @@ public class ListVpdsResponse extends AcsResponse {
 				this.ncCount = ncCount;
 			}
 
+			public Integer getNetworkInterfaceCount() {
+				return this.networkInterfaceCount;
+			}
+
+			public void setNetworkInterfaceCount(Integer networkInterfaceCount) {
+				this.networkInterfaceCount = networkInterfaceCount;
+			}
+
 			public Integer getSubnetCount() {
 				return this.subnetCount;
 			}
@@ -248,6 +260,14 @@ public class ListVpdsResponse extends AcsResponse {
 
 			public void setTags(List<Tag> tags) {
 				this.tags = tags;
+			}
+
+			public List<String> getSecondaryCidrBlocks() {
+				return this.secondaryCidrBlocks;
+			}
+
+			public void setSecondaryCidrBlocks(List<String> secondaryCidrBlocks) {
+				this.secondaryCidrBlocks = secondaryCidrBlocks;
 			}
 
 			public static class ErInfo {

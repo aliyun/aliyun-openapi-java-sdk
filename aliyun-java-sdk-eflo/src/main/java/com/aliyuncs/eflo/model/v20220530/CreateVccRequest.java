@@ -31,6 +31,8 @@ public class CreateVccRequest extends RpcAcsRequest<CreateVccResponse> {
 
 	private String description;
 
+	private String cenOwnerId;
+
 	private Boolean accessCouldService;
 
 	private String resourceGroupId;
@@ -87,6 +89,17 @@ public class CreateVccRequest extends RpcAcsRequest<CreateVccResponse> {
 		this.description = description;
 		if(description != null){
 			putBodyParameter("Description", description);
+		}
+	}
+
+	public String getCenOwnerId() {
+		return this.cenOwnerId;
+	}
+
+	public void setCenOwnerId(String cenOwnerId) {
+		this.cenOwnerId = cenOwnerId;
+		if(cenOwnerId != null){
+			putBodyParameter("CenOwnerId", cenOwnerId);
 		}
 	}
 

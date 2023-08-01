@@ -81,7 +81,9 @@ public class GetVpdResponse extends AcsResponse {
 
 		private String message;
 
-		private Long ncCount;
+		private Integer ncCount;
+
+		private Integer networkInterfaceCount;
 
 		private Long subnetCount;
 
@@ -95,9 +97,15 @@ public class GetVpdResponse extends AcsResponse {
 
 		private String resourceGroupId;
 
+		private Integer quota;
+
+		private Long privateIpCount;
+
 		private List<ErInfo> erInfos;
 
 		private List<Tag> tags;
+
+		private List<String> secondaryCidrBlocks;
 
 		public String getRegionId() {
 			return this.regionId;
@@ -155,12 +163,20 @@ public class GetVpdResponse extends AcsResponse {
 			this.message = message;
 		}
 
-		public Long getNcCount() {
+		public Integer getNcCount() {
 			return this.ncCount;
 		}
 
-		public void setNcCount(Long ncCount) {
+		public void setNcCount(Integer ncCount) {
 			this.ncCount = ncCount;
+		}
+
+		public Integer getNetworkInterfaceCount() {
+			return this.networkInterfaceCount;
+		}
+
+		public void setNetworkInterfaceCount(Integer networkInterfaceCount) {
+			this.networkInterfaceCount = networkInterfaceCount;
 		}
 
 		public Long getSubnetCount() {
@@ -211,6 +227,22 @@ public class GetVpdResponse extends AcsResponse {
 			this.resourceGroupId = resourceGroupId;
 		}
 
+		public Integer getQuota() {
+			return this.quota;
+		}
+
+		public void setQuota(Integer quota) {
+			this.quota = quota;
+		}
+
+		public Long getPrivateIpCount() {
+			return this.privateIpCount;
+		}
+
+		public void setPrivateIpCount(Long privateIpCount) {
+			this.privateIpCount = privateIpCount;
+		}
+
 		public List<ErInfo> getErInfos() {
 			return this.erInfos;
 		}
@@ -225,6 +257,14 @@ public class GetVpdResponse extends AcsResponse {
 
 		public void setTags(List<Tag> tags) {
 			this.tags = tags;
+		}
+
+		public List<String> getSecondaryCidrBlocks() {
+			return this.secondaryCidrBlocks;
+		}
+
+		public void setSecondaryCidrBlocks(List<String> secondaryCidrBlocks) {
+			this.secondaryCidrBlocks = secondaryCidrBlocks;
 		}
 
 		public static class ErInfo {

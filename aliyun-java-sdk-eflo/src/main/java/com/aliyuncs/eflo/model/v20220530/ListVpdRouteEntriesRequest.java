@@ -24,6 +24,8 @@ import com.aliyuncs.http.MethodType;
 public class ListVpdRouteEntriesRequest extends RpcAcsRequest<ListVpdRouteEntriesResponse> {
 	   
 
+	private Boolean ignoreDetailedRouteEntry;
+
 	private Integer pageNumber;
 
 	private String routeType;
@@ -46,6 +48,17 @@ public class ListVpdRouteEntriesRequest extends RpcAcsRequest<ListVpdRouteEntrie
 	public ListVpdRouteEntriesRequest() {
 		super("eflo", "2022-05-30", "ListVpdRouteEntries", "eflo");
 		setMethod(MethodType.POST);
+	}
+
+	public Boolean getIgnoreDetailedRouteEntry() {
+		return this.ignoreDetailedRouteEntry;
+	}
+
+	public void setIgnoreDetailedRouteEntry(Boolean ignoreDetailedRouteEntry) {
+		this.ignoreDetailedRouteEntry = ignoreDetailedRouteEntry;
+		if(ignoreDetailedRouteEntry != null){
+			putBodyParameter("IgnoreDetailedRouteEntry", ignoreDetailedRouteEntry.toString());
+		}
 	}
 
 	public Integer getPageNumber() {

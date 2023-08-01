@@ -247,6 +247,8 @@ public class GetNetworkInterfaceResponse extends AcsResponse {
 
 			private String status;
 
+			private String description;
+
 			private String message;
 
 			public String getIpName() {
@@ -279,6 +281,14 @@ public class GetNetworkInterfaceResponse extends AcsResponse {
 
 			public void setStatus(String status) {
 				this.status = status;
+			}
+
+			public String getDescription() {
+				return this.description;
+			}
+
+			public void setDescription(String description) {
+				this.description = description;
 			}
 
 			public String getMessage() {

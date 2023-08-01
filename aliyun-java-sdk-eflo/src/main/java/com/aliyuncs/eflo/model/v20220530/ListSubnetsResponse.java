@@ -113,7 +113,9 @@ public class ListSubnetsResponse extends AcsResponse {
 
 			private String message;
 
-			private Long ncCount;
+			private Integer ncCount;
+
+			private Integer networkInterfaceCount;
 
 			private String resourceGroupId;
 
@@ -217,12 +219,20 @@ public class ListSubnetsResponse extends AcsResponse {
 				this.message = message;
 			}
 
-			public Long getNcCount() {
+			public Integer getNcCount() {
 				return this.ncCount;
 			}
 
-			public void setNcCount(Long ncCount) {
+			public void setNcCount(Integer ncCount) {
 				this.ncCount = ncCount;
+			}
+
+			public Integer getNetworkInterfaceCount() {
+				return this.networkInterfaceCount;
+			}
+
+			public void setNetworkInterfaceCount(Integer networkInterfaceCount) {
+				this.networkInterfaceCount = networkInterfaceCount;
 			}
 
 			public String getResourceGroupId() {

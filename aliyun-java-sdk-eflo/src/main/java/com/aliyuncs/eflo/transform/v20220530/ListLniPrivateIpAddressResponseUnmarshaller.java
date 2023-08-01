@@ -44,6 +44,7 @@ public class ListLniPrivateIpAddressResponseUnmarshaller {
 			dataItem.setPrivateIpAddress(_ctx.stringValue("ListLniPrivateIpAddressResponse.Content.Data["+ i +"].PrivateIpAddress"));
 			dataItem.setIpAddressMac(_ctx.stringValue("ListLniPrivateIpAddressResponse.Content.Data["+ i +"].IpAddressMac"));
 			dataItem.setStatus(_ctx.stringValue("ListLniPrivateIpAddressResponse.Content.Data["+ i +"].Status"));
+			dataItem.setDescription(_ctx.stringValue("ListLniPrivateIpAddressResponse.Content.Data["+ i +"].Description"));
 			dataItem.setMessage(_ctx.stringValue("ListLniPrivateIpAddressResponse.Content.Data["+ i +"].Message"));
 
 			data.add(dataItem);

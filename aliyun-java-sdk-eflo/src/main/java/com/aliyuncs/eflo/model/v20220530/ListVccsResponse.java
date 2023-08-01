@@ -139,6 +139,8 @@ public class ListVccsResponse extends AcsResponse {
 
 			private String connectionType;
 
+			private String cenOwnerId;
+
 			private List<ErInfo> erInfos;
 
 			private List<Tag> tags;
@@ -343,6 +345,14 @@ public class ListVccsResponse extends AcsResponse {
 
 			public void setConnectionType(String connectionType) {
 				this.connectionType = connectionType;
+			}
+
+			public String getCenOwnerId() {
+				return this.cenOwnerId;
+			}
+
+			public void setCenOwnerId(String cenOwnerId) {
+				this.cenOwnerId = cenOwnerId;
 			}
 
 			public List<ErInfo> getErInfos() {
