@@ -12,21 +12,19 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.ft.model.v20180713;
+package com.aliyuncs.ft.model.v20210101;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ft.transform.v20180713.FtGatedLaunchPolicy4ResponseUnmarshaller;
+import com.aliyuncs.ft.transform.v20210101.RpcDataUploadAndDownloadResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class FtGatedLaunchPolicy4Response extends AcsResponse {
+public class RpcDataUploadAndDownloadResponse extends AcsResponse {
 
 	private String requestId;
-
-	private String isGatedLaunch;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,16 +34,13 @@ public class FtGatedLaunchPolicy4Response extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getIsGatedLaunch() {
-		return this.isGatedLaunch;
-	}
-
-	public void setIsGatedLaunch(String isGatedLaunch) {
-		this.isGatedLaunch = isGatedLaunch;
+	@Override
+	public RpcDataUploadAndDownloadResponse getInstance(UnmarshallerContext context) {
+		return	RpcDataUploadAndDownloadResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
-	public FtGatedLaunchPolicy4Response getInstance(UnmarshallerContext context) {
-		return	FtGatedLaunchPolicy4ResponseUnmarshaller.unmarshall(this, context);
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

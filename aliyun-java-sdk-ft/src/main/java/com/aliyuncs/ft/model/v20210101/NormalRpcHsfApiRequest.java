@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.ft.model.v20180713;
+package com.aliyuncs.ft.model.v20210101;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -22,33 +22,20 @@ import com.aliyuncs.ft.Endpoint;
  * @author auto create
  * @version 
  */
-public class FtEagleEyeRequest extends RpcAcsRequest<FtEagleEyeResponse> {
+public class NormalRpcHsfApiRequest extends RpcAcsRequest<NormalRpcHsfApiResponse> {
 	   
-
-	private String name;
-	public FtEagleEyeRequest() {
-		super("Ft", "2018-07-13", "FtEagleEye");
-		setMethod(MethodType.POST);
+	public NormalRpcHsfApiRequest() {
+		super("Ft", "2021-01-01", "NormalRpcHsfApi");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
-	}
-
 	@Override
-	public Class<FtEagleEyeResponse> getResponseClass() {
-		return FtEagleEyeResponse.class;
+	public Class<NormalRpcHsfApiResponse> getResponseClass() {
+		return NormalRpcHsfApiResponse.class;
 	}
 
 }

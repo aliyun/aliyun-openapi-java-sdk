@@ -12,11 +12,9 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.ft.model.v20180713;
+package com.aliyuncs.ft.model.v20210101;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
-import com.google.gson.Gson;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ft.Endpoint;
 
@@ -24,33 +22,20 @@ import com.aliyuncs.ft.Endpoint;
  * @author auto create
  * @version 
  */
-public class TestFlowStrategy01Request extends RpcAcsRequest<TestFlowStrategy01Response> {
+public class RpcDataUploadTestRequest extends RpcAcsRequest<RpcDataUploadTestResponse> {
 	   
-
-	private List<Object> names;
-	public TestFlowStrategy01Request() {
-		super("Ft", "2018-07-13", "TestFlowStrategy01");
-		setMethod(MethodType.PUT);
+	public RpcDataUploadTestRequest() {
+		super("Ft", "2021-01-01", "RpcDataUploadTest");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public List<Object> getNames() {
-		return this.names;
-	}
-
-	public void setNames(List<Object> names) {
-		this.names = names;
-		if(names != null){
-			putBodyParameter("Names", new Gson().toJson(names));
-		}
-	}
-
 	@Override
-	public Class<TestFlowStrategy01Response> getResponseClass() {
-		return TestFlowStrategy01Response.class;
+	public Class<RpcDataUploadTestResponse> getResponseClass() {
+		return RpcDataUploadTestResponse.class;
 	}
 
 }

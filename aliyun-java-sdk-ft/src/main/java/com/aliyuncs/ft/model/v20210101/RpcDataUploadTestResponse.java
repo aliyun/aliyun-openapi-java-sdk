@@ -12,21 +12,19 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.ft.model.v20180713;
+package com.aliyuncs.ft.model.v20210101;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ft.transform.v20180713.FTApiAliasApiResponseUnmarshaller;
+import com.aliyuncs.ft.transform.v20210101.RpcDataUploadTestResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class FTApiAliasApiResponse extends AcsResponse {
+public class RpcDataUploadTestResponse extends AcsResponse {
 
 	private String requestId;
-
-	private String name;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,16 +34,13 @@ public class FTApiAliasApiResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
+	@Override
+	public RpcDataUploadTestResponse getInstance(UnmarshallerContext context) {
+		return	RpcDataUploadTestResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
-	public FTApiAliasApiResponse getInstance(UnmarshallerContext context) {
-		return	FTApiAliasApiResponseUnmarshaller.unmarshall(this, context);
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

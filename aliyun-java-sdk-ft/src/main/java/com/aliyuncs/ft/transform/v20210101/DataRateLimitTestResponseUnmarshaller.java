@@ -12,18 +12,18 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.ft.transform.v20180713;
+package com.aliyuncs.ft.transform.v20210101;
 
-import com.aliyuncs.ft.model.v20180713.FtDynamicAddressHsfResponse;
+import com.aliyuncs.ft.model.v20210101.DataRateLimitTestResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class FtDynamicAddressHsfResponseUnmarshaller {
+public class DataRateLimitTestResponseUnmarshaller {
 
-	public static FtDynamicAddressHsfResponse unmarshall(FtDynamicAddressHsfResponse ftDynamicAddressHsfResponse, UnmarshallerContext _ctx) {
+	public static DataRateLimitTestResponse unmarshall(DataRateLimitTestResponse dataRateLimitTestResponse, UnmarshallerContext _ctx) {
 		
-		ftDynamicAddressHsfResponse.setRequestId(_ctx.stringValue("FtDynamicAddressHsfResponse.RequestId"));
+		dataRateLimitTestResponse.setRequestId(_ctx.stringValue("DataRateLimitTestResponse.RequestId"));
 	 
-	 	return ftDynamicAddressHsfResponse;
+	 	return dataRateLimitTestResponse;
 	}
 }

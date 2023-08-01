@@ -12,23 +12,19 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.ft.model.v20180713;
+package com.aliyuncs.ft.model.v20210101;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ft.transform.v20180713.FtDynamicAddressDubboResponseUnmarshaller;
+import com.aliyuncs.ft.transform.v20210101.DataRateLimitTestResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class FtDynamicAddressDubboResponse extends AcsResponse {
+public class DataRateLimitTestResponse extends AcsResponse {
 
 	private String requestId;
-
-	private String stringValue;
-
-	private Integer intValue;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,24 +34,13 @@ public class FtDynamicAddressDubboResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getStringValue() {
-		return this.stringValue;
-	}
-
-	public void setStringValue(String stringValue) {
-		this.stringValue = stringValue;
-	}
-
-	public Integer getIntValue() {
-		return this.intValue;
-	}
-
-	public void setIntValue(Integer intValue) {
-		this.intValue = intValue;
+	@Override
+	public DataRateLimitTestResponse getInstance(UnmarshallerContext context) {
+		return	DataRateLimitTestResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
-	public FtDynamicAddressDubboResponse getInstance(UnmarshallerContext context) {
-		return	FtDynamicAddressDubboResponseUnmarshaller.unmarshall(this, context);
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

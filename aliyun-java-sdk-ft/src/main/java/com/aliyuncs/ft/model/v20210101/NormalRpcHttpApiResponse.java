@@ -12,17 +12,17 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.ft.model.v20180713;
+package com.aliyuncs.ft.model.v20210101;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ft.transform.v20180713.FtDynamicAddressHsfResponseUnmarshaller;
+import com.aliyuncs.ft.transform.v20210101.NormalRpcHttpApiResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class FtDynamicAddressHsfResponse extends AcsResponse {
+public class NormalRpcHttpApiResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -35,7 +35,12 @@ public class FtDynamicAddressHsfResponse extends AcsResponse {
 	}
 
 	@Override
-	public FtDynamicAddressHsfResponse getInstance(UnmarshallerContext context) {
-		return	FtDynamicAddressHsfResponseUnmarshaller.unmarshall(this, context);
+	public NormalRpcHttpApiResponse getInstance(UnmarshallerContext context) {
+		return	NormalRpcHttpApiResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

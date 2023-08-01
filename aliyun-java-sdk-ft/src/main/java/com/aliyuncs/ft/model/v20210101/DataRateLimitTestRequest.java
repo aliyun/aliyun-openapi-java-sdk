@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.ft.model.v20180713;
+package com.aliyuncs.ft.model.v20210101;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -22,12 +22,12 @@ import com.aliyuncs.ft.Endpoint;
  * @author auto create
  * @version 
  */
-public class FtGatedLaunchPolicy4Request extends RpcAcsRequest<FtGatedLaunchPolicy4Response> {
+public class DataRateLimitTestRequest extends RpcAcsRequest<DataRateLimitTestResponse> {
 	   
 
-	private String isGatedLaunch;
-	public FtGatedLaunchPolicy4Request() {
-		super("Ft", "2018-07-13", "FtGatedLaunchPolicy4");
+	private String data;
+	public DataRateLimitTestRequest() {
+		super("Ft", "2021-01-01", "DataRateLimitTest");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -35,20 +35,20 @@ public class FtGatedLaunchPolicy4Request extends RpcAcsRequest<FtGatedLaunchPoli
 		} catch (Exception e) {}
 	}
 
-	public String getIsGatedLaunch() {
-		return this.isGatedLaunch;
+	public String getData() {
+		return this.data;
 	}
 
-	public void setIsGatedLaunch(String isGatedLaunch) {
-		this.isGatedLaunch = isGatedLaunch;
-		if(isGatedLaunch != null){
-			putQueryParameter("IsGatedLaunch", isGatedLaunch);
+	public void setData(String data) {
+		this.data = data;
+		if(data != null){
+			putQueryParameter("Data", data);
 		}
 	}
 
 	@Override
-	public Class<FtGatedLaunchPolicy4Response> getResponseClass() {
-		return FtGatedLaunchPolicy4Response.class;
+	public Class<DataRateLimitTestResponse> getResponseClass() {
+		return DataRateLimitTestResponse.class;
 	}
 
 }

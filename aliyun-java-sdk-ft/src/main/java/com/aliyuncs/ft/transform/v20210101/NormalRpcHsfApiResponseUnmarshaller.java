@@ -12,19 +12,18 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.ft.transform.v20180713;
+package com.aliyuncs.ft.transform.v20210101;
 
-import com.aliyuncs.ft.model.v20180713.FtParamListResponse;
+import com.aliyuncs.ft.model.v20210101.NormalRpcHsfApiResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class FtParamListResponseUnmarshaller {
+public class NormalRpcHsfApiResponseUnmarshaller {
 
-	public static FtParamListResponse unmarshall(FtParamListResponse ftParamListResponse, UnmarshallerContext _ctx) {
+	public static NormalRpcHsfApiResponse unmarshall(NormalRpcHsfApiResponse normalRpcHsfApiResponse, UnmarshallerContext _ctx) {
 		
-		ftParamListResponse.setRequestId(_ctx.stringValue("FtParamListResponse.RequestId"));
-		ftParamListResponse.setName(_ctx.stringValue("FtParamListResponse.Name"));
+		normalRpcHsfApiResponse.setRequestId(_ctx.stringValue("NormalRpcHsfApiResponse.RequestId"));
 	 
-	 	return ftParamListResponse;
+	 	return normalRpcHsfApiResponse;
 	}
 }

@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.ft.model.v20180713;
+package com.aliyuncs.ft.model.v20210101;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -22,14 +22,16 @@ import com.aliyuncs.ft.Endpoint;
  * @author auto create
  * @version 
  */
-public class FtDynamicAddressDubboRequest extends RpcAcsRequest<FtDynamicAddressDubboResponse> {
+public class RpcDataUploadRequest extends RpcAcsRequest<RpcDataUploadResponse> {
 	   
 
-	private Integer intValue;
+	private String query1;
 
-	private String stringValue;
-	public FtDynamicAddressDubboRequest() {
-		super("Ft", "2018-07-13", "FtDynamicAddressDubbo");
+	private Long query2;
+
+	private String largeParam;
+	public RpcDataUploadRequest() {
+		super("Ft", "2021-01-01", "RpcDataUpload");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +39,42 @@ public class FtDynamicAddressDubboRequest extends RpcAcsRequest<FtDynamicAddress
 		} catch (Exception e) {}
 	}
 
-	public Integer getIntValue() {
-		return this.intValue;
+	public String getQuery1() {
+		return this.query1;
 	}
 
-	public void setIntValue(Integer intValue) {
-		this.intValue = intValue;
-		if(intValue != null){
-			putQueryParameter("IntValue", intValue.toString());
+	public void setQuery1(String query1) {
+		this.query1 = query1;
+		if(query1 != null){
+			putQueryParameter("query1", query1);
 		}
 	}
 
-	public String getStringValue() {
-		return this.stringValue;
+	public Long getQuery2() {
+		return this.query2;
 	}
 
-	public void setStringValue(String stringValue) {
-		this.stringValue = stringValue;
-		if(stringValue != null){
-			putQueryParameter("StringValue", stringValue);
+	public void setQuery2(Long query2) {
+		this.query2 = query2;
+		if(query2 != null){
+			putQueryParameter("query2", query2.toString());
+		}
+	}
+
+	public String getLargeParam() {
+		return this.largeParam;
+	}
+
+	public void setLargeParam(String largeParam) {
+		this.largeParam = largeParam;
+		if(largeParam != null){
+			putBodyParameter("largeParam", largeParam);
 		}
 	}
 
 	@Override
-	public Class<FtDynamicAddressDubboResponse> getResponseClass() {
-		return FtDynamicAddressDubboResponse.class;
+	public Class<RpcDataUploadResponse> getResponseClass() {
+		return RpcDataUploadResponse.class;
 	}
 
 }

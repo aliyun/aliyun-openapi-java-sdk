@@ -12,19 +12,18 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.ft.transform.v20180713;
+package com.aliyuncs.ft.transform.v20210101;
 
-import com.aliyuncs.ft.model.v20180713.FTApiAliasApiResponse;
+import com.aliyuncs.ft.model.v20210101.RpcDataUploadTestResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class FTApiAliasApiResponseUnmarshaller {
+public class RpcDataUploadTestResponseUnmarshaller {
 
-	public static FTApiAliasApiResponse unmarshall(FTApiAliasApiResponse fTApiAliasApiResponse, UnmarshallerContext _ctx) {
+	public static RpcDataUploadTestResponse unmarshall(RpcDataUploadTestResponse rpcDataUploadTestResponse, UnmarshallerContext _ctx) {
 		
-		fTApiAliasApiResponse.setRequestId(_ctx.stringValue("FTApiAliasApiResponse.RequestId"));
-		fTApiAliasApiResponse.setName(_ctx.stringValue("FTApiAliasApiResponse.Name"));
+		rpcDataUploadTestResponse.setRequestId(_ctx.stringValue("RpcDataUploadTestResponse.RequestId"));
 	 
-	 	return fTApiAliasApiResponse;
+	 	return rpcDataUploadTestResponse;
 	}
 }

@@ -12,24 +12,19 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.ft.model.v20180713;
+package com.aliyuncs.ft.model.v20210101;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ft.transform.v20180713.TestFlowStrategy01ResponseUnmarshaller;
+import com.aliyuncs.ft.transform.v20210101.NormalRpcHsfApiResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class TestFlowStrategy01Response extends AcsResponse {
+public class NormalRpcHsfApiResponse extends AcsResponse {
 
 	private String requestId;
-
-	private List<String> list;
-
-	private List<String> names;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -39,25 +34,9 @@ public class TestFlowStrategy01Response extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<String> getList() {
-		return this.list;
-	}
-
-	public void setList(List<String> list) {
-		this.list = list;
-	}
-
-	public List<String> getNames() {
-		return this.names;
-	}
-
-	public void setNames(List<String> names) {
-		this.names = names;
-	}
-
 	@Override
-	public TestFlowStrategy01Response getInstance(UnmarshallerContext context) {
-		return	TestFlowStrategy01ResponseUnmarshaller.unmarshall(this, context);
+	public NormalRpcHsfApiResponse getInstance(UnmarshallerContext context) {
+		return	NormalRpcHsfApiResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

@@ -12,19 +12,18 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.ft.transform.v20180713;
+package com.aliyuncs.ft.transform.v20210101;
 
-import com.aliyuncs.ft.model.v20180713.FtFlowSpecialResponse;
+import com.aliyuncs.ft.model.v20210101.RpcDataUploadAndDownloadResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class FtFlowSpecialResponseUnmarshaller {
+public class RpcDataUploadAndDownloadResponseUnmarshaller {
 
-	public static FtFlowSpecialResponse unmarshall(FtFlowSpecialResponse ftFlowSpecialResponse, UnmarshallerContext _ctx) {
+	public static RpcDataUploadAndDownloadResponse unmarshall(RpcDataUploadAndDownloadResponse rpcDataUploadAndDownloadResponse, UnmarshallerContext _ctx) {
 		
-		ftFlowSpecialResponse.setRequestId(_ctx.stringValue("FtFlowSpecialResponse.RequestId"));
-		ftFlowSpecialResponse.setName(_ctx.stringValue("FtFlowSpecialResponse.Name"));
+		rpcDataUploadAndDownloadResponse.setRequestId(_ctx.stringValue("RpcDataUploadAndDownloadResponse.RequestId"));
 	 
-	 	return ftFlowSpecialResponse;
+	 	return rpcDataUploadAndDownloadResponse;
 	}
 }

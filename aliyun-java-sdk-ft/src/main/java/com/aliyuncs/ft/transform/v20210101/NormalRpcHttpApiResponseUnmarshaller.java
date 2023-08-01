@@ -12,19 +12,18 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.ft.transform.v20180713;
+package com.aliyuncs.ft.transform.v20210101;
 
-import com.aliyuncs.ft.model.v20180713.FtDynamicAddressHttpVpcResponse;
+import com.aliyuncs.ft.model.v20210101.NormalRpcHttpApiResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class FtDynamicAddressHttpVpcResponseUnmarshaller {
+public class NormalRpcHttpApiResponseUnmarshaller {
 
-	public static FtDynamicAddressHttpVpcResponse unmarshall(FtDynamicAddressHttpVpcResponse ftDynamicAddressHttpVpcResponse, UnmarshallerContext _ctx) {
+	public static NormalRpcHttpApiResponse unmarshall(NormalRpcHttpApiResponse normalRpcHttpApiResponse, UnmarshallerContext _ctx) {
 		
-		ftDynamicAddressHttpVpcResponse.setParams(_ctx.stringValue("FtDynamicAddressHttpVpcResponse.Params"));
-		ftDynamicAddressHttpVpcResponse.setServiceRpcSign(_ctx.stringValue("FtDynamicAddressHttpVpcResponse.ServiceRpcSign"));
+		normalRpcHttpApiResponse.setRequestId(_ctx.stringValue("NormalRpcHttpApiResponse.RequestId"));
 	 
-	 	return ftDynamicAddressHttpVpcResponse;
+	 	return normalRpcHttpApiResponse;
 	}
 }
