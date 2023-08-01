@@ -257,6 +257,8 @@ public class DescribeInstanceHistoryEventsResponse extends AcsResponse {
 
 			private String canAccept;
 
+			private String responseResult;
+
 			private List<InactiveDisk> inactiveDisks;
 
 			private List<String> migrationOptions;
@@ -347,6 +349,14 @@ public class DescribeInstanceHistoryEventsResponse extends AcsResponse {
 
 			public void setCanAccept(String canAccept) {
 				this.canAccept = canAccept;
+			}
+
+			public String getResponseResult() {
+				return this.responseResult;
+			}
+
+			public void setResponseResult(String responseResult) {
+				this.responseResult = responseResult;
 			}
 
 			public List<InactiveDisk> getInactiveDisks() {

@@ -253,6 +253,8 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 
 			private String systemDiskEncrypted;
 
+			private Boolean deletionProtection;
+
 			private List<DataDisk> dataDisks;
 
 			private List<NetworkInterface> networkInterfaces;
@@ -595,6 +597,14 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 
 			public void setSystemDiskEncrypted(String systemDiskEncrypted) {
 				this.systemDiskEncrypted = systemDiskEncrypted;
+			}
+
+			public Boolean getDeletionProtection() {
+				return this.deletionProtection;
+			}
+
+			public void setDeletionProtection(Boolean deletionProtection) {
+				this.deletionProtection = deletionProtection;
 			}
 
 			public List<DataDisk> getDataDisks() {
