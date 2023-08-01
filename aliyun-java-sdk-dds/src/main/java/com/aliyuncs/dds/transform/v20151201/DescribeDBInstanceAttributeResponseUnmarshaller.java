@@ -81,6 +81,7 @@ public class DescribeDBInstanceAttributeResponseUnmarshaller {
 			dBInstance.setDBInstanceOrderStatus(_ctx.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].DBInstanceOrderStatus"));
 			dBInstance.setEncrypted(_ctx.booleanValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].Encrypted"));
 			dBInstance.setEncryptionKey(_ctx.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].EncryptionKey"));
+			dBInstance.setSyncPercent(_ctx.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].SyncPercent"));
 
 			List<ReplicaSet> replicaSets = new ArrayList<ReplicaSet>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].ReplicaSets.Length"); j++) {

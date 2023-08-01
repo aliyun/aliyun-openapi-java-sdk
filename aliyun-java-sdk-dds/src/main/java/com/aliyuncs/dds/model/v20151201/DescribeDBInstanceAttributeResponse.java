@@ -135,6 +135,8 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		private String encryptionKey;
 
+		private String syncPercent;
+
 		private List<ReplicaSet> replicaSets;
 
 		private List<Tag> tags;
@@ -497,6 +499,14 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		public void setEncryptionKey(String encryptionKey) {
 			this.encryptionKey = encryptionKey;
+		}
+
+		public String getSyncPercent() {
+			return this.syncPercent;
+		}
+
+		public void setSyncPercent(String syncPercent) {
+			this.syncPercent = syncPercent;
 		}
 
 		public List<ReplicaSet> getReplicaSets() {

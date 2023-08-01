@@ -15,6 +15,7 @@
 package com.aliyuncs.dds.model.v20151201;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 
 /**
@@ -43,6 +44,8 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 	private String securityToken;
 
 	private String dBInstanceDescription;
+
+	private List<Tag> tags;
 
 	private String globalSecurityGroupIds;
 
@@ -210,6 +213,20 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		if(dBInstanceDescription != null){
 			putQueryParameter("DBInstanceDescription", dBInstanceDescription);
 		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
 	}
 
 	public String getGlobalSecurityGroupIds() {
@@ -506,6 +523,29 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.chargeType = chargeType;
 		if(chargeType != null){
 			putQueryParameter("ChargeType", chargeType);
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 
