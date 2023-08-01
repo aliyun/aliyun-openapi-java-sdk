@@ -193,17 +193,17 @@ public class GetApplicationResponse extends AcsResponse {
 
 			private String instanceName;
 
-			private Float originalPrice;
+			private Double originalPrice;
 
-			private Float onePrice;
+			private Double onePrice;
 
-			private Float period;
+			private Integer period;
 
-			private Long count;
+			private Integer count;
 
 			private String priceUnit;
 
-			private Float price;
+			private Double price;
 
 			private String chargeType;
 
@@ -233,35 +233,35 @@ public class GetApplicationResponse extends AcsResponse {
 				this.instanceName = instanceName;
 			}
 
-			public Float getOriginalPrice() {
+			public Double getOriginalPrice() {
 				return this.originalPrice;
 			}
 
-			public void setOriginalPrice(Float originalPrice) {
+			public void setOriginalPrice(Double originalPrice) {
 				this.originalPrice = originalPrice;
 			}
 
-			public Float getOnePrice() {
+			public Double getOnePrice() {
 				return this.onePrice;
 			}
 
-			public void setOnePrice(Float onePrice) {
+			public void setOnePrice(Double onePrice) {
 				this.onePrice = onePrice;
 			}
 
-			public Float getPeriod() {
+			public Integer getPeriod() {
 				return this.period;
 			}
 
-			public void setPeriod(Float period) {
+			public void setPeriod(Integer period) {
 				this.period = period;
 			}
 
-			public Long getCount() {
+			public Integer getCount() {
 				return this.count;
 			}
 
-			public void setCount(Long count) {
+			public void setCount(Integer count) {
 				this.count = count;
 			}
 
@@ -273,11 +273,11 @@ public class GetApplicationResponse extends AcsResponse {
 				this.priceUnit = priceUnit;
 			}
 
-			public Float getPrice() {
+			public Double getPrice() {
 				return this.price;
 			}
 
-			public void setPrice(Float price) {
+			public void setPrice(Double price) {
 				this.price = price;
 			}
 

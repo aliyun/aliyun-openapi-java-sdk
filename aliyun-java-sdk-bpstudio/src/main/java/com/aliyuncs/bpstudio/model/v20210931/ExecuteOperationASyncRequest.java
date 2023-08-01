@@ -30,6 +30,8 @@ public class ExecuteOperationASyncRequest extends RpcAcsRequest<ExecuteOperation
 
 	private String attributes;
 
+	private String applicationId;
+
 	private String operation;
 	public ExecuteOperationASyncRequest() {
 		super("BPStudio", "2021-09-31", "ExecuteOperationASync", "bpstudio");
@@ -66,6 +68,17 @@ public class ExecuteOperationASyncRequest extends RpcAcsRequest<ExecuteOperation
 		this.attributes = attributes;
 		if(attributes != null){
 			putBodyParameter("Attributes", attributes);
+		}
+	}
+
+	public String getApplicationId() {
+		return this.applicationId;
+	}
+
+	public void setApplicationId(String applicationId) {
+		this.applicationId = applicationId;
+		if(applicationId != null){
+			putBodyParameter("ApplicationId", applicationId);
 		}
 	}
 

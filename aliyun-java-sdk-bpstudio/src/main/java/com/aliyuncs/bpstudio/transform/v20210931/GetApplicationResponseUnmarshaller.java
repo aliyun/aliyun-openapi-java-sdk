@@ -49,12 +49,12 @@ public class GetApplicationResponseUnmarshaller {
 			Item item = new Item();
 			item.setResourceCode(_ctx.stringValue("GetApplicationResponse.Data.PriceList["+ i +"].ResourceCode"));
 			item.setInstanceName(_ctx.stringValue("GetApplicationResponse.Data.PriceList["+ i +"].InstanceName"));
-			item.setOriginalPrice(_ctx.floatValue("GetApplicationResponse.Data.PriceList["+ i +"].OriginalPrice"));
-			item.setOnePrice(_ctx.floatValue("GetApplicationResponse.Data.PriceList["+ i +"].OnePrice"));
-			item.setPeriod(_ctx.floatValue("GetApplicationResponse.Data.PriceList["+ i +"].Period"));
-			item.setCount(_ctx.longValue("GetApplicationResponse.Data.PriceList["+ i +"].Count"));
+			item.setOriginalPrice(_ctx.doubleValue("GetApplicationResponse.Data.PriceList["+ i +"].OriginalPrice"));
+			item.setOnePrice(_ctx.doubleValue("GetApplicationResponse.Data.PriceList["+ i +"].OnePrice"));
+			item.setPeriod(_ctx.integerValue("GetApplicationResponse.Data.PriceList["+ i +"].Period"));
+			item.setCount(_ctx.integerValue("GetApplicationResponse.Data.PriceList["+ i +"].Count"));
 			item.setPriceUnit(_ctx.stringValue("GetApplicationResponse.Data.PriceList["+ i +"].PriceUnit"));
-			item.setPrice(_ctx.floatValue("GetApplicationResponse.Data.PriceList["+ i +"].Price"));
+			item.setPrice(_ctx.doubleValue("GetApplicationResponse.Data.PriceList["+ i +"].Price"));
 			item.setChargeType(_ctx.stringValue("GetApplicationResponse.Data.PriceList["+ i +"].ChargeType"));
 			item.setRegion(_ctx.stringValue("GetApplicationResponse.Data.PriceList["+ i +"].Region"));
 			item.setSpecification(_ctx.stringValue("GetApplicationResponse.Data.PriceList["+ i +"].Specification"));
