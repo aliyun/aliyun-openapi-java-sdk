@@ -68,6 +68,8 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 
 	private String hotStandbyCluster;
 
+	private String storagePayType;
+
 	private String zoneId;
 
 	private Boolean tDEStatus;
@@ -363,6 +365,17 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		this.hotStandbyCluster = hotStandbyCluster;
 		if(hotStandbyCluster != null){
 			putQueryParameter("HotStandbyCluster", hotStandbyCluster);
+		}
+	}
+
+	public String getStoragePayType() {
+		return this.storagePayType;
+	}
+
+	public void setStoragePayType(String storagePayType) {
+		this.storagePayType = storagePayType;
+		if(storagePayType != null){
+			putQueryParameter("StoragePayType", storagePayType);
 		}
 	}
 
