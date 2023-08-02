@@ -22,30 +22,19 @@ import com.aliyuncs.gpdb.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeDBInstanceNetInfoRequest extends RpcAcsRequest<DescribeDBInstanceNetInfoResponse> {
+public class DescribeDataReDistributeInfoRequest extends RpcAcsRequest<DescribeDataReDistributeInfoResponse> {
 	   
 
-	private String connectionString;
-
 	private String dBInstanceId;
-	public DescribeDBInstanceNetInfoRequest() {
-		super("gpdb", "2016-05-03", "DescribeDBInstanceNetInfo");
+
+	private Long ownerId;
+	public DescribeDataReDistributeInfoRequest() {
+		super("gpdb", "2016-05-03", "DescribeDataReDistributeInfo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getConnectionString() {
-		return this.connectionString;
-	}
-
-	public void setConnectionString(String connectionString) {
-		this.connectionString = connectionString;
-		if(connectionString != null){
-			putQueryParameter("ConnectionString", connectionString);
-		}
 	}
 
 	public String getDBInstanceId() {
@@ -59,9 +48,20 @@ public class DescribeDBInstanceNetInfoRequest extends RpcAcsRequest<DescribeDBIn
 		}
 	}
 
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
 	@Override
-	public Class<DescribeDBInstanceNetInfoResponse> getResponseClass() {
-		return DescribeDBInstanceNetInfoResponse.class;
+	public Class<DescribeDataReDistributeInfoResponse> getResponseClass() {
+		return DescribeDataReDistributeInfoResponse.class;
 	}
 
 }

@@ -20,6 +20,9 @@ import com.aliyuncs.gpdb.model.v20160503.DescribeHealthStatusResponse.Status.Adb
 import com.aliyuncs.gpdb.model.v20160503.DescribeHealthStatusResponse.Status.Adbpg_connection_status;
 import com.aliyuncs.gpdb.model.v20160503.DescribeHealthStatusResponse.Status.Adbpg_disk_status;
 import com.aliyuncs.gpdb.model.v20160503.DescribeHealthStatusResponse.Status.Adbpg_disk_usage_percent;
+import com.aliyuncs.gpdb.model.v20160503.DescribeHealthStatusResponse.Status.Adbpg_instance_cold_data_gb;
+import com.aliyuncs.gpdb.model.v20160503.DescribeHealthStatusResponse.Status.Adbpg_instance_hot_data_gb;
+import com.aliyuncs.gpdb.model.v20160503.DescribeHealthStatusResponse.Status.Adbpg_instance_total_data_gb;
 import com.aliyuncs.gpdb.model.v20160503.DescribeHealthStatusResponse.Status.Adbpg_master_disk_usage_percent_max;
 import com.aliyuncs.gpdb.model.v20160503.DescribeHealthStatusResponse.Status.Adbpg_master_status;
 import com.aliyuncs.gpdb.model.v20160503.DescribeHealthStatusResponse.Status.Adbpg_segment_status;
@@ -99,6 +102,18 @@ public class DescribeHealthStatusResponseUnmarshaller {
 		adbpg_segment_status.setStatus(_ctx.stringValue("DescribeHealthStatusResponse.Status.adbpg_segment_status.Status"));
 		adbpg_segment_status.setValue(_ctx.floatValue("DescribeHealthStatusResponse.Status.adbpg_segment_status.Value"));
 		status.setAdbpg_segment_status(adbpg_segment_status);
+
+		Adbpg_instance_total_data_gb adbpg_instance_total_data_gb = new Adbpg_instance_total_data_gb();
+		adbpg_instance_total_data_gb.setValue(_ctx.floatValue("DescribeHealthStatusResponse.Status.adbpg_instance_total_data_gb.Value"));
+		status.setAdbpg_instance_total_data_gb(adbpg_instance_total_data_gb);
+
+		Adbpg_instance_hot_data_gb adbpg_instance_hot_data_gb = new Adbpg_instance_hot_data_gb();
+		adbpg_instance_hot_data_gb.setValue(_ctx.floatValue("DescribeHealthStatusResponse.Status.adbpg_instance_hot_data_gb.Value"));
+		status.setAdbpg_instance_hot_data_gb(adbpg_instance_hot_data_gb);
+
+		Adbpg_instance_cold_data_gb adbpg_instance_cold_data_gb = new Adbpg_instance_cold_data_gb();
+		adbpg_instance_cold_data_gb.setValue(_ctx.floatValue("DescribeHealthStatusResponse.Status.adbpg_instance_cold_data_gb.Value"));
+		status.setAdbpg_instance_cold_data_gb(adbpg_instance_cold_data_gb);
 		describeHealthStatusResponse.setStatus(status);
 	 
 	 	return describeHealthStatusResponse;

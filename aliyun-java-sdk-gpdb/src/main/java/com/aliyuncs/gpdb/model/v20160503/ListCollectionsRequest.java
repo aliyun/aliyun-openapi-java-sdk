@@ -22,30 +22,23 @@ import com.aliyuncs.gpdb.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeDBInstanceNetInfoRequest extends RpcAcsRequest<DescribeDBInstanceNetInfoResponse> {
+public class ListCollectionsRequest extends RpcAcsRequest<ListCollectionsResponse> {
 	   
 
-	private String connectionString;
-
 	private String dBInstanceId;
-	public DescribeDBInstanceNetInfoRequest() {
-		super("gpdb", "2016-05-03", "DescribeDBInstanceNetInfo");
+
+	private Long ownerId;
+
+	private String namespacePassword;
+
+	private String namespace;
+	public ListCollectionsRequest() {
+		super("gpdb", "2016-05-03", "ListCollections");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getConnectionString() {
-		return this.connectionString;
-	}
-
-	public void setConnectionString(String connectionString) {
-		this.connectionString = connectionString;
-		if(connectionString != null){
-			putQueryParameter("ConnectionString", connectionString);
-		}
 	}
 
 	public String getDBInstanceId() {
@@ -59,9 +52,42 @@ public class DescribeDBInstanceNetInfoRequest extends RpcAcsRequest<DescribeDBIn
 		}
 	}
 
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getNamespacePassword() {
+		return this.namespacePassword;
+	}
+
+	public void setNamespacePassword(String namespacePassword) {
+		this.namespacePassword = namespacePassword;
+		if(namespacePassword != null){
+			putQueryParameter("NamespacePassword", namespacePassword);
+		}
+	}
+
+	public String getNamespace() {
+		return this.namespace;
+	}
+
+	public void setNamespace(String namespace) {
+		this.namespace = namespace;
+		if(namespace != null){
+			putQueryParameter("Namespace", namespace);
+		}
+	}
+
 	@Override
-	public Class<DescribeDBInstanceNetInfoResponse> getResponseClass() {
-		return DescribeDBInstanceNetInfoResponse.class;
+	public Class<ListCollectionsResponse> getResponseClass() {
+		return ListCollectionsResponse.class;
 	}
 
 }

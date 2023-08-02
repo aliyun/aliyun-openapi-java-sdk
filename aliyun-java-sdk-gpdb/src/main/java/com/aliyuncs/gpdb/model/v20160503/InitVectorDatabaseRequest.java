@@ -22,14 +22,18 @@ import com.aliyuncs.gpdb.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeDBInstanceNetInfoRequest extends RpcAcsRequest<DescribeDBInstanceNetInfoResponse> {
+public class InitVectorDatabaseRequest extends RpcAcsRequest<InitVectorDatabaseResponse> {
 	   
 
-	private String connectionString;
+	private String managerAccount;
 
 	private String dBInstanceId;
-	public DescribeDBInstanceNetInfoRequest() {
-		super("gpdb", "2016-05-03", "DescribeDBInstanceNetInfo");
+
+	private String managerAccountPassword;
+
+	private Long ownerId;
+	public InitVectorDatabaseRequest() {
+		super("gpdb", "2016-05-03", "InitVectorDatabase");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,14 +41,14 @@ public class DescribeDBInstanceNetInfoRequest extends RpcAcsRequest<DescribeDBIn
 		} catch (Exception e) {}
 	}
 
-	public String getConnectionString() {
-		return this.connectionString;
+	public String getManagerAccount() {
+		return this.managerAccount;
 	}
 
-	public void setConnectionString(String connectionString) {
-		this.connectionString = connectionString;
-		if(connectionString != null){
-			putQueryParameter("ConnectionString", connectionString);
+	public void setManagerAccount(String managerAccount) {
+		this.managerAccount = managerAccount;
+		if(managerAccount != null){
+			putQueryParameter("ManagerAccount", managerAccount);
 		}
 	}
 
@@ -59,9 +63,31 @@ public class DescribeDBInstanceNetInfoRequest extends RpcAcsRequest<DescribeDBIn
 		}
 	}
 
+	public String getManagerAccountPassword() {
+		return this.managerAccountPassword;
+	}
+
+	public void setManagerAccountPassword(String managerAccountPassword) {
+		this.managerAccountPassword = managerAccountPassword;
+		if(managerAccountPassword != null){
+			putQueryParameter("ManagerAccountPassword", managerAccountPassword);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
 	@Override
-	public Class<DescribeDBInstanceNetInfoResponse> getResponseClass() {
-		return DescribeDBInstanceNetInfoResponse.class;
+	public Class<InitVectorDatabaseResponse> getResponseClass() {
+		return InitVectorDatabaseResponse.class;
 	}
 
 }
