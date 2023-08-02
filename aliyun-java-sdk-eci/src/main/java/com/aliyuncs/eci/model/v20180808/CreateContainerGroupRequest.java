@@ -126,6 +126,20 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 
 	private List<AcrRegistryInfo> acrRegistryInfos;
 
+	private String fixedIp;
+
+	private Integer fixedIpRetainHour;
+
+	private String dataCacheBucket;
+
+	private String dataCachePL;
+
+	private Integer dataCacheProvisionedIops;
+
+	private Boolean dataCacheBurstingEnabled;
+
+	private Boolean dryRun;
+
     public Integer getEphemeralStorage() {
         return this.ephemeralStorage;
     }
@@ -929,6 +943,83 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 		this.activeDeadlineSeconds = activeDeadlineSeconds;
 		if (null != activeDeadlineSeconds) {
 			putQueryParameter("ActiveDeadlineSeconds", activeDeadlineSeconds);
+		}
+	}
+
+	public String getFixedIp() {
+		return fixedIp;
+	}
+
+	public void setFixedIp(String fixedIp) {
+		this.fixedIp = fixedIp;
+		if (null != fixedIp) {
+			putQueryParameter("FixedIp", fixedIp);
+		}
+	}
+
+	public Integer getFixedIpRetainHour() {
+		return fixedIpRetainHour;
+	}
+
+	public void setFixedIpRetainHour(Integer fixedIpRetainHour) {
+		this.fixedIpRetainHour = fixedIpRetainHour;
+		if (null != fixedIpRetainHour) {
+			putQueryParameter("FixedIpRetainHour", fixedIpRetainHour);
+		}
+	}
+
+	public String getDataCacheBucket() {
+		return dataCacheBucket;
+	}
+
+	public void setDataCacheBucket(String dataCacheBucket) {
+		this.dataCacheBucket = dataCacheBucket;
+		if (null != dataCacheBucket) {
+			putQueryParameter("DataCacheBucket", dataCacheBucket);
+		}
+	}
+
+	public String getDataCachePL() {
+		return dataCachePL;
+	}
+
+	public void setDataCachePL(String dataCachePL) {
+		this.dataCachePL = dataCachePL;
+		if (null != dataCachePL) {
+			putQueryParameter("DataCachePL", dataCachePL);
+		}
+	}
+
+	public Integer getDataCacheProvisionedIops() {
+		return dataCacheProvisionedIops;
+	}
+
+	public void setDataCacheProvisionedIops(Integer dataCacheProvisionedIops) {
+		this.dataCacheProvisionedIops = dataCacheProvisionedIops;
+		if (null != dataCacheProvisionedIops) {
+			putQueryParameter("DataCacheProvisionedIops", dataCacheProvisionedIops);
+		}
+	}
+
+	public Boolean getDataCacheBurstingEnabled() {
+		return dataCacheBurstingEnabled;
+	}
+
+	public void setDataCacheBurstingEnabled(Boolean dataCacheBurstingEnabled) {
+		this.dataCacheBurstingEnabled = dataCacheBurstingEnabled;
+		if (null != dataCacheBurstingEnabled){
+			putQueryParameter("DataCacheBurstingEnabled", dataCacheBurstingEnabled);
+		}
+	}
+
+	public Boolean getDryRun() {
+		return dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if (null != dryRun){
+			putQueryParameter("DryRun", dryRun);
 		}
 	}
 
