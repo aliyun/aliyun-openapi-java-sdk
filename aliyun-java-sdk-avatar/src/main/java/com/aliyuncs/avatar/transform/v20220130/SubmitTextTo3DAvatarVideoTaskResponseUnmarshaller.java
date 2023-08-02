@@ -24,9 +24,9 @@ public class SubmitTextTo3DAvatarVideoTaskResponseUnmarshaller {
 	public static SubmitTextTo3DAvatarVideoTaskResponse unmarshall(SubmitTextTo3DAvatarVideoTaskResponse submitTextTo3DAvatarVideoTaskResponse, UnmarshallerContext _ctx) {
 		
 		submitTextTo3DAvatarVideoTaskResponse.setRequestId(_ctx.stringValue("SubmitTextTo3DAvatarVideoTaskResponse.RequestId"));
+		submitTextTo3DAvatarVideoTaskResponse.setSuccess(_ctx.booleanValue("SubmitTextTo3DAvatarVideoTaskResponse.Success"));
 		submitTextTo3DAvatarVideoTaskResponse.setCode(_ctx.stringValue("SubmitTextTo3DAvatarVideoTaskResponse.Code"));
 		submitTextTo3DAvatarVideoTaskResponse.setMessage(_ctx.stringValue("SubmitTextTo3DAvatarVideoTaskResponse.Message"));
-		submitTextTo3DAvatarVideoTaskResponse.setSuccess(_ctx.booleanValue("SubmitTextTo3DAvatarVideoTaskResponse.Success"));
 
 		Data data = new Data();
 		data.setTaskUuid(_ctx.stringValue("SubmitTextTo3DAvatarVideoTaskResponse.Data.TaskUuid"));

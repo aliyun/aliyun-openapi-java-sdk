@@ -250,6 +250,9 @@ public class SubmitTextTo2DAvatarVideoTaskRequest extends RpcAcsRequest<SubmitTe
 		@SerializedName("IsSubtitles")
 		private Boolean isSubtitles;
 
+		@SerializedName("SubtitleEmbedded")
+		private Boolean subtitleEmbedded;
+
 		@SerializedName("Resolution")
 		private Integer resolution;
 
@@ -278,6 +281,14 @@ public class SubmitTextTo2DAvatarVideoTaskRequest extends RpcAcsRequest<SubmitTe
 
 		public void setIsSubtitles(Boolean isSubtitles) {
 			this.isSubtitles = isSubtitles;
+		}
+
+		public Boolean getSubtitleEmbedded() {
+			return this.subtitleEmbedded;
+		}
+
+		public void setSubtitleEmbedded(Boolean subtitleEmbedded) {
+			this.subtitleEmbedded = subtitleEmbedded;
 		}
 
 		public Integer getResolution() {

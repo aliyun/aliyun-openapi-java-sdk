@@ -140,6 +140,8 @@ public class GetVideoTaskInfoResponse extends AcsResponse {
 
 			private Integer videoDuration;
 
+			private String alphaUrl;
+
 			public String getVideoUrl() {
 				return this.videoUrl;
 			}
@@ -186,6 +188,14 @@ public class GetVideoTaskInfoResponse extends AcsResponse {
 
 			public void setVideoDuration(Integer videoDuration) {
 				this.videoDuration = videoDuration;
+			}
+
+			public String getAlphaUrl() {
+				return this.alphaUrl;
+			}
+
+			public void setAlphaUrl(String alphaUrl) {
+				this.alphaUrl = alphaUrl;
 			}
 		}
 	}

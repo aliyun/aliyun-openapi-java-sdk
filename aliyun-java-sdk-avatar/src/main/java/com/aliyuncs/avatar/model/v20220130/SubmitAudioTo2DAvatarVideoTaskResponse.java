@@ -26,11 +26,11 @@ public class SubmitAudioTo2DAvatarVideoTaskResponse extends AcsResponse {
 
 	private String requestId;
 
+	private Boolean success;
+
 	private String code;
 
 	private String message;
-
-	private String success;
 
 	private Data data;
 
@@ -40,6 +40,14 @@ public class SubmitAudioTo2DAvatarVideoTaskResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public String getCode() {
@@ -56,14 +64,6 @@ public class SubmitAudioTo2DAvatarVideoTaskResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
-	}
-
-	public String getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(String success) {
-		this.success = success;
 	}
 
 	public Data getData() {
