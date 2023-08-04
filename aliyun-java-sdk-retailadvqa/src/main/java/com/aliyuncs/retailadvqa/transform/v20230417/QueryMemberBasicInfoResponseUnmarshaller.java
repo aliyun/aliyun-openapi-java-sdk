@@ -25,10 +25,8 @@ public class QueryMemberBasicInfoResponseUnmarshaller {
 		
 		queryMemberBasicInfoResponse.setRequestId(_ctx.stringValue("QueryMemberBasicInfoResponse.RequestId"));
 		queryMemberBasicInfoResponse.setSuccess(_ctx.booleanValue("QueryMemberBasicInfoResponse.Success"));
-		queryMemberBasicInfoResponse.setHttpStatusCode(_ctx.stringValue("QueryMemberBasicInfoResponse.HttpStatusCode"));
 		queryMemberBasicInfoResponse.setErrorCode(_ctx.stringValue("QueryMemberBasicInfoResponse.ErrorCode"));
 		queryMemberBasicInfoResponse.setErrorMessage(_ctx.stringValue("QueryMemberBasicInfoResponse.ErrorMessage"));
-		queryMemberBasicInfoResponse.setMessage(_ctx.stringValue("QueryMemberBasicInfoResponse.Message"));
 
 		Data data = new Data();
 		data.setOpenMerchantId(_ctx.stringValue("QueryMemberBasicInfoResponse.Data.OpenMerchantId"));

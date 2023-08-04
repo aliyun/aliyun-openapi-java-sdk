@@ -28,13 +28,9 @@ public class QueryMemberBasicInfoResponse extends AcsResponse {
 
 	private Boolean success;
 
-	private String httpStatusCode;
-
 	private String errorCode;
 
 	private String errorMessage;
-
-	private String message;
 
 	private Data data;
 
@@ -54,14 +50,6 @@ public class QueryMemberBasicInfoResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
-
-	public void setHttpStatusCode(String httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
-	}
-
 	public String getErrorCode() {
 		return this.errorCode;
 	}
@@ -76,14 +64,6 @@ public class QueryMemberBasicInfoResponse extends AcsResponse {
 
 	public void setErrorMessage(String errorMessage) {
 		this.errorMessage = errorMessage;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
 	}
 
 	public Data getData() {

@@ -225,6 +225,9 @@ public class AddMemberBasicInfoRequest extends RpcAcsRequest<AddMemberBasicInfoR
 
 		public static class ChannelsItem {
 
+			@SerializedName("AppId")
+			private String appId;
+
 			@SerializedName("ChannelOpenId")
 			private String channelOpenId;
 
@@ -233,6 +236,14 @@ public class AddMemberBasicInfoRequest extends RpcAcsRequest<AddMemberBasicInfoR
 
 			@SerializedName("ChannelCode")
 			private String channelCode;
+
+			public String getAppId() {
+				return this.appId;
+			}
+
+			public void setAppId(String appId) {
+				this.appId = appId;
+			}
 
 			public String getChannelOpenId() {
 				return this.channelOpenId;
