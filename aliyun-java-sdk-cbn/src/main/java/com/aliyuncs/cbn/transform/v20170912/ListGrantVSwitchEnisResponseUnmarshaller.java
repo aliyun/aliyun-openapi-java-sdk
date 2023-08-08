@@ -28,6 +28,8 @@ public class ListGrantVSwitchEnisResponseUnmarshaller {
 		
 		listGrantVSwitchEnisResponse.setRequestId(_ctx.stringValue("ListGrantVSwitchEnisResponse.RequestId"));
 		listGrantVSwitchEnisResponse.setTotalCount(_ctx.stringValue("ListGrantVSwitchEnisResponse.TotalCount"));
+		listGrantVSwitchEnisResponse.setNextToken(_ctx.stringValue("ListGrantVSwitchEnisResponse.NextToken"));
+		listGrantVSwitchEnisResponse.setMaxResults(_ctx.longValue("ListGrantVSwitchEnisResponse.MaxResults"));
 
 		List<GrantVSwitchEni> grantVSwitchEnis = new ArrayList<GrantVSwitchEni>();
 		for (int i = 0; i < _ctx.lengthValue("ListGrantVSwitchEnisResponse.GrantVSwitchEnis.Length"); i++) {
@@ -37,6 +39,8 @@ public class ListGrantVSwitchEnisResponseUnmarshaller {
 			grantVSwitchEni.setNetworkInterfaceId(_ctx.stringValue("ListGrantVSwitchEnisResponse.GrantVSwitchEnis["+ i +"].NetworkInterfaceId"));
 			grantVSwitchEni.setDescription(_ctx.stringValue("ListGrantVSwitchEnisResponse.GrantVSwitchEnis["+ i +"].Description"));
 			grantVSwitchEni.setTransitRouterFlag(_ctx.booleanValue("ListGrantVSwitchEnisResponse.GrantVSwitchEnis["+ i +"].TransitRouterFlag"));
+			grantVSwitchEni.setNetworkInterfaceName(_ctx.stringValue("ListGrantVSwitchEnisResponse.GrantVSwitchEnis["+ i +"].NetworkInterfaceName"));
+			grantVSwitchEni.setPrimaryIpAddress(_ctx.stringValue("ListGrantVSwitchEnisResponse.GrantVSwitchEnis["+ i +"].PrimaryIpAddress"));
 
 			grantVSwitchEnis.add(grantVSwitchEni);
 		}

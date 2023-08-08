@@ -15,6 +15,7 @@
 package com.aliyuncs.cbn.model.v20170912;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cbn.Endpoint;
 
@@ -29,6 +30,10 @@ public class ListGrantVSwitchEnisRequest extends RpcAcsRequest<ListGrantVSwitchE
 
 	private String cenId;
 
+	private String nextToken;
+
+	private String networkInterfaceName;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -38,6 +43,12 @@ public class ListGrantVSwitchEnisRequest extends RpcAcsRequest<ListGrantVSwitchE
 	private String vSwitchId;
 
 	private String vpcId;
+
+	private Long maxResults;
+
+	private String primaryIpAddress;
+
+	private List<String> networkInterfaceId;
 	public ListGrantVSwitchEnisRequest() {
 		super("Cbn", "2017-09-12", "ListGrantVSwitchEnis");
 		setMethod(MethodType.POST);
@@ -66,6 +77,28 @@ public class ListGrantVSwitchEnisRequest extends RpcAcsRequest<ListGrantVSwitchE
 		this.cenId = cenId;
 		if(cenId != null){
 			putQueryParameter("CenId", cenId);
+		}
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
+		}
+	}
+
+	public String getNetworkInterfaceName() {
+		return this.networkInterfaceName;
+	}
+
+	public void setNetworkInterfaceName(String networkInterfaceName) {
+		this.networkInterfaceName = networkInterfaceName;
+		if(networkInterfaceName != null){
+			putQueryParameter("NetworkInterfaceName", networkInterfaceName);
 		}
 	}
 
@@ -122,6 +155,41 @@ public class ListGrantVSwitchEnisRequest extends RpcAcsRequest<ListGrantVSwitchE
 		if(vpcId != null){
 			putQueryParameter("VpcId", vpcId);
 		}
+	}
+
+	public Long getMaxResults() {
+		return this.maxResults;
+	}
+
+	public void setMaxResults(Long maxResults) {
+		this.maxResults = maxResults;
+		if(maxResults != null){
+			putQueryParameter("MaxResults", maxResults.toString());
+		}
+	}
+
+	public String getPrimaryIpAddress() {
+		return this.primaryIpAddress;
+	}
+
+	public void setPrimaryIpAddress(String primaryIpAddress) {
+		this.primaryIpAddress = primaryIpAddress;
+		if(primaryIpAddress != null){
+			putQueryParameter("PrimaryIpAddress", primaryIpAddress);
+		}
+	}
+
+	public List<String> getNetworkInterfaceId() {
+		return this.networkInterfaceId;
+	}
+
+	public void setNetworkInterfaceId(List<String> networkInterfaceId) {
+		this.networkInterfaceId = networkInterfaceId;	
+		if (networkInterfaceId != null) {
+			for (int depth1 = 0; depth1 < networkInterfaceId.size(); depth1++) {
+				putQueryParameter("NetworkInterfaceId." + (depth1 + 1) , networkInterfaceId.get(depth1));
+			}
+		}	
 	}
 
 	@Override
