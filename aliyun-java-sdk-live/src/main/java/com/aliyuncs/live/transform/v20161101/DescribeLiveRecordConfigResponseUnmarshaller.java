@@ -41,6 +41,7 @@ public class DescribeLiveRecordConfigResponseUnmarshaller {
 			liveAppRecord.setStartTime(_ctx.stringValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].StartTime"));
 			liveAppRecord.setAppName(_ctx.stringValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].AppName"));
 			liveAppRecord.setStreamName(_ctx.stringValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].StreamName"));
+			liveAppRecord.setDelayTime(_ctx.integerValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].DelayTime"));
 			liveAppRecord.setCreateTime(_ctx.stringValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].CreateTime"));
 			liveAppRecord.setOnDemond(_ctx.integerValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].OnDemond"));
 			liveAppRecord.setOssBucket(_ctx.stringValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].OssBucket"));

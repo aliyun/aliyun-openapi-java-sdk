@@ -25,39 +25,49 @@ import com.aliyuncs.live.Endpoint;
 public class AddCustomLiveStreamTranscodeRequest extends RpcAcsRequest<AddCustomLiveStreamTranscodeResponse> {
 	   
 
-	private String template;
+	private String resWithSource;
 
 	private String gop;
-
-	private String kmsKeyExpireInterval;
 
 	private String audioCodec;
 
 	private String kmsUID;
 
-	private String templateType;
-
-	private String audioProfile;
-
 	private Integer height;
 
 	private String app;
+
+	private Integer profile;
+
+	private Long ownerId;
+
+	private String extWithSource;
+
+	private String bitrateWithSource;
+
+	private String domain;
+
+	private String template;
+
+	private String lazy;
+
+	private String kmsKeyExpireInterval;
+
+	private String templateType;
+
+	private String audioProfile;
 
 	private String encryptParameters;
 
 	private Integer audioChannelNum;
 
-	private Integer profile;
-
 	private Integer fPS;
-
-	private Long ownerId;
 
 	private Integer audioRate;
 
-	private Integer audioBitrate;
+	private String fpsWithSource;
 
-	private String domain;
+	private Integer audioBitrate;
 
 	private Integer width;
 
@@ -73,14 +83,14 @@ public class AddCustomLiveStreamTranscodeRequest extends RpcAcsRequest<AddCustom
 		} catch (Exception e) {}
 	}
 
-	public String getTemplate() {
-		return this.template;
+	public String getResWithSource() {
+		return this.resWithSource;
 	}
 
-	public void setTemplate(String template) {
-		this.template = template;
-		if(template != null){
-			putQueryParameter("Template", template);
+	public void setResWithSource(String resWithSource) {
+		this.resWithSource = resWithSource;
+		if(resWithSource != null){
+			putQueryParameter("ResWithSource", resWithSource);
 		}
 	}
 
@@ -92,17 +102,6 @@ public class AddCustomLiveStreamTranscodeRequest extends RpcAcsRequest<AddCustom
 		this.gop = gop;
 		if(gop != null){
 			putQueryParameter("Gop", gop);
-		}
-	}
-
-	public String getKmsKeyExpireInterval() {
-		return this.kmsKeyExpireInterval;
-	}
-
-	public void setKmsKeyExpireInterval(String kmsKeyExpireInterval) {
-		this.kmsKeyExpireInterval = kmsKeyExpireInterval;
-		if(kmsKeyExpireInterval != null){
-			putQueryParameter("KmsKeyExpireInterval", kmsKeyExpireInterval);
 		}
 	}
 
@@ -128,28 +127,6 @@ public class AddCustomLiveStreamTranscodeRequest extends RpcAcsRequest<AddCustom
 		}
 	}
 
-	public String getTemplateType() {
-		return this.templateType;
-	}
-
-	public void setTemplateType(String templateType) {
-		this.templateType = templateType;
-		if(templateType != null){
-			putQueryParameter("TemplateType", templateType);
-		}
-	}
-
-	public String getAudioProfile() {
-		return this.audioProfile;
-	}
-
-	public void setAudioProfile(String audioProfile) {
-		this.audioProfile = audioProfile;
-		if(audioProfile != null){
-			putQueryParameter("AudioProfile", audioProfile);
-		}
-	}
-
 	public Integer getHeight() {
 		return this.height;
 	}
@@ -169,6 +146,116 @@ public class AddCustomLiveStreamTranscodeRequest extends RpcAcsRequest<AddCustom
 		this.app = app;
 		if(app != null){
 			putQueryParameter("App", app);
+		}
+	}
+
+	public Integer getProfile() {
+		return this.profile;
+	}
+
+	public void setProfile(Integer profile) {
+		this.profile = profile;
+		if(profile != null){
+			putQueryParameter("Profile", profile.toString());
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getExtWithSource() {
+		return this.extWithSource;
+	}
+
+	public void setExtWithSource(String extWithSource) {
+		this.extWithSource = extWithSource;
+		if(extWithSource != null){
+			putQueryParameter("ExtWithSource", extWithSource);
+		}
+	}
+
+	public String getBitrateWithSource() {
+		return this.bitrateWithSource;
+	}
+
+	public void setBitrateWithSource(String bitrateWithSource) {
+		this.bitrateWithSource = bitrateWithSource;
+		if(bitrateWithSource != null){
+			putQueryParameter("BitrateWithSource", bitrateWithSource);
+		}
+	}
+
+	public String getDomain() {
+		return this.domain;
+	}
+
+	public void setDomain(String domain) {
+		this.domain = domain;
+		if(domain != null){
+			putQueryParameter("Domain", domain);
+		}
+	}
+
+	public String getTemplate() {
+		return this.template;
+	}
+
+	public void setTemplate(String template) {
+		this.template = template;
+		if(template != null){
+			putQueryParameter("Template", template);
+		}
+	}
+
+	public String getLazy() {
+		return this.lazy;
+	}
+
+	public void setLazy(String lazy) {
+		this.lazy = lazy;
+		if(lazy != null){
+			putQueryParameter("Lazy", lazy);
+		}
+	}
+
+	public String getKmsKeyExpireInterval() {
+		return this.kmsKeyExpireInterval;
+	}
+
+	public void setKmsKeyExpireInterval(String kmsKeyExpireInterval) {
+		this.kmsKeyExpireInterval = kmsKeyExpireInterval;
+		if(kmsKeyExpireInterval != null){
+			putQueryParameter("KmsKeyExpireInterval", kmsKeyExpireInterval);
+		}
+	}
+
+	public String getTemplateType() {
+		return this.templateType;
+	}
+
+	public void setTemplateType(String templateType) {
+		this.templateType = templateType;
+		if(templateType != null){
+			putQueryParameter("TemplateType", templateType);
+		}
+	}
+
+	public String getAudioProfile() {
+		return this.audioProfile;
+	}
+
+	public void setAudioProfile(String audioProfile) {
+		this.audioProfile = audioProfile;
+		if(audioProfile != null){
+			putQueryParameter("AudioProfile", audioProfile);
 		}
 	}
 
@@ -194,17 +281,6 @@ public class AddCustomLiveStreamTranscodeRequest extends RpcAcsRequest<AddCustom
 		}
 	}
 
-	public Integer getProfile() {
-		return this.profile;
-	}
-
-	public void setProfile(Integer profile) {
-		this.profile = profile;
-		if(profile != null){
-			putQueryParameter("Profile", profile.toString());
-		}
-	}
-
 	public Integer getFPS() {
 		return this.fPS;
 	}
@@ -213,17 +289,6 @@ public class AddCustomLiveStreamTranscodeRequest extends RpcAcsRequest<AddCustom
 		this.fPS = fPS;
 		if(fPS != null){
 			putQueryParameter("FPS", fPS.toString());
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
@@ -238,6 +303,17 @@ public class AddCustomLiveStreamTranscodeRequest extends RpcAcsRequest<AddCustom
 		}
 	}
 
+	public String getFpsWithSource() {
+		return this.fpsWithSource;
+	}
+
+	public void setFpsWithSource(String fpsWithSource) {
+		this.fpsWithSource = fpsWithSource;
+		if(fpsWithSource != null){
+			putQueryParameter("FpsWithSource", fpsWithSource);
+		}
+	}
+
 	public Integer getAudioBitrate() {
 		return this.audioBitrate;
 	}
@@ -246,17 +322,6 @@ public class AddCustomLiveStreamTranscodeRequest extends RpcAcsRequest<AddCustom
 		this.audioBitrate = audioBitrate;
 		if(audioBitrate != null){
 			putQueryParameter("AudioBitrate", audioBitrate.toString());
-		}
-	}
-
-	public String getDomain() {
-		return this.domain;
-	}
-
-	public void setDomain(String domain) {
-		this.domain = domain;
-		if(domain != null){
-			putQueryParameter("Domain", domain);
 		}
 	}
 

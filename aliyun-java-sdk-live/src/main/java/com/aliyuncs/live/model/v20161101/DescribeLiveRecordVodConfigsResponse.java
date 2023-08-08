@@ -77,9 +77,13 @@ public class DescribeLiveRecordVodConfigsResponse extends AcsResponse {
 
 	public static class LiveRecordVodConfig {
 
+		private String storageLocation;
+
 		private String appName;
 
 		private String autoCompose;
+
+		private Integer onDemand;
 
 		private String streamName;
 
@@ -92,6 +96,14 @@ public class DescribeLiveRecordVodConfigsResponse extends AcsResponse {
 		private String domainName;
 
 		private String composeVodTranscodeGroupId;
+
+		public String getStorageLocation() {
+			return this.storageLocation;
+		}
+
+		public void setStorageLocation(String storageLocation) {
+			this.storageLocation = storageLocation;
+		}
 
 		public String getAppName() {
 			return this.appName;
@@ -107,6 +119,14 @@ public class DescribeLiveRecordVodConfigsResponse extends AcsResponse {
 
 		public void setAutoCompose(String autoCompose) {
 			this.autoCompose = autoCompose;
+		}
+
+		public Integer getOnDemand() {
+			return this.onDemand;
+		}
+
+		public void setOnDemand(Integer onDemand) {
+			this.onDemand = onDemand;
 		}
 
 		public String getStreamName() {

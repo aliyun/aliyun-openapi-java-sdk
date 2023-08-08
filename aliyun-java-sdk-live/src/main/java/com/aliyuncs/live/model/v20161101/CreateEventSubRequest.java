@@ -30,6 +30,8 @@ public class CreateEventSubRequest extends RpcAcsRequest<CreateEventSubResponse>
 
 	private String clientToken;
 
+	private Boolean needCallbackAuthorization;
+
 	private List<String> userss;
 
 	private String appId;
@@ -67,6 +69,17 @@ public class CreateEventSubRequest extends RpcAcsRequest<CreateEventSubResponse>
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public Boolean getNeedCallbackAuthorization() {
+		return this.needCallbackAuthorization;
+	}
+
+	public void setNeedCallbackAuthorization(Boolean needCallbackAuthorization) {
+		this.needCallbackAuthorization = needCallbackAuthorization;
+		if(needCallbackAuthorization != null){
+			putQueryParameter("NeedCallbackAuthorization", needCallbackAuthorization.toString());
 		}
 	}
 

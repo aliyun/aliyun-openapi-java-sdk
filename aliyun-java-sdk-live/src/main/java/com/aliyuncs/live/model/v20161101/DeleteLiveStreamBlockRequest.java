@@ -22,16 +22,18 @@ import com.aliyuncs.live.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeLiveStreamTranscodeInfoRequest extends RpcAcsRequest<DescribeLiveStreamTranscodeInfoResponse> {
+public class DeleteLiveStreamBlockRequest extends RpcAcsRequest<DeleteLiveStreamBlockResponse> {
 	   
 
 	private String appName;
 
-	private Long ownerId;
+	private String streamName;
 
-	private String domainTranscodeName;
-	public DescribeLiveStreamTranscodeInfoRequest() {
-		super("live", "2016-11-01", "DescribeLiveStreamTranscodeInfo", "live");
+	private String domainName;
+
+	private Long ownerId;
+	public DeleteLiveStreamBlockRequest() {
+		super("live", "2016-11-01", "DeleteLiveStreamBlock", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -50,6 +52,28 @@ public class DescribeLiveStreamTranscodeInfoRequest extends RpcAcsRequest<Descri
 		}
 	}
 
+	public String getStreamName() {
+		return this.streamName;
+	}
+
+	public void setStreamName(String streamName) {
+		this.streamName = streamName;
+		if(streamName != null){
+			putQueryParameter("StreamName", streamName);
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -61,20 +85,9 @@ public class DescribeLiveStreamTranscodeInfoRequest extends RpcAcsRequest<Descri
 		}
 	}
 
-	public String getDomainTranscodeName() {
-		return this.domainTranscodeName;
-	}
-
-	public void setDomainTranscodeName(String domainTranscodeName) {
-		this.domainTranscodeName = domainTranscodeName;
-		if(domainTranscodeName != null){
-			putQueryParameter("DomainTranscodeName", domainTranscodeName);
-		}
-	}
-
 	@Override
-	public Class<DescribeLiveStreamTranscodeInfoResponse> getResponseClass() {
-		return DescribeLiveStreamTranscodeInfoResponse.class;
+	public Class<DeleteLiveStreamBlockResponse> getResponseClass() {
+		return DeleteLiveStreamBlockResponse.class;
 	}
 
 }

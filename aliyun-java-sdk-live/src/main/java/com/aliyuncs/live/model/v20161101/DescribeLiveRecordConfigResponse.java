@@ -105,6 +105,8 @@ public class DescribeLiveRecordConfigResponse extends AcsResponse {
 
 		private String streamName;
 
+		private Integer delayTime;
+
 		private String createTime;
 
 		private Integer onDemond;
@@ -151,6 +153,14 @@ public class DescribeLiveRecordConfigResponse extends AcsResponse {
 
 		public void setStreamName(String streamName) {
 			this.streamName = streamName;
+		}
+
+		public Integer getDelayTime() {
+			return this.delayTime;
+		}
+
+		public void setDelayTime(Integer delayTime) {
+			this.delayTime = delayTime;
 		}
 
 		public String getCreateTime() {

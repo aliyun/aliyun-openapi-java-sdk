@@ -15,6 +15,7 @@
 package com.aliyuncs.live.model.v20161101;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.live.transform.v20161101.DescribeLiveStreamTranscodeInfoResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -109,33 +110,49 @@ public class DescribeLiveStreamTranscodeInfoResponse extends AcsResponse {
 
 		public static class CustomTranscodeParameters {
 
+			private Map<Object,Object> bitrateWithSource;
+
 			private String videoProfile;
 
 			private Integer audioBitrate;
 
-			private String rtsFlag;
-
 			private Integer height;
+
+			private String rtsFlag;
 
 			private String templateType;
 
 			private String bframes;
 
+			private Map<Object,Object> extWithSource;
+
 			private Integer audioRate;
 
-			private Integer fPS;
+			private Map<Object,Object> fpsWithSource;
 
 			private String audioCodec;
 
+			private Integer fPS;
+
 			private String gop;
 
-			private Integer videoBitrate;
-
 			private Integer width;
+
+			private Integer videoBitrate;
 
 			private Integer audioChannelNum;
 
 			private String audioProfile;
+
+			private Map<Object,Object> resWithSource;
+
+			public Map<Object,Object> getBitrateWithSource() {
+				return this.bitrateWithSource;
+			}
+
+			public void setBitrateWithSource(Map<Object,Object> bitrateWithSource) {
+				this.bitrateWithSource = bitrateWithSource;
+			}
 
 			public String getVideoProfile() {
 				return this.videoProfile;
@@ -153,20 +170,20 @@ public class DescribeLiveStreamTranscodeInfoResponse extends AcsResponse {
 				this.audioBitrate = audioBitrate;
 			}
 
-			public String getRtsFlag() {
-				return this.rtsFlag;
-			}
-
-			public void setRtsFlag(String rtsFlag) {
-				this.rtsFlag = rtsFlag;
-			}
-
 			public Integer getHeight() {
 				return this.height;
 			}
 
 			public void setHeight(Integer height) {
 				this.height = height;
+			}
+
+			public String getRtsFlag() {
+				return this.rtsFlag;
+			}
+
+			public void setRtsFlag(String rtsFlag) {
+				this.rtsFlag = rtsFlag;
 			}
 
 			public String getTemplateType() {
@@ -185,6 +202,14 @@ public class DescribeLiveStreamTranscodeInfoResponse extends AcsResponse {
 				this.bframes = bframes;
 			}
 
+			public Map<Object,Object> getExtWithSource() {
+				return this.extWithSource;
+			}
+
+			public void setExtWithSource(Map<Object,Object> extWithSource) {
+				this.extWithSource = extWithSource;
+			}
+
 			public Integer getAudioRate() {
 				return this.audioRate;
 			}
@@ -193,12 +218,12 @@ public class DescribeLiveStreamTranscodeInfoResponse extends AcsResponse {
 				this.audioRate = audioRate;
 			}
 
-			public Integer getFPS() {
-				return this.fPS;
+			public Map<Object,Object> getFpsWithSource() {
+				return this.fpsWithSource;
 			}
 
-			public void setFPS(Integer fPS) {
-				this.fPS = fPS;
+			public void setFpsWithSource(Map<Object,Object> fpsWithSource) {
+				this.fpsWithSource = fpsWithSource;
 			}
 
 			public String getAudioCodec() {
@@ -209,6 +234,14 @@ public class DescribeLiveStreamTranscodeInfoResponse extends AcsResponse {
 				this.audioCodec = audioCodec;
 			}
 
+			public Integer getFPS() {
+				return this.fPS;
+			}
+
+			public void setFPS(Integer fPS) {
+				this.fPS = fPS;
+			}
+
 			public String getGop() {
 				return this.gop;
 			}
@@ -217,20 +250,20 @@ public class DescribeLiveStreamTranscodeInfoResponse extends AcsResponse {
 				this.gop = gop;
 			}
 
-			public Integer getVideoBitrate() {
-				return this.videoBitrate;
-			}
-
-			public void setVideoBitrate(Integer videoBitrate) {
-				this.videoBitrate = videoBitrate;
-			}
-
 			public Integer getWidth() {
 				return this.width;
 			}
 
 			public void setWidth(Integer width) {
 				this.width = width;
+			}
+
+			public Integer getVideoBitrate() {
+				return this.videoBitrate;
+			}
+
+			public void setVideoBitrate(Integer videoBitrate) {
+				this.videoBitrate = videoBitrate;
 			}
 
 			public Integer getAudioChannelNum() {
@@ -247,6 +280,14 @@ public class DescribeLiveStreamTranscodeInfoResponse extends AcsResponse {
 
 			public void setAudioProfile(String audioProfile) {
 				this.audioProfile = audioProfile;
+			}
+
+			public Map<Object,Object> getResWithSource() {
+				return this.resWithSource;
+			}
+
+			public void setResWithSource(Map<Object,Object> resWithSource) {
+				this.resWithSource = resWithSource;
 			}
 		}
 

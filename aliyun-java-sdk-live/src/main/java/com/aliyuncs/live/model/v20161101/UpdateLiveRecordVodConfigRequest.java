@@ -22,14 +22,12 @@ import com.aliyuncs.live.Endpoint;
  * @author auto create
  * @version 
  */
-public class AddLiveRecordVodConfigRequest extends RpcAcsRequest<AddLiveRecordVodConfigResponse> {
+public class UpdateLiveRecordVodConfigRequest extends RpcAcsRequest<UpdateLiveRecordVodConfigResponse> {
 	   
 
 	private String autoCompose;
 
 	private String composeVodTranscodeGroupId;
-
-	private String storageLocation;
 
 	private String appName;
 
@@ -44,8 +42,8 @@ public class AddLiveRecordVodConfigRequest extends RpcAcsRequest<AddLiveRecordVo
 	private Integer cycleDuration;
 
 	private Long ownerId;
-	public AddLiveRecordVodConfigRequest() {
-		super("live", "2016-11-01", "AddLiveRecordVodConfig", "live");
+	public UpdateLiveRecordVodConfigRequest() {
+		super("live", "2016-11-01", "UpdateLiveRecordVodConfig", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -72,17 +70,6 @@ public class AddLiveRecordVodConfigRequest extends RpcAcsRequest<AddLiveRecordVo
 		this.composeVodTranscodeGroupId = composeVodTranscodeGroupId;
 		if(composeVodTranscodeGroupId != null){
 			putQueryParameter("ComposeVodTranscodeGroupId", composeVodTranscodeGroupId);
-		}
-	}
-
-	public String getStorageLocation() {
-		return this.storageLocation;
-	}
-
-	public void setStorageLocation(String storageLocation) {
-		this.storageLocation = storageLocation;
-		if(storageLocation != null){
-			putQueryParameter("StorageLocation", storageLocation);
 		}
 	}
 
@@ -164,8 +151,8 @@ public class AddLiveRecordVodConfigRequest extends RpcAcsRequest<AddLiveRecordVo
 	}
 
 	@Override
-	public Class<AddLiveRecordVodConfigResponse> getResponseClass() {
-		return AddLiveRecordVodConfigResponse.class;
+	public Class<UpdateLiveRecordVodConfigResponse> getResponseClass() {
+		return UpdateLiveRecordVodConfigResponse.class;
 	}
 
 }

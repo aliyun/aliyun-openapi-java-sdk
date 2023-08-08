@@ -21,6 +21,7 @@ import com.aliyuncs.live.model.v20161101.DescribeLiveStreamTranscodeInfoResponse
 import com.aliyuncs.live.model.v20161101.DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeInfo;
 import com.aliyuncs.live.model.v20161101.DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeInfo.CustomTranscodeParameters;
 import com.aliyuncs.live.model.v20161101.DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeInfo.EncryptParameters;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -39,20 +40,24 @@ public class DescribeLiveStreamTranscodeInfoResponseUnmarshaller {
 			domainTranscodeInfo.setTranscodeName(_ctx.stringValue("DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeList["+ i +"].TranscodeName"));
 
 			CustomTranscodeParameters customTranscodeParameters = new CustomTranscodeParameters();
+			customTranscodeParameters.setBitrateWithSource(_ctx.mapValue("DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeList["+ i +"].CustomTranscodeParameters.BitrateWithSource"));
 			customTranscodeParameters.setVideoProfile(_ctx.stringValue("DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeList["+ i +"].CustomTranscodeParameters.VideoProfile"));
 			customTranscodeParameters.setAudioBitrate(_ctx.integerValue("DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeList["+ i +"].CustomTranscodeParameters.AudioBitrate"));
-			customTranscodeParameters.setRtsFlag(_ctx.stringValue("DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeList["+ i +"].CustomTranscodeParameters.RtsFlag"));
 			customTranscodeParameters.setHeight(_ctx.integerValue("DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeList["+ i +"].CustomTranscodeParameters.Height"));
+			customTranscodeParameters.setRtsFlag(_ctx.stringValue("DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeList["+ i +"].CustomTranscodeParameters.RtsFlag"));
 			customTranscodeParameters.setTemplateType(_ctx.stringValue("DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeList["+ i +"].CustomTranscodeParameters.TemplateType"));
 			customTranscodeParameters.setBframes(_ctx.stringValue("DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeList["+ i +"].CustomTranscodeParameters.Bframes"));
+			customTranscodeParameters.setExtWithSource(_ctx.mapValue("DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeList["+ i +"].CustomTranscodeParameters.ExtWithSource"));
 			customTranscodeParameters.setAudioRate(_ctx.integerValue("DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeList["+ i +"].CustomTranscodeParameters.AudioRate"));
-			customTranscodeParameters.setFPS(_ctx.integerValue("DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeList["+ i +"].CustomTranscodeParameters.FPS"));
+			customTranscodeParameters.setFpsWithSource(_ctx.mapValue("DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeList["+ i +"].CustomTranscodeParameters.FpsWithSource"));
 			customTranscodeParameters.setAudioCodec(_ctx.stringValue("DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeList["+ i +"].CustomTranscodeParameters.AudioCodec"));
+			customTranscodeParameters.setFPS(_ctx.integerValue("DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeList["+ i +"].CustomTranscodeParameters.FPS"));
 			customTranscodeParameters.setGop(_ctx.stringValue("DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeList["+ i +"].CustomTranscodeParameters.Gop"));
-			customTranscodeParameters.setVideoBitrate(_ctx.integerValue("DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeList["+ i +"].CustomTranscodeParameters.VideoBitrate"));
 			customTranscodeParameters.setWidth(_ctx.integerValue("DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeList["+ i +"].CustomTranscodeParameters.Width"));
+			customTranscodeParameters.setVideoBitrate(_ctx.integerValue("DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeList["+ i +"].CustomTranscodeParameters.VideoBitrate"));
 			customTranscodeParameters.setAudioChannelNum(_ctx.integerValue("DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeList["+ i +"].CustomTranscodeParameters.AudioChannelNum"));
 			customTranscodeParameters.setAudioProfile(_ctx.stringValue("DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeList["+ i +"].CustomTranscodeParameters.AudioProfile"));
+			customTranscodeParameters.setResWithSource(_ctx.mapValue("DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeList["+ i +"].CustomTranscodeParameters.ResWithSource"));
 			domainTranscodeInfo.setCustomTranscodeParameters(customTranscodeParameters);
 
 			EncryptParameters encryptParameters = new EncryptParameters();

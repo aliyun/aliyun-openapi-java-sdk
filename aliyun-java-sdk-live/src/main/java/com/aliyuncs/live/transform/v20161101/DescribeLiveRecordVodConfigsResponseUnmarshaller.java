@@ -34,8 +34,10 @@ public class DescribeLiveRecordVodConfigsResponseUnmarshaller {
 		List<LiveRecordVodConfig> liveRecordVodConfigs = new ArrayList<LiveRecordVodConfig>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLiveRecordVodConfigsResponse.LiveRecordVodConfigs.Length"); i++) {
 			LiveRecordVodConfig liveRecordVodConfig = new LiveRecordVodConfig();
+			liveRecordVodConfig.setStorageLocation(_ctx.stringValue("DescribeLiveRecordVodConfigsResponse.LiveRecordVodConfigs["+ i +"].StorageLocation"));
 			liveRecordVodConfig.setAppName(_ctx.stringValue("DescribeLiveRecordVodConfigsResponse.LiveRecordVodConfigs["+ i +"].AppName"));
 			liveRecordVodConfig.setAutoCompose(_ctx.stringValue("DescribeLiveRecordVodConfigsResponse.LiveRecordVodConfigs["+ i +"].AutoCompose"));
+			liveRecordVodConfig.setOnDemand(_ctx.integerValue("DescribeLiveRecordVodConfigsResponse.LiveRecordVodConfigs["+ i +"].OnDemand"));
 			liveRecordVodConfig.setStreamName(_ctx.stringValue("DescribeLiveRecordVodConfigsResponse.LiveRecordVodConfigs["+ i +"].StreamName"));
 			liveRecordVodConfig.setCreateTime(_ctx.stringValue("DescribeLiveRecordVodConfigsResponse.LiveRecordVodConfigs["+ i +"].CreateTime"));
 			liveRecordVodConfig.setVodTranscodeGroupId(_ctx.stringValue("DescribeLiveRecordVodConfigsResponse.LiveRecordVodConfigs["+ i +"].VodTranscodeGroupId"));
