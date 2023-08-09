@@ -50,6 +50,8 @@ public class ListAggregateConfigRulesResponseUnmarshaller {
 			configRule.setAutomationType(_ctx.stringValue("ListAggregateConfigRulesResponse.ConfigRules.ConfigRuleList["+ i +"].AutomationType"));
 			configRule.setConfigRuleName(_ctx.stringValue("ListAggregateConfigRulesResponse.ConfigRules.ConfigRuleList["+ i +"].ConfigRuleName"));
 			configRule.setConfigRuleId(_ctx.stringValue("ListAggregateConfigRulesResponse.ConfigRules.ConfigRuleList["+ i +"].ConfigRuleId"));
+			configRule.setResourceTypesScope(_ctx.stringValue("ListAggregateConfigRulesResponse.ConfigRules.ConfigRuleList["+ i +"].ResourceTypesScope"));
+			configRule.setServiceChannel(_ctx.stringValue("ListAggregateConfigRulesResponse.ConfigRules.ConfigRuleList["+ i +"].ServiceChannel"));
 
 			Compliance compliance = new Compliance();
 			compliance.setComplianceType(_ctx.stringValue("ListAggregateConfigRulesResponse.ConfigRules.ConfigRuleList["+ i +"].Compliance.ComplianceType"));

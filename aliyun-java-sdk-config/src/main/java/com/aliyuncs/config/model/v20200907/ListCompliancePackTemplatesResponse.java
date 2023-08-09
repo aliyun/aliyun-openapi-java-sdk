@@ -207,6 +207,8 @@ public class ListCompliancePackTemplatesResponse extends AcsResponse {
 
 				private Boolean defaultEnable;
 
+				private String resourceTypesScope;
+
 				private List<ConfigRuleParametersItem> configRuleParameters;
 
 				public String getDescription() {
@@ -271,6 +273,14 @@ public class ListCompliancePackTemplatesResponse extends AcsResponse {
 
 				public void setDefaultEnable(Boolean defaultEnable) {
 					this.defaultEnable = defaultEnable;
+				}
+
+				public String getResourceTypesScope() {
+					return this.resourceTypesScope;
+				}
+
+				public void setResourceTypesScope(String resourceTypesScope) {
+					this.resourceTypesScope = resourceTypesScope;
 				}
 
 				public List<ConfigRuleParametersItem> getConfigRuleParameters() {

@@ -86,6 +86,8 @@ public class GetConfigRuleResponse extends AcsResponse {
 
 		private Long accountId;
 
+		private String serviceChannel;
+
 		private Source source;
 
 		private ManagedRule managedRule;
@@ -248,6 +250,14 @@ public class GetConfigRuleResponse extends AcsResponse {
 
 		public void setAccountId(Long accountId) {
 			this.accountId = accountId;
+		}
+
+		public String getServiceChannel() {
+			return this.serviceChannel;
+		}
+
+		public void setServiceChannel(String serviceChannel) {
+			this.serviceChannel = serviceChannel;
 		}
 
 		public Source getSource() {

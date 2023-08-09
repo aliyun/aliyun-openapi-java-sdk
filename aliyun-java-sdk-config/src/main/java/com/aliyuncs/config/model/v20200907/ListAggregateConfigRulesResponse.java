@@ -109,6 +109,10 @@ public class ListAggregateConfigRulesResponse extends AcsResponse {
 
 			private String configRuleId;
 
+			private String resourceTypesScope;
+
+			private String serviceChannel;
+
 			private List<Tag> tags;
 
 			private Compliance compliance;
@@ -193,6 +197,22 @@ public class ListAggregateConfigRulesResponse extends AcsResponse {
 
 			public void setConfigRuleId(String configRuleId) {
 				this.configRuleId = configRuleId;
+			}
+
+			public String getResourceTypesScope() {
+				return this.resourceTypesScope;
+			}
+
+			public void setResourceTypesScope(String resourceTypesScope) {
+				this.resourceTypesScope = resourceTypesScope;
+			}
+
+			public String getServiceChannel() {
+				return this.serviceChannel;
+			}
+
+			public void setServiceChannel(String serviceChannel) {
+				this.serviceChannel = serviceChannel;
 			}
 
 			public List<Tag> getTags() {

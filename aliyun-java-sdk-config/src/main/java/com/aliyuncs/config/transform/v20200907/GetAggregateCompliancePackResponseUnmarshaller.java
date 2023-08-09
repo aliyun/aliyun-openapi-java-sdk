@@ -58,6 +58,7 @@ public class GetAggregateCompliancePackResponseUnmarshaller {
 			configRulesItem.setConfigRuleId(_ctx.stringValue("GetAggregateCompliancePackResponse.CompliancePack.ConfigRules["+ i +"].ConfigRuleId"));
 			configRulesItem.setDescription(_ctx.stringValue("GetAggregateCompliancePackResponse.CompliancePack.ConfigRules["+ i +"].Description"));
 			configRulesItem.setRiskLevel(_ctx.integerValue("GetAggregateCompliancePackResponse.CompliancePack.ConfigRules["+ i +"].RiskLevel"));
+			configRulesItem.setResourceTypesScope(_ctx.stringValue("GetAggregateCompliancePackResponse.CompliancePack.ConfigRules["+ i +"].ResourceTypesScope"));
 
 			List<ConfigRuleParametersItem> configRuleParameters = new ArrayList<ConfigRuleParametersItem>();
 			for (int j = 0; j < _ctx.lengthValue("GetAggregateCompliancePackResponse.CompliancePack.ConfigRules["+ i +"].ConfigRuleParameters.Length"); j++) {

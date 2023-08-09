@@ -57,6 +57,7 @@ public class GetConfigRuleResponseUnmarshaller {
 		configRule.setConfigRuleTriggerTypes(_ctx.stringValue("GetConfigRuleResponse.ConfigRule.ConfigRuleTriggerTypes"));
 		configRule.setTagKeyLogicScope(_ctx.stringValue("GetConfigRuleResponse.ConfigRule.TagKeyLogicScope"));
 		configRule.setAccountId(_ctx.longValue("GetConfigRuleResponse.ConfigRule.AccountId"));
+		configRule.setServiceChannel(_ctx.stringValue("GetConfigRuleResponse.ConfigRule.ServiceChannel"));
 
 		Source source = new Source();
 		source.setOwner(_ctx.stringValue("GetConfigRuleResponse.ConfigRule.Source.Owner"));

@@ -159,6 +159,8 @@ public class GetCompliancePackResponse extends AcsResponse {
 
 			private Integer riskLevel;
 
+			private String resourceTypesScope;
+
 			private List<ConfigRuleParametersItem> configRuleParameters;
 
 			public String getManagedRuleIdentifier() {
@@ -199,6 +201,14 @@ public class GetCompliancePackResponse extends AcsResponse {
 
 			public void setRiskLevel(Integer riskLevel) {
 				this.riskLevel = riskLevel;
+			}
+
+			public String getResourceTypesScope() {
+				return this.resourceTypesScope;
+			}
+
+			public void setResourceTypesScope(String resourceTypesScope) {
+				this.resourceTypesScope = resourceTypesScope;
 			}
 
 			public List<ConfigRuleParametersItem> getConfigRuleParameters() {

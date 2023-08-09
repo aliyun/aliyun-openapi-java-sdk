@@ -60,6 +60,7 @@ public class GetAggregateConfigRuleResponseUnmarshaller {
 		configRule.setExcludeFolderIdsScope(_ctx.stringValue("GetAggregateConfigRuleResponse.ConfigRule.ExcludeFolderIdsScope"));
 		configRule.setExcludeAccountIdsScope(_ctx.stringValue("GetAggregateConfigRuleResponse.ConfigRule.ExcludeAccountIdsScope"));
 		configRule.setAccountId(_ctx.longValue("GetAggregateConfigRuleResponse.ConfigRule.AccountId"));
+		configRule.setServiceChannel(_ctx.stringValue("GetAggregateConfigRuleResponse.ConfigRule.ServiceChannel"));
 
 		Source source = new Source();
 		source.setOwner(_ctx.stringValue("GetAggregateConfigRuleResponse.ConfigRule.Source.Owner"));
