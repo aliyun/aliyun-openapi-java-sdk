@@ -28,6 +28,8 @@ public class MergeVideoFaceRequest extends RpcAcsRequest<MergeVideoFaceResponse>
 	private String referenceURL;
 
 	private String videoURL;
+
+	private Boolean addWatermark;
 	public MergeVideoFaceRequest() {
 		super("videoenhan", "2020-03-20", "MergeVideoFace", "videoenhan");
 		setMethod(MethodType.POST);
@@ -56,6 +58,17 @@ public class MergeVideoFaceRequest extends RpcAcsRequest<MergeVideoFaceResponse>
 		this.videoURL = videoURL;
 		if(videoURL != null){
 			putBodyParameter("VideoURL", videoURL);
+		}
+	}
+
+	public Boolean getAddWatermark() {
+		return this.addWatermark;
+	}
+
+	public void setAddWatermark(Boolean addWatermark) {
+		this.addWatermark = addWatermark;
+		if(addWatermark != null){
+			putBodyParameter("AddWatermark", addWatermark.toString());
 		}
 	}
 

@@ -31,6 +31,8 @@ public class MergeVideoModelFaceRequest extends RpcAcsRequest<MergeVideoModelFac
 	private List<MergeInfos> mergeInfoss;
 
 	private String templateId;
+
+	private Boolean addWatermark;
 	public MergeVideoModelFaceRequest() {
 		super("videoenhan", "2020-03-20", "MergeVideoModelFace", "videoenhan");
 		setMethod(MethodType.POST);
@@ -74,6 +76,17 @@ public class MergeVideoModelFaceRequest extends RpcAcsRequest<MergeVideoModelFac
 		this.templateId = templateId;
 		if(templateId != null){
 			putBodyParameter("TemplateId", templateId);
+		}
+	}
+
+	public Boolean getAddWatermark() {
+		return this.addWatermark;
+	}
+
+	public void setAddWatermark(Boolean addWatermark) {
+		this.addWatermark = addWatermark;
+		if(addWatermark != null){
+			putBodyParameter("AddWatermark", addWatermark.toString());
 		}
 	}
 
