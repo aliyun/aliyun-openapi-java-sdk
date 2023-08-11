@@ -36,6 +36,7 @@ public class RemoveClientIdFromOIDCProviderResponseUnmarshaller {
 		oIDCProvider.setClientIds(_ctx.stringValue("RemoveClientIdFromOIDCProviderResponse.OIDCProvider.ClientIds"));
 		oIDCProvider.setGmtCreate(_ctx.stringValue("RemoveClientIdFromOIDCProviderResponse.OIDCProvider.GmtCreate"));
 		oIDCProvider.setGmtModified(_ctx.stringValue("RemoveClientIdFromOIDCProviderResponse.OIDCProvider.GmtModified"));
+		oIDCProvider.setIssuanceLimitTime(_ctx.longValue("RemoveClientIdFromOIDCProviderResponse.OIDCProvider.IssuanceLimitTime"));
 		removeClientIdFromOIDCProviderResponse.setOIDCProvider(oIDCProvider);
 	 
 	 	return removeClientIdFromOIDCProviderResponse;

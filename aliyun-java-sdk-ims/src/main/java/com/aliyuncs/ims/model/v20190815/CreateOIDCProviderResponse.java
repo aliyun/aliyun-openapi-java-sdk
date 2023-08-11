@@ -66,6 +66,8 @@ public class CreateOIDCProviderResponse extends AcsResponse {
 
 		private String gmtModified;
 
+		private Long issuanceLimitTime;
+
 		public String getUpdateDate() {
 			return this.updateDate;
 		}
@@ -144,6 +146,14 @@ public class CreateOIDCProviderResponse extends AcsResponse {
 
 		public void setGmtModified(String gmtModified) {
 			this.gmtModified = gmtModified;
+		}
+
+		public Long getIssuanceLimitTime() {
+			return this.issuanceLimitTime;
+		}
+
+		public void setIssuanceLimitTime(Long issuanceLimitTime) {
+			this.issuanceLimitTime = issuanceLimitTime;
 		}
 	}
 

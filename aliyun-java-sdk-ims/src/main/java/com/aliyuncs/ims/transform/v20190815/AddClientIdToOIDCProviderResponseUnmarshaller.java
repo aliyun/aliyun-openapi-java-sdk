@@ -36,6 +36,7 @@ public class AddClientIdToOIDCProviderResponseUnmarshaller {
 		oIDCProvider.setClientIds(_ctx.stringValue("AddClientIdToOIDCProviderResponse.OIDCProvider.ClientIds"));
 		oIDCProvider.setGmtCreate(_ctx.stringValue("AddClientIdToOIDCProviderResponse.OIDCProvider.GmtCreate"));
 		oIDCProvider.setGmtModified(_ctx.stringValue("AddClientIdToOIDCProviderResponse.OIDCProvider.GmtModified"));
+		oIDCProvider.setIssuanceLimitTime(_ctx.longValue("AddClientIdToOIDCProviderResponse.OIDCProvider.IssuanceLimitTime"));
 		addClientIdToOIDCProviderResponse.setOIDCProvider(oIDCProvider);
 	 
 	 	return addClientIdToOIDCProviderResponse;

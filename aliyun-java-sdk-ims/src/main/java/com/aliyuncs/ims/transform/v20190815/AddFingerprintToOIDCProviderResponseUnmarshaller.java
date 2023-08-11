@@ -36,6 +36,7 @@ public class AddFingerprintToOIDCProviderResponseUnmarshaller {
 		oIDCProvider.setClientIds(_ctx.stringValue("AddFingerprintToOIDCProviderResponse.OIDCProvider.ClientIds"));
 		oIDCProvider.setGmtCreate(_ctx.stringValue("AddFingerprintToOIDCProviderResponse.OIDCProvider.GmtCreate"));
 		oIDCProvider.setGmtModified(_ctx.stringValue("AddFingerprintToOIDCProviderResponse.OIDCProvider.GmtModified"));
+		oIDCProvider.setIssuanceLimitTime(_ctx.longValue("AddFingerprintToOIDCProviderResponse.OIDCProvider.IssuanceLimitTime"));
 		addFingerprintToOIDCProviderResponse.setOIDCProvider(oIDCProvider);
 	 
 	 	return addFingerprintToOIDCProviderResponse;

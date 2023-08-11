@@ -25,6 +25,8 @@ import com.aliyuncs.ims.Endpoint;
 public class UpdateOIDCProviderRequest extends RpcAcsRequest<UpdateOIDCProviderResponse> {
 	   
 
+	private Long issuanceLimitTime;
+
 	private String oIDCProviderName;
 
 	private String clientIds;
@@ -37,6 +39,17 @@ public class UpdateOIDCProviderRequest extends RpcAcsRequest<UpdateOIDCProviderR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Long getIssuanceLimitTime() {
+		return this.issuanceLimitTime;
+	}
+
+	public void setIssuanceLimitTime(Long issuanceLimitTime) {
+		this.issuanceLimitTime = issuanceLimitTime;
+		if(issuanceLimitTime != null){
+			putQueryParameter("IssuanceLimitTime", issuanceLimitTime.toString());
+		}
 	}
 
 	public String getOIDCProviderName() {

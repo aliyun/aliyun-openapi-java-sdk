@@ -1,3 +1,13 @@
+2023-08-11 Version: 3.3.6
+- GetOIDCProvider api, add configuration of issuance limit time.
+- ListOIDCProviders api, add configuration of issuance limit time.
+- UpdateOIDCProvider api, add configuration of issuance limit time.
+- AddFingerprintToOIDCProvider api, add configuration of issuance limit time.
+- AddClientIdToOIDCProvider api, add configuration of issuance limit time.
+- RemoveFingerprintFromOIDCProvider api, add configuration of issuance limit time.
+- RemoveClientIdFromOIDCProvider api, add configuration of issuance limit time.
+- CreateOIDCProvider api,  add configuration of issuance limit time.
+
 2023-03-31 Version: 3.3.5
 - SetVerificationInfo api.
 - GetVerificationInfo api.

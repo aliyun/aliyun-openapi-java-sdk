@@ -43,6 +43,7 @@ public class ListOIDCProvidersResponseUnmarshaller {
 			oIDCProvider.setClientIds(_ctx.stringValue("ListOIDCProvidersResponse.OIDCProviders["+ i +"].ClientIds"));
 			oIDCProvider.setGmtCreate(_ctx.stringValue("ListOIDCProvidersResponse.OIDCProviders["+ i +"].GmtCreate"));
 			oIDCProvider.setGmtModified(_ctx.stringValue("ListOIDCProvidersResponse.OIDCProviders["+ i +"].GmtModified"));
+			oIDCProvider.setIssuanceLimitTime(_ctx.longValue("ListOIDCProvidersResponse.OIDCProviders["+ i +"].IssuanceLimitTime"));
 
 			oIDCProviders.add(oIDCProvider);
 		}

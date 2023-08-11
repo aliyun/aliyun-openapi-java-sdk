@@ -36,6 +36,7 @@ public class RemoveFingerprintFromOIDCProviderResponseUnmarshaller {
 		oIDCProvider.setClientIds(_ctx.stringValue("RemoveFingerprintFromOIDCProviderResponse.OIDCProvider.ClientIds"));
 		oIDCProvider.setGmtCreate(_ctx.stringValue("RemoveFingerprintFromOIDCProviderResponse.OIDCProvider.GmtCreate"));
 		oIDCProvider.setGmtModified(_ctx.stringValue("RemoveFingerprintFromOIDCProviderResponse.OIDCProvider.GmtModified"));
+		oIDCProvider.setIssuanceLimitTime(_ctx.longValue("RemoveFingerprintFromOIDCProviderResponse.OIDCProvider.IssuanceLimitTime"));
 		removeFingerprintFromOIDCProviderResponse.setOIDCProvider(oIDCProvider);
 	 
 	 	return removeFingerprintFromOIDCProviderResponse;
