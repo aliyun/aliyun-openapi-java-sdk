@@ -60,6 +60,7 @@ public class GetLindormInstanceResponseUnmarshaller {
 		getLindormInstanceResponse.setEnableMLCtrl(_ctx.booleanValue("GetLindormInstanceResponse.EnableMLCtrl"));
 		getLindormInstanceResponse.setEnableCdc(_ctx.booleanValue("GetLindormInstanceResponse.EnableCdc"));
 		getLindormInstanceResponse.setEnableStream(_ctx.booleanValue("GetLindormInstanceResponse.EnableStream"));
+		getLindormInstanceResponse.setEnableLTS(_ctx.booleanValue("GetLindormInstanceResponse.EnableLTS"));
 		getLindormInstanceResponse.setEnableShs(_ctx.booleanValue("GetLindormInstanceResponse.EnableShs"));
 		getLindormInstanceResponse.setEnableBlob(_ctx.booleanValue("GetLindormInstanceResponse.EnableBlob"));
 		getLindormInstanceResponse.setMaintainStartTime(_ctx.stringValue("GetLindormInstanceResponse.MaintainStartTime"));
@@ -82,6 +83,7 @@ public class GetLindormInstanceResponseUnmarshaller {
 		getLindormInstanceResponse.setLogSpec(_ctx.stringValue("GetLindormInstanceResponse.LogSpec"));
 		getLindormInstanceResponse.setLogNum(_ctx.integerValue("GetLindormInstanceResponse.LogNum"));
 		getLindormInstanceResponse.setLogSingleStorage(_ctx.integerValue("GetLindormInstanceResponse.LogSingleStorage"));
+		getLindormInstanceResponse.setArchVersion(_ctx.stringValue("GetLindormInstanceResponse.ArchVersion"));
 
 		List<Engine> engineList = new ArrayList<Engine>();
 		for (int i = 0; i < _ctx.lengthValue("GetLindormInstanceResponse.EngineList.Length"); i++) {

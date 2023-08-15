@@ -93,6 +93,8 @@ public class GetLindormInstanceResponse extends AcsResponse {
 
 	private Boolean enableStream;
 
+	private Boolean enableLTS;
+
 	private Boolean enableShs;
 
 	private Boolean enableBlob;
@@ -136,6 +138,8 @@ public class GetLindormInstanceResponse extends AcsResponse {
 	private Integer logNum;
 
 	private Integer logSingleStorage;
+
+	private String archVersion;
 
 	private List<Engine> engineList;
 
@@ -411,6 +415,14 @@ public class GetLindormInstanceResponse extends AcsResponse {
 		this.enableStream = enableStream;
 	}
 
+	public Boolean getEnableLTS() {
+		return this.enableLTS;
+	}
+
+	public void setEnableLTS(Boolean enableLTS) {
+		this.enableLTS = enableLTS;
+	}
+
 	public Boolean getEnableShs() {
 		return this.enableShs;
 	}
@@ -585,6 +597,14 @@ public class GetLindormInstanceResponse extends AcsResponse {
 
 	public void setLogSingleStorage(Integer logSingleStorage) {
 		this.logSingleStorage = logSingleStorage;
+	}
+
+	public String getArchVersion() {
+		return this.archVersion;
+	}
+
+	public void setArchVersion(String archVersion) {
+		this.archVersion = archVersion;
 	}
 
 	public List<Engine> getEngineList() {

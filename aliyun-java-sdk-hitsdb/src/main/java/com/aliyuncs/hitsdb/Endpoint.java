@@ -17,57 +17,7 @@ package com.aliyuncs.hitsdb;
 import java.util.HashMap;
 
 public class Endpoint {
-    public static HashMap<String, String> endpointMap = new HashMap<String, String>() {
-        {
-            put("cn-shanghai-internal-test-1", "hitsdb.aliyuncs.com");
-            put("cn-beijing-gov-1", "hitsdb.aliyuncs.com");
-            put("cn-shenzhen-su18-b01", "hitsdb.aliyuncs.com");
-            put("cn-beijing", "hitsdb.aliyuncs.com");
-            put("cn-wulanchabu", "hitsdb.aliyuncs.com");
-            put("cn-shanghai-inner", "hitsdb.aliyuncs.com");
-            put("cn-shenzhen-st4-d01", "hitsdb.aliyuncs.com");
-            put("cn-haidian-cm12-c01", "hitsdb.aliyuncs.com");
-            put("cn-hangzhou-internal-prod-1", "hitsdb.aliyuncs.com");
-            put("cn-yushanfang", "hitsdb.aliyuncs.com");
-            put("cn-qingdao", "hitsdb.aliyuncs.com");
-            put("cn-hongkong-finance-pop", "hitsdb.aliyuncs.com");
-            put("cn-qingdao-nebula", "hitsdb.aliyuncs.com");
-            put("cn-shanghai", "hitsdb.aliyuncs.com");
-            put("cn-shanghai-finance-1", "hitsdb.aliyuncs.com");
-            put("cn-hongkong", "hitsdb.aliyuncs.com");
-            put("cn-beijing-finance-pop", "hitsdb.aliyuncs.com");
-            put("cn-wuhan", "hitsdb.aliyuncs.com");
-            put("us-west-1", "hitsdb.aliyuncs.com");
-            put("cn-zhangbei", "hitsdb.aliyuncs.com");
-            put("cn-shenzhen", "hitsdb.aliyuncs.com");
-            put("cn-zhengzhou-nebula-1", "hitsdb.aliyuncs.com");
-            put("rus-west-1-pop", "hitsdb.aliyuncs.com");
-            put("cn-shanghai-et15-b01", "hitsdb.aliyuncs.com");
-            put("cn-hangzhou-bj-b01", "hitsdb.aliyuncs.com");
-            put("cn-hangzhou-internal-test-1", "hitsdb.aliyuncs.com");
-            put("eu-west-1-oxs", "hitsdb.aliyuncs.com");
-            put("cn-zhangbei-na61-b01", "hitsdb.aliyuncs.com");
-            put("cn-beijing-finance-1", "hitsdb.aliyuncs.com");
-            put("cn-hangzhou-internal-test-3", "hitsdb.aliyuncs.com");
-            put("cn-shenzhen-finance-1", "hitsdb.aliyuncs.com");
-            put("cn-hangzhou-internal-test-2", "hitsdb.aliyuncs.com");
-            put("me-east-1", "hitsdb.aliyuncs.com");
-            put("cn-chengdu", "hitsdb.aliyuncs.com");
-            put("cn-hangzhou-test-306", "hitsdb.aliyuncs.com");
-            put("cn-huhehaote-nebula-1", "hitsdb.aliyuncs.com");
-            put("cn-shanghai-et2-b01", "hitsdb.aliyuncs.com");
-            put("cn-hangzhou-finance", "hitsdb.aliyuncs.com");
-            put("ap-southeast-1", "hitsdb.aliyuncs.com");
-            put("cn-beijing-nu16-b01", "hitsdb.aliyuncs.com");
-            put("cn-edge-1", "hitsdb.aliyuncs.com");
-            put("us-east-1", "hitsdb.aliyuncs.com");
-            put("cn-fujian", "hitsdb.aliyuncs.com");
-            put("ap-northeast-2-pop", "hitsdb.aliyuncs.com");
-            put("cn-shenzhen-inner", "hitsdb.aliyuncs.com");
-            put("cn-zhangjiakou-na62-a01", "hitsdb.aliyuncs.com");
-            put("cn-hangzhou", "hitsdb.aliyuncs.com");
-        }
-    };
+    public static HashMap<String, String> endpointMap = new HashMap<String, String>() {};
 
     public static String endpointRegionalType = "regional";
 }

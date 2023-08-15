@@ -45,8 +45,6 @@ public class UpgradeLindormInstanceRequest extends RpcAcsRequest<UpgradeLindormI
 
 	private String instanceId;
 
-	private Integer mlNum;
-
 	private Integer streamNum;
 
 	private Integer logSingleStorage;
@@ -78,8 +76,6 @@ public class UpgradeLindormInstanceRequest extends RpcAcsRequest<UpgradeLindormI
 	private Integer filestoreNum;
 
 	private String streamSpec;
-
-	private String mlSpec;
 
 	private String ltsCoreSpec;
 
@@ -200,17 +196,6 @@ public class UpgradeLindormInstanceRequest extends RpcAcsRequest<UpgradeLindormI
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public Integer getMlNum() {
-		return this.mlNum;
-	}
-
-	public void setMlNum(Integer mlNum) {
-		this.mlNum = mlNum;
-		if(mlNum != null){
-			putQueryParameter("MlNum", mlNum.toString());
 		}
 	}
 
@@ -387,17 +372,6 @@ public class UpgradeLindormInstanceRequest extends RpcAcsRequest<UpgradeLindormI
 		this.streamSpec = streamSpec;
 		if(streamSpec != null){
 			putQueryParameter("StreamSpec", streamSpec);
-		}
-	}
-
-	public String getMlSpec() {
-		return this.mlSpec;
-	}
-
-	public void setMlSpec(String mlSpec) {
-		this.mlSpec = mlSpec;
-		if(mlSpec != null){
-			putQueryParameter("MlSpec", mlSpec);
 		}
 	}
 
