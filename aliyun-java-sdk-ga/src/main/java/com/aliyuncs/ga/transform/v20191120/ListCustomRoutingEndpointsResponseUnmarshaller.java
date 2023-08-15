@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.ga.model.v20191120.ListCustomRoutingEndpointsResponse;
 import com.aliyuncs.ga.model.v20191120.ListCustomRoutingEndpointsResponse.EndpointsItem;
+import com.aliyuncs.ga.model.v20191120.ListCustomRoutingEndpointsResponse.EndpointsItem.ServiceManagedInfosItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -41,6 +42,19 @@ public class ListCustomRoutingEndpointsResponseUnmarshaller {
 			endpointsItem.setType(_ctx.stringValue("ListCustomRoutingEndpointsResponse.Endpoints["+ i +"].Type"));
 			endpointsItem.setEndpoint(_ctx.stringValue("ListCustomRoutingEndpointsResponse.Endpoints["+ i +"].Endpoint"));
 			endpointsItem.setTrafficToEndpointPolicy(_ctx.stringValue("ListCustomRoutingEndpointsResponse.Endpoints["+ i +"].TrafficToEndpointPolicy"));
+			endpointsItem.setServiceId(_ctx.stringValue("ListCustomRoutingEndpointsResponse.Endpoints["+ i +"].ServiceId"));
+			endpointsItem.setServiceManaged(_ctx.booleanValue("ListCustomRoutingEndpointsResponse.Endpoints["+ i +"].ServiceManaged"));
+
+			List<ServiceManagedInfosItem> serviceManagedInfos = new ArrayList<ServiceManagedInfosItem>();
+			for (int j = 0; j < _ctx.lengthValue("ListCustomRoutingEndpointsResponse.Endpoints["+ i +"].ServiceManagedInfos.Length"); j++) {
+				ServiceManagedInfosItem serviceManagedInfosItem = new ServiceManagedInfosItem();
+				serviceManagedInfosItem.setAction(_ctx.stringValue("ListCustomRoutingEndpointsResponse.Endpoints["+ i +"].ServiceManagedInfos["+ j +"].Action"));
+				serviceManagedInfosItem.setChildType(_ctx.stringValue("ListCustomRoutingEndpointsResponse.Endpoints["+ i +"].ServiceManagedInfos["+ j +"].ChildType"));
+				serviceManagedInfosItem.setIsManaged(_ctx.booleanValue("ListCustomRoutingEndpointsResponse.Endpoints["+ i +"].ServiceManagedInfos["+ j +"].IsManaged"));
+
+				serviceManagedInfos.add(serviceManagedInfosItem);
+			}
+			endpointsItem.setServiceManagedInfos(serviceManagedInfos);
 
 			endpoints.add(endpointsItem);
 		}

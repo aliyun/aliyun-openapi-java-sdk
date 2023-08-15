@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.ga.model.v20191120.ListCustomRoutingEndpointTrafficPoliciesResponse;
 import com.aliyuncs.ga.model.v20191120.ListCustomRoutingEndpointTrafficPoliciesResponse.PoliciesItem;
 import com.aliyuncs.ga.model.v20191120.ListCustomRoutingEndpointTrafficPoliciesResponse.PoliciesItem.PortRangesItem;
+import com.aliyuncs.ga.model.v20191120.ListCustomRoutingEndpointTrafficPoliciesResponse.PoliciesItem.ServiceManagedInfosItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -41,6 +42,8 @@ public class ListCustomRoutingEndpointTrafficPoliciesResponseUnmarshaller {
 			policiesItem.setEndpointId(_ctx.stringValue("ListCustomRoutingEndpointTrafficPoliciesResponse.Policies["+ i +"].EndpointId"));
 			policiesItem.setPolicyId(_ctx.stringValue("ListCustomRoutingEndpointTrafficPoliciesResponse.Policies["+ i +"].PolicyId"));
 			policiesItem.setAddress(_ctx.stringValue("ListCustomRoutingEndpointTrafficPoliciesResponse.Policies["+ i +"].Address"));
+			policiesItem.setServiceId(_ctx.stringValue("ListCustomRoutingEndpointTrafficPoliciesResponse.Policies["+ i +"].ServiceId"));
+			policiesItem.setServiceManaged(_ctx.booleanValue("ListCustomRoutingEndpointTrafficPoliciesResponse.Policies["+ i +"].ServiceManaged"));
 
 			List<PortRangesItem> portRanges = new ArrayList<PortRangesItem>();
 			for (int j = 0; j < _ctx.lengthValue("ListCustomRoutingEndpointTrafficPoliciesResponse.Policies["+ i +"].PortRanges.Length"); j++) {
@@ -51,6 +54,17 @@ public class ListCustomRoutingEndpointTrafficPoliciesResponseUnmarshaller {
 				portRanges.add(portRangesItem);
 			}
 			policiesItem.setPortRanges(portRanges);
+
+			List<ServiceManagedInfosItem> serviceManagedInfos = new ArrayList<ServiceManagedInfosItem>();
+			for (int j = 0; j < _ctx.lengthValue("ListCustomRoutingEndpointTrafficPoliciesResponse.Policies["+ i +"].ServiceManagedInfos.Length"); j++) {
+				ServiceManagedInfosItem serviceManagedInfosItem = new ServiceManagedInfosItem();
+				serviceManagedInfosItem.setAction(_ctx.stringValue("ListCustomRoutingEndpointTrafficPoliciesResponse.Policies["+ i +"].ServiceManagedInfos["+ j +"].Action"));
+				serviceManagedInfosItem.setChildType(_ctx.stringValue("ListCustomRoutingEndpointTrafficPoliciesResponse.Policies["+ i +"].ServiceManagedInfos["+ j +"].ChildType"));
+				serviceManagedInfosItem.setIsManaged(_ctx.booleanValue("ListCustomRoutingEndpointTrafficPoliciesResponse.Policies["+ i +"].ServiceManagedInfos["+ j +"].IsManaged"));
+
+				serviceManagedInfos.add(serviceManagedInfosItem);
+			}
+			policiesItem.setServiceManagedInfos(serviceManagedInfos);
 
 			policies.add(policiesItem);
 		}

@@ -69,9 +69,15 @@ public class DescribeEndpointGroupResponse extends AcsResponse {
 
 	private Boolean healthCheckEnabled;
 
+	private String serviceId;
+
+	private Boolean serviceManaged;
+
 	private List<EndpointConfigurationsItem> endpointConfigurations;
 
 	private List<PortOverridesItem> portOverrides;
+
+	private List<ServiceManagedInfosItem> serviceManagedInfos;
 
 	private List<TagsItem> tags;
 
@@ -257,6 +263,22 @@ public class DescribeEndpointGroupResponse extends AcsResponse {
 		this.healthCheckEnabled = healthCheckEnabled;
 	}
 
+	public String getServiceId() {
+		return this.serviceId;
+	}
+
+	public void setServiceId(String serviceId) {
+		this.serviceId = serviceId;
+	}
+
+	public Boolean getServiceManaged() {
+		return this.serviceManaged;
+	}
+
+	public void setServiceManaged(Boolean serviceManaged) {
+		this.serviceManaged = serviceManaged;
+	}
+
 	public List<EndpointConfigurationsItem> getEndpointConfigurations() {
 		return this.endpointConfigurations;
 	}
@@ -271,6 +293,14 @@ public class DescribeEndpointGroupResponse extends AcsResponse {
 
 	public void setPortOverrides(List<PortOverridesItem> portOverrides) {
 		this.portOverrides = portOverrides;
+	}
+
+	public List<ServiceManagedInfosItem> getServiceManagedInfos() {
+		return this.serviceManagedInfos;
+	}
+
+	public void setServiceManagedInfos(List<ServiceManagedInfosItem> serviceManagedInfos) {
+		this.serviceManagedInfos = serviceManagedInfos;
 	}
 
 	public List<TagsItem> getTags() {
@@ -398,6 +428,39 @@ public class DescribeEndpointGroupResponse extends AcsResponse {
 
 		public void setEndpointPort(Integer endpointPort) {
 			this.endpointPort = endpointPort;
+		}
+	}
+
+	public static class ServiceManagedInfosItem {
+
+		private String action;
+
+		private String childType;
+
+		private Boolean isManaged;
+
+		public String getAction() {
+			return this.action;
+		}
+
+		public void setAction(String action) {
+			this.action = action;
+		}
+
+		public String getChildType() {
+			return this.childType;
+		}
+
+		public void setChildType(String childType) {
+			this.childType = childType;
+		}
+
+		public Boolean getIsManaged() {
+			return this.isManaged;
+		}
+
+		public void setIsManaged(Boolean isManaged) {
+			this.isManaged = isManaged;
 		}
 	}
 

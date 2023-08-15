@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.ga.model.v20191120.ListCustomRoutingEndpointGroupsResponse;
 import com.aliyuncs.ga.model.v20191120.ListCustomRoutingEndpointGroupsResponse.EndpointGroupsItem;
+import com.aliyuncs.ga.model.v20191120.ListCustomRoutingEndpointGroupsResponse.EndpointGroupsItem.ServiceManagedInfosItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -41,6 +42,8 @@ public class ListCustomRoutingEndpointGroupsResponseUnmarshaller {
 			endpointGroupsItem.setDescription(_ctx.stringValue("ListCustomRoutingEndpointGroupsResponse.EndpointGroups["+ i +"].Description"));
 			endpointGroupsItem.setEndpointGroupRegion(_ctx.stringValue("ListCustomRoutingEndpointGroupsResponse.EndpointGroups["+ i +"].EndpointGroupRegion"));
 			endpointGroupsItem.setState(_ctx.stringValue("ListCustomRoutingEndpointGroupsResponse.EndpointGroups["+ i +"].State"));
+			endpointGroupsItem.setServiceId(_ctx.stringValue("ListCustomRoutingEndpointGroupsResponse.EndpointGroups["+ i +"].ServiceId"));
+			endpointGroupsItem.setServiceManaged(_ctx.booleanValue("ListCustomRoutingEndpointGroupsResponse.EndpointGroups["+ i +"].ServiceManaged"));
 
 			List<String> endpointGroupIpList = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListCustomRoutingEndpointGroupsResponse.EndpointGroups["+ i +"].EndpointGroupIpList.Length"); j++) {
@@ -53,6 +56,17 @@ public class ListCustomRoutingEndpointGroupsResponseUnmarshaller {
 				endpointGroupUnconfirmedIpList.add(_ctx.stringValue("ListCustomRoutingEndpointGroupsResponse.EndpointGroups["+ i +"].EndpointGroupUnconfirmedIpList["+ j +"]"));
 			}
 			endpointGroupsItem.setEndpointGroupUnconfirmedIpList(endpointGroupUnconfirmedIpList);
+
+			List<ServiceManagedInfosItem> serviceManagedInfos = new ArrayList<ServiceManagedInfosItem>();
+			for (int j = 0; j < _ctx.lengthValue("ListCustomRoutingEndpointGroupsResponse.EndpointGroups["+ i +"].ServiceManagedInfos.Length"); j++) {
+				ServiceManagedInfosItem serviceManagedInfosItem = new ServiceManagedInfosItem();
+				serviceManagedInfosItem.setAction(_ctx.stringValue("ListCustomRoutingEndpointGroupsResponse.EndpointGroups["+ i +"].ServiceManagedInfos["+ j +"].Action"));
+				serviceManagedInfosItem.setChildType(_ctx.stringValue("ListCustomRoutingEndpointGroupsResponse.EndpointGroups["+ i +"].ServiceManagedInfos["+ j +"].ChildType"));
+				serviceManagedInfosItem.setIsManaged(_ctx.booleanValue("ListCustomRoutingEndpointGroupsResponse.EndpointGroups["+ i +"].ServiceManagedInfos["+ j +"].IsManaged"));
+
+				serviceManagedInfos.add(serviceManagedInfosItem);
+			}
+			endpointGroupsItem.setServiceManagedInfos(serviceManagedInfos);
 
 			endpointGroups.add(endpointGroupsItem);
 		}

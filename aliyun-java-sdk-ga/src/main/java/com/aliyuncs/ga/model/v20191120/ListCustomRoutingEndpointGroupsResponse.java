@@ -91,6 +91,12 @@ public class ListCustomRoutingEndpointGroupsResponse extends AcsResponse {
 
 		private String state;
 
+		private String serviceId;
+
+		private Boolean serviceManaged;
+
+		private List<ServiceManagedInfosItem> serviceManagedInfos;
+
 		private List<String> endpointGroupIpList;
 
 		private List<String> endpointGroupUnconfirmedIpList;
@@ -151,6 +157,30 @@ public class ListCustomRoutingEndpointGroupsResponse extends AcsResponse {
 			this.state = state;
 		}
 
+		public String getServiceId() {
+			return this.serviceId;
+		}
+
+		public void setServiceId(String serviceId) {
+			this.serviceId = serviceId;
+		}
+
+		public Boolean getServiceManaged() {
+			return this.serviceManaged;
+		}
+
+		public void setServiceManaged(Boolean serviceManaged) {
+			this.serviceManaged = serviceManaged;
+		}
+
+		public List<ServiceManagedInfosItem> getServiceManagedInfos() {
+			return this.serviceManagedInfos;
+		}
+
+		public void setServiceManagedInfos(List<ServiceManagedInfosItem> serviceManagedInfos) {
+			this.serviceManagedInfos = serviceManagedInfos;
+		}
+
 		public List<String> getEndpointGroupIpList() {
 			return this.endpointGroupIpList;
 		}
@@ -165,6 +195,39 @@ public class ListCustomRoutingEndpointGroupsResponse extends AcsResponse {
 
 		public void setEndpointGroupUnconfirmedIpList(List<String> endpointGroupUnconfirmedIpList) {
 			this.endpointGroupUnconfirmedIpList = endpointGroupUnconfirmedIpList;
+		}
+
+		public static class ServiceManagedInfosItem {
+
+			private String action;
+
+			private String childType;
+
+			private Boolean isManaged;
+
+			public String getAction() {
+				return this.action;
+			}
+
+			public void setAction(String action) {
+				this.action = action;
+			}
+
+			public String getChildType() {
+				return this.childType;
+			}
+
+			public void setChildType(String childType) {
+				this.childType = childType;
+			}
+
+			public Boolean getIsManaged() {
+				return this.isManaged;
+			}
+
+			public void setIsManaged(Boolean isManaged) {
+				this.isManaged = isManaged;
+			}
 		}
 	}
 

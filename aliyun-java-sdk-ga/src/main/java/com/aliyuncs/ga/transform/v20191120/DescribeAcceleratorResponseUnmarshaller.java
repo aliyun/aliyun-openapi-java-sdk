@@ -21,6 +21,7 @@ import com.aliyuncs.ga.model.v20191120.DescribeAcceleratorResponse;
 import com.aliyuncs.ga.model.v20191120.DescribeAcceleratorResponse.BasicBandwidthPackage;
 import com.aliyuncs.ga.model.v20191120.DescribeAcceleratorResponse.CrossDomainBandwidthPackage;
 import com.aliyuncs.ga.model.v20191120.DescribeAcceleratorResponse.IpSetConfig;
+import com.aliyuncs.ga.model.v20191120.DescribeAcceleratorResponse.ServiceManagedInfosItem;
 import com.aliyuncs.ga.model.v20191120.DescribeAcceleratorResponse.TagsItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -49,6 +50,8 @@ public class DescribeAcceleratorResponseUnmarshaller {
 		describeAcceleratorResponse.setCrossBorderMode(_ctx.stringValue("DescribeAcceleratorResponse.CrossBorderMode"));
 		describeAcceleratorResponse.setCrossBorderStatus(_ctx.booleanValue("DescribeAcceleratorResponse.CrossBorderStatus"));
 		describeAcceleratorResponse.setUpgradableStatus(_ctx.stringValue("DescribeAcceleratorResponse.UpgradableStatus"));
+		describeAcceleratorResponse.setServiceId(_ctx.stringValue("DescribeAcceleratorResponse.ServiceId"));
+		describeAcceleratorResponse.setServiceManaged(_ctx.booleanValue("DescribeAcceleratorResponse.ServiceManaged"));
 
 		CrossDomainBandwidthPackage crossDomainBandwidthPackage = new CrossDomainBandwidthPackage();
 		crossDomainBandwidthPackage.setBandwidth(_ctx.integerValue("DescribeAcceleratorResponse.CrossDomainBandwidthPackage.Bandwidth"));
@@ -74,6 +77,17 @@ public class DescribeAcceleratorResponseUnmarshaller {
 			tags.add(tagsItem);
 		}
 		describeAcceleratorResponse.setTags(tags);
+
+		List<ServiceManagedInfosItem> serviceManagedInfos = new ArrayList<ServiceManagedInfosItem>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeAcceleratorResponse.ServiceManagedInfos.Length"); i++) {
+			ServiceManagedInfosItem serviceManagedInfosItem = new ServiceManagedInfosItem();
+			serviceManagedInfosItem.setAction(_ctx.stringValue("DescribeAcceleratorResponse.ServiceManagedInfos["+ i +"].Action"));
+			serviceManagedInfosItem.setChildType(_ctx.stringValue("DescribeAcceleratorResponse.ServiceManagedInfos["+ i +"].ChildType"));
+			serviceManagedInfosItem.setIsManaged(_ctx.booleanValue("DescribeAcceleratorResponse.ServiceManagedInfos["+ i +"].IsManaged"));
+
+			serviceManagedInfos.add(serviceManagedInfosItem);
+		}
+		describeAcceleratorResponse.setServiceManagedInfos(serviceManagedInfos);
 	 
 	 	return describeAcceleratorResponse;
 	}

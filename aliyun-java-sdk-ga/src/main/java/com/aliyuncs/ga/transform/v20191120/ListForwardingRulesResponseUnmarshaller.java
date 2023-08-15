@@ -25,6 +25,7 @@ import com.aliyuncs.ga.model.v20191120.ListForwardingRulesResponse.ForwardingRul
 import com.aliyuncs.ga.model.v20191120.ListForwardingRulesResponse.ForwardingRulesItem.RuleConditionsItem;
 import com.aliyuncs.ga.model.v20191120.ListForwardingRulesResponse.ForwardingRulesItem.RuleConditionsItem.HostConfig;
 import com.aliyuncs.ga.model.v20191120.ListForwardingRulesResponse.ForwardingRulesItem.RuleConditionsItem.PathConfig;
+import com.aliyuncs.ga.model.v20191120.ListForwardingRulesResponse.ForwardingRulesItem.ServiceManagedInfosItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -46,6 +47,8 @@ public class ListForwardingRulesResponseUnmarshaller {
 			forwardingRulesItem.setForwardingRuleDirection(_ctx.stringValue("ListForwardingRulesResponse.ForwardingRules["+ i +"].ForwardingRuleDirection"));
 			forwardingRulesItem.setForwardingRuleStatus(_ctx.stringValue("ListForwardingRulesResponse.ForwardingRules["+ i +"].ForwardingRuleStatus"));
 			forwardingRulesItem.setListenerId(_ctx.stringValue("ListForwardingRulesResponse.ForwardingRules["+ i +"].ListenerId"));
+			forwardingRulesItem.setServiceId(_ctx.stringValue("ListForwardingRulesResponse.ForwardingRules["+ i +"].ServiceId"));
+			forwardingRulesItem.setServiceManaged(_ctx.booleanValue("ListForwardingRulesResponse.ForwardingRules["+ i +"].ServiceManaged"));
 
 			List<RuleConditionsItem> ruleConditions = new ArrayList<RuleConditionsItem>();
 			for (int j = 0; j < _ctx.lengthValue("ListForwardingRulesResponse.ForwardingRules["+ i +"].RuleConditions.Length"); j++) {
@@ -97,6 +100,17 @@ public class ListForwardingRulesResponseUnmarshaller {
 				ruleActions.add(ruleActionsItem);
 			}
 			forwardingRulesItem.setRuleActions(ruleActions);
+
+			List<ServiceManagedInfosItem> serviceManagedInfos = new ArrayList<ServiceManagedInfosItem>();
+			for (int j = 0; j < _ctx.lengthValue("ListForwardingRulesResponse.ForwardingRules["+ i +"].ServiceManagedInfos.Length"); j++) {
+				ServiceManagedInfosItem serviceManagedInfosItem = new ServiceManagedInfosItem();
+				serviceManagedInfosItem.setAction(_ctx.stringValue("ListForwardingRulesResponse.ForwardingRules["+ i +"].ServiceManagedInfos["+ j +"].Action"));
+				serviceManagedInfosItem.setChildType(_ctx.stringValue("ListForwardingRulesResponse.ForwardingRules["+ i +"].ServiceManagedInfos["+ j +"].ChildType"));
+				serviceManagedInfosItem.setIsManaged(_ctx.booleanValue("ListForwardingRulesResponse.ForwardingRules["+ i +"].ServiceManagedInfos["+ j +"].IsManaged"));
+
+				serviceManagedInfos.add(serviceManagedInfosItem);
+			}
+			forwardingRulesItem.setServiceManagedInfos(serviceManagedInfos);
 
 			forwardingRules.add(forwardingRulesItem);
 		}

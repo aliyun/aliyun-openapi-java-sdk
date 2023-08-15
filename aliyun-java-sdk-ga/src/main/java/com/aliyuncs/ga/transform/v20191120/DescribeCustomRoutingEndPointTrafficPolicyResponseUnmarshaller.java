@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.ga.model.v20191120.DescribeCustomRoutingEndPointTrafficPolicyResponse;
 import com.aliyuncs.ga.model.v20191120.DescribeCustomRoutingEndPointTrafficPolicyResponse.PortRangesItem;
+import com.aliyuncs.ga.model.v20191120.DescribeCustomRoutingEndPointTrafficPolicyResponse.ServiceManagedInfosItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -35,6 +36,8 @@ public class DescribeCustomRoutingEndPointTrafficPolicyResponseUnmarshaller {
 		describeCustomRoutingEndPointTrafficPolicyResponse.setPolicyId(_ctx.stringValue("DescribeCustomRoutingEndPointTrafficPolicyResponse.PolicyId"));
 		describeCustomRoutingEndPointTrafficPolicyResponse.setAddress(_ctx.stringValue("DescribeCustomRoutingEndPointTrafficPolicyResponse.Address"));
 		describeCustomRoutingEndPointTrafficPolicyResponse.setState(_ctx.stringValue("DescribeCustomRoutingEndPointTrafficPolicyResponse.State"));
+		describeCustomRoutingEndPointTrafficPolicyResponse.setServiceId(_ctx.stringValue("DescribeCustomRoutingEndPointTrafficPolicyResponse.ServiceId"));
+		describeCustomRoutingEndPointTrafficPolicyResponse.setServiceManaged(_ctx.booleanValue("DescribeCustomRoutingEndPointTrafficPolicyResponse.ServiceManaged"));
 
 		List<PortRangesItem> portRanges = new ArrayList<PortRangesItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCustomRoutingEndPointTrafficPolicyResponse.PortRanges.Length"); i++) {
@@ -45,6 +48,17 @@ public class DescribeCustomRoutingEndPointTrafficPolicyResponseUnmarshaller {
 			portRanges.add(portRangesItem);
 		}
 		describeCustomRoutingEndPointTrafficPolicyResponse.setPortRanges(portRanges);
+
+		List<ServiceManagedInfosItem> serviceManagedInfos = new ArrayList<ServiceManagedInfosItem>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeCustomRoutingEndPointTrafficPolicyResponse.ServiceManagedInfos.Length"); i++) {
+			ServiceManagedInfosItem serviceManagedInfosItem = new ServiceManagedInfosItem();
+			serviceManagedInfosItem.setAction(_ctx.stringValue("DescribeCustomRoutingEndPointTrafficPolicyResponse.ServiceManagedInfos["+ i +"].Action"));
+			serviceManagedInfosItem.setChildType(_ctx.stringValue("DescribeCustomRoutingEndPointTrafficPolicyResponse.ServiceManagedInfos["+ i +"].ChildType"));
+			serviceManagedInfosItem.setIsManaged(_ctx.booleanValue("DescribeCustomRoutingEndPointTrafficPolicyResponse.ServiceManagedInfos["+ i +"].IsManaged"));
+
+			serviceManagedInfos.add(serviceManagedInfosItem);
+		}
+		describeCustomRoutingEndPointTrafficPolicyResponse.setServiceManagedInfos(serviceManagedInfos);
 	 
 	 	return describeCustomRoutingEndPointTrafficPolicyResponse;
 	}

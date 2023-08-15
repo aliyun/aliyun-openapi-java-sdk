@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.ga.model.v20191120.ListDomainsResponse;
 import com.aliyuncs.ga.model.v20191120.ListDomainsResponse.DomainsItem;
 import com.aliyuncs.ga.model.v20191120.ListDomainsResponse.DomainsItem.AcceleratorsItem;
+import com.aliyuncs.ga.model.v20191120.ListDomainsResponse.DomainsItem.AcceleratorsItem.ServiceManagedInfosItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -43,6 +44,19 @@ public class ListDomainsResponseUnmarshaller {
 				AcceleratorsItem acceleratorsItem = new AcceleratorsItem();
 				acceleratorsItem.setAcceleratorId(_ctx.stringValue("ListDomainsResponse.Domains["+ i +"].Accelerators["+ j +"].AcceleratorId"));
 				acceleratorsItem.setName(_ctx.stringValue("ListDomainsResponse.Domains["+ i +"].Accelerators["+ j +"].Name"));
+				acceleratorsItem.setServiceId(_ctx.stringValue("ListDomainsResponse.Domains["+ i +"].Accelerators["+ j +"].ServiceId"));
+				acceleratorsItem.setServiceManaged(_ctx.booleanValue("ListDomainsResponse.Domains["+ i +"].Accelerators["+ j +"].ServiceManaged"));
+
+				List<ServiceManagedInfosItem> serviceManagedInfos = new ArrayList<ServiceManagedInfosItem>();
+				for (int k = 0; k < _ctx.lengthValue("ListDomainsResponse.Domains["+ i +"].Accelerators["+ j +"].ServiceManagedInfos.Length"); k++) {
+					ServiceManagedInfosItem serviceManagedInfosItem = new ServiceManagedInfosItem();
+					serviceManagedInfosItem.setAction(_ctx.stringValue("ListDomainsResponse.Domains["+ i +"].Accelerators["+ j +"].ServiceManagedInfos["+ k +"].Action"));
+					serviceManagedInfosItem.setChildType(_ctx.stringValue("ListDomainsResponse.Domains["+ i +"].Accelerators["+ j +"].ServiceManagedInfos["+ k +"].ChildType"));
+					serviceManagedInfosItem.setIsManaged(_ctx.booleanValue("ListDomainsResponse.Domains["+ i +"].Accelerators["+ j +"].ServiceManagedInfos["+ k +"].IsManaged"));
+
+					serviceManagedInfos.add(serviceManagedInfosItem);
+				}
+				acceleratorsItem.setServiceManagedInfos(serviceManagedInfos);
 
 				accelerators.add(acceleratorsItem);
 			}

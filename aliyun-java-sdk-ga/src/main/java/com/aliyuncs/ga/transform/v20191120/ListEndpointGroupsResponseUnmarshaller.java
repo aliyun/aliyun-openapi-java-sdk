@@ -21,6 +21,7 @@ import com.aliyuncs.ga.model.v20191120.ListEndpointGroupsResponse;
 import com.aliyuncs.ga.model.v20191120.ListEndpointGroupsResponse.EndpointGroupsItem;
 import com.aliyuncs.ga.model.v20191120.ListEndpointGroupsResponse.EndpointGroupsItem.EndpointConfigurationsItem;
 import com.aliyuncs.ga.model.v20191120.ListEndpointGroupsResponse.EndpointGroupsItem.PortOverridesItem;
+import com.aliyuncs.ga.model.v20191120.ListEndpointGroupsResponse.EndpointGroupsItem.ServiceManagedInfosItem;
 import com.aliyuncs.ga.model.v20191120.ListEndpointGroupsResponse.EndpointGroupsItem.TagsItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -53,6 +54,8 @@ public class ListEndpointGroupsResponseUnmarshaller {
 			endpointGroupsItem.setName(_ctx.stringValue("ListEndpointGroupsResponse.EndpointGroups["+ i +"].Name"));
 			endpointGroupsItem.setHealthCheckPort(_ctx.integerValue("ListEndpointGroupsResponse.EndpointGroups["+ i +"].HealthCheckPort"));
 			endpointGroupsItem.setHealthCheckEnabled(_ctx.booleanValue("ListEndpointGroupsResponse.EndpointGroups["+ i +"].HealthCheckEnabled"));
+			endpointGroupsItem.setServiceId(_ctx.stringValue("ListEndpointGroupsResponse.EndpointGroups["+ i +"].ServiceId"));
+			endpointGroupsItem.setServiceManaged(_ctx.booleanValue("ListEndpointGroupsResponse.EndpointGroups["+ i +"].ServiceManaged"));
 
 			List<String> endpointGroupIpList = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListEndpointGroupsResponse.EndpointGroups["+ i +"].EndpointGroupIpList.Length"); j++) {
@@ -97,6 +100,17 @@ public class ListEndpointGroupsResponseUnmarshaller {
 				portOverrides.add(portOverridesItem);
 			}
 			endpointGroupsItem.setPortOverrides(portOverrides);
+
+			List<ServiceManagedInfosItem> serviceManagedInfos = new ArrayList<ServiceManagedInfosItem>();
+			for (int j = 0; j < _ctx.lengthValue("ListEndpointGroupsResponse.EndpointGroups["+ i +"].ServiceManagedInfos.Length"); j++) {
+				ServiceManagedInfosItem serviceManagedInfosItem = new ServiceManagedInfosItem();
+				serviceManagedInfosItem.setAction(_ctx.stringValue("ListEndpointGroupsResponse.EndpointGroups["+ i +"].ServiceManagedInfos["+ j +"].Action"));
+				serviceManagedInfosItem.setChildType(_ctx.stringValue("ListEndpointGroupsResponse.EndpointGroups["+ i +"].ServiceManagedInfos["+ j +"].ChildType"));
+				serviceManagedInfosItem.setIsManaged(_ctx.booleanValue("ListEndpointGroupsResponse.EndpointGroups["+ i +"].ServiceManagedInfos["+ j +"].IsManaged"));
+
+				serviceManagedInfos.add(serviceManagedInfosItem);
+			}
+			endpointGroupsItem.setServiceManagedInfos(serviceManagedInfos);
 
 			List<TagsItem> tags = new ArrayList<TagsItem>();
 			for (int j = 0; j < _ctx.lengthValue("ListEndpointGroupsResponse.EndpointGroups["+ i +"].Tags.Length"); j++) {

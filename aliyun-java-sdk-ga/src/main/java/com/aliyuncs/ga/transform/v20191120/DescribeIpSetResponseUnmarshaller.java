@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.ga.model.v20191120.DescribeIpSetResponse;
+import com.aliyuncs.ga.model.v20191120.DescribeIpSetResponse.ServiceManagedInfosItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -33,12 +34,25 @@ public class DescribeIpSetResponseUnmarshaller {
 		describeIpSetResponse.setIspType(_ctx.stringValue("DescribeIpSetResponse.IspType"));
 		describeIpSetResponse.setAccelerateRegionId(_ctx.stringValue("DescribeIpSetResponse.AccelerateRegionId"));
 		describeIpSetResponse.setAcceleratorId(_ctx.stringValue("DescribeIpSetResponse.AcceleratorId"));
+		describeIpSetResponse.setServiceId(_ctx.stringValue("DescribeIpSetResponse.ServiceId"));
+		describeIpSetResponse.setServiceManaged(_ctx.booleanValue("DescribeIpSetResponse.ServiceManaged"));
 
 		List<String> ipAddressList = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeIpSetResponse.IpAddressList.Length"); i++) {
 			ipAddressList.add(_ctx.stringValue("DescribeIpSetResponse.IpAddressList["+ i +"]"));
 		}
 		describeIpSetResponse.setIpAddressList(ipAddressList);
+
+		List<ServiceManagedInfosItem> serviceManagedInfos = new ArrayList<ServiceManagedInfosItem>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeIpSetResponse.ServiceManagedInfos.Length"); i++) {
+			ServiceManagedInfosItem serviceManagedInfosItem = new ServiceManagedInfosItem();
+			serviceManagedInfosItem.setAction(_ctx.stringValue("DescribeIpSetResponse.ServiceManagedInfos["+ i +"].Action"));
+			serviceManagedInfosItem.setChildType(_ctx.stringValue("DescribeIpSetResponse.ServiceManagedInfos["+ i +"].ChildType"));
+			serviceManagedInfosItem.setIsManaged(_ctx.booleanValue("DescribeIpSetResponse.ServiceManagedInfos["+ i +"].IsManaged"));
+
+			serviceManagedInfos.add(serviceManagedInfosItem);
+		}
+		describeIpSetResponse.setServiceManagedInfos(serviceManagedInfos);
 	 
 	 	return describeIpSetResponse;
 	}

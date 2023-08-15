@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.ga.model.v20191120.ListCustomRoutingEndpointGroupDestinationsResponse;
 import com.aliyuncs.ga.model.v20191120.ListCustomRoutingEndpointGroupDestinationsResponse.Endpoints;
+import com.aliyuncs.ga.model.v20191120.ListCustomRoutingEndpointGroupDestinationsResponse.Endpoints.ServiceManagedInfosItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -40,12 +41,25 @@ public class ListCustomRoutingEndpointGroupDestinationsResponseUnmarshaller {
 			endpoints.setDestinationId(_ctx.stringValue("ListCustomRoutingEndpointGroupDestinationsResponse.Destinations["+ i +"].DestinationId"));
 			endpoints.setFromPort(_ctx.integerValue("ListCustomRoutingEndpointGroupDestinationsResponse.Destinations["+ i +"].FromPort"));
 			endpoints.setToPort(_ctx.integerValue("ListCustomRoutingEndpointGroupDestinationsResponse.Destinations["+ i +"].ToPort"));
+			endpoints.setServiceId(_ctx.stringValue("ListCustomRoutingEndpointGroupDestinationsResponse.Destinations["+ i +"].ServiceId"));
+			endpoints.setServiceManaged(_ctx.booleanValue("ListCustomRoutingEndpointGroupDestinationsResponse.Destinations["+ i +"].ServiceManaged"));
 
 			List<String> protocols = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListCustomRoutingEndpointGroupDestinationsResponse.Destinations["+ i +"].Protocols.Length"); j++) {
 				protocols.add(_ctx.stringValue("ListCustomRoutingEndpointGroupDestinationsResponse.Destinations["+ i +"].Protocols["+ j +"]"));
 			}
 			endpoints.setProtocols(protocols);
+
+			List<ServiceManagedInfosItem> serviceManagedInfos = new ArrayList<ServiceManagedInfosItem>();
+			for (int j = 0; j < _ctx.lengthValue("ListCustomRoutingEndpointGroupDestinationsResponse.Destinations["+ i +"].ServiceManagedInfos.Length"); j++) {
+				ServiceManagedInfosItem serviceManagedInfosItem = new ServiceManagedInfosItem();
+				serviceManagedInfosItem.setAction(_ctx.stringValue("ListCustomRoutingEndpointGroupDestinationsResponse.Destinations["+ i +"].ServiceManagedInfos["+ j +"].Action"));
+				serviceManagedInfosItem.setChildType(_ctx.stringValue("ListCustomRoutingEndpointGroupDestinationsResponse.Destinations["+ i +"].ServiceManagedInfos["+ j +"].ChildType"));
+				serviceManagedInfosItem.setIsManaged(_ctx.booleanValue("ListCustomRoutingEndpointGroupDestinationsResponse.Destinations["+ i +"].ServiceManagedInfos["+ j +"].IsManaged"));
+
+				serviceManagedInfos.add(serviceManagedInfosItem);
+			}
+			endpoints.setServiceManagedInfos(serviceManagedInfos);
 
 			destinations.add(endpoints);
 		}

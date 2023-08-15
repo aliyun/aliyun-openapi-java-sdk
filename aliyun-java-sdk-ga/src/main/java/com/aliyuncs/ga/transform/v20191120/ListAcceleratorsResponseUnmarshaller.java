@@ -22,6 +22,7 @@ import com.aliyuncs.ga.model.v20191120.ListAcceleratorsResponse.AcceleratorsItem
 import com.aliyuncs.ga.model.v20191120.ListAcceleratorsResponse.AcceleratorsItem.BasicBandwidthPackage;
 import com.aliyuncs.ga.model.v20191120.ListAcceleratorsResponse.AcceleratorsItem.CrossDomainBandwidthPackage;
 import com.aliyuncs.ga.model.v20191120.ListAcceleratorsResponse.AcceleratorsItem.IpSetConfig;
+import com.aliyuncs.ga.model.v20191120.ListAcceleratorsResponse.AcceleratorsItem.ServiceManagedInfosItem;
 import com.aliyuncs.ga.model.v20191120.ListAcceleratorsResponse.AcceleratorsItem.TagsItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -58,6 +59,8 @@ public class ListAcceleratorsResponseUnmarshaller {
 			acceleratorsItem.setCrossBorderMode(_ctx.stringValue("ListAcceleratorsResponse.Accelerators["+ i +"].CrossBorderMode"));
 			acceleratorsItem.setCrossBorderStatus(_ctx.booleanValue("ListAcceleratorsResponse.Accelerators["+ i +"].CrossBorderStatus"));
 			acceleratorsItem.setUpgradableStatus(_ctx.stringValue("ListAcceleratorsResponse.Accelerators["+ i +"].UpgradableStatus"));
+			acceleratorsItem.setServiceId(_ctx.stringValue("ListAcceleratorsResponse.Accelerators["+ i +"].ServiceId"));
+			acceleratorsItem.setServiceManaged(_ctx.booleanValue("ListAcceleratorsResponse.Accelerators["+ i +"].ServiceManaged"));
 
 			BasicBandwidthPackage basicBandwidthPackage = new BasicBandwidthPackage();
 			basicBandwidthPackage.setBandwidth(_ctx.integerValue("ListAcceleratorsResponse.Accelerators["+ i +"].BasicBandwidthPackage.Bandwidth"));
@@ -83,6 +86,17 @@ public class ListAcceleratorsResponseUnmarshaller {
 				tags.add(tagsItem);
 			}
 			acceleratorsItem.setTags(tags);
+
+			List<ServiceManagedInfosItem> serviceManagedInfos = new ArrayList<ServiceManagedInfosItem>();
+			for (int j = 0; j < _ctx.lengthValue("ListAcceleratorsResponse.Accelerators["+ i +"].ServiceManagedInfos.Length"); j++) {
+				ServiceManagedInfosItem serviceManagedInfosItem = new ServiceManagedInfosItem();
+				serviceManagedInfosItem.setAction(_ctx.stringValue("ListAcceleratorsResponse.Accelerators["+ i +"].ServiceManagedInfos["+ j +"].Action"));
+				serviceManagedInfosItem.setChildType(_ctx.stringValue("ListAcceleratorsResponse.Accelerators["+ i +"].ServiceManagedInfos["+ j +"].ChildType"));
+				serviceManagedInfosItem.setIsManaged(_ctx.booleanValue("ListAcceleratorsResponse.Accelerators["+ i +"].ServiceManagedInfos["+ j +"].IsManaged"));
+
+				serviceManagedInfos.add(serviceManagedInfosItem);
+			}
+			acceleratorsItem.setServiceManagedInfos(serviceManagedInfos);
 
 			accelerators.add(acceleratorsItem);
 		}

@@ -22,6 +22,7 @@ import com.aliyuncs.ga.model.v20191120.DescribeListenerResponse.BackendPort;
 import com.aliyuncs.ga.model.v20191120.DescribeListenerResponse.Certificate;
 import com.aliyuncs.ga.model.v20191120.DescribeListenerResponse.PortRangesItem;
 import com.aliyuncs.ga.model.v20191120.DescribeListenerResponse.RelatedAclsItem;
+import com.aliyuncs.ga.model.v20191120.DescribeListenerResponse.ServiceManagedInfosItem;
 import com.aliyuncs.ga.model.v20191120.DescribeListenerResponse.XForwardedForConfig;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -43,6 +44,8 @@ public class DescribeListenerResponseUnmarshaller {
 		describeListenerResponse.setProxyProtocol(_ctx.booleanValue("DescribeListenerResponse.ProxyProtocol"));
 		describeListenerResponse.setSecurityPolicyId(_ctx.stringValue("DescribeListenerResponse.SecurityPolicyId"));
 		describeListenerResponse.setType(_ctx.stringValue("DescribeListenerResponse.Type"));
+		describeListenerResponse.setServiceId(_ctx.stringValue("DescribeListenerResponse.ServiceId"));
+		describeListenerResponse.setServiceManaged(_ctx.booleanValue("DescribeListenerResponse.ServiceManaged"));
 
 		XForwardedForConfig xForwardedForConfig = new XForwardedForConfig();
 		xForwardedForConfig.setXForwardedForGaIdEnabled(_ctx.booleanValue("DescribeListenerResponse.XForwardedForConfig.XForwardedForGaIdEnabled"));
@@ -91,6 +94,17 @@ public class DescribeListenerResponseUnmarshaller {
 			relatedAcls.add(relatedAclsItem);
 		}
 		describeListenerResponse.setRelatedAcls(relatedAcls);
+
+		List<ServiceManagedInfosItem> serviceManagedInfos = new ArrayList<ServiceManagedInfosItem>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeListenerResponse.ServiceManagedInfos.Length"); i++) {
+			ServiceManagedInfosItem serviceManagedInfosItem = new ServiceManagedInfosItem();
+			serviceManagedInfosItem.setAction(_ctx.stringValue("DescribeListenerResponse.ServiceManagedInfos["+ i +"].Action"));
+			serviceManagedInfosItem.setChildType(_ctx.stringValue("DescribeListenerResponse.ServiceManagedInfos["+ i +"].ChildType"));
+			serviceManagedInfosItem.setIsManaged(_ctx.booleanValue("DescribeListenerResponse.ServiceManagedInfos["+ i +"].IsManaged"));
+
+			serviceManagedInfos.add(serviceManagedInfosItem);
+		}
+		describeListenerResponse.setServiceManagedInfos(serviceManagedInfos);
 	 
 	 	return describeListenerResponse;
 	}
