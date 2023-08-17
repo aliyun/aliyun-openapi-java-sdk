@@ -51,6 +51,8 @@ public class CopySnapshotRequest extends RpcAcsRequest<CopySnapshotResponse> {
 	private Integer retentionDays;
 
 	private String kMSKeyId;
+
+	private String destinationStorageLocationArn;
 	public CopySnapshotRequest() {
 		super("Ecs", "2014-05-26", "CopySnapshot", "ecs");
 		setMethod(MethodType.POST);
@@ -207,6 +209,17 @@ public class CopySnapshotRequest extends RpcAcsRequest<CopySnapshotResponse> {
 		this.kMSKeyId = kMSKeyId;
 		if(kMSKeyId != null){
 			putQueryParameter("KMSKeyId", kMSKeyId);
+		}
+	}
+
+	public String getDestinationStorageLocationArn() {
+		return this.destinationStorageLocationArn;
+	}
+
+	public void setDestinationStorageLocationArn(String destinationStorageLocationArn) {
+		this.destinationStorageLocationArn = destinationStorageLocationArn;
+		if(destinationStorageLocationArn != null){
+			putQueryParameter("DestinationStorageLocationArn", destinationStorageLocationArn);
 		}
 	}
 

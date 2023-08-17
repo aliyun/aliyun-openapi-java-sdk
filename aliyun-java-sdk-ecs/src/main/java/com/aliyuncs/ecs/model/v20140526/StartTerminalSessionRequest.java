@@ -28,6 +28,10 @@ public class StartTerminalSessionRequest extends RpcAcsRequest<StartTerminalSess
 
 	private Long resourceOwnerId;
 
+	private String commandLine;
+
+	private String targetServer;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -54,6 +58,28 @@ public class StartTerminalSessionRequest extends RpcAcsRequest<StartTerminalSess
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getCommandLine() {
+		return this.commandLine;
+	}
+
+	public void setCommandLine(String commandLine) {
+		this.commandLine = commandLine;
+		if(commandLine != null){
+			putQueryParameter("CommandLine", commandLine);
+		}
+	}
+
+	public String getTargetServer() {
+		return this.targetServer;
+	}
+
+	public void setTargetServer(String targetServer) {
+		this.targetServer = targetServer;
+		if(targetServer != null){
+			putQueryParameter("TargetServer", targetServer);
 		}
 	}
 
