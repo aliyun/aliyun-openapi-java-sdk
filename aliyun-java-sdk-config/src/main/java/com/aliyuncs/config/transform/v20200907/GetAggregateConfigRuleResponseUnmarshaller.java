@@ -65,6 +65,7 @@ public class GetAggregateConfigRuleResponseUnmarshaller {
 		Source source = new Source();
 		source.setOwner(_ctx.stringValue("GetAggregateConfigRuleResponse.ConfigRule.Source.Owner"));
 		source.setIdentifier(_ctx.stringValue("GetAggregateConfigRuleResponse.ConfigRule.Source.Identifier"));
+		source.setConditions(_ctx.stringValue("GetAggregateConfigRuleResponse.ConfigRule.Source.Conditions"));
 
 		List<Map<Object, Object>> sourceConditions = _ctx.listMapValue("GetAggregateConfigRuleResponse.ConfigRule.Source.SourceConditions");
 		source.setSourceConditions(sourceConditions);

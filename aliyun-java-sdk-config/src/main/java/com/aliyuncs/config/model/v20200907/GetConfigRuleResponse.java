@@ -314,6 +314,8 @@ public class GetConfigRuleResponse extends AcsResponse {
 
 			private String identifier;
 
+			private String conditions;
+
 			private List<SourceDetailsItem> sourceDetails;
 
 			private List<Map<Object,Object>> sourceConditions;
@@ -332,6 +334,14 @@ public class GetConfigRuleResponse extends AcsResponse {
 
 			public void setIdentifier(String identifier) {
 				this.identifier = identifier;
+			}
+
+			public String getConditions() {
+				return this.conditions;
+			}
+
+			public void setConditions(String conditions) {
+				this.conditions = conditions;
 			}
 
 			public List<SourceDetailsItem> getSourceDetails() {

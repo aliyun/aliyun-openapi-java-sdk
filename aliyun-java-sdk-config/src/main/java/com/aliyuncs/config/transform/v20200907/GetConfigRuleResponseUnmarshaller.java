@@ -62,6 +62,7 @@ public class GetConfigRuleResponseUnmarshaller {
 		Source source = new Source();
 		source.setOwner(_ctx.stringValue("GetConfigRuleResponse.ConfigRule.Source.Owner"));
 		source.setIdentifier(_ctx.stringValue("GetConfigRuleResponse.ConfigRule.Source.Identifier"));
+		source.setConditions(_ctx.stringValue("GetConfigRuleResponse.ConfigRule.Source.Conditions"));
 
 		List<Map<Object, Object>> sourceConditions = _ctx.listMapValue("GetConfigRuleResponse.ConfigRule.Source.SourceConditions");
 		source.setSourceConditions(sourceConditions);
