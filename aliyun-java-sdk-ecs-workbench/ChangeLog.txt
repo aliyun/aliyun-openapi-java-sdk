@@ -1,3 +1,6 @@
+2023-08-21 Version: 1.0.3
+- ECS-workbench upgrade, add fixedHeight and fixedWidth parameters.
+
 2023-07-27 Version: 1.0.2
 - ECS-workbench upgrade, add fixedHeight and fixedWidth parameters.
 
