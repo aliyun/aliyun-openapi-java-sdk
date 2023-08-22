@@ -55,6 +55,8 @@ public class DescribeCertificatesResponse extends AcsResponse {
 
 		private String commonName;
 
+		private Long endTime;
+
 		private List<String> sans;
 
 		public Boolean getIsUsing() {
@@ -87,6 +89,14 @@ public class DescribeCertificatesResponse extends AcsResponse {
 
 		public void setCommonName(String commonName) {
 			this.commonName = commonName;
+		}
+
+		public Long getEndTime() {
+			return this.endTime;
+		}
+
+		public void setEndTime(Long endTime) {
+			this.endTime = endTime;
 		}
 
 		public List<String> getSans() {

@@ -27,6 +27,8 @@ public class CreateDomainRequest extends RpcAcsRequest<CreateDomainResponse> {
 
 	private Integer ipFollowStatus;
 
+	private Boolean keepalive;
+
 	private String sniHost;
 
 	private String resourceGroupId;
@@ -37,35 +39,41 @@ public class CreateDomainRequest extends RpcAcsRequest<CreateDomainResponse> {
 
 	private Integer writeTime;
 
-	private Integer sniStatus;
-
 	private Integer accessHeaderMode;
-
-	private String accessType;
-
-	private String logHeaders;
 
 	private String accessHeaders;
 
-	private Integer connectionTime;
+	private Integer keepaliveTimeout;
 
 	private Integer clusterType;
-
-	private String cloudNativeInstances;
 
 	private Integer httpsRedirect;
 
 	private String instanceId;
 
-	private String sourceIps;
-
 	private String domain;
-
-	private Integer isAccessProduct;
 
 	private Integer readTime;
 
 	private String httpsPort;
+
+	private Integer sniStatus;
+
+	private Boolean retry;
+
+	private Integer keepaliveRequests;
+
+	private String accessType;
+
+	private String logHeaders;
+
+	private Integer connectionTime;
+
+	private String cloudNativeInstances;
+
+	private String sourceIps;
+
+	private Integer isAccessProduct;
 
 	private Integer loadBalancing;
 
@@ -87,6 +95,17 @@ public class CreateDomainRequest extends RpcAcsRequest<CreateDomainResponse> {
 		this.ipFollowStatus = ipFollowStatus;
 		if(ipFollowStatus != null){
 			putQueryParameter("IpFollowStatus", ipFollowStatus.toString());
+		}
+	}
+
+	public Boolean getKeepalive() {
+		return this.keepalive;
+	}
+
+	public void setKeepalive(Boolean keepalive) {
+		this.keepalive = keepalive;
+		if(keepalive != null){
+			putQueryParameter("Keepalive", keepalive.toString());
 		}
 	}
 
@@ -145,17 +164,6 @@ public class CreateDomainRequest extends RpcAcsRequest<CreateDomainResponse> {
 		}
 	}
 
-	public Integer getSniStatus() {
-		return this.sniStatus;
-	}
-
-	public void setSniStatus(Integer sniStatus) {
-		this.sniStatus = sniStatus;
-		if(sniStatus != null){
-			putQueryParameter("SniStatus", sniStatus.toString());
-		}
-	}
-
 	public Integer getAccessHeaderMode() {
 		return this.accessHeaderMode;
 	}
@@ -164,28 +172,6 @@ public class CreateDomainRequest extends RpcAcsRequest<CreateDomainResponse> {
 		this.accessHeaderMode = accessHeaderMode;
 		if(accessHeaderMode != null){
 			putQueryParameter("AccessHeaderMode", accessHeaderMode.toString());
-		}
-	}
-
-	public String getAccessType() {
-		return this.accessType;
-	}
-
-	public void setAccessType(String accessType) {
-		this.accessType = accessType;
-		if(accessType != null){
-			putQueryParameter("AccessType", accessType);
-		}
-	}
-
-	public String getLogHeaders() {
-		return this.logHeaders;
-	}
-
-	public void setLogHeaders(String logHeaders) {
-		this.logHeaders = logHeaders;
-		if(logHeaders != null){
-			putQueryParameter("LogHeaders", logHeaders);
 		}
 	}
 
@@ -200,14 +186,14 @@ public class CreateDomainRequest extends RpcAcsRequest<CreateDomainResponse> {
 		}
 	}
 
-	public Integer getConnectionTime() {
-		return this.connectionTime;
+	public Integer getKeepaliveTimeout() {
+		return this.keepaliveTimeout;
 	}
 
-	public void setConnectionTime(Integer connectionTime) {
-		this.connectionTime = connectionTime;
-		if(connectionTime != null){
-			putQueryParameter("ConnectionTime", connectionTime.toString());
+	public void setKeepaliveTimeout(Integer keepaliveTimeout) {
+		this.keepaliveTimeout = keepaliveTimeout;
+		if(keepaliveTimeout != null){
+			putQueryParameter("KeepaliveTimeout", keepaliveTimeout.toString());
 		}
 	}
 
@@ -219,17 +205,6 @@ public class CreateDomainRequest extends RpcAcsRequest<CreateDomainResponse> {
 		this.clusterType = clusterType;
 		if(clusterType != null){
 			putQueryParameter("ClusterType", clusterType.toString());
-		}
-	}
-
-	public String getCloudNativeInstances() {
-		return this.cloudNativeInstances;
-	}
-
-	public void setCloudNativeInstances(String cloudNativeInstances) {
-		this.cloudNativeInstances = cloudNativeInstances;
-		if(cloudNativeInstances != null){
-			putQueryParameter("CloudNativeInstances", cloudNativeInstances);
 		}
 	}
 
@@ -255,17 +230,6 @@ public class CreateDomainRequest extends RpcAcsRequest<CreateDomainResponse> {
 		}
 	}
 
-	public String getSourceIps() {
-		return this.sourceIps;
-	}
-
-	public void setSourceIps(String sourceIps) {
-		this.sourceIps = sourceIps;
-		if(sourceIps != null){
-			putQueryParameter("SourceIps", sourceIps);
-		}
-	}
-
 	public String getDomain() {
 		return this.domain;
 	}
@@ -274,17 +238,6 @@ public class CreateDomainRequest extends RpcAcsRequest<CreateDomainResponse> {
 		this.domain = domain;
 		if(domain != null){
 			putQueryParameter("Domain", domain);
-		}
-	}
-
-	public Integer getIsAccessProduct() {
-		return this.isAccessProduct;
-	}
-
-	public void setIsAccessProduct(Integer isAccessProduct) {
-		this.isAccessProduct = isAccessProduct;
-		if(isAccessProduct != null){
-			putQueryParameter("IsAccessProduct", isAccessProduct.toString());
 		}
 	}
 
@@ -307,6 +260,105 @@ public class CreateDomainRequest extends RpcAcsRequest<CreateDomainResponse> {
 		this.httpsPort = httpsPort;
 		if(httpsPort != null){
 			putQueryParameter("HttpsPort", httpsPort);
+		}
+	}
+
+	public Integer getSniStatus() {
+		return this.sniStatus;
+	}
+
+	public void setSniStatus(Integer sniStatus) {
+		this.sniStatus = sniStatus;
+		if(sniStatus != null){
+			putQueryParameter("SniStatus", sniStatus.toString());
+		}
+	}
+
+	public Boolean getRetry() {
+		return this.retry;
+	}
+
+	public void setRetry(Boolean retry) {
+		this.retry = retry;
+		if(retry != null){
+			putQueryParameter("Retry", retry.toString());
+		}
+	}
+
+	public Integer getKeepaliveRequests() {
+		return this.keepaliveRequests;
+	}
+
+	public void setKeepaliveRequests(Integer keepaliveRequests) {
+		this.keepaliveRequests = keepaliveRequests;
+		if(keepaliveRequests != null){
+			putQueryParameter("KeepaliveRequests", keepaliveRequests.toString());
+		}
+	}
+
+	public String getAccessType() {
+		return this.accessType;
+	}
+
+	public void setAccessType(String accessType) {
+		this.accessType = accessType;
+		if(accessType != null){
+			putQueryParameter("AccessType", accessType);
+		}
+	}
+
+	public String getLogHeaders() {
+		return this.logHeaders;
+	}
+
+	public void setLogHeaders(String logHeaders) {
+		this.logHeaders = logHeaders;
+		if(logHeaders != null){
+			putQueryParameter("LogHeaders", logHeaders);
+		}
+	}
+
+	public Integer getConnectionTime() {
+		return this.connectionTime;
+	}
+
+	public void setConnectionTime(Integer connectionTime) {
+		this.connectionTime = connectionTime;
+		if(connectionTime != null){
+			putQueryParameter("ConnectionTime", connectionTime.toString());
+		}
+	}
+
+	public String getCloudNativeInstances() {
+		return this.cloudNativeInstances;
+	}
+
+	public void setCloudNativeInstances(String cloudNativeInstances) {
+		this.cloudNativeInstances = cloudNativeInstances;
+		if(cloudNativeInstances != null){
+			putQueryParameter("CloudNativeInstances", cloudNativeInstances);
+		}
+	}
+
+	public String getSourceIps() {
+		return this.sourceIps;
+	}
+
+	public void setSourceIps(String sourceIps) {
+		this.sourceIps = sourceIps;
+		if(sourceIps != null){
+			putQueryParameter("SourceIps", sourceIps);
+		}
+	}
+
+	public Integer getIsAccessProduct() {
+		return this.isAccessProduct;
+	}
+
+	public void setIsAccessProduct(Integer isAccessProduct) {
+		this.isAccessProduct = isAccessProduct;
+		if(isAccessProduct != null){
+			putQueryParameter("IsAccessProduct", isAccessProduct.toString());
 		}
 	}
 
