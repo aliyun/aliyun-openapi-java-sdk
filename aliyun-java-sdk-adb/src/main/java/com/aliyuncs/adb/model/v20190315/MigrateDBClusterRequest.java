@@ -22,7 +22,7 @@ import com.aliyuncs.adb.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeComputeResourceRequest extends RpcAcsRequest<DescribeComputeResourceResponse> {
+public class MigrateDBClusterRequest extends RpcAcsRequest<MigrateDBClusterResponse> {
 	   
 
 	private Long resourceOwnerId;
@@ -33,15 +33,9 @@ public class DescribeComputeResourceRequest extends RpcAcsRequest<DescribeComput
 
 	private String ownerAccount;
 
-	private String dBClusterVersion;
-
 	private Long ownerId;
-
-	private String zoneId;
-
-	private Boolean migrate;
-	public DescribeComputeResourceRequest() {
-		super("adb", "2019-03-15", "DescribeComputeResource", "ads");
+	public MigrateDBClusterRequest() {
+		super("adb", "2019-03-15", "MigrateDBCluster", "ads");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -93,17 +87,6 @@ public class DescribeComputeResourceRequest extends RpcAcsRequest<DescribeComput
 		}
 	}
 
-	public String getDBClusterVersion() {
-		return this.dBClusterVersion;
-	}
-
-	public void setDBClusterVersion(String dBClusterVersion) {
-		this.dBClusterVersion = dBClusterVersion;
-		if(dBClusterVersion != null){
-			putQueryParameter("DBClusterVersion", dBClusterVersion);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -115,31 +98,9 @@ public class DescribeComputeResourceRequest extends RpcAcsRequest<DescribeComput
 		}
 	}
 
-	public String getZoneId() {
-		return this.zoneId;
-	}
-
-	public void setZoneId(String zoneId) {
-		this.zoneId = zoneId;
-		if(zoneId != null){
-			putQueryParameter("ZoneId", zoneId);
-		}
-	}
-
-	public Boolean getMigrate() {
-		return this.migrate;
-	}
-
-	public void setMigrate(Boolean migrate) {
-		this.migrate = migrate;
-		if(migrate != null){
-			putQueryParameter("Migrate", migrate.toString());
-		}
-	}
-
 	@Override
-	public Class<DescribeComputeResourceResponse> getResponseClass() {
-		return DescribeComputeResourceResponse.class;
+	public Class<MigrateDBClusterResponse> getResponseClass() {
+		return MigrateDBClusterResponse.class;
 	}
 
 }
