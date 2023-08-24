@@ -16,8 +16,6 @@ package com.aliyuncs.csas.model.v20230120;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
-import com.google.gson.Gson;
-import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 
 /**
@@ -31,20 +29,16 @@ public class UpdatePrivateAccessPolicyRequest extends RpcAcsRequest<UpdatePrivat
 
 	private String policyId;
 
-	@SerializedName("customUserAttributes")
 	private List<CustomUserAttributes> customUserAttributes;
 
-	@SerializedName("tagIds")
 	private List<String> tagIds;
 
-	@SerializedName("userGroupIds")
 	private List<String> userGroupIds;
 
 	private String policyAction;
 
 	private Integer priority;
 
-	@SerializedName("applicationIds")
 	private List<String> applicationIds;
 
 	private String userGroupMode;
@@ -88,7 +82,15 @@ public class UpdatePrivateAccessPolicyRequest extends RpcAcsRequest<UpdatePrivat
 	public void setCustomUserAttributes(List<CustomUserAttributes> customUserAttributes) {
 		this.customUserAttributes = customUserAttributes;	
 		if (customUserAttributes != null) {
-			putBodyParameter("CustomUserAttributes" , new Gson().toJson(customUserAttributes));
+			for (int depth1 = 0; depth1 < customUserAttributes.size(); depth1++) {
+				if (customUserAttributes.get(depth1) != null) {
+					
+						putBodyParameter("CustomUserAttributes." + (depth1 + 1) + ".UserGroupType" , customUserAttributes.get(depth1).getUserGroupType());
+						putBodyParameter("CustomUserAttributes." + (depth1 + 1) + ".IdpId" , customUserAttributes.get(depth1).getIdpId());
+						putBodyParameter("CustomUserAttributes." + (depth1 + 1) + ".Value" , customUserAttributes.get(depth1).getValue());
+						putBodyParameter("CustomUserAttributes." + (depth1 + 1) + ".Relation" , customUserAttributes.get(depth1).getRelation());
+				}
+			}
 		}	
 	}
 
@@ -99,7 +101,9 @@ public class UpdatePrivateAccessPolicyRequest extends RpcAcsRequest<UpdatePrivat
 	public void setTagIds(List<String> tagIds) {
 		this.tagIds = tagIds;	
 		if (tagIds != null) {
-			putBodyParameter("TagIds" , new Gson().toJson(tagIds));
+			for (int depth1 = 0; depth1 < tagIds.size(); depth1++) {
+				putBodyParameter("TagIds." + (depth1 + 1) , tagIds.get(depth1));
+			}
 		}	
 	}
 
@@ -110,7 +114,9 @@ public class UpdatePrivateAccessPolicyRequest extends RpcAcsRequest<UpdatePrivat
 	public void setUserGroupIds(List<String> userGroupIds) {
 		this.userGroupIds = userGroupIds;	
 		if (userGroupIds != null) {
-			putBodyParameter("UserGroupIds" , new Gson().toJson(userGroupIds));
+			for (int depth1 = 0; depth1 < userGroupIds.size(); depth1++) {
+				putBodyParameter("UserGroupIds." + (depth1 + 1) , userGroupIds.get(depth1));
+			}
 		}	
 	}
 
@@ -143,7 +149,9 @@ public class UpdatePrivateAccessPolicyRequest extends RpcAcsRequest<UpdatePrivat
 	public void setApplicationIds(List<String> applicationIds) {
 		this.applicationIds = applicationIds;	
 		if (applicationIds != null) {
-			putBodyParameter("ApplicationIds" , new Gson().toJson(applicationIds));
+			for (int depth1 = 0; depth1 < applicationIds.size(); depth1++) {
+				putBodyParameter("ApplicationIds." + (depth1 + 1) , applicationIds.get(depth1));
+			}
 		}	
 	}
 
@@ -193,16 +201,12 @@ public class UpdatePrivateAccessPolicyRequest extends RpcAcsRequest<UpdatePrivat
 
 	public static class CustomUserAttributes {
 
-		@SerializedName("UserGroupType")
 		private String userGroupType;
 
-		@SerializedName("IdpId")
 		private Integer idpId;
 
-		@SerializedName("Value")
 		private String value;
 
-		@SerializedName("Relation")
 		private String relation;
 
 		public String getUserGroupType() {

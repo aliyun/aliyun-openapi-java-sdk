@@ -16,8 +16,6 @@ package com.aliyuncs.csas.model.v20230120;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
-import com.google.gson.Gson;
-import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 
 /**
@@ -27,7 +25,6 @@ import com.aliyuncs.http.MethodType;
 public class UpdatePrivateAccessApplicationRequest extends RpcAcsRequest<UpdatePrivateAccessApplicationResponse> {
 	   
 
-	@SerializedName("addresses")
 	private List<String> addresses;
 
 	private String description;
@@ -36,10 +33,8 @@ public class UpdatePrivateAccessApplicationRequest extends RpcAcsRequest<UpdateP
 
 	private String applicationId;
 
-	@SerializedName("tagIds")
 	private List<String> tagIds;
 
-	@SerializedName("portRanges")
 	private List<PortRanges> portRanges;
 
 	private String modifyType;
@@ -57,7 +52,9 @@ public class UpdatePrivateAccessApplicationRequest extends RpcAcsRequest<UpdateP
 	public void setAddresses(List<String> addresses) {
 		this.addresses = addresses;	
 		if (addresses != null) {
-			putBodyParameter("Addresses" , new Gson().toJson(addresses));
+			for (int depth1 = 0; depth1 < addresses.size(); depth1++) {
+				putBodyParameter("Addresses." + (depth1 + 1) , addresses.get(depth1));
+			}
 		}	
 	}
 
@@ -101,7 +98,9 @@ public class UpdatePrivateAccessApplicationRequest extends RpcAcsRequest<UpdateP
 	public void setTagIds(List<String> tagIds) {
 		this.tagIds = tagIds;	
 		if (tagIds != null) {
-			putBodyParameter("TagIds" , new Gson().toJson(tagIds));
+			for (int depth1 = 0; depth1 < tagIds.size(); depth1++) {
+				putBodyParameter("TagIds." + (depth1 + 1) , tagIds.get(depth1));
+			}
 		}	
 	}
 
@@ -112,7 +111,13 @@ public class UpdatePrivateAccessApplicationRequest extends RpcAcsRequest<UpdateP
 	public void setPortRanges(List<PortRanges> portRanges) {
 		this.portRanges = portRanges;	
 		if (portRanges != null) {
-			putBodyParameter("PortRanges" , new Gson().toJson(portRanges));
+			for (int depth1 = 0; depth1 < portRanges.size(); depth1++) {
+				if (portRanges.get(depth1) != null) {
+					
+						putBodyParameter("PortRanges." + (depth1 + 1) + ".End" , portRanges.get(depth1).getEnd());
+						putBodyParameter("PortRanges." + (depth1 + 1) + ".Begin" , portRanges.get(depth1).getBegin());
+				}
+			}
 		}	
 	}
 
@@ -140,10 +145,8 @@ public class UpdatePrivateAccessApplicationRequest extends RpcAcsRequest<UpdateP
 
 	public static class PortRanges {
 
-		@SerializedName("End")
 		private Integer end;
 
-		@SerializedName("Begin")
 		private Integer begin;
 
 		public Integer getEnd() {
