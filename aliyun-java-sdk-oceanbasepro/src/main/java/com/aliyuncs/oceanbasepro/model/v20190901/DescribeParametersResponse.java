@@ -61,6 +61,8 @@ public class DescribeParametersResponse extends AcsResponse {
 
 		private Boolean readonly;
 
+		private String unit;
+
 		private List<String> rejectedValue;
 
 		private List<String> acceptableValue;
@@ -119,6 +121,14 @@ public class DescribeParametersResponse extends AcsResponse {
 
 		public void setReadonly(Boolean readonly) {
 			this.readonly = readonly;
+		}
+
+		public String getUnit() {
+			return this.unit;
+		}
+
+		public void setUnit(String unit) {
+			this.unit = unit;
 		}
 
 		public List<String> getRejectedValue() {

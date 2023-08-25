@@ -135,6 +135,8 @@ public class DescribeTenantUsersResponse extends AcsResponse {
 
 			private String table;
 
+			private String privileges;
+
 			public String getDatabase() {
 				return this.database;
 			}
@@ -157,6 +159,14 @@ public class DescribeTenantUsersResponse extends AcsResponse {
 
 			public void setTable(String table) {
 				this.table = table;
+			}
+
+			public String getPrivileges() {
+				return this.privileges;
+			}
+
+			public void setPrivileges(String privileges) {
+				this.privileges = privileges;
 			}
 		}
 	}

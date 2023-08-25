@@ -91,7 +91,13 @@ public class DescribeTenantResponse extends AcsResponse {
 
 		private Boolean enableReadWriteSplit;
 
+		private Boolean enableParallelQuery;
+
+		private Long maxParallelQueryDegree;
+
 		private Boolean enableBinlogService;
+
+		private String timeZone;
 
 		private List<TenantConnectionsItem> tenantConnections;
 
@@ -277,12 +283,36 @@ public class DescribeTenantResponse extends AcsResponse {
 			this.enableReadWriteSplit = enableReadWriteSplit;
 		}
 
+		public Boolean getEnableParallelQuery() {
+			return this.enableParallelQuery;
+		}
+
+		public void setEnableParallelQuery(Boolean enableParallelQuery) {
+			this.enableParallelQuery = enableParallelQuery;
+		}
+
+		public Long getMaxParallelQueryDegree() {
+			return this.maxParallelQueryDegree;
+		}
+
+		public void setMaxParallelQueryDegree(Long maxParallelQueryDegree) {
+			this.maxParallelQueryDegree = maxParallelQueryDegree;
+		}
+
 		public Boolean getEnableBinlogService() {
 			return this.enableBinlogService;
 		}
 
 		public void setEnableBinlogService(Boolean enableBinlogService) {
 			this.enableBinlogService = enableBinlogService;
+		}
+
+		public String getTimeZone() {
+			return this.timeZone;
+		}
+
+		public void setTimeZone(String timeZone) {
+			this.timeZone = timeZone;
 		}
 
 		public List<TenantConnectionsItem> getTenantConnections() {
@@ -319,8 +349,6 @@ public class DescribeTenantResponse extends AcsResponse {
 
 		public static class TenantConnectionsItem {
 
-			private String connectionRole;
-
 			private String intranetAddress;
 
 			private Integer intranetPort;
@@ -345,15 +373,13 @@ public class DescribeTenantResponse extends AcsResponse {
 
 			private String addressType;
 
+			private Boolean enableTransactionSplit;
+
+			private Long parallelQueryDegree;
+
+			private String tenantEndpointId;
+
 			private List<String> connectionZones;
-
-			public String getConnectionRole() {
-				return this.connectionRole;
-			}
-
-			public void setConnectionRole(String connectionRole) {
-				this.connectionRole = connectionRole;
-			}
 
 			public String getIntranetAddress() {
 				return this.intranetAddress;
@@ -451,6 +477,30 @@ public class DescribeTenantResponse extends AcsResponse {
 				this.addressType = addressType;
 			}
 
+			public Boolean getEnableTransactionSplit() {
+				return this.enableTransactionSplit;
+			}
+
+			public void setEnableTransactionSplit(Boolean enableTransactionSplit) {
+				this.enableTransactionSplit = enableTransactionSplit;
+			}
+
+			public Long getParallelQueryDegree() {
+				return this.parallelQueryDegree;
+			}
+
+			public void setParallelQueryDegree(Long parallelQueryDegree) {
+				this.parallelQueryDegree = parallelQueryDegree;
+			}
+
+			public String getTenantEndpointId() {
+				return this.tenantEndpointId;
+			}
+
+			public void setTenantEndpointId(String tenantEndpointId) {
+				this.tenantEndpointId = tenantEndpointId;
+			}
+
 			public List<String> getConnectionZones() {
 				return this.connectionZones;
 			}
@@ -503,6 +553,8 @@ public class DescribeTenantResponse extends AcsResponse {
 
 			private DiskSize diskSize;
 
+			private CapacityUnit capacityUnit;
+
 			public Integer getUnitNum() {
 				return this.unitNum;
 			}
@@ -533,6 +585,14 @@ public class DescribeTenantResponse extends AcsResponse {
 
 			public void setDiskSize(DiskSize diskSize) {
 				this.diskSize = diskSize;
+			}
+
+			public CapacityUnit getCapacityUnit() {
+				return this.capacityUnit;
+			}
+
+			public void setCapacityUnit(CapacityUnit capacityUnit) {
+				this.capacityUnit = capacityUnit;
 			}
 
 			public static class Cpu {
@@ -611,6 +671,39 @@ public class DescribeTenantResponse extends AcsResponse {
 
 				public void setUsedDiskSize(Float usedDiskSize) {
 					this.usedDiskSize = usedDiskSize;
+				}
+			}
+
+			public static class CapacityUnit {
+
+				private Integer maxCapacityUnit;
+
+				private Integer minCapacityUnit;
+
+				private Integer usedCapacit;
+
+				public Integer getMaxCapacityUnit() {
+					return this.maxCapacityUnit;
+				}
+
+				public void setMaxCapacityUnit(Integer maxCapacityUnit) {
+					this.maxCapacityUnit = maxCapacityUnit;
+				}
+
+				public Integer getMinCapacityUnit() {
+					return this.minCapacityUnit;
+				}
+
+				public void setMinCapacityUnit(Integer minCapacityUnit) {
+					this.minCapacityUnit = minCapacityUnit;
+				}
+
+				public Integer getUsedCapacit() {
+					return this.usedCapacit;
+				}
+
+				public void setUsedCapacit(Integer usedCapacit) {
+					this.usedCapacit = usedCapacit;
 				}
 			}
 		}

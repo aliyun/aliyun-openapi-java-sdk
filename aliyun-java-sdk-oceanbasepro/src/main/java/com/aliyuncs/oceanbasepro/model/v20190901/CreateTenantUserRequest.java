@@ -27,17 +27,17 @@ public class CreateTenantUserRequest extends RpcAcsRequest<CreateTenantUserRespo
 
 	private String roles;
 
-	private String userType;
-
 	private String description;
 
 	private String userPassword;
 
-	private String instanceId;
-
 	private String tenantId;
 
 	private String encryptionType;
+
+	private String userType;
+
+	private String instanceId;
 
 	private String userName;
 	public CreateTenantUserRequest() {
@@ -57,17 +57,6 @@ public class CreateTenantUserRequest extends RpcAcsRequest<CreateTenantUserRespo
 		this.roles = roles;
 		if(roles != null){
 			putBodyParameter("Roles", roles);
-		}
-	}
-
-	public String getUserType() {
-		return this.userType;
-	}
-
-	public void setUserType(String userType) {
-		this.userType = userType;
-		if(userType != null){
-			putBodyParameter("UserType", userType);
 		}
 	}
 
@@ -93,17 +82,6 @@ public class CreateTenantUserRequest extends RpcAcsRequest<CreateTenantUserRespo
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putBodyParameter("InstanceId", instanceId);
-		}
-	}
-
 	public String getTenantId() {
 		return this.tenantId;
 	}
@@ -123,6 +101,28 @@ public class CreateTenantUserRequest extends RpcAcsRequest<CreateTenantUserRespo
 		this.encryptionType = encryptionType;
 		if(encryptionType != null){
 			putBodyParameter("EncryptionType", encryptionType);
+		}
+	}
+
+	public String getUserType() {
+		return this.userType;
+	}
+
+	public void setUserType(String userType) {
+		this.userType = userType;
+		if(userType != null){
+			putBodyParameter("UserType", userType);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putBodyParameter("InstanceId", instanceId);
 		}
 	}
 

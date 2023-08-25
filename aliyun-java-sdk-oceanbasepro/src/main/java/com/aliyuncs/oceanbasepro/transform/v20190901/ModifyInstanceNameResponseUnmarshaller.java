@@ -23,7 +23,6 @@ public class ModifyInstanceNameResponseUnmarshaller {
 	public static ModifyInstanceNameResponse unmarshall(ModifyInstanceNameResponse modifyInstanceNameResponse, UnmarshallerContext _ctx) {
 		
 		modifyInstanceNameResponse.setRequestId(_ctx.stringValue("ModifyInstanceNameResponse.RequestId"));
-		modifyInstanceNameResponse.setInstanceName(_ctx.stringValue("ModifyInstanceNameResponse.InstanceName"));
 	 
 	 	return modifyInstanceNameResponse;
 	}

@@ -31,13 +31,11 @@ public class ModifyTenantPrimaryZoneRequest extends RpcAcsRequest<ModifyTenantPr
 
 	private String tenantId;
 
+	private String tenantEndpointId;
+
 	private String instanceId;
 
 	private String primaryZone;
-
-	private String modifyType;
-
-	private String primaryZoneDeployType;
 	public ModifyTenantPrimaryZoneRequest() {
 		super("OceanBasePro", "2019-09-01", "ModifyTenantPrimaryZone", "oceanbase");
 		setMethod(MethodType.POST);
@@ -80,6 +78,17 @@ public class ModifyTenantPrimaryZoneRequest extends RpcAcsRequest<ModifyTenantPr
 		}
 	}
 
+	public String getTenantEndpointId() {
+		return this.tenantEndpointId;
+	}
+
+	public void setTenantEndpointId(String tenantEndpointId) {
+		this.tenantEndpointId = tenantEndpointId;
+		if(tenantEndpointId != null){
+			putBodyParameter("TenantEndpointId", tenantEndpointId);
+		}
+	}
+
 	public String getInstanceId() {
 		return this.instanceId;
 	}
@@ -99,28 +108,6 @@ public class ModifyTenantPrimaryZoneRequest extends RpcAcsRequest<ModifyTenantPr
 		this.primaryZone = primaryZone;
 		if(primaryZone != null){
 			putBodyParameter("PrimaryZone", primaryZone);
-		}
-	}
-
-	public String getModifyType() {
-		return this.modifyType;
-	}
-
-	public void setModifyType(String modifyType) {
-		this.modifyType = modifyType;
-		if(modifyType != null){
-			putBodyParameter("ModifyType", modifyType);
-		}
-	}
-
-	public String getPrimaryZoneDeployType() {
-		return this.primaryZoneDeployType;
-	}
-
-	public void setPrimaryZoneDeployType(String primaryZoneDeployType) {
-		this.primaryZoneDeployType = primaryZoneDeployType;
-		if(primaryZoneDeployType != null){
-			putBodyParameter("PrimaryZoneDeployType", primaryZoneDeployType);
 		}
 	}
 

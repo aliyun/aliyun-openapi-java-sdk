@@ -52,6 +52,7 @@ public class DescribeDatabasesResponseUnmarshaller {
 				usersItem.setUserType(_ctx.stringValue("DescribeDatabasesResponse.Databases["+ i +"].Users["+ j +"].UserType"));
 				usersItem.setRole(_ctx.stringValue("DescribeDatabasesResponse.Databases["+ i +"].Users["+ j +"].Role"));
 				usersItem.setUserName(_ctx.stringValue("DescribeDatabasesResponse.Databases["+ i +"].Users["+ j +"].UserName"));
+				usersItem.setPrivileges(_ctx.stringValue("DescribeDatabasesResponse.Databases["+ i +"].Users["+ j +"].Privileges"));
 
 				users.add(usersItem);
 			}

@@ -19,7 +19,9 @@ import java.util.List;
 
 import com.aliyuncs.oceanbasepro.model.v20190901.DescribeInstancesResponse;
 import com.aliyuncs.oceanbasepro.model.v20190901.DescribeInstancesResponse.Data;
+import com.aliyuncs.oceanbasepro.model.v20190901.DescribeInstancesResponse.Data.DataDiskAutoScaleConfig;
 import com.aliyuncs.oceanbasepro.model.v20190901.DescribeInstancesResponse.Data.Resource;
+import com.aliyuncs.oceanbasepro.model.v20190901.DescribeInstancesResponse.Data.Resource.CapacityUnit;
 import com.aliyuncs.oceanbasepro.model.v20190901.DescribeInstancesResponse.Data.Resource.Cpu;
 import com.aliyuncs.oceanbasepro.model.v20190901.DescribeInstancesResponse.Data.Resource.DiskSize;
 import com.aliyuncs.oceanbasepro.model.v20190901.DescribeInstancesResponse.Data.Resource.Memory;
@@ -60,18 +62,13 @@ public class DescribeInstancesResponseUnmarshaller {
 			data.setResourceGroupId(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].ResourceGroupId"));
 			data.setInstanceType(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].InstanceType"));
 			data.setInstanceRole(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].InstanceRole"));
+			data.setInTempCapacityStatus(_ctx.booleanValue("DescribeInstancesResponse.Instances["+ i +"].InTempCapacityStatus"));
 
 			List<String> availableZones = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeInstancesResponse.Instances["+ i +"].AvailableZones.Length"); j++) {
 				availableZones.add(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].AvailableZones["+ j +"]"));
 			}
 			data.setAvailableZones(availableZones);
-
-			List<String> securityIps = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeInstancesResponse.Instances["+ i +"].SecurityIps.Length"); j++) {
-				securityIps.add(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].SecurityIps["+ j +"]"));
-			}
-			data.setSecurityIps(securityIps);
 
 			Resource resource = new Resource();
 			resource.setUnitCount(_ctx.longValue("DescribeInstancesResponse.Instances["+ i +"].Resource.UnitCount"));
@@ -80,20 +77,39 @@ public class DescribeInstancesResponseUnmarshaller {
 			cpu.setTotalCpu(_ctx.longValue("DescribeInstancesResponse.Instances["+ i +"].Resource.Cpu.TotalCpu"));
 			cpu.setUsedCpu(_ctx.longValue("DescribeInstancesResponse.Instances["+ i +"].Resource.Cpu.UsedCpu"));
 			cpu.setUnitCpu(_ctx.longValue("DescribeInstancesResponse.Instances["+ i +"].Resource.Cpu.UnitCpu"));
+			cpu.setOriginalTotalCpu(_ctx.longValue("DescribeInstancesResponse.Instances["+ i +"].Resource.Cpu.OriginalTotalCpu"));
 			resource.setCpu(cpu);
 
 			Memory memory = new Memory();
 			memory.setTotalMemory(_ctx.longValue("DescribeInstancesResponse.Instances["+ i +"].Resource.Memory.TotalMemory"));
 			memory.setUsedMemory(_ctx.longValue("DescribeInstancesResponse.Instances["+ i +"].Resource.Memory.UsedMemory"));
 			memory.setUnitMemory(_ctx.longValue("DescribeInstancesResponse.Instances["+ i +"].Resource.Memory.UnitMemory"));
+			memory.setOriginalTotalMemory(_ctx.longValue("DescribeInstancesResponse.Instances["+ i +"].Resource.Memory.OriginalTotalMemory"));
 			resource.setMemory(memory);
 
 			DiskSize diskSize = new DiskSize();
 			diskSize.setTotalDiskSize(_ctx.longValue("DescribeInstancesResponse.Instances["+ i +"].Resource.DiskSize.TotalDiskSize"));
 			diskSize.setUsedDiskSize(_ctx.longValue("DescribeInstancesResponse.Instances["+ i +"].Resource.DiskSize.UsedDiskSize"));
 			diskSize.setUnitDiskSize(_ctx.longValue("DescribeInstancesResponse.Instances["+ i +"].Resource.DiskSize.UnitDiskSize"));
+			diskSize.setOriginalTotalDiskSize(_ctx.longValue("DescribeInstancesResponse.Instances["+ i +"].Resource.DiskSize.OriginalTotalDiskSize"));
 			resource.setDiskSize(diskSize);
+
+			CapacityUnit capacityUnit = new CapacityUnit();
+			capacityUnit.setMaxCapacityUnit(_ctx.integerValue("DescribeInstancesResponse.Instances["+ i +"].Resource.CapacityUnit.MaxCapacityUnit"));
+			capacityUnit.setMinCapacityUnit(_ctx.integerValue("DescribeInstancesResponse.Instances["+ i +"].Resource.CapacityUnit.MinCapacityUnit"));
+			capacityUnit.setUsedCapacityUnit(_ctx.integerValue("DescribeInstancesResponse.Instances["+ i +"].Resource.CapacityUnit.UsedCapacityUnit"));
+			resource.setCapacityUnit(capacityUnit);
 			data.setResource(resource);
+
+			DataDiskAutoScaleConfig dataDiskAutoScaleConfig = new DataDiskAutoScaleConfig();
+			dataDiskAutoScaleConfig.setAutoScale(_ctx.booleanValue("DescribeInstancesResponse.Instances["+ i +"].DataDiskAutoScaleConfig.AutoScale"));
+			dataDiskAutoScaleConfig.setUpperbound(_ctx.longValue("DescribeInstancesResponse.Instances["+ i +"].DataDiskAutoScaleConfig.Upperbound"));
+			dataDiskAutoScaleConfig.setUpperThreshold(_ctx.longValue("DescribeInstancesResponse.Instances["+ i +"].DataDiskAutoScaleConfig.UpperThreshold"));
+			dataDiskAutoScaleConfig.setUpperMergeThreshold(_ctx.longValue("DescribeInstancesResponse.Instances["+ i +"].DataDiskAutoScaleConfig.UpperMergeThreshold"));
+			dataDiskAutoScaleConfig.setMaxDiskSize(_ctx.longValue("DescribeInstancesResponse.Instances["+ i +"].DataDiskAutoScaleConfig.MaxDiskSize"));
+			dataDiskAutoScaleConfig.setScaleStepInNormal(_ctx.longValue("DescribeInstancesResponse.Instances["+ i +"].DataDiskAutoScaleConfig.ScaleStepInNormal"));
+			dataDiskAutoScaleConfig.setScaleStepInMerge(_ctx.longValue("DescribeInstancesResponse.Instances["+ i +"].DataDiskAutoScaleConfig.ScaleStepInMerge"));
+			data.setDataDiskAutoScaleConfig(dataDiskAutoScaleConfig);
 
 			instances.add(data);
 		}

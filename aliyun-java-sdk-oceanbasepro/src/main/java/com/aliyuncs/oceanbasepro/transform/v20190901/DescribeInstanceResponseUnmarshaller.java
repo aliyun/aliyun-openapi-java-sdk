@@ -19,11 +19,14 @@ import java.util.List;
 
 import com.aliyuncs.oceanbasepro.model.v20190901.DescribeInstanceResponse;
 import com.aliyuncs.oceanbasepro.model.v20190901.DescribeInstanceResponse.Instance;
+import com.aliyuncs.oceanbasepro.model.v20190901.DescribeInstanceResponse.Instance.DataDiskAutoScaleConfig;
 import com.aliyuncs.oceanbasepro.model.v20190901.DescribeInstanceResponse.Instance.Resource;
+import com.aliyuncs.oceanbasepro.model.v20190901.DescribeInstanceResponse.Instance.Resource.CapacityUnit;
 import com.aliyuncs.oceanbasepro.model.v20190901.DescribeInstanceResponse.Instance.Resource.Cpu;
 import com.aliyuncs.oceanbasepro.model.v20190901.DescribeInstanceResponse.Instance.Resource.DiskSize;
 import com.aliyuncs.oceanbasepro.model.v20190901.DescribeInstanceResponse.Instance.Resource.LogDiskSize;
 import com.aliyuncs.oceanbasepro.model.v20190901.DescribeInstanceResponse.Instance.Resource.Memory;
+import com.aliyuncs.oceanbasepro.model.v20190901.DescribeInstanceResponse.Instance.TenantCreatable;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -56,8 +59,11 @@ public class DescribeInstanceResponseUnmarshaller {
 		instance.setEnableUpgradeLogDisk(_ctx.booleanValue("DescribeInstanceResponse.Instance.EnableUpgradeLogDisk"));
 		instance.setInstanceRole(_ctx.stringValue("DescribeInstanceResponse.Instance.InstanceRole"));
 		instance.setNodeNum(_ctx.stringValue("DescribeInstanceResponse.Instance.NodeNum"));
+		instance.setReplicaMode(_ctx.stringValue("DescribeInstanceResponse.Instance.ReplicaMode"));
 		instance.setIsolationOptimization(_ctx.booleanValue("DescribeInstanceResponse.Instance.IsolationOptimization"));
 		instance.setEnableIsolationOptimization(_ctx.booleanValue("DescribeInstanceResponse.Instance.EnableIsolationOptimization"));
+		instance.setInTempCapacityStatus(_ctx.booleanValue("DescribeInstanceResponse.Instance.InTempCapacityStatus"));
+		instance.setDataDiskAutoScale(_ctx.booleanValue("DescribeInstanceResponse.Instance.DataDiskAutoScale"));
 
 		List<String> availableZones = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceResponse.Instance.AvailableZones.Length"); i++) {
@@ -78,12 +84,14 @@ public class DescribeInstanceResponseUnmarshaller {
 		cpu.setTotalCpu(_ctx.longValue("DescribeInstanceResponse.Instance.Resource.Cpu.TotalCpu"));
 		cpu.setUsedCpu(_ctx.longValue("DescribeInstanceResponse.Instance.Resource.Cpu.UsedCpu"));
 		cpu.setUnitCpu(_ctx.longValue("DescribeInstanceResponse.Instance.Resource.Cpu.UnitCpu"));
+		cpu.setOriginalTotalCpu(_ctx.longValue("DescribeInstanceResponse.Instance.Resource.Cpu.OriginalTotalCpu"));
 		resource.setCpu(cpu);
 
 		Memory memory = new Memory();
 		memory.setTotalMemory(_ctx.longValue("DescribeInstanceResponse.Instance.Resource.Memory.TotalMemory"));
 		memory.setUsedMemory(_ctx.longValue("DescribeInstanceResponse.Instance.Resource.Memory.UsedMemory"));
 		memory.setUnitMemory(_ctx.longValue("DescribeInstanceResponse.Instance.Resource.Memory.UnitMemory"));
+		memory.setOriginalTotalMemory(_ctx.longValue("DescribeInstanceResponse.Instance.Resource.Memory.OriginalTotalMemory"));
 		resource.setMemory(memory);
 
 		DiskSize diskSize = new DiskSize();
@@ -92,6 +100,8 @@ public class DescribeInstanceResponseUnmarshaller {
 		diskSize.setUnitDiskSize(_ctx.longValue("DescribeInstanceResponse.Instance.Resource.DiskSize.UnitDiskSize"));
 		diskSize.setDataUsedSize(_ctx.doubleValue("DescribeInstanceResponse.Instance.Resource.DiskSize.DataUsedSize"));
 		diskSize.setMaxDiskUsedPercent(_ctx.doubleValue("DescribeInstanceResponse.Instance.Resource.DiskSize.MaxDiskUsedPercent"));
+		diskSize.setOriginalTotalDiskSize(_ctx.longValue("DescribeInstanceResponse.Instance.Resource.DiskSize.OriginalTotalDiskSize"));
+		diskSize.setMaxDiskSize(_ctx.doubleValue("DescribeInstanceResponse.Instance.Resource.DiskSize.MaxDiskSize"));
 
 		List<String> maxDiskUsedObServer = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceResponse.Instance.Resource.DiskSize.MaxDiskUsedObServer.Length"); i++) {
@@ -104,7 +114,28 @@ public class DescribeInstanceResponseUnmarshaller {
 		logDiskSize.setTotalDiskSize(_ctx.longValue("DescribeInstanceResponse.Instance.Resource.LogDiskSize.TotalDiskSize"));
 		logDiskSize.setUnitDiskSize(_ctx.longValue("DescribeInstanceResponse.Instance.Resource.LogDiskSize.UnitDiskSize"));
 		resource.setLogDiskSize(logDiskSize);
+
+		CapacityUnit capacityUnit = new CapacityUnit();
+		capacityUnit.setMaxCapacityUnit(_ctx.integerValue("DescribeInstanceResponse.Instance.Resource.CapacityUnit.MaxCapacityUnit"));
+		capacityUnit.setMinCapacityUnit(_ctx.integerValue("DescribeInstanceResponse.Instance.Resource.CapacityUnit.MinCapacityUnit"));
+		capacityUnit.setUsedCapacityUnit(_ctx.stringValue("DescribeInstanceResponse.Instance.Resource.CapacityUnit.UsedCapacityUnit"));
+		resource.setCapacityUnit(capacityUnit);
 		instance.setResource(resource);
+
+		TenantCreatable tenantCreatable = new TenantCreatable();
+		tenantCreatable.setEnableCreateTenant(_ctx.booleanValue("DescribeInstanceResponse.Instance.TenantCreatable.EnableCreateTenant"));
+		tenantCreatable.setDisableCreateTenantReason(_ctx.stringValue("DescribeInstanceResponse.Instance.TenantCreatable.DisableCreateTenantReason"));
+		instance.setTenantCreatable(tenantCreatable);
+
+		DataDiskAutoScaleConfig dataDiskAutoScaleConfig = new DataDiskAutoScaleConfig();
+		dataDiskAutoScaleConfig.setAutoScale(_ctx.booleanValue("DescribeInstanceResponse.Instance.DataDiskAutoScaleConfig.AutoScale"));
+		dataDiskAutoScaleConfig.setUpperbound(_ctx.longValue("DescribeInstanceResponse.Instance.DataDiskAutoScaleConfig.Upperbound"));
+		dataDiskAutoScaleConfig.setUpperThreshold(_ctx.longValue("DescribeInstanceResponse.Instance.DataDiskAutoScaleConfig.UpperThreshold"));
+		dataDiskAutoScaleConfig.setUpperMergeThreshold(_ctx.longValue("DescribeInstanceResponse.Instance.DataDiskAutoScaleConfig.UpperMergeThreshold"));
+		dataDiskAutoScaleConfig.setMaxDiskSize(_ctx.longValue("DescribeInstanceResponse.Instance.DataDiskAutoScaleConfig.MaxDiskSize"));
+		dataDiskAutoScaleConfig.setScaleStepInNormal(_ctx.longValue("DescribeInstanceResponse.Instance.DataDiskAutoScaleConfig.ScaleStepInNormal"));
+		dataDiskAutoScaleConfig.setScaleStepInMerge(_ctx.longValue("DescribeInstanceResponse.Instance.DataDiskAutoScaleConfig.ScaleStepInMerge"));
+		instance.setDataDiskAutoScaleConfig(dataDiskAutoScaleConfig);
 		describeInstanceResponse.setInstance(instance);
 	 
 	 	return describeInstanceResponse;

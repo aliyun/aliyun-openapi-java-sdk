@@ -27,6 +27,8 @@ public class DescribeCharsetRequest extends RpcAcsRequest<DescribeCharsetRespons
 
 	private String tenantMode;
 
+	private String instanceId;
+
 	private String series;
 	public DescribeCharsetRequest() {
 		super("OceanBasePro", "2019-09-01", "DescribeCharset", "oceanbase");
@@ -45,6 +47,17 @@ public class DescribeCharsetRequest extends RpcAcsRequest<DescribeCharsetRespons
 		this.tenantMode = tenantMode;
 		if(tenantMode != null){
 			putBodyParameter("TenantMode", tenantMode);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putBodyParameter("InstanceId", instanceId);
 		}
 	}
 

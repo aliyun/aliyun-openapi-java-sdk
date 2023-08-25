@@ -49,6 +49,8 @@ public class DescribeAnomalySQLListRequest extends RpcAcsRequest<DescribeAnomaly
 
 	private String nodeIp;
 
+	private String instanceId;
+
 	private String dbName;
 
 	private String searchKeyWord;
@@ -194,6 +196,17 @@ public class DescribeAnomalySQLListRequest extends RpcAcsRequest<DescribeAnomaly
 		this.nodeIp = nodeIp;
 		if(nodeIp != null){
 			putBodyParameter("NodeIp", nodeIp);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putBodyParameter("InstanceId", instanceId);
 		}
 	}
 

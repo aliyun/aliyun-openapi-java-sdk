@@ -21,6 +21,7 @@ import com.aliyuncs.oceanbasepro.model.v20190901.DescribeTenantResponse;
 import com.aliyuncs.oceanbasepro.model.v20190901.DescribeTenantResponse.Tenant;
 import com.aliyuncs.oceanbasepro.model.v20190901.DescribeTenantResponse.Tenant.TenantConnectionsItem;
 import com.aliyuncs.oceanbasepro.model.v20190901.DescribeTenantResponse.Tenant.TenantResource;
+import com.aliyuncs.oceanbasepro.model.v20190901.DescribeTenantResponse.Tenant.TenantResource.CapacityUnit;
 import com.aliyuncs.oceanbasepro.model.v20190901.DescribeTenantResponse.Tenant.TenantResource.Cpu;
 import com.aliyuncs.oceanbasepro.model.v20190901.DescribeTenantResponse.Tenant.TenantResource.DiskSize;
 import com.aliyuncs.oceanbasepro.model.v20190901.DescribeTenantResponse.Tenant.TenantResource.Memory;
@@ -57,7 +58,10 @@ public class DescribeTenantResponseUnmarshaller {
 		tenant.setSeries(_ctx.stringValue("DescribeTenantResponse.Tenant.Series"));
 		tenant.setDiskType(_ctx.stringValue("DescribeTenantResponse.Tenant.DiskType"));
 		tenant.setEnableReadWriteSplit(_ctx.booleanValue("DescribeTenantResponse.Tenant.EnableReadWriteSplit"));
+		tenant.setEnableParallelQuery(_ctx.booleanValue("DescribeTenantResponse.Tenant.EnableParallelQuery"));
+		tenant.setMaxParallelQueryDegree(_ctx.longValue("DescribeTenantResponse.Tenant.MaxParallelQueryDegree"));
 		tenant.setEnableBinlogService(_ctx.booleanValue("DescribeTenantResponse.Tenant.EnableBinlogService"));
+		tenant.setTimeZone(_ctx.stringValue("DescribeTenantResponse.Tenant.TimeZone"));
 
 		List<String> availableZones = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeTenantResponse.Tenant.AvailableZones.Length"); i++) {
@@ -83,12 +87,17 @@ public class DescribeTenantResponseUnmarshaller {
 		DiskSize diskSize = new DiskSize();
 		diskSize.setUsedDiskSize(_ctx.floatValue("DescribeTenantResponse.Tenant.TenantResource.DiskSize.UsedDiskSize"));
 		tenantResource.setDiskSize(diskSize);
+
+		CapacityUnit capacityUnit = new CapacityUnit();
+		capacityUnit.setMaxCapacityUnit(_ctx.integerValue("DescribeTenantResponse.Tenant.TenantResource.CapacityUnit.MaxCapacityUnit"));
+		capacityUnit.setMinCapacityUnit(_ctx.integerValue("DescribeTenantResponse.Tenant.TenantResource.CapacityUnit.MinCapacityUnit"));
+		capacityUnit.setUsedCapacit(_ctx.integerValue("DescribeTenantResponse.Tenant.TenantResource.CapacityUnit.UsedCapacit"));
+		tenantResource.setCapacityUnit(capacityUnit);
 		tenant.setTenantResource(tenantResource);
 
 		List<TenantConnectionsItem> tenantConnections = new ArrayList<TenantConnectionsItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeTenantResponse.Tenant.TenantConnections.Length"); i++) {
 			TenantConnectionsItem tenantConnectionsItem = new TenantConnectionsItem();
-			tenantConnectionsItem.setConnectionRole(_ctx.stringValue("DescribeTenantResponse.Tenant.TenantConnections["+ i +"].ConnectionRole"));
 			tenantConnectionsItem.setIntranetAddress(_ctx.stringValue("DescribeTenantResponse.Tenant.TenantConnections["+ i +"].IntranetAddress"));
 			tenantConnectionsItem.setIntranetPort(_ctx.integerValue("DescribeTenantResponse.Tenant.TenantConnections["+ i +"].IntranetPort"));
 			tenantConnectionsItem.setInternetAddress(_ctx.stringValue("DescribeTenantResponse.Tenant.TenantConnections["+ i +"].InternetAddress"));
@@ -101,6 +110,9 @@ public class DescribeTenantResponseUnmarshaller {
 			tenantConnectionsItem.setInternetAddressStatus(_ctx.stringValue("DescribeTenantResponse.Tenant.TenantConnections["+ i +"].InternetAddressStatus"));
 			tenantConnectionsItem.setTransactionSplit(_ctx.booleanValue("DescribeTenantResponse.Tenant.TenantConnections["+ i +"].TransactionSplit"));
 			tenantConnectionsItem.setAddressType(_ctx.stringValue("DescribeTenantResponse.Tenant.TenantConnections["+ i +"].AddressType"));
+			tenantConnectionsItem.setEnableTransactionSplit(_ctx.booleanValue("DescribeTenantResponse.Tenant.TenantConnections["+ i +"].EnableTransactionSplit"));
+			tenantConnectionsItem.setParallelQueryDegree(_ctx.longValue("DescribeTenantResponse.Tenant.TenantConnections["+ i +"].ParallelQueryDegree"));
+			tenantConnectionsItem.setTenantEndpointId(_ctx.stringValue("DescribeTenantResponse.Tenant.TenantConnections["+ i +"].TenantEndpointId"));
 
 			List<String> connectionZones = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeTenantResponse.Tenant.TenantConnections["+ i +"].ConnectionZones.Length"); j++) {

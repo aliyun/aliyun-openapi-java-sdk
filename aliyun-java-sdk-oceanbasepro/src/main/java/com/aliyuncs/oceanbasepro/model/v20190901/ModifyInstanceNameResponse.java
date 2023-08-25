@@ -24,17 +24,7 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ModifyInstanceNameResponse extends AcsResponse {
 
-	private String instanceName;
-
 	private String requestId;
-
-	public String getInstanceName() {
-		return this.instanceName;
-	}
-
-	public void setInstanceName(String instanceName) {
-		this.instanceName = instanceName;
-	}
 
 	public String getRequestId() {
 		return this.requestId;

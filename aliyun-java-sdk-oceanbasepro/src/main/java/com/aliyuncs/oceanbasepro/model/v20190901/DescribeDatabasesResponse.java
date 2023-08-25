@@ -195,6 +195,8 @@ public class DescribeDatabasesResponse extends AcsResponse {
 
 			private String userName;
 
+			private String privileges;
+
 			public String getUserType() {
 				return this.userType;
 			}
@@ -217,6 +219,14 @@ public class DescribeDatabasesResponse extends AcsResponse {
 
 			public void setUserName(String userName) {
 				this.userName = userName;
+			}
+
+			public String getPrivileges() {
+				return this.privileges;
+			}
+
+			public void setPrivileges(String privileges) {
+				this.privileges = privileges;
 			}
 		}
 

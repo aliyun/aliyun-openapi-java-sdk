@@ -28,8 +28,6 @@ public class DescribeInstanceRequest extends RpcAcsRequest<DescribeInstanceRespo
 	private Integer pageNumber;
 
 	private String instanceId;
-
-	private Integer pageSize;
 	public DescribeInstanceRequest() {
 		super("OceanBasePro", "2019-09-01", "DescribeInstance", "oceanbase");
 		setMethod(MethodType.POST);
@@ -58,17 +56,6 @@ public class DescribeInstanceRequest extends RpcAcsRequest<DescribeInstanceRespo
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putBodyParameter("InstanceId", instanceId);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putBodyParameter("PageSize", pageSize.toString());
 		}
 	}
 

@@ -46,6 +46,7 @@ public class DescribeTenantUsersResponseUnmarshaller {
 				databasesItem.setDatabase(_ctx.stringValue("DescribeTenantUsersResponse.TenantUsers["+ i +"].Databases["+ j +"].Database"));
 				databasesItem.setRole(_ctx.stringValue("DescribeTenantUsersResponse.TenantUsers["+ i +"].Databases["+ j +"].Role"));
 				databasesItem.setTable(_ctx.stringValue("DescribeTenantUsersResponse.TenantUsers["+ i +"].Databases["+ j +"].Table"));
+				databasesItem.setPrivileges(_ctx.stringValue("DescribeTenantUsersResponse.TenantUsers["+ i +"].Databases["+ j +"].Privileges"));
 
 				databases.add(databasesItem);
 			}

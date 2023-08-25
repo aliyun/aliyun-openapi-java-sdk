@@ -105,11 +105,13 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private String instanceRole;
 
+		private Boolean inTempCapacityStatus;
+
 		private List<String> availableZones;
 
-		private List<String> securityIps;
-
 		private Resource resource;
+
+		private DataDiskAutoScaleConfig dataDiskAutoScaleConfig;
 
 		public String getVpcId() {
 			return this.vpcId;
@@ -303,6 +305,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 			this.instanceRole = instanceRole;
 		}
 
+		public Boolean getInTempCapacityStatus() {
+			return this.inTempCapacityStatus;
+		}
+
+		public void setInTempCapacityStatus(Boolean inTempCapacityStatus) {
+			this.inTempCapacityStatus = inTempCapacityStatus;
+		}
+
 		public List<String> getAvailableZones() {
 			return this.availableZones;
 		}
@@ -311,20 +321,20 @@ public class DescribeInstancesResponse extends AcsResponse {
 			this.availableZones = availableZones;
 		}
 
-		public List<String> getSecurityIps() {
-			return this.securityIps;
-		}
-
-		public void setSecurityIps(List<String> securityIps) {
-			this.securityIps = securityIps;
-		}
-
 		public Resource getResource() {
 			return this.resource;
 		}
 
 		public void setResource(Resource resource) {
 			this.resource = resource;
+		}
+
+		public DataDiskAutoScaleConfig getDataDiskAutoScaleConfig() {
+			return this.dataDiskAutoScaleConfig;
+		}
+
+		public void setDataDiskAutoScaleConfig(DataDiskAutoScaleConfig dataDiskAutoScaleConfig) {
+			this.dataDiskAutoScaleConfig = dataDiskAutoScaleConfig;
 		}
 
 		public static class Resource {
@@ -336,6 +346,8 @@ public class DescribeInstancesResponse extends AcsResponse {
 			private Memory memory;
 
 			private DiskSize diskSize;
+
+			private CapacityUnit capacityUnit;
 
 			public Long getUnitCount() {
 				return this.unitCount;
@@ -369,6 +381,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 				this.diskSize = diskSize;
 			}
 
+			public CapacityUnit getCapacityUnit() {
+				return this.capacityUnit;
+			}
+
+			public void setCapacityUnit(CapacityUnit capacityUnit) {
+				this.capacityUnit = capacityUnit;
+			}
+
 			public static class Cpu {
 
 				private Long totalCpu;
@@ -376,6 +396,8 @@ public class DescribeInstancesResponse extends AcsResponse {
 				private Long usedCpu;
 
 				private Long unitCpu;
+
+				private Long originalTotalCpu;
 
 				public Long getTotalCpu() {
 					return this.totalCpu;
@@ -400,6 +422,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 				public void setUnitCpu(Long unitCpu) {
 					this.unitCpu = unitCpu;
 				}
+
+				public Long getOriginalTotalCpu() {
+					return this.originalTotalCpu;
+				}
+
+				public void setOriginalTotalCpu(Long originalTotalCpu) {
+					this.originalTotalCpu = originalTotalCpu;
+				}
 			}
 
 			public static class Memory {
@@ -409,6 +439,8 @@ public class DescribeInstancesResponse extends AcsResponse {
 				private Long usedMemory;
 
 				private Long unitMemory;
+
+				private Long originalTotalMemory;
 
 				public Long getTotalMemory() {
 					return this.totalMemory;
@@ -433,6 +465,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 				public void setUnitMemory(Long unitMemory) {
 					this.unitMemory = unitMemory;
 				}
+
+				public Long getOriginalTotalMemory() {
+					return this.originalTotalMemory;
+				}
+
+				public void setOriginalTotalMemory(Long originalTotalMemory) {
+					this.originalTotalMemory = originalTotalMemory;
+				}
 			}
 
 			public static class DiskSize {
@@ -442,6 +482,8 @@ public class DescribeInstancesResponse extends AcsResponse {
 				private Long usedDiskSize;
 
 				private Long unitDiskSize;
+
+				private Long originalTotalDiskSize;
 
 				public Long getTotalDiskSize() {
 					return this.totalDiskSize;
@@ -466,6 +508,120 @@ public class DescribeInstancesResponse extends AcsResponse {
 				public void setUnitDiskSize(Long unitDiskSize) {
 					this.unitDiskSize = unitDiskSize;
 				}
+
+				public Long getOriginalTotalDiskSize() {
+					return this.originalTotalDiskSize;
+				}
+
+				public void setOriginalTotalDiskSize(Long originalTotalDiskSize) {
+					this.originalTotalDiskSize = originalTotalDiskSize;
+				}
+			}
+
+			public static class CapacityUnit {
+
+				private Integer maxCapacityUnit;
+
+				private Integer minCapacityUnit;
+
+				private Integer usedCapacityUnit;
+
+				public Integer getMaxCapacityUnit() {
+					return this.maxCapacityUnit;
+				}
+
+				public void setMaxCapacityUnit(Integer maxCapacityUnit) {
+					this.maxCapacityUnit = maxCapacityUnit;
+				}
+
+				public Integer getMinCapacityUnit() {
+					return this.minCapacityUnit;
+				}
+
+				public void setMinCapacityUnit(Integer minCapacityUnit) {
+					this.minCapacityUnit = minCapacityUnit;
+				}
+
+				public Integer getUsedCapacityUnit() {
+					return this.usedCapacityUnit;
+				}
+
+				public void setUsedCapacityUnit(Integer usedCapacityUnit) {
+					this.usedCapacityUnit = usedCapacityUnit;
+				}
+			}
+		}
+
+		public static class DataDiskAutoScaleConfig {
+
+			private Boolean autoScale;
+
+			private Long upperbound;
+
+			private Long upperThreshold;
+
+			private Long upperMergeThreshold;
+
+			private Long maxDiskSize;
+
+			private Long scaleStepInNormal;
+
+			private Long scaleStepInMerge;
+
+			public Boolean getAutoScale() {
+				return this.autoScale;
+			}
+
+			public void setAutoScale(Boolean autoScale) {
+				this.autoScale = autoScale;
+			}
+
+			public Long getUpperbound() {
+				return this.upperbound;
+			}
+
+			public void setUpperbound(Long upperbound) {
+				this.upperbound = upperbound;
+			}
+
+			public Long getUpperThreshold() {
+				return this.upperThreshold;
+			}
+
+			public void setUpperThreshold(Long upperThreshold) {
+				this.upperThreshold = upperThreshold;
+			}
+
+			public Long getUpperMergeThreshold() {
+				return this.upperMergeThreshold;
+			}
+
+			public void setUpperMergeThreshold(Long upperMergeThreshold) {
+				this.upperMergeThreshold = upperMergeThreshold;
+			}
+
+			public Long getMaxDiskSize() {
+				return this.maxDiskSize;
+			}
+
+			public void setMaxDiskSize(Long maxDiskSize) {
+				this.maxDiskSize = maxDiskSize;
+			}
+
+			public Long getScaleStepInNormal() {
+				return this.scaleStepInNormal;
+			}
+
+			public void setScaleStepInNormal(Long scaleStepInNormal) {
+				this.scaleStepInNormal = scaleStepInNormal;
+			}
+
+			public Long getScaleStepInMerge() {
+				return this.scaleStepInMerge;
+			}
+
+			public void setScaleStepInMerge(Long scaleStepInMerge) {
+				this.scaleStepInMerge = scaleStepInMerge;
 			}
 		}
 	}

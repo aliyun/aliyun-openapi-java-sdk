@@ -53,8 +53,6 @@ public class DescribeTenantZonesReadResponse extends AcsResponse {
 
 		private String zone;
 
-		private Boolean isReadOnlyAddressMaster;
-
 		private String isReadable;
 
 		public Boolean getIsElectable() {
@@ -79,14 +77,6 @@ public class DescribeTenantZonesReadResponse extends AcsResponse {
 
 		public void setZone(String zone) {
 			this.zone = zone;
-		}
-
-		public Boolean getIsReadOnlyAddressMaster() {
-			return this.isReadOnlyAddressMaster;
-		}
-
-		public void setIsReadOnlyAddressMaster(Boolean isReadOnlyAddressMaster) {
-			this.isReadOnlyAddressMaster = isReadOnlyAddressMaster;
 		}
 
 		public String getIsReadable() {

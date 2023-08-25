@@ -25,10 +25,6 @@ import com.aliyuncs.oceanbasepro.Endpoint;
 public class DescribeSlowSQLHistoryListRequest extends RpcAcsRequest<DescribeSlowSQLHistoryListResponse> {
 	   
 
-	private String sQLId;
-
-	private String endTime;
-
 	private String startTime;
 
 	private Integer pageNumber;
@@ -36,6 +32,10 @@ public class DescribeSlowSQLHistoryListRequest extends RpcAcsRequest<DescribeSlo
 	private String tenantId;
 
 	private Integer pageSize;
+
+	private String sQLId;
+
+	private String endTime;
 	public DescribeSlowSQLHistoryListRequest() {
 		super("OceanBasePro", "2019-09-01", "DescribeSlowSQLHistoryList", "oceanbase");
 		setMethod(MethodType.POST);
@@ -43,28 +43,6 @@ public class DescribeSlowSQLHistoryListRequest extends RpcAcsRequest<DescribeSlo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getSQLId() {
-		return this.sQLId;
-	}
-
-	public void setSQLId(String sQLId) {
-		this.sQLId = sQLId;
-		if(sQLId != null){
-			putBodyParameter("SQLId", sQLId);
-		}
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putBodyParameter("EndTime", endTime);
-		}
 	}
 
 	public String getStartTime() {
@@ -108,6 +86,28 @@ public class DescribeSlowSQLHistoryListRequest extends RpcAcsRequest<DescribeSlo
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putBodyParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getSQLId() {
+		return this.sQLId;
+	}
+
+	public void setSQLId(String sQLId) {
+		this.sQLId = sQLId;
+		if(sQLId != null){
+			putBodyParameter("SQLId", sQLId);
+		}
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putBodyParameter("EndTime", endTime);
 		}
 	}
 

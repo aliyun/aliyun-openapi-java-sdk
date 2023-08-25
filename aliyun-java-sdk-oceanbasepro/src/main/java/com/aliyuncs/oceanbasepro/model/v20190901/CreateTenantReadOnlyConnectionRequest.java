@@ -25,9 +25,13 @@ import com.aliyuncs.oceanbasepro.Endpoint;
 public class CreateTenantReadOnlyConnectionRequest extends RpcAcsRequest<CreateTenantReadOnlyConnectionResponse> {
 	   
 
+	private String tenantId;
+
+	private String vSwitchId;
+
 	private String instanceId;
 
-	private String tenantId;
+	private String vpcId;
 
 	private String zoneId;
 	public CreateTenantReadOnlyConnectionRequest() {
@@ -37,6 +41,28 @@ public class CreateTenantReadOnlyConnectionRequest extends RpcAcsRequest<CreateT
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getTenantId() {
+		return this.tenantId;
+	}
+
+	public void setTenantId(String tenantId) {
+		this.tenantId = tenantId;
+		if(tenantId != null){
+			putBodyParameter("TenantId", tenantId);
+		}
+	}
+
+	public String getVSwitchId() {
+		return this.vSwitchId;
+	}
+
+	public void setVSwitchId(String vSwitchId) {
+		this.vSwitchId = vSwitchId;
+		if(vSwitchId != null){
+			putBodyParameter("VSwitchId", vSwitchId);
+		}
 	}
 
 	public String getInstanceId() {
@@ -50,14 +76,14 @@ public class CreateTenantReadOnlyConnectionRequest extends RpcAcsRequest<CreateT
 		}
 	}
 
-	public String getTenantId() {
-		return this.tenantId;
+	public String getVpcId() {
+		return this.vpcId;
 	}
 
-	public void setTenantId(String tenantId) {
-		this.tenantId = tenantId;
-		if(tenantId != null){
-			putBodyParameter("TenantId", tenantId);
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+		if(vpcId != null){
+			putBodyParameter("VpcId", vpcId);
 		}
 	}
 

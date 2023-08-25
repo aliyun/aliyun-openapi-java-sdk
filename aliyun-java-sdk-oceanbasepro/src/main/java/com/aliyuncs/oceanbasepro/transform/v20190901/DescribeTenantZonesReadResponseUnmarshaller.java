@@ -34,7 +34,6 @@ public class DescribeTenantZonesReadResponseUnmarshaller {
 			tenantZonesItem.setIsElectable(_ctx.booleanValue("DescribeTenantZonesReadResponse.TenantZones["+ i +"].IsElectable"));
 			tenantZonesItem.setIsPrimary(_ctx.booleanValue("DescribeTenantZonesReadResponse.TenantZones["+ i +"].IsPrimary"));
 			tenantZonesItem.setZone(_ctx.stringValue("DescribeTenantZonesReadResponse.TenantZones["+ i +"].Zone"));
-			tenantZonesItem.setIsReadOnlyAddressMaster(_ctx.booleanValue("DescribeTenantZonesReadResponse.TenantZones["+ i +"].IsReadOnlyAddressMaster"));
 			tenantZonesItem.setIsReadable(_ctx.stringValue("DescribeTenantZonesReadResponse.TenantZones["+ i +"].IsReadable"));
 
 			tenantZones.add(tenantZonesItem);
