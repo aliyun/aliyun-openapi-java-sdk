@@ -15,6 +15,7 @@
 package com.aliyuncs.avatar.model.v20220130;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.avatar.transform.v20220130.QueryAvatarResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -85,6 +86,8 @@ public class QueryAvatarResponse extends AcsResponse {
 
 		private String image;
 
+		private Map<Object,Object> allLocateImages;
+
 		private String modelType;
 
 		private String avatarType;
@@ -92,6 +95,8 @@ public class QueryAvatarResponse extends AcsResponse {
 		private String makeStatus;
 
 		private String makeFailReason;
+
+		private String makeStage;
 
 		private SupportedResolutions supportedResolutions;
 
@@ -127,6 +132,14 @@ public class QueryAvatarResponse extends AcsResponse {
 			this.image = image;
 		}
 
+		public Map<Object,Object> getAllLocateImages() {
+			return this.allLocateImages;
+		}
+
+		public void setAllLocateImages(Map<Object,Object> allLocateImages) {
+			this.allLocateImages = allLocateImages;
+		}
+
 		public String getModelType() {
 			return this.modelType;
 		}
@@ -157,6 +170,14 @@ public class QueryAvatarResponse extends AcsResponse {
 
 		public void setMakeFailReason(String makeFailReason) {
 			this.makeFailReason = makeFailReason;
+		}
+
+		public String getMakeStage() {
+			return this.makeStage;
+		}
+
+		public void setMakeStage(String makeStage) {
+			this.makeStage = makeStage;
 		}
 
 		public SupportedResolutions getSupportedResolutions() {

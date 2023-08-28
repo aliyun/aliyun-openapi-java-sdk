@@ -22,6 +22,7 @@ import com.aliyuncs.avatar.model.v20220130.QueryAvatarResponse.Data;
 import com.aliyuncs.avatar.model.v20220130.QueryAvatarResponse.Data.SupportedResolutions;
 import com.aliyuncs.avatar.model.v20220130.QueryAvatarResponse.Data.SupportedResolutions.OfflineItem;
 import com.aliyuncs.avatar.model.v20220130.QueryAvatarResponse.Data.SupportedResolutions.OnlineItem;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -39,10 +40,12 @@ public class QueryAvatarResponseUnmarshaller {
 		data.setDescription(_ctx.stringValue("QueryAvatarResponse.Data.Description"));
 		data.setPortrait(_ctx.stringValue("QueryAvatarResponse.Data.Portrait"));
 		data.setImage(_ctx.stringValue("QueryAvatarResponse.Data.Image"));
+		data.setAllLocateImages(_ctx.mapValue("QueryAvatarResponse.Data.AllLocateImages"));
 		data.setModelType(_ctx.stringValue("QueryAvatarResponse.Data.ModelType"));
 		data.setAvatarType(_ctx.stringValue("QueryAvatarResponse.Data.AvatarType"));
 		data.setMakeStatus(_ctx.stringValue("QueryAvatarResponse.Data.MakeStatus"));
 		data.setMakeFailReason(_ctx.stringValue("QueryAvatarResponse.Data.MakeFailReason"));
+		data.setMakeStage(_ctx.stringValue("QueryAvatarResponse.Data.MakeStage"));
 
 		SupportedResolutions supportedResolutions = new SupportedResolutions();
 

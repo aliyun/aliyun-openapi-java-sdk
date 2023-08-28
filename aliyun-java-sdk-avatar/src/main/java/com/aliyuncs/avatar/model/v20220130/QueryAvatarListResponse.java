@@ -147,6 +147,8 @@ public class QueryAvatarListResponse extends AcsResponse {
 
 			private String makeFailReason;
 
+			private String makeStage;
+
 			private SupportedResolutions supportedResolutions;
 
 			public String getCode() {
@@ -219,6 +221,14 @@ public class QueryAvatarListResponse extends AcsResponse {
 
 			public void setMakeFailReason(String makeFailReason) {
 				this.makeFailReason = makeFailReason;
+			}
+
+			public String getMakeStage() {
+				return this.makeStage;
+			}
+
+			public void setMakeStage(String makeStage) {
+				this.makeStage = makeStage;
 			}
 
 			public SupportedResolutions getSupportedResolutions() {
