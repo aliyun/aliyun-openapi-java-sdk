@@ -5,9 +5,12 @@ import com.google.gson.Gson;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.concurrent.ThreadLocalRandom;
+import java.util.concurrent.atomic.AtomicLong;
 import java.util.regex.Pattern;
 
 public class ParameterHelper {
@@ -17,16 +20,46 @@ public class ParameterHelper {
     private final static String FORMAT_RFC2616 = "EEE, dd MMM yyyy HH:mm:ss zzz";
     public final static String PATTERN = "^[a-zA-Z0-9_-]+$";
 
+    private static AtomicLong seqId = new AtomicLong(0);
+
+    private static final long processStartTime = System.currentTimeMillis();
+
     public ParameterHelper() {
     }
 
     public static String getUniqueNonce() {
-        StringBuffer uniqueNonce = new StringBuffer();
-        UUID uuid = UUID.randomUUID();
-        uniqueNonce.append(uuid.toString());
-        uniqueNonce.append(System.currentTimeMillis());
-        uniqueNonce.append(Thread.currentThread().getId());
-        return uniqueNonce.toString();
+        // thread id
+        long threadId = Thread.currentThread().getId();
+        // timestamp: ms
+        long currentTime = System.currentTimeMillis();
+        // sequence number
+        ThreadLocalRandom random = ThreadLocalRandom.current();
+        long seq = seqId.getAndIncrement();
+        long rand = random.nextLong();
+
+        StringBuffer sb = new StringBuffer();
+        sb.append(processStartTime).append('-')
+                .append(threadId).append('-')
+                .append(currentTime).append('-')
+                .append(seq).append('-')
+                .append(rand);
+        try {
+            // hash
+            MessageDigest digest = MessageDigest.getInstance("MD5");
+            // hex
+            byte[] msg = sb.toString().getBytes();
+            sb.setLength(0);
+            for (byte b : digest.digest(msg)) {
+                String hex = Integer.toHexString(b & 0xFF);
+                if (hex.length() < 2) {
+                    sb.append(0);
+                }
+                sb.append(hex);
+            }
+        } catch(NoSuchAlgorithmException e) {
+            throw new RuntimeException(e.getMessage(), e);
+        }
+        return sb.toString();
     }
 
     public static void validateParameter(String parameter, String parameterName) {
