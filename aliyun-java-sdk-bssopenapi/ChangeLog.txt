@@ -1,3 +1,6 @@
+2023-08-29 Version: 1.8.11
+- RenewChange Publish.
+
 2023-05-26 Version: 1.8.10
 - QuerySavingsPlansInstance add CommodityCode.
 - QuerySavingsPlansDiscount add RegionCode.

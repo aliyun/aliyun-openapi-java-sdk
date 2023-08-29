@@ -44,6 +44,7 @@ public class QueryCashCouponsResponseUnmarshaller {
 			cashCoupon.setApplicableProducts(_ctx.stringValue("QueryCashCouponsResponse.Data["+ i +"].ApplicableProducts"));
 			cashCoupon.setCashCouponNo(_ctx.stringValue("QueryCashCouponsResponse.Data["+ i +"].CashCouponNo"));
 			cashCoupon.setBalance(_ctx.stringValue("QueryCashCouponsResponse.Data["+ i +"].Balance"));
+			cashCoupon.setDescription(_ctx.stringValue("QueryCashCouponsResponse.Data["+ i +"].Description"));
 
 			data.add(cashCoupon);
 		}

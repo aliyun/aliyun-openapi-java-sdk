@@ -163,6 +163,8 @@ public class QuerySavingsPlansInstanceResponse extends AcsResponse {
 
 			private String commodityCode;
 
+			private String currentPoolValue;
+
 			private List<Tag> tags;
 
 			public String getStatus() {
@@ -339,6 +341,14 @@ public class QuerySavingsPlansInstanceResponse extends AcsResponse {
 
 			public void setCommodityCode(String commodityCode) {
 				this.commodityCode = commodityCode;
+			}
+
+			public String getCurrentPoolValue() {
+				return this.currentPoolValue;
+			}
+
+			public void setCurrentPoolValue(String currentPoolValue) {
+				this.currentPoolValue = currentPoolValue;
 			}
 
 			public List<Tag> getTags() {
