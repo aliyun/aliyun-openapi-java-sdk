@@ -25,6 +25,8 @@ import com.aliyuncs.sddp.Endpoint;
 public class DescribeDataObjectsRequest extends RpcAcsRequest<DescribeDataObjectsResponse> {
 	   
 
+	private Long fileType;
+
 	private String riskLevels;
 
 	private String queryName;
@@ -46,6 +48,10 @@ public class DescribeDataObjectsRequest extends RpcAcsRequest<DescribeDataObject
 	private Integer currentPage;
 
 	private Long templateId;
+
+	private String instanceId;
+
+	private String modelIds;
 	public DescribeDataObjectsRequest() {
 		super("Sddp", "2019-01-03", "DescribeDataObjects", "sddp");
 		setMethod(MethodType.POST);
@@ -53,6 +59,17 @@ public class DescribeDataObjectsRequest extends RpcAcsRequest<DescribeDataObject
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Long getFileType() {
+		return this.fileType;
+	}
+
+	public void setFileType(Long fileType) {
+		this.fileType = fileType;
+		if(fileType != null){
+			putQueryParameter("FileType", fileType.toString());
+		}
 	}
 
 	public String getRiskLevels() {
@@ -173,6 +190,28 @@ public class DescribeDataObjectsRequest extends RpcAcsRequest<DescribeDataObject
 		this.templateId = templateId;
 		if(templateId != null){
 			putQueryParameter("TemplateId", templateId.toString());
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getModelIds() {
+		return this.modelIds;
+	}
+
+	public void setModelIds(String modelIds) {
+		this.modelIds = modelIds;
+		if(modelIds != null){
+			putQueryParameter("ModelIds", modelIds);
 		}
 	}
 

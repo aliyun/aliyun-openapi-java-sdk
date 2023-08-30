@@ -41,6 +41,8 @@ public class DescribeRulesRequest extends RpcAcsRequest<DescribeRulesResponse> {
 
 	private Boolean keywordCompatible;
 
+	private Integer supportForm;
+
 	private Integer ruleType;
 
 	private String groupId;
@@ -150,6 +152,17 @@ public class DescribeRulesRequest extends RpcAcsRequest<DescribeRulesResponse> {
 		this.keywordCompatible = keywordCompatible;
 		if(keywordCompatible != null){
 			putQueryParameter("KeywordCompatible", keywordCompatible.toString());
+		}
+	}
+
+	public Integer getSupportForm() {
+		return this.supportForm;
+	}
+
+	public void setSupportForm(Integer supportForm) {
+		this.supportForm = supportForm;
+		if(supportForm != null){
+			putQueryParameter("SupportForm", supportForm.toString());
 		}
 	}
 
