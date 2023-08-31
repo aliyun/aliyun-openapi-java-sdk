@@ -61,6 +61,7 @@ public class LoginInstanceRequest extends RpcAcsRequest<LoginInstanceResponse> {
 				putQueryParameter("InstanceLoginInfo.ExpireTime" , instanceLoginInfo.getExpireTime());
 				putQueryParameter("InstanceLoginInfo.Certificate" , instanceLoginInfo.getCertificate());
 				putQueryParameter("InstanceLoginInfo.AuthenticationType" , instanceLoginInfo.getAuthenticationType());
+				putQueryParameter("InstanceLoginInfo.DockerExec" , instanceLoginInfo.getDockerExec());
 				putQueryParameter("InstanceLoginInfo.Protocol" , instanceLoginInfo.getBizProtocol());
 				putQueryParameter("InstanceLoginInfo.Password" , instanceLoginInfo.getPassword());
 				putQueryParameter("InstanceLoginInfo.InstanceId" , instanceLoginInfo.getInstanceId());
@@ -97,6 +98,7 @@ public class LoginInstanceRequest extends RpcAcsRequest<LoginInstanceResponse> {
 						putQueryParameter("InstanceLoginInfo.Options.NotificationRetryLimit" , instanceLoginInfo.getOptions().getNotificationRetryLimit());
 				}
 				putQueryParameter("InstanceLoginInfo.InstanceType" , instanceLoginInfo.getInstanceType());
+				putQueryParameter("InstanceLoginInfo.DockerContainerName" , instanceLoginInfo.getDockerContainerName());
 				putQueryParameter("InstanceLoginInfo.PassPhrase" , instanceLoginInfo.getPassPhrase());
 				putQueryParameter("InstanceLoginInfo.DurationSeconds" , instanceLoginInfo.getDurationSeconds());
 				putQueryParameter("InstanceLoginInfo.NetworkAccessMode" , instanceLoginInfo.getNetworkAccessMode());
@@ -158,6 +160,8 @@ public class LoginInstanceRequest extends RpcAcsRequest<LoginInstanceResponse> {
 
 		private String authenticationType;
 
+		private String dockerExec;
+
 		private String protocol;
 
 		private String password;
@@ -175,6 +179,8 @@ public class LoginInstanceRequest extends RpcAcsRequest<LoginInstanceResponse> {
 		private Options options;
 
 		private String instanceType;
+
+		private String dockerContainerName;
 
 		private String passPhrase;
 
@@ -206,6 +212,14 @@ public class LoginInstanceRequest extends RpcAcsRequest<LoginInstanceResponse> {
 
 		public void setAuthenticationType(String authenticationType) {
 			this.authenticationType = authenticationType;
+		}
+
+		public String getDockerExec() {
+			return this.dockerExec;
+		}
+
+		public void setDockerExec(String dockerExec) {
+			this.dockerExec = dockerExec;
 		}
 
 		public String getBizProtocol() {
@@ -278,6 +292,14 @@ public class LoginInstanceRequest extends RpcAcsRequest<LoginInstanceResponse> {
 
 		public void setInstanceType(String instanceType) {
 			this.instanceType = instanceType;
+		}
+
+		public String getDockerContainerName() {
+			return this.dockerContainerName;
+		}
+
+		public void setDockerContainerName(String dockerContainerName) {
+			this.dockerContainerName = dockerContainerName;
 		}
 
 		public String getPassPhrase() {
