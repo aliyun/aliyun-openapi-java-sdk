@@ -27,6 +27,8 @@ public class MergeVideoFaceRequest extends RpcAcsRequest<MergeVideoFaceResponse>
 
 	private String referenceURL;
 
+	private Boolean enhance;
+
 	private String videoURL;
 
 	private Boolean addWatermark;
@@ -47,6 +49,17 @@ public class MergeVideoFaceRequest extends RpcAcsRequest<MergeVideoFaceResponse>
 		this.referenceURL = referenceURL;
 		if(referenceURL != null){
 			putBodyParameter("ReferenceURL", referenceURL);
+		}
+	}
+
+	public Boolean getEnhance() {
+		return this.enhance;
+	}
+
+	public void setEnhance(Boolean enhance) {
+		this.enhance = enhance;
+		if(enhance != null){
+			putBodyParameter("Enhance", enhance.toString());
 		}
 	}
 

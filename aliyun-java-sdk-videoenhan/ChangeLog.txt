@@ -1,3 +1,6 @@
+2023-08-31 Version: 1.0.19
+- Update MergeVideoFace.
+
 2023-08-10 Version: 1.0.18
 - Update MergeVideoModelFace and MergeVideoFace.
 
