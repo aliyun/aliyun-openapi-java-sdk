@@ -58,6 +58,12 @@ public class ListPrivateAccessApplicationsResponseUnmarshaller {
 			}
 			application.setPolicyIds(policyIds);
 
+			List<String> connectorIds = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("ListPrivateAccessApplicationsResponse.Applications["+ i +"].ConnectorIds.Length"); j++) {
+				connectorIds.add(_ctx.stringValue("ListPrivateAccessApplicationsResponse.Applications["+ i +"].ConnectorIds["+ j +"]"));
+			}
+			application.setConnectorIds(connectorIds);
+
 			List<PortRange> portRanges = new ArrayList<PortRange>();
 			for (int j = 0; j < _ctx.lengthValue("ListPrivateAccessApplicationsResponse.Applications["+ i +"].PortRanges.Length"); j++) {
 				PortRange portRange = new PortRange();

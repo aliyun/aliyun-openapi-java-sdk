@@ -55,6 +55,12 @@ public class GetPrivateAccessApplicationResponseUnmarshaller {
 		}
 		application.setPolicyIds(policyIds);
 
+		List<String> connectorIds = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("GetPrivateAccessApplicationResponse.Application.ConnectorIds.Length"); i++) {
+			connectorIds.add(_ctx.stringValue("GetPrivateAccessApplicationResponse.Application.ConnectorIds["+ i +"]"));
+		}
+		application.setConnectorIds(connectorIds);
+
 		List<PortRange> portRanges = new ArrayList<PortRange>();
 		for (int i = 0; i < _ctx.lengthValue("GetPrivateAccessApplicationResponse.Application.PortRanges.Length"); i++) {
 			PortRange portRange = new PortRange();

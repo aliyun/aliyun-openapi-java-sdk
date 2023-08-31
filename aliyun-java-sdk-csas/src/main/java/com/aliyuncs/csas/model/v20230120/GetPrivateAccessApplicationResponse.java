@@ -67,6 +67,8 @@ public class GetPrivateAccessApplicationResponse extends AcsResponse {
 
 		private List<String> policyIds;
 
+		private List<String> connectorIds;
+
 		public String getApplicationId() {
 			return this.applicationId;
 		}
@@ -145,6 +147,14 @@ public class GetPrivateAccessApplicationResponse extends AcsResponse {
 
 		public void setPolicyIds(List<String> policyIds) {
 			this.policyIds = policyIds;
+		}
+
+		public List<String> getConnectorIds() {
+			return this.connectorIds;
+		}
+
+		public void setConnectorIds(List<String> connectorIds) {
+			this.connectorIds = connectorIds;
 		}
 
 		public static class PortRange {

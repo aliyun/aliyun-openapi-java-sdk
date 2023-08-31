@@ -33,6 +33,8 @@ public class ListPrivateAccessApplicationsRequest extends RpcAcsRequest<ListPriv
 
 	private String tagId;
 
+	private String connectorId;
+
 	private Integer currentPage;
 
 	private List<String> applicationIds;
@@ -86,6 +88,17 @@ public class ListPrivateAccessApplicationsRequest extends RpcAcsRequest<ListPriv
 		this.tagId = tagId;
 		if(tagId != null){
 			putQueryParameter("TagId", tagId);
+		}
+	}
+
+	public String getConnectorId() {
+		return this.connectorId;
+	}
+
+	public void setConnectorId(String connectorId) {
+		this.connectorId = connectorId;
+		if(connectorId != null){
+			putQueryParameter("ConnectorId", connectorId);
 		}
 	}
 

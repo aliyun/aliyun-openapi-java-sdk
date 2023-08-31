@@ -71,6 +71,8 @@ public class ListConnectorsResponse extends AcsResponse {
 
 		private List<Application> applications;
 
+		private List<ConnectorClient> connectorClients;
+
 		private UpgradeTime upgradeTime;
 
 		public String getConnectorId() {
@@ -129,6 +131,14 @@ public class ListConnectorsResponse extends AcsResponse {
 			this.applications = applications;
 		}
 
+		public List<ConnectorClient> getConnectorClients() {
+			return this.connectorClients;
+		}
+
+		public void setConnectorClients(List<ConnectorClient> connectorClients) {
+			this.connectorClients = connectorClients;
+		}
+
 		public UpgradeTime getUpgradeTime() {
 			return this.upgradeTime;
 		}
@@ -157,6 +167,49 @@ public class ListConnectorsResponse extends AcsResponse {
 
 			public void setApplicationName(String applicationName) {
 				this.applicationName = applicationName;
+			}
+		}
+
+		public static class ConnectorClient {
+
+			private String devTag;
+
+			private String hostname;
+
+			private String connectionStatus;
+
+			private String publicIp;
+
+			public String getDevTag() {
+				return this.devTag;
+			}
+
+			public void setDevTag(String devTag) {
+				this.devTag = devTag;
+			}
+
+			public String getHostname() {
+				return this.hostname;
+			}
+
+			public void setHostname(String hostname) {
+				this.hostname = hostname;
+			}
+
+			public String getConnectionStatus() {
+				return this.connectionStatus;
+			}
+
+			public void setConnectionStatus(String connectionStatus) {
+				this.connectionStatus = connectionStatus;
+			}
+
+			public String getPublicIp() {
+				return this.publicIp;
+			}
+
+			public void setPublicIp(String publicIp) {
+				this.publicIp = publicIp;
 			}
 		}
 

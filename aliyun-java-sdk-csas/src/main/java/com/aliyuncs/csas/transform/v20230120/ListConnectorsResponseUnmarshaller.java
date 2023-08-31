@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.csas.model.v20230120.ListConnectorsResponse;
 import com.aliyuncs.csas.model.v20230120.ListConnectorsResponse.Connector;
 import com.aliyuncs.csas.model.v20230120.ListConnectorsResponse.Connector.Application;
+import com.aliyuncs.csas.model.v20230120.ListConnectorsResponse.Connector.ConnectorClient;
 import com.aliyuncs.csas.model.v20230120.ListConnectorsResponse.Connector.UpgradeTime;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -55,6 +56,18 @@ public class ListConnectorsResponseUnmarshaller {
 				applications.add(application);
 			}
 			connector.setApplications(applications);
+
+			List<ConnectorClient> connectorClients = new ArrayList<ConnectorClient>();
+			for (int j = 0; j < _ctx.lengthValue("ListConnectorsResponse.Connectors["+ i +"].ConnectorClients.Length"); j++) {
+				ConnectorClient connectorClient = new ConnectorClient();
+				connectorClient.setDevTag(_ctx.stringValue("ListConnectorsResponse.Connectors["+ i +"].ConnectorClients["+ j +"].DevTag"));
+				connectorClient.setHostname(_ctx.stringValue("ListConnectorsResponse.Connectors["+ i +"].ConnectorClients["+ j +"].Hostname"));
+				connectorClient.setConnectionStatus(_ctx.stringValue("ListConnectorsResponse.Connectors["+ i +"].ConnectorClients["+ j +"].ConnectionStatus"));
+				connectorClient.setPublicIp(_ctx.stringValue("ListConnectorsResponse.Connectors["+ i +"].ConnectorClients["+ j +"].PublicIp"));
+
+				connectorClients.add(connectorClient);
+			}
+			connector.setConnectorClients(connectorClients);
 
 			connectors.add(connector);
 		}
