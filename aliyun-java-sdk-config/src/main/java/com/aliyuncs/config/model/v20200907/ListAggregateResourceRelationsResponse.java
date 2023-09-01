@@ -89,7 +89,7 @@ public class ListAggregateResourceRelationsResponse extends AcsResponse {
 
 		public static class ResourceRelationListItem {
 
-			private Integer accountId;
+			private Long accountId;
 
 			private String sourceResourceType;
 
@@ -103,11 +103,11 @@ public class ListAggregateResourceRelationsResponse extends AcsResponse {
 
 			private String relationType;
 
-			public Integer getAccountId() {
+			public Long getAccountId() {
 				return this.accountId;
 			}
 
-			public void setAccountId(Integer accountId) {
+			public void setAccountId(Long accountId) {
 				this.accountId = accountId;
 			}
 

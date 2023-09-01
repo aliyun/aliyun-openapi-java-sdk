@@ -37,7 +37,7 @@ public class ListAggregateResourceRelationsResponseUnmarshaller {
 		List<ResourceRelationListItem> resourceRelationList = new ArrayList<ResourceRelationListItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListAggregateResourceRelationsResponse.ResourceRelations.ResourceRelationList.Length"); i++) {
 			ResourceRelationListItem resourceRelationListItem = new ResourceRelationListItem();
-			resourceRelationListItem.setAccountId(_ctx.integerValue("ListAggregateResourceRelationsResponse.ResourceRelations.ResourceRelationList["+ i +"].AccountId"));
+			resourceRelationListItem.setAccountId(_ctx.longValue("ListAggregateResourceRelationsResponse.ResourceRelations.ResourceRelationList["+ i +"].AccountId"));
 			resourceRelationListItem.setSourceResourceType(_ctx.stringValue("ListAggregateResourceRelationsResponse.ResourceRelations.ResourceRelationList["+ i +"].SourceResourceType"));
 			resourceRelationListItem.setSourceResourceRegionId(_ctx.stringValue("ListAggregateResourceRelationsResponse.ResourceRelations.ResourceRelationList["+ i +"].SourceResourceRegionId"));
 			resourceRelationListItem.setSourceResourceId(_ctx.stringValue("ListAggregateResourceRelationsResponse.ResourceRelations.ResourceRelationList["+ i +"].SourceResourceId"));
