@@ -42,6 +42,8 @@ public class ListFeatureViewsRequest extends RoaAcsRequest<ListFeatureViewsRespo
 
 	private String instanceId;
 
+	private String name;
+
 	private String sortBy;
 	public ListFeatureViewsRequest() {
 		super("PaiFeatureStore", "2023-06-21", "ListFeatureViews");
@@ -145,6 +147,17 @@ public class ListFeatureViewsRequest extends RoaAcsRequest<ListFeatureViewsRespo
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putPathParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 
