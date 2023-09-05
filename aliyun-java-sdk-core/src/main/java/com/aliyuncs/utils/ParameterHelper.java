@@ -9,9 +9,9 @@ import java.security.NoSuchAlgorithmException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
-import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.regex.Pattern;
+import java.util.Random;
 
 public class ParameterHelper {
 
@@ -33,7 +33,7 @@ public class ParameterHelper {
         // timestamp: ms
         long currentTime = System.currentTimeMillis();
         // sequence number
-        ThreadLocalRandom random = ThreadLocalRandom.current();
+        Random random = new Random();
         long seq = seqId.getAndIncrement();
         long rand = random.nextLong();
 
