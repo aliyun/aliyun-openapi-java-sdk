@@ -22,12 +22,12 @@ import com.aliyuncs.r_kvstore.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateGlobalDistributeCacheRequest extends RpcAcsRequest<CreateGlobalDistributeCacheResponse> {
+public class ModifyInstanceParameterRequest extends RpcAcsRequest<ModifyInstanceParameterResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String resourceGroupId;
+	private String parameterGroupId;
 
 	private String securityToken;
 
@@ -37,9 +37,11 @@ public class CreateGlobalDistributeCacheRequest extends RpcAcsRequest<CreateGlob
 
 	private Long ownerId;
 
-	private String seedSubInstanceId;
-	public CreateGlobalDistributeCacheRequest() {
-		super("R-kvstore", "2015-01-01", "CreateGlobalDistributeCache", "redisa");
+	private String instanceId;
+
+	private String parameters;
+	public ModifyInstanceParameterRequest() {
+		super("R-kvstore", "2015-01-01", "ModifyInstanceParameter", "redisa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -58,14 +60,14 @@ public class CreateGlobalDistributeCacheRequest extends RpcAcsRequest<CreateGlob
 		}
 	}
 
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
+	public String getParameterGroupId() {
+		return this.parameterGroupId;
 	}
 
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
+	public void setParameterGroupId(String parameterGroupId) {
+		this.parameterGroupId = parameterGroupId;
+		if(parameterGroupId != null){
+			putQueryParameter("ParameterGroupId", parameterGroupId);
 		}
 	}
 
@@ -113,20 +115,31 @@ public class CreateGlobalDistributeCacheRequest extends RpcAcsRequest<CreateGlob
 		}
 	}
 
-	public String getSeedSubInstanceId() {
-		return this.seedSubInstanceId;
+	public String getInstanceId() {
+		return this.instanceId;
 	}
 
-	public void setSeedSubInstanceId(String seedSubInstanceId) {
-		this.seedSubInstanceId = seedSubInstanceId;
-		if(seedSubInstanceId != null){
-			putQueryParameter("SeedSubInstanceId", seedSubInstanceId);
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getParameters() {
+		return this.parameters;
+	}
+
+	public void setParameters(String parameters) {
+		this.parameters = parameters;
+		if(parameters != null){
+			putQueryParameter("Parameters", parameters);
 		}
 	}
 
 	@Override
-	public Class<CreateGlobalDistributeCacheResponse> getResponseClass() {
-		return CreateGlobalDistributeCacheResponse.class;
+	public Class<ModifyInstanceParameterResponse> getResponseClass() {
+		return ModifyInstanceParameterResponse.class;
 	}
 
 }

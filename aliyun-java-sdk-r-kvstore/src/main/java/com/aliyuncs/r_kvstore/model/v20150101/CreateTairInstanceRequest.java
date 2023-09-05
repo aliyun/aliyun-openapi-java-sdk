@@ -94,6 +94,8 @@ public class CreateTairInstanceRequest extends RpcAcsRequest<CreateTairInstanceR
 
 	private String globalInstanceId;
 
+	private String paramGroupId;
+
 	private String vpcId;
 
 	private Integer readOnlyCount;
@@ -482,6 +484,17 @@ public class CreateTairInstanceRequest extends RpcAcsRequest<CreateTairInstanceR
 		this.globalInstanceId = globalInstanceId;
 		if(globalInstanceId != null){
 			putQueryParameter("GlobalInstanceId", globalInstanceId);
+		}
+	}
+
+	public String getParamGroupId() {
+		return this.paramGroupId;
+	}
+
+	public void setParamGroupId(String paramGroupId) {
+		this.paramGroupId = paramGroupId;
+		if(paramGroupId != null){
+			putQueryParameter("ParamGroupId", paramGroupId);
 		}
 	}
 

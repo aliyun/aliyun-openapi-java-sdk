@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.r_kvstore.model.v20150101.DescribeBackupsResponse;
+import com.aliyuncs.r_kvstore.model.v20150101.DescribeBackupsResponse.AccessDeniedDetail;
 import com.aliyuncs.r_kvstore.model.v20150101.DescribeBackupsResponse.Backup;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -30,6 +31,16 @@ public class DescribeBackupsResponseUnmarshaller {
 		describeBackupsResponse.setPageNumber(_ctx.integerValue("DescribeBackupsResponse.PageNumber"));
 		describeBackupsResponse.setPageSize(_ctx.integerValue("DescribeBackupsResponse.PageSize"));
 		describeBackupsResponse.setTotalCount(_ctx.integerValue("DescribeBackupsResponse.TotalCount"));
+
+		AccessDeniedDetail accessDeniedDetail = new AccessDeniedDetail();
+		accessDeniedDetail.setAuthAction(_ctx.stringValue("DescribeBackupsResponse.AccessDeniedDetail.AuthAction"));
+		accessDeniedDetail.setAuthPrincipalDisplayName(_ctx.stringValue("DescribeBackupsResponse.AccessDeniedDetail.AuthPrincipalDisplayName"));
+		accessDeniedDetail.setAuthPrincipalOwnerId(_ctx.stringValue("DescribeBackupsResponse.AccessDeniedDetail.AuthPrincipalOwnerId"));
+		accessDeniedDetail.setAuthPrincipalType(_ctx.stringValue("DescribeBackupsResponse.AccessDeniedDetail.AuthPrincipalType"));
+		accessDeniedDetail.setEncodedDiagnosticMessage(_ctx.stringValue("DescribeBackupsResponse.AccessDeniedDetail.EncodedDiagnosticMessage"));
+		accessDeniedDetail.setNoPermissionType(_ctx.stringValue("DescribeBackupsResponse.AccessDeniedDetail.NoPermissionType"));
+		accessDeniedDetail.setPolicyType(_ctx.stringValue("DescribeBackupsResponse.AccessDeniedDetail.PolicyType"));
+		describeBackupsResponse.setAccessDeniedDetail(accessDeniedDetail);
 
 		List<Backup> backups = new ArrayList<Backup>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeBackupsResponse.Backups.Length"); i++) {

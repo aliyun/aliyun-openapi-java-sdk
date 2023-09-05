@@ -22,12 +22,10 @@ import com.aliyuncs.r_kvstore.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateGlobalDistributeCacheRequest extends RpcAcsRequest<CreateGlobalDistributeCacheResponse> {
+public class FlushInstanceForDBRequest extends RpcAcsRequest<FlushInstanceForDBResponse> {
 	   
 
 	private Long resourceOwnerId;
-
-	private String resourceGroupId;
 
 	private String securityToken;
 
@@ -37,9 +35,11 @@ public class CreateGlobalDistributeCacheRequest extends RpcAcsRequest<CreateGlob
 
 	private Long ownerId;
 
-	private String seedSubInstanceId;
-	public CreateGlobalDistributeCacheRequest() {
-		super("R-kvstore", "2015-01-01", "CreateGlobalDistributeCache", "redisa");
+	private Integer dbIndex;
+
+	private String instanceId;
+	public FlushInstanceForDBRequest() {
+		super("R-kvstore", "2015-01-01", "FlushInstanceForDB", "redisa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -55,17 +55,6 @@ public class CreateGlobalDistributeCacheRequest extends RpcAcsRequest<CreateGlob
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
-	}
-
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 
@@ -113,20 +102,31 @@ public class CreateGlobalDistributeCacheRequest extends RpcAcsRequest<CreateGlob
 		}
 	}
 
-	public String getSeedSubInstanceId() {
-		return this.seedSubInstanceId;
+	public Integer getDbIndex() {
+		return this.dbIndex;
 	}
 
-	public void setSeedSubInstanceId(String seedSubInstanceId) {
-		this.seedSubInstanceId = seedSubInstanceId;
-		if(seedSubInstanceId != null){
-			putQueryParameter("SeedSubInstanceId", seedSubInstanceId);
+	public void setDbIndex(Integer dbIndex) {
+		this.dbIndex = dbIndex;
+		if(dbIndex != null){
+			putQueryParameter("DbIndex", dbIndex.toString());
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
 	@Override
-	public Class<CreateGlobalDistributeCacheResponse> getResponseClass() {
-		return CreateGlobalDistributeCacheResponse.class;
+	public Class<FlushInstanceForDBResponse> getResponseClass() {
+		return FlushInstanceForDBResponse.class;
 	}
 
 }

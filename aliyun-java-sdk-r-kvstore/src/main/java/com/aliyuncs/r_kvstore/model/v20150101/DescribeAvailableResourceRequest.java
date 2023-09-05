@@ -51,6 +51,8 @@ public class DescribeAvailableResourceRequest extends RpcAcsRequest<DescribeAvai
 
 	private String zoneId;
 
+	private String instanceScene;
+
 	private String orderType;
 	public DescribeAvailableResourceRequest() {
 		super("R-kvstore", "2015-01-01", "DescribeAvailableResource", "redisa");
@@ -201,6 +203,17 @@ public class DescribeAvailableResourceRequest extends RpcAcsRequest<DescribeAvai
 		this.zoneId = zoneId;
 		if(zoneId != null){
 			putQueryParameter("ZoneId", zoneId);
+		}
+	}
+
+	public String getInstanceScene() {
+		return this.instanceScene;
+	}
+
+	public void setInstanceScene(String instanceScene) {
+		this.instanceScene = instanceScene;
+		if(instanceScene != null){
+			putQueryParameter("InstanceScene", instanceScene);
 		}
 	}
 

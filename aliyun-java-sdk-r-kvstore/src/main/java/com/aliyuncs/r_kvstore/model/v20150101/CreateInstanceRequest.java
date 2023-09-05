@@ -76,6 +76,8 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	private String appendonly;
 
+	private String nodeType;
+
 	private String autoUseCoupon;
 
 	private String instanceClass;
@@ -99,6 +101,8 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 	private String token;
 
 	private String globalInstanceId;
+
+	private String paramGroupId;
 
 	private String vpcId;
 
@@ -392,6 +396,17 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		}
 	}
 
+	public String getNodeType() {
+		return this.nodeType;
+	}
+
+	public void setNodeType(String nodeType) {
+		this.nodeType = nodeType;
+		if(nodeType != null){
+			putQueryParameter("NodeType", nodeType);
+		}
+	}
+
 	public String getAutoUseCoupon() {
 		return this.autoUseCoupon;
 	}
@@ -521,6 +536,17 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		this.globalInstanceId = globalInstanceId;
 		if(globalInstanceId != null){
 			putQueryParameter("GlobalInstanceId", globalInstanceId);
+		}
+	}
+
+	public String getParamGroupId() {
+		return this.paramGroupId;
+	}
+
+	public void setParamGroupId(String paramGroupId) {
+		this.paramGroupId = paramGroupId;
+		if(paramGroupId != null){
+			putQueryParameter("ParamGroupId", paramGroupId);
 		}
 	}
 

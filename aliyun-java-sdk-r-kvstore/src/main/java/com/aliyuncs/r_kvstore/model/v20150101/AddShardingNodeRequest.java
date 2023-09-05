@@ -45,6 +45,8 @@ public class AddShardingNodeRequest extends RpcAcsRequest<AddShardingNodeRespons
 
 	private Long ownerId;
 
+	private String vSwitchId;
+
 	private Boolean forceTrans;
 
 	private String instanceId;
@@ -164,6 +166,17 @@ public class AddShardingNodeRequest extends RpcAcsRequest<AddShardingNodeRespons
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getVSwitchId() {
+		return this.vSwitchId;
+	}
+
+	public void setVSwitchId(String vSwitchId) {
+		this.vSwitchId = vSwitchId;
+		if(vSwitchId != null){
+			putQueryParameter("VSwitchId", vSwitchId);
 		}
 	}
 

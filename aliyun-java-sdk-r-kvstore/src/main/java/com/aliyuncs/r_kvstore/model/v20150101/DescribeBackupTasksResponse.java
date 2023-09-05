@@ -31,6 +31,8 @@ public class DescribeBackupTasksResponse extends AcsResponse {
 
 	private List<BackupJob> backupJobs;
 
+	private AccessDeniedDetail accessDeniedDetail;
+
 	public String getInstanceId() {
 		return this.instanceId;
 	}
@@ -53,6 +55,14 @@ public class DescribeBackupTasksResponse extends AcsResponse {
 
 	public void setBackupJobs(List<BackupJob> backupJobs) {
 		this.backupJobs = backupJobs;
+	}
+
+	public AccessDeniedDetail getAccessDeniedDetail() {
+		return this.accessDeniedDetail;
+	}
+
+	public void setAccessDeniedDetail(AccessDeniedDetail accessDeniedDetail) {
+		this.accessDeniedDetail = accessDeniedDetail;
 	}
 
 	public static class BackupJob {
@@ -125,6 +135,79 @@ public class DescribeBackupTasksResponse extends AcsResponse {
 
 		public void setTaskAction(String taskAction) {
 			this.taskAction = taskAction;
+		}
+	}
+
+	public static class AccessDeniedDetail {
+
+		private String authAction;
+
+		private String authPrincipalDisplayName;
+
+		private String authPrincipalOwnerId;
+
+		private String authPrincipalType;
+
+		private String encodedDiagnosticMessage;
+
+		private String noPermissionType;
+
+		private String policyType;
+
+		public String getAuthAction() {
+			return this.authAction;
+		}
+
+		public void setAuthAction(String authAction) {
+			this.authAction = authAction;
+		}
+
+		public String getAuthPrincipalDisplayName() {
+			return this.authPrincipalDisplayName;
+		}
+
+		public void setAuthPrincipalDisplayName(String authPrincipalDisplayName) {
+			this.authPrincipalDisplayName = authPrincipalDisplayName;
+		}
+
+		public String getAuthPrincipalOwnerId() {
+			return this.authPrincipalOwnerId;
+		}
+
+		public void setAuthPrincipalOwnerId(String authPrincipalOwnerId) {
+			this.authPrincipalOwnerId = authPrincipalOwnerId;
+		}
+
+		public String getAuthPrincipalType() {
+			return this.authPrincipalType;
+		}
+
+		public void setAuthPrincipalType(String authPrincipalType) {
+			this.authPrincipalType = authPrincipalType;
+		}
+
+		public String getEncodedDiagnosticMessage() {
+			return this.encodedDiagnosticMessage;
+		}
+
+		public void setEncodedDiagnosticMessage(String encodedDiagnosticMessage) {
+			this.encodedDiagnosticMessage = encodedDiagnosticMessage;
+		}
+
+		public String getNoPermissionType() {
+			return this.noPermissionType;
+		}
+
+		public void setNoPermissionType(String noPermissionType) {
+			this.noPermissionType = noPermissionType;
+		}
+
+		public String getPolicyType() {
+			return this.policyType;
+		}
+
+		public void setPolicyType(String policyType) {
+			this.policyType = policyType;
 		}
 	}
 

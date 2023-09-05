@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.r_kvstore.model.v20150101.DescribeBackupTasksResponse;
+import com.aliyuncs.r_kvstore.model.v20150101.DescribeBackupTasksResponse.AccessDeniedDetail;
 import com.aliyuncs.r_kvstore.model.v20150101.DescribeBackupTasksResponse.BackupJob;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -28,6 +29,16 @@ public class DescribeBackupTasksResponseUnmarshaller {
 		
 		describeBackupTasksResponse.setRequestId(_ctx.stringValue("DescribeBackupTasksResponse.RequestId"));
 		describeBackupTasksResponse.setInstanceId(_ctx.stringValue("DescribeBackupTasksResponse.InstanceId"));
+
+		AccessDeniedDetail accessDeniedDetail = new AccessDeniedDetail();
+		accessDeniedDetail.setAuthAction(_ctx.stringValue("DescribeBackupTasksResponse.AccessDeniedDetail.AuthAction"));
+		accessDeniedDetail.setAuthPrincipalDisplayName(_ctx.stringValue("DescribeBackupTasksResponse.AccessDeniedDetail.AuthPrincipalDisplayName"));
+		accessDeniedDetail.setAuthPrincipalOwnerId(_ctx.stringValue("DescribeBackupTasksResponse.AccessDeniedDetail.AuthPrincipalOwnerId"));
+		accessDeniedDetail.setAuthPrincipalType(_ctx.stringValue("DescribeBackupTasksResponse.AccessDeniedDetail.AuthPrincipalType"));
+		accessDeniedDetail.setEncodedDiagnosticMessage(_ctx.stringValue("DescribeBackupTasksResponse.AccessDeniedDetail.EncodedDiagnosticMessage"));
+		accessDeniedDetail.setNoPermissionType(_ctx.stringValue("DescribeBackupTasksResponse.AccessDeniedDetail.NoPermissionType"));
+		accessDeniedDetail.setPolicyType(_ctx.stringValue("DescribeBackupTasksResponse.AccessDeniedDetail.PolicyType"));
+		describeBackupTasksResponse.setAccessDeniedDetail(accessDeniedDetail);
 
 		List<BackupJob> backupJobs = new ArrayList<BackupJob>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeBackupTasksResponse.BackupJobs.Length"); i++) {
