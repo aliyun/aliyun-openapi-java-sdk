@@ -1,4 +1,7 @@
-﻿2022-11-23 Version:4.6.3
+﻿2023-09-06 Version:4.6.4
+1, Improve the design of nonce
+
+2022-11-23 Version:4.6.3
 1, Support access denied detail in AcsError.
 2, Add header `x-sdk-throttling-control` when throttling control enable
 
