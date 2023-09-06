@@ -39,6 +39,8 @@ public class QuerySkuPriceListRequest extends RpcAcsRequest<QuerySkuPriceListRes
 	private String priceEntityCode;
 
 	private Integer pageSize;
+
+	private String lang;
 	public QuerySkuPriceListRequest() {
 		super("BssOpenApi", "2017-12-14", "QuerySkuPriceList", "bssopenapi");
 		setMethod(MethodType.GET);
@@ -100,6 +102,17 @@ public class QuerySkuPriceListRequest extends RpcAcsRequest<QuerySkuPriceListRes
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
 		}
 	}
 

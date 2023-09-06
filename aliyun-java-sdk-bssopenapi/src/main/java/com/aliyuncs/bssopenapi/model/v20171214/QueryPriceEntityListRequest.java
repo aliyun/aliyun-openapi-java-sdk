@@ -26,6 +26,8 @@ public class QueryPriceEntityListRequest extends RpcAcsRequest<QueryPriceEntityL
 	   
 
 	private String commodityCode;
+
+	private String lang;
 	public QueryPriceEntityListRequest() {
 		super("BssOpenApi", "2017-12-14", "QueryPriceEntityList", "bssopenapi");
 		setMethod(MethodType.GET);
@@ -43,6 +45,17 @@ public class QueryPriceEntityListRequest extends RpcAcsRequest<QueryPriceEntityL
 		this.commodityCode = commodityCode;
 		if(commodityCode != null){
 			putQueryParameter("CommodityCode", commodityCode);
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
 		}
 	}
 

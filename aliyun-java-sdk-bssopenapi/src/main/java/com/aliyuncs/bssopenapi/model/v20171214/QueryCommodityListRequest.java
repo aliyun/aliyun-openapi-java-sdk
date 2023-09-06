@@ -26,6 +26,8 @@ public class QueryCommodityListRequest extends RpcAcsRequest<QueryCommodityListR
 	   
 
 	private String productCode;
+
+	private String lang;
 	public QueryCommodityListRequest() {
 		super("BssOpenApi", "2017-12-14", "QueryCommodityList", "bssopenapi");
 		setMethod(MethodType.GET);
@@ -43,6 +45,17 @@ public class QueryCommodityListRequest extends RpcAcsRequest<QueryCommodityListR
 		this.productCode = productCode;
 		if(productCode != null){
 			putQueryParameter("ProductCode", productCode);
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
 		}
 	}
 
