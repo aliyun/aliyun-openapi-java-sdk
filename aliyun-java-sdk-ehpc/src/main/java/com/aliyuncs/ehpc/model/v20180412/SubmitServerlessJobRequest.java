@@ -40,6 +40,7 @@ public class SubmitServerlessJobRequest extends RpcAcsRequest<SubmitServerlessJo
 
 	private Long timeout;
 
+	@SerializedName("instanceType")
 	private List<String> instanceType;
 
 	private String jobName;
@@ -54,7 +55,11 @@ public class SubmitServerlessJobRequest extends RpcAcsRequest<SubmitServerlessJo
 
 	private String spotStrategy;
 
+	@SerializedName("vSwitchId")
 	private List<String> vSwitchId;
+
+	@SerializedName("retryStrategy")
+	private RetryStrategy retryStrategy;
 
 	private Integer ephemeralStorage;
 
@@ -131,14 +136,7 @@ public class SubmitServerlessJobRequest extends RpcAcsRequest<SubmitServerlessJo
 	public void setInstanceType(List<String> instanceType) {
 		this.instanceType = instanceType;	
 		if (instanceType != null) {
-			String instanceTypeArrVal = "";
-			for(int depth1 = 0; depth1 < instanceType.size(); depth1++) {
-				instanceTypeArrVal += instanceType.get(depth1) + ",";
-			}
-			if (instanceTypeArrVal.length() > 0) {
-				instanceTypeArrVal = instanceTypeArrVal.substring(0, instanceTypeArrVal.length() - 1);
-			}
-			putQueryParameter("InstanceType" , instanceTypeArrVal);
+			putQueryParameter("InstanceType" , new Gson().toJson(instanceType));
 		}	
 	}
 
@@ -215,14 +213,18 @@ public class SubmitServerlessJobRequest extends RpcAcsRequest<SubmitServerlessJo
 	public void setVSwitchId(List<String> vSwitchId) {
 		this.vSwitchId = vSwitchId;	
 		if (vSwitchId != null) {
-			String vSwitchIdArrVal = "";
-			for(int depth1 = 0; depth1 < vSwitchId.size(); depth1++) {
-				vSwitchIdArrVal += vSwitchId.get(depth1) + ",";
-			}
-			if (vSwitchIdArrVal.length() > 0) {
-				vSwitchIdArrVal = vSwitchIdArrVal.substring(0, vSwitchIdArrVal.length() - 1);
-			}
-			putQueryParameter("VSwitchId" , vSwitchIdArrVal);
+			putQueryParameter("VSwitchId" , new Gson().toJson(vSwitchId));
+		}	
+	}
+
+	public RetryStrategy getRetryStrategy() {
+		return this.retryStrategy;
+	}
+
+	public void setRetryStrategy(RetryStrategy retryStrategy) {
+		this.retryStrategy = retryStrategy;	
+		if (retryStrategy != null) {
+			putQueryParameter("RetryStrategy" , new Gson().toJson(retryStrategy));
 		}	
 	}
 
@@ -535,6 +537,56 @@ public class SubmitServerlessJobRequest extends RpcAcsRequest<SubmitServerlessJo
 
 		public void setType(String type) {
 			this.type = type;
+		}
+	}
+
+	public static class RetryStrategy {
+
+		@SerializedName("EvaluateOnExit")
+		private List<EvaluateOnExitItem> evaluateOnExit;
+
+		@SerializedName("Attempts")
+		private Integer attempts;
+
+		public List<EvaluateOnExitItem> getEvaluateOnExit() {
+			return this.evaluateOnExit;
+		}
+
+		public void setEvaluateOnExit(List<EvaluateOnExitItem> evaluateOnExit) {
+			this.evaluateOnExit = evaluateOnExit;
+		}
+
+		public Integer getAttempts() {
+			return this.attempts;
+		}
+
+		public void setAttempts(Integer attempts) {
+			this.attempts = attempts;
+		}
+
+		public static class EvaluateOnExitItem {
+
+			@SerializedName("Action")
+			private String action;
+
+			@SerializedName("OnExitCode")
+			private String onExitCode;
+
+			public String getAction() {
+				return this.action;
+			}
+
+			public void setAction(String action) {
+				this.action = action;
+			}
+
+			public String getOnExitCode() {
+				return this.onExitCode;
+			}
+
+			public void setOnExitCode(String onExitCode) {
+				this.onExitCode = onExitCode;
+			}
 		}
 	}
 

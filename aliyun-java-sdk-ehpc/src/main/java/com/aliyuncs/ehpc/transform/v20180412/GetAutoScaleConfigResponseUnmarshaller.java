@@ -68,6 +68,7 @@ public class GetAutoScaleConfigResponseUnmarshaller {
 			queueInfo.setSpotPriceLimit(_ctx.floatValue("GetAutoScaleConfigResponse.Queues["+ i +"].SpotPriceLimit"));
 			queueInfo.setMaxNodesPerCycle(_ctx.longValue("GetAutoScaleConfigResponse.Queues["+ i +"].MaxNodesPerCycle"));
 			queueInfo.setMinNodesPerCycle(_ctx.longValue("GetAutoScaleConfigResponse.Queues["+ i +"].MinNodesPerCycle"));
+			queueInfo.setAutoMinNodesPerCycle(_ctx.booleanValue("GetAutoScaleConfigResponse.Queues["+ i +"].AutoMinNodesPerCycle"));
 			queueInfo.setSortedByInventory(_ctx.booleanValue("GetAutoScaleConfigResponse.Queues["+ i +"].SortedByInventory"));
 
 			List<InstanceTypeInfo> instanceTypes = new ArrayList<InstanceTypeInfo>();

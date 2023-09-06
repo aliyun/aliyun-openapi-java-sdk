@@ -65,6 +65,10 @@ public class ListQueuesResponse extends AcsResponse {
 
 		private String deploymentSetId;
 
+		private Boolean useESS;
+
+		private String networkInterfaceTrafficMode;
+
 		private List<Instance> spotInstanceTypes;
 
 		private List<String> computeInstanceType;
@@ -139,6 +143,22 @@ public class ListQueuesResponse extends AcsResponse {
 
 		public void setDeploymentSetId(String deploymentSetId) {
 			this.deploymentSetId = deploymentSetId;
+		}
+
+		public Boolean getUseESS() {
+			return this.useESS;
+		}
+
+		public void setUseESS(Boolean useESS) {
+			this.useESS = useESS;
+		}
+
+		public String getNetworkInterfaceTrafficMode() {
+			return this.networkInterfaceTrafficMode;
+		}
+
+		public void setNetworkInterfaceTrafficMode(String networkInterfaceTrafficMode) {
+			this.networkInterfaceTrafficMode = networkInterfaceTrafficMode;
 		}
 
 		public List<Instance> getSpotInstanceTypes() {

@@ -261,6 +261,8 @@ public class GetAutoScaleConfigResponse extends AcsResponse {
 
 		private Long minNodesPerCycle;
 
+		private Boolean autoMinNodesPerCycle;
+
 		private Boolean sortedByInventory;
 
 		private List<InstanceTypeInfo> instanceTypes;
@@ -401,6 +403,14 @@ public class GetAutoScaleConfigResponse extends AcsResponse {
 
 		public void setMinNodesPerCycle(Long minNodesPerCycle) {
 			this.minNodesPerCycle = minNodesPerCycle;
+		}
+
+		public Boolean getAutoMinNodesPerCycle() {
+			return this.autoMinNodesPerCycle;
+		}
+
+		public void setAutoMinNodesPerCycle(Boolean autoMinNodesPerCycle) {
+			this.autoMinNodesPerCycle = autoMinNodesPerCycle;
 		}
 
 		public Boolean getSortedByInventory() {

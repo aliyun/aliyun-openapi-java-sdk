@@ -31,6 +31,8 @@ public class UpdateQueueConfigRequest extends RpcAcsRequest<UpdateQueueConfigRes
 
 	private String clusterId;
 
+	private String networkInterfaceTrafficMode;
+
 	private String resourceGroupId;
 
 	private String computeInstanceType;
@@ -73,6 +75,17 @@ public class UpdateQueueConfigRequest extends RpcAcsRequest<UpdateQueueConfigRes
 		this.clusterId = clusterId;
 		if(clusterId != null){
 			putQueryParameter("ClusterId", clusterId);
+		}
+	}
+
+	public String getNetworkInterfaceTrafficMode() {
+		return this.networkInterfaceTrafficMode;
+	}
+
+	public void setNetworkInterfaceTrafficMode(String networkInterfaceTrafficMode) {
+		this.networkInterfaceTrafficMode = networkInterfaceTrafficMode;
+		if(networkInterfaceTrafficMode != null){
+			putQueryParameter("NetworkInterfaceTrafficMode", networkInterfaceTrafficMode);
 		}
 	}
 

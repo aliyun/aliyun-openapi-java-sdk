@@ -32,6 +32,8 @@ public class AddQueueRequest extends RpcAcsRequest<AddQueueResponse> {
 	private String clusterId;
 
 	private String networkInterfaceTrafficMode;
+
+	private Boolean useESS;
 	public AddQueueRequest() {
 		super("EHPC", "2018-04-12", "AddQueue");
 		setMethod(MethodType.GET);
@@ -82,6 +84,17 @@ public class AddQueueRequest extends RpcAcsRequest<AddQueueResponse> {
 		this.networkInterfaceTrafficMode = networkInterfaceTrafficMode;
 		if(networkInterfaceTrafficMode != null){
 			putQueryParameter("NetworkInterfaceTrafficMode", networkInterfaceTrafficMode);
+		}
+	}
+
+	public Boolean getUseESS() {
+		return this.useESS;
+	}
+
+	public void setUseESS(Boolean useESS) {
+		this.useESS = useESS;
+		if(useESS != null){
+			putQueryParameter("UseESS", useESS.toString());
 		}
 	}
 

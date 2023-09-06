@@ -249,6 +249,7 @@ public class SetAutoScaleConfigRequest extends RpcAcsRequest<SetAutoScaleConfigR
 				putQueryParameter("Queues." + (depth1 + 1) + ".SpotPriceLimit" , queuess.get(depth1).getSpotPriceLimit());
 				putQueryParameter("Queues." + (depth1 + 1) + ".EnableAutoShrink" , queuess.get(depth1).getEnableAutoShrink());
 				putQueryParameter("Queues." + (depth1 + 1) + ".SpotStrategy" , queuess.get(depth1).getSpotStrategy());
+				putQueryParameter("Queues." + (depth1 + 1) + ".AutoMinNodesPerCycle" , queuess.get(depth1).getAutoMinNodesPerCycle());
 				if (queuess.get(depth1).getDataDiskss() != null) {
 					for (int depth2 = 0; depth2 < queuess.get(depth1).getDataDiskss().size(); depth2++) {
 						putQueryParameter("Queues." + (depth1 + 1) + ".DataDisks." + (depth2 + 1) + ".DataDiskDeleteWithInstance" , queuess.get(depth1).getDataDiskss().get(depth2).getDataDiskDeleteWithInstance());
@@ -313,6 +314,8 @@ public class SetAutoScaleConfigRequest extends RpcAcsRequest<SetAutoScaleConfigR
 		private Boolean enableAutoShrink;
 
 		private String spotStrategy;
+
+		private Boolean autoMinNodesPerCycle;
 
 		private List<DataDisks> dataDiskss;
 
@@ -404,6 +407,14 @@ public class SetAutoScaleConfigRequest extends RpcAcsRequest<SetAutoScaleConfigR
 
 		public void setSpotStrategy(String spotStrategy) {
 			this.spotStrategy = spotStrategy;
+		}
+
+		public Boolean getAutoMinNodesPerCycle() {
+			return this.autoMinNodesPerCycle;
+		}
+
+		public void setAutoMinNodesPerCycle(Boolean autoMinNodesPerCycle) {
+			this.autoMinNodesPerCycle = autoMinNodesPerCycle;
 		}
 
 		public List<DataDisks> getDataDiskss() {
