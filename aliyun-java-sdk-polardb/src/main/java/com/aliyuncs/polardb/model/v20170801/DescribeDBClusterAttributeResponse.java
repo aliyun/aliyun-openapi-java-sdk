@@ -47,6 +47,8 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 	private String standbyHAMode;
 
+	private String compressStorageMode;
+
 	private Long storageMax;
 
 	private String dBVersion;
@@ -76,6 +78,8 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 	private String lockMode;
 
 	private Long storageUsed;
+
+	private Long compressStorageUsed;
 
 	private Long storageSpace;
 
@@ -217,6 +221,14 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 		this.standbyHAMode = standbyHAMode;
 	}
 
+	public String getCompressStorageMode() {
+		return this.compressStorageMode;
+	}
+
+	public void setCompressStorageMode(String compressStorageMode) {
+		this.compressStorageMode = compressStorageMode;
+	}
+
 	public Long getStorageMax() {
 		return this.storageMax;
 	}
@@ -335,6 +347,14 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 	public void setStorageUsed(Long storageUsed) {
 		this.storageUsed = storageUsed;
+	}
+
+	public Long getCompressStorageUsed() {
+		return this.compressStorageUsed;
+	}
+
+	public void setCompressStorageUsed(Long compressStorageUsed) {
+		this.compressStorageUsed = compressStorageUsed;
 	}
 
 	public Long getStorageSpace() {
@@ -741,6 +761,10 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 		private String totalAPNodes;
 
+		private Float storageUsedMB;
+
+		private String aPNodeStatus;
+
 		public String getName() {
 			return this.name;
 		}
@@ -771,6 +795,22 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 		public void setTotalAPNodes(String totalAPNodes) {
 			this.totalAPNodes = totalAPNodes;
+		}
+
+		public Float getStorageUsedMB() {
+			return this.storageUsedMB;
+		}
+
+		public void setStorageUsedMB(Float storageUsedMB) {
+			this.storageUsedMB = storageUsedMB;
+		}
+
+		public String getAPNodeStatus() {
+			return this.aPNodeStatus;
+		}
+
+		public void setAPNodeStatus(String aPNodeStatus) {
+			this.aPNodeStatus = aPNodeStatus;
 		}
 	}
 

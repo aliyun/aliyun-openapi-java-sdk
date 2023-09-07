@@ -117,6 +117,8 @@ public class DescribeDBClustersResponse extends AcsResponse {
 
 		private Long storageUsed;
 
+		private Long compressStorageUsed;
+
 		private Long storageSpace;
 
 		private String dBClusterNetworkType;
@@ -293,6 +295,14 @@ public class DescribeDBClustersResponse extends AcsResponse {
 
 		public void setStorageUsed(Long storageUsed) {
 			this.storageUsed = storageUsed;
+		}
+
+		public Long getCompressStorageUsed() {
+			return this.compressStorageUsed;
+		}
+
+		public void setCompressStorageUsed(Long compressStorageUsed) {
+			this.compressStorageUsed = compressStorageUsed;
 		}
 
 		public Long getStorageSpace() {

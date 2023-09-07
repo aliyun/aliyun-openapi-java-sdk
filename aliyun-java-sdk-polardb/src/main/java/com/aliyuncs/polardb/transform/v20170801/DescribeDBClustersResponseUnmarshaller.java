@@ -56,6 +56,7 @@ public class DescribeDBClustersResponseUnmarshaller {
 			dBCluster.setDBClusterStatus(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].DBClusterStatus"));
 			dBCluster.setResourceGroupId(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].ResourceGroupId"));
 			dBCluster.setStorageUsed(_ctx.longValue("DescribeDBClustersResponse.Items["+ i +"].StorageUsed"));
+			dBCluster.setCompressStorageUsed(_ctx.longValue("DescribeDBClustersResponse.Items["+ i +"].CompressStorageUsed"));
 			dBCluster.setStorageSpace(_ctx.longValue("DescribeDBClustersResponse.Items["+ i +"].StorageSpace"));
 			dBCluster.setDBClusterNetworkType(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].DBClusterNetworkType"));
 			dBCluster.setDBClusterDescription(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].DBClusterDescription"));

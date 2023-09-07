@@ -40,6 +40,7 @@ public class DescribeDBClusterAttributeResponseUnmarshaller {
 		describeDBClusterAttributeResponse.setHasCompleteStandbyRes(_ctx.booleanValue("DescribeDBClusterAttributeResponse.HasCompleteStandbyRes"));
 		describeDBClusterAttributeResponse.setDataSyncMode(_ctx.stringValue("DescribeDBClusterAttributeResponse.DataSyncMode"));
 		describeDBClusterAttributeResponse.setStandbyHAMode(_ctx.stringValue("DescribeDBClusterAttributeResponse.StandbyHAMode"));
+		describeDBClusterAttributeResponse.setCompressStorageMode(_ctx.stringValue("DescribeDBClusterAttributeResponse.CompressStorageMode"));
 		describeDBClusterAttributeResponse.setStorageMax(_ctx.longValue("DescribeDBClusterAttributeResponse.StorageMax"));
 		describeDBClusterAttributeResponse.setDBVersion(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBVersion"));
 		describeDBClusterAttributeResponse.setZoneIds(_ctx.stringValue("DescribeDBClusterAttributeResponse.ZoneIds"));
@@ -54,6 +55,7 @@ public class DescribeDBClusterAttributeResponseUnmarshaller {
 		describeDBClusterAttributeResponse.setStoragePayType(_ctx.stringValue("DescribeDBClusterAttributeResponse.StoragePayType"));
 		describeDBClusterAttributeResponse.setLockMode(_ctx.stringValue("DescribeDBClusterAttributeResponse.LockMode"));
 		describeDBClusterAttributeResponse.setStorageUsed(_ctx.longValue("DescribeDBClusterAttributeResponse.StorageUsed"));
+		describeDBClusterAttributeResponse.setCompressStorageUsed(_ctx.longValue("DescribeDBClusterAttributeResponse.CompressStorageUsed"));
 		describeDBClusterAttributeResponse.setStorageSpace(_ctx.longValue("DescribeDBClusterAttributeResponse.StorageSpace"));
 		describeDBClusterAttributeResponse.setDBVersionStatus(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBVersionStatus"));
 		describeDBClusterAttributeResponse.setCreationTime(_ctx.stringValue("DescribeDBClusterAttributeResponse.CreationTime"));
@@ -83,6 +85,8 @@ public class DescribeDBClusterAttributeResponseUnmarshaller {
 		relatedAPInstance.setClassCode(_ctx.stringValue("DescribeDBClusterAttributeResponse.RelatedAPInstance.ClassCode"));
 		relatedAPInstance.setOssStorageUsed(_ctx.stringValue("DescribeDBClusterAttributeResponse.RelatedAPInstance.OssStorageUsed"));
 		relatedAPInstance.setTotalAPNodes(_ctx.stringValue("DescribeDBClusterAttributeResponse.RelatedAPInstance.TotalAPNodes"));
+		relatedAPInstance.setStorageUsedMB(_ctx.floatValue("DescribeDBClusterAttributeResponse.RelatedAPInstance.StorageUsedMB"));
+		relatedAPInstance.setAPNodeStatus(_ctx.stringValue("DescribeDBClusterAttributeResponse.RelatedAPInstance.APNodeStatus"));
 		describeDBClusterAttributeResponse.setRelatedAPInstance(relatedAPInstance);
 
 		List<DBNode> dBNodes = new ArrayList<DBNode>();

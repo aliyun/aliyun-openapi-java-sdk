@@ -72,6 +72,8 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 
 	private String zoneId;
 
+	private String storageAutoScale;
+
 	private Boolean tDEStatus;
 
 	private String allowShutDown;
@@ -107,6 +109,8 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 	private String usedTime;
 
 	private Integer dBNodeNum;
+
+	private Long storageUpperBound;
 
 	private String vPCId;
 
@@ -390,6 +394,17 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		}
 	}
 
+	public String getStorageAutoScale() {
+		return this.storageAutoScale;
+	}
+
+	public void setStorageAutoScale(String storageAutoScale) {
+		this.storageAutoScale = storageAutoScale;
+		if(storageAutoScale != null){
+			putQueryParameter("StorageAutoScale", storageAutoScale);
+		}
+	}
+
 	public Boolean getTDEStatus() {
 		return this.tDEStatus;
 	}
@@ -585,6 +600,17 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		this.dBNodeNum = dBNodeNum;
 		if(dBNodeNum != null){
 			putQueryParameter("DBNodeNum", dBNodeNum.toString());
+		}
+	}
+
+	public Long getStorageUpperBound() {
+		return this.storageUpperBound;
+	}
+
+	public void setStorageUpperBound(Long storageUpperBound) {
+		this.storageUpperBound = storageUpperBound;
+		if(storageUpperBound != null){
+			putQueryParameter("StorageUpperBound", storageUpperBound.toString());
 		}
 	}
 

@@ -39,6 +39,10 @@ public class ModifyDBClusterRequest extends RpcAcsRequest<ModifyDBClusterRespons
 
 	private Long ownerId;
 
+	private Long storageUpperBound;
+
+	private String storageAutoScale;
+
 	private String dataSyncMode;
 	public ModifyDBClusterRequest() {
 		super("polardb", "2017-08-01", "ModifyDBCluster", "polardb");
@@ -123,6 +127,28 @@ public class ModifyDBClusterRequest extends RpcAcsRequest<ModifyDBClusterRespons
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Long getStorageUpperBound() {
+		return this.storageUpperBound;
+	}
+
+	public void setStorageUpperBound(Long storageUpperBound) {
+		this.storageUpperBound = storageUpperBound;
+		if(storageUpperBound != null){
+			putQueryParameter("StorageUpperBound", storageUpperBound.toString());
+		}
+	}
+
+	public String getStorageAutoScale() {
+		return this.storageAutoScale;
+	}
+
+	public void setStorageAutoScale(String storageAutoScale) {
+		this.storageAutoScale = storageAutoScale;
+		if(storageAutoScale != null){
+			putQueryParameter("StorageAutoScale", storageAutoScale);
 		}
 	}
 
