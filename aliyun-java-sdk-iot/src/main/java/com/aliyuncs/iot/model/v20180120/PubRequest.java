@@ -40,6 +40,8 @@ public class PubRequest extends RpcAcsRequest<PubResponse> {
 
 	private String responseTopic;
 
+	private Integer topicAlias;
+
 	private String topicFullName;
 
 	private Integer payloadFormatIndicator;
@@ -137,6 +139,17 @@ public class PubRequest extends RpcAcsRequest<PubResponse> {
 		this.responseTopic = responseTopic;
 		if(responseTopic != null){
 			putQueryParameter("ResponseTopic", responseTopic);
+		}
+	}
+
+	public Integer getTopicAlias() {
+		return this.topicAlias;
+	}
+
+	public void setTopicAlias(Integer topicAlias) {
+		this.topicAlias = topicAlias;
+		if(topicAlias != null){
+			putQueryParameter("TopicAlias", topicAlias.toString());
 		}
 	}
 

@@ -76,7 +76,7 @@ public class RRpcRequest extends RpcAcsRequest<RRpcResponse> {
 	public void setRequestBase64Byte(String requestBase64Byte) {
 		this.requestBase64Byte = requestBase64Byte;
 		if(requestBase64Byte != null){
-			putQueryParameter("RequestBase64Byte", requestBase64Byte);
+			putBodyParameter("RequestBase64Byte", requestBase64Byte);
 		}
 	}
 

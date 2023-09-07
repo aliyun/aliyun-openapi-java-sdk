@@ -15,7 +15,6 @@
 package com.aliyuncs.iot.transform.v20180120;
 
 import com.aliyuncs.iot.model.v20180120.BatchAddDataForApiSourceResponse;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -27,7 +26,6 @@ public class BatchAddDataForApiSourceResponseUnmarshaller {
 		batchAddDataForApiSourceResponse.setSuccess(_ctx.booleanValue("BatchAddDataForApiSourceResponse.Success"));
 		batchAddDataForApiSourceResponse.setCode(_ctx.stringValue("BatchAddDataForApiSourceResponse.Code"));
 		batchAddDataForApiSourceResponse.setErrorMessage(_ctx.stringValue("BatchAddDataForApiSourceResponse.ErrorMessage"));
-		batchAddDataForApiSourceResponse.setData(_ctx.mapValue("BatchAddDataForApiSourceResponse.Data"));
 	 
 	 	return batchAddDataForApiSourceResponse;
 	}

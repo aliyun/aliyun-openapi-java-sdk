@@ -27,6 +27,8 @@ public class InvokeThingServiceRequest extends RpcAcsRequest<InvokeThingServiceR
 
 	private String iotId;
 
+	private Integer qos;
+
 	private String iotInstanceId;
 
 	private String identifier;
@@ -53,6 +55,17 @@ public class InvokeThingServiceRequest extends RpcAcsRequest<InvokeThingServiceR
 		this.iotId = iotId;
 		if(iotId != null){
 			putQueryParameter("IotId", iotId);
+		}
+	}
+
+	public Integer getQos() {
+		return this.qos;
+	}
+
+	public void setQos(Integer qos) {
+		this.qos = qos;
+		if(qos != null){
+			putQueryParameter("Qos", qos.toString());
 		}
 	}
 
