@@ -26,11 +26,11 @@ public class ListModelFeaturesRequest extends RoaAcsRequest<ListModelFeaturesRes
 
 	private String owner;
 
-	private String pageNumber;
+	private Integer pageNumber;
 
 	private String instanceId;
 
-	private String pageSize;
+	private Integer pageSize;
 
 	private String name;
 
@@ -56,14 +56,14 @@ public class ListModelFeaturesRequest extends RoaAcsRequest<ListModelFeaturesRes
 		}
 	}
 
-	public String getPageNumber() {
+	public Integer getPageNumber() {
 		return this.pageNumber;
 	}
 
-	public void setPageNumber(String pageNumber) {
+	public void setPageNumber(Integer pageNumber) {
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber);
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
@@ -78,14 +78,14 @@ public class ListModelFeaturesRequest extends RoaAcsRequest<ListModelFeaturesRes
 		}
 	}
 
-	public String getPageSize() {
+	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
-	public void setPageSize(String pageSize) {
+	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
 		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize);
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

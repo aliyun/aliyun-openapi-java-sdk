@@ -23,6 +23,7 @@ public class PublishFeatureViewTableResponseUnmarshaller {
 	public static PublishFeatureViewTableResponse unmarshall(PublishFeatureViewTableResponse publishFeatureViewTableResponse, UnmarshallerContext _ctx) {
 		
 		publishFeatureViewTableResponse.setRequestId(_ctx.stringValue("PublishFeatureViewTableResponse.RequestId"));
+		publishFeatureViewTableResponse.setTaskId(_ctx.stringValue("PublishFeatureViewTableResponse.TaskId"));
 	 
 	 	return publishFeatureViewTableResponse;
 	}

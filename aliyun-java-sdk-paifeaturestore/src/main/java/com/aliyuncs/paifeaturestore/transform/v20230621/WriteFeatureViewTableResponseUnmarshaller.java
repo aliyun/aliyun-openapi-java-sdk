@@ -23,6 +23,7 @@ public class WriteFeatureViewTableResponseUnmarshaller {
 	public static WriteFeatureViewTableResponse unmarshall(WriteFeatureViewTableResponse writeFeatureViewTableResponse, UnmarshallerContext _ctx) {
 		
 		writeFeatureViewTableResponse.setRequestId(_ctx.stringValue("WriteFeatureViewTableResponse.RequestId"));
+		writeFeatureViewTableResponse.setTaskId(_ctx.stringValue("WriteFeatureViewTableResponse.TaskId"));
 	 
 	 	return writeFeatureViewTableResponse;
 	}
