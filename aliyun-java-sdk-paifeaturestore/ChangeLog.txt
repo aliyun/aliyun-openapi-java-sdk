@@ -1,3 +1,6 @@
+2023-09-08 Version: 1.0.4
+- Add eventTime, equal in ExportModelFeatureTrainingSetTable.
+
 2023-09-08 Version: 1.0.3
 - Add taskId in WriteFeatureViewTable.
 
