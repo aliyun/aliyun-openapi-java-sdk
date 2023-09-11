@@ -61,6 +61,8 @@ public class CreateShardingDBInstanceRequest extends RpcAcsRequest<CreateShardin
 
 	private List<Mongos> mongoss;
 
+	private Long provisionedIops;
+
 	private String autoRenew;
 
 	private String zoneId;
@@ -303,6 +305,17 @@ public class CreateShardingDBInstanceRequest extends RpcAcsRequest<CreateShardin
 				putQueryParameter("Mongos." + (depth1 + 1) + ".Class" , mongoss.get(depth1).get_Class());
 			}
 		}	
+	}
+
+	public Long getProvisionedIops() {
+		return this.provisionedIops;
+	}
+
+	public void setProvisionedIops(Long provisionedIops) {
+		this.provisionedIops = provisionedIops;
+		if(provisionedIops != null){
+			putQueryParameter("ProvisionedIops", provisionedIops.toString());
+		}
 	}
 
 	public String getAutoRenew() {

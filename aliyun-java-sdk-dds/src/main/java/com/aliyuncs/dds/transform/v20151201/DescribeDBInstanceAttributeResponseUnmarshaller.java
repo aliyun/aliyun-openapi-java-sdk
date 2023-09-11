@@ -82,6 +82,8 @@ public class DescribeDBInstanceAttributeResponseUnmarshaller {
 			dBInstance.setEncrypted(_ctx.booleanValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].Encrypted"));
 			dBInstance.setEncryptionKey(_ctx.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].EncryptionKey"));
 			dBInstance.setSyncPercent(_ctx.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].SyncPercent"));
+			dBInstance.setBurstingEnabled(_ctx.booleanValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].BurstingEnabled"));
+			dBInstance.setProvisionedIops(_ctx.longValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].ProvisionedIops"));
 
 			List<ReplicaSet> replicaSets = new ArrayList<ReplicaSet>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].ReplicaSets.Length"); j++) {

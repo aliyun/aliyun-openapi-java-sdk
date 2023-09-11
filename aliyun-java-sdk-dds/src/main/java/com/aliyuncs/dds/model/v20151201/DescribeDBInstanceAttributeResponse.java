@@ -137,6 +137,10 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		private String syncPercent;
 
+		private Boolean burstingEnabled;
+
+		private Long provisionedIops;
+
 		private List<ReplicaSet> replicaSets;
 
 		private List<Tag> tags;
@@ -507,6 +511,22 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		public void setSyncPercent(String syncPercent) {
 			this.syncPercent = syncPercent;
+		}
+
+		public Boolean getBurstingEnabled() {
+			return this.burstingEnabled;
+		}
+
+		public void setBurstingEnabled(Boolean burstingEnabled) {
+			this.burstingEnabled = burstingEnabled;
+		}
+
+		public Long getProvisionedIops() {
+			return this.provisionedIops;
+		}
+
+		public void setProvisionedIops(Long provisionedIops) {
+			this.provisionedIops = provisionedIops;
 		}
 
 		public List<ReplicaSet> getReplicaSets() {

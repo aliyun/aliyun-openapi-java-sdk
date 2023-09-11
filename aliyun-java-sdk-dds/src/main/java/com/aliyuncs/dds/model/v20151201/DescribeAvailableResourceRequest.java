@@ -26,6 +26,8 @@ public class DescribeAvailableResourceRequest extends RpcAcsRequest<DescribeAvai
 
 	private Long resourceOwnerId;
 
+	private String storageType;
+
 	private String resourceGroupId;
 
 	private String securityToken;
@@ -54,6 +56,17 @@ public class DescribeAvailableResourceRequest extends RpcAcsRequest<DescribeAvai
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getStorageType() {
+		return this.storageType;
+	}
+
+	public void setStorageType(String storageType) {
+		this.storageType = storageType;
+		if(storageType != null){
+			putQueryParameter("StorageType", storageType);
 		}
 	}
 

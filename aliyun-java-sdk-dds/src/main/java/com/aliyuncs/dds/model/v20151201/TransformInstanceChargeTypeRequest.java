@@ -47,6 +47,8 @@ public class TransformInstanceChargeTypeRequest extends RpcAcsRequest<TransformI
 	private String autoRenew;
 
 	private String chargeType;
+
+	private String pricingCycle;
 	public TransformInstanceChargeTypeRequest() {
 		super("Dds", "2015-12-01", "TransformInstanceChargeType", "dds");
 		setMethod(MethodType.POST);
@@ -181,6 +183,17 @@ public class TransformInstanceChargeTypeRequest extends RpcAcsRequest<TransformI
 		this.chargeType = chargeType;
 		if(chargeType != null){
 			putQueryParameter("ChargeType", chargeType);
+		}
+	}
+
+	public String getPricingCycle() {
+		return this.pricingCycle;
+	}
+
+	public void setPricingCycle(String pricingCycle) {
+		this.pricingCycle = pricingCycle;
+		if(pricingCycle != null){
+			putQueryParameter("PricingCycle", pricingCycle);
 		}
 	}
 

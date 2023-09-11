@@ -65,6 +65,8 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 
 	private String vSwitchId;
 
+	private Long provisionedIops;
+
 	private String autoRenew;
 
 	private String zoneId;
@@ -325,6 +327,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.vSwitchId = vSwitchId;
 		if(vSwitchId != null){
 			putQueryParameter("VSwitchId", vSwitchId);
+		}
+	}
+
+	public Long getProvisionedIops() {
+		return this.provisionedIops;
+	}
+
+	public void setProvisionedIops(Long provisionedIops) {
+		this.provisionedIops = provisionedIops;
+		if(provisionedIops != null){
+			putQueryParameter("ProvisionedIops", provisionedIops.toString());
 		}
 	}
 
