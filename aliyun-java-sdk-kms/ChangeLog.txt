@@ -1,3 +1,6 @@
+2023-09-11 Version: 2.16.3
+- add Instance, NetworkRule, Policy, ApplicationAccessPoint, ClientKey OpenAPIs
+
 2023-05-30 Version: 2.16.2
 - Add Tag Open API.
 
