@@ -1,3 +1,6 @@
+2023-09-13 Version: 1.0.3
+- Fix ListVpcPeerConnections paramer.
+
 2023-07-25 Version: 1.0.2
 - Add move resource group api.
 

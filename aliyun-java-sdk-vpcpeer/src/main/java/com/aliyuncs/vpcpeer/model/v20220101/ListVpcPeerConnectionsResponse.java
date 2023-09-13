@@ -87,9 +87,9 @@ public class ListVpcPeerConnectionsResponse extends AcsResponse {
 
 		private String description;
 
-		private Integer ownerId;
+		private Long ownerId;
 
-		private Integer acceptingOwnerUid;
+		private Long acceptingOwnerUid;
 
 		private String regionId;
 
@@ -151,19 +151,19 @@ public class ListVpcPeerConnectionsResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public Integer getOwnerId() {
+		public Long getOwnerId() {
 			return this.ownerId;
 		}
 
-		public void setOwnerId(Integer ownerId) {
+		public void setOwnerId(Long ownerId) {
 			this.ownerId = ownerId;
 		}
 
-		public Integer getAcceptingOwnerUid() {
+		public Long getAcceptingOwnerUid() {
 			return this.acceptingOwnerUid;
 		}
 
-		public void setAcceptingOwnerUid(Integer acceptingOwnerUid) {
+		public void setAcceptingOwnerUid(Long acceptingOwnerUid) {
 			this.acceptingOwnerUid = acceptingOwnerUid;
 		}
 

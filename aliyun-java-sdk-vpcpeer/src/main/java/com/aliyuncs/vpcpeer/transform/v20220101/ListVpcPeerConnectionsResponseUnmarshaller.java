@@ -42,8 +42,8 @@ public class ListVpcPeerConnectionsResponseUnmarshaller {
 			vpcPeerConnectsItem.setGmtModified(_ctx.stringValue("ListVpcPeerConnectionsResponse.VpcPeerConnects["+ i +"].GmtModified"));
 			vpcPeerConnectsItem.setName(_ctx.stringValue("ListVpcPeerConnectionsResponse.VpcPeerConnects["+ i +"].Name"));
 			vpcPeerConnectsItem.setDescription(_ctx.stringValue("ListVpcPeerConnectionsResponse.VpcPeerConnects["+ i +"].Description"));
-			vpcPeerConnectsItem.setOwnerId(_ctx.integerValue("ListVpcPeerConnectionsResponse.VpcPeerConnects["+ i +"].OwnerId"));
-			vpcPeerConnectsItem.setAcceptingOwnerUid(_ctx.integerValue("ListVpcPeerConnectionsResponse.VpcPeerConnects["+ i +"].AcceptingOwnerUid"));
+			vpcPeerConnectsItem.setOwnerId(_ctx.longValue("ListVpcPeerConnectionsResponse.VpcPeerConnects["+ i +"].OwnerId"));
+			vpcPeerConnectsItem.setAcceptingOwnerUid(_ctx.longValue("ListVpcPeerConnectionsResponse.VpcPeerConnects["+ i +"].AcceptingOwnerUid"));
 			vpcPeerConnectsItem.setRegionId(_ctx.stringValue("ListVpcPeerConnectionsResponse.VpcPeerConnects["+ i +"].RegionId"));
 			vpcPeerConnectsItem.setAcceptingRegionId(_ctx.stringValue("ListVpcPeerConnectionsResponse.VpcPeerConnects["+ i +"].AcceptingRegionId"));
 			vpcPeerConnectsItem.setBandwidth(_ctx.integerValue("ListVpcPeerConnectionsResponse.VpcPeerConnects["+ i +"].Bandwidth"));
