@@ -23,6 +23,7 @@ public class ExportModelFeatureTrainingSetTableResponseUnmarshaller {
 	public static ExportModelFeatureTrainingSetTableResponse unmarshall(ExportModelFeatureTrainingSetTableResponse exportModelFeatureTrainingSetTableResponse, UnmarshallerContext _ctx) {
 		
 		exportModelFeatureTrainingSetTableResponse.setRequestId(_ctx.stringValue("ExportModelFeatureTrainingSetTableResponse.RequestId"));
+		exportModelFeatureTrainingSetTableResponse.setTaskId(_ctx.stringValue("ExportModelFeatureTrainingSetTableResponse.TaskId"));
 	 
 	 	return exportModelFeatureTrainingSetTableResponse;
 	}

@@ -1,3 +1,6 @@
+2023-09-13 Version: 1.0.5
+- Add value, values, startValue, endValue in ExportModelFeatureTrainingSetTable.
+
 2023-09-08 Version: 1.0.4
 - Add eventTime, equal in ExportModelFeatureTrainingSetTable.
 
