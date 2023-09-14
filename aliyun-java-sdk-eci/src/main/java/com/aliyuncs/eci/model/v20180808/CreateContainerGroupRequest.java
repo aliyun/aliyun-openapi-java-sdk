@@ -324,6 +324,7 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 				putQueryParameter("Container." + (depth1 + 1) + ".StdinOnce", containers.get(depth1).getStdinOnce());
 				putQueryParameter("Container." + (depth1 + 1) + ".Tty", containers.get(depth1).getTty());
 				putQueryParameter("Container." + (depth1 + 1) + ".Gpu", containers.get(depth1).getGpu());
+				putQueryParameter("Container." + (depth1 + 1) + ".EnvironmentVarHide", containers.get(depth1).getEnvironmentVarHide());
 
 				if (containers.get(depth1).getCommands() != null) {
 					for (int i = 0; i < containers.get(depth1).getCommands().size(); i++) {
@@ -1055,6 +1056,8 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 
 		private List<EnvironmentVar> environmentVars;
 
+		private Boolean environmentVarHide;
+
 		private ContainerProbe readinessProbe;
 
 		private ContainerProbe livenessProbe;
@@ -1211,6 +1214,14 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 
 		public void setEnvironmentVars(List<EnvironmentVar> environmentVars) {
 			this.environmentVars = environmentVars;
+		}
+
+		public Boolean getEnvironmentVarHide() {
+			return environmentVarHide;
+		}
+
+		public void setEnvironmentVarHide(Boolean environmentVarHide) {
+			this.environmentVarHide = environmentVarHide;
 		}
 
 		public SecurityContext getSecurityContext() {
