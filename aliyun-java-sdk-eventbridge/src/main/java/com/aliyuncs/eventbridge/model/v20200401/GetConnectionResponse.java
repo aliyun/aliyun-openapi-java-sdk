@@ -31,6 +31,8 @@ public class GetConnectionResponse extends AcsResponse {
 
 	private String code;
 
+	private Integer httpCode;
+
 	private Data data;
 
 	public String getRequestId() {
@@ -55,6 +57,14 @@ public class GetConnectionResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
+	}
+
+	public Integer getHttpCode() {
+		return this.httpCode;
+	}
+
+	public void setHttpCode(Integer httpCode) {
+		this.httpCode = httpCode;
 	}
 
 	public Data getData() {
@@ -318,7 +328,7 @@ public class GetConnectionResponse extends AcsResponse {
 
 						private String key;
 
-						private String valuValuee;
+						private String value;
 
 						public String getIsValueSecret() {
 							return this.isValueSecret;
@@ -336,12 +346,12 @@ public class GetConnectionResponse extends AcsResponse {
 							this.key = key;
 						}
 
-						public String getValuValuee() {
-							return this.valuValuee;
+						public String getValue() {
+							return this.value;
 						}
 
-						public void setValuValuee(String valuValuee) {
-							this.valuValuee = valuValuee;
+						public void setValue(String value) {
+							this.value = value;
 						}
 					}
 

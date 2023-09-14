@@ -45,6 +45,7 @@ public class ListTargetsResponseUnmarshaller {
 			targetsItem.setType(_ctx.stringValue("ListTargetsResponse.Data.Targets["+ i +"].Type"));
 			targetsItem.setEndpoint(_ctx.stringValue("ListTargetsResponse.Data.Targets["+ i +"].Endpoint"));
 			targetsItem.setPushSelector(_ctx.stringValue("ListTargetsResponse.Data.Targets["+ i +"].PushSelector"));
+			targetsItem.setErrorsTolerance(_ctx.stringValue("ListTargetsResponse.Data.Targets["+ i +"].ErrorsTolerance"));
 			targetsItem.setId(_ctx.stringValue("ListTargetsResponse.Data.Targets["+ i +"].Id"));
 			targetsItem.setEventBusName(_ctx.stringValue("ListTargetsResponse.Data.Targets["+ i +"].EventBusName"));
 			targetsItem.setRuleName(_ctx.stringValue("ListTargetsResponse.Data.Targets["+ i +"].RuleName"));

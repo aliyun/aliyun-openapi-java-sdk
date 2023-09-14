@@ -118,6 +118,8 @@ public class ListTargetsResponse extends AcsResponse {
 
 			private String pushSelector;
 
+			private String errorsTolerance;
+
 			private String id;
 
 			private String eventBusName;
@@ -156,6 +158,14 @@ public class ListTargetsResponse extends AcsResponse {
 
 			public void setPushSelector(String pushSelector) {
 				this.pushSelector = pushSelector;
+			}
+
+			public String getErrorsTolerance() {
+				return this.errorsTolerance;
+			}
+
+			public void setErrorsTolerance(String errorsTolerance) {
+				this.errorsTolerance = errorsTolerance;
 			}
 
 			public String getId() {

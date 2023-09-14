@@ -53,6 +53,7 @@ public class GetRuleResponseUnmarshaller {
 			targetsItem.setPushSelector(_ctx.stringValue("GetRuleResponse.Data.Targets["+ i +"].PushSelector"));
 			targetsItem.setId(_ctx.stringValue("GetRuleResponse.Data.Targets["+ i +"].Id"));
 			targetsItem.setPushRetryStrategy(_ctx.stringValue("GetRuleResponse.Data.Targets["+ i +"].PushRetryStrategy"));
+			targetsItem.setErrorsTolerance(_ctx.stringValue("GetRuleResponse.Data.Targets["+ i +"].ErrorsTolerance"));
 
 			DeadLetterQueue deadLetterQueue = new DeadLetterQueue();
 			deadLetterQueue.setArn(_ctx.stringValue("GetRuleResponse.Data.Targets["+ i +"].DeadLetterQueue.Arn"));

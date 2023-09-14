@@ -16,6 +16,7 @@ package com.aliyuncs.eventbridge.model.v20200401;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import java.util.Map;
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
@@ -177,7 +178,7 @@ public class CreateEventSourceRequest extends RpcAcsRequest<CreateEventSourceRes
 		private String regionId;
 
 		@SerializedName("IsBase64Decode")
-		private String isBase64Decode;
+		private Boolean isBase64Decode;
 
 		public String getQueueName() {
 			return this.queueName;
@@ -195,11 +196,11 @@ public class CreateEventSourceRequest extends RpcAcsRequest<CreateEventSourceRes
 			this.regionId = regionId;
 		}
 
-		public String getIsBase64Decode() {
+		public Boolean getIsBase64Decode() {
 			return this.isBase64Decode;
 		}
 
-		public void setIsBase64Decode(String isBase64Decode) {
+		public void setIsBase64Decode(Boolean isBase64Decode) {
 			this.isBase64Decode = isBase64Decode;
 		}
 	}
@@ -253,29 +254,41 @@ public class CreateEventSourceRequest extends RpcAcsRequest<CreateEventSourceRes
 
 	public static class SourceRocketMQParameters {
 
+		@SerializedName("InstanceSecurityGroupId")
+		private String instanceSecurityGroupId;
+
+		@SerializedName("Offset")
+		private String offset;
+
+		@SerializedName("GroupID")
+		private String groupID;
+
+		@SerializedName("InstanceUsername")
+		private String instanceUsername;
+
+		@SerializedName("AuthType")
+		private String authType;
+
+		@SerializedName("InstancePassword")
+		private String instancePassword;
+
 		@SerializedName("InstanceNetwork")
 		private String instanceNetwork;
 
 		@SerializedName("InstanceVSwitchIds")
 		private String instanceVSwitchIds;
 
-		@SerializedName("InstanceSecurityGroupId")
-		private String instanceSecurityGroupId;
-
 		@SerializedName("InstanceId")
 		private String instanceId;
-
-		@SerializedName("Offset")
-		private String offset;
 
 		@SerializedName("InstanceVpcId")
 		private String instanceVpcId;
 
+		@SerializedName("InstanceEndpoint")
+		private String instanceEndpoint;
+
 		@SerializedName("RegionId")
 		private String regionId;
-
-		@SerializedName("GroupID")
-		private String groupID;
 
 		@SerializedName("Topic")
 		private String topic;
@@ -287,7 +300,55 @@ public class CreateEventSourceRequest extends RpcAcsRequest<CreateEventSourceRes
 		private String tag;
 
 		@SerializedName("Timestamp")
-		private Float timestamp;
+		private Long timestamp;
+
+		public String getInstanceSecurityGroupId() {
+			return this.instanceSecurityGroupId;
+		}
+
+		public void setInstanceSecurityGroupId(String instanceSecurityGroupId) {
+			this.instanceSecurityGroupId = instanceSecurityGroupId;
+		}
+
+		public String getOffset() {
+			return this.offset;
+		}
+
+		public void setOffset(String offset) {
+			this.offset = offset;
+		}
+
+		public String getGroupID() {
+			return this.groupID;
+		}
+
+		public void setGroupID(String groupID) {
+			this.groupID = groupID;
+		}
+
+		public String getInstanceUsername() {
+			return this.instanceUsername;
+		}
+
+		public void setInstanceUsername(String instanceUsername) {
+			this.instanceUsername = instanceUsername;
+		}
+
+		public String getAuthType() {
+			return this.authType;
+		}
+
+		public void setAuthType(String authType) {
+			this.authType = authType;
+		}
+
+		public String getInstancePassword() {
+			return this.instancePassword;
+		}
+
+		public void setInstancePassword(String instancePassword) {
+			this.instancePassword = instancePassword;
+		}
 
 		public String getInstanceNetwork() {
 			return this.instanceNetwork;
@@ -305,28 +366,12 @@ public class CreateEventSourceRequest extends RpcAcsRequest<CreateEventSourceRes
 			this.instanceVSwitchIds = instanceVSwitchIds;
 		}
 
-		public String getInstanceSecurityGroupId() {
-			return this.instanceSecurityGroupId;
-		}
-
-		public void setInstanceSecurityGroupId(String instanceSecurityGroupId) {
-			this.instanceSecurityGroupId = instanceSecurityGroupId;
-		}
-
 		public String getInstanceId() {
 			return this.instanceId;
 		}
 
 		public void setInstanceId(String instanceId) {
 			this.instanceId = instanceId;
-		}
-
-		public String getOffset() {
-			return this.offset;
-		}
-
-		public void setOffset(String offset) {
-			this.offset = offset;
 		}
 
 		public String getInstanceVpcId() {
@@ -337,20 +382,20 @@ public class CreateEventSourceRequest extends RpcAcsRequest<CreateEventSourceRes
 			this.instanceVpcId = instanceVpcId;
 		}
 
+		public String getInstanceEndpoint() {
+			return this.instanceEndpoint;
+		}
+
+		public void setInstanceEndpoint(String instanceEndpoint) {
+			this.instanceEndpoint = instanceEndpoint;
+		}
+
 		public String getRegionId() {
 			return this.regionId;
 		}
 
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
-		}
-
-		public String getGroupID() {
-			return this.groupID;
-		}
-
-		public void setGroupID(String groupID) {
-			this.groupID = groupID;
 		}
 
 		public String getTopic() {
@@ -377,11 +422,11 @@ public class CreateEventSourceRequest extends RpcAcsRequest<CreateEventSourceRes
 			this.tag = tag;
 		}
 
-		public Float getTimestamp() {
+		public Long getTimestamp() {
 			return this.timestamp;
 		}
 
-		public void setTimestamp(Float timestamp) {
+		public void setTimestamp(Long timestamp) {
 			this.timestamp = timestamp;
 		}
 	}
@@ -438,6 +483,9 @@ public class CreateEventSourceRequest extends RpcAcsRequest<CreateEventSourceRes
 		@SerializedName("Schedule")
 		private String schedule;
 
+		@SerializedName("UserData")
+		private Map<String,String> userData;
+
 		@SerializedName("TimeZone")
 		private String timeZone;
 
@@ -447,6 +495,14 @@ public class CreateEventSourceRequest extends RpcAcsRequest<CreateEventSourceRes
 
 		public void setSchedule(String schedule) {
 			this.schedule = schedule;
+		}
+
+		public Map<String,String> getUserData() {
+			return this.userData;
+		}
+
+		public void setUserData(Map<String,String> userData) {
+			this.userData = userData;
 		}
 
 		public String getTimeZone() {

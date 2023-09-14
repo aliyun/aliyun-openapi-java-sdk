@@ -138,6 +138,10 @@ public class ListUserDefinedEventSourcesResponse extends AcsResponse {
 
 			private SourceHttpEventParameters sourceHttpEventParameters;
 
+			private SourceKafkaParameters sourceKafkaParameters;
+
+			private SourceScheduledEventParameters sourceScheduledEventParameters;
+
 			public String getName() {
 				return this.name;
 			}
@@ -250,6 +254,22 @@ public class ListUserDefinedEventSourcesResponse extends AcsResponse {
 				this.sourceHttpEventParameters = sourceHttpEventParameters;
 			}
 
+			public SourceKafkaParameters getSourceKafkaParameters() {
+				return this.sourceKafkaParameters;
+			}
+
+			public void setSourceKafkaParameters(SourceKafkaParameters sourceKafkaParameters) {
+				this.sourceKafkaParameters = sourceKafkaParameters;
+			}
+
+			public SourceScheduledEventParameters getSourceScheduledEventParameters() {
+				return this.sourceScheduledEventParameters;
+			}
+
+			public void setSourceScheduledEventParameters(SourceScheduledEventParameters sourceScheduledEventParameters) {
+				this.sourceScheduledEventParameters = sourceScheduledEventParameters;
+			}
+
 			public static class SourceMNSParameters {
 
 				private String regionId;
@@ -298,6 +318,24 @@ public class ListUserDefinedEventSourcesResponse extends AcsResponse {
 				private Float timestamp;
 
 				private String groupId;
+
+				private String instanceType;
+
+				private String instanceNetwork;
+
+				private String instanceVpcId;
+
+				private String instanceVSwitchIds;
+
+				private String instanceSecurityGroupId;
+
+				private String authType;
+
+				private String instanceEndpoint;
+
+				private String instanceUsername;
+
+				private String instancePassword;
 
 				public String getRegionId() {
 					return this.regionId;
@@ -353,6 +391,78 @@ public class ListUserDefinedEventSourcesResponse extends AcsResponse {
 
 				public void setGroupId(String groupId) {
 					this.groupId = groupId;
+				}
+
+				public String getInstanceType() {
+					return this.instanceType;
+				}
+
+				public void setInstanceType(String instanceType) {
+					this.instanceType = instanceType;
+				}
+
+				public String getInstanceNetwork() {
+					return this.instanceNetwork;
+				}
+
+				public void setInstanceNetwork(String instanceNetwork) {
+					this.instanceNetwork = instanceNetwork;
+				}
+
+				public String getInstanceVpcId() {
+					return this.instanceVpcId;
+				}
+
+				public void setInstanceVpcId(String instanceVpcId) {
+					this.instanceVpcId = instanceVpcId;
+				}
+
+				public String getInstanceVSwitchIds() {
+					return this.instanceVSwitchIds;
+				}
+
+				public void setInstanceVSwitchIds(String instanceVSwitchIds) {
+					this.instanceVSwitchIds = instanceVSwitchIds;
+				}
+
+				public String getInstanceSecurityGroupId() {
+					return this.instanceSecurityGroupId;
+				}
+
+				public void setInstanceSecurityGroupId(String instanceSecurityGroupId) {
+					this.instanceSecurityGroupId = instanceSecurityGroupId;
+				}
+
+				public String getAuthType() {
+					return this.authType;
+				}
+
+				public void setAuthType(String authType) {
+					this.authType = authType;
+				}
+
+				public String getInstanceEndpoint() {
+					return this.instanceEndpoint;
+				}
+
+				public void setInstanceEndpoint(String instanceEndpoint) {
+					this.instanceEndpoint = instanceEndpoint;
+				}
+
+				public String getInstanceUsername() {
+					return this.instanceUsername;
+				}
+
+				public void setInstanceUsername(String instanceUsername) {
+					this.instanceUsername = instanceUsername;
+				}
+
+				public String getInstancePassword() {
+					return this.instancePassword;
+				}
+
+				public void setInstancePassword(String instancePassword) {
+					this.instancePassword = instancePassword;
 				}
 			}
 
@@ -454,6 +564,10 @@ public class ListUserDefinedEventSourcesResponse extends AcsResponse {
 
 				private List<String> referer;
 
+				private List<String> publicWebHookUrl;
+
+				private List<String> vpcWebHookUrl;
+
 				public String getType() {
 					return this.type;
 				}
@@ -492,6 +606,148 @@ public class ListUserDefinedEventSourcesResponse extends AcsResponse {
 
 				public void setReferer(List<String> referer) {
 					this.referer = referer;
+				}
+
+				public List<String> getPublicWebHookUrl() {
+					return this.publicWebHookUrl;
+				}
+
+				public void setPublicWebHookUrl(List<String> publicWebHookUrl) {
+					this.publicWebHookUrl = publicWebHookUrl;
+				}
+
+				public List<String> getVpcWebHookUrl() {
+					return this.vpcWebHookUrl;
+				}
+
+				public void setVpcWebHookUrl(List<String> vpcWebHookUrl) {
+					this.vpcWebHookUrl = vpcWebHookUrl;
+				}
+			}
+
+			public static class SourceKafkaParameters {
+
+				private String instanceId;
+
+				private String consumerGroup;
+
+				private String topic;
+
+				private String offsetReset;
+
+				private String regionId;
+
+				private Integer maximumTasks;
+
+				private String network;
+
+				private String securityGroupId;
+
+				private String vpcId;
+
+				private String vSwitchIds;
+
+				public String getInstanceId() {
+					return this.instanceId;
+				}
+
+				public void setInstanceId(String instanceId) {
+					this.instanceId = instanceId;
+				}
+
+				public String getConsumerGroup() {
+					return this.consumerGroup;
+				}
+
+				public void setConsumerGroup(String consumerGroup) {
+					this.consumerGroup = consumerGroup;
+				}
+
+				public String getTopic() {
+					return this.topic;
+				}
+
+				public void setTopic(String topic) {
+					this.topic = topic;
+				}
+
+				public String getOffsetReset() {
+					return this.offsetReset;
+				}
+
+				public void setOffsetReset(String offsetReset) {
+					this.offsetReset = offsetReset;
+				}
+
+				public String getRegionId() {
+					return this.regionId;
+				}
+
+				public void setRegionId(String regionId) {
+					this.regionId = regionId;
+				}
+
+				public Integer getMaximumTasks() {
+					return this.maximumTasks;
+				}
+
+				public void setMaximumTasks(Integer maximumTasks) {
+					this.maximumTasks = maximumTasks;
+				}
+
+				public String getNetwork() {
+					return this.network;
+				}
+
+				public void setNetwork(String network) {
+					this.network = network;
+				}
+
+				public String getSecurityGroupId() {
+					return this.securityGroupId;
+				}
+
+				public void setSecurityGroupId(String securityGroupId) {
+					this.securityGroupId = securityGroupId;
+				}
+
+				public String getVpcId() {
+					return this.vpcId;
+				}
+
+				public void setVpcId(String vpcId) {
+					this.vpcId = vpcId;
+				}
+
+				public String getVSwitchIds() {
+					return this.vSwitchIds;
+				}
+
+				public void setVSwitchIds(String vSwitchIds) {
+					this.vSwitchIds = vSwitchIds;
+				}
+			}
+
+			public static class SourceScheduledEventParameters {
+
+				private String schedule;
+
+				private String timeZone;
+
+				public String getSchedule() {
+					return this.schedule;
+				}
+
+				public void setSchedule(String schedule) {
+					this.schedule = schedule;
+				}
+
+				public String getTimeZone() {
+					return this.timeZone;
+				}
+
+				public void setTimeZone(String timeZone) {
+					this.timeZone = timeZone;
 				}
 			}
 		}

@@ -32,6 +32,11 @@ import com.aliyuncs.eventbridge.model.v20200401.ListEventStreamingsResponse.Data
 import com.aliyuncs.eventbridge.model.v20200401.ListEventStreamingsResponse.Data.EventStreamingsItem.Sink.SinkFcParameters.InvocationType;
 import com.aliyuncs.eventbridge.model.v20200401.ListEventStreamingsResponse.Data.EventStreamingsItem.Sink.SinkFcParameters.Qualifier;
 import com.aliyuncs.eventbridge.model.v20200401.ListEventStreamingsResponse.Data.EventStreamingsItem.Sink.SinkFcParameters.ServiceName;
+import com.aliyuncs.eventbridge.model.v20200401.ListEventStreamingsResponse.Data.EventStreamingsItem.Sink.SinkFnfParameters;
+import com.aliyuncs.eventbridge.model.v20200401.ListEventStreamingsResponse.Data.EventStreamingsItem.Sink.SinkFnfParameters.ExecutionName;
+import com.aliyuncs.eventbridge.model.v20200401.ListEventStreamingsResponse.Data.EventStreamingsItem.Sink.SinkFnfParameters.FlowName;
+import com.aliyuncs.eventbridge.model.v20200401.ListEventStreamingsResponse.Data.EventStreamingsItem.Sink.SinkFnfParameters.Input;
+import com.aliyuncs.eventbridge.model.v20200401.ListEventStreamingsResponse.Data.EventStreamingsItem.Sink.SinkFnfParameters.RoleName11;
 import com.aliyuncs.eventbridge.model.v20200401.ListEventStreamingsResponse.Data.EventStreamingsItem.Sink.SinkKafkaParameters;
 import com.aliyuncs.eventbridge.model.v20200401.ListEventStreamingsResponse.Data.EventStreamingsItem.Sink.SinkKafkaParameters.Acks;
 import com.aliyuncs.eventbridge.model.v20200401.ListEventStreamingsResponse.Data.EventStreamingsItem.Sink.SinkKafkaParameters.InstanceId4;
@@ -390,6 +395,33 @@ public class ListEventStreamingsResponseUnmarshaller {
 			roleName.setTemplate(_ctx.stringValue("ListEventStreamingsResponse.Data.EventStreamings["+ i +"].Sink.SinkSLSParameters.RoleName.Template"));
 			sinkSLSParameters.setRoleName(roleName);
 			sink.setSinkSLSParameters(sinkSLSParameters);
+
+			SinkFnfParameters sinkFnfParameters = new SinkFnfParameters();
+
+			FlowName flowName = new FlowName();
+			flowName.setValue(_ctx.stringValue("ListEventStreamingsResponse.Data.EventStreamings["+ i +"].Sink.SinkFnfParameters.FlowName.Value"));
+			flowName.setForm(_ctx.stringValue("ListEventStreamingsResponse.Data.EventStreamings["+ i +"].Sink.SinkFnfParameters.FlowName.Form"));
+			flowName.setTemplate(_ctx.stringValue("ListEventStreamingsResponse.Data.EventStreamings["+ i +"].Sink.SinkFnfParameters.FlowName.Template"));
+			sinkFnfParameters.setFlowName(flowName);
+
+			ExecutionName executionName = new ExecutionName();
+			executionName.setValue(_ctx.stringValue("ListEventStreamingsResponse.Data.EventStreamings["+ i +"].Sink.SinkFnfParameters.ExecutionName.Value"));
+			executionName.setForm(_ctx.stringValue("ListEventStreamingsResponse.Data.EventStreamings["+ i +"].Sink.SinkFnfParameters.ExecutionName.Form"));
+			executionName.setTemplate(_ctx.stringValue("ListEventStreamingsResponse.Data.EventStreamings["+ i +"].Sink.SinkFnfParameters.ExecutionName.Template"));
+			sinkFnfParameters.setExecutionName(executionName);
+
+			Input input = new Input();
+			input.setValue(_ctx.stringValue("ListEventStreamingsResponse.Data.EventStreamings["+ i +"].Sink.SinkFnfParameters.Input.Value"));
+			input.setForm(_ctx.stringValue("ListEventStreamingsResponse.Data.EventStreamings["+ i +"].Sink.SinkFnfParameters.Input.Form"));
+			input.setTemplate(_ctx.stringValue("ListEventStreamingsResponse.Data.EventStreamings["+ i +"].Sink.SinkFnfParameters.Input.Template"));
+			sinkFnfParameters.setInput(input);
+
+			RoleName11 roleName11 = new RoleName11();
+			roleName11.setValue(_ctx.stringValue("ListEventStreamingsResponse.Data.EventStreamings["+ i +"].Sink.SinkFnfParameters.RoleName.Value"));
+			roleName11.setForm(_ctx.stringValue("ListEventStreamingsResponse.Data.EventStreamings["+ i +"].Sink.SinkFnfParameters.RoleName.Form"));
+			roleName11.setTemplate(_ctx.stringValue("ListEventStreamingsResponse.Data.EventStreamings["+ i +"].Sink.SinkFnfParameters.RoleName.Template"));
+			sinkFnfParameters.setRoleName11(roleName11);
+			sink.setSinkFnfParameters(sinkFnfParameters);
 			eventStreamingsItem.setSink(sink);
 
 			RunOptions runOptions = new RunOptions();

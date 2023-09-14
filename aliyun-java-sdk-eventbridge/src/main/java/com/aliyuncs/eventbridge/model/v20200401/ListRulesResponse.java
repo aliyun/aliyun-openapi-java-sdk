@@ -210,6 +210,8 @@ public class ListRulesResponse extends AcsResponse {
 
 				private String pushSelector;
 
+				private String errorsTolerance;
+
 				public String getType() {
 					return this.type;
 				}
@@ -240,6 +242,14 @@ public class ListRulesResponse extends AcsResponse {
 
 				public void setPushSelector(String pushSelector) {
 					this.pushSelector = pushSelector;
+				}
+
+				public String getErrorsTolerance() {
+					return this.errorsTolerance;
+				}
+
+				public void setErrorsTolerance(String errorsTolerance) {
+					this.errorsTolerance = errorsTolerance;
 				}
 			}
 		}

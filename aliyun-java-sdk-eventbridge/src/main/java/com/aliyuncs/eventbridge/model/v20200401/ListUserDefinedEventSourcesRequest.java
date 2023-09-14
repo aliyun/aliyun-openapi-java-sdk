@@ -23,9 +23,61 @@ import com.aliyuncs.http.MethodType;
  */
 public class ListUserDefinedEventSourcesRequest extends RpcAcsRequest<ListUserDefinedEventSourcesResponse> {
 	   
+
+	private String eventBusName;
+
+	private String nextToken;
+
+	private Integer limit;
+
+	private String namePrefix;
 	public ListUserDefinedEventSourcesRequest() {
 		super("eventbridge", "2020-04-01", "ListUserDefinedEventSources");
 		setMethod(MethodType.POST);
+	}
+
+	public String getEventBusName() {
+		return this.eventBusName;
+	}
+
+	public void setEventBusName(String eventBusName) {
+		this.eventBusName = eventBusName;
+		if(eventBusName != null){
+			putQueryParameter("EventBusName", eventBusName);
+		}
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
+		}
+	}
+
+	public Integer getLimit() {
+		return this.limit;
+	}
+
+	public void setLimit(Integer limit) {
+		this.limit = limit;
+		if(limit != null){
+			putQueryParameter("Limit", limit.toString());
+		}
+	}
+
+	public String getNamePrefix() {
+		return this.namePrefix;
+	}
+
+	public void setNamePrefix(String namePrefix) {
+		this.namePrefix = namePrefix;
+		if(namePrefix != null){
+			putQueryParameter("NamePrefix", namePrefix);
+		}
 	}
 
 	@Override

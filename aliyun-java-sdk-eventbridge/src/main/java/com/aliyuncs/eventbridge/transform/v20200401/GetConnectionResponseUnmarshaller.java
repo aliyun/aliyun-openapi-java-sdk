@@ -44,6 +44,7 @@ public class GetConnectionResponseUnmarshaller {
 		getConnectionResponse.setRequestId(_ctx.stringValue("GetConnectionResponse.RequestId"));
 		getConnectionResponse.setMessage(_ctx.stringValue("GetConnectionResponse.Message"));
 		getConnectionResponse.setCode(_ctx.stringValue("GetConnectionResponse.Code"));
+		getConnectionResponse.setHttpCode(_ctx.integerValue("GetConnectionResponse.HttpCode"));
 
 		Data data = new Data();
 
@@ -82,7 +83,7 @@ public class GetConnectionResponseUnmarshaller {
 				BodyParametersItem bodyParametersItem = new BodyParametersItem();
 				bodyParametersItem.setIsValueSecret(_ctx.stringValue("GetConnectionResponse.Data.Connections["+ i +"].AuthParameters.InvocationHttpParameters.BodyParameters["+ j +"].IsValueSecret"));
 				bodyParametersItem.setKey(_ctx.stringValue("GetConnectionResponse.Data.Connections["+ i +"].AuthParameters.InvocationHttpParameters.BodyParameters["+ j +"].Key"));
-				bodyParametersItem.setValuValuee(_ctx.stringValue("GetConnectionResponse.Data.Connections["+ i +"].AuthParameters.InvocationHttpParameters.BodyParameters["+ j +"].ValuValuee"));
+				bodyParametersItem.setValue(_ctx.stringValue("GetConnectionResponse.Data.Connections["+ i +"].AuthParameters.InvocationHttpParameters.BodyParameters["+ j +"].Value"));
 
 				bodyParameters.add(bodyParametersItem);
 			}

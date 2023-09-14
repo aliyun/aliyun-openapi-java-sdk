@@ -122,6 +122,9 @@ public class UpdateEventStreamingRequest extends RpcAcsRequest<UpdateEventStream
 		@SerializedName("SinkKafkaParameters")
 		private SinkKafkaParameters sinkKafkaParameters;
 
+		@SerializedName("SinkFnfParameters")
+		private SinkFnfParameters sinkFnfParameters;
+
 		@SerializedName("SinkFcParameters")
 		private SinkFcParameters sinkFcParameters;
 
@@ -153,6 +156,14 @@ public class UpdateEventStreamingRequest extends RpcAcsRequest<UpdateEventStream
 
 		public void setSinkKafkaParameters(SinkKafkaParameters sinkKafkaParameters) {
 			this.sinkKafkaParameters = sinkKafkaParameters;
+		}
+
+		public SinkFnfParameters getSinkFnfParameters() {
+			return this.sinkFnfParameters;
+		}
+
+		public void setSinkFnfParameters(SinkFnfParameters sinkFnfParameters) {
+			this.sinkFnfParameters = sinkFnfParameters;
 		}
 
 		public SinkFcParameters getSinkFcParameters() {
@@ -998,6 +1009,197 @@ public class UpdateEventStreamingRequest extends RpcAcsRequest<UpdateEventStream
 			}
 
 			public static class Key {
+
+				@SerializedName("Template")
+				private String template;
+
+				@SerializedName("Form")
+				private String form;
+
+				@SerializedName("Value")
+				private String value;
+
+				public String getTemplate() {
+					return this.template;
+				}
+
+				public void setTemplate(String template) {
+					this.template = template;
+				}
+
+				public String getForm() {
+					return this.form;
+				}
+
+				public void setForm(String form) {
+					this.form = form;
+				}
+
+				public String getValue() {
+					return this.value;
+				}
+
+				public void setValue(String value) {
+					this.value = value;
+				}
+			}
+		}
+
+		public static class SinkFnfParameters {
+
+			@SerializedName("Input")
+			private Input input;
+
+			@SerializedName("ExecutionName")
+			private ExecutionName executionName;
+
+			@SerializedName("RoleName")
+			private RoleName roleName;
+
+			@SerializedName("FlowName")
+			private FlowName flowName;
+
+			public Input getInput() {
+				return this.input;
+			}
+
+			public void setInput(Input input) {
+				this.input = input;
+			}
+
+			public ExecutionName getExecutionName() {
+				return this.executionName;
+			}
+
+			public void setExecutionName(ExecutionName executionName) {
+				this.executionName = executionName;
+			}
+
+			public RoleName getRoleName() {
+				return this.roleName;
+			}
+
+			public void setRoleName(RoleName roleName) {
+				this.roleName = roleName;
+			}
+
+			public FlowName getFlowName() {
+				return this.flowName;
+			}
+
+			public void setFlowName(FlowName flowName) {
+				this.flowName = flowName;
+			}
+
+			public static class Input {
+
+				@SerializedName("Template")
+				private String template;
+
+				@SerializedName("Form")
+				private String form;
+
+				@SerializedName("Value")
+				private String value;
+
+				public String getTemplate() {
+					return this.template;
+				}
+
+				public void setTemplate(String template) {
+					this.template = template;
+				}
+
+				public String getForm() {
+					return this.form;
+				}
+
+				public void setForm(String form) {
+					this.form = form;
+				}
+
+				public String getValue() {
+					return this.value;
+				}
+
+				public void setValue(String value) {
+					this.value = value;
+				}
+			}
+
+			public static class ExecutionName {
+
+				@SerializedName("Template")
+				private String template;
+
+				@SerializedName("Form")
+				private String form;
+
+				@SerializedName("Value")
+				private String value;
+
+				public String getTemplate() {
+					return this.template;
+				}
+
+				public void setTemplate(String template) {
+					this.template = template;
+				}
+
+				public String getForm() {
+					return this.form;
+				}
+
+				public void setForm(String form) {
+					this.form = form;
+				}
+
+				public String getValue() {
+					return this.value;
+				}
+
+				public void setValue(String value) {
+					this.value = value;
+				}
+			}
+
+			public static class RoleName {
+
+				@SerializedName("Template")
+				private String template;
+
+				@SerializedName("Form")
+				private String form;
+
+				@SerializedName("Value")
+				private String value;
+
+				public String getTemplate() {
+					return this.template;
+				}
+
+				public void setTemplate(String template) {
+					this.template = template;
+				}
+
+				public String getForm() {
+					return this.form;
+				}
+
+				public void setForm(String form) {
+					this.form = form;
+				}
+
+				public String getValue() {
+					return this.value;
+				}
+
+				public void setValue(String value) {
+					this.value = value;
+				}
+			}
+
+			public static class FlowName {
 
 				@SerializedName("Template")
 				private String template;

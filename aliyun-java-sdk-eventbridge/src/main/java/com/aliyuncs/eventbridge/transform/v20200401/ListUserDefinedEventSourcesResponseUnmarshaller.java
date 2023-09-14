@@ -21,10 +21,12 @@ import com.aliyuncs.eventbridge.model.v20200401.ListUserDefinedEventSourcesRespo
 import com.aliyuncs.eventbridge.model.v20200401.ListUserDefinedEventSourcesResponse.Data;
 import com.aliyuncs.eventbridge.model.v20200401.ListUserDefinedEventSourcesResponse.Data.EventSourceListItem;
 import com.aliyuncs.eventbridge.model.v20200401.ListUserDefinedEventSourcesResponse.Data.EventSourceListItem.SourceHttpEventParameters;
+import com.aliyuncs.eventbridge.model.v20200401.ListUserDefinedEventSourcesResponse.Data.EventSourceListItem.SourceKafkaParameters;
 import com.aliyuncs.eventbridge.model.v20200401.ListUserDefinedEventSourcesResponse.Data.EventSourceListItem.SourceMNSParameters;
 import com.aliyuncs.eventbridge.model.v20200401.ListUserDefinedEventSourcesResponse.Data.EventSourceListItem.SourceRabbitMQParameters;
 import com.aliyuncs.eventbridge.model.v20200401.ListUserDefinedEventSourcesResponse.Data.EventSourceListItem.SourceRocketMQParameters;
 import com.aliyuncs.eventbridge.model.v20200401.ListUserDefinedEventSourcesResponse.Data.EventSourceListItem.SourceSLSParameters;
+import com.aliyuncs.eventbridge.model.v20200401.ListUserDefinedEventSourcesResponse.Data.EventSourceListItem.SourceScheduledEventParameters;
 import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -69,6 +71,15 @@ public class ListUserDefinedEventSourcesResponseUnmarshaller {
 			sourceRocketMQParameters.setOffset(_ctx.stringValue("ListUserDefinedEventSourcesResponse.Data.EventSourceList["+ i +"].SourceRocketMQParameters.Offset"));
 			sourceRocketMQParameters.setTimestamp(_ctx.floatValue("ListUserDefinedEventSourcesResponse.Data.EventSourceList["+ i +"].SourceRocketMQParameters.Timestamp"));
 			sourceRocketMQParameters.setGroupId(_ctx.stringValue("ListUserDefinedEventSourcesResponse.Data.EventSourceList["+ i +"].SourceRocketMQParameters.GroupId"));
+			sourceRocketMQParameters.setInstanceType(_ctx.stringValue("ListUserDefinedEventSourcesResponse.Data.EventSourceList["+ i +"].SourceRocketMQParameters.InstanceType"));
+			sourceRocketMQParameters.setInstanceNetwork(_ctx.stringValue("ListUserDefinedEventSourcesResponse.Data.EventSourceList["+ i +"].SourceRocketMQParameters.InstanceNetwork"));
+			sourceRocketMQParameters.setInstanceVpcId(_ctx.stringValue("ListUserDefinedEventSourcesResponse.Data.EventSourceList["+ i +"].SourceRocketMQParameters.InstanceVpcId"));
+			sourceRocketMQParameters.setInstanceVSwitchIds(_ctx.stringValue("ListUserDefinedEventSourcesResponse.Data.EventSourceList["+ i +"].SourceRocketMQParameters.InstanceVSwitchIds"));
+			sourceRocketMQParameters.setInstanceSecurityGroupId(_ctx.stringValue("ListUserDefinedEventSourcesResponse.Data.EventSourceList["+ i +"].SourceRocketMQParameters.InstanceSecurityGroupId"));
+			sourceRocketMQParameters.setAuthType(_ctx.stringValue("ListUserDefinedEventSourcesResponse.Data.EventSourceList["+ i +"].SourceRocketMQParameters.AuthType"));
+			sourceRocketMQParameters.setInstanceEndpoint(_ctx.stringValue("ListUserDefinedEventSourcesResponse.Data.EventSourceList["+ i +"].SourceRocketMQParameters.InstanceEndpoint"));
+			sourceRocketMQParameters.setInstanceUsername(_ctx.stringValue("ListUserDefinedEventSourcesResponse.Data.EventSourceList["+ i +"].SourceRocketMQParameters.InstanceUsername"));
+			sourceRocketMQParameters.setInstancePassword(_ctx.stringValue("ListUserDefinedEventSourcesResponse.Data.EventSourceList["+ i +"].SourceRocketMQParameters.InstancePassword"));
 			eventSourceListItem.setSourceRocketMQParameters(sourceRocketMQParameters);
 
 			SourceRabbitMQParameters sourceRabbitMQParameters = new SourceRabbitMQParameters();
@@ -106,7 +117,37 @@ public class ListUserDefinedEventSourcesResponseUnmarshaller {
 				referer.add(_ctx.stringValue("ListUserDefinedEventSourcesResponse.Data.EventSourceList["+ i +"].SourceHttpEventParameters.Referer["+ j +"]"));
 			}
 			sourceHttpEventParameters.setReferer(referer);
+
+			List<String> publicWebHookUrl = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("ListUserDefinedEventSourcesResponse.Data.EventSourceList["+ i +"].SourceHttpEventParameters.PublicWebHookUrl.Length"); j++) {
+				publicWebHookUrl.add(_ctx.stringValue("ListUserDefinedEventSourcesResponse.Data.EventSourceList["+ i +"].SourceHttpEventParameters.PublicWebHookUrl["+ j +"]"));
+			}
+			sourceHttpEventParameters.setPublicWebHookUrl(publicWebHookUrl);
+
+			List<String> vpcWebHookUrl = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("ListUserDefinedEventSourcesResponse.Data.EventSourceList["+ i +"].SourceHttpEventParameters.VpcWebHookUrl.Length"); j++) {
+				vpcWebHookUrl.add(_ctx.stringValue("ListUserDefinedEventSourcesResponse.Data.EventSourceList["+ i +"].SourceHttpEventParameters.VpcWebHookUrl["+ j +"]"));
+			}
+			sourceHttpEventParameters.setVpcWebHookUrl(vpcWebHookUrl);
 			eventSourceListItem.setSourceHttpEventParameters(sourceHttpEventParameters);
+
+			SourceKafkaParameters sourceKafkaParameters = new SourceKafkaParameters();
+			sourceKafkaParameters.setInstanceId(_ctx.stringValue("ListUserDefinedEventSourcesResponse.Data.EventSourceList["+ i +"].SourceKafkaParameters.InstanceId"));
+			sourceKafkaParameters.setConsumerGroup(_ctx.stringValue("ListUserDefinedEventSourcesResponse.Data.EventSourceList["+ i +"].SourceKafkaParameters.ConsumerGroup"));
+			sourceKafkaParameters.setTopic(_ctx.stringValue("ListUserDefinedEventSourcesResponse.Data.EventSourceList["+ i +"].SourceKafkaParameters.Topic"));
+			sourceKafkaParameters.setOffsetReset(_ctx.stringValue("ListUserDefinedEventSourcesResponse.Data.EventSourceList["+ i +"].SourceKafkaParameters.OffsetReset"));
+			sourceKafkaParameters.setRegionId(_ctx.stringValue("ListUserDefinedEventSourcesResponse.Data.EventSourceList["+ i +"].SourceKafkaParameters.RegionId"));
+			sourceKafkaParameters.setMaximumTasks(_ctx.integerValue("ListUserDefinedEventSourcesResponse.Data.EventSourceList["+ i +"].SourceKafkaParameters.MaximumTasks"));
+			sourceKafkaParameters.setNetwork(_ctx.stringValue("ListUserDefinedEventSourcesResponse.Data.EventSourceList["+ i +"].SourceKafkaParameters.Network"));
+			sourceKafkaParameters.setSecurityGroupId(_ctx.stringValue("ListUserDefinedEventSourcesResponse.Data.EventSourceList["+ i +"].SourceKafkaParameters.SecurityGroupId"));
+			sourceKafkaParameters.setVpcId(_ctx.stringValue("ListUserDefinedEventSourcesResponse.Data.EventSourceList["+ i +"].SourceKafkaParameters.VpcId"));
+			sourceKafkaParameters.setVSwitchIds(_ctx.stringValue("ListUserDefinedEventSourcesResponse.Data.EventSourceList["+ i +"].SourceKafkaParameters.VSwitchIds"));
+			eventSourceListItem.setSourceKafkaParameters(sourceKafkaParameters);
+
+			SourceScheduledEventParameters sourceScheduledEventParameters = new SourceScheduledEventParameters();
+			sourceScheduledEventParameters.setSchedule(_ctx.stringValue("ListUserDefinedEventSourcesResponse.Data.EventSourceList["+ i +"].SourceScheduledEventParameters.Schedule"));
+			sourceScheduledEventParameters.setTimeZone(_ctx.stringValue("ListUserDefinedEventSourcesResponse.Data.EventSourceList["+ i +"].SourceScheduledEventParameters.TimeZone"));
+			eventSourceListItem.setSourceScheduledEventParameters(sourceScheduledEventParameters);
 
 			eventSourceList.add(eventSourceListItem);
 		}

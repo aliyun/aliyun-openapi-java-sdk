@@ -57,6 +57,7 @@ public class ListRulesResponseUnmarshaller {
 				targetsItem.setEndpoint(_ctx.stringValue("ListRulesResponse.Data.Rules["+ i +"].Targets["+ j +"].Endpoint"));
 				targetsItem.setId(_ctx.stringValue("ListRulesResponse.Data.Rules["+ i +"].Targets["+ j +"].Id"));
 				targetsItem.setPushSelector(_ctx.stringValue("ListRulesResponse.Data.Rules["+ i +"].Targets["+ j +"].PushSelector"));
+				targetsItem.setErrorsTolerance(_ctx.stringValue("ListRulesResponse.Data.Rules["+ i +"].Targets["+ j +"].ErrorsTolerance"));
 
 				targets.add(targetsItem);
 			}

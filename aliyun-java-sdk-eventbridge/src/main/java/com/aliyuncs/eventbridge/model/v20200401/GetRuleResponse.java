@@ -172,6 +172,8 @@ public class GetRuleResponse extends AcsResponse {
 
 			private String pushRetryStrategy;
 
+			private String errorsTolerance;
+
 			private List<ParamListItem> paramList;
 
 			private DeadLetterQueue deadLetterQueue;
@@ -222,6 +224,14 @@ public class GetRuleResponse extends AcsResponse {
 
 			public void setPushRetryStrategy(String pushRetryStrategy) {
 				this.pushRetryStrategy = pushRetryStrategy;
+			}
+
+			public String getErrorsTolerance() {
+				return this.errorsTolerance;
+			}
+
+			public void setErrorsTolerance(String errorsTolerance) {
+				this.errorsTolerance = errorsTolerance;
 			}
 
 			public List<ParamListItem> getParamList() {

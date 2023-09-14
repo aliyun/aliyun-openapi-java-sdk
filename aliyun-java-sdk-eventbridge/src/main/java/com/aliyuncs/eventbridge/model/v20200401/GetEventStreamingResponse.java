@@ -644,6 +644,8 @@ public class GetEventStreamingResponse extends AcsResponse {
 
 			private SinkSLSParameters sinkSLSParameters;
 
+			private SinkFnfParameters sinkFnfParameters;
+
 			public SinkMNSParameters getSinkMNSParameters() {
 				return this.sinkMNSParameters;
 			}
@@ -690,6 +692,14 @@ public class GetEventStreamingResponse extends AcsResponse {
 
 			public void setSinkSLSParameters(SinkSLSParameters sinkSLSParameters) {
 				this.sinkSLSParameters = sinkSLSParameters;
+			}
+
+			public SinkFnfParameters getSinkFnfParameters() {
+				return this.sinkFnfParameters;
+			}
+
+			public void setSinkFnfParameters(SinkFnfParameters sinkFnfParameters) {
+				this.sinkFnfParameters = sinkFnfParameters;
 			}
 
 			public static class SinkMNSParameters {
@@ -2182,6 +2192,181 @@ public class GetEventStreamingResponse extends AcsResponse {
 				}
 
 				public static class RoleName {
+
+					private String value;
+
+					private String form;
+
+					private String template;
+
+					public String getValue() {
+						return this.value;
+					}
+
+					public void setValue(String value) {
+						this.value = value;
+					}
+
+					public String getForm() {
+						return this.form;
+					}
+
+					public void setForm(String form) {
+						this.form = form;
+					}
+
+					public String getTemplate() {
+						return this.template;
+					}
+
+					public void setTemplate(String template) {
+						this.template = template;
+					}
+				}
+			}
+
+			public static class SinkFnfParameters {
+
+				private FlowName flowName;
+
+				private ExecutionName executionName;
+
+				private Input input;
+
+				private RoleName11 roleName11;
+
+				public FlowName getFlowName() {
+					return this.flowName;
+				}
+
+				public void setFlowName(FlowName flowName) {
+					this.flowName = flowName;
+				}
+
+				public ExecutionName getExecutionName() {
+					return this.executionName;
+				}
+
+				public void setExecutionName(ExecutionName executionName) {
+					this.executionName = executionName;
+				}
+
+				public Input getInput() {
+					return this.input;
+				}
+
+				public void setInput(Input input) {
+					this.input = input;
+				}
+
+				public RoleName11 getRoleName11() {
+					return this.roleName11;
+				}
+
+				public void setRoleName11(RoleName11 roleName11) {
+					this.roleName11 = roleName11;
+				}
+
+				public static class FlowName {
+
+					private String value;
+
+					private String form;
+
+					private String template;
+
+					public String getValue() {
+						return this.value;
+					}
+
+					public void setValue(String value) {
+						this.value = value;
+					}
+
+					public String getForm() {
+						return this.form;
+					}
+
+					public void setForm(String form) {
+						this.form = form;
+					}
+
+					public String getTemplate() {
+						return this.template;
+					}
+
+					public void setTemplate(String template) {
+						this.template = template;
+					}
+				}
+
+				public static class ExecutionName {
+
+					private String value;
+
+					private String form;
+
+					private String template;
+
+					public String getValue() {
+						return this.value;
+					}
+
+					public void setValue(String value) {
+						this.value = value;
+					}
+
+					public String getForm() {
+						return this.form;
+					}
+
+					public void setForm(String form) {
+						this.form = form;
+					}
+
+					public String getTemplate() {
+						return this.template;
+					}
+
+					public void setTemplate(String template) {
+						this.template = template;
+					}
+				}
+
+				public static class Input {
+
+					private String value;
+
+					private String form;
+
+					private String template;
+
+					public String getValue() {
+						return this.value;
+					}
+
+					public void setValue(String value) {
+						this.value = value;
+					}
+
+					public String getForm() {
+						return this.form;
+					}
+
+					public void setForm(String form) {
+						this.form = form;
+					}
+
+					public String getTemplate() {
+						return this.template;
+					}
+
+					public void setTemplate(String template) {
+						this.template = template;
+					}
+				}
+
+				public static class RoleName11 {
 
 					private String value;
 
