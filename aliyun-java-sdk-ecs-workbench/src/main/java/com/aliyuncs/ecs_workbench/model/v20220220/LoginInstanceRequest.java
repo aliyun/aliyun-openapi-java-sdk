@@ -62,6 +62,7 @@ public class LoginInstanceRequest extends RpcAcsRequest<LoginInstanceResponse> {
 				putQueryParameter("InstanceLoginInfo.Certificate" , instanceLoginInfo.getCertificate());
 				putQueryParameter("InstanceLoginInfo.AuthenticationType" , instanceLoginInfo.getAuthenticationType());
 				putQueryParameter("InstanceLoginInfo.DockerExec" , instanceLoginInfo.getDockerExec());
+				putQueryParameter("InstanceLoginInfo.ResourceGroupId" , instanceLoginInfo.getResourceGroupId());
 				putQueryParameter("InstanceLoginInfo.Protocol" , instanceLoginInfo.getBizProtocol());
 				putQueryParameter("InstanceLoginInfo.Password" , instanceLoginInfo.getPassword());
 				putQueryParameter("InstanceLoginInfo.InstanceId" , instanceLoginInfo.getInstanceId());
@@ -162,6 +163,8 @@ public class LoginInstanceRequest extends RpcAcsRequest<LoginInstanceResponse> {
 
 		private String dockerExec;
 
+		private String resourceGroupId;
+
 		private String protocol;
 
 		private String password;
@@ -220,6 +223,14 @@ public class LoginInstanceRequest extends RpcAcsRequest<LoginInstanceResponse> {
 
 		public void setDockerExec(String dockerExec) {
 			this.dockerExec = dockerExec;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 
 		public String getBizProtocol() {
