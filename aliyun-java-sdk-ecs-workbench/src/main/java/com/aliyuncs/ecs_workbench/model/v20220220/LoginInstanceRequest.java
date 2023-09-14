@@ -65,6 +65,7 @@ public class LoginInstanceRequest extends RpcAcsRequest<LoginInstanceResponse> {
 				putQueryParameter("InstanceLoginInfo.ResourceGroupId" , instanceLoginInfo.getResourceGroupId());
 				putQueryParameter("InstanceLoginInfo.Protocol" , instanceLoginInfo.getBizProtocol());
 				putQueryParameter("InstanceLoginInfo.Password" , instanceLoginInfo.getPassword());
+				putQueryParameter("InstanceLoginInfo.LoginByInstanceCredential" , instanceLoginInfo.getLoginByInstanceCredential());
 				putQueryParameter("InstanceLoginInfo.InstanceId" , instanceLoginInfo.getInstanceId());
 				putQueryParameter("InstanceLoginInfo.RegionId" , instanceLoginInfo.getRegionId());
 				putQueryParameter("InstanceLoginInfo.Port" , instanceLoginInfo.getPort());
@@ -101,6 +102,7 @@ public class LoginInstanceRequest extends RpcAcsRequest<LoginInstanceResponse> {
 				putQueryParameter("InstanceLoginInfo.InstanceType" , instanceLoginInfo.getInstanceType());
 				putQueryParameter("InstanceLoginInfo.DockerContainerName" , instanceLoginInfo.getDockerContainerName());
 				putQueryParameter("InstanceLoginInfo.PassPhrase" , instanceLoginInfo.getPassPhrase());
+				putQueryParameter("InstanceLoginInfo.CredentialToken" , instanceLoginInfo.getCredentialToken());
 				putQueryParameter("InstanceLoginInfo.DurationSeconds" , instanceLoginInfo.getDurationSeconds());
 				putQueryParameter("InstanceLoginInfo.NetworkAccessMode" , instanceLoginInfo.getNetworkAccessMode());
 				putQueryParameter("InstanceLoginInfo.Username" , instanceLoginInfo.getUsername());
@@ -169,6 +171,8 @@ public class LoginInstanceRequest extends RpcAcsRequest<LoginInstanceResponse> {
 
 		private String password;
 
+		private Boolean loginByInstanceCredential;
+
 		private String instanceId;
 
 		private String regionId;
@@ -186,6 +190,8 @@ public class LoginInstanceRequest extends RpcAcsRequest<LoginInstanceResponse> {
 		private String dockerContainerName;
 
 		private String passPhrase;
+
+		private String credentialToken;
 
 		private Long durationSeconds;
 
@@ -247,6 +253,14 @@ public class LoginInstanceRequest extends RpcAcsRequest<LoginInstanceResponse> {
 
 		public void setPassword(String password) {
 			this.password = password;
+		}
+
+		public Boolean getLoginByInstanceCredential() {
+			return this.loginByInstanceCredential;
+		}
+
+		public void setLoginByInstanceCredential(Boolean loginByInstanceCredential) {
+			this.loginByInstanceCredential = loginByInstanceCredential;
 		}
 
 		public String getInstanceId() {
@@ -319,6 +333,14 @@ public class LoginInstanceRequest extends RpcAcsRequest<LoginInstanceResponse> {
 
 		public void setPassPhrase(String passPhrase) {
 			this.passPhrase = passPhrase;
+		}
+
+		public String getCredentialToken() {
+			return this.credentialToken;
+		}
+
+		public void setCredentialToken(String credentialToken) {
+			this.credentialToken = credentialToken;
 		}
 
 		public Long getDurationSeconds() {

@@ -1,3 +1,6 @@
+2023-09-14 Version: 1.0.6
+- Supported credential login.
+
 2023-09-14 Version: 1.0.5
 - Supported Resource Group ID.
 
