@@ -31,6 +31,8 @@ public class ModifyDBNodeClassRequest extends RpcAcsRequest<ModifyDBNodeClassRes
 
 	private String plannedEndTime;
 
+	private String dBNodeType;
+
 	private String dBNodeTargetClass;
 
 	private String resourceOwnerAccount;
@@ -85,6 +87,17 @@ public class ModifyDBNodeClassRequest extends RpcAcsRequest<ModifyDBNodeClassRes
 		this.plannedEndTime = plannedEndTime;
 		if(plannedEndTime != null){
 			putQueryParameter("PlannedEndTime", plannedEndTime);
+		}
+	}
+
+	public String getDBNodeType() {
+		return this.dBNodeType;
+	}
+
+	public void setDBNodeType(String dBNodeType) {
+		this.dBNodeType = dBNodeType;
+		if(dBNodeType != null){
+			putQueryParameter("DBNodeType", dBNodeType);
 		}
 	}
 

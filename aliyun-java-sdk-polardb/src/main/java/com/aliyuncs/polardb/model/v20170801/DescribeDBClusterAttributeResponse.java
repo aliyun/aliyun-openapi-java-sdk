@@ -43,6 +43,8 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 	private Boolean hasCompleteStandbyRes;
 
+	private String hotStandbyCluster;
+
 	private String dataSyncMode;
 
 	private String standbyHAMode;
@@ -125,6 +127,8 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 	private String proxyServerlessType;
 
+	private String architecture;
+
 	private String aiType;
 
 	private List<DBNode> dBNodes;
@@ -203,6 +207,14 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 	public void setHasCompleteStandbyRes(Boolean hasCompleteStandbyRes) {
 		this.hasCompleteStandbyRes = hasCompleteStandbyRes;
+	}
+
+	public String getHotStandbyCluster() {
+		return this.hotStandbyCluster;
+	}
+
+	public void setHotStandbyCluster(String hotStandbyCluster) {
+		this.hotStandbyCluster = hotStandbyCluster;
 	}
 
 	public String getDataSyncMode() {
@@ -531,6 +543,14 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 	public void setProxyServerlessType(String proxyServerlessType) {
 		this.proxyServerlessType = proxyServerlessType;
+	}
+
+	public String getArchitecture() {
+		return this.architecture;
+	}
+
+	public void setArchitecture(String architecture) {
+		this.architecture = architecture;
 	}
 
 	public String getAiType() {

@@ -38,6 +38,7 @@ public class DescribeDBClusterAttributeResponseUnmarshaller {
 		describeDBClusterAttributeResponse.setDBClusterNetworkType(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBClusterNetworkType"));
 		describeDBClusterAttributeResponse.setIsLatestVersion(_ctx.booleanValue("DescribeDBClusterAttributeResponse.IsLatestVersion"));
 		describeDBClusterAttributeResponse.setHasCompleteStandbyRes(_ctx.booleanValue("DescribeDBClusterAttributeResponse.HasCompleteStandbyRes"));
+		describeDBClusterAttributeResponse.setHotStandbyCluster(_ctx.stringValue("DescribeDBClusterAttributeResponse.HotStandbyCluster"));
 		describeDBClusterAttributeResponse.setDataSyncMode(_ctx.stringValue("DescribeDBClusterAttributeResponse.DataSyncMode"));
 		describeDBClusterAttributeResponse.setStandbyHAMode(_ctx.stringValue("DescribeDBClusterAttributeResponse.StandbyHAMode"));
 		describeDBClusterAttributeResponse.setCompressStorageMode(_ctx.stringValue("DescribeDBClusterAttributeResponse.CompressStorageMode"));
@@ -78,6 +79,7 @@ public class DescribeDBClusterAttributeResponseUnmarshaller {
 		describeDBClusterAttributeResponse.setProxyStatus(_ctx.stringValue("DescribeDBClusterAttributeResponse.ProxyStatus"));
 		describeDBClusterAttributeResponse.setFeatureHTAPSupported(_ctx.stringValue("DescribeDBClusterAttributeResponse.FeatureHTAPSupported"));
 		describeDBClusterAttributeResponse.setProxyServerlessType(_ctx.stringValue("DescribeDBClusterAttributeResponse.ProxyServerlessType"));
+		describeDBClusterAttributeResponse.setArchitecture(_ctx.stringValue("DescribeDBClusterAttributeResponse.Architecture"));
 		describeDBClusterAttributeResponse.setAiType(_ctx.stringValue("DescribeDBClusterAttributeResponse.AiType"));
 
 		RelatedAPInstance relatedAPInstance = new RelatedAPInstance();
