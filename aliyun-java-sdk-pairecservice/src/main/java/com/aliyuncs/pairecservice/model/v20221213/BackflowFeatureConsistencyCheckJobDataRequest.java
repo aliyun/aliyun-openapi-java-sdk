@@ -21,15 +21,13 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class CloneExperimentRequest extends RoaAcsRequest<CloneExperimentResponse> {
+public class BackflowFeatureConsistencyCheckJobDataRequest extends RoaAcsRequest<BackflowFeatureConsistencyCheckJobDataResponse> {
 	   
 
 	private String body;
-
-	private String experimentId;
-	public CloneExperimentRequest() {
-		super("PaiRecService", "2022-12-13", "CloneExperiment");
-		setUriPattern("/api/v1/experiments/[ExperimentId]/action/clone");
+	public BackflowFeatureConsistencyCheckJobDataRequest() {
+		super("PaiRecService", "2022-12-13", "BackflowFeatureConsistencyCheckJobData");
+		setUriPattern("/api/v1/featureconsistencycheck/jobs/action/backflowdata");
 		setMethod(MethodType.POST);
 	}
 
@@ -44,20 +42,9 @@ public class CloneExperimentRequest extends RoaAcsRequest<CloneExperimentRespons
 		}
 	}
 
-	public String getExperimentId() {
-		return this.experimentId;
-	}
-
-	public void setExperimentId(String experimentId) {
-		this.experimentId = experimentId;
-		if(experimentId != null){
-			putPathParameter("ExperimentId", experimentId);
-		}
-	}
-
 	@Override
-	public Class<CloneExperimentResponse> getResponseClass() {
-		return CloneExperimentResponse.class;
+	public Class<BackflowFeatureConsistencyCheckJobDataResponse> getResponseClass() {
+		return BackflowFeatureConsistencyCheckJobDataResponse.class;
 	}
 
 }

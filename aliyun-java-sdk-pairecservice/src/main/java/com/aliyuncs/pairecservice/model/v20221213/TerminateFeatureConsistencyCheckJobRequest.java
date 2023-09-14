@@ -21,15 +21,15 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class CloneExperimentRequest extends RoaAcsRequest<CloneExperimentResponse> {
+public class TerminateFeatureConsistencyCheckJobRequest extends RoaAcsRequest<TerminateFeatureConsistencyCheckJobResponse> {
 	   
 
 	private String body;
 
-	private String experimentId;
-	public CloneExperimentRequest() {
-		super("PaiRecService", "2022-12-13", "CloneExperiment");
-		setUriPattern("/api/v1/experiments/[ExperimentId]/action/clone");
+	private String featureConsistencyCheckJobId;
+	public TerminateFeatureConsistencyCheckJobRequest() {
+		super("PaiRecService", "2022-12-13", "TerminateFeatureConsistencyCheckJob");
+		setUriPattern("/api/v1/featureconsistencycheck/jobs/[FeatureConsistencyCheckJobId]/action/terminate");
 		setMethod(MethodType.POST);
 	}
 
@@ -44,20 +44,20 @@ public class CloneExperimentRequest extends RoaAcsRequest<CloneExperimentRespons
 		}
 	}
 
-	public String getExperimentId() {
-		return this.experimentId;
+	public String getFeatureConsistencyCheckJobId() {
+		return this.featureConsistencyCheckJobId;
 	}
 
-	public void setExperimentId(String experimentId) {
-		this.experimentId = experimentId;
-		if(experimentId != null){
-			putPathParameter("ExperimentId", experimentId);
+	public void setFeatureConsistencyCheckJobId(String featureConsistencyCheckJobId) {
+		this.featureConsistencyCheckJobId = featureConsistencyCheckJobId;
+		if(featureConsistencyCheckJobId != null){
+			putPathParameter("FeatureConsistencyCheckJobId", featureConsistencyCheckJobId);
 		}
 	}
 
 	@Override
-	public Class<CloneExperimentResponse> getResponseClass() {
-		return CloneExperimentResponse.class;
+	public Class<TerminateFeatureConsistencyCheckJobResponse> getResponseClass() {
+		return TerminateFeatureConsistencyCheckJobResponse.class;
 	}
 
 }

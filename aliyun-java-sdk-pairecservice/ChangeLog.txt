@@ -1,3 +1,6 @@
+2023-09-14 Version: 1.0.2
+- Add api about feature consistency checking.
+
 2023-07-21 Version: 1.0.1
 Add api ListCrowdUsers
 
