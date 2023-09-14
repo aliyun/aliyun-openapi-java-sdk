@@ -1,3 +1,6 @@
+2023-09-14 Version: 1.0.7
+- Supported shortcut login.
+
 2023-09-14 Version: 1.0.6
 - Supported credential login.
 

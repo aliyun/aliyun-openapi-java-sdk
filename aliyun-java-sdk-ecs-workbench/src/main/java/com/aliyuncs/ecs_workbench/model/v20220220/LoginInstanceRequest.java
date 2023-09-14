@@ -59,9 +59,11 @@ public class LoginInstanceRequest extends RpcAcsRequest<LoginInstanceResponse> {
 		if (instanceLoginInfo != null) {
 			
 				putQueryParameter("InstanceLoginInfo.ExpireTime" , instanceLoginInfo.getExpireTime());
+				putQueryParameter("InstanceLoginInfo.LoginByInstanceShortcut" , instanceLoginInfo.getLoginByInstanceShortcut());
 				putQueryParameter("InstanceLoginInfo.Certificate" , instanceLoginInfo.getCertificate());
 				putQueryParameter("InstanceLoginInfo.AuthenticationType" , instanceLoginInfo.getAuthenticationType());
 				putQueryParameter("InstanceLoginInfo.DockerExec" , instanceLoginInfo.getDockerExec());
+				putQueryParameter("InstanceLoginInfo.ShortcutToken" , instanceLoginInfo.getShortcutToken());
 				putQueryParameter("InstanceLoginInfo.ResourceGroupId" , instanceLoginInfo.getResourceGroupId());
 				putQueryParameter("InstanceLoginInfo.Protocol" , instanceLoginInfo.getBizProtocol());
 				putQueryParameter("InstanceLoginInfo.Password" , instanceLoginInfo.getPassword());
@@ -159,11 +161,15 @@ public class LoginInstanceRequest extends RpcAcsRequest<LoginInstanceResponse> {
 
 		private String expireTime;
 
+		private Boolean loginByInstanceShortcut;
+
 		private String certificate;
 
 		private String authenticationType;
 
 		private String dockerExec;
+
+		private String shortcutToken;
 
 		private String resourceGroupId;
 
@@ -207,6 +213,14 @@ public class LoginInstanceRequest extends RpcAcsRequest<LoginInstanceResponse> {
 			this.expireTime = expireTime;
 		}
 
+		public Boolean getLoginByInstanceShortcut() {
+			return this.loginByInstanceShortcut;
+		}
+
+		public void setLoginByInstanceShortcut(Boolean loginByInstanceShortcut) {
+			this.loginByInstanceShortcut = loginByInstanceShortcut;
+		}
+
 		public String getCertificate() {
 			return this.certificate;
 		}
@@ -229,6 +243,14 @@ public class LoginInstanceRequest extends RpcAcsRequest<LoginInstanceResponse> {
 
 		public void setDockerExec(String dockerExec) {
 			this.dockerExec = dockerExec;
+		}
+
+		public String getShortcutToken() {
+			return this.shortcutToken;
+		}
+
+		public void setShortcutToken(String shortcutToken) {
+			this.shortcutToken = shortcutToken;
 		}
 
 		public String getResourceGroupId() {
