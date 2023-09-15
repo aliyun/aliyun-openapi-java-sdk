@@ -1,3 +1,6 @@
+2023-09-15 Version: 1.0.8
+- Generated 2020-06-06 for `cams`.
+
 2022-04-02 Version: 1.0.6
 - Fixed API response deserialization issues.
 

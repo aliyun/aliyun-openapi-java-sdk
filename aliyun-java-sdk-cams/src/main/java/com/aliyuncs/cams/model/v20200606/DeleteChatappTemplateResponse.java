@@ -30,6 +30,8 @@ public class DeleteChatappTemplateResponse extends AcsResponse {
 
 	private String message;
 
+	private String accessDeniedDetail;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -52,6 +54,14 @@ public class DeleteChatappTemplateResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getAccessDeniedDetail() {
+		return this.accessDeniedDetail;
+	}
+
+	public void setAccessDeniedDetail(String accessDeniedDetail) {
+		this.accessDeniedDetail = accessDeniedDetail;
 	}
 
 	@Override

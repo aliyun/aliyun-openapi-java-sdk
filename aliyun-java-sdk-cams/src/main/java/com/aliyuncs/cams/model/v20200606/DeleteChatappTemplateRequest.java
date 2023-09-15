@@ -25,6 +25,12 @@ import com.aliyuncs.cams.Endpoint;
 public class DeleteChatappTemplateRequest extends RpcAcsRequest<DeleteChatappTemplateResponse> {
 	   
 
+	private String custWabaId;
+
+	private String isvCode;
+
+	private String custSpaceId;
+
 	private String templateCode;
 	public DeleteChatappTemplateRequest() {
 		super("cams", "2020-06-06", "DeleteChatappTemplate");
@@ -33,6 +39,39 @@ public class DeleteChatappTemplateRequest extends RpcAcsRequest<DeleteChatappTem
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getCustWabaId() {
+		return this.custWabaId;
+	}
+
+	public void setCustWabaId(String custWabaId) {
+		this.custWabaId = custWabaId;
+		if(custWabaId != null){
+			putQueryParameter("CustWabaId", custWabaId);
+		}
+	}
+
+	public String getIsvCode() {
+		return this.isvCode;
+	}
+
+	public void setIsvCode(String isvCode) {
+		this.isvCode = isvCode;
+		if(isvCode != null){
+			putQueryParameter("IsvCode", isvCode);
+		}
+	}
+
+	public String getCustSpaceId() {
+		return this.custSpaceId;
+	}
+
+	public void setCustSpaceId(String custSpaceId) {
+		this.custSpaceId = custSpaceId;
+		if(custSpaceId != null){
+			putQueryParameter("CustSpaceId", custSpaceId);
+		}
 	}
 
 	public String getTemplateCode() {

@@ -25,6 +25,7 @@ public class DeleteChatappTemplateResponseUnmarshaller {
 		deleteChatappTemplateResponse.setRequestId(_ctx.stringValue("DeleteChatappTemplateResponse.RequestId"));
 		deleteChatappTemplateResponse.setCode(_ctx.stringValue("DeleteChatappTemplateResponse.Code"));
 		deleteChatappTemplateResponse.setMessage(_ctx.stringValue("DeleteChatappTemplateResponse.Message"));
+		deleteChatappTemplateResponse.setAccessDeniedDetail(_ctx.stringValue("DeleteChatappTemplateResponse.AccessDeniedDetail"));
 	 
 	 	return deleteChatappTemplateResponse;
 	}

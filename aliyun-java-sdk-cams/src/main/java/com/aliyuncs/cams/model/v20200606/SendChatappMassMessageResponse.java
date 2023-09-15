@@ -14,16 +14,15 @@
 
 package com.aliyuncs.cams.model.v20200606;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cams.transform.v20200606.CheckChatappContactsResponseUnmarshaller;
+import com.aliyuncs.cams.transform.v20200606.SendChatappMassMessageResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CheckChatappContactsResponse extends AcsResponse {
+public class SendChatappMassMessageResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -31,7 +30,9 @@ public class CheckChatappContactsResponse extends AcsResponse {
 
 	private String message;
 
-	private List<Contact> data;
+	private String groupMessageId;
+
+	private String accessDeniedDetail;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -57,40 +58,25 @@ public class CheckChatappContactsResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public List<Contact> getData() {
-		return this.data;
+	public String getGroupMessageId() {
+		return this.groupMessageId;
 	}
 
-	public void setData(List<Contact> data) {
-		this.data = data;
+	public void setGroupMessageId(String groupMessageId) {
+		this.groupMessageId = groupMessageId;
 	}
 
-	public static class Contact {
+	public String getAccessDeniedDetail() {
+		return this.accessDeniedDetail;
+	}
 
-		private String status;
-
-		private String phoneNumber;
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getPhoneNumber() {
-			return this.phoneNumber;
-		}
-
-		public void setPhoneNumber(String phoneNumber) {
-			this.phoneNumber = phoneNumber;
-		}
+	public void setAccessDeniedDetail(String accessDeniedDetail) {
+		this.accessDeniedDetail = accessDeniedDetail;
 	}
 
 	@Override
-	public CheckChatappContactsResponse getInstance(UnmarshallerContext context) {
-		return	CheckChatappContactsResponseUnmarshaller.unmarshall(this, context);
+	public SendChatappMassMessageResponse getInstance(UnmarshallerContext context) {
+		return	SendChatappMassMessageResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

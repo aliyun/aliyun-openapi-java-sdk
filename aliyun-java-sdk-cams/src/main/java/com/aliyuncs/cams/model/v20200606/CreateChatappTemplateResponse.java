@@ -30,6 +30,8 @@ public class CreateChatappTemplateResponse extends AcsResponse {
 
 	private String message;
 
+	private String accessDeniedDetail;
+
 	private Data data;
 
 	public String getRequestId() {
@@ -54,6 +56,14 @@ public class CreateChatappTemplateResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getAccessDeniedDetail() {
+		return this.accessDeniedDetail;
+	}
+
+	public void setAccessDeniedDetail(String accessDeniedDetail) {
+		this.accessDeniedDetail = accessDeniedDetail;
 	}
 
 	public Data getData() {

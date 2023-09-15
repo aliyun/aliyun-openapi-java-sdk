@@ -22,22 +22,30 @@ import com.aliyuncs.cams.Endpoint;
  * @author auto create
  * @version 
  */
-public class CheckContactsRequest extends RpcAcsRequest<CheckContactsResponse> {
+public class ListProductRequest extends RpcAcsRequest<ListProductResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String channelType;
+	private String before;
 
-	private String from;
+	private Long limit;
+
+	private String after;
 
 	private String resourceOwnerAccount;
 
 	private Long ownerId;
 
-	private String contacts;
-	public CheckContactsRequest() {
-		super("cams", "2020-06-06", "CheckContacts");
+	private String wabaId;
+
+	private String catalogId;
+
+	private String custSpaceId;
+
+	private String fields;
+	public ListProductRequest() {
+		super("cams", "2020-06-06", "ListProduct");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -56,25 +64,36 @@ public class CheckContactsRequest extends RpcAcsRequest<CheckContactsResponse> {
 		}
 	}
 
-	public String getChannelType() {
-		return this.channelType;
+	public String getBefore() {
+		return this.before;
 	}
 
-	public void setChannelType(String channelType) {
-		this.channelType = channelType;
-		if(channelType != null){
-			putBodyParameter("ChannelType", channelType);
+	public void setBefore(String before) {
+		this.before = before;
+		if(before != null){
+			putQueryParameter("Before", before);
 		}
 	}
 
-	public String getFrom() {
-		return this.from;
+	public Long getLimit() {
+		return this.limit;
 	}
 
-	public void setFrom(String from) {
-		this.from = from;
-		if(from != null){
-			putBodyParameter("From", from);
+	public void setLimit(Long limit) {
+		this.limit = limit;
+		if(limit != null){
+			putQueryParameter("Limit", limit.toString());
+		}
+	}
+
+	public String getAfter() {
+		return this.after;
+	}
+
+	public void setAfter(String after) {
+		this.after = after;
+		if(after != null){
+			putQueryParameter("After", after);
 		}
 	}
 
@@ -100,20 +119,53 @@ public class CheckContactsRequest extends RpcAcsRequest<CheckContactsResponse> {
 		}
 	}
 
-	public String getContacts() {
-		return this.contacts;
+	public String getWabaId() {
+		return this.wabaId;
 	}
 
-	public void setContacts(String contacts) {
-		this.contacts = contacts;
-		if(contacts != null){
-			putBodyParameter("Contacts", contacts);
+	public void setWabaId(String wabaId) {
+		this.wabaId = wabaId;
+		if(wabaId != null){
+			putQueryParameter("WabaId", wabaId);
+		}
+	}
+
+	public String getCatalogId() {
+		return this.catalogId;
+	}
+
+	public void setCatalogId(String catalogId) {
+		this.catalogId = catalogId;
+		if(catalogId != null){
+			putQueryParameter("CatalogId", catalogId);
+		}
+	}
+
+	public String getCustSpaceId() {
+		return this.custSpaceId;
+	}
+
+	public void setCustSpaceId(String custSpaceId) {
+		this.custSpaceId = custSpaceId;
+		if(custSpaceId != null){
+			putQueryParameter("CustSpaceId", custSpaceId);
+		}
+	}
+
+	public String getFields() {
+		return this.fields;
+	}
+
+	public void setFields(String fields) {
+		this.fields = fields;
+		if(fields != null){
+			putQueryParameter("Fields", fields);
 		}
 	}
 
 	@Override
-	public Class<CheckContactsResponse> getResponseClass() {
-		return CheckContactsResponse.class;
+	public Class<ListProductResponse> getResponseClass() {
+		return ListProductResponse.class;
 	}
 
 }

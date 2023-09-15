@@ -31,6 +31,10 @@ public class ListChatappTemplateResponse extends AcsResponse {
 
 	private String message;
 
+	private Integer total;
+
+	private String accessDeniedDetail;
+
 	private List<Template> listTemplate;
 
 	public String getRequestId() {
@@ -57,6 +61,22 @@ public class ListChatappTemplateResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public Integer getTotal() {
+		return this.total;
+	}
+
+	public void setTotal(Integer total) {
+		this.total = total;
+	}
+
+	public String getAccessDeniedDetail() {
+		return this.accessDeniedDetail;
+	}
+
+	public void setAccessDeniedDetail(String accessDeniedDetail) {
+		this.accessDeniedDetail = accessDeniedDetail;
+	}
+
 	public List<Template> getListTemplate() {
 		return this.listTemplate;
 	}
@@ -76,6 +96,10 @@ public class ListChatappTemplateResponse extends AcsResponse {
 		private String language;
 
 		private String category;
+
+		private String templateType;
+
+		private String reason;
 
 		public String getTemplateName() {
 			return this.templateName;
@@ -115,6 +139,22 @@ public class ListChatappTemplateResponse extends AcsResponse {
 
 		public void setCategory(String category) {
 			this.category = category;
+		}
+
+		public String getTemplateType() {
+			return this.templateType;
+		}
+
+		public void setTemplateType(String templateType) {
+			this.templateType = templateType;
+		}
+
+		public String getReason() {
+			return this.reason;
+		}
+
+		public void setReason(String reason) {
+			this.reason = reason;
 		}
 	}
 

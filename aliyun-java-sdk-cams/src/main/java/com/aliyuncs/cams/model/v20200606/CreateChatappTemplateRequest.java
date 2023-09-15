@@ -34,14 +34,24 @@ public class CreateChatappTemplateRequest extends RpcAcsRequest<CreateChatappTem
 
 	private String language;
 
+	private String custWabaId;
+
 	@SerializedName("example")
 	private Map<String,String> example;
 
 	private String templateType;
 
+	private String isvCode;
+
+	private String custSpaceId;
+
 	private String name;
 
+	private Boolean allowCategoryChange;
+
 	private String category;
+
+	private Integer messageSendTtlSeconds;
 	public CreateChatappTemplateRequest() {
 		super("cams", "2020-06-06", "CreateChatappTemplate");
 		setMethod(MethodType.POST);
@@ -73,6 +83,17 @@ public class CreateChatappTemplateRequest extends RpcAcsRequest<CreateChatappTem
 		}
 	}
 
+	public String getCustWabaId() {
+		return this.custWabaId;
+	}
+
+	public void setCustWabaId(String custWabaId) {
+		this.custWabaId = custWabaId;
+		if(custWabaId != null){
+			putBodyParameter("CustWabaId", custWabaId);
+		}
+	}
+
 	public Map<String,String> getExample() {
 		return this.example;
 	}
@@ -95,6 +116,28 @@ public class CreateChatappTemplateRequest extends RpcAcsRequest<CreateChatappTem
 		}
 	}
 
+	public String getIsvCode() {
+		return this.isvCode;
+	}
+
+	public void setIsvCode(String isvCode) {
+		this.isvCode = isvCode;
+		if(isvCode != null){
+			putBodyParameter("IsvCode", isvCode);
+		}
+	}
+
+	public String getCustSpaceId() {
+		return this.custSpaceId;
+	}
+
+	public void setCustSpaceId(String custSpaceId) {
+		this.custSpaceId = custSpaceId;
+		if(custSpaceId != null){
+			putBodyParameter("CustSpaceId", custSpaceId);
+		}
+	}
+
 	public String getName() {
 		return this.name;
 	}
@@ -106,6 +149,17 @@ public class CreateChatappTemplateRequest extends RpcAcsRequest<CreateChatappTem
 		}
 	}
 
+	public Boolean getAllowCategoryChange() {
+		return this.allowCategoryChange;
+	}
+
+	public void setAllowCategoryChange(Boolean allowCategoryChange) {
+		this.allowCategoryChange = allowCategoryChange;
+		if(allowCategoryChange != null){
+			putBodyParameter("AllowCategoryChange", allowCategoryChange.toString());
+		}
+	}
+
 	public String getCategory() {
 		return this.category;
 	}
@@ -114,6 +168,17 @@ public class CreateChatappTemplateRequest extends RpcAcsRequest<CreateChatappTem
 		this.category = category;
 		if(category != null){
 			putBodyParameter("Category", category);
+		}
+	}
+
+	public Integer getMessageSendTtlSeconds() {
+		return this.messageSendTtlSeconds;
+	}
+
+	public void setMessageSendTtlSeconds(Integer messageSendTtlSeconds) {
+		this.messageSendTtlSeconds = messageSendTtlSeconds;
+		if(messageSendTtlSeconds != null){
+			putBodyParameter("MessageSendTtlSeconds", messageSendTtlSeconds.toString());
 		}
 	}
 
@@ -131,8 +196,29 @@ public class CreateChatappTemplateRequest extends RpcAcsRequest<CreateChatappTem
 		@SerializedName("Url")
 		private String url;
 
+		@SerializedName("Caption")
+		private String caption;
+
+		@SerializedName("FileName")
+		private String fileName;
+
 		@SerializedName("Buttons")
 		private List<ButtonsItem> buttons;
+
+		@SerializedName("ThumbUrl")
+		private String thumbUrl;
+
+		@SerializedName("Duration")
+		private Integer duration;
+
+		@SerializedName("FileType")
+		private String fileType;
+
+		@SerializedName("CodeExpirationMinutes")
+		private Integer codeExpirationMinutes;
+
+		@SerializedName("AddSecretRecommendation")
+		private Boolean addSecretRecommendation;
 
 		public String getType() {
 			return this.type;
@@ -166,12 +252,68 @@ public class CreateChatappTemplateRequest extends RpcAcsRequest<CreateChatappTem
 			this.url = url;
 		}
 
+		public String getCaption() {
+			return this.caption;
+		}
+
+		public void setCaption(String caption) {
+			this.caption = caption;
+		}
+
+		public String getFileName() {
+			return this.fileName;
+		}
+
+		public void setFileName(String fileName) {
+			this.fileName = fileName;
+		}
+
 		public List<ButtonsItem> getButtons() {
 			return this.buttons;
 		}
 
 		public void setButtons(List<ButtonsItem> buttons) {
 			this.buttons = buttons;
+		}
+
+		public String getThumbUrl() {
+			return this.thumbUrl;
+		}
+
+		public void setThumbUrl(String thumbUrl) {
+			this.thumbUrl = thumbUrl;
+		}
+
+		public Integer getDuration() {
+			return this.duration;
+		}
+
+		public void setDuration(Integer duration) {
+			this.duration = duration;
+		}
+
+		public String getFileType() {
+			return this.fileType;
+		}
+
+		public void setFileType(String fileType) {
+			this.fileType = fileType;
+		}
+
+		public Integer getCodeExpirationMinutes() {
+			return this.codeExpirationMinutes;
+		}
+
+		public void setCodeExpirationMinutes(Integer codeExpirationMinutes) {
+			this.codeExpirationMinutes = codeExpirationMinutes;
+		}
+
+		public Boolean getAddSecretRecommendation() {
+			return this.addSecretRecommendation;
+		}
+
+		public void setAddSecretRecommendation(Boolean addSecretRecommendation) {
+			this.addSecretRecommendation = addSecretRecommendation;
 		}
 
 		public static class ButtonsItem {
@@ -190,6 +332,18 @@ public class CreateChatappTemplateRequest extends RpcAcsRequest<CreateChatappTem
 
 			@SerializedName("UrlType")
 			private String urlType;
+
+			@SerializedName("SignatureHash")
+			private String signatureHash;
+
+			@SerializedName("PackageName")
+			private String packageName;
+
+			@SerializedName("AutofillText")
+			private String autofillText;
+
+			@SerializedName("IsOptOut")
+			private Boolean isOptOut;
 
 			public String getType() {
 				return this.type;
@@ -229,6 +383,38 @@ public class CreateChatappTemplateRequest extends RpcAcsRequest<CreateChatappTem
 
 			public void setUrlType(String urlType) {
 				this.urlType = urlType;
+			}
+
+			public String getSignatureHash() {
+				return this.signatureHash;
+			}
+
+			public void setSignatureHash(String signatureHash) {
+				this.signatureHash = signatureHash;
+			}
+
+			public String getPackageName() {
+				return this.packageName;
+			}
+
+			public void setPackageName(String packageName) {
+				this.packageName = packageName;
+			}
+
+			public String getAutofillText() {
+				return this.autofillText;
+			}
+
+			public void setAutofillText(String autofillText) {
+				this.autofillText = autofillText;
+			}
+
+			public Boolean getIsOptOut() {
+				return this.isOptOut;
+			}
+
+			public void setIsOptOut(Boolean isOptOut) {
+				this.isOptOut = isOptOut;
 			}
 		}
 	}

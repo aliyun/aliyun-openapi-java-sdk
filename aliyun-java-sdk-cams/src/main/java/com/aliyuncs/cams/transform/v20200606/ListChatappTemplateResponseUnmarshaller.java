@@ -29,6 +29,8 @@ public class ListChatappTemplateResponseUnmarshaller {
 		listChatappTemplateResponse.setRequestId(_ctx.stringValue("ListChatappTemplateResponse.RequestId"));
 		listChatappTemplateResponse.setCode(_ctx.stringValue("ListChatappTemplateResponse.Code"));
 		listChatappTemplateResponse.setMessage(_ctx.stringValue("ListChatappTemplateResponse.Message"));
+		listChatappTemplateResponse.setTotal(_ctx.integerValue("ListChatappTemplateResponse.Total"));
+		listChatappTemplateResponse.setAccessDeniedDetail(_ctx.stringValue("ListChatappTemplateResponse.AccessDeniedDetail"));
 
 		List<Template> listTemplate = new ArrayList<Template>();
 		for (int i = 0; i < _ctx.lengthValue("ListChatappTemplateResponse.ListTemplate.Length"); i++) {
@@ -38,6 +40,8 @@ public class ListChatappTemplateResponseUnmarshaller {
 			template.setAuditStatus(_ctx.stringValue("ListChatappTemplateResponse.ListTemplate["+ i +"].AuditStatus"));
 			template.setLanguage(_ctx.stringValue("ListChatappTemplateResponse.ListTemplate["+ i +"].Language"));
 			template.setCategory(_ctx.stringValue("ListChatappTemplateResponse.ListTemplate["+ i +"].Category"));
+			template.setTemplateType(_ctx.stringValue("ListChatappTemplateResponse.ListTemplate["+ i +"].TemplateType"));
+			template.setReason(_ctx.stringValue("ListChatappTemplateResponse.ListTemplate["+ i +"].Reason"));
 
 			listTemplate.add(template);
 		}

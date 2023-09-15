@@ -29,11 +29,18 @@ import com.aliyuncs.cams.Endpoint;
 public class SendChatappMessageRequest extends RpcAcsRequest<SendChatappMessageResponse> {
 	   
 
+	@SerializedName("productAction")
+	private ProductAction productAction;
+
 	private String messageType;
 
 	private String language;
 
+	private String custWabaId;
+
 	private String type;
+
+	private String fallBackContent;
 
 	private String content;
 
@@ -47,6 +54,26 @@ public class SendChatappMessageRequest extends RpcAcsRequest<SendChatappMessageR
 
 	private String from;
 
+	private String tag;
+
+	private String trackingData;
+
+	private String taskId;
+
+	private String isvCode;
+
+	private String contextMessageId;
+
+	private String label;
+
+	private String fallBackId;
+
+	private Integer ttl;
+
+	private Integer fallBackDuration;
+
+	private String custSpaceId;
+
 	private String to;
 
 	private String templateCode;
@@ -57,6 +84,17 @@ public class SendChatappMessageRequest extends RpcAcsRequest<SendChatappMessageR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public ProductAction getProductAction() {
+		return this.productAction;
+	}
+
+	public void setProductAction(ProductAction productAction) {
+		this.productAction = productAction;	
+		if (productAction != null) {
+			putBodyParameter("ProductAction" , new Gson().toJson(productAction));
+		}	
 	}
 
 	public String getMessageType() {
@@ -81,6 +119,17 @@ public class SendChatappMessageRequest extends RpcAcsRequest<SendChatappMessageR
 		}
 	}
 
+	public String getCustWabaId() {
+		return this.custWabaId;
+	}
+
+	public void setCustWabaId(String custWabaId) {
+		this.custWabaId = custWabaId;
+		if(custWabaId != null){
+			putBodyParameter("CustWabaId", custWabaId);
+		}
+	}
+
 	public String getType() {
 		return this.type;
 	}
@@ -89,6 +138,17 @@ public class SendChatappMessageRequest extends RpcAcsRequest<SendChatappMessageR
 		this.type = type;
 		if(type != null){
 			putBodyParameter("Type", type);
+		}
+	}
+
+	public String getFallBackContent() {
+		return this.fallBackContent;
+	}
+
+	public void setFallBackContent(String fallBackContent) {
+		this.fallBackContent = fallBackContent;
+		if(fallBackContent != null){
+			putBodyParameter("FallBackContent", fallBackContent);
 		}
 	}
 
@@ -147,6 +207,116 @@ public class SendChatappMessageRequest extends RpcAcsRequest<SendChatappMessageR
 		}
 	}
 
+	public String getTag() {
+		return this.tag;
+	}
+
+	public void setTag(String tag) {
+		this.tag = tag;
+		if(tag != null){
+			putBodyParameter("Tag", tag);
+		}
+	}
+
+	public String getTrackingData() {
+		return this.trackingData;
+	}
+
+	public void setTrackingData(String trackingData) {
+		this.trackingData = trackingData;
+		if(trackingData != null){
+			putBodyParameter("TrackingData", trackingData);
+		}
+	}
+
+	public String getTaskId() {
+		return this.taskId;
+	}
+
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
+		if(taskId != null){
+			putBodyParameter("TaskId", taskId);
+		}
+	}
+
+	public String getIsvCode() {
+		return this.isvCode;
+	}
+
+	public void setIsvCode(String isvCode) {
+		this.isvCode = isvCode;
+		if(isvCode != null){
+			putBodyParameter("IsvCode", isvCode);
+		}
+	}
+
+	public String getContextMessageId() {
+		return this.contextMessageId;
+	}
+
+	public void setContextMessageId(String contextMessageId) {
+		this.contextMessageId = contextMessageId;
+		if(contextMessageId != null){
+			putBodyParameter("ContextMessageId", contextMessageId);
+		}
+	}
+
+	public String getLabel() {
+		return this.label;
+	}
+
+	public void setLabel(String label) {
+		this.label = label;
+		if(label != null){
+			putBodyParameter("Label", label);
+		}
+	}
+
+	public String getFallBackId() {
+		return this.fallBackId;
+	}
+
+	public void setFallBackId(String fallBackId) {
+		this.fallBackId = fallBackId;
+		if(fallBackId != null){
+			putBodyParameter("FallBackId", fallBackId);
+		}
+	}
+
+	public Integer getTtl() {
+		return this.ttl;
+	}
+
+	public void setTtl(Integer ttl) {
+		this.ttl = ttl;
+		if(ttl != null){
+			putBodyParameter("Ttl", ttl.toString());
+		}
+	}
+
+	public Integer getFallBackDuration() {
+		return this.fallBackDuration;
+	}
+
+	public void setFallBackDuration(Integer fallBackDuration) {
+		this.fallBackDuration = fallBackDuration;
+		if(fallBackDuration != null){
+			putBodyParameter("FallBackDuration", fallBackDuration.toString());
+		}
+	}
+
+	public String getCustSpaceId() {
+		return this.custSpaceId;
+	}
+
+	public void setCustSpaceId(String custSpaceId) {
+		this.custSpaceId = custSpaceId;
+		if(custSpaceId != null){
+			putBodyParameter("CustSpaceId", custSpaceId);
+		}
+	}
+
 	public String getTo() {
 		return this.to;
 	}
@@ -166,6 +336,70 @@ public class SendChatappMessageRequest extends RpcAcsRequest<SendChatappMessageR
 		this.templateCode = templateCode;
 		if(templateCode != null){
 			putBodyParameter("TemplateCode", templateCode);
+		}
+	}
+
+	public static class ProductAction {
+
+		@SerializedName("ThumbnailProductRetailerId")
+		private String thumbnailProductRetailerId;
+
+		@SerializedName("Sections")
+		private List<SectionsItem> sections;
+
+		public String getThumbnailProductRetailerId() {
+			return this.thumbnailProductRetailerId;
+		}
+
+		public void setThumbnailProductRetailerId(String thumbnailProductRetailerId) {
+			this.thumbnailProductRetailerId = thumbnailProductRetailerId;
+		}
+
+		public List<SectionsItem> getSections() {
+			return this.sections;
+		}
+
+		public void setSections(List<SectionsItem> sections) {
+			this.sections = sections;
+		}
+
+		public static class SectionsItem {
+
+			@SerializedName("Title")
+			private String title;
+
+			@SerializedName("ProductItems")
+			private List<ProductItemsItem> productItems;
+
+			public String getTitle() {
+				return this.title;
+			}
+
+			public void setTitle(String title) {
+				this.title = title;
+			}
+
+			public List<ProductItemsItem> getProductItems() {
+				return this.productItems;
+			}
+
+			public void setProductItems(List<ProductItemsItem> productItems) {
+				this.productItems = productItems;
+			}
+
+			public static class ProductItemsItem {
+
+				@SerializedName("ProductRetailerId")
+				private String productRetailerId;
+
+				public String getProductRetailerId() {
+					return this.productRetailerId;
+				}
+
+				public void setProductRetailerId(String productRetailerId) {
+					this.productRetailerId = productRetailerId;
+				}
+			}
 		}
 	}
 

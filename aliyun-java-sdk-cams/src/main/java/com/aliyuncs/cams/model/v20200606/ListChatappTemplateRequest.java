@@ -29,7 +29,15 @@ public class ListChatappTemplateRequest extends RpcAcsRequest<ListChatappTemplat
 
 	private String language;
 
+	private String custWabaId;
+
+	private String templateType;
+
+	private String isvCode;
+
 	private String auditStatus;
+
+	private String custSpaceId;
 
 	private String name;
 
@@ -55,6 +63,39 @@ public class ListChatappTemplateRequest extends RpcAcsRequest<ListChatappTemplat
 		}
 	}
 
+	public String getCustWabaId() {
+		return this.custWabaId;
+	}
+
+	public void setCustWabaId(String custWabaId) {
+		this.custWabaId = custWabaId;
+		if(custWabaId != null){
+			putQueryParameter("CustWabaId", custWabaId);
+		}
+	}
+
+	public String getTemplateType() {
+		return this.templateType;
+	}
+
+	public void setTemplateType(String templateType) {
+		this.templateType = templateType;
+		if(templateType != null){
+			putQueryParameter("TemplateType", templateType);
+		}
+	}
+
+	public String getIsvCode() {
+		return this.isvCode;
+	}
+
+	public void setIsvCode(String isvCode) {
+		this.isvCode = isvCode;
+		if(isvCode != null){
+			putQueryParameter("IsvCode", isvCode);
+		}
+	}
+
 	public String getAuditStatus() {
 		return this.auditStatus;
 	}
@@ -63,6 +104,17 @@ public class ListChatappTemplateRequest extends RpcAcsRequest<ListChatappTemplat
 		this.auditStatus = auditStatus;
 		if(auditStatus != null){
 			putQueryParameter("AuditStatus", auditStatus);
+		}
+	}
+
+	public String getCustSpaceId() {
+		return this.custSpaceId;
+	}
+
+	public void setCustSpaceId(String custSpaceId) {
+		this.custSpaceId = custSpaceId;
+		if(custSpaceId != null){
+			putQueryParameter("CustSpaceId", custSpaceId);
 		}
 	}
 

@@ -32,6 +32,8 @@ public class GetChatappTemplateDetailResponse extends AcsResponse {
 
 	private String message;
 
+	private String accessDeniedDetail;
+
 	private Data data;
 
 	public String getRequestId() {
@@ -58,6 +60,14 @@ public class GetChatappTemplateDetailResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getAccessDeniedDetail() {
+		return this.accessDeniedDetail;
+	}
+
+	public void setAccessDeniedDetail(String accessDeniedDetail) {
+		this.accessDeniedDetail = accessDeniedDetail;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -79,6 +89,14 @@ public class GetChatappTemplateDetailResponse extends AcsResponse {
 		private Map<Object,Object> example;
 
 		private String auditStatus;
+
+		private String templateType;
+
+		private String qualityScore;
+
+		private Integer messageSendTtlSeconds;
+
+		private String reason;
 
 		private List<Component> components;
 
@@ -130,6 +148,38 @@ public class GetChatappTemplateDetailResponse extends AcsResponse {
 			this.auditStatus = auditStatus;
 		}
 
+		public String getTemplateType() {
+			return this.templateType;
+		}
+
+		public void setTemplateType(String templateType) {
+			this.templateType = templateType;
+		}
+
+		public String getQualityScore() {
+			return this.qualityScore;
+		}
+
+		public void setQualityScore(String qualityScore) {
+			this.qualityScore = qualityScore;
+		}
+
+		public Integer getMessageSendTtlSeconds() {
+			return this.messageSendTtlSeconds;
+		}
+
+		public void setMessageSendTtlSeconds(Integer messageSendTtlSeconds) {
+			this.messageSendTtlSeconds = messageSendTtlSeconds;
+		}
+
+		public String getReason() {
+			return this.reason;
+		}
+
+		public void setReason(String reason) {
+			this.reason = reason;
+		}
+
 		public List<Component> getComponents() {
 			return this.components;
 		}
@@ -145,6 +195,30 @@ public class GetChatappTemplateDetailResponse extends AcsResponse {
 			private String url;
 
 			private String text;
+
+			private String caption;
+
+			private String fileName;
+
+			private String format;
+
+			private String thumbUrl;
+
+			private Integer duration;
+
+			private String fileType;
+
+			private String latitude;
+
+			private String longitude;
+
+			private String locationName;
+
+			private String locationAddress;
+
+			private Boolean addSecretRecommendation;
+
+			private Integer codeExpirationMinutes;
 
 			private List<Button> buttons;
 
@@ -172,6 +246,102 @@ public class GetChatappTemplateDetailResponse extends AcsResponse {
 				this.text = text;
 			}
 
+			public String getCaption() {
+				return this.caption;
+			}
+
+			public void setCaption(String caption) {
+				this.caption = caption;
+			}
+
+			public String getFileName() {
+				return this.fileName;
+			}
+
+			public void setFileName(String fileName) {
+				this.fileName = fileName;
+			}
+
+			public String getFormat() {
+				return this.format;
+			}
+
+			public void setFormat(String format) {
+				this.format = format;
+			}
+
+			public String getThumbUrl() {
+				return this.thumbUrl;
+			}
+
+			public void setThumbUrl(String thumbUrl) {
+				this.thumbUrl = thumbUrl;
+			}
+
+			public Integer getDuration() {
+				return this.duration;
+			}
+
+			public void setDuration(Integer duration) {
+				this.duration = duration;
+			}
+
+			public String getFileType() {
+				return this.fileType;
+			}
+
+			public void setFileType(String fileType) {
+				this.fileType = fileType;
+			}
+
+			public String getLatitude() {
+				return this.latitude;
+			}
+
+			public void setLatitude(String latitude) {
+				this.latitude = latitude;
+			}
+
+			public String getLongitude() {
+				return this.longitude;
+			}
+
+			public void setLongitude(String longitude) {
+				this.longitude = longitude;
+			}
+
+			public String getLocationName() {
+				return this.locationName;
+			}
+
+			public void setLocationName(String locationName) {
+				this.locationName = locationName;
+			}
+
+			public String getLocationAddress() {
+				return this.locationAddress;
+			}
+
+			public void setLocationAddress(String locationAddress) {
+				this.locationAddress = locationAddress;
+			}
+
+			public Boolean getAddSecretRecommendation() {
+				return this.addSecretRecommendation;
+			}
+
+			public void setAddSecretRecommendation(Boolean addSecretRecommendation) {
+				this.addSecretRecommendation = addSecretRecommendation;
+			}
+
+			public Integer getCodeExpirationMinutes() {
+				return this.codeExpirationMinutes;
+			}
+
+			public void setCodeExpirationMinutes(Integer codeExpirationMinutes) {
+				this.codeExpirationMinutes = codeExpirationMinutes;
+			}
+
 			public List<Button> getButtons() {
 				return this.buttons;
 			}
@@ -191,6 +361,16 @@ public class GetChatappTemplateDetailResponse extends AcsResponse {
 				private String url;
 
 				private String urlType;
+
+				private String signatureHash;
+
+				private String packageName;
+
+				private String autofillText;
+
+				private Boolean isOptOut;
+
+				private ExtendAttrs extendAttrs;
 
 				public String getType() {
 					return this.type;
@@ -230,6 +410,99 @@ public class GetChatappTemplateDetailResponse extends AcsResponse {
 
 				public void setUrlType(String urlType) {
 					this.urlType = urlType;
+				}
+
+				public String getSignatureHash() {
+					return this.signatureHash;
+				}
+
+				public void setSignatureHash(String signatureHash) {
+					this.signatureHash = signatureHash;
+				}
+
+				public String getPackageName() {
+					return this.packageName;
+				}
+
+				public void setPackageName(String packageName) {
+					this.packageName = packageName;
+				}
+
+				public String getAutofillText() {
+					return this.autofillText;
+				}
+
+				public void setAutofillText(String autofillText) {
+					this.autofillText = autofillText;
+				}
+
+				public Boolean getIsOptOut() {
+					return this.isOptOut;
+				}
+
+				public void setIsOptOut(Boolean isOptOut) {
+					this.isOptOut = isOptOut;
+				}
+
+				public ExtendAttrs getExtendAttrs() {
+					return this.extendAttrs;
+				}
+
+				public void setExtendAttrs(ExtendAttrs extendAttrs) {
+					this.extendAttrs = extendAttrs;
+				}
+
+				public static class ExtendAttrs {
+
+					private String nextTemplateCode;
+
+					private String nextTemplateName;
+
+					private String nextLanguageCode;
+
+					private String action;
+
+					private String intentCode;
+
+					public String getNextTemplateCode() {
+						return this.nextTemplateCode;
+					}
+
+					public void setNextTemplateCode(String nextTemplateCode) {
+						this.nextTemplateCode = nextTemplateCode;
+					}
+
+					public String getNextTemplateName() {
+						return this.nextTemplateName;
+					}
+
+					public void setNextTemplateName(String nextTemplateName) {
+						this.nextTemplateName = nextTemplateName;
+					}
+
+					public String getNextLanguageCode() {
+						return this.nextLanguageCode;
+					}
+
+					public void setNextLanguageCode(String nextLanguageCode) {
+						this.nextLanguageCode = nextLanguageCode;
+					}
+
+					public String getAction() {
+						return this.action;
+					}
+
+					public void setAction(String action) {
+						this.action = action;
+					}
+
+					public String getIntentCode() {
+						return this.intentCode;
+					}
+
+					public void setIntentCode(String intentCode) {
+						this.intentCode = intentCode;
+					}
 				}
 			}
 		}
