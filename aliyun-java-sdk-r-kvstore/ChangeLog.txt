@@ -1,3 +1,6 @@
+2023-09-15 Version: 2.20.16
+- Update us-east-1 us-west-1 endpoint.
+
 2023-09-15 Version: 2.20.15
 - Update Sdk.
 

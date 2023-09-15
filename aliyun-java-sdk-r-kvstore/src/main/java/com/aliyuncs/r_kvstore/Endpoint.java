@@ -35,10 +35,11 @@ public class Endpoint {
             put("cn-qingdao-nebula", "r-kvstore.aliyuncs.com");
             put("cn-shanghai", "r-kvstore.aliyuncs.com");
             put("cn-shanghai-finance-1", "r-kvstore.aliyuncs.com");
+            put("cn-hongkong", "r-kvstore.aliyuncs.com");
             put("cn-heyuan", "r-kvstore.aliyuncs.com");
             put("cn-beijing-finance-pop", "r-kvstore.aliyuncs.com");
             put("cn-wuhan", "r-kvstore.aliyuncs.com");
-            put("us-west-1", "r-kvstore.aliyuncs.com");
+            put("cn-zhangbei", "r-kvstore.aliyuncs.com");
             put("cn-shenzhen", "r-kvstore.aliyuncs.com");
             put("cn-zhengzhou-nebula-1", "r-kvstore.aliyuncs.com");
             put("rus-west-1-pop", "r-kvstore.aliyuncs.com");
@@ -52,13 +53,12 @@ public class Endpoint {
             put("cn-shenzhen-finance-1", "r-kvstore.aliyuncs.com");
             put("cn-hangzhou-internal-test-2", "r-kvstore.aliyuncs.com");
             put("cn-hangzhou-test-306", "r-kvstore.aliyuncs.com");
-            put("cn-huhehaote-nebula-1", "r-kvstore.aliyuncs.com");
             put("cn-shanghai-et2-b01", "r-kvstore.aliyuncs.com");
+            put("cn-guangzhou", "r-kvstore.aliyuncs.com");
             put("cn-hangzhou-finance", "r-kvstore.aliyuncs.com");
             put("ap-southeast-1", "r-kvstore.aliyuncs.com");
             put("cn-beijing-nu16-b01", "r-kvstore.aliyuncs.com");
             put("cn-edge-1", "r-kvstore.aliyuncs.com");
-            put("us-east-1", "r-kvstore.aliyuncs.com");
             put("cn-fujian", "r-kvstore.aliyuncs.com");
             put("ap-northeast-2-pop", "r-kvstore.aliyuncs.com");
             put("cn-shenzhen-inner", "r-kvstore.aliyuncs.com");
