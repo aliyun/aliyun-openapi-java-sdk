@@ -38,6 +38,7 @@ public class DescribePriceResponseUnmarshaller {
 		order.setDiscountAmount(_ctx.stringValue("DescribePriceResponse.Order.DiscountAmount"));
 		order.setTradeAmount(_ctx.stringValue("DescribePriceResponse.Order.TradeAmount"));
 		order.setCurrency(_ctx.stringValue("DescribePriceResponse.Order.Currency"));
+		order.setShowDiscountInfo(_ctx.booleanValue("DescribePriceResponse.Order.ShowDiscountInfo"));
 
 		List<String> ruleIds1 = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePriceResponse.Order.RuleIds.Length"); i++) {

@@ -17,6 +17,7 @@ package com.aliyuncs.dds.model.v20151201;
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dds.Endpoint;
 
 /**
  * @author auto create
@@ -105,6 +106,10 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 	public CreateDBInstanceRequest() {
 		super("Dds", "2015-12-01", "CreateDBInstance", "dds");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
