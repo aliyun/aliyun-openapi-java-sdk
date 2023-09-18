@@ -42,6 +42,7 @@ public class GetQuotaAlarmResponseUnmarshaller {
 		quotaAlarm.setAlarmId(_ctx.stringValue("GetQuotaAlarmResponse.QuotaAlarm.AlarmId"));
 		quotaAlarm.setThreshold(_ctx.floatValue("GetQuotaAlarmResponse.QuotaAlarm.Threshold"));
 		quotaAlarm.setProductCode(_ctx.stringValue("GetQuotaAlarmResponse.QuotaAlarm.ProductCode"));
+		quotaAlarm.setWebhook(_ctx.stringValue("GetQuotaAlarmResponse.QuotaAlarm.Webhook"));
 
 		List<String> notifyChannels = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetQuotaAlarmResponse.QuotaAlarm.NotifyChannels.Length"); i++) {

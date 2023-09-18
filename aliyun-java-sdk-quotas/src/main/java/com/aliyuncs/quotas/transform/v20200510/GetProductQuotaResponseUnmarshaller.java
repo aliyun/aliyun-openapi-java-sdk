@@ -49,6 +49,7 @@ public class GetProductQuotaResponseUnmarshaller {
 		quota.setEffectiveTime(_ctx.stringValue("GetProductQuotaResponse.Quota.EffectiveTime"));
 		quota.setExpireTime(_ctx.stringValue("GetProductQuotaResponse.Quota.ExpireTime"));
 		quota.setQuotaCategory(_ctx.stringValue("GetProductQuotaResponse.Quota.QuotaCategory"));
+		quota.setApplyReasonTips(_ctx.stringValue("GetProductQuotaResponse.Quota.ApplyReasonTips"));
 
 		List<Float> applicableRange = new ArrayList<Float>();
 		for (int i = 0; i < _ctx.lengthValue("GetProductQuotaResponse.Quota.ApplicableRange.Length"); i++) {

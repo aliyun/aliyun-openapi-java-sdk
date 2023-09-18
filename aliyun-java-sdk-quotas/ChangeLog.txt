@@ -1,3 +1,6 @@
+2023-09-18 Version: 1.0.2
+Support QuotaApplications For Template.
+
 2023-01-06 Version: 1.0.1
 - Quota category supported whiteListLabel.
 

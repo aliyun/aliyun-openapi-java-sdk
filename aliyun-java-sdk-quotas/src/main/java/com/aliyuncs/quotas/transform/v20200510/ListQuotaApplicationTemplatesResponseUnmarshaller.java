@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.quotas.model.v20200510.ListQuotaApplicationTemplatesResponse;
 import com.aliyuncs.quotas.model.v20200510.ListQuotaApplicationTemplatesResponse.QuotaApplicationTemplatesItem;
+import com.aliyuncs.quotas.model.v20200510.ListQuotaApplicationTemplatesResponse.QuotaApplicationTemplatesItem.Period;
 import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -54,6 +55,11 @@ public class ListQuotaApplicationTemplatesResponseUnmarshaller {
 				applicableRange.add(_ctx.floatValue("ListQuotaApplicationTemplatesResponse.QuotaApplicationTemplates["+ i +"].ApplicableRange["+ j +"]"));
 			}
 			quotaApplicationTemplatesItem.setApplicableRange(applicableRange);
+
+			Period period = new Period();
+			period.setPeriodValue(_ctx.integerValue("ListQuotaApplicationTemplatesResponse.QuotaApplicationTemplates["+ i +"].Period.PeriodValue"));
+			period.setPeriodUnit(_ctx.stringValue("ListQuotaApplicationTemplatesResponse.QuotaApplicationTemplates["+ i +"].Period.PeriodUnit"));
+			quotaApplicationTemplatesItem.setPeriod(period);
 
 			quotaApplicationTemplates.add(quotaApplicationTemplatesItem);
 		}

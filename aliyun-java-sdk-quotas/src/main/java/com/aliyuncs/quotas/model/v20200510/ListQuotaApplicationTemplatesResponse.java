@@ -106,6 +106,8 @@ public class ListQuotaApplicationTemplatesResponse extends AcsResponse {
 
 		private List<Float> applicableRange;
 
+		private Period period;
+
 		public String getId() {
 			return this.id;
 		}
@@ -216,6 +218,37 @@ public class ListQuotaApplicationTemplatesResponse extends AcsResponse {
 
 		public void setApplicableRange(List<Float> applicableRange) {
 			this.applicableRange = applicableRange;
+		}
+
+		public Period getPeriod() {
+			return this.period;
+		}
+
+		public void setPeriod(Period period) {
+			this.period = period;
+		}
+
+		public static class Period {
+
+			private Integer periodValue;
+
+			private String periodUnit;
+
+			public Integer getPeriodValue() {
+				return this.periodValue;
+			}
+
+			public void setPeriodValue(Integer periodValue) {
+				this.periodValue = periodValue;
+			}
+
+			public String getPeriodUnit() {
+				return this.periodUnit;
+			}
+
+			public void setPeriodUnit(String periodUnit) {
+				this.periodUnit = periodUnit;
+			}
 		}
 	}
 

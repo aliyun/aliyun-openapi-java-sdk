@@ -72,6 +72,8 @@ public class GetQuotaAlarmResponse extends AcsResponse {
 
 		private String productCode;
 
+		private String webhook;
+
 		private List<String> notifyChannels;
 
 		public Float getThresholdPercent() {
@@ -168,6 +170,14 @@ public class GetQuotaAlarmResponse extends AcsResponse {
 
 		public void setProductCode(String productCode) {
 			this.productCode = productCode;
+		}
+
+		public String getWebhook() {
+			return this.webhook;
+		}
+
+		public void setWebhook(String webhook) {
+			this.webhook = webhook;
 		}
 
 		public List<String> getNotifyChannels() {

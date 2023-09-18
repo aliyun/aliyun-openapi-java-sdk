@@ -54,6 +54,7 @@ public class ListProductQuotasResponseUnmarshaller {
 			quotasItem.setEffectiveTime(_ctx.stringValue("ListProductQuotasResponse.Quotas["+ i +"].EffectiveTime"));
 			quotasItem.setExpireTime(_ctx.stringValue("ListProductQuotasResponse.Quotas["+ i +"].ExpireTime"));
 			quotasItem.setQuotaCategory(_ctx.stringValue("ListProductQuotasResponse.Quotas["+ i +"].QuotaCategory"));
+			quotasItem.setApplyReasonTips(_ctx.stringValue("ListProductQuotasResponse.Quotas["+ i +"].ApplyReasonTips"));
 
 			List<Float> applicableRange = new ArrayList<Float>();
 			for (int j = 0; j < _ctx.lengthValue("ListProductQuotasResponse.Quotas["+ i +"].ApplicableRange.Length"); j++) {

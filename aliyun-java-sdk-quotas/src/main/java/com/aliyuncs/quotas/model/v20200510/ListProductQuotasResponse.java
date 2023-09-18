@@ -112,6 +112,8 @@ public class ListProductQuotasResponse extends AcsResponse {
 
 		private String quotaCategory;
 
+		private String applyReasonTips;
+
 		private List<QuotaItemsItem> quotaItems;
 
 		private List<Float> applicableRange;
@@ -254,6 +256,14 @@ public class ListProductQuotasResponse extends AcsResponse {
 
 		public void setQuotaCategory(String quotaCategory) {
 			this.quotaCategory = quotaCategory;
+		}
+
+		public String getApplyReasonTips() {
+			return this.applyReasonTips;
+		}
+
+		public void setApplyReasonTips(String applyReasonTips) {
+			this.applyReasonTips = applyReasonTips;
 		}
 
 		public List<QuotaItemsItem> getQuotaItems() {
