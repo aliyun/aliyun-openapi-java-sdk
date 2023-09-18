@@ -1,3 +1,6 @@
+2023-09-18 Version: 1.5.15
+- Query voice intercom support WebSocket scheme.
+
 2023-05-11 Version: 1.5.14
 - Support Live Streaming and VOD P2P.
 

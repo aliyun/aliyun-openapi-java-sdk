@@ -26,9 +26,9 @@ public class QueryVoiceIntercomResponse extends AcsResponse {
 
 	private String code;
 
-	private String requestId;
-
 	private String errorMessage;
+
+	private String requestId;
 
 	private Boolean success;
 
@@ -42,20 +42,20 @@ public class QueryVoiceIntercomResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getErrorMessage() {
 		return this.errorMessage;
 	}
 
 	public void setErrorMessage(String errorMessage) {
 		this.errorMessage = errorMessage;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Boolean getSuccess() {

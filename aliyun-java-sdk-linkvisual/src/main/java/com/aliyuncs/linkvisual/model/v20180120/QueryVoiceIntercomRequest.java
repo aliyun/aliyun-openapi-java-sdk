@@ -25,6 +25,8 @@ import com.aliyuncs.linkvisual.Endpoint;
 public class QueryVoiceIntercomRequest extends RpcAcsRequest<QueryVoiceIntercomResponse> {
 	   
 
+	private String scheme;
+
 	private String iotId;
 
 	private String iotInstanceId;
@@ -39,6 +41,17 @@ public class QueryVoiceIntercomRequest extends RpcAcsRequest<QueryVoiceIntercomR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getScheme() {
+		return this.scheme;
+	}
+
+	public void setScheme(String scheme) {
+		this.scheme = scheme;
+		if(scheme != null){
+			putQueryParameter("Scheme", scheme);
+		}
 	}
 
 	public String getIotId() {
