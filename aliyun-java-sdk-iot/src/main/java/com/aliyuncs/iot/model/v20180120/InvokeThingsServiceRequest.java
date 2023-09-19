@@ -26,6 +26,8 @@ import com.aliyuncs.iot.Endpoint;
 public class InvokeThingsServiceRequest extends RpcAcsRequest<InvokeThingsServiceResponse> {
 	   
 
+	private Integer qos;
+
 	private String iotInstanceId;
 
 	private String identifier;
@@ -42,6 +44,17 @@ public class InvokeThingsServiceRequest extends RpcAcsRequest<InvokeThingsServic
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Integer getQos() {
+		return this.qos;
+	}
+
+	public void setQos(Integer qos) {
+		this.qos = qos;
+		if(qos != null){
+			putQueryParameter("Qos", qos.toString());
+		}
 	}
 
 	public String getIotInstanceId() {

@@ -26,6 +26,8 @@ import com.aliyuncs.iot.Endpoint;
 public class SetDevicesPropertyRequest extends RpcAcsRequest<SetDevicesPropertyResponse> {
 	   
 
+	private Integer qos;
+
 	private String iotInstanceId;
 
 	private String productKey;
@@ -40,6 +42,17 @@ public class SetDevicesPropertyRequest extends RpcAcsRequest<SetDevicesPropertyR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Integer getQos() {
+		return this.qos;
+	}
+
+	public void setQos(Integer qos) {
+		this.qos = qos;
+		if(qos != null){
+			putQueryParameter("Qos", qos.toString());
+		}
 	}
 
 	public String getIotInstanceId() {
