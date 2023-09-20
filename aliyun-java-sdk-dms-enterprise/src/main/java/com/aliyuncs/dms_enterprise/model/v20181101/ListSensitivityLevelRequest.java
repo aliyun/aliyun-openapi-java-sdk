@@ -15,6 +15,7 @@
 package com.aliyuncs.dms_enterprise.model.v20181101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.dms_enterprise.Endpoint;
 
@@ -22,17 +23,18 @@ import com.aliyuncs.dms_enterprise.Endpoint;
  * @author auto create
  * @version 
  */
-public class RefundPayAsYouGoOrderRequest extends RpcAcsRequest<RefundPayAsYouGoOrderResponse> {
+public class ListSensitivityLevelRequest extends RpcAcsRequest<ListSensitivityLevelResponse> {
 	   
 
 	private Long tid;
 
-	private String orderId;
+	private String templateType;
 
-	private String instanceId;
-	public RefundPayAsYouGoOrderRequest() {
-		super("dms-enterprise", "2018-11-01", "RefundPayAsYouGoOrder", "dms-enterprise");
-		setMethod(MethodType.POST);
+	private Long templateId;
+	public ListSensitivityLevelRequest() {
+		super("dms-enterprise", "2018-11-01", "ListSensitivityLevel", "dms-enterprise");
+		setProtocol(ProtocolType.HTTPS);
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -50,31 +52,31 @@ public class RefundPayAsYouGoOrderRequest extends RpcAcsRequest<RefundPayAsYouGo
 		}
 	}
 
-	public String getOrderId() {
-		return this.orderId;
+	public String getTemplateType() {
+		return this.templateType;
 	}
 
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
-		if(orderId != null){
-			putQueryParameter("OrderId", orderId);
+	public void setTemplateType(String templateType) {
+		this.templateType = templateType;
+		if(templateType != null){
+			putQueryParameter("TemplateType", templateType);
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public Long getTemplateId() {
+		return this.templateId;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
+	public void setTemplateId(Long templateId) {
+		this.templateId = templateId;
+		if(templateId != null){
+			putQueryParameter("TemplateId", templateId.toString());
 		}
 	}
 
 	@Override
-	public Class<RefundPayAsYouGoOrderResponse> getResponseClass() {
-		return RefundPayAsYouGoOrderResponse.class;
+	public Class<ListSensitivityLevelResponse> getResponseClass() {
+		return ListSensitivityLevelResponse.class;
 	}
 
 }

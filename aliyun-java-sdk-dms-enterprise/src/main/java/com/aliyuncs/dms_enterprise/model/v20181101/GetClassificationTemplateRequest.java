@@ -22,16 +22,14 @@ import com.aliyuncs.dms_enterprise.Endpoint;
  * @author auto create
  * @version 
  */
-public class RefundPayAsYouGoOrderRequest extends RpcAcsRequest<RefundPayAsYouGoOrderResponse> {
+public class GetClassificationTemplateRequest extends RpcAcsRequest<GetClassificationTemplateResponse> {
 	   
 
 	private Long tid;
 
-	private String orderId;
-
-	private String instanceId;
-	public RefundPayAsYouGoOrderRequest() {
-		super("dms-enterprise", "2018-11-01", "RefundPayAsYouGoOrder", "dms-enterprise");
+	private Long instanceId;
+	public GetClassificationTemplateRequest() {
+		super("dms-enterprise", "2018-11-01", "GetClassificationTemplate", "dms-enterprise");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -50,31 +48,20 @@ public class RefundPayAsYouGoOrderRequest extends RpcAcsRequest<RefundPayAsYouGo
 		}
 	}
 
-	public String getOrderId() {
-		return this.orderId;
-	}
-
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
-		if(orderId != null){
-			putQueryParameter("OrderId", orderId);
-		}
-	}
-
-	public String getInstanceId() {
+	public Long getInstanceId() {
 		return this.instanceId;
 	}
 
-	public void setInstanceId(String instanceId) {
+	public void setInstanceId(Long instanceId) {
 		this.instanceId = instanceId;
 		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
+			putQueryParameter("InstanceId", instanceId.toString());
 		}
 	}
 
 	@Override
-	public Class<RefundPayAsYouGoOrderResponse> getResponseClass() {
-		return RefundPayAsYouGoOrderResponse.class;
+	public Class<GetClassificationTemplateResponse> getResponseClass() {
+		return GetClassificationTemplateResponse.class;
 	}
 
 }

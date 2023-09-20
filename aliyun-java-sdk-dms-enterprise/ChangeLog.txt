@@ -1,3 +1,6 @@
+2023-09-20 Version: 1.53.2
+- Support CreateProcCorrectAPI.
+
 2023-07-12 Version: 1.53.1
 - Change API CreateDataArchiveOrder and GetDataArchiveCount to public.
 

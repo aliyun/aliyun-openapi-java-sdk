@@ -15,6 +15,7 @@
 package com.aliyuncs.dms_enterprise.model.v20181101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.dms_enterprise.Endpoint;
 
@@ -22,14 +23,12 @@ import com.aliyuncs.dms_enterprise.Endpoint;
  * @author auto create
  * @version 
  */
-public class ModifyDesensitizationStrategyRequest extends RpcAcsRequest<ModifyDesensitizationStrategyResponse> {
+public class ChangeColumnSecurityLevelRequest extends RpcAcsRequest<ChangeColumnSecurityLevelResponse> {
 	   
 
-	private Boolean isReset;
+	private String newSensitivityLevel;
 
 	private Long tid;
-
-	private Boolean isDefault;
 
 	private String tableName;
 
@@ -39,11 +38,10 @@ public class ModifyDesensitizationStrategyRequest extends RpcAcsRequest<ModifyDe
 
 	private String columnName;
 
-	private Integer dbId;
-
-	private Integer ruleId;
-	public ModifyDesensitizationStrategyRequest() {
-		super("dms-enterprise", "2018-11-01", "ModifyDesensitizationStrategy", "dms-enterprise");
+	private Long dbId;
+	public ChangeColumnSecurityLevelRequest() {
+		super("dms-enterprise", "2018-11-01", "ChangeColumnSecurityLevel", "dms-enterprise");
+		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -51,14 +49,14 @@ public class ModifyDesensitizationStrategyRequest extends RpcAcsRequest<ModifyDe
 		} catch (Exception e) {}
 	}
 
-	public Boolean getIsReset() {
-		return this.isReset;
+	public String getNewSensitivityLevel() {
+		return this.newSensitivityLevel;
 	}
 
-	public void setIsReset(Boolean isReset) {
-		this.isReset = isReset;
-		if(isReset != null){
-			putQueryParameter("IsReset", isReset.toString());
+	public void setNewSensitivityLevel(String newSensitivityLevel) {
+		this.newSensitivityLevel = newSensitivityLevel;
+		if(newSensitivityLevel != null){
+			putQueryParameter("NewSensitivityLevel", newSensitivityLevel);
 		}
 	}
 
@@ -70,17 +68,6 @@ public class ModifyDesensitizationStrategyRequest extends RpcAcsRequest<ModifyDe
 		this.tid = tid;
 		if(tid != null){
 			putQueryParameter("Tid", tid.toString());
-		}
-	}
-
-	public Boolean getIsDefault() {
-		return this.isDefault;
-	}
-
-	public void setIsDefault(Boolean isDefault) {
-		this.isDefault = isDefault;
-		if(isDefault != null){
-			putQueryParameter("IsDefault", isDefault.toString());
 		}
 	}
 
@@ -128,31 +115,20 @@ public class ModifyDesensitizationStrategyRequest extends RpcAcsRequest<ModifyDe
 		}
 	}
 
-	public Integer getDbId() {
+	public Long getDbId() {
 		return this.dbId;
 	}
 
-	public void setDbId(Integer dbId) {
+	public void setDbId(Long dbId) {
 		this.dbId = dbId;
 		if(dbId != null){
 			putQueryParameter("DbId", dbId.toString());
 		}
 	}
 
-	public Integer getRuleId() {
-		return this.ruleId;
-	}
-
-	public void setRuleId(Integer ruleId) {
-		this.ruleId = ruleId;
-		if(ruleId != null){
-			putQueryParameter("RuleId", ruleId.toString());
-		}
-	}
-
 	@Override
-	public Class<ModifyDesensitizationStrategyResponse> getResponseClass() {
-		return ModifyDesensitizationStrategyResponse.class;
+	public Class<ChangeColumnSecurityLevelResponse> getResponseClass() {
+		return ChangeColumnSecurityLevelResponse.class;
 	}
 
 }
