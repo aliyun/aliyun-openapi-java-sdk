@@ -56,6 +56,8 @@ public class SendChatappMessageRequest extends RpcAcsRequest<SendChatappMessageR
 
 	private String tag;
 
+	private String fallBackRule;
+
 	private String trackingData;
 
 	private String taskId;
@@ -215,6 +217,17 @@ public class SendChatappMessageRequest extends RpcAcsRequest<SendChatappMessageR
 		this.tag = tag;
 		if(tag != null){
 			putBodyParameter("Tag", tag);
+		}
+	}
+
+	public String getFallBackRule() {
+		return this.fallBackRule;
+	}
+
+	public void setFallBackRule(String fallBackRule) {
+		this.fallBackRule = fallBackRule;
+		if(fallBackRule != null){
+			putBodyParameter("FallBackRule", fallBackRule);
 		}
 	}
 
