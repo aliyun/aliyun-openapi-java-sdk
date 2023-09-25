@@ -26,9 +26,9 @@ public class ModifyFirewallRuleRequest extends RpcAcsRequest<ModifyFirewallRuleR
 
 	private String clientToken;
 
-	private String sourceCidrIp;
-
 	private String remark;
+
+	private String sourceCidrIp;
 
 	private String instanceId;
 
@@ -53,17 +53,6 @@ public class ModifyFirewallRuleRequest extends RpcAcsRequest<ModifyFirewallRuleR
 		}
 	}
 
-	public String getSourceCidrIp() {
-		return this.sourceCidrIp;
-	}
-
-	public void setSourceCidrIp(String sourceCidrIp) {
-		this.sourceCidrIp = sourceCidrIp;
-		if(sourceCidrIp != null){
-			putQueryParameter("SourceCidrIp", sourceCidrIp);
-		}
-	}
-
 	public String getRemark() {
 		return this.remark;
 	}
@@ -72,6 +61,17 @@ public class ModifyFirewallRuleRequest extends RpcAcsRequest<ModifyFirewallRuleR
 		this.remark = remark;
 		if(remark != null){
 			putQueryParameter("Remark", remark);
+		}
+	}
+
+	public String getSourceCidrIp() {
+		return this.sourceCidrIp;
+	}
+
+	public void setSourceCidrIp(String sourceCidrIp) {
+		this.sourceCidrIp = sourceCidrIp;
+		if(sourceCidrIp != null){
+			putQueryParameter("SourceCidrIp", sourceCidrIp);
 		}
 	}
 

@@ -32,9 +32,9 @@ public class CreateCustomImageRequest extends RpcAcsRequest<CreateCustomImageRes
 
 	private String description;
 
-	private String instanceId;
-
 	private String imageName;
+
+	private String instanceId;
 	public CreateCustomImageRequest() {
 		super("SWAS-OPEN", "2020-06-01", "CreateCustomImage", "SWAS-OPEN");
 		setMethod(MethodType.POST);
@@ -84,17 +84,6 @@ public class CreateCustomImageRequest extends RpcAcsRequest<CreateCustomImageRes
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
 	public String getImageName() {
 		return this.imageName;
 	}
@@ -103,6 +92,17 @@ public class CreateCustomImageRequest extends RpcAcsRequest<CreateCustomImageRes
 		this.imageName = imageName;
 		if(imageName != null){
 			putQueryParameter("ImageName", imageName);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
