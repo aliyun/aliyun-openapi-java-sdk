@@ -1,3 +1,6 @@
+2023-09-25 Version: 4.2.14
+- Support DIJob and DIAlarmRule related APIs.
+
 2023-08-16 Version: 4.2.13
 - Generated 2018-06-01 for `dataworks-public`.
 
