@@ -129,9 +129,9 @@ public class BatchCreateContainerGroupsRequest extends RpcAcsRequest<BatchCreate
 
     private String dataCachePL;
 
-    private String dataCacheProvisionedIops;
+    private Integer dataCacheProvisionedIops;
 
-    private String dataCacheBurstingEnabled;
+    private Boolean dataCacheBurstingEnabled;
 
     public String getDataCacheBucket() {
         return dataCacheBucket;
@@ -139,7 +139,7 @@ public class BatchCreateContainerGroupsRequest extends RpcAcsRequest<BatchCreate
 
     public void setDataCacheBucket(String dataCacheBucket) {
         this.dataCacheBucket = dataCacheBucket;
-        if (dataCacheBucket != null) {
+        if (null != dataCacheBucket) {
             putQueryParameter("DataCacheBucket", dataCacheBucket);
         }
     }
@@ -150,29 +150,29 @@ public class BatchCreateContainerGroupsRequest extends RpcAcsRequest<BatchCreate
 
     public void setDataCachePL(String dataCachePL) {
         this.dataCachePL = dataCachePL;
-        if (dataCachePL != null) {
+        if (null != dataCachePL) {
             putQueryParameter("DataCachePL", dataCachePL);
         }
     }
 
-    public String getDataCacheProvisionedIops() {
+    public Integer getDataCacheProvisionedIops() {
         return dataCacheProvisionedIops;
     }
 
-    public void setDataCacheProvisionedIops(String dataCacheProvisionedIops) {
+    public void setDataCacheProvisionedIops(Integer dataCacheProvisionedIops) {
         this.dataCacheProvisionedIops = dataCacheProvisionedIops;
-        if (dataCacheProvisionedIops != null) {
+        if (null != dataCacheProvisionedIops) {
             putQueryParameter("DataCacheProvisionedIops", dataCacheProvisionedIops);
         }
     }
 
-    public String getDataCacheBurstingEnabled() {
+    public Boolean getDataCacheBurstingEnabled() {
         return dataCacheBurstingEnabled;
     }
 
-    public void setDataCacheBurstingEnabled(String dataCacheBurstingEnabled) {
+    public void setDataCacheBurstingEnabled(Boolean dataCacheBurstingEnabled) {
         this.dataCacheBurstingEnabled = dataCacheBurstingEnabled;
-        if (dataCacheBurstingEnabled != null) {
+        if (null != dataCacheBurstingEnabled){
             putQueryParameter("DataCacheBurstingEnabled", dataCacheBurstingEnabled);
         }
     }
