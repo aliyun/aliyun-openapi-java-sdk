@@ -60,6 +60,7 @@ public class ListServerGroupsResponseUnmarshaller {
 			serverGroup.setServerGroupStatus(_ctx.stringValue("ListServerGroupsResponse.ServerGroups["+ i +"].ServerGroupStatus"));
 			serverGroup.setAliUid(_ctx.longValue("ListServerGroupsResponse.ServerGroups["+ i +"].AliUid"));
 			serverGroup.setServerCount(_ctx.integerValue("ListServerGroupsResponse.ServerGroups["+ i +"].ServerCount"));
+			serverGroup.setQuicVersion(_ctx.stringValue("ListServerGroupsResponse.ServerGroups["+ i +"].QuicVersion"));
 
 			List<String> relatedLoadBalancerIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListServerGroupsResponse.ServerGroups["+ i +"].RelatedLoadBalancerIds.Length"); j++) {

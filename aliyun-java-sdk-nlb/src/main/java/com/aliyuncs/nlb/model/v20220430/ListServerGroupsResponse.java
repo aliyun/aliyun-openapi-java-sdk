@@ -173,6 +173,8 @@ public class ListServerGroupsResponse extends AcsResponse {
 
 		private Integer serverCount;
 
+		private String quicVersion;
+
 		private List<Tag> tags;
 
 		private List<String> relatedLoadBalancerIds;
@@ -321,6 +323,14 @@ public class ListServerGroupsResponse extends AcsResponse {
 
 		public void setServerCount(Integer serverCount) {
 			this.serverCount = serverCount;
+		}
+
+		public String getQuicVersion() {
+			return this.quicVersion;
+		}
+
+		public void setQuicVersion(String quicVersion) {
+			this.quicVersion = quicVersion;
 		}
 
 		public List<Tag> getTags() {
