@@ -125,6 +125,58 @@ public class BatchCreateContainerGroupsRequest extends RpcAcsRequest<BatchCreate
 
     private List<String> instanceTypes;
 
+    private String dataCacheBucket;
+
+    private String dataCachePL;
+
+    private String dataCacheProvisionedIops;
+
+    private String dataCacheBurstingEnabled;
+
+    public String getDataCacheBucket() {
+        return dataCacheBucket;
+    }
+
+    public void setDataCacheBucket(String dataCacheBucket) {
+        this.dataCacheBucket = dataCacheBucket;
+        if (dataCacheBucket != null) {
+            putQueryParameter("DataCacheBucket", dataCacheBucket);
+        }
+    }
+
+    public String getDataCachePL() {
+        return dataCachePL;
+    }
+
+    public void setDataCachePL(String dataCachePL) {
+        this.dataCachePL = dataCachePL;
+        if (dataCachePL != null) {
+            putQueryParameter("DataCachePL", dataCachePL);
+        }
+    }
+
+    public String getDataCacheProvisionedIops() {
+        return dataCacheProvisionedIops;
+    }
+
+    public void setDataCacheProvisionedIops(String dataCacheProvisionedIops) {
+        this.dataCacheProvisionedIops = dataCacheProvisionedIops;
+        if (dataCacheProvisionedIops != null) {
+            putQueryParameter("DataCacheProvisionedIops", dataCacheProvisionedIops);
+        }
+    }
+
+    public String getDataCacheBurstingEnabled() {
+        return dataCacheBurstingEnabled;
+    }
+
+    public void setDataCacheBurstingEnabled(String dataCacheBurstingEnabled) {
+        this.dataCacheBurstingEnabled = dataCacheBurstingEnabled;
+        if (dataCacheBurstingEnabled != null) {
+            putQueryParameter("DataCacheBurstingEnabled", dataCacheBurstingEnabled);
+        }
+    }
+
     public Long getResourceOwnerId() {
         return this.resourceOwnerId;
     }
