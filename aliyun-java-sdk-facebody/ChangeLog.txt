@@ -1,3 +1,6 @@
+2023-10-10 Version: 2.0.11
+- Update MergeImageFace.
+
 2023-04-21 Version: 2.0.10
 - Release MergeImageFace.
 

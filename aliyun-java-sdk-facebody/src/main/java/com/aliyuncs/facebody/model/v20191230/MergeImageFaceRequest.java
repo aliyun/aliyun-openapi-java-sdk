@@ -28,6 +28,8 @@ public class MergeImageFaceRequest extends RpcAcsRequest<MergeImageFaceResponse>
 
 	private List<MergeInfos> mergeInfoss;
 
+	private String watermarkType;
+
 	private String templateId;
 
 	private String imageURL;
@@ -56,6 +58,17 @@ public class MergeImageFaceRequest extends RpcAcsRequest<MergeImageFaceResponse>
 				putBodyParameter("MergeInfos." + (depth1 + 1) + ".TemplateFaceID" , mergeInfoss.get(depth1).getTemplateFaceID());
 			}
 		}	
+	}
+
+	public String getWatermarkType() {
+		return this.watermarkType;
+	}
+
+	public void setWatermarkType(String watermarkType) {
+		this.watermarkType = watermarkType;
+		if(watermarkType != null){
+			putBodyParameter("WatermarkType", watermarkType);
+		}
 	}
 
 	public String getTemplateId() {

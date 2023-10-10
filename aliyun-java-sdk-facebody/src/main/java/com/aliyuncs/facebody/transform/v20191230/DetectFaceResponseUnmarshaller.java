@@ -39,9 +39,9 @@ public class DetectFaceResponseUnmarshaller {
 		}
 		data.setFaceProbabilityList(faceProbabilityList);
 
-		List<Float> pupils = new ArrayList<Float>();
+		List<Double> pupils = new ArrayList<Double>();
 		for (int i = 0; i < _ctx.lengthValue("DetectFaceResponse.Data.Pupils.Length"); i++) {
-			pupils.add(_ctx.floatValue("DetectFaceResponse.Data.Pupils["+ i +"]"));
+			pupils.add(_ctx.doubleValue("DetectFaceResponse.Data.Pupils["+ i +"]"));
 		}
 		data.setPupils(pupils);
 

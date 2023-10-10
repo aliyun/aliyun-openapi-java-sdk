@@ -27,6 +27,7 @@ public class BlurFaceResponseUnmarshaller {
 
 		Data data = new Data();
 		data.setImageURL(_ctx.stringValue("BlurFaceResponse.Data.ImageURL"));
+		data.setMaskURL(_ctx.stringValue("BlurFaceResponse.Data.MaskURL"));
 		blurFaceResponse.setData(data);
 	 
 	 	return blurFaceResponse;

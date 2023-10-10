@@ -53,7 +53,7 @@ public class DetectFaceResponse extends AcsResponse {
 
 		private List<Float> faceProbabilityList;
 
-		private List<Float> pupils;
+		private List<Double> pupils;
 
 		private List<Integer> faceRectangles;
 
@@ -87,11 +87,11 @@ public class DetectFaceResponse extends AcsResponse {
 			this.faceProbabilityList = faceProbabilityList;
 		}
 
-		public List<Float> getPupils() {
+		public List<Double> getPupils() {
 			return this.pupils;
 		}
 
-		public void setPupils(List<Float> pupils) {
+		public void setPupils(List<Double> pupils) {
 			this.pupils = pupils;
 		}
 
