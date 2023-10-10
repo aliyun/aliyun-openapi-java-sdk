@@ -101,6 +101,8 @@ public class DescribeFabricOrganizationsResponse extends AcsResponse {
 
 		private String organizationName;
 
+		private String majorVersion;
+
 		private List<TagsItem> tags;
 
 		public String getDomain() {
@@ -237,6 +239,14 @@ public class DescribeFabricOrganizationsResponse extends AcsResponse {
 
 		public void setOrganizationName(String organizationName) {
 			this.organizationName = organizationName;
+		}
+
+		public String getMajorVersion() {
+			return this.majorVersion;
+		}
+
+		public void setMajorVersion(String majorVersion) {
+			this.majorVersion = majorVersion;
 		}
 
 		public List<TagsItem> getTags() {
