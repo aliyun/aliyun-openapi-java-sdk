@@ -119,10 +119,13 @@ public class CreateDataArchiveOrderRequest extends RpcAcsRequest<CreateDataArchi
 	public static class Param {
 
 		@SerializedName("Variables")
-		private List<String> variables;
+		private List<VariablesItem> variables;
 
-		@SerializedName("TargetInstanceId")
-		private String targetInstanceId;
+		@SerializedName("SourceInstanceName")
+		private String sourceInstanceName;
+
+		@SerializedName("CronStr")
+		private String cronStr;
 
 		@SerializedName("TableMapping")
 		private List<String> tableMapping;
@@ -130,17 +133,20 @@ public class CreateDataArchiveOrderRequest extends RpcAcsRequest<CreateDataArchi
 		@SerializedName("OrderAfter")
 		private List<String> orderAfter;
 
-		@SerializedName("SourceDatabaseId")
-		private Long sourceDatabaseId;
-
-		@SerializedName("DbSchema")
-		private String dbSchema;
+		@SerializedName("SourceCatalogName")
+		private String sourceCatalogName;
 
 		@SerializedName("RunMethod")
 		private String runMethod;
 
+		@SerializedName("TargetInstanceHost")
+		private String targetInstanceHost;
+
 		@SerializedName("Logic")
 		private Boolean logic;
+
+		@SerializedName("SourceSchemaName")
+		private String sourceSchemaName;
 
 		@SerializedName("ArchiveMethod")
 		private String archiveMethod;
@@ -148,20 +154,28 @@ public class CreateDataArchiveOrderRequest extends RpcAcsRequest<CreateDataArchi
 		@SerializedName("TableIncludes")
 		private List<TableIncludesItem> tableIncludes;
 
-		public List<String> getVariables() {
+		public List<VariablesItem> getVariables() {
 			return this.variables;
 		}
 
-		public void setVariables(List<String> variables) {
+		public void setVariables(List<VariablesItem> variables) {
 			this.variables = variables;
 		}
 
-		public String getTargetInstanceId() {
-			return this.targetInstanceId;
+		public String getSourceInstanceName() {
+			return this.sourceInstanceName;
 		}
 
-		public void setTargetInstanceId(String targetInstanceId) {
-			this.targetInstanceId = targetInstanceId;
+		public void setSourceInstanceName(String sourceInstanceName) {
+			this.sourceInstanceName = sourceInstanceName;
+		}
+
+		public String getCronStr() {
+			return this.cronStr;
+		}
+
+		public void setCronStr(String cronStr) {
+			this.cronStr = cronStr;
 		}
 
 		public List<String> getTableMapping() {
@@ -180,20 +194,12 @@ public class CreateDataArchiveOrderRequest extends RpcAcsRequest<CreateDataArchi
 			this.orderAfter = orderAfter;
 		}
 
-		public Long getSourceDatabaseId() {
-			return this.sourceDatabaseId;
+		public String getSourceCatalogName() {
+			return this.sourceCatalogName;
 		}
 
-		public void setSourceDatabaseId(Long sourceDatabaseId) {
-			this.sourceDatabaseId = sourceDatabaseId;
-		}
-
-		public String getDbSchema() {
-			return this.dbSchema;
-		}
-
-		public void setDbSchema(String dbSchema) {
-			this.dbSchema = dbSchema;
+		public void setSourceCatalogName(String sourceCatalogName) {
+			this.sourceCatalogName = sourceCatalogName;
 		}
 
 		public String getRunMethod() {
@@ -204,12 +210,28 @@ public class CreateDataArchiveOrderRequest extends RpcAcsRequest<CreateDataArchi
 			this.runMethod = runMethod;
 		}
 
+		public String getTargetInstanceHost() {
+			return this.targetInstanceHost;
+		}
+
+		public void setTargetInstanceHost(String targetInstanceHost) {
+			this.targetInstanceHost = targetInstanceHost;
+		}
+
 		public Boolean getLogic() {
 			return this.logic;
 		}
 
 		public void setLogic(Boolean logic) {
 			this.logic = logic;
+		}
+
+		public String getSourceSchemaName() {
+			return this.sourceSchemaName;
+		}
+
+		public void setSourceSchemaName(String sourceSchemaName) {
+			this.sourceSchemaName = sourceSchemaName;
 		}
 
 		public String getArchiveMethod() {
@@ -226,6 +248,31 @@ public class CreateDataArchiveOrderRequest extends RpcAcsRequest<CreateDataArchi
 
 		public void setTableIncludes(List<TableIncludesItem> tableIncludes) {
 			this.tableIncludes = tableIncludes;
+		}
+
+		public static class VariablesItem {
+
+			@SerializedName("Name")
+			private String name;
+
+			@SerializedName("Pattern")
+			private String pattern;
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getPattern() {
+				return this.pattern;
+			}
+
+			public void setPattern(String pattern) {
+				this.pattern = pattern;
+			}
 		}
 
 		public static class TableIncludesItem {
