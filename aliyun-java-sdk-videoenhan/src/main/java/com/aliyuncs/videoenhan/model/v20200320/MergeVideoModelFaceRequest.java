@@ -30,6 +30,8 @@ public class MergeVideoModelFaceRequest extends RpcAcsRequest<MergeVideoModelFac
 
 	private List<MergeInfos> mergeInfoss;
 
+	private String watermarkType;
+
 	private Boolean enhance;
 
 	private String templateId;
@@ -68,6 +70,17 @@ public class MergeVideoModelFaceRequest extends RpcAcsRequest<MergeVideoModelFac
 				putBodyParameter("MergeInfos." + (depth1 + 1) + ".TemplateFaceID" , mergeInfoss.get(depth1).getTemplateFaceID());
 			}
 		}	
+	}
+
+	public String getWatermarkType() {
+		return this.watermarkType;
+	}
+
+	public void setWatermarkType(String watermarkType) {
+		this.watermarkType = watermarkType;
+		if(watermarkType != null){
+			putBodyParameter("WatermarkType", watermarkType);
+		}
 	}
 
 	public Boolean getEnhance() {

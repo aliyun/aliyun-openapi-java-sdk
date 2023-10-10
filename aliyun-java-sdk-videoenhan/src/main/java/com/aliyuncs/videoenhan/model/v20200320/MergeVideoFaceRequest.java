@@ -27,6 +27,8 @@ public class MergeVideoFaceRequest extends RpcAcsRequest<MergeVideoFaceResponse>
 
 	private String referenceURL;
 
+	private String watermarkType;
+
 	private Boolean enhance;
 
 	private String videoURL;
@@ -49,6 +51,17 @@ public class MergeVideoFaceRequest extends RpcAcsRequest<MergeVideoFaceResponse>
 		this.referenceURL = referenceURL;
 		if(referenceURL != null){
 			putBodyParameter("ReferenceURL", referenceURL);
+		}
+	}
+
+	public String getWatermarkType() {
+		return this.watermarkType;
+	}
+
+	public void setWatermarkType(String watermarkType) {
+		this.watermarkType = watermarkType;
+		if(watermarkType != null){
+			putBodyParameter("WatermarkType", watermarkType);
 		}
 	}
 
