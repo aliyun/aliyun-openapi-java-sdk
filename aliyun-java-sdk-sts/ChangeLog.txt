@@ -1,3 +1,6 @@
+2023-10-11 Version: 3.1.2
+- Publish AssumeRoleWithOIDC API by adding more detail in response.
+
 2023-03-02 Version: 3.1.1
 - Publish AssumeRole API With ExternalId Parameter.
 

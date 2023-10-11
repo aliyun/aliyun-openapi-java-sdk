@@ -31,6 +31,9 @@ public class AssumeRoleWithOIDCResponseUnmarshaller {
 		oIDCTokenInfo.setSubject(_ctx.stringValue("AssumeRoleWithOIDCResponse.OIDCTokenInfo.Subject"));
 		oIDCTokenInfo.setIssuer(_ctx.stringValue("AssumeRoleWithOIDCResponse.OIDCTokenInfo.Issuer"));
 		oIDCTokenInfo.setClientIds(_ctx.stringValue("AssumeRoleWithOIDCResponse.OIDCTokenInfo.ClientIds"));
+		oIDCTokenInfo.setExpirationTime(_ctx.stringValue("AssumeRoleWithOIDCResponse.OIDCTokenInfo.ExpirationTime"));
+		oIDCTokenInfo.setIssuanceTime(_ctx.stringValue("AssumeRoleWithOIDCResponse.OIDCTokenInfo.IssuanceTime"));
+		oIDCTokenInfo.setVerificationInfo(_ctx.stringValue("AssumeRoleWithOIDCResponse.OIDCTokenInfo.VerificationInfo"));
 		assumeRoleWithOIDCResponse.setOIDCTokenInfo(oIDCTokenInfo);
 
 		AssumedRoleUser assumedRoleUser = new AssumedRoleUser();
