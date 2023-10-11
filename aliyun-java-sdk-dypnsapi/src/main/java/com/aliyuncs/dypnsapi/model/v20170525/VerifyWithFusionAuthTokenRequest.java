@@ -22,18 +22,18 @@ import com.aliyuncs.dypnsapi.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetCertifyResultRequest extends RpcAcsRequest<GetCertifyResultResponse> {
+public class VerifyWithFusionAuthTokenRequest extends RpcAcsRequest<VerifyWithFusionAuthTokenResponse> {
 	   
 
 	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
-	private Long ownerId;
+	private String verifyToken;
 
-	private String token;
-	public GetCertifyResultRequest() {
-		super("Dypnsapi", "2017-05-25", "GetCertifyResult");
+	private Long ownerId;
+	public VerifyWithFusionAuthTokenRequest() {
+		super("Dypnsapi", "2017-05-25", "VerifyWithFusionAuthToken");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -63,6 +63,17 @@ public class GetCertifyResultRequest extends RpcAcsRequest<GetCertifyResultRespo
 		}
 	}
 
+	public String getVerifyToken() {
+		return this.verifyToken;
+	}
+
+	public void setVerifyToken(String verifyToken) {
+		this.verifyToken = verifyToken;
+		if(verifyToken != null){
+			putQueryParameter("VerifyToken", verifyToken);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -74,20 +85,9 @@ public class GetCertifyResultRequest extends RpcAcsRequest<GetCertifyResultRespo
 		}
 	}
 
-	public String getToken() {
-		return this.token;
-	}
-
-	public void setToken(String token) {
-		this.token = token;
-		if(token != null){
-			putQueryParameter("Token", token);
-		}
-	}
-
 	@Override
-	public Class<GetCertifyResultResponse> getResponseClass() {
-		return GetCertifyResultResponse.class;
+	public Class<VerifyWithFusionAuthTokenResponse> getResponseClass() {
+		return VerifyWithFusionAuthTokenResponse.class;
 	}
 
 }

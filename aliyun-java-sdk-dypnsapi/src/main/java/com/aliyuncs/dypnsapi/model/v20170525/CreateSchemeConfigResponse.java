@@ -15,34 +15,24 @@
 package com.aliyuncs.dypnsapi.model.v20170525;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.dypnsapi.transform.v20170525.CreateVerifySchemeResponseUnmarshaller;
+import com.aliyuncs.dypnsapi.transform.v20170525.CreateSchemeConfigResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateVerifySchemeResponse extends AcsResponse {
-
-	private String message;
+public class CreateSchemeConfigResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Long httpStatusCode;
+	private String message;
 
 	private String code;
 
 	private Boolean success;
 
-	private GateVerifySchemeDTO gateVerifySchemeDTO;
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
+	private Model model;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -52,12 +42,12 @@ public class CreateVerifySchemeResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Long getHttpStatusCode() {
-		return this.httpStatusCode;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setHttpStatusCode(Long httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public String getCode() {
@@ -76,15 +66,15 @@ public class CreateVerifySchemeResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public GateVerifySchemeDTO getGateVerifySchemeDTO() {
-		return this.gateVerifySchemeDTO;
+	public Model getModel() {
+		return this.model;
 	}
 
-	public void setGateVerifySchemeDTO(GateVerifySchemeDTO gateVerifySchemeDTO) {
-		this.gateVerifySchemeDTO = gateVerifySchemeDTO;
+	public void setModel(Model model) {
+		this.model = model;
 	}
 
-	public static class GateVerifySchemeDTO {
+	public static class Model {
 
 		private String schemeCode;
 
@@ -98,8 +88,8 @@ public class CreateVerifySchemeResponse extends AcsResponse {
 	}
 
 	@Override
-	public CreateVerifySchemeResponse getInstance(UnmarshallerContext context) {
-		return	CreateVerifySchemeResponseUnmarshaller.unmarshall(this, context);
+	public CreateSchemeConfigResponse getInstance(UnmarshallerContext context) {
+		return	CreateSchemeConfigResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

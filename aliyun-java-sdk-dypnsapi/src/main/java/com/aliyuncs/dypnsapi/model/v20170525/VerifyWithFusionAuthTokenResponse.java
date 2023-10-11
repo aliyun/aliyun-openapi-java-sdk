@@ -15,30 +15,24 @@
 package com.aliyuncs.dypnsapi.model.v20170525;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.dypnsapi.transform.v20170525.VerifyMobileResponseUnmarshaller;
+import com.aliyuncs.dypnsapi.transform.v20170525.VerifyWithFusionAuthTokenResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class VerifyMobileResponse extends AcsResponse {
-
-	private String code;
+public class VerifyWithFusionAuthTokenResponse extends AcsResponse {
 
 	private String message;
 
 	private String requestId;
 
-	private GateVerifyResultDTO gateVerifyResultDTO;
+	private String code;
 
-	public String getCode() {
-		return this.code;
-	}
+	private Boolean success;
 
-	public void setCode(String code) {
-		this.code = code;
-	}
+	private Model model;
 
 	public String getMessage() {
 		return this.message;
@@ -56,19 +50,45 @@ public class VerifyMobileResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public GateVerifyResultDTO getGateVerifyResultDTO() {
-		return this.gateVerifyResultDTO;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setGateVerifyResultDTO(GateVerifyResultDTO gateVerifyResultDTO) {
-		this.gateVerifyResultDTO = gateVerifyResultDTO;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
-	public static class GateVerifyResultDTO {
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
+	public Model getModel() {
+		return this.model;
+	}
+
+	public void setModel(Model model) {
+		this.model = model;
+	}
+
+	public static class Model {
+
+		private String phoneNumber;
 
 		private String verifyResult;
 
-		private String verifyId;
+		private Long phoneScore;
+
+		public String getPhoneNumber() {
+			return this.phoneNumber;
+		}
+
+		public void setPhoneNumber(String phoneNumber) {
+			this.phoneNumber = phoneNumber;
+		}
 
 		public String getVerifyResult() {
 			return this.verifyResult;
@@ -78,17 +98,22 @@ public class VerifyMobileResponse extends AcsResponse {
 			this.verifyResult = verifyResult;
 		}
 
-		public String getVerifyId() {
-			return this.verifyId;
+		public Long getPhoneScore() {
+			return this.phoneScore;
 		}
 
-		public void setVerifyId(String verifyId) {
-			this.verifyId = verifyId;
+		public void setPhoneScore(Long phoneScore) {
+			this.phoneScore = phoneScore;
 		}
 	}
 
 	@Override
-	public VerifyMobileResponse getInstance(UnmarshallerContext context) {
-		return	VerifyMobileResponseUnmarshaller.unmarshall(this, context);
+	public VerifyWithFusionAuthTokenResponse getInstance(UnmarshallerContext context) {
+		return	VerifyWithFusionAuthTokenResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

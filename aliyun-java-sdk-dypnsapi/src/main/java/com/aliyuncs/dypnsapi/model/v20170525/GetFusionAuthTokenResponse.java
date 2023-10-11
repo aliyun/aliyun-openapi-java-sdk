@@ -15,30 +15,24 @@
 package com.aliyuncs.dypnsapi.model.v20170525;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.dypnsapi.transform.v20170525.GetAuthTokenResponseUnmarshaller;
+import com.aliyuncs.dypnsapi.transform.v20170525.GetFusionAuthTokenResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetAuthTokenResponse extends AcsResponse {
-
-	private String code;
+public class GetFusionAuthTokenResponse extends AcsResponse {
 
 	private String message;
 
 	private String requestId;
 
-	private TokenInfo tokenInfo;
+	private String model;
 
-	public String getCode() {
-		return this.code;
-	}
+	private String code;
 
-	public void setCode(String code) {
-		this.code = code;
-	}
+	private Boolean success;
 
 	public String getMessage() {
 		return this.message;
@@ -56,40 +50,33 @@ public class GetAuthTokenResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public TokenInfo getTokenInfo() {
-		return this.tokenInfo;
+	public String getModel() {
+		return this.model;
 	}
 
-	public void setTokenInfo(TokenInfo tokenInfo) {
-		this.tokenInfo = tokenInfo;
+	public void setModel(String model) {
+		this.model = model;
 	}
 
-	public static class TokenInfo {
+	public String getCode() {
+		return this.code;
+	}
 
-		private String accessToken;
+	public void setCode(String code) {
+		this.code = code;
+	}
 
-		private String jwtToken;
+	public Boolean getSuccess() {
+		return this.success;
+	}
 
-		public String getAccessToken() {
-			return this.accessToken;
-		}
-
-		public void setAccessToken(String accessToken) {
-			this.accessToken = accessToken;
-		}
-
-		public String getJwtToken() {
-			return this.jwtToken;
-		}
-
-		public void setJwtToken(String jwtToken) {
-			this.jwtToken = jwtToken;
-		}
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override
-	public GetAuthTokenResponse getInstance(UnmarshallerContext context) {
-		return	GetAuthTokenResponseUnmarshaller.unmarshall(this, context);
+	public GetFusionAuthTokenResponse getInstance(UnmarshallerContext context) {
+		return	GetFusionAuthTokenResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

@@ -15,14 +15,14 @@
 package com.aliyuncs.dypnsapi.model.v20170525;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.dypnsapi.transform.v20170525.GetAuthTokenResponseUnmarshaller;
+import com.aliyuncs.dypnsapi.transform.v20170525.GetPhoneWithTokenResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetAuthTokenResponse extends AcsResponse {
+public class GetPhoneWithTokenResponse extends AcsResponse {
 
 	private String code;
 
@@ -30,7 +30,7 @@ public class GetAuthTokenResponse extends AcsResponse {
 
 	private String requestId;
 
-	private TokenInfo tokenInfo;
+	private Data data;
 
 	public String getCode() {
 		return this.code;
@@ -56,40 +56,30 @@ public class GetAuthTokenResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public TokenInfo getTokenInfo() {
-		return this.tokenInfo;
+	public Data getData() {
+		return this.data;
 	}
 
-	public void setTokenInfo(TokenInfo tokenInfo) {
-		this.tokenInfo = tokenInfo;
+	public void setData(Data data) {
+		this.data = data;
 	}
 
-	public static class TokenInfo {
+	public static class Data {
 
-		private String accessToken;
+		private String mobile;
 
-		private String jwtToken;
-
-		public String getAccessToken() {
-			return this.accessToken;
+		public String getMobile() {
+			return this.mobile;
 		}
 
-		public void setAccessToken(String accessToken) {
-			this.accessToken = accessToken;
-		}
-
-		public String getJwtToken() {
-			return this.jwtToken;
-		}
-
-		public void setJwtToken(String jwtToken) {
-			this.jwtToken = jwtToken;
+		public void setMobile(String mobile) {
+			this.mobile = mobile;
 		}
 	}
 
 	@Override
-	public GetAuthTokenResponse getInstance(UnmarshallerContext context) {
-		return	GetAuthTokenResponseUnmarshaller.unmarshall(this, context);
+	public GetPhoneWithTokenResponse getInstance(UnmarshallerContext context) {
+		return	GetPhoneWithTokenResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

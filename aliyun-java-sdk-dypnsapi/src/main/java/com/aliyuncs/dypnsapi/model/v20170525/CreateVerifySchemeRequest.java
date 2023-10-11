@@ -27,21 +27,41 @@ public class CreateVerifySchemeRequest extends RpcAcsRequest<CreateVerifySchemeR
 
 	private Long resourceOwnerId;
 
+	private String origin;
+
 	private String bundleId;
 
+	private String authType;
+
 	private String appName;
+
+	private String ipWhiteList;
+
+	private String email;
 
 	private String packSign;
 
 	private String packName;
 
+	private Long cuApiCode;
+
+	private String sceneType;
+
 	private String resourceOwnerAccount;
+
+	private Long ctApiCode;
 
 	private String osType;
 
 	private Long ownerId;
 
+	private String url;
+
+	private Long cmApiCode;
+
 	private String schemeName;
+
+	private String smsSignName;
 	public CreateVerifySchemeRequest() {
 		super("Dypnsapi", "2017-05-25", "CreateVerifyScheme");
 		setMethod(MethodType.POST);
@@ -62,6 +82,17 @@ public class CreateVerifySchemeRequest extends RpcAcsRequest<CreateVerifySchemeR
 		}
 	}
 
+	public String getOrigin() {
+		return this.origin;
+	}
+
+	public void setOrigin(String origin) {
+		this.origin = origin;
+		if(origin != null){
+			putQueryParameter("Origin", origin);
+		}
+	}
+
 	public String getBundleId() {
 		return this.bundleId;
 	}
@@ -73,6 +104,17 @@ public class CreateVerifySchemeRequest extends RpcAcsRequest<CreateVerifySchemeR
 		}
 	}
 
+	public String getAuthType() {
+		return this.authType;
+	}
+
+	public void setAuthType(String authType) {
+		this.authType = authType;
+		if(authType != null){
+			putQueryParameter("AuthType", authType);
+		}
+	}
+
 	public String getAppName() {
 		return this.appName;
 	}
@@ -81,6 +123,28 @@ public class CreateVerifySchemeRequest extends RpcAcsRequest<CreateVerifySchemeR
 		this.appName = appName;
 		if(appName != null){
 			putQueryParameter("AppName", appName);
+		}
+	}
+
+	public String getIpWhiteList() {
+		return this.ipWhiteList;
+	}
+
+	public void setIpWhiteList(String ipWhiteList) {
+		this.ipWhiteList = ipWhiteList;
+		if(ipWhiteList != null){
+			putQueryParameter("IpWhiteList", ipWhiteList);
+		}
+	}
+
+	public String getEmail() {
+		return this.email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+		if(email != null){
+			putQueryParameter("Email", email);
 		}
 	}
 
@@ -106,6 +170,28 @@ public class CreateVerifySchemeRequest extends RpcAcsRequest<CreateVerifySchemeR
 		}
 	}
 
+	public Long getCuApiCode() {
+		return this.cuApiCode;
+	}
+
+	public void setCuApiCode(Long cuApiCode) {
+		this.cuApiCode = cuApiCode;
+		if(cuApiCode != null){
+			putQueryParameter("CuApiCode", cuApiCode.toString());
+		}
+	}
+
+	public String getSceneType() {
+		return this.sceneType;
+	}
+
+	public void setSceneType(String sceneType) {
+		this.sceneType = sceneType;
+		if(sceneType != null){
+			putQueryParameter("SceneType", sceneType);
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -114,6 +200,17 @@ public class CreateVerifySchemeRequest extends RpcAcsRequest<CreateVerifySchemeR
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public Long getCtApiCode() {
+		return this.ctApiCode;
+	}
+
+	public void setCtApiCode(Long ctApiCode) {
+		this.ctApiCode = ctApiCode;
+		if(ctApiCode != null){
+			putQueryParameter("CtApiCode", ctApiCode.toString());
 		}
 	}
 
@@ -139,6 +236,28 @@ public class CreateVerifySchemeRequest extends RpcAcsRequest<CreateVerifySchemeR
 		}
 	}
 
+	public String getUrl() {
+		return this.url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
+		if(url != null){
+			putQueryParameter("Url", url);
+		}
+	}
+
+	public Long getCmApiCode() {
+		return this.cmApiCode;
+	}
+
+	public void setCmApiCode(Long cmApiCode) {
+		this.cmApiCode = cmApiCode;
+		if(cmApiCode != null){
+			putQueryParameter("CmApiCode", cmApiCode.toString());
+		}
+	}
+
 	public String getSchemeName() {
 		return this.schemeName;
 	}
@@ -147,6 +266,17 @@ public class CreateVerifySchemeRequest extends RpcAcsRequest<CreateVerifySchemeR
 		this.schemeName = schemeName;
 		if(schemeName != null){
 			putQueryParameter("SchemeName", schemeName);
+		}
+	}
+
+	public String getSmsSignName() {
+		return this.smsSignName;
+	}
+
+	public void setSmsSignName(String smsSignName) {
+		this.smsSignName = smsSignName;
+		if(smsSignName != null){
+			putQueryParameter("SmsSignName", smsSignName);
 		}
 	}
 
