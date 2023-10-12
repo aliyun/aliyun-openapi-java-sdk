@@ -65,6 +65,7 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidNotificationBarPriority" , pushTasks.get(depth1).getAndroidNotificationBarPriority());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".ExpireTime" , pushTasks.get(depth1).getExpireTime());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidImageUrl" , pushTasks.get(depth1).getAndroidImageUrl());
+				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidHonorTargetUserType" , pushTasks.get(depth1).getAndroidHonorTargetUserType());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidNotificationVivoChannel" , pushTasks.get(depth1).getAndroidNotificationVivoChannel());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".iOSNotificationCategory" , pushTasks.get(depth1).getIOSNotificationCategory());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidNotificationXiaomiChannel" , pushTasks.get(depth1).getAndroidNotificationXiaomiChannel());
@@ -96,6 +97,7 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidHuaweiReceiptId" , pushTasks.get(depth1).getAndroidHuaweiReceiptId());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidNotificationHonorChannel" , pushTasks.get(depth1).getAndroidNotificationHonorChannel());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidXiaomiImageUrl" , pushTasks.get(depth1).getAndroidXiaomiImageUrl());
+				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidTargetUserType" , pushTasks.get(depth1).getAndroidTargetUserType());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidPopupBody" , pushTasks.get(depth1).getAndroidPopupBody());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidBigPictureUrl" , pushTasks.get(depth1).getAndroidBigPictureUrl());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".iOSSilentNotification" , pushTasks.get(depth1).getIOSSilentNotification());
@@ -165,6 +167,8 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 
 		private String androidImageUrl;
 
+		private Integer androidHonorTargetUserType;
+
 		private String androidNotificationVivoChannel;
 
 		private String iOSNotificationCategory;
@@ -226,6 +230,8 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 		private String androidNotificationHonorChannel;
 
 		private String androidXiaomiImageUrl;
+
+		private Integer androidTargetUserType;
 
 		private String androidPopupBody;
 
@@ -405,6 +411,14 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 
 		public void setAndroidImageUrl(String androidImageUrl) {
 			this.androidImageUrl = androidImageUrl;
+		}
+
+		public Integer getAndroidHonorTargetUserType() {
+			return this.androidHonorTargetUserType;
+		}
+
+		public void setAndroidHonorTargetUserType(Integer androidHonorTargetUserType) {
+			this.androidHonorTargetUserType = androidHonorTargetUserType;
 		}
 
 		public String getAndroidNotificationVivoChannel() {
@@ -653,6 +667,14 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 
 		public void setAndroidXiaomiImageUrl(String androidXiaomiImageUrl) {
 			this.androidXiaomiImageUrl = androidXiaomiImageUrl;
+		}
+
+		public Integer getAndroidTargetUserType() {
+			return this.androidTargetUserType;
+		}
+
+		public void setAndroidTargetUserType(Integer androidTargetUserType) {
+			this.androidTargetUserType = androidTargetUserType;
 		}
 
 		public String getAndroidPopupBody() {

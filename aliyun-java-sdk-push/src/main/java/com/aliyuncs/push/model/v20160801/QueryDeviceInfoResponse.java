@@ -66,6 +66,10 @@ public class QueryDeviceInfoResponse extends AcsResponse {
 
 		private String alias;
 
+		private String brand;
+
+		private String model;
+
 		public String getAccount() {
 			return this.account;
 		}
@@ -144,6 +148,22 @@ public class QueryDeviceInfoResponse extends AcsResponse {
 
 		public void setAlias(String alias) {
 			this.alias = alias;
+		}
+
+		public String getBrand() {
+			return this.brand;
+		}
+
+		public void setBrand(String brand) {
+			this.brand = brand;
+		}
+
+		public String getModel() {
+			return this.model;
+		}
+
+		public void setModel(String model) {
+			this.model = model;
 		}
 	}
 

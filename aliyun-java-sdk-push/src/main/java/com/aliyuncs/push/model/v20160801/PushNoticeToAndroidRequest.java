@@ -27,6 +27,8 @@ public class PushNoticeToAndroidRequest extends RpcAcsRequest<PushNoticeToAndroi
 
 	private String extParameters;
 
+	private Boolean storeOffline;
+
 	private String title;
 
 	private String body;
@@ -55,6 +57,17 @@ public class PushNoticeToAndroidRequest extends RpcAcsRequest<PushNoticeToAndroi
 		this.extParameters = extParameters;
 		if(extParameters != null){
 			putQueryParameter("ExtParameters", extParameters);
+		}
+	}
+
+	public Boolean getStoreOffline() {
+		return this.storeOffline;
+	}
+
+	public void setStoreOffline(Boolean storeOffline) {
+		this.storeOffline = storeOffline;
+		if(storeOffline != null){
+			putQueryParameter("StoreOffline", storeOffline.toString());
 		}
 	}
 

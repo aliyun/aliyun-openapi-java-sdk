@@ -65,6 +65,8 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 
 	private String androidImageUrl;
 
+	private Integer androidHonorTargetUserType;
+
 	private String androidNotificationVivoChannel;
 
 	private String iOSNotificationCategory;
@@ -130,6 +132,8 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 	private String androidNotificationHonorChannel;
 
 	private String androidXiaomiImageUrl;
+
+	private Integer androidTargetUserType;
 
 	private String smsTemplateName;
 
@@ -390,6 +394,17 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 		this.androidImageUrl = androidImageUrl;
 		if(androidImageUrl != null){
 			putQueryParameter("AndroidImageUrl", androidImageUrl);
+		}
+	}
+
+	public Integer getAndroidHonorTargetUserType() {
+		return this.androidHonorTargetUserType;
+	}
+
+	public void setAndroidHonorTargetUserType(Integer androidHonorTargetUserType) {
+		this.androidHonorTargetUserType = androidHonorTargetUserType;
+		if(androidHonorTargetUserType != null){
+			putQueryParameter("AndroidHonorTargetUserType", androidHonorTargetUserType.toString());
 		}
 	}
 
@@ -753,6 +768,17 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 		this.androidXiaomiImageUrl = androidXiaomiImageUrl;
 		if(androidXiaomiImageUrl != null){
 			putQueryParameter("AndroidXiaomiImageUrl", androidXiaomiImageUrl);
+		}
+	}
+
+	public Integer getAndroidTargetUserType() {
+		return this.androidTargetUserType;
+	}
+
+	public void setAndroidTargetUserType(Integer androidTargetUserType) {
+		this.androidTargetUserType = androidTargetUserType;
+		if(androidTargetUserType != null){
+			putQueryParameter("AndroidTargetUserType", androidTargetUserType.toString());
 		}
 	}
 

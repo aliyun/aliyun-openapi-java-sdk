@@ -36,6 +36,8 @@ public class QueryDeviceInfoResponseUnmarshaller {
 		deviceInfo.setTags(_ctx.stringValue("QueryDeviceInfoResponse.DeviceInfo.Tags"));
 		deviceInfo.setDeviceToken(_ctx.stringValue("QueryDeviceInfoResponse.DeviceInfo.DeviceToken"));
 		deviceInfo.setAlias(_ctx.stringValue("QueryDeviceInfoResponse.DeviceInfo.Alias"));
+		deviceInfo.setBrand(_ctx.stringValue("QueryDeviceInfoResponse.DeviceInfo.Brand"));
+		deviceInfo.setModel(_ctx.stringValue("QueryDeviceInfoResponse.DeviceInfo.Model"));
 		queryDeviceInfoResponse.setDeviceInfo(deviceInfo);
 	 
 	 	return queryDeviceInfoResponse;

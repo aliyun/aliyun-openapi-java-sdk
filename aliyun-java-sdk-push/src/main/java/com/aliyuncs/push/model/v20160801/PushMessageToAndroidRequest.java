@@ -25,6 +25,8 @@ import com.aliyuncs.push.Endpoint;
 public class PushMessageToAndroidRequest extends RpcAcsRequest<PushMessageToAndroidResponse> {
 	   
 
+	private Boolean storeOffline;
+
 	private String title;
 
 	private String body;
@@ -43,6 +45,17 @@ public class PushMessageToAndroidRequest extends RpcAcsRequest<PushMessageToAndr
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Boolean getStoreOffline() {
+		return this.storeOffline;
+	}
+
+	public void setStoreOffline(Boolean storeOffline) {
+		this.storeOffline = storeOffline;
+		if(storeOffline != null){
+			putQueryParameter("StoreOffline", storeOffline.toString());
+		}
 	}
 
 	public String getTitle() {
