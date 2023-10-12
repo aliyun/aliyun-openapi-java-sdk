@@ -99,6 +99,10 @@ public class GetOrderBaseInfoResponse extends AcsResponse {
 
 		private Long orderId;
 
+		private String attachmentKey;
+
+		private String originAttachmentName;
+
 		private List<String> relatedUserNickList;
 
 		private List<String> relatedUserList;
@@ -189,6 +193,22 @@ public class GetOrderBaseInfoResponse extends AcsResponse {
 
 		public void setOrderId(Long orderId) {
 			this.orderId = orderId;
+		}
+
+		public String getAttachmentKey() {
+			return this.attachmentKey;
+		}
+
+		public void setAttachmentKey(String attachmentKey) {
+			this.attachmentKey = attachmentKey;
+		}
+
+		public String getOriginAttachmentName() {
+			return this.originAttachmentName;
+		}
+
+		public void setOriginAttachmentName(String originAttachmentName) {
+			this.originAttachmentName = originAttachmentName;
 		}
 
 		public List<String> getRelatedUserNickList() {
