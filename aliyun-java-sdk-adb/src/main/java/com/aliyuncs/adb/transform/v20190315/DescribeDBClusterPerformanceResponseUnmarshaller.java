@@ -42,6 +42,7 @@ public class DescribeDBClusterPerformanceResponseUnmarshaller {
 			for (int j = 0; j < _ctx.lengthValue("DescribeDBClusterPerformanceResponse.Performances["+ i +"].Series.Length"); j++) {
 				SeriesItem seriesItem = new SeriesItem();
 				seriesItem.setName(_ctx.stringValue("DescribeDBClusterPerformanceResponse.Performances["+ i +"].Series["+ j +"].Name"));
+				seriesItem.setTags(_ctx.stringValue("DescribeDBClusterPerformanceResponse.Performances["+ i +"].Series["+ j +"].Tags"));
 
 				List<String> values = new ArrayList<String>();
 				for (int k = 0; k < _ctx.lengthValue("DescribeDBClusterPerformanceResponse.Performances["+ i +"].Series["+ j +"].Values.Length"); k++) {

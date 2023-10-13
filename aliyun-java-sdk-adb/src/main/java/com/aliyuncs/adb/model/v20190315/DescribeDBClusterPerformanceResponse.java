@@ -111,6 +111,8 @@ public class DescribeDBClusterPerformanceResponse extends AcsResponse {
 
 			private String name;
 
+			private String tags;
+
 			private List<String> values;
 
 			public String getName() {
@@ -119,6 +121,14 @@ public class DescribeDBClusterPerformanceResponse extends AcsResponse {
 
 			public void setName(String name) {
 				this.name = name;
+			}
+
+			public String getTags() {
+				return this.tags;
+			}
+
+			public void setTags(String tags) {
+				this.tags = tags;
 			}
 
 			public List<String> getValues() {
