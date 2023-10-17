@@ -24,6 +24,7 @@ public class CreateLaunchTemplateResponseUnmarshaller {
 		
 		createLaunchTemplateResponse.setRequestId(_ctx.stringValue("CreateLaunchTemplateResponse.RequestId"));
 		createLaunchTemplateResponse.setLaunchTemplateId(_ctx.stringValue("CreateLaunchTemplateResponse.LaunchTemplateId"));
+		createLaunchTemplateResponse.setLaunchTemplateVersionNumber(_ctx.longValue("CreateLaunchTemplateResponse.LaunchTemplateVersionNumber"));
 	 
 	 	return createLaunchTemplateResponse;
 	}

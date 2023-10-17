@@ -40,6 +40,8 @@ public class ModifySnapshotAttributeRequest extends RpcAcsRequest<ModifySnapshot
 	private Long ownerId;
 
 	private Boolean disableInstantAccess;
+
+	private Integer retentionDays;
 	public ModifySnapshotAttributeRequest() {
 		super("Ecs", "2014-05-26", "ModifySnapshotAttribute", "ecs");
 		setMethod(MethodType.POST);
@@ -134,6 +136,17 @@ public class ModifySnapshotAttributeRequest extends RpcAcsRequest<ModifySnapshot
 		this.disableInstantAccess = disableInstantAccess;
 		if(disableInstantAccess != null){
 			putQueryParameter("DisableInstantAccess", disableInstantAccess.toString());
+		}
+	}
+
+	public Integer getRetentionDays() {
+		return this.retentionDays;
+	}
+
+	public void setRetentionDays(Integer retentionDays) {
+		this.retentionDays = retentionDays;
+		if(retentionDays != null){
+			putQueryParameter("RetentionDays", retentionDays.toString());
 		}
 	}
 

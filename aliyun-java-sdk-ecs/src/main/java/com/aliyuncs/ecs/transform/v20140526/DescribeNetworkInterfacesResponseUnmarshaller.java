@@ -62,6 +62,7 @@ public class DescribeNetworkInterfacesResponseUnmarshaller {
 			networkInterfaceSet.setZoneId(_ctx.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].ZoneId"));
 			networkInterfaceSet.setPrivateIpAddress(_ctx.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].PrivateIpAddress"));
 			networkInterfaceSet.setQueueNumber(_ctx.integerValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].QueueNumber"));
+			networkInterfaceSet.setDeleteOnRelease(_ctx.booleanValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].DeleteOnRelease"));
 
 			List<String> securityGroupIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].SecurityGroupIds.Length"); j++) {

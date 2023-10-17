@@ -66,6 +66,8 @@ public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkIn
 
 	private String instanceType;
 
+	private Boolean deleteOnRelease;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -316,6 +318,17 @@ public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkIn
 		this.instanceType = instanceType;
 		if(instanceType != null){
 			putQueryParameter("InstanceType", instanceType);
+		}
+	}
+
+	public Boolean getDeleteOnRelease() {
+		return this.deleteOnRelease;
+	}
+
+	public void setDeleteOnRelease(Boolean deleteOnRelease) {
+		this.deleteOnRelease = deleteOnRelease;
+		if(deleteOnRelease != null){
+			putQueryParameter("DeleteOnRelease", deleteOnRelease.toString());
 		}
 	}
 

@@ -65,6 +65,8 @@ public class DescribeNetworkInterfaceAttributeResponse extends AcsResponse {
 
 	private Integer queueNumber;
 
+	private Boolean deleteOnRelease;
+
 	private List<PrivateIpSet> privateIpSets;
 
 	private List<Ipv6Set> ipv6Sets;
@@ -243,6 +245,14 @@ public class DescribeNetworkInterfaceAttributeResponse extends AcsResponse {
 
 	public void setQueueNumber(Integer queueNumber) {
 		this.queueNumber = queueNumber;
+	}
+
+	public Boolean getDeleteOnRelease() {
+		return this.deleteOnRelease;
+	}
+
+	public void setDeleteOnRelease(Boolean deleteOnRelease) {
+		this.deleteOnRelease = deleteOnRelease;
 	}
 
 	public List<PrivateIpSet> getPrivateIpSets() {

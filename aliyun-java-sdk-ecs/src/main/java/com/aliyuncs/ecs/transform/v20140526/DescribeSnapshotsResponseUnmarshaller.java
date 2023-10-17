@@ -40,6 +40,7 @@ public class DescribeSnapshotsResponseUnmarshaller {
 			snapshot.setCreationTime(_ctx.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].CreationTime"));
 			snapshot.setProgress(_ctx.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].Progress"));
 			snapshot.setInstantAccess(_ctx.booleanValue("DescribeSnapshotsResponse.Snapshots["+ i +"].InstantAccess"));
+			snapshot.setAvailable(_ctx.booleanValue("DescribeSnapshotsResponse.Snapshots["+ i +"].Available"));
 			snapshot.setRemainTime(_ctx.integerValue("DescribeSnapshotsResponse.Snapshots["+ i +"].RemainTime"));
 			snapshot.setSourceDiskSize(_ctx.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].SourceDiskSize"));
 			snapshot.setRetentionDays(_ctx.integerValue("DescribeSnapshotsResponse.Snapshots["+ i +"].RetentionDays"));

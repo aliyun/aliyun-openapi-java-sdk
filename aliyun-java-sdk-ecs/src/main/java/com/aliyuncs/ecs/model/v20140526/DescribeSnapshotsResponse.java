@@ -95,6 +95,8 @@ public class DescribeSnapshotsResponse extends AcsResponse {
 
 		private Boolean instantAccess;
 
+		private Boolean available;
+
 		private Integer remainTime;
 
 		private String sourceDiskSize;
@@ -169,6 +171,14 @@ public class DescribeSnapshotsResponse extends AcsResponse {
 
 		public void setInstantAccess(Boolean instantAccess) {
 			this.instantAccess = instantAccess;
+		}
+
+		public Boolean getAvailable() {
+			return this.available;
+		}
+
+		public void setAvailable(Boolean available) {
+			this.available = available;
 		}
 
 		public Integer getRemainTime() {

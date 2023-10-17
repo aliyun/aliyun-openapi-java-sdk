@@ -46,6 +46,8 @@ public class DescribeSendFileResultsRequest extends RpcAcsRequest<DescribeSendFi
 
 	private String instanceId;
 
+	private String invocationStatus;
+
 	private String name;
 	public DescribeSendFileResultsRequest() {
 		super("Ecs", "2014-05-26", "DescribeSendFileResults", "ecs");
@@ -166,6 +168,17 @@ public class DescribeSendFileResultsRequest extends RpcAcsRequest<DescribeSendFi
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getInvocationStatus() {
+		return this.invocationStatus;
+	}
+
+	public void setInvocationStatus(String invocationStatus) {
+		this.invocationStatus = invocationStatus;
+		if(invocationStatus != null){
+			putQueryParameter("InvocationStatus", invocationStatus);
 		}
 	}
 

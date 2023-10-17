@@ -36,6 +36,8 @@ public class ModifyNetworkInterfaceAttributeRequest extends RpcAcsRequest<Modify
 
 	private String networkInterfaceName;
 
+	private Boolean deleteOnRelease;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -106,6 +108,17 @@ public class ModifyNetworkInterfaceAttributeRequest extends RpcAcsRequest<Modify
 		this.networkInterfaceName = networkInterfaceName;
 		if(networkInterfaceName != null){
 			putQueryParameter("NetworkInterfaceName", networkInterfaceName);
+		}
+	}
+
+	public Boolean getDeleteOnRelease() {
+		return this.deleteOnRelease;
+	}
+
+	public void setDeleteOnRelease(Boolean deleteOnRelease) {
+		this.deleteOnRelease = deleteOnRelease;
+		if(deleteOnRelease != null){
+			putQueryParameter("DeleteOnRelease", deleteOnRelease.toString());
 		}
 	}
 

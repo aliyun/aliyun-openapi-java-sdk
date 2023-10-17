@@ -1046,6 +1046,8 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 					}
 				}
 				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".NetworkCardIndex" , networkInterfaces.get(depth1).getNetworkCardIndex());
+				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".DeleteOnRelease" , networkInterfaces.get(depth1).getDeleteOnRelease());
+				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".NetworkInterfaceId" , networkInterfaces.get(depth1).getNetworkInterfaceId());
 			}
 		}	
 	}
@@ -1371,6 +1373,10 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 		private Integer networkCardIndex;
 
+		private Boolean deleteOnRelease;
+
+		private String networkInterfaceId;
+
 		public String getVSwitchId() {
 			return this.vSwitchId;
 		}
@@ -1473,6 +1479,22 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 		public void setNetworkCardIndex(Integer networkCardIndex) {
 			this.networkCardIndex = networkCardIndex;
+		}
+
+		public Boolean getDeleteOnRelease() {
+			return this.deleteOnRelease;
+		}
+
+		public void setDeleteOnRelease(Boolean deleteOnRelease) {
+			this.deleteOnRelease = deleteOnRelease;
+		}
+
+		public String getNetworkInterfaceId() {
+			return this.networkInterfaceId;
+		}
+
+		public void setNetworkInterfaceId(String networkInterfaceId) {
+			this.networkInterfaceId = networkInterfaceId;
 		}
 	}
 

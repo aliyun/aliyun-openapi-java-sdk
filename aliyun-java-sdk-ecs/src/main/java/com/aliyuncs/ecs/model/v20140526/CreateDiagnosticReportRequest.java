@@ -25,13 +25,13 @@ import com.aliyuncs.ecs.Endpoint;
 public class CreateDiagnosticReportRequest extends RpcAcsRequest<CreateDiagnosticReportResponse> {
 	   
 
-	private String resourceId;
-
 	private String metricSetId;
 
-	private String endTime;
-
 	private String startTime;
+
+	private String resourceId;
+
+	private String endTime;
 	public CreateDiagnosticReportRequest() {
 		super("Ecs", "2014-05-26", "CreateDiagnosticReport", "ecs");
 		setMethod(MethodType.POST);
@@ -39,17 +39,6 @@ public class CreateDiagnosticReportRequest extends RpcAcsRequest<CreateDiagnosti
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getResourceId() {
-		return this.resourceId;
-	}
-
-	public void setResourceId(String resourceId) {
-		this.resourceId = resourceId;
-		if(resourceId != null){
-			putQueryParameter("ResourceId", resourceId);
-		}
 	}
 
 	public String getMetricSetId() {
@@ -63,17 +52,6 @@ public class CreateDiagnosticReportRequest extends RpcAcsRequest<CreateDiagnosti
 		}
 	}
 
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
-		}
-	}
-
 	public String getStartTime() {
 		return this.startTime;
 	}
@@ -82,6 +60,28 @@ public class CreateDiagnosticReportRequest extends RpcAcsRequest<CreateDiagnosti
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public String getResourceId() {
+		return this.resourceId;
+	}
+
+	public void setResourceId(String resourceId) {
+		this.resourceId = resourceId;
+		if(resourceId != null){
+			putQueryParameter("ResourceId", resourceId);
+		}
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
 		}
 	}
 
