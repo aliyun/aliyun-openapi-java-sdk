@@ -39,6 +39,7 @@ public class DescribeLiveLazyPullStreamConfigResponseUnmarshaller {
 			liveLazyPullConfig.setPullDomainName(_ctx.stringValue("DescribeLiveLazyPullStreamConfigResponse.LiveLazyPullConfigList["+ i +"].PullDomainName"));
 			liveLazyPullConfig.setDomainName(_ctx.stringValue("DescribeLiveLazyPullStreamConfigResponse.LiveLazyPullConfigList["+ i +"].DomainName"));
 			liveLazyPullConfig.setPullAuthType(_ctx.stringValue("DescribeLiveLazyPullStreamConfigResponse.LiveLazyPullConfigList["+ i +"].PullAuthType"));
+			liveLazyPullConfig.setTranscodeLazy(_ctx.stringValue("DescribeLiveLazyPullStreamConfigResponse.LiveLazyPullConfigList["+ i +"].TranscodeLazy"));
 
 			liveLazyPullConfigList.add(liveLazyPullConfig);
 		}

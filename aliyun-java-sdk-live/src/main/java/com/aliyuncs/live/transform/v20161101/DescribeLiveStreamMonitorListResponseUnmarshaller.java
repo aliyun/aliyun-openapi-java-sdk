@@ -36,16 +36,18 @@ public class DescribeLiveStreamMonitorListResponseUnmarshaller {
 		List<LiveStreamMonitorInfo> liveStreamMonitorList = new ArrayList<LiveStreamMonitorInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLiveStreamMonitorListResponse.LiveStreamMonitorList.Length"); i++) {
 			LiveStreamMonitorInfo liveStreamMonitorInfo = new LiveStreamMonitorInfo();
-			liveStreamMonitorInfo.setStatus(_ctx.integerValue("DescribeLiveStreamMonitorListResponse.LiveStreamMonitorList["+ i +"].Status"));
 			liveStreamMonitorInfo.setMonitorConfig(_ctx.stringValue("DescribeLiveStreamMonitorListResponse.LiveStreamMonitorList["+ i +"].MonitorConfig"));
-			liveStreamMonitorInfo.setStartTime(_ctx.stringValue("DescribeLiveStreamMonitorListResponse.LiveStreamMonitorList["+ i +"].StartTime"));
+			liveStreamMonitorInfo.setStatus(_ctx.integerValue("DescribeLiveStreamMonitorListResponse.LiveStreamMonitorList["+ i +"].Status"));
 			liveStreamMonitorInfo.setMonitorId(_ctx.stringValue("DescribeLiveStreamMonitorListResponse.LiveStreamMonitorList["+ i +"].MonitorId"));
 			liveStreamMonitorInfo.setDomain(_ctx.stringValue("DescribeLiveStreamMonitorListResponse.LiveStreamMonitorList["+ i +"].Domain"));
-			liveStreamMonitorInfo.setOutputTemplate(_ctx.stringValue("DescribeLiveStreamMonitorListResponse.LiveStreamMonitorList["+ i +"].OutputTemplate"));
-			liveStreamMonitorInfo.setRegion(_ctx.stringValue("DescribeLiveStreamMonitorListResponse.LiveStreamMonitorList["+ i +"].Region"));
+			liveStreamMonitorInfo.setCallbackUrl(_ctx.stringValue("DescribeLiveStreamMonitorListResponse.LiveStreamMonitorList["+ i +"].CallbackUrl"));
 			liveStreamMonitorInfo.setAudioFrom(_ctx.integerValue("DescribeLiveStreamMonitorListResponse.LiveStreamMonitorList["+ i +"].AudioFrom"));
+			liveStreamMonitorInfo.setDingTalkWebHookUrl(_ctx.stringValue("DescribeLiveStreamMonitorListResponse.LiveStreamMonitorList["+ i +"].DingTalkWebHookUrl"));
 			liveStreamMonitorInfo.setMonitorName(_ctx.stringValue("DescribeLiveStreamMonitorListResponse.LiveStreamMonitorList["+ i +"].MonitorName"));
 			liveStreamMonitorInfo.setStopTime(_ctx.stringValue("DescribeLiveStreamMonitorListResponse.LiveStreamMonitorList["+ i +"].StopTime"));
+			liveStreamMonitorInfo.setStartTime(_ctx.stringValue("DescribeLiveStreamMonitorListResponse.LiveStreamMonitorList["+ i +"].StartTime"));
+			liveStreamMonitorInfo.setOutputTemplate(_ctx.stringValue("DescribeLiveStreamMonitorListResponse.LiveStreamMonitorList["+ i +"].OutputTemplate"));
+			liveStreamMonitorInfo.setRegion(_ctx.stringValue("DescribeLiveStreamMonitorListResponse.LiveStreamMonitorList["+ i +"].Region"));
 
 			OutputUrls outputUrls = new OutputUrls();
 			outputUrls.setFlvUrl(_ctx.stringValue("DescribeLiveStreamMonitorListResponse.LiveStreamMonitorList["+ i +"].OutputUrls.FlvUrl"));

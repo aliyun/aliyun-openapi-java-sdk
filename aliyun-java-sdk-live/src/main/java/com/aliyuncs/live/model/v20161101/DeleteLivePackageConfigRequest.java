@@ -22,24 +22,18 @@ import com.aliyuncs.live.Endpoint;
  * @author auto create
  * @version 
  */
-public class SetLiveLazyPullStreamInfoConfigRequest extends RpcAcsRequest<SetLiveLazyPullStreamInfoConfigResponse> {
+public class DeleteLivePackageConfigRequest extends RpcAcsRequest<DeleteLivePackageConfigResponse> {
 	   
 
 	private String appName;
 
+	private String streamName;
+
 	private String domainName;
 
-	private String pullDomainName;
-
 	private Long ownerId;
-
-	private String pullAppName;
-
-	private String transcodeLazy;
-
-	private String pullProtocol;
-	public SetLiveLazyPullStreamInfoConfigRequest() {
-		super("live", "2016-11-01", "SetLiveLazyPullStreamInfoConfig", "live");
+	public DeleteLivePackageConfigRequest() {
+		super("live", "2016-11-01", "DeleteLivePackageConfig", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -58,6 +52,17 @@ public class SetLiveLazyPullStreamInfoConfigRequest extends RpcAcsRequest<SetLiv
 		}
 	}
 
+	public String getStreamName() {
+		return this.streamName;
+	}
+
+	public void setStreamName(String streamName) {
+		this.streamName = streamName;
+		if(streamName != null){
+			putQueryParameter("StreamName", streamName);
+		}
+	}
+
 	public String getDomainName() {
 		return this.domainName;
 	}
@@ -66,17 +71,6 @@ public class SetLiveLazyPullStreamInfoConfigRequest extends RpcAcsRequest<SetLiv
 		this.domainName = domainName;
 		if(domainName != null){
 			putQueryParameter("DomainName", domainName);
-		}
-	}
-
-	public String getPullDomainName() {
-		return this.pullDomainName;
-	}
-
-	public void setPullDomainName(String pullDomainName) {
-		this.pullDomainName = pullDomainName;
-		if(pullDomainName != null){
-			putQueryParameter("PullDomainName", pullDomainName);
 		}
 	}
 
@@ -91,42 +85,9 @@ public class SetLiveLazyPullStreamInfoConfigRequest extends RpcAcsRequest<SetLiv
 		}
 	}
 
-	public String getPullAppName() {
-		return this.pullAppName;
-	}
-
-	public void setPullAppName(String pullAppName) {
-		this.pullAppName = pullAppName;
-		if(pullAppName != null){
-			putQueryParameter("PullAppName", pullAppName);
-		}
-	}
-
-	public String getTranscodeLazy() {
-		return this.transcodeLazy;
-	}
-
-	public void setTranscodeLazy(String transcodeLazy) {
-		this.transcodeLazy = transcodeLazy;
-		if(transcodeLazy != null){
-			putQueryParameter("TranscodeLazy", transcodeLazy);
-		}
-	}
-
-	public String getPullProtocol() {
-		return this.pullProtocol;
-	}
-
-	public void setPullProtocol(String pullProtocol) {
-		this.pullProtocol = pullProtocol;
-		if(pullProtocol != null){
-			putQueryParameter("PullProtocol", pullProtocol);
-		}
-	}
-
 	@Override
-	public Class<SetLiveLazyPullStreamInfoConfigResponse> getResponseClass() {
-		return SetLiveLazyPullStreamInfoConfigResponse.class;
+	public Class<DeleteLivePackageConfigResponse> getResponseClass() {
+		return DeleteLivePackageConfigResponse.class;
 	}
 
 }

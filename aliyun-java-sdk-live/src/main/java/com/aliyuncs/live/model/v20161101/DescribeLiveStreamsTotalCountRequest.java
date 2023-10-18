@@ -22,24 +22,20 @@ import com.aliyuncs.live.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeLiveDomainStreamTranscodeDataRequest extends RpcAcsRequest<DescribeLiveDomainStreamTranscodeDataResponse> {
+public class DescribeLiveStreamsTotalCountRequest extends RpcAcsRequest<DescribeLiveStreamsTotalCountResponse> {
 	   
 
-	private String precision;
+	private String typ;
 
 	private String startTime;
-
-	private String split;
 
 	private String domainName;
 
 	private String endTime;
 
 	private Long ownerId;
-
-	private String interval;
-	public DescribeLiveDomainStreamTranscodeDataRequest() {
-		super("live", "2016-11-01", "DescribeLiveDomainStreamTranscodeData", "live");
+	public DescribeLiveStreamsTotalCountRequest() {
+		super("live", "2016-11-01", "DescribeLiveStreamsTotalCount", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -47,14 +43,14 @@ public class DescribeLiveDomainStreamTranscodeDataRequest extends RpcAcsRequest<
 		} catch (Exception e) {}
 	}
 
-	public String getPrecision() {
-		return this.precision;
+	public String getTyp() {
+		return this.typ;
 	}
 
-	public void setPrecision(String precision) {
-		this.precision = precision;
-		if(precision != null){
-			putQueryParameter("Precision", precision);
+	public void setTyp(String typ) {
+		this.typ = typ;
+		if(typ != null){
+			putQueryParameter("Typ", typ);
 		}
 	}
 
@@ -66,17 +62,6 @@ public class DescribeLiveDomainStreamTranscodeDataRequest extends RpcAcsRequest<
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime);
-		}
-	}
-
-	public String getSplit() {
-		return this.split;
-	}
-
-	public void setSplit(String split) {
-		this.split = split;
-		if(split != null){
-			putQueryParameter("Split", split);
 		}
 	}
 
@@ -113,20 +98,9 @@ public class DescribeLiveDomainStreamTranscodeDataRequest extends RpcAcsRequest<
 		}
 	}
 
-	public String getInterval() {
-		return this.interval;
-	}
-
-	public void setInterval(String interval) {
-		this.interval = interval;
-		if(interval != null){
-			putQueryParameter("Interval", interval);
-		}
-	}
-
 	@Override
-	public Class<DescribeLiveDomainStreamTranscodeDataResponse> getResponseClass() {
-		return DescribeLiveDomainStreamTranscodeDataResponse.class;
+	public Class<DescribeLiveStreamsTotalCountResponse> getResponseClass() {
+		return DescribeLiveStreamsTotalCountResponse.class;
 	}
 
 }

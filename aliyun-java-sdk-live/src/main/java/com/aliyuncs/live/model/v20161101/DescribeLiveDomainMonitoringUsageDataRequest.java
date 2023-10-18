@@ -22,14 +22,12 @@ import com.aliyuncs.live.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeLiveDomainStreamTranscodeDataRequest extends RpcAcsRequest<DescribeLiveDomainStreamTranscodeDataResponse> {
+public class DescribeLiveDomainMonitoringUsageDataRequest extends RpcAcsRequest<DescribeLiveDomainMonitoringUsageDataResponse> {
 	   
-
-	private String precision;
 
 	private String startTime;
 
-	private String split;
+	private String splitBy;
 
 	private String domainName;
 
@@ -37,25 +35,18 @@ public class DescribeLiveDomainStreamTranscodeDataRequest extends RpcAcsRequest<
 
 	private Long ownerId;
 
+	private String instanceId;
+
 	private String interval;
-	public DescribeLiveDomainStreamTranscodeDataRequest() {
-		super("live", "2016-11-01", "DescribeLiveDomainStreamTranscodeData", "live");
+
+	private String region;
+	public DescribeLiveDomainMonitoringUsageDataRequest() {
+		super("live", "2016-11-01", "DescribeLiveDomainMonitoringUsageData", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getPrecision() {
-		return this.precision;
-	}
-
-	public void setPrecision(String precision) {
-		this.precision = precision;
-		if(precision != null){
-			putQueryParameter("Precision", precision);
-		}
 	}
 
 	public String getStartTime() {
@@ -69,14 +60,14 @@ public class DescribeLiveDomainStreamTranscodeDataRequest extends RpcAcsRequest<
 		}
 	}
 
-	public String getSplit() {
-		return this.split;
+	public String getSplitBy() {
+		return this.splitBy;
 	}
 
-	public void setSplit(String split) {
-		this.split = split;
-		if(split != null){
-			putQueryParameter("Split", split);
+	public void setSplitBy(String splitBy) {
+		this.splitBy = splitBy;
+		if(splitBy != null){
+			putQueryParameter("SplitBy", splitBy);
 		}
 	}
 
@@ -113,6 +104,17 @@ public class DescribeLiveDomainStreamTranscodeDataRequest extends RpcAcsRequest<
 		}
 	}
 
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
 	public String getInterval() {
 		return this.interval;
 	}
@@ -124,9 +126,20 @@ public class DescribeLiveDomainStreamTranscodeDataRequest extends RpcAcsRequest<
 		}
 	}
 
+	public String getRegion() {
+		return this.region;
+	}
+
+	public void setRegion(String region) {
+		this.region = region;
+		if(region != null){
+			putQueryParameter("Region", region);
+		}
+	}
+
 	@Override
-	public Class<DescribeLiveDomainStreamTranscodeDataResponse> getResponseClass() {
-		return DescribeLiveDomainStreamTranscodeDataResponse.class;
+	public Class<DescribeLiveDomainMonitoringUsageDataResponse> getResponseClass() {
+		return DescribeLiveDomainMonitoringUsageDataResponse.class;
 	}
 
 }

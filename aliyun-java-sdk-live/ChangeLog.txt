@@ -1,3 +1,6 @@
+2023-10-18 Version: 3.9.39
+- Update to support new apis.
+
 2023-08-08 Version: 3.9.38
 - Generated 2016-11-01 for `live`.
 

@@ -63,6 +63,8 @@ public class DescribeLiveLazyPullStreamConfigResponse extends AcsResponse {
 
 		private String pullAuthType;
 
+		private String transcodeLazy;
+
 		public String getAppName() {
 			return this.appName;
 		}
@@ -125,6 +127,14 @@ public class DescribeLiveLazyPullStreamConfigResponse extends AcsResponse {
 
 		public void setPullAuthType(String pullAuthType) {
 			this.pullAuthType = pullAuthType;
+		}
+
+		public String getTranscodeLazy() {
+			return this.transcodeLazy;
+		}
+
+		public void setTranscodeLazy(String transcodeLazy) {
+			this.transcodeLazy = transcodeLazy;
 		}
 	}
 

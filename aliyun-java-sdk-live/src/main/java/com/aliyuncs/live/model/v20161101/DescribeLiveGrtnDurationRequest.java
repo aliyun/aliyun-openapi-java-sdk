@@ -22,40 +22,27 @@ import com.aliyuncs.live.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeLiveDomainStreamTranscodeDataRequest extends RpcAcsRequest<DescribeLiveDomainStreamTranscodeDataResponse> {
+public class DescribeLiveGrtnDurationRequest extends RpcAcsRequest<DescribeLiveGrtnDurationResponse> {
 	   
-
-	private String precision;
 
 	private String startTime;
 
-	private String split;
-
-	private String domainName;
+	private String area;
 
 	private String endTime;
 
 	private Long ownerId;
 
+	private String appId;
+
 	private String interval;
-	public DescribeLiveDomainStreamTranscodeDataRequest() {
-		super("live", "2016-11-01", "DescribeLiveDomainStreamTranscodeData", "live");
+	public DescribeLiveGrtnDurationRequest() {
+		super("live", "2016-11-01", "DescribeLiveGrtnDuration", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getPrecision() {
-		return this.precision;
-	}
-
-	public void setPrecision(String precision) {
-		this.precision = precision;
-		if(precision != null){
-			putQueryParameter("Precision", precision);
-		}
 	}
 
 	public String getStartTime() {
@@ -69,25 +56,14 @@ public class DescribeLiveDomainStreamTranscodeDataRequest extends RpcAcsRequest<
 		}
 	}
 
-	public String getSplit() {
-		return this.split;
+	public String getArea() {
+		return this.area;
 	}
 
-	public void setSplit(String split) {
-		this.split = split;
-		if(split != null){
-			putQueryParameter("Split", split);
-		}
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
+	public void setArea(String area) {
+		this.area = area;
+		if(area != null){
+			putQueryParameter("Area", area);
 		}
 	}
 
@@ -113,6 +89,17 @@ public class DescribeLiveDomainStreamTranscodeDataRequest extends RpcAcsRequest<
 		}
 	}
 
+	public String getAppId() {
+		return this.appId;
+	}
+
+	public void setAppId(String appId) {
+		this.appId = appId;
+		if(appId != null){
+			putQueryParameter("AppId", appId);
+		}
+	}
+
 	public String getInterval() {
 		return this.interval;
 	}
@@ -125,8 +112,8 @@ public class DescribeLiveDomainStreamTranscodeDataRequest extends RpcAcsRequest<
 	}
 
 	@Override
-	public Class<DescribeLiveDomainStreamTranscodeDataResponse> getResponseClass() {
-		return DescribeLiveDomainStreamTranscodeDataResponse.class;
+	public Class<DescribeLiveGrtnDurationResponse> getResponseClass() {
+		return DescribeLiveGrtnDurationResponse.class;
 	}
 
 }

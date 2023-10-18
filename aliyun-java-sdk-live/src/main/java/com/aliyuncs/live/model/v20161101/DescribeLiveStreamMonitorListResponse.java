@@ -57,37 +57,33 @@ public class DescribeLiveStreamMonitorListResponse extends AcsResponse {
 
 	public static class LiveStreamMonitorInfo {
 
-		private Integer status;
-
 		private String monitorConfig;
 
-		private String startTime;
+		private Integer status;
 
 		private String monitorId;
 
 		private String domain;
 
-		private String outputTemplate;
-
-		private String region;
+		private String callbackUrl;
 
 		private Integer audioFrom;
+
+		private String dingTalkWebHookUrl;
 
 		private String monitorName;
 
 		private String stopTime;
 
+		private String startTime;
+
+		private String outputTemplate;
+
+		private String region;
+
 		private List<InputConfig> inputList;
 
 		private OutputUrls outputUrls;
-
-		public Integer getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(Integer status) {
-			this.status = status;
-		}
 
 		public String getMonitorConfig() {
 			return this.monitorConfig;
@@ -97,12 +93,12 @@ public class DescribeLiveStreamMonitorListResponse extends AcsResponse {
 			this.monitorConfig = monitorConfig;
 		}
 
-		public String getStartTime() {
-			return this.startTime;
+		public Integer getStatus() {
+			return this.status;
 		}
 
-		public void setStartTime(String startTime) {
-			this.startTime = startTime;
+		public void setStatus(Integer status) {
+			this.status = status;
 		}
 
 		public String getMonitorId() {
@@ -121,20 +117,12 @@ public class DescribeLiveStreamMonitorListResponse extends AcsResponse {
 			this.domain = domain;
 		}
 
-		public String getOutputTemplate() {
-			return this.outputTemplate;
+		public String getCallbackUrl() {
+			return this.callbackUrl;
 		}
 
-		public void setOutputTemplate(String outputTemplate) {
-			this.outputTemplate = outputTemplate;
-		}
-
-		public String getRegion() {
-			return this.region;
-		}
-
-		public void setRegion(String region) {
-			this.region = region;
+		public void setCallbackUrl(String callbackUrl) {
+			this.callbackUrl = callbackUrl;
 		}
 
 		public Integer getAudioFrom() {
@@ -143,6 +131,14 @@ public class DescribeLiveStreamMonitorListResponse extends AcsResponse {
 
 		public void setAudioFrom(Integer audioFrom) {
 			this.audioFrom = audioFrom;
+		}
+
+		public String getDingTalkWebHookUrl() {
+			return this.dingTalkWebHookUrl;
+		}
+
+		public void setDingTalkWebHookUrl(String dingTalkWebHookUrl) {
+			this.dingTalkWebHookUrl = dingTalkWebHookUrl;
 		}
 
 		public String getMonitorName() {
@@ -159,6 +155,30 @@ public class DescribeLiveStreamMonitorListResponse extends AcsResponse {
 
 		public void setStopTime(String stopTime) {
 			this.stopTime = stopTime;
+		}
+
+		public String getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
+		}
+
+		public String getOutputTemplate() {
+			return this.outputTemplate;
+		}
+
+		public void setOutputTemplate(String outputTemplate) {
+			this.outputTemplate = outputTemplate;
+		}
+
+		public String getRegion() {
+			return this.region;
+		}
+
+		public void setRegion(String region) {
+			this.region = region;
 		}
 
 		public List<InputConfig> getInputList() {

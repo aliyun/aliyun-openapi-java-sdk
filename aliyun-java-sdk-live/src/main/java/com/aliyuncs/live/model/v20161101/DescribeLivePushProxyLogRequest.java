@@ -22,40 +22,27 @@ import com.aliyuncs.live.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeLiveDomainStreamTranscodeDataRequest extends RpcAcsRequest<DescribeLiveDomainStreamTranscodeDataResponse> {
+public class DescribeLivePushProxyLogRequest extends RpcAcsRequest<DescribeLivePushProxyLogResponse> {
 	   
-
-	private String precision;
 
 	private String startTime;
 
-	private String split;
+	private Long pageNumber;
+
+	private Long pageSize;
 
 	private String domainName;
 
 	private String endTime;
 
 	private Long ownerId;
-
-	private String interval;
-	public DescribeLiveDomainStreamTranscodeDataRequest() {
-		super("live", "2016-11-01", "DescribeLiveDomainStreamTranscodeData", "live");
+	public DescribeLivePushProxyLogRequest() {
+		super("live", "2016-11-01", "DescribeLivePushProxyLog", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getPrecision() {
-		return this.precision;
-	}
-
-	public void setPrecision(String precision) {
-		this.precision = precision;
-		if(precision != null){
-			putQueryParameter("Precision", precision);
-		}
 	}
 
 	public String getStartTime() {
@@ -69,14 +56,25 @@ public class DescribeLiveDomainStreamTranscodeDataRequest extends RpcAcsRequest<
 		}
 	}
 
-	public String getSplit() {
-		return this.split;
+	public Long getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setSplit(String split) {
-		this.split = split;
-		if(split != null){
-			putQueryParameter("Split", split);
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Long getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Long pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -113,20 +111,9 @@ public class DescribeLiveDomainStreamTranscodeDataRequest extends RpcAcsRequest<
 		}
 	}
 
-	public String getInterval() {
-		return this.interval;
-	}
-
-	public void setInterval(String interval) {
-		this.interval = interval;
-		if(interval != null){
-			putQueryParameter("Interval", interval);
-		}
-	}
-
 	@Override
-	public Class<DescribeLiveDomainStreamTranscodeDataResponse> getResponseClass() {
-		return DescribeLiveDomainStreamTranscodeDataResponse.class;
+	public Class<DescribeLivePushProxyLogResponse> getResponseClass() {
+		return DescribeLivePushProxyLogResponse.class;
 	}
 
 }

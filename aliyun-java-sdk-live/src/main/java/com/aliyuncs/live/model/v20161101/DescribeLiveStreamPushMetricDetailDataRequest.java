@@ -22,29 +22,51 @@ import com.aliyuncs.live.Endpoint;
  * @author auto create
  * @version 
  */
-public class SetLiveLazyPullStreamInfoConfigRequest extends RpcAcsRequest<SetLiveLazyPullStreamInfoConfigResponse> {
+public class DescribeLiveStreamPushMetricDetailDataRequest extends RpcAcsRequest<DescribeLiveStreamPushMetricDetailDataResponse> {
 	   
+
+	private String nextPageToken;
+
+	private String startTime;
 
 	private String appName;
 
+	private String streamName;
+
 	private String domainName;
 
-	private String pullDomainName;
+	private String endTime;
 
 	private Long ownerId;
-
-	private String pullAppName;
-
-	private String transcodeLazy;
-
-	private String pullProtocol;
-	public SetLiveLazyPullStreamInfoConfigRequest() {
-		super("live", "2016-11-01", "SetLiveLazyPullStreamInfoConfig", "live");
+	public DescribeLiveStreamPushMetricDetailDataRequest() {
+		super("live", "2016-11-01", "DescribeLiveStreamPushMetricDetailData", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getNextPageToken() {
+		return this.nextPageToken;
+	}
+
+	public void setNextPageToken(String nextPageToken) {
+		this.nextPageToken = nextPageToken;
+		if(nextPageToken != null){
+			putQueryParameter("NextPageToken", nextPageToken);
+		}
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
 	}
 
 	public String getAppName() {
@@ -55,6 +77,17 @@ public class SetLiveLazyPullStreamInfoConfigRequest extends RpcAcsRequest<SetLiv
 		this.appName = appName;
 		if(appName != null){
 			putQueryParameter("AppName", appName);
+		}
+	}
+
+	public String getStreamName() {
+		return this.streamName;
+	}
+
+	public void setStreamName(String streamName) {
+		this.streamName = streamName;
+		if(streamName != null){
+			putQueryParameter("StreamName", streamName);
 		}
 	}
 
@@ -69,14 +102,14 @@ public class SetLiveLazyPullStreamInfoConfigRequest extends RpcAcsRequest<SetLiv
 		}
 	}
 
-	public String getPullDomainName() {
-		return this.pullDomainName;
+	public String getEndTime() {
+		return this.endTime;
 	}
 
-	public void setPullDomainName(String pullDomainName) {
-		this.pullDomainName = pullDomainName;
-		if(pullDomainName != null){
-			putQueryParameter("PullDomainName", pullDomainName);
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
 		}
 	}
 
@@ -91,42 +124,9 @@ public class SetLiveLazyPullStreamInfoConfigRequest extends RpcAcsRequest<SetLiv
 		}
 	}
 
-	public String getPullAppName() {
-		return this.pullAppName;
-	}
-
-	public void setPullAppName(String pullAppName) {
-		this.pullAppName = pullAppName;
-		if(pullAppName != null){
-			putQueryParameter("PullAppName", pullAppName);
-		}
-	}
-
-	public String getTranscodeLazy() {
-		return this.transcodeLazy;
-	}
-
-	public void setTranscodeLazy(String transcodeLazy) {
-		this.transcodeLazy = transcodeLazy;
-		if(transcodeLazy != null){
-			putQueryParameter("TranscodeLazy", transcodeLazy);
-		}
-	}
-
-	public String getPullProtocol() {
-		return this.pullProtocol;
-	}
-
-	public void setPullProtocol(String pullProtocol) {
-		this.pullProtocol = pullProtocol;
-		if(pullProtocol != null){
-			putQueryParameter("PullProtocol", pullProtocol);
-		}
-	}
-
 	@Override
-	public Class<SetLiveLazyPullStreamInfoConfigResponse> getResponseClass() {
-		return SetLiveLazyPullStreamInfoConfigResponse.class;
+	public Class<DescribeLiveStreamPushMetricDetailDataResponse> getResponseClass() {
+		return DescribeLiveStreamPushMetricDetailDataResponse.class;
 	}
 
 }
