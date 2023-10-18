@@ -25,6 +25,8 @@ import com.aliyuncs.vod.Endpoint;
 public class UploadMediaByURLRequest extends RpcAcsRequest<UploadMediaByURLResponse> {
 	   
 
+	private String sessionId;
+
 	private String storageLocation;
 
 	private String userData;
@@ -45,6 +47,17 @@ public class UploadMediaByURLRequest extends RpcAcsRequest<UploadMediaByURLRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getSessionId() {
+		return this.sessionId;
+	}
+
+	public void setSessionId(String sessionId) {
+		this.sessionId = sessionId;
+		if(sessionId != null){
+			putQueryParameter("SessionId", sessionId);
+		}
 	}
 
 	public String getStorageLocation() {

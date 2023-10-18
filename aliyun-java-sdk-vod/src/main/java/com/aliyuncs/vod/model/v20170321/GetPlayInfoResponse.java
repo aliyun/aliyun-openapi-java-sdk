@@ -107,6 +107,10 @@ public class GetPlayInfoResponse extends AcsResponse {
 
 		private Integer bitDepth;
 
+		private Integer jobType;
+
+		private String jobExt;
+
 		public String getCreationTime() {
 			return this.creationTime;
 		}
@@ -305,6 +309,22 @@ public class GetPlayInfoResponse extends AcsResponse {
 
 		public void setBitDepth(Integer bitDepth) {
 			this.bitDepth = bitDepth;
+		}
+
+		public Integer getJobType() {
+			return this.jobType;
+		}
+
+		public void setJobType(Integer jobType) {
+			this.jobType = jobType;
+		}
+
+		public String getJobExt() {
+			return this.jobExt;
+		}
+
+		public void setJobExt(String jobExt) {
+			this.jobExt = jobExt;
 		}
 	}
 

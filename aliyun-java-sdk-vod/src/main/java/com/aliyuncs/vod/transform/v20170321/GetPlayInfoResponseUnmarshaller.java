@@ -80,6 +80,8 @@ public class GetPlayInfoResponseUnmarshaller {
 			playInfo.setFormat(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Format"));
 			playInfo.setHDRType(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].HDRType"));
 			playInfo.setBitDepth(_ctx.integerValue("GetPlayInfoResponse.PlayInfoList["+ i +"].BitDepth"));
+			playInfo.setJobType(_ctx.integerValue("GetPlayInfoResponse.PlayInfoList["+ i +"].JobType"));
+			playInfo.setJobExt(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].JobExt"));
 
 			playInfoList.add(playInfo);
 		}

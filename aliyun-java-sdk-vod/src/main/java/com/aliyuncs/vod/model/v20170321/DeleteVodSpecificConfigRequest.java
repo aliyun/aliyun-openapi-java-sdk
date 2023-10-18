@@ -29,6 +29,8 @@ public class DeleteVodSpecificConfigRequest extends RpcAcsRequest<DeleteVodSpeci
 
 	private Long ownerId;
 
+	private String env;
+
 	private String securityToken;
 
 	private String configId;
@@ -60,6 +62,17 @@ public class DeleteVodSpecificConfigRequest extends RpcAcsRequest<DeleteVodSpeci
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getEnv() {
+		return this.env;
+	}
+
+	public void setEnv(String env) {
+		this.env = env;
+		if(env != null){
+			putQueryParameter("Env", env);
 		}
 	}
 

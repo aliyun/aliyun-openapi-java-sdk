@@ -175,6 +175,10 @@ public class GetTranscodeTemplateGroupResponse extends AcsResponse {
 
 			private String tailSlateList;
 
+			private String traceMark;
+
+			private String copyrightMark;
+
 			private List<String> watermarkIds;
 
 			public String getType() {
@@ -319,6 +323,22 @@ public class GetTranscodeTemplateGroupResponse extends AcsResponse {
 
 			public void setTailSlateList(String tailSlateList) {
 				this.tailSlateList = tailSlateList;
+			}
+
+			public String getTraceMark() {
+				return this.traceMark;
+			}
+
+			public void setTraceMark(String traceMark) {
+				this.traceMark = traceMark;
+			}
+
+			public String getCopyrightMark() {
+				return this.copyrightMark;
+			}
+
+			public void setCopyrightMark(String copyrightMark) {
+				this.copyrightMark = copyrightMark;
 			}
 
 			public List<String> getWatermarkIds() {

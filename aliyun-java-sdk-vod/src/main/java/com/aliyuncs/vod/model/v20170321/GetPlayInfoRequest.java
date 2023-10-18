@@ -27,6 +27,10 @@ public class GetPlayInfoRequest extends RpcAcsRequest<GetPlayInfoResponse> {
 
 	private String formats;
 
+	private String digitalWatermarkType;
+
+	private String trace;
+
 	private String reAuthInfo;
 
 	private String playConfig;
@@ -61,6 +65,28 @@ public class GetPlayInfoRequest extends RpcAcsRequest<GetPlayInfoResponse> {
 		this.formats = formats;
 		if(formats != null){
 			putQueryParameter("Formats", formats);
+		}
+	}
+
+	public String getDigitalWatermarkType() {
+		return this.digitalWatermarkType;
+	}
+
+	public void setDigitalWatermarkType(String digitalWatermarkType) {
+		this.digitalWatermarkType = digitalWatermarkType;
+		if(digitalWatermarkType != null){
+			putQueryParameter("DigitalWatermarkType", digitalWatermarkType);
+		}
+	}
+
+	public String getTrace() {
+		return this.trace;
+	}
+
+	public void setTrace(String trace) {
+		this.trace = trace;
+		if(trace != null){
+			putQueryParameter("Trace", trace);
 		}
 	}
 
