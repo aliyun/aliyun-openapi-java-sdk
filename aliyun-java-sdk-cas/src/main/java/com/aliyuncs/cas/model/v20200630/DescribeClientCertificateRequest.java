@@ -27,7 +27,7 @@ public class DescribeClientCertificateRequest extends RpcAcsRequest<DescribeClie
 
 	private String identifier;
 	public DescribeClientCertificateRequest() {
-		super("cas", "2020-06-30", "DescribeClientCertificate");
+		super("cas", "2020-06-30", "DescribeClientCertificate", "cas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

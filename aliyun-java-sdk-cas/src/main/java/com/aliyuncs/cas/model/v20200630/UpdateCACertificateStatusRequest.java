@@ -29,7 +29,7 @@ public class UpdateCACertificateStatusRequest extends RpcAcsRequest<UpdateCACert
 
 	private String status;
 	public UpdateCACertificateStatusRequest() {
-		super("cas", "2020-06-30", "UpdateCACertificateStatus");
+		super("cas", "2020-06-30", "UpdateCACertificateStatus", "cas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

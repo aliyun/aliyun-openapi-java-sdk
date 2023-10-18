@@ -50,6 +50,9 @@ public class DescribeCACertificateResponseUnmarshaller {
 		certificate.setMd5(_ctx.stringValue("DescribeCACertificateResponse.Certificate.Md5"));
 		certificate.setCrlStatus(_ctx.stringValue("DescribeCACertificateResponse.Certificate.CrlStatus"));
 		certificate.setCrlUrl(_ctx.stringValue("DescribeCACertificateResponse.Certificate.CrlUrl"));
+		certificate.setCertTotalCount(_ctx.longValue("DescribeCACertificateResponse.Certificate.CertTotalCount"));
+		certificate.setCertRemainingCount(_ctx.longValue("DescribeCACertificateResponse.Certificate.CertRemainingCount"));
+		certificate.setCertIssuedCount(_ctx.longValue("DescribeCACertificateResponse.Certificate.CertIssuedCount"));
 		describeCACertificateResponse.setCertificate(certificate);
 	 
 	 	return describeCACertificateResponse;

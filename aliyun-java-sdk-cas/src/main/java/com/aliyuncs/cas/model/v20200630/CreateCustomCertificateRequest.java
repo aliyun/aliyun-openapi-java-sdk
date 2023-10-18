@@ -28,6 +28,8 @@ public class CreateCustomCertificateRequest extends RpcAcsRequest<CreateCustomCe
 
 	private String csr;
 
+	private Long enableCrl;
+
 	private Integer immediately;
 
 	private String parentIdentifier;
@@ -36,7 +38,7 @@ public class CreateCustomCertificateRequest extends RpcAcsRequest<CreateCustomCe
 
 	private ApiPassthrough apiPassthrough;
 	public CreateCustomCertificateRequest() {
-		super("cas", "2020-06-30", "CreateCustomCertificate");
+		super("cas", "2020-06-30", "CreateCustomCertificate", "cas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -52,6 +54,17 @@ public class CreateCustomCertificateRequest extends RpcAcsRequest<CreateCustomCe
 		this.csr = csr;
 		if(csr != null){
 			putQueryParameter("Csr", csr);
+		}
+	}
+
+	public Long getEnableCrl() {
+		return this.enableCrl;
+	}
+
+	public void setEnableCrl(Long enableCrl) {
+		this.enableCrl = enableCrl;
+		if(enableCrl != null){
+			putQueryParameter("EnableCrl", enableCrl.toString());
 		}
 	}
 
@@ -104,6 +117,15 @@ public class CreateCustomCertificateRequest extends RpcAcsRequest<CreateCustomCe
 						putQueryParameter("ApiPassthrough.Subject.Organization" , apiPassthrough.getSubject().getOrganization());
 						putQueryParameter("ApiPassthrough.Subject.OrganizationUnit" , apiPassthrough.getSubject().getOrganizationUnit());
 						putQueryParameter("ApiPassthrough.Subject.CommonName" , apiPassthrough.getSubject().getCommonName());
+						if (apiPassthrough.getSubject().getCustomAttributes() != null) {
+							for (int depth1 = 0; depth1 < apiPassthrough.getSubject().getCustomAttributes().size(); depth1++) {
+								if (apiPassthrough.getSubject().getCustomAttributes().get(depth1) != null) {
+									
+										putQueryParameter("ApiPassthrough.Subject.CustomAttributes." + (depth1 + 1) + ".ObjectIdentifier" , apiPassthrough.getSubject().getCustomAttributes().get(depth1).getObjectIdentifier());
+										putQueryParameter("ApiPassthrough.Subject.CustomAttributes." + (depth1 + 1) + ".Value" , apiPassthrough.getSubject().getCustomAttributes().get(depth1).getValue());
+								}
+							}
+						}
 				}
 				if (apiPassthrough.getExtensions() != null) {
 					
@@ -132,7 +154,13 @@ public class CreateCustomCertificateRequest extends RpcAcsRequest<CreateCustomCe
 								}
 							}
 						}
+						if (apiPassthrough.getExtensions().getCriticals() != null) {
+							for (int depth1 = 0; depth1 < apiPassthrough.getExtensions().getCriticals().size(); depth1++) {
+								putQueryParameter("ApiPassthrough.Extensions.Criticals." + (depth1 + 1) , apiPassthrough.getExtensions().getCriticals().get(depth1));
+							}
+						}
 				}
+				putQueryParameter("ApiPassthrough.SerialNumber" , apiPassthrough.getSerialNumber());
 		}	
 	}
 
@@ -141,6 +169,8 @@ public class CreateCustomCertificateRequest extends RpcAcsRequest<CreateCustomCe
 		private Subject subject;
 
 		private Extensions extensions;
+
+		private String serialNumber;
 
 		public Subject getSubject() {
 			return this.subject;
@@ -158,6 +188,14 @@ public class CreateCustomCertificateRequest extends RpcAcsRequest<CreateCustomCe
 			this.extensions = extensions;
 		}
 
+		public String getSerialNumber() {
+			return this.serialNumber;
+		}
+
+		public void setSerialNumber(String serialNumber) {
+			this.serialNumber = serialNumber;
+		}
+
 		public static class Subject {
 
 			private String country;
@@ -171,6 +209,8 @@ public class CreateCustomCertificateRequest extends RpcAcsRequest<CreateCustomCe
 			private String organizationUnit;
 
 			private String commonName;
+
+			private List<CustomAttributesItem> customAttributes;
 
 			public String getCountry() {
 				return this.country;
@@ -219,6 +259,37 @@ public class CreateCustomCertificateRequest extends RpcAcsRequest<CreateCustomCe
 			public void setCommonName(String commonName) {
 				this.commonName = commonName;
 			}
+
+			public List<CustomAttributesItem> getCustomAttributes() {
+				return this.customAttributes;
+			}
+
+			public void setCustomAttributes(List<CustomAttributesItem> customAttributes) {
+				this.customAttributes = customAttributes;
+			}
+
+			public static class CustomAttributesItem {
+
+				private String objectIdentifier;
+
+				private String value;
+
+				public String getObjectIdentifier() {
+					return this.objectIdentifier;
+				}
+
+				public void setObjectIdentifier(String objectIdentifier) {
+					this.objectIdentifier = objectIdentifier;
+				}
+
+				public String getValue() {
+					return this.value;
+				}
+
+				public void setValue(String value) {
+					this.value = value;
+				}
+			}
 		}
 
 		public static class Extensions {
@@ -228,6 +299,8 @@ public class CreateCustomCertificateRequest extends RpcAcsRequest<CreateCustomCe
 			private List<String> extendedKeyUsages;
 
 			private List<SubjectAlternativeNamesItem> subjectAlternativeNames;
+
+			private List<String> criticals;
 
 			public KeyUsage getKeyUsage() {
 				return this.keyUsage;
@@ -251,6 +324,14 @@ public class CreateCustomCertificateRequest extends RpcAcsRequest<CreateCustomCe
 
 			public void setSubjectAlternativeNames(List<SubjectAlternativeNamesItem> subjectAlternativeNames) {
 				this.subjectAlternativeNames = subjectAlternativeNames;
+			}
+
+			public List<String> getCriticals() {
+				return this.criticals;
+			}
+
+			public void setCriticals(List<String> criticals) {
+				this.criticals = criticals;
 			}
 
 			public static class KeyUsage {

@@ -29,7 +29,7 @@ public class DescribeCertificatePrivateKeyRequest extends RpcAcsRequest<Describe
 
 	private String encryptedCode;
 	public DescribeCertificatePrivateKeyRequest() {
-		super("cas", "2020-06-30", "DescribeCertificatePrivateKey");
+		super("cas", "2020-06-30", "DescribeCertificatePrivateKey", "cas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

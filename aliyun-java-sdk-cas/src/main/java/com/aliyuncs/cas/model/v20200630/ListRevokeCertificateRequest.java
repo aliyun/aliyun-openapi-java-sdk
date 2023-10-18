@@ -29,7 +29,7 @@ public class ListRevokeCertificateRequest extends RpcAcsRequest<ListRevokeCertif
 
 	private Integer showSize;
 	public ListRevokeCertificateRequest() {
-		super("cas", "2020-06-30", "ListRevokeCertificate");
+		super("cas", "2020-06-30", "ListRevokeCertificate", "cas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

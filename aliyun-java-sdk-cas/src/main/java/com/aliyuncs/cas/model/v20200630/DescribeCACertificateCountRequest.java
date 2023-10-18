@@ -25,7 +25,7 @@ import com.aliyuncs.cas.Endpoint;
 public class DescribeCACertificateCountRequest extends RpcAcsRequest<DescribeCACertificateCountResponse> {
 	   
 	public DescribeCACertificateCountRequest() {
-		super("cas", "2020-06-30", "DescribeCACertificateCount");
+		super("cas", "2020-06-30", "DescribeCACertificateCount", "cas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

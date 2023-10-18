@@ -25,14 +25,27 @@ import com.aliyuncs.cas.Endpoint;
 public class GetCAInstanceStatusRequest extends RpcAcsRequest<GetCAInstanceStatusResponse> {
 	   
 
+	private String identifier;
+
 	private String instanceId;
 	public GetCAInstanceStatusRequest() {
-		super("cas", "2020-06-30", "GetCAInstanceStatus");
+		super("cas", "2020-06-30", "GetCAInstanceStatus", "cas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getIdentifier() {
+		return this.identifier;
+	}
+
+	public void setIdentifier(String identifier) {
+		this.identifier = identifier;
+		if(identifier != null){
+			putQueryParameter("Identifier", identifier);
+		}
 	}
 
 	public String getInstanceId() {

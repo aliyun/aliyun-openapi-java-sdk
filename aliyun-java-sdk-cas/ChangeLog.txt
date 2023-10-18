@@ -1,3 +1,9 @@
+2023-10-18 Version: 1.0.16
+- Support customAttributes of subject.
+- Support criticals for params.
+- Support customize serialNumber. 
+
+
 2023-03-23 Version: 1.0.15
 - Fix some bugs.
 - Support PathLenConstraint and ExtendedKeyUsages.

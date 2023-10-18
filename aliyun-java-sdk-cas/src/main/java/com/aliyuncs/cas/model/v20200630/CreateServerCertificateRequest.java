@@ -27,9 +27,9 @@ public class CreateServerCertificateRequest extends RpcAcsRequest<CreateServerCe
 
 	private String country;
 
-	private String csr;
-
 	private Integer months;
+
+	private Long enableCrl;
 
 	private Long afterTime;
 
@@ -57,7 +57,7 @@ public class CreateServerCertificateRequest extends RpcAcsRequest<CreateServerCe
 
 	private String domain;
 	public CreateServerCertificateRequest() {
-		super("cas", "2020-06-30", "CreateServerCertificate");
+		super("cas", "2020-06-30", "CreateServerCertificate", "cas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -76,17 +76,6 @@ public class CreateServerCertificateRequest extends RpcAcsRequest<CreateServerCe
 		}
 	}
 
-	public String getCsr() {
-		return this.csr;
-	}
-
-	public void setCsr(String csr) {
-		this.csr = csr;
-		if(csr != null){
-			putQueryParameter("Csr", csr);
-		}
-	}
-
 	public Integer getMonths() {
 		return this.months;
 	}
@@ -95,6 +84,17 @@ public class CreateServerCertificateRequest extends RpcAcsRequest<CreateServerCe
 		this.months = months;
 		if(months != null){
 			putQueryParameter("Months", months.toString());
+		}
+	}
+
+	public Long getEnableCrl() {
+		return this.enableCrl;
+	}
+
+	public void setEnableCrl(Long enableCrl) {
+		this.enableCrl = enableCrl;
+		if(enableCrl != null){
+			putQueryParameter("EnableCrl", enableCrl.toString());
 		}
 	}
 

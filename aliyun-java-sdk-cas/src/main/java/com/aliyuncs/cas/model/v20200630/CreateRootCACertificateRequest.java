@@ -41,7 +41,7 @@ public class CreateRootCACertificateRequest extends RpcAcsRequest<CreateRootCACe
 
 	private String algorithm;
 	public CreateRootCACertificateRequest() {
-		super("cas", "2020-06-30", "CreateRootCACertificate");
+		super("cas", "2020-06-30", "CreateRootCACertificate", "cas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

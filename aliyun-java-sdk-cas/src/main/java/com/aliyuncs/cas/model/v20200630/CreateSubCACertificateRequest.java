@@ -28,6 +28,8 @@ public class CreateSubCACertificateRequest extends RpcAcsRequest<CreateSubCACert
 
 	private List<String> extendedKeyUsagess;
 
+	private Boolean enableCrl;
+
 	private String countryCode;
 
 	private String locality;
@@ -40,6 +42,8 @@ public class CreateSubCACertificateRequest extends RpcAcsRequest<CreateSubCACert
 
 	private String organization;
 
+	private Integer crlDay;
+
 	private String parentIdentifier;
 
 	private String state;
@@ -48,7 +52,7 @@ public class CreateSubCACertificateRequest extends RpcAcsRequest<CreateSubCACert
 
 	private String algorithm;
 	public CreateSubCACertificateRequest() {
-		super("cas", "2020-06-30", "CreateSubCACertificate");
+		super("cas", "2020-06-30", "CreateSubCACertificate", "cas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -67,6 +71,17 @@ public class CreateSubCACertificateRequest extends RpcAcsRequest<CreateSubCACert
 				putQueryParameter("ExtendedKeyUsages." + (i + 1) , extendedKeyUsagess.get(i));
 			}
 		}	
+	}
+
+	public Boolean getEnableCrl() {
+		return this.enableCrl;
+	}
+
+	public void setEnableCrl(Boolean enableCrl) {
+		this.enableCrl = enableCrl;
+		if(enableCrl != null){
+			putQueryParameter("EnableCrl", enableCrl.toString());
+		}
 	}
 
 	public String getCountryCode() {
@@ -132,6 +147,17 @@ public class CreateSubCACertificateRequest extends RpcAcsRequest<CreateSubCACert
 		this.organization = organization;
 		if(organization != null){
 			putQueryParameter("Organization", organization);
+		}
+	}
+
+	public Integer getCrlDay() {
+		return this.crlDay;
+	}
+
+	public void setCrlDay(Integer crlDay) {
+		this.crlDay = crlDay;
+		if(crlDay != null){
+			putQueryParameter("CrlDay", crlDay.toString());
 		}
 	}
 

@@ -27,7 +27,7 @@ public class CreateRevokeClientCertificateRequest extends RpcAcsRequest<CreateRe
 
 	private String identifier;
 	public CreateRevokeClientCertificateRequest() {
-		super("cas", "2020-06-30", "CreateRevokeClientCertificate");
+		super("cas", "2020-06-30", "CreateRevokeClientCertificate", "cas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

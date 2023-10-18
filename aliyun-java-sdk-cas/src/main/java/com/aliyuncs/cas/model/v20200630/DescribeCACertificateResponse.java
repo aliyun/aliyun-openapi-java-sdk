@@ -102,6 +102,12 @@ public class DescribeCACertificateResponse extends AcsResponse {
 
 		private String crlUrl;
 
+		private Long certTotalCount;
+
+		private Long certRemainingCount;
+
+		private Long certIssuedCount;
+
 		public String getCertificateType() {
 			return this.certificateType;
 		}
@@ -284,6 +290,30 @@ public class DescribeCACertificateResponse extends AcsResponse {
 
 		public void setCrlUrl(String crlUrl) {
 			this.crlUrl = crlUrl;
+		}
+
+		public Long getCertTotalCount() {
+			return this.certTotalCount;
+		}
+
+		public void setCertTotalCount(Long certTotalCount) {
+			this.certTotalCount = certTotalCount;
+		}
+
+		public Long getCertRemainingCount() {
+			return this.certRemainingCount;
+		}
+
+		public void setCertRemainingCount(Long certRemainingCount) {
+			this.certRemainingCount = certRemainingCount;
+		}
+
+		public Long getCertIssuedCount() {
+			return this.certIssuedCount;
+		}
+
+		public void setCertIssuedCount(Long certIssuedCount) {
+			this.certIssuedCount = certIssuedCount;
 		}
 	}
 

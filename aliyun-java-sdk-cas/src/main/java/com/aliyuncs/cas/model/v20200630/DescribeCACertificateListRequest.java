@@ -25,16 +25,29 @@ import com.aliyuncs.cas.Endpoint;
 public class DescribeCACertificateListRequest extends RpcAcsRequest<DescribeCACertificateListResponse> {
 	   
 
+	private String identifier;
+
 	private Integer showSize;
 
 	private Integer currentPage;
 	public DescribeCACertificateListRequest() {
-		super("cas", "2020-06-30", "DescribeCACertificateList");
+		super("cas", "2020-06-30", "DescribeCACertificateList", "cas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getIdentifier() {
+		return this.identifier;
+	}
+
+	public void setIdentifier(String identifier) {
+		this.identifier = identifier;
+		if(identifier != null){
+			putQueryParameter("Identifier", identifier);
+		}
 	}
 
 	public Integer getShowSize() {
