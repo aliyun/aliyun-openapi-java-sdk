@@ -32,6 +32,8 @@ public class UpdateAuthorityTemplateResponse extends AcsResponse {
 
 	private Boolean success;
 
+	private Long tid;
+
 	private AuthorityTemplateView authorityTemplateView;
 
 	public String getRequestId() {
@@ -64,6 +66,14 @@ public class UpdateAuthorityTemplateResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public Long getTid() {
+		return this.tid;
+	}
+
+	public void setTid(Long tid) {
+		this.tid = tid;
 	}
 
 	public AuthorityTemplateView getAuthorityTemplateView() {

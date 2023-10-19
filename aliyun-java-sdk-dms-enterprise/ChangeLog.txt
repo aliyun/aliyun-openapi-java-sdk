@@ -1,3 +1,6 @@
+2023-10-19 Version: 1.53.7
+- Support CreateAuthorityTemplate, UpdateAuthorityTemplate, GetAuthorityTemplateItem, GetAuthorityTemplate return TenantId information.
+
 2023-10-12 Version: 1.53.6
 - Support GetOrderBaseInfo to response AttachmentKey and OriginAttachmentName information.
 

@@ -27,6 +27,7 @@ public class UpdateAuthorityTemplateResponseUnmarshaller {
 		updateAuthorityTemplateResponse.setErrorCode(_ctx.stringValue("UpdateAuthorityTemplateResponse.ErrorCode"));
 		updateAuthorityTemplateResponse.setErrorMessage(_ctx.stringValue("UpdateAuthorityTemplateResponse.ErrorMessage"));
 		updateAuthorityTemplateResponse.setSuccess(_ctx.booleanValue("UpdateAuthorityTemplateResponse.Success"));
+		updateAuthorityTemplateResponse.setTid(_ctx.longValue("UpdateAuthorityTemplateResponse.Tid"));
 
 		AuthorityTemplateView authorityTemplateView = new AuthorityTemplateView();
 		authorityTemplateView.setTemplateId(_ctx.longValue("UpdateAuthorityTemplateResponse.AuthorityTemplateView.TemplateId"));

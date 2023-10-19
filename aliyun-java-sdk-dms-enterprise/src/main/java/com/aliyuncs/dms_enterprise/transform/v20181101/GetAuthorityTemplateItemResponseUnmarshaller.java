@@ -30,6 +30,7 @@ public class GetAuthorityTemplateItemResponseUnmarshaller {
 		getAuthorityTemplateItemResponse.setErrorCode(_ctx.stringValue("GetAuthorityTemplateItemResponse.ErrorCode"));
 		getAuthorityTemplateItemResponse.setErrorMessage(_ctx.stringValue("GetAuthorityTemplateItemResponse.ErrorMessage"));
 		getAuthorityTemplateItemResponse.setSuccess(_ctx.booleanValue("GetAuthorityTemplateItemResponse.Success"));
+		getAuthorityTemplateItemResponse.setTid(_ctx.longValue("GetAuthorityTemplateItemResponse.Tid"));
 
 		List<AuthorityTemplateItem> authorityTemplateItemList = new ArrayList<AuthorityTemplateItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetAuthorityTemplateItemResponse.AuthorityTemplateItemList.Length"); i++) {

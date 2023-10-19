@@ -33,6 +33,8 @@ public class GetAuthorityTemplateItemResponse extends AcsResponse {
 
 	private Boolean success;
 
+	private Long tid;
+
 	private List<AuthorityTemplateItem> authorityTemplateItemList;
 
 	public String getRequestId() {
@@ -65,6 +67,14 @@ public class GetAuthorityTemplateItemResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public Long getTid() {
+		return this.tid;
+	}
+
+	public void setTid(Long tid) {
+		this.tid = tid;
 	}
 
 	public List<AuthorityTemplateItem> getAuthorityTemplateItemList() {
