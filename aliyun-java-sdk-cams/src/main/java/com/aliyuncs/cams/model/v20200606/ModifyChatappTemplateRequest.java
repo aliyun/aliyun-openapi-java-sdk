@@ -51,7 +51,7 @@ public class ModifyChatappTemplateRequest extends RpcAcsRequest<ModifyChatappTem
 
 	private String templateCode;
 	public ModifyChatappTemplateRequest() {
-		super("cams", "2020-06-06", "ModifyChatappTemplate");
+		super("cams", "2020-06-06", "ModifyChatappTemplate", "cams");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -207,6 +207,12 @@ public class ModifyChatappTemplateRequest extends RpcAcsRequest<ModifyChatappTem
 		@SerializedName("AddSecretRecommendation")
 		private Boolean addSecretRecommendation;
 
+		@SerializedName("HasExpiration")
+		private Boolean hasExpiration;
+
+		@SerializedName("Cards")
+		private List<CardsItem> cards;
+
 		public String getType() {
 			return this.type;
 		}
@@ -303,6 +309,22 @@ public class ModifyChatappTemplateRequest extends RpcAcsRequest<ModifyChatappTem
 			this.addSecretRecommendation = addSecretRecommendation;
 		}
 
+		public Boolean getHasExpiration() {
+			return this.hasExpiration;
+		}
+
+		public void setHasExpiration(Boolean hasExpiration) {
+			this.hasExpiration = hasExpiration;
+		}
+
+		public List<CardsItem> getCards() {
+			return this.cards;
+		}
+
+		public void setCards(List<CardsItem> cards) {
+			this.cards = cards;
+		}
+
 		public static class ButtonsItem {
 
 			@SerializedName("Type")
@@ -331,6 +353,9 @@ public class ModifyChatappTemplateRequest extends RpcAcsRequest<ModifyChatappTem
 
 			@SerializedName("IsOptOut")
 			private Boolean isOptOut;
+
+			@SerializedName("CouponCode")
+			private String couponCode;
 
 			public String getType() {
 				return this.type;
@@ -402,6 +427,144 @@ public class ModifyChatappTemplateRequest extends RpcAcsRequest<ModifyChatappTem
 
 			public void setIsOptOut(Boolean isOptOut) {
 				this.isOptOut = isOptOut;
+			}
+
+			public String getCouponCode() {
+				return this.couponCode;
+			}
+
+			public void setCouponCode(String couponCode) {
+				this.couponCode = couponCode;
+			}
+		}
+
+		public static class CardsItem {
+
+			@SerializedName("CardComponents")
+			private List<CardComponentsItem> cardComponents;
+
+			public List<CardComponentsItem> getCardComponents() {
+				return this.cardComponents;
+			}
+
+			public void setCardComponents(List<CardComponentsItem> cardComponents) {
+				this.cardComponents = cardComponents;
+			}
+
+			public static class CardComponentsItem {
+
+				@SerializedName("Type")
+				private String type;
+
+				@SerializedName("Format")
+				private String format;
+
+				@SerializedName("Text")
+				private String text;
+
+				@SerializedName("Url")
+				private String url;
+
+				@SerializedName("Buttons")
+				private List<ButtonsItem> buttons;
+
+				public String getType() {
+					return this.type;
+				}
+
+				public void setType(String type) {
+					this.type = type;
+				}
+
+				public String getFormat() {
+					return this.format;
+				}
+
+				public void setFormat(String format) {
+					this.format = format;
+				}
+
+				public String getText() {
+					return this.text;
+				}
+
+				public void setText(String text) {
+					this.text = text;
+				}
+
+				public String getUrl() {
+					return this.url;
+				}
+
+				public void setUrl(String url) {
+					this.url = url;
+				}
+
+				public List<ButtonsItem> getButtons() {
+					return this.buttons;
+				}
+
+				public void setButtons(List<ButtonsItem> buttons) {
+					this.buttons = buttons;
+				}
+
+				public static class ButtonsItem {
+
+					@SerializedName("Text")
+					private String text;
+
+					@SerializedName("Type")
+					private String type;
+
+					@SerializedName("Url")
+					private String url;
+
+					@SerializedName("UrlType")
+					private String urlType;
+
+					@SerializedName("PhoneNumber")
+					private String phoneNumber;
+
+					public String getText() {
+						return this.text;
+					}
+
+					public void setText(String text) {
+						this.text = text;
+					}
+
+					public String getType() {
+						return this.type;
+					}
+
+					public void setType(String type) {
+						this.type = type;
+					}
+
+					public String getUrl() {
+						return this.url;
+					}
+
+					public void setUrl(String url) {
+						this.url = url;
+					}
+
+					public String getUrlType() {
+						return this.urlType;
+					}
+
+					public void setUrlType(String urlType) {
+						this.urlType = urlType;
+					}
+
+					public String getPhoneNumber() {
+						return this.phoneNumber;
+					}
+
+					public void setPhoneNumber(String phoneNumber) {
+						this.phoneNumber = phoneNumber;
+					}
+				}
 			}
 		}
 	}

@@ -33,7 +33,7 @@ public class UpdateAccountWebhookRequest extends RpcAcsRequest<UpdateAccountWebh
 
 	private String custSpaceId;
 	public UpdateAccountWebhookRequest() {
-		super("cams", "2020-06-06", "UpdateAccountWebhook");
+		super("cams", "2020-06-06", "UpdateAccountWebhook", "cams");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

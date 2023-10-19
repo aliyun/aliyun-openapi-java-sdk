@@ -29,7 +29,7 @@ public class ChatappMigrationRegisterRequest extends RpcAcsRequest<ChatappMigrat
 
 	private String custSpaceId;
 	public ChatappMigrationRegisterRequest() {
-		super("cams", "2020-06-06", "ChatappMigrationRegister");
+		super("cams", "2020-06-06", "ChatappMigrationRegister", "cams");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

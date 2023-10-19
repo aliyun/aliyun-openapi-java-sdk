@@ -44,7 +44,7 @@ public class ListChatappTemplateRequest extends RpcAcsRequest<ListChatappTemplat
 	@SerializedName("page")
 	private Page page;
 	public ListChatappTemplateRequest() {
-		super("cams", "2020-06-06", "ListChatappTemplate");
+		super("cams", "2020-06-06", "ListChatappTemplate", "cams");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -33,7 +33,7 @@ public class DeleteChatappTemplateRequest extends RpcAcsRequest<DeleteChatappTem
 
 	private String templateCode;
 	public DeleteChatappTemplateRequest() {
-		super("cams", "2020-06-06", "DeleteChatappTemplate");
+		super("cams", "2020-06-06", "DeleteChatappTemplate", "cams");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

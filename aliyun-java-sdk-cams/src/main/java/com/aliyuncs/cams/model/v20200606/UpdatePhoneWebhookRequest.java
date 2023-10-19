@@ -37,7 +37,7 @@ public class UpdatePhoneWebhookRequest extends RpcAcsRequest<UpdatePhoneWebhookR
 
 	private String custSpaceId;
 	public UpdatePhoneWebhookRequest() {
-		super("cams", "2020-06-06", "UpdatePhoneWebhook");
+		super("cams", "2020-06-06", "UpdatePhoneWebhook", "cams");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

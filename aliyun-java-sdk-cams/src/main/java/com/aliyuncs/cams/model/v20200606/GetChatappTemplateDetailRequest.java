@@ -37,7 +37,7 @@ public class GetChatappTemplateDetailRequest extends RpcAcsRequest<GetChatappTem
 
 	private String templateCode;
 	public GetChatappTemplateDetailRequest() {
-		super("cams", "2020-06-06", "GetChatappTemplateDetail");
+		super("cams", "2020-06-06", "GetChatappTemplateDetail", "cams");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

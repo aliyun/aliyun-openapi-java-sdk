@@ -45,7 +45,7 @@ public class ListProductRequest extends RpcAcsRequest<ListProductResponse> {
 
 	private String fields;
 	public ListProductRequest() {
-		super("cams", "2020-06-06", "ListProduct");
+		super("cams", "2020-06-06", "ListProduct", "cams");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

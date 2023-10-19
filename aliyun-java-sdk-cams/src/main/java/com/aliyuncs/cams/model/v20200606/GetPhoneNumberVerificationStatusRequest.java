@@ -29,7 +29,7 @@ public class GetPhoneNumberVerificationStatusRequest extends RpcAcsRequest<GetPh
 
 	private String custSpaceId;
 	public GetPhoneNumberVerificationStatusRequest() {
-		super("cams", "2020-06-06", "GetPhoneNumberVerificationStatus");
+		super("cams", "2020-06-06", "GetPhoneNumberVerificationStatus", "cams");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

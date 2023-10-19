@@ -80,7 +80,7 @@ public class SendChatappMessageRequest extends RpcAcsRequest<SendChatappMessageR
 
 	private String templateCode;
 	public SendChatappMessageRequest() {
-		super("cams", "2020-06-06", "SendChatappMessage");
+		super("cams", "2020-06-06", "SendChatappMessage", "cams");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

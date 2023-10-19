@@ -27,7 +27,7 @@ public class ChatappEmbedSignUpRequest extends RpcAcsRequest<ChatappEmbedSignUpR
 
 	private String inputToken;
 	public ChatappEmbedSignUpRequest() {
-		super("cams", "2020-06-06", "ChatappEmbedSignUp");
+		super("cams", "2020-06-06", "ChatappEmbedSignUp", "cams");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

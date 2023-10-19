@@ -22,6 +22,9 @@ import com.aliyuncs.cams.model.v20200606.GetChatappTemplateDetailResponse.Data;
 import com.aliyuncs.cams.model.v20200606.GetChatappTemplateDetailResponse.Data.Component;
 import com.aliyuncs.cams.model.v20200606.GetChatappTemplateDetailResponse.Data.Component.Button;
 import com.aliyuncs.cams.model.v20200606.GetChatappTemplateDetailResponse.Data.Component.Button.ExtendAttrs;
+import com.aliyuncs.cams.model.v20200606.GetChatappTemplateDetailResponse.Data.Component.轮播卡片列表;
+import com.aliyuncs.cams.model.v20200606.GetChatappTemplateDetailResponse.Data.Component.轮播卡片列表.卡片控件列表;
+import com.aliyuncs.cams.model.v20200606.GetChatappTemplateDetailResponse.Data.Component.轮播卡片列表.卡片控件列表.卡片按钮列表;
 import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -65,6 +68,8 @@ public class GetChatappTemplateDetailResponseUnmarshaller {
 			component.setLocationAddress(_ctx.stringValue("GetChatappTemplateDetailResponse.Data.Components["+ i +"].LocationAddress"));
 			component.setAddSecretRecommendation(_ctx.booleanValue("GetChatappTemplateDetailResponse.Data.Components["+ i +"].AddSecretRecommendation"));
 			component.setCodeExpirationMinutes(_ctx.integerValue("GetChatappTemplateDetailResponse.Data.Components["+ i +"].CodeExpirationMinutes"));
+			component.setHasExpiration(_ctx.booleanValue("GetChatappTemplateDetailResponse.Data.Components["+ i +"].hasExpiration"));
+			component.setOfferExpirationTimeMs(_ctx.stringValue("GetChatappTemplateDetailResponse.Data.Components["+ i +"].OfferExpirationTimeMs"));
 
 			List<Button> buttons = new ArrayList<Button>();
 			for (int j = 0; j < _ctx.lengthValue("GetChatappTemplateDetailResponse.Data.Components["+ i +"].Buttons.Length"); j++) {
@@ -78,6 +83,7 @@ public class GetChatappTemplateDetailResponseUnmarshaller {
 				button.setPackageName(_ctx.stringValue("GetChatappTemplateDetailResponse.Data.Components["+ i +"].Buttons["+ j +"].PackageName"));
 				button.setAutofillText(_ctx.stringValue("GetChatappTemplateDetailResponse.Data.Components["+ i +"].Buttons["+ j +"].AutofillText"));
 				button.setIsOptOut(_ctx.booleanValue("GetChatappTemplateDetailResponse.Data.Components["+ i +"].Buttons["+ j +"].IsOptOut"));
+				button.setCouponCode(_ctx.stringValue("GetChatappTemplateDetailResponse.Data.Components["+ i +"].Buttons["+ j +"].CouponCode"));
 
 				ExtendAttrs extendAttrs = new ExtendAttrs();
 				extendAttrs.setNextTemplateCode(_ctx.stringValue("GetChatappTemplateDetailResponse.Data.Components["+ i +"].Buttons["+ j +"].ExtendAttrs.NextTemplateCode"));
@@ -90,6 +96,39 @@ public class GetChatappTemplateDetailResponseUnmarshaller {
 				buttons.add(button);
 			}
 			component.setButtons(buttons);
+
+			List<轮播卡片列表> cards = new ArrayList<轮播卡片列表>();
+			for (int j = 0; j < _ctx.lengthValue("GetChatappTemplateDetailResponse.Data.Components["+ i +"].Cards.Length"); j++) {
+				轮播卡片列表 轮播卡片列表 = new 轮播卡片列表();
+
+				List<卡片控件列表> cardComponents = new ArrayList<卡片控件列表>();
+				for (int k = 0; k < _ctx.lengthValue("GetChatappTemplateDetailResponse.Data.Components["+ i +"].Cards["+ j +"].CardComponents.Length"); k++) {
+					卡片控件列表 卡片控件列表 = new 卡片控件列表();
+					卡片控件列表.setType(_ctx.stringValue("GetChatappTemplateDetailResponse.Data.Components["+ i +"].Cards["+ j +"].CardComponents["+ k +"].Type"));
+					卡片控件列表.setText(_ctx.stringValue("GetChatappTemplateDetailResponse.Data.Components["+ i +"].Cards["+ j +"].CardComponents["+ k +"].Text"));
+					卡片控件列表.setUrl(_ctx.stringValue("GetChatappTemplateDetailResponse.Data.Components["+ i +"].Cards["+ j +"].CardComponents["+ k +"].Url"));
+					卡片控件列表.setFormat(_ctx.stringValue("GetChatappTemplateDetailResponse.Data.Components["+ i +"].Cards["+ j +"].CardComponents["+ k +"].Format"));
+
+					List<卡片按钮列表> buttons1 = new ArrayList<卡片按钮列表>();
+					for (int l = 0; l < _ctx.lengthValue("GetChatappTemplateDetailResponse.Data.Components["+ i +"].Cards["+ j +"].CardComponents["+ k +"].Buttons.Length"); l++) {
+						卡片按钮列表 卡片按钮列表 = new 卡片按钮列表();
+						卡片按钮列表.setType(_ctx.stringValue("GetChatappTemplateDetailResponse.Data.Components["+ i +"].Cards["+ j +"].CardComponents["+ k +"].Buttons["+ l +"].Type"));
+						卡片按钮列表.setText(_ctx.stringValue("GetChatappTemplateDetailResponse.Data.Components["+ i +"].Cards["+ j +"].CardComponents["+ k +"].Buttons["+ l +"].Text"));
+						卡片按钮列表.setUrl(_ctx.stringValue("GetChatappTemplateDetailResponse.Data.Components["+ i +"].Cards["+ j +"].CardComponents["+ k +"].Buttons["+ l +"].Url"));
+						卡片按钮列表.setUrlType(_ctx.stringValue("GetChatappTemplateDetailResponse.Data.Components["+ i +"].Cards["+ j +"].CardComponents["+ k +"].Buttons["+ l +"].UrlType"));
+						卡片按钮列表.setPhoneNumber(_ctx.stringValue("GetChatappTemplateDetailResponse.Data.Components["+ i +"].Cards["+ j +"].CardComponents["+ k +"].Buttons["+ l +"].PhoneNumber"));
+
+						buttons1.add(卡片按钮列表);
+					}
+					卡片控件列表.setButtons1(buttons1);
+
+					cardComponents.add(卡片控件列表);
+				}
+				轮播卡片列表.setCardComponents(cardComponents);
+
+				cards.add(轮播卡片列表);
+			}
+			component.setCards(cards);
 
 			components.add(component);
 		}

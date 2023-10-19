@@ -33,7 +33,7 @@ public class GetMigrationVerifyCodeRequest extends RpcAcsRequest<GetMigrationVer
 
 	private String custSpaceId;
 	public GetMigrationVerifyCodeRequest() {
-		super("cams", "2020-06-06", "GetMigrationVerifyCode");
+		super("cams", "2020-06-06", "GetMigrationVerifyCode", "cams");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

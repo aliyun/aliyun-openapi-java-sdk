@@ -27,7 +27,7 @@ public class ChatappBindWabaRequest extends RpcAcsRequest<ChatappBindWabaRespons
 
 	private String wabaId;
 	public ChatappBindWabaRequest() {
-		super("cams", "2020-06-06", "ChatappBindWaba");
+		super("cams", "2020-06-06", "ChatappBindWaba", "cams");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

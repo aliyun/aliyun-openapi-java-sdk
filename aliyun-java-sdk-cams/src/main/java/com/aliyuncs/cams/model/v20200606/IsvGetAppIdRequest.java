@@ -27,7 +27,7 @@ public class IsvGetAppIdRequest extends RpcAcsRequest<IsvGetAppIdResponse> {
 
 	private String type;
 	public IsvGetAppIdRequest() {
-		super("cams", "2020-06-06", "IsvGetAppId");
+		super("cams", "2020-06-06", "IsvGetAppId", "cams");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

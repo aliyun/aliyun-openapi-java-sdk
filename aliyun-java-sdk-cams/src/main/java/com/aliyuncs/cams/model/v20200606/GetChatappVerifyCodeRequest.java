@@ -33,7 +33,7 @@ public class GetChatappVerifyCodeRequest extends RpcAcsRequest<GetChatappVerifyC
 
 	private String custSpaceId;
 	public GetChatappVerifyCodeRequest() {
-		super("cams", "2020-06-06", "GetChatappVerifyCode");
+		super("cams", "2020-06-06", "GetChatappVerifyCode", "cams");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

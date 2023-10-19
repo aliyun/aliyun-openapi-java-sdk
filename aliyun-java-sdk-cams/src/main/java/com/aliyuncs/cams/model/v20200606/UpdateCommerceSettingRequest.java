@@ -22,17 +22,56 @@ import com.aliyuncs.cams.Endpoint;
  * @author auto create
  * @version 
  */
-public class ChatappSyncPhoneNumberRequest extends RpcAcsRequest<ChatappSyncPhoneNumberResponse> {
+public class UpdateCommerceSettingRequest extends RpcAcsRequest<UpdateCommerceSettingResponse> {
 	   
 
+	private String phoneNumber;
+
+	private Boolean catalogVisible;
+
+	private Boolean cartEnable;
+
 	private String custSpaceId;
-	public ChatappSyncPhoneNumberRequest() {
-		super("cams", "2020-06-06", "ChatappSyncPhoneNumber", "cams");
+	public UpdateCommerceSettingRequest() {
+		super("cams", "2020-06-06", "UpdateCommerceSetting", "cams");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getPhoneNumber() {
+		return this.phoneNumber;
+	}
+
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+		if(phoneNumber != null){
+			putQueryParameter("PhoneNumber", phoneNumber);
+		}
+	}
+
+	public Boolean getCatalogVisible() {
+		return this.catalogVisible;
+	}
+
+	public void setCatalogVisible(Boolean catalogVisible) {
+		this.catalogVisible = catalogVisible;
+		if(catalogVisible != null){
+			putQueryParameter("CatalogVisible", catalogVisible.toString());
+		}
+	}
+
+	public Boolean getCartEnable() {
+		return this.cartEnable;
+	}
+
+	public void setCartEnable(Boolean cartEnable) {
+		this.cartEnable = cartEnable;
+		if(cartEnable != null){
+			putQueryParameter("CartEnable", cartEnable.toString());
+		}
 	}
 
 	public String getCustSpaceId() {
@@ -47,8 +86,8 @@ public class ChatappSyncPhoneNumberRequest extends RpcAcsRequest<ChatappSyncPhon
 	}
 
 	@Override
-	public Class<ChatappSyncPhoneNumberResponse> getResponseClass() {
-		return ChatappSyncPhoneNumberResponse.class;
+	public Class<UpdateCommerceSettingResponse> getResponseClass() {
+		return UpdateCommerceSettingResponse.class;
 	}
 
 }

@@ -22,17 +22,30 @@ import com.aliyuncs.cams.Endpoint;
  * @author auto create
  * @version 
  */
-public class ChatappSyncPhoneNumberRequest extends RpcAcsRequest<ChatappSyncPhoneNumberResponse> {
+public class GetCommerceSettingRequest extends RpcAcsRequest<GetCommerceSettingResponse> {
 	   
 
+	private String phoneNumber;
+
 	private String custSpaceId;
-	public ChatappSyncPhoneNumberRequest() {
-		super("cams", "2020-06-06", "ChatappSyncPhoneNumber", "cams");
+	public GetCommerceSettingRequest() {
+		super("cams", "2020-06-06", "GetCommerceSetting", "cams");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getPhoneNumber() {
+		return this.phoneNumber;
+	}
+
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+		if(phoneNumber != null){
+			putQueryParameter("PhoneNumber", phoneNumber);
+		}
 	}
 
 	public String getCustSpaceId() {
@@ -47,8 +60,8 @@ public class ChatappSyncPhoneNumberRequest extends RpcAcsRequest<ChatappSyncPhon
 	}
 
 	@Override
-	public Class<ChatappSyncPhoneNumberResponse> getResponseClass() {
-		return ChatappSyncPhoneNumberResponse.class;
+	public Class<GetCommerceSettingResponse> getResponseClass() {
+		return GetCommerceSettingResponse.class;
 	}
 
 }

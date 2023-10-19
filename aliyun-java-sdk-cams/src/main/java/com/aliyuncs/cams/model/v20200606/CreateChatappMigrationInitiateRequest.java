@@ -31,7 +31,7 @@ public class CreateChatappMigrationInitiateRequest extends RpcAcsRequest<CreateC
 
 	private String custSpaceId;
 	public CreateChatappMigrationInitiateRequest() {
-		super("cams", "2020-06-06", "CreateChatappMigrationInitiate");
+		super("cams", "2020-06-06", "CreateChatappMigrationInitiate", "cams");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

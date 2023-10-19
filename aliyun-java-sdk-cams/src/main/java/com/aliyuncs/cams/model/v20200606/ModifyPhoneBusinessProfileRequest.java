@@ -45,7 +45,7 @@ public class ModifyPhoneBusinessProfileRequest extends RpcAcsRequest<ModifyPhone
 	@SerializedName("websites")
 	private List<String> websites;
 	public ModifyPhoneBusinessProfileRequest() {
-		super("cams", "2020-06-06", "ModifyPhoneBusinessProfile");
+		super("cams", "2020-06-06", "ModifyPhoneBusinessProfile", "cams");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

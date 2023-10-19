@@ -39,7 +39,7 @@ public class SubmitIsvCustomerTermsRequest extends RpcAcsRequest<SubmitIsvCustom
 
 	private String custName;
 	public SubmitIsvCustomerTermsRequest() {
-		super("cams", "2020-06-06", "SubmitIsvCustomerTerms");
+		super("cams", "2020-06-06", "SubmitIsvCustomerTerms", "cams");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

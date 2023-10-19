@@ -29,7 +29,7 @@ public class GetPreValidatePhoneIdRequest extends RpcAcsRequest<GetPreValidatePh
 
 	private String verifyCode;
 	public GetPreValidatePhoneIdRequest() {
-		super("cams", "2020-06-06", "GetPreValidatePhoneId");
+		super("cams", "2020-06-06", "GetPreValidatePhoneId", "cams");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

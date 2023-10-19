@@ -53,7 +53,7 @@ public class BeeBotChatRequest extends RpcAcsRequest<BeeBotChatResponse> {
 
 	private String custSpaceId;
 	public BeeBotChatRequest() {
-		super("cams", "2020-06-06", "BeeBotChat");
+		super("cams", "2020-06-06", "BeeBotChat", "cams");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

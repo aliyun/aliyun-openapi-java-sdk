@@ -29,7 +29,7 @@ public class ChatappPhoneNumberDeregisterRequest extends RpcAcsRequest<ChatappPh
 
 	private String custSpaceId;
 	public ChatappPhoneNumberDeregisterRequest() {
-		super("cams", "2020-06-06", "ChatappPhoneNumberDeregister");
+		super("cams", "2020-06-06", "ChatappPhoneNumberDeregister", "cams");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

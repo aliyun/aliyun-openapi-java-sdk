@@ -37,7 +37,7 @@ public class GetChatappPhoneNumberMetricRequest extends RpcAcsRequest<GetChatapp
 
 	private String granularity;
 	public GetChatappPhoneNumberMetricRequest() {
-		super("cams", "2020-06-06", "GetChatappPhoneNumberMetric");
+		super("cams", "2020-06-06", "GetChatappPhoneNumberMetric", "cams");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

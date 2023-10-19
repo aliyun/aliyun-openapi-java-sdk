@@ -27,7 +27,7 @@ public class GetChatappUploadAuthorizationRequest extends RpcAcsRequest<GetChata
 
 	private String custSpaceId;
 	public GetChatappUploadAuthorizationRequest() {
-		super("cams", "2020-06-06", "GetChatappUploadAuthorization");
+		super("cams", "2020-06-06", "GetChatappUploadAuthorization", "cams");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

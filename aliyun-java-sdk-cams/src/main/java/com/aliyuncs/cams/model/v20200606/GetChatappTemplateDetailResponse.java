@@ -220,7 +220,13 @@ public class GetChatappTemplateDetailResponse extends AcsResponse {
 
 			private Integer codeExpirationMinutes;
 
+			private Boolean hasExpiration;
+
+			private String offerExpirationTimeMs;
+
 			private List<Button> buttons;
+
+			private List<轮播卡片列表> cards;
 
 			public String getType() {
 				return this.type;
@@ -342,12 +348,36 @@ public class GetChatappTemplateDetailResponse extends AcsResponse {
 				this.codeExpirationMinutes = codeExpirationMinutes;
 			}
 
+			public Boolean getHasExpiration() {
+				return this.hasExpiration;
+			}
+
+			public void setHasExpiration(Boolean hasExpiration) {
+				this.hasExpiration = hasExpiration;
+			}
+
+			public String getOfferExpirationTimeMs() {
+				return this.offerExpirationTimeMs;
+			}
+
+			public void setOfferExpirationTimeMs(String offerExpirationTimeMs) {
+				this.offerExpirationTimeMs = offerExpirationTimeMs;
+			}
+
 			public List<Button> getButtons() {
 				return this.buttons;
 			}
 
 			public void setButtons(List<Button> buttons) {
 				this.buttons = buttons;
+			}
+
+			public List<轮播卡片列表> getCards() {
+				return this.cards;
+			}
+
+			public void setCards(List<轮播卡片列表> cards) {
+				this.cards = cards;
 			}
 
 			public static class Button {
@@ -369,6 +399,8 @@ public class GetChatappTemplateDetailResponse extends AcsResponse {
 				private String autofillText;
 
 				private Boolean isOptOut;
+
+				private String couponCode;
 
 				private ExtendAttrs extendAttrs;
 
@@ -444,6 +476,14 @@ public class GetChatappTemplateDetailResponse extends AcsResponse {
 					this.isOptOut = isOptOut;
 				}
 
+				public String getCouponCode() {
+					return this.couponCode;
+				}
+
+				public void setCouponCode(String couponCode) {
+					this.couponCode = couponCode;
+				}
+
 				public ExtendAttrs getExtendAttrs() {
 					return this.extendAttrs;
 				}
@@ -502,6 +542,125 @@ public class GetChatappTemplateDetailResponse extends AcsResponse {
 
 					public void setIntentCode(String intentCode) {
 						this.intentCode = intentCode;
+					}
+				}
+			}
+
+			public static class 轮播卡片列表 {
+
+				private List<卡片控件列表> cardComponents;
+
+				public List<卡片控件列表> getCardComponents() {
+					return this.cardComponents;
+				}
+
+				public void setCardComponents(List<卡片控件列表> cardComponents) {
+					this.cardComponents = cardComponents;
+				}
+
+				public static class 卡片控件列表 {
+
+					private String type;
+
+					private String text;
+
+					private String url;
+
+					private String format;
+
+					private List<卡片按钮列表> buttons1;
+
+					public String getType() {
+						return this.type;
+					}
+
+					public void setType(String type) {
+						this.type = type;
+					}
+
+					public String getText() {
+						return this.text;
+					}
+
+					public void setText(String text) {
+						this.text = text;
+					}
+
+					public String getUrl() {
+						return this.url;
+					}
+
+					public void setUrl(String url) {
+						this.url = url;
+					}
+
+					public String getFormat() {
+						return this.format;
+					}
+
+					public void setFormat(String format) {
+						this.format = format;
+					}
+
+					public List<卡片按钮列表> getButtons1() {
+						return this.buttons1;
+					}
+
+					public void setButtons1(List<卡片按钮列表> buttons1) {
+						this.buttons1 = buttons1;
+					}
+
+					public static class 卡片按钮列表 {
+
+						private String type;
+
+						private String text;
+
+						private String url;
+
+						private String urlType;
+
+						private String phoneNumber;
+
+						public String getType() {
+							return this.type;
+						}
+
+						public void setType(String type) {
+							this.type = type;
+						}
+
+						public String getText() {
+							return this.text;
+						}
+
+						public void setText(String text) {
+							this.text = text;
+						}
+
+						public String getUrl() {
+							return this.url;
+						}
+
+						public void setUrl(String url) {
+							this.url = url;
+						}
+
+						public String getUrlType() {
+							return this.urlType;
+						}
+
+						public void setUrlType(String urlType) {
+							this.urlType = urlType;
+						}
+
+						public String getPhoneNumber() {
+							return this.phoneNumber;
+						}
+
+						public void setPhoneNumber(String phoneNumber) {
+							this.phoneNumber = phoneNumber;
+						}
 					}
 				}
 			}

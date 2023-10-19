@@ -29,7 +29,7 @@ public class EnableWhatsappROIMetricRequest extends RpcAcsRequest<EnableWhatsapp
 
 	private String custSpaceId;
 	public EnableWhatsappROIMetricRequest() {
-		super("cams", "2020-06-06", "EnableWhatsappROIMetric");
+		super("cams", "2020-06-06", "EnableWhatsappROIMetric", "cams");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

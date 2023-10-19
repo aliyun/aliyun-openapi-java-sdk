@@ -29,7 +29,7 @@ public class QueryWabaBusinessInfoRequest extends RpcAcsRequest<QueryWabaBusines
 
 	private String custSpaceId;
 	public QueryWabaBusinessInfoRequest() {
-		super("cams", "2020-06-06", "QueryWabaBusinessInfo");
+		super("cams", "2020-06-06", "QueryWabaBusinessInfo", "cams");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

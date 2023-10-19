@@ -29,7 +29,7 @@ public class QueryPhoneBusinessProfileRequest extends RpcAcsRequest<QueryPhoneBu
 
 	private String custSpaceId;
 	public QueryPhoneBusinessProfileRequest() {
-		super("cams", "2020-06-06", "QueryPhoneBusinessProfile");
+		super("cams", "2020-06-06", "QueryPhoneBusinessProfile", "cams");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

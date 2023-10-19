@@ -35,7 +35,7 @@ public class AddChatappPhoneNumberRequest extends RpcAcsRequest<AddChatappPhoneN
 
 	private String custSpaceId;
 	public AddChatappPhoneNumberRequest() {
-		super("cams", "2020-06-06", "AddChatappPhoneNumber");
+		super("cams", "2020-06-06", "AddChatappPhoneNumber", "cams");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class QueryChatappBindWabaRequest extends RpcAcsRequest<QueryChatappBindW
 
 	private String custSpaceId;
 	public QueryChatappBindWabaRequest() {
-		super("cams", "2020-06-06", "QueryChatappBindWaba");
+		super("cams", "2020-06-06", "QueryChatappBindWaba", "cams");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

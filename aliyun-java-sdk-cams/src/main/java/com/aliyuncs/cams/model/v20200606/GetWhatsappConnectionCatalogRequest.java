@@ -35,7 +35,7 @@ public class GetWhatsappConnectionCatalogRequest extends RpcAcsRequest<GetWhatsa
 
 	private String custSpaceId;
 	public GetWhatsappConnectionCatalogRequest() {
-		super("cams", "2020-06-06", "GetWhatsappConnectionCatalog");
+		super("cams", "2020-06-06", "GetWhatsappConnectionCatalog", "cams");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
