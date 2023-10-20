@@ -22,14 +22,10 @@ import com.aliyuncs.dds.Endpoint;
  * @author auto create
  * @version 
  */
-public class ModifyDBInstanceNetExpireTimeRequest extends RpcAcsRequest<ModifyDBInstanceNetExpireTimeResponse> {
+public class TransferClusterBackupRequest extends RpcAcsRequest<TransferClusterBackupResponse> {
 	   
 
 	private Long resourceOwnerId;
-
-	private String connectionString;
-
-	private Integer classicExpendExpiredDays;
 
 	private String securityToken;
 
@@ -40,10 +36,8 @@ public class ModifyDBInstanceNetExpireTimeRequest extends RpcAcsRequest<ModifyDB
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	private String category;
-	public ModifyDBInstanceNetExpireTimeRequest() {
-		super("Dds", "2015-12-01", "ModifyDBInstanceNetExpireTime", "dds");
+	public TransferClusterBackupRequest() {
+		super("Dds", "2015-12-01", "TransferClusterBackup", "dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -59,28 +53,6 @@ public class ModifyDBInstanceNetExpireTimeRequest extends RpcAcsRequest<ModifyDB
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getConnectionString() {
-		return this.connectionString;
-	}
-
-	public void setConnectionString(String connectionString) {
-		this.connectionString = connectionString;
-		if(connectionString != null){
-			putQueryParameter("ConnectionString", connectionString);
-		}
-	}
-
-	public Integer getClassicExpendExpiredDays() {
-		return this.classicExpendExpiredDays;
-	}
-
-	public void setClassicExpendExpiredDays(Integer classicExpendExpiredDays) {
-		this.classicExpendExpiredDays = classicExpendExpiredDays;
-		if(classicExpendExpiredDays != null){
-			putQueryParameter("ClassicExpendExpiredDays", classicExpendExpiredDays.toString());
 		}
 	}
 
@@ -139,20 +111,9 @@ public class ModifyDBInstanceNetExpireTimeRequest extends RpcAcsRequest<ModifyDB
 		}
 	}
 
-	public String getCategory() {
-		return this.category;
-	}
-
-	public void setCategory(String category) {
-		this.category = category;
-		if(category != null){
-			putQueryParameter("Category", category);
-		}
-	}
-
 	@Override
-	public Class<ModifyDBInstanceNetExpireTimeResponse> getResponseClass() {
-		return ModifyDBInstanceNetExpireTimeResponse.class;
+	public Class<TransferClusterBackupResponse> getResponseClass() {
+		return TransferClusterBackupResponse.class;
 	}
 
 }

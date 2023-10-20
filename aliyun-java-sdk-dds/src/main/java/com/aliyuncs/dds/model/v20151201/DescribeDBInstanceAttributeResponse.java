@@ -137,6 +137,8 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		private String syncPercent;
 
+		private Boolean useClusterBackup;
+
 		private Boolean burstingEnabled;
 
 		private Long provisionedIops;
@@ -511,6 +513,14 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		public void setSyncPercent(String syncPercent) {
 			this.syncPercent = syncPercent;
+		}
+
+		public Boolean getUseClusterBackup() {
+			return this.useClusterBackup;
+		}
+
+		public void setUseClusterBackup(Boolean useClusterBackup) {
+			this.useClusterBackup = useClusterBackup;
 		}
 
 		public Boolean getBurstingEnabled() {

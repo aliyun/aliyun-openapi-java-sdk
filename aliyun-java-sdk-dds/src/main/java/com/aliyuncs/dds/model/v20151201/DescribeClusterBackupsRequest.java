@@ -22,16 +22,16 @@ import com.aliyuncs.dds.Endpoint;
  * @author auto create
  * @version 
  */
-public class ModifyDBInstanceNetExpireTimeRequest extends RpcAcsRequest<ModifyDBInstanceNetExpireTimeResponse> {
+public class DescribeClusterBackupsRequest extends RpcAcsRequest<DescribeClusterBackupsResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String connectionString;
-
-	private Integer classicExpendExpiredDays;
+	private String startTime;
 
 	private String securityToken;
+
+	private Integer pageSize;
 
 	private String dBInstanceId;
 
@@ -39,11 +39,17 @@ public class ModifyDBInstanceNetExpireTimeRequest extends RpcAcsRequest<ModifyDB
 
 	private String ownerAccount;
 
+	private String backupId;
+
+	private String endTime;
+
 	private Long ownerId;
 
-	private String category;
-	public ModifyDBInstanceNetExpireTimeRequest() {
-		super("Dds", "2015-12-01", "ModifyDBInstanceNetExpireTime", "dds");
+	private Boolean isOnlyGetClusterBackUp;
+
+	private Integer pageNo;
+	public DescribeClusterBackupsRequest() {
+		super("Dds", "2015-12-01", "DescribeClusterBackups", "dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -62,25 +68,14 @@ public class ModifyDBInstanceNetExpireTimeRequest extends RpcAcsRequest<ModifyDB
 		}
 	}
 
-	public String getConnectionString() {
-		return this.connectionString;
+	public String getStartTime() {
+		return this.startTime;
 	}
 
-	public void setConnectionString(String connectionString) {
-		this.connectionString = connectionString;
-		if(connectionString != null){
-			putQueryParameter("ConnectionString", connectionString);
-		}
-	}
-
-	public Integer getClassicExpendExpiredDays() {
-		return this.classicExpendExpiredDays;
-	}
-
-	public void setClassicExpendExpiredDays(Integer classicExpendExpiredDays) {
-		this.classicExpendExpiredDays = classicExpendExpiredDays;
-		if(classicExpendExpiredDays != null){
-			putQueryParameter("ClassicExpendExpiredDays", classicExpendExpiredDays.toString());
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
 		}
 	}
 
@@ -92,6 +87,17 @@ public class ModifyDBInstanceNetExpireTimeRequest extends RpcAcsRequest<ModifyDB
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -128,6 +134,28 @@ public class ModifyDBInstanceNetExpireTimeRequest extends RpcAcsRequest<ModifyDB
 		}
 	}
 
+	public String getBackupId() {
+		return this.backupId;
+	}
+
+	public void setBackupId(String backupId) {
+		this.backupId = backupId;
+		if(backupId != null){
+			putQueryParameter("BackupId", backupId);
+		}
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -139,20 +167,31 @@ public class ModifyDBInstanceNetExpireTimeRequest extends RpcAcsRequest<ModifyDB
 		}
 	}
 
-	public String getCategory() {
-		return this.category;
+	public Boolean getIsOnlyGetClusterBackUp() {
+		return this.isOnlyGetClusterBackUp;
 	}
 
-	public void setCategory(String category) {
-		this.category = category;
-		if(category != null){
-			putQueryParameter("Category", category);
+	public void setIsOnlyGetClusterBackUp(Boolean isOnlyGetClusterBackUp) {
+		this.isOnlyGetClusterBackUp = isOnlyGetClusterBackUp;
+		if(isOnlyGetClusterBackUp != null){
+			putQueryParameter("IsOnlyGetClusterBackUp", isOnlyGetClusterBackUp.toString());
+		}
+	}
+
+	public Integer getPageNo() {
+		return this.pageNo;
+	}
+
+	public void setPageNo(Integer pageNo) {
+		this.pageNo = pageNo;
+		if(pageNo != null){
+			putQueryParameter("PageNo", pageNo.toString());
 		}
 	}
 
 	@Override
-	public Class<ModifyDBInstanceNetExpireTimeResponse> getResponseClass() {
-		return ModifyDBInstanceNetExpireTimeResponse.class;
+	public Class<DescribeClusterBackupsResponse> getResponseClass() {
+		return DescribeClusterBackupsResponse.class;
 	}
 
 }
