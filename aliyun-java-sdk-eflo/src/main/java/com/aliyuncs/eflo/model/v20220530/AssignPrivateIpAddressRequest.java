@@ -24,6 +24,8 @@ import com.aliyuncs.http.MethodType;
 public class AssignPrivateIpAddressRequest extends RpcAcsRequest<AssignPrivateIpAddressResponse> {
 	   
 
+	private String clientToken;
+
 	private String description;
 
 	private Boolean assignMac;
@@ -38,6 +40,17 @@ public class AssignPrivateIpAddressRequest extends RpcAcsRequest<AssignPrivateIp
 	public AssignPrivateIpAddressRequest() {
 		super("eflo", "2022-05-30", "AssignPrivateIpAddress", "eflo");
 		setMethod(MethodType.POST);
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putBodyParameter("ClientToken", clientToken);
+		}
 	}
 
 	public String getDescription() {

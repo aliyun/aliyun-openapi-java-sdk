@@ -69,6 +69,8 @@ public class ListNodeInfosForPodResponse extends AcsResponse {
 
 		private String regionId;
 
+		private String zoneId;
+
 		private String clusterId;
 
 		private String vpcId;
@@ -87,6 +89,14 @@ public class ListNodeInfosForPodResponse extends AcsResponse {
 
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
 		}
 
 		public String getClusterId() {

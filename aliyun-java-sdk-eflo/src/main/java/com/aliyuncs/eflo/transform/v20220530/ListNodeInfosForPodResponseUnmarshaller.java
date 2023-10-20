@@ -34,6 +34,7 @@ public class ListNodeInfosForPodResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("ListNodeInfosForPodResponse.Content.Length"); i++) {
 			ContentItem contentItem = new ContentItem();
 			contentItem.setRegionId(_ctx.stringValue("ListNodeInfosForPodResponse.Content["+ i +"].RegionId"));
+			contentItem.setZoneId(_ctx.stringValue("ListNodeInfosForPodResponse.Content["+ i +"].ZoneId"));
 			contentItem.setClusterId(_ctx.stringValue("ListNodeInfosForPodResponse.Content["+ i +"].ClusterId"));
 			contentItem.setVpcId(_ctx.stringValue("ListNodeInfosForPodResponse.Content["+ i +"].VpcId"));
 			contentItem.setNodeId(_ctx.stringValue("ListNodeInfosForPodResponse.Content["+ i +"].NodeId"));

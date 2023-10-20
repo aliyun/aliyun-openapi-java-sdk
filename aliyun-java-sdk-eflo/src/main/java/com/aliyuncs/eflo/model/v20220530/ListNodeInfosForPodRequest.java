@@ -26,6 +26,8 @@ public class ListNodeInfosForPodRequest extends RpcAcsRequest<ListNodeInfosForPo
 
 	private String clusterId;
 
+	private String zoneId;
+
 	private String nodeId;
 	public ListNodeInfosForPodRequest() {
 		super("eflo", "2022-05-30", "ListNodeInfosForPod", "eflo");
@@ -40,6 +42,17 @@ public class ListNodeInfosForPodRequest extends RpcAcsRequest<ListNodeInfosForPo
 		this.clusterId = clusterId;
 		if(clusterId != null){
 			putBodyParameter("ClusterId", clusterId);
+		}
+	}
+
+	public String getZoneId() {
+		return this.zoneId;
+	}
+
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+		if(zoneId != null){
+			putBodyParameter("ZoneId", zoneId);
 		}
 	}
 

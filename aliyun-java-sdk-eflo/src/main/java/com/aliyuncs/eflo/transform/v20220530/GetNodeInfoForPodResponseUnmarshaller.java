@@ -32,6 +32,7 @@ public class GetNodeInfoForPodResponseUnmarshaller {
 
 		Content content = new Content();
 		content.setRegionId(_ctx.stringValue("GetNodeInfoForPodResponse.Content.RegionId"));
+		content.setZoneId(_ctx.stringValue("GetNodeInfoForPodResponse.Content.ZoneId"));
 		content.setClusterId(_ctx.stringValue("GetNodeInfoForPodResponse.Content.ClusterId"));
 		content.setVpcId(_ctx.stringValue("GetNodeInfoForPodResponse.Content.VpcId"));
 		content.setNodeId(_ctx.stringValue("GetNodeInfoForPodResponse.Content.NodeId"));

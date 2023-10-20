@@ -24,18 +24,44 @@ import com.aliyuncs.http.MethodType;
 public class CreateElasticNetworkInterfaceRequest extends RpcAcsRequest<CreateElasticNetworkInterfaceResponse> {
 	   
 
+	private String clientToken;
+
+	private String securityGroupId;
+
 	private String description;
+
+	private String nodeId;
 
 	private String vSwitchId;
 
 	private String vpcId;
 
 	private String zoneId;
-
-	private String nodeId;
 	public CreateElasticNetworkInterfaceRequest() {
 		super("eflo", "2022-05-30", "CreateElasticNetworkInterface", "eflo");
 		setMethod(MethodType.POST);
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putBodyParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getSecurityGroupId() {
+		return this.securityGroupId;
+	}
+
+	public void setSecurityGroupId(String securityGroupId) {
+		this.securityGroupId = securityGroupId;
+		if(securityGroupId != null){
+			putBodyParameter("SecurityGroupId", securityGroupId);
+		}
 	}
 
 	public String getDescription() {
@@ -46,6 +72,17 @@ public class CreateElasticNetworkInterfaceRequest extends RpcAcsRequest<CreateEl
 		this.description = description;
 		if(description != null){
 			putBodyParameter("Description", description);
+		}
+	}
+
+	public String getNodeId() {
+		return this.nodeId;
+	}
+
+	public void setNodeId(String nodeId) {
+		this.nodeId = nodeId;
+		if(nodeId != null){
+			putBodyParameter("NodeId", nodeId);
 		}
 	}
 
@@ -79,17 +116,6 @@ public class CreateElasticNetworkInterfaceRequest extends RpcAcsRequest<CreateEl
 		this.zoneId = zoneId;
 		if(zoneId != null){
 			putBodyParameter("ZoneId", zoneId);
-		}
-	}
-
-	public String getNodeId() {
-		return this.nodeId;
-	}
-
-	public void setNodeId(String nodeId) {
-		this.nodeId = nodeId;
-		if(nodeId != null){
-			putBodyParameter("NodeId", nodeId);
 		}
 	}
 
