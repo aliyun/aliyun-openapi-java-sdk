@@ -22,6 +22,7 @@ import com.aliyuncs.hbr.model.v20170908.DescribeBackupJobs2Response.BackupJob;
 import com.aliyuncs.hbr.model.v20170908.DescribeBackupJobs2Response.BackupJob.Detail;
 import com.aliyuncs.hbr.model.v20170908.DescribeBackupJobs2Response.BackupJob.OtsDetail;
 import com.aliyuncs.hbr.model.v20170908.DescribeBackupJobs2Response.BackupJob.Report;
+import com.aliyuncs.hbr.model.v20170908.DescribeBackupJobs2Response.BackupJob.SnapshotCopyDetail;
 import com.aliyuncs.hbr.model.v20170908.DescribeBackupJobs2Response.BackupJob.Source;
 import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -85,6 +86,11 @@ public class DescribeBackupJobs2ResponseUnmarshaller {
 			backupJob.setCrossAccountType(_ctx.stringValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].CrossAccountType"));
 			backupJob.setCrossAccountUserId(_ctx.longValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].CrossAccountUserId"));
 			backupJob.setCrossAccountRoleName(_ctx.stringValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].CrossAccountRoleName"));
+			backupJob.setIdentifier(_ctx.stringValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].Identifier"));
+			backupJob.setDestSourceType(_ctx.stringValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].DestSourceType"));
+			backupJob.setDestDataSourceId(_ctx.stringValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].DestDataSourceId"));
+			backupJob.setDestDataSourceDetail(_ctx.stringValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].DestDataSourceDetail"));
+			backupJob.setChangeListPath(_ctx.stringValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].ChangeListPath"));
 
 			List<String> paths = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].Paths.Length"); j++) {
@@ -169,6 +175,20 @@ public class DescribeBackupJobs2ResponseUnmarshaller {
 			report.setSkippedFiles(_ctx.stringValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].Report.SkippedFiles"));
 			report.setReportTaskStatus(_ctx.stringValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].Report.ReportTaskStatus"));
 			backupJob.setReport(report);
+
+			SnapshotCopyDetail snapshotCopyDetail = new SnapshotCopyDetail();
+			snapshotCopyDetail.setSourceSnapshotHash(_ctx.stringValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].SnapshotCopyDetail.SourceSnapshotHash"));
+			snapshotCopyDetail.setSourceParentSnapshotHash(_ctx.stringValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].SnapshotCopyDetail.SourceParentSnapshotHash"));
+			snapshotCopyDetail.setDataSourceId(_ctx.stringValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].SnapshotCopyDetail.DataSourceId"));
+			snapshotCopyDetail.setOriginalSourceType(_ctx.stringValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].SnapshotCopyDetail.OriginalSourceType"));
+			snapshotCopyDetail.setStorageClass(_ctx.stringValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].SnapshotCopyDetail.StorageClass"));
+			snapshotCopyDetail.setSnapshotId(_ctx.stringValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].SnapshotCopyDetail.SnapshotId"));
+			snapshotCopyDetail.setPath(_ctx.stringValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].SnapshotCopyDetail.Path"));
+			snapshotCopyDetail.setSource(_ctx.stringValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].SnapshotCopyDetail.Source"));
+			snapshotCopyDetail.setSourceVaultId(_ctx.stringValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].SnapshotCopyDetail.SourceVaultId"));
+			snapshotCopyDetail.setParentSnapshotHash(_ctx.stringValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].SnapshotCopyDetail.ParentSnapshotHash"));
+			snapshotCopyDetail.setSnapshotTime(_ctx.stringValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].SnapshotCopyDetail.SnapshotTime"));
+			backupJob.setSnapshotCopyDetail(snapshotCopyDetail);
 
 			List<Source> sources = new ArrayList<Source>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].Sources.Length"); j++) {

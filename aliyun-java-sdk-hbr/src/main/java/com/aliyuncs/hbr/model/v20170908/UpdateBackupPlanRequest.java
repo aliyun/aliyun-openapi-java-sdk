@@ -36,6 +36,8 @@ public class UpdateBackupPlanRequest extends RpcAcsRequest<UpdateBackupPlanRespo
 
 	private List<String> paths;
 
+	private String changeListPath;
+
 	private String planName;
 
 	private String options;
@@ -124,6 +126,17 @@ public class UpdateBackupPlanRequest extends RpcAcsRequest<UpdateBackupPlanRespo
 				putQueryParameter("Path." + (i + 1) , paths.get(i));
 			}
 		}	
+	}
+
+	public String getChangeListPath() {
+		return this.changeListPath;
+	}
+
+	public void setChangeListPath(String changeListPath) {
+		this.changeListPath = changeListPath;
+		if(changeListPath != null){
+			putQueryParameter("ChangeListPath", changeListPath);
+		}
 	}
 
 	public String getPlanName() {

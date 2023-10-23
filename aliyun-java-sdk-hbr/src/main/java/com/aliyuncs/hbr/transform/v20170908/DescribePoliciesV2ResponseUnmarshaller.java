@@ -63,6 +63,7 @@ public class DescribePoliciesV2ResponseUnmarshaller {
 				rule.setArchiveVaultId(_ctx.stringValue("DescribePoliciesV2Response.Policies["+ i +"].Rules["+ j +"].ArchiveVaultId"));
 				rule.setArchiveDays(_ctx.longValue("DescribePoliciesV2Response.Policies["+ i +"].Rules["+ j +"].ArchiveDays"));
 				rule.setColdArchiveDays(_ctx.longValue("DescribePoliciesV2Response.Policies["+ i +"].Rules["+ j +"].ColdArchiveDays"));
+				rule.setKeepLatestSnapshots(_ctx.longValue("DescribePoliciesV2Response.Policies["+ i +"].Rules["+ j +"].KeepLatestSnapshots"));
 
 				Selector selector = new Selector();
 				selector.setKey(_ctx.stringValue("DescribePoliciesV2Response.Policies["+ i +"].Rules["+ j +"].Selector.Key"));

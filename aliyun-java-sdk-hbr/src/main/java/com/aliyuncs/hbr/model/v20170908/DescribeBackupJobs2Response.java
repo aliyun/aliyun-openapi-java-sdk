@@ -202,6 +202,16 @@ public class DescribeBackupJobs2Response extends AcsResponse {
 
 		private String crossAccountRoleName;
 
+		private String identifier;
+
+		private String destSourceType;
+
+		private String destDataSourceId;
+
+		private String destDataSourceDetail;
+
+		private String changeListPath;
+
 		private List<Source> sources;
 
 		private List<String> paths;
@@ -211,6 +221,8 @@ public class DescribeBackupJobs2Response extends AcsResponse {
 		private OtsDetail otsDetail;
 
 		private Report report;
+
+		private SnapshotCopyDetail snapshotCopyDetail;
 
 		public String getStatus() {
 			return this.status;
@@ -548,6 +560,46 @@ public class DescribeBackupJobs2Response extends AcsResponse {
 			this.crossAccountRoleName = crossAccountRoleName;
 		}
 
+		public String getIdentifier() {
+			return this.identifier;
+		}
+
+		public void setIdentifier(String identifier) {
+			this.identifier = identifier;
+		}
+
+		public String getDestSourceType() {
+			return this.destSourceType;
+		}
+
+		public void setDestSourceType(String destSourceType) {
+			this.destSourceType = destSourceType;
+		}
+
+		public String getDestDataSourceId() {
+			return this.destDataSourceId;
+		}
+
+		public void setDestDataSourceId(String destDataSourceId) {
+			this.destDataSourceId = destDataSourceId;
+		}
+
+		public String getDestDataSourceDetail() {
+			return this.destDataSourceDetail;
+		}
+
+		public void setDestDataSourceDetail(String destDataSourceDetail) {
+			this.destDataSourceDetail = destDataSourceDetail;
+		}
+
+		public String getChangeListPath() {
+			return this.changeListPath;
+		}
+
+		public void setChangeListPath(String changeListPath) {
+			this.changeListPath = changeListPath;
+		}
+
 		public List<Source> getSources() {
 			return this.sources;
 		}
@@ -586,6 +638,14 @@ public class DescribeBackupJobs2Response extends AcsResponse {
 
 		public void setReport(Report report) {
 			this.report = report;
+		}
+
+		public SnapshotCopyDetail getSnapshotCopyDetail() {
+			return this.snapshotCopyDetail;
+		}
+
+		public void setSnapshotCopyDetail(SnapshotCopyDetail snapshotCopyDetail) {
+			this.snapshotCopyDetail = snapshotCopyDetail;
 		}
 
 		public static class Source {
@@ -1077,6 +1137,119 @@ public class DescribeBackupJobs2Response extends AcsResponse {
 
 			public void setReportTaskStatus(String reportTaskStatus) {
 				this.reportTaskStatus = reportTaskStatus;
+			}
+		}
+
+		public static class SnapshotCopyDetail {
+
+			private String sourceSnapshotHash;
+
+			private String sourceParentSnapshotHash;
+
+			private String dataSourceId;
+
+			private String originalSourceType;
+
+			private String storageClass;
+
+			private String snapshotId;
+
+			private String path;
+
+			private String source;
+
+			private String sourceVaultId;
+
+			private String parentSnapshotHash;
+
+			private String snapshotTime;
+
+			public String getSourceSnapshotHash() {
+				return this.sourceSnapshotHash;
+			}
+
+			public void setSourceSnapshotHash(String sourceSnapshotHash) {
+				this.sourceSnapshotHash = sourceSnapshotHash;
+			}
+
+			public String getSourceParentSnapshotHash() {
+				return this.sourceParentSnapshotHash;
+			}
+
+			public void setSourceParentSnapshotHash(String sourceParentSnapshotHash) {
+				this.sourceParentSnapshotHash = sourceParentSnapshotHash;
+			}
+
+			public String getDataSourceId() {
+				return this.dataSourceId;
+			}
+
+			public void setDataSourceId(String dataSourceId) {
+				this.dataSourceId = dataSourceId;
+			}
+
+			public String getOriginalSourceType() {
+				return this.originalSourceType;
+			}
+
+			public void setOriginalSourceType(String originalSourceType) {
+				this.originalSourceType = originalSourceType;
+			}
+
+			public String getStorageClass() {
+				return this.storageClass;
+			}
+
+			public void setStorageClass(String storageClass) {
+				this.storageClass = storageClass;
+			}
+
+			public String getSnapshotId() {
+				return this.snapshotId;
+			}
+
+			public void setSnapshotId(String snapshotId) {
+				this.snapshotId = snapshotId;
+			}
+
+			public String getPath() {
+				return this.path;
+			}
+
+			public void setPath(String path) {
+				this.path = path;
+			}
+
+			public String getSource() {
+				return this.source;
+			}
+
+			public void setSource(String source) {
+				this.source = source;
+			}
+
+			public String getSourceVaultId() {
+				return this.sourceVaultId;
+			}
+
+			public void setSourceVaultId(String sourceVaultId) {
+				this.sourceVaultId = sourceVaultId;
+			}
+
+			public String getParentSnapshotHash() {
+				return this.parentSnapshotHash;
+			}
+
+			public void setParentSnapshotHash(String parentSnapshotHash) {
+				this.parentSnapshotHash = parentSnapshotHash;
+			}
+
+			public String getSnapshotTime() {
+				return this.snapshotTime;
+			}
+
+			public void setSnapshotTime(String snapshotTime) {
+				this.snapshotTime = snapshotTime;
 			}
 		}
 	}

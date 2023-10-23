@@ -31,6 +31,8 @@ public class CreateHanaRestoreRequest extends RpcAcsRequest<CreateHanaRestoreRes
 
 	private Long logPosition;
 
+	private String vaultId;
+
 	private String source;
 
 	private Boolean clearLog;
@@ -97,6 +99,17 @@ public class CreateHanaRestoreRequest extends RpcAcsRequest<CreateHanaRestoreRes
 		this.logPosition = logPosition;
 		if(logPosition != null){
 			putQueryParameter("LogPosition", logPosition.toString());
+		}
+	}
+
+	public String getVaultId() {
+		return this.vaultId;
+	}
+
+	public void setVaultId(String vaultId) {
+		this.vaultId = vaultId;
+		if(vaultId != null){
+			putQueryParameter("VaultId", vaultId);
 		}
 	}
 

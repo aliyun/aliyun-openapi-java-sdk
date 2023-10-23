@@ -430,6 +430,10 @@ public class DescribeBackupClientsResponse extends AcsResponse {
 
 			private String maxWorker;
 
+			private Long maxMemory;
+
+			private Boolean alertOnPartialComplete;
+
 			public String getProxyHost() {
 				return this.proxyHost;
 			}
@@ -500,6 +504,22 @@ public class DescribeBackupClientsResponse extends AcsResponse {
 
 			public void setMaxWorker(String maxWorker) {
 				this.maxWorker = maxWorker;
+			}
+
+			public Long getMaxMemory() {
+				return this.maxMemory;
+			}
+
+			public void setMaxMemory(Long maxMemory) {
+				this.maxMemory = maxMemory;
+			}
+
+			public Boolean getAlertOnPartialComplete() {
+				return this.alertOnPartialComplete;
+			}
+
+			public void setAlertOnPartialComplete(Boolean alertOnPartialComplete) {
+				this.alertOnPartialComplete = alertOnPartialComplete;
 			}
 		}
 	}

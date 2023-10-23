@@ -70,6 +70,8 @@ public class CreateRestoreJobRequest extends RpcAcsRequest<CreateRestoreJobRespo
 	@SerializedName("otsDetail")
 	private OtsDetail otsDetail;
 
+	private String failbackDetail;
+
 	private String targetFileSystemId;
 
 	private String targetPath;
@@ -315,6 +317,17 @@ public class CreateRestoreJobRequest extends RpcAcsRequest<CreateRestoreJobRespo
 		if (otsDetail != null) {
 			putBodyParameter("OtsDetail" , new Gson().toJson(otsDetail));
 		}	
+	}
+
+	public String getFailbackDetail() {
+		return this.failbackDetail;
+	}
+
+	public void setFailbackDetail(String failbackDetail) {
+		this.failbackDetail = failbackDetail;
+		if(failbackDetail != null){
+			putQueryParameter("FailbackDetail", failbackDetail);
+		}
 	}
 
 	public String getTargetFileSystemId() {

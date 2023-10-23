@@ -34,13 +34,11 @@ public class CreateBackupPlanRequest extends RpcAcsRequest<CreateBackupPlanRespo
 
 	private String crossAccountType;
 
-	private List<Rule> rules;
-
 	private String crossAccountRoleName;
 
 	private List<String> paths;
 
-	private String planName;
+	private String changeListPath;
 
 	private String options;
 
@@ -50,6 +48,22 @@ public class CreateBackupPlanRequest extends RpcAcsRequest<CreateBackupPlanRespo
 
 	private String backupType;
 
+	private String destDataSourceId;
+
+	private String bucket;
+
+	private String instanceId;
+
+	private String instanceName;
+
+	private String speedLimit;
+
+	private String detail;
+
+	private List<Rule> rules;
+
+	private String planName;
+
 	private Long retention;
 
 	private String fileSystemId;
@@ -58,22 +72,16 @@ public class CreateBackupPlanRequest extends RpcAcsRequest<CreateBackupPlanRespo
 
 	private Long createTime;
 
+	private String destSourceType;
+
 	private Long keepLatestSnapshots;
 
-	private String bucket;
+	private String destDataSourceDetail;
 
 	private String schedule;
 
-	private String instanceId;
-
-	private String instanceName;
-
 	@SerializedName("otsDetail")
 	private OtsDetail otsDetail;
-
-	private String speedLimit;
-
-	private String detail;
 
 	private Long crossAccountUserId;
 
@@ -120,26 +128,6 @@ public class CreateBackupPlanRequest extends RpcAcsRequest<CreateBackupPlanRespo
 		}
 	}
 
-	public List<Rule> getRules() {
-		return this.rules;
-	}
-
-	public void setRules(List<Rule> rules) {
-		this.rules = rules;	
-		if (rules != null) {
-			for (int depth1 = 0; depth1 < rules.size(); depth1++) {
-				putBodyParameter("Rule." + (depth1 + 1) + ".Schedule" , rules.get(depth1).getSchedule());
-				putBodyParameter("Rule." + (depth1 + 1) + ".DestinationRegionId" , rules.get(depth1).getDestinationRegionId());
-				putBodyParameter("Rule." + (depth1 + 1) + ".Disabled" , rules.get(depth1).getDisabled());
-				putBodyParameter("Rule." + (depth1 + 1) + ".RuleName" , rules.get(depth1).getRuleName());
-				putBodyParameter("Rule." + (depth1 + 1) + ".DestinationRetention" , rules.get(depth1).getDestinationRetention());
-				putBodyParameter("Rule." + (depth1 + 1) + ".Retention" , rules.get(depth1).getRetention());
-				putBodyParameter("Rule." + (depth1 + 1) + ".BackupType" , rules.get(depth1).getBackupType());
-				putBodyParameter("Rule." + (depth1 + 1) + ".DoCopy" , rules.get(depth1).getDoCopy());
-			}
-		}	
-	}
-
 	public String getCrossAccountRoleName() {
 		return this.crossAccountRoleName;
 	}
@@ -164,14 +152,14 @@ public class CreateBackupPlanRequest extends RpcAcsRequest<CreateBackupPlanRespo
 		}	
 	}
 
-	public String getPlanName() {
-		return this.planName;
+	public String getChangeListPath() {
+		return this.changeListPath;
 	}
 
-	public void setPlanName(String planName) {
-		this.planName = planName;
-		if(planName != null){
-			putQueryParameter("PlanName", planName);
+	public void setChangeListPath(String changeListPath) {
+		this.changeListPath = changeListPath;
+		if(changeListPath != null){
+			putQueryParameter("ChangeListPath", changeListPath);
 		}
 	}
 
@@ -219,6 +207,103 @@ public class CreateBackupPlanRequest extends RpcAcsRequest<CreateBackupPlanRespo
 		}
 	}
 
+	public String getDestDataSourceId() {
+		return this.destDataSourceId;
+	}
+
+	public void setDestDataSourceId(String destDataSourceId) {
+		this.destDataSourceId = destDataSourceId;
+		if(destDataSourceId != null){
+			putQueryParameter("DestDataSourceId", destDataSourceId);
+		}
+	}
+
+	public String getBucket() {
+		return this.bucket;
+	}
+
+	public void setBucket(String bucket) {
+		this.bucket = bucket;
+		if(bucket != null){
+			putQueryParameter("Bucket", bucket);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putBodyParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getInstanceName() {
+		return this.instanceName;
+	}
+
+	public void setInstanceName(String instanceName) {
+		this.instanceName = instanceName;
+		if(instanceName != null){
+			putBodyParameter("InstanceName", instanceName);
+		}
+	}
+
+	public String getSpeedLimit() {
+		return this.speedLimit;
+	}
+
+	public void setSpeedLimit(String speedLimit) {
+		this.speedLimit = speedLimit;
+		if(speedLimit != null){
+			putBodyParameter("SpeedLimit", speedLimit);
+		}
+	}
+
+	public String getDetail() {
+		return this.detail;
+	}
+
+	public void setDetail(String detail) {
+		this.detail = detail;
+		if(detail != null){
+			putQueryParameter("Detail", detail);
+		}
+	}
+
+	public List<Rule> getRules() {
+		return this.rules;
+	}
+
+	public void setRules(List<Rule> rules) {
+		this.rules = rules;	
+		if (rules != null) {
+			for (int depth1 = 0; depth1 < rules.size(); depth1++) {
+				putBodyParameter("Rule." + (depth1 + 1) + ".Schedule" , rules.get(depth1).getSchedule());
+				putBodyParameter("Rule." + (depth1 + 1) + ".DestinationRegionId" , rules.get(depth1).getDestinationRegionId());
+				putBodyParameter("Rule." + (depth1 + 1) + ".Disabled" , rules.get(depth1).getDisabled());
+				putBodyParameter("Rule." + (depth1 + 1) + ".RuleName" , rules.get(depth1).getRuleName());
+				putBodyParameter("Rule." + (depth1 + 1) + ".DestinationRetention" , rules.get(depth1).getDestinationRetention());
+				putBodyParameter("Rule." + (depth1 + 1) + ".Retention" , rules.get(depth1).getRetention());
+				putBodyParameter("Rule." + (depth1 + 1) + ".BackupType" , rules.get(depth1).getBackupType());
+				putBodyParameter("Rule." + (depth1 + 1) + ".DoCopy" , rules.get(depth1).getDoCopy());
+			}
+		}	
+	}
+
+	public String getPlanName() {
+		return this.planName;
+	}
+
+	public void setPlanName(String planName) {
+		this.planName = planName;
+		if(planName != null){
+			putQueryParameter("PlanName", planName);
+		}
+	}
+
 	public Long getRetention() {
 		return this.retention;
 	}
@@ -263,6 +348,17 @@ public class CreateBackupPlanRequest extends RpcAcsRequest<CreateBackupPlanRespo
 		}
 	}
 
+	public String getDestSourceType() {
+		return this.destSourceType;
+	}
+
+	public void setDestSourceType(String destSourceType) {
+		this.destSourceType = destSourceType;
+		if(destSourceType != null){
+			putQueryParameter("DestSourceType", destSourceType);
+		}
+	}
+
 	public Long getKeepLatestSnapshots() {
 		return this.keepLatestSnapshots;
 	}
@@ -274,14 +370,14 @@ public class CreateBackupPlanRequest extends RpcAcsRequest<CreateBackupPlanRespo
 		}
 	}
 
-	public String getBucket() {
-		return this.bucket;
+	public String getDestDataSourceDetail() {
+		return this.destDataSourceDetail;
 	}
 
-	public void setBucket(String bucket) {
-		this.bucket = bucket;
-		if(bucket != null){
-			putQueryParameter("Bucket", bucket);
+	public void setDestDataSourceDetail(String destDataSourceDetail) {
+		this.destDataSourceDetail = destDataSourceDetail;
+		if(destDataSourceDetail != null){
+			putQueryParameter("DestDataSourceDetail", destDataSourceDetail);
 		}
 	}
 
@@ -296,28 +392,6 @@ public class CreateBackupPlanRequest extends RpcAcsRequest<CreateBackupPlanRespo
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putBodyParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getInstanceName() {
-		return this.instanceName;
-	}
-
-	public void setInstanceName(String instanceName) {
-		this.instanceName = instanceName;
-		if(instanceName != null){
-			putBodyParameter("InstanceName", instanceName);
-		}
-	}
-
 	public OtsDetail getOtsDetail() {
 		return this.otsDetail;
 	}
@@ -327,28 +401,6 @@ public class CreateBackupPlanRequest extends RpcAcsRequest<CreateBackupPlanRespo
 		if (otsDetail != null) {
 			putBodyParameter("OtsDetail" , new Gson().toJson(otsDetail));
 		}	
-	}
-
-	public String getSpeedLimit() {
-		return this.speedLimit;
-	}
-
-	public void setSpeedLimit(String speedLimit) {
-		this.speedLimit = speedLimit;
-		if(speedLimit != null){
-			putBodyParameter("SpeedLimit", speedLimit);
-		}
-	}
-
-	public String getDetail() {
-		return this.detail;
-	}
-
-	public void setDetail(String detail) {
-		this.detail = detail;
-		if(detail != null){
-			putQueryParameter("Detail", detail);
-		}
 	}
 
 	public Long getCrossAccountUserId() {

@@ -22,18 +22,20 @@ import com.aliyuncs.hbr.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeContainerClusterRequest extends RpcAcsRequest<DescribeContainerClusterResponse> {
+public class UpdateContainerClusterRequest extends RpcAcsRequest<UpdateContainerClusterResponse> {
 	   
 
-	private String identifier;
+	private String description;
 
 	private String clusterId;
 
-	private Integer pageNumber;
+	private String networkType;
 
-	private Integer pageSize;
-	public DescribeContainerClusterRequest() {
-		super("hbr", "2017-09-08", "DescribeContainerCluster", "hbr");
+	private String name;
+
+	private Boolean renewToken;
+	public UpdateContainerClusterRequest() {
+		super("hbr", "2017-09-08", "UpdateContainerCluster", "hbr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -41,14 +43,14 @@ public class DescribeContainerClusterRequest extends RpcAcsRequest<DescribeConta
 		} catch (Exception e) {}
 	}
 
-	public String getIdentifier() {
-		return this.identifier;
+	public String getDescription() {
+		return this.description;
 	}
 
-	public void setIdentifier(String identifier) {
-		this.identifier = identifier;
-		if(identifier != null){
-			putQueryParameter("Identifier", identifier);
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
 		}
 	}
 
@@ -63,31 +65,42 @@ public class DescribeContainerClusterRequest extends RpcAcsRequest<DescribeConta
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getNetworkType() {
+		return this.networkType;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
+	public void setNetworkType(String networkType) {
+		this.networkType = networkType;
+		if(networkType != null){
+			putQueryParameter("NetworkType", networkType);
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public String getName() {
+		return this.name;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
+		}
+	}
+
+	public Boolean getRenewToken() {
+		return this.renewToken;
+	}
+
+	public void setRenewToken(Boolean renewToken) {
+		this.renewToken = renewToken;
+		if(renewToken != null){
+			putQueryParameter("RenewToken", renewToken.toString());
 		}
 	}
 
 	@Override
-	public Class<DescribeContainerClusterResponse> getResponseClass() {
-		return DescribeContainerClusterResponse.class;
+	public Class<UpdateContainerClusterResponse> getResponseClass() {
+		return UpdateContainerClusterResponse.class;
 	}
 
 }

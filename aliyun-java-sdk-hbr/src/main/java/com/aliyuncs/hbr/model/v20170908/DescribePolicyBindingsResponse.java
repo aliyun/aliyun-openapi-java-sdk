@@ -272,12 +272,42 @@ public class DescribePolicyBindingsResponse extends AcsResponse {
 
 			private UdmDetail udmDetail;
 
+			private OssDetail ossDetail;
+
+			private FileDetail fileDetail;
+
+			private CommonNasDetail commonNasDetail;
+
 			public UdmDetail getUdmDetail() {
 				return this.udmDetail;
 			}
 
 			public void setUdmDetail(UdmDetail udmDetail) {
 				this.udmDetail = udmDetail;
+			}
+
+			public OssDetail getOssDetail() {
+				return this.ossDetail;
+			}
+
+			public void setOssDetail(OssDetail ossDetail) {
+				this.ossDetail = ossDetail;
+			}
+
+			public FileDetail getFileDetail() {
+				return this.fileDetail;
+			}
+
+			public void setFileDetail(FileDetail fileDetail) {
+				this.fileDetail = fileDetail;
+			}
+
+			public CommonNasDetail getCommonNasDetail() {
+				return this.commonNasDetail;
+			}
+
+			public void setCommonNasDetail(CommonNasDetail commonNasDetail) {
+				this.commonNasDetail = commonNasDetail;
 			}
 
 			public static class UdmDetail {
@@ -309,6 +339,8 @@ public class DescribePolicyBindingsResponse extends AcsResponse {
 				private Map<Object,Object> excludeDiskIdMap;
 
 				private String groupName;
+
+				private String destinationKmsKeyId;
 
 				private List<String> excludeDiskIdList;
 
@@ -426,6 +458,14 @@ public class DescribePolicyBindingsResponse extends AcsResponse {
 					this.groupName = groupName;
 				}
 
+				public String getDestinationKmsKeyId() {
+					return this.destinationKmsKeyId;
+				}
+
+				public void setDestinationKmsKeyId(String destinationKmsKeyId) {
+					this.destinationKmsKeyId = destinationKmsKeyId;
+				}
+
 				public List<String> getExcludeDiskIdList() {
 					return this.excludeDiskIdList;
 				}
@@ -440,6 +480,85 @@ public class DescribePolicyBindingsResponse extends AcsResponse {
 
 				public void setDiskIdList(List<String> diskIdList) {
 					this.diskIdList = diskIdList;
+				}
+			}
+
+			public static class OssDetail {
+
+				private String inventoryId;
+
+				private String inventoryCleanupPolicy;
+
+				public String getInventoryId() {
+					return this.inventoryId;
+				}
+
+				public void setInventoryId(String inventoryId) {
+					this.inventoryId = inventoryId;
+				}
+
+				public String getInventoryCleanupPolicy() {
+					return this.inventoryCleanupPolicy;
+				}
+
+				public void setInventoryCleanupPolicy(String inventoryCleanupPolicy) {
+					this.inventoryCleanupPolicy = inventoryCleanupPolicy;
+				}
+			}
+
+			public static class FileDetail {
+
+				private Boolean useVSS;
+
+				private Boolean advPolicy;
+
+				public Boolean getUseVSS() {
+					return this.useVSS;
+				}
+
+				public void setUseVSS(Boolean useVSS) {
+					this.useVSS = useVSS;
+				}
+
+				public Boolean getAdvPolicy() {
+					return this.advPolicy;
+				}
+
+				public void setAdvPolicy(Boolean advPolicy) {
+					this.advPolicy = advPolicy;
+				}
+			}
+
+			public static class CommonNasDetail {
+
+				private Boolean fullOnIncrementFail;
+
+				private Long fetchSliceSize;
+
+				private String clientId;
+
+				public Boolean getFullOnIncrementFail() {
+					return this.fullOnIncrementFail;
+				}
+
+				public void setFullOnIncrementFail(Boolean fullOnIncrementFail) {
+					this.fullOnIncrementFail = fullOnIncrementFail;
+				}
+
+				public Long getFetchSliceSize() {
+					return this.fetchSliceSize;
+				}
+
+				public void setFetchSliceSize(Long fetchSliceSize) {
+					this.fetchSliceSize = fetchSliceSize;
+				}
+
+				public String getClientId() {
+					return this.clientId;
+				}
+
+				public void setClientId(String clientId) {
+					this.clientId = clientId;
 				}
 			}
 		}

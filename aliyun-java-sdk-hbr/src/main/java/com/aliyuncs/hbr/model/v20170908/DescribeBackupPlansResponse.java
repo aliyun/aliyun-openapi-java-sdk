@@ -167,6 +167,14 @@ public class DescribeBackupPlansResponse extends AcsResponse {
 
 		private Long keepLatestSnapshots;
 
+		private String destSourceType;
+
+		private String destDataSourceId;
+
+		private String destDataSourceDetail;
+
+		private String changeListPath;
+
 		private List<Rule> rules;
 
 		private List<Resource> resources;
@@ -415,6 +423,38 @@ public class DescribeBackupPlansResponse extends AcsResponse {
 
 		public void setKeepLatestSnapshots(Long keepLatestSnapshots) {
 			this.keepLatestSnapshots = keepLatestSnapshots;
+		}
+
+		public String getDestSourceType() {
+			return this.destSourceType;
+		}
+
+		public void setDestSourceType(String destSourceType) {
+			this.destSourceType = destSourceType;
+		}
+
+		public String getDestDataSourceId() {
+			return this.destDataSourceId;
+		}
+
+		public void setDestDataSourceId(String destDataSourceId) {
+			this.destDataSourceId = destDataSourceId;
+		}
+
+		public String getDestDataSourceDetail() {
+			return this.destDataSourceDetail;
+		}
+
+		public void setDestDataSourceDetail(String destDataSourceDetail) {
+			this.destDataSourceDetail = destDataSourceDetail;
+		}
+
+		public String getChangeListPath() {
+			return this.changeListPath;
+		}
+
+		public void setChangeListPath(String changeListPath) {
+			this.changeListPath = changeListPath;
 		}
 
 		public List<Rule> getRules() {

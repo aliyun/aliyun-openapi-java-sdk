@@ -34,11 +34,15 @@ public class UpdateClientSettingsRequest extends RpcAcsRequest<UpdateClientSetti
 
 	private String vaultId;
 
+	private Long maxMemory;
+
 	private String resourceGroupId;
 
 	private String proxyUser;
 
 	private Boolean useHttps;
+
+	private Boolean alertOnPartialComplete;
 
 	private Integer maxWorker;
 
@@ -103,6 +107,17 @@ public class UpdateClientSettingsRequest extends RpcAcsRequest<UpdateClientSetti
 		}
 	}
 
+	public Long getMaxMemory() {
+		return this.maxMemory;
+	}
+
+	public void setMaxMemory(Long maxMemory) {
+		this.maxMemory = maxMemory;
+		if(maxMemory != null){
+			putQueryParameter("MaxMemory", maxMemory.toString());
+		}
+	}
+
 	public String getResourceGroupId() {
 		return this.resourceGroupId;
 	}
@@ -133,6 +148,17 @@ public class UpdateClientSettingsRequest extends RpcAcsRequest<UpdateClientSetti
 		this.useHttps = useHttps;
 		if(useHttps != null){
 			putQueryParameter("UseHttps", useHttps.toString());
+		}
+	}
+
+	public Boolean getAlertOnPartialComplete() {
+		return this.alertOnPartialComplete;
+	}
+
+	public void setAlertOnPartialComplete(Boolean alertOnPartialComplete) {
+		this.alertOnPartialComplete = alertOnPartialComplete;
+		if(alertOnPartialComplete != null){
+			putQueryParameter("AlertOnPartialComplete", alertOnPartialComplete.toString());
 		}
 	}
 

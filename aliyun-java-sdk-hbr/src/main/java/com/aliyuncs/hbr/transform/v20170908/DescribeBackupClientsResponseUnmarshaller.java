@@ -76,6 +76,8 @@ public class DescribeBackupClientsResponseUnmarshaller {
 			settings.setDataProxySetting(_ctx.stringValue("DescribeBackupClientsResponse.Clients["+ i +"].Settings.DataProxySetting"));
 			settings.setDataNetworkType(_ctx.stringValue("DescribeBackupClientsResponse.Clients["+ i +"].Settings.DataNetworkType"));
 			settings.setMaxWorker(_ctx.stringValue("DescribeBackupClientsResponse.Clients["+ i +"].Settings.MaxWorker"));
+			settings.setMaxMemory(_ctx.longValue("DescribeBackupClientsResponse.Clients["+ i +"].Settings.MaxMemory"));
+			settings.setAlertOnPartialComplete(_ctx.booleanValue("DescribeBackupClientsResponse.Clients["+ i +"].Settings.AlertOnPartialComplete"));
 			client.setSettings(settings);
 
 			List<Tag> tags = new ArrayList<Tag>();

@@ -35,8 +35,6 @@ public class CreateVaultRequest extends RpcAcsRequest<CreateVaultResponse> {
 
 	private String vaultType;
 
-	private String redundancyType;
-
 	private String vaultStorageClass;
 
 	private String kmsKeyId;
@@ -101,17 +99,6 @@ public class CreateVaultRequest extends RpcAcsRequest<CreateVaultResponse> {
 		this.vaultType = vaultType;
 		if(vaultType != null){
 			putQueryParameter("VaultType", vaultType);
-		}
-	}
-
-	public String getRedundancyType() {
-		return this.redundancyType;
-	}
-
-	public void setRedundancyType(String redundancyType) {
-		this.redundancyType = redundancyType;
-		if(redundancyType != null){
-			putQueryParameter("RedundancyType", redundancyType);
 		}
 	}
 

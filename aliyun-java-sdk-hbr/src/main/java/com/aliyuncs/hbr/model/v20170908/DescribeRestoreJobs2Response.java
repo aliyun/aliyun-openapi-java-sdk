@@ -191,6 +191,14 @@ public class DescribeRestoreJobs2Response extends AcsResponse {
 
 		private String crossAccountRoleName;
 
+		private Long meteringBytesDone;
+
+		private Long meteringBytesTotal;
+
+		private String storageClass;
+
+		private String failbackDetail;
+
 		private OtsDetail otsDetail;
 
 		private Report report;
@@ -529,6 +537,38 @@ public class DescribeRestoreJobs2Response extends AcsResponse {
 
 		public void setCrossAccountRoleName(String crossAccountRoleName) {
 			this.crossAccountRoleName = crossAccountRoleName;
+		}
+
+		public Long getMeteringBytesDone() {
+			return this.meteringBytesDone;
+		}
+
+		public void setMeteringBytesDone(Long meteringBytesDone) {
+			this.meteringBytesDone = meteringBytesDone;
+		}
+
+		public Long getMeteringBytesTotal() {
+			return this.meteringBytesTotal;
+		}
+
+		public void setMeteringBytesTotal(Long meteringBytesTotal) {
+			this.meteringBytesTotal = meteringBytesTotal;
+		}
+
+		public String getStorageClass() {
+			return this.storageClass;
+		}
+
+		public void setStorageClass(String storageClass) {
+			this.storageClass = storageClass;
+		}
+
+		public String getFailbackDetail() {
+			return this.failbackDetail;
+		}
+
+		public void setFailbackDetail(String failbackDetail) {
+			this.failbackDetail = failbackDetail;
 		}
 
 		public OtsDetail getOtsDetail() {

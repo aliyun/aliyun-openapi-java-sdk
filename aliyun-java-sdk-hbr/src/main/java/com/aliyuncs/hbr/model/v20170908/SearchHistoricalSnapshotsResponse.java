@@ -171,6 +171,20 @@ public class SearchHistoricalSnapshotsResponse extends AcsResponse {
 
 		private Long expireTime;
 
+		private String sourceSnapshotHash;
+
+		private String sourceParentSnapshotHash;
+
+		private String storageClass;
+
+		private Long archiveTime;
+
+		private Boolean useCommonNas;
+
+		private String include;
+
+		private String exclude;
+
 		private List<String> paths;
 
 		public String getStatus() {
@@ -427,6 +441,62 @@ public class SearchHistoricalSnapshotsResponse extends AcsResponse {
 
 		public void setExpireTime(Long expireTime) {
 			this.expireTime = expireTime;
+		}
+
+		public String getSourceSnapshotHash() {
+			return this.sourceSnapshotHash;
+		}
+
+		public void setSourceSnapshotHash(String sourceSnapshotHash) {
+			this.sourceSnapshotHash = sourceSnapshotHash;
+		}
+
+		public String getSourceParentSnapshotHash() {
+			return this.sourceParentSnapshotHash;
+		}
+
+		public void setSourceParentSnapshotHash(String sourceParentSnapshotHash) {
+			this.sourceParentSnapshotHash = sourceParentSnapshotHash;
+		}
+
+		public String getStorageClass() {
+			return this.storageClass;
+		}
+
+		public void setStorageClass(String storageClass) {
+			this.storageClass = storageClass;
+		}
+
+		public Long getArchiveTime() {
+			return this.archiveTime;
+		}
+
+		public void setArchiveTime(Long archiveTime) {
+			this.archiveTime = archiveTime;
+		}
+
+		public Boolean getUseCommonNas() {
+			return this.useCommonNas;
+		}
+
+		public void setUseCommonNas(Boolean useCommonNas) {
+			this.useCommonNas = useCommonNas;
+		}
+
+		public String getInclude() {
+			return this.include;
+		}
+
+		public void setInclude(String include) {
+			this.include = include;
+		}
+
+		public String getExclude() {
+			return this.exclude;
+		}
+
+		public void setExclude(String exclude) {
+			this.exclude = exclude;
 		}
 
 		public List<String> getPaths() {

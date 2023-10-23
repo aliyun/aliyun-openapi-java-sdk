@@ -171,6 +171,10 @@ public class DescribeVaultsResponse extends AcsResponse {
 
 		private Long chargedStorageSize;
 
+		private Long archiveStorageSize;
+
+		private Boolean replicationSourceVault;
+
 		private List<Tag> tags;
 
 		private List<String> sourceTypes;
@@ -437,6 +441,22 @@ public class DescribeVaultsResponse extends AcsResponse {
 
 		public void setChargedStorageSize(Long chargedStorageSize) {
 			this.chargedStorageSize = chargedStorageSize;
+		}
+
+		public Long getArchiveStorageSize() {
+			return this.archiveStorageSize;
+		}
+
+		public void setArchiveStorageSize(Long archiveStorageSize) {
+			this.archiveStorageSize = archiveStorageSize;
+		}
+
+		public Boolean getReplicationSourceVault() {
+			return this.replicationSourceVault;
+		}
+
+		public void setReplicationSourceVault(Boolean replicationSourceVault) {
+			this.replicationSourceVault = replicationSourceVault;
 		}
 
 		public List<Tag> getTags() {

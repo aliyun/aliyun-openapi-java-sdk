@@ -213,6 +213,8 @@ public class DescribePoliciesV2Response extends AcsResponse {
 
 			private Long coldArchiveDays;
 
+			private Long keepLatestSnapshots;
+
 			private List<RetentionRule> retentionRules;
 
 			private Selector selector;
@@ -311,6 +313,14 @@ public class DescribePoliciesV2Response extends AcsResponse {
 
 			public void setColdArchiveDays(Long coldArchiveDays) {
 				this.coldArchiveDays = coldArchiveDays;
+			}
+
+			public Long getKeepLatestSnapshots() {
+				return this.keepLatestSnapshots;
+			}
+
+			public void setKeepLatestSnapshots(Long keepLatestSnapshots) {
+				this.keepLatestSnapshots = keepLatestSnapshots;
 			}
 
 			public List<RetentionRule> getRetentionRules() {

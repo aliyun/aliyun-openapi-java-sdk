@@ -74,6 +74,8 @@ public class DescribeVaultsResponseUnmarshaller {
 			vault.setRedundancyType(_ctx.stringValue("DescribeVaultsResponse.Vaults["+ i +"].RedundancyType"));
 			vault.setKmsKeyId(_ctx.stringValue("DescribeVaultsResponse.Vaults["+ i +"].KmsKeyId"));
 			vault.setChargedStorageSize(_ctx.longValue("DescribeVaultsResponse.Vaults["+ i +"].ChargedStorageSize"));
+			vault.setArchiveStorageSize(_ctx.longValue("DescribeVaultsResponse.Vaults["+ i +"].ArchiveStorageSize"));
+			vault.setReplicationSourceVault(_ctx.booleanValue("DescribeVaultsResponse.Vaults["+ i +"].ReplicationSourceVault"));
 
 			List<String> sourceTypes = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeVaultsResponse.Vaults["+ i +"].SourceTypes.Length"); j++) {

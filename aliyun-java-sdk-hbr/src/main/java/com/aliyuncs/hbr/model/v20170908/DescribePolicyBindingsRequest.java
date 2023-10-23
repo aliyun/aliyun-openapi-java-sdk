@@ -31,6 +31,8 @@ public class DescribePolicyBindingsRequest extends RpcAcsRequest<DescribePolicyB
 	@SerializedName("dataSourceIds")
 	private List<String> dataSourceIds;
 
+	private List<Filters> filterss;
+
 	private String policyId;
 
 	private String nextToken;
@@ -55,6 +57,25 @@ public class DescribePolicyBindingsRequest extends RpcAcsRequest<DescribePolicyB
 		this.dataSourceIds = dataSourceIds;	
 		if (dataSourceIds != null) {
 			putBodyParameter("DataSourceIds" , new Gson().toJson(dataSourceIds));
+		}	
+	}
+
+	public List<Filters> getFilterss() {
+		return this.filterss;
+	}
+
+	public void setFilterss(List<Filters> filterss) {
+		this.filterss = filterss;	
+		if (filterss != null) {
+			for (int depth1 = 0; depth1 < filterss.size(); depth1++) {
+				if (filterss.get(depth1).getValuess() != null) {
+					for (int i = 0; i < filterss.get(depth1).getValuess().size(); i++) {
+						putQueryParameter("Filters." + (depth1 + 1) + ".Values." + (i + 1) , filterss.get(depth1).getValuess().get(i));
+					}
+				}
+				putQueryParameter("Filters." + (depth1 + 1) + ".Key" , filterss.get(depth1).getKey());
+				putQueryParameter("Filters." + (depth1 + 1) + ".Operator" , filterss.get(depth1).getOperator());
+			}
 		}	
 	}
 
@@ -99,6 +120,39 @@ public class DescribePolicyBindingsRequest extends RpcAcsRequest<DescribePolicyB
 		this.sourceType = sourceType;
 		if(sourceType != null){
 			putQueryParameter("SourceType", sourceType);
+		}
+	}
+
+	public static class Filters {
+
+		private List<String> valuess;
+
+		private String key;
+
+		private String operator;
+
+		public List<String> getValuess() {
+			return this.valuess;
+		}
+
+		public void setValuess(List<String> valuess) {
+			this.valuess = valuess;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+
+		public String getOperator() {
+			return this.operator;
+		}
+
+		public void setOperator(String operator) {
+			this.operator = operator;
 		}
 	}
 

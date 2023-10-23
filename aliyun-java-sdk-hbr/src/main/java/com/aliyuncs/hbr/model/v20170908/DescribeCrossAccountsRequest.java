@@ -22,45 +22,19 @@ import com.aliyuncs.hbr.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeContainerClusterRequest extends RpcAcsRequest<DescribeContainerClusterResponse> {
+public class DescribeCrossAccountsRequest extends RpcAcsRequest<DescribeCrossAccountsResponse> {
 	   
-
-	private String identifier;
-
-	private String clusterId;
 
 	private Integer pageNumber;
 
 	private Integer pageSize;
-	public DescribeContainerClusterRequest() {
-		super("hbr", "2017-09-08", "DescribeContainerCluster", "hbr");
+	public DescribeCrossAccountsRequest() {
+		super("hbr", "2017-09-08", "DescribeCrossAccounts", "hbr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getIdentifier() {
-		return this.identifier;
-	}
-
-	public void setIdentifier(String identifier) {
-		this.identifier = identifier;
-		if(identifier != null){
-			putQueryParameter("Identifier", identifier);
-		}
-	}
-
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putQueryParameter("ClusterId", clusterId);
-		}
 	}
 
 	public Integer getPageNumber() {
@@ -86,8 +60,8 @@ public class DescribeContainerClusterRequest extends RpcAcsRequest<DescribeConta
 	}
 
 	@Override
-	public Class<DescribeContainerClusterResponse> getResponseClass() {
-		return DescribeContainerClusterResponse.class;
+	public Class<DescribeCrossAccountsResponse> getResponseClass() {
+		return DescribeCrossAccountsResponse.class;
 	}
 
 }

@@ -81,6 +81,10 @@ public class DescribeRestoreJobs2ResponseUnmarshaller {
 			restoreJob.setCrossAccountType(_ctx.stringValue("DescribeRestoreJobs2Response.RestoreJobs["+ i +"].CrossAccountType"));
 			restoreJob.setCrossAccountUserId(_ctx.longValue("DescribeRestoreJobs2Response.RestoreJobs["+ i +"].CrossAccountUserId"));
 			restoreJob.setCrossAccountRoleName(_ctx.stringValue("DescribeRestoreJobs2Response.RestoreJobs["+ i +"].CrossAccountRoleName"));
+			restoreJob.setMeteringBytesDone(_ctx.longValue("DescribeRestoreJobs2Response.RestoreJobs["+ i +"].MeteringBytesDone"));
+			restoreJob.setMeteringBytesTotal(_ctx.longValue("DescribeRestoreJobs2Response.RestoreJobs["+ i +"].MeteringBytesTotal"));
+			restoreJob.setStorageClass(_ctx.stringValue("DescribeRestoreJobs2Response.RestoreJobs["+ i +"].StorageClass"));
+			restoreJob.setFailbackDetail(_ctx.stringValue("DescribeRestoreJobs2Response.RestoreJobs["+ i +"].FailbackDetail"));
 
 			OtsDetail otsDetail = new OtsDetail();
 			otsDetail.setBatchChannelCount(_ctx.integerValue("DescribeRestoreJobs2Response.RestoreJobs["+ i +"].OtsDetail.BatchChannelCount"));

@@ -71,6 +71,10 @@ public class DescribeBackupPlansResponseUnmarshaller {
 			backupPlan.setCrossAccountUserId(_ctx.longValue("DescribeBackupPlansResponse.BackupPlans["+ i +"].CrossAccountUserId"));
 			backupPlan.setCrossAccountRoleName(_ctx.stringValue("DescribeBackupPlansResponse.BackupPlans["+ i +"].CrossAccountRoleName"));
 			backupPlan.setKeepLatestSnapshots(_ctx.longValue("DescribeBackupPlansResponse.BackupPlans["+ i +"].KeepLatestSnapshots"));
+			backupPlan.setDestSourceType(_ctx.stringValue("DescribeBackupPlansResponse.BackupPlans["+ i +"].DestSourceType"));
+			backupPlan.setDestDataSourceId(_ctx.stringValue("DescribeBackupPlansResponse.BackupPlans["+ i +"].DestDataSourceId"));
+			backupPlan.setDestDataSourceDetail(_ctx.stringValue("DescribeBackupPlansResponse.BackupPlans["+ i +"].DestDataSourceDetail"));
+			backupPlan.setChangeListPath(_ctx.stringValue("DescribeBackupPlansResponse.BackupPlans["+ i +"].ChangeListPath"));
 
 			List<String> paths = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeBackupPlansResponse.BackupPlans["+ i +"].Paths.Length"); j++) {

@@ -20,6 +20,9 @@ import java.util.List;
 import com.aliyuncs.hbr.model.v20170908.DescribePolicyBindingsResponse;
 import com.aliyuncs.hbr.model.v20170908.DescribePolicyBindingsResponse.Data;
 import com.aliyuncs.hbr.model.v20170908.DescribePolicyBindingsResponse.Data.AdvancedOptions;
+import com.aliyuncs.hbr.model.v20170908.DescribePolicyBindingsResponse.Data.AdvancedOptions.CommonNasDetail;
+import com.aliyuncs.hbr.model.v20170908.DescribePolicyBindingsResponse.Data.AdvancedOptions.FileDetail;
+import com.aliyuncs.hbr.model.v20170908.DescribePolicyBindingsResponse.Data.AdvancedOptions.OssDetail;
 import com.aliyuncs.hbr.model.v20170908.DescribePolicyBindingsResponse.Data.AdvancedOptions.UdmDetail;
 import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -73,6 +76,7 @@ public class DescribePolicyBindingsResponseUnmarshaller {
 			udmDetail.setDiskIdMap(_ctx.mapValue("DescribePolicyBindingsResponse.PolicyBindings["+ i +"].AdvancedOptions.UdmDetail.DiskIdMap"));
 			udmDetail.setExcludeDiskIdMap(_ctx.mapValue("DescribePolicyBindingsResponse.PolicyBindings["+ i +"].AdvancedOptions.UdmDetail.ExcludeDiskIdMap"));
 			udmDetail.setGroupName(_ctx.stringValue("DescribePolicyBindingsResponse.PolicyBindings["+ i +"].AdvancedOptions.UdmDetail.GroupName"));
+			udmDetail.setDestinationKmsKeyId(_ctx.stringValue("DescribePolicyBindingsResponse.PolicyBindings["+ i +"].AdvancedOptions.UdmDetail.DestinationKmsKeyId"));
 
 			List<String> excludeDiskIdList = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribePolicyBindingsResponse.PolicyBindings["+ i +"].AdvancedOptions.UdmDetail.ExcludeDiskIdList.Length"); j++) {
@@ -86,6 +90,22 @@ public class DescribePolicyBindingsResponseUnmarshaller {
 			}
 			udmDetail.setDiskIdList(diskIdList);
 			advancedOptions.setUdmDetail(udmDetail);
+
+			OssDetail ossDetail = new OssDetail();
+			ossDetail.setInventoryId(_ctx.stringValue("DescribePolicyBindingsResponse.PolicyBindings["+ i +"].AdvancedOptions.OssDetail.InventoryId"));
+			ossDetail.setInventoryCleanupPolicy(_ctx.stringValue("DescribePolicyBindingsResponse.PolicyBindings["+ i +"].AdvancedOptions.OssDetail.InventoryCleanupPolicy"));
+			advancedOptions.setOssDetail(ossDetail);
+
+			FileDetail fileDetail = new FileDetail();
+			fileDetail.setUseVSS(_ctx.booleanValue("DescribePolicyBindingsResponse.PolicyBindings["+ i +"].AdvancedOptions.FileDetail.UseVSS"));
+			fileDetail.setAdvPolicy(_ctx.booleanValue("DescribePolicyBindingsResponse.PolicyBindings["+ i +"].AdvancedOptions.FileDetail.AdvPolicy"));
+			advancedOptions.setFileDetail(fileDetail);
+
+			CommonNasDetail commonNasDetail = new CommonNasDetail();
+			commonNasDetail.setFullOnIncrementFail(_ctx.booleanValue("DescribePolicyBindingsResponse.PolicyBindings["+ i +"].AdvancedOptions.CommonNasDetail.FullOnIncrementFail"));
+			commonNasDetail.setFetchSliceSize(_ctx.longValue("DescribePolicyBindingsResponse.PolicyBindings["+ i +"].AdvancedOptions.CommonNasDetail.FetchSliceSize"));
+			commonNasDetail.setClientId(_ctx.stringValue("DescribePolicyBindingsResponse.PolicyBindings["+ i +"].AdvancedOptions.CommonNasDetail.ClientId"));
+			advancedOptions.setCommonNasDetail(commonNasDetail);
 			data.setAdvancedOptions(advancedOptions);
 
 			policyBindings.add(data);

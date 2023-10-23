@@ -69,6 +69,13 @@ public class SearchHistoricalSnapshotsResponseUnmarshaller {
 			snapshot.setRangeStart(_ctx.longValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].RangeStart"));
 			snapshot.setRangeEnd(_ctx.longValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].RangeEnd"));
 			snapshot.setExpireTime(_ctx.longValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].ExpireTime"));
+			snapshot.setSourceSnapshotHash(_ctx.stringValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].SourceSnapshotHash"));
+			snapshot.setSourceParentSnapshotHash(_ctx.stringValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].SourceParentSnapshotHash"));
+			snapshot.setStorageClass(_ctx.stringValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].StorageClass"));
+			snapshot.setArchiveTime(_ctx.longValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].ArchiveTime"));
+			snapshot.setUseCommonNas(_ctx.booleanValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].UseCommonNas"));
+			snapshot.setInclude(_ctx.stringValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].Include"));
+			snapshot.setExclude(_ctx.stringValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].Exclude"));
 
 			List<String> paths = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].Paths.Length"); j++) {

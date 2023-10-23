@@ -109,6 +109,9 @@ public class UpdatePolicyV2Request extends RpcAcsRequest<UpdatePolicyV2Response>
 		@SerializedName("ArchiveDays")
 		private Long archiveDays;
 
+		@SerializedName("KeepLatestSnapshots")
+		private Long keepLatestSnapshots;
+
 		@SerializedName("ColdArchiveDays")
 		private Long coldArchiveDays;
 
@@ -179,6 +182,14 @@ public class UpdatePolicyV2Request extends RpcAcsRequest<UpdatePolicyV2Response>
 
 		public void setArchiveDays(Long archiveDays) {
 			this.archiveDays = archiveDays;
+		}
+
+		public Long getKeepLatestSnapshots() {
+			return this.keepLatestSnapshots;
+		}
+
+		public void setKeepLatestSnapshots(Long keepLatestSnapshots) {
+			this.keepLatestSnapshots = keepLatestSnapshots;
 		}
 
 		public Long getColdArchiveDays() {

@@ -121,6 +121,15 @@ public class UpdatePolicyBindingRequest extends RpcAcsRequest<UpdatePolicyBindin
 		@SerializedName("UdmDetail")
 		private UdmDetail udmDetail;
 
+		@SerializedName("OssDetail")
+		private OssDetail ossDetail;
+
+		@SerializedName("CommonNasDetail")
+		private CommonNasDetail commonNasDetail;
+
+		@SerializedName("FileDetail")
+		private FileDetail fileDetail;
+
 		public UdmDetail getUdmDetail() {
 			return this.udmDetail;
 		}
@@ -129,7 +138,34 @@ public class UpdatePolicyBindingRequest extends RpcAcsRequest<UpdatePolicyBindin
 			this.udmDetail = udmDetail;
 		}
 
+		public OssDetail getOssDetail() {
+			return this.ossDetail;
+		}
+
+		public void setOssDetail(OssDetail ossDetail) {
+			this.ossDetail = ossDetail;
+		}
+
+		public CommonNasDetail getCommonNasDetail() {
+			return this.commonNasDetail;
+		}
+
+		public void setCommonNasDetail(CommonNasDetail commonNasDetail) {
+			this.commonNasDetail = commonNasDetail;
+		}
+
+		public FileDetail getFileDetail() {
+			return this.fileDetail;
+		}
+
+		public void setFileDetail(FileDetail fileDetail) {
+			this.fileDetail = fileDetail;
+		}
+
 		public static class UdmDetail {
+
+			@SerializedName("DestinationKmsKeyId")
+			private String destinationKmsKeyId;
 
 			@SerializedName("SnapshotGroup")
 			private Boolean snapshotGroup;
@@ -169,6 +205,14 @@ public class UpdatePolicyBindingRequest extends RpcAcsRequest<UpdatePolicyBindin
 
 			@SerializedName("AppConsistent")
 			private Boolean appConsistent;
+
+			public String getDestinationKmsKeyId() {
+				return this.destinationKmsKeyId;
+			}
+
+			public void setDestinationKmsKeyId(String destinationKmsKeyId) {
+				this.destinationKmsKeyId = destinationKmsKeyId;
+			}
 
 			public Boolean getSnapshotGroup() {
 				return this.snapshotGroup;
@@ -272,6 +316,92 @@ public class UpdatePolicyBindingRequest extends RpcAcsRequest<UpdatePolicyBindin
 
 			public void setAppConsistent(Boolean appConsistent) {
 				this.appConsistent = appConsistent;
+			}
+		}
+
+		public static class OssDetail {
+
+			@SerializedName("InventoryCleanupPolicy")
+			private String inventoryCleanupPolicy;
+
+			@SerializedName("InventoryId")
+			private String inventoryId;
+
+			public String getInventoryCleanupPolicy() {
+				return this.inventoryCleanupPolicy;
+			}
+
+			public void setInventoryCleanupPolicy(String inventoryCleanupPolicy) {
+				this.inventoryCleanupPolicy = inventoryCleanupPolicy;
+			}
+
+			public String getInventoryId() {
+				return this.inventoryId;
+			}
+
+			public void setInventoryId(String inventoryId) {
+				this.inventoryId = inventoryId;
+			}
+		}
+
+		public static class CommonNasDetail {
+
+			@SerializedName("FullOnIncrementFail")
+			private Boolean fullOnIncrementFail;
+
+			@SerializedName("ClusterId")
+			private String clusterId;
+
+			@SerializedName("FetchSliceSize")
+			private Long fetchSliceSize;
+
+			public Boolean getFullOnIncrementFail() {
+				return this.fullOnIncrementFail;
+			}
+
+			public void setFullOnIncrementFail(Boolean fullOnIncrementFail) {
+				this.fullOnIncrementFail = fullOnIncrementFail;
+			}
+
+			public String getClusterId() {
+				return this.clusterId;
+			}
+
+			public void setClusterId(String clusterId) {
+				this.clusterId = clusterId;
+			}
+
+			public Long getFetchSliceSize() {
+				return this.fetchSliceSize;
+			}
+
+			public void setFetchSliceSize(Long fetchSliceSize) {
+				this.fetchSliceSize = fetchSliceSize;
+			}
+		}
+
+		public static class FileDetail {
+
+			@SerializedName("UseVSS")
+			private Boolean useVSS;
+
+			@SerializedName("AdvPolicy")
+			private Boolean advPolicy;
+
+			public Boolean getUseVSS() {
+				return this.useVSS;
+			}
+
+			public void setUseVSS(Boolean useVSS) {
+				this.useVSS = useVSS;
+			}
+
+			public Boolean getAdvPolicy() {
+				return this.advPolicy;
+			}
+
+			public void setAdvPolicy(Boolean advPolicy) {
+				this.advPolicy = advPolicy;
 			}
 		}
 	}
