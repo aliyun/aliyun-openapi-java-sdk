@@ -1,3 +1,6 @@
+2023-10-23 Version: 1.0.24
+- Generated 2019-03-15 for `adb`.
+
 2023-10-13 Version: 1.0.23
 - Public Api.
 
