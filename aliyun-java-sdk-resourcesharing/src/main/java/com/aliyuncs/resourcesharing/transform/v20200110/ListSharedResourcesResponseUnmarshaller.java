@@ -36,7 +36,6 @@ public class ListSharedResourcesResponseUnmarshaller {
 			sharedResource.setResourceType(_ctx.stringValue("ListSharedResourcesResponse.SharedResources["+ i +"].ResourceType"));
 			sharedResource.setCreateTime(_ctx.stringValue("ListSharedResourcesResponse.SharedResources["+ i +"].CreateTime"));
 			sharedResource.setResourceShareId(_ctx.stringValue("ListSharedResourcesResponse.SharedResources["+ i +"].ResourceShareId"));
-			sharedResource.setResourceShareOwner(_ctx.stringValue("ListSharedResourcesResponse.SharedResources["+ i +"].ResourceShareOwner"));
 			sharedResource.setResourceId(_ctx.stringValue("ListSharedResourcesResponse.SharedResources["+ i +"].ResourceId"));
 			sharedResource.setResourceStatus(_ctx.stringValue("ListSharedResourcesResponse.SharedResources["+ i +"].ResourceStatus"));
 			sharedResource.setResourceStatusMessage(_ctx.stringValue("ListSharedResourcesResponse.SharedResources["+ i +"].ResourceStatusMessage"));

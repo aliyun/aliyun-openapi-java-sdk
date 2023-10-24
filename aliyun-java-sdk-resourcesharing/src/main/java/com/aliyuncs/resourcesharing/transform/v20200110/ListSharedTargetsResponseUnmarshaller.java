@@ -36,7 +36,6 @@ public class ListSharedTargetsResponseUnmarshaller {
 			sharedTarget.setUpdateTime(_ctx.stringValue("ListSharedTargetsResponse.SharedTargets["+ i +"].UpdateTime"));
 			sharedTarget.setCreateTime(_ctx.stringValue("ListSharedTargetsResponse.SharedTargets["+ i +"].CreateTime"));
 			sharedTarget.setResourceShareId(_ctx.stringValue("ListSharedTargetsResponse.SharedTargets["+ i +"].ResourceShareId"));
-			sharedTarget.setResourceShareOwner(_ctx.stringValue("ListSharedTargetsResponse.SharedTargets["+ i +"].ResourceShareOwner"));
 			sharedTarget.setExternal(_ctx.booleanValue("ListSharedTargetsResponse.SharedTargets["+ i +"].External"));
 
 			sharedTargets.add(sharedTarget);

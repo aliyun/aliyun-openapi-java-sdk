@@ -65,8 +65,6 @@ public class ListSharedResourcesResponse extends AcsResponse {
 
 		private String resourceShareId;
 
-		private String resourceShareOwner;
-
 		private String resourceId;
 
 		private String resourceStatus;
@@ -103,14 +101,6 @@ public class ListSharedResourcesResponse extends AcsResponse {
 
 		public void setResourceShareId(String resourceShareId) {
 			this.resourceShareId = resourceShareId;
-		}
-
-		public String getResourceShareOwner() {
-			return this.resourceShareOwner;
-		}
-
-		public void setResourceShareOwner(String resourceShareOwner) {
-			this.resourceShareOwner = resourceShareOwner;
 		}
 
 		public String getResourceId() {

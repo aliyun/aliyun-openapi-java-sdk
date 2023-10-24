@@ -1,3 +1,6 @@
+2023-10-24 Version: 1.0.0
+- Generated 2020-01-10 for `ResourceSharing`.
+
 2023-10-23 Version: 0.0.2
 - Generated 2020-01-10 for `ResourceSharing`.
 

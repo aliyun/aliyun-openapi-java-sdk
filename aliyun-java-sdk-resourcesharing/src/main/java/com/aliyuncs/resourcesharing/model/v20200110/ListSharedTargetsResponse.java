@@ -65,8 +65,6 @@ public class ListSharedTargetsResponse extends AcsResponse {
 
 		private String resourceShareId;
 
-		private String resourceShareOwner;
-
 		private Boolean external;
 
 		public String getTargetId() {
@@ -99,14 +97,6 @@ public class ListSharedTargetsResponse extends AcsResponse {
 
 		public void setResourceShareId(String resourceShareId) {
 			this.resourceShareId = resourceShareId;
-		}
-
-		public String getResourceShareOwner() {
-			return this.resourceShareOwner;
-		}
-
-		public void setResourceShareOwner(String resourceShareOwner) {
-			this.resourceShareOwner = resourceShareOwner;
 		}
 
 		public Boolean getExternal() {
