@@ -43,7 +43,7 @@ public class GetFusionAuthTokenRequest extends RpcAcsRequest<GetFusionAuthTokenR
 
 	private Long durationSeconds;
 	public GetFusionAuthTokenRequest() {
-		super("Dypnsapi", "2017-05-25", "GetFusionAuthToken");
+		super("Dypnsapi", "2017-05-25", "GetFusionAuthToken", "dypnsapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

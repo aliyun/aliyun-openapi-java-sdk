@@ -33,7 +33,7 @@ public class VerifyWithFusionAuthTokenRequest extends RpcAcsRequest<VerifyWithFu
 
 	private Long ownerId;
 	public VerifyWithFusionAuthTokenRequest() {
-		super("Dypnsapi", "2017-05-25", "VerifyWithFusionAuthToken");
+		super("Dypnsapi", "2017-05-25", "VerifyWithFusionAuthToken", "dypnsapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

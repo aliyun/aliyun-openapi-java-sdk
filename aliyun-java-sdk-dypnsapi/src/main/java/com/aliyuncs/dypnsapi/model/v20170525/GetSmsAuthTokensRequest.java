@@ -47,7 +47,7 @@ public class GetSmsAuthTokensRequest extends RpcAcsRequest<GetSmsAuthTokensRespo
 
 	private Long expire;
 	public GetSmsAuthTokensRequest() {
-		super("Dypnsapi", "2017-05-25", "GetSmsAuthTokens");
+		super("Dypnsapi", "2017-05-25", "GetSmsAuthTokens", "dypnsapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

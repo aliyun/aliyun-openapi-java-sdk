@@ -63,7 +63,7 @@ public class CreateVerifySchemeRequest extends RpcAcsRequest<CreateVerifySchemeR
 
 	private String smsSignName;
 	public CreateVerifySchemeRequest() {
-		super("Dypnsapi", "2017-05-25", "CreateVerifyScheme");
+		super("Dypnsapi", "2017-05-25", "CreateVerifyScheme", "dypnsapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

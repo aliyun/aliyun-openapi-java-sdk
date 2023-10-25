@@ -33,7 +33,7 @@ public class GetPhoneWithTokenRequest extends RpcAcsRequest<GetPhoneWithTokenRes
 
 	private Long ownerId;
 	public GetPhoneWithTokenRequest() {
-		super("Dypnsapi", "2017-05-25", "GetPhoneWithToken");
+		super("Dypnsapi", "2017-05-25", "GetPhoneWithToken", "dypnsapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -36,7 +36,7 @@ public class GetMobileRequest extends RpcAcsRequest<GetMobileResponse> {
 
 	private String outId;
 	public GetMobileRequest() {
-		super("Dypnsapi", "2017-05-25", "GetMobile");
+		super("Dypnsapi", "2017-05-25", "GetMobile", "dypnsapi");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

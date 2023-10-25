@@ -31,7 +31,7 @@ public class VerifySmsCodeRequest extends RpcAcsRequest<VerifySmsCodeResponse> {
 
 	private String smsCode;
 	public VerifySmsCodeRequest() {
-		super("Dypnsapi", "2017-05-25", "VerifySmsCode");
+		super("Dypnsapi", "2017-05-25", "VerifySmsCode", "dypnsapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

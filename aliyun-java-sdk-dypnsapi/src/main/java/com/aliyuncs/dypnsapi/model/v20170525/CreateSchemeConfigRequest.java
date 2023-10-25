@@ -47,7 +47,7 @@ public class CreateSchemeConfigRequest extends RpcAcsRequest<CreateSchemeConfigR
 
 	private String androidPackageName;
 	public CreateSchemeConfigRequest() {
-		super("Dypnsapi", "2017-05-25", "CreateSchemeConfig");
+		super("Dypnsapi", "2017-05-25", "CreateSchemeConfig", "dypnsapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
