@@ -23,16 +23,16 @@ public class StopExecutionResponseUnmarshaller {
 	public static StopExecutionResponse unmarshall(StopExecutionResponse stopExecutionResponse, UnmarshallerContext _ctx) {
 		
 		stopExecutionResponse.setRequestId(_ctx.stringValue("StopExecutionResponse.RequestId"));
-		stopExecutionResponse.setName(_ctx.stringValue("StopExecutionResponse.Name"));
-		stopExecutionResponse.setFlowName(_ctx.stringValue("StopExecutionResponse.FlowName"));
-		stopExecutionResponse.setFlowDefinition(_ctx.stringValue("StopExecutionResponse.FlowDefinition"));
-		stopExecutionResponse.setInput(_ctx.stringValue("StopExecutionResponse.Input"));
-		stopExecutionResponse.setOutput(_ctx.stringValue("StopExecutionResponse.Output"));
 		stopExecutionResponse.setStatus(_ctx.stringValue("StopExecutionResponse.Status"));
-		stopExecutionResponse.setStartedTime(_ctx.stringValue("StopExecutionResponse.StartedTime"));
 		stopExecutionResponse.setStoppedTime(_ctx.stringValue("StopExecutionResponse.StoppedTime"));
+		stopExecutionResponse.setStartedTime(_ctx.stringValue("StopExecutionResponse.StartedTime"));
+		stopExecutionResponse.setFlowDefinition(_ctx.stringValue("StopExecutionResponse.FlowDefinition"));
 		stopExecutionResponse.setExternalInputUri(_ctx.stringValue("StopExecutionResponse.ExternalInputUri"));
+		stopExecutionResponse.setOutput(_ctx.stringValue("StopExecutionResponse.Output"));
+		stopExecutionResponse.setFlowName(_ctx.stringValue("StopExecutionResponse.FlowName"));
 		stopExecutionResponse.setExternalOutputUri(_ctx.stringValue("StopExecutionResponse.ExternalOutputUri"));
+		stopExecutionResponse.setName(_ctx.stringValue("StopExecutionResponse.Name"));
+		stopExecutionResponse.setInput(_ctx.stringValue("StopExecutionResponse.Input"));
 	 
 	 	return stopExecutionResponse;
 	}

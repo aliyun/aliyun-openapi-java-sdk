@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetExecutionHistoryResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String nextToken;
 
+	private String requestId;
+
 	private List<EventsItem> events;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getNextToken() {
 		return this.nextToken;
@@ -45,6 +37,14 @@ public class GetExecutionHistoryResponse extends AcsResponse {
 
 	public void setNextToken(String nextToken) {
 		this.nextToken = nextToken;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<EventsItem> getEvents() {
@@ -57,25 +57,17 @@ public class GetExecutionHistoryResponse extends AcsResponse {
 
 	public static class EventsItem {
 
-		private String stepName;
-
 		private String type;
 
 		private Long eventId;
+
+		private String time;
 
 		private Long scheduleEventId;
 
 		private String eventDetail;
 
-		private String time;
-
-		public String getStepName() {
-			return this.stepName;
-		}
-
-		public void setStepName(String stepName) {
-			this.stepName = stepName;
-		}
+		private String stepName;
 
 		public String getType() {
 			return this.type;
@@ -91,6 +83,14 @@ public class GetExecutionHistoryResponse extends AcsResponse {
 
 		public void setEventId(Long eventId) {
 			this.eventId = eventId;
+		}
+
+		public String getTime() {
+			return this.time;
+		}
+
+		public void setTime(String time) {
+			this.time = time;
 		}
 
 		public Long getScheduleEventId() {
@@ -109,12 +109,12 @@ public class GetExecutionHistoryResponse extends AcsResponse {
 			this.eventDetail = eventDetail;
 		}
 
-		public String getTime() {
-			return this.time;
+		public String getStepName() {
+			return this.stepName;
 		}
 
-		public void setTime(String time) {
-			this.time = time;
+		public void setStepName(String stepName) {
+			this.stepName = stepName;
 		}
 	}
 

@@ -32,14 +32,14 @@ public class ListSchedulesResponseUnmarshaller {
 		List<SchedulesItem> schedules = new ArrayList<SchedulesItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListSchedulesResponse.Schedules.Length"); i++) {
 			SchedulesItem schedulesItem = new SchedulesItem();
-			schedulesItem.setScheduleName(_ctx.stringValue("ListSchedulesResponse.Schedules["+ i +"].ScheduleName"));
 			schedulesItem.setDescription(_ctx.stringValue("ListSchedulesResponse.Schedules["+ i +"].Description"));
 			schedulesItem.setScheduleId(_ctx.stringValue("ListSchedulesResponse.Schedules["+ i +"].ScheduleId"));
 			schedulesItem.setPayload(_ctx.stringValue("ListSchedulesResponse.Schedules["+ i +"].Payload"));
-			schedulesItem.setCronExpression(_ctx.stringValue("ListSchedulesResponse.Schedules["+ i +"].CronExpression"));
-			schedulesItem.setEnable(_ctx.booleanValue("ListSchedulesResponse.Schedules["+ i +"].Enable"));
+			schedulesItem.setScheduleName(_ctx.stringValue("ListSchedulesResponse.Schedules["+ i +"].ScheduleName"));
 			schedulesItem.setCreatedTime(_ctx.stringValue("ListSchedulesResponse.Schedules["+ i +"].CreatedTime"));
 			schedulesItem.setLastModifiedTime(_ctx.stringValue("ListSchedulesResponse.Schedules["+ i +"].LastModifiedTime"));
+			schedulesItem.setCronExpression(_ctx.stringValue("ListSchedulesResponse.Schedules["+ i +"].CronExpression"));
+			schedulesItem.setEnable(_ctx.booleanValue("ListSchedulesResponse.Schedules["+ i +"].Enable"));
 
 			schedules.add(schedulesItem);
 		}

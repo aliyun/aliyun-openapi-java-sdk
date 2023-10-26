@@ -23,16 +23,16 @@ public class DescribeExecutionResponseUnmarshaller {
 	public static DescribeExecutionResponse unmarshall(DescribeExecutionResponse describeExecutionResponse, UnmarshallerContext _ctx) {
 		
 		describeExecutionResponse.setRequestId(_ctx.stringValue("DescribeExecutionResponse.RequestId"));
-		describeExecutionResponse.setName(_ctx.stringValue("DescribeExecutionResponse.Name"));
-		describeExecutionResponse.setFlowName(_ctx.stringValue("DescribeExecutionResponse.FlowName"));
-		describeExecutionResponse.setFlowDefinition(_ctx.stringValue("DescribeExecutionResponse.FlowDefinition"));
-		describeExecutionResponse.setInput(_ctx.stringValue("DescribeExecutionResponse.Input"));
-		describeExecutionResponse.setOutput(_ctx.stringValue("DescribeExecutionResponse.Output"));
 		describeExecutionResponse.setStatus(_ctx.stringValue("DescribeExecutionResponse.Status"));
-		describeExecutionResponse.setStartedTime(_ctx.stringValue("DescribeExecutionResponse.StartedTime"));
 		describeExecutionResponse.setStoppedTime(_ctx.stringValue("DescribeExecutionResponse.StoppedTime"));
+		describeExecutionResponse.setStartedTime(_ctx.stringValue("DescribeExecutionResponse.StartedTime"));
+		describeExecutionResponse.setFlowDefinition(_ctx.stringValue("DescribeExecutionResponse.FlowDefinition"));
 		describeExecutionResponse.setExternalInputUri(_ctx.stringValue("DescribeExecutionResponse.ExternalInputUri"));
+		describeExecutionResponse.setOutput(_ctx.stringValue("DescribeExecutionResponse.Output"));
+		describeExecutionResponse.setFlowName(_ctx.stringValue("DescribeExecutionResponse.FlowName"));
 		describeExecutionResponse.setExternalOutputUri(_ctx.stringValue("DescribeExecutionResponse.ExternalOutputUri"));
+		describeExecutionResponse.setName(_ctx.stringValue("DescribeExecutionResponse.Name"));
+		describeExecutionResponse.setInput(_ctx.stringValue("DescribeExecutionResponse.Input"));
 	 
 	 	return describeExecutionResponse;
 	}

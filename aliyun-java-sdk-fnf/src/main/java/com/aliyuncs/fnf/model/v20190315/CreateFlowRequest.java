@@ -38,6 +38,8 @@ public class CreateFlowRequest extends RpcAcsRequest<CreateFlowResponse> {
 	private String definition;
 
 	private String externalStorageLocation;
+
+	private String executionMode;
 	public CreateFlowRequest() {
 		super("fnf", "2019-03-15", "CreateFlow", "fnf");
 		setMethod(MethodType.POST);
@@ -121,6 +123,17 @@ public class CreateFlowRequest extends RpcAcsRequest<CreateFlowResponse> {
 		this.externalStorageLocation = externalStorageLocation;
 		if(externalStorageLocation != null){
 			putBodyParameter("ExternalStorageLocation", externalStorageLocation);
+		}
+	}
+
+	public String getExecutionMode() {
+		return this.executionMode;
+	}
+
+	public void setExecutionMode(String executionMode) {
+		this.executionMode = executionMode;
+		if(executionMode != null){
+			putBodyParameter("ExecutionMode", executionMode);
 		}
 	}
 

@@ -1,3 +1,6 @@
+2023-10-26 Version: 1.8.1
+- 增加StartSyncExecution
+
 2020-11-20 Version: 1.8.0
 - Support ListExecutions with filter functionality.
 

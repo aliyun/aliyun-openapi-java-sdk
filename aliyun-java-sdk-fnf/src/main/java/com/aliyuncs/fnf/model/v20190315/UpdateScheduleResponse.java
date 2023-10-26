@@ -26,21 +26,21 @@ public class UpdateScheduleResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String scheduleName;
-
 	private String description;
 
 	private String scheduleId;
 
 	private String payload;
 
-	private String cronExpression;
-
-	private Boolean enable;
+	private String scheduleName;
 
 	private String createdTime;
 
 	private String lastModifiedTime;
+
+	private String cronExpression;
+
+	private Boolean enable;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -48,14 +48,6 @@ public class UpdateScheduleResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getScheduleName() {
-		return this.scheduleName;
-	}
-
-	public void setScheduleName(String scheduleName) {
-		this.scheduleName = scheduleName;
 	}
 
 	public String getDescription() {
@@ -82,20 +74,12 @@ public class UpdateScheduleResponse extends AcsResponse {
 		this.payload = payload;
 	}
 
-	public String getCronExpression() {
-		return this.cronExpression;
+	public String getScheduleName() {
+		return this.scheduleName;
 	}
 
-	public void setCronExpression(String cronExpression) {
-		this.cronExpression = cronExpression;
-	}
-
-	public Boolean getEnable() {
-		return this.enable;
-	}
-
-	public void setEnable(Boolean enable) {
-		this.enable = enable;
+	public void setScheduleName(String scheduleName) {
+		this.scheduleName = scheduleName;
 	}
 
 	public String getCreatedTime() {
@@ -112,6 +96,22 @@ public class UpdateScheduleResponse extends AcsResponse {
 
 	public void setLastModifiedTime(String lastModifiedTime) {
 		this.lastModifiedTime = lastModifiedTime;
+	}
+
+	public String getCronExpression() {
+		return this.cronExpression;
+	}
+
+	public void setCronExpression(String cronExpression) {
+		this.cronExpression = cronExpression;
+	}
+
+	public Boolean getEnable() {
+		return this.enable;
+	}
+
+	public void setEnable(Boolean enable) {
+		this.enable = enable;
 	}
 
 	@Override

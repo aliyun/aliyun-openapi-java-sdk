@@ -15,6 +15,7 @@
 package com.aliyuncs.fnf.model.v20190315;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.fnf.Endpoint;
 
@@ -22,22 +23,19 @@ import com.aliyuncs.fnf.Endpoint;
  * @author auto create
  * @version 
  */
-public class UpdateFlowRequest extends RpcAcsRequest<UpdateFlowResponse> {
+public class StartSyncExecutionRequest extends RpcAcsRequest<StartSyncExecutionResponse> {
 	   
 
-	private String description;
+	private String executionName;
 
-	private String type;
+	private String input;
 
 	private String requestId;
 
-	private String roleArn;
-
-	private String name;
-
-	private String definition;
-	public UpdateFlowRequest() {
-		super("fnf", "2019-03-15", "UpdateFlow", "fnf");
+	private String flowName;
+	public StartSyncExecutionRequest() {
+		super("fnf", "2019-03-15", "StartSyncExecution", "fnf");
+		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -45,25 +43,25 @@ public class UpdateFlowRequest extends RpcAcsRequest<UpdateFlowResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getDescription() {
-		return this.description;
+	public String getExecutionName() {
+		return this.executionName;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putBodyParameter("Description", description);
+	public void setExecutionName(String executionName) {
+		this.executionName = executionName;
+		if(executionName != null){
+			putBodyParameter("ExecutionName", executionName);
 		}
 	}
 
-	public String getType() {
-		return this.type;
+	public String getInput() {
+		return this.input;
 	}
 
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putBodyParameter("Type", type);
+	public void setInput(String input) {
+		this.input = input;
+		if(input != null){
+			putBodyParameter("Input", input);
 		}
 	}
 
@@ -78,42 +76,20 @@ public class UpdateFlowRequest extends RpcAcsRequest<UpdateFlowResponse> {
 		}
 	}
 
-	public String getRoleArn() {
-		return this.roleArn;
+	public String getFlowName() {
+		return this.flowName;
 	}
 
-	public void setRoleArn(String roleArn) {
-		this.roleArn = roleArn;
-		if(roleArn != null){
-			putBodyParameter("RoleArn", roleArn);
-		}
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putBodyParameter("Name", name);
-		}
-	}
-
-	public String getDefinition() {
-		return this.definition;
-	}
-
-	public void setDefinition(String definition) {
-		this.definition = definition;
-		if(definition != null){
-			putBodyParameter("Definition", definition);
+	public void setFlowName(String flowName) {
+		this.flowName = flowName;
+		if(flowName != null){
+			putBodyParameter("FlowName", flowName);
 		}
 	}
 
 	@Override
-	public Class<UpdateFlowResponse> getResponseClass() {
-		return UpdateFlowResponse.class;
+	public Class<StartSyncExecutionResponse> getResponseClass() {
+		return StartSyncExecutionResponse.class;
 	}
 
 }

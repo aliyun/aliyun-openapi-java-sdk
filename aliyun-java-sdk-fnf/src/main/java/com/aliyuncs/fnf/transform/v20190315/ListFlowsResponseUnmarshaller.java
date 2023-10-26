@@ -32,15 +32,16 @@ public class ListFlowsResponseUnmarshaller {
 		List<FlowsItem> flows = new ArrayList<FlowsItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListFlowsResponse.Flows.Length"); i++) {
 			FlowsItem flowsItem = new FlowsItem();
-			flowsItem.setName(_ctx.stringValue("ListFlowsResponse.Flows["+ i +"].Name"));
-			flowsItem.setDescription(_ctx.stringValue("ListFlowsResponse.Flows["+ i +"].Description"));
-			flowsItem.setDefinition(_ctx.stringValue("ListFlowsResponse.Flows["+ i +"].Definition"));
-			flowsItem.setId(_ctx.stringValue("ListFlowsResponse.Flows["+ i +"].Id"));
 			flowsItem.setType(_ctx.stringValue("ListFlowsResponse.Flows["+ i +"].Type"));
+			flowsItem.setDefinition(_ctx.stringValue("ListFlowsResponse.Flows["+ i +"].Definition"));
 			flowsItem.setRoleArn(_ctx.stringValue("ListFlowsResponse.Flows["+ i +"].RoleArn"));
+			flowsItem.setDescription(_ctx.stringValue("ListFlowsResponse.Flows["+ i +"].Description"));
+			flowsItem.setExternalStorageLocation(_ctx.stringValue("ListFlowsResponse.Flows["+ i +"].ExternalStorageLocation"));
+			flowsItem.setName(_ctx.stringValue("ListFlowsResponse.Flows["+ i +"].Name"));
 			flowsItem.setCreatedTime(_ctx.stringValue("ListFlowsResponse.Flows["+ i +"].CreatedTime"));
 			flowsItem.setLastModifiedTime(_ctx.stringValue("ListFlowsResponse.Flows["+ i +"].LastModifiedTime"));
-			flowsItem.setExternalStorageLocation(_ctx.stringValue("ListFlowsResponse.Flows["+ i +"].ExternalStorageLocation"));
+			flowsItem.setId(_ctx.stringValue("ListFlowsResponse.Flows["+ i +"].Id"));
+			flowsItem.setExecutionMode(_ctx.stringValue("ListFlowsResponse.Flows["+ i +"].ExecutionMode"));
 
 			flows.add(flowsItem);
 		}

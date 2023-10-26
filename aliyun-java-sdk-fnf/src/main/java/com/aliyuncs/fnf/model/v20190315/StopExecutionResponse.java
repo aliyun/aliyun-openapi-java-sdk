@@ -24,75 +24,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class StopExecutionResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String name;
-
-	private String flowName;
-
-	private String flowDefinition;
-
-	private String input;
-
-	private String output;
-
 	private String status;
-
-	private String startedTime;
 
 	private String stoppedTime;
 
+	private String requestId;
+
+	private String startedTime;
+
+	private String flowDefinition;
+
 	private String externalInputUri;
+
+	private String output;
+
+	private String flowName;
 
 	private String externalOutputUri;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+	private String name;
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getFlowName() {
-		return this.flowName;
-	}
-
-	public void setFlowName(String flowName) {
-		this.flowName = flowName;
-	}
-
-	public String getFlowDefinition() {
-		return this.flowDefinition;
-	}
-
-	public void setFlowDefinition(String flowDefinition) {
-		this.flowDefinition = flowDefinition;
-	}
-
-	public String getInput() {
-		return this.input;
-	}
-
-	public void setInput(String input) {
-		this.input = input;
-	}
-
-	public String getOutput() {
-		return this.output;
-	}
-
-	public void setOutput(String output) {
-		this.output = output;
-	}
+	private String input;
 
 	public String getStatus() {
 		return this.status;
@@ -100,14 +52,6 @@ public class StopExecutionResponse extends AcsResponse {
 
 	public void setStatus(String status) {
 		this.status = status;
-	}
-
-	public String getStartedTime() {
-		return this.startedTime;
-	}
-
-	public void setStartedTime(String startedTime) {
-		this.startedTime = startedTime;
 	}
 
 	public String getStoppedTime() {
@@ -118,6 +62,30 @@ public class StopExecutionResponse extends AcsResponse {
 		this.stoppedTime = stoppedTime;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getStartedTime() {
+		return this.startedTime;
+	}
+
+	public void setStartedTime(String startedTime) {
+		this.startedTime = startedTime;
+	}
+
+	public String getFlowDefinition() {
+		return this.flowDefinition;
+	}
+
+	public void setFlowDefinition(String flowDefinition) {
+		this.flowDefinition = flowDefinition;
+	}
+
 	public String getExternalInputUri() {
 		return this.externalInputUri;
 	}
@@ -126,12 +94,44 @@ public class StopExecutionResponse extends AcsResponse {
 		this.externalInputUri = externalInputUri;
 	}
 
+	public String getOutput() {
+		return this.output;
+	}
+
+	public void setOutput(String output) {
+		this.output = output;
+	}
+
+	public String getFlowName() {
+		return this.flowName;
+	}
+
+	public void setFlowName(String flowName) {
+		this.flowName = flowName;
+	}
+
 	public String getExternalOutputUri() {
 		return this.externalOutputUri;
 	}
 
 	public void setExternalOutputUri(String externalOutputUri) {
 		this.externalOutputUri = externalOutputUri;
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getInput() {
+		return this.input;
+	}
+
+	public void setInput(String input) {
+		this.input = input;
 	}
 
 	@Override

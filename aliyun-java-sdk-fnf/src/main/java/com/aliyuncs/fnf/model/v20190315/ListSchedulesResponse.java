@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListSchedulesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String nextToken;
 
+	private String requestId;
+
 	private List<SchedulesItem> schedules;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getNextToken() {
 		return this.nextToken;
@@ -45,6 +37,14 @@ public class ListSchedulesResponse extends AcsResponse {
 
 	public void setNextToken(String nextToken) {
 		this.nextToken = nextToken;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<SchedulesItem> getSchedules() {
@@ -57,29 +57,21 @@ public class ListSchedulesResponse extends AcsResponse {
 
 	public static class SchedulesItem {
 
-		private String scheduleName;
-
 		private String description;
 
 		private String scheduleId;
 
 		private String payload;
 
-		private String cronExpression;
-
-		private Boolean enable;
+		private String scheduleName;
 
 		private String createdTime;
 
 		private String lastModifiedTime;
 
-		public String getScheduleName() {
-			return this.scheduleName;
-		}
+		private String cronExpression;
 
-		public void setScheduleName(String scheduleName) {
-			this.scheduleName = scheduleName;
-		}
+		private Boolean enable;
 
 		public String getDescription() {
 			return this.description;
@@ -105,20 +97,12 @@ public class ListSchedulesResponse extends AcsResponse {
 			this.payload = payload;
 		}
 
-		public String getCronExpression() {
-			return this.cronExpression;
+		public String getScheduleName() {
+			return this.scheduleName;
 		}
 
-		public void setCronExpression(String cronExpression) {
-			this.cronExpression = cronExpression;
-		}
-
-		public Boolean getEnable() {
-			return this.enable;
-		}
-
-		public void setEnable(Boolean enable) {
-			this.enable = enable;
+		public void setScheduleName(String scheduleName) {
+			this.scheduleName = scheduleName;
 		}
 
 		public String getCreatedTime() {
@@ -135,6 +119,22 @@ public class ListSchedulesResponse extends AcsResponse {
 
 		public void setLastModifiedTime(String lastModifiedTime) {
 			this.lastModifiedTime = lastModifiedTime;
+		}
+
+		public String getCronExpression() {
+			return this.cronExpression;
+		}
+
+		public void setCronExpression(String cronExpression) {
+			this.cronExpression = cronExpression;
+		}
+
+		public Boolean getEnable() {
+			return this.enable;
+		}
+
+		public void setEnable(Boolean enable) {
+			this.enable = enable;
 		}
 	}
 

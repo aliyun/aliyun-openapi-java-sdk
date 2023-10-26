@@ -23,14 +23,14 @@ public class UpdateScheduleResponseUnmarshaller {
 	public static UpdateScheduleResponse unmarshall(UpdateScheduleResponse updateScheduleResponse, UnmarshallerContext _ctx) {
 		
 		updateScheduleResponse.setRequestId(_ctx.stringValue("UpdateScheduleResponse.RequestId"));
-		updateScheduleResponse.setScheduleName(_ctx.stringValue("UpdateScheduleResponse.ScheduleName"));
 		updateScheduleResponse.setDescription(_ctx.stringValue("UpdateScheduleResponse.Description"));
 		updateScheduleResponse.setScheduleId(_ctx.stringValue("UpdateScheduleResponse.ScheduleId"));
 		updateScheduleResponse.setPayload(_ctx.stringValue("UpdateScheduleResponse.Payload"));
-		updateScheduleResponse.setCronExpression(_ctx.stringValue("UpdateScheduleResponse.CronExpression"));
-		updateScheduleResponse.setEnable(_ctx.booleanValue("UpdateScheduleResponse.Enable"));
+		updateScheduleResponse.setScheduleName(_ctx.stringValue("UpdateScheduleResponse.ScheduleName"));
 		updateScheduleResponse.setCreatedTime(_ctx.stringValue("UpdateScheduleResponse.CreatedTime"));
 		updateScheduleResponse.setLastModifiedTime(_ctx.stringValue("UpdateScheduleResponse.LastModifiedTime"));
+		updateScheduleResponse.setCronExpression(_ctx.stringValue("UpdateScheduleResponse.CronExpression"));
+		updateScheduleResponse.setEnable(_ctx.booleanValue("UpdateScheduleResponse.Enable"));
 	 
 	 	return updateScheduleResponse;
 	}

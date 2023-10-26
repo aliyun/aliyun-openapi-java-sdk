@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListFlowsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String nextToken;
 
+	private String requestId;
+
 	private List<FlowsItem> flows;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getNextToken() {
 		return this.nextToken;
@@ -45,6 +37,14 @@ public class ListFlowsResponse extends AcsResponse {
 
 	public void setNextToken(String nextToken) {
 		this.nextToken = nextToken;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<FlowsItem> getFlows() {
@@ -57,38 +57,32 @@ public class ListFlowsResponse extends AcsResponse {
 
 	public static class FlowsItem {
 
-		private String name;
-
-		private String description;
+		private String type;
 
 		private String definition;
 
-		private String id;
-
-		private String type;
-
 		private String roleArn;
+
+		private String description;
+
+		private String externalStorageLocation;
+
+		private String name;
 
 		private String createdTime;
 
 		private String lastModifiedTime;
 
-		private String externalStorageLocation;
+		private String id;
 
-		public String getName() {
-			return this.name;
+		private String executionMode;
+
+		public String getType() {
+			return this.type;
 		}
 
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
+		public void setType(String type) {
+			this.type = type;
 		}
 
 		public String getDefinition() {
@@ -99,28 +93,36 @@ public class ListFlowsResponse extends AcsResponse {
 			this.definition = definition;
 		}
 
-		public String getId() {
-			return this.id;
-		}
-
-		public void setId(String id) {
-			this.id = id;
-		}
-
-		public String getType() {
-			return this.type;
-		}
-
-		public void setType(String type) {
-			this.type = type;
-		}
-
 		public String getRoleArn() {
 			return this.roleArn;
 		}
 
 		public void setRoleArn(String roleArn) {
 			this.roleArn = roleArn;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getExternalStorageLocation() {
+			return this.externalStorageLocation;
+		}
+
+		public void setExternalStorageLocation(String externalStorageLocation) {
+			this.externalStorageLocation = externalStorageLocation;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public String getCreatedTime() {
@@ -139,12 +141,20 @@ public class ListFlowsResponse extends AcsResponse {
 			this.lastModifiedTime = lastModifiedTime;
 		}
 
-		public String getExternalStorageLocation() {
-			return this.externalStorageLocation;
+		public String getId() {
+			return this.id;
 		}
 
-		public void setExternalStorageLocation(String externalStorageLocation) {
-			this.externalStorageLocation = externalStorageLocation;
+		public void setId(String id) {
+			this.id = id;
+		}
+
+		public String getExecutionMode() {
+			return this.executionMode;
+		}
+
+		public void setExecutionMode(String executionMode) {
+			this.executionMode = executionMode;
 		}
 	}
 

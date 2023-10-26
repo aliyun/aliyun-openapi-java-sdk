@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ReportTaskFailedResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Long eventId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public Long getEventId() {
 		return this.eventId;
@@ -42,6 +34,14 @@ public class ReportTaskFailedResponse extends AcsResponse {
 
 	public void setEventId(Long eventId) {
 		this.eventId = eventId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override
