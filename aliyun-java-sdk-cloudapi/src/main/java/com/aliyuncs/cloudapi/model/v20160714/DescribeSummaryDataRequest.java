@@ -22,34 +22,17 @@ import com.aliyuncs.cloudapi.Endpoint;
  * @author auto create
  * @version 
  */
-public class ResetAppSecretRequest extends RpcAcsRequest<ResetAppSecretResponse> {
+public class DescribeSummaryDataRequest extends RpcAcsRequest<DescribeSummaryDataResponse> {
 	   
 
-	private String newAppSecret;
-
 	private String securityToken;
-
-	private String newAppKey;
-
-	private String appKey;
-	public ResetAppSecretRequest() {
-		super("CloudAPI", "2016-07-14", "ResetAppSecret", "apigateway");
+	public DescribeSummaryDataRequest() {
+		super("CloudAPI", "2016-07-14", "DescribeSummaryData", "apigateway");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getNewAppSecret() {
-		return this.newAppSecret;
-	}
-
-	public void setNewAppSecret(String newAppSecret) {
-		this.newAppSecret = newAppSecret;
-		if(newAppSecret != null){
-			putQueryParameter("NewAppSecret", newAppSecret);
-		}
 	}
 
 	public String getSecurityToken() {
@@ -63,31 +46,9 @@ public class ResetAppSecretRequest extends RpcAcsRequest<ResetAppSecretResponse>
 		}
 	}
 
-	public String getNewAppKey() {
-		return this.newAppKey;
-	}
-
-	public void setNewAppKey(String newAppKey) {
-		this.newAppKey = newAppKey;
-		if(newAppKey != null){
-			putQueryParameter("NewAppKey", newAppKey);
-		}
-	}
-
-	public String getAppKey() {
-		return this.appKey;
-	}
-
-	public void setAppKey(String appKey) {
-		this.appKey = appKey;
-		if(appKey != null){
-			putQueryParameter("AppKey", appKey);
-		}
-	}
-
 	@Override
-	public Class<ResetAppSecretResponse> getResponseClass() {
-		return ResetAppSecretResponse.class;
+	public Class<DescribeSummaryDataResponse> getResponseClass() {
+		return DescribeSummaryDataResponse.class;
 	}
 
 }

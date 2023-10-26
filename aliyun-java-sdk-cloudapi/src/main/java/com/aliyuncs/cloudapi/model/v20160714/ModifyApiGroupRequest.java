@@ -51,6 +51,8 @@ public class ModifyApiGroupRequest extends RpcAcsRequest<ModifyApiGroupResponse>
 	private String compatibleFlags;
 
 	private String customTraceConfig;
+
+	private String supportSSE;
 	public ModifyApiGroupRequest() {
 		super("CloudAPI", "2016-07-14", "ModifyApiGroup", "apigateway");
 		setMethod(MethodType.POST);
@@ -203,6 +205,17 @@ public class ModifyApiGroupRequest extends RpcAcsRequest<ModifyApiGroupResponse>
 		this.customTraceConfig = customTraceConfig;
 		if(customTraceConfig != null){
 			putQueryParameter("CustomTraceConfig", customTraceConfig);
+		}
+	}
+
+	public String getSupportSSE() {
+		return this.supportSSE;
+	}
+
+	public void setSupportSSE(String supportSSE) {
+		this.supportSSE = supportSSE;
+		if(supportSSE != null){
+			putQueryParameter("SupportSSE", supportSSE);
 		}
 	}
 

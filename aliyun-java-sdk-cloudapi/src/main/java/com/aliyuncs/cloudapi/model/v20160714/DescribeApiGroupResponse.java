@@ -87,6 +87,12 @@ public class DescribeApiGroupResponse extends AcsResponse {
 
 	private String dedicatedInstanceType;
 
+	private String migrationStatus;
+
+	private String migrationError;
+
+	private Boolean disableInnerDomain;
+
 	private List<DomainItem> customDomains;
 
 	private List<StageInfo> stageItems;
@@ -339,6 +345,30 @@ public class DescribeApiGroupResponse extends AcsResponse {
 		this.dedicatedInstanceType = dedicatedInstanceType;
 	}
 
+	public String getMigrationStatus() {
+		return this.migrationStatus;
+	}
+
+	public void setMigrationStatus(String migrationStatus) {
+		this.migrationStatus = migrationStatus;
+	}
+
+	public String getMigrationError() {
+		return this.migrationError;
+	}
+
+	public void setMigrationError(String migrationError) {
+		this.migrationError = migrationError;
+	}
+
+	public Boolean getDisableInnerDomain() {
+		return this.disableInnerDomain;
+	}
+
+	public void setDisableInnerDomain(Boolean disableInnerDomain) {
+		this.disableInnerDomain = disableInnerDomain;
+	}
+
 	public List<DomainItem> getCustomDomains() {
 		return this.customDomains;
 	}
@@ -382,6 +412,10 @@ public class DescribeApiGroupResponse extends AcsResponse {
 		private Boolean isHttpRedirectToHttps;
 
 		private String wssEnable;
+
+		private Long certificateValidStart;
+
+		private Long certificateValidEnd;
 
 		public String getBindStageName() {
 			return this.bindStageName;
@@ -485,6 +519,22 @@ public class DescribeApiGroupResponse extends AcsResponse {
 
 		public void setWssEnable(String wssEnable) {
 			this.wssEnable = wssEnable;
+		}
+
+		public Long getCertificateValidStart() {
+			return this.certificateValidStart;
+		}
+
+		public void setCertificateValidStart(Long certificateValidStart) {
+			this.certificateValidStart = certificateValidStart;
+		}
+
+		public Long getCertificateValidEnd() {
+			return this.certificateValidEnd;
+		}
+
+		public void setCertificateValidEnd(Long certificateValidEnd) {
+			this.certificateValidEnd = certificateValidEnd;
 		}
 	}
 

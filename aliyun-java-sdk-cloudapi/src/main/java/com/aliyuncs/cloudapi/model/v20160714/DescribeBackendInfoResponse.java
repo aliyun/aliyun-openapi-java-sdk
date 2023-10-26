@@ -193,7 +193,11 @@ public class DescribeBackendInfoResponse extends AcsResponse {
 
 				private String serviceAddress;
 
+				private String httpTargetHostName;
+
 				private String type;
+
+				private Integer serviceTimeout;
 
 				private VpcConfig vpcConfig;
 
@@ -205,6 +209,8 @@ public class DescribeBackendInfoResponse extends AcsResponse {
 
 				private MockConfig mockConfig;
 
+				private DiscoveryConfig discoveryConfig;
+
 				public String getServiceAddress() {
 					return this.serviceAddress;
 				}
@@ -213,12 +219,28 @@ public class DescribeBackendInfoResponse extends AcsResponse {
 					this.serviceAddress = serviceAddress;
 				}
 
+				public String getHttpTargetHostName() {
+					return this.httpTargetHostName;
+				}
+
+				public void setHttpTargetHostName(String httpTargetHostName) {
+					this.httpTargetHostName = httpTargetHostName;
+				}
+
 				public String getType() {
 					return this.type;
 				}
 
 				public void setType(String type) {
 					this.type = type;
+				}
+
+				public Integer getServiceTimeout() {
+					return this.serviceTimeout;
+				}
+
+				public void setServiceTimeout(Integer serviceTimeout) {
+					this.serviceTimeout = serviceTimeout;
 				}
 
 				public VpcConfig getVpcConfig() {
@@ -259,6 +281,14 @@ public class DescribeBackendInfoResponse extends AcsResponse {
 
 				public void setMockConfig(MockConfig mockConfig) {
 					this.mockConfig = mockConfig;
+				}
+
+				public DiscoveryConfig getDiscoveryConfig() {
+					return this.discoveryConfig;
+				}
+
+				public void setDiscoveryConfig(DiscoveryConfig discoveryConfig) {
+					this.discoveryConfig = discoveryConfig;
 				}
 
 				public static class VpcConfig {
@@ -535,6 +565,132 @@ public class DescribeBackendInfoResponse extends AcsResponse {
 
 						public void setHeaderValue(String headerValue) {
 							this.headerValue = headerValue;
+						}
+					}
+				}
+
+				public static class DiscoveryConfig {
+
+					private String rcType;
+
+					private NacosConfig nacosConfig;
+
+					public String getRcType() {
+						return this.rcType;
+					}
+
+					public void setRcType(String rcType) {
+						this.rcType = rcType;
+					}
+
+					public NacosConfig getNacosConfig() {
+						return this.nacosConfig;
+					}
+
+					public void setNacosConfig(NacosConfig nacosConfig) {
+						this.nacosConfig = nacosConfig;
+					}
+
+					public static class NacosConfig {
+
+						private String serverAddress;
+
+						private String namespace;
+
+						private String groupName;
+
+						private String serviceName;
+
+						private String clusters;
+
+						private String authType;
+
+						private String userName;
+
+						private String password;
+
+						private String accessKey;
+
+						private String secretKey;
+
+						public String getServerAddress() {
+							return this.serverAddress;
+						}
+
+						public void setServerAddress(String serverAddress) {
+							this.serverAddress = serverAddress;
+						}
+
+						public String getNamespace() {
+							return this.namespace;
+						}
+
+						public void setNamespace(String namespace) {
+							this.namespace = namespace;
+						}
+
+						public String getGroupName() {
+							return this.groupName;
+						}
+
+						public void setGroupName(String groupName) {
+							this.groupName = groupName;
+						}
+
+						public String getServiceName() {
+							return this.serviceName;
+						}
+
+						public void setServiceName(String serviceName) {
+							this.serviceName = serviceName;
+						}
+
+						public String getClusters() {
+							return this.clusters;
+						}
+
+						public void setClusters(String clusters) {
+							this.clusters = clusters;
+						}
+
+						public String getAuthType() {
+							return this.authType;
+						}
+
+						public void setAuthType(String authType) {
+							this.authType = authType;
+						}
+
+						public String getUserName() {
+							return this.userName;
+						}
+
+						public void setUserName(String userName) {
+							this.userName = userName;
+						}
+
+						public String getPassword() {
+							return this.password;
+						}
+
+						public void setPassword(String password) {
+							this.password = password;
+						}
+
+						public String getAccessKey() {
+							return this.accessKey;
+						}
+
+						public void setAccessKey(String accessKey) {
+							this.accessKey = accessKey;
+						}
+
+						public String getSecretKey() {
+							return this.secretKey;
+						}
+
+						public void setSecretKey(String secretKey) {
+							this.secretKey = secretKey;
 						}
 					}
 				}

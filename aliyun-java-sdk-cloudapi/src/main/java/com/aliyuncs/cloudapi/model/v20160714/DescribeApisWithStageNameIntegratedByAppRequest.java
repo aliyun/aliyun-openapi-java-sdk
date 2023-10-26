@@ -15,7 +15,6 @@
 package com.aliyuncs.cloudapi.model.v20160714;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cloudapi.Endpoint;
 
@@ -23,27 +22,44 @@ import com.aliyuncs.cloudapi.Endpoint;
  * @author auto create
  * @version 
  */
-public class ModifyAppRequest extends RpcAcsRequest<ModifyAppResponse> {
+public class DescribeApisWithStageNameIntegratedByAppRequest extends RpcAcsRequest<DescribeApisWithStageNameIntegratedByAppResponse> {
 	   
+
+	private String method;
 
 	private String description;
 
-	private String extend;
+	private Integer pageNumber;
 
-	private String appName;
+	private String path;
+
+	private String apiName;
 
 	private String securityToken;
 
 	private Long appId;
 
-	private List<Tag> tags;
-	public ModifyAppRequest() {
-		super("CloudAPI", "2016-07-14", "ModifyApp", "apigateway");
+	private String apiUid;
+
+	private Integer pageSize;
+	public DescribeApisWithStageNameIntegratedByAppRequest() {
+		super("CloudAPI", "2016-07-14", "DescribeApisWithStageNameIntegratedByApp", "apigateway");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getBizMethod() {
+		return this.method;
+	}
+
+	public void setBizMethod(String method) {
+		this.method = method;
+		if(method != null){
+			putQueryParameter("Method", method);
+		}
 	}
 
 	public String getDescription() {
@@ -57,25 +73,36 @@ public class ModifyAppRequest extends RpcAcsRequest<ModifyAppResponse> {
 		}
 	}
 
-	public String getExtend() {
-		return this.extend;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setExtend(String extend) {
-		this.extend = extend;
-		if(extend != null){
-			putQueryParameter("Extend", extend);
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
-	public String getAppName() {
-		return this.appName;
+	public String getPath() {
+		return this.path;
 	}
 
-	public void setAppName(String appName) {
-		this.appName = appName;
-		if(appName != null){
-			putQueryParameter("AppName", appName);
+	public void setPath(String path) {
+		this.path = path;
+		if(path != null){
+			putQueryParameter("Path", path);
+		}
+	}
+
+	public String getApiName() {
+		return this.apiName;
+	}
+
+	public void setApiName(String apiName) {
+		this.apiName = apiName;
+		if(apiName != null){
+			putQueryParameter("ApiName", apiName);
 		}
 	}
 
@@ -101,46 +128,31 @@ public class ModifyAppRequest extends RpcAcsRequest<ModifyAppResponse> {
 		}
 	}
 
-	public List<Tag> getTags() {
-		return this.tags;
+	public String getApiUid() {
+		return this.apiUid;
 	}
 
-	public void setTags(List<Tag> tags) {
-		this.tags = tags;	
-		if (tags != null) {
-			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
-				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
-				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
-			}
-		}	
+	public void setApiUid(String apiUid) {
+		this.apiUid = apiUid;
+		if(apiUid != null){
+			putQueryParameter("ApiUid", apiUid);
+		}
 	}
 
-	public static class Tag {
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
 
-		private String value;
-
-		private String key;
-
-		public String getValue() {
-			return this.value;
-		}
-
-		public void setValue(String value) {
-			this.value = value;
-		}
-
-		public String getKey() {
-			return this.key;
-		}
-
-		public void setKey(String key) {
-			this.key = key;
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
 	@Override
-	public Class<ModifyAppResponse> getResponseClass() {
-		return ModifyAppResponse.class;
+	public Class<DescribeApisWithStageNameIntegratedByAppResponse> getResponseClass() {
+		return DescribeApisWithStageNameIntegratedByAppResponse.class;
 	}
 
 }

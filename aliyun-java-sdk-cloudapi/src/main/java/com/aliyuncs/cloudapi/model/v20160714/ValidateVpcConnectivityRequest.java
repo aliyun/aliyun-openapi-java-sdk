@@ -22,18 +22,16 @@ import com.aliyuncs.cloudapi.Endpoint;
  * @author auto create
  * @version 
  */
-public class ResetAppSecretRequest extends RpcAcsRequest<ResetAppSecretResponse> {
+public class ValidateVpcConnectivityRequest extends RpcAcsRequest<ValidateVpcConnectivityResponse> {
 	   
 
-	private String newAppSecret;
+	private String instanceId;
 
 	private String securityToken;
 
-	private String newAppKey;
-
-	private String appKey;
-	public ResetAppSecretRequest() {
-		super("CloudAPI", "2016-07-14", "ResetAppSecret", "apigateway");
+	private String vpcAccessId;
+	public ValidateVpcConnectivityRequest() {
+		super("CloudAPI", "2016-07-14", "ValidateVpcConnectivity", "apigateway");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -41,14 +39,14 @@ public class ResetAppSecretRequest extends RpcAcsRequest<ResetAppSecretResponse>
 		} catch (Exception e) {}
 	}
 
-	public String getNewAppSecret() {
-		return this.newAppSecret;
+	public String getInstanceId() {
+		return this.instanceId;
 	}
 
-	public void setNewAppSecret(String newAppSecret) {
-		this.newAppSecret = newAppSecret;
-		if(newAppSecret != null){
-			putQueryParameter("NewAppSecret", newAppSecret);
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
@@ -63,31 +61,20 @@ public class ResetAppSecretRequest extends RpcAcsRequest<ResetAppSecretResponse>
 		}
 	}
 
-	public String getNewAppKey() {
-		return this.newAppKey;
+	public String getVpcAccessId() {
+		return this.vpcAccessId;
 	}
 
-	public void setNewAppKey(String newAppKey) {
-		this.newAppKey = newAppKey;
-		if(newAppKey != null){
-			putQueryParameter("NewAppKey", newAppKey);
-		}
-	}
-
-	public String getAppKey() {
-		return this.appKey;
-	}
-
-	public void setAppKey(String appKey) {
-		this.appKey = appKey;
-		if(appKey != null){
-			putQueryParameter("AppKey", appKey);
+	public void setVpcAccessId(String vpcAccessId) {
+		this.vpcAccessId = vpcAccessId;
+		if(vpcAccessId != null){
+			putQueryParameter("VpcAccessId", vpcAccessId);
 		}
 	}
 
 	@Override
-	public Class<ResetAppSecretResponse> getResponseClass() {
-		return ResetAppSecretResponse.class;
+	public Class<ValidateVpcConnectivityResponse> getResponseClass() {
+		return ValidateVpcConnectivityResponse.class;
 	}
 
 }

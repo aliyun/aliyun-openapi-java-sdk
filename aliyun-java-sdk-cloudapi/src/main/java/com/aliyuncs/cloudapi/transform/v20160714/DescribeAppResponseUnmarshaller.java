@@ -28,6 +28,7 @@ public class DescribeAppResponseUnmarshaller {
 		describeAppResponse.setDescription(_ctx.stringValue("DescribeAppResponse.Description"));
 		describeAppResponse.setAppId(_ctx.longValue("DescribeAppResponse.AppId"));
 		describeAppResponse.setCreatedTime(_ctx.stringValue("DescribeAppResponse.CreatedTime"));
+		describeAppResponse.setExtend(_ctx.stringValue("DescribeAppResponse.Extend"));
 	 
 	 	return describeAppResponse;
 	}

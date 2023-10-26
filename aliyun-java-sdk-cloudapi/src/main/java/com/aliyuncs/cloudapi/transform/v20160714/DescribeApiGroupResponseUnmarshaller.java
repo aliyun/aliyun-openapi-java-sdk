@@ -58,6 +58,9 @@ public class DescribeApiGroupResponseUnmarshaller {
 		describeApiGroupResponse.setVpcSlbIntranetDomain(_ctx.stringValue("DescribeApiGroupResponse.VpcSlbIntranetDomain"));
 		describeApiGroupResponse.setCloudMarketCommodity(_ctx.booleanValue("DescribeApiGroupResponse.CloudMarketCommodity"));
 		describeApiGroupResponse.setDedicatedInstanceType(_ctx.stringValue("DescribeApiGroupResponse.DedicatedInstanceType"));
+		describeApiGroupResponse.setMigrationStatus(_ctx.stringValue("DescribeApiGroupResponse.MigrationStatus"));
+		describeApiGroupResponse.setMigrationError(_ctx.stringValue("DescribeApiGroupResponse.MigrationError"));
+		describeApiGroupResponse.setDisableInnerDomain(_ctx.booleanValue("DescribeApiGroupResponse.DisableInnerDomain"));
 
 		List<DomainItem> customDomains = new ArrayList<DomainItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeApiGroupResponse.CustomDomains.Length"); i++) {
@@ -75,6 +78,8 @@ public class DescribeApiGroupResponseUnmarshaller {
 			domainItem.setCertificateId(_ctx.stringValue("DescribeApiGroupResponse.CustomDomains["+ i +"].CertificateId"));
 			domainItem.setIsHttpRedirectToHttps(_ctx.booleanValue("DescribeApiGroupResponse.CustomDomains["+ i +"].IsHttpRedirectToHttps"));
 			domainItem.setWssEnable(_ctx.stringValue("DescribeApiGroupResponse.CustomDomains["+ i +"].WssEnable"));
+			domainItem.setCertificateValidStart(_ctx.longValue("DescribeApiGroupResponse.CustomDomains["+ i +"].CertificateValidStart"));
+			domainItem.setCertificateValidEnd(_ctx.longValue("DescribeApiGroupResponse.CustomDomains["+ i +"].CertificateValidEnd"));
 
 			customDomains.add(domainItem);
 		}

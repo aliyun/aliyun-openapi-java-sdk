@@ -149,6 +149,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private String connectVpcId;
 
+		private String instanceClusterId;
+
+		private String maintainStartTime;
+
+		private String maintainEndTime;
+
+		private String connectCidrBlocks;
+
 		private List<SpecAttribute> instanceSpecAttributes;
 
 		private List<NetworkInterfaceAttribute> networkInterfaceAttributes;
@@ -439,6 +447,38 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		public void setConnectVpcId(String connectVpcId) {
 			this.connectVpcId = connectVpcId;
+		}
+
+		public String getInstanceClusterId() {
+			return this.instanceClusterId;
+		}
+
+		public void setInstanceClusterId(String instanceClusterId) {
+			this.instanceClusterId = instanceClusterId;
+		}
+
+		public String getMaintainStartTime() {
+			return this.maintainStartTime;
+		}
+
+		public void setMaintainStartTime(String maintainStartTime) {
+			this.maintainStartTime = maintainStartTime;
+		}
+
+		public String getMaintainEndTime() {
+			return this.maintainEndTime;
+		}
+
+		public void setMaintainEndTime(String maintainEndTime) {
+			this.maintainEndTime = maintainEndTime;
+		}
+
+		public String getConnectCidrBlocks() {
+			return this.connectCidrBlocks;
+		}
+
+		public void setConnectCidrBlocks(String connectCidrBlocks) {
+			this.connectCidrBlocks = connectCidrBlocks;
 		}
 
 		public List<SpecAttribute> getInstanceSpecAttributes() {

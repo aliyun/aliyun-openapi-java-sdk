@@ -28,6 +28,8 @@ public class CreateAppRequest extends RpcAcsRequest<CreateAppResponse> {
 
 	private String description;
 
+	private String extend;
+
 	private String appName;
 
 	private String securityToken;
@@ -56,6 +58,17 @@ public class CreateAppRequest extends RpcAcsRequest<CreateAppResponse> {
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getExtend() {
+		return this.extend;
+	}
+
+	public void setExtend(String extend) {
+		this.extend = extend;
+		if(extend != null){
+			putQueryParameter("Extend", extend);
 		}
 	}
 

@@ -23,22 +23,20 @@ import com.aliyuncs.cloudapi.Endpoint;
  * @author auto create
  * @version 
  */
-public class ModifyAppRequest extends RpcAcsRequest<ModifyAppResponse> {
+public class SetApiProductsAuthoritiesRequest extends RpcAcsRequest<SetApiProductsAuthoritiesResponse> {
 	   
 
 	private String description;
 
-	private String extend;
+	private List<String> apiProductIds;
 
-	private String appName;
+	private String authValidTime;
 
 	private String securityToken;
 
 	private Long appId;
-
-	private List<Tag> tags;
-	public ModifyAppRequest() {
-		super("CloudAPI", "2016-07-14", "ModifyApp", "apigateway");
+	public SetApiProductsAuthoritiesRequest() {
+		super("CloudAPI", "2016-07-14", "SetApiProductsAuthorities", "apigateway");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -57,25 +55,32 @@ public class ModifyAppRequest extends RpcAcsRequest<ModifyAppResponse> {
 		}
 	}
 
-	public String getExtend() {
-		return this.extend;
+	public List<String> getApiProductIds() {
+		return this.apiProductIds;
 	}
 
-	public void setExtend(String extend) {
-		this.extend = extend;
-		if(extend != null){
-			putQueryParameter("Extend", extend);
-		}
+	public void setApiProductIds(List<String> apiProductIds) {
+		this.apiProductIds = apiProductIds;	
+		if (apiProductIds != null) {
+			String apiProductIdsArrVal = "";
+			for(int depth1 = 0; depth1 < apiProductIds.size(); depth1++) {
+				apiProductIdsArrVal += apiProductIds.get(depth1) + ",";
+			}
+			if (apiProductIdsArrVal.length() > 0) {
+				apiProductIdsArrVal = apiProductIdsArrVal.substring(0, apiProductIdsArrVal.length() - 1);
+			}
+			putQueryParameter("ApiProductIds" , apiProductIdsArrVal);
+		}	
 	}
 
-	public String getAppName() {
-		return this.appName;
+	public String getAuthValidTime() {
+		return this.authValidTime;
 	}
 
-	public void setAppName(String appName) {
-		this.appName = appName;
-		if(appName != null){
-			putQueryParameter("AppName", appName);
+	public void setAuthValidTime(String authValidTime) {
+		this.authValidTime = authValidTime;
+		if(authValidTime != null){
+			putQueryParameter("AuthValidTime", authValidTime);
 		}
 	}
 
@@ -101,46 +106,9 @@ public class ModifyAppRequest extends RpcAcsRequest<ModifyAppResponse> {
 		}
 	}
 
-	public List<Tag> getTags() {
-		return this.tags;
-	}
-
-	public void setTags(List<Tag> tags) {
-		this.tags = tags;	
-		if (tags != null) {
-			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
-				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
-				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
-			}
-		}	
-	}
-
-	public static class Tag {
-
-		private String value;
-
-		private String key;
-
-		public String getValue() {
-			return this.value;
-		}
-
-		public void setValue(String value) {
-			this.value = value;
-		}
-
-		public String getKey() {
-			return this.key;
-		}
-
-		public void setKey(String key) {
-			this.key = key;
-		}
-	}
-
 	@Override
-	public Class<ModifyAppResponse> getResponseClass() {
-		return ModifyAppResponse.class;
+	public Class<SetApiProductsAuthoritiesResponse> getResponseClass() {
+		return SetApiProductsAuthoritiesResponse.class;
 	}
 
 }

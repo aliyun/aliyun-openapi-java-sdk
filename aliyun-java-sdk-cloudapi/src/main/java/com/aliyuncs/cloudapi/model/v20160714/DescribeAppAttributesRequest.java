@@ -40,6 +40,8 @@ public class DescribeAppAttributesRequest extends RpcAcsRequest<DescribeAppAttri
 
 	private Boolean enableTagAuth;
 
+	private String extend;
+
 	private Long appId;
 
 	private String appCode;
@@ -131,6 +133,17 @@ public class DescribeAppAttributesRequest extends RpcAcsRequest<DescribeAppAttri
 		this.enableTagAuth = enableTagAuth;
 		if(enableTagAuth != null){
 			putQueryParameter("EnableTagAuth", enableTagAuth.toString());
+		}
+	}
+
+	public String getExtend() {
+		return this.extend;
+	}
+
+	public void setExtend(String extend) {
+		this.extend = extend;
+		if(extend != null){
+			putQueryParameter("Extend", extend);
 		}
 	}
 

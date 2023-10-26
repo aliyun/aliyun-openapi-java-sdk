@@ -15,6 +15,7 @@
 package com.aliyuncs.cloudapi.model.v20160714;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cloudapi.Endpoint;
 
@@ -22,18 +23,16 @@ import com.aliyuncs.cloudapi.Endpoint;
  * @author auto create
  * @version 
  */
-public class ResetAppSecretRequest extends RpcAcsRequest<ResetAppSecretResponse> {
+public class RemoveApiProductsAuthoritiesRequest extends RpcAcsRequest<RemoveApiProductsAuthoritiesResponse> {
 	   
 
-	private String newAppSecret;
+	private List<String> apiProductIds;
 
 	private String securityToken;
 
-	private String newAppKey;
-
-	private String appKey;
-	public ResetAppSecretRequest() {
-		super("CloudAPI", "2016-07-14", "ResetAppSecret", "apigateway");
+	private Long appId;
+	public RemoveApiProductsAuthoritiesRequest() {
+		super("CloudAPI", "2016-07-14", "RemoveApiProductsAuthorities", "apigateway");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -41,15 +40,22 @@ public class ResetAppSecretRequest extends RpcAcsRequest<ResetAppSecretResponse>
 		} catch (Exception e) {}
 	}
 
-	public String getNewAppSecret() {
-		return this.newAppSecret;
+	public List<String> getApiProductIds() {
+		return this.apiProductIds;
 	}
 
-	public void setNewAppSecret(String newAppSecret) {
-		this.newAppSecret = newAppSecret;
-		if(newAppSecret != null){
-			putQueryParameter("NewAppSecret", newAppSecret);
-		}
+	public void setApiProductIds(List<String> apiProductIds) {
+		this.apiProductIds = apiProductIds;	
+		if (apiProductIds != null) {
+			String apiProductIdsArrVal = "";
+			for(int depth1 = 0; depth1 < apiProductIds.size(); depth1++) {
+				apiProductIdsArrVal += apiProductIds.get(depth1) + ",";
+			}
+			if (apiProductIdsArrVal.length() > 0) {
+				apiProductIdsArrVal = apiProductIdsArrVal.substring(0, apiProductIdsArrVal.length() - 1);
+			}
+			putQueryParameter("ApiProductIds" , apiProductIdsArrVal);
+		}	
 	}
 
 	public String getSecurityToken() {
@@ -63,31 +69,20 @@ public class ResetAppSecretRequest extends RpcAcsRequest<ResetAppSecretResponse>
 		}
 	}
 
-	public String getNewAppKey() {
-		return this.newAppKey;
+	public Long getAppId() {
+		return this.appId;
 	}
 
-	public void setNewAppKey(String newAppKey) {
-		this.newAppKey = newAppKey;
-		if(newAppKey != null){
-			putQueryParameter("NewAppKey", newAppKey);
-		}
-	}
-
-	public String getAppKey() {
-		return this.appKey;
-	}
-
-	public void setAppKey(String appKey) {
-		this.appKey = appKey;
-		if(appKey != null){
-			putQueryParameter("AppKey", appKey);
+	public void setAppId(Long appId) {
+		this.appId = appId;
+		if(appId != null){
+			putQueryParameter("AppId", appId.toString());
 		}
 	}
 
 	@Override
-	public Class<ResetAppSecretResponse> getResponseClass() {
-		return ResetAppSecretResponse.class;
+	public Class<RemoveApiProductsAuthoritiesResponse> getResponseClass() {
+		return RemoveApiProductsAuthoritiesResponse.class;
 	}
 
 }

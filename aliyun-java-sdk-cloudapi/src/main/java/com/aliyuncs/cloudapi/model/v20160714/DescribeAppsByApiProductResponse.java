@@ -16,32 +16,24 @@ package com.aliyuncs.cloudapi.model.v20160714;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cloudapi.transform.v20160714.DescribeAppAttributesResponseUnmarshaller;
+import com.aliyuncs.cloudapi.transform.v20160714.DescribeAppsByApiProductResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeAppAttributesResponse extends AcsResponse {
-
-	private Integer pageNumber;
+public class DescribeAppsByApiProductResponse extends AcsResponse {
 
 	private String requestId;
 
 	private Integer pageSize;
 
+	private Integer pageNumber;
+
 	private Integer totalCount;
 
-	private List<AppAttribute> apps;
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
+	private List<AuthorizedApp> authorizedApps;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -59,6 +51,14 @@ public class DescribeAppAttributesResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
+
 	public Integer getTotalCount() {
 		return this.totalCount;
 	}
@@ -67,29 +67,27 @@ public class DescribeAppAttributesResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public List<AppAttribute> getApps() {
-		return this.apps;
+	public List<AuthorizedApp> getAuthorizedApps() {
+		return this.authorizedApps;
 	}
 
-	public void setApps(List<AppAttribute> apps) {
-		this.apps = apps;
+	public void setAuthorizedApps(List<AuthorizedApp> authorizedApps) {
+		this.authorizedApps = authorizedApps;
 	}
 
-	public static class AppAttribute {
+	public static class AuthorizedApp {
 
 		private String appName;
 
-		private String modifiedTime;
-
 		private String description;
 
-		private String createdTime;
+		private String authValidTime;
 
 		private Long appId;
 
 		private String extend;
 
-		private List<TagInfo> tags;
+		private String authorizedTime;
 
 		public String getAppName() {
 			return this.appName;
@@ -97,14 +95,6 @@ public class DescribeAppAttributesResponse extends AcsResponse {
 
 		public void setAppName(String appName) {
 			this.appName = appName;
-		}
-
-		public String getModifiedTime() {
-			return this.modifiedTime;
-		}
-
-		public void setModifiedTime(String modifiedTime) {
-			this.modifiedTime = modifiedTime;
 		}
 
 		public String getDescription() {
@@ -115,12 +105,12 @@ public class DescribeAppAttributesResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public String getCreatedTime() {
-			return this.createdTime;
+		public String getAuthValidTime() {
+			return this.authValidTime;
 		}
 
-		public void setCreatedTime(String createdTime) {
-			this.createdTime = createdTime;
+		public void setAuthValidTime(String authValidTime) {
+			this.authValidTime = authValidTime;
 		}
 
 		public Long getAppId() {
@@ -139,40 +129,17 @@ public class DescribeAppAttributesResponse extends AcsResponse {
 			this.extend = extend;
 		}
 
-		public List<TagInfo> getTags() {
-			return this.tags;
+		public String getAuthorizedTime() {
+			return this.authorizedTime;
 		}
 
-		public void setTags(List<TagInfo> tags) {
-			this.tags = tags;
-		}
-
-		public static class TagInfo {
-
-			private String key;
-
-			private String value;
-
-			public String getKey() {
-				return this.key;
-			}
-
-			public void setKey(String key) {
-				this.key = key;
-			}
-
-			public String getValue() {
-				return this.value;
-			}
-
-			public void setValue(String value) {
-				this.value = value;
-			}
+		public void setAuthorizedTime(String authorizedTime) {
+			this.authorizedTime = authorizedTime;
 		}
 	}
 
 	@Override
-	public DescribeAppAttributesResponse getInstance(UnmarshallerContext context) {
-		return	DescribeAppAttributesResponseUnmarshaller.unmarshall(this, context);
+	public DescribeAppsByApiProductResponse getInstance(UnmarshallerContext context) {
+		return	DescribeAppsByApiProductResponseUnmarshaller.unmarshall(this, context);
 	}
 }

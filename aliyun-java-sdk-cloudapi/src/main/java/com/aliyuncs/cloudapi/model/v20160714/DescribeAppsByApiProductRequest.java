@@ -22,18 +22,20 @@ import com.aliyuncs.cloudapi.Endpoint;
  * @author auto create
  * @version 
  */
-public class ResetAppSecretRequest extends RpcAcsRequest<ResetAppSecretResponse> {
+public class DescribeAppsByApiProductRequest extends RpcAcsRequest<DescribeAppsByApiProductResponse> {
 	   
 
-	private String newAppSecret;
+	private Integer pageNumber;
+
+	private String appName;
 
 	private String securityToken;
 
-	private String newAppKey;
+	private Integer pageSize;
 
-	private String appKey;
-	public ResetAppSecretRequest() {
-		super("CloudAPI", "2016-07-14", "ResetAppSecret", "apigateway");
+	private String apiProductId;
+	public DescribeAppsByApiProductRequest() {
+		super("CloudAPI", "2016-07-14", "DescribeAppsByApiProduct", "apigateway");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -41,14 +43,25 @@ public class ResetAppSecretRequest extends RpcAcsRequest<ResetAppSecretResponse>
 		} catch (Exception e) {}
 	}
 
-	public String getNewAppSecret() {
-		return this.newAppSecret;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setNewAppSecret(String newAppSecret) {
-		this.newAppSecret = newAppSecret;
-		if(newAppSecret != null){
-			putQueryParameter("NewAppSecret", newAppSecret);
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getAppName() {
+		return this.appName;
+	}
+
+	public void setAppName(String appName) {
+		this.appName = appName;
+		if(appName != null){
+			putQueryParameter("AppName", appName);
 		}
 	}
 
@@ -63,31 +76,31 @@ public class ResetAppSecretRequest extends RpcAcsRequest<ResetAppSecretResponse>
 		}
 	}
 
-	public String getNewAppKey() {
-		return this.newAppKey;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setNewAppKey(String newAppKey) {
-		this.newAppKey = newAppKey;
-		if(newAppKey != null){
-			putQueryParameter("NewAppKey", newAppKey);
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
-	public String getAppKey() {
-		return this.appKey;
+	public String getApiProductId() {
+		return this.apiProductId;
 	}
 
-	public void setAppKey(String appKey) {
-		this.appKey = appKey;
-		if(appKey != null){
-			putQueryParameter("AppKey", appKey);
+	public void setApiProductId(String apiProductId) {
+		this.apiProductId = apiProductId;
+		if(apiProductId != null){
+			putQueryParameter("ApiProductId", apiProductId);
 		}
 	}
 
 	@Override
-	public Class<ResetAppSecretResponse> getResponseClass() {
-		return ResetAppSecretResponse.class;
+	public Class<DescribeAppsByApiProductResponse> getResponseClass() {
+		return DescribeAppsByApiProductResponse.class;
 	}
 
 }

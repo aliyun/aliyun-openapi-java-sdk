@@ -72,6 +72,10 @@ public class DescribeInstancesResponseUnmarshaller {
 			instanceAttribute.setDedicatedInstanceType(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].DedicatedInstanceType"));
 			instanceAttribute.setInstanceCidrBlock(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].InstanceCidrBlock"));
 			instanceAttribute.setConnectVpcId(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].ConnectVpcId"));
+			instanceAttribute.setInstanceClusterId(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].InstanceClusterId"));
+			instanceAttribute.setMaintainStartTime(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].MaintainStartTime"));
+			instanceAttribute.setMaintainEndTime(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].MaintainEndTime"));
+			instanceAttribute.setConnectCidrBlocks(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].ConnectCidrBlocks"));
 
 			List<SpecAttribute> instanceSpecAttributes = new ArrayList<SpecAttribute>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeInstancesResponse.Instances["+ i +"].InstanceSpecAttributes.Length"); j++) {

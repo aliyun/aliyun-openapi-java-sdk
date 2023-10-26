@@ -22,18 +22,16 @@ import com.aliyuncs.cloudapi.Endpoint;
  * @author auto create
  * @version 
  */
-public class ResetAppSecretRequest extends RpcAcsRequest<ResetAppSecretResponse> {
+public class ModifyIntranetDomainPolicyRequest extends RpcAcsRequest<ModifyIntranetDomainPolicyResponse> {
 	   
 
-	private String newAppSecret;
+	private String groupId;
+
+	private Boolean vpcIntranetEnable;
 
 	private String securityToken;
-
-	private String newAppKey;
-
-	private String appKey;
-	public ResetAppSecretRequest() {
-		super("CloudAPI", "2016-07-14", "ResetAppSecret", "apigateway");
+	public ModifyIntranetDomainPolicyRequest() {
+		super("CloudAPI", "2016-07-14", "ModifyIntranetDomainPolicy", "apigateway");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -41,14 +39,25 @@ public class ResetAppSecretRequest extends RpcAcsRequest<ResetAppSecretResponse>
 		} catch (Exception e) {}
 	}
 
-	public String getNewAppSecret() {
-		return this.newAppSecret;
+	public String getGroupId() {
+		return this.groupId;
 	}
 
-	public void setNewAppSecret(String newAppSecret) {
-		this.newAppSecret = newAppSecret;
-		if(newAppSecret != null){
-			putQueryParameter("NewAppSecret", newAppSecret);
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
+		}
+	}
+
+	public Boolean getVpcIntranetEnable() {
+		return this.vpcIntranetEnable;
+	}
+
+	public void setVpcIntranetEnable(Boolean vpcIntranetEnable) {
+		this.vpcIntranetEnable = vpcIntranetEnable;
+		if(vpcIntranetEnable != null){
+			putQueryParameter("VpcIntranetEnable", vpcIntranetEnable.toString());
 		}
 	}
 
@@ -63,31 +72,9 @@ public class ResetAppSecretRequest extends RpcAcsRequest<ResetAppSecretResponse>
 		}
 	}
 
-	public String getNewAppKey() {
-		return this.newAppKey;
-	}
-
-	public void setNewAppKey(String newAppKey) {
-		this.newAppKey = newAppKey;
-		if(newAppKey != null){
-			putQueryParameter("NewAppKey", newAppKey);
-		}
-	}
-
-	public String getAppKey() {
-		return this.appKey;
-	}
-
-	public void setAppKey(String appKey) {
-		this.appKey = appKey;
-		if(appKey != null){
-			putQueryParameter("AppKey", appKey);
-		}
-	}
-
 	@Override
-	public Class<ResetAppSecretResponse> getResponseClass() {
-		return ResetAppSecretResponse.class;
+	public Class<ModifyIntranetDomainPolicyResponse> getResponseClass() {
+		return ModifyIntranetDomainPolicyResponse.class;
 	}
 
 }

@@ -36,6 +36,8 @@ public class DescribeAppResponse extends AcsResponse {
 
 	private String createdTime;
 
+	private String extend;
+
 	public String getAppName() {
 		return this.appName;
 	}
@@ -82,6 +84,14 @@ public class DescribeAppResponse extends AcsResponse {
 
 	public void setCreatedTime(String createdTime) {
 		this.createdTime = createdTime;
+	}
+
+	public String getExtend() {
+		return this.extend;
+	}
+
+	public void setExtend(String extend) {
+		this.extend = extend;
 	}
 
 	@Override

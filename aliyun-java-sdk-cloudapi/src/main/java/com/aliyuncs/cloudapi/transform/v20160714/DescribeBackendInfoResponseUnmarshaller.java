@@ -21,6 +21,8 @@ import com.aliyuncs.cloudapi.model.v20160714.DescribeBackendInfoResponse;
 import com.aliyuncs.cloudapi.model.v20160714.DescribeBackendInfoResponse.BackendInfo;
 import com.aliyuncs.cloudapi.model.v20160714.DescribeBackendInfoResponse.BackendInfo.BackendModel;
 import com.aliyuncs.cloudapi.model.v20160714.DescribeBackendInfoResponse.BackendInfo.BackendModel.BackendConfig;
+import com.aliyuncs.cloudapi.model.v20160714.DescribeBackendInfoResponse.BackendInfo.BackendModel.BackendConfig.DiscoveryConfig;
+import com.aliyuncs.cloudapi.model.v20160714.DescribeBackendInfoResponse.BackendInfo.BackendModel.BackendConfig.DiscoveryConfig.NacosConfig;
 import com.aliyuncs.cloudapi.model.v20160714.DescribeBackendInfoResponse.BackendInfo.BackendModel.BackendConfig.EventBridgeConfig;
 import com.aliyuncs.cloudapi.model.v20160714.DescribeBackendInfoResponse.BackendInfo.BackendModel.BackendConfig.FunctionComputeConfig;
 import com.aliyuncs.cloudapi.model.v20160714.DescribeBackendInfoResponse.BackendInfo.BackendModel.BackendConfig.MockConfig;
@@ -56,7 +58,9 @@ public class DescribeBackendInfoResponseUnmarshaller {
 
 			BackendConfig backendConfig = new BackendConfig();
 			backendConfig.setServiceAddress(_ctx.stringValue("DescribeBackendInfoResponse.BackendInfo.BackendModels["+ i +"].BackendConfig.ServiceAddress"));
+			backendConfig.setHttpTargetHostName(_ctx.stringValue("DescribeBackendInfoResponse.BackendInfo.BackendModels["+ i +"].BackendConfig.HttpTargetHostName"));
 			backendConfig.setType(_ctx.stringValue("DescribeBackendInfoResponse.BackendInfo.BackendModels["+ i +"].BackendConfig.Type"));
+			backendConfig.setServiceTimeout(_ctx.integerValue("DescribeBackendInfoResponse.BackendInfo.BackendModels["+ i +"].BackendConfig.ServiceTimeout"));
 
 			VpcConfig vpcConfig = new VpcConfig();
 			vpcConfig.setVpcId(_ctx.stringValue("DescribeBackendInfoResponse.BackendInfo.BackendModels["+ i +"].BackendConfig.VpcConfig.VpcId"));
@@ -105,6 +109,23 @@ public class DescribeBackendInfoResponseUnmarshaller {
 			}
 			mockConfig.setMockHeaders(mockHeaders);
 			backendConfig.setMockConfig(mockConfig);
+
+			DiscoveryConfig discoveryConfig = new DiscoveryConfig();
+			discoveryConfig.setRcType(_ctx.stringValue("DescribeBackendInfoResponse.BackendInfo.BackendModels["+ i +"].BackendConfig.DiscoveryConfig.RcType"));
+
+			NacosConfig nacosConfig = new NacosConfig();
+			nacosConfig.setServerAddress(_ctx.stringValue("DescribeBackendInfoResponse.BackendInfo.BackendModels["+ i +"].BackendConfig.DiscoveryConfig.NacosConfig.ServerAddress"));
+			nacosConfig.setNamespace(_ctx.stringValue("DescribeBackendInfoResponse.BackendInfo.BackendModels["+ i +"].BackendConfig.DiscoveryConfig.NacosConfig.Namespace"));
+			nacosConfig.setGroupName(_ctx.stringValue("DescribeBackendInfoResponse.BackendInfo.BackendModels["+ i +"].BackendConfig.DiscoveryConfig.NacosConfig.GroupName"));
+			nacosConfig.setServiceName(_ctx.stringValue("DescribeBackendInfoResponse.BackendInfo.BackendModels["+ i +"].BackendConfig.DiscoveryConfig.NacosConfig.ServiceName"));
+			nacosConfig.setClusters(_ctx.stringValue("DescribeBackendInfoResponse.BackendInfo.BackendModels["+ i +"].BackendConfig.DiscoveryConfig.NacosConfig.Clusters"));
+			nacosConfig.setAuthType(_ctx.stringValue("DescribeBackendInfoResponse.BackendInfo.BackendModels["+ i +"].BackendConfig.DiscoveryConfig.NacosConfig.AuthType"));
+			nacosConfig.setUserName(_ctx.stringValue("DescribeBackendInfoResponse.BackendInfo.BackendModels["+ i +"].BackendConfig.DiscoveryConfig.NacosConfig.UserName"));
+			nacosConfig.setPassword(_ctx.stringValue("DescribeBackendInfoResponse.BackendInfo.BackendModels["+ i +"].BackendConfig.DiscoveryConfig.NacosConfig.Password"));
+			nacosConfig.setAccessKey(_ctx.stringValue("DescribeBackendInfoResponse.BackendInfo.BackendModels["+ i +"].BackendConfig.DiscoveryConfig.NacosConfig.AccessKey"));
+			nacosConfig.setSecretKey(_ctx.stringValue("DescribeBackendInfoResponse.BackendInfo.BackendModels["+ i +"].BackendConfig.DiscoveryConfig.NacosConfig.SecretKey"));
+			discoveryConfig.setNacosConfig(nacosConfig);
+			backendConfig.setDiscoveryConfig(discoveryConfig);
 			backendModel.setBackendConfig(backendConfig);
 
 			backendModels.add(backendModel);

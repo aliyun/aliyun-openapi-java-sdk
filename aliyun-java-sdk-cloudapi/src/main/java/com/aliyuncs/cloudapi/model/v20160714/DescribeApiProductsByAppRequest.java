@@ -22,18 +22,18 @@ import com.aliyuncs.cloudapi.Endpoint;
  * @author auto create
  * @version 
  */
-public class ResetAppSecretRequest extends RpcAcsRequest<ResetAppSecretResponse> {
+public class DescribeApiProductsByAppRequest extends RpcAcsRequest<DescribeApiProductsByAppResponse> {
 	   
 
-	private String newAppSecret;
+	private Integer pageNumber;
 
 	private String securityToken;
 
-	private String newAppKey;
+	private Long appId;
 
-	private String appKey;
-	public ResetAppSecretRequest() {
-		super("CloudAPI", "2016-07-14", "ResetAppSecret", "apigateway");
+	private Integer pageSize;
+	public DescribeApiProductsByAppRequest() {
+		super("CloudAPI", "2016-07-14", "DescribeApiProductsByApp", "apigateway");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -41,14 +41,14 @@ public class ResetAppSecretRequest extends RpcAcsRequest<ResetAppSecretResponse>
 		} catch (Exception e) {}
 	}
 
-	public String getNewAppSecret() {
-		return this.newAppSecret;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setNewAppSecret(String newAppSecret) {
-		this.newAppSecret = newAppSecret;
-		if(newAppSecret != null){
-			putQueryParameter("NewAppSecret", newAppSecret);
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
@@ -63,31 +63,31 @@ public class ResetAppSecretRequest extends RpcAcsRequest<ResetAppSecretResponse>
 		}
 	}
 
-	public String getNewAppKey() {
-		return this.newAppKey;
+	public Long getAppId() {
+		return this.appId;
 	}
 
-	public void setNewAppKey(String newAppKey) {
-		this.newAppKey = newAppKey;
-		if(newAppKey != null){
-			putQueryParameter("NewAppKey", newAppKey);
+	public void setAppId(Long appId) {
+		this.appId = appId;
+		if(appId != null){
+			putQueryParameter("AppId", appId.toString());
 		}
 	}
 
-	public String getAppKey() {
-		return this.appKey;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setAppKey(String appKey) {
-		this.appKey = appKey;
-		if(appKey != null){
-			putQueryParameter("AppKey", appKey);
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
 	@Override
-	public Class<ResetAppSecretResponse> getResponseClass() {
-		return ResetAppSecretResponse.class;
+	public Class<DescribeApiProductsByAppResponse> getResponseClass() {
+		return DescribeApiProductsByAppResponse.class;
 	}
 
 }

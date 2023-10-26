@@ -15,6 +15,7 @@
 package com.aliyuncs.cloudapi.model.v20160714;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cloudapi.Endpoint;
 
@@ -22,18 +23,16 @@ import com.aliyuncs.cloudapi.Endpoint;
  * @author auto create
  * @version 
  */
-public class ResetAppSecretRequest extends RpcAcsRequest<ResetAppSecretResponse> {
+public class DetachApiProductRequest extends RpcAcsRequest<DetachApiProductResponse> {
 	   
 
-	private String newAppSecret;
+	private List<Apis> apiss;
 
 	private String securityToken;
 
-	private String newAppKey;
-
-	private String appKey;
-	public ResetAppSecretRequest() {
-		super("CloudAPI", "2016-07-14", "ResetAppSecret", "apigateway");
+	private String apiProductId;
+	public DetachApiProductRequest() {
+		super("CloudAPI", "2016-07-14", "DetachApiProduct", "apigateway");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -41,15 +40,18 @@ public class ResetAppSecretRequest extends RpcAcsRequest<ResetAppSecretResponse>
 		} catch (Exception e) {}
 	}
 
-	public String getNewAppSecret() {
-		return this.newAppSecret;
+	public List<Apis> getApiss() {
+		return this.apiss;
 	}
 
-	public void setNewAppSecret(String newAppSecret) {
-		this.newAppSecret = newAppSecret;
-		if(newAppSecret != null){
-			putQueryParameter("NewAppSecret", newAppSecret);
-		}
+	public void setApiss(List<Apis> apiss) {
+		this.apiss = apiss;	
+		if (apiss != null) {
+			for (int depth1 = 0; depth1 < apiss.size(); depth1++) {
+				putQueryParameter("Apis." + (depth1 + 1) + ".StageName" , apiss.get(depth1).getStageName());
+				putQueryParameter("Apis." + (depth1 + 1) + ".ApiId" , apiss.get(depth1).getApiId());
+			}
+		}	
 	}
 
 	public String getSecurityToken() {
@@ -63,31 +65,43 @@ public class ResetAppSecretRequest extends RpcAcsRequest<ResetAppSecretResponse>
 		}
 	}
 
-	public String getNewAppKey() {
-		return this.newAppKey;
+	public String getApiProductId() {
+		return this.apiProductId;
 	}
 
-	public void setNewAppKey(String newAppKey) {
-		this.newAppKey = newAppKey;
-		if(newAppKey != null){
-			putQueryParameter("NewAppKey", newAppKey);
+	public void setApiProductId(String apiProductId) {
+		this.apiProductId = apiProductId;
+		if(apiProductId != null){
+			putQueryParameter("ApiProductId", apiProductId);
 		}
 	}
 
-	public String getAppKey() {
-		return this.appKey;
-	}
+	public static class Apis {
 
-	public void setAppKey(String appKey) {
-		this.appKey = appKey;
-		if(appKey != null){
-			putQueryParameter("AppKey", appKey);
+		private String stageName;
+
+		private String apiId;
+
+		public String getStageName() {
+			return this.stageName;
+		}
+
+		public void setStageName(String stageName) {
+			this.stageName = stageName;
+		}
+
+		public String getApiId() {
+			return this.apiId;
+		}
+
+		public void setApiId(String apiId) {
+			this.apiId = apiId;
 		}
 	}
 
 	@Override
-	public Class<ResetAppSecretResponse> getResponseClass() {
-		return ResetAppSecretResponse.class;
+	public Class<DetachApiProductResponse> getResponseClass() {
+		return DetachApiProductResponse.class;
 	}
 
 }
