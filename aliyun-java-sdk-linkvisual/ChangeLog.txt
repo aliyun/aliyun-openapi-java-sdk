@@ -1,3 +1,6 @@
+2023-10-30 Version: 1.5.16
+- 新增按时间下载云存录像接口.
+
 2023-09-18 Version: 1.5.15
 - Query voice intercom support WebSocket scheme.
 
