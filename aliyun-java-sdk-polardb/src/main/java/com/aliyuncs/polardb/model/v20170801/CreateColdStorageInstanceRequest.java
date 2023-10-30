@@ -22,20 +22,14 @@ import com.aliyuncs.polardb.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeMetaListRequest extends RpcAcsRequest<DescribeMetaListResponse> {
+public class CreateColdStorageInstanceRequest extends RpcAcsRequest<CreateColdStorageInstanceResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String regionCode;
+	private String clientToken;
 
-	private Integer pageNumber;
-
-	private String securityToken;
-
-	private Integer pageSize;
-
-	private String restoreTime;
+	private String resourceGroupId;
 
 	private String resourceOwnerAccount;
 
@@ -43,13 +37,11 @@ public class DescribeMetaListRequest extends RpcAcsRequest<DescribeMetaListRespo
 
 	private String ownerAccount;
 
-	private String backupId;
+	private String coldStorageInstanceDescription;
 
 	private Long ownerId;
-
-	private String getDbName;
-	public DescribeMetaListRequest() {
-		super("polardb", "2017-08-01", "DescribeMetaList", "polardb");
+	public CreateColdStorageInstanceRequest() {
+		super("polardb", "2017-08-01", "CreateColdStorageInstance", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -68,58 +60,25 @@ public class DescribeMetaListRequest extends RpcAcsRequest<DescribeMetaListRespo
 		}
 	}
 
-	public String getRegionCode() {
-		return this.regionCode;
+	public String getClientToken() {
+		return this.clientToken;
 	}
 
-	public void setRegionCode(String regionCode) {
-		this.regionCode = regionCode;
-		if(regionCode != null){
-			putQueryParameter("RegionCode", regionCode);
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getRestoreTime() {
-		return this.restoreTime;
-	}
-
-	public void setRestoreTime(String restoreTime) {
-		this.restoreTime = restoreTime;
-		if(restoreTime != null){
-			putQueryParameter("RestoreTime", restoreTime);
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 
@@ -156,14 +115,14 @@ public class DescribeMetaListRequest extends RpcAcsRequest<DescribeMetaListRespo
 		}
 	}
 
-	public String getBackupId() {
-		return this.backupId;
+	public String getColdStorageInstanceDescription() {
+		return this.coldStorageInstanceDescription;
 	}
 
-	public void setBackupId(String backupId) {
-		this.backupId = backupId;
-		if(backupId != null){
-			putQueryParameter("BackupId", backupId);
+	public void setColdStorageInstanceDescription(String coldStorageInstanceDescription) {
+		this.coldStorageInstanceDescription = coldStorageInstanceDescription;
+		if(coldStorageInstanceDescription != null){
+			putQueryParameter("ColdStorageInstanceDescription", coldStorageInstanceDescription);
 		}
 	}
 
@@ -178,20 +137,9 @@ public class DescribeMetaListRequest extends RpcAcsRequest<DescribeMetaListRespo
 		}
 	}
 
-	public String getGetDbName() {
-		return this.getDbName;
-	}
-
-	public void setGetDbName(String getDbName) {
-		this.getDbName = getDbName;
-		if(getDbName != null){
-			putQueryParameter("GetDbName", getDbName);
-		}
-	}
-
 	@Override
-	public Class<DescribeMetaListResponse> getResponseClass() {
-		return DescribeMetaListResponse.class;
+	public Class<CreateColdStorageInstanceResponse> getResponseClass() {
+		return CreateColdStorageInstanceResponse.class;
 	}
 
 }

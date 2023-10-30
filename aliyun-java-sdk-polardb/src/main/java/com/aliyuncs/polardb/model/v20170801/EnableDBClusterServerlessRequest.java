@@ -22,7 +22,7 @@ import com.aliyuncs.polardb.Endpoint;
  * @author auto create
  * @version 
  */
-public class ModifyDBClusterServerlessConfRequest extends RpcAcsRequest<ModifyDBClusterServerlessConfResponse> {
+public class EnableDBClusterServerlessRequest extends RpcAcsRequest<EnableDBClusterServerlessResponse> {
 	   
 
 	private String scaleRoNumMax;
@@ -32,10 +32,6 @@ public class ModifyDBClusterServerlessConfRequest extends RpcAcsRequest<ModifyDB
 	private String scaleApRoNumMax;
 
 	private String scaleMax;
-
-	private String plannedEndTime;
-
-	private String secondsUntilAutoPause;
 
 	private String scaleApRoNumMin;
 
@@ -49,15 +45,9 @@ public class ModifyDBClusterServerlessConfRequest extends RpcAcsRequest<ModifyDB
 
 	private Long ownerId;
 
-	private String plannedStartTime;
-
 	private String scaleRoNumMin;
-
-	private String allowShutDown;
-
-	private Boolean fromTimeService;
-	public ModifyDBClusterServerlessConfRequest() {
-		super("polardb", "2017-08-01", "ModifyDBClusterServerlessConf", "polardb");
+	public EnableDBClusterServerlessRequest() {
+		super("polardb", "2017-08-01", "EnableDBClusterServerless", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -106,28 +96,6 @@ public class ModifyDBClusterServerlessConfRequest extends RpcAcsRequest<ModifyDB
 		this.scaleMax = scaleMax;
 		if(scaleMax != null){
 			putQueryParameter("ScaleMax", scaleMax);
-		}
-	}
-
-	public String getPlannedEndTime() {
-		return this.plannedEndTime;
-	}
-
-	public void setPlannedEndTime(String plannedEndTime) {
-		this.plannedEndTime = plannedEndTime;
-		if(plannedEndTime != null){
-			putQueryParameter("PlannedEndTime", plannedEndTime);
-		}
-	}
-
-	public String getSecondsUntilAutoPause() {
-		return this.secondsUntilAutoPause;
-	}
-
-	public void setSecondsUntilAutoPause(String secondsUntilAutoPause) {
-		this.secondsUntilAutoPause = secondsUntilAutoPause;
-		if(secondsUntilAutoPause != null){
-			putQueryParameter("SecondsUntilAutoPause", secondsUntilAutoPause);
 		}
 	}
 
@@ -197,17 +165,6 @@ public class ModifyDBClusterServerlessConfRequest extends RpcAcsRequest<ModifyDB
 		}
 	}
 
-	public String getPlannedStartTime() {
-		return this.plannedStartTime;
-	}
-
-	public void setPlannedStartTime(String plannedStartTime) {
-		this.plannedStartTime = plannedStartTime;
-		if(plannedStartTime != null){
-			putQueryParameter("PlannedStartTime", plannedStartTime);
-		}
-	}
-
 	public String getScaleRoNumMin() {
 		return this.scaleRoNumMin;
 	}
@@ -219,31 +176,9 @@ public class ModifyDBClusterServerlessConfRequest extends RpcAcsRequest<ModifyDB
 		}
 	}
 
-	public String getAllowShutDown() {
-		return this.allowShutDown;
-	}
-
-	public void setAllowShutDown(String allowShutDown) {
-		this.allowShutDown = allowShutDown;
-		if(allowShutDown != null){
-			putQueryParameter("AllowShutDown", allowShutDown);
-		}
-	}
-
-	public Boolean getFromTimeService() {
-		return this.fromTimeService;
-	}
-
-	public void setFromTimeService(Boolean fromTimeService) {
-		this.fromTimeService = fromTimeService;
-		if(fromTimeService != null){
-			putQueryParameter("FromTimeService", fromTimeService.toString());
-		}
-	}
-
 	@Override
-	public Class<ModifyDBClusterServerlessConfResponse> getResponseClass() {
-		return ModifyDBClusterServerlessConfResponse.class;
+	public Class<EnableDBClusterServerlessResponse> getResponseClass() {
+		return EnableDBClusterServerlessResponse.class;
 	}
 
 }

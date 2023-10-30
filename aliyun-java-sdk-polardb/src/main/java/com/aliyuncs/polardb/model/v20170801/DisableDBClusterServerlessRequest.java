@@ -22,20 +22,10 @@ import com.aliyuncs.polardb.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeMetaListRequest extends RpcAcsRequest<DescribeMetaListResponse> {
+public class DisableDBClusterServerlessRequest extends RpcAcsRequest<DisableDBClusterServerlessResponse> {
 	   
 
 	private Long resourceOwnerId;
-
-	private String regionCode;
-
-	private Integer pageNumber;
-
-	private String securityToken;
-
-	private Integer pageSize;
-
-	private String restoreTime;
 
 	private String resourceOwnerAccount;
 
@@ -43,13 +33,9 @@ public class DescribeMetaListRequest extends RpcAcsRequest<DescribeMetaListRespo
 
 	private String ownerAccount;
 
-	private String backupId;
-
 	private Long ownerId;
-
-	private String getDbName;
-	public DescribeMetaListRequest() {
-		super("polardb", "2017-08-01", "DescribeMetaList", "polardb");
+	public DisableDBClusterServerlessRequest() {
+		super("polardb", "2017-08-01", "DisableDBClusterServerless", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -65,61 +51,6 @@ public class DescribeMetaListRequest extends RpcAcsRequest<DescribeMetaListRespo
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getRegionCode() {
-		return this.regionCode;
-	}
-
-	public void setRegionCode(String regionCode) {
-		this.regionCode = regionCode;
-		if(regionCode != null){
-			putQueryParameter("RegionCode", regionCode);
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getRestoreTime() {
-		return this.restoreTime;
-	}
-
-	public void setRestoreTime(String restoreTime) {
-		this.restoreTime = restoreTime;
-		if(restoreTime != null){
-			putQueryParameter("RestoreTime", restoreTime);
 		}
 	}
 
@@ -156,17 +87,6 @@ public class DescribeMetaListRequest extends RpcAcsRequest<DescribeMetaListRespo
 		}
 	}
 
-	public String getBackupId() {
-		return this.backupId;
-	}
-
-	public void setBackupId(String backupId) {
-		this.backupId = backupId;
-		if(backupId != null){
-			putQueryParameter("BackupId", backupId);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -178,20 +98,9 @@ public class DescribeMetaListRequest extends RpcAcsRequest<DescribeMetaListRespo
 		}
 	}
 
-	public String getGetDbName() {
-		return this.getDbName;
-	}
-
-	public void setGetDbName(String getDbName) {
-		this.getDbName = getDbName;
-		if(getDbName != null){
-			putQueryParameter("GetDbName", getDbName);
-		}
-	}
-
 	@Override
-	public Class<DescribeMetaListResponse> getResponseClass() {
-		return DescribeMetaListResponse.class;
+	public Class<DisableDBClusterServerlessResponse> getResponseClass() {
+		return DisableDBClusterServerlessResponse.class;
 	}
 
 }

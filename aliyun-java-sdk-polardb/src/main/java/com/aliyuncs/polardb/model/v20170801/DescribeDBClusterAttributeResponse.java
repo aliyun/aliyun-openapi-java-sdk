@@ -43,6 +43,8 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 	private Boolean hasCompleteStandbyRes;
 
+	private String hotStandbyClusterStatus;
+
 	private String hotStandbyCluster;
 
 	private String dataSyncMode;
@@ -131,6 +133,8 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 	private String aiType;
 
+	private String provisionedIops;
+
 	private List<DBNode> dBNodes;
 
 	private List<Tag> tags;
@@ -207,6 +211,14 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 	public void setHasCompleteStandbyRes(Boolean hasCompleteStandbyRes) {
 		this.hasCompleteStandbyRes = hasCompleteStandbyRes;
+	}
+
+	public String getHotStandbyClusterStatus() {
+		return this.hotStandbyClusterStatus;
+	}
+
+	public void setHotStandbyClusterStatus(String hotStandbyClusterStatus) {
+		this.hotStandbyClusterStatus = hotStandbyClusterStatus;
 	}
 
 	public String getHotStandbyCluster() {
@@ -561,6 +573,14 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 		this.aiType = aiType;
 	}
 
+	public String getProvisionedIops() {
+		return this.provisionedIops;
+	}
+
+	public void setProvisionedIops(String provisionedIops) {
+		this.provisionedIops = provisionedIops;
+	}
+
 	public List<DBNode> getDBNodes() {
 		return this.dBNodes;
 	}
@@ -594,6 +614,10 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 		private Integer maxIOPS;
 
 		private String dBNodeClass;
+
+		private String cpuCores;
+
+		private String memorySize;
 
 		private String dBNodeRole;
 
@@ -649,6 +673,22 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 		public void setDBNodeClass(String dBNodeClass) {
 			this.dBNodeClass = dBNodeClass;
+		}
+
+		public String getCpuCores() {
+			return this.cpuCores;
+		}
+
+		public void setCpuCores(String cpuCores) {
+			this.cpuCores = cpuCores;
+		}
+
+		public String getMemorySize() {
+			return this.memorySize;
+		}
+
+		public void setMemorySize(String memorySize) {
+			this.memorySize = memorySize;
 		}
 
 		public String getDBNodeRole() {
