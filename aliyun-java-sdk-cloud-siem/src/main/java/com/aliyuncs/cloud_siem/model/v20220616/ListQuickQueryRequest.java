@@ -21,42 +21,42 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class SendMessageRequest extends RpcAcsRequest<SendMessageResponse> {
+public class ListQuickQueryRequest extends RpcAcsRequest<ListQuickQueryResponse> {
 	   
 
-	private Integer channelType;
+	private Integer pageSize;
 
-	private Long receiveUid;
-	public SendMessageRequest() {
-		super("cloud-siem", "2022-06-16", "SendMessage", "cloud-siem");
+	private Integer offset;
+	public ListQuickQueryRequest() {
+		super("cloud-siem", "2022-06-16", "ListQuickQuery", "cloud-siem");
 		setMethod(MethodType.POST);
 	}
 
-	public Integer getChannelType() {
-		return this.channelType;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setChannelType(Integer channelType) {
-		this.channelType = channelType;
-		if(channelType != null){
-			putBodyParameter("ChannelType", channelType.toString());
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putBodyParameter("PageSize", pageSize.toString());
 		}
 	}
 
-	public Long getReceiveUid() {
-		return this.receiveUid;
+	public Integer getOffset() {
+		return this.offset;
 	}
 
-	public void setReceiveUid(Long receiveUid) {
-		this.receiveUid = receiveUid;
-		if(receiveUid != null){
-			putBodyParameter("ReceiveUid", receiveUid.toString());
+	public void setOffset(Integer offset) {
+		this.offset = offset;
+		if(offset != null){
+			putBodyParameter("Offset", offset.toString());
 		}
 	}
 
 	@Override
-	public Class<SendMessageResponse> getResponseClass() {
-		return SendMessageResponse.class;
+	public Class<ListQuickQueryResponse> getResponseClass() {
+		return ListQuickQueryResponse.class;
 	}
 
 }

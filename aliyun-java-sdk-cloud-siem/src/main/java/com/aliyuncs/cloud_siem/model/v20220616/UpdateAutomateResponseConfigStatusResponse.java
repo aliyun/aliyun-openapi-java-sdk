@@ -15,16 +15,14 @@
 package com.aliyuncs.cloud_siem.model.v20220616;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cloud_siem.transform.v20220616.SendMessageResponseUnmarshaller;
+import com.aliyuncs.cloud_siem.transform.v20220616.UpdateAutomateResponseConfigStatusResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class SendMessageResponse extends AcsResponse {
-
-	private Boolean data;
+public class UpdateAutomateResponseConfigStatusResponse extends AcsResponse {
 
 	private Boolean success;
 
@@ -32,17 +30,9 @@ public class SendMessageResponse extends AcsResponse {
 
 	private String message;
 
-	private String errCode;
-
 	private String requestId;
 
-	public Boolean getData() {
-		return this.data;
-	}
-
-	public void setData(Boolean data) {
-		this.data = data;
-	}
+	private String data;
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -68,14 +58,6 @@ public class SendMessageResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getErrCode() {
-		return this.errCode;
-	}
-
-	public void setErrCode(String errCode) {
-		this.errCode = errCode;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -84,9 +66,17 @@ public class SendMessageResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getData() {
+		return this.data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
+	}
+
 	@Override
-	public SendMessageResponse getInstance(UnmarshallerContext context) {
-		return	SendMessageResponseUnmarshaller.unmarshall(this, context);
+	public UpdateAutomateResponseConfigStatusResponse getInstance(UnmarshallerContext context) {
+		return	UpdateAutomateResponseConfigStatusResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
