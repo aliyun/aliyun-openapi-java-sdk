@@ -55,6 +55,7 @@ public class QueryVideoTaskInfoResponseUnmarshaller {
 			taskResult.setFailCode(_ctx.stringValue("QueryVideoTaskInfoResponse.Data.List["+ i +"].TaskResult.FailCode"));
 			taskResult.setAlphaUrl(_ctx.stringValue("QueryVideoTaskInfoResponse.Data.List["+ i +"].TaskResult.AlphaUrl"));
 			taskResult.setPreviewPic(_ctx.stringValue("QueryVideoTaskInfoResponse.Data.List["+ i +"].TaskResult.PreviewPic"));
+			taskResult.setAttachmentUrl(_ctx.stringValue("QueryVideoTaskInfoResponse.Data.List["+ i +"].TaskResult.AttachmentUrl"));
 			listItem.setTaskResult(taskResult);
 
 			list.add(listItem);

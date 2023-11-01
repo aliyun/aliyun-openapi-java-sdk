@@ -187,6 +187,8 @@ public class QueryVideoTaskInfoResponse extends AcsResponse {
 
 				private String previewPic;
 
+				private String attachmentUrl;
+
 				public String getVideoUrl() {
 					return this.videoUrl;
 				}
@@ -249,6 +251,14 @@ public class QueryVideoTaskInfoResponse extends AcsResponse {
 
 				public void setPreviewPic(String previewPic) {
 					this.previewPic = previewPic;
+				}
+
+				public String getAttachmentUrl() {
+					return this.attachmentUrl;
+				}
+
+				public void setAttachmentUrl(String attachmentUrl) {
+					this.attachmentUrl = attachmentUrl;
 				}
 			}
 		}
