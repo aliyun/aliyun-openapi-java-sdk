@@ -51,6 +51,12 @@ public class DescribeTenantSecurityConfigsResponse extends AcsResponse {
 
 		private Integer totalRiskCount;
 
+		private String checkId;
+
+		private String instanceId;
+
+		private String checkTime;
+
 		private List<TenantSecurityConfigsItem> tenantSecurityConfigs;
 
 		public Integer getTotalCheckCount() {
@@ -67,6 +73,30 @@ public class DescribeTenantSecurityConfigsResponse extends AcsResponse {
 
 		public void setTotalRiskCount(Integer totalRiskCount) {
 			this.totalRiskCount = totalRiskCount;
+		}
+
+		public String getCheckId() {
+			return this.checkId;
+		}
+
+		public void setCheckId(String checkId) {
+			this.checkId = checkId;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getCheckTime() {
+			return this.checkTime;
+		}
+
+		public void setCheckTime(String checkTime) {
+			this.checkTime = checkTime;
 		}
 
 		public List<TenantSecurityConfigsItem> getTenantSecurityConfigs() {

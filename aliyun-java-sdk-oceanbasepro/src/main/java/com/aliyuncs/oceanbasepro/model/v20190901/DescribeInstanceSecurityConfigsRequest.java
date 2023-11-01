@@ -26,6 +26,8 @@ public class DescribeInstanceSecurityConfigsRequest extends RpcAcsRequest<Descri
 	   
 
 	private String instanceId;
+
+	private String checkId;
 	public DescribeInstanceSecurityConfigsRequest() {
 		super("OceanBasePro", "2019-09-01", "DescribeInstanceSecurityConfigs", "oceanbase");
 		setMethod(MethodType.POST);
@@ -43,6 +45,17 @@ public class DescribeInstanceSecurityConfigsRequest extends RpcAcsRequest<Descri
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putBodyParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getCheckId() {
+		return this.checkId;
+	}
+
+	public void setCheckId(String checkId) {
+		this.checkId = checkId;
+		if(checkId != null){
+			putBodyParameter("CheckId", checkId);
 		}
 	}
 

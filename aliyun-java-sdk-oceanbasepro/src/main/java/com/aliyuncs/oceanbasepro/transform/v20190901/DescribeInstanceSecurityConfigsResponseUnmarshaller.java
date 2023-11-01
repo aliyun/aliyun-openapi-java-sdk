@@ -32,6 +32,9 @@ public class DescribeInstanceSecurityConfigsResponseUnmarshaller {
 		InstanceSecurityConfigs instanceSecurityConfigs = new InstanceSecurityConfigs();
 		instanceSecurityConfigs.setTotalCheckCount(_ctx.integerValue("DescribeInstanceSecurityConfigsResponse.InstanceSecurityConfigs.TotalCheckCount"));
 		instanceSecurityConfigs.setTotalRiskCount(_ctx.integerValue("DescribeInstanceSecurityConfigsResponse.InstanceSecurityConfigs.TotalRiskCount"));
+		instanceSecurityConfigs.setCheckTime(_ctx.stringValue("DescribeInstanceSecurityConfigsResponse.InstanceSecurityConfigs.CheckTime"));
+		instanceSecurityConfigs.setInstanceId(_ctx.stringValue("DescribeInstanceSecurityConfigsResponse.InstanceSecurityConfigs.InstanceId"));
+		instanceSecurityConfigs.setCheckId(_ctx.stringValue("DescribeInstanceSecurityConfigsResponse.InstanceSecurityConfigs.CheckId"));
 
 		List<SecurityConfigsItem> securityConfigs = new ArrayList<SecurityConfigsItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceSecurityConfigsResponse.InstanceSecurityConfigs.SecurityConfigs.Length"); i++) {

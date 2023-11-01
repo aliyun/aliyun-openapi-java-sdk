@@ -71,6 +71,8 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private String deployMode;
 
+		private String cpuArchitecture;
+
 		private String maintainTime;
 
 		private String deployType;
@@ -167,6 +169,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		public void setDeployMode(String deployMode) {
 			this.deployMode = deployMode;
+		}
+
+		public String getCpuArchitecture() {
+			return this.cpuArchitecture;
+		}
+
+		public void setCpuArchitecture(String cpuArchitecture) {
+			this.cpuArchitecture = cpuArchitecture;
 		}
 
 		public String getMaintainTime() {

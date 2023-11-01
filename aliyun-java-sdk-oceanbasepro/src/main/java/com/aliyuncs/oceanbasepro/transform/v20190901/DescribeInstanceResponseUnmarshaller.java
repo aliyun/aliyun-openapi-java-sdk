@@ -64,6 +64,10 @@ public class DescribeInstanceResponseUnmarshaller {
 		instance.setEnableIsolationOptimization(_ctx.booleanValue("DescribeInstanceResponse.Instance.EnableIsolationOptimization"));
 		instance.setInTempCapacityStatus(_ctx.booleanValue("DescribeInstanceResponse.Instance.InTempCapacityStatus"));
 		instance.setDataDiskAutoScale(_ctx.booleanValue("DescribeInstanceResponse.Instance.DataDiskAutoScale"));
+		instance.setEnableProxyService(_ctx.booleanValue("DescribeInstanceResponse.Instance.EnableProxyService"));
+		instance.setProxyServiceStatus(_ctx.stringValue("DescribeInstanceResponse.Instance.ProxyServiceStatus"));
+		instance.setProxyClusterId(_ctx.stringValue("DescribeInstanceResponse.Instance.ProxyClusterId"));
+		instance.setCpuArchitecture(_ctx.stringValue("DescribeInstanceResponse.Instance.CpuArchitecture"));
 
 		List<String> availableZones = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceResponse.Instance.AvailableZones.Length"); i++) {
@@ -113,6 +117,14 @@ public class DescribeInstanceResponseUnmarshaller {
 		LogDiskSize logDiskSize = new LogDiskSize();
 		logDiskSize.setTotalDiskSize(_ctx.longValue("DescribeInstanceResponse.Instance.Resource.LogDiskSize.TotalDiskSize"));
 		logDiskSize.setUnitDiskSize(_ctx.longValue("DescribeInstanceResponse.Instance.Resource.LogDiskSize.UnitDiskSize"));
+		logDiskSize.setLogAssignedSize(_ctx.stringValue("DescribeInstanceResponse.Instance.Resource.LogDiskSize.LogAssignedSize"));
+		logDiskSize.setMaxLogAssignedPercent(_ctx.stringValue("DescribeInstanceResponse.Instance.Resource.LogDiskSize.MaxLogAssignedPercent"));
+
+		List<String> maxLogAssignedObServer = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceResponse.Instance.Resource.LogDiskSize.MaxLogAssignedObServer.Length"); i++) {
+			maxLogAssignedObServer.add(_ctx.stringValue("DescribeInstanceResponse.Instance.Resource.LogDiskSize.MaxLogAssignedObServer["+ i +"]"));
+		}
+		logDiskSize.setMaxLogAssignedObServer(maxLogAssignedObServer);
 		resource.setLogDiskSize(logDiskSize);
 
 		CapacityUnit capacityUnit = new CapacityUnit();

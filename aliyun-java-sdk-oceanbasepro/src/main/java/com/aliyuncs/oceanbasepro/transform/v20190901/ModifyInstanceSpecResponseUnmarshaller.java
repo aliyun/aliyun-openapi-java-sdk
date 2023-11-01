@@ -27,6 +27,7 @@ public class ModifyInstanceSpecResponseUnmarshaller {
 
 		Data data = new Data();
 		data.setOrderId(_ctx.stringValue("ModifyInstanceSpecResponse.Data.OrderId"));
+		data.setDryRunResult(_ctx.booleanValue("ModifyInstanceSpecResponse.Data.DryRunResult"));
 		modifyInstanceSpecResponse.setData(data);
 	 
 	 	return modifyInstanceSpecResponse;

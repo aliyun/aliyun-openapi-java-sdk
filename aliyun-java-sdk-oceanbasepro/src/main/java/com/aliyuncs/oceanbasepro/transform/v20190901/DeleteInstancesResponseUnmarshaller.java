@@ -15,6 +15,7 @@
 package com.aliyuncs.oceanbasepro.transform.v20190901;
 
 import com.aliyuncs.oceanbasepro.model.v20190901.DeleteInstancesResponse;
+import com.aliyuncs.oceanbasepro.model.v20190901.DeleteInstancesResponse.Data;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -23,6 +24,10 @@ public class DeleteInstancesResponseUnmarshaller {
 	public static DeleteInstancesResponse unmarshall(DeleteInstancesResponse deleteInstancesResponse, UnmarshallerContext _ctx) {
 		
 		deleteInstancesResponse.setRequestId(_ctx.stringValue("DeleteInstancesResponse.RequestId"));
+
+		Data data = new Data();
+		data.setDryRunResult(_ctx.booleanValue("DeleteInstancesResponse.Data.DryRunResult"));
+		deleteInstancesResponse.setData(data);
 	 
 	 	return deleteInstancesResponse;
 	}

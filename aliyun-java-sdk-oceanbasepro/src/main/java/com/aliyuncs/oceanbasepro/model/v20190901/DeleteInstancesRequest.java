@@ -27,6 +27,8 @@ public class DeleteInstancesRequest extends RpcAcsRequest<DeleteInstancesRespons
 
 	private String backupRetainMode;
 
+	private Boolean dryRun;
+
 	private String instanceIds;
 	public DeleteInstancesRequest() {
 		super("OceanBasePro", "2019-09-01", "DeleteInstances", "oceanbase");
@@ -45,6 +47,17 @@ public class DeleteInstancesRequest extends RpcAcsRequest<DeleteInstancesRespons
 		this.backupRetainMode = backupRetainMode;
 		if(backupRetainMode != null){
 			putBodyParameter("BackupRetainMode", backupRetainMode);
+		}
+	}
+
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putBodyParameter("DryRun", dryRun.toString());
 		}
 	}
 

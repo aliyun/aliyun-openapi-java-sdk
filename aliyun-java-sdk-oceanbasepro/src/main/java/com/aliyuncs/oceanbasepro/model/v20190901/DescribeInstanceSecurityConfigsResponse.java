@@ -51,6 +51,12 @@ public class DescribeInstanceSecurityConfigsResponse extends AcsResponse {
 
 		private Integer totalRiskCount;
 
+		private String checkTime;
+
+		private String instanceId;
+
+		private String checkId;
+
 		private List<SecurityConfigsItem> securityConfigs;
 
 		public Integer getTotalCheckCount() {
@@ -67,6 +73,30 @@ public class DescribeInstanceSecurityConfigsResponse extends AcsResponse {
 
 		public void setTotalRiskCount(Integer totalRiskCount) {
 			this.totalRiskCount = totalRiskCount;
+		}
+
+		public String getCheckTime() {
+			return this.checkTime;
+		}
+
+		public void setCheckTime(String checkTime) {
+			this.checkTime = checkTime;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getCheckId() {
+			return this.checkId;
+		}
+
+		public void setCheckId(String checkId) {
+			this.checkId = checkId;
 		}
 
 		public List<SecurityConfigsItem> getSecurityConfigs() {

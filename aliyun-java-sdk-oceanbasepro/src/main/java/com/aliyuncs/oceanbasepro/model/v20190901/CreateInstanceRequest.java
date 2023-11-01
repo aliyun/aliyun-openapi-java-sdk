@@ -25,6 +25,8 @@ import com.aliyuncs.oceanbasepro.Endpoint;
 public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse> {
 	   
 
+	private String isolationOptimization;
+
 	private String instanceClass;
 
 	private String resourceGroupId;
@@ -32,6 +34,8 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 	private Long autoRenewPeriod;
 
 	private Long period;
+
+	private Boolean dryRun;
 
 	private Long diskSize;
 
@@ -45,6 +49,8 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	private String instanceName;
 
+	private String replicaMode;
+
 	private Boolean autoRenew;
 
 	private String series;
@@ -57,6 +63,17 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getIsolationOptimization() {
+		return this.isolationOptimization;
+	}
+
+	public void setIsolationOptimization(String isolationOptimization) {
+		this.isolationOptimization = isolationOptimization;
+		if(isolationOptimization != null){
+			putBodyParameter("IsolationOptimization", isolationOptimization);
+		}
 	}
 
 	public String getInstanceClass() {
@@ -100,6 +117,17 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		this.period = period;
 		if(period != null){
 			putBodyParameter("Period", period.toString());
+		}
+	}
+
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putBodyParameter("DryRun", dryRun.toString());
 		}
 	}
 
@@ -166,6 +194,17 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		this.instanceName = instanceName;
 		if(instanceName != null){
 			putBodyParameter("InstanceName", instanceName);
+		}
+	}
+
+	public String getReplicaMode() {
+		return this.replicaMode;
+	}
+
+	public void setReplicaMode(String replicaMode) {
+		this.replicaMode = replicaMode;
+		if(replicaMode != null){
+			putBodyParameter("ReplicaMode", replicaMode);
 		}
 	}
 

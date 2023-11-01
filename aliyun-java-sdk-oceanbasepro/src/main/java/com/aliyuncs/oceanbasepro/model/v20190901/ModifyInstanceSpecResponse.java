@@ -48,12 +48,22 @@ public class ModifyInstanceSpecResponse extends AcsResponse {
 
 		private String orderId;
 
+		private Boolean dryRunResult;
+
 		public String getOrderId() {
 			return this.orderId;
 		}
 
 		public void setOrderId(String orderId) {
 			this.orderId = orderId;
+		}
+
+		public Boolean getDryRunResult() {
+			return this.dryRunResult;
+		}
+
+		public void setDryRunResult(Boolean dryRunResult) {
+			this.dryRunResult = dryRunResult;
 		}
 	}
 

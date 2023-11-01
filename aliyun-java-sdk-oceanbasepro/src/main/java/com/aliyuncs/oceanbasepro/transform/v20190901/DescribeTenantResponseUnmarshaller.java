@@ -24,6 +24,7 @@ import com.aliyuncs.oceanbasepro.model.v20190901.DescribeTenantResponse.Tenant.T
 import com.aliyuncs.oceanbasepro.model.v20190901.DescribeTenantResponse.Tenant.TenantResource.CapacityUnit;
 import com.aliyuncs.oceanbasepro.model.v20190901.DescribeTenantResponse.Tenant.TenantResource.Cpu;
 import com.aliyuncs.oceanbasepro.model.v20190901.DescribeTenantResponse.Tenant.TenantResource.DiskSize;
+import com.aliyuncs.oceanbasepro.model.v20190901.DescribeTenantResponse.Tenant.TenantResource.LogDiskSize;
 import com.aliyuncs.oceanbasepro.model.v20190901.DescribeTenantResponse.Tenant.TenantResource.Memory;
 import com.aliyuncs.oceanbasepro.model.v20190901.DescribeTenantResponse.Tenant.TenantZonesItem;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -93,6 +94,11 @@ public class DescribeTenantResponseUnmarshaller {
 		capacityUnit.setMinCapacityUnit(_ctx.integerValue("DescribeTenantResponse.Tenant.TenantResource.CapacityUnit.MinCapacityUnit"));
 		capacityUnit.setUsedCapacit(_ctx.integerValue("DescribeTenantResponse.Tenant.TenantResource.CapacityUnit.UsedCapacit"));
 		tenantResource.setCapacityUnit(capacityUnit);
+
+		LogDiskSize logDiskSize = new LogDiskSize();
+		logDiskSize.setTotalLogDisk(_ctx.integerValue("DescribeTenantResponse.Tenant.TenantResource.LogDiskSize.TotalLogDisk"));
+		logDiskSize.setUnitLogDisk(_ctx.integerValue("DescribeTenantResponse.Tenant.TenantResource.LogDiskSize.UnitLogDisk"));
+		tenantResource.setLogDiskSize(logDiskSize);
 		tenant.setTenantResource(tenantResource);
 
 		List<TenantConnectionsItem> tenantConnections = new ArrayList<TenantConnectionsItem>();
@@ -113,6 +119,7 @@ public class DescribeTenantResponseUnmarshaller {
 			tenantConnectionsItem.setEnableTransactionSplit(_ctx.booleanValue("DescribeTenantResponse.Tenant.TenantConnections["+ i +"].EnableTransactionSplit"));
 			tenantConnectionsItem.setParallelQueryDegree(_ctx.longValue("DescribeTenantResponse.Tenant.TenantConnections["+ i +"].ParallelQueryDegree"));
 			tenantConnectionsItem.setTenantEndpointId(_ctx.stringValue("DescribeTenantResponse.Tenant.TenantConnections["+ i +"].TenantEndpointId"));
+			tenantConnectionsItem.setMaxConnectionNum(_ctx.longValue("DescribeTenantResponse.Tenant.TenantConnections["+ i +"].MaxConnectionNum"));
 
 			List<String> connectionZones = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeTenantResponse.Tenant.TenantConnections["+ i +"].ConnectionZones.Length"); j++) {

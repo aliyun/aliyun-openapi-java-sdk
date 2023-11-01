@@ -29,6 +29,8 @@ public class DescribeDatabasesRequest extends RpcAcsRequest<DescribeDatabasesRes
 
 	private Integer pageNumber;
 
+	private String instanceId;
+
 	private String databaseName;
 
 	private Boolean withTables;
@@ -64,6 +66,17 @@ public class DescribeDatabasesRequest extends RpcAcsRequest<DescribeDatabasesRes
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putBodyParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putBodyParameter("InstanceId", instanceId);
 		}
 	}
 

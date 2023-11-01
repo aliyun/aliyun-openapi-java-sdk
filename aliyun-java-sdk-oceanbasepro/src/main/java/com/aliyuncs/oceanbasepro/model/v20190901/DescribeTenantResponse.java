@@ -379,6 +379,8 @@ public class DescribeTenantResponse extends AcsResponse {
 
 			private String tenantEndpointId;
 
+			private Long maxConnectionNum;
+
 			private List<String> connectionZones;
 
 			public String getIntranetAddress() {
@@ -501,6 +503,14 @@ public class DescribeTenantResponse extends AcsResponse {
 				this.tenantEndpointId = tenantEndpointId;
 			}
 
+			public Long getMaxConnectionNum() {
+				return this.maxConnectionNum;
+			}
+
+			public void setMaxConnectionNum(Long maxConnectionNum) {
+				this.maxConnectionNum = maxConnectionNum;
+			}
+
 			public List<String> getConnectionZones() {
 				return this.connectionZones;
 			}
@@ -555,6 +565,8 @@ public class DescribeTenantResponse extends AcsResponse {
 
 			private CapacityUnit capacityUnit;
 
+			private LogDiskSize logDiskSize;
+
 			public Integer getUnitNum() {
 				return this.unitNum;
 			}
@@ -593,6 +605,14 @@ public class DescribeTenantResponse extends AcsResponse {
 
 			public void setCapacityUnit(CapacityUnit capacityUnit) {
 				this.capacityUnit = capacityUnit;
+			}
+
+			public LogDiskSize getLogDiskSize() {
+				return this.logDiskSize;
+			}
+
+			public void setLogDiskSize(LogDiskSize logDiskSize) {
+				this.logDiskSize = logDiskSize;
 			}
 
 			public static class Cpu {
@@ -704,6 +724,29 @@ public class DescribeTenantResponse extends AcsResponse {
 
 				public void setUsedCapacit(Integer usedCapacit) {
 					this.usedCapacit = usedCapacit;
+				}
+			}
+
+			public static class LogDiskSize {
+
+				private Integer totalLogDisk;
+
+				private Integer unitLogDisk;
+
+				public Integer getTotalLogDisk() {
+					return this.totalLogDisk;
+				}
+
+				public void setTotalLogDisk(Integer totalLogDisk) {
+					this.totalLogDisk = totalLogDisk;
+				}
+
+				public Integer getUnitLogDisk() {
+					return this.unitLogDisk;
+				}
+
+				public void setUnitLogDisk(Integer unitLogDisk) {
+					this.unitLogDisk = unitLogDisk;
 				}
 			}
 		}

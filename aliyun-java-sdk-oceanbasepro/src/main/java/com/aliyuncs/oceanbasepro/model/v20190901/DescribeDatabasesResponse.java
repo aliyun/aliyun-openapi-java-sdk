@@ -79,6 +79,8 @@ public class DescribeDatabasesResponse extends AcsResponse {
 
 		private String instanceId;
 
+		private String tenantName;
+
 		private List<UsersItem> users;
 
 		private List<TablesItem> tables;
@@ -169,6 +171,14 @@ public class DescribeDatabasesResponse extends AcsResponse {
 
 		public void setInstanceId(String instanceId) {
 			this.instanceId = instanceId;
+		}
+
+		public String getTenantName() {
+			return this.tenantName;
+		}
+
+		public void setTenantName(String tenantName) {
+			this.tenantName = tenantName;
 		}
 
 		public List<UsersItem> getUsers() {

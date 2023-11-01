@@ -31,6 +31,8 @@ public class CreateTenantRequest extends RpcAcsRequest<CreateTenantResponse> {
 
 	private Integer memory;
 
+	private Long logDisk;
+
 	private String timeZone;
 
 	private String description;
@@ -48,6 +50,8 @@ public class CreateTenantRequest extends RpcAcsRequest<CreateTenantResponse> {
 	private String primaryZone;
 
 	private String tenantName;
+
+	private String readOnlyZoneList;
 	public CreateTenantRequest() {
 		super("OceanBasePro", "2019-09-01", "CreateTenant", "oceanbase");
 		setMethod(MethodType.POST);
@@ -87,6 +91,17 @@ public class CreateTenantRequest extends RpcAcsRequest<CreateTenantResponse> {
 		this.memory = memory;
 		if(memory != null){
 			putBodyParameter("Memory", memory.toString());
+		}
+	}
+
+	public Long getLogDisk() {
+		return this.logDisk;
+	}
+
+	public void setLogDisk(Long logDisk) {
+		this.logDisk = logDisk;
+		if(logDisk != null){
+			putBodyParameter("LogDisk", logDisk.toString());
 		}
 	}
 
@@ -186,6 +201,17 @@ public class CreateTenantRequest extends RpcAcsRequest<CreateTenantResponse> {
 		this.tenantName = tenantName;
 		if(tenantName != null){
 			putBodyParameter("TenantName", tenantName);
+		}
+	}
+
+	public String getReadOnlyZoneList() {
+		return this.readOnlyZoneList;
+	}
+
+	public void setReadOnlyZoneList(String readOnlyZoneList) {
+		this.readOnlyZoneList = readOnlyZoneList;
+		if(readOnlyZoneList != null){
+			putBodyParameter("ReadOnlyZoneList", readOnlyZoneList);
 		}
 	}
 

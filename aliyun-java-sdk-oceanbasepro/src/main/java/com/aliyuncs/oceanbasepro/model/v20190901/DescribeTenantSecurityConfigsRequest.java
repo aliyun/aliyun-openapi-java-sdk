@@ -28,6 +28,8 @@ public class DescribeTenantSecurityConfigsRequest extends RpcAcsRequest<Describe
 	private String instanceId;
 
 	private String tenantId;
+
+	private String checkId;
 	public DescribeTenantSecurityConfigsRequest() {
 		super("OceanBasePro", "2019-09-01", "DescribeTenantSecurityConfigs", "oceanbase");
 		setMethod(MethodType.POST);
@@ -56,6 +58,17 @@ public class DescribeTenantSecurityConfigsRequest extends RpcAcsRequest<Describe
 		this.tenantId = tenantId;
 		if(tenantId != null){
 			putBodyParameter("TenantId", tenantId);
+		}
+	}
+
+	public String getCheckId() {
+		return this.checkId;
+	}
+
+	public void setCheckId(String checkId) {
+		this.checkId = checkId;
+		if(checkId != null){
+			putBodyParameter("CheckId", checkId);
 		}
 	}
 

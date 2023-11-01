@@ -52,6 +52,8 @@ public class DescribeAvailableMemResourceResponse extends AcsResponse {
 
 		private Long usedMem;
 
+		private String safeMem;
+
 		public Long getMinMem() {
 			return this.minMem;
 		}
@@ -74,6 +76,14 @@ public class DescribeAvailableMemResourceResponse extends AcsResponse {
 
 		public void setUsedMem(Long usedMem) {
 			this.usedMem = usedMem;
+		}
+
+		public String getSafeMem() {
+			return this.safeMem;
+		}
+
+		public void setSafeMem(String safeMem) {
+			this.safeMem = safeMem;
 		}
 	}
 

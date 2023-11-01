@@ -27,6 +27,8 @@ public class ModifyInstanceSpecRequest extends RpcAcsRequest<ModifyInstanceSpecR
 
 	private String instanceClass;
 
+	private Boolean dryRun;
+
 	private Long diskSize;
 
 	private String instanceId;
@@ -47,6 +49,17 @@ public class ModifyInstanceSpecRequest extends RpcAcsRequest<ModifyInstanceSpecR
 		this.instanceClass = instanceClass;
 		if(instanceClass != null){
 			putBodyParameter("InstanceClass", instanceClass);
+		}
+	}
+
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putBodyParameter("DryRun", dryRun.toString());
 		}
 	}
 

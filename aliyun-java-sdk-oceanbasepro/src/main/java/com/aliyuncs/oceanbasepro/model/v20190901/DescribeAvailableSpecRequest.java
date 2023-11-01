@@ -15,6 +15,7 @@
 package com.aliyuncs.oceanbasepro.model.v20190901;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.oceanbasepro.Endpoint;
 
@@ -22,16 +23,17 @@ import com.aliyuncs.oceanbasepro.Endpoint;
  * @author auto create
  * @version 
  */
-public class ModifyInstanceNodeNumRequest extends RpcAcsRequest<ModifyInstanceNodeNumResponse> {
+public class DescribeAvailableSpecRequest extends RpcAcsRequest<DescribeAvailableSpecResponse> {
 	   
 
-	private Boolean dryRun;
+	private String upgradeType;
 
-	private String nodeNum;
+	private String spec;
 
 	private String instanceId;
-	public ModifyInstanceNodeNumRequest() {
-		super("OceanBasePro", "2019-09-01", "ModifyInstanceNodeNum", "oceanbase");
+	public DescribeAvailableSpecRequest() {
+		super("OceanBasePro", "2019-09-01", "DescribeAvailableSpec", "oceanbase");
+		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,25 +41,25 @@ public class ModifyInstanceNodeNumRequest extends RpcAcsRequest<ModifyInstanceNo
 		} catch (Exception e) {}
 	}
 
-	public Boolean getDryRun() {
-		return this.dryRun;
+	public String getUpgradeType() {
+		return this.upgradeType;
 	}
 
-	public void setDryRun(Boolean dryRun) {
-		this.dryRun = dryRun;
-		if(dryRun != null){
-			putBodyParameter("DryRun", dryRun.toString());
+	public void setUpgradeType(String upgradeType) {
+		this.upgradeType = upgradeType;
+		if(upgradeType != null){
+			putBodyParameter("UpgradeType", upgradeType);
 		}
 	}
 
-	public String getNodeNum() {
-		return this.nodeNum;
+	public String getSpec() {
+		return this.spec;
 	}
 
-	public void setNodeNum(String nodeNum) {
-		this.nodeNum = nodeNum;
-		if(nodeNum != null){
-			putBodyParameter("NodeNum", nodeNum);
+	public void setSpec(String spec) {
+		this.spec = spec;
+		if(spec != null){
+			putBodyParameter("Spec", spec);
 		}
 	}
 
@@ -73,8 +75,8 @@ public class ModifyInstanceNodeNumRequest extends RpcAcsRequest<ModifyInstanceNo
 	}
 
 	@Override
-	public Class<ModifyInstanceNodeNumResponse> getResponseClass() {
-		return ModifyInstanceNodeNumResponse.class;
+	public Class<DescribeAvailableSpecResponse> getResponseClass() {
+		return DescribeAvailableSpecResponse.class;
 	}
 
 }

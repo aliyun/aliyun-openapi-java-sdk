@@ -27,11 +27,15 @@ public class ModifyTenantResourceRequest extends RpcAcsRequest<ModifyTenantResou
 
 	private Integer memory;
 
+	private Long logDisk;
+
 	private Integer cpu;
 
 	private String instanceId;
 
 	private String tenantId;
+
+	private String readOnlyZoneList;
 	public ModifyTenantResourceRequest() {
 		super("OceanBasePro", "2019-09-01", "ModifyTenantResource", "oceanbase");
 		setMethod(MethodType.POST);
@@ -49,6 +53,17 @@ public class ModifyTenantResourceRequest extends RpcAcsRequest<ModifyTenantResou
 		this.memory = memory;
 		if(memory != null){
 			putBodyParameter("Memory", memory.toString());
+		}
+	}
+
+	public Long getLogDisk() {
+		return this.logDisk;
+	}
+
+	public void setLogDisk(Long logDisk) {
+		this.logDisk = logDisk;
+		if(logDisk != null){
+			putBodyParameter("LogDisk", logDisk.toString());
 		}
 	}
 
@@ -82,6 +97,17 @@ public class ModifyTenantResourceRequest extends RpcAcsRequest<ModifyTenantResou
 		this.tenantId = tenantId;
 		if(tenantId != null){
 			putBodyParameter("TenantId", tenantId);
+		}
+	}
+
+	public String getReadOnlyZoneList() {
+		return this.readOnlyZoneList;
+	}
+
+	public void setReadOnlyZoneList(String readOnlyZoneList) {
+		this.readOnlyZoneList = readOnlyZoneList;
+		if(readOnlyZoneList != null){
+			putBodyParameter("ReadOnlyZoneList", readOnlyZoneList);
 		}
 	}
 

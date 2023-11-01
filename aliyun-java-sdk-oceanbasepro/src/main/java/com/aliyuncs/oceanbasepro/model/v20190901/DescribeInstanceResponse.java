@@ -101,6 +101,14 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 		private Boolean dataDiskAutoScale;
 
+		private Boolean enableProxyService;
+
+		private String proxyServiceStatus;
+
+		private String proxyClusterId;
+
+		private String cpuArchitecture;
+
 		private List<String> availableZones;
 
 		private List<String> zones;
@@ -325,6 +333,38 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 		public void setDataDiskAutoScale(Boolean dataDiskAutoScale) {
 			this.dataDiskAutoScale = dataDiskAutoScale;
+		}
+
+		public Boolean getEnableProxyService() {
+			return this.enableProxyService;
+		}
+
+		public void setEnableProxyService(Boolean enableProxyService) {
+			this.enableProxyService = enableProxyService;
+		}
+
+		public String getProxyServiceStatus() {
+			return this.proxyServiceStatus;
+		}
+
+		public void setProxyServiceStatus(String proxyServiceStatus) {
+			this.proxyServiceStatus = proxyServiceStatus;
+		}
+
+		public String getProxyClusterId() {
+			return this.proxyClusterId;
+		}
+
+		public void setProxyClusterId(String proxyClusterId) {
+			this.proxyClusterId = proxyClusterId;
+		}
+
+		public String getCpuArchitecture() {
+			return this.cpuArchitecture;
+		}
+
+		public void setCpuArchitecture(String cpuArchitecture) {
+			this.cpuArchitecture = cpuArchitecture;
 		}
 
 		public List<String> getAvailableZones() {
@@ -604,6 +644,12 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 				private Long unitDiskSize;
 
+				private String logAssignedSize;
+
+				private String maxLogAssignedPercent;
+
+				private List<String> maxLogAssignedObServer;
+
 				public Long getTotalDiskSize() {
 					return this.totalDiskSize;
 				}
@@ -618,6 +664,30 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 				public void setUnitDiskSize(Long unitDiskSize) {
 					this.unitDiskSize = unitDiskSize;
+				}
+
+				public String getLogAssignedSize() {
+					return this.logAssignedSize;
+				}
+
+				public void setLogAssignedSize(String logAssignedSize) {
+					this.logAssignedSize = logAssignedSize;
+				}
+
+				public String getMaxLogAssignedPercent() {
+					return this.maxLogAssignedPercent;
+				}
+
+				public void setMaxLogAssignedPercent(String maxLogAssignedPercent) {
+					this.maxLogAssignedPercent = maxLogAssignedPercent;
+				}
+
+				public List<String> getMaxLogAssignedObServer() {
+					return this.maxLogAssignedObServer;
+				}
+
+				public void setMaxLogAssignedObServer(List<String> maxLogAssignedObServer) {
+					this.maxLogAssignedObServer = maxLogAssignedObServer;
 				}
 			}
 

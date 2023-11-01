@@ -149,6 +149,8 @@ public class DescribeSQLSamplesResponse extends AcsResponse {
 
 		private String transHash;
 
+		private String fullSqlText;
+
 		public String getRequestId() {
 			return this.requestId;
 		}
@@ -555,6 +557,14 @@ public class DescribeSQLSamplesResponse extends AcsResponse {
 
 		public void setTransHash(String transHash) {
 			this.transHash = transHash;
+		}
+
+		public String getFullSqlText() {
+			return this.fullSqlText;
+		}
+
+		public void setFullSqlText(String fullSqlText) {
+			this.fullSqlText = fullSqlText;
 		}
 	}
 

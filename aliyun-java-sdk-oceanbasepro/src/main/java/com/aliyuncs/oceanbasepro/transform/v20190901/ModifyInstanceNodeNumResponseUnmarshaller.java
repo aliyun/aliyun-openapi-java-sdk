@@ -27,6 +27,7 @@ public class ModifyInstanceNodeNumResponseUnmarshaller {
 
 		Data data = new Data();
 		data.setOrderId(_ctx.stringValue("ModifyInstanceNodeNumResponse.Data.OrderId"));
+		data.setDryRunResult(_ctx.booleanValue("ModifyInstanceNodeNumResponse.Data.DryRunResult"));
 		modifyInstanceNodeNumResponse.setData(data);
 	 
 	 	return modifyInstanceNodeNumResponse;

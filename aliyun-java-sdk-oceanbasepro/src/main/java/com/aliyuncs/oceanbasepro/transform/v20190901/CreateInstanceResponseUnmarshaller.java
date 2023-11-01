@@ -29,6 +29,7 @@ public class CreateInstanceResponseUnmarshaller {
 		data.setInstanceId(_ctx.stringValue("CreateInstanceResponse.Data.InstanceId"));
 		data.setOrderId(_ctx.stringValue("CreateInstanceResponse.Data.OrderId"));
 		data.setResourceGroupId(_ctx.stringValue("CreateInstanceResponse.Data.ResourceGroupId"));
+		data.setDryRunResult(_ctx.booleanValue("CreateInstanceResponse.Data.DryRunResult"));
 		createInstanceResponse.setData(data);
 	 
 	 	return createInstanceResponse;

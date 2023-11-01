@@ -52,6 +52,8 @@ public class CreateInstanceResponse extends AcsResponse {
 
 		private String resourceGroupId;
 
+		private Boolean dryRunResult;
+
 		public String getInstanceId() {
 			return this.instanceId;
 		}
@@ -74,6 +76,14 @@ public class CreateInstanceResponse extends AcsResponse {
 
 		public void setResourceGroupId(String resourceGroupId) {
 			this.resourceGroupId = resourceGroupId;
+		}
+
+		public Boolean getDryRunResult() {
+			return this.dryRunResult;
+		}
+
+		public void setDryRunResult(Boolean dryRunResult) {
+			this.dryRunResult = dryRunResult;
 		}
 	}
 

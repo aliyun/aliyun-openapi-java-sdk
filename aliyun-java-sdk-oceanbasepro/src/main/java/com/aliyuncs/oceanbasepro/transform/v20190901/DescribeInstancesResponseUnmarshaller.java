@@ -45,6 +45,7 @@ public class DescribeInstancesResponseUnmarshaller {
 			data.setInstanceClass(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].InstanceClass"));
 			data.setCreateTime(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].CreateTime"));
 			data.setDeployMode(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].DeployMode"));
+			data.setCpuArchitecture(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].CpuArchitecture"));
 			data.setMaintainTime(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].MaintainTime"));
 			data.setDeployType(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].DeployType"));
 			data.setPayType(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].PayType"));

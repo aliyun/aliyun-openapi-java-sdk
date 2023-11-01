@@ -26,12 +26,35 @@ public class DeleteInstancesResponse extends AcsResponse {
 
 	private String requestId;
 
+	private Data data;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Data getData() {
+		return this.data;
+	}
+
+	public void setData(Data data) {
+		this.data = data;
+	}
+
+	public static class Data {
+
+		private Boolean dryRunResult;
+
+		public Boolean getDryRunResult() {
+			return this.dryRunResult;
+		}
+
+		public void setDryRunResult(Boolean dryRunResult) {
+			this.dryRunResult = dryRunResult;
+		}
 	}
 
 	@Override

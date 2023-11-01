@@ -29,6 +29,7 @@ public class DescribeAvailableMemResourceResponseUnmarshaller {
 		data.setMinMem(_ctx.longValue("DescribeAvailableMemResourceResponse.Data.MinMem"));
 		data.setMaxMem(_ctx.longValue("DescribeAvailableMemResourceResponse.Data.MaxMem"));
 		data.setUsedMem(_ctx.longValue("DescribeAvailableMemResourceResponse.Data.UsedMem"));
+		data.setSafeMem(_ctx.stringValue("DescribeAvailableMemResourceResponse.Data.SafeMem"));
 		describeAvailableMemResourceResponse.setData(data);
 	 
 	 	return describeAvailableMemResourceResponse;

@@ -33,6 +33,9 @@ public class DescribeTenantSecurityConfigsResponseUnmarshaller {
 		Configs configs = new Configs();
 		configs.setTotalCheckCount(_ctx.integerValue("DescribeTenantSecurityConfigsResponse.Configs.TotalCheckCount"));
 		configs.setTotalRiskCount(_ctx.integerValue("DescribeTenantSecurityConfigsResponse.Configs.TotalRiskCount"));
+		configs.setCheckId(_ctx.stringValue("DescribeTenantSecurityConfigsResponse.Configs.CheckId"));
+		configs.setInstanceId(_ctx.stringValue("DescribeTenantSecurityConfigsResponse.Configs.InstanceId"));
+		configs.setCheckTime(_ctx.stringValue("DescribeTenantSecurityConfigsResponse.Configs.CheckTime"));
 
 		List<TenantSecurityConfigsItem> tenantSecurityConfigs = new ArrayList<TenantSecurityConfigsItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeTenantSecurityConfigsResponse.Configs.TenantSecurityConfigs.Length"); i++) {
