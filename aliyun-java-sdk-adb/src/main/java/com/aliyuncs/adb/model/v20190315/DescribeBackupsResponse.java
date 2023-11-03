@@ -83,7 +83,7 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 		private String backupStartTime;
 
-		private Integer backupSize;
+		private Long backupSize;
 
 		private String backupEndTime;
 
@@ -115,11 +115,11 @@ public class DescribeBackupsResponse extends AcsResponse {
 			this.backupStartTime = backupStartTime;
 		}
 
-		public Integer getBackupSize() {
+		public Long getBackupSize() {
 			return this.backupSize;
 		}
 
-		public void setBackupSize(Integer backupSize) {
+		public void setBackupSize(Long backupSize) {
 			this.backupSize = backupSize;
 		}
 
