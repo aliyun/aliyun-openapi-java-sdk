@@ -1,3 +1,6 @@
+2023-11-03 Version: 1.0.9
+- Support ClientToken for Idemoptent.
+
 2023-10-20 Version: 1.0.8
 - Support ClientToken for Idemoptent.
 

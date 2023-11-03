@@ -14,8 +14,12 @@
 
 package com.aliyuncs.eflo.transform.v20220530;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.eflo.model.v20220530.GetElasticNetworkInterfaceResponse;
 import com.aliyuncs.eflo.model.v20220530.GetElasticNetworkInterfaceResponse.Content;
+import com.aliyuncs.eflo.model.v20220530.GetElasticNetworkInterfaceResponse.Content.PrivateIpAddresse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -44,6 +48,23 @@ public class GetElasticNetworkInterfaceResponseUnmarshaller {
 		content.setCreateTime(_ctx.stringValue("GetElasticNetworkInterfaceResponse.Content.CreateTime"));
 		content.setGmtModified(_ctx.stringValue("GetElasticNetworkInterfaceResponse.Content.GmtModified"));
 		content.setDescription(_ctx.stringValue("GetElasticNetworkInterfaceResponse.Content.Description"));
+
+		List<PrivateIpAddresse> privateIpAddresses = new ArrayList<PrivateIpAddresse>();
+		for (int i = 0; i < _ctx.lengthValue("GetElasticNetworkInterfaceResponse.Content.PrivateIpAddresses.Length"); i++) {
+			PrivateIpAddresse privateIpAddresse = new PrivateIpAddresse();
+			privateIpAddresse.setElasticNetworkInterfaceId(_ctx.stringValue("GetElasticNetworkInterfaceResponse.Content.PrivateIpAddresses["+ i +"].ElasticNetworkInterfaceId"));
+			privateIpAddresse.setRegionId(_ctx.stringValue("GetElasticNetworkInterfaceResponse.Content.PrivateIpAddresses["+ i +"].RegionId"));
+			privateIpAddresse.setGmtCreate(_ctx.stringValue("GetElasticNetworkInterfaceResponse.Content.PrivateIpAddresses["+ i +"].GmtCreate"));
+			privateIpAddresse.setGmtModified(_ctx.stringValue("GetElasticNetworkInterfaceResponse.Content.PrivateIpAddresses["+ i +"].GmtModified"));
+			privateIpAddresse.setIpName(_ctx.stringValue("GetElasticNetworkInterfaceResponse.Content.PrivateIpAddresses["+ i +"].IpName"));
+			privateIpAddresse.setPrivateIpAddress(_ctx.stringValue("GetElasticNetworkInterfaceResponse.Content.PrivateIpAddresses["+ i +"].PrivateIpAddress"));
+			privateIpAddresse.setStatus(_ctx.stringValue("GetElasticNetworkInterfaceResponse.Content.PrivateIpAddresses["+ i +"].Status"));
+			privateIpAddresse.setDescription(_ctx.stringValue("GetElasticNetworkInterfaceResponse.Content.PrivateIpAddresses["+ i +"].Description"));
+			privateIpAddresse.setMessage(_ctx.stringValue("GetElasticNetworkInterfaceResponse.Content.PrivateIpAddresses["+ i +"].Message"));
+
+			privateIpAddresses.add(privateIpAddresse);
+		}
+		content.setPrivateIpAddresses(privateIpAddresses);
 		getElasticNetworkInterfaceResponse.setContent(content);
 	 
 	 	return getElasticNetworkInterfaceResponse;

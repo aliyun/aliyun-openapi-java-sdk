@@ -14,6 +14,7 @@
 
 package com.aliyuncs.eflo.model.v20220530;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.eflo.transform.v20220530.GetElasticNetworkInterfaceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -97,6 +98,8 @@ public class GetElasticNetworkInterfaceResponse extends AcsResponse {
 		private String gmtModified;
 
 		private String description;
+
+		private List<PrivateIpAddresse> privateIpAddresses;
 
 		public String getRegionId() {
 			return this.regionId;
@@ -224,6 +227,107 @@ public class GetElasticNetworkInterfaceResponse extends AcsResponse {
 
 		public void setDescription(String description) {
 			this.description = description;
+		}
+
+		public List<PrivateIpAddresse> getPrivateIpAddresses() {
+			return this.privateIpAddresses;
+		}
+
+		public void setPrivateIpAddresses(List<PrivateIpAddresse> privateIpAddresses) {
+			this.privateIpAddresses = privateIpAddresses;
+		}
+
+		public static class PrivateIpAddresse {
+
+			private String elasticNetworkInterfaceId;
+
+			private String regionId;
+
+			private String gmtCreate;
+
+			private String gmtModified;
+
+			private String ipName;
+
+			private String privateIpAddress;
+
+			private String status;
+
+			private String description;
+
+			private String message;
+
+			public String getElasticNetworkInterfaceId() {
+				return this.elasticNetworkInterfaceId;
+			}
+
+			public void setElasticNetworkInterfaceId(String elasticNetworkInterfaceId) {
+				this.elasticNetworkInterfaceId = elasticNetworkInterfaceId;
+			}
+
+			public String getRegionId() {
+				return this.regionId;
+			}
+
+			public void setRegionId(String regionId) {
+				this.regionId = regionId;
+			}
+
+			public String getGmtCreate() {
+				return this.gmtCreate;
+			}
+
+			public void setGmtCreate(String gmtCreate) {
+				this.gmtCreate = gmtCreate;
+			}
+
+			public String getGmtModified() {
+				return this.gmtModified;
+			}
+
+			public void setGmtModified(String gmtModified) {
+				this.gmtModified = gmtModified;
+			}
+
+			public String getIpName() {
+				return this.ipName;
+			}
+
+			public void setIpName(String ipName) {
+				this.ipName = ipName;
+			}
+
+			public String getPrivateIpAddress() {
+				return this.privateIpAddress;
+			}
+
+			public void setPrivateIpAddress(String privateIpAddress) {
+				this.privateIpAddress = privateIpAddress;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
+			public String getDescription() {
+				return this.description;
+			}
+
+			public void setDescription(String description) {
+				this.description = description;
+			}
+
+			public String getMessage() {
+				return this.message;
+			}
+
+			public void setMessage(String message) {
+				this.message = message;
+			}
 		}
 	}
 
