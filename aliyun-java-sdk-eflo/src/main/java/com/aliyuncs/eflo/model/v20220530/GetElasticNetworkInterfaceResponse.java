@@ -99,7 +99,7 @@ public class GetElasticNetworkInterfaceResponse extends AcsResponse {
 
 		private String description;
 
-		private List<PrivateIpAddresse> privateIpAddresses;
+		private List<PrivateIpAddress> privateIpAddresses;
 
 		public String getRegionId() {
 			return this.regionId;
@@ -229,15 +229,15 @@ public class GetElasticNetworkInterfaceResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public List<PrivateIpAddresse> getPrivateIpAddresses() {
+		public List<PrivateIpAddress> getPrivateIpAddresses() {
 			return this.privateIpAddresses;
 		}
 
-		public void setPrivateIpAddresses(List<PrivateIpAddresse> privateIpAddresses) {
+		public void setPrivateIpAddresses(List<PrivateIpAddress> privateIpAddresses) {
 			this.privateIpAddresses = privateIpAddresses;
 		}
 
-		public static class PrivateIpAddresse {
+		public static class PrivateIpAddress {
 
 			private String elasticNetworkInterfaceId;
 
