@@ -14,18 +14,18 @@
 
 package com.aliyuncs.ecs.transform.v20140526;
 
-import com.aliyuncs.ecs.model.v20140526.ImportSnapshotResponse;
+import com.aliyuncs.ecs.model.v20140526.CreateSavingsPlanResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class ImportSnapshotResponseUnmarshaller {
+public class CreateSavingsPlanResponseUnmarshaller {
 
-	public static ImportSnapshotResponse unmarshall(ImportSnapshotResponse importSnapshotResponse, UnmarshallerContext _ctx) {
+	public static CreateSavingsPlanResponse unmarshall(CreateSavingsPlanResponse createSavingsPlanResponse, UnmarshallerContext _ctx) {
 		
-		importSnapshotResponse.setRequestId(_ctx.stringValue("ImportSnapshotResponse.RequestId"));
-		importSnapshotResponse.setTaskId(_ctx.stringValue("ImportSnapshotResponse.TaskId"));
-		importSnapshotResponse.setSnapshotId(_ctx.stringValue("ImportSnapshotResponse.SnapshotId"));
+		createSavingsPlanResponse.setRequestId(_ctx.stringValue("CreateSavingsPlanResponse.RequestId"));
+		createSavingsPlanResponse.setSavingsPlanId(_ctx.stringValue("CreateSavingsPlanResponse.SavingsPlanId"));
+		createSavingsPlanResponse.setOrderId(_ctx.stringValue("CreateSavingsPlanResponse.OrderId"));
 	 
-	 	return importSnapshotResponse;
+	 	return createSavingsPlanResponse;
 	}
 }

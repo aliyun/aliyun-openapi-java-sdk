@@ -255,6 +255,8 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 
 			private Boolean deletionProtection;
 
+			private String creditSpecification;
+
 			private List<DataDisk> dataDisks;
 
 			private List<NetworkInterface> networkInterfaces;
@@ -605,6 +607,14 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 
 			public void setDeletionProtection(Boolean deletionProtection) {
 				this.deletionProtection = deletionProtection;
+			}
+
+			public String getCreditSpecification() {
+				return this.creditSpecification;
+			}
+
+			public void setCreditSpecification(String creditSpecification) {
+				this.creditSpecification = creditSpecification;
 			}
 
 			public List<DataDisk> getDataDisks() {

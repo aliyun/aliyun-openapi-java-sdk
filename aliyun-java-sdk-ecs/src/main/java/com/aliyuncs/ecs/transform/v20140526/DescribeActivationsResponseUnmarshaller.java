@@ -45,6 +45,7 @@ public class DescribeActivationsResponseUnmarshaller {
 			activation.setIpAddressRange(_ctx.stringValue("DescribeActivationsResponse.ActivationList["+ i +"].IpAddressRange"));
 			activation.setTimeToLiveInHours(_ctx.longValue("DescribeActivationsResponse.ActivationList["+ i +"].TimeToLiveInHours"));
 			activation.setActivationId(_ctx.stringValue("DescribeActivationsResponse.ActivationList["+ i +"].ActivationId"));
+			activation.setResourceGroupId(_ctx.stringValue("DescribeActivationsResponse.ActivationList["+ i +"].ResourceGroupId"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeActivationsResponse.ActivationList["+ i +"].Tags.Length"); j++) {

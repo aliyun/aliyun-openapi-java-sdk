@@ -105,6 +105,8 @@ public class DescribeCommandsResponse extends AcsResponse {
 
 		private Boolean enableParameter;
 
+		private String resourceGroupId;
+
 		private List<ParameterDefinition> parameterDefinitions;
 
 		private List<Tag> tags;
@@ -221,6 +223,14 @@ public class DescribeCommandsResponse extends AcsResponse {
 
 		public void setEnableParameter(Boolean enableParameter) {
 			this.enableParameter = enableParameter;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 
 		public List<ParameterDefinition> getParameterDefinitions() {

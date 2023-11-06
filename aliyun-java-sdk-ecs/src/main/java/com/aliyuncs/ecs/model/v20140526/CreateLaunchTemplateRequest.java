@@ -120,6 +120,8 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 
 	private String autoReleaseTime;
 
+	private String creditSpecification;
+
 	private Integer spotDuration;
 
 	private List<String> securityGroupIdss;
@@ -677,6 +679,17 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 		this.autoReleaseTime = autoReleaseTime;
 		if(autoReleaseTime != null){
 			putQueryParameter("AutoReleaseTime", autoReleaseTime);
+		}
+	}
+
+	public String getCreditSpecification() {
+		return this.creditSpecification;
+	}
+
+	public void setCreditSpecification(String creditSpecification) {
+		this.creditSpecification = creditSpecification;
+		if(creditSpecification != null){
+			putQueryParameter("CreditSpecification", creditSpecification);
 		}
 	}
 

@@ -36,6 +36,8 @@ public class DescribeCommandsRequest extends RpcAcsRequest<DescribeCommandsRespo
 
 	private Long pageNumber;
 
+	private String resourceGroupId;
+
 	private String provider;
 
 	private String contentEncoding;
@@ -114,6 +116,17 @@ public class DescribeCommandsRequest extends RpcAcsRequest<DescribeCommandsRespo
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

@@ -97,6 +97,8 @@ public class DescribeActivationsResponse extends AcsResponse {
 
 		private String activationId;
 
+		private String resourceGroupId;
+
 		private List<Tag> tags;
 
 		public String getCreationTime() {
@@ -177,6 +179,14 @@ public class DescribeActivationsResponse extends AcsResponse {
 
 		public void setActivationId(String activationId) {
 			this.activationId = activationId;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 
 		public List<Tag> getTags() {

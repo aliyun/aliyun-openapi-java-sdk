@@ -66,6 +66,8 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 
 	private Long ownerId;
 
+	private String launchConfigurationImageFamily;
+
 	private Integer launchConfigurationSystemDiskSize;
 
 	private Integer launchConfigurationInternetMaxBandwidthOut;
@@ -390,6 +392,17 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getLaunchConfigurationImageFamily() {
+		return this.launchConfigurationImageFamily;
+	}
+
+	public void setLaunchConfigurationImageFamily(String launchConfigurationImageFamily) {
+		this.launchConfigurationImageFamily = launchConfigurationImageFamily;
+		if(launchConfigurationImageFamily != null){
+			putQueryParameter("LaunchConfiguration.ImageFamily", launchConfigurationImageFamily);
 		}
 	}
 

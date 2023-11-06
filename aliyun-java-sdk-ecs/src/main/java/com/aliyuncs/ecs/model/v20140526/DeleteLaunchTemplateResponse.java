@@ -14,6 +14,7 @@
 
 package com.aliyuncs.ecs.model.v20140526;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.ecs.transform.v20140526.DeleteLaunchTemplateResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -27,6 +28,8 @@ public class DeleteLaunchTemplateResponse extends AcsResponse {
 	private String requestId;
 
 	private String launchTemplateId;
+
+	private List<Long> launchTemplateVersionNumbers;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,6 +45,14 @@ public class DeleteLaunchTemplateResponse extends AcsResponse {
 
 	public void setLaunchTemplateId(String launchTemplateId) {
 		this.launchTemplateId = launchTemplateId;
+	}
+
+	public List<Long> getLaunchTemplateVersionNumbers() {
+		return this.launchTemplateVersionNumbers;
+	}
+
+	public void setLaunchTemplateVersionNumbers(List<Long> launchTemplateVersionNumbers) {
+		this.launchTemplateVersionNumbers = launchTemplateVersionNumbers;
 	}
 
 	@Override

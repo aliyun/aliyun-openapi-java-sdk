@@ -30,6 +30,8 @@ public class CreateActivationRequest extends RpcAcsRequest<CreateActivationRespo
 
 	private String description;
 
+	private String resourceGroupId;
+
 	private Integer instanceCount;
 
 	private List<Tag> tags;
@@ -73,6 +75,17 @@ public class CreateActivationRequest extends RpcAcsRequest<CreateActivationRespo
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

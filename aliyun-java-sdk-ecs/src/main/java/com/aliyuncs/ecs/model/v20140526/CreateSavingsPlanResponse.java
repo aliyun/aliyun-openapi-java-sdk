@@ -15,20 +15,20 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ecs.transform.v20140526.ImportSnapshotResponseUnmarshaller;
+import com.aliyuncs.ecs.transform.v20140526.CreateSavingsPlanResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ImportSnapshotResponse extends AcsResponse {
+public class CreateSavingsPlanResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String taskId;
+	private String savingsPlanId;
 
-	private String snapshotId;
+	private String orderId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,24 +38,29 @@ public class ImportSnapshotResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getTaskId() {
-		return this.taskId;
+	public String getSavingsPlanId() {
+		return this.savingsPlanId;
 	}
 
-	public void setTaskId(String taskId) {
-		this.taskId = taskId;
+	public void setSavingsPlanId(String savingsPlanId) {
+		this.savingsPlanId = savingsPlanId;
 	}
 
-	public String getSnapshotId() {
-		return this.snapshotId;
+	public String getOrderId() {
+		return this.orderId;
 	}
 
-	public void setSnapshotId(String snapshotId) {
-		this.snapshotId = snapshotId;
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
 	}
 
 	@Override
-	public ImportSnapshotResponse getInstance(UnmarshallerContext context) {
-		return	ImportSnapshotResponseUnmarshaller.unmarshall(this, context);
+	public CreateSavingsPlanResponse getInstance(UnmarshallerContext context) {
+		return	CreateSavingsPlanResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

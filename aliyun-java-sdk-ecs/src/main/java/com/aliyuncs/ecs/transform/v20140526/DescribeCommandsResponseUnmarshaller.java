@@ -50,6 +50,7 @@ public class DescribeCommandsResponseUnmarshaller {
 			command.setLatest(_ctx.booleanValue("DescribeCommandsResponse.Commands["+ i +"].Latest"));
 			command.setName(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].Name"));
 			command.setEnableParameter(_ctx.booleanValue("DescribeCommandsResponse.Commands["+ i +"].EnableParameter"));
+			command.setResourceGroupId(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].ResourceGroupId"));
 
 			List<String> parameterNames = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeCommandsResponse.Commands["+ i +"].ParameterNames.Length"); j++) {
