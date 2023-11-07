@@ -20,8 +20,8 @@ import java.util.List;
 import com.aliyuncs.oceanbasepro.model.v20190901.DescribeAvailableSpecResponse;
 import com.aliyuncs.oceanbasepro.model.v20190901.DescribeAvailableSpecResponse.Data;
 import com.aliyuncs.oceanbasepro.model.v20190901.DescribeAvailableSpecResponse.Data.AvailableSpecificationsItem;
-import com.aliyuncs.oceanbasepro.model.v20190901.DescribeAvailableSpecResponse.Data.AvailableSpecificationsItem.DiskSizeRangeItem;
-import com.aliyuncs.oceanbasepro.model.v20190901.DescribeAvailableSpecResponse.Data.AvailableSpecificationsItem.LogDiskSizeRangeItem;
+import com.aliyuncs.oceanbasepro.model.v20190901.DescribeAvailableSpecResponse.Data.AvailableSpecificationsItem.DiskSizeRange;
+import com.aliyuncs.oceanbasepro.model.v20190901.DescribeAvailableSpecResponse.Data.AvailableSpecificationsItem.LogDiskSizeRange;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -45,26 +45,16 @@ public class DescribeAvailableSpecResponseUnmarshaller {
 			}
 			availableSpecificationsItem.setNodeNum(nodeNum);
 
-			List<DiskSizeRangeItem> diskSizeRange = new ArrayList<DiskSizeRangeItem>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeAvailableSpecResponse.Data.AvailableSpecifications["+ i +"].DiskSizeRange.Length"); j++) {
-				DiskSizeRangeItem diskSizeRangeItem = new DiskSizeRangeItem();
-				diskSizeRangeItem.setStep(_ctx.longValue("DescribeAvailableSpecResponse.Data.AvailableSpecifications["+ i +"].DiskSizeRange["+ j +"].Step"));
-				diskSizeRangeItem.setMax(_ctx.longValue("DescribeAvailableSpecResponse.Data.AvailableSpecifications["+ i +"].DiskSizeRange["+ j +"].Max"));
-				diskSizeRangeItem.setMin(_ctx.longValue("DescribeAvailableSpecResponse.Data.AvailableSpecifications["+ i +"].DiskSizeRange["+ j +"].Min"));
-
-				diskSizeRange.add(diskSizeRangeItem);
-			}
+			DiskSizeRange diskSizeRange = new DiskSizeRange();
+			diskSizeRange.setStep(_ctx.longValue("DescribeAvailableSpecResponse.Data.AvailableSpecifications["+ i +"].DiskSizeRange.Step"));
+			diskSizeRange.setMax(_ctx.longValue("DescribeAvailableSpecResponse.Data.AvailableSpecifications["+ i +"].DiskSizeRange.Max"));
+			diskSizeRange.setMin(_ctx.longValue("DescribeAvailableSpecResponse.Data.AvailableSpecifications["+ i +"].DiskSizeRange.Min"));
 			availableSpecificationsItem.setDiskSizeRange(diskSizeRange);
 
-			List<LogDiskSizeRangeItem> logDiskSizeRange = new ArrayList<LogDiskSizeRangeItem>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeAvailableSpecResponse.Data.AvailableSpecifications["+ i +"].LogDiskSizeRange.Length"); j++) {
-				LogDiskSizeRangeItem logDiskSizeRangeItem = new LogDiskSizeRangeItem();
-				logDiskSizeRangeItem.setStep(_ctx.stringValue("DescribeAvailableSpecResponse.Data.AvailableSpecifications["+ i +"].LogDiskSizeRange["+ j +"].Step"));
-				logDiskSizeRangeItem.setMax(_ctx.stringValue("DescribeAvailableSpecResponse.Data.AvailableSpecifications["+ i +"].LogDiskSizeRange["+ j +"].Max"));
-				logDiskSizeRangeItem.setMin(_ctx.stringValue("DescribeAvailableSpecResponse.Data.AvailableSpecifications["+ i +"].LogDiskSizeRange["+ j +"].Min"));
-
-				logDiskSizeRange.add(logDiskSizeRangeItem);
-			}
+			LogDiskSizeRange logDiskSizeRange = new LogDiskSizeRange();
+			logDiskSizeRange.setStep(_ctx.longValue("DescribeAvailableSpecResponse.Data.AvailableSpecifications["+ i +"].LogDiskSizeRange.Step"));
+			logDiskSizeRange.setMax(_ctx.longValue("DescribeAvailableSpecResponse.Data.AvailableSpecifications["+ i +"].LogDiskSizeRange.Max"));
+			logDiskSizeRange.setMin(_ctx.longValue("DescribeAvailableSpecResponse.Data.AvailableSpecifications["+ i +"].LogDiskSizeRange.Min"));
 			availableSpecificationsItem.setLogDiskSizeRange(logDiskSizeRange);
 
 			availableSpecifications.add(availableSpecificationsItem);

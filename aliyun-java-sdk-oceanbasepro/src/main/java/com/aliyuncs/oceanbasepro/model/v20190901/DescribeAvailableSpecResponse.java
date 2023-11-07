@@ -63,11 +63,11 @@ public class DescribeAvailableSpecResponse extends AcsResponse {
 
 			private String instanceClass;
 
-			private List<DiskSizeRangeItem> diskSizeRange;
-
-			private List<LogDiskSizeRangeItem> logDiskSizeRange;
-
 			private List<Integer> nodeNum;
+
+			private DiskSizeRange diskSizeRange;
+
+			private LogDiskSizeRange logDiskSizeRange;
 
 			public String getSpec() {
 				return this.spec;
@@ -85,22 +85,6 @@ public class DescribeAvailableSpecResponse extends AcsResponse {
 				this.instanceClass = instanceClass;
 			}
 
-			public List<DiskSizeRangeItem> getDiskSizeRange() {
-				return this.diskSizeRange;
-			}
-
-			public void setDiskSizeRange(List<DiskSizeRangeItem> diskSizeRange) {
-				this.diskSizeRange = diskSizeRange;
-			}
-
-			public List<LogDiskSizeRangeItem> getLogDiskSizeRange() {
-				return this.logDiskSizeRange;
-			}
-
-			public void setLogDiskSizeRange(List<LogDiskSizeRangeItem> logDiskSizeRange) {
-				this.logDiskSizeRange = logDiskSizeRange;
-			}
-
 			public List<Integer> getNodeNum() {
 				return this.nodeNum;
 			}
@@ -109,7 +93,23 @@ public class DescribeAvailableSpecResponse extends AcsResponse {
 				this.nodeNum = nodeNum;
 			}
 
-			public static class DiskSizeRangeItem {
+			public DiskSizeRange getDiskSizeRange() {
+				return this.diskSizeRange;
+			}
+
+			public void setDiskSizeRange(DiskSizeRange diskSizeRange) {
+				this.diskSizeRange = diskSizeRange;
+			}
+
+			public LogDiskSizeRange getLogDiskSizeRange() {
+				return this.logDiskSizeRange;
+			}
+
+			public void setLogDiskSizeRange(LogDiskSizeRange logDiskSizeRange) {
+				this.logDiskSizeRange = logDiskSizeRange;
+			}
+
+			public static class DiskSizeRange {
 
 				private Long step;
 
@@ -142,35 +142,35 @@ public class DescribeAvailableSpecResponse extends AcsResponse {
 				}
 			}
 
-			public static class LogDiskSizeRangeItem {
+			public static class LogDiskSizeRange {
 
-				private String step;
+				private Long step;
 
-				private String max;
+				private Long max;
 
-				private String min;
+				private Long min;
 
-				public String getStep() {
+				public Long getStep() {
 					return this.step;
 				}
 
-				public void setStep(String step) {
+				public void setStep(Long step) {
 					this.step = step;
 				}
 
-				public String getMax() {
+				public Long getMax() {
 					return this.max;
 				}
 
-				public void setMax(String max) {
+				public void setMax(Long max) {
 					this.max = max;
 				}
 
-				public String getMin() {
+				public Long getMin() {
 					return this.min;
 				}
 
-				public void setMin(String min) {
+				public void setMin(Long min) {
 					this.min = min;
 				}
 			}
