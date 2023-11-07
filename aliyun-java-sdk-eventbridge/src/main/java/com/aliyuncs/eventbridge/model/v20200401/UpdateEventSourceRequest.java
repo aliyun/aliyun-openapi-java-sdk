@@ -482,6 +482,9 @@ public class UpdateEventSourceRequest extends RpcAcsRequest<UpdateEventSourceRes
 		@SerializedName("Schedule")
 		private String schedule;
 
+		@SerializedName("UserData")
+		private String userData;
+
 		@SerializedName("TimeZone")
 		private String timeZone;
 
@@ -491,6 +494,14 @@ public class UpdateEventSourceRequest extends RpcAcsRequest<UpdateEventSourceRes
 
 		public void setSchedule(String schedule) {
 			this.schedule = schedule;
+		}
+
+		public String getUserData() {
+			return this.userData;
+		}
+
+		public void setUserData(String userData) {
+			this.userData = userData;
 		}
 
 		public String getTimeZone() {

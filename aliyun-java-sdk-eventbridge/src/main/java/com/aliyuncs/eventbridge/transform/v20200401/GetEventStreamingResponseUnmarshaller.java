@@ -117,6 +117,15 @@ public class GetEventStreamingResponseUnmarshaller {
 		sourceRocketMQParameters.setOffset(_ctx.stringValue("GetEventStreamingResponse.Data.Source.SourceRocketMQParameters.Offset"));
 		sourceRocketMQParameters.setGroupID(_ctx.stringValue("GetEventStreamingResponse.Data.Source.SourceRocketMQParameters.GroupID"));
 		sourceRocketMQParameters.setTimestamp(_ctx.longValue("GetEventStreamingResponse.Data.Source.SourceRocketMQParameters.Timestamp"));
+		sourceRocketMQParameters.setInstanceType(_ctx.stringValue("GetEventStreamingResponse.Data.Source.SourceRocketMQParameters.InstanceType"));
+		sourceRocketMQParameters.setInstanceEndpoint(_ctx.stringValue("GetEventStreamingResponse.Data.Source.SourceRocketMQParameters.InstanceEndpoint"));
+		sourceRocketMQParameters.setAuthType(_ctx.stringValue("GetEventStreamingResponse.Data.Source.SourceRocketMQParameters.AuthType"));
+		sourceRocketMQParameters.setInstanceUsername(_ctx.stringValue("GetEventStreamingResponse.Data.Source.SourceRocketMQParameters.InstanceUsername"));
+		sourceRocketMQParameters.setInstancePassword(_ctx.stringValue("GetEventStreamingResponse.Data.Source.SourceRocketMQParameters.InstancePassword"));
+		sourceRocketMQParameters.setInstanceVpcId(_ctx.stringValue("GetEventStreamingResponse.Data.Source.SourceRocketMQParameters.InstanceVpcId"));
+		sourceRocketMQParameters.setInstanceVSwitchIds(_ctx.stringValue("GetEventStreamingResponse.Data.Source.SourceRocketMQParameters.InstanceVSwitchIds"));
+		sourceRocketMQParameters.setInstanceSecurityGroupId(_ctx.stringValue("GetEventStreamingResponse.Data.Source.SourceRocketMQParameters.InstanceSecurityGroupId"));
+		sourceRocketMQParameters.setInstanceNetwork(_ctx.stringValue("GetEventStreamingResponse.Data.Source.SourceRocketMQParameters.InstanceNetwork"));
 		source.setSourceRocketMQParameters(sourceRocketMQParameters);
 
 		SourceKafkaParameters sourceKafkaParameters = new SourceKafkaParameters();

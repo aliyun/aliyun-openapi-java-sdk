@@ -147,6 +147,7 @@ public class ListUserDefinedEventSourcesResponseUnmarshaller {
 			SourceScheduledEventParameters sourceScheduledEventParameters = new SourceScheduledEventParameters();
 			sourceScheduledEventParameters.setSchedule(_ctx.stringValue("ListUserDefinedEventSourcesResponse.Data.EventSourceList["+ i +"].SourceScheduledEventParameters.Schedule"));
 			sourceScheduledEventParameters.setTimeZone(_ctx.stringValue("ListUserDefinedEventSourcesResponse.Data.EventSourceList["+ i +"].SourceScheduledEventParameters.TimeZone"));
+			sourceScheduledEventParameters.setUserData(_ctx.stringValue("ListUserDefinedEventSourcesResponse.Data.EventSourceList["+ i +"].SourceScheduledEventParameters.UserData"));
 			eventSourceListItem.setSourceScheduledEventParameters(sourceScheduledEventParameters);
 
 			eventSourceList.add(eventSourceListItem);

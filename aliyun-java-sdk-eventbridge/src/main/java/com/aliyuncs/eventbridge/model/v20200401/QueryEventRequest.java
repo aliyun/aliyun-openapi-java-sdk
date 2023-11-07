@@ -27,6 +27,8 @@ public class QueryEventRequest extends RpcAcsRequest<QueryEventResponse> {
 	private String eventId;
 
 	private String eventBusName;
+
+	private String eventSource;
 	public QueryEventRequest() {
 		super("eventbridge", "2020-04-01", "QueryEvent");
 		setMethod(MethodType.POST);
@@ -51,6 +53,17 @@ public class QueryEventRequest extends RpcAcsRequest<QueryEventResponse> {
 		this.eventBusName = eventBusName;
 		if(eventBusName != null){
 			putQueryParameter("EventBusName", eventBusName);
+		}
+	}
+
+	public String getEventSource() {
+		return this.eventSource;
+	}
+
+	public void setEventSource(String eventSource) {
+		this.eventSource = eventSource;
+		if(eventSource != null){
+			putQueryParameter("EventSource", eventSource);
 		}
 	}
 

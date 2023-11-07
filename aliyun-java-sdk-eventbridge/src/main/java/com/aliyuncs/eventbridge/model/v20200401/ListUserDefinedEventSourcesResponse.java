@@ -734,6 +734,8 @@ public class ListUserDefinedEventSourcesResponse extends AcsResponse {
 
 				private String timeZone;
 
+				private String userData;
+
 				public String getSchedule() {
 					return this.schedule;
 				}
@@ -748,6 +750,14 @@ public class ListUserDefinedEventSourcesResponse extends AcsResponse {
 
 				public void setTimeZone(String timeZone) {
 					this.timeZone = timeZone;
+				}
+
+				public String getUserData() {
+					return this.userData;
+				}
+
+				public void setUserData(String userData) {
+					this.userData = userData;
 				}
 			}
 		}

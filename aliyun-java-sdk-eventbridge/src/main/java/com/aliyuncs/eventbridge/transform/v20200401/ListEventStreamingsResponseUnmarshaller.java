@@ -127,6 +127,15 @@ public class ListEventStreamingsResponseUnmarshaller {
 			sourceRocketMQParameters.setOffset(_ctx.stringValue("ListEventStreamingsResponse.Data.EventStreamings["+ i +"].Source.SourceRocketMQParameters.Offset"));
 			sourceRocketMQParameters.setGroupID(_ctx.stringValue("ListEventStreamingsResponse.Data.EventStreamings["+ i +"].Source.SourceRocketMQParameters.GroupID"));
 			sourceRocketMQParameters.setTimestamp(_ctx.longValue("ListEventStreamingsResponse.Data.EventStreamings["+ i +"].Source.SourceRocketMQParameters.Timestamp"));
+			sourceRocketMQParameters.setInstanceType(_ctx.stringValue("ListEventStreamingsResponse.Data.EventStreamings["+ i +"].Source.SourceRocketMQParameters.InstanceType"));
+			sourceRocketMQParameters.setInstanceEndpoint(_ctx.stringValue("ListEventStreamingsResponse.Data.EventStreamings["+ i +"].Source.SourceRocketMQParameters.InstanceEndpoint"));
+			sourceRocketMQParameters.setAuthType(_ctx.stringValue("ListEventStreamingsResponse.Data.EventStreamings["+ i +"].Source.SourceRocketMQParameters.AuthType"));
+			sourceRocketMQParameters.setInstanceUsername(_ctx.stringValue("ListEventStreamingsResponse.Data.EventStreamings["+ i +"].Source.SourceRocketMQParameters.InstanceUsername"));
+			sourceRocketMQParameters.setInstancePassword(_ctx.stringValue("ListEventStreamingsResponse.Data.EventStreamings["+ i +"].Source.SourceRocketMQParameters.InstancePassword"));
+			sourceRocketMQParameters.setInstanceVpcId(_ctx.stringValue("ListEventStreamingsResponse.Data.EventStreamings["+ i +"].Source.SourceRocketMQParameters.InstanceVpcId"));
+			sourceRocketMQParameters.setInstanceVSwitchIds(_ctx.stringValue("ListEventStreamingsResponse.Data.EventStreamings["+ i +"].Source.SourceRocketMQParameters.InstanceVSwitchIds"));
+			sourceRocketMQParameters.setInstanceSecurityGroupId(_ctx.stringValue("ListEventStreamingsResponse.Data.EventStreamings["+ i +"].Source.SourceRocketMQParameters.InstanceSecurityGroupId"));
+			sourceRocketMQParameters.setInstanceNetwork(_ctx.stringValue("ListEventStreamingsResponse.Data.EventStreamings["+ i +"].Source.SourceRocketMQParameters.InstanceNetwork"));
 			source.setSourceRocketMQParameters(sourceRocketMQParameters);
 
 			SourceKafkaParameters sourceKafkaParameters = new SourceKafkaParameters();

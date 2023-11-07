@@ -353,6 +353,24 @@ public class ListEventStreamingsResponse extends AcsResponse {
 
 					private Long timestamp;
 
+					private String instanceType;
+
+					private String instanceEndpoint;
+
+					private String authType;
+
+					private String instanceUsername;
+
+					private String instancePassword;
+
+					private String instanceVpcId;
+
+					private String instanceVSwitchIds;
+
+					private String instanceSecurityGroupId;
+
+					private String instanceNetwork;
+
 					public String getRegionId() {
 						return this.regionId;
 					}
@@ -407,6 +425,78 @@ public class ListEventStreamingsResponse extends AcsResponse {
 
 					public void setTimestamp(Long timestamp) {
 						this.timestamp = timestamp;
+					}
+
+					public String getInstanceType() {
+						return this.instanceType;
+					}
+
+					public void setInstanceType(String instanceType) {
+						this.instanceType = instanceType;
+					}
+
+					public String getInstanceEndpoint() {
+						return this.instanceEndpoint;
+					}
+
+					public void setInstanceEndpoint(String instanceEndpoint) {
+						this.instanceEndpoint = instanceEndpoint;
+					}
+
+					public String getAuthType() {
+						return this.authType;
+					}
+
+					public void setAuthType(String authType) {
+						this.authType = authType;
+					}
+
+					public String getInstanceUsername() {
+						return this.instanceUsername;
+					}
+
+					public void setInstanceUsername(String instanceUsername) {
+						this.instanceUsername = instanceUsername;
+					}
+
+					public String getInstancePassword() {
+						return this.instancePassword;
+					}
+
+					public void setInstancePassword(String instancePassword) {
+						this.instancePassword = instancePassword;
+					}
+
+					public String getInstanceVpcId() {
+						return this.instanceVpcId;
+					}
+
+					public void setInstanceVpcId(String instanceVpcId) {
+						this.instanceVpcId = instanceVpcId;
+					}
+
+					public String getInstanceVSwitchIds() {
+						return this.instanceVSwitchIds;
+					}
+
+					public void setInstanceVSwitchIds(String instanceVSwitchIds) {
+						this.instanceVSwitchIds = instanceVSwitchIds;
+					}
+
+					public String getInstanceSecurityGroupId() {
+						return this.instanceSecurityGroupId;
+					}
+
+					public void setInstanceSecurityGroupId(String instanceSecurityGroupId) {
+						this.instanceSecurityGroupId = instanceSecurityGroupId;
+					}
+
+					public String getInstanceNetwork() {
+						return this.instanceNetwork;
+					}
+
+					public void setInstanceNetwork(String instanceNetwork) {
+						this.instanceNetwork = instanceNetwork;
 					}
 				}
 

@@ -16,7 +16,6 @@ package com.aliyuncs.eventbridge.model.v20200401;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
-import java.util.Map;
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
@@ -484,7 +483,7 @@ public class CreateEventSourceRequest extends RpcAcsRequest<CreateEventSourceRes
 		private String schedule;
 
 		@SerializedName("UserData")
-		private Map<String,String> userData;
+		private String userData;
 
 		@SerializedName("TimeZone")
 		private String timeZone;
@@ -497,11 +496,11 @@ public class CreateEventSourceRequest extends RpcAcsRequest<CreateEventSourceRes
 			this.schedule = schedule;
 		}
 
-		public Map<String,String> getUserData() {
+		public String getUserData() {
 			return this.userData;
 		}
 
-		public void setUserData(Map<String,String> userData) {
+		public void setUserData(String userData) {
 			this.userData = userData;
 		}
 

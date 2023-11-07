@@ -2162,20 +2162,47 @@ public class UpdateEventStreamingRequest extends RpcAcsRequest<UpdateEventStream
 
 		public static class SourceRocketMQParameters {
 
-			@SerializedName("InstanceId")
-			private String instanceId;
+			@SerializedName("InstanceSecurityGroupId")
+			private String instanceSecurityGroupId;
 
 			@SerializedName("Offset")
 			private String offset;
 
-			@SerializedName("RegionId")
-			private String regionId;
-
 			@SerializedName("GroupID")
 			private String groupID;
 
+			@SerializedName("InstanceUsername")
+			private String instanceUsername;
+
+			@SerializedName("AuthType")
+			private String authType;
+
+			@SerializedName("InstancePassword")
+			private String instancePassword;
+
+			@SerializedName("InstanceVSwitchIds")
+			private String instanceVSwitchIds;
+
+			@SerializedName("InstanceNetwork")
+			private String instanceNetwork;
+
+			@SerializedName("InstanceId")
+			private String instanceId;
+
+			@SerializedName("InstanceEndpoint")
+			private String instanceEndpoint;
+
+			@SerializedName("InstanceVpcId")
+			private String instanceVpcId;
+
+			@SerializedName("RegionId")
+			private String regionId;
+
 			@SerializedName("Topic")
 			private String topic;
+
+			@SerializedName("InstanceType")
+			private String instanceType;
 
 			@SerializedName("Tag")
 			private String tag;
@@ -2183,12 +2210,12 @@ public class UpdateEventStreamingRequest extends RpcAcsRequest<UpdateEventStream
 			@SerializedName("Timestamp")
 			private Long timestamp;
 
-			public String getInstanceId() {
-				return this.instanceId;
+			public String getInstanceSecurityGroupId() {
+				return this.instanceSecurityGroupId;
 			}
 
-			public void setInstanceId(String instanceId) {
-				this.instanceId = instanceId;
+			public void setInstanceSecurityGroupId(String instanceSecurityGroupId) {
+				this.instanceSecurityGroupId = instanceSecurityGroupId;
 			}
 
 			public String getOffset() {
@@ -2199,14 +2226,6 @@ public class UpdateEventStreamingRequest extends RpcAcsRequest<UpdateEventStream
 				this.offset = offset;
 			}
 
-			public String getRegionId() {
-				return this.regionId;
-			}
-
-			public void setRegionId(String regionId) {
-				this.regionId = regionId;
-			}
-
 			public String getGroupID() {
 				return this.groupID;
 			}
@@ -2215,12 +2234,92 @@ public class UpdateEventStreamingRequest extends RpcAcsRequest<UpdateEventStream
 				this.groupID = groupID;
 			}
 
+			public String getInstanceUsername() {
+				return this.instanceUsername;
+			}
+
+			public void setInstanceUsername(String instanceUsername) {
+				this.instanceUsername = instanceUsername;
+			}
+
+			public String getAuthType() {
+				return this.authType;
+			}
+
+			public void setAuthType(String authType) {
+				this.authType = authType;
+			}
+
+			public String getInstancePassword() {
+				return this.instancePassword;
+			}
+
+			public void setInstancePassword(String instancePassword) {
+				this.instancePassword = instancePassword;
+			}
+
+			public String getInstanceVSwitchIds() {
+				return this.instanceVSwitchIds;
+			}
+
+			public void setInstanceVSwitchIds(String instanceVSwitchIds) {
+				this.instanceVSwitchIds = instanceVSwitchIds;
+			}
+
+			public String getInstanceNetwork() {
+				return this.instanceNetwork;
+			}
+
+			public void setInstanceNetwork(String instanceNetwork) {
+				this.instanceNetwork = instanceNetwork;
+			}
+
+			public String getInstanceId() {
+				return this.instanceId;
+			}
+
+			public void setInstanceId(String instanceId) {
+				this.instanceId = instanceId;
+			}
+
+			public String getInstanceEndpoint() {
+				return this.instanceEndpoint;
+			}
+
+			public void setInstanceEndpoint(String instanceEndpoint) {
+				this.instanceEndpoint = instanceEndpoint;
+			}
+
+			public String getInstanceVpcId() {
+				return this.instanceVpcId;
+			}
+
+			public void setInstanceVpcId(String instanceVpcId) {
+				this.instanceVpcId = instanceVpcId;
+			}
+
+			public String getRegionId() {
+				return this.regionId;
+			}
+
+			public void setRegionId(String regionId) {
+				this.regionId = regionId;
+			}
+
 			public String getTopic() {
 				return this.topic;
 			}
 
 			public void setTopic(String topic) {
 				this.topic = topic;
+			}
+
+			public String getInstanceType() {
+				return this.instanceType;
+			}
+
+			public void setInstanceType(String instanceType) {
+				this.instanceType = instanceType;
 			}
 
 			public String getTag() {
