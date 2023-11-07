@@ -29,8 +29,6 @@ public class OpenAITaskRequest extends RpcAcsRequest<OpenAITaskResponse> {
 
 	private String nodeType;
 
-	private String describeType;
-
 	private String resourceGroupId;
 
 	private String password;
@@ -72,17 +70,6 @@ public class OpenAITaskRequest extends RpcAcsRequest<OpenAITaskResponse> {
 		this.nodeType = nodeType;
 		if(nodeType != null){
 			putQueryParameter("NodeType", nodeType);
-		}
-	}
-
-	public String getDescribeType() {
-		return this.describeType;
-	}
-
-	public void setDescribeType(String describeType) {
-		this.describeType = describeType;
-		if(describeType != null){
-			putQueryParameter("DescribeType", describeType);
 		}
 	}
 
