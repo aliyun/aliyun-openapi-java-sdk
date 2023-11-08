@@ -35,6 +35,8 @@ public class ListImagesRequest extends RpcAcsRequest<ListImagesResponse> {
 
 	private String nextToken;
 
+	private String instanceType;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -45,7 +47,7 @@ public class ListImagesRequest extends RpcAcsRequest<ListImagesResponse> {
 
 	private String status;
 	public ListImagesRequest() {
-		super("cloudphone", "2020-12-30", "ListImages", "cloudphone");
+		super("cloudphone", "2020-12-30", "ListImages");
 		setMethod(MethodType.POST);
 	}
 
@@ -103,6 +105,17 @@ public class ListImagesRequest extends RpcAcsRequest<ListImagesResponse> {
 		this.nextToken = nextToken;
 		if(nextToken != null){
 			putQueryParameter("NextToken", nextToken);
+		}
+	}
+
+	public String getInstanceType() {
+		return this.instanceType;
+	}
+
+	public void setInstanceType(String instanceType) {
+		this.instanceType = instanceType;
+		if(instanceType != null){
+			putQueryParameter("InstanceType", instanceType);
 		}
 	}
 

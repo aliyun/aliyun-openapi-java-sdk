@@ -37,7 +37,7 @@ public class RunCommandRequest extends RpcAcsRequest<RunCommandResponse> {
 
 	private List<String> instanceIds;
 	public RunCommandRequest() {
-		super("cloudphone", "2020-12-30", "RunCommand", "cloudphone");
+		super("cloudphone", "2020-12-30", "RunCommand");
 		setMethod(MethodType.POST);
 	}
 

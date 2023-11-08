@@ -42,7 +42,7 @@ public class CopyImageRequest extends RpcAcsRequest<CopyImageResponse> {
 
 	private Long ownerId;
 	public CopyImageRequest() {
-		super("cloudphone", "2020-12-30", "CopyImage", "cloudphone");
+		super("cloudphone", "2020-12-30", "CopyImage");
 		setMethod(MethodType.POST);
 	}
 

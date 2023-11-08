@@ -35,7 +35,7 @@ public class StartInstancesRequest extends RpcAcsRequest<StartInstancesResponse>
 
 	private List<String> instanceIds;
 	public StartInstancesRequest() {
-		super("cloudphone", "2020-12-30", "StartInstances", "cloudphone");
+		super("cloudphone", "2020-12-30", "StartInstances");
 		setMethod(MethodType.POST);
 	}
 

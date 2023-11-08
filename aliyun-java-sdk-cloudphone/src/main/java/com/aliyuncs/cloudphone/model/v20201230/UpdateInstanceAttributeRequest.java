@@ -45,7 +45,7 @@ public class UpdateInstanceAttributeRequest extends RpcAcsRequest<UpdateInstance
 
 	private String vncPassword;
 	public UpdateInstanceAttributeRequest() {
-		super("cloudphone", "2020-12-30", "UpdateInstanceAttribute", "cloudphone");
+		super("cloudphone", "2020-12-30", "UpdateInstanceAttribute");
 		setMethod(MethodType.POST);
 	}
 

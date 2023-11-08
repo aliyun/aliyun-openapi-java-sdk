@@ -37,7 +37,7 @@ public class ResetInstancesRequest extends RpcAcsRequest<ResetInstancesResponse>
 
 	private List<String> instanceIds;
 	public ResetInstancesRequest() {
-		super("cloudphone", "2020-12-30", "ResetInstances", "cloudphone");
+		super("cloudphone", "2020-12-30", "ResetInstances");
 		setMethod(MethodType.POST);
 	}
 

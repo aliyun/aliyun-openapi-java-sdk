@@ -43,7 +43,7 @@ public class RenewInstancesRequest extends RpcAcsRequest<RenewInstancesResponse>
 
 	private List<String> instanceIds;
 	public RenewInstancesRequest() {
-		super("cloudphone", "2020-12-30", "RenewInstances", "cloudphone");
+		super("cloudphone", "2020-12-30", "RenewInstances");
 		setMethod(MethodType.POST);
 	}
 

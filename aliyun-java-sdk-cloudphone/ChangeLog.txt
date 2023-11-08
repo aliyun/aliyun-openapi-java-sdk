@@ -1,3 +1,6 @@
+2023-11-08 Version: 1.0.6
+- ListInstances support expired time or creation time filter.
+
 2022-04-21 Version: 1.0.5
 - Support Tag API.
 

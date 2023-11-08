@@ -37,7 +37,7 @@ public class ListInstanceTypesRequest extends RpcAcsRequest<ListInstanceTypesRes
 
 	private Long ownerId;
 	public ListInstanceTypesRequest() {
-		super("cloudphone", "2020-12-30", "ListInstanceTypes", "cloudphone");
+		super("cloudphone", "2020-12-30", "ListInstanceTypes");
 		setMethod(MethodType.POST);
 	}
 

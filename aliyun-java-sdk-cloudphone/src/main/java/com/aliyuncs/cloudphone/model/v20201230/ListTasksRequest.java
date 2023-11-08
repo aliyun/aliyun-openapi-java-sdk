@@ -45,7 +45,7 @@ public class ListTasksRequest extends RpcAcsRequest<ListTasksResponse> {
 
 	private Integer maxResults;
 	public ListTasksRequest() {
-		super("cloudphone", "2020-12-30", "ListTasks", "cloudphone");
+		super("cloudphone", "2020-12-30", "ListTasks");
 		setMethod(MethodType.POST);
 	}
 
