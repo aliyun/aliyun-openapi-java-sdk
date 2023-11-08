@@ -30,8 +30,8 @@ public class ListQueueConsumersResponseUnmarshaller {
 		listQueueConsumersResponse.setRequestId(_ctx.stringValue("ListQueueConsumersResponse.RequestId"));
 
 		Data data = new Data();
-		data.setNextToken(_ctx.stringValue("ListQueueConsumersResponse.Data.NextToken"));
 		data.setMaxResults(_ctx.integerValue("ListQueueConsumersResponse.Data.MaxResults"));
+		data.setNextToken(_ctx.stringValue("ListQueueConsumersResponse.Data.NextToken"));
 
 		List<QueueConsumerVO> consumers = new ArrayList<QueueConsumerVO>();
 		for (int i = 0; i < _ctx.lengthValue("ListQueueConsumersResponse.Data.Consumers.Length"); i++) {

@@ -30,17 +30,17 @@ public class ListBindingsResponseUnmarshaller {
 		listBindingsResponse.setRequestId(_ctx.stringValue("ListBindingsResponse.RequestId"));
 
 		Data data = new Data();
-		data.setNextToken(_ctx.stringValue("ListBindingsResponse.Data.NextToken"));
 		data.setMaxResults(_ctx.integerValue("ListBindingsResponse.Data.MaxResults"));
+		data.setNextToken(_ctx.stringValue("ListBindingsResponse.Data.NextToken"));
 
 		List<BindingDO> bindings = new ArrayList<BindingDO>();
 		for (int i = 0; i < _ctx.lengthValue("ListBindingsResponse.Data.Bindings.Length"); i++) {
 			BindingDO bindingDO = new BindingDO();
 			bindingDO.setSourceExchange(_ctx.stringValue("ListBindingsResponse.Data.Bindings["+ i +"].SourceExchange"));
-			bindingDO.setDestinationName(_ctx.stringValue("ListBindingsResponse.Data.Bindings["+ i +"].DestinationName"));
-			bindingDO.setBindingType(_ctx.stringValue("ListBindingsResponse.Data.Bindings["+ i +"].BindingType"));
-			bindingDO.setBindingKey(_ctx.stringValue("ListBindingsResponse.Data.Bindings["+ i +"].BindingKey"));
 			bindingDO.setArgument(_ctx.stringValue("ListBindingsResponse.Data.Bindings["+ i +"].Argument"));
+			bindingDO.setBindingKey(_ctx.stringValue("ListBindingsResponse.Data.Bindings["+ i +"].BindingKey"));
+			bindingDO.setBindingType(_ctx.stringValue("ListBindingsResponse.Data.Bindings["+ i +"].BindingType"));
+			bindingDO.setDestinationName(_ctx.stringValue("ListBindingsResponse.Data.Bindings["+ i +"].DestinationName"));
 
 			bindings.add(bindingDO);
 		}

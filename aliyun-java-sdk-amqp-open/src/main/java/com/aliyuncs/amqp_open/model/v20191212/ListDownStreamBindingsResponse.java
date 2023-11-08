@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListDownStreamBindingsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer code;
 
 	private String message;
 
+	private String requestId;
+
 	private Boolean success;
 
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getCode() {
 		return this.code;
@@ -57,6 +49,14 @@ public class ListDownStreamBindingsResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Boolean getSuccess() {
@@ -77,19 +77,11 @@ public class ListDownStreamBindingsResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String nextToken;
-
 		private Integer maxResults;
 
+		private String nextToken;
+
 		private List<BindingVO> bindings;
-
-		public String getNextToken() {
-			return this.nextToken;
-		}
-
-		public void setNextToken(String nextToken) {
-			this.nextToken = nextToken;
-		}
 
 		public Integer getMaxResults() {
 			return this.maxResults;
@@ -97,6 +89,14 @@ public class ListDownStreamBindingsResponse extends AcsResponse {
 
 		public void setMaxResults(Integer maxResults) {
 			this.maxResults = maxResults;
+		}
+
+		public String getNextToken() {
+			return this.nextToken;
+		}
+
+		public void setNextToken(String nextToken) {
+			this.nextToken = nextToken;
 		}
 
 		public List<BindingVO> getBindings() {
@@ -111,13 +111,13 @@ public class ListDownStreamBindingsResponse extends AcsResponse {
 
 			private String sourceExchange;
 
-			private String destinationName;
-
-			private String bindingType;
+			private String argument;
 
 			private String bindingKey;
 
-			private String argument;
+			private String bindingType;
+
+			private String destinationName;
 
 			public String getSourceExchange() {
 				return this.sourceExchange;
@@ -127,20 +127,12 @@ public class ListDownStreamBindingsResponse extends AcsResponse {
 				this.sourceExchange = sourceExchange;
 			}
 
-			public String getDestinationName() {
-				return this.destinationName;
+			public String getArgument() {
+				return this.argument;
 			}
 
-			public void setDestinationName(String destinationName) {
-				this.destinationName = destinationName;
-			}
-
-			public String getBindingType() {
-				return this.bindingType;
-			}
-
-			public void setBindingType(String bindingType) {
-				this.bindingType = bindingType;
+			public void setArgument(String argument) {
+				this.argument = argument;
 			}
 
 			public String getBindingKey() {
@@ -151,12 +143,20 @@ public class ListDownStreamBindingsResponse extends AcsResponse {
 				this.bindingKey = bindingKey;
 			}
 
-			public String getArgument() {
-				return this.argument;
+			public String getBindingType() {
+				return this.bindingType;
 			}
 
-			public void setArgument(String argument) {
-				this.argument = argument;
+			public void setBindingType(String bindingType) {
+				this.bindingType = bindingType;
+			}
+
+			public String getDestinationName() {
+				return this.destinationName;
+			}
+
+			public void setDestinationName(String destinationName) {
+				this.destinationName = destinationName;
 			}
 		}
 	}
