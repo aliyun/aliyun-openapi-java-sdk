@@ -31,6 +31,8 @@ public class StartInstanceRequest extends RpcAcsRequest<StartInstanceResponse> {
 
 	private Long tenantId;
 
+	private String bizId;
+
 	@SerializedName("channel")
 	private Channel channel;
 
@@ -62,6 +64,17 @@ public class StartInstanceRequest extends RpcAcsRequest<StartInstanceResponse> {
 		this.tenantId = tenantId;
 		if(tenantId != null){
 			putQueryParameter("TenantId", tenantId.toString());
+		}
+	}
+
+	public String getBizId() {
+		return this.bizId;
+	}
+
+	public void setBizId(String bizId) {
+		this.bizId = bizId;
+		if(bizId != null){
+			putQueryParameter("BizId", bizId);
 		}
 	}
 
