@@ -1,3 +1,7 @@
+2023-11-13 Version: 3.26.17
+- Add response parameters in GetK8sApplication.
+- Add request parameters in InsertK8sApplication.
+
 2023-03-27 Version: 3.26.16
 - Add UserBaseImageUrl parameter for InsertK8sApplication API.
 - Add UserBaseImageUrl parameter for DeployK8sApplication API.

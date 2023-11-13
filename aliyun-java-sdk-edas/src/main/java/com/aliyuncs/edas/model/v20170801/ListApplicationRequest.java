@@ -33,6 +33,10 @@ public class ListApplicationRequest extends RoaAcsRequest<ListApplicationRespons
 
 	private String logicalRegionId;
 
+	private Integer pageSize;
+
+	private Integer currentPage;
+
 	private String clusterId;
 
 	private String logicalRegionIdFilter;
@@ -87,6 +91,28 @@ public class ListApplicationRequest extends RoaAcsRequest<ListApplicationRespons
 		this.logicalRegionId = logicalRegionId;
 		if(logicalRegionId != null){
 			putQueryParameter("LogicalRegionId", logicalRegionId);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
 		}
 	}
 

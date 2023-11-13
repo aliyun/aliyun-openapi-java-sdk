@@ -74,6 +74,7 @@ public class ListK8sIngressRulesResponseUnmarshaller {
 						pathsItem.setAppName(_ctx.stringValue("ListK8sIngressRulesResponse.Data["+ i +"].IngressConfs["+ j +"].Rules["+ k +"].Paths["+ l +"].AppName"));
 						pathsItem.setAppId(_ctx.stringValue("ListK8sIngressRulesResponse.Data["+ i +"].IngressConfs["+ j +"].Rules["+ k +"].Paths["+ l +"].AppId"));
 						pathsItem.setCollectRate(_ctx.integerValue("ListK8sIngressRulesResponse.Data["+ i +"].IngressConfs["+ j +"].Rules["+ k +"].Paths["+ l +"].CollectRate"));
+						pathsItem.setPathType(_ctx.stringValue("ListK8sIngressRulesResponse.Data["+ i +"].IngressConfs["+ j +"].Rules["+ k +"].Paths["+ l +"].PathType"));
 
 						Backend backend = new Backend();
 						backend.setServiceName(_ctx.stringValue("ListK8sIngressRulesResponse.Data["+ i +"].IngressConfs["+ j +"].Rules["+ k +"].Paths["+ l +"].Backend.ServiceName"));

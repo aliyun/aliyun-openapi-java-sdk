@@ -45,11 +45,17 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 
 	private String configMountDescs;
 
+	private String startup;
+
 	private Integer memoryLimit;
+
+	private String imagePlatforms;
 
 	private String imageTag;
 
 	private String deployAcrossZones;
+
+	private Integer terminateGracePeriod;
 
 	private String deployAcrossNodes;
 
@@ -78,6 +84,8 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 	private String changeOrderDesc;
 
 	private Integer losslessRuleFuncType;
+
+	private String canaryRuleId;
 
 	private String emptyDirs;
 
@@ -270,6 +278,17 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 		}
 	}
 
+	public String getStartup() {
+		return this.startup;
+	}
+
+	public void setStartup(String startup) {
+		this.startup = startup;
+		if(startup != null){
+			putQueryParameter("Startup", startup);
+		}
+	}
+
 	public Integer getMemoryLimit() {
 		return this.memoryLimit;
 	}
@@ -278,6 +297,17 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 		this.memoryLimit = memoryLimit;
 		if(memoryLimit != null){
 			putQueryParameter("MemoryLimit", memoryLimit.toString());
+		}
+	}
+
+	public String getImagePlatforms() {
+		return this.imagePlatforms;
+	}
+
+	public void setImagePlatforms(String imagePlatforms) {
+		this.imagePlatforms = imagePlatforms;
+		if(imagePlatforms != null){
+			putQueryParameter("ImagePlatforms", imagePlatforms);
 		}
 	}
 
@@ -300,6 +330,17 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 		this.deployAcrossZones = deployAcrossZones;
 		if(deployAcrossZones != null){
 			putQueryParameter("DeployAcrossZones", deployAcrossZones);
+		}
+	}
+
+	public Integer getTerminateGracePeriod() {
+		return this.terminateGracePeriod;
+	}
+
+	public void setTerminateGracePeriod(Integer terminateGracePeriod) {
+		this.terminateGracePeriod = terminateGracePeriod;
+		if(terminateGracePeriod != null){
+			putQueryParameter("TerminateGracePeriod", terminateGracePeriod.toString());
 		}
 	}
 
@@ -454,6 +495,17 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 		this.losslessRuleFuncType = losslessRuleFuncType;
 		if(losslessRuleFuncType != null){
 			putQueryParameter("LosslessRuleFuncType", losslessRuleFuncType.toString());
+		}
+	}
+
+	public String getCanaryRuleId() {
+		return this.canaryRuleId;
+	}
+
+	public void setCanaryRuleId(String canaryRuleId) {
+		this.canaryRuleId = canaryRuleId;
+		if(canaryRuleId != null){
+			putQueryParameter("CanaryRuleId", canaryRuleId);
 		}
 	}
 

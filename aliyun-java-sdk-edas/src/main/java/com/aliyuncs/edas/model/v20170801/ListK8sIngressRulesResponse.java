@@ -313,6 +313,8 @@ public class ListK8sIngressRulesResponse extends AcsResponse {
 
 					private Integer collectRate;
 
+					private String pathType;
+
 					private Backend backend;
 
 					public String getStatus() {
@@ -353,6 +355,14 @@ public class ListK8sIngressRulesResponse extends AcsResponse {
 
 					public void setCollectRate(Integer collectRate) {
 						this.collectRate = collectRate;
+					}
+
+					public String getPathType() {
+						return this.pathType;
+					}
+
+					public void setPathType(String pathType) {
+						this.pathType = pathType;
 					}
 
 					public Backend getBackend() {

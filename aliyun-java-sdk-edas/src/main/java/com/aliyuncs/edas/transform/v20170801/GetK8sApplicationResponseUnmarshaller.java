@@ -82,6 +82,8 @@ public class GetK8sApplicationResponseUnmarshaller {
 		app.setLosslessRuleFuncType(_ctx.integerValue("GetK8sApplicationResponse.Applcation.App.LosslessRuleFuncType"));
 		app.setLosslessRuleRelated(_ctx.booleanValue("GetK8sApplicationResponse.Applcation.App.LosslessRuleRelated"));
 		app.setLosslessRuleWarmupTime(_ctx.integerValue("GetK8sApplicationResponse.Applcation.App.LosslessRuleWarmupTime"));
+		app.setFeatureAnnotations(_ctx.stringValue("GetK8sApplicationResponse.Applcation.App.FeatureAnnotations"));
+		app.setWorkloadType(_ctx.stringValue("GetK8sApplicationResponse.Applcation.App.WorkloadType"));
 
 		List<String> cmdArgs = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetK8sApplicationResponse.Applcation.App.CmdArgs.Length"); i++) {

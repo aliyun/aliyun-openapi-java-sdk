@@ -47,9 +47,15 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 
 	private String appName;
 
+	private String startup;
+
 	private Integer requestsmCpu;
 
+	private String imagePlatforms;
+
 	private String deployAcrossZones;
+
+	private Integer terminateGracePeriod;
 
 	private Integer intranetSlbPort;
 
@@ -142,6 +148,8 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 	private Integer losslessRuleDelayTime;
 
 	private String mountDescs;
+
+	private String featureConfig;
 
 	private Integer replicas;
 
@@ -315,6 +323,17 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 		}
 	}
 
+	public String getStartup() {
+		return this.startup;
+	}
+
+	public void setStartup(String startup) {
+		this.startup = startup;
+		if(startup != null){
+			putQueryParameter("Startup", startup);
+		}
+	}
+
 	public Integer getRequestsmCpu() {
 		return this.requestsmCpu;
 	}
@@ -326,6 +345,17 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 		}
 	}
 
+	public String getImagePlatforms() {
+		return this.imagePlatforms;
+	}
+
+	public void setImagePlatforms(String imagePlatforms) {
+		this.imagePlatforms = imagePlatforms;
+		if(imagePlatforms != null){
+			putQueryParameter("ImagePlatforms", imagePlatforms);
+		}
+	}
+
 	public String getDeployAcrossZones() {
 		return this.deployAcrossZones;
 	}
@@ -334,6 +364,17 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 		this.deployAcrossZones = deployAcrossZones;
 		if(deployAcrossZones != null){
 			putQueryParameter("DeployAcrossZones", deployAcrossZones);
+		}
+	}
+
+	public Integer getTerminateGracePeriod() {
+		return this.terminateGracePeriod;
+	}
+
+	public void setTerminateGracePeriod(Integer terminateGracePeriod) {
+		this.terminateGracePeriod = terminateGracePeriod;
+		if(terminateGracePeriod != null){
+			putQueryParameter("TerminateGracePeriod", terminateGracePeriod.toString());
 		}
 	}
 
@@ -840,6 +881,17 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 		this.mountDescs = mountDescs;
 		if(mountDescs != null){
 			putQueryParameter("MountDescs", mountDescs);
+		}
+	}
+
+	public String getFeatureConfig() {
+		return this.featureConfig;
+	}
+
+	public void setFeatureConfig(String featureConfig) {
+		this.featureConfig = featureConfig;
+		if(featureConfig != null){
+			putQueryParameter("FeatureConfig", featureConfig);
 		}
 	}
 

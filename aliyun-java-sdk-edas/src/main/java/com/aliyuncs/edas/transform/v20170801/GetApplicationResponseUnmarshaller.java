@@ -61,6 +61,8 @@ public class GetApplicationResponseUnmarshaller {
 		applcation.setEnablePortCheck(_ctx.booleanValue("GetApplicationResponse.Applcation.EnablePortCheck"));
 		applcation.setAppPhase(_ctx.stringValue("GetApplicationResponse.Applcation.AppPhase"));
 		applcation.setHaveManageAccess(_ctx.booleanValue("GetApplicationResponse.Applcation.HaveManageAccess"));
+		applcation.setWorkloadType(_ctx.stringValue("GetApplicationResponse.Applcation.WorkloadType"));
+		applcation.setResourceGroupId(_ctx.stringValue("GetApplicationResponse.Applcation.ResourceGroupId"));
 		getApplicationResponse.setApplcation(applcation);
 
 		Application application = new Application();
@@ -96,6 +98,8 @@ public class GetApplicationResponseUnmarshaller {
 		application.setEnablePortCheck(_ctx.booleanValue("GetApplicationResponse.Application.EnablePortCheck"));
 		application.setAppPhase(_ctx.stringValue("GetApplicationResponse.Application.AppPhase"));
 		application.setHaveManageAccess(_ctx.stringValue("GetApplicationResponse.Application.HaveManageAccess"));
+		application.setWorkloadType(_ctx.stringValue("GetApplicationResponse.Application.WorkloadType"));
+		application.setResourceGroupId(_ctx.stringValue("GetApplicationResponse.Application.ResourceGroupId"));
 		getApplicationResponse.setApplication(application);
 	 
 	 	return getApplicationResponse;

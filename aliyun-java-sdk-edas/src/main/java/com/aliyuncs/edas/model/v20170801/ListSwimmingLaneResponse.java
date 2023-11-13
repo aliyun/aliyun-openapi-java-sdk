@@ -167,6 +167,8 @@ public class ListSwimmingLaneResponse extends AcsResponse {
 
 			private String appId;
 
+			private String extra;
+
 			public String getAppName() {
 				return this.appName;
 			}
@@ -197,6 +199,14 @@ public class ListSwimmingLaneResponse extends AcsResponse {
 
 			public void setAppId(String appId) {
 				this.appId = appId;
+			}
+
+			public String getExtra() {
+				return this.extra;
+			}
+
+			public void setExtra(String extra) {
+				this.extra = extra;
 			}
 		}
 	}

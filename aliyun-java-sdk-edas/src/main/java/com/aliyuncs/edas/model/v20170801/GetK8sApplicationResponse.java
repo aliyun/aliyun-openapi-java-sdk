@@ -330,6 +330,10 @@ public class GetK8sApplicationResponse extends AcsResponse {
 
 			private Integer losslessRuleWarmupTime;
 
+			private String featureAnnotations;
+
+			private String workloadType;
+
 			private List<Env> envList;
 
 			private List<String> cmdArgs;
@@ -580,6 +584,22 @@ public class GetK8sApplicationResponse extends AcsResponse {
 
 			public void setLosslessRuleWarmupTime(Integer losslessRuleWarmupTime) {
 				this.losslessRuleWarmupTime = losslessRuleWarmupTime;
+			}
+
+			public String getFeatureAnnotations() {
+				return this.featureAnnotations;
+			}
+
+			public void setFeatureAnnotations(String featureAnnotations) {
+				this.featureAnnotations = featureAnnotations;
+			}
+
+			public String getWorkloadType() {
+				return this.workloadType;
+			}
+
+			public void setWorkloadType(String workloadType) {
+				this.workloadType = workloadType;
 			}
 
 			public List<Env> getEnvList() {

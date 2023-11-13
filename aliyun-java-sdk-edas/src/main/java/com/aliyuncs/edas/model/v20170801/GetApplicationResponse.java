@@ -140,6 +140,10 @@ public class GetApplicationResponse extends AcsResponse {
 
 		private Boolean haveManageAccess;
 
+		private String workloadType;
+
+		private String resourceGroupId;
+
 		public String getExtSlbIp() {
 			return this.extSlbIp;
 		}
@@ -395,6 +399,22 @@ public class GetApplicationResponse extends AcsResponse {
 		public void setHaveManageAccess(Boolean haveManageAccess) {
 			this.haveManageAccess = haveManageAccess;
 		}
+
+		public String getWorkloadType() {
+			return this.workloadType;
+		}
+
+		public void setWorkloadType(String workloadType) {
+			this.workloadType = workloadType;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
 	}
 
 	public static class Application {
@@ -462,6 +482,10 @@ public class GetApplicationResponse extends AcsResponse {
 		private String appPhase;
 
 		private String haveManageAccess;
+
+		private String workloadType;
+
+		private String resourceGroupId;
 
 		public String getExtSlbIp() {
 			return this.extSlbIp;
@@ -717,6 +741,22 @@ public class GetApplicationResponse extends AcsResponse {
 
 		public void setHaveManageAccess(String haveManageAccess) {
 			this.haveManageAccess = haveManageAccess;
+		}
+
+		public String getWorkloadType() {
+			return this.workloadType;
+		}
+
+		public void setWorkloadType(String workloadType) {
+			this.workloadType = workloadType;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 	}
 
