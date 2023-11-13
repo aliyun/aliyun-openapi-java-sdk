@@ -52,6 +52,8 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 
 	private String computeResource;
 
+	private String kmsId;
+
 	private String elasticIOResource;
 
 	private String sourceDBInstanceName;
@@ -83,6 +85,8 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 	private String executorCount;
 
 	private String vPCId;
+
+	private String diskEncryption;
 
 	private String payType;
 	public CreateDBClusterRequest() {
@@ -237,6 +241,17 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		this.computeResource = computeResource;
 		if(computeResource != null){
 			putQueryParameter("ComputeResource", computeResource);
+		}
+	}
+
+	public String getKmsId() {
+		return this.kmsId;
+	}
+
+	public void setKmsId(String kmsId) {
+		this.kmsId = kmsId;
+		if(kmsId != null){
+			putQueryParameter("KmsId", kmsId);
 		}
 	}
 
@@ -413,6 +428,17 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		this.vPCId = vPCId;
 		if(vPCId != null){
 			putQueryParameter("VPCId", vPCId);
+		}
+	}
+
+	public String getDiskEncryption() {
+		return this.diskEncryption;
+	}
+
+	public void setDiskEncryption(String diskEncryption) {
+		this.diskEncryption = diskEncryption;
+		if(diskEncryption != null){
+			putQueryParameter("DiskEncryption", diskEncryption);
 		}
 	}
 
