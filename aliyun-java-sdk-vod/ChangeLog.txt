@@ -1,3 +1,6 @@
+2023-11-15 Version: 2.16.18
+- Latest version for php.
+
 2023-10-18 Version: 2.16.17
 - Support Digital Watermark.
 
