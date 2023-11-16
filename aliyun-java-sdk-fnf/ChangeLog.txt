@@ -1,3 +1,6 @@
+2023-11-16 Version: 1.8.2
+Fix the issue of dirty cache for internal maven repository
+
 2023-10-26 Version: 1.8.1
 - 增加StartSyncExecution
 
