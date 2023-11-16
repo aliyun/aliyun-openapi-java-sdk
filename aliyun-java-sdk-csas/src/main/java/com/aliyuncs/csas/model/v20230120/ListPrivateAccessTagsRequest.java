@@ -31,6 +31,8 @@ public class ListPrivateAccessTagsRequest extends RpcAcsRequest<ListPrivateAcces
 
 	private String applicationId;
 
+	private Boolean simpleMode;
+
 	private List<String> tagIds;
 
 	private Integer currentPage;
@@ -71,6 +73,17 @@ public class ListPrivateAccessTagsRequest extends RpcAcsRequest<ListPrivateAcces
 		this.applicationId = applicationId;
 		if(applicationId != null){
 			putQueryParameter("ApplicationId", applicationId);
+		}
+	}
+
+	public Boolean getSimpleMode() {
+		return this.simpleMode;
+	}
+
+	public void setSimpleMode(Boolean simpleMode) {
+		this.simpleMode = simpleMode;
+		if(simpleMode != null){
+			putQueryParameter("SimpleMode", simpleMode.toString());
 		}
 	}
 
