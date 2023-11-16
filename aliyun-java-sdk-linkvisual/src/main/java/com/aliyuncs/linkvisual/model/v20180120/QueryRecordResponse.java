@@ -113,6 +113,8 @@ public class QueryRecordResponse extends AcsResponse {
 
 			private String endTime;
 
+			private Integer eventType;
+
 			private Integer recordType;
 
 			private Integer streamType;
@@ -139,6 +141,14 @@ public class QueryRecordResponse extends AcsResponse {
 
 			public void setEndTime(String endTime) {
 				this.endTime = endTime;
+			}
+
+			public Integer getEventType() {
+				return this.eventType;
+			}
+
+			public void setEventType(Integer eventType) {
+				this.eventType = eventType;
 			}
 
 			public Integer getRecordType() {

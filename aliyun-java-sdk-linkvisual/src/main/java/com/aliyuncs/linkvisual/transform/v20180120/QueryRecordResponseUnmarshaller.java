@@ -41,6 +41,7 @@ public class QueryRecordResponseUnmarshaller {
 			ListItem listItem = new ListItem();
 			listItem.setSnapshotUrl(_ctx.stringValue("QueryRecordResponse.Data.List["+ i +"].SnapshotUrl"));
 			listItem.setEndTime(_ctx.stringValue("QueryRecordResponse.Data.List["+ i +"].EndTime"));
+			listItem.setEventType(_ctx.integerValue("QueryRecordResponse.Data.List["+ i +"].EventType"));
 			listItem.setRecordType(_ctx.integerValue("QueryRecordResponse.Data.List["+ i +"].RecordType"));
 			listItem.setStreamType(_ctx.integerValue("QueryRecordResponse.Data.List["+ i +"].StreamType"));
 			listItem.setBeginTime(_ctx.stringValue("QueryRecordResponse.Data.List["+ i +"].BeginTime"));
