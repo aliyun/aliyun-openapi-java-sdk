@@ -62,6 +62,10 @@ public class DescribeContainerGroupMetricResponse extends AcsResponse {
 
 		private List<Container> containers;
 
+		private List<Filesystem> filesystem;
+
+		private List<Disk> disk;
+
 		private CPU cPU;
 
 		private Memory memory;
@@ -83,6 +87,23 @@ public class DescribeContainerGroupMetricResponse extends AcsResponse {
 		public void setContainers(List<Container> containers) {
 			this.containers = containers;
 		}
+
+		public List<Filesystem> getFilesystem() {
+			return filesystem;
+		}
+
+		public void setFilesystem(List<Filesystem> filesystem) {
+			this.filesystem = filesystem;
+		}
+
+		public List<Disk> getDisk() {
+			return this.disk;
+		}
+
+		public void setDisk(List<Disk> disk) {
+			this.disk = disk;
+		}
+
 
 		public CPU getCPU() {
 			return this.cPU;
@@ -234,6 +255,112 @@ public class DescribeContainerGroupMetricResponse extends AcsResponse {
 				public void setRss(Long rss) {
 					this.rss = rss;
 				}
+			}
+		}
+
+		public static class Filesystem {
+
+			private Long capacity;
+
+			private Long available;
+
+			private String fsName;
+
+			private String category;
+
+			private Long usage;
+
+			public Long getCapacity() {
+				return this.capacity;
+			}
+
+			public void setCapacity(Long capacity) {
+				this.capacity = capacity;
+			}
+
+			public Long getAvailable() {
+				return this.available;
+			}
+
+			public void setAvailable(Long available) {
+				this.available = available;
+			}
+
+			public String getFsName() {
+				return this.fsName;
+			}
+
+			public void setFsName(String fsName) {
+				this.fsName = fsName;
+			}
+
+			public String getCategory() {
+				return this.category;
+			}
+
+			public void setCategory(String category) {
+				this.category = category;
+			}
+
+			public Long getUsage() {
+				return this.usage;
+			}
+
+			public void setUsage(Long usage) {
+				this.usage = usage;
+			}
+		}
+
+		public static class Disk {
+
+			private Long writeBytes;
+
+			private String device;
+
+			private Long writeIo;
+
+			private Long readBytes;
+
+			private Long readIo;
+
+			public Long getWriteBytes() {
+				return this.writeBytes;
+			}
+
+			public void setWriteBytes(Long writeBytes) {
+				this.writeBytes = writeBytes;
+			}
+
+			public String getDevice() {
+				return this.device;
+			}
+
+			public void setDevice(String device) {
+				this.device = device;
+			}
+
+			public Long getWriteIo() {
+				return this.writeIo;
+			}
+
+			public void setWriteIo(Long writeIo) {
+				this.writeIo = writeIo;
+			}
+
+			public Long getReadBytes() {
+				return this.readBytes;
+			}
+
+			public void setReadBytes(Long readBytes) {
+				this.readBytes = readBytes;
+			}
+
+			public Long getReadIo() {
+				return this.readIo;
+			}
+
+			public void setReadIo(Long readIo) {
+				this.readIo = readIo;
 			}
 		}
 

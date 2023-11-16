@@ -96,6 +96,30 @@ public class DescribeContainerGroupMetricResponseUnmarshaller {
 			}
 			record.setContainers(containers);
 
+			List<Record.Filesystem> filesystems = new ArrayList<Record.Filesystem>();
+			for (int j = 0; j < context.lengthValue("DescribeContainerGroupMetricResponse.Records["+ i +"].Filesystem.Length"); j++){
+				Record.Filesystem filesystem = new Record.Filesystem();
+				filesystem.setAvailable(context.longValue("DescribeContainerGroupMetricResponse.Records["+ i +"].Filesystem[" + j +"].Available"));
+				filesystem.setCapacity(context.longValue("DescribeContainerGroupMetricResponse.Records["+ i +"].Filesystem[" + j +"].Capacity"));
+				filesystem.setUsage(context.longValue("DescribeContainerGroupMetricResponse.Records["+ i +"].Filesystem[" + j +"].Usage"));
+				filesystem.setFsName(context.stringValue("DescribeContainerGroupMetricResponse.Records["+ i +"].Filesystem[" + j +"].FsName"));
+				filesystem.setCategory(context.stringValue("DescribeContainerGroupMetricResponse.Records["+ i +"].Filesystem[" + j +"].Category"));
+				filesystems.add(filesystem);
+			}
+			record.setFilesystem(filesystems);
+
+			List<Record.Disk> disks = new ArrayList<Record.Disk>();
+			for (int j = 0; j < context.lengthValue("DescribeContainerGroupMetricResponse.Records["+ i +"].Disk.Length"); j++){
+				Record.Disk disk = new Record.Disk();
+				disk.setDevice(context.stringValue("DescribeContainerGroupMetricResponse.Records["+ i +"].Disk[" + j +"].Device"));
+				disk.setReadBytes(context.longValue("DescribeContainerGroupMetricResponse.Records["+ i +"].Disk[" + j +"].ReadBytes"));
+				disk.setReadIo(context.longValue("DescribeContainerGroupMetricResponse.Records["+ i +"].Disk[" + j +"].ReadIo"));
+				disk.setWriteBytes(context.longValue("DescribeContainerGroupMetricResponse.Records["+ i +"].Disk[" + j +"].WriteBytes"));
+				disk.setWriteIo(context.longValue("DescribeContainerGroupMetricResponse.Records["+ i +"].Disk[" + j +"].WriteIo"));
+				disks.add(disk);
+			}
+			record.setDisk(disks);
+
 			records.add(record);
 		}
 		describeContainerGroupMetricResponse.setRecords(records);
