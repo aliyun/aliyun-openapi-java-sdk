@@ -25,6 +25,8 @@ import com.aliyuncs.dataworks_public.Endpoint;
 public class CreateQualityRuleRequest extends RpcAcsRequest<CreateQualityRuleResponse> {
 	   
 
+	private String taskSetting;
+
 	private String trend;
 
 	private Integer blockType;
@@ -69,6 +71,17 @@ public class CreateQualityRuleRequest extends RpcAcsRequest<CreateQualityRuleRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getTaskSetting() {
+		return this.taskSetting;
+	}
+
+	public void setTaskSetting(String taskSetting) {
+		this.taskSetting = taskSetting;
+		if(taskSetting != null){
+			putBodyParameter("TaskSetting", taskSetting);
+		}
 	}
 
 	public String getTrend() {
