@@ -1,3 +1,6 @@
+2023-11-21 Version: 1.8.4
+Fix the issue of cache for internal maven repository
+
 2023-11-21 Version: 1.8.3
 Fix the issue of dirty cache for internal maven repository
 
