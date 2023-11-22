@@ -27,8 +27,6 @@ public class UpgradeLindormInstanceRequest extends RpcAcsRequest<UpgradeLindormI
 
 	private Long resourceOwnerId;
 
-	private Integer phoenixCoreNum;
-
 	private String logSpec;
 
 	private String securityToken;
@@ -50,8 +48,6 @@ public class UpgradeLindormInstanceRequest extends RpcAcsRequest<UpgradeLindormI
 	private Integer logSingleStorage;
 
 	private String zoneId;
-
-	private String phoenixCoreSpec;
 
 	private String upgradeType;
 
@@ -97,17 +93,6 @@ public class UpgradeLindormInstanceRequest extends RpcAcsRequest<UpgradeLindormI
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public Integer getPhoenixCoreNum() {
-		return this.phoenixCoreNum;
-	}
-
-	public void setPhoenixCoreNum(Integer phoenixCoreNum) {
-		this.phoenixCoreNum = phoenixCoreNum;
-		if(phoenixCoreNum != null){
-			putQueryParameter("PhoenixCoreNum", phoenixCoreNum.toString());
 		}
 	}
 
@@ -229,17 +214,6 @@ public class UpgradeLindormInstanceRequest extends RpcAcsRequest<UpgradeLindormI
 		this.zoneId = zoneId;
 		if(zoneId != null){
 			putQueryParameter("ZoneId", zoneId);
-		}
-	}
-
-	public String getPhoenixCoreSpec() {
-		return this.phoenixCoreSpec;
-	}
-
-	public void setPhoenixCoreSpec(String phoenixCoreSpec) {
-		this.phoenixCoreSpec = phoenixCoreSpec;
-		if(phoenixCoreSpec != null){
-			putQueryParameter("PhoenixCoreSpec", phoenixCoreSpec);
 		}
 	}
 

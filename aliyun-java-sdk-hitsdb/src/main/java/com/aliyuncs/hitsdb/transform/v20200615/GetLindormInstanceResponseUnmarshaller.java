@@ -84,6 +84,7 @@ public class GetLindormInstanceResponseUnmarshaller {
 		getLindormInstanceResponse.setLogNum(_ctx.integerValue("GetLindormInstanceResponse.LogNum"));
 		getLindormInstanceResponse.setLogSingleStorage(_ctx.integerValue("GetLindormInstanceResponse.LogSingleStorage"));
 		getLindormInstanceResponse.setArchVersion(_ctx.stringValue("GetLindormInstanceResponse.ArchVersion"));
+		getLindormInstanceResponse.setEnableLsqlVersionV3(_ctx.booleanValue("GetLindormInstanceResponse.EnableLsqlVersionV3"));
 
 		List<Engine> engineList = new ArrayList<Engine>();
 		for (int i = 0; i < _ctx.lengthValue("GetLindormInstanceResponse.EngineList.Length"); i++) {

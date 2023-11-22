@@ -141,6 +141,8 @@ public class GetLindormInstanceResponse extends AcsResponse {
 
 	private String archVersion;
 
+	private Boolean enableLsqlVersionV3;
+
 	private List<Engine> engineList;
 
 	public String getVpcId() {
@@ -605,6 +607,14 @@ public class GetLindormInstanceResponse extends AcsResponse {
 
 	public void setArchVersion(String archVersion) {
 		this.archVersion = archVersion;
+	}
+
+	public Boolean getEnableLsqlVersionV3() {
+		return this.enableLsqlVersionV3;
+	}
+
+	public void setEnableLsqlVersionV3(Boolean enableLsqlVersionV3) {
+		this.enableLsqlVersionV3 = enableLsqlVersionV3;
 	}
 
 	public List<Engine> getEngineList() {

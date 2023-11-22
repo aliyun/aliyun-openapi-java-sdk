@@ -22,12 +22,10 @@ import com.aliyuncs.hitsdb.Endpoint;
  * @author auto create
  * @version 
  */
-public class UpdateInstanceIpWhiteListRequest extends RpcAcsRequest<UpdateInstanceIpWhiteListResponse> {
+public class CreateLdpsNamespaceRequest extends RpcAcsRequest<CreateLdpsNamespaceResponse> {
 	   
 
 	private Long resourceOwnerId;
-
-	private Boolean delete;
 
 	private String securityToken;
 
@@ -37,11 +35,11 @@ public class UpdateInstanceIpWhiteListRequest extends RpcAcsRequest<UpdateInstan
 
 	private Long ownerId;
 
-	private String securityIpList;
-
 	private String instanceId;
-	public UpdateInstanceIpWhiteListRequest() {
-		super("hitsdb", "2020-06-15", "UpdateInstanceIpWhiteList", "hitsdb");
+
+	private String namespace;
+	public CreateLdpsNamespaceRequest() {
+		super("hitsdb", "2020-06-15", "CreateLdpsNamespace", "hitsdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -57,17 +55,6 @@ public class UpdateInstanceIpWhiteListRequest extends RpcAcsRequest<UpdateInstan
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public Boolean getDelete() {
-		return this.delete;
-	}
-
-	public void setDelete(Boolean delete) {
-		this.delete = delete;
-		if(delete != null){
-			putQueryParameter("Delete", delete.toString());
 		}
 	}
 
@@ -115,17 +102,6 @@ public class UpdateInstanceIpWhiteListRequest extends RpcAcsRequest<UpdateInstan
 		}
 	}
 
-	public String getSecurityIpList() {
-		return this.securityIpList;
-	}
-
-	public void setSecurityIpList(String securityIpList) {
-		this.securityIpList = securityIpList;
-		if(securityIpList != null){
-			putQueryParameter("SecurityIpList", securityIpList);
-		}
-	}
-
 	public String getInstanceId() {
 		return this.instanceId;
 	}
@@ -137,9 +113,20 @@ public class UpdateInstanceIpWhiteListRequest extends RpcAcsRequest<UpdateInstan
 		}
 	}
 
+	public String getNamespace() {
+		return this.namespace;
+	}
+
+	public void setNamespace(String namespace) {
+		this.namespace = namespace;
+		if(namespace != null){
+			putQueryParameter("Namespace", namespace);
+		}
+	}
+
 	@Override
-	public Class<UpdateInstanceIpWhiteListResponse> getResponseClass() {
-		return UpdateInstanceIpWhiteListResponse.class;
+	public Class<CreateLdpsNamespaceResponse> getResponseClass() {
+		return CreateLdpsNamespaceResponse.class;
 	}
 
 }

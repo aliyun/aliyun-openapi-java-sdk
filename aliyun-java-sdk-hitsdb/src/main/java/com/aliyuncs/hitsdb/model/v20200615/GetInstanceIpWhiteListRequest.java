@@ -35,8 +35,6 @@ public class GetInstanceIpWhiteListRequest extends RpcAcsRequest<GetInstanceIpWh
 
 	private Long ownerId;
 
-	private String groupName;
-
 	private String instanceId;
 	public GetInstanceIpWhiteListRequest() {
 		super("hitsdb", "2020-06-15", "GetInstanceIpWhiteList", "hitsdb");
@@ -99,17 +97,6 @@ public class GetInstanceIpWhiteListRequest extends RpcAcsRequest<GetInstanceIpWh
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getGroupName() {
-		return this.groupName;
-	}
-
-	public void setGroupName(String groupName) {
-		this.groupName = groupName;
-		if(groupName != null){
-			putQueryParameter("GroupName", groupName);
 		}
 	}
 
