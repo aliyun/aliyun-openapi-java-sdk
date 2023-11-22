@@ -44,6 +44,8 @@ public class DescribeCasterConfigResponseUnmarshaller {
 		describeCasterConfigResponse.setDomainName(_ctx.stringValue("DescribeCasterConfigResponse.DomainName"));
 		describeCasterConfigResponse.setSideOutputUrlList(_ctx.stringValue("DescribeCasterConfigResponse.SideOutputUrlList"));
 		describeCasterConfigResponse.setSideOutputUrl(_ctx.stringValue("DescribeCasterConfigResponse.SideOutputUrl"));
+		describeCasterConfigResponse.setAutoSwitchUrgentOn(_ctx.stringValue("DescribeCasterConfigResponse.AutoSwitchUrgentOn"));
+		describeCasterConfigResponse.setAutoSwitchUrgentConfig(_ctx.stringValue("DescribeCasterConfigResponse.AutoSwitchUrgentConfig"));
 
 		TranscodeConfig transcodeConfig = new TranscodeConfig();
 		transcodeConfig.setCasterTemplate(_ctx.stringValue("DescribeCasterConfigResponse.TranscodeConfig.CasterTemplate"));

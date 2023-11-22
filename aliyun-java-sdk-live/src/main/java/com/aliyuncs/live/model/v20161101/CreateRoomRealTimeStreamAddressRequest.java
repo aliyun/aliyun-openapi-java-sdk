@@ -15,7 +15,7 @@
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.live.Endpoint;
 
@@ -23,38 +23,48 @@ import com.aliyuncs.live.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateEventSubRequest extends RpcAcsRequest<CreateEventSubResponse> {
+public class CreateRoomRealTimeStreamAddressRequest extends RpcAcsRequest<CreateRoomRealTimeStreamAddressResponse> {
 	   
 
-	private List<String> userss;
+	private Integer expireTime;
+
+	private String userId;
 
 	private String appId;
 
-	private String callbackUrl;
+	private String displayName;
 
 	private String channelId;
-
-	private List<String> eventss;
-	public CreateEventSubRequest() {
-		super("live", "2016-11-01", "CreateEventSub", "live");
-		setMethod(MethodType.POST);
+	public CreateRoomRealTimeStreamAddressRequest() {
+		super("live", "2016-11-01", "CreateRoomRealTimeStreamAddress", "live");
+		setProtocol(ProtocolType.HTTPS);
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public List<String> getUserss() {
-		return this.userss;
+	public Integer getExpireTime() {
+		return this.expireTime;
 	}
 
-	public void setUserss(List<String> userss) {
-		this.userss = userss;	
-		if (userss != null) {
-			for (int i = 0; i < userss.size(); i++) {
-				putQueryParameter("Users." + (i + 1) , userss.get(i));
-			}
-		}	
+	public void setExpireTime(Integer expireTime) {
+		this.expireTime = expireTime;
+		if(expireTime != null){
+			putQueryParameter("ExpireTime", expireTime.toString());
+		}
+	}
+
+	public String getUserId() {
+		return this.userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+		if(userId != null){
+			putQueryParameter("UserId", userId);
+		}
 	}
 
 	public String getAppId() {
@@ -68,14 +78,14 @@ public class CreateEventSubRequest extends RpcAcsRequest<CreateEventSubResponse>
 		}
 	}
 
-	public String getCallbackUrl() {
-		return this.callbackUrl;
+	public String getDisplayName() {
+		return this.displayName;
 	}
 
-	public void setCallbackUrl(String callbackUrl) {
-		this.callbackUrl = callbackUrl;
-		if(callbackUrl != null){
-			putQueryParameter("CallbackUrl", callbackUrl);
+	public void setDisplayName(String displayName) {
+		this.displayName = displayName;
+		if(displayName != null){
+			putQueryParameter("DisplayName", displayName);
 		}
 	}
 
@@ -90,22 +100,9 @@ public class CreateEventSubRequest extends RpcAcsRequest<CreateEventSubResponse>
 		}
 	}
 
-	public List<String> getEventss() {
-		return this.eventss;
-	}
-
-	public void setEventss(List<String> eventss) {
-		this.eventss = eventss;	
-		if (eventss != null) {
-			for (int i = 0; i < eventss.size(); i++) {
-				putQueryParameter("Events." + (i + 1) , eventss.get(i));
-			}
-		}	
-	}
-
 	@Override
-	public Class<CreateEventSubResponse> getResponseClass() {
-		return CreateEventSubResponse.class;
+	public Class<CreateRoomRealTimeStreamAddressResponse> getResponseClass() {
+		return CreateRoomRealTimeStreamAddressResponse.class;
 	}
 
 }

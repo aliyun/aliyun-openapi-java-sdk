@@ -41,6 +41,10 @@ public class SetCasterConfigRequest extends RpcAcsRequest<SetCasterConfigRespons
 
 	private String casterName;
 
+	private Boolean autoSwitchUrgentOn;
+
+	private String autoSwitchUrgentConfig;
+
 	private String urgentLiveStreamUrl;
 
 	private String sideOutputUrl;
@@ -154,6 +158,28 @@ public class SetCasterConfigRequest extends RpcAcsRequest<SetCasterConfigRespons
 		this.casterName = casterName;
 		if(casterName != null){
 			putQueryParameter("CasterName", casterName);
+		}
+	}
+
+	public Boolean getAutoSwitchUrgentOn() {
+		return this.autoSwitchUrgentOn;
+	}
+
+	public void setAutoSwitchUrgentOn(Boolean autoSwitchUrgentOn) {
+		this.autoSwitchUrgentOn = autoSwitchUrgentOn;
+		if(autoSwitchUrgentOn != null){
+			putQueryParameter("AutoSwitchUrgentOn", autoSwitchUrgentOn.toString());
+		}
+	}
+
+	public String getAutoSwitchUrgentConfig() {
+		return this.autoSwitchUrgentConfig;
+	}
+
+	public void setAutoSwitchUrgentConfig(String autoSwitchUrgentConfig) {
+		this.autoSwitchUrgentConfig = autoSwitchUrgentConfig;
+		if(autoSwitchUrgentConfig != null){
+			putQueryParameter("AutoSwitchUrgentConfig", autoSwitchUrgentConfig);
 		}
 	}
 

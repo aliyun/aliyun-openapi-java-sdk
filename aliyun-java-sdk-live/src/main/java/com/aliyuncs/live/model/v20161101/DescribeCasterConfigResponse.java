@@ -55,6 +55,10 @@ public class DescribeCasterConfigResponse extends AcsResponse {
 
 	private String sideOutputUrl;
 
+	private String autoSwitchUrgentOn;
+
+	private String autoSwitchUrgentConfig;
+
 	private List<SyncGroup> syncGroupsConfig;
 
 	private TranscodeConfig transcodeConfig;
@@ -179,6 +183,22 @@ public class DescribeCasterConfigResponse extends AcsResponse {
 
 	public void setSideOutputUrl(String sideOutputUrl) {
 		this.sideOutputUrl = sideOutputUrl;
+	}
+
+	public String getAutoSwitchUrgentOn() {
+		return this.autoSwitchUrgentOn;
+	}
+
+	public void setAutoSwitchUrgentOn(String autoSwitchUrgentOn) {
+		this.autoSwitchUrgentOn = autoSwitchUrgentOn;
+	}
+
+	public String getAutoSwitchUrgentConfig() {
+		return this.autoSwitchUrgentConfig;
+	}
+
+	public void setAutoSwitchUrgentConfig(String autoSwitchUrgentConfig) {
+		this.autoSwitchUrgentConfig = autoSwitchUrgentConfig;
 	}
 
 	public List<SyncGroup> getSyncGroupsConfig() {
