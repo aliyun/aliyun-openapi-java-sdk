@@ -45,6 +45,8 @@ public class GetLabelTableResponse extends AcsResponse {
 
 	private List<Field> fields;
 
+	private List<String> relatedModelFeatures;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -123,6 +125,14 @@ public class GetLabelTableResponse extends AcsResponse {
 
 	public void setFields(List<Field> fields) {
 		this.fields = fields;
+	}
+
+	public List<String> getRelatedModelFeatures() {
+		return this.relatedModelFeatures;
+	}
+
+	public void setRelatedModelFeatures(List<String> relatedModelFeatures) {
+		this.relatedModelFeatures = relatedModelFeatures;
 	}
 
 	public static class Field {

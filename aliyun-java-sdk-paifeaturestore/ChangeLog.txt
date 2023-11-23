@@ -1,3 +1,7 @@
+2023-11-23 Version: 1.0.6
+- Add RelatedModelFeatures in GetLabelTable.
+- Delete DatasourceId, Name in UpdateLabelTable.
+
 2023-09-13 Version: 1.0.5
 - Add value, values, startValue, endValue in ExportModelFeatureTrainingSetTable.
 

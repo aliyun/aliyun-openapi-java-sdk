@@ -36,6 +36,12 @@ public class GetLabelTableResponseUnmarshaller {
 		getLabelTableResponse.setGmtCreateTime(_ctx.stringValue("GetLabelTableResponse.GmtCreateTime"));
 		getLabelTableResponse.setGmtModifiedTime(_ctx.stringValue("GetLabelTableResponse.GmtModifiedTime"));
 
+		List<String> relatedModelFeatures = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("GetLabelTableResponse.RelatedModelFeatures.Length"); i++) {
+			relatedModelFeatures.add(_ctx.stringValue("GetLabelTableResponse.RelatedModelFeatures["+ i +"]"));
+		}
+		getLabelTableResponse.setRelatedModelFeatures(relatedModelFeatures);
+
 		List<Field> fields = new ArrayList<Field>();
 		for (int i = 0; i < _ctx.lengthValue("GetLabelTableResponse.Fields.Length"); i++) {
 			Field field = new Field();
