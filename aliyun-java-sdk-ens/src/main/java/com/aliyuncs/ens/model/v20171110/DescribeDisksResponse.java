@@ -115,6 +115,10 @@ public class DescribeDisksResponse extends AcsResponse {
 
 		private String serialId;
 
+		private Boolean encrypted;
+
+		private String encryptedKeyId;
+
 		public String getCategory() {
 			return this.category;
 		}
@@ -225,6 +229,22 @@ public class DescribeDisksResponse extends AcsResponse {
 
 		public void setSerialId(String serialId) {
 			this.serialId = serialId;
+		}
+
+		public Boolean getEncrypted() {
+			return this.encrypted;
+		}
+
+		public void setEncrypted(Boolean encrypted) {
+			this.encrypted = encrypted;
+		}
+
+		public String getEncryptedKeyId() {
+			return this.encryptedKeyId;
+		}
+
+		public void setEncryptedKeyId(String encryptedKeyId) {
+			this.encryptedKeyId = encryptedKeyId;
 		}
 	}
 

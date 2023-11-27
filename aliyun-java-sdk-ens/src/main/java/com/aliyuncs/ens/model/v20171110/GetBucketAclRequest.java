@@ -15,22 +15,37 @@
 package com.aliyuncs.ens.model.v20171110;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeRegionBandwidthQuotaRequest extends RpcAcsRequest<DescribeRegionBandwidthQuotaResponse> {
+public class GetBucketAclRequest extends RpcAcsRequest<GetBucketAclResponse> {
 	   
-	public DescribeRegionBandwidthQuotaRequest() {
-		super("Ens", "2017-11-10", "DescribeRegionBandwidthQuota", "ens");
+
+	private String bucketName;
+	public GetBucketAclRequest() {
+		super("Ens", "2017-11-10", "GetBucketAcl", "ens");
+		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.GET);
 	}
 
+	public String getBucketName() {
+		return this.bucketName;
+	}
+
+	public void setBucketName(String bucketName) {
+		this.bucketName = bucketName;
+		if(bucketName != null){
+			putQueryParameter("BucketName", bucketName);
+		}
+	}
+
 	@Override
-	public Class<DescribeRegionBandwidthQuotaResponse> getResponseClass() {
-		return DescribeRegionBandwidthQuotaResponse.class;
+	public Class<GetBucketAclResponse> getResponseClass() {
+		return GetBucketAclResponse.class;
 	}
 
 }

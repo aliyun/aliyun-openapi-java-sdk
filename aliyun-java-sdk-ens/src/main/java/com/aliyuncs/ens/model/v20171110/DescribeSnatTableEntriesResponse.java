@@ -93,6 +93,12 @@ public class DescribeSnatTableEntriesResponse extends AcsResponse {
 
 		private String standbyStatus;
 
+		private String type;
+
+		private Integer idleTimeout;
+
+		private String destCIDR;
+
 		private List<SnatIp> snatIps;
 
 		public String getNatGatewayId() {
@@ -157,6 +163,30 @@ public class DescribeSnatTableEntriesResponse extends AcsResponse {
 
 		public void setStandbyStatus(String standbyStatus) {
 			this.standbyStatus = standbyStatus;
+		}
+
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
+		}
+
+		public Integer getIdleTimeout() {
+			return this.idleTimeout;
+		}
+
+		public void setIdleTimeout(Integer idleTimeout) {
+			this.idleTimeout = idleTimeout;
+		}
+
+		public String getDestCIDR() {
+			return this.destCIDR;
+		}
+
+		public void setDestCIDR(String destCIDR) {
+			this.destCIDR = destCIDR;
 		}
 
 		public List<SnatIp> getSnatIps() {

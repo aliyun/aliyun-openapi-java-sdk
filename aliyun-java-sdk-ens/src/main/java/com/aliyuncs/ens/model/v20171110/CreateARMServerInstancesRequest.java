@@ -42,6 +42,8 @@ public class CreateARMServerInstancesRequest extends RpcAcsRequest<CreateARMServ
 
 	private String serverType;
 
+	private Boolean autoUseCoupon;
+
 	private String instanceType;
 
 	private Integer amount;
@@ -152,6 +154,17 @@ public class CreateARMServerInstancesRequest extends RpcAcsRequest<CreateARMServ
 		this.serverType = serverType;
 		if(serverType != null){
 			putQueryParameter("ServerType", serverType);
+		}
+	}
+
+	public Boolean getAutoUseCoupon() {
+		return this.autoUseCoupon;
+	}
+
+	public void setAutoUseCoupon(Boolean autoUseCoupon) {
+		this.autoUseCoupon = autoUseCoupon;
+		if(autoUseCoupon != null){
+			putQueryParameter("AutoUseCoupon", autoUseCoupon.toString());
 		}
 	}
 

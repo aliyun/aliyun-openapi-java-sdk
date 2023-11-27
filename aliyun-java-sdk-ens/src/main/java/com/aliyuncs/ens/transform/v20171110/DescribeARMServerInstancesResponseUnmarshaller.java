@@ -21,6 +21,7 @@ import com.aliyuncs.ens.model.v20171110.DescribeARMServerInstancesResponse;
 import com.aliyuncs.ens.model.v20171110.DescribeARMServerInstancesResponse.ServersItem;
 import com.aliyuncs.ens.model.v20171110.DescribeARMServerInstancesResponse.ServersItem.AICInstancesItem;
 import com.aliyuncs.ens.model.v20171110.DescribeARMServerInstancesResponse.ServersItem.AICInstancesItem.NetworkAttributes;
+import com.aliyuncs.ens.model.v20171110.DescribeARMServerInstancesResponse.ServersItem.AICInstancesItem.SdgDeployInfo;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -66,6 +67,11 @@ public class DescribeARMServerInstancesResponseUnmarshaller {
 				networkAttributes.setNetworkId(_ctx.stringValue("DescribeARMServerInstancesResponse.Servers["+ i +"].AICInstances["+ j +"].NetworkAttributes.NetworkId"));
 				networkAttributes.setVSwitchId(_ctx.stringValue("DescribeARMServerInstancesResponse.Servers["+ i +"].AICInstances["+ j +"].NetworkAttributes.VSwitchId"));
 				aICInstancesItem.setNetworkAttributes(networkAttributes);
+
+				SdgDeployInfo sdgDeployInfo = new SdgDeployInfo();
+				sdgDeployInfo.setSDGId(_ctx.stringValue("DescribeARMServerInstancesResponse.Servers["+ i +"].AICInstances["+ j +"].SdgDeployInfo.SDGId"));
+				sdgDeployInfo.setStatus(_ctx.stringValue("DescribeARMServerInstancesResponse.Servers["+ i +"].AICInstances["+ j +"].SdgDeployInfo.Status"));
+				aICInstancesItem.setSdgDeployInfo(sdgDeployInfo);
 
 				aICInstances.add(aICInstancesItem);
 			}

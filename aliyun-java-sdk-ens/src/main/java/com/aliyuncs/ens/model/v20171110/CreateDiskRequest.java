@@ -24,28 +24,34 @@ import com.aliyuncs.http.MethodType;
 public class CreateDiskRequest extends RpcAcsRequest<CreateDiskResponse> {
 	   
 
-	private String snapshotId;
+	private String diskName;
 
 	private String ensRegionId;
 
-	private String instanceChargeType;
-
 	private String size;
 
+	private String snapshotId;
+
+	private String instanceChargeType;
+
+	private Boolean encrypted;
+
 	private String category;
+
+	private String kMSKeyId;
 	public CreateDiskRequest() {
 		super("Ens", "2017-11-10", "CreateDisk", "ens");
 		setMethod(MethodType.POST);
 	}
 
-	public String getSnapshotId() {
-		return this.snapshotId;
+	public String getDiskName() {
+		return this.diskName;
 	}
 
-	public void setSnapshotId(String snapshotId) {
-		this.snapshotId = snapshotId;
-		if(snapshotId != null){
-			putQueryParameter("SnapshotId", snapshotId);
+	public void setDiskName(String diskName) {
+		this.diskName = diskName;
+		if(diskName != null){
+			putQueryParameter("DiskName", diskName);
 		}
 	}
 
@@ -60,17 +66,6 @@ public class CreateDiskRequest extends RpcAcsRequest<CreateDiskResponse> {
 		}
 	}
 
-	public String getInstanceChargeType() {
-		return this.instanceChargeType;
-	}
-
-	public void setInstanceChargeType(String instanceChargeType) {
-		this.instanceChargeType = instanceChargeType;
-		if(instanceChargeType != null){
-			putQueryParameter("InstanceChargeType", instanceChargeType);
-		}
-	}
-
 	public String getSize() {
 		return this.size;
 	}
@@ -82,6 +77,39 @@ public class CreateDiskRequest extends RpcAcsRequest<CreateDiskResponse> {
 		}
 	}
 
+	public String getSnapshotId() {
+		return this.snapshotId;
+	}
+
+	public void setSnapshotId(String snapshotId) {
+		this.snapshotId = snapshotId;
+		if(snapshotId != null){
+			putQueryParameter("SnapshotId", snapshotId);
+		}
+	}
+
+	public String getInstanceChargeType() {
+		return this.instanceChargeType;
+	}
+
+	public void setInstanceChargeType(String instanceChargeType) {
+		this.instanceChargeType = instanceChargeType;
+		if(instanceChargeType != null){
+			putQueryParameter("InstanceChargeType", instanceChargeType);
+		}
+	}
+
+	public Boolean getEncrypted() {
+		return this.encrypted;
+	}
+
+	public void setEncrypted(Boolean encrypted) {
+		this.encrypted = encrypted;
+		if(encrypted != null){
+			putQueryParameter("Encrypted", encrypted.toString());
+		}
+	}
+
 	public String getCategory() {
 		return this.category;
 	}
@@ -90,6 +118,17 @@ public class CreateDiskRequest extends RpcAcsRequest<CreateDiskResponse> {
 		this.category = category;
 		if(category != null){
 			putQueryParameter("Category", category);
+		}
+	}
+
+	public String getKMSKeyId() {
+		return this.kMSKeyId;
+	}
+
+	public void setKMSKeyId(String kMSKeyId) {
+		this.kMSKeyId = kMSKeyId;
+		if(kMSKeyId != null){
+			putQueryParameter("KMSKeyId", kMSKeyId);
 		}
 	}
 

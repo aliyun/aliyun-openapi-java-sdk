@@ -219,6 +219,8 @@ public class DescribeARMServerInstancesResponse extends AcsResponse {
 
 			private NetworkAttributes networkAttributes;
 
+			private SdgDeployInfo sdgDeployInfo;
+
 			public Long getFrequency() {
 				return this.frequency;
 			}
@@ -299,6 +301,14 @@ public class DescribeARMServerInstancesResponse extends AcsResponse {
 				this.networkAttributes = networkAttributes;
 			}
 
+			public SdgDeployInfo getSdgDeployInfo() {
+				return this.sdgDeployInfo;
+			}
+
+			public void setSdgDeployInfo(SdgDeployInfo sdgDeployInfo) {
+				this.sdgDeployInfo = sdgDeployInfo;
+			}
+
 			public static class NetworkAttributes {
 
 				private String ipAddress;
@@ -329,6 +339,29 @@ public class DescribeARMServerInstancesResponse extends AcsResponse {
 
 				public void setVSwitchId(String vSwitchId) {
 					this.vSwitchId = vSwitchId;
+				}
+			}
+
+			public static class SdgDeployInfo {
+
+				private String sDGId;
+
+				private String status;
+
+				public String getSDGId() {
+					return this.sDGId;
+				}
+
+				public void setSDGId(String sDGId) {
+					this.sDGId = sDGId;
+				}
+
+				public String getStatus() {
+					return this.status;
+				}
+
+				public void setStatus(String status) {
+					this.status = status;
 				}
 			}
 		}

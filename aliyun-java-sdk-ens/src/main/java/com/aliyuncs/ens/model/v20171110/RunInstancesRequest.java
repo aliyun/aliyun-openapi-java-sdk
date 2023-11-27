@@ -52,6 +52,8 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 	private Boolean publicIpIdentification;
 
+	private String billingCycle;
+
 	private String vSwitchId;
 
 	private String privateIpAddress;
@@ -72,6 +74,8 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 	private Long internetMaxBandwidthOut;
 
+	private String autoUseCoupon;
+
 	private String userData;
 
 	private Boolean passwordInherit;
@@ -81,6 +85,8 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 	private String instanceChargeType;
 
 	private Long amount;
+
+	private String ipType;
 
 	@SerializedName("dataDisk")
 	private List<DataDisk> dataDisk;
@@ -225,6 +231,17 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		}
 	}
 
+	public String getBillingCycle() {
+		return this.billingCycle;
+	}
+
+	public void setBillingCycle(String billingCycle) {
+		this.billingCycle = billingCycle;
+		if(billingCycle != null){
+			putQueryParameter("BillingCycle", billingCycle);
+		}
+	}
+
 	public String getVSwitchId() {
 		return this.vSwitchId;
 	}
@@ -335,6 +352,17 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		}
 	}
 
+	public String getAutoUseCoupon() {
+		return this.autoUseCoupon;
+	}
+
+	public void setAutoUseCoupon(String autoUseCoupon) {
+		this.autoUseCoupon = autoUseCoupon;
+		if(autoUseCoupon != null){
+			putQueryParameter("AutoUseCoupon", autoUseCoupon);
+		}
+	}
+
 	public String getUserData() {
 		return this.userData;
 	}
@@ -387,6 +415,17 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		this.amount = amount;
 		if(amount != null){
 			putQueryParameter("Amount", amount.toString());
+		}
+	}
+
+	public String getIpType() {
+		return this.ipType;
+	}
+
+	public void setIpType(String ipType) {
+		this.ipType = ipType;
+		if(ipType != null){
+			putQueryParameter("IpType", ipType);
 		}
 	}
 
@@ -453,8 +492,14 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		@SerializedName("Size")
 		private Long size;
 
+		@SerializedName("Encrypted")
+		private Boolean encrypted;
+
 		@SerializedName("Category")
 		private String category;
+
+		@SerializedName("KMSKeyId")
+		private String kMSKeyId;
 
 		public Long getSize() {
 			return this.size;
@@ -464,12 +509,28 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 			this.size = size;
 		}
 
+		public Boolean getEncrypted() {
+			return this.encrypted;
+		}
+
+		public void setEncrypted(Boolean encrypted) {
+			this.encrypted = encrypted;
+		}
+
 		public String getCategory() {
 			return this.category;
 		}
 
 		public void setCategory(String category) {
 			this.category = category;
+		}
+
+		public String getKMSKeyId() {
+			return this.kMSKeyId;
+		}
+
+		public void setKMSKeyId(String kMSKeyId) {
+			this.kMSKeyId = kMSKeyId;
 		}
 	}
 

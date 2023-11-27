@@ -28,13 +28,15 @@ public class CreateEipInstanceRequest extends RpcAcsRequest<CreateEipInstanceRes
 
 	private String ensRegionId;
 
-	private String instanceChargeType;
-
-	private Long bandwidth;
-
 	private String internetChargeType;
 
 	private String name;
+
+	private String description;
+
+	private String instanceChargeType;
+
+	private Long bandwidth;
 	public CreateEipInstanceRequest() {
 		super("Ens", "2017-11-10", "CreateEipInstance", "ens");
 		setMethod(MethodType.POST);
@@ -62,28 +64,6 @@ public class CreateEipInstanceRequest extends RpcAcsRequest<CreateEipInstanceRes
 		}
 	}
 
-	public String getInstanceChargeType() {
-		return this.instanceChargeType;
-	}
-
-	public void setInstanceChargeType(String instanceChargeType) {
-		this.instanceChargeType = instanceChargeType;
-		if(instanceChargeType != null){
-			putQueryParameter("InstanceChargeType", instanceChargeType);
-		}
-	}
-
-	public Long getBandwidth() {
-		return this.bandwidth;
-	}
-
-	public void setBandwidth(Long bandwidth) {
-		this.bandwidth = bandwidth;
-		if(bandwidth != null){
-			putQueryParameter("Bandwidth", bandwidth.toString());
-		}
-	}
-
 	public String getInternetChargeType() {
 		return this.internetChargeType;
 	}
@@ -103,6 +83,39 @@ public class CreateEipInstanceRequest extends RpcAcsRequest<CreateEipInstanceRes
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getInstanceChargeType() {
+		return this.instanceChargeType;
+	}
+
+	public void setInstanceChargeType(String instanceChargeType) {
+		this.instanceChargeType = instanceChargeType;
+		if(instanceChargeType != null){
+			putQueryParameter("InstanceChargeType", instanceChargeType);
+		}
+	}
+
+	public Long getBandwidth() {
+		return this.bandwidth;
+	}
+
+	public void setBandwidth(Long bandwidth) {
+		this.bandwidth = bandwidth;
+		if(bandwidth != null){
+			putQueryParameter("Bandwidth", bandwidth.toString());
 		}
 	}
 

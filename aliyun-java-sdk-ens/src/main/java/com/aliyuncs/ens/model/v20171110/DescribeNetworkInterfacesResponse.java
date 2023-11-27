@@ -29,9 +29,9 @@ public class DescribeNetworkInterfacesResponse extends AcsResponse {
 
 	private Integer pageSize;
 
-	private String requestId;
-
 	private Integer totalCount;
+
+	private String requestId;
 
 	private List<NetworkInterfaceSet> networkInterfaceSets;
 
@@ -51,20 +51,20 @@ public class DescribeNetworkInterfacesResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Integer getTotalCount() {
 		return this.totalCount;
 	}
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<NetworkInterfaceSet> getNetworkInterfaceSets() {
@@ -93,9 +93,19 @@ public class DescribeNetworkInterfacesResponse extends AcsResponse {
 
 		private String status;
 
+		private String networkId;
+
 		private String vSwitchId;
 
+		private String networkInterfaceName;
+
+		private String description;
+
+		private String type;
+
 		private List<PrivateIpSet> privateIpSets;
+
+		private List<String> securityGroupIds;
 
 		public String getCreationTime() {
 			return this.creationTime;
@@ -161,6 +171,14 @@ public class DescribeNetworkInterfacesResponse extends AcsResponse {
 			this.status = status;
 		}
 
+		public String getNetworkId() {
+			return this.networkId;
+		}
+
+		public void setNetworkId(String networkId) {
+			this.networkId = networkId;
+		}
+
 		public String getVSwitchId() {
 			return this.vSwitchId;
 		}
@@ -169,12 +187,44 @@ public class DescribeNetworkInterfacesResponse extends AcsResponse {
 			this.vSwitchId = vSwitchId;
 		}
 
+		public String getNetworkInterfaceName() {
+			return this.networkInterfaceName;
+		}
+
+		public void setNetworkInterfaceName(String networkInterfaceName) {
+			this.networkInterfaceName = networkInterfaceName;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
+		}
+
 		public List<PrivateIpSet> getPrivateIpSets() {
 			return this.privateIpSets;
 		}
 
 		public void setPrivateIpSets(List<PrivateIpSet> privateIpSets) {
 			this.privateIpSets = privateIpSets;
+		}
+
+		public List<String> getSecurityGroupIds() {
+			return this.securityGroupIds;
+		}
+
+		public void setSecurityGroupIds(List<String> securityGroupIds) {
+			this.securityGroupIds = securityGroupIds;
 		}
 
 		public static class PrivateIpSet {

@@ -56,8 +56,6 @@ public class DescribeARMServerInstancesRequest extends RpcAcsRequest<DescribeARM
 
 	private String minDate;
 
-	private String latestAction;
-
 	private String namespace;
 	public DescribeARMServerInstancesRequest() {
 		super("Ens", "2017-11-10", "DescribeARMServerInstances", "ens");
@@ -193,17 +191,6 @@ public class DescribeARMServerInstancesRequest extends RpcAcsRequest<DescribeARM
 		this.minDate = minDate;
 		if(minDate != null){
 			putQueryParameter("MinDate", minDate);
-		}
-	}
-
-	public String getLatestAction() {
-		return this.latestAction;
-	}
-
-	public void setLatestAction(String latestAction) {
-		this.latestAction = latestAction;
-		if(latestAction != null){
-			putQueryParameter("LatestAction", latestAction);
 		}
 	}
 

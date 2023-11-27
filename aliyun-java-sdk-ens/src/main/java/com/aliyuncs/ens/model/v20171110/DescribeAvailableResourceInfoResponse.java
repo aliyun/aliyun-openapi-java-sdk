@@ -106,6 +106,8 @@ public class DescribeAvailableResourceInfoResponse extends AcsResponse {
 
 		private List<String> instanceSpeces;
 
+		private List<String> isp;
+
 		public Integer getDataDiskMaxSize() {
 			return this.dataDiskMaxSize;
 		}
@@ -170,6 +172,14 @@ public class DescribeAvailableResourceInfoResponse extends AcsResponse {
 			this.instanceSpeces = instanceSpeces;
 		}
 
+		public List<String> getIsp() {
+			return this.isp;
+		}
+
+		public void setIsp(List<String> isp) {
+			this.isp = isp;
+		}
+
 		public static class EnsRegionId {
 
 			private String ensRegionId;
@@ -181,6 +191,8 @@ public class DescribeAvailableResourceInfoResponse extends AcsResponse {
 			private String name;
 
 			private String province;
+
+			private String isp;
 
 			public String getEnsRegionId() {
 				return this.ensRegionId;
@@ -220,6 +232,14 @@ public class DescribeAvailableResourceInfoResponse extends AcsResponse {
 
 			public void setProvince(String province) {
 				this.province = province;
+			}
+
+			public String getIsp() {
+				return this.isp;
+			}
+
+			public void setIsp(String isp) {
+				this.isp = isp;
 			}
 		}
 	}

@@ -43,6 +43,9 @@ public class DescribeSnatTableEntriesResponseUnmarshaller {
 			snatTableEntry.setStatus(_ctx.stringValue("DescribeSnatTableEntriesResponse.SnatTableEntries["+ i +"].Status"));
 			snatTableEntry.setStandbySnatIp(_ctx.stringValue("DescribeSnatTableEntriesResponse.SnatTableEntries["+ i +"].StandbySnatIp"));
 			snatTableEntry.setStandbyStatus(_ctx.stringValue("DescribeSnatTableEntriesResponse.SnatTableEntries["+ i +"].StandbyStatus"));
+			snatTableEntry.setType(_ctx.stringValue("DescribeSnatTableEntriesResponse.SnatTableEntries["+ i +"].Type"));
+			snatTableEntry.setIdleTimeout(_ctx.integerValue("DescribeSnatTableEntriesResponse.SnatTableEntries["+ i +"].IdleTimeout"));
+			snatTableEntry.setDestCIDR(_ctx.stringValue("DescribeSnatTableEntriesResponse.SnatTableEntries["+ i +"].DestCIDR"));
 
 			List<SnatIp> snatIps = new ArrayList<SnatIp>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeSnatTableEntriesResponse.SnatTableEntries["+ i +"].SnatIps.Length"); j++) {
