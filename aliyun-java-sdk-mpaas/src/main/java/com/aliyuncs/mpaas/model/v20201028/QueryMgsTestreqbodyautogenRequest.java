@@ -35,7 +35,7 @@ public class QueryMgsTestreqbodyautogenRequest extends RpcAcsRequest<QueryMgsTes
 
 	private String workspaceId;
 	public QueryMgsTestreqbodyautogenRequest() {
-		super("mPaaS", "2020-10-28", "QueryMgsTestreqbodyautogen");
+		super("mPaaS", "2020-10-28", "QueryMgsTestreqbodyautogen", "mpaas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

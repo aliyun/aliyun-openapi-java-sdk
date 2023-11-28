@@ -33,7 +33,7 @@ public class CopyMcdpGroupRequest extends RpcAcsRequest<CopyMcdpGroupResponse> {
 
 	private String workspaceId;
 	public CopyMcdpGroupRequest() {
-		super("mPaaS", "2020-10-28", "CopyMcdpGroup");
+		super("mPaaS", "2020-10-28", "CopyMcdpGroup", "mpaas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

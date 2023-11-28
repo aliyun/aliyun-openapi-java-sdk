@@ -25,9 +25,13 @@ import com.aliyuncs.mpaas.Endpoint;
 public class ListMcubeMiniPackagesRequest extends RpcAcsRequest<ListMcubeMiniPackagesResponse> {
 	   
 
+	private Integer pageNum;
+
 	private String h5Id;
 
 	private String tenantId;
+
+	private Integer pageSize;
 
 	private String appId;
 
@@ -35,12 +39,23 @@ public class ListMcubeMiniPackagesRequest extends RpcAcsRequest<ListMcubeMiniPac
 
 	private String workspaceId;
 	public ListMcubeMiniPackagesRequest() {
-		super("mPaaS", "2020-10-28", "ListMcubeMiniPackages");
+		super("mPaaS", "2020-10-28", "ListMcubeMiniPackages", "mpaas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Integer getPageNum() {
+		return this.pageNum;
+	}
+
+	public void setPageNum(Integer pageNum) {
+		this.pageNum = pageNum;
+		if(pageNum != null){
+			putBodyParameter("PageNum", pageNum.toString());
+		}
 	}
 
 	public String getH5Id() {
@@ -62,6 +77,17 @@ public class ListMcubeMiniPackagesRequest extends RpcAcsRequest<ListMcubeMiniPac
 		this.tenantId = tenantId;
 		if(tenantId != null){
 			putBodyParameter("TenantId", tenantId);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putBodyParameter("PageSize", pageSize.toString());
 		}
 	}
 

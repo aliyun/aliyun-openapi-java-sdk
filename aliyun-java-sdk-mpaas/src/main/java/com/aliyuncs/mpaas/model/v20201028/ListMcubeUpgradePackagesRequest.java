@@ -25,18 +25,33 @@ import com.aliyuncs.mpaas.Endpoint;
 public class ListMcubeUpgradePackagesRequest extends RpcAcsRequest<ListMcubeUpgradePackagesResponse> {
 	   
 
+	private Integer pageNum;
+
 	private String tenantId;
+
+	private Integer pageSize;
 
 	private String appId;
 
 	private String workspaceId;
 	public ListMcubeUpgradePackagesRequest() {
-		super("mPaaS", "2020-10-28", "ListMcubeUpgradePackages");
+		super("mPaaS", "2020-10-28", "ListMcubeUpgradePackages", "mpaas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Integer getPageNum() {
+		return this.pageNum;
+	}
+
+	public void setPageNum(Integer pageNum) {
+		this.pageNum = pageNum;
+		if(pageNum != null){
+			putBodyParameter("PageNum", pageNum.toString());
+		}
 	}
 
 	public String getTenantId() {
@@ -47,6 +62,17 @@ public class ListMcubeUpgradePackagesRequest extends RpcAcsRequest<ListMcubeUpgr
 		this.tenantId = tenantId;
 		if(tenantId != null){
 			putBodyParameter("TenantId", tenantId);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putBodyParameter("PageSize", pageSize.toString());
 		}
 	}
 

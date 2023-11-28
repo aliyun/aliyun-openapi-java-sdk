@@ -25,18 +25,35 @@ import com.aliyuncs.mpaas.Endpoint;
 public class ListMcubeMiniAppsRequest extends RpcAcsRequest<ListMcubeMiniAppsResponse> {
 	   
 
+	private Integer pageNum;
+
 	private String tenantId;
+
+	private Integer pageSize;
+
+	private String keyword;
 
 	private String appId;
 
 	private String workspaceId;
 	public ListMcubeMiniAppsRequest() {
-		super("mPaaS", "2020-10-28", "ListMcubeMiniApps");
+		super("mPaaS", "2020-10-28", "ListMcubeMiniApps", "mpaas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Integer getPageNum() {
+		return this.pageNum;
+	}
+
+	public void setPageNum(Integer pageNum) {
+		this.pageNum = pageNum;
+		if(pageNum != null){
+			putBodyParameter("PageNum", pageNum.toString());
+		}
 	}
 
 	public String getTenantId() {
@@ -47,6 +64,28 @@ public class ListMcubeMiniAppsRequest extends RpcAcsRequest<ListMcubeMiniAppsRes
 		this.tenantId = tenantId;
 		if(tenantId != null){
 			putBodyParameter("TenantId", tenantId);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putBodyParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getKeyword() {
+		return this.keyword;
+	}
+
+	public void setKeyword(String keyword) {
+		this.keyword = keyword;
+		if(keyword != null){
+			putBodyParameter("Keyword", keyword);
 		}
 	}
 

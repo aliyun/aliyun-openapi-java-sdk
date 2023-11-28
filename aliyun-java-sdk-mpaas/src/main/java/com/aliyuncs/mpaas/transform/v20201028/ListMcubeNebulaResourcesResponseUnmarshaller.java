@@ -36,6 +36,10 @@ public class ListMcubeNebulaResourcesResponseUnmarshaller {
 		listMcubeNebulaResourceResult.setErrorCode(_ctx.stringValue("ListMcubeNebulaResourcesResponse.ListMcubeNebulaResourceResult.ErrorCode"));
 		listMcubeNebulaResourceResult.setSuccess(_ctx.booleanValue("ListMcubeNebulaResourcesResponse.ListMcubeNebulaResourceResult.Success"));
 		listMcubeNebulaResourceResult.setResultMsg(_ctx.stringValue("ListMcubeNebulaResourcesResponse.ListMcubeNebulaResourceResult.ResultMsg"));
+		listMcubeNebulaResourceResult.setCurrentPage(_ctx.integerValue("ListMcubeNebulaResourcesResponse.ListMcubeNebulaResourceResult.CurrentPage"));
+		listMcubeNebulaResourceResult.setPageSize(_ctx.integerValue("ListMcubeNebulaResourcesResponse.ListMcubeNebulaResourceResult.PageSize"));
+		listMcubeNebulaResourceResult.setTotalCount(_ctx.longValue("ListMcubeNebulaResourcesResponse.ListMcubeNebulaResourceResult.TotalCount"));
+		listMcubeNebulaResourceResult.setHasMore(_ctx.booleanValue("ListMcubeNebulaResourcesResponse.ListMcubeNebulaResourceResult.HasMore"));
 
 		List<NebulaResourceInfoItem> nebulaResourceInfo = new ArrayList<NebulaResourceInfoItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListMcubeNebulaResourcesResponse.ListMcubeNebulaResourceResult.NebulaResourceInfo.Length"); i++) {

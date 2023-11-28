@@ -31,7 +31,7 @@ public class QueryPushAnalysisTaskDetailRequest extends RpcAcsRequest<QueryPushA
 
 	private String workspaceId;
 	public QueryPushAnalysisTaskDetailRequest() {
-		super("mPaaS", "2020-10-28", "QueryPushAnalysisTaskDetail");
+		super("mPaaS", "2020-10-28", "QueryPushAnalysisTaskDetail", "mpaas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

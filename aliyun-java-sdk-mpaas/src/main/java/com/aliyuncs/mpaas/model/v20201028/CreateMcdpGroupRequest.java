@@ -33,7 +33,7 @@ public class CreateMcdpGroupRequest extends RpcAcsRequest<CreateMcdpGroupRespons
 
 	private String workspaceId;
 	public CreateMcdpGroupRequest() {
-		super("mPaaS", "2020-10-28", "CreateMcdpGroup");
+		super("mPaaS", "2020-10-28", "CreateMcdpGroup", "mpaas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

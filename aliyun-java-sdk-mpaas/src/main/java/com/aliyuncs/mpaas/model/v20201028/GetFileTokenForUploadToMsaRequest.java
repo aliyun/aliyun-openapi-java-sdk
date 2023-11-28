@@ -33,7 +33,7 @@ public class GetFileTokenForUploadToMsaRequest extends RpcAcsRequest<GetFileToke
 
 	private String workspaceId;
 	public GetFileTokenForUploadToMsaRequest() {
-		super("mPaaS", "2020-10-28", "GetFileTokenForUploadToMsa");
+		super("mPaaS", "2020-10-28", "GetFileTokenForUploadToMsa", "mpaas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -35,7 +35,7 @@ public class LogMsaQueryRequest extends RpcAcsRequest<LogMsaQueryResponse> {
 
 	private String workspaceId;
 	public LogMsaQueryRequest() {
-		super("mPaaS", "2020-10-28", "LogMsaQuery");
+		super("mPaaS", "2020-10-28", "LogMsaQuery", "mpaas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

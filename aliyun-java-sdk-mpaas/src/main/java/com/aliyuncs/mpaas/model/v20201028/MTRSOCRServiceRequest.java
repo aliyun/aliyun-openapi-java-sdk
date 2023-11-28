@@ -22,18 +22,22 @@ import com.aliyuncs.mpaas.Endpoint;
  * @author auto create
  * @version 
  */
-public class RevokePushMessageRequest extends RpcAcsRequest<RevokePushMessageResponse> {
+public class MTRSOCRServiceRequest extends RpcAcsRequest<MTRSOCRServiceResponse> {
 	   
 
-	private String targetId;
+	private String type;
 
-	private String messageId;
+	private String tenantId;
+
+	private Boolean mask;
+
+	private String imageRaw;
 
 	private String appId;
 
 	private String workspaceId;
-	public RevokePushMessageRequest() {
-		super("mPaaS", "2020-10-28", "RevokePushMessage", "mpaas");
+	public MTRSOCRServiceRequest() {
+		super("mPaaS", "2020-10-28", "MTRSOCRService", "mpaas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -41,25 +45,47 @@ public class RevokePushMessageRequest extends RpcAcsRequest<RevokePushMessageRes
 		} catch (Exception e) {}
 	}
 
-	public String getTargetId() {
-		return this.targetId;
+	public String getType() {
+		return this.type;
 	}
 
-	public void setTargetId(String targetId) {
-		this.targetId = targetId;
-		if(targetId != null){
-			putBodyParameter("TargetId", targetId);
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putBodyParameter("Type", type);
 		}
 	}
 
-	public String getMessageId() {
-		return this.messageId;
+	public String getTenantId() {
+		return this.tenantId;
 	}
 
-	public void setMessageId(String messageId) {
-		this.messageId = messageId;
-		if(messageId != null){
-			putBodyParameter("MessageId", messageId);
+	public void setTenantId(String tenantId) {
+		this.tenantId = tenantId;
+		if(tenantId != null){
+			putBodyParameter("TenantId", tenantId);
+		}
+	}
+
+	public Boolean getMask() {
+		return this.mask;
+	}
+
+	public void setMask(Boolean mask) {
+		this.mask = mask;
+		if(mask != null){
+			putBodyParameter("Mask", mask.toString());
+		}
+	}
+
+	public String getImageRaw() {
+		return this.imageRaw;
+	}
+
+	public void setImageRaw(String imageRaw) {
+		this.imageRaw = imageRaw;
+		if(imageRaw != null){
+			putBodyParameter("ImageRaw", imageRaw);
 		}
 	}
 
@@ -86,8 +112,8 @@ public class RevokePushMessageRequest extends RpcAcsRequest<RevokePushMessageRes
 	}
 
 	@Override
-	public Class<RevokePushMessageResponse> getResponseClass() {
-		return RevokePushMessageResponse.class;
+	public Class<MTRSOCRServiceResponse> getResponseClass() {
+		return MTRSOCRServiceResponse.class;
 	}
 
 }

@@ -39,7 +39,7 @@ public class ExportMappCenterAppConfigRequest extends RpcAcsRequest<ExportMappCe
 
 	private String workspaceId;
 	public ExportMappCenterAppConfigRequest() {
-		super("mPaaS", "2020-10-28", "ExportMappCenterAppConfig");
+		super("mPaaS", "2020-10-28", "ExportMappCenterAppConfig", "mpaas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

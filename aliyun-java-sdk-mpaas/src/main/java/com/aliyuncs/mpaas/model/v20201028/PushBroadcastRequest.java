@@ -73,7 +73,7 @@ public class PushBroadcastRequest extends RpcAcsRequest<PushBroadcastResponse> {
 
 	private String workspaceId;
 	public PushBroadcastRequest() {
-		super("mPaaS", "2020-10-28", "PushBroadcast");
+		super("mPaaS", "2020-10-28", "PushBroadcast", "mpaas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

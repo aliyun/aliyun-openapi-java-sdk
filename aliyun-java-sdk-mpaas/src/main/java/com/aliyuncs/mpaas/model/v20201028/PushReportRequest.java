@@ -51,7 +51,7 @@ public class PushReportRequest extends RpcAcsRequest<PushReportResponse> {
 
 	private String workspaceId;
 	public PushReportRequest() {
-		super("mPaaS", "2020-10-28", "PushReport");
+		super("mPaaS", "2020-10-28", "PushReport", "mpaas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

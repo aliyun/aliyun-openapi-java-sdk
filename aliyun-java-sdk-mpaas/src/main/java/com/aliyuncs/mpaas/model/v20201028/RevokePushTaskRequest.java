@@ -31,7 +31,7 @@ public class RevokePushTaskRequest extends RpcAcsRequest<RevokePushTaskResponse>
 
 	private String workspaceId;
 	public RevokePushTaskRequest() {
-		super("mPaaS", "2020-10-28", "RevokePushTask");
+		super("mPaaS", "2020-10-28", "RevokePushTask", "mpaas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

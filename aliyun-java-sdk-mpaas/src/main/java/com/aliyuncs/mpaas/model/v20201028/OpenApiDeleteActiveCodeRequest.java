@@ -33,7 +33,7 @@ public class OpenApiDeleteActiveCodeRequest extends RpcAcsRequest<OpenApiDeleteA
 
 	private String workspaceId;
 	public OpenApiDeleteActiveCodeRequest() {
-		super("mPaaS", "2020-10-28", "OpenApiDeleteActiveCode");
+		super("mPaaS", "2020-10-28", "OpenApiDeleteActiveCode", "mpaas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

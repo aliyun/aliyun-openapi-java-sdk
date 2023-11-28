@@ -33,7 +33,7 @@ public class DeleteMcdpMaterialRequest extends RpcAcsRequest<DeleteMcdpMaterialR
 
 	private String workspaceId;
 	public DeleteMcdpMaterialRequest() {
-		super("mPaaS", "2020-10-28", "DeleteMcdpMaterial");
+		super("mPaaS", "2020-10-28", "DeleteMcdpMaterial", "mpaas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

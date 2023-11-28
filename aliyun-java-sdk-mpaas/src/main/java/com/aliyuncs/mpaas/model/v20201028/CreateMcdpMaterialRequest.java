@@ -33,7 +33,7 @@ public class CreateMcdpMaterialRequest extends RpcAcsRequest<CreateMcdpMaterialR
 
 	private String workspaceId;
 	public CreateMcdpMaterialRequest() {
-		super("mPaaS", "2020-10-28", "CreateMcdpMaterial");
+		super("mPaaS", "2020-10-28", "CreateMcdpMaterial", "mpaas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

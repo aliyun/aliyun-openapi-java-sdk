@@ -47,7 +47,7 @@ public class ListMcdpAimRequest extends RpcAcsRequest<ListMcdpAimResponse> {
 
 	private String workspaceId;
 	public ListMcdpAimRequest() {
-		super("mPaaS", "2020-10-28", "ListMcdpAim");
+		super("mPaaS", "2020-10-28", "ListMcdpAim", "mpaas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

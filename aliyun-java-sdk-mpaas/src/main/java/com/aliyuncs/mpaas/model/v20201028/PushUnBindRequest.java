@@ -33,7 +33,7 @@ public class PushUnBindRequest extends RpcAcsRequest<PushUnBindResponse> {
 
 	private String workspaceId;
 	public PushUnBindRequest() {
-		super("mPaaS", "2020-10-28", "PushUnBind");
+		super("mPaaS", "2020-10-28", "PushUnBind", "mpaas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

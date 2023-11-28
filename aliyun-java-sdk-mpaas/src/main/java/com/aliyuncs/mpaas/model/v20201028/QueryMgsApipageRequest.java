@@ -57,7 +57,7 @@ public class QueryMgsApipageRequest extends RpcAcsRequest<QueryMgsApipageRespons
 
 	private String workspaceId;
 	public QueryMgsApipageRequest() {
-		super("mPaaS", "2020-10-28", "QueryMgsApipage");
+		super("mPaaS", "2020-10-28", "QueryMgsApipage", "mpaas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -101,7 +101,7 @@ public class CreateMcubeNebulaTaskRequest extends RpcAcsRequest<CreateMcubeNebul
 
 	private String greyEndtimeData;
 	public CreateMcubeNebulaTaskRequest() {
-		super("mPaaS", "2020-10-28", "CreateMcubeNebulaTask");
+		super("mPaaS", "2020-10-28", "CreateMcubeNebulaTask", "mpaas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -33,7 +33,7 @@ public class CreateMasFunnelRequest extends RpcAcsRequest<CreateMasFunnelRespons
 
 	private String workspaceId;
 	public CreateMasFunnelRequest() {
-		super("mPaaS", "2020-10-28", "CreateMasFunnel");
+		super("mPaaS", "2020-10-28", "CreateMasFunnel", "mpaas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

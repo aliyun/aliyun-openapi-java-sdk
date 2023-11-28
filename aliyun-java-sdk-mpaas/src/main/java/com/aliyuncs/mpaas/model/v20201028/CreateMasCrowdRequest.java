@@ -33,7 +33,7 @@ public class CreateMasCrowdRequest extends RpcAcsRequest<CreateMasCrowdResponse>
 
 	private String workspaceId;
 	public CreateMasCrowdRequest() {
-		super("mPaaS", "2020-10-28", "CreateMasCrowd");
+		super("mPaaS", "2020-10-28", "CreateMasCrowd", "mpaas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

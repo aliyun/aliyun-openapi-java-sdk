@@ -65,7 +65,7 @@ public class StartUserAppAsyncEnhanceInMsaRequest extends RpcAcsRequest<StartUse
 
 	private String workspaceId;
 	public StartUserAppAsyncEnhanceInMsaRequest() {
-		super("mPaaS", "2020-10-28", "StartUserAppAsyncEnhanceInMsa");
+		super("mPaaS", "2020-10-28", "StartUserAppAsyncEnhanceInMsa", "mpaas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

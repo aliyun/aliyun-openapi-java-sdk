@@ -33,7 +33,7 @@ public class CreateMcdpZoneRequest extends RpcAcsRequest<CreateMcdpZoneResponse>
 
 	private String workspaceId;
 	public CreateMcdpZoneRequest() {
-		super("mPaaS", "2020-10-28", "CreateMcdpZone");
+		super("mPaaS", "2020-10-28", "CreateMcdpZone", "mpaas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -34,6 +34,10 @@ public class ListMcubeWhitelistsResponseUnmarshaller {
 		ListWhitelistResult listWhitelistResult = new ListWhitelistResult();
 		listWhitelistResult.setSuccess(_ctx.booleanValue("ListMcubeWhitelistsResponse.ListWhitelistResult.Success"));
 		listWhitelistResult.setResultMsg(_ctx.stringValue("ListMcubeWhitelistsResponse.ListWhitelistResult.ResultMsg"));
+		listWhitelistResult.setCurrentPage(_ctx.integerValue("ListMcubeWhitelistsResponse.ListWhitelistResult.CurrentPage"));
+		listWhitelistResult.setPageSize(_ctx.integerValue("ListMcubeWhitelistsResponse.ListWhitelistResult.PageSize"));
+		listWhitelistResult.setTotalCount(_ctx.longValue("ListMcubeWhitelistsResponse.ListWhitelistResult.TotalCount"));
+		listWhitelistResult.setHasMore(_ctx.booleanValue("ListMcubeWhitelistsResponse.ListWhitelistResult.HasMore"));
 
 		List<WhitelistsItem> whitelists = new ArrayList<WhitelistsItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListMcubeWhitelistsResponse.ListWhitelistResult.Whitelists.Length"); i++) {

@@ -37,7 +37,7 @@ public class PushBindRequest extends RpcAcsRequest<PushBindResponse> {
 
 	private String workspaceId;
 	public PushBindRequest() {
-		super("mPaaS", "2020-10-28", "PushBind");
+		super("mPaaS", "2020-10-28", "PushBind", "mpaas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

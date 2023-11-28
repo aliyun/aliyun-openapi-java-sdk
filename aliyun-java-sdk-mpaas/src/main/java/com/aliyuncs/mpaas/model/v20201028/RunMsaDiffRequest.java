@@ -33,7 +33,7 @@ public class RunMsaDiffRequest extends RpcAcsRequest<RunMsaDiffResponse> {
 
 	private String workspaceId;
 	public RunMsaDiffRequest() {
-		super("mPaaS", "2020-10-28", "RunMsaDiff");
+		super("mPaaS", "2020-10-28", "RunMsaDiff", "mpaas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

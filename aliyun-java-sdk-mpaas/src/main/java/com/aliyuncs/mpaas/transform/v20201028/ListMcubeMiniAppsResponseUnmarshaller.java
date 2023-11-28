@@ -34,6 +34,10 @@ public class ListMcubeMiniAppsResponseUnmarshaller {
 		ListMiniResult listMiniResult = new ListMiniResult();
 		listMiniResult.setSuccess(_ctx.booleanValue("ListMcubeMiniAppsResponse.ListMiniResult.Success"));
 		listMiniResult.setResultMsg(_ctx.stringValue("ListMcubeMiniAppsResponse.ListMiniResult.ResultMsg"));
+		listMiniResult.setCurrentPage(_ctx.integerValue("ListMcubeMiniAppsResponse.ListMiniResult.CurrentPage"));
+		listMiniResult.setPageSize(_ctx.integerValue("ListMcubeMiniAppsResponse.ListMiniResult.PageSize"));
+		listMiniResult.setTotalCount(_ctx.longValue("ListMcubeMiniAppsResponse.ListMiniResult.TotalCount"));
+		listMiniResult.setHasMore(_ctx.booleanValue("ListMcubeMiniAppsResponse.ListMiniResult.HasMore"));
 
 		List<MiniProgramListItem> miniProgramList = new ArrayList<MiniProgramListItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListMcubeMiniAppsResponse.ListMiniResult.MiniProgramList.Length"); i++) {

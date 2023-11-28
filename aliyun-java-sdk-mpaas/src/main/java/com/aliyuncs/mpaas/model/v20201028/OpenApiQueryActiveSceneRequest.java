@@ -33,7 +33,7 @@ public class OpenApiQueryActiveSceneRequest extends RpcAcsRequest<OpenApiQueryAc
 
 	private String workspaceId;
 	public OpenApiQueryActiveSceneRequest() {
-		super("mPaaS", "2020-10-28", "OpenApiQueryActiveScene");
+		super("mPaaS", "2020-10-28", "OpenApiQueryActiveScene", "mpaas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

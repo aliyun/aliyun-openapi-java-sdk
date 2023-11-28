@@ -36,6 +36,10 @@ public class ListMcubeNebulaAppsResponseUnmarshaller {
 		listMcubeNebulaAppsResult.setErrorCode(_ctx.stringValue("ListMcubeNebulaAppsResponse.ListMcubeNebulaAppsResult.ErrorCode"));
 		listMcubeNebulaAppsResult.setSuccess(_ctx.booleanValue("ListMcubeNebulaAppsResponse.ListMcubeNebulaAppsResult.Success"));
 		listMcubeNebulaAppsResult.setResultMsg(_ctx.stringValue("ListMcubeNebulaAppsResponse.ListMcubeNebulaAppsResult.ResultMsg"));
+		listMcubeNebulaAppsResult.setCurrentPage(_ctx.integerValue("ListMcubeNebulaAppsResponse.ListMcubeNebulaAppsResult.CurrentPage"));
+		listMcubeNebulaAppsResult.setPageSize(_ctx.integerValue("ListMcubeNebulaAppsResponse.ListMcubeNebulaAppsResult.PageSize"));
+		listMcubeNebulaAppsResult.setTotalCount(_ctx.longValue("ListMcubeNebulaAppsResponse.ListMcubeNebulaAppsResult.TotalCount"));
+		listMcubeNebulaAppsResult.setHasMore(_ctx.booleanValue("ListMcubeNebulaAppsResponse.ListMcubeNebulaAppsResult.HasMore"));
 
 		List<NebulaAppInfosItem> nebulaAppInfos = new ArrayList<NebulaAppInfosItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListMcubeNebulaAppsResponse.ListMcubeNebulaAppsResult.NebulaAppInfos.Length"); i++) {

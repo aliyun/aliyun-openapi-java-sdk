@@ -41,7 +41,7 @@ public class QueryPushAnalysisCoreIndexRequest extends RpcAcsRequest<QueryPushAn
 
 	private String workspaceId;
 	public QueryPushAnalysisCoreIndexRequest() {
-		super("mPaaS", "2020-10-28", "QueryPushAnalysisCoreIndex");
+		super("mPaaS", "2020-10-28", "QueryPushAnalysisCoreIndex", "mpaas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

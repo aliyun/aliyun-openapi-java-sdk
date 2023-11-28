@@ -35,7 +35,7 @@ public class QueryMcubeMiniPackageRequest extends RpcAcsRequest<QueryMcubeMiniPa
 
 	private String workspaceId;
 	public QueryMcubeMiniPackageRequest() {
-		super("mPaaS", "2020-10-28", "QueryMcubeMiniPackage");
+		super("mPaaS", "2020-10-28", "QueryMcubeMiniPackage", "mpaas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

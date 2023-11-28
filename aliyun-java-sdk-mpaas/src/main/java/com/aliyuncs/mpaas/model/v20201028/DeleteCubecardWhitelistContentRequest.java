@@ -35,7 +35,7 @@ public class DeleteCubecardWhitelistContentRequest extends RpcAcsRequest<DeleteC
 
 	private String whitelistId;
 	public DeleteCubecardWhitelistContentRequest() {
-		super("mPaaS", "2020-10-28", "DeleteCubecardWhitelistContent");
+		super("mPaaS", "2020-10-28", "DeleteCubecardWhitelistContent", "mpaas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

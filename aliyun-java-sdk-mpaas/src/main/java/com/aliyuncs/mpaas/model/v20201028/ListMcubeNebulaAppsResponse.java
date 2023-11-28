@@ -75,6 +75,14 @@ public class ListMcubeNebulaAppsResponse extends AcsResponse {
 
 		private String resultMsg;
 
+		private Integer currentPage;
+
+		private Integer pageSize;
+
+		private Long totalCount;
+
+		private Boolean hasMore;
+
 		private List<NebulaAppInfosItem> nebulaAppInfos;
 
 		public String getRequestId() {
@@ -107,6 +115,38 @@ public class ListMcubeNebulaAppsResponse extends AcsResponse {
 
 		public void setResultMsg(String resultMsg) {
 			this.resultMsg = resultMsg;
+		}
+
+		public Integer getCurrentPage() {
+			return this.currentPage;
+		}
+
+		public void setCurrentPage(Integer currentPage) {
+			this.currentPage = currentPage;
+		}
+
+		public Integer getPageSize() {
+			return this.pageSize;
+		}
+
+		public void setPageSize(Integer pageSize) {
+			this.pageSize = pageSize;
+		}
+
+		public Long getTotalCount() {
+			return this.totalCount;
+		}
+
+		public void setTotalCount(Long totalCount) {
+			this.totalCount = totalCount;
+		}
+
+		public Boolean getHasMore() {
+			return this.hasMore;
+		}
+
+		public void setHasMore(Boolean hasMore) {
+			this.hasMore = hasMore;
 		}
 
 		public List<NebulaAppInfosItem> getNebulaAppInfos() {

@@ -33,7 +33,7 @@ public class DeleteMcubeMiniAppRequest extends RpcAcsRequest<DeleteMcubeMiniAppR
 
 	private String workspaceId;
 	public DeleteMcubeMiniAppRequest() {
-		super("mPaaS", "2020-10-28", "DeleteMcubeMiniApp");
+		super("mPaaS", "2020-10-28", "DeleteMcubeMiniApp", "mpaas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

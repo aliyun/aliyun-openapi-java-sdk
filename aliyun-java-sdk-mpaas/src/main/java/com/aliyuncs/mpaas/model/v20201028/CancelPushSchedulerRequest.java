@@ -33,7 +33,7 @@ public class CancelPushSchedulerRequest extends RpcAcsRequest<CancelPushSchedule
 
 	private String workspaceId;
 	public CancelPushSchedulerRequest() {
-		super("mPaaS", "2020-10-28", "CancelPushScheduler");
+		super("mPaaS", "2020-10-28", "CancelPushScheduler", "mpaas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

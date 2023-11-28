@@ -81,7 +81,7 @@ public class PushSimpleRequest extends RpcAcsRequest<PushSimpleResponse> {
 
 	private String channelId;
 	public PushSimpleRequest() {
-		super("mPaaS", "2020-10-28", "PushSimple");
+		super("mPaaS", "2020-10-28", "PushSimple", "mpaas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

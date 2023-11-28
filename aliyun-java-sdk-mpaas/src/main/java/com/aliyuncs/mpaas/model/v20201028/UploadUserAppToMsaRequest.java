@@ -33,7 +33,7 @@ public class UploadUserAppToMsaRequest extends RpcAcsRequest<UploadUserAppToMsaR
 
 	private String workspaceId;
 	public UploadUserAppToMsaRequest() {
-		super("mPaaS", "2020-10-28", "UploadUserAppToMsa");
+		super("mPaaS", "2020-10-28", "UploadUserAppToMsa", "mpaas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

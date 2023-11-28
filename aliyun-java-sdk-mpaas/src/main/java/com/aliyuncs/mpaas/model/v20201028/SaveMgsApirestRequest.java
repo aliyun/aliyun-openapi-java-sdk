@@ -33,7 +33,7 @@ public class SaveMgsApirestRequest extends RpcAcsRequest<SaveMgsApirestResponse>
 
 	private String workspaceId;
 	public SaveMgsApirestRequest() {
-		super("mPaaS", "2020-10-28", "SaveMgsApirest");
+		super("mPaaS", "2020-10-28", "SaveMgsApirest", "mpaas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

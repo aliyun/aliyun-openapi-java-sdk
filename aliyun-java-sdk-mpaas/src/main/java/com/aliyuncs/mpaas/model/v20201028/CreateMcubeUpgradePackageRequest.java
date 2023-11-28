@@ -61,7 +61,7 @@ public class CreateMcubeUpgradePackageRequest extends RpcAcsRequest<CreateMcubeU
 
 	private String desc;
 	public CreateMcubeUpgradePackageRequest() {
-		super("mPaaS", "2020-10-28", "CreateMcubeUpgradePackage");
+		super("mPaaS", "2020-10-28", "CreateMcubeUpgradePackage", "mpaas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

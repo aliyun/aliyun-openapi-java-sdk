@@ -33,7 +33,7 @@ public class GetLogUrlInMsaRequest extends RpcAcsRequest<GetLogUrlInMsaResponse>
 
 	private String workspaceId;
 	public GetLogUrlInMsaRequest() {
-		super("mPaaS", "2020-10-28", "GetLogUrlInMsa");
+		super("mPaaS", "2020-10-28", "GetLogUrlInMsa", "mpaas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

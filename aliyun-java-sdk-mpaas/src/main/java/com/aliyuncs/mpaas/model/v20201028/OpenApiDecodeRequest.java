@@ -33,7 +33,7 @@ public class OpenApiDecodeRequest extends RpcAcsRequest<OpenApiDecodeResponse> {
 
 	private String workspaceId;
 	public OpenApiDecodeRequest() {
-		super("mPaaS", "2020-10-28", "OpenApiDecode");
+		super("mPaaS", "2020-10-28", "OpenApiDecode", "mpaas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

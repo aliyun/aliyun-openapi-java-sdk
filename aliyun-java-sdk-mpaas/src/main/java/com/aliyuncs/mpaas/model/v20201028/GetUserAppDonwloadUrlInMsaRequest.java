@@ -33,7 +33,7 @@ public class GetUserAppDonwloadUrlInMsaRequest extends RpcAcsRequest<GetUserAppD
 
 	private String workspaceId;
 	public GetUserAppDonwloadUrlInMsaRequest() {
-		super("mPaaS", "2020-10-28", "GetUserAppDonwloadUrlInMsa");
+		super("mPaaS", "2020-10-28", "GetUserAppDonwloadUrlInMsa", "mpaas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -33,7 +33,7 @@ public class DeleteMcdpEventByIdRequest extends RpcAcsRequest<DeleteMcdpEventByI
 
 	private String workspaceId;
 	public DeleteMcdpEventByIdRequest() {
-		super("mPaaS", "2020-10-28", "DeleteMcdpEventById");
+		super("mPaaS", "2020-10-28", "DeleteMcdpEventById", "mpaas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

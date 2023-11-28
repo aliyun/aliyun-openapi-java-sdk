@@ -57,7 +57,7 @@ public class ListMgsApiRequest extends RpcAcsRequest<ListMgsApiResponse> {
 
 	private String workspaceId;
 	public ListMgsApiRequest() {
-		super("mPaaS", "2020-10-28", "ListMgsApi");
+		super("mPaaS", "2020-10-28", "ListMgsApi", "mpaas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

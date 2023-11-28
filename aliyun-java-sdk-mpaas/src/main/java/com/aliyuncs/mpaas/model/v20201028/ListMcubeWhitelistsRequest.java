@@ -25,18 +25,35 @@ import com.aliyuncs.mpaas.Endpoint;
 public class ListMcubeWhitelistsRequest extends RpcAcsRequest<ListMcubeWhitelistsResponse> {
 	   
 
+	private Integer pageNum;
+
 	private String tenantId;
+
+	private Integer pageSize;
 
 	private String appId;
 
+	private String whitelistName;
+
 	private String workspaceId;
 	public ListMcubeWhitelistsRequest() {
-		super("mPaaS", "2020-10-28", "ListMcubeWhitelists");
+		super("mPaaS", "2020-10-28", "ListMcubeWhitelists", "mpaas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Integer getPageNum() {
+		return this.pageNum;
+	}
+
+	public void setPageNum(Integer pageNum) {
+		this.pageNum = pageNum;
+		if(pageNum != null){
+			putBodyParameter("PageNum", pageNum.toString());
+		}
 	}
 
 	public String getTenantId() {
@@ -50,6 +67,17 @@ public class ListMcubeWhitelistsRequest extends RpcAcsRequest<ListMcubeWhitelist
 		}
 	}
 
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putBodyParameter("PageSize", pageSize.toString());
+		}
+	}
+
 	public String getAppId() {
 		return this.appId;
 	}
@@ -58,6 +86,17 @@ public class ListMcubeWhitelistsRequest extends RpcAcsRequest<ListMcubeWhitelist
 		this.appId = appId;
 		if(appId != null){
 			putBodyParameter("AppId", appId);
+		}
+	}
+
+	public String getWhitelistName() {
+		return this.whitelistName;
+	}
+
+	public void setWhitelistName(String whitelistName) {
+		this.whitelistName = whitelistName;
+		if(whitelistName != null){
+			putBodyParameter("WhitelistName", whitelistName);
 		}
 	}
 

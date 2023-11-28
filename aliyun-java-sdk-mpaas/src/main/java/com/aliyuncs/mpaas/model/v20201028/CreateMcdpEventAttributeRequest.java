@@ -33,7 +33,7 @@ public class CreateMcdpEventAttributeRequest extends RpcAcsRequest<CreateMcdpEve
 
 	private String workspaceId;
 	public CreateMcdpEventAttributeRequest() {
-		super("mPaaS", "2020-10-28", "CreateMcdpEventAttribute");
+		super("mPaaS", "2020-10-28", "CreateMcdpEventAttribute", "mpaas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

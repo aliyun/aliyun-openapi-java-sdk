@@ -33,7 +33,7 @@ public class DeleteMcubeWhitelistRequest extends RpcAcsRequest<DeleteMcubeWhitel
 
 	private String workspaceId;
 	public DeleteMcubeWhitelistRequest() {
-		super("mPaaS", "2020-10-28", "DeleteMcubeWhitelist");
+		super("mPaaS", "2020-10-28", "DeleteMcubeWhitelist", "mpaas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

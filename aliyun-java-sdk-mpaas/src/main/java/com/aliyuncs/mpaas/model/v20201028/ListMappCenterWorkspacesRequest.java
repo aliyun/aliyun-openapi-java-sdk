@@ -25,7 +25,7 @@ import com.aliyuncs.mpaas.Endpoint;
 public class ListMappCenterWorkspacesRequest extends RpcAcsRequest<ListMappCenterWorkspacesResponse> {
 	   
 	public ListMappCenterWorkspacesRequest() {
-		super("mPaaS", "2020-10-28", "ListMappCenterWorkspaces");
+		super("mPaaS", "2020-10-28", "ListMappCenterWorkspaces", "mpaas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

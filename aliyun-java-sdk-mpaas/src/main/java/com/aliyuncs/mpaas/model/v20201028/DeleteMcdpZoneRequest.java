@@ -33,7 +33,7 @@ public class DeleteMcdpZoneRequest extends RpcAcsRequest<DeleteMcdpZoneResponse>
 
 	private String workspaceId;
 	public DeleteMcdpZoneRequest() {
-		super("mPaaS", "2020-10-28", "DeleteMcdpZone");
+		super("mPaaS", "2020-10-28", "DeleteMcdpZone", "mpaas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

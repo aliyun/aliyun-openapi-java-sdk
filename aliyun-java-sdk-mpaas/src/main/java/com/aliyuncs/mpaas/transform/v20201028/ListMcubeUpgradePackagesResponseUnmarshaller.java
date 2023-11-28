@@ -36,6 +36,10 @@ public class ListMcubeUpgradePackagesResponseUnmarshaller {
 		listPackagesResult.setErrorCode(_ctx.stringValue("ListMcubeUpgradePackagesResponse.ListPackagesResult.ErrorCode"));
 		listPackagesResult.setSuccess(_ctx.booleanValue("ListMcubeUpgradePackagesResponse.ListPackagesResult.Success"));
 		listPackagesResult.setResultMsg(_ctx.stringValue("ListMcubeUpgradePackagesResponse.ListPackagesResult.ResultMsg"));
+		listPackagesResult.setCurrentPage(_ctx.integerValue("ListMcubeUpgradePackagesResponse.ListPackagesResult.CurrentPage"));
+		listPackagesResult.setPageSize(_ctx.integerValue("ListMcubeUpgradePackagesResponse.ListPackagesResult.PageSize"));
+		listPackagesResult.setTotalCount(_ctx.longValue("ListMcubeUpgradePackagesResponse.ListPackagesResult.TotalCount"));
+		listPackagesResult.setHasMore(_ctx.booleanValue("ListMcubeUpgradePackagesResponse.ListPackagesResult.HasMore"));
 
 		List<Data> packages = new ArrayList<Data>();
 		for (int i = 0; i < _ctx.lengthValue("ListMcubeUpgradePackagesResponse.ListPackagesResult.Packages.Length"); i++) {

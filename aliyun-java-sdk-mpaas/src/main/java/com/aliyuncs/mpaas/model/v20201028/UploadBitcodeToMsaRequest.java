@@ -37,7 +37,7 @@ public class UploadBitcodeToMsaRequest extends RpcAcsRequest<UploadBitcodeToMsaR
 
 	private String workspaceId;
 	public UploadBitcodeToMsaRequest() {
-		super("mPaaS", "2020-10-28", "UploadBitcodeToMsa");
+		super("mPaaS", "2020-10-28", "UploadBitcodeToMsa", "mpaas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

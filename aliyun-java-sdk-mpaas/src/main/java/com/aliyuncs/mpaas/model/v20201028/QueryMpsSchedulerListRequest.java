@@ -41,7 +41,7 @@ public class QueryMpsSchedulerListRequest extends RpcAcsRequest<QueryMpsSchedule
 
 	private String workspaceId;
 	public QueryMpsSchedulerListRequest() {
-		super("mPaaS", "2020-10-28", "QueryMpsSchedulerList");
+		super("mPaaS", "2020-10-28", "QueryMpsSchedulerList", "mpaas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

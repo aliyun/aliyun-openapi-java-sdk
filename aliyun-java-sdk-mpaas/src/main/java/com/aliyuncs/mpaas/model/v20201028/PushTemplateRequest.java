@@ -73,7 +73,7 @@ public class PushTemplateRequest extends RpcAcsRequest<PushTemplateResponse> {
 
 	private String workspaceId;
 	public PushTemplateRequest() {
-		super("mPaaS", "2020-10-28", "PushTemplate");
+		super("mPaaS", "2020-10-28", "PushTemplate", "mpaas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

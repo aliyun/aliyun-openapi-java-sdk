@@ -33,7 +33,7 @@ public class OpenApiCallbackRequest extends RpcAcsRequest<OpenApiCallbackRespons
 
 	private String workspaceId;
 	public OpenApiCallbackRequest() {
-		super("mPaaS", "2020-10-28", "OpenApiCallback");
+		super("mPaaS", "2020-10-28", "OpenApiCallback", "mpaas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

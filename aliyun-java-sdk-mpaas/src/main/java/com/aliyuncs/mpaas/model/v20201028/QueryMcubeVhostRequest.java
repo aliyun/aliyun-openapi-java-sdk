@@ -31,7 +31,7 @@ public class QueryMcubeVhostRequest extends RpcAcsRequest<QueryMcubeVhostRespons
 
 	private String workspaceId;
 	public QueryMcubeVhostRequest() {
-		super("mPaaS", "2020-10-28", "QueryMcubeVhost");
+		super("mPaaS", "2020-10-28", "QueryMcubeVhost", "mpaas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
