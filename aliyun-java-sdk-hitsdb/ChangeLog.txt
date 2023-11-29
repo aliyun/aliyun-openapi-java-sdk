@@ -1,3 +1,6 @@
+2023-11-29 Version: 3.1.13
+- SwitchLSQLV3MySQLService
+
 2023-11-23 Version: 3.1.12
 - Generated 2020-06-15 for `hitsdb`.
 
