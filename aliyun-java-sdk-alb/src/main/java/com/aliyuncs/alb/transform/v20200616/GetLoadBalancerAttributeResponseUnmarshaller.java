@@ -115,20 +115,20 @@ public class GetLoadBalancerAttributeResponseUnmarshaller {
 			ZoneMapping zoneMapping = new ZoneMapping();
 			zoneMapping.setVSwitchId(_ctx.stringValue("GetLoadBalancerAttributeResponse.ZoneMappings["+ i +"].VSwitchId"));
 			zoneMapping.setZoneId(_ctx.stringValue("GetLoadBalancerAttributeResponse.ZoneMappings["+ i +"].ZoneId"));
-			zoneMapping.setStatus(_ctx.stringValue("GetLoadBalancerAttributeResponse.ZoneMappings["+ i +"].Status"));
 			zoneMapping.setAllocationId(_ctx.stringValue("GetLoadBalancerAttributeResponse.ZoneMappings["+ i +"].AllocationId"));
 			zoneMapping.setEipType(_ctx.stringValue("GetLoadBalancerAttributeResponse.ZoneMappings["+ i +"].EipType"));
+			zoneMapping.setStatus(_ctx.stringValue("GetLoadBalancerAttributeResponse.ZoneMappings["+ i +"].Status"));
 
 			List<LoadBalancerAddress> loadBalancerAddresses = new ArrayList<LoadBalancerAddress>();
 			for (int j = 0; j < _ctx.lengthValue("GetLoadBalancerAttributeResponse.ZoneMappings["+ i +"].LoadBalancerAddresses.Length"); j++) {
 				LoadBalancerAddress loadBalancerAddress = new LoadBalancerAddress();
 				loadBalancerAddress.setAddress(_ctx.stringValue("GetLoadBalancerAttributeResponse.ZoneMappings["+ i +"].LoadBalancerAddresses["+ j +"].Address"));
 				loadBalancerAddress.setIpv6Address(_ctx.stringValue("GetLoadBalancerAttributeResponse.ZoneMappings["+ i +"].LoadBalancerAddresses["+ j +"].Ipv6Address"));
-				loadBalancerAddress.setIpv6AddressHcStatus(_ctx.stringValue("GetLoadBalancerAttributeResponse.ZoneMappings["+ i +"].LoadBalancerAddresses["+ j +"].Ipv6AddressHcStatus"));
 				loadBalancerAddress.setIntranetAddress(_ctx.stringValue("GetLoadBalancerAttributeResponse.ZoneMappings["+ i +"].LoadBalancerAddresses["+ j +"].IntranetAddress"));
-				loadBalancerAddress.setIntranetAddressHcStatus(_ctx.stringValue("GetLoadBalancerAttributeResponse.ZoneMappings["+ i +"].LoadBalancerAddresses["+ j +"].IntranetAddressHcStatus"));
 				loadBalancerAddress.setAllocationId(_ctx.stringValue("GetLoadBalancerAttributeResponse.ZoneMappings["+ i +"].LoadBalancerAddresses["+ j +"].AllocationId"));
 				loadBalancerAddress.setEipType(_ctx.stringValue("GetLoadBalancerAttributeResponse.ZoneMappings["+ i +"].LoadBalancerAddresses["+ j +"].EipType"));
+				loadBalancerAddress.setIntranetAddressHcStatus(_ctx.stringValue("GetLoadBalancerAttributeResponse.ZoneMappings["+ i +"].LoadBalancerAddresses["+ j +"].IntranetAddressHcStatus"));
+				loadBalancerAddress.setIpv6AddressHcStatus(_ctx.stringValue("GetLoadBalancerAttributeResponse.ZoneMappings["+ i +"].LoadBalancerAddresses["+ j +"].Ipv6AddressHcStatus"));
 
 				loadBalancerAddresses.add(loadBalancerAddress);
 			}

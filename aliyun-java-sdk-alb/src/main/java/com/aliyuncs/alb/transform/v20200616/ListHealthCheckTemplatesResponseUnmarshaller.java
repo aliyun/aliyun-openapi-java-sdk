@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.alb.model.v20200616.ListHealthCheckTemplatesResponse;
 import com.aliyuncs.alb.model.v20200616.ListHealthCheckTemplatesResponse.HealthCheckTemplate;
+import com.aliyuncs.alb.model.v20200616.ListHealthCheckTemplatesResponse.HealthCheckTemplate.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -61,6 +62,16 @@ public class ListHealthCheckTemplatesResponseUnmarshaller {
 				healthCheckCodes.add(_ctx.stringValue("ListHealthCheckTemplatesResponse.HealthCheckTemplates["+ i +"].HealthCheckCodes["+ j +"]"));
 			}
 			healthCheckTemplate.setHealthCheckCodes(healthCheckCodes);
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("ListHealthCheckTemplatesResponse.HealthCheckTemplates["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(_ctx.stringValue("ListHealthCheckTemplatesResponse.HealthCheckTemplates["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("ListHealthCheckTemplatesResponse.HealthCheckTemplates["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			healthCheckTemplate.setTags(tags);
 
 			healthCheckTemplates.add(healthCheckTemplate);
 		}

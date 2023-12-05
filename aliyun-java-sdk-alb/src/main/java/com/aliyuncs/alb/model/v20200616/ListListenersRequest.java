@@ -30,6 +30,8 @@ public class ListListenersRequest extends RpcAcsRequest<ListListenersResponse> {
 
 	private String nextToken;
 
+	private List<Tag> tag;
+
 	private String listenerProtocol;
 
 	private List<String> listenerIds;
@@ -68,6 +70,23 @@ public class ListListenersRequest extends RpcAcsRequest<ListListenersResponse> {
 		}
 	}
 
+	public List<Tag> getTag() {
+		return this.tag;
+	}
+
+	public void setTag(List<Tag> tag) {
+		this.tag = tag;	
+		if (tag != null) {
+			for (int depth1 = 0; depth1 < tag.size(); depth1++) {
+				if (tag.get(depth1) != null) {
+					
+						putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tag.get(depth1).getValue());
+						putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tag.get(depth1).getKey());
+				}
+			}
+		}	
+	}
+
 	public String getListenerProtocol() {
 		return this.listenerProtocol;
 	}
@@ -100,6 +119,29 @@ public class ListListenersRequest extends RpcAcsRequest<ListListenersResponse> {
 		this.maxResults = maxResults;
 		if(maxResults != null){
 			putQueryParameter("MaxResults", maxResults.toString());
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

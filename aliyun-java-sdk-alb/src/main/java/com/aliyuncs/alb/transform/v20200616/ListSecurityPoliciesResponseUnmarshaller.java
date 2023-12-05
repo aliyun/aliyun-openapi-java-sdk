@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.alb.model.v20200616.ListSecurityPoliciesResponse;
 import com.aliyuncs.alb.model.v20200616.ListSecurityPoliciesResponse.SecurityPolicy;
+import com.aliyuncs.alb.model.v20200616.ListSecurityPoliciesResponse.SecurityPolicy.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -53,6 +54,16 @@ public class ListSecurityPoliciesResponseUnmarshaller {
 				tLSVersions.add(_ctx.stringValue("ListSecurityPoliciesResponse.SecurityPolicies["+ i +"].TLSVersions["+ j +"]"));
 			}
 			securityPolicy.setTLSVersions(tLSVersions);
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("ListSecurityPoliciesResponse.SecurityPolicies["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(_ctx.stringValue("ListSecurityPoliciesResponse.SecurityPolicies["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("ListSecurityPoliciesResponse.SecurityPolicies["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			securityPolicy.setTags(tags);
 
 			securityPolicies.add(securityPolicy);
 		}

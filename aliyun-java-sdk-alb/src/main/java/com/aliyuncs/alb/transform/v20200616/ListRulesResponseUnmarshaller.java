@@ -45,6 +45,7 @@ import com.aliyuncs.alb.model.v20200616.ListRulesResponse.Rule.Condition.QuerySt
 import com.aliyuncs.alb.model.v20200616.ListRulesResponse.Rule.Condition.ResponseHeaderConfig;
 import com.aliyuncs.alb.model.v20200616.ListRulesResponse.Rule.Condition.ResponseStatusCodeConfig;
 import com.aliyuncs.alb.model.v20200616.ListRulesResponse.Rule.Condition.SourceIpConfig;
+import com.aliyuncs.alb.model.v20200616.ListRulesResponse.Rule.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -280,6 +281,16 @@ public class ListRulesResponseUnmarshaller {
 				ruleConditions.add(condition);
 			}
 			rule.setRuleConditions(ruleConditions);
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("ListRulesResponse.Rules["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(_ctx.stringValue("ListRulesResponse.Rules["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("ListRulesResponse.Rules["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			rule.setTags(tags);
 
 			rules.add(rule);
 		}

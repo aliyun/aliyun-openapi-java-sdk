@@ -28,6 +28,7 @@ import com.aliyuncs.alb.model.v20200616.GetListenerAttributeResponse.DefaultActi
 import com.aliyuncs.alb.model.v20200616.GetListenerAttributeResponse.LogConfig;
 import com.aliyuncs.alb.model.v20200616.GetListenerAttributeResponse.LogConfig.AccessLogTracingConfig;
 import com.aliyuncs.alb.model.v20200616.GetListenerAttributeResponse.QuicConfig;
+import com.aliyuncs.alb.model.v20200616.GetListenerAttributeResponse.Tag;
 import com.aliyuncs.alb.model.v20200616.GetListenerAttributeResponse.XForwardedForConfig;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -139,6 +140,16 @@ public class GetListenerAttributeResponseUnmarshaller {
 			defaultActions.add(defaultAction);
 		}
 		getListenerAttributeResponse.setDefaultActions(defaultActions);
+
+		List<Tag> tags = new ArrayList<Tag>();
+		for (int i = 0; i < _ctx.lengthValue("GetListenerAttributeResponse.Tags.Length"); i++) {
+			Tag tag = new Tag();
+			tag.setKey(_ctx.stringValue("GetListenerAttributeResponse.Tags["+ i +"].Key"));
+			tag.setValue(_ctx.stringValue("GetListenerAttributeResponse.Tags["+ i +"].Value"));
+
+			tags.add(tag);
+		}
+		getListenerAttributeResponse.setTags(tags);
 	 
 	 	return getListenerAttributeResponse;
 	}

@@ -36,6 +36,8 @@ public class UpdateServerGroupAttributeRequest extends RpcAcsRequest<UpdateServe
 
 	private String serverGroupId;
 
+	private Boolean upstreamKeepaliveEnabled;
+
 	private String serviceName;
 
 	private StickySessionConfig stickySessionConfig;
@@ -126,6 +128,17 @@ public class UpdateServerGroupAttributeRequest extends RpcAcsRequest<UpdateServe
 		this.serverGroupId = serverGroupId;
 		if(serverGroupId != null){
 			putQueryParameter("ServerGroupId", serverGroupId);
+		}
+	}
+
+	public Boolean getUpstreamKeepaliveEnabled() {
+		return this.upstreamKeepaliveEnabled;
+	}
+
+	public void setUpstreamKeepaliveEnabled(Boolean upstreamKeepaliveEnabled) {
+		this.upstreamKeepaliveEnabled = upstreamKeepaliveEnabled;
+		if(upstreamKeepaliveEnabled != null){
+			putQueryParameter("UpstreamKeepaliveEnabled", upstreamKeepaliveEnabled.toString());
 		}
 	}
 

@@ -154,6 +154,15 @@ public class CreateRulesRequest extends RpcAcsRequest<CreateRulesResponse> {
 							}
 						}
 						putQueryParameter("Rules." + (depth1 + 1) + ".RuleName" , rules.get(depth1).getRuleName());
+						if (rules.get(depth1).getTag() != null) {
+							for (int depth2 = 0; depth2 < rules.get(depth1).getTag().size(); depth2++) {
+								if (rules.get(depth1).getTag().get(depth2) != null) {
+									
+										putQueryParameter("Rules." + (depth1 + 1) + ".Tag." + (depth2 + 1) + ".Value" , rules.get(depth1).getTag().get(depth2).getValue());
+										putQueryParameter("Rules." + (depth1 + 1) + ".Tag." + (depth2 + 1) + ".Key" , rules.get(depth1).getTag().get(depth2).getKey());
+								}
+							}
+						}
 						putQueryParameter("Rules." + (depth1 + 1) + ".Priority" , rules.get(depth1).getPriority());
 						if (rules.get(depth1).getRuleActions() != null) {
 							for (int depth2 = 0; depth2 < rules.get(depth1).getRuleActions().size(); depth2++) {
@@ -292,6 +301,8 @@ public class CreateRulesRequest extends RpcAcsRequest<CreateRulesResponse> {
 
 		private String ruleName;
 
+		private List<TagItem> tag;
+
 		private Integer priority;
 
 		private List<RuleActionsItem> ruleActions;
@@ -312,6 +323,14 @@ public class CreateRulesRequest extends RpcAcsRequest<CreateRulesResponse> {
 
 		public void setRuleName(String ruleName) {
 			this.ruleName = ruleName;
+		}
+
+		public List<TagItem> getTag() {
+			return this.tag;
+		}
+
+		public void setTag(List<TagItem> tag) {
+			this.tag = tag;
 		}
 
 		public Integer getPriority() {
@@ -621,6 +640,29 @@ public class CreateRulesRequest extends RpcAcsRequest<CreateRulesResponse> {
 				public void setKey(String key) {
 					this.key = key;
 				}
+			}
+		}
+
+		public static class TagItem {
+
+			private String value;
+
+			private String key;
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
 			}
 		}
 

@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.alb.model.v20200616.GetHealthCheckTemplateAttributeResponse;
+import com.aliyuncs.alb.model.v20200616.GetHealthCheckTemplateAttributeResponse.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -53,6 +54,16 @@ public class GetHealthCheckTemplateAttributeResponseUnmarshaller {
 			healthCheckCodes.add(_ctx.stringValue("GetHealthCheckTemplateAttributeResponse.HealthCheckCodes["+ i +"]"));
 		}
 		getHealthCheckTemplateAttributeResponse.setHealthCheckCodes(healthCheckCodes);
+
+		List<Tag> tags = new ArrayList<Tag>();
+		for (int i = 0; i < _ctx.lengthValue("GetHealthCheckTemplateAttributeResponse.Tags.Length"); i++) {
+			Tag tag = new Tag();
+			tag.setKey(_ctx.stringValue("GetHealthCheckTemplateAttributeResponse.Tags["+ i +"].Key"));
+			tag.setValue(_ctx.stringValue("GetHealthCheckTemplateAttributeResponse.Tags["+ i +"].Value"));
+
+			tags.add(tag);
+		}
+		getHealthCheckTemplateAttributeResponse.setTags(tags);
 	 
 	 	return getHealthCheckTemplateAttributeResponse;
 	}

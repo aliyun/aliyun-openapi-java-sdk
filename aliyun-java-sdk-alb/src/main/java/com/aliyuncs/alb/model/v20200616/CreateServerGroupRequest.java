@@ -38,7 +38,11 @@ public class CreateServerGroupRequest extends RpcAcsRequest<CreateServerGroupRes
 
 	private String protocol;
 
+	private Boolean upstreamKeepaliveEnabled;
+
 	private String serviceName;
+
+	private List<Tag> tag;
 
 	private StickySessionConfig stickySessionConfig;
 
@@ -146,6 +150,17 @@ public class CreateServerGroupRequest extends RpcAcsRequest<CreateServerGroupRes
 		}
 	}
 
+	public Boolean getUpstreamKeepaliveEnabled() {
+		return this.upstreamKeepaliveEnabled;
+	}
+
+	public void setUpstreamKeepaliveEnabled(Boolean upstreamKeepaliveEnabled) {
+		this.upstreamKeepaliveEnabled = upstreamKeepaliveEnabled;
+		if(upstreamKeepaliveEnabled != null){
+			putQueryParameter("UpstreamKeepaliveEnabled", upstreamKeepaliveEnabled.toString());
+		}
+	}
+
 	public String getServiceName() {
 		return this.serviceName;
 	}
@@ -155,6 +170,23 @@ public class CreateServerGroupRequest extends RpcAcsRequest<CreateServerGroupRes
 		if(serviceName != null){
 			putQueryParameter("ServiceName", serviceName);
 		}
+	}
+
+	public List<Tag> getTag() {
+		return this.tag;
+	}
+
+	public void setTag(List<Tag> tag) {
+		this.tag = tag;	
+		if (tag != null) {
+			for (int depth1 = 0; depth1 < tag.size(); depth1++) {
+				if (tag.get(depth1) != null) {
+					
+						putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tag.get(depth1).getValue());
+						putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tag.get(depth1).getKey());
+				}
+			}
+		}	
 	}
 
 	public StickySessionConfig getStickySessionConfig() {
@@ -358,6 +390,29 @@ public class CreateServerGroupRequest extends RpcAcsRequest<CreateServerGroupRes
 
 		public void setHealthCheckConnectPort(Integer healthCheckConnectPort) {
 			this.healthCheckConnectPort = healthCheckConnectPort;
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

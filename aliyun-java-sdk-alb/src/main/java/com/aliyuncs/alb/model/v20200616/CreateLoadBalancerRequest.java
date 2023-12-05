@@ -44,6 +44,8 @@ public class CreateLoadBalancerRequest extends RpcAcsRequest<CreateLoadBalancerR
 
 	private String addressType;
 
+	private List<Tag> tag;
+
 	private String addressAllocatedMode;
 
 	private Boolean dryRun;
@@ -165,6 +167,23 @@ public class CreateLoadBalancerRequest extends RpcAcsRequest<CreateLoadBalancerR
 		}
 	}
 
+	public List<Tag> getTag() {
+		return this.tag;
+	}
+
+	public void setTag(List<Tag> tag) {
+		this.tag = tag;	
+		if (tag != null) {
+			for (int depth1 = 0; depth1 < tag.size(); depth1++) {
+				if (tag.get(depth1) != null) {
+					
+						putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tag.get(depth1).getValue());
+						putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tag.get(depth1).getKey());
+				}
+			}
+		}	
+	}
+
 	public String getAddressAllocatedMode() {
 		return this.addressAllocatedMode;
 	}
@@ -201,6 +220,7 @@ public class CreateLoadBalancerRequest extends RpcAcsRequest<CreateLoadBalancerR
 						putQueryParameter("ZoneMappings." + (depth1 + 1) + ".EipType" , zoneMappings.get(depth1).getEipType());
 						putQueryParameter("ZoneMappings." + (depth1 + 1) + ".ZoneId" , zoneMappings.get(depth1).getZoneId());
 						putQueryParameter("ZoneMappings." + (depth1 + 1) + ".AllocationId" , zoneMappings.get(depth1).getAllocationId());
+						putQueryParameter("ZoneMappings." + (depth1 + 1) + ".IntranetAddress" , zoneMappings.get(depth1).getIntranetAddress());
 				}
 			}
 		}	
@@ -283,6 +303,29 @@ public class CreateLoadBalancerRequest extends RpcAcsRequest<CreateLoadBalancerR
 		}
 	}
 
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+	}
+
 	public static class ZoneMappings {
 
 		private String vSwitchId;
@@ -292,6 +335,8 @@ public class CreateLoadBalancerRequest extends RpcAcsRequest<CreateLoadBalancerR
 		private String zoneId;
 
 		private String allocationId;
+
+		private String intranetAddress;
 
 		public String getVSwitchId() {
 			return this.vSwitchId;
@@ -323,6 +368,14 @@ public class CreateLoadBalancerRequest extends RpcAcsRequest<CreateLoadBalancerR
 
 		public void setAllocationId(String allocationId) {
 			this.allocationId = allocationId;
+		}
+
+		public String getIntranetAddress() {
+			return this.intranetAddress;
+		}
+
+		public void setIntranetAddress(String intranetAddress) {
+			this.intranetAddress = intranetAddress;
 		}
 	}
 

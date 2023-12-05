@@ -61,6 +61,8 @@ public class GetListenerAttributeResponse extends AcsResponse {
 
 	private List<DefaultAction> defaultActions;
 
+	private List<Tag> tags;
+
 	private AclConfig aclConfig;
 
 	private LogConfig logConfig;
@@ -213,6 +215,14 @@ public class GetListenerAttributeResponse extends AcsResponse {
 		this.defaultActions = defaultActions;
 	}
 
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;
+	}
+
 	public AclConfig getAclConfig() {
 		return this.aclConfig;
 	}
@@ -337,6 +347,29 @@ public class GetListenerAttributeResponse extends AcsResponse {
 					this.serverGroupId = serverGroupId;
 				}
 			}
+		}
+	}
+
+	public static class Tag {
+
+		private String key;
+
+		private String value;
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
 		}
 	}
 

@@ -34,6 +34,8 @@ public class CreateListenerRequest extends RpcAcsRequest<CreateListenerResponse>
 
 	private Boolean http2Enabled;
 
+	private List<Tag> tag;
+
 	private List<DefaultActions> defaultActions;
 
 	private Integer listenerPort;
@@ -112,6 +114,23 @@ public class CreateListenerRequest extends RpcAcsRequest<CreateListenerResponse>
 		if(http2Enabled != null){
 			putQueryParameter("Http2Enabled", http2Enabled.toString());
 		}
+	}
+
+	public List<Tag> getTag() {
+		return this.tag;
+	}
+
+	public void setTag(List<Tag> tag) {
+		this.tag = tag;	
+		if (tag != null) {
+			for (int depth1 = 0; depth1 < tag.size(); depth1++) {
+				if (tag.get(depth1) != null) {
+					
+						putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tag.get(depth1).getValue());
+						putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tag.get(depth1).getKey());
+				}
+			}
+		}	
 	}
 
 	public List<DefaultActions> getDefaultActions() {
@@ -318,6 +337,29 @@ public class CreateListenerRequest extends RpcAcsRequest<CreateListenerResponse>
 
 		public void setQuicListenerId(String quicListenerId) {
 			this.quicListenerId = quicListenerId;
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

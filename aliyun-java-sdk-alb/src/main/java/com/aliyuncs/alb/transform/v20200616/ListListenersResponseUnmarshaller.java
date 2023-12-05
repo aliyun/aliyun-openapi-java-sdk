@@ -25,6 +25,7 @@ import com.aliyuncs.alb.model.v20200616.ListListenersResponse.Listener.DefaultAc
 import com.aliyuncs.alb.model.v20200616.ListListenersResponse.Listener.LogConfig;
 import com.aliyuncs.alb.model.v20200616.ListListenersResponse.Listener.LogConfig.AccessLogTracingConfig;
 import com.aliyuncs.alb.model.v20200616.ListListenersResponse.Listener.QuicConfig;
+import com.aliyuncs.alb.model.v20200616.ListListenersResponse.Listener.Tag;
 import com.aliyuncs.alb.model.v20200616.ListListenersResponse.Listener.XForwardedForConfig;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -108,6 +109,16 @@ public class ListListenersResponseUnmarshaller {
 				defaultActions.add(defaultAction);
 			}
 			listener.setDefaultActions(defaultActions);
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("ListListenersResponse.Listeners["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(_ctx.stringValue("ListListenersResponse.Listeners["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("ListListenersResponse.Listeners["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			listener.setTags(tags);
 
 			listeners.add(listener);
 		}
