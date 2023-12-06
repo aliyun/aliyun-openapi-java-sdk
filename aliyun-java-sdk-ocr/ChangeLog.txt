@@ -1,3 +1,8 @@
+2023-12-06 Version: 1.0.25
+- Update RecognizeIdentityCard.
+- Update RecognizeDriverLicense.
+- Update RecognizeDrivingLicense.
+
 2023-07-03 Version: 1.0.24
 - Update TrimDocument.
 - Update RecognizeTakeoutOrder.
