@@ -120,6 +120,9 @@ public class CreateProcCorrectOrderRequest extends RpcAcsRequest<CreateProcCorre
 		@SerializedName("ExecSQL")
 		private String execSQL;
 
+		@SerializedName("ExecMode")
+		private String execMode;
+
 		@SerializedName("RollbackAttachmentName")
 		private String rollbackAttachmentName;
 
@@ -161,6 +164,14 @@ public class CreateProcCorrectOrderRequest extends RpcAcsRequest<CreateProcCorre
 
 		public void setExecSQL(String execSQL) {
 			this.execSQL = execSQL;
+		}
+
+		public String getExecMode() {
+			return this.execMode;
+		}
+
+		public void setExecMode(String execMode) {
+			this.execMode = execMode;
 		}
 
 		public String getRollbackAttachmentName() {

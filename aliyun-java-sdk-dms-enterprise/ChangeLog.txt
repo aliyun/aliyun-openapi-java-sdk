@@ -1,3 +1,6 @@
+2023-12-06 Version: 1.53.8
+- Support CreateProcCorrectOrder request param of ExecMode.
+
 2023-10-19 Version: 1.53.7
 - Support CreateAuthorityTemplate, UpdateAuthorityTemplate, GetAuthorityTemplateItem, GetAuthorityTemplate return TenantId information.
 

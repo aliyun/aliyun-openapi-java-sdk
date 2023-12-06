@@ -27,21 +27,11 @@ public class RegisterInstanceRequest extends RpcAcsRequest<RegisterInstanceRespo
 
 	private String ecsRegion;
 
-	private Integer ddlOnline;
-
-	private Integer useDsql;
-
 	private String networkType;
 
 	private Long tid;
 
-	private String sid;
-
 	private String enableSellSitd;
-
-	private String dataLinkName;
-
-	private String templateType;
 
 	private String instanceSource;
 
@@ -49,31 +39,43 @@ public class RegisterInstanceRequest extends RpcAcsRequest<RegisterInstanceRespo
 
 	private String host;
 
-	private String instanceType;
-
 	private Integer queryTimeout;
+
+	private String dbaUidByString;
 
 	private String ecsInstanceId;
 
 	private Integer exportTimeout;
 
+	private Long templateId;
+
+	private Integer port;
+
+	private String safeRule;
+
+	private Integer ddlOnline;
+
+	private Integer useDsql;
+
+	private String sid;
+
+	private String dataLinkName;
+
+	private String templateType;
+
+	private String instanceType;
+
 	private String databasePassword;
 
 	private String instanceAlias;
 
-	private Long templateId;
-
 	private String databaseUser;
-
-	private Integer port;
 
 	private String vpcId;
 
 	private Long dbaUid;
 
 	private Boolean skipTest;
-
-	private String safeRule;
 	public RegisterInstanceRequest() {
 		super("dms-enterprise", "2018-11-01", "RegisterInstance", "dms-enterprise");
 		setMethod(MethodType.POST);
@@ -91,28 +93,6 @@ public class RegisterInstanceRequest extends RpcAcsRequest<RegisterInstanceRespo
 		this.ecsRegion = ecsRegion;
 		if(ecsRegion != null){
 			putQueryParameter("EcsRegion", ecsRegion);
-		}
-	}
-
-	public Integer getDdlOnline() {
-		return this.ddlOnline;
-	}
-
-	public void setDdlOnline(Integer ddlOnline) {
-		this.ddlOnline = ddlOnline;
-		if(ddlOnline != null){
-			putQueryParameter("DdlOnline", ddlOnline.toString());
-		}
-	}
-
-	public Integer getUseDsql() {
-		return this.useDsql;
-	}
-
-	public void setUseDsql(Integer useDsql) {
-		this.useDsql = useDsql;
-		if(useDsql != null){
-			putQueryParameter("UseDsql", useDsql.toString());
 		}
 	}
 
@@ -138,17 +118,6 @@ public class RegisterInstanceRequest extends RpcAcsRequest<RegisterInstanceRespo
 		}
 	}
 
-	public String getSid() {
-		return this.sid;
-	}
-
-	public void setSid(String sid) {
-		this.sid = sid;
-		if(sid != null){
-			putQueryParameter("Sid", sid);
-		}
-	}
-
 	public String getEnableSellSitd() {
 		return this.enableSellSitd;
 	}
@@ -157,28 +126,6 @@ public class RegisterInstanceRequest extends RpcAcsRequest<RegisterInstanceRespo
 		this.enableSellSitd = enableSellSitd;
 		if(enableSellSitd != null){
 			putQueryParameter("EnableSellSitd", enableSellSitd);
-		}
-	}
-
-	public String getDataLinkName() {
-		return this.dataLinkName;
-	}
-
-	public void setDataLinkName(String dataLinkName) {
-		this.dataLinkName = dataLinkName;
-		if(dataLinkName != null){
-			putQueryParameter("DataLinkName", dataLinkName);
-		}
-	}
-
-	public String getTemplateType() {
-		return this.templateType;
-	}
-
-	public void setTemplateType(String templateType) {
-		this.templateType = templateType;
-		if(templateType != null){
-			putQueryParameter("TemplateType", templateType);
 		}
 	}
 
@@ -215,17 +162,6 @@ public class RegisterInstanceRequest extends RpcAcsRequest<RegisterInstanceRespo
 		}
 	}
 
-	public String getInstanceType() {
-		return this.instanceType;
-	}
-
-	public void setInstanceType(String instanceType) {
-		this.instanceType = instanceType;
-		if(instanceType != null){
-			putQueryParameter("InstanceType", instanceType);
-		}
-	}
-
 	public Integer getQueryTimeout() {
 		return this.queryTimeout;
 	}
@@ -234,6 +170,17 @@ public class RegisterInstanceRequest extends RpcAcsRequest<RegisterInstanceRespo
 		this.queryTimeout = queryTimeout;
 		if(queryTimeout != null){
 			putQueryParameter("QueryTimeout", queryTimeout.toString());
+		}
+	}
+
+	public String getDbaUidByString() {
+		return this.dbaUidByString;
+	}
+
+	public void setDbaUidByString(String dbaUidByString) {
+		this.dbaUidByString = dbaUidByString;
+		if(dbaUidByString != null){
+			putQueryParameter("DbaUidByString", dbaUidByString);
 		}
 	}
 
@@ -259,6 +206,105 @@ public class RegisterInstanceRequest extends RpcAcsRequest<RegisterInstanceRespo
 		}
 	}
 
+	public Long getTemplateId() {
+		return this.templateId;
+	}
+
+	public void setTemplateId(Long templateId) {
+		this.templateId = templateId;
+		if(templateId != null){
+			putQueryParameter("TemplateId", templateId.toString());
+		}
+	}
+
+	public Integer getPort() {
+		return this.port;
+	}
+
+	public void setPort(Integer port) {
+		this.port = port;
+		if(port != null){
+			putQueryParameter("Port", port.toString());
+		}
+	}
+
+	public String getSafeRule() {
+		return this.safeRule;
+	}
+
+	public void setSafeRule(String safeRule) {
+		this.safeRule = safeRule;
+		if(safeRule != null){
+			putQueryParameter("SafeRule", safeRule);
+		}
+	}
+
+	public Integer getDdlOnline() {
+		return this.ddlOnline;
+	}
+
+	public void setDdlOnline(Integer ddlOnline) {
+		this.ddlOnline = ddlOnline;
+		if(ddlOnline != null){
+			putQueryParameter("DdlOnline", ddlOnline.toString());
+		}
+	}
+
+	public Integer getUseDsql() {
+		return this.useDsql;
+	}
+
+	public void setUseDsql(Integer useDsql) {
+		this.useDsql = useDsql;
+		if(useDsql != null){
+			putQueryParameter("UseDsql", useDsql.toString());
+		}
+	}
+
+	public String getSid() {
+		return this.sid;
+	}
+
+	public void setSid(String sid) {
+		this.sid = sid;
+		if(sid != null){
+			putQueryParameter("Sid", sid);
+		}
+	}
+
+	public String getDataLinkName() {
+		return this.dataLinkName;
+	}
+
+	public void setDataLinkName(String dataLinkName) {
+		this.dataLinkName = dataLinkName;
+		if(dataLinkName != null){
+			putQueryParameter("DataLinkName", dataLinkName);
+		}
+	}
+
+	public String getTemplateType() {
+		return this.templateType;
+	}
+
+	public void setTemplateType(String templateType) {
+		this.templateType = templateType;
+		if(templateType != null){
+			putQueryParameter("TemplateType", templateType);
+		}
+	}
+
+	public String getInstanceType() {
+		return this.instanceType;
+	}
+
+	public void setInstanceType(String instanceType) {
+		this.instanceType = instanceType;
+		if(instanceType != null){
+			putQueryParameter("InstanceType", instanceType);
+		}
+	}
+
 	public String getDatabasePassword() {
 		return this.databasePassword;
 	}
@@ -281,17 +327,6 @@ public class RegisterInstanceRequest extends RpcAcsRequest<RegisterInstanceRespo
 		}
 	}
 
-	public Long getTemplateId() {
-		return this.templateId;
-	}
-
-	public void setTemplateId(Long templateId) {
-		this.templateId = templateId;
-		if(templateId != null){
-			putQueryParameter("TemplateId", templateId.toString());
-		}
-	}
-
 	public String getDatabaseUser() {
 		return this.databaseUser;
 	}
@@ -300,17 +335,6 @@ public class RegisterInstanceRequest extends RpcAcsRequest<RegisterInstanceRespo
 		this.databaseUser = databaseUser;
 		if(databaseUser != null){
 			putQueryParameter("DatabaseUser", databaseUser);
-		}
-	}
-
-	public Integer getPort() {
-		return this.port;
-	}
-
-	public void setPort(Integer port) {
-		this.port = port;
-		if(port != null){
-			putQueryParameter("Port", port.toString());
 		}
 	}
 
@@ -344,17 +368,6 @@ public class RegisterInstanceRequest extends RpcAcsRequest<RegisterInstanceRespo
 		this.skipTest = skipTest;
 		if(skipTest != null){
 			putQueryParameter("SkipTest", skipTest.toString());
-		}
-	}
-
-	public String getSafeRule() {
-		return this.safeRule;
-	}
-
-	public void setSafeRule(String safeRule) {
-		this.safeRule = safeRule;
-		if(safeRule != null){
-			putQueryParameter("SafeRule", safeRule);
 		}
 	}
 
