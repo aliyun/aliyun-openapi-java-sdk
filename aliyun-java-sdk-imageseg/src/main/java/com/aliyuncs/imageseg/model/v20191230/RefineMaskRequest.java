@@ -29,7 +29,7 @@ public class RefineMaskRequest extends RpcAcsRequest<RefineMaskResponse> {
 
 	private String imageURL;
 	public RefineMaskRequest() {
-		super("imageseg", "2019-12-30", "RefineMask");
+		super("imageseg", "2019-12-30", "RefineMask", "imageseg");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class SegmentFoodRequest extends RpcAcsRequest<SegmentFoodResponse> {
 
 	private String imageURL;
 	public SegmentFoodRequest() {
-		super("imageseg", "2019-12-30", "SegmentFood");
+		super("imageseg", "2019-12-30", "SegmentFood", "imageseg");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.imageseg.model.v20191230.SegmentClothResponse;
 import com.aliyuncs.imageseg.model.v20191230.SegmentClothResponse.Data;
 import com.aliyuncs.imageseg.model.v20191230.SegmentClothResponse.Data.Element;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -35,6 +36,7 @@ public class SegmentClothResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("SegmentClothResponse.Data.Elements.Length"); i++) {
 			Element element = new Element();
 			element.setImageURL(_ctx.stringValue("SegmentClothResponse.Data.Elements["+ i +"].ImageURL"));
+			element.setClassUrl(_ctx.mapValue("SegmentClothResponse.Data.Elements["+ i +"].ClassUrl"));
 
 			elements.add(element);
 		}

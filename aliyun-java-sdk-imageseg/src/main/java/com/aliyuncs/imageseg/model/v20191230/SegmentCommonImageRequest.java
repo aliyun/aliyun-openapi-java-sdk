@@ -29,7 +29,7 @@ public class SegmentCommonImageRequest extends RpcAcsRequest<SegmentCommonImageR
 
 	private String imageURL;
 	public SegmentCommonImageRequest() {
-		super("imageseg", "2019-12-30", "SegmentCommonImage");
+		super("imageseg", "2019-12-30", "SegmentCommonImage", "imageseg");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

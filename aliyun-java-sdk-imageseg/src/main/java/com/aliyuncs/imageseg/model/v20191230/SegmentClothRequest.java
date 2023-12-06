@@ -15,6 +15,7 @@
 package com.aliyuncs.imageseg.model.v20191230;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.imageseg.Endpoint;
 
@@ -25,14 +26,42 @@ import com.aliyuncs.imageseg.Endpoint;
 public class SegmentClothRequest extends RpcAcsRequest<SegmentClothResponse> {
 	   
 
+	private List<String> clothClasss;
+
+	private String returnForm;
+
 	private String imageURL;
 	public SegmentClothRequest() {
-		super("imageseg", "2019-12-30", "SegmentCloth");
+		super("imageseg", "2019-12-30", "SegmentCloth", "imageseg");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public List<String> getClothClasss() {
+		return this.clothClasss;
+	}
+
+	public void setClothClasss(List<String> clothClasss) {
+		this.clothClasss = clothClasss;	
+		if (clothClasss != null) {
+			for (int i = 0; i < clothClasss.size(); i++) {
+				putQueryParameter("ClothClass." + (i + 1) , clothClasss.get(i));
+			}
+		}	
+	}
+
+	public String getReturnForm() {
+		return this.returnForm;
+	}
+
+	public void setReturnForm(String returnForm) {
+		this.returnForm = returnForm;
+		if(returnForm != null){
+			putQueryParameter("ReturnForm", returnForm);
+		}
 	}
 
 	public String getImageURL() {

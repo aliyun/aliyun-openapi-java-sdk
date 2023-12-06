@@ -1,3 +1,6 @@
+2023-12-06 Version: 1.1.14
+- Update SegmentCloth.
+
 2022-11-18 Version: 1.1.13
 - Update RefineMask.
 

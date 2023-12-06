@@ -15,6 +15,7 @@
 package com.aliyuncs.imageseg.model.v20191230;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.imageseg.transform.v20191230.SegmentClothResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -61,12 +62,22 @@ public class SegmentClothResponse extends AcsResponse {
 
 			private String imageURL;
 
+			private Map<Object,Object> classUrl;
+
 			public String getImageURL() {
 				return this.imageURL;
 			}
 
 			public void setImageURL(String imageURL) {
 				this.imageURL = imageURL;
+			}
+
+			public Map<Object,Object> getClassUrl() {
+				return this.classUrl;
+			}
+
+			public void setClassUrl(Map<Object,Object> classUrl) {
+				this.classUrl = classUrl;
 			}
 		}
 	}
