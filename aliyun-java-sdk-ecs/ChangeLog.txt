@@ -1,3 +1,6 @@
+2023-12-07 Version: 5.11.2
+- ECS SDK publish full package.
+
 2023-11-06 Version: 5.11.1
 - CreateAutoProvisioningGroup support SecurityOptions.
 

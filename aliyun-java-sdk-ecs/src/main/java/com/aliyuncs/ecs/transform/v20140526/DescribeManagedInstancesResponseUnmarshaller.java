@@ -49,6 +49,7 @@ public class DescribeManagedInstancesResponseUnmarshaller {
 			instance.setOsVersion(_ctx.stringValue("DescribeManagedInstancesResponse.Instances["+ i +"].OsVersion"));
 			instance.setInvocationCount(_ctx.longValue("DescribeManagedInstancesResponse.Instances["+ i +"].InvocationCount"));
 			instance.setMachineId(_ctx.stringValue("DescribeManagedInstancesResponse.Instances["+ i +"].MachineId"));
+			instance.setResourceGroupId(_ctx.stringValue("DescribeManagedInstancesResponse.Instances["+ i +"].ResourceGroupId"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeManagedInstancesResponse.Instances["+ i +"].Tags.Length"); j++) {

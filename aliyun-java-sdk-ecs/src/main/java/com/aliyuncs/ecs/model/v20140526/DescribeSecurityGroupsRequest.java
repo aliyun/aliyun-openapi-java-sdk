@@ -30,6 +30,8 @@ public class DescribeSecurityGroupsRequest extends RpcAcsRequest<DescribeSecurit
 
 	private Boolean fuzzyQuery;
 
+	private Boolean serviceManaged;
+
 	private String securityGroupId;
 
 	private Boolean isQueryEcsCount;
@@ -91,6 +93,17 @@ public class DescribeSecurityGroupsRequest extends RpcAcsRequest<DescribeSecurit
 		this.fuzzyQuery = fuzzyQuery;
 		if(fuzzyQuery != null){
 			putQueryParameter("FuzzyQuery", fuzzyQuery.toString());
+		}
+	}
+
+	public Boolean getServiceManaged() {
+		return this.serviceManaged;
+	}
+
+	public void setServiceManaged(Boolean serviceManaged) {
+		this.serviceManaged = serviceManaged;
+		if(serviceManaged != null){
+			putQueryParameter("ServiceManaged", serviceManaged.toString());
 		}
 	}
 

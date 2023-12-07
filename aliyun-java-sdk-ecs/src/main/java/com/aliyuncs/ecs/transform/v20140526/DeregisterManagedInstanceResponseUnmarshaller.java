@@ -39,6 +39,7 @@ public class DeregisterManagedInstanceResponseUnmarshaller {
 		instance.setOsVersion(_ctx.stringValue("DeregisterManagedInstanceResponse.Instance.OsVersion"));
 		instance.setInvocationCount(_ctx.longValue("DeregisterManagedInstanceResponse.Instance.InvocationCount"));
 		instance.setMachineId(_ctx.stringValue("DeregisterManagedInstanceResponse.Instance.MachineId"));
+		instance.setResourceGroupId(_ctx.stringValue("DeregisterManagedInstanceResponse.Instance.ResourceGroupId"));
 		deregisterManagedInstanceResponse.setInstance(instance);
 	 
 	 	return deregisterManagedInstanceResponse;

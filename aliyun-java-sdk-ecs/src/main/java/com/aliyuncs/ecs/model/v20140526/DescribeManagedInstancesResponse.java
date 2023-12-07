@@ -105,6 +105,8 @@ public class DescribeManagedInstancesResponse extends AcsResponse {
 
 		private String machineId;
 
+		private String resourceGroupId;
+
 		private List<Tag> tags;
 
 		public String getLastInvokedTime() {
@@ -217,6 +219,14 @@ public class DescribeManagedInstancesResponse extends AcsResponse {
 
 		public void setMachineId(String machineId) {
 			this.machineId = machineId;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 
 		public List<Tag> getTags() {

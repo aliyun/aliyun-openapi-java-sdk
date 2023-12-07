@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.ecs.model.v20140526.DescribeCapacityReservationsResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeCapacityReservationsResponse.CapacityReservationItem;
 import com.aliyuncs.ecs.model.v20140526.DescribeCapacityReservationsResponse.CapacityReservationItem.AllocatedResource;
+import com.aliyuncs.ecs.model.v20140526.DescribeCapacityReservationsResponse.CapacityReservationItem.AllocatedResource.CapacityReservationUsage;
 import com.aliyuncs.ecs.model.v20140526.DescribeCapacityReservationsResponse.CapacityReservationItem.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -52,14 +53,27 @@ public class DescribeCapacityReservationsResponseUnmarshaller {
 			capacityReservationItem.setStartTimeType(_ctx.stringValue("DescribeCapacityReservationsResponse.CapacityReservationSet["+ i +"].StartTimeType"));
 			capacityReservationItem.setSavingPlanId(_ctx.stringValue("DescribeCapacityReservationsResponse.CapacityReservationSet["+ i +"].SavingPlanId"));
 			capacityReservationItem.setReservedInstanceId(_ctx.stringValue("DescribeCapacityReservationsResponse.CapacityReservationSet["+ i +"].ReservedInstanceId"));
+			capacityReservationItem.setCapacityReservationOwnerId(_ctx.stringValue("DescribeCapacityReservationsResponse.CapacityReservationSet["+ i +"].CapacityReservationOwnerId"));
 
 			List<AllocatedResource> allocatedResources = new ArrayList<AllocatedResource>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeCapacityReservationsResponse.CapacityReservationSet["+ i +"].AllocatedResources.Length"); j++) {
 				AllocatedResource allocatedResource = new AllocatedResource();
 				allocatedResource.setUsedAmount(_ctx.integerValue("DescribeCapacityReservationsResponse.CapacityReservationSet["+ i +"].AllocatedResources["+ j +"].UsedAmount"));
 				allocatedResource.setTotalAmount(_ctx.integerValue("DescribeCapacityReservationsResponse.CapacityReservationSet["+ i +"].AllocatedResources["+ j +"].TotalAmount"));
+				allocatedResource.setAvailableAmount(_ctx.integerValue("DescribeCapacityReservationsResponse.CapacityReservationSet["+ i +"].AllocatedResources["+ j +"].AvailableAmount"));
 				allocatedResource.setZoneId(_ctx.stringValue("DescribeCapacityReservationsResponse.CapacityReservationSet["+ i +"].AllocatedResources["+ j +"].zoneId"));
 				allocatedResource.setInstanceType(_ctx.stringValue("DescribeCapacityReservationsResponse.CapacityReservationSet["+ i +"].AllocatedResources["+ j +"].InstanceType"));
+
+				List<CapacityReservationUsage> capacityReservationUsages = new ArrayList<CapacityReservationUsage>();
+				for (int k = 0; k < _ctx.lengthValue("DescribeCapacityReservationsResponse.CapacityReservationSet["+ i +"].AllocatedResources["+ j +"].CapacityReservationUsages.Length"); k++) {
+					CapacityReservationUsage capacityReservationUsage = new CapacityReservationUsage();
+					capacityReservationUsage.setAccountId(_ctx.stringValue("DescribeCapacityReservationsResponse.CapacityReservationSet["+ i +"].AllocatedResources["+ j +"].CapacityReservationUsages["+ k +"].AccountId"));
+					capacityReservationUsage.setServiceName(_ctx.stringValue("DescribeCapacityReservationsResponse.CapacityReservationSet["+ i +"].AllocatedResources["+ j +"].CapacityReservationUsages["+ k +"].ServiceName"));
+					capacityReservationUsage.setUsedAmount(_ctx.integerValue("DescribeCapacityReservationsResponse.CapacityReservationSet["+ i +"].AllocatedResources["+ j +"].CapacityReservationUsages["+ k +"].UsedAmount"));
+
+					capacityReservationUsages.add(capacityReservationUsage);
+				}
+				allocatedResource.setCapacityReservationUsages(capacityReservationUsages);
 
 				allocatedResources.add(allocatedResource);
 			}

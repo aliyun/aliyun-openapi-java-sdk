@@ -72,6 +72,8 @@ public class DeregisterManagedInstanceResponse extends AcsResponse {
 
 		private String machineId;
 
+		private String resourceGroupId;
+
 		public String getLastInvokedTime() {
 			return this.lastInvokedTime;
 		}
@@ -174,6 +176,14 @@ public class DeregisterManagedInstanceResponse extends AcsResponse {
 
 		public void setMachineId(String machineId) {
 			this.machineId = machineId;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 	}
 

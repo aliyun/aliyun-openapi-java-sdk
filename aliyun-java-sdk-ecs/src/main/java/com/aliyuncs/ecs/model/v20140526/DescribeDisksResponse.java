@@ -171,6 +171,10 @@ public class DescribeDisksResponse extends AcsResponse {
 
 		private Integer throughput;
 
+		private Integer throughputRead;
+
+		private Integer throughputWrite;
+
 		private List<OperationLock> operationLocks;
 
 		private List<MountInstance> mountInstances;
@@ -513,6 +517,22 @@ public class DescribeDisksResponse extends AcsResponse {
 
 		public void setThroughput(Integer throughput) {
 			this.throughput = throughput;
+		}
+
+		public Integer getThroughputRead() {
+			return this.throughputRead;
+		}
+
+		public void setThroughputRead(Integer throughputRead) {
+			this.throughputRead = throughputRead;
+		}
+
+		public Integer getThroughputWrite() {
+			return this.throughputWrite;
+		}
+
+		public void setThroughputWrite(Integer throughputWrite) {
+			this.throughputWrite = throughputWrite;
 		}
 
 		public List<OperationLock> getOperationLocks() {
