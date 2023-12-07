@@ -1379,6 +1379,10 @@ public class GetResultResponse extends AcsResponse {
 
 			private String callTime;
 
+			private Long taskConfigId;
+
+			private String taskConfigName;
+
 			public String getRemark13() {
 				return this.remark13;
 			}
@@ -1585,6 +1589,22 @@ public class GetResultResponse extends AcsResponse {
 
 			public void setCallTime(String callTime) {
 				this.callTime = callTime;
+			}
+
+			public Long getTaskConfigId() {
+				return this.taskConfigId;
+			}
+
+			public void setTaskConfigId(Long taskConfigId) {
+				this.taskConfigId = taskConfigId;
+			}
+
+			public String getTaskConfigName() {
+				return this.taskConfigName;
+			}
+
+			public void setTaskConfigName(String taskConfigName) {
+				this.taskConfigName = taskConfigName;
 			}
 		}
 
