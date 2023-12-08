@@ -27,6 +27,8 @@ public class GetInstanceStatusStatisticRequest extends RpcAcsRequest<GetInstance
 
 	private String projectEnv;
 
+	private String schedulerPeriod;
+
 	private String dagType;
 
 	private String bizDate;
@@ -51,6 +53,17 @@ public class GetInstanceStatusStatisticRequest extends RpcAcsRequest<GetInstance
 		this.projectEnv = projectEnv;
 		if(projectEnv != null){
 			putBodyParameter("ProjectEnv", projectEnv);
+		}
+	}
+
+	public String getSchedulerPeriod() {
+		return this.schedulerPeriod;
+	}
+
+	public void setSchedulerPeriod(String schedulerPeriod) {
+		this.schedulerPeriod = schedulerPeriod;
+		if(schedulerPeriod != null){
+			putBodyParameter("SchedulerPeriod", schedulerPeriod);
 		}
 	}
 

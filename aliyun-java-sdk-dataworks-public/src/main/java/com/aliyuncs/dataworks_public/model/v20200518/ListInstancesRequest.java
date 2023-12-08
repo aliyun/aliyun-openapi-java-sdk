@@ -33,6 +33,8 @@ public class ListInstancesRequest extends RpcAcsRequest<ListInstancesResponse> {
 
 	private String beginBizdate;
 
+	private String orderBy;
+
 	private String endBizdate;
 
 	private Long dagId;
@@ -102,6 +104,17 @@ public class ListInstancesRequest extends RpcAcsRequest<ListInstancesResponse> {
 		this.beginBizdate = beginBizdate;
 		if(beginBizdate != null){
 			putBodyParameter("BeginBizdate", beginBizdate);
+		}
+	}
+
+	public String getOrderBy() {
+		return this.orderBy;
+	}
+
+	public void setOrderBy(String orderBy) {
+		this.orderBy = orderBy;
+		if(orderBy != null){
+			putBodyParameter("OrderBy", orderBy);
 		}
 	}
 
