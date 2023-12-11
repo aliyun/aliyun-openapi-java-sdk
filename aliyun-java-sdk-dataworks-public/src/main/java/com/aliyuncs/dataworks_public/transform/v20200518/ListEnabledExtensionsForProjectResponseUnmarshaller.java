@@ -39,8 +39,6 @@ public class ListEnabledExtensionsForProjectResponseUnmarshaller {
 			extensionsItem.setExtensionDesc(_ctx.stringValue("ListEnabledExtensionsForProjectResponse.Extensions["+ i +"].ExtensionDesc"));
 			extensionsItem.setOwner(_ctx.stringValue("ListEnabledExtensionsForProjectResponse.Extensions["+ i +"].Owner"));
 			extensionsItem.setParameterSetting(_ctx.stringValue("ListEnabledExtensionsForProjectResponse.Extensions["+ i +"].ParameterSetting"));
-			extensionsItem.setGmtCreate(_ctx.longValue("ListEnabledExtensionsForProjectResponse.Extensions["+ i +"].GmtCreate"));
-			extensionsItem.setGmtModified(_ctx.longValue("ListEnabledExtensionsForProjectResponse.Extensions["+ i +"].GmtModified"));
 
 			extensions.add(extensionsItem);
 		}

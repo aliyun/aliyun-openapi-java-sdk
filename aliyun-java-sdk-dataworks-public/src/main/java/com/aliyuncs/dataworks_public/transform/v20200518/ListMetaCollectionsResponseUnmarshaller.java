@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.dataworks_public.model.v20200518.ListMetaCollectionsResponse;
 import com.aliyuncs.dataworks_public.model.v20200518.ListMetaCollectionsResponse.Data;
-import com.aliyuncs.dataworks_public.model.v20200518.ListMetaCollectionsResponse.Data.CollectionListItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -36,20 +35,9 @@ public class ListMetaCollectionsResponseUnmarshaller {
 		Data data = new Data();
 		data.setNextToken(_ctx.stringValue("ListMetaCollectionsResponse.Data.NextToken"));
 
-		List<CollectionListItem> collectionList = new ArrayList<CollectionListItem>();
+		List<String> collectionList = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("ListMetaCollectionsResponse.Data.CollectionList.Length"); i++) {
-			CollectionListItem collectionListItem = new CollectionListItem();
-			collectionListItem.setQualifiedName(_ctx.stringValue("ListMetaCollectionsResponse.Data.CollectionList["+ i +"].QualifiedName"));
-			collectionListItem.setCollectionType(_ctx.stringValue("ListMetaCollectionsResponse.Data.CollectionList["+ i +"].CollectionType"));
-			collectionListItem.setName(_ctx.stringValue("ListMetaCollectionsResponse.Data.CollectionList["+ i +"].Name"));
-			collectionListItem.setComment(_ctx.stringValue("ListMetaCollectionsResponse.Data.CollectionList["+ i +"].Comment"));
-			collectionListItem.setOwnerId(_ctx.stringValue("ListMetaCollectionsResponse.Data.CollectionList["+ i +"].OwnerId"));
-			collectionListItem.setOwnerName(_ctx.stringValue("ListMetaCollectionsResponse.Data.CollectionList["+ i +"].OwnerName"));
-			collectionListItem.setCreateTime(_ctx.longValue("ListMetaCollectionsResponse.Data.CollectionList["+ i +"].CreateTime"));
-			collectionListItem.setUpdateTime(_ctx.longValue("ListMetaCollectionsResponse.Data.CollectionList["+ i +"].UpdateTime"));
-			collectionListItem.setLevel(_ctx.integerValue("ListMetaCollectionsResponse.Data.CollectionList["+ i +"].Level"));
-
-			collectionList.add(collectionListItem);
+			collectionList.add(_ctx.stringValue("ListMetaCollectionsResponse.Data.CollectionList["+ i +"]"));
 		}
 		data.setCollectionList(collectionList);
 		listMetaCollectionsResponse.setData(data);

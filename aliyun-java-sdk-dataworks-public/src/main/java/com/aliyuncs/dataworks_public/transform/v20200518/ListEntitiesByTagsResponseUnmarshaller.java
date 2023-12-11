@@ -19,8 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.dataworks_public.model.v20200518.ListEntitiesByTagsResponse;
 import com.aliyuncs.dataworks_public.model.v20200518.ListEntitiesByTagsResponse.Data;
-import com.aliyuncs.dataworks_public.model.v20200518.ListEntitiesByTagsResponse.Data.EntityListItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -37,14 +35,9 @@ public class ListEntitiesByTagsResponseUnmarshaller {
 		Data data = new Data();
 		data.setNextToken(_ctx.stringValue("ListEntitiesByTagsResponse.Data.NextToken"));
 
-		List<EntityListItem> entityList = new ArrayList<EntityListItem>();
+		List<String> entityList = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("ListEntitiesByTagsResponse.Data.EntityList.Length"); i++) {
-			EntityListItem entityListItem = new EntityListItem();
-			entityListItem.setQualifiedName(_ctx.stringValue("ListEntitiesByTagsResponse.Data.EntityList["+ i +"].QualifiedName"));
-			entityListItem.setTenantId(_ctx.longValue("ListEntitiesByTagsResponse.Data.EntityList["+ i +"].TenantId"));
-			entityListItem.setEntityContent(_ctx.mapValue("ListEntitiesByTagsResponse.Data.EntityList["+ i +"].EntityContent"));
-
-			entityList.add(entityListItem);
+			entityList.add(_ctx.stringValue("ListEntitiesByTagsResponse.Data.EntityList["+ i +"]"));
 		}
 		data.setEntityList(entityList);
 		listEntitiesByTagsResponse.setData(data);

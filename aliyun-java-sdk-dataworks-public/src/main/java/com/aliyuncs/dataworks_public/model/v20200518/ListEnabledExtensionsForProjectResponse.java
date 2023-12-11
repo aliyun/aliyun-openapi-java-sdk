@@ -63,10 +63,6 @@ public class ListEnabledExtensionsForProjectResponse extends AcsResponse {
 
 		private String parameterSetting;
 
-		private Long gmtCreate;
-
-		private Long gmtModified;
-
 		public String getExtensionCode() {
 			return this.extensionCode;
 		}
@@ -129,22 +125,6 @@ public class ListEnabledExtensionsForProjectResponse extends AcsResponse {
 
 		public void setParameterSetting(String parameterSetting) {
 			this.parameterSetting = parameterSetting;
-		}
-
-		public Long getGmtCreate() {
-			return this.gmtCreate;
-		}
-
-		public void setGmtCreate(Long gmtCreate) {
-			this.gmtCreate = gmtCreate;
-		}
-
-		public Long getGmtModified() {
-			return this.gmtModified;
-		}
-
-		public void setGmtModified(Long gmtModified) {
-			this.gmtModified = gmtModified;
 		}
 	}
 

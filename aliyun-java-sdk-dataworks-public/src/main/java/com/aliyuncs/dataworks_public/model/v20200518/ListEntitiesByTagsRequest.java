@@ -35,7 +35,7 @@ public class ListEntitiesByTagsRequest extends RpcAcsRequest<ListEntitiesByTagsR
 	private Integer pageSize;
 
 	@SerializedName("tags")
-	private List<Tags> tags;
+	private List<Object> tags;
 	public ListEntitiesByTagsRequest() {
 		super("dataworks-public", "2020-05-18", "ListEntitiesByTags");
 		setMethod(MethodType.GET);
@@ -78,40 +78,15 @@ public class ListEntitiesByTagsRequest extends RpcAcsRequest<ListEntitiesByTagsR
 		}
 	}
 
-	public List<Tags> getTags() {
+	public List<Object> getTags() {
 		return this.tags;
 	}
 
-	public void setTags(List<Tags> tags) {
+	public void setTags(List<Object> tags) {
 		this.tags = tags;	
 		if (tags != null) {
 			putQueryParameter("Tags" , new Gson().toJson(tags));
 		}	
-	}
-
-	public static class Tags {
-
-		@SerializedName("TagValue")
-		private String tagValue;
-
-		@SerializedName("TagKey")
-		private String tagKey;
-
-		public String getTagValue() {
-			return this.tagValue;
-		}
-
-		public void setTagValue(String tagValue) {
-			this.tagValue = tagValue;
-		}
-
-		public String getTagKey() {
-			return this.tagKey;
-		}
-
-		public void setTagKey(String tagKey) {
-			this.tagKey = tagKey;
-		}
 	}
 
 	@Override

@@ -35,7 +35,7 @@ public class ListEntityTagsResponse extends AcsResponse {
 
 	private Integer httpStatusCode;
 
-	private List<DataItem> data;
+	private List<String> data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -77,35 +77,12 @@ public class ListEntityTagsResponse extends AcsResponse {
 		this.httpStatusCode = httpStatusCode;
 	}
 
-	public List<DataItem> getData() {
+	public List<String> getData() {
 		return this.data;
 	}
 
-	public void setData(List<DataItem> data) {
+	public void setData(List<String> data) {
 		this.data = data;
-	}
-
-	public static class DataItem {
-
-		private String tagKey;
-
-		private String tagValue;
-
-		public String getTagKey() {
-			return this.tagKey;
-		}
-
-		public void setTagKey(String tagKey) {
-			this.tagKey = tagKey;
-		}
-
-		public String getTagValue() {
-			return this.tagValue;
-		}
-
-		public void setTagValue(String tagValue) {
-			this.tagValue = tagValue;
-		}
 	}
 
 	@Override

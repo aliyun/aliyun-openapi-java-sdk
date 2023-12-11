@@ -15,7 +15,6 @@
 package com.aliyuncs.dataworks_public.model.v20200518;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.dataworks_public.transform.v20200518.ListLineageResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -110,11 +109,19 @@ public class ListLineageResponse extends AcsResponse {
 
 		public static class DataEntityListItem {
 
+			private Object entity;
+
 			private Long createTimestamp;
 
 			private List<RelationListItem> relationList;
 
-			private Entity entity;
+			public Object getEntity() {
+				return this.entity;
+			}
+
+			public void setEntity(Object entity) {
+				this.entity = entity;
+			}
 
 			public Long getCreateTimestamp() {
 				return this.createTimestamp;
@@ -130,14 +137,6 @@ public class ListLineageResponse extends AcsResponse {
 
 			public void setRelationList(List<RelationListItem> relationList) {
 				this.relationList = relationList;
-			}
-
-			public Entity getEntity() {
-				return this.entity;
-			}
-
-			public void setEntity(Entity entity) {
-				this.entity = entity;
 			}
 
 			public static class RelationListItem {
@@ -180,39 +179,6 @@ public class ListLineageResponse extends AcsResponse {
 
 				public void setChannel(String channel) {
 					this.channel = channel;
-				}
-			}
-
-			public static class Entity {
-
-				private String qualifiedName;
-
-				private Long tenantId;
-
-				private Map<Object,Object> entityContent;
-
-				public String getQualifiedName() {
-					return this.qualifiedName;
-				}
-
-				public void setQualifiedName(String qualifiedName) {
-					this.qualifiedName = qualifiedName;
-				}
-
-				public Long getTenantId() {
-					return this.tenantId;
-				}
-
-				public void setTenantId(Long tenantId) {
-					this.tenantId = tenantId;
-				}
-
-				public Map<Object,Object> getEntityContent() {
-					return this.entityContent;
-				}
-
-				public void setEntityContent(Map<Object,Object> entityContent) {
-					this.entityContent = entityContent;
 				}
 			}
 		}

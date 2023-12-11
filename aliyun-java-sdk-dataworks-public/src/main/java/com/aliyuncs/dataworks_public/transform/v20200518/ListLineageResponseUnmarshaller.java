@@ -20,9 +20,7 @@ import java.util.List;
 import com.aliyuncs.dataworks_public.model.v20200518.ListLineageResponse;
 import com.aliyuncs.dataworks_public.model.v20200518.ListLineageResponse.Data;
 import com.aliyuncs.dataworks_public.model.v20200518.ListLineageResponse.Data.DataEntityListItem;
-import com.aliyuncs.dataworks_public.model.v20200518.ListLineageResponse.Data.DataEntityListItem.Entity;
 import com.aliyuncs.dataworks_public.model.v20200518.ListLineageResponse.Data.DataEntityListItem.RelationListItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -43,12 +41,6 @@ public class ListLineageResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("ListLineageResponse.Data.DataEntityList.Length"); i++) {
 			DataEntityListItem dataEntityListItem = new DataEntityListItem();
 			dataEntityListItem.setCreateTimestamp(_ctx.longValue("ListLineageResponse.Data.DataEntityList["+ i +"].CreateTimestamp"));
-
-			Entity entity = new Entity();
-			entity.setQualifiedName(_ctx.stringValue("ListLineageResponse.Data.DataEntityList["+ i +"].Entity.QualifiedName"));
-			entity.setTenantId(_ctx.longValue("ListLineageResponse.Data.DataEntityList["+ i +"].Entity.TenantId"));
-			entity.setEntityContent(_ctx.mapValue("ListLineageResponse.Data.DataEntityList["+ i +"].Entity.EntityContent"));
-			dataEntityListItem.setEntity(entity);
 
 			List<RelationListItem> relationList = new ArrayList<RelationListItem>();
 			for (int j = 0; j < _ctx.lengthValue("ListLineageResponse.Data.DataEntityList["+ i +"].RelationList.Length"); j++) {
