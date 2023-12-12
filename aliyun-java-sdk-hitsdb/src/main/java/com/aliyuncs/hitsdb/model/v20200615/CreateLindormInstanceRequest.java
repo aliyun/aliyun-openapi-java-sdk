@@ -29,9 +29,13 @@ public class CreateLindormInstanceRequest extends RpcAcsRequest<CreateLindormIns
 
 	private Long resourceOwnerId;
 
+	private String autoRenewDuration;
+
 	private String resourceGroupId;
 
 	private String logSpec;
+
+	private Boolean autoRenewal;
 
 	private String securityToken;
 
@@ -135,6 +139,17 @@ public class CreateLindormInstanceRequest extends RpcAcsRequest<CreateLindormIns
 		}
 	}
 
+	public String getAutoRenewDuration() {
+		return this.autoRenewDuration;
+	}
+
+	public void setAutoRenewDuration(String autoRenewDuration) {
+		this.autoRenewDuration = autoRenewDuration;
+		if(autoRenewDuration != null){
+			putQueryParameter("AutoRenewDuration", autoRenewDuration);
+		}
+	}
+
 	public String getResourceGroupId() {
 		return this.resourceGroupId;
 	}
@@ -154,6 +169,17 @@ public class CreateLindormInstanceRequest extends RpcAcsRequest<CreateLindormIns
 		this.logSpec = logSpec;
 		if(logSpec != null){
 			putQueryParameter("LogSpec", logSpec);
+		}
+	}
+
+	public Boolean getAutoRenewal() {
+		return this.autoRenewal;
+	}
+
+	public void setAutoRenewal(Boolean autoRenewal) {
+		this.autoRenewal = autoRenewal;
+		if(autoRenewal != null){
+			putQueryParameter("AutoRenewal", autoRenewal.toString());
 		}
 	}
 
