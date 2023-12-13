@@ -41,6 +41,7 @@ public class GetPlayInfoResponseUnmarshaller {
 		videoBase.setTitle(_ctx.stringValue("GetPlayInfoResponse.VideoBase.Title"));
 		videoBase.setMediaType(_ctx.stringValue("GetPlayInfoResponse.VideoBase.MediaType"));
 		videoBase.setDanMuURL(_ctx.stringValue("GetPlayInfoResponse.VideoBase.DanMuURL"));
+		videoBase.setStorageClass(_ctx.stringValue("GetPlayInfoResponse.VideoBase.StorageClass"));
 
 		List<Thumbnail> thumbnailList = new ArrayList<Thumbnail>();
 		for (int i = 0; i < _ctx.lengthValue("GetPlayInfoResponse.VideoBase.ThumbnailList.Length"); i++) {

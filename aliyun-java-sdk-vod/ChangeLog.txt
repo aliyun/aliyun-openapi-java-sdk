@@ -1,3 +1,6 @@
+2023-12-13 Version: 2.16.20
+- Support Media StorageClass.
+
 2023-11-15 Version: 2.16.19
 - Latest version for php.
 

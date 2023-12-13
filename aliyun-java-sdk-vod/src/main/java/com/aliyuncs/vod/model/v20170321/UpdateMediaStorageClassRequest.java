@@ -32,6 +32,8 @@ public class UpdateMediaStorageClassRequest extends RpcAcsRequest<UpdateMediaSto
 	private String mediaIds;
 
 	private String storageClass;
+
+	private Boolean allowUpdateWithoutTimeLimit;
 	public UpdateMediaStorageClassRequest() {
 		super("vod", "2017-03-21", "UpdateMediaStorageClass", "vod");
 		setMethod(MethodType.POST);
@@ -82,6 +84,17 @@ public class UpdateMediaStorageClassRequest extends RpcAcsRequest<UpdateMediaSto
 		this.storageClass = storageClass;
 		if(storageClass != null){
 			putQueryParameter("StorageClass", storageClass);
+		}
+	}
+
+	public Boolean getAllowUpdateWithoutTimeLimit() {
+		return this.allowUpdateWithoutTimeLimit;
+	}
+
+	public void setAllowUpdateWithoutTimeLimit(Boolean allowUpdateWithoutTimeLimit) {
+		this.allowUpdateWithoutTimeLimit = allowUpdateWithoutTimeLimit;
+		if(allowUpdateWithoutTimeLimit != null){
+			putQueryParameter("AllowUpdateWithoutTimeLimit", allowUpdateWithoutTimeLimit.toString());
 		}
 	}
 

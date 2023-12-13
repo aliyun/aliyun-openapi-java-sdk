@@ -350,6 +350,8 @@ public class GetPlayInfoResponse extends AcsResponse {
 
 		private String danMuURL;
 
+		private String storageClass;
+
 		private List<Thumbnail> thumbnailList;
 
 		public String getCreationTime() {
@@ -430,6 +432,14 @@ public class GetPlayInfoResponse extends AcsResponse {
 
 		public void setDanMuURL(String danMuURL) {
 			this.danMuURL = danMuURL;
+		}
+
+		public String getStorageClass() {
+			return this.storageClass;
+		}
+
+		public void setStorageClass(String storageClass) {
+			this.storageClass = storageClass;
 		}
 
 		public List<Thumbnail> getThumbnailList() {
