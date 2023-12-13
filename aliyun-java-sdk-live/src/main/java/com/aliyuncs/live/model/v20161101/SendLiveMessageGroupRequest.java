@@ -26,21 +26,27 @@ import com.aliyuncs.live.Endpoint;
 public class SendLiveMessageGroupRequest extends RpcAcsRequest<SendLiveMessageGroupResponse> {
 	   
 
+	private String senderMetaInfo;
+
+	private String body;
+
+	private Long staticsIncrease;
+
+	private Long msgType;
+
+	private Boolean noStorage;
+
 	private String groupId;
 
-	private String senderMetaInfo;
+	private Long weight;
 
 	private String dataCenter;
 
 	private String msgTid;
 
-	private String body;
-
 	private String senderId;
 
 	private String appId;
-
-	private Long msgType;
 	public SendLiveMessageGroupRequest() {
 		super("live", "2016-11-01", "SendLiveMessageGroup", "live");
 		setProtocol(ProtocolType.HTTPS);
@@ -49,6 +55,61 @@ public class SendLiveMessageGroupRequest extends RpcAcsRequest<SendLiveMessageGr
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getSenderMetaInfo() {
+		return this.senderMetaInfo;
+	}
+
+	public void setSenderMetaInfo(String senderMetaInfo) {
+		this.senderMetaInfo = senderMetaInfo;
+		if(senderMetaInfo != null){
+			putQueryParameter("SenderMetaInfo", senderMetaInfo);
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putQueryParameter("Body", body);
+		}
+	}
+
+	public Long getStaticsIncrease() {
+		return this.staticsIncrease;
+	}
+
+	public void setStaticsIncrease(Long staticsIncrease) {
+		this.staticsIncrease = staticsIncrease;
+		if(staticsIncrease != null){
+			putQueryParameter("StaticsIncrease", staticsIncrease.toString());
+		}
+	}
+
+	public Long getMsgType() {
+		return this.msgType;
+	}
+
+	public void setMsgType(Long msgType) {
+		this.msgType = msgType;
+		if(msgType != null){
+			putQueryParameter("MsgType", msgType.toString());
+		}
+	}
+
+	public Boolean getNoStorage() {
+		return this.noStorage;
+	}
+
+	public void setNoStorage(Boolean noStorage) {
+		this.noStorage = noStorage;
+		if(noStorage != null){
+			putQueryParameter("NoStorage", noStorage.toString());
+		}
 	}
 
 	public String getGroupId() {
@@ -62,14 +123,14 @@ public class SendLiveMessageGroupRequest extends RpcAcsRequest<SendLiveMessageGr
 		}
 	}
 
-	public String getSenderMetaInfo() {
-		return this.senderMetaInfo;
+	public Long getWeight() {
+		return this.weight;
 	}
 
-	public void setSenderMetaInfo(String senderMetaInfo) {
-		this.senderMetaInfo = senderMetaInfo;
-		if(senderMetaInfo != null){
-			putQueryParameter("SenderMetaInfo", senderMetaInfo);
+	public void setWeight(Long weight) {
+		this.weight = weight;
+		if(weight != null){
+			putQueryParameter("Weight", weight.toString());
 		}
 	}
 
@@ -95,17 +156,6 @@ public class SendLiveMessageGroupRequest extends RpcAcsRequest<SendLiveMessageGr
 		}
 	}
 
-	public String getBody() {
-		return this.body;
-	}
-
-	public void setBody(String body) {
-		this.body = body;
-		if(body != null){
-			putQueryParameter("Body", body);
-		}
-	}
-
 	public String getSenderId() {
 		return this.senderId;
 	}
@@ -125,17 +175,6 @@ public class SendLiveMessageGroupRequest extends RpcAcsRequest<SendLiveMessageGr
 		this.appId = appId;
 		if(appId != null){
 			putQueryParameter("AppId", appId);
-		}
-	}
-
-	public Long getMsgType() {
-		return this.msgType;
-	}
-
-	public void setMsgType(Long msgType) {
-		this.msgType = msgType;
-		if(msgType != null){
-			putQueryParameter("MsgType", msgType.toString());
 		}
 	}
 

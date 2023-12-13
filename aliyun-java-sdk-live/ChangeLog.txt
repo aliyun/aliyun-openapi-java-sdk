@@ -1,3 +1,6 @@
+2023-12-13 Version: 3.9.42
+- Update to support new apis.
+
 2023-11-22 Version: 3.9.41
 - Update to support new apis.
 
