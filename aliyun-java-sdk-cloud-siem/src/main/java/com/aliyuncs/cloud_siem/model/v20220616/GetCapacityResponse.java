@@ -24,53 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetCapacityResponse extends AcsResponse {
 
-	private Boolean success;
-
-	private Integer code;
-
-	private String message;
-
-	private String errCode;
-
 	private String requestId;
 
-	private String dyCode;
-
-	private String dyMessage;
-
 	private Data data;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public Integer getCode() {
-		return this.code;
-	}
-
-	public void setCode(Integer code) {
-		this.code = code;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public String getErrCode() {
-		return this.errCode;
-	}
-
-	public void setErrCode(String errCode) {
-		this.errCode = errCode;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -78,22 +34,6 @@ public class GetCapacityResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getDyCode() {
-		return this.dyCode;
-	}
-
-	public void setDyCode(String dyCode) {
-		this.dyCode = dyCode;
-	}
-
-	public String getDyMessage() {
-		return this.dyMessage;
-	}
-
-	public void setDyMessage(String dyMessage) {
-		this.dyMessage = dyMessage;
 	}
 
 	public Data getData() {

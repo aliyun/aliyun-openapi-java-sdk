@@ -24,12 +24,6 @@ public class GetStorageResponseUnmarshaller {
 	public static GetStorageResponse unmarshall(GetStorageResponse getStorageResponse, UnmarshallerContext _ctx) {
 		
 		getStorageResponse.setRequestId(_ctx.stringValue("GetStorageResponse.RequestId"));
-		getStorageResponse.setSuccess(_ctx.booleanValue("GetStorageResponse.Success"));
-		getStorageResponse.setCode(_ctx.integerValue("GetStorageResponse.Code"));
-		getStorageResponse.setMessage(_ctx.stringValue("GetStorageResponse.Message"));
-		getStorageResponse.setErrCode(_ctx.stringValue("GetStorageResponse.ErrCode"));
-		getStorageResponse.setDyCode(_ctx.stringValue("GetStorageResponse.DyCode"));
-		getStorageResponse.setDyMessage(_ctx.stringValue("GetStorageResponse.DyMessage"));
 
 		Data data = new Data();
 		data.setTtl(_ctx.integerValue("GetStorageResponse.Data.Ttl"));

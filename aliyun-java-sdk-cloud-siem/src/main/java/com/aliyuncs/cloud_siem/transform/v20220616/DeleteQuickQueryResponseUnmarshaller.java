@@ -24,12 +24,6 @@ public class DeleteQuickQueryResponseUnmarshaller {
 		
 		deleteQuickQueryResponse.setRequestId(_ctx.stringValue("DeleteQuickQueryResponse.RequestId"));
 		deleteQuickQueryResponse.setData(_ctx.booleanValue("DeleteQuickQueryResponse.Data"));
-		deleteQuickQueryResponse.setSuccess(_ctx.booleanValue("DeleteQuickQueryResponse.Success"));
-		deleteQuickQueryResponse.setCode(_ctx.integerValue("DeleteQuickQueryResponse.Code"));
-		deleteQuickQueryResponse.setMessage(_ctx.stringValue("DeleteQuickQueryResponse.Message"));
-		deleteQuickQueryResponse.setErrCode(_ctx.stringValue("DeleteQuickQueryResponse.ErrCode"));
-		deleteQuickQueryResponse.setDyCode(_ctx.stringValue("DeleteQuickQueryResponse.DyCode"));
-		deleteQuickQueryResponse.setDyMessage(_ctx.stringValue("DeleteQuickQueryResponse.DyMessage"));
 	 
 	 	return deleteQuickQueryResponse;
 	}

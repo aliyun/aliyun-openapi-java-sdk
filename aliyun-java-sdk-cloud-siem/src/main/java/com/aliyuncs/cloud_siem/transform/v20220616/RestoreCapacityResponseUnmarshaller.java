@@ -24,12 +24,6 @@ public class RestoreCapacityResponseUnmarshaller {
 		
 		restoreCapacityResponse.setRequestId(_ctx.stringValue("RestoreCapacityResponse.RequestId"));
 		restoreCapacityResponse.setData(_ctx.booleanValue("RestoreCapacityResponse.Data"));
-		restoreCapacityResponse.setSuccess(_ctx.booleanValue("RestoreCapacityResponse.Success"));
-		restoreCapacityResponse.setCode(_ctx.integerValue("RestoreCapacityResponse.Code"));
-		restoreCapacityResponse.setMessage(_ctx.stringValue("RestoreCapacityResponse.Message"));
-		restoreCapacityResponse.setErrCode(_ctx.stringValue("RestoreCapacityResponse.ErrCode"));
-		restoreCapacityResponse.setDyCode(_ctx.stringValue("RestoreCapacityResponse.DyCode"));
-		restoreCapacityResponse.setDyMessage(_ctx.stringValue("RestoreCapacityResponse.DyMessage"));
 	 
 	 	return restoreCapacityResponse;
 	}

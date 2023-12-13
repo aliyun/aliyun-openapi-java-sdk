@@ -27,12 +27,6 @@ public class ListOperationResponseUnmarshaller {
 	public static ListOperationResponse unmarshall(ListOperationResponse listOperationResponse, UnmarshallerContext _ctx) {
 		
 		listOperationResponse.setRequestId(_ctx.stringValue("ListOperationResponse.RequestId"));
-		listOperationResponse.setSuccess(_ctx.booleanValue("ListOperationResponse.Success"));
-		listOperationResponse.setCode(_ctx.integerValue("ListOperationResponse.Code"));
-		listOperationResponse.setMessage(_ctx.stringValue("ListOperationResponse.Message"));
-		listOperationResponse.setErrCode(_ctx.stringValue("ListOperationResponse.ErrCode"));
-		listOperationResponse.setDyCode(_ctx.stringValue("ListOperationResponse.DyCode"));
-		listOperationResponse.setDyMessage(_ctx.stringValue("ListOperationResponse.DyMessage"));
 
 		Data data = new Data();
 		data.setAdminOrNot(_ctx.booleanValue("ListOperationResponse.Data.AdminOrNot"));

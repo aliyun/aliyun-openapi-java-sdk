@@ -28,12 +28,6 @@ public class ListQuickQueryResponseUnmarshaller {
 	public static ListQuickQueryResponse unmarshall(ListQuickQueryResponse listQuickQueryResponse, UnmarshallerContext _ctx) {
 		
 		listQuickQueryResponse.setRequestId(_ctx.stringValue("ListQuickQueryResponse.RequestId"));
-		listQuickQueryResponse.setSuccess(_ctx.booleanValue("ListQuickQueryResponse.Success"));
-		listQuickQueryResponse.setCode(_ctx.integerValue("ListQuickQueryResponse.Code"));
-		listQuickQueryResponse.setMessage(_ctx.stringValue("ListQuickQueryResponse.Message"));
-		listQuickQueryResponse.setErrCode(_ctx.stringValue("ListQuickQueryResponse.ErrCode"));
-		listQuickQueryResponse.setDyCode(_ctx.stringValue("ListQuickQueryResponse.DyCode"));
-		listQuickQueryResponse.setDyMessage(_ctx.stringValue("ListQuickQueryResponse.DyMessage"));
 
 		Data data = new Data();
 		data.setTotal(_ctx.integerValue("ListQuickQueryResponse.Data.Total"));

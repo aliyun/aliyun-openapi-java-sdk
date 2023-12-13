@@ -24,12 +24,6 @@ public class GetCapacityResponseUnmarshaller {
 	public static GetCapacityResponse unmarshall(GetCapacityResponse getCapacityResponse, UnmarshallerContext _ctx) {
 		
 		getCapacityResponse.setRequestId(_ctx.stringValue("GetCapacityResponse.RequestId"));
-		getCapacityResponse.setSuccess(_ctx.booleanValue("GetCapacityResponse.Success"));
-		getCapacityResponse.setCode(_ctx.integerValue("GetCapacityResponse.Code"));
-		getCapacityResponse.setMessage(_ctx.stringValue("GetCapacityResponse.Message"));
-		getCapacityResponse.setErrCode(_ctx.stringValue("GetCapacityResponse.ErrCode"));
-		getCapacityResponse.setDyCode(_ctx.stringValue("GetCapacityResponse.DyCode"));
-		getCapacityResponse.setDyMessage(_ctx.stringValue("GetCapacityResponse.DyMessage"));
 
 		Data data = new Data();
 		data.setUsedCapacity(_ctx.doubleValue("GetCapacityResponse.Data.UsedCapacity"));

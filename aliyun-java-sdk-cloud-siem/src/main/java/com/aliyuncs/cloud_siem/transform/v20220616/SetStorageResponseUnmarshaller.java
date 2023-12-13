@@ -24,12 +24,6 @@ public class SetStorageResponseUnmarshaller {
 		
 		setStorageResponse.setRequestId(_ctx.stringValue("SetStorageResponse.RequestId"));
 		setStorageResponse.setData(_ctx.booleanValue("SetStorageResponse.Data"));
-		setStorageResponse.setSuccess(_ctx.booleanValue("SetStorageResponse.Success"));
-		setStorageResponse.setCode(_ctx.integerValue("SetStorageResponse.Code"));
-		setStorageResponse.setMessage(_ctx.stringValue("SetStorageResponse.Message"));
-		setStorageResponse.setErrCode(_ctx.stringValue("SetStorageResponse.ErrCode"));
-		setStorageResponse.setDyCode(_ctx.stringValue("SetStorageResponse.DyCode"));
-		setStorageResponse.setDyMessage(_ctx.stringValue("SetStorageResponse.DyMessage"));
 	 
 	 	return setStorageResponse;
 	}

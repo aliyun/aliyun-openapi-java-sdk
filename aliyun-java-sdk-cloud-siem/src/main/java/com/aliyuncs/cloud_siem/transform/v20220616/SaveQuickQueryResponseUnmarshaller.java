@@ -24,12 +24,6 @@ public class SaveQuickQueryResponseUnmarshaller {
 		
 		saveQuickQueryResponse.setRequestId(_ctx.stringValue("SaveQuickQueryResponse.RequestId"));
 		saveQuickQueryResponse.setData(_ctx.booleanValue("SaveQuickQueryResponse.Data"));
-		saveQuickQueryResponse.setSuccess(_ctx.booleanValue("SaveQuickQueryResponse.Success"));
-		saveQuickQueryResponse.setCode(_ctx.integerValue("SaveQuickQueryResponse.Code"));
-		saveQuickQueryResponse.setMessage(_ctx.stringValue("SaveQuickQueryResponse.Message"));
-		saveQuickQueryResponse.setErrCode(_ctx.stringValue("SaveQuickQueryResponse.ErrCode"));
-		saveQuickQueryResponse.setDyCode(_ctx.stringValue("SaveQuickQueryResponse.DyCode"));
-		saveQuickQueryResponse.setDyMessage(_ctx.stringValue("SaveQuickQueryResponse.DyMessage"));
 	 
 	 	return saveQuickQueryResponse;
 	}

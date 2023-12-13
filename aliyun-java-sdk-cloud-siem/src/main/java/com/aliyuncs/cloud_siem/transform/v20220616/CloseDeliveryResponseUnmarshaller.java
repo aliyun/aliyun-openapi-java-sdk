@@ -24,12 +24,6 @@ public class CloseDeliveryResponseUnmarshaller {
 		
 		closeDeliveryResponse.setRequestId(_ctx.stringValue("CloseDeliveryResponse.RequestId"));
 		closeDeliveryResponse.setData(_ctx.booleanValue("CloseDeliveryResponse.Data"));
-		closeDeliveryResponse.setSuccess(_ctx.booleanValue("CloseDeliveryResponse.Success"));
-		closeDeliveryResponse.setCode(_ctx.integerValue("CloseDeliveryResponse.Code"));
-		closeDeliveryResponse.setMessage(_ctx.stringValue("CloseDeliveryResponse.Message"));
-		closeDeliveryResponse.setErrCode(_ctx.stringValue("CloseDeliveryResponse.ErrCode"));
-		closeDeliveryResponse.setDyCode(_ctx.stringValue("CloseDeliveryResponse.DyCode"));
-		closeDeliveryResponse.setDyMessage(_ctx.stringValue("CloseDeliveryResponse.DyMessage"));
 	 
 	 	return closeDeliveryResponse;
 	}

@@ -24,12 +24,6 @@ public class DoSelfDelegateResponseUnmarshaller {
 		
 		doSelfDelegateResponse.setRequestId(_ctx.stringValue("DoSelfDelegateResponse.RequestId"));
 		doSelfDelegateResponse.setData(_ctx.booleanValue("DoSelfDelegateResponse.Data"));
-		doSelfDelegateResponse.setSuccess(_ctx.booleanValue("DoSelfDelegateResponse.Success"));
-		doSelfDelegateResponse.setCode(_ctx.integerValue("DoSelfDelegateResponse.Code"));
-		doSelfDelegateResponse.setMessage(_ctx.stringValue("DoSelfDelegateResponse.Message"));
-		doSelfDelegateResponse.setErrCode(_ctx.stringValue("DoSelfDelegateResponse.ErrCode"));
-		doSelfDelegateResponse.setDyCode(_ctx.stringValue("DoSelfDelegateResponse.DyCode"));
-		doSelfDelegateResponse.setDyMessage(_ctx.stringValue("DoSelfDelegateResponse.DyMessage"));
 	 
 	 	return doSelfDelegateResponse;
 	}

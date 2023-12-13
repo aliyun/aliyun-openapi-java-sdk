@@ -24,12 +24,6 @@ public class DescribeLogStoreResponseUnmarshaller {
 	public static DescribeLogStoreResponse unmarshall(DescribeLogStoreResponse describeLogStoreResponse, UnmarshallerContext _ctx) {
 		
 		describeLogStoreResponse.setRequestId(_ctx.stringValue("DescribeLogStoreResponse.RequestId"));
-		describeLogStoreResponse.setSuccess(_ctx.booleanValue("DescribeLogStoreResponse.Success"));
-		describeLogStoreResponse.setCode(_ctx.integerValue("DescribeLogStoreResponse.Code"));
-		describeLogStoreResponse.setMessage(_ctx.stringValue("DescribeLogStoreResponse.Message"));
-		describeLogStoreResponse.setErrCode(_ctx.stringValue("DescribeLogStoreResponse.ErrCode"));
-		describeLogStoreResponse.setDyCode(_ctx.stringValue("DescribeLogStoreResponse.DyCode"));
-		describeLogStoreResponse.setDyMessage(_ctx.stringValue("DescribeLogStoreResponse.DyMessage"));
 
 		Data data = new Data();
 		data.setLogStoreName(_ctx.stringValue("DescribeLogStoreResponse.Data.LogStoreName"));

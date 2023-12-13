@@ -28,12 +28,6 @@ public class GetHistogramsResponseUnmarshaller {
 	public static GetHistogramsResponse unmarshall(GetHistogramsResponse getHistogramsResponse, UnmarshallerContext _ctx) {
 		
 		getHistogramsResponse.setRequestId(_ctx.stringValue("GetHistogramsResponse.RequestId"));
-		getHistogramsResponse.setSuccess(_ctx.booleanValue("GetHistogramsResponse.Success"));
-		getHistogramsResponse.setCode(_ctx.integerValue("GetHistogramsResponse.Code"));
-		getHistogramsResponse.setMessage(_ctx.stringValue("GetHistogramsResponse.Message"));
-		getHistogramsResponse.setErrCode(_ctx.stringValue("GetHistogramsResponse.ErrCode"));
-		getHistogramsResponse.setDyCode(_ctx.stringValue("GetHistogramsResponse.DyCode"));
-		getHistogramsResponse.setDyMessage(_ctx.stringValue("GetHistogramsResponse.DyMessage"));
 
 		Data data = new Data();
 		data.setServer(_ctx.stringValue("GetHistogramsResponse.Data.Server"));

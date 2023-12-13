@@ -27,12 +27,6 @@ public class ShowQuickAnalysisResponseUnmarshaller {
 	public static ShowQuickAnalysisResponse unmarshall(ShowQuickAnalysisResponse showQuickAnalysisResponse, UnmarshallerContext _ctx) {
 		
 		showQuickAnalysisResponse.setRequestId(_ctx.stringValue("ShowQuickAnalysisResponse.RequestId"));
-		showQuickAnalysisResponse.setSuccess(_ctx.booleanValue("ShowQuickAnalysisResponse.Success"));
-		showQuickAnalysisResponse.setCode(_ctx.integerValue("ShowQuickAnalysisResponse.Code"));
-		showQuickAnalysisResponse.setMessage(_ctx.stringValue("ShowQuickAnalysisResponse.Message"));
-		showQuickAnalysisResponse.setErrCode(_ctx.stringValue("ShowQuickAnalysisResponse.ErrCode"));
-		showQuickAnalysisResponse.setDyCode(_ctx.stringValue("ShowQuickAnalysisResponse.DyCode"));
-		showQuickAnalysisResponse.setDyMessage(_ctx.stringValue("ShowQuickAnalysisResponse.DyMessage"));
 
 		Data data = new Data();
 

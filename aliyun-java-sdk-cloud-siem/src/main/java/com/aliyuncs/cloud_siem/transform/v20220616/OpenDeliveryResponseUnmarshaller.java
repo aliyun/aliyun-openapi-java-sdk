@@ -24,12 +24,6 @@ public class OpenDeliveryResponseUnmarshaller {
 		
 		openDeliveryResponse.setRequestId(_ctx.stringValue("OpenDeliveryResponse.RequestId"));
 		openDeliveryResponse.setData(_ctx.booleanValue("OpenDeliveryResponse.Data"));
-		openDeliveryResponse.setSuccess(_ctx.booleanValue("OpenDeliveryResponse.Success"));
-		openDeliveryResponse.setCode(_ctx.integerValue("OpenDeliveryResponse.Code"));
-		openDeliveryResponse.setMessage(_ctx.stringValue("OpenDeliveryResponse.Message"));
-		openDeliveryResponse.setErrCode(_ctx.stringValue("OpenDeliveryResponse.ErrCode"));
-		openDeliveryResponse.setDyCode(_ctx.stringValue("OpenDeliveryResponse.DyCode"));
-		openDeliveryResponse.setDyMessage(_ctx.stringValue("OpenDeliveryResponse.DyMessage"));
 	 
 	 	return openDeliveryResponse;
 	}

@@ -27,12 +27,6 @@ public class DoQuickFieldResponseUnmarshaller {
 	public static DoQuickFieldResponse unmarshall(DoQuickFieldResponse doQuickFieldResponse, UnmarshallerContext _ctx) {
 		
 		doQuickFieldResponse.setRequestId(_ctx.stringValue("DoQuickFieldResponse.RequestId"));
-		doQuickFieldResponse.setSuccess(_ctx.booleanValue("DoQuickFieldResponse.Success"));
-		doQuickFieldResponse.setCode(_ctx.integerValue("DoQuickFieldResponse.Code"));
-		doQuickFieldResponse.setMessage(_ctx.stringValue("DoQuickFieldResponse.Message"));
-		doQuickFieldResponse.setErrCode(_ctx.stringValue("DoQuickFieldResponse.ErrCode"));
-		doQuickFieldResponse.setDyCode(_ctx.stringValue("DoQuickFieldResponse.DyCode"));
-		doQuickFieldResponse.setDyMessage(_ctx.stringValue("DoQuickFieldResponse.DyMessage"));
 
 		Data data = new Data();
 		data.setQueryMode(_ctx.integerValue("DoQuickFieldResponse.Data.QueryMode"));
