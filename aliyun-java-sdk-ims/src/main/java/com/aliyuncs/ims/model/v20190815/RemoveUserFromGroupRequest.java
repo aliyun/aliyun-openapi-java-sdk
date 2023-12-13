@@ -29,7 +29,7 @@ public class RemoveUserFromGroupRequest extends RpcAcsRequest<RemoveUserFromGrou
 
 	private String userPrincipalName;
 	public RemoveUserFromGroupRequest() {
-		super("Ims", "2019-08-15", "RemoveUserFromGroup");
+		super("Ims", "2019-08-15", "RemoveUserFromGroup", "ims");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

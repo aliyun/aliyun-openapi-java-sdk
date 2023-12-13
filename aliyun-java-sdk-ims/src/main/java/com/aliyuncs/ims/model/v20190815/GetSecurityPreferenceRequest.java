@@ -25,7 +25,7 @@ import com.aliyuncs.ims.Endpoint;
 public class GetSecurityPreferenceRequest extends RpcAcsRequest<GetSecurityPreferenceResponse> {
 	   
 	public GetSecurityPreferenceRequest() {
-		super("Ims", "2019-08-15", "GetSecurityPreference");
+		super("Ims", "2019-08-15", "GetSecurityPreference", "ims");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

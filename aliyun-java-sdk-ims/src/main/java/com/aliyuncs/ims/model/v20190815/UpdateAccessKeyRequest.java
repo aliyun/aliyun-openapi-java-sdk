@@ -31,7 +31,7 @@ public class UpdateAccessKeyRequest extends RpcAcsRequest<UpdateAccessKeyRespons
 
 	private String status;
 	public UpdateAccessKeyRequest() {
-		super("Ims", "2019-08-15", "UpdateAccessKey");
+		super("Ims", "2019-08-15", "UpdateAccessKey", "ims");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

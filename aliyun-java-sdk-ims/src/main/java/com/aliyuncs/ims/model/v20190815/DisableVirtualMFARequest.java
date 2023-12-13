@@ -27,7 +27,7 @@ public class DisableVirtualMFARequest extends RpcAcsRequest<DisableVirtualMFARes
 
 	private String userPrincipalName;
 	public DisableVirtualMFARequest() {
-		super("Ims", "2019-08-15", "DisableVirtualMFA");
+		super("Ims", "2019-08-15", "DisableVirtualMFA", "ims");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

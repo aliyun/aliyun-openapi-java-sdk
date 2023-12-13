@@ -32,7 +32,7 @@ public class ListUsersRequest extends RpcAcsRequest<ListUsersResponse> {
 
 	private Integer maxItems;
 	public ListUsersRequest() {
-		super("Ims", "2019-08-15", "ListUsers");
+		super("Ims", "2019-08-15", "ListUsers", "ims");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

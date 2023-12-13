@@ -29,7 +29,7 @@ public class DeleteAccessKeyRequest extends RpcAcsRequest<DeleteAccessKeyRespons
 
 	private String userPrincipalName;
 	public DeleteAccessKeyRequest() {
-		super("Ims", "2019-08-15", "DeleteAccessKey");
+		super("Ims", "2019-08-15", "DeleteAccessKey", "ims");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

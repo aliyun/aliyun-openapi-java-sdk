@@ -27,7 +27,7 @@ public class ListPredefinedScopesRequest extends RpcAcsRequest<ListPredefinedSco
 
 	private String appType;
 	public ListPredefinedScopesRequest() {
-		super("Ims", "2019-08-15", "ListPredefinedScopes");
+		super("Ims", "2019-08-15", "ListPredefinedScopes", "ims");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

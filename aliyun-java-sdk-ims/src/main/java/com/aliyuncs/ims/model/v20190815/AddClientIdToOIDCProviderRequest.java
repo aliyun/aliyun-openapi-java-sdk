@@ -29,7 +29,7 @@ public class AddClientIdToOIDCProviderRequest extends RpcAcsRequest<AddClientIdT
 
 	private String oIDCProviderName;
 	public AddClientIdToOIDCProviderRequest() {
-		super("Ims", "2019-08-15", "AddClientIdToOIDCProvider");
+		super("Ims", "2019-08-15", "AddClientIdToOIDCProvider", "ims");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

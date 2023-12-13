@@ -27,7 +27,7 @@ public class DeleteApplicationRequest extends RpcAcsRequest<DeleteApplicationRes
 
 	private String appId;
 	public DeleteApplicationRequest() {
-		super("Ims", "2019-08-15", "DeleteApplication");
+		super("Ims", "2019-08-15", "DeleteApplication", "ims");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -25,6 +25,8 @@ public class GetCredentialReportResponseUnmarshaller {
 		getCredentialReportResponse.setRequestId(_ctx.stringValue("GetCredentialReportResponse.RequestId"));
 		getCredentialReportResponse.setGeneratedTime(_ctx.stringValue("GetCredentialReportResponse.GeneratedTime"));
 		getCredentialReportResponse.setContent(_ctx.stringValue("GetCredentialReportResponse.Content"));
+		getCredentialReportResponse.setIsTruncated(_ctx.stringValue("GetCredentialReportResponse.IsTruncated"));
+		getCredentialReportResponse.setNextToken(_ctx.stringValue("GetCredentialReportResponse.NextToken"));
 	 
 	 	return getCredentialReportResponse;
 	}

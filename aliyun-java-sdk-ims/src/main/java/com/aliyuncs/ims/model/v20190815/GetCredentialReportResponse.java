@@ -30,6 +30,10 @@ public class GetCredentialReportResponse extends AcsResponse {
 
 	private String content;
 
+	private String isTruncated;
+
+	private String nextToken;
+
 	public String getGeneratedTime() {
 		return this.generatedTime;
 	}
@@ -52,6 +56,22 @@ public class GetCredentialReportResponse extends AcsResponse {
 
 	public void setContent(String content) {
 		this.content = content;
+	}
+
+	public String getIsTruncated() {
+		return this.isTruncated;
+	}
+
+	public void setIsTruncated(String isTruncated) {
+		this.isTruncated = isTruncated;
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
 	}
 
 	@Override

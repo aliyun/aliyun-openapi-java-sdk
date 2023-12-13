@@ -27,7 +27,7 @@ public class GetOIDCProviderRequest extends RpcAcsRequest<GetOIDCProviderRespons
 
 	private String oIDCProviderName;
 	public GetOIDCProviderRequest() {
-		super("Ims", "2019-08-15", "GetOIDCProvider");
+		super("Ims", "2019-08-15", "GetOIDCProvider", "ims");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -25,7 +25,7 @@ import com.aliyuncs.ims.Endpoint;
 public class GetDefaultDomainRequest extends RpcAcsRequest<GetDefaultDomainResponse> {
 	   
 	public GetDefaultDomainRequest() {
-		super("Ims", "2019-08-15", "GetDefaultDomain");
+		super("Ims", "2019-08-15", "GetDefaultDomain", "ims");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

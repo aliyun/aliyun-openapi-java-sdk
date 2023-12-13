@@ -25,7 +25,7 @@ import com.aliyuncs.ims.Endpoint;
 public class GetAccountMFAInfoRequest extends RpcAcsRequest<GetAccountMFAInfoResponse> {
 	   
 	public GetAccountMFAInfoRequest() {
-		super("Ims", "2019-08-15", "GetAccountMFAInfo");
+		super("Ims", "2019-08-15", "GetAccountMFAInfo", "ims");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

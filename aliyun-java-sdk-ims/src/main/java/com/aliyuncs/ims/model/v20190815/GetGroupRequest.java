@@ -27,7 +27,7 @@ public class GetGroupRequest extends RpcAcsRequest<GetGroupResponse> {
 
 	private String groupName;
 	public GetGroupRequest() {
-		super("Ims", "2019-08-15", "GetGroup");
+		super("Ims", "2019-08-15", "GetGroup", "ims");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

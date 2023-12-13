@@ -27,7 +27,7 @@ public class DeleteOIDCProviderRequest extends RpcAcsRequest<DeleteOIDCProviderR
 
 	private String oIDCProviderName;
 	public DeleteOIDCProviderRequest() {
-		super("Ims", "2019-08-15", "DeleteOIDCProvider");
+		super("Ims", "2019-08-15", "DeleteOIDCProvider", "ims");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

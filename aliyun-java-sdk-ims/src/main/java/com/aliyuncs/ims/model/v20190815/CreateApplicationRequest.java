@@ -27,6 +27,8 @@ public class CreateApplicationRequest extends RpcAcsRequest<CreateApplicationRes
 
 	private String appName;
 
+	private String requiredScopes;
+
 	private Integer accessTokenValidity;
 
 	private Integer refreshTokenValidity;
@@ -43,7 +45,7 @@ public class CreateApplicationRequest extends RpcAcsRequest<CreateApplicationRes
 
 	private Boolean isMultiTenant;
 	public CreateApplicationRequest() {
-		super("Ims", "2019-08-15", "CreateApplication");
+		super("Ims", "2019-08-15", "CreateApplication", "ims");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -59,6 +61,17 @@ public class CreateApplicationRequest extends RpcAcsRequest<CreateApplicationRes
 		this.appName = appName;
 		if(appName != null){
 			putQueryParameter("AppName", appName);
+		}
+	}
+
+	public String getRequiredScopes() {
+		return this.requiredScopes;
+	}
+
+	public void setRequiredScopes(String requiredScopes) {
+		this.requiredScopes = requiredScopes;
+		if(requiredScopes != null){
+			putQueryParameter("RequiredScopes", requiredScopes);
 		}
 	}
 

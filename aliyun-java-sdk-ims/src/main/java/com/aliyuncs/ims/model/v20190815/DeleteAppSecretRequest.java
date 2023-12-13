@@ -29,7 +29,7 @@ public class DeleteAppSecretRequest extends RpcAcsRequest<DeleteAppSecretRespons
 
 	private String appId;
 	public DeleteAppSecretRequest() {
-		super("Ims", "2019-08-15", "DeleteAppSecret");
+		super("Ims", "2019-08-15", "DeleteAppSecret", "ims");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

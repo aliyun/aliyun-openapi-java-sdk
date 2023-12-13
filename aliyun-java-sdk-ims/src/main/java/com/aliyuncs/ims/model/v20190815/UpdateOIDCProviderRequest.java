@@ -33,7 +33,7 @@ public class UpdateOIDCProviderRequest extends RpcAcsRequest<UpdateOIDCProviderR
 
 	private String newDescription;
 	public UpdateOIDCProviderRequest() {
-		super("Ims", "2019-08-15", "UpdateOIDCProvider");
+		super("Ims", "2019-08-15", "UpdateOIDCProvider", "ims");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

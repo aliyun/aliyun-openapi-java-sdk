@@ -31,7 +31,7 @@ public class CreateGroupRequest extends RpcAcsRequest<CreateGroupResponse> {
 
 	private String displayName;
 	public CreateGroupRequest() {
-		super("Ims", "2019-08-15", "CreateGroup");
+		super("Ims", "2019-08-15", "CreateGroup", "ims");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

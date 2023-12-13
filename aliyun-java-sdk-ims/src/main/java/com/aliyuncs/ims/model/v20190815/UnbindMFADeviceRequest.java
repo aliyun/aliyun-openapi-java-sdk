@@ -27,7 +27,7 @@ public class UnbindMFADeviceRequest extends RpcAcsRequest<UnbindMFADeviceRespons
 
 	private String userPrincipalName;
 	public UnbindMFADeviceRequest() {
-		super("Ims", "2019-08-15", "UnbindMFADevice");
+		super("Ims", "2019-08-15", "UnbindMFADevice", "ims");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

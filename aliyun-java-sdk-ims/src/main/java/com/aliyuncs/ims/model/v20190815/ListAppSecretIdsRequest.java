@@ -27,7 +27,7 @@ public class ListAppSecretIdsRequest extends RpcAcsRequest<ListAppSecretIdsRespo
 
 	private String appId;
 	public ListAppSecretIdsRequest() {
-		super("Ims", "2019-08-15", "ListAppSecretIds");
+		super("Ims", "2019-08-15", "ListAppSecretIds", "ims");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

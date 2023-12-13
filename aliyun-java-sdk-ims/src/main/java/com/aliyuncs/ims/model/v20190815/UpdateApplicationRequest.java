@@ -35,13 +35,15 @@ public class UpdateApplicationRequest extends RpcAcsRequest<UpdateApplicationRes
 
 	private String newDisplayName;
 
+	private String newRequiredScopes;
+
 	private String newRedirectUris;
 
 	private String appId;
 
 	private Integer newAccessTokenValidity;
 	public UpdateApplicationRequest() {
-		super("Ims", "2019-08-15", "UpdateApplication");
+		super("Ims", "2019-08-15", "UpdateApplication", "ims");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -101,6 +103,17 @@ public class UpdateApplicationRequest extends RpcAcsRequest<UpdateApplicationRes
 		this.newDisplayName = newDisplayName;
 		if(newDisplayName != null){
 			putQueryParameter("NewDisplayName", newDisplayName);
+		}
+	}
+
+	public String getNewRequiredScopes() {
+		return this.newRequiredScopes;
+	}
+
+	public void setNewRequiredScopes(String newRequiredScopes) {
+		this.newRequiredScopes = newRequiredScopes;
+		if(newRequiredScopes != null){
+			putQueryParameter("NewRequiredScopes", newRequiredScopes);
 		}
 	}
 

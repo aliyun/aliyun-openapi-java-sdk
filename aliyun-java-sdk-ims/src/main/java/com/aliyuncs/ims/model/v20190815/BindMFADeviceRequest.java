@@ -33,7 +33,7 @@ public class BindMFADeviceRequest extends RpcAcsRequest<BindMFADeviceResponse> {
 
 	private String userPrincipalName;
 	public BindMFADeviceRequest() {
-		super("Ims", "2019-08-15", "BindMFADevice");
+		super("Ims", "2019-08-15", "BindMFADevice", "ims");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

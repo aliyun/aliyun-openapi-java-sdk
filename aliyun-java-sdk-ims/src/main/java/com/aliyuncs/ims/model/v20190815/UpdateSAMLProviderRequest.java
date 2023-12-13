@@ -31,7 +31,7 @@ public class UpdateSAMLProviderRequest extends RpcAcsRequest<UpdateSAMLProviderR
 
 	private String newDescription;
 	public UpdateSAMLProviderRequest() {
-		super("Ims", "2019-08-15", "UpdateSAMLProvider");
+		super("Ims", "2019-08-15", "UpdateSAMLProvider", "ims");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class DeleteSAMLProviderRequest extends RpcAcsRequest<DeleteSAMLProviderR
 
 	private String sAMLProviderName;
 	public DeleteSAMLProviderRequest() {
-		super("Ims", "2019-08-15", "DeleteSAMLProvider");
+		super("Ims", "2019-08-15", "DeleteSAMLProvider", "ims");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

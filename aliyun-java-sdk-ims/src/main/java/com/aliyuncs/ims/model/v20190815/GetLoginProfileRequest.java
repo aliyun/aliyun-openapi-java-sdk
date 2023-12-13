@@ -27,7 +27,7 @@ public class GetLoginProfileRequest extends RpcAcsRequest<GetLoginProfileRespons
 
 	private String userPrincipalName;
 	public GetLoginProfileRequest() {
-		super("Ims", "2019-08-15", "GetLoginProfile");
+		super("Ims", "2019-08-15", "GetLoginProfile", "ims");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

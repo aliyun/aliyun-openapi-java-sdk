@@ -25,7 +25,7 @@ import com.aliyuncs.ims.Endpoint;
 public class GetAccountSummaryRequest extends RpcAcsRequest<GetAccountSummaryResponse> {
 	   
 	public GetAccountSummaryRequest() {
-		super("Ims", "2019-08-15", "GetAccountSummary");
+		super("Ims", "2019-08-15", "GetAccountSummary", "ims");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

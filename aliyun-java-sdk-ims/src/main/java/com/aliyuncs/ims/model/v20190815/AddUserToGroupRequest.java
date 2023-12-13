@@ -29,7 +29,7 @@ public class AddUserToGroupRequest extends RpcAcsRequest<AddUserToGroupResponse>
 
 	private String userPrincipalName;
 	public AddUserToGroupRequest() {
-		super("Ims", "2019-08-15", "AddUserToGroup");
+		super("Ims", "2019-08-15", "AddUserToGroup", "ims");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

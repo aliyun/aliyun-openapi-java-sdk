@@ -27,7 +27,7 @@ public class GetUserMFAInfoRequest extends RpcAcsRequest<GetUserMFAInfoResponse>
 
 	private String userPrincipalName;
 	public GetUserMFAInfoRequest() {
-		super("Ims", "2019-08-15", "GetUserMFAInfo");
+		super("Ims", "2019-08-15", "GetUserMFAInfo", "ims");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

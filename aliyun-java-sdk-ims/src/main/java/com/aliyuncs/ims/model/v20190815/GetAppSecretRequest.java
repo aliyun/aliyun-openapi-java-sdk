@@ -29,7 +29,7 @@ public class GetAppSecretRequest extends RpcAcsRequest<GetAppSecretResponse> {
 
 	private String appId;
 	public GetAppSecretRequest() {
-		super("Ims", "2019-08-15", "GetAppSecret");
+		super("Ims", "2019-08-15", "GetAppSecret", "ims");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

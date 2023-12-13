@@ -27,7 +27,7 @@ public class ListAccessKeysRequest extends RpcAcsRequest<ListAccessKeysResponse>
 
 	private String userPrincipalName;
 	public ListAccessKeysRequest() {
-		super("Ims", "2019-08-15", "ListAccessKeys");
+		super("Ims", "2019-08-15", "ListAccessKeys", "ims");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

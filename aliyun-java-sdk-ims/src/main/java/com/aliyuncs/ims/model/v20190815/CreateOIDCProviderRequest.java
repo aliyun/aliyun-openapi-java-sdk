@@ -37,7 +37,7 @@ public class CreateOIDCProviderRequest extends RpcAcsRequest<CreateOIDCProviderR
 
 	private String fingerprints;
 	public CreateOIDCProviderRequest() {
-		super("Ims", "2019-08-15", "CreateOIDCProvider");
+		super("Ims", "2019-08-15", "CreateOIDCProvider", "ims");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

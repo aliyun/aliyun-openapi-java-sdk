@@ -213,6 +213,8 @@ public class CreateApplicationResponse extends AcsResponse {
 
 				private String description;
 
+				private Boolean required;
+
 				private String name;
 
 				public String getDescription() {
@@ -221,6 +223,14 @@ public class CreateApplicationResponse extends AcsResponse {
 
 				public void setDescription(String description) {
 					this.description = description;
+				}
+
+				public Boolean getRequired() {
+					return this.required;
+				}
+
+				public void setRequired(Boolean required) {
+					this.required = required;
 				}
 
 				public String getName() {

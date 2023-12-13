@@ -29,7 +29,7 @@ public class ListSAMLProvidersRequest extends RpcAcsRequest<ListSAMLProvidersRes
 
 	private Integer maxItems;
 	public ListSAMLProvidersRequest() {
-		super("Ims", "2019-08-15", "ListSAMLProviders");
+		super("Ims", "2019-08-15", "ListSAMLProviders", "ims");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

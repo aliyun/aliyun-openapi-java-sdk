@@ -29,7 +29,7 @@ public class ListOIDCProvidersRequest extends RpcAcsRequest<ListOIDCProvidersRes
 
 	private Integer maxItems;
 	public ListOIDCProvidersRequest() {
-		super("Ims", "2019-08-15", "ListOIDCProviders");
+		super("Ims", "2019-08-15", "ListOIDCProviders", "ims");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

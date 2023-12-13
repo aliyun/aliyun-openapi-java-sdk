@@ -25,7 +25,7 @@ import com.aliyuncs.ims.Endpoint;
 public class ListApplicationsRequest extends RpcAcsRequest<ListApplicationsResponse> {
 	   
 	public ListApplicationsRequest() {
-		super("Ims", "2019-08-15", "ListApplications");
+		super("Ims", "2019-08-15", "ListApplications", "ims");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

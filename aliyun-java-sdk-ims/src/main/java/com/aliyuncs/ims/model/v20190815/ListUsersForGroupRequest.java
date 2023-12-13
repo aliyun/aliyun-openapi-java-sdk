@@ -31,7 +31,7 @@ public class ListUsersForGroupRequest extends RpcAcsRequest<ListUsersForGroupRes
 
 	private Integer maxItems;
 	public ListUsersForGroupRequest() {
-		super("Ims", "2019-08-15", "ListUsersForGroup");
+		super("Ims", "2019-08-15", "ListUsersForGroup", "ims");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

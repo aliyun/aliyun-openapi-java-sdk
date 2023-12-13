@@ -49,7 +49,7 @@ public class SetSecurityPreferenceRequest extends RpcAcsRequest<SetSecurityPrefe
 
 	private Boolean allowUserToManagePersonalDingTalk;
 	public SetSecurityPreferenceRequest() {
-		super("Ims", "2019-08-15", "SetSecurityPreference");
+		super("Ims", "2019-08-15", "SetSecurityPreference", "ims");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

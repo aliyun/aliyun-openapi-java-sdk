@@ -27,7 +27,7 @@ public class GetSAMLProviderRequest extends RpcAcsRequest<GetSAMLProviderRespons
 
 	private String sAMLProviderName;
 	public GetSAMLProviderRequest() {
-		super("Ims", "2019-08-15", "GetSAMLProvider");
+		super("Ims", "2019-08-15", "GetSAMLProvider", "ims");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

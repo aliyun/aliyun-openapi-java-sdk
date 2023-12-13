@@ -27,7 +27,7 @@ public class GetApplicationRequest extends RpcAcsRequest<GetApplicationResponse>
 
 	private String appId;
 	public GetApplicationRequest() {
-		super("Ims", "2019-08-15", "GetApplication");
+		super("Ims", "2019-08-15", "GetApplication", "ims");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

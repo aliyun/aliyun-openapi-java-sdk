@@ -27,7 +27,7 @@ public class DeleteLoginProfileRequest extends RpcAcsRequest<DeleteLoginProfileR
 
 	private String userPrincipalName;
 	public DeleteLoginProfileRequest() {
-		super("Ims", "2019-08-15", "DeleteLoginProfile");
+		super("Ims", "2019-08-15", "DeleteLoginProfile", "ims");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

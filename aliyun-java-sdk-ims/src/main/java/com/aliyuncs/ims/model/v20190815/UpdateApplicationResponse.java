@@ -215,6 +215,8 @@ public class UpdateApplicationResponse extends AcsResponse {
 
 				private String name;
 
+				private Boolean required;
+
 				public String getDescription() {
 					return this.description;
 				}
@@ -229,6 +231,14 @@ public class UpdateApplicationResponse extends AcsResponse {
 
 				public void setName(String name) {
 					this.name = name;
+				}
+
+				public Boolean getRequired() {
+					return this.required;
+				}
+
+				public void setRequired(Boolean required) {
+					this.required = required;
 				}
 			}
 		}

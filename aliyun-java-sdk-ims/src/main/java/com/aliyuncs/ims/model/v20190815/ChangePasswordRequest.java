@@ -29,7 +29,7 @@ public class ChangePasswordRequest extends RpcAcsRequest<ChangePasswordResponse>
 
 	private String newPassword;
 	public ChangePasswordRequest() {
-		super("Ims", "2019-08-15", "ChangePassword");
+		super("Ims", "2019-08-15", "ChangePassword", "ims");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -35,7 +35,7 @@ public class CreateLoginProfileRequest extends RpcAcsRequest<CreateLoginProfileR
 
 	private String status;
 	public CreateLoginProfileRequest() {
-		super("Ims", "2019-08-15", "CreateLoginProfile");
+		super("Ims", "2019-08-15", "CreateLoginProfile", "ims");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

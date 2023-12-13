@@ -25,7 +25,7 @@ import com.aliyuncs.ims.Endpoint;
 public class GetAccountSecurityPracticeReportRequest extends RpcAcsRequest<GetAccountSecurityPracticeReportResponse> {
 	   
 	public GetAccountSecurityPracticeReportRequest() {
-		super("Ims", "2019-08-15", "GetAccountSecurityPracticeReport");
+		super("Ims", "2019-08-15", "GetAccountSecurityPracticeReport", "ims");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

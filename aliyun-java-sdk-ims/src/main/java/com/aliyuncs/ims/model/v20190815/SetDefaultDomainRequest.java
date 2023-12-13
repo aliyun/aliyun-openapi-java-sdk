@@ -27,7 +27,7 @@ public class SetDefaultDomainRequest extends RpcAcsRequest<SetDefaultDomainRespo
 
 	private String defaultDomainName;
 	public SetDefaultDomainRequest() {
-		super("Ims", "2019-08-15", "SetDefaultDomain");
+		super("Ims", "2019-08-15", "SetDefaultDomain", "ims");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

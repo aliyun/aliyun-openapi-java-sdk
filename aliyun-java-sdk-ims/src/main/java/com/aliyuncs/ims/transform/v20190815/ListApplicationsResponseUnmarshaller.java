@@ -60,6 +60,7 @@ public class ListApplicationsResponseUnmarshaller {
 				PredefinedScope predefinedScope = new PredefinedScope();
 				predefinedScope.setDescription(_ctx.stringValue("ListApplicationsResponse.Applications["+ i +"].DelegatedScope.PredefinedScopes["+ j +"].Description"));
 				predefinedScope.setName(_ctx.stringValue("ListApplicationsResponse.Applications["+ i +"].DelegatedScope.PredefinedScopes["+ j +"].Name"));
+				predefinedScope.setRequired(_ctx.booleanValue("ListApplicationsResponse.Applications["+ i +"].DelegatedScope.PredefinedScopes["+ j +"].Required"));
 
 				predefinedScopes.add(predefinedScope);
 			}

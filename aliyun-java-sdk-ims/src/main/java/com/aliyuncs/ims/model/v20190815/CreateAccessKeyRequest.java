@@ -27,7 +27,7 @@ public class CreateAccessKeyRequest extends RpcAcsRequest<CreateAccessKeyRespons
 
 	private String userPrincipalName;
 	public CreateAccessKeyRequest() {
-		super("Ims", "2019-08-15", "CreateAccessKey");
+		super("Ims", "2019-08-15", "CreateAccessKey", "ims");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

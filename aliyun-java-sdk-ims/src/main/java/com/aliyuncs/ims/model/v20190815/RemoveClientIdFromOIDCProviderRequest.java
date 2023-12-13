@@ -29,7 +29,7 @@ public class RemoveClientIdFromOIDCProviderRequest extends RpcAcsRequest<RemoveC
 
 	private String oIDCProviderName;
 	public RemoveClientIdFromOIDCProviderRequest() {
-		super("Ims", "2019-08-15", "RemoveClientIdFromOIDCProvider");
+		super("Ims", "2019-08-15", "RemoveClientIdFromOIDCProvider", "ims");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -25,7 +25,7 @@ import com.aliyuncs.ims.Endpoint;
 public class GetUserSsoSettingsRequest extends RpcAcsRequest<GetUserSsoSettingsResponse> {
 	   
 	public GetUserSsoSettingsRequest() {
-		super("Ims", "2019-08-15", "GetUserSsoSettings");
+		super("Ims", "2019-08-15", "GetUserSsoSettings", "ims");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

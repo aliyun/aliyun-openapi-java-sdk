@@ -47,7 +47,7 @@ public class SetPasswordPolicyRequest extends RpcAcsRequest<SetPasswordPolicyRes
 
 	private Boolean requireSymbols;
 	public SetPasswordPolicyRequest() {
-		super("Ims", "2019-08-15", "SetPasswordPolicy");
+		super("Ims", "2019-08-15", "SetPasswordPolicy", "ims");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

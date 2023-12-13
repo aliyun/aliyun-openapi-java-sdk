@@ -35,7 +35,7 @@ public class UpdateLoginProfileRequest extends RpcAcsRequest<UpdateLoginProfileR
 
 	private String status;
 	public UpdateLoginProfileRequest() {
-		super("Ims", "2019-08-15", "UpdateLoginProfile");
+		super("Ims", "2019-08-15", "UpdateLoginProfile", "ims");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

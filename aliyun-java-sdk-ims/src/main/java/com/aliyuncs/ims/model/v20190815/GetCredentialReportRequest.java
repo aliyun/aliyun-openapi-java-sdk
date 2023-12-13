@@ -24,13 +24,39 @@ import com.aliyuncs.ims.Endpoint;
  */
 public class GetCredentialReportRequest extends RpcAcsRequest<GetCredentialReportResponse> {
 	   
+
+	private String nextToken;
+
+	private String maxItems;
 	public GetCredentialReportRequest() {
-		super("Ims", "2019-08-15", "GetCredentialReport");
+		super("Ims", "2019-08-15", "GetCredentialReport", "ims");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
+		}
+	}
+
+	public String getMaxItems() {
+		return this.maxItems;
+	}
+
+	public void setMaxItems(String maxItems) {
+		this.maxItems = maxItems;
+		if(maxItems != null){
+			putQueryParameter("MaxItems", maxItems);
+		}
 	}
 
 	@Override

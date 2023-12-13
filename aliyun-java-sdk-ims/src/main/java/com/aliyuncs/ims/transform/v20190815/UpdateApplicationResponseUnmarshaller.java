@@ -58,6 +58,7 @@ public class UpdateApplicationResponseUnmarshaller {
 			PredefinedScope predefinedScope = new PredefinedScope();
 			predefinedScope.setDescription(_ctx.stringValue("UpdateApplicationResponse.Application.DelegatedScope.PredefinedScopes["+ i +"].Description"));
 			predefinedScope.setName(_ctx.stringValue("UpdateApplicationResponse.Application.DelegatedScope.PredefinedScopes["+ i +"].Name"));
+			predefinedScope.setRequired(_ctx.booleanValue("UpdateApplicationResponse.Application.DelegatedScope.PredefinedScopes["+ i +"].Required"));
 
 			predefinedScopes.add(predefinedScope);
 		}

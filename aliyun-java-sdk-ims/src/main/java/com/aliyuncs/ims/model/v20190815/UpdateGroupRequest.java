@@ -33,7 +33,7 @@ public class UpdateGroupRequest extends RpcAcsRequest<UpdateGroupResponse> {
 
 	private String newComments;
 	public UpdateGroupRequest() {
-		super("Ims", "2019-08-15", "UpdateGroup");
+		super("Ims", "2019-08-15", "UpdateGroup", "ims");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

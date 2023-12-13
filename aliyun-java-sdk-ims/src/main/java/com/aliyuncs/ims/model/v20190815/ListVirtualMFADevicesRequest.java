@@ -29,7 +29,7 @@ public class ListVirtualMFADevicesRequest extends RpcAcsRequest<ListVirtualMFADe
 
 	private Integer maxItems;
 	public ListVirtualMFADevicesRequest() {
-		super("Ims", "2019-08-15", "ListVirtualMFADevices");
+		super("Ims", "2019-08-15", "ListVirtualMFADevices", "ims");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

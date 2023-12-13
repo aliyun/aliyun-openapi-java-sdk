@@ -57,6 +57,7 @@ public class CreateApplicationResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("CreateApplicationResponse.Application.DelegatedScope.PredefinedScopes.Length"); i++) {
 			PredefinedScope predefinedScope = new PredefinedScope();
 			predefinedScope.setDescription(_ctx.stringValue("CreateApplicationResponse.Application.DelegatedScope.PredefinedScopes["+ i +"].Description"));
+			predefinedScope.setRequired(_ctx.booleanValue("CreateApplicationResponse.Application.DelegatedScope.PredefinedScopes["+ i +"].Required"));
 			predefinedScope.setName(_ctx.stringValue("CreateApplicationResponse.Application.DelegatedScope.PredefinedScopes["+ i +"].Name"));
 
 			predefinedScopes.add(predefinedScope);

@@ -29,7 +29,7 @@ public class RemoveFingerprintFromOIDCProviderRequest extends RpcAcsRequest<Remo
 
 	private String fingerprint;
 	public RemoveFingerprintFromOIDCProviderRequest() {
-		super("Ims", "2019-08-15", "RemoveFingerprintFromOIDCProvider");
+		super("Ims", "2019-08-15", "RemoveFingerprintFromOIDCProvider", "ims");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

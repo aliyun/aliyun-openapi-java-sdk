@@ -25,7 +25,7 @@ import com.aliyuncs.ims.Endpoint;
 public class GetPasswordPolicyRequest extends RpcAcsRequest<GetPasswordPolicyResponse> {
 	   
 	public GetPasswordPolicyRequest() {
-		super("Ims", "2019-08-15", "GetPasswordPolicy");
+		super("Ims", "2019-08-15", "GetPasswordPolicy", "ims");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

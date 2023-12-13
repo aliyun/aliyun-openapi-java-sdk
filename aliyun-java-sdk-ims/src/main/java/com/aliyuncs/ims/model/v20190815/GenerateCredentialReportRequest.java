@@ -25,7 +25,7 @@ import com.aliyuncs.ims.Endpoint;
 public class GenerateCredentialReportRequest extends RpcAcsRequest<GenerateCredentialReportResponse> {
 	   
 	public GenerateCredentialReportRequest() {
-		super("Ims", "2019-08-15", "GenerateCredentialReport");
+		super("Ims", "2019-08-15", "GenerateCredentialReport", "ims");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

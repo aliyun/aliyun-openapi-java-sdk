@@ -29,7 +29,7 @@ public class AddFingerprintToOIDCProviderRequest extends RpcAcsRequest<AddFinger
 
 	private String fingerprint;
 	public AddFingerprintToOIDCProviderRequest() {
-		super("Ims", "2019-08-15", "AddFingerprintToOIDCProvider");
+		super("Ims", "2019-08-15", "AddFingerprintToOIDCProvider", "ims");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

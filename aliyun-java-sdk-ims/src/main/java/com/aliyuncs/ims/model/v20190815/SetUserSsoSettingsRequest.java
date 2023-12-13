@@ -31,7 +31,7 @@ public class SetUserSsoSettingsRequest extends RpcAcsRequest<SetUserSsoSettingsR
 
 	private Boolean ssoEnabled;
 	public SetUserSsoSettingsRequest() {
-		super("Ims", "2019-08-15", "SetUserSsoSettings");
+		super("Ims", "2019-08-15", "SetUserSsoSettings", "ims");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
