@@ -87,9 +87,9 @@ public class DescribeSQLSamplesResponse extends AcsResponse {
 
 		private Boolean inner;
 
-		private Double executorRpc;
+		private Boolean executorRpc;
 
-		private Double hitPlan;
+		private Boolean hitPlan;
 
 		private Double elapsedTime;
 
@@ -127,7 +127,7 @@ public class DescribeSQLSamplesResponse extends AcsResponse {
 
 		private Double retryCount;
 
-		private Double tableScan;
+		private Boolean tableScan;
 
 		private String consistencyLevel;
 
@@ -311,19 +311,19 @@ public class DescribeSQLSamplesResponse extends AcsResponse {
 			this.inner = inner;
 		}
 
-		public Double getExecutorRpc() {
+		public Boolean getExecutorRpc() {
 			return this.executorRpc;
 		}
 
-		public void setExecutorRpc(Double executorRpc) {
+		public void setExecutorRpc(Boolean executorRpc) {
 			this.executorRpc = executorRpc;
 		}
 
-		public Double getHitPlan() {
+		public Boolean getHitPlan() {
 			return this.hitPlan;
 		}
 
-		public void setHitPlan(Double hitPlan) {
+		public void setHitPlan(Boolean hitPlan) {
 			this.hitPlan = hitPlan;
 		}
 
@@ -471,11 +471,11 @@ public class DescribeSQLSamplesResponse extends AcsResponse {
 			this.retryCount = retryCount;
 		}
 
-		public Double getTableScan() {
+		public Boolean getTableScan() {
 			return this.tableScan;
 		}
 
-		public void setTableScan(Double tableScan) {
+		public void setTableScan(Boolean tableScan) {
 			this.tableScan = tableScan;
 		}
 

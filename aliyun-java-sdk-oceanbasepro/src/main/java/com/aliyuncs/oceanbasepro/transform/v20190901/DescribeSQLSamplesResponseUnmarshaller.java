@@ -51,8 +51,8 @@ public class DescribeSQLSamplesResponseUnmarshaller {
 			dataItem.setRpcCount(_ctx.doubleValue("DescribeSQLSamplesResponse.Data["+ i +"].RpcCount"));
 			dataItem.setPlanType(_ctx.stringValue("DescribeSQLSamplesResponse.Data["+ i +"].PlanType"));
 			dataItem.setInner(_ctx.booleanValue("DescribeSQLSamplesResponse.Data["+ i +"].Inner"));
-			dataItem.setExecutorRpc(_ctx.doubleValue("DescribeSQLSamplesResponse.Data["+ i +"].ExecutorRpc"));
-			dataItem.setHitPlan(_ctx.doubleValue("DescribeSQLSamplesResponse.Data["+ i +"].HitPlan"));
+			dataItem.setExecutorRpc(_ctx.booleanValue("DescribeSQLSamplesResponse.Data["+ i +"].ExecutorRpc"));
+			dataItem.setHitPlan(_ctx.booleanValue("DescribeSQLSamplesResponse.Data["+ i +"].HitPlan"));
 			dataItem.setElapsedTime(_ctx.doubleValue("DescribeSQLSamplesResponse.Data["+ i +"].ElapsedTime"));
 			dataItem.setCpuTime(_ctx.doubleValue("DescribeSQLSamplesResponse.Data["+ i +"].CpuTime"));
 			dataItem.setNetTime(_ctx.doubleValue("DescribeSQLSamplesResponse.Data["+ i +"].NetTime"));
@@ -71,7 +71,7 @@ public class DescribeSQLSamplesResponseUnmarshaller {
 			dataItem.setBlockIndexCacheHit(_ctx.doubleValue("DescribeSQLSamplesResponse.Data["+ i +"].BlockIndexCacheHit"));
 			dataItem.setDiskReads(_ctx.doubleValue("DescribeSQLSamplesResponse.Data["+ i +"].DiskReads"));
 			dataItem.setRetryCount(_ctx.doubleValue("DescribeSQLSamplesResponse.Data["+ i +"].RetryCount"));
-			dataItem.setTableScan(_ctx.doubleValue("DescribeSQLSamplesResponse.Data["+ i +"].TableScan"));
+			dataItem.setTableScan(_ctx.booleanValue("DescribeSQLSamplesResponse.Data["+ i +"].TableScan"));
 			dataItem.setConsistencyLevel(_ctx.stringValue("DescribeSQLSamplesResponse.Data["+ i +"].ConsistencyLevel"));
 			dataItem.setMemstoreReadRows(_ctx.doubleValue("DescribeSQLSamplesResponse.Data["+ i +"].MemstoreReadRows"));
 			dataItem.setExpectedWorkerCount(_ctx.doubleValue("DescribeSQLSamplesResponse.Data["+ i +"].ExpectedWorkerCount"));
