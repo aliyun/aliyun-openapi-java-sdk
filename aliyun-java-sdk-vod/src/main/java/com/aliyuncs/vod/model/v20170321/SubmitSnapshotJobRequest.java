@@ -15,6 +15,9 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.vod.Endpoint;
 
@@ -30,6 +33,9 @@ public class SubmitSnapshotJobRequest extends RpcAcsRequest<SubmitSnapshotJobRes
 	private Long specifiedOffsetTime;
 
 	private String spriteSnapshotConfig;
+
+	@SerializedName("specifiedOffsetTimes")
+	private List<Long> specifiedOffsetTimes;
 
 	private String snapshotTemplateId;
 
@@ -82,6 +88,17 @@ public class SubmitSnapshotJobRequest extends RpcAcsRequest<SubmitSnapshotJobRes
 		if(spriteSnapshotConfig != null){
 			putQueryParameter("SpriteSnapshotConfig", spriteSnapshotConfig);
 		}
+	}
+
+	public List<Long> getSpecifiedOffsetTimes() {
+		return this.specifiedOffsetTimes;
+	}
+
+	public void setSpecifiedOffsetTimes(List<Long> specifiedOffsetTimes) {
+		this.specifiedOffsetTimes = specifiedOffsetTimes;	
+		if (specifiedOffsetTimes != null) {
+			putQueryParameter("SpecifiedOffsetTimes" , new Gson().toJson(specifiedOffsetTimes));
+		}	
 	}
 
 	public String getSnapshotTemplateId() {
