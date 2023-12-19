@@ -69,6 +69,8 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 
 	private String androidNotificationVivoChannel;
 
+	private String androidVivoReceiptId;
+
 	private String iOSNotificationCategory;
 
 	private String androidNotificationXiaomiChannel;
@@ -416,6 +418,17 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 		this.androidNotificationVivoChannel = androidNotificationVivoChannel;
 		if(androidNotificationVivoChannel != null){
 			putQueryParameter("AndroidNotificationVivoChannel", androidNotificationVivoChannel);
+		}
+	}
+
+	public String getAndroidVivoReceiptId() {
+		return this.androidVivoReceiptId;
+	}
+
+	public void setAndroidVivoReceiptId(String androidVivoReceiptId) {
+		this.androidVivoReceiptId = androidVivoReceiptId;
+		if(androidVivoReceiptId != null){
+			putQueryParameter("AndroidVivoReceiptId", androidVivoReceiptId);
 		}
 	}
 

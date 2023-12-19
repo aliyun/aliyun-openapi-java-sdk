@@ -67,6 +67,7 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidImageUrl" , pushTasks.get(depth1).getAndroidImageUrl());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidHonorTargetUserType" , pushTasks.get(depth1).getAndroidHonorTargetUserType());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidNotificationVivoChannel" , pushTasks.get(depth1).getAndroidNotificationVivoChannel());
+				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidVivoReceiptId" , pushTasks.get(depth1).getAndroidVivoReceiptId());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".iOSNotificationCategory" , pushTasks.get(depth1).getIOSNotificationCategory());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidNotificationXiaomiChannel" , pushTasks.get(depth1).getAndroidNotificationXiaomiChannel());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".StoreOffline" , pushTasks.get(depth1).getStoreOffline());
@@ -170,6 +171,8 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 		private Integer androidHonorTargetUserType;
 
 		private String androidNotificationVivoChannel;
+
+		private String androidVivoReceiptId;
 
 		private String iOSNotificationCategory;
 
@@ -427,6 +430,14 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 
 		public void setAndroidNotificationVivoChannel(String androidNotificationVivoChannel) {
 			this.androidNotificationVivoChannel = androidNotificationVivoChannel;
+		}
+
+		public String getAndroidVivoReceiptId() {
+			return this.androidVivoReceiptId;
+		}
+
+		public void setAndroidVivoReceiptId(String androidVivoReceiptId) {
+			this.androidVivoReceiptId = androidVivoReceiptId;
 		}
 
 		public String getIOSNotificationCategory() {

@@ -1,3 +1,6 @@
+2023-12-19 Version: 3.13.14
+- Supported AndroidVivoReceiptId for Push and MassPush.
+
 2023-10-12 Version: 3.13.13
 - Supported AndroidTargetUserType. AndroidHonorTargetUserType for Push and MassPush.
 - Supported StoreOffline for PushNoticeToAndroid, PushMessageToAndroid and PushMessageToiOS.
