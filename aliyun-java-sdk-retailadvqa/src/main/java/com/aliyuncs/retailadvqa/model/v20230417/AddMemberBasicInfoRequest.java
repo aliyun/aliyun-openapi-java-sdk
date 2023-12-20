@@ -237,6 +237,9 @@ public class AddMemberBasicInfoRequest extends RpcAcsRequest<AddMemberBasicInfoR
 			@SerializedName("ChannelCode")
 			private String channelCode;
 
+			@SerializedName("Scene")
+			private String scene;
+
 			public String getAppId() {
 				return this.appId;
 			}
@@ -267,6 +270,14 @@ public class AddMemberBasicInfoRequest extends RpcAcsRequest<AddMemberBasicInfoR
 
 			public void setChannelCode(String channelCode) {
 				this.channelCode = channelCode;
+			}
+
+			public String getScene() {
+				return this.scene;
+			}
+
+			public void setScene(String scene) {
+				this.scene = scene;
 			}
 		}
 	}
