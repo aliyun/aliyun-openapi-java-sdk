@@ -1,3 +1,6 @@
+2023-12-20 Version: 1.0.26
+- Update RecognizeBankCard.
+
 2023-12-06 Version: 1.0.25
 - Update RecognizeIdentityCard.
 - Update RecognizeDriverLicense.
