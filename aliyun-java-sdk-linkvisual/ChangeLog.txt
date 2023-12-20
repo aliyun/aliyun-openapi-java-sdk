@@ -1,3 +1,6 @@
+2023-12-20 Version: 1.5.18
+- Add RTMP device related interfaces.
+
 2023-11-16 Version: 1.5.17
 - 新增按时间下载本地录像接口.
 
