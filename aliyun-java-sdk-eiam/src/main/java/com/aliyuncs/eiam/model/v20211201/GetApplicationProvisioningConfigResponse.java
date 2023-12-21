@@ -59,6 +59,8 @@ public class GetApplicationProvisioningConfigResponse extends AcsResponse {
 
 		private String status;
 
+		private String configOperateMode;
+
 		private CallbackProvisioningConfig callbackProvisioningConfig;
 
 		private ScimProvisioningConfig scimProvisioningConfig;
@@ -109,6 +111,14 @@ public class GetApplicationProvisioningConfigResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public String getConfigOperateMode() {
+			return this.configOperateMode;
+		}
+
+		public void setConfigOperateMode(String configOperateMode) {
+			this.configOperateMode = configOperateMode;
 		}
 
 		public CallbackProvisioningConfig getCallbackProvisioningConfig() {

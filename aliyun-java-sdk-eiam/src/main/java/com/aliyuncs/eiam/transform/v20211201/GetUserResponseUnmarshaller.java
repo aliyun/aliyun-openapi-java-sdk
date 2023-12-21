@@ -20,8 +20,8 @@ import java.util.List;
 import com.aliyuncs.eiam.model.v20211201.GetUserResponse;
 import com.aliyuncs.eiam.model.v20211201.GetUserResponse.User;
 import com.aliyuncs.eiam.model.v20211201.GetUserResponse.User.CustomField;
+import com.aliyuncs.eiam.model.v20211201.GetUserResponse.User.Group;
 import com.aliyuncs.eiam.model.v20211201.GetUserResponse.User.OrganizationalUnit;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -38,35 +38,27 @@ public class GetUserResponseUnmarshaller {
 		user.setPasswordSet(_ctx.booleanValue("GetUserResponse.User.PasswordSet"));
 		user.setPhoneRegion(_ctx.stringValue("GetUserResponse.User.PhoneRegion"));
 		user.setPhoneNumber(_ctx.stringValue("GetUserResponse.User.PhoneNumber"));
-		user.setPhoneVerified(_ctx.booleanValue("GetUserResponse.User.PhoneVerified"));
 		user.setPhoneNumberVerified(_ctx.booleanValue("GetUserResponse.User.PhoneNumberVerified"));
 		user.setEmail(_ctx.stringValue("GetUserResponse.User.Email"));
 		user.setEmailVerified(_ctx.booleanValue("GetUserResponse.User.EmailVerified"));
-		user.setExternalId(_ctx.stringValue("GetUserResponse.User.ExternalId"));
 		user.setUserExternalId(_ctx.stringValue("GetUserResponse.User.UserExternalId"));
-		user.setSourceType(_ctx.stringValue("GetUserResponse.User.SourceType"));
 		user.setUserSourceType(_ctx.stringValue("GetUserResponse.User.UserSourceType"));
-		user.setSourceId(_ctx.stringValue("GetUserResponse.User.SourceId"));
 		user.setUserSourceId(_ctx.stringValue("GetUserResponse.User.UserSourceId"));
 		user.setStatus(_ctx.stringValue("GetUserResponse.User.Status"));
 		user.setAccountExpireTime(_ctx.longValue("GetUserResponse.User.AccountExpireTime"));
+		user.setPasswordExpireTime(_ctx.longValue("GetUserResponse.User.PasswordExpireTime"));
 		user.setRegisterTime(_ctx.longValue("GetUserResponse.User.RegisterTime"));
 		user.setLockExpireTime(_ctx.longValue("GetUserResponse.User.LockExpireTime"));
 		user.setCreateTime(_ctx.longValue("GetUserResponse.User.CreateTime"));
 		user.setUpdateTime(_ctx.longValue("GetUserResponse.User.UpdateTime"));
 		user.setDescription(_ctx.stringValue("GetUserResponse.User.Description"));
-		user.setAliUid(_ctx.longValue("GetUserResponse.User.AliUid"));
-		user.setInstanceId(_ctx.stringValue("GetUserResponse.User.InstanceId"));
-		user.setLocked(_ctx.booleanValue("GetUserResponse.User.Locked"));
 		user.setPrimaryOrganizationalUnitId(_ctx.stringValue("GetUserResponse.User.PrimaryOrganizationalUnitId"));
-		user.setExtensionAttributes(_ctx.mapValue("GetUserResponse.User.ExtensionAttributes"));
-		user.setPasswordExpireTime(_ctx.longValue("GetUserResponse.User.PasswordExpireTime"));
+		user.setInstanceId(_ctx.stringValue("GetUserResponse.User.InstanceId"));
 
 		List<OrganizationalUnit> organizationalUnits = new ArrayList<OrganizationalUnit>();
 		for (int i = 0; i < _ctx.lengthValue("GetUserResponse.User.OrganizationalUnits.Length"); i++) {
 			OrganizationalUnit organizationalUnit = new OrganizationalUnit();
 			organizationalUnit.setOrganizationalUnitId(_ctx.stringValue("GetUserResponse.User.OrganizationalUnits["+ i +"].OrganizationalUnitId"));
-			organizationalUnit.setName(_ctx.stringValue("GetUserResponse.User.OrganizationalUnits["+ i +"].Name"));
 			organizationalUnit.setOrganizationalUnitName(_ctx.stringValue("GetUserResponse.User.OrganizationalUnits["+ i +"].OrganizationalUnitName"));
 			organizationalUnit.setPrimary(_ctx.booleanValue("GetUserResponse.User.OrganizationalUnits["+ i +"].Primary"));
 
@@ -83,6 +75,17 @@ public class GetUserResponseUnmarshaller {
 			customFields.add(customField);
 		}
 		user.setCustomFields(customFields);
+
+		List<Group> groups = new ArrayList<Group>();
+		for (int i = 0; i < _ctx.lengthValue("GetUserResponse.User.Groups.Length"); i++) {
+			Group group = new Group();
+			group.setGroupId(_ctx.stringValue("GetUserResponse.User.Groups["+ i +"].GroupId"));
+			group.setGroupName(_ctx.stringValue("GetUserResponse.User.Groups["+ i +"].GroupName"));
+			group.setDescription(_ctx.stringValue("GetUserResponse.User.Groups["+ i +"].Description"));
+
+			groups.add(group);
+		}
+		user.setGroups(groups);
 		getUserResponse.setUser(user);
 	 
 	 	return getUserResponse;

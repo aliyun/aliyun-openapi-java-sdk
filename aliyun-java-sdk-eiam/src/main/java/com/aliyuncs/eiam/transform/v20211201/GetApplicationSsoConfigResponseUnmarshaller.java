@@ -45,6 +45,8 @@ public class GetApplicationSsoConfigResponseUnmarshaller {
 		samlSsoConfig.setNameIdValueExpression(_ctx.stringValue("GetApplicationSsoConfigResponse.ApplicationSsoConfig.SamlSsoConfig.NameIdValueExpression"));
 		samlSsoConfig.setDefaultRelayState(_ctx.stringValue("GetApplicationSsoConfigResponse.ApplicationSsoConfig.SamlSsoConfig.DefaultRelayState"));
 		samlSsoConfig.setSignatureAlgorithm(_ctx.stringValue("GetApplicationSsoConfigResponse.ApplicationSsoConfig.SamlSsoConfig.SignatureAlgorithm"));
+		samlSsoConfig.setResponseSigned(_ctx.booleanValue("GetApplicationSsoConfigResponse.ApplicationSsoConfig.SamlSsoConfig.ResponseSigned"));
+		samlSsoConfig.setAssertionSigned(_ctx.booleanValue("GetApplicationSsoConfigResponse.ApplicationSsoConfig.SamlSsoConfig.AssertionSigned"));
 
 		List<AttributeStatement> attributeStatements = new ArrayList<AttributeStatement>();
 		for (int i = 0; i < _ctx.lengthValue("GetApplicationSsoConfigResponse.ApplicationSsoConfig.SamlSsoConfig.AttributeStatements.Length"); i++) {

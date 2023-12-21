@@ -52,15 +52,9 @@ public class GetOrganizationalUnitResponse extends AcsResponse {
 
 		private String parentId;
 
-		private String externalId;
-
 		private String organizationalUnitExternalId;
 
-		private String sourceType;
-
 		private String organizationalUnitSourceType;
-
-		private String sourceId;
 
 		private String organizationalUnitSourceId;
 
@@ -71,6 +65,8 @@ public class GetOrganizationalUnitResponse extends AcsResponse {
 		private String description;
 
 		private String instanceId;
+
+		private Boolean leaf;
 
 		public String getOrganizationalUnitId() {
 			return this.organizationalUnitId;
@@ -96,14 +92,6 @@ public class GetOrganizationalUnitResponse extends AcsResponse {
 			this.parentId = parentId;
 		}
 
-		public String getExternalId() {
-			return this.externalId;
-		}
-
-		public void setExternalId(String externalId) {
-			this.externalId = externalId;
-		}
-
 		public String getOrganizationalUnitExternalId() {
 			return this.organizationalUnitExternalId;
 		}
@@ -112,28 +100,12 @@ public class GetOrganizationalUnitResponse extends AcsResponse {
 			this.organizationalUnitExternalId = organizationalUnitExternalId;
 		}
 
-		public String getSourceType() {
-			return this.sourceType;
-		}
-
-		public void setSourceType(String sourceType) {
-			this.sourceType = sourceType;
-		}
-
 		public String getOrganizationalUnitSourceType() {
 			return this.organizationalUnitSourceType;
 		}
 
 		public void setOrganizationalUnitSourceType(String organizationalUnitSourceType) {
 			this.organizationalUnitSourceType = organizationalUnitSourceType;
-		}
-
-		public String getSourceId() {
-			return this.sourceId;
-		}
-
-		public void setSourceId(String sourceId) {
-			this.sourceId = sourceId;
 		}
 
 		public String getOrganizationalUnitSourceId() {
@@ -174,6 +146,14 @@ public class GetOrganizationalUnitResponse extends AcsResponse {
 
 		public void setInstanceId(String instanceId) {
 			this.instanceId = instanceId;
+		}
+
+		public Boolean getLeaf() {
+			return this.leaf;
+		}
+
+		public void setLeaf(Boolean leaf) {
+			this.leaf = leaf;
 		}
 	}
 

@@ -59,32 +59,12 @@ public class ListApplicationsForOrganizationalUnitResponse extends AcsResponse {
 
 		private String applicationId;
 
-		private Boolean hasDirectAuthorization;
-
-		private Boolean hasInheritAuthorization;
-
 		public String getApplicationId() {
 			return this.applicationId;
 		}
 
 		public void setApplicationId(String applicationId) {
 			this.applicationId = applicationId;
-		}
-
-		public Boolean getHasDirectAuthorization() {
-			return this.hasDirectAuthorization;
-		}
-
-		public void setHasDirectAuthorization(Boolean hasDirectAuthorization) {
-			this.hasDirectAuthorization = hasDirectAuthorization;
-		}
-
-		public Boolean getHasInheritAuthorization() {
-			return this.hasInheritAuthorization;
-		}
-
-		public void setHasInheritAuthorization(Boolean hasInheritAuthorization) {
-			this.hasInheritAuthorization = hasInheritAuthorization;
 		}
 	}
 

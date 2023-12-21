@@ -15,6 +15,7 @@
 package com.aliyuncs.eiam.model.v20211201;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 
@@ -31,6 +32,8 @@ public class ListUsersRequest extends RpcAcsRequest<ListUsersResponse> {
 
 	private Long pageNumber;
 
+	private String usernameStartsWith;
+
 	private String userSourceType;
 
 	private Long pageSize;
@@ -39,7 +42,11 @@ public class ListUsersRequest extends RpcAcsRequest<ListUsersResponse> {
 
 	private String userExternalId;
 
+	private String displayNameStartsWith;
+
 	private String instanceId;
+
+	private List<String> userIds;
 
 	private String userSourceId;
 
@@ -82,6 +89,17 @@ public class ListUsersRequest extends RpcAcsRequest<ListUsersResponse> {
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getUsernameStartsWith() {
+		return this.usernameStartsWith;
+	}
+
+	public void setUsernameStartsWith(String usernameStartsWith) {
+		this.usernameStartsWith = usernameStartsWith;
+		if(usernameStartsWith != null){
+			putQueryParameter("UsernameStartsWith", usernameStartsWith);
 		}
 	}
 
@@ -129,6 +147,17 @@ public class ListUsersRequest extends RpcAcsRequest<ListUsersResponse> {
 		}
 	}
 
+	public String getDisplayNameStartsWith() {
+		return this.displayNameStartsWith;
+	}
+
+	public void setDisplayNameStartsWith(String displayNameStartsWith) {
+		this.displayNameStartsWith = displayNameStartsWith;
+		if(displayNameStartsWith != null){
+			putQueryParameter("DisplayNameStartsWith", displayNameStartsWith);
+		}
+	}
+
 	public String getInstanceId() {
 		return this.instanceId;
 	}
@@ -138,6 +167,19 @@ public class ListUsersRequest extends RpcAcsRequest<ListUsersResponse> {
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
 		}
+	}
+
+	public List<String> getUserIds() {
+		return this.userIds;
+	}
+
+	public void setUserIds(List<String> userIds) {
+		this.userIds = userIds;	
+		if (userIds != null) {
+			for (int depth1 = 0; depth1 < userIds.size(); depth1++) {
+				putQueryParameter("UserIds." + (depth1 + 1) , userIds.get(depth1));
+			}
+		}	
 	}
 
 	public String getUserSourceId() {

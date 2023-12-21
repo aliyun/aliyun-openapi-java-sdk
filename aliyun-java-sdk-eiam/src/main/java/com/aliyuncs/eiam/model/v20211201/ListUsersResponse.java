@@ -69,29 +69,23 @@ public class ListUsersResponse extends AcsResponse {
 
 		private String phoneNumber;
 
-		private Boolean phoneVerified;
-
 		private Boolean phoneNumberVerified;
 
 		private String email;
 
 		private Boolean emailVerified;
 
-		private String externalId;
-
 		private String userExternalId;
 
-		private String sourceType;
-
 		private String userSourceType;
-
-		private String sourceId;
 
 		private String userSourceId;
 
 		private String status;
 
 		private Long accountExpireTime;
+
+		private Long passwordExpireTime;
 
 		private Long registerTime;
 
@@ -103,11 +97,7 @@ public class ListUsersResponse extends AcsResponse {
 
 		private String description;
 
-		private Long aliUid;
-
 		private String instanceId;
-
-		private Boolean locked;
 
 		public String getUserId() {
 			return this.userId;
@@ -157,14 +147,6 @@ public class ListUsersResponse extends AcsResponse {
 			this.phoneNumber = phoneNumber;
 		}
 
-		public Boolean getPhoneVerified() {
-			return this.phoneVerified;
-		}
-
-		public void setPhoneVerified(Boolean phoneVerified) {
-			this.phoneVerified = phoneVerified;
-		}
-
 		public Boolean getPhoneNumberVerified() {
 			return this.phoneNumberVerified;
 		}
@@ -189,14 +171,6 @@ public class ListUsersResponse extends AcsResponse {
 			this.emailVerified = emailVerified;
 		}
 
-		public String getExternalId() {
-			return this.externalId;
-		}
-
-		public void setExternalId(String externalId) {
-			this.externalId = externalId;
-		}
-
 		public String getUserExternalId() {
 			return this.userExternalId;
 		}
@@ -205,28 +179,12 @@ public class ListUsersResponse extends AcsResponse {
 			this.userExternalId = userExternalId;
 		}
 
-		public String getSourceType() {
-			return this.sourceType;
-		}
-
-		public void setSourceType(String sourceType) {
-			this.sourceType = sourceType;
-		}
-
 		public String getUserSourceType() {
 			return this.userSourceType;
 		}
 
 		public void setUserSourceType(String userSourceType) {
 			this.userSourceType = userSourceType;
-		}
-
-		public String getSourceId() {
-			return this.sourceId;
-		}
-
-		public void setSourceId(String sourceId) {
-			this.sourceId = sourceId;
 		}
 
 		public String getUserSourceId() {
@@ -251,6 +209,14 @@ public class ListUsersResponse extends AcsResponse {
 
 		public void setAccountExpireTime(Long accountExpireTime) {
 			this.accountExpireTime = accountExpireTime;
+		}
+
+		public Long getPasswordExpireTime() {
+			return this.passwordExpireTime;
+		}
+
+		public void setPasswordExpireTime(Long passwordExpireTime) {
+			this.passwordExpireTime = passwordExpireTime;
 		}
 
 		public Long getRegisterTime() {
@@ -293,28 +259,12 @@ public class ListUsersResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public Long getAliUid() {
-			return this.aliUid;
-		}
-
-		public void setAliUid(Long aliUid) {
-			this.aliUid = aliUid;
-		}
-
 		public String getInstanceId() {
 			return this.instanceId;
 		}
 
 		public void setInstanceId(String instanceId) {
 			this.instanceId = instanceId;
-		}
-
-		public Boolean getLocked() {
-			return this.locked;
-		}
-
-		public void setLocked(Boolean locked) {
-			this.locked = locked;
 		}
 	}
 

@@ -38,26 +38,21 @@ public class ListUsersResponseUnmarshaller {
 			user.setPasswordSet(_ctx.booleanValue("ListUsersResponse.Users["+ i +"].PasswordSet"));
 			user.setPhoneRegion(_ctx.stringValue("ListUsersResponse.Users["+ i +"].PhoneRegion"));
 			user.setPhoneNumber(_ctx.stringValue("ListUsersResponse.Users["+ i +"].PhoneNumber"));
-			user.setPhoneVerified(_ctx.booleanValue("ListUsersResponse.Users["+ i +"].PhoneVerified"));
 			user.setPhoneNumberVerified(_ctx.booleanValue("ListUsersResponse.Users["+ i +"].PhoneNumberVerified"));
 			user.setEmail(_ctx.stringValue("ListUsersResponse.Users["+ i +"].Email"));
 			user.setEmailVerified(_ctx.booleanValue("ListUsersResponse.Users["+ i +"].EmailVerified"));
-			user.setExternalId(_ctx.stringValue("ListUsersResponse.Users["+ i +"].ExternalId"));
 			user.setUserExternalId(_ctx.stringValue("ListUsersResponse.Users["+ i +"].UserExternalId"));
-			user.setSourceType(_ctx.stringValue("ListUsersResponse.Users["+ i +"].SourceType"));
 			user.setUserSourceType(_ctx.stringValue("ListUsersResponse.Users["+ i +"].UserSourceType"));
-			user.setSourceId(_ctx.stringValue("ListUsersResponse.Users["+ i +"].SourceId"));
 			user.setUserSourceId(_ctx.stringValue("ListUsersResponse.Users["+ i +"].UserSourceId"));
 			user.setStatus(_ctx.stringValue("ListUsersResponse.Users["+ i +"].Status"));
 			user.setAccountExpireTime(_ctx.longValue("ListUsersResponse.Users["+ i +"].AccountExpireTime"));
+			user.setPasswordExpireTime(_ctx.longValue("ListUsersResponse.Users["+ i +"].PasswordExpireTime"));
 			user.setRegisterTime(_ctx.longValue("ListUsersResponse.Users["+ i +"].RegisterTime"));
 			user.setLockExpireTime(_ctx.longValue("ListUsersResponse.Users["+ i +"].LockExpireTime"));
 			user.setCreateTime(_ctx.longValue("ListUsersResponse.Users["+ i +"].CreateTime"));
 			user.setUpdateTime(_ctx.longValue("ListUsersResponse.Users["+ i +"].UpdateTime"));
 			user.setDescription(_ctx.stringValue("ListUsersResponse.Users["+ i +"].Description"));
-			user.setAliUid(_ctx.longValue("ListUsersResponse.Users["+ i +"].AliUid"));
 			user.setInstanceId(_ctx.stringValue("ListUsersResponse.Users["+ i +"].InstanceId"));
-			user.setLocked(_ctx.booleanValue("ListUsersResponse.Users["+ i +"].Locked"));
 
 			users.add(user);
 		}

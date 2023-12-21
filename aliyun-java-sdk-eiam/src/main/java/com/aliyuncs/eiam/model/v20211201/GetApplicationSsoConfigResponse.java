@@ -121,6 +121,10 @@ public class GetApplicationSsoConfigResponse extends AcsResponse {
 
 			private String signatureAlgorithm;
 
+			private Boolean responseSigned;
+
+			private Boolean assertionSigned;
+
 			private List<AttributeStatement> attributeStatements;
 
 			public String getSpSsoAcsUrl() {
@@ -169,6 +173,22 @@ public class GetApplicationSsoConfigResponse extends AcsResponse {
 
 			public void setSignatureAlgorithm(String signatureAlgorithm) {
 				this.signatureAlgorithm = signatureAlgorithm;
+			}
+
+			public Boolean getResponseSigned() {
+				return this.responseSigned;
+			}
+
+			public void setResponseSigned(Boolean responseSigned) {
+				this.responseSigned = responseSigned;
+			}
+
+			public Boolean getAssertionSigned() {
+				return this.assertionSigned;
+			}
+
+			public void setAssertionSigned(Boolean assertionSigned) {
+				this.assertionSigned = assertionSigned;
 			}
 
 			public List<AttributeStatement> getAttributeStatements() {

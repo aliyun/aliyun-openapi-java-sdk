@@ -35,16 +35,14 @@ public class ListOrganizationalUnitsResponseUnmarshaller {
 			organizationalUnit.setOrganizationalUnitId(_ctx.stringValue("ListOrganizationalUnitsResponse.OrganizationalUnits["+ i +"].OrganizationalUnitId"));
 			organizationalUnit.setOrganizationalUnitName(_ctx.stringValue("ListOrganizationalUnitsResponse.OrganizationalUnits["+ i +"].OrganizationalUnitName"));
 			organizationalUnit.setParentId(_ctx.stringValue("ListOrganizationalUnitsResponse.OrganizationalUnits["+ i +"].ParentId"));
-			organizationalUnit.setExternalId(_ctx.stringValue("ListOrganizationalUnitsResponse.OrganizationalUnits["+ i +"].ExternalId"));
 			organizationalUnit.setOrganizationalUnitExternalId(_ctx.stringValue("ListOrganizationalUnitsResponse.OrganizationalUnits["+ i +"].OrganizationalUnitExternalId"));
-			organizationalUnit.setSourceType(_ctx.stringValue("ListOrganizationalUnitsResponse.OrganizationalUnits["+ i +"].SourceType"));
 			organizationalUnit.setOrganizationalUnitSourceType(_ctx.stringValue("ListOrganizationalUnitsResponse.OrganizationalUnits["+ i +"].OrganizationalUnitSourceType"));
-			organizationalUnit.setSourceId(_ctx.stringValue("ListOrganizationalUnitsResponse.OrganizationalUnits["+ i +"].SourceId"));
 			organizationalUnit.setOrganizationalUnitSourceId(_ctx.stringValue("ListOrganizationalUnitsResponse.OrganizationalUnits["+ i +"].OrganizationalUnitSourceId"));
 			organizationalUnit.setCreateTime(_ctx.longValue("ListOrganizationalUnitsResponse.OrganizationalUnits["+ i +"].CreateTime"));
 			organizationalUnit.setUpdateTime(_ctx.longValue("ListOrganizationalUnitsResponse.OrganizationalUnits["+ i +"].UpdateTime"));
 			organizationalUnit.setDescription(_ctx.stringValue("ListOrganizationalUnitsResponse.OrganizationalUnits["+ i +"].Description"));
 			organizationalUnit.setInstanceId(_ctx.stringValue("ListOrganizationalUnitsResponse.OrganizationalUnits["+ i +"].InstanceId"));
+			organizationalUnit.setLeaf(_ctx.booleanValue("ListOrganizationalUnitsResponse.OrganizationalUnits["+ i +"].Leaf"));
 
 			organizationalUnits.add(organizationalUnit);
 		}

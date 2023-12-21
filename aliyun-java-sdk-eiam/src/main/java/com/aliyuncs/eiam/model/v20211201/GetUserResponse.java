@@ -60,29 +60,23 @@ public class GetUserResponse extends AcsResponse {
 
 		private String phoneNumber;
 
-		private Boolean phoneVerified;
-
 		private Boolean phoneNumberVerified;
 
 		private String email;
 
 		private Boolean emailVerified;
 
-		private String externalId;
-
 		private String userExternalId;
 
-		private String sourceType;
-
 		private String userSourceType;
-
-		private String sourceId;
 
 		private String userSourceId;
 
 		private String status;
 
 		private Long accountExpireTime;
+
+		private Long passwordExpireTime;
 
 		private Long registerTime;
 
@@ -94,21 +88,15 @@ public class GetUserResponse extends AcsResponse {
 
 		private String description;
 
-		private Long aliUid;
-
-		private String instanceId;
-
-		private Boolean locked;
-
 		private String primaryOrganizationalUnitId;
 
-		private Map<Object,Object> extensionAttributes;
-
-		private Long passwordExpireTime;
+		private String instanceId;
 
 		private List<OrganizationalUnit> organizationalUnits;
 
 		private List<CustomField> customFields;
+
+		private List<Group> groups;
 
 		public String getUserId() {
 			return this.userId;
@@ -158,14 +146,6 @@ public class GetUserResponse extends AcsResponse {
 			this.phoneNumber = phoneNumber;
 		}
 
-		public Boolean getPhoneVerified() {
-			return this.phoneVerified;
-		}
-
-		public void setPhoneVerified(Boolean phoneVerified) {
-			this.phoneVerified = phoneVerified;
-		}
-
 		public Boolean getPhoneNumberVerified() {
 			return this.phoneNumberVerified;
 		}
@@ -190,14 +170,6 @@ public class GetUserResponse extends AcsResponse {
 			this.emailVerified = emailVerified;
 		}
 
-		public String getExternalId() {
-			return this.externalId;
-		}
-
-		public void setExternalId(String externalId) {
-			this.externalId = externalId;
-		}
-
 		public String getUserExternalId() {
 			return this.userExternalId;
 		}
@@ -206,28 +178,12 @@ public class GetUserResponse extends AcsResponse {
 			this.userExternalId = userExternalId;
 		}
 
-		public String getSourceType() {
-			return this.sourceType;
-		}
-
-		public void setSourceType(String sourceType) {
-			this.sourceType = sourceType;
-		}
-
 		public String getUserSourceType() {
 			return this.userSourceType;
 		}
 
 		public void setUserSourceType(String userSourceType) {
 			this.userSourceType = userSourceType;
-		}
-
-		public String getSourceId() {
-			return this.sourceId;
-		}
-
-		public void setSourceId(String sourceId) {
-			this.sourceId = sourceId;
 		}
 
 		public String getUserSourceId() {
@@ -252,6 +208,14 @@ public class GetUserResponse extends AcsResponse {
 
 		public void setAccountExpireTime(Long accountExpireTime) {
 			this.accountExpireTime = accountExpireTime;
+		}
+
+		public Long getPasswordExpireTime() {
+			return this.passwordExpireTime;
+		}
+
+		public void setPasswordExpireTime(Long passwordExpireTime) {
+			this.passwordExpireTime = passwordExpireTime;
 		}
 
 		public Long getRegisterTime() {
@@ -294,30 +258,6 @@ public class GetUserResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public Long getAliUid() {
-			return this.aliUid;
-		}
-
-		public void setAliUid(Long aliUid) {
-			this.aliUid = aliUid;
-		}
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public Boolean getLocked() {
-			return this.locked;
-		}
-
-		public void setLocked(Boolean locked) {
-			this.locked = locked;
-		}
-
 		public String getPrimaryOrganizationalUnitId() {
 			return this.primaryOrganizationalUnitId;
 		}
@@ -326,20 +266,12 @@ public class GetUserResponse extends AcsResponse {
 			this.primaryOrganizationalUnitId = primaryOrganizationalUnitId;
 		}
 
-		public Map<Object,Object> getExtensionAttributes() {
-			return this.extensionAttributes;
+		public String getInstanceId() {
+			return this.instanceId;
 		}
 
-		public void setExtensionAttributes(Map<Object,Object> extensionAttributes) {
-			this.extensionAttributes = extensionAttributes;
-		}
-
-		public Long getPasswordExpireTime() {
-			return this.passwordExpireTime;
-		}
-
-		public void setPasswordExpireTime(Long passwordExpireTime) {
-			this.passwordExpireTime = passwordExpireTime;
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 
 		public List<OrganizationalUnit> getOrganizationalUnits() {
@@ -358,11 +290,17 @@ public class GetUserResponse extends AcsResponse {
 			this.customFields = customFields;
 		}
 
+		public List<Group> getGroups() {
+			return this.groups;
+		}
+
+		public void setGroups(List<Group> groups) {
+			this.groups = groups;
+		}
+
 		public static class OrganizationalUnit {
 
 			private String organizationalUnitId;
-
-			private String name;
 
 			private String organizationalUnitName;
 
@@ -374,14 +312,6 @@ public class GetUserResponse extends AcsResponse {
 
 			public void setOrganizationalUnitId(String organizationalUnitId) {
 				this.organizationalUnitId = organizationalUnitId;
-			}
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
 			}
 
 			public String getOrganizationalUnitName() {
@@ -421,6 +351,39 @@ public class GetUserResponse extends AcsResponse {
 
 			public void setFieldValue(String fieldValue) {
 				this.fieldValue = fieldValue;
+			}
+		}
+
+		public static class Group {
+
+			private String groupId;
+
+			private String groupName;
+
+			private String description;
+
+			public String getGroupId() {
+				return this.groupId;
+			}
+
+			public void setGroupId(String groupId) {
+				this.groupId = groupId;
+			}
+
+			public String getGroupName() {
+				return this.groupName;
+			}
+
+			public void setGroupName(String groupName) {
+				this.groupName = groupName;
+			}
+
+			public String getDescription() {
+				return this.description;
+			}
+
+			public void setDescription(String description) {
+				this.description = description;
 			}
 		}
 	}

@@ -15,6 +15,7 @@
 package com.aliyuncs.eiam.model.v20211201;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 
@@ -25,11 +26,15 @@ import com.aliyuncs.http.MethodType;
 public class ListOrganizationalUnitsRequest extends RpcAcsRequest<ListOrganizationalUnitsResponse> {
 	   
 
+	private String organizationalUnitNameStartsWith;
+
 	private Long pageNumber;
 
 	private String parentId;
 
 	private Long pageSize;
+
+	private List<String> organizationalUnitIds;
 
 	private String organizationalUnitName;
 
@@ -38,6 +43,17 @@ public class ListOrganizationalUnitsRequest extends RpcAcsRequest<ListOrganizati
 		super("Eiam", "2021-12-01", "ListOrganizationalUnits", "eiam");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
+	}
+
+	public String getOrganizationalUnitNameStartsWith() {
+		return this.organizationalUnitNameStartsWith;
+	}
+
+	public void setOrganizationalUnitNameStartsWith(String organizationalUnitNameStartsWith) {
+		this.organizationalUnitNameStartsWith = organizationalUnitNameStartsWith;
+		if(organizationalUnitNameStartsWith != null){
+			putQueryParameter("OrganizationalUnitNameStartsWith", organizationalUnitNameStartsWith);
+		}
 	}
 
 	public Long getPageNumber() {
@@ -71,6 +87,19 @@ public class ListOrganizationalUnitsRequest extends RpcAcsRequest<ListOrganizati
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
 		}
+	}
+
+	public List<String> getOrganizationalUnitIds() {
+		return this.organizationalUnitIds;
+	}
+
+	public void setOrganizationalUnitIds(List<String> organizationalUnitIds) {
+		this.organizationalUnitIds = organizationalUnitIds;	
+		if (organizationalUnitIds != null) {
+			for (int depth1 = 0; depth1 < organizationalUnitIds.size(); depth1++) {
+				putQueryParameter("OrganizationalUnitIds." + (depth1 + 1) , organizationalUnitIds.get(depth1));
+			}
+		}	
 	}
 
 	public String getOrganizationalUnitName() {

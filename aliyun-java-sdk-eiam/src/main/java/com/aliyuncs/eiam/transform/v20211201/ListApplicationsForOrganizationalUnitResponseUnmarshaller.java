@@ -33,8 +33,6 @@ public class ListApplicationsForOrganizationalUnitResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("ListApplicationsForOrganizationalUnitResponse.Applications.Length"); i++) {
 			Application application = new Application();
 			application.setApplicationId(_ctx.stringValue("ListApplicationsForOrganizationalUnitResponse.Applications["+ i +"].ApplicationId"));
-			application.setHasDirectAuthorization(_ctx.booleanValue("ListApplicationsForOrganizationalUnitResponse.Applications["+ i +"].HasDirectAuthorization"));
-			application.setHasInheritAuthorization(_ctx.booleanValue("ListApplicationsForOrganizationalUnitResponse.Applications["+ i +"].HasInheritAuthorization"));
 
 			applications.add(application);
 		}

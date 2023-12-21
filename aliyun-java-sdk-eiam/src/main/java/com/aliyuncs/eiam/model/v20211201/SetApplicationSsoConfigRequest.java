@@ -155,6 +155,7 @@ public class SetApplicationSsoConfigRequest extends RpcAcsRequest<SetApplication
 			
 				putQueryParameter("SamlSsoConfig.SignatureAlgorithm" , samlSsoConfig.getSignatureAlgorithm());
 				putQueryParameter("SamlSsoConfig.NameIdFormat" , samlSsoConfig.getNameIdFormat());
+				putQueryParameter("SamlSsoConfig.AssertionSigned" , samlSsoConfig.getAssertionSigned());
 				putQueryParameter("SamlSsoConfig.SpSsoAcsUrl" , samlSsoConfig.getSpSsoAcsUrl());
 				putQueryParameter("SamlSsoConfig.NameIdValueExpression" , samlSsoConfig.getNameIdValueExpression());
 				if (samlSsoConfig.getAttributeStatements() != null) {
@@ -168,6 +169,7 @@ public class SetApplicationSsoConfigRequest extends RpcAcsRequest<SetApplication
 				}
 				putQueryParameter("SamlSsoConfig.DefaultRelayState" , samlSsoConfig.getDefaultRelayState());
 				putQueryParameter("SamlSsoConfig.SpEntityId" , samlSsoConfig.getSpEntityId());
+				putQueryParameter("SamlSsoConfig.ResponseSigned" , samlSsoConfig.getResponseSigned());
 		}	
 	}
 
@@ -353,6 +355,8 @@ public class SetApplicationSsoConfigRequest extends RpcAcsRequest<SetApplication
 
 		private String nameIdFormat;
 
+		private Boolean assertionSigned;
+
 		private String spSsoAcsUrl;
 
 		private String nameIdValueExpression;
@@ -362,6 +366,8 @@ public class SetApplicationSsoConfigRequest extends RpcAcsRequest<SetApplication
 		private String defaultRelayState;
 
 		private String spEntityId;
+
+		private Boolean responseSigned;
 
 		public String getSignatureAlgorithm() {
 			return this.signatureAlgorithm;
@@ -377,6 +383,14 @@ public class SetApplicationSsoConfigRequest extends RpcAcsRequest<SetApplication
 
 		public void setNameIdFormat(String nameIdFormat) {
 			this.nameIdFormat = nameIdFormat;
+		}
+
+		public Boolean getAssertionSigned() {
+			return this.assertionSigned;
+		}
+
+		public void setAssertionSigned(Boolean assertionSigned) {
+			this.assertionSigned = assertionSigned;
 		}
 
 		public String getSpSsoAcsUrl() {
@@ -417,6 +431,14 @@ public class SetApplicationSsoConfigRequest extends RpcAcsRequest<SetApplication
 
 		public void setSpEntityId(String spEntityId) {
 			this.spEntityId = spEntityId;
+		}
+
+		public Boolean getResponseSigned() {
+			return this.responseSigned;
+		}
+
+		public void setResponseSigned(Boolean responseSigned) {
+			this.responseSigned = responseSigned;
 		}
 
 		public static class AttributeStatementsItem {

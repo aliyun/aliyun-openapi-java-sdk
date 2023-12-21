@@ -39,6 +39,7 @@ public class GetApplicationProvisioningConfigResponseUnmarshaller {
 		applicationProvisioningConfig.setProvisionJwksEndpoint(_ctx.stringValue("GetApplicationProvisioningConfigResponse.ApplicationProvisioningConfig.ProvisionJwksEndpoint"));
 		applicationProvisioningConfig.setProvisionPassword(_ctx.booleanValue("GetApplicationProvisioningConfigResponse.ApplicationProvisioningConfig.ProvisionPassword"));
 		applicationProvisioningConfig.setStatus(_ctx.stringValue("GetApplicationProvisioningConfigResponse.ApplicationProvisioningConfig.Status"));
+		applicationProvisioningConfig.setConfigOperateMode(_ctx.stringValue("GetApplicationProvisioningConfigResponse.ApplicationProvisioningConfig.ConfigOperateMode"));
 
 		CallbackProvisioningConfig callbackProvisioningConfig = new CallbackProvisioningConfig();
 		callbackProvisioningConfig.setCallbackUrl(_ctx.stringValue("GetApplicationProvisioningConfigResponse.ApplicationProvisioningConfig.CallbackProvisioningConfig.CallbackUrl"));

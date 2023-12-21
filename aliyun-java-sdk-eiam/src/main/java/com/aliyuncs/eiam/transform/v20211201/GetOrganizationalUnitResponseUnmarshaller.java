@@ -29,16 +29,14 @@ public class GetOrganizationalUnitResponseUnmarshaller {
 		organizationalUnit.setOrganizationalUnitId(_ctx.stringValue("GetOrganizationalUnitResponse.OrganizationalUnit.OrganizationalUnitId"));
 		organizationalUnit.setOrganizationalUnitName(_ctx.stringValue("GetOrganizationalUnitResponse.OrganizationalUnit.OrganizationalUnitName"));
 		organizationalUnit.setParentId(_ctx.stringValue("GetOrganizationalUnitResponse.OrganizationalUnit.ParentId"));
-		organizationalUnit.setExternalId(_ctx.stringValue("GetOrganizationalUnitResponse.OrganizationalUnit.ExternalId"));
 		organizationalUnit.setOrganizationalUnitExternalId(_ctx.stringValue("GetOrganizationalUnitResponse.OrganizationalUnit.OrganizationalUnitExternalId"));
-		organizationalUnit.setSourceType(_ctx.stringValue("GetOrganizationalUnitResponse.OrganizationalUnit.SourceType"));
 		organizationalUnit.setOrganizationalUnitSourceType(_ctx.stringValue("GetOrganizationalUnitResponse.OrganizationalUnit.OrganizationalUnitSourceType"));
-		organizationalUnit.setSourceId(_ctx.stringValue("GetOrganizationalUnitResponse.OrganizationalUnit.SourceId"));
 		organizationalUnit.setOrganizationalUnitSourceId(_ctx.stringValue("GetOrganizationalUnitResponse.OrganizationalUnit.OrganizationalUnitSourceId"));
 		organizationalUnit.setCreateTime(_ctx.longValue("GetOrganizationalUnitResponse.OrganizationalUnit.CreateTime"));
 		organizationalUnit.setUpdateTime(_ctx.longValue("GetOrganizationalUnitResponse.OrganizationalUnit.UpdateTime"));
 		organizationalUnit.setDescription(_ctx.stringValue("GetOrganizationalUnitResponse.OrganizationalUnit.Description"));
 		organizationalUnit.setInstanceId(_ctx.stringValue("GetOrganizationalUnitResponse.OrganizationalUnit.InstanceId"));
+		organizationalUnit.setLeaf(_ctx.booleanValue("GetOrganizationalUnitResponse.OrganizationalUnit.Leaf"));
 		getOrganizationalUnitResponse.setOrganizationalUnit(organizationalUnit);
 	 
 	 	return getOrganizationalUnitResponse;
