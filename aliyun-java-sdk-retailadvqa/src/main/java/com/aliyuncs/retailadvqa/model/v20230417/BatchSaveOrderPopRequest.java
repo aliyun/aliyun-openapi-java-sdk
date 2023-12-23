@@ -28,53 +28,12 @@ import com.aliyuncs.http.MethodType;
 public class BatchSaveOrderPopRequest extends RpcAcsRequest<BatchSaveOrderPopResponse> {
 	   
 
-	private String appSecret;
-
-	private String sign;
-
-	private String appKey;
-
 	@SerializedName("orders")
 	private List<Orders> orders;
-
-	private String timeStr;
 	public BatchSaveOrderPopRequest() {
 		super("retailadvqa", "2023-04-17", "BatchSaveOrderPop", "qucikmember");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
-	}
-
-	public String getAppSecret() {
-		return this.appSecret;
-	}
-
-	public void setAppSecret(String appSecret) {
-		this.appSecret = appSecret;
-		if(appSecret != null){
-			putQueryParameter("AppSecret", appSecret);
-		}
-	}
-
-	public String getSign() {
-		return this.sign;
-	}
-
-	public void setSign(String sign) {
-		this.sign = sign;
-		if(sign != null){
-			putQueryParameter("Sign", sign);
-		}
-	}
-
-	public String getAppKey() {
-		return this.appKey;
-	}
-
-	public void setAppKey(String appKey) {
-		this.appKey = appKey;
-		if(appKey != null){
-			putQueryParameter("AppKey", appKey);
-		}
 	}
 
 	public List<Orders> getOrders() {
@@ -88,21 +47,28 @@ public class BatchSaveOrderPopRequest extends RpcAcsRequest<BatchSaveOrderPopRes
 		}	
 	}
 
-	public String getTimeStr() {
-		return this.timeStr;
-	}
-
-	public void setTimeStr(String timeStr) {
-		this.timeStr = timeStr;
-		if(timeStr != null){
-			putQueryParameter("TimeStr", timeStr);
-		}
-	}
-
 	public static class Orders {
 
 		@SerializedName("OpenMerchantId")
 		private String openMerchantId;
+
+		@SerializedName("OpenOrderId")
+		private String openOrderId;
+
+		@SerializedName("OrderPayment")
+		private String orderPayment;
+
+		@SerializedName("EndTime")
+		private String endTime;
+
+		@SerializedName("PayTime")
+		private String payTime;
+
+		@SerializedName("buyerOpenUid")
+		private String buyerOpenUid;
+
+		@SerializedName("ChannelCode")
+		private String channelCode;
 
 		@SerializedName("Feature")
 		private String feature;
@@ -110,29 +76,20 @@ public class BatchSaveOrderPopRequest extends RpcAcsRequest<BatchSaveOrderPopRes
 		@SerializedName("TotalFee")
 		private String totalFee;
 
-		@SerializedName("OpenOrderId")
-		private String openOrderId;
-
 		@SerializedName("ChannelOpenId")
 		private String channelOpenId;
-
-		@SerializedName("OrderPayment")
-		private String orderPayment;
 
 		@SerializedName("SubOrderModelList")
 		private List<SubOrderModelListItem> subOrderModelList;
 
-		@SerializedName("OrderCreateTime")
-		private String orderCreateTime;
-
 		@SerializedName("PlatformType")
 		private String platformType;
 
+		@SerializedName("OrderCreateTime")
+		private String orderCreateTime;
+
 		@SerializedName("ShopId")
 		private String shopId;
-
-		@SerializedName("ChannelCode")
-		private String channelCode;
 
 		@SerializedName("Status")
 		private String status;
@@ -143,6 +100,54 @@ public class BatchSaveOrderPopRequest extends RpcAcsRequest<BatchSaveOrderPopRes
 
 		public void setOpenMerchantId(String openMerchantId) {
 			this.openMerchantId = openMerchantId;
+		}
+
+		public String getOpenOrderId() {
+			return this.openOrderId;
+		}
+
+		public void setOpenOrderId(String openOrderId) {
+			this.openOrderId = openOrderId;
+		}
+
+		public String getOrderPayment() {
+			return this.orderPayment;
+		}
+
+		public void setOrderPayment(String orderPayment) {
+			this.orderPayment = orderPayment;
+		}
+
+		public String getEndTime() {
+			return this.endTime;
+		}
+
+		public void setEndTime(String endTime) {
+			this.endTime = endTime;
+		}
+
+		public String getPayTime() {
+			return this.payTime;
+		}
+
+		public void setPayTime(String payTime) {
+			this.payTime = payTime;
+		}
+
+		public String getBuyerOpenUid() {
+			return this.buyerOpenUid;
+		}
+
+		public void setBuyerOpenUid(String buyerOpenUid) {
+			this.buyerOpenUid = buyerOpenUid;
+		}
+
+		public String getChannelCode() {
+			return this.channelCode;
+		}
+
+		public void setChannelCode(String channelCode) {
+			this.channelCode = channelCode;
 		}
 
 		public String getFeature() {
@@ -161,28 +166,12 @@ public class BatchSaveOrderPopRequest extends RpcAcsRequest<BatchSaveOrderPopRes
 			this.totalFee = totalFee;
 		}
 
-		public String getOpenOrderId() {
-			return this.openOrderId;
-		}
-
-		public void setOpenOrderId(String openOrderId) {
-			this.openOrderId = openOrderId;
-		}
-
 		public String getChannelOpenId() {
 			return this.channelOpenId;
 		}
 
 		public void setChannelOpenId(String channelOpenId) {
 			this.channelOpenId = channelOpenId;
-		}
-
-		public String getOrderPayment() {
-			return this.orderPayment;
-		}
-
-		public void setOrderPayment(String orderPayment) {
-			this.orderPayment = orderPayment;
 		}
 
 		public List<SubOrderModelListItem> getSubOrderModelList() {
@@ -193,14 +182,6 @@ public class BatchSaveOrderPopRequest extends RpcAcsRequest<BatchSaveOrderPopRes
 			this.subOrderModelList = subOrderModelList;
 		}
 
-		public String getOrderCreateTime() {
-			return this.orderCreateTime;
-		}
-
-		public void setOrderCreateTime(String orderCreateTime) {
-			this.orderCreateTime = orderCreateTime;
-		}
-
 		public String getPlatformType() {
 			return this.platformType;
 		}
@@ -209,20 +190,20 @@ public class BatchSaveOrderPopRequest extends RpcAcsRequest<BatchSaveOrderPopRes
 			this.platformType = platformType;
 		}
 
+		public String getOrderCreateTime() {
+			return this.orderCreateTime;
+		}
+
+		public void setOrderCreateTime(String orderCreateTime) {
+			this.orderCreateTime = orderCreateTime;
+		}
+
 		public String getShopId() {
 			return this.shopId;
 		}
 
 		public void setShopId(String shopId) {
 			this.shopId = shopId;
-		}
-
-		public String getChannelCode() {
-			return this.channelCode;
-		}
-
-		public void setChannelCode(String channelCode) {
-			this.channelCode = channelCode;
 		}
 
 		public String getStatus() {
@@ -234,6 +215,12 @@ public class BatchSaveOrderPopRequest extends RpcAcsRequest<BatchSaveOrderPopRes
 		}
 
 		public static class SubOrderModelListItem {
+
+			@SerializedName("ProductId")
+			private String productId;
+
+			@SerializedName("RefundStatus")
+			private String refundStatus;
 
 			@SerializedName("Feature")
 			private String feature;
@@ -247,14 +234,33 @@ public class BatchSaveOrderPopRequest extends RpcAcsRequest<BatchSaveOrderPopRes
 			@SerializedName("OrderPayment")
 			private String orderPayment;
 
-			@SerializedName("PlatformType")
-			private String platformType;
+			@SerializedName("ProductName")
+			private String productName;
 
 			@SerializedName("OpenSubOrderId")
 			private String openSubOrderId;
 
+			@SerializedName("OutProductId")
+			private String outProductId;
+
 			@SerializedName("Status")
 			private String status;
+
+			public String getProductId() {
+				return this.productId;
+			}
+
+			public void setProductId(String productId) {
+				this.productId = productId;
+			}
+
+			public String getRefundStatus() {
+				return this.refundStatus;
+			}
+
+			public void setRefundStatus(String refundStatus) {
+				this.refundStatus = refundStatus;
+			}
 
 			public String getFeature() {
 				return this.feature;
@@ -288,12 +294,12 @@ public class BatchSaveOrderPopRequest extends RpcAcsRequest<BatchSaveOrderPopRes
 				this.orderPayment = orderPayment;
 			}
 
-			public String getPlatformType() {
-				return this.platformType;
+			public String getProductName() {
+				return this.productName;
 			}
 
-			public void setPlatformType(String platformType) {
-				this.platformType = platformType;
+			public void setProductName(String productName) {
+				this.productName = productName;
 			}
 
 			public String getOpenSubOrderId() {
@@ -302,6 +308,14 @@ public class BatchSaveOrderPopRequest extends RpcAcsRequest<BatchSaveOrderPopRes
 
 			public void setOpenSubOrderId(String openSubOrderId) {
 				this.openSubOrderId = openSubOrderId;
+			}
+
+			public String getOutProductId() {
+				return this.outProductId;
+			}
+
+			public void setOutProductId(String outProductId) {
+				this.outProductId = outProductId;
 			}
 
 			public String getStatus() {
