@@ -37,7 +37,7 @@ public class AllocateClusterPublicConnectionRequest extends RpcAcsRequest<Alloca
 
 	private Long ownerId;
 	public AllocateClusterPublicConnectionRequest() {
-		super("clickhouse", "2019-11-11", "AllocateClusterPublicConnection");
+		super("clickhouse", "2019-11-11", "AllocateClusterPublicConnection", "service");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

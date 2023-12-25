@@ -15,6 +15,7 @@
 package com.aliyuncs.clickhouse.model.v20191111;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.clickhouse.transform.v20191111.DescribeDBClusterAttributeResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -132,6 +133,18 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 		private String engineLatestMinorVersion;
 
 		private Boolean maintainAutoType;
+
+		private String extStorageType;
+
+		private Integer extStorageSize;
+
+		private String resourceGroupId;
+
+		private String zookeeperClass;
+
+		private String appointmentRestartTime;
+
+		private Map<Object,Object> zoneIdVswitchMap;
 
 		private List<Tag> tags;
 
@@ -479,6 +492,54 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 		public void setMaintainAutoType(Boolean maintainAutoType) {
 			this.maintainAutoType = maintainAutoType;
+		}
+
+		public String getExtStorageType() {
+			return this.extStorageType;
+		}
+
+		public void setExtStorageType(String extStorageType) {
+			this.extStorageType = extStorageType;
+		}
+
+		public Integer getExtStorageSize() {
+			return this.extStorageSize;
+		}
+
+		public void setExtStorageSize(Integer extStorageSize) {
+			this.extStorageSize = extStorageSize;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getZookeeperClass() {
+			return this.zookeeperClass;
+		}
+
+		public void setZookeeperClass(String zookeeperClass) {
+			this.zookeeperClass = zookeeperClass;
+		}
+
+		public String getAppointmentRestartTime() {
+			return this.appointmentRestartTime;
+		}
+
+		public void setAppointmentRestartTime(String appointmentRestartTime) {
+			this.appointmentRestartTime = appointmentRestartTime;
+		}
+
+		public Map<Object,Object> getZoneIdVswitchMap() {
+			return this.zoneIdVswitchMap;
+		}
+
+		public void setZoneIdVswitchMap(Map<Object,Object> zoneIdVswitchMap) {
+			this.zoneIdVswitchMap = zoneIdVswitchMap;
 		}
 
 		public List<Tag> getTags() {

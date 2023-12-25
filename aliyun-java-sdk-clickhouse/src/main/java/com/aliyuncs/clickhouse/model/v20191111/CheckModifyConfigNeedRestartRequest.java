@@ -29,7 +29,7 @@ public class CheckModifyConfigNeedRestartRequest extends RpcAcsRequest<CheckModi
 
 	private String config;
 	public CheckModifyConfigNeedRestartRequest() {
-		super("clickhouse", "2019-11-11", "CheckModifyConfigNeedRestart");
+		super("clickhouse", "2019-11-11", "CheckModifyConfigNeedRestart", "service");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

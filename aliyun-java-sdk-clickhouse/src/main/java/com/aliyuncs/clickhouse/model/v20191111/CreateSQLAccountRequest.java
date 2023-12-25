@@ -22,12 +22,16 @@ import com.aliyuncs.clickhouse.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateBackupPolicyRequest extends RpcAcsRequest<CreateBackupPolicyResponse> {
+public class CreateSQLAccountRequest extends RpcAcsRequest<CreateSQLAccountResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String preferredBackupPeriod;
+	private String accountType;
+
+	private String accountDescription;
+
+	private String accountName;
 
 	private String resourceOwnerAccount;
 
@@ -37,11 +41,9 @@ public class CreateBackupPolicyRequest extends RpcAcsRequest<CreateBackupPolicyR
 
 	private Long ownerId;
 
-	private String preferredBackupTime;
-
-	private String backupRetentionPeriod;
-	public CreateBackupPolicyRequest() {
-		super("clickhouse", "2019-11-11", "CreateBackupPolicy", "service");
+	private String accountPassword;
+	public CreateSQLAccountRequest() {
+		super("clickhouse", "2019-11-11", "CreateSQLAccount", "service");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -60,14 +62,36 @@ public class CreateBackupPolicyRequest extends RpcAcsRequest<CreateBackupPolicyR
 		}
 	}
 
-	public String getPreferredBackupPeriod() {
-		return this.preferredBackupPeriod;
+	public String getAccountType() {
+		return this.accountType;
 	}
 
-	public void setPreferredBackupPeriod(String preferredBackupPeriod) {
-		this.preferredBackupPeriod = preferredBackupPeriod;
-		if(preferredBackupPeriod != null){
-			putQueryParameter("PreferredBackupPeriod", preferredBackupPeriod);
+	public void setAccountType(String accountType) {
+		this.accountType = accountType;
+		if(accountType != null){
+			putQueryParameter("AccountType", accountType);
+		}
+	}
+
+	public String getAccountDescription() {
+		return this.accountDescription;
+	}
+
+	public void setAccountDescription(String accountDescription) {
+		this.accountDescription = accountDescription;
+		if(accountDescription != null){
+			putQueryParameter("AccountDescription", accountDescription);
+		}
+	}
+
+	public String getAccountName() {
+		return this.accountName;
+	}
+
+	public void setAccountName(String accountName) {
+		this.accountName = accountName;
+		if(accountName != null){
+			putQueryParameter("AccountName", accountName);
 		}
 	}
 
@@ -115,31 +139,20 @@ public class CreateBackupPolicyRequest extends RpcAcsRequest<CreateBackupPolicyR
 		}
 	}
 
-	public String getPreferredBackupTime() {
-		return this.preferredBackupTime;
+	public String getAccountPassword() {
+		return this.accountPassword;
 	}
 
-	public void setPreferredBackupTime(String preferredBackupTime) {
-		this.preferredBackupTime = preferredBackupTime;
-		if(preferredBackupTime != null){
-			putQueryParameter("PreferredBackupTime", preferredBackupTime);
-		}
-	}
-
-	public String getBackupRetentionPeriod() {
-		return this.backupRetentionPeriod;
-	}
-
-	public void setBackupRetentionPeriod(String backupRetentionPeriod) {
-		this.backupRetentionPeriod = backupRetentionPeriod;
-		if(backupRetentionPeriod != null){
-			putQueryParameter("BackupRetentionPeriod", backupRetentionPeriod);
+	public void setAccountPassword(String accountPassword) {
+		this.accountPassword = accountPassword;
+		if(accountPassword != null){
+			putQueryParameter("AccountPassword", accountPassword);
 		}
 	}
 
 	@Override
-	public Class<CreateBackupPolicyResponse> getResponseClass() {
-		return CreateBackupPolicyResponse.class;
+	public Class<CreateSQLAccountResponse> getResponseClass() {
+		return CreateSQLAccountResponse.class;
 	}
 
 }

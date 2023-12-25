@@ -31,7 +31,7 @@ public class DescribeConfigHistoryRequest extends RpcAcsRequest<DescribeConfigHi
 
 	private String endTime;
 	public DescribeConfigHistoryRequest() {
-		super("clickhouse", "2019-11-11", "DescribeConfigHistory");
+		super("clickhouse", "2019-11-11", "DescribeConfigHistory", "service");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

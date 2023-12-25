@@ -27,6 +27,9 @@ public class DescribeSynDbsResponseUnmarshaller {
 	public static DescribeSynDbsResponse unmarshall(DescribeSynDbsResponse describeSynDbsResponse, UnmarshallerContext _ctx) {
 		
 		describeSynDbsResponse.setRequestId(_ctx.stringValue("DescribeSynDbsResponse.RequestId"));
+		describeSynDbsResponse.setTotalCount(_ctx.integerValue("DescribeSynDbsResponse.TotalCount"));
+		describeSynDbsResponse.setPageSize(_ctx.integerValue("DescribeSynDbsResponse.PageSize"));
+		describeSynDbsResponse.setPageNumber(_ctx.integerValue("DescribeSynDbsResponse.PageNumber"));
 
 		List<SynDb> synDbs = new ArrayList<SynDb>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSynDbsResponse.SynDbs.Length"); i++) {

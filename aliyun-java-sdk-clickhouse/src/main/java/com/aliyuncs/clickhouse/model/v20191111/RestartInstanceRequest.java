@@ -37,9 +37,11 @@ public class RestartInstanceRequest extends RpcAcsRequest<RestartInstanceRespons
 
 	private String ownerAccount;
 
+	private String restartTime;
+
 	private Long ownerId;
 	public RestartInstanceRequest() {
-		super("clickhouse", "2019-11-11", "RestartInstance");
+		super("clickhouse", "2019-11-11", "RestartInstance", "service");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -110,6 +112,17 @@ public class RestartInstanceRequest extends RpcAcsRequest<RestartInstanceRespons
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getRestartTime() {
+		return this.restartTime;
+	}
+
+	public void setRestartTime(String restartTime) {
+		this.restartTime = restartTime;
+		if(restartTime != null){
+			putQueryParameter("RestartTime", restartTime);
 		}
 	}
 

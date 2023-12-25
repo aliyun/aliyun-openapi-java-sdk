@@ -35,7 +35,7 @@ public class DescribeTransferHistoryRequest extends RpcAcsRequest<DescribeTransf
 
 	private Long ownerId;
 	public DescribeTransferHistoryRequest() {
-		super("clickhouse", "2019-11-11", "DescribeTransferHistory");
+		super("clickhouse", "2019-11-11", "DescribeTransferHistory", "service");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

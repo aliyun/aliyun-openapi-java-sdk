@@ -62,6 +62,9 @@ public class DescribeDBClustersResponseUnmarshaller {
 			dBCluster.setZoneId(_ctx.stringValue("DescribeDBClustersResponse.DBClusters["+ i +"].ZoneId"));
 			dBCluster.setCategory(_ctx.stringValue("DescribeDBClustersResponse.DBClusters["+ i +"].Category"));
 			dBCluster.setControlVersion(_ctx.stringValue("DescribeDBClustersResponse.DBClusters["+ i +"].ControlVersion"));
+			dBCluster.setExtStorageType(_ctx.stringValue("DescribeDBClustersResponse.DBClusters["+ i +"].ExtStorageType"));
+			dBCluster.setExtStorageSize(_ctx.integerValue("DescribeDBClustersResponse.DBClusters["+ i +"].ExtStorageSize"));
+			dBCluster.setResourceGroupId(_ctx.stringValue("DescribeDBClustersResponse.DBClusters["+ i +"].ResourceGroupId"));
 
 			ScaleOutStatus scaleOutStatus = new ScaleOutStatus();
 			scaleOutStatus.setProgress(_ctx.stringValue("DescribeDBClustersResponse.DBClusters["+ i +"].ScaleOutStatus.Progress"));

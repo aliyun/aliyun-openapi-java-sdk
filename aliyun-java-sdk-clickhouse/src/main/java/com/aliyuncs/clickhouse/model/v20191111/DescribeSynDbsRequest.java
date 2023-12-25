@@ -27,6 +27,10 @@ public class DescribeSynDbsRequest extends RpcAcsRequest<DescribeSynDbsResponse>
 
 	private Long resourceOwnerId;
 
+	private Integer pageNumber;
+
+	private Integer pageSize;
+
 	private String resourceOwnerAccount;
 
 	private String dbClusterId;
@@ -35,7 +39,7 @@ public class DescribeSynDbsRequest extends RpcAcsRequest<DescribeSynDbsResponse>
 
 	private Long ownerId;
 	public DescribeSynDbsRequest() {
-		super("clickhouse", "2019-11-11", "DescribeSynDbs");
+		super("clickhouse", "2019-11-11", "DescribeSynDbs", "service");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -51,6 +55,28 @@ public class DescribeSynDbsRequest extends RpcAcsRequest<DescribeSynDbsResponse>
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

@@ -129,6 +129,12 @@ public class DescribeDBClustersResponse extends AcsResponse {
 
 		private String controlVersion;
 
+		private String extStorageType;
+
+		private Integer extStorageSize;
+
+		private String resourceGroupId;
+
 		private List<Tag> tags;
 
 		private ScaleOutStatus scaleOutStatus;
@@ -339,6 +345,30 @@ public class DescribeDBClustersResponse extends AcsResponse {
 
 		public void setControlVersion(String controlVersion) {
 			this.controlVersion = controlVersion;
+		}
+
+		public String getExtStorageType() {
+			return this.extStorageType;
+		}
+
+		public void setExtStorageType(String extStorageType) {
+			this.extStorageType = extStorageType;
+		}
+
+		public Integer getExtStorageSize() {
+			return this.extStorageSize;
+		}
+
+		public void setExtStorageSize(Integer extStorageSize) {
+			this.extStorageSize = extStorageSize;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 
 		public List<Tag> getTags() {

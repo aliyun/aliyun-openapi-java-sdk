@@ -41,7 +41,7 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 
 	private String backupRetentionPeriod;
 	public ModifyBackupPolicyRequest() {
-		super("clickhouse", "2019-11-11", "ModifyBackupPolicy");
+		super("clickhouse", "2019-11-11", "ModifyBackupPolicy", "service");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

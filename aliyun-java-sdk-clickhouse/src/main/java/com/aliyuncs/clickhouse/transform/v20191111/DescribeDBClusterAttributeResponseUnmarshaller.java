@@ -21,6 +21,7 @@ import com.aliyuncs.clickhouse.model.v20191111.DescribeDBClusterAttributeRespons
 import com.aliyuncs.clickhouse.model.v20191111.DescribeDBClusterAttributeResponse.DBCluster;
 import com.aliyuncs.clickhouse.model.v20191111.DescribeDBClusterAttributeResponse.DBCluster.ScaleOutStatus;
 import com.aliyuncs.clickhouse.model.v20191111.DescribeDBClusterAttributeResponse.DBCluster.Tag;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -74,6 +75,12 @@ public class DescribeDBClusterAttributeResponseUnmarshaller {
 		dBCluster.setEngineMinorVersion(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBCluster.EngineMinorVersion"));
 		dBCluster.setEngineLatestMinorVersion(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBCluster.EngineLatestMinorVersion"));
 		dBCluster.setMaintainAutoType(_ctx.booleanValue("DescribeDBClusterAttributeResponse.DBCluster.MaintainAutoType"));
+		dBCluster.setExtStorageType(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBCluster.ExtStorageType"));
+		dBCluster.setExtStorageSize(_ctx.integerValue("DescribeDBClusterAttributeResponse.DBCluster.ExtStorageSize"));
+		dBCluster.setResourceGroupId(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBCluster.ResourceGroupId"));
+		dBCluster.setZookeeperClass(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBCluster.ZookeeperClass"));
+		dBCluster.setAppointmentRestartTime(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBCluster.AppointmentRestartTime"));
+		dBCluster.setZoneIdVswitchMap(_ctx.mapValue("DescribeDBClusterAttributeResponse.DBCluster.ZoneIdVswitchMap"));
 
 		ScaleOutStatus scaleOutStatus = new ScaleOutStatus();
 		scaleOutStatus.setProgress(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBCluster.ScaleOutStatus.Progress"));

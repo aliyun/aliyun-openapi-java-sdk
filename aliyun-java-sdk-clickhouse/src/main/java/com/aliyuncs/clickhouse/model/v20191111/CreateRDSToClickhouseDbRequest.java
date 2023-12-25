@@ -59,7 +59,7 @@ public class CreateRDSToClickhouseDbRequest extends RpcAcsRequest<CreateRDSToCli
 
 	private String rdsUserName;
 	public CreateRDSToClickhouseDbRequest() {
-		super("clickhouse", "2019-11-11", "CreateRDSToClickhouseDb");
+		super("clickhouse", "2019-11-11", "CreateRDSToClickhouseDb", "service");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

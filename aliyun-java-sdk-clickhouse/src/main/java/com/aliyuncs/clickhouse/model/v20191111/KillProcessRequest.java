@@ -37,7 +37,7 @@ public class KillProcessRequest extends RpcAcsRequest<KillProcessResponse> {
 
 	private Long ownerId;
 	public KillProcessRequest() {
-		super("clickhouse", "2019-11-11", "KillProcess");
+		super("clickhouse", "2019-11-11", "KillProcess", "service");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

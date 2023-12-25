@@ -35,7 +35,7 @@ public class CreateOSSStorageRequest extends RpcAcsRequest<CreateOSSStorageRespo
 
 	private Long ownerId;
 	public CreateOSSStorageRequest() {
-		super("clickhouse", "2019-11-11", "CreateOSSStorage");
+		super("clickhouse", "2019-11-11", "CreateOSSStorage", "service");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class DescribeConfigVersionDifferenceRequest extends RpcAcsRequest<Descri
 
 	private String changeId;
 	public DescribeConfigVersionDifferenceRequest() {
-		super("clickhouse", "2019-11-11", "DescribeConfigVersionDifference");
+		super("clickhouse", "2019-11-11", "DescribeConfigVersionDifference", "service");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

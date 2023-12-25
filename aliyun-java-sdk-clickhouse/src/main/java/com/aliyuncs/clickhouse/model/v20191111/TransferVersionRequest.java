@@ -49,7 +49,7 @@ public class TransferVersionRequest extends RpcAcsRequest<TransferVersionRespons
 
 	private String targetDbClusterId;
 	public TransferVersionRequest() {
-		super("clickhouse", "2019-11-11", "TransferVersion");
+		super("clickhouse", "2019-11-11", "TransferVersion", "service");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

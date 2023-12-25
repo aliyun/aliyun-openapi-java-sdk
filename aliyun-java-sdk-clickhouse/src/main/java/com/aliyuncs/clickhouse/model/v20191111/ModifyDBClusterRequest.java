@@ -41,7 +41,7 @@ public class ModifyDBClusterRequest extends RpcAcsRequest<ModifyDBClusterRespons
 
 	private String dBNodeStorage;
 	public ModifyDBClusterRequest() {
-		super("clickhouse", "2019-11-11", "ModifyDBCluster");
+		super("clickhouse", "2019-11-11", "ModifyDBCluster", "service");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

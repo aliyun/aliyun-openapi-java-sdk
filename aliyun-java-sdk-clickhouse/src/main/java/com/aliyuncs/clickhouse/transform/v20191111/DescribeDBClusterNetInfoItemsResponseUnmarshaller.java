@@ -28,6 +28,7 @@ public class DescribeDBClusterNetInfoItemsResponseUnmarshaller {
 		
 		describeDBClusterNetInfoItemsResponse.setRequestId(_ctx.stringValue("DescribeDBClusterNetInfoItemsResponse.RequestId"));
 		describeDBClusterNetInfoItemsResponse.setClusterNetworkType(_ctx.stringValue("DescribeDBClusterNetInfoItemsResponse.ClusterNetworkType"));
+		describeDBClusterNetInfoItemsResponse.setEnableSLB(_ctx.booleanValue("DescribeDBClusterNetInfoItemsResponse.EnableSLB"));
 
 		List<NetInfoItem> netInfoItems = new ArrayList<NetInfoItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDBClusterNetInfoItemsResponse.NetInfoItems.Length"); i++) {
@@ -39,6 +40,8 @@ public class DescribeDBClusterNetInfoItemsResponseUnmarshaller {
 			netInfoItem.setNetType(_ctx.stringValue("DescribeDBClusterNetInfoItemsResponse.NetInfoItems["+ i +"].NetType"));
 			netInfoItem.setHttpPort(_ctx.stringValue("DescribeDBClusterNetInfoItemsResponse.NetInfoItems["+ i +"].HttpPort"));
 			netInfoItem.setIPAddress(_ctx.stringValue("DescribeDBClusterNetInfoItemsResponse.NetInfoItems["+ i +"].IPAddress"));
+			netInfoItem.setHttpsPort(_ctx.stringValue("DescribeDBClusterNetInfoItemsResponse.NetInfoItems["+ i +"].HttpsPort"));
+			netInfoItem.setMySQLPort(_ctx.stringValue("DescribeDBClusterNetInfoItemsResponse.NetInfoItems["+ i +"].MySQLPort"));
 
 			netInfoItems.add(netInfoItem);
 		}

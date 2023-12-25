@@ -27,7 +27,7 @@ public class DescribeDBClusterConfigInXMLRequest extends RpcAcsRequest<DescribeD
 
 	private String dBClusterId;
 	public DescribeDBClusterConfigInXMLRequest() {
-		super("clickhouse", "2019-11-11", "DescribeDBClusterConfigInXML");
+		super("clickhouse", "2019-11-11", "DescribeDBClusterConfigInXML", "service");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -43,7 +43,7 @@ public class ModifyDBClusterAccessWhiteListRequest extends RpcAcsRequest<ModifyD
 
 	private String dBClusterIPArrayName;
 	public ModifyDBClusterAccessWhiteListRequest() {
-		super("clickhouse", "2019-11-11", "ModifyDBClusterAccessWhiteList");
+		super("clickhouse", "2019-11-11", "ModifyDBClusterAccessWhiteList", "service");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

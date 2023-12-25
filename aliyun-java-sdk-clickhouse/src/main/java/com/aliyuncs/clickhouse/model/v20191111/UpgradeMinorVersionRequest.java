@@ -41,7 +41,7 @@ public class UpgradeMinorVersionRequest extends RpcAcsRequest<UpgradeMinorVersio
 
 	private String upgradeTime;
 	public UpgradeMinorVersionRequest() {
-		super("clickhouse", "2019-11-11", "UpgradeMinorVersion");
+		super("clickhouse", "2019-11-11", "UpgradeMinorVersion", "service");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

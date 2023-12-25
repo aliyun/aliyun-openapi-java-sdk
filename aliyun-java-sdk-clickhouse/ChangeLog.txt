@@ -1,3 +1,6 @@
+2023-12-25 Version: 3.1.7
+- Generated 2019-11-11 for `clickhouse`.
+
 2022-09-22 Version: 3.1.6
 - Clickhouse add DescribeDBClusterConfigInXML.
 - Clickhouse add DescribeConfigHistory.

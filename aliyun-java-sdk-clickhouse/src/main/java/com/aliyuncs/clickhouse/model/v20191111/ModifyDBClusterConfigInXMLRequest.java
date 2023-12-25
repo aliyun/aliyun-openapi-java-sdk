@@ -31,7 +31,7 @@ public class ModifyDBClusterConfigInXMLRequest extends RpcAcsRequest<ModifyDBClu
 
 	private String config;
 	public ModifyDBClusterConfigInXMLRequest() {
-		super("clickhouse", "2019-11-11", "ModifyDBClusterConfigInXML");
+		super("clickhouse", "2019-11-11", "ModifyDBClusterConfigInXML", "service");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

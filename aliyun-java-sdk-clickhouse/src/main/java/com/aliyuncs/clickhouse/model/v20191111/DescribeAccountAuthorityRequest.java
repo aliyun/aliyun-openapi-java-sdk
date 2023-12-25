@@ -37,7 +37,7 @@ public class DescribeAccountAuthorityRequest extends RpcAcsRequest<DescribeAccou
 
 	private Long ownerId;
 	public DescribeAccountAuthorityRequest() {
-		super("clickhouse", "2019-11-11", "DescribeAccountAuthority");
+		super("clickhouse", "2019-11-11", "DescribeAccountAuthority", "service");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

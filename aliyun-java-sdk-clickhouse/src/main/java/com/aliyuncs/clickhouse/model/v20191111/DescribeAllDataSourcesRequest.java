@@ -39,7 +39,7 @@ public class DescribeAllDataSourcesRequest extends RpcAcsRequest<DescribeAllData
 
 	private Long ownerId;
 	public DescribeAllDataSourcesRequest() {
-		super("clickhouse", "2019-11-11", "DescribeAllDataSources");
+		super("clickhouse", "2019-11-11", "DescribeAllDataSources", "service");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

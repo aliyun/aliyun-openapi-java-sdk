@@ -38,6 +38,7 @@ public class DescribeAccountsResponseUnmarshaller {
 			account.setAccountDescription(_ctx.stringValue("DescribeAccountsResponse.Accounts["+ i +"].AccountDescription"));
 			account.setAccountType(_ctx.stringValue("DescribeAccountsResponse.Accounts["+ i +"].AccountType"));
 			account.setAccountName(_ctx.stringValue("DescribeAccountsResponse.Accounts["+ i +"].AccountName"));
+			account.setConfigType(_ctx.stringValue("DescribeAccountsResponse.Accounts["+ i +"].ConfigType"));
 
 			accounts.add(account);
 		}

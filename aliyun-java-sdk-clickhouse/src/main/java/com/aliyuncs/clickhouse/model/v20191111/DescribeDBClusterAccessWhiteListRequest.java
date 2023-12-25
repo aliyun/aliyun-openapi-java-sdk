@@ -35,7 +35,7 @@ public class DescribeDBClusterAccessWhiteListRequest extends RpcAcsRequest<Descr
 
 	private Long ownerId;
 	public DescribeDBClusterAccessWhiteListRequest() {
-		super("clickhouse", "2019-11-11", "DescribeDBClusterAccessWhiteList");
+		super("clickhouse", "2019-11-11", "DescribeDBClusterAccessWhiteList", "service");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -41,7 +41,7 @@ public class DescribeDBClusterPerformanceRequest extends RpcAcsRequest<DescribeD
 
 	private Long ownerId;
 	public DescribeDBClusterPerformanceRequest() {
-		super("clickhouse", "2019-11-11", "DescribeDBClusterPerformance");
+		super("clickhouse", "2019-11-11", "DescribeDBClusterPerformance", "service");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

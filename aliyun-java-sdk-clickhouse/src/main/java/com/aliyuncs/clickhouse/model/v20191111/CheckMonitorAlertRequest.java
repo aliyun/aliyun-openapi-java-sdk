@@ -35,7 +35,7 @@ public class CheckMonitorAlertRequest extends RpcAcsRequest<CheckMonitorAlertRes
 
 	private Long ownerId;
 	public CheckMonitorAlertRequest() {
-		super("clickhouse", "2019-11-11", "CheckMonitorAlert");
+		super("clickhouse", "2019-11-11", "CheckMonitorAlert", "service");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
