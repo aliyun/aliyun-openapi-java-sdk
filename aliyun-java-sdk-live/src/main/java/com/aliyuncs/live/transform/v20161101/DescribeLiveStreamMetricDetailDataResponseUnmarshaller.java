@@ -57,6 +57,7 @@ public class DescribeLiveStreamMetricDetailDataResponseUnmarshaller {
 			streamData.setFlvCount(_ctx.longValue("DescribeLiveStreamMetricDetailDataResponse.StreamDetailData["+ i +"].FlvCount"));
 			streamData.setFlvTraffic(_ctx.longValue("DescribeLiveStreamMetricDetailDataResponse.StreamDetailData["+ i +"].FlvTraffic"));
 			streamData.setTimeStamp(_ctx.stringValue("DescribeLiveStreamMetricDetailDataResponse.StreamDetailData["+ i +"].TimeStamp"));
+			streamData.setNewConns(_ctx.stringValue("DescribeLiveStreamMetricDetailDataResponse.StreamDetailData["+ i +"].NewConns"));
 
 			streamDetailData.add(streamData);
 		}

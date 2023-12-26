@@ -292,6 +292,9 @@ public class UpdateLiveMPUTaskRequest extends RpcAcsRequest<UpdateLiveMPUTaskRes
 		@SerializedName("Layout")
 		private Layout layout;
 
+		@SerializedName("Background")
+		private Background background;
+
 		@SerializedName("UserInfos")
 		private List<UserInfosItem> userInfos;
 
@@ -304,6 +307,14 @@ public class UpdateLiveMPUTaskRequest extends RpcAcsRequest<UpdateLiveMPUTaskRes
 
 		public void setLayout(Layout layout) {
 			this.layout = layout;
+		}
+
+		public Background getBackground() {
+			return this.background;
+		}
+
+		public void setBackground(Background background) {
+			this.background = background;
 		}
 
 		public List<UserInfosItem> getUserInfos() {
@@ -507,6 +518,31 @@ public class UpdateLiveMPUTaskRequest extends RpcAcsRequest<UpdateLiveMPUTaskRes
 				public void setUserId(String userId) {
 					this.userId = userId;
 				}
+			}
+		}
+
+		public static class Background {
+
+			@SerializedName("URL")
+			private String uRL;
+
+			@SerializedName("RenderMode")
+			private String renderMode;
+
+			public String getURL() {
+				return this.uRL;
+			}
+
+			public void setURL(String uRL) {
+				this.uRL = uRL;
+			}
+
+			public String getRenderMode() {
+				return this.renderMode;
+			}
+
+			public void setRenderMode(String renderMode) {
+				this.renderMode = renderMode;
 			}
 		}
 

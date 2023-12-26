@@ -139,6 +139,8 @@ public class DescribeLiveStreamMetricDetailDataResponse extends AcsResponse {
 
 		private String timeStamp;
 
+		private String newConns;
+
 		public Long getP2pTraffic() {
 			return this.p2pTraffic;
 		}
@@ -305,6 +307,14 @@ public class DescribeLiveStreamMetricDetailDataResponse extends AcsResponse {
 
 		public void setTimeStamp(String timeStamp) {
 			this.timeStamp = timeStamp;
+		}
+
+		public String getNewConns() {
+			return this.newConns;
+		}
+
+		public void setNewConns(String newConns) {
+			this.newConns = newConns;
 		}
 	}
 
