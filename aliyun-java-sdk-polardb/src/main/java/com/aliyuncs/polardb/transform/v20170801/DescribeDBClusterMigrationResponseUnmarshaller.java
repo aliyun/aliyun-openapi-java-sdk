@@ -47,6 +47,7 @@ public class DescribeDBClusterMigrationResponseUnmarshaller {
 			DBClusterEndpoint dBClusterEndpoint = new DBClusterEndpoint();
 			dBClusterEndpoint.setDBEndpointId(_ctx.stringValue("DescribeDBClusterMigrationResponse.DBClusterEndpointList["+ i +"].DBEndpointId"));
 			dBClusterEndpoint.setEndpointType(_ctx.stringValue("DescribeDBClusterMigrationResponse.DBClusterEndpointList["+ i +"].EndpointType"));
+			dBClusterEndpoint.setReadWriteMode(_ctx.stringValue("DescribeDBClusterMigrationResponse.DBClusterEndpointList["+ i +"].ReadWriteMode"));
 
 			List<Address> addressItems = new ArrayList<Address>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDBClusterMigrationResponse.DBClusterEndpointList["+ i +"].AddressItems.Length"); j++) {
@@ -72,6 +73,7 @@ public class DescribeDBClusterMigrationResponseUnmarshaller {
 			RdsEndpoint rdsEndpoint = new RdsEndpoint();
 			rdsEndpoint.setDBEndpointId(_ctx.stringValue("DescribeDBClusterMigrationResponse.RdsEndpointList["+ i +"].DBEndpointId"));
 			rdsEndpoint.setEndpointType(_ctx.stringValue("DescribeDBClusterMigrationResponse.RdsEndpointList["+ i +"].EndpointType"));
+			rdsEndpoint.setCustinsType(_ctx.stringValue("DescribeDBClusterMigrationResponse.RdsEndpointList["+ i +"].CustinsType"));
 
 			List<Address2> addressItems1 = new ArrayList<Address2>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDBClusterMigrationResponse.RdsEndpointList["+ i +"].AddressItems.Length"); j++) {

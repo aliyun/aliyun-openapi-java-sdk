@@ -83,6 +83,7 @@ public class DescribeDBClusterAttributeResponseUnmarshaller {
 		describeDBClusterAttributeResponse.setArchitecture(_ctx.stringValue("DescribeDBClusterAttributeResponse.Architecture"));
 		describeDBClusterAttributeResponse.setAiType(_ctx.stringValue("DescribeDBClusterAttributeResponse.AiType"));
 		describeDBClusterAttributeResponse.setProvisionedIops(_ctx.stringValue("DescribeDBClusterAttributeResponse.ProvisionedIops"));
+		describeDBClusterAttributeResponse.setHotStandbyHealthy(_ctx.booleanValue("DescribeDBClusterAttributeResponse.HotStandbyHealthy"));
 
 		RelatedAPInstance relatedAPInstance = new RelatedAPInstance();
 		relatedAPInstance.setName(_ctx.stringValue("DescribeDBClusterAttributeResponse.RelatedAPInstance.Name"));
@@ -114,6 +115,8 @@ public class DescribeDBClusterAttributeResponseUnmarshaller {
 			dBNode.setSccMode(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].SccMode"));
 			dBNode.setServerWeight(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].ServerWeight"));
 			dBNode.setServerlessType(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].ServerlessType"));
+			dBNode.setSubCluster(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].SubCluster"));
+			dBNode.setTair(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].Tair"));
 
 			dBNodes.add(dBNode);
 		}

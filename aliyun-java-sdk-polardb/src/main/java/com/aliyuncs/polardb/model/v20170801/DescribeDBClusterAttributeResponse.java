@@ -135,6 +135,8 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 	private String provisionedIops;
 
+	private Boolean hotStandbyHealthy;
+
 	private List<DBNode> dBNodes;
 
 	private List<Tag> tags;
@@ -581,6 +583,14 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 		this.provisionedIops = provisionedIops;
 	}
 
+	public Boolean getHotStandbyHealthy() {
+		return this.hotStandbyHealthy;
+	}
+
+	public void setHotStandbyHealthy(Boolean hotStandbyHealthy) {
+		this.hotStandbyHealthy = hotStandbyHealthy;
+	}
+
 	public List<DBNode> getDBNodes() {
 		return this.dBNodes;
 	}
@@ -642,6 +652,10 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 		private String serverWeight;
 
 		private String serverlessType;
+
+		private String subCluster;
+
+		private String tair;
 
 		public String getCreationTime() {
 			return this.creationTime;
@@ -785,6 +799,22 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 		public void setServerlessType(String serverlessType) {
 			this.serverlessType = serverlessType;
+		}
+
+		public String getSubCluster() {
+			return this.subCluster;
+		}
+
+		public void setSubCluster(String subCluster) {
+			this.subCluster = subCluster;
+		}
+
+		public String getTair() {
+			return this.tair;
+		}
+
+		public void setTair(String tair) {
+			this.tair = tair;
 		}
 	}
 

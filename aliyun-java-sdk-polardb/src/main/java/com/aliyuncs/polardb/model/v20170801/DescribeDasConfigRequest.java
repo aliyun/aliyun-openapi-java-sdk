@@ -15,6 +15,7 @@
 package com.aliyuncs.polardb.model.v20170801;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.polardb.Endpoint;
 
@@ -22,14 +23,10 @@ import com.aliyuncs.polardb.Endpoint;
  * @author auto create
  * @version 
  */
-public class FailoverDBClusterRequest extends RpcAcsRequest<FailoverDBClusterResponse> {
+public class DescribeDasConfigRequest extends RpcAcsRequest<DescribeDasConfigResponse> {
 	   
 
 	private Long resourceOwnerId;
-
-	private String clientToken;
-
-	private Boolean rollBackForDisaster;
 
 	private String resourceOwnerAccount;
 
@@ -38,10 +35,9 @@ public class FailoverDBClusterRequest extends RpcAcsRequest<FailoverDBClusterRes
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	private String targetDBNodeId;
-	public FailoverDBClusterRequest() {
-		super("polardb", "2017-08-01", "FailoverDBCluster", "polardb");
+	public DescribeDasConfigRequest() {
+		super("polardb", "2017-08-01", "DescribeDasConfig", "polardb");
+		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -57,28 +53,6 @@ public class FailoverDBClusterRequest extends RpcAcsRequest<FailoverDBClusterRes
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
-	public Boolean getRollBackForDisaster() {
-		return this.rollBackForDisaster;
-	}
-
-	public void setRollBackForDisaster(Boolean rollBackForDisaster) {
-		this.rollBackForDisaster = rollBackForDisaster;
-		if(rollBackForDisaster != null){
-			putQueryParameter("RollBackForDisaster", rollBackForDisaster.toString());
 		}
 	}
 
@@ -126,20 +100,9 @@ public class FailoverDBClusterRequest extends RpcAcsRequest<FailoverDBClusterRes
 		}
 	}
 
-	public String getTargetDBNodeId() {
-		return this.targetDBNodeId;
-	}
-
-	public void setTargetDBNodeId(String targetDBNodeId) {
-		this.targetDBNodeId = targetDBNodeId;
-		if(targetDBNodeId != null){
-			putQueryParameter("TargetDBNodeId", targetDBNodeId);
-		}
-	}
-
 	@Override
-	public Class<FailoverDBClusterResponse> getResponseClass() {
-		return FailoverDBClusterResponse.class;
+	public Class<DescribeDasConfigResponse> getResponseClass() {
+		return DescribeDasConfigResponse.class;
 	}
 
 }

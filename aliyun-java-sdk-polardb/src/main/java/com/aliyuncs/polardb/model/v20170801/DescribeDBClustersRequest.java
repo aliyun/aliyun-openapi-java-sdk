@@ -36,6 +36,8 @@ public class DescribeDBClustersRequest extends RpcAcsRequest<DescribeDBClustersR
 
 	private Integer recentExpirationInterval;
 
+	private String describeType;
+
 	private Integer pageNumber;
 
 	private String dBNodeIds;
@@ -124,6 +126,17 @@ public class DescribeDBClustersRequest extends RpcAcsRequest<DescribeDBClustersR
 		this.recentExpirationInterval = recentExpirationInterval;
 		if(recentExpirationInterval != null){
 			putQueryParameter("RecentExpirationInterval", recentExpirationInterval.toString());
+		}
+	}
+
+	public String getDescribeType() {
+		return this.describeType;
+	}
+
+	public void setDescribeType(String describeType) {
+		this.describeType = describeType;
+		if(describeType != null){
+			putQueryParameter("DescribeType", describeType);
 		}
 	}
 

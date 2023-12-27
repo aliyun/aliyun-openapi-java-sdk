@@ -39,6 +39,8 @@ public class ModifyDBClusterRequest extends RpcAcsRequest<ModifyDBClusterRespons
 
 	private Long ownerId;
 
+	private String compressStorage;
+
 	private Long storageUpperBound;
 
 	private String storageAutoScale;
@@ -127,6 +129,17 @@ public class ModifyDBClusterRequest extends RpcAcsRequest<ModifyDBClusterRespons
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getCompressStorage() {
+		return this.compressStorage;
+	}
+
+	public void setCompressStorage(String compressStorage) {
+		this.compressStorage = compressStorage;
+		if(compressStorage != null){
+			putQueryParameter("CompressStorage", compressStorage);
 		}
 	}
 

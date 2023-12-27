@@ -83,6 +83,8 @@ public class DescribeAccountsResponse extends AcsResponse {
 
 		private String accountPassword;
 
+		private String tairPasswordSetted;
+
 		private List<DatabasePrivilege> databasePrivileges;
 
 		public String getAccountStatus() {
@@ -147,6 +149,14 @@ public class DescribeAccountsResponse extends AcsResponse {
 
 		public void setAccountPassword(String accountPassword) {
 			this.accountPassword = accountPassword;
+		}
+
+		public String getTairPasswordSetted() {
+			return this.tairPasswordSetted;
+		}
+
+		public void setTairPasswordSetted(String tairPasswordSetted) {
+			this.tairPasswordSetted = tairPasswordSetted;
 		}
 
 		public List<DatabasePrivilege> getDatabasePrivileges() {

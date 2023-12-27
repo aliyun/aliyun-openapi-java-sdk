@@ -171,6 +171,8 @@ public class DescribeDBClusterMigrationResponse extends AcsResponse {
 
 		private String endpointType;
 
+		private String readWriteMode;
+
 		private List<Address> addressItems;
 
 		public String getDBEndpointId() {
@@ -187,6 +189,14 @@ public class DescribeDBClusterMigrationResponse extends AcsResponse {
 
 		public void setEndpointType(String endpointType) {
 			this.endpointType = endpointType;
+		}
+
+		public String getReadWriteMode() {
+			return this.readWriteMode;
+		}
+
+		public void setReadWriteMode(String readWriteMode) {
+			this.readWriteMode = readWriteMode;
 		}
 
 		public List<Address> getAddressItems() {
@@ -277,6 +287,8 @@ public class DescribeDBClusterMigrationResponse extends AcsResponse {
 
 		private String endpointType;
 
+		private String custinsType;
+
 		private List<Address2> addressItems1;
 
 		public String getDBEndpointId() {
@@ -293,6 +305,14 @@ public class DescribeDBClusterMigrationResponse extends AcsResponse {
 
 		public void setEndpointType(String endpointType) {
 			this.endpointType = endpointType;
+		}
+
+		public String getCustinsType() {
+			return this.custinsType;
+		}
+
+		public void setCustinsType(String custinsType) {
+			this.custinsType = custinsType;
 		}
 
 		public List<Address2> getAddressItems1() {

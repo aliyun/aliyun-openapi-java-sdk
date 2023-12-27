@@ -64,6 +64,8 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 
 	private String dBMinorVersion;
 
+	private Long provisionedIops;
+
 	private Boolean autoRenew;
 
 	private String hotStandbyCluster;
@@ -347,6 +349,17 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		this.dBMinorVersion = dBMinorVersion;
 		if(dBMinorVersion != null){
 			putQueryParameter("DBMinorVersion", dBMinorVersion);
+		}
+	}
+
+	public Long getProvisionedIops() {
+		return this.provisionedIops;
+	}
+
+	public void setProvisionedIops(Long provisionedIops) {
+		this.provisionedIops = provisionedIops;
+		if(provisionedIops != null){
+			putQueryParameter("ProvisionedIops", provisionedIops.toString());
 		}
 	}
 
