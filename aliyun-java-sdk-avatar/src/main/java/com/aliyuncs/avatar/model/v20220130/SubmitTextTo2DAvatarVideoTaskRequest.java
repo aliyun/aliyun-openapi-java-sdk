@@ -230,12 +230,56 @@ public class SubmitTextTo2DAvatarVideoTaskRequest extends RpcAcsRequest<SubmitTe
 		@SerializedName("Code")
 		private String code;
 
+		@SerializedName("X")
+		private Integer x;
+
+		@SerializedName("Width")
+		private Integer width;
+
+		@SerializedName("Y")
+		private Integer y;
+
+		@SerializedName("Height")
+		private Integer height;
+
 		public String getCode() {
 			return this.code;
 		}
 
 		public void setCode(String code) {
 			this.code = code;
+		}
+
+		public Integer getX() {
+			return this.x;
+		}
+
+		public void setX(Integer x) {
+			this.x = x;
+		}
+
+		public Integer getWidth() {
+			return this.width;
+		}
+
+		public void setWidth(Integer width) {
+			this.width = width;
+		}
+
+		public Integer getY() {
+			return this.y;
+		}
+
+		public void setY(Integer y) {
+			this.y = y;
+		}
+
+		public Integer getHeight() {
+			return this.height;
+		}
+
+		public void setHeight(Integer height) {
+			this.height = height;
 		}
 	}
 
