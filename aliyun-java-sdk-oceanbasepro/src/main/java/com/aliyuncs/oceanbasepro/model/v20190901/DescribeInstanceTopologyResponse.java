@@ -231,6 +231,8 @@ public class DescribeInstanceTopologyResponse extends AcsResponse {
 
 					private Long unitDataSize;
 
+					private String replicaType;
+
 					public String getUnitId() {
 						return this.unitId;
 					}
@@ -302,6 +304,14 @@ public class DescribeInstanceTopologyResponse extends AcsResponse {
 					public void setUnitDataSize(Long unitDataSize) {
 						this.unitDataSize = unitDataSize;
 					}
+
+					public String getReplicaType() {
+						return this.replicaType;
+					}
+
+					public void setReplicaType(String replicaType) {
+						this.replicaType = replicaType;
+					}
 				}
 			}
 		}
@@ -366,6 +376,12 @@ public class DescribeInstanceTopologyResponse extends AcsResponse {
 
 				private String nodeStatus;
 
+				private String replicaType;
+
+				private Long fullCopyId;
+
+				private Long readOnlyCopyId;
+
 				private List<NodeResourceItem> nodeResource;
 
 				public String getNodeId() {
@@ -390,6 +406,30 @@ public class DescribeInstanceTopologyResponse extends AcsResponse {
 
 				public void setNodeStatus(String nodeStatus) {
 					this.nodeStatus = nodeStatus;
+				}
+
+				public String getReplicaType() {
+					return this.replicaType;
+				}
+
+				public void setReplicaType(String replicaType) {
+					this.replicaType = replicaType;
+				}
+
+				public Long getFullCopyId() {
+					return this.fullCopyId;
+				}
+
+				public void setFullCopyId(Long fullCopyId) {
+					this.fullCopyId = fullCopyId;
+				}
+
+				public Long getReadOnlyCopyId() {
+					return this.readOnlyCopyId;
+				}
+
+				public void setReadOnlyCopyId(Long readOnlyCopyId) {
+					this.readOnlyCopyId = readOnlyCopyId;
 				}
 
 				public List<NodeResourceItem> getNodeResource() {

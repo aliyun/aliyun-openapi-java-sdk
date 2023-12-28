@@ -30,6 +30,8 @@ public class ModifyInstanceTemporaryCapacityRequest extends RpcAcsRequest<Modify
 	private String spec;
 
 	private String instanceId;
+
+	private String acceptLanguage;
 	public ModifyInstanceTemporaryCapacityRequest() {
 		super("OceanBasePro", "2019-09-01", "ModifyInstanceTemporaryCapacity", "oceanbase");
 		setMethod(MethodType.POST);
@@ -69,6 +71,17 @@ public class ModifyInstanceTemporaryCapacityRequest extends RpcAcsRequest<Modify
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putBodyParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putBodyParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

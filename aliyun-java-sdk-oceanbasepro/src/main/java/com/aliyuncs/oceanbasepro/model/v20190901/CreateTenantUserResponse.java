@@ -27,7 +27,7 @@ public class CreateTenantUserResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<Data> tenantUser;
+	private TenantUser tenantUser;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -37,15 +37,15 @@ public class CreateTenantUserResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<Data> getTenantUser() {
+	public TenantUser getTenantUser() {
 		return this.tenantUser;
 	}
 
-	public void setTenantUser(List<Data> tenantUser) {
+	public void setTenantUser(TenantUser tenantUser) {
 		this.tenantUser = tenantUser;
 	}
 
-	public static class Data {
+	public static class TenantUser {
 
 		private String userType;
 

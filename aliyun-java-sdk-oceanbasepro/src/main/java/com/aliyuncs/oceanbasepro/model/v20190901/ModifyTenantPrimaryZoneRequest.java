@@ -25,6 +25,8 @@ import com.aliyuncs.oceanbasepro.Endpoint;
 public class ModifyTenantPrimaryZoneRequest extends RpcAcsRequest<ModifyTenantPrimaryZoneResponse> {
 	   
 
+	private String tenantEndpointDirectId;
+
 	private String userVSwitchId;
 
 	private String masterIntranetAddressZone;
@@ -36,6 +38,8 @@ public class ModifyTenantPrimaryZoneRequest extends RpcAcsRequest<ModifyTenantPr
 	private String instanceId;
 
 	private String primaryZone;
+
+	private String userDirectVSwitchId;
 	public ModifyTenantPrimaryZoneRequest() {
 		super("OceanBasePro", "2019-09-01", "ModifyTenantPrimaryZone", "oceanbase");
 		setMethod(MethodType.POST);
@@ -43,6 +47,17 @@ public class ModifyTenantPrimaryZoneRequest extends RpcAcsRequest<ModifyTenantPr
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getTenantEndpointDirectId() {
+		return this.tenantEndpointDirectId;
+	}
+
+	public void setTenantEndpointDirectId(String tenantEndpointDirectId) {
+		this.tenantEndpointDirectId = tenantEndpointDirectId;
+		if(tenantEndpointDirectId != null){
+			putBodyParameter("TenantEndpointDirectId", tenantEndpointDirectId);
+		}
 	}
 
 	public String getUserVSwitchId() {
@@ -108,6 +123,17 @@ public class ModifyTenantPrimaryZoneRequest extends RpcAcsRequest<ModifyTenantPr
 		this.primaryZone = primaryZone;
 		if(primaryZone != null){
 			putBodyParameter("PrimaryZone", primaryZone);
+		}
+	}
+
+	public String getUserDirectVSwitchId() {
+		return this.userDirectVSwitchId;
+	}
+
+	public void setUserDirectVSwitchId(String userDirectVSwitchId) {
+		this.userDirectVSwitchId = userDirectVSwitchId;
+		if(userDirectVSwitchId != null){
+			putBodyParameter("UserDirectVSwitchId", userDirectVSwitchId);
 		}
 	}
 

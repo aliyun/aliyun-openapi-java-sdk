@@ -119,6 +119,8 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 		private DataDiskAutoScaleConfig dataDiskAutoScaleConfig;
 
+		private ReadOnlyResource readOnlyResource;
+
 		public String getInstanceId() {
 			return this.instanceId;
 		}
@@ -407,6 +409,14 @@ public class DescribeInstanceResponse extends AcsResponse {
 			this.dataDiskAutoScaleConfig = dataDiskAutoScaleConfig;
 		}
 
+		public ReadOnlyResource getReadOnlyResource() {
+			return this.readOnlyResource;
+		}
+
+		public void setReadOnlyResource(ReadOnlyResource readOnlyResource) {
+			this.readOnlyResource = readOnlyResource;
+		}
+
 		public static class Resource {
 
 			private Long unitCount;
@@ -648,6 +658,8 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 				private String maxLogAssignedPercent;
 
+				private Integer originalTotalDiskSize;
+
 				private List<String> maxLogAssignedObServer;
 
 				public Long getTotalDiskSize() {
@@ -680,6 +692,14 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 				public void setMaxLogAssignedPercent(String maxLogAssignedPercent) {
 					this.maxLogAssignedPercent = maxLogAssignedPercent;
+				}
+
+				public Integer getOriginalTotalDiskSize() {
+					return this.originalTotalDiskSize;
+				}
+
+				public void setOriginalTotalDiskSize(Integer originalTotalDiskSize) {
+					this.originalTotalDiskSize = originalTotalDiskSize;
 				}
 
 				public List<String> getMaxLogAssignedObServer() {
@@ -818,6 +838,324 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 			public void setScaleStepInMerge(Long scaleStepInMerge) {
 				this.scaleStepInMerge = scaleStepInMerge;
+			}
+		}
+
+		public static class ReadOnlyResource {
+
+			private Long unitCount;
+
+			private Cpu1 cpu1;
+
+			private Memory2 memory2;
+
+			private DiskSize3 diskSize3;
+
+			private LogDiskSize4 logDiskSize4;
+
+			private CapacityUnit5 capacityUnit5;
+
+			public Long getUnitCount() {
+				return this.unitCount;
+			}
+
+			public void setUnitCount(Long unitCount) {
+				this.unitCount = unitCount;
+			}
+
+			public Cpu1 getCpu1() {
+				return this.cpu1;
+			}
+
+			public void setCpu1(Cpu1 cpu1) {
+				this.cpu1 = cpu1;
+			}
+
+			public Memory2 getMemory2() {
+				return this.memory2;
+			}
+
+			public void setMemory2(Memory2 memory2) {
+				this.memory2 = memory2;
+			}
+
+			public DiskSize3 getDiskSize3() {
+				return this.diskSize3;
+			}
+
+			public void setDiskSize3(DiskSize3 diskSize3) {
+				this.diskSize3 = diskSize3;
+			}
+
+			public LogDiskSize4 getLogDiskSize4() {
+				return this.logDiskSize4;
+			}
+
+			public void setLogDiskSize4(LogDiskSize4 logDiskSize4) {
+				this.logDiskSize4 = logDiskSize4;
+			}
+
+			public CapacityUnit5 getCapacityUnit5() {
+				return this.capacityUnit5;
+			}
+
+			public void setCapacityUnit5(CapacityUnit5 capacityUnit5) {
+				this.capacityUnit5 = capacityUnit5;
+			}
+
+			public static class Cpu1 {
+
+				private Long totalCpu;
+
+				private Long usedCpu;
+
+				private Long unitCpu;
+
+				private Long originalTotalCpu;
+
+				public Long getTotalCpu() {
+					return this.totalCpu;
+				}
+
+				public void setTotalCpu(Long totalCpu) {
+					this.totalCpu = totalCpu;
+				}
+
+				public Long getUsedCpu() {
+					return this.usedCpu;
+				}
+
+				public void setUsedCpu(Long usedCpu) {
+					this.usedCpu = usedCpu;
+				}
+
+				public Long getUnitCpu() {
+					return this.unitCpu;
+				}
+
+				public void setUnitCpu(Long unitCpu) {
+					this.unitCpu = unitCpu;
+				}
+
+				public Long getOriginalTotalCpu() {
+					return this.originalTotalCpu;
+				}
+
+				public void setOriginalTotalCpu(Long originalTotalCpu) {
+					this.originalTotalCpu = originalTotalCpu;
+				}
+			}
+
+			public static class Memory2 {
+
+				private Long totalMemory;
+
+				private Long usedMemory;
+
+				private Long unitMemory;
+
+				private Long originalTotalMemory;
+
+				public Long getTotalMemory() {
+					return this.totalMemory;
+				}
+
+				public void setTotalMemory(Long totalMemory) {
+					this.totalMemory = totalMemory;
+				}
+
+				public Long getUsedMemory() {
+					return this.usedMemory;
+				}
+
+				public void setUsedMemory(Long usedMemory) {
+					this.usedMemory = usedMemory;
+				}
+
+				public Long getUnitMemory() {
+					return this.unitMemory;
+				}
+
+				public void setUnitMemory(Long unitMemory) {
+					this.unitMemory = unitMemory;
+				}
+
+				public Long getOriginalTotalMemory() {
+					return this.originalTotalMemory;
+				}
+
+				public void setOriginalTotalMemory(Long originalTotalMemory) {
+					this.originalTotalMemory = originalTotalMemory;
+				}
+			}
+
+			public static class DiskSize3 {
+
+				private Long totalDiskSize;
+
+				private Long usedDiskSize;
+
+				private Long unitDiskSize;
+
+				private Double dataUsedSize;
+
+				private Double maxDiskUsedPercent;
+
+				private Long originalTotalDiskSize;
+
+				private Double maxDiskSize;
+
+				private List<String> maxDiskUsedObServer6;
+
+				public Long getTotalDiskSize() {
+					return this.totalDiskSize;
+				}
+
+				public void setTotalDiskSize(Long totalDiskSize) {
+					this.totalDiskSize = totalDiskSize;
+				}
+
+				public Long getUsedDiskSize() {
+					return this.usedDiskSize;
+				}
+
+				public void setUsedDiskSize(Long usedDiskSize) {
+					this.usedDiskSize = usedDiskSize;
+				}
+
+				public Long getUnitDiskSize() {
+					return this.unitDiskSize;
+				}
+
+				public void setUnitDiskSize(Long unitDiskSize) {
+					this.unitDiskSize = unitDiskSize;
+				}
+
+				public Double getDataUsedSize() {
+					return this.dataUsedSize;
+				}
+
+				public void setDataUsedSize(Double dataUsedSize) {
+					this.dataUsedSize = dataUsedSize;
+				}
+
+				public Double getMaxDiskUsedPercent() {
+					return this.maxDiskUsedPercent;
+				}
+
+				public void setMaxDiskUsedPercent(Double maxDiskUsedPercent) {
+					this.maxDiskUsedPercent = maxDiskUsedPercent;
+				}
+
+				public Long getOriginalTotalDiskSize() {
+					return this.originalTotalDiskSize;
+				}
+
+				public void setOriginalTotalDiskSize(Long originalTotalDiskSize) {
+					this.originalTotalDiskSize = originalTotalDiskSize;
+				}
+
+				public Double getMaxDiskSize() {
+					return this.maxDiskSize;
+				}
+
+				public void setMaxDiskSize(Double maxDiskSize) {
+					this.maxDiskSize = maxDiskSize;
+				}
+
+				public List<String> getMaxDiskUsedObServer6() {
+					return this.maxDiskUsedObServer6;
+				}
+
+				public void setMaxDiskUsedObServer6(List<String> maxDiskUsedObServer6) {
+					this.maxDiskUsedObServer6 = maxDiskUsedObServer6;
+				}
+			}
+
+			public static class LogDiskSize4 {
+
+				private Long totalDiskSize;
+
+				private Long unitDiskSize;
+
+				private String logAssignedSize;
+
+				private String maxLogAssignedPercent;
+
+				private List<String> maxLogAssignedObServer7;
+
+				public Long getTotalDiskSize() {
+					return this.totalDiskSize;
+				}
+
+				public void setTotalDiskSize(Long totalDiskSize) {
+					this.totalDiskSize = totalDiskSize;
+				}
+
+				public Long getUnitDiskSize() {
+					return this.unitDiskSize;
+				}
+
+				public void setUnitDiskSize(Long unitDiskSize) {
+					this.unitDiskSize = unitDiskSize;
+				}
+
+				public String getLogAssignedSize() {
+					return this.logAssignedSize;
+				}
+
+				public void setLogAssignedSize(String logAssignedSize) {
+					this.logAssignedSize = logAssignedSize;
+				}
+
+				public String getMaxLogAssignedPercent() {
+					return this.maxLogAssignedPercent;
+				}
+
+				public void setMaxLogAssignedPercent(String maxLogAssignedPercent) {
+					this.maxLogAssignedPercent = maxLogAssignedPercent;
+				}
+
+				public List<String> getMaxLogAssignedObServer7() {
+					return this.maxLogAssignedObServer7;
+				}
+
+				public void setMaxLogAssignedObServer7(List<String> maxLogAssignedObServer7) {
+					this.maxLogAssignedObServer7 = maxLogAssignedObServer7;
+				}
+			}
+
+			public static class CapacityUnit5 {
+
+				private Integer maxCapacityUnit;
+
+				private Integer minCapacityUnit;
+
+				private String usedCapacityUnit;
+
+				public Integer getMaxCapacityUnit() {
+					return this.maxCapacityUnit;
+				}
+
+				public void setMaxCapacityUnit(Integer maxCapacityUnit) {
+					this.maxCapacityUnit = maxCapacityUnit;
+				}
+
+				public Integer getMinCapacityUnit() {
+					return this.minCapacityUnit;
+				}
+
+				public void setMinCapacityUnit(Integer minCapacityUnit) {
+					this.minCapacityUnit = minCapacityUnit;
+				}
+
+				public String getUsedCapacityUnit() {
+					return this.usedCapacityUnit;
+				}
+
+				public void setUsedCapacityUnit(String usedCapacityUnit) {
+					this.usedCapacityUnit = usedCapacityUnit;
+				}
 			}
 		}
 	}

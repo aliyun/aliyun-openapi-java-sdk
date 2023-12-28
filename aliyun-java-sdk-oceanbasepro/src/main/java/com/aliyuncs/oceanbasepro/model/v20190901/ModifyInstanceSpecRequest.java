@@ -31,6 +31,8 @@ public class ModifyInstanceSpecRequest extends RpcAcsRequest<ModifyInstanceSpecR
 
 	private Long diskSize;
 
+	private String diskType;
+
 	private String instanceId;
 	public ModifyInstanceSpecRequest() {
 		super("OceanBasePro", "2019-09-01", "ModifyInstanceSpec", "oceanbase");
@@ -71,6 +73,17 @@ public class ModifyInstanceSpecRequest extends RpcAcsRequest<ModifyInstanceSpecR
 		this.diskSize = diskSize;
 		if(diskSize != null){
 			putBodyParameter("DiskSize", diskSize.toString());
+		}
+	}
+
+	public String getDiskType() {
+		return this.diskType;
+	}
+
+	public void setDiskType(String diskType) {
+		this.diskType = diskType;
+		if(diskType != null){
+			putBodyParameter("DiskType", diskType);
 		}
 	}
 

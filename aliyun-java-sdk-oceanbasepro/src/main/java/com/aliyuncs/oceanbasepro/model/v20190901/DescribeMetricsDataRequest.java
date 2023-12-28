@@ -35,6 +35,8 @@ public class DescribeMetricsDataRequest extends RpcAcsRequest<DescribeMetricsDat
 
 	private String sortMetricKey;
 
+	private String replicaType;
+
 	private String endTime;
 
 	private String labels;
@@ -103,6 +105,17 @@ public class DescribeMetricsDataRequest extends RpcAcsRequest<DescribeMetricsDat
 		this.sortMetricKey = sortMetricKey;
 		if(sortMetricKey != null){
 			putQueryParameter("SortMetricKey", sortMetricKey);
+		}
+	}
+
+	public String getReplicaType() {
+		return this.replicaType;
+	}
+
+	public void setReplicaType(String replicaType) {
+		this.replicaType = replicaType;
+		if(replicaType != null){
+			putBodyParameter("ReplicaType", replicaType);
 		}
 	}
 

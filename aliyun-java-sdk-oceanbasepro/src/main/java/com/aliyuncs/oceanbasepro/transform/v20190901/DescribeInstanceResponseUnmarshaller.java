@@ -20,6 +20,12 @@ import java.util.List;
 import com.aliyuncs.oceanbasepro.model.v20190901.DescribeInstanceResponse;
 import com.aliyuncs.oceanbasepro.model.v20190901.DescribeInstanceResponse.Instance;
 import com.aliyuncs.oceanbasepro.model.v20190901.DescribeInstanceResponse.Instance.DataDiskAutoScaleConfig;
+import com.aliyuncs.oceanbasepro.model.v20190901.DescribeInstanceResponse.Instance.ReadOnlyResource;
+import com.aliyuncs.oceanbasepro.model.v20190901.DescribeInstanceResponse.Instance.ReadOnlyResource.CapacityUnit5;
+import com.aliyuncs.oceanbasepro.model.v20190901.DescribeInstanceResponse.Instance.ReadOnlyResource.Cpu1;
+import com.aliyuncs.oceanbasepro.model.v20190901.DescribeInstanceResponse.Instance.ReadOnlyResource.DiskSize3;
+import com.aliyuncs.oceanbasepro.model.v20190901.DescribeInstanceResponse.Instance.ReadOnlyResource.LogDiskSize4;
+import com.aliyuncs.oceanbasepro.model.v20190901.DescribeInstanceResponse.Instance.ReadOnlyResource.Memory2;
 import com.aliyuncs.oceanbasepro.model.v20190901.DescribeInstanceResponse.Instance.Resource;
 import com.aliyuncs.oceanbasepro.model.v20190901.DescribeInstanceResponse.Instance.Resource.CapacityUnit;
 import com.aliyuncs.oceanbasepro.model.v20190901.DescribeInstanceResponse.Instance.Resource.Cpu;
@@ -119,6 +125,7 @@ public class DescribeInstanceResponseUnmarshaller {
 		logDiskSize.setUnitDiskSize(_ctx.longValue("DescribeInstanceResponse.Instance.Resource.LogDiskSize.UnitDiskSize"));
 		logDiskSize.setLogAssignedSize(_ctx.stringValue("DescribeInstanceResponse.Instance.Resource.LogDiskSize.LogAssignedSize"));
 		logDiskSize.setMaxLogAssignedPercent(_ctx.stringValue("DescribeInstanceResponse.Instance.Resource.LogDiskSize.MaxLogAssignedPercent"));
+		logDiskSize.setOriginalTotalDiskSize(_ctx.integerValue("DescribeInstanceResponse.Instance.Resource.LogDiskSize.OriginalTotalDiskSize"));
 
 		List<String> maxLogAssignedObServer = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceResponse.Instance.Resource.LogDiskSize.MaxLogAssignedObServer.Length"); i++) {
@@ -148,6 +155,59 @@ public class DescribeInstanceResponseUnmarshaller {
 		dataDiskAutoScaleConfig.setScaleStepInNormal(_ctx.longValue("DescribeInstanceResponse.Instance.DataDiskAutoScaleConfig.ScaleStepInNormal"));
 		dataDiskAutoScaleConfig.setScaleStepInMerge(_ctx.longValue("DescribeInstanceResponse.Instance.DataDiskAutoScaleConfig.ScaleStepInMerge"));
 		instance.setDataDiskAutoScaleConfig(dataDiskAutoScaleConfig);
+
+		ReadOnlyResource readOnlyResource = new ReadOnlyResource();
+		readOnlyResource.setUnitCount(_ctx.longValue("DescribeInstanceResponse.Instance.ReadOnlyResource.UnitCount"));
+
+		Cpu1 cpu1 = new Cpu1();
+		cpu1.setTotalCpu(_ctx.longValue("DescribeInstanceResponse.Instance.ReadOnlyResource.Cpu.TotalCpu"));
+		cpu1.setUsedCpu(_ctx.longValue("DescribeInstanceResponse.Instance.ReadOnlyResource.Cpu.UsedCpu"));
+		cpu1.setUnitCpu(_ctx.longValue("DescribeInstanceResponse.Instance.ReadOnlyResource.Cpu.UnitCpu"));
+		cpu1.setOriginalTotalCpu(_ctx.longValue("DescribeInstanceResponse.Instance.ReadOnlyResource.Cpu.OriginalTotalCpu"));
+		readOnlyResource.setCpu1(cpu1);
+
+		Memory2 memory2 = new Memory2();
+		memory2.setTotalMemory(_ctx.longValue("DescribeInstanceResponse.Instance.ReadOnlyResource.Memory.TotalMemory"));
+		memory2.setUsedMemory(_ctx.longValue("DescribeInstanceResponse.Instance.ReadOnlyResource.Memory.UsedMemory"));
+		memory2.setUnitMemory(_ctx.longValue("DescribeInstanceResponse.Instance.ReadOnlyResource.Memory.UnitMemory"));
+		memory2.setOriginalTotalMemory(_ctx.longValue("DescribeInstanceResponse.Instance.ReadOnlyResource.Memory.OriginalTotalMemory"));
+		readOnlyResource.setMemory2(memory2);
+
+		DiskSize3 diskSize3 = new DiskSize3();
+		diskSize3.setTotalDiskSize(_ctx.longValue("DescribeInstanceResponse.Instance.ReadOnlyResource.DiskSize.TotalDiskSize"));
+		diskSize3.setUsedDiskSize(_ctx.longValue("DescribeInstanceResponse.Instance.ReadOnlyResource.DiskSize.UsedDiskSize"));
+		diskSize3.setUnitDiskSize(_ctx.longValue("DescribeInstanceResponse.Instance.ReadOnlyResource.DiskSize.UnitDiskSize"));
+		diskSize3.setDataUsedSize(_ctx.doubleValue("DescribeInstanceResponse.Instance.ReadOnlyResource.DiskSize.DataUsedSize"));
+		diskSize3.setMaxDiskUsedPercent(_ctx.doubleValue("DescribeInstanceResponse.Instance.ReadOnlyResource.DiskSize.MaxDiskUsedPercent"));
+		diskSize3.setOriginalTotalDiskSize(_ctx.longValue("DescribeInstanceResponse.Instance.ReadOnlyResource.DiskSize.OriginalTotalDiskSize"));
+		diskSize3.setMaxDiskSize(_ctx.doubleValue("DescribeInstanceResponse.Instance.ReadOnlyResource.DiskSize.MaxDiskSize"));
+
+		List<String> maxDiskUsedObServer6 = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceResponse.Instance.ReadOnlyResource.DiskSize.MaxDiskUsedObServer.Length"); i++) {
+			maxDiskUsedObServer6.add(_ctx.stringValue("DescribeInstanceResponse.Instance.ReadOnlyResource.DiskSize.MaxDiskUsedObServer["+ i +"]"));
+		}
+		diskSize3.setMaxDiskUsedObServer6(maxDiskUsedObServer6);
+		readOnlyResource.setDiskSize3(diskSize3);
+
+		LogDiskSize4 logDiskSize4 = new LogDiskSize4();
+		logDiskSize4.setTotalDiskSize(_ctx.longValue("DescribeInstanceResponse.Instance.ReadOnlyResource.LogDiskSize.TotalDiskSize"));
+		logDiskSize4.setUnitDiskSize(_ctx.longValue("DescribeInstanceResponse.Instance.ReadOnlyResource.LogDiskSize.UnitDiskSize"));
+		logDiskSize4.setLogAssignedSize(_ctx.stringValue("DescribeInstanceResponse.Instance.ReadOnlyResource.LogDiskSize.LogAssignedSize"));
+		logDiskSize4.setMaxLogAssignedPercent(_ctx.stringValue("DescribeInstanceResponse.Instance.ReadOnlyResource.LogDiskSize.MaxLogAssignedPercent"));
+
+		List<String> maxLogAssignedObServer7 = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceResponse.Instance.ReadOnlyResource.LogDiskSize.MaxLogAssignedObServer.Length"); i++) {
+			maxLogAssignedObServer7.add(_ctx.stringValue("DescribeInstanceResponse.Instance.ReadOnlyResource.LogDiskSize.MaxLogAssignedObServer["+ i +"]"));
+		}
+		logDiskSize4.setMaxLogAssignedObServer7(maxLogAssignedObServer7);
+		readOnlyResource.setLogDiskSize4(logDiskSize4);
+
+		CapacityUnit5 capacityUnit5 = new CapacityUnit5();
+		capacityUnit5.setMaxCapacityUnit(_ctx.integerValue("DescribeInstanceResponse.Instance.ReadOnlyResource.CapacityUnit.MaxCapacityUnit"));
+		capacityUnit5.setMinCapacityUnit(_ctx.integerValue("DescribeInstanceResponse.Instance.ReadOnlyResource.CapacityUnit.MinCapacityUnit"));
+		capacityUnit5.setUsedCapacityUnit(_ctx.stringValue("DescribeInstanceResponse.Instance.ReadOnlyResource.CapacityUnit.UsedCapacityUnit"));
+		readOnlyResource.setCapacityUnit5(capacityUnit5);
+		instance.setReadOnlyResource(readOnlyResource);
 		describeInstanceResponse.setInstance(instance);
 	 
 	 	return describeInstanceResponse;

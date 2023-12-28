@@ -19,6 +19,12 @@ import java.util.List;
 
 import com.aliyuncs.oceanbasepro.model.v20190901.DescribeTenantResponse;
 import com.aliyuncs.oceanbasepro.model.v20190901.DescribeTenantResponse.Tenant;
+import com.aliyuncs.oceanbasepro.model.v20190901.DescribeTenantResponse.Tenant.ReadOnlyResource;
+import com.aliyuncs.oceanbasepro.model.v20190901.DescribeTenantResponse.Tenant.ReadOnlyResource.CapacityUnit4;
+import com.aliyuncs.oceanbasepro.model.v20190901.DescribeTenantResponse.Tenant.ReadOnlyResource.Cpu1;
+import com.aliyuncs.oceanbasepro.model.v20190901.DescribeTenantResponse.Tenant.ReadOnlyResource.DiskSize3;
+import com.aliyuncs.oceanbasepro.model.v20190901.DescribeTenantResponse.Tenant.ReadOnlyResource.LogDiskSize5;
+import com.aliyuncs.oceanbasepro.model.v20190901.DescribeTenantResponse.Tenant.ReadOnlyResource.Memory2;
 import com.aliyuncs.oceanbasepro.model.v20190901.DescribeTenantResponse.Tenant.TenantConnectionsItem;
 import com.aliyuncs.oceanbasepro.model.v20190901.DescribeTenantResponse.Tenant.TenantResource;
 import com.aliyuncs.oceanbasepro.model.v20190901.DescribeTenantResponse.Tenant.TenantResource.CapacityUnit;
@@ -27,6 +33,7 @@ import com.aliyuncs.oceanbasepro.model.v20190901.DescribeTenantResponse.Tenant.T
 import com.aliyuncs.oceanbasepro.model.v20190901.DescribeTenantResponse.Tenant.TenantResource.LogDiskSize;
 import com.aliyuncs.oceanbasepro.model.v20190901.DescribeTenantResponse.Tenant.TenantResource.Memory;
 import com.aliyuncs.oceanbasepro.model.v20190901.DescribeTenantResponse.Tenant.TenantZonesItem;
+import com.aliyuncs.oceanbasepro.model.v20190901.DescribeTenantResponse.Tenant.TenantZonesItem.TenantZoneReplicasItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -63,6 +70,7 @@ public class DescribeTenantResponseUnmarshaller {
 		tenant.setMaxParallelQueryDegree(_ctx.longValue("DescribeTenantResponse.Tenant.MaxParallelQueryDegree"));
 		tenant.setEnableBinlogService(_ctx.booleanValue("DescribeTenantResponse.Tenant.EnableBinlogService"));
 		tenant.setTimeZone(_ctx.stringValue("DescribeTenantResponse.Tenant.TimeZone"));
+		tenant.setDataMergeTime(_ctx.stringValue("DescribeTenantResponse.Tenant.DataMergeTime"));
 
 		List<String> availableZones = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeTenantResponse.Tenant.AvailableZones.Length"); i++) {
@@ -101,6 +109,37 @@ public class DescribeTenantResponseUnmarshaller {
 		tenantResource.setLogDiskSize(logDiskSize);
 		tenant.setTenantResource(tenantResource);
 
+		ReadOnlyResource readOnlyResource = new ReadOnlyResource();
+		readOnlyResource.setUnitNum(_ctx.integerValue("DescribeTenantResponse.Tenant.ReadOnlyResource.UnitNum"));
+
+		Cpu1 cpu1 = new Cpu1();
+		cpu1.setUsedCpu(_ctx.floatValue("DescribeTenantResponse.Tenant.ReadOnlyResource.Cpu.UsedCpu"));
+		cpu1.setTotalCpu(_ctx.floatValue("DescribeTenantResponse.Tenant.ReadOnlyResource.Cpu.TotalCpu"));
+		cpu1.setUnitCpu(_ctx.floatValue("DescribeTenantResponse.Tenant.ReadOnlyResource.Cpu.UnitCpu"));
+		readOnlyResource.setCpu1(cpu1);
+
+		Memory2 memory2 = new Memory2();
+		memory2.setUsedMemory(_ctx.floatValue("DescribeTenantResponse.Tenant.ReadOnlyResource.Memory.UsedMemory"));
+		memory2.setTotalMemory(_ctx.floatValue("DescribeTenantResponse.Tenant.ReadOnlyResource.Memory.TotalMemory"));
+		memory2.setUnitMemory(_ctx.floatValue("DescribeTenantResponse.Tenant.ReadOnlyResource.Memory.UnitMemory"));
+		readOnlyResource.setMemory2(memory2);
+
+		DiskSize3 diskSize3 = new DiskSize3();
+		diskSize3.setUsedDiskSize(_ctx.floatValue("DescribeTenantResponse.Tenant.ReadOnlyResource.DiskSize.UsedDiskSize"));
+		readOnlyResource.setDiskSize3(diskSize3);
+
+		CapacityUnit4 capacityUnit4 = new CapacityUnit4();
+		capacityUnit4.setMaxCapacityUnit(_ctx.integerValue("DescribeTenantResponse.Tenant.ReadOnlyResource.CapacityUnit.MaxCapacityUnit"));
+		capacityUnit4.setMinCapacityUnit(_ctx.integerValue("DescribeTenantResponse.Tenant.ReadOnlyResource.CapacityUnit.MinCapacityUnit"));
+		capacityUnit4.setUsedCapacit(_ctx.integerValue("DescribeTenantResponse.Tenant.ReadOnlyResource.CapacityUnit.UsedCapacit"));
+		readOnlyResource.setCapacityUnit4(capacityUnit4);
+
+		LogDiskSize5 logDiskSize5 = new LogDiskSize5();
+		logDiskSize5.setTotalLogDisk(_ctx.integerValue("DescribeTenantResponse.Tenant.ReadOnlyResource.LogDiskSize.TotalLogDisk"));
+		logDiskSize5.setUnitLogDisk(_ctx.integerValue("DescribeTenantResponse.Tenant.ReadOnlyResource.LogDiskSize.UnitLogDisk"));
+		readOnlyResource.setLogDiskSize5(logDiskSize5);
+		tenant.setReadOnlyResource(readOnlyResource);
+
 		List<TenantConnectionsItem> tenantConnections = new ArrayList<TenantConnectionsItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeTenantResponse.Tenant.TenantConnections.Length"); i++) {
 			TenantConnectionsItem tenantConnectionsItem = new TenantConnectionsItem();
@@ -120,6 +159,7 @@ public class DescribeTenantResponseUnmarshaller {
 			tenantConnectionsItem.setParallelQueryDegree(_ctx.longValue("DescribeTenantResponse.Tenant.TenantConnections["+ i +"].ParallelQueryDegree"));
 			tenantConnectionsItem.setTenantEndpointId(_ctx.stringValue("DescribeTenantResponse.Tenant.TenantConnections["+ i +"].TenantEndpointId"));
 			tenantConnectionsItem.setMaxConnectionNum(_ctx.longValue("DescribeTenantResponse.Tenant.TenantConnections["+ i +"].MaxConnectionNum"));
+			tenantConnectionsItem.setConnectionReplicaType(_ctx.stringValue("DescribeTenantResponse.Tenant.TenantConnections["+ i +"].ConnectionReplicaType"));
 
 			List<String> connectionZones = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeTenantResponse.Tenant.TenantConnections["+ i +"].ConnectionZones.Length"); j++) {
@@ -137,6 +177,20 @@ public class DescribeTenantResponseUnmarshaller {
 			tenantZonesItem.setTenantZoneId(_ctx.stringValue("DescribeTenantResponse.Tenant.TenantZones["+ i +"].TenantZoneId"));
 			tenantZonesItem.setRegion(_ctx.stringValue("DescribeTenantResponse.Tenant.TenantZones["+ i +"].Region"));
 			tenantZonesItem.setTenantZoneRole(_ctx.stringValue("DescribeTenantResponse.Tenant.TenantZones["+ i +"].TenantZoneRole"));
+
+			List<TenantZoneReplicasItem> tenantZoneReplicas = new ArrayList<TenantZoneReplicasItem>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeTenantResponse.Tenant.TenantZones["+ i +"].TenantZoneReplicas.Length"); j++) {
+				TenantZoneReplicasItem tenantZoneReplicasItem = new TenantZoneReplicasItem();
+				tenantZoneReplicasItem.setZoneReplicaType(_ctx.stringValue("DescribeTenantResponse.Tenant.TenantZones["+ i +"].TenantZoneReplicas["+ j +"].ZoneReplicaType"));
+				tenantZoneReplicasItem.setZoneNodes(_ctx.stringValue("DescribeTenantResponse.Tenant.TenantZones["+ i +"].TenantZoneReplicas["+ j +"].ZoneNodes"));
+				tenantZoneReplicasItem.setLogicZoneName(_ctx.stringValue("DescribeTenantResponse.Tenant.TenantZones["+ i +"].TenantZoneReplicas["+ j +"].LogicZoneName"));
+				tenantZoneReplicasItem.setZoneCopyId(_ctx.integerValue("DescribeTenantResponse.Tenant.TenantZones["+ i +"].TenantZoneReplicas["+ j +"].ZoneCopyId"));
+				tenantZoneReplicasItem.setFullCopyId(_ctx.integerValue("DescribeTenantResponse.Tenant.TenantZones["+ i +"].TenantZoneReplicas["+ j +"].FullCopyId"));
+				tenantZoneReplicasItem.setReadOnlyCopyId(_ctx.stringValue("DescribeTenantResponse.Tenant.TenantZones["+ i +"].TenantZoneReplicas["+ j +"].ReadOnlyCopyId"));
+
+				tenantZoneReplicas.add(tenantZoneReplicasItem);
+			}
+			tenantZonesItem.setTenantZoneReplicas(tenantZoneReplicas);
 
 			tenantZones.add(tenantZonesItem);
 		}

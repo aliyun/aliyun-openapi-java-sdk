@@ -18,8 +18,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.oceanbasepro.model.v20190901.CreateTenantUserResponse;
-import com.aliyuncs.oceanbasepro.model.v20190901.CreateTenantUserResponse.Data;
-import com.aliyuncs.oceanbasepro.model.v20190901.CreateTenantUserResponse.Data.RolesItem;
+import com.aliyuncs.oceanbasepro.model.v20190901.CreateTenantUserResponse.TenantUser;
+import com.aliyuncs.oceanbasepro.model.v20190901.CreateTenantUserResponse.TenantUser.RolesItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -29,25 +29,20 @@ public class CreateTenantUserResponseUnmarshaller {
 		
 		createTenantUserResponse.setRequestId(_ctx.stringValue("CreateTenantUserResponse.RequestId"));
 
-		List<Data> tenantUser = new ArrayList<Data>();
-		for (int i = 0; i < _ctx.lengthValue("CreateTenantUserResponse.TenantUser.Length"); i++) {
-			Data data = new Data();
-			data.setUserType(_ctx.stringValue("CreateTenantUserResponse.TenantUser["+ i +"].UserType"));
-			data.setUserStatus(_ctx.stringValue("CreateTenantUserResponse.TenantUser["+ i +"].UserStatus"));
-			data.setUserName(_ctx.stringValue("CreateTenantUserResponse.TenantUser["+ i +"].UserName"));
+		TenantUser tenantUser = new TenantUser();
+		tenantUser.setUserType(_ctx.stringValue("CreateTenantUserResponse.TenantUser.UserType"));
+		tenantUser.setUserStatus(_ctx.stringValue("CreateTenantUserResponse.TenantUser.UserStatus"));
+		tenantUser.setUserName(_ctx.stringValue("CreateTenantUserResponse.TenantUser.UserName"));
 
-			List<RolesItem> roles = new ArrayList<RolesItem>();
-			for (int j = 0; j < _ctx.lengthValue("CreateTenantUserResponse.TenantUser["+ i +"].Roles.Length"); j++) {
-				RolesItem rolesItem = new RolesItem();
-				rolesItem.setDatabase(_ctx.stringValue("CreateTenantUserResponse.TenantUser["+ i +"].Roles["+ j +"].Database"));
-				rolesItem.setRole(_ctx.stringValue("CreateTenantUserResponse.TenantUser["+ i +"].Roles["+ j +"].Role"));
+		List<RolesItem> roles = new ArrayList<RolesItem>();
+		for (int i = 0; i < _ctx.lengthValue("CreateTenantUserResponse.TenantUser.Roles.Length"); i++) {
+			RolesItem rolesItem = new RolesItem();
+			rolesItem.setDatabase(_ctx.stringValue("CreateTenantUserResponse.TenantUser.Roles["+ i +"].Database"));
+			rolesItem.setRole(_ctx.stringValue("CreateTenantUserResponse.TenantUser.Roles["+ i +"].Role"));
 
-				roles.add(rolesItem);
-			}
-			data.setRoles(roles);
-
-			tenantUser.add(data);
+			roles.add(rolesItem);
 		}
+		tenantUser.setRoles(roles);
 		createTenantUserResponse.setTenantUser(tenantUser);
 	 
 	 	return createTenantUserResponse;

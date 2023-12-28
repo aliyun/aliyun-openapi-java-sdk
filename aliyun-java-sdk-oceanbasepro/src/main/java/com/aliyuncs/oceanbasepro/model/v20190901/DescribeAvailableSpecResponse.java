@@ -65,6 +65,8 @@ public class DescribeAvailableSpecResponse extends AcsResponse {
 
 			private List<Integer> nodeNum;
 
+			private List<String> diskTypes;
+
 			private DiskSizeRange diskSizeRange;
 
 			private LogDiskSizeRange logDiskSizeRange;
@@ -91,6 +93,14 @@ public class DescribeAvailableSpecResponse extends AcsResponse {
 
 			public void setNodeNum(List<Integer> nodeNum) {
 				this.nodeNum = nodeNum;
+			}
+
+			public List<String> getDiskTypes() {
+				return this.diskTypes;
+			}
+
+			public void setDiskTypes(List<String> diskTypes) {
+				this.diskTypes = diskTypes;
 			}
 
 			public DiskSizeRange getDiskSizeRange() {

@@ -73,6 +73,7 @@ public class DescribeInstanceTopologyResponseUnmarshaller {
 					unitsItem.setManualMigrate(_ctx.booleanValue("DescribeInstanceTopologyResponse.InstanceTopology.Tenants["+ i +"].TenantZones["+ j +"].Units["+ k +"].ManualMigrate"));
 					unitsItem.setEnableCancelMigrateUnit(_ctx.booleanValue("DescribeInstanceTopologyResponse.InstanceTopology.Tenants["+ i +"].TenantZones["+ j +"].Units["+ k +"].EnableCancelMigrateUnit"));
 					unitsItem.setUnitDataSize(_ctx.longValue("DescribeInstanceTopologyResponse.InstanceTopology.Tenants["+ i +"].TenantZones["+ j +"].Units["+ k +"].UnitDataSize"));
+					unitsItem.setReplicaType(_ctx.stringValue("DescribeInstanceTopologyResponse.InstanceTopology.Tenants["+ i +"].TenantZones["+ j +"].Units["+ k +"].ReplicaType"));
 
 					units.add(unitsItem);
 				}
@@ -112,6 +113,9 @@ public class DescribeInstanceTopologyResponseUnmarshaller {
 				nodesItem.setNodeId(_ctx.stringValue("DescribeInstanceTopologyResponse.InstanceTopology.Zones["+ i +"].Nodes["+ j +"].NodeId"));
 				nodesItem.setNodeCopyId(_ctx.longValue("DescribeInstanceTopologyResponse.InstanceTopology.Zones["+ i +"].Nodes["+ j +"].NodeCopyId"));
 				nodesItem.setNodeStatus(_ctx.stringValue("DescribeInstanceTopologyResponse.InstanceTopology.Zones["+ i +"].Nodes["+ j +"].NodeStatus"));
+				nodesItem.setReplicaType(_ctx.stringValue("DescribeInstanceTopologyResponse.InstanceTopology.Zones["+ i +"].Nodes["+ j +"].ReplicaType"));
+				nodesItem.setFullCopyId(_ctx.longValue("DescribeInstanceTopologyResponse.InstanceTopology.Zones["+ i +"].Nodes["+ j +"].FullCopyId"));
+				nodesItem.setReadOnlyCopyId(_ctx.longValue("DescribeInstanceTopologyResponse.InstanceTopology.Zones["+ i +"].Nodes["+ j +"].ReadOnlyCopyId"));
 
 				List<NodeResourceItem> nodeResource = new ArrayList<NodeResourceItem>();
 				for (int k = 0; k < _ctx.lengthValue("DescribeInstanceTopologyResponse.InstanceTopology.Zones["+ i +"].Nodes["+ j +"].NodeResource.Length"); k++) {

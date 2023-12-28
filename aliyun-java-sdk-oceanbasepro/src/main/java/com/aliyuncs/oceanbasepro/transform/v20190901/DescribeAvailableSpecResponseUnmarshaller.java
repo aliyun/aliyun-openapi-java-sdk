@@ -45,6 +45,12 @@ public class DescribeAvailableSpecResponseUnmarshaller {
 			}
 			availableSpecificationsItem.setNodeNum(nodeNum);
 
+			List<String> diskTypes = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeAvailableSpecResponse.Data.AvailableSpecifications["+ i +"].DiskTypes.Length"); j++) {
+				diskTypes.add(_ctx.stringValue("DescribeAvailableSpecResponse.Data.AvailableSpecifications["+ i +"].DiskTypes["+ j +"]"));
+			}
+			availableSpecificationsItem.setDiskTypes(diskTypes);
+
 			DiskSizeRange diskSizeRange = new DiskSizeRange();
 			diskSizeRange.setStep(_ctx.longValue("DescribeAvailableSpecResponse.Data.AvailableSpecifications["+ i +"].DiskSizeRange.Step"));
 			diskSizeRange.setMax(_ctx.longValue("DescribeAvailableSpecResponse.Data.AvailableSpecifications["+ i +"].DiskSizeRange.Max"));

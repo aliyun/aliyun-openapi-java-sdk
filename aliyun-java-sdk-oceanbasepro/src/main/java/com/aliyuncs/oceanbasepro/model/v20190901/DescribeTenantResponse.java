@@ -99,6 +99,8 @@ public class DescribeTenantResponse extends AcsResponse {
 
 		private String timeZone;
 
+		private String dataMergeTime;
+
 		private List<TenantConnectionsItem> tenantConnections;
 
 		private List<TenantZonesItem> tenantZones;
@@ -106,6 +108,8 @@ public class DescribeTenantResponse extends AcsResponse {
 		private List<String> availableZones;
 
 		private TenantResource tenantResource;
+
+		private ReadOnlyResource readOnlyResource;
 
 		public String getTenantId() {
 			return this.tenantId;
@@ -315,6 +319,14 @@ public class DescribeTenantResponse extends AcsResponse {
 			this.timeZone = timeZone;
 		}
 
+		public String getDataMergeTime() {
+			return this.dataMergeTime;
+		}
+
+		public void setDataMergeTime(String dataMergeTime) {
+			this.dataMergeTime = dataMergeTime;
+		}
+
 		public List<TenantConnectionsItem> getTenantConnections() {
 			return this.tenantConnections;
 		}
@@ -345,6 +357,14 @@ public class DescribeTenantResponse extends AcsResponse {
 
 		public void setTenantResource(TenantResource tenantResource) {
 			this.tenantResource = tenantResource;
+		}
+
+		public ReadOnlyResource getReadOnlyResource() {
+			return this.readOnlyResource;
+		}
+
+		public void setReadOnlyResource(ReadOnlyResource readOnlyResource) {
+			this.readOnlyResource = readOnlyResource;
 		}
 
 		public static class TenantConnectionsItem {
@@ -380,6 +400,8 @@ public class DescribeTenantResponse extends AcsResponse {
 			private String tenantEndpointId;
 
 			private Long maxConnectionNum;
+
+			private String connectionReplicaType;
 
 			private List<String> connectionZones;
 
@@ -511,6 +533,14 @@ public class DescribeTenantResponse extends AcsResponse {
 				this.maxConnectionNum = maxConnectionNum;
 			}
 
+			public String getConnectionReplicaType() {
+				return this.connectionReplicaType;
+			}
+
+			public void setConnectionReplicaType(String connectionReplicaType) {
+				this.connectionReplicaType = connectionReplicaType;
+			}
+
 			public List<String> getConnectionZones() {
 				return this.connectionZones;
 			}
@@ -527,6 +557,8 @@ public class DescribeTenantResponse extends AcsResponse {
 			private String region;
 
 			private String tenantZoneRole;
+
+			private List<TenantZoneReplicasItem> tenantZoneReplicas;
 
 			public String getTenantZoneId() {
 				return this.tenantZoneId;
@@ -550,6 +582,77 @@ public class DescribeTenantResponse extends AcsResponse {
 
 			public void setTenantZoneRole(String tenantZoneRole) {
 				this.tenantZoneRole = tenantZoneRole;
+			}
+
+			public List<TenantZoneReplicasItem> getTenantZoneReplicas() {
+				return this.tenantZoneReplicas;
+			}
+
+			public void setTenantZoneReplicas(List<TenantZoneReplicasItem> tenantZoneReplicas) {
+				this.tenantZoneReplicas = tenantZoneReplicas;
+			}
+
+			public static class TenantZoneReplicasItem {
+
+				private String zoneReplicaType;
+
+				private String zoneNodes;
+
+				private String logicZoneName;
+
+				private Integer zoneCopyId;
+
+				private Integer fullCopyId;
+
+				private String readOnlyCopyId;
+
+				public String getZoneReplicaType() {
+					return this.zoneReplicaType;
+				}
+
+				public void setZoneReplicaType(String zoneReplicaType) {
+					this.zoneReplicaType = zoneReplicaType;
+				}
+
+				public String getZoneNodes() {
+					return this.zoneNodes;
+				}
+
+				public void setZoneNodes(String zoneNodes) {
+					this.zoneNodes = zoneNodes;
+				}
+
+				public String getLogicZoneName() {
+					return this.logicZoneName;
+				}
+
+				public void setLogicZoneName(String logicZoneName) {
+					this.logicZoneName = logicZoneName;
+				}
+
+				public Integer getZoneCopyId() {
+					return this.zoneCopyId;
+				}
+
+				public void setZoneCopyId(Integer zoneCopyId) {
+					this.zoneCopyId = zoneCopyId;
+				}
+
+				public Integer getFullCopyId() {
+					return this.fullCopyId;
+				}
+
+				public void setFullCopyId(Integer fullCopyId) {
+					this.fullCopyId = fullCopyId;
+				}
+
+				public String getReadOnlyCopyId() {
+					return this.readOnlyCopyId;
+				}
+
+				public void setReadOnlyCopyId(String readOnlyCopyId) {
+					this.readOnlyCopyId = readOnlyCopyId;
+				}
 			}
 		}
 
@@ -728,6 +831,204 @@ public class DescribeTenantResponse extends AcsResponse {
 			}
 
 			public static class LogDiskSize {
+
+				private Integer totalLogDisk;
+
+				private Integer unitLogDisk;
+
+				public Integer getTotalLogDisk() {
+					return this.totalLogDisk;
+				}
+
+				public void setTotalLogDisk(Integer totalLogDisk) {
+					this.totalLogDisk = totalLogDisk;
+				}
+
+				public Integer getUnitLogDisk() {
+					return this.unitLogDisk;
+				}
+
+				public void setUnitLogDisk(Integer unitLogDisk) {
+					this.unitLogDisk = unitLogDisk;
+				}
+			}
+		}
+
+		public static class ReadOnlyResource {
+
+			private Integer unitNum;
+
+			private Cpu1 cpu1;
+
+			private Memory2 memory2;
+
+			private DiskSize3 diskSize3;
+
+			private CapacityUnit4 capacityUnit4;
+
+			private LogDiskSize5 logDiskSize5;
+
+			public Integer getUnitNum() {
+				return this.unitNum;
+			}
+
+			public void setUnitNum(Integer unitNum) {
+				this.unitNum = unitNum;
+			}
+
+			public Cpu1 getCpu1() {
+				return this.cpu1;
+			}
+
+			public void setCpu1(Cpu1 cpu1) {
+				this.cpu1 = cpu1;
+			}
+
+			public Memory2 getMemory2() {
+				return this.memory2;
+			}
+
+			public void setMemory2(Memory2 memory2) {
+				this.memory2 = memory2;
+			}
+
+			public DiskSize3 getDiskSize3() {
+				return this.diskSize3;
+			}
+
+			public void setDiskSize3(DiskSize3 diskSize3) {
+				this.diskSize3 = diskSize3;
+			}
+
+			public CapacityUnit4 getCapacityUnit4() {
+				return this.capacityUnit4;
+			}
+
+			public void setCapacityUnit4(CapacityUnit4 capacityUnit4) {
+				this.capacityUnit4 = capacityUnit4;
+			}
+
+			public LogDiskSize5 getLogDiskSize5() {
+				return this.logDiskSize5;
+			}
+
+			public void setLogDiskSize5(LogDiskSize5 logDiskSize5) {
+				this.logDiskSize5 = logDiskSize5;
+			}
+
+			public static class Cpu1 {
+
+				private Float usedCpu;
+
+				private Float totalCpu;
+
+				private Float unitCpu;
+
+				public Float getUsedCpu() {
+					return this.usedCpu;
+				}
+
+				public void setUsedCpu(Float usedCpu) {
+					this.usedCpu = usedCpu;
+				}
+
+				public Float getTotalCpu() {
+					return this.totalCpu;
+				}
+
+				public void setTotalCpu(Float totalCpu) {
+					this.totalCpu = totalCpu;
+				}
+
+				public Float getUnitCpu() {
+					return this.unitCpu;
+				}
+
+				public void setUnitCpu(Float unitCpu) {
+					this.unitCpu = unitCpu;
+				}
+			}
+
+			public static class Memory2 {
+
+				private Float usedMemory;
+
+				private Float totalMemory;
+
+				private Float unitMemory;
+
+				public Float getUsedMemory() {
+					return this.usedMemory;
+				}
+
+				public void setUsedMemory(Float usedMemory) {
+					this.usedMemory = usedMemory;
+				}
+
+				public Float getTotalMemory() {
+					return this.totalMemory;
+				}
+
+				public void setTotalMemory(Float totalMemory) {
+					this.totalMemory = totalMemory;
+				}
+
+				public Float getUnitMemory() {
+					return this.unitMemory;
+				}
+
+				public void setUnitMemory(Float unitMemory) {
+					this.unitMemory = unitMemory;
+				}
+			}
+
+			public static class DiskSize3 {
+
+				private Float usedDiskSize;
+
+				public Float getUsedDiskSize() {
+					return this.usedDiskSize;
+				}
+
+				public void setUsedDiskSize(Float usedDiskSize) {
+					this.usedDiskSize = usedDiskSize;
+				}
+			}
+
+			public static class CapacityUnit4 {
+
+				private Integer maxCapacityUnit;
+
+				private Integer minCapacityUnit;
+
+				private Integer usedCapacit;
+
+				public Integer getMaxCapacityUnit() {
+					return this.maxCapacityUnit;
+				}
+
+				public void setMaxCapacityUnit(Integer maxCapacityUnit) {
+					this.maxCapacityUnit = maxCapacityUnit;
+				}
+
+				public Integer getMinCapacityUnit() {
+					return this.minCapacityUnit;
+				}
+
+				public void setMinCapacityUnit(Integer minCapacityUnit) {
+					this.minCapacityUnit = minCapacityUnit;
+				}
+
+				public Integer getUsedCapacit() {
+					return this.usedCapacit;
+				}
+
+				public void setUsedCapacit(Integer usedCapacit) {
+					this.usedCapacit = usedCapacit;
+				}
+			}
+
+			public static class LogDiskSize5 {
 
 				private Integer totalLogDisk;
 

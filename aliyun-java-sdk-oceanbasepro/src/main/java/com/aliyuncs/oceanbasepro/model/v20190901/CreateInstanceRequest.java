@@ -55,6 +55,10 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	private String series;
 
+	private String primaryInstance;
+
+	private String primaryRegion;
+
 	private String chargeType;
 	public CreateInstanceRequest() {
 		super("OceanBasePro", "2019-09-01", "CreateInstance", "oceanbase");
@@ -227,6 +231,28 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		this.series = series;
 		if(series != null){
 			putBodyParameter("Series", series);
+		}
+	}
+
+	public String getPrimaryInstance() {
+		return this.primaryInstance;
+	}
+
+	public void setPrimaryInstance(String primaryInstance) {
+		this.primaryInstance = primaryInstance;
+		if(primaryInstance != null){
+			putBodyParameter("PrimaryInstance", primaryInstance);
+		}
+	}
+
+	public String getPrimaryRegion() {
+		return this.primaryRegion;
+	}
+
+	public void setPrimaryRegion(String primaryRegion) {
+		this.primaryRegion = primaryRegion;
+		if(primaryRegion != null){
+			putBodyParameter("PrimaryRegion", primaryRegion);
 		}
 	}
 
