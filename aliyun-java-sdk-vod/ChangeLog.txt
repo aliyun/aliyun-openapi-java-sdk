@@ -1,3 +1,6 @@
+2024-01-04 Version: 2.16.22
+- open GenerateDownloadDecryptkey.
+
 2023-12-15 Version: 2.16.21
 - SubmitSnapshotJob add parameter
 
