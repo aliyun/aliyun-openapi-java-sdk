@@ -15,6 +15,7 @@
 package com.aliyuncs.dypnsapi.model.v20170525;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.dypnsapi.Endpoint;
 
@@ -22,22 +23,19 @@ import com.aliyuncs.dypnsapi.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetAuthTokenRequest extends RpcAcsRequest<GetAuthTokenResponse> {
+public class JyQueryAppInfoBySceneCodeRequest extends RpcAcsRequest<JyQueryAppInfoBySceneCodeResponse> {
 	   
 
 	private Long resourceOwnerId;
-
-	private String origin;
 
 	private String sceneCode;
 
 	private String resourceOwnerAccount;
 
 	private Long ownerId;
-
-	private String url;
-	public GetAuthTokenRequest() {
-		super("Dypnsapi", "2017-05-25", "GetAuthToken", "dypnsapi");
+	public JyQueryAppInfoBySceneCodeRequest() {
+		super("Dypnsapi", "2017-05-25", "JyQueryAppInfoBySceneCode", "dypnsapi");
+		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -53,17 +51,6 @@ public class GetAuthTokenRequest extends RpcAcsRequest<GetAuthTokenResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getOrigin() {
-		return this.origin;
-	}
-
-	public void setOrigin(String origin) {
-		this.origin = origin;
-		if(origin != null){
-			putQueryParameter("Origin", origin);
 		}
 	}
 
@@ -100,20 +87,9 @@ public class GetAuthTokenRequest extends RpcAcsRequest<GetAuthTokenResponse> {
 		}
 	}
 
-	public String getUrl() {
-		return this.url;
-	}
-
-	public void setUrl(String url) {
-		this.url = url;
-		if(url != null){
-			putQueryParameter("Url", url);
-		}
-	}
-
 	@Override
-	public Class<GetAuthTokenResponse> getResponseClass() {
-		return GetAuthTokenResponse.class;
+	public Class<JyQueryAppInfoBySceneCodeResponse> getResponseClass() {
+		return JyQueryAppInfoBySceneCodeResponse.class;
 	}
 
 }
