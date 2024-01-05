@@ -25,7 +25,7 @@ import com.aliyuncs.config.Endpoint;
 public class ListIntegratedServiceRequest extends RpcAcsRequest<ListIntegratedServiceResponse> {
 	   
 	public ListIntegratedServiceRequest() {
-		super("Config", "2020-09-07", "ListIntegratedService");
+		super("Config", "2020-09-07", "ListIntegratedService", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

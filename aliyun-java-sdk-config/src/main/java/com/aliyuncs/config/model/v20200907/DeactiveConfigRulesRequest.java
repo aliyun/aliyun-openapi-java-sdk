@@ -27,7 +27,7 @@ public class DeactiveConfigRulesRequest extends RpcAcsRequest<DeactiveConfigRule
 
 	private String configRuleIds;
 	public DeactiveConfigRulesRequest() {
-		super("Config", "2020-09-07", "DeactiveConfigRules");
+		super("Config", "2020-09-07", "DeactiveConfigRules", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

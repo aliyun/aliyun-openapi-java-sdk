@@ -45,7 +45,7 @@ public class ListAggregateResourceRelationsRequest extends RpcAcsRequest<ListAgg
 
 	private String region;
 	public ListAggregateResourceRelationsRequest() {
-		super("Config", "2020-09-07", "ListAggregateResourceRelations");
+		super("Config", "2020-09-07", "ListAggregateResourceRelations", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

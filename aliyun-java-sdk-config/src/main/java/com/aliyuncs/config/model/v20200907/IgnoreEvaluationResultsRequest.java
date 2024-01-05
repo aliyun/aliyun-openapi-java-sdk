@@ -37,7 +37,7 @@ public class IgnoreEvaluationResultsRequest extends RpcAcsRequest<IgnoreEvaluati
 	@SerializedName("resources")
 	private List<Resources> resources;
 	public IgnoreEvaluationResultsRequest() {
-		super("Config", "2020-09-07", "IgnoreEvaluationResults");
+		super("Config", "2020-09-07", "IgnoreEvaluationResults", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

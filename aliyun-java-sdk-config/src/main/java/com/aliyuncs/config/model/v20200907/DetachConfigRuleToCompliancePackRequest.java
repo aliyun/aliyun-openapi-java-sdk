@@ -29,7 +29,7 @@ public class DetachConfigRuleToCompliancePackRequest extends RpcAcsRequest<Detac
 
 	private String compliancePackId;
 	public DetachConfigRuleToCompliancePackRequest() {
-		super("Config", "2020-09-07", "DetachConfigRuleToCompliancePack");
+		super("Config", "2020-09-07", "DetachConfigRuleToCompliancePack", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

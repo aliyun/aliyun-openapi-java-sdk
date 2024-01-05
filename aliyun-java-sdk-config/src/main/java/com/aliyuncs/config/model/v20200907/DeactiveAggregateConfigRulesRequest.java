@@ -29,7 +29,7 @@ public class DeactiveAggregateConfigRulesRequest extends RpcAcsRequest<DeactiveA
 
 	private String aggregatorId;
 	public DeactiveAggregateConfigRulesRequest() {
-		super("Config", "2020-09-07", "DeactiveAggregateConfigRules");
+		super("Config", "2020-09-07", "DeactiveAggregateConfigRules", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

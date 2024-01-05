@@ -35,6 +35,7 @@ public class ListIntegratedServiceResponseUnmarshaller {
 			dataItem.setServiceName(_ctx.stringValue("ListIntegratedServiceResponse.Data["+ i +"].ServiceName"));
 			dataItem.setServiceCode(_ctx.stringValue("ListIntegratedServiceResponse.Data["+ i +"].ServiceCode"));
 			dataItem.setStatus(_ctx.booleanValue("ListIntegratedServiceResponse.Data["+ i +"].Status"));
+			dataItem.setIntegratedTypes(_ctx.stringValue("ListIntegratedServiceResponse.Data["+ i +"].IntegratedTypes"));
 
 			data.add(dataItem);
 		}

@@ -36,6 +36,7 @@ public class GetCompliancePackResponseUnmarshaller {
 		compliancePack.setCompliancePackId(_ctx.stringValue("GetCompliancePackResponse.CompliancePack.CompliancePackId"));
 		compliancePack.setRiskLevel(_ctx.integerValue("GetCompliancePackResponse.CompliancePack.RiskLevel"));
 		compliancePack.setDescription(_ctx.stringValue("GetCompliancePackResponse.CompliancePack.Description"));
+		compliancePack.setTemplateContent(_ctx.stringValue("GetCompliancePackResponse.CompliancePack.TemplateContent"));
 		compliancePack.setCompliancePackName(_ctx.stringValue("GetCompliancePackResponse.CompliancePack.CompliancePackName"));
 		compliancePack.setAccountId(_ctx.longValue("GetCompliancePackResponse.CompliancePack.AccountId"));
 		compliancePack.setCompliancePackTemplateId(_ctx.stringValue("GetCompliancePackResponse.CompliancePack.CompliancePackTemplateId"));

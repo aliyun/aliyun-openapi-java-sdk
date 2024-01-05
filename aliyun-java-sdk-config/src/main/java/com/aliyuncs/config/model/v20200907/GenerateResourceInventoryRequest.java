@@ -29,7 +29,7 @@ public class GenerateResourceInventoryRequest extends RpcAcsRequest<GenerateReso
 
 	private String resourceTypes;
 	public GenerateResourceInventoryRequest() {
-		super("Config", "2020-09-07", "GenerateResourceInventory");
+		super("Config", "2020-09-07", "GenerateResourceInventory", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -33,7 +33,7 @@ public class ListRemediationExecutionsRequest extends RpcAcsRequest<ListRemediat
 
 	private Long maxResults;
 	public ListRemediationExecutionsRequest() {
-		super("Config", "2020-09-07", "ListRemediationExecutions");
+		super("Config", "2020-09-07", "ListRemediationExecutions", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

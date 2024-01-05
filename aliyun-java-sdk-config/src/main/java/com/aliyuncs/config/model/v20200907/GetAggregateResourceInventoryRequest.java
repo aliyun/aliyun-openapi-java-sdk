@@ -27,7 +27,7 @@ public class GetAggregateResourceInventoryRequest extends RpcAcsRequest<GetAggre
 
 	private String aggregatorId;
 	public GetAggregateResourceInventoryRequest() {
-		super("Config", "2020-09-07", "GetAggregateResourceInventory");
+		super("Config", "2020-09-07", "GetAggregateResourceInventory", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

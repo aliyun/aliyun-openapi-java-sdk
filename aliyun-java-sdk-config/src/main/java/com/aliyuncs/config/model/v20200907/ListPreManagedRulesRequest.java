@@ -35,7 +35,7 @@ public class ListPreManagedRulesRequest extends RpcAcsRequest<ListPreManagedRule
 
 	private Long pageSize;
 	public ListPreManagedRulesRequest() {
-		super("Config", "2020-09-07", "ListPreManagedRules");
+		super("Config", "2020-09-07", "ListPreManagedRules", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

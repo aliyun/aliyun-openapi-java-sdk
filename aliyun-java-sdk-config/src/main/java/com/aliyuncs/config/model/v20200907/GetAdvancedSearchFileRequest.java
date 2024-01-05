@@ -25,7 +25,7 @@ import com.aliyuncs.config.Endpoint;
 public class GetAdvancedSearchFileRequest extends RpcAcsRequest<GetAdvancedSearchFileResponse> {
 	   
 	public GetAdvancedSearchFileRequest() {
-		super("Config", "2020-09-07", "GetAdvancedSearchFile");
+		super("Config", "2020-09-07", "GetAdvancedSearchFile", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

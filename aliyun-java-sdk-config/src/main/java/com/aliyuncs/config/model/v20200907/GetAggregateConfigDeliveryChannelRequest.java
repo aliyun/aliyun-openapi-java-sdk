@@ -29,7 +29,7 @@ public class GetAggregateConfigDeliveryChannelRequest extends RpcAcsRequest<GetA
 
 	private String deliveryChannelId;
 	public GetAggregateConfigDeliveryChannelRequest() {
-		super("Config", "2020-09-07", "GetAggregateConfigDeliveryChannel");
+		super("Config", "2020-09-07", "GetAggregateConfigDeliveryChannel", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

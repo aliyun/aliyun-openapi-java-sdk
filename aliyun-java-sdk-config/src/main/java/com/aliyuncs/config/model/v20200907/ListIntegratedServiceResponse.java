@@ -55,6 +55,8 @@ public class ListIntegratedServiceResponse extends AcsResponse {
 
 		private Boolean status;
 
+		private String integratedTypes;
+
 		public Long getAccountId() {
 			return this.accountId;
 		}
@@ -85,6 +87,14 @@ public class ListIntegratedServiceResponse extends AcsResponse {
 
 		public void setStatus(Boolean status) {
 			this.status = status;
+		}
+
+		public String getIntegratedTypes() {
+			return this.integratedTypes;
+		}
+
+		public void setIntegratedTypes(String integratedTypes) {
+			this.integratedTypes = integratedTypes;
 		}
 	}
 

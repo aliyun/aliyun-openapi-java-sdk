@@ -35,7 +35,7 @@ public class GetAggregateResourceComplianceByConfigRuleRequest extends RpcAcsReq
 
 	private String complianceType;
 	public GetAggregateResourceComplianceByConfigRuleRequest() {
-		super("Config", "2020-09-07", "GetAggregateResourceComplianceByConfigRule");
+		super("Config", "2020-09-07", "GetAggregateResourceComplianceByConfigRule", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

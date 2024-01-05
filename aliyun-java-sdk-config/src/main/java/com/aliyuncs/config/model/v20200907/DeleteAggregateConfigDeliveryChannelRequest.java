@@ -29,7 +29,7 @@ public class DeleteAggregateConfigDeliveryChannelRequest extends RpcAcsRequest<D
 
 	private String deliveryChannelId;
 	public DeleteAggregateConfigDeliveryChannelRequest() {
-		super("Config", "2020-09-07", "DeleteAggregateConfigDeliveryChannel");
+		super("Config", "2020-09-07", "DeleteAggregateConfigDeliveryChannel", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

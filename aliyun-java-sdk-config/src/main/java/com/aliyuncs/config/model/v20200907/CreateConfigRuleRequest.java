@@ -58,7 +58,7 @@ public class CreateConfigRuleRequest extends RpcAcsRequest<CreateConfigRuleRespo
 
 	private String excludeResourceIdsScope;
 	public CreateConfigRuleRequest() {
-		super("Config", "2020-09-07", "CreateConfigRule");
+		super("Config", "2020-09-07", "CreateConfigRule", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

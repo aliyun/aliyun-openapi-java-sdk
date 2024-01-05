@@ -32,7 +32,7 @@ public class PutEvaluationsRequest extends RpcAcsRequest<PutEvaluationsResponse>
 
 	private String resultToken;
 	public PutEvaluationsRequest() {
-		super("Config", "2020-09-07", "PutEvaluations");
+		super("Config", "2020-09-07", "PutEvaluations", "config");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

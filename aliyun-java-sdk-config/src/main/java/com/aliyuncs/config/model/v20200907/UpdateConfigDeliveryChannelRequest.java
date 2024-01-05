@@ -49,7 +49,7 @@ public class UpdateConfigDeliveryChannelRequest extends RpcAcsRequest<UpdateConf
 
 	private Long status;
 	public UpdateConfigDeliveryChannelRequest() {
-		super("Config", "2020-09-07", "UpdateConfigDeliveryChannel");
+		super("Config", "2020-09-07", "UpdateConfigDeliveryChannel", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

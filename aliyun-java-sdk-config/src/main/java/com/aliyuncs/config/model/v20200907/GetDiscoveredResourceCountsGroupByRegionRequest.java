@@ -27,7 +27,7 @@ public class GetDiscoveredResourceCountsGroupByRegionRequest extends RpcAcsReque
 
 	private String resourceType;
 	public GetDiscoveredResourceCountsGroupByRegionRequest() {
-		super("Config", "2020-09-07", "GetDiscoveredResourceCountsGroupByRegion");
+		super("Config", "2020-09-07", "GetDiscoveredResourceCountsGroupByRegion", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

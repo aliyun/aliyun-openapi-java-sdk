@@ -29,7 +29,7 @@ public class GetAggregateResourceComplianceByPackRequest extends RpcAcsRequest<G
 
 	private String compliancePackId;
 	public GetAggregateResourceComplianceByPackRequest() {
-		super("Config", "2020-09-07", "GetAggregateResourceComplianceByPack");
+		super("Config", "2020-09-07", "GetAggregateResourceComplianceByPack", "config");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

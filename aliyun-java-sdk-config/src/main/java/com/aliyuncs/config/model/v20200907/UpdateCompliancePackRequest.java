@@ -51,7 +51,7 @@ public class UpdateCompliancePackRequest extends RpcAcsRequest<UpdateComplianceP
 
 	private String excludeResourceIdsScope;
 	public UpdateCompliancePackRequest() {
-		super("Config", "2020-09-07", "UpdateCompliancePack");
+		super("Config", "2020-09-07", "UpdateCompliancePack", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

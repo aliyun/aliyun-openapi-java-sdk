@@ -27,7 +27,7 @@ public class GetAggregatorRequest extends RpcAcsRequest<GetAggregatorResponse> {
 
 	private String aggregatorId;
 	public GetAggregatorRequest() {
-		super("Config", "2020-09-07", "GetAggregator");
+		super("Config", "2020-09-07", "GetAggregator", "config");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

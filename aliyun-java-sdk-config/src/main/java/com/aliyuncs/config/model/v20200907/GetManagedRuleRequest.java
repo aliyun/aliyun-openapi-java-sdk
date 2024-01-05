@@ -27,7 +27,7 @@ public class GetManagedRuleRequest extends RpcAcsRequest<GetManagedRuleResponse>
 
 	private String identifier;
 	public GetManagedRuleRequest() {
-		super("Config", "2020-09-07", "GetManagedRule");
+		super("Config", "2020-09-07", "GetManagedRule", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

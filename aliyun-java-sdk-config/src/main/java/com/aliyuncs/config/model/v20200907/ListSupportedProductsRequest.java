@@ -30,7 +30,7 @@ public class ListSupportedProductsRequest extends RpcAcsRequest<ListSupportedPro
 
 	private Integer maxResults;
 	public ListSupportedProductsRequest() {
-		super("Config", "2020-09-07", "ListSupportedProducts");
+		super("Config", "2020-09-07", "ListSupportedProducts", "config");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

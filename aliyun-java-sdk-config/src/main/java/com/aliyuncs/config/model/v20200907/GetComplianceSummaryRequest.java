@@ -25,7 +25,7 @@ import com.aliyuncs.config.Endpoint;
 public class GetComplianceSummaryRequest extends RpcAcsRequest<GetComplianceSummaryResponse> {
 	   
 	public GetComplianceSummaryRequest() {
-		super("Config", "2020-09-07", "GetComplianceSummary");
+		super("Config", "2020-09-07", "GetComplianceSummary", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

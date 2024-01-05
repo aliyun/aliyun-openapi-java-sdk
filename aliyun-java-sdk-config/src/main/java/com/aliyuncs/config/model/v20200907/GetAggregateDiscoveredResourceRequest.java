@@ -37,7 +37,7 @@ public class GetAggregateDiscoveredResourceRequest extends RpcAcsRequest<GetAggr
 
 	private String region;
 	public GetAggregateDiscoveredResourceRequest() {
-		super("Config", "2020-09-07", "GetAggregateDiscoveredResource");
+		super("Config", "2020-09-07", "GetAggregateDiscoveredResource", "config");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

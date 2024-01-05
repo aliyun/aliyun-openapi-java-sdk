@@ -39,7 +39,7 @@ public class UpdateRemediationRequest extends RpcAcsRequest<UpdateRemediationRes
 
 	private String invokeType;
 	public UpdateRemediationRequest() {
-		super("Config", "2020-09-07", "UpdateRemediation");
+		super("Config", "2020-09-07", "UpdateRemediation", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -25,7 +25,7 @@ import com.aliyuncs.config.Endpoint;
 public class GetResourceInventoryRequest extends RpcAcsRequest<GetResourceInventoryResponse> {
 	   
 	public GetResourceInventoryRequest() {
-		super("Config", "2020-09-07", "GetResourceInventory");
+		super("Config", "2020-09-07", "GetResourceInventory", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

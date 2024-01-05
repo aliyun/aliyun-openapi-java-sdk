@@ -26,7 +26,7 @@ import com.aliyuncs.config.Endpoint;
 public class GetConfigurationRecorderRequest extends RpcAcsRequest<GetConfigurationRecorderResponse> {
 	   
 	public GetConfigurationRecorderRequest() {
-		super("Config", "2020-09-07", "GetConfigurationRecorder");
+		super("Config", "2020-09-07", "GetConfigurationRecorder", "config");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

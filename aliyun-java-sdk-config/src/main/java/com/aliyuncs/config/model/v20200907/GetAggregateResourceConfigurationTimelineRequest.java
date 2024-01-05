@@ -45,7 +45,7 @@ public class GetAggregateResourceConfigurationTimelineRequest extends RpcAcsRequ
 
 	private String region;
 	public GetAggregateResourceConfigurationTimelineRequest() {
-		super("Config", "2020-09-07", "GetAggregateResourceConfigurationTimeline");
+		super("Config", "2020-09-07", "GetAggregateResourceConfigurationTimeline", "config");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

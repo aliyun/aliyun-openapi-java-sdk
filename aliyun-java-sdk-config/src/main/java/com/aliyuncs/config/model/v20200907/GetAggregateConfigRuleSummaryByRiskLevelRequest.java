@@ -27,7 +27,7 @@ public class GetAggregateConfigRuleSummaryByRiskLevelRequest extends RpcAcsReque
 
 	private String aggregatorId;
 	public GetAggregateConfigRuleSummaryByRiskLevelRequest() {
-		super("Config", "2020-09-07", "GetAggregateConfigRuleSummaryByRiskLevel");
+		super("Config", "2020-09-07", "GetAggregateConfigRuleSummaryByRiskLevel", "config");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

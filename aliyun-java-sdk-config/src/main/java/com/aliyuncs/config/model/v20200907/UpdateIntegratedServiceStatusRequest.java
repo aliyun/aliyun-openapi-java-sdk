@@ -25,16 +25,29 @@ import com.aliyuncs.config.Endpoint;
 public class UpdateIntegratedServiceStatusRequest extends RpcAcsRequest<UpdateIntegratedServiceStatusResponse> {
 	   
 
+	private String integratedTypes;
+
 	private String serviceCode;
 
 	private Boolean status;
 	public UpdateIntegratedServiceStatusRequest() {
-		super("Config", "2020-09-07", "UpdateIntegratedServiceStatus");
+		super("Config", "2020-09-07", "UpdateIntegratedServiceStatus", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getIntegratedTypes() {
+		return this.integratedTypes;
+	}
+
+	public void setIntegratedTypes(String integratedTypes) {
+		this.integratedTypes = integratedTypes;
+		if(integratedTypes != null){
+			putBodyParameter("IntegratedTypes", integratedTypes);
+		}
 	}
 
 	public String getServiceCode() {

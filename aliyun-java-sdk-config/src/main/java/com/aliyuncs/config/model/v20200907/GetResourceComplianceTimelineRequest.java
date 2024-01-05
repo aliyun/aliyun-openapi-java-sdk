@@ -39,7 +39,7 @@ public class GetResourceComplianceTimelineRequest extends RpcAcsRequest<GetResou
 
 	private String region;
 	public GetResourceComplianceTimelineRequest() {
-		super("Config", "2020-09-07", "GetResourceComplianceTimeline");
+		super("Config", "2020-09-07", "GetResourceComplianceTimeline", "config");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

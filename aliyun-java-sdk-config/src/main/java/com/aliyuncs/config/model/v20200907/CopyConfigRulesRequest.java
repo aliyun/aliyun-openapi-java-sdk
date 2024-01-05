@@ -31,7 +31,7 @@ public class CopyConfigRulesRequest extends RpcAcsRequest<CopyConfigRulesRespons
 
 	private String srcAggregatorId;
 	public CopyConfigRulesRequest() {
-		super("Config", "2020-09-07", "CopyConfigRules");
+		super("Config", "2020-09-07", "CopyConfigRules", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

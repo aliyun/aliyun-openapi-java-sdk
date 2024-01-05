@@ -27,7 +27,7 @@ public class ListAggregateConfigRuleEvaluationStatisticsRequest extends RpcAcsRe
 
 	private String aggregatorId;
 	public ListAggregateConfigRuleEvaluationStatisticsRequest() {
-		super("Config", "2020-09-07", "ListAggregateConfigRuleEvaluationStatistics");
+		super("Config", "2020-09-07", "ListAggregateConfigRuleEvaluationStatistics", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

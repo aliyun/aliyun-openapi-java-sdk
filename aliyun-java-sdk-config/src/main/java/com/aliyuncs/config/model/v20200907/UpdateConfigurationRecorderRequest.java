@@ -28,7 +28,7 @@ public class UpdateConfigurationRecorderRequest extends RpcAcsRequest<UpdateConf
 
 	private String resourceTypes;
 	public UpdateConfigurationRecorderRequest() {
-		super("Config", "2020-09-07", "UpdateConfigurationRecorder");
+		super("Config", "2020-09-07", "UpdateConfigurationRecorder", "config");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

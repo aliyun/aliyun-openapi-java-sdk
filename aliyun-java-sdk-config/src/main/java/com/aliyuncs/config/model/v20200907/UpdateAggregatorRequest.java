@@ -39,7 +39,7 @@ public class UpdateAggregatorRequest extends RpcAcsRequest<UpdateAggregatorRespo
 	@SerializedName("aggregatorAccounts")
 	private List<AggregatorAccounts> aggregatorAccounts;
 	public UpdateAggregatorRequest() {
-		super("Config", "2020-09-07", "UpdateAggregator");
+		super("Config", "2020-09-07", "UpdateAggregator", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

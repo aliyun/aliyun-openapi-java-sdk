@@ -28,7 +28,7 @@ public class ActiveConfigRulesRequest extends RpcAcsRequest<ActiveConfigRulesRes
 
 	private String configRuleIds;
 	public ActiveConfigRulesRequest() {
-		super("Config", "2020-09-07", "ActiveConfigRules");
+		super("Config", "2020-09-07", "ActiveConfigRules", "config");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

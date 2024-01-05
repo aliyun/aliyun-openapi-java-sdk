@@ -24,6 +24,7 @@ public class GetIntegratedServiceStatusResponseUnmarshaller {
 		
 		getIntegratedServiceStatusResponse.setRequestId(_ctx.stringValue("GetIntegratedServiceStatusResponse.RequestId"));
 		getIntegratedServiceStatusResponse.setData(_ctx.booleanValue("GetIntegratedServiceStatusResponse.Data"));
+		getIntegratedServiceStatusResponse.setIntegratedTypes(_ctx.stringValue("GetIntegratedServiceStatusResponse.IntegratedTypes"));
 	 
 	 	return getIntegratedServiceStatusResponse;
 	}

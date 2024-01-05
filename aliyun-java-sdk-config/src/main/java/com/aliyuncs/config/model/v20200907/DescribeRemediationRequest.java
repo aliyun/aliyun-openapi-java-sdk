@@ -29,7 +29,7 @@ public class DescribeRemediationRequest extends RpcAcsRequest<DescribeRemediatio
 
 	private String remediationId;
 	public DescribeRemediationRequest() {
-		super("Config", "2020-09-07", "DescribeRemediation");
+		super("Config", "2020-09-07", "DescribeRemediation", "config");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

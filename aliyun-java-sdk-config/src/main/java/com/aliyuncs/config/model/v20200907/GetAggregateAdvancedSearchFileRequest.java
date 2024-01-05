@@ -27,7 +27,7 @@ public class GetAggregateAdvancedSearchFileRequest extends RpcAcsRequest<GetAggr
 
 	private String aggregatorId;
 	public GetAggregateAdvancedSearchFileRequest() {
-		super("Config", "2020-09-07", "GetAggregateAdvancedSearchFile");
+		super("Config", "2020-09-07", "GetAggregateAdvancedSearchFile", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

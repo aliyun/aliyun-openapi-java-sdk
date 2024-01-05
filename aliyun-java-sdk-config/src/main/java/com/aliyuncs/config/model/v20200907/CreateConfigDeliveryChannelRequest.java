@@ -47,7 +47,7 @@ public class CreateConfigDeliveryChannelRequest extends RpcAcsRequest<CreateConf
 
 	private String deliveryChannelType;
 	public CreateConfigDeliveryChannelRequest() {
-		super("Config", "2020-09-07", "CreateConfigDeliveryChannel");
+		super("Config", "2020-09-07", "CreateConfigDeliveryChannel", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

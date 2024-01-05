@@ -37,7 +37,7 @@ public class ListResourceEvaluationResultsRequest extends RpcAcsRequest<ListReso
 
 	private String complianceType;
 	public ListResourceEvaluationResultsRequest() {
-		super("Config", "2020-09-07", "ListResourceEvaluationResults");
+		super("Config", "2020-09-07", "ListResourceEvaluationResults", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

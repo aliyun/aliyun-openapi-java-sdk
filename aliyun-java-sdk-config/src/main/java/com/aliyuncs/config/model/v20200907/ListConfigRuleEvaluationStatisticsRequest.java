@@ -25,7 +25,7 @@ import com.aliyuncs.config.Endpoint;
 public class ListConfigRuleEvaluationStatisticsRequest extends RpcAcsRequest<ListConfigRuleEvaluationStatisticsResponse> {
 	   
 	public ListConfigRuleEvaluationStatisticsRequest() {
-		super("Config", "2020-09-07", "ListConfigRuleEvaluationStatistics");
+		super("Config", "2020-09-07", "ListConfigRuleEvaluationStatistics", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

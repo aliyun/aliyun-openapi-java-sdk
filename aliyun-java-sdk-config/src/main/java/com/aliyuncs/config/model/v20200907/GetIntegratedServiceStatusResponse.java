@@ -28,6 +28,8 @@ public class GetIntegratedServiceStatusResponse extends AcsResponse {
 
 	private Boolean data;
 
+	private String integratedTypes;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -42,6 +44,14 @@ public class GetIntegratedServiceStatusResponse extends AcsResponse {
 
 	public void setData(Boolean data) {
 		this.data = data;
+	}
+
+	public String getIntegratedTypes() {
+		return this.integratedTypes;
+	}
+
+	public void setIntegratedTypes(String integratedTypes) {
+		this.integratedTypes = integratedTypes;
 	}
 
 	@Override

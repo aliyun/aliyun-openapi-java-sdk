@@ -37,7 +37,7 @@ public class ListDiscoveredResourcesRequest extends RpcAcsRequest<ListDiscovered
 
 	private Integer maxResults;
 	public ListDiscoveredResourcesRequest() {
-		super("Config", "2020-09-07", "ListDiscoveredResources");
+		super("Config", "2020-09-07", "ListDiscoveredResources", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

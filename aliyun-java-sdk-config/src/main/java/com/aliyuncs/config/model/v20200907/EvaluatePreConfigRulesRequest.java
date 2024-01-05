@@ -29,7 +29,7 @@ public class EvaluatePreConfigRulesRequest extends RpcAcsRequest<EvaluatePreConf
 
 	private String resourceEvaluateItems;
 	public EvaluatePreConfigRulesRequest() {
-		super("Config", "2020-09-07", "EvaluatePreConfigRules");
+		super("Config", "2020-09-07", "EvaluatePreConfigRules", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

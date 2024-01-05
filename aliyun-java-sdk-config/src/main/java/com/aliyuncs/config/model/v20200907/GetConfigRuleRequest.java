@@ -27,7 +27,7 @@ public class GetConfigRuleRequest extends RpcAcsRequest<GetConfigRuleResponse> {
 
 	private String configRuleId;
 	public GetConfigRuleRequest() {
-		super("Config", "2020-09-07", "GetConfigRule");
+		super("Config", "2020-09-07", "GetConfigRule", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

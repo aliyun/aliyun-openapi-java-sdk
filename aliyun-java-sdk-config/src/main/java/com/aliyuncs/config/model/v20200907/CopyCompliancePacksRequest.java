@@ -31,7 +31,7 @@ public class CopyCompliancePacksRequest extends RpcAcsRequest<CopyCompliancePack
 
 	private String srcCompliancePackIds;
 	public CopyCompliancePacksRequest() {
-		super("Config", "2020-09-07", "CopyCompliancePacks");
+		super("Config", "2020-09-07", "CopyCompliancePacks", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -32,7 +32,7 @@ public class StartConfigRuleEvaluationRequest extends RpcAcsRequest<StartConfigR
 
 	private Boolean revertEvaluation;
 	public StartConfigRuleEvaluationRequest() {
-		super("Config", "2020-09-07", "StartConfigRuleEvaluation");
+		super("Config", "2020-09-07", "StartConfigRuleEvaluation", "config");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

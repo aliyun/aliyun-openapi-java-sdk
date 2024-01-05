@@ -31,7 +31,7 @@ public class StartAggregateRemediationRequest extends RpcAcsRequest<StartAggrega
 
 	private Long resourceAccountId;
 	public StartAggregateRemediationRequest() {
-		super("Config", "2020-09-07", "StartAggregateRemediation");
+		super("Config", "2020-09-07", "StartAggregateRemediation", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class DeleteRemediationsRequest extends RpcAcsRequest<DeleteRemediationsR
 
 	private String remediationIds;
 	public DeleteRemediationsRequest() {
-		super("Config", "2020-09-07", "DeleteRemediations");
+		super("Config", "2020-09-07", "DeleteRemediations", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

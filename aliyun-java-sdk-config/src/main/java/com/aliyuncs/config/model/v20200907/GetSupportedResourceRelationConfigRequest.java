@@ -27,7 +27,7 @@ public class GetSupportedResourceRelationConfigRequest extends RpcAcsRequest<Get
 
 	private String resourceType;
 	public GetSupportedResourceRelationConfigRequest() {
-		super("Config", "2020-09-07", "GetSupportedResourceRelationConfig");
+		super("Config", "2020-09-07", "GetSupportedResourceRelationConfig", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

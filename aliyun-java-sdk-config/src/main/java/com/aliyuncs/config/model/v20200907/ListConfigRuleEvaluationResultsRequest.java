@@ -41,7 +41,7 @@ public class ListConfigRuleEvaluationResultsRequest extends RpcAcsRequest<ListCo
 
 	private Integer maxResults;
 	public ListConfigRuleEvaluationResultsRequest() {
-		super("Config", "2020-09-07", "ListConfigRuleEvaluationResults");
+		super("Config", "2020-09-07", "ListConfigRuleEvaluationResults", "config");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

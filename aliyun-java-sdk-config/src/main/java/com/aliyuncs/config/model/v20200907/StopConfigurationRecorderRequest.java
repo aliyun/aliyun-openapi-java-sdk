@@ -25,7 +25,7 @@ import com.aliyuncs.config.Endpoint;
 public class StopConfigurationRecorderRequest extends RpcAcsRequest<StopConfigurationRecorderResponse> {
 	   
 	public StopConfigurationRecorderRequest() {
-		super("Config", "2020-09-07", "StopConfigurationRecorder");
+		super("Config", "2020-09-07", "StopConfigurationRecorder", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

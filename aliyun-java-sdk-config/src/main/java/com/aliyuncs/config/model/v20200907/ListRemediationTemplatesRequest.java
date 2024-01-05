@@ -33,7 +33,7 @@ public class ListRemediationTemplatesRequest extends RpcAcsRequest<ListRemediati
 
 	private Long pageSize;
 	public ListRemediationTemplatesRequest() {
-		super("Config", "2020-09-07", "ListRemediationTemplates");
+		super("Config", "2020-09-07", "ListRemediationTemplates", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

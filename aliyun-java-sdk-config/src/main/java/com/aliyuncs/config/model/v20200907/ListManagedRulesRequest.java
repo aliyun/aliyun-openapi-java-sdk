@@ -35,7 +35,7 @@ public class ListManagedRulesRequest extends RpcAcsRequest<ListManagedRulesRespo
 
 	private String keyword;
 	public ListManagedRulesRequest() {
-		super("Config", "2020-09-07", "ListManagedRules");
+		super("Config", "2020-09-07", "ListManagedRules", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

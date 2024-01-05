@@ -27,7 +27,7 @@ public class GetAggregateComplianceSummaryRequest extends RpcAcsRequest<GetAggre
 
 	private String aggregatorId;
 	public GetAggregateComplianceSummaryRequest() {
-		super("Config", "2020-09-07", "GetAggregateComplianceSummary");
+		super("Config", "2020-09-07", "GetAggregateComplianceSummary", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

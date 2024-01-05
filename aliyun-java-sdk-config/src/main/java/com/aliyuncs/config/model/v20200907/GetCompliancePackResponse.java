@@ -55,6 +55,8 @@ public class GetCompliancePackResponse extends AcsResponse {
 
 		private String description;
 
+		private String templateContent;
+
 		private String compliancePackName;
 
 		private Long accountId;
@@ -97,6 +99,14 @@ public class GetCompliancePackResponse extends AcsResponse {
 
 		public void setDescription(String description) {
 			this.description = description;
+		}
+
+		public String getTemplateContent() {
+			return this.templateContent;
+		}
+
+		public void setTemplateContent(String templateContent) {
+			this.templateContent = templateContent;
 		}
 
 		public String getCompliancePackName() {

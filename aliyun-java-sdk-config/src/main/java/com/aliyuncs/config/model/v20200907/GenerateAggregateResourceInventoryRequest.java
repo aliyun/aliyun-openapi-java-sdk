@@ -33,7 +33,7 @@ public class GenerateAggregateResourceInventoryRequest extends RpcAcsRequest<Gen
 
 	private String accountIds;
 	public GenerateAggregateResourceInventoryRequest() {
-		super("Config", "2020-09-07", "GenerateAggregateResourceInventory");
+		super("Config", "2020-09-07", "GenerateAggregateResourceInventory", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

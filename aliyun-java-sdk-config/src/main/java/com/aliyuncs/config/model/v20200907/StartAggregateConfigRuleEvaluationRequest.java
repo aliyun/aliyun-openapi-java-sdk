@@ -33,7 +33,7 @@ public class StartAggregateConfigRuleEvaluationRequest extends RpcAcsRequest<Sta
 
 	private Boolean revertEvaluation;
 	public StartAggregateConfigRuleEvaluationRequest() {
-		super("Config", "2020-09-07", "StartAggregateConfigRuleEvaluation");
+		super("Config", "2020-09-07", "StartAggregateConfigRuleEvaluation", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

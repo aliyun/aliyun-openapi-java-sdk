@@ -27,7 +27,7 @@ public class ListResourcesByAdvancedSearchRequest extends RpcAcsRequest<ListReso
 
 	private String sql;
 	public ListResourcesByAdvancedSearchRequest() {
-		super("Config", "2020-09-07", "ListResourcesByAdvancedSearch");
+		super("Config", "2020-09-07", "ListResourcesByAdvancedSearch", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

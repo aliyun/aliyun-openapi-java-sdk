@@ -32,7 +32,7 @@ public class TagResourcesRequest extends RpcAcsRequest<TagResourcesResponse> {
 
 	private String tag;
 	public TagResourcesRequest() {
-		super("Config", "2020-09-07", "TagResources");
+		super("Config", "2020-09-07", "TagResources", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class CreateAdvancedSearchFileRequest extends RpcAcsRequest<CreateAdvance
 
 	private String sql;
 	public CreateAdvancedSearchFileRequest() {
-		super("Config", "2020-09-07", "CreateAdvancedSearchFile");
+		super("Config", "2020-09-07", "CreateAdvancedSearchFile", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

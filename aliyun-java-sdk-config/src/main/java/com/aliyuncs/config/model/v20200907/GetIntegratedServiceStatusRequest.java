@@ -27,7 +27,7 @@ public class GetIntegratedServiceStatusRequest extends RpcAcsRequest<GetIntegrat
 
 	private String serviceCode;
 	public GetIntegratedServiceStatusRequest() {
-		super("Config", "2020-09-07", "GetIntegratedServiceStatus");
+		super("Config", "2020-09-07", "GetIntegratedServiceStatus", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

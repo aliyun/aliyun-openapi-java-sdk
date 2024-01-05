@@ -28,7 +28,7 @@ public class DeleteConfigRulesRequest extends RpcAcsRequest<DeleteConfigRulesRes
 
 	private String configRuleIds;
 	public DeleteConfigRulesRequest() {
-		super("Config", "2020-09-07", "DeleteConfigRules");
+		super("Config", "2020-09-07", "DeleteConfigRules", "config");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

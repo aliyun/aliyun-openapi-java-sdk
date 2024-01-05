@@ -53,7 +53,7 @@ public class UpdateAggregateCompliancePackRequest extends RpcAcsRequest<UpdateAg
 
 	private String excludeResourceIdsScope;
 	public UpdateAggregateCompliancePackRequest() {
-		super("Config", "2020-09-07", "UpdateAggregateCompliancePack");
+		super("Config", "2020-09-07", "UpdateAggregateCompliancePack", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

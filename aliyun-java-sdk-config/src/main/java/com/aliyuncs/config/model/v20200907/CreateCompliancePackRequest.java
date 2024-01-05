@@ -49,11 +49,13 @@ public class CreateCompliancePackRequest extends RpcAcsRequest<CreateComplianceP
 
 	private Integer riskLevel;
 
+	private String templateContent;
+
 	private String resourceGroupIdsScope;
 
 	private String excludeResourceIdsScope;
 	public CreateCompliancePackRequest() {
-		super("Config", "2020-09-07", "CreateCompliancePack");
+		super("Config", "2020-09-07", "CreateCompliancePack", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -168,6 +170,17 @@ public class CreateCompliancePackRequest extends RpcAcsRequest<CreateComplianceP
 		this.riskLevel = riskLevel;
 		if(riskLevel != null){
 			putBodyParameter("RiskLevel", riskLevel.toString());
+		}
+	}
+
+	public String getTemplateContent() {
+		return this.templateContent;
+	}
+
+	public void setTemplateContent(String templateContent) {
+		this.templateContent = templateContent;
+		if(templateContent != null){
+			putBodyParameter("TemplateContent", templateContent);
 		}
 	}
 

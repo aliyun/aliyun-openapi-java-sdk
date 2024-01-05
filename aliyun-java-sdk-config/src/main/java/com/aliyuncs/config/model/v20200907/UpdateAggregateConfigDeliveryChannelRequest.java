@@ -51,7 +51,7 @@ public class UpdateAggregateConfigDeliveryChannelRequest extends RpcAcsRequest<U
 
 	private Long status;
 	public UpdateAggregateConfigDeliveryChannelRequest() {
-		super("Config", "2020-09-07", "UpdateAggregateConfigDeliveryChannel");
+		super("Config", "2020-09-07", "UpdateAggregateConfigDeliveryChannel", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

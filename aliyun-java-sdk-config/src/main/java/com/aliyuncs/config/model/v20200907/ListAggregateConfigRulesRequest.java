@@ -43,7 +43,7 @@ public class ListAggregateConfigRulesRequest extends RpcAcsRequest<ListAggregate
 
 	private String configRuleName;
 	public ListAggregateConfigRulesRequest() {
-		super("Config", "2020-09-07", "ListAggregateConfigRules");
+		super("Config", "2020-09-07", "ListAggregateConfigRules", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

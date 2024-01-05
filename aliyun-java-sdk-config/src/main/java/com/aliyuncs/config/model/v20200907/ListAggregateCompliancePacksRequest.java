@@ -33,7 +33,7 @@ public class ListAggregateCompliancePacksRequest extends RpcAcsRequest<ListAggre
 
 	private String status;
 	public ListAggregateCompliancePacksRequest() {
-		super("Config", "2020-09-07", "ListAggregateCompliancePacks");
+		super("Config", "2020-09-07", "ListAggregateCompliancePacks", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
