@@ -29,6 +29,8 @@ public class ModifyMaskingRulesRequest extends RpcAcsRequest<ModifyMaskingRulesR
 
 	private String ruleName;
 
+	private String ruleVersion;
+
 	private String ruleConfig;
 
 	private String enable;
@@ -62,6 +64,17 @@ public class ModifyMaskingRulesRequest extends RpcAcsRequest<ModifyMaskingRulesR
 		this.ruleName = ruleName;
 		if(ruleName != null){
 			putQueryParameter("RuleName", ruleName);
+		}
+	}
+
+	public String getRuleVersion() {
+		return this.ruleVersion;
+	}
+
+	public void setRuleVersion(String ruleVersion) {
+		this.ruleVersion = ruleVersion;
+		if(ruleVersion != null){
+			putQueryParameter("RuleVersion", ruleVersion);
 		}
 	}
 
