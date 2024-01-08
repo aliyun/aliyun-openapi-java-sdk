@@ -65,6 +65,8 @@ public class DisassociateResourceShareResponse extends AcsResponse {
 
 		private String associationStatus;
 
+		private String targetProperty;
+
 		public String getUpdateTime() {
 			return this.updateTime;
 		}
@@ -135,6 +137,14 @@ public class DisassociateResourceShareResponse extends AcsResponse {
 
 		public void setAssociationStatus(String associationStatus) {
 			this.associationStatus = associationStatus;
+		}
+
+		public String getTargetProperty() {
+			return this.targetProperty;
+		}
+
+		public void setTargetProperty(String targetProperty) {
+			this.targetProperty = targetProperty;
 		}
 	}
 

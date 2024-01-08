@@ -71,6 +71,8 @@ public class ListResourceShareInvitationsResponse extends AcsResponse {
 
 		private String resourceShareInvitationId;
 
+		private List<InvitationFailedDetail> invitationFailedDetails;
+
 		public String getStatus() {
 			return this.status;
 		}
@@ -125,6 +127,67 @@ public class ListResourceShareInvitationsResponse extends AcsResponse {
 
 		public void setResourceShareInvitationId(String resourceShareInvitationId) {
 			this.resourceShareInvitationId = resourceShareInvitationId;
+		}
+
+		public List<InvitationFailedDetail> getInvitationFailedDetails() {
+			return this.invitationFailedDetails;
+		}
+
+		public void setInvitationFailedDetails(List<InvitationFailedDetail> invitationFailedDetails) {
+			this.invitationFailedDetails = invitationFailedDetails;
+		}
+
+		public static class InvitationFailedDetail {
+
+			private String status;
+
+			private String statusMessage;
+
+			private String associateType;
+
+			private String resourceId;
+
+			private String resourceType;
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
+			public String getStatusMessage() {
+				return this.statusMessage;
+			}
+
+			public void setStatusMessage(String statusMessage) {
+				this.statusMessage = statusMessage;
+			}
+
+			public String getAssociateType() {
+				return this.associateType;
+			}
+
+			public void setAssociateType(String associateType) {
+				this.associateType = associateType;
+			}
+
+			public String getResourceId() {
+				return this.resourceId;
+			}
+
+			public void setResourceId(String resourceId) {
+				this.resourceId = resourceId;
+			}
+
+			public String getResourceType() {
+				return this.resourceType;
+			}
+
+			public void setResourceType(String resourceType) {
+				this.resourceType = resourceType;
+			}
 		}
 	}
 

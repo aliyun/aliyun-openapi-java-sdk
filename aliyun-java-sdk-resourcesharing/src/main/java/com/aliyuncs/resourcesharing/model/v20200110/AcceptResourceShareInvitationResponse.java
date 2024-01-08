@@ -14,6 +14,7 @@
 
 package com.aliyuncs.resourcesharing.model.v20200110;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.resourcesharing.transform.v20200110.AcceptResourceShareInvitationResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -59,6 +60,8 @@ public class AcceptResourceShareInvitationResponse extends AcsResponse {
 		private String createTime;
 
 		private String status;
+
+		private List<AcceptInvitationFailedDetail> acceptInvitationFailedDetails;
 
 		public String getResourceShareInvitationId() {
 			return this.resourceShareInvitationId;
@@ -114,6 +117,67 @@ public class AcceptResourceShareInvitationResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public List<AcceptInvitationFailedDetail> getAcceptInvitationFailedDetails() {
+			return this.acceptInvitationFailedDetails;
+		}
+
+		public void setAcceptInvitationFailedDetails(List<AcceptInvitationFailedDetail> acceptInvitationFailedDetails) {
+			this.acceptInvitationFailedDetails = acceptInvitationFailedDetails;
+		}
+
+		public static class AcceptInvitationFailedDetail {
+
+			private String status;
+
+			private String statusMessage;
+
+			private String associateType;
+
+			private String resourceId;
+
+			private String resourceType;
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
+			public String getStatusMessage() {
+				return this.statusMessage;
+			}
+
+			public void setStatusMessage(String statusMessage) {
+				this.statusMessage = statusMessage;
+			}
+
+			public String getAssociateType() {
+				return this.associateType;
+			}
+
+			public void setAssociateType(String associateType) {
+				this.associateType = associateType;
+			}
+
+			public String getResourceId() {
+				return this.resourceId;
+			}
+
+			public void setResourceId(String resourceId) {
+				this.resourceId = resourceId;
+			}
+
+			public String getResourceType() {
+				return this.resourceType;
+			}
+
+			public void setResourceType(String resourceType) {
+				this.resourceType = resourceType;
+			}
 		}
 	}
 

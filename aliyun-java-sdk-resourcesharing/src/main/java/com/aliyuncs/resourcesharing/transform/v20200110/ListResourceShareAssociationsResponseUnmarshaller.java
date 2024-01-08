@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.resourcesharing.model.v20200110.ListResourceShareAssociationsResponse;
 import com.aliyuncs.resourcesharing.model.v20200110.ListResourceShareAssociationsResponse.ResourceShareAssociation;
+import com.aliyuncs.resourcesharing.model.v20200110.ListResourceShareAssociationsResponse.ResourceShareAssociation.AssociationFailedDetail;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -42,6 +43,20 @@ public class ListResourceShareAssociationsResponseUnmarshaller {
 			resourceShareAssociation.setAssociationType(_ctx.stringValue("ListResourceShareAssociationsResponse.ResourceShareAssociations["+ i +"].AssociationType"));
 			resourceShareAssociation.setAssociationStatus(_ctx.stringValue("ListResourceShareAssociationsResponse.ResourceShareAssociations["+ i +"].AssociationStatus"));
 			resourceShareAssociation.setExternal(_ctx.booleanValue("ListResourceShareAssociationsResponse.ResourceShareAssociations["+ i +"].External"));
+			resourceShareAssociation.setTargetProperty(_ctx.stringValue("ListResourceShareAssociationsResponse.ResourceShareAssociations["+ i +"].TargetProperty"));
+
+			List<AssociationFailedDetail> associationFailedDetails = new ArrayList<AssociationFailedDetail>();
+			for (int j = 0; j < _ctx.lengthValue("ListResourceShareAssociationsResponse.ResourceShareAssociations["+ i +"].AssociationFailedDetails.Length"); j++) {
+				AssociationFailedDetail associationFailedDetail = new AssociationFailedDetail();
+				associationFailedDetail.setStatus(_ctx.stringValue("ListResourceShareAssociationsResponse.ResourceShareAssociations["+ i +"].AssociationFailedDetails["+ j +"].Status"));
+				associationFailedDetail.setStatusMessage(_ctx.stringValue("ListResourceShareAssociationsResponse.ResourceShareAssociations["+ i +"].AssociationFailedDetails["+ j +"].StatusMessage"));
+				associationFailedDetail.setAssociateType(_ctx.stringValue("ListResourceShareAssociationsResponse.ResourceShareAssociations["+ i +"].AssociationFailedDetails["+ j +"].AssociateType"));
+				associationFailedDetail.setEntityId(_ctx.stringValue("ListResourceShareAssociationsResponse.ResourceShareAssociations["+ i +"].AssociationFailedDetails["+ j +"].EntityId"));
+				associationFailedDetail.setEntityType(_ctx.stringValue("ListResourceShareAssociationsResponse.ResourceShareAssociations["+ i +"].AssociationFailedDetails["+ j +"].EntityType"));
+
+				associationFailedDetails.add(associationFailedDetail);
+			}
+			resourceShareAssociation.setAssociationFailedDetails(associationFailedDetails);
 
 			resourceShareAssociations.add(resourceShareAssociation);
 		}

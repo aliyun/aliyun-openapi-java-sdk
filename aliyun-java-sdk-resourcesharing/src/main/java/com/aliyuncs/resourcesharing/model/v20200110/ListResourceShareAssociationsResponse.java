@@ -77,6 +77,10 @@ public class ListResourceShareAssociationsResponse extends AcsResponse {
 
 		private Boolean external;
 
+		private String targetProperty;
+
+		private List<AssociationFailedDetail> associationFailedDetails;
+
 		public String getUpdateTime() {
 			return this.updateTime;
 		}
@@ -155,6 +159,75 @@ public class ListResourceShareAssociationsResponse extends AcsResponse {
 
 		public void setExternal(Boolean external) {
 			this.external = external;
+		}
+
+		public String getTargetProperty() {
+			return this.targetProperty;
+		}
+
+		public void setTargetProperty(String targetProperty) {
+			this.targetProperty = targetProperty;
+		}
+
+		public List<AssociationFailedDetail> getAssociationFailedDetails() {
+			return this.associationFailedDetails;
+		}
+
+		public void setAssociationFailedDetails(List<AssociationFailedDetail> associationFailedDetails) {
+			this.associationFailedDetails = associationFailedDetails;
+		}
+
+		public static class AssociationFailedDetail {
+
+			private String status;
+
+			private String statusMessage;
+
+			private String associateType;
+
+			private String entityId;
+
+			private String entityType;
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
+			public String getStatusMessage() {
+				return this.statusMessage;
+			}
+
+			public void setStatusMessage(String statusMessage) {
+				this.statusMessage = statusMessage;
+			}
+
+			public String getAssociateType() {
+				return this.associateType;
+			}
+
+			public void setAssociateType(String associateType) {
+				this.associateType = associateType;
+			}
+
+			public String getEntityId() {
+				return this.entityId;
+			}
+
+			public void setEntityId(String entityId) {
+				this.entityId = entityId;
+			}
+
+			public String getEntityType() {
+				return this.entityType;
+			}
+
+			public void setEntityType(String entityType) {
+				this.entityType = entityType;
+			}
 		}
 	}
 

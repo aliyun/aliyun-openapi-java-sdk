@@ -14,8 +14,12 @@
 
 package com.aliyuncs.resourcesharing.transform.v20200110;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.resourcesharing.model.v20200110.AcceptResourceShareInvitationResponse;
 import com.aliyuncs.resourcesharing.model.v20200110.AcceptResourceShareInvitationResponse.ResourceShareInvitation;
+import com.aliyuncs.resourcesharing.model.v20200110.AcceptResourceShareInvitationResponse.ResourceShareInvitation.AcceptInvitationFailedDetail;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -33,6 +37,19 @@ public class AcceptResourceShareInvitationResponseUnmarshaller {
 		resourceShareInvitation.setReceiverAccountId(_ctx.stringValue("AcceptResourceShareInvitationResponse.ResourceShareInvitation.ReceiverAccountId"));
 		resourceShareInvitation.setCreateTime(_ctx.stringValue("AcceptResourceShareInvitationResponse.ResourceShareInvitation.CreateTime"));
 		resourceShareInvitation.setStatus(_ctx.stringValue("AcceptResourceShareInvitationResponse.ResourceShareInvitation.Status"));
+
+		List<AcceptInvitationFailedDetail> acceptInvitationFailedDetails = new ArrayList<AcceptInvitationFailedDetail>();
+		for (int i = 0; i < _ctx.lengthValue("AcceptResourceShareInvitationResponse.ResourceShareInvitation.AcceptInvitationFailedDetails.Length"); i++) {
+			AcceptInvitationFailedDetail acceptInvitationFailedDetail = new AcceptInvitationFailedDetail();
+			acceptInvitationFailedDetail.setStatus(_ctx.stringValue("AcceptResourceShareInvitationResponse.ResourceShareInvitation.AcceptInvitationFailedDetails["+ i +"].Status"));
+			acceptInvitationFailedDetail.setStatusMessage(_ctx.stringValue("AcceptResourceShareInvitationResponse.ResourceShareInvitation.AcceptInvitationFailedDetails["+ i +"].StatusMessage"));
+			acceptInvitationFailedDetail.setAssociateType(_ctx.stringValue("AcceptResourceShareInvitationResponse.ResourceShareInvitation.AcceptInvitationFailedDetails["+ i +"].AssociateType"));
+			acceptInvitationFailedDetail.setResourceId(_ctx.stringValue("AcceptResourceShareInvitationResponse.ResourceShareInvitation.AcceptInvitationFailedDetails["+ i +"].ResourceId"));
+			acceptInvitationFailedDetail.setResourceType(_ctx.stringValue("AcceptResourceShareInvitationResponse.ResourceShareInvitation.AcceptInvitationFailedDetails["+ i +"].ResourceType"));
+
+			acceptInvitationFailedDetails.add(acceptInvitationFailedDetail);
+		}
+		resourceShareInvitation.setAcceptInvitationFailedDetails(acceptInvitationFailedDetails);
 		acceptResourceShareInvitationResponse.setResourceShareInvitation(resourceShareInvitation);
 	 
 	 	return acceptResourceShareInvitationResponse;

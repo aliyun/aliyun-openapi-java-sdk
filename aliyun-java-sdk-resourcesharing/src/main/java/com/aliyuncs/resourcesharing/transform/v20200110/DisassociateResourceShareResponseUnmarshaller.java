@@ -40,6 +40,7 @@ public class DisassociateResourceShareResponseUnmarshaller {
 			resourceShareAssociation.setAssociationStatusMessage(_ctx.stringValue("DisassociateResourceShareResponse.ResourceShareAssociations["+ i +"].AssociationStatusMessage"));
 			resourceShareAssociation.setAssociationType(_ctx.stringValue("DisassociateResourceShareResponse.ResourceShareAssociations["+ i +"].AssociationType"));
 			resourceShareAssociation.setAssociationStatus(_ctx.stringValue("DisassociateResourceShareResponse.ResourceShareAssociations["+ i +"].AssociationStatus"));
+			resourceShareAssociation.setTargetProperty(_ctx.stringValue("DisassociateResourceShareResponse.ResourceShareAssociations["+ i +"].TargetProperty"));
 
 			resourceShareAssociations.add(resourceShareAssociation);
 		}

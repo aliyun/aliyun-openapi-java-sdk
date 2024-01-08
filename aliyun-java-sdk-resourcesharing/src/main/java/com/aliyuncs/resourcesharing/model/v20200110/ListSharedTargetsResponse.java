@@ -67,6 +67,8 @@ public class ListSharedTargetsResponse extends AcsResponse {
 
 		private Boolean external;
 
+		private String targetProperty;
+
 		public String getTargetId() {
 			return this.targetId;
 		}
@@ -105,6 +107,14 @@ public class ListSharedTargetsResponse extends AcsResponse {
 
 		public void setExternal(Boolean external) {
 			this.external = external;
+		}
+
+		public String getTargetProperty() {
+			return this.targetProperty;
+		}
+
+		public void setTargetProperty(String targetProperty) {
+			this.targetProperty = targetProperty;
 		}
 	}
 
