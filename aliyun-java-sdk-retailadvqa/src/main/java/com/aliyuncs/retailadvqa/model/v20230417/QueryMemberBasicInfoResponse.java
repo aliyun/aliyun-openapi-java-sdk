@@ -112,6 +112,8 @@ public class QueryMemberBasicInfoResponse extends AcsResponse {
 
 		private String memberNickName;
 
+		private String nearExpiredScore;
+
 		public String getOpenMerchantId() {
 			return this.openMerchantId;
 		}
@@ -254,6 +256,14 @@ public class QueryMemberBasicInfoResponse extends AcsResponse {
 
 		public void setMemberNickName(String memberNickName) {
 			this.memberNickName = memberNickName;
+		}
+
+		public String getNearExpiredScore() {
+			return this.nearExpiredScore;
+		}
+
+		public void setNearExpiredScore(String nearExpiredScore) {
+			this.nearExpiredScore = nearExpiredScore;
 		}
 	}
 

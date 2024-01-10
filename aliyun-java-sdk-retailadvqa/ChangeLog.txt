@@ -1,3 +1,6 @@
+2024-01-10 Version: 1.0.15
+-Update QueryMemberBasicInfo
+
 2023-12-23 Version: 1.0.14
 -Update batchOrderPop
 

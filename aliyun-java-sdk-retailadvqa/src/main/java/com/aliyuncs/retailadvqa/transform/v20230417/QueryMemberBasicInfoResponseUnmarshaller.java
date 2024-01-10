@@ -47,6 +47,7 @@ public class QueryMemberBasicInfoResponseUnmarshaller {
 		data.setExtra(_ctx.stringValue("QueryMemberBasicInfoResponse.Data.Extra"));
 		data.setArea(_ctx.stringValue("QueryMemberBasicInfoResponse.Data.Area"));
 		data.setMemberNickName(_ctx.stringValue("QueryMemberBasicInfoResponse.Data.MemberNickName"));
+		data.setNearExpiredScore(_ctx.stringValue("QueryMemberBasicInfoResponse.Data.NearExpiredScore"));
 		queryMemberBasicInfoResponse.setData(data);
 	 
 	 	return queryMemberBasicInfoResponse;
