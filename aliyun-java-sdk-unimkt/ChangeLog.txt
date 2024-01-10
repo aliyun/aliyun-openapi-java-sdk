@@ -1,3 +1,6 @@
+2024-01-10 Version: 2.8.2
+- Add UpdateUnionTask method.
+
 2023-03-27 Version: 2.8.1
 - Add DeleteUnionBrand.
 
