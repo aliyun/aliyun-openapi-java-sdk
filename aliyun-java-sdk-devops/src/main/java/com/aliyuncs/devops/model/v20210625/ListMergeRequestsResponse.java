@@ -383,6 +383,8 @@ public class ListMergeRequestsResponse extends AcsResponse {
 
 			private String status;
 
+			private String reviewTime;
+
 			public Long getId() {
 				return this.id;
 			}
@@ -437,6 +439,14 @@ public class ListMergeRequestsResponse extends AcsResponse {
 
 			public void setStatus(String status) {
 				this.status = status;
+			}
+
+			public String getReviewTime() {
+				return this.reviewTime;
+			}
+
+			public void setReviewTime(String reviewTime) {
+				this.reviewTime = reviewTime;
 			}
 		}
 

@@ -93,6 +93,7 @@ public class GetMergeRequestResponseUnmarshaller {
 			reviewersItem.setEmail(_ctx.stringValue("GetMergeRequestResponse.result.reviewers["+ i +"].email"));
 			reviewersItem.setHasReviewed(_ctx.booleanValue("GetMergeRequestResponse.result.reviewers["+ i +"].hasReviewed"));
 			reviewersItem.setReviewOpinionStatus(_ctx.stringValue("GetMergeRequestResponse.result.reviewers["+ i +"].reviewOpinionStatus"));
+			reviewersItem.setReviewTime(_ctx.stringValue("GetMergeRequestResponse.result.reviewers["+ i +"].reviewTime"));
 
 			reviewers.add(reviewersItem);
 		}

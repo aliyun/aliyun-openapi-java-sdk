@@ -86,6 +86,8 @@ public class GetProjectMemberResponse extends AcsResponse {
 
 		private Long id;
 
+		private String email;
+
 		public Integer getAccessLevel() {
 			return this.accessLevel;
 		}
@@ -124,6 +126,14 @@ public class GetProjectMemberResponse extends AcsResponse {
 
 		public void setId(Long id) {
 			this.id = id;
+		}
+
+		public String getEmail() {
+			return this.email;
+		}
+
+		public void setEmail(String email) {
+			this.email = email;
 		}
 	}
 

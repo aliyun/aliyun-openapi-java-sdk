@@ -34,6 +34,7 @@ public class GetProjectMemberResponseUnmarshaller {
 		result.setName(_ctx.stringValue("GetProjectMemberResponse.result.name"));
 		result.setAvatarUrl(_ctx.stringValue("GetProjectMemberResponse.result.avatarUrl"));
 		result.setId(_ctx.longValue("GetProjectMemberResponse.result.id"));
+		result.setEmail(_ctx.stringValue("GetProjectMemberResponse.result.email"));
 		getProjectMemberResponse.setResult(result);
 	 
 	 	return getProjectMemberResponse;

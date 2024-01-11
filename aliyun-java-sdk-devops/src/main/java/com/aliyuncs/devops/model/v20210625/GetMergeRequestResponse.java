@@ -355,6 +355,8 @@ public class GetMergeRequestResponse extends AcsResponse {
 
 			private String reviewOpinionStatus;
 
+			private String reviewTime;
+
 			public Long getId() {
 				return this.id;
 			}
@@ -417,6 +419,14 @@ public class GetMergeRequestResponse extends AcsResponse {
 
 			public void setReviewOpinionStatus(String reviewOpinionStatus) {
 				this.reviewOpinionStatus = reviewOpinionStatus;
+			}
+
+			public String getReviewTime() {
+				return this.reviewTime;
+			}
+
+			public void setReviewTime(String reviewTime) {
+				this.reviewTime = reviewTime;
 			}
 		}
 

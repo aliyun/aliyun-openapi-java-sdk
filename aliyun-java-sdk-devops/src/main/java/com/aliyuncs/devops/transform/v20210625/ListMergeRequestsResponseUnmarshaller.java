@@ -83,6 +83,7 @@ public class ListMergeRequestsResponseUnmarshaller {
 				assignees.setAvatarUrl(_ctx.stringValue("ListMergeRequestsResponse.result["+ i +"].reviewers["+ j +"].avatarUrl"));
 				assignees.setEmail(_ctx.stringValue("ListMergeRequestsResponse.result["+ i +"].reviewers["+ j +"].email"));
 				assignees.setStatus(_ctx.stringValue("ListMergeRequestsResponse.result["+ i +"].reviewers["+ j +"].status"));
+				assignees.setReviewTime(_ctx.stringValue("ListMergeRequestsResponse.result["+ i +"].reviewers["+ j +"].reviewTime"));
 
 				reviewers.add(assignees);
 			}
