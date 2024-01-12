@@ -24,7 +24,7 @@ import java.util.List;
 
 /**
  * @author xiaohui
- * @version 1.3.0
+ * @version 1.4.9
  */
 
 public class DescribeContainerGroupStatusResponse extends AcsResponse {
@@ -35,7 +35,7 @@ public class DescribeContainerGroupStatusResponse extends AcsResponse {
 
     private Integer totalCount;
 
-    private List<Data> datas;
+    private List<Data> data;
 
     public String getRequestId() {
         return this.requestId;
@@ -61,12 +61,12 @@ public class DescribeContainerGroupStatusResponse extends AcsResponse {
         this.totalCount = totalCount;
     }
 
-    public List<Data> getDatas() {
-        return this.datas;
+    public List<Data> getData() {
+        return data;
     }
 
-    public void setDatas(List<Data> datas) {
-        this.datas = datas;
+    public void setData(List<Data> data) {
+        this.data = data;
     }
 
     public static class Data {
@@ -80,6 +80,8 @@ public class DescribeContainerGroupStatusResponse extends AcsResponse {
         private String status;
 
         private String uuid;
+
+        private String annotations;
 
         private PodStatus podStatus;
 
@@ -123,6 +125,14 @@ public class DescribeContainerGroupStatusResponse extends AcsResponse {
             this.uuid = uuid;
         }
 
+        public String getAnnotations() {
+            return annotations;
+        }
+
+        public void setAnnotations(String annotations) {
+            this.annotations = annotations;
+        }
+
         public PodStatus getPodStatus() {
             return this.podStatus;
         }
@@ -137,14 +147,6 @@ public class DescribeContainerGroupStatusResponse extends AcsResponse {
 
             private List<ContainerStatus> containerStatuses;
 
-            private List<ContainerStatus> ephemeralContainerStatuses;
-
-            private List<ContainerStatus> initContainerStatuses;
-
-            private String message;
-
-            private String nominatedNodeName;
-
             private String hostIp;
 
             private String phase;
@@ -154,8 +156,6 @@ public class DescribeContainerGroupStatusResponse extends AcsResponse {
             private List<PodIp> podIps;
 
             private String qosClass;
-
-            private String reason;
 
             private String startTime;
 
@@ -173,46 +173,6 @@ public class DescribeContainerGroupStatusResponse extends AcsResponse {
 
             public void setContainerStatuses(List<ContainerStatus> containerStatuses) {
                 this.containerStatuses = containerStatuses;
-            }
-
-            public List<ContainerStatus> getEphemeralContainerStatuses() {
-                return this.ephemeralContainerStatuses;
-            }
-
-            public void setEphemeralContainerStatuses(List<ContainerStatus> ephemeralContainerStatuses) {
-                this.ephemeralContainerStatuses = ephemeralContainerStatuses;
-            }
-
-            public List<ContainerStatus> getInitContainerStatuses() {
-                return this.initContainerStatuses;
-            }
-
-            public void setInitContainerStatuses(List<ContainerStatus> initContainerStatuses) {
-                this.initContainerStatuses = initContainerStatuses;
-            }
-
-            public String getMessage() {
-                return this.message;
-            }
-
-            public void setMessage(String message) {
-                this.message = message;
-            }
-
-            public String getNominatedNodeName() {
-                return this.nominatedNodeName;
-            }
-
-            public void setNominatedNodeName(String nominatedNodeName) {
-                this.nominatedNodeName = nominatedNodeName;
-            }
-
-            public String getReason() {
-                return this.reason;
-            }
-
-            public void setReason(String reason) {
-                this.reason = reason;
             }
 
             public String getHostIp() {
@@ -318,11 +278,9 @@ public class DescribeContainerGroupStatusResponse extends AcsResponse {
 
             public static class ContainerStatus {
 
-                private String containerID;
-
                 private String image;
 
-                private String imageID;
+                private String imageId;
 
                 private String name;
 
@@ -336,14 +294,6 @@ public class DescribeContainerGroupStatusResponse extends AcsResponse {
 
                 private State lastState;
 
-                public String getContainerID() {
-                    return this.containerID;
-                }
-
-                public void setContainerID(String containerID) {
-                    this.containerID = containerID;
-                }
-
                 public String getImage() {
                     return this.image;
                 }
@@ -352,12 +302,12 @@ public class DescribeContainerGroupStatusResponse extends AcsResponse {
                     this.image = image;
                 }
 
-                public String getImageID() {
-                    return this.imageID;
+                public String getImageId() {
+                    return imageId;
                 }
 
-                public void setImageID(String imageID) {
-                    this.imageID = imageID;
+                public void setImageId(String imageId) {
+                    this.imageId = imageId;
                 }
 
                 public String getName() {
@@ -368,20 +318,20 @@ public class DescribeContainerGroupStatusResponse extends AcsResponse {
                     this.name = name;
                 }
 
-                public Integer getRestartCount() {
-                    return this.restartCount;
-                }
-
-                public void setRestartCount(Integer restartCount) {
-                    this.restartCount = restartCount;
-                }
-
                 public Boolean getReady() {
                     return ready;
                 }
 
                 public void setReady(Boolean ready) {
                     this.ready = ready;
+                }
+
+                public Integer getRestartCount() {
+                    return this.restartCount;
+                }
+
+                public void setRestartCount(Integer restartCount) {
+                    this.restartCount = restartCount;
                 }
 
                 public Boolean getStarted() {
