@@ -14,17 +14,16 @@
 
 package com.aliyuncs.cloudapi.transform.v20160714;
 
-import com.aliyuncs.cloudapi.model.v20160714.SetVpcAccessResponse;
+import com.aliyuncs.cloudapi.model.v20160714.ModifyApiGroupInstanceResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class SetVpcAccessResponseUnmarshaller {
+public class ModifyApiGroupInstanceResponseUnmarshaller {
 
-	public static SetVpcAccessResponse unmarshall(SetVpcAccessResponse setVpcAccessResponse, UnmarshallerContext _ctx) {
+	public static ModifyApiGroupInstanceResponse unmarshall(ModifyApiGroupInstanceResponse modifyApiGroupInstanceResponse, UnmarshallerContext _ctx) {
 		
-		setVpcAccessResponse.setRequestId(_ctx.stringValue("SetVpcAccessResponse.RequestId"));
-		setVpcAccessResponse.setVpcAccessId(_ctx.stringValue("SetVpcAccessResponse.VpcAccessId"));
+		modifyApiGroupInstanceResponse.setRequestId(_ctx.stringValue("ModifyApiGroupInstanceResponse.RequestId"));
 	 
-	 	return setVpcAccessResponse;
+	 	return modifyApiGroupInstanceResponse;
 	}
 }

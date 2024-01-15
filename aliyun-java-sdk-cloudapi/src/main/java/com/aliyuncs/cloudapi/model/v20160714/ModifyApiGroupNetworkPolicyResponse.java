@@ -15,18 +15,16 @@
 package com.aliyuncs.cloudapi.model.v20160714;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cloudapi.transform.v20160714.SetVpcAccessResponseUnmarshaller;
+import com.aliyuncs.cloudapi.transform.v20160714.ModifyApiGroupNetworkPolicyResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class SetVpcAccessResponse extends AcsResponse {
+public class ModifyApiGroupNetworkPolicyResponse extends AcsResponse {
 
 	private String requestId;
-
-	private String vpcAccessId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,16 +34,8 @@ public class SetVpcAccessResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getVpcAccessId() {
-		return this.vpcAccessId;
-	}
-
-	public void setVpcAccessId(String vpcAccessId) {
-		this.vpcAccessId = vpcAccessId;
-	}
-
 	@Override
-	public SetVpcAccessResponse getInstance(UnmarshallerContext context) {
-		return	SetVpcAccessResponseUnmarshaller.unmarshall(this, context);
+	public ModifyApiGroupNetworkPolicyResponse getInstance(UnmarshallerContext context) {
+		return	ModifyApiGroupNetworkPolicyResponseUnmarshaller.unmarshall(this, context);
 	}
 }

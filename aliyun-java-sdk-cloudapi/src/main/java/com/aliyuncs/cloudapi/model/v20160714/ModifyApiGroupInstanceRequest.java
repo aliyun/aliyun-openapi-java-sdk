@@ -23,47 +23,25 @@ import com.aliyuncs.cloudapi.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateModelRequest extends RpcAcsRequest<CreateModelResponse> {
+public class ModifyApiGroupInstanceRequest extends RpcAcsRequest<ModifyApiGroupInstanceResponse> {
 	   
-
-	private String schema;
-
-	private String modelName;
 
 	private String groupId;
 
-	private String description;
+	private String remark;
+
+	private String targetInstanceId;
+
+	private String securityToken;
 
 	private List<Tag> tags;
-	public CreateModelRequest() {
-		super("CloudAPI", "2016-07-14", "CreateModel", "apigateway");
+	public ModifyApiGroupInstanceRequest() {
+		super("CloudAPI", "2016-07-14", "ModifyApiGroupInstance", "apigateway");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getSchema() {
-		return this.schema;
-	}
-
-	public void setSchema(String schema) {
-		this.schema = schema;
-		if(schema != null){
-			putQueryParameter("Schema", schema);
-		}
-	}
-
-	public String getModelName() {
-		return this.modelName;
-	}
-
-	public void setModelName(String modelName) {
-		this.modelName = modelName;
-		if(modelName != null){
-			putQueryParameter("ModelName", modelName);
-		}
 	}
 
 	public String getGroupId() {
@@ -77,14 +55,36 @@ public class CreateModelRequest extends RpcAcsRequest<CreateModelResponse> {
 		}
 	}
 
-	public String getDescription() {
-		return this.description;
+	public String getRemark() {
+		return this.remark;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
+	public void setRemark(String remark) {
+		this.remark = remark;
+		if(remark != null){
+			putQueryParameter("Remark", remark);
+		}
+	}
+
+	public String getTargetInstanceId() {
+		return this.targetInstanceId;
+	}
+
+	public void setTargetInstanceId(String targetInstanceId) {
+		this.targetInstanceId = targetInstanceId;
+		if(targetInstanceId != null){
+			putQueryParameter("TargetInstanceId", targetInstanceId);
+		}
+	}
+
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 
@@ -126,8 +126,8 @@ public class CreateModelRequest extends RpcAcsRequest<CreateModelResponse> {
 	}
 
 	@Override
-	public Class<CreateModelResponse> getResponseClass() {
-		return CreateModelResponse.class;
+	public Class<ModifyApiGroupInstanceResponse> getResponseClass() {
+		return ModifyApiGroupInstanceResponse.class;
 	}
 
 }

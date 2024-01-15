@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.cloudapi.model.v20160714.DescribeModelsResponse;
 import com.aliyuncs.cloudapi.model.v20160714.DescribeModelsResponse.ModelDetail;
+import com.aliyuncs.cloudapi.model.v20160714.DescribeModelsResponse.ModelDetail.TagInfo;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -42,6 +43,16 @@ public class DescribeModelsResponseUnmarshaller {
 			modelDetail.setCreatedTime(_ctx.stringValue("DescribeModelsResponse.ModelDetails["+ i +"].CreatedTime"));
 			modelDetail.setModelId(_ctx.stringValue("DescribeModelsResponse.ModelDetails["+ i +"].ModelId"));
 			modelDetail.setModelRef(_ctx.stringValue("DescribeModelsResponse.ModelDetails["+ i +"].ModelRef"));
+
+			List<TagInfo> tags = new ArrayList<TagInfo>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeModelsResponse.ModelDetails["+ i +"].Tags.Length"); j++) {
+				TagInfo tagInfo = new TagInfo();
+				tagInfo.setKey(_ctx.stringValue("DescribeModelsResponse.ModelDetails["+ i +"].Tags["+ j +"].Key"));
+				tagInfo.setValue(_ctx.stringValue("DescribeModelsResponse.ModelDetails["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tagInfo);
+			}
+			modelDetail.setTags(tags);
 
 			modelDetails.add(modelDetail);
 		}

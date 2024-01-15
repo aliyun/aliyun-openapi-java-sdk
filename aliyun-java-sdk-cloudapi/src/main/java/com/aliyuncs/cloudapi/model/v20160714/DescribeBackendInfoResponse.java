@@ -211,6 +211,8 @@ public class DescribeBackendInfoResponse extends AcsResponse {
 
 				private DiscoveryConfig discoveryConfig;
 
+				private EdasConfig edasConfig;
+
 				public String getServiceAddress() {
 					return this.serviceAddress;
 				}
@@ -289,6 +291,14 @@ public class DescribeBackendInfoResponse extends AcsResponse {
 
 				public void setDiscoveryConfig(DiscoveryConfig discoveryConfig) {
 					this.discoveryConfig = discoveryConfig;
+				}
+
+				public EdasConfig getEdasConfig() {
+					return this.edasConfig;
+				}
+
+				public void setEdasConfig(EdasConfig edasConfig) {
+					this.edasConfig = edasConfig;
 				}
 
 				public static class VpcConfig {
@@ -575,6 +585,8 @@ public class DescribeBackendInfoResponse extends AcsResponse {
 
 					private NacosConfig nacosConfig;
 
+					private ZookeeperConfig zookeeperConfig;
+
 					public String getRcType() {
 						return this.rcType;
 					}
@@ -589,6 +601,14 @@ public class DescribeBackendInfoResponse extends AcsResponse {
 
 					public void setNacosConfig(NacosConfig nacosConfig) {
 						this.nacosConfig = nacosConfig;
+					}
+
+					public ZookeeperConfig getZookeeperConfig() {
+						return this.zookeeperConfig;
+					}
+
+					public void setZookeeperConfig(ZookeeperConfig zookeeperConfig) {
+						this.zookeeperConfig = zookeeperConfig;
 					}
 
 					public static class NacosConfig {
@@ -692,6 +712,112 @@ public class DescribeBackendInfoResponse extends AcsResponse {
 						public void setSecretKey(String secretKey) {
 							this.secretKey = secretKey;
 						}
+					}
+
+					public static class ZookeeperConfig {
+
+						private String connectString;
+
+						private String namespace;
+
+						private String serviceName;
+
+						public String getConnectString() {
+							return this.connectString;
+						}
+
+						public void setConnectString(String connectString) {
+							this.connectString = connectString;
+						}
+
+						public String getNamespace() {
+							return this.namespace;
+						}
+
+						public void setNamespace(String namespace) {
+							this.namespace = namespace;
+						}
+
+						public String getServiceName() {
+							return this.serviceName;
+						}
+
+						public void setServiceName(String serviceName) {
+							this.serviceName = serviceName;
+						}
+					}
+				}
+
+				public static class EdasConfig {
+
+					private String microserviceNamespaceName;
+
+					private String microserviceNamespaceId;
+
+					private String microserviceNamespace;
+
+					private String serviceName;
+
+					private String edasAppId;
+
+					private String registryType;
+
+					private String mseInstanceId;
+
+					public String getMicroserviceNamespaceName() {
+						return this.microserviceNamespaceName;
+					}
+
+					public void setMicroserviceNamespaceName(String microserviceNamespaceName) {
+						this.microserviceNamespaceName = microserviceNamespaceName;
+					}
+
+					public String getMicroserviceNamespaceId() {
+						return this.microserviceNamespaceId;
+					}
+
+					public void setMicroserviceNamespaceId(String microserviceNamespaceId) {
+						this.microserviceNamespaceId = microserviceNamespaceId;
+					}
+
+					public String getMicroserviceNamespace() {
+						return this.microserviceNamespace;
+					}
+
+					public void setMicroserviceNamespace(String microserviceNamespace) {
+						this.microserviceNamespace = microserviceNamespace;
+					}
+
+					public String getServiceName() {
+						return this.serviceName;
+					}
+
+					public void setServiceName(String serviceName) {
+						this.serviceName = serviceName;
+					}
+
+					public String getEdasAppId() {
+						return this.edasAppId;
+					}
+
+					public void setEdasAppId(String edasAppId) {
+						this.edasAppId = edasAppId;
+					}
+
+					public String getRegistryType() {
+						return this.registryType;
+					}
+
+					public void setRegistryType(String registryType) {
+						this.registryType = registryType;
+					}
+
+					public String getMseInstanceId() {
+						return this.mseInstanceId;
+					}
+
+					public void setMseInstanceId(String mseInstanceId) {
+						this.mseInstanceId = mseInstanceId;
 					}
 				}
 			}

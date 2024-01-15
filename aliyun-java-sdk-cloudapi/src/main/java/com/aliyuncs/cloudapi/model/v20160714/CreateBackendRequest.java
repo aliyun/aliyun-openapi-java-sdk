@@ -15,6 +15,7 @@
 package com.aliyuncs.cloudapi.model.v20160714;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cloudapi.Endpoint;
 
@@ -33,7 +34,11 @@ public class CreateBackendRequest extends RpcAcsRequest<CreateBackendResponse> {
 
 	private String securityToken;
 
+	private Boolean createSlr;
+
 	private String backendType;
+
+	private List<Tag> tags;
 	public CreateBackendRequest() {
 		super("CloudAPI", "2016-07-14", "CreateBackend", "apigateway");
 		setMethod(MethodType.POST);
@@ -87,6 +92,17 @@ public class CreateBackendRequest extends RpcAcsRequest<CreateBackendResponse> {
 		}
 	}
 
+	public Boolean getCreateSlr() {
+		return this.createSlr;
+	}
+
+	public void setCreateSlr(Boolean createSlr) {
+		this.createSlr = createSlr;
+		if(createSlr != null){
+			putQueryParameter("CreateSlr", createSlr.toString());
+		}
+	}
+
 	public String getBackendType() {
 		return this.backendType;
 	}
@@ -95,6 +111,43 @@ public class CreateBackendRequest extends RpcAcsRequest<CreateBackendResponse> {
 		this.backendType = backendType;
 		if(backendType != null){
 			putQueryParameter("BackendType", backendType);
+		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

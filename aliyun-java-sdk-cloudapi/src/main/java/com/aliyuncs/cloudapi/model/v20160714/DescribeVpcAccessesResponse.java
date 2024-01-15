@@ -95,6 +95,8 @@ public class DescribeVpcAccessesResponse extends AcsResponse {
 
 		private String vpcTargetHostName;
 
+		private List<TagInfo> tags;
+
 		public String getVpcId() {
 			return this.vpcId;
 		}
@@ -165,6 +167,37 @@ public class DescribeVpcAccessesResponse extends AcsResponse {
 
 		public void setVpcTargetHostName(String vpcTargetHostName) {
 			this.vpcTargetHostName = vpcTargetHostName;
+		}
+
+		public List<TagInfo> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<TagInfo> tags) {
+			this.tags = tags;
+		}
+
+		public static class TagInfo {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
 		}
 	}
 

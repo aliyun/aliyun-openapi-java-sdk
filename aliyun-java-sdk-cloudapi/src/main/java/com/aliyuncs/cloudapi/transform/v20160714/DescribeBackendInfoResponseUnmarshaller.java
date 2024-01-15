@@ -23,6 +23,8 @@ import com.aliyuncs.cloudapi.model.v20160714.DescribeBackendInfoResponse.Backend
 import com.aliyuncs.cloudapi.model.v20160714.DescribeBackendInfoResponse.BackendInfo.BackendModel.BackendConfig;
 import com.aliyuncs.cloudapi.model.v20160714.DescribeBackendInfoResponse.BackendInfo.BackendModel.BackendConfig.DiscoveryConfig;
 import com.aliyuncs.cloudapi.model.v20160714.DescribeBackendInfoResponse.BackendInfo.BackendModel.BackendConfig.DiscoveryConfig.NacosConfig;
+import com.aliyuncs.cloudapi.model.v20160714.DescribeBackendInfoResponse.BackendInfo.BackendModel.BackendConfig.DiscoveryConfig.ZookeeperConfig;
+import com.aliyuncs.cloudapi.model.v20160714.DescribeBackendInfoResponse.BackendInfo.BackendModel.BackendConfig.EdasConfig;
 import com.aliyuncs.cloudapi.model.v20160714.DescribeBackendInfoResponse.BackendInfo.BackendModel.BackendConfig.EventBridgeConfig;
 import com.aliyuncs.cloudapi.model.v20160714.DescribeBackendInfoResponse.BackendInfo.BackendModel.BackendConfig.FunctionComputeConfig;
 import com.aliyuncs.cloudapi.model.v20160714.DescribeBackendInfoResponse.BackendInfo.BackendModel.BackendConfig.MockConfig;
@@ -125,7 +127,23 @@ public class DescribeBackendInfoResponseUnmarshaller {
 			nacosConfig.setAccessKey(_ctx.stringValue("DescribeBackendInfoResponse.BackendInfo.BackendModels["+ i +"].BackendConfig.DiscoveryConfig.NacosConfig.AccessKey"));
 			nacosConfig.setSecretKey(_ctx.stringValue("DescribeBackendInfoResponse.BackendInfo.BackendModels["+ i +"].BackendConfig.DiscoveryConfig.NacosConfig.SecretKey"));
 			discoveryConfig.setNacosConfig(nacosConfig);
+
+			ZookeeperConfig zookeeperConfig = new ZookeeperConfig();
+			zookeeperConfig.setConnectString(_ctx.stringValue("DescribeBackendInfoResponse.BackendInfo.BackendModels["+ i +"].BackendConfig.DiscoveryConfig.ZookeeperConfig.ConnectString"));
+			zookeeperConfig.setNamespace(_ctx.stringValue("DescribeBackendInfoResponse.BackendInfo.BackendModels["+ i +"].BackendConfig.DiscoveryConfig.ZookeeperConfig.Namespace"));
+			zookeeperConfig.setServiceName(_ctx.stringValue("DescribeBackendInfoResponse.BackendInfo.BackendModels["+ i +"].BackendConfig.DiscoveryConfig.ZookeeperConfig.ServiceName"));
+			discoveryConfig.setZookeeperConfig(zookeeperConfig);
 			backendConfig.setDiscoveryConfig(discoveryConfig);
+
+			EdasConfig edasConfig = new EdasConfig();
+			edasConfig.setMicroserviceNamespaceName(_ctx.stringValue("DescribeBackendInfoResponse.BackendInfo.BackendModels["+ i +"].BackendConfig.EdasConfig.MicroserviceNamespaceName"));
+			edasConfig.setMicroserviceNamespaceId(_ctx.stringValue("DescribeBackendInfoResponse.BackendInfo.BackendModels["+ i +"].BackendConfig.EdasConfig.MicroserviceNamespaceId"));
+			edasConfig.setMicroserviceNamespace(_ctx.stringValue("DescribeBackendInfoResponse.BackendInfo.BackendModels["+ i +"].BackendConfig.EdasConfig.MicroserviceNamespace"));
+			edasConfig.setServiceName(_ctx.stringValue("DescribeBackendInfoResponse.BackendInfo.BackendModels["+ i +"].BackendConfig.EdasConfig.ServiceName"));
+			edasConfig.setEdasAppId(_ctx.stringValue("DescribeBackendInfoResponse.BackendInfo.BackendModels["+ i +"].BackendConfig.EdasConfig.EdasAppId"));
+			edasConfig.setRegistryType(_ctx.stringValue("DescribeBackendInfoResponse.BackendInfo.BackendModels["+ i +"].BackendConfig.EdasConfig.RegistryType"));
+			edasConfig.setMseInstanceId(_ctx.stringValue("DescribeBackendInfoResponse.BackendInfo.BackendModels["+ i +"].BackendConfig.EdasConfig.MseInstanceId"));
+			backendConfig.setEdasConfig(edasConfig);
 			backendModel.setBackendConfig(backendConfig);
 
 			backendModels.add(backendModel);

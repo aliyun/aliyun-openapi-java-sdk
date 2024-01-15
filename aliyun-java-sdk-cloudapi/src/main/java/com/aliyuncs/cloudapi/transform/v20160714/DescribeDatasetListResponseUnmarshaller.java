@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.cloudapi.model.v20160714.DescribeDatasetListResponse;
 import com.aliyuncs.cloudapi.model.v20160714.DescribeDatasetListResponse.DatasetInfo;
+import com.aliyuncs.cloudapi.model.v20160714.DescribeDatasetListResponse.DatasetInfo.TagInfo;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -39,6 +40,16 @@ public class DescribeDatasetListResponseUnmarshaller {
 			datasetInfo.setDatasetType(_ctx.stringValue("DescribeDatasetListResponse.DatasetInfoList["+ i +"].DatasetType"));
 			datasetInfo.setModifiedTime(_ctx.stringValue("DescribeDatasetListResponse.DatasetInfoList["+ i +"].ModifiedTime"));
 			datasetInfo.setCreatedTime(_ctx.stringValue("DescribeDatasetListResponse.DatasetInfoList["+ i +"].CreatedTime"));
+
+			List<TagInfo> tags = new ArrayList<TagInfo>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeDatasetListResponse.DatasetInfoList["+ i +"].Tags.Length"); j++) {
+				TagInfo tagInfo = new TagInfo();
+				tagInfo.setKey(_ctx.stringValue("DescribeDatasetListResponse.DatasetInfoList["+ i +"].Tags["+ j +"].Key"));
+				tagInfo.setValue(_ctx.stringValue("DescribeDatasetListResponse.DatasetInfoList["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tagInfo);
+			}
+			datasetInfo.setTags(tags);
 
 			datasetInfoList.add(datasetInfo);
 		}

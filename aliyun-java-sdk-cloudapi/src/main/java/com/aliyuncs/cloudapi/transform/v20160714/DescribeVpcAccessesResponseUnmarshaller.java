@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.cloudapi.model.v20160714.DescribeVpcAccessesResponse;
 import com.aliyuncs.cloudapi.model.v20160714.DescribeVpcAccessesResponse.VpcAccessAttribute;
+import com.aliyuncs.cloudapi.model.v20160714.DescribeVpcAccessesResponse.VpcAccessAttribute.TagInfo;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -43,6 +44,16 @@ public class DescribeVpcAccessesResponseUnmarshaller {
 			vpcAccessAttribute.setRegionId(_ctx.stringValue("DescribeVpcAccessesResponse.VpcAccessAttributes["+ i +"].RegionId"));
 			vpcAccessAttribute.setVpcAccessId(_ctx.stringValue("DescribeVpcAccessesResponse.VpcAccessAttributes["+ i +"].VpcAccessId"));
 			vpcAccessAttribute.setVpcTargetHostName(_ctx.stringValue("DescribeVpcAccessesResponse.VpcAccessAttributes["+ i +"].VpcTargetHostName"));
+
+			List<TagInfo> tags = new ArrayList<TagInfo>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeVpcAccessesResponse.VpcAccessAttributes["+ i +"].Tags.Length"); j++) {
+				TagInfo tagInfo = new TagInfo();
+				tagInfo.setKey(_ctx.stringValue("DescribeVpcAccessesResponse.VpcAccessAttributes["+ i +"].Tags["+ j +"].Key"));
+				tagInfo.setValue(_ctx.stringValue("DescribeVpcAccessesResponse.VpcAccessAttributes["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tagInfo);
+			}
+			vpcAccessAttribute.setTags(tags);
 
 			vpcAccessAttributes.add(vpcAccessAttribute);
 		}

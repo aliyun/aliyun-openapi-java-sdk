@@ -87,6 +87,8 @@ public class DescribeDatasetListResponse extends AcsResponse {
 
 		private String createdTime;
 
+		private List<TagInfo> tags;
+
 		public String getDatasetId() {
 			return this.datasetId;
 		}
@@ -125,6 +127,37 @@ public class DescribeDatasetListResponse extends AcsResponse {
 
 		public void setCreatedTime(String createdTime) {
 			this.createdTime = createdTime;
+		}
+
+		public List<TagInfo> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<TagInfo> tags) {
+			this.tags = tags;
+		}
+
+		public static class TagInfo {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
 		}
 	}
 

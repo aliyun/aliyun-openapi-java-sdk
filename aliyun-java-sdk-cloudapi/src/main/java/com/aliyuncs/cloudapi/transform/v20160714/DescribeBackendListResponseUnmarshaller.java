@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.cloudapi.model.v20160714.DescribeBackendListResponse;
 import com.aliyuncs.cloudapi.model.v20160714.DescribeBackendListResponse.BackendInfo;
+import com.aliyuncs.cloudapi.model.v20160714.DescribeBackendListResponse.BackendInfo.TagInfo;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -40,6 +41,16 @@ public class DescribeBackendListResponseUnmarshaller {
 			backendInfo.setDescription(_ctx.stringValue("DescribeBackendListResponse.BackendInfoList["+ i +"].Description"));
 			backendInfo.setCreatedTime(_ctx.stringValue("DescribeBackendListResponse.BackendInfoList["+ i +"].CreatedTime"));
 			backendInfo.setBackendId(_ctx.stringValue("DescribeBackendListResponse.BackendInfoList["+ i +"].BackendId"));
+
+			List<TagInfo> tags = new ArrayList<TagInfo>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeBackendListResponse.BackendInfoList["+ i +"].Tags.Length"); j++) {
+				TagInfo tagInfo = new TagInfo();
+				tagInfo.setKey(_ctx.stringValue("DescribeBackendListResponse.BackendInfoList["+ i +"].Tags["+ j +"].Key"));
+				tagInfo.setValue(_ctx.stringValue("DescribeBackendListResponse.BackendInfoList["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tagInfo);
+			}
+			backendInfo.setTags(tags);
 
 			backendInfoList.add(backendInfo);
 		}
