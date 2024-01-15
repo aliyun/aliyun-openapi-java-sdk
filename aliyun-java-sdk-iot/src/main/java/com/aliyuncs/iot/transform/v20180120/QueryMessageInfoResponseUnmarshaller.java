@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.iot.model.v20180120.QueryMessageInfoResponse;
 import com.aliyuncs.iot.model.v20180120.QueryMessageInfoResponse.Message;
+import com.aliyuncs.iot.model.v20180120.QueryMessageInfoResponse.Message.MqttProperty;
 import com.aliyuncs.iot.model.v20180120.QueryMessageInfoResponse.Message.UserProperty;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -37,6 +38,8 @@ public class QueryMessageInfoResponseUnmarshaller {
 		message.setTopicFullName(_ctx.stringValue("QueryMessageInfoResponse.Message.TopicFullName"));
 		message.setMessageContent(_ctx.stringValue("QueryMessageInfoResponse.Message.MessageContent"));
 		message.setGenerateTime(_ctx.longValue("QueryMessageInfoResponse.Message.GenerateTime"));
+		message.setTransformedMessageContent(_ctx.stringValue("QueryMessageInfoResponse.Message.TransformedMessageContent"));
+		message.setTransformedTopicFullName(_ctx.stringValue("QueryMessageInfoResponse.Message.TransformedTopicFullName"));
 
 		List<UserProperty> userProperties = new ArrayList<UserProperty>();
 		for (int i = 0; i < _ctx.lengthValue("QueryMessageInfoResponse.Message.UserProperties.Length"); i++) {
@@ -47,6 +50,16 @@ public class QueryMessageInfoResponseUnmarshaller {
 			userProperties.add(userProperty);
 		}
 		message.setUserProperties(userProperties);
+
+		List<MqttProperty> mqttProperties = new ArrayList<MqttProperty>();
+		for (int i = 0; i < _ctx.lengthValue("QueryMessageInfoResponse.Message.MqttProperties.Length"); i++) {
+			MqttProperty mqttProperty = new MqttProperty();
+			mqttProperty.setKey(_ctx.stringValue("QueryMessageInfoResponse.Message.MqttProperties["+ i +"].Key"));
+			mqttProperty.setValue(_ctx.stringValue("QueryMessageInfoResponse.Message.MqttProperties["+ i +"].Value"));
+
+			mqttProperties.add(mqttProperty);
+		}
+		message.setMqttProperties(mqttProperties);
 		queryMessageInfoResponse.setMessage(message);
 	 
 	 	return queryMessageInfoResponse;

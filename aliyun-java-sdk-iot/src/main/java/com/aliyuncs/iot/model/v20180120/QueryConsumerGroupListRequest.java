@@ -39,7 +39,7 @@ public class QueryConsumerGroupListRequest extends RpcAcsRequest<QueryConsumerGr
 
 	private String subBizCode;
 	public QueryConsumerGroupListRequest() {
-		super("Iot", "2018-01-20", "QueryConsumerGroupList");
+		super("Iot", "2018-01-20", "QueryConsumerGroupList", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

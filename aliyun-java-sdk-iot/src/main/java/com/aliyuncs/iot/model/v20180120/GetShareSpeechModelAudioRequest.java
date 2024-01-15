@@ -32,7 +32,7 @@ public class GetShareSpeechModelAudioRequest extends RpcAcsRequest<GetShareSpeec
 
 	private List<String> speechModelCodeLists;
 	public GetShareSpeechModelAudioRequest() {
-		super("Iot", "2018-01-20", "GetShareSpeechModelAudio");
+		super("Iot", "2018-01-20", "GetShareSpeechModelAudio", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -37,7 +37,7 @@ public class QueryEdgeDriverVersionRequest extends RpcAcsRequest<QueryEdgeDriver
 
 	private Integer currentPage;
 	public QueryEdgeDriverVersionRequest() {
-		super("Iot", "2018-01-20", "QueryEdgeDriverVersion");
+		super("Iot", "2018-01-20", "QueryEdgeDriverVersion", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

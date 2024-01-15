@@ -38,7 +38,7 @@ public class UpdateEdgeInstanceChannelRequest extends RpcAcsRequest<UpdateEdgeIn
 
 	private String channelId;
 	public UpdateEdgeInstanceChannelRequest() {
-		super("Iot", "2018-01-20", "UpdateEdgeInstanceChannel");
+		super("Iot", "2018-01-20", "UpdateEdgeInstanceChannel", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

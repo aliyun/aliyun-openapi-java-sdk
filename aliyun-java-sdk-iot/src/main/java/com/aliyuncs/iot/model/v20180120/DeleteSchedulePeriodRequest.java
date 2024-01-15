@@ -29,7 +29,7 @@ public class DeleteSchedulePeriodRequest extends RpcAcsRequest<DeleteSchedulePer
 
 	private String iotInstanceId;
 	public DeleteSchedulePeriodRequest() {
-		super("Iot", "2018-01-20", "DeleteSchedulePeriod");
+		super("Iot", "2018-01-20", "DeleteSchedulePeriod", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

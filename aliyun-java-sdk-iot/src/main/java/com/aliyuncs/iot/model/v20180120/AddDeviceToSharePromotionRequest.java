@@ -34,7 +34,7 @@ public class AddDeviceToSharePromotionRequest extends RpcAcsRequest<AddDeviceToS
 
 	private String shareTaskCode;
 	public AddDeviceToSharePromotionRequest() {
-		super("Iot", "2018-01-20", "AddDeviceToSharePromotion");
+		super("Iot", "2018-01-20", "AddDeviceToSharePromotion", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

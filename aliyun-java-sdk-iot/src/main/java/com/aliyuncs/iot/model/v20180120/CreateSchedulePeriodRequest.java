@@ -37,7 +37,7 @@ public class CreateSchedulePeriodRequest extends RpcAcsRequest<CreateSchedulePer
 
 	private String soundCodeContent;
 	public CreateSchedulePeriodRequest() {
-		super("Iot", "2018-01-20", "CreateSchedulePeriod");
+		super("Iot", "2018-01-20", "CreateSchedulePeriod", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

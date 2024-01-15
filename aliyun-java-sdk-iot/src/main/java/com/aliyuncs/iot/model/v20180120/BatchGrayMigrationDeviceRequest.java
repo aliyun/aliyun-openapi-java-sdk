@@ -30,7 +30,7 @@ public class BatchGrayMigrationDeviceRequest extends RpcAcsRequest<BatchGrayMigr
 
 	private String productKey;
 	public BatchGrayMigrationDeviceRequest() {
-		super("Iot", "2018-01-20", "BatchGrayMigrationDevice");
+		super("Iot", "2018-01-20", "BatchGrayMigrationDevice", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

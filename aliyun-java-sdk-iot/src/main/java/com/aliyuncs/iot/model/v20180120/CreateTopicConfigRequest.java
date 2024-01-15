@@ -41,7 +41,7 @@ public class CreateTopicConfigRequest extends RpcAcsRequest<CreateTopicConfigRes
 
 	private String operation;
 	public CreateTopicConfigRequest() {
-		super("Iot", "2018-01-20", "CreateTopicConfig");
+		super("Iot", "2018-01-20", "CreateTopicConfig", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

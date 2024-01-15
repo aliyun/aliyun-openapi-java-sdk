@@ -29,7 +29,7 @@ public class QueryDeviceTunnelRequest extends RpcAcsRequest<QueryDeviceTunnelRes
 
 	private String tunnelId;
 	public QueryDeviceTunnelRequest() {
-		super("Iot", "2018-01-20", "QueryDeviceTunnel");
+		super("Iot", "2018-01-20", "QueryDeviceTunnel", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

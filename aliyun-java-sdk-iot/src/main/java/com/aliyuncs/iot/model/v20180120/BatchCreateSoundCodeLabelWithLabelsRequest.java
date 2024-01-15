@@ -34,7 +34,7 @@ public class BatchCreateSoundCodeLabelWithLabelsRequest extends RpcAcsRequest<Ba
 
 	private List<String> labelss;
 	public BatchCreateSoundCodeLabelWithLabelsRequest() {
-		super("Iot", "2018-01-20", "BatchCreateSoundCodeLabelWithLabels");
+		super("Iot", "2018-01-20", "BatchCreateSoundCodeLabelWithLabels", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

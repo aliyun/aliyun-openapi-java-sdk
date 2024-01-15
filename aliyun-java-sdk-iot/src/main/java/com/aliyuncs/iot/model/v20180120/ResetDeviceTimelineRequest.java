@@ -31,7 +31,7 @@ public class ResetDeviceTimelineRequest extends RpcAcsRequest<ResetDeviceTimelin
 
 	private String deviceName;
 	public ResetDeviceTimelineRequest() {
-		super("Iot", "2018-01-20", "ResetDeviceTimeline");
+		super("Iot", "2018-01-20", "ResetDeviceTimeline", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

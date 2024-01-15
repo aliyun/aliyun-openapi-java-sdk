@@ -37,7 +37,7 @@ public class AsyncRRpcRequest extends RpcAcsRequest<AsyncRRpcResponse> {
 
 	private String deviceName;
 	public AsyncRRpcRequest() {
-		super("Iot", "2018-01-20", "AsyncRRpc");
+		super("Iot", "2018-01-20", "AsyncRRpc", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

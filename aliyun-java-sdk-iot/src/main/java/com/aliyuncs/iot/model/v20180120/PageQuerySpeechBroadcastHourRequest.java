@@ -35,7 +35,7 @@ public class PageQuerySpeechBroadcastHourRequest extends RpcAcsRequest<PageQuery
 
 	private String shareTaskCode;
 	public PageQuerySpeechBroadcastHourRequest() {
-		super("Iot", "2018-01-20", "PageQuerySpeechBroadcastHour");
+		super("Iot", "2018-01-20", "PageQuerySpeechBroadcastHour", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

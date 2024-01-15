@@ -29,7 +29,7 @@ public class QueryTopicConfigRequest extends RpcAcsRequest<QueryTopicConfigRespo
 
 	private String productKey;
 	public QueryTopicConfigRequest() {
-		super("Iot", "2018-01-20", "QueryTopicConfig");
+		super("Iot", "2018-01-20", "QueryTopicConfig", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

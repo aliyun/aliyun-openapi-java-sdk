@@ -40,7 +40,7 @@ public class QuerySpeechLicenseDeviceListRequest extends RpcAcsRequest<QuerySpee
 
 	private String deviceName;
 	public QuerySpeechLicenseDeviceListRequest() {
-		super("Iot", "2018-01-20", "QuerySpeechLicenseDeviceList");
+		super("Iot", "2018-01-20", "QuerySpeechLicenseDeviceList", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

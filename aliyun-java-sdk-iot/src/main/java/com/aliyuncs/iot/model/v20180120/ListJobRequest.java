@@ -33,7 +33,7 @@ public class ListJobRequest extends RpcAcsRequest<ListJobResponse> {
 
 	private String status;
 	public ListJobRequest() {
-		super("Iot", "2018-01-20", "ListJob");
+		super("Iot", "2018-01-20", "ListJob", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

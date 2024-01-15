@@ -31,7 +31,7 @@ public class TestSwitchRequest extends RpcAcsRequest<TestSwitchResponse> {
 
 	private String deviceName;
 	public TestSwitchRequest() {
-		super("Iot", "2018-01-20", "TestSwitch");
+		super("Iot", "2018-01-20", "TestSwitch", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

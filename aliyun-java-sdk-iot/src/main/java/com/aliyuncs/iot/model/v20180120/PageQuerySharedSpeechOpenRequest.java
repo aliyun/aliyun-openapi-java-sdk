@@ -41,7 +41,7 @@ public class PageQuerySharedSpeechOpenRequest extends RpcAcsRequest<PageQuerySha
 
 	private Integer status;
 	public PageQuerySharedSpeechOpenRequest() {
-		super("Iot", "2018-01-20", "PageQuerySharedSpeechOpen");
+		super("Iot", "2018-01-20", "PageQuerySharedSpeechOpen", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

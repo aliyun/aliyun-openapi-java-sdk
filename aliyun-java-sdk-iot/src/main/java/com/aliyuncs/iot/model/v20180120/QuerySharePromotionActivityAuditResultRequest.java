@@ -31,7 +31,7 @@ public class QuerySharePromotionActivityAuditResultRequest extends RpcAcsRequest
 
 	private String shareTaskCode;
 	public QuerySharePromotionActivityAuditResultRequest() {
-		super("Iot", "2018-01-20", "QuerySharePromotionActivityAuditResult");
+		super("Iot", "2018-01-20", "QuerySharePromotionActivityAuditResult", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

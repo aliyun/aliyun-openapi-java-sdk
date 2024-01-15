@@ -29,7 +29,7 @@ public class CancelJobRequest extends RpcAcsRequest<CancelJobResponse> {
 
 	private String iotInstanceId;
 	public CancelJobRequest() {
-		super("Iot", "2018-01-20", "CancelJob");
+		super("Iot", "2018-01-20", "CancelJob", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

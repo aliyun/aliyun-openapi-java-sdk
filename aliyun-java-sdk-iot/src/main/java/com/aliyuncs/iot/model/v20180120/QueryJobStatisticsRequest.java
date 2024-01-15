@@ -29,7 +29,7 @@ public class QueryJobStatisticsRequest extends RpcAcsRequest<QueryJobStatisticsR
 
 	private String iotInstanceId;
 	public QueryJobStatisticsRequest() {
-		super("Iot", "2018-01-20", "QueryJobStatistics");
+		super("Iot", "2018-01-20", "QueryJobStatistics", "iot");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

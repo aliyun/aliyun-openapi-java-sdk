@@ -37,7 +37,7 @@ public class ModifyOTAFirmwareRequest extends RpcAcsRequest<ModifyOTAFirmwareRes
 
 	private String productKey;
 	public ModifyOTAFirmwareRequest() {
-		super("Iot", "2018-01-20", "ModifyOTAFirmware");
+		super("Iot", "2018-01-20", "ModifyOTAFirmware", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

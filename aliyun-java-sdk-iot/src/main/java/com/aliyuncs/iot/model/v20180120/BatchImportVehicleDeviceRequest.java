@@ -32,7 +32,7 @@ public class BatchImportVehicleDeviceRequest extends RpcAcsRequest<BatchImportVe
 
 	private List<DeviceList> deviceLists;
 	public BatchImportVehicleDeviceRequest() {
-		super("Iot", "2018-01-20", "BatchImportVehicleDevice");
+		super("Iot", "2018-01-20", "BatchImportVehicleDevice", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -70,6 +70,7 @@ public class BatchImportVehicleDeviceRequest extends RpcAcsRequest<BatchImportVe
 		this.deviceLists = deviceLists;	
 		if (deviceLists != null) {
 			for (int depth1 = 0; depth1 < deviceLists.size(); depth1++) {
+				putBodyParameter("DeviceList." + (depth1 + 1) + ".DeviceSecret" , deviceLists.get(depth1).getDeviceSecret());
 				putBodyParameter("DeviceList." + (depth1 + 1) + ".DeviceName" , deviceLists.get(depth1).getDeviceName());
 				putBodyParameter("DeviceList." + (depth1 + 1) + ".DeviceId" , deviceLists.get(depth1).getDeviceId());
 				putBodyParameter("DeviceList." + (depth1 + 1) + ".Manufacturer" , deviceLists.get(depth1).getManufacturer());
@@ -80,6 +81,8 @@ public class BatchImportVehicleDeviceRequest extends RpcAcsRequest<BatchImportVe
 
 	public static class DeviceList {
 
+		private String deviceSecret;
+
 		private String deviceName;
 
 		private String deviceId;
@@ -87,6 +90,14 @@ public class BatchImportVehicleDeviceRequest extends RpcAcsRequest<BatchImportVe
 		private String manufacturer;
 
 		private String deviceModel;
+
+		public String getDeviceSecret() {
+			return this.deviceSecret;
+		}
+
+		public void setDeviceSecret(String deviceSecret) {
+			this.deviceSecret = deviceSecret;
+		}
 
 		public String getDeviceName() {
 			return this.deviceName;

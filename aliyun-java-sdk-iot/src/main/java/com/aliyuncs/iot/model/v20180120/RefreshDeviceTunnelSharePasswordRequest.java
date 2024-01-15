@@ -31,7 +31,7 @@ public class RefreshDeviceTunnelSharePasswordRequest extends RpcAcsRequest<Refre
 
 	private String deviceName;
 	public RefreshDeviceTunnelSharePasswordRequest() {
-		super("Iot", "2018-01-20", "RefreshDeviceTunnelSharePassword");
+		super("Iot", "2018-01-20", "RefreshDeviceTunnelSharePassword", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

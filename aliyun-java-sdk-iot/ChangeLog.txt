@@ -1,3 +1,6 @@
+2024-01-15 Version: 7.59.0
+- BatchPub Support MQTT5.
+
 2023-09-25 Version: 7.58.0
 - Add Api ResetDeviceTimeline.
 

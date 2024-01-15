@@ -29,7 +29,7 @@ public class DeleteSoundCodeLabelRequest extends RpcAcsRequest<DeleteSoundCodeLa
 
 	private String iotInstanceId;
 	public DeleteSoundCodeLabelRequest() {
-		super("Iot", "2018-01-20", "DeleteSoundCodeLabel");
+		super("Iot", "2018-01-20", "DeleteSoundCodeLabel", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

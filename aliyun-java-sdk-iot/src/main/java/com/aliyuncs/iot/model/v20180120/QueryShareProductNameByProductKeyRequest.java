@@ -29,7 +29,7 @@ public class QueryShareProductNameByProductKeyRequest extends RpcAcsRequest<Quer
 
 	private String productKey;
 	public QueryShareProductNameByProductKeyRequest() {
-		super("Iot", "2018-01-20", "QueryShareProductNameByProductKey");
+		super("Iot", "2018-01-20", "QueryShareProductNameByProductKey", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

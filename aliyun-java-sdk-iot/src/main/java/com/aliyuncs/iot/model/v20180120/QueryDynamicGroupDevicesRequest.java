@@ -43,7 +43,7 @@ public class QueryDynamicGroupDevicesRequest extends RpcAcsRequest<QueryDynamicG
 
 	private String status;
 	public QueryDynamicGroupDevicesRequest() {
-		super("Iot", "2018-01-20", "QueryDynamicGroupDevices");
+		super("Iot", "2018-01-20", "QueryDynamicGroupDevices", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
