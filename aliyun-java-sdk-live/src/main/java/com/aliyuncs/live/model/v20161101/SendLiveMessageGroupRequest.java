@@ -32,6 +32,8 @@ public class SendLiveMessageGroupRequest extends RpcAcsRequest<SendLiveMessageGr
 
 	private Long staticsIncrease;
 
+	private Boolean noCache;
+
 	private Long msgType;
 
 	private Boolean noStorage;
@@ -87,6 +89,17 @@ public class SendLiveMessageGroupRequest extends RpcAcsRequest<SendLiveMessageGr
 		this.staticsIncrease = staticsIncrease;
 		if(staticsIncrease != null){
 			putQueryParameter("StaticsIncrease", staticsIncrease.toString());
+		}
+	}
+
+	public Boolean getNoCache() {
+		return this.noCache;
+	}
+
+	public void setNoCache(Boolean noCache) {
+		this.noCache = noCache;
+		if(noCache != null){
+			putQueryParameter("NoCache", noCache.toString());
 		}
 	}
 

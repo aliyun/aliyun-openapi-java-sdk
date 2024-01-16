@@ -29,6 +29,8 @@ public class RealTimeSnapshotCommandRequest extends RpcAcsRequest<RealTimeSnapsh
 
 	private Integer mode;
 
+	private String userData;
+
 	private String appName;
 
 	private String streamName;
@@ -38,6 +40,8 @@ public class RealTimeSnapshotCommandRequest extends RpcAcsRequest<RealTimeSnapsh
 	private Long ownerId;
 
 	private String command;
+
+	private Integer snapshotType;
 
 	private Integer interval;
 	public RealTimeSnapshotCommandRequest() {
@@ -68,6 +72,17 @@ public class RealTimeSnapshotCommandRequest extends RpcAcsRequest<RealTimeSnapsh
 		this.mode = mode;
 		if(mode != null){
 			putQueryParameter("Mode", mode.toString());
+		}
+	}
+
+	public String getUserData() {
+		return this.userData;
+	}
+
+	public void setUserData(String userData) {
+		this.userData = userData;
+		if(userData != null){
+			putQueryParameter("UserData", userData);
 		}
 	}
 
@@ -123,6 +138,17 @@ public class RealTimeSnapshotCommandRequest extends RpcAcsRequest<RealTimeSnapsh
 		this.command = command;
 		if(command != null){
 			putQueryParameter("Command", command);
+		}
+	}
+
+	public Integer getSnapshotType() {
+		return this.snapshotType;
+	}
+
+	public void setSnapshotType(Integer snapshotType) {
+		this.snapshotType = snapshotType;
+		if(snapshotType != null){
+			putQueryParameter("SnapshotType", snapshotType.toString());
 		}
 	}
 

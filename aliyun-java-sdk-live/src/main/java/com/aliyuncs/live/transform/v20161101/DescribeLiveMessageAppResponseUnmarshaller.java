@@ -24,12 +24,17 @@ public class DescribeLiveMessageAppResponseUnmarshaller {
 		
 		describeLiveMessageAppResponse.setRequestId(_ctx.stringValue("DescribeLiveMessageAppResponse.RequestId"));
 		describeLiveMessageAppResponse.setAppId(_ctx.stringValue("DescribeLiveMessageAppResponse.AppId"));
+		describeLiveMessageAppResponse.setAppName(_ctx.stringValue("DescribeLiveMessageAppResponse.AppName"));
 		describeLiveMessageAppResponse.setAppKey(_ctx.stringValue("DescribeLiveMessageAppResponse.AppKey"));
 		describeLiveMessageAppResponse.setAppSign(_ctx.stringValue("DescribeLiveMessageAppResponse.AppSign"));
 		describeLiveMessageAppResponse.setAuditType(_ctx.integerValue("DescribeLiveMessageAppResponse.AuditType"));
 		describeLiveMessageAppResponse.setAuditUrl(_ctx.stringValue("DescribeLiveMessageAppResponse.AuditUrl"));
+		describeLiveMessageAppResponse.setEventCallbackUrl(_ctx.stringValue("DescribeLiveMessageAppResponse.EventCallbackUrl"));
 		describeLiveMessageAppResponse.setCallbackUrl(_ctx.stringValue("DescribeLiveMessageAppResponse.CallbackUrl"));
 		describeLiveMessageAppResponse.setDisable(_ctx.booleanValue("DescribeLiveMessageAppResponse.Disable"));
+		describeLiveMessageAppResponse.setCreateTime(_ctx.longValue("DescribeLiveMessageAppResponse.CreateTime"));
+		describeLiveMessageAppResponse.setModifyTime(_ctx.longValue("DescribeLiveMessageAppResponse.ModifyTime"));
+		describeLiveMessageAppResponse.setDataCenter(_ctx.stringValue("DescribeLiveMessageAppResponse.DataCenter"));
 	 
 	 	return describeLiveMessageAppResponse;
 	}

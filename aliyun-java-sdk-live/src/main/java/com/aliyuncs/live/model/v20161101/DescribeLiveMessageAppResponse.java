@@ -28,6 +28,8 @@ public class DescribeLiveMessageAppResponse extends AcsResponse {
 
 	private String appId;
 
+	private String appName;
+
 	private String appKey;
 
 	private String appSign;
@@ -36,9 +38,17 @@ public class DescribeLiveMessageAppResponse extends AcsResponse {
 
 	private String auditUrl;
 
+	private String eventCallbackUrl;
+
 	private String callbackUrl;
 
 	private Boolean disable;
+
+	private Long createTime;
+
+	private Long modifyTime;
+
+	private String dataCenter;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -54,6 +64,14 @@ public class DescribeLiveMessageAppResponse extends AcsResponse {
 
 	public void setAppId(String appId) {
 		this.appId = appId;
+	}
+
+	public String getAppName() {
+		return this.appName;
+	}
+
+	public void setAppName(String appName) {
+		this.appName = appName;
 	}
 
 	public String getAppKey() {
@@ -88,6 +106,14 @@ public class DescribeLiveMessageAppResponse extends AcsResponse {
 		this.auditUrl = auditUrl;
 	}
 
+	public String getEventCallbackUrl() {
+		return this.eventCallbackUrl;
+	}
+
+	public void setEventCallbackUrl(String eventCallbackUrl) {
+		this.eventCallbackUrl = eventCallbackUrl;
+	}
+
 	public String getCallbackUrl() {
 		return this.callbackUrl;
 	}
@@ -102,6 +128,30 @@ public class DescribeLiveMessageAppResponse extends AcsResponse {
 
 	public void setDisable(Boolean disable) {
 		this.disable = disable;
+	}
+
+	public Long getCreateTime() {
+		return this.createTime;
+	}
+
+	public void setCreateTime(Long createTime) {
+		this.createTime = createTime;
+	}
+
+	public Long getModifyTime() {
+		return this.modifyTime;
+	}
+
+	public void setModifyTime(Long modifyTime) {
+		this.modifyTime = modifyTime;
+	}
+
+	public String getDataCenter() {
+		return this.dataCenter;
+	}
+
+	public void setDataCenter(String dataCenter) {
+		this.dataCenter = dataCenter;
 	}
 
 	@Override

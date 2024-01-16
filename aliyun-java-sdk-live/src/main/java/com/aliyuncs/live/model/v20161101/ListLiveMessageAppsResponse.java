@@ -75,6 +75,14 @@ public class ListLiveMessageAppsResponse extends AcsResponse {
 
 		private String disable;
 
+		private String appName;
+
+		private Long createTime;
+
+		private Long modifyTime;
+
+		private String dataCenter;
+
 		public String getAppId() {
 			return this.appId;
 		}
@@ -105,6 +113,38 @@ public class ListLiveMessageAppsResponse extends AcsResponse {
 
 		public void setDisable(String disable) {
 			this.disable = disable;
+		}
+
+		public String getAppName() {
+			return this.appName;
+		}
+
+		public void setAppName(String appName) {
+			this.appName = appName;
+		}
+
+		public Long getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
+		}
+
+		public Long getModifyTime() {
+			return this.modifyTime;
+		}
+
+		public void setModifyTime(Long modifyTime) {
+			this.modifyTime = modifyTime;
+		}
+
+		public String getDataCenter() {
+			return this.dataCenter;
+		}
+
+		public void setDataCenter(String dataCenter) {
+			this.dataCenter = dataCenter;
 		}
 	}
 
