@@ -22,28 +22,18 @@ import com.aliyuncs.linkvisual.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateGbDeviceRequest extends RpcAcsRequest<CreateGbDeviceResponse> {
+public class DeleteGbDeviceRequest extends RpcAcsRequest<DeleteGbDeviceResponse> {
 	   
 
-	private String subProductKey;
-
-	private String gbId;
-
-	private String description;
-
-	private Integer deviceType;
-
-	private String password;
+	private String iotId;
 
 	private String iotInstanceId;
 
 	private String productKey;
 
-	private String mediaNetProtocol;
-
 	private String deviceName;
-	public CreateGbDeviceRequest() {
-		super("Linkvisual", "2018-01-20", "CreateGbDevice", "Linkvisual");
+	public DeleteGbDeviceRequest() {
+		super("Linkvisual", "2018-01-20", "DeleteGbDevice", "Linkvisual");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -51,58 +41,14 @@ public class CreateGbDeviceRequest extends RpcAcsRequest<CreateGbDeviceResponse>
 		} catch (Exception e) {}
 	}
 
-	public String getSubProductKey() {
-		return this.subProductKey;
+	public String getIotId() {
+		return this.iotId;
 	}
 
-	public void setSubProductKey(String subProductKey) {
-		this.subProductKey = subProductKey;
-		if(subProductKey != null){
-			putQueryParameter("SubProductKey", subProductKey);
-		}
-	}
-
-	public String getGbId() {
-		return this.gbId;
-	}
-
-	public void setGbId(String gbId) {
-		this.gbId = gbId;
-		if(gbId != null){
-			putQueryParameter("GbId", gbId);
-		}
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
-		}
-	}
-
-	public Integer getDeviceType() {
-		return this.deviceType;
-	}
-
-	public void setDeviceType(Integer deviceType) {
-		this.deviceType = deviceType;
-		if(deviceType != null){
-			putQueryParameter("DeviceType", deviceType.toString());
-		}
-	}
-
-	public String getPassword() {
-		return this.password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-		if(password != null){
-			putQueryParameter("Password", password);
+	public void setIotId(String iotId) {
+		this.iotId = iotId;
+		if(iotId != null){
+			putQueryParameter("IotId", iotId);
 		}
 	}
 
@@ -128,17 +74,6 @@ public class CreateGbDeviceRequest extends RpcAcsRequest<CreateGbDeviceResponse>
 		}
 	}
 
-	public String getMediaNetProtocol() {
-		return this.mediaNetProtocol;
-	}
-
-	public void setMediaNetProtocol(String mediaNetProtocol) {
-		this.mediaNetProtocol = mediaNetProtocol;
-		if(mediaNetProtocol != null){
-			putQueryParameter("MediaNetProtocol", mediaNetProtocol);
-		}
-	}
-
 	public String getDeviceName() {
 		return this.deviceName;
 	}
@@ -151,8 +86,8 @@ public class CreateGbDeviceRequest extends RpcAcsRequest<CreateGbDeviceResponse>
 	}
 
 	@Override
-	public Class<CreateGbDeviceResponse> getResponseClass() {
-		return CreateGbDeviceResponse.class;
+	public Class<DeleteGbDeviceResponse> getResponseClass() {
+		return DeleteGbDeviceResponse.class;
 	}
 
 }
