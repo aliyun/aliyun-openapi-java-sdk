@@ -57,6 +57,7 @@ public class DescribeSchedulerRulesResponseUnmarshaller {
 				rule.setPriority(_ctx.integerValue("DescribeSchedulerRulesResponse.SchedulerRules["+ i +"].Rules["+ j +"].Priority"));
 				rule.setRestoreDelay(_ctx.integerValue("DescribeSchedulerRulesResponse.SchedulerRules["+ i +"].Rules["+ j +"].RestoreDelay"));
 				rule.setRegionId(_ctx.stringValue("DescribeSchedulerRulesResponse.SchedulerRules["+ i +"].Rules["+ j +"].RegionId"));
+				rule.setLine(_ctx.stringValue("DescribeSchedulerRulesResponse.SchedulerRules["+ i +"].Rules["+ j +"].Line"));
 
 				rules.add(rule);
 			}

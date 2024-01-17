@@ -51,6 +51,12 @@ public class DescribeWebPreciseAccessRuleResponseUnmarshaller {
 					condition.setContent(_ctx.stringValue("DescribeWebPreciseAccessRuleResponse.PreciseAccessConfigList["+ i +"].RuleList["+ j +"].ConditionList["+ k +"].Content"));
 					condition.setHeaderName(_ctx.stringValue("DescribeWebPreciseAccessRuleResponse.PreciseAccessConfigList["+ i +"].RuleList["+ j +"].ConditionList["+ k +"].HeaderName"));
 
+					List<String> contentList = new ArrayList<String>();
+					for (int l = 0; l < _ctx.lengthValue("DescribeWebPreciseAccessRuleResponse.PreciseAccessConfigList["+ i +"].RuleList["+ j +"].ConditionList["+ k +"].ContentList.Length"); l++) {
+						contentList.add(_ctx.stringValue("DescribeWebPreciseAccessRuleResponse.PreciseAccessConfigList["+ i +"].RuleList["+ j +"].ConditionList["+ k +"].ContentList["+ l +"]"));
+					}
+					condition.setContentList(contentList);
+
 					conditionList.add(condition);
 				}
 				rule.setConditionList(conditionList);

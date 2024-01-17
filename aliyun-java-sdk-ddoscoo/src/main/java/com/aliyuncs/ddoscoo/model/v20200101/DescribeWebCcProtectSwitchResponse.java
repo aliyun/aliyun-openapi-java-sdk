@@ -67,6 +67,8 @@ public class DescribeWebCcProtectSwitchResponse extends AcsResponse {
 
 		private Integer ccEnable;
 
+		private String ccGlobalSwitch;
+
 		public Integer getBlackWhiteListEnable() {
 			return this.blackWhiteListEnable;
 		}
@@ -145,6 +147,14 @@ public class DescribeWebCcProtectSwitchResponse extends AcsResponse {
 
 		public void setCcEnable(Integer ccEnable) {
 			this.ccEnable = ccEnable;
+		}
+
+		public String getCcGlobalSwitch() {
+			return this.ccGlobalSwitch;
+		}
+
+		public void setCcGlobalSwitch(String ccGlobalSwitch) {
+			this.ccGlobalSwitch = ccGlobalSwitch;
 		}
 	}
 

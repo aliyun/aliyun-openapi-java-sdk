@@ -123,6 +123,8 @@ public class DescribeSchedulerRulesResponse extends AcsResponse {
 
 			private String regionId;
 
+			private String line;
+
 			public String getType() {
 				return this.type;
 			}
@@ -177,6 +179,14 @@ public class DescribeSchedulerRulesResponse extends AcsResponse {
 
 			public void setRegionId(String regionId) {
 				this.regionId = regionId;
+			}
+
+			public String getLine() {
+				return this.line;
+			}
+
+			public void setLine(String line) {
+				this.line = line;
 			}
 		}
 
