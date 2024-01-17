@@ -29,6 +29,9 @@ public class SubmitAudioTo3DAvatarVideoTaskRequest extends RpcAcsRequest<SubmitA
 	@SerializedName("app")
 	private App app;
 
+	@SerializedName("audioInfo")
+	private AudioInfo audioInfo;
+
 	@SerializedName("avatarInfo")
 	private AvatarInfo avatarInfo;
 
@@ -59,6 +62,17 @@ public class SubmitAudioTo3DAvatarVideoTaskRequest extends RpcAcsRequest<SubmitA
 		this.app = app;	
 		if (app != null) {
 			putQueryParameter("App" , new Gson().toJson(app));
+		}	
+	}
+
+	public AudioInfo getAudioInfo() {
+		return this.audioInfo;
+	}
+
+	public void setAudioInfo(AudioInfo audioInfo) {
+		this.audioInfo = audioInfo;	
+		if (audioInfo != null) {
+			putQueryParameter("AudioInfo" , new Gson().toJson(audioInfo));
 		}	
 	}
 
@@ -161,6 +175,20 @@ public class SubmitAudioTo3DAvatarVideoTaskRequest extends RpcAcsRequest<SubmitA
 
 		public void setAppId(String appId) {
 			this.appId = appId;
+		}
+	}
+
+	public static class AudioInfo {
+
+		@SerializedName("SampleRate")
+		private Integer sampleRate;
+
+		public Integer getSampleRate() {
+			return this.sampleRate;
+		}
+
+		public void setSampleRate(Integer sampleRate) {
+			this.sampleRate = sampleRate;
 		}
 	}
 

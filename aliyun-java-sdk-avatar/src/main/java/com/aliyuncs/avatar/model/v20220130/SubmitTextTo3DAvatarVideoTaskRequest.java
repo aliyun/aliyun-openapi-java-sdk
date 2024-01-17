@@ -192,6 +192,9 @@ public class SubmitTextTo3DAvatarVideoTaskRequest extends RpcAcsRequest<SubmitTe
 		@SerializedName("PitchRate")
 		private Integer pitchRate;
 
+		@SerializedName("SampleRate")
+		private Integer sampleRate;
+
 		public String getVoice() {
 			return this.voice;
 		}
@@ -222,6 +225,14 @@ public class SubmitTextTo3DAvatarVideoTaskRequest extends RpcAcsRequest<SubmitTe
 
 		public void setPitchRate(Integer pitchRate) {
 			this.pitchRate = pitchRate;
+		}
+
+		public Integer getSampleRate() {
+			return this.sampleRate;
+		}
+
+		public void setSampleRate(Integer sampleRate) {
+			this.sampleRate = sampleRate;
 		}
 	}
 
@@ -286,6 +297,9 @@ public class SubmitTextTo3DAvatarVideoTaskRequest extends RpcAcsRequest<SubmitTe
 		@SerializedName("SubtitleEmbedded")
 		private Boolean subtitleEmbedded;
 
+		@SerializedName("SubtitleStyle")
+		private SubtitleStyle subtitleStyle;
+
 		@SerializedName("Resolution")
 		private Integer resolution;
 
@@ -324,6 +338,14 @@ public class SubmitTextTo3DAvatarVideoTaskRequest extends RpcAcsRequest<SubmitTe
 			this.subtitleEmbedded = subtitleEmbedded;
 		}
 
+		public SubtitleStyle getSubtitleStyle() {
+			return this.subtitleStyle;
+		}
+
+		public void setSubtitleStyle(SubtitleStyle subtitleStyle) {
+			this.subtitleStyle = subtitleStyle;
+		}
+
 		public Integer getResolution() {
 			return this.resolution;
 		}
@@ -338,6 +360,64 @@ public class SubmitTextTo3DAvatarVideoTaskRequest extends RpcAcsRequest<SubmitTe
 
 		public void setAlphaFormat(Integer alphaFormat) {
 			this.alphaFormat = alphaFormat;
+		}
+
+		public static class SubtitleStyle {
+
+			@SerializedName("Color")
+			private String color;
+
+			@SerializedName("Size")
+			private Integer size;
+
+			@SerializedName("Name")
+			private String name;
+
+			@SerializedName("Y")
+			private Integer y;
+
+			@SerializedName("OutlineColor")
+			private String outlineColor;
+
+			public String getColor() {
+				return this.color;
+			}
+
+			public void setColor(String color) {
+				this.color = color;
+			}
+
+			public Integer getSize() {
+				return this.size;
+			}
+
+			public void setSize(Integer size) {
+				this.size = size;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public Integer getY() {
+				return this.y;
+			}
+
+			public void setY(Integer y) {
+				this.y = y;
+			}
+
+			public String getOutlineColor() {
+				return this.outlineColor;
+			}
+
+			public void setOutlineColor(String outlineColor) {
+				this.outlineColor = outlineColor;
+			}
 		}
 	}
 
