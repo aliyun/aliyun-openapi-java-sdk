@@ -43,6 +43,7 @@ public class DescribeDBInstanceNetInfoResponseUnmarshaller {
 			instanceNetInfo.setPort(_ctx.stringValue("DescribeDBInstanceNetInfoResponse.NetInfoItems["+ i +"].Port"));
 			instanceNetInfo.setVPCId(_ctx.stringValue("DescribeDBInstanceNetInfoResponse.NetInfoItems["+ i +"].VPCId"));
 			instanceNetInfo.setIPAddress(_ctx.stringValue("DescribeDBInstanceNetInfoResponse.NetInfoItems["+ i +"].IPAddress"));
+			instanceNetInfo.setIsSlaveProxy(_ctx.integerValue("DescribeDBInstanceNetInfoResponse.NetInfoItems["+ i +"].IsSlaveProxy"));
 
 			netInfoItems.add(instanceNetInfo);
 		}

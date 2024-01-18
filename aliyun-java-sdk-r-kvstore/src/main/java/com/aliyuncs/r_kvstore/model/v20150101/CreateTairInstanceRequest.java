@@ -101,6 +101,8 @@ public class CreateTairInstanceRequest extends RpcAcsRequest<CreateTairInstanceR
 	private Integer readOnlyCount;
 
 	private String chargeType;
+
+	private String clusterBackupId;
 	public CreateTairInstanceRequest() {
 		super("R-kvstore", "2015-01-01", "CreateTairInstance", "redisa");
 		setMethod(MethodType.POST);
@@ -528,6 +530,17 @@ public class CreateTairInstanceRequest extends RpcAcsRequest<CreateTairInstanceR
 		this.chargeType = chargeType;
 		if(chargeType != null){
 			putQueryParameter("ChargeType", chargeType);
+		}
+	}
+
+	public String getClusterBackupId() {
+		return this.clusterBackupId;
+	}
+
+	public void setClusterBackupId(String clusterBackupId) {
+		this.clusterBackupId = clusterBackupId;
+		if(clusterBackupId != null){
+			putQueryParameter("ClusterBackupId", clusterBackupId);
 		}
 	}
 

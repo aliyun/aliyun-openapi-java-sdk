@@ -29,6 +29,8 @@ public class TransformInstanceChargeTypeRequest extends RpcAcsRequest<TransformI
 
 	private String securityToken;
 
+	private Long autoRenewPeriod;
+
 	private Long period;
 
 	private Boolean autoPay;
@@ -40,6 +42,8 @@ public class TransformInstanceChargeTypeRequest extends RpcAcsRequest<TransformI
 	private Long ownerId;
 
 	private String instanceId;
+
+	private String autoRenew;
 
 	private String chargeType;
 	public TransformInstanceChargeTypeRequest() {
@@ -70,6 +74,17 @@ public class TransformInstanceChargeTypeRequest extends RpcAcsRequest<TransformI
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public Long getAutoRenewPeriod() {
+		return this.autoRenewPeriod;
+	}
+
+	public void setAutoRenewPeriod(Long autoRenewPeriod) {
+		this.autoRenewPeriod = autoRenewPeriod;
+		if(autoRenewPeriod != null){
+			putQueryParameter("AutoRenewPeriod", autoRenewPeriod.toString());
 		}
 	}
 
@@ -136,6 +151,17 @@ public class TransformInstanceChargeTypeRequest extends RpcAcsRequest<TransformI
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getAutoRenew() {
+		return this.autoRenew;
+	}
+
+	public void setAutoRenew(String autoRenew) {
+		this.autoRenew = autoRenew;
+		if(autoRenew != null){
+			putQueryParameter("AutoRenew", autoRenew);
 		}
 	}
 

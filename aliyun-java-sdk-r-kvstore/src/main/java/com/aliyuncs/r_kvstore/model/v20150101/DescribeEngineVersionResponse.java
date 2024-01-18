@@ -14,6 +14,7 @@
 
 package com.aliyuncs.r_kvstore.model.v20150101;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.r_kvstore.transform.v20150101.DescribeEngineVersionResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -49,6 +50,12 @@ public class DescribeEngineVersionResponse extends AcsResponse {
 	private String isSSLEnable;
 
 	private String isNewSSLMode;
+
+	private String isAutoUpgradeOpen;
+
+	private DBLatestMinorVersion dBLatestMinorVersion;
+
+	private ProxyLatestMinorVersion proxyLatestMinorVersion;
 
 	public Boolean getIsLatestVersion() {
 		return this.isLatestVersion;
@@ -152,6 +159,248 @@ public class DescribeEngineVersionResponse extends AcsResponse {
 
 	public void setIsNewSSLMode(String isNewSSLMode) {
 		this.isNewSSLMode = isNewSSLMode;
+	}
+
+	public String getIsAutoUpgradeOpen() {
+		return this.isAutoUpgradeOpen;
+	}
+
+	public void setIsAutoUpgradeOpen(String isAutoUpgradeOpen) {
+		this.isAutoUpgradeOpen = isAutoUpgradeOpen;
+	}
+
+	public DBLatestMinorVersion getDBLatestMinorVersion() {
+		return this.dBLatestMinorVersion;
+	}
+
+	public void setDBLatestMinorVersion(DBLatestMinorVersion dBLatestMinorVersion) {
+		this.dBLatestMinorVersion = dBLatestMinorVersion;
+	}
+
+	public ProxyLatestMinorVersion getProxyLatestMinorVersion() {
+		return this.proxyLatestMinorVersion;
+	}
+
+	public void setProxyLatestMinorVersion(ProxyLatestMinorVersion proxyLatestMinorVersion) {
+		this.proxyLatestMinorVersion = proxyLatestMinorVersion;
+	}
+
+	public static class DBLatestMinorVersion {
+
+		private String minorVersion;
+
+		private String level;
+
+		private VersionRelease versionRelease;
+
+		public String getMinorVersion() {
+			return this.minorVersion;
+		}
+
+		public void setMinorVersion(String minorVersion) {
+			this.minorVersion = minorVersion;
+		}
+
+		public String getLevel() {
+			return this.level;
+		}
+
+		public void setLevel(String level) {
+			this.level = level;
+		}
+
+		public VersionRelease getVersionRelease() {
+			return this.versionRelease;
+		}
+
+		public void setVersionRelease(VersionRelease versionRelease) {
+			this.versionRelease = versionRelease;
+		}
+
+		public static class VersionRelease {
+
+			private String versionChangesLevel;
+
+			private List<ReleaseInfoList> releaseInfo;
+
+			public String getVersionChangesLevel() {
+				return this.versionChangesLevel;
+			}
+
+			public void setVersionChangesLevel(String versionChangesLevel) {
+				this.versionChangesLevel = versionChangesLevel;
+			}
+
+			public List<ReleaseInfoList> getReleaseInfo() {
+				return this.releaseInfo;
+			}
+
+			public void setReleaseInfo(List<ReleaseInfoList> releaseInfo) {
+				this.releaseInfo = releaseInfo;
+			}
+
+			public static class ReleaseInfoList {
+
+				private String releaseVersion;
+
+				private String createTime;
+
+				private String releaseNote;
+
+				private String level;
+
+				private String releaseNoteEn;
+
+				public String getReleaseVersion() {
+					return this.releaseVersion;
+				}
+
+				public void setReleaseVersion(String releaseVersion) {
+					this.releaseVersion = releaseVersion;
+				}
+
+				public String getCreateTime() {
+					return this.createTime;
+				}
+
+				public void setCreateTime(String createTime) {
+					this.createTime = createTime;
+				}
+
+				public String getReleaseNote() {
+					return this.releaseNote;
+				}
+
+				public void setReleaseNote(String releaseNote) {
+					this.releaseNote = releaseNote;
+				}
+
+				public String getLevel() {
+					return this.level;
+				}
+
+				public void setLevel(String level) {
+					this.level = level;
+				}
+
+				public String getReleaseNoteEn() {
+					return this.releaseNoteEn;
+				}
+
+				public void setReleaseNoteEn(String releaseNoteEn) {
+					this.releaseNoteEn = releaseNoteEn;
+				}
+			}
+		}
+	}
+
+	public static class ProxyLatestMinorVersion {
+
+		private String minorVersion;
+
+		private String level;
+
+		private VersionRelease1 versionRelease1;
+
+		public String getMinorVersion() {
+			return this.minorVersion;
+		}
+
+		public void setMinorVersion(String minorVersion) {
+			this.minorVersion = minorVersion;
+		}
+
+		public String getLevel() {
+			return this.level;
+		}
+
+		public void setLevel(String level) {
+			this.level = level;
+		}
+
+		public VersionRelease1 getVersionRelease1() {
+			return this.versionRelease1;
+		}
+
+		public void setVersionRelease1(VersionRelease1 versionRelease1) {
+			this.versionRelease1 = versionRelease1;
+		}
+
+		public static class VersionRelease1 {
+
+			private String versionChangesLevel;
+
+			private List<ReleaseInfoList3> releaseInfo2;
+
+			public String getVersionChangesLevel() {
+				return this.versionChangesLevel;
+			}
+
+			public void setVersionChangesLevel(String versionChangesLevel) {
+				this.versionChangesLevel = versionChangesLevel;
+			}
+
+			public List<ReleaseInfoList3> getReleaseInfo2() {
+				return this.releaseInfo2;
+			}
+
+			public void setReleaseInfo2(List<ReleaseInfoList3> releaseInfo2) {
+				this.releaseInfo2 = releaseInfo2;
+			}
+
+			public static class ReleaseInfoList3 {
+
+				private String releaseVersion;
+
+				private String createTime;
+
+				private String releaseNote;
+
+				private String level;
+
+				private String releaseNoteEn;
+
+				public String getReleaseVersion() {
+					return this.releaseVersion;
+				}
+
+				public void setReleaseVersion(String releaseVersion) {
+					this.releaseVersion = releaseVersion;
+				}
+
+				public String getCreateTime() {
+					return this.createTime;
+				}
+
+				public void setCreateTime(String createTime) {
+					this.createTime = createTime;
+				}
+
+				public String getReleaseNote() {
+					return this.releaseNote;
+				}
+
+				public void setReleaseNote(String releaseNote) {
+					this.releaseNote = releaseNote;
+				}
+
+				public String getLevel() {
+					return this.level;
+				}
+
+				public void setLevel(String level) {
+					this.level = level;
+				}
+
+				public String getReleaseNoteEn() {
+					return this.releaseNoteEn;
+				}
+
+				public void setReleaseNoteEn(String releaseNoteEn) {
+					this.releaseNoteEn = releaseNoteEn;
+				}
+			}
+		}
 	}
 
 	@Override

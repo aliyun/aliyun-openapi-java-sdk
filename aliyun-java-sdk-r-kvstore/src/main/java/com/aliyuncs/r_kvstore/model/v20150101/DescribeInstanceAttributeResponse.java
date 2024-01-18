@@ -133,6 +133,8 @@ public class DescribeInstanceAttributeResponse extends AcsResponse {
 
 		private String backupLogStartTime;
 
+		private Long slaveReadOnlyCount;
+
 		private String resourceGroupId;
 
 		private String zoneId;
@@ -493,6 +495,14 @@ public class DescribeInstanceAttributeResponse extends AcsResponse {
 
 		public void setBackupLogStartTime(String backupLogStartTime) {
 			this.backupLogStartTime = backupLogStartTime;
+		}
+
+		public Long getSlaveReadOnlyCount() {
+			return this.slaveReadOnlyCount;
+		}
+
+		public void setSlaveReadOnlyCount(Long slaveReadOnlyCount) {
+			this.slaveReadOnlyCount = slaveReadOnlyCount;
 		}
 
 		public String getResourceGroupId() {

@@ -173,6 +173,8 @@ public class DescribePriceResponse extends AcsResponse {
 
 		private String tradeAmount;
 
+		private Boolean showDiscountInfo;
+
 		private List<Coupon> coupons;
 
 		private List<String> ruleIds1;
@@ -215,6 +217,14 @@ public class DescribePriceResponse extends AcsResponse {
 
 		public void setTradeAmount(String tradeAmount) {
 			this.tradeAmount = tradeAmount;
+		}
+
+		public Boolean getShowDiscountInfo() {
+			return this.showDiscountInfo;
+		}
+
+		public void setShowDiscountInfo(Boolean showDiscountInfo) {
+			this.showDiscountInfo = showDiscountInfo;
 		}
 
 		public List<Coupon> getCoupons() {

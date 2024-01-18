@@ -79,6 +79,8 @@ public class DescribeDBInstanceNetInfoResponse extends AcsResponse {
 
 		private String iPAddress;
 
+		private Integer isSlaveProxy;
+
 		public Integer getDirectConnection() {
 			return this.directConnection;
 		}
@@ -165,6 +167,14 @@ public class DescribeDBInstanceNetInfoResponse extends AcsResponse {
 
 		public void setIPAddress(String iPAddress) {
 			this.iPAddress = iPAddress;
+		}
+
+		public Integer getIsSlaveProxy() {
+			return this.isSlaveProxy;
+		}
+
+		public void setIsSlaveProxy(Integer isSlaveProxy) {
+			this.isSlaveProxy = isSlaveProxy;
 		}
 	}
 

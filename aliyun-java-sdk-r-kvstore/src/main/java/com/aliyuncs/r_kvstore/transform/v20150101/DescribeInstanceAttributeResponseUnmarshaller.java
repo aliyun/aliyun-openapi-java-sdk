@@ -75,6 +75,7 @@ public class DescribeInstanceAttributeResponseUnmarshaller {
 			dBInstanceAttribute.setNodeType(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].NodeType"));
 			dBInstanceAttribute.setConnections(_ctx.longValue("DescribeInstanceAttributeResponse.Instances["+ i +"].Connections"));
 			dBInstanceAttribute.setBackupLogStartTime(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].BackupLogStartTime"));
+			dBInstanceAttribute.setSlaveReadOnlyCount(_ctx.longValue("DescribeInstanceAttributeResponse.Instances["+ i +"].SlaveReadOnlyCount"));
 			dBInstanceAttribute.setResourceGroupId(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].ResourceGroupId"));
 			dBInstanceAttribute.setZoneId(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].ZoneId"));
 			dBInstanceAttribute.setInstanceStatus(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].InstanceStatus"));

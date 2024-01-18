@@ -22,52 +22,25 @@ import com.aliyuncs.r_kvstore.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeBackupsRequest extends RpcAcsRequest<DescribeBackupsResponse> {
+public class DescribeDBNodeDirectVipInfoRequest extends RpcAcsRequest<DescribeDBNodeDirectVipInfoResponse> {
 	   
 
-	private Integer backupJobId;
-
 	private Long resourceOwnerId;
-
-	private String startTime;
-
-	private Integer pageNumber;
-
-	private String securityToken;
-
-	private Integer pageSize;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private Integer backupId;
-
-	private String needAof;
-
-	private String endTime;
-
 	private Long ownerId;
 
 	private String instanceId;
-	public DescribeBackupsRequest() {
-		super("R-kvstore", "2015-01-01", "DescribeBackups", "redisa");
+	public DescribeDBNodeDirectVipInfoRequest() {
+		super("R-kvstore", "2015-01-01", "DescribeDBNodeDirectVipInfo", "redisa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Integer getBackupJobId() {
-		return this.backupJobId;
-	}
-
-	public void setBackupJobId(Integer backupJobId) {
-		this.backupJobId = backupJobId;
-		if(backupJobId != null){
-			putQueryParameter("BackupJobId", backupJobId.toString());
-		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -78,50 +51,6 @@ public class DescribeBackupsRequest extends RpcAcsRequest<DescribeBackupsRespons
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -144,39 +73,6 @@ public class DescribeBackupsRequest extends RpcAcsRequest<DescribeBackupsRespons
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public Integer getBackupId() {
-		return this.backupId;
-	}
-
-	public void setBackupId(Integer backupId) {
-		this.backupId = backupId;
-		if(backupId != null){
-			putQueryParameter("BackupId", backupId.toString());
-		}
-	}
-
-	public String getNeedAof() {
-		return this.needAof;
-	}
-
-	public void setNeedAof(String needAof) {
-		this.needAof = needAof;
-		if(needAof != null){
-			putQueryParameter("NeedAof", needAof);
-		}
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
 		}
 	}
 
@@ -203,8 +99,8 @@ public class DescribeBackupsRequest extends RpcAcsRequest<DescribeBackupsRespons
 	}
 
 	@Override
-	public Class<DescribeBackupsResponse> getResponseClass() {
-		return DescribeBackupsResponse.class;
+	public Class<DescribeDBNodeDirectVipInfoResponse> getResponseClass() {
+		return DescribeDBNodeDirectVipInfoResponse.class;
 	}
 
 }

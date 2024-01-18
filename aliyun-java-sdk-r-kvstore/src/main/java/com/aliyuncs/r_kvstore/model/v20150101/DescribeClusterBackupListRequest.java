@@ -22,10 +22,8 @@ import com.aliyuncs.r_kvstore.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeBackupsRequest extends RpcAcsRequest<DescribeBackupsResponse> {
+public class DescribeClusterBackupListRequest extends RpcAcsRequest<DescribeClusterBackupListResponse> {
 	   
-
-	private Integer backupJobId;
 
 	private Long resourceOwnerId;
 
@@ -41,33 +39,20 @@ public class DescribeBackupsRequest extends RpcAcsRequest<DescribeBackupsRespons
 
 	private String ownerAccount;
 
-	private Integer backupId;
-
-	private String needAof;
-
 	private String endTime;
 
 	private Long ownerId;
 
 	private String instanceId;
-	public DescribeBackupsRequest() {
-		super("R-kvstore", "2015-01-01", "DescribeBackups", "redisa");
-		setMethod(MethodType.POST);
+
+	private String clusterBackupId;
+	public DescribeClusterBackupListRequest() {
+		super("R-kvstore", "2015-01-01", "DescribeClusterBackupList", "redisa");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Integer getBackupJobId() {
-		return this.backupJobId;
-	}
-
-	public void setBackupJobId(Integer backupJobId) {
-		this.backupJobId = backupJobId;
-		if(backupJobId != null){
-			putQueryParameter("BackupJobId", backupJobId.toString());
-		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -147,28 +132,6 @@ public class DescribeBackupsRequest extends RpcAcsRequest<DescribeBackupsRespons
 		}
 	}
 
-	public Integer getBackupId() {
-		return this.backupId;
-	}
-
-	public void setBackupId(Integer backupId) {
-		this.backupId = backupId;
-		if(backupId != null){
-			putQueryParameter("BackupId", backupId.toString());
-		}
-	}
-
-	public String getNeedAof() {
-		return this.needAof;
-	}
-
-	public void setNeedAof(String needAof) {
-		this.needAof = needAof;
-		if(needAof != null){
-			putQueryParameter("NeedAof", needAof);
-		}
-	}
-
 	public String getEndTime() {
 		return this.endTime;
 	}
@@ -202,9 +165,20 @@ public class DescribeBackupsRequest extends RpcAcsRequest<DescribeBackupsRespons
 		}
 	}
 
+	public String getClusterBackupId() {
+		return this.clusterBackupId;
+	}
+
+	public void setClusterBackupId(String clusterBackupId) {
+		this.clusterBackupId = clusterBackupId;
+		if(clusterBackupId != null){
+			putQueryParameter("ClusterBackupId", clusterBackupId);
+		}
+	}
+
 	@Override
-	public Class<DescribeBackupsResponse> getResponseClass() {
-		return DescribeBackupsResponse.class;
+	public Class<DescribeClusterBackupListResponse> getResponseClass() {
+		return DescribeClusterBackupListResponse.class;
 	}
 
 }

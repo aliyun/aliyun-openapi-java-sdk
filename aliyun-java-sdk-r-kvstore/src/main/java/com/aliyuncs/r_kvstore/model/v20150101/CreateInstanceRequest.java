@@ -109,6 +109,8 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 	private Integer readOnlyCount;
 
 	private String chargeType;
+
+	private String clusterBackupId;
 	public CreateInstanceRequest() {
 		super("R-kvstore", "2015-01-01", "CreateInstance", "redisa");
 		setMethod(MethodType.POST);
@@ -580,6 +582,17 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		this.chargeType = chargeType;
 		if(chargeType != null){
 			putQueryParameter("ChargeType", chargeType);
+		}
+	}
+
+	public String getClusterBackupId() {
+		return this.clusterBackupId;
+	}
+
+	public void setClusterBackupId(String clusterBackupId) {
+		this.clusterBackupId = clusterBackupId;
+		if(clusterBackupId != null){
+			putQueryParameter("ClusterBackupId", clusterBackupId);
 		}
 	}
 
