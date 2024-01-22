@@ -1386,7 +1386,7 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 				return name;
 			}
 
-			public void setName(String key) {
+			public void setName(String name) {
 				this.name = name;
 			}
 
@@ -1409,7 +1409,7 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 				return name;
 			}
 
-			public void setName(String key) {
+			public void setName(String name) {
 				this.name = name;
 			}
 
