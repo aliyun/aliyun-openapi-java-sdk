@@ -15,20 +15,20 @@
 package com.aliyuncs.smc.model.v20190601;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.smc.transform.v20190601.CreateReplicationJobResponseUnmarshaller;
+import com.aliyuncs.smc.transform.v20190601.CreateAccessTokenResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateReplicationJobResponse extends AcsResponse {
+public class CreateAccessTokenResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String jobId;
+	private String accessTokenCode;
 
-	private String orderId;
+	private String accessTokenId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,24 +38,24 @@ public class CreateReplicationJobResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getJobId() {
-		return this.jobId;
+	public String getAccessTokenCode() {
+		return this.accessTokenCode;
 	}
 
-	public void setJobId(String jobId) {
-		this.jobId = jobId;
+	public void setAccessTokenCode(String accessTokenCode) {
+		this.accessTokenCode = accessTokenCode;
 	}
 
-	public String getOrderId() {
-		return this.orderId;
+	public String getAccessTokenId() {
+		return this.accessTokenId;
 	}
 
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
+	public void setAccessTokenId(String accessTokenId) {
+		this.accessTokenId = accessTokenId;
 	}
 
 	@Override
-	public CreateReplicationJobResponse getInstance(UnmarshallerContext context) {
-		return	CreateReplicationJobResponseUnmarshaller.unmarshall(this, context);
+	public CreateAccessTokenResponse getInstance(UnmarshallerContext context) {
+		return	CreateAccessTokenResponseUnmarshaller.unmarshall(this, context);
 	}
 }

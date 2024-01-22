@@ -14,18 +14,16 @@
 
 package com.aliyuncs.smc.transform.v20190601;
 
-import com.aliyuncs.smc.model.v20190601.CreateReplicationJobResponse;
+import com.aliyuncs.smc.model.v20190601.DisableAccessTokenResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class CreateReplicationJobResponseUnmarshaller {
+public class DisableAccessTokenResponseUnmarshaller {
 
-	public static CreateReplicationJobResponse unmarshall(CreateReplicationJobResponse createReplicationJobResponse, UnmarshallerContext _ctx) {
+	public static DisableAccessTokenResponse unmarshall(DisableAccessTokenResponse disableAccessTokenResponse, UnmarshallerContext _ctx) {
 		
-		createReplicationJobResponse.setRequestId(_ctx.stringValue("CreateReplicationJobResponse.RequestId"));
-		createReplicationJobResponse.setJobId(_ctx.stringValue("CreateReplicationJobResponse.JobId"));
-		createReplicationJobResponse.setOrderId(_ctx.stringValue("CreateReplicationJobResponse.OrderId"));
+		disableAccessTokenResponse.setRequestId(_ctx.stringValue("DisableAccessTokenResponse.RequestId"));
 	 
-	 	return createReplicationJobResponse;
+	 	return disableAccessTokenResponse;
 	}
 }

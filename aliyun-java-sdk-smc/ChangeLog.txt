@@ -1,3 +1,6 @@
+2024-01-22 Version: 1.0.4
+- Add new parameters for api ModifyReplicationJobAttribute.
+
 2021-04-26 Version: 1.0.3
 - Generated 2019-06-01 for `smc`.
 

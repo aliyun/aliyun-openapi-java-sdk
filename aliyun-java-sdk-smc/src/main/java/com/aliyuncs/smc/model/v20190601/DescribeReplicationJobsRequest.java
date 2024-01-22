@@ -28,9 +28,13 @@ public class DescribeReplicationJobsRequest extends RpcAcsRequest<DescribeReplic
 
 	private Integer pageNumber;
 
+	private String resourceGroupId;
+
 	private List<String> jobIds;
 
 	private Integer pageSize;
+
+	private List<Tag> tags;
 
 	private List<String> sourceIds;
 
@@ -39,6 +43,10 @@ public class DescribeReplicationJobsRequest extends RpcAcsRequest<DescribeReplic
 	private String resourceOwnerAccount;
 
 	private Long ownerId;
+
+	private Integer jobType;
+
+	private List<String> instanceIds;
 
 	private String name;
 
@@ -60,6 +68,17 @@ public class DescribeReplicationJobsRequest extends RpcAcsRequest<DescribeReplic
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 
@@ -85,6 +104,20 @@ public class DescribeReplicationJobsRequest extends RpcAcsRequest<DescribeReplic
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
 		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
 	}
 
 	public List<String> getSourceIds() {
@@ -133,6 +166,30 @@ public class DescribeReplicationJobsRequest extends RpcAcsRequest<DescribeReplic
 		}
 	}
 
+	public Integer getJobType() {
+		return this.jobType;
+	}
+
+	public void setJobType(Integer jobType) {
+		this.jobType = jobType;
+		if(jobType != null){
+			putQueryParameter("JobType", jobType.toString());
+		}
+	}
+
+	public List<String> getInstanceIds() {
+		return this.instanceIds;
+	}
+
+	public void setInstanceIds(List<String> instanceIds) {
+		this.instanceIds = instanceIds;	
+		if (instanceIds != null) {
+			for (int i = 0; i < instanceIds.size(); i++) {
+				putQueryParameter("InstanceId." + (i + 1) , instanceIds.get(i));
+			}
+		}	
+	}
+
 	public String getName() {
 		return this.name;
 	}
@@ -152,6 +209,29 @@ public class DescribeReplicationJobsRequest extends RpcAcsRequest<DescribeReplic
 		this.status = status;
 		if(status != null){
 			putQueryParameter("Status", status);
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

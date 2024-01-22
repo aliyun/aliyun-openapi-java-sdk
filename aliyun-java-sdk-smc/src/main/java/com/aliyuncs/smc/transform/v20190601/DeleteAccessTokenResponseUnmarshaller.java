@@ -14,18 +14,16 @@
 
 package com.aliyuncs.smc.transform.v20190601;
 
-import com.aliyuncs.smc.model.v20190601.CreateReplicationJobResponse;
+import com.aliyuncs.smc.model.v20190601.DeleteAccessTokenResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class CreateReplicationJobResponseUnmarshaller {
+public class DeleteAccessTokenResponseUnmarshaller {
 
-	public static CreateReplicationJobResponse unmarshall(CreateReplicationJobResponse createReplicationJobResponse, UnmarshallerContext _ctx) {
+	public static DeleteAccessTokenResponse unmarshall(DeleteAccessTokenResponse deleteAccessTokenResponse, UnmarshallerContext _ctx) {
 		
-		createReplicationJobResponse.setRequestId(_ctx.stringValue("CreateReplicationJobResponse.RequestId"));
-		createReplicationJobResponse.setJobId(_ctx.stringValue("CreateReplicationJobResponse.JobId"));
-		createReplicationJobResponse.setOrderId(_ctx.stringValue("CreateReplicationJobResponse.OrderId"));
+		deleteAccessTokenResponse.setRequestId(_ctx.stringValue("DeleteAccessTokenResponse.RequestId"));
 	 
-	 	return createReplicationJobResponse;
+	 	return deleteAccessTokenResponse;
 	}
 }

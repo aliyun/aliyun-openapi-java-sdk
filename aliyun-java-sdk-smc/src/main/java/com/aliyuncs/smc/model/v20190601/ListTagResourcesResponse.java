@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListTagResourcesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String nextToken;
 
+	private String requestId;
+
 	private List<TagResource> tagResources;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getNextToken() {
 		return this.nextToken;
@@ -45,6 +37,14 @@ public class ListTagResourcesResponse extends AcsResponse {
 
 	public void setNextToken(String nextToken) {
 		this.nextToken = nextToken;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<TagResource> getTagResources() {
@@ -59,11 +59,11 @@ public class ListTagResourcesResponse extends AcsResponse {
 
 		private String resourceType;
 
+		private String tagValue;
+
 		private String resourceId;
 
 		private String tagKey;
-
-		private String tagValue;
 
 		public String getResourceType() {
 			return this.resourceType;
@@ -71,6 +71,14 @@ public class ListTagResourcesResponse extends AcsResponse {
 
 		public void setResourceType(String resourceType) {
 			this.resourceType = resourceType;
+		}
+
+		public String getTagValue() {
+			return this.tagValue;
+		}
+
+		public void setTagValue(String tagValue) {
+			this.tagValue = tagValue;
 		}
 
 		public String getResourceId() {
@@ -87,14 +95,6 @@ public class ListTagResourcesResponse extends AcsResponse {
 
 		public void setTagKey(String tagKey) {
 			this.tagKey = tagKey;
-		}
-
-		public String getTagValue() {
-			return this.tagValue;
-		}
-
-		public void setTagValue(String tagValue) {
-			this.tagValue = tagValue;
 		}
 	}
 

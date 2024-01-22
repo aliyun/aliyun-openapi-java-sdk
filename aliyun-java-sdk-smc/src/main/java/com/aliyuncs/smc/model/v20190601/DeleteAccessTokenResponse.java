@@ -15,20 +15,16 @@
 package com.aliyuncs.smc.model.v20190601;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.smc.transform.v20190601.CreateReplicationJobResponseUnmarshaller;
+import com.aliyuncs.smc.transform.v20190601.DeleteAccessTokenResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateReplicationJobResponse extends AcsResponse {
+public class DeleteAccessTokenResponse extends AcsResponse {
 
 	private String requestId;
-
-	private String jobId;
-
-	private String orderId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,24 +34,8 @@ public class CreateReplicationJobResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getJobId() {
-		return this.jobId;
-	}
-
-	public void setJobId(String jobId) {
-		this.jobId = jobId;
-	}
-
-	public String getOrderId() {
-		return this.orderId;
-	}
-
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
-	}
-
 	@Override
-	public CreateReplicationJobResponse getInstance(UnmarshallerContext context) {
-		return	CreateReplicationJobResponseUnmarshaller.unmarshall(this, context);
+	public DeleteAccessTokenResponse getInstance(UnmarshallerContext context) {
+		return	DeleteAccessTokenResponseUnmarshaller.unmarshall(this, context);
 	}
 }

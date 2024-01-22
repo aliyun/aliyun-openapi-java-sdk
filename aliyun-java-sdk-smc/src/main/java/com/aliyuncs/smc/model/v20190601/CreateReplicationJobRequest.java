@@ -28,6 +28,8 @@ public class CreateReplicationJobRequest extends RpcAcsRequest<CreateReplication
 
 	private Integer frequency;
 
+	private String resourceGroupId;
+
 	private String replicationParameters;
 
 	private Integer systemDiskSize;
@@ -45,6 +47,8 @@ public class CreateReplicationJobRequest extends RpcAcsRequest<CreateReplication
 	private String validTime;
 
 	private Long ownerId;
+
+	private Integer jobType;
 
 	private String vSwitchId;
 
@@ -80,9 +84,9 @@ public class CreateReplicationJobRequest extends RpcAcsRequest<CreateReplication
 
 	private List<SystemDiskPart> systemDiskParts;
 
-	private List<DataDisk> dataDisks;
-
 	private String launchTemplateVersion;
+
+	private List<DataDisk> dataDisks;
 
 	private String vpcId;
 	public CreateReplicationJobRequest() {
@@ -102,6 +106,17 @@ public class CreateReplicationJobRequest extends RpcAcsRequest<CreateReplication
 		this.frequency = frequency;
 		if(frequency != null){
 			putQueryParameter("Frequency", frequency.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 
@@ -204,6 +219,17 @@ public class CreateReplicationJobRequest extends RpcAcsRequest<CreateReplication
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Integer getJobType() {
+		return this.jobType;
+	}
+
+	public void setJobType(Integer jobType) {
+		this.jobType = jobType;
+		if(jobType != null){
+			putQueryParameter("JobType", jobType.toString());
 		}
 	}
 
@@ -398,6 +424,17 @@ public class CreateReplicationJobRequest extends RpcAcsRequest<CreateReplication
 		}	
 	}
 
+	public String getLaunchTemplateVersion() {
+		return this.launchTemplateVersion;
+	}
+
+	public void setLaunchTemplateVersion(String launchTemplateVersion) {
+		this.launchTemplateVersion = launchTemplateVersion;
+		if(launchTemplateVersion != null){
+			putQueryParameter("LaunchTemplateVersion", launchTemplateVersion);
+		}
+	}
+
 	public List<DataDisk> getDataDisks() {
 		return this.dataDisks;
 	}
@@ -417,17 +454,6 @@ public class CreateReplicationJobRequest extends RpcAcsRequest<CreateReplication
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".Index" , dataDisks.get(depth1).getIndex());
 			}
 		}	
-	}
-
-	public String getLaunchTemplateVersion() {
-		return this.launchTemplateVersion;
-	}
-
-	public void setLaunchTemplateVersion(String launchTemplateVersion) {
-		this.launchTemplateVersion = launchTemplateVersion;
-		if(launchTemplateVersion != null){
-			putQueryParameter("LaunchTemplateVersion", launchTemplateVersion);
-		}
 	}
 
 	public String getVpcId() {
