@@ -31,7 +31,7 @@ public class SetEntityTagsRequest extends RpcAcsRequest<SetEntityTagsResponse> {
 	private String qualifiedName;
 
 	@SerializedName("tags")
-	private List<Object> tags;
+	private List<Tags> tags;
 	public SetEntityTagsRequest() {
 		super("dataworks-public", "2020-05-18", "SetEntityTags");
 		setMethod(MethodType.POST);
@@ -52,15 +52,40 @@ public class SetEntityTagsRequest extends RpcAcsRequest<SetEntityTagsResponse> {
 		}
 	}
 
-	public List<Object> getTags() {
+	public List<Tags> getTags() {
 		return this.tags;
 	}
 
-	public void setTags(List<Object> tags) {
+	public void setTags(List<Tags> tags) {
 		this.tags = tags;	
 		if (tags != null) {
 			putBodyParameter("Tags" , new Gson().toJson(tags));
 		}	
+	}
+
+	public static class Tags {
+
+		@SerializedName("TagValue")
+		private String tagValue;
+
+		@SerializedName("TagKey")
+		private String tagKey;
+
+		public String getTagValue() {
+			return this.tagValue;
+		}
+
+		public void setTagValue(String tagValue) {
+			this.tagValue = tagValue;
+		}
+
+		public String getTagKey() {
+			return this.tagKey;
+		}
+
+		public void setTagKey(String tagKey) {
+			this.tagKey = tagKey;
+		}
 	}
 
 	@Override

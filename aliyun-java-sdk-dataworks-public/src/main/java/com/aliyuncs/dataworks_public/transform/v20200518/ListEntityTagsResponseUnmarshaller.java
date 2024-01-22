@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.dataworks_public.model.v20200518.ListEntityTagsResponse;
+import com.aliyuncs.dataworks_public.model.v20200518.ListEntityTagsResponse.DataItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -31,9 +32,13 @@ public class ListEntityTagsResponseUnmarshaller {
 		listEntityTagsResponse.setErrorMessage(_ctx.stringValue("ListEntityTagsResponse.ErrorMessage"));
 		listEntityTagsResponse.setHttpStatusCode(_ctx.integerValue("ListEntityTagsResponse.HttpStatusCode"));
 
-		List<String> data = new ArrayList<String>();
+		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListEntityTagsResponse.Data.Length"); i++) {
-			data.add(_ctx.stringValue("ListEntityTagsResponse.Data["+ i +"]"));
+			DataItem dataItem = new DataItem();
+			dataItem.setTagKey(_ctx.stringValue("ListEntityTagsResponse.Data["+ i +"].TagKey"));
+			dataItem.setTagValue(_ctx.stringValue("ListEntityTagsResponse.Data["+ i +"].TagValue"));
+
+			data.add(dataItem);
 		}
 		listEntityTagsResponse.setData(data);
 	 

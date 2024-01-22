@@ -27,7 +27,7 @@ public class ListQualityResultsByEntityRequest extends RpcAcsRequest<ListQuality
 
 	private String projectName;
 
-	private Integer entityId;
+	private Long entityId;
 
 	private String startDate;
 
@@ -58,11 +58,11 @@ public class ListQualityResultsByEntityRequest extends RpcAcsRequest<ListQuality
 		}
 	}
 
-	public Integer getEntityId() {
+	public Long getEntityId() {
 		return this.entityId;
 	}
 
-	public void setEntityId(Integer entityId) {
+	public void setEntityId(Long entityId) {
 		this.entityId = entityId;
 		if(entityId != null){
 			putBodyParameter("EntityId", entityId.toString());

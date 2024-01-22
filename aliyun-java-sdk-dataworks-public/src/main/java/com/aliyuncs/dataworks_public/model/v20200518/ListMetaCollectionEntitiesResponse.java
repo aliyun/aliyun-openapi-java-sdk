@@ -15,6 +15,7 @@
 package com.aliyuncs.dataworks_public.model.v20200518;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.dataworks_public.transform.v20200518.ListMetaCollectionEntitiesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -89,7 +90,7 @@ public class ListMetaCollectionEntitiesResponse extends AcsResponse {
 
 		private String nextToken;
 
-		private List<String> entityList;
+		private List<EntityListItem> entityList;
 
 		public String getNextToken() {
 			return this.nextToken;
@@ -99,12 +100,45 @@ public class ListMetaCollectionEntitiesResponse extends AcsResponse {
 			this.nextToken = nextToken;
 		}
 
-		public List<String> getEntityList() {
+		public List<EntityListItem> getEntityList() {
 			return this.entityList;
 		}
 
-		public void setEntityList(List<String> entityList) {
+		public void setEntityList(List<EntityListItem> entityList) {
 			this.entityList = entityList;
+		}
+
+		public static class EntityListItem {
+
+			private String qualifiedName;
+
+			private Long tenantId;
+
+			private Map<Object,Object> entityContent;
+
+			public String getQualifiedName() {
+				return this.qualifiedName;
+			}
+
+			public void setQualifiedName(String qualifiedName) {
+				this.qualifiedName = qualifiedName;
+			}
+
+			public Long getTenantId() {
+				return this.tenantId;
+			}
+
+			public void setTenantId(Long tenantId) {
+				this.tenantId = tenantId;
+			}
+
+			public Map<Object,Object> getEntityContent() {
+				return this.entityContent;
+			}
+
+			public void setEntityContent(Map<Object,Object> entityContent) {
+				this.entityContent = entityContent;
+			}
 		}
 	}
 

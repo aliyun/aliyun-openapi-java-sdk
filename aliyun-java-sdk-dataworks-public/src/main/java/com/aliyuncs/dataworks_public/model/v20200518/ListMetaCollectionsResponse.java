@@ -89,7 +89,7 @@ public class ListMetaCollectionsResponse extends AcsResponse {
 
 		private String nextToken;
 
-		private List<String> collectionList;
+		private List<CollectionListItem> collectionList;
 
 		public String getNextToken() {
 			return this.nextToken;
@@ -99,12 +99,105 @@ public class ListMetaCollectionsResponse extends AcsResponse {
 			this.nextToken = nextToken;
 		}
 
-		public List<String> getCollectionList() {
+		public List<CollectionListItem> getCollectionList() {
 			return this.collectionList;
 		}
 
-		public void setCollectionList(List<String> collectionList) {
+		public void setCollectionList(List<CollectionListItem> collectionList) {
 			this.collectionList = collectionList;
+		}
+
+		public static class CollectionListItem {
+
+			private String qualifiedName;
+
+			private String collectionType;
+
+			private String name;
+
+			private String comment;
+
+			private String ownerId;
+
+			private String ownerName;
+
+			private Long createTime;
+
+			private Long updateTime;
+
+			private Integer level;
+
+			public String getQualifiedName() {
+				return this.qualifiedName;
+			}
+
+			public void setQualifiedName(String qualifiedName) {
+				this.qualifiedName = qualifiedName;
+			}
+
+			public String getCollectionType() {
+				return this.collectionType;
+			}
+
+			public void setCollectionType(String collectionType) {
+				this.collectionType = collectionType;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getComment() {
+				return this.comment;
+			}
+
+			public void setComment(String comment) {
+				this.comment = comment;
+			}
+
+			public String getOwnerId() {
+				return this.ownerId;
+			}
+
+			public void setOwnerId(String ownerId) {
+				this.ownerId = ownerId;
+			}
+
+			public String getOwnerName() {
+				return this.ownerName;
+			}
+
+			public void setOwnerName(String ownerName) {
+				this.ownerName = ownerName;
+			}
+
+			public Long getCreateTime() {
+				return this.createTime;
+			}
+
+			public void setCreateTime(Long createTime) {
+				this.createTime = createTime;
+			}
+
+			public Long getUpdateTime() {
+				return this.updateTime;
+			}
+
+			public void setUpdateTime(Long updateTime) {
+				this.updateTime = updateTime;
+			}
+
+			public Integer getLevel() {
+				return this.level;
+			}
+
+			public void setLevel(Integer level) {
+				this.level = level;
+			}
 		}
 	}
 

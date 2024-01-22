@@ -487,11 +487,23 @@ public class GetDIJobResponse extends AcsResponse {
 
 		public static class JobSettings {
 
+			private String channelSettings;
+
 			private List<ColumnDataTypeSetting> columnDataTypeSettings;
 
 			private List<DdlHandlingSetting> ddlHandlingSettings;
 
 			private List<RuntimeSetting> runtimeSettings;
+
+			private CycleScheduleSettings cycleScheduleSettings;
+
+			public String getChannelSettings() {
+				return this.channelSettings;
+			}
+
+			public void setChannelSettings(String channelSettings) {
+				this.channelSettings = channelSettings;
+			}
 
 			public List<ColumnDataTypeSetting> getColumnDataTypeSettings() {
 				return this.columnDataTypeSettings;
@@ -515,6 +527,14 @@ public class GetDIJobResponse extends AcsResponse {
 
 			public void setRuntimeSettings(List<RuntimeSetting> runtimeSettings) {
 				this.runtimeSettings = runtimeSettings;
+			}
+
+			public CycleScheduleSettings getCycleScheduleSettings() {
+				return this.cycleScheduleSettings;
+			}
+
+			public void setCycleScheduleSettings(CycleScheduleSettings cycleScheduleSettings) {
+				this.cycleScheduleSettings = cycleScheduleSettings;
 			}
 
 			public static class ColumnDataTypeSetting {
@@ -583,6 +603,29 @@ public class GetDIJobResponse extends AcsResponse {
 
 				public void setValue(String value) {
 					this.value = value;
+				}
+			}
+
+			public static class CycleScheduleSettings {
+
+				private String cycleMigrationType;
+
+				private String scheduleParameters;
+
+				public String getCycleMigrationType() {
+					return this.cycleMigrationType;
+				}
+
+				public void setCycleMigrationType(String cycleMigrationType) {
+					this.cycleMigrationType = cycleMigrationType;
+				}
+
+				public String getScheduleParameters() {
+					return this.scheduleParameters;
+				}
+
+				public void setScheduleParameters(String scheduleParameters) {
+					this.scheduleParameters = scheduleParameters;
 				}
 			}
 		}

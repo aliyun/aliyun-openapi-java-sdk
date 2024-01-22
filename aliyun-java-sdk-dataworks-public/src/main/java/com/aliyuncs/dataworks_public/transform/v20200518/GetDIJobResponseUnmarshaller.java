@@ -22,6 +22,7 @@ import com.aliyuncs.dataworks_public.model.v20200518.GetDIJobResponse.Data;
 import com.aliyuncs.dataworks_public.model.v20200518.GetDIJobResponse.Data.DestinationDataSourceSetting;
 import com.aliyuncs.dataworks_public.model.v20200518.GetDIJobResponse.Data.JobSettings;
 import com.aliyuncs.dataworks_public.model.v20200518.GetDIJobResponse.Data.JobSettings.ColumnDataTypeSetting;
+import com.aliyuncs.dataworks_public.model.v20200518.GetDIJobResponse.Data.JobSettings.CycleScheduleSettings;
 import com.aliyuncs.dataworks_public.model.v20200518.GetDIJobResponse.Data.JobSettings.DdlHandlingSetting;
 import com.aliyuncs.dataworks_public.model.v20200518.GetDIJobResponse.Data.JobSettings.RuntimeSetting;
 import com.aliyuncs.dataworks_public.model.v20200518.GetDIJobResponse.Data.ResourceSettings;
@@ -72,6 +73,12 @@ public class GetDIJobResponseUnmarshaller {
 		data.setResourceSettings(resourceSettings);
 
 		JobSettings jobSettings = new JobSettings();
+		jobSettings.setChannelSettings(_ctx.stringValue("GetDIJobResponse.Data.JobSettings.ChannelSettings"));
+
+		CycleScheduleSettings cycleScheduleSettings = new CycleScheduleSettings();
+		cycleScheduleSettings.setCycleMigrationType(_ctx.stringValue("GetDIJobResponse.Data.JobSettings.CycleScheduleSettings.CycleMigrationType"));
+		cycleScheduleSettings.setScheduleParameters(_ctx.stringValue("GetDIJobResponse.Data.JobSettings.CycleScheduleSettings.ScheduleParameters"));
+		jobSettings.setCycleScheduleSettings(cycleScheduleSettings);
 
 		List<ColumnDataTypeSetting> columnDataTypeSettings = new ArrayList<ColumnDataTypeSetting>();
 		for (int i = 0; i < _ctx.lengthValue("GetDIJobResponse.Data.JobSettings.ColumnDataTypeSettings.Length"); i++) {

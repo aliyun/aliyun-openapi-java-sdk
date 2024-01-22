@@ -19,6 +19,8 @@ import java.util.List;
 
 import com.aliyuncs.dataworks_public.model.v20200518.ListMetaCollectionEntitiesResponse;
 import com.aliyuncs.dataworks_public.model.v20200518.ListMetaCollectionEntitiesResponse.Data;
+import com.aliyuncs.dataworks_public.model.v20200518.ListMetaCollectionEntitiesResponse.Data.EntityListItem;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -35,9 +37,14 @@ public class ListMetaCollectionEntitiesResponseUnmarshaller {
 		Data data = new Data();
 		data.setNextToken(_ctx.stringValue("ListMetaCollectionEntitiesResponse.Data.NextToken"));
 
-		List<String> entityList = new ArrayList<String>();
+		List<EntityListItem> entityList = new ArrayList<EntityListItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListMetaCollectionEntitiesResponse.Data.EntityList.Length"); i++) {
-			entityList.add(_ctx.stringValue("ListMetaCollectionEntitiesResponse.Data.EntityList["+ i +"]"));
+			EntityListItem entityListItem = new EntityListItem();
+			entityListItem.setQualifiedName(_ctx.stringValue("ListMetaCollectionEntitiesResponse.Data.EntityList["+ i +"].QualifiedName"));
+			entityListItem.setTenantId(_ctx.longValue("ListMetaCollectionEntitiesResponse.Data.EntityList["+ i +"].TenantId"));
+			entityListItem.setEntityContent(_ctx.mapValue("ListMetaCollectionEntitiesResponse.Data.EntityList["+ i +"].EntityContent"));
+
+			entityList.add(entityListItem);
 		}
 		data.setEntityList(entityList);
 		listMetaCollectionEntitiesResponse.setData(data);
