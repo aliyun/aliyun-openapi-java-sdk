@@ -31,6 +31,8 @@ public class PushMultipleRequest extends RpcAcsRequest<PushMultipleResponse> {
 
 	private String taskName;
 
+	private Object activityContentState;
+
 	private Long pushAction;
 
 	private Long deliveryType;
@@ -58,6 +60,10 @@ public class PushMultipleRequest extends RpcAcsRequest<PushMultipleResponse> {
 
 	private String appId;
 
+	private String activityEvent;
+
+	private Long dismissalDate;
+
 	private Integer strategyType;
 
 	private String channelId;
@@ -80,6 +86,17 @@ public class PushMultipleRequest extends RpcAcsRequest<PushMultipleResponse> {
 		this.taskName = taskName;
 		if(taskName != null){
 			putBodyParameter("TaskName", taskName);
+		}
+	}
+
+	public Object getActivityContentState() {
+		return this.activityContentState;
+	}
+
+	public void setActivityContentState(Object activityContentState) {
+		this.activityContentState = activityContentState;
+		if(activityContentState != null){
+			putBodyParameter("ActivityContentState", activityContentState.toString());
 		}
 	}
 
@@ -228,6 +245,28 @@ public class PushMultipleRequest extends RpcAcsRequest<PushMultipleResponse> {
 		this.appId = appId;
 		if(appId != null){
 			putBodyParameter("AppId", appId);
+		}
+	}
+
+	public String getActivityEvent() {
+		return this.activityEvent;
+	}
+
+	public void setActivityEvent(String activityEvent) {
+		this.activityEvent = activityEvent;
+		if(activityEvent != null){
+			putBodyParameter("ActivityEvent", activityEvent);
+		}
+	}
+
+	public Long getDismissalDate() {
+		return this.dismissalDate;
+	}
+
+	public void setDismissalDate(Long dismissalDate) {
+		this.dismissalDate = dismissalDate;
+		if(dismissalDate != null){
+			putBodyParameter("DismissalDate", dismissalDate.toString());
 		}
 	}
 

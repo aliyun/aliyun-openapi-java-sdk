@@ -34,23 +34,17 @@ public class PushTemplateRequest extends RpcAcsRequest<PushTemplateResponse> {
 
 	private String templateKeyValue;
 
+	private Object activityContentState;
+
 	private Long pushAction;
 
 	private Long deliveryType;
-
-	private String templateName;
-
-	private String smsTemplateParam;
 
 	private String notifyType;
 
 	private String targetMsgkey;
 
-	private String miChannelId;
-
 	private String extendedParams;
-
-	private Long silent;
 
 	private String strategyContent;
 
@@ -61,17 +55,29 @@ public class PushTemplateRequest extends RpcAcsRequest<PushTemplateResponse> {
 
 	private Long expiredSeconds;
 
+	private Long dismissalDate;
+
+	private Integer strategyType;
+
+	private String workspaceId;
+
+	private String templateName;
+
+	private String smsTemplateParam;
+
+	private String miChannelId;
+
+	private Long silent;
+
 	private String smsTemplateCode;
 
 	private String appId;
 
 	private String smsSignName;
 
-	private Integer strategyType;
+	private String activityEvent;
 
 	private String channelId;
-
-	private String workspaceId;
 	public PushTemplateRequest() {
 		super("mPaaS", "2020-10-28", "PushTemplate", "mpaas");
 		setMethod(MethodType.POST);
@@ -114,6 +120,17 @@ public class PushTemplateRequest extends RpcAcsRequest<PushTemplateResponse> {
 		}
 	}
 
+	public Object getActivityContentState() {
+		return this.activityContentState;
+	}
+
+	public void setActivityContentState(Object activityContentState) {
+		this.activityContentState = activityContentState;
+		if(activityContentState != null){
+			putBodyParameter("ActivityContentState", activityContentState.toString());
+		}
+	}
+
 	public Long getPushAction() {
 		return this.pushAction;
 	}
@@ -133,28 +150,6 @@ public class PushTemplateRequest extends RpcAcsRequest<PushTemplateResponse> {
 		this.deliveryType = deliveryType;
 		if(deliveryType != null){
 			putBodyParameter("DeliveryType", deliveryType.toString());
-		}
-	}
-
-	public String getTemplateName() {
-		return this.templateName;
-	}
-
-	public void setTemplateName(String templateName) {
-		this.templateName = templateName;
-		if(templateName != null){
-			putBodyParameter("TemplateName", templateName);
-		}
-	}
-
-	public String getSmsTemplateParam() {
-		return this.smsTemplateParam;
-	}
-
-	public void setSmsTemplateParam(String smsTemplateParam) {
-		this.smsTemplateParam = smsTemplateParam;
-		if(smsTemplateParam != null){
-			putBodyParameter("SmsTemplateParam", smsTemplateParam);
 		}
 	}
 
@@ -180,17 +175,6 @@ public class PushTemplateRequest extends RpcAcsRequest<PushTemplateResponse> {
 		}
 	}
 
-	public String getMiChannelId() {
-		return this.miChannelId;
-	}
-
-	public void setMiChannelId(String miChannelId) {
-		this.miChannelId = miChannelId;
-		if(miChannelId != null){
-			putBodyParameter("MiChannelId", miChannelId);
-		}
-	}
-
 	public String getExtendedParams() {
 		return this.extendedParams;
 	}
@@ -199,17 +183,6 @@ public class PushTemplateRequest extends RpcAcsRequest<PushTemplateResponse> {
 		this.extendedParams = extendedParams;
 		if(extendedParams != null){
 			putBodyParameter("ExtendedParams", extendedParams);
-		}
-	}
-
-	public Long getSilent() {
-		return this.silent;
-	}
-
-	public void setSilent(Long silent) {
-		this.silent = silent;
-		if(silent != null){
-			putBodyParameter("Silent", silent.toString());
 		}
 	}
 
@@ -257,6 +230,83 @@ public class PushTemplateRequest extends RpcAcsRequest<PushTemplateResponse> {
 		}
 	}
 
+	public Long getDismissalDate() {
+		return this.dismissalDate;
+	}
+
+	public void setDismissalDate(Long dismissalDate) {
+		this.dismissalDate = dismissalDate;
+		if(dismissalDate != null){
+			putBodyParameter("DismissalDate", dismissalDate.toString());
+		}
+	}
+
+	public Integer getStrategyType() {
+		return this.strategyType;
+	}
+
+	public void setStrategyType(Integer strategyType) {
+		this.strategyType = strategyType;
+		if(strategyType != null){
+			putBodyParameter("StrategyType", strategyType.toString());
+		}
+	}
+
+	public String getWorkspaceId() {
+		return this.workspaceId;
+	}
+
+	public void setWorkspaceId(String workspaceId) {
+		this.workspaceId = workspaceId;
+		if(workspaceId != null){
+			putBodyParameter("WorkspaceId", workspaceId);
+		}
+	}
+
+	public String getTemplateName() {
+		return this.templateName;
+	}
+
+	public void setTemplateName(String templateName) {
+		this.templateName = templateName;
+		if(templateName != null){
+			putBodyParameter("TemplateName", templateName);
+		}
+	}
+
+	public String getSmsTemplateParam() {
+		return this.smsTemplateParam;
+	}
+
+	public void setSmsTemplateParam(String smsTemplateParam) {
+		this.smsTemplateParam = smsTemplateParam;
+		if(smsTemplateParam != null){
+			putBodyParameter("SmsTemplateParam", smsTemplateParam);
+		}
+	}
+
+	public String getMiChannelId() {
+		return this.miChannelId;
+	}
+
+	public void setMiChannelId(String miChannelId) {
+		this.miChannelId = miChannelId;
+		if(miChannelId != null){
+			putBodyParameter("MiChannelId", miChannelId);
+		}
+	}
+
+	public Long getSilent() {
+		return this.silent;
+	}
+
+	public void setSilent(Long silent) {
+		this.silent = silent;
+		if(silent != null){
+			putBodyParameter("Silent", silent.toString());
+		}
+	}
+
 	public String getSmsTemplateCode() {
 		return this.smsTemplateCode;
 	}
@@ -290,14 +340,14 @@ public class PushTemplateRequest extends RpcAcsRequest<PushTemplateResponse> {
 		}
 	}
 
-	public Integer getStrategyType() {
-		return this.strategyType;
+	public String getActivityEvent() {
+		return this.activityEvent;
 	}
 
-	public void setStrategyType(Integer strategyType) {
-		this.strategyType = strategyType;
-		if(strategyType != null){
-			putBodyParameter("StrategyType", strategyType.toString());
+	public void setActivityEvent(String activityEvent) {
+		this.activityEvent = activityEvent;
+		if(activityEvent != null){
+			putBodyParameter("ActivityEvent", activityEvent);
 		}
 	}
 
@@ -309,17 +359,6 @@ public class PushTemplateRequest extends RpcAcsRequest<PushTemplateResponse> {
 		this.channelId = channelId;
 		if(channelId != null){
 			putBodyParameter("ChannelId", channelId);
-		}
-	}
-
-	public String getWorkspaceId() {
-		return this.workspaceId;
-	}
-
-	public void setWorkspaceId(String workspaceId) {
-		this.workspaceId = workspaceId;
-		if(workspaceId != null){
-			putBodyParameter("WorkspaceId", workspaceId);
 		}
 	}
 

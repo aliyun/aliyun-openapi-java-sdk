@@ -34,6 +34,8 @@ public class PushSimpleRequest extends RpcAcsRequest<PushSimpleResponse> {
 
 	private String taskName;
 
+	private Object activityContentState;
+
 	private Long pushAction;
 
 	private Long deliveryType;
@@ -54,6 +56,8 @@ public class PushSimpleRequest extends RpcAcsRequest<PushSimpleResponse> {
 	private String classification;
 
 	private Long expiredSeconds;
+
+	private Long dismissalDate;
 
 	private Integer strategyType;
 
@@ -78,6 +82,8 @@ public class PushSimpleRequest extends RpcAcsRequest<PushSimpleResponse> {
 	private String appId;
 
 	private String smsSignName;
+
+	private String activityEvent;
 
 	private String channelId;
 	public PushSimpleRequest() {
@@ -119,6 +125,17 @@ public class PushSimpleRequest extends RpcAcsRequest<PushSimpleResponse> {
 		this.taskName = taskName;
 		if(taskName != null){
 			putBodyParameter("TaskName", taskName);
+		}
+	}
+
+	public Object getActivityContentState() {
+		return this.activityContentState;
+	}
+
+	public void setActivityContentState(Object activityContentState) {
+		this.activityContentState = activityContentState;
+		if(activityContentState != null){
+			putBodyParameter("ActivityContentState", activityContentState.toString());
 		}
 	}
 
@@ -229,6 +246,17 @@ public class PushSimpleRequest extends RpcAcsRequest<PushSimpleResponse> {
 		this.expiredSeconds = expiredSeconds;
 		if(expiredSeconds != null){
 			putBodyParameter("ExpiredSeconds", expiredSeconds.toString());
+		}
+	}
+
+	public Long getDismissalDate() {
+		return this.dismissalDate;
+	}
+
+	public void setDismissalDate(Long dismissalDate) {
+		this.dismissalDate = dismissalDate;
+		if(dismissalDate != null){
+			putBodyParameter("DismissalDate", dismissalDate.toString());
 		}
 	}
 
@@ -361,6 +389,17 @@ public class PushSimpleRequest extends RpcAcsRequest<PushSimpleResponse> {
 		this.smsSignName = smsSignName;
 		if(smsSignName != null){
 			putBodyParameter("SmsSignName", smsSignName);
+		}
+	}
+
+	public String getActivityEvent() {
+		return this.activityEvent;
+	}
+
+	public void setActivityEvent(String activityEvent) {
+		this.activityEvent = activityEvent;
+		if(activityEvent != null){
+			putBodyParameter("ActivityEvent", activityEvent);
 		}
 	}
 

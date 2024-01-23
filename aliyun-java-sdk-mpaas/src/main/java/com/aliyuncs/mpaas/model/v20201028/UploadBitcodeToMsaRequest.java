@@ -25,6 +25,8 @@ import com.aliyuncs.mpaas.Endpoint;
 public class UploadBitcodeToMsaRequest extends RpcAcsRequest<UploadBitcodeToMsaResponse> {
 	   
 
+	private String type;
+
 	private String tenantId;
 
 	private String bitcode;
@@ -43,6 +45,17 @@ public class UploadBitcodeToMsaRequest extends RpcAcsRequest<UploadBitcodeToMsaR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putBodyParameter("Type", type);
+		}
 	}
 
 	public String getTenantId() {
