@@ -34,6 +34,7 @@ public class CreateStandardGroupResponseUnmarshaller {
 		standardGroup.setDbType(_ctx.stringValue("CreateStandardGroupResponse.StandardGroup.DbType"));
 		standardGroup.setLastMenderId(_ctx.longValue("CreateStandardGroupResponse.StandardGroup.LastMenderId"));
 		standardGroup.setGroupMode(_ctx.stringValue("CreateStandardGroupResponse.StandardGroup.GroupMode"));
+		standardGroup.setGroupId(_ctx.longValue("CreateStandardGroupResponse.StandardGroup.GroupId"));
 		createStandardGroupResponse.setStandardGroup(standardGroup);
 	 
 	 	return createStandardGroupResponse;
