@@ -30,6 +30,10 @@ public class MergeMergeRequestResponseUnmarshaller {
 
 		Result result = new Result();
 		result.setResult(_ctx.booleanValue("MergeMergeRequestResponse.result.result"));
+		result.setMergedRevision(_ctx.stringValue("MergeMergeRequestResponse.result.mergedRevision"));
+		result.setBizId(_ctx.stringValue("MergeMergeRequestResponse.result.bizId"));
+		result.setProjectId(_ctx.longValue("MergeMergeRequestResponse.result.projectId"));
+		result.setLocalId(_ctx.longValue("MergeMergeRequestResponse.result.localId"));
 		mergeMergeRequestResponse.setResult(result);
 	 
 	 	return mergeMergeRequestResponse;

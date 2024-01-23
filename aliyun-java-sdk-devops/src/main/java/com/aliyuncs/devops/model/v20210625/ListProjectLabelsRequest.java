@@ -15,46 +15,60 @@
 package com.aliyuncs.devops.model.v20210625;
 
 import com.aliyuncs.RoaAcsRequest;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
-public class ListMergeRequestsRequest extends RoaAcsRequest<ListMergeRequestsResponse> {
+public class ListProjectLabelsRequest extends RoaAcsRequest<ListProjectLabelsResponse> {
 	   
+
+	private Boolean withCounts;
+
+	private String repositoryIdentity;
 
 	private String accessToken;
 
 	private String orderBy;
 
-	private String projectIds;
-
 	private String sort;
 
 	private String organizationId;
 
-	private String filter;
-
-	private String reviewerIds;
-
 	private String search;
-
-	private String groupIds;
 
 	private Long pageSize;
 
-	private String authorIds;
-
-	private Long page;
-
-	private String state;
-
-	private String labelIds;
-	public ListMergeRequestsRequest() {
-		super("devops", "2021-06-25", "ListMergeRequests");
-		setUriPattern("/api/v4/projects/merge_requests/advanced_search");
+	private Integer page;
+	public ListProjectLabelsRequest() {
+		super("devops", "2021-06-25", "ListProjectLabels");
+		setProtocol(ProtocolType.HTTPS);
+		setUriPattern("/api/v4/projects/labels");
 		setMethod(MethodType.GET);
+	}
+
+	public Boolean getWithCounts() {
+		return this.withCounts;
+	}
+
+	public void setWithCounts(Boolean withCounts) {
+		this.withCounts = withCounts;
+		if(withCounts != null){
+			putQueryParameter("withCounts", withCounts.toString());
+		}
+	}
+
+	public String getRepositoryIdentity() {
+		return this.repositoryIdentity;
+	}
+
+	public void setRepositoryIdentity(String repositoryIdentity) {
+		this.repositoryIdentity = repositoryIdentity;
+		if(repositoryIdentity != null){
+			putQueryParameter("repositoryIdentity", repositoryIdentity);
+		}
 	}
 
 	public String getAccessToken() {
@@ -76,17 +90,6 @@ public class ListMergeRequestsRequest extends RoaAcsRequest<ListMergeRequestsRes
 		this.orderBy = orderBy;
 		if(orderBy != null){
 			putQueryParameter("orderBy", orderBy);
-		}
-	}
-
-	public String getProjectIds() {
-		return this.projectIds;
-	}
-
-	public void setProjectIds(String projectIds) {
-		this.projectIds = projectIds;
-		if(projectIds != null){
-			putQueryParameter("projectIds", projectIds);
 		}
 	}
 
@@ -112,28 +115,6 @@ public class ListMergeRequestsRequest extends RoaAcsRequest<ListMergeRequestsRes
 		}
 	}
 
-	public String getFilter() {
-		return this.filter;
-	}
-
-	public void setFilter(String filter) {
-		this.filter = filter;
-		if(filter != null){
-			putQueryParameter("filter", filter);
-		}
-	}
-
-	public String getReviewerIds() {
-		return this.reviewerIds;
-	}
-
-	public void setReviewerIds(String reviewerIds) {
-		this.reviewerIds = reviewerIds;
-		if(reviewerIds != null){
-			putQueryParameter("reviewerIds", reviewerIds);
-		}
-	}
-
 	public String getSearch() {
 		return this.search;
 	}
@@ -142,17 +123,6 @@ public class ListMergeRequestsRequest extends RoaAcsRequest<ListMergeRequestsRes
 		this.search = search;
 		if(search != null){
 			putQueryParameter("search", search);
-		}
-	}
-
-	public String getGroupIds() {
-		return this.groupIds;
-	}
-
-	public void setGroupIds(String groupIds) {
-		this.groupIds = groupIds;
-		if(groupIds != null){
-			putQueryParameter("groupIds", groupIds);
 		}
 	}
 
@@ -167,53 +137,20 @@ public class ListMergeRequestsRequest extends RoaAcsRequest<ListMergeRequestsRes
 		}
 	}
 
-	public String getAuthorIds() {
-		return this.authorIds;
-	}
-
-	public void setAuthorIds(String authorIds) {
-		this.authorIds = authorIds;
-		if(authorIds != null){
-			putQueryParameter("authorIds", authorIds);
-		}
-	}
-
-	public Long getPage() {
+	public Integer getPage() {
 		return this.page;
 	}
 
-	public void setPage(Long page) {
+	public void setPage(Integer page) {
 		this.page = page;
 		if(page != null){
 			putQueryParameter("page", page.toString());
 		}
 	}
 
-	public String getState() {
-		return this.state;
-	}
-
-	public void setState(String state) {
-		this.state = state;
-		if(state != null){
-			putQueryParameter("state", state);
-		}
-	}
-
-	public String getLabelIds() {
-		return this.labelIds;
-	}
-
-	public void setLabelIds(String labelIds) {
-		this.labelIds = labelIds;
-		if(labelIds != null){
-			putQueryParameter("labelIds", labelIds);
-		}
-	}
-
 	@Override
-	public Class<ListMergeRequestsResponse> getResponseClass() {
-		return ListMergeRequestsResponse.class;
+	public Class<ListProjectLabelsResponse> getResponseClass() {
+		return ListProjectLabelsResponse.class;
 	}
 
 }

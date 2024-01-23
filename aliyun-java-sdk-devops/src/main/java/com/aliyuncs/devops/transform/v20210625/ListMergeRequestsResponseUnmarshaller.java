@@ -21,6 +21,7 @@ import com.aliyuncs.devops.model.v20210625.ListMergeRequestsResponse;
 import com.aliyuncs.devops.model.v20210625.ListMergeRequestsResponse.ResultItem;
 import com.aliyuncs.devops.model.v20210625.ListMergeRequestsResponse.ResultItem.Assignees;
 import com.aliyuncs.devops.model.v20210625.ListMergeRequestsResponse.ResultItem.Author;
+import com.aliyuncs.devops.model.v20210625.ListMergeRequestsResponse.ResultItem.Node_labels;
 import com.aliyuncs.devops.model.v20210625.ListMergeRequestsResponse.ResultItem.SubscribersItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -102,6 +103,18 @@ public class ListMergeRequestsResponseUnmarshaller {
 				subscribers.add(subscribersItem);
 			}
 			resultItem.setSubscribers(subscribers);
+
+			List<Node_labels> labels = new ArrayList<Node_labels>();
+			for (int j = 0; j < _ctx.lengthValue("ListMergeRequestsResponse.result["+ i +"].labels.Length"); j++) {
+				Node_labels node_labels = new Node_labels();
+				node_labels.setId(_ctx.stringValue("ListMergeRequestsResponse.result["+ i +"].labels["+ j +"].id"));
+				node_labels.setName(_ctx.stringValue("ListMergeRequestsResponse.result["+ i +"].labels["+ j +"].name"));
+				node_labels.setColor(_ctx.stringValue("ListMergeRequestsResponse.result["+ i +"].labels["+ j +"].color"));
+				node_labels.setDescription(_ctx.stringValue("ListMergeRequestsResponse.result["+ i +"].labels["+ j +"].description"));
+
+				labels.add(node_labels);
+			}
+			resultItem.setLabels(labels);
 
 			result.add(resultItem);
 		}

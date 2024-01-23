@@ -141,6 +141,8 @@ public class ListMergeRequestsResponse extends AcsResponse {
 
 		private List<SubscribersItem> subscribers;
 
+		private List<Node_labels> labels;
+
 		private Author author;
 
 		public Boolean getNewMergeRequestIdentifier() {
@@ -359,6 +361,14 @@ public class ListMergeRequestsResponse extends AcsResponse {
 			this.subscribers = subscribers;
 		}
 
+		public List<Node_labels> getLabels() {
+			return this.labels;
+		}
+
+		public void setLabels(List<Node_labels> labels) {
+			this.labels = labels;
+		}
+
 		public Author getAuthor() {
 			return this.author;
 		}
@@ -510,6 +520,49 @@ public class ListMergeRequestsResponse extends AcsResponse {
 
 			public void setEmail(String email) {
 				this.email = email;
+			}
+		}
+
+		public static class Node_labels {
+
+			private String id;
+
+			private String name;
+
+			private String color;
+
+			private String description;
+
+			public String getId() {
+				return this.id;
+			}
+
+			public void setId(String id) {
+				this.id = id;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getColor() {
+				return this.color;
+			}
+
+			public void setColor(String color) {
+				this.color = color;
+			}
+
+			public String getDescription() {
+				return this.description;
+			}
+
+			public void setDescription(String description) {
+				this.description = description;
 			}
 		}
 

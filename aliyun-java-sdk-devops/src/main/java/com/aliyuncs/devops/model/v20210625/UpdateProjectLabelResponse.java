@@ -15,22 +15,22 @@
 package com.aliyuncs.devops.model.v20210625;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.devops.transform.v20210625.MergeMergeRequestResponseUnmarshaller;
+import com.aliyuncs.devops.transform.v20210625.UpdateProjectLabelResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class MergeMergeRequestResponse extends AcsResponse {
+public class UpdateProjectLabelResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String errorMessage;
+	private Boolean success;
 
 	private String errorCode;
 
-	private Boolean success;
+	private String errorMessage;
 
 	private Result result;
 
@@ -42,12 +42,12 @@ public class MergeMergeRequestResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getErrorMessage() {
-		return this.errorMessage;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public String getErrorCode() {
@@ -58,12 +58,12 @@ public class MergeMergeRequestResponse extends AcsResponse {
 		this.errorCode = errorCode;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getErrorMessage() {
+		return this.errorMessage;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
 	}
 
 	public Result getResult() {
@@ -76,60 +76,50 @@ public class MergeMergeRequestResponse extends AcsResponse {
 
 	public static class Result {
 
-		private Boolean result;
+		private String id;
 
-		private String mergedRevision;
+		private String name;
 
-		private String bizId;
+		private String color;
 
-		private Long projectId;
+		private String description;
 
-		private Long localId;
-
-		public Boolean getResult() {
-			return this.result;
+		public String getId() {
+			return this.id;
 		}
 
-		public void setResult(Boolean result) {
-			this.result = result;
+		public void setId(String id) {
+			this.id = id;
 		}
 
-		public String getMergedRevision() {
-			return this.mergedRevision;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setMergedRevision(String mergedRevision) {
-			this.mergedRevision = mergedRevision;
+		public void setName(String name) {
+			this.name = name;
 		}
 
-		public String getBizId() {
-			return this.bizId;
+		public String getColor() {
+			return this.color;
 		}
 
-		public void setBizId(String bizId) {
-			this.bizId = bizId;
+		public void setColor(String color) {
+			this.color = color;
 		}
 
-		public Long getProjectId() {
-			return this.projectId;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setProjectId(Long projectId) {
-			this.projectId = projectId;
-		}
-
-		public Long getLocalId() {
-			return this.localId;
-		}
-
-		public void setLocalId(Long localId) {
-			this.localId = localId;
+		public void setDescription(String description) {
+			this.description = description;
 		}
 	}
 
 	@Override
-	public MergeMergeRequestResponse getInstance(UnmarshallerContext context) {
-		return	MergeMergeRequestResponseUnmarshaller.unmarshall(this, context);
+	public UpdateProjectLabelResponse getInstance(UnmarshallerContext context) {
+		return	UpdateProjectLabelResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
