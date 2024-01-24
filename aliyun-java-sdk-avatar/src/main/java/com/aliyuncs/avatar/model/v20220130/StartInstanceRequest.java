@@ -29,6 +29,9 @@ public class StartInstanceRequest extends RpcAcsRequest<StartInstanceResponse> {
 
 	private String app;
 
+	@SerializedName("textRequest")
+	private TextRequest textRequest;
+
 	private Long tenantId;
 
 	private String bizId;
@@ -54,6 +57,17 @@ public class StartInstanceRequest extends RpcAcsRequest<StartInstanceResponse> {
 		if(app != null){
 			putQueryParameter("App", app);
 		}
+	}
+
+	public TextRequest getTextRequest() {
+		return this.textRequest;
+	}
+
+	public void setTextRequest(TextRequest textRequest) {
+		this.textRequest = textRequest;	
+		if (textRequest != null) {
+			putQueryParameter("TextRequest" , new Gson().toJson(textRequest));
+		}	
 	}
 
 	public Long getTenantId() {
@@ -111,6 +125,53 @@ public class StartInstanceRequest extends RpcAcsRequest<StartInstanceResponse> {
 		}
 	}
 
+	public static class TextRequest {
+
+		@SerializedName("Voice")
+		private String voice;
+
+		@SerializedName("Volume")
+		private Integer volume;
+
+		@SerializedName("SpeechRate")
+		private Integer speechRate;
+
+		@SerializedName("PitchRate")
+		private Integer pitchRate;
+
+		public String getVoice() {
+			return this.voice;
+		}
+
+		public void setVoice(String voice) {
+			this.voice = voice;
+		}
+
+		public Integer getVolume() {
+			return this.volume;
+		}
+
+		public void setVolume(Integer volume) {
+			this.volume = volume;
+		}
+
+		public Integer getSpeechRate() {
+			return this.speechRate;
+		}
+
+		public void setSpeechRate(Integer speechRate) {
+			this.speechRate = speechRate;
+		}
+
+		public Integer getPitchRate() {
+			return this.pitchRate;
+		}
+
+		public void setPitchRate(Integer pitchRate) {
+			this.pitchRate = pitchRate;
+		}
+	}
+
 	public static class Channel {
 
 		@SerializedName("Type")
@@ -138,8 +199,22 @@ public class StartInstanceRequest extends RpcAcsRequest<StartInstanceResponse> {
 
 	public static class CommandRequest {
 
+		@SerializedName("BackGroundImageUrl")
+		private String backGroundImageUrl;
+
 		@SerializedName("AlphaSwitch")
 		private Boolean alphaSwitch;
+
+		@SerializedName("Locate")
+		private Integer locate;
+
+		public String getBackGroundImageUrl() {
+			return this.backGroundImageUrl;
+		}
+
+		public void setBackGroundImageUrl(String backGroundImageUrl) {
+			this.backGroundImageUrl = backGroundImageUrl;
+		}
 
 		public Boolean getAlphaSwitch() {
 			return this.alphaSwitch;
@@ -147,6 +222,14 @@ public class StartInstanceRequest extends RpcAcsRequest<StartInstanceResponse> {
 
 		public void setAlphaSwitch(Boolean alphaSwitch) {
 			this.alphaSwitch = alphaSwitch;
+		}
+
+		public Integer getLocate() {
+			return this.locate;
+		}
+
+		public void setLocate(Integer locate) {
+			this.locate = locate;
 		}
 	}
 
