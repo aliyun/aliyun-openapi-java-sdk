@@ -142,6 +142,8 @@ public class DescribeContainerGroupsResponse extends AcsResponse {
 
         private Integer ephemeralStorage;
 
+        private String computeCategory;
+
         public String getContainerGroupId() {
             return this.containerGroupId;
         }
@@ -324,6 +326,14 @@ public class DescribeContainerGroupsResponse extends AcsResponse {
 
         public void setEphemeralStorage(Integer ephemeralStorage) {
             this.ephemeralStorage = ephemeralStorage;
+        }
+
+        public String getComputeCategory() {
+            return computeCategory;
+        }
+
+        public void setComputeCategory(String computeCategory) {
+            this.computeCategory = computeCategory;
         }
 
         public String getInstanceType() {

@@ -53,6 +53,8 @@ public class DescribeContainerGroupsRequest extends RpcAcsRequest<DescribeContai
 
 	private String resourceGroupId;
 
+	private String computeCategory;
+
 	public String getResourceGroupId() {
 		return this.resourceGroupId;
 	}
@@ -196,6 +198,17 @@ public class DescribeContainerGroupsRequest extends RpcAcsRequest<DescribeContai
 		this.status = status;
 		if(status != null){
 			putQueryParameter("Status", status);
+		}
+	}
+
+	public String getComputeCategory() {
+		return computeCategory;
+	}
+
+	public void setComputeCategory(String computeCategory) {
+		this.computeCategory = computeCategory;
+		if(computeCategory != null){
+			putQueryParameter("ComputeCategory", computeCategory);
 		}
 	}
 

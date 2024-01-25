@@ -140,6 +140,8 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 
 	private Boolean dryRun;
 
+	private List<String> computeCategory;
+
     public Integer getEphemeralStorage() {
         return this.ephemeralStorage;
     }
@@ -647,6 +649,19 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 		if (ntpServers != null) {
 			for (int i = 0; i < ntpServers.size(); i++) {
 				putQueryParameter("NtpServer." + (i + 1), ntpServers.get(i));
+			}
+		}
+	}
+
+	public List<String> getComputeCategory() {
+		return computeCategory;
+	}
+
+	public void setComputeCategory(List<String> computeCategory) {
+		this.computeCategory = computeCategory;
+		if (computeCategory != null) {
+			for (int i = 0; i < computeCategory.size(); i++){
+				putQueryParameter("ComputeCategory." + (i + 1), computeCategory.get(i));
 			}
 		}
 	}
@@ -1745,6 +1760,8 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
                 putQueryParameter("AcrRegistryInfo." + (depth1 + 1) + ".InstanceId", acrRegistryInfos.get(depth1).getInstanceId());
                 putQueryParameter("AcrRegistryInfo." + (depth1 + 1) + ".InstanceName", acrRegistryInfos.get(depth1).getInstanceName());
                 putQueryParameter("AcrRegistryInfo." + (depth1 + 1) + ".RegionId", acrRegistryInfos.get(depth1).getRegionId());
+				putQueryParameter("AcrRegistryInfo." + (depth1 + 1) + ".ArnService", acrRegistryInfos.get(depth1).getArnService());
+				putQueryParameter("AcrRegistryInfo." + (depth1 + 1) + ".ArnUser", acrRegistryInfos.get(depth1).getArnUser());
             }
         }
     }
@@ -1758,6 +1775,10 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
         private String regionId;
 
         private List<String> domains;
+
+		private String arnService;
+
+		private String arnUser;
 
         public List<String> getDomains() {
             return this.domains;
@@ -1790,6 +1811,22 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
         public void setRegionId(String regionId) {
             this.regionId = regionId;
         }
+
+		public String getArnService() {
+			return arnService;
+		}
+
+		public void setArnService(String arnService) {
+			this.arnService = arnService;
+		}
+
+		public String getArnUser() {
+			return arnUser;
+		}
+
+		public void setArnUser(String arnUser) {
+			this.arnUser = arnUser;
+		}
     }
 
 	public static class Tag {

@@ -85,6 +85,7 @@ public class DescribeContainerGroupsResponseUnmarshaller {
             containerGroup.setSpotStrategy(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups[" + i + "].SpotStrategy"));
             containerGroup.setTenantEniIp(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups[" + i + "].TenantEniIp"));
             containerGroup.setEphemeralStorage(context.integerValue("DescribeContainerGroupsResponse.ContainerGroups[" + i + "].EphemeralStorage"));
+            containerGroup.setComputeCategory(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups[" + i + "].ComputeCategory"));
 
             DnsConfig dnsConfig = new DnsConfig();
 
