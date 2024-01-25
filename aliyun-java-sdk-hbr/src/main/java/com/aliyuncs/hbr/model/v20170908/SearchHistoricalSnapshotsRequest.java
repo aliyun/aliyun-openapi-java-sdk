@@ -36,6 +36,10 @@ public class SearchHistoricalSnapshotsRequest extends RpcAcsRequest<SearchHistor
 	private Integer limit;
 
 	private String sourceType;
+
+	private String sortBy;
+
+	private String order;
 	public SearchHistoricalSnapshotsRequest() {
 		super("hbr", "2017-09-08", "SearchHistoricalSnapshots", "hbr");
 		setMethod(MethodType.POST);
@@ -86,6 +90,28 @@ public class SearchHistoricalSnapshotsRequest extends RpcAcsRequest<SearchHistor
 		this.sourceType = sourceType;
 		if(sourceType != null){
 			putQueryParameter("SourceType", sourceType);
+		}
+	}
+
+	public String getSortBy() {
+		return this.sortBy;
+	}
+
+	public void setSortBy(String sortBy) {
+		this.sortBy = sortBy;
+		if(sortBy != null){
+			putQueryParameter("SortBy", sortBy);
+		}
+	}
+
+	public String getOrder() {
+		return this.order;
+	}
+
+	public void setOrder(String order) {
+		this.order = order;
+		if(order != null){
+			putQueryParameter("Order", order);
 		}
 	}
 

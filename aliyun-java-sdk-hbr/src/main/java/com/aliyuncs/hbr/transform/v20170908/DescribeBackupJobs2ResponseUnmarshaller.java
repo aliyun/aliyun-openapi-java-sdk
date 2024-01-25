@@ -91,6 +91,9 @@ public class DescribeBackupJobs2ResponseUnmarshaller {
 			backupJob.setDestDataSourceId(_ctx.stringValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].DestDataSourceId"));
 			backupJob.setDestDataSourceDetail(_ctx.stringValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].DestDataSourceDetail"));
 			backupJob.setChangeListPath(_ctx.stringValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].ChangeListPath"));
+			backupJob.setFilesTotal(_ctx.longValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].FilesTotal"));
+			backupJob.setFilesDone(_ctx.longValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].FilesDone"));
+			backupJob.setActualFiles(_ctx.longValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].ActualFiles"));
 
 			List<String> paths = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].Paths.Length"); j++) {

@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.hbr.model.v20170908.DescribePolicyBindingsResponse;
 import com.aliyuncs.hbr.model.v20170908.DescribePolicyBindingsResponse.Data;
 import com.aliyuncs.hbr.model.v20170908.DescribePolicyBindingsResponse.Data.AdvancedOptions;
+import com.aliyuncs.hbr.model.v20170908.DescribePolicyBindingsResponse.Data.AdvancedOptions.CommonFileSystemDetail;
 import com.aliyuncs.hbr.model.v20170908.DescribePolicyBindingsResponse.Data.AdvancedOptions.CommonNasDetail;
 import com.aliyuncs.hbr.model.v20170908.DescribePolicyBindingsResponse.Data.AdvancedOptions.FileDetail;
 import com.aliyuncs.hbr.model.v20170908.DescribePolicyBindingsResponse.Data.AdvancedOptions.OssDetail;
@@ -105,7 +106,13 @@ public class DescribePolicyBindingsResponseUnmarshaller {
 			commonNasDetail.setFullOnIncrementFail(_ctx.booleanValue("DescribePolicyBindingsResponse.PolicyBindings["+ i +"].AdvancedOptions.CommonNasDetail.FullOnIncrementFail"));
 			commonNasDetail.setFetchSliceSize(_ctx.longValue("DescribePolicyBindingsResponse.PolicyBindings["+ i +"].AdvancedOptions.CommonNasDetail.FetchSliceSize"));
 			commonNasDetail.setClientId(_ctx.stringValue("DescribePolicyBindingsResponse.PolicyBindings["+ i +"].AdvancedOptions.CommonNasDetail.ClientId"));
+			commonNasDetail.setClusterId(_ctx.stringValue("DescribePolicyBindingsResponse.PolicyBindings["+ i +"].AdvancedOptions.CommonNasDetail.ClusterId"));
 			advancedOptions.setCommonNasDetail(commonNasDetail);
+
+			CommonFileSystemDetail commonFileSystemDetail = new CommonFileSystemDetail();
+			commonFileSystemDetail.setFullOnIncrementFail(_ctx.booleanValue("DescribePolicyBindingsResponse.PolicyBindings["+ i +"].AdvancedOptions.CommonFileSystemDetail.FullOnIncrementFail"));
+			commonFileSystemDetail.setFetchSliceSize(_ctx.longValue("DescribePolicyBindingsResponse.PolicyBindings["+ i +"].AdvancedOptions.CommonFileSystemDetail.FetchSliceSize"));
+			advancedOptions.setCommonFileSystemDetail(commonFileSystemDetail);
 			data.setAdvancedOptions(advancedOptions);
 
 			policyBindings.add(data);

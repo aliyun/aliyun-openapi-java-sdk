@@ -278,6 +278,8 @@ public class DescribePolicyBindingsResponse extends AcsResponse {
 
 			private CommonNasDetail commonNasDetail;
 
+			private CommonFileSystemDetail commonFileSystemDetail;
+
 			public UdmDetail getUdmDetail() {
 				return this.udmDetail;
 			}
@@ -308,6 +310,14 @@ public class DescribePolicyBindingsResponse extends AcsResponse {
 
 			public void setCommonNasDetail(CommonNasDetail commonNasDetail) {
 				this.commonNasDetail = commonNasDetail;
+			}
+
+			public CommonFileSystemDetail getCommonFileSystemDetail() {
+				return this.commonFileSystemDetail;
+			}
+
+			public void setCommonFileSystemDetail(CommonFileSystemDetail commonFileSystemDetail) {
+				this.commonFileSystemDetail = commonFileSystemDetail;
 			}
 
 			public static class UdmDetail {
@@ -537,6 +547,8 @@ public class DescribePolicyBindingsResponse extends AcsResponse {
 
 				private String clientId;
 
+				private String clusterId;
+
 				public Boolean getFullOnIncrementFail() {
 					return this.fullOnIncrementFail;
 				}
@@ -559,6 +571,37 @@ public class DescribePolicyBindingsResponse extends AcsResponse {
 
 				public void setClientId(String clientId) {
 					this.clientId = clientId;
+				}
+
+				public String getClusterId() {
+					return this.clusterId;
+				}
+
+				public void setClusterId(String clusterId) {
+					this.clusterId = clusterId;
+				}
+			}
+
+			public static class CommonFileSystemDetail {
+
+				private Boolean fullOnIncrementFail;
+
+				private Long fetchSliceSize;
+
+				public Boolean getFullOnIncrementFail() {
+					return this.fullOnIncrementFail;
+				}
+
+				public void setFullOnIncrementFail(Boolean fullOnIncrementFail) {
+					this.fullOnIncrementFail = fullOnIncrementFail;
+				}
+
+				public Long getFetchSliceSize() {
+					return this.fetchSliceSize;
+				}
+
+				public void setFetchSliceSize(Long fetchSliceSize) {
+					this.fetchSliceSize = fetchSliceSize;
 				}
 			}
 		}

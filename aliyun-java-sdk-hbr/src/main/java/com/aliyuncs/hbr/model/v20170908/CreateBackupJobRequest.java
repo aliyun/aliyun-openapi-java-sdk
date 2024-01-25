@@ -57,6 +57,8 @@ public class CreateBackupJobRequest extends RpcAcsRequest<CreateBackupJobRespons
 
 	private String speedLimit;
 
+	private String detail;
+
 	private Long crossAccountUserId;
 	public CreateBackupJobRequest() {
 		super("hbr", "2017-09-08", "CreateBackupJob", "hbr");
@@ -240,6 +242,17 @@ public class CreateBackupJobRequest extends RpcAcsRequest<CreateBackupJobRespons
 		this.speedLimit = speedLimit;
 		if(speedLimit != null){
 			putQueryParameter("SpeedLimit", speedLimit);
+		}
+	}
+
+	public String getDetail() {
+		return this.detail;
+	}
+
+	public void setDetail(String detail) {
+		this.detail = detail;
+		if(detail != null){
+			putQueryParameter("Detail", detail);
 		}
 	}
 

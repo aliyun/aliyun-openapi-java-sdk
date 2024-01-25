@@ -212,6 +212,12 @@ public class DescribeBackupJobs2Response extends AcsResponse {
 
 		private String changeListPath;
 
+		private Long filesTotal;
+
+		private Long filesDone;
+
+		private Long actualFiles;
+
 		private List<Source> sources;
 
 		private List<String> paths;
@@ -598,6 +604,30 @@ public class DescribeBackupJobs2Response extends AcsResponse {
 
 		public void setChangeListPath(String changeListPath) {
 			this.changeListPath = changeListPath;
+		}
+
+		public Long getFilesTotal() {
+			return this.filesTotal;
+		}
+
+		public void setFilesTotal(Long filesTotal) {
+			this.filesTotal = filesTotal;
+		}
+
+		public Long getFilesDone() {
+			return this.filesDone;
+		}
+
+		public void setFilesDone(Long filesDone) {
+			this.filesDone = filesDone;
+		}
+
+		public Long getActualFiles() {
+			return this.actualFiles;
+		}
+
+		public void setActualFiles(Long actualFiles) {
+			this.actualFiles = actualFiles;
 		}
 
 		public List<Source> getSources() {

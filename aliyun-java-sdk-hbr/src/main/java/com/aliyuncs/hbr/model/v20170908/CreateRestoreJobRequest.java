@@ -45,6 +45,8 @@ public class CreateRestoreJobRequest extends RpcAcsRequest<CreateRestoreJobRespo
 
 	private String targetInstanceName;
 
+	private String options;
+
 	private String sourceType;
 
 	private String exclude;
@@ -184,6 +186,17 @@ public class CreateRestoreJobRequest extends RpcAcsRequest<CreateRestoreJobRespo
 		this.targetInstanceName = targetInstanceName;
 		if(targetInstanceName != null){
 			putQueryParameter("TargetInstanceName", targetInstanceName);
+		}
+	}
+
+	public String getOptions() {
+		return this.options;
+	}
+
+	public void setOptions(String options) {
+		this.options = options;
+		if(options != null){
+			putQueryParameter("Options", options);
 		}
 	}
 

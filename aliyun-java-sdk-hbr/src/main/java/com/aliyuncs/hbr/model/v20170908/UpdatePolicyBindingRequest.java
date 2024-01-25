@@ -130,6 +130,9 @@ public class UpdatePolicyBindingRequest extends RpcAcsRequest<UpdatePolicyBindin
 		@SerializedName("FileDetail")
 		private FileDetail fileDetail;
 
+		@SerializedName("CommonFileSystemDetail")
+		private CommonFileSystemDetail commonFileSystemDetail;
+
 		public UdmDetail getUdmDetail() {
 			return this.udmDetail;
 		}
@@ -160,6 +163,14 @@ public class UpdatePolicyBindingRequest extends RpcAcsRequest<UpdatePolicyBindin
 
 		public void setFileDetail(FileDetail fileDetail) {
 			this.fileDetail = fileDetail;
+		}
+
+		public CommonFileSystemDetail getCommonFileSystemDetail() {
+			return this.commonFileSystemDetail;
+		}
+
+		public void setCommonFileSystemDetail(CommonFileSystemDetail commonFileSystemDetail) {
+			this.commonFileSystemDetail = commonFileSystemDetail;
 		}
 
 		public static class UdmDetail {
@@ -402,6 +413,31 @@ public class UpdatePolicyBindingRequest extends RpcAcsRequest<UpdatePolicyBindin
 
 			public void setAdvPolicy(Boolean advPolicy) {
 				this.advPolicy = advPolicy;
+			}
+		}
+
+		public static class CommonFileSystemDetail {
+
+			@SerializedName("FullOnIncrementFail")
+			private Boolean fullOnIncrementFail;
+
+			@SerializedName("FetchSliceSize")
+			private Long fetchSliceSize;
+
+			public Boolean getFullOnIncrementFail() {
+				return this.fullOnIncrementFail;
+			}
+
+			public void setFullOnIncrementFail(Boolean fullOnIncrementFail) {
+				this.fullOnIncrementFail = fullOnIncrementFail;
+			}
+
+			public Long getFetchSliceSize() {
+				return this.fetchSliceSize;
+			}
+
+			public void setFetchSliceSize(Long fetchSliceSize) {
+				this.fetchSliceSize = fetchSliceSize;
 			}
 		}
 	}
