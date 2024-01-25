@@ -14,16 +14,15 @@
 
 package com.aliyuncs.bpstudio.model.v20210931;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.bpstudio.transform.v20210931.ListFoCreatedAppsResponseUnmarshaller;
+import com.aliyuncs.bpstudio.transform.v20210931.InitAppFailOverResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ListFoCreatedAppsResponse extends AcsResponse {
+public class InitAppFailOverResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -31,7 +30,7 @@ public class ListFoCreatedAppsResponse extends AcsResponse {
 
 	private String code;
 
-	private List<Items> data;
+	private Integer data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -57,60 +56,17 @@ public class ListFoCreatedAppsResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public List<Items> getData() {
+	public Integer getData() {
 		return this.data;
 	}
 
-	public void setData(List<Items> data) {
+	public void setData(Integer data) {
 		this.data = data;
 	}
 
-	public static class Items {
-
-		private String applicationId;
-
-		private String title;
-
-		private String reportUrl;
-
-		private String status;
-
-		public String getApplicationId() {
-			return this.applicationId;
-		}
-
-		public void setApplicationId(String applicationId) {
-			this.applicationId = applicationId;
-		}
-
-		public String getTitle() {
-			return this.title;
-		}
-
-		public void setTitle(String title) {
-			this.title = title;
-		}
-
-		public String getReportUrl() {
-			return this.reportUrl;
-		}
-
-		public void setReportUrl(String reportUrl) {
-			this.reportUrl = reportUrl;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-	}
-
 	@Override
-	public ListFoCreatedAppsResponse getInstance(UnmarshallerContext context) {
-		return	ListFoCreatedAppsResponseUnmarshaller.unmarshall(this, context);
+	public InitAppFailOverResponse getInstance(UnmarshallerContext context) {
+		return	InitAppFailOverResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

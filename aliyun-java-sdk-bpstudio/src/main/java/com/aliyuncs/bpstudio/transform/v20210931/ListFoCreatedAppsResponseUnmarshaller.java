@@ -28,12 +28,12 @@ public class ListFoCreatedAppsResponseUnmarshaller {
 		
 		listFoCreatedAppsResponse.setRequestId(_ctx.stringValue("ListFoCreatedAppsResponse.RequestId"));
 		listFoCreatedAppsResponse.setMessage(_ctx.stringValue("ListFoCreatedAppsResponse.Message"));
-		listFoCreatedAppsResponse.setCode(_ctx.integerValue("ListFoCreatedAppsResponse.Code"));
+		listFoCreatedAppsResponse.setCode(_ctx.stringValue("ListFoCreatedAppsResponse.Code"));
 
 		List<Items> data = new ArrayList<Items>();
 		for (int i = 0; i < _ctx.lengthValue("ListFoCreatedAppsResponse.Data.Length"); i++) {
 			Items items = new Items();
-			items.setAppId(_ctx.stringValue("ListFoCreatedAppsResponse.Data["+ i +"].AppId"));
+			items.setApplicationId(_ctx.stringValue("ListFoCreatedAppsResponse.Data["+ i +"].ApplicationId"));
 			items.setTitle(_ctx.stringValue("ListFoCreatedAppsResponse.Data["+ i +"].Title"));
 			items.setReportUrl(_ctx.stringValue("ListFoCreatedAppsResponse.Data["+ i +"].ReportUrl"));
 			items.setStatus(_ctx.stringValue("ListFoCreatedAppsResponse.Data["+ i +"].Status"));

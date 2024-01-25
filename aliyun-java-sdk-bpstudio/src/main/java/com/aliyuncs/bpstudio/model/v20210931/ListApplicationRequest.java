@@ -24,6 +24,10 @@ import com.aliyuncs.http.MethodType;
 public class ListApplicationRequest extends RpcAcsRequest<ListApplicationResponse> {
 	   
 
+	private String resourceId;
+
+	private String templateId;
+
 	private String resourceGroupId;
 
 	private Integer nextToken;
@@ -38,6 +42,28 @@ public class ListApplicationRequest extends RpcAcsRequest<ListApplicationRespons
 	public ListApplicationRequest() {
 		super("BPStudio", "2021-09-31", "ListApplication", "bpstudio");
 		setMethod(MethodType.POST);
+	}
+
+	public String getResourceId() {
+		return this.resourceId;
+	}
+
+	public void setResourceId(String resourceId) {
+		this.resourceId = resourceId;
+		if(resourceId != null){
+			putBodyParameter("ResourceId", resourceId);
+		}
+	}
+
+	public String getTemplateId() {
+		return this.templateId;
+	}
+
+	public void setTemplateId(String templateId) {
+		this.templateId = templateId;
+		if(templateId != null){
+			putBodyParameter("TemplateId", templateId);
+		}
 	}
 
 	public String getResourceGroupId() {
