@@ -43,6 +43,8 @@ public class DescribeContainerGroupPriceRequest extends RpcAcsRequest<DescribeCo
 
     private String ownerAccount;
 
+    private String computeCategory;
+
     private Float cpu;
 
     private Long ownerId;
@@ -110,6 +112,17 @@ public class DescribeContainerGroupPriceRequest extends RpcAcsRequest<DescribeCo
         this.resourceOwnerId = resourceOwnerId;
         if (resourceOwnerId != null) {
             putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+        }
+    }
+
+    public String getComputeCategory() {
+        return computeCategory;
+    }
+
+    public void setComputeCategory(String computeCategory) {
+        this.computeCategory = computeCategory;
+        if(computeCategory != null){
+            putQueryParameter("ComputeCategory", computeCategory);
         }
     }
 

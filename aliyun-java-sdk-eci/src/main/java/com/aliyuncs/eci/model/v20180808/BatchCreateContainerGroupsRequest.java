@@ -83,6 +83,8 @@ public class BatchCreateContainerGroupsRequest extends RpcAcsRequest<BatchCreate
 
     private String eipCommonBandwidthPackage;
 
+    private String eipPublicIpAddressPoolId;
+
     private String hostName;
 
     private Integer ingressBandwidth;
@@ -118,6 +120,8 @@ public class BatchCreateContainerGroupsRequest extends RpcAcsRequest<BatchCreate
     private List<CreateContainerGroupRequest.SecurityContextSysctl> securityContextSysctls;
 
     private List<String> ntpServers;
+
+    private List<String> computeCategory;
 
     private List<CreateContainerGroupRequest.AcrRegistryInfo> acrRegistryInfos;
 
@@ -471,6 +475,17 @@ public class BatchCreateContainerGroupsRequest extends RpcAcsRequest<BatchCreate
         this.eipCommonBandwidthPackage = eipCommonBandwidthPackage;
         if (eipCommonBandwidthPackage != null) {
             putQueryParameter("EipCommonBandwidthPackage", eipCommonBandwidthPackage);
+        }
+    }
+
+    public String getEipPublicIpAddressPoolId() {
+        return this.eipPublicIpAddressPoolId;
+    }
+
+    public void setEipPublicIpAddressPoolId(String eipPublicIpAddressPoolId) {
+        this.eipPublicIpAddressPoolId = eipPublicIpAddressPoolId;
+        if (eipPublicIpAddressPoolId != null) {
+            putQueryParameter("EipPublicIpAddressPoolId", eipPublicIpAddressPoolId);
         }
     }
 
@@ -948,6 +963,19 @@ public class BatchCreateContainerGroupsRequest extends RpcAcsRequest<BatchCreate
         }
     }
 
+    public List<String> getComputeCategory() {
+        return computeCategory;
+    }
+
+    public void setComputeCategory(List<String> computeCategory) {
+        this.computeCategory = computeCategory;
+        if (computeCategory != null) {
+            for (int i = 0; i < computeCategory.size(); i++){
+                putQueryParameter("ComputeCategory." + (i + 1), computeCategory.get(i));
+            }
+        }
+    }
+
     public List<CreateContainerGroupRequest.AcrRegistryInfo> getAcrRegistryInfos() {
         return this.acrRegistryInfos;
     }
@@ -964,6 +992,8 @@ public class BatchCreateContainerGroupsRequest extends RpcAcsRequest<BatchCreate
                 putQueryParameter("AcrRegistryInfo." + (depth1 + 1) + ".InstanceId", acrRegistryInfos.get(depth1).getInstanceId());
                 putQueryParameter("AcrRegistryInfo." + (depth1 + 1) + ".InstanceName", acrRegistryInfos.get(depth1).getInstanceName());
                 putQueryParameter("AcrRegistryInfo." + (depth1 + 1) + ".RegionId", acrRegistryInfos.get(depth1).getRegionId());
+                putQueryParameter("AcrRegistryInfo." + (depth1 + 1) + ".ArnService", acrRegistryInfos.get(depth1).getArnService());
+                putQueryParameter("AcrRegistryInfo." + (depth1 + 1) + ".ArnUser", acrRegistryInfos.get(depth1).getArnUser());
             }
         }
     }
