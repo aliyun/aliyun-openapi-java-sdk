@@ -14,6 +14,7 @@
 
 package com.aliyuncs.eventbridge.model.v20200401;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.eventbridge.transform.v20200401.GetEventStreamingResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -86,6 +87,8 @@ public class GetEventStreamingResponse extends AcsResponse {
 
 		private String status;
 
+		private List<TransformsItem> transforms;
+
 		private Source source;
 
 		private Sink sink;
@@ -132,6 +135,14 @@ public class GetEventStreamingResponse extends AcsResponse {
 			this.status = status;
 		}
 
+		public List<TransformsItem> getTransforms() {
+			return this.transforms;
+		}
+
+		public void setTransforms(List<TransformsItem> transforms) {
+			this.transforms = transforms;
+		}
+
 		public Source getSource() {
 			return this.source;
 		}
@@ -156,6 +167,19 @@ public class GetEventStreamingResponse extends AcsResponse {
 			this.runOptions = runOptions;
 		}
 
+		public static class TransformsItem {
+
+			private String arn;
+
+			public String getArn() {
+				return this.arn;
+			}
+
+			public void setArn(String arn) {
+				this.arn = arn;
+			}
+		}
+
 		public static class Source {
 
 			private SourceMNSParameters sourceMNSParameters;
@@ -171,6 +195,8 @@ public class GetEventStreamingResponse extends AcsResponse {
 			private SourceDTSParameters sourceDTSParameters;
 
 			private SourceSLSParameters sourceSLSParameters;
+
+			private SourcePrometheusParameters sourcePrometheusParameters;
 
 			public SourceMNSParameters getSourceMNSParameters() {
 				return this.sourceMNSParameters;
@@ -226,6 +252,14 @@ public class GetEventStreamingResponse extends AcsResponse {
 
 			public void setSourceSLSParameters(SourceSLSParameters sourceSLSParameters) {
 				this.sourceSLSParameters = sourceSLSParameters;
+			}
+
+			public SourcePrometheusParameters getSourcePrometheusParameters() {
+				return this.sourcePrometheusParameters;
+			}
+
+			public void setSourcePrometheusParameters(SourcePrometheusParameters sourcePrometheusParameters) {
+				this.sourcePrometheusParameters = sourcePrometheusParameters;
 			}
 
 			public static class SourceMNSParameters {
@@ -716,6 +750,39 @@ public class GetEventStreamingResponse extends AcsResponse {
 
 				public void setRoleName(String roleName) {
 					this.roleName = roleName;
+				}
+			}
+
+			public static class SourcePrometheusParameters {
+
+				private String clusterId;
+
+				private String dataType;
+
+				private String labels;
+
+				public String getClusterId() {
+					return this.clusterId;
+				}
+
+				public void setClusterId(String clusterId) {
+					this.clusterId = clusterId;
+				}
+
+				public String getDataType() {
+					return this.dataType;
+				}
+
+				public void setDataType(String dataType) {
+					this.dataType = dataType;
+				}
+
+				public String getLabels() {
+					return this.labels;
+				}
+
+				public void setLabels(String labels) {
+					this.labels = labels;
 				}
 			}
 		}

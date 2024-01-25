@@ -119,6 +119,8 @@ public class ListEventStreamingsResponse extends AcsResponse {
 
 			private String status;
 
+			private List<TransformsItem> transforms;
+
 			private Source source;
 
 			private Sink sink;
@@ -165,6 +167,14 @@ public class ListEventStreamingsResponse extends AcsResponse {
 				this.status = status;
 			}
 
+			public List<TransformsItem> getTransforms() {
+				return this.transforms;
+			}
+
+			public void setTransforms(List<TransformsItem> transforms) {
+				this.transforms = transforms;
+			}
+
 			public Source getSource() {
 				return this.source;
 			}
@@ -187,6 +197,19 @@ public class ListEventStreamingsResponse extends AcsResponse {
 
 			public void setRunOptions(RunOptions runOptions) {
 				this.runOptions = runOptions;
+			}
+
+			public static class TransformsItem {
+
+				private String arn;
+
+				public String getArn() {
+					return this.arn;
+				}
+
+				public void setArn(String arn) {
+					this.arn = arn;
+				}
 			}
 
 			public static class Source {

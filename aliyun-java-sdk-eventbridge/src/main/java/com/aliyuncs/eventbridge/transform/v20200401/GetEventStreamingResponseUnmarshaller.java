@@ -14,6 +14,9 @@
 
 package com.aliyuncs.eventbridge.transform.v20200401;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.eventbridge.model.v20200401.GetEventStreamingResponse;
 import com.aliyuncs.eventbridge.model.v20200401.GetEventStreamingResponse.Data;
 import com.aliyuncs.eventbridge.model.v20200401.GetEventStreamingResponse.Data.RunOptions;
@@ -72,9 +75,11 @@ import com.aliyuncs.eventbridge.model.v20200401.GetEventStreamingResponse.Data.S
 import com.aliyuncs.eventbridge.model.v20200401.GetEventStreamingResponse.Data.Source.SourceKafkaParameters;
 import com.aliyuncs.eventbridge.model.v20200401.GetEventStreamingResponse.Data.Source.SourceMNSParameters;
 import com.aliyuncs.eventbridge.model.v20200401.GetEventStreamingResponse.Data.Source.SourceMQTTParameters;
+import com.aliyuncs.eventbridge.model.v20200401.GetEventStreamingResponse.Data.Source.SourcePrometheusParameters;
 import com.aliyuncs.eventbridge.model.v20200401.GetEventStreamingResponse.Data.Source.SourceRabbitMQParameters;
 import com.aliyuncs.eventbridge.model.v20200401.GetEventStreamingResponse.Data.Source.SourceRocketMQParameters;
 import com.aliyuncs.eventbridge.model.v20200401.GetEventStreamingResponse.Data.Source.SourceSLSParameters;
+import com.aliyuncs.eventbridge.model.v20200401.GetEventStreamingResponse.Data.TransformsItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -163,6 +168,12 @@ public class GetEventStreamingResponseUnmarshaller {
 		sourceSLSParameters.setConsumePosition(_ctx.stringValue("GetEventStreamingResponse.Data.Source.SourceSLSParameters.ConsumePosition"));
 		sourceSLSParameters.setRoleName(_ctx.stringValue("GetEventStreamingResponse.Data.Source.SourceSLSParameters.RoleName"));
 		source.setSourceSLSParameters(sourceSLSParameters);
+
+		SourcePrometheusParameters sourcePrometheusParameters = new SourcePrometheusParameters();
+		sourcePrometheusParameters.setClusterId(_ctx.stringValue("GetEventStreamingResponse.Data.Source.SourcePrometheusParameters.ClusterId"));
+		sourcePrometheusParameters.setDataType(_ctx.stringValue("GetEventStreamingResponse.Data.Source.SourcePrometheusParameters.DataType"));
+		sourcePrometheusParameters.setLabels(_ctx.stringValue("GetEventStreamingResponse.Data.Source.SourcePrometheusParameters.Labels"));
+		source.setSourcePrometheusParameters(sourcePrometheusParameters);
 		data.setSource(source);
 
 		Sink sink = new Sink();
@@ -442,6 +453,15 @@ public class GetEventStreamingResponseUnmarshaller {
 		batchWindow.setTimeBasedWindow(_ctx.integerValue("GetEventStreamingResponse.Data.RunOptions.BatchWindow.TimeBasedWindow"));
 		runOptions.setBatchWindow(batchWindow);
 		data.setRunOptions(runOptions);
+
+		List<TransformsItem> transforms = new ArrayList<TransformsItem>();
+		for (int i = 0; i < _ctx.lengthValue("GetEventStreamingResponse.Data.Transforms.Length"); i++) {
+			TransformsItem transformsItem = new TransformsItem();
+			transformsItem.setArn(_ctx.stringValue("GetEventStreamingResponse.Data.Transforms["+ i +"].Arn"));
+
+			transforms.add(transformsItem);
+		}
+		data.setTransforms(transforms);
 		getEventStreamingResponse.setData(data);
 	 
 	 	return getEventStreamingResponse;

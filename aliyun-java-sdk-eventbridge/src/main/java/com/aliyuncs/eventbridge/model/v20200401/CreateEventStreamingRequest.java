@@ -15,6 +15,7 @@
 package com.aliyuncs.eventbridge.model.v20200401;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
@@ -28,6 +29,9 @@ public class CreateEventStreamingRequest extends RpcAcsRequest<CreateEventStream
 
 	@SerializedName("sink")
 	private Sink sink;
+
+	@SerializedName("transforms")
+	private List<Transforms> transforms;
 
 	private String description;
 
@@ -53,6 +57,17 @@ public class CreateEventStreamingRequest extends RpcAcsRequest<CreateEventStream
 		this.sink = sink;	
 		if (sink != null) {
 			putBodyParameter("Sink" , new Gson().toJson(sink));
+		}	
+	}
+
+	public List<Transforms> getTransforms() {
+		return this.transforms;
+	}
+
+	public void setTransforms(List<Transforms> transforms) {
+		this.transforms = transforms;	
+		if (transforms != null) {
+			putBodyParameter("Transforms" , new Gson().toJson(transforms));
 		}	
 	}
 
@@ -131,6 +146,9 @@ public class CreateEventStreamingRequest extends RpcAcsRequest<CreateEventStream
 		@SerializedName("SinkFcParameters")
 		private SinkFcParameters sinkFcParameters;
 
+		@SerializedName("SinkPrometheusParameters")
+		private SinkPrometheusParameters sinkPrometheusParameters;
+
 		@SerializedName("SinkSLSParameters")
 		private SinkSLSParameters sinkSLSParameters;
 
@@ -183,6 +201,14 @@ public class CreateEventStreamingRequest extends RpcAcsRequest<CreateEventStream
 
 		public void setSinkFcParameters(SinkFcParameters sinkFcParameters) {
 			this.sinkFcParameters = sinkFcParameters;
+		}
+
+		public SinkPrometheusParameters getSinkPrometheusParameters() {
+			return this.sinkPrometheusParameters;
+		}
+
+		public void setSinkPrometheusParameters(SinkPrometheusParameters sinkPrometheusParameters) {
+			this.sinkPrometheusParameters = sinkPrometheusParameters;
 		}
 
 		public SinkSLSParameters getSinkSLSParameters() {
@@ -1817,6 +1843,432 @@ public class CreateEventStreamingRequest extends RpcAcsRequest<CreateEventStream
 			}
 		}
 
+		public static class SinkPrometheusParameters {
+
+			@SerializedName("VSwitchId")
+			private VSwitchId vSwitchId;
+
+			@SerializedName("Password")
+			private Password password;
+
+			@SerializedName("Data")
+			private Data data;
+
+			@SerializedName("VpcId")
+			private VpcId vpcId;
+
+			@SerializedName("SecurityGroupId")
+			private SecurityGroupId securityGroupId;
+
+			@SerializedName("AuthorizationType")
+			private AuthorizationType authorizationType;
+
+			@SerializedName("NetworkType")
+			private NetworkType networkType;
+
+			@SerializedName("URL")
+			private URL uRL;
+
+			@SerializedName("Username")
+			private Username username;
+
+			public VSwitchId getVSwitchId() {
+				return this.vSwitchId;
+			}
+
+			public void setVSwitchId(VSwitchId vSwitchId) {
+				this.vSwitchId = vSwitchId;
+			}
+
+			public Password getPassword() {
+				return this.password;
+			}
+
+			public void setPassword(Password password) {
+				this.password = password;
+			}
+
+			public Data getData() {
+				return this.data;
+			}
+
+			public void setData(Data data) {
+				this.data = data;
+			}
+
+			public VpcId getVpcId() {
+				return this.vpcId;
+			}
+
+			public void setVpcId(VpcId vpcId) {
+				this.vpcId = vpcId;
+			}
+
+			public SecurityGroupId getSecurityGroupId() {
+				return this.securityGroupId;
+			}
+
+			public void setSecurityGroupId(SecurityGroupId securityGroupId) {
+				this.securityGroupId = securityGroupId;
+			}
+
+			public AuthorizationType getAuthorizationType() {
+				return this.authorizationType;
+			}
+
+			public void setAuthorizationType(AuthorizationType authorizationType) {
+				this.authorizationType = authorizationType;
+			}
+
+			public NetworkType getNetworkType() {
+				return this.networkType;
+			}
+
+			public void setNetworkType(NetworkType networkType) {
+				this.networkType = networkType;
+			}
+
+			public URL getURL() {
+				return this.uRL;
+			}
+
+			public void setURL(URL uRL) {
+				this.uRL = uRL;
+			}
+
+			public Username getUsername() {
+				return this.username;
+			}
+
+			public void setUsername(Username username) {
+				this.username = username;
+			}
+
+			public static class VSwitchId {
+
+				@SerializedName("Template")
+				private String template;
+
+				@SerializedName("Form")
+				private String form;
+
+				@SerializedName("Value")
+				private String value;
+
+				public String getTemplate() {
+					return this.template;
+				}
+
+				public void setTemplate(String template) {
+					this.template = template;
+				}
+
+				public String getForm() {
+					return this.form;
+				}
+
+				public void setForm(String form) {
+					this.form = form;
+				}
+
+				public String getValue() {
+					return this.value;
+				}
+
+				public void setValue(String value) {
+					this.value = value;
+				}
+			}
+
+			public static class Password {
+
+				@SerializedName("Template")
+				private String template;
+
+				@SerializedName("Form")
+				private String form;
+
+				@SerializedName("Value")
+				private String value;
+
+				public String getTemplate() {
+					return this.template;
+				}
+
+				public void setTemplate(String template) {
+					this.template = template;
+				}
+
+				public String getForm() {
+					return this.form;
+				}
+
+				public void setForm(String form) {
+					this.form = form;
+				}
+
+				public String getValue() {
+					return this.value;
+				}
+
+				public void setValue(String value) {
+					this.value = value;
+				}
+			}
+
+			public static class Data {
+
+				@SerializedName("Template")
+				private String template;
+
+				@SerializedName("Form")
+				private String form;
+
+				@SerializedName("Value")
+				private String value;
+
+				public String getTemplate() {
+					return this.template;
+				}
+
+				public void setTemplate(String template) {
+					this.template = template;
+				}
+
+				public String getForm() {
+					return this.form;
+				}
+
+				public void setForm(String form) {
+					this.form = form;
+				}
+
+				public String getValue() {
+					return this.value;
+				}
+
+				public void setValue(String value) {
+					this.value = value;
+				}
+			}
+
+			public static class VpcId {
+
+				@SerializedName("Template")
+				private String template;
+
+				@SerializedName("Form")
+				private String form;
+
+				@SerializedName("Value")
+				private String value;
+
+				public String getTemplate() {
+					return this.template;
+				}
+
+				public void setTemplate(String template) {
+					this.template = template;
+				}
+
+				public String getForm() {
+					return this.form;
+				}
+
+				public void setForm(String form) {
+					this.form = form;
+				}
+
+				public String getValue() {
+					return this.value;
+				}
+
+				public void setValue(String value) {
+					this.value = value;
+				}
+			}
+
+			public static class SecurityGroupId {
+
+				@SerializedName("Template")
+				private String template;
+
+				@SerializedName("Form")
+				private String form;
+
+				@SerializedName("Value")
+				private String value;
+
+				public String getTemplate() {
+					return this.template;
+				}
+
+				public void setTemplate(String template) {
+					this.template = template;
+				}
+
+				public String getForm() {
+					return this.form;
+				}
+
+				public void setForm(String form) {
+					this.form = form;
+				}
+
+				public String getValue() {
+					return this.value;
+				}
+
+				public void setValue(String value) {
+					this.value = value;
+				}
+			}
+
+			public static class AuthorizationType {
+
+				@SerializedName("Template")
+				private String template;
+
+				@SerializedName("Form")
+				private String form;
+
+				@SerializedName("Value")
+				private String value;
+
+				public String getTemplate() {
+					return this.template;
+				}
+
+				public void setTemplate(String template) {
+					this.template = template;
+				}
+
+				public String getForm() {
+					return this.form;
+				}
+
+				public void setForm(String form) {
+					this.form = form;
+				}
+
+				public String getValue() {
+					return this.value;
+				}
+
+				public void setValue(String value) {
+					this.value = value;
+				}
+			}
+
+			public static class NetworkType {
+
+				@SerializedName("Template")
+				private String template;
+
+				@SerializedName("Form")
+				private String form;
+
+				@SerializedName("Value")
+				private String value;
+
+				public String getTemplate() {
+					return this.template;
+				}
+
+				public void setTemplate(String template) {
+					this.template = template;
+				}
+
+				public String getForm() {
+					return this.form;
+				}
+
+				public void setForm(String form) {
+					this.form = form;
+				}
+
+				public String getValue() {
+					return this.value;
+				}
+
+				public void setValue(String value) {
+					this.value = value;
+				}
+			}
+
+			public static class URL {
+
+				@SerializedName("Template")
+				private String template;
+
+				@SerializedName("Form")
+				private String form;
+
+				@SerializedName("Value")
+				private String value;
+
+				public String getTemplate() {
+					return this.template;
+				}
+
+				public void setTemplate(String template) {
+					this.template = template;
+				}
+
+				public String getForm() {
+					return this.form;
+				}
+
+				public void setForm(String form) {
+					this.form = form;
+				}
+
+				public String getValue() {
+					return this.value;
+				}
+
+				public void setValue(String value) {
+					this.value = value;
+				}
+			}
+
+			public static class Username {
+
+				@SerializedName("Template")
+				private String template;
+
+				@SerializedName("Form")
+				private String form;
+
+				@SerializedName("Value")
+				private String value;
+
+				public String getTemplate() {
+					return this.template;
+				}
+
+				public void setTemplate(String template) {
+					this.template = template;
+				}
+
+				public String getForm() {
+					return this.form;
+				}
+
+				public void setForm(String form) {
+					this.form = form;
+				}
+
+				public String getValue() {
+					return this.value;
+				}
+
+				public void setValue(String value) {
+					this.value = value;
+				}
+			}
+		}
+
 		public static class SinkSLSParameters {
 
 			@SerializedName("RoleName")
@@ -2717,6 +3169,20 @@ public class CreateEventStreamingRequest extends RpcAcsRequest<CreateEventStream
 		}
 	}
 
+	public static class Transforms {
+
+		@SerializedName("Arn")
+		private String arn;
+
+		public String getArn() {
+			return this.arn;
+		}
+
+		public void setArn(String arn) {
+			this.arn = arn;
+		}
+	}
+
 	public static class Source {
 
 		@SerializedName("SourceMQTTParameters")
@@ -2727,6 +3193,9 @@ public class CreateEventStreamingRequest extends RpcAcsRequest<CreateEventStream
 
 		@SerializedName("SourceSLSParameters")
 		private SourceSLSParameters sourceSLSParameters;
+
+		@SerializedName("SourcePrometheusParameters")
+		private SourcePrometheusParameters sourcePrometheusParameters;
 
 		@SerializedName("SourceDTSParameters")
 		private SourceDTSParameters sourceDTSParameters;
@@ -2762,6 +3231,14 @@ public class CreateEventStreamingRequest extends RpcAcsRequest<CreateEventStream
 
 		public void setSourceSLSParameters(SourceSLSParameters sourceSLSParameters) {
 			this.sourceSLSParameters = sourceSLSParameters;
+		}
+
+		public SourcePrometheusParameters getSourcePrometheusParameters() {
+			return this.sourcePrometheusParameters;
+		}
+
+		public void setSourcePrometheusParameters(SourcePrometheusParameters sourcePrometheusParameters) {
+			this.sourcePrometheusParameters = sourcePrometheusParameters;
 		}
 
 		public SourceDTSParameters getSourceDTSParameters() {
@@ -3121,6 +3598,42 @@ public class CreateEventStreamingRequest extends RpcAcsRequest<CreateEventStream
 
 			public void setConsumePosition(String consumePosition) {
 				this.consumePosition = consumePosition;
+			}
+		}
+
+		public static class SourcePrometheusParameters {
+
+			@SerializedName("DataType")
+			private String dataType;
+
+			@SerializedName("ClusterId")
+			private String clusterId;
+
+			@SerializedName("Labels")
+			private String labels;
+
+			public String getDataType() {
+				return this.dataType;
+			}
+
+			public void setDataType(String dataType) {
+				this.dataType = dataType;
+			}
+
+			public String getClusterId() {
+				return this.clusterId;
+			}
+
+			public void setClusterId(String clusterId) {
+				this.clusterId = clusterId;
+			}
+
+			public String getLabels() {
+				return this.labels;
+			}
+
+			public void setLabels(String labels) {
+				this.labels = labels;
 			}
 		}
 

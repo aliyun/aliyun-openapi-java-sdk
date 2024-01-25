@@ -1,3 +1,6 @@
+2024-01-25 Version: 1.0.9
+- Add source prometheus to event streaming.
+
 2023-11-07 Version: 1.0.8
 - Update param.
 

@@ -79,6 +79,7 @@ import com.aliyuncs.eventbridge.model.v20200401.ListEventStreamingsResponse.Data
 import com.aliyuncs.eventbridge.model.v20200401.ListEventStreamingsResponse.Data.EventStreamingsItem.Source.SourceRabbitMQParameters;
 import com.aliyuncs.eventbridge.model.v20200401.ListEventStreamingsResponse.Data.EventStreamingsItem.Source.SourceRocketMQParameters;
 import com.aliyuncs.eventbridge.model.v20200401.ListEventStreamingsResponse.Data.EventStreamingsItem.Source.SourceSLSParameters;
+import com.aliyuncs.eventbridge.model.v20200401.ListEventStreamingsResponse.Data.EventStreamingsItem.TransformsItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -452,6 +453,15 @@ public class ListEventStreamingsResponseUnmarshaller {
 			batchWindow.setTimeBasedWindow(_ctx.integerValue("ListEventStreamingsResponse.Data.EventStreamings["+ i +"].RunOptions.BatchWindow.TimeBasedWindow"));
 			runOptions.setBatchWindow(batchWindow);
 			eventStreamingsItem.setRunOptions(runOptions);
+
+			List<TransformsItem> transforms = new ArrayList<TransformsItem>();
+			for (int j = 0; j < _ctx.lengthValue("ListEventStreamingsResponse.Data.EventStreamings["+ i +"].Transforms.Length"); j++) {
+				TransformsItem transformsItem = new TransformsItem();
+				transformsItem.setArn(_ctx.stringValue("ListEventStreamingsResponse.Data.EventStreamings["+ i +"].Transforms["+ j +"].Arn"));
+
+				transforms.add(transformsItem);
+			}
+			eventStreamingsItem.setTransforms(transforms);
 
 			eventStreamings.add(eventStreamingsItem);
 		}
