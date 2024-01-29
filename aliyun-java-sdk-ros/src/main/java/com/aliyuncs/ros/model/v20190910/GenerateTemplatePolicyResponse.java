@@ -15,6 +15,7 @@
 package com.aliyuncs.ros.model.v20190910;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.ros.transform.v20190910.GenerateTemplatePolicyResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -73,6 +74,8 @@ public class GenerateTemplatePolicyResponse extends AcsResponse {
 
 			private String resource;
 
+			private Map<Object,Object> condition;
+
 			private List<String> action;
 
 			public String getEffect() {
@@ -89,6 +92,14 @@ public class GenerateTemplatePolicyResponse extends AcsResponse {
 
 			public void setResource(String resource) {
 				this.resource = resource;
+			}
+
+			public Map<Object,Object> getCondition() {
+				return this.condition;
+			}
+
+			public void setCondition(Map<Object,Object> condition) {
+				this.condition = condition;
 			}
 
 			public List<String> getAction() {

@@ -42,6 +42,8 @@ public class UpdateStackRequest extends RpcAcsRequest<UpdateStackResponse> {
 
 	private List<Tags> tagss;
 
+	private List<String> dryRunOptionss;
+
 	private List<Parameters> parameterss;
 
 	private String clientToken;
@@ -165,6 +167,19 @@ public class UpdateStackRequest extends RpcAcsRequest<UpdateStackResponse> {
 		}	
 	}
 
+	public List<String> getDryRunOptionss() {
+		return this.dryRunOptionss;
+	}
+
+	public void setDryRunOptionss(List<String> dryRunOptionss) {
+		this.dryRunOptionss = dryRunOptionss;	
+		if (dryRunOptionss != null) {
+			for (int i = 0; i < dryRunOptionss.size(); i++) {
+				putQueryParameter("DryRunOptions." + (i + 1) , dryRunOptionss.get(i));
+			}
+		}	
+	}
+
 	public List<Parameters> getParameterss() {
 		return this.parameterss;
 	}
@@ -197,7 +212,7 @@ public class UpdateStackRequest extends RpcAcsRequest<UpdateStackResponse> {
 	public void setTemplateBody(String templateBody) {
 		this.templateBody = templateBody;
 		if(templateBody != null){
-			putQueryParameter("TemplateBody", templateBody);
+			putBodyParameter("TemplateBody", templateBody);
 		}
 	}
 

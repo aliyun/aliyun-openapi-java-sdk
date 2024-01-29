@@ -62,6 +62,8 @@ public class GetStackResponseUnmarshaller {
 		getStackResponse.set_Interface(_ctx.stringValue("GetStackResponse.Interface"));
 		getStackResponse.setServiceManaged(_ctx.booleanValue("GetStackResponse.ServiceManaged"));
 		getStackResponse.setServiceName(_ctx.stringValue("GetStackResponse.ServiceName"));
+		getStackResponse.setCheckedStackResourceCount(_ctx.integerValue("GetStackResponse.CheckedStackResourceCount"));
+		getStackResponse.setNotCheckedStackResourceCount(_ctx.integerValue("GetStackResponse.NotCheckedStackResourceCount"));
 
 		List<Map<Object, Object>> outputs = _ctx.listMapValue("GetStackResponse.Outputs");
 		getStackResponse.setOutputs(outputs);
@@ -72,12 +74,20 @@ public class GetStackResponseUnmarshaller {
 		}
 		getStackResponse.setNotificationURLs(notificationURLs);
 
+		List<String> orderIds = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("GetStackResponse.OrderIds.Length"); i++) {
+			orderIds.add(_ctx.stringValue("GetStackResponse.OrderIds["+ i +"]"));
+		}
+		getStackResponse.setOrderIds(orderIds);
+
 		ResourceProgress resourceProgress = new ResourceProgress();
 		resourceProgress.setTotalResourceCount(_ctx.integerValue("GetStackResponse.ResourceProgress.TotalResourceCount"));
 		resourceProgress.setSuccessResourceCount(_ctx.integerValue("GetStackResponse.ResourceProgress.SuccessResourceCount"));
 		resourceProgress.setFailedResourceCount(_ctx.integerValue("GetStackResponse.ResourceProgress.FailedResourceCount"));
 		resourceProgress.setInProgressResourceCount(_ctx.integerValue("GetStackResponse.ResourceProgress.InProgressResourceCount"));
 		resourceProgress.setPendingResourceCount(_ctx.integerValue("GetStackResponse.ResourceProgress.PendingResourceCount"));
+		resourceProgress.setStackOperationProgress(_ctx.floatValue("GetStackResponse.ResourceProgress.StackOperationProgress"));
+		resourceProgress.setStackActionProgress(_ctx.floatValue("GetStackResponse.ResourceProgress.StackActionProgress"));
 
 		List<InProgressResourceDetail> inProgressResourceDetails = new ArrayList<InProgressResourceDetail>();
 		for (int i = 0; i < _ctx.lengthValue("GetStackResponse.ResourceProgress.InProgressResourceDetails.Length"); i++) {

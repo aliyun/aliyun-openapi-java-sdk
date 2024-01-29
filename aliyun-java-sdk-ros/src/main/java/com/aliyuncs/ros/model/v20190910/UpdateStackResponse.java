@@ -71,6 +71,12 @@ public class UpdateStackResponse extends AcsResponse {
 
 		private List<String> parametersUncertainlyCauseInterruptionIfModified;
 
+		private List<String> parametersCauseReplacementIfModified;
+
+		private List<String> parametersConditionallyCauseReplacementIfModified;
+
+		private List<String> parametersUncertainlyCauseReplacementIfModified;
+
 		public List<String> getParametersAllowedToBeModified() {
 			return this.parametersAllowedToBeModified;
 		}
@@ -125,6 +131,30 @@ public class UpdateStackResponse extends AcsResponse {
 
 		public void setParametersUncertainlyCauseInterruptionIfModified(List<String> parametersUncertainlyCauseInterruptionIfModified) {
 			this.parametersUncertainlyCauseInterruptionIfModified = parametersUncertainlyCauseInterruptionIfModified;
+		}
+
+		public List<String> getParametersCauseReplacementIfModified() {
+			return this.parametersCauseReplacementIfModified;
+		}
+
+		public void setParametersCauseReplacementIfModified(List<String> parametersCauseReplacementIfModified) {
+			this.parametersCauseReplacementIfModified = parametersCauseReplacementIfModified;
+		}
+
+		public List<String> getParametersConditionallyCauseReplacementIfModified() {
+			return this.parametersConditionallyCauseReplacementIfModified;
+		}
+
+		public void setParametersConditionallyCauseReplacementIfModified(List<String> parametersConditionallyCauseReplacementIfModified) {
+			this.parametersConditionallyCauseReplacementIfModified = parametersConditionallyCauseReplacementIfModified;
+		}
+
+		public List<String> getParametersUncertainlyCauseReplacementIfModified() {
+			return this.parametersUncertainlyCauseReplacementIfModified;
+		}
+
+		public void setParametersUncertainlyCauseReplacementIfModified(List<String> parametersUncertainlyCauseReplacementIfModified) {
+			this.parametersUncertainlyCauseReplacementIfModified = parametersUncertainlyCauseReplacementIfModified;
 		}
 	}
 

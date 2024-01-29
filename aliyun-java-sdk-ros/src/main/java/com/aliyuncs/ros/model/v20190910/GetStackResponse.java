@@ -80,6 +80,10 @@ public class GetStackResponse extends AcsResponse {
 
 	private String serviceName;
 
+	private Integer checkedStackResourceCount;
+
+	private Integer notCheckedStackResourceCount;
+
 	private List<Parameter> parameters;
 
 	private List<Tag> tags;
@@ -87,6 +91,8 @@ public class GetStackResponse extends AcsResponse {
 	private List<Map<Object,Object>> outputs;
 
 	private List<String> notificationURLs;
+
+	private List<String> orderIds;
 
 	private ResourceProgress resourceProgress;
 
@@ -310,6 +316,22 @@ public class GetStackResponse extends AcsResponse {
 		this.serviceName = serviceName;
 	}
 
+	public Integer getCheckedStackResourceCount() {
+		return this.checkedStackResourceCount;
+	}
+
+	public void setCheckedStackResourceCount(Integer checkedStackResourceCount) {
+		this.checkedStackResourceCount = checkedStackResourceCount;
+	}
+
+	public Integer getNotCheckedStackResourceCount() {
+		return this.notCheckedStackResourceCount;
+	}
+
+	public void setNotCheckedStackResourceCount(Integer notCheckedStackResourceCount) {
+		this.notCheckedStackResourceCount = notCheckedStackResourceCount;
+	}
+
 	public List<Parameter> getParameters() {
 		return this.parameters;
 	}
@@ -340,6 +362,14 @@ public class GetStackResponse extends AcsResponse {
 
 	public void setNotificationURLs(List<String> notificationURLs) {
 		this.notificationURLs = notificationURLs;
+	}
+
+	public List<String> getOrderIds() {
+		return this.orderIds;
+	}
+
+	public void setOrderIds(List<String> orderIds) {
+		this.orderIds = orderIds;
 	}
 
 	public ResourceProgress getResourceProgress() {
@@ -424,6 +454,10 @@ public class GetStackResponse extends AcsResponse {
 
 		private Integer pendingResourceCount;
 
+		private Float stackOperationProgress;
+
+		private Float stackActionProgress;
+
 		private List<InProgressResourceDetail> inProgressResourceDetails;
 
 		public Integer getTotalResourceCount() {
@@ -464,6 +498,22 @@ public class GetStackResponse extends AcsResponse {
 
 		public void setPendingResourceCount(Integer pendingResourceCount) {
 			this.pendingResourceCount = pendingResourceCount;
+		}
+
+		public Float getStackOperationProgress() {
+			return this.stackOperationProgress;
+		}
+
+		public void setStackOperationProgress(Float stackOperationProgress) {
+			this.stackOperationProgress = stackOperationProgress;
+		}
+
+		public Float getStackActionProgress() {
+			return this.stackActionProgress;
+		}
+
+		public void setStackActionProgress(Float stackActionProgress) {
+			this.stackActionProgress = stackActionProgress;
 		}
 
 		public List<InProgressResourceDetail> getInProgressResourceDetails() {

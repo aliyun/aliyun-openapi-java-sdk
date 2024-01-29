@@ -18,8 +18,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.ros.model.v20190910.GetFeatureDetailsResponse;
+import com.aliyuncs.ros.model.v20190910.GetFeatureDetailsResponse.DriftDetection;
 import com.aliyuncs.ros.model.v20190910.GetFeatureDetailsResponse.ResourceCleaner;
 import com.aliyuncs.ros.model.v20190910.GetFeatureDetailsResponse.ResourceCleaner.SupportedResourceType4;
+import com.aliyuncs.ros.model.v20190910.GetFeatureDetailsResponse.ResourceImport;
+import com.aliyuncs.ros.model.v20190910.GetFeatureDetailsResponse.ResourceImport.SupportedResourceType9;
 import com.aliyuncs.ros.model.v20190910.GetFeatureDetailsResponse.TemplateParameterConstraints;
 import com.aliyuncs.ros.model.v20190910.GetFeatureDetailsResponse.TemplateParameterConstraints.SupportedResourceType6;
 import com.aliyuncs.ros.model.v20190910.GetFeatureDetailsResponse.TemplateScratch;
@@ -119,6 +122,12 @@ public class GetFeatureDetailsResponseUnmarshaller {
 			supportedResourceType.setSourceResourceGroupSupported(_ctx.booleanValue("GetFeatureDetailsResponse.TemplateScratch.SupportedResourceTypes["+ i +"].SourceResourceGroupSupported"));
 			supportedResourceType.setSourceSupported(_ctx.booleanValue("GetFeatureDetailsResponse.TemplateScratch.SupportedResourceTypes["+ i +"].SourceSupported"));
 
+			List<String> supportedTemplateScratchTypes = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("GetFeatureDetailsResponse.TemplateScratch.SupportedResourceTypes["+ i +"].SupportedTemplateScratchTypes.Length"); j++) {
+				supportedTemplateScratchTypes.add(_ctx.stringValue("GetFeatureDetailsResponse.TemplateScratch.SupportedResourceTypes["+ i +"].SupportedTemplateScratchTypes["+ j +"]"));
+			}
+			supportedResourceType.setSupportedTemplateScratchTypes(supportedTemplateScratchTypes);
+
 			supportedResourceTypes2.add(supportedResourceType);
 		}
 		templateScratch.setSupportedResourceTypes2(supportedResourceTypes2);
@@ -165,6 +174,33 @@ public class GetFeatureDetailsResponseUnmarshaller {
 		}
 		templateParameterConstraints.setSupportedResourceTypes5(supportedResourceTypes5);
 		getFeatureDetailsResponse.setTemplateParameterConstraints(templateParameterConstraints);
+
+		DriftDetection driftDetection = new DriftDetection();
+
+		List<String> supportedResourceTypes7 = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("GetFeatureDetailsResponse.DriftDetection.SupportedResourceTypes.Length"); i++) {
+			supportedResourceTypes7.add(_ctx.stringValue("GetFeatureDetailsResponse.DriftDetection.SupportedResourceTypes["+ i +"]"));
+		}
+		driftDetection.setSupportedResourceTypes7(supportedResourceTypes7);
+		getFeatureDetailsResponse.setDriftDetection(driftDetection);
+
+		ResourceImport resourceImport = new ResourceImport();
+
+		List<SupportedResourceType9> supportedResourceTypes8 = new ArrayList<SupportedResourceType9>();
+		for (int i = 0; i < _ctx.lengthValue("GetFeatureDetailsResponse.ResourceImport.SupportedResourceTypes.Length"); i++) {
+			SupportedResourceType9 supportedResourceType9 = new SupportedResourceType9();
+			supportedResourceType9.setResourceType(_ctx.stringValue("GetFeatureDetailsResponse.ResourceImport.SupportedResourceTypes["+ i +"].ResourceType"));
+
+			List<String> resourceIdentifiers = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("GetFeatureDetailsResponse.ResourceImport.SupportedResourceTypes["+ i +"].ResourceIdentifiers.Length"); j++) {
+				resourceIdentifiers.add(_ctx.stringValue("GetFeatureDetailsResponse.ResourceImport.SupportedResourceTypes["+ i +"].ResourceIdentifiers["+ j +"]"));
+			}
+			supportedResourceType9.setResourceIdentifiers(resourceIdentifiers);
+
+			supportedResourceTypes8.add(supportedResourceType9);
+		}
+		resourceImport.setSupportedResourceTypes8(supportedResourceTypes8);
+		getFeatureDetailsResponse.setResourceImport(resourceImport);
 	 
 	 	return getFeatureDetailsResponse;
 	}

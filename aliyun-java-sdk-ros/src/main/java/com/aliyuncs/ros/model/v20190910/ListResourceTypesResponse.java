@@ -27,6 +27,8 @@ public class ListResourceTypesResponse extends AcsResponse {
 
 	private String requestId;
 
+	private List<ResourceTypeSummarie> resourceTypeSummaries;
+
 	private List<String> resourceTypes;
 
 	public String getRequestId() {
@@ -37,12 +39,123 @@ public class ListResourceTypesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public List<ResourceTypeSummarie> getResourceTypeSummaries() {
+		return this.resourceTypeSummaries;
+	}
+
+	public void setResourceTypeSummaries(List<ResourceTypeSummarie> resourceTypeSummaries) {
+		this.resourceTypeSummaries = resourceTypeSummaries;
+	}
+
 	public List<String> getResourceTypes() {
 		return this.resourceTypes;
 	}
 
 	public void setResourceTypes(List<String> resourceTypes) {
 		this.resourceTypes = resourceTypes;
+	}
+
+	public static class ResourceTypeSummarie {
+
+		private String provider;
+
+		private String entityType;
+
+		private String resourceType;
+
+		private String defaultVersionId;
+
+		private String latestVersionId;
+
+		private String createTime;
+
+		private String updateTime;
+
+		private String description;
+
+		private Integer totalVersionCount;
+
+		private Boolean reachVersionCountLimit;
+
+		public String getProvider() {
+			return this.provider;
+		}
+
+		public void setProvider(String provider) {
+			this.provider = provider;
+		}
+
+		public String getEntityType() {
+			return this.entityType;
+		}
+
+		public void setEntityType(String entityType) {
+			this.entityType = entityType;
+		}
+
+		public String getResourceType() {
+			return this.resourceType;
+		}
+
+		public void setResourceType(String resourceType) {
+			this.resourceType = resourceType;
+		}
+
+		public String getDefaultVersionId() {
+			return this.defaultVersionId;
+		}
+
+		public void setDefaultVersionId(String defaultVersionId) {
+			this.defaultVersionId = defaultVersionId;
+		}
+
+		public String getLatestVersionId() {
+			return this.latestVersionId;
+		}
+
+		public void setLatestVersionId(String latestVersionId) {
+			this.latestVersionId = latestVersionId;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getUpdateTime() {
+			return this.updateTime;
+		}
+
+		public void setUpdateTime(String updateTime) {
+			this.updateTime = updateTime;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public Integer getTotalVersionCount() {
+			return this.totalVersionCount;
+		}
+
+		public void setTotalVersionCount(Integer totalVersionCount) {
+			this.totalVersionCount = totalVersionCount;
+		}
+
+		public Boolean getReachVersionCountLimit() {
+			return this.reachVersionCountLimit;
+		}
+
+		public void setReachVersionCountLimit(Boolean reachVersionCountLimit) {
+			this.reachVersionCountLimit = reachVersionCountLimit;
+		}
 	}
 
 	@Override

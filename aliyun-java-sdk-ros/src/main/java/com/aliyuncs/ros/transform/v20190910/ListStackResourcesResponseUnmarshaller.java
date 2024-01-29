@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.ros.model.v20190910.ListStackResourcesResponse;
 import com.aliyuncs.ros.model.v20190910.ListStackResourcesResponse.Resource;
+import com.aliyuncs.ros.model.v20190910.ListStackResourcesResponse.Resource.ModuleInfo;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -42,6 +43,11 @@ public class ListStackResourcesResponseUnmarshaller {
 			resource.setStatusReason(_ctx.stringValue("ListStackResourcesResponse.Resources["+ i +"].StatusReason"));
 			resource.setCreateTime(_ctx.stringValue("ListStackResourcesResponse.Resources["+ i +"].CreateTime"));
 			resource.setStackName(_ctx.stringValue("ListStackResourcesResponse.Resources["+ i +"].StackName"));
+
+			ModuleInfo moduleInfo = new ModuleInfo();
+			moduleInfo.setLogicalIdHierarchy(_ctx.stringValue("ListStackResourcesResponse.Resources["+ i +"].ModuleInfo.LogicalIdHierarchy"));
+			moduleInfo.setTypeHierarchy(_ctx.stringValue("ListStackResourcesResponse.Resources["+ i +"].ModuleInfo.TypeHierarchy"));
+			resource.setModuleInfo(moduleInfo);
 
 			resources.add(resource);
 		}

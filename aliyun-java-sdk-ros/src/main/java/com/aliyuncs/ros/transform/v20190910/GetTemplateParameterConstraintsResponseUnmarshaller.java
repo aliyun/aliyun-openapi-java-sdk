@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.ros.model.v20190910.GetTemplateParameterConstraintsResponse;
 import com.aliyuncs.ros.model.v20190910.GetTemplateParameterConstraintsResponse.ParameterConstraint;
 import com.aliyuncs.ros.model.v20190910.GetTemplateParameterConstraintsResponse.ParameterConstraint.NotSupportResource;
+import com.aliyuncs.ros.model.v20190910.GetTemplateParameterConstraintsResponse.ParameterConstraint.OriginalConstraint;
 import com.aliyuncs.ros.model.v20190910.GetTemplateParameterConstraintsResponse.ParameterConstraint.QueryError;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -82,6 +83,23 @@ public class GetTemplateParameterConstraintsResponseUnmarshaller {
 				queryErrors.add(queryError);
 			}
 			parameterConstraint.setQueryErrors(queryErrors);
+
+			List<OriginalConstraint> originalConstraints = new ArrayList<OriginalConstraint>();
+			for (int j = 0; j < _ctx.lengthValue("GetTemplateParameterConstraintsResponse.ParameterConstraints["+ i +"].OriginalConstraints.Length"); j++) {
+				OriginalConstraint originalConstraint = new OriginalConstraint();
+				originalConstraint.setResourceName(_ctx.stringValue("GetTemplateParameterConstraintsResponse.ParameterConstraints["+ i +"].OriginalConstraints["+ j +"].ResourceName"));
+				originalConstraint.setResourceType(_ctx.stringValue("GetTemplateParameterConstraintsResponse.ParameterConstraints["+ i +"].OriginalConstraints["+ j +"].ResourceType"));
+				originalConstraint.setPropertyName(_ctx.stringValue("GetTemplateParameterConstraintsResponse.ParameterConstraints["+ i +"].OriginalConstraints["+ j +"].PropertyName"));
+
+				List<String> allowedValues1 = new ArrayList<String>();
+				for (int k = 0; k < _ctx.lengthValue("GetTemplateParameterConstraintsResponse.ParameterConstraints["+ i +"].OriginalConstraints["+ j +"].AllowedValues.Length"); k++) {
+					allowedValues1.add(_ctx.stringValue("GetTemplateParameterConstraintsResponse.ParameterConstraints["+ i +"].OriginalConstraints["+ j +"].AllowedValues["+ k +"]"));
+				}
+				originalConstraint.setAllowedValues1(allowedValues1);
+
+				originalConstraints.add(originalConstraint);
+			}
+			parameterConstraint.setOriginalConstraints(originalConstraints);
 
 			parameterConstraints.add(parameterConstraint);
 		}

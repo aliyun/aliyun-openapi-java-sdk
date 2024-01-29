@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.ros.model.v20190910.ListStackResourceDriftsResponse;
 import com.aliyuncs.ros.model.v20190910.ListStackResourceDriftsResponse.ResourceDrift;
+import com.aliyuncs.ros.model.v20190910.ListStackResourceDriftsResponse.ResourceDrift.ModuleInfo;
 import com.aliyuncs.ros.model.v20190910.ListStackResourceDriftsResponse.ResourceDrift.PropertyDifference;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -41,6 +42,11 @@ public class ListStackResourceDriftsResponseUnmarshaller {
 			resourceDrift.setExpectedProperties(_ctx.stringValue("ListStackResourceDriftsResponse.ResourceDrifts["+ i +"].ExpectedProperties"));
 			resourceDrift.setResourceDriftStatus(_ctx.stringValue("ListStackResourceDriftsResponse.ResourceDrifts["+ i +"].ResourceDriftStatus"));
 			resourceDrift.setActualProperties(_ctx.stringValue("ListStackResourceDriftsResponse.ResourceDrifts["+ i +"].ActualProperties"));
+
+			ModuleInfo moduleInfo = new ModuleInfo();
+			moduleInfo.setLogicalIdHierarchy(_ctx.stringValue("ListStackResourceDriftsResponse.ResourceDrifts["+ i +"].ModuleInfo.LogicalIdHierarchy"));
+			moduleInfo.setTypeHierarchy(_ctx.stringValue("ListStackResourceDriftsResponse.ResourceDrifts["+ i +"].ModuleInfo.TypeHierarchy"));
+			resourceDrift.setModuleInfo(moduleInfo);
 
 			List<PropertyDifference> propertyDifferences = new ArrayList<PropertyDifference>();
 			for (int j = 0; j < _ctx.lengthValue("ListStackResourceDriftsResponse.ResourceDrifts["+ i +"].PropertyDifferences.Length"); j++) {

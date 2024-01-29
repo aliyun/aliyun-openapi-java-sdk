@@ -58,6 +58,8 @@ public class UpdateStackGroupRequest extends RpcAcsRequest<UpdateStackGroupRespo
 
 	private Map<Object,Object> operationPreferences;
 
+	private List<String> capabilitiess;
+
 	private List<Object> accountIds;
 
 	private String administrationRoleName;
@@ -168,7 +170,7 @@ public class UpdateStackGroupRequest extends RpcAcsRequest<UpdateStackGroupRespo
 	public void setTemplateBody(String templateBody) {
 		this.templateBody = templateBody;
 		if(templateBody != null){
-			putQueryParameter("TemplateBody", templateBody);
+			putBodyParameter("TemplateBody", templateBody);
 		}
 	}
 
@@ -236,6 +238,19 @@ public class UpdateStackGroupRequest extends RpcAcsRequest<UpdateStackGroupRespo
 		if(operationPreferences != null){
 			putQueryParameter("OperationPreferences", new Gson().toJson(operationPreferences));
 		}
+	}
+
+	public List<String> getCapabilitiess() {
+		return this.capabilitiess;
+	}
+
+	public void setCapabilitiess(List<String> capabilitiess) {
+		this.capabilitiess = capabilitiess;	
+		if (capabilitiess != null) {
+			for (int i = 0; i < capabilitiess.size(); i++) {
+				putQueryParameter("Capabilities." + (i + 1) , capabilitiess.get(i));
+			}
+		}	
 	}
 
 	public List<Object> getAccountIds() {

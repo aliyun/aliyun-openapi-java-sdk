@@ -26,25 +26,29 @@ import com.aliyuncs.ros.Endpoint;
 public class ListStacksRequest extends RpcAcsRequest<ListStacksResponse> {
 	   
 
+	private String startTime;
+
+	private String resourceGroupId;
+
+	private List<String> stackIdss;
+
+	private List<String> stackNames;
+
+	private List<Tag> tags;
+
+	private List<String> statuss;
+
 	private Boolean showNestedStack;
 
 	private String stackId;
 
 	private Long pageNumber;
 
-	private String resourceGroupId;
-
-	private List<String> stackIdss;
-
 	private Long pageSize;
 
-	private List<String> stackNames;
-
-	private List<Tag> tags;
+	private String endTime;
 
 	private String parentStackId;
-
-	private List<String> statuss;
 	public ListStacksRequest() {
 		super("ROS", "2019-09-10", "ListStacks", "ros");
 		setMethod(MethodType.POST);
@@ -52,6 +56,81 @@ public class ListStacksRequest extends RpcAcsRequest<ListStacksResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public List<String> getStackIdss() {
+		return this.stackIdss;
+	}
+
+	public void setStackIdss(List<String> stackIdss) {
+		this.stackIdss = stackIdss;	
+		if (stackIdss != null) {
+			for (int i = 0; i < stackIdss.size(); i++) {
+				putQueryParameter("StackIds." + (i + 1) , stackIdss.get(i));
+			}
+		}	
+	}
+
+	public List<String> getStackNames() {
+		return this.stackNames;
+	}
+
+	public void setStackNames(List<String> stackNames) {
+		this.stackNames = stackNames;	
+		if (stackNames != null) {
+			for (int i = 0; i < stackNames.size(); i++) {
+				putQueryParameter("StackName." + (i + 1) , stackNames.get(i));
+			}
+		}	
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
+	}
+
+	public List<String> getStatuss() {
+		return this.statuss;
+	}
+
+	public void setStatuss(List<String> statuss) {
+		this.statuss = statuss;	
+		if (statuss != null) {
+			for (int i = 0; i < statuss.size(); i++) {
+				putQueryParameter("Status." + (i + 1) , statuss.get(i));
+			}
+		}	
 	}
 
 	public Boolean getShowNestedStack() {
@@ -87,30 +166,6 @@ public class ListStacksRequest extends RpcAcsRequest<ListStacksResponse> {
 		}
 	}
 
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
-	}
-
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
-		}
-	}
-
-	public List<String> getStackIdss() {
-		return this.stackIdss;
-	}
-
-	public void setStackIdss(List<String> stackIdss) {
-		this.stackIdss = stackIdss;	
-		if (stackIdss != null) {
-			for (int i = 0; i < stackIdss.size(); i++) {
-				putQueryParameter("StackIds." + (i + 1) , stackIdss.get(i));
-			}
-		}	
-	}
-
 	public Long getPageSize() {
 		return this.pageSize;
 	}
@@ -122,31 +177,15 @@ public class ListStacksRequest extends RpcAcsRequest<ListStacksResponse> {
 		}
 	}
 
-	public List<String> getStackNames() {
-		return this.stackNames;
+	public String getEndTime() {
+		return this.endTime;
 	}
 
-	public void setStackNames(List<String> stackNames) {
-		this.stackNames = stackNames;	
-		if (stackNames != null) {
-			for (int i = 0; i < stackNames.size(); i++) {
-				putQueryParameter("StackName." + (i + 1) , stackNames.get(i));
-			}
-		}	
-	}
-
-	public List<Tag> getTags() {
-		return this.tags;
-	}
-
-	public void setTags(List<Tag> tags) {
-		this.tags = tags;	
-		if (tags != null) {
-			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
-				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
-				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
-			}
-		}	
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
 	}
 
 	public String getParentStackId() {
@@ -158,19 +197,6 @@ public class ListStacksRequest extends RpcAcsRequest<ListStacksResponse> {
 		if(parentStackId != null){
 			putQueryParameter("ParentStackId", parentStackId);
 		}
-	}
-
-	public List<String> getStatuss() {
-		return this.statuss;
-	}
-
-	public void setStatuss(List<String> statuss) {
-		this.statuss = statuss;	
-		if (statuss != null) {
-			for (int i = 0; i < statuss.size(); i++) {
-				putQueryParameter("Status." + (i + 1) , statuss.get(i));
-			}
-		}	
 	}
 
 	public static class Tag {

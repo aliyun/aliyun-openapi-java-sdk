@@ -35,6 +35,8 @@ public class UpdateTemplateScratchRequest extends RpcAcsRequest<UpdateTemplateSc
 
 	private String description;
 
+	private String resourceGroupId;
+
 	@SerializedName("sourceResources")
 	private List<SourceResources> sourceResources;
 
@@ -89,6 +91,17 @@ public class UpdateTemplateScratchRequest extends RpcAcsRequest<UpdateTemplateSc
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

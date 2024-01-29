@@ -46,6 +46,7 @@ public class GetTemplateScratchResponseUnmarshaller {
 		templateScratch.setLogicalIdStrategy(_ctx.stringValue("GetTemplateScratchResponse.TemplateScratch.LogicalIdStrategy"));
 		templateScratch.setCreateTime(_ctx.stringValue("GetTemplateScratchResponse.TemplateScratch.CreateTime"));
 		templateScratch.setUpdateTime(_ctx.stringValue("GetTemplateScratchResponse.TemplateScratch.UpdateTime"));
+		templateScratch.setResourceGroupId(_ctx.stringValue("GetTemplateScratchResponse.TemplateScratch.ResourceGroupId"));
 
 		SourceTag sourceTag = new SourceTag();
 		sourceTag.setResourceTags(_ctx.mapValue("GetTemplateScratchResponse.TemplateScratch.SourceTag.ResourceTags"));

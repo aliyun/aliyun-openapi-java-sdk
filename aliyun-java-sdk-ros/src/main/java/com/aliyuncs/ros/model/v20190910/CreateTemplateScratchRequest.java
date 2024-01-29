@@ -29,12 +29,21 @@ import com.aliyuncs.ros.Endpoint;
 public class CreateTemplateScratchRequest extends RpcAcsRequest<CreateTemplateScratchResponse> {
 	   
 
-	private String clientToken;
-
-	private String description;
+	private String resourceGroupId;
 
 	@SerializedName("sourceResources")
 	private List<SourceResources> sourceResources;
+
+	private List<Tags> tagss;
+
+	private String executionMode;
+
+	@SerializedName("preferenceParameters")
+	private List<PreferenceParameters> preferenceParameters;
+
+	private String clientToken;
+
+	private String description;
 
 	@SerializedName("sourceTag")
 	private SourceTag sourceTag;
@@ -45,13 +54,6 @@ public class CreateTemplateScratchRequest extends RpcAcsRequest<CreateTemplateSc
 	private SourceResourceGroup sourceResourceGroup;
 
 	private String templateScratchType;
-
-	private List<Tags> tagss;
-
-	private String executionMode;
-
-	@SerializedName("preferenceParameters")
-	private List<PreferenceParameters> preferenceParameters;
 	public CreateTemplateScratchRequest() {
 		super("ROS", "2019-09-10", "CreateTemplateScratch", "ros");
 		setMethod(MethodType.POST);
@@ -59,6 +61,64 @@ public class CreateTemplateScratchRequest extends RpcAcsRequest<CreateTemplateSc
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public List<SourceResources> getSourceResources() {
+		return this.sourceResources;
+	}
+
+	public void setSourceResources(List<SourceResources> sourceResources) {
+		this.sourceResources = sourceResources;	
+		if (sourceResources != null) {
+			putQueryParameter("SourceResources" , new Gson().toJson(sourceResources));
+		}	
+	}
+
+	public List<Tags> getTagss() {
+		return this.tagss;
+	}
+
+	public void setTagss(List<Tags> tagss) {
+		this.tagss = tagss;	
+		if (tagss != null) {
+			for (int depth1 = 0; depth1 < tagss.size(); depth1++) {
+				putQueryParameter("Tags." + (depth1 + 1) + ".Value" , tagss.get(depth1).getValue());
+				putQueryParameter("Tags." + (depth1 + 1) + ".Key" , tagss.get(depth1).getKey());
+			}
+		}	
+	}
+
+	public String getExecutionMode() {
+		return this.executionMode;
+	}
+
+	public void setExecutionMode(String executionMode) {
+		this.executionMode = executionMode;
+		if(executionMode != null){
+			putQueryParameter("ExecutionMode", executionMode);
+		}
+	}
+
+	public List<PreferenceParameters> getPreferenceParameters() {
+		return this.preferenceParameters;
+	}
+
+	public void setPreferenceParameters(List<PreferenceParameters> preferenceParameters) {
+		this.preferenceParameters = preferenceParameters;	
+		if (preferenceParameters != null) {
+			putQueryParameter("PreferenceParameters" , new Gson().toJson(preferenceParameters));
+		}	
 	}
 
 	public String getClientToken() {
@@ -81,17 +141,6 @@ public class CreateTemplateScratchRequest extends RpcAcsRequest<CreateTemplateSc
 		if(description != null){
 			putQueryParameter("Description", description);
 		}
-	}
-
-	public List<SourceResources> getSourceResources() {
-		return this.sourceResources;
-	}
-
-	public void setSourceResources(List<SourceResources> sourceResources) {
-		this.sourceResources = sourceResources;	
-		if (sourceResources != null) {
-			putQueryParameter("SourceResources" , new Gson().toJson(sourceResources));
-		}	
 	}
 
 	public SourceTag getSourceTag() {
@@ -138,46 +187,13 @@ public class CreateTemplateScratchRequest extends RpcAcsRequest<CreateTemplateSc
 		}
 	}
 
-	public List<Tags> getTagss() {
-		return this.tagss;
-	}
-
-	public void setTagss(List<Tags> tagss) {
-		this.tagss = tagss;	
-		if (tagss != null) {
-			for (int depth1 = 0; depth1 < tagss.size(); depth1++) {
-				putQueryParameter("Tags." + (depth1 + 1) + ".Value" , tagss.get(depth1).getValue());
-				putQueryParameter("Tags." + (depth1 + 1) + ".Key" , tagss.get(depth1).getKey());
-			}
-		}	
-	}
-
-	public String getExecutionMode() {
-		return this.executionMode;
-	}
-
-	public void setExecutionMode(String executionMode) {
-		this.executionMode = executionMode;
-		if(executionMode != null){
-			putQueryParameter("ExecutionMode", executionMode);
-		}
-	}
-
-	public List<PreferenceParameters> getPreferenceParameters() {
-		return this.preferenceParameters;
-	}
-
-	public void setPreferenceParameters(List<PreferenceParameters> preferenceParameters) {
-		this.preferenceParameters = preferenceParameters;	
-		if (preferenceParameters != null) {
-			putQueryParameter("PreferenceParameters" , new Gson().toJson(preferenceParameters));
-		}	
-	}
-
 	public static class SourceResources {
 
 		@SerializedName("ResourceId")
 		private String resourceId;
+
+		@SerializedName("RegionId")
+		private String regionId;
 
 		@SerializedName("ResourceType")
 		private String resourceType;
@@ -190,12 +206,68 @@ public class CreateTemplateScratchRequest extends RpcAcsRequest<CreateTemplateSc
 			this.resourceId = resourceId;
 		}
 
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
 		public String getResourceType() {
 			return this.resourceType;
 		}
 
 		public void setResourceType(String resourceType) {
 			this.resourceType = resourceType;
+		}
+	}
+
+	public static class Tags {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+	}
+
+	public static class PreferenceParameters {
+
+		@SerializedName("ParameterValue")
+		private String parameterValue;
+
+		@SerializedName("ParameterKey")
+		private String parameterKey;
+
+		public String getParameterValue() {
+			return this.parameterValue;
+		}
+
+		public void setParameterValue(String parameterValue) {
+			this.parameterValue = parameterValue;
+		}
+
+		public String getParameterKey() {
+			return this.parameterKey;
+		}
+
+		public void setParameterKey(String parameterKey) {
+			this.parameterKey = parameterKey;
 		}
 	}
 
@@ -246,54 +318,6 @@ public class CreateTemplateScratchRequest extends RpcAcsRequest<CreateTemplateSc
 
 		public void setResourceTypeFilter(List<String> resourceTypeFilter) {
 			this.resourceTypeFilter = resourceTypeFilter;
-		}
-	}
-
-	public static class Tags {
-
-		private String value;
-
-		private String key;
-
-		public String getValue() {
-			return this.value;
-		}
-
-		public void setValue(String value) {
-			this.value = value;
-		}
-
-		public String getKey() {
-			return this.key;
-		}
-
-		public void setKey(String key) {
-			this.key = key;
-		}
-	}
-
-	public static class PreferenceParameters {
-
-		@SerializedName("ParameterValue")
-		private String parameterValue;
-
-		@SerializedName("ParameterKey")
-		private String parameterKey;
-
-		public String getParameterValue() {
-			return this.parameterValue;
-		}
-
-		public void setParameterValue(String parameterValue) {
-			this.parameterValue = parameterValue;
-		}
-
-		public String getParameterKey() {
-			return this.parameterKey;
-		}
-
-		public void setParameterKey(String parameterKey) {
-			this.parameterKey = parameterKey;
 		}
 	}
 

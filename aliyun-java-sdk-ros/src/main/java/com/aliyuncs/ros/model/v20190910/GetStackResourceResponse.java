@@ -56,6 +56,8 @@ public class GetStackResourceResponse extends AcsResponse {
 
 	private List<Map<Object,Object>> resourceAttributes;
 
+	private ModuleInfo moduleInfo;
+
 	public String getStatus() {
 		return this.status;
 	}
@@ -174,6 +176,37 @@ public class GetStackResourceResponse extends AcsResponse {
 
 	public void setResourceAttributes(List<Map<Object,Object>> resourceAttributes) {
 		this.resourceAttributes = resourceAttributes;
+	}
+
+	public ModuleInfo getModuleInfo() {
+		return this.moduleInfo;
+	}
+
+	public void setModuleInfo(ModuleInfo moduleInfo) {
+		this.moduleInfo = moduleInfo;
+	}
+
+	public static class ModuleInfo {
+
+		private String logicalIdHierarchy;
+
+		private String typeHierarchy;
+
+		public String getLogicalIdHierarchy() {
+			return this.logicalIdHierarchy;
+		}
+
+		public void setLogicalIdHierarchy(String logicalIdHierarchy) {
+			this.logicalIdHierarchy = logicalIdHierarchy;
+		}
+
+		public String getTypeHierarchy() {
+			return this.typeHierarchy;
+		}
+
+		public void setTypeHierarchy(String typeHierarchy) {
+			this.typeHierarchy = typeHierarchy;
+		}
 	}
 
 	@Override

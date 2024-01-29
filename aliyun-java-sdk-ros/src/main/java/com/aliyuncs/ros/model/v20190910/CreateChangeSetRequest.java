@@ -202,7 +202,7 @@ public class CreateChangeSetRequest extends RpcAcsRequest<CreateChangeSetRespons
 	public void setTemplateBody(String templateBody) {
 		this.templateBody = templateBody;
 		if(templateBody != null){
-			putQueryParameter("TemplateBody", templateBody);
+			putBodyParameter("TemplateBody", templateBody);
 		}
 	}
 
@@ -271,6 +271,7 @@ public class CreateChangeSetRequest extends RpcAcsRequest<CreateChangeSetRespons
 		this.resourcesToImports = resourcesToImports;	
 		if (resourcesToImports != null) {
 			for (int depth1 = 0; depth1 < resourcesToImports.size(); depth1++) {
+				putQueryParameter("ResourcesToImport." + (depth1 + 1) + ".CheckUnique" , resourcesToImports.get(depth1).getCheckUnique());
 				putQueryParameter("ResourcesToImport." + (depth1 + 1) + ".ResourceIdentifier" , resourcesToImports.get(depth1).getResourceIdentifier());
 				putQueryParameter("ResourcesToImport." + (depth1 + 1) + ".LogicalResourceId" , resourcesToImports.get(depth1).getLogicalResourceId());
 				putQueryParameter("ResourcesToImport." + (depth1 + 1) + ".ResourceType" , resourcesToImports.get(depth1).getResourceType());
@@ -380,11 +381,21 @@ public class CreateChangeSetRequest extends RpcAcsRequest<CreateChangeSetRespons
 
 	public static class ResourcesToImport {
 
+		private String checkUnique;
+
 		private String resourceIdentifier;
 
 		private String logicalResourceId;
 
 		private String resourceType;
+
+		public String getCheckUnique() {
+			return this.checkUnique;
+		}
+
+		public void setCheckUnique(String checkUnique) {
+			this.checkUnique = checkUnique;
+		}
 
 		public String getResourceIdentifier() {
 			return this.resourceIdentifier;

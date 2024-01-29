@@ -96,6 +96,8 @@ public class ListTemplateScratchesResponse extends AcsResponse {
 
 		private String updateTime;
 
+		private String resourceGroupId;
+
 		private List<PreferenceParameter> preferenceParameters;
 
 		private List<SourceResource> sourceResources;
@@ -176,6 +178,14 @@ public class ListTemplateScratchesResponse extends AcsResponse {
 
 		public void setUpdateTime(String updateTime) {
 			this.updateTime = updateTime;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 
 		public List<PreferenceParameter> getPreferenceParameters() {

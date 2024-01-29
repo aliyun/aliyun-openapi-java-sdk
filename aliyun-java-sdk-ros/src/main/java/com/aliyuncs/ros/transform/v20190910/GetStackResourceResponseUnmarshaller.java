@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.ros.model.v20190910.GetStackResourceResponse;
+import com.aliyuncs.ros.model.v20190910.GetStackResourceResponse.ModuleInfo;
 import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -43,6 +44,11 @@ public class GetStackResourceResponseUnmarshaller {
 
 		List<Map<Object, Object>> resourceAttributes = _ctx.listMapValue("GetStackResourceResponse.ResourceAttributes");
 		getStackResourceResponse.setResourceAttributes(resourceAttributes);
+
+		ModuleInfo moduleInfo = new ModuleInfo();
+		moduleInfo.setLogicalIdHierarchy(_ctx.stringValue("GetStackResourceResponse.ModuleInfo.LogicalIdHierarchy"));
+		moduleInfo.setTypeHierarchy(_ctx.stringValue("GetStackResourceResponse.ModuleInfo.TypeHierarchy"));
+		getStackResourceResponse.setModuleInfo(moduleInfo);
 	 
 	 	return getStackResourceResponse;
 	}

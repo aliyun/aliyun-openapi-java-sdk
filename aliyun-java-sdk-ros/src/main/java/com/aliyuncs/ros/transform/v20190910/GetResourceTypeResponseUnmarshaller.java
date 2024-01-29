@@ -30,6 +30,16 @@ public class GetResourceTypeResponseUnmarshaller {
 		getResourceTypeResponse.setSupportDriftDetection(_ctx.booleanValue("GetResourceTypeResponse.SupportDriftDetection"));
 		getResourceTypeResponse.setSupportScratchDetection(_ctx.booleanValue("GetResourceTypeResponse.SupportScratchDetection"));
 		getResourceTypeResponse.setEntityType(_ctx.stringValue("GetResourceTypeResponse.EntityType"));
+		getResourceTypeResponse.setProvider(_ctx.stringValue("GetResourceTypeResponse.Provider"));
+		getResourceTypeResponse.setDescription(_ctx.stringValue("GetResourceTypeResponse.Description"));
+		getResourceTypeResponse.setDefaultVersionId(_ctx.stringValue("GetResourceTypeResponse.DefaultVersionId"));
+		getResourceTypeResponse.setLatestVersionId(_ctx.stringValue("GetResourceTypeResponse.LatestVersionId"));
+		getResourceTypeResponse.setCreateTime(_ctx.stringValue("GetResourceTypeResponse.CreateTime"));
+		getResourceTypeResponse.setUpdateTime(_ctx.stringValue("GetResourceTypeResponse.UpdateTime"));
+		getResourceTypeResponse.setTotalVersionCount(_ctx.integerValue("GetResourceTypeResponse.TotalVersionCount"));
+		getResourceTypeResponse.setReachVersionCountLimit(_ctx.booleanValue("GetResourceTypeResponse.ReachVersionCountLimit"));
+		getResourceTypeResponse.setIsDefaultVersion(_ctx.booleanValue("GetResourceTypeResponse.IsDefaultVersion"));
+		getResourceTypeResponse.setTemplateBody(_ctx.stringValue("GetResourceTypeResponse.TemplateBody"));
 	 
 	 	return getResourceTypeResponse;
 	}

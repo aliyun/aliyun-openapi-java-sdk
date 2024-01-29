@@ -34,6 +34,8 @@ public class CreateStackRequest extends RpcAcsRequest<CreateStackResponse> {
 
 	private String templateVersion;
 
+	private List<String> createOptionss;
+
 	private String stackName;
 
 	private Boolean disableRollback;
@@ -116,6 +118,19 @@ public class CreateStackRequest extends RpcAcsRequest<CreateStackResponse> {
 		if(templateVersion != null){
 			putQueryParameter("TemplateVersion", templateVersion);
 		}
+	}
+
+	public List<String> getCreateOptionss() {
+		return this.createOptionss;
+	}
+
+	public void setCreateOptionss(List<String> createOptionss) {
+		this.createOptionss = createOptionss;	
+		if (createOptionss != null) {
+			for (int i = 0; i < createOptionss.size(); i++) {
+				putQueryParameter("CreateOptions." + (i + 1) , createOptionss.get(i));
+			}
+		}	
 	}
 
 	public String getStackName() {
@@ -208,7 +223,7 @@ public class CreateStackRequest extends RpcAcsRequest<CreateStackResponse> {
 	public void setTemplateBody(String templateBody) {
 		this.templateBody = templateBody;
 		if(templateBody != null){
-			putQueryParameter("TemplateBody", templateBody);
+			putBodyParameter("TemplateBody", templateBody);
 		}
 	}
 

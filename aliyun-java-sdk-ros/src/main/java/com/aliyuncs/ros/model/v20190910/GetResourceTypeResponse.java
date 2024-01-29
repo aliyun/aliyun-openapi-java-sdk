@@ -39,6 +39,26 @@ public class GetResourceTypeResponse extends AcsResponse {
 
 	private String entityType;
 
+	private String provider;
+
+	private String description;
+
+	private String defaultVersionId;
+
+	private String latestVersionId;
+
+	private String createTime;
+
+	private String updateTime;
+
+	private Integer totalVersionCount;
+
+	private Boolean reachVersionCountLimit;
+
+	private Boolean isDefaultVersion;
+
+	private String templateBody;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -93,6 +113,86 @@ public class GetResourceTypeResponse extends AcsResponse {
 
 	public void setEntityType(String entityType) {
 		this.entityType = entityType;
+	}
+
+	public String getProvider() {
+		return this.provider;
+	}
+
+	public void setProvider(String provider) {
+		this.provider = provider;
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getDefaultVersionId() {
+		return this.defaultVersionId;
+	}
+
+	public void setDefaultVersionId(String defaultVersionId) {
+		this.defaultVersionId = defaultVersionId;
+	}
+
+	public String getLatestVersionId() {
+		return this.latestVersionId;
+	}
+
+	public void setLatestVersionId(String latestVersionId) {
+		this.latestVersionId = latestVersionId;
+	}
+
+	public String getCreateTime() {
+		return this.createTime;
+	}
+
+	public void setCreateTime(String createTime) {
+		this.createTime = createTime;
+	}
+
+	public String getUpdateTime() {
+		return this.updateTime;
+	}
+
+	public void setUpdateTime(String updateTime) {
+		this.updateTime = updateTime;
+	}
+
+	public Integer getTotalVersionCount() {
+		return this.totalVersionCount;
+	}
+
+	public void setTotalVersionCount(Integer totalVersionCount) {
+		this.totalVersionCount = totalVersionCount;
+	}
+
+	public Boolean getReachVersionCountLimit() {
+		return this.reachVersionCountLimit;
+	}
+
+	public void setReachVersionCountLimit(Boolean reachVersionCountLimit) {
+		this.reachVersionCountLimit = reachVersionCountLimit;
+	}
+
+	public Boolean getIsDefaultVersion() {
+		return this.isDefaultVersion;
+	}
+
+	public void setIsDefaultVersion(Boolean isDefaultVersion) {
+		this.isDefaultVersion = isDefaultVersion;
+	}
+
+	public String getTemplateBody() {
+		return this.templateBody;
+	}
+
+	public void setTemplateBody(String templateBody) {
+		this.templateBody = templateBody;
 	}
 
 	@Override

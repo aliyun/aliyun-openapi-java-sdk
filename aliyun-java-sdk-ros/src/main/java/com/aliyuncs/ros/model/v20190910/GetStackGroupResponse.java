@@ -65,6 +65,8 @@ public class GetStackGroupResponse extends AcsResponse {
 
 		private String permissionModel;
 
+		private String templateContent;
+
 		private List<Parameter> parameters;
 
 		private List<String> rdFolderIds;
@@ -143,6 +145,14 @@ public class GetStackGroupResponse extends AcsResponse {
 
 		public void setPermissionModel(String permissionModel) {
 			this.permissionModel = permissionModel;
+		}
+
+		public String getTemplateContent() {
+			return this.templateContent;
+		}
+
+		public void setTemplateContent(String templateContent) {
+			this.templateContent = templateContent;
 		}
 
 		public List<Parameter> getParameters() {

@@ -72,6 +72,24 @@ public class UpdateStackResponseUnmarshaller {
 			parametersUncertainlyCauseInterruptionIfModified.add(_ctx.stringValue("UpdateStackResponse.DryRunResult.ParametersUncertainlyCauseInterruptionIfModified["+ i +"]"));
 		}
 		dryRunResult.setParametersUncertainlyCauseInterruptionIfModified(parametersUncertainlyCauseInterruptionIfModified);
+
+		List<String> parametersCauseReplacementIfModified = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("UpdateStackResponse.DryRunResult.ParametersCauseReplacementIfModified.Length"); i++) {
+			parametersCauseReplacementIfModified.add(_ctx.stringValue("UpdateStackResponse.DryRunResult.ParametersCauseReplacementIfModified["+ i +"]"));
+		}
+		dryRunResult.setParametersCauseReplacementIfModified(parametersCauseReplacementIfModified);
+
+		List<String> parametersConditionallyCauseReplacementIfModified = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("UpdateStackResponse.DryRunResult.ParametersConditionallyCauseReplacementIfModified.Length"); i++) {
+			parametersConditionallyCauseReplacementIfModified.add(_ctx.stringValue("UpdateStackResponse.DryRunResult.ParametersConditionallyCauseReplacementIfModified["+ i +"]"));
+		}
+		dryRunResult.setParametersConditionallyCauseReplacementIfModified(parametersConditionallyCauseReplacementIfModified);
+
+		List<String> parametersUncertainlyCauseReplacementIfModified = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("UpdateStackResponse.DryRunResult.ParametersUncertainlyCauseReplacementIfModified.Length"); i++) {
+			parametersUncertainlyCauseReplacementIfModified.add(_ctx.stringValue("UpdateStackResponse.DryRunResult.ParametersUncertainlyCauseReplacementIfModified["+ i +"]"));
+		}
+		dryRunResult.setParametersUncertainlyCauseReplacementIfModified(parametersUncertainlyCauseReplacementIfModified);
 		updateStackResponse.setDryRunResult(dryRunResult);
 	 
 	 	return updateStackResponse;

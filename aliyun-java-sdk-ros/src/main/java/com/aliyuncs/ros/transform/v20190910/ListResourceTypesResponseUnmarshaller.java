@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.ros.model.v20190910.ListResourceTypesResponse;
+import com.aliyuncs.ros.model.v20190910.ListResourceTypesResponse.ResourceTypeSummarie;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -32,6 +33,24 @@ public class ListResourceTypesResponseUnmarshaller {
 			resourceTypes.add(_ctx.stringValue("ListResourceTypesResponse.ResourceTypes["+ i +"]"));
 		}
 		listResourceTypesResponse.setResourceTypes(resourceTypes);
+
+		List<ResourceTypeSummarie> resourceTypeSummaries = new ArrayList<ResourceTypeSummarie>();
+		for (int i = 0; i < _ctx.lengthValue("ListResourceTypesResponse.ResourceTypeSummaries.Length"); i++) {
+			ResourceTypeSummarie resourceTypeSummarie = new ResourceTypeSummarie();
+			resourceTypeSummarie.setProvider(_ctx.stringValue("ListResourceTypesResponse.ResourceTypeSummaries["+ i +"].Provider"));
+			resourceTypeSummarie.setEntityType(_ctx.stringValue("ListResourceTypesResponse.ResourceTypeSummaries["+ i +"].EntityType"));
+			resourceTypeSummarie.setResourceType(_ctx.stringValue("ListResourceTypesResponse.ResourceTypeSummaries["+ i +"].ResourceType"));
+			resourceTypeSummarie.setDefaultVersionId(_ctx.stringValue("ListResourceTypesResponse.ResourceTypeSummaries["+ i +"].DefaultVersionId"));
+			resourceTypeSummarie.setLatestVersionId(_ctx.stringValue("ListResourceTypesResponse.ResourceTypeSummaries["+ i +"].LatestVersionId"));
+			resourceTypeSummarie.setCreateTime(_ctx.stringValue("ListResourceTypesResponse.ResourceTypeSummaries["+ i +"].CreateTime"));
+			resourceTypeSummarie.setUpdateTime(_ctx.stringValue("ListResourceTypesResponse.ResourceTypeSummaries["+ i +"].UpdateTime"));
+			resourceTypeSummarie.setDescription(_ctx.stringValue("ListResourceTypesResponse.ResourceTypeSummaries["+ i +"].Description"));
+			resourceTypeSummarie.setTotalVersionCount(_ctx.integerValue("ListResourceTypesResponse.ResourceTypeSummaries["+ i +"].TotalVersionCount"));
+			resourceTypeSummarie.setReachVersionCountLimit(_ctx.booleanValue("ListResourceTypesResponse.ResourceTypeSummaries["+ i +"].ReachVersionCountLimit"));
+
+			resourceTypeSummaries.add(resourceTypeSummarie);
+		}
+		listResourceTypesResponse.setResourceTypeSummaries(resourceTypeSummaries);
 	 
 	 	return listResourceTypesResponse;
 	}

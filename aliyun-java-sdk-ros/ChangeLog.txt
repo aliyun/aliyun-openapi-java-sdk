@@ -1,3 +1,6 @@
+2024-01-29 Version: 3.6.3
+- CreateStack support BusinessInfo parameter. 
+
 2023-02-10 Version: 3.6.2
 - A new PhysicsResourceId field is added to the Resources returned by the PreviewStack interface.
 - Added StackId parameter to the GetTemplateParameterConstraints API.

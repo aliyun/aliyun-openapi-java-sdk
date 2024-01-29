@@ -52,6 +52,7 @@ public class ListStacksResponseUnmarshaller {
 			stack.setResourceGroupId(_ctx.stringValue("ListStacksResponse.Stacks["+ i +"].ResourceGroupId"));
 			stack.setServiceManaged(_ctx.booleanValue("ListStacksResponse.Stacks["+ i +"].ServiceManaged"));
 			stack.setServiceName(_ctx.stringValue("ListStacksResponse.Stacks["+ i +"].ServiceName"));
+			stack.setDeletionProtection(_ctx.stringValue("ListStacksResponse.Stacks["+ i +"].DeletionProtection"));
 
 			OperationInfo operationInfo = new OperationInfo();
 			operationInfo.setCode(_ctx.stringValue("ListStacksResponse.Stacks["+ i +"].OperationInfo.Code"));

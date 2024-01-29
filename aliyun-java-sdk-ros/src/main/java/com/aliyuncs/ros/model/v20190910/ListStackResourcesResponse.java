@@ -69,6 +69,8 @@ public class ListStackResourcesResponse extends AcsResponse {
 
 		private String stackName;
 
+		private ModuleInfo moduleInfo;
+
 		public String getStatus() {
 			return this.status;
 		}
@@ -155,6 +157,37 @@ public class ListStackResourcesResponse extends AcsResponse {
 
 		public void setStackName(String stackName) {
 			this.stackName = stackName;
+		}
+
+		public ModuleInfo getModuleInfo() {
+			return this.moduleInfo;
+		}
+
+		public void setModuleInfo(ModuleInfo moduleInfo) {
+			this.moduleInfo = moduleInfo;
+		}
+
+		public static class ModuleInfo {
+
+			private String logicalIdHierarchy;
+
+			private String typeHierarchy;
+
+			public String getLogicalIdHierarchy() {
+				return this.logicalIdHierarchy;
+			}
+
+			public void setLogicalIdHierarchy(String logicalIdHierarchy) {
+				this.logicalIdHierarchy = logicalIdHierarchy;
+			}
+
+			public String getTypeHierarchy() {
+				return this.typeHierarchy;
+			}
+
+			public void setTypeHierarchy(String typeHierarchy) {
+				this.typeHierarchy = typeHierarchy;
+			}
 		}
 	}
 

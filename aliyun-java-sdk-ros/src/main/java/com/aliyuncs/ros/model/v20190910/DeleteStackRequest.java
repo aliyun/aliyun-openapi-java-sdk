@@ -28,6 +28,8 @@ public class DeleteStackRequest extends RpcAcsRequest<DeleteStackResponse> {
 
 	private String stackId;
 
+	private List<String> deleteOptionss;
+
 	private List<String> retainResourcess;
 
 	private Boolean retainAllResources;
@@ -51,6 +53,19 @@ public class DeleteStackRequest extends RpcAcsRequest<DeleteStackResponse> {
 		if(stackId != null){
 			putQueryParameter("StackId", stackId);
 		}
+	}
+
+	public List<String> getDeleteOptionss() {
+		return this.deleteOptionss;
+	}
+
+	public void setDeleteOptionss(List<String> deleteOptionss) {
+		this.deleteOptionss = deleteOptionss;	
+		if (deleteOptionss != null) {
+			for (int i = 0; i < deleteOptionss.size(); i++) {
+				putQueryParameter("DeleteOptions." + (i + 1) , deleteOptionss.get(i));
+			}
+		}	
 	}
 
 	public List<String> getRetainResourcess() {

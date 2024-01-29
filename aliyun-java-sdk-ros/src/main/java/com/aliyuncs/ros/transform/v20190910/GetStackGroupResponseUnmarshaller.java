@@ -41,6 +41,7 @@ public class GetStackGroupResponseUnmarshaller {
 		stackGroup.setTemplateBody(_ctx.stringValue("GetStackGroupResponse.StackGroup.TemplateBody"));
 		stackGroup.setResourceGroupId(_ctx.stringValue("GetStackGroupResponse.StackGroup.ResourceGroupId"));
 		stackGroup.setPermissionModel(_ctx.stringValue("GetStackGroupResponse.StackGroup.PermissionModel"));
+		stackGroup.setTemplateContent(_ctx.stringValue("GetStackGroupResponse.StackGroup.TemplateContent"));
 
 		List<String> rdFolderIds = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetStackGroupResponse.StackGroup.RdFolderIds.Length"); i++) {

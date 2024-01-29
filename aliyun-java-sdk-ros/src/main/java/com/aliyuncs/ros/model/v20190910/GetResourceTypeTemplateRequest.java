@@ -25,6 +25,8 @@ import com.aliyuncs.ros.Endpoint;
 public class GetResourceTypeTemplateRequest extends RpcAcsRequest<GetResourceTypeTemplateResponse> {
 	   
 
+	private String versionId;
+
 	private String resourceType;
 	public GetResourceTypeTemplateRequest() {
 		super("ROS", "2019-09-10", "GetResourceTypeTemplate", "ros");
@@ -33,6 +35,17 @@ public class GetResourceTypeTemplateRequest extends RpcAcsRequest<GetResourceTyp
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getVersionId() {
+		return this.versionId;
+	}
+
+	public void setVersionId(String versionId) {
+		this.versionId = versionId;
+		if(versionId != null){
+			putQueryParameter("VersionId", versionId);
+		}
 	}
 
 	public String getResourceType() {

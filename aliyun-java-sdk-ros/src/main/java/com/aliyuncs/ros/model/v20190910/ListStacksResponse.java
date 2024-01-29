@@ -109,6 +109,8 @@ public class ListStacksResponse extends AcsResponse {
 
 		private String serviceName;
 
+		private String deletionProtection;
+
 		private List<Tag> tags;
 
 		private OperationInfo operationInfo;
@@ -239,6 +241,14 @@ public class ListStacksResponse extends AcsResponse {
 
 		public void setServiceName(String serviceName) {
 			this.serviceName = serviceName;
+		}
+
+		public String getDeletionProtection() {
+			return this.deletionProtection;
+		}
+
+		public void setDeletionProtection(String deletionProtection) {
+			this.deletionProtection = deletionProtection;
 		}
 
 		public List<Tag> getTags() {

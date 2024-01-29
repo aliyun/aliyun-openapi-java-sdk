@@ -35,6 +35,10 @@ public class GetFeatureDetailsResponse extends AcsResponse {
 
 	private TemplateParameterConstraints templateParameterConstraints;
 
+	private DriftDetection driftDetection;
+
+	private ResourceImport resourceImport;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -73,6 +77,22 @@ public class GetFeatureDetailsResponse extends AcsResponse {
 
 	public void setTemplateParameterConstraints(TemplateParameterConstraints templateParameterConstraints) {
 		this.templateParameterConstraints = templateParameterConstraints;
+	}
+
+	public DriftDetection getDriftDetection() {
+		return this.driftDetection;
+	}
+
+	public void setDriftDetection(DriftDetection driftDetection) {
+		this.driftDetection = driftDetection;
+	}
+
+	public ResourceImport getResourceImport() {
+		return this.resourceImport;
+	}
+
+	public void setResourceImport(ResourceImport resourceImport) {
+		this.resourceImport = resourceImport;
 	}
 
 	public static class Terraform {
@@ -254,6 +274,8 @@ public class GetFeatureDetailsResponse extends AcsResponse {
 
 			private Boolean sourceSupported;
 
+			private List<String> supportedTemplateScratchTypes;
+
 			public String getResourceType() {
 				return this.resourceType;
 			}
@@ -292,6 +314,14 @@ public class GetFeatureDetailsResponse extends AcsResponse {
 
 			public void setSourceSupported(Boolean sourceSupported) {
 				this.sourceSupported = sourceSupported;
+			}
+
+			public List<String> getSupportedTemplateScratchTypes() {
+				return this.supportedTemplateScratchTypes;
+			}
+
+			public void setSupportedTemplateScratchTypes(List<String> supportedTemplateScratchTypes) {
+				this.supportedTemplateScratchTypes = supportedTemplateScratchTypes;
 			}
 		}
 	}
@@ -374,6 +404,55 @@ public class GetFeatureDetailsResponse extends AcsResponse {
 
 			public void setProperties(List<String> properties) {
 				this.properties = properties;
+			}
+		}
+	}
+
+	public static class DriftDetection {
+
+		private List<String> supportedResourceTypes7;
+
+		public List<String> getSupportedResourceTypes7() {
+			return this.supportedResourceTypes7;
+		}
+
+		public void setSupportedResourceTypes7(List<String> supportedResourceTypes7) {
+			this.supportedResourceTypes7 = supportedResourceTypes7;
+		}
+	}
+
+	public static class ResourceImport {
+
+		private List<SupportedResourceType9> supportedResourceTypes8;
+
+		public List<SupportedResourceType9> getSupportedResourceTypes8() {
+			return this.supportedResourceTypes8;
+		}
+
+		public void setSupportedResourceTypes8(List<SupportedResourceType9> supportedResourceTypes8) {
+			this.supportedResourceTypes8 = supportedResourceTypes8;
+		}
+
+		public static class SupportedResourceType9 {
+
+			private String resourceType;
+
+			private List<String> resourceIdentifiers;
+
+			public String getResourceType() {
+				return this.resourceType;
+			}
+
+			public void setResourceType(String resourceType) {
+				this.resourceType = resourceType;
+			}
+
+			public List<String> getResourceIdentifiers() {
+				return this.resourceIdentifiers;
+			}
+
+			public void setResourceIdentifiers(List<String> resourceIdentifiers) {
+				this.resourceIdentifiers = resourceIdentifiers;
 			}
 		}
 	}

@@ -71,7 +71,7 @@ public class GetTemplateParameterConstraintsRequest extends RpcAcsRequest<GetTem
 	public void setTemplateBody(String templateBody) {
 		this.templateBody = templateBody;
 		if(templateBody != null){
-			putQueryParameter("TemplateBody", templateBody);
+			putBodyParameter("TemplateBody", templateBody);
 		}
 	}
 

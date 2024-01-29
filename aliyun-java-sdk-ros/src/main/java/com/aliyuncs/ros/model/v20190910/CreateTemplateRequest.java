@@ -53,7 +53,7 @@ public class CreateTemplateRequest extends RpcAcsRequest<CreateTemplateResponse>
 	public void setTemplateBody(String templateBody) {
 		this.templateBody = templateBody;
 		if(templateBody != null){
-			putQueryParameter("TemplateBody", templateBody);
+			putBodyParameter("TemplateBody", templateBody);
 		}
 	}
 

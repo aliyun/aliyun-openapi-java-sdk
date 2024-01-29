@@ -94,6 +94,24 @@ public class ValidateTemplateResponseUnmarshaller {
 			parametersUncertainlyCauseInterruptionIfModified.add(_ctx.stringValue("ValidateTemplateResponse.UpdateInfo.ParametersUncertainlyCauseInterruptionIfModified["+ i +"]"));
 		}
 		updateInfo.setParametersUncertainlyCauseInterruptionIfModified(parametersUncertainlyCauseInterruptionIfModified);
+
+		List<String> parametersCauseReplacementIfModified = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("ValidateTemplateResponse.UpdateInfo.ParametersCauseReplacementIfModified.Length"); i++) {
+			parametersCauseReplacementIfModified.add(_ctx.stringValue("ValidateTemplateResponse.UpdateInfo.ParametersCauseReplacementIfModified["+ i +"]"));
+		}
+		updateInfo.setParametersCauseReplacementIfModified(parametersCauseReplacementIfModified);
+
+		List<String> parametersConditionallyCauseReplacementIfModified = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("ValidateTemplateResponse.UpdateInfo.ParametersConditionallyCauseReplacementIfModified.Length"); i++) {
+			parametersConditionallyCauseReplacementIfModified.add(_ctx.stringValue("ValidateTemplateResponse.UpdateInfo.ParametersConditionallyCauseReplacementIfModified["+ i +"]"));
+		}
+		updateInfo.setParametersConditionallyCauseReplacementIfModified(parametersConditionallyCauseReplacementIfModified);
+
+		List<String> parametersUncertainlyCauseReplacementIfModified = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("ValidateTemplateResponse.UpdateInfo.ParametersUncertainlyCauseReplacementIfModified.Length"); i++) {
+			parametersUncertainlyCauseReplacementIfModified.add(_ctx.stringValue("ValidateTemplateResponse.UpdateInfo.ParametersUncertainlyCauseReplacementIfModified["+ i +"]"));
+		}
+		updateInfo.setParametersUncertainlyCauseReplacementIfModified(parametersUncertainlyCauseReplacementIfModified);
 		validateTemplateResponse.setUpdateInfo(updateInfo);
 
 		List<Output> outputs = new ArrayList<Output>();

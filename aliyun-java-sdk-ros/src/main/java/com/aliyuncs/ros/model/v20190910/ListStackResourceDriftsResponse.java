@@ -75,6 +75,8 @@ public class ListStackResourceDriftsResponse extends AcsResponse {
 
 		private List<PropertyDifference> propertyDifferences;
 
+		private ModuleInfo moduleInfo;
+
 		public String getLogicalResourceId() {
 			return this.logicalResourceId;
 		}
@@ -147,6 +149,14 @@ public class ListStackResourceDriftsResponse extends AcsResponse {
 			this.propertyDifferences = propertyDifferences;
 		}
 
+		public ModuleInfo getModuleInfo() {
+			return this.moduleInfo;
+		}
+
+		public void setModuleInfo(ModuleInfo moduleInfo) {
+			this.moduleInfo = moduleInfo;
+		}
+
 		public static class PropertyDifference {
 
 			private String actualValue;
@@ -187,6 +197,29 @@ public class ListStackResourceDriftsResponse extends AcsResponse {
 
 			public void setExpectedValue(String expectedValue) {
 				this.expectedValue = expectedValue;
+			}
+		}
+
+		public static class ModuleInfo {
+
+			private String logicalIdHierarchy;
+
+			private String typeHierarchy;
+
+			public String getLogicalIdHierarchy() {
+				return this.logicalIdHierarchy;
+			}
+
+			public void setLogicalIdHierarchy(String logicalIdHierarchy) {
+				this.logicalIdHierarchy = logicalIdHierarchy;
+			}
+
+			public String getTypeHierarchy() {
+				return this.typeHierarchy;
+			}
+
+			public void setTypeHierarchy(String typeHierarchy) {
+				this.typeHierarchy = typeHierarchy;
 			}
 		}
 	}

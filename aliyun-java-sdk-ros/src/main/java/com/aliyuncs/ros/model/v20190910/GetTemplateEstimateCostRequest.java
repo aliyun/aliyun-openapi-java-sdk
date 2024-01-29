@@ -32,6 +32,8 @@ public class GetTemplateEstimateCostRequest extends RpcAcsRequest<GetTemplateEst
 
 	private String templateBody;
 
+	private String stackId;
+
 	private String templateScratchRegionId;
 
 	private String templateURL;
@@ -79,7 +81,18 @@ public class GetTemplateEstimateCostRequest extends RpcAcsRequest<GetTemplateEst
 	public void setTemplateBody(String templateBody) {
 		this.templateBody = templateBody;
 		if(templateBody != null){
-			putQueryParameter("TemplateBody", templateBody);
+			putBodyParameter("TemplateBody", templateBody);
+		}
+	}
+
+	public String getStackId() {
+		return this.stackId;
+	}
+
+	public void setStackId(String stackId) {
+		this.stackId = stackId;
+		if(stackId != null){
+			putQueryParameter("StackId", stackId);
 		}
 	}
 

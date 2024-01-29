@@ -59,6 +59,8 @@ public class GetTemplateParameterConstraintsResponse extends AcsResponse {
 
 		private List<QueryError> queryErrors;
 
+		private List<OriginalConstraint> originalConstraints;
+
 		private List<String> allowedValues;
 
 		private List<String> associationParameterNames;
@@ -113,6 +115,14 @@ public class GetTemplateParameterConstraintsResponse extends AcsResponse {
 
 		public void setQueryErrors(List<QueryError> queryErrors) {
 			this.queryErrors = queryErrors;
+		}
+
+		public List<OriginalConstraint> getOriginalConstraints() {
+			return this.originalConstraints;
+		}
+
+		public void setOriginalConstraints(List<OriginalConstraint> originalConstraints) {
+			this.originalConstraints = originalConstraints;
 		}
 
 		public List<String> getAllowedValues() {
@@ -200,6 +210,49 @@ public class GetTemplateParameterConstraintsResponse extends AcsResponse {
 
 			public void setResourceType(String resourceType) {
 				this.resourceType = resourceType;
+			}
+		}
+
+		public static class OriginalConstraint {
+
+			private String resourceName;
+
+			private String resourceType;
+
+			private String propertyName;
+
+			private List<String> allowedValues1;
+
+			public String getResourceName() {
+				return this.resourceName;
+			}
+
+			public void setResourceName(String resourceName) {
+				this.resourceName = resourceName;
+			}
+
+			public String getResourceType() {
+				return this.resourceType;
+			}
+
+			public void setResourceType(String resourceType) {
+				this.resourceType = resourceType;
+			}
+
+			public String getPropertyName() {
+				return this.propertyName;
+			}
+
+			public void setPropertyName(String propertyName) {
+				this.propertyName = propertyName;
+			}
+
+			public List<String> getAllowedValues1() {
+				return this.allowedValues1;
+			}
+
+			public void setAllowedValues1(List<String> allowedValues1) {
+				this.allowedValues1 = allowedValues1;
 			}
 		}
 	}

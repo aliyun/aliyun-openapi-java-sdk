@@ -27,6 +27,8 @@ public class GenerateTemplateByScratchRequest extends RpcAcsRequest<GenerateTemp
 
 	private String templateScratchId;
 
+	private String templateType;
+
 	private String provisionRegionId;
 	public GenerateTemplateByScratchRequest() {
 		super("ROS", "2019-09-10", "GenerateTemplateByScratch", "ros");
@@ -45,6 +47,17 @@ public class GenerateTemplateByScratchRequest extends RpcAcsRequest<GenerateTemp
 		this.templateScratchId = templateScratchId;
 		if(templateScratchId != null){
 			putQueryParameter("TemplateScratchId", templateScratchId);
+		}
+	}
+
+	public String getTemplateType() {
+		return this.templateType;
+	}
+
+	public void setTemplateType(String templateType) {
+		this.templateType = templateType;
+		if(templateType != null){
+			putQueryParameter("TemplateType", templateType);
 		}
 	}
 
