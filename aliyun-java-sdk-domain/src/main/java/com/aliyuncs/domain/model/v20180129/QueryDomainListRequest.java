@@ -28,6 +28,8 @@ public class QueryDomainListRequest extends RpcAcsRequest<QueryDomainListRespons
 
 	private String productDomainType;
 
+	private String ccompany;
+
 	private String orderKeyType;
 
 	private Integer pageNum;
@@ -58,7 +60,7 @@ public class QueryDomainListRequest extends RpcAcsRequest<QueryDomainListRespons
 
 	private Long startRegistrationDate;
 	public QueryDomainListRequest() {
-		super("Domain", "2018-01-29", "QueryDomainList");
+		super("Domain", "2018-01-29", "QueryDomainList", "domain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -74,6 +76,17 @@ public class QueryDomainListRequest extends RpcAcsRequest<QueryDomainListRespons
 		this.productDomainType = productDomainType;
 		if(productDomainType != null){
 			putQueryParameter("ProductDomainType", productDomainType);
+		}
+	}
+
+	public String getCcompany() {
+		return this.ccompany;
+	}
+
+	public void setCcompany(String ccompany) {
+		this.ccompany = ccompany;
+		if(ccompany != null){
+			putQueryParameter("Ccompany", ccompany);
 		}
 	}
 

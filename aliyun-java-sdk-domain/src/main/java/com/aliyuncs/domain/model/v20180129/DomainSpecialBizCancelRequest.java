@@ -29,7 +29,7 @@ public class DomainSpecialBizCancelRequest extends RpcAcsRequest<DomainSpecialBi
 
 	private String userClientIp;
 	public DomainSpecialBizCancelRequest() {
-		super("Domain", "2018-01-29", "DomainSpecialBizCancel");
+		super("Domain", "2018-01-29", "DomainSpecialBizCancel", "domain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class SaveSingleTaskForGenerateDomainCertificateRequest extends RpcAcsReq
 
 	private String lang;
 	public SaveSingleTaskForGenerateDomainCertificateRequest() {
-		super("Domain", "2018-01-29", "SaveSingleTaskForGenerateDomainCertificate");
+		super("Domain", "2018-01-29", "SaveSingleTaskForGenerateDomainCertificate", "domain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

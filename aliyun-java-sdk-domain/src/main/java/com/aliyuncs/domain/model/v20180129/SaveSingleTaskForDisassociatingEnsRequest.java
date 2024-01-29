@@ -31,7 +31,7 @@ public class SaveSingleTaskForDisassociatingEnsRequest extends RpcAcsRequest<Sav
 
 	private String lang;
 	public SaveSingleTaskForDisassociatingEnsRequest() {
-		super("Domain", "2018-01-29", "SaveSingleTaskForDisassociatingEns");
+		super("Domain", "2018-01-29", "SaveSingleTaskForDisassociatingEns", "domain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

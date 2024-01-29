@@ -30,7 +30,7 @@ public class SaveBatchTaskForReserveDropListDomainRequest extends RpcAcsRequest<
 
 	private String contactTemplateId;
 	public SaveBatchTaskForReserveDropListDomainRequest() {
-		super("Domain", "2018-01-29", "SaveBatchTaskForReserveDropListDomain");
+		super("Domain", "2018-01-29", "SaveBatchTaskForReserveDropListDomain", "domain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

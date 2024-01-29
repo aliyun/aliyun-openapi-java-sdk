@@ -33,7 +33,7 @@ public class SubmitEmailVerificationRequest extends RpcAcsRequest<SubmitEmailVer
 
 	private String email;
 	public SubmitEmailVerificationRequest() {
-		super("Domain", "2018-01-29", "SubmitEmailVerification");
+		super("Domain", "2018-01-29", "SubmitEmailVerification", "domain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

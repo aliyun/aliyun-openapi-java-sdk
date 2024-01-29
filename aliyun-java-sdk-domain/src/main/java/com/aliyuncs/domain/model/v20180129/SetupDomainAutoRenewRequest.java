@@ -29,7 +29,7 @@ public class SetupDomainAutoRenewRequest extends RpcAcsRequest<SetupDomainAutoRe
 
 	private String operation;
 	public SetupDomainAutoRenewRequest() {
-		super("Domain", "2018-01-29", "SetupDomainAutoRenew");
+		super("Domain", "2018-01-29", "SetupDomainAutoRenew", "domain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

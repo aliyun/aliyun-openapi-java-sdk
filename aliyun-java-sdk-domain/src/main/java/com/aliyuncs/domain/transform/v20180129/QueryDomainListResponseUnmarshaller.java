@@ -56,6 +56,7 @@ public class QueryDomainListResponseUnmarshaller {
 			domain.setDomainStatus(_ctx.stringValue("QueryDomainListResponse.Data["+ i +"].DomainStatus"));
 			domain.setDomainType(_ctx.stringValue("QueryDomainListResponse.Data["+ i +"].DomainType"));
 			domain.setResourceGroupId(_ctx.stringValue("QueryDomainListResponse.Data["+ i +"].ResourceGroupId"));
+			domain.setCcompany(_ctx.stringValue("QueryDomainListResponse.Data["+ i +"].Ccompany"));
 
 			List<TagItem> tag = new ArrayList<TagItem>();
 			for (int j = 0; j < _ctx.lengthValue("QueryDomainListResponse.Data["+ i +"].Tag.Length"); j++) {

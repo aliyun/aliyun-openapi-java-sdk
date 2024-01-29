@@ -32,7 +32,7 @@ public class SaveSingleTaskForApplyQuickTransferOutOpenlyRequest extends RpcAcsR
 
 	private String lang;
 	public SaveSingleTaskForApplyQuickTransferOutOpenlyRequest() {
-		super("Domain", "2018-01-29", "SaveSingleTaskForApplyQuickTransferOutOpenly");
+		super("Domain", "2018-01-29", "SaveSingleTaskForApplyQuickTransferOutOpenly", "domain");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

@@ -31,7 +31,7 @@ public class QueryDomainSpecialBizInfoByDomainRequest extends RpcAcsRequest<Quer
 
 	private String userClientIp;
 	public QueryDomainSpecialBizInfoByDomainRequest() {
-		super("Domain", "2018-01-29", "QueryDomainSpecialBizInfoByDomain");
+		super("Domain", "2018-01-29", "QueryDomainSpecialBizInfoByDomain", "domain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

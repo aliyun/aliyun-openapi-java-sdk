@@ -33,7 +33,7 @@ public class SubmitDomainSpecialBizCredentialsRequest extends RpcAcsRequest<Subm
 
 	private String userClientIp;
 	public SubmitDomainSpecialBizCredentialsRequest() {
-		super("Domain", "2018-01-29", "SubmitDomainSpecialBizCredentials");
+		super("Domain", "2018-01-29", "SubmitDomainSpecialBizCredentials", "domain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

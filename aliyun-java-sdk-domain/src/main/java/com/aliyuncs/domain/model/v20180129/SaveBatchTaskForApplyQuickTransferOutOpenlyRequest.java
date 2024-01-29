@@ -33,7 +33,7 @@ public class SaveBatchTaskForApplyQuickTransferOutOpenlyRequest extends RpcAcsRe
 
 	private String lang;
 	public SaveBatchTaskForApplyQuickTransferOutOpenlyRequest() {
-		super("Domain", "2018-01-29", "SaveBatchTaskForApplyQuickTransferOutOpenly");
+		super("Domain", "2018-01-29", "SaveBatchTaskForApplyQuickTransferOutOpenly", "domain");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

@@ -31,7 +31,7 @@ public class FuzzyMatchDomainSensitiveWordRequest extends RpcAcsRequest<FuzzyMat
 
 	private String lang;
 	public FuzzyMatchDomainSensitiveWordRequest() {
-		super("Domain", "2018-01-29", "FuzzyMatchDomainSensitiveWord");
+		super("Domain", "2018-01-29", "FuzzyMatchDomainSensitiveWord", "domain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

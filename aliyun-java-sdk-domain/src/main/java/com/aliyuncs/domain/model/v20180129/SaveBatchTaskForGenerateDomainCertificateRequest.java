@@ -35,7 +35,7 @@ public class SaveBatchTaskForGenerateDomainCertificateRequest extends RpcAcsRequ
 
 	private String lang;
 	public SaveBatchTaskForGenerateDomainCertificateRequest() {
-		super("Domain", "2018-01-29", "SaveBatchTaskForGenerateDomainCertificate");
+		super("Domain", "2018-01-29", "SaveBatchTaskForGenerateDomainCertificate", "domain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
