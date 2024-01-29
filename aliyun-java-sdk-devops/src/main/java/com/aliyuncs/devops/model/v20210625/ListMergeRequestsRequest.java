@@ -32,9 +32,13 @@ public class ListMergeRequestsRequest extends RoaAcsRequest<ListMergeRequestsRes
 
 	private String sort;
 
+	private String createdAfter;
+
 	private String organizationId;
 
 	private String filter;
+
+	private String createdBefore;
 
 	private String reviewerIds;
 
@@ -101,6 +105,17 @@ public class ListMergeRequestsRequest extends RoaAcsRequest<ListMergeRequestsRes
 		}
 	}
 
+	public String getCreatedAfter() {
+		return this.createdAfter;
+	}
+
+	public void setCreatedAfter(String createdAfter) {
+		this.createdAfter = createdAfter;
+		if(createdAfter != null){
+			putQueryParameter("createdAfter", createdAfter);
+		}
+	}
+
 	public String getOrganizationId() {
 		return this.organizationId;
 	}
@@ -120,6 +135,17 @@ public class ListMergeRequestsRequest extends RoaAcsRequest<ListMergeRequestsRes
 		this.filter = filter;
 		if(filter != null){
 			putQueryParameter("filter", filter);
+		}
+	}
+
+	public String getCreatedBefore() {
+		return this.createdBefore;
+	}
+
+	public void setCreatedBefore(String createdBefore) {
+		this.createdBefore = createdBefore;
+		if(createdBefore != null){
+			putQueryParameter("createdBefore", createdBefore);
 		}
 	}
 

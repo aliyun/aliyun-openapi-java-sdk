@@ -121,6 +121,8 @@ public class GetMergeRequestResponse extends AcsResponse {
 
 		private String targetProjectPathWithNamespace;
 
+		private String mergedRevision;
+
 		private List<ReviewersItem> reviewers;
 
 		private List<SubscribersItem> subscribers;
@@ -305,6 +307,14 @@ public class GetMergeRequestResponse extends AcsResponse {
 			this.targetProjectPathWithNamespace = targetProjectPathWithNamespace;
 		}
 
+		public String getMergedRevision() {
+			return this.mergedRevision;
+		}
+
+		public void setMergedRevision(String mergedRevision) {
+			this.mergedRevision = mergedRevision;
+		}
+
 		public List<ReviewersItem> getReviewers() {
 			return this.reviewers;
 		}
@@ -356,6 +366,8 @@ public class GetMergeRequestResponse extends AcsResponse {
 			private String reviewOpinionStatus;
 
 			private String reviewTime;
+
+			private Boolean hasCommented;
 
 			public Long getId() {
 				return this.id;
@@ -427,6 +439,14 @@ public class GetMergeRequestResponse extends AcsResponse {
 
 			public void setReviewTime(String reviewTime) {
 				this.reviewTime = reviewTime;
+			}
+
+			public Boolean getHasCommented() {
+				return this.hasCommented;
+			}
+
+			public void setHasCommented(Boolean hasCommented) {
+				this.hasCommented = hasCommented;
 			}
 		}
 

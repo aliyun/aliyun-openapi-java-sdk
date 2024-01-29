@@ -62,6 +62,7 @@ public class ListMergeRequestCommentsResponseUnmarshaller {
 			author.setState(_ctx.stringValue("ListMergeRequestCommentsResponse.result["+ i +"].author.state"));
 			author.setAvatarUrl(_ctx.stringValue("ListMergeRequestCommentsResponse.result["+ i +"].author.avatarUrl"));
 			author.setEmail(_ctx.stringValue("ListMergeRequestCommentsResponse.result["+ i +"].author.email"));
+			author.setId(_ctx.longValue("ListMergeRequestCommentsResponse.result["+ i +"].author.id"));
 			resultItem.setAuthor(author);
 
 			RelatedPatchSet relatedPatchSet = new RelatedPatchSet();
@@ -97,6 +98,7 @@ public class ListMergeRequestCommentsResponseUnmarshaller {
 				author1.setState(_ctx.stringValue("ListMergeRequestCommentsResponse.result["+ i +"].childComments["+ j +"].author.state"));
 				author1.setAvatarUrl(_ctx.stringValue("ListMergeRequestCommentsResponse.result["+ i +"].childComments["+ j +"].author.avatarUrl"));
 				author1.setEmail(_ctx.stringValue("ListMergeRequestCommentsResponse.result["+ i +"].childComments["+ j +"].author.email"));
+				author1.setId(_ctx.longValue("ListMergeRequestCommentsResponse.result["+ i +"].childComments["+ j +"].author.id"));
 				child_comments_list.setAuthor1(author1);
 
 				RelatedPatchSet2 relatedPatchSet2 = new RelatedPatchSet2();
@@ -132,6 +134,7 @@ public class ListMergeRequestCommentsResponseUnmarshaller {
 					author3.setState(_ctx.stringValue("ListMergeRequestCommentsResponse.result["+ i +"].childComments["+ j +"].finalChildComments["+ k +"].author.state"));
 					author3.setAvatarUrl(_ctx.stringValue("ListMergeRequestCommentsResponse.result["+ i +"].childComments["+ j +"].finalChildComments["+ k +"].author.avatarUrl"));
 					author3.setEmail(_ctx.stringValue("ListMergeRequestCommentsResponse.result["+ i +"].childComments["+ j +"].finalChildComments["+ k +"].author.email"));
+					author3.setId(_ctx.longValue("ListMergeRequestCommentsResponse.result["+ i +"].childComments["+ j +"].finalChildComments["+ k +"].author.id"));
 					child_comments_list_child.setAuthor3(author3);
 
 					RelatedPatchSet4 relatedPatchSet4 = new RelatedPatchSet4();

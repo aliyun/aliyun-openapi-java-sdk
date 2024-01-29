@@ -59,6 +59,7 @@ public class GetMergeRequestResponseUnmarshaller {
 		result.setWebUrl(_ctx.stringValue("GetMergeRequestResponse.result.webUrl"));
 		result.setTargetProjectNameWithNamespace(_ctx.stringValue("GetMergeRequestResponse.result.targetProjectNameWithNamespace"));
 		result.setTargetProjectPathWithNamespace(_ctx.stringValue("GetMergeRequestResponse.result.targetProjectPathWithNamespace"));
+		result.setMergedRevision(_ctx.stringValue("GetMergeRequestResponse.result.mergedRevision"));
 
 		Author author = new Author();
 		author.setId(_ctx.longValue("GetMergeRequestResponse.result.author.id"));
@@ -94,6 +95,7 @@ public class GetMergeRequestResponseUnmarshaller {
 			reviewersItem.setHasReviewed(_ctx.booleanValue("GetMergeRequestResponse.result.reviewers["+ i +"].hasReviewed"));
 			reviewersItem.setReviewOpinionStatus(_ctx.stringValue("GetMergeRequestResponse.result.reviewers["+ i +"].reviewOpinionStatus"));
 			reviewersItem.setReviewTime(_ctx.stringValue("GetMergeRequestResponse.result.reviewers["+ i +"].reviewTime"));
+			reviewersItem.setHasCommented(_ctx.booleanValue("GetMergeRequestResponse.result.reviewers["+ i +"].hasCommented"));
 
 			reviewers.add(reviewersItem);
 		}

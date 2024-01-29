@@ -137,6 +137,8 @@ public class ListMergeRequestsResponse extends AcsResponse {
 
 		private Boolean supportMergeFFOnly;
 
+		private String mergedRevision;
+
 		private List<Assignees> reviewers;
 
 		private List<SubscribersItem> subscribers;
@@ -345,6 +347,14 @@ public class ListMergeRequestsResponse extends AcsResponse {
 			this.supportMergeFFOnly = supportMergeFFOnly;
 		}
 
+		public String getMergedRevision() {
+			return this.mergedRevision;
+		}
+
+		public void setMergedRevision(String mergedRevision) {
+			this.mergedRevision = mergedRevision;
+		}
+
 		public List<Assignees> getReviewers() {
 			return this.reviewers;
 		}
@@ -394,6 +404,12 @@ public class ListMergeRequestsResponse extends AcsResponse {
 			private String status;
 
 			private String reviewTime;
+
+			private Boolean hasReviewed;
+
+			private Boolean hasCommented;
+
+			private String reviewOpinionStatus;
 
 			public Long getId() {
 				return this.id;
@@ -457,6 +473,30 @@ public class ListMergeRequestsResponse extends AcsResponse {
 
 			public void setReviewTime(String reviewTime) {
 				this.reviewTime = reviewTime;
+			}
+
+			public Boolean getHasReviewed() {
+				return this.hasReviewed;
+			}
+
+			public void setHasReviewed(Boolean hasReviewed) {
+				this.hasReviewed = hasReviewed;
+			}
+
+			public Boolean getHasCommented() {
+				return this.hasCommented;
+			}
+
+			public void setHasCommented(Boolean hasCommented) {
+				this.hasCommented = hasCommented;
+			}
+
+			public String getReviewOpinionStatus() {
+				return this.reviewOpinionStatus;
+			}
+
+			public void setReviewOpinionStatus(String reviewOpinionStatus) {
+				this.reviewOpinionStatus = reviewOpinionStatus;
 			}
 		}
 

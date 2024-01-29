@@ -64,6 +64,7 @@ public class ListMergeRequestsResponseUnmarshaller {
 			resultItem.setTargetType(_ctx.stringValue("ListMergeRequestsResponse.result["+ i +"].targetType"));
 			resultItem.setNameWithNamespace(_ctx.stringValue("ListMergeRequestsResponse.result["+ i +"].nameWithNamespace"));
 			resultItem.setSupportMergeFFOnly(_ctx.booleanValue("ListMergeRequestsResponse.result["+ i +"].supportMergeFFOnly"));
+			resultItem.setMergedRevision(_ctx.stringValue("ListMergeRequestsResponse.result["+ i +"].mergedRevision"));
 
 			Author author = new Author();
 			author.setId(_ctx.longValue("ListMergeRequestsResponse.result["+ i +"].author.id"));
@@ -85,6 +86,9 @@ public class ListMergeRequestsResponseUnmarshaller {
 				assignees.setEmail(_ctx.stringValue("ListMergeRequestsResponse.result["+ i +"].reviewers["+ j +"].email"));
 				assignees.setStatus(_ctx.stringValue("ListMergeRequestsResponse.result["+ i +"].reviewers["+ j +"].status"));
 				assignees.setReviewTime(_ctx.stringValue("ListMergeRequestsResponse.result["+ i +"].reviewers["+ j +"].reviewTime"));
+				assignees.setHasReviewed(_ctx.booleanValue("ListMergeRequestsResponse.result["+ i +"].reviewers["+ j +"].hasReviewed"));
+				assignees.setHasCommented(_ctx.booleanValue("ListMergeRequestsResponse.result["+ i +"].reviewers["+ j +"].hasCommented"));
+				assignees.setReviewOpinionStatus(_ctx.stringValue("ListMergeRequestsResponse.result["+ i +"].reviewers["+ j +"].reviewOpinionStatus"));
 
 				reviewers.add(assignees);
 			}

@@ -1,3 +1,6 @@
+2024-01-29 Version: 1.0.3
+- Add field to ListMergeRequest and MergeMergeRequest api.
+
 2024-01-23 Version: 1.0.2
 - Add field to ListMergeRequest and MergeMergeRequest api.
 

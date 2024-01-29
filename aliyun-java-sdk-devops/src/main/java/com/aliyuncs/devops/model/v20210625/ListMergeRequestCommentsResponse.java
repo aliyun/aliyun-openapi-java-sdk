@@ -535,6 +535,8 @@ public class ListMergeRequestCommentsResponse extends AcsResponse {
 
 					private String email;
 
+					private Long id;
+
 					public String getAliyunPk() {
 						return this.aliyunPk;
 					}
@@ -581,6 +583,14 @@ public class ListMergeRequestCommentsResponse extends AcsResponse {
 
 					public void setEmail(String email) {
 						this.email = email;
+					}
+
+					public Long getId() {
+						return this.id;
+					}
+
+					public void setId(Long id) {
+						this.id = id;
 					}
 				}
 
@@ -672,6 +682,8 @@ public class ListMergeRequestCommentsResponse extends AcsResponse {
 
 				private String email;
 
+				private Long id;
+
 				public String getAliyunPk() {
 					return this.aliyunPk;
 				}
@@ -718,6 +730,14 @@ public class ListMergeRequestCommentsResponse extends AcsResponse {
 
 				public void setEmail(String email) {
 					this.email = email;
+				}
+
+				public Long getId() {
+					return this.id;
+				}
+
+				public void setId(Long id) {
+					this.id = id;
 				}
 			}
 
@@ -809,6 +829,8 @@ public class ListMergeRequestCommentsResponse extends AcsResponse {
 
 			private String email;
 
+			private Long id;
+
 			public String getAliyunPk() {
 				return this.aliyunPk;
 			}
@@ -855,6 +877,14 @@ public class ListMergeRequestCommentsResponse extends AcsResponse {
 
 			public void setEmail(String email) {
 				this.email = email;
+			}
+
+			public Long getId() {
+				return this.id;
+			}
+
+			public void setId(Long id) {
+				this.id = id;
 			}
 		}
 
