@@ -1,3 +1,6 @@
+2024-01-29 Version: 1.0.7
+- Add FG apis in ModelFeature.
+
 2023-11-23 Version: 1.0.6
 - Add RelatedModelFeatures in GetLabelTable.
 - Delete DatasourceId, Name in UpdateLabelTable.

@@ -38,6 +38,10 @@ public class GetDatasourceResponse extends AcsResponse {
 
 	private String workspaceId;
 
+	private String gmtCreateTime;
+
+	private String gmtModifiedTime;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -92,6 +96,22 @@ public class GetDatasourceResponse extends AcsResponse {
 
 	public void setWorkspaceId(String workspaceId) {
 		this.workspaceId = workspaceId;
+	}
+
+	public String getGmtCreateTime() {
+		return this.gmtCreateTime;
+	}
+
+	public void setGmtCreateTime(String gmtCreateTime) {
+		this.gmtCreateTime = gmtCreateTime;
+	}
+
+	public String getGmtModifiedTime() {
+		return this.gmtModifiedTime;
+	}
+
+	public void setGmtModifiedTime(String gmtModifiedTime) {
+		this.gmtModifiedTime = gmtModifiedTime;
 	}
 
 	@Override

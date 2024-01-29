@@ -29,6 +29,8 @@ public class GetDatasourceResponseUnmarshaller {
 		getDatasourceResponse.setUri(_ctx.stringValue("GetDatasourceResponse.Uri"));
 		getDatasourceResponse.setConfig(_ctx.stringValue("GetDatasourceResponse.Config"));
 		getDatasourceResponse.setWorkspaceId(_ctx.stringValue("GetDatasourceResponse.WorkspaceId"));
+		getDatasourceResponse.setGmtCreateTime(_ctx.stringValue("GetDatasourceResponse.GmtCreateTime"));
+		getDatasourceResponse.setGmtModifiedTime(_ctx.stringValue("GetDatasourceResponse.GmtModifiedTime"));
 	 
 	 	return getDatasourceResponse;
 	}

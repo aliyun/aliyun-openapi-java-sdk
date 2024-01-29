@@ -65,6 +65,8 @@ public class GetFeatureViewResponse extends AcsResponse {
 
 	private String lastSyncConfig;
 
+	private String publishTableScript;
+
 	private List<FieldsItem> fields;
 
 	private List<String> tags;
@@ -227,6 +229,14 @@ public class GetFeatureViewResponse extends AcsResponse {
 
 	public void setLastSyncConfig(String lastSyncConfig) {
 		this.lastSyncConfig = lastSyncConfig;
+	}
+
+	public String getPublishTableScript() {
+		return this.publishTableScript;
+	}
+
+	public void setPublishTableScript(String publishTableScript) {
+		this.publishTableScript = publishTableScript;
 	}
 
 	public List<FieldsItem> getFields() {

@@ -47,6 +47,8 @@ public class GetModelFeatureResponse extends AcsResponse {
 
 	private String trainingSetFGTable;
 
+	private String exportTrainingSetTableScript;
+
 	private List<FeaturesItem> features;
 
 	private Relations relations;
@@ -137,6 +139,14 @@ public class GetModelFeatureResponse extends AcsResponse {
 
 	public void setTrainingSetFGTable(String trainingSetFGTable) {
 		this.trainingSetFGTable = trainingSetFGTable;
+	}
+
+	public String getExportTrainingSetTableScript() {
+		return this.exportTrainingSetTableScript;
+	}
+
+	public void setExportTrainingSetTableScript(String exportTrainingSetTableScript) {
+		this.exportTrainingSetTableScript = exportTrainingSetTableScript;
 	}
 
 	public List<FeaturesItem> getFeatures() {
