@@ -37,7 +37,7 @@ public class DescribeBackupGatewayListRequest extends RpcAcsRequest<DescribeBack
 
 	private String region;
 	public DescribeBackupGatewayListRequest() {
-		super("Dbs", "2019-03-06", "DescribeBackupGatewayList");
+		super("Dbs", "2019-03-06", "DescribeBackupGatewayList", "cbs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

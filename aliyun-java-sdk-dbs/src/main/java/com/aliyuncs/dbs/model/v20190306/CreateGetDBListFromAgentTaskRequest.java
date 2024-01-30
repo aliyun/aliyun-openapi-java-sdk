@@ -39,7 +39,7 @@ public class CreateGetDBListFromAgentTaskRequest extends RpcAcsRequest<CreateGet
 
 	private Integer sourceEndpointPort;
 	public CreateGetDBListFromAgentTaskRequest() {
-		super("Dbs", "2019-03-06", "CreateGetDBListFromAgentTask");
+		super("Dbs", "2019-03-06", "CreateGetDBListFromAgentTask", "cbs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

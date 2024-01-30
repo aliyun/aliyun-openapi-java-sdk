@@ -37,7 +37,7 @@ public class ModifyStorageStrategyRequest extends RpcAcsRequest<ModifyStorageStr
 
 	private Integer backupRetentionPeriod;
 	public ModifyStorageStrategyRequest() {
-		super("Dbs", "2019-03-06", "ModifyStorageStrategy");
+		super("Dbs", "2019-03-06", "ModifyStorageStrategy", "cbs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

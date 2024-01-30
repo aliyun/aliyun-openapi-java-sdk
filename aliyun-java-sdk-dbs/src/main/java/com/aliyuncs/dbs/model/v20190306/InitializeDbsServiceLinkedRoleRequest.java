@@ -25,7 +25,7 @@ import com.aliyuncs.dbs.Endpoint;
 public class InitializeDbsServiceLinkedRoleRequest extends RpcAcsRequest<InitializeDbsServiceLinkedRoleResponse> {
 	   
 	public InitializeDbsServiceLinkedRoleRequest() {
-		super("Dbs", "2019-03-06", "InitializeDbsServiceLinkedRole");
+		super("Dbs", "2019-03-06", "InitializeDbsServiceLinkedRole", "cbs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -87,7 +87,7 @@ public class ConfigureBackupPlanRequest extends RpcAcsRequest<ConfigureBackupPla
 
 	private String backupStrategyType;
 	public ConfigureBackupPlanRequest() {
-		super("Dbs", "2019-03-06", "ConfigureBackupPlan");
+		super("Dbs", "2019-03-06", "ConfigureBackupPlan", "cbs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

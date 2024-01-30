@@ -109,7 +109,7 @@ public class CreateAndStartBackupPlanRequest extends RpcAcsRequest<CreateAndStar
 
 	private String payType;
 	public CreateAndStartBackupPlanRequest() {
-		super("Dbs", "2019-03-06", "CreateAndStartBackupPlan");
+		super("Dbs", "2019-03-06", "CreateAndStartBackupPlan", "cbs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

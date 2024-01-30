@@ -33,7 +33,7 @@ public class ModifyBackupObjectsRequest extends RpcAcsRequest<ModifyBackupObject
 
 	private String ownerId;
 	public ModifyBackupObjectsRequest() {
-		super("Dbs", "2019-03-06", "ModifyBackupObjects");
+		super("Dbs", "2019-03-06", "ModifyBackupObjects", "cbs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
