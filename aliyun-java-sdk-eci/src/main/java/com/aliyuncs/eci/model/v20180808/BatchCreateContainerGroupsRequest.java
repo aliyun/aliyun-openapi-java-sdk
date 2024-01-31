@@ -85,6 +85,8 @@ public class BatchCreateContainerGroupsRequest extends RpcAcsRequest<BatchCreate
 
     private String eipPublicIpAddressPoolId;
 
+    private String eipISP;
+
     private String hostName;
 
     private Integer ingressBandwidth;
@@ -486,6 +488,17 @@ public class BatchCreateContainerGroupsRequest extends RpcAcsRequest<BatchCreate
         this.eipPublicIpAddressPoolId = eipPublicIpAddressPoolId;
         if (eipPublicIpAddressPoolId != null) {
             putQueryParameter("EipPublicIpAddressPoolId", eipPublicIpAddressPoolId);
+        }
+    }
+
+    public String getEipISP() {
+        return eipISP;
+    }
+
+    public void setEipISP(String eipISP) {
+        this.eipISP = eipISP;
+        if (eipISP != null) {
+            putQueryParameter("EipISP", eipISP);
         }
     }
 
