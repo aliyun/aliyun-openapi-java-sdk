@@ -1,3 +1,7 @@
+2024-02-01 Version: 5.11.4
+- Support DryRun for DeleteInstance.
+- Support DryRun for ModifyInstanceSpec.
+
 2024-02-01 Version: 5.11.3
 - Describe tcpOptionAddress.
 
