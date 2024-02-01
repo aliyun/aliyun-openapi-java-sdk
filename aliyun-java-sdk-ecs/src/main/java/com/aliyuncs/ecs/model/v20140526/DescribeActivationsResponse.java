@@ -33,6 +33,8 @@ public class DescribeActivationsResponse extends AcsResponse {
 
 	private Long totalCount;
 
+	private String nextToken;
+
 	private List<Activation> activationList;
 
 	public Long getPageSize() {
@@ -65,6 +67,14 @@ public class DescribeActivationsResponse extends AcsResponse {
 
 	public void setTotalCount(Long totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
 	}
 
 	public List<Activation> getActivationList() {

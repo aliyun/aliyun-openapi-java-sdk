@@ -46,6 +46,8 @@ public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkIn
 
 	private Integer ipv6AddressCount;
 
+	private Integer rxQueueSize;
+
 	private Long ownerId;
 
 	private String vSwitchId;
@@ -65,6 +67,8 @@ public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkIn
 	private Integer ipv6PrefixCount;
 
 	private String instanceType;
+
+	private Integer txQueueSize;
 
 	private Boolean deleteOnRelease;
 
@@ -205,6 +209,17 @@ public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkIn
 		}
 	}
 
+	public Integer getRxQueueSize() {
+		return this.rxQueueSize;
+	}
+
+	public void setRxQueueSize(Integer rxQueueSize) {
+		this.rxQueueSize = rxQueueSize;
+		if(rxQueueSize != null){
+			putQueryParameter("RxQueueSize", rxQueueSize.toString());
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -318,6 +333,17 @@ public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkIn
 		this.instanceType = instanceType;
 		if(instanceType != null){
 			putQueryParameter("InstanceType", instanceType);
+		}
+	}
+
+	public Integer getTxQueueSize() {
+		return this.txQueueSize;
+	}
+
+	public void setTxQueueSize(Integer txQueueSize) {
+		this.txQueueSize = txQueueSize;
+		if(txQueueSize != null){
+			putQueryParameter("TxQueueSize", txQueueSize.toString());
 		}
 	}
 

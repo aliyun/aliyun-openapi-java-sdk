@@ -42,6 +42,8 @@ public class ModifyInstanceAttributeRequest extends RpcAcsRequest<ModifyInstance
 
 	private String hostName;
 
+	private String cpuOptionsTopologyType;
+
 	private Boolean enableJumboFrame;
 
 	private String resourceOwnerAccount;
@@ -153,6 +155,17 @@ public class ModifyInstanceAttributeRequest extends RpcAcsRequest<ModifyInstance
 		this.hostName = hostName;
 		if(hostName != null){
 			putQueryParameter("HostName", hostName);
+		}
+	}
+
+	public String getCpuOptionsTopologyType() {
+		return this.cpuOptionsTopologyType;
+	}
+
+	public void setCpuOptionsTopologyType(String cpuOptionsTopologyType) {
+		this.cpuOptionsTopologyType = cpuOptionsTopologyType;
+		if(cpuOptionsTopologyType != null){
+			putQueryParameter("CpuOptions.TopologyType", cpuOptionsTopologyType);
 		}
 	}
 

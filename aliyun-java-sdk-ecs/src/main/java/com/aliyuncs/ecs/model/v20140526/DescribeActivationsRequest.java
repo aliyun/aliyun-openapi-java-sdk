@@ -32,6 +32,8 @@ public class DescribeActivationsRequest extends RpcAcsRequest<DescribeActivation
 
 	private String resourceGroupId;
 
+	private String nextToken;
+
 	private Long pageSize;
 
 	private List<Tag> tags;
@@ -43,6 +45,8 @@ public class DescribeActivationsRequest extends RpcAcsRequest<DescribeActivation
 	private Long ownerId;
 
 	private String instanceName;
+
+	private Integer maxResults;
 
 	private String activationId;
 	public DescribeActivationsRequest() {
@@ -84,6 +88,17 @@ public class DescribeActivationsRequest extends RpcAcsRequest<DescribeActivation
 		this.resourceGroupId = resourceGroupId;
 		if(resourceGroupId != null){
 			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
 		}
 	}
 
@@ -153,6 +168,17 @@ public class DescribeActivationsRequest extends RpcAcsRequest<DescribeActivation
 		this.instanceName = instanceName;
 		if(instanceName != null){
 			putQueryParameter("InstanceName", instanceName);
+		}
+	}
+
+	public Integer getMaxResults() {
+		return this.maxResults;
+	}
+
+	public void setMaxResults(Integer maxResults) {
+		this.maxResults = maxResults;
+		if(maxResults != null){
+			putQueryParameter("MaxResults", maxResults.toString());
 		}
 	}
 

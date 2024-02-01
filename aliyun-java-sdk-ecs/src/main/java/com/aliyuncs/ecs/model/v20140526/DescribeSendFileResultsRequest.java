@@ -32,6 +32,8 @@ public class DescribeSendFileResultsRequest extends RpcAcsRequest<DescribeSendFi
 
 	private String resourceGroupId;
 
+	private String nextToken;
+
 	private Long pageSize;
 
 	private List<Tag> tags;
@@ -49,6 +51,8 @@ public class DescribeSendFileResultsRequest extends RpcAcsRequest<DescribeSendFi
 	private String invocationStatus;
 
 	private String name;
+
+	private Integer maxResults;
 	public DescribeSendFileResultsRequest() {
 		super("Ecs", "2014-05-26", "DescribeSendFileResults", "ecs");
 		setMethod(MethodType.POST);
@@ -88,6 +92,17 @@ public class DescribeSendFileResultsRequest extends RpcAcsRequest<DescribeSendFi
 		this.resourceGroupId = resourceGroupId;
 		if(resourceGroupId != null){
 			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
 		}
 	}
 
@@ -190,6 +205,17 @@ public class DescribeSendFileResultsRequest extends RpcAcsRequest<DescribeSendFi
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
+		}
+	}
+
+	public Integer getMaxResults() {
+		return this.maxResults;
+	}
+
+	public void setMaxResults(Integer maxResults) {
+		this.maxResults = maxResults;
+		if(maxResults != null){
+			putQueryParameter("MaxResults", maxResults.toString());
 		}
 	}
 

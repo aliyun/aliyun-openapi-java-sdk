@@ -30,6 +30,7 @@ public class DescribeCloudAssistantStatusResponseUnmarshaller {
 		describeCloudAssistantStatusResponse.setPageSize(_ctx.longValue("DescribeCloudAssistantStatusResponse.PageSize"));
 		describeCloudAssistantStatusResponse.setPageNumber(_ctx.longValue("DescribeCloudAssistantStatusResponse.PageNumber"));
 		describeCloudAssistantStatusResponse.setTotalCount(_ctx.longValue("DescribeCloudAssistantStatusResponse.TotalCount"));
+		describeCloudAssistantStatusResponse.setNextToken(_ctx.stringValue("DescribeCloudAssistantStatusResponse.NextToken"));
 
 		List<InstanceCloudAssistantStatus> instanceCloudAssistantStatusSet = new ArrayList<InstanceCloudAssistantStatus>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCloudAssistantStatusResponse.InstanceCloudAssistantStatusSet.Length"); i++) {

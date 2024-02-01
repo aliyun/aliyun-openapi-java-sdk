@@ -32,6 +32,7 @@ public class DescribeSendFileResultsResponseUnmarshaller {
 		describeSendFileResultsResponse.setPageSize(_ctx.longValue("DescribeSendFileResultsResponse.PageSize"));
 		describeSendFileResultsResponse.setPageNumber(_ctx.longValue("DescribeSendFileResultsResponse.PageNumber"));
 		describeSendFileResultsResponse.setTotalCount(_ctx.longValue("DescribeSendFileResultsResponse.TotalCount"));
+		describeSendFileResultsResponse.setNextToken(_ctx.stringValue("DescribeSendFileResultsResponse.NextToken"));
 
 		List<Invocation> invocations = new ArrayList<Invocation>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSendFileResultsResponse.Invocations.Length"); i++) {

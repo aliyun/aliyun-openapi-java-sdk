@@ -67,6 +67,8 @@ public class DescribeNetworkInterfaceAttributeResponse extends AcsResponse {
 
 	private Boolean deleteOnRelease;
 
+	private String tcpOptionAddressEnabled;
+
 	private List<PrivateIpSet> privateIpSets;
 
 	private List<Ipv6Set> ipv6Sets;
@@ -253,6 +255,14 @@ public class DescribeNetworkInterfaceAttributeResponse extends AcsResponse {
 
 	public void setDeleteOnRelease(Boolean deleteOnRelease) {
 		this.deleteOnRelease = deleteOnRelease;
+	}
+
+	public String getTcpOptionAddressEnabled() {
+		return this.tcpOptionAddressEnabled;
+	}
+
+	public void setTcpOptionAddressEnabled(String tcpOptionAddressEnabled) {
+		this.tcpOptionAddressEnabled = tcpOptionAddressEnabled;
 	}
 
 	public List<PrivateIpSet> getPrivateIpSets() {

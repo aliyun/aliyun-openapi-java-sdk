@@ -30,6 +30,8 @@ public class ListPluginStatusRequest extends RpcAcsRequest<ListPluginStatusRespo
 
 	private Long pageNumber;
 
+	private String nextToken;
+
 	private Long pageSize;
 
 	private String resourceOwnerAccount;
@@ -41,6 +43,8 @@ public class ListPluginStatusRequest extends RpcAcsRequest<ListPluginStatusRespo
 	private List<String> instanceIds;
 
 	private String name;
+
+	private Integer maxResults;
 	public ListPluginStatusRequest() {
 		super("Ecs", "2014-05-26", "ListPluginStatus", "ecs");
 		setMethod(MethodType.POST);
@@ -69,6 +73,17 @@ public class ListPluginStatusRequest extends RpcAcsRequest<ListPluginStatusRespo
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
 		}
 	}
 
@@ -137,6 +152,17 @@ public class ListPluginStatusRequest extends RpcAcsRequest<ListPluginStatusRespo
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
+		}
+	}
+
+	public Integer getMaxResults() {
+		return this.maxResults;
+	}
+
+	public void setMaxResults(Integer maxResults) {
+		this.maxResults = maxResults;
+		if(maxResults != null){
+			putQueryParameter("MaxResults", maxResults.toString());
 		}
 	}
 

@@ -31,6 +31,7 @@ public class DescribeActivationsResponseUnmarshaller {
 		describeActivationsResponse.setPageSize(_ctx.longValue("DescribeActivationsResponse.PageSize"));
 		describeActivationsResponse.setPageNumber(_ctx.longValue("DescribeActivationsResponse.PageNumber"));
 		describeActivationsResponse.setTotalCount(_ctx.longValue("DescribeActivationsResponse.TotalCount"));
+		describeActivationsResponse.setNextToken(_ctx.stringValue("DescribeActivationsResponse.NextToken"));
 
 		List<Activation> activationList = new ArrayList<Activation>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeActivationsResponse.ActivationList.Length"); i++) {

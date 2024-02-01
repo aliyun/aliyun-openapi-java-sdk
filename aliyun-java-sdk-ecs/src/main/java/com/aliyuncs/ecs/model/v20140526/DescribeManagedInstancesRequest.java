@@ -32,6 +32,8 @@ public class DescribeManagedInstancesRequest extends RpcAcsRequest<DescribeManag
 
 	private String resourceGroupId;
 
+	private String nextToken;
+
 	private Long pageSize;
 
 	private List<Tag> tags;
@@ -47,6 +49,8 @@ public class DescribeManagedInstancesRequest extends RpcAcsRequest<DescribeManag
 	private String instanceName;
 
 	private List<String> instanceIds;
+
+	private Integer maxResults;
 
 	private String instanceIp;
 
@@ -90,6 +94,17 @@ public class DescribeManagedInstancesRequest extends RpcAcsRequest<DescribeManag
 		this.resourceGroupId = resourceGroupId;
 		if(resourceGroupId != null){
 			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
 		}
 	}
 
@@ -184,6 +199,17 @@ public class DescribeManagedInstancesRequest extends RpcAcsRequest<DescribeManag
 				putQueryParameter("InstanceId." + (i + 1) , instanceIds.get(i));
 			}
 		}	
+	}
+
+	public Integer getMaxResults() {
+		return this.maxResults;
+	}
+
+	public void setMaxResults(Integer maxResults) {
+		this.maxResults = maxResults;
+		if(maxResults != null){
+			putQueryParameter("MaxResults", maxResults.toString());
+		}
 	}
 
 	public String getInstanceIp() {

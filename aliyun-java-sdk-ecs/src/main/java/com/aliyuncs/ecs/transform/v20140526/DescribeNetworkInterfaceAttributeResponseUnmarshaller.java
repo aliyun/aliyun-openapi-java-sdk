@@ -57,6 +57,7 @@ public class DescribeNetworkInterfaceAttributeResponseUnmarshaller {
 		describeNetworkInterfaceAttributeResponse.setPrivateIpAddress(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.PrivateIpAddress"));
 		describeNetworkInterfaceAttributeResponse.setQueueNumber(_ctx.integerValue("DescribeNetworkInterfaceAttributeResponse.QueueNumber"));
 		describeNetworkInterfaceAttributeResponse.setDeleteOnRelease(_ctx.booleanValue("DescribeNetworkInterfaceAttributeResponse.DeleteOnRelease"));
+		describeNetworkInterfaceAttributeResponse.setTcpOptionAddressEnabled(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.TcpOptionAddressEnabled"));
 
 		List<String> securityGroupIds = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeNetworkInterfaceAttributeResponse.SecurityGroupIds.Length"); i++) {

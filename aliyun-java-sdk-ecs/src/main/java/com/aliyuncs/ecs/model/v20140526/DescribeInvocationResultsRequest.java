@@ -34,6 +34,8 @@ public class DescribeInvocationResultsRequest extends RpcAcsRequest<DescribeInvo
 
 	private String resourceGroupId;
 
+	private String nextToken;
+
 	private String contentEncoding;
 
 	private Long pageSize;
@@ -53,6 +55,8 @@ public class DescribeInvocationResultsRequest extends RpcAcsRequest<DescribeInvo
 	private String invokeRecordStatus;
 
 	private Boolean includeHistory;
+
+	private Integer maxResults;
 	public DescribeInvocationResultsRequest() {
 		super("Ecs", "2014-05-26", "DescribeInvocationResults", "ecs");
 		setMethod(MethodType.POST);
@@ -103,6 +107,17 @@ public class DescribeInvocationResultsRequest extends RpcAcsRequest<DescribeInvo
 		this.resourceGroupId = resourceGroupId;
 		if(resourceGroupId != null){
 			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
 		}
 	}
 
@@ -216,6 +231,17 @@ public class DescribeInvocationResultsRequest extends RpcAcsRequest<DescribeInvo
 		this.includeHistory = includeHistory;
 		if(includeHistory != null){
 			putQueryParameter("IncludeHistory", includeHistory.toString());
+		}
+	}
+
+	public Integer getMaxResults() {
+		return this.maxResults;
+	}
+
+	public void setMaxResults(Integer maxResults) {
+		this.maxResults = maxResults;
+		if(maxResults != null){
+			putQueryParameter("MaxResults", maxResults.toString());
 		}
 	}
 

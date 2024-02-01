@@ -36,11 +36,15 @@ public class ModifyNetworkInterfaceAttributeRequest extends RpcAcsRequest<Modify
 
 	private String networkInterfaceName;
 
+	private Integer txQueueSize;
+
 	private Boolean deleteOnRelease;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
+
+	private Integer rxQueueSize;
 
 	private Long ownerId;
 
@@ -111,6 +115,17 @@ public class ModifyNetworkInterfaceAttributeRequest extends RpcAcsRequest<Modify
 		}
 	}
 
+	public Integer getTxQueueSize() {
+		return this.txQueueSize;
+	}
+
+	public void setTxQueueSize(Integer txQueueSize) {
+		this.txQueueSize = txQueueSize;
+		if(txQueueSize != null){
+			putQueryParameter("TxQueueSize", txQueueSize.toString());
+		}
+	}
+
 	public Boolean getDeleteOnRelease() {
 		return this.deleteOnRelease;
 	}
@@ -141,6 +156,17 @@ public class ModifyNetworkInterfaceAttributeRequest extends RpcAcsRequest<Modify
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Integer getRxQueueSize() {
+		return this.rxQueueSize;
+	}
+
+	public void setRxQueueSize(Integer rxQueueSize) {
+		this.rxQueueSize = rxQueueSize;
+		if(rxQueueSize != null){
+			putQueryParameter("RxQueueSize", rxQueueSize.toString());
 		}
 	}
 

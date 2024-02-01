@@ -40,6 +40,8 @@ public class DescribeCommandsRequest extends RpcAcsRequest<DescribeCommandsRespo
 
 	private String provider;
 
+	private String nextToken;
+
 	private String contentEncoding;
 
 	private Long pageSize;
@@ -55,6 +57,8 @@ public class DescribeCommandsRequest extends RpcAcsRequest<DescribeCommandsRespo
 	private Long ownerId;
 
 	private String name;
+
+	private Integer maxResults;
 	public DescribeCommandsRequest() {
 		super("Ecs", "2014-05-26", "DescribeCommands", "ecs");
 		setMethod(MethodType.POST);
@@ -138,6 +142,17 @@ public class DescribeCommandsRequest extends RpcAcsRequest<DescribeCommandsRespo
 		this.provider = provider;
 		if(provider != null){
 			putQueryParameter("Provider", provider);
+		}
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
 		}
 	}
 
@@ -229,6 +244,17 @@ public class DescribeCommandsRequest extends RpcAcsRequest<DescribeCommandsRespo
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
+		}
+	}
+
+	public Integer getMaxResults() {
+		return this.maxResults;
+	}
+
+	public void setMaxResults(Integer maxResults) {
+		this.maxResults = maxResults;
+		if(maxResults != null){
+			putQueryParameter("MaxResults", maxResults.toString());
 		}
 	}
 

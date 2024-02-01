@@ -98,6 +98,7 @@ public class DescribeInstancesResponseUnmarshaller {
 			instance.setCreditSpecification(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].CreditSpecification"));
 			instance.setInstanceTypeFamily(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].InstanceTypeFamily"));
 			instance.setOSType(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].OSType"));
+			instance.setSpotInterruptionBehavior(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].SpotInterruptionBehavior"));
 
 			List<String> rdmaIpAddress = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeInstancesResponse.Instances["+ i +"].RdmaIpAddress.Length"); j++) {
@@ -167,6 +168,7 @@ public class DescribeInstancesResponseUnmarshaller {
 			cpuOptions.setNuma(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].CpuOptions.Numa"));
 			cpuOptions.setCoreCount(_ctx.integerValue("DescribeInstancesResponse.Instances["+ i +"].CpuOptions.CoreCount"));
 			cpuOptions.setThreadsPerCore(_ctx.integerValue("DescribeInstancesResponse.Instances["+ i +"].CpuOptions.ThreadsPerCore"));
+			cpuOptions.setTopologyType(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].CpuOptions.TopologyType"));
 			instance.setCpuOptions(cpuOptions);
 
 			MetadataOptions metadataOptions = new MetadataOptions();

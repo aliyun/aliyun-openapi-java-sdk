@@ -30,6 +30,8 @@ public class DescribeCloudAssistantStatusRequest extends RpcAcsRequest<DescribeC
 
 	private Long pageNumber;
 
+	private String nextToken;
+
 	private Long pageSize;
 
 	private String resourceOwnerAccount;
@@ -41,6 +43,8 @@ public class DescribeCloudAssistantStatusRequest extends RpcAcsRequest<DescribeC
 	private Long ownerId;
 
 	private List<String> instanceIds;
+
+	private Integer maxResults;
 	public DescribeCloudAssistantStatusRequest() {
 		super("Ecs", "2014-05-26", "DescribeCloudAssistantStatus", "ecs");
 		setMethod(MethodType.POST);
@@ -69,6 +73,17 @@ public class DescribeCloudAssistantStatusRequest extends RpcAcsRequest<DescribeC
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
 		}
 	}
 
@@ -138,6 +153,17 @@ public class DescribeCloudAssistantStatusRequest extends RpcAcsRequest<DescribeC
 				putQueryParameter("InstanceId." + (i + 1) , instanceIds.get(i));
 			}
 		}	
+	}
+
+	public Integer getMaxResults() {
+		return this.maxResults;
+	}
+
+	public void setMaxResults(Integer maxResults) {
+		this.maxResults = maxResults;
+		if(maxResults != null){
+			putQueryParameter("MaxResults", maxResults.toString());
+		}
 	}
 
 	@Override

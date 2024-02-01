@@ -107,6 +107,8 @@ public class DescribeAutoProvisioningGroupsResponse extends AcsResponse {
 
 		private String excessCapacityTerminationPolicy;
 
+		private String resourceGroupId;
+
 		private List<LaunchTemplateConfig> launchTemplateConfigs;
 
 		private SpotOptions spotOptions;
@@ -233,6 +235,14 @@ public class DescribeAutoProvisioningGroupsResponse extends AcsResponse {
 
 		public void setExcessCapacityTerminationPolicy(String excessCapacityTerminationPolicy) {
 			this.excessCapacityTerminationPolicy = excessCapacityTerminationPolicy;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 
 		public List<LaunchTemplateConfig> getLaunchTemplateConfigs() {

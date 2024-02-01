@@ -34,6 +34,7 @@ public class DescribeInvocationResultsResponseUnmarshaller {
 		invocation.setPageSize(_ctx.longValue("DescribeInvocationResultsResponse.Invocation.PageSize"));
 		invocation.setPageNumber(_ctx.longValue("DescribeInvocationResultsResponse.Invocation.PageNumber"));
 		invocation.setTotalCount(_ctx.longValue("DescribeInvocationResultsResponse.Invocation.TotalCount"));
+		invocation.setNextToken(_ctx.stringValue("DescribeInvocationResultsResponse.Invocation.NextToken"));
 
 		List<InvocationResult> invocationResults = new ArrayList<InvocationResult>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInvocationResultsResponse.Invocation.InvocationResults.Length"); i++) {

@@ -126,6 +126,8 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 	private Float spotPriceLimit;
 
+	private String cpuOptionsTopologyType;
+
 	private Integer storageSetPartitionNumber;
 
 	private List<Tag> tags;
@@ -768,6 +770,17 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		}
 	}
 
+	public String getCpuOptionsTopologyType() {
+		return this.cpuOptionsTopologyType;
+	}
+
+	public void setCpuOptionsTopologyType(String cpuOptionsTopologyType) {
+		this.cpuOptionsTopologyType = cpuOptionsTopologyType;
+		if(cpuOptionsTopologyType != null){
+			putQueryParameter("CpuOptions.TopologyType", cpuOptionsTopologyType);
+		}
+	}
+
 	public Integer getStorageSetPartitionNumber() {
 		return this.storageSetPartitionNumber;
 	}
@@ -1048,6 +1061,8 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".NetworkCardIndex" , networkInterfaces.get(depth1).getNetworkCardIndex());
 				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".DeleteOnRelease" , networkInterfaces.get(depth1).getDeleteOnRelease());
 				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".NetworkInterfaceId" , networkInterfaces.get(depth1).getNetworkInterfaceId());
+				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".RxQueueSize" , networkInterfaces.get(depth1).getRxQueueSize());
+				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".TxQueueSize" , networkInterfaces.get(depth1).getTxQueueSize());
 			}
 		}	
 	}
@@ -1377,6 +1392,10 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 		private String networkInterfaceId;
 
+		private Integer rxQueueSize;
+
+		private Integer txQueueSize;
+
 		public String getVSwitchId() {
 			return this.vSwitchId;
 		}
@@ -1495,6 +1514,22 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 		public void setNetworkInterfaceId(String networkInterfaceId) {
 			this.networkInterfaceId = networkInterfaceId;
+		}
+
+		public Integer getRxQueueSize() {
+			return this.rxQueueSize;
+		}
+
+		public void setRxQueueSize(Integer rxQueueSize) {
+			this.rxQueueSize = rxQueueSize;
+		}
+
+		public Integer getTxQueueSize() {
+			return this.txQueueSize;
+		}
+
+		public void setTxQueueSize(Integer txQueueSize) {
+			this.txQueueSize = txQueueSize;
 		}
 	}
 

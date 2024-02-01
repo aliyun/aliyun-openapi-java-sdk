@@ -38,6 +38,8 @@ public class DescribeInvocationsRequest extends RpcAcsRequest<DescribeInvocation
 
 	private String resourceGroupId;
 
+	private String nextToken;
+
 	private String contentEncoding;
 
 	private String repeatMode;
@@ -61,6 +63,8 @@ public class DescribeInvocationsRequest extends RpcAcsRequest<DescribeInvocation
 	private String commandType;
 
 	private String instanceId;
+
+	private Integer maxResults;
 	public DescribeInvocationsRequest() {
 		super("Ecs", "2014-05-26", "DescribeInvocations", "ecs");
 		setMethod(MethodType.POST);
@@ -133,6 +137,17 @@ public class DescribeInvocationsRequest extends RpcAcsRequest<DescribeInvocation
 		this.resourceGroupId = resourceGroupId;
 		if(resourceGroupId != null){
 			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
 		}
 	}
 
@@ -268,6 +283,17 @@ public class DescribeInvocationsRequest extends RpcAcsRequest<DescribeInvocation
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public Integer getMaxResults() {
+		return this.maxResults;
+	}
+
+	public void setMaxResults(Integer maxResults) {
+		this.maxResults = maxResults;
+		if(maxResults != null){
+			putQueryParameter("MaxResults", maxResults.toString());
 		}
 	}
 

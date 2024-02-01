@@ -70,6 +70,8 @@ public class RunCommandRequest extends RpcAcsRequest<RunCommandResponse> {
 
 	private String windowsPasswordName;
 
+	private List<ResourceTag> resourceTags;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -322,6 +324,20 @@ public class RunCommandRequest extends RpcAcsRequest<RunCommandResponse> {
 		}
 	}
 
+	public List<ResourceTag> getResourceTags() {
+		return this.resourceTags;
+	}
+
+	public void setResourceTags(List<ResourceTag> resourceTags) {
+		this.resourceTags = resourceTags;	
+		if (resourceTags != null) {
+			for (int depth1 = 0; depth1 < resourceTags.size(); depth1++) {
+				putQueryParameter("ResourceTag." + (depth1 + 1) + ".Key" , resourceTags.get(depth1).getKey());
+				putQueryParameter("ResourceTag." + (depth1 + 1) + ".Value" , resourceTags.get(depth1).getValue());
+			}
+		}	
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -367,6 +383,29 @@ public class RunCommandRequest extends RpcAcsRequest<RunCommandResponse> {
 	}
 
 	public static class Tag {
+
+		private String key;
+
+		private String value;
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+	}
+
+	public static class ResourceTag {
 
 		private String key;
 
