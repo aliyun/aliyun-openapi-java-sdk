@@ -25,7 +25,7 @@ public class StartEventStreamingResponseUnmarshaller {
 		startEventStreamingResponse.setRequestId(_ctx.stringValue("StartEventStreamingResponse.RequestId"));
 		startEventStreamingResponse.setMessage(_ctx.stringValue("StartEventStreamingResponse.Message"));
 		startEventStreamingResponse.setData(_ctx.booleanValue("StartEventStreamingResponse.Data"));
-		startEventStreamingResponse.setCode(_ctx.booleanValue("StartEventStreamingResponse.Code"));
+		startEventStreamingResponse.setCode(_ctx.stringValue("StartEventStreamingResponse.Code"));
 		startEventStreamingResponse.setSuccess(_ctx.booleanValue("StartEventStreamingResponse.Success"));
 	 
 	 	return startEventStreamingResponse;

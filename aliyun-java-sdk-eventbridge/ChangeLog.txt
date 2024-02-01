@@ -1,3 +1,6 @@
+2024-02-01 Version: 1.0.10
+- Bugfix: change response code type to string for StartEventStreaming.
+
 2024-01-25 Version: 1.0.9
 - Add source prometheus to event streaming.
 
