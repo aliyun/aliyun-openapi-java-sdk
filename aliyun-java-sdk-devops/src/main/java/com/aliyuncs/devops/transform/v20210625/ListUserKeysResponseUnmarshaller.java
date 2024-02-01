@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.devops.model.v20210625.ListUserKeysResponse;
-import com.aliyuncs.devops.model.v20210625.ListUserKeysResponse.ResultItem;
+import com.aliyuncs.devops.model.v20210625.ListUserKeysResponse.List_keys_result;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -31,19 +31,20 @@ public class ListUserKeysResponseUnmarshaller {
 		listUserKeysResponse.setErrorMessage(_ctx.stringValue("ListUserKeysResponse.errorMessage"));
 		listUserKeysResponse.setSuccess(_ctx.booleanValue("ListUserKeysResponse.success"));
 
-		List<ResultItem> result = new ArrayList<ResultItem>();
+		List<List_keys_result> result = new ArrayList<List_keys_result>();
 		for (int i = 0; i < _ctx.lengthValue("ListUserKeysResponse.result.Length"); i++) {
-			ResultItem resultItem = new ResultItem();
-			resultItem.setId(_ctx.longValue("ListUserKeysResponse.result["+ i +"].id"));
-			resultItem.setTittle(_ctx.stringValue("ListUserKeysResponse.result["+ i +"].tittle"));
-			resultItem.setPublicKey(_ctx.stringValue("ListUserKeysResponse.result["+ i +"].publicKey"));
-			resultItem.setFingerPrint(_ctx.stringValue("ListUserKeysResponse.result["+ i +"].fingerPrint"));
-			resultItem.setKeyScope(_ctx.stringValue("ListUserKeysResponse.result["+ i +"].keyScope"));
-			resultItem.setCreatedAt(_ctx.stringValue("ListUserKeysResponse.result["+ i +"].createdAt"));
-			resultItem.setExpireTime(_ctx.stringValue("ListUserKeysResponse.result["+ i +"].expireTime"));
-			resultItem.setLastUsedTime(_ctx.stringValue("ListUserKeysResponse.result["+ i +"].lastUsedTime"));
+			List_keys_result list_keys_result = new List_keys_result();
+			list_keys_result.setId(_ctx.longValue("ListUserKeysResponse.result["+ i +"].id"));
+			list_keys_result.setTittle(_ctx.stringValue("ListUserKeysResponse.result["+ i +"].tittle"));
+			list_keys_result.setTitle(_ctx.stringValue("ListUserKeysResponse.result["+ i +"].title"));
+			list_keys_result.setPublicKey(_ctx.stringValue("ListUserKeysResponse.result["+ i +"].publicKey"));
+			list_keys_result.setFingerPrint(_ctx.stringValue("ListUserKeysResponse.result["+ i +"].fingerPrint"));
+			list_keys_result.setKeyScope(_ctx.stringValue("ListUserKeysResponse.result["+ i +"].keyScope"));
+			list_keys_result.setCreatedAt(_ctx.stringValue("ListUserKeysResponse.result["+ i +"].createdAt"));
+			list_keys_result.setExpireTime(_ctx.stringValue("ListUserKeysResponse.result["+ i +"].expireTime"));
+			list_keys_result.setLastUsedTime(_ctx.stringValue("ListUserKeysResponse.result["+ i +"].lastUsedTime"));
 
-			result.add(resultItem);
+			result.add(list_keys_result);
 		}
 		listUserKeysResponse.setResult(result);
 	 

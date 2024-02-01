@@ -33,7 +33,7 @@ public class ListUserKeysResponse extends AcsResponse {
 
 	private Boolean success;
 
-	private List<ResultItem> result;
+	private List<List_keys_result> result;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -67,19 +67,21 @@ public class ListUserKeysResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public List<ResultItem> getResult() {
+	public List<List_keys_result> getResult() {
 		return this.result;
 	}
 
-	public void setResult(List<ResultItem> result) {
+	public void setResult(List<List_keys_result> result) {
 		this.result = result;
 	}
 
-	public static class ResultItem {
+	public static class List_keys_result {
 
 		private Long id;
 
 		private String tittle;
+
+		private String title;
 
 		private String publicKey;
 
@@ -107,6 +109,14 @@ public class ListUserKeysResponse extends AcsResponse {
 
 		public void setTittle(String tittle) {
 			this.tittle = tittle;
+		}
+
+		public String getTitle() {
+			return this.title;
+		}
+
+		public void setTitle(String title) {
+			this.title = title;
 		}
 
 		public String getPublicKey() {
