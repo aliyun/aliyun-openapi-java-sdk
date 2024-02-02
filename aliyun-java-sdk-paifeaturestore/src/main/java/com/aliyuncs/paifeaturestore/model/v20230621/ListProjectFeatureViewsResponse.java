@@ -61,6 +61,8 @@ public class ListProjectFeatureViewsResponse extends AcsResponse {
 
 		private String featureViewId;
 
+		private String type;
+
 		private List<FeaturesItem> features;
 
 		public String getName() {
@@ -77,6 +79,14 @@ public class ListProjectFeatureViewsResponse extends AcsResponse {
 
 		public void setFeatureViewId(String featureViewId) {
 			this.featureViewId = featureViewId;
+		}
+
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
 		}
 
 		public List<FeaturesItem> getFeatures() {

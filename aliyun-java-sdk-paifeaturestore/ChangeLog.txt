@@ -1,3 +1,7 @@
+2024-02-02 Version: 1.0.8
+- Add FG apis in ModelFeature.
+- Add type output in ListProjectFeatureViews.
+
 2024-01-29 Version: 1.0.7
 - Add FG apis in ModelFeature.
 
