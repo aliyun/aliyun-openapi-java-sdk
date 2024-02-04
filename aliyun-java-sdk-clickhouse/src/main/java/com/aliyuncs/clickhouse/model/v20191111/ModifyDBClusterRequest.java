@@ -27,6 +27,8 @@ public class ModifyDBClusterRequest extends RpcAcsRequest<ModifyDBClusterRespons
 
 	private Long resourceOwnerId;
 
+	private String dbNodeStorageType;
+
 	private String resourceOwnerAccount;
 
 	private String dBClusterId;
@@ -57,6 +59,17 @@ public class ModifyDBClusterRequest extends RpcAcsRequest<ModifyDBClusterRespons
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getDbNodeStorageType() {
+		return this.dbNodeStorageType;
+	}
+
+	public void setDbNodeStorageType(String dbNodeStorageType) {
+		this.dbNodeStorageType = dbNodeStorageType;
+		if(dbNodeStorageType != null){
+			putQueryParameter("DbNodeStorageType", dbNodeStorageType);
 		}
 	}
 
