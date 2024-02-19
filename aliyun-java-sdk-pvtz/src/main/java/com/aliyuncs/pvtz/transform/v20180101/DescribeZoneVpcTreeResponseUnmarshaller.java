@@ -43,12 +43,17 @@ public class DescribeZoneVpcTreeResponseUnmarshaller {
 			zone.setZoneTag(_ctx.stringValue("DescribeZoneVpcTreeResponse.Zones["+ i +"].ZoneTag"));
 			zone.setIsPtr(_ctx.booleanValue("DescribeZoneVpcTreeResponse.Zones["+ i +"].IsPtr"));
 			zone.setCreateTimestamp(_ctx.longValue("DescribeZoneVpcTreeResponse.Zones["+ i +"].CreateTimestamp"));
+			zone.setDnsGroup(_ctx.stringValue("DescribeZoneVpcTreeResponse.Zones["+ i +"].DnsGroup"));
+			zone.setCreator(_ctx.stringValue("DescribeZoneVpcTreeResponse.Zones["+ i +"].Creator"));
+			zone.setCreatorType(_ctx.stringValue("DescribeZoneVpcTreeResponse.Zones["+ i +"].CreatorType"));
+			zone.setDnsGroupChanging(_ctx.booleanValue("DescribeZoneVpcTreeResponse.Zones["+ i +"].DnsGroupChanging"));
 
 			List<Vpc> vpcs = new ArrayList<Vpc>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeZoneVpcTreeResponse.Zones["+ i +"].Vpcs.Length"); j++) {
 				Vpc vpc = new Vpc();
 				vpc.setVpcName(_ctx.stringValue("DescribeZoneVpcTreeResponse.Zones["+ i +"].Vpcs["+ j +"].VpcName"));
 				vpc.setVpcId(_ctx.stringValue("DescribeZoneVpcTreeResponse.Zones["+ i +"].Vpcs["+ j +"].VpcId"));
+				vpc.setVpcType(_ctx.stringValue("DescribeZoneVpcTreeResponse.Zones["+ i +"].Vpcs["+ j +"].VpcType"));
 				vpc.setRegionName(_ctx.stringValue("DescribeZoneVpcTreeResponse.Zones["+ i +"].Vpcs["+ j +"].RegionName"));
 				vpc.setRegionId(_ctx.stringValue("DescribeZoneVpcTreeResponse.Zones["+ i +"].Vpcs["+ j +"].RegionId"));
 

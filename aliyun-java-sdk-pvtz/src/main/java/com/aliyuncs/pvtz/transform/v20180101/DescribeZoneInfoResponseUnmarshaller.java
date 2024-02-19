@@ -41,12 +41,17 @@ public class DescribeZoneInfoResponseUnmarshaller {
 		describeZoneInfoResponse.setRecordCount(_ctx.integerValue("DescribeZoneInfoResponse.RecordCount"));
 		describeZoneInfoResponse.setCreateTimestamp(_ctx.longValue("DescribeZoneInfoResponse.CreateTimestamp"));
 		describeZoneInfoResponse.setIsPtr(_ctx.booleanValue("DescribeZoneInfoResponse.IsPtr"));
+		describeZoneInfoResponse.setDnsGroup(_ctx.stringValue("DescribeZoneInfoResponse.DnsGroup"));
+		describeZoneInfoResponse.setCreator(_ctx.stringValue("DescribeZoneInfoResponse.Creator"));
+		describeZoneInfoResponse.setCreatorType(_ctx.stringValue("DescribeZoneInfoResponse.CreatorType"));
+		describeZoneInfoResponse.setDnsGroupChanging(_ctx.booleanValue("DescribeZoneInfoResponse.DnsGroupChanging"));
 
 		List<Vpc> bindVpcs = new ArrayList<Vpc>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeZoneInfoResponse.BindVpcs.Length"); i++) {
 			Vpc vpc = new Vpc();
 			vpc.setVpcName(_ctx.stringValue("DescribeZoneInfoResponse.BindVpcs["+ i +"].VpcName"));
 			vpc.setVpcId(_ctx.stringValue("DescribeZoneInfoResponse.BindVpcs["+ i +"].VpcId"));
+			vpc.setVpcType(_ctx.stringValue("DescribeZoneInfoResponse.BindVpcs["+ i +"].VpcType"));
 			vpc.setRegionName(_ctx.stringValue("DescribeZoneInfoResponse.BindVpcs["+ i +"].RegionName"));
 			vpc.setVpcUserId(_ctx.longValue("DescribeZoneInfoResponse.BindVpcs["+ i +"].VpcUserId"));
 			vpc.setRegionId(_ctx.stringValue("DescribeZoneInfoResponse.BindVpcs["+ i +"].RegionId"));

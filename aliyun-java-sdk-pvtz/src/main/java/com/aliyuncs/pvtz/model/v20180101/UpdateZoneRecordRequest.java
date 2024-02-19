@@ -27,7 +27,17 @@ public class UpdateZoneRecordRequest extends RpcAcsRequest<UpdateZoneRecordRespo
 
 	private String rr;
 
+	private String clientToken;
+
+	private String line;
+
 	private String type;
+
+	private String lang;
+
+	private String value;
+
+	private Integer weight;
 
 	private Integer priority;
 
@@ -36,10 +46,6 @@ public class UpdateZoneRecordRequest extends RpcAcsRequest<UpdateZoneRecordRespo
 	private Long recordId;
 
 	private String userClientIp;
-
-	private String lang;
-
-	private String value;
 	public UpdateZoneRecordRequest() {
 		super("pvtz", "2018-01-01", "UpdateZoneRecord", "pvtz");
 		setMethod(MethodType.POST);
@@ -60,6 +66,28 @@ public class UpdateZoneRecordRequest extends RpcAcsRequest<UpdateZoneRecordRespo
 		}
 	}
 
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getLine() {
+		return this.line;
+	}
+
+	public void setLine(String line) {
+		this.line = line;
+		if(line != null){
+			putQueryParameter("Line", line);
+		}
+	}
+
 	public String getType() {
 		return this.type;
 	}
@@ -68,6 +96,39 @@ public class UpdateZoneRecordRequest extends RpcAcsRequest<UpdateZoneRecordRespo
 		this.type = type;
 		if(type != null){
 			putQueryParameter("Type", type);
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public String getValue() {
+		return this.value;
+	}
+
+	public void setValue(String value) {
+		this.value = value;
+		if(value != null){
+			putQueryParameter("Value", value);
+		}
+	}
+
+	public Integer getWeight() {
+		return this.weight;
+	}
+
+	public void setWeight(Integer weight) {
+		this.weight = weight;
+		if(weight != null){
+			putQueryParameter("Weight", weight.toString());
 		}
 	}
 
@@ -112,28 +173,6 @@ public class UpdateZoneRecordRequest extends RpcAcsRequest<UpdateZoneRecordRespo
 		this.userClientIp = userClientIp;
 		if(userClientIp != null){
 			putQueryParameter("UserClientIp", userClientIp);
-		}
-	}
-
-	public String getLang() {
-		return this.lang;
-	}
-
-	public void setLang(String lang) {
-		this.lang = lang;
-		if(lang != null){
-			putQueryParameter("Lang", lang);
-		}
-	}
-
-	public String getValue() {
-		return this.value;
-	}
-
-	public void setValue(String value) {
-		this.value = value;
-		if(value != null){
-			putQueryParameter("Value", value);
 		}
 	}
 

@@ -55,6 +55,14 @@ public class DescribeZoneInfoResponse extends AcsResponse {
 
 	private Boolean isPtr;
 
+	private String dnsGroup;
+
+	private String creator;
+
+	private String creatorType;
+
+	private Boolean dnsGroupChanging;
+
 	private List<Vpc> bindVpcs;
 
 	public String getRequestId() {
@@ -177,6 +185,38 @@ public class DescribeZoneInfoResponse extends AcsResponse {
 		this.isPtr = isPtr;
 	}
 
+	public String getDnsGroup() {
+		return this.dnsGroup;
+	}
+
+	public void setDnsGroup(String dnsGroup) {
+		this.dnsGroup = dnsGroup;
+	}
+
+	public String getCreator() {
+		return this.creator;
+	}
+
+	public void setCreator(String creator) {
+		this.creator = creator;
+	}
+
+	public String getCreatorType() {
+		return this.creatorType;
+	}
+
+	public void setCreatorType(String creatorType) {
+		this.creatorType = creatorType;
+	}
+
+	public Boolean getDnsGroupChanging() {
+		return this.dnsGroupChanging;
+	}
+
+	public void setDnsGroupChanging(Boolean dnsGroupChanging) {
+		this.dnsGroupChanging = dnsGroupChanging;
+	}
+
 	public List<Vpc> getBindVpcs() {
 		return this.bindVpcs;
 	}
@@ -190,6 +230,8 @@ public class DescribeZoneInfoResponse extends AcsResponse {
 		private String vpcName;
 
 		private String vpcId;
+
+		private String vpcType;
 
 		private String regionName;
 
@@ -211,6 +253,14 @@ public class DescribeZoneInfoResponse extends AcsResponse {
 
 		public void setVpcId(String vpcId) {
 			this.vpcId = vpcId;
+		}
+
+		public String getVpcType() {
+			return this.vpcType;
+		}
+
+		public void setVpcType(String vpcType) {
+			this.vpcType = vpcType;
 		}
 
 		public String getRegionName() {

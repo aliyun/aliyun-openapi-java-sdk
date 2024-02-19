@@ -45,6 +45,7 @@ public class DescribeStatisticSummaryResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeStatisticSummaryResponse.VpcRequestTops.Length"); i++) {
 			VpcRequestTop vpcRequestTop = new VpcRequestTop();
 			vpcRequestTop.setVpcId(_ctx.stringValue("DescribeStatisticSummaryResponse.VpcRequestTops["+ i +"].VpcId"));
+			vpcRequestTop.setVpcType(_ctx.stringValue("DescribeStatisticSummaryResponse.VpcRequestTops["+ i +"].VpcType"));
 			vpcRequestTop.setRegionName(_ctx.stringValue("DescribeStatisticSummaryResponse.VpcRequestTops["+ i +"].RegionName"));
 			vpcRequestTop.setTunnelId(_ctx.stringValue("DescribeStatisticSummaryResponse.VpcRequestTops["+ i +"].TunnelId"));
 			vpcRequestTop.setRequestCount(_ctx.longValue("DescribeStatisticSummaryResponse.VpcRequestTops["+ i +"].RequestCount"));

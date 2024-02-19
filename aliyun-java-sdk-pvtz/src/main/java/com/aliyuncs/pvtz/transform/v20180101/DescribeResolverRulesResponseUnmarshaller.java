@@ -63,8 +63,10 @@ public class DescribeResolverRulesResponseUnmarshaller {
 				Vpc vpc = new Vpc();
 				vpc.setVpcName(_ctx.stringValue("DescribeResolverRulesResponse.Rules["+ i +"].BindVpcs["+ j +"].VpcName"));
 				vpc.setVpcId(_ctx.stringValue("DescribeResolverRulesResponse.Rules["+ i +"].BindVpcs["+ j +"].VpcId"));
+				vpc.setVpcType(_ctx.stringValue("DescribeResolverRulesResponse.Rules["+ i +"].BindVpcs["+ j +"].VpcType"));
 				vpc.setRegionName(_ctx.stringValue("DescribeResolverRulesResponse.Rules["+ i +"].BindVpcs["+ j +"].RegionName"));
 				vpc.setRegionId(_ctx.stringValue("DescribeResolverRulesResponse.Rules["+ i +"].BindVpcs["+ j +"].RegionId"));
+				vpc.setVpcUserId(_ctx.stringValue("DescribeResolverRulesResponse.Rules["+ i +"].BindVpcs["+ j +"].VpcUserId"));
 
 				bindVpcs.add(vpc);
 			}

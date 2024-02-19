@@ -27,9 +27,19 @@ public class AddZoneRecordRequest extends RpcAcsRequest<AddZoneRecordResponse> {
 
 	private String rr;
 
+	private String clientToken;
+
+	private String line;
+
 	private String remark;
 
 	private String type;
+
+	private String lang;
+
+	private String value;
+
+	private Integer weight;
 
 	private Integer priority;
 
@@ -38,10 +48,6 @@ public class AddZoneRecordRequest extends RpcAcsRequest<AddZoneRecordResponse> {
 	private String userClientIp;
 
 	private String zoneId;
-
-	private String lang;
-
-	private String value;
 	public AddZoneRecordRequest() {
 		super("pvtz", "2018-01-01", "AddZoneRecord", "pvtz");
 		setMethod(MethodType.POST);
@@ -59,6 +65,28 @@ public class AddZoneRecordRequest extends RpcAcsRequest<AddZoneRecordResponse> {
 		this.rr = rr;
 		if(rr != null){
 			putQueryParameter("Rr", rr);
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getLine() {
+		return this.line;
+	}
+
+	public void setLine(String line) {
+		this.line = line;
+		if(line != null){
+			putQueryParameter("Line", line);
 		}
 	}
 
@@ -81,6 +109,39 @@ public class AddZoneRecordRequest extends RpcAcsRequest<AddZoneRecordResponse> {
 		this.type = type;
 		if(type != null){
 			putQueryParameter("Type", type);
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public String getValue() {
+		return this.value;
+	}
+
+	public void setValue(String value) {
+		this.value = value;
+		if(value != null){
+			putQueryParameter("Value", value);
+		}
+	}
+
+	public Integer getWeight() {
+		return this.weight;
+	}
+
+	public void setWeight(Integer weight) {
+		this.weight = weight;
+		if(weight != null){
+			putQueryParameter("Weight", weight.toString());
 		}
 	}
 
@@ -125,28 +186,6 @@ public class AddZoneRecordRequest extends RpcAcsRequest<AddZoneRecordResponse> {
 		this.zoneId = zoneId;
 		if(zoneId != null){
 			putQueryParameter("ZoneId", zoneId);
-		}
-	}
-
-	public String getLang() {
-		return this.lang;
-	}
-
-	public void setLang(String lang) {
-		this.lang = lang;
-		if(lang != null){
-			putQueryParameter("Lang", lang);
-		}
-	}
-
-	public String getValue() {
-		return this.value;
-	}
-
-	public void setValue(String value) {
-		this.value = value;
-		if(value != null){
-			putQueryParameter("Value", value);
 		}
 	}
 

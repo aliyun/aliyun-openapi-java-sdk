@@ -105,6 +105,12 @@ public class DescribeChangeLogsResponse extends AcsResponse {
 
 		private Long id;
 
+		private String creatorId;
+
+		private String creatorType;
+
+		private String creatorSubType;
+
 		public Long getOperTimestamp() {
 			return this.operTimestamp;
 		}
@@ -175,6 +181,30 @@ public class DescribeChangeLogsResponse extends AcsResponse {
 
 		public void setId(Long id) {
 			this.id = id;
+		}
+
+		public String getCreatorId() {
+			return this.creatorId;
+		}
+
+		public void setCreatorId(String creatorId) {
+			this.creatorId = creatorId;
+		}
+
+		public String getCreatorType() {
+			return this.creatorType;
+		}
+
+		public void setCreatorType(String creatorType) {
+			this.creatorType = creatorType;
+		}
+
+		public String getCreatorSubType() {
+			return this.creatorSubType;
+		}
+
+		public void setCreatorSubType(String creatorSubType) {
+			this.creatorSubType = creatorSubType;
 		}
 	}
 

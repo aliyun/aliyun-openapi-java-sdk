@@ -44,6 +44,9 @@ public class DescribeChangeLogsResponseUnmarshaller {
 			changeLog.setContent(_ctx.stringValue("DescribeChangeLogsResponse.ChangeLogs["+ i +"].Content"));
 			changeLog.setEntityName(_ctx.stringValue("DescribeChangeLogsResponse.ChangeLogs["+ i +"].EntityName"));
 			changeLog.setId(_ctx.longValue("DescribeChangeLogsResponse.ChangeLogs["+ i +"].Id"));
+			changeLog.setCreatorId(_ctx.stringValue("DescribeChangeLogsResponse.ChangeLogs["+ i +"].CreatorId"));
+			changeLog.setCreatorType(_ctx.stringValue("DescribeChangeLogsResponse.ChangeLogs["+ i +"].CreatorType"));
+			changeLog.setCreatorSubType(_ctx.stringValue("DescribeChangeLogsResponse.ChangeLogs["+ i +"].CreatorSubType"));
 
 			changeLogs.add(changeLog);
 		}

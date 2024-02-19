@@ -38,6 +38,8 @@ public class DescribeUserVpcAuthorizationsResponseUnmarshaller {
 			user.setAuthType(_ctx.stringValue("DescribeUserVpcAuthorizationsResponse.Users["+ i +"].AuthType"));
 			user.setAuthorizedUserId(_ctx.longValue("DescribeUserVpcAuthorizationsResponse.Users["+ i +"].AuthorizedUserId"));
 			user.setAuthorizedAliyunId(_ctx.stringValue("DescribeUserVpcAuthorizationsResponse.Users["+ i +"].AuthorizedAliyunId"));
+			user.setCreateTime(_ctx.stringValue("DescribeUserVpcAuthorizationsResponse.Users["+ i +"].CreateTime"));
+			user.setCreateTimestamp(_ctx.longValue("DescribeUserVpcAuthorizationsResponse.Users["+ i +"].CreateTimestamp"));
 
 			users.add(user);
 		}

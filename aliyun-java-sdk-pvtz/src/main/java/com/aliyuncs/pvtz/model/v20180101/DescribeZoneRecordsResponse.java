@@ -105,6 +105,20 @@ public class DescribeZoneRecordsResponse extends AcsResponse {
 
 		private String regionId;
 
+		private String line;
+
+		private Integer weight;
+
+		private String createTime;
+
+		private String updateTime;
+
+		private Long createTimestamp;
+
+		private Long updateTimestamp;
+
+		private String zoneId;
+
 		public String getStatus() {
 			return this.status;
 		}
@@ -175,6 +189,62 @@ public class DescribeZoneRecordsResponse extends AcsResponse {
 
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
+		}
+
+		public String getLine() {
+			return this.line;
+		}
+
+		public void setLine(String line) {
+			this.line = line;
+		}
+
+		public Integer getWeight() {
+			return this.weight;
+		}
+
+		public void setWeight(Integer weight) {
+			this.weight = weight;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getUpdateTime() {
+			return this.updateTime;
+		}
+
+		public void setUpdateTime(String updateTime) {
+			this.updateTime = updateTime;
+		}
+
+		public Long getCreateTimestamp() {
+			return this.createTimestamp;
+		}
+
+		public void setCreateTimestamp(Long createTimestamp) {
+			this.createTimestamp = createTimestamp;
+		}
+
+		public Long getUpdateTimestamp() {
+			return this.updateTimestamp;
+		}
+
+		public void setUpdateTimestamp(Long updateTimestamp) {
+			this.updateTimestamp = updateTimestamp;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
 		}
 	}
 

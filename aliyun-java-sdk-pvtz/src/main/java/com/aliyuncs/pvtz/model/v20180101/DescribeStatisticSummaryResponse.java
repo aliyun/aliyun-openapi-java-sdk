@@ -102,6 +102,8 @@ public class DescribeStatisticSummaryResponse extends AcsResponse {
 
 		private String vpcId;
 
+		private String vpcType;
+
 		private String regionName;
 
 		private String tunnelId;
@@ -116,6 +118,14 @@ public class DescribeStatisticSummaryResponse extends AcsResponse {
 
 		public void setVpcId(String vpcId) {
 			this.vpcId = vpcId;
+		}
+
+		public String getVpcType() {
+			return this.vpcType;
+		}
+
+		public void setVpcType(String vpcType) {
+			this.vpcType = vpcType;
 		}
 
 		public String getRegionName() {

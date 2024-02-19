@@ -184,9 +184,13 @@ public class DescribeResolverRuleResponse extends AcsResponse {
 
 		private String vpcName;
 
+		private String vpcType;
+
 		private String regionName;
 
 		private String regionId;
+
+		private String vpcUserId;
 
 		public String getVpcId() {
 			return this.vpcId;
@@ -204,6 +208,14 @@ public class DescribeResolverRuleResponse extends AcsResponse {
 			this.vpcName = vpcName;
 		}
 
+		public String getVpcType() {
+			return this.vpcType;
+		}
+
+		public void setVpcType(String vpcType) {
+			this.vpcType = vpcType;
+		}
+
 		public String getRegionName() {
 			return this.regionName;
 		}
@@ -218,6 +230,14 @@ public class DescribeResolverRuleResponse extends AcsResponse {
 
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
+		}
+
+		public String getVpcUserId() {
+			return this.vpcUserId;
+		}
+
+		public void setVpcUserId(String vpcUserId) {
+			this.vpcUserId = vpcUserId;
 		}
 	}
 

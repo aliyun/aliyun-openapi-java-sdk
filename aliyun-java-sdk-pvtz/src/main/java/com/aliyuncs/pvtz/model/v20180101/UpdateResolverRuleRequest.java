@@ -30,9 +30,9 @@ public class UpdateResolverRuleRequest extends RpcAcsRequest<UpdateResolverRuleR
 
 	private String name;
 
-	private String lang;
-
 	private String ruleId;
+
+	private String lang;
 	public UpdateResolverRuleRequest() {
 		super("pvtz", "2018-01-01", "UpdateResolverRule", "pvtz");
 		setMethod(MethodType.POST);
@@ -67,17 +67,6 @@ public class UpdateResolverRuleRequest extends RpcAcsRequest<UpdateResolverRuleR
 		}
 	}
 
-	public String getLang() {
-		return this.lang;
-	}
-
-	public void setLang(String lang) {
-		this.lang = lang;
-		if(lang != null){
-			putQueryParameter("Lang", lang);
-		}
-	}
-
 	public String getRuleId() {
 		return this.ruleId;
 	}
@@ -86,6 +75,17 @@ public class UpdateResolverRuleRequest extends RpcAcsRequest<UpdateResolverRuleR
 		this.ruleId = ruleId;
 		if(ruleId != null){
 			putQueryParameter("RuleId", ruleId);
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
 		}
 	}
 

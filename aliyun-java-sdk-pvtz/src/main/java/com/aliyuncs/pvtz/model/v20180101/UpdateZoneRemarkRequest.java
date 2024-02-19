@@ -25,6 +25,8 @@ import com.aliyuncs.pvtz.Endpoint;
 public class UpdateZoneRemarkRequest extends RpcAcsRequest<UpdateZoneRemarkResponse> {
 	   
 
+	private String clientToken;
+
 	private String remark;
 
 	private String userClientIp;
@@ -39,6 +41,17 @@ public class UpdateZoneRemarkRequest extends RpcAcsRequest<UpdateZoneRemarkRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
 	}
 
 	public String getRemark() {

@@ -29,17 +29,17 @@ public class DescribeZoneRecordsRequest extends RpcAcsRequest<DescribeZoneRecord
 
 	private Integer pageSize;
 
-	private String userClientIp;
-
-	private String zoneId;
-
-	private String searchMode;
-
 	private String tag;
 
 	private String lang;
 
 	private String keyword;
+
+	private String userClientIp;
+
+	private String zoneId;
+
+	private String searchMode;
 	public DescribeZoneRecordsRequest() {
 		super("pvtz", "2018-01-01", "DescribeZoneRecords", "pvtz");
 		setMethod(MethodType.POST);
@@ -68,39 +68,6 @@ public class DescribeZoneRecordsRequest extends RpcAcsRequest<DescribeZoneRecord
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getUserClientIp() {
-		return this.userClientIp;
-	}
-
-	public void setUserClientIp(String userClientIp) {
-		this.userClientIp = userClientIp;
-		if(userClientIp != null){
-			putQueryParameter("UserClientIp", userClientIp);
-		}
-	}
-
-	public String getZoneId() {
-		return this.zoneId;
-	}
-
-	public void setZoneId(String zoneId) {
-		this.zoneId = zoneId;
-		if(zoneId != null){
-			putQueryParameter("ZoneId", zoneId);
-		}
-	}
-
-	public String getSearchMode() {
-		return this.searchMode;
-	}
-
-	public void setSearchMode(String searchMode) {
-		this.searchMode = searchMode;
-		if(searchMode != null){
-			putQueryParameter("SearchMode", searchMode);
 		}
 	}
 
@@ -134,6 +101,39 @@ public class DescribeZoneRecordsRequest extends RpcAcsRequest<DescribeZoneRecord
 		this.keyword = keyword;
 		if(keyword != null){
 			putQueryParameter("Keyword", keyword);
+		}
+	}
+
+	public String getUserClientIp() {
+		return this.userClientIp;
+	}
+
+	public void setUserClientIp(String userClientIp) {
+		this.userClientIp = userClientIp;
+		if(userClientIp != null){
+			putQueryParameter("UserClientIp", userClientIp);
+		}
+	}
+
+	public String getZoneId() {
+		return this.zoneId;
+	}
+
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+		if(zoneId != null){
+			putQueryParameter("ZoneId", zoneId);
+		}
+	}
+
+	public String getSearchMode() {
+		return this.searchMode;
+	}
+
+	public void setSearchMode(String searchMode) {
+		this.searchMode = searchMode;
+		if(searchMode != null){
+			putQueryParameter("SearchMode", searchMode);
 		}
 	}
 

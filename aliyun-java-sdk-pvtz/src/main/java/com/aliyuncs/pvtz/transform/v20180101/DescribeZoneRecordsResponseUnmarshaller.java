@@ -44,6 +44,13 @@ public class DescribeZoneRecordsResponseUnmarshaller {
 			record.setRr(_ctx.stringValue("DescribeZoneRecordsResponse.Records["+ i +"].Rr"));
 			record.setPriority(_ctx.integerValue("DescribeZoneRecordsResponse.Records["+ i +"].Priority"));
 			record.setRegionId(_ctx.stringValue("DescribeZoneRecordsResponse.Records["+ i +"].RegionId"));
+			record.setLine(_ctx.stringValue("DescribeZoneRecordsResponse.Records["+ i +"].Line"));
+			record.setWeight(_ctx.integerValue("DescribeZoneRecordsResponse.Records["+ i +"].Weight"));
+			record.setCreateTime(_ctx.stringValue("DescribeZoneRecordsResponse.Records["+ i +"].CreateTime"));
+			record.setUpdateTime(_ctx.stringValue("DescribeZoneRecordsResponse.Records["+ i +"].UpdateTime"));
+			record.setCreateTimestamp(_ctx.longValue("DescribeZoneRecordsResponse.Records["+ i +"].CreateTimestamp"));
+			record.setUpdateTimestamp(_ctx.longValue("DescribeZoneRecordsResponse.Records["+ i +"].UpdateTimestamp"));
+			record.setZoneId(_ctx.stringValue("DescribeZoneRecordsResponse.Records["+ i +"].ZoneId"));
 
 			records.add(record);
 		}

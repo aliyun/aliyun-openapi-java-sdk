@@ -113,6 +113,14 @@ public class DescribeZonesResponse extends AcsResponse {
 
 		private Long createTimestamp;
 
+		private String dnsGroup;
+
+		private String creator;
+
+		private String creatorSubType;
+
+		private Boolean dnsGroupChanging;
+
 		private List<ResourceTag> resourceTags;
 
 		public String getUpdateTime() {
@@ -217,6 +225,38 @@ public class DescribeZonesResponse extends AcsResponse {
 
 		public void setCreateTimestamp(Long createTimestamp) {
 			this.createTimestamp = createTimestamp;
+		}
+
+		public String getDnsGroup() {
+			return this.dnsGroup;
+		}
+
+		public void setDnsGroup(String dnsGroup) {
+			this.dnsGroup = dnsGroup;
+		}
+
+		public String getCreator() {
+			return this.creator;
+		}
+
+		public void setCreator(String creator) {
+			this.creator = creator;
+		}
+
+		public String getCreatorSubType() {
+			return this.creatorSubType;
+		}
+
+		public void setCreatorSubType(String creatorSubType) {
+			this.creatorSubType = creatorSubType;
+		}
+
+		public Boolean getDnsGroupChanging() {
+			return this.dnsGroupChanging;
+		}
+
+		public void setDnsGroupChanging(Boolean dnsGroupChanging) {
+			this.dnsGroupChanging = dnsGroupChanging;
 		}
 
 		public List<ResourceTag> getResourceTags() {

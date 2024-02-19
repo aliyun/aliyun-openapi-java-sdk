@@ -49,6 +49,10 @@ public class DescribeZonesResponseUnmarshaller {
 			zone.setZoneTag(_ctx.stringValue("DescribeZonesResponse.Zones["+ i +"].ZoneTag"));
 			zone.setIsPtr(_ctx.booleanValue("DescribeZonesResponse.Zones["+ i +"].IsPtr"));
 			zone.setCreateTimestamp(_ctx.longValue("DescribeZonesResponse.Zones["+ i +"].CreateTimestamp"));
+			zone.setDnsGroup(_ctx.stringValue("DescribeZonesResponse.Zones["+ i +"].DnsGroup"));
+			zone.setCreator(_ctx.stringValue("DescribeZonesResponse.Zones["+ i +"].Creator"));
+			zone.setCreatorSubType(_ctx.stringValue("DescribeZonesResponse.Zones["+ i +"].CreatorSubType"));
+			zone.setDnsGroupChanging(_ctx.booleanValue("DescribeZonesResponse.Zones["+ i +"].DnsGroupChanging"));
 
 			List<ResourceTag> resourceTags = new ArrayList<ResourceTag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeZonesResponse.Zones["+ i +"].ResourceTags.Length"); j++) {

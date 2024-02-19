@@ -48,6 +48,7 @@ public class BindResolverRuleVpcRequest extends RpcAcsRequest<BindResolverRuleVp
 		this.vpcs = vpcs;	
 		if (vpcs != null) {
 			for (int depth1 = 0; depth1 < vpcs.size(); depth1++) {
+				putQueryParameter("Vpc." + (depth1 + 1) + ".VpcType" , vpcs.get(depth1).getVpcType());
 				putQueryParameter("Vpc." + (depth1 + 1) + ".RegionId" , vpcs.get(depth1).getRegionId());
 				putQueryParameter("Vpc." + (depth1 + 1) + ".VpcId" , vpcs.get(depth1).getVpcId());
 			}
@@ -78,9 +79,19 @@ public class BindResolverRuleVpcRequest extends RpcAcsRequest<BindResolverRuleVp
 
 	public static class Vpc {
 
+		private String vpcType;
+
 		private String regionId;
 
 		private String vpcId;
+
+		public String getVpcType() {
+			return this.vpcType;
+		}
+
+		public void setVpcType(String vpcType) {
+			this.vpcType = vpcType;
+		}
 
 		public String getRegionId() {
 			return this.regionId;

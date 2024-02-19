@@ -27,6 +27,8 @@ public class MoveResourceGroupRequest extends RpcAcsRequest<MoveResourceGroupRes
 
 	private String resourceId;
 
+	private String clientToken;
+
 	private String newResourceGroupId;
 
 	private String lang;
@@ -47,6 +49,17 @@ public class MoveResourceGroupRequest extends RpcAcsRequest<MoveResourceGroupRes
 		this.resourceId = resourceId;
 		if(resourceId != null){
 			putQueryParameter("ResourceId", resourceId);
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 

@@ -93,6 +93,10 @@ public class DescribeUserVpcAuthorizationsResponse extends AcsResponse {
 
 		private String authorizedAliyunId;
 
+		private String createTime;
+
+		private Long createTimestamp;
+
 		public String getAuthType() {
 			return this.authType;
 		}
@@ -115,6 +119,22 @@ public class DescribeUserVpcAuthorizationsResponse extends AcsResponse {
 
 		public void setAuthorizedAliyunId(String authorizedAliyunId) {
 			this.authorizedAliyunId = authorizedAliyunId;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public Long getCreateTimestamp() {
+			return this.createTimestamp;
+		}
+
+		public void setCreateTimestamp(Long createTimestamp) {
+			this.createTimestamp = createTimestamp;
 		}
 	}
 

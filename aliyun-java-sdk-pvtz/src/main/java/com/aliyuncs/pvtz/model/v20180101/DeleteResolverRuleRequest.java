@@ -25,9 +25,9 @@ import com.aliyuncs.pvtz.Endpoint;
 public class DeleteResolverRuleRequest extends RpcAcsRequest<DeleteResolverRuleResponse> {
 	   
 
-	private String lang;
-
 	private String ruleId;
+
+	private String lang;
 	public DeleteResolverRuleRequest() {
 		super("pvtz", "2018-01-01", "DeleteResolverRule", "pvtz");
 		setMethod(MethodType.POST);
@@ -35,17 +35,6 @@ public class DeleteResolverRuleRequest extends RpcAcsRequest<DeleteResolverRuleR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getLang() {
-		return this.lang;
-	}
-
-	public void setLang(String lang) {
-		this.lang = lang;
-		if(lang != null){
-			putQueryParameter("Lang", lang);
-		}
 	}
 
 	public String getRuleId() {
@@ -56,6 +45,17 @@ public class DeleteResolverRuleRequest extends RpcAcsRequest<DeleteResolverRuleR
 		this.ruleId = ruleId;
 		if(ruleId != null){
 			putQueryParameter("RuleId", ruleId);
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
 		}
 	}
 
