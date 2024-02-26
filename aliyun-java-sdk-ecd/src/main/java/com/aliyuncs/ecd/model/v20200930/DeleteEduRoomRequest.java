@@ -27,7 +27,7 @@ public class DeleteEduRoomRequest extends RpcAcsRequest<DeleteEduRoomResponse> {
 
 	private String eduRoomId;
 	public DeleteEduRoomRequest() {
-		super("ecd", "2020-09-30", "DeleteEduRoom");
+		super("ecd", "2020-09-30", "DeleteEduRoom", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

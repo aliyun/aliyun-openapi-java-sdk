@@ -33,7 +33,7 @@ public class DescribeCloudDriveUsersRequest extends RpcAcsRequest<DescribeCloudD
 
 	private String endUserId;
 	public DescribeCloudDriveUsersRequest() {
-		super("ecd", "2020-09-30", "DescribeCloudDriveUsers");
+		super("ecd", "2020-09-30", "DescribeCloudDriveUsers", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

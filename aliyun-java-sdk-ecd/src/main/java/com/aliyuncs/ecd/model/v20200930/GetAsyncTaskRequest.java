@@ -29,7 +29,7 @@ public class GetAsyncTaskRequest extends RpcAcsRequest<GetAsyncTaskResponse> {
 
 	private String asyncTaskId;
 	public GetAsyncTaskRequest() {
-		super("ecd", "2020-09-30", "GetAsyncTask");
+		super("ecd", "2020-09-30", "GetAsyncTask", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -33,7 +33,7 @@ public class ConfigADConnectorUserRequest extends RpcAcsRequest<ConfigADConnecto
 
 	private String oUName;
 	public ConfigADConnectorUserRequest() {
-		super("ecd", "2020-09-30", "ConfigADConnectorUser");
+		super("ecd", "2020-09-30", "ConfigADConnectorUser", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

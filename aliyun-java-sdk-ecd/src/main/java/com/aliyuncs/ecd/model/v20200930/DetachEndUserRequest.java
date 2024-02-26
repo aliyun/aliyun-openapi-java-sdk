@@ -37,7 +37,7 @@ public class DetachEndUserRequest extends RpcAcsRequest<DetachEndUserResponse> {
 
 	private String region;
 	public DetachEndUserRequest() {
-		super("ecd", "2020-09-30", "DetachEndUser");
+		super("ecd", "2020-09-30", "DetachEndUser", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

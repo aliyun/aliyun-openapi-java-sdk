@@ -33,7 +33,7 @@ public class ListUserAdOrganizationUnitsRequest extends RpcAcsRequest<ListUserAd
 
 	private Integer maxResults;
 	public ListUserAdOrganizationUnitsRequest() {
-		super("ecd", "2020-09-30", "ListUserAdOrganizationUnits");
+		super("ecd", "2020-09-30", "ListUserAdOrganizationUnits", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -35,7 +35,7 @@ public class ModifyDiskSpecRequest extends RpcAcsRequest<ModifyDiskSpecResponse>
 
 	private String desktopId;
 	public ModifyDiskSpecRequest() {
-		super("ecd", "2020-09-30", "ModifyDiskSpec");
+		super("ecd", "2020-09-30", "ModifyDiskSpec", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

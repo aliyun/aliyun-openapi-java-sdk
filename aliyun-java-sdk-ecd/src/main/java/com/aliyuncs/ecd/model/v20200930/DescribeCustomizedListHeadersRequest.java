@@ -29,7 +29,7 @@ public class DescribeCustomizedListHeadersRequest extends RpcAcsRequest<Describe
 
 	private String listType;
 	public DescribeCustomizedListHeadersRequest() {
-		super("ecd", "2020-09-30", "DescribeCustomizedListHeaders");
+		super("ecd", "2020-09-30", "DescribeCustomizedListHeaders", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

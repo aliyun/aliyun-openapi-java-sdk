@@ -48,7 +48,7 @@ public class ExportClientEventsRequest extends RpcAcsRequest<ExportClientEventsR
 
 	private String langType;
 	public ExportClientEventsRequest() {
-		super("ecd", "2020-09-30", "ExportClientEvents");
+		super("ecd", "2020-09-30", "ExportClientEvents", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

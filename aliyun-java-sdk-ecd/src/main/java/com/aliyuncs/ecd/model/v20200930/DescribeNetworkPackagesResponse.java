@@ -89,6 +89,8 @@ public class DescribeNetworkPackagesResponse extends AcsResponse {
 
 		private String ngwVersion;
 
+		private String businessStatus;
+
 		private List<String> eipAddresses;
 
 		public String getNetworkPackageId() {
@@ -217,6 +219,14 @@ public class DescribeNetworkPackagesResponse extends AcsResponse {
 
 		public void setNgwVersion(String ngwVersion) {
 			this.ngwVersion = ngwVersion;
+		}
+
+		public String getBusinessStatus() {
+			return this.businessStatus;
+		}
+
+		public void setBusinessStatus(String businessStatus) {
+			this.businessStatus = businessStatus;
 		}
 
 		public List<String> getEipAddresses() {

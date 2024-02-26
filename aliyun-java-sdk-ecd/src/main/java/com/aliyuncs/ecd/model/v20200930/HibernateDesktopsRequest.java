@@ -28,7 +28,7 @@ public class HibernateDesktopsRequest extends RpcAcsRequest<HibernateDesktopsRes
 
 	private List<String> desktopIds;
 	public HibernateDesktopsRequest() {
-		super("ecd", "2020-09-30", "HibernateDesktops");
+		super("ecd", "2020-09-30", "HibernateDesktops", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class DescribeZonesRequest extends RpcAcsRequest<DescribeZonesResponse> {
 
 	private String zoneType;
 	public DescribeZonesRequest() {
-		super("ecd", "2020-09-30", "DescribeZones");
+		super("ecd", "2020-09-30", "DescribeZones", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

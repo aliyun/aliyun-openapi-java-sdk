@@ -35,8 +35,10 @@ public class DescribeFotaTasksRequest extends RpcAcsRequest<DescribeFotaTasksRes
 	private String nextToken;
 
 	private Integer maxResults;
+
+	private String lang;
 	public DescribeFotaTasksRequest() {
-		super("ecd", "2020-09-30", "DescribeFotaTasks");
+		super("ecd", "2020-09-30", "DescribeFotaTasks", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -98,6 +100,17 @@ public class DescribeFotaTasksRequest extends RpcAcsRequest<DescribeFotaTasksRes
 		this.maxResults = maxResults;
 		if(maxResults != null){
 			putQueryParameter("MaxResults", maxResults.toString());
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
 		}
 	}
 

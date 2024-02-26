@@ -32,7 +32,7 @@ public class RemoveUserFromDesktopGroupRequest extends RpcAcsRequest<RemoveUserF
 
 	private List<String> desktopGroupIdss;
 	public RemoveUserFromDesktopGroupRequest() {
-		super("ecd", "2020-09-30", "RemoveUserFromDesktopGroup");
+		super("ecd", "2020-09-30", "RemoveUserFromDesktopGroup", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

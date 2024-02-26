@@ -34,7 +34,7 @@ public class ModifyCloudDriveGroupsRequest extends RpcAcsRequest<ModifyCloudDriv
 
 	private String status;
 	public ModifyCloudDriveGroupsRequest() {
-		super("ecd", "2020-09-30", "ModifyCloudDriveGroups");
+		super("ecd", "2020-09-30", "ModifyCloudDriveGroups", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

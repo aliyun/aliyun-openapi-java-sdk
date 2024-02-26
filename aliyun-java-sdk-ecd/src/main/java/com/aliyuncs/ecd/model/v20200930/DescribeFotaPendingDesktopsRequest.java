@@ -25,18 +25,46 @@ import com.aliyuncs.ecd.Endpoint;
 public class DescribeFotaPendingDesktopsRequest extends RpcAcsRequest<DescribeFotaPendingDesktopsResponse> {
 	   
 
+	private String officeSiteId;
+
+	private String desktopName;
+
 	private String taskUid;
 
 	private String nextToken;
 
 	private Integer maxResults;
+
+	private String desktopId;
 	public DescribeFotaPendingDesktopsRequest() {
-		super("ecd", "2020-09-30", "DescribeFotaPendingDesktops");
+		super("ecd", "2020-09-30", "DescribeFotaPendingDesktops", "gwsecd");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getOfficeSiteId() {
+		return this.officeSiteId;
+	}
+
+	public void setOfficeSiteId(String officeSiteId) {
+		this.officeSiteId = officeSiteId;
+		if(officeSiteId != null){
+			putQueryParameter("OfficeSiteId", officeSiteId);
+		}
+	}
+
+	public String getDesktopName() {
+		return this.desktopName;
+	}
+
+	public void setDesktopName(String desktopName) {
+		this.desktopName = desktopName;
+		if(desktopName != null){
+			putQueryParameter("DesktopName", desktopName);
+		}
 	}
 
 	public String getTaskUid() {
@@ -69,6 +97,17 @@ public class DescribeFotaPendingDesktopsRequest extends RpcAcsRequest<DescribeFo
 		this.maxResults = maxResults;
 		if(maxResults != null){
 			putQueryParameter("MaxResults", maxResults.toString());
+		}
+	}
+
+	public String getDesktopId() {
+		return this.desktopId;
+	}
+
+	public void setDesktopId(String desktopId) {
+		this.desktopId = desktopId;
+		if(desktopId != null){
+			putQueryParameter("DesktopId", desktopId);
 		}
 	}
 

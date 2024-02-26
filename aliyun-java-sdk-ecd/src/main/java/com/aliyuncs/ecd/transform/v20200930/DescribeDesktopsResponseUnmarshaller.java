@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.ecd.model.v20200930.DescribeDesktopsResponse;
 import com.aliyuncs.ecd.model.v20200930.DescribeDesktopsResponse.Desktop;
+import com.aliyuncs.ecd.model.v20200930.DescribeDesktopsResponse.Desktop.DesktopDuration;
 import com.aliyuncs.ecd.model.v20200930.DescribeDesktopsResponse.Desktop.Disk;
 import com.aliyuncs.ecd.model.v20200930.DescribeDesktopsResponse.Desktop.FotaUpdate;
 import com.aliyuncs.ecd.model.v20200930.DescribeDesktopsResponse.Desktop.Session;
@@ -118,6 +119,8 @@ public class DescribeDesktopsResponseUnmarshaller {
 			fotaUpdate.setNewAppVersion(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].FotaUpdate.NewAppVersion"));
 			fotaUpdate.setReleaseNote(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].FotaUpdate.ReleaseNote"));
 			fotaUpdate.setSize(_ctx.longValue("DescribeDesktopsResponse.Desktops["+ i +"].FotaUpdate.Size"));
+			fotaUpdate.setReleaseNoteEn(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].FotaUpdate.ReleaseNoteEn"));
+			fotaUpdate.setReleaseNoteJp(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].FotaUpdate.ReleaseNoteJp"));
 			desktop.setFotaUpdate(fotaUpdate);
 
 			List<Disk> disks = new ArrayList<Disk>();
@@ -152,6 +155,20 @@ public class DescribeDesktopsResponseUnmarshaller {
 				sessions.add(session);
 			}
 			desktop.setSessions(sessions);
+
+			List<DesktopDuration> desktopDurationList = new ArrayList<DesktopDuration>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeDesktopsResponse.Desktops["+ i +"].DesktopDurationList.Length"); j++) {
+				DesktopDuration desktopDuration = new DesktopDuration();
+				desktopDuration.setPackageId(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].DesktopDurationList["+ j +"].PackageId"));
+				desktopDuration.setPackageCreationTime(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].DesktopDurationList["+ j +"].PackageCreationTime"));
+				desktopDuration.setPackageExpiredTime(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].DesktopDurationList["+ j +"].PackageExpiredTime"));
+				desktopDuration.setUsedDuration(_ctx.longValue("DescribeDesktopsResponse.Desktops["+ i +"].DesktopDurationList["+ j +"].UsedDuration"));
+				desktopDuration.setTotalDuration(_ctx.longValue("DescribeDesktopsResponse.Desktops["+ i +"].DesktopDurationList["+ j +"].TotalDuration"));
+				desktopDuration.setPackageStatus(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].DesktopDurationList["+ j +"].PackageStatus"));
+
+				desktopDurationList.add(desktopDuration);
+			}
+			desktop.setDesktopDurationList(desktopDurationList);
 
 			desktops.add(desktop);
 		}

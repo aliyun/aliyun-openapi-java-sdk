@@ -30,7 +30,7 @@ public class ModifyEntitlementRequest extends RpcAcsRequest<ModifyEntitlementRes
 
 	private String desktopId;
 	public ModifyEntitlementRequest() {
-		super("ecd", "2020-09-30", "ModifyEntitlement");
+		super("ecd", "2020-09-30", "ModifyEntitlement", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

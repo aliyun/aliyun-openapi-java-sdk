@@ -27,7 +27,7 @@ public class CancelCopyImageRequest extends RpcAcsRequest<CancelCopyImageRespons
 
 	private String imageId;
 	public CancelCopyImageRequest() {
-		super("ecd", "2020-09-30", "CancelCopyImage");
+		super("ecd", "2020-09-30", "CancelCopyImage", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

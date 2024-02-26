@@ -30,7 +30,7 @@ public class ApplyAutoSnapshotPolicyRequest extends RpcAcsRequest<ApplyAutoSnaps
 
 	private List<String> desktopIds;
 	public ApplyAutoSnapshotPolicyRequest() {
-		super("ecd", "2020-09-30", "ApplyAutoSnapshotPolicy");
+		super("ecd", "2020-09-30", "ApplyAutoSnapshotPolicy", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

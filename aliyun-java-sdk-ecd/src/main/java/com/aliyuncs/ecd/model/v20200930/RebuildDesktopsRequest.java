@@ -32,7 +32,7 @@ public class RebuildDesktopsRequest extends RpcAcsRequest<RebuildDesktopsRespons
 
 	private List<String> desktopIds;
 	public RebuildDesktopsRequest() {
-		super("ecd", "2020-09-30", "RebuildDesktops");
+		super("ecd", "2020-09-30", "RebuildDesktops", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

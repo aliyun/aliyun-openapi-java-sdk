@@ -43,7 +43,7 @@ public class GetConnectionTicketRequest extends RpcAcsRequest<GetConnectionTicke
 
 	private Long ownerId;
 	public GetConnectionTicketRequest() {
-		super("ecd", "2020-09-30", "GetConnectionTicket");
+		super("ecd", "2020-09-30", "GetConnectionTicket", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

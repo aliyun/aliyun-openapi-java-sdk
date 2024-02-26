@@ -101,6 +101,8 @@ public class DescribeOfficeSitesResponse extends AcsResponse {
 
 		private String cenId;
 
+		private String cenAttachStatus;
+
 		private Boolean mfaEnabled;
 
 		private String networkPackageId;
@@ -112,6 +114,10 @@ public class DescribeOfficeSitesResponse extends AcsResponse {
 		private Boolean needVerifyLoginRisk;
 
 		private Long desktopCount;
+
+		private Long totalEdsCount;
+
+		private Long totalEdsCountForGroup;
 
 		private Boolean needVerifyZeroDevice;
 
@@ -317,6 +323,14 @@ public class DescribeOfficeSitesResponse extends AcsResponse {
 			this.cenId = cenId;
 		}
 
+		public String getCenAttachStatus() {
+			return this.cenAttachStatus;
+		}
+
+		public void setCenAttachStatus(String cenAttachStatus) {
+			this.cenAttachStatus = cenAttachStatus;
+		}
+
 		public Boolean getMfaEnabled() {
 			return this.mfaEnabled;
 		}
@@ -363,6 +377,22 @@ public class DescribeOfficeSitesResponse extends AcsResponse {
 
 		public void setDesktopCount(Long desktopCount) {
 			this.desktopCount = desktopCount;
+		}
+
+		public Long getTotalEdsCount() {
+			return this.totalEdsCount;
+		}
+
+		public void setTotalEdsCount(Long totalEdsCount) {
+			this.totalEdsCount = totalEdsCount;
+		}
+
+		public Long getTotalEdsCountForGroup() {
+			return this.totalEdsCountForGroup;
+		}
+
+		public void setTotalEdsCountForGroup(Long totalEdsCountForGroup) {
+			this.totalEdsCountForGroup = totalEdsCountForGroup;
 		}
 
 		public Boolean getNeedVerifyZeroDevice() {

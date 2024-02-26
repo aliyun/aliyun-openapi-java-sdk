@@ -40,7 +40,7 @@ public class CreateAndBindNasFileSystemRequest extends RpcAcsRequest<CreateAndBi
 
 	private String fileSystemName;
 	public CreateAndBindNasFileSystemRequest() {
-		super("ecd", "2020-09-30", "CreateAndBindNasFileSystem");
+		super("ecd", "2020-09-30", "CreateAndBindNasFileSystem", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

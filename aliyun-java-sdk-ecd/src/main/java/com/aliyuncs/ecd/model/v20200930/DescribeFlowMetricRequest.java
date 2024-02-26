@@ -37,7 +37,7 @@ public class DescribeFlowMetricRequest extends RpcAcsRequest<DescribeFlowMetricR
 
 	private String instanceType;
 	public DescribeFlowMetricRequest() {
-		super("ecd", "2020-09-30", "DescribeFlowMetric");
+		super("ecd", "2020-09-30", "DescribeFlowMetric", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,6 +27,8 @@ public class CopyCdsFileRequest extends RpcAcsRequest<CopyCdsFileResponse> {
 
 	private String fileReceiverId;
 
+	private String groupId;
+
 	private String fileReceiverType;
 
 	private Boolean autoRename;
@@ -39,7 +41,7 @@ public class CopyCdsFileRequest extends RpcAcsRequest<CopyCdsFileResponse> {
 
 	private String fileId;
 	public CopyCdsFileRequest() {
-		super("ecd", "2020-09-30", "CopyCdsFile");
+		super("ecd", "2020-09-30", "CopyCdsFile", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -55,6 +57,17 @@ public class CopyCdsFileRequest extends RpcAcsRequest<CopyCdsFileResponse> {
 		this.fileReceiverId = fileReceiverId;
 		if(fileReceiverId != null){
 			putQueryParameter("FileReceiverId", fileReceiverId);
+		}
+	}
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
 		}
 	}
 

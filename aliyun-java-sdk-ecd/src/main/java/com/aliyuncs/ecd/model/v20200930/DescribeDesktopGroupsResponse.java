@@ -145,6 +145,16 @@ public class DescribeDesktopGroupsResponse extends AcsResponse {
 
 		private Integer buyDesktopsCount;
 
+		private Integer desktopCount;
+
+		private String desktopType;
+
+		private String gpuDriverVersion;
+
+		private String subnetId;
+
+		private List<CountPerStatusItem> countPerStatus;
+
 		public String getCreateTime() {
 			return this.createTime;
 		}
@@ -495,6 +505,69 @@ public class DescribeDesktopGroupsResponse extends AcsResponse {
 
 		public void setBuyDesktopsCount(Integer buyDesktopsCount) {
 			this.buyDesktopsCount = buyDesktopsCount;
+		}
+
+		public Integer getDesktopCount() {
+			return this.desktopCount;
+		}
+
+		public void setDesktopCount(Integer desktopCount) {
+			this.desktopCount = desktopCount;
+		}
+
+		public String getDesktopType() {
+			return this.desktopType;
+		}
+
+		public void setDesktopType(String desktopType) {
+			this.desktopType = desktopType;
+		}
+
+		public String getGpuDriverVersion() {
+			return this.gpuDriverVersion;
+		}
+
+		public void setGpuDriverVersion(String gpuDriverVersion) {
+			this.gpuDriverVersion = gpuDriverVersion;
+		}
+
+		public String getSubnetId() {
+			return this.subnetId;
+		}
+
+		public void setSubnetId(String subnetId) {
+			this.subnetId = subnetId;
+		}
+
+		public List<CountPerStatusItem> getCountPerStatus() {
+			return this.countPerStatus;
+		}
+
+		public void setCountPerStatus(List<CountPerStatusItem> countPerStatus) {
+			this.countPerStatus = countPerStatus;
+		}
+
+		public static class CountPerStatusItem {
+
+			private String status;
+
+			private Integer count;
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
+			public Integer getCount() {
+				return this.count;
+			}
+
+			public void setCount(Integer count) {
+				this.count = count;
+			}
 		}
 	}
 

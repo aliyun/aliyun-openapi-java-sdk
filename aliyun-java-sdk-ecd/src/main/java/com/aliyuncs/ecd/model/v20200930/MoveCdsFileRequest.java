@@ -25,6 +25,8 @@ import com.aliyuncs.ecd.Endpoint;
 public class MoveCdsFileRequest extends RpcAcsRequest<MoveCdsFileResponse> {
 	   
 
+	private String groupId;
+
 	private String cdsId;
 
 	private String parentFolderId;
@@ -35,12 +37,23 @@ public class MoveCdsFileRequest extends RpcAcsRequest<MoveCdsFileResponse> {
 
 	private String fileId;
 	public MoveCdsFileRequest() {
-		super("ecd", "2020-09-30", "MoveCdsFile");
+		super("ecd", "2020-09-30", "MoveCdsFile", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
+		}
 	}
 
 	public String getCdsId() {

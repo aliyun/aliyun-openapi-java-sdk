@@ -33,7 +33,7 @@ public class ModifyAutoSnapshotPolicyRequest extends RpcAcsRequest<ModifyAutoSna
 
 	private Integer retentionDays;
 	public ModifyAutoSnapshotPolicyRequest() {
-		super("ecd", "2020-09-30", "ModifyAutoSnapshotPolicy");
+		super("ecd", "2020-09-30", "ModifyAutoSnapshotPolicy", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

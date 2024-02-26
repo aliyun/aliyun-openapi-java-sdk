@@ -28,7 +28,7 @@ public class WakeupDesktopsRequest extends RpcAcsRequest<WakeupDesktopsResponse>
 
 	private List<String> desktopIds;
 	public WakeupDesktopsRequest() {
-		super("ecd", "2020-09-30", "WakeupDesktops");
+		super("ecd", "2020-09-30", "WakeupDesktops", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

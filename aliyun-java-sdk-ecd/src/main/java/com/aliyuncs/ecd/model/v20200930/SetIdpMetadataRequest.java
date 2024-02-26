@@ -31,7 +31,7 @@ public class SetIdpMetadataRequest extends RpcAcsRequest<SetIdpMetadataResponse>
 
 	private String idpMetadata;
 	public SetIdpMetadataRequest() {
-		super("ecd", "2020-09-30", "SetIdpMetadata");
+		super("ecd", "2020-09-30", "SetIdpMetadata", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

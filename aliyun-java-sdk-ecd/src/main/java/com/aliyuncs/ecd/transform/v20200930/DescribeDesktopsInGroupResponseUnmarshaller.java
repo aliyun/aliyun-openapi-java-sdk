@@ -35,6 +35,7 @@ public class DescribeDesktopsInGroupResponseUnmarshaller {
 		describeDesktopsInGroupResponse.setOnlinePrePaidDesktopsCount(_ctx.integerValue("DescribeDesktopsInGroupResponse.OnlinePrePaidDesktopsCount"));
 		describeDesktopsInGroupResponse.setRunningPrePaidDesktopsCount(_ctx.integerValue("DescribeDesktopsInGroupResponse.RunningPrePaidDesktopsCount"));
 		describeDesktopsInGroupResponse.setStopedPrePaidDesktopsCount(_ctx.integerValue("DescribeDesktopsInGroupResponse.StopedPrePaidDesktopsCount"));
+		describeDesktopsInGroupResponse.setStoppedPrePaidDesktopsCount(_ctx.integerValue("DescribeDesktopsInGroupResponse.StoppedPrePaidDesktopsCount"));
 
 		List<PaidDesktop> paidDesktops = new ArrayList<PaidDesktop>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDesktopsInGroupResponse.PaidDesktops.Length"); i++) {

@@ -34,7 +34,7 @@ public class AddUserToDesktopGroupRequest extends RpcAcsRequest<AddUserToDesktop
 
 	private List<String> desktopGroupIdss;
 	public AddUserToDesktopGroupRequest() {
-		super("ecd", "2020-09-30", "AddUserToDesktopGroup");
+		super("ecd", "2020-09-30", "AddUserToDesktopGroup", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

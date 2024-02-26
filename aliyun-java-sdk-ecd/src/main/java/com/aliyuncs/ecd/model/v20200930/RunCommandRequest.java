@@ -38,7 +38,7 @@ public class RunCommandRequest extends RpcAcsRequest<RunCommandResponse> {
 
 	private List<String> desktopIds;
 	public RunCommandRequest() {
-		super("ecd", "2020-09-30", "RunCommand");
+		super("ecd", "2020-09-30", "RunCommand", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

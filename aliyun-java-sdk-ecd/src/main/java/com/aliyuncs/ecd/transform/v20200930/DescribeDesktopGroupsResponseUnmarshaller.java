@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.ecd.model.v20200930.DescribeDesktopGroupsResponse;
 import com.aliyuncs.ecd.model.v20200930.DescribeDesktopGroupsResponse.DesktopGroup;
+import com.aliyuncs.ecd.model.v20200930.DescribeDesktopGroupsResponse.DesktopGroup.CountPerStatusItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -76,6 +77,20 @@ public class DescribeDesktopGroupsResponseUnmarshaller {
 			desktopGroup.setProtocolType(_ctx.stringValue("DescribeDesktopGroupsResponse.DesktopGroups["+ i +"].ProtocolType"));
 			desktopGroup.setOsType(_ctx.stringValue("DescribeDesktopGroupsResponse.DesktopGroups["+ i +"].OsType"));
 			desktopGroup.setBuyDesktopsCount(_ctx.integerValue("DescribeDesktopGroupsResponse.DesktopGroups["+ i +"].BuyDesktopsCount"));
+			desktopGroup.setDesktopCount(_ctx.integerValue("DescribeDesktopGroupsResponse.DesktopGroups["+ i +"].DesktopCount"));
+			desktopGroup.setDesktopType(_ctx.stringValue("DescribeDesktopGroupsResponse.DesktopGroups["+ i +"].DesktopType"));
+			desktopGroup.setGpuDriverVersion(_ctx.stringValue("DescribeDesktopGroupsResponse.DesktopGroups["+ i +"].GpuDriverVersion"));
+			desktopGroup.setSubnetId(_ctx.stringValue("DescribeDesktopGroupsResponse.DesktopGroups["+ i +"].SubnetId"));
+
+			List<CountPerStatusItem> countPerStatus = new ArrayList<CountPerStatusItem>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeDesktopGroupsResponse.DesktopGroups["+ i +"].CountPerStatus.Length"); j++) {
+				CountPerStatusItem countPerStatusItem = new CountPerStatusItem();
+				countPerStatusItem.setStatus(_ctx.stringValue("DescribeDesktopGroupsResponse.DesktopGroups["+ i +"].CountPerStatus["+ j +"].Status"));
+				countPerStatusItem.setCount(_ctx.integerValue("DescribeDesktopGroupsResponse.DesktopGroups["+ i +"].CountPerStatus["+ j +"].Count"));
+
+				countPerStatus.add(countPerStatusItem);
+			}
+			desktopGroup.setCountPerStatus(countPerStatus);
 
 			desktopGroups.add(desktopGroup);
 		}

@@ -29,7 +29,7 @@ public class UpdateFotaTaskRequest extends RpcAcsRequest<UpdateFotaTaskResponse>
 
 	private String taskUid;
 	public UpdateFotaTaskRequest() {
-		super("ecd", "2020-09-30", "UpdateFotaTask");
+		super("ecd", "2020-09-30", "UpdateFotaTask", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

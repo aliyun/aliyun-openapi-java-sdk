@@ -31,7 +31,7 @@ public class DescribeImageModifiedRecordsRequest extends RpcAcsRequest<DescribeI
 
 	private String desktopId;
 	public DescribeImageModifiedRecordsRequest() {
-		super("ecd", "2020-09-30", "DescribeImageModifiedRecords");
+		super("ecd", "2020-09-30", "DescribeImageModifiedRecords", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

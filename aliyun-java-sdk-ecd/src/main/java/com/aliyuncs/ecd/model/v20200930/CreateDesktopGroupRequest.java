@@ -100,7 +100,7 @@ public class CreateDesktopGroupRequest extends RpcAcsRequest<CreateDesktopGroupR
 
 	private String chargeType;
 	public CreateDesktopGroupRequest() {
-		super("ecd", "2020-09-30", "CreateDesktopGroup");
+		super("ecd", "2020-09-30", "CreateDesktopGroup", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

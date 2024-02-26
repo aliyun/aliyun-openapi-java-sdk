@@ -37,8 +37,10 @@ public class ModifyDesktopChargeTypeRequest extends RpcAcsRequest<ModifyDesktopC
 	private String chargeType;
 
 	private List<String> desktopIds;
+
+	private Integer useDuration;
 	public ModifyDesktopChargeTypeRequest() {
-		super("ecd", "2020-09-30", "ModifyDesktopChargeType");
+		super("ecd", "2020-09-30", "ModifyDesktopChargeType", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -112,6 +114,17 @@ public class ModifyDesktopChargeTypeRequest extends RpcAcsRequest<ModifyDesktopC
 				putQueryParameter("DesktopId." + (i + 1) , desktopIds.get(i));
 			}
 		}	
+	}
+
+	public Integer getUseDuration() {
+		return this.useDuration;
+	}
+
+	public void setUseDuration(Integer useDuration) {
+		this.useDuration = useDuration;
+		if(useDuration != null){
+			putQueryParameter("UseDuration", useDuration.toString());
+		}
 	}
 
 	@Override

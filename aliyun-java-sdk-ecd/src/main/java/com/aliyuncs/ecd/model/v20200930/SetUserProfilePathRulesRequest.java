@@ -35,7 +35,7 @@ public class SetUserProfilePathRulesRequest extends RpcAcsRequest<SetUserProfile
 	@SerializedName("userProfilePathRule")
 	private List<UserProfilePathRule> userProfilePathRule;
 	public SetUserProfilePathRulesRequest() {
-		super("ecd", "2020-09-30", "SetUserProfilePathRules");
+		super("ecd", "2020-09-30", "SetUserProfilePathRules", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

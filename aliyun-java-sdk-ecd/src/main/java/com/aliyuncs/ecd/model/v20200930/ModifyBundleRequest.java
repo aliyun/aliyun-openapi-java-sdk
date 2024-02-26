@@ -35,7 +35,7 @@ public class ModifyBundleRequest extends RpcAcsRequest<ModifyBundleResponse> {
 
 	private String bundleName;
 	public ModifyBundleRequest() {
-		super("ecd", "2020-09-30", "ModifyBundle");
+		super("ecd", "2020-09-30", "ModifyBundle", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

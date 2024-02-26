@@ -31,13 +31,15 @@ public class RemoveFilePermissionRequest extends RpcAcsRequest<RemoveFilePermiss
 	@SerializedName("memberList")
 	private List<MemberList> memberList;
 
+	private String groupId;
+
 	private String cdsId;
 
 	private String endUserId;
 
 	private String fileId;
 	public RemoveFilePermissionRequest() {
-		super("ecd", "2020-09-30", "RemoveFilePermission");
+		super("ecd", "2020-09-30", "RemoveFilePermission", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -54,6 +56,17 @@ public class RemoveFilePermissionRequest extends RpcAcsRequest<RemoveFilePermiss
 		if (memberList != null) {
 			putQueryParameter("MemberList" , new Gson().toJson(memberList));
 		}	
+	}
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
+		}
 	}
 
 	public String getCdsId() {

@@ -92,6 +92,13 @@ public class DescribePolicyGroupsResponseUnmarshaller {
 			describePolicyGroup.setMemorySampleDuration(_ctx.integerValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].MemorySampleDuration"));
 			describePolicyGroup.setMemorySingleRateLimit(_ctx.integerValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].MemorySingleRateLimit"));
 			describePolicyGroup.setMemoryDownGradeDuration(_ctx.integerValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].MemoryDownGradeDuration"));
+			describePolicyGroup.setWatermarkSecurity(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].WatermarkSecurity"));
+			describePolicyGroup.setWatermarkAntiCam(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].WatermarkAntiCam"));
+			describePolicyGroup.setCloudHub(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].CloudHub"));
+			describePolicyGroup.setWatermarkPower(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].WatermarkPower"));
+			describePolicyGroup.setRecordingUserNotify(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].RecordingUserNotify"));
+			describePolicyGroup.setRecordingUserNotifyMessage(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].RecordingUserNotifyMessage"));
+			describePolicyGroup.setAdminAccess(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].AdminAccess"));
 
 			List<String> preemptLoginUsers = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].PreemptLoginUsers.Length"); j++) {

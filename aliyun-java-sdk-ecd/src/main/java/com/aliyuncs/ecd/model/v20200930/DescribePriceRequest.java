@@ -36,7 +36,15 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 
 	private Integer groupDesktopCount;
 
+	private String networkType;
+
 	private String userDiskPerformanceLevel;
+
+	private String eduRoomClassify;
+
+	private Integer eduDesktopNum;
+
+	private String eduCdsEnable;
 
 	private String instanceType;
 
@@ -56,9 +64,13 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 
 	private Boolean spPrice;
 
+	private String eduDesktopBundleId;
+
 	private String eduStudentBundleId;
 
 	private String osType;
+
+	private Integer eduCdsSize;
 
 	private String resourceType;
 
@@ -76,7 +88,7 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 
 	private Integer rootDiskSizeGib;
 	public DescribePriceRequest() {
-		super("ecd", "2020-09-30", "DescribePrice");
+		super("ecd", "2020-09-30", "DescribePrice", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -139,6 +151,17 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 		}
 	}
 
+	public String getNetworkType() {
+		return this.networkType;
+	}
+
+	public void setNetworkType(String networkType) {
+		this.networkType = networkType;
+		if(networkType != null){
+			putQueryParameter("NetworkType", networkType);
+		}
+	}
+
 	public String getUserDiskPerformanceLevel() {
 		return this.userDiskPerformanceLevel;
 	}
@@ -147,6 +170,39 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 		this.userDiskPerformanceLevel = userDiskPerformanceLevel;
 		if(userDiskPerformanceLevel != null){
 			putQueryParameter("UserDiskPerformanceLevel", userDiskPerformanceLevel);
+		}
+	}
+
+	public String getEduRoomClassify() {
+		return this.eduRoomClassify;
+	}
+
+	public void setEduRoomClassify(String eduRoomClassify) {
+		this.eduRoomClassify = eduRoomClassify;
+		if(eduRoomClassify != null){
+			putQueryParameter("EduRoomClassify", eduRoomClassify);
+		}
+	}
+
+	public Integer getEduDesktopNum() {
+		return this.eduDesktopNum;
+	}
+
+	public void setEduDesktopNum(Integer eduDesktopNum) {
+		this.eduDesktopNum = eduDesktopNum;
+		if(eduDesktopNum != null){
+			putQueryParameter("EduDesktopNum", eduDesktopNum.toString());
+		}
+	}
+
+	public String getEduCdsEnable() {
+		return this.eduCdsEnable;
+	}
+
+	public void setEduCdsEnable(String eduCdsEnable) {
+		this.eduCdsEnable = eduCdsEnable;
+		if(eduCdsEnable != null){
+			putQueryParameter("EduCdsEnable", eduCdsEnable);
 		}
 	}
 
@@ -169,6 +225,7 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 		this.bundleModelss = bundleModelss;	
 		if (bundleModelss != null) {
 			for (int depth1 = 0; depth1 < bundleModelss.size(); depth1++) {
+				putQueryParameter("BundleModels." + (depth1 + 1) + ".Duration" , bundleModelss.get(depth1).getDuration());
 				putQueryParameter("BundleModels." + (depth1 + 1) + ".Amount" , bundleModelss.get(depth1).getAmount());
 				putQueryParameter("BundleModels." + (depth1 + 1) + ".BundleId" , bundleModelss.get(depth1).getBundleId());
 			}
@@ -252,6 +309,17 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 		}
 	}
 
+	public String getEduDesktopBundleId() {
+		return this.eduDesktopBundleId;
+	}
+
+	public void setEduDesktopBundleId(String eduDesktopBundleId) {
+		this.eduDesktopBundleId = eduDesktopBundleId;
+		if(eduDesktopBundleId != null){
+			putQueryParameter("EduDesktopBundleId", eduDesktopBundleId);
+		}
+	}
+
 	public String getEduStudentBundleId() {
 		return this.eduStudentBundleId;
 	}
@@ -271,6 +339,17 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 		this.osType = osType;
 		if(osType != null){
 			putQueryParameter("OsType", osType);
+		}
+	}
+
+	public Integer getEduCdsSize() {
+		return this.eduCdsSize;
+	}
+
+	public void setEduCdsSize(Integer eduCdsSize) {
+		this.eduCdsSize = eduCdsSize;
+		if(eduCdsSize != null){
+			putQueryParameter("EduCdsSize", eduCdsSize.toString());
 		}
 	}
 
@@ -364,9 +443,19 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 
 	public static class BundleModels {
 
+		private Integer duration;
+
 		private Integer amount;
 
 		private String bundleId;
+
+		public Integer getDuration() {
+			return this.duration;
+		}
+
+		public void setDuration(Integer duration) {
+			this.duration = duration;
+		}
 
 		public Integer getAmount() {
 			return this.amount;

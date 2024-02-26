@@ -38,6 +38,7 @@ public class DescribeCloudDriveUsersResponseUnmarshaller {
 			cloudDriveUser.setTotalSize(_ctx.longValue("DescribeCloudDriveUsersResponse.CloudDriveUsers["+ i +"].TotalSize"));
 			cloudDriveUser.setUserId(_ctx.stringValue("DescribeCloudDriveUsersResponse.CloudDriveUsers["+ i +"].UserId"));
 			cloudDriveUser.setUserName(_ctx.stringValue("DescribeCloudDriveUsersResponse.CloudDriveUsers["+ i +"].UserName"));
+			cloudDriveUser.setEndUserId(_ctx.stringValue("DescribeCloudDriveUsersResponse.CloudDriveUsers["+ i +"].EndUserId"));
 
 			cloudDriveUsers.add(cloudDriveUser);
 		}

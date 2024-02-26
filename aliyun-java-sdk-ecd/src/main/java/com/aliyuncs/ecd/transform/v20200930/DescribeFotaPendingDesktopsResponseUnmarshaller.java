@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.ecd.model.v20200930.DescribeFotaPendingDesktopsResponse;
 import com.aliyuncs.ecd.model.v20200930.DescribeFotaPendingDesktopsResponse.FotaPendingDesktop;
+import com.aliyuncs.ecd.model.v20200930.DescribeFotaPendingDesktopsResponse.FotaPendingDesktop.Session;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -28,6 +29,8 @@ public class DescribeFotaPendingDesktopsResponseUnmarshaller {
 		
 		describeFotaPendingDesktopsResponse.setRequestId(_ctx.stringValue("DescribeFotaPendingDesktopsResponse.RequestId"));
 		describeFotaPendingDesktopsResponse.setNextToken(_ctx.stringValue("DescribeFotaPendingDesktopsResponse.NextToken"));
+		describeFotaPendingDesktopsResponse.setCode(_ctx.stringValue("DescribeFotaPendingDesktopsResponse.Code"));
+		describeFotaPendingDesktopsResponse.setMessage(_ctx.stringValue("DescribeFotaPendingDesktopsResponse.Message"));
 
 		List<FotaPendingDesktop> fotaPendingDesktops = new ArrayList<FotaPendingDesktop>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeFotaPendingDesktopsResponse.FotaPendingDesktops.Length"); i++) {
@@ -37,6 +40,16 @@ public class DescribeFotaPendingDesktopsResponseUnmarshaller {
 			fotaPendingDesktop.setOfficeSiteId(_ctx.stringValue("DescribeFotaPendingDesktopsResponse.FotaPendingDesktops["+ i +"].OfficeSiteId"));
 			fotaPendingDesktop.setFotaProject(_ctx.stringValue("DescribeFotaPendingDesktopsResponse.FotaPendingDesktops["+ i +"].FotaProject"));
 			fotaPendingDesktop.setCurrentAppVersion(_ctx.stringValue("DescribeFotaPendingDesktopsResponse.FotaPendingDesktops["+ i +"].CurrentAppVersion"));
+			fotaPendingDesktop.setStatus(_ctx.longValue("DescribeFotaPendingDesktopsResponse.FotaPendingDesktops["+ i +"].Status"));
+
+			List<Session> sessions = new ArrayList<Session>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeFotaPendingDesktopsResponse.FotaPendingDesktops["+ i +"].Sessions.Length"); j++) {
+				Session session = new Session();
+				session.setEndUserId(_ctx.stringValue("DescribeFotaPendingDesktopsResponse.FotaPendingDesktops["+ i +"].Sessions["+ j +"].EndUserId"));
+
+				sessions.add(session);
+			}
+			fotaPendingDesktop.setSessions(sessions);
 
 			fotaPendingDesktops.add(fotaPendingDesktop);
 		}

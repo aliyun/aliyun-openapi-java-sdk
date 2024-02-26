@@ -93,6 +93,12 @@ public class DescribeCloudDriveGroupsResponse extends AcsResponse {
 
 		private String usedSize;
 
+		private String adminUserIds;
+
+		private String orgId;
+
+		private List<EndUserIdWithNickNameModel> adminUserInfos;
+
 		public String getStatus() {
 			return this.status;
 		}
@@ -155,6 +161,53 @@ public class DescribeCloudDriveGroupsResponse extends AcsResponse {
 
 		public void setUsedSize(String usedSize) {
 			this.usedSize = usedSize;
+		}
+
+		public String getAdminUserIds() {
+			return this.adminUserIds;
+		}
+
+		public void setAdminUserIds(String adminUserIds) {
+			this.adminUserIds = adminUserIds;
+		}
+
+		public String getOrgId() {
+			return this.orgId;
+		}
+
+		public void setOrgId(String orgId) {
+			this.orgId = orgId;
+		}
+
+		public List<EndUserIdWithNickNameModel> getAdminUserInfos() {
+			return this.adminUserInfos;
+		}
+
+		public void setAdminUserInfos(List<EndUserIdWithNickNameModel> adminUserInfos) {
+			this.adminUserInfos = adminUserInfos;
+		}
+
+		public static class EndUserIdWithNickNameModel {
+
+			private String endUserId;
+
+			private String nickName;
+
+			public String getEndUserId() {
+				return this.endUserId;
+			}
+
+			public void setEndUserId(String endUserId) {
+				this.endUserId = endUserId;
+			}
+
+			public String getNickName() {
+				return this.nickName;
+			}
+
+			public void setNickName(String nickName) {
+				this.nickName = nickName;
+			}
 		}
 	}
 

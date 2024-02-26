@@ -33,7 +33,7 @@ public class ApplyCoordinatePrivilegeRequest extends RpcAcsRequest<ApplyCoordina
 
 	private String endUserId;
 	public ApplyCoordinatePrivilegeRequest() {
-		super("ecd", "2020-09-30", "ApplyCoordinatePrivilege");
+		super("ecd", "2020-09-30", "ApplyCoordinatePrivilege", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

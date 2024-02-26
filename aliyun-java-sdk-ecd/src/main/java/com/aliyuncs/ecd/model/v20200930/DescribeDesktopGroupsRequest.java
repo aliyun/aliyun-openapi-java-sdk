@@ -56,7 +56,7 @@ public class DescribeDesktopGroupsRequest extends RpcAcsRequest<DescribeDesktopG
 
 	private Integer status;
 	public DescribeDesktopGroupsRequest() {
-		super("ecd", "2020-09-30", "DescribeDesktopGroups");
+		super("ecd", "2020-09-30", "DescribeDesktopGroups", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

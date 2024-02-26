@@ -32,7 +32,7 @@ public class ModifyDesktopTimerRequest extends RpcAcsRequest<ModifyDesktopTimerR
 
 	private Boolean useDesktopTimers;
 	public ModifyDesktopTimerRequest() {
-		super("ecd", "2020-09-30", "ModifyDesktopTimer");
+		super("ecd", "2020-09-30", "ModifyDesktopTimer", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

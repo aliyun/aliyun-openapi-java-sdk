@@ -69,6 +69,8 @@ public class DescribeCloudDriveUsersResponse extends AcsResponse {
 
 		private String userName;
 
+		private String endUserId;
+
 		public Long getUsedSize() {
 			return this.usedSize;
 		}
@@ -115,6 +117,14 @@ public class DescribeCloudDriveUsersResponse extends AcsResponse {
 
 		public void setUserName(String userName) {
 			this.userName = userName;
+		}
+
+		public String getEndUserId() {
+			return this.endUserId;
+		}
+
+		public void setEndUserId(String endUserId) {
+			this.endUserId = endUserId;
 		}
 	}
 

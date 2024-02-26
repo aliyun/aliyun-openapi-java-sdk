@@ -30,7 +30,7 @@ public class SetDesktopGroupScaleTimerRequest extends RpcAcsRequest<SetDesktopGr
 
 	private List<ScaleTimerInfos> scaleTimerInfoss;
 	public SetDesktopGroupScaleTimerRequest() {
-		super("ecd", "2020-09-30", "SetDesktopGroupScaleTimer");
+		super("ecd", "2020-09-30", "SetDesktopGroupScaleTimer", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

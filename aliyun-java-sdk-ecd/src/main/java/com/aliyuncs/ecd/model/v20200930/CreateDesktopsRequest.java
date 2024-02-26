@@ -26,21 +26,11 @@ import com.aliyuncs.ecd.Endpoint;
 public class CreateDesktopsRequest extends RpcAcsRequest<CreateDesktopsResponse> {
 	   
 
-	private String volumeEncryptionKey;
-
-	private String officeSiteId;
-
-	private String bundleId;
-
-	private String userAssignMode;
-
 	private String hostname;
 
 	private List<DesktopTimers> desktopTimerss;
 
 	private Boolean desktopNameSuffix;
-
-	private String directoryId;
 
 	private List<String> endUserIds;
 
@@ -50,82 +40,50 @@ public class CreateDesktopsRequest extends RpcAcsRequest<CreateDesktopsResponse>
 
 	private Boolean volumeEncryptionEnabled;
 
-	private String desktopName;
-
-	private Integer amount;
-
 	private Integer period;
-
-	private Boolean autoPay;
 
 	private List<UserCommands> userCommandss;
 
 	private String groupId;
 
-	private String promotionId;
-
 	private String periodUnit;
 
 	private Boolean autoRenew;
+
+	private String policyGroupId;
+
+	private String volumeEncryptionKey;
+
+	private String officeSiteId;
+
+	private String bundleId;
+
+	private String userAssignMode;
+
+	private String directoryId;
+
+	private String desktopMemberIp;
+
+	private String desktopName;
+
+	private Integer amount;
+
+	private Boolean autoPay;
+
+	private String promotionId;
 
 	private String vpcId;
 
 	private String chargeType;
 
-	private String policyGroupId;
-
 	private String userName;
 	public CreateDesktopsRequest() {
-		super("ecd", "2020-09-30", "CreateDesktops");
+		super("ecd", "2020-09-30", "CreateDesktops", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getVolumeEncryptionKey() {
-		return this.volumeEncryptionKey;
-	}
-
-	public void setVolumeEncryptionKey(String volumeEncryptionKey) {
-		this.volumeEncryptionKey = volumeEncryptionKey;
-		if(volumeEncryptionKey != null){
-			putQueryParameter("VolumeEncryptionKey", volumeEncryptionKey);
-		}
-	}
-
-	public String getOfficeSiteId() {
-		return this.officeSiteId;
-	}
-
-	public void setOfficeSiteId(String officeSiteId) {
-		this.officeSiteId = officeSiteId;
-		if(officeSiteId != null){
-			putQueryParameter("OfficeSiteId", officeSiteId);
-		}
-	}
-
-	public String getBundleId() {
-		return this.bundleId;
-	}
-
-	public void setBundleId(String bundleId) {
-		this.bundleId = bundleId;
-		if(bundleId != null){
-			putQueryParameter("BundleId", bundleId);
-		}
-	}
-
-	public String getUserAssignMode() {
-		return this.userAssignMode;
-	}
-
-	public void setUserAssignMode(String userAssignMode) {
-		this.userAssignMode = userAssignMode;
-		if(userAssignMode != null){
-			putQueryParameter("UserAssignMode", userAssignMode);
-		}
 	}
 
 	public String getHostname() {
@@ -166,17 +124,6 @@ public class CreateDesktopsRequest extends RpcAcsRequest<CreateDesktopsResponse>
 		this.desktopNameSuffix = desktopNameSuffix;
 		if(desktopNameSuffix != null){
 			putQueryParameter("DesktopNameSuffix", desktopNameSuffix.toString());
-		}
-	}
-
-	public String getDirectoryId() {
-		return this.directoryId;
-	}
-
-	public void setDirectoryId(String directoryId) {
-		this.directoryId = directoryId;
-		if(directoryId != null){
-			putQueryParameter("DirectoryId", directoryId);
 		}
 	}
 
@@ -241,28 +188,6 @@ public class CreateDesktopsRequest extends RpcAcsRequest<CreateDesktopsResponse>
 		}
 	}
 
-	public String getDesktopName() {
-		return this.desktopName;
-	}
-
-	public void setDesktopName(String desktopName) {
-		this.desktopName = desktopName;
-		if(desktopName != null){
-			putQueryParameter("DesktopName", desktopName);
-		}
-	}
-
-	public Integer getAmount() {
-		return this.amount;
-	}
-
-	public void setAmount(Integer amount) {
-		this.amount = amount;
-		if(amount != null){
-			putQueryParameter("Amount", amount.toString());
-		}
-	}
-
 	public Integer getPeriod() {
 		return this.period;
 	}
@@ -271,17 +196,6 @@ public class CreateDesktopsRequest extends RpcAcsRequest<CreateDesktopsResponse>
 		this.period = period;
 		if(period != null){
 			putQueryParameter("Period", period.toString());
-		}
-	}
-
-	public Boolean getAutoPay() {
-		return this.autoPay;
-	}
-
-	public void setAutoPay(Boolean autoPay) {
-		this.autoPay = autoPay;
-		if(autoPay != null){
-			putQueryParameter("AutoPay", autoPay.toString());
 		}
 	}
 
@@ -311,17 +225,6 @@ public class CreateDesktopsRequest extends RpcAcsRequest<CreateDesktopsResponse>
 		}
 	}
 
-	public String getPromotionId() {
-		return this.promotionId;
-	}
-
-	public void setPromotionId(String promotionId) {
-		this.promotionId = promotionId;
-		if(promotionId != null){
-			putQueryParameter("PromotionId", promotionId);
-		}
-	}
-
 	public String getPeriodUnit() {
 		return this.periodUnit;
 	}
@@ -344,6 +247,127 @@ public class CreateDesktopsRequest extends RpcAcsRequest<CreateDesktopsResponse>
 		}
 	}
 
+	public String getPolicyGroupId() {
+		return this.policyGroupId;
+	}
+
+	public void setPolicyGroupId(String policyGroupId) {
+		this.policyGroupId = policyGroupId;
+		if(policyGroupId != null){
+			putQueryParameter("PolicyGroupId", policyGroupId);
+		}
+	}
+
+	public String getVolumeEncryptionKey() {
+		return this.volumeEncryptionKey;
+	}
+
+	public void setVolumeEncryptionKey(String volumeEncryptionKey) {
+		this.volumeEncryptionKey = volumeEncryptionKey;
+		if(volumeEncryptionKey != null){
+			putQueryParameter("VolumeEncryptionKey", volumeEncryptionKey);
+		}
+	}
+
+	public String getOfficeSiteId() {
+		return this.officeSiteId;
+	}
+
+	public void setOfficeSiteId(String officeSiteId) {
+		this.officeSiteId = officeSiteId;
+		if(officeSiteId != null){
+			putQueryParameter("OfficeSiteId", officeSiteId);
+		}
+	}
+
+	public String getBundleId() {
+		return this.bundleId;
+	}
+
+	public void setBundleId(String bundleId) {
+		this.bundleId = bundleId;
+		if(bundleId != null){
+			putQueryParameter("BundleId", bundleId);
+		}
+	}
+
+	public String getUserAssignMode() {
+		return this.userAssignMode;
+	}
+
+	public void setUserAssignMode(String userAssignMode) {
+		this.userAssignMode = userAssignMode;
+		if(userAssignMode != null){
+			putQueryParameter("UserAssignMode", userAssignMode);
+		}
+	}
+
+	public String getDirectoryId() {
+		return this.directoryId;
+	}
+
+	public void setDirectoryId(String directoryId) {
+		this.directoryId = directoryId;
+		if(directoryId != null){
+			putQueryParameter("DirectoryId", directoryId);
+		}
+	}
+
+	public String getDesktopMemberIp() {
+		return this.desktopMemberIp;
+	}
+
+	public void setDesktopMemberIp(String desktopMemberIp) {
+		this.desktopMemberIp = desktopMemberIp;
+		if(desktopMemberIp != null){
+			putQueryParameter("DesktopMemberIp", desktopMemberIp);
+		}
+	}
+
+	public String getDesktopName() {
+		return this.desktopName;
+	}
+
+	public void setDesktopName(String desktopName) {
+		this.desktopName = desktopName;
+		if(desktopName != null){
+			putQueryParameter("DesktopName", desktopName);
+		}
+	}
+
+	public Integer getAmount() {
+		return this.amount;
+	}
+
+	public void setAmount(Integer amount) {
+		this.amount = amount;
+		if(amount != null){
+			putQueryParameter("Amount", amount.toString());
+		}
+	}
+
+	public Boolean getAutoPay() {
+		return this.autoPay;
+	}
+
+	public void setAutoPay(Boolean autoPay) {
+		this.autoPay = autoPay;
+		if(autoPay != null){
+			putQueryParameter("AutoPay", autoPay.toString());
+		}
+	}
+
+	public String getPromotionId() {
+		return this.promotionId;
+	}
+
+	public void setPromotionId(String promotionId) {
+		this.promotionId = promotionId;
+		if(promotionId != null){
+			putQueryParameter("PromotionId", promotionId);
+		}
+	}
+
 	public String getVpcId() {
 		return this.vpcId;
 	}
@@ -363,17 +387,6 @@ public class CreateDesktopsRequest extends RpcAcsRequest<CreateDesktopsResponse>
 		this.chargeType = chargeType;
 		if(chargeType != null){
 			putQueryParameter("ChargeType", chargeType);
-		}
-	}
-
-	public String getPolicyGroupId() {
-		return this.policyGroupId;
-	}
-
-	public void setPolicyGroupId(String policyGroupId) {
-		this.policyGroupId = policyGroupId;
-		if(policyGroupId != null){
-			putQueryParameter("PolicyGroupId", policyGroupId);
 		}
 	}
 

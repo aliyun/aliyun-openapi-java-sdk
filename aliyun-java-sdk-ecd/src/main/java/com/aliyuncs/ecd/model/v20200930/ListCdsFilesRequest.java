@@ -29,6 +29,8 @@ public class ListCdsFilesRequest extends RpcAcsRequest<ListCdsFilesResponse> {
 
 	private String endUserId;
 
+	private String groupId;
+
 	private String cdsId;
 
 	private String parentFileId;
@@ -41,7 +43,7 @@ public class ListCdsFilesRequest extends RpcAcsRequest<ListCdsFilesResponse> {
 
 	private String status;
 	public ListCdsFilesRequest() {
-		super("ecd", "2020-09-30", "ListCdsFiles");
+		super("ecd", "2020-09-30", "ListCdsFiles", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -68,6 +70,17 @@ public class ListCdsFilesRequest extends RpcAcsRequest<ListCdsFilesResponse> {
 		this.endUserId = endUserId;
 		if(endUserId != null){
 			putQueryParameter("EndUserId", endUserId);
+		}
+	}
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
 		}
 	}
 

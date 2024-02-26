@@ -43,7 +43,7 @@ public class CreateNetworkPackageRequest extends RpcAcsRequest<CreateNetworkPack
 
 	private String payType;
 	public CreateNetworkPackageRequest() {
-		super("ecd", "2020-09-30", "CreateNetworkPackage");
+		super("ecd", "2020-09-30", "CreateNetworkPackage", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

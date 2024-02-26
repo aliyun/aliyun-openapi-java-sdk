@@ -27,7 +27,7 @@ public class DescribeCloudDrivePermissionsRequest extends RpcAcsRequest<Describe
 
 	private String cdsId;
 	public DescribeCloudDrivePermissionsRequest() {
-		super("ecd", "2020-09-30", "DescribeCloudDrivePermissions");
+		super("ecd", "2020-09-30", "DescribeCloudDrivePermissions", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

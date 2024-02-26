@@ -44,7 +44,7 @@ public class DescribeUsersInGroupRequest extends RpcAcsRequest<DescribeUsersInGr
 
 	private String endUserId;
 	public DescribeUsersInGroupRequest() {
-		super("ecd", "2020-09-30", "DescribeUsersInGroup");
+		super("ecd", "2020-09-30", "DescribeUsersInGroup", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

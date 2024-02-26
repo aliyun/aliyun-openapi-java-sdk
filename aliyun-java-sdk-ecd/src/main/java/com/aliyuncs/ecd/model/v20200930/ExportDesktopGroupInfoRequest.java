@@ -46,7 +46,7 @@ public class ExportDesktopGroupInfoRequest extends RpcAcsRequest<ExportDesktopGr
 
 	private String policyGroupId;
 	public ExportDesktopGroupInfoRequest() {
-		super("ecd", "2020-09-30", "ExportDesktopGroupInfo");
+		super("ecd", "2020-09-30", "ExportDesktopGroupInfo", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

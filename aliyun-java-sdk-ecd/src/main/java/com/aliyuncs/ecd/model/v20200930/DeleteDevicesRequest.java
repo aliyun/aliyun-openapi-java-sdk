@@ -32,7 +32,7 @@ public class DeleteDevicesRequest extends RpcAcsRequest<DeleteDevicesResponse> {
 
 	private Integer force;
 	public DeleteDevicesRequest() {
-		super("ecd", "2020-09-30", "DeleteDevices");
+		super("ecd", "2020-09-30", "DeleteDevices", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

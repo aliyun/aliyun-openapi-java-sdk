@@ -30,7 +30,7 @@ public class DeleteImagesRequest extends RpcAcsRequest<DeleteImagesResponse> {
 
 	private Boolean deleteCascadedBundle;
 	public DeleteImagesRequest() {
-		super("ecd", "2020-09-30", "DeleteImages");
+		super("ecd", "2020-09-30", "DeleteImages", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

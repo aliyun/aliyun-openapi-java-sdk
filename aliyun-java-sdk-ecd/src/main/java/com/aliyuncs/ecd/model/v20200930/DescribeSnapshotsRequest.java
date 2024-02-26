@@ -47,7 +47,7 @@ public class DescribeSnapshotsRequest extends RpcAcsRequest<DescribeSnapshotsRes
 
 	private Integer maxResults;
 	public DescribeSnapshotsRequest() {
-		super("ecd", "2020-09-30", "DescribeSnapshots");
+		super("ecd", "2020-09-30", "DescribeSnapshots", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

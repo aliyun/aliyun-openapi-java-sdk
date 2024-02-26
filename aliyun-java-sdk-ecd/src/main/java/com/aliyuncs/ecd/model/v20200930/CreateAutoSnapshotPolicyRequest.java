@@ -31,7 +31,7 @@ public class CreateAutoSnapshotPolicyRequest extends RpcAcsRequest<CreateAutoSna
 
 	private Integer retentionDays;
 	public CreateAutoSnapshotPolicyRequest() {
-		super("ecd", "2020-09-30", "CreateAutoSnapshotPolicy");
+		super("ecd", "2020-09-30", "CreateAutoSnapshotPolicy", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

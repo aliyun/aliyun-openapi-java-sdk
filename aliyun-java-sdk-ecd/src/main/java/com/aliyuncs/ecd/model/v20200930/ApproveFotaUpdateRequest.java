@@ -29,7 +29,7 @@ public class ApproveFotaUpdateRequest extends RpcAcsRequest<ApproveFotaUpdateRes
 
 	private String desktopId;
 	public ApproveFotaUpdateRequest() {
-		super("ecd", "2020-09-30", "ApproveFotaUpdate");
+		super("ecd", "2020-09-30", "ApproveFotaUpdate", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

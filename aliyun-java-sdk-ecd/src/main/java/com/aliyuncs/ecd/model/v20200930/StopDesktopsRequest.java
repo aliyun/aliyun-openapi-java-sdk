@@ -30,7 +30,7 @@ public class StopDesktopsRequest extends RpcAcsRequest<StopDesktopsResponse> {
 
 	private List<String> desktopIds;
 	public StopDesktopsRequest() {
-		super("ecd", "2020-09-30", "StopDesktops");
+		super("ecd", "2020-09-30", "StopDesktops", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

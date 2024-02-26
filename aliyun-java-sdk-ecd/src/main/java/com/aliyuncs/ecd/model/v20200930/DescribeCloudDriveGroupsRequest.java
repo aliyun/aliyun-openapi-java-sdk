@@ -48,7 +48,7 @@ public class DescribeCloudDriveGroupsRequest extends RpcAcsRequest<DescribeCloud
 
 	private Integer maxResults;
 	public DescribeCloudDriveGroupsRequest() {
-		super("ecd", "2020-09-30", "DescribeCloudDriveGroups");
+		super("ecd", "2020-09-30", "DescribeCloudDriveGroups", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

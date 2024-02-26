@@ -37,7 +37,7 @@ public class AttachEndUserRequest extends RpcAcsRequest<AttachEndUserResponse> {
 
 	private String directoryId;
 	public AttachEndUserRequest() {
-		super("ecd", "2020-09-30", "AttachEndUser");
+		super("ecd", "2020-09-30", "AttachEndUser", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

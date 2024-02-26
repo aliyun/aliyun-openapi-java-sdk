@@ -37,7 +37,7 @@ public class ModifyOfficeSiteAttributeRequest extends RpcAcsRequest<ModifyOffice
 
 	private Boolean enableAdminAccess;
 	public ModifyOfficeSiteAttributeRequest() {
-		super("ecd", "2020-09-30", "ModifyOfficeSiteAttribute");
+		super("ecd", "2020-09-30", "ModifyOfficeSiteAttribute", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

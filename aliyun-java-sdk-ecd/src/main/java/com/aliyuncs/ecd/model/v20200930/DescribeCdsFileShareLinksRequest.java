@@ -40,7 +40,7 @@ public class DescribeCdsFileShareLinksRequest extends RpcAcsRequest<DescribeCdsF
 
 	private String status;
 	public DescribeCdsFileShareLinksRequest() {
-		super("ecd", "2020-09-30", "DescribeCdsFileShareLinks");
+		super("ecd", "2020-09-30", "DescribeCdsFileShareLinks", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

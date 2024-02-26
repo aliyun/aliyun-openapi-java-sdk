@@ -34,7 +34,7 @@ public class DescribeVirtualMFADevicesRequest extends RpcAcsRequest<DescribeVirt
 
 	private List<String> endUserIds;
 	public DescribeVirtualMFADevicesRequest() {
-		super("ecd", "2020-09-30", "DescribeVirtualMFADevices");
+		super("ecd", "2020-09-30", "DescribeVirtualMFADevices", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

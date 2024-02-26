@@ -175,6 +175,8 @@ public class DescribeDesktopsResponse extends AcsResponse {
 
 		private List<Session> sessions;
 
+		private List<DesktopDuration> desktopDurationList;
+
 		private List<String> endUserIds;
 
 		private List<String> managementFlags;
@@ -617,6 +619,14 @@ public class DescribeDesktopsResponse extends AcsResponse {
 			this.sessions = sessions;
 		}
 
+		public List<DesktopDuration> getDesktopDurationList() {
+			return this.desktopDurationList;
+		}
+
+		public void setDesktopDurationList(List<DesktopDuration> desktopDurationList) {
+			this.desktopDurationList = desktopDurationList;
+		}
+
 		public List<String> getEndUserIds() {
 			return this.endUserIds;
 		}
@@ -756,6 +766,69 @@ public class DescribeDesktopsResponse extends AcsResponse {
 			}
 		}
 
+		public static class DesktopDuration {
+
+			private String packageId;
+
+			private String packageCreationTime;
+
+			private String packageExpiredTime;
+
+			private Long usedDuration;
+
+			private Long totalDuration;
+
+			private String packageStatus;
+
+			public String getPackageId() {
+				return this.packageId;
+			}
+
+			public void setPackageId(String packageId) {
+				this.packageId = packageId;
+			}
+
+			public String getPackageCreationTime() {
+				return this.packageCreationTime;
+			}
+
+			public void setPackageCreationTime(String packageCreationTime) {
+				this.packageCreationTime = packageCreationTime;
+			}
+
+			public String getPackageExpiredTime() {
+				return this.packageExpiredTime;
+			}
+
+			public void setPackageExpiredTime(String packageExpiredTime) {
+				this.packageExpiredTime = packageExpiredTime;
+			}
+
+			public Long getUsedDuration() {
+				return this.usedDuration;
+			}
+
+			public void setUsedDuration(Long usedDuration) {
+				this.usedDuration = usedDuration;
+			}
+
+			public Long getTotalDuration() {
+				return this.totalDuration;
+			}
+
+			public void setTotalDuration(Long totalDuration) {
+				this.totalDuration = totalDuration;
+			}
+
+			public String getPackageStatus() {
+				return this.packageStatus;
+			}
+
+			public void setPackageStatus(String packageStatus) {
+				this.packageStatus = packageStatus;
+			}
+		}
+
 		public static class FotaUpdate {
 
 			private String currentAppVersion;
@@ -765,6 +838,10 @@ public class DescribeDesktopsResponse extends AcsResponse {
 			private String releaseNote;
 
 			private Long size;
+
+			private String releaseNoteEn;
+
+			private String releaseNoteJp;
 
 			public String getCurrentAppVersion() {
 				return this.currentAppVersion;
@@ -796,6 +873,22 @@ public class DescribeDesktopsResponse extends AcsResponse {
 
 			public void setSize(Long size) {
 				this.size = size;
+			}
+
+			public String getReleaseNoteEn() {
+				return this.releaseNoteEn;
+			}
+
+			public void setReleaseNoteEn(String releaseNoteEn) {
+				this.releaseNoteEn = releaseNoteEn;
+			}
+
+			public String getReleaseNoteJp() {
+				return this.releaseNoteJp;
+			}
+
+			public void setReleaseNoteJp(String releaseNoteJp) {
+				this.releaseNoteJp = releaseNoteJp;
 			}
 		}
 	}

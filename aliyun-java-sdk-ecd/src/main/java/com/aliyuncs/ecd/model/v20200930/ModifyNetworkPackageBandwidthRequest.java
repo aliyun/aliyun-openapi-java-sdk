@@ -33,7 +33,7 @@ public class ModifyNetworkPackageBandwidthRequest extends RpcAcsRequest<ModifyNe
 
 	private String promotionId;
 	public ModifyNetworkPackageBandwidthRequest() {
-		super("ecd", "2020-09-30", "ModifyNetworkPackageBandwidth");
+		super("ecd", "2020-09-30", "ModifyNetworkPackageBandwidth", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

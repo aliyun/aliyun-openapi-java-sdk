@@ -41,6 +41,8 @@ public class DescribeDesktopsInGroupResponse extends AcsResponse {
 
 	private Integer stopedPrePaidDesktopsCount;
 
+	private Integer stoppedPrePaidDesktopsCount;
+
 	private List<PaidDesktop> paidDesktops;
 
 	private List<PostPaidDesktop> postPaidDesktops;
@@ -107,6 +109,14 @@ public class DescribeDesktopsInGroupResponse extends AcsResponse {
 
 	public void setStopedPrePaidDesktopsCount(Integer stopedPrePaidDesktopsCount) {
 		this.stopedPrePaidDesktopsCount = stopedPrePaidDesktopsCount;
+	}
+
+	public Integer getStoppedPrePaidDesktopsCount() {
+		return this.stoppedPrePaidDesktopsCount;
+	}
+
+	public void setStoppedPrePaidDesktopsCount(Integer stoppedPrePaidDesktopsCount) {
+		this.stoppedPrePaidDesktopsCount = stoppedPrePaidDesktopsCount;
 	}
 
 	public List<PaidDesktop> getPaidDesktops() {

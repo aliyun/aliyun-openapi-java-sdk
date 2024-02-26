@@ -25,18 +25,31 @@ import com.aliyuncs.ecd.Endpoint;
 public class DeleteCdsFileRequest extends RpcAcsRequest<DeleteCdsFileResponse> {
 	   
 
+	private String groupId;
+
 	private String cdsId;
 
 	private String endUserId;
 
 	private String fileId;
 	public DeleteCdsFileRequest() {
-		super("ecd", "2020-09-30", "DeleteCdsFile");
+		super("ecd", "2020-09-30", "DeleteCdsFile", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
+		}
 	}
 
 	public String getCdsId() {

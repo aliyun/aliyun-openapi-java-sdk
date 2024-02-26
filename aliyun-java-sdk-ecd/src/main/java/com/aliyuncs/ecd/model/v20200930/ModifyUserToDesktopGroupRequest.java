@@ -32,7 +32,7 @@ public class ModifyUserToDesktopGroupRequest extends RpcAcsRequest<ModifyUserToD
 
 	private List<String> newEndUserIdss;
 	public ModifyUserToDesktopGroupRequest() {
-		super("ecd", "2020-09-30", "ModifyUserToDesktopGroup");
+		super("ecd", "2020-09-30", "ModifyUserToDesktopGroup", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

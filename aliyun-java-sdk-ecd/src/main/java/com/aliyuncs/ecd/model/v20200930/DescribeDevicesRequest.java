@@ -43,7 +43,7 @@ public class DescribeDevicesRequest extends RpcAcsRequest<DescribeDevicesRespons
 
 	private String region;
 	public DescribeDevicesRequest() {
-		super("ecd", "2020-09-30", "DescribeDevices");
+		super("ecd", "2020-09-30", "DescribeDevices", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

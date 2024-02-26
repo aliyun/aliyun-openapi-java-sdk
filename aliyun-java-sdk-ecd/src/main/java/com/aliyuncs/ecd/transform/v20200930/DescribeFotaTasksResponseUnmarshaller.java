@@ -27,6 +27,9 @@ public class DescribeFotaTasksResponseUnmarshaller {
 	public static DescribeFotaTasksResponse unmarshall(DescribeFotaTasksResponse describeFotaTasksResponse, UnmarshallerContext _ctx) {
 		
 		describeFotaTasksResponse.setRequestId(_ctx.stringValue("DescribeFotaTasksResponse.RequestId"));
+		describeFotaTasksResponse.setCode(_ctx.stringValue("DescribeFotaTasksResponse.Code"));
+		describeFotaTasksResponse.setMessage(_ctx.stringValue("DescribeFotaTasksResponse.Message"));
+		describeFotaTasksResponse.setNextToken(_ctx.stringValue("DescribeFotaTasksResponse.NextToken"));
 
 		List<FotaTask> fotaTasks = new ArrayList<FotaTask>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeFotaTasksResponse.FotaTasks.Length"); i++) {

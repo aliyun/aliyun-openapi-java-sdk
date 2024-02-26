@@ -29,7 +29,7 @@ public class CancelCdsFileShareLinkRequest extends RpcAcsRequest<CancelCdsFileSh
 
 	private String cdsId;
 	public CancelCdsFileShareLinkRequest() {
-		super("ecd", "2020-09-30", "CancelCdsFileShareLink");
+		super("ecd", "2020-09-30", "CancelCdsFileShareLink", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -42,6 +42,8 @@ public class CreateCdsFileShareLinkRequest extends RpcAcsRequest<CreateCdsFileSh
 
 	private Boolean disableSave;
 
+	private String groupId;
+
 	private Long downloadLimit;
 
 	private String cdsId;
@@ -52,7 +54,7 @@ public class CreateCdsFileShareLinkRequest extends RpcAcsRequest<CreateCdsFileSh
 
 	private String expiration;
 	public CreateCdsFileShareLinkRequest() {
-		super("ecd", "2020-09-30", "CreateCdsFileShareLink");
+		super("ecd", "2020-09-30", "CreateCdsFileShareLink", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -145,6 +147,17 @@ public class CreateCdsFileShareLinkRequest extends RpcAcsRequest<CreateCdsFileSh
 		this.disableSave = disableSave;
 		if(disableSave != null){
 			putQueryParameter("DisableSave", disableSave.toString());
+		}
+	}
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
 		}
 	}
 

@@ -32,7 +32,7 @@ public class CreateCloudDriveUsersRequest extends RpcAcsRequest<CreateCloudDrive
 
 	private Long userMaxSize;
 	public CreateCloudDriveUsersRequest() {
-		super("ecd", "2020-09-30", "CreateCloudDriveUsers");
+		super("ecd", "2020-09-30", "CreateCloudDriveUsers", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

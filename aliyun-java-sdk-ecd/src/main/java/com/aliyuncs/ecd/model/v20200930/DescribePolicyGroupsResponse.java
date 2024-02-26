@@ -165,6 +165,20 @@ public class DescribePolicyGroupsResponse extends AcsResponse {
 
 		private Integer memoryDownGradeDuration;
 
+		private String watermarkSecurity;
+
+		private String watermarkAntiCam;
+
+		private String cloudHub;
+
+		private String watermarkPower;
+
+		private String recordingUserNotify;
+
+		private String recordingUserNotifyMessage;
+
+		private String adminAccess;
+
 		private List<AuthorizeSecurityPolicyRule> authorizeSecurityPolicyRules;
 
 		private List<AuthorizeAccessPolicyRule> authorizeAccessPolicyRules;
@@ -615,6 +629,62 @@ public class DescribePolicyGroupsResponse extends AcsResponse {
 
 		public void setMemoryDownGradeDuration(Integer memoryDownGradeDuration) {
 			this.memoryDownGradeDuration = memoryDownGradeDuration;
+		}
+
+		public String getWatermarkSecurity() {
+			return this.watermarkSecurity;
+		}
+
+		public void setWatermarkSecurity(String watermarkSecurity) {
+			this.watermarkSecurity = watermarkSecurity;
+		}
+
+		public String getWatermarkAntiCam() {
+			return this.watermarkAntiCam;
+		}
+
+		public void setWatermarkAntiCam(String watermarkAntiCam) {
+			this.watermarkAntiCam = watermarkAntiCam;
+		}
+
+		public String getCloudHub() {
+			return this.cloudHub;
+		}
+
+		public void setCloudHub(String cloudHub) {
+			this.cloudHub = cloudHub;
+		}
+
+		public String getWatermarkPower() {
+			return this.watermarkPower;
+		}
+
+		public void setWatermarkPower(String watermarkPower) {
+			this.watermarkPower = watermarkPower;
+		}
+
+		public String getRecordingUserNotify() {
+			return this.recordingUserNotify;
+		}
+
+		public void setRecordingUserNotify(String recordingUserNotify) {
+			this.recordingUserNotify = recordingUserNotify;
+		}
+
+		public String getRecordingUserNotifyMessage() {
+			return this.recordingUserNotifyMessage;
+		}
+
+		public void setRecordingUserNotifyMessage(String recordingUserNotifyMessage) {
+			this.recordingUserNotifyMessage = recordingUserNotifyMessage;
+		}
+
+		public String getAdminAccess() {
+			return this.adminAccess;
+		}
+
+		public void setAdminAccess(String adminAccess) {
+			this.adminAccess = adminAccess;
 		}
 
 		public List<AuthorizeSecurityPolicyRule> getAuthorizeSecurityPolicyRules() {

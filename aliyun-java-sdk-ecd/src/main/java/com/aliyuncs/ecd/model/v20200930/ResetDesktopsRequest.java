@@ -36,7 +36,7 @@ public class ResetDesktopsRequest extends RpcAcsRequest<ResetDesktopsResponse> {
 
 	private String payType;
 	public ResetDesktopsRequest() {
-		super("ecd", "2020-09-30", "ResetDesktops");
+		super("ecd", "2020-09-30", "ResetDesktops", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

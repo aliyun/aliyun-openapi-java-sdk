@@ -36,7 +36,11 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 
 	private String nextToken;
 
+	private String imageName;
+
 	private String imageType;
+
+	private String fotaVersion;
 
 	private String sessionType;
 
@@ -50,7 +54,7 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 
 	private String gpuDriverVersion;
 	public DescribeImagesRequest() {
-		super("ecd", "2020-09-30", "DescribeImages");
+		super("ecd", "2020-09-30", "DescribeImages", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -115,6 +119,17 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 		}
 	}
 
+	public String getImageName() {
+		return this.imageName;
+	}
+
+	public void setImageName(String imageName) {
+		this.imageName = imageName;
+		if(imageName != null){
+			putQueryParameter("ImageName", imageName);
+		}
+	}
+
 	public String getImageType() {
 		return this.imageType;
 	}
@@ -123,6 +138,17 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 		this.imageType = imageType;
 		if(imageType != null){
 			putQueryParameter("ImageType", imageType);
+		}
+	}
+
+	public String getFotaVersion() {
+		return this.fotaVersion;
+	}
+
+	public void setFotaVersion(String fotaVersion) {
+		this.fotaVersion = fotaVersion;
+		if(fotaVersion != null){
+			putQueryParameter("FotaVersion", fotaVersion);
 		}
 	}
 

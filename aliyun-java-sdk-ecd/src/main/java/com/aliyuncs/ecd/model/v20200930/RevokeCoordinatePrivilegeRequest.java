@@ -33,7 +33,7 @@ public class RevokeCoordinatePrivilegeRequest extends RpcAcsRequest<RevokeCoordi
 
 	private String endUserId;
 	public RevokeCoordinatePrivilegeRequest() {
-		super("ecd", "2020-09-30", "RevokeCoordinatePrivilege");
+		super("ecd", "2020-09-30", "RevokeCoordinatePrivilege", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

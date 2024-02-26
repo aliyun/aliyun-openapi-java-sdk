@@ -1,3 +1,6 @@
+2024-02-26 Version: 2.0.24
+- Generated 2020-09-30 for `ecd`.
+
 2023-06-09 Version: 2.0.23
 - Add CommonDesktopSetting.
 

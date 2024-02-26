@@ -35,7 +35,7 @@ public class CreateNASFileSystemRequest extends RpcAcsRequest<CreateNASFileSyste
 
 	private String name;
 	public CreateNASFileSystemRequest() {
-		super("ecd", "2020-09-30", "CreateNASFileSystem");
+		super("ecd", "2020-09-30", "CreateNASFileSystem", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

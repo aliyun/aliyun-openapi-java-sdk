@@ -25,7 +25,7 @@ import com.aliyuncs.ecd.Endpoint;
 public class CreateDiskEncryptionServiceRequest extends RpcAcsRequest<CreateDiskEncryptionServiceResponse> {
 	   
 	public CreateDiskEncryptionServiceRequest() {
-		super("ecd", "2020-09-30", "CreateDiskEncryptionService");
+		super("ecd", "2020-09-30", "CreateDiskEncryptionService", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

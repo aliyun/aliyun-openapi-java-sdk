@@ -38,7 +38,7 @@ public class DescribeDirectoriesRequest extends RpcAcsRequest<DescribeDirectorie
 
 	private String status;
 	public DescribeDirectoriesRequest() {
-		super("ecd", "2020-09-30", "DescribeDirectories");
+		super("ecd", "2020-09-30", "DescribeDirectories", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class DescribeUsersPasswordRequest extends RpcAcsRequest<DescribeUsersPas
 
 	private String desktopId;
 	public DescribeUsersPasswordRequest() {
-		super("ecd", "2020-09-30", "DescribeUsersPassword");
+		super("ecd", "2020-09-30", "DescribeUsersPassword", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class DescribeUserProfilePathRulesRequest extends RpcAcsRequest<DescribeU
 
 	private String desktopGroupId;
 	public DescribeUserProfilePathRulesRequest() {
-		super("ecd", "2020-09-30", "DescribeUserProfilePathRules");
+		super("ecd", "2020-09-30", "DescribeUserProfilePathRules", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

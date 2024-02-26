@@ -27,13 +27,15 @@ public class CompleteCdsFileRequest extends RpcAcsRequest<CompleteCdsFileRespons
 
 	private String uploadId;
 
+	private String groupId;
+
 	private String cdsId;
 
 	private String endUserId;
 
 	private String fileId;
 	public CompleteCdsFileRequest() {
-		super("ecd", "2020-09-30", "CompleteCdsFile");
+		super("ecd", "2020-09-30", "CompleteCdsFile", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -49,6 +51,17 @@ public class CompleteCdsFileRequest extends RpcAcsRequest<CompleteCdsFileRespons
 		this.uploadId = uploadId;
 		if(uploadId != null){
 			putQueryParameter("UploadId", uploadId);
+		}
+	}
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
 		}
 	}
 

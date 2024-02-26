@@ -30,7 +30,7 @@ public class MigrateDesktopsRequest extends RpcAcsRequest<MigrateDesktopsRespons
 
 	private String targetOfficeSiteId;
 	public MigrateDesktopsRequest() {
-		super("ecd", "2020-09-30", "MigrateDesktops");
+		super("ecd", "2020-09-30", "MigrateDesktops", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

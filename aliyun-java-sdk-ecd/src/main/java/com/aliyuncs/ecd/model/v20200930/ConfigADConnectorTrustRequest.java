@@ -31,7 +31,7 @@ public class ConfigADConnectorTrustRequest extends RpcAcsRequest<ConfigADConnect
 
 	private Boolean rdsLicenseDomain;
 	public ConfigADConnectorTrustRequest() {
-		super("ecd", "2020-09-30", "ConfigADConnectorTrust");
+		super("ecd", "2020-09-30", "ConfigADConnectorTrust", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

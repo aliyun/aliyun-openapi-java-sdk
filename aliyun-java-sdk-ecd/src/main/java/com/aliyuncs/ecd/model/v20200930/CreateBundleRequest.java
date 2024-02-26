@@ -44,7 +44,7 @@ public class CreateBundleRequest extends RpcAcsRequest<CreateBundleResponse> {
 
 	private Integer rootDiskSizeGib;
 	public CreateBundleRequest() {
-		super("ecd", "2020-09-30", "CreateBundle");
+		super("ecd", "2020-09-30", "CreateBundle", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -26,6 +26,8 @@ import com.aliyuncs.ecd.Endpoint;
 public class CreateSimpleOfficeSiteRequest extends RpcAcsRequest<CreateSimpleOfficeSiteResponse> {
 	   
 
+	private String vpcType;
+
 	private String cenId;
 
 	private Long cenOwnerId;
@@ -50,12 +52,23 @@ public class CreateSimpleOfficeSiteRequest extends RpcAcsRequest<CreateSimpleOff
 
 	private String cidrBlock;
 	public CreateSimpleOfficeSiteRequest() {
-		super("ecd", "2020-09-30", "CreateSimpleOfficeSite");
+		super("ecd", "2020-09-30", "CreateSimpleOfficeSite", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getVpcType() {
+		return this.vpcType;
+	}
+
+	public void setVpcType(String vpcType) {
+		this.vpcType = vpcType;
+		if(vpcType != null){
+			putQueryParameter("VpcType", vpcType);
+		}
 	}
 
 	public String getCenId() {

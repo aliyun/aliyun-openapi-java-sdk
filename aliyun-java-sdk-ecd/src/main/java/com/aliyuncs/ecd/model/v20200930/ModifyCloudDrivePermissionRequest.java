@@ -32,7 +32,7 @@ public class ModifyCloudDrivePermissionRequest extends RpcAcsRequest<ModifyCloud
 
 	private List<String> downloadUploadEndUserIdss;
 	public ModifyCloudDrivePermissionRequest() {
-		super("ecd", "2020-09-30", "ModifyCloudDrivePermission");
+		super("ecd", "2020-09-30", "ModifyCloudDrivePermission", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

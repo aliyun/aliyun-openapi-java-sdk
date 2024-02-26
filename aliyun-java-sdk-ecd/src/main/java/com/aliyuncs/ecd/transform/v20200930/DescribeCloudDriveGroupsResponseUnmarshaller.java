@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.ecd.model.v20200930.DescribeCloudDriveGroupsResponse;
 import com.aliyuncs.ecd.model.v20200930.DescribeCloudDriveGroupsResponse.CloudDriveGroup;
+import com.aliyuncs.ecd.model.v20200930.DescribeCloudDriveGroupsResponse.CloudDriveGroup.EndUserIdWithNickNameModel;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -42,6 +43,18 @@ public class DescribeCloudDriveGroupsResponseUnmarshaller {
 			cloudDriveGroup.setCreateTime(_ctx.stringValue("DescribeCloudDriveGroupsResponse.CloudDriveGroups["+ i +"].CreateTime"));
 			cloudDriveGroup.setTotalSize(_ctx.longValue("DescribeCloudDriveGroupsResponse.CloudDriveGroups["+ i +"].TotalSize"));
 			cloudDriveGroup.setUsedSize(_ctx.stringValue("DescribeCloudDriveGroupsResponse.CloudDriveGroups["+ i +"].UsedSize"));
+			cloudDriveGroup.setAdminUserIds(_ctx.stringValue("DescribeCloudDriveGroupsResponse.CloudDriveGroups["+ i +"].AdminUserIds"));
+			cloudDriveGroup.setOrgId(_ctx.stringValue("DescribeCloudDriveGroupsResponse.CloudDriveGroups["+ i +"].OrgId"));
+
+			List<EndUserIdWithNickNameModel> adminUserInfos = new ArrayList<EndUserIdWithNickNameModel>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeCloudDriveGroupsResponse.CloudDriveGroups["+ i +"].AdminUserInfos.Length"); j++) {
+				EndUserIdWithNickNameModel endUserIdWithNickNameModel = new EndUserIdWithNickNameModel();
+				endUserIdWithNickNameModel.setEndUserId(_ctx.stringValue("DescribeCloudDriveGroupsResponse.CloudDriveGroups["+ i +"].AdminUserInfos["+ j +"].EndUserId"));
+				endUserIdWithNickNameModel.setNickName(_ctx.stringValue("DescribeCloudDriveGroupsResponse.CloudDriveGroups["+ i +"].AdminUserInfos["+ j +"].NickName"));
+
+				adminUserInfos.add(endUserIdWithNickNameModel);
+			}
+			cloudDriveGroup.setAdminUserInfos(adminUserInfos);
 
 			cloudDriveGroups.add(cloudDriveGroup);
 		}

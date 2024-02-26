@@ -35,7 +35,7 @@ public class DescribeDesktopsInGroupRequest extends RpcAcsRequest<DescribeDeskto
 
 	private String payType;
 	public DescribeDesktopsInGroupRequest() {
-		super("ecd", "2020-09-30", "DescribeDesktopsInGroup");
+		super("ecd", "2020-09-30", "DescribeDesktopsInGroup", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

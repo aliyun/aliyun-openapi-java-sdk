@@ -32,7 +32,7 @@ public class ModifyDesktopsPolicyGroupRequest extends RpcAcsRequest<ModifyDeskto
 
 	private String policyGroupId;
 	public ModifyDesktopsPolicyGroupRequest() {
-		super("ecd", "2020-09-30", "ModifyDesktopsPolicyGroup");
+		super("ecd", "2020-09-30", "ModifyDesktopsPolicyGroup", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

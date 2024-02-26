@@ -29,7 +29,7 @@ public class AssociateNetworkPackageRequest extends RpcAcsRequest<AssociateNetwo
 
 	private String networkPackageId;
 	public AssociateNetworkPackageRequest() {
-		super("ecd", "2020-09-30", "AssociateNetworkPackage");
+		super("ecd", "2020-09-30", "AssociateNetworkPackage", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

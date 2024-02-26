@@ -31,13 +31,15 @@ public class AddFilePermissionRequest extends RpcAcsRequest<AddFilePermissionRes
 	@SerializedName("memberList")
 	private List<MemberList> memberList;
 
+	private String groupId;
+
 	private String cdsId;
 
 	private String endUserId;
 
 	private String fileId;
 	public AddFilePermissionRequest() {
-		super("ecd", "2020-09-30", "AddFilePermission");
+		super("ecd", "2020-09-30", "AddFilePermission", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -54,6 +56,17 @@ public class AddFilePermissionRequest extends RpcAcsRequest<AddFilePermissionRes
 		if (memberList != null) {
 			putQueryParameter("MemberList" , new Gson().toJson(memberList));
 		}	
+	}
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
+		}
 	}
 
 	public String getCdsId() {

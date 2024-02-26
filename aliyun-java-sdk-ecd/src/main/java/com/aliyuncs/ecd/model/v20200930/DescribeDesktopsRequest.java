@@ -80,7 +80,7 @@ public class DescribeDesktopsRequest extends RpcAcsRequest<DescribeDesktopsRespo
 
 	private String userName;
 	public DescribeDesktopsRequest() {
-		super("ecd", "2020-09-30", "DescribeDesktops");
+		super("ecd", "2020-09-30", "DescribeDesktops", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

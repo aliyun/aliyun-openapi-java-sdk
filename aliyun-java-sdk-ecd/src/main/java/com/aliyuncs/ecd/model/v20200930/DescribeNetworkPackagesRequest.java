@@ -34,7 +34,7 @@ public class DescribeNetworkPackagesRequest extends RpcAcsRequest<DescribeNetwor
 
 	private Integer maxResults;
 	public DescribeNetworkPackagesRequest() {
-		super("ecd", "2020-09-30", "DescribeNetworkPackages");
+		super("ecd", "2020-09-30", "DescribeNetworkPackages", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

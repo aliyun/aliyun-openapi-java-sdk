@@ -64,7 +64,7 @@ public class CreateADConnectorOfficeSiteRequest extends RpcAcsRequest<CreateADCo
 
 	private List<String> dnsAddresss;
 	public CreateADConnectorOfficeSiteRequest() {
-		super("ecd", "2020-09-30", "CreateADConnectorOfficeSite");
+		super("ecd", "2020-09-30", "CreateADConnectorOfficeSite", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

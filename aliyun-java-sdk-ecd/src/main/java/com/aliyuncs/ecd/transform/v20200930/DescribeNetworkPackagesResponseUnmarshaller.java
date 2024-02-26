@@ -48,6 +48,7 @@ public class DescribeNetworkPackagesResponseUnmarshaller {
 			networkPackage.setVpcSnatPolicy(_ctx.stringValue("DescribeNetworkPackagesResponse.NetworkPackages["+ i +"].VpcSnatPolicy"));
 			networkPackage.setQosType(_ctx.stringValue("DescribeNetworkPackagesResponse.NetworkPackages["+ i +"].QosType"));
 			networkPackage.setNgwVersion(_ctx.stringValue("DescribeNetworkPackagesResponse.NetworkPackages["+ i +"].NgwVersion"));
+			networkPackage.setBusinessStatus(_ctx.stringValue("DescribeNetworkPackagesResponse.NetworkPackages["+ i +"].BusinessStatus"));
 
 			List<String> eipAddresses = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeNetworkPackagesResponse.NetworkPackages["+ i +"].EipAddresses.Length"); j++) {

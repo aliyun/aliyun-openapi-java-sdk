@@ -30,7 +30,7 @@ public class DeleteCloudDriveGroupsRequest extends RpcAcsRequest<DeleteCloudDriv
 
 	private String cdsId;
 	public DeleteCloudDriveGroupsRequest() {
-		super("ecd", "2020-09-30", "DeleteCloudDriveGroups");
+		super("ecd", "2020-09-30", "DeleteCloudDriveGroups", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

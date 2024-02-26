@@ -76,7 +76,7 @@ public class ModifyDesktopGroupRequest extends RpcAcsRequest<ModifyDesktopGroupR
 
 	private String policyGroupId;
 	public ModifyDesktopGroupRequest() {
-		super("ecd", "2020-09-30", "ModifyDesktopGroup");
+		super("ecd", "2020-09-30", "ModifyDesktopGroup", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

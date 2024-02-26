@@ -40,6 +40,8 @@ public class DescribeBundlesRequest extends RpcAcsRequest<DescribeBundlesRespons
 
 	private Boolean fromDesktopGroup;
 
+	private String scope;
+
 	private String bundleType;
 
 	private String fotaChannel;
@@ -62,7 +64,7 @@ public class DescribeBundlesRequest extends RpcAcsRequest<DescribeBundlesRespons
 
 	private Boolean supportMultiSession;
 	public DescribeBundlesRequest() {
-		super("ecd", "2020-09-30", "DescribeBundles");
+		super("ecd", "2020-09-30", "DescribeBundles", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -148,6 +150,17 @@ public class DescribeBundlesRequest extends RpcAcsRequest<DescribeBundlesRespons
 		this.fromDesktopGroup = fromDesktopGroup;
 		if(fromDesktopGroup != null){
 			putQueryParameter("FromDesktopGroup", fromDesktopGroup.toString());
+		}
+	}
+
+	public String getScope() {
+		return this.scope;
+	}
+
+	public void setScope(String scope) {
+		this.scope = scope;
+		if(scope != null){
+			putQueryParameter("Scope", scope);
 		}
 	}
 

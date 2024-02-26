@@ -27,6 +27,12 @@ public class CreateCdsFileRequest extends RpcAcsRequest<CreateCdsFileResponse> {
 
 	private String fileType;
 
+	private Long fileLength;
+
+	private String endUserId;
+
+	private String groupId;
+
 	private String cdsId;
 
 	private String conflictPolicy;
@@ -35,13 +41,9 @@ public class CreateCdsFileRequest extends RpcAcsRequest<CreateCdsFileResponse> {
 
 	private String fileName;
 
-	private Long fileLength;
-
-	private String endUserId;
-
 	private String fileHash;
 	public CreateCdsFileRequest() {
-		super("ecd", "2020-09-30", "CreateCdsFile");
+		super("ecd", "2020-09-30", "CreateCdsFile", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -57,6 +59,39 @@ public class CreateCdsFileRequest extends RpcAcsRequest<CreateCdsFileResponse> {
 		this.fileType = fileType;
 		if(fileType != null){
 			putQueryParameter("FileType", fileType);
+		}
+	}
+
+	public Long getFileLength() {
+		return this.fileLength;
+	}
+
+	public void setFileLength(Long fileLength) {
+		this.fileLength = fileLength;
+		if(fileLength != null){
+			putQueryParameter("FileLength", fileLength.toString());
+		}
+	}
+
+	public String getEndUserId() {
+		return this.endUserId;
+	}
+
+	public void setEndUserId(String endUserId) {
+		this.endUserId = endUserId;
+		if(endUserId != null){
+			putQueryParameter("EndUserId", endUserId);
+		}
+	}
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
 		}
 	}
 
@@ -101,28 +136,6 @@ public class CreateCdsFileRequest extends RpcAcsRequest<CreateCdsFileResponse> {
 		this.fileName = fileName;
 		if(fileName != null){
 			putQueryParameter("FileName", fileName);
-		}
-	}
-
-	public Long getFileLength() {
-		return this.fileLength;
-	}
-
-	public void setFileLength(Long fileLength) {
-		this.fileLength = fileLength;
-		if(fileLength != null){
-			putQueryParameter("FileLength", fileLength.toString());
-		}
-	}
-
-	public String getEndUserId() {
-		return this.endUserId;
-	}
-
-	public void setEndUserId(String endUserId) {
-		this.endUserId = endUserId;
-		if(endUserId != null){
-			putQueryParameter("EndUserId", endUserId);
 		}
 	}
 

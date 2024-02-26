@@ -61,7 +61,7 @@ public class ModifyCdsFileShareLinkRequest extends RpcAcsRequest<ModifyCdsFileSh
 
 	private String status;
 	public ModifyCdsFileShareLinkRequest() {
-		super("ecd", "2020-09-30", "ModifyCdsFileShareLink");
+		super("ecd", "2020-09-30", "ModifyCdsFileShareLink", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

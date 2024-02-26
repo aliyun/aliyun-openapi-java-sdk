@@ -44,6 +44,8 @@ public class ModifyPolicyGroupRequest extends RpcAcsRequest<ModifyPolicyGroupRes
 
 	private List<AuthorizeSecurityPolicyRule> authorizeSecurityPolicyRules;
 
+	private String watermarkSecurity;
+
 	private String clipboard;
 
 	private String endUserApplyAdminCoordinate;
@@ -53,6 +55,8 @@ public class ModifyPolicyGroupRequest extends RpcAcsRequest<ModifyPolicyGroupRes
 	private String watermarkType;
 
 	private String recordingStartTime;
+
+	private String adminAccess;
 
 	private Integer recordingDuration;
 
@@ -68,11 +72,15 @@ public class ModifyPolicyGroupRequest extends RpcAcsRequest<ModifyPolicyGroupRes
 
 	private String appContentProtection;
 
+	private List<DomainResolveRule> domainResolveRules;
+
 	private List<AuthorizeAccessPolicyRule> authorizeAccessPolicyRules;
 
 	private String watermarkTransparency;
 
 	private String name;
+
+	private String watermarkPower;
 
 	private String policyGroupId;
 
@@ -84,13 +92,19 @@ public class ModifyPolicyGroupRequest extends RpcAcsRequest<ModifyPolicyGroupRes
 
 	private Integer watermarkFontSize;
 
+	private String watermarkAntiCam;
+
 	private String recording;
 
 	private List<String> scopeValues;
 
+	private String domainResolveRuleType;
+
 	private Long recordingFps;
 
 	private String watermarkFontStyle;
+
+	private String recordingUserNotifyMessage;
 
 	private String recordContent;
 
@@ -118,9 +132,11 @@ public class ModifyPolicyGroupRequest extends RpcAcsRequest<ModifyPolicyGroupRes
 
 	private String recordingEndTime;
 
+	private String recordingUserNotify;
+
 	private String internetCommunicationProtocol;
 	public ModifyPolicyGroupRequest() {
-		super("ecd", "2020-09-30", "ModifyPolicyGroup");
+		super("ecd", "2020-09-30", "ModifyPolicyGroup", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -245,6 +261,17 @@ public class ModifyPolicyGroupRequest extends RpcAcsRequest<ModifyPolicyGroupRes
 		}	
 	}
 
+	public String getWatermarkSecurity() {
+		return this.watermarkSecurity;
+	}
+
+	public void setWatermarkSecurity(String watermarkSecurity) {
+		this.watermarkSecurity = watermarkSecurity;
+		if(watermarkSecurity != null){
+			putQueryParameter("WatermarkSecurity", watermarkSecurity);
+		}
+	}
+
 	public String getClipboard() {
 		return this.clipboard;
 	}
@@ -297,6 +324,17 @@ public class ModifyPolicyGroupRequest extends RpcAcsRequest<ModifyPolicyGroupRes
 		this.recordingStartTime = recordingStartTime;
 		if(recordingStartTime != null){
 			putQueryParameter("RecordingStartTime", recordingStartTime);
+		}
+	}
+
+	public String getAdminAccess() {
+		return this.adminAccess;
+	}
+
+	public void setAdminAccess(String adminAccess) {
+		this.adminAccess = adminAccess;
+		if(adminAccess != null){
+			putQueryParameter("AdminAccess", adminAccess);
 		}
 	}
 
@@ -380,6 +418,21 @@ public class ModifyPolicyGroupRequest extends RpcAcsRequest<ModifyPolicyGroupRes
 		}
 	}
 
+	public List<DomainResolveRule> getDomainResolveRules() {
+		return this.domainResolveRules;
+	}
+
+	public void setDomainResolveRules(List<DomainResolveRule> domainResolveRules) {
+		this.domainResolveRules = domainResolveRules;	
+		if (domainResolveRules != null) {
+			for (int depth1 = 0; depth1 < domainResolveRules.size(); depth1++) {
+				putQueryParameter("DomainResolveRule." + (depth1 + 1) + ".Domain" , domainResolveRules.get(depth1).getDomain());
+				putQueryParameter("DomainResolveRule." + (depth1 + 1) + ".Description" , domainResolveRules.get(depth1).getDescription());
+				putQueryParameter("DomainResolveRule." + (depth1 + 1) + ".Policy" , domainResolveRules.get(depth1).getPolicy());
+			}
+		}	
+	}
+
 	public List<AuthorizeAccessPolicyRule> getAuthorizeAccessPolicyRules() {
 		return this.authorizeAccessPolicyRules;
 	}
@@ -413,6 +466,17 @@ public class ModifyPolicyGroupRequest extends RpcAcsRequest<ModifyPolicyGroupRes
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
+		}
+	}
+
+	public String getWatermarkPower() {
+		return this.watermarkPower;
+	}
+
+	public void setWatermarkPower(String watermarkPower) {
+		this.watermarkPower = watermarkPower;
+		if(watermarkPower != null){
+			putQueryParameter("WatermarkPower", watermarkPower);
 		}
 	}
 
@@ -482,6 +546,17 @@ public class ModifyPolicyGroupRequest extends RpcAcsRequest<ModifyPolicyGroupRes
 		}
 	}
 
+	public String getWatermarkAntiCam() {
+		return this.watermarkAntiCam;
+	}
+
+	public void setWatermarkAntiCam(String watermarkAntiCam) {
+		this.watermarkAntiCam = watermarkAntiCam;
+		if(watermarkAntiCam != null){
+			putQueryParameter("WatermarkAntiCam", watermarkAntiCam);
+		}
+	}
+
 	public String getRecording() {
 		return this.recording;
 	}
@@ -506,6 +581,17 @@ public class ModifyPolicyGroupRequest extends RpcAcsRequest<ModifyPolicyGroupRes
 		}	
 	}
 
+	public String getDomainResolveRuleType() {
+		return this.domainResolveRuleType;
+	}
+
+	public void setDomainResolveRuleType(String domainResolveRuleType) {
+		this.domainResolveRuleType = domainResolveRuleType;
+		if(domainResolveRuleType != null){
+			putQueryParameter("DomainResolveRuleType", domainResolveRuleType);
+		}
+	}
+
 	public Long getRecordingFps() {
 		return this.recordingFps;
 	}
@@ -525,6 +611,17 @@ public class ModifyPolicyGroupRequest extends RpcAcsRequest<ModifyPolicyGroupRes
 		this.watermarkFontStyle = watermarkFontStyle;
 		if(watermarkFontStyle != null){
 			putQueryParameter("WatermarkFontStyle", watermarkFontStyle);
+		}
+	}
+
+	public String getRecordingUserNotifyMessage() {
+		return this.recordingUserNotifyMessage;
+	}
+
+	public void setRecordingUserNotifyMessage(String recordingUserNotifyMessage) {
+		this.recordingUserNotifyMessage = recordingUserNotifyMessage;
+		if(recordingUserNotifyMessage != null){
+			putQueryParameter("RecordingUserNotifyMessage", recordingUserNotifyMessage);
 		}
 	}
 
@@ -668,6 +765,17 @@ public class ModifyPolicyGroupRequest extends RpcAcsRequest<ModifyPolicyGroupRes
 		this.recordingEndTime = recordingEndTime;
 		if(recordingEndTime != null){
 			putQueryParameter("RecordingEndTime", recordingEndTime);
+		}
+	}
+
+	public String getRecordingUserNotify() {
+		return this.recordingUserNotify;
+	}
+
+	public void setRecordingUserNotify(String recordingUserNotify) {
+		this.recordingUserNotify = recordingUserNotify;
+		if(recordingUserNotify != null){
+			putQueryParameter("RecordingUserNotify", recordingUserNotify);
 		}
 	}
 
@@ -848,6 +956,39 @@ public class ModifyPolicyGroupRequest extends RpcAcsRequest<ModifyPolicyGroupRes
 
 		public void setCidrIp(String cidrIp) {
 			this.cidrIp = cidrIp;
+		}
+	}
+
+	public static class DomainResolveRule {
+
+		private String domain;
+
+		private String description;
+
+		private String policy;
+
+		public String getDomain() {
+			return this.domain;
+		}
+
+		public void setDomain(String domain) {
+			this.domain = domain;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getPolicy() {
+			return this.policy;
+		}
+
+		public void setPolicy(String policy) {
+			this.policy = policy;
 		}
 	}
 

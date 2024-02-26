@@ -56,12 +56,15 @@ public class DescribeOfficeSitesResponseUnmarshaller {
 			officeSite.setSubDomainName(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].SubDomainName"));
 			officeSite.setOfficeSiteId(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].OfficeSiteId"));
 			officeSite.setCenId(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].CenId"));
+			officeSite.setCenAttachStatus(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].CenAttachStatus"));
 			officeSite.setMfaEnabled(_ctx.booleanValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].MfaEnabled"));
 			officeSite.setNetworkPackageId(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].NetworkPackageId"));
 			officeSite.setDnsUserName(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].DnsUserName"));
 			officeSite.setOfficeSiteType(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].OfficeSiteType"));
 			officeSite.setNeedVerifyLoginRisk(_ctx.booleanValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].NeedVerifyLoginRisk"));
 			officeSite.setDesktopCount(_ctx.longValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].DesktopCount"));
+			officeSite.setTotalEdsCount(_ctx.longValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].TotalEdsCount"));
+			officeSite.setTotalEdsCountForGroup(_ctx.longValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].TotalEdsCountForGroup"));
 			officeSite.setNeedVerifyZeroDevice(_ctx.booleanValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].NeedVerifyZeroDevice"));
 			officeSite.setCloudBoxOfficeSite(_ctx.booleanValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].CloudBoxOfficeSite"));
 			officeSite.setSsoType(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].SsoType"));
