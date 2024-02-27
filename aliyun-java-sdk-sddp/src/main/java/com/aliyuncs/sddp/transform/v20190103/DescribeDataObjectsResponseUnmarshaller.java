@@ -48,6 +48,7 @@ public class DescribeDataObjectsResponseUnmarshaller {
 			rule.setObjectType(_ctx.stringValue("DescribeDataObjectsResponse.Items["+ i +"].ObjectType"));
 			rule.setPath(_ctx.stringValue("DescribeDataObjectsResponse.Items["+ i +"].Path"));
 			rule.setRegionName(_ctx.stringValue("DescribeDataObjectsResponse.Items["+ i +"].RegionName"));
+			rule.setObjectFileCategory(_ctx.stringValue("DescribeDataObjectsResponse.Items["+ i +"].ObjectFileCategory"));
 
 			List<String> categories = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDataObjectsResponse.Items["+ i +"].Categories.Length"); j++) {

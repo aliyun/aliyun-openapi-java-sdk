@@ -25,13 +25,21 @@ import com.aliyuncs.sddp.Endpoint;
 public class DescribeTablesRequest extends RpcAcsRequest<DescribeTablesResponse> {
 	   
 
+	private String productCode;
+
 	private Long productId;
 
 	private Long packageId;
 
 	private Long riskLevelId;
 
+	private Integer pageSize;
+
+	private String lang;
+
 	private String serviceRegionId;
+
+	private Integer currentPage;
 
 	private Long templateId;
 
@@ -40,14 +48,6 @@ public class DescribeTablesRequest extends RpcAcsRequest<DescribeTablesResponse>
 	private String name;
 
 	private Long ruleId;
-
-	private String productCode;
-
-	private Integer pageSize;
-
-	private String lang;
-
-	private Integer currentPage;
 	public DescribeTablesRequest() {
 		super("Sddp", "2019-01-03", "DescribeTables", "sddp");
 		setMethod(MethodType.POST);
@@ -55,6 +55,17 @@ public class DescribeTablesRequest extends RpcAcsRequest<DescribeTablesResponse>
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getProductCode() {
+		return this.productCode;
+	}
+
+	public void setProductCode(String productCode) {
+		this.productCode = productCode;
+		if(productCode != null){
+			putQueryParameter("ProductCode", productCode);
+		}
 	}
 
 	public Long getProductId() {
@@ -90,6 +101,28 @@ public class DescribeTablesRequest extends RpcAcsRequest<DescribeTablesResponse>
 		}
 	}
 
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
+		}
+	}
+
 	public String getServiceRegionId() {
 		return this.serviceRegionId;
 	}
@@ -98,6 +131,17 @@ public class DescribeTablesRequest extends RpcAcsRequest<DescribeTablesResponse>
 		this.serviceRegionId = serviceRegionId;
 		if(serviceRegionId != null){
 			putQueryParameter("ServiceRegionId", serviceRegionId);
+		}
+	}
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
 		}
 	}
 
@@ -142,50 +186,6 @@ public class DescribeTablesRequest extends RpcAcsRequest<DescribeTablesResponse>
 		this.ruleId = ruleId;
 		if(ruleId != null){
 			putQueryParameter("RuleId", ruleId.toString());
-		}
-	}
-
-	public String getProductCode() {
-		return this.productCode;
-	}
-
-	public void setProductCode(String productCode) {
-		this.productCode = productCode;
-		if(productCode != null){
-			putQueryParameter("ProductCode", productCode);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getLang() {
-		return this.lang;
-	}
-
-	public void setLang(String lang) {
-		this.lang = lang;
-		if(lang != null){
-			putQueryParameter("Lang", lang);
-		}
-	}
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage.toString());
 		}
 	}
 

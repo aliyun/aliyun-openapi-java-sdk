@@ -140,6 +140,10 @@ public class DescribeUserStatusResponse extends AcsResponse {
 
 		private Long ossTotalSize;
 
+		private Boolean useAgentAudit;
+
+		private Integer protectionDays;
+
 		public Long getUseOssSize() {
 			return this.useOssSize;
 		}
@@ -514,6 +518,22 @@ public class DescribeUserStatusResponse extends AcsResponse {
 
 		public void setOssTotalSize(Long ossTotalSize) {
 			this.ossTotalSize = ossTotalSize;
+		}
+
+		public Boolean getUseAgentAudit() {
+			return this.useAgentAudit;
+		}
+
+		public void setUseAgentAudit(Boolean useAgentAudit) {
+			this.useAgentAudit = useAgentAudit;
+		}
+
+		public Integer getProtectionDays() {
+			return this.protectionDays;
+		}
+
+		public void setProtectionDays(Integer protectionDays) {
+			this.protectionDays = protectionDays;
 		}
 	}
 

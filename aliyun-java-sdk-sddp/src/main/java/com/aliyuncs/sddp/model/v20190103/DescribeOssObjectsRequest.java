@@ -37,6 +37,8 @@ public class DescribeOssObjectsRequest extends RpcAcsRequest<DescribeOssObjectsR
 
 	private String serviceRegionId;
 
+	private Long fileCategoryCode;
+
 	private Integer currentPage;
 
 	private Long templateId;
@@ -118,6 +120,17 @@ public class DescribeOssObjectsRequest extends RpcAcsRequest<DescribeOssObjectsR
 		this.serviceRegionId = serviceRegionId;
 		if(serviceRegionId != null){
 			putQueryParameter("ServiceRegionId", serviceRegionId);
+		}
+	}
+
+	public Long getFileCategoryCode() {
+		return this.fileCategoryCode;
+	}
+
+	public void setFileCategoryCode(Long fileCategoryCode) {
+		this.fileCategoryCode = fileCategoryCode;
+		if(fileCategoryCode != null){
+			putQueryParameter("FileCategoryCode", fileCategoryCode.toString());
 		}
 	}
 

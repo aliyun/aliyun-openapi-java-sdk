@@ -25,13 +25,13 @@ import com.aliyuncs.sddp.Endpoint;
 public class DescribeCategoryTemplateListRequest extends RpcAcsRequest<DescribeCategoryTemplateListResponse> {
 	   
 
+	private Integer currentPage;
+
 	private Integer pageSize;
 
 	private Integer usageScenario;
 
 	private String lang;
-
-	private Integer currentPage;
 	public DescribeCategoryTemplateListRequest() {
 		super("Sddp", "2019-01-03", "DescribeCategoryTemplateList", "sddp");
 		setMethod(MethodType.POST);
@@ -39,6 +39,17 @@ public class DescribeCategoryTemplateListRequest extends RpcAcsRequest<DescribeC
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
+		}
 	}
 
 	public Integer getPageSize() {
@@ -71,17 +82,6 @@ public class DescribeCategoryTemplateListRequest extends RpcAcsRequest<DescribeC
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
-		}
-	}
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage.toString());
 		}
 	}
 

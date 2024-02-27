@@ -101,6 +101,8 @@ public class DescribeDataObjectsResponse extends AcsResponse {
 
 		private String regionName;
 
+		private String objectFileCategory;
+
 		private List<ModelTagsItem> modelTags;
 
 		private List<RuleListItem> ruleList;
@@ -201,6 +203,14 @@ public class DescribeDataObjectsResponse extends AcsResponse {
 
 		public void setRegionName(String regionName) {
 			this.regionName = regionName;
+		}
+
+		public String getObjectFileCategory() {
+			return this.objectFileCategory;
+		}
+
+		public void setObjectFileCategory(String objectFileCategory) {
+			this.objectFileCategory = objectFileCategory;
 		}
 
 		public List<ModelTagsItem> getModelTags() {

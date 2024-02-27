@@ -25,11 +25,11 @@ import com.aliyuncs.sddp.Endpoint;
 public class DescribeDataLimitSetRequest extends RpcAcsRequest<DescribeDataLimitSetResponse> {
 	   
 
+	private Integer resourceType;
+
 	private String parentId;
 
 	private String lang;
-
-	private Integer resourceType;
 	public DescribeDataLimitSetRequest() {
 		super("Sddp", "2019-01-03", "DescribeDataLimitSet", "sddp");
 		setMethod(MethodType.POST);
@@ -37,6 +37,17 @@ public class DescribeDataLimitSetRequest extends RpcAcsRequest<DescribeDataLimit
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Integer getResourceType() {
+		return this.resourceType;
+	}
+
+	public void setResourceType(Integer resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType.toString());
+		}
 	}
 
 	public String getParentId() {
@@ -58,17 +69,6 @@ public class DescribeDataLimitSetRequest extends RpcAcsRequest<DescribeDataLimit
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
-		}
-	}
-
-	public Integer getResourceType() {
-		return this.resourceType;
-	}
-
-	public void setResourceType(Integer resourceType) {
-		this.resourceType = resourceType;
-		if(resourceType != null){
-			putQueryParameter("ResourceType", resourceType.toString());
 		}
 	}
 

@@ -45,6 +45,8 @@ public class DescribeDataObjectsRequest extends RpcAcsRequest<DescribeDataObject
 
 	private String modelTagIds;
 
+	private Long fileCategoryCode;
+
 	private Integer currentPage;
 
 	private Long templateId;
@@ -168,6 +170,17 @@ public class DescribeDataObjectsRequest extends RpcAcsRequest<DescribeDataObject
 		this.modelTagIds = modelTagIds;
 		if(modelTagIds != null){
 			putQueryParameter("ModelTagIds", modelTagIds);
+		}
+	}
+
+	public Long getFileCategoryCode() {
+		return this.fileCategoryCode;
+	}
+
+	public void setFileCategoryCode(Long fileCategoryCode) {
+		this.fileCategoryCode = fileCategoryCode;
+		if(fileCategoryCode != null){
+			putQueryParameter("FileCategoryCode", fileCategoryCode.toString());
 		}
 	}
 

@@ -25,9 +25,9 @@ import com.aliyuncs.sddp.Endpoint;
 public class DescribeRiskLevelsRequest extends RpcAcsRequest<DescribeRiskLevelsResponse> {
 	   
 
-	private String lang;
-
 	private Long templateId;
+
+	private String lang;
 	public DescribeRiskLevelsRequest() {
 		super("Sddp", "2019-01-03", "DescribeRiskLevels", "sddp");
 		setMethod(MethodType.POST);
@@ -35,17 +35,6 @@ public class DescribeRiskLevelsRequest extends RpcAcsRequest<DescribeRiskLevelsR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getLang() {
-		return this.lang;
-	}
-
-	public void setLang(String lang) {
-		this.lang = lang;
-		if(lang != null){
-			putQueryParameter("Lang", lang);
-		}
 	}
 
 	public Long getTemplateId() {
@@ -56,6 +45,17 @@ public class DescribeRiskLevelsRequest extends RpcAcsRequest<DescribeRiskLevelsR
 		this.templateId = templateId;
 		if(templateId != null){
 			putQueryParameter("TemplateId", templateId.toString());
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
 		}
 	}
 

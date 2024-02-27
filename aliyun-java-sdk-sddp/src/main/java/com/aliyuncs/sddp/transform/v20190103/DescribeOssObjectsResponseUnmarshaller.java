@@ -50,6 +50,8 @@ public class DescribeOssObjectsResponseUnmarshaller {
 			column.setRuleCount(_ctx.integerValue("DescribeOssObjectsResponse.Items["+ i +"].RuleCount"));
 			column.setSensitiveCount(_ctx.integerValue("DescribeOssObjectsResponse.Items["+ i +"].SensitiveCount"));
 			column.setId(_ctx.stringValue("DescribeOssObjectsResponse.Items["+ i +"].Id"));
+			column.setFileCategoryCode(_ctx.longValue("DescribeOssObjectsResponse.Items["+ i +"].FileCategoryCode"));
+			column.setFileCategoryName(_ctx.stringValue("DescribeOssObjectsResponse.Items["+ i +"].FileCategoryName"));
 
 			List<Rule> ruleList = new ArrayList<Rule>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeOssObjectsResponse.Items["+ i +"].RuleList.Length"); j++) {

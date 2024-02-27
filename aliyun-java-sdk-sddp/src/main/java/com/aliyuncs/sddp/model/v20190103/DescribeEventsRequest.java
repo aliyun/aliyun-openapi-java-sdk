@@ -25,6 +25,8 @@ import com.aliyuncs.sddp.Endpoint;
 public class DescribeEventsRequest extends RpcAcsRequest<DescribeEventsResponse> {
 	   
 
+	private Integer warnLevel;
+
 	private String productCode;
 
 	private String startTime;
@@ -61,6 +63,17 @@ public class DescribeEventsRequest extends RpcAcsRequest<DescribeEventsResponse>
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Integer getWarnLevel() {
+		return this.warnLevel;
+	}
+
+	public void setWarnLevel(Integer warnLevel) {
+		this.warnLevel = warnLevel;
+		if(warnLevel != null){
+			putQueryParameter("WarnLevel", warnLevel.toString());
+		}
 	}
 
 	public String getProductCode() {

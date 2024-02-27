@@ -73,6 +73,8 @@ public class DescribeUserStatusResponseUnmarshaller {
 		userStatus.setReleaseTime(_ctx.longValue("DescribeUserStatusResponse.UserStatus.ReleaseTime"));
 		userStatus.setInstanceTotalCount(_ctx.longValue("DescribeUserStatusResponse.UserStatus.InstanceTotalCount"));
 		userStatus.setOssTotalSize(_ctx.longValue("DescribeUserStatusResponse.UserStatus.OssTotalSize"));
+		userStatus.setUseAgentAudit(_ctx.booleanValue("DescribeUserStatusResponse.UserStatus.UseAgentAudit"));
+		userStatus.setProtectionDays(_ctx.integerValue("DescribeUserStatusResponse.UserStatus.ProtectionDays"));
 		describeUserStatusResponse.setUserStatus(userStatus);
 	 
 	 	return describeUserStatusResponse;

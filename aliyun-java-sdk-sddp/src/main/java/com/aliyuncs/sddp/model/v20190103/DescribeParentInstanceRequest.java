@@ -22,68 +22,37 @@ import com.aliyuncs.sddp.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesResponse> {
+public class DescribeParentInstanceRequest extends RpcAcsRequest<DescribeParentInstanceResponse> {
 	   
 
-	private String productCode;
-
-	private Long productId;
-
-	private Long riskLevelId;
-
 	private Integer pageSize;
+
+	private Integer checkStatus;
 
 	private String lang;
 
 	private String serviceRegionId;
 
-	private Integer featureType;
+	private String engineType;
+
+	private String clusterStatus;
+
+	private Integer authStatus;
 
 	private Integer currentPage;
 
-	private String name;
+	private Long resourceType;
 
-	private Long ruleId;
-	public DescribeInstancesRequest() {
-		super("Sddp", "2019-01-03", "DescribeInstances", "sddp");
+	private String instanceId;
+
+	private String dbName;
+	public DescribeParentInstanceRequest() {
+		super("Sddp", "2019-01-03", "DescribeParentInstance", "sddp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getProductCode() {
-		return this.productCode;
-	}
-
-	public void setProductCode(String productCode) {
-		this.productCode = productCode;
-		if(productCode != null){
-			putQueryParameter("ProductCode", productCode);
-		}
-	}
-
-	public Long getProductId() {
-		return this.productId;
-	}
-
-	public void setProductId(Long productId) {
-		this.productId = productId;
-		if(productId != null){
-			putQueryParameter("ProductId", productId.toString());
-		}
-	}
-
-	public Long getRiskLevelId() {
-		return this.riskLevelId;
-	}
-
-	public void setRiskLevelId(Long riskLevelId) {
-		this.riskLevelId = riskLevelId;
-		if(riskLevelId != null){
-			putQueryParameter("RiskLevelId", riskLevelId.toString());
-		}
 	}
 
 	public Integer getPageSize() {
@@ -94,6 +63,17 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Integer getCheckStatus() {
+		return this.checkStatus;
+	}
+
+	public void setCheckStatus(Integer checkStatus) {
+		this.checkStatus = checkStatus;
+		if(checkStatus != null){
+			putQueryParameter("CheckStatus", checkStatus.toString());
 		}
 	}
 
@@ -119,14 +99,36 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 		}
 	}
 
-	public Integer getFeatureType() {
-		return this.featureType;
+	public String getEngineType() {
+		return this.engineType;
 	}
 
-	public void setFeatureType(Integer featureType) {
-		this.featureType = featureType;
-		if(featureType != null){
-			putQueryParameter("FeatureType", featureType.toString());
+	public void setEngineType(String engineType) {
+		this.engineType = engineType;
+		if(engineType != null){
+			putQueryParameter("EngineType", engineType);
+		}
+	}
+
+	public String getClusterStatus() {
+		return this.clusterStatus;
+	}
+
+	public void setClusterStatus(String clusterStatus) {
+		this.clusterStatus = clusterStatus;
+		if(clusterStatus != null){
+			putQueryParameter("ClusterStatus", clusterStatus);
+		}
+	}
+
+	public Integer getAuthStatus() {
+		return this.authStatus;
+	}
+
+	public void setAuthStatus(Integer authStatus) {
+		this.authStatus = authStatus;
+		if(authStatus != null){
+			putQueryParameter("AuthStatus", authStatus.toString());
 		}
 	}
 
@@ -141,31 +143,42 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 		}
 	}
 
-	public String getName() {
-		return this.name;
+	public Long getResourceType() {
+		return this.resourceType;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
+	public void setResourceType(Long resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType.toString());
 		}
 	}
 
-	public Long getRuleId() {
-		return this.ruleId;
+	public String getInstanceId() {
+		return this.instanceId;
 	}
 
-	public void setRuleId(Long ruleId) {
-		this.ruleId = ruleId;
-		if(ruleId != null){
-			putQueryParameter("RuleId", ruleId.toString());
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getDbName() {
+		return this.dbName;
+	}
+
+	public void setDbName(String dbName) {
+		this.dbName = dbName;
+		if(dbName != null){
+			putQueryParameter("DbName", dbName);
 		}
 	}
 
 	@Override
-	public Class<DescribeInstancesResponse> getResponseClass() {
-		return DescribeInstancesResponse.class;
+	public Class<DescribeParentInstanceResponse> getResponseClass() {
+		return DescribeParentInstanceResponse.class;
 	}
 
 }
