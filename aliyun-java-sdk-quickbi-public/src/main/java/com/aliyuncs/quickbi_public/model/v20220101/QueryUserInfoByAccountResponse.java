@@ -14,6 +14,7 @@
 
 package com.aliyuncs.quickbi_public.model.v20220101;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.quickbi_public.transform.v20220101.QueryUserInfoByAccountResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -73,6 +74,8 @@ public class QueryUserInfoByAccountResponse extends AcsResponse {
 		private String phone;
 
 		private String accountName;
+
+		private List<Long> roleIdList;
 
 		public Integer getUserType() {
 			return this.userType;
@@ -144,6 +147,14 @@ public class QueryUserInfoByAccountResponse extends AcsResponse {
 
 		public void setAccountName(String accountName) {
 			this.accountName = accountName;
+		}
+
+		public List<Long> getRoleIdList() {
+			return this.roleIdList;
+		}
+
+		public void setRoleIdList(List<Long> roleIdList) {
+			this.roleIdList = roleIdList;
 		}
 	}
 

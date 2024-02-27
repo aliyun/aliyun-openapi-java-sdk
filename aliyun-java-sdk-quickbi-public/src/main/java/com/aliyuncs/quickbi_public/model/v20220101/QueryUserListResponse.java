@@ -127,6 +127,8 @@ public class QueryUserListResponse extends AcsResponse {
 
 			private String accountName;
 
+			private List<Long> roleIdList;
+
 			public Integer getUserType() {
 				return this.userType;
 			}
@@ -197,6 +199,14 @@ public class QueryUserListResponse extends AcsResponse {
 
 			public void setAccountName(String accountName) {
 				this.accountName = accountName;
+			}
+
+			public List<Long> getRoleIdList() {
+				return this.roleIdList;
+			}
+
+			public void setRoleIdList(List<Long> roleIdList) {
+				this.roleIdList = roleIdList;
 			}
 		}
 	}

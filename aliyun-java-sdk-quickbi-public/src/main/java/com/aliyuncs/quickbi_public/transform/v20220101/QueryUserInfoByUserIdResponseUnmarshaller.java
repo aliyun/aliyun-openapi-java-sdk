@@ -14,6 +14,9 @@
 
 package com.aliyuncs.quickbi_public.transform.v20220101;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.quickbi_public.model.v20220101.QueryUserInfoByUserIdResponse;
 import com.aliyuncs.quickbi_public.model.v20220101.QueryUserInfoByUserIdResponse.Result;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -36,6 +39,12 @@ public class QueryUserInfoByUserIdResponseUnmarshaller {
 		result.setAdminUser(_ctx.booleanValue("QueryUserInfoByUserIdResponse.Result.AdminUser"));
 		result.setPhone(_ctx.stringValue("QueryUserInfoByUserIdResponse.Result.Phone"));
 		result.setAccountName(_ctx.stringValue("QueryUserInfoByUserIdResponse.Result.AccountName"));
+
+		List<Long> roleIdList = new ArrayList<Long>();
+		for (int i = 0; i < _ctx.lengthValue("QueryUserInfoByUserIdResponse.Result.RoleIdList.Length"); i++) {
+			roleIdList.add(_ctx.longValue("QueryUserInfoByUserIdResponse.Result.RoleIdList["+ i +"]"));
+		}
+		result.setRoleIdList(roleIdList);
 		queryUserInfoByUserIdResponse.setResult(result);
 	 
 	 	return queryUserInfoByUserIdResponse;

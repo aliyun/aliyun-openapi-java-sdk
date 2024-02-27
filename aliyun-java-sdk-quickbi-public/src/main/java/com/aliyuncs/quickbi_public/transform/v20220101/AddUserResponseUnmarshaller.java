@@ -14,6 +14,9 @@
 
 package com.aliyuncs.quickbi_public.transform.v20220101;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.quickbi_public.model.v20220101.AddUserResponse;
 import com.aliyuncs.quickbi_public.model.v20220101.AddUserResponse.Result;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -35,6 +38,12 @@ public class AddUserResponseUnmarshaller {
 		result.setAdminUser(_ctx.booleanValue("AddUserResponse.Result.AdminUser"));
 		result.setPhone(_ctx.stringValue("AddUserResponse.Result.Phone"));
 		result.setAccountName(_ctx.stringValue("AddUserResponse.Result.AccountName"));
+
+		List<Long> roleIdList = new ArrayList<Long>();
+		for (int i = 0; i < _ctx.lengthValue("AddUserResponse.Result.RoleIdList.Length"); i++) {
+			roleIdList.add(_ctx.longValue("AddUserResponse.Result.RoleIdList["+ i +"]"));
+		}
+		result.setRoleIdList(roleIdList);
 		addUserResponse.setResult(result);
 	 
 	 	return addUserResponse;

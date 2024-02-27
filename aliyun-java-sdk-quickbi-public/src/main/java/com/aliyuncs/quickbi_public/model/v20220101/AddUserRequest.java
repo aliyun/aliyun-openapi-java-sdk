@@ -28,6 +28,8 @@ public class AddUserRequest extends RpcAcsRequest<AddUserResponse> {
 
 	private Integer userType;
 
+	private String roleIds;
+
 	private String accountName;
 
 	private String nickName;
@@ -57,6 +59,17 @@ public class AddUserRequest extends RpcAcsRequest<AddUserResponse> {
 		this.userType = userType;
 		if(userType != null){
 			putQueryParameter("UserType", userType.toString());
+		}
+	}
+
+	public String getRoleIds() {
+		return this.roleIds;
+	}
+
+	public void setRoleIds(String roleIds) {
+		this.roleIds = roleIds;
+		if(roleIds != null){
+			putBodyParameter("RoleIds", roleIds);
 		}
 	}
 

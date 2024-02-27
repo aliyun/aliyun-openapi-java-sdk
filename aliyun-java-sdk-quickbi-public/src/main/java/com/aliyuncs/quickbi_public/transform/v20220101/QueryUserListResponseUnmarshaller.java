@@ -49,6 +49,12 @@ public class QueryUserListResponseUnmarshaller {
 			dataItem.setPhone(_ctx.stringValue("QueryUserListResponse.Result.Data["+ i +"].Phone"));
 			dataItem.setAccountName(_ctx.stringValue("QueryUserListResponse.Result.Data["+ i +"].AccountName"));
 
+			List<Long> roleIdList = new ArrayList<Long>();
+			for (int j = 0; j < _ctx.lengthValue("QueryUserListResponse.Result.Data["+ i +"].RoleIdList.Length"); j++) {
+				roleIdList.add(_ctx.longValue("QueryUserListResponse.Result.Data["+ i +"].RoleIdList["+ j +"]"));
+			}
+			dataItem.setRoleIdList(roleIdList);
+
 			data.add(dataItem);
 		}
 		result.setData(data);

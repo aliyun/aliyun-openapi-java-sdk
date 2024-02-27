@@ -30,6 +30,8 @@ public class UpdateUserRequest extends RpcAcsRequest<UpdateUserResponse> {
 
 	private String userId;
 
+	private String roleIds;
+
 	private String nickName;
 
 	private Boolean authAdminUser;
@@ -68,6 +70,17 @@ public class UpdateUserRequest extends RpcAcsRequest<UpdateUserResponse> {
 		this.userId = userId;
 		if(userId != null){
 			putQueryParameter("UserId", userId);
+		}
+	}
+
+	public String getRoleIds() {
+		return this.roleIds;
+	}
+
+	public void setRoleIds(String roleIds) {
+		this.roleIds = roleIds;
+		if(roleIds != null){
+			putQueryParameter("RoleIds", roleIds);
 		}
 	}
 

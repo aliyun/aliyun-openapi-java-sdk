@@ -24,10 +24,23 @@ import com.aliyuncs.http.MethodType;
 public class QueryUserInfoByAccountRequest extends RpcAcsRequest<QueryUserInfoByAccountResponse> {
 	   
 
+	private String parentAccountName;
+
 	private String account;
 	public QueryUserInfoByAccountRequest() {
 		super("quickbi-public", "2022-01-01", "QueryUserInfoByAccount", "2.2.0");
 		setMethod(MethodType.POST);
+	}
+
+	public String getParentAccountName() {
+		return this.parentAccountName;
+	}
+
+	public void setParentAccountName(String parentAccountName) {
+		this.parentAccountName = parentAccountName;
+		if(parentAccountName != null){
+			putQueryParameter("ParentAccountName", parentAccountName);
+		}
 	}
 
 	public String getAccount() {
