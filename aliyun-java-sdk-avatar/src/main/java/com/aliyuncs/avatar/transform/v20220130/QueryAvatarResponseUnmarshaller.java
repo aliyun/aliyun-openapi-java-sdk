@@ -46,6 +46,7 @@ public class QueryAvatarResponseUnmarshaller {
 		data.setMakeStatus(_ctx.stringValue("QueryAvatarResponse.Data.MakeStatus"));
 		data.setMakeFailReason(_ctx.stringValue("QueryAvatarResponse.Data.MakeFailReason"));
 		data.setMakeStage(_ctx.stringValue("QueryAvatarResponse.Data.MakeStage"));
+		data.setPreview(_ctx.stringValue("QueryAvatarResponse.Data.Preview"));
 
 		SupportedResolutions supportedResolutions = new SupportedResolutions();
 

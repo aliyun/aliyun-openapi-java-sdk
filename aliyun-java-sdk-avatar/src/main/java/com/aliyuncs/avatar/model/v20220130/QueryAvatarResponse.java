@@ -98,6 +98,8 @@ public class QueryAvatarResponse extends AcsResponse {
 
 		private String makeStage;
 
+		private String preview;
+
 		private SupportedResolutions supportedResolutions;
 
 		public String getName() {
@@ -178,6 +180,14 @@ public class QueryAvatarResponse extends AcsResponse {
 
 		public void setMakeStage(String makeStage) {
 			this.makeStage = makeStage;
+		}
+
+		public String getPreview() {
+			return this.preview;
+		}
+
+		public void setPreview(String preview) {
+			this.preview = preview;
 		}
 
 		public SupportedResolutions getSupportedResolutions() {

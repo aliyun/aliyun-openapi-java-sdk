@@ -54,6 +54,7 @@ public class QueryAvatarListResponseUnmarshaller {
 			listItem.setMakeStatus(_ctx.stringValue("QueryAvatarListResponse.Data.List["+ i +"].MakeStatus"));
 			listItem.setMakeFailReason(_ctx.stringValue("QueryAvatarListResponse.Data.List["+ i +"].MakeFailReason"));
 			listItem.setMakeStage(_ctx.stringValue("QueryAvatarListResponse.Data.List["+ i +"].MakeStage"));
+			listItem.setPreview(_ctx.stringValue("QueryAvatarListResponse.Data.List["+ i +"].Preview"));
 
 			SupportedResolutions supportedResolutions = new SupportedResolutions();
 
