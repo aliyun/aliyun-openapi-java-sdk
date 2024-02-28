@@ -42,7 +42,7 @@ public class ListUserDefinedEventSourcesResponseUnmarshaller {
 
 		Data data = new Data();
 		data.setNextToken(_ctx.stringValue("ListUserDefinedEventSourcesResponse.Data.NextToken"));
-		data.setTotal(_ctx.floatValue("ListUserDefinedEventSourcesResponse.Data.Total"));
+		data.setTotal(_ctx.integerValue("ListUserDefinedEventSourcesResponse.Data.Total"));
 
 		List<EventSourceListItem> eventSourceList = new ArrayList<EventSourceListItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListUserDefinedEventSourcesResponse.Data.EventSourceList.Length"); i++) {

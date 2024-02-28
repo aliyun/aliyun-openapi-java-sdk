@@ -3278,6 +3278,9 @@ public class CreateEventStreamingRequest extends RpcAcsRequest<CreateEventStream
 			@SerializedName("InstanceId")
 			private String instanceId;
 
+			@SerializedName("BodyDataType")
+			private String bodyDataType;
+
 			@SerializedName("RegionId")
 			private String regionId;
 
@@ -3290,6 +3293,14 @@ public class CreateEventStreamingRequest extends RpcAcsRequest<CreateEventStream
 
 			public void setInstanceId(String instanceId) {
 				this.instanceId = instanceId;
+			}
+
+			public String getBodyDataType() {
+				return this.bodyDataType;
+			}
+
+			public void setBodyDataType(String bodyDataType) {
+				this.bodyDataType = bodyDataType;
 			}
 
 			public String getRegionId() {
@@ -3734,6 +3745,9 @@ public class CreateEventStreamingRequest extends RpcAcsRequest<CreateEventStream
 			@SerializedName("VpcId")
 			private String vpcId;
 
+			@SerializedName("ValueDataType")
+			private String valueDataType;
+
 			@SerializedName("SecurityGroupId")
 			private String securityGroupId;
 
@@ -3784,6 +3798,14 @@ public class CreateEventStreamingRequest extends RpcAcsRequest<CreateEventStream
 
 			public void setVpcId(String vpcId) {
 				this.vpcId = vpcId;
+			}
+
+			public String getValueDataType() {
+				return this.valueDataType;
+			}
+
+			public void setValueDataType(String valueDataType) {
+				this.valueDataType = valueDataType;
 			}
 
 			public String getSecurityGroupId() {

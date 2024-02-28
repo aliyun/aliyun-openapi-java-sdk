@@ -2963,6 +2963,9 @@ public class UpdateEventStreamingRequest extends RpcAcsRequest<UpdateEventStream
 			@SerializedName("VpcId")
 			private String vpcId;
 
+			@SerializedName("ValueDataType")
+			private String valueDataType;
+
 			@SerializedName("SecurityGroupId")
 			private String securityGroupId;
 
@@ -3013,6 +3016,14 @@ public class UpdateEventStreamingRequest extends RpcAcsRequest<UpdateEventStream
 
 			public void setVpcId(String vpcId) {
 				this.vpcId = vpcId;
+			}
+
+			public String getValueDataType() {
+				return this.valueDataType;
+			}
+
+			public void setValueDataType(String valueDataType) {
+				this.valueDataType = valueDataType;
 			}
 
 			public String getSecurityGroupId() {

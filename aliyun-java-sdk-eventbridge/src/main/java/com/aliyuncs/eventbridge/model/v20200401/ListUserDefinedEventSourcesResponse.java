@@ -80,7 +80,7 @@ public class ListUserDefinedEventSourcesResponse extends AcsResponse {
 
 		private String nextToken;
 
-		private Float total;
+		private Integer total;
 
 		private List<EventSourceListItem> eventSourceList;
 
@@ -92,11 +92,11 @@ public class ListUserDefinedEventSourcesResponse extends AcsResponse {
 			this.nextToken = nextToken;
 		}
 
-		public Float getTotal() {
+		public Integer getTotal() {
 			return this.total;
 		}
 
-		public void setTotal(Float total) {
+		public void setTotal(Integer total) {
 			this.total = total;
 		}
 

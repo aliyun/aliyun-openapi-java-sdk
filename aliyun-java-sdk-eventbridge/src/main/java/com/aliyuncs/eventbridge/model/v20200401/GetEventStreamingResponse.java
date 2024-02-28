@@ -521,6 +521,8 @@ public class GetEventStreamingResponse extends AcsResponse {
 
 				private String securityGroupId;
 
+				private String valueDataType;
+
 				public String getRegionId() {
 					return this.regionId;
 				}
@@ -591,6 +593,14 @@ public class GetEventStreamingResponse extends AcsResponse {
 
 				public void setSecurityGroupId(String securityGroupId) {
 					this.securityGroupId = securityGroupId;
+				}
+
+				public String getValueDataType() {
+					return this.valueDataType;
+				}
+
+				public void setValueDataType(String valueDataType) {
+					this.valueDataType = valueDataType;
 				}
 			}
 

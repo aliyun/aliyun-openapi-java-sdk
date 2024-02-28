@@ -143,6 +143,7 @@ public class GetEventStreamingResponseUnmarshaller {
 		sourceKafkaParameters.setVpcId(_ctx.stringValue("GetEventStreamingResponse.Data.Source.SourceKafkaParameters.VpcId"));
 		sourceKafkaParameters.setVSwitchIds(_ctx.stringValue("GetEventStreamingResponse.Data.Source.SourceKafkaParameters.VSwitchIds"));
 		sourceKafkaParameters.setSecurityGroupId(_ctx.stringValue("GetEventStreamingResponse.Data.Source.SourceKafkaParameters.SecurityGroupId"));
+		sourceKafkaParameters.setValueDataType(_ctx.stringValue("GetEventStreamingResponse.Data.Source.SourceKafkaParameters.ValueDataType"));
 		source.setSourceKafkaParameters(sourceKafkaParameters);
 
 		SourceMQTTParameters sourceMQTTParameters = new SourceMQTTParameters();
