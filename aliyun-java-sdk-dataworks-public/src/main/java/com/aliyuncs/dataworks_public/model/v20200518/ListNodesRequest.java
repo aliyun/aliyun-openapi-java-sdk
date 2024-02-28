@@ -39,6 +39,8 @@ public class ListNodesRequest extends RpcAcsRequest<ListNodesResponse> {
 
 	private Integer pageSize;
 
+	private String schedulerType;
+
 	private Long projectId;
 	public ListNodesRequest() {
 		super("dataworks-public", "2020-05-18", "ListNodes");
@@ -123,6 +125,17 @@ public class ListNodesRequest extends RpcAcsRequest<ListNodesResponse> {
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putBodyParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getSchedulerType() {
+		return this.schedulerType;
+	}
+
+	public void setSchedulerType(String schedulerType) {
+		this.schedulerType = schedulerType;
+		if(schedulerType != null){
+			putBodyParameter("SchedulerType", schedulerType);
 		}
 	}
 

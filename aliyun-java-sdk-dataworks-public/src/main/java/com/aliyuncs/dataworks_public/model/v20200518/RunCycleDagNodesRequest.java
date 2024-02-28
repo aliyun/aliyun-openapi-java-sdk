@@ -31,6 +31,8 @@ public class RunCycleDagNodesRequest extends RpcAcsRequest<RunCycleDagNodesRespo
 
 	private Boolean parallelism;
 
+	private String alertNoticeType;
+
 	private Long rootNodeId;
 
 	private String bizBeginTime;
@@ -38,6 +40,10 @@ public class RunCycleDagNodesRequest extends RpcAcsRequest<RunCycleDagNodesRespo
 	private String endBizDate;
 
 	private Boolean startFutureInstanceImmediately;
+
+	private Integer concurrentRuns;
+
+	private String alertType;
 
 	private String includeNodeIds;
 
@@ -90,6 +96,17 @@ public class RunCycleDagNodesRequest extends RpcAcsRequest<RunCycleDagNodesRespo
 		}
 	}
 
+	public String getAlertNoticeType() {
+		return this.alertNoticeType;
+	}
+
+	public void setAlertNoticeType(String alertNoticeType) {
+		this.alertNoticeType = alertNoticeType;
+		if(alertNoticeType != null){
+			putBodyParameter("AlertNoticeType", alertNoticeType);
+		}
+	}
+
 	public Long getRootNodeId() {
 		return this.rootNodeId;
 	}
@@ -131,6 +148,28 @@ public class RunCycleDagNodesRequest extends RpcAcsRequest<RunCycleDagNodesRespo
 		this.startFutureInstanceImmediately = startFutureInstanceImmediately;
 		if(startFutureInstanceImmediately != null){
 			putBodyParameter("StartFutureInstanceImmediately", startFutureInstanceImmediately.toString());
+		}
+	}
+
+	public Integer getConcurrentRuns() {
+		return this.concurrentRuns;
+	}
+
+	public void setConcurrentRuns(Integer concurrentRuns) {
+		this.concurrentRuns = concurrentRuns;
+		if(concurrentRuns != null){
+			putBodyParameter("ConcurrentRuns", concurrentRuns.toString());
+		}
+	}
+
+	public String getAlertType() {
+		return this.alertType;
+	}
+
+	public void setAlertType(String alertType) {
+		this.alertType = alertType;
+		if(alertType != null){
+			putBodyParameter("AlertType", alertType);
 		}
 	}
 
