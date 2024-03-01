@@ -194,11 +194,22 @@ public class StartLiveMPUTaskRequest extends RpcAcsRequest<StartLiveMPUTaskRespo
 
 	public static class SeiParams {
 
+		@SerializedName("PayloadType")
+		private String payloadType;
+
 		@SerializedName("LayoutVolume")
 		private LayoutVolume layoutVolume;
 
 		@SerializedName("PassThrough")
 		private PassThrough passThrough;
+
+		public String getPayloadType() {
+			return this.payloadType;
+		}
+
+		public void setPayloadType(String payloadType) {
+			this.payloadType = payloadType;
+		}
 
 		public LayoutVolume getLayoutVolume() {
 			return this.layoutVolume;
@@ -221,9 +232,6 @@ public class StartLiveMPUTaskRequest extends RpcAcsRequest<StartLiveMPUTaskRespo
 			@SerializedName("FollowIdr")
 			private String followIdr;
 
-			@SerializedName("PayloadType")
-			private String payloadType;
-
 			@SerializedName("Interval")
 			private String interval;
 
@@ -233,14 +241,6 @@ public class StartLiveMPUTaskRequest extends RpcAcsRequest<StartLiveMPUTaskRespo
 
 			public void setFollowIdr(String followIdr) {
 				this.followIdr = followIdr;
-			}
-
-			public String getPayloadType() {
-				return this.payloadType;
-			}
-
-			public void setPayloadType(String payloadType) {
-				this.payloadType = payloadType;
 			}
 
 			public String getInterval() {
@@ -257,8 +257,8 @@ public class StartLiveMPUTaskRequest extends RpcAcsRequest<StartLiveMPUTaskRespo
 			@SerializedName("FollowIdr")
 			private String followIdr;
 
-			@SerializedName("PayloadType")
-			private String payloadType;
+			@SerializedName("PayloadContentKey")
+			private String payloadContentKey;
 
 			@SerializedName("PayloadContent")
 			private String payloadContent;
@@ -274,12 +274,12 @@ public class StartLiveMPUTaskRequest extends RpcAcsRequest<StartLiveMPUTaskRespo
 				this.followIdr = followIdr;
 			}
 
-			public String getPayloadType() {
-				return this.payloadType;
+			public String getPayloadContentKey() {
+				return this.payloadContentKey;
 			}
 
-			public void setPayloadType(String payloadType) {
-				this.payloadType = payloadType;
+			public void setPayloadContentKey(String payloadContentKey) {
+				this.payloadContentKey = payloadContentKey;
 			}
 
 			public String getPayloadContent() {

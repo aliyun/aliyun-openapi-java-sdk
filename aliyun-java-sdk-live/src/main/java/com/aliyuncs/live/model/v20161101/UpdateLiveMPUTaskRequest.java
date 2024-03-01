@@ -208,9 +208,6 @@ public class UpdateLiveMPUTaskRequest extends RpcAcsRequest<UpdateLiveMPUTaskRes
 			@SerializedName("FollowIdr")
 			private String followIdr;
 
-			@SerializedName("PayloadType")
-			private String payloadType;
-
 			@SerializedName("Interval")
 			private String interval;
 
@@ -220,14 +217,6 @@ public class UpdateLiveMPUTaskRequest extends RpcAcsRequest<UpdateLiveMPUTaskRes
 
 			public void setFollowIdr(String followIdr) {
 				this.followIdr = followIdr;
-			}
-
-			public String getPayloadType() {
-				return this.payloadType;
-			}
-
-			public void setPayloadType(String payloadType) {
-				this.payloadType = payloadType;
 			}
 
 			public String getInterval() {
@@ -244,8 +233,8 @@ public class UpdateLiveMPUTaskRequest extends RpcAcsRequest<UpdateLiveMPUTaskRes
 			@SerializedName("FollowIdr")
 			private String followIdr;
 
-			@SerializedName("PayloadType")
-			private String payloadType;
+			@SerializedName("PayloadContentKey")
+			private String payloadContentKey;
 
 			@SerializedName("PayloadContent")
 			private String payloadContent;
@@ -261,12 +250,12 @@ public class UpdateLiveMPUTaskRequest extends RpcAcsRequest<UpdateLiveMPUTaskRes
 				this.followIdr = followIdr;
 			}
 
-			public String getPayloadType() {
-				return this.payloadType;
+			public String getPayloadContentKey() {
+				return this.payloadContentKey;
 			}
 
-			public void setPayloadType(String payloadType) {
-				this.payloadType = payloadType;
+			public void setPayloadContentKey(String payloadContentKey) {
+				this.payloadContentKey = payloadContentKey;
 			}
 
 			public String getPayloadContent() {

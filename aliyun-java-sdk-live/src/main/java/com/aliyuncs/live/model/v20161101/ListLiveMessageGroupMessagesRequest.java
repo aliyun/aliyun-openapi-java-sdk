@@ -30,6 +30,10 @@ public class ListLiveMessageGroupMessagesRequest extends RpcAcsRequest<ListLiveM
 
 	private Long nextPageToken;
 
+	private Integer pageSize;
+
+	private Long msgType;
+
 	private String groupId;
 
 	private Long endTime;
@@ -39,10 +43,6 @@ public class ListLiveMessageGroupMessagesRequest extends RpcAcsRequest<ListLiveM
 	private String dataCenter;
 
 	private String appId;
-
-	private Integer pageSize;
-
-	private Long msgType;
 	public ListLiveMessageGroupMessagesRequest() {
 		super("live", "2016-11-01", "ListLiveMessageGroupMessages", "live");
 		setProtocol(ProtocolType.HTTPS);
@@ -72,6 +72,28 @@ public class ListLiveMessageGroupMessagesRequest extends RpcAcsRequest<ListLiveM
 		this.nextPageToken = nextPageToken;
 		if(nextPageToken != null){
 			putQueryParameter("NextPageToken", nextPageToken.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Long getMsgType() {
+		return this.msgType;
+	}
+
+	public void setMsgType(Long msgType) {
+		this.msgType = msgType;
+		if(msgType != null){
+			putQueryParameter("MsgType", msgType.toString());
 		}
 	}
 
@@ -127,28 +149,6 @@ public class ListLiveMessageGroupMessagesRequest extends RpcAcsRequest<ListLiveM
 		this.appId = appId;
 		if(appId != null){
 			putQueryParameter("AppId", appId);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public Long getMsgType() {
-		return this.msgType;
-	}
-
-	public void setMsgType(Long msgType) {
-		this.msgType = msgType;
-		if(msgType != null){
-			putQueryParameter("MsgType", msgType.toString());
 		}
 	}
 

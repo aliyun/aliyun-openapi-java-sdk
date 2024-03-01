@@ -27,6 +27,8 @@ public class DescribeLiveDomainTranscodeParamsRequest extends RpcAcsRequest<Desc
 
 	private String pushdomain;
 
+	private String securityToken;
+
 	private String app;
 
 	private String template_name;
@@ -47,6 +49,17 @@ public class DescribeLiveDomainTranscodeParamsRequest extends RpcAcsRequest<Desc
 		this.pushdomain = pushdomain;
 		if(pushdomain != null){
 			putQueryParameter("pushdomain", pushdomain);
+		}
+	}
+
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

@@ -26,6 +26,7 @@ public class CreateLiveMessageAppResponseUnmarshaller {
 		createLiveMessageAppResponse.setAppId(_ctx.stringValue("CreateLiveMessageAppResponse.AppId"));
 		createLiveMessageAppResponse.setAppKey(_ctx.stringValue("CreateLiveMessageAppResponse.AppKey"));
 		createLiveMessageAppResponse.setAppSign(_ctx.stringValue("CreateLiveMessageAppResponse.AppSign"));
+		createLiveMessageAppResponse.setDataCenter(_ctx.stringValue("CreateLiveMessageAppResponse.DataCenter"));
 	 
 	 	return createLiveMessageAppResponse;
 	}

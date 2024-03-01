@@ -32,6 +32,8 @@ public class CreateLiveMessageAppResponse extends AcsResponse {
 
 	private String appSign;
 
+	private String dataCenter;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -62,6 +64,14 @@ public class CreateLiveMessageAppResponse extends AcsResponse {
 
 	public void setAppSign(String appSign) {
 		this.appSign = appSign;
+	}
+
+	public String getDataCenter() {
+		return this.dataCenter;
+	}
+
+	public void setDataCenter(String dataCenter) {
+		this.dataCenter = dataCenter;
 	}
 
 	@Override

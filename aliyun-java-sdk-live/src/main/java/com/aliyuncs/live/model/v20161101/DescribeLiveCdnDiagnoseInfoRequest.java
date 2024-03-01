@@ -33,6 +33,8 @@ public class DescribeLiveCdnDiagnoseInfoRequest extends RpcAcsRequest<DescribeLi
 
 	private String requestType;
 
+	private String securityToken;
+
 	private String streamName;
 
 	private String app;
@@ -92,6 +94,17 @@ public class DescribeLiveCdnDiagnoseInfoRequest extends RpcAcsRequest<DescribeLi
 		this.requestType = requestType;
 		if(requestType != null){
 			putQueryParameter("requestType", requestType);
+		}
+	}
+
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 
