@@ -27,7 +27,7 @@ public class DeleteInstanceRequest extends RpcAcsRequest<DeleteInstanceResponse>
 
 	private String instanceId;
 	public DeleteInstanceRequest() {
-		super("alikafka", "2019-09-16", "DeleteInstance");
+		super("alikafka", "2019-09-16", "DeleteInstance", "alikafka");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

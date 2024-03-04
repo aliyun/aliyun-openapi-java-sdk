@@ -34,7 +34,7 @@ public class GetInstanceListRequest extends RpcAcsRequest<GetInstanceListRespons
 
 	private List<Tag> tags;
 	public GetInstanceListRequest() {
-		super("alikafka", "2019-09-16", "GetInstanceList");
+		super("alikafka", "2019-09-16", "GetInstanceList", "alikafka");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

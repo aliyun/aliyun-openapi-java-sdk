@@ -15,6 +15,7 @@
 package com.aliyuncs.alikafka.model.v20190916;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.alikafka.Endpoint;
 
@@ -24,6 +25,8 @@ import com.aliyuncs.alikafka.Endpoint;
  */
 public class StartInstanceRequest extends RpcAcsRequest<StartInstanceResponse> {
 	   
+
+	private List<String> vSwitchIdss;
 
 	private String selectedZones;
 
@@ -49,6 +52,8 @@ public class StartInstanceRequest extends RpcAcsRequest<StartInstanceResponse> {
 
 	private String vpcId;
 
+	private Boolean crossZone;
+
 	private String name;
 
 	private String serviceVersion;
@@ -61,12 +66,25 @@ public class StartInstanceRequest extends RpcAcsRequest<StartInstanceResponse> {
 
 	private String username;
 	public StartInstanceRequest() {
-		super("alikafka", "2019-09-16", "StartInstance");
+		super("alikafka", "2019-09-16", "StartInstance", "alikafka");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public List<String> getVSwitchIdss() {
+		return this.vSwitchIdss;
+	}
+
+	public void setVSwitchIdss(List<String> vSwitchIdss) {
+		this.vSwitchIdss = vSwitchIdss;	
+		if (vSwitchIdss != null) {
+			for (int i = 0; i < vSwitchIdss.size(); i++) {
+				putQueryParameter("VSwitchIds." + (i + 1) , vSwitchIdss.get(i));
+			}
+		}	
 	}
 
 	public String getSelectedZones() {
@@ -198,6 +216,17 @@ public class StartInstanceRequest extends RpcAcsRequest<StartInstanceResponse> {
 		this.vpcId = vpcId;
 		if(vpcId != null){
 			putQueryParameter("VpcId", vpcId);
+		}
+	}
+
+	public Boolean getCrossZone() {
+		return this.crossZone;
+	}
+
+	public void setCrossZone(Boolean crossZone) {
+		this.crossZone = crossZone;
+		if(crossZone != null){
+			putQueryParameter("CrossZone", crossZone.toString());
 		}
 	}
 

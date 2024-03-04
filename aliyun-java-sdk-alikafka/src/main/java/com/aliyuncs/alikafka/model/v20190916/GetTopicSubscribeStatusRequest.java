@@ -22,30 +22,19 @@ import com.aliyuncs.alikafka.Endpoint;
  * @author auto create
  * @version 
  */
-public class UpgradeInstanceVersionRequest extends RpcAcsRequest<UpgradeInstanceVersionResponse> {
+public class GetTopicSubscribeStatusRequest extends RpcAcsRequest<GetTopicSubscribeStatusResponse> {
 	   
 
-	private String targetVersion;
-
 	private String instanceId;
-	public UpgradeInstanceVersionRequest() {
-		super("alikafka", "2019-09-16", "UpgradeInstanceVersion", "alikafka");
+
+	private String topic;
+	public GetTopicSubscribeStatusRequest() {
+		super("alikafka", "2019-09-16", "GetTopicSubscribeStatus", "alikafka");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getTargetVersion() {
-		return this.targetVersion;
-	}
-
-	public void setTargetVersion(String targetVersion) {
-		this.targetVersion = targetVersion;
-		if(targetVersion != null){
-			putQueryParameter("TargetVersion", targetVersion);
-		}
 	}
 
 	public String getInstanceId() {
@@ -59,9 +48,20 @@ public class UpgradeInstanceVersionRequest extends RpcAcsRequest<UpgradeInstance
 		}
 	}
 
+	public String getTopic() {
+		return this.topic;
+	}
+
+	public void setTopic(String topic) {
+		this.topic = topic;
+		if(topic != null){
+			putQueryParameter("Topic", topic);
+		}
+	}
+
 	@Override
-	public Class<UpgradeInstanceVersionResponse> getResponseClass() {
-		return UpgradeInstanceVersionResponse.class;
+	public Class<GetTopicSubscribeStatusResponse> getResponseClass() {
+		return GetTopicSubscribeStatusResponse.class;
 	}
 
 }

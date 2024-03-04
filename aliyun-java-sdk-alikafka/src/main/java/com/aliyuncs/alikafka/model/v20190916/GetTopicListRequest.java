@@ -33,7 +33,7 @@ public class GetTopicListRequest extends RpcAcsRequest<GetTopicListResponse> {
 
 	private String topic;
 	public GetTopicListRequest() {
-		super("alikafka", "2019-09-16", "GetTopicList");
+		super("alikafka", "2019-09-16", "GetTopicList", "alikafka");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

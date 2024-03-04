@@ -41,7 +41,7 @@ public class UpdateConsumerOffsetRequest extends RpcAcsRequest<UpdateConsumerOff
 
 	private String time;
 	public UpdateConsumerOffsetRequest() {
-		super("alikafka", "2019-09-16", "UpdateConsumerOffset");
+		super("alikafka", "2019-09-16", "UpdateConsumerOffset", "alikafka");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -22,30 +22,19 @@ import com.aliyuncs.alikafka.Endpoint;
  * @author auto create
  * @version 
  */
-public class UpgradeInstanceVersionRequest extends RpcAcsRequest<UpgradeInstanceVersionResponse> {
+public class EnableAutoGroupCreationRequest extends RpcAcsRequest<EnableAutoGroupCreationResponse> {
 	   
 
-	private String targetVersion;
-
 	private String instanceId;
-	public UpgradeInstanceVersionRequest() {
-		super("alikafka", "2019-09-16", "UpgradeInstanceVersion", "alikafka");
+
+	private Boolean enable;
+	public EnableAutoGroupCreationRequest() {
+		super("alikafka", "2019-09-16", "EnableAutoGroupCreation", "alikafka");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getTargetVersion() {
-		return this.targetVersion;
-	}
-
-	public void setTargetVersion(String targetVersion) {
-		this.targetVersion = targetVersion;
-		if(targetVersion != null){
-			putQueryParameter("TargetVersion", targetVersion);
-		}
 	}
 
 	public String getInstanceId() {
@@ -59,9 +48,20 @@ public class UpgradeInstanceVersionRequest extends RpcAcsRequest<UpgradeInstance
 		}
 	}
 
+	public Boolean getEnable() {
+		return this.enable;
+	}
+
+	public void setEnable(Boolean enable) {
+		this.enable = enable;
+		if(enable != null){
+			putQueryParameter("Enable", enable.toString());
+		}
+	}
+
 	@Override
-	public Class<UpgradeInstanceVersionResponse> getResponseClass() {
-		return UpgradeInstanceVersionResponse.class;
+	public Class<EnableAutoGroupCreationResponse> getResponseClass() {
+		return EnableAutoGroupCreationResponse.class;
 	}
 
 }

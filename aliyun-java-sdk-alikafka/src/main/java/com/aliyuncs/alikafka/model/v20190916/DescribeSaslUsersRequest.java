@@ -27,7 +27,7 @@ public class DescribeSaslUsersRequest extends RpcAcsRequest<DescribeSaslUsersRes
 
 	private String instanceId;
 	public DescribeSaslUsersRequest() {
-		super("alikafka", "2019-09-16", "DescribeSaslUsers");
+		super("alikafka", "2019-09-16", "DescribeSaslUsers", "alikafka");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

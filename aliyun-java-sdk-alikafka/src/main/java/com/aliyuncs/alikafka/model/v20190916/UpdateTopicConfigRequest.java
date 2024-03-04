@@ -22,30 +22,23 @@ import com.aliyuncs.alikafka.Endpoint;
  * @author auto create
  * @version 
  */
-public class UpgradeInstanceVersionRequest extends RpcAcsRequest<UpgradeInstanceVersionResponse> {
+public class UpdateTopicConfigRequest extends RpcAcsRequest<UpdateTopicConfigResponse> {
 	   
 
-	private String targetVersion;
-
 	private String instanceId;
-	public UpgradeInstanceVersionRequest() {
-		super("alikafka", "2019-09-16", "UpgradeInstanceVersion", "alikafka");
+
+	private String topic;
+
+	private String config;
+
+	private String value;
+	public UpdateTopicConfigRequest() {
+		super("alikafka", "2019-09-16", "UpdateTopicConfig", "alikafka");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getTargetVersion() {
-		return this.targetVersion;
-	}
-
-	public void setTargetVersion(String targetVersion) {
-		this.targetVersion = targetVersion;
-		if(targetVersion != null){
-			putQueryParameter("TargetVersion", targetVersion);
-		}
 	}
 
 	public String getInstanceId() {
@@ -59,9 +52,42 @@ public class UpgradeInstanceVersionRequest extends RpcAcsRequest<UpgradeInstance
 		}
 	}
 
+	public String getTopic() {
+		return this.topic;
+	}
+
+	public void setTopic(String topic) {
+		this.topic = topic;
+		if(topic != null){
+			putQueryParameter("Topic", topic);
+		}
+	}
+
+	public String getConfig() {
+		return this.config;
+	}
+
+	public void setConfig(String config) {
+		this.config = config;
+		if(config != null){
+			putQueryParameter("Config", config);
+		}
+	}
+
+	public String getValue() {
+		return this.value;
+	}
+
+	public void setValue(String value) {
+		this.value = value;
+		if(value != null){
+			putQueryParameter("Value", value);
+		}
+	}
+
 	@Override
-	public Class<UpgradeInstanceVersionResponse> getResponseClass() {
-		return UpgradeInstanceVersionResponse.class;
+	public Class<UpdateTopicConfigResponse> getResponseClass() {
+		return UpdateTopicConfigResponse.class;
 	}
 
 }

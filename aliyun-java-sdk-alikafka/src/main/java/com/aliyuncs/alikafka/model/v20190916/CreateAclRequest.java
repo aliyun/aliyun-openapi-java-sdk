@@ -37,7 +37,7 @@ public class CreateAclRequest extends RpcAcsRequest<CreateAclResponse> {
 
 	private String username;
 	public CreateAclRequest() {
-		super("alikafka", "2019-09-16", "CreateAcl");
+		super("alikafka", "2019-09-16", "CreateAcl", "alikafka");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

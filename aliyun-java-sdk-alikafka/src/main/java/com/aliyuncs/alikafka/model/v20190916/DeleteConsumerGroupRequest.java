@@ -29,7 +29,7 @@ public class DeleteConsumerGroupRequest extends RpcAcsRequest<DeleteConsumerGrou
 
 	private String instanceId;
 	public DeleteConsumerGroupRequest() {
-		super("alikafka", "2019-09-16", "DeleteConsumerGroup");
+		super("alikafka", "2019-09-16", "DeleteConsumerGroup", "alikafka");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

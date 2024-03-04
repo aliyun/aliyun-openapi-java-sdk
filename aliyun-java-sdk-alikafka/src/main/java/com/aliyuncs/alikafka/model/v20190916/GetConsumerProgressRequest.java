@@ -29,7 +29,7 @@ public class GetConsumerProgressRequest extends RpcAcsRequest<GetConsumerProgres
 
 	private String instanceId;
 	public GetConsumerProgressRequest() {
-		super("alikafka", "2019-09-16", "GetConsumerProgress");
+		super("alikafka", "2019-09-16", "GetConsumerProgress", "alikafka");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

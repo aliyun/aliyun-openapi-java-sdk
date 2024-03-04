@@ -22,19 +22,49 @@ import com.aliyuncs.alikafka.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetTopicStatusRequest extends RpcAcsRequest<GetTopicStatusResponse> {
+public class QueryMessageRequest extends RpcAcsRequest<QueryMessageResponse> {
 	   
+
+	private String offset;
+
+	private Long beginTime;
 
 	private String instanceId;
 
+	private String partition;
+
 	private String topic;
-	public GetTopicStatusRequest() {
-		super("alikafka", "2019-09-16", "GetTopicStatus", "alikafka");
-		setMethod(MethodType.POST);
+
+	private String queryType;
+	public QueryMessageRequest() {
+		super("alikafka", "2019-09-16", "QueryMessage", "alikafka");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getOffset() {
+		return this.offset;
+	}
+
+	public void setOffset(String offset) {
+		this.offset = offset;
+		if(offset != null){
+			putQueryParameter("Offset", offset);
+		}
+	}
+
+	public Long getBeginTime() {
+		return this.beginTime;
+	}
+
+	public void setBeginTime(Long beginTime) {
+		this.beginTime = beginTime;
+		if(beginTime != null){
+			putQueryParameter("BeginTime", beginTime.toString());
+		}
 	}
 
 	public String getInstanceId() {
@@ -45,6 +75,17 @@ public class GetTopicStatusRequest extends RpcAcsRequest<GetTopicStatusResponse>
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getPartition() {
+		return this.partition;
+	}
+
+	public void setPartition(String partition) {
+		this.partition = partition;
+		if(partition != null){
+			putQueryParameter("Partition", partition);
 		}
 	}
 
@@ -59,9 +100,20 @@ public class GetTopicStatusRequest extends RpcAcsRequest<GetTopicStatusResponse>
 		}
 	}
 
+	public String getQueryType() {
+		return this.queryType;
+	}
+
+	public void setQueryType(String queryType) {
+		this.queryType = queryType;
+		if(queryType != null){
+			putQueryParameter("QueryType", queryType);
+		}
+	}
+
 	@Override
-	public Class<GetTopicStatusResponse> getResponseClass() {
-		return GetTopicStatusResponse.class;
+	public Class<QueryMessageResponse> getResponseClass() {
+		return QueryMessageResponse.class;
 	}
 
 }

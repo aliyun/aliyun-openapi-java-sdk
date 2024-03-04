@@ -22,30 +22,21 @@ import com.aliyuncs.alikafka.Endpoint;
  * @author auto create
  * @version 
  */
-public class UpgradeInstanceVersionRequest extends RpcAcsRequest<UpgradeInstanceVersionResponse> {
+public class EnableAutoTopicCreationRequest extends RpcAcsRequest<EnableAutoTopicCreationResponse> {
 	   
 
-	private String targetVersion;
-
 	private String instanceId;
-	public UpgradeInstanceVersionRequest() {
-		super("alikafka", "2019-09-16", "UpgradeInstanceVersion", "alikafka");
+
+	private String operate;
+
+	private Long partitionNum;
+	public EnableAutoTopicCreationRequest() {
+		super("alikafka", "2019-09-16", "EnableAutoTopicCreation", "alikafka");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getTargetVersion() {
-		return this.targetVersion;
-	}
-
-	public void setTargetVersion(String targetVersion) {
-		this.targetVersion = targetVersion;
-		if(targetVersion != null){
-			putQueryParameter("TargetVersion", targetVersion);
-		}
 	}
 
 	public String getInstanceId() {
@@ -59,9 +50,31 @@ public class UpgradeInstanceVersionRequest extends RpcAcsRequest<UpgradeInstance
 		}
 	}
 
+	public String getOperate() {
+		return this.operate;
+	}
+
+	public void setOperate(String operate) {
+		this.operate = operate;
+		if(operate != null){
+			putQueryParameter("Operate", operate);
+		}
+	}
+
+	public Long getPartitionNum() {
+		return this.partitionNum;
+	}
+
+	public void setPartitionNum(Long partitionNum) {
+		this.partitionNum = partitionNum;
+		if(partitionNum != null){
+			putQueryParameter("PartitionNum", partitionNum.toString());
+		}
+	}
+
 	@Override
-	public Class<UpgradeInstanceVersionResponse> getResponseClass() {
-		return UpgradeInstanceVersionResponse.class;
+	public Class<EnableAutoTopicCreationResponse> getResponseClass() {
+		return EnableAutoTopicCreationResponse.class;
 	}
 
 }

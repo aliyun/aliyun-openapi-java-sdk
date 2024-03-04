@@ -29,7 +29,7 @@ public class ConvertPostPayOrderRequest extends RpcAcsRequest<ConvertPostPayOrde
 
 	private String instanceId;
 	public ConvertPostPayOrderRequest() {
-		super("alikafka", "2019-09-16", "ConvertPostPayOrder");
+		super("alikafka", "2019-09-16", "ConvertPostPayOrder", "alikafka");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

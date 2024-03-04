@@ -29,7 +29,7 @@ public class GetConsumerListRequest extends RpcAcsRequest<GetConsumerListRespons
 
 	private String instanceId;
 	public GetConsumerListRequest() {
-		super("alikafka", "2019-09-16", "GetConsumerList");
+		super("alikafka", "2019-09-16", "GetConsumerList", "alikafka");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

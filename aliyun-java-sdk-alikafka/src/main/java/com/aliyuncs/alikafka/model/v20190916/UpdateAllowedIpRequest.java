@@ -37,7 +37,7 @@ public class UpdateAllowedIpRequest extends RpcAcsRequest<UpdateAllowedIpRespons
 
 	private String instanceId;
 	public UpdateAllowedIpRequest() {
-		super("alikafka", "2019-09-16", "UpdateAllowedIp");
+		super("alikafka", "2019-09-16", "UpdateAllowedIp", "alikafka");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

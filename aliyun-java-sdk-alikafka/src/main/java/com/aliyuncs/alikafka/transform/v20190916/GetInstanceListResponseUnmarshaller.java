@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.alikafka.model.v20190916.GetInstanceListResponse;
 import com.aliyuncs.alikafka.model.v20190916.GetInstanceListResponse.InstanceVO;
+import com.aliyuncs.alikafka.model.v20190916.GetInstanceListResponse.InstanceVO.ConfluentConfig;
 import com.aliyuncs.alikafka.model.v20190916.GetInstanceListResponse.InstanceVO.TagVO;
 import com.aliyuncs.alikafka.model.v20190916.GetInstanceListResponse.InstanceVO.UpgradeServiceDetailInfo;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -72,6 +73,27 @@ public class GetInstanceListResponseUnmarshaller {
 			UpgradeServiceDetailInfo upgradeServiceDetailInfo = new UpgradeServiceDetailInfo();
 			upgradeServiceDetailInfo.setCurrent2OpenSourceVersion(_ctx.stringValue("GetInstanceListResponse.InstanceList["+ i +"].UpgradeServiceDetailInfo.Current2OpenSourceVersion"));
 			instanceVO.setUpgradeServiceDetailInfo(upgradeServiceDetailInfo);
+
+			ConfluentConfig confluentConfig = new ConfluentConfig();
+			confluentConfig.setKafkaCU(_ctx.integerValue("GetInstanceListResponse.InstanceList["+ i +"].ConfluentConfig.KafkaCU"));
+			confluentConfig.setKafkaStorage(_ctx.integerValue("GetInstanceListResponse.InstanceList["+ i +"].ConfluentConfig.KafkaStorage"));
+			confluentConfig.setKafkaReplica(_ctx.integerValue("GetInstanceListResponse.InstanceList["+ i +"].ConfluentConfig.KafkaReplica"));
+			confluentConfig.setZooKeeperCU(_ctx.integerValue("GetInstanceListResponse.InstanceList["+ i +"].ConfluentConfig.ZooKeeperCU"));
+			confluentConfig.setZooKeeperStorage(_ctx.integerValue("GetInstanceListResponse.InstanceList["+ i +"].ConfluentConfig.ZooKeeperStorage"));
+			confluentConfig.setZooKeeperReplica(_ctx.integerValue("GetInstanceListResponse.InstanceList["+ i +"].ConfluentConfig.ZooKeeperReplica"));
+			confluentConfig.setControlCenterCU(_ctx.integerValue("GetInstanceListResponse.InstanceList["+ i +"].ConfluentConfig.ControlCenterCU"));
+			confluentConfig.setControlCenterStorage(_ctx.integerValue("GetInstanceListResponse.InstanceList["+ i +"].ConfluentConfig.ControlCenterStorage"));
+			confluentConfig.setControlCenterReplica(_ctx.integerValue("GetInstanceListResponse.InstanceList["+ i +"].ConfluentConfig.ControlCenterReplica"));
+			confluentConfig.setSchemaRegistryCU(_ctx.integerValue("GetInstanceListResponse.InstanceList["+ i +"].ConfluentConfig.SchemaRegistryCU"));
+			confluentConfig.setSchemaRegistryReplica(_ctx.integerValue("GetInstanceListResponse.InstanceList["+ i +"].ConfluentConfig.SchemaRegistryReplica"));
+			confluentConfig.setConnectCU(_ctx.integerValue("GetInstanceListResponse.InstanceList["+ i +"].ConfluentConfig.ConnectCU"));
+			confluentConfig.setConnectReplica(_ctx.integerValue("GetInstanceListResponse.InstanceList["+ i +"].ConfluentConfig.ConnectReplica"));
+			confluentConfig.setKsqlCU(_ctx.integerValue("GetInstanceListResponse.InstanceList["+ i +"].ConfluentConfig.KsqlCU"));
+			confluentConfig.setKsqlStorage(_ctx.integerValue("GetInstanceListResponse.InstanceList["+ i +"].ConfluentConfig.KsqlStorage"));
+			confluentConfig.setKsqlReplica(_ctx.integerValue("GetInstanceListResponse.InstanceList["+ i +"].ConfluentConfig.KsqlReplica"));
+			confluentConfig.setKafkaRestProxyCU(_ctx.integerValue("GetInstanceListResponse.InstanceList["+ i +"].ConfluentConfig.KafkaRestProxyCU"));
+			confluentConfig.setKafkaRestProxyReplica(_ctx.integerValue("GetInstanceListResponse.InstanceList["+ i +"].ConfluentConfig.KafkaRestProxyReplica"));
+			instanceVO.setConfluentConfig(confluentConfig);
 
 			List<TagVO> tags = new ArrayList<TagVO>();
 			for (int j = 0; j < _ctx.lengthValue("GetInstanceListResponse.InstanceList["+ i +"].Tags.Length"); j++) {

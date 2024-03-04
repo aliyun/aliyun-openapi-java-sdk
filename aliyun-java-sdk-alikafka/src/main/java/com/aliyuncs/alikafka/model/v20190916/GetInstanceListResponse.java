@@ -145,6 +145,8 @@ public class GetInstanceListResponse extends AcsResponse {
 
 		private UpgradeServiceDetailInfo upgradeServiceDetailInfo;
 
+		private ConfluentConfig confluentConfig;
+
 		public String getVpcId() {
 			return this.vpcId;
 		}
@@ -417,6 +419,14 @@ public class GetInstanceListResponse extends AcsResponse {
 			this.upgradeServiceDetailInfo = upgradeServiceDetailInfo;
 		}
 
+		public ConfluentConfig getConfluentConfig() {
+			return this.confluentConfig;
+		}
+
+		public void setConfluentConfig(ConfluentConfig confluentConfig) {
+			this.confluentConfig = confluentConfig;
+		}
+
 		public static class TagVO {
 
 			private String key;
@@ -450,6 +460,189 @@ public class GetInstanceListResponse extends AcsResponse {
 
 			public void setCurrent2OpenSourceVersion(String current2OpenSourceVersion) {
 				this.current2OpenSourceVersion = current2OpenSourceVersion;
+			}
+		}
+
+		public static class ConfluentConfig {
+
+			private Integer kafkaCU;
+
+			private Integer kafkaStorage;
+
+			private Integer kafkaReplica;
+
+			private Integer zooKeeperCU;
+
+			private Integer zooKeeperStorage;
+
+			private Integer zooKeeperReplica;
+
+			private Integer controlCenterCU;
+
+			private Integer controlCenterStorage;
+
+			private Integer controlCenterReplica;
+
+			private Integer schemaRegistryCU;
+
+			private Integer schemaRegistryReplica;
+
+			private Integer connectCU;
+
+			private Integer connectReplica;
+
+			private Integer ksqlCU;
+
+			private Integer ksqlStorage;
+
+			private Integer ksqlReplica;
+
+			private Integer kafkaRestProxyCU;
+
+			private Integer kafkaRestProxyReplica;
+
+			public Integer getKafkaCU() {
+				return this.kafkaCU;
+			}
+
+			public void setKafkaCU(Integer kafkaCU) {
+				this.kafkaCU = kafkaCU;
+			}
+
+			public Integer getKafkaStorage() {
+				return this.kafkaStorage;
+			}
+
+			public void setKafkaStorage(Integer kafkaStorage) {
+				this.kafkaStorage = kafkaStorage;
+			}
+
+			public Integer getKafkaReplica() {
+				return this.kafkaReplica;
+			}
+
+			public void setKafkaReplica(Integer kafkaReplica) {
+				this.kafkaReplica = kafkaReplica;
+			}
+
+			public Integer getZooKeeperCU() {
+				return this.zooKeeperCU;
+			}
+
+			public void setZooKeeperCU(Integer zooKeeperCU) {
+				this.zooKeeperCU = zooKeeperCU;
+			}
+
+			public Integer getZooKeeperStorage() {
+				return this.zooKeeperStorage;
+			}
+
+			public void setZooKeeperStorage(Integer zooKeeperStorage) {
+				this.zooKeeperStorage = zooKeeperStorage;
+			}
+
+			public Integer getZooKeeperReplica() {
+				return this.zooKeeperReplica;
+			}
+
+			public void setZooKeeperReplica(Integer zooKeeperReplica) {
+				this.zooKeeperReplica = zooKeeperReplica;
+			}
+
+			public Integer getControlCenterCU() {
+				return this.controlCenterCU;
+			}
+
+			public void setControlCenterCU(Integer controlCenterCU) {
+				this.controlCenterCU = controlCenterCU;
+			}
+
+			public Integer getControlCenterStorage() {
+				return this.controlCenterStorage;
+			}
+
+			public void setControlCenterStorage(Integer controlCenterStorage) {
+				this.controlCenterStorage = controlCenterStorage;
+			}
+
+			public Integer getControlCenterReplica() {
+				return this.controlCenterReplica;
+			}
+
+			public void setControlCenterReplica(Integer controlCenterReplica) {
+				this.controlCenterReplica = controlCenterReplica;
+			}
+
+			public Integer getSchemaRegistryCU() {
+				return this.schemaRegistryCU;
+			}
+
+			public void setSchemaRegistryCU(Integer schemaRegistryCU) {
+				this.schemaRegistryCU = schemaRegistryCU;
+			}
+
+			public Integer getSchemaRegistryReplica() {
+				return this.schemaRegistryReplica;
+			}
+
+			public void setSchemaRegistryReplica(Integer schemaRegistryReplica) {
+				this.schemaRegistryReplica = schemaRegistryReplica;
+			}
+
+			public Integer getConnectCU() {
+				return this.connectCU;
+			}
+
+			public void setConnectCU(Integer connectCU) {
+				this.connectCU = connectCU;
+			}
+
+			public Integer getConnectReplica() {
+				return this.connectReplica;
+			}
+
+			public void setConnectReplica(Integer connectReplica) {
+				this.connectReplica = connectReplica;
+			}
+
+			public Integer getKsqlCU() {
+				return this.ksqlCU;
+			}
+
+			public void setKsqlCU(Integer ksqlCU) {
+				this.ksqlCU = ksqlCU;
+			}
+
+			public Integer getKsqlStorage() {
+				return this.ksqlStorage;
+			}
+
+			public void setKsqlStorage(Integer ksqlStorage) {
+				this.ksqlStorage = ksqlStorage;
+			}
+
+			public Integer getKsqlReplica() {
+				return this.ksqlReplica;
+			}
+
+			public void setKsqlReplica(Integer ksqlReplica) {
+				this.ksqlReplica = ksqlReplica;
+			}
+
+			public Integer getKafkaRestProxyCU() {
+				return this.kafkaRestProxyCU;
+			}
+
+			public void setKafkaRestProxyCU(Integer kafkaRestProxyCU) {
+				this.kafkaRestProxyCU = kafkaRestProxyCU;
+			}
+
+			public Integer getKafkaRestProxyReplica() {
+				return this.kafkaRestProxyReplica;
+			}
+
+			public void setKafkaRestProxyReplica(Integer kafkaRestProxyReplica) {
+				this.kafkaRestProxyReplica = kafkaRestProxyReplica;
 			}
 		}
 	}

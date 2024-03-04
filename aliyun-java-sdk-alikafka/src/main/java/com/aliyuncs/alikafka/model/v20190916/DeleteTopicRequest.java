@@ -29,7 +29,7 @@ public class DeleteTopicRequest extends RpcAcsRequest<DeleteTopicResponse> {
 
 	private String topic;
 	public DeleteTopicRequest() {
-		super("alikafka", "2019-09-16", "DeleteTopic");
+		super("alikafka", "2019-09-16", "DeleteTopic", "alikafka");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

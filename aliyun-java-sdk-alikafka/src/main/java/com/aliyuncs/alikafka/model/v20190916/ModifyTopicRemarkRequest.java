@@ -25,18 +25,29 @@ import com.aliyuncs.alikafka.Endpoint;
 public class ModifyTopicRemarkRequest extends RpcAcsRequest<ModifyTopicRemarkResponse> {
 	   
 
+	private String remark;
+
 	private String instanceId;
 
 	private String topic;
-
-	private String remark;
 	public ModifyTopicRemarkRequest() {
-		super("alikafka", "2019-09-16", "ModifyTopicRemark");
+		super("alikafka", "2019-09-16", "ModifyTopicRemark", "alikafka");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getRemark() {
+		return this.remark;
+	}
+
+	public void setRemark(String remark) {
+		this.remark = remark;
+		if(remark != null){
+			putQueryParameter("Remark", remark);
+		}
 	}
 
 	public String getInstanceId() {
@@ -58,17 +69,6 @@ public class ModifyTopicRemarkRequest extends RpcAcsRequest<ModifyTopicRemarkRes
 		this.topic = topic;
 		if(topic != null){
 			putQueryParameter("Topic", topic);
-		}
-	}
-
-	public String getRemark() {
-		return this.remark;
-	}
-
-	public void setRemark(String remark) {
-		this.remark = remark;
-		if(remark != null){
-			putQueryParameter("Remark", remark);
 		}
 	}
 
