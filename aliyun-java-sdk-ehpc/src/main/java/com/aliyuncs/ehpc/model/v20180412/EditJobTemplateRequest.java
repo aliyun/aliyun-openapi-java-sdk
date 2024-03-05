@@ -67,7 +67,7 @@ public class EditJobTemplateRequest extends RpcAcsRequest<EditJobTemplateRespons
 
 	private String queue;
 	public EditJobTemplateRequest() {
-		super("EHPC", "2018-04-12", "EditJobTemplate");
+		super("EHPC", "2018-04-12", "EditJobTemplate", "ehs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

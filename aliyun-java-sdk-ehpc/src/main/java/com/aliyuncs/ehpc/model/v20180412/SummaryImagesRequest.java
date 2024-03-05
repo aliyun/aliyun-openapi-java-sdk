@@ -29,7 +29,7 @@ public class SummaryImagesRequest extends RpcAcsRequest<SummaryImagesResponse> {
 
 	private String containerType;
 	public SummaryImagesRequest() {
-		super("EHPC", "2018-04-12", "SummaryImages");
+		super("EHPC", "2018-04-12", "SummaryImages", "ehs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

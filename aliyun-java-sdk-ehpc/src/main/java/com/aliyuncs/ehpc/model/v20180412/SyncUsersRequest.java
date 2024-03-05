@@ -27,7 +27,7 @@ public class SyncUsersRequest extends RpcAcsRequest<SyncUsersResponse> {
 
 	private String clusterId;
 	public SyncUsersRequest() {
-		super("EHPC", "2018-04-12", "SyncUsers");
+		super("EHPC", "2018-04-12", "SyncUsers", "ehs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

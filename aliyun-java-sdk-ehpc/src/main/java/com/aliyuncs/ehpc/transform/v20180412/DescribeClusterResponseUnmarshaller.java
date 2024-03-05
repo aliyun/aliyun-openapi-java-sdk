@@ -56,6 +56,7 @@ public class DescribeClusterResponseUnmarshaller {
 		clusterInfo.setName(_ctx.stringValue("DescribeClusterResponse.ClusterInfo.Name"));
 		clusterInfo.setImageId(_ctx.stringValue("DescribeClusterResponse.ClusterInfo.ImageId"));
 		clusterInfo.setSchedulerType(_ctx.stringValue("DescribeClusterResponse.ClusterInfo.SchedulerType"));
+		clusterInfo.setSchedulerVersion(_ctx.stringValue("DescribeClusterResponse.ClusterInfo.SchedulerVersion"));
 		clusterInfo.setDeployMode(_ctx.stringValue("DescribeClusterResponse.ClusterInfo.DeployMode"));
 		clusterInfo.setImageOwnerAlias(_ctx.stringValue("DescribeClusterResponse.ClusterInfo.ImageOwnerAlias"));
 		clusterInfo.setOsTag(_ctx.stringValue("DescribeClusterResponse.ClusterInfo.OsTag"));

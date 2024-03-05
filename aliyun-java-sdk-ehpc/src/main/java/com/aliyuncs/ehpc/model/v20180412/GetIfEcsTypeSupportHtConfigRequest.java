@@ -27,7 +27,7 @@ public class GetIfEcsTypeSupportHtConfigRequest extends RpcAcsRequest<GetIfEcsTy
 
 	private String instanceType;
 	public GetIfEcsTypeSupportHtConfigRequest() {
-		super("EHPC", "2018-04-12", "GetIfEcsTypeSupportHtConfig");
+		super("EHPC", "2018-04-12", "GetIfEcsTypeSupportHtConfig", "ehs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

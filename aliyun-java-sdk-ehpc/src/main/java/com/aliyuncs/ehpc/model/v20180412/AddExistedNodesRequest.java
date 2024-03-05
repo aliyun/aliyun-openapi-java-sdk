@@ -36,7 +36,7 @@ public class AddExistedNodesRequest extends RpcAcsRequest<AddExistedNodesRespons
 
 	private String imageOwnerAlias;
 	public AddExistedNodesRequest() {
-		super("EHPC", "2018-04-12", "AddExistedNodes");
+		super("EHPC", "2018-04-12", "AddExistedNodes", "ehs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

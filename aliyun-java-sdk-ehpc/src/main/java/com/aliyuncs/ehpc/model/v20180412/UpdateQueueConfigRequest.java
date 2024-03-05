@@ -37,7 +37,7 @@ public class UpdateQueueConfigRequest extends RpcAcsRequest<UpdateQueueConfigRes
 
 	private String computeInstanceType;
 	public UpdateQueueConfigRequest() {
-		super("EHPC", "2018-04-12", "UpdateQueueConfig");
+		super("EHPC", "2018-04-12", "UpdateQueueConfig", "ehs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

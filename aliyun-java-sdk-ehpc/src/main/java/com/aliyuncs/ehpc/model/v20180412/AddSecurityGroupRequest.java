@@ -31,7 +31,7 @@ public class AddSecurityGroupRequest extends RpcAcsRequest<AddSecurityGroupRespo
 
 	private String clusterId;
 	public AddSecurityGroupRequest() {
-		super("EHPC", "2018-04-12", "AddSecurityGroup");
+		super("EHPC", "2018-04-12", "AddSecurityGroup", "ehs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

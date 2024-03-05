@@ -31,7 +31,7 @@ public class ListCommunityImagesRequest extends RpcAcsRequest<ListCommunityImage
 
 	private String instanceType;
 	public ListCommunityImagesRequest() {
-		super("EHPC", "2018-04-12", "ListCommunityImages");
+		super("EHPC", "2018-04-12", "ListCommunityImages", "ehs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

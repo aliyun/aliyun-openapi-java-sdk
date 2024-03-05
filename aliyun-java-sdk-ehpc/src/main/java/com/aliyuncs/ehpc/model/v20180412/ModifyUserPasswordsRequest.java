@@ -32,7 +32,7 @@ public class ModifyUserPasswordsRequest extends RpcAcsRequest<ModifyUserPassword
 
 	private List<User> users;
 	public ModifyUserPasswordsRequest() {
-		super("EHPC", "2018-04-12", "ModifyUserPasswords");
+		super("EHPC", "2018-04-12", "ModifyUserPasswords", "ehs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

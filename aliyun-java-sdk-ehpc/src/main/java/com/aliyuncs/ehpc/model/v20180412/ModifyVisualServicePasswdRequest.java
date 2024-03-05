@@ -33,7 +33,7 @@ public class ModifyVisualServicePasswdRequest extends RpcAcsRequest<ModifyVisual
 
 	private String passwd;
 	public ModifyVisualServicePasswdRequest() {
-		super("EHPC", "2018-04-12", "ModifyVisualServicePasswd");
+		super("EHPC", "2018-04-12", "ModifyVisualServicePasswd", "ehs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

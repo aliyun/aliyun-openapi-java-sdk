@@ -31,7 +31,7 @@ public class InspectImageRequest extends RpcAcsRequest<InspectImageResponse> {
 
 	private String imageName;
 	public InspectImageRequest() {
-		super("EHPC", "2018-04-12", "InspectImage");
+		super("EHPC", "2018-04-12", "InspectImage", "ehs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

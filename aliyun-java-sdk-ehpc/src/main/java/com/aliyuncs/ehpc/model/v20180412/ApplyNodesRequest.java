@@ -44,6 +44,8 @@ public class ApplyNodesRequest extends RpcAcsRequest<ApplyNodesResponse> {
 
 	private String systemDiskType;
 
+	private String userData;
+
 	private Integer cores;
 
 	private Integer systemDiskSize;
@@ -80,7 +82,7 @@ public class ApplyNodesRequest extends RpcAcsRequest<ApplyNodesResponse> {
 
 	private Boolean strictSatisfiedTargetCapacity;
 	public ApplyNodesRequest() {
-		super("EHPC", "2018-04-12", "ApplyNodes");
+		super("EHPC", "2018-04-12", "ApplyNodes", "ehs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -184,6 +186,17 @@ public class ApplyNodesRequest extends RpcAcsRequest<ApplyNodesResponse> {
 		this.systemDiskType = systemDiskType;
 		if(systemDiskType != null){
 			putQueryParameter("SystemDiskType", systemDiskType);
+		}
+	}
+
+	public String getUserData() {
+		return this.userData;
+	}
+
+	public void setUserData(String userData) {
+		this.userData = userData;
+		if(userData != null){
+			putQueryParameter("UserData", userData);
 		}
 	}
 

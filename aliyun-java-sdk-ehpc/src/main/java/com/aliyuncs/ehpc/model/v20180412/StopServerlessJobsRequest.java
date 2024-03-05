@@ -30,7 +30,7 @@ public class StopServerlessJobsRequest extends RpcAcsRequest<StopServerlessJobsR
 
 	private List<String> jobIds;
 	public StopServerlessJobsRequest() {
-		super("EHPC", "2018-04-12", "StopServerlessJobs");
+		super("EHPC", "2018-04-12", "StopServerlessJobs", "ehs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

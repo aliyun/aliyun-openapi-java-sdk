@@ -54,7 +54,7 @@ public class ListJobsWithFiltersRequest extends RpcAcsRequest<ListJobsWithFilter
 
 	private String createTimeStart;
 	public ListJobsWithFiltersRequest() {
-		super("EHPC", "2018-04-12", "ListJobsWithFilters");
+		super("EHPC", "2018-04-12", "ListJobsWithFilters", "ehs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

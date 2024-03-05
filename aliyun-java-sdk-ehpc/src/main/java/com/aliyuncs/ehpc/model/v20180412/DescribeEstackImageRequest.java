@@ -29,7 +29,7 @@ public class DescribeEstackImageRequest extends RpcAcsRequest<DescribeEstackImag
 
 	private Integer pageSize;
 	public DescribeEstackImageRequest() {
-		super("EHPC", "2018-04-12", "DescribeEstackImage");
+		super("EHPC", "2018-04-12", "DescribeEstackImage", "ehs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

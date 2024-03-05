@@ -31,7 +31,7 @@ public class DeleteLocalImageRequest extends RpcAcsRequest<DeleteLocalImageRespo
 
 	private String imageName;
 	public DeleteLocalImageRequest() {
-		super("EHPC", "2018-04-12", "DeleteLocalImage");
+		super("EHPC", "2018-04-12", "DeleteLocalImage", "ehs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

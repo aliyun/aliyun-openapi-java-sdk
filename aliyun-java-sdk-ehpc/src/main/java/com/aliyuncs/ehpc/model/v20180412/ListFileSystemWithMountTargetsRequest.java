@@ -29,7 +29,7 @@ public class ListFileSystemWithMountTargetsRequest extends RpcAcsRequest<ListFil
 
 	private Integer pageSize;
 	public ListFileSystemWithMountTargetsRequest() {
-		super("EHPC", "2018-04-12", "ListFileSystemWithMountTargets");
+		super("EHPC", "2018-04-12", "ListFileSystemWithMountTargets", "ehs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

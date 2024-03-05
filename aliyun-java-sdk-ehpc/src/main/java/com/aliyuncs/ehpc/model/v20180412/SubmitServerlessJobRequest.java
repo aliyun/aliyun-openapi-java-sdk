@@ -66,7 +66,7 @@ public class SubmitServerlessJobRequest extends RpcAcsRequest<SubmitServerlessJo
 	@SerializedName("arrayProperties")
 	private ArrayProperties arrayProperties;
 	public SubmitServerlessJobRequest() {
-		super("EHPC", "2018-04-12", "SubmitServerlessJob");
+		super("EHPC", "2018-04-12", "SubmitServerlessJob", "ehs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -30,7 +30,7 @@ public class SetPostScriptsRequest extends RpcAcsRequest<SetPostScriptsResponse>
 
 	private String clusterId;
 	public SetPostScriptsRequest() {
-		super("EHPC", "2018-04-12", "SetPostScripts");
+		super("EHPC", "2018-04-12", "SetPostScripts", "ehs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

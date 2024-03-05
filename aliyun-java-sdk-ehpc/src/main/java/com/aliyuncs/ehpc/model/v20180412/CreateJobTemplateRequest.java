@@ -65,7 +65,7 @@ public class CreateJobTemplateRequest extends RpcAcsRequest<CreateJobTemplateRes
 
 	private String queue;
 	public CreateJobTemplateRequest() {
-		super("EHPC", "2018-04-12", "CreateJobTemplate");
+		super("EHPC", "2018-04-12", "CreateJobTemplate", "ehs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

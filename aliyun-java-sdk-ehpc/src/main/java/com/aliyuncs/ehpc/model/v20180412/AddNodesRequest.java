@@ -94,7 +94,7 @@ public class AddNodesRequest extends RpcAcsRequest<AddNodesResponse> {
 
 	private String ecsChargeType;
 	public AddNodesRequest() {
-		super("EHPC", "2018-04-12", "AddNodes");
+		super("EHPC", "2018-04-12", "AddNodes", "ehs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

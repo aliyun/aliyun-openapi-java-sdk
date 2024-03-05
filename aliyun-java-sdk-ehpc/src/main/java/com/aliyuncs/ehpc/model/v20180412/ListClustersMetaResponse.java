@@ -103,6 +103,8 @@ public class ListClustersMetaResponse extends AcsResponse {
 
 		private Boolean hasPlugin;
 
+		private String ehpcVersion;
+
 		public String getStatus() {
 			return this.status;
 		}
@@ -205,6 +207,14 @@ public class ListClustersMetaResponse extends AcsResponse {
 
 		public void setHasPlugin(Boolean hasPlugin) {
 			this.hasPlugin = hasPlugin;
+		}
+
+		public String getEhpcVersion() {
+			return this.ehpcVersion;
+		}
+
+		public void setEhpcVersion(String ehpcVersion) {
+			this.ehpcVersion = ehpcVersion;
 		}
 	}
 

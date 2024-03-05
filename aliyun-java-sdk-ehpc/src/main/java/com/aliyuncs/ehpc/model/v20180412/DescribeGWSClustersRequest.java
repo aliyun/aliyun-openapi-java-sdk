@@ -31,7 +31,7 @@ public class DescribeGWSClustersRequest extends RpcAcsRequest<DescribeGWSCluster
 
 	private Integer pageSize;
 	public DescribeGWSClustersRequest() {
-		super("EHPC", "2018-04-12", "DescribeGWSClusters");
+		super("EHPC", "2018-04-12", "DescribeGWSClusters", "ehs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

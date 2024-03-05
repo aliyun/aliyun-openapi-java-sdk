@@ -37,7 +37,7 @@ public class GetUserImageRequest extends RpcAcsRequest<GetUserImageResponse> {
 
 	private String imageName;
 	public GetUserImageRequest() {
-		super("EHPC", "2018-04-12", "GetUserImage");
+		super("EHPC", "2018-04-12", "GetUserImage", "ehs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

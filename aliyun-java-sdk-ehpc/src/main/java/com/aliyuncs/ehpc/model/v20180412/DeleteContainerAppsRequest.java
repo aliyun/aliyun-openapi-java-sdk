@@ -28,7 +28,7 @@ public class DeleteContainerAppsRequest extends RpcAcsRequest<DeleteContainerApp
 
 	private List<ContainerApp> containerApps;
 	public DeleteContainerAppsRequest() {
-		super("EHPC", "2018-04-12", "DeleteContainerApps");
+		super("EHPC", "2018-04-12", "DeleteContainerApps", "ehs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

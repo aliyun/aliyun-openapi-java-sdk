@@ -35,7 +35,7 @@ public class AddQueueRequest extends RpcAcsRequest<AddQueueResponse> {
 
 	private Boolean useESS;
 	public AddQueueRequest() {
-		super("EHPC", "2018-04-12", "AddQueue");
+		super("EHPC", "2018-04-12", "AddQueue", "ehs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

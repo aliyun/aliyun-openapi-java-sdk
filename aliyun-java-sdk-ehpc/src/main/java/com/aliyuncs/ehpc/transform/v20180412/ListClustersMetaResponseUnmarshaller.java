@@ -47,6 +47,7 @@ public class ListClustersMetaResponseUnmarshaller {
 			clusterInfoSimple.setLocation(_ctx.stringValue("ListClustersMetaResponse.Clusters["+ i +"].Location"));
 			clusterInfoSimple.setClientVersion(_ctx.stringValue("ListClustersMetaResponse.Clusters["+ i +"].ClientVersion"));
 			clusterInfoSimple.setHasPlugin(_ctx.booleanValue("ListClustersMetaResponse.Clusters["+ i +"].HasPlugin"));
+			clusterInfoSimple.setEhpcVersion(_ctx.stringValue("ListClustersMetaResponse.Clusters["+ i +"].EhpcVersion"));
 
 			clusters.add(clusterInfoSimple);
 		}

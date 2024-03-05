@@ -31,7 +31,7 @@ public class SetGWSInstanceUserRequest extends RpcAcsRequest<SetGWSInstanceUserR
 
 	private String userName;
 	public SetGWSInstanceUserRequest() {
-		super("EHPC", "2018-04-12", "SetGWSInstanceUser");
+		super("EHPC", "2018-04-12", "SetGWSInstanceUser", "ehs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

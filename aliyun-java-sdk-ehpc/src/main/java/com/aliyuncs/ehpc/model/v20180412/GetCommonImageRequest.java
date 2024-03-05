@@ -31,7 +31,7 @@ public class GetCommonImageRequest extends RpcAcsRequest<GetCommonImageResponse>
 
 	private String imageName;
 	public GetCommonImageRequest() {
-		super("EHPC", "2018-04-12", "GetCommonImage");
+		super("EHPC", "2018-04-12", "GetCommonImage", "ehs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

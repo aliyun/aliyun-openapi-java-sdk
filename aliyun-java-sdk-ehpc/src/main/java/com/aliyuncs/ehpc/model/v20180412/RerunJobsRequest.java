@@ -31,7 +31,7 @@ public class RerunJobsRequest extends RpcAcsRequest<RerunJobsResponse> {
 
 	private Boolean async;
 	public RerunJobsRequest() {
-		super("EHPC", "2018-04-12", "RerunJobs");
+		super("EHPC", "2018-04-12", "RerunJobs", "ehs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

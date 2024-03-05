@@ -33,7 +33,7 @@ public class ListNodesNoPagingRequest extends RpcAcsRequest<ListNodesNoPagingRes
 
 	private String hostName;
 	public ListNodesNoPagingRequest() {
-		super("EHPC", "2018-04-12", "ListNodesNoPaging");
+		super("EHPC", "2018-04-12", "ListNodesNoPaging", "ehs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

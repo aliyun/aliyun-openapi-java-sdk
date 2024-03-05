@@ -47,7 +47,7 @@ public class ListNodesRequest extends RpcAcsRequest<ListNodesResponse> {
 
 	private String sortBy;
 	public ListNodesRequest() {
-		super("EHPC", "2018-04-12", "ListNodes");
+		super("EHPC", "2018-04-12", "ListNodes", "ehs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

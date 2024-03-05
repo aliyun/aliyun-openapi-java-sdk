@@ -108,7 +108,7 @@ public class CreateHybridClusterRequest extends RpcAcsRequest<CreateHybridCluste
 
 	private String location;
 	public CreateHybridClusterRequest() {
-		super("EHPC", "2018-04-12", "CreateHybridCluster");
+		super("EHPC", "2018-04-12", "CreateHybridCluster", "ehs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

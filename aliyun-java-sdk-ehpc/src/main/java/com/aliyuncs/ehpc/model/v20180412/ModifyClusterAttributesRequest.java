@@ -42,7 +42,7 @@ public class ModifyClusterAttributesRequest extends RpcAcsRequest<ModifyClusterA
 
 	private String name;
 	public ModifyClusterAttributesRequest() {
-		super("EHPC", "2018-04-12", "ModifyClusterAttributes");
+		super("EHPC", "2018-04-12", "ModifyClusterAttributes", "ehs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

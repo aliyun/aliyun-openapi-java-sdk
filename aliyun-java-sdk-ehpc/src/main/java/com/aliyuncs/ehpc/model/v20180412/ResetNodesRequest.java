@@ -30,7 +30,7 @@ public class ResetNodesRequest extends RpcAcsRequest<ResetNodesResponse> {
 
 	private String clusterId;
 	public ResetNodesRequest() {
-		super("EHPC", "2018-04-12", "ResetNodes");
+		super("EHPC", "2018-04-12", "ResetNodes", "ehs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

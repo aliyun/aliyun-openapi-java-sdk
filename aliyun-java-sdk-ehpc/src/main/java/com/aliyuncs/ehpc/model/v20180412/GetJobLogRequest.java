@@ -35,7 +35,7 @@ public class GetJobLogRequest extends RpcAcsRequest<GetJobLogResponse> {
 
 	private Integer size;
 	public GetJobLogRequest() {
-		super("EHPC", "2018-04-12", "GetJobLog");
+		super("EHPC", "2018-04-12", "GetJobLog", "ehs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

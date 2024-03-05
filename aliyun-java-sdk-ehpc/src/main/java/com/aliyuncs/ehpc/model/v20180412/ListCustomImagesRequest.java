@@ -33,7 +33,7 @@ public class ListCustomImagesRequest extends RpcAcsRequest<ListCustomImagesRespo
 
 	private String instanceType;
 	public ListCustomImagesRequest() {
-		super("EHPC", "2018-04-12", "ListCustomImages");
+		super("EHPC", "2018-04-12", "ListCustomImages", "ehs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class ListSoftwaresRequest extends RpcAcsRequest<ListSoftwaresResponse> {
 
 	private String ehpcVersion;
 	public ListSoftwaresRequest() {
-		super("EHPC", "2018-04-12", "ListSoftwares");
+		super("EHPC", "2018-04-12", "ListSoftwares", "ehs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

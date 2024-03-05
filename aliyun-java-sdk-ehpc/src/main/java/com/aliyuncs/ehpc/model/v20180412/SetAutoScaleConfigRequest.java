@@ -60,7 +60,7 @@ public class SetAutoScaleConfigRequest extends RpcAcsRequest<SetAutoScaleConfigR
 
 	private Integer growRatio;
 	public SetAutoScaleConfigRequest() {
-		super("EHPC", "2018-04-12", "SetAutoScaleConfig");
+		super("EHPC", "2018-04-12", "SetAutoScaleConfig", "ehs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

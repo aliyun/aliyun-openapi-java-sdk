@@ -33,7 +33,7 @@ public class ListUsersAsyncRequest extends RpcAcsRequest<ListUsersAsyncResponse>
 
 	private Integer pageSize;
 	public ListUsersAsyncRequest() {
-		super("EHPC", "2018-04-12", "ListUsersAsync");
+		super("EHPC", "2018-04-12", "ListUsersAsync", "ehs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

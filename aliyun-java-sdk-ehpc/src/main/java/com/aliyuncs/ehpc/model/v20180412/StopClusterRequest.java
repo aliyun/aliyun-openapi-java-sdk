@@ -27,7 +27,7 @@ public class StopClusterRequest extends RpcAcsRequest<StopClusterResponse> {
 
 	private String clusterId;
 	public StopClusterRequest() {
-		super("EHPC", "2018-04-12", "StopCluster");
+		super("EHPC", "2018-04-12", "StopCluster", "ehs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

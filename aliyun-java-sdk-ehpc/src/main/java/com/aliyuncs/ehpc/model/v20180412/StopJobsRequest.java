@@ -31,7 +31,7 @@ public class StopJobsRequest extends RpcAcsRequest<StopJobsResponse> {
 
 	private Boolean async;
 	public StopJobsRequest() {
-		super("EHPC", "2018-04-12", "StopJobs");
+		super("EHPC", "2018-04-12", "StopJobs", "ehs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

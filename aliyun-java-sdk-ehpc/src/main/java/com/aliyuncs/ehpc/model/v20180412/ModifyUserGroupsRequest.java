@@ -32,7 +32,7 @@ public class ModifyUserGroupsRequest extends RpcAcsRequest<ModifyUserGroupsRespo
 
 	private List<User> users;
 	public ModifyUserGroupsRequest() {
-		super("EHPC", "2018-04-12", "ModifyUserGroups");
+		super("EHPC", "2018-04-12", "ModifyUserGroups", "ehs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

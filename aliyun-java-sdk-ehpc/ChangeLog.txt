@@ -1,3 +1,6 @@
+2024-03-05 Version: 1.14.21
+- Support UserData parameter for ApplyNodes interface.
+
 2023-09-06 Version: 1.14.20
 - Parameter changes in SubmitServerlessJob.
 

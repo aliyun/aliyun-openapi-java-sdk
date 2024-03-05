@@ -79,6 +79,8 @@ public class DescribeClusterResponse extends AcsResponse {
 
 		private String schedulerType;
 
+		private String schedulerVersion;
+
 		private String deployMode;
 
 		private String imageOwnerAlias;
@@ -277,6 +279,14 @@ public class DescribeClusterResponse extends AcsResponse {
 
 		public void setSchedulerType(String schedulerType) {
 			this.schedulerType = schedulerType;
+		}
+
+		public String getSchedulerVersion() {
+			return this.schedulerVersion;
+		}
+
+		public void setSchedulerVersion(String schedulerVersion) {
+			this.schedulerVersion = schedulerVersion;
 		}
 
 		public String getDeployMode() {
