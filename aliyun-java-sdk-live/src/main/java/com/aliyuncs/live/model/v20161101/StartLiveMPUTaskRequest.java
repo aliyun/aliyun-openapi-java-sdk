@@ -609,8 +609,8 @@ public class StartLiveMPUTaskRequest extends RpcAcsRequest<StartLiveMPUTaskRespo
 			@SerializedName("VideoFramerate")
 			private String videoFramerate;
 
-			@SerializedName("VIdeoHeight")
-			private String vIdeoHeight;
+			@SerializedName("VideoHeight")
+			private String videoHeight;
 
 			@SerializedName("VideoBitrate")
 			private String videoBitrate;
@@ -656,12 +656,12 @@ public class StartLiveMPUTaskRequest extends RpcAcsRequest<StartLiveMPUTaskRespo
 				this.videoFramerate = videoFramerate;
 			}
 
-			public String getVIdeoHeight() {
-				return this.vIdeoHeight;
+			public String getVideoHeight() {
+				return this.videoHeight;
 			}
 
-			public void setVIdeoHeight(String vIdeoHeight) {
-				this.vIdeoHeight = vIdeoHeight;
+			public void setVideoHeight(String videoHeight) {
+				this.videoHeight = videoHeight;
 			}
 
 			public String getVideoBitrate() {

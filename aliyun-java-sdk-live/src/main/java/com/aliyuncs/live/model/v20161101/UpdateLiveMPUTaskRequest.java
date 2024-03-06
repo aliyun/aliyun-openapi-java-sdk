@@ -576,8 +576,8 @@ public class UpdateLiveMPUTaskRequest extends RpcAcsRequest<UpdateLiveMPUTaskRes
 			@SerializedName("AudioOnly")
 			private String audioOnly;
 
-			@SerializedName("VIdeoWidth")
-			private String vIdeoWidth;
+			@SerializedName("VideoWidth")
+			private String videoWidth;
 
 			@SerializedName("AudioBitrate")
 			private String audioBitrate;
@@ -585,8 +585,8 @@ public class UpdateLiveMPUTaskRequest extends RpcAcsRequest<UpdateLiveMPUTaskRes
 			@SerializedName("VideoFramerate")
 			private String videoFramerate;
 
-			@SerializedName("VIdeoHeight")
-			private String vIdeoHeight;
+			@SerializedName("VideoHeight")
+			private String videoHeight;
 
 			@SerializedName("VideoBitrate")
 			private String videoBitrate;
@@ -608,12 +608,12 @@ public class UpdateLiveMPUTaskRequest extends RpcAcsRequest<UpdateLiveMPUTaskRes
 				this.audioOnly = audioOnly;
 			}
 
-			public String getVIdeoWidth() {
-				return this.vIdeoWidth;
+			public String getVideoWidth() {
+				return this.videoWidth;
 			}
 
-			public void setVIdeoWidth(String vIdeoWidth) {
-				this.vIdeoWidth = vIdeoWidth;
+			public void setVideoWidth(String videoWidth) {
+				this.videoWidth = videoWidth;
 			}
 
 			public String getAudioBitrate() {
@@ -632,12 +632,12 @@ public class UpdateLiveMPUTaskRequest extends RpcAcsRequest<UpdateLiveMPUTaskRes
 				this.videoFramerate = videoFramerate;
 			}
 
-			public String getVIdeoHeight() {
-				return this.vIdeoHeight;
+			public String getVideoHeight() {
+				return this.videoHeight;
 			}
 
-			public void setVIdeoHeight(String vIdeoHeight) {
-				this.vIdeoHeight = vIdeoHeight;
+			public void setVideoHeight(String videoHeight) {
+				this.videoHeight = videoHeight;
 			}
 
 			public String getVideoBitrate() {
