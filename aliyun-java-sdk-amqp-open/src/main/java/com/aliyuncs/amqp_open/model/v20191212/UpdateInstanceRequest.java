@@ -22,14 +22,12 @@ import com.aliyuncs.amqp_open.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse> {
+public class UpdateInstanceRequest extends RpcAcsRequest<UpdateInstanceResponse> {
 	   
 
 	private Long maxPrivateTps;
 
 	private String clientToken;
-
-	private String periodCycle;
 
 	private Integer storageSize;
 
@@ -45,25 +43,15 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	private String instanceType;
 
-	private String renewStatus;
-
-	private Integer autoRenewPeriod;
-
-	private Integer period;
-
-	private String renewalDurationUnit;
-
-	private String instanceName;
-
-	private Boolean autoRenew;
+	private String instanceId;
 
 	private Boolean supportEip;
 
-	private Long maxEipTps;
+	private String modifyType;
 
-	private String paymentType;
-	public CreateInstanceRequest() {
-		super("amqp-open", "2019-12-12", "CreateInstance", "onsproxy");
+	private Long maxEipTps;
+	public UpdateInstanceRequest() {
+		super("amqp-open", "2019-12-12", "UpdateInstance", "onsproxy");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -90,17 +78,6 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
-	public String getPeriodCycle() {
-		return this.periodCycle;
-	}
-
-	public void setPeriodCycle(String periodCycle) {
-		this.periodCycle = periodCycle;
-		if(periodCycle != null){
-			putQueryParameter("PeriodCycle", periodCycle);
 		}
 	}
 
@@ -181,69 +158,14 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		}
 	}
 
-	public String getRenewStatus() {
-		return this.renewStatus;
+	public String getInstanceId() {
+		return this.instanceId;
 	}
 
-	public void setRenewStatus(String renewStatus) {
-		this.renewStatus = renewStatus;
-		if(renewStatus != null){
-			putQueryParameter("RenewStatus", renewStatus);
-		}
-	}
-
-	public Integer getAutoRenewPeriod() {
-		return this.autoRenewPeriod;
-	}
-
-	public void setAutoRenewPeriod(Integer autoRenewPeriod) {
-		this.autoRenewPeriod = autoRenewPeriod;
-		if(autoRenewPeriod != null){
-			putQueryParameter("AutoRenewPeriod", autoRenewPeriod.toString());
-		}
-	}
-
-	public Integer getPeriod() {
-		return this.period;
-	}
-
-	public void setPeriod(Integer period) {
-		this.period = period;
-		if(period != null){
-			putQueryParameter("Period", period.toString());
-		}
-	}
-
-	public String getRenewalDurationUnit() {
-		return this.renewalDurationUnit;
-	}
-
-	public void setRenewalDurationUnit(String renewalDurationUnit) {
-		this.renewalDurationUnit = renewalDurationUnit;
-		if(renewalDurationUnit != null){
-			putQueryParameter("RenewalDurationUnit", renewalDurationUnit);
-		}
-	}
-
-	public String getInstanceName() {
-		return this.instanceName;
-	}
-
-	public void setInstanceName(String instanceName) {
-		this.instanceName = instanceName;
-		if(instanceName != null){
-			putQueryParameter("InstanceName", instanceName);
-		}
-	}
-
-	public Boolean getAutoRenew() {
-		return this.autoRenew;
-	}
-
-	public void setAutoRenew(Boolean autoRenew) {
-		this.autoRenew = autoRenew;
-		if(autoRenew != null){
-			putQueryParameter("AutoRenew", autoRenew.toString());
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
@@ -258,6 +180,17 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		}
 	}
 
+	public String getModifyType() {
+		return this.modifyType;
+	}
+
+	public void setModifyType(String modifyType) {
+		this.modifyType = modifyType;
+		if(modifyType != null){
+			putQueryParameter("ModifyType", modifyType);
+		}
+	}
+
 	public Long getMaxEipTps() {
 		return this.maxEipTps;
 	}
@@ -269,20 +202,9 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		}
 	}
 
-	public String getPaymentType() {
-		return this.paymentType;
-	}
-
-	public void setPaymentType(String paymentType) {
-		this.paymentType = paymentType;
-		if(paymentType != null){
-			putQueryParameter("PaymentType", paymentType);
-		}
-	}
-
 	@Override
-	public Class<CreateInstanceResponse> getResponseClass() {
-		return CreateInstanceResponse.class;
+	public Class<UpdateInstanceResponse> getResponseClass() {
+		return UpdateInstanceResponse.class;
 	}
 
 }
