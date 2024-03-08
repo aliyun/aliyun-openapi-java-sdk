@@ -29,8 +29,6 @@ public class TransformInstanceChargeTypeRequest extends RpcAcsRequest<TransformI
 
 	private String couponNo;
 
-	private String securityToken;
-
 	private String businessInfo;
 
 	private Long period;
@@ -78,17 +76,6 @@ public class TransformInstanceChargeTypeRequest extends RpcAcsRequest<TransformI
 		this.couponNo = couponNo;
 		if(couponNo != null){
 			putQueryParameter("CouponNo", couponNo);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

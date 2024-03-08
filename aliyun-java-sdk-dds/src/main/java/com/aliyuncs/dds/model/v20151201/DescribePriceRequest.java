@@ -33,8 +33,6 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 
 	private String resourceGroupId;
 
-	private String securityToken;
-
 	private String businessInfo;
 
 	private String resourceOwnerAccount;
@@ -100,17 +98,6 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 		this.resourceGroupId = resourceGroupId;
 		if(resourceGroupId != null){
 			putQueryParameter("ResourceGroupId", resourceGroupId);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

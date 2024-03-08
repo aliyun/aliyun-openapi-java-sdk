@@ -33,9 +33,9 @@ public class DescribeRunningLogRecordsRequest extends RpcAcsRequest<DescribeRunn
 
 	private Integer pageNumber;
 
-	private String resourceGroupId;
+	private String queryKeywords;
 
-	private String securityToken;
+	private String resourceGroupId;
 
 	private Integer pageSize;
 
@@ -52,6 +52,8 @@ public class DescribeRunningLogRecordsRequest extends RpcAcsRequest<DescribeRunn
 	private String endTime;
 
 	private Long ownerId;
+
+	private String logicalOperator;
 
 	private String dBName;
 
@@ -109,6 +111,17 @@ public class DescribeRunningLogRecordsRequest extends RpcAcsRequest<DescribeRunn
 		}
 	}
 
+	public String getQueryKeywords() {
+		return this.queryKeywords;
+	}
+
+	public void setQueryKeywords(String queryKeywords) {
+		this.queryKeywords = queryKeywords;
+		if(queryKeywords != null){
+			putQueryParameter("QueryKeywords", queryKeywords);
+		}
+	}
+
 	public String getResourceGroupId() {
 		return this.resourceGroupId;
 	}
@@ -117,17 +130,6 @@ public class DescribeRunningLogRecordsRequest extends RpcAcsRequest<DescribeRunn
 		this.resourceGroupId = resourceGroupId;
 		if(resourceGroupId != null){
 			putQueryParameter("ResourceGroupId", resourceGroupId);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 
@@ -216,6 +218,17 @@ public class DescribeRunningLogRecordsRequest extends RpcAcsRequest<DescribeRunn
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getLogicalOperator() {
+		return this.logicalOperator;
+	}
+
+	public void setLogicalOperator(String logicalOperator) {
+		this.logicalOperator = logicalOperator;
+		if(logicalOperator != null){
+			putQueryParameter("LogicalOperator", logicalOperator);
 		}
 	}
 

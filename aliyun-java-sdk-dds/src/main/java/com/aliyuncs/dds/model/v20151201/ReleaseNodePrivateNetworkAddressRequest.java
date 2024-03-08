@@ -29,8 +29,6 @@ public class ReleaseNodePrivateNetworkAddressRequest extends RpcAcsRequest<Relea
 
 	private String networkType;
 
-	private String securityToken;
-
 	private String dBInstanceId;
 
 	private String nodeId;
@@ -68,17 +66,6 @@ public class ReleaseNodePrivateNetworkAddressRequest extends RpcAcsRequest<Relea
 		this.networkType = networkType;
 		if(networkType != null){
 			putQueryParameter("NetworkType", networkType);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

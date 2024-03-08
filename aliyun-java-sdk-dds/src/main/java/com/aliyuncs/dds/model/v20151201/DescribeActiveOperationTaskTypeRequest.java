@@ -31,8 +31,6 @@ public class DescribeActiveOperationTaskTypeRequest extends RpcAcsRequest<Descri
 
 	private Integer isHistory;
 
-	private String securityToken;
-
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -77,17 +75,6 @@ public class DescribeActiveOperationTaskTypeRequest extends RpcAcsRequest<Descri
 		this.isHistory = isHistory;
 		if(isHistory != null){
 			putQueryParameter("IsHistory", isHistory.toString());
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

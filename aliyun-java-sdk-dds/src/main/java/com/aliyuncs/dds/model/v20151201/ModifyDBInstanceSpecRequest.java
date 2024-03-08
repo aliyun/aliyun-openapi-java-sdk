@@ -37,8 +37,6 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 
 	private String replicationFactor;
 
-	private String securityToken;
-
 	private String effectiveTime;
 
 	private String dBInstanceId;
@@ -128,17 +126,6 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 		this.replicationFactor = replicationFactor;
 		if(replicationFactor != null){
 			putQueryParameter("ReplicationFactor", replicationFactor);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

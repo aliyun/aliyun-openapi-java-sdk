@@ -29,8 +29,6 @@ public class ModifyDBInstanceNetworkTypeRequest extends RpcAcsRequest<ModifyDBIn
 
 	private String networkType;
 
-	private String securityToken;
-
 	private Integer classicExpiredDays;
 
 	private String dBInstanceId;
@@ -76,17 +74,6 @@ public class ModifyDBInstanceNetworkTypeRequest extends RpcAcsRequest<ModifyDBIn
 		this.networkType = networkType;
 		if(networkType != null){
 			putQueryParameter("NetworkType", networkType);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

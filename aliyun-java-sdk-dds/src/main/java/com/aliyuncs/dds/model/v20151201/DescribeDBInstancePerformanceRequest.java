@@ -33,8 +33,6 @@ public class DescribeDBInstancePerformanceRequest extends RpcAcsRequest<Describe
 
 	private String replicaSetRole;
 
-	private String securityToken;
-
 	private String dBInstanceId;
 
 	private String nodeId;
@@ -98,17 +96,6 @@ public class DescribeDBInstancePerformanceRequest extends RpcAcsRequest<Describe
 		this.replicaSetRole = replicaSetRole;
 		if(replicaSetRole != null){
 			putQueryParameter("ReplicaSetRole", replicaSetRole);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

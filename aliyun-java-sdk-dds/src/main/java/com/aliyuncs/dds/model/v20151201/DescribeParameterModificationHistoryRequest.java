@@ -29,8 +29,6 @@ public class DescribeParameterModificationHistoryRequest extends RpcAcsRequest<D
 
 	private String startTime;
 
-	private String securityToken;
-
 	private String dBInstanceId;
 
 	private String nodeId;
@@ -72,17 +70,6 @@ public class DescribeParameterModificationHistoryRequest extends RpcAcsRequest<D
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

@@ -37,8 +37,6 @@ public class CreateNodeBatchRequest extends RpcAcsRequest<CreateNodeBatchRespons
 
 	private String accountName;
 
-	private String securityToken;
-
 	private String dBInstanceId;
 
 	private String businessInfo;
@@ -126,17 +124,6 @@ public class CreateNodeBatchRequest extends RpcAcsRequest<CreateNodeBatchRespons
 		this.accountName = accountName;
 		if(accountName != null){
 			putQueryParameter("AccountName", accountName);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

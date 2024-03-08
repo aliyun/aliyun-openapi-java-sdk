@@ -31,9 +31,9 @@ public class DescribeErrorLogRecordsRequest extends RpcAcsRequest<DescribeErrorL
 
 	private Integer pageNumber;
 
-	private String resourceGroupId;
+	private String queryKeywords;
 
-	private String securityToken;
+	private String resourceGroupId;
 
 	private Integer pageSize;
 
@@ -50,6 +50,8 @@ public class DescribeErrorLogRecordsRequest extends RpcAcsRequest<DescribeErrorL
 	private String endTime;
 
 	private Long ownerId;
+
+	private String logicalOperator;
 
 	private String dBName;
 	public DescribeErrorLogRecordsRequest() {
@@ -94,6 +96,17 @@ public class DescribeErrorLogRecordsRequest extends RpcAcsRequest<DescribeErrorL
 		}
 	}
 
+	public String getQueryKeywords() {
+		return this.queryKeywords;
+	}
+
+	public void setQueryKeywords(String queryKeywords) {
+		this.queryKeywords = queryKeywords;
+		if(queryKeywords != null){
+			putQueryParameter("QueryKeywords", queryKeywords);
+		}
+	}
+
 	public String getResourceGroupId() {
 		return this.resourceGroupId;
 	}
@@ -102,17 +115,6 @@ public class DescribeErrorLogRecordsRequest extends RpcAcsRequest<DescribeErrorL
 		this.resourceGroupId = resourceGroupId;
 		if(resourceGroupId != null){
 			putQueryParameter("ResourceGroupId", resourceGroupId);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 
@@ -201,6 +203,17 @@ public class DescribeErrorLogRecordsRequest extends RpcAcsRequest<DescribeErrorL
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getLogicalOperator() {
+		return this.logicalOperator;
+	}
+
+	public void setLogicalOperator(String logicalOperator) {
+		this.logicalOperator = logicalOperator;
+		if(logicalOperator != null){
+			putQueryParameter("LogicalOperator", logicalOperator);
 		}
 	}
 

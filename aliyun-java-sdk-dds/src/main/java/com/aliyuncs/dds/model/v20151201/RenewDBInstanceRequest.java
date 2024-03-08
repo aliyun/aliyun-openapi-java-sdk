@@ -31,8 +31,6 @@ public class RenewDBInstanceRequest extends RpcAcsRequest<RenewDBInstanceRespons
 
 	private String couponNo;
 
-	private String securityToken;
-
 	private String dBInstanceId;
 
 	private String businessInfo;
@@ -46,6 +44,8 @@ public class RenewDBInstanceRequest extends RpcAcsRequest<RenewDBInstanceRespons
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private Boolean autoRenew;
 	public RenewDBInstanceRequest() {
 		super("Dds", "2015-12-01", "RenewDBInstance", "dds");
 		setMethod(MethodType.POST);
@@ -85,17 +85,6 @@ public class RenewDBInstanceRequest extends RpcAcsRequest<RenewDBInstanceRespons
 		this.couponNo = couponNo;
 		if(couponNo != null){
 			putQueryParameter("CouponNo", couponNo);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 
@@ -173,6 +162,17 @@ public class RenewDBInstanceRequest extends RpcAcsRequest<RenewDBInstanceRespons
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Boolean getAutoRenew() {
+		return this.autoRenew;
+	}
+
+	public void setAutoRenew(Boolean autoRenew) {
+		this.autoRenew = autoRenew;
+		if(autoRenew != null){
+			putQueryParameter("AutoRenew", autoRenew.toString());
 		}
 	}
 

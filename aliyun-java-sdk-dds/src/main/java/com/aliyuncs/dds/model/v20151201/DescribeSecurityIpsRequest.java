@@ -27,7 +27,7 @@ public class DescribeSecurityIpsRequest extends RpcAcsRequest<DescribeSecurityIp
 
 	private Long resourceOwnerId;
 
-	private String securityToken;
+	private Boolean showHDMIps;
 
 	private String dBInstanceId;
 
@@ -56,14 +56,14 @@ public class DescribeSecurityIpsRequest extends RpcAcsRequest<DescribeSecurityIp
 		}
 	}
 
-	public String getSecurityToken() {
-		return this.securityToken;
+	public Boolean getShowHDMIps() {
+		return this.showHDMIps;
 	}
 
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
+	public void setShowHDMIps(Boolean showHDMIps) {
+		this.showHDMIps = showHDMIps;
+		if(showHDMIps != null){
+			putQueryParameter("ShowHDMIps", showHDMIps.toString());
 		}
 	}
 

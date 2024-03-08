@@ -29,8 +29,6 @@ public class ModifyInstanceAutoRenewalAttributeRequest extends RpcAcsRequest<Mod
 
 	private String duration;
 
-	private String securityToken;
-
 	private String dBInstanceId;
 
 	private String resourceOwnerAccount;
@@ -68,17 +66,6 @@ public class ModifyInstanceAutoRenewalAttributeRequest extends RpcAcsRequest<Mod
 		this.duration = duration;
 		if(duration != null){
 			putQueryParameter("Duration", duration);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

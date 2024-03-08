@@ -29,8 +29,6 @@ public class DeleteNodeRequest extends RpcAcsRequest<DeleteNodeResponse> {
 
 	private String clientToken;
 
-	private String securityToken;
-
 	private String dBInstanceId;
 
 	private String nodeId;
@@ -68,17 +66,6 @@ public class DeleteNodeRequest extends RpcAcsRequest<DeleteNodeResponse> {
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

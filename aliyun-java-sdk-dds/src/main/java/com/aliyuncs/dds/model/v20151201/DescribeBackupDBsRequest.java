@@ -31,8 +31,6 @@ public class DescribeBackupDBsRequest extends RpcAcsRequest<DescribeBackupDBsRes
 
 	private String resourceGroupId;
 
-	private String securityToken;
-
 	private Integer pageSize;
 
 	private String restoreTime;
@@ -85,17 +83,6 @@ public class DescribeBackupDBsRequest extends RpcAcsRequest<DescribeBackupDBsRes
 		this.resourceGroupId = resourceGroupId;
 		if(resourceGroupId != null){
 			putQueryParameter("ResourceGroupId", resourceGroupId);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

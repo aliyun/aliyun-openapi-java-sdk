@@ -33,8 +33,6 @@ public class ModifyNodeSpecBatchRequest extends RpcAcsRequest<ModifyNodeSpecBatc
 
 	private String couponNo;
 
-	private String securityToken;
-
 	private String effectiveTime;
 
 	private String dBInstanceId;
@@ -100,17 +98,6 @@ public class ModifyNodeSpecBatchRequest extends RpcAcsRequest<ModifyNodeSpecBatc
 		this.couponNo = couponNo;
 		if(couponNo != null){
 			putQueryParameter("CouponNo", couponNo);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

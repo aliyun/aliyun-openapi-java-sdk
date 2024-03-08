@@ -29,8 +29,6 @@ public class DescribeGlobalSecurityIPGroupRequest extends RpcAcsRequest<Describe
 
 	private String globalSecurityGroupId;
 
-	private String securityToken;
-
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -64,17 +62,6 @@ public class DescribeGlobalSecurityIPGroupRequest extends RpcAcsRequest<Describe
 		this.globalSecurityGroupId = globalSecurityGroupId;
 		if(globalSecurityGroupId != null){
 			putQueryParameter("GlobalSecurityGroupId", globalSecurityGroupId);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

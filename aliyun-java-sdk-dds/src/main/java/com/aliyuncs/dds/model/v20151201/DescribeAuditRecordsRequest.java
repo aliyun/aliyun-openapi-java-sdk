@@ -35,8 +35,6 @@ public class DescribeAuditRecordsRequest extends RpcAcsRequest<DescribeAuditReco
 
 	private String database;
 
-	private String securityToken;
-
 	private Integer pageSize;
 
 	private String dBInstanceId;
@@ -50,6 +48,8 @@ public class DescribeAuditRecordsRequest extends RpcAcsRequest<DescribeAuditReco
 	private String endTime;
 
 	private Long ownerId;
+
+	private String logicalOperator;
 
 	private String form;
 
@@ -117,17 +117,6 @@ public class DescribeAuditRecordsRequest extends RpcAcsRequest<DescribeAuditReco
 		this.database = database;
 		if(database != null){
 			putQueryParameter("Database", database);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 
@@ -205,6 +194,17 @@ public class DescribeAuditRecordsRequest extends RpcAcsRequest<DescribeAuditReco
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getLogicalOperator() {
+		return this.logicalOperator;
+	}
+
+	public void setLogicalOperator(String logicalOperator) {
+		this.logicalOperator = logicalOperator;
+		if(logicalOperator != null){
+			putQueryParameter("LogicalOperator", logicalOperator);
 		}
 	}
 

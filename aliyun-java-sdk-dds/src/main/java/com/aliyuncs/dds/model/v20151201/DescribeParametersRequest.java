@@ -29,8 +29,6 @@ public class DescribeParametersRequest extends RpcAcsRequest<DescribeParametersR
 
 	private String extraParam;
 
-	private String securityToken;
-
 	private String dBInstanceId;
 
 	private String nodeId;
@@ -70,17 +68,6 @@ public class DescribeParametersRequest extends RpcAcsRequest<DescribeParametersR
 		this.extraParam = extraParam;
 		if(extraParam != null){
 			putQueryParameter("ExtraParam", extraParam);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

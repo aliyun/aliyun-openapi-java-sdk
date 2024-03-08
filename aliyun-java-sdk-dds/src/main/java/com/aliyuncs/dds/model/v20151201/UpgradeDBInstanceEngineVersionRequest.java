@@ -29,8 +29,6 @@ public class UpgradeDBInstanceEngineVersionRequest extends RpcAcsRequest<Upgrade
 
 	private String engineVersion;
 
-	private String securityToken;
-
 	private String dBInstanceId;
 
 	private String resourceOwnerAccount;
@@ -66,17 +64,6 @@ public class UpgradeDBInstanceEngineVersionRequest extends RpcAcsRequest<Upgrade
 		this.engineVersion = engineVersion;
 		if(engineVersion != null){
 			putQueryParameter("EngineVersion", engineVersion);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

@@ -42,6 +42,8 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 
 	private Integer backupInterval;
 
+	private String highFrequencyBackupRetention;
+
 	public String getPreferredBackupPeriod() {
 		return this.preferredBackupPeriod;
 	}
@@ -112,6 +114,14 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 
 	public void setBackupInterval(Integer backupInterval) {
 		this.backupInterval = backupInterval;
+	}
+
+	public String getHighFrequencyBackupRetention() {
+		return this.highFrequencyBackupRetention;
+	}
+
+	public void setHighFrequencyBackupRetention(String highFrequencyBackupRetention) {
+		this.highFrequencyBackupRetention = highFrequencyBackupRetention;
 	}
 
 	@Override

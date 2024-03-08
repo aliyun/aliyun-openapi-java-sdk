@@ -29,8 +29,6 @@ public class DescribeClusterBackupsRequest extends RpcAcsRequest<DescribeCluster
 
 	private String startTime;
 
-	private String securityToken;
-
 	private Integer pageSize;
 
 	private String dBInstanceId;
@@ -76,17 +74,6 @@ public class DescribeClusterBackupsRequest extends RpcAcsRequest<DescribeCluster
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

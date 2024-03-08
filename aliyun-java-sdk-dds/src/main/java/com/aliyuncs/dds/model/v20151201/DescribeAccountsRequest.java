@@ -29,8 +29,6 @@ public class DescribeAccountsRequest extends RpcAcsRequest<DescribeAccountsRespo
 
 	private String accountName;
 
-	private String securityToken;
-
 	private String dBInstanceId;
 
 	private String resourceOwnerAccount;
@@ -66,17 +64,6 @@ public class DescribeAccountsRequest extends RpcAcsRequest<DescribeAccountsRespo
 		this.accountName = accountName;
 		if(accountName != null){
 			putQueryParameter("AccountName", accountName);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

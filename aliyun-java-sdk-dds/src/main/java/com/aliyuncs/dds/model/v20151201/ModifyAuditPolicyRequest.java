@@ -29,8 +29,6 @@ public class ModifyAuditPolicyRequest extends RpcAcsRequest<ModifyAuditPolicyRes
 
 	private Integer storagePeriod;
 
-	private String securityToken;
-
 	private String auditLogSwitchSource;
 
 	private String dBInstanceId;
@@ -72,17 +70,6 @@ public class ModifyAuditPolicyRequest extends RpcAcsRequest<ModifyAuditPolicyRes
 		this.storagePeriod = storagePeriod;
 		if(storagePeriod != null){
 			putQueryParameter("StoragePeriod", storagePeriod.toString());
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

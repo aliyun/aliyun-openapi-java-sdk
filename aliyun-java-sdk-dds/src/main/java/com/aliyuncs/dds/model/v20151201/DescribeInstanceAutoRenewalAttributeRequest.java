@@ -29,8 +29,6 @@ public class DescribeInstanceAutoRenewalAttributeRequest extends RpcAcsRequest<D
 
 	private Long pageNumber;
 
-	private String securityToken;
-
 	private Long pageSize;
 
 	private String dBInstanceId;
@@ -70,17 +68,6 @@ public class DescribeInstanceAutoRenewalAttributeRequest extends RpcAcsRequest<D
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

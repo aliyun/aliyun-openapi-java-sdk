@@ -29,8 +29,6 @@ public class DeleteDBInstanceRequest extends RpcAcsRequest<DeleteDBInstanceRespo
 
 	private String clientToken;
 
-	private String securityToken;
-
 	private String dBInstanceId;
 
 	private String resourceOwnerAccount;
@@ -66,17 +64,6 @@ public class DeleteDBInstanceRequest extends RpcAcsRequest<DeleteDBInstanceRespo
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

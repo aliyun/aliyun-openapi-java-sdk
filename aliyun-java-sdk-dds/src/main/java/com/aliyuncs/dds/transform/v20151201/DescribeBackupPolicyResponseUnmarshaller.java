@@ -31,6 +31,7 @@ public class DescribeBackupPolicyResponseUnmarshaller {
 		describeBackupPolicyResponse.setLogBackupRetentionPeriod(_ctx.integerValue("DescribeBackupPolicyResponse.LogBackupRetentionPeriod"));
 		describeBackupPolicyResponse.setSnapshotBackupType(_ctx.stringValue("DescribeBackupPolicyResponse.SnapshotBackupType"));
 		describeBackupPolicyResponse.setBackupInterval(_ctx.integerValue("DescribeBackupPolicyResponse.BackupInterval"));
+		describeBackupPolicyResponse.setHighFrequencyBackupRetention(_ctx.stringValue("DescribeBackupPolicyResponse.HighFrequencyBackupRetention"));
 	 
 	 	return describeBackupPolicyResponse;
 	}

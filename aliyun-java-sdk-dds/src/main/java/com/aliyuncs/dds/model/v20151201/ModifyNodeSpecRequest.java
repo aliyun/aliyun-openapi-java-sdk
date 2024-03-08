@@ -35,8 +35,6 @@ public class ModifyNodeSpecRequest extends RpcAcsRequest<ModifyNodeSpecResponse>
 
 	private String nodeClass;
 
-	private String securityToken;
-
 	private String effectiveTime;
 
 	private String dBInstanceId;
@@ -121,17 +119,6 @@ public class ModifyNodeSpecRequest extends RpcAcsRequest<ModifyNodeSpecResponse>
 		this.nodeClass = nodeClass;
 		if(nodeClass != null){
 			putQueryParameter("NodeClass", nodeClass);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

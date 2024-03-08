@@ -29,8 +29,6 @@ public class AllocateNodePrivateNetworkAddressRequest extends RpcAcsRequest<Allo
 
 	private String accountName;
 
-	private String securityToken;
-
 	private String dBInstanceId;
 
 	private String nodeId;
@@ -72,17 +70,6 @@ public class AllocateNodePrivateNetworkAddressRequest extends RpcAcsRequest<Allo
 		this.accountName = accountName;
 		if(accountName != null){
 			putQueryParameter("AccountName", accountName);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

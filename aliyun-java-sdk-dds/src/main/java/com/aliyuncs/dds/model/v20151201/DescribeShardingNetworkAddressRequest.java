@@ -27,8 +27,6 @@ public class DescribeShardingNetworkAddressRequest extends RpcAcsRequest<Describ
 
 	private Long resourceOwnerId;
 
-	private String securityToken;
-
 	private String dBInstanceId;
 
 	private String nodeId;
@@ -55,17 +53,6 @@ public class DescribeShardingNetworkAddressRequest extends RpcAcsRequest<Describ
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

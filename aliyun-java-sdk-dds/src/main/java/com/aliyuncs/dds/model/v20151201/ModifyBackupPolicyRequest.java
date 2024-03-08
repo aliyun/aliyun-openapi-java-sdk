@@ -29,8 +29,6 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 
 	private String backupInterval;
 
-	private String securityToken;
-
 	private String dBInstanceId;
 
 	private Long enableBackupLog;
@@ -48,6 +46,8 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 	private String preferredBackupTime;
 
 	private Long backupRetentionPeriod;
+
+	private Long highFrequencyBackupRetention;
 
 	private Long logBackupRetentionPeriod;
 	public ModifyBackupPolicyRequest() {
@@ -78,17 +78,6 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 		this.backupInterval = backupInterval;
 		if(backupInterval != null){
 			putQueryParameter("BackupInterval", backupInterval);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 
@@ -188,6 +177,17 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 		this.backupRetentionPeriod = backupRetentionPeriod;
 		if(backupRetentionPeriod != null){
 			putQueryParameter("BackupRetentionPeriod", backupRetentionPeriod.toString());
+		}
+	}
+
+	public Long getHighFrequencyBackupRetention() {
+		return this.highFrequencyBackupRetention;
+	}
+
+	public void setHighFrequencyBackupRetention(Long highFrequencyBackupRetention) {
+		this.highFrequencyBackupRetention = highFrequencyBackupRetention;
+		if(highFrequencyBackupRetention != null){
+			putQueryParameter("HighFrequencyBackupRetention", highFrequencyBackupRetention.toString());
 		}
 	}
 

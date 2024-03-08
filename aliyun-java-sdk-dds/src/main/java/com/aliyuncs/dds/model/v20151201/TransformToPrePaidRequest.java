@@ -29,8 +29,6 @@ public class TransformToPrePaidRequest extends RpcAcsRequest<TransformToPrePaidR
 
 	private String couponNo;
 
-	private String securityToken;
-
 	private String businessInfo;
 
 	private Long period;
@@ -74,17 +72,6 @@ public class TransformToPrePaidRequest extends RpcAcsRequest<TransformToPrePaidR
 		this.couponNo = couponNo;
 		if(couponNo != null){
 			putQueryParameter("CouponNo", couponNo);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

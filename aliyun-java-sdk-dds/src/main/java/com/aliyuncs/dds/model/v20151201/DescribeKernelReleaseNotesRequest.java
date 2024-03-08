@@ -29,8 +29,6 @@ public class DescribeKernelReleaseNotesRequest extends RpcAcsRequest<DescribeKer
 
 	private String kernelVersion;
 
-	private String securityToken;
-
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -64,17 +62,6 @@ public class DescribeKernelReleaseNotesRequest extends RpcAcsRequest<DescribeKer
 		this.kernelVersion = kernelVersion;
 		if(kernelVersion != null){
 			putQueryParameter("KernelVersion", kernelVersion);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

@@ -29,8 +29,6 @@ public class ModifySecurityGroupConfigurationRequest extends RpcAcsRequest<Modif
 
 	private String securityGroupId;
 
-	private String securityToken;
-
 	private String dBInstanceId;
 
 	private String resourceOwnerAccount;
@@ -66,17 +64,6 @@ public class ModifySecurityGroupConfigurationRequest extends RpcAcsRequest<Modif
 		this.securityGroupId = securityGroupId;
 		if(securityGroupId != null){
 			putQueryParameter("SecurityGroupId", securityGroupId);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

@@ -31,8 +31,6 @@ public class SwitchDBInstanceHARequest extends RpcAcsRequest<SwitchDBInstanceHAR
 
 	private String roleIds;
 
-	private String securityToken;
-
 	private String dBInstanceId;
 
 	private String nodeId;
@@ -81,17 +79,6 @@ public class SwitchDBInstanceHARequest extends RpcAcsRequest<SwitchDBInstanceHAR
 		this.roleIds = roleIds;
 		if(roleIds != null){
 			putQueryParameter("RoleIds", roleIds);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

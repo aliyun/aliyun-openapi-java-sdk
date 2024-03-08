@@ -31,8 +31,6 @@ public class DescribeBackupsRequest extends RpcAcsRequest<DescribeBackupsRespons
 
 	private Integer pageNumber;
 
-	private String securityToken;
-
 	private Integer pageSize;
 
 	private String dBInstanceId;
@@ -87,17 +85,6 @@ public class DescribeBackupsRequest extends RpcAcsRequest<DescribeBackupsRespons
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

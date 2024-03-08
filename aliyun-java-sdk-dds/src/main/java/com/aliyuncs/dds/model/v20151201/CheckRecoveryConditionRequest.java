@@ -31,8 +31,6 @@ public class CheckRecoveryConditionRequest extends RpcAcsRequest<CheckRecoveryCo
 
 	private String databaseNames;
 
-	private String securityToken;
-
 	private String restoreTime;
 
 	private String resourceOwnerAccount;
@@ -83,17 +81,6 @@ public class CheckRecoveryConditionRequest extends RpcAcsRequest<CheckRecoveryCo
 		this.databaseNames = databaseNames;
 		if(databaseNames != null){
 			putQueryParameter("DatabaseNames", databaseNames);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

@@ -40,8 +40,6 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 
 	private String expired;
 
-	private String securityToken;
-
 	private String engine;
 
 	private Integer pageSize;
@@ -160,17 +158,6 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		this.expired = expired;
 		if(expired != null){
 			putQueryParameter("Expired", expired);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

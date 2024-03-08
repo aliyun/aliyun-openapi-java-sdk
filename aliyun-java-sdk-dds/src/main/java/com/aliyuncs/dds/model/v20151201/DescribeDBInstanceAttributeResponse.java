@@ -61,6 +61,8 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		private Integer maxIOPS;
 
+		private Integer maxMBPS;
+
 		private String vPCCloudInstanceIds;
 
 		private String protocolType;
@@ -209,6 +211,14 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		public void setMaxIOPS(Integer maxIOPS) {
 			this.maxIOPS = maxIOPS;
+		}
+
+		public Integer getMaxMBPS() {
+			return this.maxMBPS;
+		}
+
+		public void setMaxMBPS(Integer maxMBPS) {
+			this.maxMBPS = maxMBPS;
 		}
 
 		public String getVPCCloudInstanceIds() {
@@ -818,6 +828,8 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 			private String status;
 
+			private String maxDiskMbps;
+
 			public Integer getMaxIOPS() {
 				return this.maxIOPS;
 			}
@@ -896,6 +908,14 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 			public void setStatus(String status) {
 				this.status = status;
+			}
+
+			public String getMaxDiskMbps() {
+				return this.maxDiskMbps;
+			}
+
+			public void setMaxDiskMbps(String maxDiskMbps) {
+				this.maxDiskMbps = maxDiskMbps;
 			}
 		}
 

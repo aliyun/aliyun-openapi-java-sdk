@@ -27,9 +27,9 @@ public class DescribeParameterTemplatesRequest extends RpcAcsRequest<DescribePar
 
 	private Long resourceOwnerId;
 
-	private String engineVersion;
+	private String role;
 
-	private String securityToken;
+	private String engineVersion;
 
 	private String engine;
 
@@ -58,6 +58,17 @@ public class DescribeParameterTemplatesRequest extends RpcAcsRequest<DescribePar
 		}
 	}
 
+	public String getRole() {
+		return this.role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+		if(role != null){
+			putQueryParameter("Role", role);
+		}
+	}
+
 	public String getEngineVersion() {
 		return this.engineVersion;
 	}
@@ -66,17 +77,6 @@ public class DescribeParameterTemplatesRequest extends RpcAcsRequest<DescribePar
 		this.engineVersion = engineVersion;
 		if(engineVersion != null){
 			putQueryParameter("EngineVersion", engineVersion);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

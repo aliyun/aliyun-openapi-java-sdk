@@ -29,8 +29,6 @@ public class DescribeActiveOperationTaskCountRequest extends RpcAcsRequest<Descr
 
 	private String resourceGroupId;
 
-	private String securityToken;
-
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -64,17 +62,6 @@ public class DescribeActiveOperationTaskCountRequest extends RpcAcsRequest<Descr
 		this.resourceGroupId = resourceGroupId;
 		if(resourceGroupId != null){
 			putQueryParameter("ResourceGroupId", resourceGroupId);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

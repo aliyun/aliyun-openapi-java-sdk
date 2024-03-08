@@ -31,8 +31,6 @@ public class ModifyDBInstanceNetExpireTimeRequest extends RpcAcsRequest<ModifyDB
 
 	private Integer classicExpendExpiredDays;
 
-	private String securityToken;
-
 	private String dBInstanceId;
 
 	private String resourceOwnerAccount;
@@ -40,8 +38,6 @@ public class ModifyDBInstanceNetExpireTimeRequest extends RpcAcsRequest<ModifyDB
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	private String category;
 	public ModifyDBInstanceNetExpireTimeRequest() {
 		super("Dds", "2015-12-01", "ModifyDBInstanceNetExpireTime", "dds");
 		setMethod(MethodType.POST);
@@ -81,17 +77,6 @@ public class ModifyDBInstanceNetExpireTimeRequest extends RpcAcsRequest<ModifyDB
 		this.classicExpendExpiredDays = classicExpendExpiredDays;
 		if(classicExpendExpiredDays != null){
 			putQueryParameter("ClassicExpendExpiredDays", classicExpendExpiredDays.toString());
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 
@@ -136,17 +121,6 @@ public class ModifyDBInstanceNetExpireTimeRequest extends RpcAcsRequest<ModifyDB
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getCategory() {
-		return this.category;
-	}
-
-	public void setCategory(String category) {
-		this.category = category;
-		if(category != null){
-			putQueryParameter("Category", category);
 		}
 	}
 

@@ -27,8 +27,6 @@ public class DescribeDBInstanceSSLRequest extends RpcAcsRequest<DescribeDBInstan
 
 	private Long resourceOwnerId;
 
-	private String securityToken;
-
 	private String dBInstanceId;
 
 	private String resourceOwnerAccount;
@@ -53,17 +51,6 @@ public class DescribeDBInstanceSSLRequest extends RpcAcsRequest<DescribeDBInstan
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

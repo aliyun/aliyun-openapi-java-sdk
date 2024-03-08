@@ -29,8 +29,6 @@ public class DescribeRenewalPriceRequest extends RpcAcsRequest<DescribeRenewalPr
 
 	private String couponNo;
 
-	private String securityToken;
-
 	private String dBInstanceId;
 
 	private String businessInfo;
@@ -68,17 +66,6 @@ public class DescribeRenewalPriceRequest extends RpcAcsRequest<DescribeRenewalPr
 		this.couponNo = couponNo;
 		if(couponNo != null){
 			putQueryParameter("CouponNo", couponNo);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

@@ -31,8 +31,6 @@ public class ModifySecurityIpsRequest extends RpcAcsRequest<ModifySecurityIpsRes
 
 	private String securityIpGroupName;
 
-	private String securityToken;
-
 	private String dBInstanceId;
 
 	private String modifyMode;
@@ -83,17 +81,6 @@ public class ModifySecurityIpsRequest extends RpcAcsRequest<ModifySecurityIpsRes
 		this.securityIpGroupName = securityIpGroupName;
 		if(securityIpGroupName != null){
 			putQueryParameter("SecurityIpGroupName", securityIpGroupName);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

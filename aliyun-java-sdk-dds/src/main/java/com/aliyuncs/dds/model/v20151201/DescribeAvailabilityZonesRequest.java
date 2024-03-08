@@ -27,11 +27,13 @@ public class DescribeAvailabilityZonesRequest extends RpcAcsRequest<DescribeAvai
 
 	private Long resourceOwnerId;
 
+	private String engineVersion;
+
 	private String storageType;
 
-	private String resourceGroupId;
+	private String replicationFactor;
 
-	private String securityToken;
+	private String resourceGroupId;
 
 	private String excludeZoneId;
 
@@ -46,6 +48,8 @@ public class DescribeAvailabilityZonesRequest extends RpcAcsRequest<DescribeAvai
 	private String mongoType;
 
 	private Long ownerId;
+
+	private String dBInstanceClass;
 
 	private String storageSupport;
 
@@ -74,6 +78,17 @@ public class DescribeAvailabilityZonesRequest extends RpcAcsRequest<DescribeAvai
 		}
 	}
 
+	public String getEngineVersion() {
+		return this.engineVersion;
+	}
+
+	public void setEngineVersion(String engineVersion) {
+		this.engineVersion = engineVersion;
+		if(engineVersion != null){
+			putQueryParameter("EngineVersion", engineVersion);
+		}
+	}
+
 	public String getStorageType() {
 		return this.storageType;
 	}
@@ -85,6 +100,17 @@ public class DescribeAvailabilityZonesRequest extends RpcAcsRequest<DescribeAvai
 		}
 	}
 
+	public String getReplicationFactor() {
+		return this.replicationFactor;
+	}
+
+	public void setReplicationFactor(String replicationFactor) {
+		this.replicationFactor = replicationFactor;
+		if(replicationFactor != null){
+			putQueryParameter("ReplicationFactor", replicationFactor);
+		}
+	}
+
 	public String getResourceGroupId() {
 		return this.resourceGroupId;
 	}
@@ -93,17 +119,6 @@ public class DescribeAvailabilityZonesRequest extends RpcAcsRequest<DescribeAvai
 		this.resourceGroupId = resourceGroupId;
 		if(resourceGroupId != null){
 			putQueryParameter("ResourceGroupId", resourceGroupId);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 
@@ -181,6 +196,17 @@ public class DescribeAvailabilityZonesRequest extends RpcAcsRequest<DescribeAvai
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getDBInstanceClass() {
+		return this.dBInstanceClass;
+	}
+
+	public void setDBInstanceClass(String dBInstanceClass) {
+		this.dBInstanceClass = dBInstanceClass;
+		if(dBInstanceClass != null){
+			putQueryParameter("DBInstanceClass", dBInstanceClass);
 		}
 	}
 

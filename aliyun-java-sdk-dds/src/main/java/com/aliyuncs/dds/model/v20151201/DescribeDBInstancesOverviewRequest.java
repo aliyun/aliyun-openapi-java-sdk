@@ -35,8 +35,6 @@ public class DescribeDBInstancesOverviewRequest extends RpcAcsRequest<DescribeDB
 
 	private String resourceGroupId;
 
-	private String securityToken;
-
 	private String instanceType;
 
 	private String instanceStatus;
@@ -117,17 +115,6 @@ public class DescribeDBInstancesOverviewRequest extends RpcAcsRequest<DescribeDB
 		this.resourceGroupId = resourceGroupId;
 		if(resourceGroupId != null){
 			putQueryParameter("ResourceGroupId", resourceGroupId);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

@@ -45,6 +45,7 @@ public class DescribeBackupsResponseUnmarshaller {
 			backup.setBackupId(_ctx.integerValue("DescribeBackupsResponse.Backups["+ i +"].BackupId"));
 			backup.setBackupDBNames(_ctx.stringValue("DescribeBackupsResponse.Backups["+ i +"].BackupDBNames"));
 			backup.setBackupMethod(_ctx.stringValue("DescribeBackupsResponse.Backups["+ i +"].BackupMethod"));
+			backup.setBackupJobId(_ctx.longValue("DescribeBackupsResponse.Backups["+ i +"].BackupJobId"));
 
 			backups.add(backup);
 		}

@@ -29,8 +29,6 @@ public class ResetAccountPasswordRequest extends RpcAcsRequest<ResetAccountPassw
 
 	private String accountName;
 
-	private String securityToken;
-
 	private String dBInstanceId;
 
 	private String resourceOwnerAccount;
@@ -70,17 +68,6 @@ public class ResetAccountPasswordRequest extends RpcAcsRequest<ResetAccountPassw
 		this.accountName = accountName;
 		if(accountName != null){
 			putQueryParameter("AccountName", accountName);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 
