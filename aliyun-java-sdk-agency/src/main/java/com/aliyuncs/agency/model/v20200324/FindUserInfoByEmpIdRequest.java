@@ -12,9 +12,10 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.agency.model.v20180701;
+package com.aliyuncs.agency.model.v20200324;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.agency.Endpoint;
 
@@ -22,33 +23,34 @@ import com.aliyuncs.agency.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetCreditInfoRequest extends RpcAcsRequest<GetCreditInfoResponse> {
+public class FindUserInfoByEmpIdRequest extends RpcAcsRequest<FindUserInfoByEmpIdResponse> {
 	   
 
-	private Long uid;
-	public GetCreditInfoRequest() {
-		super("Agency", "2018-07-01", "GetCreditInfo", "openApi");
-		setMethod(MethodType.POST);
+	private String empId;
+	public FindUserInfoByEmpIdRequest() {
+		super("Agency", "2020-03-24", "FindUserInfoByEmpId");
+		setProtocol(ProtocolType.HTTPS);
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public Long getUid() {
-		return this.uid;
+	public String getEmpId() {
+		return this.empId;
 	}
 
-	public void setUid(Long uid) {
-		this.uid = uid;
-		if(uid != null){
-			putQueryParameter("Uid", uid.toString());
+	public void setEmpId(String empId) {
+		this.empId = empId;
+		if(empId != null){
+			putQueryParameter("EmpId", empId);
 		}
 	}
 
 	@Override
-	public Class<GetCreditInfoResponse> getResponseClass() {
-		return GetCreditInfoResponse.class;
+	public Class<FindUserInfoByEmpIdResponse> getResponseClass() {
+		return FindUserInfoByEmpIdResponse.class;
 	}
 
 }

@@ -33,7 +33,7 @@ public class TransferResellerToUserRequest extends RpcAcsRequest<TransferReselle
 
 	private String realName;
 	public TransferResellerToUserRequest() {
-		super("Agency", "2020-03-24", "TransferResellerToUser", "openApi");
+		super("Agency", "2020-03-24", "TransferResellerToUser");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

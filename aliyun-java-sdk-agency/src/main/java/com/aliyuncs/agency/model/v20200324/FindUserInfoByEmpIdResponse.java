@@ -12,43 +12,25 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.agency.model.v20170718;
+package com.aliyuncs.agency.model.v20200324;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.agency.transform.v20170718.GetFxCustomerTypeResponseUnmarshaller;
+import com.aliyuncs.agency.transform.v20200324.FindUserInfoByEmpIdResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetFxCustomerTypeResponse extends AcsResponse {
-
-	private String code;
-
-	private String message;
+public class FindUserInfoByEmpIdResponse extends AcsResponse {
 
 	private String requestId;
+
+	private String code;
 
 	private Boolean success;
 
 	private Data data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -56,6 +38,14 @@ public class GetFxCustomerTypeResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Boolean getSuccess() {
@@ -76,39 +66,54 @@ public class GetFxCustomerTypeResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Long parentId;
+		private String empId;
 
-		private Integer isSub;
+		private String name;
 
-		private Integer customerType;
+		private String email;
 
-		public Long getParentId() {
-			return this.parentId;
+		private String bucId;
+
+		public String getEmpId() {
+			return this.empId;
 		}
 
-		public void setParentId(Long parentId) {
-			this.parentId = parentId;
+		public void setEmpId(String empId) {
+			this.empId = empId;
 		}
 
-		public Integer getIsSub() {
-			return this.isSub;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setIsSub(Integer isSub) {
-			this.isSub = isSub;
+		public void setName(String name) {
+			this.name = name;
 		}
 
-		public Integer getCustomerType() {
-			return this.customerType;
+		public String getEmail() {
+			return this.email;
 		}
 
-		public void setCustomerType(Integer customerType) {
-			this.customerType = customerType;
+		public void setEmail(String email) {
+			this.email = email;
+		}
+
+		public String getBucId() {
+			return this.bucId;
+		}
+
+		public void setBucId(String bucId) {
+			this.bucId = bucId;
 		}
 	}
 
 	@Override
-	public GetFxCustomerTypeResponse getInstance(UnmarshallerContext context) {
-		return	GetFxCustomerTypeResponseUnmarshaller.unmarshall(this, context);
+	public FindUserInfoByEmpIdResponse getInstance(UnmarshallerContext context) {
+		return	FindUserInfoByEmpIdResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

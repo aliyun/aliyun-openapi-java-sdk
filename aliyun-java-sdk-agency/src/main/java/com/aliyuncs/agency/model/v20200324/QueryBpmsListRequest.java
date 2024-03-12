@@ -41,7 +41,7 @@ public class QueryBpmsListRequest extends RpcAcsRequest<QueryBpmsListResponse> {
 
 	private Integer pageSize;
 	public QueryBpmsListRequest() {
-		super("Agency", "2020-03-24", "QueryBpmsList", "openApi");
+		super("Agency", "2020-03-24", "QueryBpmsList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
