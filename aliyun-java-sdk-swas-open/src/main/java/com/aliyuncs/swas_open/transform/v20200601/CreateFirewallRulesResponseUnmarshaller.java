@@ -14,6 +14,9 @@
 
 package com.aliyuncs.swas_open.transform.v20200601;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.swas_open.model.v20200601.CreateFirewallRulesResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -23,6 +26,12 @@ public class CreateFirewallRulesResponseUnmarshaller {
 	public static CreateFirewallRulesResponse unmarshall(CreateFirewallRulesResponse createFirewallRulesResponse, UnmarshallerContext _ctx) {
 		
 		createFirewallRulesResponse.setRequestId(_ctx.stringValue("CreateFirewallRulesResponse.RequestId"));
+
+		List<String> firewallRuleIds = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("CreateFirewallRulesResponse.FirewallRuleIds.Length"); i++) {
+			firewallRuleIds.add(_ctx.stringValue("CreateFirewallRulesResponse.FirewallRuleIds["+ i +"]"));
+		}
+		createFirewallRulesResponse.setFirewallRuleIds(firewallRuleIds);
 	 
 	 	return createFirewallRulesResponse;
 	}

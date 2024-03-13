@@ -99,6 +99,8 @@ public class ListSnapshotsResponse extends AcsResponse {
 
 		private String rollbackTime;
 
+		private List<Tag> tags;
+
 		public String getStatus() {
 			return this.status;
 		}
@@ -185,6 +187,37 @@ public class ListSnapshotsResponse extends AcsResponse {
 
 		public void setRollbackTime(String rollbackTime) {
 			this.rollbackTime = rollbackTime;
+		}
+
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
+		public static class Tag {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
 		}
 	}
 

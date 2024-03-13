@@ -23,9 +23,22 @@ import com.aliyuncs.http.MethodType;
  */
 public class ListRegionsRequest extends RpcAcsRequest<ListRegionsResponse> {
 	   
+
+	private String acceptLanguage;
 	public ListRegionsRequest() {
 		super("SWAS-OPEN", "2020-06-01", "ListRegions", "SWAS-OPEN");
 		setMethod(MethodType.POST);
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
+		}
 	}
 
 	@Override

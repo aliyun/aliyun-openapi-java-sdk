@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.swas_open.model.v20200601.ListFirewallRulesResponse;
 import com.aliyuncs.swas_open.model.v20200601.ListFirewallRulesResponse.FirewallRule;
+import com.aliyuncs.swas_open.model.v20200601.ListFirewallRulesResponse.FirewallRule.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -40,6 +41,16 @@ public class ListFirewallRulesResponseUnmarshaller {
 			firewallRule.setRuleProtocol(_ctx.stringValue("ListFirewallRulesResponse.FirewallRules["+ i +"].RuleProtocol"));
 			firewallRule.setPolicy(_ctx.stringValue("ListFirewallRulesResponse.FirewallRules["+ i +"].Policy"));
 			firewallRule.setSourceCidrIp(_ctx.stringValue("ListFirewallRulesResponse.FirewallRules["+ i +"].SourceCidrIp"));
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("ListFirewallRulesResponse.FirewallRules["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(_ctx.stringValue("ListFirewallRulesResponse.FirewallRules["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("ListFirewallRulesResponse.FirewallRules["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			firewallRule.setTags(tags);
 
 			firewallRules.add(firewallRule);
 		}

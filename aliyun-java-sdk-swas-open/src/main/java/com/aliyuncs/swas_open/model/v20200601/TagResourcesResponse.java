@@ -14,20 +14,17 @@
 
 package com.aliyuncs.swas_open.model.v20200601;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.swas_open.transform.v20200601.CreateFirewallRulesResponseUnmarshaller;
+import com.aliyuncs.swas_open.transform.v20200601.TagResourcesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateFirewallRulesResponse extends AcsResponse {
+public class TagResourcesResponse extends AcsResponse {
 
 	private String requestId;
-
-	private List<String> firewallRuleIds;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -37,21 +34,8 @@ public class CreateFirewallRulesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<String> getFirewallRuleIds() {
-		return this.firewallRuleIds;
-	}
-
-	public void setFirewallRuleIds(List<String> firewallRuleIds) {
-		this.firewallRuleIds = firewallRuleIds;
-	}
-
 	@Override
-	public CreateFirewallRulesResponse getInstance(UnmarshallerContext context) {
-		return	CreateFirewallRulesResponseUnmarshaller.unmarshall(this, context);
-	}
-
-	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
+	public TagResourcesResponse getInstance(UnmarshallerContext context) {
+		return	TagResourcesResponseUnmarshaller.unmarshall(this, context);
 	}
 }

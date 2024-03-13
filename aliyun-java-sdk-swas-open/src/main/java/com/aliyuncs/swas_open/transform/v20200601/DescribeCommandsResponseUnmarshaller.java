@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.swas_open.model.v20200601.DescribeCommandsResponse;
 import com.aliyuncs.swas_open.model.v20200601.DescribeCommandsResponse.Command;
 import com.aliyuncs.swas_open.model.v20200601.DescribeCommandsResponse.Command.ParameterDefinition;
+import com.aliyuncs.swas_open.model.v20200601.DescribeCommandsResponse.Command.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -51,6 +52,16 @@ public class DescribeCommandsResponseUnmarshaller {
 				parameterNames.add(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].ParameterNames["+ j +"]"));
 			}
 			command.setParameterNames(parameterNames);
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeCommandsResponse.Commands["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			command.setTags(tags);
 
 			List<ParameterDefinition> parameterDefinitions = new ArrayList<ParameterDefinition>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeCommandsResponse.Commands["+ i +"].ParameterDefinitions.Length"); j++) {

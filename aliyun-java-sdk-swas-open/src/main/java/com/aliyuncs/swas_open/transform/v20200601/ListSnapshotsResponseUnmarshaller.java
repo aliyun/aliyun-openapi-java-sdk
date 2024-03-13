@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.swas_open.model.v20200601.ListSnapshotsResponse;
 import com.aliyuncs.swas_open.model.v20200601.ListSnapshotsResponse.Snapshot;
+import com.aliyuncs.swas_open.model.v20200601.ListSnapshotsResponse.Snapshot.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -45,6 +46,16 @@ public class ListSnapshotsResponseUnmarshaller {
 			snapshot.setRegionId(_ctx.stringValue("ListSnapshotsResponse.Snapshots["+ i +"].RegionId"));
 			snapshot.setInstanceId(_ctx.stringValue("ListSnapshotsResponse.Snapshots["+ i +"].InstanceId"));
 			snapshot.setRollbackTime(_ctx.stringValue("ListSnapshotsResponse.Snapshots["+ i +"].RollbackTime"));
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("ListSnapshotsResponse.Snapshots["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(_ctx.stringValue("ListSnapshotsResponse.Snapshots["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("ListSnapshotsResponse.Snapshots["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			snapshot.setTags(tags);
 
 			snapshots.add(snapshot);
 		}

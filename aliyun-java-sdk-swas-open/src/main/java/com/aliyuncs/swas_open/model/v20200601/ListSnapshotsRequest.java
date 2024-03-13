@@ -15,6 +15,7 @@
 package com.aliyuncs.swas_open.model.v20200601;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 
 /**
@@ -26,15 +27,17 @@ public class ListSnapshotsRequest extends RpcAcsRequest<ListSnapshotsResponse> {
 
 	private String snapshotIds;
 
-	private String sourceDiskType;
-
 	private Integer pageNumber;
-
-	private String instanceId;
 
 	private Integer pageSize;
 
 	private String diskId;
+
+	private List<Tag> tags;
+
+	private String sourceDiskType;
+
+	private String instanceId;
 	public ListSnapshotsRequest() {
 		super("SWAS-OPEN", "2020-06-01", "ListSnapshots", "SWAS-OPEN");
 		setMethod(MethodType.POST);
@@ -51,17 +54,6 @@ public class ListSnapshotsRequest extends RpcAcsRequest<ListSnapshotsResponse> {
 		}
 	}
 
-	public String getSourceDiskType() {
-		return this.sourceDiskType;
-	}
-
-	public void setSourceDiskType(String sourceDiskType) {
-		this.sourceDiskType = sourceDiskType;
-		if(sourceDiskType != null){
-			putQueryParameter("SourceDiskType", sourceDiskType);
-		}
-	}
-
 	public Integer getPageNumber() {
 		return this.pageNumber;
 	}
@@ -70,17 +62,6 @@ public class ListSnapshotsRequest extends RpcAcsRequest<ListSnapshotsResponse> {
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
@@ -103,6 +84,65 @@ public class ListSnapshotsRequest extends RpcAcsRequest<ListSnapshotsResponse> {
 		this.diskId = diskId;
 		if(diskId != null){
 			putQueryParameter("DiskId", diskId);
+		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+			}
+		}	
+	}
+
+	public String getSourceDiskType() {
+		return this.sourceDiskType;
+	}
+
+	public void setSourceDiskType(String sourceDiskType) {
+		this.sourceDiskType = sourceDiskType;
+		if(sourceDiskType != null){
+			putQueryParameter("SourceDiskType", sourceDiskType);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public static class Tag {
+
+		private String key;
+
+		private String value;
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
 		}
 	}
 

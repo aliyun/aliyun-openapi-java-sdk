@@ -97,6 +97,8 @@ public class DescribeCommandsResponse extends AcsResponse {
 
 		private Boolean enableParameter;
 
+		private List<Tag> tags;
+
 		private List<ParameterDefinition> parameterDefinitions;
 
 		private List<String> parameterNames;
@@ -181,6 +183,14 @@ public class DescribeCommandsResponse extends AcsResponse {
 			this.enableParameter = enableParameter;
 		}
 
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
 		public List<ParameterDefinition> getParameterDefinitions() {
 			return this.parameterDefinitions;
 		}
@@ -195,6 +205,29 @@ public class DescribeCommandsResponse extends AcsResponse {
 
 		public void setParameterNames(List<String> parameterNames) {
 			this.parameterNames = parameterNames;
+		}
+
+		public static class Tag {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
 		}
 
 		public static class ParameterDefinition {

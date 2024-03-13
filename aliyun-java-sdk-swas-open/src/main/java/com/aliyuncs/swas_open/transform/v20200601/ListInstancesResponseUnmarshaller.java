@@ -19,8 +19,11 @@ import java.util.List;
 
 import com.aliyuncs.swas_open.model.v20200601.ListInstancesResponse;
 import com.aliyuncs.swas_open.model.v20200601.ListInstancesResponse.Instance;
+import com.aliyuncs.swas_open.model.v20200601.ListInstancesResponse.Instance.Disk;
+import com.aliyuncs.swas_open.model.v20200601.ListInstancesResponse.Instance.Disk.Tag1;
 import com.aliyuncs.swas_open.model.v20200601.ListInstancesResponse.Instance.Image;
 import com.aliyuncs.swas_open.model.v20200601.ListInstancesResponse.Instance.ResourceSpec;
+import com.aliyuncs.swas_open.model.v20200601.ListInstancesResponse.Instance.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -71,6 +74,45 @@ public class ListInstancesResponseUnmarshaller {
 			image.setImageIconUrl(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].Image.ImageIconUrl"));
 			image.setImageContact(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].Image.ImageContact"));
 			instance.setImage(image);
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("ListInstancesResponse.Instances["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			instance.setTags(tags);
+
+			List<Disk> disks = new ArrayList<Disk>();
+			for (int j = 0; j < _ctx.lengthValue("ListInstancesResponse.Instances["+ i +"].Disks.Length"); j++) {
+				Disk disk = new Disk();
+				disk.setCreationTime(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].Disks["+ j +"].CreationTime"));
+				disk.setStatus(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].Disks["+ j +"].Status"));
+				disk.setDevice(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].Disks["+ j +"].Device"));
+				disk.setSize(_ctx.integerValue("ListInstancesResponse.Instances["+ i +"].Disks["+ j +"].Size"));
+				disk.setDiskName(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].Disks["+ j +"].DiskName"));
+				disk.setDiskChargeType(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].Disks["+ j +"].DiskChargeType"));
+				disk.setDiskType(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].Disks["+ j +"].DiskType"));
+				disk.setCategory(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].Disks["+ j +"].Category"));
+				disk.setDiskId(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].Disks["+ j +"].DiskId"));
+				disk.setRegionId(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].Disks["+ j +"].RegionId"));
+				disk.setRemark(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].Disks["+ j +"].Remark"));
+
+				List<Tag1> diskTags = new ArrayList<Tag1>();
+				for (int k = 0; k < _ctx.lengthValue("ListInstancesResponse.Instances["+ i +"].Disks["+ j +"].DiskTags.Length"); k++) {
+					Tag1 tag1 = new Tag1();
+					tag1.setKey(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].Disks["+ j +"].DiskTags["+ k +"].Key"));
+					tag1.setValue(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].Disks["+ j +"].DiskTags["+ k +"].Value"));
+
+					diskTags.add(tag1);
+				}
+				disk.setDiskTags(diskTags);
+
+				disks.add(disk);
+			}
+			instance.setDisks(disks);
 
 			instances.add(instance);
 		}

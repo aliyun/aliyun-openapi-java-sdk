@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.swas_open.model.v20200601.ListCustomImagesResponse;
 import com.aliyuncs.swas_open.model.v20200601.ListCustomImagesResponse.CustomImage;
+import com.aliyuncs.swas_open.model.v20200601.ListCustomImagesResponse.CustomImage.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -47,6 +48,17 @@ public class ListCustomImagesResponseUnmarshaller {
 			customImage.setImageId(_ctx.stringValue("ListCustomImagesResponse.CustomImages["+ i +"].ImageId"));
 			customImage.setStatus(_ctx.stringValue("ListCustomImagesResponse.CustomImages["+ i +"].Status"));
 			customImage.setInstanceName(_ctx.stringValue("ListCustomImagesResponse.CustomImages["+ i +"].InstanceName"));
+			customImage.setResourceGroupId(_ctx.stringValue("ListCustomImagesResponse.CustomImages["+ i +"].ResourceGroupId"));
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("ListCustomImagesResponse.CustomImages["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(_ctx.stringValue("ListCustomImagesResponse.CustomImages["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("ListCustomImagesResponse.CustomImages["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			customImage.setTags(tags);
 
 			customImages.add(customImage);
 		}

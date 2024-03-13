@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.swas_open.model.v20200601.ListDisksResponse;
 import com.aliyuncs.swas_open.model.v20200601.ListDisksResponse.Disk;
+import com.aliyuncs.swas_open.model.v20200601.ListDisksResponse.Disk.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -47,6 +48,16 @@ public class ListDisksResponseUnmarshaller {
 			disk.setRegionId(_ctx.stringValue("ListDisksResponse.Disks["+ i +"].RegionId"));
 			disk.setRemark(_ctx.stringValue("ListDisksResponse.Disks["+ i +"].Remark"));
 			disk.setInstanceName(_ctx.stringValue("ListDisksResponse.Disks["+ i +"].InstanceName"));
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("ListDisksResponse.Disks["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(_ctx.stringValue("ListDisksResponse.Disks["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("ListDisksResponse.Disks["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			disk.setTags(tags);
 
 			disks.add(disk);
 		}

@@ -111,6 +111,10 @@ public class ListInstancesResponse extends AcsResponse {
 
 		private String uuid;
 
+		private List<Tag> tags;
+
+		private List<Disk> disks;
+
 		private ResourceSpec resourceSpec;
 
 		private Image image;
@@ -251,6 +255,22 @@ public class ListInstancesResponse extends AcsResponse {
 			this.uuid = uuid;
 		}
 
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
+		public List<Disk> getDisks() {
+			return this.disks;
+		}
+
+		public void setDisks(List<Disk> disks) {
+			this.disks = disks;
+		}
+
 		public ResourceSpec getResourceSpec() {
 			return this.resourceSpec;
 		}
@@ -265,6 +285,175 @@ public class ListInstancesResponse extends AcsResponse {
 
 		public void setImage(Image image) {
 			this.image = image;
+		}
+
+		public static class Tag {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
+		}
+
+		public static class Disk {
+
+			private String creationTime;
+
+			private String status;
+
+			private String device;
+
+			private Integer size;
+
+			private String diskName;
+
+			private String diskChargeType;
+
+			private String diskType;
+
+			private String category;
+
+			private String diskId;
+
+			private String regionId;
+
+			private String remark;
+
+			private List<Tag1> diskTags;
+
+			public String getCreationTime() {
+				return this.creationTime;
+			}
+
+			public void setCreationTime(String creationTime) {
+				this.creationTime = creationTime;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
+			public String getDevice() {
+				return this.device;
+			}
+
+			public void setDevice(String device) {
+				this.device = device;
+			}
+
+			public Integer getSize() {
+				return this.size;
+			}
+
+			public void setSize(Integer size) {
+				this.size = size;
+			}
+
+			public String getDiskName() {
+				return this.diskName;
+			}
+
+			public void setDiskName(String diskName) {
+				this.diskName = diskName;
+			}
+
+			public String getDiskChargeType() {
+				return this.diskChargeType;
+			}
+
+			public void setDiskChargeType(String diskChargeType) {
+				this.diskChargeType = diskChargeType;
+			}
+
+			public String getDiskType() {
+				return this.diskType;
+			}
+
+			public void setDiskType(String diskType) {
+				this.diskType = diskType;
+			}
+
+			public String getCategory() {
+				return this.category;
+			}
+
+			public void setCategory(String category) {
+				this.category = category;
+			}
+
+			public String getDiskId() {
+				return this.diskId;
+			}
+
+			public void setDiskId(String diskId) {
+				this.diskId = diskId;
+			}
+
+			public String getRegionId() {
+				return this.regionId;
+			}
+
+			public void setRegionId(String regionId) {
+				this.regionId = regionId;
+			}
+
+			public String getRemark() {
+				return this.remark;
+			}
+
+			public void setRemark(String remark) {
+				this.remark = remark;
+			}
+
+			public List<Tag1> getDiskTags() {
+				return this.diskTags;
+			}
+
+			public void setDiskTags(List<Tag1> diskTags) {
+				this.diskTags = diskTags;
+			}
+
+			public static class Tag1 {
+
+				private String key;
+
+				private String value;
+
+				public String getKey() {
+					return this.key;
+				}
+
+				public void setKey(String key) {
+					this.key = key;
+				}
+
+				public String getValue() {
+					return this.value;
+				}
+
+				public void setValue(String value) {
+					this.value = value;
+				}
+			}
 		}
 
 		public static class ResourceSpec {
