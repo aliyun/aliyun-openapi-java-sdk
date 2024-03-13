@@ -67,7 +67,17 @@ public class QueryFaceVideoTemplateResponse extends AcsResponse {
 
 	public static class Data {
 
+		private Long total;
+
 		private List<ElementsItem> elements;
+
+		public Long getTotal() {
+			return this.total;
+		}
+
+		public void setTotal(Long total) {
+			this.total = total;
+		}
 
 		public List<ElementsItem> getElements() {
 			return this.elements;

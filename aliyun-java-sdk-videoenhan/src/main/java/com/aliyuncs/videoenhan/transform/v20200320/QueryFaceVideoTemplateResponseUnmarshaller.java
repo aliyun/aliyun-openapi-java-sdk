@@ -33,6 +33,7 @@ public class QueryFaceVideoTemplateResponseUnmarshaller {
 		queryFaceVideoTemplateResponse.setMessage(_ctx.stringValue("QueryFaceVideoTemplateResponse.Message"));
 
 		Data data = new Data();
+		data.setTotal(_ctx.longValue("QueryFaceVideoTemplateResponse.Data.Total"));
 
 		List<ElementsItem> elements = new ArrayList<ElementsItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryFaceVideoTemplateResponse.Data.Elements.Length"); i++) {
