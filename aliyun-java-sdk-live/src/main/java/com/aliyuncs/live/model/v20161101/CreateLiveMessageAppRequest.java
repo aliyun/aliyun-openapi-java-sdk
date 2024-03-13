@@ -28,6 +28,8 @@ public class CreateLiveMessageAppRequest extends RpcAcsRequest<CreateLiveMessage
 
 	private String dataCenter;
 
+	private Integer msgLifeCycle;
+
 	private String appName;
 
 	private Integer auditType;
@@ -53,6 +55,17 @@ public class CreateLiveMessageAppRequest extends RpcAcsRequest<CreateLiveMessage
 		this.dataCenter = dataCenter;
 		if(dataCenter != null){
 			putQueryParameter("DataCenter", dataCenter);
+		}
+	}
+
+	public Integer getMsgLifeCycle() {
+		return this.msgLifeCycle;
+	}
+
+	public void setMsgLifeCycle(Integer msgLifeCycle) {
+		this.msgLifeCycle = msgLifeCycle;
+		if(msgLifeCycle != null){
+			putQueryParameter("MsgLifeCycle", msgLifeCycle.toString());
 		}
 	}
 
