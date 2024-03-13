@@ -34,6 +34,7 @@ public class QueryFaceImageTemplateResponseUnmarshaller {
 		queryFaceImageTemplateResponse.setMessage(_ctx.stringValue("QueryFaceImageTemplateResponse.Message"));
 
 		Data data = new Data();
+		data.setTotal(_ctx.longValue("QueryFaceImageTemplateResponse.Data.Total"));
 
 		List<ElementsItem> elements = new ArrayList<ElementsItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryFaceImageTemplateResponse.Data.Elements.Length"); i++) {

@@ -25,7 +25,11 @@ import com.aliyuncs.facebody.Endpoint;
 public class QueryFaceImageTemplateRequest extends RpcAcsRequest<QueryFaceImageTemplateResponse> {
 	   
 
+	private Long pageSize;
+
 	private String templateId;
+
+	private Long pageNo;
 	public QueryFaceImageTemplateRequest() {
 		super("facebody", "2019-12-30", "QueryFaceImageTemplate", "facebody");
 		setMethod(MethodType.GET);
@@ -33,6 +37,17 @@ public class QueryFaceImageTemplateRequest extends RpcAcsRequest<QueryFaceImageT
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Long getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Long pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
 	}
 
 	public String getTemplateId() {
@@ -43,6 +58,17 @@ public class QueryFaceImageTemplateRequest extends RpcAcsRequest<QueryFaceImageT
 		this.templateId = templateId;
 		if(templateId != null){
 			putQueryParameter("TemplateId", templateId);
+		}
+	}
+
+	public Long getPageNo() {
+		return this.pageNo;
+	}
+
+	public void setPageNo(Long pageNo) {
+		this.pageNo = pageNo;
+		if(pageNo != null){
+			putQueryParameter("PageNo", pageNo.toString());
 		}
 	}
 
