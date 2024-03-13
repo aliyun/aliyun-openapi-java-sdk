@@ -125,6 +125,8 @@ public class DescribeSnapshotsResponse extends AcsResponse {
 
 		private String snapshotId;
 
+		private String regionId;
+
 		private String resourceGroupId;
 
 		private String category;
@@ -291,6 +293,14 @@ public class DescribeSnapshotsResponse extends AcsResponse {
 
 		public void setSnapshotId(String snapshotId) {
 			this.snapshotId = snapshotId;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 
 		public String getResourceGroupId() {

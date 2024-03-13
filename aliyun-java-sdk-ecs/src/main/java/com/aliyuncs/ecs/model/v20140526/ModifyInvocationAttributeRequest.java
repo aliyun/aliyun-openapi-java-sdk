@@ -16,6 +16,8 @@ package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import java.util.Map;
+import com.google.gson.Gson;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ecs.Endpoint;
 
@@ -23,14 +25,18 @@ import com.aliyuncs.ecs.Endpoint;
  * @author auto create
  * @version 
  */
-public class StartTerminalSessionRequest extends RpcAcsRequest<StartTerminalSessionResponse> {
+public class ModifyInvocationAttributeRequest extends RpcAcsRequest<ModifyInvocationAttributeResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String commandLine;
+	private String commandContent;
 
-	private String targetServer;
+	private String frequency;
+
+	private String contentEncoding;
+
+	private String invokeId;
 
 	private String resourceOwnerAccount;
 
@@ -40,11 +46,11 @@ public class StartTerminalSessionRequest extends RpcAcsRequest<StartTerminalSess
 
 	private List<String> instanceIds;
 
-	private Integer portNumber;
+	private Map<Object,Object> parameters;
 
-	private String username;
-	public StartTerminalSessionRequest() {
-		super("Ecs", "2014-05-26", "StartTerminalSession", "ecs");
+	private Boolean enableParameter;
+	public ModifyInvocationAttributeRequest() {
+		super("Ecs", "2014-05-26", "ModifyInvocationAttribute", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -63,25 +69,47 @@ public class StartTerminalSessionRequest extends RpcAcsRequest<StartTerminalSess
 		}
 	}
 
-	public String getCommandLine() {
-		return this.commandLine;
+	public String getCommandContent() {
+		return this.commandContent;
 	}
 
-	public void setCommandLine(String commandLine) {
-		this.commandLine = commandLine;
-		if(commandLine != null){
-			putQueryParameter("CommandLine", commandLine);
+	public void setCommandContent(String commandContent) {
+		this.commandContent = commandContent;
+		if(commandContent != null){
+			putQueryParameter("CommandContent", commandContent);
 		}
 	}
 
-	public String getTargetServer() {
-		return this.targetServer;
+	public String getFrequency() {
+		return this.frequency;
 	}
 
-	public void setTargetServer(String targetServer) {
-		this.targetServer = targetServer;
-		if(targetServer != null){
-			putQueryParameter("TargetServer", targetServer);
+	public void setFrequency(String frequency) {
+		this.frequency = frequency;
+		if(frequency != null){
+			putQueryParameter("Frequency", frequency);
+		}
+	}
+
+	public String getContentEncoding() {
+		return this.contentEncoding;
+	}
+
+	public void setContentEncoding(String contentEncoding) {
+		this.contentEncoding = contentEncoding;
+		if(contentEncoding != null){
+			putQueryParameter("ContentEncoding", contentEncoding);
+		}
+	}
+
+	public String getInvokeId() {
+		return this.invokeId;
+	}
+
+	public void setInvokeId(String invokeId) {
+		this.invokeId = invokeId;
+		if(invokeId != null){
+			putQueryParameter("InvokeId", invokeId);
 		}
 	}
 
@@ -131,31 +159,31 @@ public class StartTerminalSessionRequest extends RpcAcsRequest<StartTerminalSess
 		}	
 	}
 
-	public Integer getPortNumber() {
-		return this.portNumber;
+	public Map<Object,Object> getParameters() {
+		return this.parameters;
 	}
 
-	public void setPortNumber(Integer portNumber) {
-		this.portNumber = portNumber;
-		if(portNumber != null){
-			putQueryParameter("PortNumber", portNumber.toString());
+	public void setParameters(Map<Object,Object> parameters) {
+		this.parameters = parameters;
+		if(parameters != null){
+			putQueryParameter("Parameters", new Gson().toJson(parameters));
 		}
 	}
 
-	public String getUsername() {
-		return this.username;
+	public Boolean getEnableParameter() {
+		return this.enableParameter;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
-		if(username != null){
-			putQueryParameter("Username", username);
+	public void setEnableParameter(Boolean enableParameter) {
+		this.enableParameter = enableParameter;
+		if(enableParameter != null){
+			putQueryParameter("EnableParameter", enableParameter.toString());
 		}
 	}
 
 	@Override
-	public Class<StartTerminalSessionResponse> getResponseClass() {
-		return StartTerminalSessionResponse.class;
+	public Class<ModifyInvocationAttributeResponse> getResponseClass() {
+		return ModifyInvocationAttributeResponse.class;
 	}
 
 }

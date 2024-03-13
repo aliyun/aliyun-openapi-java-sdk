@@ -111,6 +111,8 @@ public class DescribeAutoProvisioningGroupsResponse extends AcsResponse {
 
 		private List<LaunchTemplateConfig> launchTemplateConfigs;
 
+		private List<Tag> tags;
+
 		private SpotOptions spotOptions;
 
 		private PayAsYouGoOptions payAsYouGoOptions;
@@ -253,6 +255,14 @@ public class DescribeAutoProvisioningGroupsResponse extends AcsResponse {
 			this.launchTemplateConfigs = launchTemplateConfigs;
 		}
 
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
 		public SpotOptions getSpotOptions() {
 			return this.spotOptions;
 		}
@@ -327,6 +337,29 @@ public class DescribeAutoProvisioningGroupsResponse extends AcsResponse {
 
 			public void setInstanceType(String instanceType) {
 				this.instanceType = instanceType;
+			}
+		}
+
+		public static class Tag {
+
+			private String tagKey;
+
+			private String tagValue;
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
+			}
+
+			public String getTagValue() {
+				return this.tagValue;
+			}
+
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
 			}
 		}
 

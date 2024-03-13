@@ -41,6 +41,8 @@ public class DescribeSecurityGroupAttributeResponse extends AcsResponse {
 
 	private List<Permission> permissions;
 
+	private ReferencedInfo referencedInfo;
+
 	public String getVpcId() {
 		return this.vpcId;
 	}
@@ -103,6 +105,14 @@ public class DescribeSecurityGroupAttributeResponse extends AcsResponse {
 
 	public void setPermissions(List<Permission> permissions) {
 		this.permissions = permissions;
+	}
+
+	public ReferencedInfo getReferencedInfo() {
+		return this.referencedInfo;
+	}
+
+	public void setReferencedInfo(ReferencedInfo referencedInfo) {
+		this.referencedInfo = referencedInfo;
 	}
 
 	public static class Permission {
@@ -345,6 +355,42 @@ public class DescribeSecurityGroupAttributeResponse extends AcsResponse {
 
 		public void setSourcePortRange(String sourcePortRange) {
 			this.sourcePortRange = sourcePortRange;
+		}
+	}
+
+	public static class ReferencedInfo {
+
+		private List<ReferencedPrefixListInfo> referencedPrefixListInfos;
+
+		public List<ReferencedPrefixListInfo> getReferencedPrefixListInfos() {
+			return this.referencedPrefixListInfos;
+		}
+
+		public void setReferencedPrefixListInfos(List<ReferencedPrefixListInfo> referencedPrefixListInfos) {
+			this.referencedPrefixListInfos = referencedPrefixListInfos;
+		}
+
+		public static class ReferencedPrefixListInfo {
+
+			private String prefixListId;
+
+			private String productProvider;
+
+			public String getPrefixListId() {
+				return this.prefixListId;
+			}
+
+			public void setPrefixListId(String prefixListId) {
+				this.prefixListId = prefixListId;
+			}
+
+			public String getProductProvider() {
+				return this.productProvider;
+			}
+
+			public void setProductProvider(String productProvider) {
+				this.productProvider = productProvider;
+			}
 		}
 	}
 

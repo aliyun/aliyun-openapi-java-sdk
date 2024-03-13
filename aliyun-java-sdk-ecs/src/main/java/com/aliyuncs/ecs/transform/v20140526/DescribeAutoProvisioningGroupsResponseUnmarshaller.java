@@ -22,6 +22,7 @@ import com.aliyuncs.ecs.model.v20140526.DescribeAutoProvisioningGroupsResponse.A
 import com.aliyuncs.ecs.model.v20140526.DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroup.LaunchTemplateConfig;
 import com.aliyuncs.ecs.model.v20140526.DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroup.PayAsYouGoOptions;
 import com.aliyuncs.ecs.model.v20140526.DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroup.SpotOptions;
+import com.aliyuncs.ecs.model.v20140526.DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroup.Tag;
 import com.aliyuncs.ecs.model.v20140526.DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroup.TargetCapacitySpecification;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -84,6 +85,16 @@ public class DescribeAutoProvisioningGroupsResponseUnmarshaller {
 				launchTemplateConfigs.add(launchTemplateConfig);
 			}
 			autoProvisioningGroup.setLaunchTemplateConfigs(launchTemplateConfigs);
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroups["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setTagKey(_ctx.stringValue("DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroups["+ i +"].Tags["+ j +"].TagKey"));
+				tag.setTagValue(_ctx.stringValue("DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroups["+ i +"].Tags["+ j +"].TagValue"));
+
+				tags.add(tag);
+			}
+			autoProvisioningGroup.setTags(tags);
 
 			autoProvisioningGroups.add(autoProvisioningGroup);
 		}

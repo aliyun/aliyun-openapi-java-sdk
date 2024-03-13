@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.ecs.model.v20140526.DescribeAutoSnapshotPolicyExResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeAutoSnapshotPolicyExResponse.AutoSnapshotPolicy;
+import com.aliyuncs.ecs.model.v20140526.DescribeAutoSnapshotPolicyExResponse.AutoSnapshotPolicy.CopyEncryptionConfiguration;
 import com.aliyuncs.ecs.model.v20140526.DescribeAutoSnapshotPolicyExResponse.AutoSnapshotPolicy.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -49,6 +50,12 @@ public class DescribeAutoSnapshotPolicyExResponseUnmarshaller {
 			autoSnapshotPolicy.setRepeatWeekdays(_ctx.stringValue("DescribeAutoSnapshotPolicyExResponse.AutoSnapshotPolicies["+ i +"].RepeatWeekdays"));
 			autoSnapshotPolicy.setVolumeNums(_ctx.integerValue("DescribeAutoSnapshotPolicyExResponse.AutoSnapshotPolicies["+ i +"].VolumeNums"));
 			autoSnapshotPolicy.setResourceGroupId(_ctx.stringValue("DescribeAutoSnapshotPolicyExResponse.AutoSnapshotPolicies["+ i +"].ResourceGroupId"));
+			autoSnapshotPolicy.setType(_ctx.stringValue("DescribeAutoSnapshotPolicyExResponse.AutoSnapshotPolicies["+ i +"].Type"));
+
+			CopyEncryptionConfiguration copyEncryptionConfiguration = new CopyEncryptionConfiguration();
+			copyEncryptionConfiguration.setEncrypted(_ctx.booleanValue("DescribeAutoSnapshotPolicyExResponse.AutoSnapshotPolicies["+ i +"].CopyEncryptionConfiguration.Encrypted"));
+			copyEncryptionConfiguration.setKMSKeyId(_ctx.stringValue("DescribeAutoSnapshotPolicyExResponse.AutoSnapshotPolicies["+ i +"].CopyEncryptionConfiguration.KMSKeyId"));
+			autoSnapshotPolicy.setCopyEncryptionConfiguration(copyEncryptionConfiguration);
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeAutoSnapshotPolicyExResponse.AutoSnapshotPolicies["+ i +"].Tags.Length"); j++) {

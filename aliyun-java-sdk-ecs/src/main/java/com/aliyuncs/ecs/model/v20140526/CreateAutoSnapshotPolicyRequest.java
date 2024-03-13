@@ -28,6 +28,8 @@ public class CreateAutoSnapshotPolicyRequest extends RpcAcsRequest<CreateAutoSna
 
 	private Long resourceOwnerId;
 
+	private CopyEncryptionConfiguration copyEncryptionConfiguration;
+
 	private Integer copiedSnapshotsRetentionDays;
 
 	private String timePoints;
@@ -69,6 +71,29 @@ public class CreateAutoSnapshotPolicyRequest extends RpcAcsRequest<CreateAutoSna
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
+	}
+
+	public CopyEncryptionConfiguration getCopyEncryptionConfiguration() {
+		return this.copyEncryptionConfiguration;
+	}
+
+	public void setCopyEncryptionConfiguration(CopyEncryptionConfiguration copyEncryptionConfiguration) {
+		this.copyEncryptionConfiguration = copyEncryptionConfiguration;	
+		if (copyEncryptionConfiguration != null) {
+			
+				putQueryParameter("CopyEncryptionConfiguration.Encrypted" , copyEncryptionConfiguration.getEncrypted());
+				putQueryParameter("CopyEncryptionConfiguration.KMSKeyId" , copyEncryptionConfiguration.getKMSKeyId());
+				if (copyEncryptionConfiguration.getArn() != null) {
+					for (int depth1 = 0; depth1 < copyEncryptionConfiguration.getArn().size(); depth1++) {
+						if (copyEncryptionConfiguration.getArn().get(depth1) != null) {
+							
+								putQueryParameter("CopyEncryptionConfiguration.Arn." + (depth1 + 1) + ".Rolearn" , copyEncryptionConfiguration.getArn().get(depth1).getRolearn());
+								putQueryParameter("CopyEncryptionConfiguration.Arn." + (depth1 + 1) + ".RoleType" , copyEncryptionConfiguration.getArn().get(depth1).getRoleType());
+								putQueryParameter("CopyEncryptionConfiguration.Arn." + (depth1 + 1) + ".AssumeRoleFor" , copyEncryptionConfiguration.getArn().get(depth1).getAssumeRoleFor());
+						}
+					}
+				}
+		}	
 	}
 
 	public Integer getCopiedSnapshotsRetentionDays() {
@@ -203,6 +228,72 @@ public class CreateAutoSnapshotPolicyRequest extends RpcAcsRequest<CreateAutoSna
 		this.targetCopyRegions = targetCopyRegions;
 		if(targetCopyRegions != null){
 			putQueryParameter("TargetCopyRegions", targetCopyRegions);
+		}
+	}
+
+	public static class CopyEncryptionConfiguration {
+
+		private Boolean encrypted;
+
+		private String kMSKeyId;
+
+		private List<ArnItem> arn;
+
+		public Boolean getEncrypted() {
+			return this.encrypted;
+		}
+
+		public void setEncrypted(Boolean encrypted) {
+			this.encrypted = encrypted;
+		}
+
+		public String getKMSKeyId() {
+			return this.kMSKeyId;
+		}
+
+		public void setKMSKeyId(String kMSKeyId) {
+			this.kMSKeyId = kMSKeyId;
+		}
+
+		public List<ArnItem> getArn() {
+			return this.arn;
+		}
+
+		public void setArn(List<ArnItem> arn) {
+			this.arn = arn;
+		}
+
+		public static class ArnItem {
+
+			private String rolearn;
+
+			private String roleType;
+
+			private Long assumeRoleFor;
+
+			public String getRolearn() {
+				return this.rolearn;
+			}
+
+			public void setRolearn(String rolearn) {
+				this.rolearn = rolearn;
+			}
+
+			public String getRoleType() {
+				return this.roleType;
+			}
+
+			public void setRoleType(String roleType) {
+				this.roleType = roleType;
+			}
+
+			public Long getAssumeRoleFor() {
+				return this.assumeRoleFor;
+			}
+
+			public void setAssumeRoleFor(Long assumeRoleFor) {
+				this.assumeRoleFor = assumeRoleFor;
+			}
 		}
 	}
 

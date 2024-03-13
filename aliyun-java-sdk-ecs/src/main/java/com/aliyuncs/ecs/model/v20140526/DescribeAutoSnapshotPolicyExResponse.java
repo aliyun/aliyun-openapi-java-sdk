@@ -105,7 +105,11 @@ public class DescribeAutoSnapshotPolicyExResponse extends AcsResponse {
 
 		private String resourceGroupId;
 
+		private String type;
+
 		private List<Tag> tags;
+
+		private CopyEncryptionConfiguration copyEncryptionConfiguration;
 
 		public String getTimePoints() {
 			return this.timePoints;
@@ -219,12 +223,28 @@ public class DescribeAutoSnapshotPolicyExResponse extends AcsResponse {
 			this.resourceGroupId = resourceGroupId;
 		}
 
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
+		}
+
 		public List<Tag> getTags() {
 			return this.tags;
 		}
 
 		public void setTags(List<Tag> tags) {
 			this.tags = tags;
+		}
+
+		public CopyEncryptionConfiguration getCopyEncryptionConfiguration() {
+			return this.copyEncryptionConfiguration;
+		}
+
+		public void setCopyEncryptionConfiguration(CopyEncryptionConfiguration copyEncryptionConfiguration) {
+			this.copyEncryptionConfiguration = copyEncryptionConfiguration;
 		}
 
 		public static class Tag {
@@ -247,6 +267,29 @@ public class DescribeAutoSnapshotPolicyExResponse extends AcsResponse {
 
 			public void setTagKey(String tagKey) {
 				this.tagKey = tagKey;
+			}
+		}
+
+		public static class CopyEncryptionConfiguration {
+
+			private Boolean encrypted;
+
+			private String kMSKeyId;
+
+			public Boolean getEncrypted() {
+				return this.encrypted;
+			}
+
+			public void setEncrypted(Boolean encrypted) {
+				this.encrypted = encrypted;
+			}
+
+			public String getKMSKeyId() {
+				return this.kMSKeyId;
+			}
+
+			public void setKMSKeyId(String kMSKeyId) {
+				this.kMSKeyId = kMSKeyId;
 			}
 		}
 	}
