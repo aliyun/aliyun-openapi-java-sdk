@@ -25,7 +25,7 @@ public class DeleteEventStreamingResponseUnmarshaller {
 		deleteEventStreamingResponse.setRequestId(_ctx.stringValue("DeleteEventStreamingResponse.RequestId"));
 		deleteEventStreamingResponse.setMessage(_ctx.stringValue("DeleteEventStreamingResponse.Message"));
 		deleteEventStreamingResponse.setData(_ctx.booleanValue("DeleteEventStreamingResponse.Data"));
-		deleteEventStreamingResponse.setCode(_ctx.booleanValue("DeleteEventStreamingResponse.Code"));
+		deleteEventStreamingResponse.setCode(_ctx.stringValue("DeleteEventStreamingResponse.Code"));
 		deleteEventStreamingResponse.setSuccess(_ctx.booleanValue("DeleteEventStreamingResponse.Success"));
 	 
 	 	return deleteEventStreamingResponse;

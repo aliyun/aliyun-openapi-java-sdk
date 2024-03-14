@@ -25,7 +25,7 @@ public class PauseEventStreamingResponseUnmarshaller {
 		pauseEventStreamingResponse.setRequestId(_ctx.stringValue("PauseEventStreamingResponse.RequestId"));
 		pauseEventStreamingResponse.setMessage(_ctx.stringValue("PauseEventStreamingResponse.Message"));
 		pauseEventStreamingResponse.setData(_ctx.booleanValue("PauseEventStreamingResponse.Data"));
-		pauseEventStreamingResponse.setCode(_ctx.booleanValue("PauseEventStreamingResponse.Code"));
+		pauseEventStreamingResponse.setCode(_ctx.stringValue("PauseEventStreamingResponse.Code"));
 		pauseEventStreamingResponse.setSuccess(_ctx.booleanValue("PauseEventStreamingResponse.Success"));
 	 
 	 	return pauseEventStreamingResponse;

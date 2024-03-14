@@ -30,7 +30,7 @@ public class DeleteEventStreamingResponse extends AcsResponse {
 
 	private Boolean data;
 
-	private Boolean code;
+	private String code;
 
 	private Boolean success;
 
@@ -58,11 +58,11 @@ public class DeleteEventStreamingResponse extends AcsResponse {
 		this.data = data;
 	}
 
-	public Boolean getCode() {
+	public String getCode() {
 		return this.code;
 	}
 
-	public void setCode(Boolean code) {
+	public void setCode(String code) {
 		this.code = code;
 	}
 
