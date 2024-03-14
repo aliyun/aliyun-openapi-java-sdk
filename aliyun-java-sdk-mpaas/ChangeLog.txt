@@ -1,3 +1,6 @@
+2024-03-14 Version: 4.0.2
+- Add paging params to request and response.
+
 2024-02-27 Version: 2.1.10
 - Add vivo classification.
 
