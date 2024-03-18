@@ -32,6 +32,8 @@ public class FindUserInfoByEmpIdResponseUnmarshaller {
 		data.setName(_ctx.stringValue("FindUserInfoByEmpIdResponse.Data.Name"));
 		data.setEmail(_ctx.stringValue("FindUserInfoByEmpIdResponse.Data.Email"));
 		data.setBucId(_ctx.stringValue("FindUserInfoByEmpIdResponse.Data.BucId"));
+		data.setAvailable(_ctx.stringValue("FindUserInfoByEmpIdResponse.Data.Available"));
+		data.setNickName(_ctx.stringValue("FindUserInfoByEmpIdResponse.Data.NickName"));
 		findUserInfoByEmpIdResponse.setData(data);
 	 
 	 	return findUserInfoByEmpIdResponse;

@@ -74,6 +74,10 @@ public class FindUserInfoByEmpIdResponse extends AcsResponse {
 
 		private String bucId;
 
+		private String available;
+
+		private String nickName;
+
 		public String getEmpId() {
 			return this.empId;
 		}
@@ -104,6 +108,22 @@ public class FindUserInfoByEmpIdResponse extends AcsResponse {
 
 		public void setBucId(String bucId) {
 			this.bucId = bucId;
+		}
+
+		public String getAvailable() {
+			return this.available;
+		}
+
+		public void setAvailable(String available) {
+			this.available = available;
+		}
+
+		public String getNickName() {
+			return this.nickName;
+		}
+
+		public void setNickName(String nickName) {
+			this.nickName = nickName;
 		}
 	}
 
