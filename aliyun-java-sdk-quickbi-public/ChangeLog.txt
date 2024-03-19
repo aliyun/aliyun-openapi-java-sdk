@@ -1,3 +1,6 @@
+2024-03-19 Version: 2.1.5
+- Add QueryWorkspaceRoleConfig, ListWorkspaceRoleUsers, ListWorkspaceRoles, QueryOrganizationRoleConfig, ListOrganizationRoleUsers and ListOrganizationRoles APIs.
+
 2024-02-27 Version: 2.1.4
 - AllotDatasetAccelerationTask API add error code.
 - QueryUserInfoByAccount, QueryUserInfoByUserId, AddUser, UpdateUser, and QueryUserList APIs add query or response parameters.
