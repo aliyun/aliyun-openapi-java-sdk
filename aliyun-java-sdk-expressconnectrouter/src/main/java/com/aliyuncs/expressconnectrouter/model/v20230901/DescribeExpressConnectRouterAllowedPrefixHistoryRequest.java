@@ -32,11 +32,11 @@ public class DescribeExpressConnectRouterAllowedPrefixHistoryRequest extends Rpc
 
 	private String instanceType;
 
+	private String associationId;
+
 	private Boolean dryRun;
 
 	private String instanceId;
-
-	private String associatonId;
 	public DescribeExpressConnectRouterAllowedPrefixHistoryRequest() {
 		super("ExpressConnectRouter", "2023-09-01", "DescribeExpressConnectRouterAllowedPrefixHistory", "ecr");
 		setProtocol(ProtocolType.HTTPS);
@@ -80,6 +80,17 @@ public class DescribeExpressConnectRouterAllowedPrefixHistoryRequest extends Rpc
 		}
 	}
 
+	public String getAssociationId() {
+		return this.associationId;
+	}
+
+	public void setAssociationId(String associationId) {
+		this.associationId = associationId;
+		if(associationId != null){
+			putBodyParameter("AssociationId", associationId);
+		}
+	}
+
 	public Boolean getDryRun() {
 		return this.dryRun;
 	}
@@ -99,17 +110,6 @@ public class DescribeExpressConnectRouterAllowedPrefixHistoryRequest extends Rpc
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putBodyParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getAssociatonId() {
-		return this.associatonId;
-	}
-
-	public void setAssociatonId(String associatonId) {
-		this.associatonId = associatonId;
-		if(associatonId != null){
-			putBodyParameter("AssociatonId", associatonId);
 		}
 	}
 
