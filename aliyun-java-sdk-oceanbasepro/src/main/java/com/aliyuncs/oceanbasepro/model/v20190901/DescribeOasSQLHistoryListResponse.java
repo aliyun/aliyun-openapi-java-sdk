@@ -181,6 +181,10 @@ public class DescribeOasSQLHistoryListResponse extends AcsResponse {
 
 		private Double execPs;
 
+		private Double avgDbTime;
+
+		private Double sumDbTime;
+
 		public String getSQLId() {
 			return this.sQLId;
 		}
@@ -715,6 +719,22 @@ public class DescribeOasSQLHistoryListResponse extends AcsResponse {
 
 		public void setExecPs(Double execPs) {
 			this.execPs = execPs;
+		}
+
+		public Double getAvgDbTime() {
+			return this.avgDbTime;
+		}
+
+		public void setAvgDbTime(Double avgDbTime) {
+			this.avgDbTime = avgDbTime;
+		}
+
+		public Double getSumDbTime() {
+			return this.sumDbTime;
+		}
+
+		public void setSumDbTime(Double sumDbTime) {
+			this.sumDbTime = sumDbTime;
 		}
 	}
 

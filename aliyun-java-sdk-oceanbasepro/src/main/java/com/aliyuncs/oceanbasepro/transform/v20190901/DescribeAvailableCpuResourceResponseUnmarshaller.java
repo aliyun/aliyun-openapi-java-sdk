@@ -34,6 +34,8 @@ public class DescribeAvailableCpuResourceResponseUnmarshaller {
 			dataItem.setUnitNum(_ctx.longValue("DescribeAvailableCpuResourceResponse.Data["+ i +"].UnitNum"));
 			dataItem.setMinCpu(_ctx.longValue("DescribeAvailableCpuResourceResponse.Data["+ i +"].MinCpu"));
 			dataItem.setMaxCpu(_ctx.longValue("DescribeAvailableCpuResourceResponse.Data["+ i +"].MaxCpu"));
+			dataItem.setReviewCode(_ctx.stringValue("DescribeAvailableCpuResourceResponse.Data["+ i +"].ReviewCode"));
+			dataItem.setComment(_ctx.stringValue("DescribeAvailableCpuResourceResponse.Data["+ i +"].Comment"));
 
 			data.add(dataItem);
 		}

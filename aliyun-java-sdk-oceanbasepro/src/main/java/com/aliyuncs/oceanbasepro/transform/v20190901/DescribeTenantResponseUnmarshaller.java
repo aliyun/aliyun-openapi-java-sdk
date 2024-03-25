@@ -71,6 +71,7 @@ public class DescribeTenantResponseUnmarshaller {
 		tenant.setEnableBinlogService(_ctx.booleanValue("DescribeTenantResponse.Tenant.EnableBinlogService"));
 		tenant.setTimeZone(_ctx.stringValue("DescribeTenantResponse.Tenant.TimeZone"));
 		tenant.setDataMergeTime(_ctx.stringValue("DescribeTenantResponse.Tenant.DataMergeTime"));
+		tenant.setEnableReadOnlyReplica(_ctx.booleanValue("DescribeTenantResponse.Tenant.EnableReadOnlyReplica"));
 
 		List<String> availableZones = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeTenantResponse.Tenant.AvailableZones.Length"); i++) {

@@ -50,6 +50,9 @@ public class DescribeOasAnomalySQLListResponseUnmarshaller {
 			dataItem.setDynamicSql(_ctx.booleanValue("DescribeOasAnomalySQLListResponse.Data["+ i +"].DynamicSql"));
 			dataItem.setAvgDbTime(_ctx.doubleValue("DescribeOasAnomalySQLListResponse.Data["+ i +"].AvgDbTime"));
 			dataItem.setSumDbTime(_ctx.doubleValue("DescribeOasAnomalySQLListResponse.Data["+ i +"].SumDbTime"));
+			dataItem.setAvgRetryCount(_ctx.floatValue("DescribeOasAnomalySQLListResponse.Data["+ i +"].AvgRetryCount"));
+			dataItem.setSumRetryCount(_ctx.floatValue("DescribeOasAnomalySQLListResponse.Data["+ i +"].SumRetryCount"));
+			dataItem.setAvgLogicalReads(_ctx.floatValue("DescribeOasAnomalySQLListResponse.Data["+ i +"].AvgLogicalReads"));
 
 			List<String> diagTypes = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeOasAnomalySQLListResponse.Data["+ i +"].DiagTypes.Length"); j++) {
@@ -76,6 +79,9 @@ public class DescribeOasAnomalySQLListResponseUnmarshaller {
 				sqlListItem.setUserName(_ctx.stringValue("DescribeOasAnomalySQLListResponse.Data["+ i +"].SqlList["+ j +"].UserName"));
 				sqlListItem.setAvgDbTime(_ctx.doubleValue("DescribeOasAnomalySQLListResponse.Data["+ i +"].SqlList["+ j +"].AvgDbTime"));
 				sqlListItem.setSumDbTime(_ctx.doubleValue("DescribeOasAnomalySQLListResponse.Data["+ i +"].SqlList["+ j +"].SumDbTime"));
+				sqlListItem.setAvgRetryCount(_ctx.floatValue("DescribeOasAnomalySQLListResponse.Data["+ i +"].SqlList["+ j +"].AvgRetryCount"));
+				sqlListItem.setSumRetryCount(_ctx.floatValue("DescribeOasAnomalySQLListResponse.Data["+ i +"].SqlList["+ j +"].SumRetryCount"));
+				sqlListItem.setAvgLogicalReads(_ctx.floatValue("DescribeOasAnomalySQLListResponse.Data["+ i +"].SqlList["+ j +"].AvgLogicalReads"));
 
 				List<String> diagTypes1 = new ArrayList<String>();
 				for (int k = 0; k < _ctx.lengthValue("DescribeOasAnomalySQLListResponse.Data["+ i +"].SqlList["+ j +"].DiagTypes.Length"); k++) {

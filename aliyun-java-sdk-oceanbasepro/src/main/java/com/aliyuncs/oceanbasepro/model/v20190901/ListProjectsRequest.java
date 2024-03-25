@@ -48,6 +48,8 @@ public class ListProjectsRequest extends RpcAcsRequest<ListProjectsResponse> {
 
 	private String sortField;
 
+	private Boolean needRelatedInfo;
+
 	@SerializedName("labelIds")
 	private List<String> labelIds;
 
@@ -158,6 +160,17 @@ public class ListProjectsRequest extends RpcAcsRequest<ListProjectsResponse> {
 		this.sortField = sortField;
 		if(sortField != null){
 			putBodyParameter("SortField", sortField);
+		}
+	}
+
+	public Boolean getNeedRelatedInfo() {
+		return this.needRelatedInfo;
+	}
+
+	public void setNeedRelatedInfo(Boolean needRelatedInfo) {
+		this.needRelatedInfo = needRelatedInfo;
+		if(needRelatedInfo != null){
+			putBodyParameter("NeedRelatedInfo", needRelatedInfo.toString());
 		}
 	}
 

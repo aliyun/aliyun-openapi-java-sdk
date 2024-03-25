@@ -91,6 +91,12 @@ public class DescribeOasAnomalySQLListResponse extends AcsResponse {
 
 		private Double sumDbTime;
 
+		private Float avgRetryCount;
+
+		private Float sumRetryCount;
+
+		private Float avgLogicalReads;
+
 		private List<SqlListItem> sqlList;
 
 		private List<String> diagTypes;
@@ -231,6 +237,30 @@ public class DescribeOasAnomalySQLListResponse extends AcsResponse {
 			this.sumDbTime = sumDbTime;
 		}
 
+		public Float getAvgRetryCount() {
+			return this.avgRetryCount;
+		}
+
+		public void setAvgRetryCount(Float avgRetryCount) {
+			this.avgRetryCount = avgRetryCount;
+		}
+
+		public Float getSumRetryCount() {
+			return this.sumRetryCount;
+		}
+
+		public void setSumRetryCount(Float sumRetryCount) {
+			this.sumRetryCount = sumRetryCount;
+		}
+
+		public Float getAvgLogicalReads() {
+			return this.avgLogicalReads;
+		}
+
+		public void setAvgLogicalReads(Float avgLogicalReads) {
+			this.avgLogicalReads = avgLogicalReads;
+		}
+
 		public List<SqlListItem> getSqlList() {
 			return this.sqlList;
 		}
@@ -280,6 +310,12 @@ public class DescribeOasAnomalySQLListResponse extends AcsResponse {
 			private Double avgDbTime;
 
 			private Double sumDbTime;
+
+			private Float avgRetryCount;
+
+			private Float sumRetryCount;
+
+			private Float avgLogicalReads;
 
 			private List<String> diagTypes1;
 
@@ -409,6 +445,30 @@ public class DescribeOasAnomalySQLListResponse extends AcsResponse {
 
 			public void setSumDbTime(Double sumDbTime) {
 				this.sumDbTime = sumDbTime;
+			}
+
+			public Float getAvgRetryCount() {
+				return this.avgRetryCount;
+			}
+
+			public void setAvgRetryCount(Float avgRetryCount) {
+				this.avgRetryCount = avgRetryCount;
+			}
+
+			public Float getSumRetryCount() {
+				return this.sumRetryCount;
+			}
+
+			public void setSumRetryCount(Float sumRetryCount) {
+				this.sumRetryCount = sumRetryCount;
+			}
+
+			public Float getAvgLogicalReads() {
+				return this.avgLogicalReads;
+			}
+
+			public void setAvgLogicalReads(Float avgLogicalReads) {
+				this.avgLogicalReads = avgLogicalReads;
 			}
 
 			public List<String> getDiagTypes1() {

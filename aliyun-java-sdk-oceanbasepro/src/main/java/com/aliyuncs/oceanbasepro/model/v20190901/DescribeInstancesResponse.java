@@ -109,6 +109,8 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private Boolean inTempCapacityStatus;
 
+		private Boolean enableReadOnlyReplicaManagement;
+
 		private List<String> availableZones;
 
 		private Resource resource;
@@ -321,6 +323,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		public void setInTempCapacityStatus(Boolean inTempCapacityStatus) {
 			this.inTempCapacityStatus = inTempCapacityStatus;
+		}
+
+		public Boolean getEnableReadOnlyReplicaManagement() {
+			return this.enableReadOnlyReplicaManagement;
+		}
+
+		public void setEnableReadOnlyReplicaManagement(Boolean enableReadOnlyReplicaManagement) {
+			this.enableReadOnlyReplicaManagement = enableReadOnlyReplicaManagement;
 		}
 
 		public List<String> getAvailableZones() {
@@ -578,6 +588,8 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 			private Long scaleStepInMerge;
 
+			private String upperScaleStrategy;
+
 			public Boolean getAutoScale() {
 				return this.autoScale;
 			}
@@ -632,6 +644,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 			public void setScaleStepInMerge(Long scaleStepInMerge) {
 				this.scaleStepInMerge = scaleStepInMerge;
+			}
+
+			public String getUpperScaleStrategy() {
+				return this.upperScaleStrategy;
+			}
+
+			public void setUpperScaleStrategy(String upperScaleStrategy) {
+				this.upperScaleStrategy = upperScaleStrategy;
 			}
 		}
 	}

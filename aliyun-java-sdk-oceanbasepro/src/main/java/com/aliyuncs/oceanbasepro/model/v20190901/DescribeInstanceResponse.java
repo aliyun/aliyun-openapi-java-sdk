@@ -109,6 +109,16 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 		private String cpuArchitecture;
 
+		private String unitSpec;
+
+		private Integer sharedUnitNumLimit;
+
+		private Integer exclusiveUnitNumLimit;
+
+		private Boolean enableReadOnlyReplica;
+
+		private Boolean enableReadOnlyReplicaManagement;
+
 		private List<String> availableZones;
 
 		private List<String> zones;
@@ -367,6 +377,46 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 		public void setCpuArchitecture(String cpuArchitecture) {
 			this.cpuArchitecture = cpuArchitecture;
+		}
+
+		public String getUnitSpec() {
+			return this.unitSpec;
+		}
+
+		public void setUnitSpec(String unitSpec) {
+			this.unitSpec = unitSpec;
+		}
+
+		public Integer getSharedUnitNumLimit() {
+			return this.sharedUnitNumLimit;
+		}
+
+		public void setSharedUnitNumLimit(Integer sharedUnitNumLimit) {
+			this.sharedUnitNumLimit = sharedUnitNumLimit;
+		}
+
+		public Integer getExclusiveUnitNumLimit() {
+			return this.exclusiveUnitNumLimit;
+		}
+
+		public void setExclusiveUnitNumLimit(Integer exclusiveUnitNumLimit) {
+			this.exclusiveUnitNumLimit = exclusiveUnitNumLimit;
+		}
+
+		public Boolean getEnableReadOnlyReplica() {
+			return this.enableReadOnlyReplica;
+		}
+
+		public void setEnableReadOnlyReplica(Boolean enableReadOnlyReplica) {
+			this.enableReadOnlyReplica = enableReadOnlyReplica;
+		}
+
+		public Boolean getEnableReadOnlyReplicaManagement() {
+			return this.enableReadOnlyReplicaManagement;
+		}
+
+		public void setEnableReadOnlyReplicaManagement(Boolean enableReadOnlyReplicaManagement) {
+			this.enableReadOnlyReplicaManagement = enableReadOnlyReplicaManagement;
 		}
 
 		public List<String> getAvailableZones() {
@@ -784,6 +834,10 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 			private Long scaleStepInMerge;
 
+			private String upperScaleStrategy;
+
+			private String upperScaleStep;
+
 			public Boolean getAutoScale() {
 				return this.autoScale;
 			}
@@ -838,6 +892,22 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 			public void setScaleStepInMerge(Long scaleStepInMerge) {
 				this.scaleStepInMerge = scaleStepInMerge;
+			}
+
+			public String getUpperScaleStrategy() {
+				return this.upperScaleStrategy;
+			}
+
+			public void setUpperScaleStrategy(String upperScaleStrategy) {
+				this.upperScaleStrategy = upperScaleStrategy;
+			}
+
+			public String getUpperScaleStep() {
+				return this.upperScaleStep;
+			}
+
+			public void setUpperScaleStep(String upperScaleStep) {
+				this.upperScaleStep = upperScaleStep;
 			}
 		}
 

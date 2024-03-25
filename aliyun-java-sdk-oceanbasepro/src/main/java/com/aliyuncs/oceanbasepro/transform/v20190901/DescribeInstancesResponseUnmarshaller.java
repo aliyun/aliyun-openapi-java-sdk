@@ -64,6 +64,7 @@ public class DescribeInstancesResponseUnmarshaller {
 			data.setInstanceType(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].InstanceType"));
 			data.setInstanceRole(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].InstanceRole"));
 			data.setInTempCapacityStatus(_ctx.booleanValue("DescribeInstancesResponse.Instances["+ i +"].InTempCapacityStatus"));
+			data.setEnableReadOnlyReplicaManagement(_ctx.booleanValue("DescribeInstancesResponse.Instances["+ i +"].EnableReadOnlyReplicaManagement"));
 
 			List<String> availableZones = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeInstancesResponse.Instances["+ i +"].AvailableZones.Length"); j++) {
@@ -110,6 +111,7 @@ public class DescribeInstancesResponseUnmarshaller {
 			dataDiskAutoScaleConfig.setMaxDiskSize(_ctx.longValue("DescribeInstancesResponse.Instances["+ i +"].DataDiskAutoScaleConfig.MaxDiskSize"));
 			dataDiskAutoScaleConfig.setScaleStepInNormal(_ctx.longValue("DescribeInstancesResponse.Instances["+ i +"].DataDiskAutoScaleConfig.ScaleStepInNormal"));
 			dataDiskAutoScaleConfig.setScaleStepInMerge(_ctx.longValue("DescribeInstancesResponse.Instances["+ i +"].DataDiskAutoScaleConfig.ScaleStepInMerge"));
+			dataDiskAutoScaleConfig.setUpperScaleStrategy(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].DataDiskAutoScaleConfig.UpperScaleStrategy"));
 			data.setDataDiskAutoScaleConfig(dataDiskAutoScaleConfig);
 
 			instances.add(data);

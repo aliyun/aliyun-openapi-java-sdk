@@ -50,6 +50,7 @@ public class DescribeTenantsResponseUnmarshaller {
 			data.setUsedDiskSize(_ctx.doubleValue("DescribeTenantsResponse.Tenants["+ i +"].UsedDiskSize"));
 			data.setCharset(_ctx.stringValue("DescribeTenantsResponse.Tenants["+ i +"].Charset"));
 			data.setCollation(_ctx.stringValue("DescribeTenantsResponse.Tenants["+ i +"].Collation"));
+			data.setEnableReadOnlyReplica(_ctx.booleanValue("DescribeTenantsResponse.Tenants["+ i +"].EnableReadOnlyReplica"));
 
 			tenants.add(data);
 		}

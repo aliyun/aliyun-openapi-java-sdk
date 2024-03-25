@@ -48,6 +48,8 @@ public class CreateProjectRequest extends RpcAcsRequest<CreateProjectResponse> {
 
 	private String workerGradeId;
 
+	private String id;
+
 	@SerializedName("commonTransferConfig")
 	private CommonTransferConfig commonTransferConfig;
 
@@ -174,6 +176,17 @@ public class CreateProjectRequest extends RpcAcsRequest<CreateProjectResponse> {
 		this.workerGradeId = workerGradeId;
 		if(workerGradeId != null){
 			putBodyParameter("WorkerGradeId", workerGradeId);
+		}
+	}
+
+	public String getId() {
+		return this.id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+		if(id != null){
+			putBodyParameter("Id", id);
 		}
 	}
 
@@ -1603,17 +1616,32 @@ public class CreateProjectRequest extends RpcAcsRequest<CreateProjectResponse> {
 
 	public static class CommonTransferConfig {
 
-		@SerializedName("RocketMqSendMsgTimeout")
-		private Long rocketMqSendMsgTimeout;
-
 		@SerializedName("MqPartition")
 		private Integer mqPartition;
 
-		@SerializedName("TableCategory")
-		private String tableCategory;
+		@SerializedName("SyncSchemaColumnName")
+		private String syncSchemaColumnName;
 
 		@SerializedName("ActiveActive")
 		private Boolean activeActive;
+
+		@SerializedName("RocketMqEnableMsgTrace")
+		private Boolean rocketMqEnableMsgTrace;
+
+		@SerializedName("CustomColumns")
+		private List<CustomColumnsItem> customColumns;
+
+		@SerializedName("RocketMqProducerGroup")
+		private String rocketMqProducerGroup;
+
+		@SerializedName("MqPartitionMode")
+		private String mqPartitionMode;
+
+		@SerializedName("RocketMqSendMsgTimeout")
+		private Long rocketMqSendMsgTimeout;
+
+		@SerializedName("TableCategory")
+		private String tableCategory;
 
 		@SerializedName("DatahubTopicType")
 		private String datahubTopicType;
@@ -1621,28 +1649,14 @@ public class CreateProjectRequest extends RpcAcsRequest<CreateProjectResponse> {
 		@SerializedName("RocketMqMsgTags")
 		private String rocketMqMsgTags;
 
-		@SerializedName("RocketMqEnableMsgTrace")
-		private Boolean rocketMqEnableMsgTrace;
-
 		@SerializedName("DataWorksBusinessName")
 		private String dataWorksBusinessName;
 
-		@SerializedName("RocketMqProducerGroup")
-		private String rocketMqProducerGroup;
+		@SerializedName("SyncSchema")
+		private Boolean syncSchema;
 
 		@SerializedName("MqSerializerType")
 		private String mqSerializerType;
-
-		@SerializedName("MqPartitionMode")
-		private String mqPartitionMode;
-
-		public Long getRocketMqSendMsgTimeout() {
-			return this.rocketMqSendMsgTimeout;
-		}
-
-		public void setRocketMqSendMsgTimeout(Long rocketMqSendMsgTimeout) {
-			this.rocketMqSendMsgTimeout = rocketMqSendMsgTimeout;
-		}
 
 		public Integer getMqPartition() {
 			return this.mqPartition;
@@ -1652,12 +1666,12 @@ public class CreateProjectRequest extends RpcAcsRequest<CreateProjectResponse> {
 			this.mqPartition = mqPartition;
 		}
 
-		public String getTableCategory() {
-			return this.tableCategory;
+		public String getSyncSchemaColumnName() {
+			return this.syncSchemaColumnName;
 		}
 
-		public void setTableCategory(String tableCategory) {
-			this.tableCategory = tableCategory;
+		public void setSyncSchemaColumnName(String syncSchemaColumnName) {
+			this.syncSchemaColumnName = syncSchemaColumnName;
 		}
 
 		public Boolean getActiveActive() {
@@ -1666,6 +1680,54 @@ public class CreateProjectRequest extends RpcAcsRequest<CreateProjectResponse> {
 
 		public void setActiveActive(Boolean activeActive) {
 			this.activeActive = activeActive;
+		}
+
+		public Boolean getRocketMqEnableMsgTrace() {
+			return this.rocketMqEnableMsgTrace;
+		}
+
+		public void setRocketMqEnableMsgTrace(Boolean rocketMqEnableMsgTrace) {
+			this.rocketMqEnableMsgTrace = rocketMqEnableMsgTrace;
+		}
+
+		public List<CustomColumnsItem> getCustomColumns() {
+			return this.customColumns;
+		}
+
+		public void setCustomColumns(List<CustomColumnsItem> customColumns) {
+			this.customColumns = customColumns;
+		}
+
+		public String getRocketMqProducerGroup() {
+			return this.rocketMqProducerGroup;
+		}
+
+		public void setRocketMqProducerGroup(String rocketMqProducerGroup) {
+			this.rocketMqProducerGroup = rocketMqProducerGroup;
+		}
+
+		public String getMqPartitionMode() {
+			return this.mqPartitionMode;
+		}
+
+		public void setMqPartitionMode(String mqPartitionMode) {
+			this.mqPartitionMode = mqPartitionMode;
+		}
+
+		public Long getRocketMqSendMsgTimeout() {
+			return this.rocketMqSendMsgTimeout;
+		}
+
+		public void setRocketMqSendMsgTimeout(Long rocketMqSendMsgTimeout) {
+			this.rocketMqSendMsgTimeout = rocketMqSendMsgTimeout;
+		}
+
+		public String getTableCategory() {
+			return this.tableCategory;
+		}
+
+		public void setTableCategory(String tableCategory) {
+			this.tableCategory = tableCategory;
 		}
 
 		public String getDatahubTopicType() {
@@ -1684,14 +1746,6 @@ public class CreateProjectRequest extends RpcAcsRequest<CreateProjectResponse> {
 			this.rocketMqMsgTags = rocketMqMsgTags;
 		}
 
-		public Boolean getRocketMqEnableMsgTrace() {
-			return this.rocketMqEnableMsgTrace;
-		}
-
-		public void setRocketMqEnableMsgTrace(Boolean rocketMqEnableMsgTrace) {
-			this.rocketMqEnableMsgTrace = rocketMqEnableMsgTrace;
-		}
-
 		public String getDataWorksBusinessName() {
 			return this.dataWorksBusinessName;
 		}
@@ -1700,12 +1754,12 @@ public class CreateProjectRequest extends RpcAcsRequest<CreateProjectResponse> {
 			this.dataWorksBusinessName = dataWorksBusinessName;
 		}
 
-		public String getRocketMqProducerGroup() {
-			return this.rocketMqProducerGroup;
+		public Boolean getSyncSchema() {
+			return this.syncSchema;
 		}
 
-		public void setRocketMqProducerGroup(String rocketMqProducerGroup) {
-			this.rocketMqProducerGroup = rocketMqProducerGroup;
+		public void setSyncSchema(Boolean syncSchema) {
+			this.syncSchema = syncSchema;
 		}
 
 		public String getMqSerializerType() {
@@ -1716,12 +1770,29 @@ public class CreateProjectRequest extends RpcAcsRequest<CreateProjectResponse> {
 			this.mqSerializerType = mqSerializerType;
 		}
 
-		public String getMqPartitionMode() {
-			return this.mqPartitionMode;
-		}
+		public static class CustomColumnsItem {
 
-		public void setMqPartitionMode(String mqPartitionMode) {
-			this.mqPartitionMode = mqPartitionMode;
+			@SerializedName("Expression")
+			private String expression;
+
+			@SerializedName("ColumnName")
+			private String columnName;
+
+			public String getExpression() {
+				return this.expression;
+			}
+
+			public void setExpression(String expression) {
+				this.expression = expression;
+			}
+
+			public String getColumnName() {
+				return this.columnName;
+			}
+
+			public void setColumnName(String columnName) {
+				this.columnName = columnName;
+			}
 		}
 	}
 

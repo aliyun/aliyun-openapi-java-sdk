@@ -98,6 +98,8 @@ public class DescribeOasSQLHistoryListResponseUnmarshaller {
 			dataItem.setAvgUsedWorkerCount(_ctx.doubleValue("DescribeOasSQLHistoryListResponse.Data["+ i +"].AvgUsedWorkerCount"));
 			dataItem.setSumLogicalReads(_ctx.doubleValue("DescribeOasSQLHistoryListResponse.Data["+ i +"].SumLogicalReads"));
 			dataItem.setExecPs(_ctx.doubleValue("DescribeOasSQLHistoryListResponse.Data["+ i +"].ExecPs"));
+			dataItem.setAvgDbTime(_ctx.doubleValue("DescribeOasSQLHistoryListResponse.Data["+ i +"].AvgDbTime"));
+			dataItem.setSumDbTime(_ctx.doubleValue("DescribeOasSQLHistoryListResponse.Data["+ i +"].SumDbTime"));
 
 			data.add(dataItem);
 		}

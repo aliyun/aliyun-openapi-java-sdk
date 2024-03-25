@@ -74,6 +74,11 @@ public class DescribeInstanceResponseUnmarshaller {
 		instance.setProxyServiceStatus(_ctx.stringValue("DescribeInstanceResponse.Instance.ProxyServiceStatus"));
 		instance.setProxyClusterId(_ctx.stringValue("DescribeInstanceResponse.Instance.ProxyClusterId"));
 		instance.setCpuArchitecture(_ctx.stringValue("DescribeInstanceResponse.Instance.CpuArchitecture"));
+		instance.setUnitSpec(_ctx.stringValue("DescribeInstanceResponse.Instance.UnitSpec"));
+		instance.setSharedUnitNumLimit(_ctx.integerValue("DescribeInstanceResponse.Instance.SharedUnitNumLimit"));
+		instance.setExclusiveUnitNumLimit(_ctx.integerValue("DescribeInstanceResponse.Instance.ExclusiveUnitNumLimit"));
+		instance.setEnableReadOnlyReplica(_ctx.booleanValue("DescribeInstanceResponse.Instance.EnableReadOnlyReplica"));
+		instance.setEnableReadOnlyReplicaManagement(_ctx.booleanValue("DescribeInstanceResponse.Instance.EnableReadOnlyReplicaManagement"));
 
 		List<String> availableZones = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceResponse.Instance.AvailableZones.Length"); i++) {
@@ -154,6 +159,8 @@ public class DescribeInstanceResponseUnmarshaller {
 		dataDiskAutoScaleConfig.setMaxDiskSize(_ctx.longValue("DescribeInstanceResponse.Instance.DataDiskAutoScaleConfig.MaxDiskSize"));
 		dataDiskAutoScaleConfig.setScaleStepInNormal(_ctx.longValue("DescribeInstanceResponse.Instance.DataDiskAutoScaleConfig.ScaleStepInNormal"));
 		dataDiskAutoScaleConfig.setScaleStepInMerge(_ctx.longValue("DescribeInstanceResponse.Instance.DataDiskAutoScaleConfig.ScaleStepInMerge"));
+		dataDiskAutoScaleConfig.setUpperScaleStrategy(_ctx.stringValue("DescribeInstanceResponse.Instance.DataDiskAutoScaleConfig.UpperScaleStrategy"));
+		dataDiskAutoScaleConfig.setUpperScaleStep(_ctx.stringValue("DescribeInstanceResponse.Instance.DataDiskAutoScaleConfig.UpperScaleStep"));
 		instance.setDataDiskAutoScaleConfig(dataDiskAutoScaleConfig);
 
 		ReadOnlyResource readOnlyResource = new ReadOnlyResource();

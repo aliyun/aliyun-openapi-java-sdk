@@ -53,6 +53,10 @@ public class DescribeAvailableCpuResourceResponse extends AcsResponse {
 
 		private Long maxCpu;
 
+		private String reviewCode;
+
+		private String comment;
+
 		public Long getUnitNum() {
 			return this.unitNum;
 		}
@@ -75,6 +79,22 @@ public class DescribeAvailableCpuResourceResponse extends AcsResponse {
 
 		public void setMaxCpu(Long maxCpu) {
 			this.maxCpu = maxCpu;
+		}
+
+		public String getReviewCode() {
+			return this.reviewCode;
+		}
+
+		public void setReviewCode(String reviewCode) {
+			this.reviewCode = reviewCode;
+		}
+
+		public String getComment() {
+			return this.comment;
+		}
+
+		public void setComment(String comment) {
+			this.comment = comment;
 		}
 	}
 

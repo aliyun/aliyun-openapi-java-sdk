@@ -101,6 +101,8 @@ public class DescribeTenantResponse extends AcsResponse {
 
 		private String dataMergeTime;
 
+		private Boolean enableReadOnlyReplica;
+
 		private List<TenantConnectionsItem> tenantConnections;
 
 		private List<TenantZonesItem> tenantZones;
@@ -325,6 +327,14 @@ public class DescribeTenantResponse extends AcsResponse {
 
 		public void setDataMergeTime(String dataMergeTime) {
 			this.dataMergeTime = dataMergeTime;
+		}
+
+		public Boolean getEnableReadOnlyReplica() {
+			return this.enableReadOnlyReplica;
+		}
+
+		public void setEnableReadOnlyReplica(Boolean enableReadOnlyReplica) {
+			this.enableReadOnlyReplica = enableReadOnlyReplica;
 		}
 
 		public List<TenantConnectionsItem> getTenantConnections() {

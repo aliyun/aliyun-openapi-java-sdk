@@ -93,6 +93,8 @@ public class DescribeTenantsResponse extends AcsResponse {
 
 		private String collation;
 
+		private Boolean enableReadOnlyReplica;
+
 		public String getVpcId() {
 			return this.vpcId;
 		}
@@ -235,6 +237,14 @@ public class DescribeTenantsResponse extends AcsResponse {
 
 		public void setCollation(String collation) {
 			this.collation = collation;
+		}
+
+		public Boolean getEnableReadOnlyReplica() {
+			return this.enableReadOnlyReplica;
+		}
+
+		public void setEnableReadOnlyReplica(Boolean enableReadOnlyReplica) {
+			this.enableReadOnlyReplica = enableReadOnlyReplica;
 		}
 	}
 
