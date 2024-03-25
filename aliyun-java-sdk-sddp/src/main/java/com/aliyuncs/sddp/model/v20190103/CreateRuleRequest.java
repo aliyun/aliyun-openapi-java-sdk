@@ -37,6 +37,8 @@ public class CreateRuleRequest extends RpcAcsRequest<CreateRuleResponse> {
 
 	private String content;
 
+	private String sourceIp;
+
 	private Integer matchType;
 
 	private String lang;
@@ -128,6 +130,17 @@ public class CreateRuleRequest extends RpcAcsRequest<CreateRuleResponse> {
 		this.content = content;
 		if(content != null){
 			putQueryParameter("Content", content);
+		}
+	}
+
+	public String getSourceIp() {
+		return this.sourceIp;
+	}
+
+	public void setSourceIp(String sourceIp) {
+		this.sourceIp = sourceIp;
+		if(sourceIp != null){
+			putQueryParameter("SourceIp", sourceIp);
 		}
 	}
 

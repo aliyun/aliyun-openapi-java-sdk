@@ -27,6 +27,8 @@ public class ExecDatamaskRequest extends RpcAcsRequest<ExecDatamaskResponse> {
 
 	private String data;
 
+	private Integer featureType;
+
 	private Long templateId;
 
 	private String lang;
@@ -47,6 +49,17 @@ public class ExecDatamaskRequest extends RpcAcsRequest<ExecDatamaskResponse> {
 		this.data = data;
 		if(data != null){
 			putQueryParameter("Data", data);
+		}
+	}
+
+	public Integer getFeatureType() {
+		return this.featureType;
+	}
+
+	public void setFeatureType(Integer featureType) {
+		this.featureType = featureType;
+		if(featureType != null){
+			putQueryParameter("FeatureType", featureType.toString());
 		}
 	}
 

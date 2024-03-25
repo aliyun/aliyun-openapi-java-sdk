@@ -33,6 +33,8 @@ public class DescribeDataObjectColumnDetailRequest extends RpcAcsRequest<Describ
 
 	private String lang;
 
+	private Integer featureType;
+
 	private Integer currentPage;
 
 	private Long templateId;
@@ -86,6 +88,17 @@ public class DescribeDataObjectColumnDetailRequest extends RpcAcsRequest<Describ
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public Integer getFeatureType() {
+		return this.featureType;
+	}
+
+	public void setFeatureType(Integer featureType) {
+		this.featureType = featureType;
+		if(featureType != null){
+			putQueryParameter("FeatureType", featureType.toString());
 		}
 	}
 

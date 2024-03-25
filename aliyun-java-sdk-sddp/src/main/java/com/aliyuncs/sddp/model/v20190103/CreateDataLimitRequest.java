@@ -33,6 +33,8 @@ public class CreateDataLimitRequest extends RpcAcsRequest<CreateDataLimitRespons
 
 	private String password;
 
+	private String sourceIp;
+
 	private Integer enable;
 
 	private String lang;
@@ -44,6 +46,8 @@ public class CreateDataLimitRequest extends RpcAcsRequest<CreateDataLimitRespons
 	private Integer auditStatus;
 
 	private Integer autoScan;
+
+	private Integer featureType;
 
 	private Integer logStoreDay;
 
@@ -106,6 +110,17 @@ public class CreateDataLimitRequest extends RpcAcsRequest<CreateDataLimitRespons
 		this.password = password;
 		if(password != null){
 			putQueryParameter("Password", password);
+		}
+	}
+
+	public String getSourceIp() {
+		return this.sourceIp;
+	}
+
+	public void setSourceIp(String sourceIp) {
+		this.sourceIp = sourceIp;
+		if(sourceIp != null){
+			putQueryParameter("SourceIp", sourceIp);
 		}
 	}
 
@@ -172,6 +187,17 @@ public class CreateDataLimitRequest extends RpcAcsRequest<CreateDataLimitRespons
 		this.autoScan = autoScan;
 		if(autoScan != null){
 			putQueryParameter("AutoScan", autoScan.toString());
+		}
+	}
+
+	public Integer getFeatureType() {
+		return this.featureType;
+	}
+
+	public void setFeatureType(Integer featureType) {
+		this.featureType = featureType;
+		if(featureType != null){
+			putQueryParameter("FeatureType", featureType.toString());
 		}
 	}
 

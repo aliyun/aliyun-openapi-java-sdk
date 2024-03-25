@@ -29,9 +29,13 @@ public class CreateConfigRequest extends RpcAcsRequest<CreateConfigResponse> {
 
 	private String description;
 
+	private String sourceIp;
+
 	private String lang;
 
 	private String value;
+
+	private Integer featureType;
 	public CreateConfigRequest() {
 		super("Sddp", "2019-01-03", "CreateConfig", "sddp");
 		setMethod(MethodType.POST);
@@ -63,6 +67,17 @@ public class CreateConfigRequest extends RpcAcsRequest<CreateConfigResponse> {
 		}
 	}
 
+	public String getSourceIp() {
+		return this.sourceIp;
+	}
+
+	public void setSourceIp(String sourceIp) {
+		this.sourceIp = sourceIp;
+		if(sourceIp != null){
+			putQueryParameter("SourceIp", sourceIp);
+		}
+	}
+
 	public String getLang() {
 		return this.lang;
 	}
@@ -82,6 +97,17 @@ public class CreateConfigRequest extends RpcAcsRequest<CreateConfigResponse> {
 		this.value = value;
 		if(value != null){
 			putQueryParameter("Value", value);
+		}
+	}
+
+	public Integer getFeatureType() {
+		return this.featureType;
+	}
+
+	public void setFeatureType(Integer featureType) {
+		this.featureType = featureType;
+		if(featureType != null){
+			putQueryParameter("FeatureType", featureType.toString());
 		}
 	}
 

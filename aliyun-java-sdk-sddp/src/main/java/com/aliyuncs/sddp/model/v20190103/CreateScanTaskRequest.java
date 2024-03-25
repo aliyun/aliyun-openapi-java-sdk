@@ -35,11 +35,15 @@ public class CreateScanTaskRequest extends RpcAcsRequest<CreateScanTaskResponse>
 
 	private Integer runMinute;
 
+	private String sourceIp;
+
 	private Integer intervalDay;
 
 	private Integer scanRange;
 
 	private String lang;
+
+	private Integer featureType;
 
 	private String ossScanPath;
 
@@ -110,6 +114,17 @@ public class CreateScanTaskRequest extends RpcAcsRequest<CreateScanTaskResponse>
 		}
 	}
 
+	public String getSourceIp() {
+		return this.sourceIp;
+	}
+
+	public void setSourceIp(String sourceIp) {
+		this.sourceIp = sourceIp;
+		if(sourceIp != null){
+			putQueryParameter("SourceIp", sourceIp);
+		}
+	}
+
 	public Integer getIntervalDay() {
 		return this.intervalDay;
 	}
@@ -140,6 +155,17 @@ public class CreateScanTaskRequest extends RpcAcsRequest<CreateScanTaskResponse>
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public Integer getFeatureType() {
+		return this.featureType;
+	}
+
+	public void setFeatureType(Integer featureType) {
+		this.featureType = featureType;
+		if(featureType != null){
+			putQueryParameter("FeatureType", featureType.toString());
 		}
 	}
 

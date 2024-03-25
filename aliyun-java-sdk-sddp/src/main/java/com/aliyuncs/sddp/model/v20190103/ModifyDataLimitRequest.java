@@ -46,6 +46,8 @@ public class ModifyDataLimitRequest extends RpcAcsRequest<ModifyDataLimitRespons
 
 	private Integer autoScan;
 
+	private Integer featureType;
+
 	private List<String> securityGroupIdLists;
 
 	private Integer logStoreDay;
@@ -175,6 +177,17 @@ public class ModifyDataLimitRequest extends RpcAcsRequest<ModifyDataLimitRespons
 		this.autoScan = autoScan;
 		if(autoScan != null){
 			putQueryParameter("AutoScan", autoScan.toString());
+		}
+	}
+
+	public Integer getFeatureType() {
+		return this.featureType;
+	}
+
+	public void setFeatureType(Integer featureType) {
+		this.featureType = featureType;
+		if(featureType != null){
+			putQueryParameter("FeatureType", featureType.toString());
 		}
 	}
 

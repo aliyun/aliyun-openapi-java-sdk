@@ -25,6 +25,8 @@ import com.aliyuncs.sddp.Endpoint;
 public class DescribeCategoryTemplateListRequest extends RpcAcsRequest<DescribeCategoryTemplateListResponse> {
 	   
 
+	private Integer featureType;
+
 	private Integer currentPage;
 
 	private Integer pageSize;
@@ -39,6 +41,17 @@ public class DescribeCategoryTemplateListRequest extends RpcAcsRequest<DescribeC
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Integer getFeatureType() {
+		return this.featureType;
+	}
+
+	public void setFeatureType(Integer featureType) {
+		this.featureType = featureType;
+		if(featureType != null){
+			putQueryParameter("FeatureType", featureType.toString());
+		}
 	}
 
 	public Integer getCurrentPage() {

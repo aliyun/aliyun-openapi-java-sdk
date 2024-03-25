@@ -27,6 +27,8 @@ public class DisableUserConfigRequest extends RpcAcsRequest<DisableUserConfigRes
 
 	private String code;
 
+	private Integer featureType;
+
 	private String lang;
 	public DisableUserConfigRequest() {
 		super("Sddp", "2019-01-03", "DisableUserConfig", "sddp");
@@ -45,6 +47,17 @@ public class DisableUserConfigRequest extends RpcAcsRequest<DisableUserConfigRes
 		this.code = code;
 		if(code != null){
 			putQueryParameter("Code", code);
+		}
+	}
+
+	public Integer getFeatureType() {
+		return this.featureType;
+	}
+
+	public void setFeatureType(Integer featureType) {
+		this.featureType = featureType;
+		if(featureType != null){
+			putQueryParameter("FeatureType", featureType.toString());
 		}
 	}
 

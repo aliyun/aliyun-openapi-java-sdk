@@ -45,6 +45,8 @@ public class DescribeRulesRequest extends RpcAcsRequest<DescribeRulesResponse> {
 
 	private Integer ruleType;
 
+	private Integer featureType;
+
 	private String groupId;
 
 	private Integer contentCategory;
@@ -174,6 +176,17 @@ public class DescribeRulesRequest extends RpcAcsRequest<DescribeRulesResponse> {
 		this.ruleType = ruleType;
 		if(ruleType != null){
 			putQueryParameter("RuleType", ruleType.toString());
+		}
+	}
+
+	public Integer getFeatureType() {
+		return this.featureType;
+	}
+
+	public void setFeatureType(Integer featureType) {
+		this.featureType = featureType;
+		if(featureType != null){
+			putQueryParameter("FeatureType", featureType.toString());
 		}
 	}
 

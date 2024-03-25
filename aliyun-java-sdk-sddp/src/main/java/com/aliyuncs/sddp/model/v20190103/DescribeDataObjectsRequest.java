@@ -45,6 +45,8 @@ public class DescribeDataObjectsRequest extends RpcAcsRequest<DescribeDataObject
 
 	private String modelTagIds;
 
+	private Integer featureType;
+
 	private Long fileCategoryCode;
 
 	private Integer currentPage;
@@ -170,6 +172,17 @@ public class DescribeDataObjectsRequest extends RpcAcsRequest<DescribeDataObject
 		this.modelTagIds = modelTagIds;
 		if(modelTagIds != null){
 			putQueryParameter("ModelTagIds", modelTagIds);
+		}
+	}
+
+	public Integer getFeatureType() {
+		return this.featureType;
+	}
+
+	public void setFeatureType(Integer featureType) {
+		this.featureType = featureType;
+		if(featureType != null){
+			putQueryParameter("FeatureType", featureType.toString());
 		}
 	}
 

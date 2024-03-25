@@ -25,6 +25,8 @@ import com.aliyuncs.sddp.Endpoint;
 public class DescribeDataLimitSetRequest extends RpcAcsRequest<DescribeDataLimitSetResponse> {
 	   
 
+	private Integer featureType;
+
 	private Integer resourceType;
 
 	private String parentId;
@@ -37,6 +39,17 @@ public class DescribeDataLimitSetRequest extends RpcAcsRequest<DescribeDataLimit
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Integer getFeatureType() {
+		return this.featureType;
+	}
+
+	public void setFeatureType(Integer featureType) {
+		this.featureType = featureType;
+		if(featureType != null){
+			putQueryParameter("FeatureType", featureType.toString());
+		}
 	}
 
 	public Integer getResourceType() {
