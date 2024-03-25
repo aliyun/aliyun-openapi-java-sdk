@@ -40,6 +40,8 @@ public class CreateApplicationRequest extends RpcAcsRequest<CreateApplicationRes
 	private String tags;
 
 	private String name;
+
+	private String serviceId;
 	public CreateApplicationRequest() {
 		super("oos", "2019-06-01", "CreateApplication", "oos");
 		setMethod(MethodType.POST);
@@ -112,6 +114,17 @@ public class CreateApplicationRequest extends RpcAcsRequest<CreateApplicationRes
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
+		}
+	}
+
+	public String getServiceId() {
+		return this.serviceId;
+	}
+
+	public void setServiceId(String serviceId) {
+		this.serviceId = serviceId;
+		if(serviceId != null){
+			putQueryParameter("ServiceId", serviceId);
 		}
 	}
 

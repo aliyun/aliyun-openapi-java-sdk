@@ -68,8 +68,6 @@ public class GetOpsItemResponse extends AcsResponse {
 
 		private Map<Object,Object> tags;
 
-		private String dedupString;
-
 		private String resourceGroupId;
 
 		private String description;
@@ -162,14 +160,6 @@ public class GetOpsItemResponse extends AcsResponse {
 
 		public void setTags(Map<Object,Object> tags) {
 			this.tags = tags;
-		}
-
-		public String getDedupString() {
-			return this.dedupString;
-		}
-
-		public void setDedupString(String dedupString) {
-			this.dedupString = dedupString;
 		}
 
 		public String getResourceGroupId() {

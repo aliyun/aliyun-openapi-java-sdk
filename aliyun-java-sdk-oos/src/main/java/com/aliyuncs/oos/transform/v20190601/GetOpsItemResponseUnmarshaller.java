@@ -40,7 +40,6 @@ public class GetOpsItemResponseUnmarshaller {
 		opsItem.setSource(_ctx.stringValue("GetOpsItemResponse.OpsItem.Source"));
 		opsItem.setPriority(_ctx.integerValue("GetOpsItemResponse.OpsItem.Priority"));
 		opsItem.setTags(_ctx.mapValue("GetOpsItemResponse.OpsItem.Tags"));
-		opsItem.setDedupString(_ctx.stringValue("GetOpsItemResponse.OpsItem.DedupString"));
 		opsItem.setResourceGroupId(_ctx.stringValue("GetOpsItemResponse.OpsItem.ResourceGroupId"));
 		opsItem.setDescription(_ctx.stringValue("GetOpsItemResponse.OpsItem.Description"));
 		opsItem.setCreateBy(_ctx.stringValue("GetOpsItemResponse.OpsItem.CreateBy"));

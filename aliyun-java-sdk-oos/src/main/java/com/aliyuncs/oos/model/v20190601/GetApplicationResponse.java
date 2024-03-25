@@ -62,6 +62,8 @@ public class GetApplicationResponse extends AcsResponse {
 
 		private String applicationType;
 
+		private String serviceId;
+
 		private AlarmConfig alarmConfig;
 
 		public String getDescription() {
@@ -118,6 +120,14 @@ public class GetApplicationResponse extends AcsResponse {
 
 		public void setApplicationType(String applicationType) {
 			this.applicationType = applicationType;
+		}
+
+		public String getServiceId() {
+			return this.serviceId;
+		}
+
+		public void setServiceId(String serviceId) {
+			this.serviceId = serviceId;
 		}
 
 		public AlarmConfig getAlarmConfig() {

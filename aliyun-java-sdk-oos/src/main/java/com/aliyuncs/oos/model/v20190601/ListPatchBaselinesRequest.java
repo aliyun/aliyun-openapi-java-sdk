@@ -31,6 +31,8 @@ public class ListPatchBaselinesRequest extends RpcAcsRequest<ListPatchBaselinesR
 	@SerializedName("sources")
 	private List<String> sources;
 
+	private String resourceGroupId;
+
 	private String nextToken;
 
 	private String shareType;
@@ -66,6 +68,17 @@ public class ListPatchBaselinesRequest extends RpcAcsRequest<ListPatchBaselinesR
 		if (sources != null) {
 			putQueryParameter("Sources" , new Gson().toJson(sources));
 		}	
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
 	}
 
 	public String getNextToken() {

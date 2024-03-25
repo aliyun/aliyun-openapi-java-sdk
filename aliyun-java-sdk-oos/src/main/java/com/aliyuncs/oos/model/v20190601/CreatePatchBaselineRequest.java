@@ -37,6 +37,8 @@ public class CreatePatchBaselineRequest extends RpcAcsRequest<CreatePatchBaselin
 
 	private String description;
 
+	private String resourceGroupId;
+
 	private String rejectedPatchesAction;
 
 	private Boolean approvedPatchesEnableNonSecurity;
@@ -103,6 +105,17 @@ public class CreatePatchBaselineRequest extends RpcAcsRequest<CreatePatchBaselin
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

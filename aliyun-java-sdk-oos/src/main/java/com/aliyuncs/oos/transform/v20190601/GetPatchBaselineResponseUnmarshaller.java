@@ -43,6 +43,7 @@ public class GetPatchBaselineResponseUnmarshaller {
 		patchBaseline.setShareType(_ctx.stringValue("GetPatchBaselineResponse.PatchBaseline.ShareType"));
 		patchBaseline.setRejectedPatchesAction(_ctx.stringValue("GetPatchBaselineResponse.PatchBaseline.RejectedPatchesAction"));
 		patchBaseline.setApprovedPatchesEnableNonSecurity(_ctx.booleanValue("GetPatchBaselineResponse.PatchBaseline.ApprovedPatchesEnableNonSecurity"));
+		patchBaseline.setResourceGroupId(_ctx.stringValue("GetPatchBaselineResponse.PatchBaseline.ResourceGroupId"));
 
 		List<String> rejectedPatches = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetPatchBaselineResponse.PatchBaseline.RejectedPatches.Length"); i++) {

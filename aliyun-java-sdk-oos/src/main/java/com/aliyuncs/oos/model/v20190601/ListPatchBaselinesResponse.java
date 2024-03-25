@@ -89,6 +89,8 @@ public class ListPatchBaselinesResponse extends AcsResponse {
 
 		private Boolean approvedPatchesEnableNonSecurity;
 
+		private String resourceGroupId;
+
 		private List<TagsItem> tags;
 
 		private List<String> approvedPatches;
@@ -181,6 +183,14 @@ public class ListPatchBaselinesResponse extends AcsResponse {
 
 		public void setApprovedPatchesEnableNonSecurity(Boolean approvedPatchesEnableNonSecurity) {
 			this.approvedPatchesEnableNonSecurity = approvedPatchesEnableNonSecurity;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 
 		public List<TagsItem> getTags() {

@@ -104,6 +104,12 @@ public class ListTemplatesResponse extends AcsResponse {
 
 		private String shareType;
 
+		private Boolean isFavorite;
+
+		private String publisher;
+
+		private String constraints;
+
 		public String getHash() {
 			return this.hash;
 		}
@@ -246,6 +252,30 @@ public class ListTemplatesResponse extends AcsResponse {
 
 		public void setShareType(String shareType) {
 			this.shareType = shareType;
+		}
+
+		public Boolean getIsFavorite() {
+			return this.isFavorite;
+		}
+
+		public void setIsFavorite(Boolean isFavorite) {
+			this.isFavorite = isFavorite;
+		}
+
+		public String getPublisher() {
+			return this.publisher;
+		}
+
+		public void setPublisher(String publisher) {
+			this.publisher = publisher;
+		}
+
+		public String getConstraints() {
+			return this.constraints;
+		}
+
+		public void setConstraints(String constraints) {
+			this.constraints = constraints;
 		}
 	}
 

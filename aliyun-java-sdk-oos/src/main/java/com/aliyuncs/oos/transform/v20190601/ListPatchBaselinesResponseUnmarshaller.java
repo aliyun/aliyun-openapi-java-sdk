@@ -45,6 +45,7 @@ public class ListPatchBaselinesResponseUnmarshaller {
 			patchBaseline.setId(_ctx.stringValue("ListPatchBaselinesResponse.PatchBaselines["+ i +"].Id"));
 			patchBaseline.setShareType(_ctx.stringValue("ListPatchBaselinesResponse.PatchBaselines["+ i +"].ShareType"));
 			patchBaseline.setApprovedPatchesEnableNonSecurity(_ctx.booleanValue("ListPatchBaselinesResponse.PatchBaselines["+ i +"].ApprovedPatchesEnableNonSecurity"));
+			patchBaseline.setResourceGroupId(_ctx.stringValue("ListPatchBaselinesResponse.PatchBaselines["+ i +"].ResourceGroupId"));
 
 			List<String> approvedPatches = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListPatchBaselinesResponse.PatchBaselines["+ i +"].ApprovedPatches.Length"); j++) {

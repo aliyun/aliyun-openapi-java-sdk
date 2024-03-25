@@ -36,6 +36,7 @@ public class RegisterDefaultPatchBaselineResponseUnmarshaller {
 		patchBaseline.setApprovalRules(_ctx.stringValue("RegisterDefaultPatchBaselineResponse.PatchBaseline.ApprovalRules"));
 		patchBaseline.setId(_ctx.stringValue("RegisterDefaultPatchBaselineResponse.PatchBaseline.Id"));
 		patchBaseline.setShareType(_ctx.stringValue("RegisterDefaultPatchBaselineResponse.PatchBaseline.ShareType"));
+		patchBaseline.setResourceGroupId(_ctx.stringValue("RegisterDefaultPatchBaselineResponse.PatchBaseline.ResourceGroupId"));
 		registerDefaultPatchBaselineResponse.setPatchBaseline(patchBaseline);
 	 
 	 	return registerDefaultPatchBaselineResponse;

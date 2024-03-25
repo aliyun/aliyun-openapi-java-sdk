@@ -25,6 +25,8 @@ import com.aliyuncs.oos.Endpoint;
 public class GenerateExecutionPolicyRequest extends RpcAcsRequest<GenerateExecutionPolicyResponse> {
 	   
 
+	private String templateContent;
+
 	private String templateVersion;
 
 	private String ramRole;
@@ -37,6 +39,17 @@ public class GenerateExecutionPolicyRequest extends RpcAcsRequest<GenerateExecut
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getTemplateContent() {
+		return this.templateContent;
+	}
+
+	public void setTemplateContent(String templateContent) {
+		this.templateContent = templateContent;
+		if(templateContent != null){
+			putQueryParameter("TemplateContent", templateContent);
+		}
 	}
 
 	public String getTemplateVersion() {

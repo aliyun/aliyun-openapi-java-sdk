@@ -38,6 +38,7 @@ public class GetApplicationResponseUnmarshaller {
 		application.setName(_ctx.stringValue("GetApplicationResponse.Application.Name"));
 		application.setCreateDate(_ctx.stringValue("GetApplicationResponse.Application.CreateDate"));
 		application.setApplicationType(_ctx.stringValue("GetApplicationResponse.Application.ApplicationType"));
+		application.setServiceId(_ctx.stringValue("GetApplicationResponse.Application.ServiceId"));
 
 		AlarmConfig alarmConfig = new AlarmConfig();
 		alarmConfig.setHealthCheckUrl(_ctx.stringValue("GetApplicationResponse.Application.AlarmConfig.HealthCheckUrl"));

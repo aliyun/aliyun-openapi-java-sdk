@@ -22,16 +22,22 @@ import com.aliyuncs.oos.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteApplicationGroupRequest extends RpcAcsRequest<DeleteApplicationGroupResponse> {
+public class DescribeApplicationGroupBillRequest extends RpcAcsRequest<DescribeApplicationGroupBillResponse> {
 	   
 
-	private Boolean retainResource;
+	private String nextToken;
+
+	private String billingCycle;
+
+	private String resourceType;
 
 	private String applicationName;
 
 	private String name;
-	public DeleteApplicationGroupRequest() {
-		super("oos", "2019-06-01", "DeleteApplicationGroup", "oos");
+
+	private Integer maxResults;
+	public DescribeApplicationGroupBillRequest() {
+		super("oos", "2019-06-01", "DescribeApplicationGroupBill", "oos");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,14 +45,36 @@ public class DeleteApplicationGroupRequest extends RpcAcsRequest<DeleteApplicati
 		} catch (Exception e) {}
 	}
 
-	public Boolean getRetainResource() {
-		return this.retainResource;
+	public String getNextToken() {
+		return this.nextToken;
 	}
 
-	public void setRetainResource(Boolean retainResource) {
-		this.retainResource = retainResource;
-		if(retainResource != null){
-			putQueryParameter("RetainResource", retainResource.toString());
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
+		}
+	}
+
+	public String getBillingCycle() {
+		return this.billingCycle;
+	}
+
+	public void setBillingCycle(String billingCycle) {
+		this.billingCycle = billingCycle;
+		if(billingCycle != null){
+			putQueryParameter("BillingCycle", billingCycle);
+		}
+	}
+
+	public String getResourceType() {
+		return this.resourceType;
+	}
+
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType);
 		}
 	}
 
@@ -72,9 +100,20 @@ public class DeleteApplicationGroupRequest extends RpcAcsRequest<DeleteApplicati
 		}
 	}
 
+	public Integer getMaxResults() {
+		return this.maxResults;
+	}
+
+	public void setMaxResults(Integer maxResults) {
+		this.maxResults = maxResults;
+		if(maxResults != null){
+			putQueryParameter("MaxResults", maxResults.toString());
+		}
+	}
+
 	@Override
-	public Class<DeleteApplicationGroupResponse> getResponseClass() {
-		return DeleteApplicationGroupResponse.class;
+	public Class<DescribeApplicationGroupBillResponse> getResponseClass() {
+		return DescribeApplicationGroupBillResponse.class;
 	}
 
 }

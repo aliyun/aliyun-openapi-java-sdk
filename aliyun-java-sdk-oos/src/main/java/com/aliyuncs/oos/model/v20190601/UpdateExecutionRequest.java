@@ -29,7 +29,11 @@ public class UpdateExecutionRequest extends RpcAcsRequest<UpdateExecutionRespons
 
 	private String description;
 
+	private String tags;
+
 	private String executionId;
+
+	private String resourceGroupId;
 
 	private String parameters;
 	public UpdateExecutionRequest() {
@@ -63,6 +67,17 @@ public class UpdateExecutionRequest extends RpcAcsRequest<UpdateExecutionRespons
 		}
 	}
 
+	public String getTags() {
+		return this.tags;
+	}
+
+	public void setTags(String tags) {
+		this.tags = tags;
+		if(tags != null){
+			putQueryParameter("Tags", tags);
+		}
+	}
+
 	public String getExecutionId() {
 		return this.executionId;
 	}
@@ -71,6 +86,17 @@ public class UpdateExecutionRequest extends RpcAcsRequest<UpdateExecutionRespons
 		this.executionId = executionId;
 		if(executionId != null){
 			putQueryParameter("ExecutionId", executionId);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 
