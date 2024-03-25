@@ -39,6 +39,7 @@ public class ListFeatureViewsResponseUnmarshaller {
 			featureViewsItem.setName(_ctx.stringValue("ListFeatureViewsResponse.FeatureViews["+ i +"].Name"));
 			featureViewsItem.setOwner(_ctx.stringValue("ListFeatureViewsResponse.FeatureViews["+ i +"].Owner"));
 			featureViewsItem.setType(_ctx.stringValue("ListFeatureViewsResponse.FeatureViews["+ i +"].Type"));
+			featureViewsItem.setWriteToFeatureDB(_ctx.booleanValue("ListFeatureViewsResponse.FeatureViews["+ i +"].WriteToFeatureDB"));
 			featureViewsItem.setGmtCreateTime(_ctx.stringValue("ListFeatureViewsResponse.FeatureViews["+ i +"].GmtCreateTime"));
 			featureViewsItem.setGmtModifiedTime(_ctx.stringValue("ListFeatureViewsResponse.FeatureViews["+ i +"].GmtModifiedTime"));
 			featureViewsItem.setRegisterTable(_ctx.stringValue("ListFeatureViewsResponse.FeatureViews["+ i +"].RegisterTable"));

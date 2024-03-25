@@ -55,6 +55,8 @@ public class GetFeatureViewResponse extends AcsResponse {
 
 	private String registerDatasourceName;
 
+	private Boolean writeToFeatureDB;
+
 	private Boolean syncOnlineTable;
 
 	private Integer tTL;
@@ -189,6 +191,14 @@ public class GetFeatureViewResponse extends AcsResponse {
 
 	public void setRegisterDatasourceName(String registerDatasourceName) {
 		this.registerDatasourceName = registerDatasourceName;
+	}
+
+	public Boolean getWriteToFeatureDB() {
+		return this.writeToFeatureDB;
+	}
+
+	public void setWriteToFeatureDB(Boolean writeToFeatureDB) {
+		this.writeToFeatureDB = writeToFeatureDB;
 	}
 
 	public Boolean getSyncOnlineTable() {

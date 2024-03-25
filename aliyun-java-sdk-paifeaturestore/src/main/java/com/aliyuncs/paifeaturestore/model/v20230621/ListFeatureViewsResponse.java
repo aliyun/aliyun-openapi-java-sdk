@@ -71,6 +71,8 @@ public class ListFeatureViewsResponse extends AcsResponse {
 
 		private String type;
 
+		private Boolean writeToFeatureDB;
+
 		private String gmtCreateTime;
 
 		private String gmtModifiedTime;
@@ -137,6 +139,14 @@ public class ListFeatureViewsResponse extends AcsResponse {
 
 		public void setType(String type) {
 			this.type = type;
+		}
+
+		public Boolean getWriteToFeatureDB() {
+			return this.writeToFeatureDB;
+		}
+
+		public void setWriteToFeatureDB(Boolean writeToFeatureDB) {
+			this.writeToFeatureDB = writeToFeatureDB;
 		}
 
 		public String getGmtCreateTime() {

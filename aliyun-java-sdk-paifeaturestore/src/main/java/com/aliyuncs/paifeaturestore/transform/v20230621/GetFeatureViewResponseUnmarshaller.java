@@ -41,6 +41,7 @@ public class GetFeatureViewResponseUnmarshaller {
 		getFeatureViewResponse.setRegisterTable(_ctx.stringValue("GetFeatureViewResponse.RegisterTable"));
 		getFeatureViewResponse.setRegisterDatasourceId(_ctx.stringValue("GetFeatureViewResponse.RegisterDatasourceId"));
 		getFeatureViewResponse.setRegisterDatasourceName(_ctx.stringValue("GetFeatureViewResponse.RegisterDatasourceName"));
+		getFeatureViewResponse.setWriteToFeatureDB(_ctx.booleanValue("GetFeatureViewResponse.WriteToFeatureDB"));
 		getFeatureViewResponse.setSyncOnlineTable(_ctx.booleanValue("GetFeatureViewResponse.SyncOnlineTable"));
 		getFeatureViewResponse.setTTL(_ctx.integerValue("GetFeatureViewResponse.TTL"));
 		getFeatureViewResponse.setConfig(_ctx.stringValue("GetFeatureViewResponse.Config"));
