@@ -30,8 +30,6 @@ public class StartSyncExecutionRequest extends RpcAcsRequest<StartSyncExecutionR
 
 	private String input;
 
-	private String requestId;
-
 	private String flowName;
 	public StartSyncExecutionRequest() {
 		super("fnf", "2019-03-15", "StartSyncExecution", "fnf");
@@ -62,17 +60,6 @@ public class StartSyncExecutionRequest extends RpcAcsRequest<StartSyncExecutionR
 		this.input = input;
 		if(input != null){
 			putBodyParameter("Input", input);
-		}
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-		if(requestId != null){
-			putQueryParameter("RequestId", requestId);
 		}
 	}
 

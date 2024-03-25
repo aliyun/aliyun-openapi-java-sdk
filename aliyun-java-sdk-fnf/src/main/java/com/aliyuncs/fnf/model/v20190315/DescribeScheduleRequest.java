@@ -27,8 +27,6 @@ public class DescribeScheduleRequest extends RpcAcsRequest<DescribeScheduleRespo
 
 	private String scheduleName;
 
-	private String requestId;
-
 	private String flowName;
 	public DescribeScheduleRequest() {
 		super("fnf", "2019-03-15", "DescribeSchedule", "fnf");
@@ -47,17 +45,6 @@ public class DescribeScheduleRequest extends RpcAcsRequest<DescribeScheduleRespo
 		this.scheduleName = scheduleName;
 		if(scheduleName != null){
 			putQueryParameter("ScheduleName", scheduleName);
-		}
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-		if(requestId != null){
-			putQueryParameter("RequestId", requestId);
 		}
 	}
 

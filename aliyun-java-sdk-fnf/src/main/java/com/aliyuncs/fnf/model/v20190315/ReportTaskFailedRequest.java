@@ -29,8 +29,6 @@ public class ReportTaskFailedRequest extends RpcAcsRequest<ReportTaskFailedRespo
 
 	private String error;
 
-	private String requestId;
-
 	private String taskToken;
 	public ReportTaskFailedRequest() {
 		super("fnf", "2019-03-15", "ReportTaskFailed", "fnf");
@@ -60,17 +58,6 @@ public class ReportTaskFailedRequest extends RpcAcsRequest<ReportTaskFailedRespo
 		this.error = error;
 		if(error != null){
 			putBodyParameter("Error", error);
-		}
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-		if(requestId != null){
-			putQueryParameter("RequestId", requestId);
 		}
 	}
 

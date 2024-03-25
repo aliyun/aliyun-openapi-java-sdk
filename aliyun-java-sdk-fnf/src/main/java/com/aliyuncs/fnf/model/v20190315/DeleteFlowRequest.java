@@ -25,27 +25,14 @@ import com.aliyuncs.fnf.Endpoint;
 public class DeleteFlowRequest extends RpcAcsRequest<DeleteFlowResponse> {
 	   
 
-	private String requestId;
-
 	private String name;
 	public DeleteFlowRequest() {
 		super("fnf", "2019-03-15", "DeleteFlow", "fnf");
-		setMethod(MethodType.GET);
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-		if(requestId != null){
-			putQueryParameter("RequestId", requestId);
-		}
 	}
 
 	public String getName() {

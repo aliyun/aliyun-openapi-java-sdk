@@ -29,8 +29,6 @@ public class UpdateFlowRequest extends RpcAcsRequest<UpdateFlowResponse> {
 
 	private String type;
 
-	private String requestId;
-
 	private String roleArn;
 
 	private String name;
@@ -64,17 +62,6 @@ public class UpdateFlowRequest extends RpcAcsRequest<UpdateFlowResponse> {
 		this.type = type;
 		if(type != null){
 			putBodyParameter("Type", type);
-		}
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-		if(requestId != null){
-			putQueryParameter("RequestId", requestId);
 		}
 	}
 

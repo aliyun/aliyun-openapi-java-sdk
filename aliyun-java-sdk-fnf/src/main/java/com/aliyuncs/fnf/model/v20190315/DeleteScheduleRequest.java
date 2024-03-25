@@ -27,12 +27,10 @@ public class DeleteScheduleRequest extends RpcAcsRequest<DeleteScheduleResponse>
 
 	private String scheduleName;
 
-	private String requestId;
-
 	private String flowName;
 	public DeleteScheduleRequest() {
 		super("fnf", "2019-03-15", "DeleteSchedule", "fnf");
-		setMethod(MethodType.GET);
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -47,17 +45,6 @@ public class DeleteScheduleRequest extends RpcAcsRequest<DeleteScheduleResponse>
 		this.scheduleName = scheduleName;
 		if(scheduleName != null){
 			putQueryParameter("ScheduleName", scheduleName);
-		}
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-		if(requestId != null){
-			putQueryParameter("RequestId", requestId);
 		}
 	}
 

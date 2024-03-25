@@ -27,8 +27,6 @@ public class ListFlowsRequest extends RpcAcsRequest<ListFlowsResponse> {
 
 	private String nextToken;
 
-	private String requestId;
-
 	private Integer limit;
 	public ListFlowsRequest() {
 		super("fnf", "2019-03-15", "ListFlows", "fnf");
@@ -47,17 +45,6 @@ public class ListFlowsRequest extends RpcAcsRequest<ListFlowsResponse> {
 		this.nextToken = nextToken;
 		if(nextToken != null){
 			putQueryParameter("NextToken", nextToken);
-		}
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-		if(requestId != null){
-			putQueryParameter("RequestId", requestId);
 		}
 	}
 
