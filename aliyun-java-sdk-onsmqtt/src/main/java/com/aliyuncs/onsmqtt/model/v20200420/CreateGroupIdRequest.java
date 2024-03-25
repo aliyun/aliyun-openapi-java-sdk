@@ -29,7 +29,7 @@ public class CreateGroupIdRequest extends RpcAcsRequest<CreateGroupIdResponse> {
 
 	private String instanceId;
 	public CreateGroupIdRequest() {
-		super("OnsMqtt", "2020-04-20", "CreateGroupId");
+		super("OnsMqtt", "2020-04-20", "CreateGroupId", "onsmqtt");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

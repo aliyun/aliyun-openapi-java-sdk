@@ -29,7 +29,7 @@ public class DeleteCaCertificateRequest extends RpcAcsRequest<DeleteCaCertificat
 
 	private String mqttInstanceId;
 	public DeleteCaCertificateRequest() {
-		super("OnsMqtt", "2020-04-20", "DeleteCaCertificate");
+		super("OnsMqtt", "2020-04-20", "DeleteCaCertificate", "onsmqtt");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

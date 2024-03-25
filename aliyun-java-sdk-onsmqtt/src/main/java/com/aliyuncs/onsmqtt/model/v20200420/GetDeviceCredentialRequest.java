@@ -29,7 +29,7 @@ public class GetDeviceCredentialRequest extends RpcAcsRequest<GetDeviceCredentia
 
 	private String instanceId;
 	public GetDeviceCredentialRequest() {
-		super("OnsMqtt", "2020-04-20", "GetDeviceCredential");
+		super("OnsMqtt", "2020-04-20", "GetDeviceCredential", "onsmqtt");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

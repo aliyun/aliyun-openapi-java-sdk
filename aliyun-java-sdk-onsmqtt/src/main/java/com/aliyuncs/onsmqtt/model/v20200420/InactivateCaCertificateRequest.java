@@ -29,7 +29,7 @@ public class InactivateCaCertificateRequest extends RpcAcsRequest<InactivateCaCe
 
 	private String mqttInstanceId;
 	public InactivateCaCertificateRequest() {
-		super("OnsMqtt", "2020-04-20", "InactivateCaCertificate");
+		super("OnsMqtt", "2020-04-20", "InactivateCaCertificate", "onsmqtt");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
