@@ -42,7 +42,7 @@ public class DeleteFlowRequest extends RpcAcsRequest<DeleteFlowResponse> {
 	public void setName(String name) {
 		this.name = name;
 		if(name != null){
-			putQueryParameter("Name", name);
+			putBodyParameter("Name", name);
 		}
 	}
 

@@ -44,7 +44,7 @@ public class DeleteScheduleRequest extends RpcAcsRequest<DeleteScheduleResponse>
 	public void setScheduleName(String scheduleName) {
 		this.scheduleName = scheduleName;
 		if(scheduleName != null){
-			putQueryParameter("ScheduleName", scheduleName);
+			putBodyParameter("ScheduleName", scheduleName);
 		}
 	}
 
@@ -55,7 +55,7 @@ public class DeleteScheduleRequest extends RpcAcsRequest<DeleteScheduleResponse>
 	public void setFlowName(String flowName) {
 		this.flowName = flowName;
 		if(flowName != null){
-			putQueryParameter("FlowName", flowName);
+			putBodyParameter("FlowName", flowName);
 		}
 	}
 
