@@ -53,7 +53,7 @@ public class ListTransitRouterPrefixListAssociationRequest extends RpcAcsRequest
 
 	private String status;
 	public ListTransitRouterPrefixListAssociationRequest() {
-		super("Cbn", "2017-09-12", "ListTransitRouterPrefixListAssociation");
+		super("Cbn", "2017-09-12", "ListTransitRouterPrefixListAssociation", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

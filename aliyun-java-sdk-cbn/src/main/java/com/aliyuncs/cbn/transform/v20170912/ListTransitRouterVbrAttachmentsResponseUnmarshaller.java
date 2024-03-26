@@ -47,6 +47,7 @@ public class ListTransitRouterVbrAttachmentsResponseUnmarshaller {
 			transitRouterAttachment.setVbrId(_ctx.stringValue("ListTransitRouterVbrAttachmentsResponse.TransitRouterAttachments["+ i +"].VbrId"));
 			transitRouterAttachment.setTransitRouterAttachmentName(_ctx.stringValue("ListTransitRouterVbrAttachmentsResponse.TransitRouterAttachments["+ i +"].TransitRouterAttachmentName"));
 			transitRouterAttachment.setCenId(_ctx.stringValue("ListTransitRouterVbrAttachmentsResponse.TransitRouterAttachments["+ i +"].CenId"));
+			transitRouterAttachment.setOrderType(_ctx.stringValue("ListTransitRouterVbrAttachmentsResponse.TransitRouterAttachments["+ i +"].OrderType"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("ListTransitRouterVbrAttachmentsResponse.TransitRouterAttachments["+ i +"].Tags.Length"); j++) {

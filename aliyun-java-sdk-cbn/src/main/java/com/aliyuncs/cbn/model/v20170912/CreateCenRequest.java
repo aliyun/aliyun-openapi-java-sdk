@@ -44,7 +44,7 @@ public class CreateCenRequest extends RpcAcsRequest<CreateCenResponse> {
 
 	private String name;
 	public CreateCenRequest() {
-		super("Cbn", "2017-09-12", "CreateCen");
+		super("Cbn", "2017-09-12", "CreateCen", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

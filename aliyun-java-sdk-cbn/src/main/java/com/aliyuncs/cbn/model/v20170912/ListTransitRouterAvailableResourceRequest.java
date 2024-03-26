@@ -35,7 +35,7 @@ public class ListTransitRouterAvailableResourceRequest extends RpcAcsRequest<Lis
 
 	private Boolean supportMulticast;
 	public ListTransitRouterAvailableResourceRequest() {
-		super("Cbn", "2017-09-12", "ListTransitRouterAvailableResource");
+		super("Cbn", "2017-09-12", "ListTransitRouterAvailableResource", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

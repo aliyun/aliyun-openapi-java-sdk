@@ -66,7 +66,7 @@ public class ListTransitRouterRouteEntriesRequest extends RpcAcsRequest<ListTran
 
 	private String transitRouterRouteEntryNextHopResourceId;
 	public ListTransitRouterRouteEntriesRequest() {
-		super("Cbn", "2017-09-12", "ListTransitRouterRouteEntries");
+		super("Cbn", "2017-09-12", "ListTransitRouterRouteEntries", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

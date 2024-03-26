@@ -48,7 +48,7 @@ public class ListCenChildInstanceRouteEntriesToAttachmentRequest extends RpcAcsR
 
 	private String childInstanceRouteTableId;
 	public ListCenChildInstanceRouteEntriesToAttachmentRequest() {
-		super("Cbn", "2017-09-12", "ListCenChildInstanceRouteEntriesToAttachment");
+		super("Cbn", "2017-09-12", "ListCenChildInstanceRouteEntriesToAttachment", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

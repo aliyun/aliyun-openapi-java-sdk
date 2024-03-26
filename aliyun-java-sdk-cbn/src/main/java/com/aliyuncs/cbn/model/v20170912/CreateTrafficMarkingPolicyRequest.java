@@ -50,7 +50,7 @@ public class CreateTrafficMarkingPolicyRequest extends RpcAcsRequest<CreateTraff
 
 	private Integer markingDscp;
 	public CreateTrafficMarkingPolicyRequest() {
-		super("Cbn", "2017-09-12", "CreateTrafficMarkingPolicy");
+		super("Cbn", "2017-09-12", "CreateTrafficMarkingPolicy", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

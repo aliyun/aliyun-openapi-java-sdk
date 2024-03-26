@@ -91,6 +91,8 @@ public class DescribeGrantRulesToCenResponse extends AcsResponse {
 
 		private Long cenOwnerId;
 
+		private Long createTime;
+
 		public String getChildInstanceType() {
 			return this.childInstanceType;
 		}
@@ -145,6 +147,14 @@ public class DescribeGrantRulesToCenResponse extends AcsResponse {
 
 		public void setCenOwnerId(Long cenOwnerId) {
 			this.cenOwnerId = cenOwnerId;
+		}
+
+		public Long getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
 		}
 	}
 

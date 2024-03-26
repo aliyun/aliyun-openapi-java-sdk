@@ -43,7 +43,7 @@ public class DescribeTransitRouteTableAggregationRequest extends RpcAcsRequest<D
 
 	private Long maxResults;
 	public DescribeTransitRouteTableAggregationRequest() {
-		super("Cbn", "2017-09-12", "DescribeTransitRouteTableAggregation");
+		super("Cbn", "2017-09-12", "DescribeTransitRouteTableAggregation", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

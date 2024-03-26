@@ -47,7 +47,7 @@ public class CreateTransitRouteTableAggregationRequest extends RpcAcsRequest<Cre
 
 	private String transitRouteTableAggregationCidr;
 	public CreateTransitRouteTableAggregationRequest() {
-		super("Cbn", "2017-09-12", "CreateTransitRouteTableAggregation");
+		super("Cbn", "2017-09-12", "CreateTransitRouteTableAggregation", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

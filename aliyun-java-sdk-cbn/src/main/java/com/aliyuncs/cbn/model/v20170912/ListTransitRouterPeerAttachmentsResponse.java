@@ -113,6 +113,8 @@ public class ListTransitRouterPeerAttachmentsResponse extends AcsResponse {
 
 		private String cenId;
 
+		private String defaultLinkType;
+
 		private List<Tag> tags;
 
 		public String getCreationTime() {
@@ -257,6 +259,14 @@ public class ListTransitRouterPeerAttachmentsResponse extends AcsResponse {
 
 		public void setCenId(String cenId) {
 			this.cenId = cenId;
+		}
+
+		public String getDefaultLinkType() {
+			return this.defaultLinkType;
+		}
+
+		public void setDefaultLinkType(String defaultLinkType) {
+			this.defaultLinkType = defaultLinkType;
 		}
 
 		public List<Tag> getTags() {

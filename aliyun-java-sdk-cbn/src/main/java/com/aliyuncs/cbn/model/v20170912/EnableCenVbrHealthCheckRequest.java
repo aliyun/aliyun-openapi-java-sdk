@@ -31,6 +31,8 @@ public class EnableCenVbrHealthCheckRequest extends RpcAcsRequest<EnableCenVbrHe
 
 	private String healthCheckTargetIp;
 
+	private String description;
+
 	private Integer healthyThreshold;
 
 	private Long vbrInstanceOwnerId;
@@ -51,7 +53,7 @@ public class EnableCenVbrHealthCheckRequest extends RpcAcsRequest<EnableCenVbrHe
 
 	private String vbrInstanceId;
 	public EnableCenVbrHealthCheckRequest() {
-		super("Cbn", "2017-09-12", "EnableCenVbrHealthCheck");
+		super("Cbn", "2017-09-12", "EnableCenVbrHealthCheck", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -89,6 +91,17 @@ public class EnableCenVbrHealthCheckRequest extends RpcAcsRequest<EnableCenVbrHe
 		this.healthCheckTargetIp = healthCheckTargetIp;
 		if(healthCheckTargetIp != null){
 			putQueryParameter("HealthCheckTargetIp", healthCheckTargetIp);
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
 		}
 	}
 

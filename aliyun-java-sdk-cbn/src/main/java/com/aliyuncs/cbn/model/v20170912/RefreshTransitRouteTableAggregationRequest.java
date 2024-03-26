@@ -39,7 +39,7 @@ public class RefreshTransitRouteTableAggregationRequest extends RpcAcsRequest<Re
 
 	private String transitRouteTableAggregationCidr;
 	public RefreshTransitRouteTableAggregationRequest() {
-		super("Cbn", "2017-09-12", "RefreshTransitRouteTableAggregation");
+		super("Cbn", "2017-09-12", "RefreshTransitRouteTableAggregation", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

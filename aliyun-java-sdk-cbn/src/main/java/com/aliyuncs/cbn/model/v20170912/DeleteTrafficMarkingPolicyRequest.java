@@ -39,7 +39,7 @@ public class DeleteTrafficMarkingPolicyRequest extends RpcAcsRequest<DeleteTraff
 
 	private Long ownerId;
 	public DeleteTrafficMarkingPolicyRequest() {
-		super("Cbn", "2017-09-12", "DeleteTrafficMarkingPolicy");
+		super("Cbn", "2017-09-12", "DeleteTrafficMarkingPolicy", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -46,7 +46,7 @@ public class DeregisterTransitRouterMulticastGroupMembersRequest extends RpcAcsR
 
 	private Long ownerId;
 	public DeregisterTransitRouterMulticastGroupMembersRequest() {
-		super("Cbn", "2017-09-12", "DeregisterTransitRouterMulticastGroupMembers");
+		super("Cbn", "2017-09-12", "DeregisterTransitRouterMulticastGroupMembers", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

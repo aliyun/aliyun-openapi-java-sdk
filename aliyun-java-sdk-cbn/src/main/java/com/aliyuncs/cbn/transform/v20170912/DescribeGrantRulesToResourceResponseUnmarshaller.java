@@ -37,6 +37,7 @@ public class DescribeGrantRulesToResourceResponseUnmarshaller {
 			grantRule.setCenOwnerId(_ctx.longValue("DescribeGrantRulesToResourceResponse.GrantRules["+ i +"].CenOwnerId"));
 			grantRule.setOrderType(_ctx.stringValue("DescribeGrantRulesToResourceResponse.GrantRules["+ i +"].OrderType"));
 			grantRule.setCenId(_ctx.stringValue("DescribeGrantRulesToResourceResponse.GrantRules["+ i +"].CenId"));
+			grantRule.setCreateTime(_ctx.stringValue("DescribeGrantRulesToResourceResponse.GrantRules["+ i +"].CreateTime"));
 
 			grantRules.add(grantRule);
 		}

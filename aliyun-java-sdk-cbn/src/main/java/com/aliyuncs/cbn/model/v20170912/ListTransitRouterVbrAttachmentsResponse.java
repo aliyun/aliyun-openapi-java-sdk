@@ -101,6 +101,8 @@ public class ListTransitRouterVbrAttachmentsResponse extends AcsResponse {
 
 		private String cenId;
 
+		private String orderType;
+
 		private List<Tag> tags;
 
 		public String getCreationTime() {
@@ -197,6 +199,14 @@ public class ListTransitRouterVbrAttachmentsResponse extends AcsResponse {
 
 		public void setCenId(String cenId) {
 			this.cenId = cenId;
+		}
+
+		public String getOrderType() {
+			return this.orderType;
+		}
+
+		public void setOrderType(String orderType) {
+			this.orderType = orderType;
 		}
 
 		public List<Tag> getTags() {

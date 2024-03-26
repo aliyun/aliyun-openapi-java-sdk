@@ -44,7 +44,7 @@ public class DisassociateTransitRouterMulticastDomainRequest extends RpcAcsReque
 
 	private String transitRouterAttachmentId;
 	public DisassociateTransitRouterMulticastDomainRequest() {
-		super("Cbn", "2017-09-12", "DisassociateTransitRouterMulticastDomain");
+		super("Cbn", "2017-09-12", "DisassociateTransitRouterMulticastDomain", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -49,7 +49,7 @@ public class ModifyTransitRouterCidrRequest extends RpcAcsRequest<ModifyTransitR
 
 	private String name;
 	public ModifyTransitRouterCidrRequest() {
-		super("Cbn", "2017-09-12", "ModifyTransitRouterCidr");
+		super("Cbn", "2017-09-12", "ModifyTransitRouterCidr", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

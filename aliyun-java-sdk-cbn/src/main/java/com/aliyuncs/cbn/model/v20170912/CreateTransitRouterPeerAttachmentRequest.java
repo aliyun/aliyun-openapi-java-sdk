@@ -36,6 +36,8 @@ public class CreateTransitRouterPeerAttachmentRequest extends RpcAcsRequest<Crea
 
 	private String transitRouterAttachmentName;
 
+	private String defaultLinkType;
+
 	private List<Tag> tags;
 
 	private Boolean autoPublishRouteEnabled;
@@ -60,7 +62,7 @@ public class CreateTransitRouterPeerAttachmentRequest extends RpcAcsRequest<Crea
 
 	private String peerTransitRouterId;
 	public CreateTransitRouterPeerAttachmentRequest() {
-		super("Cbn", "2017-09-12", "CreateTransitRouterPeerAttachment");
+		super("Cbn", "2017-09-12", "CreateTransitRouterPeerAttachment", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -120,6 +122,17 @@ public class CreateTransitRouterPeerAttachmentRequest extends RpcAcsRequest<Crea
 		this.transitRouterAttachmentName = transitRouterAttachmentName;
 		if(transitRouterAttachmentName != null){
 			putQueryParameter("TransitRouterAttachmentName", transitRouterAttachmentName);
+		}
+	}
+
+	public String getDefaultLinkType() {
+		return this.defaultLinkType;
+	}
+
+	public void setDefaultLinkType(String defaultLinkType) {
+		this.defaultLinkType = defaultLinkType;
+		if(defaultLinkType != null){
+			putQueryParameter("DefaultLinkType", defaultLinkType);
 		}
 	}
 

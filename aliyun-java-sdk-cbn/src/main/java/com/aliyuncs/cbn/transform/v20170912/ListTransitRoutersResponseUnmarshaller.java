@@ -21,6 +21,7 @@ import com.aliyuncs.cbn.model.v20170912.ListTransitRoutersResponse;
 import com.aliyuncs.cbn.model.v20170912.ListTransitRoutersResponse.TransitRouter;
 import com.aliyuncs.cbn.model.v20170912.ListTransitRoutersResponse.TransitRouter.Tag;
 import com.aliyuncs.cbn.model.v20170912.ListTransitRoutersResponse.TransitRouter.TransitRouterCidrListItem;
+import com.aliyuncs.cbn.model.v20170912.ListTransitRoutersResponse.TransitRouter.TransitRouterPrimaryStandbyZoneInfoListItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -70,6 +71,16 @@ public class ListTransitRoutersResponseUnmarshaller {
 				tags.add(tag);
 			}
 			transitRouter.setTags(tags);
+
+			List<TransitRouterPrimaryStandbyZoneInfoListItem> transitRouterPrimaryStandbyZoneInfoList = new ArrayList<TransitRouterPrimaryStandbyZoneInfoListItem>();
+			for (int j = 0; j < _ctx.lengthValue("ListTransitRoutersResponse.TransitRouters["+ i +"].TransitRouterPrimaryStandbyZoneInfoList.Length"); j++) {
+				TransitRouterPrimaryStandbyZoneInfoListItem transitRouterPrimaryStandbyZoneInfoListItem = new TransitRouterPrimaryStandbyZoneInfoListItem();
+				transitRouterPrimaryStandbyZoneInfoListItem.setZoneId(_ctx.stringValue("ListTransitRoutersResponse.TransitRouters["+ i +"].TransitRouterPrimaryStandbyZoneInfoList["+ j +"].ZoneId"));
+				transitRouterPrimaryStandbyZoneInfoListItem.setRole(_ctx.stringValue("ListTransitRoutersResponse.TransitRouters["+ i +"].TransitRouterPrimaryStandbyZoneInfoList["+ j +"].Role"));
+
+				transitRouterPrimaryStandbyZoneInfoList.add(transitRouterPrimaryStandbyZoneInfoListItem);
+			}
+			transitRouter.setTransitRouterPrimaryStandbyZoneInfoList(transitRouterPrimaryStandbyZoneInfoList);
 
 			transitRouters.add(transitRouter);
 		}

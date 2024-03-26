@@ -41,7 +41,7 @@ public class DeleteTransitRouterPeerAttachmentRequest extends RpcAcsRequest<Dele
 
 	private Boolean force;
 	public DeleteTransitRouterPeerAttachmentRequest() {
-		super("Cbn", "2017-09-12", "DeleteTransitRouterPeerAttachment");
+		super("Cbn", "2017-09-12", "DeleteTransitRouterPeerAttachment", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

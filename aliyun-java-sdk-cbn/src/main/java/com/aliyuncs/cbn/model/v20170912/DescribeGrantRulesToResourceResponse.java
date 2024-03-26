@@ -83,6 +83,8 @@ public class DescribeGrantRulesToResourceResponse extends AcsResponse {
 
 		private String cenId;
 
+		private String createTime;
+
 		public Long getCenOwnerId() {
 			return this.cenOwnerId;
 		}
@@ -105,6 +107,14 @@ public class DescribeGrantRulesToResourceResponse extends AcsResponse {
 
 		public void setCenId(String cenId) {
 			this.cenId = cenId;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 	}
 

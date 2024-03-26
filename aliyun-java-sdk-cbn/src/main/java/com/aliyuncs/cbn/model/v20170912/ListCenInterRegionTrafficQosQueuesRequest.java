@@ -49,7 +49,7 @@ public class ListCenInterRegionTrafficQosQueuesRequest extends RpcAcsRequest<Lis
 
 	private Integer maxResults;
 	public ListCenInterRegionTrafficQosQueuesRequest() {
-		super("Cbn", "2017-09-12", "ListCenInterRegionTrafficQosQueues");
+		super("Cbn", "2017-09-12", "ListCenInterRegionTrafficQosQueues", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -103,6 +103,8 @@ public class ListTransitRoutersResponse extends AcsResponse {
 
 		private List<Tag> tags;
 
+		private List<TransitRouterPrimaryStandbyZoneInfoListItem> transitRouterPrimaryStandbyZoneInfoList;
+
 		public String getCreationTime() {
 			return this.creationTime;
 		}
@@ -207,6 +209,14 @@ public class ListTransitRoutersResponse extends AcsResponse {
 			this.tags = tags;
 		}
 
+		public List<TransitRouterPrimaryStandbyZoneInfoListItem> getTransitRouterPrimaryStandbyZoneInfoList() {
+			return this.transitRouterPrimaryStandbyZoneInfoList;
+		}
+
+		public void setTransitRouterPrimaryStandbyZoneInfoList(List<TransitRouterPrimaryStandbyZoneInfoListItem> transitRouterPrimaryStandbyZoneInfoList) {
+			this.transitRouterPrimaryStandbyZoneInfoList = transitRouterPrimaryStandbyZoneInfoList;
+		}
+
 		public static class TransitRouterCidrListItem {
 
 			private String cidr;
@@ -280,6 +290,29 @@ public class ListTransitRoutersResponse extends AcsResponse {
 
 			public void setValue(String value) {
 				this.value = value;
+			}
+		}
+
+		public static class TransitRouterPrimaryStandbyZoneInfoListItem {
+
+			private String zoneId;
+
+			private String role;
+
+			public String getZoneId() {
+				return this.zoneId;
+			}
+
+			public void setZoneId(String zoneId) {
+				this.zoneId = zoneId;
+			}
+
+			public String getRole() {
+				return this.role;
+			}
+
+			public void setRole(String role) {
+				this.role = role;
 			}
 		}
 	}

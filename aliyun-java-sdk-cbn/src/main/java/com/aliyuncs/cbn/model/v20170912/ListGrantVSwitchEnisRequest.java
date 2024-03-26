@@ -50,7 +50,7 @@ public class ListGrantVSwitchEnisRequest extends RpcAcsRequest<ListGrantVSwitchE
 
 	private List<String> networkInterfaceId;
 	public ListGrantVSwitchEnisRequest() {
-		super("Cbn", "2017-09-12", "ListGrantVSwitchEnis");
+		super("Cbn", "2017-09-12", "ListGrantVSwitchEnis", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
