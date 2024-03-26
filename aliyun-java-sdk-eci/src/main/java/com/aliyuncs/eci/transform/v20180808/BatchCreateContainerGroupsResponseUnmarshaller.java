@@ -24,7 +24,7 @@ import java.util.List;
  * @author xiaohui
  * @version 1.2.7
  */
-public class BatchCreateContainerGroupsUnmarshaller {
+public class BatchCreateContainerGroupsResponseUnmarshaller {
 
     public static BatchCreateContainerGroupsResponse unmarshall(BatchCreateContainerGroupsResponse batchCreateContainerGroupsResponse, UnmarshallerContext context) {
 

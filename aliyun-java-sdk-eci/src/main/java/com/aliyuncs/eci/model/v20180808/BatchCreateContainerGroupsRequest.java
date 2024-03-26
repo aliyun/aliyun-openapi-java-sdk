@@ -957,8 +957,8 @@ public class BatchCreateContainerGroupsRequest extends RpcAcsRequest<BatchCreate
         this.securityContextSysctls = securityContextSysctls;
         if (securityContextSysctls != null) {
             for (int depth1 = 0; depth1 < securityContextSysctls.size(); depth1++) {
-                putQueryParameter("SecurityContext.Sysctl." + (depth1 + 1) + ".Key", tags.get(depth1).getKey());
-                putQueryParameter("SecurityContext.Sysctl." + (depth1 + 1) + ".Value", tags.get(depth1).getValue());
+                putQueryParameter("SecurityContext.Sysctl." + (depth1 + 1) + ".Key", securityContextSysctls.get(depth1).getKey());
+                putQueryParameter("SecurityContext.Sysctl." + (depth1 + 1) + ".Value", securityContextSysctls.get(depth1).getValue());
             }
         }
     }
