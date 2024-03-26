@@ -15,20 +15,16 @@
 package com.aliyuncs.eci.model.v20180808;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.eci.transform.v20180808.BatchCreateContainerGroupsResponseUnmarshaller;
+import com.aliyuncs.eci.transform.v20180808.ResizeContainerGroupEphemeralStorageResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
-
-import java.util.List;
 
 /**
  * @author xiaohui
- * @version 1.2.7
+ * @version 1.5.3
  */
-public class BatchCreateContainerGroupsResponse extends AcsResponse{
+public class ResizeContainerGroupEphemeralStorageResponse extends AcsResponse {
 
     private String requestId;
-
-    private List<String> containerGroupIds;
 
     public String getRequestId() {
         return this.requestId;
@@ -38,21 +34,14 @@ public class BatchCreateContainerGroupsResponse extends AcsResponse{
         this.requestId = requestId;
     }
 
-    public List<String> getContainerGroupIds() {
-        return this.containerGroupIds;
-    }
-
-    public void setContainerGroupIds(List<String> containerGroupIds) {
-        this.containerGroupIds = containerGroupIds;
-    }
-
     @Override
-    public BatchCreateContainerGroupsResponse getInstance(UnmarshallerContext context) {
-        return BatchCreateContainerGroupsResponseUnmarshaller.unmarshall(this, context);
+    public ResizeContainerGroupEphemeralStorageResponse getInstance(UnmarshallerContext context) {
+        return	ResizeContainerGroupEphemeralStorageResponseUnmarshaller.unmarshall(this, context);
     }
 
     @Override
     public boolean checkShowJsonItemName() {
         return false;
     }
+
 }
