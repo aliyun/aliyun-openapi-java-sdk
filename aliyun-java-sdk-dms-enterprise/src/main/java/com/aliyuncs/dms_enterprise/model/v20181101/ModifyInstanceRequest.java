@@ -31,6 +31,8 @@ public class ModifyInstanceRequest extends RpcAcsRequest<ModifyInstanceResponse>
 
 	private Long tid;
 
+	private Integer useSsl;
+
 	private String enableSellCommon;
 
 	private String enableSellSitd;
@@ -121,6 +123,17 @@ public class ModifyInstanceRequest extends RpcAcsRequest<ModifyInstanceResponse>
 		this.tid = tid;
 		if(tid != null){
 			putQueryParameter("Tid", tid.toString());
+		}
+	}
+
+	public Integer getUseSsl() {
+		return this.useSsl;
+	}
+
+	public void setUseSsl(Integer useSsl) {
+		this.useSsl = useSsl;
+		if(useSsl != null){
+			putQueryParameter("UseSsl", useSsl.toString());
 		}
 	}
 
