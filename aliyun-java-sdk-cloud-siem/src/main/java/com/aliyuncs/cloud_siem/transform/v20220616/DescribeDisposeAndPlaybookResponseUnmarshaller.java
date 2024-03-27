@@ -75,6 +75,12 @@ public class DescribeDisposeAndPlaybookResponseUnmarshaller {
 				playbookListItem.setName(_ctx.stringValue("DescribeDisposeAndPlaybookResponse.Data.ResponseData["+ i +"].PlaybookList["+ j +"].Name"));
 				playbookListItem.setWafPlaybook(_ctx.booleanValue("DescribeDisposeAndPlaybookResponse.Data.ResponseData["+ i +"].PlaybookList["+ j +"].WafPlaybook"));
 
+				List<String> paramConfig = new ArrayList<String>();
+				for (int k = 0; k < _ctx.lengthValue("DescribeDisposeAndPlaybookResponse.Data.ResponseData["+ i +"].PlaybookList["+ j +"].ParamConfig.Length"); k++) {
+					paramConfig.add(_ctx.stringValue("DescribeDisposeAndPlaybookResponse.Data.ResponseData["+ i +"].PlaybookList["+ j +"].ParamConfig["+ k +"]"));
+				}
+				playbookListItem.setParamConfig(paramConfig);
+
 				playbookList.add(playbookListItem);
 			}
 			responseDataItem.setPlaybookList(playbookList);

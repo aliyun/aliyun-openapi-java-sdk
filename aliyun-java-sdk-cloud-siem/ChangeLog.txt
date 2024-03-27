@@ -1,3 +1,6 @@
+2024-03-27 Version: 1.0.4
+- Standardizing api.
+
 2023-12-13 Version: 1.0.3
 - Standardizing api.
 

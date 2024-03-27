@@ -196,6 +196,8 @@ public class DescribeDisposeAndPlaybookResponse extends AcsResponse {
 
 				private Boolean wafPlaybook;
 
+				private List<String> paramConfig;
+
 				public String getOpCode() {
 					return this.opCode;
 				}
@@ -250,6 +252,14 @@ public class DescribeDisposeAndPlaybookResponse extends AcsResponse {
 
 				public void setWafPlaybook(Boolean wafPlaybook) {
 					this.wafPlaybook = wafPlaybook;
+				}
+
+				public List<String> getParamConfig() {
+					return this.paramConfig;
+				}
+
+				public void setParamConfig(List<String> paramConfig) {
+					this.paramConfig = paramConfig;
 				}
 			}
 		}

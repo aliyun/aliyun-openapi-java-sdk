@@ -105,6 +105,8 @@ public class DescribeCloudSiemEventDetailResponse extends AcsResponse {
 
 		private Integer status;
 
+		private String referAccount;
+
 		private String remark;
 
 		private List<String> dataSources;
@@ -221,6 +223,14 @@ public class DescribeCloudSiemEventDetailResponse extends AcsResponse {
 
 		public void setStatus(Integer status) {
 			this.status = status;
+		}
+
+		public String getReferAccount() {
+			return this.referAccount;
+		}
+
+		public void setReferAccount(String referAccount) {
+			this.referAccount = referAccount;
 		}
 
 		public String getRemark() {
