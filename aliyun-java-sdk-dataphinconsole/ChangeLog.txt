@@ -1,0 +1,3 @@
+2024-03-27 Version: 1.0.0
+- Get Semi Instance Latest License For  Renew.
+
