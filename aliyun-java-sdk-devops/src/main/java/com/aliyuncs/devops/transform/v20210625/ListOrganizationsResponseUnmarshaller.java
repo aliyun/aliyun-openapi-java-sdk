@@ -40,6 +40,8 @@ public class ListOrganizationsResponseUnmarshaller {
 			resultItem.setOrganizationId(_ctx.stringValue("ListOrganizationsResponse.result["+ i +"].organizationId"));
 			resultItem.setOrganizationName(_ctx.stringValue("ListOrganizationsResponse.result["+ i +"].organizationName"));
 			resultItem.setOrganizationRole(_ctx.stringValue("ListOrganizationsResponse.result["+ i +"].organizationRole"));
+			resultItem.setOrganizationAlias(_ctx.stringValue("ListOrganizationsResponse.result["+ i +"].organizationAlias"));
+			resultItem.setNamespaceId(_ctx.stringValue("ListOrganizationsResponse.result["+ i +"].namespaceId"));
 
 			result.add(resultItem);
 		}

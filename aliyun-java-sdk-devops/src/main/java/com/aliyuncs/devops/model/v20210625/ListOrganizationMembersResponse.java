@@ -119,6 +119,8 @@ public class ListOrganizationMembersResponse extends AcsResponse {
 
 		private String state;
 
+		private String jobNumber;
+
 		private List<String> deptLists;
 
 		private Identities identities;
@@ -209,6 +211,14 @@ public class ListOrganizationMembersResponse extends AcsResponse {
 
 		public void setState(String state) {
 			this.state = state;
+		}
+
+		public String getJobNumber() {
+			return this.jobNumber;
+		}
+
+		public void setJobNumber(String jobNumber) {
+			this.jobNumber = jobNumber;
 		}
 
 		public List<String> getDeptLists() {

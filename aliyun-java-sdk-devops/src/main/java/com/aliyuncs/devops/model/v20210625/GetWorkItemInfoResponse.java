@@ -121,6 +121,8 @@ public class GetWorkItemInfoResponse extends AcsResponse {
 
 		private List<CustomField> customFields;
 
+		private List<TagDetailsItem> tagDetails;
+
 		private List<String> sprint;
 
 		private List<String> tag;
@@ -307,6 +309,14 @@ public class GetWorkItemInfoResponse extends AcsResponse {
 			this.customFields = customFields;
 		}
 
+		public List<TagDetailsItem> getTagDetails() {
+			return this.tagDetails;
+		}
+
+		public void setTagDetails(List<TagDetailsItem> tagDetails) {
+			this.tagDetails = tagDetails;
+		}
+
 		public List<String> getSprint() {
 			return this.sprint;
 		}
@@ -490,6 +500,39 @@ public class GetWorkItemInfoResponse extends AcsResponse {
 				public void setLevel(Long level) {
 					this.level = level;
 				}
+			}
+		}
+
+		public static class TagDetailsItem {
+
+			private String identifier;
+
+			private String name;
+
+			private String color;
+
+			public String getIdentifier() {
+				return this.identifier;
+			}
+
+			public void setIdentifier(String identifier) {
+				this.identifier = identifier;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getColor() {
+				return this.color;
+			}
+
+			public void setColor(String color) {
+				this.color = color;
 			}
 		}
 	}

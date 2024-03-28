@@ -26,6 +26,8 @@ public class ListRepositoriesRequest extends RoaAcsRequest<ListRepositoriesRespo
 
 	private Long perPage;
 
+	private Integer minAccessLevel;
+
 	private String accessToken;
 
 	private String orderBy;
@@ -53,6 +55,17 @@ public class ListRepositoriesRequest extends RoaAcsRequest<ListRepositoriesRespo
 		this.perPage = perPage;
 		if(perPage != null){
 			putQueryParameter("perPage", perPage.toString());
+		}
+	}
+
+	public Integer getMinAccessLevel() {
+		return this.minAccessLevel;
+	}
+
+	public void setMinAccessLevel(Integer minAccessLevel) {
+		this.minAccessLevel = minAccessLevel;
+		if(minAccessLevel != null){
+			putQueryParameter("minAccessLevel", minAccessLevel.toString());
 		}
 	}
 

@@ -21,6 +21,7 @@ import com.aliyuncs.devops.model.v20210625.GetWorkItemInfoResponse;
 import com.aliyuncs.devops.model.v20210625.GetWorkItemInfoResponse.Workitem;
 import com.aliyuncs.devops.model.v20210625.GetWorkItemInfoResponse.Workitem.CustomField;
 import com.aliyuncs.devops.model.v20210625.GetWorkItemInfoResponse.Workitem.CustomField.Value;
+import com.aliyuncs.devops.model.v20210625.GetWorkItemInfoResponse.Workitem.TagDetailsItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -114,6 +115,17 @@ public class GetWorkItemInfoResponseUnmarshaller {
 			customFields.add(customField);
 		}
 		workitem.setCustomFields(customFields);
+
+		List<TagDetailsItem> tagDetails = new ArrayList<TagDetailsItem>();
+		for (int i = 0; i < _ctx.lengthValue("GetWorkItemInfoResponse.workitem.tagDetails.Length"); i++) {
+			TagDetailsItem tagDetailsItem = new TagDetailsItem();
+			tagDetailsItem.setIdentifier(_ctx.stringValue("GetWorkItemInfoResponse.workitem.tagDetails["+ i +"].identifier"));
+			tagDetailsItem.setName(_ctx.stringValue("GetWorkItemInfoResponse.workitem.tagDetails["+ i +"].name"));
+			tagDetailsItem.setColor(_ctx.stringValue("GetWorkItemInfoResponse.workitem.tagDetails["+ i +"].color"));
+
+			tagDetails.add(tagDetailsItem);
+		}
+		workitem.setTagDetails(tagDetails);
 		getWorkItemInfoResponse.setWorkitem(workitem);
 	 
 	 	return getWorkItemInfoResponse;

@@ -1,3 +1,8 @@
+2024-03-28 Version: 1.0.7
+- Add min_access_level and organization_alis fields.
+- Add CreateCommitWithMultipleFiles api.
+- Add CreateComment api.
+
 2024-02-27 Version: 1.0.6
 - Fix ListUserKeys the field of title spell issue.
 

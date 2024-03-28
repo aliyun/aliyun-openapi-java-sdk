@@ -97,6 +97,10 @@ public class ListOrganizationsResponse extends AcsResponse {
 
 		private String organizationRole;
 
+		private String organizationAlias;
+
+		private String namespaceId;
+
 		public Long getId() {
 			return this.id;
 		}
@@ -135,6 +139,22 @@ public class ListOrganizationsResponse extends AcsResponse {
 
 		public void setOrganizationRole(String organizationRole) {
 			this.organizationRole = organizationRole;
+		}
+
+		public String getOrganizationAlias() {
+			return this.organizationAlias;
+		}
+
+		public void setOrganizationAlias(String organizationAlias) {
+			this.organizationAlias = organizationAlias;
+		}
+
+		public String getNamespaceId() {
+			return this.namespaceId;
+		}
+
+		public void setNamespaceId(String namespaceId) {
+			this.namespaceId = namespaceId;
 		}
 	}
 

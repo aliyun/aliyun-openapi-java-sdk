@@ -48,6 +48,7 @@ public class ListOrganizationMembersResponseUnmarshaller {
 			member.setOrganizationRoleName(_ctx.stringValue("ListOrganizationMembersResponse.members["+ i +"].organizationRoleName"));
 			member.setOrganizationRoleId(_ctx.stringValue("ListOrganizationMembersResponse.members["+ i +"].organizationRoleId"));
 			member.setState(_ctx.stringValue("ListOrganizationMembersResponse.members["+ i +"].state"));
+			member.setJobNumber(_ctx.stringValue("ListOrganizationMembersResponse.members["+ i +"].jobNumber"));
 
 			List<String> deptLists = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListOrganizationMembersResponse.members["+ i +"].deptLists.Length"); j++) {
