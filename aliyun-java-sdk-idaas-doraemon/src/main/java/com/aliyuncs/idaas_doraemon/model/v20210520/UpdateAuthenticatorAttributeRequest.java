@@ -34,7 +34,7 @@ public class UpdateAuthenticatorAttributeRequest extends RpcAcsRequest<UpdateAut
 
 	private String applicationExternalId;
 	public UpdateAuthenticatorAttributeRequest() {
-		super("idaas-doraemon", "2021-05-20", "UpdateAuthenticatorAttribute");
+		super("idaas-doraemon", "2021-05-20", "UpdateAuthenticatorAttribute", "idaasauth");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

@@ -36,7 +36,7 @@ public class ListAuthenticatorsRequest extends RpcAcsRequest<ListAuthenticatorsR
 
 	private String applicationExternalId;
 	public ListAuthenticatorsRequest() {
-		super("idaas-doraemon", "2021-05-20", "ListAuthenticators");
+		super("idaas-doraemon", "2021-05-20", "ListAuthenticators", "idaasauth");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

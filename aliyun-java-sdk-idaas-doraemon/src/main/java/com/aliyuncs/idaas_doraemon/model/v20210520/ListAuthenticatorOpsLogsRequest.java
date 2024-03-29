@@ -42,7 +42,7 @@ public class ListAuthenticatorOpsLogsRequest extends RpcAcsRequest<ListAuthentic
 
 	private String applicationExternalId;
 	public ListAuthenticatorOpsLogsRequest() {
-		super("idaas-doraemon", "2021-05-20", "ListAuthenticatorOpsLogs");
+		super("idaas-doraemon", "2021-05-20", "ListAuthenticatorOpsLogs", "idaasauth");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

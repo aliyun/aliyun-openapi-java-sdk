@@ -39,7 +39,7 @@ public class ListOrderConsumeStatisticRecordsRequest extends RpcAcsRequest<ListO
 
 	private String applicationExternalId;
 	public ListOrderConsumeStatisticRecordsRequest() {
-		super("idaas-doraemon", "2021-05-20", "ListOrderConsumeStatisticRecords");
+		super("idaas-doraemon", "2021-05-20", "ListOrderConsumeStatisticRecords", "idaasauth");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

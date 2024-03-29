@@ -32,7 +32,7 @@ public class DeregisterAuthenticatorRequest extends RpcAcsRequest<DeregisterAuth
 
 	private String applicationExternalId;
 	public DeregisterAuthenticatorRequest() {
-		super("idaas-doraemon", "2021-05-20", "DeregisterAuthenticator");
+		super("idaas-doraemon", "2021-05-20", "DeregisterAuthenticator", "idaasauth");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

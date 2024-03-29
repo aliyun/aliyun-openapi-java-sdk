@@ -37,7 +37,7 @@ public class FetchAccessTokenRequest extends RpcAcsRequest<FetchAccessTokenRespo
 
 	private String applicationExternalId;
 	public FetchAccessTokenRequest() {
-		super("idaas-doraemon", "2021-05-20", "FetchAccessToken");
+		super("idaas-doraemon", "2021-05-20", "FetchAccessToken", "idaasauth");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

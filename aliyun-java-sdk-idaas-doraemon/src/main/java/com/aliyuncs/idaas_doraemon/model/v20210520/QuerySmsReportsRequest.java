@@ -29,7 +29,7 @@ public class QuerySmsReportsRequest extends RpcAcsRequest<QuerySmsReportsRespons
 
 	private String appId;
 	public QuerySmsReportsRequest() {
-		super("idaas-doraemon", "2021-05-20", "QuerySmsReports");
+		super("idaas-doraemon", "2021-05-20", "QuerySmsReports", "idaasauth");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

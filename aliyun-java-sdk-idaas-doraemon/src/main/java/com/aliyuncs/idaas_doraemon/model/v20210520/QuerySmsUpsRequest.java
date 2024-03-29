@@ -25,7 +25,7 @@ import com.aliyuncs.idaas_doraemon.Endpoint;
 public class QuerySmsUpsRequest extends RpcAcsRequest<QuerySmsUpsResponse> {
 	   
 	public QuerySmsUpsRequest() {
-		super("idaas-doraemon", "2021-05-20", "QuerySmsUps");
+		super("idaas-doraemon", "2021-05-20", "QuerySmsUps", "idaasauth");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

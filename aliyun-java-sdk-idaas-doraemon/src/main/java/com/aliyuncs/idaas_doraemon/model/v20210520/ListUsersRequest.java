@@ -30,7 +30,7 @@ public class ListUsersRequest extends RpcAcsRequest<ListUsersResponse> {
 
 	private String applicationExternalId;
 	public ListUsersRequest() {
-		super("idaas-doraemon", "2021-05-20", "ListUsers");
+		super("idaas-doraemon", "2021-05-20", "ListUsers", "idaasauth");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

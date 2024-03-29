@@ -40,7 +40,7 @@ public class CreateUserAuthenticateOptionsRequest extends RpcAcsRequest<CreateUs
 
 	private String applicationExternalId;
 	public CreateUserAuthenticateOptionsRequest() {
-		super("idaas-doraemon", "2021-05-20", "CreateUserAuthenticateOptions");
+		super("idaas-doraemon", "2021-05-20", "CreateUserAuthenticateOptions", "idaasauth");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

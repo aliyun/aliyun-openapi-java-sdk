@@ -33,7 +33,7 @@ public class ListCostUnitOrdersRequest extends RpcAcsRequest<ListCostUnitOrdersR
 
 	private Integer pageSize;
 	public ListCostUnitOrdersRequest() {
-		super("idaas-doraemon", "2021-05-20", "ListCostUnitOrders");
+		super("idaas-doraemon", "2021-05-20", "ListCostUnitOrders", "idaasauth");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
