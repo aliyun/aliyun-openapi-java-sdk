@@ -1,0 +1,301 @@
+/*
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.aliyuncs.slb.model.v20130221;
+
+import com.aliyuncs.AcsResponse;
+import com.aliyuncs.slb.transform.v20130221.DescribeLoadBalancerHTTPListenerAttributeResponseUnmarshaller;
+import com.aliyuncs.transform.UnmarshallerContext;
+
+/**
+ * @author auto create
+ * @version 
+ */
+public class DescribeLoadBalancerHTTPListenerAttributeResponse extends AcsResponse {
+
+	private String status;
+
+	private String vServerGroupId;
+
+	private String cookie;
+
+	private String gzip;
+
+	private String requestId;
+
+	private Integer healthCheckConnectPort;
+
+	private Integer bandwidth;
+
+	private Integer healthCheckTimeout;
+
+	private Integer backendServerPort;
+
+	private Integer cookieTimeout;
+
+	private String uRI;
+
+	private Integer unhealthyThreshold;
+
+	private String xForwardedFor_SLBID;
+
+	private String securityStatus;
+
+	private String healthCheckHttpCode;
+
+	private String domain;
+
+	private Integer maxConnection;
+
+	private String xForwardedFor;
+
+	private Integer listenerPort;
+
+	private String stickySessionType;
+
+	private String scheduler;
+
+	private Integer interval;
+
+	private Integer healthyThreshold;
+
+	private String xForwardedFor_proto;
+
+	private String xForwardedFor_SLBIP;
+
+	private String stickySession;
+
+	private String healthCheck;
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public String getVServerGroupId() {
+		return this.vServerGroupId;
+	}
+
+	public void setVServerGroupId(String vServerGroupId) {
+		this.vServerGroupId = vServerGroupId;
+	}
+
+	public String getCookie() {
+		return this.cookie;
+	}
+
+	public void setCookie(String cookie) {
+		this.cookie = cookie;
+	}
+
+	public String getGzip() {
+		return this.gzip;
+	}
+
+	public void setGzip(String gzip) {
+		this.gzip = gzip;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getHealthCheckConnectPort() {
+		return this.healthCheckConnectPort;
+	}
+
+	public void setHealthCheckConnectPort(Integer healthCheckConnectPort) {
+		this.healthCheckConnectPort = healthCheckConnectPort;
+	}
+
+	public Integer getBandwidth() {
+		return this.bandwidth;
+	}
+
+	public void setBandwidth(Integer bandwidth) {
+		this.bandwidth = bandwidth;
+	}
+
+	public Integer getHealthCheckTimeout() {
+		return this.healthCheckTimeout;
+	}
+
+	public void setHealthCheckTimeout(Integer healthCheckTimeout) {
+		this.healthCheckTimeout = healthCheckTimeout;
+	}
+
+	public Integer getBackendServerPort() {
+		return this.backendServerPort;
+	}
+
+	public void setBackendServerPort(Integer backendServerPort) {
+		this.backendServerPort = backendServerPort;
+	}
+
+	public Integer getCookieTimeout() {
+		return this.cookieTimeout;
+	}
+
+	public void setCookieTimeout(Integer cookieTimeout) {
+		this.cookieTimeout = cookieTimeout;
+	}
+
+	public String getURI() {
+		return this.uRI;
+	}
+
+	public void setURI(String uRI) {
+		this.uRI = uRI;
+	}
+
+	public Integer getUnhealthyThreshold() {
+		return this.unhealthyThreshold;
+	}
+
+	public void setUnhealthyThreshold(Integer unhealthyThreshold) {
+		this.unhealthyThreshold = unhealthyThreshold;
+	}
+
+	public String getXForwardedFor_SLBID() {
+		return this.xForwardedFor_SLBID;
+	}
+
+	public void setXForwardedFor_SLBID(String xForwardedFor_SLBID) {
+		this.xForwardedFor_SLBID = xForwardedFor_SLBID;
+	}
+
+	public String getSecurityStatus() {
+		return this.securityStatus;
+	}
+
+	public void setSecurityStatus(String securityStatus) {
+		this.securityStatus = securityStatus;
+	}
+
+	public String getHealthCheckHttpCode() {
+		return this.healthCheckHttpCode;
+	}
+
+	public void setHealthCheckHttpCode(String healthCheckHttpCode) {
+		this.healthCheckHttpCode = healthCheckHttpCode;
+	}
+
+	public String getDomain() {
+		return this.domain;
+	}
+
+	public void setDomain(String domain) {
+		this.domain = domain;
+	}
+
+	public Integer getMaxConnection() {
+		return this.maxConnection;
+	}
+
+	public void setMaxConnection(Integer maxConnection) {
+		this.maxConnection = maxConnection;
+	}
+
+	public String getXForwardedFor() {
+		return this.xForwardedFor;
+	}
+
+	public void setXForwardedFor(String xForwardedFor) {
+		this.xForwardedFor = xForwardedFor;
+	}
+
+	public Integer getListenerPort() {
+		return this.listenerPort;
+	}
+
+	public void setListenerPort(Integer listenerPort) {
+		this.listenerPort = listenerPort;
+	}
+
+	public String getStickySessionType() {
+		return this.stickySessionType;
+	}
+
+	public void setStickySessionType(String stickySessionType) {
+		this.stickySessionType = stickySessionType;
+	}
+
+	public String getScheduler() {
+		return this.scheduler;
+	}
+
+	public void setScheduler(String scheduler) {
+		this.scheduler = scheduler;
+	}
+
+	public Integer getInterval() {
+		return this.interval;
+	}
+
+	public void setInterval(Integer interval) {
+		this.interval = interval;
+	}
+
+	public Integer getHealthyThreshold() {
+		return this.healthyThreshold;
+	}
+
+	public void setHealthyThreshold(Integer healthyThreshold) {
+		this.healthyThreshold = healthyThreshold;
+	}
+
+	public String getXForwardedFor_proto() {
+		return this.xForwardedFor_proto;
+	}
+
+	public void setXForwardedFor_proto(String xForwardedFor_proto) {
+		this.xForwardedFor_proto = xForwardedFor_proto;
+	}
+
+	public String getXForwardedFor_SLBIP() {
+		return this.xForwardedFor_SLBIP;
+	}
+
+	public void setXForwardedFor_SLBIP(String xForwardedFor_SLBIP) {
+		this.xForwardedFor_SLBIP = xForwardedFor_SLBIP;
+	}
+
+	public String getStickySession() {
+		return this.stickySession;
+	}
+
+	public void setStickySession(String stickySession) {
+		this.stickySession = stickySession;
+	}
+
+	public String getHealthCheck() {
+		return this.healthCheck;
+	}
+
+	public void setHealthCheck(String healthCheck) {
+		this.healthCheck = healthCheck;
+	}
+
+	@Override
+	public DescribeLoadBalancerHTTPListenerAttributeResponse getInstance(UnmarshallerContext context) {
+		return	DescribeLoadBalancerHTTPListenerAttributeResponseUnmarshaller.unmarshall(this, context);
+	}
+}
