@@ -31,6 +31,9 @@ public class GetConsumerListResponseUnmarshaller {
 		getConsumerListResponse.setCode(_ctx.integerValue("GetConsumerListResponse.Code"));
 		getConsumerListResponse.setMessage(_ctx.stringValue("GetConsumerListResponse.Message"));
 		getConsumerListResponse.setSuccess(_ctx.booleanValue("GetConsumerListResponse.Success"));
+		getConsumerListResponse.setTotal(_ctx.longValue("GetConsumerListResponse.Total"));
+		getConsumerListResponse.setPageSize(_ctx.integerValue("GetConsumerListResponse.PageSize"));
+		getConsumerListResponse.setCurrentPage(_ctx.integerValue("GetConsumerListResponse.CurrentPage"));
 
 		List<ConsumerVO> consumerList = new ArrayList<ConsumerVO>();
 		for (int i = 0; i < _ctx.lengthValue("GetConsumerListResponse.ConsumerList.Length"); i++) {

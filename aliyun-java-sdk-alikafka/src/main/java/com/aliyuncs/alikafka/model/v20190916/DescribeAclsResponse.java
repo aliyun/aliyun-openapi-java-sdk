@@ -89,6 +89,8 @@ public class DescribeAclsResponse extends AcsResponse {
 
 		private String username;
 
+		private String aclPermissionType;
+
 		public String getAclResourceType() {
 			return this.aclResourceType;
 		}
@@ -135,6 +137,14 @@ public class DescribeAclsResponse extends AcsResponse {
 
 		public void setUsername(String username) {
 			this.username = username;
+		}
+
+		public String getAclPermissionType() {
+			return this.aclPermissionType;
+		}
+
+		public void setAclPermissionType(String aclPermissionType) {
+			this.aclPermissionType = aclPermissionType;
 		}
 	}
 

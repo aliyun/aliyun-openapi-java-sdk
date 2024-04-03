@@ -83,6 +83,8 @@ public class GetConsumerProgressResponse extends AcsResponse {
 
 		private List<TopicListItem> topicList;
 
+		private List<RebalanceInfoListItem> rebalanceInfoList;
+
 		public Long getLastTimestamp() {
 			return this.lastTimestamp;
 		}
@@ -105,6 +107,14 @@ public class GetConsumerProgressResponse extends AcsResponse {
 
 		public void setTopicList(List<TopicListItem> topicList) {
 			this.topicList = topicList;
+		}
+
+		public List<RebalanceInfoListItem> getRebalanceInfoList() {
+			return this.rebalanceInfoList;
+		}
+
+		public void setRebalanceInfoList(List<RebalanceInfoListItem> rebalanceInfoList) {
+			this.rebalanceInfoList = rebalanceInfoList;
 		}
 
 		public static class TopicListItem {
@@ -190,6 +200,69 @@ public class GetConsumerProgressResponse extends AcsResponse {
 				public void setLastTimestamp(Long lastTimestamp) {
 					this.lastTimestamp = lastTimestamp;
 				}
+			}
+		}
+
+		public static class RebalanceInfoListItem {
+
+			private Long generation;
+
+			private Long lastRebalanceTimestamp;
+
+			private String reason;
+
+			private String groupId;
+
+			private Long rebalanceTimeConsuming;
+
+			private Boolean rebalanceSuccess;
+
+			public Long getGeneration() {
+				return this.generation;
+			}
+
+			public void setGeneration(Long generation) {
+				this.generation = generation;
+			}
+
+			public Long getLastRebalanceTimestamp() {
+				return this.lastRebalanceTimestamp;
+			}
+
+			public void setLastRebalanceTimestamp(Long lastRebalanceTimestamp) {
+				this.lastRebalanceTimestamp = lastRebalanceTimestamp;
+			}
+
+			public String getReason() {
+				return this.reason;
+			}
+
+			public void setReason(String reason) {
+				this.reason = reason;
+			}
+
+			public String getGroupId() {
+				return this.groupId;
+			}
+
+			public void setGroupId(String groupId) {
+				this.groupId = groupId;
+			}
+
+			public Long getRebalanceTimeConsuming() {
+				return this.rebalanceTimeConsuming;
+			}
+
+			public void setRebalanceTimeConsuming(Long rebalanceTimeConsuming) {
+				this.rebalanceTimeConsuming = rebalanceTimeConsuming;
+			}
+
+			public Boolean getRebalanceSuccess() {
+				return this.rebalanceSuccess;
+			}
+
+			public void setRebalanceSuccess(Boolean rebalanceSuccess) {
+				this.rebalanceSuccess = rebalanceSuccess;
 			}
 		}
 	}

@@ -33,6 +33,12 @@ public class GetConsumerListResponse extends AcsResponse {
 
 	private Boolean success;
 
+	private Long total;
+
+	private Integer pageSize;
+
+	private Integer currentPage;
+
 	private List<ConsumerVO> consumerList;
 
 	public Integer getCode() {
@@ -65,6 +71,30 @@ public class GetConsumerListResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public Long getTotal() {
+		return this.total;
+	}
+
+	public void setTotal(Long total) {
+		this.total = total;
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
 	}
 
 	public List<ConsumerVO> getConsumerList() {

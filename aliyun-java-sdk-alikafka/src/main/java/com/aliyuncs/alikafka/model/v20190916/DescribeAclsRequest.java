@@ -29,9 +29,15 @@ public class DescribeAclsRequest extends RpcAcsRequest<DescribeAclsResponse> {
 
 	private String aclResourceType;
 
+	private String aclOperationType;
+
 	private String aclResourceName;
 
 	private String instanceId;
+
+	private String host;
+
+	private String aclPermissionType;
 
 	private String username;
 	public DescribeAclsRequest() {
@@ -65,6 +71,17 @@ public class DescribeAclsRequest extends RpcAcsRequest<DescribeAclsResponse> {
 		}
 	}
 
+	public String getAclOperationType() {
+		return this.aclOperationType;
+	}
+
+	public void setAclOperationType(String aclOperationType) {
+		this.aclOperationType = aclOperationType;
+		if(aclOperationType != null){
+			putQueryParameter("AclOperationType", aclOperationType);
+		}
+	}
+
 	public String getAclResourceName() {
 		return this.aclResourceName;
 	}
@@ -84,6 +101,28 @@ public class DescribeAclsRequest extends RpcAcsRequest<DescribeAclsResponse> {
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getHost() {
+		return this.host;
+	}
+
+	public void setHost(String host) {
+		this.host = host;
+		if(host != null){
+			putQueryParameter("Host", host);
+		}
+	}
+
+	public String getAclPermissionType() {
+		return this.aclPermissionType;
+	}
+
+	public void setAclPermissionType(String aclPermissionType) {
+		this.aclPermissionType = aclPermissionType;
+		if(aclPermissionType != null){
+			putQueryParameter("AclPermissionType", aclPermissionType);
 		}
 	}
 

@@ -32,6 +32,8 @@ public class CreatePrePayOrderRequest extends RpcAcsRequest<CreatePrePayOrderRes
 
 	private Integer eipMax;
 
+	private Integer duration;
+
 	private String specType;
 
 	private String resourceGroupId;
@@ -42,6 +44,8 @@ public class CreatePrePayOrderRequest extends RpcAcsRequest<CreatePrePayOrderRes
 	private List<Tag> tags;
 
 	private Integer partitionNum;
+
+	private Integer paidType;
 
 	private Integer diskSize;
 
@@ -80,6 +84,17 @@ public class CreatePrePayOrderRequest extends RpcAcsRequest<CreatePrePayOrderRes
 		this.eipMax = eipMax;
 		if(eipMax != null){
 			putQueryParameter("EipMax", eipMax.toString());
+		}
+	}
+
+	public Integer getDuration() {
+		return this.duration;
+	}
+
+	public void setDuration(Integer duration) {
+		this.duration = duration;
+		if(duration != null){
+			putQueryParameter("Duration", duration.toString());
 		}
 	}
 
@@ -138,6 +153,17 @@ public class CreatePrePayOrderRequest extends RpcAcsRequest<CreatePrePayOrderRes
 		this.partitionNum = partitionNum;
 		if(partitionNum != null){
 			putQueryParameter("PartitionNum", partitionNum.toString());
+		}
+	}
+
+	public Integer getPaidType() {
+		return this.paidType;
+	}
+
+	public void setPaidType(Integer paidType) {
+		this.paidType = paidType;
+		if(paidType != null){
+			putQueryParameter("PaidType", paidType.toString());
 		}
 	}
 

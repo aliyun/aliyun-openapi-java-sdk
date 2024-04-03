@@ -31,6 +31,8 @@ public class CreateSaslUserRequest extends RpcAcsRequest<CreateSaslUserResponse>
 
 	private String instanceId;
 
+	private String mechanism;
+
 	private String username;
 	public CreateSaslUserRequest() {
 		super("alikafka", "2019-09-16", "CreateSaslUser", "alikafka");
@@ -71,6 +73,17 @@ public class CreateSaslUserRequest extends RpcAcsRequest<CreateSaslUserResponse>
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getMechanism() {
+		return this.mechanism;
+	}
+
+	public void setMechanism(String mechanism) {
+		this.mechanism = mechanism;
+		if(mechanism != null){
+			putQueryParameter("Mechanism", mechanism);
 		}
 	}
 

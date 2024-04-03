@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.alikafka.model.v20190916.GetConsumerProgressResponse;
 import com.aliyuncs.alikafka.model.v20190916.GetConsumerProgressResponse.ConsumerProgress;
+import com.aliyuncs.alikafka.model.v20190916.GetConsumerProgressResponse.ConsumerProgress.RebalanceInfoListItem;
 import com.aliyuncs.alikafka.model.v20190916.GetConsumerProgressResponse.ConsumerProgress.TopicListItem;
 import com.aliyuncs.alikafka.model.v20190916.GetConsumerProgressResponse.ConsumerProgress.TopicListItem.OffsetListItem;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -59,6 +60,20 @@ public class GetConsumerProgressResponseUnmarshaller {
 			topicList.add(topicListItem);
 		}
 		consumerProgress.setTopicList(topicList);
+
+		List<RebalanceInfoListItem> rebalanceInfoList = new ArrayList<RebalanceInfoListItem>();
+		for (int i = 0; i < _ctx.lengthValue("GetConsumerProgressResponse.ConsumerProgress.RebalanceInfoList.Length"); i++) {
+			RebalanceInfoListItem rebalanceInfoListItem = new RebalanceInfoListItem();
+			rebalanceInfoListItem.setGeneration(_ctx.longValue("GetConsumerProgressResponse.ConsumerProgress.RebalanceInfoList["+ i +"].Generation"));
+			rebalanceInfoListItem.setLastRebalanceTimestamp(_ctx.longValue("GetConsumerProgressResponse.ConsumerProgress.RebalanceInfoList["+ i +"].LastRebalanceTimestamp"));
+			rebalanceInfoListItem.setReason(_ctx.stringValue("GetConsumerProgressResponse.ConsumerProgress.RebalanceInfoList["+ i +"].Reason"));
+			rebalanceInfoListItem.setGroupId(_ctx.stringValue("GetConsumerProgressResponse.ConsumerProgress.RebalanceInfoList["+ i +"].GroupId"));
+			rebalanceInfoListItem.setRebalanceTimeConsuming(_ctx.longValue("GetConsumerProgressResponse.ConsumerProgress.RebalanceInfoList["+ i +"].RebalanceTimeConsuming"));
+			rebalanceInfoListItem.setRebalanceSuccess(_ctx.booleanValue("GetConsumerProgressResponse.ConsumerProgress.RebalanceInfoList["+ i +"].RebalanceSuccess"));
+
+			rebalanceInfoList.add(rebalanceInfoListItem);
+		}
+		consumerProgress.setRebalanceInfoList(rebalanceInfoList);
 		getConsumerProgressResponse.setConsumerProgress(consumerProgress);
 	 
 	 	return getConsumerProgressResponse;

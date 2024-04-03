@@ -40,6 +40,7 @@ public class DescribeAclsResponseUnmarshaller {
 			kafkaAclVO.setAclResourceName(_ctx.stringValue("DescribeAclsResponse.KafkaAclList["+ i +"].AclResourceName"));
 			kafkaAclVO.setAclResourcePatternType(_ctx.stringValue("DescribeAclsResponse.KafkaAclList["+ i +"].AclResourcePatternType"));
 			kafkaAclVO.setUsername(_ctx.stringValue("DescribeAclsResponse.KafkaAclList["+ i +"].Username"));
+			kafkaAclVO.setAclPermissionType(_ctx.stringValue("DescribeAclsResponse.KafkaAclList["+ i +"].AclPermissionType"));
 
 			kafkaAclList.add(kafkaAclVO);
 		}

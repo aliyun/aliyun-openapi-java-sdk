@@ -22,34 +22,17 @@ import com.aliyuncs.alikafka.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteSaslUserRequest extends RpcAcsRequest<DeleteSaslUserResponse> {
+public class ReopenInstanceRequest extends RpcAcsRequest<ReopenInstanceResponse> {
 	   
 
-	private String type;
-
 	private String instanceId;
-
-	private String mechanism;
-
-	private String username;
-	public DeleteSaslUserRequest() {
-		super("alikafka", "2019-09-16", "DeleteSaslUser", "alikafka");
+	public ReopenInstanceRequest() {
+		super("alikafka", "2019-09-16", "ReopenInstance", "alikafka");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getType() {
-		return this.type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type);
-		}
 	}
 
 	public String getInstanceId() {
@@ -63,31 +46,9 @@ public class DeleteSaslUserRequest extends RpcAcsRequest<DeleteSaslUserResponse>
 		}
 	}
 
-	public String getMechanism() {
-		return this.mechanism;
-	}
-
-	public void setMechanism(String mechanism) {
-		this.mechanism = mechanism;
-		if(mechanism != null){
-			putQueryParameter("Mechanism", mechanism);
-		}
-	}
-
-	public String getUsername() {
-		return this.username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
-		if(username != null){
-			putQueryParameter("Username", username);
-		}
-	}
-
 	@Override
-	public Class<DeleteSaslUserResponse> getResponseClass() {
-		return DeleteSaslUserResponse.class;
+	public Class<ReopenInstanceResponse> getResponseClass() {
+		return ReopenInstanceResponse.class;
 	}
 
 }

@@ -141,6 +141,12 @@ public class GetInstanceListResponse extends AcsResponse {
 
 		private String ioMaxSpec;
 
+		private Integer reservedPublishCapacity;
+
+		private Integer reservedSubscribeCapacity;
+
+		private Integer viewInstanceStatusCode;
+
 		private List<TagVO> tags;
 
 		private UpgradeServiceDetailInfo upgradeServiceDetailInfo;
@@ -401,6 +407,30 @@ public class GetInstanceListResponse extends AcsResponse {
 
 		public void setIoMaxSpec(String ioMaxSpec) {
 			this.ioMaxSpec = ioMaxSpec;
+		}
+
+		public Integer getReservedPublishCapacity() {
+			return this.reservedPublishCapacity;
+		}
+
+		public void setReservedPublishCapacity(Integer reservedPublishCapacity) {
+			this.reservedPublishCapacity = reservedPublishCapacity;
+		}
+
+		public Integer getReservedSubscribeCapacity() {
+			return this.reservedSubscribeCapacity;
+		}
+
+		public void setReservedSubscribeCapacity(Integer reservedSubscribeCapacity) {
+			this.reservedSubscribeCapacity = reservedSubscribeCapacity;
+		}
+
+		public Integer getViewInstanceStatusCode() {
+			return this.viewInstanceStatusCode;
+		}
+
+		public void setViewInstanceStatusCode(Integer viewInstanceStatusCode) {
+			this.viewInstanceStatusCode = viewInstanceStatusCode;
 		}
 
 		public List<TagVO> getTags() {

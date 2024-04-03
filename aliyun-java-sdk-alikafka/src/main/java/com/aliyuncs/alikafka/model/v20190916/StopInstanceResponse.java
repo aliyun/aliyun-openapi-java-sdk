@@ -14,16 +14,15 @@
 
 package com.aliyuncs.alikafka.model.v20190916;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.alikafka.transform.v20190916.DescribeSaslUsersResponseUnmarshaller;
+import com.aliyuncs.alikafka.transform.v20190916.StopInstanceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeSaslUsersResponse extends AcsResponse {
+public class StopInstanceResponse extends AcsResponse {
 
 	private Integer code;
 
@@ -32,8 +31,6 @@ public class DescribeSaslUsersResponse extends AcsResponse {
 	private String requestId;
 
 	private Boolean success;
-
-	private List<SaslUserVO> saslUserList;
 
 	public Integer getCode() {
 		return this.code;
@@ -67,59 +64,8 @@ public class DescribeSaslUsersResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public List<SaslUserVO> getSaslUserList() {
-		return this.saslUserList;
-	}
-
-	public void setSaslUserList(List<SaslUserVO> saslUserList) {
-		this.saslUserList = saslUserList;
-	}
-
-	public static class SaslUserVO {
-
-		private String type;
-
-		private String password;
-
-		private String username;
-
-		private String mechanism;
-
-		public String getType() {
-			return this.type;
-		}
-
-		public void setType(String type) {
-			this.type = type;
-		}
-
-		public String getPassword() {
-			return this.password;
-		}
-
-		public void setPassword(String password) {
-			this.password = password;
-		}
-
-		public String getUsername() {
-			return this.username;
-		}
-
-		public void setUsername(String username) {
-			this.username = username;
-		}
-
-		public String getMechanism() {
-			return this.mechanism;
-		}
-
-		public void setMechanism(String mechanism) {
-			this.mechanism = mechanism;
-		}
-	}
-
 	@Override
-	public DescribeSaslUsersResponse getInstance(UnmarshallerContext context) {
-		return	DescribeSaslUsersResponseUnmarshaller.unmarshall(this, context);
+	public StopInstanceResponse getInstance(UnmarshallerContext context) {
+		return	StopInstanceResponseUnmarshaller.unmarshall(this, context);
 	}
 }
