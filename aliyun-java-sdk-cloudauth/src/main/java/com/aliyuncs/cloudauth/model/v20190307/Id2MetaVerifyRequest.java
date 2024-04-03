@@ -15,6 +15,7 @@
 package com.aliyuncs.cloudauth.model.v20190307;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cloudauth.Endpoint;
 
@@ -22,14 +23,17 @@ import com.aliyuncs.cloudauth.Endpoint;
  * @author auto create
  * @version 
  */
-public class DetectFaceAttributesRequest extends RpcAcsRequest<DetectFaceAttributesResponse> {
+public class Id2MetaVerifyRequest extends RpcAcsRequest<Id2MetaVerifyResponse> {
 	   
 
-	private String bizType;
+	private String paramType;
 
-	private String materialValue;
-	public DetectFaceAttributesRequest() {
-		super("Cloudauth", "2019-03-07", "DetectFaceAttributes", "cloudauth");
+	private String identifyNum;
+
+	private String userName;
+	public Id2MetaVerifyRequest() {
+		super("Cloudauth", "2019-03-07", "Id2MetaVerify", "cloudauth");
+		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +41,42 @@ public class DetectFaceAttributesRequest extends RpcAcsRequest<DetectFaceAttribu
 		} catch (Exception e) {}
 	}
 
-	public String getBizType() {
-		return this.bizType;
+	public String getParamType() {
+		return this.paramType;
 	}
 
-	public void setBizType(String bizType) {
-		this.bizType = bizType;
-		if(bizType != null){
-			putBodyParameter("BizType", bizType);
+	public void setParamType(String paramType) {
+		this.paramType = paramType;
+		if(paramType != null){
+			putQueryParameter("ParamType", paramType);
 		}
 	}
 
-	public String getMaterialValue() {
-		return this.materialValue;
+	public String getIdentifyNum() {
+		return this.identifyNum;
 	}
 
-	public void setMaterialValue(String materialValue) {
-		this.materialValue = materialValue;
-		if(materialValue != null){
-			putBodyParameter("MaterialValue", materialValue);
+	public void setIdentifyNum(String identifyNum) {
+		this.identifyNum = identifyNum;
+		if(identifyNum != null){
+			putQueryParameter("IdentifyNum", identifyNum);
+		}
+	}
+
+	public String getUserName() {
+		return this.userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+		if(userName != null){
+			putQueryParameter("UserName", userName);
 		}
 	}
 
 	@Override
-	public Class<DetectFaceAttributesResponse> getResponseClass() {
-		return DetectFaceAttributesResponse.class;
+	public Class<Id2MetaVerifyResponse> getResponseClass() {
+		return Id2MetaVerifyResponse.class;
 	}
 
 }

@@ -22,38 +22,24 @@ import com.aliyuncs.cloudauth.Endpoint;
  * @author auto create
  * @version 
  */
-public class LivenessFaceVerifyRequest extends RpcAcsRequest<LivenessFaceVerifyResponse> {
+public class AIGCFaceVerifyRequest extends RpcAcsRequest<AIGCFaceVerifyResponse> {
 	   
 
 	private String productCode;
 
+	private String ossObjectName;
+
 	private String faceContrastPicture;
-
-	private String deviceToken;
-
-	private String userId;
-
-	private String certifyId;
 
 	private String outerOrderNo;
 
 	private String faceContrastPictureUrl;
 
-	private String model;
-
-	private String ossObjectName;
-
-	private String ip;
-
-	private String mobile;
-
 	private Long sceneId;
 
 	private String ossBucketName;
-
-	private String crop;
-	public LivenessFaceVerifyRequest() {
-		super("Cloudauth", "2019-03-07", "LivenessFaceVerify", "cloudauth");
+	public AIGCFaceVerifyRequest() {
+		super("Cloudauth", "2019-03-07", "AIGCFaceVerify", "cloudauth");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -68,7 +54,18 @@ public class LivenessFaceVerifyRequest extends RpcAcsRequest<LivenessFaceVerifyR
 	public void setProductCode(String productCode) {
 		this.productCode = productCode;
 		if(productCode != null){
-			putBodyParameter("ProductCode", productCode);
+			putQueryParameter("ProductCode", productCode);
+		}
+	}
+
+	public String getOssObjectName() {
+		return this.ossObjectName;
+	}
+
+	public void setOssObjectName(String ossObjectName) {
+		this.ossObjectName = ossObjectName;
+		if(ossObjectName != null){
+			putQueryParameter("OssObjectName", ossObjectName);
 		}
 	}
 
@@ -83,39 +80,6 @@ public class LivenessFaceVerifyRequest extends RpcAcsRequest<LivenessFaceVerifyR
 		}
 	}
 
-	public String getDeviceToken() {
-		return this.deviceToken;
-	}
-
-	public void setDeviceToken(String deviceToken) {
-		this.deviceToken = deviceToken;
-		if(deviceToken != null){
-			putBodyParameter("DeviceToken", deviceToken);
-		}
-	}
-
-	public String getUserId() {
-		return this.userId;
-	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putBodyParameter("UserId", userId);
-		}
-	}
-
-	public String getCertifyId() {
-		return this.certifyId;
-	}
-
-	public void setCertifyId(String certifyId) {
-		this.certifyId = certifyId;
-		if(certifyId != null){
-			putBodyParameter("CertifyId", certifyId);
-		}
-	}
-
 	public String getOuterOrderNo() {
 		return this.outerOrderNo;
 	}
@@ -123,7 +87,7 @@ public class LivenessFaceVerifyRequest extends RpcAcsRequest<LivenessFaceVerifyR
 	public void setOuterOrderNo(String outerOrderNo) {
 		this.outerOrderNo = outerOrderNo;
 		if(outerOrderNo != null){
-			putBodyParameter("OuterOrderNo", outerOrderNo);
+			putQueryParameter("OuterOrderNo", outerOrderNo);
 		}
 	}
 
@@ -134,51 +98,7 @@ public class LivenessFaceVerifyRequest extends RpcAcsRequest<LivenessFaceVerifyR
 	public void setFaceContrastPictureUrl(String faceContrastPictureUrl) {
 		this.faceContrastPictureUrl = faceContrastPictureUrl;
 		if(faceContrastPictureUrl != null){
-			putBodyParameter("FaceContrastPictureUrl", faceContrastPictureUrl);
-		}
-	}
-
-	public String getModel() {
-		return this.model;
-	}
-
-	public void setModel(String model) {
-		this.model = model;
-		if(model != null){
-			putQueryParameter("Model", model);
-		}
-	}
-
-	public String getOssObjectName() {
-		return this.ossObjectName;
-	}
-
-	public void setOssObjectName(String ossObjectName) {
-		this.ossObjectName = ossObjectName;
-		if(ossObjectName != null){
-			putBodyParameter("OssObjectName", ossObjectName);
-		}
-	}
-
-	public String getIp() {
-		return this.ip;
-	}
-
-	public void setIp(String ip) {
-		this.ip = ip;
-		if(ip != null){
-			putBodyParameter("Ip", ip);
-		}
-	}
-
-	public String getMobile() {
-		return this.mobile;
-	}
-
-	public void setMobile(String mobile) {
-		this.mobile = mobile;
-		if(mobile != null){
-			putBodyParameter("Mobile", mobile);
+			putQueryParameter("FaceContrastPictureUrl", faceContrastPictureUrl);
 		}
 	}
 
@@ -189,7 +109,7 @@ public class LivenessFaceVerifyRequest extends RpcAcsRequest<LivenessFaceVerifyR
 	public void setSceneId(Long sceneId) {
 		this.sceneId = sceneId;
 		if(sceneId != null){
-			putBodyParameter("SceneId", sceneId.toString());
+			putQueryParameter("SceneId", sceneId.toString());
 		}
 	}
 
@@ -200,24 +120,13 @@ public class LivenessFaceVerifyRequest extends RpcAcsRequest<LivenessFaceVerifyR
 	public void setOssBucketName(String ossBucketName) {
 		this.ossBucketName = ossBucketName;
 		if(ossBucketName != null){
-			putBodyParameter("OssBucketName", ossBucketName);
-		}
-	}
-
-	public String getCrop() {
-		return this.crop;
-	}
-
-	public void setCrop(String crop) {
-		this.crop = crop;
-		if(crop != null){
-			putBodyParameter("Crop", crop);
+			putQueryParameter("OssBucketName", ossBucketName);
 		}
 	}
 
 	@Override
-	public Class<LivenessFaceVerifyResponse> getResponseClass() {
-		return LivenessFaceVerifyResponse.class;
+	public Class<AIGCFaceVerifyResponse> getResponseClass() {
+		return AIGCFaceVerifyResponse.class;
 	}
 
 }

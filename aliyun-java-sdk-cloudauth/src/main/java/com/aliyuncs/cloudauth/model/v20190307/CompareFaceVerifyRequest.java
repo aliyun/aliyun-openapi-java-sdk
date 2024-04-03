@@ -53,7 +53,7 @@ public class CompareFaceVerifyRequest extends RpcAcsRequest<CompareFaceVerifyRes
 
 	private String crop;
 	public CompareFaceVerifyRequest() {
-		super("Cloudauth", "2019-03-07", "CompareFaceVerify");
+		super("Cloudauth", "2019-03-07", "CompareFaceVerify", "cloudauth");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

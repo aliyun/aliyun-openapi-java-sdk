@@ -76,6 +76,12 @@ public class DescribeFaceVerifyResponse extends AcsResponse {
 
 		private String passed;
 
+		private String deviceRisk;
+
+		private String success;
+
+		private String userInfo;
+
 		public String getSubCode() {
 			return this.subCode;
 		}
@@ -114,6 +120,30 @@ public class DescribeFaceVerifyResponse extends AcsResponse {
 
 		public void setPassed(String passed) {
 			this.passed = passed;
+		}
+
+		public String getDeviceRisk() {
+			return this.deviceRisk;
+		}
+
+		public void setDeviceRisk(String deviceRisk) {
+			this.deviceRisk = deviceRisk;
+		}
+
+		public String getSuccess() {
+			return this.success;
+		}
+
+		public void setSuccess(String success) {
+			this.success = success;
+		}
+
+		public String getUserInfo() {
+			return this.userInfo;
+		}
+
+		public void setUserInfo(String userInfo) {
+			this.userInfo = userInfo;
 		}
 	}
 

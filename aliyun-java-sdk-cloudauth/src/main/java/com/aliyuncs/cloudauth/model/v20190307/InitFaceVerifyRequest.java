@@ -25,15 +25,25 @@ import com.aliyuncs.cloudauth.Endpoint;
 public class InitFaceVerifyRequest extends RpcAcsRequest<InitFaceVerifyResponse> {
 	   
 
+	private String birthday;
+
 	private String productCode;
 
 	private String faceContrastPicture;
+
+	private String readImg;
+
+	private String rarelyCharacters;
+
+	private String voluntaryCustomizedContent;
 
 	private String userId;
 
 	private String certifyId;
 
 	private String encryptType;
+
+	private String mode;
 
 	private String certNo;
 
@@ -45,9 +55,15 @@ public class InitFaceVerifyRequest extends RpcAcsRequest<InitFaceVerifyResponse>
 
 	private String model;
 
+	private String suitableType;
+
+	private String certifyUrlStyle;
+
 	private String metaInfo;
 
 	private String ossObjectName;
+
+	private String validityDate;
 
 	private String certName;
 
@@ -55,7 +71,11 @@ public class InitFaceVerifyRequest extends RpcAcsRequest<InitFaceVerifyResponse>
 
 	private String mobile;
 
+	private String faceGuardOutput;
+
 	private String authId;
+
+	private String procedurePriority;
 
 	private Long sceneId;
 
@@ -71,12 +91,23 @@ public class InitFaceVerifyRequest extends RpcAcsRequest<InitFaceVerifyResponse>
 
 	private String certifyUrlType;
 	public InitFaceVerifyRequest() {
-		super("Cloudauth", "2019-03-07", "InitFaceVerify");
+		super("Cloudauth", "2019-03-07", "InitFaceVerify", "cloudauth");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getBirthday() {
+		return this.birthday;
+	}
+
+	public void setBirthday(String birthday) {
+		this.birthday = birthday;
+		if(birthday != null){
+			putQueryParameter("Birthday", birthday);
+		}
 	}
 
 	public String getProductCode() {
@@ -98,6 +129,39 @@ public class InitFaceVerifyRequest extends RpcAcsRequest<InitFaceVerifyResponse>
 		this.faceContrastPicture = faceContrastPicture;
 		if(faceContrastPicture != null){
 			putBodyParameter("FaceContrastPicture", faceContrastPicture);
+		}
+	}
+
+	public String getReadImg() {
+		return this.readImg;
+	}
+
+	public void setReadImg(String readImg) {
+		this.readImg = readImg;
+		if(readImg != null){
+			putQueryParameter("ReadImg", readImg);
+		}
+	}
+
+	public String getRarelyCharacters() {
+		return this.rarelyCharacters;
+	}
+
+	public void setRarelyCharacters(String rarelyCharacters) {
+		this.rarelyCharacters = rarelyCharacters;
+		if(rarelyCharacters != null){
+			putQueryParameter("RarelyCharacters", rarelyCharacters);
+		}
+	}
+
+	public String getVoluntaryCustomizedContent() {
+		return this.voluntaryCustomizedContent;
+	}
+
+	public void setVoluntaryCustomizedContent(String voluntaryCustomizedContent) {
+		this.voluntaryCustomizedContent = voluntaryCustomizedContent;
+		if(voluntaryCustomizedContent != null){
+			putQueryParameter("VoluntaryCustomizedContent", voluntaryCustomizedContent);
 		}
 	}
 
@@ -131,6 +195,17 @@ public class InitFaceVerifyRequest extends RpcAcsRequest<InitFaceVerifyResponse>
 		this.encryptType = encryptType;
 		if(encryptType != null){
 			putQueryParameter("EncryptType", encryptType);
+		}
+	}
+
+	public String getMode() {
+		return this.mode;
+	}
+
+	public void setMode(String mode) {
+		this.mode = mode;
+		if(mode != null){
+			putQueryParameter("Mode", mode);
 		}
 	}
 
@@ -189,6 +264,28 @@ public class InitFaceVerifyRequest extends RpcAcsRequest<InitFaceVerifyResponse>
 		}
 	}
 
+	public String getSuitableType() {
+		return this.suitableType;
+	}
+
+	public void setSuitableType(String suitableType) {
+		this.suitableType = suitableType;
+		if(suitableType != null){
+			putQueryParameter("SuitableType", suitableType);
+		}
+	}
+
+	public String getCertifyUrlStyle() {
+		return this.certifyUrlStyle;
+	}
+
+	public void setCertifyUrlStyle(String certifyUrlStyle) {
+		this.certifyUrlStyle = certifyUrlStyle;
+		if(certifyUrlStyle != null){
+			putQueryParameter("CertifyUrlStyle", certifyUrlStyle);
+		}
+	}
+
 	public String getMetaInfo() {
 		return this.metaInfo;
 	}
@@ -208,6 +305,17 @@ public class InitFaceVerifyRequest extends RpcAcsRequest<InitFaceVerifyResponse>
 		this.ossObjectName = ossObjectName;
 		if(ossObjectName != null){
 			putQueryParameter("OssObjectName", ossObjectName);
+		}
+	}
+
+	public String getValidityDate() {
+		return this.validityDate;
+	}
+
+	public void setValidityDate(String validityDate) {
+		this.validityDate = validityDate;
+		if(validityDate != null){
+			putQueryParameter("ValidityDate", validityDate);
 		}
 	}
 
@@ -244,6 +352,17 @@ public class InitFaceVerifyRequest extends RpcAcsRequest<InitFaceVerifyResponse>
 		}
 	}
 
+	public String getFaceGuardOutput() {
+		return this.faceGuardOutput;
+	}
+
+	public void setFaceGuardOutput(String faceGuardOutput) {
+		this.faceGuardOutput = faceGuardOutput;
+		if(faceGuardOutput != null){
+			putQueryParameter("FaceGuardOutput", faceGuardOutput);
+		}
+	}
+
 	public String getAuthId() {
 		return this.authId;
 	}
@@ -252,6 +371,17 @@ public class InitFaceVerifyRequest extends RpcAcsRequest<InitFaceVerifyResponse>
 		this.authId = authId;
 		if(authId != null){
 			putBodyParameter("AuthId", authId);
+		}
+	}
+
+	public String getProcedurePriority() {
+		return this.procedurePriority;
+	}
+
+	public void setProcedurePriority(String procedurePriority) {
+		this.procedurePriority = procedurePriority;
+		if(procedurePriority != null){
+			putQueryParameter("ProcedurePriority", procedurePriority);
 		}
 	}
 
