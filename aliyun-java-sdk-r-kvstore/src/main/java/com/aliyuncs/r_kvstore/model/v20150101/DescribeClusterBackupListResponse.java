@@ -33,6 +33,12 @@ public class DescribeClusterBackupListResponse extends AcsResponse {
 
 	private Integer pageSize;
 
+	private Long fullStorageSize;
+
+	private Long logStorageSize;
+
+	private Long freeSize;
+
 	private List<ClusterBackup> clusterBackups;
 
 	public String getRequestId() {
@@ -65,6 +71,30 @@ public class DescribeClusterBackupListResponse extends AcsResponse {
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public Long getFullStorageSize() {
+		return this.fullStorageSize;
+	}
+
+	public void setFullStorageSize(Long fullStorageSize) {
+		this.fullStorageSize = fullStorageSize;
+	}
+
+	public Long getLogStorageSize() {
+		return this.logStorageSize;
+	}
+
+	public void setLogStorageSize(Long logStorageSize) {
+		this.logStorageSize = logStorageSize;
+	}
+
+	public Long getFreeSize() {
+		return this.freeSize;
+	}
+
+	public void setFreeSize(Long freeSize) {
+		this.freeSize = freeSize;
 	}
 
 	public List<ClusterBackup> getClusterBackups() {

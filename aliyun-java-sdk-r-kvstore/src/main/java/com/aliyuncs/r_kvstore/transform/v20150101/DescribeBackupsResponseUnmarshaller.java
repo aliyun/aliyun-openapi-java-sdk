@@ -31,6 +31,9 @@ public class DescribeBackupsResponseUnmarshaller {
 		describeBackupsResponse.setPageNumber(_ctx.integerValue("DescribeBackupsResponse.PageNumber"));
 		describeBackupsResponse.setPageSize(_ctx.integerValue("DescribeBackupsResponse.PageSize"));
 		describeBackupsResponse.setTotalCount(_ctx.integerValue("DescribeBackupsResponse.TotalCount"));
+		describeBackupsResponse.setFullStorageSize(_ctx.longValue("DescribeBackupsResponse.FullStorageSize"));
+		describeBackupsResponse.setLogStorageSize(_ctx.longValue("DescribeBackupsResponse.LogStorageSize"));
+		describeBackupsResponse.setFreeSize(_ctx.longValue("DescribeBackupsResponse.FreeSize"));
 
 		AccessDeniedDetail accessDeniedDetail = new AccessDeniedDetail();
 		accessDeniedDetail.setAuthAction(_ctx.stringValue("DescribeBackupsResponse.AccessDeniedDetail.AuthAction"));

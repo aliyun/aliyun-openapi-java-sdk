@@ -73,7 +73,7 @@ public class DescribeBackupTasksResponse extends AcsResponse {
 
 		private String jobMode;
 
-		private Integer backupJobID;
+		private Long backupJobID;
 
 		private String backupProgressStatus;
 
@@ -105,11 +105,11 @@ public class DescribeBackupTasksResponse extends AcsResponse {
 			this.jobMode = jobMode;
 		}
 
-		public Integer getBackupJobID() {
+		public Long getBackupJobID() {
 			return this.backupJobID;
 		}
 
-		public void setBackupJobID(Integer backupJobID) {
+		public void setBackupJobID(Long backupJobID) {
 			this.backupJobID = backupJobID;
 		}
 

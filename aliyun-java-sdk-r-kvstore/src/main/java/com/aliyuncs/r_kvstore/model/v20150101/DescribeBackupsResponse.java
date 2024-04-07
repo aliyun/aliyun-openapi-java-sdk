@@ -33,6 +33,12 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 	private Integer totalCount;
 
+	private Long fullStorageSize;
+
+	private Long logStorageSize;
+
+	private Long freeSize;
+
 	private List<Backup> backups;
 
 	private AccessDeniedDetail accessDeniedDetail;
@@ -67,6 +73,30 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public Long getFullStorageSize() {
+		return this.fullStorageSize;
+	}
+
+	public void setFullStorageSize(Long fullStorageSize) {
+		this.fullStorageSize = fullStorageSize;
+	}
+
+	public Long getLogStorageSize() {
+		return this.logStorageSize;
+	}
+
+	public void setLogStorageSize(Long logStorageSize) {
+		this.logStorageSize = logStorageSize;
+	}
+
+	public Long getFreeSize() {
+		return this.freeSize;
+	}
+
+	public void setFreeSize(Long freeSize) {
+		this.freeSize = freeSize;
 	}
 
 	public List<Backup> getBackups() {

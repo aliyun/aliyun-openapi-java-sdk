@@ -52,6 +52,8 @@ public class RenewInstanceRequest extends RpcAcsRequest<RenewInstanceResponse> {
 	private Long ownerId;
 
 	private String instanceId;
+
+	private Boolean autoRenew;
 	public RenewInstanceRequest() {
 		super("R-kvstore", "2015-01-01", "RenewInstance", "redisa");
 		setMethod(MethodType.POST);
@@ -212,6 +214,17 @@ public class RenewInstanceRequest extends RpcAcsRequest<RenewInstanceResponse> {
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public Boolean getAutoRenew() {
+		return this.autoRenew;
+	}
+
+	public void setAutoRenew(Boolean autoRenew) {
+		this.autoRenew = autoRenew;
+		if(autoRenew != null){
+			putQueryParameter("AutoRenew", autoRenew.toString());
 		}
 	}
 

@@ -41,6 +41,8 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 
 	private String preferredBackupTime;
 
+	private Integer backupRetentionPeriod;
+
 	private String instanceId;
 	public ModifyBackupPolicyRequest() {
 		super("R-kvstore", "2015-01-01", "ModifyBackupPolicy", "redisa");
@@ -136,6 +138,17 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 		this.preferredBackupTime = preferredBackupTime;
 		if(preferredBackupTime != null){
 			putQueryParameter("PreferredBackupTime", preferredBackupTime);
+		}
+	}
+
+	public Integer getBackupRetentionPeriod() {
+		return this.backupRetentionPeriod;
+	}
+
+	public void setBackupRetentionPeriod(Integer backupRetentionPeriod) {
+		this.backupRetentionPeriod = backupRetentionPeriod;
+		if(backupRetentionPeriod != null){
+			putQueryParameter("BackupRetentionPeriod", backupRetentionPeriod.toString());
 		}
 	}
 

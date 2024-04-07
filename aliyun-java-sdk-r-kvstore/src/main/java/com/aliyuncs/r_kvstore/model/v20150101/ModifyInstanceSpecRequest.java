@@ -27,7 +27,11 @@ public class ModifyInstanceSpecRequest extends RpcAcsRequest<ModifyInstanceSpecR
 
 	private Long resourceOwnerId;
 
+	private String nodeType;
+
 	private String clientToken;
+
+	private Integer slaveReadOnlyCount;
 
 	private String couponNo;
 
@@ -82,6 +86,17 @@ public class ModifyInstanceSpecRequest extends RpcAcsRequest<ModifyInstanceSpecR
 		}
 	}
 
+	public String getNodeType() {
+		return this.nodeType;
+	}
+
+	public void setNodeType(String nodeType) {
+		this.nodeType = nodeType;
+		if(nodeType != null){
+			putQueryParameter("NodeType", nodeType);
+		}
+	}
+
 	public String getClientToken() {
 		return this.clientToken;
 	}
@@ -90,6 +105,17 @@ public class ModifyInstanceSpecRequest extends RpcAcsRequest<ModifyInstanceSpecR
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public Integer getSlaveReadOnlyCount() {
+		return this.slaveReadOnlyCount;
+	}
+
+	public void setSlaveReadOnlyCount(Integer slaveReadOnlyCount) {
+		this.slaveReadOnlyCount = slaveReadOnlyCount;
+		if(slaveReadOnlyCount != null){
+			putQueryParameter("SlaveReadOnlyCount", slaveReadOnlyCount.toString());
 		}
 	}
 

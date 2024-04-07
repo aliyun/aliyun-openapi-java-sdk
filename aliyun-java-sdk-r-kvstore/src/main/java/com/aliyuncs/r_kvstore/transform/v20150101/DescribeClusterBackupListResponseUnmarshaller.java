@@ -33,6 +33,9 @@ public class DescribeClusterBackupListResponseUnmarshaller {
 		describeClusterBackupListResponse.setMaxResults(_ctx.integerValue("DescribeClusterBackupListResponse.MaxResults"));
 		describeClusterBackupListResponse.setPageNumber(_ctx.integerValue("DescribeClusterBackupListResponse.PageNumber"));
 		describeClusterBackupListResponse.setPageSize(_ctx.integerValue("DescribeClusterBackupListResponse.PageSize"));
+		describeClusterBackupListResponse.setFullStorageSize(_ctx.longValue("DescribeClusterBackupListResponse.FullStorageSize"));
+		describeClusterBackupListResponse.setLogStorageSize(_ctx.longValue("DescribeClusterBackupListResponse.LogStorageSize"));
+		describeClusterBackupListResponse.setFreeSize(_ctx.longValue("DescribeClusterBackupListResponse.FreeSize"));
 
 		List<ClusterBackup> clusterBackups = new ArrayList<ClusterBackup>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeClusterBackupListResponse.ClusterBackups.Length"); i++) {

@@ -30,6 +30,8 @@ public class CreateTairInstanceRequest extends RpcAcsRequest<CreateTairInstanceR
 
 	private String secondaryZoneId;
 
+	private Integer slaveReadOnlyCount;
+
 	private String couponNo;
 
 	private String engineVersion;
@@ -131,6 +133,17 @@ public class CreateTairInstanceRequest extends RpcAcsRequest<CreateTairInstanceR
 		this.secondaryZoneId = secondaryZoneId;
 		if(secondaryZoneId != null){
 			putQueryParameter("SecondaryZoneId", secondaryZoneId);
+		}
+	}
+
+	public Integer getSlaveReadOnlyCount() {
+		return this.slaveReadOnlyCount;
+	}
+
+	public void setSlaveReadOnlyCount(Integer slaveReadOnlyCount) {
+		this.slaveReadOnlyCount = slaveReadOnlyCount;
+		if(slaveReadOnlyCount != null){
+			putQueryParameter("SlaveReadOnlyCount", slaveReadOnlyCount.toString());
 		}
 	}
 
