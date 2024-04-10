@@ -1,3 +1,12 @@
+2024-04-10 Version: 1.0.1
+- Optimize GetInternetTuple API.
+- Optimize CreateNetworkPath API.
+- Optimize DeleteNetworkPath API.
+- Optimize CreateNetworkReachableAnalysis API.
+- Optimize GetNetworkReachableAnalysis API.
+- Publish DeleteNetworkReachableAnalysis API.
+- Publish CreateAndAnalyzeNetworkPath API.
+
 2022-08-16 Version: 1.0.0
 - Publish GetNatTopN API.
 
