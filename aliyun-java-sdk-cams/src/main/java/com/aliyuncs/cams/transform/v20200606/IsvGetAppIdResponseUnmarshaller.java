@@ -27,6 +27,7 @@ public class IsvGetAppIdResponseUnmarshaller {
 		isvGetAppIdResponse.setMessage(_ctx.stringValue("IsvGetAppIdResponse.Message"));
 		isvGetAppIdResponse.setAppId(_ctx.stringValue("IsvGetAppIdResponse.AppId"));
 		isvGetAppIdResponse.setAccessDeniedDetail(_ctx.stringValue("IsvGetAppIdResponse.AccessDeniedDetail"));
+		isvGetAppIdResponse.setConfigId(_ctx.stringValue("IsvGetAppIdResponse.ConfigId"));
 	 
 	 	return isvGetAppIdResponse;
 	}

@@ -14,15 +14,16 @@
 
 package com.aliyuncs.cams.model.v20200606;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cams.transform.v20200606.IsvGetAppIdResponseUnmarshaller;
+import com.aliyuncs.cams.transform.v20200606.CreateFlowResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class IsvGetAppIdResponse extends AcsResponse {
+public class CreateFlowResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -30,11 +31,7 @@ public class IsvGetAppIdResponse extends AcsResponse {
 
 	private String message;
 
-	private String appId;
-
-	private String accessDeniedDetail;
-
-	private String configId;
+	private Data data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -60,33 +57,50 @@ public class IsvGetAppIdResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getAppId() {
-		return this.appId;
+	public Data getData() {
+		return this.data;
 	}
 
-	public void setAppId(String appId) {
-		this.appId = appId;
+	public void setData(Data data) {
+		this.data = data;
 	}
 
-	public String getAccessDeniedDetail() {
-		return this.accessDeniedDetail;
-	}
+	public static class Data {
 
-	public void setAccessDeniedDetail(String accessDeniedDetail) {
-		this.accessDeniedDetail = accessDeniedDetail;
-	}
+		private String flowId;
 
-	public String getConfigId() {
-		return this.configId;
-	}
+		private String flowName;
 
-	public void setConfigId(String configId) {
-		this.configId = configId;
+		private List<String> categories;
+
+		public String getFlowId() {
+			return this.flowId;
+		}
+
+		public void setFlowId(String flowId) {
+			this.flowId = flowId;
+		}
+
+		public String getFlowName() {
+			return this.flowName;
+		}
+
+		public void setFlowName(String flowName) {
+			this.flowName = flowName;
+		}
+
+		public List<String> getCategories() {
+			return this.categories;
+		}
+
+		public void setCategories(List<String> categories) {
+			this.categories = categories;
+		}
 	}
 
 	@Override
-	public IsvGetAppIdResponse getInstance(UnmarshallerContext context) {
-		return	IsvGetAppIdResponseUnmarshaller.unmarshall(this, context);
+	public CreateFlowResponse getInstance(UnmarshallerContext context) {
+		return	CreateFlowResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

@@ -30,6 +30,8 @@ public class ModifyPhoneBusinessProfileRequest extends RpcAcsRequest<ModifyPhone
 
 	private String phoneNumber;
 
+	private String about;
+
 	private String description;
 
 	private String vertical;
@@ -61,6 +63,17 @@ public class ModifyPhoneBusinessProfileRequest extends RpcAcsRequest<ModifyPhone
 		this.phoneNumber = phoneNumber;
 		if(phoneNumber != null){
 			putQueryParameter("PhoneNumber", phoneNumber);
+		}
+	}
+
+	public String getAbout() {
+		return this.about;
+	}
+
+	public void setAbout(String about) {
+		this.about = about;
+		if(about != null){
+			putQueryParameter("About", about);
 		}
 	}
 

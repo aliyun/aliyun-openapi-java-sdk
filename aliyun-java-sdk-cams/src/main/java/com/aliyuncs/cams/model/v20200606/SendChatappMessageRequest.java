@@ -29,28 +29,14 @@ import com.aliyuncs.cams.Endpoint;
 public class SendChatappMessageRequest extends RpcAcsRequest<SendChatappMessageResponse> {
 	   
 
-	@SerializedName("productAction")
-	private ProductAction productAction;
-
-	private String messageType;
-
 	private String language;
-
-	private String custWabaId;
 
 	private String type;
 
 	private String fallBackContent;
 
-	private String content;
-
-	@SerializedName("templateParams")
-	private Map<String,String> templateParams;
-
 	@SerializedName("payload")
 	private List<String> payload;
-
-	private String channelType;
 
 	private String from;
 
@@ -58,11 +44,34 @@ public class SendChatappMessageRequest extends RpcAcsRequest<SendChatappMessageR
 
 	private String fallBackRule;
 
-	private String trackingData;
+	@SerializedName("flowAction")
+	private FlowAction flowAction;
 
 	private String taskId;
 
 	private String isvCode;
+
+	private String custSpaceId;
+
+	private String templateCode;
+
+	@SerializedName("productAction")
+	private ProductAction productAction;
+
+	private String messageType;
+
+	private String custWabaId;
+
+	private String content;
+
+	@SerializedName("templateParams")
+	private Map<String,String> templateParams;
+
+	private String channelType;
+
+	private String templateName;
+
+	private String trackingData;
 
 	private String contextMessageId;
 
@@ -74,11 +83,7 @@ public class SendChatappMessageRequest extends RpcAcsRequest<SendChatappMessageR
 
 	private Integer fallBackDuration;
 
-	private String custSpaceId;
-
 	private String to;
-
-	private String templateCode;
 	public SendChatappMessageRequest() {
 		super("cams", "2020-06-06", "SendChatappMessage", "cams");
 		setMethod(MethodType.POST);
@@ -86,28 +91,6 @@ public class SendChatappMessageRequest extends RpcAcsRequest<SendChatappMessageR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public ProductAction getProductAction() {
-		return this.productAction;
-	}
-
-	public void setProductAction(ProductAction productAction) {
-		this.productAction = productAction;	
-		if (productAction != null) {
-			putBodyParameter("ProductAction" , new Gson().toJson(productAction));
-		}	
-	}
-
-	public String getMessageType() {
-		return this.messageType;
-	}
-
-	public void setMessageType(String messageType) {
-		this.messageType = messageType;
-		if(messageType != null){
-			putBodyParameter("MessageType", messageType);
-		}
 	}
 
 	public String getLanguage() {
@@ -118,17 +101,6 @@ public class SendChatappMessageRequest extends RpcAcsRequest<SendChatappMessageR
 		this.language = language;
 		if(language != null){
 			putBodyParameter("Language", language);
-		}
-	}
-
-	public String getCustWabaId() {
-		return this.custWabaId;
-	}
-
-	public void setCustWabaId(String custWabaId) {
-		this.custWabaId = custWabaId;
-		if(custWabaId != null){
-			putBodyParameter("CustWabaId", custWabaId);
 		}
 	}
 
@@ -154,28 +126,6 @@ public class SendChatappMessageRequest extends RpcAcsRequest<SendChatappMessageR
 		}
 	}
 
-	public String getContent() {
-		return this.content;
-	}
-
-	public void setContent(String content) {
-		this.content = content;
-		if(content != null){
-			putQueryParameter("Content", content);
-		}
-	}
-
-	public Map<String,String> getTemplateParams() {
-		return this.templateParams;
-	}
-
-	public void setTemplateParams(Map<String,String> templateParams) {
-		this.templateParams = templateParams;	
-		if (templateParams != null) {
-			putBodyParameter("TemplateParams" , new Gson().toJson(templateParams));
-		}	
-	}
-
 	public List<String> getPayload() {
 		return this.payload;
 	}
@@ -185,17 +135,6 @@ public class SendChatappMessageRequest extends RpcAcsRequest<SendChatappMessageR
 		if (payload != null) {
 			putQueryParameter("Payload" , new Gson().toJson(payload));
 		}	
-	}
-
-	public String getChannelType() {
-		return this.channelType;
-	}
-
-	public void setChannelType(String channelType) {
-		this.channelType = channelType;
-		if(channelType != null){
-			putBodyParameter("ChannelType", channelType);
-		}
 	}
 
 	public String getFrom() {
@@ -231,15 +170,15 @@ public class SendChatappMessageRequest extends RpcAcsRequest<SendChatappMessageR
 		}
 	}
 
-	public String getTrackingData() {
-		return this.trackingData;
+	public FlowAction getFlowAction() {
+		return this.flowAction;
 	}
 
-	public void setTrackingData(String trackingData) {
-		this.trackingData = trackingData;
-		if(trackingData != null){
-			putBodyParameter("TrackingData", trackingData);
-		}
+	public void setFlowAction(FlowAction flowAction) {
+		this.flowAction = flowAction;	
+		if (flowAction != null) {
+			putBodyParameter("FlowAction" , new Gson().toJson(flowAction));
+		}	
 	}
 
 	public String getTaskId() {
@@ -261,6 +200,116 @@ public class SendChatappMessageRequest extends RpcAcsRequest<SendChatappMessageR
 		this.isvCode = isvCode;
 		if(isvCode != null){
 			putBodyParameter("IsvCode", isvCode);
+		}
+	}
+
+	public String getCustSpaceId() {
+		return this.custSpaceId;
+	}
+
+	public void setCustSpaceId(String custSpaceId) {
+		this.custSpaceId = custSpaceId;
+		if(custSpaceId != null){
+			putBodyParameter("CustSpaceId", custSpaceId);
+		}
+	}
+
+	public String getTemplateCode() {
+		return this.templateCode;
+	}
+
+	public void setTemplateCode(String templateCode) {
+		this.templateCode = templateCode;
+		if(templateCode != null){
+			putBodyParameter("TemplateCode", templateCode);
+		}
+	}
+
+	public ProductAction getProductAction() {
+		return this.productAction;
+	}
+
+	public void setProductAction(ProductAction productAction) {
+		this.productAction = productAction;	
+		if (productAction != null) {
+			putBodyParameter("ProductAction" , new Gson().toJson(productAction));
+		}	
+	}
+
+	public String getMessageType() {
+		return this.messageType;
+	}
+
+	public void setMessageType(String messageType) {
+		this.messageType = messageType;
+		if(messageType != null){
+			putBodyParameter("MessageType", messageType);
+		}
+	}
+
+	public String getCustWabaId() {
+		return this.custWabaId;
+	}
+
+	public void setCustWabaId(String custWabaId) {
+		this.custWabaId = custWabaId;
+		if(custWabaId != null){
+			putBodyParameter("CustWabaId", custWabaId);
+		}
+	}
+
+	public String getContent() {
+		return this.content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
+		if(content != null){
+			putQueryParameter("Content", content);
+		}
+	}
+
+	public Map<String,String> getTemplateParams() {
+		return this.templateParams;
+	}
+
+	public void setTemplateParams(Map<String,String> templateParams) {
+		this.templateParams = templateParams;	
+		if (templateParams != null) {
+			putBodyParameter("TemplateParams" , new Gson().toJson(templateParams));
+		}	
+	}
+
+	public String getChannelType() {
+		return this.channelType;
+	}
+
+	public void setChannelType(String channelType) {
+		this.channelType = channelType;
+		if(channelType != null){
+			putBodyParameter("ChannelType", channelType);
+		}
+	}
+
+	public String getTemplateName() {
+		return this.templateName;
+	}
+
+	public void setTemplateName(String templateName) {
+		this.templateName = templateName;
+		if(templateName != null){
+			putBodyParameter("TemplateName", templateName);
+		}
+	}
+
+	public String getTrackingData() {
+		return this.trackingData;
+	}
+
+	public void setTrackingData(String trackingData) {
+		this.trackingData = trackingData;
+		if(trackingData != null){
+			putBodyParameter("TrackingData", trackingData);
 		}
 	}
 
@@ -319,17 +368,6 @@ public class SendChatappMessageRequest extends RpcAcsRequest<SendChatappMessageR
 		}
 	}
 
-	public String getCustSpaceId() {
-		return this.custSpaceId;
-	}
-
-	public void setCustSpaceId(String custSpaceId) {
-		this.custSpaceId = custSpaceId;
-		if(custSpaceId != null){
-			putBodyParameter("CustSpaceId", custSpaceId);
-		}
-	}
-
 	public String getTo() {
 		return this.to;
 	}
@@ -341,14 +379,28 @@ public class SendChatappMessageRequest extends RpcAcsRequest<SendChatappMessageR
 		}
 	}
 
-	public String getTemplateCode() {
-		return this.templateCode;
-	}
+	public static class FlowAction {
 
-	public void setTemplateCode(String templateCode) {
-		this.templateCode = templateCode;
-		if(templateCode != null){
-			putBodyParameter("TemplateCode", templateCode);
+		@SerializedName("FlowToken")
+		private String flowToken;
+
+		@SerializedName("FlowActionData")
+		private Map<String,String> flowActionData;
+
+		public String getFlowToken() {
+			return this.flowToken;
+		}
+
+		public void setFlowToken(String flowToken) {
+			this.flowToken = flowToken;
+		}
+
+		public Map<String,String> getFlowActionData() {
+			return this.flowActionData;
+		}
+
+		public void setFlowActionData(Map<String,String> flowActionData) {
+			this.flowActionData = flowActionData;
 		}
 	}
 

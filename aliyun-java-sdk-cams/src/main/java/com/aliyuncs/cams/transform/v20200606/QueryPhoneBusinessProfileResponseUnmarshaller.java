@@ -37,6 +37,7 @@ public class QueryPhoneBusinessProfileResponseUnmarshaller {
 		data.setVertical(_ctx.stringValue("QueryPhoneBusinessProfileResponse.Data.Vertical"));
 		data.setEmail(_ctx.stringValue("QueryPhoneBusinessProfileResponse.Data.Email"));
 		data.setProfilePictureUrl(_ctx.stringValue("QueryPhoneBusinessProfileResponse.Data.ProfilePictureUrl"));
+		data.setAbout(_ctx.stringValue("QueryPhoneBusinessProfileResponse.Data.About"));
 
 		List<String> websites = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("QueryPhoneBusinessProfileResponse.Data.Websites.Length"); i++) {

@@ -22,16 +22,16 @@ import com.aliyuncs.cams.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryChatappPhoneNumbersRequest extends RpcAcsRequest<QueryChatappPhoneNumbersResponse> {
+public class UpdateFlowJSONAssetRequest extends RpcAcsRequest<UpdateFlowJSONAssetResponse> {
 	   
 
-	private String isvCode;
+	private String filePath;
 
 	private String custSpaceId;
 
-	private String status;
-	public QueryChatappPhoneNumbersRequest() {
-		super("cams", "2020-06-06", "QueryChatappPhoneNumbers", "cams");
+	private String flowId;
+	public UpdateFlowJSONAssetRequest() {
+		super("cams", "2020-06-06", "UpdateFlowJSONAsset", "cams");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,14 +39,14 @@ public class QueryChatappPhoneNumbersRequest extends RpcAcsRequest<QueryChatappP
 		} catch (Exception e) {}
 	}
 
-	public String getIsvCode() {
-		return this.isvCode;
+	public String getFilePath() {
+		return this.filePath;
 	}
 
-	public void setIsvCode(String isvCode) {
-		this.isvCode = isvCode;
-		if(isvCode != null){
-			putQueryParameter("IsvCode", isvCode);
+	public void setFilePath(String filePath) {
+		this.filePath = filePath;
+		if(filePath != null){
+			putBodyParameter("FilePath", filePath);
 		}
 	}
 
@@ -57,24 +57,24 @@ public class QueryChatappPhoneNumbersRequest extends RpcAcsRequest<QueryChatappP
 	public void setCustSpaceId(String custSpaceId) {
 		this.custSpaceId = custSpaceId;
 		if(custSpaceId != null){
-			putQueryParameter("CustSpaceId", custSpaceId);
+			putBodyParameter("CustSpaceId", custSpaceId);
 		}
 	}
 
-	public String getStatus() {
-		return this.status;
+	public String getFlowId() {
+		return this.flowId;
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
-		if(status != null){
-			putQueryParameter("Status", status);
+	public void setFlowId(String flowId) {
+		this.flowId = flowId;
+		if(flowId != null){
+			putBodyParameter("FlowId", flowId);
 		}
 	}
 
 	@Override
-	public Class<QueryChatappPhoneNumbersResponse> getResponseClass() {
-		return QueryChatappPhoneNumbersResponse.class;
+	public Class<UpdateFlowJSONAssetResponse> getResponseClass() {
+		return UpdateFlowJSONAssetResponse.class;
 	}
 
 }

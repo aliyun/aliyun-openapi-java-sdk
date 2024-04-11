@@ -15,6 +15,9 @@
 package com.aliyuncs.cams.model.v20200606;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cams.Endpoint;
 
@@ -22,16 +25,17 @@ import com.aliyuncs.cams.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryChatappPhoneNumbersRequest extends RpcAcsRequest<QueryChatappPhoneNumbersResponse> {
+public class GetPermissionByCodeRequest extends RpcAcsRequest<GetPermissionByCodeResponse> {
 	   
 
-	private String isvCode;
+	private String code;
+
+	@SerializedName("permissions")
+	private List<String> permissions;
 
 	private String custSpaceId;
-
-	private String status;
-	public QueryChatappPhoneNumbersRequest() {
-		super("cams", "2020-06-06", "QueryChatappPhoneNumbers", "cams");
+	public GetPermissionByCodeRequest() {
+		super("cams", "2020-06-06", "GetPermissionByCode", "cams");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,15 +43,26 @@ public class QueryChatappPhoneNumbersRequest extends RpcAcsRequest<QueryChatappP
 		} catch (Exception e) {}
 	}
 
-	public String getIsvCode() {
-		return this.isvCode;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setIsvCode(String isvCode) {
-		this.isvCode = isvCode;
-		if(isvCode != null){
-			putQueryParameter("IsvCode", isvCode);
+	public void setCode(String code) {
+		this.code = code;
+		if(code != null){
+			putBodyParameter("Code", code);
 		}
+	}
+
+	public List<String> getPermissions() {
+		return this.permissions;
+	}
+
+	public void setPermissions(List<String> permissions) {
+		this.permissions = permissions;	
+		if (permissions != null) {
+			putBodyParameter("Permissions" , new Gson().toJson(permissions));
+		}	
 	}
 
 	public String getCustSpaceId() {
@@ -57,24 +72,13 @@ public class QueryChatappPhoneNumbersRequest extends RpcAcsRequest<QueryChatappP
 	public void setCustSpaceId(String custSpaceId) {
 		this.custSpaceId = custSpaceId;
 		if(custSpaceId != null){
-			putQueryParameter("CustSpaceId", custSpaceId);
-		}
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-		if(status != null){
-			putQueryParameter("Status", status);
+			putBodyParameter("CustSpaceId", custSpaceId);
 		}
 	}
 
 	@Override
-	public Class<QueryChatappPhoneNumbersResponse> getResponseClass() {
-		return QueryChatappPhoneNumbersResponse.class;
+	public Class<GetPermissionByCodeResponse> getResponseClass() {
+		return GetPermissionByCodeResponse.class;
 	}
 
 }

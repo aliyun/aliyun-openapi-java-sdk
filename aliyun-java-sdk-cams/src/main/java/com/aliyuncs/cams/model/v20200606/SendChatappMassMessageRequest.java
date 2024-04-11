@@ -42,6 +42,8 @@ public class SendChatappMassMessageRequest extends RpcAcsRequest<SendChatappMass
 
 	private String from;
 
+	private String templateName;
+
 	private String tag;
 
 	private String fallBackRule;
@@ -133,6 +135,17 @@ public class SendChatappMassMessageRequest extends RpcAcsRequest<SendChatappMass
 		this.from = from;
 		if(from != null){
 			putBodyParameter("From", from);
+		}
+	}
+
+	public String getTemplateName() {
+		return this.templateName;
+	}
+
+	public void setTemplateName(String templateName) {
+		this.templateName = templateName;
+		if(templateName != null){
+			putBodyParameter("TemplateName", templateName);
 		}
 	}
 
@@ -260,6 +273,9 @@ public class SendChatappMassMessageRequest extends RpcAcsRequest<SendChatappMass
 		@SerializedName("ProductAction")
 		private ProductAction productAction;
 
+		@SerializedName("FlowAction")
+		private FlowAction flowAction;
+
 		public String getTo() {
 			return this.to;
 		}
@@ -290,6 +306,14 @@ public class SendChatappMassMessageRequest extends RpcAcsRequest<SendChatappMass
 
 		public void setProductAction(ProductAction productAction) {
 			this.productAction = productAction;
+		}
+
+		public FlowAction getFlowAction() {
+			return this.flowAction;
+		}
+
+		public void setFlowAction(FlowAction flowAction) {
+			this.flowAction = flowAction;
 		}
 
 		public static class ProductAction {
@@ -353,6 +377,31 @@ public class SendChatappMassMessageRequest extends RpcAcsRequest<SendChatappMass
 						this.productRetailerId = productRetailerId;
 					}
 				}
+			}
+		}
+
+		public static class FlowAction {
+
+			@SerializedName("FlowToken")
+			private String flowToken;
+
+			@SerializedName("FlowActionData")
+			private Map<String,String> flowActionData;
+
+			public String getFlowToken() {
+				return this.flowToken;
+			}
+
+			public void setFlowToken(String flowToken) {
+				this.flowToken = flowToken;
+			}
+
+			public Map<String,String> getFlowActionData() {
+				return this.flowActionData;
+			}
+
+			public void setFlowActionData(Map<String,String> flowActionData) {
+				this.flowActionData = flowActionData;
 			}
 		}
 	}

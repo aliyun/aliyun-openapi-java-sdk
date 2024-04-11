@@ -87,6 +87,8 @@ public class QueryPhoneBusinessProfileResponse extends AcsResponse {
 
 		private String profilePictureUrl;
 
+		private String about;
+
 		private List<String> websites;
 
 		public String getAddress() {
@@ -127,6 +129,14 @@ public class QueryPhoneBusinessProfileResponse extends AcsResponse {
 
 		public void setProfilePictureUrl(String profilePictureUrl) {
 			this.profilePictureUrl = profilePictureUrl;
+		}
+
+		public String getAbout() {
+			return this.about;
+		}
+
+		public void setAbout(String about) {
+			this.about = about;
 		}
 
 		public List<String> getWebsites() {

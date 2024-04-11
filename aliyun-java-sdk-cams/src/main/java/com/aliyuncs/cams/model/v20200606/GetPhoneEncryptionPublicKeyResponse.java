@@ -15,14 +15,14 @@
 package com.aliyuncs.cams.model.v20200606;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cams.transform.v20200606.IsvGetAppIdResponseUnmarshaller;
+import com.aliyuncs.cams.transform.v20200606.GetPhoneEncryptionPublicKeyResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class IsvGetAppIdResponse extends AcsResponse {
+public class GetPhoneEncryptionPublicKeyResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -30,11 +30,7 @@ public class IsvGetAppIdResponse extends AcsResponse {
 
 	private String message;
 
-	private String appId;
-
-	private String accessDeniedDetail;
-
-	private String configId;
+	private Data data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -60,33 +56,50 @@ public class IsvGetAppIdResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getAppId() {
-		return this.appId;
+	public Data getData() {
+		return this.data;
 	}
 
-	public void setAppId(String appId) {
-		this.appId = appId;
+	public void setData(Data data) {
+		this.data = data;
 	}
 
-	public String getAccessDeniedDetail() {
-		return this.accessDeniedDetail;
-	}
+	public static class Data {
 
-	public void setAccessDeniedDetail(String accessDeniedDetail) {
-		this.accessDeniedDetail = accessDeniedDetail;
-	}
+		private String phoneNumber;
 
-	public String getConfigId() {
-		return this.configId;
-	}
+		private String encryptionPublicKey;
 
-	public void setConfigId(String configId) {
-		this.configId = configId;
+		private String encryptionPublicKeyStatus;
+
+		public String getPhoneNumber() {
+			return this.phoneNumber;
+		}
+
+		public void setPhoneNumber(String phoneNumber) {
+			this.phoneNumber = phoneNumber;
+		}
+
+		public String getEncryptionPublicKey() {
+			return this.encryptionPublicKey;
+		}
+
+		public void setEncryptionPublicKey(String encryptionPublicKey) {
+			this.encryptionPublicKey = encryptionPublicKey;
+		}
+
+		public String getEncryptionPublicKeyStatus() {
+			return this.encryptionPublicKeyStatus;
+		}
+
+		public void setEncryptionPublicKeyStatus(String encryptionPublicKeyStatus) {
+			this.encryptionPublicKeyStatus = encryptionPublicKeyStatus;
+		}
 	}
 
 	@Override
-	public IsvGetAppIdResponse getInstance(UnmarshallerContext context) {
-		return	IsvGetAppIdResponseUnmarshaller.unmarshall(this, context);
+	public GetPhoneEncryptionPublicKeyResponse getInstance(UnmarshallerContext context) {
+		return	GetPhoneEncryptionPublicKeyResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

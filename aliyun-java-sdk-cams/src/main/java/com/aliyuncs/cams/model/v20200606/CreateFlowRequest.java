@@ -15,6 +15,9 @@
 package com.aliyuncs.cams.model.v20200606;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cams.Endpoint;
 
@@ -22,16 +25,17 @@ import com.aliyuncs.cams.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryChatappPhoneNumbersRequest extends RpcAcsRequest<QueryChatappPhoneNumbersResponse> {
+public class CreateFlowRequest extends RpcAcsRequest<CreateFlowResponse> {
 	   
 
-	private String isvCode;
+	@SerializedName("categories")
+	private List<String> categories;
 
 	private String custSpaceId;
 
-	private String status;
-	public QueryChatappPhoneNumbersRequest() {
-		super("cams", "2020-06-06", "QueryChatappPhoneNumbers", "cams");
+	private String flowName;
+	public CreateFlowRequest() {
+		super("cams", "2020-06-06", "CreateFlow", "cams");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,15 +43,15 @@ public class QueryChatappPhoneNumbersRequest extends RpcAcsRequest<QueryChatappP
 		} catch (Exception e) {}
 	}
 
-	public String getIsvCode() {
-		return this.isvCode;
+	public List<String> getCategories() {
+		return this.categories;
 	}
 
-	public void setIsvCode(String isvCode) {
-		this.isvCode = isvCode;
-		if(isvCode != null){
-			putQueryParameter("IsvCode", isvCode);
-		}
+	public void setCategories(List<String> categories) {
+		this.categories = categories;	
+		if (categories != null) {
+			putBodyParameter("Categories" , new Gson().toJson(categories));
+		}	
 	}
 
 	public String getCustSpaceId() {
@@ -57,24 +61,24 @@ public class QueryChatappPhoneNumbersRequest extends RpcAcsRequest<QueryChatappP
 	public void setCustSpaceId(String custSpaceId) {
 		this.custSpaceId = custSpaceId;
 		if(custSpaceId != null){
-			putQueryParameter("CustSpaceId", custSpaceId);
+			putBodyParameter("CustSpaceId", custSpaceId);
 		}
 	}
 
-	public String getStatus() {
-		return this.status;
+	public String getFlowName() {
+		return this.flowName;
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
-		if(status != null){
-			putQueryParameter("Status", status);
+	public void setFlowName(String flowName) {
+		this.flowName = flowName;
+		if(flowName != null){
+			putBodyParameter("FlowName", flowName);
 		}
 	}
 
 	@Override
-	public Class<QueryChatappPhoneNumbersResponse> getResponseClass() {
-		return QueryChatappPhoneNumbersResponse.class;
+	public Class<CreateFlowResponse> getResponseClass() {
+		return CreateFlowResponse.class;
 	}
 
 }

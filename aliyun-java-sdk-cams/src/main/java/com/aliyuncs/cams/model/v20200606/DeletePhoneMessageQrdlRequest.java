@@ -22,16 +22,16 @@ import com.aliyuncs.cams.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryChatappPhoneNumbersRequest extends RpcAcsRequest<QueryChatappPhoneNumbersResponse> {
+public class DeletePhoneMessageQrdlRequest extends RpcAcsRequest<DeletePhoneMessageQrdlResponse> {
 	   
 
-	private String isvCode;
+	private String phoneNumber;
+
+	private String qrdlCode;
 
 	private String custSpaceId;
-
-	private String status;
-	public QueryChatappPhoneNumbersRequest() {
-		super("cams", "2020-06-06", "QueryChatappPhoneNumbers", "cams");
+	public DeletePhoneMessageQrdlRequest() {
+		super("cams", "2020-06-06", "DeletePhoneMessageQrdl", "cams");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,14 +39,25 @@ public class QueryChatappPhoneNumbersRequest extends RpcAcsRequest<QueryChatappP
 		} catch (Exception e) {}
 	}
 
-	public String getIsvCode() {
-		return this.isvCode;
+	public String getPhoneNumber() {
+		return this.phoneNumber;
 	}
 
-	public void setIsvCode(String isvCode) {
-		this.isvCode = isvCode;
-		if(isvCode != null){
-			putQueryParameter("IsvCode", isvCode);
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+		if(phoneNumber != null){
+			putBodyParameter("PhoneNumber", phoneNumber);
+		}
+	}
+
+	public String getQrdlCode() {
+		return this.qrdlCode;
+	}
+
+	public void setQrdlCode(String qrdlCode) {
+		this.qrdlCode = qrdlCode;
+		if(qrdlCode != null){
+			putBodyParameter("QrdlCode", qrdlCode);
 		}
 	}
 
@@ -57,24 +68,13 @@ public class QueryChatappPhoneNumbersRequest extends RpcAcsRequest<QueryChatappP
 	public void setCustSpaceId(String custSpaceId) {
 		this.custSpaceId = custSpaceId;
 		if(custSpaceId != null){
-			putQueryParameter("CustSpaceId", custSpaceId);
-		}
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-		if(status != null){
-			putQueryParameter("Status", status);
+			putBodyParameter("CustSpaceId", custSpaceId);
 		}
 	}
 
 	@Override
-	public Class<QueryChatappPhoneNumbersResponse> getResponseClass() {
-		return QueryChatappPhoneNumbersResponse.class;
+	public Class<DeletePhoneMessageQrdlResponse> getResponseClass() {
+		return DeletePhoneMessageQrdlResponse.class;
 	}
 
 }

@@ -26,6 +26,8 @@ public class IsvGetAppIdRequest extends RpcAcsRequest<IsvGetAppIdResponse> {
 	   
 
 	private String type;
+
+	private String permissions;
 	public IsvGetAppIdRequest() {
 		super("cams", "2020-06-06", "IsvGetAppId", "cams");
 		setMethod(MethodType.POST);
@@ -43,6 +45,17 @@ public class IsvGetAppIdRequest extends RpcAcsRequest<IsvGetAppIdResponse> {
 		this.type = type;
 		if(type != null){
 			putBodyParameter("Type", type);
+		}
+	}
+
+	public String getPermissions() {
+		return this.permissions;
+	}
+
+	public void setPermissions(String permissions) {
+		this.permissions = permissions;
+		if(permissions != null){
+			putBodyParameter("Permissions", permissions);
 		}
 	}
 

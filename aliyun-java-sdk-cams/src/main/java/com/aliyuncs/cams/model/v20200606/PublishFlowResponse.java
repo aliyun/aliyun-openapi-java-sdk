@@ -15,26 +15,20 @@
 package com.aliyuncs.cams.model.v20200606;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cams.transform.v20200606.IsvGetAppIdResponseUnmarshaller;
+import com.aliyuncs.cams.transform.v20200606.PublishFlowResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class IsvGetAppIdResponse extends AcsResponse {
+public class PublishFlowResponse extends AcsResponse {
 
 	private String requestId;
 
 	private String code;
 
 	private String message;
-
-	private String appId;
-
-	private String accessDeniedDetail;
-
-	private String configId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -60,33 +54,9 @@ public class IsvGetAppIdResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getAppId() {
-		return this.appId;
-	}
-
-	public void setAppId(String appId) {
-		this.appId = appId;
-	}
-
-	public String getAccessDeniedDetail() {
-		return this.accessDeniedDetail;
-	}
-
-	public void setAccessDeniedDetail(String accessDeniedDetail) {
-		this.accessDeniedDetail = accessDeniedDetail;
-	}
-
-	public String getConfigId() {
-		return this.configId;
-	}
-
-	public void setConfigId(String configId) {
-		this.configId = configId;
-	}
-
 	@Override
-	public IsvGetAppIdResponse getInstance(UnmarshallerContext context) {
-		return	IsvGetAppIdResponseUnmarshaller.unmarshall(this, context);
+	public PublishFlowResponse getInstance(UnmarshallerContext context) {
+		return	PublishFlowResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

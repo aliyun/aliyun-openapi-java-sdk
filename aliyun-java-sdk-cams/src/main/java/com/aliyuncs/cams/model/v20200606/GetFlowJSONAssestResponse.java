@@ -15,14 +15,14 @@
 package com.aliyuncs.cams.model.v20200606;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cams.transform.v20200606.IsvGetAppIdResponseUnmarshaller;
+import com.aliyuncs.cams.transform.v20200606.GetFlowJSONAssestResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class IsvGetAppIdResponse extends AcsResponse {
+public class GetFlowJSONAssestResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -30,11 +30,7 @@ public class IsvGetAppIdResponse extends AcsResponse {
 
 	private String message;
 
-	private String appId;
-
-	private String accessDeniedDetail;
-
-	private String configId;
+	private Data data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -60,33 +56,40 @@ public class IsvGetAppIdResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getAppId() {
-		return this.appId;
+	public Data getData() {
+		return this.data;
 	}
 
-	public void setAppId(String appId) {
-		this.appId = appId;
+	public void setData(Data data) {
+		this.data = data;
 	}
 
-	public String getAccessDeniedDetail() {
-		return this.accessDeniedDetail;
-	}
+	public static class Data {
 
-	public void setAccessDeniedDetail(String accessDeniedDetail) {
-		this.accessDeniedDetail = accessDeniedDetail;
-	}
+		private String flowId;
 
-	public String getConfigId() {
-		return this.configId;
-	}
+		private String filePath;
 
-	public void setConfigId(String configId) {
-		this.configId = configId;
+		public String getFlowId() {
+			return this.flowId;
+		}
+
+		public void setFlowId(String flowId) {
+			this.flowId = flowId;
+		}
+
+		public String getFilePath() {
+			return this.filePath;
+		}
+
+		public void setFilePath(String filePath) {
+			this.filePath = filePath;
+		}
 	}
 
 	@Override
-	public IsvGetAppIdResponse getInstance(UnmarshallerContext context) {
-		return	IsvGetAppIdResponseUnmarshaller.unmarshall(this, context);
+	public GetFlowJSONAssestResponse getInstance(UnmarshallerContext context) {
+		return	GetFlowJSONAssestResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

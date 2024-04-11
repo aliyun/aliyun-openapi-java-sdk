@@ -41,6 +41,8 @@ public class ModifyChatappTemplateRequest extends RpcAcsRequest<ModifyChatappTem
 
 	private String templateType;
 
+	private String templateName;
+
 	private String isvCode;
 
 	private String custSpaceId;
@@ -111,6 +113,17 @@ public class ModifyChatappTemplateRequest extends RpcAcsRequest<ModifyChatappTem
 		this.templateType = templateType;
 		if(templateType != null){
 			putBodyParameter("TemplateType", templateType);
+		}
+	}
+
+	public String getTemplateName() {
+		return this.templateName;
+	}
+
+	public void setTemplateName(String templateName) {
+		this.templateName = templateName;
+		if(templateName != null){
+			putBodyParameter("TemplateName", templateName);
 		}
 	}
 
@@ -357,6 +370,15 @@ public class ModifyChatappTemplateRequest extends RpcAcsRequest<ModifyChatappTem
 			@SerializedName("CouponCode")
 			private String couponCode;
 
+			@SerializedName("FlowId")
+			private String flowId;
+
+			@SerializedName("FlowAction")
+			private String flowAction;
+
+			@SerializedName("NavigateScreen")
+			private String navigateScreen;
+
 			public String getType() {
 				return this.type;
 			}
@@ -435,6 +457,30 @@ public class ModifyChatappTemplateRequest extends RpcAcsRequest<ModifyChatappTem
 
 			public void setCouponCode(String couponCode) {
 				this.couponCode = couponCode;
+			}
+
+			public String getFlowId() {
+				return this.flowId;
+			}
+
+			public void setFlowId(String flowId) {
+				this.flowId = flowId;
+			}
+
+			public String getFlowAction() {
+				return this.flowAction;
+			}
+
+			public void setFlowAction(String flowAction) {
+				this.flowAction = flowAction;
+			}
+
+			public String getNavigateScreen() {
+				return this.navigateScreen;
+			}
+
+			public void setNavigateScreen(String navigateScreen) {
+				this.navigateScreen = navigateScreen;
 			}
 		}
 

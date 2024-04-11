@@ -84,6 +84,9 @@ public class GetChatappTemplateDetailResponseUnmarshaller {
 				button.setAutofillText(_ctx.stringValue("GetChatappTemplateDetailResponse.Data.Components["+ i +"].Buttons["+ j +"].AutofillText"));
 				button.setIsOptOut(_ctx.booleanValue("GetChatappTemplateDetailResponse.Data.Components["+ i +"].Buttons["+ j +"].IsOptOut"));
 				button.setCouponCode(_ctx.stringValue("GetChatappTemplateDetailResponse.Data.Components["+ i +"].Buttons["+ j +"].CouponCode"));
+				button.setFlowId(_ctx.stringValue("GetChatappTemplateDetailResponse.Data.Components["+ i +"].Buttons["+ j +"].FlowId"));
+				button.setFlowAction(_ctx.stringValue("GetChatappTemplateDetailResponse.Data.Components["+ i +"].Buttons["+ j +"].FlowAction"));
+				button.setNavigateScreen(_ctx.stringValue("GetChatappTemplateDetailResponse.Data.Components["+ i +"].Buttons["+ j +"].NavigateScreen"));
 
 				ExtendAttrs extendAttrs = new ExtendAttrs();
 				extendAttrs.setNextTemplateCode(_ctx.stringValue("GetChatappTemplateDetailResponse.Data.Components["+ i +"].Buttons["+ j +"].ExtendAttrs.NextTemplateCode"));

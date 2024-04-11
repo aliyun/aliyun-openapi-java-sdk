@@ -370,6 +370,15 @@ public class CreateChatappTemplateRequest extends RpcAcsRequest<CreateChatappTem
 			@SerializedName("CouponCode")
 			private String couponCode;
 
+			@SerializedName("FlowId")
+			private String flowId;
+
+			@SerializedName("FlowAction")
+			private String flowAction;
+
+			@SerializedName("NavigateScreen")
+			private String navigateScreen;
+
 			public String getType() {
 				return this.type;
 			}
@@ -448,6 +457,30 @@ public class CreateChatappTemplateRequest extends RpcAcsRequest<CreateChatappTem
 
 			public void setCouponCode(String couponCode) {
 				this.couponCode = couponCode;
+			}
+
+			public String getFlowId() {
+				return this.flowId;
+			}
+
+			public void setFlowId(String flowId) {
+				this.flowId = flowId;
+			}
+
+			public String getFlowAction() {
+				return this.flowAction;
+			}
+
+			public void setFlowAction(String flowAction) {
+				this.flowAction = flowAction;
+			}
+
+			public String getNavigateScreen() {
+				return this.navigateScreen;
+			}
+
+			public void setNavigateScreen(String navigateScreen) {
+				this.navigateScreen = navigateScreen;
 			}
 		}
 

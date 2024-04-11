@@ -27,6 +27,12 @@ public class DeleteChatappTemplateRequest extends RpcAcsRequest<DeleteChatappTem
 
 	private String custWabaId;
 
+	private String language;
+
+	private String templateType;
+
+	private String templateName;
+
 	private String isvCode;
 
 	private String custSpaceId;
@@ -49,6 +55,39 @@ public class DeleteChatappTemplateRequest extends RpcAcsRequest<DeleteChatappTem
 		this.custWabaId = custWabaId;
 		if(custWabaId != null){
 			putQueryParameter("CustWabaId", custWabaId);
+		}
+	}
+
+	public String getLanguage() {
+		return this.language;
+	}
+
+	public void setLanguage(String language) {
+		this.language = language;
+		if(language != null){
+			putQueryParameter("Language", language);
+		}
+	}
+
+	public String getTemplateType() {
+		return this.templateType;
+	}
+
+	public void setTemplateType(String templateType) {
+		this.templateType = templateType;
+		if(templateType != null){
+			putQueryParameter("TemplateType", templateType);
+		}
+	}
+
+	public String getTemplateName() {
+		return this.templateName;
+	}
+
+	public void setTemplateName(String templateName) {
+		this.templateName = templateName;
+		if(templateName != null){
+			putQueryParameter("TemplateName", templateName);
 		}
 	}
 

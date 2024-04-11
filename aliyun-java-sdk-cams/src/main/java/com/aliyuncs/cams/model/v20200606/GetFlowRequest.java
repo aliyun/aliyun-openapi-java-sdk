@@ -22,32 +22,19 @@ import com.aliyuncs.cams.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryChatappPhoneNumbersRequest extends RpcAcsRequest<QueryChatappPhoneNumbersResponse> {
+public class GetFlowRequest extends RpcAcsRequest<GetFlowResponse> {
 	   
-
-	private String isvCode;
 
 	private String custSpaceId;
 
-	private String status;
-	public QueryChatappPhoneNumbersRequest() {
-		super("cams", "2020-06-06", "QueryChatappPhoneNumbers", "cams");
+	private String flowId;
+	public GetFlowRequest() {
+		super("cams", "2020-06-06", "GetFlow", "cams");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getIsvCode() {
-		return this.isvCode;
-	}
-
-	public void setIsvCode(String isvCode) {
-		this.isvCode = isvCode;
-		if(isvCode != null){
-			putQueryParameter("IsvCode", isvCode);
-		}
 	}
 
 	public String getCustSpaceId() {
@@ -57,24 +44,24 @@ public class QueryChatappPhoneNumbersRequest extends RpcAcsRequest<QueryChatappP
 	public void setCustSpaceId(String custSpaceId) {
 		this.custSpaceId = custSpaceId;
 		if(custSpaceId != null){
-			putQueryParameter("CustSpaceId", custSpaceId);
+			putBodyParameter("CustSpaceId", custSpaceId);
 		}
 	}
 
-	public String getStatus() {
-		return this.status;
+	public String getFlowId() {
+		return this.flowId;
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
-		if(status != null){
-			putQueryParameter("Status", status);
+	public void setFlowId(String flowId) {
+		this.flowId = flowId;
+		if(flowId != null){
+			putBodyParameter("FlowId", flowId);
 		}
 	}
 
 	@Override
-	public Class<QueryChatappPhoneNumbersResponse> getResponseClass() {
-		return QueryChatappPhoneNumbersResponse.class;
+	public Class<GetFlowResponse> getResponseClass() {
+		return GetFlowResponse.class;
 	}
 
 }
