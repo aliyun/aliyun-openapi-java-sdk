@@ -46,6 +46,8 @@ public class SaveBatchTaskForReserveDropListDomainRequest extends RpcAcsRequest<
 		this.domainss = domainss;	
 		if (domainss != null) {
 			for (int depth1 = 0; depth1 < domainss.size(); depth1++) {
+				putQueryParameter("Domains." + (depth1 + 1) + ".Dns2" , domainss.get(depth1).getDns2());
+				putQueryParameter("Domains." + (depth1 + 1) + ".Dns1" , domainss.get(depth1).getDns1());
 				putQueryParameter("Domains." + (depth1 + 1) + ".DomainName" , domainss.get(depth1).getDomainName());
 			}
 		}	
@@ -64,7 +66,27 @@ public class SaveBatchTaskForReserveDropListDomainRequest extends RpcAcsRequest<
 
 	public static class Domains {
 
+		private String dns2;
+
+		private String dns1;
+
 		private String domainName;
+
+		public String getDns2() {
+			return this.dns2;
+		}
+
+		public void setDns2(String dns2) {
+			this.dns2 = dns2;
+		}
+
+		public String getDns1() {
+			return this.dns1;
+		}
+
+		public void setDns1(String dns1) {
+			this.dns1 = dns1;
+		}
 
 		public String getDomainName() {
 			return this.domainName;
