@@ -42,6 +42,7 @@ public class ListPrivateAccessPolicesResponseUnmarshaller {
 			policy.setCreateTime(_ctx.stringValue("ListPrivateAccessPolicesResponse.Polices["+ i +"].CreateTime"));
 			policy.setUserGroupMode(_ctx.stringValue("ListPrivateAccessPolicesResponse.Polices["+ i +"].UserGroupMode"));
 			policy.setApplicationType(_ctx.stringValue("ListPrivateAccessPolicesResponse.Polices["+ i +"].ApplicationType"));
+			policy.setDeviceAttributeId(_ctx.stringValue("ListPrivateAccessPolicesResponse.Polices["+ i +"].DeviceAttributeId"));
 
 			List<String> userGroupIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListPrivateAccessPolicesResponse.Polices["+ i +"].UserGroupIds.Length"); j++) {

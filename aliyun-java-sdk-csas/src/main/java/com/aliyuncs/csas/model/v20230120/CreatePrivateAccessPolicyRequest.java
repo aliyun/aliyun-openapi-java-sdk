@@ -31,6 +31,8 @@ public class CreatePrivateAccessPolicyRequest extends RpcAcsRequest<CreatePrivat
 
 	private List<String> tagIds;
 
+	private String deviceAttributeId;
+
 	private List<String> userGroupIds;
 
 	private String policyAction;
@@ -92,6 +94,17 @@ public class CreatePrivateAccessPolicyRequest extends RpcAcsRequest<CreatePrivat
 				putBodyParameter("TagIds." + (depth1 + 1) , tagIds.get(depth1));
 			}
 		}	
+	}
+
+	public String getDeviceAttributeId() {
+		return this.deviceAttributeId;
+	}
+
+	public void setDeviceAttributeId(String deviceAttributeId) {
+		this.deviceAttributeId = deviceAttributeId;
+		if(deviceAttributeId != null){
+			putBodyParameter("DeviceAttributeId", deviceAttributeId);
+		}
 	}
 
 	public List<String> getUserGroupIds() {

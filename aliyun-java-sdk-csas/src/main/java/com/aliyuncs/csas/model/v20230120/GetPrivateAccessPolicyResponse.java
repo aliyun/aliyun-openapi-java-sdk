@@ -65,6 +65,8 @@ public class GetPrivateAccessPolicyResponse extends AcsResponse {
 
 		private String applicationType;
 
+		private String deviceAttributeId;
+
 		private List<CustomUserAttribute> customUserAttributes;
 
 		private List<String> userGroupIds;
@@ -143,6 +145,14 @@ public class GetPrivateAccessPolicyResponse extends AcsResponse {
 
 		public void setApplicationType(String applicationType) {
 			this.applicationType = applicationType;
+		}
+
+		public String getDeviceAttributeId() {
+			return this.deviceAttributeId;
+		}
+
+		public void setDeviceAttributeId(String deviceAttributeId) {
+			this.deviceAttributeId = deviceAttributeId;
 		}
 
 		public List<CustomUserAttribute> getCustomUserAttributes() {

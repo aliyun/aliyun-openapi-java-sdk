@@ -27,6 +27,8 @@ public class ListPrivateAccessPolicesRequest extends RpcAcsRequest<ListPrivateAc
 
 	private List<String> policyIds;
 
+	private String tagName;
+
 	private Integer pageSize;
 
 	private String applicationId;
@@ -38,6 +40,8 @@ public class ListPrivateAccessPolicesRequest extends RpcAcsRequest<ListPrivateAc
 	private Integer currentPage;
 
 	private String policyAction;
+
+	private String applicationName;
 
 	private String name;
 
@@ -58,6 +62,17 @@ public class ListPrivateAccessPolicesRequest extends RpcAcsRequest<ListPrivateAc
 				putQueryParameter("PolicyIds." + (depth1 + 1) , policyIds.get(depth1));
 			}
 		}	
+	}
+
+	public String getTagName() {
+		return this.tagName;
+	}
+
+	public void setTagName(String tagName) {
+		this.tagName = tagName;
+		if(tagName != null){
+			putQueryParameter("TagName", tagName);
+		}
 	}
 
 	public Integer getPageSize() {
@@ -123,6 +138,17 @@ public class ListPrivateAccessPolicesRequest extends RpcAcsRequest<ListPrivateAc
 		this.policyAction = policyAction;
 		if(policyAction != null){
 			putQueryParameter("PolicyAction", policyAction);
+		}
+	}
+
+	public String getApplicationName() {
+		return this.applicationName;
+	}
+
+	public void setApplicationName(String applicationName) {
+		this.applicationName = applicationName;
+		if(applicationName != null){
+			putQueryParameter("ApplicationName", applicationName);
 		}
 	}
 
