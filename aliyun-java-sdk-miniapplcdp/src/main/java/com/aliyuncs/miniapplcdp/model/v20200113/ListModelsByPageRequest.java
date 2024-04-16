@@ -24,9 +24,9 @@ import com.aliyuncs.http.MethodType;
 public class ListModelsByPageRequest extends RpcAcsRequest<ListModelsByPageResponse> {
 	   
 
-	private String modelId;
-
 	private String modelName;
+
+	private String source;
 
 	private String schemaVersion;
 
@@ -48,17 +48,6 @@ public class ListModelsByPageRequest extends RpcAcsRequest<ListModelsByPageRespo
 		setMethod(MethodType.POST);
 	}
 
-	public String getModelId() {
-		return this.modelId;
-	}
-
-	public void setModelId(String modelId) {
-		this.modelId = modelId;
-		if(modelId != null){
-			putQueryParameter("ModelId", modelId);
-		}
-	}
-
 	public String getModelName() {
 		return this.modelName;
 	}
@@ -67,6 +56,17 @@ public class ListModelsByPageRequest extends RpcAcsRequest<ListModelsByPageRespo
 		this.modelName = modelName;
 		if(modelName != null){
 			putQueryParameter("ModelName", modelName);
+		}
+	}
+
+	public String getSource() {
+		return this.source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
+		if(source != null){
+			putQueryParameter("Source", source);
 		}
 	}
 

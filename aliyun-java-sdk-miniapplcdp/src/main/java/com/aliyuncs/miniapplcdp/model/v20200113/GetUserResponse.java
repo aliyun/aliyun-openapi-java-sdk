@@ -58,6 +58,8 @@ public class GetUserResponse extends AcsResponse {
 
 		private String userSecret;
 
+		private String platformVersion;
+
 		public String getDescription() {
 			return this.description;
 		}
@@ -104,6 +106,14 @@ public class GetUserResponse extends AcsResponse {
 
 		public void setUserSecret(String userSecret) {
 			this.userSecret = userSecret;
+		}
+
+		public String getPlatformVersion() {
+			return this.platformVersion;
+		}
+
+		public void setPlatformVersion(String platformVersion) {
+			this.platformVersion = platformVersion;
 		}
 	}
 

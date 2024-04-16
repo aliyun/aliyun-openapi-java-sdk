@@ -32,6 +32,8 @@ public class CreateCommitRequest extends RpcAcsRequest<CreateCommitResponse> {
 
 	private String rollbackToCommitId;
 
+	private String source;
+
 	private String schemaVersion;
 
 	private String commitType;
@@ -87,6 +89,17 @@ public class CreateCommitRequest extends RpcAcsRequest<CreateCommitResponse> {
 		this.rollbackToCommitId = rollbackToCommitId;
 		if(rollbackToCommitId != null){
 			putQueryParameter("RollbackToCommitId", rollbackToCommitId);
+		}
+	}
+
+	public String getSource() {
+		return this.source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
+		if(source != null){
+			putQueryParameter("Source", source);
 		}
 	}
 

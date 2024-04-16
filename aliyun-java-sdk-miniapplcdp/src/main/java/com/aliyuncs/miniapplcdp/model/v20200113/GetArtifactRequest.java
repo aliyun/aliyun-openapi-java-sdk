@@ -27,6 +27,8 @@ public class GetArtifactRequest extends RpcAcsRequest<GetArtifactResponse> {
 	private String appId;
 
 	private String artifactId;
+
+	private String source;
 	public GetArtifactRequest() {
 		super("miniapplcdp", "2020-01-13", "GetArtifact");
 		setMethod(MethodType.POST);
@@ -51,6 +53,17 @@ public class GetArtifactRequest extends RpcAcsRequest<GetArtifactResponse> {
 		this.artifactId = artifactId;
 		if(artifactId != null){
 			putQueryParameter("ArtifactId", artifactId);
+		}
+	}
+
+	public String getSource() {
+		return this.source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
+		if(source != null){
+			putQueryParameter("Source", source);
 		}
 	}
 

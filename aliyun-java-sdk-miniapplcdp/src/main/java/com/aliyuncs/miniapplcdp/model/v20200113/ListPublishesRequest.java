@@ -28,6 +28,8 @@ public class ListPublishesRequest extends RpcAcsRequest<ListPublishesResponse> {
 
 	private String envId;
 
+	private String source;
+
 	private Integer pageNumber;
 
 	private String appId;
@@ -59,6 +61,17 @@ public class ListPublishesRequest extends RpcAcsRequest<ListPublishesResponse> {
 		this.envId = envId;
 		if(envId != null){
 			putQueryParameter("EnvId", envId);
+		}
+	}
+
+	public String getSource() {
+		return this.source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
+		if(source != null){
+			putQueryParameter("Source", source);
 		}
 	}
 

@@ -31,6 +31,10 @@ public class GenerateUploadTokenResponseUnmarshaller {
 		data.setPolicy(_ctx.stringValue("GenerateUploadTokenResponse.Data.Policy"));
 		data.setServerURL(_ctx.stringValue("GenerateUploadTokenResponse.Data.ServerURL"));
 		data.setSignature(_ctx.stringValue("GenerateUploadTokenResponse.Data.Signature"));
+		data.setXAmzSignature(_ctx.stringValue("GenerateUploadTokenResponse.Data.X-Amz-Signature"));
+		data.setXAmzAlgorithm(_ctx.stringValue("GenerateUploadTokenResponse.Data.X-Amz-Algorithm"));
+		data.setXAmzDate(_ctx.stringValue("GenerateUploadTokenResponse.Data.X-Amz-Date"));
+		data.setXAmzCredential(_ctx.stringValue("GenerateUploadTokenResponse.Data.X-Amz-Credential"));
 		generateUploadTokenResponse.setData(data);
 	 
 	 	return generateUploadTokenResponse;

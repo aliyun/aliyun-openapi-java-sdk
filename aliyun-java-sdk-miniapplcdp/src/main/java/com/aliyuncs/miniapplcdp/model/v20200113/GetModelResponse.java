@@ -70,6 +70,8 @@ public class GetModelResponse extends AcsResponse {
 
 		private String moduleId;
 
+		private String modelName;
+
 		private Map<Object,Object> props;
 
 		private Integer revision;
@@ -83,8 +85,6 @@ public class GetModelResponse extends AcsResponse {
 		private String modelType;
 
 		private String visibility;
-
-		private List<NameItem> modelName;
 
 		private List<Map<Object,Object>> attributes;
 
@@ -176,6 +176,14 @@ public class GetModelResponse extends AcsResponse {
 			this.moduleId = moduleId;
 		}
 
+		public String getModelName() {
+			return this.modelName;
+		}
+
+		public void setModelName(String modelName) {
+			this.modelName = modelName;
+		}
+
 		public Map<Object,Object> getProps() {
 			return this.props;
 		}
@@ -232,33 +240,12 @@ public class GetModelResponse extends AcsResponse {
 			this.visibility = visibility;
 		}
 
-		public List<NameItem> getModelName() {
-			return this.modelName;
-		}
-
-		public void setModelName(List<NameItem> modelName) {
-			this.modelName = modelName;
-		}
-
 		public List<Map<Object,Object>> getAttributes() {
 			return this.attributes;
 		}
 
 		public void setAttributes(List<Map<Object,Object>> attributes) {
 			this.attributes = attributes;
-		}
-
-		public static class NameItem {
-
-			private String good;
-
-			public String getGood() {
-				return this.good;
-			}
-
-			public void setGood(String good) {
-				this.good = good;
-			}
 		}
 	}
 

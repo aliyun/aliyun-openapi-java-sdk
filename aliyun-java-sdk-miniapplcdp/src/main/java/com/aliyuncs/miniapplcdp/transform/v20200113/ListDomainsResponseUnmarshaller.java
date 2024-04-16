@@ -41,6 +41,9 @@ public class ListDomainsResponseUnmarshaller {
 			domainItem.setEnvId(_ctx.stringValue("ListDomainsResponse.Data.Items["+ i +"].EnvId"));
 			domainItem.setPath(_ctx.stringValue("ListDomainsResponse.Data.Items["+ i +"].Path"));
 			domainItem.setDomainType(_ctx.stringValue("ListDomainsResponse.Data.Items["+ i +"].DomainType"));
+			domainItem.setWithCertificate(_ctx.booleanValue("ListDomainsResponse.Data.Items["+ i +"].WithCertificate"));
+			domainItem.setCname(_ctx.stringValue("ListDomainsResponse.Data.Items["+ i +"].Cname"));
+			domainItem.setChecked(_ctx.booleanValue("ListDomainsResponse.Data.Items["+ i +"].Checked"));
 
 			items.add(domainItem);
 		}

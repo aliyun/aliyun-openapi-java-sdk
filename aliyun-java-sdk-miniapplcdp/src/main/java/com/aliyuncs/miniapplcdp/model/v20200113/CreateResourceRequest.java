@@ -32,11 +32,15 @@ public class CreateResourceRequest extends RpcAcsRequest<CreateResourceResponse>
 
 	private String description;
 
+	private String source;
+
 	private String schemaVersion;
 
 	private String resourceType;
 
 	private String content;
+
+	private String appId;
 
 	private String resourceName;
 
@@ -90,6 +94,17 @@ public class CreateResourceRequest extends RpcAcsRequest<CreateResourceResponse>
 		}
 	}
 
+	public String getSource() {
+		return this.source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
+		if(source != null){
+			putQueryParameter("Source", source);
+		}
+	}
+
 	public String getSchemaVersion() {
 		return this.schemaVersion;
 	}
@@ -120,6 +135,17 @@ public class CreateResourceRequest extends RpcAcsRequest<CreateResourceResponse>
 		this.content = content;
 		if(content != null){
 			putQueryParameter("Content", content);
+		}
+	}
+
+	public String getAppId() {
+		return this.appId;
+	}
+
+	public void setAppId(String appId) {
+		this.appId = appId;
+		if(appId != null){
+			putQueryParameter("AppId", appId);
 		}
 	}
 

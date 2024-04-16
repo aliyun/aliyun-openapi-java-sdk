@@ -103,6 +103,8 @@ public class ListModulePublishVersionsResponse extends AcsResponse {
 
 			private String version;
 
+			private String platformVersion;
+
 			public String getCommitId() {
 				return this.commitId;
 			}
@@ -157,6 +159,14 @@ public class ListModulePublishVersionsResponse extends AcsResponse {
 
 			public void setVersion(String version) {
 				this.version = version;
+			}
+
+			public String getPlatformVersion() {
+				return this.platformVersion;
+			}
+
+			public void setPlatformVersion(String platformVersion) {
+				this.platformVersion = platformVersion;
 			}
 		}
 	}

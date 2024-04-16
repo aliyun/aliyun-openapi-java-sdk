@@ -28,6 +28,8 @@ public class ListModelsRequest extends RpcAcsRequest<ListModelsResponse> {
 
 	private String modelName;
 
+	private String source;
+
 	private String schemaVersion;
 
 	private Boolean withContent;
@@ -63,6 +65,17 @@ public class ListModelsRequest extends RpcAcsRequest<ListModelsResponse> {
 		this.modelName = modelName;
 		if(modelName != null){
 			putQueryParameter("ModelName", modelName);
+		}
+	}
+
+	public String getSource() {
+		return this.source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
+		if(source != null){
+			putQueryParameter("Source", source);
 		}
 	}
 

@@ -44,6 +44,7 @@ public class ListModuleDependenciesResponseUnmarshaller {
 			moduleItem.setOwnerUserId(_ctx.stringValue("ListModuleDependenciesResponse.Data.Items["+ i +"].OwnerUserId"));
 			moduleItem.setPlatform(_ctx.stringValue("ListModuleDependenciesResponse.Data.Items["+ i +"].Platform"));
 			moduleItem.setVersion(_ctx.stringValue("ListModuleDependenciesResponse.Data.Items["+ i +"].Version"));
+			moduleItem.setOrigin(_ctx.stringValue("ListModuleDependenciesResponse.Data.Items["+ i +"].Origin"));
 
 			items.add(moduleItem);
 		}

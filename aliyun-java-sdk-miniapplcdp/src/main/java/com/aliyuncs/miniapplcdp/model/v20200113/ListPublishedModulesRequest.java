@@ -26,13 +26,19 @@ public class ListPublishedModulesRequest extends RpcAcsRequest<ListPublishedModu
 
 	private String description;
 
+	private String source;
+
 	private Integer pageNumber;
 
 	private String platform;
 
 	private String excludeAppId;
 
+	private Boolean hasOwnerApp;
+
 	private String excludeModuleId;
+
+	private String moduleType;
 
 	private Integer pageSize;
 
@@ -52,6 +58,17 @@ public class ListPublishedModulesRequest extends RpcAcsRequest<ListPublishedModu
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getSource() {
+		return this.source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
+		if(source != null){
+			putQueryParameter("Source", source);
 		}
 	}
 
@@ -88,6 +105,17 @@ public class ListPublishedModulesRequest extends RpcAcsRequest<ListPublishedModu
 		}
 	}
 
+	public Boolean getHasOwnerApp() {
+		return this.hasOwnerApp;
+	}
+
+	public void setHasOwnerApp(Boolean hasOwnerApp) {
+		this.hasOwnerApp = hasOwnerApp;
+		if(hasOwnerApp != null){
+			putQueryParameter("HasOwnerApp", hasOwnerApp.toString());
+		}
+	}
+
 	public String getExcludeModuleId() {
 		return this.excludeModuleId;
 	}
@@ -96,6 +124,17 @@ public class ListPublishedModulesRequest extends RpcAcsRequest<ListPublishedModu
 		this.excludeModuleId = excludeModuleId;
 		if(excludeModuleId != null){
 			putQueryParameter("ExcludeModuleId", excludeModuleId);
+		}
+	}
+
+	public String getModuleType() {
+		return this.moduleType;
+	}
+
+	public void setModuleType(String moduleType) {
+		this.moduleType = moduleType;
+		if(moduleType != null){
+			putQueryParameter("ModuleType", moduleType);
 		}
 	}
 

@@ -24,10 +24,23 @@ import com.aliyuncs.http.MethodType;
 public class DeleteModuleRequest extends RpcAcsRequest<DeleteModuleResponse> {
 	   
 
+	private String source;
+
 	private String moduleId;
 	public DeleteModuleRequest() {
 		super("miniapplcdp", "2020-01-13", "DeleteModule");
 		setMethod(MethodType.POST);
+	}
+
+	public String getSource() {
+		return this.source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
+		if(source != null){
+			putQueryParameter("Source", source);
+		}
 	}
 
 	public String getModuleId() {

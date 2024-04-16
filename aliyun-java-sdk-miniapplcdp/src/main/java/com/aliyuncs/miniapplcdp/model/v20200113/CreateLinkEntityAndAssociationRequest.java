@@ -26,6 +26,8 @@ public class CreateLinkEntityAndAssociationRequest extends RpcAcsRequest<CreateL
 
 	private String clientToken;
 
+	private String source;
+
 	private String modelData;
 	public CreateLinkEntityAndAssociationRequest() {
 		super("miniapplcdp", "2020-01-13", "CreateLinkEntityAndAssociation");
@@ -40,6 +42,17 @@ public class CreateLinkEntityAndAssociationRequest extends RpcAcsRequest<CreateL
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getSource() {
+		return this.source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
+		if(source != null){
+			putQueryParameter("Source", source);
 		}
 	}
 

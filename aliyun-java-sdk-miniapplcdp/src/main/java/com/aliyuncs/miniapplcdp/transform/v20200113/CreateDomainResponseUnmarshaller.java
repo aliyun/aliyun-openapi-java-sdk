@@ -33,6 +33,9 @@ public class CreateDomainResponseUnmarshaller {
 		data.setEnvId(_ctx.stringValue("CreateDomainResponse.Data.EnvId"));
 		data.setPath(_ctx.stringValue("CreateDomainResponse.Data.Path"));
 		data.setDomainType(_ctx.stringValue("CreateDomainResponse.Data.DomainType"));
+		data.setWithCertificate(_ctx.booleanValue("CreateDomainResponse.Data.WithCertificate"));
+		data.setCname(_ctx.stringValue("CreateDomainResponse.Data.Cname"));
+		data.setChecked(_ctx.booleanValue("CreateDomainResponse.Data.Checked"));
 		createDomainResponse.setData(data);
 	 
 	 	return createDomainResponse;

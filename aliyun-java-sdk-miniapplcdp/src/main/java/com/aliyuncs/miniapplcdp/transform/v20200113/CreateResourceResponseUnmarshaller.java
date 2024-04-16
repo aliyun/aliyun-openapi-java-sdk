@@ -38,6 +38,7 @@ public class CreateResourceResponseUnmarshaller {
 		data.setRevision(_ctx.integerValue("CreateResourceResponse.Data.Revision"));
 		data.setSchemaVersion(_ctx.stringValue("CreateResourceResponse.Data.SchemaVersion"));
 		data.setResourceType(_ctx.stringValue("CreateResourceResponse.Data.ResourceType"));
+		data.setResourceDigest(_ctx.stringValue("CreateResourceResponse.Data.ResourceDigest"));
 		createResourceResponse.setData(data);
 	 
 	 	return createResourceResponse;

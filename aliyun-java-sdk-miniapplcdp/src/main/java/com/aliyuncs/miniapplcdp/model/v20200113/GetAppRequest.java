@@ -25,6 +25,8 @@ public class GetAppRequest extends RpcAcsRequest<GetAppResponse> {
 	   
 
 	private String appId;
+
+	private String source;
 	public GetAppRequest() {
 		super("miniapplcdp", "2020-01-13", "GetApp");
 		setMethod(MethodType.POST);
@@ -38,6 +40,17 @@ public class GetAppRequest extends RpcAcsRequest<GetAppResponse> {
 		this.appId = appId;
 		if(appId != null){
 			putQueryParameter("AppId", appId);
+		}
+	}
+
+	public String getSource() {
+		return this.source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
+		if(source != null){
+			putQueryParameter("Source", source);
 		}
 	}
 

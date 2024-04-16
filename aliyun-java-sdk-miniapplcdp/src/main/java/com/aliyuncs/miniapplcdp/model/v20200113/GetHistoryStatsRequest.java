@@ -28,6 +28,8 @@ public class GetHistoryStatsRequest extends RpcAcsRequest<GetHistoryStatsRespons
 
 	private String appId;
 
+	private String source;
+
 	private String startDate;
 	public GetHistoryStatsRequest() {
 		super("miniapplcdp", "2020-01-13", "GetHistoryStats");
@@ -53,6 +55,17 @@ public class GetHistoryStatsRequest extends RpcAcsRequest<GetHistoryStatsRespons
 		this.appId = appId;
 		if(appId != null){
 			putQueryParameter("AppId", appId);
+		}
+	}
+
+	public String getSource() {
+		return this.source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
+		if(source != null){
+			putQueryParameter("Source", source);
 		}
 	}
 

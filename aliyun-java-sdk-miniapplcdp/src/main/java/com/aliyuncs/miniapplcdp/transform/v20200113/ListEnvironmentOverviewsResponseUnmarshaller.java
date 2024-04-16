@@ -46,6 +46,7 @@ public class ListEnvironmentOverviewsResponseUnmarshaller {
 			environmentItem.setPublishing(_ctx.mapValue("ListEnvironmentOverviewsResponse.Data.Items["+ i +"].Publishing"));
 			environmentItem.setEnvStatus(_ctx.stringValue("ListEnvironmentOverviewsResponse.Data.Items["+ i +"].EnvStatus"));
 			environmentItem.setEnvType(_ctx.stringValue("ListEnvironmentOverviewsResponse.Data.Items["+ i +"].EnvType"));
+			environmentItem.setLatestAppAccessTime(_ctx.stringValue("ListEnvironmentOverviewsResponse.Data.Items["+ i +"].LatestAppAccessTime"));
 
 			items.add(environmentItem);
 		}

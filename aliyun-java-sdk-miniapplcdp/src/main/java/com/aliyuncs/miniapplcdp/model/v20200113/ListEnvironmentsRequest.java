@@ -27,6 +27,8 @@ public class ListEnvironmentsRequest extends RpcAcsRequest<ListEnvironmentsRespo
 	private String appId;
 
 	private String envType;
+
+	private String source;
 	public ListEnvironmentsRequest() {
 		super("miniapplcdp", "2020-01-13", "ListEnvironments");
 		setMethod(MethodType.POST);
@@ -51,6 +53,17 @@ public class ListEnvironmentsRequest extends RpcAcsRequest<ListEnvironmentsRespo
 		this.envType = envType;
 		if(envType != null){
 			putQueryParameter("EnvType", envType);
+		}
+	}
+
+	public String getSource() {
+		return this.source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
+		if(source != null){
+			putQueryParameter("Source", source);
 		}
 	}
 

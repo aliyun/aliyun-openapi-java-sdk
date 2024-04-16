@@ -29,6 +29,8 @@ public class ListModuleResourcesRequest extends RpcAcsRequest<ListModuleResource
 	private String types;
 
 	private String moduleList;
+
+	private String source;
 	public ListModuleResourcesRequest() {
 		super("miniapplcdp", "2020-01-13", "ListModuleResources");
 		setMethod(MethodType.POST);
@@ -64,6 +66,17 @@ public class ListModuleResourcesRequest extends RpcAcsRequest<ListModuleResource
 		this.moduleList = moduleList;
 		if(moduleList != null){
 			putQueryParameter("ModuleList", moduleList);
+		}
+	}
+
+	public String getSource() {
+		return this.source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
+		if(source != null){
+			putQueryParameter("Source", source);
 		}
 	}
 

@@ -24,16 +24,66 @@ import com.aliyuncs.http.MethodType;
 public class ListCommitsRequest extends RpcAcsRequest<ListCommitsResponse> {
 	   
 
+	private String customParentId;
+
+	private String source;
+
+	private Integer pageNumber;
+
+	private String commitLog;
+
 	private String appId;
 
 	private Integer pageSize;
 
 	private String moduleId;
-
-	private Integer pageNumber;
 	public ListCommitsRequest() {
 		super("miniapplcdp", "2020-01-13", "ListCommits");
 		setMethod(MethodType.POST);
+	}
+
+	public String getCustomParentId() {
+		return this.customParentId;
+	}
+
+	public void setCustomParentId(String customParentId) {
+		this.customParentId = customParentId;
+		if(customParentId != null){
+			putQueryParameter("CustomParentId", customParentId);
+		}
+	}
+
+	public String getSource() {
+		return this.source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
+		if(source != null){
+			putQueryParameter("Source", source);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getCommitLog() {
+		return this.commitLog;
+	}
+
+	public void setCommitLog(String commitLog) {
+		this.commitLog = commitLog;
+		if(commitLog != null){
+			putQueryParameter("CommitLog", commitLog);
+		}
 	}
 
 	public String getAppId() {
@@ -66,17 +116,6 @@ public class ListCommitsRequest extends RpcAcsRequest<ListCommitsResponse> {
 		this.moduleId = moduleId;
 		if(moduleId != null){
 			putQueryParameter("ModuleId", moduleId);
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 

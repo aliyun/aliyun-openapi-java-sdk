@@ -69,6 +69,8 @@ public class UpdateResourceResponse extends AcsResponse {
 
 		private String resourceType;
 
+		private String resourceDigest;
+
 		public String getAppId() {
 			return this.appId;
 		}
@@ -155,6 +157,14 @@ public class UpdateResourceResponse extends AcsResponse {
 
 		public void setResourceType(String resourceType) {
 			this.resourceType = resourceType;
+		}
+
+		public String getResourceDigest() {
+			return this.resourceDigest;
+		}
+
+		public void setResourceDigest(String resourceDigest) {
+			this.resourceDigest = resourceDigest;
 		}
 	}
 

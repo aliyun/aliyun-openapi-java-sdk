@@ -34,7 +34,6 @@ public class DeleteCommitResponseUnmarshaller {
 		data.setMainModuleCommitId(_ctx.stringValue("DeleteCommitResponse.Data.MainModuleCommitId"));
 		data.setMainModuleId(_ctx.stringValue("DeleteCommitResponse.Data.MainModuleId"));
 		data.setModelDataPath(_ctx.stringValue("DeleteCommitResponse.Data.ModelDataPath"));
-		data.setModelDigest(_ctx.mapValue("DeleteCommitResponse.Data.ModelDigest"));
 		data.setModifiedTime(_ctx.stringValue("DeleteCommitResponse.Data.ModifiedTime"));
 		data.setModuleId(_ctx.stringValue("DeleteCommitResponse.Data.ModuleId"));
 		data.setResourceDataPath(_ctx.stringValue("DeleteCommitResponse.Data.ResourceDataPath"));

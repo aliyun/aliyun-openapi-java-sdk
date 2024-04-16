@@ -23,9 +23,22 @@ import com.aliyuncs.http.MethodType;
  */
 public class GetUserRequest extends RpcAcsRequest<GetUserResponse> {
 	   
+
+	private String source;
 	public GetUserRequest() {
 		super("miniapplcdp", "2020-01-13", "GetUser");
 		setMethod(MethodType.POST);
+	}
+
+	public String getSource() {
+		return this.source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
+		if(source != null){
+			putQueryParameter("Source", source);
+		}
 	}
 
 	@Override

@@ -36,6 +36,7 @@ public class GetDomainOverviewResponseUnmarshaller {
 		data.setEnvId(_ctx.stringValue("GetDomainOverviewResponse.Data.EnvId"));
 		data.setPath(_ctx.stringValue("GetDomainOverviewResponse.Data.Path"));
 		data.setDomainType(_ctx.stringValue("GetDomainOverviewResponse.Data.DomainType"));
+		data.setWithCertificate(_ctx.booleanValue("GetDomainOverviewResponse.Data.WithCertificate"));
 		getDomainOverviewResponse.setData(data);
 	 
 	 	return getDomainOverviewResponse;

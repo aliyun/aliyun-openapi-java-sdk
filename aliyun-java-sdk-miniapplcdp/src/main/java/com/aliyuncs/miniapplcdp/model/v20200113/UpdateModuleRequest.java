@@ -28,6 +28,8 @@ public class UpdateModuleRequest extends RpcAcsRequest<UpdateModuleResponse> {
 
 	private String moduleName;
 
+	private String source;
+
 	private String moduleId;
 	public UpdateModuleRequest() {
 		super("miniapplcdp", "2020-01-13", "UpdateModule");
@@ -53,6 +55,17 @@ public class UpdateModuleRequest extends RpcAcsRequest<UpdateModuleResponse> {
 		this.moduleName = moduleName;
 		if(moduleName != null){
 			putQueryParameter("ModuleName", moduleName);
+		}
+	}
+
+	public String getSource() {
+		return this.source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
+		if(source != null){
+			putQueryParameter("Source", source);
 		}
 	}
 

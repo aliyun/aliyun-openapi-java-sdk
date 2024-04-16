@@ -35,6 +35,7 @@ public class UpdateModuleResponseUnmarshaller {
 		data.setMinimumPlatformVersion(_ctx.stringValue("UpdateModuleResponse.Data.MinimumPlatformVersion"));
 		data.setModuleId(_ctx.stringValue("UpdateModuleResponse.Data.ModuleId"));
 		data.setModuleName(_ctx.stringValue("UpdateModuleResponse.Data.ModuleName"));
+		data.setOwnerAppId(_ctx.stringValue("UpdateModuleResponse.Data.OwnerAppId"));
 		data.setOwnerUserId(_ctx.stringValue("UpdateModuleResponse.Data.OwnerUserId"));
 		data.setPlatform(_ctx.stringValue("UpdateModuleResponse.Data.Platform"));
 		updateModuleResponse.setData(data);

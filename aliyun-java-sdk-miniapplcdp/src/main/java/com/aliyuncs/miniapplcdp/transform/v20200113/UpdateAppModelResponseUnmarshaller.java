@@ -49,6 +49,7 @@ public class UpdateAppModelResponseUnmarshaller {
 		data.setSubType(_ctx.stringValue("UpdateAppModelResponse.Data.SubType"));
 		data.setModelType(_ctx.stringValue("UpdateAppModelResponse.Data.ModelType"));
 		data.setVisibility(_ctx.stringValue("UpdateAppModelResponse.Data.Visibility"));
+		data.setModelDigest(_ctx.stringValue("UpdateAppModelResponse.Data.ModelDigest"));
 
 		List<Map<Object, Object>> attributes = _ctx.listMapValue("UpdateAppModelResponse.Data.Attributes");
 		data.setAttributes(attributes);

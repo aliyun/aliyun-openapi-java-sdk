@@ -28,6 +28,8 @@ public class ListModuleModelsRequest extends RpcAcsRequest<ListModuleModelsRespo
 
 	private String moduleList;
 
+	private String source;
+
 	private String subTypes;
 	public ListModuleModelsRequest() {
 		super("miniapplcdp", "2020-01-13", "ListModuleModels");
@@ -53,6 +55,17 @@ public class ListModuleModelsRequest extends RpcAcsRequest<ListModuleModelsRespo
 		this.moduleList = moduleList;
 		if(moduleList != null){
 			putQueryParameter("ModuleList", moduleList);
+		}
+	}
+
+	public String getSource() {
+		return this.source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
+		if(source != null){
+			putQueryParameter("Source", source);
 		}
 	}
 

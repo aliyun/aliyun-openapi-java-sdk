@@ -28,6 +28,8 @@ public class BatchRestoreModelRequest extends RpcAcsRequest<BatchRestoreModelRes
 
 	private String modelIdList;
 
+	private String source;
+
 	private String moduleId;
 
 	private String schemaVersion;
@@ -55,6 +57,17 @@ public class BatchRestoreModelRequest extends RpcAcsRequest<BatchRestoreModelRes
 		this.modelIdList = modelIdList;
 		if(modelIdList != null){
 			putQueryParameter("ModelIdList", modelIdList);
+		}
+	}
+
+	public String getSource() {
+		return this.source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
+		if(source != null){
+			putQueryParameter("Source", source);
 		}
 	}
 

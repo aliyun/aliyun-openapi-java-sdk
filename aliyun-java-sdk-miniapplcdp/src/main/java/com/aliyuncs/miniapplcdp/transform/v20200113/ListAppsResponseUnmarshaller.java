@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.miniapplcdp.model.v20200113.ListAppsResponse;
 import com.aliyuncs.miniapplcdp.model.v20200113.ListAppsResponse.Data;
 import com.aliyuncs.miniapplcdp.model.v20200113.ListAppsResponse.Data.AppItem;
+import com.aliyuncs.miniapplcdp.model.v20200113.ListAppsResponse.Data.AppItem.CategoryItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -50,6 +51,18 @@ public class ListAppsResponseUnmarshaller {
 			appItem.setSource(_ctx.stringValue("ListAppsResponse.Data.Items["+ i +"].Source"));
 			appItem.setAppStatus(_ctx.stringValue("ListAppsResponse.Data.Items["+ i +"].AppStatus"));
 			appItem.setAppType(_ctx.stringValue("ListAppsResponse.Data.Items["+ i +"].AppType"));
+			appItem.setPlatformVersion(_ctx.stringValue("ListAppsResponse.Data.Items["+ i +"].PlatformVersion"));
+
+			List<CategoryItem> categories = new ArrayList<CategoryItem>();
+			for (int j = 0; j < _ctx.lengthValue("ListAppsResponse.Data.Items["+ i +"].Categories.Length"); j++) {
+				CategoryItem categoryItem = new CategoryItem();
+				categoryItem.setCategoryId(_ctx.stringValue("ListAppsResponse.Data.Items["+ i +"].Categories["+ j +"].CategoryId"));
+				categoryItem.setCategoryName(_ctx.stringValue("ListAppsResponse.Data.Items["+ i +"].Categories["+ j +"].CategoryName"));
+				categoryItem.setParentCategoryId(_ctx.stringValue("ListAppsResponse.Data.Items["+ i +"].Categories["+ j +"].ParentCategoryId"));
+
+				categories.add(categoryItem);
+			}
+			appItem.setCategories(categories);
 
 			items.add(appItem);
 		}

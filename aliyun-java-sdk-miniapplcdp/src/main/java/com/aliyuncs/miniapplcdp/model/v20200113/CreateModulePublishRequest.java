@@ -30,6 +30,8 @@ public class CreateModulePublishRequest extends RpcAcsRequest<CreateModulePublis
 
 	private String publishVersion;
 
+	private String source;
+
 	private String moduleId;
 	public CreateModulePublishRequest() {
 		super("miniapplcdp", "2020-01-13", "CreateModulePublish");
@@ -66,6 +68,17 @@ public class CreateModulePublishRequest extends RpcAcsRequest<CreateModulePublis
 		this.publishVersion = publishVersion;
 		if(publishVersion != null){
 			putQueryParameter("PublishVersion", publishVersion);
+		}
+	}
+
+	public String getSource() {
+		return this.source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
+		if(source != null){
+			putQueryParameter("Source", source);
 		}
 	}
 

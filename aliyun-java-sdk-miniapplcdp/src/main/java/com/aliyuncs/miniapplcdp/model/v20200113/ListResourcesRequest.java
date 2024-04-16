@@ -30,6 +30,8 @@ public class ListResourcesRequest extends RpcAcsRequest<ListResourcesResponse> {
 
 	private String description;
 
+	private String source;
+
 	private String resourceType;
 
 	private Boolean withContent;
@@ -74,6 +76,17 @@ public class ListResourcesRequest extends RpcAcsRequest<ListResourcesResponse> {
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getSource() {
+		return this.source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
+		if(source != null){
+			putQueryParameter("Source", source);
 		}
 	}
 

@@ -30,6 +30,8 @@ public class ListPublishVersionsRequest extends RpcAcsRequest<ListPublishVersion
 
 	private String envId;
 
+	private String source;
+
 	private Integer pageNumber;
 	public ListPublishVersionsRequest() {
 		super("miniapplcdp", "2020-01-13", "ListPublishVersions");
@@ -66,6 +68,17 @@ public class ListPublishVersionsRequest extends RpcAcsRequest<ListPublishVersion
 		this.envId = envId;
 		if(envId != null){
 			putQueryParameter("EnvId", envId);
+		}
+	}
+
+	public String getSource() {
+		return this.source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
+		if(source != null){
+			putQueryParameter("Source", source);
 		}
 	}
 

@@ -34,7 +34,6 @@ public class GetLatestCommitResponseUnmarshaller {
 		data.setMainModuleCommitId(_ctx.stringValue("GetLatestCommitResponse.Data.MainModuleCommitId"));
 		data.setMainModuleId(_ctx.stringValue("GetLatestCommitResponse.Data.MainModuleId"));
 		data.setModelDataPath(_ctx.stringValue("GetLatestCommitResponse.Data.ModelDataPath"));
-		data.setModelDigest(_ctx.mapValue("GetLatestCommitResponse.Data.ModelDigest"));
 		data.setModifiedTime(_ctx.stringValue("GetLatestCommitResponse.Data.ModifiedTime"));
 		data.setModuleId(_ctx.stringValue("GetLatestCommitResponse.Data.ModuleId"));
 		data.setResourceDataPath(_ctx.stringValue("GetLatestCommitResponse.Data.ResourceDataPath"));

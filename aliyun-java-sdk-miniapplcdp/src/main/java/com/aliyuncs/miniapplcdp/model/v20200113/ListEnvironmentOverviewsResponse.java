@@ -82,6 +82,8 @@ public class ListEnvironmentOverviewsResponse extends AcsResponse {
 
 			private String envType;
 
+			private String latestAppAccessTime;
+
 			public String getAppId() {
 				return this.appId;
 			}
@@ -168,6 +170,14 @@ public class ListEnvironmentOverviewsResponse extends AcsResponse {
 
 			public void setEnvType(String envType) {
 				this.envType = envType;
+			}
+
+			public String getLatestAppAccessTime() {
+				return this.latestAppAccessTime;
+			}
+
+			public void setLatestAppAccessTime(String latestAppAccessTime) {
+				this.latestAppAccessTime = latestAppAccessTime;
 			}
 		}
 	}

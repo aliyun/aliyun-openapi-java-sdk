@@ -34,6 +34,8 @@ public class CreatePublishRequest extends RpcAcsRequest<CreatePublishResponse> {
 
 	private String versionNumber;
 
+	private String source;
+
 	private String appId;
 
 	private String envType;
@@ -94,6 +96,17 @@ public class CreatePublishRequest extends RpcAcsRequest<CreatePublishResponse> {
 		this.versionNumber = versionNumber;
 		if(versionNumber != null){
 			putQueryParameter("VersionNumber", versionNumber);
+		}
+	}
+
+	public String getSource() {
+		return this.source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
+		if(source != null){
+			putQueryParameter("Source", source);
 		}
 	}
 

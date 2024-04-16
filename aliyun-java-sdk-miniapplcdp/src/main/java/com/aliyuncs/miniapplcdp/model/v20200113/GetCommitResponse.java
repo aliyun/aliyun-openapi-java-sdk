@@ -76,7 +76,13 @@ public class GetCommitResponse extends AcsResponse {
 
 		private String commitType;
 
-		private List<Map<Object,Object>> modelPack;
+		private Map<Object,Object> modelDigest;
+
+		private Map<Object,Object> resourceDigest;
+
+		private String commitDigest;
+
+		private List<String> modelPack;
 
 		private List<Map<Object,Object>> resourcePack;
 
@@ -192,11 +198,35 @@ public class GetCommitResponse extends AcsResponse {
 			this.commitType = commitType;
 		}
 
-		public List<Map<Object,Object>> getModelPack() {
+		public Map<Object,Object> getModelDigest() {
+			return this.modelDigest;
+		}
+
+		public void setModelDigest(Map<Object,Object> modelDigest) {
+			this.modelDigest = modelDigest;
+		}
+
+		public Map<Object,Object> getResourceDigest() {
+			return this.resourceDigest;
+		}
+
+		public void setResourceDigest(Map<Object,Object> resourceDigest) {
+			this.resourceDigest = resourceDigest;
+		}
+
+		public String getCommitDigest() {
+			return this.commitDigest;
+		}
+
+		public void setCommitDigest(String commitDigest) {
+			this.commitDigest = commitDigest;
+		}
+
+		public List<String> getModelPack() {
 			return this.modelPack;
 		}
 
-		public void setModelPack(List<Map<Object,Object>> modelPack) {
+		public void setModelPack(List<String> modelPack) {
 			this.modelPack = modelPack;
 		}
 

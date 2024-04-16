@@ -24,12 +24,29 @@ import com.aliyuncs.http.MethodType;
 public class GenerateUploadTokenRequest extends RpcAcsRequest<GenerateUploadTokenResponse> {
 	   
 
+	private String uploadTokenType;
+
 	private String appId;
 
+	private String source;
+
 	private String moduleId;
+
+	private String materialId;
 	public GenerateUploadTokenRequest() {
 		super("miniapplcdp", "2020-01-13", "GenerateUploadToken");
 		setMethod(MethodType.POST);
+	}
+
+	public String getUploadTokenType() {
+		return this.uploadTokenType;
+	}
+
+	public void setUploadTokenType(String uploadTokenType) {
+		this.uploadTokenType = uploadTokenType;
+		if(uploadTokenType != null){
+			putQueryParameter("UploadTokenType", uploadTokenType);
+		}
 	}
 
 	public String getAppId() {
@@ -43,6 +60,17 @@ public class GenerateUploadTokenRequest extends RpcAcsRequest<GenerateUploadToke
 		}
 	}
 
+	public String getSource() {
+		return this.source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
+		if(source != null){
+			putQueryParameter("Source", source);
+		}
+	}
+
 	public String getModuleId() {
 		return this.moduleId;
 	}
@@ -51,6 +79,17 @@ public class GenerateUploadTokenRequest extends RpcAcsRequest<GenerateUploadToke
 		this.moduleId = moduleId;
 		if(moduleId != null){
 			putQueryParameter("ModuleId", moduleId);
+		}
+	}
+
+	public String getMaterialId() {
+		return this.materialId;
+	}
+
+	public void setMaterialId(String materialId) {
+		this.materialId = materialId;
+		if(materialId != null){
+			putQueryParameter("MaterialId", materialId);
 		}
 	}
 

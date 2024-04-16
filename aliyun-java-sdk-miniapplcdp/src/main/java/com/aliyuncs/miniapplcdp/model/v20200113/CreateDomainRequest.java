@@ -30,6 +30,10 @@ public class CreateDomainRequest extends RpcAcsRequest<CreateDomainResponse> {
 
 	private String envId;
 
+	private String source;
+
+	private Boolean withCertificate;
+
 	private String path;
 
 	private String privateKey;
@@ -74,6 +78,28 @@ public class CreateDomainRequest extends RpcAcsRequest<CreateDomainResponse> {
 		this.envId = envId;
 		if(envId != null){
 			putQueryParameter("EnvId", envId);
+		}
+	}
+
+	public String getSource() {
+		return this.source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
+		if(source != null){
+			putQueryParameter("Source", source);
+		}
+	}
+
+	public Boolean getWithCertificate() {
+		return this.withCertificate;
+	}
+
+	public void setWithCertificate(Boolean withCertificate) {
+		this.withCertificate = withCertificate;
+		if(withCertificate != null){
+			putQueryParameter("WithCertificate", withCertificate.toString());
 		}
 	}
 

@@ -54,6 +54,7 @@ public class BatchCreateModelResponseUnmarshaller {
 			modelItem.setSubType(_ctx.stringValue("BatchCreateModelResponse.Data.Items["+ i +"].SubType"));
 			modelItem.setModelType(_ctx.stringValue("BatchCreateModelResponse.Data.Items["+ i +"].ModelType"));
 			modelItem.setVisibility(_ctx.stringValue("BatchCreateModelResponse.Data.Items["+ i +"].Visibility"));
+			modelItem.setModelDigest(_ctx.stringValue("BatchCreateModelResponse.Data.Items["+ i +"].ModelDigest"));
 
 			List<Map<Object, Object>> attributes = _ctx.listMapValue("BatchCreateModelResponse.Data.Items["+ i +"].Attributes");
 			modelItem.setAttributes(attributes);

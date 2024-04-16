@@ -24,10 +24,36 @@ import com.aliyuncs.http.MethodType;
 public class GetModuleRequest extends RpcAcsRequest<GetModuleResponse> {
 	   
 
+	private String moduleType;
+
+	private String source;
+
 	private String moduleId;
 	public GetModuleRequest() {
 		super("miniapplcdp", "2020-01-13", "GetModule");
 		setMethod(MethodType.POST);
+	}
+
+	public String getModuleType() {
+		return this.moduleType;
+	}
+
+	public void setModuleType(String moduleType) {
+		this.moduleType = moduleType;
+		if(moduleType != null){
+			putQueryParameter("ModuleType", moduleType);
+		}
+	}
+
+	public String getSource() {
+		return this.source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
+		if(source != null){
+			putQueryParameter("Source", source);
+		}
 	}
 
 	public String getModuleId() {

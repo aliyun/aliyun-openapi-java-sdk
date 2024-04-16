@@ -54,6 +54,7 @@ public class ListModelsResponseUnmarshaller {
 			modelItem.setSubType(_ctx.stringValue("ListModelsResponse.Data.Items["+ i +"].SubType"));
 			modelItem.setModelType(_ctx.stringValue("ListModelsResponse.Data.Items["+ i +"].ModelType"));
 			modelItem.setVisibility(_ctx.stringValue("ListModelsResponse.Data.Items["+ i +"].Visibility"));
+			modelItem.setModelDigest(_ctx.stringValue("ListModelsResponse.Data.Items["+ i +"].ModelDigest"));
 
 			List<Map<Object, Object>> attributes = _ctx.listMapValue("ListModelsResponse.Data.Items["+ i +"].Attributes");
 			modelItem.setAttributes(attributes);
