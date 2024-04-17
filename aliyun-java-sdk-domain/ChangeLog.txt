@@ -1,3 +1,6 @@
+2024-04-17 Version: 3.15.6
+- Add SnatchNo For QueryBookingDomainInfo
+
 2024-04-15 Version: 3.15.5
 - Support setting DNS on domain drop catch API
 
