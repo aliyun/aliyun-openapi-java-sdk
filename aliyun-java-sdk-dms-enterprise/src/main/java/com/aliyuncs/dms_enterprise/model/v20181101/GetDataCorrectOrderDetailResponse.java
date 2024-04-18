@@ -87,6 +87,8 @@ public class GetDataCorrectOrderDetailResponse extends AcsResponse {
 
 		private OrderDetail orderDetail;
 
+		private ConfigDetail configDetail;
+
 		public String getStatus() {
 			return this.status;
 		}
@@ -125,6 +127,14 @@ public class GetDataCorrectOrderDetailResponse extends AcsResponse {
 
 		public void setOrderDetail(OrderDetail orderDetail) {
 			this.orderDetail = orderDetail;
+		}
+
+		public ConfigDetail getConfigDetail() {
+			return this.configDetail;
+		}
+
+		public void setConfigDetail(ConfigDetail configDetail) {
+			this.configDetail = configDetail;
 		}
 
 		public static class TaskCheckDO {
@@ -323,6 +333,215 @@ public class GetDataCorrectOrderDetailResponse extends AcsResponse {
 
 			public void setIgnoreAffectRowsReason(String ignoreAffectRowsReason) {
 				this.ignoreAffectRowsReason = ignoreAffectRowsReason;
+			}
+		}
+
+		public static class ConfigDetail {
+
+			private String detailType;
+
+			private String fileType;
+
+			private String csvTableName;
+
+			private String fileEncoding;
+
+			private Boolean cron;
+
+			private Integer cronCallTimes;
+
+			private String cronFormat;
+
+			private Integer duration;
+
+			private String cronStatus;
+
+			private String cronLastCallStartTime;
+
+			private String cronNextCallTime;
+
+			private Long currentTaskId;
+
+			private ImportExtConfig importExtConfig;
+
+			private CronExtConfig cronExtConfig;
+
+			public String getDetailType() {
+				return this.detailType;
+			}
+
+			public void setDetailType(String detailType) {
+				this.detailType = detailType;
+			}
+
+			public String getFileType() {
+				return this.fileType;
+			}
+
+			public void setFileType(String fileType) {
+				this.fileType = fileType;
+			}
+
+			public String getCsvTableName() {
+				return this.csvTableName;
+			}
+
+			public void setCsvTableName(String csvTableName) {
+				this.csvTableName = csvTableName;
+			}
+
+			public String getFileEncoding() {
+				return this.fileEncoding;
+			}
+
+			public void setFileEncoding(String fileEncoding) {
+				this.fileEncoding = fileEncoding;
+			}
+
+			public Boolean getCron() {
+				return this.cron;
+			}
+
+			public void setCron(Boolean cron) {
+				this.cron = cron;
+			}
+
+			public Integer getCronCallTimes() {
+				return this.cronCallTimes;
+			}
+
+			public void setCronCallTimes(Integer cronCallTimes) {
+				this.cronCallTimes = cronCallTimes;
+			}
+
+			public String getCronFormat() {
+				return this.cronFormat;
+			}
+
+			public void setCronFormat(String cronFormat) {
+				this.cronFormat = cronFormat;
+			}
+
+			public Integer getDuration() {
+				return this.duration;
+			}
+
+			public void setDuration(Integer duration) {
+				this.duration = duration;
+			}
+
+			public String getCronStatus() {
+				return this.cronStatus;
+			}
+
+			public void setCronStatus(String cronStatus) {
+				this.cronStatus = cronStatus;
+			}
+
+			public String getCronLastCallStartTime() {
+				return this.cronLastCallStartTime;
+			}
+
+			public void setCronLastCallStartTime(String cronLastCallStartTime) {
+				this.cronLastCallStartTime = cronLastCallStartTime;
+			}
+
+			public String getCronNextCallTime() {
+				return this.cronNextCallTime;
+			}
+
+			public void setCronNextCallTime(String cronNextCallTime) {
+				this.cronNextCallTime = cronNextCallTime;
+			}
+
+			public Long getCurrentTaskId() {
+				return this.currentTaskId;
+			}
+
+			public void setCurrentTaskId(Long currentTaskId) {
+				this.currentTaskId = currentTaskId;
+			}
+
+			public ImportExtConfig getImportExtConfig() {
+				return this.importExtConfig;
+			}
+
+			public void setImportExtConfig(ImportExtConfig importExtConfig) {
+				this.importExtConfig = importExtConfig;
+			}
+
+			public CronExtConfig getCronExtConfig() {
+				return this.cronExtConfig;
+			}
+
+			public void setCronExtConfig(CronExtConfig cronExtConfig) {
+				this.cronExtConfig = cronExtConfig;
+			}
+
+			public static class ImportExtConfig {
+
+				private String insertType;
+
+				private Boolean csvFirstRowIsColumnDef;
+
+				private Boolean ignoreError;
+
+				private String importMode;
+
+				public String getInsertType() {
+					return this.insertType;
+				}
+
+				public void setInsertType(String insertType) {
+					this.insertType = insertType;
+				}
+
+				public Boolean getCsvFirstRowIsColumnDef() {
+					return this.csvFirstRowIsColumnDef;
+				}
+
+				public void setCsvFirstRowIsColumnDef(Boolean csvFirstRowIsColumnDef) {
+					this.csvFirstRowIsColumnDef = csvFirstRowIsColumnDef;
+				}
+
+				public Boolean getIgnoreError() {
+					return this.ignoreError;
+				}
+
+				public void setIgnoreError(Boolean ignoreError) {
+					this.ignoreError = ignoreError;
+				}
+
+				public String getImportMode() {
+					return this.importMode;
+				}
+
+				public void setImportMode(String importMode) {
+					this.importMode = importMode;
+				}
+			}
+
+			public static class CronExtConfig {
+
+				private Integer optimizeTableAfterEveryClearTimes;
+
+				private Integer currentClearTaskCount;
+
+				public Integer getOptimizeTableAfterEveryClearTimes() {
+					return this.optimizeTableAfterEveryClearTimes;
+				}
+
+				public void setOptimizeTableAfterEveryClearTimes(Integer optimizeTableAfterEveryClearTimes) {
+					this.optimizeTableAfterEveryClearTimes = optimizeTableAfterEveryClearTimes;
+				}
+
+				public Integer getCurrentClearTaskCount() {
+					return this.currentClearTaskCount;
+				}
+
+				public void setCurrentClearTaskCount(Integer currentClearTaskCount) {
+					this.currentClearTaskCount = currentClearTaskCount;
+				}
 			}
 		}
 	}

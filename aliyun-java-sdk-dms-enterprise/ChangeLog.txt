@@ -1,3 +1,8 @@
+2024-04-18 Version: 1.53.11
+- Supported ApproveOrder request parameter NewApproverList.
+- Add ListSensitiveColumnInfo API.
+- Supported GetDataCorrectOrderDetail return ConfigDetail Information.
+
 2024-03-27 Version: 1.53.10
 - AddInstance, ModifyInstance add ssl param
 
