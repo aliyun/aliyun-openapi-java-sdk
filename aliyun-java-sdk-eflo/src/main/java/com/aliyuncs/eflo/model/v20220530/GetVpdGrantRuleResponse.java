@@ -86,6 +86,8 @@ public class GetVpdGrantRuleResponse extends AcsResponse {
 
 		private String grantRuleId;
 
+		private String resourceGroupId;
+
 		public String getRegionId() {
 			return this.regionId;
 		}
@@ -164,6 +166,14 @@ public class GetVpdGrantRuleResponse extends AcsResponse {
 
 		public void setGrantRuleId(String grantRuleId) {
 			this.grantRuleId = grantRuleId;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 	}
 

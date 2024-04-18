@@ -81,6 +81,8 @@ public class GetNodeInfoForPodResponse extends AcsResponse {
 
 		private Integer lniSipQuota;
 
+		private Integer hdeniQuota;
+
 		private List<String> vSwitches;
 
 		public String getRegionId() {
@@ -137,6 +139,14 @@ public class GetNodeInfoForPodResponse extends AcsResponse {
 
 		public void setLniSipQuota(Integer lniSipQuota) {
 			this.lniSipQuota = lniSipQuota;
+		}
+
+		public Integer getHdeniQuota() {
+			return this.hdeniQuota;
+		}
+
+		public void setHdeniQuota(Integer hdeniQuota) {
+			this.hdeniQuota = hdeniQuota;
 		}
 
 		public List<String> getVSwitches() {

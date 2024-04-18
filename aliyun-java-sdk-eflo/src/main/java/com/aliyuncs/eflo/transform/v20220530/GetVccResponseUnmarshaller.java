@@ -24,6 +24,8 @@ import com.aliyuncs.eflo.model.v20220530.GetVccResponse.Content.CisRouterInfoIte
 import com.aliyuncs.eflo.model.v20220530.GetVccResponse.Content.CisRouterInfoItem.CcInfo;
 import com.aliyuncs.eflo.model.v20220530.GetVccResponse.Content.ErInfo;
 import com.aliyuncs.eflo.model.v20220530.GetVccResponse.Content.Tag;
+import com.aliyuncs.eflo.model.v20220530.GetVccResponse.Content.VbrInfo;
+import com.aliyuncs.eflo.model.v20220530.GetVccResponse.Content.VbrInfo.VbrBgpPeer;
 import com.aliyuncs.eflo.model.v20220530.GetVccResponse.Content.VpdBaseInfo;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -141,6 +143,32 @@ public class GetVccResponseUnmarshaller {
 			tags.add(tag);
 		}
 		content.setTags(tags);
+
+		List<VbrInfo> vbrInfos = new ArrayList<VbrInfo>();
+		for (int i = 0; i < _ctx.lengthValue("GetVccResponse.Content.VbrInfos.Length"); i++) {
+			VbrInfo vbrInfo = new VbrInfo();
+			vbrInfo.setVbrId(_ctx.stringValue("GetVccResponse.Content.VbrInfos["+ i +"].VbrId"));
+			vbrInfo.setCenId(_ctx.stringValue("GetVccResponse.Content.VbrInfos["+ i +"].CenId"));
+			vbrInfo.setStatus(_ctx.stringValue("GetVccResponse.Content.VbrInfos["+ i +"].Status"));
+			vbrInfo.setGmtCreate(_ctx.stringValue("GetVccResponse.Content.VbrInfos["+ i +"].GmtCreate"));
+			vbrInfo.setGmtModified(_ctx.stringValue("GetVccResponse.Content.VbrInfos["+ i +"].GmtModified"));
+
+			List<VbrBgpPeer> vbrBgpPeers = new ArrayList<VbrBgpPeer>();
+			for (int j = 0; j < _ctx.lengthValue("GetVccResponse.Content.VbrInfos["+ i +"].VbrBgpPeers.Length"); j++) {
+				VbrBgpPeer vbrBgpPeer = new VbrBgpPeer();
+				vbrBgpPeer.setBgpGroupId(_ctx.stringValue("GetVccResponse.Content.VbrInfos["+ i +"].VbrBgpPeers["+ j +"].BgpGroupId"));
+				vbrBgpPeer.setBgpPeerId(_ctx.stringValue("GetVccResponse.Content.VbrInfos["+ i +"].VbrBgpPeers["+ j +"].BgpPeerId"));
+				vbrBgpPeer.setPeerIpAddress(_ctx.stringValue("GetVccResponse.Content.VbrInfos["+ i +"].VbrBgpPeers["+ j +"].PeerIpAddress"));
+				vbrBgpPeer.setPeerAsn(_ctx.stringValue("GetVccResponse.Content.VbrInfos["+ i +"].VbrBgpPeers["+ j +"].PeerAsn"));
+				vbrBgpPeer.setStatus(_ctx.stringValue("GetVccResponse.Content.VbrInfos["+ i +"].VbrBgpPeers["+ j +"].Status"));
+
+				vbrBgpPeers.add(vbrBgpPeer);
+			}
+			vbrInfo.setVbrBgpPeers(vbrBgpPeers);
+
+			vbrInfos.add(vbrInfo);
+		}
+		content.setVbrInfos(vbrInfos);
 		getVccResponse.setContent(content);
 	 
 	 	return getVccResponse;

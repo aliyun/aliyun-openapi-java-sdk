@@ -24,6 +24,8 @@ import com.aliyuncs.http.MethodType;
 public class GetVccRequest extends RpcAcsRequest<GetVccResponse> {
 	   
 
+	private String clientToken;
+
 	private Integer pageNumber;
 
 	private Boolean enablePage;
@@ -34,6 +36,17 @@ public class GetVccRequest extends RpcAcsRequest<GetVccResponse> {
 	public GetVccRequest() {
 		super("eflo", "2022-05-30", "GetVcc", "eflo");
 		setMethod(MethodType.POST);
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putBodyParameter("ClientToken", clientToken);
+		}
 	}
 
 	public Integer getPageNumber() {

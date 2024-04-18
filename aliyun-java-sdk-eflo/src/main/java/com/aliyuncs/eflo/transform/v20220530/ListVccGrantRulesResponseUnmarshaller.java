@@ -47,6 +47,7 @@ public class ListVccGrantRulesResponseUnmarshaller {
 			dataItem.setUsed(_ctx.booleanValue("ListVccGrantRulesResponse.Content.Data["+ i +"].Used"));
 			dataItem.setCreateTime(_ctx.stringValue("ListVccGrantRulesResponse.Content.Data["+ i +"].CreateTime"));
 			dataItem.setGrantRuleId(_ctx.stringValue("ListVccGrantRulesResponse.Content.Data["+ i +"].GrantRuleId"));
+			dataItem.setResourceGroupId(_ctx.stringValue("ListVccGrantRulesResponse.Content.Data["+ i +"].ResourceGroupId"));
 
 			data.add(dataItem);
 		}

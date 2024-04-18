@@ -135,6 +135,8 @@ public class GetVccResponse extends AcsResponse {
 
 		private List<Tag> tags;
 
+		private List<VbrInfo> vbrInfos;
+
 		private VpdBaseInfo vpdBaseInfo;
 
 		public String getTenantId() {
@@ -407,6 +409,14 @@ public class GetVccResponse extends AcsResponse {
 
 		public void setTags(List<Tag> tags) {
 			this.tags = tags;
+		}
+
+		public List<VbrInfo> getVbrInfos() {
+			return this.vbrInfos;
+		}
+
+		public void setVbrInfos(List<VbrInfo> vbrInfos) {
+			this.vbrInfos = vbrInfos;
 		}
 
 		public VpdBaseInfo getVpdBaseInfo() {
@@ -709,6 +719,122 @@ public class GetVccResponse extends AcsResponse {
 
 			public void setTagValue(String tagValue) {
 				this.tagValue = tagValue;
+			}
+		}
+
+		public static class VbrInfo {
+
+			private String vbrId;
+
+			private String cenId;
+
+			private String status;
+
+			private String gmtCreate;
+
+			private String gmtModified;
+
+			private List<VbrBgpPeer> vbrBgpPeers;
+
+			public String getVbrId() {
+				return this.vbrId;
+			}
+
+			public void setVbrId(String vbrId) {
+				this.vbrId = vbrId;
+			}
+
+			public String getCenId() {
+				return this.cenId;
+			}
+
+			public void setCenId(String cenId) {
+				this.cenId = cenId;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
+			public String getGmtCreate() {
+				return this.gmtCreate;
+			}
+
+			public void setGmtCreate(String gmtCreate) {
+				this.gmtCreate = gmtCreate;
+			}
+
+			public String getGmtModified() {
+				return this.gmtModified;
+			}
+
+			public void setGmtModified(String gmtModified) {
+				this.gmtModified = gmtModified;
+			}
+
+			public List<VbrBgpPeer> getVbrBgpPeers() {
+				return this.vbrBgpPeers;
+			}
+
+			public void setVbrBgpPeers(List<VbrBgpPeer> vbrBgpPeers) {
+				this.vbrBgpPeers = vbrBgpPeers;
+			}
+
+			public static class VbrBgpPeer {
+
+				private String bgpGroupId;
+
+				private String bgpPeerId;
+
+				private String peerIpAddress;
+
+				private String peerAsn;
+
+				private String status;
+
+				public String getBgpGroupId() {
+					return this.bgpGroupId;
+				}
+
+				public void setBgpGroupId(String bgpGroupId) {
+					this.bgpGroupId = bgpGroupId;
+				}
+
+				public String getBgpPeerId() {
+					return this.bgpPeerId;
+				}
+
+				public void setBgpPeerId(String bgpPeerId) {
+					this.bgpPeerId = bgpPeerId;
+				}
+
+				public String getPeerIpAddress() {
+					return this.peerIpAddress;
+				}
+
+				public void setPeerIpAddress(String peerIpAddress) {
+					this.peerIpAddress = peerIpAddress;
+				}
+
+				public String getPeerAsn() {
+					return this.peerAsn;
+				}
+
+				public void setPeerAsn(String peerAsn) {
+					this.peerAsn = peerAsn;
+				}
+
+				public String getStatus() {
+					return this.status;
+				}
+
+				public void setStatus(String status) {
+					this.status = status;
+				}
 			}
 		}
 

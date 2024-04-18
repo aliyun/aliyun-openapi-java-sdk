@@ -16,14 +16,14 @@ package com.aliyuncs.eflo.model.v20220530;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.eflo.transform.v20220530.ListVccRouteEntriesResponseUnmarshaller;
+import com.aliyuncs.eflo.transform.v20220530.ListLeniPrivateIpAddressesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ListVccRouteEntriesResponse extends AcsResponse {
+public class ListLeniPrivateIpAddressesResponse extends AcsResponse {
 
 	private Integer code;
 
@@ -89,52 +89,30 @@ public class ListVccRouteEntriesResponse extends AcsResponse {
 
 		public static class DataItem {
 
-			private String vccId;
-
-			private String tenantId;
-
-			private String resourceTenantId;
+			private String elasticNetworkInterfaceId;
 
 			private String regionId;
 
-			private String vccRouteEntryId;
-
-			private String destinationCidrBlock;
-
-			private String nextHopType;
-
-			private String nextHopId;
-
-			private String routeType;
-
-			private String status;
+			private String gmtCreate;
 
 			private String gmtModified;
 
+			private String ipName;
+
+			private String privateIpAddress;
+
+			private String status;
+
+			private String description;
+
 			private String message;
 
-			public String getVccId() {
-				return this.vccId;
+			public String getElasticNetworkInterfaceId() {
+				return this.elasticNetworkInterfaceId;
 			}
 
-			public void setVccId(String vccId) {
-				this.vccId = vccId;
-			}
-
-			public String getTenantId() {
-				return this.tenantId;
-			}
-
-			public void setTenantId(String tenantId) {
-				this.tenantId = tenantId;
-			}
-
-			public String getResourceTenantId() {
-				return this.resourceTenantId;
-			}
-
-			public void setResourceTenantId(String resourceTenantId) {
-				this.resourceTenantId = resourceTenantId;
+			public void setElasticNetworkInterfaceId(String elasticNetworkInterfaceId) {
+				this.elasticNetworkInterfaceId = elasticNetworkInterfaceId;
 			}
 
 			public String getRegionId() {
@@ -145,44 +123,36 @@ public class ListVccRouteEntriesResponse extends AcsResponse {
 				this.regionId = regionId;
 			}
 
-			public String getVccRouteEntryId() {
-				return this.vccRouteEntryId;
+			public String getGmtCreate() {
+				return this.gmtCreate;
 			}
 
-			public void setVccRouteEntryId(String vccRouteEntryId) {
-				this.vccRouteEntryId = vccRouteEntryId;
+			public void setGmtCreate(String gmtCreate) {
+				this.gmtCreate = gmtCreate;
 			}
 
-			public String getDestinationCidrBlock() {
-				return this.destinationCidrBlock;
+			public String getGmtModified() {
+				return this.gmtModified;
 			}
 
-			public void setDestinationCidrBlock(String destinationCidrBlock) {
-				this.destinationCidrBlock = destinationCidrBlock;
+			public void setGmtModified(String gmtModified) {
+				this.gmtModified = gmtModified;
 			}
 
-			public String getNextHopType() {
-				return this.nextHopType;
+			public String getIpName() {
+				return this.ipName;
 			}
 
-			public void setNextHopType(String nextHopType) {
-				this.nextHopType = nextHopType;
+			public void setIpName(String ipName) {
+				this.ipName = ipName;
 			}
 
-			public String getNextHopId() {
-				return this.nextHopId;
+			public String getPrivateIpAddress() {
+				return this.privateIpAddress;
 			}
 
-			public void setNextHopId(String nextHopId) {
-				this.nextHopId = nextHopId;
-			}
-
-			public String getRouteType() {
-				return this.routeType;
-			}
-
-			public void setRouteType(String routeType) {
-				this.routeType = routeType;
+			public void setPrivateIpAddress(String privateIpAddress) {
+				this.privateIpAddress = privateIpAddress;
 			}
 
 			public String getStatus() {
@@ -193,12 +163,12 @@ public class ListVccRouteEntriesResponse extends AcsResponse {
 				this.status = status;
 			}
 
-			public String getGmtModified() {
-				return this.gmtModified;
+			public String getDescription() {
+				return this.description;
 			}
 
-			public void setGmtModified(String gmtModified) {
-				this.gmtModified = gmtModified;
+			public void setDescription(String description) {
+				this.description = description;
 			}
 
 			public String getMessage() {
@@ -212,8 +182,8 @@ public class ListVccRouteEntriesResponse extends AcsResponse {
 	}
 
 	@Override
-	public ListVccRouteEntriesResponse getInstance(UnmarshallerContext context) {
-		return	ListVccRouteEntriesResponseUnmarshaller.unmarshall(this, context);
+	public ListLeniPrivateIpAddressesResponse getInstance(UnmarshallerContext context) {
+		return	ListLeniPrivateIpAddressesResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

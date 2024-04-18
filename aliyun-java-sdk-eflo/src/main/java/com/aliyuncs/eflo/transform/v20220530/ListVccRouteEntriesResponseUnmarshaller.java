@@ -48,6 +48,7 @@ public class ListVccRouteEntriesResponseUnmarshaller {
 			dataItem.setRouteType(_ctx.stringValue("ListVccRouteEntriesResponse.Content.Data["+ i +"].RouteType"));
 			dataItem.setStatus(_ctx.stringValue("ListVccRouteEntriesResponse.Content.Data["+ i +"].Status"));
 			dataItem.setGmtModified(_ctx.stringValue("ListVccRouteEntriesResponse.Content.Data["+ i +"].GmtModified"));
+			dataItem.setMessage(_ctx.stringValue("ListVccRouteEntriesResponse.Content.Data["+ i +"].Message"));
 
 			data.add(dataItem);
 		}

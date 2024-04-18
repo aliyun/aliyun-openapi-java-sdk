@@ -28,6 +28,8 @@ public class ListVpdGrantRulesRequest extends RpcAcsRequest<ListVpdGrantRulesRes
 
 	private Integer pageNumber;
 
+	private String resourceGroupId;
+
 	private String grantRuleId;
 
 	private Integer pageSize;
@@ -65,6 +67,17 @@ public class ListVpdGrantRulesRequest extends RpcAcsRequest<ListVpdGrantRulesRes
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putBodyParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putBodyParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

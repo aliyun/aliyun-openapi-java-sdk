@@ -38,6 +38,7 @@ public class GetNodeInfoForPodResponseUnmarshaller {
 		content.setNodeId(_ctx.stringValue("GetNodeInfoForPodResponse.Content.NodeId"));
 		content.setLeniQuota(_ctx.integerValue("GetNodeInfoForPodResponse.Content.LeniQuota"));
 		content.setLniSipQuota(_ctx.integerValue("GetNodeInfoForPodResponse.Content.LniSipQuota"));
+		content.setHdeniQuota(_ctx.integerValue("GetNodeInfoForPodResponse.Content.HdeniQuota"));
 
 		List<String> vSwitches = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetNodeInfoForPodResponse.Content.VSwitches.Length"); i++) {

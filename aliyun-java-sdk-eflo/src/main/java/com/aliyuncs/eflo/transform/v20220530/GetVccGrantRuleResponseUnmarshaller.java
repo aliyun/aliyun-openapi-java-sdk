@@ -38,6 +38,7 @@ public class GetVccGrantRuleResponseUnmarshaller {
 		content.setUsed(_ctx.booleanValue("GetVccGrantRuleResponse.Content.Used"));
 		content.setCreateTime(_ctx.stringValue("GetVccGrantRuleResponse.Content.CreateTime"));
 		content.setGrantRuleId(_ctx.stringValue("GetVccGrantRuleResponse.Content.GrantRuleId"));
+		content.setResourceGroupId(_ctx.stringValue("GetVccGrantRuleResponse.Content.ResourceGroupId"));
 		getVccGrantRuleResponse.setContent(content);
 	 
 	 	return getVccGrantRuleResponse;
