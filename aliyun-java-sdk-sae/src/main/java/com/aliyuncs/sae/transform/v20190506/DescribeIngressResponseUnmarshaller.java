@@ -65,6 +65,7 @@ public class DescribeIngressResponseUnmarshaller {
 			rule.setAppId(_ctx.stringValue("DescribeIngressResponse.Data.Rules["+ i +"].AppId"));
 			rule.setPath(_ctx.stringValue("DescribeIngressResponse.Data.Rules["+ i +"].Path"));
 			rule.setBackendProtocol(_ctx.stringValue("DescribeIngressResponse.Data.Rules["+ i +"].BackendProtocol"));
+			rule.setRewritePath(_ctx.stringValue("DescribeIngressResponse.Data.Rules["+ i +"].RewritePath"));
 
 			rules.add(rule);
 		}

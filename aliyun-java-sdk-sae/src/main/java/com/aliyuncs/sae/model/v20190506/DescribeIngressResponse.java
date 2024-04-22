@@ -251,6 +251,8 @@ public class DescribeIngressResponse extends AcsResponse {
 
 			private String backendProtocol;
 
+			private String rewritePath;
+
 			public String getAppName() {
 				return this.appName;
 			}
@@ -297,6 +299,14 @@ public class DescribeIngressResponse extends AcsResponse {
 
 			public void setBackendProtocol(String backendProtocol) {
 				this.backendProtocol = backendProtocol;
+			}
+
+			public String getRewritePath() {
+				return this.rewritePath;
+			}
+
+			public void setRewritePath(String rewritePath) {
+				this.rewritePath = rewritePath;
 			}
 		}
 

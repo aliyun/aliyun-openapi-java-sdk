@@ -101,6 +101,9 @@ public class DescribeApplicationConfigResponseUnmarshaller {
 		data.setNasConfigs(_ctx.stringValue("DescribeApplicationConfigResponse.Data.NasConfigs"));
 		data.setPython(_ctx.stringValue("DescribeApplicationConfigResponse.Data.Python"));
 		data.setPythonModules(_ctx.stringValue("DescribeApplicationConfigResponse.Data.PythonModules"));
+		data.setMseApplicationName(_ctx.stringValue("DescribeApplicationConfigResponse.Data.MseApplicationName"));
+		data.setSaeVersion(_ctx.stringValue("DescribeApplicationConfigResponse.Data.SaeVersion"));
+		data.setAppSource(_ctx.stringValue("DescribeApplicationConfigResponse.Data.AppSource"));
 
 		List<ConfigMapMountDescItem> configMapMountDesc = new ArrayList<ConfigMapMountDescItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeApplicationConfigResponse.Data.ConfigMapMountDesc.Length"); i++) {

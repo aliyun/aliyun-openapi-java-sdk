@@ -58,6 +58,8 @@ public class DescribeApplicationScalingRulesResponseUnmarshaller {
 			applicationScalingRule.setScaleRuleEnabled(_ctx.booleanValue("DescribeApplicationScalingRulesResponse.Data.ApplicationScalingRules["+ i +"].ScaleRuleEnabled"));
 			applicationScalingRule.setScaleRuleType(_ctx.stringValue("DescribeApplicationScalingRulesResponse.Data.ApplicationScalingRules["+ i +"].ScaleRuleType"));
 			applicationScalingRule.setScaleRuleName(_ctx.stringValue("DescribeApplicationScalingRulesResponse.Data.ApplicationScalingRules["+ i +"].ScaleRuleName"));
+			applicationScalingRule.setMinReadyInstances(_ctx.integerValue("DescribeApplicationScalingRulesResponse.Data.ApplicationScalingRules["+ i +"].MinReadyInstances"));
+			applicationScalingRule.setMinReadyInstanceRatio(_ctx.integerValue("DescribeApplicationScalingRulesResponse.Data.ApplicationScalingRules["+ i +"].MinReadyInstanceRatio"));
 
 			Timer timer = new Timer();
 			timer.setEndDate(_ctx.stringValue("DescribeApplicationScalingRulesResponse.Data.ApplicationScalingRules["+ i +"].Timer.EndDate"));
@@ -129,6 +131,10 @@ public class DescribeApplicationScalingRulesResponseUnmarshaller {
 				Metric1 metric1 = new Metric1();
 				metric1.setMetricTargetAverageUtilization(_ctx.integerValue("DescribeApplicationScalingRulesResponse.Data.ApplicationScalingRules["+ i +"].Metric.Metrics["+ j +"].MetricTargetAverageUtilization"));
 				metric1.setMetricType(_ctx.stringValue("DescribeApplicationScalingRulesResponse.Data.ApplicationScalingRules["+ i +"].Metric.Metrics["+ j +"].MetricType"));
+				metric1.setSlbProject(_ctx.stringValue("DescribeApplicationScalingRulesResponse.Data.ApplicationScalingRules["+ i +"].Metric.Metrics["+ j +"].SlbProject"));
+				metric1.setSlbLogstore(_ctx.stringValue("DescribeApplicationScalingRulesResponse.Data.ApplicationScalingRules["+ i +"].Metric.Metrics["+ j +"].SlbLogstore"));
+				metric1.setVport(_ctx.stringValue("DescribeApplicationScalingRulesResponse.Data.ApplicationScalingRules["+ i +"].Metric.Metrics["+ j +"].Vport"));
+				metric1.setSlbId(_ctx.stringValue("DescribeApplicationScalingRulesResponse.Data.ApplicationScalingRules["+ i +"].Metric.Metrics["+ j +"].SlbId"));
 
 				metrics.add(metric1);
 			}

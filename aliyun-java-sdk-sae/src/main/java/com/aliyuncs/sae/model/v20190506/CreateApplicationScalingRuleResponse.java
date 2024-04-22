@@ -235,6 +235,10 @@ public class CreateApplicationScalingRuleResponse extends AcsResponse {
 
 				private Integer targetReplicas;
 
+				private Integer maxReplicas;
+
+				private Integer minReplicas;
+
 				public String getAtTime() {
 					return this.atTime;
 				}
@@ -249,6 +253,22 @@ public class CreateApplicationScalingRuleResponse extends AcsResponse {
 
 				public void setTargetReplicas(Integer targetReplicas) {
 					this.targetReplicas = targetReplicas;
+				}
+
+				public Integer getMaxReplicas() {
+					return this.maxReplicas;
+				}
+
+				public void setMaxReplicas(Integer maxReplicas) {
+					this.maxReplicas = maxReplicas;
+				}
+
+				public Integer getMinReplicas() {
+					return this.minReplicas;
+				}
+
+				public void setMinReplicas(Integer minReplicas) {
+					this.minReplicas = minReplicas;
 				}
 			}
 		}
@@ -291,6 +311,14 @@ public class CreateApplicationScalingRuleResponse extends AcsResponse {
 
 				private String metricType;
 
+				private String slbProject;
+
+				private String slbLogstore;
+
+				private String vport;
+
+				private String slbId;
+
 				public Integer getMetricTargetAverageUtilization() {
 					return this.metricTargetAverageUtilization;
 				}
@@ -305,6 +333,38 @@ public class CreateApplicationScalingRuleResponse extends AcsResponse {
 
 				public void setMetricType(String metricType) {
 					this.metricType = metricType;
+				}
+
+				public String getSlbProject() {
+					return this.slbProject;
+				}
+
+				public void setSlbProject(String slbProject) {
+					this.slbProject = slbProject;
+				}
+
+				public String getSlbLogstore() {
+					return this.slbLogstore;
+				}
+
+				public void setSlbLogstore(String slbLogstore) {
+					this.slbLogstore = slbLogstore;
+				}
+
+				public String getVport() {
+					return this.vport;
+				}
+
+				public void setVport(String vport) {
+					this.vport = vport;
+				}
+
+				public String getSlbId() {
+					return this.slbId;
+				}
+
+				public void setSlbId(String slbId) {
+					this.slbId = slbId;
 				}
 			}
 		}

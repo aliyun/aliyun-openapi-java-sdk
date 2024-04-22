@@ -223,6 +223,12 @@ public class DescribeApplicationConfigResponse extends AcsResponse {
 
 		private String pythonModules;
 
+		private String mseApplicationName;
+
+		private String saeVersion;
+
+		private String appSource;
+
 		private List<ConfigMapMountDescItem> configMapMountDesc;
 
 		private List<Tag> tags;
@@ -733,6 +739,30 @@ public class DescribeApplicationConfigResponse extends AcsResponse {
 
 		public void setPythonModules(String pythonModules) {
 			this.pythonModules = pythonModules;
+		}
+
+		public String getMseApplicationName() {
+			return this.mseApplicationName;
+		}
+
+		public void setMseApplicationName(String mseApplicationName) {
+			this.mseApplicationName = mseApplicationName;
+		}
+
+		public String getSaeVersion() {
+			return this.saeVersion;
+		}
+
+		public void setSaeVersion(String saeVersion) {
+			this.saeVersion = saeVersion;
+		}
+
+		public String getAppSource() {
+			return this.appSource;
+		}
+
+		public void setAppSource(String appSource) {
+			this.appSource = appSource;
 		}
 
 		public List<ConfigMapMountDescItem> getConfigMapMountDesc() {

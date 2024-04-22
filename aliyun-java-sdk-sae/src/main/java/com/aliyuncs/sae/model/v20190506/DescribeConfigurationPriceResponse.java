@@ -103,6 +103,12 @@ public class DescribeConfigurationPriceResponse extends AcsResponse {
 
 		private Order order;
 
+		private RequestPrice requestPrice;
+
+		private TrafficPrice trafficPrice;
+
+		private CpuMemPrice cpuMemPrice;
+
 		public List<Rule> getRules() {
 			return this.rules;
 		}
@@ -125,6 +131,30 @@ public class DescribeConfigurationPriceResponse extends AcsResponse {
 
 		public void setOrder(Order order) {
 			this.order = order;
+		}
+
+		public RequestPrice getRequestPrice() {
+			return this.requestPrice;
+		}
+
+		public void setRequestPrice(RequestPrice requestPrice) {
+			this.requestPrice = requestPrice;
+		}
+
+		public TrafficPrice getTrafficPrice() {
+			return this.trafficPrice;
+		}
+
+		public void setTrafficPrice(TrafficPrice trafficPrice) {
+			this.trafficPrice = trafficPrice;
+		}
+
+		public CpuMemPrice getCpuMemPrice() {
+			return this.cpuMemPrice;
+		}
+
+		public void setCpuMemPrice(CpuMemPrice cpuMemPrice) {
+			this.cpuMemPrice = cpuMemPrice;
 		}
 
 		public static class Rule {
@@ -213,6 +243,273 @@ public class DescribeConfigurationPriceResponse extends AcsResponse {
 
 			public void setRuleIds(List<String> ruleIds) {
 				this.ruleIds = ruleIds;
+			}
+		}
+
+		public static class RequestPrice {
+
+			private List<Rule3> rules2;
+
+			private Order1 order1;
+
+			public List<Rule3> getRules2() {
+				return this.rules2;
+			}
+
+			public void setRules2(List<Rule3> rules2) {
+				this.rules2 = rules2;
+			}
+
+			public Order1 getOrder1() {
+				return this.order1;
+			}
+
+			public void setOrder1(Order1 order1) {
+				this.order1 = order1;
+			}
+
+			public static class Rule3 {
+
+				private Long ruleDescId;
+
+				private String name;
+
+				public Long getRuleDescId() {
+					return this.ruleDescId;
+				}
+
+				public void setRuleDescId(Long ruleDescId) {
+					this.ruleDescId = ruleDescId;
+				}
+
+				public String getName() {
+					return this.name;
+				}
+
+				public void setName(String name) {
+					this.name = name;
+				}
+			}
+
+			public static class Order1 {
+
+				private Float originalAmount;
+
+				private Float discountAmount;
+
+				private Float tradeAmount;
+
+				private List<String> ruleIds4;
+
+				public Float getOriginalAmount() {
+					return this.originalAmount;
+				}
+
+				public void setOriginalAmount(Float originalAmount) {
+					this.originalAmount = originalAmount;
+				}
+
+				public Float getDiscountAmount() {
+					return this.discountAmount;
+				}
+
+				public void setDiscountAmount(Float discountAmount) {
+					this.discountAmount = discountAmount;
+				}
+
+				public Float getTradeAmount() {
+					return this.tradeAmount;
+				}
+
+				public void setTradeAmount(Float tradeAmount) {
+					this.tradeAmount = tradeAmount;
+				}
+
+				public List<String> getRuleIds4() {
+					return this.ruleIds4;
+				}
+
+				public void setRuleIds4(List<String> ruleIds4) {
+					this.ruleIds4 = ruleIds4;
+				}
+			}
+		}
+
+		public static class TrafficPrice {
+
+			private List<Rule7> rules6;
+
+			private Order5 order5;
+
+			public List<Rule7> getRules6() {
+				return this.rules6;
+			}
+
+			public void setRules6(List<Rule7> rules6) {
+				this.rules6 = rules6;
+			}
+
+			public Order5 getOrder5() {
+				return this.order5;
+			}
+
+			public void setOrder5(Order5 order5) {
+				this.order5 = order5;
+			}
+
+			public static class Rule7 {
+
+				private Float ruleDescId;
+
+				private String name;
+
+				public Float getRuleDescId() {
+					return this.ruleDescId;
+				}
+
+				public void setRuleDescId(Float ruleDescId) {
+					this.ruleDescId = ruleDescId;
+				}
+
+				public String getName() {
+					return this.name;
+				}
+
+				public void setName(String name) {
+					this.name = name;
+				}
+			}
+
+			public static class Order5 {
+
+				private Float originalAmount;
+
+				private Float discountAmount;
+
+				private Float tradeAmount;
+
+				private List<String> ruleIds8;
+
+				public Float getOriginalAmount() {
+					return this.originalAmount;
+				}
+
+				public void setOriginalAmount(Float originalAmount) {
+					this.originalAmount = originalAmount;
+				}
+
+				public Float getDiscountAmount() {
+					return this.discountAmount;
+				}
+
+				public void setDiscountAmount(Float discountAmount) {
+					this.discountAmount = discountAmount;
+				}
+
+				public Float getTradeAmount() {
+					return this.tradeAmount;
+				}
+
+				public void setTradeAmount(Float tradeAmount) {
+					this.tradeAmount = tradeAmount;
+				}
+
+				public List<String> getRuleIds8() {
+					return this.ruleIds8;
+				}
+
+				public void setRuleIds8(List<String> ruleIds8) {
+					this.ruleIds8 = ruleIds8;
+				}
+			}
+		}
+
+		public static class CpuMemPrice {
+
+			private List<Rule11> rules10;
+
+			private Order9 order9;
+
+			public List<Rule11> getRules10() {
+				return this.rules10;
+			}
+
+			public void setRules10(List<Rule11> rules10) {
+				this.rules10 = rules10;
+			}
+
+			public Order9 getOrder9() {
+				return this.order9;
+			}
+
+			public void setOrder9(Order9 order9) {
+				this.order9 = order9;
+			}
+
+			public static class Rule11 {
+
+				private Float ruleDescId;
+
+				private String name;
+
+				public Float getRuleDescId() {
+					return this.ruleDescId;
+				}
+
+				public void setRuleDescId(Float ruleDescId) {
+					this.ruleDescId = ruleDescId;
+				}
+
+				public String getName() {
+					return this.name;
+				}
+
+				public void setName(String name) {
+					this.name = name;
+				}
+			}
+
+			public static class Order9 {
+
+				private Float originalAmount;
+
+				private Float discountAmount;
+
+				private Float tradeAmount;
+
+				private List<String> ruleIds12;
+
+				public Float getOriginalAmount() {
+					return this.originalAmount;
+				}
+
+				public void setOriginalAmount(Float originalAmount) {
+					this.originalAmount = originalAmount;
+				}
+
+				public Float getDiscountAmount() {
+					return this.discountAmount;
+				}
+
+				public void setDiscountAmount(Float discountAmount) {
+					this.discountAmount = discountAmount;
+				}
+
+				public Float getTradeAmount() {
+					return this.tradeAmount;
+				}
+
+				public void setTradeAmount(Float tradeAmount) {
+					this.tradeAmount = tradeAmount;
+				}
+
+				public List<String> getRuleIds12() {
+					return this.ruleIds12;
+				}
+
+				public void setRuleIds12(List<String> ruleIds12) {
+					this.ruleIds12 = ruleIds12;
+				}
 			}
 		}
 	}

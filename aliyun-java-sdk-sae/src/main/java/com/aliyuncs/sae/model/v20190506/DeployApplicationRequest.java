@@ -59,7 +59,11 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 
 	private String python;
 
+	private Integer cpu;
+
 	private String updateStrategy;
+
+	private String vSwitchId;
 
 	private String changeOrderDesc;
 
@@ -81,6 +85,8 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 
 	private String kafkaConfigs;
 
+	private Integer memory;
+
 	private String commandArgs;
 
 	private String acrAssumeRoleArn;
@@ -92,6 +98,8 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 	private String ossAkId;
 
 	private String liveness;
+
+	private String securityGroupId;
 
 	private String packageVersion;
 
@@ -111,6 +119,8 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 
 	private Boolean enableGreyTagRoute;
 
+	private Integer replicas;
+
 	private String command;
 
 	private String mountDesc;
@@ -124,6 +134,8 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 	private String appId;
 
 	private String imageUrl;
+
+	private String php;
 
 	private String pythonModules;
 
@@ -325,6 +337,17 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 		}
 	}
 
+	public Integer getCpu() {
+		return this.cpu;
+	}
+
+	public void setCpu(Integer cpu) {
+		this.cpu = cpu;
+		if(cpu != null){
+			putQueryParameter("Cpu", cpu.toString());
+		}
+	}
+
 	public String getUpdateStrategy() {
 		return this.updateStrategy;
 	}
@@ -333,6 +356,17 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 		this.updateStrategy = updateStrategy;
 		if(updateStrategy != null){
 			putQueryParameter("UpdateStrategy", updateStrategy);
+		}
+	}
+
+	public String getVSwitchId() {
+		return this.vSwitchId;
+	}
+
+	public void setVSwitchId(String vSwitchId) {
+		this.vSwitchId = vSwitchId;
+		if(vSwitchId != null){
+			putQueryParameter("VSwitchId", vSwitchId);
 		}
 	}
 
@@ -446,6 +480,17 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 		}
 	}
 
+	public Integer getMemory() {
+		return this.memory;
+	}
+
+	public void setMemory(Integer memory) {
+		this.memory = memory;
+		if(memory != null){
+			putQueryParameter("Memory", memory.toString());
+		}
+	}
+
 	public String getCommandArgs() {
 		return this.commandArgs;
 	}
@@ -509,6 +554,17 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 		this.liveness = liveness;
 		if(liveness != null){
 			putQueryParameter("Liveness", liveness);
+		}
+	}
+
+	public String getSecurityGroupId() {
+		return this.securityGroupId;
+	}
+
+	public void setSecurityGroupId(String securityGroupId) {
+		this.securityGroupId = securityGroupId;
+		if(securityGroupId != null){
+			putQueryParameter("SecurityGroupId", securityGroupId);
 		}
 	}
 
@@ -611,6 +667,17 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 		}
 	}
 
+	public Integer getReplicas() {
+		return this.replicas;
+	}
+
+	public void setReplicas(Integer replicas) {
+		this.replicas = replicas;
+		if(replicas != null){
+			putQueryParameter("Replicas", replicas.toString());
+		}
+	}
+
 	public String getCommand() {
 		return this.command;
 	}
@@ -685,6 +752,17 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 		this.imageUrl = imageUrl;
 		if(imageUrl != null){
 			putQueryParameter("ImageUrl", imageUrl);
+		}
+	}
+
+	public String getPhp() {
+		return this.php;
+	}
+
+	public void setPhp(String php) {
+		this.php = php;
+		if(php != null){
+			putBodyParameter("Php", php);
 		}
 	}
 

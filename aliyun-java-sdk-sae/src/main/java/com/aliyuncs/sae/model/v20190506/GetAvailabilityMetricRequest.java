@@ -25,6 +25,10 @@ import com.aliyuncs.sae.Endpoint;
 public class GetAvailabilityMetricRequest extends RoaAcsRequest<GetAvailabilityMetricResponse> {
 	   
 
+	private String appSource;
+
+	private String cpuStrategy;
+
 	private Long limit;
 	public GetAvailabilityMetricRequest() {
 		super("sae", "2019-05-06", "GetAvailabilityMetric", "serverless");
@@ -34,6 +38,28 @@ public class GetAvailabilityMetricRequest extends RoaAcsRequest<GetAvailabilityM
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getAppSource() {
+		return this.appSource;
+	}
+
+	public void setAppSource(String appSource) {
+		this.appSource = appSource;
+		if(appSource != null){
+			putQueryParameter("AppSource", appSource);
+		}
+	}
+
+	public String getCpuStrategy() {
+		return this.cpuStrategy;
+	}
+
+	public void setCpuStrategy(String cpuStrategy) {
+		this.cpuStrategy = cpuStrategy;
+		if(cpuStrategy != null){
+			putQueryParameter("CpuStrategy", cpuStrategy);
+		}
 	}
 
 	public Long getLimit() {

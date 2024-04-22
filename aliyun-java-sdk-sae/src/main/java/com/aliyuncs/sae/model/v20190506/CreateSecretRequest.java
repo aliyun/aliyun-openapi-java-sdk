@@ -71,7 +71,7 @@ public class CreateSecretRequest extends RoaAcsRequest<CreateSecretResponse> {
 	public void setSecretData(String secretData) {
 		this.secretData = secretData;
 		if(secretData != null){
-			putBodyParameter("SecretData", secretData);
+			putQueryParameter("SecretData", secretData);
 		}
 	}
 

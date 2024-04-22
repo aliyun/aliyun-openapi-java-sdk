@@ -69,7 +69,7 @@ public class UpdateSecretRequest extends RoaAcsRequest<UpdateSecretResponse> {
 	public void setSecretData(String secretData) {
 		this.secretData = secretData;
 		if(secretData != null){
-			putBodyParameter("SecretData", secretData);
+			putQueryParameter("SecretData", secretData);
 		}
 	}
 

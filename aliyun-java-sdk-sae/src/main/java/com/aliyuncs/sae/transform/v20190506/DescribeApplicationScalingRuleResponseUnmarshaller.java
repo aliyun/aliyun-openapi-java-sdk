@@ -50,6 +50,8 @@ public class DescribeApplicationScalingRuleResponseUnmarshaller {
 		data.setScaleRuleEnabled(_ctx.booleanValue("DescribeApplicationScalingRuleResponse.Data.ScaleRuleEnabled"));
 		data.setScaleRuleType(_ctx.stringValue("DescribeApplicationScalingRuleResponse.Data.ScaleRuleType"));
 		data.setScaleRuleName(_ctx.stringValue("DescribeApplicationScalingRuleResponse.Data.ScaleRuleName"));
+		data.setMinReadyInstances(_ctx.integerValue("DescribeApplicationScalingRuleResponse.Data.MinReadyInstances"));
+		data.setMinReadyInstanceRatio(_ctx.integerValue("DescribeApplicationScalingRuleResponse.Data.MinReadyInstanceRatio"));
 
 		Timer timer = new Timer();
 		timer.setEndDate(_ctx.stringValue("DescribeApplicationScalingRuleResponse.Data.Timer.EndDate"));
@@ -61,6 +63,8 @@ public class DescribeApplicationScalingRuleResponseUnmarshaller {
 			Schedule schedule = new Schedule();
 			schedule.setAtTime(_ctx.stringValue("DescribeApplicationScalingRuleResponse.Data.Timer.Schedules["+ i +"].AtTime"));
 			schedule.setTargetReplicas(_ctx.integerValue("DescribeApplicationScalingRuleResponse.Data.Timer.Schedules["+ i +"].TargetReplicas"));
+			schedule.setMinReplicas(_ctx.integerValue("DescribeApplicationScalingRuleResponse.Data.Timer.Schedules["+ i +"].MinReplicas"));
+			schedule.setMaxReplicas(_ctx.integerValue("DescribeApplicationScalingRuleResponse.Data.Timer.Schedules["+ i +"].MaxReplicas"));
 
 			schedules.add(schedule);
 		}
@@ -117,6 +121,10 @@ public class DescribeApplicationScalingRuleResponseUnmarshaller {
 			Metric1 metric1 = new Metric1();
 			metric1.setMetricTargetAverageUtilization(_ctx.integerValue("DescribeApplicationScalingRuleResponse.Data.Metric.Metrics["+ i +"].MetricTargetAverageUtilization"));
 			metric1.setMetricType(_ctx.stringValue("DescribeApplicationScalingRuleResponse.Data.Metric.Metrics["+ i +"].MetricType"));
+			metric1.setSlbProject(_ctx.stringValue("DescribeApplicationScalingRuleResponse.Data.Metric.Metrics["+ i +"].SlbProject"));
+			metric1.setSlbLogstore(_ctx.stringValue("DescribeApplicationScalingRuleResponse.Data.Metric.Metrics["+ i +"].SlbLogstore"));
+			metric1.setVport(_ctx.stringValue("DescribeApplicationScalingRuleResponse.Data.Metric.Metrics["+ i +"].Vport"));
+			metric1.setSlbId(_ctx.stringValue("DescribeApplicationScalingRuleResponse.Data.Metric.Metrics["+ i +"].SlbId"));
 
 			metrics.add(metric1);
 		}

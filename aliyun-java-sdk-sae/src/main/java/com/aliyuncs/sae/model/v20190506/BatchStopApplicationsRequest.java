@@ -28,6 +28,8 @@ public class BatchStopApplicationsRequest extends RoaAcsRequest<BatchStopApplica
 	private String appIds;
 
 	private String namespaceId;
+
+	private String version;
 	public BatchStopApplicationsRequest() {
 		super("sae", "2019-05-06", "BatchStopApplications", "serverless");
 		setUriPattern("/pop/v1/sam/app/batchStopApplications");
@@ -57,6 +59,17 @@ public class BatchStopApplicationsRequest extends RoaAcsRequest<BatchStopApplica
 		this.namespaceId = namespaceId;
 		if(namespaceId != null){
 			putQueryParameter("NamespaceId", namespaceId);
+		}
+	}
+
+	public String getVersion() {
+		return this.version;
+	}
+
+	public void setVersion(String version) {
+		this.version = version;
+		if(version != null){
+			putQueryParameter("Version", version);
 		}
 	}
 

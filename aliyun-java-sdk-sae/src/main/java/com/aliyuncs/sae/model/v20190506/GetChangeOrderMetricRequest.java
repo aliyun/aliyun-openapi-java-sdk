@@ -25,7 +25,11 @@ import com.aliyuncs.sae.Endpoint;
 public class GetChangeOrderMetricRequest extends RoaAcsRequest<GetChangeOrderMetricResponse> {
 	   
 
+	private String appSource;
+
 	private String createTime;
+
+	private String cpuStrategy;
 
 	private Long limit;
 
@@ -40,6 +44,17 @@ public class GetChangeOrderMetricRequest extends RoaAcsRequest<GetChangeOrderMet
 		} catch (Exception e) {}
 	}
 
+	public String getAppSource() {
+		return this.appSource;
+	}
+
+	public void setAppSource(String appSource) {
+		this.appSource = appSource;
+		if(appSource != null){
+			putQueryParameter("AppSource", appSource);
+		}
+	}
+
 	public String getCreateTime() {
 		return this.createTime;
 	}
@@ -48,6 +63,17 @@ public class GetChangeOrderMetricRequest extends RoaAcsRequest<GetChangeOrderMet
 		this.createTime = createTime;
 		if(createTime != null){
 			putQueryParameter("CreateTime", createTime);
+		}
+	}
+
+	public String getCpuStrategy() {
+		return this.cpuStrategy;
+	}
+
+	public void setCpuStrategy(String cpuStrategy) {
+		this.cpuStrategy = cpuStrategy;
+		if(cpuStrategy != null){
+			putQueryParameter("CpuStrategy", cpuStrategy);
 		}
 	}
 

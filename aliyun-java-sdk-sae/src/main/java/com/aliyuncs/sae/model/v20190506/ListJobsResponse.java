@@ -201,6 +201,8 @@ public class ListJobsResponse extends AcsResponse {
 
 			private Integer mem;
 
+			private String message;
+
 			private List<TagsItem> tags;
 
 			public String getAppName() {
@@ -369,6 +371,14 @@ public class ListJobsResponse extends AcsResponse {
 
 			public void setMem(Integer mem) {
 				this.mem = mem;
+			}
+
+			public String getMessage() {
+				return this.message;
+			}
+
+			public void setMessage(String message) {
+				this.message = message;
 			}
 
 			public List<TagsItem> getTags() {

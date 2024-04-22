@@ -53,6 +53,8 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 
 	private String namespaceId;
 
+	private String saeVersion;
+
 	private String pvtzDiscoverySvc;
 
 	private String configMapMountDesc;
@@ -69,11 +71,15 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 
 	private String vSwitchId;
 
+	private String enableEbpf;
+
 	private String packageType;
 
 	private String postStart;
 
 	private Boolean associateEip;
+
+	private String appSource;
 
 	private String webContainer;
 
@@ -128,6 +134,8 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 	private String vpcId;
 
 	private String imageUrl;
+
+	private String php;
 
 	private String pythonModules;
 
@@ -296,6 +304,17 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 		}
 	}
 
+	public String getSaeVersion() {
+		return this.saeVersion;
+	}
+
+	public void setSaeVersion(String saeVersion) {
+		this.saeVersion = saeVersion;
+		if(saeVersion != null){
+			putQueryParameter("SaeVersion", saeVersion);
+		}
+	}
+
 	public String getPvtzDiscoverySvc() {
 		return this.pvtzDiscoverySvc;
 	}
@@ -384,6 +403,17 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 		}
 	}
 
+	public String getEnableEbpf() {
+		return this.enableEbpf;
+	}
+
+	public void setEnableEbpf(String enableEbpf) {
+		this.enableEbpf = enableEbpf;
+		if(enableEbpf != null){
+			putQueryParameter("EnableEbpf", enableEbpf);
+		}
+	}
+
 	public String getPackageType() {
 		return this.packageType;
 	}
@@ -414,6 +444,17 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 		this.associateEip = associateEip;
 		if(associateEip != null){
 			putBodyParameter("AssociateEip", associateEip.toString());
+		}
+	}
+
+	public String getAppSource() {
+		return this.appSource;
+	}
+
+	public void setAppSource(String appSource) {
+		this.appSource = appSource;
+		if(appSource != null){
+			putQueryParameter("AppSource", appSource);
 		}
 	}
 
@@ -711,6 +752,17 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 		this.imageUrl = imageUrl;
 		if(imageUrl != null){
 			putQueryParameter("ImageUrl", imageUrl);
+		}
+	}
+
+	public String getPhp() {
+		return this.php;
+	}
+
+	public void setPhp(String php) {
+		this.php = php;
+		if(php != null){
+			putBodyParameter("Php", php);
 		}
 	}
 

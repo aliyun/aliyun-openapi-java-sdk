@@ -25,6 +25,10 @@ import com.aliyuncs.sae.Endpoint;
 public class GetWarningEventMetricRequest extends RoaAcsRequest<GetWarningEventMetricResponse> {
 	   
 
+	private String appSource;
+
+	private String cpuStrategy;
+
 	private Long limit;
 
 	private Long endTime;
@@ -38,6 +42,28 @@ public class GetWarningEventMetricRequest extends RoaAcsRequest<GetWarningEventM
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getAppSource() {
+		return this.appSource;
+	}
+
+	public void setAppSource(String appSource) {
+		this.appSource = appSource;
+		if(appSource != null){
+			putQueryParameter("AppSource", appSource);
+		}
+	}
+
+	public String getCpuStrategy() {
+		return this.cpuStrategy;
+	}
+
+	public void setCpuStrategy(String cpuStrategy) {
+		this.cpuStrategy = cpuStrategy;
+		if(cpuStrategy != null){
+			putQueryParameter("CpuStrategy", cpuStrategy);
+		}
 	}
 
 	public Long getLimit() {

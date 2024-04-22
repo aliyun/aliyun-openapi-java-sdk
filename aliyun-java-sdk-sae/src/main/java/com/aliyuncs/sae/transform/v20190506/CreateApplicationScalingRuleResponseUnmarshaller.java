@@ -56,6 +56,8 @@ public class CreateApplicationScalingRuleResponseUnmarshaller {
 			Schedule schedule = new Schedule();
 			schedule.setAtTime(_ctx.stringValue("CreateApplicationScalingRuleResponse.Data.Timer.Schedules["+ i +"].AtTime"));
 			schedule.setTargetReplicas(_ctx.integerValue("CreateApplicationScalingRuleResponse.Data.Timer.Schedules["+ i +"].TargetReplicas"));
+			schedule.setMaxReplicas(_ctx.integerValue("CreateApplicationScalingRuleResponse.Data.Timer.Schedules["+ i +"].MaxReplicas"));
+			schedule.setMinReplicas(_ctx.integerValue("CreateApplicationScalingRuleResponse.Data.Timer.Schedules["+ i +"].MinReplicas"));
 
 			schedules.add(schedule);
 		}
@@ -71,6 +73,10 @@ public class CreateApplicationScalingRuleResponseUnmarshaller {
 			Metric1 metric1 = new Metric1();
 			metric1.setMetricTargetAverageUtilization(_ctx.integerValue("CreateApplicationScalingRuleResponse.Data.Metric.Metrics["+ i +"].MetricTargetAverageUtilization"));
 			metric1.setMetricType(_ctx.stringValue("CreateApplicationScalingRuleResponse.Data.Metric.Metrics["+ i +"].MetricType"));
+			metric1.setSlbProject(_ctx.stringValue("CreateApplicationScalingRuleResponse.Data.Metric.Metrics["+ i +"].SlbProject"));
+			metric1.setSlbLogstore(_ctx.stringValue("CreateApplicationScalingRuleResponse.Data.Metric.Metrics["+ i +"].SlbLogstore"));
+			metric1.setVport(_ctx.stringValue("CreateApplicationScalingRuleResponse.Data.Metric.Metrics["+ i +"].Vport"));
+			metric1.setSlbId(_ctx.stringValue("CreateApplicationScalingRuleResponse.Data.Metric.Metrics["+ i +"].SlbId"));
 
 			metrics.add(metric1);
 		}

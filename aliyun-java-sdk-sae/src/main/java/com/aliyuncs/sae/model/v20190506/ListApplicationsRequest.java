@@ -25,6 +25,8 @@ import com.aliyuncs.sae.Endpoint;
 public class ListApplicationsRequest extends RoaAcsRequest<ListApplicationsResponse> {
 	   
 
+	private String appSource;
+
 	private String appName;
 
 	private String namespaceId;
@@ -50,6 +52,17 @@ public class ListApplicationsRequest extends RoaAcsRequest<ListApplicationsRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getAppSource() {
+		return this.appSource;
+	}
+
+	public void setAppSource(String appSource) {
+		this.appSource = appSource;
+		if(appSource != null){
+			putQueryParameter("AppSource", appSource);
+		}
 	}
 
 	public String getAppName() {
