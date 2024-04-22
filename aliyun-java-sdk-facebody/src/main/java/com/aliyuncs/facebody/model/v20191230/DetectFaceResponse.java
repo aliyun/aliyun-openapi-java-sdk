@@ -61,6 +61,8 @@ public class DetectFaceResponse extends AcsResponse {
 
 		private List<Float> landmarks;
 
+		private List<Float> landmarkScore;
+
 		private Qualities qualities;
 
 		public Integer getFaceCount() {
@@ -117,6 +119,14 @@ public class DetectFaceResponse extends AcsResponse {
 
 		public void setLandmarks(List<Float> landmarks) {
 			this.landmarks = landmarks;
+		}
+
+		public List<Float> getLandmarkScore() {
+			return this.landmarkScore;
+		}
+
+		public void setLandmarkScore(List<Float> landmarkScore) {
+			this.landmarkScore = landmarkScore;
 		}
 
 		public Qualities getQualities() {

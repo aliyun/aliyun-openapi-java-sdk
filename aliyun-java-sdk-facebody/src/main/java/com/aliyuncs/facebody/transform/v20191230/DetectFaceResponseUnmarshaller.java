@@ -63,6 +63,12 @@ public class DetectFaceResponseUnmarshaller {
 		}
 		data.setLandmarks(landmarks);
 
+		List<Float> landmarkScore = new ArrayList<Float>();
+		for (int i = 0; i < _ctx.lengthValue("DetectFaceResponse.Data.LandmarkScore.Length"); i++) {
+			landmarkScore.add(_ctx.floatValue("DetectFaceResponse.Data.LandmarkScore["+ i +"]"));
+		}
+		data.setLandmarkScore(landmarkScore);
+
 		Qualities qualities = new Qualities();
 
 		List<Float> scoreList = new ArrayList<Float>();
