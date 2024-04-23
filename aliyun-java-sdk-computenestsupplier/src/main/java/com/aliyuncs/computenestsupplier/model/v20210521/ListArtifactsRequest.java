@@ -26,11 +26,15 @@ import com.aliyuncs.computenestsupplier.Endpoint;
 public class ListArtifactsRequest extends RpcAcsRequest<ListArtifactsResponse> {
 	   
 
+	private String resourceGroupId;
+
 	private String nextToken;
+
+	private List<Tag> tags;
 
 	private List<Filter> filters;
 
-	private String maxResults;
+	private Integer maxResults;
 	public ListArtifactsRequest() {
 		super("ComputeNestSupplier", "2021-05-21", "ListArtifacts");
 		setMethod(MethodType.POST);
@@ -38,6 +42,17 @@ public class ListArtifactsRequest extends RpcAcsRequest<ListArtifactsResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
 	}
 
 	public String getNextToken() {
@@ -49,6 +64,20 @@ public class ListArtifactsRequest extends RpcAcsRequest<ListArtifactsResponse> {
 		if(nextToken != null){
 			putQueryParameter("NextToken", nextToken);
 		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
 	}
 
 	public List<Filter> getFilters() {
@@ -69,14 +98,37 @@ public class ListArtifactsRequest extends RpcAcsRequest<ListArtifactsResponse> {
 		}	
 	}
 
-	public String getMaxResults() {
+	public Integer getMaxResults() {
 		return this.maxResults;
 	}
 
-	public void setMaxResults(String maxResults) {
+	public void setMaxResults(Integer maxResults) {
 		this.maxResults = maxResults;
 		if(maxResults != null){
-			putQueryParameter("MaxResults", maxResults);
+			putQueryParameter("MaxResults", maxResults.toString());
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

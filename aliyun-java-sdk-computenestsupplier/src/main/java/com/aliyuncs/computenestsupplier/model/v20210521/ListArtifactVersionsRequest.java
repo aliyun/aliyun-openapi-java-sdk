@@ -27,7 +27,7 @@ public class ListArtifactVersionsRequest extends RpcAcsRequest<ListArtifactVersi
 
 	private String nextToken;
 
-	private String maxResult;
+	private Integer maxResults;
 
 	private String artifactId;
 	public ListArtifactVersionsRequest() {
@@ -50,14 +50,14 @@ public class ListArtifactVersionsRequest extends RpcAcsRequest<ListArtifactVersi
 		}
 	}
 
-	public String getMaxResult() {
-		return this.maxResult;
+	public Integer getMaxResults() {
+		return this.maxResults;
 	}
 
-	public void setMaxResult(String maxResult) {
-		this.maxResult = maxResult;
-		if(maxResult != null){
-			putQueryParameter("MaxResult", maxResult);
+	public void setMaxResults(Integer maxResults) {
+		this.maxResults = maxResults;
+		if(maxResults != null){
+			putQueryParameter("MaxResults", maxResults.toString());
 		}
 	}
 

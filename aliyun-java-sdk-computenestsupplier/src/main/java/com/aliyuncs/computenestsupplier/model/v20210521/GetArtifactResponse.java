@@ -14,6 +14,7 @@
 
 package com.aliyuncs.computenestsupplier.model.v20210521;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.computenestsupplier.transform.v20210521.GetArtifactResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -49,6 +50,10 @@ public class GetArtifactResponse extends AcsResponse {
 	private String supportRegionIds;
 
 	private String progress;
+
+	private String resourceGroupId;
+
+	private List<Tag> tags;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -152,6 +157,45 @@ public class GetArtifactResponse extends AcsResponse {
 
 	public void setProgress(String progress) {
 		this.progress = progress;
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;
+	}
+
+	public static class Tag {
+
+		private String key;
+
+		private String value;
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
 	}
 
 	@Override

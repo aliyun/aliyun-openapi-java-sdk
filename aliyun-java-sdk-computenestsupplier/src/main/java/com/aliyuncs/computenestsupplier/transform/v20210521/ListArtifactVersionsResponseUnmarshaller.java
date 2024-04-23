@@ -29,8 +29,8 @@ public class ListArtifactVersionsResponseUnmarshaller {
 		
 		listArtifactVersionsResponse.setRequestId(_ctx.stringValue("ListArtifactVersionsResponse.RequestId"));
 		listArtifactVersionsResponse.setNextToken(_ctx.stringValue("ListArtifactVersionsResponse.NextToken"));
-		listArtifactVersionsResponse.setMaxResults(_ctx.stringValue("ListArtifactVersionsResponse.MaxResults"));
-		listArtifactVersionsResponse.setTotalCount(_ctx.stringValue("ListArtifactVersionsResponse.TotalCount"));
+		listArtifactVersionsResponse.setMaxResults(_ctx.integerValue("ListArtifactVersionsResponse.MaxResults"));
+		listArtifactVersionsResponse.setTotalCount(_ctx.integerValue("ListArtifactVersionsResponse.TotalCount"));
 
 		List<Artifact> artifacts = new ArrayList<Artifact>();
 		for (int i = 0; i < _ctx.lengthValue("ListArtifactVersionsResponse.Artifacts.Length"); i++) {

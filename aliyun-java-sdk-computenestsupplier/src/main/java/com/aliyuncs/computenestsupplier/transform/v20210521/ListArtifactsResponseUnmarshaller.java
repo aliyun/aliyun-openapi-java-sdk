@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.computenestsupplier.model.v20210521.ListArtifactsResponse;
 import com.aliyuncs.computenestsupplier.model.v20210521.ListArtifactsResponse.Artifact;
+import com.aliyuncs.computenestsupplier.model.v20210521.ListArtifactsResponse.Artifact.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -28,8 +29,8 @@ public class ListArtifactsResponseUnmarshaller {
 		
 		listArtifactsResponse.setRequestId(_ctx.stringValue("ListArtifactsResponse.RequestId"));
 		listArtifactsResponse.setNextToken(_ctx.stringValue("ListArtifactsResponse.NextToken"));
-		listArtifactsResponse.setMaxResults(_ctx.stringValue("ListArtifactsResponse.MaxResults"));
-		listArtifactsResponse.setTotalCount(_ctx.stringValue("ListArtifactsResponse.TotalCount"));
+		listArtifactsResponse.setMaxResults(_ctx.integerValue("ListArtifactsResponse.MaxResults"));
+		listArtifactsResponse.setTotalCount(_ctx.integerValue("ListArtifactsResponse.TotalCount"));
 
 		List<Artifact> artifacts = new ArrayList<Artifact>();
 		for (int i = 0; i < _ctx.lengthValue("ListArtifactsResponse.Artifacts.Length"); i++) {
@@ -41,6 +42,17 @@ public class ListArtifactsResponseUnmarshaller {
 			artifact.setDescription(_ctx.stringValue("ListArtifactsResponse.Artifacts["+ i +"].Description"));
 			artifact.setGmtModified(_ctx.stringValue("ListArtifactsResponse.Artifacts["+ i +"].GmtModified"));
 			artifact.setStatus(_ctx.stringValue("ListArtifactsResponse.Artifacts["+ i +"].Status"));
+			artifact.setResourceGroupId(_ctx.stringValue("ListArtifactsResponse.Artifacts["+ i +"].ResourceGroupId"));
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("ListArtifactsResponse.Artifacts["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(_ctx.stringValue("ListArtifactsResponse.Artifacts["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("ListArtifactsResponse.Artifacts["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			artifact.setTags(tags);
 
 			artifacts.add(artifact);
 		}

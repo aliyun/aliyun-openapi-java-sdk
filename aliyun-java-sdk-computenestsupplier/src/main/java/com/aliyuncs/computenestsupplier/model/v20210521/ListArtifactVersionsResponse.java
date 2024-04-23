@@ -30,9 +30,9 @@ public class ListArtifactVersionsResponse extends AcsResponse {
 
 	private String nextToken;
 
-	private String maxResults;
+	private Integer maxResults;
 
-	private String totalCount;
+	private Integer totalCount;
 
 	private List<Artifact> artifacts;
 
@@ -52,19 +52,19 @@ public class ListArtifactVersionsResponse extends AcsResponse {
 		this.nextToken = nextToken;
 	}
 
-	public String getMaxResults() {
+	public Integer getMaxResults() {
 		return this.maxResults;
 	}
 
-	public void setMaxResults(String maxResults) {
+	public void setMaxResults(Integer maxResults) {
 		this.maxResults = maxResults;
 	}
 
-	public String getTotalCount() {
+	public Integer getTotalCount() {
 		return this.totalCount;
 	}
 
-	public void setTotalCount(String totalCount) {
+	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
 	}
 

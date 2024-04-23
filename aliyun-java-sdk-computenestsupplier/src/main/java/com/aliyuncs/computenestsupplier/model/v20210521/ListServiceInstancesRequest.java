@@ -26,6 +26,8 @@ import com.aliyuncs.computenestsupplier.Endpoint;
 public class ListServiceInstancesRequest extends RpcAcsRequest<ListServiceInstancesResponse> {
 	   
 
+	private String resourceGroupId;
+
 	private String nextToken;
 
 	private List<Tag> tags;
@@ -34,7 +36,7 @@ public class ListServiceInstancesRequest extends RpcAcsRequest<ListServiceInstan
 
 	private List<Filter> filters;
 
-	private String maxResults;
+	private Integer maxResults;
 	public ListServiceInstancesRequest() {
 		super("ComputeNestSupplier", "2021-05-21", "ListServiceInstances");
 		setMethod(MethodType.POST);
@@ -42,6 +44,17 @@ public class ListServiceInstancesRequest extends RpcAcsRequest<ListServiceInstan
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
 	}
 
 	public String getNextToken() {
@@ -98,14 +111,14 @@ public class ListServiceInstancesRequest extends RpcAcsRequest<ListServiceInstan
 		}	
 	}
 
-	public String getMaxResults() {
+	public Integer getMaxResults() {
 		return this.maxResults;
 	}
 
-	public void setMaxResults(String maxResults) {
+	public void setMaxResults(Integer maxResults) {
 		this.maxResults = maxResults;
 		if(maxResults != null){
-			putQueryParameter("MaxResults", maxResults);
+			putQueryParameter("MaxResults", maxResults.toString());
 		}
 	}
 

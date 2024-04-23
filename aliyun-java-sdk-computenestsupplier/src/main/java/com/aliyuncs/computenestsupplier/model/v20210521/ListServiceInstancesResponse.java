@@ -31,7 +31,7 @@ public class ListServiceInstancesResponse extends AcsResponse {
 
 	private Integer totalCount;
 
-	private String maxResults;
+	private Integer maxResults;
 
 	private List<ServiceInstance> serviceInstances;
 
@@ -59,11 +59,11 @@ public class ListServiceInstancesResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public String getMaxResults() {
+	public Integer getMaxResults() {
 		return this.maxResults;
 	}
 
-	public void setMaxResults(String maxResults) {
+	public void setMaxResults(Integer maxResults) {
 		this.maxResults = maxResults;
 	}
 
@@ -114,6 +114,10 @@ public class ListServiceInstancesResponse extends AcsResponse {
 		private String payType;
 
 		private Boolean isOperated;
+
+		private String resourceGroupId;
+
+		private String bizStatus;
 
 		private List<Tag> tags;
 
@@ -271,6 +275,22 @@ public class ListServiceInstancesResponse extends AcsResponse {
 			this.isOperated = isOperated;
 		}
 
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getBizStatus() {
+			return this.bizStatus;
+		}
+
+		public void setBizStatus(String bizStatus) {
+			this.bizStatus = bizStatus;
+		}
+
 		public List<Tag> getTags() {
 			return this.tags;
 		}
@@ -333,6 +353,8 @@ public class ListServiceInstancesResponse extends AcsResponse {
 			private String deployMetadata;
 
 			private Boolean enablePrivateVpcConnection;
+
+			private String sourceSupplierName;
 
 			private List<ServiceInfo> serviceInfos;
 
@@ -422,6 +444,14 @@ public class ListServiceInstancesResponse extends AcsResponse {
 
 			public void setEnablePrivateVpcConnection(Boolean enablePrivateVpcConnection) {
 				this.enablePrivateVpcConnection = enablePrivateVpcConnection;
+			}
+
+			public String getSourceSupplierName() {
+				return this.sourceSupplierName;
+			}
+
+			public void setSourceSupplierName(String sourceSupplierName) {
+				this.sourceSupplierName = sourceSupplierName;
 			}
 
 			public List<ServiceInfo> getServiceInfos() {

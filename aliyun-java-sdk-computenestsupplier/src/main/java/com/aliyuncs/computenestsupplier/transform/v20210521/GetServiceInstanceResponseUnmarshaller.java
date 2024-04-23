@@ -56,8 +56,12 @@ public class GetServiceInstanceResponseUnmarshaller {
 		getServiceInstanceResponse.setPayType(_ctx.stringValue("GetServiceInstanceResponse.PayType"));
 		getServiceInstanceResponse.setLicenseMetadata(_ctx.stringValue("GetServiceInstanceResponse.LicenseMetadata"));
 		getServiceInstanceResponse.setName(_ctx.stringValue("GetServiceInstanceResponse.Name"));
-		getServiceInstanceResponse.setEnableUserPrometheus(_ctx.stringValue("GetServiceInstanceResponse.EnableUserPrometheus"));
+		getServiceInstanceResponse.setEnableUserPrometheus(_ctx.booleanValue("GetServiceInstanceResponse.EnableUserPrometheus"));
 		getServiceInstanceResponse.setRdAccountLoginUrl(_ctx.stringValue("GetServiceInstanceResponse.RdAccountLoginUrl"));
+		getServiceInstanceResponse.setPredefinedParameterName(_ctx.stringValue("GetServiceInstanceResponse.PredefinedParameterName"));
+		getServiceInstanceResponse.setResourceGroupId(_ctx.stringValue("GetServiceInstanceResponse.ResourceGroupId"));
+		getServiceInstanceResponse.setBizStatus(_ctx.stringValue("GetServiceInstanceResponse.BizStatus"));
+		getServiceInstanceResponse.setGrafanaDashBoardUrl(_ctx.stringValue("GetServiceInstanceResponse.GrafanaDashBoardUrl"));
 
 		Service service = new Service();
 		service.setStatus(_ctx.stringValue("GetServiceInstanceResponse.Service.Status"));

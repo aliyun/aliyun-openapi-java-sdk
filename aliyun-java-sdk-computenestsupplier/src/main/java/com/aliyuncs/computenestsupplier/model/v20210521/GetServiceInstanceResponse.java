@@ -73,9 +73,17 @@ public class GetServiceInstanceResponse extends AcsResponse {
 
 	private String name;
 
-	private String enableUserPrometheus;
+	private Boolean enableUserPrometheus;
 
 	private String rdAccountLoginUrl;
+
+	private String predefinedParameterName;
+
+	private String resourceGroupId;
+
+	private String bizStatus;
+
+	private String grafanaDashBoardUrl;
 
 	private List<Tag> tags;
 
@@ -275,11 +283,11 @@ public class GetServiceInstanceResponse extends AcsResponse {
 		this.name = name;
 	}
 
-	public String getEnableUserPrometheus() {
+	public Boolean getEnableUserPrometheus() {
 		return this.enableUserPrometheus;
 	}
 
-	public void setEnableUserPrometheus(String enableUserPrometheus) {
+	public void setEnableUserPrometheus(Boolean enableUserPrometheus) {
 		this.enableUserPrometheus = enableUserPrometheus;
 	}
 
@@ -289,6 +297,38 @@ public class GetServiceInstanceResponse extends AcsResponse {
 
 	public void setRdAccountLoginUrl(String rdAccountLoginUrl) {
 		this.rdAccountLoginUrl = rdAccountLoginUrl;
+	}
+
+	public String getPredefinedParameterName() {
+		return this.predefinedParameterName;
+	}
+
+	public void setPredefinedParameterName(String predefinedParameterName) {
+		this.predefinedParameterName = predefinedParameterName;
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+	}
+
+	public String getBizStatus() {
+		return this.bizStatus;
+	}
+
+	public void setBizStatus(String bizStatus) {
+		this.bizStatus = bizStatus;
+	}
+
+	public String getGrafanaDashBoardUrl() {
+		return this.grafanaDashBoardUrl;
+	}
+
+	public void setGrafanaDashBoardUrl(String grafanaDashBoardUrl) {
+		this.grafanaDashBoardUrl = grafanaDashBoardUrl;
 	}
 
 	public List<Tag> getTags() {

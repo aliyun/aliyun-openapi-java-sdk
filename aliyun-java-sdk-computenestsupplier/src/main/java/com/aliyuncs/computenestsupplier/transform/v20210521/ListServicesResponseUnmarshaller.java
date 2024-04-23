@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.computenestsupplier.model.v20210521.ListServicesResponse;
 import com.aliyuncs.computenestsupplier.model.v20210521.ListServicesResponse.Service;
+import com.aliyuncs.computenestsupplier.model.v20210521.ListServicesResponse.Service.Commodity;
 import com.aliyuncs.computenestsupplier.model.v20210521.ListServicesResponse.Service.ServiceInfo;
 import com.aliyuncs.computenestsupplier.model.v20210521.ListServicesResponse.Service.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -30,7 +31,7 @@ public class ListServicesResponseUnmarshaller {
 		
 		listServicesResponse.setRequestId(_ctx.stringValue("ListServicesResponse.RequestId"));
 		listServicesResponse.setNextToken(_ctx.stringValue("ListServicesResponse.NextToken"));
-		listServicesResponse.setTotalCount(_ctx.stringValue("ListServicesResponse.TotalCount"));
+		listServicesResponse.setTotalCount(_ctx.integerValue("ListServicesResponse.TotalCount"));
 		listServicesResponse.setMaxResults(_ctx.integerValue("ListServicesResponse.MaxResults"));
 
 		List<Service> services = new ArrayList<Service>();
@@ -58,6 +59,23 @@ public class ListServicesResponseUnmarshaller {
 			service.setTrialType(_ctx.stringValue("ListServicesResponse.Services["+ i +"].TrialType"));
 			service.setTenantType(_ctx.stringValue("ListServicesResponse.Services["+ i +"].TenantType"));
 			service.setResourceGroupId(_ctx.stringValue("ListServicesResponse.Services["+ i +"].ResourceGroupId"));
+			service.setSourceServiceId(_ctx.stringValue("ListServicesResponse.Services["+ i +"].SourceServiceId"));
+			service.setSourceServiceVersion(_ctx.stringValue("ListServicesResponse.Services["+ i +"].SourceServiceVersion"));
+			service.setSourceSupplierName(_ctx.stringValue("ListServicesResponse.Services["+ i +"].SourceSupplierName"));
+			service.setResellServiceId(_ctx.stringValue("ListServicesResponse.Services["+ i +"].ResellServiceId"));
+			service.setLatestResellSourceServiceVersion(_ctx.stringValue("ListServicesResponse.Services["+ i +"].LatestResellSourceServiceVersion"));
+			service.setResellApplyStatus(_ctx.stringValue("ListServicesResponse.Services["+ i +"].ResellApplyStatus"));
+			service.setVirtualInternetService(_ctx.stringValue("ListServicesResponse.Services["+ i +"].VirtualInternetService"));
+			service.setCategories(_ctx.stringValue("ListServicesResponse.Services["+ i +"].Categories"));
+			service.setServiceDiscoverable(_ctx.stringValue("ListServicesResponse.Services["+ i +"].ServiceDiscoverable"));
+			service.setHasDraft(_ctx.booleanValue("ListServicesResponse.Services["+ i +"].HasDraft"));
+			service.setHasBeta(_ctx.booleanValue("ListServicesResponse.Services["+ i +"].HasBeta"));
+
+			Commodity commodity = new Commodity();
+			commodity.setCommodityCode(_ctx.stringValue("ListServicesResponse.Services["+ i +"].Commodity.CommodityCode"));
+			commodity.setType(_ctx.stringValue("ListServicesResponse.Services["+ i +"].Commodity.Type"));
+			commodity.setSaasBoostMetadata(_ctx.stringValue("ListServicesResponse.Services["+ i +"].Commodity.SaasBoostMetadata"));
+			service.setCommodity(commodity);
 
 			List<ServiceInfo> serviceInfos = new ArrayList<ServiceInfo>();
 			for (int j = 0; j < _ctx.lengthValue("ListServicesResponse.Services["+ i +"].ServiceInfos.Length"); j++) {

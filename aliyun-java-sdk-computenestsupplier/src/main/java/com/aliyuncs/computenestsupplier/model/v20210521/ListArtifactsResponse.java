@@ -29,9 +29,9 @@ public class ListArtifactsResponse extends AcsResponse {
 
 	private String nextToken;
 
-	private String maxResults;
+	private Integer maxResults;
 
-	private String totalCount;
+	private Integer totalCount;
 
 	private List<Artifact> artifacts;
 
@@ -51,19 +51,19 @@ public class ListArtifactsResponse extends AcsResponse {
 		this.nextToken = nextToken;
 	}
 
-	public String getMaxResults() {
+	public Integer getMaxResults() {
 		return this.maxResults;
 	}
 
-	public void setMaxResults(String maxResults) {
+	public void setMaxResults(Integer maxResults) {
 		this.maxResults = maxResults;
 	}
 
-	public String getTotalCount() {
+	public Integer getTotalCount() {
 		return this.totalCount;
 	}
 
-	public void setTotalCount(String totalCount) {
+	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
 	}
 
@@ -90,6 +90,10 @@ public class ListArtifactsResponse extends AcsResponse {
 		private String gmtModified;
 
 		private String status;
+
+		private String resourceGroupId;
+
+		private List<Tag> tags;
 
 		public String getArtifactId() {
 			return this.artifactId;
@@ -145,6 +149,45 @@ public class ListArtifactsResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
+		public static class Tag {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
 		}
 	}
 

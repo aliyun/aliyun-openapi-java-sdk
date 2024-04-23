@@ -15,6 +15,8 @@
 package com.aliyuncs.computenestsupplier.model.v20210521;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.computenestsupplier.Endpoint;
 
@@ -25,17 +27,22 @@ import com.aliyuncs.computenestsupplier.Endpoint;
 public class GetServiceEstimateCostRequest extends RpcAcsRequest<GetServiceEstimateCostResponse> {
 	   
 
+	@SerializedName("commodity")
+	private Commodity commodity;
+
 	private String clientToken;
 
-	private String serviceVersion;
-
 	private String templateName;
+
+	private String serviceInstanceId;
+
+	private String specificationName;
+
+	private String serviceVersion;
 
 	private String serviceId;
 
 	private String parameters;
-
-	private String serviceInstanceId;
 	public GetServiceEstimateCostRequest() {
 		super("ComputeNestSupplier", "2021-05-21", "GetServiceEstimateCost");
 		setMethod(MethodType.POST);
@@ -43,6 +50,17 @@ public class GetServiceEstimateCostRequest extends RpcAcsRequest<GetServiceEstim
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Commodity getCommodity() {
+		return this.commodity;
+	}
+
+	public void setCommodity(Commodity commodity) {
+		this.commodity = commodity;	
+		if (commodity != null) {
+			putQueryParameter("Commodity" , new Gson().toJson(commodity));
+		}	
 	}
 
 	public String getClientToken() {
@@ -56,17 +74,6 @@ public class GetServiceEstimateCostRequest extends RpcAcsRequest<GetServiceEstim
 		}
 	}
 
-	public String getServiceVersion() {
-		return this.serviceVersion;
-	}
-
-	public void setServiceVersion(String serviceVersion) {
-		this.serviceVersion = serviceVersion;
-		if(serviceVersion != null){
-			putQueryParameter("ServiceVersion", serviceVersion);
-		}
-	}
-
 	public String getTemplateName() {
 		return this.templateName;
 	}
@@ -75,6 +82,39 @@ public class GetServiceEstimateCostRequest extends RpcAcsRequest<GetServiceEstim
 		this.templateName = templateName;
 		if(templateName != null){
 			putQueryParameter("TemplateName", templateName);
+		}
+	}
+
+	public String getServiceInstanceId() {
+		return this.serviceInstanceId;
+	}
+
+	public void setServiceInstanceId(String serviceInstanceId) {
+		this.serviceInstanceId = serviceInstanceId;
+		if(serviceInstanceId != null){
+			putQueryParameter("ServiceInstanceId", serviceInstanceId);
+		}
+	}
+
+	public String getSpecificationName() {
+		return this.specificationName;
+	}
+
+	public void setSpecificationName(String specificationName) {
+		this.specificationName = specificationName;
+		if(specificationName != null){
+			putQueryParameter("SpecificationName", specificationName);
+		}
+	}
+
+	public String getServiceVersion() {
+		return this.serviceVersion;
+	}
+
+	public void setServiceVersion(String serviceVersion) {
+		this.serviceVersion = serviceVersion;
+		if(serviceVersion != null){
+			putQueryParameter("ServiceVersion", serviceVersion);
 		}
 	}
 
@@ -100,14 +140,28 @@ public class GetServiceEstimateCostRequest extends RpcAcsRequest<GetServiceEstim
 		}
 	}
 
-	public String getServiceInstanceId() {
-		return this.serviceInstanceId;
-	}
+	public static class Commodity {
 
-	public void setServiceInstanceId(String serviceInstanceId) {
-		this.serviceInstanceId = serviceInstanceId;
-		if(serviceInstanceId != null){
-			putQueryParameter("ServiceInstanceId", serviceInstanceId);
+		@SerializedName("PayPeriod")
+		private Integer payPeriod;
+
+		@SerializedName("PayPeriodUnit")
+		private String payPeriodUnit;
+
+		public Integer getPayPeriod() {
+			return this.payPeriod;
+		}
+
+		public void setPayPeriod(Integer payPeriod) {
+			this.payPeriod = payPeriod;
+		}
+
+		public String getPayPeriodUnit() {
+			return this.payPeriodUnit;
+		}
+
+		public void setPayPeriodUnit(String payPeriodUnit) {
+			this.payPeriodUnit = payPeriodUnit;
 		}
 	}
 

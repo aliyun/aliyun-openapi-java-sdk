@@ -28,6 +28,8 @@ public class UpdateServiceRequest extends RpcAcsRequest<UpdateServiceResponse> {
 
 	private String alarmMetadata;
 
+	private Boolean resellable;
+
 	private String clientToken;
 
 	private String policyNames;
@@ -49,6 +51,8 @@ public class UpdateServiceRequest extends RpcAcsRequest<UpdateServiceResponse> {
 	private String tenantType;
 
 	private String serviceVersion;
+
+	private String logMetadata;
 
 	private List<ServiceInfo> serviceInfos;
 
@@ -76,6 +80,17 @@ public class UpdateServiceRequest extends RpcAcsRequest<UpdateServiceResponse> {
 		this.alarmMetadata = alarmMetadata;
 		if(alarmMetadata != null){
 			putQueryParameter("AlarmMetadata", alarmMetadata);
+		}
+	}
+
+	public Boolean getResellable() {
+		return this.resellable;
+	}
+
+	public void setResellable(Boolean resellable) {
+		this.resellable = resellable;
+		if(resellable != null){
+			putQueryParameter("Resellable", resellable.toString());
 		}
 	}
 
@@ -200,6 +215,17 @@ public class UpdateServiceRequest extends RpcAcsRequest<UpdateServiceResponse> {
 		}
 	}
 
+	public String getLogMetadata() {
+		return this.logMetadata;
+	}
+
+	public void setLogMetadata(String logMetadata) {
+		this.logMetadata = logMetadata;
+		if(logMetadata != null){
+			putQueryParameter("LogMetadata", logMetadata);
+		}
+	}
+
 	public List<ServiceInfo> getServiceInfos() {
 		return this.serviceInfos;
 	}
@@ -211,7 +237,14 @@ public class UpdateServiceRequest extends RpcAcsRequest<UpdateServiceResponse> {
 				putQueryParameter("ServiceInfo." + (depth1 + 1) + ".ShortDescription" , serviceInfos.get(depth1).getShortDescription());
 				putQueryParameter("ServiceInfo." + (depth1 + 1) + ".Image" , serviceInfos.get(depth1).getImage());
 				putQueryParameter("ServiceInfo." + (depth1 + 1) + ".Name" , serviceInfos.get(depth1).getName());
+				if (serviceInfos.get(depth1).getAgreementss() != null) {
+					for (int depth2 = 0; depth2 < serviceInfos.get(depth1).getAgreementss().size(); depth2++) {
+						putQueryParameter("ServiceInfo." + (depth1 + 1) + ".Agreements." + (depth2 + 1) + ".Name" , serviceInfos.get(depth1).getAgreementss().get(depth2).getName());
+						putQueryParameter("ServiceInfo." + (depth1 + 1) + ".Agreements." + (depth2 + 1) + ".Url" , serviceInfos.get(depth1).getAgreementss().get(depth2).getUrl());
+					}
+				}
 				putQueryParameter("ServiceInfo." + (depth1 + 1) + ".Locale" , serviceInfos.get(depth1).getLocale());
+				putQueryParameter("ServiceInfo." + (depth1 + 1) + ".LongDescriptionUrl" , serviceInfos.get(depth1).getLongDescriptionUrl());
 			}
 		}	
 	}
@@ -268,7 +301,11 @@ public class UpdateServiceRequest extends RpcAcsRequest<UpdateServiceResponse> {
 
 		private String name;
 
+		private List<Agreements> agreementss;
+
 		private String locale;
+
+		private String longDescriptionUrl;
 
 		public String getShortDescription() {
 			return this.shortDescription;
@@ -294,12 +331,51 @@ public class UpdateServiceRequest extends RpcAcsRequest<UpdateServiceResponse> {
 			this.name = name;
 		}
 
+		public List<Agreements> getAgreementss() {
+			return this.agreementss;
+		}
+
+		public void setAgreementss(List<Agreements> agreementss) {
+			this.agreementss = agreementss;
+		}
+
 		public String getLocale() {
 			return this.locale;
 		}
 
 		public void setLocale(String locale) {
 			this.locale = locale;
+		}
+
+		public String getLongDescriptionUrl() {
+			return this.longDescriptionUrl;
+		}
+
+		public void setLongDescriptionUrl(String longDescriptionUrl) {
+			this.longDescriptionUrl = longDescriptionUrl;
+		}
+
+		public static class Agreements {
+
+			private String name;
+
+			private String url;
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getUrl() {
+				return this.url;
+			}
+
+			public void setUrl(String url) {
+				this.url = url;
+			}
 		}
 	}
 

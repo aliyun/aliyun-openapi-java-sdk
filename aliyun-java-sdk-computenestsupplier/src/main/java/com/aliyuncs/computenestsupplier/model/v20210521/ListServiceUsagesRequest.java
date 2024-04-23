@@ -28,6 +28,8 @@ public class ListServiceUsagesRequest extends RpcAcsRequest<ListServiceUsagesRes
 
 	private String nextToken;
 
+	private String supplierRole;
+
 	private List<Filter> filters;
 
 	private Integer maxResults;
@@ -48,6 +50,17 @@ public class ListServiceUsagesRequest extends RpcAcsRequest<ListServiceUsagesRes
 		this.nextToken = nextToken;
 		if(nextToken != null){
 			putQueryParameter("NextToken", nextToken);
+		}
+	}
+
+	public String getSupplierRole() {
+		return this.supplierRole;
+	}
+
+	public void setSupplierRole(String supplierRole) {
+		this.supplierRole = supplierRole;
+		if(supplierRole != null){
+			putQueryParameter("SupplierRole", supplierRole);
 		}
 	}
 

@@ -19,7 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.computenestsupplier.model.v20210521.ListServiceUsagesResponse;
 import com.aliyuncs.computenestsupplier.model.v20210521.ListServiceUsagesResponse.Policy;
-import com.aliyuncs.computenestsupplier.model.v20210521.ListServiceUsagesResponse.Policy.UserInformation;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -43,17 +43,7 @@ public class ListServiceUsagesResponseUnmarshaller {
 			policy.setComments(_ctx.stringValue("ListServiceUsagesResponse.ServiceUsages["+ i +"].Comments"));
 			policy.setCreateTime(_ctx.stringValue("ListServiceUsagesResponse.ServiceUsages["+ i +"].CreateTime"));
 			policy.setUpdateTime(_ctx.stringValue("ListServiceUsagesResponse.ServiceUsages["+ i +"].UpdateTime"));
-
-			UserInformation userInformation = new UserInformation();
-			userInformation.setName(_ctx.stringValue("ListServiceUsagesResponse.ServiceUsages["+ i +"].UserInformation.Name"));
-			userInformation.setEmailAddress(_ctx.stringValue("ListServiceUsagesResponse.ServiceUsages["+ i +"].UserInformation.EmailAddress"));
-			userInformation.setCompany(_ctx.stringValue("ListServiceUsagesResponse.ServiceUsages["+ i +"].UserInformation.Company"));
-			userInformation.setCountry(_ctx.stringValue("ListServiceUsagesResponse.ServiceUsages["+ i +"].UserInformation.Country"));
-			userInformation.setTelephone(_ctx.stringValue("ListServiceUsagesResponse.ServiceUsages["+ i +"].UserInformation.Telephone"));
-			userInformation.setTitle(_ctx.stringValue("ListServiceUsagesResponse.ServiceUsages["+ i +"].UserInformation.Title"));
-			userInformation.setIndustry(_ctx.stringValue("ListServiceUsagesResponse.ServiceUsages["+ i +"].UserInformation.Industry"));
-			userInformation.setSource(_ctx.stringValue("ListServiceUsagesResponse.ServiceUsages["+ i +"].UserInformation.Source"));
-			policy.setUserInformation(userInformation);
+			policy.setUserInformation(_ctx.mapValue("ListServiceUsagesResponse.ServiceUsages["+ i +"].UserInformation"));
 
 			serviceUsages.add(policy);
 		}

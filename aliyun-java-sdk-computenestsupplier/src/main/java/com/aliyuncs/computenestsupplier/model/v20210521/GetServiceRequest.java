@@ -15,6 +15,7 @@
 package com.aliyuncs.computenestsupplier.model.v20210521;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.computenestsupplier.Endpoint;
 
@@ -24,6 +25,12 @@ import com.aliyuncs.computenestsupplier.Endpoint;
  */
 public class GetServiceRequest extends RpcAcsRequest<GetServiceResponse> {
 	   
+
+	private List<String> showDetails;
+
+	private String sharedAccountType;
+
+	private Boolean filterAliUid;
 
 	private String serviceVersion;
 
@@ -35,6 +42,41 @@ public class GetServiceRequest extends RpcAcsRequest<GetServiceResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public List<String> getShowDetails() {
+		return this.showDetails;
+	}
+
+	public void setShowDetails(List<String> showDetails) {
+		this.showDetails = showDetails;	
+		if (showDetails != null) {
+			for (int i = 0; i < showDetails.size(); i++) {
+				putQueryParameter("ShowDetail." + (i + 1) , showDetails.get(i));
+			}
+		}	
+	}
+
+	public String getSharedAccountType() {
+		return this.sharedAccountType;
+	}
+
+	public void setSharedAccountType(String sharedAccountType) {
+		this.sharedAccountType = sharedAccountType;
+		if(sharedAccountType != null){
+			putQueryParameter("SharedAccountType", sharedAccountType);
+		}
+	}
+
+	public Boolean getFilterAliUid() {
+		return this.filterAliUid;
+	}
+
+	public void setFilterAliUid(Boolean filterAliUid) {
+		this.filterAliUid = filterAliUid;
+		if(filterAliUid != null){
+			putQueryParameter("FilterAliUid", filterAliUid.toString());
+		}
 	}
 
 	public String getServiceVersion() {

@@ -29,6 +29,8 @@ public class GetServiceEstimateCostResponse extends AcsResponse {
 
 	private Map<Object,Object> resources;
 
+	private Map<Object,Object> commodity;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -43,6 +45,14 @@ public class GetServiceEstimateCostResponse extends AcsResponse {
 
 	public void setResources(Map<Object,Object> resources) {
 		this.resources = resources;
+	}
+
+	public Map<Object,Object> getCommodity() {
+		return this.commodity;
+	}
+
+	public void setCommodity(Map<Object,Object> commodity) {
+		this.commodity = commodity;
 	}
 
 	@Override

@@ -25,6 +25,7 @@ public class GetServiceEstimateCostResponseUnmarshaller {
 		
 		getServiceEstimateCostResponse.setRequestId(_ctx.stringValue("GetServiceEstimateCostResponse.RequestId"));
 		getServiceEstimateCostResponse.setResources(_ctx.mapValue("GetServiceEstimateCostResponse.Resources"));
+		getServiceEstimateCostResponse.setCommodity(_ctx.mapValue("GetServiceEstimateCostResponse.Commodity"));
 	 
 	 	return getServiceEstimateCostResponse;
 	}

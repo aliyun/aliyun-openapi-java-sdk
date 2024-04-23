@@ -15,6 +15,7 @@
 package com.aliyuncs.computenestsupplier.model.v20210521;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.computenestsupplier.transform.v20210521.ListServiceUsagesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -93,7 +94,7 @@ public class ListServiceUsagesResponse extends AcsResponse {
 
 		private String updateTime;
 
-		private UserInformation userInformation;
+		private Map<Object,Object> userInformation;
 
 		public Long getUserAliUid() {
 			return this.userAliUid;
@@ -159,95 +160,12 @@ public class ListServiceUsagesResponse extends AcsResponse {
 			this.updateTime = updateTime;
 		}
 
-		public UserInformation getUserInformation() {
+		public Map<Object,Object> getUserInformation() {
 			return this.userInformation;
 		}
 
-		public void setUserInformation(UserInformation userInformation) {
+		public void setUserInformation(Map<Object,Object> userInformation) {
 			this.userInformation = userInformation;
-		}
-
-		public static class UserInformation {
-
-			private String name;
-
-			private String emailAddress;
-
-			private String company;
-
-			private String country;
-
-			private String telephone;
-
-			private String title;
-
-			private String industry;
-
-			private String source;
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
-
-			public String getEmailAddress() {
-				return this.emailAddress;
-			}
-
-			public void setEmailAddress(String emailAddress) {
-				this.emailAddress = emailAddress;
-			}
-
-			public String getCompany() {
-				return this.company;
-			}
-
-			public void setCompany(String company) {
-				this.company = company;
-			}
-
-			public String getCountry() {
-				return this.country;
-			}
-
-			public void setCountry(String country) {
-				this.country = country;
-			}
-
-			public String getTelephone() {
-				return this.telephone;
-			}
-
-			public void setTelephone(String telephone) {
-				this.telephone = telephone;
-			}
-
-			public String getTitle() {
-				return this.title;
-			}
-
-			public void setTitle(String title) {
-				this.title = title;
-			}
-
-			public String getIndustry() {
-				return this.industry;
-			}
-
-			public void setIndustry(String industry) {
-				this.industry = industry;
-			}
-
-			public String getSource() {
-				return this.source;
-			}
-
-			public void setSource(String source) {
-				this.source = source;
-			}
 		}
 	}
 

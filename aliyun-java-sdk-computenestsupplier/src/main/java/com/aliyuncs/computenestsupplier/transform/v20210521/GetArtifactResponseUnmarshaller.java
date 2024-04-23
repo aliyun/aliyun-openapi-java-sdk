@@ -14,7 +14,11 @@
 
 package com.aliyuncs.computenestsupplier.transform.v20210521;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.computenestsupplier.model.v20210521.GetArtifactResponse;
+import com.aliyuncs.computenestsupplier.model.v20210521.GetArtifactResponse.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -35,6 +39,17 @@ public class GetArtifactResponseUnmarshaller {
 		getArtifactResponse.setArtifactProperty(_ctx.stringValue("GetArtifactResponse.ArtifactProperty"));
 		getArtifactResponse.setSupportRegionIds(_ctx.stringValue("GetArtifactResponse.SupportRegionIds"));
 		getArtifactResponse.setProgress(_ctx.stringValue("GetArtifactResponse.Progress"));
+		getArtifactResponse.setResourceGroupId(_ctx.stringValue("GetArtifactResponse.ResourceGroupId"));
+
+		List<Tag> tags = new ArrayList<Tag>();
+		for (int i = 0; i < _ctx.lengthValue("GetArtifactResponse.Tags.Length"); i++) {
+			Tag tag = new Tag();
+			tag.setKey(_ctx.stringValue("GetArtifactResponse.Tags["+ i +"].Key"));
+			tag.setValue(_ctx.stringValue("GetArtifactResponse.Tags["+ i +"].Value"));
+
+			tags.add(tag);
+		}
+		getArtifactResponse.setTags(tags);
 	 
 	 	return getArtifactResponse;
 	}
