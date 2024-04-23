@@ -32,6 +32,8 @@ public class CreateServiceInstanceResponse extends AcsResponse {
 
 	private String marketInstanceId;
 
+	private String orderId;
+
 	public String getStatus() {
 		return this.status;
 	}
@@ -62,6 +64,14 @@ public class CreateServiceInstanceResponse extends AcsResponse {
 
 	public void setMarketInstanceId(String marketInstanceId) {
 		this.marketInstanceId = marketInstanceId;
+	}
+
+	public String getOrderId() {
+		return this.orderId;
+	}
+
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
 	}
 
 	@Override

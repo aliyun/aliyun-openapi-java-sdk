@@ -29,7 +29,11 @@ public class ListServiceInstanceLogsRequest extends RpcAcsRequest<ListServiceIns
 
 	private String serviceInstanceId;
 
-	private String maxResults;
+	private String logSource;
+
+	private Integer maxResults;
+
+	private String logstore;
 	public ListServiceInstanceLogsRequest() {
 		super("ComputeNest", "2021-06-01", "ListServiceInstanceLogs", "computenest");
 		setMethod(MethodType.POST);
@@ -61,14 +65,36 @@ public class ListServiceInstanceLogsRequest extends RpcAcsRequest<ListServiceIns
 		}
 	}
 
-	public String getMaxResults() {
+	public String getLogSource() {
+		return this.logSource;
+	}
+
+	public void setLogSource(String logSource) {
+		this.logSource = logSource;
+		if(logSource != null){
+			putQueryParameter("LogSource", logSource);
+		}
+	}
+
+	public Integer getMaxResults() {
 		return this.maxResults;
 	}
 
-	public void setMaxResults(String maxResults) {
+	public void setMaxResults(Integer maxResults) {
 		this.maxResults = maxResults;
 		if(maxResults != null){
-			putQueryParameter("MaxResults", maxResults);
+			putQueryParameter("MaxResults", maxResults.toString());
+		}
+	}
+
+	public String getLogstore() {
+		return this.logstore;
+	}
+
+	public void setLogstore(String logstore) {
+		this.logstore = logstore;
+		if(logstore != null){
+			putQueryParameter("Logstore", logstore);
 		}
 	}
 

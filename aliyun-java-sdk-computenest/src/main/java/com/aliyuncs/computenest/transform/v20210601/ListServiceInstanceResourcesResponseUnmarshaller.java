@@ -28,7 +28,7 @@ public class ListServiceInstanceResourcesResponseUnmarshaller {
 		
 		listServiceInstanceResourcesResponse.setRequestId(_ctx.stringValue("ListServiceInstanceResourcesResponse.RequestId"));
 		listServiceInstanceResourcesResponse.setNextToken(_ctx.stringValue("ListServiceInstanceResourcesResponse.NextToken"));
-		listServiceInstanceResourcesResponse.setMaxResults(_ctx.stringValue("ListServiceInstanceResourcesResponse.MaxResults"));
+		listServiceInstanceResourcesResponse.setMaxResults(_ctx.integerValue("ListServiceInstanceResourcesResponse.MaxResults"));
 
 		List<ResourcesItem> resources = new ArrayList<ResourcesItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListServiceInstanceResourcesResponse.Resources.Length"); i++) {
@@ -42,6 +42,7 @@ public class ListServiceInstanceResourcesResponseUnmarshaller {
 			resourcesItem.setRenewalPeriodUnit(_ctx.stringValue("ListServiceInstanceResourcesResponse.Resources["+ i +"].RenewalPeriodUnit"));
 			resourcesItem.setProductType(_ctx.stringValue("ListServiceInstanceResourcesResponse.Resources["+ i +"].ProductType"));
 			resourcesItem.setProductCode(_ctx.stringValue("ListServiceInstanceResourcesResponse.Resources["+ i +"].ProductCode"));
+			resourcesItem.setStatus(_ctx.stringValue("ListServiceInstanceResourcesResponse.Resources["+ i +"].Status"));
 
 			resources.add(resourcesItem);
 		}

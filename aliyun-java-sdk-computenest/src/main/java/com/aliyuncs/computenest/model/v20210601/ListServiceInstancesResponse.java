@@ -31,7 +31,7 @@ public class ListServiceInstancesResponse extends AcsResponse {
 
 	private Long totalCount;
 
-	private String maxResults;
+	private Integer maxResults;
 
 	private List<ServiceInstance> serviceInstances;
 
@@ -59,11 +59,11 @@ public class ListServiceInstancesResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public String getMaxResults() {
+	public Integer getMaxResults() {
 		return this.maxResults;
 	}
 
-	public void setMaxResults(String maxResults) {
+	public void setMaxResults(Integer maxResults) {
 		this.maxResults = maxResults;
 	}
 
@@ -118,6 +118,8 @@ public class ListServiceInstancesResponse extends AcsResponse {
 		private String marketInstanceId;
 
 		private String resourceGroupId;
+
+		private String bizStatus;
 
 		private List<Tag> tags;
 
@@ -289,6 +291,14 @@ public class ListServiceInstancesResponse extends AcsResponse {
 
 		public void setResourceGroupId(String resourceGroupId) {
 			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getBizStatus() {
+			return this.bizStatus;
+		}
+
+		public void setBizStatus(String bizStatus) {
+			this.bizStatus = bizStatus;
 		}
 
 		public List<Tag> getTags() {

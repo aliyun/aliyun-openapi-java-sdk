@@ -83,6 +83,10 @@ public class GetServiceInstanceResponse extends AcsResponse {
 
 	private String resourceGroupId;
 
+	private String bizStatus;
+
+	private String grafanaDashBoardUrl;
+
 	private List<Tag> tags;
 
 	private Service service;
@@ -319,6 +323,22 @@ public class GetServiceInstanceResponse extends AcsResponse {
 
 	public void setResourceGroupId(String resourceGroupId) {
 		this.resourceGroupId = resourceGroupId;
+	}
+
+	public String getBizStatus() {
+		return this.bizStatus;
+	}
+
+	public void setBizStatus(String bizStatus) {
+		this.bizStatus = bizStatus;
+	}
+
+	public String getGrafanaDashBoardUrl() {
+		return this.grafanaDashBoardUrl;
+	}
+
+	public void setGrafanaDashBoardUrl(String grafanaDashBoardUrl) {
+		this.grafanaDashBoardUrl = grafanaDashBoardUrl;
 	}
 
 	public List<Tag> getTags() {

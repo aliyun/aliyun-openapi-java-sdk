@@ -32,7 +32,7 @@ public class ListServiceInstancesResponseUnmarshaller {
 		listServiceInstancesResponse.setRequestId(_ctx.stringValue("ListServiceInstancesResponse.RequestId"));
 		listServiceInstancesResponse.setNextToken(_ctx.stringValue("ListServiceInstancesResponse.NextToken"));
 		listServiceInstancesResponse.setTotalCount(_ctx.longValue("ListServiceInstancesResponse.TotalCount"));
-		listServiceInstancesResponse.setMaxResults(_ctx.stringValue("ListServiceInstancesResponse.MaxResults"));
+		listServiceInstancesResponse.setMaxResults(_ctx.integerValue("ListServiceInstancesResponse.MaxResults"));
 
 		List<ServiceInstance> serviceInstances = new ArrayList<ServiceInstance>();
 		for (int i = 0; i < _ctx.lengthValue("ListServiceInstancesResponse.ServiceInstances.Length"); i++) {
@@ -58,6 +58,7 @@ public class ListServiceInstancesResponseUnmarshaller {
 			serviceInstance.setPayType(_ctx.stringValue("ListServiceInstancesResponse.ServiceInstances["+ i +"].PayType"));
 			serviceInstance.setMarketInstanceId(_ctx.stringValue("ListServiceInstancesResponse.ServiceInstances["+ i +"].MarketInstanceId"));
 			serviceInstance.setResourceGroupId(_ctx.stringValue("ListServiceInstancesResponse.ServiceInstances["+ i +"].ResourceGroupId"));
+			serviceInstance.setBizStatus(_ctx.stringValue("ListServiceInstancesResponse.ServiceInstances["+ i +"].BizStatus"));
 
 			Service service = new Service();
 			service.setStatus(_ctx.stringValue("ListServiceInstancesResponse.ServiceInstances["+ i +"].Service.Status"));

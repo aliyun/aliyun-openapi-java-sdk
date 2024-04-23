@@ -61,6 +61,8 @@ public class GetServiceInstanceResponseUnmarshaller {
 		getServiceInstanceResponse.setPredefinedParameterName(_ctx.stringValue("GetServiceInstanceResponse.PredefinedParameterName"));
 		getServiceInstanceResponse.setMarketInstanceId(_ctx.stringValue("GetServiceInstanceResponse.MarketInstanceId"));
 		getServiceInstanceResponse.setResourceGroupId(_ctx.stringValue("GetServiceInstanceResponse.ResourceGroupId"));
+		getServiceInstanceResponse.setBizStatus(_ctx.stringValue("GetServiceInstanceResponse.BizStatus"));
+		getServiceInstanceResponse.setGrafanaDashBoardUrl(_ctx.stringValue("GetServiceInstanceResponse.GrafanaDashBoardUrl"));
 
 		Service service = new Service();
 		service.setStatus(_ctx.stringValue("GetServiceInstanceResponse.Service.Status"));

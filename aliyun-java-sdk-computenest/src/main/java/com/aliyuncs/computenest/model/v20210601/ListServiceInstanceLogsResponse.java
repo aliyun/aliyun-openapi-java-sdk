@@ -29,7 +29,7 @@ public class ListServiceInstanceLogsResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String maxResults;
+	private Integer maxResults;
 
 	private List<ServiceInstanceLogs> serviceInstancesLogs;
 
@@ -49,11 +49,11 @@ public class ListServiceInstanceLogsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getMaxResults() {
+	public Integer getMaxResults() {
 		return this.maxResults;
 	}
 
-	public void setMaxResults(String maxResults) {
+	public void setMaxResults(Integer maxResults) {
 		this.maxResults = maxResults;
 	}
 
@@ -68,8 +68,6 @@ public class ListServiceInstanceLogsResponse extends AcsResponse {
 	public static class ServiceInstanceLogs {
 
 		private String timestamp;
-
-		private String serviceInstanceId;
 
 		private String source;
 
@@ -89,14 +87,6 @@ public class ListServiceInstanceLogsResponse extends AcsResponse {
 
 		public void setTimestamp(String timestamp) {
 			this.timestamp = timestamp;
-		}
-
-		public String getServiceInstanceId() {
-			return this.serviceInstanceId;
-		}
-
-		public void setServiceInstanceId(String serviceInstanceId) {
-			this.serviceInstanceId = serviceInstanceId;
 		}
 
 		public String getSource() {

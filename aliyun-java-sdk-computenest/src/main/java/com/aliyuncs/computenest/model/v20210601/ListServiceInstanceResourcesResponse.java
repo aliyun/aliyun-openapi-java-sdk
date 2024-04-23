@@ -29,7 +29,7 @@ public class ListServiceInstanceResourcesResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String maxResults;
+	private Integer maxResults;
 
 	private List<ResourcesItem> resources;
 
@@ -49,11 +49,11 @@ public class ListServiceInstanceResourcesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getMaxResults() {
+	public Integer getMaxResults() {
 		return this.maxResults;
 	}
 
-	public void setMaxResults(String maxResults) {
+	public void setMaxResults(Integer maxResults) {
 		this.maxResults = maxResults;
 	}
 
@@ -84,6 +84,8 @@ public class ListServiceInstanceResourcesResponse extends AcsResponse {
 		private String productType;
 
 		private String productCode;
+
+		private String status;
 
 		public String getResourceARN() {
 			return this.resourceARN;
@@ -155,6 +157,14 @@ public class ListServiceInstanceResourcesResponse extends AcsResponse {
 
 		public void setProductCode(String productCode) {
 			this.productCode = productCode;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
 		}
 	}
 

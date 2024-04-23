@@ -58,8 +58,6 @@ public class CreateServiceInstanceRequest extends RpcAcsRequest<CreateServiceIns
 
 	private String parameters;
 
-	private Long payType;
-
 	private OperationMetadata operationMetadata;
 	public CreateServiceInstanceRequest() {
 		super("ComputeNest", "2021-06-01", "CreateServiceInstance", "computenest");
@@ -79,6 +77,8 @@ public class CreateServiceInstanceRequest extends RpcAcsRequest<CreateServiceIns
 		if (commodity != null) {
 			
 				putQueryParameter("Commodity.PayPeriod" , commodity.getPayPeriod());
+				putQueryParameter("Commodity.AutoPay" , commodity.getAutoPay());
+				putQueryParameter("Commodity.AutoRenew" , commodity.getAutoRenew());
 				putQueryParameter("Commodity.PayPeriodUnit" , commodity.getPayPeriodUnit());
 		}	
 	}
@@ -251,17 +251,6 @@ public class CreateServiceInstanceRequest extends RpcAcsRequest<CreateServiceIns
 		}
 	}
 
-	public Long getPayType() {
-		return this.payType;
-	}
-
-	public void setPayType(Long payType) {
-		this.payType = payType;
-		if(payType != null){
-			putQueryParameter("PayType", payType.toString());
-		}
-	}
-
 	public OperationMetadata getOperationMetadata() {
 		return this.operationMetadata;
 	}
@@ -282,6 +271,10 @@ public class CreateServiceInstanceRequest extends RpcAcsRequest<CreateServiceIns
 
 		private Long payPeriod;
 
+		private Boolean autoPay;
+
+		private Boolean autoRenew;
+
 		private String payPeriodUnit;
 
 		public Long getPayPeriod() {
@@ -290,6 +283,22 @@ public class CreateServiceInstanceRequest extends RpcAcsRequest<CreateServiceIns
 
 		public void setPayPeriod(Long payPeriod) {
 			this.payPeriod = payPeriod;
+		}
+
+		public Boolean getAutoPay() {
+			return this.autoPay;
+		}
+
+		public void setAutoPay(Boolean autoPay) {
+			this.autoPay = autoPay;
+		}
+
+		public Boolean getAutoRenew() {
+			return this.autoRenew;
+		}
+
+		public void setAutoRenew(Boolean autoRenew) {
+			this.autoRenew = autoRenew;
 		}
 
 		public String getPayPeriodUnit() {

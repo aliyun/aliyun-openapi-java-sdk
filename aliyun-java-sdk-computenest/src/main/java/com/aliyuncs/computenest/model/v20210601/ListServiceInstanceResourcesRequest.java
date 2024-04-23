@@ -30,6 +30,8 @@ public class ListServiceInstanceResourcesRequest extends RpcAcsRequest<ListServi
 
 	private String nextToken;
 
+	private String serviceInstanceResourceType;
+
 	private List<String> resourceARNs;
 
 	private List<Tag> tags;
@@ -38,7 +40,7 @@ public class ListServiceInstanceResourcesRequest extends RpcAcsRequest<ListServi
 
 	private String expireTimeStart;
 
-	private String maxResults;
+	private Integer maxResults;
 
 	private String payType;
 	public ListServiceInstanceResourcesRequest() {
@@ -69,6 +71,17 @@ public class ListServiceInstanceResourcesRequest extends RpcAcsRequest<ListServi
 		this.nextToken = nextToken;
 		if(nextToken != null){
 			putQueryParameter("NextToken", nextToken);
+		}
+	}
+
+	public String getServiceInstanceResourceType() {
+		return this.serviceInstanceResourceType;
+	}
+
+	public void setServiceInstanceResourceType(String serviceInstanceResourceType) {
+		this.serviceInstanceResourceType = serviceInstanceResourceType;
+		if(serviceInstanceResourceType != null){
+			putQueryParameter("ServiceInstanceResourceType", serviceInstanceResourceType);
 		}
 	}
 
@@ -121,14 +134,14 @@ public class ListServiceInstanceResourcesRequest extends RpcAcsRequest<ListServi
 		}
 	}
 
-	public String getMaxResults() {
+	public Integer getMaxResults() {
 		return this.maxResults;
 	}
 
-	public void setMaxResults(String maxResults) {
+	public void setMaxResults(Integer maxResults) {
 		this.maxResults = maxResults;
 		if(maxResults != null){
-			putQueryParameter("MaxResults", maxResults);
+			putQueryParameter("MaxResults", maxResults.toString());
 		}
 	}
 

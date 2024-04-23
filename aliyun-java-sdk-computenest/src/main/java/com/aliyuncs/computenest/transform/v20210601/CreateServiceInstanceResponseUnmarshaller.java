@@ -26,6 +26,7 @@ public class CreateServiceInstanceResponseUnmarshaller {
 		createServiceInstanceResponse.setStatus(_ctx.stringValue("CreateServiceInstanceResponse.Status"));
 		createServiceInstanceResponse.setServiceInstanceId(_ctx.stringValue("CreateServiceInstanceResponse.ServiceInstanceId"));
 		createServiceInstanceResponse.setMarketInstanceId(_ctx.stringValue("CreateServiceInstanceResponse.MarketInstanceId"));
+		createServiceInstanceResponse.setOrderId(_ctx.stringValue("CreateServiceInstanceResponse.OrderId"));
 	 
 	 	return createServiceInstanceResponse;
 	}

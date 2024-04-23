@@ -34,7 +34,7 @@ public class ListServiceInstancesRequest extends RpcAcsRequest<ListServiceInstan
 
 	private List<Filter> filters;
 
-	private String maxResults;
+	private Integer maxResults;
 	public ListServiceInstancesRequest() {
 		super("ComputeNest", "2021-06-01", "ListServiceInstances", "computenest");
 		setMethod(MethodType.POST);
@@ -98,14 +98,14 @@ public class ListServiceInstancesRequest extends RpcAcsRequest<ListServiceInstan
 		}	
 	}
 
-	public String getMaxResults() {
+	public Integer getMaxResults() {
 		return this.maxResults;
 	}
 
-	public void setMaxResults(String maxResults) {
+	public void setMaxResults(Integer maxResults) {
 		this.maxResults = maxResults;
 		if(maxResults != null){
-			putQueryParameter("MaxResults", maxResults);
+			putQueryParameter("MaxResults", maxResults.toString());
 		}
 	}
 
