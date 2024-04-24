@@ -26,6 +26,7 @@ import com.aliyuncs.mts.model.v20140618.AddTemplateResponse.Template.MuxConfig.W
 import com.aliyuncs.mts.model.v20140618.AddTemplateResponse.Template.TransConfig;
 import com.aliyuncs.mts.model.v20140618.AddTemplateResponse.Template.Video;
 import com.aliyuncs.mts.model.v20140618.AddTemplateResponse.Template.Video.BitrateBnd;
+import com.aliyuncs.mts.model.v20140618.AddTemplateResponse.Template.Video.NarrowBand;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -62,11 +63,18 @@ public class AddTemplateResponseUnmarshaller {
 		video.setPreset(_ctx.stringValue("AddTemplateResponse.Template.Video.Preset"));
 		video.setScanMode(_ctx.stringValue("AddTemplateResponse.Template.Video.ScanMode"));
 		video.setResoPriority(_ctx.stringValue("AddTemplateResponse.Template.Video.ResoPriority"));
+		video.setHdr2sdr(_ctx.stringValue("AddTemplateResponse.Template.Video.Hdr2sdr"));
 
 		BitrateBnd bitrateBnd = new BitrateBnd();
 		bitrateBnd.setMax(_ctx.stringValue("AddTemplateResponse.Template.Video.BitrateBnd.Max"));
 		bitrateBnd.setMin(_ctx.stringValue("AddTemplateResponse.Template.Video.BitrateBnd.Min"));
 		video.setBitrateBnd(bitrateBnd);
+
+		NarrowBand narrowBand = new NarrowBand();
+		narrowBand.setVersion(_ctx.stringValue("AddTemplateResponse.Template.Video.NarrowBand.Version"));
+		narrowBand.setAbrmax(_ctx.floatValue("AddTemplateResponse.Template.Video.NarrowBand.Abrmax"));
+		narrowBand.setMaxAbrRatio(_ctx.floatValue("AddTemplateResponse.Template.Video.NarrowBand.MaxAbrRatio"));
+		video.setNarrowBand(narrowBand);
 		template.setVideo(video);
 
 		TransConfig transConfig = new TransConfig();
@@ -110,6 +118,10 @@ public class AddTemplateResponseUnmarshaller {
 		Volume volume = new Volume();
 		volume.setBizMethod(_ctx.stringValue("AddTemplateResponse.Template.Audio.Volume.Method"));
 		volume.setLevel(_ctx.stringValue("AddTemplateResponse.Template.Audio.Volume.Level"));
+		volume.setIntegratedLoudnessTarget(_ctx.stringValue("AddTemplateResponse.Template.Audio.Volume.IntegratedLoudnessTarget"));
+		volume.setTruePeak(_ctx.stringValue("AddTemplateResponse.Template.Audio.Volume.TruePeak"));
+		volume.setLoudnessRangeTarget(_ctx.stringValue("AddTemplateResponse.Template.Audio.Volume.LoudnessRangeTarget"));
+		volume.setPeakLevel(_ctx.stringValue("AddTemplateResponse.Template.Audio.Volume.PeakLevel"));
 		audio.setVolume(volume);
 		template.setAudio(audio);
 

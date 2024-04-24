@@ -21,12 +21,14 @@ import com.aliyuncs.mts.model.v20140618.SearchTemplateResponse;
 import com.aliyuncs.mts.model.v20140618.SearchTemplateResponse.Template;
 import com.aliyuncs.mts.model.v20140618.SearchTemplateResponse.Template.Audio;
 import com.aliyuncs.mts.model.v20140618.SearchTemplateResponse.Template.Container;
+import com.aliyuncs.mts.model.v20140618.SearchTemplateResponse.Template.FrontendHint;
 import com.aliyuncs.mts.model.v20140618.SearchTemplateResponse.Template.MuxConfig;
 import com.aliyuncs.mts.model.v20140618.SearchTemplateResponse.Template.MuxConfig.Gif;
 import com.aliyuncs.mts.model.v20140618.SearchTemplateResponse.Template.MuxConfig.Segment;
 import com.aliyuncs.mts.model.v20140618.SearchTemplateResponse.Template.TransConfig;
 import com.aliyuncs.mts.model.v20140618.SearchTemplateResponse.Template.Video;
 import com.aliyuncs.mts.model.v20140618.SearchTemplateResponse.Template.Video.BitrateBnd;
+import com.aliyuncs.mts.model.v20140618.SearchTemplateResponse.Template.Video.NarrowBand;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -45,6 +47,7 @@ public class SearchTemplateResponseUnmarshaller {
 			template.setState(_ctx.stringValue("SearchTemplateResponse.TemplateList["+ i +"].State"));
 			template.setName(_ctx.stringValue("SearchTemplateResponse.TemplateList["+ i +"].Name"));
 			template.setId(_ctx.stringValue("SearchTemplateResponse.TemplateList["+ i +"].Id"));
+			template.setCreationTime(_ctx.stringValue("SearchTemplateResponse.TemplateList["+ i +"].CreationTime"));
 
 			Video video = new Video();
 			video.setBufsize(_ctx.stringValue("SearchTemplateResponse.TemplateList["+ i +"].Video.Bufsize"));
@@ -67,11 +70,19 @@ public class SearchTemplateResponseUnmarshaller {
 			video.setFps(_ctx.stringValue("SearchTemplateResponse.TemplateList["+ i +"].Video.Fps"));
 			video.setPreset(_ctx.stringValue("SearchTemplateResponse.TemplateList["+ i +"].Video.Preset"));
 			video.setScanMode(_ctx.stringValue("SearchTemplateResponse.TemplateList["+ i +"].Video.ScanMode"));
+			video.setResoPriority(_ctx.stringValue("SearchTemplateResponse.TemplateList["+ i +"].Video.ResoPriority"));
+			video.setHdr2sdr(_ctx.stringValue("SearchTemplateResponse.TemplateList["+ i +"].Video.Hdr2sdr"));
 
 			BitrateBnd bitrateBnd = new BitrateBnd();
 			bitrateBnd.setMax(_ctx.stringValue("SearchTemplateResponse.TemplateList["+ i +"].Video.BitrateBnd.Max"));
 			bitrateBnd.setMin(_ctx.stringValue("SearchTemplateResponse.TemplateList["+ i +"].Video.BitrateBnd.Min"));
 			video.setBitrateBnd(bitrateBnd);
+
+			NarrowBand narrowBand = new NarrowBand();
+			narrowBand.setAbrmax(_ctx.floatValue("SearchTemplateResponse.TemplateList["+ i +"].Video.NarrowBand.Abrmax"));
+			narrowBand.setMaxAbrRatio(_ctx.floatValue("SearchTemplateResponse.TemplateList["+ i +"].Video.NarrowBand.MaxAbrRatio"));
+			narrowBand.setVersion(_ctx.stringValue("SearchTemplateResponse.TemplateList["+ i +"].Video.NarrowBand.Version"));
+			video.setNarrowBand(narrowBand);
 			template.setVideo(video);
 
 			TransConfig transConfig = new TransConfig();
@@ -112,6 +123,14 @@ public class SearchTemplateResponseUnmarshaller {
 			Container container = new Container();
 			container.setFormat(_ctx.stringValue("SearchTemplateResponse.TemplateList["+ i +"].Container.Format"));
 			template.setContainer(container);
+
+			FrontendHint frontendHint = new FrontendHint();
+			frontendHint.setTranscodeType(_ctx.stringValue("SearchTemplateResponse.TemplateList["+ i +"].FrontendHint.TranscodeType"));
+			frontendHint.setBitrateControlType(_ctx.stringValue("SearchTemplateResponse.TemplateList["+ i +"].FrontendHint.BitrateControlType"));
+			frontendHint.setSource(_ctx.stringValue("SearchTemplateResponse.TemplateList["+ i +"].FrontendHint.Source"));
+			frontendHint.setIsDynamic(_ctx.booleanValue("SearchTemplateResponse.TemplateList["+ i +"].FrontendHint.IsDynamic"));
+			frontendHint.setHasOldHdr2Sdr(_ctx.booleanValue("SearchTemplateResponse.TemplateList["+ i +"].FrontendHint.HasOldHdr2Sdr"));
+			template.setFrontendHint(frontendHint);
 
 			templateList.add(template);
 		}

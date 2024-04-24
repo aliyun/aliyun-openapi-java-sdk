@@ -91,7 +91,7 @@ public class SearchPipelineResponse extends AcsResponse {
 
 		private Long quotaAllocate;
 
-		private String gmtCreate;
+		private String creationTime;
 
 		private NotifyConfig notifyConfig;
 
@@ -153,12 +153,12 @@ public class SearchPipelineResponse extends AcsResponse {
 			this.quotaAllocate = quotaAllocate;
 		}
 
-		public String getGmtCreate() {
-			return this.gmtCreate;
+		public String getCreationTime() {
+			return this.creationTime;
 		}
 
-		public void setGmtCreate(String gmtCreate) {
-			this.gmtCreate = gmtCreate;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
 		public NotifyConfig getNotifyConfig() {

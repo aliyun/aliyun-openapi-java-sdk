@@ -27,6 +27,7 @@ import com.aliyuncs.mts.model.v20140618.QueryJobListResponse.Job.Output.Audio.Vo
 import com.aliyuncs.mts.model.v20140618.QueryJobListResponse.Job.Output.Clip;
 import com.aliyuncs.mts.model.v20140618.QueryJobListResponse.Job.Output.Clip.TimeSpan;
 import com.aliyuncs.mts.model.v20140618.QueryJobListResponse.Job.Output.Container;
+import com.aliyuncs.mts.model.v20140618.QueryJobListResponse.Job.Output.CopyrightMark;
 import com.aliyuncs.mts.model.v20140618.QueryJobListResponse.Job.Output.Encryption;
 import com.aliyuncs.mts.model.v20140618.QueryJobListResponse.Job.Output.M3U8NonStandardSupport;
 import com.aliyuncs.mts.model.v20140618.QueryJobListResponse.Job.Output.M3U8NonStandardSupport.TS;
@@ -54,6 +55,7 @@ import com.aliyuncs.mts.model.v20140618.QueryJobListResponse.Job.Output.Subtitle
 import com.aliyuncs.mts.model.v20140618.QueryJobListResponse.Job.Output.SubtitleConfig.Subtitle;
 import com.aliyuncs.mts.model.v20140618.QueryJobListResponse.Job.Output.SuperReso;
 import com.aliyuncs.mts.model.v20140618.QueryJobListResponse.Job.Output.TailSlate;
+import com.aliyuncs.mts.model.v20140618.QueryJobListResponse.Job.Output.TraceMark;
 import com.aliyuncs.mts.model.v20140618.QueryJobListResponse.Job.Output.TransConfig;
 import com.aliyuncs.mts.model.v20140618.QueryJobListResponse.Job.Output.Video;
 import com.aliyuncs.mts.model.v20140618.QueryJobListResponse.Job.Output.Video.BitrateBnd;
@@ -87,6 +89,7 @@ public class QueryJobListResponseUnmarshaller {
 			job.setCode(_ctx.stringValue("QueryJobListResponse.JobList["+ i +"].Code"));
 			job.setMessage(_ctx.stringValue("QueryJobListResponse.JobList["+ i +"].Message"));
 			job.setPipelineId(_ctx.stringValue("QueryJobListResponse.JobList["+ i +"].PipelineId"));
+			job.setSubmitTime(_ctx.stringValue("QueryJobListResponse.JobList["+ i +"].SubmitTime"));
 
 			Output output = new Output();
 			output.setWaterMarkConfigUrl(_ctx.stringValue("QueryJobListResponse.JobList["+ i +"].Output.WaterMarkConfigUrl"));
@@ -354,6 +357,14 @@ public class QueryJobListResponseUnmarshaller {
 			multiSpeedInfo.setDuration(_ctx.doubleValue("QueryJobListResponse.JobList["+ i +"].Output.MultiSpeedInfo.Duration"));
 			multiSpeedInfo.setTimeCost(_ctx.doubleValue("QueryJobListResponse.JobList["+ i +"].Output.MultiSpeedInfo.TimeCost"));
 			output.setMultiSpeedInfo(multiSpeedInfo);
+
+			TraceMark traceMark = new TraceMark();
+			traceMark.setEnable(_ctx.stringValue("QueryJobListResponse.JobList["+ i +"].Output.TraceMark.Enable"));
+			output.setTraceMark(traceMark);
+
+			CopyrightMark copyrightMark = new CopyrightMark();
+			copyrightMark.setContent(_ctx.stringValue("QueryJobListResponse.JobList["+ i +"].Output.CopyrightMark.Content"));
+			output.setCopyrightMark(copyrightMark);
 
 			List<WaterMark> waterMarkList = new ArrayList<WaterMark>();
 			for (int j = 0; j < _ctx.lengthValue("QueryJobListResponse.JobList["+ i +"].Output.WaterMarkList.Length"); j++) {

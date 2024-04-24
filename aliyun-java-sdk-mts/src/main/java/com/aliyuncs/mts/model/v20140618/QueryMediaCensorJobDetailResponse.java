@@ -79,6 +79,8 @@ public class QueryMediaCensorJobDetailResponse extends AcsResponse {
 
 		private VensorCensorResult vensorCensorResult;
 
+		private AudioCensorResult audioCensorResult;
+
 		public String getCreationTime() {
 			return this.creationTime;
 		}
@@ -205,6 +207,14 @@ public class QueryMediaCensorJobDetailResponse extends AcsResponse {
 
 		public void setVensorCensorResult(VensorCensorResult vensorCensorResult) {
 			this.vensorCensorResult = vensorCensorResult;
+		}
+
+		public AudioCensorResult getAudioCensorResult() {
+			return this.audioCensorResult;
+		}
+
+		public void setAudioCensorResult(AudioCensorResult audioCensorResult) {
+			this.audioCensorResult = audioCensorResult;
 		}
 
 		public static class CoverImageCensorResult {
@@ -669,6 +679,82 @@ public class QueryMediaCensorJobDetailResponse extends AcsResponse {
 
 				public void setRate(String rate) {
 					this.rate = rate;
+				}
+			}
+		}
+
+		public static class AudioCensorResult {
+
+			private String suggestion;
+
+			private String label;
+
+			private List<AudioDetailResult> audioDetailResultList;
+
+			public String getSuggestion() {
+				return this.suggestion;
+			}
+
+			public void setSuggestion(String suggestion) {
+				this.suggestion = suggestion;
+			}
+
+			public String getLabel() {
+				return this.label;
+			}
+
+			public void setLabel(String label) {
+				this.label = label;
+			}
+
+			public List<AudioDetailResult> getAudioDetailResultList() {
+				return this.audioDetailResultList;
+			}
+
+			public void setAudioDetailResultList(List<AudioDetailResult> audioDetailResultList) {
+				this.audioDetailResultList = audioDetailResultList;
+			}
+
+			public static class AudioDetailResult {
+
+				private Integer startTime;
+
+				private Integer endTime;
+
+				private String text;
+
+				private String label;
+
+				public Integer getStartTime() {
+					return this.startTime;
+				}
+
+				public void setStartTime(Integer startTime) {
+					this.startTime = startTime;
+				}
+
+				public Integer getEndTime() {
+					return this.endTime;
+				}
+
+				public void setEndTime(Integer endTime) {
+					this.endTime = endTime;
+				}
+
+				public String getText() {
+					return this.text;
+				}
+
+				public void setText(String text) {
+					this.text = text;
+				}
+
+				public String getLabel() {
+					return this.label;
+				}
+
+				public void setLabel(String label) {
+					this.label = label;
 				}
 			}
 		}

@@ -73,6 +73,8 @@ public class QueryJobListResponse extends AcsResponse {
 
 		private String pipelineId;
 
+		private String submitTime;
+
 		private Output output;
 
 		private Input input;
@@ -143,6 +145,14 @@ public class QueryJobListResponse extends AcsResponse {
 
 		public void setPipelineId(String pipelineId) {
 			this.pipelineId = pipelineId;
+		}
+
+		public String getSubmitTime() {
+			return this.submitTime;
+		}
+
+		public void setSubmitTime(String submitTime) {
+			this.submitTime = submitTime;
 		}
 
 		public Output getOutput() {
@@ -234,6 +244,10 @@ public class QueryJobListResponse extends AcsResponse {
 			private Properties properties;
 
 			private MultiSpeedInfo multiSpeedInfo;
+
+			private TraceMark traceMark;
+
+			private CopyrightMark copyrightMark;
 
 			public String getWaterMarkConfigUrl() {
 				return this.waterMarkConfigUrl;
@@ -457,6 +471,22 @@ public class QueryJobListResponse extends AcsResponse {
 
 			public void setMultiSpeedInfo(MultiSpeedInfo multiSpeedInfo) {
 				this.multiSpeedInfo = multiSpeedInfo;
+			}
+
+			public TraceMark getTraceMark() {
+				return this.traceMark;
+			}
+
+			public void setTraceMark(TraceMark traceMark) {
+				this.traceMark = traceMark;
+			}
+
+			public CopyrightMark getCopyrightMark() {
+				return this.copyrightMark;
+			}
+
+			public void setCopyrightMark(CopyrightMark copyrightMark) {
+				this.copyrightMark = copyrightMark;
 			}
 
 			public static class WaterMark {
@@ -2427,6 +2457,32 @@ public class QueryJobListResponse extends AcsResponse {
 
 				public void setTimeCost(Double timeCost) {
 					this.timeCost = timeCost;
+				}
+			}
+
+			public static class TraceMark {
+
+				private String enable;
+
+				public String getEnable() {
+					return this.enable;
+				}
+
+				public void setEnable(String enable) {
+					this.enable = enable;
+				}
+			}
+
+			public static class CopyrightMark {
+
+				private String content;
+
+				public String getContent() {
+					return this.content;
+				}
+
+				public void setContent(String content) {
+					this.content = content;
 				}
 			}
 		}

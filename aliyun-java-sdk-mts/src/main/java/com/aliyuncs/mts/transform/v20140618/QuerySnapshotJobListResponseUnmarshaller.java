@@ -62,6 +62,12 @@ public class QuerySnapshotJobListResponseUnmarshaller {
 			snapshotConfig.setHeight(_ctx.stringValue("QuerySnapshotJobListResponse.SnapshotJobList["+ i +"].SnapshotConfig.Height"));
 			snapshotConfig.setNum(_ctx.stringValue("QuerySnapshotJobListResponse.SnapshotJobList["+ i +"].SnapshotConfig.Num"));
 
+			List<Long> timeArray = new ArrayList<Long>();
+			for (int j = 0; j < _ctx.lengthValue("QuerySnapshotJobListResponse.SnapshotJobList["+ i +"].SnapshotConfig.TimeArray.Length"); j++) {
+				timeArray.add(_ctx.longValue("QuerySnapshotJobListResponse.SnapshotJobList["+ i +"].SnapshotConfig.TimeArray["+ j +"]"));
+			}
+			snapshotConfig.setTimeArray(timeArray);
+
 			TileOut tileOut = new TileOut();
 			tileOut.setPadding(_ctx.stringValue("QuerySnapshotJobListResponse.SnapshotJobList["+ i +"].SnapshotConfig.TileOut.Padding"));
 			tileOut.setColor(_ctx.stringValue("QuerySnapshotJobListResponse.SnapshotJobList["+ i +"].SnapshotConfig.TileOut.Color"));

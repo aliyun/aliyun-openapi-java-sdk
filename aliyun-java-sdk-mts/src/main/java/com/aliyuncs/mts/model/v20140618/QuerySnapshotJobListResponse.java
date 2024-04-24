@@ -201,6 +201,8 @@ public class QuerySnapshotJobListResponse extends AcsResponse {
 
 			private String num;
 
+			private List<Long> timeArray;
+
 			private TileOut tileOut;
 
 			private OutputFile outputFile;
@@ -253,6 +255,14 @@ public class QuerySnapshotJobListResponse extends AcsResponse {
 
 			public void setNum(String num) {
 				this.num = num;
+			}
+
+			public List<Long> getTimeArray() {
+				return this.timeArray;
+			}
+
+			public void setTimeArray(List<Long> timeArray) {
+				this.timeArray = timeArray;
 			}
 
 			public TileOut getTileOut() {

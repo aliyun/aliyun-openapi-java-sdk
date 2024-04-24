@@ -83,6 +83,8 @@ public class SearchTemplateResponse extends AcsResponse {
 
 		private String id;
 
+		private String creationTime;
+
 		private Video video;
 
 		private TransConfig transConfig;
@@ -92,6 +94,8 @@ public class SearchTemplateResponse extends AcsResponse {
 		private Audio audio;
 
 		private Container container;
+
+		private FrontendHint frontendHint;
 
 		public String getState() {
 			return this.state;
@@ -115,6 +119,14 @@ public class SearchTemplateResponse extends AcsResponse {
 
 		public void setId(String id) {
 			this.id = id;
+		}
+
+		public String getCreationTime() {
+			return this.creationTime;
+		}
+
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
 		public Video getVideo() {
@@ -155,6 +167,14 @@ public class SearchTemplateResponse extends AcsResponse {
 
 		public void setContainer(Container container) {
 			this.container = container;
+		}
+
+		public FrontendHint getFrontendHint() {
+			return this.frontendHint;
+		}
+
+		public void setFrontendHint(FrontendHint frontendHint) {
+			this.frontendHint = frontendHint;
 		}
 
 		public static class Video {
@@ -199,7 +219,13 @@ public class SearchTemplateResponse extends AcsResponse {
 
 			private String scanMode;
 
+			private String resoPriority;
+
+			private String hdr2sdr;
+
 			private BitrateBnd bitrateBnd;
+
+			private NarrowBand narrowBand;
 
 			public String getBufsize() {
 				return this.bufsize;
@@ -361,12 +387,36 @@ public class SearchTemplateResponse extends AcsResponse {
 				this.scanMode = scanMode;
 			}
 
+			public String getResoPriority() {
+				return this.resoPriority;
+			}
+
+			public void setResoPriority(String resoPriority) {
+				this.resoPriority = resoPriority;
+			}
+
+			public String getHdr2sdr() {
+				return this.hdr2sdr;
+			}
+
+			public void setHdr2sdr(String hdr2sdr) {
+				this.hdr2sdr = hdr2sdr;
+			}
+
 			public BitrateBnd getBitrateBnd() {
 				return this.bitrateBnd;
 			}
 
 			public void setBitrateBnd(BitrateBnd bitrateBnd) {
 				this.bitrateBnd = bitrateBnd;
+			}
+
+			public NarrowBand getNarrowBand() {
+				return this.narrowBand;
+			}
+
+			public void setNarrowBand(NarrowBand narrowBand) {
+				this.narrowBand = narrowBand;
 			}
 
 			public static class BitrateBnd {
@@ -389,6 +439,39 @@ public class SearchTemplateResponse extends AcsResponse {
 
 				public void setMin(String min) {
 					this.min = min;
+				}
+			}
+
+			public static class NarrowBand {
+
+				private Float abrmax;
+
+				private Float maxAbrRatio;
+
+				private String version;
+
+				public Float getAbrmax() {
+					return this.abrmax;
+				}
+
+				public void setAbrmax(Float abrmax) {
+					this.abrmax = abrmax;
+				}
+
+				public Float getMaxAbrRatio() {
+					return this.maxAbrRatio;
+				}
+
+				public void setMaxAbrRatio(Float maxAbrRatio) {
+					this.maxAbrRatio = maxAbrRatio;
+				}
+
+				public String getVersion() {
+					return this.version;
+				}
+
+				public void setVersion(String version) {
+					this.version = version;
 				}
 			}
 		}
@@ -638,6 +721,59 @@ public class SearchTemplateResponse extends AcsResponse {
 
 			public void setFormat(String format) {
 				this.format = format;
+			}
+		}
+
+		public static class FrontendHint {
+
+			private String transcodeType;
+
+			private String bitrateControlType;
+
+			private String source;
+
+			private Boolean isDynamic;
+
+			private Boolean hasOldHdr2Sdr;
+
+			public String getTranscodeType() {
+				return this.transcodeType;
+			}
+
+			public void setTranscodeType(String transcodeType) {
+				this.transcodeType = transcodeType;
+			}
+
+			public String getBitrateControlType() {
+				return this.bitrateControlType;
+			}
+
+			public void setBitrateControlType(String bitrateControlType) {
+				this.bitrateControlType = bitrateControlType;
+			}
+
+			public String getSource() {
+				return this.source;
+			}
+
+			public void setSource(String source) {
+				this.source = source;
+			}
+
+			public Boolean getIsDynamic() {
+				return this.isDynamic;
+			}
+
+			public void setIsDynamic(Boolean isDynamic) {
+				this.isDynamic = isDynamic;
+			}
+
+			public Boolean getHasOldHdr2Sdr() {
+				return this.hasOldHdr2Sdr;
+			}
+
+			public void setHasOldHdr2Sdr(Boolean hasOldHdr2Sdr) {
+				this.hasOldHdr2Sdr = hasOldHdr2Sdr;
 			}
 		}
 	}

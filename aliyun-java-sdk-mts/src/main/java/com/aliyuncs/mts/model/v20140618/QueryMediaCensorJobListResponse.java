@@ -99,6 +99,8 @@ public class QueryMediaCensorJobListResponse extends AcsResponse {
 
 		private VensorCensorResult vensorCensorResult;
 
+		private AudioCensorResult audioCensorResult;
+
 		public String getCreationTime() {
 			return this.creationTime;
 		}
@@ -225,6 +227,14 @@ public class QueryMediaCensorJobListResponse extends AcsResponse {
 
 		public void setVensorCensorResult(VensorCensorResult vensorCensorResult) {
 			this.vensorCensorResult = vensorCensorResult;
+		}
+
+		public AudioCensorResult getAudioCensorResult() {
+			return this.audioCensorResult;
+		}
+
+		public void setAudioCensorResult(AudioCensorResult audioCensorResult) {
+			this.audioCensorResult = audioCensorResult;
 		}
 
 		public static class CoverImageCensorResult {
@@ -690,6 +700,29 @@ public class QueryMediaCensorJobListResponse extends AcsResponse {
 				public void setRate(String rate) {
 					this.rate = rate;
 				}
+			}
+		}
+
+		public static class AudioCensorResult {
+
+			private String suggestion;
+
+			private String label;
+
+			public String getSuggestion() {
+				return this.suggestion;
+			}
+
+			public void setSuggestion(String suggestion) {
+				this.suggestion = suggestion;
+			}
+
+			public String getLabel() {
+				return this.label;
+			}
+
+			public void setLabel(String label) {
+				this.label = label;
 			}
 		}
 	}

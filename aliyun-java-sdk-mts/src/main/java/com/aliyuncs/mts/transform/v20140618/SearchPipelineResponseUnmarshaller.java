@@ -43,7 +43,7 @@ public class SearchPipelineResponseUnmarshaller {
 			pipeline.setName(_ctx.stringValue("SearchPipelineResponse.PipelineList["+ i +"].Name"));
 			pipeline.setId(_ctx.stringValue("SearchPipelineResponse.PipelineList["+ i +"].Id"));
 			pipeline.setQuotaAllocate(_ctx.longValue("SearchPipelineResponse.PipelineList["+ i +"].QuotaAllocate"));
-			pipeline.setGmtCreate(_ctx.stringValue("SearchPipelineResponse.PipelineList["+ i +"].GmtCreate"));
+			pipeline.setCreationTime(_ctx.stringValue("SearchPipelineResponse.PipelineList["+ i +"].CreationTime"));
 
 			NotifyConfig notifyConfig = new NotifyConfig();
 			notifyConfig.setMqTopic(_ctx.stringValue("SearchPipelineResponse.PipelineList["+ i +"].NotifyConfig.MqTopic"));

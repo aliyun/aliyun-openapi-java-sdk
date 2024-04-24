@@ -20,7 +20,9 @@ import java.util.List;
 import com.aliyuncs.mts.model.v20140618.QueryTemplateListResponse;
 import com.aliyuncs.mts.model.v20140618.QueryTemplateListResponse.Template;
 import com.aliyuncs.mts.model.v20140618.QueryTemplateListResponse.Template.Audio;
+import com.aliyuncs.mts.model.v20140618.QueryTemplateListResponse.Template.Audio.Volume;
 import com.aliyuncs.mts.model.v20140618.QueryTemplateListResponse.Template.Container;
+import com.aliyuncs.mts.model.v20140618.QueryTemplateListResponse.Template.FrontendHint;
 import com.aliyuncs.mts.model.v20140618.QueryTemplateListResponse.Template.MuxConfig;
 import com.aliyuncs.mts.model.v20140618.QueryTemplateListResponse.Template.MuxConfig.Gif;
 import com.aliyuncs.mts.model.v20140618.QueryTemplateListResponse.Template.MuxConfig.Segment;
@@ -28,6 +30,7 @@ import com.aliyuncs.mts.model.v20140618.QueryTemplateListResponse.Template.MuxCo
 import com.aliyuncs.mts.model.v20140618.QueryTemplateListResponse.Template.TransConfig;
 import com.aliyuncs.mts.model.v20140618.QueryTemplateListResponse.Template.Video;
 import com.aliyuncs.mts.model.v20140618.QueryTemplateListResponse.Template.Video.BitrateBnd;
+import com.aliyuncs.mts.model.v20140618.QueryTemplateListResponse.Template.Video.NarrowBand;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -49,6 +52,7 @@ public class QueryTemplateListResponseUnmarshaller {
 			template.setState(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].State"));
 			template.setName(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Name"));
 			template.setId(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Id"));
+			template.setCreationTime(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].CreationTime"));
 
 			Video video = new Video();
 			video.setBufsize(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Video.Bufsize"));
@@ -72,11 +76,18 @@ public class QueryTemplateListResponseUnmarshaller {
 			video.setPreset(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Video.Preset"));
 			video.setScanMode(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Video.ScanMode"));
 			video.setResoPriority(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Video.ResoPriority"));
+			video.setHdr2sdr(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Video.Hdr2sdr"));
 
 			BitrateBnd bitrateBnd = new BitrateBnd();
 			bitrateBnd.setMax(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Video.BitrateBnd.Max"));
 			bitrateBnd.setMin(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Video.BitrateBnd.Min"));
 			video.setBitrateBnd(bitrateBnd);
+
+			NarrowBand narrowBand = new NarrowBand();
+			narrowBand.setVersion(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Video.NarrowBand.Version"));
+			narrowBand.setAbrmax(_ctx.floatValue("QueryTemplateListResponse.TemplateList["+ i +"].Video.NarrowBand.Abrmax"));
+			narrowBand.setMaxAbrRatio(_ctx.floatValue("QueryTemplateListResponse.TemplateList["+ i +"].Video.NarrowBand.MaxAbrRatio"));
+			video.setNarrowBand(narrowBand);
 			template.setVideo(video);
 
 			TransConfig transConfig = new TransConfig();
@@ -116,11 +127,28 @@ public class QueryTemplateListResponseUnmarshaller {
 			audio.setQscale(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Audio.Qscale"));
 			audio.setChannels(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Audio.Channels"));
 			audio.setBitrate(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Audio.Bitrate"));
+
+			Volume volume = new Volume();
+			volume.setBizMethod(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Audio.Volume.Method"));
+			volume.setTruePeak(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Audio.Volume.TruePeak"));
+			volume.setIntegratedLoudnessTarget(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Audio.Volume.IntegratedLoudnessTarget"));
+			volume.setLoudnessRangeTarget(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Audio.Volume.LoudnessRangeTarget"));
+			volume.setLevel(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Audio.Volume.Level"));
+			volume.setPeakLevel(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Audio.Volume.PeakLevel"));
+			audio.setVolume(volume);
 			template.setAudio(audio);
 
 			Container container = new Container();
 			container.setFormat(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Container.Format"));
 			template.setContainer(container);
+
+			FrontendHint frontendHint = new FrontendHint();
+			frontendHint.setTranscodeType(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].FrontendHint.TranscodeType"));
+			frontendHint.setBitrateControlType(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].FrontendHint.BitrateControlType"));
+			frontendHint.setSource(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].FrontendHint.Source"));
+			frontendHint.setIsDynamic(_ctx.booleanValue("QueryTemplateListResponse.TemplateList["+ i +"].FrontendHint.IsDynamic"));
+			frontendHint.setHasOldHdr2Sdr(_ctx.booleanValue("QueryTemplateListResponse.TemplateList["+ i +"].FrontendHint.HasOldHdr2Sdr"));
+			template.setFrontendHint(frontendHint);
 
 			templateList.add(template);
 		}

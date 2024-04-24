@@ -19,6 +19,8 @@ import java.util.List;
 
 import com.aliyuncs.mts.model.v20140618.QueryMediaCensorJobDetailResponse;
 import com.aliyuncs.mts.model.v20140618.QueryMediaCensorJobDetailResponse.MediaCensorJobDetail;
+import com.aliyuncs.mts.model.v20140618.QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.AudioCensorResult;
+import com.aliyuncs.mts.model.v20140618.QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.AudioCensorResult.AudioDetailResult;
 import com.aliyuncs.mts.model.v20140618.QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.BarrageCensorResult;
 import com.aliyuncs.mts.model.v20140618.QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.CoverImageCensorResult;
 import com.aliyuncs.mts.model.v20140618.QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.CoverImageCensorResult.Result;
@@ -126,6 +128,23 @@ public class QueryMediaCensorJobDetailResponseUnmarshaller {
 		}
 		vensorCensorResult.setCensorResults(censorResults);
 		mediaCensorJobDetail.setVensorCensorResult(vensorCensorResult);
+
+		AudioCensorResult audioCensorResult = new AudioCensorResult();
+		audioCensorResult.setSuggestion(_ctx.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.AudioCensorResult.Suggestion"));
+		audioCensorResult.setLabel(_ctx.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.AudioCensorResult.Label"));
+
+		List<AudioDetailResult> audioDetailResultList = new ArrayList<AudioDetailResult>();
+		for (int i = 0; i < _ctx.lengthValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.AudioCensorResult.AudioDetailResultList.Length"); i++) {
+			AudioDetailResult audioDetailResult = new AudioDetailResult();
+			audioDetailResult.setStartTime(_ctx.integerValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.AudioCensorResult.AudioDetailResultList["+ i +"].StartTime"));
+			audioDetailResult.setEndTime(_ctx.integerValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.AudioCensorResult.AudioDetailResultList["+ i +"].EndTime"));
+			audioDetailResult.setText(_ctx.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.AudioCensorResult.AudioDetailResultList["+ i +"].Text"));
+			audioDetailResult.setLabel(_ctx.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.AudioCensorResult.AudioDetailResultList["+ i +"].Label"));
+
+			audioDetailResultList.add(audioDetailResult);
+		}
+		audioCensorResult.setAudioDetailResultList(audioDetailResultList);
+		mediaCensorJobDetail.setAudioCensorResult(audioCensorResult);
 
 		List<CoverImageCensorResult> coverImageCensorResults = new ArrayList<CoverImageCensorResult>();
 		for (int i = 0; i < _ctx.lengthValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.CoverImageCensorResults.Length"); i++) {
