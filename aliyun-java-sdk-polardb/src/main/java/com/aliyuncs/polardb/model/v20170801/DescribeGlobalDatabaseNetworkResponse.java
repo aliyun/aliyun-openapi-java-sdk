@@ -196,6 +196,8 @@ public class DescribeGlobalDatabaseNetworkResponse extends AcsResponse {
 
 		private String role;
 
+		private String serverlessType;
+
 		private List<DBNode> dBNodes;
 
 		public String getReplicaLag() {
@@ -300,6 +302,14 @@ public class DescribeGlobalDatabaseNetworkResponse extends AcsResponse {
 
 		public void setRole(String role) {
 			this.role = role;
+		}
+
+		public String getServerlessType() {
+			return this.serverlessType;
+		}
+
+		public void setServerlessType(String serverlessType) {
+			this.serverlessType = serverlessType;
 		}
 
 		public List<DBNode> getDBNodes() {

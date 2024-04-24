@@ -22,12 +22,12 @@ import com.aliyuncs.polardb.Endpoint;
  * @author auto create
  * @version 
  */
-public class UpgradeDBClusterMinorVersionRequest extends RpcAcsRequest<UpgradeDBClusterMinorVersionResponse> {
+public class RestartDBLinkRequest extends RpcAcsRequest<RestartDBLinkResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String plannedEndTime;
+	private String securityToken;
 
 	private String resourceOwnerAccount;
 
@@ -36,12 +36,8 @@ public class UpgradeDBClusterMinorVersionRequest extends RpcAcsRequest<UpgradeDB
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	private String plannedStartTime;
-
-	private Boolean fromTimeService;
-	public UpgradeDBClusterMinorVersionRequest() {
-		super("polardb", "2017-08-01", "UpgradeDBClusterMinorVersion", "polardb");
+	public RestartDBLinkRequest() {
+		super("polardb", "2017-08-01", "RestartDBLink", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -60,14 +56,14 @@ public class UpgradeDBClusterMinorVersionRequest extends RpcAcsRequest<UpgradeDB
 		}
 	}
 
-	public String getPlannedEndTime() {
-		return this.plannedEndTime;
+	public String getSecurityToken() {
+		return this.securityToken;
 	}
 
-	public void setPlannedEndTime(String plannedEndTime) {
-		this.plannedEndTime = plannedEndTime;
-		if(plannedEndTime != null){
-			putQueryParameter("PlannedEndTime", plannedEndTime);
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 
@@ -115,31 +111,9 @@ public class UpgradeDBClusterMinorVersionRequest extends RpcAcsRequest<UpgradeDB
 		}
 	}
 
-	public String getPlannedStartTime() {
-		return this.plannedStartTime;
-	}
-
-	public void setPlannedStartTime(String plannedStartTime) {
-		this.plannedStartTime = plannedStartTime;
-		if(plannedStartTime != null){
-			putQueryParameter("PlannedStartTime", plannedStartTime);
-		}
-	}
-
-	public Boolean getFromTimeService() {
-		return this.fromTimeService;
-	}
-
-	public void setFromTimeService(Boolean fromTimeService) {
-		this.fromTimeService = fromTimeService;
-		if(fromTimeService != null){
-			putQueryParameter("FromTimeService", fromTimeService.toString());
-		}
-	}
-
 	@Override
-	public Class<UpgradeDBClusterMinorVersionResponse> getResponseClass() {
-		return UpgradeDBClusterMinorVersionResponse.class;
+	public Class<RestartDBLinkResponse> getResponseClass() {
+		return RestartDBLinkResponse.class;
 	}
 
 }

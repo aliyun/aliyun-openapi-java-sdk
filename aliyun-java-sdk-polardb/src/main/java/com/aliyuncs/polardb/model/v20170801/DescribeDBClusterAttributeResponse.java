@@ -137,6 +137,16 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 	private Boolean hotStandbyHealthy;
 
+	private Boolean hotStandbyWhiteListSwitch;
+
+	private Boolean storageTypeWhiteListSwitch;
+
+	private String aiFreeMode;
+
+	private String aiCreatingTime;
+
+	private String supportInstantSwitchWithImci;
+
 	private List<DBNode> dBNodes;
 
 	private List<Tag> tags;
@@ -591,6 +601,46 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 		this.hotStandbyHealthy = hotStandbyHealthy;
 	}
 
+	public Boolean getHotStandbyWhiteListSwitch() {
+		return this.hotStandbyWhiteListSwitch;
+	}
+
+	public void setHotStandbyWhiteListSwitch(Boolean hotStandbyWhiteListSwitch) {
+		this.hotStandbyWhiteListSwitch = hotStandbyWhiteListSwitch;
+	}
+
+	public Boolean getStorageTypeWhiteListSwitch() {
+		return this.storageTypeWhiteListSwitch;
+	}
+
+	public void setStorageTypeWhiteListSwitch(Boolean storageTypeWhiteListSwitch) {
+		this.storageTypeWhiteListSwitch = storageTypeWhiteListSwitch;
+	}
+
+	public String getAiFreeMode() {
+		return this.aiFreeMode;
+	}
+
+	public void setAiFreeMode(String aiFreeMode) {
+		this.aiFreeMode = aiFreeMode;
+	}
+
+	public String getAiCreatingTime() {
+		return this.aiCreatingTime;
+	}
+
+	public void setAiCreatingTime(String aiCreatingTime) {
+		this.aiCreatingTime = aiCreatingTime;
+	}
+
+	public String getSupportInstantSwitchWithImci() {
+		return this.supportInstantSwitchWithImci;
+	}
+
+	public void setSupportInstantSwitchWithImci(String supportInstantSwitchWithImci) {
+		this.supportInstantSwitchWithImci = supportInstantSwitchWithImci;
+	}
+
 	public List<DBNode> getDBNodes() {
 		return this.dBNodes;
 	}
@@ -656,6 +706,8 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 		private String subCluster;
 
 		private String tair;
+
+		private String remoteMemorySize;
 
 		public String getCreationTime() {
 			return this.creationTime;
@@ -815,6 +867,14 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 		public void setTair(String tair) {
 			this.tair = tair;
+		}
+
+		public String getRemoteMemorySize() {
+			return this.remoteMemorySize;
+		}
+
+		public void setRemoteMemorySize(String remoteMemorySize) {
+			this.remoteMemorySize = remoteMemorySize;
 		}
 	}
 

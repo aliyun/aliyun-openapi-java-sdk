@@ -133,6 +133,14 @@ public class DescribeDBClustersResponse extends AcsResponse {
 
 		private String aiType;
 
+		private String cpuCores;
+
+		private String memorySize;
+
+		private String remoteMemorySize;
+
+		private String subCategory;
+
 		private List<Tag> tags;
 
 		private List<DBNode> dBNodes;
@@ -359,6 +367,38 @@ public class DescribeDBClustersResponse extends AcsResponse {
 
 		public void setAiType(String aiType) {
 			this.aiType = aiType;
+		}
+
+		public String getCpuCores() {
+			return this.cpuCores;
+		}
+
+		public void setCpuCores(String cpuCores) {
+			this.cpuCores = cpuCores;
+		}
+
+		public String getMemorySize() {
+			return this.memorySize;
+		}
+
+		public void setMemorySize(String memorySize) {
+			this.memorySize = memorySize;
+		}
+
+		public String getRemoteMemorySize() {
+			return this.remoteMemorySize;
+		}
+
+		public void setRemoteMemorySize(String remoteMemorySize) {
+			this.remoteMemorySize = remoteMemorySize;
+		}
+
+		public String getSubCategory() {
+			return this.subCategory;
+		}
+
+		public void setSubCategory(String subCategory) {
+			this.subCategory = subCategory;
 		}
 
 		public List<Tag> getTags() {

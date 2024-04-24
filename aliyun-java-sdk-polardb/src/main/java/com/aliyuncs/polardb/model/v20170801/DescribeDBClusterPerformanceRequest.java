@@ -32,6 +32,8 @@ public class DescribeDBClusterPerformanceRequest extends RpcAcsRequest<DescribeD
 	private String dBClusterId;
 
 	private String endTime;
+
+	private String interval;
 	public DescribeDBClusterPerformanceRequest() {
 		super("polardb", "2017-08-01", "DescribeDBClusterPerformance", "polardb");
 		setMethod(MethodType.POST);
@@ -82,6 +84,17 @@ public class DescribeDBClusterPerformanceRequest extends RpcAcsRequest<DescribeD
 		this.endTime = endTime;
 		if(endTime != null){
 			putQueryParameter("EndTime", endTime);
+		}
+	}
+
+	public String getInterval() {
+		return this.interval;
+	}
+
+	public void setInterval(String interval) {
+		this.interval = interval;
+		if(interval != null){
+			putQueryParameter("Interval", interval);
 		}
 	}
 

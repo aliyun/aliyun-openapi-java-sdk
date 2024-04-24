@@ -84,6 +84,11 @@ public class DescribeDBClusterAttributeResponseUnmarshaller {
 		describeDBClusterAttributeResponse.setAiType(_ctx.stringValue("DescribeDBClusterAttributeResponse.AiType"));
 		describeDBClusterAttributeResponse.setProvisionedIops(_ctx.stringValue("DescribeDBClusterAttributeResponse.ProvisionedIops"));
 		describeDBClusterAttributeResponse.setHotStandbyHealthy(_ctx.booleanValue("DescribeDBClusterAttributeResponse.HotStandbyHealthy"));
+		describeDBClusterAttributeResponse.setHotStandbyWhiteListSwitch(_ctx.booleanValue("DescribeDBClusterAttributeResponse.HotStandbyWhiteListSwitch"));
+		describeDBClusterAttributeResponse.setStorageTypeWhiteListSwitch(_ctx.booleanValue("DescribeDBClusterAttributeResponse.StorageTypeWhiteListSwitch"));
+		describeDBClusterAttributeResponse.setAiFreeMode(_ctx.stringValue("DescribeDBClusterAttributeResponse.AiFreeMode"));
+		describeDBClusterAttributeResponse.setAiCreatingTime(_ctx.stringValue("DescribeDBClusterAttributeResponse.AiCreatingTime"));
+		describeDBClusterAttributeResponse.setSupportInstantSwitchWithImci(_ctx.stringValue("DescribeDBClusterAttributeResponse.SupportInstantSwitchWithImci"));
 
 		RelatedAPInstance relatedAPInstance = new RelatedAPInstance();
 		relatedAPInstance.setName(_ctx.stringValue("DescribeDBClusterAttributeResponse.RelatedAPInstance.Name"));
@@ -117,6 +122,7 @@ public class DescribeDBClusterAttributeResponseUnmarshaller {
 			dBNode.setServerlessType(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].ServerlessType"));
 			dBNode.setSubCluster(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].SubCluster"));
 			dBNode.setTair(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].Tair"));
+			dBNode.setRemoteMemorySize(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].RemoteMemorySize"));
 
 			dBNodes.add(dBNode);
 		}

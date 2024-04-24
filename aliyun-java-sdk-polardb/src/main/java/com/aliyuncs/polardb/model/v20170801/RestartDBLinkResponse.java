@@ -15,16 +15,20 @@
 package com.aliyuncs.polardb.model.v20170801;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.polardb.transform.v20170801.UpgradeDBClusterMinorVersionResponseUnmarshaller;
+import com.aliyuncs.polardb.transform.v20170801.RestartDBLinkResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class UpgradeDBClusterMinorVersionResponse extends AcsResponse {
+public class RestartDBLinkResponse extends AcsResponse {
 
 	private String requestId;
+
+	private String taskId;
+
+	private String dBClusterId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -34,8 +38,29 @@ public class UpgradeDBClusterMinorVersionResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getTaskId() {
+		return this.taskId;
+	}
+
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
+	}
+
+	public String getDBClusterId() {
+		return this.dBClusterId;
+	}
+
+	public void setDBClusterId(String dBClusterId) {
+		this.dBClusterId = dBClusterId;
+	}
+
 	@Override
-	public UpgradeDBClusterMinorVersionResponse getInstance(UnmarshallerContext context) {
-		return	UpgradeDBClusterMinorVersionResponseUnmarshaller.unmarshall(this, context);
+	public RestartDBLinkResponse getInstance(UnmarshallerContext context) {
+		return	RestartDBLinkResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

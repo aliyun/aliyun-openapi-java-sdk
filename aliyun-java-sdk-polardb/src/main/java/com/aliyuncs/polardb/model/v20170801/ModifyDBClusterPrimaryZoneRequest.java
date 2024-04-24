@@ -47,6 +47,8 @@ public class ModifyDBClusterPrimaryZoneRequest extends RpcAcsRequest<ModifyDBClu
 
 	private String zoneId;
 
+	private String zoneType;
+
 	private Boolean fromTimeService;
 	public ModifyDBClusterPrimaryZoneRequest() {
 		super("polardb", "2017-08-01", "ModifyDBClusterPrimaryZone", "polardb");
@@ -175,6 +177,17 @@ public class ModifyDBClusterPrimaryZoneRequest extends RpcAcsRequest<ModifyDBClu
 		this.zoneId = zoneId;
 		if(zoneId != null){
 			putQueryParameter("ZoneId", zoneId);
+		}
+	}
+
+	public String getZoneType() {
+		return this.zoneType;
+	}
+
+	public void setZoneType(String zoneType) {
+		this.zoneType = zoneType;
+		if(zoneType != null){
+			putQueryParameter("ZoneType", zoneType);
 		}
 	}
 

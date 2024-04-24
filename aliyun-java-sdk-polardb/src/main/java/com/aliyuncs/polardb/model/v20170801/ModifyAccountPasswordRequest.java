@@ -27,6 +27,8 @@ public class ModifyAccountPasswordRequest extends RpcAcsRequest<ModifyAccountPas
 
 	private Long resourceOwnerId;
 
+	private String passwordType;
+
 	private String accountName;
 
 	private String newAccountPassword;
@@ -55,6 +57,17 @@ public class ModifyAccountPasswordRequest extends RpcAcsRequest<ModifyAccountPas
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getPasswordType() {
+		return this.passwordType;
+	}
+
+	public void setPasswordType(String passwordType) {
+		this.passwordType = passwordType;
+		if(passwordType != null){
+			putQueryParameter("PasswordType", passwordType);
 		}
 	}
 

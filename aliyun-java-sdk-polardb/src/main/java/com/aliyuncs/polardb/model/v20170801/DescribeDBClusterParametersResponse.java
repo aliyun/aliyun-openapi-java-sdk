@@ -248,6 +248,14 @@ public class DescribeDBClusterParametersResponse extends AcsResponse {
 
 		private String rdsParameterDescription;
 
+		private String isRdsKey;
+
+		private String isPolarDBKey;
+
+		private String isInstancePolarDBKey;
+
+		private String isInstanceRdsKey;
+
 		public String getRdsParameterName() {
 			return this.rdsParameterName;
 		}
@@ -318,6 +326,38 @@ public class DescribeDBClusterParametersResponse extends AcsResponse {
 
 		public void setRdsParameterDescription(String rdsParameterDescription) {
 			this.rdsParameterDescription = rdsParameterDescription;
+		}
+
+		public String getIsRdsKey() {
+			return this.isRdsKey;
+		}
+
+		public void setIsRdsKey(String isRdsKey) {
+			this.isRdsKey = isRdsKey;
+		}
+
+		public String getIsPolarDBKey() {
+			return this.isPolarDBKey;
+		}
+
+		public void setIsPolarDBKey(String isPolarDBKey) {
+			this.isPolarDBKey = isPolarDBKey;
+		}
+
+		public String getIsInstancePolarDBKey() {
+			return this.isInstancePolarDBKey;
+		}
+
+		public void setIsInstancePolarDBKey(String isInstancePolarDBKey) {
+			this.isInstancePolarDBKey = isInstancePolarDBKey;
+		}
+
+		public String getIsInstanceRdsKey() {
+			return this.isInstanceRdsKey;
+		}
+
+		public void setIsInstanceRdsKey(String isInstanceRdsKey) {
+			this.isInstanceRdsKey = isInstanceRdsKey;
 		}
 	}
 

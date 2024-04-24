@@ -65,6 +65,7 @@ public class DescribeGlobalDatabaseNetworkResponseUnmarshaller {
 			dBCluster.setStorageUsed(_ctx.stringValue("DescribeGlobalDatabaseNetworkResponse.DBClusters["+ i +"].StorageUsed"));
 			dBCluster.setDBClusterDescription(_ctx.stringValue("DescribeGlobalDatabaseNetworkResponse.DBClusters["+ i +"].DBClusterDescription"));
 			dBCluster.setRole(_ctx.stringValue("DescribeGlobalDatabaseNetworkResponse.DBClusters["+ i +"].Role"));
+			dBCluster.setServerlessType(_ctx.stringValue("DescribeGlobalDatabaseNetworkResponse.DBClusters["+ i +"].ServerlessType"));
 
 			List<DBNode> dBNodes = new ArrayList<DBNode>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeGlobalDatabaseNetworkResponse.DBClusters["+ i +"].DBNodes.Length"); j++) {

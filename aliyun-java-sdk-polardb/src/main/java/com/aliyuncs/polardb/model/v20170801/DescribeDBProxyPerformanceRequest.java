@@ -25,13 +25,19 @@ import com.aliyuncs.polardb.Endpoint;
 public class DescribeDBProxyPerformanceRequest extends RpcAcsRequest<DescribeDBProxyPerformanceResponse> {
 	   
 
+	private String dBEndpointId;
+
 	private String startTime;
+
+	private String type;
 
 	private String key;
 
 	private String dBClusterId;
 
 	private String endTime;
+
+	private String interval;
 	public DescribeDBProxyPerformanceRequest() {
 		super("polardb", "2017-08-01", "DescribeDBProxyPerformance", "polardb");
 		setMethod(MethodType.POST);
@@ -39,6 +45,17 @@ public class DescribeDBProxyPerformanceRequest extends RpcAcsRequest<DescribeDBP
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getDBEndpointId() {
+		return this.dBEndpointId;
+	}
+
+	public void setDBEndpointId(String dBEndpointId) {
+		this.dBEndpointId = dBEndpointId;
+		if(dBEndpointId != null){
+			putQueryParameter("DBEndpointId", dBEndpointId);
+		}
 	}
 
 	public String getStartTime() {
@@ -49,6 +66,17 @@ public class DescribeDBProxyPerformanceRequest extends RpcAcsRequest<DescribeDBP
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
 		}
 	}
 
@@ -82,6 +110,17 @@ public class DescribeDBProxyPerformanceRequest extends RpcAcsRequest<DescribeDBP
 		this.endTime = endTime;
 		if(endTime != null){
 			putQueryParameter("EndTime", endTime);
+		}
+	}
+
+	public String getInterval() {
+		return this.interval;
+	}
+
+	public void setInterval(String interval) {
+		this.interval = interval;
+		if(interval != null){
+			putQueryParameter("Interval", interval);
 		}
 	}
 

@@ -66,6 +66,10 @@ public class DescribeDBClusterParametersResponseUnmarshaller {
 			parametersItem.setIsEqual(_ctx.stringValue("DescribeDBClusterParametersResponse.Parameters["+ i +"].IsEqual"));
 			parametersItem.setDistParameterDescription(_ctx.stringValue("DescribeDBClusterParametersResponse.Parameters["+ i +"].distParameterDescription"));
 			parametersItem.setRdsParameterDescription(_ctx.stringValue("DescribeDBClusterParametersResponse.Parameters["+ i +"].rdsParameterDescription"));
+			parametersItem.setIsRdsKey(_ctx.stringValue("DescribeDBClusterParametersResponse.Parameters["+ i +"].IsRdsKey"));
+			parametersItem.setIsPolarDBKey(_ctx.stringValue("DescribeDBClusterParametersResponse.Parameters["+ i +"].IsPolarDBKey"));
+			parametersItem.setIsInstancePolarDBKey(_ctx.stringValue("DescribeDBClusterParametersResponse.Parameters["+ i +"].IsInstancePolarDBKey"));
+			parametersItem.setIsInstanceRdsKey(_ctx.stringValue("DescribeDBClusterParametersResponse.Parameters["+ i +"].IsInstanceRdsKey"));
 
 			parameters.add(parametersItem);
 		}
