@@ -22,20 +22,20 @@ import com.aliyuncs.vod.Endpoint;
  * @author auto create
  * @version 
  */
-public class RefreshVodObjectCachesRequest extends RpcAcsRequest<RefreshVodObjectCachesResponse> {
+public class DescribeVodDomainHitRateDataRequest extends RpcAcsRequest<DescribeVodDomainHitRateDataResponse> {
 	   
 
-	private String objectPath;
+	private String startTime;
 
-	private String securityToken;
+	private String domainName;
 
-	private String objectType;
+	private String endTime;
 
 	private Long ownerId;
 
-	private Boolean force;
-	public RefreshVodObjectCachesRequest() {
-		super("vod", "2017-03-21", "RefreshVodObjectCaches", "vod");
+	private String interval;
+	public DescribeVodDomainHitRateDataRequest() {
+		super("vod", "2017-03-21", "DescribeVodDomainHitRateData", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -43,36 +43,36 @@ public class RefreshVodObjectCachesRequest extends RpcAcsRequest<RefreshVodObjec
 		} catch (Exception e) {}
 	}
 
-	public String getObjectPath() {
-		return this.objectPath;
+	public String getStartTime() {
+		return this.startTime;
 	}
 
-	public void setObjectPath(String objectPath) {
-		this.objectPath = objectPath;
-		if(objectPath != null){
-			putQueryParameter("ObjectPath", objectPath);
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
 		}
 	}
 
-	public String getSecurityToken() {
-		return this.securityToken;
+	public String getDomainName() {
+		return this.domainName;
 	}
 
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
 		}
 	}
 
-	public String getObjectType() {
-		return this.objectType;
+	public String getEndTime() {
+		return this.endTime;
 	}
 
-	public void setObjectType(String objectType) {
-		this.objectType = objectType;
-		if(objectType != null){
-			putQueryParameter("ObjectType", objectType);
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
 		}
 	}
 
@@ -87,20 +87,20 @@ public class RefreshVodObjectCachesRequest extends RpcAcsRequest<RefreshVodObjec
 		}
 	}
 
-	public Boolean getForce() {
-		return this.force;
+	public String getInterval() {
+		return this.interval;
 	}
 
-	public void setForce(Boolean force) {
-		this.force = force;
-		if(force != null){
-			putQueryParameter("Force", force.toString());
+	public void setInterval(String interval) {
+		this.interval = interval;
+		if(interval != null){
+			putQueryParameter("Interval", interval);
 		}
 	}
 
 	@Override
-	public Class<RefreshVodObjectCachesResponse> getResponseClass() {
-		return RefreshVodObjectCachesResponse.class;
+	public Class<DescribeVodDomainHitRateDataResponse> getResponseClass() {
+		return DescribeVodDomainHitRateDataResponse.class;
 	}
 
 }

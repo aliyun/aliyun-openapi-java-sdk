@@ -22,31 +22,49 @@ import com.aliyuncs.vod.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeVodTranscodeDataRequest extends RpcAcsRequest<DescribeVodTranscodeDataResponse> {
+public class DescribeVodDomainRealTimeBpsDataRequest extends RpcAcsRequest<DescribeVodDomainRealTimeBpsDataResponse> {
 	   
+
+	private String locationNameEn;
+
+	private String ispNameEn;
 
 	private String startTime;
 
-	private String storage;
+	private String domainName;
 
 	private String endTime;
 
-	private String specification;
-
 	private Long ownerId;
-
-	private String appId;
-
-	private String interval;
-
-	private String region;
-	public DescribeVodTranscodeDataRequest() {
-		super("vod", "2017-03-21", "DescribeVodTranscodeData", "vod");
-		setMethod(MethodType.POST);
+	public DescribeVodDomainRealTimeBpsDataRequest() {
+		super("vod", "2017-03-21", "DescribeVodDomainRealTimeBpsData", "vod");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getLocationNameEn() {
+		return this.locationNameEn;
+	}
+
+	public void setLocationNameEn(String locationNameEn) {
+		this.locationNameEn = locationNameEn;
+		if(locationNameEn != null){
+			putQueryParameter("LocationNameEn", locationNameEn);
+		}
+	}
+
+	public String getIspNameEn() {
+		return this.ispNameEn;
+	}
+
+	public void setIspNameEn(String ispNameEn) {
+		this.ispNameEn = ispNameEn;
+		if(ispNameEn != null){
+			putQueryParameter("IspNameEn", ispNameEn);
+		}
 	}
 
 	public String getStartTime() {
@@ -60,14 +78,14 @@ public class DescribeVodTranscodeDataRequest extends RpcAcsRequest<DescribeVodTr
 		}
 	}
 
-	public String getStorage() {
-		return this.storage;
+	public String getDomainName() {
+		return this.domainName;
 	}
 
-	public void setStorage(String storage) {
-		this.storage = storage;
-		if(storage != null){
-			putQueryParameter("Storage", storage);
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
 		}
 	}
 
@@ -82,17 +100,6 @@ public class DescribeVodTranscodeDataRequest extends RpcAcsRequest<DescribeVodTr
 		}
 	}
 
-	public String getSpecification() {
-		return this.specification;
-	}
-
-	public void setSpecification(String specification) {
-		this.specification = specification;
-		if(specification != null){
-			putQueryParameter("Specification", specification);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -104,42 +111,9 @@ public class DescribeVodTranscodeDataRequest extends RpcAcsRequest<DescribeVodTr
 		}
 	}
 
-	public String getAppId() {
-		return this.appId;
-	}
-
-	public void setAppId(String appId) {
-		this.appId = appId;
-		if(appId != null){
-			putQueryParameter("AppId", appId);
-		}
-	}
-
-	public String getInterval() {
-		return this.interval;
-	}
-
-	public void setInterval(String interval) {
-		this.interval = interval;
-		if(interval != null){
-			putQueryParameter("Interval", interval);
-		}
-	}
-
-	public String getRegion() {
-		return this.region;
-	}
-
-	public void setRegion(String region) {
-		this.region = region;
-		if(region != null){
-			putQueryParameter("Region", region);
-		}
-	}
-
 	@Override
-	public Class<DescribeVodTranscodeDataResponse> getResponseClass() {
-		return DescribeVodTranscodeDataResponse.class;
+	public Class<DescribeVodDomainRealTimeBpsDataResponse> getResponseClass() {
+		return DescribeVodDomainRealTimeBpsDataResponse.class;
 	}
 
 }

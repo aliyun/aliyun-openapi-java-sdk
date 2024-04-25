@@ -22,26 +22,18 @@ import com.aliyuncs.vod.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeVodTranscodeDataRequest extends RpcAcsRequest<DescribeVodTranscodeDataResponse> {
+public class DescribeVodDomainReqHitRateDataRequest extends RpcAcsRequest<DescribeVodDomainReqHitRateDataResponse> {
 	   
 
 	private String startTime;
 
-	private String storage;
+	private String domainName;
 
 	private String endTime;
 
-	private String specification;
-
-	private Long ownerId;
-
-	private String appId;
-
 	private String interval;
-
-	private String region;
-	public DescribeVodTranscodeDataRequest() {
-		super("vod", "2017-03-21", "DescribeVodTranscodeData", "vod");
+	public DescribeVodDomainReqHitRateDataRequest() {
+		super("vod", "2017-03-21", "DescribeVodDomainReqHitRateData", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -60,14 +52,14 @@ public class DescribeVodTranscodeDataRequest extends RpcAcsRequest<DescribeVodTr
 		}
 	}
 
-	public String getStorage() {
-		return this.storage;
+	public String getDomainName() {
+		return this.domainName;
 	}
 
-	public void setStorage(String storage) {
-		this.storage = storage;
-		if(storage != null){
-			putQueryParameter("Storage", storage);
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
 		}
 	}
 
@@ -82,39 +74,6 @@ public class DescribeVodTranscodeDataRequest extends RpcAcsRequest<DescribeVodTr
 		}
 	}
 
-	public String getSpecification() {
-		return this.specification;
-	}
-
-	public void setSpecification(String specification) {
-		this.specification = specification;
-		if(specification != null){
-			putQueryParameter("Specification", specification);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getAppId() {
-		return this.appId;
-	}
-
-	public void setAppId(String appId) {
-		this.appId = appId;
-		if(appId != null){
-			putQueryParameter("AppId", appId);
-		}
-	}
-
 	public String getInterval() {
 		return this.interval;
 	}
@@ -126,20 +85,9 @@ public class DescribeVodTranscodeDataRequest extends RpcAcsRequest<DescribeVodTr
 		}
 	}
 
-	public String getRegion() {
-		return this.region;
-	}
-
-	public void setRegion(String region) {
-		this.region = region;
-		if(region != null){
-			putQueryParameter("Region", region);
-		}
-	}
-
 	@Override
-	public Class<DescribeVodTranscodeDataResponse> getResponseClass() {
-		return DescribeVodTranscodeDataResponse.class;
+	public Class<DescribeVodDomainReqHitRateDataResponse> getResponseClass() {
+		return DescribeVodDomainReqHitRateDataResponse.class;
 	}
 
 }
