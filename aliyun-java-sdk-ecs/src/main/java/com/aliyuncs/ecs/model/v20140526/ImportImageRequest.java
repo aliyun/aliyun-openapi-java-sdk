@@ -40,6 +40,8 @@ public class ImportImageRequest extends RpcAcsRequest<ImportImageResponse> {
 
 	private String imageName;
 
+	private String storageLocationArn;
+
 	private List<Tag> tags;
 
 	private String architecture;
@@ -145,6 +147,17 @@ public class ImportImageRequest extends RpcAcsRequest<ImportImageResponse> {
 		this.imageName = imageName;
 		if(imageName != null){
 			putQueryParameter("ImageName", imageName);
+		}
+	}
+
+	public String getStorageLocationArn() {
+		return this.storageLocationArn;
+	}
+
+	public void setStorageLocationArn(String storageLocationArn) {
+		this.storageLocationArn = storageLocationArn;
+		if(storageLocationArn != null){
+			putQueryParameter("StorageLocationArn", storageLocationArn);
 		}
 	}
 

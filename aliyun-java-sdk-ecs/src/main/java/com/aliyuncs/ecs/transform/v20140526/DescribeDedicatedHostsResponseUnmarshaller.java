@@ -37,6 +37,7 @@ public class DescribeDedicatedHostsResponseUnmarshaller {
 		describeDedicatedHostsResponse.setPageSize(_ctx.integerValue("DescribeDedicatedHostsResponse.PageSize"));
 		describeDedicatedHostsResponse.setPageNumber(_ctx.integerValue("DescribeDedicatedHostsResponse.PageNumber"));
 		describeDedicatedHostsResponse.setTotalCount(_ctx.integerValue("DescribeDedicatedHostsResponse.TotalCount"));
+		describeDedicatedHostsResponse.setNextToken(_ctx.stringValue("DescribeDedicatedHostsResponse.NextToken"));
 
 		List<DedicatedHost> dedicatedHosts = new ArrayList<DedicatedHost>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDedicatedHostsResponse.DedicatedHosts.Length"); i++) {

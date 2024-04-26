@@ -38,6 +38,8 @@ public class DescribeDedicatedHostsRequest extends RpcAcsRequest<DescribeDedicat
 
 	private String lockReason;
 
+	private String nextToken;
+
 	private Integer pageSize;
 
 	private String dedicatedHostClusterId;
@@ -55,6 +57,8 @@ public class DescribeDedicatedHostsRequest extends RpcAcsRequest<DescribeDedicat
 	private Long ownerId;
 
 	private String zoneId;
+
+	private Integer maxResults;
 
 	private String status;
 	public DescribeDedicatedHostsRequest() {
@@ -129,6 +133,17 @@ public class DescribeDedicatedHostsRequest extends RpcAcsRequest<DescribeDedicat
 		this.lockReason = lockReason;
 		if(lockReason != null){
 			putQueryParameter("LockReason", lockReason);
+		}
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
 		}
 	}
 
@@ -231,6 +246,17 @@ public class DescribeDedicatedHostsRequest extends RpcAcsRequest<DescribeDedicat
 		this.zoneId = zoneId;
 		if(zoneId != null){
 			putQueryParameter("ZoneId", zoneId);
+		}
+	}
+
+	public Integer getMaxResults() {
+		return this.maxResults;
+	}
+
+	public void setMaxResults(Integer maxResults) {
+		this.maxResults = maxResults;
+		if(maxResults != null){
+			putQueryParameter("MaxResults", maxResults.toString());
 		}
 	}
 

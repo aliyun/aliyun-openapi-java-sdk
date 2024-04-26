@@ -176,6 +176,9 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 				putQueryParameter("LaunchConfiguration.DataDisk." + (depth1 + 1) + ".Category" , launchConfigurationDataDisks.get(depth1).getCategory());
 				putQueryParameter("LaunchConfiguration.DataDisk." + (depth1 + 1) + ".DeleteWithInstance" , launchConfigurationDataDisks.get(depth1).getDeleteWithInstance());
 				putQueryParameter("LaunchConfiguration.DataDisk." + (depth1 + 1) + ".Encrypted" , launchConfigurationDataDisks.get(depth1).getEncrypted());
+				putQueryParameter("LaunchConfiguration.DataDisk." + (depth1 + 1) + ".EncryptAlgorithm" , launchConfigurationDataDisks.get(depth1).getEncryptAlgorithm());
+				putQueryParameter("LaunchConfiguration.DataDisk." + (depth1 + 1) + ".ProvisionedIops" , launchConfigurationDataDisks.get(depth1).getProvisionedIops());
+				putQueryParameter("LaunchConfiguration.DataDisk." + (depth1 + 1) + ".BurstingEnabled" , launchConfigurationDataDisks.get(depth1).getBurstingEnabled());
 			}
 		}	
 	}
@@ -580,6 +583,8 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 				putQueryParameter("LaunchConfiguration.SystemDisk.Encrypted" , launchConfigurationSystemDisk.getEncrypted());
 				putQueryParameter("LaunchConfiguration.SystemDisk.KMSKeyId" , launchConfigurationSystemDisk.getKMSKeyId());
 				putQueryParameter("LaunchConfiguration.SystemDisk.EncryptAlgorithm" , launchConfigurationSystemDisk.getEncryptAlgorithm());
+				putQueryParameter("LaunchConfiguration.SystemDisk.ProvisionedIops" , launchConfigurationSystemDisk.getProvisionedIops());
+				putQueryParameter("LaunchConfiguration.SystemDisk.BurstingEnabled" , launchConfigurationSystemDisk.getBurstingEnabled());
 		}	
 	}
 
@@ -928,6 +933,12 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 
 		private Boolean encrypted;
 
+		private String encryptAlgorithm;
+
+		private Long provisionedIops;
+
+		private Boolean burstingEnabled;
+
 		public String getPerformanceLevel() {
 			return this.performanceLevel;
 		}
@@ -1006,6 +1017,30 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 
 		public void setEncrypted(Boolean encrypted) {
 			this.encrypted = encrypted;
+		}
+
+		public String getEncryptAlgorithm() {
+			return this.encryptAlgorithm;
+		}
+
+		public void setEncryptAlgorithm(String encryptAlgorithm) {
+			this.encryptAlgorithm = encryptAlgorithm;
+		}
+
+		public Long getProvisionedIops() {
+			return this.provisionedIops;
+		}
+
+		public void setProvisionedIops(Long provisionedIops) {
+			this.provisionedIops = provisionedIops;
+		}
+
+		public Boolean getBurstingEnabled() {
+			return this.burstingEnabled;
+		}
+
+		public void setBurstingEnabled(Boolean burstingEnabled) {
+			this.burstingEnabled = burstingEnabled;
 		}
 	}
 
@@ -1099,6 +1134,10 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 
 		private String encryptAlgorithm;
 
+		private Long provisionedIops;
+
+		private Boolean burstingEnabled;
+
 		public String getEncrypted() {
 			return this.encrypted;
 		}
@@ -1121,6 +1160,22 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 
 		public void setEncryptAlgorithm(String encryptAlgorithm) {
 			this.encryptAlgorithm = encryptAlgorithm;
+		}
+
+		public Long getProvisionedIops() {
+			return this.provisionedIops;
+		}
+
+		public void setProvisionedIops(Long provisionedIops) {
+			this.provisionedIops = provisionedIops;
+		}
+
+		public Boolean getBurstingEnabled() {
+			return this.burstingEnabled;
+		}
+
+		public void setBurstingEnabled(Boolean burstingEnabled) {
+			this.burstingEnabled = burstingEnabled;
 		}
 	}
 

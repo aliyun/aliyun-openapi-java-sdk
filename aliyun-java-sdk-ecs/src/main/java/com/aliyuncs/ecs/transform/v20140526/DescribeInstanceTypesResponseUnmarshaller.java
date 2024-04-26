@@ -71,6 +71,12 @@ public class DescribeInstanceTypesResponseUnmarshaller {
 			instanceType.setGPUMemorySize(_ctx.floatValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].GPUMemorySize"));
 			instanceType.setNetworkCardQuantity(_ctx.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].NetworkCardQuantity"));
 
+			List<String> supportedBootModes = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].SupportedBootModes.Length"); j++) {
+				supportedBootModes.add(_ctx.stringValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].SupportedBootModes["+ j +"]"));
+			}
+			instanceType.setSupportedBootModes(supportedBootModes);
+
 			List<NetworkCardInfo> networkCards = new ArrayList<NetworkCardInfo>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].NetworkCards.Length"); j++) {
 				NetworkCardInfo networkCardInfo = new NetworkCardInfo();

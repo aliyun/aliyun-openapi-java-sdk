@@ -1,3 +1,6 @@
+2024-04-26 Version: 5.11.6
+- Add SupportedBootModes for DescribeInstanceTypes.
+
 2024-03-13 Version: 5.11.5
 - Supported Username for StartTerminalSession.
 

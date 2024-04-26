@@ -33,6 +33,8 @@ public class DescribeDedicatedHostsResponse extends AcsResponse {
 
 	private Integer totalCount;
 
+	private String nextToken;
+
 	private List<DedicatedHost> dedicatedHosts;
 
 	public Integer getPageSize() {
@@ -65,6 +67,14 @@ public class DescribeDedicatedHostsResponse extends AcsResponse {
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
 	}
 
 	public List<DedicatedHost> getDedicatedHosts() {

@@ -133,6 +133,8 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 
 		private List<NetworkCardInfo> networkCards;
 
+		private List<String> supportedBootModes;
+
 		public Integer getEniTotalQuantity() {
 			return this.eniTotalQuantity;
 		}
@@ -435,6 +437,14 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 
 		public void setNetworkCards(List<NetworkCardInfo> networkCards) {
 			this.networkCards = networkCards;
+		}
+
+		public List<String> getSupportedBootModes() {
+			return this.supportedBootModes;
+		}
+
+		public void setSupportedBootModes(List<String> supportedBootModes) {
+			this.supportedBootModes = supportedBootModes;
 		}
 
 		public static class NetworkCardInfo {

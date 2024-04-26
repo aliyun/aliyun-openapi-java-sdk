@@ -44,13 +44,21 @@ public class DescribeInstanceTypesRequest extends RpcAcsRequest<DescribeInstance
 
 	private Integer minimumCpuCoreCount;
 
+	private List<String> localStorageCategoriess;
+
 	private Integer minimumPrimaryEniQueueNumber;
+
+	private List<String> instanceTypeFamiliess;
 
 	private Integer minimumBaselineCredit;
 
 	private Integer minimumSecondaryEniQueueNumber;
 
+	private List<String> cpuArchitecturess;
+
 	private Integer minimumInstanceBandwidthTx;
+
+	private List<String> instanceCategoriess;
 
 	private Integer minimumGPUAmount;
 
@@ -59,6 +67,8 @@ public class DescribeInstanceTypesRequest extends RpcAcsRequest<DescribeInstance
 	private String cpuArchitecture;
 
 	private Long ownerId;
+
+	private List<String> physicalProcessorModelss;
 
 	private Float minimumMemorySize;
 
@@ -105,6 +115,8 @@ public class DescribeInstanceTypesRequest extends RpcAcsRequest<DescribeInstance
 	private String instanceTypeFamily;
 
 	private Integer minimumEniPrivateIpAddressQuantity;
+
+	private List<String> gpuSpecss;
 
 	private Long minimumLocalStorageCapacity;
 	public DescribeInstanceTypesRequest() {
@@ -215,6 +227,19 @@ public class DescribeInstanceTypesRequest extends RpcAcsRequest<DescribeInstance
 		}
 	}
 
+	public List<String> getLocalStorageCategoriess() {
+		return this.localStorageCategoriess;
+	}
+
+	public void setLocalStorageCategoriess(List<String> localStorageCategoriess) {
+		this.localStorageCategoriess = localStorageCategoriess;	
+		if (localStorageCategoriess != null) {
+			for (int i = 0; i < localStorageCategoriess.size(); i++) {
+				putQueryParameter("LocalStorageCategories." + (i + 1) , localStorageCategoriess.get(i));
+			}
+		}	
+	}
+
 	public Integer getMinimumPrimaryEniQueueNumber() {
 		return this.minimumPrimaryEniQueueNumber;
 	}
@@ -224,6 +249,19 @@ public class DescribeInstanceTypesRequest extends RpcAcsRequest<DescribeInstance
 		if(minimumPrimaryEniQueueNumber != null){
 			putQueryParameter("MinimumPrimaryEniQueueNumber", minimumPrimaryEniQueueNumber.toString());
 		}
+	}
+
+	public List<String> getInstanceTypeFamiliess() {
+		return this.instanceTypeFamiliess;
+	}
+
+	public void setInstanceTypeFamiliess(List<String> instanceTypeFamiliess) {
+		this.instanceTypeFamiliess = instanceTypeFamiliess;	
+		if (instanceTypeFamiliess != null) {
+			for (int i = 0; i < instanceTypeFamiliess.size(); i++) {
+				putQueryParameter("InstanceTypeFamilies." + (i + 1) , instanceTypeFamiliess.get(i));
+			}
+		}	
 	}
 
 	public Integer getMinimumBaselineCredit() {
@@ -248,6 +286,19 @@ public class DescribeInstanceTypesRequest extends RpcAcsRequest<DescribeInstance
 		}
 	}
 
+	public List<String> getCpuArchitecturess() {
+		return this.cpuArchitecturess;
+	}
+
+	public void setCpuArchitecturess(List<String> cpuArchitecturess) {
+		this.cpuArchitecturess = cpuArchitecturess;	
+		if (cpuArchitecturess != null) {
+			for (int i = 0; i < cpuArchitecturess.size(); i++) {
+				putQueryParameter("CpuArchitectures." + (i + 1) , cpuArchitecturess.get(i));
+			}
+		}	
+	}
+
 	public Integer getMinimumInstanceBandwidthTx() {
 		return this.minimumInstanceBandwidthTx;
 	}
@@ -257,6 +308,19 @@ public class DescribeInstanceTypesRequest extends RpcAcsRequest<DescribeInstance
 		if(minimumInstanceBandwidthTx != null){
 			putQueryParameter("MinimumInstanceBandwidthTx", minimumInstanceBandwidthTx.toString());
 		}
+	}
+
+	public List<String> getInstanceCategoriess() {
+		return this.instanceCategoriess;
+	}
+
+	public void setInstanceCategoriess(List<String> instanceCategoriess) {
+		this.instanceCategoriess = instanceCategoriess;	
+		if (instanceCategoriess != null) {
+			for (int i = 0; i < instanceCategoriess.size(); i++) {
+				putQueryParameter("InstanceCategories." + (i + 1) , instanceCategoriess.get(i));
+			}
+		}	
 	}
 
 	public Integer getMinimumGPUAmount() {
@@ -301,6 +365,19 @@ public class DescribeInstanceTypesRequest extends RpcAcsRequest<DescribeInstance
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
 		}
+	}
+
+	public List<String> getPhysicalProcessorModelss() {
+		return this.physicalProcessorModelss;
+	}
+
+	public void setPhysicalProcessorModelss(List<String> physicalProcessorModelss) {
+		this.physicalProcessorModelss = physicalProcessorModelss;	
+		if (physicalProcessorModelss != null) {
+			for (int i = 0; i < physicalProcessorModelss.size(); i++) {
+				putQueryParameter("PhysicalProcessorModels." + (i + 1) , physicalProcessorModelss.get(i));
+			}
+		}	
 	}
 
 	public Float getMinimumMemorySize() {
@@ -556,6 +633,19 @@ public class DescribeInstanceTypesRequest extends RpcAcsRequest<DescribeInstance
 		if(minimumEniPrivateIpAddressQuantity != null){
 			putQueryParameter("MinimumEniPrivateIpAddressQuantity", minimumEniPrivateIpAddressQuantity.toString());
 		}
+	}
+
+	public List<String> getGpuSpecss() {
+		return this.gpuSpecss;
+	}
+
+	public void setGpuSpecss(List<String> gpuSpecss) {
+		this.gpuSpecss = gpuSpecss;	
+		if (gpuSpecss != null) {
+			for (int i = 0; i < gpuSpecss.size(); i++) {
+				putQueryParameter("GpuSpecs." + (i + 1) , gpuSpecss.get(i));
+			}
+		}	
 	}
 
 	public Long getMinimumLocalStorageCapacity() {
