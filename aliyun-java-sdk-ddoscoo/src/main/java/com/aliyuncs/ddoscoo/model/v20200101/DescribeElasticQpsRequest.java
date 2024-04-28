@@ -22,34 +22,25 @@ import com.aliyuncs.ddoscoo.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeDomainQpsWithCacheRequest extends RpcAcsRequest<DescribeDomainQpsWithCacheResponse> {
+public class DescribeElasticQpsRequest extends RpcAcsRequest<DescribeElasticQpsResponse> {
 	   
-
-	private Long endTime;
 
 	private Long startTime;
 
-	private String resourceGroupId;
+	private String ip;
 
-	private String domain;
-	public DescribeDomainQpsWithCacheRequest() {
-		super("ddoscoo", "2020-01-01", "DescribeDomainQpsWithCache", "ddoscoo");
+	private Long endTime;
+
+	private String interval;
+
+	private String region;
+	public DescribeElasticQpsRequest() {
+		super("ddoscoo", "2020-01-01", "DescribeElasticQps", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(Long endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime.toString());
-		}
 	}
 
 	public Long getStartTime() {
@@ -63,31 +54,53 @@ public class DescribeDomainQpsWithCacheRequest extends RpcAcsRequest<DescribeDom
 		}
 	}
 
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
+	public String getIp() {
+		return this.ip;
 	}
 
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
+	public void setIp(String ip) {
+		this.ip = ip;
+		if(ip != null){
+			putQueryParameter("Ip", ip);
 		}
 	}
 
-	public String getDomain() {
-		return this.domain;
+	public Long getEndTime() {
+		return this.endTime;
 	}
 
-	public void setDomain(String domain) {
-		this.domain = domain;
-		if(domain != null){
-			putQueryParameter("Domain", domain);
+	public void setEndTime(Long endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime.toString());
+		}
+	}
+
+	public String getInterval() {
+		return this.interval;
+	}
+
+	public void setInterval(String interval) {
+		this.interval = interval;
+		if(interval != null){
+			putQueryParameter("Interval", interval);
+		}
+	}
+
+	public String getRegion() {
+		return this.region;
+	}
+
+	public void setRegion(String region) {
+		this.region = region;
+		if(region != null){
+			putQueryParameter("Region", region);
 		}
 	}
 
 	@Override
-	public Class<DescribeDomainQpsWithCacheResponse> getResponseClass() {
-		return DescribeDomainQpsWithCacheResponse.class;
+	public Class<DescribeElasticQpsResponse> getResponseClass() {
+		return DescribeElasticQpsResponse.class;
 	}
 
 }

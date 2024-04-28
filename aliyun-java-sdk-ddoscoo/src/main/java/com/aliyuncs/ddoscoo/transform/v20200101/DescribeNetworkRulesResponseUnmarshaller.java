@@ -37,6 +37,7 @@ public class DescribeNetworkRulesResponseUnmarshaller {
 			networkRule.setInstanceId(_ctx.stringValue("DescribeNetworkRulesResponse.NetworkRules["+ i +"].InstanceId"));
 			networkRule.setBizProtocol(_ctx.stringValue("DescribeNetworkRulesResponse.NetworkRules["+ i +"].Protocol"));
 			networkRule.setBackendPort(_ctx.integerValue("DescribeNetworkRulesResponse.NetworkRules["+ i +"].BackendPort"));
+			networkRule.setRemark(_ctx.stringValue("DescribeNetworkRulesResponse.NetworkRules["+ i +"].Remark"));
 
 			List<String> realServers = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeNetworkRulesResponse.NetworkRules["+ i +"].RealServers.Length"); j++) {
