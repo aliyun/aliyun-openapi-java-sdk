@@ -27,21 +27,21 @@ public class DescribeCasterProgramResponseUnmarshaller {
 	public static DescribeCasterProgramResponse unmarshall(DescribeCasterProgramResponse describeCasterProgramResponse, UnmarshallerContext _ctx) {
 		
 		describeCasterProgramResponse.setRequestId(_ctx.stringValue("DescribeCasterProgramResponse.RequestId"));
-		describeCasterProgramResponse.setProgramName(_ctx.stringValue("DescribeCasterProgramResponse.ProgramName"));
-		describeCasterProgramResponse.setProgramEffect(_ctx.integerValue("DescribeCasterProgramResponse.ProgramEffect"));
 		describeCasterProgramResponse.setCasterId(_ctx.stringValue("DescribeCasterProgramResponse.CasterId"));
+		describeCasterProgramResponse.setProgramEffect(_ctx.integerValue("DescribeCasterProgramResponse.ProgramEffect"));
+		describeCasterProgramResponse.setProgramName(_ctx.stringValue("DescribeCasterProgramResponse.ProgramName"));
 		describeCasterProgramResponse.setTotal(_ctx.integerValue("DescribeCasterProgramResponse.Total"));
 
 		List<Episode> episodes = new ArrayList<Episode>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCasterProgramResponse.Episodes.Length"); i++) {
 			Episode episode = new Episode();
-			episode.setStatus(_ctx.integerValue("DescribeCasterProgramResponse.Episodes["+ i +"].Status"));
 			episode.setEndTime(_ctx.stringValue("DescribeCasterProgramResponse.Episodes["+ i +"].EndTime"));
-			episode.setStartTime(_ctx.stringValue("DescribeCasterProgramResponse.Episodes["+ i +"].StartTime"));
+			episode.setEpisodeId(_ctx.stringValue("DescribeCasterProgramResponse.Episodes["+ i +"].EpisodeId"));
 			episode.setEpisodeName(_ctx.stringValue("DescribeCasterProgramResponse.Episodes["+ i +"].EpisodeName"));
 			episode.setEpisodeType(_ctx.stringValue("DescribeCasterProgramResponse.Episodes["+ i +"].EpisodeType"));
-			episode.setEpisodeId(_ctx.stringValue("DescribeCasterProgramResponse.Episodes["+ i +"].EpisodeId"));
 			episode.setResourceId(_ctx.stringValue("DescribeCasterProgramResponse.Episodes["+ i +"].ResourceId"));
+			episode.setStartTime(_ctx.stringValue("DescribeCasterProgramResponse.Episodes["+ i +"].StartTime"));
+			episode.setStatus(_ctx.integerValue("DescribeCasterProgramResponse.Episodes["+ i +"].Status"));
 			episode.setSwitchType(_ctx.stringValue("DescribeCasterProgramResponse.Episodes["+ i +"].SwitchType"));
 
 			List<String> componentIds = new ArrayList<String>();

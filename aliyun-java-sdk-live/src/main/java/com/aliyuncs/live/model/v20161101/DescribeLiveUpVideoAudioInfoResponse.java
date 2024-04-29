@@ -47,57 +47,49 @@ public class DescribeLiveUpVideoAudioInfoResponse extends AcsResponse {
 
 	public static class PublishItem {
 
-		private String publishTime;
-
 		private String appName;
 
 		private String codecInfo;
 
-		private String publishIp;
-
-		private String streamName;
-
-		private String publishStatus;
-
-		private String uniqueId;
+		private String domainName;
 
 		private String publishInterval;
 
+		private String publishIp;
+
+		private String publishStatus;
+
+		private String publishTime;
+
 		private String stopTime;
 
-		private String domainName;
+		private String streamName;
 
-		private List<VideoFramesItem> videoFrames;
-
-		private List<AudioFramesItem> audioFrames;
-
-		private List<VideoStampsItem> videoStamps;
-
-		private List<AudioStampsItem> audioStamps;
-
-		private List<V_AStamp> videoAndAudioStamp;
-
-		private List<AvcHeadersItem> avcHeaders;
+		private String uniqueId;
 
 		private List<AacHeadersItem> aacHeaders;
 
-		private List<VideoBitRateItem> videoBitRate;
-
 		private List<AudioBitRateItem> audioBitRate;
 
-		private List<VideoIntervalItem> videoInterval;
+		private List<AudioFramesItem> audioFrames;
 
 		private List<AudioIntervalItem> audioInterval;
 
+		private List<AudioStampsItem> audioStamps;
+
+		private List<AvcHeadersItem> avcHeaders;
+
 		private List<ErrorFlagsItem> errorFlags;
 
-		public String getPublishTime() {
-			return this.publishTime;
-		}
+		private List<V_AStamp> videoAndAudioStamp;
 
-		public void setPublishTime(String publishTime) {
-			this.publishTime = publishTime;
-		}
+		private List<VideoBitRateItem> videoBitRate;
+
+		private List<VideoFramesItem> videoFrames;
+
+		private List<VideoIntervalItem> videoInterval;
+
+		private List<VideoStampsItem> videoStamps;
 
 		public String getAppName() {
 			return this.appName;
@@ -115,36 +107,12 @@ public class DescribeLiveUpVideoAudioInfoResponse extends AcsResponse {
 			this.codecInfo = codecInfo;
 		}
 
-		public String getPublishIp() {
-			return this.publishIp;
+		public String getDomainName() {
+			return this.domainName;
 		}
 
-		public void setPublishIp(String publishIp) {
-			this.publishIp = publishIp;
-		}
-
-		public String getStreamName() {
-			return this.streamName;
-		}
-
-		public void setStreamName(String streamName) {
-			this.streamName = streamName;
-		}
-
-		public String getPublishStatus() {
-			return this.publishStatus;
-		}
-
-		public void setPublishStatus(String publishStatus) {
-			this.publishStatus = publishStatus;
-		}
-
-		public String getUniqueId() {
-			return this.uniqueId;
-		}
-
-		public void setUniqueId(String uniqueId) {
-			this.uniqueId = uniqueId;
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
 		}
 
 		public String getPublishInterval() {
@@ -155,6 +123,30 @@ public class DescribeLiveUpVideoAudioInfoResponse extends AcsResponse {
 			this.publishInterval = publishInterval;
 		}
 
+		public String getPublishIp() {
+			return this.publishIp;
+		}
+
+		public void setPublishIp(String publishIp) {
+			this.publishIp = publishIp;
+		}
+
+		public String getPublishStatus() {
+			return this.publishStatus;
+		}
+
+		public void setPublishStatus(String publishStatus) {
+			this.publishStatus = publishStatus;
+		}
+
+		public String getPublishTime() {
+			return this.publishTime;
+		}
+
+		public void setPublishTime(String publishTime) {
+			this.publishTime = publishTime;
+		}
+
 		public String getStopTime() {
 			return this.stopTime;
 		}
@@ -163,60 +155,20 @@ public class DescribeLiveUpVideoAudioInfoResponse extends AcsResponse {
 			this.stopTime = stopTime;
 		}
 
-		public String getDomainName() {
-			return this.domainName;
+		public String getStreamName() {
+			return this.streamName;
 		}
 
-		public void setDomainName(String domainName) {
-			this.domainName = domainName;
+		public void setStreamName(String streamName) {
+			this.streamName = streamName;
 		}
 
-		public List<VideoFramesItem> getVideoFrames() {
-			return this.videoFrames;
+		public String getUniqueId() {
+			return this.uniqueId;
 		}
 
-		public void setVideoFrames(List<VideoFramesItem> videoFrames) {
-			this.videoFrames = videoFrames;
-		}
-
-		public List<AudioFramesItem> getAudioFrames() {
-			return this.audioFrames;
-		}
-
-		public void setAudioFrames(List<AudioFramesItem> audioFrames) {
-			this.audioFrames = audioFrames;
-		}
-
-		public List<VideoStampsItem> getVideoStamps() {
-			return this.videoStamps;
-		}
-
-		public void setVideoStamps(List<VideoStampsItem> videoStamps) {
-			this.videoStamps = videoStamps;
-		}
-
-		public List<AudioStampsItem> getAudioStamps() {
-			return this.audioStamps;
-		}
-
-		public void setAudioStamps(List<AudioStampsItem> audioStamps) {
-			this.audioStamps = audioStamps;
-		}
-
-		public List<V_AStamp> getVideoAndAudioStamp() {
-			return this.videoAndAudioStamp;
-		}
-
-		public void setVideoAndAudioStamp(List<V_AStamp> videoAndAudioStamp) {
-			this.videoAndAudioStamp = videoAndAudioStamp;
-		}
-
-		public List<AvcHeadersItem> getAvcHeaders() {
-			return this.avcHeaders;
-		}
-
-		public void setAvcHeaders(List<AvcHeadersItem> avcHeaders) {
-			this.avcHeaders = avcHeaders;
+		public void setUniqueId(String uniqueId) {
+			this.uniqueId = uniqueId;
 		}
 
 		public List<AacHeadersItem> getAacHeaders() {
@@ -227,14 +179,6 @@ public class DescribeLiveUpVideoAudioInfoResponse extends AcsResponse {
 			this.aacHeaders = aacHeaders;
 		}
 
-		public List<VideoBitRateItem> getVideoBitRate() {
-			return this.videoBitRate;
-		}
-
-		public void setVideoBitRate(List<VideoBitRateItem> videoBitRate) {
-			this.videoBitRate = videoBitRate;
-		}
-
 		public List<AudioBitRateItem> getAudioBitRate() {
 			return this.audioBitRate;
 		}
@@ -243,12 +187,12 @@ public class DescribeLiveUpVideoAudioInfoResponse extends AcsResponse {
 			this.audioBitRate = audioBitRate;
 		}
 
-		public List<VideoIntervalItem> getVideoInterval() {
-			return this.videoInterval;
+		public List<AudioFramesItem> getAudioFrames() {
+			return this.audioFrames;
 		}
 
-		public void setVideoInterval(List<VideoIntervalItem> videoInterval) {
-			this.videoInterval = videoInterval;
+		public void setAudioFrames(List<AudioFramesItem> audioFrames) {
+			this.audioFrames = audioFrames;
 		}
 
 		public List<AudioIntervalItem> getAudioInterval() {
@@ -259,6 +203,22 @@ public class DescribeLiveUpVideoAudioInfoResponse extends AcsResponse {
 			this.audioInterval = audioInterval;
 		}
 
+		public List<AudioStampsItem> getAudioStamps() {
+			return this.audioStamps;
+		}
+
+		public void setAudioStamps(List<AudioStampsItem> audioStamps) {
+			this.audioStamps = audioStamps;
+		}
+
+		public List<AvcHeadersItem> getAvcHeaders() {
+			return this.avcHeaders;
+		}
+
+		public void setAvcHeaders(List<AvcHeadersItem> avcHeaders) {
+			this.avcHeaders = avcHeaders;
+		}
+
 		public List<ErrorFlagsItem> getErrorFlags() {
 			return this.errorFlags;
 		}
@@ -267,157 +227,51 @@ public class DescribeLiveUpVideoAudioInfoResponse extends AcsResponse {
 			this.errorFlags = errorFlags;
 		}
 
-		public static class VideoFramesItem {
-
-			private Integer value;
-
-			private Long time;
-
-			public Integer getValue() {
-				return this.value;
-			}
-
-			public void setValue(Integer value) {
-				this.value = value;
-			}
-
-			public Long getTime() {
-				return this.time;
-			}
-
-			public void setTime(Long time) {
-				this.time = time;
-			}
+		public List<V_AStamp> getVideoAndAudioStamp() {
+			return this.videoAndAudioStamp;
 		}
 
-		public static class AudioFramesItem {
-
-			private Integer value;
-
-			private Long time;
-
-			public Integer getValue() {
-				return this.value;
-			}
-
-			public void setValue(Integer value) {
-				this.value = value;
-			}
-
-			public Long getTime() {
-				return this.time;
-			}
-
-			public void setTime(Long time) {
-				this.time = time;
-			}
+		public void setVideoAndAudioStamp(List<V_AStamp> videoAndAudioStamp) {
+			this.videoAndAudioStamp = videoAndAudioStamp;
 		}
 
-		public static class VideoStampsItem {
-
-			private Integer value;
-
-			private Long time;
-
-			public Integer getValue() {
-				return this.value;
-			}
-
-			public void setValue(Integer value) {
-				this.value = value;
-			}
-
-			public Long getTime() {
-				return this.time;
-			}
-
-			public void setTime(Long time) {
-				this.time = time;
-			}
+		public List<VideoBitRateItem> getVideoBitRate() {
+			return this.videoBitRate;
 		}
 
-		public static class AudioStampsItem {
-
-			private Integer value;
-
-			private Long time;
-
-			public Integer getValue() {
-				return this.value;
-			}
-
-			public void setValue(Integer value) {
-				this.value = value;
-			}
-
-			public Long getTime() {
-				return this.time;
-			}
-
-			public void setTime(Long time) {
-				this.time = time;
-			}
+		public void setVideoBitRate(List<VideoBitRateItem> videoBitRate) {
+			this.videoBitRate = videoBitRate;
 		}
 
-		public static class V_AStamp {
-
-			private Integer value;
-
-			private Long time;
-
-			public Integer getValue() {
-				return this.value;
-			}
-
-			public void setValue(Integer value) {
-				this.value = value;
-			}
-
-			public Long getTime() {
-				return this.time;
-			}
-
-			public void setTime(Long time) {
-				this.time = time;
-			}
+		public List<VideoFramesItem> getVideoFrames() {
+			return this.videoFrames;
 		}
 
-		public static class AvcHeadersItem {
+		public void setVideoFrames(List<VideoFramesItem> videoFrames) {
+			this.videoFrames = videoFrames;
+		}
 
-			private Integer value;
+		public List<VideoIntervalItem> getVideoInterval() {
+			return this.videoInterval;
+		}
 
-			private Long time;
+		public void setVideoInterval(List<VideoIntervalItem> videoInterval) {
+			this.videoInterval = videoInterval;
+		}
 
-			public Integer getValue() {
-				return this.value;
-			}
+		public List<VideoStampsItem> getVideoStamps() {
+			return this.videoStamps;
+		}
 
-			public void setValue(Integer value) {
-				this.value = value;
-			}
-
-			public Long getTime() {
-				return this.time;
-			}
-
-			public void setTime(Long time) {
-				this.time = time;
-			}
+		public void setVideoStamps(List<VideoStampsItem> videoStamps) {
+			this.videoStamps = videoStamps;
 		}
 
 		public static class AacHeadersItem {
 
-			private Integer value;
-
 			private Long time;
 
-			public Integer getValue() {
-				return this.value;
-			}
-
-			public void setValue(Integer value) {
-				this.value = value;
-			}
+			private Integer value;
 
 			public Long getTime() {
 				return this.time;
@@ -426,13 +280,6 @@ public class DescribeLiveUpVideoAudioInfoResponse extends AcsResponse {
 			public void setTime(Long time) {
 				this.time = time;
 			}
-		}
-
-		public static class VideoBitRateItem {
-
-			private Integer value;
-
-			private Long time;
 
 			public Integer getValue() {
 				return this.value;
@@ -440,30 +287,14 @@ public class DescribeLiveUpVideoAudioInfoResponse extends AcsResponse {
 
 			public void setValue(Integer value) {
 				this.value = value;
-			}
-
-			public Long getTime() {
-				return this.time;
-			}
-
-			public void setTime(Long time) {
-				this.time = time;
 			}
 		}
 
 		public static class AudioBitRateItem {
 
-			private Integer value;
-
 			private Long time;
 
-			public Integer getValue() {
-				return this.value;
-			}
-
-			public void setValue(Integer value) {
-				this.value = value;
-			}
+			private Integer value;
 
 			public Long getTime() {
 				return this.time;
@@ -471,22 +302,22 @@ public class DescribeLiveUpVideoAudioInfoResponse extends AcsResponse {
 
 			public void setTime(Long time) {
 				this.time = time;
+			}
+
+			public Integer getValue() {
+				return this.value;
+			}
+
+			public void setValue(Integer value) {
+				this.value = value;
 			}
 		}
 
-		public static class VideoIntervalItem {
-
-			private Integer value;
+		public static class AudioFramesItem {
 
 			private Long time;
 
-			public Integer getValue() {
-				return this.value;
-			}
-
-			public void setValue(Integer value) {
-				this.value = value;
-			}
+			private Integer value;
 
 			public Long getTime() {
 				return this.time;
@@ -494,14 +325,30 @@ public class DescribeLiveUpVideoAudioInfoResponse extends AcsResponse {
 
 			public void setTime(Long time) {
 				this.time = time;
+			}
+
+			public Integer getValue() {
+				return this.value;
+			}
+
+			public void setValue(Integer value) {
+				this.value = value;
 			}
 		}
 
 		public static class AudioIntervalItem {
 
+			private Long time;
+
 			private Integer value;
 
-			private Long time;
+			public Long getTime() {
+				return this.time;
+			}
+
+			public void setTime(Long time) {
+				this.time = time;
+			}
 
 			public Integer getValue() {
 				return this.value;
@@ -510,6 +357,13 @@ public class DescribeLiveUpVideoAudioInfoResponse extends AcsResponse {
 			public void setValue(Integer value) {
 				this.value = value;
 			}
+		}
+
+		public static class AudioStampsItem {
+
+			private Long time;
+
+			private Integer value;
 
 			public Long getTime() {
 				return this.time;
@@ -517,14 +371,53 @@ public class DescribeLiveUpVideoAudioInfoResponse extends AcsResponse {
 
 			public void setTime(Long time) {
 				this.time = time;
+			}
+
+			public Integer getValue() {
+				return this.value;
+			}
+
+			public void setValue(Integer value) {
+				this.value = value;
+			}
+		}
+
+		public static class AvcHeadersItem {
+
+			private Long time;
+
+			private Integer value;
+
+			public Long getTime() {
+				return this.time;
+			}
+
+			public void setTime(Long time) {
+				this.time = time;
+			}
+
+			public Integer getValue() {
+				return this.value;
+			}
+
+			public void setValue(Integer value) {
+				this.value = value;
 			}
 		}
 
 		public static class ErrorFlagsItem {
 
+			private Long time;
+
 			private Integer value;
 
-			private Long time;
+			public Long getTime() {
+				return this.time;
+			}
+
+			public void setTime(Long time) {
+				this.time = time;
+			}
 
 			public Integer getValue() {
 				return this.value;
@@ -533,6 +426,13 @@ public class DescribeLiveUpVideoAudioInfoResponse extends AcsResponse {
 			public void setValue(Integer value) {
 				this.value = value;
 			}
+		}
+
+		public static class V_AStamp {
+
+			private Long time;
+
+			private Integer value;
 
 			public Long getTime() {
 				return this.time;
@@ -540,6 +440,106 @@ public class DescribeLiveUpVideoAudioInfoResponse extends AcsResponse {
 
 			public void setTime(Long time) {
 				this.time = time;
+			}
+
+			public Integer getValue() {
+				return this.value;
+			}
+
+			public void setValue(Integer value) {
+				this.value = value;
+			}
+		}
+
+		public static class VideoBitRateItem {
+
+			private Long time;
+
+			private Integer value;
+
+			public Long getTime() {
+				return this.time;
+			}
+
+			public void setTime(Long time) {
+				this.time = time;
+			}
+
+			public Integer getValue() {
+				return this.value;
+			}
+
+			public void setValue(Integer value) {
+				this.value = value;
+			}
+		}
+
+		public static class VideoFramesItem {
+
+			private Long time;
+
+			private Integer value;
+
+			public Long getTime() {
+				return this.time;
+			}
+
+			public void setTime(Long time) {
+				this.time = time;
+			}
+
+			public Integer getValue() {
+				return this.value;
+			}
+
+			public void setValue(Integer value) {
+				this.value = value;
+			}
+		}
+
+		public static class VideoIntervalItem {
+
+			private Long time;
+
+			private Integer value;
+
+			public Long getTime() {
+				return this.time;
+			}
+
+			public void setTime(Long time) {
+				this.time = time;
+			}
+
+			public Integer getValue() {
+				return this.value;
+			}
+
+			public void setValue(Integer value) {
+				this.value = value;
+			}
+		}
+
+		public static class VideoStampsItem {
+
+			private Long time;
+
+			private Integer value;
+
+			public Long getTime() {
+				return this.time;
+			}
+
+			public void setTime(Long time) {
+				this.time = time;
+			}
+
+			public Integer getValue() {
+				return this.value;
+			}
+
+			public void setValue(Integer value) {
+				this.value = value;
 			}
 		}
 	}

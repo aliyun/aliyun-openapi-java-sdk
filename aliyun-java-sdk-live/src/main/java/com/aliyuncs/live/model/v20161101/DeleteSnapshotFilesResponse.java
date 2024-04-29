@@ -67,17 +67,9 @@ public class DeleteSnapshotFilesResponse extends AcsResponse {
 
 	public static class SnapshotDeleteInfo {
 
-		private String message;
-
 		private Long createTimestamp;
 
-		public String getMessage() {
-			return this.message;
-		}
-
-		public void setMessage(String message) {
-			this.message = message;
-		}
+		private String message;
 
 		public Long getCreateTimestamp() {
 			return this.createTimestamp;
@@ -85,6 +77,14 @@ public class DeleteSnapshotFilesResponse extends AcsResponse {
 
 		public void setCreateTimestamp(Long createTimestamp) {
 			this.createTimestamp = createTimestamp;
+		}
+
+		public String getMessage() {
+			return this.message;
+		}
+
+		public void setMessage(String message) {
+			this.message = message;
 		}
 	}
 

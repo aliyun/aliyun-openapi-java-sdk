@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeCasterChannelsResponse extends AcsResponse {
 
-	private Integer total;
-
 	private String requestId;
 
+	private Integer total;
+
 	private List<Channel> channels;
-
-	public Integer getTotal() {
-		return this.total;
-	}
-
-	public void setTotal(Integer total) {
-		this.total = total;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,6 +37,14 @@ public class DescribeCasterChannelsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getTotal() {
+		return this.total;
+	}
+
+	public void setTotal(Integer total) {
+		this.total = total;
 	}
 
 	public List<Channel> getChannels() {
@@ -57,35 +57,19 @@ public class DescribeCasterChannelsResponse extends AcsResponse {
 
 	public static class Channel {
 
-		private Integer inputType;
-
-		private String rtmpUrl;
-
 		private String channelId;
-
-		private String rtsUrl;
 
 		private String faceBeauty;
 
+		private Integer inputType;
+
 		private String resourceId;
 
+		private String rtmpUrl;
+
+		private String rtsUrl;
+
 		private String streamUrl;
-
-		public Integer getInputType() {
-			return this.inputType;
-		}
-
-		public void setInputType(Integer inputType) {
-			this.inputType = inputType;
-		}
-
-		public String getRtmpUrl() {
-			return this.rtmpUrl;
-		}
-
-		public void setRtmpUrl(String rtmpUrl) {
-			this.rtmpUrl = rtmpUrl;
-		}
 
 		public String getChannelId() {
 			return this.channelId;
@@ -93,14 +77,6 @@ public class DescribeCasterChannelsResponse extends AcsResponse {
 
 		public void setChannelId(String channelId) {
 			this.channelId = channelId;
-		}
-
-		public String getRtsUrl() {
-			return this.rtsUrl;
-		}
-
-		public void setRtsUrl(String rtsUrl) {
-			this.rtsUrl = rtsUrl;
 		}
 
 		public String getFaceBeauty() {
@@ -111,12 +87,36 @@ public class DescribeCasterChannelsResponse extends AcsResponse {
 			this.faceBeauty = faceBeauty;
 		}
 
+		public Integer getInputType() {
+			return this.inputType;
+		}
+
+		public void setInputType(Integer inputType) {
+			this.inputType = inputType;
+		}
+
 		public String getResourceId() {
 			return this.resourceId;
 		}
 
 		public void setResourceId(String resourceId) {
 			this.resourceId = resourceId;
+		}
+
+		public String getRtmpUrl() {
+			return this.rtmpUrl;
+		}
+
+		public void setRtmpUrl(String rtmpUrl) {
+			this.rtmpUrl = rtmpUrl;
+		}
+
+		public String getRtsUrl() {
+			return this.rtsUrl;
+		}
+
+		public void setRtsUrl(String rtsUrl) {
+			this.rtsUrl = rtsUrl;
 		}
 
 		public String getStreamUrl() {

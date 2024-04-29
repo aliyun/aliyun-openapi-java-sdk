@@ -31,13 +31,13 @@ public class DescribeLiveCenterTransferResponseUnmarshaller {
 		List<LiveCenterTransferInfo> liveCenterTransferInfoList = new ArrayList<LiveCenterTransferInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLiveCenterTransferResponse.LiveCenterTransferInfoList.Length"); i++) {
 			LiveCenterTransferInfo liveCenterTransferInfo = new LiveCenterTransferInfo();
-			liveCenterTransferInfo.setEndTime(_ctx.stringValue("DescribeLiveCenterTransferResponse.LiveCenterTransferInfoList["+ i +"].EndTime"));
 			liveCenterTransferInfo.setAppName(_ctx.stringValue("DescribeLiveCenterTransferResponse.LiveCenterTransferInfoList["+ i +"].AppName"));
-			liveCenterTransferInfo.setStartTime(_ctx.stringValue("DescribeLiveCenterTransferResponse.LiveCenterTransferInfoList["+ i +"].StartTime"));
-			liveCenterTransferInfo.setTransferArgs(_ctx.stringValue("DescribeLiveCenterTransferResponse.LiveCenterTransferInfoList["+ i +"].TransferArgs"));
-			liveCenterTransferInfo.setStreamName(_ctx.stringValue("DescribeLiveCenterTransferResponse.LiveCenterTransferInfoList["+ i +"].StreamName"));
-			liveCenterTransferInfo.setDstUrl(_ctx.stringValue("DescribeLiveCenterTransferResponse.LiveCenterTransferInfoList["+ i +"].DstUrl"));
 			liveCenterTransferInfo.setDomainName(_ctx.stringValue("DescribeLiveCenterTransferResponse.LiveCenterTransferInfoList["+ i +"].DomainName"));
+			liveCenterTransferInfo.setDstUrl(_ctx.stringValue("DescribeLiveCenterTransferResponse.LiveCenterTransferInfoList["+ i +"].DstUrl"));
+			liveCenterTransferInfo.setEndTime(_ctx.stringValue("DescribeLiveCenterTransferResponse.LiveCenterTransferInfoList["+ i +"].EndTime"));
+			liveCenterTransferInfo.setStartTime(_ctx.stringValue("DescribeLiveCenterTransferResponse.LiveCenterTransferInfoList["+ i +"].StartTime"));
+			liveCenterTransferInfo.setStreamName(_ctx.stringValue("DescribeLiveCenterTransferResponse.LiveCenterTransferInfoList["+ i +"].StreamName"));
+			liveCenterTransferInfo.setTransferArgs(_ctx.stringValue("DescribeLiveCenterTransferResponse.LiveCenterTransferInfoList["+ i +"].TransferArgs"));
 
 			liveCenterTransferInfoList.add(liveCenterTransferInfo);
 		}

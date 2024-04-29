@@ -66,13 +66,13 @@ public class AddShowIntoShowListRequest extends RpcAcsRequest<AddShowIntoShowLis
 		this.showLists = showLists;	
 		if (showLists != null) {
 			for (int depth1 = 0; depth1 < showLists.size(); depth1++) {
-				putQueryParameter("showList." + (depth1 + 1) + ".showName" , showLists.get(depth1).getShowName());
+				putQueryParameter("showList." + (depth1 + 1) + ".duration" , showLists.get(depth1).getDuration());
+				putQueryParameter("showList." + (depth1 + 1) + ".liveInputType" , showLists.get(depth1).getLiveInputType());
 				putQueryParameter("showList." + (depth1 + 1) + ".repeatTimes" , showLists.get(depth1).getRepeatTimes());
+				putQueryParameter("showList." + (depth1 + 1) + ".resourceId" , showLists.get(depth1).getResourceId());
 				putQueryParameter("showList." + (depth1 + 1) + ".resourceType" , showLists.get(depth1).getResourceType());
 				putQueryParameter("showList." + (depth1 + 1) + ".resourceUrl" , showLists.get(depth1).getResourceUrl());
-				putQueryParameter("showList." + (depth1 + 1) + ".liveInputType" , showLists.get(depth1).getLiveInputType());
-				putQueryParameter("showList." + (depth1 + 1) + ".duration" , showLists.get(depth1).getDuration());
-				putQueryParameter("showList." + (depth1 + 1) + ".resourceId" , showLists.get(depth1).getResourceId());
+				putQueryParameter("showList." + (depth1 + 1) + ".showName" , showLists.get(depth1).getShowName());
 			}
 		}	
 	}
@@ -200,26 +200,34 @@ public class AddShowIntoShowListRequest extends RpcAcsRequest<AddShowIntoShowLis
 
 	public static class ShowList {
 
-		private String showName;
+		private Long duration;
+
+		private Integer liveInputType;
 
 		private Integer repeatTimes;
+
+		private String resourceId;
 
 		private String resourceType;
 
 		private String resourceUrl;
 
-		private Integer liveInputType;
+		private String showName;
 
-		private Long duration;
-
-		private String resourceId;
-
-		public String getShowName() {
-			return this.showName;
+		public Long getDuration() {
+			return this.duration;
 		}
 
-		public void setShowName(String showName) {
-			this.showName = showName;
+		public void setDuration(Long duration) {
+			this.duration = duration;
+		}
+
+		public Integer getLiveInputType() {
+			return this.liveInputType;
+		}
+
+		public void setLiveInputType(Integer liveInputType) {
+			this.liveInputType = liveInputType;
 		}
 
 		public Integer getRepeatTimes() {
@@ -228,6 +236,14 @@ public class AddShowIntoShowListRequest extends RpcAcsRequest<AddShowIntoShowLis
 
 		public void setRepeatTimes(Integer repeatTimes) {
 			this.repeatTimes = repeatTimes;
+		}
+
+		public String getResourceId() {
+			return this.resourceId;
+		}
+
+		public void setResourceId(String resourceId) {
+			this.resourceId = resourceId;
 		}
 
 		public String getResourceType() {
@@ -246,28 +262,12 @@ public class AddShowIntoShowListRequest extends RpcAcsRequest<AddShowIntoShowLis
 			this.resourceUrl = resourceUrl;
 		}
 
-		public Integer getLiveInputType() {
-			return this.liveInputType;
+		public String getShowName() {
+			return this.showName;
 		}
 
-		public void setLiveInputType(Integer liveInputType) {
-			this.liveInputType = liveInputType;
-		}
-
-		public Long getDuration() {
-			return this.duration;
-		}
-
-		public void setDuration(Long duration) {
-			this.duration = duration;
-		}
-
-		public String getResourceId() {
-			return this.resourceId;
-		}
-
-		public void setResourceId(String resourceId) {
-			this.resourceId = resourceId;
+		public void setShowName(String showName) {
+			this.showName = showName;
 		}
 	}
 

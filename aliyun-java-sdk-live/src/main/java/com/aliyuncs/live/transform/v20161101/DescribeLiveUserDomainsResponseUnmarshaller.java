@@ -34,14 +34,14 @@ public class DescribeLiveUserDomainsResponseUnmarshaller {
 		List<PageData> domains = new ArrayList<PageData>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLiveUserDomainsResponse.Domains.Length"); i++) {
 			PageData pageData = new PageData();
-			pageData.setGmtCreated(_ctx.stringValue("DescribeLiveUserDomainsResponse.Domains["+ i +"].GmtCreated"));
-			pageData.setLiveDomainType(_ctx.stringValue("DescribeLiveUserDomainsResponse.Domains["+ i +"].LiveDomainType"));
-			pageData.setLiveDomainStatus(_ctx.stringValue("DescribeLiveUserDomainsResponse.Domains["+ i +"].LiveDomainStatus"));
-			pageData.setRegionName(_ctx.stringValue("DescribeLiveUserDomainsResponse.Domains["+ i +"].RegionName"));
-			pageData.setDescription(_ctx.stringValue("DescribeLiveUserDomainsResponse.Domains["+ i +"].Description"));
 			pageData.setCname(_ctx.stringValue("DescribeLiveUserDomainsResponse.Domains["+ i +"].Cname"));
-			pageData.setGmtModified(_ctx.stringValue("DescribeLiveUserDomainsResponse.Domains["+ i +"].GmtModified"));
+			pageData.setDescription(_ctx.stringValue("DescribeLiveUserDomainsResponse.Domains["+ i +"].Description"));
 			pageData.setDomainName(_ctx.stringValue("DescribeLiveUserDomainsResponse.Domains["+ i +"].DomainName"));
+			pageData.setGmtCreated(_ctx.stringValue("DescribeLiveUserDomainsResponse.Domains["+ i +"].GmtCreated"));
+			pageData.setGmtModified(_ctx.stringValue("DescribeLiveUserDomainsResponse.Domains["+ i +"].GmtModified"));
+			pageData.setLiveDomainStatus(_ctx.stringValue("DescribeLiveUserDomainsResponse.Domains["+ i +"].LiveDomainStatus"));
+			pageData.setLiveDomainType(_ctx.stringValue("DescribeLiveUserDomainsResponse.Domains["+ i +"].LiveDomainType"));
+			pageData.setRegionName(_ctx.stringValue("DescribeLiveUserDomainsResponse.Domains["+ i +"].RegionName"));
 
 			domains.add(pageData);
 		}

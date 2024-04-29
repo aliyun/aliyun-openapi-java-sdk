@@ -47,27 +47,19 @@ public class DescribeLiveCenterTransferResponse extends AcsResponse {
 
 	public static class LiveCenterTransferInfo {
 
-		private String endTime;
-
 		private String appName;
-
-		private String startTime;
-
-		private String transferArgs;
-
-		private String streamName;
-
-		private String dstUrl;
 
 		private String domainName;
 
-		public String getEndTime() {
-			return this.endTime;
-		}
+		private String dstUrl;
 
-		public void setEndTime(String endTime) {
-			this.endTime = endTime;
-		}
+		private String endTime;
+
+		private String startTime;
+
+		private String streamName;
+
+		private String transferArgs;
 
 		public String getAppName() {
 			return this.appName;
@@ -77,28 +69,12 @@ public class DescribeLiveCenterTransferResponse extends AcsResponse {
 			this.appName = appName;
 		}
 
-		public String getStartTime() {
-			return this.startTime;
+		public String getDomainName() {
+			return this.domainName;
 		}
 
-		public void setStartTime(String startTime) {
-			this.startTime = startTime;
-		}
-
-		public String getTransferArgs() {
-			return this.transferArgs;
-		}
-
-		public void setTransferArgs(String transferArgs) {
-			this.transferArgs = transferArgs;
-		}
-
-		public String getStreamName() {
-			return this.streamName;
-		}
-
-		public void setStreamName(String streamName) {
-			this.streamName = streamName;
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
 		}
 
 		public String getDstUrl() {
@@ -109,12 +85,36 @@ public class DescribeLiveCenterTransferResponse extends AcsResponse {
 			this.dstUrl = dstUrl;
 		}
 
-		public String getDomainName() {
-			return this.domainName;
+		public String getEndTime() {
+			return this.endTime;
 		}
 
-		public void setDomainName(String domainName) {
-			this.domainName = domainName;
+		public void setEndTime(String endTime) {
+			this.endTime = endTime;
+		}
+
+		public String getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
+		}
+
+		public String getStreamName() {
+			return this.streamName;
+		}
+
+		public void setStreamName(String streamName) {
+			this.streamName = streamName;
+		}
+
+		public String getTransferArgs() {
+			return this.transferArgs;
+		}
+
+		public void setTransferArgs(String transferArgs) {
+			this.transferArgs = transferArgs;
 		}
 	}
 

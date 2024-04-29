@@ -25,8 +25,6 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeLiveStreamPreloadTasksResponse extends AcsResponse {
 
-	private Integer totalPage;
-
 	private Integer pageNum;
 
 	private Integer pageSize;
@@ -35,15 +33,9 @@ public class DescribeLiveStreamPreloadTasksResponse extends AcsResponse {
 
 	private Integer totalNum;
 
+	private Integer totalPage;
+
 	private List<PreloadTask> preloadTasks;
-
-	public Integer getTotalPage() {
-		return this.totalPage;
-	}
-
-	public void setTotalPage(Integer totalPage) {
-		this.totalPage = totalPage;
-	}
 
 	public Integer getPageNum() {
 		return this.pageNum;
@@ -77,6 +69,14 @@ public class DescribeLiveStreamPreloadTasksResponse extends AcsResponse {
 		this.totalNum = totalNum;
 	}
 
+	public Integer getTotalPage() {
+		return this.totalPage;
+	}
+
+	public void setTotalPage(Integer totalPage) {
+		this.totalPage = totalPage;
+	}
+
 	public List<PreloadTask> getPreloadTasks() {
 		return this.preloadTasks;
 	}
@@ -87,40 +87,40 @@ public class DescribeLiveStreamPreloadTasksResponse extends AcsResponse {
 
 	public static class PreloadTask {
 
-		private String status;
+		private String area;
 
-		private String process;
+		private String createTime;
 
 		private String description;
 
-		private String createTime;
+		private String domainName;
+
+		private String playUrl;
 
 		private String preloadedEndTime;
 
 		private String preloadedStartTime;
 
-		private String playUrl;
+		private String process;
 
-		private String area;
+		private String status;
 
 		private String taskId;
 
-		private String domainName;
-
-		public String getStatus() {
-			return this.status;
+		public String getArea() {
+			return this.area;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setArea(String area) {
+			this.area = area;
 		}
 
-		public String getProcess() {
-			return this.process;
+		public String getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setProcess(String process) {
-			this.process = process;
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 
 		public String getDescription() {
@@ -131,12 +131,20 @@ public class DescribeLiveStreamPreloadTasksResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public String getCreateTime() {
-			return this.createTime;
+		public String getDomainName() {
+			return this.domainName;
 		}
 
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
+		}
+
+		public String getPlayUrl() {
+			return this.playUrl;
+		}
+
+		public void setPlayUrl(String playUrl) {
+			this.playUrl = playUrl;
 		}
 
 		public String getPreloadedEndTime() {
@@ -155,20 +163,20 @@ public class DescribeLiveStreamPreloadTasksResponse extends AcsResponse {
 			this.preloadedStartTime = preloadedStartTime;
 		}
 
-		public String getPlayUrl() {
-			return this.playUrl;
+		public String getProcess() {
+			return this.process;
 		}
 
-		public void setPlayUrl(String playUrl) {
-			this.playUrl = playUrl;
+		public void setProcess(String process) {
+			this.process = process;
 		}
 
-		public String getArea() {
-			return this.area;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setArea(String area) {
-			this.area = area;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getTaskId() {
@@ -177,14 +185,6 @@ public class DescribeLiveStreamPreloadTasksResponse extends AcsResponse {
 
 		public void setTaskId(String taskId) {
 			this.taskId = taskId;
-		}
-
-		public String getDomainName() {
-			return this.domainName;
-		}
-
-		public void setDomainName(String domainName) {
-			this.domainName = domainName;
 		}
 	}
 

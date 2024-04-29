@@ -76,10 +76,10 @@ public class UpdateCasterSceneAudioRequest extends RpcAcsRequest<UpdateCasterSce
 		this.audioLayers = audioLayers;	
 		if (audioLayers != null) {
 			for (int depth1 = 0; depth1 < audioLayers.size(); depth1++) {
-				putQueryParameter("AudioLayer." + (depth1 + 1) + ".VolumeRate" , audioLayers.get(depth1).getVolumeRate());
+				putQueryParameter("AudioLayer." + (depth1 + 1) + ".Filter" , audioLayers.get(depth1).getFilter());
 				putQueryParameter("AudioLayer." + (depth1 + 1) + ".FixedDelayDuration" , audioLayers.get(depth1).getFixedDelayDuration());
 				putQueryParameter("AudioLayer." + (depth1 + 1) + ".ValidChannel" , audioLayers.get(depth1).getValidChannel());
-				putQueryParameter("AudioLayer." + (depth1 + 1) + ".Filter" , audioLayers.get(depth1).getFilter());
+				putQueryParameter("AudioLayer." + (depth1 + 1) + ".VolumeRate" , audioLayers.get(depth1).getVolumeRate());
 			}
 		}	
 	}
@@ -121,20 +121,20 @@ public class UpdateCasterSceneAudioRequest extends RpcAcsRequest<UpdateCasterSce
 
 	public static class AudioLayer {
 
-		private Float volumeRate;
+		private String filter;
 
 		private Integer fixedDelayDuration;
 
 		private String validChannel;
 
-		private String filter;
+		private Float volumeRate;
 
-		public Float getVolumeRate() {
-			return this.volumeRate;
+		public String getFilter() {
+			return this.filter;
 		}
 
-		public void setVolumeRate(Float volumeRate) {
-			this.volumeRate = volumeRate;
+		public void setFilter(String filter) {
+			this.filter = filter;
 		}
 
 		public Integer getFixedDelayDuration() {
@@ -153,12 +153,12 @@ public class UpdateCasterSceneAudioRequest extends RpcAcsRequest<UpdateCasterSce
 			this.validChannel = validChannel;
 		}
 
-		public String getFilter() {
-			return this.filter;
+		public Float getVolumeRate() {
+			return this.volumeRate;
 		}
 
-		public void setFilter(String filter) {
-			this.filter = filter;
+		public void setVolumeRate(Float volumeRate) {
+			this.volumeRate = volumeRate;
 		}
 	}
 

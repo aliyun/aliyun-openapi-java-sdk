@@ -23,8 +23,8 @@ public class DeleteLiveStreamBlockResponseUnmarshaller {
 	public static DeleteLiveStreamBlockResponse unmarshall(DeleteLiveStreamBlockResponse deleteLiveStreamBlockResponse, UnmarshallerContext _ctx) {
 		
 		deleteLiveStreamBlockResponse.setRequestId(_ctx.stringValue("DeleteLiveStreamBlockResponse.RequestId"));
-		deleteLiveStreamBlockResponse.setStatus(_ctx.stringValue("DeleteLiveStreamBlockResponse.Status"));
 		deleteLiveStreamBlockResponse.setDescription(_ctx.stringValue("DeleteLiveStreamBlockResponse.Description"));
+		deleteLiveStreamBlockResponse.setStatus(_ctx.stringValue("DeleteLiveStreamBlockResponse.Status"));
 	 
 	 	return deleteLiveStreamBlockResponse;
 	}

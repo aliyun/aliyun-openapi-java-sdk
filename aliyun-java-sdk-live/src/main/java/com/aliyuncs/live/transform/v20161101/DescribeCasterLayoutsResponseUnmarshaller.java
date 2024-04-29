@@ -36,26 +36,37 @@ public class DescribeCasterLayoutsResponseUnmarshaller {
 			Layout layout = new Layout();
 			layout.setLayoutId(_ctx.stringValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].LayoutId"));
 
-			List<String> mixList = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].MixList.Length"); j++) {
-				mixList.add(_ctx.stringValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].MixList["+ j +"]"));
-			}
-			layout.setMixList(mixList);
-
 			List<String> blendList = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].BlendList.Length"); j++) {
 				blendList.add(_ctx.stringValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].BlendList["+ j +"]"));
 			}
 			layout.setBlendList(blendList);
 
+			List<String> mixList = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].MixList.Length"); j++) {
+				mixList.add(_ctx.stringValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].MixList["+ j +"]"));
+			}
+			layout.setMixList(mixList);
+
+			List<AudioLayer> audioLayers = new ArrayList<AudioLayer>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].AudioLayers.Length"); j++) {
+				AudioLayer audioLayer = new AudioLayer();
+				audioLayer.setFixedDelayDuration(_ctx.integerValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].AudioLayers["+ j +"].FixedDelayDuration"));
+				audioLayer.setValidChannel(_ctx.stringValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].AudioLayers["+ j +"].ValidChannel"));
+				audioLayer.setVolumeRate(_ctx.floatValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].AudioLayers["+ j +"].VolumeRate"));
+
+				audioLayers.add(audioLayer);
+			}
+			layout.setAudioLayers(audioLayers);
+
 			List<VideoLayer> videoLayers = new ArrayList<VideoLayer>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].VideoLayers.Length"); j++) {
 				VideoLayer videoLayer = new VideoLayer();
-				videoLayer.setWidthNormalized(_ctx.floatValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].VideoLayers["+ j +"].WidthNormalized"));
+				videoLayer.setFillMode(_ctx.stringValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].VideoLayers["+ j +"].FillMode"));
 				videoLayer.setFixedDelayDuration(_ctx.integerValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].VideoLayers["+ j +"].FixedDelayDuration"));
 				videoLayer.setHeightNormalized(_ctx.floatValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].VideoLayers["+ j +"].HeightNormalized"));
-				videoLayer.setFillMode(_ctx.stringValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].VideoLayers["+ j +"].FillMode"));
 				videoLayer.setPositionRefer(_ctx.stringValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].VideoLayers["+ j +"].PositionRefer"));
+				videoLayer.setWidthNormalized(_ctx.floatValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].VideoLayers["+ j +"].WidthNormalized"));
 
 				List<Float> positionNormalizeds = new ArrayList<Float>();
 				for (int k = 0; k < _ctx.lengthValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].VideoLayers["+ j +"].PositionNormalizeds.Length"); k++) {
@@ -66,17 +77,6 @@ public class DescribeCasterLayoutsResponseUnmarshaller {
 				videoLayers.add(videoLayer);
 			}
 			layout.setVideoLayers(videoLayers);
-
-			List<AudioLayer> audioLayers = new ArrayList<AudioLayer>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].AudioLayers.Length"); j++) {
-				AudioLayer audioLayer = new AudioLayer();
-				audioLayer.setVolumeRate(_ctx.floatValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].AudioLayers["+ j +"].VolumeRate"));
-				audioLayer.setFixedDelayDuration(_ctx.integerValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].AudioLayers["+ j +"].FixedDelayDuration"));
-				audioLayer.setValidChannel(_ctx.stringValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].AudioLayers["+ j +"].ValidChannel"));
-
-				audioLayers.add(audioLayer);
-			}
-			layout.setAudioLayers(audioLayers);
 
 			layouts.add(layout);
 		}

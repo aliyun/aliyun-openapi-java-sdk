@@ -24,8 +24,8 @@ public class RemoveShowFromShowListResponseUnmarshaller {
 		
 		removeShowFromShowListResponse.setRequestId(_ctx.stringValue("RemoveShowFromShowListResponse.RequestId"));
 		removeShowFromShowListResponse.setShowId(_ctx.stringValue("RemoveShowFromShowListResponse.ShowId"));
-		removeShowFromShowListResponse.setSuccessfulShowIds(_ctx.stringValue("RemoveShowFromShowListResponse.successfulShowIds"));
 		removeShowFromShowListResponse.setFailedList(_ctx.stringValue("RemoveShowFromShowListResponse.failedList"));
+		removeShowFromShowListResponse.setSuccessfulShowIds(_ctx.stringValue("RemoveShowFromShowListResponse.successfulShowIds"));
 	 
 	 	return removeShowFromShowListResponse;
 	}

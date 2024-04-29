@@ -27,9 +27,9 @@ public class DescribeLiveProducerUsageDataResponse extends AcsResponse {
 
 	private String endTime;
 
-	private String startTime;
-
 	private String requestId;
+
+	private String startTime;
 
 	private List<BillProducerDataItem> billProducerData;
 
@@ -41,20 +41,20 @@ public class DescribeLiveProducerUsageDataResponse extends AcsResponse {
 		this.endTime = endTime;
 	}
 
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
 	}
 
 	public List<BillProducerDataItem> getBillProducerData() {
@@ -67,50 +67,34 @@ public class DescribeLiveProducerUsageDataResponse extends AcsResponse {
 
 	public static class BillProducerDataItem {
 
-		private Long tranSdDuration;
-
-		private String type;
-
-		private Long tranLdDuration;
+		private String domainName;
 
 		private String instance;
 
-		private Long tranHdDuration;
+		private Long outputHdDuration;
+
+		private Long outputLdDuration;
+
+		private Long outputSdDuration;
 
 		private String region;
 
 		private String timeStamp;
 
-		private Long outputHdDuration;
+		private Long tranHdDuration;
 
-		private Long outputSdDuration;
+		private Long tranLdDuration;
 
-		private String domainName;
+		private Long tranSdDuration;
 
-		private Long outputLdDuration;
+		private String type;
 
-		public Long getTranSdDuration() {
-			return this.tranSdDuration;
+		public String getDomainName() {
+			return this.domainName;
 		}
 
-		public void setTranSdDuration(Long tranSdDuration) {
-			this.tranSdDuration = tranSdDuration;
-		}
-
-		public String getType() {
-			return this.type;
-		}
-
-		public void setType(String type) {
-			this.type = type;
-		}
-
-		public Long getTranLdDuration() {
-			return this.tranLdDuration;
-		}
-
-		public void setTranLdDuration(Long tranLdDuration) {
-			this.tranLdDuration = tranLdDuration;
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
 		}
 
 		public String getInstance() {
@@ -121,12 +105,28 @@ public class DescribeLiveProducerUsageDataResponse extends AcsResponse {
 			this.instance = instance;
 		}
 
-		public Long getTranHdDuration() {
-			return this.tranHdDuration;
+		public Long getOutputHdDuration() {
+			return this.outputHdDuration;
 		}
 
-		public void setTranHdDuration(Long tranHdDuration) {
-			this.tranHdDuration = tranHdDuration;
+		public void setOutputHdDuration(Long outputHdDuration) {
+			this.outputHdDuration = outputHdDuration;
+		}
+
+		public Long getOutputLdDuration() {
+			return this.outputLdDuration;
+		}
+
+		public void setOutputLdDuration(Long outputLdDuration) {
+			this.outputLdDuration = outputLdDuration;
+		}
+
+		public Long getOutputSdDuration() {
+			return this.outputSdDuration;
+		}
+
+		public void setOutputSdDuration(Long outputSdDuration) {
+			this.outputSdDuration = outputSdDuration;
 		}
 
 		public String getRegion() {
@@ -145,36 +145,36 @@ public class DescribeLiveProducerUsageDataResponse extends AcsResponse {
 			this.timeStamp = timeStamp;
 		}
 
-		public Long getOutputHdDuration() {
-			return this.outputHdDuration;
+		public Long getTranHdDuration() {
+			return this.tranHdDuration;
 		}
 
-		public void setOutputHdDuration(Long outputHdDuration) {
-			this.outputHdDuration = outputHdDuration;
+		public void setTranHdDuration(Long tranHdDuration) {
+			this.tranHdDuration = tranHdDuration;
 		}
 
-		public Long getOutputSdDuration() {
-			return this.outputSdDuration;
+		public Long getTranLdDuration() {
+			return this.tranLdDuration;
 		}
 
-		public void setOutputSdDuration(Long outputSdDuration) {
-			this.outputSdDuration = outputSdDuration;
+		public void setTranLdDuration(Long tranLdDuration) {
+			this.tranLdDuration = tranLdDuration;
 		}
 
-		public String getDomainName() {
-			return this.domainName;
+		public Long getTranSdDuration() {
+			return this.tranSdDuration;
 		}
 
-		public void setDomainName(String domainName) {
-			this.domainName = domainName;
+		public void setTranSdDuration(Long tranSdDuration) {
+			this.tranSdDuration = tranSdDuration;
 		}
 
-		public Long getOutputLdDuration() {
-			return this.outputLdDuration;
+		public String getType() {
+			return this.type;
 		}
 
-		public void setOutputLdDuration(Long outputLdDuration) {
-			this.outputLdDuration = outputLdDuration;
+		public void setType(String type) {
+			this.type = type;
 		}
 	}
 

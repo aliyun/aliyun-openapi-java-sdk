@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeCasterVideoResourcesResponse extends AcsResponse {
 
-	private Integer total;
-
 	private String requestId;
 
+	private Integer total;
+
 	private List<VideoResource> videoResources;
-
-	public Integer getTotal() {
-		return this.total;
-	}
-
-	public void setTotal(Integer total) {
-		this.total = total;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,6 +37,14 @@ public class DescribeCasterVideoResourcesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getTotal() {
+		return this.total;
+	}
+
+	public void setTotal(Integer total) {
+		this.total = total;
 	}
 
 	public List<VideoResource> getVideoResources() {
@@ -57,31 +57,39 @@ public class DescribeCasterVideoResourcesResponse extends AcsResponse {
 
 	public static class VideoResource {
 
+		private Integer beginOffset;
+
 		private Integer endOffset;
 
 		private String flvUrl;
 
-		private Integer beginOffset;
-
-		private Integer ptsCallbackInterval;
-
-		private String materialId;
-
-		private String locationId;
-
-		private String liveStreamUrl;
-
-		private String vodUrl;
-
-		private String resourceId;
-
-		private Integer repeatNum;
-
-		private String resourceName;
-
 		private String imageId;
 
 		private String imageUrl;
+
+		private String liveStreamUrl;
+
+		private String locationId;
+
+		private String materialId;
+
+		private Integer ptsCallbackInterval;
+
+		private Integer repeatNum;
+
+		private String resourceId;
+
+		private String resourceName;
+
+		private String vodUrl;
+
+		public Integer getBeginOffset() {
+			return this.beginOffset;
+		}
+
+		public void setBeginOffset(Integer beginOffset) {
+			this.beginOffset = beginOffset;
+		}
 
 		public Integer getEndOffset() {
 			return this.endOffset;
@@ -99,78 +107,6 @@ public class DescribeCasterVideoResourcesResponse extends AcsResponse {
 			this.flvUrl = flvUrl;
 		}
 
-		public Integer getBeginOffset() {
-			return this.beginOffset;
-		}
-
-		public void setBeginOffset(Integer beginOffset) {
-			this.beginOffset = beginOffset;
-		}
-
-		public Integer getPtsCallbackInterval() {
-			return this.ptsCallbackInterval;
-		}
-
-		public void setPtsCallbackInterval(Integer ptsCallbackInterval) {
-			this.ptsCallbackInterval = ptsCallbackInterval;
-		}
-
-		public String getMaterialId() {
-			return this.materialId;
-		}
-
-		public void setMaterialId(String materialId) {
-			this.materialId = materialId;
-		}
-
-		public String getLocationId() {
-			return this.locationId;
-		}
-
-		public void setLocationId(String locationId) {
-			this.locationId = locationId;
-		}
-
-		public String getLiveStreamUrl() {
-			return this.liveStreamUrl;
-		}
-
-		public void setLiveStreamUrl(String liveStreamUrl) {
-			this.liveStreamUrl = liveStreamUrl;
-		}
-
-		public String getVodUrl() {
-			return this.vodUrl;
-		}
-
-		public void setVodUrl(String vodUrl) {
-			this.vodUrl = vodUrl;
-		}
-
-		public String getResourceId() {
-			return this.resourceId;
-		}
-
-		public void setResourceId(String resourceId) {
-			this.resourceId = resourceId;
-		}
-
-		public Integer getRepeatNum() {
-			return this.repeatNum;
-		}
-
-		public void setRepeatNum(Integer repeatNum) {
-			this.repeatNum = repeatNum;
-		}
-
-		public String getResourceName() {
-			return this.resourceName;
-		}
-
-		public void setResourceName(String resourceName) {
-			this.resourceName = resourceName;
-		}
-
 		public String getImageId() {
 			return this.imageId;
 		}
@@ -185,6 +121,70 @@ public class DescribeCasterVideoResourcesResponse extends AcsResponse {
 
 		public void setImageUrl(String imageUrl) {
 			this.imageUrl = imageUrl;
+		}
+
+		public String getLiveStreamUrl() {
+			return this.liveStreamUrl;
+		}
+
+		public void setLiveStreamUrl(String liveStreamUrl) {
+			this.liveStreamUrl = liveStreamUrl;
+		}
+
+		public String getLocationId() {
+			return this.locationId;
+		}
+
+		public void setLocationId(String locationId) {
+			this.locationId = locationId;
+		}
+
+		public String getMaterialId() {
+			return this.materialId;
+		}
+
+		public void setMaterialId(String materialId) {
+			this.materialId = materialId;
+		}
+
+		public Integer getPtsCallbackInterval() {
+			return this.ptsCallbackInterval;
+		}
+
+		public void setPtsCallbackInterval(Integer ptsCallbackInterval) {
+			this.ptsCallbackInterval = ptsCallbackInterval;
+		}
+
+		public Integer getRepeatNum() {
+			return this.repeatNum;
+		}
+
+		public void setRepeatNum(Integer repeatNum) {
+			this.repeatNum = repeatNum;
+		}
+
+		public String getResourceId() {
+			return this.resourceId;
+		}
+
+		public void setResourceId(String resourceId) {
+			this.resourceId = resourceId;
+		}
+
+		public String getResourceName() {
+			return this.resourceName;
+		}
+
+		public void setResourceName(String resourceName) {
+			this.resourceName = resourceName;
+		}
+
+		public String getVodUrl() {
+			return this.vodUrl;
+		}
+
+		public void setVodUrl(String vodUrl) {
+			this.vodUrl = vodUrl;
 		}
 	}
 

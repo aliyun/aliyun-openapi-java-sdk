@@ -24,21 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class MiguLivePullToPushStartResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String code;
-
-	private String timestamp;
 
 	private String message;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+	private String requestId;
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String timestamp;
 
 	public String getCode() {
 		return this.code;
@@ -48,20 +40,28 @@ public class MiguLivePullToPushStartResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getTimestamp() {
-		return this.timestamp;
-	}
-
-	public void setTimestamp(String timestamp) {
-		this.timestamp = timestamp;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getTimestamp() {
+		return this.timestamp;
+	}
+
+	public void setTimestamp(String timestamp) {
+		this.timestamp = timestamp;
 	}
 
 	@Override

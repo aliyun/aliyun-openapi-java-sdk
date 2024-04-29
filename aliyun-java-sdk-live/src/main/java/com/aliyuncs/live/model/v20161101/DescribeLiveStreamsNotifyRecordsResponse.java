@@ -25,8 +25,6 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeLiveStreamsNotifyRecordsResponse extends AcsResponse {
 
-	private Integer totalPage;
-
 	private Integer pageNum;
 
 	private Integer pageSize;
@@ -35,15 +33,9 @@ public class DescribeLiveStreamsNotifyRecordsResponse extends AcsResponse {
 
 	private Integer totalNum;
 
+	private Integer totalPage;
+
 	private List<LiveStreamNotifyRecordsInfo> notifyRecordsInfo;
-
-	public Integer getTotalPage() {
-		return this.totalPage;
-	}
-
-	public void setTotalPage(Integer totalPage) {
-		this.totalPage = totalPage;
-	}
 
 	public Integer getPageNum() {
 		return this.pageNum;
@@ -77,6 +69,14 @@ public class DescribeLiveStreamsNotifyRecordsResponse extends AcsResponse {
 		this.totalNum = totalNum;
 	}
 
+	public Integer getTotalPage() {
+		return this.totalPage;
+	}
+
+	public void setTotalPage(Integer totalPage) {
+		this.totalPage = totalPage;
+	}
+
 	public List<LiveStreamNotifyRecordsInfo> getNotifyRecordsInfo() {
 		return this.notifyRecordsInfo;
 	}
@@ -89,21 +89,21 @@ public class DescribeLiveStreamsNotifyRecordsResponse extends AcsResponse {
 
 		private String appName;
 
-		private String notifyType;
-
-		private String notifyContent;
-
 		private String description;
 
-		private String streamName;
+		private String domainName;
 
-		private String notifyUrl;
+		private String notifyContent;
 
 		private String notifyResult;
 
 		private String notifyTime;
 
-		private String domainName;
+		private String notifyType;
+
+		private String notifyUrl;
+
+		private String streamName;
 
 		public String getAppName() {
 			return this.appName;
@@ -111,22 +111,6 @@ public class DescribeLiveStreamsNotifyRecordsResponse extends AcsResponse {
 
 		public void setAppName(String appName) {
 			this.appName = appName;
-		}
-
-		public String getNotifyType() {
-			return this.notifyType;
-		}
-
-		public void setNotifyType(String notifyType) {
-			this.notifyType = notifyType;
-		}
-
-		public String getNotifyContent() {
-			return this.notifyContent;
-		}
-
-		public void setNotifyContent(String notifyContent) {
-			this.notifyContent = notifyContent;
 		}
 
 		public String getDescription() {
@@ -137,20 +121,20 @@ public class DescribeLiveStreamsNotifyRecordsResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public String getStreamName() {
-			return this.streamName;
+		public String getDomainName() {
+			return this.domainName;
 		}
 
-		public void setStreamName(String streamName) {
-			this.streamName = streamName;
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
 		}
 
-		public String getNotifyUrl() {
-			return this.notifyUrl;
+		public String getNotifyContent() {
+			return this.notifyContent;
 		}
 
-		public void setNotifyUrl(String notifyUrl) {
-			this.notifyUrl = notifyUrl;
+		public void setNotifyContent(String notifyContent) {
+			this.notifyContent = notifyContent;
 		}
 
 		public String getNotifyResult() {
@@ -169,12 +153,28 @@ public class DescribeLiveStreamsNotifyRecordsResponse extends AcsResponse {
 			this.notifyTime = notifyTime;
 		}
 
-		public String getDomainName() {
-			return this.domainName;
+		public String getNotifyType() {
+			return this.notifyType;
 		}
 
-		public void setDomainName(String domainName) {
-			this.domainName = domainName;
+		public void setNotifyType(String notifyType) {
+			this.notifyType = notifyType;
+		}
+
+		public String getNotifyUrl() {
+			return this.notifyUrl;
+		}
+
+		public void setNotifyUrl(String notifyUrl) {
+			this.notifyUrl = notifyUrl;
+		}
+
+		public String getStreamName() {
+			return this.streamName;
+		}
+
+		public void setStreamName(String streamName) {
+			this.streamName = streamName;
 		}
 	}
 

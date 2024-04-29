@@ -33,11 +33,11 @@ public class DescribeLiveDelayedStreamingUsageResponseUnmarshaller {
 		List<DelayDataItem> delayData = new ArrayList<DelayDataItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLiveDelayedStreamingUsageResponse.DelayData.Length"); i++) {
 			DelayDataItem delayDataItem = new DelayDataItem();
-			delayDataItem.setDuration(_ctx.longValue("DescribeLiveDelayedStreamingUsageResponse.DelayData["+ i +"].Duration"));
-			delayDataItem.setTimeStamp(_ctx.stringValue("DescribeLiveDelayedStreamingUsageResponse.DelayData["+ i +"].TimeStamp"));
-			delayDataItem.setStreamName(_ctx.stringValue("DescribeLiveDelayedStreamingUsageResponse.DelayData["+ i +"].StreamName"));
 			delayDataItem.setDomainName(_ctx.stringValue("DescribeLiveDelayedStreamingUsageResponse.DelayData["+ i +"].DomainName"));
+			delayDataItem.setDuration(_ctx.longValue("DescribeLiveDelayedStreamingUsageResponse.DelayData["+ i +"].Duration"));
 			delayDataItem.setRegion(_ctx.stringValue("DescribeLiveDelayedStreamingUsageResponse.DelayData["+ i +"].Region"));
+			delayDataItem.setStreamName(_ctx.stringValue("DescribeLiveDelayedStreamingUsageResponse.DelayData["+ i +"].StreamName"));
+			delayDataItem.setTimeStamp(_ctx.stringValue("DescribeLiveDelayedStreamingUsageResponse.DelayData["+ i +"].TimeStamp"));
 
 			delayData.add(delayDataItem);
 		}

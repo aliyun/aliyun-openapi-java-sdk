@@ -27,20 +27,20 @@ public class DescribeLiveStreamPushMetricDetailDataResponseUnmarshaller {
 	public static DescribeLiveStreamPushMetricDetailDataResponse unmarshall(DescribeLiveStreamPushMetricDetailDataResponse describeLiveStreamPushMetricDetailDataResponse, UnmarshallerContext _ctx) {
 		
 		describeLiveStreamPushMetricDetailDataResponse.setRequestId(_ctx.stringValue("DescribeLiveStreamPushMetricDetailDataResponse.RequestId"));
+		describeLiveStreamPushMetricDetailDataResponse.setDomainName(_ctx.stringValue("DescribeLiveStreamPushMetricDetailDataResponse.DomainName"));
 		describeLiveStreamPushMetricDetailDataResponse.setEndTime(_ctx.stringValue("DescribeLiveStreamPushMetricDetailDataResponse.EndTime"));
-		describeLiveStreamPushMetricDetailDataResponse.setStartTime(_ctx.stringValue("DescribeLiveStreamPushMetricDetailDataResponse.StartTime"));
 		describeLiveStreamPushMetricDetailDataResponse.setNextPageToken(_ctx.stringValue("DescribeLiveStreamPushMetricDetailDataResponse.NextPageToken"));
 		describeLiveStreamPushMetricDetailDataResponse.setPageSize(_ctx.integerValue("DescribeLiveStreamPushMetricDetailDataResponse.PageSize"));
-		describeLiveStreamPushMetricDetailDataResponse.setDomainName(_ctx.stringValue("DescribeLiveStreamPushMetricDetailDataResponse.DomainName"));
+		describeLiveStreamPushMetricDetailDataResponse.setStartTime(_ctx.stringValue("DescribeLiveStreamPushMetricDetailDataResponse.StartTime"));
 
 		List<StreamData> streamDetailData = new ArrayList<StreamData>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLiveStreamPushMetricDetailDataResponse.StreamDetailData.Length"); i++) {
 			StreamData streamData = new StreamData();
 			streamData.setAppName(_ctx.stringValue("DescribeLiveStreamPushMetricDetailDataResponse.StreamDetailData["+ i +"].AppName"));
-			streamData.setTimeStamp(_ctx.stringValue("DescribeLiveStreamPushMetricDetailDataResponse.StreamDetailData["+ i +"].TimeStamp"));
 			streamData.setReqBps(_ctx.floatValue("DescribeLiveStreamPushMetricDetailDataResponse.StreamDetailData["+ i +"].ReqBps"));
 			streamData.setReqTraffic(_ctx.longValue("DescribeLiveStreamPushMetricDetailDataResponse.StreamDetailData["+ i +"].ReqTraffic"));
 			streamData.setStreamName(_ctx.stringValue("DescribeLiveStreamPushMetricDetailDataResponse.StreamDetailData["+ i +"].StreamName"));
+			streamData.setTimeStamp(_ctx.stringValue("DescribeLiveStreamPushMetricDetailDataResponse.StreamDetailData["+ i +"].TimeStamp"));
 
 			streamDetailData.add(streamData);
 		}

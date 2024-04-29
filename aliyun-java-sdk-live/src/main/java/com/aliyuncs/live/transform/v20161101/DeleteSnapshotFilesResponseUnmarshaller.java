@@ -33,8 +33,8 @@ public class DeleteSnapshotFilesResponseUnmarshaller {
 		List<SnapshotDeleteInfo> snapshotDeleteInfoList = new ArrayList<SnapshotDeleteInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DeleteSnapshotFilesResponse.SnapshotDeleteInfoList.Length"); i++) {
 			SnapshotDeleteInfo snapshotDeleteInfo = new SnapshotDeleteInfo();
-			snapshotDeleteInfo.setMessage(_ctx.stringValue("DeleteSnapshotFilesResponse.SnapshotDeleteInfoList["+ i +"].Message"));
 			snapshotDeleteInfo.setCreateTimestamp(_ctx.longValue("DeleteSnapshotFilesResponse.SnapshotDeleteInfoList["+ i +"].CreateTimestamp"));
+			snapshotDeleteInfo.setMessage(_ctx.stringValue("DeleteSnapshotFilesResponse.SnapshotDeleteInfoList["+ i +"].Message"));
 
 			snapshotDeleteInfoList.add(snapshotDeleteInfo);
 		}

@@ -71,18 +71,18 @@ public class SetCasterSyncGroupRequest extends RpcAcsRequest<SetCasterSyncGroupR
 		if (syncGroups != null) {
 			for (int depth1 = 0; depth1 < syncGroups.size(); depth1++) {
 				putQueryParameter("SyncGroup." + (depth1 + 1) + ".HostResourceId" , syncGroups.get(depth1).getHostResourceId());
+				putQueryParameter("SyncGroup." + (depth1 + 1) + ".Mode" , syncGroups.get(depth1).getMode());
 				if (syncGroups.get(depth1).getResourceIdss() != null) {
 					for (int i = 0; i < syncGroups.get(depth1).getResourceIdss().size(); i++) {
 						putQueryParameter("SyncGroup." + (depth1 + 1) + ".ResourceIds." + (i + 1) , syncGroups.get(depth1).getResourceIdss().get(i));
 					}
 				}
+				putQueryParameter("SyncGroup." + (depth1 + 1) + ".SyncDelayThreshold" , syncGroups.get(depth1).getSyncDelayThreshold());
 				if (syncGroups.get(depth1).getSyncOffsetss() != null) {
 					for (int i = 0; i < syncGroups.get(depth1).getSyncOffsetss().size(); i++) {
 						putQueryParameter("SyncGroup." + (depth1 + 1) + ".SyncOffsets." + (i + 1) , syncGroups.get(depth1).getSyncOffsetss().get(i));
 					}
 				}
-				putQueryParameter("SyncGroup." + (depth1 + 1) + ".SyncDelayThreshold" , syncGroups.get(depth1).getSyncDelayThreshold());
-				putQueryParameter("SyncGroup." + (depth1 + 1) + ".Mode" , syncGroups.get(depth1).getMode());
 			}
 		}	
 	}
@@ -91,13 +91,13 @@ public class SetCasterSyncGroupRequest extends RpcAcsRequest<SetCasterSyncGroupR
 
 		private String hostResourceId;
 
-		private List<String> resourceIdss;
+		private Integer mode;
 
-		private List<Integer> syncOffsetss;
+		private List<String> resourceIdss;
 
 		private Long syncDelayThreshold;
 
-		private Integer mode;
+		private List<Integer> syncOffsetss;
 
 		public String getHostResourceId() {
 			return this.hostResourceId;
@@ -105,6 +105,14 @@ public class SetCasterSyncGroupRequest extends RpcAcsRequest<SetCasterSyncGroupR
 
 		public void setHostResourceId(String hostResourceId) {
 			this.hostResourceId = hostResourceId;
+		}
+
+		public Integer getMode() {
+			return this.mode;
+		}
+
+		public void setMode(Integer mode) {
+			this.mode = mode;
 		}
 
 		public List<String> getResourceIdss() {
@@ -115,14 +123,6 @@ public class SetCasterSyncGroupRequest extends RpcAcsRequest<SetCasterSyncGroupR
 			this.resourceIdss = resourceIdss;
 		}
 
-		public List<Integer> getSyncOffsetss() {
-			return this.syncOffsetss;
-		}
-
-		public void setSyncOffsetss(List<Integer> syncOffsetss) {
-			this.syncOffsetss = syncOffsetss;
-		}
-
 		public Long getSyncDelayThreshold() {
 			return this.syncDelayThreshold;
 		}
@@ -131,12 +131,12 @@ public class SetCasterSyncGroupRequest extends RpcAcsRequest<SetCasterSyncGroupR
 			this.syncDelayThreshold = syncDelayThreshold;
 		}
 
-		public Integer getMode() {
-			return this.mode;
+		public List<Integer> getSyncOffsetss() {
+			return this.syncOffsetss;
 		}
 
-		public void setMode(Integer mode) {
-			this.mode = mode;
+		public void setSyncOffsetss(List<Integer> syncOffsetss) {
+			this.syncOffsetss = syncOffsetss;
 		}
 	}
 

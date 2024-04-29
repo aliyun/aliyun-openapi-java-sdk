@@ -32,14 +32,14 @@ public class DescribeLiveHttpsDomainListResponseUnmarshaller {
 		List<CertInfo> certInfos = new ArrayList<CertInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLiveHttpsDomainListResponse.CertInfos.Length"); i++) {
 			CertInfo certInfo = new CertInfo();
-			certInfo.setCertStartTime(_ctx.stringValue("DescribeLiveHttpsDomainListResponse.CertInfos["+ i +"].CertStartTime"));
-			certInfo.setCertExpireTime(_ctx.stringValue("DescribeLiveHttpsDomainListResponse.CertInfos["+ i +"].CertExpireTime"));
-			certInfo.setCertUpdateTime(_ctx.stringValue("DescribeLiveHttpsDomainListResponse.CertInfos["+ i +"].CertUpdateTime"));
-			certInfo.setCertType(_ctx.stringValue("DescribeLiveHttpsDomainListResponse.CertInfos["+ i +"].CertType"));
-			certInfo.setCertName(_ctx.stringValue("DescribeLiveHttpsDomainListResponse.CertInfos["+ i +"].CertName"));
-			certInfo.setCertStatus(_ctx.stringValue("DescribeLiveHttpsDomainListResponse.CertInfos["+ i +"].CertStatus"));
-			certInfo.setDomainName(_ctx.stringValue("DescribeLiveHttpsDomainListResponse.CertInfos["+ i +"].DomainName"));
 			certInfo.setCertCommonName(_ctx.stringValue("DescribeLiveHttpsDomainListResponse.CertInfos["+ i +"].CertCommonName"));
+			certInfo.setCertExpireTime(_ctx.stringValue("DescribeLiveHttpsDomainListResponse.CertInfos["+ i +"].CertExpireTime"));
+			certInfo.setCertName(_ctx.stringValue("DescribeLiveHttpsDomainListResponse.CertInfos["+ i +"].CertName"));
+			certInfo.setCertStartTime(_ctx.stringValue("DescribeLiveHttpsDomainListResponse.CertInfos["+ i +"].CertStartTime"));
+			certInfo.setCertStatus(_ctx.stringValue("DescribeLiveHttpsDomainListResponse.CertInfos["+ i +"].CertStatus"));
+			certInfo.setCertType(_ctx.stringValue("DescribeLiveHttpsDomainListResponse.CertInfos["+ i +"].CertType"));
+			certInfo.setCertUpdateTime(_ctx.stringValue("DescribeLiveHttpsDomainListResponse.CertInfos["+ i +"].CertUpdateTime"));
+			certInfo.setDomainName(_ctx.stringValue("DescribeLiveHttpsDomainListResponse.CertInfos["+ i +"].DomainName"));
 
 			certInfos.add(certInfo);
 		}

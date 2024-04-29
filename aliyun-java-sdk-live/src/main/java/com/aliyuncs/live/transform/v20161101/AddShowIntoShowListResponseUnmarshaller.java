@@ -24,8 +24,8 @@ public class AddShowIntoShowListResponseUnmarshaller {
 		
 		addShowIntoShowListResponse.setRequestId(_ctx.stringValue("AddShowIntoShowListResponse.RequestId"));
 		addShowIntoShowListResponse.setShowId(_ctx.stringValue("AddShowIntoShowListResponse.ShowId"));
-		addShowIntoShowListResponse.setSuccessfulShowIds(_ctx.stringValue("AddShowIntoShowListResponse.successfulShowIds"));
 		addShowIntoShowListResponse.setFailedList(_ctx.stringValue("AddShowIntoShowListResponse.failedList"));
+		addShowIntoShowListResponse.setSuccessfulShowIds(_ctx.stringValue("AddShowIntoShowListResponse.successfulShowIds"));
 	 
 	 	return addShowIntoShowListResponse;
 	}

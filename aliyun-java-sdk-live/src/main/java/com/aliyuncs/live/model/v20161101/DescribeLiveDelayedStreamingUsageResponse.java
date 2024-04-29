@@ -27,9 +27,9 @@ public class DescribeLiveDelayedStreamingUsageResponse extends AcsResponse {
 
 	private String endTime;
 
-	private String startTime;
-
 	private String requestId;
+
+	private String startTime;
 
 	private List<DelayDataItem> delayData;
 
@@ -41,20 +41,20 @@ public class DescribeLiveDelayedStreamingUsageResponse extends AcsResponse {
 		this.endTime = endTime;
 	}
 
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
 	}
 
 	public List<DelayDataItem> getDelayData() {
@@ -67,15 +67,23 @@ public class DescribeLiveDelayedStreamingUsageResponse extends AcsResponse {
 
 	public static class DelayDataItem {
 
+		private String domainName;
+
 		private Long duration;
 
-		private String timeStamp;
+		private String region;
 
 		private String streamName;
 
-		private String domainName;
+		private String timeStamp;
 
-		private String region;
+		public String getDomainName() {
+			return this.domainName;
+		}
+
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
+		}
 
 		public Long getDuration() {
 			return this.duration;
@@ -85,12 +93,12 @@ public class DescribeLiveDelayedStreamingUsageResponse extends AcsResponse {
 			this.duration = duration;
 		}
 
-		public String getTimeStamp() {
-			return this.timeStamp;
+		public String getRegion() {
+			return this.region;
 		}
 
-		public void setTimeStamp(String timeStamp) {
-			this.timeStamp = timeStamp;
+		public void setRegion(String region) {
+			this.region = region;
 		}
 
 		public String getStreamName() {
@@ -101,20 +109,12 @@ public class DescribeLiveDelayedStreamingUsageResponse extends AcsResponse {
 			this.streamName = streamName;
 		}
 
-		public String getDomainName() {
-			return this.domainName;
+		public String getTimeStamp() {
+			return this.timeStamp;
 		}
 
-		public void setDomainName(String domainName) {
-			this.domainName = domainName;
-		}
-
-		public String getRegion() {
-			return this.region;
-		}
-
-		public void setRegion(String region) {
-			this.region = region;
+		public void setTimeStamp(String timeStamp) {
+			this.timeStamp = timeStamp;
 		}
 	}
 

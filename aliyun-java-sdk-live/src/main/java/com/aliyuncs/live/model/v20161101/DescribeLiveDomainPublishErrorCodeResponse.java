@@ -25,25 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeLiveDomainPublishErrorCodeResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String dataInterval;
 
 	private String domainName;
 
-	private String startTime;
-
 	private String endTime;
 
+	private String requestId;
+
+	private String startTime;
+
 	private List<Rtcd> realTimeCodeData;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getDataInterval() {
 		return this.dataInterval;
@@ -61,20 +53,28 @@ public class DescribeLiveDomainPublishErrorCodeResponse extends AcsResponse {
 		this.domainName = domainName;
 	}
 
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-	}
-
 	public String getEndTime() {
 		return this.endTime;
 	}
 
 	public void setEndTime(String endTime) {
 		this.endTime = endTime;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
 	}
 
 	public List<Rtcd> getRealTimeCodeData() {

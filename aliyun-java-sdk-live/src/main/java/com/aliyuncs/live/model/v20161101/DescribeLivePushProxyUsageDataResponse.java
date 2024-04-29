@@ -27,9 +27,9 @@ public class DescribeLivePushProxyUsageDataResponse extends AcsResponse {
 
 	private String endTime;
 
-	private String startTime;
-
 	private String requestId;
+
+	private String startTime;
 
 	private List<PushProxyDataItem> pushProxyData;
 
@@ -41,20 +41,20 @@ public class DescribeLivePushProxyUsageDataResponse extends AcsResponse {
 		this.endTime = endTime;
 	}
 
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
 	}
 
 	public List<PushProxyDataItem> getPushProxyData() {
@@ -67,29 +67,13 @@ public class DescribeLivePushProxyUsageDataResponse extends AcsResponse {
 
 	public static class PushProxyDataItem {
 
-		private String timeStamp;
-
-		private Long streamCount;
-
 		private String domainName;
 
 		private String region;
 
-		public String getTimeStamp() {
-			return this.timeStamp;
-		}
+		private Long streamCount;
 
-		public void setTimeStamp(String timeStamp) {
-			this.timeStamp = timeStamp;
-		}
-
-		public Long getStreamCount() {
-			return this.streamCount;
-		}
-
-		public void setStreamCount(Long streamCount) {
-			this.streamCount = streamCount;
-		}
+		private String timeStamp;
 
 		public String getDomainName() {
 			return this.domainName;
@@ -105,6 +89,22 @@ public class DescribeLivePushProxyUsageDataResponse extends AcsResponse {
 
 		public void setRegion(String region) {
 			this.region = region;
+		}
+
+		public Long getStreamCount() {
+			return this.streamCount;
+		}
+
+		public void setStreamCount(Long streamCount) {
+			this.streamCount = streamCount;
+		}
+
+		public String getTimeStamp() {
+			return this.timeStamp;
+		}
+
+		public void setTimeStamp(String timeStamp) {
+			this.timeStamp = timeStamp;
 		}
 	}
 

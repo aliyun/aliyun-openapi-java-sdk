@@ -31,11 +31,11 @@ public class DescribeLiveGrtnDurationResponseUnmarshaller {
 		List<StreamData> streamDetailData = new ArrayList<StreamData>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLiveGrtnDurationResponse.StreamDetailData.Length"); i++) {
 			StreamData streamData = new StreamData();
+			streamData.setAppId(_ctx.stringValue("DescribeLiveGrtnDurationResponse.StreamDetailData["+ i +"].AppId"));
 			streamData.setDuration(_ctx.longValue("DescribeLiveGrtnDurationResponse.StreamDetailData["+ i +"].Duration"));
-			streamData.setTimeStamp(_ctx.stringValue("DescribeLiveGrtnDurationResponse.StreamDetailData["+ i +"].TimeStamp"));
 			streamData.setMediaProfile(_ctx.stringValue("DescribeLiveGrtnDurationResponse.StreamDetailData["+ i +"].MediaProfile"));
 			streamData.setMediaType(_ctx.stringValue("DescribeLiveGrtnDurationResponse.StreamDetailData["+ i +"].MediaType"));
-			streamData.setAppId(_ctx.stringValue("DescribeLiveGrtnDurationResponse.StreamDetailData["+ i +"].AppId"));
+			streamData.setTimeStamp(_ctx.stringValue("DescribeLiveGrtnDurationResponse.StreamDetailData["+ i +"].TimeStamp"));
 
 			streamDetailData.add(streamData);
 		}

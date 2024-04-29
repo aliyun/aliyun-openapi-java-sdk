@@ -27,16 +27,16 @@ public class SetLiveStreamPreloadTasksResponseUnmarshaller {
 	public static SetLiveStreamPreloadTasksResponse unmarshall(SetLiveStreamPreloadTasksResponse setLiveStreamPreloadTasksResponse, UnmarshallerContext _ctx) {
 		
 		setLiveStreamPreloadTasksResponse.setRequestId(_ctx.stringValue("SetLiveStreamPreloadTasksResponse.RequestId"));
-		setLiveStreamPreloadTasksResponse.setStatus(_ctx.stringValue("SetLiveStreamPreloadTasksResponse.Status"));
 		setLiveStreamPreloadTasksResponse.setFailedURL(_ctx.integerValue("SetLiveStreamPreloadTasksResponse.FailedURL"));
-		setLiveStreamPreloadTasksResponse.setTotalURL(_ctx.integerValue("SetLiveStreamPreloadTasksResponse.TotalURL"));
+		setLiveStreamPreloadTasksResponse.setStatus(_ctx.stringValue("SetLiveStreamPreloadTasksResponse.Status"));
 		setLiveStreamPreloadTasksResponse.setSuccessURL(_ctx.integerValue("SetLiveStreamPreloadTasksResponse.SuccessURL"));
+		setLiveStreamPreloadTasksResponse.setTotalURL(_ctx.integerValue("SetLiveStreamPreloadTasksResponse.TotalURL"));
 
 		List<PreloadTasksMessage> preloadTasksMessages = new ArrayList<PreloadTasksMessage>();
 		for (int i = 0; i < _ctx.lengthValue("SetLiveStreamPreloadTasksResponse.PreloadTasksMessages.Length"); i++) {
 			PreloadTasksMessage preloadTasksMessage = new PreloadTasksMessage();
-			preloadTasksMessage.setPlayUrl(_ctx.stringValue("SetLiveStreamPreloadTasksResponse.PreloadTasksMessages["+ i +"].PlayUrl"));
 			preloadTasksMessage.setDescription(_ctx.stringValue("SetLiveStreamPreloadTasksResponse.PreloadTasksMessages["+ i +"].Description"));
+			preloadTasksMessage.setPlayUrl(_ctx.stringValue("SetLiveStreamPreloadTasksResponse.PreloadTasksMessages["+ i +"].PlayUrl"));
 			preloadTasksMessage.setTaskId(_ctx.stringValue("SetLiveStreamPreloadTasksResponse.PreloadTasksMessages["+ i +"].TaskId"));
 
 			preloadTasksMessages.add(preloadTasksMessage);

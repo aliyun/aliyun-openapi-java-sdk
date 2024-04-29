@@ -33,17 +33,17 @@ public class DescribeLiveProducerUsageDataResponseUnmarshaller {
 		List<BillProducerDataItem> billProducerData = new ArrayList<BillProducerDataItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLiveProducerUsageDataResponse.BillProducerData.Length"); i++) {
 			BillProducerDataItem billProducerDataItem = new BillProducerDataItem();
-			billProducerDataItem.setTranSdDuration(_ctx.longValue("DescribeLiveProducerUsageDataResponse.BillProducerData["+ i +"].TranSdDuration"));
-			billProducerDataItem.setType(_ctx.stringValue("DescribeLiveProducerUsageDataResponse.BillProducerData["+ i +"].Type"));
-			billProducerDataItem.setTranLdDuration(_ctx.longValue("DescribeLiveProducerUsageDataResponse.BillProducerData["+ i +"].TranLdDuration"));
+			billProducerDataItem.setDomainName(_ctx.stringValue("DescribeLiveProducerUsageDataResponse.BillProducerData["+ i +"].DomainName"));
 			billProducerDataItem.setInstance(_ctx.stringValue("DescribeLiveProducerUsageDataResponse.BillProducerData["+ i +"].Instance"));
-			billProducerDataItem.setTranHdDuration(_ctx.longValue("DescribeLiveProducerUsageDataResponse.BillProducerData["+ i +"].TranHdDuration"));
+			billProducerDataItem.setOutputHdDuration(_ctx.longValue("DescribeLiveProducerUsageDataResponse.BillProducerData["+ i +"].OutputHdDuration"));
+			billProducerDataItem.setOutputLdDuration(_ctx.longValue("DescribeLiveProducerUsageDataResponse.BillProducerData["+ i +"].OutputLdDuration"));
+			billProducerDataItem.setOutputSdDuration(_ctx.longValue("DescribeLiveProducerUsageDataResponse.BillProducerData["+ i +"].OutputSdDuration"));
 			billProducerDataItem.setRegion(_ctx.stringValue("DescribeLiveProducerUsageDataResponse.BillProducerData["+ i +"].Region"));
 			billProducerDataItem.setTimeStamp(_ctx.stringValue("DescribeLiveProducerUsageDataResponse.BillProducerData["+ i +"].TimeStamp"));
-			billProducerDataItem.setOutputHdDuration(_ctx.longValue("DescribeLiveProducerUsageDataResponse.BillProducerData["+ i +"].OutputHdDuration"));
-			billProducerDataItem.setOutputSdDuration(_ctx.longValue("DescribeLiveProducerUsageDataResponse.BillProducerData["+ i +"].OutputSdDuration"));
-			billProducerDataItem.setDomainName(_ctx.stringValue("DescribeLiveProducerUsageDataResponse.BillProducerData["+ i +"].DomainName"));
-			billProducerDataItem.setOutputLdDuration(_ctx.longValue("DescribeLiveProducerUsageDataResponse.BillProducerData["+ i +"].OutputLdDuration"));
+			billProducerDataItem.setTranHdDuration(_ctx.longValue("DescribeLiveProducerUsageDataResponse.BillProducerData["+ i +"].TranHdDuration"));
+			billProducerDataItem.setTranLdDuration(_ctx.longValue("DescribeLiveProducerUsageDataResponse.BillProducerData["+ i +"].TranLdDuration"));
+			billProducerDataItem.setTranSdDuration(_ctx.longValue("DescribeLiveProducerUsageDataResponse.BillProducerData["+ i +"].TranSdDuration"));
+			billProducerDataItem.setType(_ctx.stringValue("DescribeLiveProducerUsageDataResponse.BillProducerData["+ i +"].Type"));
 
 			billProducerData.add(billProducerDataItem);
 		}

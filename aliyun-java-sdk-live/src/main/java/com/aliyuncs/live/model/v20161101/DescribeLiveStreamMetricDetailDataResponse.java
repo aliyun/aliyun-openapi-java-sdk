@@ -25,19 +25,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeLiveStreamMetricDetailDataResponse extends AcsResponse {
 
+	private String domainName;
+
 	private String endTime;
-
-	private String startTime;
-
-	private String requestId;
 
 	private String nextPageToken;
 
 	private Integer pageSize;
 
-	private String domainName;
+	private String requestId;
+
+	private String startTime;
 
 	private List<StreamData> streamDetailData;
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+	}
 
 	public String getEndTime() {
 		return this.endTime;
@@ -45,22 +53,6 @@ public class DescribeLiveStreamMetricDetailDataResponse extends AcsResponse {
 
 	public void setEndTime(String endTime) {
 		this.endTime = endTime;
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
 	}
 
 	public String getNextPageToken() {
@@ -79,12 +71,20 @@ public class DescribeLiveStreamMetricDetailDataResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public String getDomainName() {
-		return this.domainName;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
 	}
 
 	public List<StreamData> getStreamDetailData() {
@@ -97,128 +97,56 @@ public class DescribeLiveStreamMetricDetailDataResponse extends AcsResponse {
 
 	public static class StreamData {
 
-		private Long p2pTraffic;
-
-		private Float rtmpBps;
-
-		private Float hlsBps;
-
-		private Float p2pBps;
-
-		private String streamName;
-
-		private Long p2pCount;
-
-		private Long traffic;
-
-		private Long rtmpCount;
-
-		private Long rtsCount;
-
-		private Float rtsBps;
+		private String appName;
 
 		private Float bps;
 
-		private Long hlsTraffic;
-
-		private Float flvBps;
-
 		private Long count;
 
-		private Long rtsTraffic;
-
-		private Long rtmpTraffic;
-
-		private Long hlsCount;
-
-		private String appName;
+		private Float flvBps;
 
 		private Long flvCount;
 
 		private Long flvTraffic;
 
-		private String timeStamp;
+		private Float hlsBps;
+
+		private Long hlsCount;
+
+		private Long hlsTraffic;
 
 		private String newConns;
 
-		public Long getP2pTraffic() {
-			return this.p2pTraffic;
+		private Float p2pBps;
+
+		private Long p2pCount;
+
+		private Long p2pTraffic;
+
+		private Float rtmpBps;
+
+		private Long rtmpCount;
+
+		private Long rtmpTraffic;
+
+		private Float rtsBps;
+
+		private Long rtsCount;
+
+		private Long rtsTraffic;
+
+		private String streamName;
+
+		private String timeStamp;
+
+		private Long traffic;
+
+		public String getAppName() {
+			return this.appName;
 		}
 
-		public void setP2pTraffic(Long p2pTraffic) {
-			this.p2pTraffic = p2pTraffic;
-		}
-
-		public Float getRtmpBps() {
-			return this.rtmpBps;
-		}
-
-		public void setRtmpBps(Float rtmpBps) {
-			this.rtmpBps = rtmpBps;
-		}
-
-		public Float getHlsBps() {
-			return this.hlsBps;
-		}
-
-		public void setHlsBps(Float hlsBps) {
-			this.hlsBps = hlsBps;
-		}
-
-		public Float getP2pBps() {
-			return this.p2pBps;
-		}
-
-		public void setP2pBps(Float p2pBps) {
-			this.p2pBps = p2pBps;
-		}
-
-		public String getStreamName() {
-			return this.streamName;
-		}
-
-		public void setStreamName(String streamName) {
-			this.streamName = streamName;
-		}
-
-		public Long getP2pCount() {
-			return this.p2pCount;
-		}
-
-		public void setP2pCount(Long p2pCount) {
-			this.p2pCount = p2pCount;
-		}
-
-		public Long getTraffic() {
-			return this.traffic;
-		}
-
-		public void setTraffic(Long traffic) {
-			this.traffic = traffic;
-		}
-
-		public Long getRtmpCount() {
-			return this.rtmpCount;
-		}
-
-		public void setRtmpCount(Long rtmpCount) {
-			this.rtmpCount = rtmpCount;
-		}
-
-		public Long getRtsCount() {
-			return this.rtsCount;
-		}
-
-		public void setRtsCount(Long rtsCount) {
-			this.rtsCount = rtsCount;
-		}
-
-		public Float getRtsBps() {
-			return this.rtsBps;
-		}
-
-		public void setRtsBps(Float rtsBps) {
-			this.rtsBps = rtsBps;
+		public void setAppName(String appName) {
+			this.appName = appName;
 		}
 
 		public Float getBps() {
@@ -229,22 +157,6 @@ public class DescribeLiveStreamMetricDetailDataResponse extends AcsResponse {
 			this.bps = bps;
 		}
 
-		public Long getHlsTraffic() {
-			return this.hlsTraffic;
-		}
-
-		public void setHlsTraffic(Long hlsTraffic) {
-			this.hlsTraffic = hlsTraffic;
-		}
-
-		public Float getFlvBps() {
-			return this.flvBps;
-		}
-
-		public void setFlvBps(Float flvBps) {
-			this.flvBps = flvBps;
-		}
-
 		public Long getCount() {
 			return this.count;
 		}
@@ -253,36 +165,12 @@ public class DescribeLiveStreamMetricDetailDataResponse extends AcsResponse {
 			this.count = count;
 		}
 
-		public Long getRtsTraffic() {
-			return this.rtsTraffic;
+		public Float getFlvBps() {
+			return this.flvBps;
 		}
 
-		public void setRtsTraffic(Long rtsTraffic) {
-			this.rtsTraffic = rtsTraffic;
-		}
-
-		public Long getRtmpTraffic() {
-			return this.rtmpTraffic;
-		}
-
-		public void setRtmpTraffic(Long rtmpTraffic) {
-			this.rtmpTraffic = rtmpTraffic;
-		}
-
-		public Long getHlsCount() {
-			return this.hlsCount;
-		}
-
-		public void setHlsCount(Long hlsCount) {
-			this.hlsCount = hlsCount;
-		}
-
-		public String getAppName() {
-			return this.appName;
-		}
-
-		public void setAppName(String appName) {
-			this.appName = appName;
+		public void setFlvBps(Float flvBps) {
+			this.flvBps = flvBps;
 		}
 
 		public Long getFlvCount() {
@@ -301,12 +189,28 @@ public class DescribeLiveStreamMetricDetailDataResponse extends AcsResponse {
 			this.flvTraffic = flvTraffic;
 		}
 
-		public String getTimeStamp() {
-			return this.timeStamp;
+		public Float getHlsBps() {
+			return this.hlsBps;
 		}
 
-		public void setTimeStamp(String timeStamp) {
-			this.timeStamp = timeStamp;
+		public void setHlsBps(Float hlsBps) {
+			this.hlsBps = hlsBps;
+		}
+
+		public Long getHlsCount() {
+			return this.hlsCount;
+		}
+
+		public void setHlsCount(Long hlsCount) {
+			this.hlsCount = hlsCount;
+		}
+
+		public Long getHlsTraffic() {
+			return this.hlsTraffic;
+		}
+
+		public void setHlsTraffic(Long hlsTraffic) {
+			this.hlsTraffic = hlsTraffic;
 		}
 
 		public String getNewConns() {
@@ -315,6 +219,102 @@ public class DescribeLiveStreamMetricDetailDataResponse extends AcsResponse {
 
 		public void setNewConns(String newConns) {
 			this.newConns = newConns;
+		}
+
+		public Float getP2pBps() {
+			return this.p2pBps;
+		}
+
+		public void setP2pBps(Float p2pBps) {
+			this.p2pBps = p2pBps;
+		}
+
+		public Long getP2pCount() {
+			return this.p2pCount;
+		}
+
+		public void setP2pCount(Long p2pCount) {
+			this.p2pCount = p2pCount;
+		}
+
+		public Long getP2pTraffic() {
+			return this.p2pTraffic;
+		}
+
+		public void setP2pTraffic(Long p2pTraffic) {
+			this.p2pTraffic = p2pTraffic;
+		}
+
+		public Float getRtmpBps() {
+			return this.rtmpBps;
+		}
+
+		public void setRtmpBps(Float rtmpBps) {
+			this.rtmpBps = rtmpBps;
+		}
+
+		public Long getRtmpCount() {
+			return this.rtmpCount;
+		}
+
+		public void setRtmpCount(Long rtmpCount) {
+			this.rtmpCount = rtmpCount;
+		}
+
+		public Long getRtmpTraffic() {
+			return this.rtmpTraffic;
+		}
+
+		public void setRtmpTraffic(Long rtmpTraffic) {
+			this.rtmpTraffic = rtmpTraffic;
+		}
+
+		public Float getRtsBps() {
+			return this.rtsBps;
+		}
+
+		public void setRtsBps(Float rtsBps) {
+			this.rtsBps = rtsBps;
+		}
+
+		public Long getRtsCount() {
+			return this.rtsCount;
+		}
+
+		public void setRtsCount(Long rtsCount) {
+			this.rtsCount = rtsCount;
+		}
+
+		public Long getRtsTraffic() {
+			return this.rtsTraffic;
+		}
+
+		public void setRtsTraffic(Long rtsTraffic) {
+			this.rtsTraffic = rtsTraffic;
+		}
+
+		public String getStreamName() {
+			return this.streamName;
+		}
+
+		public void setStreamName(String streamName) {
+			this.streamName = streamName;
+		}
+
+		public String getTimeStamp() {
+			return this.timeStamp;
+		}
+
+		public void setTimeStamp(String timeStamp) {
+			this.timeStamp = timeStamp;
+		}
+
+		public Long getTraffic() {
+			return this.traffic;
+		}
+
+		public void setTraffic(Long traffic) {
+			this.traffic = traffic;
 		}
 	}
 

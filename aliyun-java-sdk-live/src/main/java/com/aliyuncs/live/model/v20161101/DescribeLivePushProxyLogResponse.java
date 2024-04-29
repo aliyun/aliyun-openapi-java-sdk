@@ -91,13 +91,13 @@ public class DescribeLivePushProxyLogResponse extends AcsResponse {
 
 			private String endTime;
 
-			private Long logSize;
-
-			private String startTime;
-
 			private String logName;
 
 			private String logPath;
+
+			private Long logSize;
+
+			private String startTime;
 
 			public String getEndTime() {
 				return this.endTime;
@@ -105,22 +105,6 @@ public class DescribeLivePushProxyLogResponse extends AcsResponse {
 
 			public void setEndTime(String endTime) {
 				this.endTime = endTime;
-			}
-
-			public Long getLogSize() {
-				return this.logSize;
-			}
-
-			public void setLogSize(Long logSize) {
-				this.logSize = logSize;
-			}
-
-			public String getStartTime() {
-				return this.startTime;
-			}
-
-			public void setStartTime(String startTime) {
-				this.startTime = startTime;
 			}
 
 			public String getLogName() {
@@ -137,6 +121,22 @@ public class DescribeLivePushProxyLogResponse extends AcsResponse {
 
 			public void setLogPath(String logPath) {
 				this.logPath = logPath;
+			}
+
+			public Long getLogSize() {
+				return this.logSize;
+			}
+
+			public void setLogSize(Long logSize) {
+				this.logSize = logSize;
+			}
+
+			public String getStartTime() {
+				return this.startTime;
+			}
+
+			public void setStartTime(String startTime) {
+				this.startTime = startTime;
 			}
 		}
 

@@ -46,10 +46,10 @@ public class DescribeLiveDomainLogExTtlResponseUnmarshaller {
 			for (int j = 0; j < _ctx.lengthValue("DescribeLiveDomainLogExTtlResponse.DomainLogDetails["+ i +"].LogInfos.Length"); j++) {
 				LogInfoDetail logInfoDetail = new LogInfoDetail();
 				logInfoDetail.setEndTime(_ctx.stringValue("DescribeLiveDomainLogExTtlResponse.DomainLogDetails["+ i +"].LogInfos["+ j +"].EndTime"));
-				logInfoDetail.setLogSize(_ctx.longValue("DescribeLiveDomainLogExTtlResponse.DomainLogDetails["+ i +"].LogInfos["+ j +"].LogSize"));
-				logInfoDetail.setStartTime(_ctx.stringValue("DescribeLiveDomainLogExTtlResponse.DomainLogDetails["+ i +"].LogInfos["+ j +"].StartTime"));
 				logInfoDetail.setLogName(_ctx.stringValue("DescribeLiveDomainLogExTtlResponse.DomainLogDetails["+ i +"].LogInfos["+ j +"].LogName"));
 				logInfoDetail.setLogPath(_ctx.stringValue("DescribeLiveDomainLogExTtlResponse.DomainLogDetails["+ i +"].LogInfos["+ j +"].LogPath"));
+				logInfoDetail.setLogSize(_ctx.longValue("DescribeLiveDomainLogExTtlResponse.DomainLogDetails["+ i +"].LogInfos["+ j +"].LogSize"));
+				logInfoDetail.setStartTime(_ctx.stringValue("DescribeLiveDomainLogExTtlResponse.DomainLogDetails["+ i +"].LogInfos["+ j +"].StartTime"));
 
 				logInfos.add(logInfoDetail);
 			}

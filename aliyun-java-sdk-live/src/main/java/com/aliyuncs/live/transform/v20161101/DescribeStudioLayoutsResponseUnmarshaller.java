@@ -38,57 +38,44 @@ public class DescribeStudioLayoutsResponseUnmarshaller {
 		List<StudioLayout> studioLayouts = new ArrayList<StudioLayout>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeStudioLayoutsResponse.StudioLayouts.Length"); i++) {
 			StudioLayout studioLayout = new StudioLayout();
-			studioLayout.setLayoutType(_ctx.stringValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].LayoutType"));
 			studioLayout.setLayoutId(_ctx.stringValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].LayoutId"));
 			studioLayout.setLayoutName(_ctx.stringValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].LayoutName"));
+			studioLayout.setLayoutType(_ctx.stringValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].LayoutType"));
+
+			BgImageConfig bgImageConfig = new BgImageConfig();
+			bgImageConfig.setId(_ctx.stringValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].BgImageConfig.Id"));
+			bgImageConfig.setImageUrl(_ctx.stringValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].BgImageConfig.ImageUrl"));
+			bgImageConfig.setLocationId(_ctx.stringValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].BgImageConfig.LocationId"));
+			bgImageConfig.setMaterialId(_ctx.stringValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].BgImageConfig.MaterialId"));
+			studioLayout.setBgImageConfig(bgImageConfig);
 
 			CommonConfig commonConfig = new CommonConfig();
 			commonConfig.setChannelId(_ctx.stringValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].CommonConfig.ChannelId"));
 			commonConfig.setVideoResourceId(_ctx.stringValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].CommonConfig.VideoResourceId"));
 			studioLayout.setCommonConfig(commonConfig);
 
-			BgImageConfig bgImageConfig = new BgImageConfig();
-			bgImageConfig.setMaterialId(_ctx.stringValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].BgImageConfig.MaterialId"));
-			bgImageConfig.setImageUrl(_ctx.stringValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].BgImageConfig.ImageUrl"));
-			bgImageConfig.setId(_ctx.stringValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].BgImageConfig.Id"));
-			bgImageConfig.setLocationId(_ctx.stringValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].BgImageConfig.LocationId"));
-			studioLayout.setBgImageConfig(bgImageConfig);
+			List<LayerOrderConfig> layerOrderConfigList = new ArrayList<LayerOrderConfig>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].LayerOrderConfigList.Length"); j++) {
+				LayerOrderConfig layerOrderConfig = new LayerOrderConfig();
+				layerOrderConfig.setId(_ctx.stringValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].LayerOrderConfigList["+ j +"].Id"));
+				layerOrderConfig.setType(_ctx.stringValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].LayerOrderConfigList["+ j +"].Type"));
 
-			List<ScreenInputConfig> screenInputConfigList = new ArrayList<ScreenInputConfig>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].ScreenInputConfigList.Length"); j++) {
-				ScreenInputConfig screenInputConfig = new ScreenInputConfig();
-				screenInputConfig.setPortraitType(_ctx.integerValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].ScreenInputConfigList["+ j +"].PortraitType"));
-				screenInputConfig.setIndex(_ctx.integerValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].ScreenInputConfigList["+ j +"].Index"));
-				screenInputConfig.setPositionX(_ctx.stringValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].ScreenInputConfigList["+ j +"].PositionX"));
-				screenInputConfig.setColor(_ctx.stringValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].ScreenInputConfigList["+ j +"].Color"));
-				screenInputConfig.setOnlyAudio(_ctx.booleanValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].ScreenInputConfigList["+ j +"].OnlyAudio"));
-				screenInputConfig.setHeightNormalized(_ctx.floatValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].ScreenInputConfigList["+ j +"].HeightNormalized"));
-				screenInputConfig.setPositionY(_ctx.stringValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].ScreenInputConfigList["+ j +"].PositionY"));
-				screenInputConfig.setChannelId(_ctx.stringValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].ScreenInputConfigList["+ j +"].ChannelId"));
-				screenInputConfig.setVideoResourceId(_ctx.stringValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].ScreenInputConfigList["+ j +"].VideoResourceId"));
-				screenInputConfig.setId(_ctx.stringValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].ScreenInputConfigList["+ j +"].Id"));
-
-				AudioConfig audioConfig = new AudioConfig();
-				audioConfig.setVolumeRate(_ctx.floatValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].ScreenInputConfigList["+ j +"].AudioConfig.VolumeRate"));
-				audioConfig.setValidChannel(_ctx.stringValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].ScreenInputConfigList["+ j +"].AudioConfig.ValidChannel"));
-				screenInputConfig.setAudioConfig(audioConfig);
-
-				screenInputConfigList.add(screenInputConfig);
+				layerOrderConfigList.add(layerOrderConfig);
 			}
-			studioLayout.setScreenInputConfigList(screenInputConfigList);
+			studioLayout.setLayerOrderConfigList(layerOrderConfigList);
 
 			List<MediaInputConfig> mediaInputConfigList = new ArrayList<MediaInputConfig>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].MediaInputConfigList.Length"); j++) {
 				MediaInputConfig mediaInputConfig = new MediaInputConfig();
-				mediaInputConfig.setIndex(_ctx.integerValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].MediaInputConfigList["+ j +"].Index"));
-				mediaInputConfig.setHeightNormalized(_ctx.floatValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].MediaInputConfigList["+ j +"].HeightNormalized"));
-				mediaInputConfig.setFillMode(_ctx.stringValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].MediaInputConfigList["+ j +"].FillMode"));
-				mediaInputConfig.setPositionRefer(_ctx.stringValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].MediaInputConfigList["+ j +"].PositionRefer"));
 				mediaInputConfig.setChannelId(_ctx.stringValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].MediaInputConfigList["+ j +"].ChannelId"));
+				mediaInputConfig.setFillMode(_ctx.stringValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].MediaInputConfigList["+ j +"].FillMode"));
+				mediaInputConfig.setHeightNormalized(_ctx.floatValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].MediaInputConfigList["+ j +"].HeightNormalized"));
+				mediaInputConfig.setId(_ctx.stringValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].MediaInputConfigList["+ j +"].Id"));
+				mediaInputConfig.setImageMaterialId(_ctx.stringValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].MediaInputConfigList["+ j +"].ImageMaterialId"));
+				mediaInputConfig.setIndex(_ctx.integerValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].MediaInputConfigList["+ j +"].Index"));
+				mediaInputConfig.setPositionRefer(_ctx.stringValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].MediaInputConfigList["+ j +"].PositionRefer"));
 				mediaInputConfig.setVideoResourceId(_ctx.stringValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].MediaInputConfigList["+ j +"].VideoResourceId"));
 				mediaInputConfig.setWidthNormalized(_ctx.floatValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].MediaInputConfigList["+ j +"].WidthNormalized"));
-				mediaInputConfig.setImageMaterialId(_ctx.stringValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].MediaInputConfigList["+ j +"].ImageMaterialId"));
-				mediaInputConfig.setId(_ctx.stringValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].MediaInputConfigList["+ j +"].Id"));
 
 				List<Float> positionNormalized = new ArrayList<Float>();
 				for (int k = 0; k < _ctx.lengthValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].MediaInputConfigList["+ j +"].PositionNormalized.Length"); k++) {
@@ -100,15 +87,28 @@ public class DescribeStudioLayoutsResponseUnmarshaller {
 			}
 			studioLayout.setMediaInputConfigList(mediaInputConfigList);
 
-			List<LayerOrderConfig> layerOrderConfigList = new ArrayList<LayerOrderConfig>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].LayerOrderConfigList.Length"); j++) {
-				LayerOrderConfig layerOrderConfig = new LayerOrderConfig();
-				layerOrderConfig.setType(_ctx.stringValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].LayerOrderConfigList["+ j +"].Type"));
-				layerOrderConfig.setId(_ctx.stringValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].LayerOrderConfigList["+ j +"].Id"));
+			List<ScreenInputConfig> screenInputConfigList = new ArrayList<ScreenInputConfig>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].ScreenInputConfigList.Length"); j++) {
+				ScreenInputConfig screenInputConfig = new ScreenInputConfig();
+				screenInputConfig.setChannelId(_ctx.stringValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].ScreenInputConfigList["+ j +"].ChannelId"));
+				screenInputConfig.setColor(_ctx.stringValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].ScreenInputConfigList["+ j +"].Color"));
+				screenInputConfig.setHeightNormalized(_ctx.floatValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].ScreenInputConfigList["+ j +"].HeightNormalized"));
+				screenInputConfig.setId(_ctx.stringValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].ScreenInputConfigList["+ j +"].Id"));
+				screenInputConfig.setIndex(_ctx.integerValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].ScreenInputConfigList["+ j +"].Index"));
+				screenInputConfig.setOnlyAudio(_ctx.booleanValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].ScreenInputConfigList["+ j +"].OnlyAudio"));
+				screenInputConfig.setPortraitType(_ctx.integerValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].ScreenInputConfigList["+ j +"].PortraitType"));
+				screenInputConfig.setPositionX(_ctx.stringValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].ScreenInputConfigList["+ j +"].PositionX"));
+				screenInputConfig.setPositionY(_ctx.stringValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].ScreenInputConfigList["+ j +"].PositionY"));
+				screenInputConfig.setVideoResourceId(_ctx.stringValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].ScreenInputConfigList["+ j +"].VideoResourceId"));
 
-				layerOrderConfigList.add(layerOrderConfig);
+				AudioConfig audioConfig = new AudioConfig();
+				audioConfig.setValidChannel(_ctx.stringValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].ScreenInputConfigList["+ j +"].AudioConfig.ValidChannel"));
+				audioConfig.setVolumeRate(_ctx.floatValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].ScreenInputConfigList["+ j +"].AudioConfig.VolumeRate"));
+				screenInputConfig.setAudioConfig(audioConfig);
+
+				screenInputConfigList.add(screenInputConfig);
 			}
-			studioLayout.setLayerOrderConfigList(layerOrderConfigList);
+			studioLayout.setScreenInputConfigList(screenInputConfigList);
 
 			studioLayouts.add(studioLayout);
 		}

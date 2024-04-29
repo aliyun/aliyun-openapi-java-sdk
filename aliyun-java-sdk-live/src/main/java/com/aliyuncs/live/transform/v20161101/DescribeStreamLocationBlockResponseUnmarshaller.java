@@ -27,22 +27,22 @@ public class DescribeStreamLocationBlockResponseUnmarshaller {
 	public static DescribeStreamLocationBlockResponse unmarshall(DescribeStreamLocationBlockResponse describeStreamLocationBlockResponse, UnmarshallerContext _ctx) {
 		
 		describeStreamLocationBlockResponse.setRequestId(_ctx.stringValue("DescribeStreamLocationBlockResponse.RequestId"));
-		describeStreamLocationBlockResponse.setTotalPage(_ctx.integerValue("DescribeStreamLocationBlockResponse.TotalPage"));
+		describeStreamLocationBlockResponse.setCount(_ctx.integerValue("DescribeStreamLocationBlockResponse.Count"));
 		describeStreamLocationBlockResponse.setPageNum(_ctx.integerValue("DescribeStreamLocationBlockResponse.PageNum"));
 		describeStreamLocationBlockResponse.setPageSize(_ctx.integerValue("DescribeStreamLocationBlockResponse.PageSize"));
-		describeStreamLocationBlockResponse.setCount(_ctx.integerValue("DescribeStreamLocationBlockResponse.Count"));
+		describeStreamLocationBlockResponse.setTotalPage(_ctx.integerValue("DescribeStreamLocationBlockResponse.TotalPage"));
 
 		List<StreamBlock> streamBlockList = new ArrayList<StreamBlock>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeStreamLocationBlockResponse.StreamBlockList.Length"); i++) {
 			StreamBlock streamBlock = new StreamBlock();
-			streamBlock.setStatus(_ctx.integerValue("DescribeStreamLocationBlockResponse.StreamBlockList["+ i +"].Status"));
-			streamBlock.setBlockType(_ctx.stringValue("DescribeStreamLocationBlockResponse.StreamBlockList["+ i +"].BlockType"));
 			streamBlock.setAppName(_ctx.stringValue("DescribeStreamLocationBlockResponse.StreamBlockList["+ i +"].AppName"));
-			streamBlock.setUpdateTime(_ctx.stringValue("DescribeStreamLocationBlockResponse.StreamBlockList["+ i +"].UpdateTime"));
-			streamBlock.setStreamName(_ctx.stringValue("DescribeStreamLocationBlockResponse.StreamBlockList["+ i +"].StreamName"));
-			streamBlock.setReleaseTime(_ctx.stringValue("DescribeStreamLocationBlockResponse.StreamBlockList["+ i +"].ReleaseTime"));
-			streamBlock.setLocationList(_ctx.stringValue("DescribeStreamLocationBlockResponse.StreamBlockList["+ i +"].LocationList"));
+			streamBlock.setBlockType(_ctx.stringValue("DescribeStreamLocationBlockResponse.StreamBlockList["+ i +"].BlockType"));
 			streamBlock.setDomainName(_ctx.stringValue("DescribeStreamLocationBlockResponse.StreamBlockList["+ i +"].DomainName"));
+			streamBlock.setLocationList(_ctx.stringValue("DescribeStreamLocationBlockResponse.StreamBlockList["+ i +"].LocationList"));
+			streamBlock.setReleaseTime(_ctx.stringValue("DescribeStreamLocationBlockResponse.StreamBlockList["+ i +"].ReleaseTime"));
+			streamBlock.setStatus(_ctx.integerValue("DescribeStreamLocationBlockResponse.StreamBlockList["+ i +"].Status"));
+			streamBlock.setStreamName(_ctx.stringValue("DescribeStreamLocationBlockResponse.StreamBlockList["+ i +"].StreamName"));
+			streamBlock.setUpdateTime(_ctx.stringValue("DescribeStreamLocationBlockResponse.StreamBlockList["+ i +"].UpdateTime"));
 
 			streamBlockList.add(streamBlock);
 		}

@@ -24,18 +24,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class SetLiveStreamBlockResponse extends AcsResponse {
 
-	private String status;
+	private String description;
 
 	private String requestId;
 
-	private String description;
+	private String status;
 
-	public String getStatus() {
-		return this.status;
+	public String getDescription() {
+		return this.description;
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	public String getRequestId() {
@@ -46,12 +46,12 @@ public class SetLiveStreamBlockResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getDescription() {
-		return this.description;
+	public String getStatus() {
+		return this.status;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 	@Override

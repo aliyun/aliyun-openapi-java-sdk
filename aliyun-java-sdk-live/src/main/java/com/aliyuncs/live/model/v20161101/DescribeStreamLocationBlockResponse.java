@@ -25,7 +25,7 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeStreamLocationBlockResponse extends AcsResponse {
 
-	private Integer totalPage;
+	private Integer count;
 
 	private Integer pageNum;
 
@@ -33,16 +33,16 @@ public class DescribeStreamLocationBlockResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Integer count;
+	private Integer totalPage;
 
 	private List<StreamBlock> streamBlockList;
 
-	public Integer getTotalPage() {
-		return this.totalPage;
+	public Integer getCount() {
+		return this.count;
 	}
 
-	public void setTotalPage(Integer totalPage) {
-		this.totalPage = totalPage;
+	public void setCount(Integer count) {
+		this.count = count;
 	}
 
 	public Integer getPageNum() {
@@ -69,12 +69,12 @@ public class DescribeStreamLocationBlockResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getCount() {
-		return this.count;
+	public Integer getTotalPage() {
+		return this.totalPage;
 	}
 
-	public void setCount(Integer count) {
-		this.count = count;
+	public void setTotalPage(Integer totalPage) {
+		this.totalPage = totalPage;
 	}
 
 	public List<StreamBlock> getStreamBlockList() {
@@ -87,28 +87,28 @@ public class DescribeStreamLocationBlockResponse extends AcsResponse {
 
 	public static class StreamBlock {
 
-		private Integer status;
+		private String appName;
 
 		private String blockType;
 
-		private String appName;
-
-		private String updateTime;
-
-		private String streamName;
-
-		private String releaseTime;
+		private String domainName;
 
 		private String locationList;
 
-		private String domainName;
+		private String releaseTime;
 
-		public Integer getStatus() {
-			return this.status;
+		private Integer status;
+
+		private String streamName;
+
+		private String updateTime;
+
+		public String getAppName() {
+			return this.appName;
 		}
 
-		public void setStatus(Integer status) {
-			this.status = status;
+		public void setAppName(String appName) {
+			this.appName = appName;
 		}
 
 		public String getBlockType() {
@@ -119,36 +119,12 @@ public class DescribeStreamLocationBlockResponse extends AcsResponse {
 			this.blockType = blockType;
 		}
 
-		public String getAppName() {
-			return this.appName;
+		public String getDomainName() {
+			return this.domainName;
 		}
 
-		public void setAppName(String appName) {
-			this.appName = appName;
-		}
-
-		public String getUpdateTime() {
-			return this.updateTime;
-		}
-
-		public void setUpdateTime(String updateTime) {
-			this.updateTime = updateTime;
-		}
-
-		public String getStreamName() {
-			return this.streamName;
-		}
-
-		public void setStreamName(String streamName) {
-			this.streamName = streamName;
-		}
-
-		public String getReleaseTime() {
-			return this.releaseTime;
-		}
-
-		public void setReleaseTime(String releaseTime) {
-			this.releaseTime = releaseTime;
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
 		}
 
 		public String getLocationList() {
@@ -159,12 +135,36 @@ public class DescribeStreamLocationBlockResponse extends AcsResponse {
 			this.locationList = locationList;
 		}
 
-		public String getDomainName() {
-			return this.domainName;
+		public String getReleaseTime() {
+			return this.releaseTime;
 		}
 
-		public void setDomainName(String domainName) {
-			this.domainName = domainName;
+		public void setReleaseTime(String releaseTime) {
+			this.releaseTime = releaseTime;
+		}
+
+		public Integer getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(Integer status) {
+			this.status = status;
+		}
+
+		public String getStreamName() {
+			return this.streamName;
+		}
+
+		public void setStreamName(String streamName) {
+			this.streamName = streamName;
+		}
+
+		public String getUpdateTime() {
+			return this.updateTime;
+		}
+
+		public void setUpdateTime(String updateTime) {
+			this.updateTime = updateTime;
 		}
 	}
 

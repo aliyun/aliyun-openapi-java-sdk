@@ -33,10 +33,10 @@ public class DescribeLivePushProxyUsageDataResponseUnmarshaller {
 		List<PushProxyDataItem> pushProxyData = new ArrayList<PushProxyDataItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLivePushProxyUsageDataResponse.PushProxyData.Length"); i++) {
 			PushProxyDataItem pushProxyDataItem = new PushProxyDataItem();
-			pushProxyDataItem.setTimeStamp(_ctx.stringValue("DescribeLivePushProxyUsageDataResponse.PushProxyData["+ i +"].TimeStamp"));
-			pushProxyDataItem.setStreamCount(_ctx.longValue("DescribeLivePushProxyUsageDataResponse.PushProxyData["+ i +"].StreamCount"));
 			pushProxyDataItem.setDomainName(_ctx.stringValue("DescribeLivePushProxyUsageDataResponse.PushProxyData["+ i +"].DomainName"));
 			pushProxyDataItem.setRegion(_ctx.stringValue("DescribeLivePushProxyUsageDataResponse.PushProxyData["+ i +"].Region"));
+			pushProxyDataItem.setStreamCount(_ctx.longValue("DescribeLivePushProxyUsageDataResponse.PushProxyData["+ i +"].StreamCount"));
+			pushProxyDataItem.setTimeStamp(_ctx.stringValue("DescribeLivePushProxyUsageDataResponse.PushProxyData["+ i +"].TimeStamp"));
 
 			pushProxyData.add(pushProxyDataItem);
 		}

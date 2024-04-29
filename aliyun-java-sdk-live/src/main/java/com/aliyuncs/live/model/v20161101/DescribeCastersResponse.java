@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeCastersResponse extends AcsResponse {
 
-	private Integer total;
-
 	private String requestId;
 
+	private Integer total;
+
 	private List<Caster> casterList;
-
-	public Integer getTotal() {
-		return this.total;
-	}
-
-	public void setTotal(Integer total) {
-		this.total = total;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,6 +37,14 @@ public class DescribeCastersResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getTotal() {
+		return this.total;
+	}
+
+	public void setTotal(Integer total) {
+		this.total = total;
 	}
 
 	public List<Caster> getCasterList() {
@@ -57,64 +57,40 @@ public class DescribeCastersResponse extends AcsResponse {
 
 	public static class Caster {
 
-		private Integer status;
-
-		private String purchaseTime;
-
-		private String expireTime;
-
-		private String createTime;
+		private String casterId;
 
 		private String casterName;
 
-		private String chargeType;
-
 		private String casterTemplate;
-
-		private Integer roomId;
-
-		private String casterId;
 
 		private Integer channelEnable;
 
-		private String lastModified;
+		private String chargeType;
 
-		private String startTime;
-
-		private Integer normType;
+		private String createTime;
 
 		private String duration;
 
-		public Integer getStatus() {
-			return this.status;
+		private String expireTime;
+
+		private String lastModified;
+
+		private Integer normType;
+
+		private String purchaseTime;
+
+		private Integer roomId;
+
+		private String startTime;
+
+		private Integer status;
+
+		public String getCasterId() {
+			return this.casterId;
 		}
 
-		public void setStatus(Integer status) {
-			this.status = status;
-		}
-
-		public String getPurchaseTime() {
-			return this.purchaseTime;
-		}
-
-		public void setPurchaseTime(String purchaseTime) {
-			this.purchaseTime = purchaseTime;
-		}
-
-		public String getExpireTime() {
-			return this.expireTime;
-		}
-
-		public void setExpireTime(String expireTime) {
-			this.expireTime = expireTime;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
+		public void setCasterId(String casterId) {
+			this.casterId = casterId;
 		}
 
 		public String getCasterName() {
@@ -125,36 +101,12 @@ public class DescribeCastersResponse extends AcsResponse {
 			this.casterName = casterName;
 		}
 
-		public String getChargeType() {
-			return this.chargeType;
-		}
-
-		public void setChargeType(String chargeType) {
-			this.chargeType = chargeType;
-		}
-
 		public String getCasterTemplate() {
 			return this.casterTemplate;
 		}
 
 		public void setCasterTemplate(String casterTemplate) {
 			this.casterTemplate = casterTemplate;
-		}
-
-		public Integer getRoomId() {
-			return this.roomId;
-		}
-
-		public void setRoomId(Integer roomId) {
-			this.roomId = roomId;
-		}
-
-		public String getCasterId() {
-			return this.casterId;
-		}
-
-		public void setCasterId(String casterId) {
-			this.casterId = casterId;
 		}
 
 		public Integer getChannelEnable() {
@@ -165,20 +117,44 @@ public class DescribeCastersResponse extends AcsResponse {
 			this.channelEnable = channelEnable;
 		}
 
+		public String getChargeType() {
+			return this.chargeType;
+		}
+
+		public void setChargeType(String chargeType) {
+			this.chargeType = chargeType;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getDuration() {
+			return this.duration;
+		}
+
+		public void setDuration(String duration) {
+			this.duration = duration;
+		}
+
+		public String getExpireTime() {
+			return this.expireTime;
+		}
+
+		public void setExpireTime(String expireTime) {
+			this.expireTime = expireTime;
+		}
+
 		public String getLastModified() {
 			return this.lastModified;
 		}
 
 		public void setLastModified(String lastModified) {
 			this.lastModified = lastModified;
-		}
-
-		public String getStartTime() {
-			return this.startTime;
-		}
-
-		public void setStartTime(String startTime) {
-			this.startTime = startTime;
 		}
 
 		public Integer getNormType() {
@@ -189,12 +165,36 @@ public class DescribeCastersResponse extends AcsResponse {
 			this.normType = normType;
 		}
 
-		public String getDuration() {
-			return this.duration;
+		public String getPurchaseTime() {
+			return this.purchaseTime;
 		}
 
-		public void setDuration(String duration) {
-			this.duration = duration;
+		public void setPurchaseTime(String purchaseTime) {
+			this.purchaseTime = purchaseTime;
+		}
+
+		public Integer getRoomId() {
+			return this.roomId;
+		}
+
+		public void setRoomId(Integer roomId) {
+			this.roomId = roomId;
+		}
+
+		public String getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
+		}
+
+		public Integer getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(Integer status) {
+			this.status = status;
 		}
 	}
 

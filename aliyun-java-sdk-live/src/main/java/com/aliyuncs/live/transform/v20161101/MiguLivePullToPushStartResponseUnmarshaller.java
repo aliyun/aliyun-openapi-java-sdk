@@ -22,10 +22,10 @@ public class MiguLivePullToPushStartResponseUnmarshaller {
 
 	public static MiguLivePullToPushStartResponse unmarshall(MiguLivePullToPushStartResponse miguLivePullToPushStartResponse, UnmarshallerContext _ctx) {
 		
-		miguLivePullToPushStartResponse.setRequestId(_ctx.stringValue("MiguLivePullToPushStartResponse.requestId"));
 		miguLivePullToPushStartResponse.setCode(_ctx.stringValue("MiguLivePullToPushStartResponse.code"));
-		miguLivePullToPushStartResponse.setTimestamp(_ctx.stringValue("MiguLivePullToPushStartResponse.timestamp"));
 		miguLivePullToPushStartResponse.setMessage(_ctx.stringValue("MiguLivePullToPushStartResponse.message"));
+		miguLivePullToPushStartResponse.setRequestId(_ctx.stringValue("MiguLivePullToPushStartResponse.requestId"));
+		miguLivePullToPushStartResponse.setTimestamp(_ctx.stringValue("MiguLivePullToPushStartResponse.timestamp"));
 	 
 	 	return miguLivePullToPushStartResponse;
 	}

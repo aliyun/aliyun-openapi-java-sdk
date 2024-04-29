@@ -23,8 +23,8 @@ public class DescribeLiveStreamAuthCheckingResponseUnmarshaller {
 	public static DescribeLiveStreamAuthCheckingResponse unmarshall(DescribeLiveStreamAuthCheckingResponse describeLiveStreamAuthCheckingResponse, UnmarshallerContext _ctx) {
 		
 		describeLiveStreamAuthCheckingResponse.setRequestId(_ctx.stringValue("DescribeLiveStreamAuthCheckingResponse.RequestId"));
-		describeLiveStreamAuthCheckingResponse.setStatus(_ctx.stringValue("DescribeLiveStreamAuthCheckingResponse.Status"));
 		describeLiveStreamAuthCheckingResponse.setDescription(_ctx.stringValue("DescribeLiveStreamAuthCheckingResponse.Description"));
+		describeLiveStreamAuthCheckingResponse.setStatus(_ctx.stringValue("DescribeLiveStreamAuthCheckingResponse.Status"));
 	 
 	 	return describeLiveStreamAuthCheckingResponse;
 	}

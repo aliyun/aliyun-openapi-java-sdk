@@ -33,12 +33,12 @@ public class DescribeCasterScenesResponseUnmarshaller {
 		List<Scene> sceneList = new ArrayList<Scene>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCasterScenesResponse.SceneList.Length"); i++) {
 			Scene scene = new Scene();
-			scene.setStatus(_ctx.integerValue("DescribeCasterScenesResponse.SceneList["+ i +"].Status"));
 			scene.setLayoutId(_ctx.stringValue("DescribeCasterScenesResponse.SceneList["+ i +"].LayoutId"));
 			scene.setOutputType(_ctx.stringValue("DescribeCasterScenesResponse.SceneList["+ i +"].OutputType"));
 			scene.setRtsUrl(_ctx.stringValue("DescribeCasterScenesResponse.SceneList["+ i +"].RtsUrl"));
 			scene.setSceneId(_ctx.stringValue("DescribeCasterScenesResponse.SceneList["+ i +"].SceneId"));
 			scene.setSceneName(_ctx.stringValue("DescribeCasterScenesResponse.SceneList["+ i +"].SceneName"));
+			scene.setStatus(_ctx.integerValue("DescribeCasterScenesResponse.SceneList["+ i +"].Status"));
 			scene.setStreamUrl(_ctx.stringValue("DescribeCasterScenesResponse.SceneList["+ i +"].StreamUrl"));
 
 			List<String> componentIds = new ArrayList<String>();
@@ -50,9 +50,9 @@ public class DescribeCasterScenesResponseUnmarshaller {
 			List<StreamInfo> streamInfos = new ArrayList<StreamInfo>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeCasterScenesResponse.SceneList["+ i +"].StreamInfos.Length"); j++) {
 				StreamInfo streamInfo = new StreamInfo();
-				streamInfo.setVideoFormat(_ctx.stringValue("DescribeCasterScenesResponse.SceneList["+ i +"].StreamInfos["+ j +"].VideoFormat"));
 				streamInfo.setOutputStreamUrl(_ctx.stringValue("DescribeCasterScenesResponse.SceneList["+ i +"].StreamInfos["+ j +"].OutputStreamUrl"));
 				streamInfo.setTranscodeConfig(_ctx.stringValue("DescribeCasterScenesResponse.SceneList["+ i +"].StreamInfos["+ j +"].TranscodeConfig"));
+				streamInfo.setVideoFormat(_ctx.stringValue("DescribeCasterScenesResponse.SceneList["+ i +"].StreamInfos["+ j +"].VideoFormat"));
 
 				streamInfos.add(streamInfo);
 			}

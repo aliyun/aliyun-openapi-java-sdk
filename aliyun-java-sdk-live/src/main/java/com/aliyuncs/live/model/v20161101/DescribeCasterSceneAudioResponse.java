@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeCasterSceneAudioResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String casterId;
 
 	private Integer followEnable;
 
+	private String requestId;
+
 	private List<AudioLayer> audioLayers;
 
 	private List<String> mixList;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getCasterId() {
 		return this.casterId;
@@ -57,6 +49,14 @@ public class DescribeCasterSceneAudioResponse extends AcsResponse {
 
 	public void setFollowEnable(Integer followEnable) {
 		this.followEnable = followEnable;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<AudioLayer> getAudioLayers() {
@@ -77,19 +77,11 @@ public class DescribeCasterSceneAudioResponse extends AcsResponse {
 
 	public static class AudioLayer {
 
-		private Float volumeRate;
-
 		private Integer fixedDelayDuration;
 
 		private String validChannel;
 
-		public Float getVolumeRate() {
-			return this.volumeRate;
-		}
-
-		public void setVolumeRate(Float volumeRate) {
-			this.volumeRate = volumeRate;
-		}
+		private Float volumeRate;
 
 		public Integer getFixedDelayDuration() {
 			return this.fixedDelayDuration;
@@ -105,6 +97,14 @@ public class DescribeCasterSceneAudioResponse extends AcsResponse {
 
 		public void setValidChannel(String validChannel) {
 			this.validChannel = validChannel;
+		}
+
+		public Float getVolumeRate() {
+			return this.volumeRate;
+		}
+
+		public void setVolumeRate(Float volumeRate) {
+			this.volumeRate = volumeRate;
 		}
 	}
 

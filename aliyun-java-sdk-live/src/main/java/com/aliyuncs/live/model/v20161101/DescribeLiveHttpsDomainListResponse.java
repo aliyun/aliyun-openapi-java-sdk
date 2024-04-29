@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeLiveHttpsDomainListResponse extends AcsResponse {
 
-	private Integer totalCount;
-
 	private String requestId;
 
+	private Integer totalCount;
+
 	private List<CertInfo> certInfos;
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,6 +37,14 @@ public class DescribeLiveHttpsDomainListResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<CertInfo> getCertInfos() {
@@ -57,28 +57,28 @@ public class DescribeLiveHttpsDomainListResponse extends AcsResponse {
 
 	public static class CertInfo {
 
-		private String certStartTime;
+		private String certCommonName;
 
 		private String certExpireTime;
 
-		private String certUpdateTime;
-
-		private String certType;
-
 		private String certName;
+
+		private String certStartTime;
 
 		private String certStatus;
 
+		private String certType;
+
+		private String certUpdateTime;
+
 		private String domainName;
 
-		private String certCommonName;
-
-		public String getCertStartTime() {
-			return this.certStartTime;
+		public String getCertCommonName() {
+			return this.certCommonName;
 		}
 
-		public void setCertStartTime(String certStartTime) {
-			this.certStartTime = certStartTime;
+		public void setCertCommonName(String certCommonName) {
+			this.certCommonName = certCommonName;
 		}
 
 		public String getCertExpireTime() {
@@ -89,28 +89,20 @@ public class DescribeLiveHttpsDomainListResponse extends AcsResponse {
 			this.certExpireTime = certExpireTime;
 		}
 
-		public String getCertUpdateTime() {
-			return this.certUpdateTime;
-		}
-
-		public void setCertUpdateTime(String certUpdateTime) {
-			this.certUpdateTime = certUpdateTime;
-		}
-
-		public String getCertType() {
-			return this.certType;
-		}
-
-		public void setCertType(String certType) {
-			this.certType = certType;
-		}
-
 		public String getCertName() {
 			return this.certName;
 		}
 
 		public void setCertName(String certName) {
 			this.certName = certName;
+		}
+
+		public String getCertStartTime() {
+			return this.certStartTime;
+		}
+
+		public void setCertStartTime(String certStartTime) {
+			this.certStartTime = certStartTime;
 		}
 
 		public String getCertStatus() {
@@ -121,20 +113,28 @@ public class DescribeLiveHttpsDomainListResponse extends AcsResponse {
 			this.certStatus = certStatus;
 		}
 
+		public String getCertType() {
+			return this.certType;
+		}
+
+		public void setCertType(String certType) {
+			this.certType = certType;
+		}
+
+		public String getCertUpdateTime() {
+			return this.certUpdateTime;
+		}
+
+		public void setCertUpdateTime(String certUpdateTime) {
+			this.certUpdateTime = certUpdateTime;
+		}
+
 		public String getDomainName() {
 			return this.domainName;
 		}
 
 		public void setDomainName(String domainName) {
 			this.domainName = domainName;
-		}
-
-		public String getCertCommonName() {
-			return this.certCommonName;
-		}
-
-		public void setCertCommonName(String certCommonName) {
-			this.certCommonName = certCommonName;
 		}
 	}
 

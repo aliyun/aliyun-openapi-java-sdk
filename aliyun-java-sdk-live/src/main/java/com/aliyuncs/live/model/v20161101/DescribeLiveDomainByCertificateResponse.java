@@ -47,55 +47,23 @@ public class DescribeLiveDomainByCertificateResponse extends AcsResponse {
 
 	public static class CertInfo {
 
-		private String certExpireTime;
-
-		private String certStartTime;
-
-		private String certType;
-
-		private String certSubjectCommonName;
-
 		private String certCaIsLegacy;
 
-		private String domainNames;
+		private String certExpireTime;
 
 		private String certExpired;
 
-		private String issuer;
+		private String certStartTime;
+
+		private String certSubjectCommonName;
+
+		private String certType;
 
 		private String domainList;
 
-		public String getCertExpireTime() {
-			return this.certExpireTime;
-		}
+		private String domainNames;
 
-		public void setCertExpireTime(String certExpireTime) {
-			this.certExpireTime = certExpireTime;
-		}
-
-		public String getCertStartTime() {
-			return this.certStartTime;
-		}
-
-		public void setCertStartTime(String certStartTime) {
-			this.certStartTime = certStartTime;
-		}
-
-		public String getCertType() {
-			return this.certType;
-		}
-
-		public void setCertType(String certType) {
-			this.certType = certType;
-		}
-
-		public String getCertSubjectCommonName() {
-			return this.certSubjectCommonName;
-		}
-
-		public void setCertSubjectCommonName(String certSubjectCommonName) {
-			this.certSubjectCommonName = certSubjectCommonName;
-		}
+		private String issuer;
 
 		public String getCertCaIsLegacy() {
 			return this.certCaIsLegacy;
@@ -105,12 +73,12 @@ public class DescribeLiveDomainByCertificateResponse extends AcsResponse {
 			this.certCaIsLegacy = certCaIsLegacy;
 		}
 
-		public String getDomainNames() {
-			return this.domainNames;
+		public String getCertExpireTime() {
+			return this.certExpireTime;
 		}
 
-		public void setDomainNames(String domainNames) {
-			this.domainNames = domainNames;
+		public void setCertExpireTime(String certExpireTime) {
+			this.certExpireTime = certExpireTime;
 		}
 
 		public String getCertExpired() {
@@ -121,12 +89,28 @@ public class DescribeLiveDomainByCertificateResponse extends AcsResponse {
 			this.certExpired = certExpired;
 		}
 
-		public String getIssuer() {
-			return this.issuer;
+		public String getCertStartTime() {
+			return this.certStartTime;
 		}
 
-		public void setIssuer(String issuer) {
-			this.issuer = issuer;
+		public void setCertStartTime(String certStartTime) {
+			this.certStartTime = certStartTime;
+		}
+
+		public String getCertSubjectCommonName() {
+			return this.certSubjectCommonName;
+		}
+
+		public void setCertSubjectCommonName(String certSubjectCommonName) {
+			this.certSubjectCommonName = certSubjectCommonName;
+		}
+
+		public String getCertType() {
+			return this.certType;
+		}
+
+		public void setCertType(String certType) {
+			this.certType = certType;
 		}
 
 		public String getDomainList() {
@@ -135,6 +119,22 @@ public class DescribeLiveDomainByCertificateResponse extends AcsResponse {
 
 		public void setDomainList(String domainList) {
 			this.domainList = domainList;
+		}
+
+		public String getDomainNames() {
+			return this.domainNames;
+		}
+
+		public void setDomainNames(String domainNames) {
+			this.domainNames = domainNames;
+		}
+
+		public String getIssuer() {
+			return this.issuer;
+		}
+
+		public void setIssuer(String issuer) {
+			this.issuer = issuer;
 		}
 	}
 

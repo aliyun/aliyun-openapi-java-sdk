@@ -23,8 +23,8 @@ public class InitializeAutoShowListTaskResponseUnmarshaller {
 	public static InitializeAutoShowListTaskResponse unmarshall(InitializeAutoShowListTaskResponse initializeAutoShowListTaskResponse, UnmarshallerContext _ctx) {
 		
 		initializeAutoShowListTaskResponse.setRequestId(_ctx.stringValue("InitializeAutoShowListTaskResponse.RequestId"));
-		initializeAutoShowListTaskResponse.setStreamList(_ctx.stringValue("InitializeAutoShowListTaskResponse.StreamList"));
 		initializeAutoShowListTaskResponse.setCasterId(_ctx.stringValue("InitializeAutoShowListTaskResponse.CasterId"));
+		initializeAutoShowListTaskResponse.setStreamList(_ctx.stringValue("InitializeAutoShowListTaskResponse.StreamList"));
 	 
 	 	return initializeAutoShowListTaskResponse;
 	}

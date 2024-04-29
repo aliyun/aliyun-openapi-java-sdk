@@ -47,31 +47,15 @@ public class DescribeLiveDrmUsageDataResponse extends AcsResponse {
 
 	public static class DataModule {
 
-		private String domain;
-
-		private String timeStamp;
-
 		private Long count;
+
+		private String domain;
 
 		private String drmType;
 
 		private String region;
 
-		public String getDomain() {
-			return this.domain;
-		}
-
-		public void setDomain(String domain) {
-			this.domain = domain;
-		}
-
-		public String getTimeStamp() {
-			return this.timeStamp;
-		}
-
-		public void setTimeStamp(String timeStamp) {
-			this.timeStamp = timeStamp;
-		}
+		private String timeStamp;
 
 		public Long getCount() {
 			return this.count;
@@ -79,6 +63,14 @@ public class DescribeLiveDrmUsageDataResponse extends AcsResponse {
 
 		public void setCount(Long count) {
 			this.count = count;
+		}
+
+		public String getDomain() {
+			return this.domain;
+		}
+
+		public void setDomain(String domain) {
+			this.domain = domain;
 		}
 
 		public String getDrmType() {
@@ -95,6 +87,14 @@ public class DescribeLiveDrmUsageDataResponse extends AcsResponse {
 
 		public void setRegion(String region) {
 			this.region = region;
+		}
+
+		public String getTimeStamp() {
+			return this.timeStamp;
+		}
+
+		public void setTimeStamp(String timeStamp) {
+			this.timeStamp = timeStamp;
 		}
 	}
 

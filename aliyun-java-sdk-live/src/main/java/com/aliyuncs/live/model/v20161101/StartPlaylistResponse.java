@@ -99,21 +99,13 @@ public class StartPlaylistResponse extends AcsResponse {
 
 		public static class Stream {
 
-			private String quality;
-
 			private String pullFlvUrl;
 
 			private String pullM3U8Url;
 
 			private String pullRtmpUrl;
 
-			public String getQuality() {
-				return this.quality;
-			}
-
-			public void setQuality(String quality) {
-				this.quality = quality;
-			}
+			private String quality;
 
 			public String getPullFlvUrl() {
 				return this.pullFlvUrl;
@@ -137,6 +129,14 @@ public class StartPlaylistResponse extends AcsResponse {
 
 			public void setPullRtmpUrl(String pullRtmpUrl) {
 				this.pullRtmpUrl = pullRtmpUrl;
+			}
+
+			public String getQuality() {
+				return this.quality;
+			}
+
+			public void setQuality(String quality) {
+				this.quality = quality;
 			}
 		}
 	}

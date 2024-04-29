@@ -38,10 +38,10 @@ public class StartPlaylistResponseUnmarshaller {
 		List<Stream> streams = new ArrayList<Stream>();
 		for (int i = 0; i < _ctx.lengthValue("StartPlaylistResponse.StreamInfo.Streams.Length"); i++) {
 			Stream stream = new Stream();
-			stream.setQuality(_ctx.stringValue("StartPlaylistResponse.StreamInfo.Streams["+ i +"].Quality"));
 			stream.setPullFlvUrl(_ctx.stringValue("StartPlaylistResponse.StreamInfo.Streams["+ i +"].PullFlvUrl"));
 			stream.setPullM3U8Url(_ctx.stringValue("StartPlaylistResponse.StreamInfo.Streams["+ i +"].PullM3U8Url"));
 			stream.setPullRtmpUrl(_ctx.stringValue("StartPlaylistResponse.StreamInfo.Streams["+ i +"].PullRtmpUrl"));
+			stream.setQuality(_ctx.stringValue("StartPlaylistResponse.StreamInfo.Streams["+ i +"].Quality"));
 
 			streams.add(stream);
 		}

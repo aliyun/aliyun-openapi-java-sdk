@@ -30,8 +30,8 @@ public class DescribeLiveDomainPublishErrorCodeResponseUnmarshaller {
 		describeLiveDomainPublishErrorCodeResponse.setRequestId(_ctx.stringValue("DescribeLiveDomainPublishErrorCodeResponse.RequestId"));
 		describeLiveDomainPublishErrorCodeResponse.setDataInterval(_ctx.stringValue("DescribeLiveDomainPublishErrorCodeResponse.DataInterval"));
 		describeLiveDomainPublishErrorCodeResponse.setDomainName(_ctx.stringValue("DescribeLiveDomainPublishErrorCodeResponse.DomainName"));
-		describeLiveDomainPublishErrorCodeResponse.setStartTime(_ctx.stringValue("DescribeLiveDomainPublishErrorCodeResponse.StartTime"));
 		describeLiveDomainPublishErrorCodeResponse.setEndTime(_ctx.stringValue("DescribeLiveDomainPublishErrorCodeResponse.EndTime"));
+		describeLiveDomainPublishErrorCodeResponse.setStartTime(_ctx.stringValue("DescribeLiveDomainPublishErrorCodeResponse.StartTime"));
 
 		List<Rtcd> realTimeCodeData = new ArrayList<Rtcd>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLiveDomainPublishErrorCodeResponse.RealTimeCodeData.Length"); i++) {

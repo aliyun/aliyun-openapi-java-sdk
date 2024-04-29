@@ -31,15 +31,15 @@ public class DescribeLiveDomainByCertificateResponseUnmarshaller {
 		List<CertInfo> certInfos = new ArrayList<CertInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLiveDomainByCertificateResponse.CertInfos.Length"); i++) {
 			CertInfo certInfo = new CertInfo();
-			certInfo.setCertExpireTime(_ctx.stringValue("DescribeLiveDomainByCertificateResponse.CertInfos["+ i +"].CertExpireTime"));
-			certInfo.setCertStartTime(_ctx.stringValue("DescribeLiveDomainByCertificateResponse.CertInfos["+ i +"].CertStartTime"));
-			certInfo.setCertType(_ctx.stringValue("DescribeLiveDomainByCertificateResponse.CertInfos["+ i +"].CertType"));
-			certInfo.setCertSubjectCommonName(_ctx.stringValue("DescribeLiveDomainByCertificateResponse.CertInfos["+ i +"].CertSubjectCommonName"));
 			certInfo.setCertCaIsLegacy(_ctx.stringValue("DescribeLiveDomainByCertificateResponse.CertInfos["+ i +"].CertCaIsLegacy"));
-			certInfo.setDomainNames(_ctx.stringValue("DescribeLiveDomainByCertificateResponse.CertInfos["+ i +"].DomainNames"));
+			certInfo.setCertExpireTime(_ctx.stringValue("DescribeLiveDomainByCertificateResponse.CertInfos["+ i +"].CertExpireTime"));
 			certInfo.setCertExpired(_ctx.stringValue("DescribeLiveDomainByCertificateResponse.CertInfos["+ i +"].CertExpired"));
-			certInfo.setIssuer(_ctx.stringValue("DescribeLiveDomainByCertificateResponse.CertInfos["+ i +"].Issuer"));
+			certInfo.setCertStartTime(_ctx.stringValue("DescribeLiveDomainByCertificateResponse.CertInfos["+ i +"].CertStartTime"));
+			certInfo.setCertSubjectCommonName(_ctx.stringValue("DescribeLiveDomainByCertificateResponse.CertInfos["+ i +"].CertSubjectCommonName"));
+			certInfo.setCertType(_ctx.stringValue("DescribeLiveDomainByCertificateResponse.CertInfos["+ i +"].CertType"));
 			certInfo.setDomainList(_ctx.stringValue("DescribeLiveDomainByCertificateResponse.CertInfos["+ i +"].DomainList"));
+			certInfo.setDomainNames(_ctx.stringValue("DescribeLiveDomainByCertificateResponse.CertInfos["+ i +"].DomainNames"));
+			certInfo.setIssuer(_ctx.stringValue("DescribeLiveDomainByCertificateResponse.CertInfos["+ i +"].Issuer"));
 
 			certInfos.add(certInfo);
 		}

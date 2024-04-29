@@ -46,44 +46,52 @@ public class DescribeLiveDomainDetailResponse extends AcsResponse {
 
 	public static class DomainDetail {
 
-		private String sSLPub;
+		private String certName;
 
-		private String gmtModified;
+		private String cname;
+
+		private String description;
 
 		private String domainName;
 
+		private String domainStatus;
+
 		private String gmtCreated;
 
-		private String liveDomainType;
+		private String gmtModified;
 
-		private String description;
+		private String liveDomainType;
 
 		private String region;
 
 		private String sSLProtocol;
 
-		private String certName;
-
-		private String domainStatus;
-
-		private String cname;
+		private String sSLPub;
 
 		private String scope;
 
-		public String getSSLPub() {
-			return this.sSLPub;
+		public String getCertName() {
+			return this.certName;
 		}
 
-		public void setSSLPub(String sSLPub) {
-			this.sSLPub = sSLPub;
+		public void setCertName(String certName) {
+			this.certName = certName;
 		}
 
-		public String getGmtModified() {
-			return this.gmtModified;
+		public String getCname() {
+			return this.cname;
 		}
 
-		public void setGmtModified(String gmtModified) {
-			this.gmtModified = gmtModified;
+		public void setCname(String cname) {
+			this.cname = cname;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public String getDomainName() {
@@ -94,6 +102,14 @@ public class DescribeLiveDomainDetailResponse extends AcsResponse {
 			this.domainName = domainName;
 		}
 
+		public String getDomainStatus() {
+			return this.domainStatus;
+		}
+
+		public void setDomainStatus(String domainStatus) {
+			this.domainStatus = domainStatus;
+		}
+
 		public String getGmtCreated() {
 			return this.gmtCreated;
 		}
@@ -102,20 +118,20 @@ public class DescribeLiveDomainDetailResponse extends AcsResponse {
 			this.gmtCreated = gmtCreated;
 		}
 
+		public String getGmtModified() {
+			return this.gmtModified;
+		}
+
+		public void setGmtModified(String gmtModified) {
+			this.gmtModified = gmtModified;
+		}
+
 		public String getLiveDomainType() {
 			return this.liveDomainType;
 		}
 
 		public void setLiveDomainType(String liveDomainType) {
 			this.liveDomainType = liveDomainType;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
 		}
 
 		public String getRegion() {
@@ -134,28 +150,12 @@ public class DescribeLiveDomainDetailResponse extends AcsResponse {
 			this.sSLProtocol = sSLProtocol;
 		}
 
-		public String getCertName() {
-			return this.certName;
+		public String getSSLPub() {
+			return this.sSLPub;
 		}
 
-		public void setCertName(String certName) {
-			this.certName = certName;
-		}
-
-		public String getDomainStatus() {
-			return this.domainStatus;
-		}
-
-		public void setDomainStatus(String domainStatus) {
-			this.domainStatus = domainStatus;
-		}
-
-		public String getCname() {
-			return this.cname;
-		}
-
-		public void setCname(String cname) {
-			this.cname = cname;
+		public void setSSLPub(String sSLPub) {
+			this.sSLPub = sSLPub;
 		}
 
 		public String getScope() {

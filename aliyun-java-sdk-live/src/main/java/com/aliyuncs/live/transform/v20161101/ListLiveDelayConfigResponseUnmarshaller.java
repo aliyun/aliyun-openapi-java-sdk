@@ -32,11 +32,11 @@ public class ListLiveDelayConfigResponseUnmarshaller {
 		List<DelayConfig> delayConfigList = new ArrayList<DelayConfig>();
 		for (int i = 0; i < _ctx.lengthValue("ListLiveDelayConfigResponse.DelayConfigList.Length"); i++) {
 			DelayConfig delayConfig = new DelayConfig();
-			delayConfig.setStream(_ctx.stringValue("ListLiveDelayConfigResponse.DelayConfigList["+ i +"].Stream"));
-			delayConfig.setDomain(_ctx.stringValue("ListLiveDelayConfigResponse.DelayConfigList["+ i +"].Domain"));
-			delayConfig.setTaskTriggerMode(_ctx.stringValue("ListLiveDelayConfigResponse.DelayConfigList["+ i +"].TaskTriggerMode"));
-			delayConfig.setDelayTime(_ctx.stringValue("ListLiveDelayConfigResponse.DelayConfigList["+ i +"].DelayTime"));
 			delayConfig.setApp(_ctx.stringValue("ListLiveDelayConfigResponse.DelayConfigList["+ i +"].App"));
+			delayConfig.setDelayTime(_ctx.stringValue("ListLiveDelayConfigResponse.DelayConfigList["+ i +"].DelayTime"));
+			delayConfig.setDomain(_ctx.stringValue("ListLiveDelayConfigResponse.DelayConfigList["+ i +"].Domain"));
+			delayConfig.setStream(_ctx.stringValue("ListLiveDelayConfigResponse.DelayConfigList["+ i +"].Stream"));
+			delayConfig.setTaskTriggerMode(_ctx.stringValue("ListLiveDelayConfigResponse.DelayConfigList["+ i +"].TaskTriggerMode"));
 
 			delayConfigList.add(delayConfig);
 		}

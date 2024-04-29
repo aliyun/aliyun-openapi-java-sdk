@@ -24,23 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class MiguLivePullToPushStatusResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String code;
-
-	private String timestamp;
 
 	private String message;
 
+	private String requestId;
+
+	private String timestamp;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -50,20 +42,28 @@ public class MiguLivePullToPushStatusResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getTimestamp() {
-		return this.timestamp;
-	}
-
-	public void setTimestamp(String timestamp) {
-		this.timestamp = timestamp;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getTimestamp() {
+		return this.timestamp;
+	}
+
+	public void setTimestamp(String timestamp) {
+		this.timestamp = timestamp;
 	}
 
 	public Data getData() {
@@ -76,17 +76,9 @@ public class MiguLivePullToPushStatusResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String status;
-
 		private String message;
 
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
+		private String status;
 
 		public String getMessage() {
 			return this.message;
@@ -94,6 +86,14 @@ public class MiguLivePullToPushStatusResponse extends AcsResponse {
 
 		public void setMessage(String message) {
 			this.message = message;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
 		}
 	}
 

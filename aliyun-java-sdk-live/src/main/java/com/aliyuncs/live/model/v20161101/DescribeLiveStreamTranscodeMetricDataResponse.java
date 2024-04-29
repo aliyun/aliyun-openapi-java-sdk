@@ -25,19 +25,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeLiveStreamTranscodeMetricDataResponse extends AcsResponse {
 
+	private String domainName;
+
 	private String endTime;
-
-	private String startTime;
-
-	private String requestId;
 
 	private String nextPageToken;
 
 	private Integer pageSize;
 
-	private String domainName;
+	private String requestId;
+
+	private String startTime;
 
 	private List<StreamData> streamDetailData;
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+	}
 
 	public String getEndTime() {
 		return this.endTime;
@@ -45,22 +53,6 @@ public class DescribeLiveStreamTranscodeMetricDataResponse extends AcsResponse {
 
 	public void setEndTime(String endTime) {
 		this.endTime = endTime;
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
 	}
 
 	public String getNextPageToken() {
@@ -79,12 +71,20 @@ public class DescribeLiveStreamTranscodeMetricDataResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public String getDomainName() {
-		return this.domainName;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
 	}
 
 	public List<StreamData> getStreamDetailData() {
@@ -99,19 +99,19 @@ public class DescribeLiveStreamTranscodeMetricDataResponse extends AcsResponse {
 
 		private String appName;
 
-		private String streamName;
-
-		private String region;
-
 		private Long duration;
 
 		private String fps;
 
+		private String region;
+
+		private String resolution;
+
+		private String streamName;
+
 		private String timeStamp;
 
 		private String transcodeType;
-
-		private String resolution;
 
 		public String getAppName() {
 			return this.appName;
@@ -119,22 +119,6 @@ public class DescribeLiveStreamTranscodeMetricDataResponse extends AcsResponse {
 
 		public void setAppName(String appName) {
 			this.appName = appName;
-		}
-
-		public String getStreamName() {
-			return this.streamName;
-		}
-
-		public void setStreamName(String streamName) {
-			this.streamName = streamName;
-		}
-
-		public String getRegion() {
-			return this.region;
-		}
-
-		public void setRegion(String region) {
-			this.region = region;
 		}
 
 		public Long getDuration() {
@@ -153,6 +137,30 @@ public class DescribeLiveStreamTranscodeMetricDataResponse extends AcsResponse {
 			this.fps = fps;
 		}
 
+		public String getRegion() {
+			return this.region;
+		}
+
+		public void setRegion(String region) {
+			this.region = region;
+		}
+
+		public String getResolution() {
+			return this.resolution;
+		}
+
+		public void setResolution(String resolution) {
+			this.resolution = resolution;
+		}
+
+		public String getStreamName() {
+			return this.streamName;
+		}
+
+		public void setStreamName(String streamName) {
+			this.streamName = streamName;
+		}
+
 		public String getTimeStamp() {
 			return this.timeStamp;
 		}
@@ -167,14 +175,6 @@ public class DescribeLiveStreamTranscodeMetricDataResponse extends AcsResponse {
 
 		public void setTranscodeType(String transcodeType) {
 			this.transcodeType = transcodeType;
-		}
-
-		public String getResolution() {
-			return this.resolution;
-		}
-
-		public void setResolution(String resolution) {
-			this.resolution = resolution;
 		}
 	}
 

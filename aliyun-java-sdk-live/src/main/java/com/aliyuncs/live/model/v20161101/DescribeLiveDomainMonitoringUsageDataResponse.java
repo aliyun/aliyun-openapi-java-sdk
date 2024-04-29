@@ -25,19 +25,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeLiveDomainMonitoringUsageDataResponse extends AcsResponse {
 
+	private String domainName;
+
 	private String endTime;
-
-	private String startTime;
-
-	private String requestId;
-
-	private String region;
 
 	private String instanceId;
 
-	private String domainName;
+	private String region;
+
+	private String requestId;
+
+	private String startTime;
 
 	private List<MonitoringDataItem> monitoringData;
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+	}
 
 	public String getEndTime() {
 		return this.endTime;
@@ -45,30 +53,6 @@ public class DescribeLiveDomainMonitoringUsageDataResponse extends AcsResponse {
 
 	public void setEndTime(String endTime) {
 		this.endTime = endTime;
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getRegion() {
-		return this.region;
-	}
-
-	public void setRegion(String region) {
-		this.region = region;
 	}
 
 	public String getInstanceId() {
@@ -79,12 +63,28 @@ public class DescribeLiveDomainMonitoringUsageDataResponse extends AcsResponse {
 		this.instanceId = instanceId;
 	}
 
-	public String getDomainName() {
-		return this.domainName;
+	public String getRegion() {
+		return this.region;
 	}
 
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
+	public void setRegion(String region) {
+		this.region = region;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
 	}
 
 	public List<MonitoringDataItem> getMonitoringData() {
@@ -97,32 +97,24 @@ public class DescribeLiveDomainMonitoringUsageDataResponse extends AcsResponse {
 
 	public static class MonitoringDataItem {
 
-		private String region;
-
-		private String timeStamp;
+		private String domainName;
 
 		private Integer duration;
 
 		private String instanceId;
 
-		private String domainName;
+		private String region;
 
 		private String resolution;
 
-		public String getRegion() {
-			return this.region;
+		private String timeStamp;
+
+		public String getDomainName() {
+			return this.domainName;
 		}
 
-		public void setRegion(String region) {
-			this.region = region;
-		}
-
-		public String getTimeStamp() {
-			return this.timeStamp;
-		}
-
-		public void setTimeStamp(String timeStamp) {
-			this.timeStamp = timeStamp;
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
 		}
 
 		public Integer getDuration() {
@@ -141,12 +133,12 @@ public class DescribeLiveDomainMonitoringUsageDataResponse extends AcsResponse {
 			this.instanceId = instanceId;
 		}
 
-		public String getDomainName() {
-			return this.domainName;
+		public String getRegion() {
+			return this.region;
 		}
 
-		public void setDomainName(String domainName) {
-			this.domainName = domainName;
+		public void setRegion(String region) {
+			this.region = region;
 		}
 
 		public String getResolution() {
@@ -155,6 +147,14 @@ public class DescribeLiveDomainMonitoringUsageDataResponse extends AcsResponse {
 
 		public void setResolution(String resolution) {
 			this.resolution = resolution;
+		}
+
+		public String getTimeStamp() {
+			return this.timeStamp;
+		}
+
+		public void setTimeStamp(String timeStamp) {
+			this.timeStamp = timeStamp;
 		}
 	}
 

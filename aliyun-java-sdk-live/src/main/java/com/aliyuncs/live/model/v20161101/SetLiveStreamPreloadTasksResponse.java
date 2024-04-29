@@ -25,25 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class SetLiveStreamPreloadTasksResponse extends AcsResponse {
 
-	private String status;
-
 	private Integer failedURL;
-
-	private Integer totalURL;
 
 	private String requestId;
 
+	private String status;
+
 	private Integer successURL;
 
+	private Integer totalURL;
+
 	private List<PreloadTasksMessage> preloadTasksMessages;
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
 
 	public Integer getFailedURL() {
 		return this.failedURL;
@@ -51,14 +43,6 @@ public class SetLiveStreamPreloadTasksResponse extends AcsResponse {
 
 	public void setFailedURL(Integer failedURL) {
 		this.failedURL = failedURL;
-	}
-
-	public Integer getTotalURL() {
-		return this.totalURL;
-	}
-
-	public void setTotalURL(Integer totalURL) {
-		this.totalURL = totalURL;
 	}
 
 	public String getRequestId() {
@@ -69,12 +53,28 @@ public class SetLiveStreamPreloadTasksResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
 	public Integer getSuccessURL() {
 		return this.successURL;
 	}
 
 	public void setSuccessURL(Integer successURL) {
 		this.successURL = successURL;
+	}
+
+	public Integer getTotalURL() {
+		return this.totalURL;
+	}
+
+	public void setTotalURL(Integer totalURL) {
+		this.totalURL = totalURL;
 	}
 
 	public List<PreloadTasksMessage> getPreloadTasksMessages() {
@@ -87,19 +87,11 @@ public class SetLiveStreamPreloadTasksResponse extends AcsResponse {
 
 	public static class PreloadTasksMessage {
 
-		private String playUrl;
-
 		private String description;
 
+		private String playUrl;
+
 		private String taskId;
-
-		public String getPlayUrl() {
-			return this.playUrl;
-		}
-
-		public void setPlayUrl(String playUrl) {
-			this.playUrl = playUrl;
-		}
 
 		public String getDescription() {
 			return this.description;
@@ -107,6 +99,14 @@ public class SetLiveStreamPreloadTasksResponse extends AcsResponse {
 
 		public void setDescription(String description) {
 			this.description = description;
+		}
+
+		public String getPlayUrl() {
+			return this.playUrl;
+		}
+
+		public void setPlayUrl(String playUrl) {
+			this.playUrl = playUrl;
 		}
 
 		public String getTaskId() {

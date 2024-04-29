@@ -27,25 +27,25 @@ public class DescribeLiveRecordNotifyRecordsResponseUnmarshaller {
 	public static DescribeLiveRecordNotifyRecordsResponse unmarshall(DescribeLiveRecordNotifyRecordsResponse describeLiveRecordNotifyRecordsResponse, UnmarshallerContext _ctx) {
 		
 		describeLiveRecordNotifyRecordsResponse.setRequestId(_ctx.stringValue("DescribeLiveRecordNotifyRecordsResponse.RequestId"));
+		describeLiveRecordNotifyRecordsResponse.setCode(_ctx.integerValue("DescribeLiveRecordNotifyRecordsResponse.Code"));
 		describeLiveRecordNotifyRecordsResponse.setMsg(_ctx.stringValue("DescribeLiveRecordNotifyRecordsResponse.Msg"));
 		describeLiveRecordNotifyRecordsResponse.setPageNum(_ctx.integerValue("DescribeLiveRecordNotifyRecordsResponse.PageNum"));
-		describeLiveRecordNotifyRecordsResponse.setCode(_ctx.integerValue("DescribeLiveRecordNotifyRecordsResponse.Code"));
-		describeLiveRecordNotifyRecordsResponse.setTotalPage(_ctx.integerValue("DescribeLiveRecordNotifyRecordsResponse.TotalPage"));
 		describeLiveRecordNotifyRecordsResponse.setPageSize(_ctx.integerValue("DescribeLiveRecordNotifyRecordsResponse.PageSize"));
 		describeLiveRecordNotifyRecordsResponse.setTotalNum(_ctx.integerValue("DescribeLiveRecordNotifyRecordsResponse.TotalNum"));
+		describeLiveRecordNotifyRecordsResponse.setTotalPage(_ctx.integerValue("DescribeLiveRecordNotifyRecordsResponse.TotalPage"));
 
 		List<Callback> callbackList = new ArrayList<Callback>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLiveRecordNotifyRecordsResponse.CallbackList.Length"); i++) {
 			Callback callback = new Callback();
 			callback.setAppName(_ctx.stringValue("DescribeLiveRecordNotifyRecordsResponse.CallbackList["+ i +"].AppName"));
-			callback.setNotifyType(_ctx.stringValue("DescribeLiveRecordNotifyRecordsResponse.CallbackList["+ i +"].NotifyType"));
-			callback.setNotifyContent(_ctx.stringValue("DescribeLiveRecordNotifyRecordsResponse.CallbackList["+ i +"].NotifyContent"));
 			callback.setDescription(_ctx.stringValue("DescribeLiveRecordNotifyRecordsResponse.CallbackList["+ i +"].Description"));
-			callback.setStreamName(_ctx.stringValue("DescribeLiveRecordNotifyRecordsResponse.CallbackList["+ i +"].StreamName"));
-			callback.setNotifyUrl(_ctx.stringValue("DescribeLiveRecordNotifyRecordsResponse.CallbackList["+ i +"].NotifyUrl"));
+			callback.setDomainName(_ctx.stringValue("DescribeLiveRecordNotifyRecordsResponse.CallbackList["+ i +"].DomainName"));
+			callback.setNotifyContent(_ctx.stringValue("DescribeLiveRecordNotifyRecordsResponse.CallbackList["+ i +"].NotifyContent"));
 			callback.setNotifyResult(_ctx.stringValue("DescribeLiveRecordNotifyRecordsResponse.CallbackList["+ i +"].NotifyResult"));
 			callback.setNotifyTime(_ctx.stringValue("DescribeLiveRecordNotifyRecordsResponse.CallbackList["+ i +"].NotifyTime"));
-			callback.setDomainName(_ctx.stringValue("DescribeLiveRecordNotifyRecordsResponse.CallbackList["+ i +"].DomainName"));
+			callback.setNotifyType(_ctx.stringValue("DescribeLiveRecordNotifyRecordsResponse.CallbackList["+ i +"].NotifyType"));
+			callback.setNotifyUrl(_ctx.stringValue("DescribeLiveRecordNotifyRecordsResponse.CallbackList["+ i +"].NotifyUrl"));
+			callback.setStreamName(_ctx.stringValue("DescribeLiveRecordNotifyRecordsResponse.CallbackList["+ i +"].StreamName"));
 
 			callbackList.add(callback);
 		}

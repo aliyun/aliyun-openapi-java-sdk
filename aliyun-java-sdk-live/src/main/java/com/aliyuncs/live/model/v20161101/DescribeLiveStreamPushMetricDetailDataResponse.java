@@ -25,19 +25,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeLiveStreamPushMetricDetailDataResponse extends AcsResponse {
 
+	private String domainName;
+
 	private String endTime;
-
-	private String startTime;
-
-	private String requestId;
 
 	private String nextPageToken;
 
 	private Integer pageSize;
 
-	private String domainName;
+	private String requestId;
+
+	private String startTime;
 
 	private List<StreamData> streamDetailData;
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+	}
 
 	public String getEndTime() {
 		return this.endTime;
@@ -45,22 +53,6 @@ public class DescribeLiveStreamPushMetricDetailDataResponse extends AcsResponse 
 
 	public void setEndTime(String endTime) {
 		this.endTime = endTime;
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
 	}
 
 	public String getNextPageToken() {
@@ -79,12 +71,20 @@ public class DescribeLiveStreamPushMetricDetailDataResponse extends AcsResponse 
 		this.pageSize = pageSize;
 	}
 
-	public String getDomainName() {
-		return this.domainName;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
 	}
 
 	public List<StreamData> getStreamDetailData() {
@@ -99,13 +99,13 @@ public class DescribeLiveStreamPushMetricDetailDataResponse extends AcsResponse 
 
 		private String appName;
 
-		private String timeStamp;
-
 		private Float reqBps;
 
 		private Long reqTraffic;
 
 		private String streamName;
+
+		private String timeStamp;
 
 		public String getAppName() {
 			return this.appName;
@@ -113,14 +113,6 @@ public class DescribeLiveStreamPushMetricDetailDataResponse extends AcsResponse 
 
 		public void setAppName(String appName) {
 			this.appName = appName;
-		}
-
-		public String getTimeStamp() {
-			return this.timeStamp;
-		}
-
-		public void setTimeStamp(String timeStamp) {
-			this.timeStamp = timeStamp;
 		}
 
 		public Float getReqBps() {
@@ -145,6 +137,14 @@ public class DescribeLiveStreamPushMetricDetailDataResponse extends AcsResponse 
 
 		public void setStreamName(String streamName) {
 			this.streamName = streamName;
+		}
+
+		public String getTimeStamp() {
+			return this.timeStamp;
+		}
+
+		public void setTimeStamp(String timeStamp) {
+			this.timeStamp = timeStamp;
 		}
 	}
 

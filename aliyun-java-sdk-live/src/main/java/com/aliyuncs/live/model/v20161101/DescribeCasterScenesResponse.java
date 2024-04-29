@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeCasterScenesResponse extends AcsResponse {
 
-	private Integer total;
-
 	private String requestId;
 
+	private Integer total;
+
 	private List<Scene> sceneList;
-
-	public Integer getTotal() {
-		return this.total;
-	}
-
-	public void setTotal(Integer total) {
-		this.total = total;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,6 +37,14 @@ public class DescribeCasterScenesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getTotal() {
+		return this.total;
+	}
+
+	public void setTotal(Integer total) {
+		this.total = total;
 	}
 
 	public List<Scene> getSceneList() {
@@ -57,8 +57,6 @@ public class DescribeCasterScenesResponse extends AcsResponse {
 
 	public static class Scene {
 
-		private Integer status;
-
 		private String layoutId;
 
 		private String outputType;
@@ -69,19 +67,13 @@ public class DescribeCasterScenesResponse extends AcsResponse {
 
 		private String sceneName;
 
+		private Integer status;
+
 		private String streamUrl;
 
 		private List<StreamInfo> streamInfos;
 
 		private List<String> componentIds;
-
-		public Integer getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(Integer status) {
-			this.status = status;
-		}
 
 		public String getLayoutId() {
 			return this.layoutId;
@@ -123,6 +115,14 @@ public class DescribeCasterScenesResponse extends AcsResponse {
 			this.sceneName = sceneName;
 		}
 
+		public Integer getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(Integer status) {
+			this.status = status;
+		}
+
 		public String getStreamUrl() {
 			return this.streamUrl;
 		}
@@ -149,19 +149,11 @@ public class DescribeCasterScenesResponse extends AcsResponse {
 
 		public static class StreamInfo {
 
-			private String videoFormat;
-
 			private String outputStreamUrl;
 
 			private String transcodeConfig;
 
-			public String getVideoFormat() {
-				return this.videoFormat;
-			}
-
-			public void setVideoFormat(String videoFormat) {
-				this.videoFormat = videoFormat;
-			}
+			private String videoFormat;
 
 			public String getOutputStreamUrl() {
 				return this.outputStreamUrl;
@@ -177,6 +169,14 @@ public class DescribeCasterScenesResponse extends AcsResponse {
 
 			public void setTranscodeConfig(String transcodeConfig) {
 				this.transcodeConfig = transcodeConfig;
+			}
+
+			public String getVideoFormat() {
+				return this.videoFormat;
+			}
+
+			public void setVideoFormat(String videoFormat) {
+				this.videoFormat = videoFormat;
 			}
 		}
 	}

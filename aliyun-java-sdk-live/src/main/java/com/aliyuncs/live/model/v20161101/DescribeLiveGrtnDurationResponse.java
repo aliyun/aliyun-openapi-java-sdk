@@ -47,15 +47,23 @@ public class DescribeLiveGrtnDurationResponse extends AcsResponse {
 
 	public static class StreamData {
 
-		private Long duration;
+		private String appId;
 
-		private String timeStamp;
+		private Long duration;
 
 		private String mediaProfile;
 
 		private String mediaType;
 
-		private String appId;
+		private String timeStamp;
+
+		public String getAppId() {
+			return this.appId;
+		}
+
+		public void setAppId(String appId) {
+			this.appId = appId;
+		}
 
 		public Long getDuration() {
 			return this.duration;
@@ -63,14 +71,6 @@ public class DescribeLiveGrtnDurationResponse extends AcsResponse {
 
 		public void setDuration(Long duration) {
 			this.duration = duration;
-		}
-
-		public String getTimeStamp() {
-			return this.timeStamp;
-		}
-
-		public void setTimeStamp(String timeStamp) {
-			this.timeStamp = timeStamp;
 		}
 
 		public String getMediaProfile() {
@@ -89,12 +89,12 @@ public class DescribeLiveGrtnDurationResponse extends AcsResponse {
 			this.mediaType = mediaType;
 		}
 
-		public String getAppId() {
-			return this.appId;
+		public String getTimeStamp() {
+			return this.timeStamp;
 		}
 
-		public void setAppId(String appId) {
-			this.appId = appId;
+		public void setTimeStamp(String timeStamp) {
+			this.timeStamp = timeStamp;
 		}
 	}
 

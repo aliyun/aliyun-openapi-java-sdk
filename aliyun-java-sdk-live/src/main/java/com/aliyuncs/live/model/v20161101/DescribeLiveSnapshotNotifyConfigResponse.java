@@ -24,30 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeLiveSnapshotNotifyConfigResponse extends AcsResponse {
 
-	private String notifyReqAuth;
-
-	private String requestId;
+	private String domainName;
 
 	private String notifyAuthKey;
 
-	private String domainName;
+	private String notifyReqAuth;
 
 	private String notifyUrl;
 
-	public String getNotifyReqAuth() {
-		return this.notifyReqAuth;
+	private String requestId;
+
+	public String getDomainName() {
+		return this.domainName;
 	}
 
-	public void setNotifyReqAuth(String notifyReqAuth) {
-		this.notifyReqAuth = notifyReqAuth;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
 	}
 
 	public String getNotifyAuthKey() {
@@ -58,12 +50,12 @@ public class DescribeLiveSnapshotNotifyConfigResponse extends AcsResponse {
 		this.notifyAuthKey = notifyAuthKey;
 	}
 
-	public String getDomainName() {
-		return this.domainName;
+	public String getNotifyReqAuth() {
+		return this.notifyReqAuth;
 	}
 
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
+	public void setNotifyReqAuth(String notifyReqAuth) {
+		this.notifyReqAuth = notifyReqAuth;
 	}
 
 	public String getNotifyUrl() {
@@ -72,6 +64,14 @@ public class DescribeLiveSnapshotNotifyConfigResponse extends AcsResponse {
 
 	public void setNotifyUrl(String notifyUrl) {
 		this.notifyUrl = notifyUrl;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

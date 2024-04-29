@@ -25,35 +25,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeLivePackageConfigResponse extends AcsResponse {
 
-	private Integer pageNum;
-
-	private String requestId;
-
 	private String order;
 
-	private Integer totalPage;
+	private Integer pageNum;
 
 	private Integer pageSize;
 
+	private String requestId;
+
 	private Integer totalNum;
 
+	private Integer totalPage;
+
 	private List<LivePackageConfig> livePackageConfigList;
-
-	public Integer getPageNum() {
-		return this.pageNum;
-	}
-
-	public void setPageNum(Integer pageNum) {
-		this.pageNum = pageNum;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getOrder() {
 		return this.order;
@@ -63,12 +47,12 @@ public class DescribeLivePackageConfigResponse extends AcsResponse {
 		this.order = order;
 	}
 
-	public Integer getTotalPage() {
-		return this.totalPage;
+	public Integer getPageNum() {
+		return this.pageNum;
 	}
 
-	public void setTotalPage(Integer totalPage) {
-		this.totalPage = totalPage;
+	public void setPageNum(Integer pageNum) {
+		this.pageNum = pageNum;
 	}
 
 	public Integer getPageSize() {
@@ -79,12 +63,28 @@ public class DescribeLivePackageConfigResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public Integer getTotalNum() {
 		return this.totalNum;
 	}
 
 	public void setTotalNum(Integer totalNum) {
 		this.totalNum = totalNum;
+	}
+
+	public Integer getTotalPage() {
+		return this.totalPage;
+	}
+
+	public void setTotalPage(Integer totalPage) {
+		this.totalPage = totalPage;
 	}
 
 	public List<LivePackageConfig> getLivePackageConfigList() {
@@ -99,19 +99,19 @@ public class DescribeLivePackageConfigResponse extends AcsResponse {
 
 		private String appName;
 
-		private Integer segmentNum;
-
-		private String streamName;
-
-		private String protocol;
+		private String domainName;
 
 		private Boolean ignoreTranscode;
 
 		private Integer partDuration;
 
+		private String protocol;
+
 		private Integer segmentDuration;
 
-		private String domainName;
+		private Integer segmentNum;
+
+		private String streamName;
 
 		public String getAppName() {
 			return this.appName;
@@ -121,28 +121,12 @@ public class DescribeLivePackageConfigResponse extends AcsResponse {
 			this.appName = appName;
 		}
 
-		public Integer getSegmentNum() {
-			return this.segmentNum;
+		public String getDomainName() {
+			return this.domainName;
 		}
 
-		public void setSegmentNum(Integer segmentNum) {
-			this.segmentNum = segmentNum;
-		}
-
-		public String getStreamName() {
-			return this.streamName;
-		}
-
-		public void setStreamName(String streamName) {
-			this.streamName = streamName;
-		}
-
-		public String getBizProtocol() {
-			return this.protocol;
-		}
-
-		public void setBizProtocol(String protocol) {
-			this.protocol = protocol;
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
 		}
 
 		public Boolean getIgnoreTranscode() {
@@ -161,6 +145,14 @@ public class DescribeLivePackageConfigResponse extends AcsResponse {
 			this.partDuration = partDuration;
 		}
 
+		public String getBizProtocol() {
+			return this.protocol;
+		}
+
+		public void setBizProtocol(String protocol) {
+			this.protocol = protocol;
+		}
+
 		public Integer getSegmentDuration() {
 			return this.segmentDuration;
 		}
@@ -169,12 +161,20 @@ public class DescribeLivePackageConfigResponse extends AcsResponse {
 			this.segmentDuration = segmentDuration;
 		}
 
-		public String getDomainName() {
-			return this.domainName;
+		public Integer getSegmentNum() {
+			return this.segmentNum;
 		}
 
-		public void setDomainName(String domainName) {
-			this.domainName = domainName;
+		public void setSegmentNum(Integer segmentNum) {
+			this.segmentNum = segmentNum;
+		}
+
+		public String getStreamName() {
+			return this.streamName;
+		}
+
+		public void setStreamName(String streamName) {
+			this.streamName = streamName;
 		}
 	}
 

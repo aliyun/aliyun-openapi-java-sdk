@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListLiveDelayConfigResponse extends AcsResponse {
 
-	private Integer total;
-
 	private String requestId;
 
+	private Integer total;
+
 	private List<DelayConfig> delayConfigList;
-
-	public Integer getTotal() {
-		return this.total;
-	}
-
-	public void setTotal(Integer total) {
-		this.total = total;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,6 +37,14 @@ public class ListLiveDelayConfigResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getTotal() {
+		return this.total;
+	}
+
+	public void setTotal(Integer total) {
+		this.total = total;
 	}
 
 	public List<DelayConfig> getDelayConfigList() {
@@ -57,38 +57,22 @@ public class ListLiveDelayConfigResponse extends AcsResponse {
 
 	public static class DelayConfig {
 
-		private String stream;
-
-		private String domain;
-
-		private String taskTriggerMode;
+		private String app;
 
 		private String delayTime;
 
-		private String app;
+		private String domain;
 
-		public String getStream() {
-			return this.stream;
+		private String stream;
+
+		private String taskTriggerMode;
+
+		public String getApp() {
+			return this.app;
 		}
 
-		public void setStream(String stream) {
-			this.stream = stream;
-		}
-
-		public String getDomain() {
-			return this.domain;
-		}
-
-		public void setDomain(String domain) {
-			this.domain = domain;
-		}
-
-		public String getTaskTriggerMode() {
-			return this.taskTriggerMode;
-		}
-
-		public void setTaskTriggerMode(String taskTriggerMode) {
-			this.taskTriggerMode = taskTriggerMode;
+		public void setApp(String app) {
+			this.app = app;
 		}
 
 		public String getDelayTime() {
@@ -99,12 +83,28 @@ public class ListLiveDelayConfigResponse extends AcsResponse {
 			this.delayTime = delayTime;
 		}
 
-		public String getApp() {
-			return this.app;
+		public String getDomain() {
+			return this.domain;
 		}
 
-		public void setApp(String app) {
-			this.app = app;
+		public void setDomain(String domain) {
+			this.domain = domain;
+		}
+
+		public String getStream() {
+			return this.stream;
+		}
+
+		public void setStream(String stream) {
+			this.stream = stream;
+		}
+
+		public String getTaskTriggerMode() {
+			return this.taskTriggerMode;
+		}
+
+		public void setTaskTriggerMode(String taskTriggerMode) {
+			this.taskTriggerMode = taskTriggerMode;
 		}
 	}
 

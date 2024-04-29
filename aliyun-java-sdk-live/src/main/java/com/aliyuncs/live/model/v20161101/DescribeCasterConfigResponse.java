@@ -25,45 +25,93 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeCasterConfigResponse extends AcsResponse {
 
+	private String autoSwitchUrgentConfig;
+
+	private String autoSwitchUrgentOn;
+
+	private String callbackUrl;
+
+	private String casterId;
+
+	private String casterName;
+
+	private Integer channelEnable;
+
 	private Float delay;
 
-	private String urgentLiveStreamUrl;
+	private String domainName;
 
-	private String urgentMaterialId;
+	private Integer programEffect;
+
+	private String programName;
+
+	private String requestId;
+
+	private String sideOutputUrl;
+
+	private String sideOutputUrlList;
 
 	private String urgentImageId;
 
 	private String urgentImageUrl;
 
-	private String callbackUrl;
+	private String urgentLiveStreamUrl;
 
-	private String programName;
-
-	private String casterName;
-
-	private String casterId;
-
-	private Integer programEffect;
-
-	private Integer channelEnable;
-
-	private String domainName;
-
-	private String requestId;
-
-	private String sideOutputUrlList;
-
-	private String sideOutputUrl;
-
-	private String autoSwitchUrgentOn;
-
-	private String autoSwitchUrgentConfig;
+	private String urgentMaterialId;
 
 	private List<SyncGroup> syncGroupsConfig;
 
+	private RecordConfig recordConfig;
+
 	private TranscodeConfig transcodeConfig;
 
-	private RecordConfig recordConfig;
+	public String getAutoSwitchUrgentConfig() {
+		return this.autoSwitchUrgentConfig;
+	}
+
+	public void setAutoSwitchUrgentConfig(String autoSwitchUrgentConfig) {
+		this.autoSwitchUrgentConfig = autoSwitchUrgentConfig;
+	}
+
+	public String getAutoSwitchUrgentOn() {
+		return this.autoSwitchUrgentOn;
+	}
+
+	public void setAutoSwitchUrgentOn(String autoSwitchUrgentOn) {
+		this.autoSwitchUrgentOn = autoSwitchUrgentOn;
+	}
+
+	public String getCallbackUrl() {
+		return this.callbackUrl;
+	}
+
+	public void setCallbackUrl(String callbackUrl) {
+		this.callbackUrl = callbackUrl;
+	}
+
+	public String getCasterId() {
+		return this.casterId;
+	}
+
+	public void setCasterId(String casterId) {
+		this.casterId = casterId;
+	}
+
+	public String getCasterName() {
+		return this.casterName;
+	}
+
+	public void setCasterName(String casterName) {
+		this.casterName = casterName;
+	}
+
+	public Integer getChannelEnable() {
+		return this.channelEnable;
+	}
+
+	public void setChannelEnable(Integer channelEnable) {
+		this.channelEnable = channelEnable;
+	}
 
 	public Float getDelay() {
 		return this.delay;
@@ -73,20 +121,52 @@ public class DescribeCasterConfigResponse extends AcsResponse {
 		this.delay = delay;
 	}
 
-	public String getUrgentLiveStreamUrl() {
-		return this.urgentLiveStreamUrl;
+	public String getDomainName() {
+		return this.domainName;
 	}
 
-	public void setUrgentLiveStreamUrl(String urgentLiveStreamUrl) {
-		this.urgentLiveStreamUrl = urgentLiveStreamUrl;
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
 	}
 
-	public String getUrgentMaterialId() {
-		return this.urgentMaterialId;
+	public Integer getProgramEffect() {
+		return this.programEffect;
 	}
 
-	public void setUrgentMaterialId(String urgentMaterialId) {
-		this.urgentMaterialId = urgentMaterialId;
+	public void setProgramEffect(Integer programEffect) {
+		this.programEffect = programEffect;
+	}
+
+	public String getProgramName() {
+		return this.programName;
+	}
+
+	public void setProgramName(String programName) {
+		this.programName = programName;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getSideOutputUrl() {
+		return this.sideOutputUrl;
+	}
+
+	public void setSideOutputUrl(String sideOutputUrl) {
+		this.sideOutputUrl = sideOutputUrl;
+	}
+
+	public String getSideOutputUrlList() {
+		return this.sideOutputUrlList;
+	}
+
+	public void setSideOutputUrlList(String sideOutputUrlList) {
+		this.sideOutputUrlList = sideOutputUrlList;
 	}
 
 	public String getUrgentImageId() {
@@ -105,100 +185,20 @@ public class DescribeCasterConfigResponse extends AcsResponse {
 		this.urgentImageUrl = urgentImageUrl;
 	}
 
-	public String getCallbackUrl() {
-		return this.callbackUrl;
+	public String getUrgentLiveStreamUrl() {
+		return this.urgentLiveStreamUrl;
 	}
 
-	public void setCallbackUrl(String callbackUrl) {
-		this.callbackUrl = callbackUrl;
+	public void setUrgentLiveStreamUrl(String urgentLiveStreamUrl) {
+		this.urgentLiveStreamUrl = urgentLiveStreamUrl;
 	}
 
-	public String getProgramName() {
-		return this.programName;
+	public String getUrgentMaterialId() {
+		return this.urgentMaterialId;
 	}
 
-	public void setProgramName(String programName) {
-		this.programName = programName;
-	}
-
-	public String getCasterName() {
-		return this.casterName;
-	}
-
-	public void setCasterName(String casterName) {
-		this.casterName = casterName;
-	}
-
-	public String getCasterId() {
-		return this.casterId;
-	}
-
-	public void setCasterId(String casterId) {
-		this.casterId = casterId;
-	}
-
-	public Integer getProgramEffect() {
-		return this.programEffect;
-	}
-
-	public void setProgramEffect(Integer programEffect) {
-		this.programEffect = programEffect;
-	}
-
-	public Integer getChannelEnable() {
-		return this.channelEnable;
-	}
-
-	public void setChannelEnable(Integer channelEnable) {
-		this.channelEnable = channelEnable;
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getSideOutputUrlList() {
-		return this.sideOutputUrlList;
-	}
-
-	public void setSideOutputUrlList(String sideOutputUrlList) {
-		this.sideOutputUrlList = sideOutputUrlList;
-	}
-
-	public String getSideOutputUrl() {
-		return this.sideOutputUrl;
-	}
-
-	public void setSideOutputUrl(String sideOutputUrl) {
-		this.sideOutputUrl = sideOutputUrl;
-	}
-
-	public String getAutoSwitchUrgentOn() {
-		return this.autoSwitchUrgentOn;
-	}
-
-	public void setAutoSwitchUrgentOn(String autoSwitchUrgentOn) {
-		this.autoSwitchUrgentOn = autoSwitchUrgentOn;
-	}
-
-	public String getAutoSwitchUrgentConfig() {
-		return this.autoSwitchUrgentConfig;
-	}
-
-	public void setAutoSwitchUrgentConfig(String autoSwitchUrgentConfig) {
-		this.autoSwitchUrgentConfig = autoSwitchUrgentConfig;
+	public void setUrgentMaterialId(String urgentMaterialId) {
+		this.urgentMaterialId = urgentMaterialId;
 	}
 
 	public List<SyncGroup> getSyncGroupsConfig() {
@@ -209,20 +209,20 @@ public class DescribeCasterConfigResponse extends AcsResponse {
 		this.syncGroupsConfig = syncGroupsConfig;
 	}
 
-	public TranscodeConfig getTranscodeConfig() {
-		return this.transcodeConfig;
-	}
-
-	public void setTranscodeConfig(TranscodeConfig transcodeConfig) {
-		this.transcodeConfig = transcodeConfig;
-	}
-
 	public RecordConfig getRecordConfig() {
 		return this.recordConfig;
 	}
 
 	public void setRecordConfig(RecordConfig recordConfig) {
 		this.recordConfig = recordConfig;
+	}
+
+	public TranscodeConfig getTranscodeConfig() {
+		return this.transcodeConfig;
+	}
+
+	public void setTranscodeConfig(TranscodeConfig transcodeConfig) {
+		this.transcodeConfig = transcodeConfig;
 	}
 
 	public static class SyncGroup {
@@ -258,6 +258,92 @@ public class DescribeCasterConfigResponse extends AcsResponse {
 		}
 	}
 
+	public static class RecordConfig {
+
+		private Integer onDemand;
+
+		private String ossBucket;
+
+		private String ossEndpoint;
+
+		private List<RecordFormatItem> recordFormat;
+
+		public Integer getOnDemand() {
+			return this.onDemand;
+		}
+
+		public void setOnDemand(Integer onDemand) {
+			this.onDemand = onDemand;
+		}
+
+		public String getOssBucket() {
+			return this.ossBucket;
+		}
+
+		public void setOssBucket(String ossBucket) {
+			this.ossBucket = ossBucket;
+		}
+
+		public String getOssEndpoint() {
+			return this.ossEndpoint;
+		}
+
+		public void setOssEndpoint(String ossEndpoint) {
+			this.ossEndpoint = ossEndpoint;
+		}
+
+		public List<RecordFormatItem> getRecordFormat() {
+			return this.recordFormat;
+		}
+
+		public void setRecordFormat(List<RecordFormatItem> recordFormat) {
+			this.recordFormat = recordFormat;
+		}
+
+		public static class RecordFormatItem {
+
+			private Integer cycleDuration;
+
+			private String format;
+
+			private String ossObjectPrefix;
+
+			private String sliceOssObjectPrefix;
+
+			public Integer getCycleDuration() {
+				return this.cycleDuration;
+			}
+
+			public void setCycleDuration(Integer cycleDuration) {
+				this.cycleDuration = cycleDuration;
+			}
+
+			public String getFormat() {
+				return this.format;
+			}
+
+			public void setFormat(String format) {
+				this.format = format;
+			}
+
+			public String getOssObjectPrefix() {
+				return this.ossObjectPrefix;
+			}
+
+			public void setOssObjectPrefix(String ossObjectPrefix) {
+				this.ossObjectPrefix = ossObjectPrefix;
+			}
+
+			public String getSliceOssObjectPrefix() {
+				return this.sliceOssObjectPrefix;
+			}
+
+			public void setSliceOssObjectPrefix(String sliceOssObjectPrefix) {
+				this.sliceOssObjectPrefix = sliceOssObjectPrefix;
+			}
+		}
+	}
+
 	public static class TranscodeConfig {
 
 		private String casterTemplate;
@@ -278,92 +364,6 @@ public class DescribeCasterConfigResponse extends AcsResponse {
 
 		public void setLiveTemplateIds(List<String> liveTemplateIds) {
 			this.liveTemplateIds = liveTemplateIds;
-		}
-	}
-
-	public static class RecordConfig {
-
-		private String ossEndpoint;
-
-		private String ossBucket;
-
-		private Integer onDemand;
-
-		private List<RecordFormatItem> recordFormat;
-
-		public String getOssEndpoint() {
-			return this.ossEndpoint;
-		}
-
-		public void setOssEndpoint(String ossEndpoint) {
-			this.ossEndpoint = ossEndpoint;
-		}
-
-		public String getOssBucket() {
-			return this.ossBucket;
-		}
-
-		public void setOssBucket(String ossBucket) {
-			this.ossBucket = ossBucket;
-		}
-
-		public Integer getOnDemand() {
-			return this.onDemand;
-		}
-
-		public void setOnDemand(Integer onDemand) {
-			this.onDemand = onDemand;
-		}
-
-		public List<RecordFormatItem> getRecordFormat() {
-			return this.recordFormat;
-		}
-
-		public void setRecordFormat(List<RecordFormatItem> recordFormat) {
-			this.recordFormat = recordFormat;
-		}
-
-		public static class RecordFormatItem {
-
-			private Integer cycleDuration;
-
-			private String sliceOssObjectPrefix;
-
-			private String ossObjectPrefix;
-
-			private String format;
-
-			public Integer getCycleDuration() {
-				return this.cycleDuration;
-			}
-
-			public void setCycleDuration(Integer cycleDuration) {
-				this.cycleDuration = cycleDuration;
-			}
-
-			public String getSliceOssObjectPrefix() {
-				return this.sliceOssObjectPrefix;
-			}
-
-			public void setSliceOssObjectPrefix(String sliceOssObjectPrefix) {
-				this.sliceOssObjectPrefix = sliceOssObjectPrefix;
-			}
-
-			public String getOssObjectPrefix() {
-				return this.ossObjectPrefix;
-			}
-
-			public void setOssObjectPrefix(String ossObjectPrefix) {
-				this.ossObjectPrefix = ossObjectPrefix;
-			}
-
-			public String getFormat() {
-				return this.format;
-			}
-
-			public void setFormat(String format) {
-				this.format = format;
-			}
 		}
 	}
 

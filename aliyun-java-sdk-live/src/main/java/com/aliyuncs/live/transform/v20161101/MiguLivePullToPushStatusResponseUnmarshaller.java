@@ -23,14 +23,14 @@ public class MiguLivePullToPushStatusResponseUnmarshaller {
 
 	public static MiguLivePullToPushStatusResponse unmarshall(MiguLivePullToPushStatusResponse miguLivePullToPushStatusResponse, UnmarshallerContext _ctx) {
 		
-		miguLivePullToPushStatusResponse.setRequestId(_ctx.stringValue("MiguLivePullToPushStatusResponse.requestId"));
 		miguLivePullToPushStatusResponse.setCode(_ctx.stringValue("MiguLivePullToPushStatusResponse.code"));
-		miguLivePullToPushStatusResponse.setTimestamp(_ctx.stringValue("MiguLivePullToPushStatusResponse.timestamp"));
 		miguLivePullToPushStatusResponse.setMessage(_ctx.stringValue("MiguLivePullToPushStatusResponse.message"));
+		miguLivePullToPushStatusResponse.setRequestId(_ctx.stringValue("MiguLivePullToPushStatusResponse.requestId"));
+		miguLivePullToPushStatusResponse.setTimestamp(_ctx.stringValue("MiguLivePullToPushStatusResponse.timestamp"));
 
 		Data data = new Data();
-		data.setStatus(_ctx.stringValue("MiguLivePullToPushStatusResponse.data.status"));
 		data.setMessage(_ctx.stringValue("MiguLivePullToPushStatusResponse.data.message"));
+		data.setStatus(_ctx.stringValue("MiguLivePullToPushStatusResponse.data.status"));
 		miguLivePullToPushStatusResponse.setData(data);
 	 
 	 	return miguLivePullToPushStatusResponse;

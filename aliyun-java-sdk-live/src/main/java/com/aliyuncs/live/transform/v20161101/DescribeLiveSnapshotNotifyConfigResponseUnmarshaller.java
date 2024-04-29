@@ -23,9 +23,9 @@ public class DescribeLiveSnapshotNotifyConfigResponseUnmarshaller {
 	public static DescribeLiveSnapshotNotifyConfigResponse unmarshall(DescribeLiveSnapshotNotifyConfigResponse describeLiveSnapshotNotifyConfigResponse, UnmarshallerContext _ctx) {
 		
 		describeLiveSnapshotNotifyConfigResponse.setRequestId(_ctx.stringValue("DescribeLiveSnapshotNotifyConfigResponse.RequestId"));
-		describeLiveSnapshotNotifyConfigResponse.setNotifyReqAuth(_ctx.stringValue("DescribeLiveSnapshotNotifyConfigResponse.NotifyReqAuth"));
-		describeLiveSnapshotNotifyConfigResponse.setNotifyAuthKey(_ctx.stringValue("DescribeLiveSnapshotNotifyConfigResponse.NotifyAuthKey"));
 		describeLiveSnapshotNotifyConfigResponse.setDomainName(_ctx.stringValue("DescribeLiveSnapshotNotifyConfigResponse.DomainName"));
+		describeLiveSnapshotNotifyConfigResponse.setNotifyAuthKey(_ctx.stringValue("DescribeLiveSnapshotNotifyConfigResponse.NotifyAuthKey"));
+		describeLiveSnapshotNotifyConfigResponse.setNotifyReqAuth(_ctx.stringValue("DescribeLiveSnapshotNotifyConfigResponse.NotifyReqAuth"));
 		describeLiveSnapshotNotifyConfigResponse.setNotifyUrl(_ctx.stringValue("DescribeLiveSnapshotNotifyConfigResponse.NotifyUrl"));
 	 
 	 	return describeLiveSnapshotNotifyConfigResponse;

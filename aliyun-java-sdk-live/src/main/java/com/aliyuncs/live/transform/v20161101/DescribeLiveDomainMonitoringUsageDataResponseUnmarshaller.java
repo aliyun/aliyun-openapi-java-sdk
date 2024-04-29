@@ -27,21 +27,21 @@ public class DescribeLiveDomainMonitoringUsageDataResponseUnmarshaller {
 	public static DescribeLiveDomainMonitoringUsageDataResponse unmarshall(DescribeLiveDomainMonitoringUsageDataResponse describeLiveDomainMonitoringUsageDataResponse, UnmarshallerContext _ctx) {
 		
 		describeLiveDomainMonitoringUsageDataResponse.setRequestId(_ctx.stringValue("DescribeLiveDomainMonitoringUsageDataResponse.RequestId"));
-		describeLiveDomainMonitoringUsageDataResponse.setEndTime(_ctx.stringValue("DescribeLiveDomainMonitoringUsageDataResponse.EndTime"));
-		describeLiveDomainMonitoringUsageDataResponse.setStartTime(_ctx.stringValue("DescribeLiveDomainMonitoringUsageDataResponse.StartTime"));
-		describeLiveDomainMonitoringUsageDataResponse.setRegion(_ctx.stringValue("DescribeLiveDomainMonitoringUsageDataResponse.Region"));
-		describeLiveDomainMonitoringUsageDataResponse.setInstanceId(_ctx.stringValue("DescribeLiveDomainMonitoringUsageDataResponse.InstanceId"));
 		describeLiveDomainMonitoringUsageDataResponse.setDomainName(_ctx.stringValue("DescribeLiveDomainMonitoringUsageDataResponse.DomainName"));
+		describeLiveDomainMonitoringUsageDataResponse.setEndTime(_ctx.stringValue("DescribeLiveDomainMonitoringUsageDataResponse.EndTime"));
+		describeLiveDomainMonitoringUsageDataResponse.setInstanceId(_ctx.stringValue("DescribeLiveDomainMonitoringUsageDataResponse.InstanceId"));
+		describeLiveDomainMonitoringUsageDataResponse.setRegion(_ctx.stringValue("DescribeLiveDomainMonitoringUsageDataResponse.Region"));
+		describeLiveDomainMonitoringUsageDataResponse.setStartTime(_ctx.stringValue("DescribeLiveDomainMonitoringUsageDataResponse.StartTime"));
 
 		List<MonitoringDataItem> monitoringData = new ArrayList<MonitoringDataItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLiveDomainMonitoringUsageDataResponse.MonitoringData.Length"); i++) {
 			MonitoringDataItem monitoringDataItem = new MonitoringDataItem();
-			monitoringDataItem.setRegion(_ctx.stringValue("DescribeLiveDomainMonitoringUsageDataResponse.MonitoringData["+ i +"].Region"));
-			monitoringDataItem.setTimeStamp(_ctx.stringValue("DescribeLiveDomainMonitoringUsageDataResponse.MonitoringData["+ i +"].TimeStamp"));
+			monitoringDataItem.setDomainName(_ctx.stringValue("DescribeLiveDomainMonitoringUsageDataResponse.MonitoringData["+ i +"].DomainName"));
 			monitoringDataItem.setDuration(_ctx.integerValue("DescribeLiveDomainMonitoringUsageDataResponse.MonitoringData["+ i +"].Duration"));
 			monitoringDataItem.setInstanceId(_ctx.stringValue("DescribeLiveDomainMonitoringUsageDataResponse.MonitoringData["+ i +"].InstanceId"));
-			monitoringDataItem.setDomainName(_ctx.stringValue("DescribeLiveDomainMonitoringUsageDataResponse.MonitoringData["+ i +"].DomainName"));
+			monitoringDataItem.setRegion(_ctx.stringValue("DescribeLiveDomainMonitoringUsageDataResponse.MonitoringData["+ i +"].Region"));
 			monitoringDataItem.setResolution(_ctx.stringValue("DescribeLiveDomainMonitoringUsageDataResponse.MonitoringData["+ i +"].Resolution"));
+			monitoringDataItem.setTimeStamp(_ctx.stringValue("DescribeLiveDomainMonitoringUsageDataResponse.MonitoringData["+ i +"].TimeStamp"));
 
 			monitoringData.add(monitoringDataItem);
 		}

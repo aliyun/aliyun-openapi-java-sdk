@@ -39,9 +39,9 @@ public class DescribeCasterSceneAudioResponseUnmarshaller {
 		List<AudioLayer> audioLayers = new ArrayList<AudioLayer>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCasterSceneAudioResponse.AudioLayers.Length"); i++) {
 			AudioLayer audioLayer = new AudioLayer();
-			audioLayer.setVolumeRate(_ctx.floatValue("DescribeCasterSceneAudioResponse.AudioLayers["+ i +"].VolumeRate"));
 			audioLayer.setFixedDelayDuration(_ctx.integerValue("DescribeCasterSceneAudioResponse.AudioLayers["+ i +"].FixedDelayDuration"));
 			audioLayer.setValidChannel(_ctx.stringValue("DescribeCasterSceneAudioResponse.AudioLayers["+ i +"].ValidChannel"));
+			audioLayer.setVolumeRate(_ctx.floatValue("DescribeCasterSceneAudioResponse.AudioLayers["+ i +"].VolumeRate"));
 
 			audioLayers.add(audioLayer);
 		}

@@ -23,8 +23,8 @@ public class SetLiveStreamBlockResponseUnmarshaller {
 	public static SetLiveStreamBlockResponse unmarshall(SetLiveStreamBlockResponse setLiveStreamBlockResponse, UnmarshallerContext _ctx) {
 		
 		setLiveStreamBlockResponse.setRequestId(_ctx.stringValue("SetLiveStreamBlockResponse.RequestId"));
-		setLiveStreamBlockResponse.setStatus(_ctx.stringValue("SetLiveStreamBlockResponse.Status"));
 		setLiveStreamBlockResponse.setDescription(_ctx.stringValue("SetLiveStreamBlockResponse.Description"));
+		setLiveStreamBlockResponse.setStatus(_ctx.stringValue("SetLiveStreamBlockResponse.Status"));
 	 
 	 	return setLiveStreamBlockResponse;
 	}

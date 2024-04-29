@@ -27,24 +27,24 @@ public class DescribeLiveStreamPreloadTasksResponseUnmarshaller {
 	public static DescribeLiveStreamPreloadTasksResponse unmarshall(DescribeLiveStreamPreloadTasksResponse describeLiveStreamPreloadTasksResponse, UnmarshallerContext _ctx) {
 		
 		describeLiveStreamPreloadTasksResponse.setRequestId(_ctx.stringValue("DescribeLiveStreamPreloadTasksResponse.RequestId"));
-		describeLiveStreamPreloadTasksResponse.setTotalPage(_ctx.integerValue("DescribeLiveStreamPreloadTasksResponse.TotalPage"));
 		describeLiveStreamPreloadTasksResponse.setPageNum(_ctx.integerValue("DescribeLiveStreamPreloadTasksResponse.PageNum"));
 		describeLiveStreamPreloadTasksResponse.setPageSize(_ctx.integerValue("DescribeLiveStreamPreloadTasksResponse.PageSize"));
 		describeLiveStreamPreloadTasksResponse.setTotalNum(_ctx.integerValue("DescribeLiveStreamPreloadTasksResponse.TotalNum"));
+		describeLiveStreamPreloadTasksResponse.setTotalPage(_ctx.integerValue("DescribeLiveStreamPreloadTasksResponse.TotalPage"));
 
 		List<PreloadTask> preloadTasks = new ArrayList<PreloadTask>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLiveStreamPreloadTasksResponse.PreloadTasks.Length"); i++) {
 			PreloadTask preloadTask = new PreloadTask();
-			preloadTask.setStatus(_ctx.stringValue("DescribeLiveStreamPreloadTasksResponse.PreloadTasks["+ i +"].Status"));
-			preloadTask.setProcess(_ctx.stringValue("DescribeLiveStreamPreloadTasksResponse.PreloadTasks["+ i +"].Process"));
-			preloadTask.setDescription(_ctx.stringValue("DescribeLiveStreamPreloadTasksResponse.PreloadTasks["+ i +"].Description"));
+			preloadTask.setArea(_ctx.stringValue("DescribeLiveStreamPreloadTasksResponse.PreloadTasks["+ i +"].Area"));
 			preloadTask.setCreateTime(_ctx.stringValue("DescribeLiveStreamPreloadTasksResponse.PreloadTasks["+ i +"].CreateTime"));
+			preloadTask.setDescription(_ctx.stringValue("DescribeLiveStreamPreloadTasksResponse.PreloadTasks["+ i +"].Description"));
+			preloadTask.setDomainName(_ctx.stringValue("DescribeLiveStreamPreloadTasksResponse.PreloadTasks["+ i +"].DomainName"));
+			preloadTask.setPlayUrl(_ctx.stringValue("DescribeLiveStreamPreloadTasksResponse.PreloadTasks["+ i +"].PlayUrl"));
 			preloadTask.setPreloadedEndTime(_ctx.stringValue("DescribeLiveStreamPreloadTasksResponse.PreloadTasks["+ i +"].PreloadedEndTime"));
 			preloadTask.setPreloadedStartTime(_ctx.stringValue("DescribeLiveStreamPreloadTasksResponse.PreloadTasks["+ i +"].PreloadedStartTime"));
-			preloadTask.setPlayUrl(_ctx.stringValue("DescribeLiveStreamPreloadTasksResponse.PreloadTasks["+ i +"].PlayUrl"));
-			preloadTask.setArea(_ctx.stringValue("DescribeLiveStreamPreloadTasksResponse.PreloadTasks["+ i +"].Area"));
+			preloadTask.setProcess(_ctx.stringValue("DescribeLiveStreamPreloadTasksResponse.PreloadTasks["+ i +"].Process"));
+			preloadTask.setStatus(_ctx.stringValue("DescribeLiveStreamPreloadTasksResponse.PreloadTasks["+ i +"].Status"));
 			preloadTask.setTaskId(_ctx.stringValue("DescribeLiveStreamPreloadTasksResponse.PreloadTasks["+ i +"].TaskId"));
-			preloadTask.setDomainName(_ctx.stringValue("DescribeLiveStreamPreloadTasksResponse.PreloadTasks["+ i +"].DomainName"));
 
 			preloadTasks.add(preloadTask);
 		}

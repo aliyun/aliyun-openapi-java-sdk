@@ -46,10 +46,10 @@ public class DescribeLivePushProxyLogResponseUnmarshaller {
 			for (int j = 0; j < _ctx.lengthValue("DescribeLivePushProxyLogResponse.DomainLogDetails["+ i +"].LogInfos.Length"); j++) {
 				LogInfoDetail logInfoDetail = new LogInfoDetail();
 				logInfoDetail.setEndTime(_ctx.stringValue("DescribeLivePushProxyLogResponse.DomainLogDetails["+ i +"].LogInfos["+ j +"].EndTime"));
-				logInfoDetail.setLogSize(_ctx.longValue("DescribeLivePushProxyLogResponse.DomainLogDetails["+ i +"].LogInfos["+ j +"].LogSize"));
-				logInfoDetail.setStartTime(_ctx.stringValue("DescribeLivePushProxyLogResponse.DomainLogDetails["+ i +"].LogInfos["+ j +"].StartTime"));
 				logInfoDetail.setLogName(_ctx.stringValue("DescribeLivePushProxyLogResponse.DomainLogDetails["+ i +"].LogInfos["+ j +"].LogName"));
 				logInfoDetail.setLogPath(_ctx.stringValue("DescribeLivePushProxyLogResponse.DomainLogDetails["+ i +"].LogInfos["+ j +"].LogPath"));
+				logInfoDetail.setLogSize(_ctx.longValue("DescribeLivePushProxyLogResponse.DomainLogDetails["+ i +"].LogInfos["+ j +"].LogSize"));
+				logInfoDetail.setStartTime(_ctx.stringValue("DescribeLivePushProxyLogResponse.DomainLogDetails["+ i +"].LogInfos["+ j +"].StartTime"));
 
 				logInfos.add(logInfoDetail);
 			}
