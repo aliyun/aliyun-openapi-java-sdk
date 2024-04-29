@@ -85,7 +85,29 @@ public class GetPrometheusInstanceResponse extends AcsResponse {
 
 		private String subClustersJson;
 
+		private String remoteReadIntraUrl;
+
+		private String remoteReadInterUrl;
+
+		private String remoteWriteIntraUrl;
+
+		private String remoteWriteInterUrl;
+
+		private String pushGatewayIntraUrl;
+
+		private String pushGatewayInterUrl;
+
+		private String httpApiIntraUrl;
+
+		private String httpApiInterUrl;
+
+		private String authToken;
+
 		private String paymentType;
+
+		private Integer storageDuration;
+
+		private Integer archiveDuration;
 
 		private String grafanaInstanceId;
 
@@ -167,12 +189,100 @@ public class GetPrometheusInstanceResponse extends AcsResponse {
 			this.subClustersJson = subClustersJson;
 		}
 
+		public String getRemoteReadIntraUrl() {
+			return this.remoteReadIntraUrl;
+		}
+
+		public void setRemoteReadIntraUrl(String remoteReadIntraUrl) {
+			this.remoteReadIntraUrl = remoteReadIntraUrl;
+		}
+
+		public String getRemoteReadInterUrl() {
+			return this.remoteReadInterUrl;
+		}
+
+		public void setRemoteReadInterUrl(String remoteReadInterUrl) {
+			this.remoteReadInterUrl = remoteReadInterUrl;
+		}
+
+		public String getRemoteWriteIntraUrl() {
+			return this.remoteWriteIntraUrl;
+		}
+
+		public void setRemoteWriteIntraUrl(String remoteWriteIntraUrl) {
+			this.remoteWriteIntraUrl = remoteWriteIntraUrl;
+		}
+
+		public String getRemoteWriteInterUrl() {
+			return this.remoteWriteInterUrl;
+		}
+
+		public void setRemoteWriteInterUrl(String remoteWriteInterUrl) {
+			this.remoteWriteInterUrl = remoteWriteInterUrl;
+		}
+
+		public String getPushGatewayIntraUrl() {
+			return this.pushGatewayIntraUrl;
+		}
+
+		public void setPushGatewayIntraUrl(String pushGatewayIntraUrl) {
+			this.pushGatewayIntraUrl = pushGatewayIntraUrl;
+		}
+
+		public String getPushGatewayInterUrl() {
+			return this.pushGatewayInterUrl;
+		}
+
+		public void setPushGatewayInterUrl(String pushGatewayInterUrl) {
+			this.pushGatewayInterUrl = pushGatewayInterUrl;
+		}
+
+		public String getHttpApiIntraUrl() {
+			return this.httpApiIntraUrl;
+		}
+
+		public void setHttpApiIntraUrl(String httpApiIntraUrl) {
+			this.httpApiIntraUrl = httpApiIntraUrl;
+		}
+
+		public String getHttpApiInterUrl() {
+			return this.httpApiInterUrl;
+		}
+
+		public void setHttpApiInterUrl(String httpApiInterUrl) {
+			this.httpApiInterUrl = httpApiInterUrl;
+		}
+
+		public String getAuthToken() {
+			return this.authToken;
+		}
+
+		public void setAuthToken(String authToken) {
+			this.authToken = authToken;
+		}
+
 		public String getPaymentType() {
 			return this.paymentType;
 		}
 
 		public void setPaymentType(String paymentType) {
 			this.paymentType = paymentType;
+		}
+
+		public Integer getStorageDuration() {
+			return this.storageDuration;
+		}
+
+		public void setStorageDuration(Integer storageDuration) {
+			this.storageDuration = storageDuration;
+		}
+
+		public Integer getArchiveDuration() {
+			return this.archiveDuration;
+		}
+
+		public void setArchiveDuration(Integer archiveDuration) {
+			this.archiveDuration = archiveDuration;
 		}
 
 		public String getGrafanaInstanceId() {

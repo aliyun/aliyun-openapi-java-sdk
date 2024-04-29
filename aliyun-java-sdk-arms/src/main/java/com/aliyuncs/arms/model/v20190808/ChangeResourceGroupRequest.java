@@ -27,9 +27,9 @@ public class ChangeResourceGroupRequest extends RpcAcsRequest<ChangeResourceGrou
 
 	private String resourceId;
 
-	private String newResourceGroupId;
-
 	private String resourceType;
+
+	private String newResourceGroupId;
 	public ChangeResourceGroupRequest() {
 		super("ARMS", "2019-08-08", "ChangeResourceGroup", "arms");
 		setMethod(MethodType.POST);
@@ -50,17 +50,6 @@ public class ChangeResourceGroupRequest extends RpcAcsRequest<ChangeResourceGrou
 		}
 	}
 
-	public String getNewResourceGroupId() {
-		return this.newResourceGroupId;
-	}
-
-	public void setNewResourceGroupId(String newResourceGroupId) {
-		this.newResourceGroupId = newResourceGroupId;
-		if(newResourceGroupId != null){
-			putQueryParameter("NewResourceGroupId", newResourceGroupId);
-		}
-	}
-
 	public String getResourceType() {
 		return this.resourceType;
 	}
@@ -69,6 +58,17 @@ public class ChangeResourceGroupRequest extends RpcAcsRequest<ChangeResourceGrou
 		this.resourceType = resourceType;
 		if(resourceType != null){
 			putQueryParameter("ResourceType", resourceType);
+		}
+	}
+
+	public String getNewResourceGroupId() {
+		return this.newResourceGroupId;
+	}
+
+	public void setNewResourceGroupId(String newResourceGroupId) {
+		this.newResourceGroupId = newResourceGroupId;
+		if(newResourceGroupId != null){
+			putQueryParameter("NewResourceGroupId", newResourceGroupId);
 		}
 	}
 

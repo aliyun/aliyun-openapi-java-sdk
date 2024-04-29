@@ -27,6 +27,12 @@ public class ListPrometheusAlertRulesResponse extends AcsResponse {
 
 	private String requestId;
 
+	private Long code;
+
+	private String message;
+
+	private Boolean success;
+
 	private List<PrometheusAlertRule> prometheusAlertRules;
 
 	public String getRequestId() {
@@ -35,6 +41,30 @@ public class ListPrometheusAlertRulesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Long getCode() {
+		return this.code;
+	}
+
+	public void setCode(Long code) {
+		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<PrometheusAlertRule> getPrometheusAlertRules() {

@@ -28,6 +28,9 @@ public class ListDashboardsResponseUnmarshaller {
 	public static ListDashboardsResponse unmarshall(ListDashboardsResponse listDashboardsResponse, UnmarshallerContext _ctx) {
 		
 		listDashboardsResponse.setRequestId(_ctx.stringValue("ListDashboardsResponse.RequestId"));
+		listDashboardsResponse.setPrometheusServiceOpened(_ctx.stringValue("ListDashboardsResponse.PrometheusServiceOpened"));
+		listDashboardsResponse.setEnvironmentId(_ctx.stringValue("ListDashboardsResponse.EnvironmentId"));
+		listDashboardsResponse.setGrafanaServiceOpened(_ctx.stringValue("ListDashboardsResponse.GrafanaServiceOpened"));
 
 		List<DashboardVosItem> dashboardVos = new ArrayList<DashboardVosItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListDashboardsResponse.DashboardVos.Length"); i++) {

@@ -56,6 +56,7 @@ public class CreateOrUpdateAlertRuleResponseUnmarshaller {
 		alertRule.setDuration(_ctx.stringValue("CreateOrUpdateAlertRuleResponse.AlertRule.Duration"));
 		alertRule.setLevel(_ctx.stringValue("CreateOrUpdateAlertRuleResponse.AlertRule.Level"));
 		alertRule.setMessage(_ctx.stringValue("CreateOrUpdateAlertRuleResponse.AlertRule.Message"));
+		alertRule.setNotifyMode(_ctx.stringValue("CreateOrUpdateAlertRuleResponse.AlertRule.NotifyMode"));
 
 		List<String> pids = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("CreateOrUpdateAlertRuleResponse.AlertRule.Pids.Length"); i++) {

@@ -30,6 +30,9 @@ public class ListPrometheusAlertRulesResponseUnmarshaller {
 	public static ListPrometheusAlertRulesResponse unmarshall(ListPrometheusAlertRulesResponse listPrometheusAlertRulesResponse, UnmarshallerContext _ctx) {
 		
 		listPrometheusAlertRulesResponse.setRequestId(_ctx.stringValue("ListPrometheusAlertRulesResponse.RequestId"));
+		listPrometheusAlertRulesResponse.setCode(_ctx.longValue("ListPrometheusAlertRulesResponse.Code"));
+		listPrometheusAlertRulesResponse.setMessage(_ctx.stringValue("ListPrometheusAlertRulesResponse.Message"));
+		listPrometheusAlertRulesResponse.setSuccess(_ctx.booleanValue("ListPrometheusAlertRulesResponse.Success"));
 
 		List<PrometheusAlertRule> prometheusAlertRules = new ArrayList<PrometheusAlertRule>();
 		for (int i = 0; i < _ctx.lengthValue("ListPrometheusAlertRulesResponse.PrometheusAlertRules.Length"); i++) {

@@ -46,6 +46,11 @@ public class ListTraceAppsResponseUnmarshaller {
 			traceApp.setRegionId(_ctx.stringValue("ListTraceAppsResponse.TraceApps["+ i +"].RegionId"));
 			traceApp.setResourceGroupId(_ctx.stringValue("ListTraceAppsResponse.TraceApps["+ i +"].ResourceGroupId"));
 			traceApp.setSource(_ctx.stringValue("ListTraceAppsResponse.TraceApps["+ i +"].Source"));
+			traceApp.setWorkloadName(_ctx.stringValue("ListTraceAppsResponse.TraceApps["+ i +"].WorkloadName"));
+			traceApp.setWorkloadKind(_ctx.stringValue("ListTraceAppsResponse.TraceApps["+ i +"].WorkloadKind"));
+			traceApp.setNamespace(_ctx.stringValue("ListTraceAppsResponse.TraceApps["+ i +"].Namespace"));
+			traceApp.setClusterId(_ctx.stringValue("ListTraceAppsResponse.TraceApps["+ i +"].ClusterId"));
+			traceApp.setLanguage(_ctx.stringValue("ListTraceAppsResponse.TraceApps["+ i +"].Language"));
 
 			List<String> labels = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListTraceAppsResponse.TraceApps["+ i +"].Labels.Length"); j++) {

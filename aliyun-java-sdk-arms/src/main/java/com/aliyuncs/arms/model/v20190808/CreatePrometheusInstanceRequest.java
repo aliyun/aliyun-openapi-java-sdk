@@ -28,11 +28,17 @@ public class CreatePrometheusInstanceRequest extends RpcAcsRequest<CreatePrometh
 
 	private String grafanaInstanceId;
 
-	private Boolean allSubClustersSuccess;
-
 	private String clusterName;
 
 	private String securityGroupId;
+
+	private Integer duration;
+
+	private String resourceGroupId;
+
+	private String subClustersJson;
+
+	private Boolean allSubClustersSuccess;
 
 	private String clusterId;
 
@@ -42,11 +48,9 @@ public class CreatePrometheusInstanceRequest extends RpcAcsRequest<CreatePrometh
 
 	private String vSwitchId;
 
-	private String resourceGroupId;
-
 	private String vpcId;
 
-	private String subClustersJson;
+	private Integer archiveDuration;
 	public CreatePrometheusInstanceRequest() {
 		super("ARMS", "2019-08-08", "CreatePrometheusInstance", "arms");
 		setMethod(MethodType.POST);
@@ -64,17 +68,6 @@ public class CreatePrometheusInstanceRequest extends RpcAcsRequest<CreatePrometh
 		this.grafanaInstanceId = grafanaInstanceId;
 		if(grafanaInstanceId != null){
 			putQueryParameter("GrafanaInstanceId", grafanaInstanceId);
-		}
-	}
-
-	public Boolean getAllSubClustersSuccess() {
-		return this.allSubClustersSuccess;
-	}
-
-	public void setAllSubClustersSuccess(Boolean allSubClustersSuccess) {
-		this.allSubClustersSuccess = allSubClustersSuccess;
-		if(allSubClustersSuccess != null){
-			putQueryParameter("AllSubClustersSuccess", allSubClustersSuccess.toString());
 		}
 	}
 
@@ -97,6 +90,50 @@ public class CreatePrometheusInstanceRequest extends RpcAcsRequest<CreatePrometh
 		this.securityGroupId = securityGroupId;
 		if(securityGroupId != null){
 			putQueryParameter("SecurityGroupId", securityGroupId);
+		}
+	}
+
+	public Integer getDuration() {
+		return this.duration;
+	}
+
+	public void setDuration(Integer duration) {
+		this.duration = duration;
+		if(duration != null){
+			putQueryParameter("Duration", duration.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getSubClustersJson() {
+		return this.subClustersJson;
+	}
+
+	public void setSubClustersJson(String subClustersJson) {
+		this.subClustersJson = subClustersJson;
+		if(subClustersJson != null){
+			putQueryParameter("SubClustersJson", subClustersJson);
+		}
+	}
+
+	public Boolean getAllSubClustersSuccess() {
+		return this.allSubClustersSuccess;
+	}
+
+	public void setAllSubClustersSuccess(Boolean allSubClustersSuccess) {
+		this.allSubClustersSuccess = allSubClustersSuccess;
+		if(allSubClustersSuccess != null){
+			putQueryParameter("AllSubClustersSuccess", allSubClustersSuccess.toString());
 		}
 	}
 
@@ -147,17 +184,6 @@ public class CreatePrometheusInstanceRequest extends RpcAcsRequest<CreatePrometh
 		}
 	}
 
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
-	}
-
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
-		}
-	}
-
 	public String getVpcId() {
 		return this.vpcId;
 	}
@@ -169,14 +195,14 @@ public class CreatePrometheusInstanceRequest extends RpcAcsRequest<CreatePrometh
 		}
 	}
 
-	public String getSubClustersJson() {
-		return this.subClustersJson;
+	public Integer getArchiveDuration() {
+		return this.archiveDuration;
 	}
 
-	public void setSubClustersJson(String subClustersJson) {
-		this.subClustersJson = subClustersJson;
-		if(subClustersJson != null){
-			putQueryParameter("SubClustersJson", subClustersJson);
+	public void setArchiveDuration(Integer archiveDuration) {
+		this.archiveDuration = archiveDuration;
+		if(archiveDuration != null){
+			putQueryParameter("ArchiveDuration", archiveDuration.toString());
 		}
 	}
 

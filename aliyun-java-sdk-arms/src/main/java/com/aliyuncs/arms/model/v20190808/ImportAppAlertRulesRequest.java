@@ -15,6 +15,7 @@
 package com.aliyuncs.arms.model.v20190808;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.arms.Endpoint;
 
@@ -26,6 +27,8 @@ public class ImportAppAlertRulesRequest extends RpcAcsRequest<ImportAppAlertRule
 	   
 
 	private Boolean isAutoStart;
+
+	private List<Tags> tagss;
 
 	private String contactGroupIds;
 
@@ -52,6 +55,20 @@ public class ImportAppAlertRulesRequest extends RpcAcsRequest<ImportAppAlertRule
 		if(isAutoStart != null){
 			putQueryParameter("IsAutoStart", isAutoStart.toString());
 		}
+	}
+
+	public List<Tags> getTagss() {
+		return this.tagss;
+	}
+
+	public void setTagss(List<Tags> tagss) {
+		this.tagss = tagss;	
+		if (tagss != null) {
+			for (int depth1 = 0; depth1 < tagss.size(); depth1++) {
+				putQueryParameter("Tags." + (depth1 + 1) + ".Value" , tagss.get(depth1).getValue());
+				putQueryParameter("Tags." + (depth1 + 1) + ".Key" , tagss.get(depth1).getKey());
+			}
+		}	
 	}
 
 	public String getContactGroupIds() {
@@ -95,6 +112,29 @@ public class ImportAppAlertRulesRequest extends RpcAcsRequest<ImportAppAlertRule
 		this.templateAlertId = templateAlertId;
 		if(templateAlertId != null){
 			putQueryParameter("TemplateAlertId", templateAlertId);
+		}
+	}
+
+	public static class Tags {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

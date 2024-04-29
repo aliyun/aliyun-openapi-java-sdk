@@ -26,6 +26,8 @@ public class DescribePrometheusAlertRuleRequest extends RpcAcsRequest<DescribePr
 	   
 
 	private Long alertId;
+
+	private String clusterId;
 	public DescribePrometheusAlertRuleRequest() {
 		super("ARMS", "2019-08-08", "DescribePrometheusAlertRule", "arms");
 		setMethod(MethodType.POST);
@@ -43,6 +45,17 @@ public class DescribePrometheusAlertRuleRequest extends RpcAcsRequest<DescribePr
 		this.alertId = alertId;
 		if(alertId != null){
 			putQueryParameter("AlertId", alertId.toString());
+		}
+	}
+
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
 		}
 	}
 

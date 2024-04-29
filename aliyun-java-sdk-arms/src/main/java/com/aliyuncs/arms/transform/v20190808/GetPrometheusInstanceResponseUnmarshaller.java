@@ -41,7 +41,18 @@ public class GetPrometheusInstanceResponseUnmarshaller {
 		data.setVSwitchId(_ctx.stringValue("GetPrometheusInstanceResponse.Data.VSwitchId"));
 		data.setSecurityGroupId(_ctx.stringValue("GetPrometheusInstanceResponse.Data.SecurityGroupId"));
 		data.setSubClustersJson(_ctx.stringValue("GetPrometheusInstanceResponse.Data.SubClustersJson"));
+		data.setRemoteReadIntraUrl(_ctx.stringValue("GetPrometheusInstanceResponse.Data.RemoteReadIntraUrl"));
+		data.setRemoteReadInterUrl(_ctx.stringValue("GetPrometheusInstanceResponse.Data.RemoteReadInterUrl"));
+		data.setRemoteWriteIntraUrl(_ctx.stringValue("GetPrometheusInstanceResponse.Data.RemoteWriteIntraUrl"));
+		data.setRemoteWriteInterUrl(_ctx.stringValue("GetPrometheusInstanceResponse.Data.RemoteWriteInterUrl"));
+		data.setPushGatewayIntraUrl(_ctx.stringValue("GetPrometheusInstanceResponse.Data.PushGatewayIntraUrl"));
+		data.setPushGatewayInterUrl(_ctx.stringValue("GetPrometheusInstanceResponse.Data.PushGatewayInterUrl"));
+		data.setHttpApiIntraUrl(_ctx.stringValue("GetPrometheusInstanceResponse.Data.HttpApiIntraUrl"));
+		data.setHttpApiInterUrl(_ctx.stringValue("GetPrometheusInstanceResponse.Data.HttpApiInterUrl"));
+		data.setAuthToken(_ctx.stringValue("GetPrometheusInstanceResponse.Data.AuthToken"));
 		data.setPaymentType(_ctx.stringValue("GetPrometheusInstanceResponse.Data.PaymentType"));
+		data.setStorageDuration(_ctx.integerValue("GetPrometheusInstanceResponse.Data.StorageDuration"));
+		data.setArchiveDuration(_ctx.integerValue("GetPrometheusInstanceResponse.Data.ArchiveDuration"));
 		data.setGrafanaInstanceId(_ctx.stringValue("GetPrometheusInstanceResponse.Data.GrafanaInstanceId"));
 		data.setResourceGroupId(_ctx.stringValue("GetPrometheusInstanceResponse.Data.ResourceGroupId"));
 		data.setResourceType(_ctx.stringValue("GetPrometheusInstanceResponse.Data.ResourceType"));

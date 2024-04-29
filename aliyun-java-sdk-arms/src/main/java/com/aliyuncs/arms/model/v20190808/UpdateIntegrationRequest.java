@@ -25,8 +25,6 @@ import com.aliyuncs.arms.Endpoint;
 public class UpdateIntegrationRequest extends RpcAcsRequest<UpdateIntegrationResponse> {
 	   
 
-	private String shortToken;
-
 	private String fieldRedefineRules;
 
 	private String stat;
@@ -38,8 +36,6 @@ public class UpdateIntegrationRequest extends RpcAcsRequest<UpdateIntegrationRes
 	private Long integrationId;
 
 	private String description;
-
-	private String apiEndpoint;
 
 	private Boolean autoRecover;
 
@@ -63,17 +59,6 @@ public class UpdateIntegrationRequest extends RpcAcsRequest<UpdateIntegrationRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getShortToken() {
-		return this.shortToken;
-	}
-
-	public void setShortToken(String shortToken) {
-		this.shortToken = shortToken;
-		if(shortToken != null){
-			putBodyParameter("ShortToken", shortToken);
-		}
 	}
 
 	public String getFieldRedefineRules() {
@@ -139,17 +124,6 @@ public class UpdateIntegrationRequest extends RpcAcsRequest<UpdateIntegrationRes
 		this.description = description;
 		if(description != null){
 			putBodyParameter("Description", description);
-		}
-	}
-
-	public String getApiEndpoint() {
-		return this.apiEndpoint;
-	}
-
-	public void setApiEndpoint(String apiEndpoint) {
-		this.apiEndpoint = apiEndpoint;
-		if(apiEndpoint != null){
-			putBodyParameter("ApiEndpoint", apiEndpoint);
 		}
 	}
 

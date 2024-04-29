@@ -46,6 +46,15 @@ public class ListPrometheusInstanceByTagAndResourceGroupIdResponseUnmarshaller {
 			prometheusInstancesItem.setVSwitchId(_ctx.stringValue("ListPrometheusInstanceByTagAndResourceGroupIdResponse.Data.PrometheusInstances["+ i +"].VSwitchId"));
 			prometheusInstancesItem.setSecurityGroupId(_ctx.stringValue("ListPrometheusInstanceByTagAndResourceGroupIdResponse.Data.PrometheusInstances["+ i +"].SecurityGroupId"));
 			prometheusInstancesItem.setSubClustersJson(_ctx.stringValue("ListPrometheusInstanceByTagAndResourceGroupIdResponse.Data.PrometheusInstances["+ i +"].SubClustersJson"));
+			prometheusInstancesItem.setRemoteReadIntraUrl(_ctx.stringValue("ListPrometheusInstanceByTagAndResourceGroupIdResponse.Data.PrometheusInstances["+ i +"].RemoteReadIntraUrl"));
+			prometheusInstancesItem.setRemoteReadInterUrl(_ctx.stringValue("ListPrometheusInstanceByTagAndResourceGroupIdResponse.Data.PrometheusInstances["+ i +"].RemoteReadInterUrl"));
+			prometheusInstancesItem.setRemoteWriteIntraUrl(_ctx.stringValue("ListPrometheusInstanceByTagAndResourceGroupIdResponse.Data.PrometheusInstances["+ i +"].RemoteWriteIntraUrl"));
+			prometheusInstancesItem.setRemoteWriteInterUrl(_ctx.stringValue("ListPrometheusInstanceByTagAndResourceGroupIdResponse.Data.PrometheusInstances["+ i +"].RemoteWriteInterUrl"));
+			prometheusInstancesItem.setPushGatewayIntraUrl(_ctx.stringValue("ListPrometheusInstanceByTagAndResourceGroupIdResponse.Data.PrometheusInstances["+ i +"].PushGatewayIntraUrl"));
+			prometheusInstancesItem.setPushGatewayInterUrl(_ctx.stringValue("ListPrometheusInstanceByTagAndResourceGroupIdResponse.Data.PrometheusInstances["+ i +"].PushGatewayInterUrl"));
+			prometheusInstancesItem.setHttpApiIntraUrl(_ctx.stringValue("ListPrometheusInstanceByTagAndResourceGroupIdResponse.Data.PrometheusInstances["+ i +"].HttpApiIntraUrl"));
+			prometheusInstancesItem.setHttpApiInterUrl(_ctx.stringValue("ListPrometheusInstanceByTagAndResourceGroupIdResponse.Data.PrometheusInstances["+ i +"].HttpApiInterUrl"));
+			prometheusInstancesItem.setAuthToken(_ctx.stringValue("ListPrometheusInstanceByTagAndResourceGroupIdResponse.Data.PrometheusInstances["+ i +"].AuthToken"));
 			prometheusInstancesItem.setPaymentType(_ctx.stringValue("ListPrometheusInstanceByTagAndResourceGroupIdResponse.Data.PrometheusInstances["+ i +"].PaymentType"));
 			prometheusInstancesItem.setGrafanaInstanceId(_ctx.stringValue("ListPrometheusInstanceByTagAndResourceGroupIdResponse.Data.PrometheusInstances["+ i +"].GrafanaInstanceId"));
 			prometheusInstancesItem.setResourceGroupId(_ctx.stringValue("ListPrometheusInstanceByTagAndResourceGroupIdResponse.Data.PrometheusInstances["+ i +"].ResourceGroupId"));

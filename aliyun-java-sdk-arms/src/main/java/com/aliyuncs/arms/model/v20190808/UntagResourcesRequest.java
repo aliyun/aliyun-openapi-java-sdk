@@ -30,9 +30,11 @@ public class UntagResourcesRequest extends RpcAcsRequest<UntagResourcesResponse>
 
 	private List<String> resourceIds;
 
-	private List<String> tagKeys;
-
 	private String resourceType;
+
+	private List<Tags> tagss;
+
+	private List<String> tagKeys;
 	public UntagResourcesRequest() {
 		super("ARMS", "2019-08-08", "UntagResources", "arms");
 		setMethod(MethodType.POST);
@@ -66,6 +68,31 @@ public class UntagResourcesRequest extends RpcAcsRequest<UntagResourcesResponse>
 		}	
 	}
 
+	public String getResourceType() {
+		return this.resourceType;
+	}
+
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType);
+		}
+	}
+
+	public List<Tags> getTagss() {
+		return this.tagss;
+	}
+
+	public void setTagss(List<Tags> tagss) {
+		this.tagss = tagss;	
+		if (tagss != null) {
+			for (int depth1 = 0; depth1 < tagss.size(); depth1++) {
+				putQueryParameter("Tags." + (depth1 + 1) + ".Value" , tagss.get(depth1).getValue());
+				putQueryParameter("Tags." + (depth1 + 1) + ".Key" , tagss.get(depth1).getKey());
+			}
+		}	
+	}
+
 	public List<String> getTagKeys() {
 		return this.tagKeys;
 	}
@@ -79,14 +106,26 @@ public class UntagResourcesRequest extends RpcAcsRequest<UntagResourcesResponse>
 		}	
 	}
 
-	public String getResourceType() {
-		return this.resourceType;
-	}
+	public static class Tags {
 
-	public void setResourceType(String resourceType) {
-		this.resourceType = resourceType;
-		if(resourceType != null){
-			putQueryParameter("ResourceType", resourceType);
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

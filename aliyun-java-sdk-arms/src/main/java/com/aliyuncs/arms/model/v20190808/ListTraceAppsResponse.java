@@ -99,6 +99,16 @@ public class ListTraceAppsResponse extends AcsResponse {
 
 		private String source;
 
+		private String workloadName;
+
+		private String workloadKind;
+
+		private String namespace;
+
+		private String clusterId;
+
+		private String language;
+
 		private List<TagsItem> tags;
 
 		private List<String> labels;
@@ -189,6 +199,46 @@ public class ListTraceAppsResponse extends AcsResponse {
 
 		public void setSource(String source) {
 			this.source = source;
+		}
+
+		public String getWorkloadName() {
+			return this.workloadName;
+		}
+
+		public void setWorkloadName(String workloadName) {
+			this.workloadName = workloadName;
+		}
+
+		public String getWorkloadKind() {
+			return this.workloadKind;
+		}
+
+		public void setWorkloadKind(String workloadKind) {
+			this.workloadKind = workloadKind;
+		}
+
+		public String getNamespace() {
+			return this.namespace;
+		}
+
+		public void setNamespace(String namespace) {
+			this.namespace = namespace;
+		}
+
+		public String getClusterId() {
+			return this.clusterId;
+		}
+
+		public void setClusterId(String clusterId) {
+			this.clusterId = clusterId;
+		}
+
+		public String getLanguage() {
+			return this.language;
+		}
+
+		public void setLanguage(String language) {
+			this.language = language;
 		}
 
 		public List<TagsItem> getTags() {

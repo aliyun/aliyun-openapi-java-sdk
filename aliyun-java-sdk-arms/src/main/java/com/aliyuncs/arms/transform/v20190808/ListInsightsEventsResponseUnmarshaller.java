@@ -37,6 +37,7 @@ public class ListInsightsEventsResponseUnmarshaller {
 			problemInfos.setPid(_ctx.stringValue("ListInsightsEventsResponse.InsightsEvents["+ i +"].Pid"));
 			problemInfos.setLevel(_ctx.stringValue("ListInsightsEventsResponse.InsightsEvents["+ i +"].Level"));
 			problemInfos.setDate(_ctx.longValue("ListInsightsEventsResponse.InsightsEvents["+ i +"].Date"));
+			problemInfos.setProblemId(_ctx.stringValue("ListInsightsEventsResponse.InsightsEvents["+ i +"].ProblemId"));
 
 			insightsEvents.add(problemInfos);
 		}

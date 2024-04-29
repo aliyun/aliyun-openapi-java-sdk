@@ -97,6 +97,24 @@ public class ListPrometheusInstanceByTagAndResourceGroupIdResponse extends AcsRe
 
 			private String subClustersJson;
 
+			private String remoteReadIntraUrl;
+
+			private String remoteReadInterUrl;
+
+			private String remoteWriteIntraUrl;
+
+			private String remoteWriteInterUrl;
+
+			private String pushGatewayIntraUrl;
+
+			private String pushGatewayInterUrl;
+
+			private String httpApiIntraUrl;
+
+			private String httpApiInterUrl;
+
+			private String authToken;
+
 			private String paymentType;
 
 			private String grafanaInstanceId;
@@ -177,6 +195,78 @@ public class ListPrometheusInstanceByTagAndResourceGroupIdResponse extends AcsRe
 
 			public void setSubClustersJson(String subClustersJson) {
 				this.subClustersJson = subClustersJson;
+			}
+
+			public String getRemoteReadIntraUrl() {
+				return this.remoteReadIntraUrl;
+			}
+
+			public void setRemoteReadIntraUrl(String remoteReadIntraUrl) {
+				this.remoteReadIntraUrl = remoteReadIntraUrl;
+			}
+
+			public String getRemoteReadInterUrl() {
+				return this.remoteReadInterUrl;
+			}
+
+			public void setRemoteReadInterUrl(String remoteReadInterUrl) {
+				this.remoteReadInterUrl = remoteReadInterUrl;
+			}
+
+			public String getRemoteWriteIntraUrl() {
+				return this.remoteWriteIntraUrl;
+			}
+
+			public void setRemoteWriteIntraUrl(String remoteWriteIntraUrl) {
+				this.remoteWriteIntraUrl = remoteWriteIntraUrl;
+			}
+
+			public String getRemoteWriteInterUrl() {
+				return this.remoteWriteInterUrl;
+			}
+
+			public void setRemoteWriteInterUrl(String remoteWriteInterUrl) {
+				this.remoteWriteInterUrl = remoteWriteInterUrl;
+			}
+
+			public String getPushGatewayIntraUrl() {
+				return this.pushGatewayIntraUrl;
+			}
+
+			public void setPushGatewayIntraUrl(String pushGatewayIntraUrl) {
+				this.pushGatewayIntraUrl = pushGatewayIntraUrl;
+			}
+
+			public String getPushGatewayInterUrl() {
+				return this.pushGatewayInterUrl;
+			}
+
+			public void setPushGatewayInterUrl(String pushGatewayInterUrl) {
+				this.pushGatewayInterUrl = pushGatewayInterUrl;
+			}
+
+			public String getHttpApiIntraUrl() {
+				return this.httpApiIntraUrl;
+			}
+
+			public void setHttpApiIntraUrl(String httpApiIntraUrl) {
+				this.httpApiIntraUrl = httpApiIntraUrl;
+			}
+
+			public String getHttpApiInterUrl() {
+				return this.httpApiInterUrl;
+			}
+
+			public void setHttpApiInterUrl(String httpApiInterUrl) {
+				this.httpApiInterUrl = httpApiInterUrl;
+			}
+
+			public String getAuthToken() {
+				return this.authToken;
+			}
+
+			public void setAuthToken(String authToken) {
+				this.authToken = authToken;
 			}
 
 			public String getPaymentType() {

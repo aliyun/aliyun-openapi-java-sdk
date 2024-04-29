@@ -15,6 +15,7 @@
 package com.aliyuncs.arms.model.v20190808;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.arms.Endpoint;
 
@@ -26,6 +27,8 @@ public class GetRetcodeAppByPidRequest extends RpcAcsRequest<GetRetcodeAppByPidR
 	   
 
 	private String pid;
+
+	private List<Tags> tagss;
 	public GetRetcodeAppByPidRequest() {
 		super("ARMS", "2019-08-08", "GetRetcodeAppByPid", "arms");
 		setMethod(MethodType.GET);
@@ -43,6 +46,43 @@ public class GetRetcodeAppByPidRequest extends RpcAcsRequest<GetRetcodeAppByPidR
 		this.pid = pid;
 		if(pid != null){
 			putQueryParameter("Pid", pid);
+		}
+	}
+
+	public List<Tags> getTagss() {
+		return this.tagss;
+	}
+
+	public void setTagss(List<Tags> tagss) {
+		this.tagss = tagss;	
+		if (tagss != null) {
+			for (int depth1 = 0; depth1 < tagss.size(); depth1++) {
+				putQueryParameter("Tags." + (depth1 + 1) + ".Value" , tagss.get(depth1).getValue());
+				putQueryParameter("Tags." + (depth1 + 1) + ".Key" , tagss.get(depth1).getKey());
+			}
+		}	
+	}
+
+	public static class Tags {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

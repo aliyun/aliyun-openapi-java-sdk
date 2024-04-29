@@ -61,6 +61,8 @@ public class CreateOrUpdateNotificationPolicyResponse extends AcsResponse {
 
 		private Long integrationId;
 
+		private Boolean directedMode;
+
 		private List<MatchingRulesItem> matchingRules;
 
 		private GroupRule groupRule;
@@ -123,6 +125,14 @@ public class CreateOrUpdateNotificationPolicyResponse extends AcsResponse {
 
 		public void setIntegrationId(Long integrationId) {
 			this.integrationId = integrationId;
+		}
+
+		public Boolean getDirectedMode() {
+			return this.directedMode;
+		}
+
+		public void setDirectedMode(Boolean directedMode) {
+			this.directedMode = directedMode;
 		}
 
 		public List<MatchingRulesItem> getMatchingRules() {

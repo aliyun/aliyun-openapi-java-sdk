@@ -85,6 +85,8 @@ public class CreateOrUpdateAlertRuleResponse extends AcsResponse {
 
 		private String message;
 
+		private String notifyMode;
+
 		private List<LabelsItem> labels;
 
 		private List<AnnotationsItem> annotations;
@@ -247,6 +249,14 @@ public class CreateOrUpdateAlertRuleResponse extends AcsResponse {
 
 		public void setMessage(String message) {
 			this.message = message;
+		}
+
+		public String getNotifyMode() {
+			return this.notifyMode;
+		}
+
+		public void setNotifyMode(String notifyMode) {
+			this.notifyMode = notifyMode;
 		}
 
 		public List<LabelsItem> getLabels() {

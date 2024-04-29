@@ -33,6 +33,8 @@ public class CreateOrUpdateNotificationPolicyRequest extends RpcAcsRequest<Creat
 
 	private String matchingRules;
 
+	private Boolean directedMode;
+
 	private String groupRule;
 
 	private Boolean repeat;
@@ -96,6 +98,17 @@ public class CreateOrUpdateNotificationPolicyRequest extends RpcAcsRequest<Creat
 		this.matchingRules = matchingRules;
 		if(matchingRules != null){
 			putBodyParameter("MatchingRules", matchingRules);
+		}
+	}
+
+	public Boolean getDirectedMode() {
+		return this.directedMode;
+	}
+
+	public void setDirectedMode(Boolean directedMode) {
+		this.directedMode = directedMode;
+		if(directedMode != null){
+			putBodyParameter("DirectedMode", directedMode.toString());
 		}
 	}
 

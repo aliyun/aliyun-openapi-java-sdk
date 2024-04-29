@@ -24,6 +24,9 @@ public class DeleteRetcodeAppResponseUnmarshaller {
 		
 		deleteRetcodeAppResponse.setRequestId(_ctx.stringValue("DeleteRetcodeAppResponse.RequestId"));
 		deleteRetcodeAppResponse.setData(_ctx.stringValue("DeleteRetcodeAppResponse.Data"));
+		deleteRetcodeAppResponse.setCode(_ctx.integerValue("DeleteRetcodeAppResponse.Code"));
+		deleteRetcodeAppResponse.setSuccess(_ctx.booleanValue("DeleteRetcodeAppResponse.Success"));
+		deleteRetcodeAppResponse.setMessage(_ctx.stringValue("DeleteRetcodeAppResponse.Message"));
 	 
 	 	return deleteRetcodeAppResponse;
 	}

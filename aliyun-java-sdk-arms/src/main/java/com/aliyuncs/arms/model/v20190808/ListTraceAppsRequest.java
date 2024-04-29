@@ -28,6 +28,10 @@ public class ListTraceAppsRequest extends RpcAcsRequest<ListTraceAppsResponse> {
 
 	private String resourceGroupId;
 
+	private String appType;
+
+	private String region;
+
 	private List<Tags> tagss;
 	public ListTraceAppsRequest() {
 		super("ARMS", "2019-08-08", "ListTraceApps", "arms");
@@ -46,6 +50,28 @@ public class ListTraceAppsRequest extends RpcAcsRequest<ListTraceAppsResponse> {
 		this.resourceGroupId = resourceGroupId;
 		if(resourceGroupId != null){
 			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getAppType() {
+		return this.appType;
+	}
+
+	public void setAppType(String appType) {
+		this.appType = appType;
+		if(appType != null){
+			putQueryParameter("AppType", appType);
+		}
+	}
+
+	public String getRegion() {
+		return this.region;
+	}
+
+	public void setRegion(String region) {
+		this.region = region;
+		if(region != null){
+			putQueryParameter("Region", region);
 		}
 	}
 

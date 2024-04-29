@@ -27,6 +27,14 @@ public class CreateRetcodeAppResponse extends AcsResponse {
 
 	private String requestId;
 
+	private Integer code;
+
+	private String data;
+
+	private Boolean success;
+
+	private String message;
+
 	private RetcodeAppDataBean retcodeAppDataBean;
 
 	public String getRequestId() {
@@ -35,6 +43,38 @@ public class CreateRetcodeAppResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getCode() {
+		return this.code;
+	}
+
+	public void setCode(Integer code) {
+		this.code = code;
+	}
+
+	public String getData() {
+		return this.data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public RetcodeAppDataBean getRetcodeAppDataBean() {

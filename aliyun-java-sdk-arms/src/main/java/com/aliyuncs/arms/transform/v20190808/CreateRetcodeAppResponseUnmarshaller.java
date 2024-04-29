@@ -28,6 +28,10 @@ public class CreateRetcodeAppResponseUnmarshaller {
 	public static CreateRetcodeAppResponse unmarshall(CreateRetcodeAppResponse createRetcodeAppResponse, UnmarshallerContext _ctx) {
 		
 		createRetcodeAppResponse.setRequestId(_ctx.stringValue("CreateRetcodeAppResponse.RequestId"));
+		createRetcodeAppResponse.setCode(_ctx.integerValue("CreateRetcodeAppResponse.Code"));
+		createRetcodeAppResponse.setData(_ctx.stringValue("CreateRetcodeAppResponse.Data"));
+		createRetcodeAppResponse.setSuccess(_ctx.booleanValue("CreateRetcodeAppResponse.Success"));
+		createRetcodeAppResponse.setMessage(_ctx.stringValue("CreateRetcodeAppResponse.Message"));
 
 		RetcodeAppDataBean retcodeAppDataBean = new RetcodeAppDataBean();
 		retcodeAppDataBean.setPid(_ctx.stringValue("CreateRetcodeAppResponse.RetcodeAppDataBean.Pid"));

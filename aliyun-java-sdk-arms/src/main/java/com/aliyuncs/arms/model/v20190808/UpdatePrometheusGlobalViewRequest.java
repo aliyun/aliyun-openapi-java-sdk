@@ -29,7 +29,11 @@ public class UpdatePrometheusGlobalViewRequest extends RpcAcsRequest<UpdateProme
 
 	private String clusterId;
 
+	private String groupName;
+
 	private String resourceGroupId;
+
+	private String mostRegionId;
 
 	private String subClustersJson;
 	public UpdatePrometheusGlobalViewRequest() {
@@ -63,6 +67,17 @@ public class UpdatePrometheusGlobalViewRequest extends RpcAcsRequest<UpdateProme
 		}
 	}
 
+	public String getGroupName() {
+		return this.groupName;
+	}
+
+	public void setGroupName(String groupName) {
+		this.groupName = groupName;
+		if(groupName != null){
+			putQueryParameter("GroupName", groupName);
+		}
+	}
+
 	public String getResourceGroupId() {
 		return this.resourceGroupId;
 	}
@@ -71,6 +86,17 @@ public class UpdatePrometheusGlobalViewRequest extends RpcAcsRequest<UpdateProme
 		this.resourceGroupId = resourceGroupId;
 		if(resourceGroupId != null){
 			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getMostRegionId() {
+		return this.mostRegionId;
+	}
+
+	public void setMostRegionId(String mostRegionId) {
+		this.mostRegionId = mostRegionId;
+		if(mostRegionId != null){
+			putQueryParameter("MostRegionId", mostRegionId);
 		}
 	}
 
