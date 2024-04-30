@@ -35,6 +35,10 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 
 	private Boolean autoUseCoupon;
 
+	private String ioAccelerationEnabled;
+
+	private Boolean coldDataEnabled;
+
 	private String resourceGroupId;
 
 	@SerializedName("serverlessConfiguration")
@@ -74,7 +78,7 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 
 	private String payType;
 	public ModifyDBInstanceSpecRequest() {
-		super("Rds", "2014-08-15", "ModifyDBInstanceSpec");
+		super("Rds", "2014-08-15", "ModifyDBInstanceSpec", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -123,6 +127,28 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 		this.autoUseCoupon = autoUseCoupon;
 		if(autoUseCoupon != null){
 			putQueryParameter("AutoUseCoupon", autoUseCoupon.toString());
+		}
+	}
+
+	public String getIoAccelerationEnabled() {
+		return this.ioAccelerationEnabled;
+	}
+
+	public void setIoAccelerationEnabled(String ioAccelerationEnabled) {
+		this.ioAccelerationEnabled = ioAccelerationEnabled;
+		if(ioAccelerationEnabled != null){
+			putQueryParameter("IoAccelerationEnabled", ioAccelerationEnabled);
+		}
+	}
+
+	public Boolean getColdDataEnabled() {
+		return this.coldDataEnabled;
+	}
+
+	public void setColdDataEnabled(Boolean coldDataEnabled) {
+		this.coldDataEnabled = coldDataEnabled;
+		if(coldDataEnabled != null){
+			putQueryParameter("ColdDataEnabled", coldDataEnabled.toString());
 		}
 	}
 

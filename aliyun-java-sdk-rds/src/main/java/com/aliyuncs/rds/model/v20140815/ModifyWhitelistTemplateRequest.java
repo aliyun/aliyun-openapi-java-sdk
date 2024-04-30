@@ -31,11 +31,13 @@ public class ModifyWhitelistTemplateRequest extends RpcAcsRequest<ModifyWhitelis
 
 	private Integer templateId;
 
+	private String resourceGroupId;
+
 	private String templateName;
 
 	private String ipWhitelist;
 	public ModifyWhitelistTemplateRequest() {
-		super("Rds", "2014-08-15", "ModifyWhitelistTemplate");
+		super("Rds", "2014-08-15", "ModifyWhitelistTemplate", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -73,6 +75,17 @@ public class ModifyWhitelistTemplateRequest extends RpcAcsRequest<ModifyWhitelis
 		this.templateId = templateId;
 		if(templateId != null){
 			putQueryParameter("TemplateId", templateId.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

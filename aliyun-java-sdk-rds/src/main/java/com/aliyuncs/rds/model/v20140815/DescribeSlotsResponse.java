@@ -61,6 +61,8 @@ public class DescribeSlotsResponse extends AcsResponse {
 
 		private String walDelay;
 
+		private String subReplayLag;
+
 		public String getSlotName() {
 			return this.slotName;
 		}
@@ -115,6 +117,14 @@ public class DescribeSlotsResponse extends AcsResponse {
 
 		public void setWalDelay(String walDelay) {
 			this.walDelay = walDelay;
+		}
+
+		public String getSubReplayLag() {
+			return this.subReplayLag;
+		}
+
+		public void setSubReplayLag(String subReplayLag) {
+			this.subReplayLag = subReplayLag;
 		}
 	}
 

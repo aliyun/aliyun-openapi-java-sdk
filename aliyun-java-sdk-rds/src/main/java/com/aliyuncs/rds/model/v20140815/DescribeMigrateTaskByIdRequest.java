@@ -37,7 +37,7 @@ public class DescribeMigrateTaskByIdRequest extends RpcAcsRequest<DescribeMigrat
 
 	private String dBInstanceId;
 	public DescribeMigrateTaskByIdRequest() {
-		super("Rds", "2014-08-15", "DescribeMigrateTaskById");
+		super("Rds", "2014-08-15", "DescribeMigrateTaskById", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

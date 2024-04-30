@@ -32,6 +32,7 @@ public class DescribeDBProxyResponseUnmarshaller {
 		describeDBProxyResponse.setDBProxyInstanceCurrentMinorVersion(_ctx.stringValue("DescribeDBProxyResponse.DBProxyInstanceCurrentMinorVersion"));
 		describeDBProxyResponse.setDBProxyInstanceNum(_ctx.integerValue("DescribeDBProxyResponse.DBProxyInstanceNum"));
 		describeDBProxyResponse.setDBProxyInstanceType(_ctx.stringValue("DescribeDBProxyResponse.DBProxyInstanceType"));
+		describeDBProxyResponse.setDBProxyPersistentConnectionStatus(_ctx.stringValue("DescribeDBProxyResponse.DBProxyPersistentConnectionStatus"));
 		describeDBProxyResponse.setDBProxyInstanceStatus(_ctx.stringValue("DescribeDBProxyResponse.DBProxyInstanceStatus"));
 		describeDBProxyResponse.setDBProxyServiceStatus(_ctx.stringValue("DescribeDBProxyResponse.DBProxyServiceStatus"));
 		describeDBProxyResponse.setDBProxyInstanceName(_ctx.stringValue("DescribeDBProxyResponse.DBProxyInstanceName"));

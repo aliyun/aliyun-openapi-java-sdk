@@ -15,25 +15,27 @@
 package com.aliyuncs.rds.model.v20140815;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.rds.transform.v20140815.ImportDatabaseBetweenInstancesResponseUnmarshaller;
+import com.aliyuncs.rds.transform.v20140815.CreateOrderForDeleteDBNodesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ImportDatabaseBetweenInstancesResponse extends AcsResponse {
+public class CreateOrderForDeleteDBNodesResponse extends AcsResponse {
 
-	private String importId;
+	private String dBInstanceId;
 
 	private String requestId;
 
-	public String getImportId() {
-		return this.importId;
+	private Long orderId;
+
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
 	}
 
-	public void setImportId(String importId) {
-		this.importId = importId;
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
 	}
 
 	public String getRequestId() {
@@ -44,8 +46,16 @@ public class ImportDatabaseBetweenInstancesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public Long getOrderId() {
+		return this.orderId;
+	}
+
+	public void setOrderId(Long orderId) {
+		this.orderId = orderId;
+	}
+
 	@Override
-	public ImportDatabaseBetweenInstancesResponse getInstance(UnmarshallerContext context) {
-		return	ImportDatabaseBetweenInstancesResponseUnmarshaller.unmarshall(this, context);
+	public CreateOrderForDeleteDBNodesResponse getInstance(UnmarshallerContext context) {
+		return	CreateOrderForDeleteDBNodesResponseUnmarshaller.unmarshall(this, context);
 	}
 }

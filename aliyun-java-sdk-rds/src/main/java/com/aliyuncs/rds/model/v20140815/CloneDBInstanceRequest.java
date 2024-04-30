@@ -53,6 +53,8 @@ public class CloneDBInstanceRequest extends RpcAcsRequest<CloneDBInstanceRespons
 
 	private String zoneIdSlave2;
 
+	private String ioAccelerationEnabled;
+
 	private String tableMeta;
 
 	private String dBInstanceId;
@@ -84,7 +86,7 @@ public class CloneDBInstanceRequest extends RpcAcsRequest<CloneDBInstanceRespons
 
 	private String bpeEnabled;
 	public CloneDBInstanceRequest() {
-		super("Rds", "2014-08-15", "CloneDBInstance");
+		super("Rds", "2014-08-15", "CloneDBInstance", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -232,6 +234,17 @@ public class CloneDBInstanceRequest extends RpcAcsRequest<CloneDBInstanceRespons
 		this.zoneIdSlave2 = zoneIdSlave2;
 		if(zoneIdSlave2 != null){
 			putQueryParameter("ZoneIdSlave2", zoneIdSlave2);
+		}
+	}
+
+	public String getIoAccelerationEnabled() {
+		return this.ioAccelerationEnabled;
+	}
+
+	public void setIoAccelerationEnabled(String ioAccelerationEnabled) {
+		this.ioAccelerationEnabled = ioAccelerationEnabled;
+		if(ioAccelerationEnabled != null){
+			putQueryParameter("IoAccelerationEnabled", ioAccelerationEnabled);
 		}
 	}
 

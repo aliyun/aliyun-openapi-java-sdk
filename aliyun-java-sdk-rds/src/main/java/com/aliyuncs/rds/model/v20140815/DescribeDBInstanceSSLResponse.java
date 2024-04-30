@@ -62,6 +62,10 @@ public class DescribeDBInstanceSSLResponse extends AcsResponse {
 
 	private String modifyStatusReason;
 
+	private String forceEncryption;
+
+	private String tlsVersion;
+
 	public String getServerCert() {
 		return this.serverCert;
 	}
@@ -212,6 +216,22 @@ public class DescribeDBInstanceSSLResponse extends AcsResponse {
 
 	public void setModifyStatusReason(String modifyStatusReason) {
 		this.modifyStatusReason = modifyStatusReason;
+	}
+
+	public String getForceEncryption() {
+		return this.forceEncryption;
+	}
+
+	public void setForceEncryption(String forceEncryption) {
+		this.forceEncryption = forceEncryption;
+	}
+
+	public String getTlsVersion() {
+		return this.tlsVersion;
+	}
+
+	public void setTlsVersion(String tlsVersion) {
+		this.tlsVersion = tlsVersion;
 	}
 
 	@Override

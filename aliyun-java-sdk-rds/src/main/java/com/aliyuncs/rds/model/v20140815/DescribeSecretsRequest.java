@@ -31,6 +31,8 @@ public class DescribeSecretsRequest extends RpcAcsRequest<DescribeSecretsRespons
 
 	private Long pageNumber;
 
+	private String resourceGroupId;
+
 	private String engine;
 
 	private Long pageSize;
@@ -45,7 +47,7 @@ public class DescribeSecretsRequest extends RpcAcsRequest<DescribeSecretsRespons
 
 	private String acceptLanguage;
 	public DescribeSecretsRequest() {
-		super("Rds", "2014-08-15", "DescribeSecrets");
+		super("Rds", "2014-08-15", "DescribeSecrets", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -83,6 +85,17 @@ public class DescribeSecretsRequest extends RpcAcsRequest<DescribeSecretsRespons
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

@@ -54,6 +54,8 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 
 	private String businessInfo;
 
+	private String whitelistTemplateList;
+
 	private String period;
 
 	private Boolean dryRun;
@@ -94,6 +96,10 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 
 	private String dBIsIgnoreCase;
 
+	private String ioAccelerationEnabled;
+
+	private Boolean coldDataEnabled;
+
 	private String engine;
 
 	private String dBTimeZone;
@@ -133,7 +139,7 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 
 	private String bpeEnabled;
 	public CreateDBInstanceRequest() {
-		super("Rds", "2014-08-15", "CreateDBInstance");
+		super("Rds", "2014-08-15", "CreateDBInstance", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -284,6 +290,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.businessInfo = businessInfo;
 		if(businessInfo != null){
 			putQueryParameter("BusinessInfo", businessInfo);
+		}
+	}
+
+	public String getWhitelistTemplateList() {
+		return this.whitelistTemplateList;
+	}
+
+	public void setWhitelistTemplateList(String whitelistTemplateList) {
+		this.whitelistTemplateList = whitelistTemplateList;
+		if(whitelistTemplateList != null){
+			putQueryParameter("WhitelistTemplateList", whitelistTemplateList);
 		}
 	}
 
@@ -504,6 +521,28 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.dBIsIgnoreCase = dBIsIgnoreCase;
 		if(dBIsIgnoreCase != null){
 			putQueryParameter("DBIsIgnoreCase", dBIsIgnoreCase);
+		}
+	}
+
+	public String getIoAccelerationEnabled() {
+		return this.ioAccelerationEnabled;
+	}
+
+	public void setIoAccelerationEnabled(String ioAccelerationEnabled) {
+		this.ioAccelerationEnabled = ioAccelerationEnabled;
+		if(ioAccelerationEnabled != null){
+			putQueryParameter("IoAccelerationEnabled", ioAccelerationEnabled);
+		}
+	}
+
+	public Boolean getColdDataEnabled() {
+		return this.coldDataEnabled;
+	}
+
+	public void setColdDataEnabled(Boolean coldDataEnabled) {
+		this.coldDataEnabled = coldDataEnabled;
+		if(coldDataEnabled != null){
+			putQueryParameter("ColdDataEnabled", coldDataEnabled.toString());
 		}
 	}
 

@@ -159,6 +159,10 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 
 		private String dBInstanceDescription;
 
+		private String dBInstanceCPU;
+
+		private Integer dBInstanceMemory;
+
 		private String dBInstanceNetType;
 
 		private String dBInstanceType;
@@ -188,6 +192,10 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 		private Boolean burstingEnabled;
 
 		private String bpeEnabled;
+
+		private String ioAccelerationEnabled;
+
+		private Boolean coldDataEnabled;
 
 		private List<ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
 
@@ -479,6 +487,22 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 			this.dBInstanceDescription = dBInstanceDescription;
 		}
 
+		public String getDBInstanceCPU() {
+			return this.dBInstanceCPU;
+		}
+
+		public void setDBInstanceCPU(String dBInstanceCPU) {
+			this.dBInstanceCPU = dBInstanceCPU;
+		}
+
+		public Integer getDBInstanceMemory() {
+			return this.dBInstanceMemory;
+		}
+
+		public void setDBInstanceMemory(Integer dBInstanceMemory) {
+			this.dBInstanceMemory = dBInstanceMemory;
+		}
+
 		public String getDBInstanceNetType() {
 			return this.dBInstanceNetType;
 		}
@@ -597,6 +621,22 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 
 		public void setBpeEnabled(String bpeEnabled) {
 			this.bpeEnabled = bpeEnabled;
+		}
+
+		public String getIoAccelerationEnabled() {
+			return this.ioAccelerationEnabled;
+		}
+
+		public void setIoAccelerationEnabled(String ioAccelerationEnabled) {
+			this.ioAccelerationEnabled = ioAccelerationEnabled;
+		}
+
+		public Boolean getColdDataEnabled() {
+			return this.coldDataEnabled;
+		}
+
+		public void setColdDataEnabled(Boolean coldDataEnabled) {
+			this.coldDataEnabled = coldDataEnabled;
 		}
 
 		public List<ReadOnlyDBInstanceId> getReadOnlyDBInstanceIds() {

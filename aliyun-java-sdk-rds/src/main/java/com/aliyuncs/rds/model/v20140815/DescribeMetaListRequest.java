@@ -43,7 +43,7 @@ public class DescribeMetaListRequest extends RpcAcsRequest<DescribeMetaListRespo
 
 	private String resourceOwnerAccount;
 
-	private Integer backupSetID;
+	private Long backupSetID;
 
 	private Long ownerId;
 
@@ -51,7 +51,7 @@ public class DescribeMetaListRequest extends RpcAcsRequest<DescribeMetaListRespo
 
 	private String restoreType;
 	public DescribeMetaListRequest() {
-		super("Rds", "2014-08-15", "DescribeMetaList");
+		super("Rds", "2014-08-15", "DescribeMetaList", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -158,11 +158,11 @@ public class DescribeMetaListRequest extends RpcAcsRequest<DescribeMetaListRespo
 		}
 	}
 
-	public Integer getBackupSetID() {
+	public Long getBackupSetID() {
 		return this.backupSetID;
 	}
 
-	public void setBackupSetID(Integer backupSetID) {
+	public void setBackupSetID(Long backupSetID) {
 		this.backupSetID = backupSetID;
 		if(backupSetID != null){
 			putQueryParameter("BackupSetID", backupSetID.toString());

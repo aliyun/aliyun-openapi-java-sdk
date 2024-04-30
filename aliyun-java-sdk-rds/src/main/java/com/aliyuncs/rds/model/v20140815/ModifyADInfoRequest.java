@@ -43,7 +43,7 @@ public class ModifyADInfoRequest extends RpcAcsRequest<ModifyADInfoResponse> {
 
 	private String aDServerIpAddress;
 	public ModifyADInfoRequest() {
-		super("Rds", "2014-08-15", "ModifyADInfo");
+		super("Rds", "2014-08-15", "ModifyADInfo", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -55,6 +55,8 @@ public class CreateReadOnlyDBInstanceRequest extends RpcAcsRequest<CreateReadOnl
 
 	private String autoRenew;
 
+	private String port;
+
 	private String zoneId;
 
 	private String instanceNetworkType;
@@ -62,6 +64,8 @@ public class CreateReadOnlyDBInstanceRequest extends RpcAcsRequest<CreateReadOnl
 	private String clientToken;
 
 	private String instructionSetArch;
+
+	private String ioAccelerationEnabled;
 
 	private String tddlRegionConfig;
 
@@ -89,7 +93,7 @@ public class CreateReadOnlyDBInstanceRequest extends RpcAcsRequest<CreateReadOnl
 
 	private String bpeEnabled;
 	public CreateReadOnlyDBInstanceRequest() {
-		super("Rds", "2014-08-15", "CreateReadOnlyDBInstance");
+		super("Rds", "2014-08-15", "CreateReadOnlyDBInstance", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -262,6 +266,17 @@ public class CreateReadOnlyDBInstanceRequest extends RpcAcsRequest<CreateReadOnl
 		}
 	}
 
+	public String getPort() {
+		return this.port;
+	}
+
+	public void setPort(String port) {
+		this.port = port;
+		if(port != null){
+			putQueryParameter("Port", port);
+		}
+	}
+
 	public String getZoneId() {
 		return this.zoneId;
 	}
@@ -303,6 +318,17 @@ public class CreateReadOnlyDBInstanceRequest extends RpcAcsRequest<CreateReadOnl
 		this.instructionSetArch = instructionSetArch;
 		if(instructionSetArch != null){
 			putQueryParameter("InstructionSetArch", instructionSetArch);
+		}
+	}
+
+	public String getIoAccelerationEnabled() {
+		return this.ioAccelerationEnabled;
+	}
+
+	public void setIoAccelerationEnabled(String ioAccelerationEnabled) {
+		this.ioAccelerationEnabled = ioAccelerationEnabled;
+		if(ioAccelerationEnabled != null){
+			putQueryParameter("IoAccelerationEnabled", ioAccelerationEnabled);
 		}
 	}
 

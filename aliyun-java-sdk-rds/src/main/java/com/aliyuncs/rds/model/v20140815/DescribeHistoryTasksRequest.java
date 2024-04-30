@@ -57,7 +57,7 @@ public class DescribeHistoryTasksRequest extends RpcAcsRequest<DescribeHistoryTa
 
 	private String status;
 	public DescribeHistoryTasksRequest() {
-		super("Rds", "2014-08-15", "DescribeHistoryTasks");
+		super("Rds", "2014-08-15", "DescribeHistoryTasks", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

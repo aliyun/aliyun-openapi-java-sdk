@@ -35,6 +35,8 @@ public class DescribeDBProxyResponse extends AcsResponse {
 
 	private String dBProxyInstanceType;
 
+	private String dBProxyPersistentConnectionStatus;
+
 	private String dBProxyInstanceStatus;
 
 	private String dBProxyServiceStatus;
@@ -93,6 +95,14 @@ public class DescribeDBProxyResponse extends AcsResponse {
 
 	public void setDBProxyInstanceType(String dBProxyInstanceType) {
 		this.dBProxyInstanceType = dBProxyInstanceType;
+	}
+
+	public String getDBProxyPersistentConnectionStatus() {
+		return this.dBProxyPersistentConnectionStatus;
+	}
+
+	public void setDBProxyPersistentConnectionStatus(String dBProxyPersistentConnectionStatus) {
+		this.dBProxyPersistentConnectionStatus = dBProxyPersistentConnectionStatus;
 	}
 
 	public String getDBProxyInstanceStatus() {

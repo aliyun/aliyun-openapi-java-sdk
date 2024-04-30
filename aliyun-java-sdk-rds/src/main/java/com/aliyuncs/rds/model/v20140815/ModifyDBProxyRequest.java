@@ -31,6 +31,8 @@ public class ModifyDBProxyRequest extends RpcAcsRequest<ModifyDBProxyResponse> {
 
 	private String dBInstanceId;
 
+	private String persistentConnectionStatus;
+
 	private String resourceOwnerAccount;
 
 	private String dBProxyEngineType;
@@ -43,11 +45,13 @@ public class ModifyDBProxyRequest extends RpcAcsRequest<ModifyDBProxyResponse> {
 
 	private String vSwitchId;
 
+	private String dBProxyInstanceType;
+
 	private String vPCId;
 
 	private String instanceNetworkType;
 	public ModifyDBProxyRequest() {
-		super("Rds", "2014-08-15", "ModifyDBProxy");
+		super("Rds", "2014-08-15", "ModifyDBProxy", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -85,6 +89,17 @@ public class ModifyDBProxyRequest extends RpcAcsRequest<ModifyDBProxyResponse> {
 		this.dBInstanceId = dBInstanceId;
 		if(dBInstanceId != null){
 			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public String getPersistentConnectionStatus() {
+		return this.persistentConnectionStatus;
+	}
+
+	public void setPersistentConnectionStatus(String persistentConnectionStatus) {
+		this.persistentConnectionStatus = persistentConnectionStatus;
+		if(persistentConnectionStatus != null){
+			putQueryParameter("PersistentConnectionStatus", persistentConnectionStatus);
 		}
 	}
 
@@ -151,6 +166,17 @@ public class ModifyDBProxyRequest extends RpcAcsRequest<ModifyDBProxyResponse> {
 		this.vSwitchId = vSwitchId;
 		if(vSwitchId != null){
 			putQueryParameter("VSwitchId", vSwitchId);
+		}
+	}
+
+	public String getDBProxyInstanceType() {
+		return this.dBProxyInstanceType;
+	}
+
+	public void setDBProxyInstanceType(String dBProxyInstanceType) {
+		this.dBProxyInstanceType = dBProxyInstanceType;
+		if(dBProxyInstanceType != null){
+			putQueryParameter("DBProxyInstanceType", dBProxyInstanceType);
 		}
 	}
 

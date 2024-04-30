@@ -25,6 +25,8 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribePriceResponse extends AcsResponse {
 
+	private String orderParams;
+
 	private String requestId;
 
 	private Boolean showDiscount;
@@ -36,6 +38,16 @@ public class DescribePriceResponse extends AcsResponse {
 	private List<Rule> rules;
 
 	private PriceInfo priceInfo;
+
+	private ServerlessPrice serverlessPrice;
+
+	public String getOrderParams() {
+		return this.orderParams;
+	}
+
+	public void setOrderParams(String orderParams) {
+		this.orderParams = orderParams;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -85,6 +97,14 @@ public class DescribePriceResponse extends AcsResponse {
 		this.priceInfo = priceInfo;
 	}
 
+	public ServerlessPrice getServerlessPrice() {
+		return this.serverlessPrice;
+	}
+
+	public void setServerlessPrice(ServerlessPrice serverlessPrice) {
+		this.serverlessPrice = serverlessPrice;
+	}
+
 	public static class Rule {
 
 		private String name;
@@ -128,6 +148,12 @@ public class DescribePriceResponse extends AcsResponse {
 
 		private Float tradePrice;
 
+		private Float tradeMinRCUAmount;
+
+		private Float tradeMaxRCUAmount;
+
+		private String orderLines;
+
 		private List<Coupon> coupons;
 
 		private List<String> ruleIds;
@@ -164,6 +190,30 @@ public class DescribePriceResponse extends AcsResponse {
 
 		public void setTradePrice(Float tradePrice) {
 			this.tradePrice = tradePrice;
+		}
+
+		public Float getTradeMinRCUAmount() {
+			return this.tradeMinRCUAmount;
+		}
+
+		public void setTradeMinRCUAmount(Float tradeMinRCUAmount) {
+			this.tradeMinRCUAmount = tradeMinRCUAmount;
+		}
+
+		public Float getTradeMaxRCUAmount() {
+			return this.tradeMaxRCUAmount;
+		}
+
+		public void setTradeMaxRCUAmount(Float tradeMaxRCUAmount) {
+			this.tradeMaxRCUAmount = tradeMaxRCUAmount;
+		}
+
+		public String getOrderLines() {
+			return this.orderLines;
+		}
+
+		public void setOrderLines(String orderLines) {
+			this.orderLines = orderLines;
 		}
 
 		public List<Coupon> getCoupons() {
@@ -264,6 +314,109 @@ public class DescribePriceResponse extends AcsResponse {
 			public void setSuccess(String success) {
 				this.success = success;
 			}
+		}
+	}
+
+	public static class ServerlessPrice {
+
+		private Float totalOriginalMinAmount;
+
+		private Float totalOriginalMaxAmount;
+
+		private Float rCUOriginalMinAmount;
+
+		private Float rCUOriginalMaxAmount;
+
+		private Float rCUDiscountMinAmount;
+
+		private Float rCUDiscountMaxAmount;
+
+		private Float tradeMinRCUAmount;
+
+		private Float tradeMaxRCUAmount;
+
+		private Float storageOriginalAmount;
+
+		private Float storageDiscountAmount;
+
+		public Float getTotalOriginalMinAmount() {
+			return this.totalOriginalMinAmount;
+		}
+
+		public void setTotalOriginalMinAmount(Float totalOriginalMinAmount) {
+			this.totalOriginalMinAmount = totalOriginalMinAmount;
+		}
+
+		public Float getTotalOriginalMaxAmount() {
+			return this.totalOriginalMaxAmount;
+		}
+
+		public void setTotalOriginalMaxAmount(Float totalOriginalMaxAmount) {
+			this.totalOriginalMaxAmount = totalOriginalMaxAmount;
+		}
+
+		public Float getRCUOriginalMinAmount() {
+			return this.rCUOriginalMinAmount;
+		}
+
+		public void setRCUOriginalMinAmount(Float rCUOriginalMinAmount) {
+			this.rCUOriginalMinAmount = rCUOriginalMinAmount;
+		}
+
+		public Float getRCUOriginalMaxAmount() {
+			return this.rCUOriginalMaxAmount;
+		}
+
+		public void setRCUOriginalMaxAmount(Float rCUOriginalMaxAmount) {
+			this.rCUOriginalMaxAmount = rCUOriginalMaxAmount;
+		}
+
+		public Float getRCUDiscountMinAmount() {
+			return this.rCUDiscountMinAmount;
+		}
+
+		public void setRCUDiscountMinAmount(Float rCUDiscountMinAmount) {
+			this.rCUDiscountMinAmount = rCUDiscountMinAmount;
+		}
+
+		public Float getRCUDiscountMaxAmount() {
+			return this.rCUDiscountMaxAmount;
+		}
+
+		public void setRCUDiscountMaxAmount(Float rCUDiscountMaxAmount) {
+			this.rCUDiscountMaxAmount = rCUDiscountMaxAmount;
+		}
+
+		public Float getTradeMinRCUAmount() {
+			return this.tradeMinRCUAmount;
+		}
+
+		public void setTradeMinRCUAmount(Float tradeMinRCUAmount) {
+			this.tradeMinRCUAmount = tradeMinRCUAmount;
+		}
+
+		public Float getTradeMaxRCUAmount() {
+			return this.tradeMaxRCUAmount;
+		}
+
+		public void setTradeMaxRCUAmount(Float tradeMaxRCUAmount) {
+			this.tradeMaxRCUAmount = tradeMaxRCUAmount;
+		}
+
+		public Float getStorageOriginalAmount() {
+			return this.storageOriginalAmount;
+		}
+
+		public void setStorageOriginalAmount(Float storageOriginalAmount) {
+			this.storageOriginalAmount = storageOriginalAmount;
+		}
+
+		public Float getStorageDiscountAmount() {
+			return this.storageDiscountAmount;
+		}
+
+		public void setStorageDiscountAmount(Float storageDiscountAmount) {
+			this.storageDiscountAmount = storageDiscountAmount;
 		}
 	}
 

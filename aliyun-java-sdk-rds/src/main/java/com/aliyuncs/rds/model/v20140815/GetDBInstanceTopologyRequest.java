@@ -25,14 +25,40 @@ import com.aliyuncs.rds.Endpoint;
 public class GetDBInstanceTopologyRequest extends RpcAcsRequest<GetDBInstanceTopologyResponse> {
 	   
 
+	private Long resourceOwnerId;
+
+	private Long ownerId;
+
 	private String dBInstanceId;
 	public GetDBInstanceTopologyRequest() {
-		super("Rds", "2014-08-15", "GetDBInstanceTopology");
+		super("Rds", "2014-08-15", "GetDBInstanceTopology", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	public String getDBInstanceId() {

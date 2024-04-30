@@ -72,6 +72,8 @@ public class DescribeDBInstancesResponseUnmarshaller {
 			dBInstance.setDedicatedHostZoneIdForLog(_ctx.stringValue("DescribeDBInstancesResponse.Items["+ i +"].DedicatedHostZoneIdForLog"));
 			dBInstance.setDedicatedHostNameForSlave(_ctx.stringValue("DescribeDBInstancesResponse.Items["+ i +"].DedicatedHostNameForSlave"));
 			dBInstance.setDBInstanceDescription(_ctx.stringValue("DescribeDBInstancesResponse.Items["+ i +"].DBInstanceDescription"));
+			dBInstance.setDBInstanceCPU(_ctx.stringValue("DescribeDBInstancesResponse.Items["+ i +"].DBInstanceCPU"));
+			dBInstance.setDBInstanceMemory(_ctx.integerValue("DescribeDBInstancesResponse.Items["+ i +"].DBInstanceMemory"));
 			dBInstance.setDBInstanceNetType(_ctx.stringValue("DescribeDBInstancesResponse.Items["+ i +"].DBInstanceNetType"));
 			dBInstance.setDBInstanceType(_ctx.stringValue("DescribeDBInstancesResponse.Items["+ i +"].DBInstanceType"));
 			dBInstance.setLockReason(_ctx.stringValue("DescribeDBInstancesResponse.Items["+ i +"].LockReason"));
@@ -87,6 +89,8 @@ public class DescribeDBInstancesResponseUnmarshaller {
 			dBInstance.setDeletionProtection(_ctx.booleanValue("DescribeDBInstancesResponse.Items["+ i +"].DeletionProtection"));
 			dBInstance.setBurstingEnabled(_ctx.booleanValue("DescribeDBInstancesResponse.Items["+ i +"].BurstingEnabled"));
 			dBInstance.setBpeEnabled(_ctx.stringValue("DescribeDBInstancesResponse.Items["+ i +"].BpeEnabled"));
+			dBInstance.setIoAccelerationEnabled(_ctx.stringValue("DescribeDBInstancesResponse.Items["+ i +"].IoAccelerationEnabled"));
+			dBInstance.setColdDataEnabled(_ctx.booleanValue("DescribeDBInstancesResponse.Items["+ i +"].ColdDataEnabled"));
 
 			List<ReadOnlyDBInstanceId> readOnlyDBInstanceIds = new ArrayList<ReadOnlyDBInstanceId>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDBInstancesResponse.Items["+ i +"].ReadOnlyDBInstanceIds.Length"); j++) {

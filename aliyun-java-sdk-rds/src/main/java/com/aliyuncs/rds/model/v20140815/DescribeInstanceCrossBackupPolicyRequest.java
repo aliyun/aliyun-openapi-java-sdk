@@ -33,7 +33,7 @@ public class DescribeInstanceCrossBackupPolicyRequest extends RpcAcsRequest<Desc
 
 	private String dBInstanceId;
 	public DescribeInstanceCrossBackupPolicyRequest() {
-		super("Rds", "2014-08-15", "DescribeInstanceCrossBackupPolicy");
+		super("Rds", "2014-08-15", "DescribeInstanceCrossBackupPolicy", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

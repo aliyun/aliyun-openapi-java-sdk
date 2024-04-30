@@ -29,7 +29,7 @@ public class DeleteGadInstanceRequest extends RpcAcsRequest<DeleteGadInstanceRes
 
 	private String gadInstanceName;
 	public DeleteGadInstanceRequest() {
-		super("Rds", "2014-08-15", "DeleteGadInstance");
+		super("Rds", "2014-08-15", "DeleteGadInstance", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

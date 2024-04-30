@@ -41,7 +41,7 @@ public class CreateDBNodesRequest extends RpcAcsRequest<CreateDBNodesResponse> {
 
 	private String dBNode;
 	public CreateDBNodesRequest() {
-		super("Rds", "2014-08-15", "CreateDBNodes");
+		super("Rds", "2014-08-15", "CreateDBNodes", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

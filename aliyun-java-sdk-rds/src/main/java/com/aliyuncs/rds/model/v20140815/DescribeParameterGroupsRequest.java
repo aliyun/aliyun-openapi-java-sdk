@@ -29,11 +29,13 @@ public class DescribeParameterGroupsRequest extends RpcAcsRequest<DescribeParame
 
 	private String resourceOwnerAccount;
 
+	private Boolean enableDetail;
+
 	private Long ownerId;
 
 	private String resourceGroupId;
 	public DescribeParameterGroupsRequest() {
-		super("Rds", "2014-08-15", "DescribeParameterGroups");
+		super("Rds", "2014-08-15", "DescribeParameterGroups", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -60,6 +62,17 @@ public class DescribeParameterGroupsRequest extends RpcAcsRequest<DescribeParame
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public Boolean getEnableDetail() {
+		return this.enableDetail;
+	}
+
+	public void setEnableDetail(Boolean enableDetail) {
+		this.enableDetail = enableDetail;
+		if(enableDetail != null){
+			putQueryParameter("EnableDetail", enableDetail.toString());
 		}
 	}
 

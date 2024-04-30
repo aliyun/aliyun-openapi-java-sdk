@@ -38,6 +38,7 @@ public class DescribeSlotsResponseUnmarshaller {
 			slot.setTemporary(_ctx.stringValue("DescribeSlotsResponse.Slots["+ i +"].Temporary"));
 			slot.setSlotStatus(_ctx.stringValue("DescribeSlotsResponse.Slots["+ i +"].SlotStatus"));
 			slot.setWalDelay(_ctx.stringValue("DescribeSlotsResponse.Slots["+ i +"].WalDelay"));
+			slot.setSubReplayLag(_ctx.stringValue("DescribeSlotsResponse.Slots["+ i +"].SubReplayLag"));
 
 			slots.add(slot);
 		}

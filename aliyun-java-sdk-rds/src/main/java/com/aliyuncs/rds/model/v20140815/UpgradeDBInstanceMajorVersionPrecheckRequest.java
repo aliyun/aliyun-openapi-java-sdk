@@ -31,7 +31,7 @@ public class UpgradeDBInstanceMajorVersionPrecheckRequest extends RpcAcsRequest<
 
 	private String targetMajorVersion;
 	public UpgradeDBInstanceMajorVersionPrecheckRequest() {
-		super("Rds", "2014-08-15", "UpgradeDBInstanceMajorVersionPrecheck");
+		super("Rds", "2014-08-15", "UpgradeDBInstanceMajorVersionPrecheck", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

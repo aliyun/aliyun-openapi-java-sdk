@@ -29,6 +29,8 @@ public class DescribeDBInstanceTDEResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String tDEMode;
+
 	private List<Database> databases;
 
 	public String getTDEStatus() {
@@ -45,6 +47,14 @@ public class DescribeDBInstanceTDEResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getTDEMode() {
+		return this.tDEMode;
+	}
+
+	public void setTDEMode(String tDEMode) {
+		this.tDEMode = tDEMode;
 	}
 
 	public List<Database> getDatabases() {

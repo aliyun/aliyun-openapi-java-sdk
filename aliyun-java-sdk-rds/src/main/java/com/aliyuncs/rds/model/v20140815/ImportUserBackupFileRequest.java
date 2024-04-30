@@ -47,7 +47,7 @@ public class ImportUserBackupFileRequest extends RpcAcsRequest<ImportUserBackupF
 
 	private String comment;
 	public ImportUserBackupFileRequest() {
-		super("Rds", "2014-08-15", "ImportUserBackupFile");
+		super("Rds", "2014-08-15", "ImportUserBackupFile", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

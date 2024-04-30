@@ -14,17 +14,18 @@
 
 package com.aliyuncs.rds.transform.v20140815;
 
-import com.aliyuncs.rds.model.v20140815.ImportDatabaseBetweenInstancesResponse;
+import com.aliyuncs.rds.model.v20140815.CreateYouhuiForOrderResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class ImportDatabaseBetweenInstancesResponseUnmarshaller {
+public class CreateYouhuiForOrderResponseUnmarshaller {
 
-	public static ImportDatabaseBetweenInstancesResponse unmarshall(ImportDatabaseBetweenInstancesResponse importDatabaseBetweenInstancesResponse, UnmarshallerContext _ctx) {
+	public static CreateYouhuiForOrderResponse unmarshall(CreateYouhuiForOrderResponse createYouhuiForOrderResponse, UnmarshallerContext _ctx) {
 		
-		importDatabaseBetweenInstancesResponse.setRequestId(_ctx.stringValue("ImportDatabaseBetweenInstancesResponse.RequestId"));
-		importDatabaseBetweenInstancesResponse.setImportId(_ctx.stringValue("ImportDatabaseBetweenInstancesResponse.ImportId"));
+		createYouhuiForOrderResponse.setRequestId(_ctx.stringValue("CreateYouhuiForOrderResponse.RequestId"));
+		createYouhuiForOrderResponse.setMessage(_ctx.stringValue("CreateYouhuiForOrderResponse.Message"));
+		createYouhuiForOrderResponse.setYouhuiId(_ctx.stringValue("CreateYouhuiForOrderResponse.YouhuiId"));
 	 
-	 	return importDatabaseBetweenInstancesResponse;
+	 	return createYouhuiForOrderResponse;
 	}
 }

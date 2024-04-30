@@ -41,7 +41,7 @@ public class DescribePostgresExtensionsRequest extends RpcAcsRequest<DescribePos
 
 	private String dBName;
 	public DescribePostgresExtensionsRequest() {
-		super("Rds", "2014-08-15", "DescribePostgresExtensions");
+		super("Rds", "2014-08-15", "DescribePostgresExtensions", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

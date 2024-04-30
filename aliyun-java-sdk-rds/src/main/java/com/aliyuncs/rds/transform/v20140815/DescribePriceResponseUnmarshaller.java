@@ -22,6 +22,7 @@ import com.aliyuncs.rds.model.v20140815.DescribePriceResponse.PriceInfo;
 import com.aliyuncs.rds.model.v20140815.DescribePriceResponse.PriceInfo.ActivityInfo;
 import com.aliyuncs.rds.model.v20140815.DescribePriceResponse.PriceInfo.Coupon;
 import com.aliyuncs.rds.model.v20140815.DescribePriceResponse.Rule;
+import com.aliyuncs.rds.model.v20140815.DescribePriceResponse.ServerlessPrice;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -30,6 +31,7 @@ public class DescribePriceResponseUnmarshaller {
 	public static DescribePriceResponse unmarshall(DescribePriceResponse describePriceResponse, UnmarshallerContext _ctx) {
 		
 		describePriceResponse.setRequestId(_ctx.stringValue("DescribePriceResponse.RequestId"));
+		describePriceResponse.setOrderParams(_ctx.stringValue("DescribePriceResponse.OrderParams"));
 		describePriceResponse.setShowDiscount(_ctx.booleanValue("DescribePriceResponse.ShowDiscount"));
 		describePriceResponse.setTradeMaxRCUAmount(_ctx.floatValue("DescribePriceResponse.TradeMaxRCUAmount"));
 		describePriceResponse.setTradeMinRCUAmount(_ctx.floatValue("DescribePriceResponse.TradeMinRCUAmount"));
@@ -39,6 +41,9 @@ public class DescribePriceResponseUnmarshaller {
 		priceInfo.setDiscountPrice(_ctx.floatValue("DescribePriceResponse.PriceInfo.DiscountPrice"));
 		priceInfo.setCurrency(_ctx.stringValue("DescribePriceResponse.PriceInfo.Currency"));
 		priceInfo.setTradePrice(_ctx.floatValue("DescribePriceResponse.PriceInfo.TradePrice"));
+		priceInfo.setTradeMinRCUAmount(_ctx.floatValue("DescribePriceResponse.PriceInfo.TradeMinRCUAmount"));
+		priceInfo.setTradeMaxRCUAmount(_ctx.floatValue("DescribePriceResponse.PriceInfo.TradeMaxRCUAmount"));
+		priceInfo.setOrderLines(_ctx.stringValue("DescribePriceResponse.PriceInfo.OrderLines"));
 
 		List<String> ruleIds = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePriceResponse.PriceInfo.RuleIds.Length"); i++) {
@@ -64,6 +69,19 @@ public class DescribePriceResponseUnmarshaller {
 		}
 		priceInfo.setCoupons(coupons);
 		describePriceResponse.setPriceInfo(priceInfo);
+
+		ServerlessPrice serverlessPrice = new ServerlessPrice();
+		serverlessPrice.setTotalOriginalMinAmount(_ctx.floatValue("DescribePriceResponse.ServerlessPrice.TotalOriginalMinAmount"));
+		serverlessPrice.setTotalOriginalMaxAmount(_ctx.floatValue("DescribePriceResponse.ServerlessPrice.TotalOriginalMaxAmount"));
+		serverlessPrice.setRCUOriginalMinAmount(_ctx.floatValue("DescribePriceResponse.ServerlessPrice.RCUOriginalMinAmount"));
+		serverlessPrice.setRCUOriginalMaxAmount(_ctx.floatValue("DescribePriceResponse.ServerlessPrice.RCUOriginalMaxAmount"));
+		serverlessPrice.setRCUDiscountMinAmount(_ctx.floatValue("DescribePriceResponse.ServerlessPrice.RCUDiscountMinAmount"));
+		serverlessPrice.setRCUDiscountMaxAmount(_ctx.floatValue("DescribePriceResponse.ServerlessPrice.RCUDiscountMaxAmount"));
+		serverlessPrice.setTradeMinRCUAmount(_ctx.floatValue("DescribePriceResponse.ServerlessPrice.TradeMinRCUAmount"));
+		serverlessPrice.setTradeMaxRCUAmount(_ctx.floatValue("DescribePriceResponse.ServerlessPrice.TradeMaxRCUAmount"));
+		serverlessPrice.setStorageOriginalAmount(_ctx.floatValue("DescribePriceResponse.ServerlessPrice.StorageOriginalAmount"));
+		serverlessPrice.setStorageDiscountAmount(_ctx.floatValue("DescribePriceResponse.ServerlessPrice.storageDiscountAmount"));
+		describePriceResponse.setServerlessPrice(serverlessPrice);
 
 		List<Rule> rules = new ArrayList<Rule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePriceResponse.Rules.Length"); i++) {

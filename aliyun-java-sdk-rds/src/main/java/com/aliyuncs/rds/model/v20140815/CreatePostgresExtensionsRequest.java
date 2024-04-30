@@ -29,6 +29,8 @@ public class CreatePostgresExtensionsRequest extends RpcAcsRequest<CreatePostgre
 
 	private String clientToken;
 
+	private Boolean riskConfirmed;
+
 	private String resourceGroupId;
 
 	private String accountName;
@@ -47,7 +49,7 @@ public class CreatePostgresExtensionsRequest extends RpcAcsRequest<CreatePostgre
 
 	private String extensions;
 	public CreatePostgresExtensionsRequest() {
-		super("Rds", "2014-08-15", "CreatePostgresExtensions");
+		super("Rds", "2014-08-15", "CreatePostgresExtensions", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -74,6 +76,17 @@ public class CreatePostgresExtensionsRequest extends RpcAcsRequest<CreatePostgre
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public Boolean getRiskConfirmed() {
+		return this.riskConfirmed;
+	}
+
+	public void setRiskConfirmed(Boolean riskConfirmed) {
+		this.riskConfirmed = riskConfirmed;
+		if(riskConfirmed != null){
+			putQueryParameter("RiskConfirmed", riskConfirmed.toString());
 		}
 	}
 

@@ -41,6 +41,8 @@ public class DescribeDBInstanceSSLResponseUnmarshaller {
 		describeDBInstanceSSLResponse.setClientCACert(_ctx.stringValue("DescribeDBInstanceSSLResponse.ClientCACert"));
 		describeDBInstanceSSLResponse.setServerKey(_ctx.stringValue("DescribeDBInstanceSSLResponse.ServerKey"));
 		describeDBInstanceSSLResponse.setModifyStatusReason(_ctx.stringValue("DescribeDBInstanceSSLResponse.ModifyStatusReason"));
+		describeDBInstanceSSLResponse.setForceEncryption(_ctx.stringValue("DescribeDBInstanceSSLResponse.ForceEncryption"));
+		describeDBInstanceSSLResponse.setTlsVersion(_ctx.stringValue("DescribeDBInstanceSSLResponse.TlsVersion"));
 	 
 	 	return describeDBInstanceSSLResponse;
 	}

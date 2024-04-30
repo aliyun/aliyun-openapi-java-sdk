@@ -43,7 +43,7 @@ public class ListUserBackupFilesRequest extends RpcAcsRequest<ListUserBackupFile
 
 	private String status;
 	public ListUserBackupFilesRequest() {
-		super("Rds", "2014-08-15", "ListUserBackupFiles");
+		super("Rds", "2014-08-15", "ListUserBackupFiles", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -107,6 +107,10 @@ public class DescribeDBMiniEngineVersionsResponse extends AcsResponse {
 
 		private String tag;
 
+		private String expireStatus;
+
+		private String expireDate;
+
 		public String getReleaseNote() {
 			return this.releaseNote;
 		}
@@ -185,6 +189,22 @@ public class DescribeDBMiniEngineVersionsResponse extends AcsResponse {
 
 		public void setTag(String tag) {
 			this.tag = tag;
+		}
+
+		public String getExpireStatus() {
+			return this.expireStatus;
+		}
+
+		public void setExpireStatus(String expireStatus) {
+			this.expireStatus = expireStatus;
+		}
+
+		public String getExpireDate() {
+			return this.expireDate;
+		}
+
+		public void setExpireDate(String expireDate) {
+			this.expireDate = expireDate;
 		}
 	}
 

@@ -33,7 +33,7 @@ public class DescribeHADiagnoseConfigRequest extends RpcAcsRequest<DescribeHADia
 
 	private String dBInstanceId;
 	public DescribeHADiagnoseConfigRequest() {
-		super("Rds", "2014-08-15", "DescribeHADiagnoseConfig");
+		super("Rds", "2014-08-15", "DescribeHADiagnoseConfig", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

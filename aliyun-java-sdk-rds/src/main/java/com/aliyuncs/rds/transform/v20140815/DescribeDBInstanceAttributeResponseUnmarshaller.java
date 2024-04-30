@@ -120,7 +120,9 @@ public class DescribeDBInstanceAttributeResponseUnmarshaller {
 			dBInstanceAttribute.setInstructionSetArch(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].InstructionSetArch"));
 			dBInstanceAttribute.setBurstingEnabled(_ctx.booleanValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].BurstingEnabled"));
 			dBInstanceAttribute.setBpeEnabled(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].BpeEnabled"));
+			dBInstanceAttribute.setIoAccelerationEnabled(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].IoAccelerationEnabled"));
 			dBInstanceAttribute.setPGBouncerEnabled(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].PGBouncerEnabled"));
+			dBInstanceAttribute.setColdDataEnabled(_ctx.booleanValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].ColdDataEnabled"));
 
 			Extra extra = new Extra();
 			extra.setReplicaGroupStatus(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].Extra.ReplicaGroupStatus"));
@@ -172,6 +174,10 @@ public class DescribeDBInstanceAttributeResponseUnmarshaller {
 				dBClusterNode.setNodeId(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DBClusterNodes["+ j +"].NodeId"));
 				dBClusterNode.setNodeRole(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DBClusterNodes["+ j +"].NodeRole"));
 				dBClusterNode.setClassCode(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DBClusterNodes["+ j +"].ClassCode"));
+				dBClusterNode.setClassType(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DBClusterNodes["+ j +"].ClassType"));
+				dBClusterNode.setCpu(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DBClusterNodes["+ j +"].Cpu"));
+				dBClusterNode.setMemory(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DBClusterNodes["+ j +"].Memory"));
+				dBClusterNode.setStatus(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DBClusterNodes["+ j +"].Status"));
 
 				dBClusterNodes.add(dBClusterNode);
 			}

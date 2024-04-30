@@ -43,7 +43,7 @@ public class DescribeModifyParameterLogRequest extends RpcAcsRequest<DescribeMod
 
 	private Long ownerId;
 	public DescribeModifyParameterLogRequest() {
-		super("Rds", "2014-08-15", "DescribeModifyParameterLog");
+		super("Rds", "2014-08-15", "DescribeModifyParameterLog", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

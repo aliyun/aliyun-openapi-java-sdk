@@ -43,7 +43,7 @@ public class UpdatePostgresExtensionsRequest extends RpcAcsRequest<UpdatePostgre
 
 	private String extensions;
 	public UpdatePostgresExtensionsRequest() {
-		super("Rds", "2014-08-15", "UpdatePostgresExtensions");
+		super("Rds", "2014-08-15", "UpdatePostgresExtensions", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

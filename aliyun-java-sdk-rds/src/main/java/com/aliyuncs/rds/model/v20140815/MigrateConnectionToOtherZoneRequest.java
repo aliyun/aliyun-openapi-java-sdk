@@ -25,18 +25,33 @@ import com.aliyuncs.rds.Endpoint;
 public class MigrateConnectionToOtherZoneRequest extends RpcAcsRequest<MigrateConnectionToOtherZoneResponse> {
 	   
 
+	private Long resourceOwnerId;
+
 	private String connectionString;
+
+	private Long ownerId;
 
 	private String zoneId;
 
 	private String dBInstanceId;
 	public MigrateConnectionToOtherZoneRequest() {
-		super("Rds", "2014-08-15", "MigrateConnectionToOtherZone");
+		super("Rds", "2014-08-15", "MigrateConnectionToOtherZone", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public String getConnectionString() {
@@ -47,6 +62,17 @@ public class MigrateConnectionToOtherZoneRequest extends RpcAcsRequest<MigrateCo
 		this.connectionString = connectionString;
 		if(connectionString != null){
 			putQueryParameter("ConnectionString", connectionString);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

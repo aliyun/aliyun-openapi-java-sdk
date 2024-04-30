@@ -37,6 +37,8 @@ public class AddTagsToResourceRequest extends RpcAcsRequest<AddTagsToResourceRes
 
 	private String tag1value;
 
+	private String resourceGroupId;
+
 	private String dBInstanceId;
 
 	private String tag3value;
@@ -61,7 +63,7 @@ public class AddTagsToResourceRequest extends RpcAcsRequest<AddTagsToResourceRes
 
 	private String tag4key;
 	public AddTagsToResourceRequest() {
-		super("Rds", "2014-08-15", "AddTagsToResource");
+		super("Rds", "2014-08-15", "AddTagsToResource", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -132,6 +134,17 @@ public class AddTagsToResourceRequest extends RpcAcsRequest<AddTagsToResourceRes
 		this.tag1value = tag1value;
 		if(tag1value != null){
 			putQueryParameter("Tag.1.value", tag1value);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

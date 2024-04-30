@@ -41,7 +41,7 @@ public class DescribeAvailableZonesRequest extends RpcAcsRequest<DescribeAvailab
 
 	private String category;
 	public DescribeAvailableZonesRequest() {
-		super("Rds", "2014-08-15", "DescribeAvailableZones");
+		super("Rds", "2014-08-15", "DescribeAvailableZones", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

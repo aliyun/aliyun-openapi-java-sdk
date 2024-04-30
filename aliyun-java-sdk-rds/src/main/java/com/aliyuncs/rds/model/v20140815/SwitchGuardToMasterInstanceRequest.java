@@ -37,7 +37,7 @@ public class SwitchGuardToMasterInstanceRequest extends RpcAcsRequest<SwitchGuar
 
 	private Long ownerId;
 	public SwitchGuardToMasterInstanceRequest() {
-		super("Rds", "2014-08-15", "SwitchGuardToMasterInstance");
+		super("Rds", "2014-08-15", "SwitchGuardToMasterInstance", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

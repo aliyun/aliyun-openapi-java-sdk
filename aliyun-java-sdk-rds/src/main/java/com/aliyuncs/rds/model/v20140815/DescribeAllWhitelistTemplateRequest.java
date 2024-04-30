@@ -27,6 +27,8 @@ public class DescribeAllWhitelistTemplateRequest extends RpcAcsRequest<DescribeA
 
 	private Long resourceOwnerId;
 
+	private String resourceGroupId;
+
 	private Integer pageNumbers;
 
 	private String templateName;
@@ -37,7 +39,7 @@ public class DescribeAllWhitelistTemplateRequest extends RpcAcsRequest<DescribeA
 
 	private Integer maxRecordsPerPage;
 	public DescribeAllWhitelistTemplateRequest() {
-		super("Rds", "2014-08-15", "DescribeAllWhitelistTemplate");
+		super("Rds", "2014-08-15", "DescribeAllWhitelistTemplate", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -53,6 +55,17 @@ public class DescribeAllWhitelistTemplateRequest extends RpcAcsRequest<DescribeA
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

@@ -31,9 +31,11 @@ public class DetachWhitelistTemplateToInstanceRequest extends RpcAcsRequest<Deta
 
 	private Integer templateId;
 
+	private String resourceGroupId;
+
 	private String insName;
 	public DetachWhitelistTemplateToInstanceRequest() {
-		super("Rds", "2014-08-15", "DetachWhitelistTemplateToInstance");
+		super("Rds", "2014-08-15", "DetachWhitelistTemplateToInstance", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -71,6 +73,17 @@ public class DetachWhitelistTemplateToInstanceRequest extends RpcAcsRequest<Deta
 		this.templateId = templateId;
 		if(templateId != null){
 			putQueryParameter("TemplateId", templateId.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

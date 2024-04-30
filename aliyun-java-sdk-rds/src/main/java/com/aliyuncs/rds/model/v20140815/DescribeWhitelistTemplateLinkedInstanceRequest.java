@@ -30,8 +30,10 @@ public class DescribeWhitelistTemplateLinkedInstanceRequest extends RpcAcsReques
 	private String resourceOwnerAccount;
 
 	private Integer templateId;
+
+	private String resourceGroupId;
 	public DescribeWhitelistTemplateLinkedInstanceRequest() {
-		super("Rds", "2014-08-15", "DescribeWhitelistTemplateLinkedInstance");
+		super("Rds", "2014-08-15", "DescribeWhitelistTemplateLinkedInstance", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -69,6 +71,17 @@ public class DescribeWhitelistTemplateLinkedInstanceRequest extends RpcAcsReques
 		this.templateId = templateId;
 		if(templateId != null){
 			putBodyParameter("TemplateId", templateId.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

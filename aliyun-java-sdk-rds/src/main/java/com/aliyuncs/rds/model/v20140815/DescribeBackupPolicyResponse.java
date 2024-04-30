@@ -80,6 +80,10 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 
 	private Integer backupPriority;
 
+	private Boolean enablePitrProtection;
+
+	private Integer pitrRetentionPeriod;
+
 	private DuplicationLocation duplicationLocation;
 
 	public Integer getLogBackupRetentionPeriod() {
@@ -304,6 +308,22 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 
 	public void setBackupPriority(Integer backupPriority) {
 		this.backupPriority = backupPriority;
+	}
+
+	public Boolean getEnablePitrProtection() {
+		return this.enablePitrProtection;
+	}
+
+	public void setEnablePitrProtection(Boolean enablePitrProtection) {
+		this.enablePitrProtection = enablePitrProtection;
+	}
+
+	public Integer getPitrRetentionPeriod() {
+		return this.pitrRetentionPeriod;
+	}
+
+	public void setPitrRetentionPeriod(Integer pitrRetentionPeriod) {
+		this.pitrRetentionPeriod = pitrRetentionPeriod;
 	}
 
 	public DuplicationLocation getDuplicationLocation() {

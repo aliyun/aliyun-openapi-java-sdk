@@ -27,6 +27,8 @@ public class ModifyDBProxyInstanceRequest extends RpcAcsRequest<ModifyDBProxyIns
 
 	private Long resourceOwnerId;
 
+	private String vSwitchIds;
+
 	private String effectiveTime;
 
 	private String effectiveSpecificTime;
@@ -43,7 +45,7 @@ public class ModifyDBProxyInstanceRequest extends RpcAcsRequest<ModifyDBProxyIns
 
 	private String dBProxyInstanceType;
 	public ModifyDBProxyInstanceRequest() {
-		super("Rds", "2014-08-15", "ModifyDBProxyInstance");
+		super("Rds", "2014-08-15", "ModifyDBProxyInstance", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -59,6 +61,17 @@ public class ModifyDBProxyInstanceRequest extends RpcAcsRequest<ModifyDBProxyIns
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getVSwitchIds() {
+		return this.vSwitchIds;
+	}
+
+	public void setVSwitchIds(String vSwitchIds) {
+		this.vSwitchIds = vSwitchIds;
+		if(vSwitchIds != null){
+			putQueryParameter("VSwitchIds", vSwitchIds);
 		}
 	}
 

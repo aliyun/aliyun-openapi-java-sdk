@@ -27,17 +27,19 @@ public class CancelImportRequest extends RpcAcsRequest<CancelImportResponse> {
 
 	private Long resourceOwnerId;
 
+	private String resourceGroupId;
+
+	private Integer importId;
+
+	private String dBInstanceId;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	private Integer importId;
-
-	private String dBInstanceId;
 	public CancelImportRequest() {
-		super("Rds", "2014-08-15", "CancelImport");
+		super("Rds", "2014-08-15", "CancelImport", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -53,6 +55,39 @@ public class CancelImportRequest extends RpcAcsRequest<CancelImportResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public Integer getImportId() {
+		return this.importId;
+	}
+
+	public void setImportId(Integer importId) {
+		this.importId = importId;
+		if(importId != null){
+			putQueryParameter("ImportId", importId.toString());
+		}
+	}
+
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
 		}
 	}
 
@@ -86,28 +121,6 @@ public class CancelImportRequest extends RpcAcsRequest<CancelImportResponse> {
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public Integer getImportId() {
-		return this.importId;
-	}
-
-	public void setImportId(Integer importId) {
-		this.importId = importId;
-		if(importId != null){
-			putQueryParameter("ImportId", importId.toString());
-		}
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
 		}
 	}
 

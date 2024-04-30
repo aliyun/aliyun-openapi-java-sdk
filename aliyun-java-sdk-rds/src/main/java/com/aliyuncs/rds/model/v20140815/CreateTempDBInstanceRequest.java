@@ -35,13 +35,13 @@ public class CreateTempDBInstanceRequest extends RpcAcsRequest<CreateTempDBInsta
 
 	private String resourceOwnerAccount;
 
-	private Integer backupId;
+	private Long backupId;
 
 	private String ownerAccount;
 
 	private Long ownerId;
 	public CreateTempDBInstanceRequest() {
-		super("Rds", "2014-08-15", "CreateTempDBInstance");
+		super("Rds", "2014-08-15", "CreateTempDBInstance", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -104,11 +104,11 @@ public class CreateTempDBInstanceRequest extends RpcAcsRequest<CreateTempDBInsta
 		}
 	}
 
-	public Integer getBackupId() {
+	public Long getBackupId() {
 		return this.backupId;
 	}
 
-	public void setBackupId(Integer backupId) {
+	public void setBackupId(Long backupId) {
 		this.backupId = backupId;
 		if(backupId != null){
 			putQueryParameter("BackupId", backupId.toString());

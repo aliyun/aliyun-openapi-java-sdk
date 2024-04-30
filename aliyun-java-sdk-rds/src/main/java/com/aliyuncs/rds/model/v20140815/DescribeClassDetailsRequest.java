@@ -43,7 +43,7 @@ public class DescribeClassDetailsRequest extends RpcAcsRequest<DescribeClassDeta
 
 	private Long ownerId;
 	public DescribeClassDetailsRequest() {
-		super("Rds", "2014-08-15", "DescribeClassDetails");
+		super("Rds", "2014-08-15", "DescribeClassDetails", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

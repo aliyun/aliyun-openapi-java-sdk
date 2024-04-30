@@ -33,7 +33,7 @@ public class CheckInstanceExistRequest extends RpcAcsRequest<CheckInstanceExistR
 
 	private String dBInstanceId;
 	public CheckInstanceExistRequest() {
-		super("Rds", "2014-08-15", "CheckInstanceExist");
+		super("Rds", "2014-08-15", "CheckInstanceExist", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

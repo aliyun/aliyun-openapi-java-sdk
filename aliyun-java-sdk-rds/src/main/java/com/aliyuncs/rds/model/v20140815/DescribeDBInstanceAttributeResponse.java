@@ -213,7 +213,11 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		private String bpeEnabled;
 
+		private String ioAccelerationEnabled;
+
 		private String pGBouncerEnabled;
+
+		private Boolean coldDataEnabled;
 
 		private List<SlaveZone> slaveZones;
 
@@ -891,12 +895,28 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 			this.bpeEnabled = bpeEnabled;
 		}
 
+		public String getIoAccelerationEnabled() {
+			return this.ioAccelerationEnabled;
+		}
+
+		public void setIoAccelerationEnabled(String ioAccelerationEnabled) {
+			this.ioAccelerationEnabled = ioAccelerationEnabled;
+		}
+
 		public String getPGBouncerEnabled() {
 			return this.pGBouncerEnabled;
 		}
 
 		public void setPGBouncerEnabled(String pGBouncerEnabled) {
 			this.pGBouncerEnabled = pGBouncerEnabled;
+		}
+
+		public Boolean getColdDataEnabled() {
+			return this.coldDataEnabled;
+		}
+
+		public void setColdDataEnabled(Boolean coldDataEnabled) {
+			this.coldDataEnabled = coldDataEnabled;
 		}
 
 		public List<SlaveZone> getSlaveZones() {
@@ -985,6 +1005,14 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 			private String classCode;
 
+			private String classType;
+
+			private String cpu;
+
+			private String memory;
+
+			private String status;
+
 			public String getNodeRegionId() {
 				return this.nodeRegionId;
 			}
@@ -1023,6 +1051,38 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 			public void setClassCode(String classCode) {
 				this.classCode = classCode;
+			}
+
+			public String getClassType() {
+				return this.classType;
+			}
+
+			public void setClassType(String classType) {
+				this.classType = classType;
+			}
+
+			public String getCpu() {
+				return this.cpu;
+			}
+
+			public void setCpu(String cpu) {
+				this.cpu = cpu;
+			}
+
+			public String getMemory() {
+				return this.memory;
+			}
+
+			public void setMemory(String memory) {
+				this.memory = memory;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
 			}
 		}
 

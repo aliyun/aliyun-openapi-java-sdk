@@ -37,7 +37,7 @@ public class ModifyCollationTimeZoneRequest extends RpcAcsRequest<ModifyCollatio
 
 	private String collation;
 	public ModifyCollationTimeZoneRequest() {
-		super("Rds", "2014-08-15", "ModifyCollationTimeZone");
+		super("Rds", "2014-08-15", "ModifyCollationTimeZone", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

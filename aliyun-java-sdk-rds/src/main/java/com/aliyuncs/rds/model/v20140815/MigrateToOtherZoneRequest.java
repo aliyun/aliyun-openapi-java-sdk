@@ -35,6 +35,8 @@ public class MigrateToOtherZoneRequest extends RpcAcsRequest<MigrateToOtherZoneR
 
 	private String zoneIdSlave2;
 
+	private String ioAccelerationEnabled;
+
 	private String effectiveTime;
 
 	private String dBInstanceId;
@@ -57,7 +59,7 @@ public class MigrateToOtherZoneRequest extends RpcAcsRequest<MigrateToOtherZoneR
 
 	private String category;
 	public MigrateToOtherZoneRequest() {
-		super("Rds", "2014-08-15", "MigrateToOtherZone");
+		super("Rds", "2014-08-15", "MigrateToOtherZone", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -117,6 +119,17 @@ public class MigrateToOtherZoneRequest extends RpcAcsRequest<MigrateToOtherZoneR
 		this.zoneIdSlave2 = zoneIdSlave2;
 		if(zoneIdSlave2 != null){
 			putQueryParameter("ZoneIdSlave2", zoneIdSlave2);
+		}
+	}
+
+	public String getIoAccelerationEnabled() {
+		return this.ioAccelerationEnabled;
+	}
+
+	public void setIoAccelerationEnabled(String ioAccelerationEnabled) {
+		this.ioAccelerationEnabled = ioAccelerationEnabled;
+		if(ioAccelerationEnabled != null){
+			putQueryParameter("IoAccelerationEnabled", ioAccelerationEnabled);
 		}
 	}
 

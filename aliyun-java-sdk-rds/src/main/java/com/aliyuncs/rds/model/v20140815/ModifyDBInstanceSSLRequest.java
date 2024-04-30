@@ -33,13 +33,19 @@ public class ModifyDBInstanceSSLRequest extends RpcAcsRequest<ModifyDBInstanceSS
 
 	private Integer clientCrlEnabled;
 
+	private String certificate;
+
 	private String aCL;
+
+	private String passWord;
 
 	private String clientCertRevocationList;
 
 	private String serverCert;
 
 	private String dBInstanceId;
+
+	private String forceEncryption;
 
 	private Integer clientCAEnabled;
 
@@ -56,8 +62,10 @@ public class ModifyDBInstanceSSLRequest extends RpcAcsRequest<ModifyDBInstanceSS
 	private Long ownerId;
 
 	private Integer sSLEnabled;
+
+	private String tlsVersion;
 	public ModifyDBInstanceSSLRequest() {
-		super("Rds", "2014-08-15", "ModifyDBInstanceSSL");
+		super("Rds", "2014-08-15", "ModifyDBInstanceSSL", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -109,6 +117,17 @@ public class ModifyDBInstanceSSLRequest extends RpcAcsRequest<ModifyDBInstanceSS
 		}
 	}
 
+	public String getCertificate() {
+		return this.certificate;
+	}
+
+	public void setCertificate(String certificate) {
+		this.certificate = certificate;
+		if(certificate != null){
+			putQueryParameter("Certificate", certificate);
+		}
+	}
+
 	public String getACL() {
 		return this.aCL;
 	}
@@ -117,6 +136,17 @@ public class ModifyDBInstanceSSLRequest extends RpcAcsRequest<ModifyDBInstanceSS
 		this.aCL = aCL;
 		if(aCL != null){
 			putQueryParameter("ACL", aCL);
+		}
+	}
+
+	public String getPassWord() {
+		return this.passWord;
+	}
+
+	public void setPassWord(String passWord) {
+		this.passWord = passWord;
+		if(passWord != null){
+			putQueryParameter("PassWord", passWord);
 		}
 	}
 
@@ -150,6 +180,17 @@ public class ModifyDBInstanceSSLRequest extends RpcAcsRequest<ModifyDBInstanceSS
 		this.dBInstanceId = dBInstanceId;
 		if(dBInstanceId != null){
 			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public String getForceEncryption() {
+		return this.forceEncryption;
+	}
+
+	public void setForceEncryption(String forceEncryption) {
+		this.forceEncryption = forceEncryption;
+		if(forceEncryption != null){
+			putQueryParameter("ForceEncryption", forceEncryption);
 		}
 	}
 
@@ -238,6 +279,17 @@ public class ModifyDBInstanceSSLRequest extends RpcAcsRequest<ModifyDBInstanceSS
 		this.sSLEnabled = sSLEnabled;
 		if(sSLEnabled != null){
 			putQueryParameter("SSLEnabled", sSLEnabled.toString());
+		}
+	}
+
+	public String getTlsVersion() {
+		return this.tlsVersion;
+	}
+
+	public void setTlsVersion(String tlsVersion) {
+		this.tlsVersion = tlsVersion;
+		if(tlsVersion != null){
+			putQueryParameter("TlsVersion", tlsVersion);
 		}
 	}
 
