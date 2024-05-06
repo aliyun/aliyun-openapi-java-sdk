@@ -121,6 +121,8 @@ public class ListElasticNetworkInterfacesResponse extends AcsResponse {
 
 			private String description;
 
+			private String securityGroupId;
+
 			public String getRegionId() {
 				return this.regionId;
 			}
@@ -247,6 +249,14 @@ public class ListElasticNetworkInterfacesResponse extends AcsResponse {
 
 			public void setDescription(String description) {
 				this.description = description;
+			}
+
+			public String getSecurityGroupId() {
+				return this.securityGroupId;
+			}
+
+			public void setSecurityGroupId(String securityGroupId) {
+				this.securityGroupId = securityGroupId;
 			}
 		}
 	}

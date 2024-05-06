@@ -53,6 +53,7 @@ public class ListElasticNetworkInterfacesResponseUnmarshaller {
 			dataItem.setCreateTime(_ctx.stringValue("ListElasticNetworkInterfacesResponse.Content.Data["+ i +"].CreateTime"));
 			dataItem.setGmtModified(_ctx.stringValue("ListElasticNetworkInterfacesResponse.Content.Data["+ i +"].GmtModified"));
 			dataItem.setDescription(_ctx.stringValue("ListElasticNetworkInterfacesResponse.Content.Data["+ i +"].Description"));
+			dataItem.setSecurityGroupId(_ctx.stringValue("ListElasticNetworkInterfacesResponse.Content.Data["+ i +"].SecurityGroupId"));
 
 			data.add(dataItem);
 		}

@@ -99,6 +99,8 @@ public class GetElasticNetworkInterfaceResponse extends AcsResponse {
 
 		private String description;
 
+		private String securityGroupId;
+
 		private List<PrivateIpAddress> privateIpAddresses;
 
 		public String getRegionId() {
@@ -227,6 +229,14 @@ public class GetElasticNetworkInterfaceResponse extends AcsResponse {
 
 		public void setDescription(String description) {
 			this.description = description;
+		}
+
+		public String getSecurityGroupId() {
+			return this.securityGroupId;
+		}
+
+		public void setSecurityGroupId(String securityGroupId) {
+			this.securityGroupId = securityGroupId;
 		}
 
 		public List<PrivateIpAddress> getPrivateIpAddresses() {

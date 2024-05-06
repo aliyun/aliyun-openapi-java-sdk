@@ -48,6 +48,7 @@ public class GetElasticNetworkInterfaceResponseUnmarshaller {
 		content.setCreateTime(_ctx.stringValue("GetElasticNetworkInterfaceResponse.Content.CreateTime"));
 		content.setGmtModified(_ctx.stringValue("GetElasticNetworkInterfaceResponse.Content.GmtModified"));
 		content.setDescription(_ctx.stringValue("GetElasticNetworkInterfaceResponse.Content.Description"));
+		content.setSecurityGroupId(_ctx.stringValue("GetElasticNetworkInterfaceResponse.Content.SecurityGroupId"));
 
 		List<PrivateIpAddress> privateIpAddresses = new ArrayList<PrivateIpAddress>();
 		for (int i = 0; i < _ctx.lengthValue("GetElasticNetworkInterfaceResponse.Content.PrivateIpAddresses.Length"); i++) {
