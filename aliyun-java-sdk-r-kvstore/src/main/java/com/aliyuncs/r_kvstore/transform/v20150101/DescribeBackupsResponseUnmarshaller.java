@@ -54,14 +54,14 @@ public class DescribeBackupsResponseUnmarshaller {
 			backup.setBackupDownloadURL(_ctx.stringValue("DescribeBackupsResponse.Backups["+ i +"].BackupDownloadURL"));
 			backup.setNodeInstanceId(_ctx.stringValue("DescribeBackupsResponse.Backups["+ i +"].NodeInstanceId"));
 			backup.setBackupEndTime(_ctx.stringValue("DescribeBackupsResponse.Backups["+ i +"].BackupEndTime"));
-			backup.setBackupId(_ctx.integerValue("DescribeBackupsResponse.Backups["+ i +"].BackupId"));
+			backup.setBackupId(_ctx.longValue("DescribeBackupsResponse.Backups["+ i +"].BackupId"));
 			backup.setBackupDBNames(_ctx.stringValue("DescribeBackupsResponse.Backups["+ i +"].BackupDBNames"));
 			backup.setEngineVersion(_ctx.stringValue("DescribeBackupsResponse.Backups["+ i +"].EngineVersion"));
 			backup.setBackupIntranetDownloadURL(_ctx.stringValue("DescribeBackupsResponse.Backups["+ i +"].BackupIntranetDownloadURL"));
 			backup.setBackupSize(_ctx.longValue("DescribeBackupsResponse.Backups["+ i +"].BackupSize"));
 			backup.setBackupMode(_ctx.stringValue("DescribeBackupsResponse.Backups["+ i +"].BackupMode"));
 			backup.setBackupMethod(_ctx.stringValue("DescribeBackupsResponse.Backups["+ i +"].BackupMethod"));
-			backup.setBackupJobID(_ctx.integerValue("DescribeBackupsResponse.Backups["+ i +"].BackupJobID"));
+			backup.setBackupJobID(_ctx.longValue("DescribeBackupsResponse.Backups["+ i +"].BackupJobID"));
 
 			backups.add(backup);
 		}

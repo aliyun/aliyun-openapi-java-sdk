@@ -45,6 +45,7 @@ public class DescribeEngineVersionResponseUnmarshaller {
 		describeEngineVersionResponse.setIsSSLEnable(_ctx.stringValue("DescribeEngineVersionResponse.IsSSLEnable"));
 		describeEngineVersionResponse.setIsNewSSLMode(_ctx.stringValue("DescribeEngineVersionResponse.IsNewSSLMode"));
 		describeEngineVersionResponse.setIsAutoUpgradeOpen(_ctx.stringValue("DescribeEngineVersionResponse.IsAutoUpgradeOpen"));
+		describeEngineVersionResponse.setIsOpenNGLB(_ctx.stringValue("DescribeEngineVersionResponse.IsOpenNGLB"));
 
 		DBLatestMinorVersion dBLatestMinorVersion = new DBLatestMinorVersion();
 		dBLatestMinorVersion.setMinorVersion(_ctx.stringValue("DescribeEngineVersionResponse.DBLatestMinorVersion.MinorVersion"));

@@ -31,6 +31,8 @@ public class CreateGlobalDistributeCacheRequest extends RpcAcsRequest<CreateGlob
 
 	private String securityToken;
 
+	private String effectiveTime;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -77,6 +79,17 @@ public class CreateGlobalDistributeCacheRequest extends RpcAcsRequest<CreateGlob
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getEffectiveTime() {
+		return this.effectiveTime;
+	}
+
+	public void setEffectiveTime(String effectiveTime) {
+		this.effectiveTime = effectiveTime;
+		if(effectiveTime != null){
+			putQueryParameter("EffectiveTime", effectiveTime);
 		}
 	}
 

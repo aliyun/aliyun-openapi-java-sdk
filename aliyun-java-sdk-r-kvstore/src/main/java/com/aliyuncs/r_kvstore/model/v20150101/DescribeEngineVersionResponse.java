@@ -53,6 +53,8 @@ public class DescribeEngineVersionResponse extends AcsResponse {
 
 	private String isAutoUpgradeOpen;
 
+	private String isOpenNGLB;
+
 	private DBLatestMinorVersion dBLatestMinorVersion;
 
 	private ProxyLatestMinorVersion proxyLatestMinorVersion;
@@ -167,6 +169,14 @@ public class DescribeEngineVersionResponse extends AcsResponse {
 
 	public void setIsAutoUpgradeOpen(String isAutoUpgradeOpen) {
 		this.isAutoUpgradeOpen = isAutoUpgradeOpen;
+	}
+
+	public String getIsOpenNGLB() {
+		return this.isOpenNGLB;
+	}
+
+	public void setIsOpenNGLB(String isOpenNGLB) {
+		this.isOpenNGLB = isOpenNGLB;
 	}
 
 	public DBLatestMinorVersion getDBLatestMinorVersion() {

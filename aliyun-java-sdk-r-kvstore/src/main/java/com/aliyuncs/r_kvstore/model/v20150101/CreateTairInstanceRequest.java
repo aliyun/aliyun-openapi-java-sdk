@@ -86,6 +86,8 @@ public class CreateTairInstanceRequest extends RpcAcsRequest<CreateTairInstanceR
 
 	private String instanceType;
 
+	private String restoreTime;
+
 	private Boolean autoPay;
 
 	private String resourceOwnerAccount;
@@ -444,6 +446,17 @@ public class CreateTairInstanceRequest extends RpcAcsRequest<CreateTairInstanceR
 		this.instanceType = instanceType;
 		if(instanceType != null){
 			putQueryParameter("InstanceType", instanceType);
+		}
+	}
+
+	public String getRestoreTime() {
+		return this.restoreTime;
+	}
+
+	public void setRestoreTime(String restoreTime) {
+		this.restoreTime = restoreTime;
+		if(restoreTime != null){
+			putQueryParameter("RestoreTime", restoreTime);
 		}
 	}
 

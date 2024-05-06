@@ -368,6 +368,8 @@ public class DescribePriceResponse extends AcsResponse {
 
 			private List<ModuleAttr> moduleAttrs;
 
+			private DepreciateInfo1 depreciateInfo1;
+
 			public String getModuleCode() {
 				return this.moduleCode;
 			}
@@ -456,6 +458,14 @@ public class DescribePriceResponse extends AcsResponse {
 				this.moduleAttrs = moduleAttrs;
 			}
 
+			public DepreciateInfo1 getDepreciateInfo1() {
+				return this.depreciateInfo1;
+			}
+
+			public void setDepreciateInfo1(DepreciateInfo1 depreciateInfo1) {
+				this.depreciateInfo1 = depreciateInfo1;
+			}
+
 			public static class ModuleAttr {
 
 				private Long type;
@@ -496,6 +506,109 @@ public class DescribePriceResponse extends AcsResponse {
 
 				public void setName(String name) {
 					this.name = name;
+				}
+			}
+
+			public static class DepreciateInfo1 {
+
+				private Double listPrice;
+
+				private Double originalStandAmount;
+
+				private Double cheapStandAmount;
+
+				private Double cheapRate;
+
+				private Double differential;
+
+				private String differentialName;
+
+				private Double monthPrice;
+
+				private Boolean isContractActivity;
+
+				private Boolean isShow;
+
+				private String startTime;
+
+				public Double getListPrice() {
+					return this.listPrice;
+				}
+
+				public void setListPrice(Double listPrice) {
+					this.listPrice = listPrice;
+				}
+
+				public Double getOriginalStandAmount() {
+					return this.originalStandAmount;
+				}
+
+				public void setOriginalStandAmount(Double originalStandAmount) {
+					this.originalStandAmount = originalStandAmount;
+				}
+
+				public Double getCheapStandAmount() {
+					return this.cheapStandAmount;
+				}
+
+				public void setCheapStandAmount(Double cheapStandAmount) {
+					this.cheapStandAmount = cheapStandAmount;
+				}
+
+				public Double getCheapRate() {
+					return this.cheapRate;
+				}
+
+				public void setCheapRate(Double cheapRate) {
+					this.cheapRate = cheapRate;
+				}
+
+				public Double getDifferential() {
+					return this.differential;
+				}
+
+				public void setDifferential(Double differential) {
+					this.differential = differential;
+				}
+
+				public String getDifferentialName() {
+					return this.differentialName;
+				}
+
+				public void setDifferentialName(String differentialName) {
+					this.differentialName = differentialName;
+				}
+
+				public Double getMonthPrice() {
+					return this.monthPrice;
+				}
+
+				public void setMonthPrice(Double monthPrice) {
+					this.monthPrice = monthPrice;
+				}
+
+				public Boolean getIsContractActivity() {
+					return this.isContractActivity;
+				}
+
+				public void setIsContractActivity(Boolean isContractActivity) {
+					this.isContractActivity = isContractActivity;
+				}
+
+				public Boolean getIsShow() {
+					return this.isShow;
+				}
+
+				public void setIsShow(Boolean isShow) {
+					this.isShow = isShow;
+				}
+
+				public String getStartTime() {
+					return this.startTime;
+				}
+
+				public void setStartTime(String startTime) {
+					this.startTime = startTime;
 				}
 			}
 		}
@@ -786,9 +899,9 @@ public class DescribePriceResponse extends AcsResponse {
 
 		private List<Coupon> coupons;
 
-		private List<String> ruleIds1;
+		private List<String> ruleIds2;
 
-		private DepreciateInfo2 depreciateInfo2;
+		private DepreciateInfo3 depreciateInfo3;
 
 		public String getOriginalAmount() {
 			return this.originalAmount;
@@ -886,20 +999,20 @@ public class DescribePriceResponse extends AcsResponse {
 			this.coupons = coupons;
 		}
 
-		public List<String> getRuleIds1() {
-			return this.ruleIds1;
+		public List<String> getRuleIds2() {
+			return this.ruleIds2;
 		}
 
-		public void setRuleIds1(List<String> ruleIds1) {
-			this.ruleIds1 = ruleIds1;
+		public void setRuleIds2(List<String> ruleIds2) {
+			this.ruleIds2 = ruleIds2;
 		}
 
-		public DepreciateInfo2 getDepreciateInfo2() {
-			return this.depreciateInfo2;
+		public DepreciateInfo3 getDepreciateInfo3() {
+			return this.depreciateInfo3;
 		}
 
-		public void setDepreciateInfo2(DepreciateInfo2 depreciateInfo2) {
-			this.depreciateInfo2 = depreciateInfo2;
+		public void setDepreciateInfo3(DepreciateInfo3 depreciateInfo3) {
+			this.depreciateInfo3 = depreciateInfo3;
 		}
 
 		public static class Coupon {
@@ -945,7 +1058,7 @@ public class DescribePriceResponse extends AcsResponse {
 			}
 		}
 
-		public static class DepreciateInfo2 {
+		public static class DepreciateInfo3 {
 
 			private Long listPrice;
 
@@ -965,7 +1078,7 @@ public class DescribePriceResponse extends AcsResponse {
 
 			private Boolean isShow;
 
-			private ContractActivity3 contractActivity3;
+			private ContractActivity4 contractActivity4;
 
 			public Long getListPrice() {
 				return this.listPrice;
@@ -1039,15 +1152,15 @@ public class DescribePriceResponse extends AcsResponse {
 				this.isShow = isShow;
 			}
 
-			public ContractActivity3 getContractActivity3() {
-				return this.contractActivity3;
+			public ContractActivity4 getContractActivity4() {
+				return this.contractActivity4;
 			}
 
-			public void setContractActivity3(ContractActivity3 contractActivity3) {
-				this.contractActivity3 = contractActivity3;
+			public void setContractActivity4(ContractActivity4 contractActivity4) {
+				this.contractActivity4 = contractActivity4;
 			}
 
-			public static class ContractActivity3 {
+			public static class ContractActivity4 {
 
 				private Double finalPromFee;
 
@@ -1061,7 +1174,7 @@ public class DescribePriceResponse extends AcsResponse {
 
 				private String activityName;
 
-				private List<Long> optionIds4;
+				private List<Long> optionIds5;
 
 				public Double getFinalPromFee() {
 					return this.finalPromFee;
@@ -1111,12 +1224,12 @@ public class DescribePriceResponse extends AcsResponse {
 					this.activityName = activityName;
 				}
 
-				public List<Long> getOptionIds4() {
-					return this.optionIds4;
+				public List<Long> getOptionIds5() {
+					return this.optionIds5;
 				}
 
-				public void setOptionIds4(List<Long> optionIds4) {
-					this.optionIds4 = optionIds4;
+				public void setOptionIds5(List<Long> optionIds5) {
+					this.optionIds5 = optionIds5;
 				}
 			}
 		}

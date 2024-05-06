@@ -129,7 +129,7 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 		private String backupEndTime;
 
-		private Integer backupId;
+		private Long backupId;
 
 		private String backupDBNames;
 
@@ -143,7 +143,7 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 		private String backupMethod;
 
-		private Integer backupJobID;
+		private Long backupJobID;
 
 		public String getBackupStatus() {
 			return this.backupStatus;
@@ -193,11 +193,11 @@ public class DescribeBackupsResponse extends AcsResponse {
 			this.backupEndTime = backupEndTime;
 		}
 
-		public Integer getBackupId() {
+		public Long getBackupId() {
 			return this.backupId;
 		}
 
-		public void setBackupId(Integer backupId) {
+		public void setBackupId(Long backupId) {
 			this.backupId = backupId;
 		}
 
@@ -249,11 +249,11 @@ public class DescribeBackupsResponse extends AcsResponse {
 			this.backupMethod = backupMethod;
 		}
 
-		public Integer getBackupJobID() {
+		public Long getBackupJobID() {
 			return this.backupJobID;
 		}
 
-		public void setBackupJobID(Integer backupJobID) {
+		public void setBackupJobID(Long backupJobID) {
 			this.backupJobID = backupJobID;
 		}
 	}
