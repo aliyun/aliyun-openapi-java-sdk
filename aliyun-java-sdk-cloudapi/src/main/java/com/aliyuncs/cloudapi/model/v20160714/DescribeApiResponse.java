@@ -89,6 +89,8 @@ public class DescribeApiResponse extends AcsResponse {
 
 	private List<DeployedInfo> deployedInfos;
 
+	private List<Tag> tagList;
+
 	private BackendConfig backendConfig;
 
 	private RequestConfig requestConfig;
@@ -351,6 +353,14 @@ public class DescribeApiResponse extends AcsResponse {
 
 	public void setDeployedInfos(List<DeployedInfo> deployedInfos) {
 		this.deployedInfos = deployedInfos;
+	}
+
+	public List<Tag> getTagList() {
+		return this.tagList;
+	}
+
+	public void setTagList(List<Tag> tagList) {
+		this.tagList = tagList;
 	}
 
 	public BackendConfig getBackendConfig() {
@@ -919,6 +929,29 @@ public class DescribeApiResponse extends AcsResponse {
 
 		public void setDeployedStatus(String deployedStatus) {
 			this.deployedStatus = deployedStatus;
+		}
+	}
+
+	public static class Tag {
+
+		private String tagKey;
+
+		private String tagValue;
+
+		public String getTagKey() {
+			return this.tagKey;
+		}
+
+		public void setTagKey(String tagKey) {
+			this.tagKey = tagKey;
+		}
+
+		public String getTagValue() {
+			return this.tagValue;
+		}
+
+		public void setTagValue(String tagValue) {
+			this.tagValue = tagValue;
 		}
 	}
 

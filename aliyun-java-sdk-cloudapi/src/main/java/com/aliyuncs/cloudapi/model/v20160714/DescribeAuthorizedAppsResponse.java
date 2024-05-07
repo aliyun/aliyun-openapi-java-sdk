@@ -91,7 +91,11 @@ public class DescribeAuthorizedAppsResponse extends AcsResponse {
 
 		private String stageName;
 
+		private String stageAlias;
+
 		private String operator;
+
+		private String appDescription;
 
 		public String getAppName() {
 			return this.appName;
@@ -149,12 +153,28 @@ public class DescribeAuthorizedAppsResponse extends AcsResponse {
 			this.stageName = stageName;
 		}
 
+		public String getStageAlias() {
+			return this.stageAlias;
+		}
+
+		public void setStageAlias(String stageAlias) {
+			this.stageAlias = stageAlias;
+		}
+
 		public String getOperator() {
 			return this.operator;
 		}
 
 		public void setOperator(String operator) {
 			this.operator = operator;
+		}
+
+		public String getAppDescription() {
+			return this.appDescription;
+		}
+
+		public void setAppDescription(String appDescription) {
+			this.appDescription = appDescription;
 		}
 	}
 

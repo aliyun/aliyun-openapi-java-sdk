@@ -43,6 +43,7 @@ public class DescribePluginApisResponseUnmarshaller {
 			apiPluginSummary.setStageName(_ctx.stringValue("DescribePluginApisResponse.ApiSummarys["+ i +"].StageName"));
 			apiPluginSummary.setApiName(_ctx.stringValue("DescribePluginApisResponse.ApiSummarys["+ i +"].ApiName"));
 			apiPluginSummary.setRegionId(_ctx.stringValue("DescribePluginApisResponse.ApiSummarys["+ i +"].RegionId"));
+			apiPluginSummary.setStageAlias(_ctx.stringValue("DescribePluginApisResponse.ApiSummarys["+ i +"].StageAlias"));
 
 			apiSummarys.add(apiPluginSummary);
 		}

@@ -21,6 +21,7 @@ import com.aliyuncs.cloudapi.model.v20160714.DescribeInstancesResponse;
 import com.aliyuncs.cloudapi.model.v20160714.DescribeInstancesResponse.InstanceAttribute;
 import com.aliyuncs.cloudapi.model.v20160714.DescribeInstancesResponse.InstanceAttribute.NetworkInterfaceAttribute;
 import com.aliyuncs.cloudapi.model.v20160714.DescribeInstancesResponse.InstanceAttribute.SpecAttribute;
+import com.aliyuncs.cloudapi.model.v20160714.DescribeInstancesResponse.InstanceAttribute.TagInfo;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -77,6 +78,12 @@ public class DescribeInstancesResponseUnmarshaller {
 			instanceAttribute.setMaintainEndTime(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].MaintainEndTime"));
 			instanceAttribute.setConnectCidrBlocks(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].ConnectCidrBlocks"));
 
+			List<String> privateDnsList = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeInstancesResponse.Instances["+ i +"].PrivateDnsList.Length"); j++) {
+				privateDnsList.add(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].PrivateDnsList["+ j +"]"));
+			}
+			instanceAttribute.setPrivateDnsList(privateDnsList);
+
 			List<SpecAttribute> instanceSpecAttributes = new ArrayList<SpecAttribute>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeInstancesResponse.Instances["+ i +"].InstanceSpecAttributes.Length"); j++) {
 				SpecAttribute specAttribute = new SpecAttribute();
@@ -99,6 +106,16 @@ public class DescribeInstancesResponseUnmarshaller {
 				networkInterfaceAttributes.add(networkInterfaceAttribute);
 			}
 			instanceAttribute.setNetworkInterfaceAttributes(networkInterfaceAttributes);
+
+			List<TagInfo> tags = new ArrayList<TagInfo>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeInstancesResponse.Instances["+ i +"].Tags.Length"); j++) {
+				TagInfo tagInfo = new TagInfo();
+				tagInfo.setKey(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].Tags["+ j +"].Key"));
+				tagInfo.setValue(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tagInfo);
+			}
+			instanceAttribute.setTags(tags);
 
 			instances.add(instanceAttribute);
 		}

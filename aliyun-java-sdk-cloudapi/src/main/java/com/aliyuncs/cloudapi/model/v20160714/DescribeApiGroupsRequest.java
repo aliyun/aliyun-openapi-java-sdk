@@ -26,6 +26,14 @@ import com.aliyuncs.cloudapi.Endpoint;
 public class DescribeApiGroupsRequest extends RpcAcsRequest<DescribeApiGroupsResponse> {
 	   
 
+	private Integer pageNumber;
+
+	private String securityToken;
+
+	private Integer pageSize;
+
+	private List<Tag> tags;
+
 	private String groupId;
 
 	private String sort;
@@ -34,15 +42,7 @@ public class DescribeApiGroupsRequest extends RpcAcsRequest<DescribeApiGroupsRes
 
 	private String groupName;
 
-	private Integer pageNumber;
-
 	private String instanceId;
-
-	private String securityToken;
-
-	private Integer pageSize;
-
-	private List<Tag> tags;
 	public DescribeApiGroupsRequest() {
 		super("CloudAPI", "2016-07-14", "DescribeApiGroups", "apigateway");
 		setMethod(MethodType.POST);
@@ -50,6 +50,53 @@ public class DescribeApiGroupsRequest extends RpcAcsRequest<DescribeApiGroupsRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
 	}
 
 	public String getGroupId() {
@@ -96,17 +143,6 @@ public class DescribeApiGroupsRequest extends RpcAcsRequest<DescribeApiGroupsRes
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
 	public String getInstanceId() {
 		return this.instanceId;
 	}
@@ -116,42 +152,6 @@ public class DescribeApiGroupsRequest extends RpcAcsRequest<DescribeApiGroupsRes
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
 		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public List<Tag> getTags() {
-		return this.tags;
-	}
-
-	public void setTags(List<Tag> tags) {
-		this.tags = tags;	
-		if (tags != null) {
-			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
-				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
-				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
-			}
-		}	
 	}
 
 	public static class Tag {

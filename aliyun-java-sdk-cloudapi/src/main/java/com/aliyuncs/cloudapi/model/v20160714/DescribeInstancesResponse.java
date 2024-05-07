@@ -161,6 +161,10 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private List<NetworkInterfaceAttribute> networkInterfaceAttributes;
 
+		private List<TagInfo> tags;
+
+		private List<String> privateDnsList;
+
 		public String getStatus() {
 			return this.status;
 		}
@@ -497,6 +501,22 @@ public class DescribeInstancesResponse extends AcsResponse {
 			this.networkInterfaceAttributes = networkInterfaceAttributes;
 		}
 
+		public List<TagInfo> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<TagInfo> tags) {
+			this.tags = tags;
+		}
+
+		public List<String> getPrivateDnsList() {
+			return this.privateDnsList;
+		}
+
+		public void setPrivateDnsList(List<String> privateDnsList) {
+			this.privateDnsList = privateDnsList;
+		}
+
 		public static class SpecAttribute {
 
 			private String value;
@@ -570,6 +590,29 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 			public void setZoneId(String zoneId) {
 				this.zoneId = zoneId;
+			}
+		}
+
+		public static class TagInfo {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
 			}
 		}
 	}

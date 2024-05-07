@@ -1,3 +1,6 @@
+2024-05-07 Version: 4.9.24
+- Add DescribeApisByVpcAccess.
+
 2024-01-26 Version: 4.9.23
 - Rebuild.
 

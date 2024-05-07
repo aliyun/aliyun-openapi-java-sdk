@@ -93,6 +93,8 @@ public class DescribeApisByAppResponse extends AcsResponse {
 
 		private String stageName;
 
+		private String stageAlias;
+
 		private String createdTime;
 
 		private String apiName;
@@ -165,6 +167,14 @@ public class DescribeApisByAppResponse extends AcsResponse {
 
 		public void setStageName(String stageName) {
 			this.stageName = stageName;
+		}
+
+		public String getStageAlias() {
+			return this.stageAlias;
+		}
+
+		public void setStageAlias(String stageAlias) {
+			this.stageAlias = stageAlias;
 		}
 
 		public String getCreatedTime() {

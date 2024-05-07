@@ -42,6 +42,7 @@ public class DescribeApisByAppResponseUnmarshaller {
 			appApiRelationInfo.setGroupId(_ctx.stringValue("DescribeApisByAppResponse.AppApiRelationInfos["+ i +"].GroupId"));
 			appApiRelationInfo.setOperator(_ctx.stringValue("DescribeApisByAppResponse.AppApiRelationInfos["+ i +"].Operator"));
 			appApiRelationInfo.setStageName(_ctx.stringValue("DescribeApisByAppResponse.AppApiRelationInfos["+ i +"].StageName"));
+			appApiRelationInfo.setStageAlias(_ctx.stringValue("DescribeApisByAppResponse.AppApiRelationInfos["+ i +"].StageAlias"));
 			appApiRelationInfo.setCreatedTime(_ctx.stringValue("DescribeApisByAppResponse.AppApiRelationInfos["+ i +"].CreatedTime"));
 			appApiRelationInfo.setApiName(_ctx.stringValue("DescribeApisByAppResponse.AppApiRelationInfos["+ i +"].ApiName"));
 			appApiRelationInfo.setRegionId(_ctx.stringValue("DescribeApisByAppResponse.AppApiRelationInfos["+ i +"].RegionId"));

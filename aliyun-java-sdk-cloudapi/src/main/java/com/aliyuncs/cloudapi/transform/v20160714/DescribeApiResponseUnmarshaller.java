@@ -36,6 +36,7 @@ import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.ServiceConfig.V
 import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.ServiceParameter;
 import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.ServiceParameterMap;
 import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.SystemParameter;
+import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -274,6 +275,16 @@ public class DescribeApiResponseUnmarshaller {
 			deployedInfos.add(deployedInfo);
 		}
 		describeApiResponse.setDeployedInfos(deployedInfos);
+
+		List<Tag> tagList = new ArrayList<Tag>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeApiResponse.TagList.Length"); i++) {
+			Tag tag = new Tag();
+			tag.setTagKey(_ctx.stringValue("DescribeApiResponse.TagList["+ i +"].TagKey"));
+			tag.setTagValue(_ctx.stringValue("DescribeApiResponse.TagList["+ i +"].TagValue"));
+
+			tagList.add(tag);
+		}
+		describeApiResponse.setTagList(tagList);
 	 
 	 	return describeApiResponse;
 	}

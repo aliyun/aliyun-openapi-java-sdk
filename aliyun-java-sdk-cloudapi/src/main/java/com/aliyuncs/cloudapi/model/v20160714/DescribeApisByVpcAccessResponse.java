@@ -16,14 +16,14 @@ package com.aliyuncs.cloudapi.model.v20160714;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cloudapi.transform.v20160714.DescribePluginApisResponseUnmarshaller;
+import com.aliyuncs.cloudapi.transform.v20160714.DescribeApisByVpcAccessResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribePluginApisResponse extends AcsResponse {
+public class DescribeApisByVpcAccessResponse extends AcsResponse {
 
 	private Integer pageNumber;
 
@@ -33,7 +33,7 @@ public class DescribePluginApisResponse extends AcsResponse {
 
 	private Integer totalCount;
 
-	private List<ApiPluginSummary> apiSummarys;
+	private List<ApiVpcAccessInfo> apiVpcAccessInfos;
 
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -67,35 +67,43 @@ public class DescribePluginApisResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public List<ApiPluginSummary> getApiSummarys() {
-		return this.apiSummarys;
+	public List<ApiVpcAccessInfo> getApiVpcAccessInfos() {
+		return this.apiVpcAccessInfos;
 	}
 
-	public void setApiSummarys(List<ApiPluginSummary> apiSummarys) {
-		this.apiSummarys = apiSummarys;
+	public void setApiVpcAccessInfos(List<ApiVpcAccessInfo> apiVpcAccessInfos) {
+		this.apiVpcAccessInfos = apiVpcAccessInfos;
 	}
 
-	public static class ApiPluginSummary {
+	public static class ApiVpcAccessInfo {
 
 		private String apiId;
 
-		private String description;
+		private String vpcId;
 
-		private String groupName;
+		private String instanceId;
+
+		private Integer port;
+
+		private String regionId;
+
+		private String stageId;
+
+		private String vpcName;
 
 		private String groupId;
 
-		private String path;
+		private String groupName;
 
-		private String method;
+		private String description;
 
 		private String stageName;
 
 		private String apiName;
 
-		private String regionId;
+		private String path;
 
-		private String stageAlias;
+		private String method;
 
 		public String getApiId() {
 			return this.apiId;
@@ -105,20 +113,52 @@ public class DescribePluginApisResponse extends AcsResponse {
 			this.apiId = apiId;
 		}
 
-		public String getDescription() {
-			return this.description;
+		public String getVpcId() {
+			return this.vpcId;
 		}
 
-		public void setDescription(String description) {
-			this.description = description;
+		public void setVpcId(String vpcId) {
+			this.vpcId = vpcId;
 		}
 
-		public String getGroupName() {
-			return this.groupName;
+		public String getInstanceId() {
+			return this.instanceId;
 		}
 
-		public void setGroupName(String groupName) {
-			this.groupName = groupName;
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public Integer getPort() {
+			return this.port;
+		}
+
+		public void setPort(Integer port) {
+			this.port = port;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public String getStageId() {
+			return this.stageId;
+		}
+
+		public void setStageId(String stageId) {
+			this.stageId = stageId;
+		}
+
+		public String getVpcName() {
+			return this.vpcName;
+		}
+
+		public void setVpcName(String vpcName) {
+			this.vpcName = vpcName;
 		}
 
 		public String getGroupId() {
@@ -129,20 +169,20 @@ public class DescribePluginApisResponse extends AcsResponse {
 			this.groupId = groupId;
 		}
 
-		public String getPath() {
-			return this.path;
+		public String getGroupName() {
+			return this.groupName;
 		}
 
-		public void setPath(String path) {
-			this.path = path;
+		public void setGroupName(String groupName) {
+			this.groupName = groupName;
 		}
 
-		public String getBizMethod() {
-			return this.method;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setBizMethod(String method) {
-			this.method = method;
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public String getStageName() {
@@ -161,25 +201,25 @@ public class DescribePluginApisResponse extends AcsResponse {
 			this.apiName = apiName;
 		}
 
-		public String getRegionId() {
-			return this.regionId;
+		public String getPath() {
+			return this.path;
 		}
 
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
+		public void setPath(String path) {
+			this.path = path;
 		}
 
-		public String getStageAlias() {
-			return this.stageAlias;
+		public String getBizMethod() {
+			return this.method;
 		}
 
-		public void setStageAlias(String stageAlias) {
-			this.stageAlias = stageAlias;
+		public void setBizMethod(String method) {
+			this.method = method;
 		}
 	}
 
 	@Override
-	public DescribePluginApisResponse getInstance(UnmarshallerContext context) {
-		return	DescribePluginApisResponseUnmarshaller.unmarshall(this, context);
+	public DescribeApisByVpcAccessResponse getInstance(UnmarshallerContext context) {
+		return	DescribeApisByVpcAccessResponseUnmarshaller.unmarshall(this, context);
 	}
 }

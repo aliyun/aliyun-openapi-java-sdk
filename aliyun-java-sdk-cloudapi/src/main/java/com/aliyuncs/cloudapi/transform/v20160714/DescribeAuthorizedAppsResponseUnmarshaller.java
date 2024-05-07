@@ -41,7 +41,9 @@ public class DescribeAuthorizedAppsResponseUnmarshaller {
 			authorizedApp.setAuthorizedTime(_ctx.stringValue("DescribeAuthorizedAppsResponse.AuthorizedApps["+ i +"].AuthorizedTime"));
 			authorizedApp.setAppId(_ctx.longValue("DescribeAuthorizedAppsResponse.AuthorizedApps["+ i +"].AppId"));
 			authorizedApp.setStageName(_ctx.stringValue("DescribeAuthorizedAppsResponse.AuthorizedApps["+ i +"].StageName"));
+			authorizedApp.setStageAlias(_ctx.stringValue("DescribeAuthorizedAppsResponse.AuthorizedApps["+ i +"].StageAlias"));
 			authorizedApp.setOperator(_ctx.stringValue("DescribeAuthorizedAppsResponse.AuthorizedApps["+ i +"].Operator"));
+			authorizedApp.setAppDescription(_ctx.stringValue("DescribeAuthorizedAppsResponse.AuthorizedApps["+ i +"].AppDescription"));
 
 			authorizedApps.add(authorizedApp);
 		}

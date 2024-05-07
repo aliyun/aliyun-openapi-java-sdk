@@ -80,6 +80,7 @@ public class DescribeApiGroupResponseUnmarshaller {
 			domainItem.setWssEnable(_ctx.stringValue("DescribeApiGroupResponse.CustomDomains["+ i +"].WssEnable"));
 			domainItem.setCertificateValidStart(_ctx.longValue("DescribeApiGroupResponse.CustomDomains["+ i +"].CertificateValidStart"));
 			domainItem.setCertificateValidEnd(_ctx.longValue("DescribeApiGroupResponse.CustomDomains["+ i +"].CertificateValidEnd"));
+			domainItem.setBindStageAlias(_ctx.stringValue("DescribeApiGroupResponse.CustomDomains["+ i +"].BindStageAlias"));
 
 			customDomains.add(domainItem);
 		}

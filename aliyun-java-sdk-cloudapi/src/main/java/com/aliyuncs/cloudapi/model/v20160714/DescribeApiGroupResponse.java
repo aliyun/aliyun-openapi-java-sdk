@@ -417,6 +417,8 @@ public class DescribeApiGroupResponse extends AcsResponse {
 
 		private Long certificateValidEnd;
 
+		private String bindStageAlias;
+
 		public String getBindStageName() {
 			return this.bindStageName;
 		}
@@ -535,6 +537,14 @@ public class DescribeApiGroupResponse extends AcsResponse {
 
 		public void setCertificateValidEnd(Long certificateValidEnd) {
 			this.certificateValidEnd = certificateValidEnd;
+		}
+
+		public String getBindStageAlias() {
+			return this.bindStageAlias;
+		}
+
+		public void setBindStageAlias(String bindStageAlias) {
+			this.bindStageAlias = bindStageAlias;
 		}
 	}
 

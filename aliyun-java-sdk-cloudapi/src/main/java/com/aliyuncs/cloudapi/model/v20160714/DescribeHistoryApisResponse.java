@@ -91,6 +91,8 @@ public class DescribeHistoryApisResponse extends AcsResponse {
 
 		private String stageName;
 
+		private String stageAlias;
+
 		private String historyVersion;
 
 		private String apiName;
@@ -151,6 +153,14 @@ public class DescribeHistoryApisResponse extends AcsResponse {
 
 		public void setStageName(String stageName) {
 			this.stageName = stageName;
+		}
+
+		public String getStageAlias() {
+			return this.stageAlias;
+		}
+
+		public void setStageAlias(String stageAlias) {
+			this.stageAlias = stageAlias;
 		}
 
 		public String getHistoryVersion() {

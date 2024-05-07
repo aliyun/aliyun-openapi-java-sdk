@@ -31,8 +31,6 @@ public class DescribeAccessControlListAttributeResponse extends AcsResponse {
 
 	private String aclName;
 
-	private String isUsed;
-
 	private List<AclEntry> aclEntrys;
 
 	public String getAclId() {
@@ -57,14 +55,6 @@ public class DescribeAccessControlListAttributeResponse extends AcsResponse {
 
 	public void setAclName(String aclName) {
 		this.aclName = aclName;
-	}
-
-	public String getIsUsed() {
-		return this.isUsed;
-	}
-
-	public void setIsUsed(String isUsed) {
-		this.isUsed = isUsed;
 	}
 
 	public List<AclEntry> getAclEntrys() {

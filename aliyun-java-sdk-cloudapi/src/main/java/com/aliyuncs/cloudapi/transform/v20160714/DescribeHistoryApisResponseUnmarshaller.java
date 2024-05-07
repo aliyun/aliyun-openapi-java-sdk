@@ -41,6 +41,7 @@ public class DescribeHistoryApisResponseUnmarshaller {
 			apiHisItem.setGroupId(_ctx.stringValue("DescribeHistoryApisResponse.ApiHisItems["+ i +"].GroupId"));
 			apiHisItem.setDeployedTime(_ctx.stringValue("DescribeHistoryApisResponse.ApiHisItems["+ i +"].DeployedTime"));
 			apiHisItem.setStageName(_ctx.stringValue("DescribeHistoryApisResponse.ApiHisItems["+ i +"].StageName"));
+			apiHisItem.setStageAlias(_ctx.stringValue("DescribeHistoryApisResponse.ApiHisItems["+ i +"].StageAlias"));
 			apiHisItem.setHistoryVersion(_ctx.stringValue("DescribeHistoryApisResponse.ApiHisItems["+ i +"].HistoryVersion"));
 			apiHisItem.setApiName(_ctx.stringValue("DescribeHistoryApisResponse.ApiHisItems["+ i +"].ApiName"));
 			apiHisItem.setRegionId(_ctx.stringValue("DescribeHistoryApisResponse.ApiHisItems["+ i +"].RegionId"));
