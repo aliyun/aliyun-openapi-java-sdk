@@ -1,3 +1,6 @@
+2024-05-07 Version: 3.3.8
+- GetVerificationInfo api, make visibility public.
+
 2023-12-13 Version: 3.3.7
 - CreateApplication api, add configuration of required scopes.
 - UpdateApplication api, add configuration of required scopes.
