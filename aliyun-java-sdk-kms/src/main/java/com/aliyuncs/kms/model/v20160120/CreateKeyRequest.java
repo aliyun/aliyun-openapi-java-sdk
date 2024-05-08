@@ -43,6 +43,8 @@ public class CreateKeyRequest extends RpcAcsRequest<CreateKeyResponse> {
 	private String keyUsage;
 
 	private String dKMSInstanceId;
+
+	private String policy;
 	public CreateKeyRequest() {
 		super("Kms", "2016-01-20", "CreateKey", "kms");
 		setProtocol(ProtocolType.HTTPS);
@@ -149,6 +151,17 @@ public class CreateKeyRequest extends RpcAcsRequest<CreateKeyResponse> {
 		this.dKMSInstanceId = dKMSInstanceId;
 		if(dKMSInstanceId != null){
 			putQueryParameter("DKMSInstanceId", dKMSInstanceId);
+		}
+	}
+
+	public String getPolicy() {
+		return this.policy;
+	}
+
+	public void setPolicy(String policy) {
+		this.policy = policy;
+		if(policy != null){
+			putQueryParameter("Policy", policy);
 		}
 	}
 

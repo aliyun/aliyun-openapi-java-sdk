@@ -49,6 +49,8 @@ public class CreateSecretRequest extends RpcAcsRequest<CreateSecretResponse> {
 	private String secretName;
 
 	private String secretDataType;
+
+	private String policy;
 	public CreateSecretRequest() {
 		super("Kms", "2016-01-20", "CreateSecret", "kms");
 		setProtocol(ProtocolType.HTTPS);
@@ -188,6 +190,17 @@ public class CreateSecretRequest extends RpcAcsRequest<CreateSecretResponse> {
 		this.secretDataType = secretDataType;
 		if(secretDataType != null){
 			putQueryParameter("SecretDataType", secretDataType);
+		}
+	}
+
+	public String getPolicy() {
+		return this.policy;
+	}
+
+	public void setPolicy(String policy) {
+		this.policy = policy;
+		if(policy != null){
+			putQueryParameter("Policy", policy);
 		}
 	}
 
