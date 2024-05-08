@@ -77,7 +77,7 @@ public class DescribeVodMediaPlayDataResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Float videoTitle;
+		private String videoTitle;
 
 		private Float videoDuration;
 
@@ -93,11 +93,11 @@ public class DescribeVodMediaPlayDataResponse extends AcsResponse {
 
 		private Float playPerVv;
 
-		public Float getVideoTitle() {
+		public String getVideoTitle() {
 			return this.videoTitle;
 		}
 
-		public void setVideoTitle(Float videoTitle) {
+		public void setVideoTitle(String videoTitle) {
 			this.videoTitle = videoTitle;
 		}
 

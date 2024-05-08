@@ -34,7 +34,7 @@ public class DescribeVodMediaPlayDataResponseUnmarshaller {
 		List<Data> qoeInfoList = new ArrayList<Data>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeVodMediaPlayDataResponse.QoeInfoList.Length"); i++) {
 			Data data = new Data();
-			data.setVideoTitle(_ctx.floatValue("DescribeVodMediaPlayDataResponse.QoeInfoList["+ i +"].VideoTitle"));
+			data.setVideoTitle(_ctx.stringValue("DescribeVodMediaPlayDataResponse.QoeInfoList["+ i +"].VideoTitle"));
 			data.setVideoDuration(_ctx.floatValue("DescribeVodMediaPlayDataResponse.QoeInfoList["+ i +"].VideoDuration"));
 			data.setMediaId(_ctx.stringValue("DescribeVodMediaPlayDataResponse.QoeInfoList["+ i +"].MediaId"));
 			data.setDAU(_ctx.floatValue("DescribeVodMediaPlayDataResponse.QoeInfoList["+ i +"].DAU"));
