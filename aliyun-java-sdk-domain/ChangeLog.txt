@@ -1,3 +1,6 @@
+2024-05-09 Version: 3.15.7
+- Add price info to check domain api
+
 2024-04-17 Version: 3.15.6
 - Add SnatchNo For QueryBookingDomainInfo
 
