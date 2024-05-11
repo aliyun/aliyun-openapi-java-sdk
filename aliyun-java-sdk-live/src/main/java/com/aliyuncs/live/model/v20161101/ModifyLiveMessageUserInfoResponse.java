@@ -14,6 +14,7 @@
 
 package com.aliyuncs.live.model.v20161101;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.live.transform.v20161101.ModifyLiveMessageUserInfoResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -26,12 +27,98 @@ public class ModifyLiveMessageUserInfoResponse extends AcsResponse {
 
 	private String requestId;
 
+	private List<SuccessGroups> successList;
+
+	private List<FailGroups> failList;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public List<SuccessGroups> getSuccessList() {
+		return this.successList;
+	}
+
+	public void setSuccessList(List<SuccessGroups> successList) {
+		this.successList = successList;
+	}
+
+	public List<FailGroups> getFailList() {
+		return this.failList;
+	}
+
+	public void setFailList(List<FailGroups> failList) {
+		this.failList = failList;
+	}
+
+	public static class SuccessGroups {
+
+		private String groupId;
+
+		private Boolean success;
+
+		public String getGroupId() {
+			return this.groupId;
+		}
+
+		public void setGroupId(String groupId) {
+			this.groupId = groupId;
+		}
+
+		public Boolean getSuccess() {
+			return this.success;
+		}
+
+		public void setSuccess(Boolean success) {
+			this.success = success;
+		}
+	}
+
+	public static class FailGroups {
+
+		private String groupId;
+
+		private Boolean success;
+
+		private String reason;
+
+		private Integer code;
+
+		public String getGroupId() {
+			return this.groupId;
+		}
+
+		public void setGroupId(String groupId) {
+			this.groupId = groupId;
+		}
+
+		public Boolean getSuccess() {
+			return this.success;
+		}
+
+		public void setSuccess(Boolean success) {
+			this.success = success;
+		}
+
+		public String getReason() {
+			return this.reason;
+		}
+
+		public void setReason(String reason) {
+			this.reason = reason;
+		}
+
+		public Integer getCode() {
+			return this.code;
+		}
+
+		public void setCode(Integer code) {
+			this.code = code;
+		}
 	}
 
 	@Override
