@@ -27,6 +27,8 @@ public class ModifyLogRetrievalStatusRequest extends RpcAcsRequest<ModifyLogRetr
 
 	private Integer enabled;
 
+	private String resourceGroupId;
+
 	private String instanceId;
 
 	private String domain;
@@ -47,6 +49,17 @@ public class ModifyLogRetrievalStatusRequest extends RpcAcsRequest<ModifyLogRetr
 		this.enabled = enabled;
 		if(enabled != null){
 			putQueryParameter("Enabled", enabled.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

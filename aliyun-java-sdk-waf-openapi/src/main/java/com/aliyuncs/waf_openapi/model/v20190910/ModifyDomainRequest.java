@@ -31,6 +31,8 @@ public class ModifyDomainRequest extends RpcAcsRequest<ModifyDomainResponse> {
 
 	private String sniHost;
 
+	private String resourceGroupId;
+
 	private String httpPort;
 
 	private String http2Port;
@@ -115,6 +117,17 @@ public class ModifyDomainRequest extends RpcAcsRequest<ModifyDomainResponse> {
 		this.sniHost = sniHost;
 		if(sniHost != null){
 			putQueryParameter("SniHost", sniHost);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

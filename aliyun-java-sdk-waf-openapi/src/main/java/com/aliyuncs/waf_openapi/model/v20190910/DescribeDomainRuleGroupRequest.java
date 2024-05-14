@@ -25,6 +25,8 @@ import com.aliyuncs.waf_openapi.Endpoint;
 public class DescribeDomainRuleGroupRequest extends RpcAcsRequest<DescribeDomainRuleGroupResponse> {
 	   
 
+	private String resourceGroupId;
+
 	private String instanceId;
 
 	private String domain;
@@ -35,6 +37,17 @@ public class DescribeDomainRuleGroupRequest extends RpcAcsRequest<DescribeDomain
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
 	}
 
 	public String getInstanceId() {

@@ -25,6 +25,8 @@ import com.aliyuncs.waf_openapi.Endpoint;
 public class CreateCertificateByCertificateIdRequest extends RpcAcsRequest<CreateCertificateByCertificateIdResponse> {
 	   
 
+	private String resourceGroupId;
+
 	private Long certificateId;
 
 	private String instanceId;
@@ -37,6 +39,17 @@ public class CreateCertificateByCertificateIdRequest extends RpcAcsRequest<Creat
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
 	}
 
 	public Long getCertificateId() {

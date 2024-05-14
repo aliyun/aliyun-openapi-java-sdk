@@ -22,34 +22,23 @@ import com.aliyuncs.waf_openapi.Endpoint;
  * @author auto create
  * @version 
  */
-public class ModifyLogServiceStatusRequest extends RpcAcsRequest<ModifyLogServiceStatusResponse> {
+public class DescribeProtectionModuleModeRequest extends RpcAcsRequest<DescribeProtectionModuleModeResponse> {
 	   
 
-	private Integer enabled;
-
 	private String resourceGroupId;
+
+	private String defenseType;
 
 	private String instanceId;
 
 	private String domain;
-	public ModifyLogServiceStatusRequest() {
-		super("waf-openapi", "2019-09-10", "ModifyLogServiceStatus", "waf");
+	public DescribeProtectionModuleModeRequest() {
+		super("waf-openapi", "2019-09-10", "DescribeProtectionModuleMode", "waf");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Integer getEnabled() {
-		return this.enabled;
-	}
-
-	public void setEnabled(Integer enabled) {
-		this.enabled = enabled;
-		if(enabled != null){
-			putQueryParameter("Enabled", enabled.toString());
-		}
 	}
 
 	public String getResourceGroupId() {
@@ -60,6 +49,17 @@ public class ModifyLogServiceStatusRequest extends RpcAcsRequest<ModifyLogServic
 		this.resourceGroupId = resourceGroupId;
 		if(resourceGroupId != null){
 			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getDefenseType() {
+		return this.defenseType;
+	}
+
+	public void setDefenseType(String defenseType) {
+		this.defenseType = defenseType;
+		if(defenseType != null){
+			putQueryParameter("DefenseType", defenseType);
 		}
 	}
 
@@ -86,8 +86,8 @@ public class ModifyLogServiceStatusRequest extends RpcAcsRequest<ModifyLogServic
 	}
 
 	@Override
-	public Class<ModifyLogServiceStatusResponse> getResponseClass() {
-		return ModifyLogServiceStatusResponse.class;
+	public Class<DescribeProtectionModuleModeResponse> getResponseClass() {
+		return DescribeProtectionModuleModeResponse.class;
 	}
 
 }
