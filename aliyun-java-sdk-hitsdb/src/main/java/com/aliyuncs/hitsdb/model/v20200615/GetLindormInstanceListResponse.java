@@ -115,6 +115,12 @@ public class GetLindormInstanceListResponse extends AcsResponse {
 
 		private String resourceGroupId;
 
+		private Boolean enableMessage;
+
+		private Boolean enableVector;
+
+		private Boolean enableLts;
+
 		private List<Tag> tags;
 
 		public String getVpcId() {
@@ -267,6 +273,30 @@ public class GetLindormInstanceListResponse extends AcsResponse {
 
 		public void setResourceGroupId(String resourceGroupId) {
 			this.resourceGroupId = resourceGroupId;
+		}
+
+		public Boolean getEnableMessage() {
+			return this.enableMessage;
+		}
+
+		public void setEnableMessage(Boolean enableMessage) {
+			this.enableMessage = enableMessage;
+		}
+
+		public Boolean getEnableVector() {
+			return this.enableVector;
+		}
+
+		public void setEnableVector(Boolean enableVector) {
+			this.enableVector = enableVector;
+		}
+
+		public Boolean getEnableLts() {
+			return this.enableLts;
+		}
+
+		public void setEnableLts(Boolean enableLts) {
+			this.enableLts = enableLts;
 		}
 
 		public List<Tag> getTags() {

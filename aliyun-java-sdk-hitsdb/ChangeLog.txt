@@ -1,3 +1,6 @@
+2024-05-15 Version: 3.1.16
+- Add LtsSpec and LtsNum parameter in CreateLindormInstance API.
+
 2024-01-16 Version: 3.1.15
 - Update Tea.
 

@@ -61,6 +61,8 @@ public class CreateLindormInstanceRequest extends RpcAcsRequest<CreateLindormIns
 
 	private String arbiterZoneId;
 
+	private String ltsSpec;
+
 	private String pricingCycle;
 
 	private String multiZoneCombination;
@@ -76,6 +78,8 @@ public class CreateLindormInstanceRequest extends RpcAcsRequest<CreateLindormIns
 	private String diskCategory;
 
 	private String lindormSpec;
+
+	private String ltsNum;
 
 	private Integer coldStorage;
 
@@ -315,6 +319,17 @@ public class CreateLindormInstanceRequest extends RpcAcsRequest<CreateLindormIns
 		}
 	}
 
+	public String getLtsSpec() {
+		return this.ltsSpec;
+	}
+
+	public void setLtsSpec(String ltsSpec) {
+		this.ltsSpec = ltsSpec;
+		if(ltsSpec != null){
+			putQueryParameter("LtsSpec", ltsSpec);
+		}
+	}
+
 	public String getPricingCycle() {
 		return this.pricingCycle;
 	}
@@ -400,6 +415,17 @@ public class CreateLindormInstanceRequest extends RpcAcsRequest<CreateLindormIns
 		this.lindormSpec = lindormSpec;
 		if(lindormSpec != null){
 			putQueryParameter("LindormSpec", lindormSpec);
+		}
+	}
+
+	public String getLtsNum() {
+		return this.ltsNum;
+	}
+
+	public void setLtsNum(String ltsNum) {
+		this.ltsNum = ltsNum;
+		if(ltsNum != null){
+			putQueryParameter("LtsNum", ltsNum);
 		}
 	}
 
