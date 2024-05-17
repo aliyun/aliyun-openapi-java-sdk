@@ -52,7 +52,7 @@ public class CalculateMemberLevelRequest extends RpcAcsRequest<CalculateMemberLe
 		private String score;
 
 		@SerializedName("CurrentGrade")
-		private Long currentGrade;
+		private Integer currentGrade;
 
 		@SerializedName("OpenMerchantId")
 		private String openMerchantId;
@@ -64,7 +64,7 @@ public class CalculateMemberLevelRequest extends RpcAcsRequest<CalculateMemberLe
 		private String platformType;
 
 		@SerializedName("MemberId")
-		private Long memberId;
+		private String memberId;
 
 		@SerializedName("SerialNo")
 		private String serialNo;
@@ -77,11 +77,11 @@ public class CalculateMemberLevelRequest extends RpcAcsRequest<CalculateMemberLe
 			this.score = score;
 		}
 
-		public Long getCurrentGrade() {
+		public Integer getCurrentGrade() {
 			return this.currentGrade;
 		}
 
-		public void setCurrentGrade(Long currentGrade) {
+		public void setCurrentGrade(Integer currentGrade) {
 			this.currentGrade = currentGrade;
 		}
 
@@ -109,11 +109,11 @@ public class CalculateMemberLevelRequest extends RpcAcsRequest<CalculateMemberLe
 			this.platformType = platformType;
 		}
 
-		public Long getMemberId() {
+		public String getMemberId() {
 			return this.memberId;
 		}
 
-		public void setMemberId(Long memberId) {
+		public void setMemberId(String memberId) {
 			this.memberId = memberId;
 		}
 

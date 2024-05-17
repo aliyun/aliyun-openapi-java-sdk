@@ -23,11 +23,11 @@ public class CalculateMemberLevelResponseUnmarshaller {
 	public static CalculateMemberLevelResponse unmarshall(CalculateMemberLevelResponse calculateMemberLevelResponse, UnmarshallerContext _ctx) {
 		
 		calculateMemberLevelResponse.setRequestId(_ctx.stringValue("CalculateMemberLevelResponse.RequestId"));
-		calculateMemberLevelResponse.setSuccess(_ctx.stringValue("CalculateMemberLevelResponse.Success"));
+		calculateMemberLevelResponse.setSuccess(_ctx.booleanValue("CalculateMemberLevelResponse.Success"));
 		calculateMemberLevelResponse.setHttpStatusCode(_ctx.stringValue("CalculateMemberLevelResponse.HttpStatusCode"));
 		calculateMemberLevelResponse.setErrorCode(_ctx.stringValue("CalculateMemberLevelResponse.ErrorCode"));
 		calculateMemberLevelResponse.setErrorMessage(_ctx.stringValue("CalculateMemberLevelResponse.ErrorMessage"));
-		calculateMemberLevelResponse.setMessage(_ctx.stringValue("CalculateMemberLevelResponse.message"));
+		calculateMemberLevelResponse.setMessage(_ctx.stringValue("CalculateMemberLevelResponse.Message"));
 		calculateMemberLevelResponse.setGrade(_ctx.stringValue("CalculateMemberLevelResponse.Grade"));
 		calculateMemberLevelResponse.setOuterMemberId(_ctx.stringValue("CalculateMemberLevelResponse.OuterMemberId"));
 	 

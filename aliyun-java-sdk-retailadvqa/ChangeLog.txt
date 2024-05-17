@@ -1,3 +1,6 @@
+2024-05-17 Version: 1.0.19
+- Update CalculateMemberLevel API
+
 2024-05-15 Version: 1.0.18
 - Add CalculateMemberLevel API
 
