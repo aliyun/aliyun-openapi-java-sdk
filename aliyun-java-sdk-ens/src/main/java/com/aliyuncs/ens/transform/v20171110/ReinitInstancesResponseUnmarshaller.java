@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.ens.model.v20171110.ReinitInstancesResponse;
-import com.aliyuncs.ens.model.v20171110.ReinitInstancesResponse.InstanceResponsesItem;
+import com.aliyuncs.ens.model.v20171110.ReinitInstancesResponse.Responses;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -28,14 +28,14 @@ public class ReinitInstancesResponseUnmarshaller {
 		
 		reinitInstancesResponse.setRequestId(_ctx.stringValue("ReinitInstancesResponse.RequestId"));
 
-		List<InstanceResponsesItem> instanceResponses = new ArrayList<InstanceResponsesItem>();
+		List<Responses> instanceResponses = new ArrayList<Responses>();
 		for (int i = 0; i < _ctx.lengthValue("ReinitInstancesResponse.InstanceResponses.Length"); i++) {
-			InstanceResponsesItem instanceResponsesItem = new InstanceResponsesItem();
-			instanceResponsesItem.setCode(_ctx.longValue("ReinitInstancesResponse.InstanceResponses["+ i +"].Code"));
-			instanceResponsesItem.setMessage(_ctx.stringValue("ReinitInstancesResponse.InstanceResponses["+ i +"].Message"));
-			instanceResponsesItem.setInstanceId(_ctx.stringValue("ReinitInstancesResponse.InstanceResponses["+ i +"].InstanceId"));
+			Responses responses = new Responses();
+			responses.setCode(_ctx.longValue("ReinitInstancesResponse.InstanceResponses["+ i +"].Code"));
+			responses.setMessage(_ctx.stringValue("ReinitInstancesResponse.InstanceResponses["+ i +"].Message"));
+			responses.setInstanceId(_ctx.stringValue("ReinitInstancesResponse.InstanceResponses["+ i +"].InstanceId"));
 
-			instanceResponses.add(instanceResponsesItem);
+			instanceResponses.add(responses);
 		}
 		reinitInstancesResponse.setInstanceResponses(instanceResponses);
 	 

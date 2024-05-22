@@ -15,35 +15,39 @@
 package com.aliyuncs.ens.model.v20171110;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeWorkflowActivityRequest extends RpcAcsRequest<DescribeWorkflowActivityResponse> {
+public class DeleteSDGRequest extends RpcAcsRequest<DeleteSDGResponse> {
 	   
 
-	private String workFlowId;
-	public DescribeWorkflowActivityRequest() {
-		super("Ens", "2017-11-10", "DescribeWorkflowActivity", "ens");
-		setMethod(MethodType.POST);
+	@SerializedName("sDGId")
+	private List<String> sDGId;
+	public DeleteSDGRequest() {
+		super("Ens", "2017-11-10", "DeleteSDG", "ens");
+		setMethod(MethodType.GET);
 	}
 
-	public String getWorkFlowId() {
-		return this.workFlowId;
+	public List<String> getSDGId() {
+		return this.sDGId;
 	}
 
-	public void setWorkFlowId(String workFlowId) {
-		this.workFlowId = workFlowId;
-		if(workFlowId != null){
-			putQueryParameter("WorkFlowId", workFlowId);
-		}
+	public void setSDGId(List<String> sDGId) {
+		this.sDGId = sDGId;	
+		if (sDGId != null) {
+			putQueryParameter("SDGId" , new Gson().toJson(sDGId));
+		}	
 	}
 
 	@Override
-	public Class<DescribeWorkflowActivityResponse> getResponseClass() {
-		return DescribeWorkflowActivityResponse.class;
+	public Class<DeleteSDGResponse> getResponseClass() {
+		return DeleteSDGResponse.class;
 	}
 
 }

@@ -14,16 +14,17 @@
 
 package com.aliyuncs.ens.transform.v20171110;
 
-import com.aliyuncs.ens.model.v20171110.RestartWorkflowResponse;
+import com.aliyuncs.ens.model.v20171110.CreateSDGResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class RestartWorkflowResponseUnmarshaller {
+public class CreateSDGResponseUnmarshaller {
 
-	public static RestartWorkflowResponse unmarshall(RestartWorkflowResponse restartWorkflowResponse, UnmarshallerContext _ctx) {
+	public static CreateSDGResponse unmarshall(CreateSDGResponse createSDGResponse, UnmarshallerContext _ctx) {
 		
-		restartWorkflowResponse.setRequestId(_ctx.stringValue("RestartWorkflowResponse.RequestId"));
+		createSDGResponse.setRequestId(_ctx.stringValue("CreateSDGResponse.RequestId"));
+		createSDGResponse.setSDGId(_ctx.stringValue("CreateSDGResponse.SDGId"));
 	 
-	 	return restartWorkflowResponse;
+	 	return createSDGResponse;
 	}
 }

@@ -15,34 +15,46 @@
 package com.aliyuncs.ens.model.v20171110;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
-import com.google.gson.Gson;
-import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
-public class ResetAICInstanceRequest extends RpcAcsRequest<ResetAICInstanceResponse> {
+public class CreateSDGRequest extends RpcAcsRequest<CreateSDGResponse> {
 	   
 
-	private String serverId;
+	private String fromSDGId;
+
+	private String description;
 
 	private String instanceId;
-	public ResetAICInstanceRequest() {
-		super("Ens", "2017-11-10", "ResetAICInstance", "ens");
+
+	private String size;
+	public CreateSDGRequest() {
+		super("Ens", "2017-11-10", "CreateSDG", "ens");
 		setMethod(MethodType.GET);
 	}
 
-	public String getServerId() {
-		return this.serverId;
+	public String getFromSDGId() {
+		return this.fromSDGId;
 	}
 
-	public void setServerId(String serverId) {
-		this.serverId = serverId;
-		if(serverId != null){
-			putQueryParameter("ServerId", serverId);
+	public void setFromSDGId(String fromSDGId) {
+		this.fromSDGId = fromSDGId;
+		if(fromSDGId != null){
+			putQueryParameter("FromSDGId", fromSDGId);
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
 		}
 	}
 
@@ -57,9 +69,20 @@ public class ResetAICInstanceRequest extends RpcAcsRequest<ResetAICInstanceRespo
 		}
 	}
 
+	public String getSize() {
+		return this.size;
+	}
+
+	public void setSize(String size) {
+		this.size = size;
+		if(size != null){
+			putQueryParameter("Size", size);
+		}
+	}
+
 	@Override
-	public Class<ResetAICInstanceResponse> getResponseClass() {
-		return ResetAICInstanceResponse.class;
+	public Class<CreateSDGResponse> getResponseClass() {
+		return CreateSDGResponse.class;
 	}
 
 }

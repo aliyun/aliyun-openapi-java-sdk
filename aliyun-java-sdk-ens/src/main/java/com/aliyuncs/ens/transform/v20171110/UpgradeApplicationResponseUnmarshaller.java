@@ -23,6 +23,7 @@ public class UpgradeApplicationResponseUnmarshaller {
 	public static UpgradeApplicationResponse unmarshall(UpgradeApplicationResponse upgradeApplicationResponse, UnmarshallerContext _ctx) {
 		
 		upgradeApplicationResponse.setRequestId(_ctx.stringValue("UpgradeApplicationResponse.RequestId"));
+		upgradeApplicationResponse.setTaskId(_ctx.stringValue("UpgradeApplicationResponse.TaskId"));
 	 
 	 	return upgradeApplicationResponse;
 	}

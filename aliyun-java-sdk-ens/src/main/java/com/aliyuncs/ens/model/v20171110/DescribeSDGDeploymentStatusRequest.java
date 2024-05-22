@@ -15,36 +15,25 @@
 package com.aliyuncs.ens.model.v20171110;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeKeyPairsRequest extends RpcAcsRequest<DescribeKeyPairsResponse> {
+public class DescribeSDGDeploymentStatusRequest extends RpcAcsRequest<DescribeSDGDeploymentStatusResponse> {
 	   
-
-	private String keyPairName;
 
 	private String pageNumber;
 
+	private String sDGId;
+
 	private String pageSize;
-
-	private String keyPairId;
-	public DescribeKeyPairsRequest() {
-		super("Ens", "2017-11-10", "DescribeKeyPairs", "ens");
-		setMethod(MethodType.POST);
-	}
-
-	public String getKeyPairName() {
-		return this.keyPairName;
-	}
-
-	public void setKeyPairName(String keyPairName) {
-		this.keyPairName = keyPairName;
-		if(keyPairName != null){
-			putQueryParameter("KeyPairName", keyPairName);
-		}
+	public DescribeSDGDeploymentStatusRequest() {
+		super("Ens", "2017-11-10", "DescribeSDGDeploymentStatus", "ens");
+		setProtocol(ProtocolType.HTTPS);
+		setMethod(MethodType.GET);
 	}
 
 	public String getPageNumber() {
@@ -55,6 +44,17 @@ public class DescribeKeyPairsRequest extends RpcAcsRequest<DescribeKeyPairsRespo
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber);
+		}
+	}
+
+	public String getSDGId() {
+		return this.sDGId;
+	}
+
+	public void setSDGId(String sDGId) {
+		this.sDGId = sDGId;
+		if(sDGId != null){
+			putQueryParameter("SDGId", sDGId);
 		}
 	}
 
@@ -69,20 +69,9 @@ public class DescribeKeyPairsRequest extends RpcAcsRequest<DescribeKeyPairsRespo
 		}
 	}
 
-	public String getKeyPairId() {
-		return this.keyPairId;
-	}
-
-	public void setKeyPairId(String keyPairId) {
-		this.keyPairId = keyPairId;
-		if(keyPairId != null){
-			putQueryParameter("KeyPairId", keyPairId);
-		}
-	}
-
 	@Override
-	public Class<DescribeKeyPairsResponse> getResponseClass() {
-		return DescribeKeyPairsResponse.class;
+	public Class<DescribeSDGDeploymentStatusResponse> getResponseClass() {
+		return DescribeSDGDeploymentStatusResponse.class;
 	}
 
 }

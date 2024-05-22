@@ -24,42 +24,44 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class ResetAICInstanceRequest extends RpcAcsRequest<ResetAICInstanceResponse> {
+public class DescribeSDGsRequest extends RpcAcsRequest<DescribeSDGsResponse> {
 	   
 
-	private String serverId;
+	@SerializedName("sDGIds")
+	private List<String> sDGIds;
 
-	private String instanceId;
-	public ResetAICInstanceRequest() {
-		super("Ens", "2017-11-10", "ResetAICInstance", "ens");
+	@SerializedName("instanceIds")
+	private List<String> instanceIds;
+	public DescribeSDGsRequest() {
+		super("Ens", "2017-11-10", "DescribeSDGs", "ens");
 		setMethod(MethodType.GET);
 	}
 
-	public String getServerId() {
-		return this.serverId;
+	public List<String> getSDGIds() {
+		return this.sDGIds;
 	}
 
-	public void setServerId(String serverId) {
-		this.serverId = serverId;
-		if(serverId != null){
-			putQueryParameter("ServerId", serverId);
-		}
+	public void setSDGIds(List<String> sDGIds) {
+		this.sDGIds = sDGIds;	
+		if (sDGIds != null) {
+			putQueryParameter("SDGIds" , new Gson().toJson(sDGIds));
+		}	
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public List<String> getInstanceIds() {
+		return this.instanceIds;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
+	public void setInstanceIds(List<String> instanceIds) {
+		this.instanceIds = instanceIds;	
+		if (instanceIds != null) {
+			putQueryParameter("InstanceIds" , new Gson().toJson(instanceIds));
+		}	
 	}
 
 	@Override
-	public Class<ResetAICInstanceResponse> getResponseClass() {
-		return ResetAICInstanceResponse.class;
+	public Class<DescribeSDGsResponse> getResponseClass() {
+		return DescribeSDGsResponse.class;
 	}
 
 }

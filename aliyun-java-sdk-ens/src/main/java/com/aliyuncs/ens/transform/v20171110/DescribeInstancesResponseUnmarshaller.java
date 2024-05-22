@@ -24,6 +24,7 @@ import com.aliyuncs.ens.model.v20171110.DescribeInstancesResponse.Instance.Netwo
 import com.aliyuncs.ens.model.v20171110.DescribeInstancesResponse.Instance.PrivateIpAddress;
 import com.aliyuncs.ens.model.v20171110.DescribeInstancesResponse.Instance.PublicIpAddress;
 import com.aliyuncs.ens.model.v20171110.DescribeInstancesResponse.Instance.SystemDisk;
+import com.aliyuncs.ens.model.v20171110.DescribeInstancesResponse.Instance.TagsItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -57,6 +58,8 @@ public class DescribeInstancesResponseUnmarshaller {
 			instance.setOSName(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].OSName"));
 			instance.setMemory(_ctx.integerValue("DescribeInstancesResponse.Instances["+ i +"].Memory"));
 			instance.setImageId(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].ImageId"));
+			instance.setAutoReleaseTime(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].AutoReleaseTime"));
+			instance.setSpotStrategy(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].SpotStrategy"));
 
 			List<String> securityGroupIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeInstancesResponse.Instances["+ i +"].SecurityGroupIds.Length"); j++) {
@@ -111,6 +114,7 @@ public class DescribeInstancesResponseUnmarshaller {
 				dataDiskItem.setDiskId(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].DataDisk["+ j +"].DiskId"));
 				dataDiskItem.setCategory(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].DataDisk["+ j +"].Category"));
 				dataDiskItem.setName(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].DataDisk["+ j +"].name"));
+				dataDiskItem.setDiskSize(_ctx.integerValue("DescribeInstancesResponse.Instances["+ i +"].DataDisk["+ j +"].DiskSize"));
 
 				dataDisk.add(dataDiskItem);
 			}
@@ -137,6 +141,16 @@ public class DescribeInstancesResponseUnmarshaller {
 				privateIpAddresses.add(privateIpAddress2);
 			}
 			instance.setPrivateIpAddresses(privateIpAddresses);
+
+			List<TagsItem> tags = new ArrayList<TagsItem>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeInstancesResponse.Instances["+ i +"].Tags.Length"); j++) {
+				TagsItem tagsItem = new TagsItem();
+				tagsItem.setTagValue(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].Tags["+ j +"].TagValue"));
+				tagsItem.setTagKey(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].Tags["+ j +"].TagKey"));
+
+				tags.add(tagsItem);
+			}
+			instance.setTags(tags);
 
 			instances.add(instance);
 		}

@@ -15,16 +15,18 @@
 package com.aliyuncs.ens.model.v20171110;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ens.transform.v20171110.RollbackWorkflowResponseUnmarshaller;
+import com.aliyuncs.ens.transform.v20171110.CreateSDGResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class RollbackWorkflowResponse extends AcsResponse {
+public class CreateSDGResponse extends AcsResponse {
 
 	private String requestId;
+
+	private String sDGId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -34,9 +36,17 @@ public class RollbackWorkflowResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getSDGId() {
+		return this.sDGId;
+	}
+
+	public void setSDGId(String sDGId) {
+		this.sDGId = sDGId;
+	}
+
 	@Override
-	public RollbackWorkflowResponse getInstance(UnmarshallerContext context) {
-		return	RollbackWorkflowResponseUnmarshaller.unmarshall(this, context);
+	public CreateSDGResponse getInstance(UnmarshallerContext context) {
+		return	CreateSDGResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

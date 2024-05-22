@@ -38,6 +38,7 @@ public class DescribeNetworkInterfacesResponseUnmarshaller {
 			networkInterfaceSet.setCreationTime(_ctx.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].CreationTime"));
 			networkInterfaceSet.setEnsRegionId(_ctx.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].EnsRegionId"));
 			networkInterfaceSet.setInstanceId(_ctx.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].InstanceId"));
+			networkInterfaceSet.setInstanceName(_ctx.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].InstanceName"));
 			networkInterfaceSet.setMacAddress(_ctx.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].MacAddress"));
 			networkInterfaceSet.setNetworkInterfaceId(_ctx.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].NetworkInterfaceId"));
 			networkInterfaceSet.setPrimaryIp(_ctx.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].PrimaryIp"));

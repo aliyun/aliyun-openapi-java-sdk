@@ -14,17 +14,22 @@
 
 package com.aliyuncs.ens.model.v20171110;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ens.transform.v20171110.TerminateWorkflowResponseUnmarshaller;
+import com.aliyuncs.ens.transform.v20171110.ModifyInstanceChargeTypeResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class TerminateWorkflowResponse extends AcsResponse {
+public class ModifyInstanceChargeTypeResponse extends AcsResponse {
 
 	private String requestId;
+
+	private Long orderId;
+
+	private List<String> instanceIds;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -34,9 +39,25 @@ public class TerminateWorkflowResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public Long getOrderId() {
+		return this.orderId;
+	}
+
+	public void setOrderId(Long orderId) {
+		this.orderId = orderId;
+	}
+
+	public List<String> getInstanceIds() {
+		return this.instanceIds;
+	}
+
+	public void setInstanceIds(List<String> instanceIds) {
+		this.instanceIds = instanceIds;
+	}
+
 	@Override
-	public TerminateWorkflowResponse getInstance(UnmarshallerContext context) {
-		return	TerminateWorkflowResponseUnmarshaller.unmarshall(this, context);
+	public ModifyInstanceChargeTypeResponse getInstance(UnmarshallerContext context) {
+		return	ModifyInstanceChargeTypeResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

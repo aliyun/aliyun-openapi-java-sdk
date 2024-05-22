@@ -15,6 +15,9 @@
 package com.aliyuncs.ens.model.v20171110;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 
 /**
@@ -31,6 +34,9 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 	private String instanceResourceType;
 
 	private String ensServiceId;
+
+	@SerializedName("tags")
+	private List<Tags> tags;
 
 	private String vSwitchId;
 
@@ -104,6 +110,17 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 		if(ensServiceId != null){
 			putQueryParameter("EnsServiceId", ensServiceId);
 		}
+	}
+
+	public List<Tags> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tags> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			putQueryParameter("Tags" , new Gson().toJson(tags));
+		}	
 	}
 
 	public String getVSwitchId() {
@@ -246,6 +263,31 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 		this.ensRegionIds = ensRegionIds;
 		if(ensRegionIds != null){
 			putQueryParameter("EnsRegionIds", ensRegionIds);
+		}
+	}
+
+	public static class Tags {
+
+		@SerializedName("Value")
+		private String value;
+
+		@SerializedName("Key")
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

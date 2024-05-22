@@ -15,18 +15,16 @@
 package com.aliyuncs.ens.model.v20171110;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ens.transform.v20171110.UpgradeApplicationResponseUnmarshaller;
+import com.aliyuncs.ens.transform.v20171110.RemoveSDGResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class UpgradeApplicationResponse extends AcsResponse {
+public class RemoveSDGResponse extends AcsResponse {
 
 	private String requestId;
-
-	private String taskId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,16 +34,13 @@ public class UpgradeApplicationResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getTaskId() {
-		return this.taskId;
-	}
-
-	public void setTaskId(String taskId) {
-		this.taskId = taskId;
+	@Override
+	public RemoveSDGResponse getInstance(UnmarshallerContext context) {
+		return	RemoveSDGResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
-	public UpgradeApplicationResponse getInstance(UnmarshallerContext context) {
-		return	UpgradeApplicationResponseUnmarshaller.unmarshall(this, context);
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

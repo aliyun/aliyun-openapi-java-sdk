@@ -29,6 +29,8 @@ public class RenewARMServerInstanceRequest extends RpcAcsRequest<RenewARMServerI
 	private String periodUnit;
 
 	private String instanceId;
+
+	private Boolean autoRenew;
 	public RenewARMServerInstanceRequest() {
 		super("Ens", "2017-11-10", "RenewARMServerInstance", "ens");
 		setMethod(MethodType.POST);
@@ -64,6 +66,17 @@ public class RenewARMServerInstanceRequest extends RpcAcsRequest<RenewARMServerI
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public Boolean getAutoRenew() {
+		return this.autoRenew;
+	}
+
+	public void setAutoRenew(Boolean autoRenew) {
+		this.autoRenew = autoRenew;
+		if(autoRenew != null){
+			putQueryParameter("AutoRenew", autoRenew.toString());
 		}
 	}
 

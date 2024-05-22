@@ -48,6 +48,8 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 	private String ensRegionId;
 
+	private List<Tag> tags;
+
 	private Long period;
 
 	private Boolean publicIpIdentification;
@@ -57,6 +59,8 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 	private String vSwitchId;
 
 	private String privateIpAddress;
+
+	private String spotStrategy;
 
 	private String periodUnit;
 
@@ -85,6 +89,8 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 	private String instanceChargeType;
 
 	private Long amount;
+
+	private String autoReleaseTime;
 
 	private String ipType;
 
@@ -209,6 +215,20 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		}
 	}
 
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
+	}
+
 	public Long getPeriod() {
 		return this.period;
 	}
@@ -261,6 +281,17 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		this.privateIpAddress = privateIpAddress;
 		if(privateIpAddress != null){
 			putQueryParameter("PrivateIpAddress", privateIpAddress);
+		}
+	}
+
+	public String getSpotStrategy() {
+		return this.spotStrategy;
+	}
+
+	public void setSpotStrategy(String spotStrategy) {
+		this.spotStrategy = spotStrategy;
+		if(spotStrategy != null){
+			putQueryParameter("SpotStrategy", spotStrategy);
 		}
 	}
 
@@ -418,6 +449,17 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		}
 	}
 
+	public String getAutoReleaseTime() {
+		return this.autoReleaseTime;
+	}
+
+	public void setAutoReleaseTime(String autoReleaseTime) {
+		this.autoReleaseTime = autoReleaseTime;
+		if(autoReleaseTime != null){
+			putQueryParameter("AutoReleaseTime", autoReleaseTime);
+		}
+	}
+
 	public String getIpType() {
 		return this.ipType;
 	}
@@ -484,6 +526,29 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 		public void setCategory(String category) {
 			this.category = category;
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

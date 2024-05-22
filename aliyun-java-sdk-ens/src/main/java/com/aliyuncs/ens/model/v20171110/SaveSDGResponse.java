@@ -15,14 +15,14 @@
 package com.aliyuncs.ens.model.v20171110;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ens.transform.v20171110.RetryWorkflowResponseUnmarshaller;
+import com.aliyuncs.ens.transform.v20171110.SaveSDGResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class RetryWorkflowResponse extends AcsResponse {
+public class SaveSDGResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -35,8 +35,8 @@ public class RetryWorkflowResponse extends AcsResponse {
 	}
 
 	@Override
-	public RetryWorkflowResponse getInstance(UnmarshallerContext context) {
-		return	RetryWorkflowResponseUnmarshaller.unmarshall(this, context);
+	public SaveSDGResponse getInstance(UnmarshallerContext context) {
+		return	SaveSDGResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

@@ -24,30 +24,30 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class RestartWorkflowRequest extends RpcAcsRequest<RestartWorkflowResponse> {
+public class RemoveSDGRequest extends RpcAcsRequest<RemoveSDGResponse> {
 	   
 
-	@SerializedName("workflowIds")
-	private List<String> workflowIds;
-	public RestartWorkflowRequest() {
-		super("Ens", "2017-11-10", "RestartWorkflow", "ens");
-		setMethod(MethodType.POST);
+	@SerializedName("instanceIds")
+	private List<String> instanceIds;
+	public RemoveSDGRequest() {
+		super("Ens", "2017-11-10", "RemoveSDG", "ens");
+		setMethod(MethodType.GET);
 	}
 
-	public List<String> getWorkflowIds() {
-		return this.workflowIds;
+	public List<String> getInstanceIds() {
+		return this.instanceIds;
 	}
 
-	public void setWorkflowIds(List<String> workflowIds) {
-		this.workflowIds = workflowIds;	
-		if (workflowIds != null) {
-			putQueryParameter("WorkflowIds" , new Gson().toJson(workflowIds));
+	public void setInstanceIds(List<String> instanceIds) {
+		this.instanceIds = instanceIds;	
+		if (instanceIds != null) {
+			putQueryParameter("InstanceIds" , new Gson().toJson(instanceIds));
 		}	
 	}
 
 	@Override
-	public Class<RestartWorkflowResponse> getResponseClass() {
-		return RestartWorkflowResponse.class;
+	public Class<RemoveSDGResponse> getResponseClass() {
+		return RemoveSDGResponse.class;
 	}
 
 }

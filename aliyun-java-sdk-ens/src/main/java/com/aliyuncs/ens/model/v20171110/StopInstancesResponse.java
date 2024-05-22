@@ -27,7 +27,7 @@ public class StopInstancesResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<InstanceResponsesItem> instanceResponses;
+	private List<Responses> instanceResponses;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -37,15 +37,15 @@ public class StopInstancesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<InstanceResponsesItem> getInstanceResponses() {
+	public List<Responses> getInstanceResponses() {
 		return this.instanceResponses;
 	}
 
-	public void setInstanceResponses(List<InstanceResponsesItem> instanceResponses) {
+	public void setInstanceResponses(List<Responses> instanceResponses) {
 		this.instanceResponses = instanceResponses;
 	}
 
-	public static class InstanceResponsesItem {
+	public static class Responses {
 
 		private Long code;
 

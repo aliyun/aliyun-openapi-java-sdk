@@ -27,8 +27,6 @@ public class ModifyImageAttributeRequest extends RpcAcsRequest<ModifyImageAttrib
 	private String imageId;
 
 	private String imageName;
-
-	private String product;
 	public ModifyImageAttributeRequest() {
 		super("Ens", "2017-11-10", "ModifyImageAttribute", "ens");
 		setMethod(MethodType.POST);
@@ -53,17 +51,6 @@ public class ModifyImageAttributeRequest extends RpcAcsRequest<ModifyImageAttrib
 		this.imageName = imageName;
 		if(imageName != null){
 			putQueryParameter("ImageName", imageName);
-		}
-	}
-
-	public String getProduct() {
-		return this.product;
-	}
-
-	public void setProduct(String product) {
-		this.product = product;
-		if(product != null){
-			putQueryParameter("product", product);
 		}
 	}
 

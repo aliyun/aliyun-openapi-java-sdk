@@ -121,11 +121,17 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private String imageId;
 
+		private String autoReleaseTime;
+
+		private String spotStrategy;
+
 		private List<DataDiskItem> dataDisk;
 
 		private List<PublicIpAddress> publicIpAddresses;
 
 		private List<PrivateIpAddress> privateIpAddresses;
+
+		private List<TagsItem> tags;
 
 		private List<String> securityGroupIds;
 
@@ -273,6 +279,22 @@ public class DescribeInstancesResponse extends AcsResponse {
 			this.imageId = imageId;
 		}
 
+		public String getAutoReleaseTime() {
+			return this.autoReleaseTime;
+		}
+
+		public void setAutoReleaseTime(String autoReleaseTime) {
+			this.autoReleaseTime = autoReleaseTime;
+		}
+
+		public String getSpotStrategy() {
+			return this.spotStrategy;
+		}
+
+		public void setSpotStrategy(String spotStrategy) {
+			this.spotStrategy = spotStrategy;
+		}
+
 		public List<DataDiskItem> getDataDisk() {
 			return this.dataDisk;
 		}
@@ -295,6 +317,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		public void setPrivateIpAddresses(List<PrivateIpAddress> privateIpAddresses) {
 			this.privateIpAddresses = privateIpAddresses;
+		}
+
+		public List<TagsItem> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<TagsItem> tags) {
+			this.tags = tags;
 		}
 
 		public List<String> getSecurityGroupIds() {
@@ -356,6 +386,8 @@ public class DescribeInstancesResponse extends AcsResponse {
 			private String category;
 
 			private String name;
+
+			private Integer diskSize;
 
 			public String getDevice_type() {
 				return this.device_type;
@@ -428,6 +460,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 			public void setName(String name) {
 				this.name = name;
 			}
+
+			public Integer getDiskSize() {
+				return this.diskSize;
+			}
+
+			public void setDiskSize(Integer diskSize) {
+				this.diskSize = diskSize;
+			}
 		}
 
 		public static class PublicIpAddress {
@@ -493,6 +533,29 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 			public void setIsp(String isp) {
 				this.isp = isp;
+			}
+		}
+
+		public static class TagsItem {
+
+			private String tagValue;
+
+			private String tagKey;
+
+			public String getTagValue() {
+				return this.tagValue;
+			}
+
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
+			}
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
 			}
 		}
 

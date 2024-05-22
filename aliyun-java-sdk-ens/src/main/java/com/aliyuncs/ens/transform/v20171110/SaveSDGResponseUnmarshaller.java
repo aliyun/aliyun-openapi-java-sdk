@@ -14,16 +14,16 @@
 
 package com.aliyuncs.ens.transform.v20171110;
 
-import com.aliyuncs.ens.model.v20171110.TerminateWorkflowResponse;
+import com.aliyuncs.ens.model.v20171110.SaveSDGResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class TerminateWorkflowResponseUnmarshaller {
+public class SaveSDGResponseUnmarshaller {
 
-	public static TerminateWorkflowResponse unmarshall(TerminateWorkflowResponse terminateWorkflowResponse, UnmarshallerContext _ctx) {
+	public static SaveSDGResponse unmarshall(SaveSDGResponse saveSDGResponse, UnmarshallerContext _ctx) {
 		
-		terminateWorkflowResponse.setRequestId(_ctx.stringValue("TerminateWorkflowResponse.RequestId"));
+		saveSDGResponse.setRequestId(_ctx.stringValue("SaveSDGResponse.RequestId"));
 	 
-	 	return terminateWorkflowResponse;
+	 	return saveSDGResponse;
 	}
 }

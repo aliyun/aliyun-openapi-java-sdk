@@ -83,6 +83,8 @@ public class DescribeNetworkInterfacesResponse extends AcsResponse {
 
 		private String instanceId;
 
+		private String instanceName;
+
 		private String macAddress;
 
 		private String networkInterfaceId;
@@ -129,6 +131,14 @@ public class DescribeNetworkInterfacesResponse extends AcsResponse {
 
 		public void setInstanceId(String instanceId) {
 			this.instanceId = instanceId;
+		}
+
+		public String getInstanceName() {
+			return this.instanceName;
+		}
+
+		public void setInstanceName(String instanceName) {
+			this.instanceName = instanceName;
 		}
 
 		public String getMacAddress() {

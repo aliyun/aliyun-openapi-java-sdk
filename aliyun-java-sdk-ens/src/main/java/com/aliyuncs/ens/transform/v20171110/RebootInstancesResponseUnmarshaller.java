@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.ens.model.v20171110.RebootInstancesResponse;
-import com.aliyuncs.ens.model.v20171110.RebootInstancesResponse.InstanceResponsesItem;
+import com.aliyuncs.ens.model.v20171110.RebootInstancesResponse.Responses;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -28,14 +28,14 @@ public class RebootInstancesResponseUnmarshaller {
 		
 		rebootInstancesResponse.setRequestId(_ctx.stringValue("RebootInstancesResponse.RequestId"));
 
-		List<InstanceResponsesItem> instanceResponses = new ArrayList<InstanceResponsesItem>();
+		List<Responses> instanceResponses = new ArrayList<Responses>();
 		for (int i = 0; i < _ctx.lengthValue("RebootInstancesResponse.InstanceResponses.Length"); i++) {
-			InstanceResponsesItem instanceResponsesItem = new InstanceResponsesItem();
-			instanceResponsesItem.setCode(_ctx.longValue("RebootInstancesResponse.InstanceResponses["+ i +"].Code"));
-			instanceResponsesItem.setMessage(_ctx.stringValue("RebootInstancesResponse.InstanceResponses["+ i +"].Message"));
-			instanceResponsesItem.setInstanceId(_ctx.stringValue("RebootInstancesResponse.InstanceResponses["+ i +"].InstanceId"));
+			Responses responses = new Responses();
+			responses.setCode(_ctx.longValue("RebootInstancesResponse.InstanceResponses["+ i +"].Code"));
+			responses.setMessage(_ctx.stringValue("RebootInstancesResponse.InstanceResponses["+ i +"].Message"));
+			responses.setInstanceId(_ctx.stringValue("RebootInstancesResponse.InstanceResponses["+ i +"].InstanceId"));
 
-			instanceResponses.add(instanceResponsesItem);
+			instanceResponses.add(responses);
 		}
 		rebootInstancesResponse.setInstanceResponses(instanceResponses);
 	 

@@ -14,16 +14,16 @@
 
 package com.aliyuncs.ens.transform.v20171110;
 
-import com.aliyuncs.ens.model.v20171110.RetryWorkflowResponse;
+import com.aliyuncs.ens.model.v20171110.RemoveSDGResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class RetryWorkflowResponseUnmarshaller {
+public class RemoveSDGResponseUnmarshaller {
 
-	public static RetryWorkflowResponse unmarshall(RetryWorkflowResponse retryWorkflowResponse, UnmarshallerContext _ctx) {
+	public static RemoveSDGResponse unmarshall(RemoveSDGResponse removeSDGResponse, UnmarshallerContext _ctx) {
 		
-		retryWorkflowResponse.setRequestId(_ctx.stringValue("RetryWorkflowResponse.RequestId"));
+		removeSDGResponse.setRequestId(_ctx.stringValue("RemoveSDGResponse.RequestId"));
 	 
-	 	return retryWorkflowResponse;
+	 	return removeSDGResponse;
 	}
 }

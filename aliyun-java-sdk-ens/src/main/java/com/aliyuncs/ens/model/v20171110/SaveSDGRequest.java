@@ -15,39 +15,35 @@
 package com.aliyuncs.ens.model.v20171110;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
-import com.google.gson.Gson;
-import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
-public class TerminateWorkflowRequest extends RpcAcsRequest<TerminateWorkflowResponse> {
+public class SaveSDGRequest extends RpcAcsRequest<SaveSDGResponse> {
 	   
 
-	@SerializedName("workflowIds")
-	private List<String> workflowIds;
-	public TerminateWorkflowRequest() {
-		super("Ens", "2017-11-10", "TerminateWorkflow", "ens");
-		setMethod(MethodType.POST);
+	private String sDGId;
+	public SaveSDGRequest() {
+		super("Ens", "2017-11-10", "SaveSDG", "ens");
+		setMethod(MethodType.GET);
 	}
 
-	public List<String> getWorkflowIds() {
-		return this.workflowIds;
+	public String getSDGId() {
+		return this.sDGId;
 	}
 
-	public void setWorkflowIds(List<String> workflowIds) {
-		this.workflowIds = workflowIds;	
-		if (workflowIds != null) {
-			putQueryParameter("WorkflowIds" , new Gson().toJson(workflowIds));
-		}	
+	public void setSDGId(String sDGId) {
+		this.sDGId = sDGId;
+		if(sDGId != null){
+			putQueryParameter("SDGId", sDGId);
+		}
 	}
 
 	@Override
-	public Class<TerminateWorkflowResponse> getResponseClass() {
-		return TerminateWorkflowResponse.class;
+	public Class<SaveSDGResponse> getResponseClass() {
+		return SaveSDGResponse.class;
 	}
 
 }

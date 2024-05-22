@@ -14,16 +14,16 @@
 
 package com.aliyuncs.ens.transform.v20171110;
 
-import com.aliyuncs.ens.model.v20171110.RollbackWorkflowResponse;
+import com.aliyuncs.ens.model.v20171110.DeleteSDGResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class RollbackWorkflowResponseUnmarshaller {
+public class DeleteSDGResponseUnmarshaller {
 
-	public static RollbackWorkflowResponse unmarshall(RollbackWorkflowResponse rollbackWorkflowResponse, UnmarshallerContext _ctx) {
+	public static DeleteSDGResponse unmarshall(DeleteSDGResponse deleteSDGResponse, UnmarshallerContext _ctx) {
 		
-		rollbackWorkflowResponse.setRequestId(_ctx.stringValue("RollbackWorkflowResponse.RequestId"));
+		deleteSDGResponse.setRequestId(_ctx.stringValue("DeleteSDGResponse.RequestId"));
 	 
-	 	return rollbackWorkflowResponse;
+	 	return deleteSDGResponse;
 	}
 }

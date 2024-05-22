@@ -15,14 +15,14 @@
 package com.aliyuncs.ens.model.v20171110;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ens.transform.v20171110.RestartWorkflowResponseUnmarshaller;
+import com.aliyuncs.ens.transform.v20171110.DeleteSDGResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class RestartWorkflowResponse extends AcsResponse {
+public class DeleteSDGResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -35,8 +35,8 @@ public class RestartWorkflowResponse extends AcsResponse {
 	}
 
 	@Override
-	public RestartWorkflowResponse getInstance(UnmarshallerContext context) {
-		return	RestartWorkflowResponseUnmarshaller.unmarshall(this, context);
+	public DeleteSDGResponse getInstance(UnmarshallerContext context) {
+		return	DeleteSDGResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
