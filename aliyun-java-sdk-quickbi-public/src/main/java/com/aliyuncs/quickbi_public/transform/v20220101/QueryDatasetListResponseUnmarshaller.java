@@ -51,6 +51,7 @@ public class QueryDatasetListResponseUnmarshaller {
 			dataItem.setModifyTime(_ctx.stringValue("QueryDatasetListResponse.Result.Data["+ i +"].ModifyTime"));
 			dataItem.setDatasetName(_ctx.stringValue("QueryDatasetListResponse.Result.Data["+ i +"].DatasetName"));
 			dataItem.setDatasetId(_ctx.stringValue("QueryDatasetListResponse.Result.Data["+ i +"].DatasetId"));
+			dataItem.setOpenOfflineAcceleration(_ctx.booleanValue("QueryDatasetListResponse.Result.Data["+ i +"].OpenOfflineAcceleration"));
 
 			DataSource dataSource = new DataSource();
 			dataSource.setDsType(_ctx.stringValue("QueryDatasetListResponse.Result.Data["+ i +"].DataSource.DsType"));

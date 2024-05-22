@@ -83,6 +83,8 @@ public class QueryDatasetInfoResponse extends AcsResponse {
 
 		private String datasetId;
 
+		private Boolean openOfflineAcceleration;
+
 		private List<CubeTableListItem> cubeTableList;
 
 		private List<DimensionListItem> dimensionList;
@@ -193,6 +195,14 @@ public class QueryDatasetInfoResponse extends AcsResponse {
 
 		public void setDatasetId(String datasetId) {
 			this.datasetId = datasetId;
+		}
+
+		public Boolean getOpenOfflineAcceleration() {
+			return this.openOfflineAcceleration;
+		}
+
+		public void setOpenOfflineAcceleration(Boolean openOfflineAcceleration) {
+			this.openOfflineAcceleration = openOfflineAcceleration;
 		}
 
 		public List<CubeTableListItem> getCubeTableList() {

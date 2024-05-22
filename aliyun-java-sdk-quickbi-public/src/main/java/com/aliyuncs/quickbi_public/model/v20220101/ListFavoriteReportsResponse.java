@@ -135,6 +135,8 @@ public class ListFavoriteReportsResponse extends AcsResponse {
 
 			private String workspaceName;
 
+			private String favoriteDate;
+
 			public String getTreeId() {
 				return this.treeId;
 			}
@@ -237,6 +239,14 @@ public class ListFavoriteReportsResponse extends AcsResponse {
 
 			public void setWorkspaceName(String workspaceName) {
 				this.workspaceName = workspaceName;
+			}
+
+			public String getFavoriteDate() {
+				return this.favoriteDate;
+			}
+
+			public void setFavoriteDate(String favoriteDate) {
+				this.favoriteDate = favoriteDate;
 			}
 		}
 	}

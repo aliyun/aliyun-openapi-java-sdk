@@ -129,6 +129,8 @@ public class QueryDatasetListResponse extends AcsResponse {
 
 			private String datasetId;
 
+			private Boolean openOfflineAcceleration;
+
 			private DataSource dataSource;
 
 			private Directory directory;
@@ -211,6 +213,14 @@ public class QueryDatasetListResponse extends AcsResponse {
 
 			public void setDatasetId(String datasetId) {
 				this.datasetId = datasetId;
+			}
+
+			public Boolean getOpenOfflineAcceleration() {
+				return this.openOfflineAcceleration;
+			}
+
+			public void setOpenOfflineAcceleration(Boolean openOfflineAcceleration) {
+				this.openOfflineAcceleration = openOfflineAcceleration;
 			}
 
 			public DataSource getDataSource() {

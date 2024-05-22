@@ -1,3 +1,7 @@
+2024-05-22 Version: 2.1.6
+- Add CreateTicket4Copilot API.
+- QueryDatasetList and QueryDatasetInfo APIs add response parameters.
+
 2024-03-19 Version: 2.1.5
 - Add QueryWorkspaceRoleConfig, ListWorkspaceRoleUsers, ListWorkspaceRoles, QueryOrganizationRoleConfig, ListOrganizationRoleUsers and ListOrganizationRoles APIs.
 

@@ -47,6 +47,7 @@ public class QueryDatasetInfoResponseUnmarshaller {
 		result.setGmtCreate(_ctx.stringValue("QueryDatasetInfoResponse.Result.GmtCreate"));
 		result.setDsType(_ctx.stringValue("QueryDatasetInfoResponse.Result.DsType"));
 		result.setDatasetId(_ctx.stringValue("QueryDatasetInfoResponse.Result.DatasetId"));
+		result.setOpenOfflineAcceleration(_ctx.booleanValue("QueryDatasetInfoResponse.Result.OpenOfflineAcceleration"));
 
 		Directory directory = new Directory();
 		directory.setPathId(_ctx.stringValue("QueryDatasetInfoResponse.Result.Directory.PathId"));

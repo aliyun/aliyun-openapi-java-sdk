@@ -52,6 +52,7 @@ public class ListFavoriteReportsResponseUnmarshaller {
 			dataItem.setHasEditAuth(_ctx.booleanValue("ListFavoriteReportsResponse.Result.Data["+ i +"].HasEditAuth"));
 			dataItem.setWorkspaceId(_ctx.stringValue("ListFavoriteReportsResponse.Result.Data["+ i +"].WorkspaceId"));
 			dataItem.setWorkspaceName(_ctx.stringValue("ListFavoriteReportsResponse.Result.Data["+ i +"].WorkspaceName"));
+			dataItem.setFavoriteDate(_ctx.stringValue("ListFavoriteReportsResponse.Result.Data["+ i +"].FavoriteDate"));
 
 			data.add(dataItem);
 		}
