@@ -31,6 +31,8 @@ public class DescribeBackupSetListRequest extends RpcAcsRequest<DescribeBackupSe
 
 	private Long startTime;
 
+	private String destCrossRegion;
+
 	private Integer pageNumber;
 
 	private Integer pageSize;
@@ -73,6 +75,17 @@ public class DescribeBackupSetListRequest extends RpcAcsRequest<DescribeBackupSe
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime.toString());
+		}
+	}
+
+	public String getDestCrossRegion() {
+		return this.destCrossRegion;
+	}
+
+	public void setDestCrossRegion(String destCrossRegion) {
+		this.destCrossRegion = destCrossRegion;
+		if(destCrossRegion != null){
+			putQueryParameter("DestCrossRegion", destCrossRegion);
 		}
 	}
 

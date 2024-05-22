@@ -27,11 +27,11 @@ public class DescribeTasksResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Integer totalRecordCount;
-
 	private Integer pageNumber;
 
 	private Integer pageRecordCount;
+
+	private Integer totalRecordCount;
 
 	private List<TaskProgressInfo> items;
 
@@ -41,14 +41,6 @@ public class DescribeTasksResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalRecordCount() {
-		return this.totalRecordCount;
-	}
-
-	public void setTotalRecordCount(Integer totalRecordCount) {
-		this.totalRecordCount = totalRecordCount;
 	}
 
 	public Integer getPageNumber() {
@@ -67,6 +59,14 @@ public class DescribeTasksResponse extends AcsResponse {
 		this.pageRecordCount = pageRecordCount;
 	}
 
+	public Integer getTotalRecordCount() {
+		return this.totalRecordCount;
+	}
+
+	public void setTotalRecordCount(Integer totalRecordCount) {
+		this.totalRecordCount = totalRecordCount;
+	}
+
 	public List<TaskProgressInfo> getItems() {
 		return this.items;
 	}
@@ -77,52 +77,34 @@ public class DescribeTasksResponse extends AcsResponse {
 
 	public static class TaskProgressInfo {
 
-		private String dBName;
-
-		private String beginTime;
-
-		private String progressInfo;
+		private String status;
 
 		private String finishTime;
 
-		private String taskAction;
-
-		private String taskId;
-
 		private String progress;
 
-		private String finishTime1;
-
-		private String status;
+		private String beginTime;
 
 		private String taskErrorCode;
 
-		private String taskErrorMessage;
+		private String dBName;
+
+		private String progressInfo;
 
 		private String scaleOutToken;
 
-		public String getDBName() {
-			return this.dBName;
+		private String taskId;
+
+		private String taskErrorMessage;
+
+		private String taskAction;
+
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setDBName(String dBName) {
-			this.dBName = dBName;
-		}
-
-		public String getBeginTime() {
-			return this.beginTime;
-		}
-
-		public void setBeginTime(String beginTime) {
-			this.beginTime = beginTime;
-		}
-
-		public String getProgressInfo() {
-			return this.progressInfo;
-		}
-
-		public void setProgressInfo(String progressInfo) {
-			this.progressInfo = progressInfo;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getFinishTime() {
@@ -133,22 +115,6 @@ public class DescribeTasksResponse extends AcsResponse {
 			this.finishTime = finishTime;
 		}
 
-		public String getTaskAction() {
-			return this.taskAction;
-		}
-
-		public void setTaskAction(String taskAction) {
-			this.taskAction = taskAction;
-		}
-
-		public String getTaskId() {
-			return this.taskId;
-		}
-
-		public void setTaskId(String taskId) {
-			this.taskId = taskId;
-		}
-
 		public String getProgress() {
 			return this.progress;
 		}
@@ -157,20 +123,12 @@ public class DescribeTasksResponse extends AcsResponse {
 			this.progress = progress;
 		}
 
-		public String getFinishTime1() {
-			return this.finishTime1;
+		public String getBeginTime() {
+			return this.beginTime;
 		}
 
-		public void setFinishTime1(String finishTime1) {
-			this.finishTime1 = finishTime1;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
+		public void setBeginTime(String beginTime) {
+			this.beginTime = beginTime;
 		}
 
 		public String getTaskErrorCode() {
@@ -181,12 +139,20 @@ public class DescribeTasksResponse extends AcsResponse {
 			this.taskErrorCode = taskErrorCode;
 		}
 
-		public String getTaskErrorMessage() {
-			return this.taskErrorMessage;
+		public String getDBName() {
+			return this.dBName;
 		}
 
-		public void setTaskErrorMessage(String taskErrorMessage) {
-			this.taskErrorMessage = taskErrorMessage;
+		public void setDBName(String dBName) {
+			this.dBName = dBName;
+		}
+
+		public String getProgressInfo() {
+			return this.progressInfo;
+		}
+
+		public void setProgressInfo(String progressInfo) {
+			this.progressInfo = progressInfo;
 		}
 
 		public String getScaleOutToken() {
@@ -195,6 +161,30 @@ public class DescribeTasksResponse extends AcsResponse {
 
 		public void setScaleOutToken(String scaleOutToken) {
 			this.scaleOutToken = scaleOutToken;
+		}
+
+		public String getTaskId() {
+			return this.taskId;
+		}
+
+		public void setTaskId(String taskId) {
+			this.taskId = taskId;
+		}
+
+		public String getTaskErrorMessage() {
+			return this.taskErrorMessage;
+		}
+
+		public void setTaskErrorMessage(String taskErrorMessage) {
+			this.taskErrorMessage = taskErrorMessage;
+		}
+
+		public String getTaskAction() {
+			return this.taskAction;
+		}
+
+		public void setTaskAction(String taskAction) {
+			this.taskAction = taskAction;
 		}
 	}
 

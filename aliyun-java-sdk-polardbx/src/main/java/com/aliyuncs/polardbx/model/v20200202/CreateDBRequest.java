@@ -33,13 +33,17 @@ public class CreateDBRequest extends RpcAcsRequest<CreateDBResponse> {
 
 	private String accountPrivilege;
 
-	private String accountName;
+	private String mode;
 
-	private String dbName;
+	private String accountName;
 
 	private String securityAccountName;
 
 	private String dbDescription;
+
+	private String dbName;
+
+	private String storagePoolName;
 	public CreateDBRequest() {
 		super("polardbx", "2020-02-02", "CreateDB", "polardbx");
 		setMethod(MethodType.POST);
@@ -93,6 +97,17 @@ public class CreateDBRequest extends RpcAcsRequest<CreateDBResponse> {
 		}
 	}
 
+	public String getMode() {
+		return this.mode;
+	}
+
+	public void setMode(String mode) {
+		this.mode = mode;
+		if(mode != null){
+			putQueryParameter("Mode", mode);
+		}
+	}
+
 	public String getAccountName() {
 		return this.accountName;
 	}
@@ -101,17 +116,6 @@ public class CreateDBRequest extends RpcAcsRequest<CreateDBResponse> {
 		this.accountName = accountName;
 		if(accountName != null){
 			putQueryParameter("AccountName", accountName);
-		}
-	}
-
-	public String getDbName() {
-		return this.dbName;
-	}
-
-	public void setDbName(String dbName) {
-		this.dbName = dbName;
-		if(dbName != null){
-			putQueryParameter("DbName", dbName);
 		}
 	}
 
@@ -134,6 +138,28 @@ public class CreateDBRequest extends RpcAcsRequest<CreateDBResponse> {
 		this.dbDescription = dbDescription;
 		if(dbDescription != null){
 			putQueryParameter("DbDescription", dbDescription);
+		}
+	}
+
+	public String getDbName() {
+		return this.dbName;
+	}
+
+	public void setDbName(String dbName) {
+		this.dbName = dbName;
+		if(dbName != null){
+			putQueryParameter("DbName", dbName);
+		}
+	}
+
+	public String getStoragePoolName() {
+		return this.storagePoolName;
+	}
+
+	public void setStoragePoolName(String storagePoolName) {
+		this.storagePoolName = storagePoolName;
+		if(storagePoolName != null){
+			putQueryParameter("StoragePoolName", storagePoolName);
 		}
 	}
 

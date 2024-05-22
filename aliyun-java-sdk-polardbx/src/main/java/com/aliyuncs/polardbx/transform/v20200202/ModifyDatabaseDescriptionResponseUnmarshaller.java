@@ -23,8 +23,8 @@ public class ModifyDatabaseDescriptionResponseUnmarshaller {
 	public static ModifyDatabaseDescriptionResponse unmarshall(ModifyDatabaseDescriptionResponse modifyDatabaseDescriptionResponse, UnmarshallerContext _ctx) {
 		
 		modifyDatabaseDescriptionResponse.setRequestId(_ctx.stringValue("ModifyDatabaseDescriptionResponse.RequestId"));
-		modifyDatabaseDescriptionResponse.setSuccess(_ctx.booleanValue("ModifyDatabaseDescriptionResponse.Success"));
 		modifyDatabaseDescriptionResponse.setMessage(_ctx.stringValue("ModifyDatabaseDescriptionResponse.Message"));
+		modifyDatabaseDescriptionResponse.setSuccess(_ctx.booleanValue("ModifyDatabaseDescriptionResponse.Success"));
 	 
 	 	return modifyDatabaseDescriptionResponse;
 	}

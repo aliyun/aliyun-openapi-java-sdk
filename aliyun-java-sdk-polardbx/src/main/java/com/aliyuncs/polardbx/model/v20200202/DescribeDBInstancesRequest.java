@@ -25,9 +25,19 @@ import com.aliyuncs.polardbx.Endpoint;
 public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstancesResponse> {
 	   
 
+	private String resourceGroupId;
+
+	private Boolean mustHasCdc;
+
+	private String tags;
+
+	private String instanceId;
+
 	private Integer pageNumber;
 
 	private Integer pageSize;
+
+	private String series;
 	public DescribeDBInstancesRequest() {
 		super("polardbx", "2020-02-02", "DescribeDBInstances", "polardbx");
 		setMethod(MethodType.POST);
@@ -35,6 +45,50 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public Boolean getMustHasCdc() {
+		return this.mustHasCdc;
+	}
+
+	public void setMustHasCdc(Boolean mustHasCdc) {
+		this.mustHasCdc = mustHasCdc;
+		if(mustHasCdc != null){
+			putQueryParameter("MustHasCdc", mustHasCdc.toString());
+		}
+	}
+
+	public String getTags() {
+		return this.tags;
+	}
+
+	public void setTags(String tags) {
+		this.tags = tags;
+		if(tags != null){
+			putQueryParameter("Tags", tags);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
 	}
 
 	public Integer getPageNumber() {
@@ -56,6 +110,17 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getSeries() {
+		return this.series;
+	}
+
+	public void setSeries(String series) {
+		this.series = series;
+		if(series != null){
+			putQueryParameter("Series", series);
 		}
 	}
 

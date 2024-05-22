@@ -33,17 +33,25 @@ public class UpdateBackupPolicyResponseUnmarshaller {
 		List<Account> data = new ArrayList<Account>();
 		for (int i = 0; i < _ctx.lengthValue("UpdateBackupPolicyResponse.Data.Length"); i++) {
 			Account account = new Account();
+			account.setLogLocalRetentionSpace(_ctx.integerValue("UpdateBackupPolicyResponse.Data["+ i +"].LogLocalRetentionSpace"));
 			account.setDBInstanceName(_ctx.stringValue("UpdateBackupPolicyResponse.Data["+ i +"].DBInstanceName"));
-			account.setBackupType(_ctx.stringValue("UpdateBackupPolicyResponse.Data["+ i +"].BackupType"));
+			account.setBackupWay(_ctx.stringValue("UpdateBackupPolicyResponse.Data["+ i +"].BackupWay"));
 			account.setBackupPeriod(_ctx.stringValue("UpdateBackupPolicyResponse.Data["+ i +"].BackupPeriod"));
+			account.setForceCleanOnHighSpaceUsage(_ctx.integerValue("UpdateBackupPolicyResponse.Data["+ i +"].ForceCleanOnHighSpaceUsage"));
+			account.setBackupType(_ctx.stringValue("UpdateBackupPolicyResponse.Data["+ i +"].BackupType"));
+			account.setLocalLogRetention(_ctx.integerValue("UpdateBackupPolicyResponse.Data["+ i +"].LocalLogRetention"));
+			account.setRemoveLogRetention(_ctx.integerValue("UpdateBackupPolicyResponse.Data["+ i +"].RemoveLogRetention"));
 			account.setBackupPlanBegin(_ctx.stringValue("UpdateBackupPolicyResponse.Data["+ i +"].BackupPlanBegin"));
 			account.setBackupSetRetention(_ctx.integerValue("UpdateBackupPolicyResponse.Data["+ i +"].BackupSetRetention"));
 			account.setIsEnabled(_ctx.integerValue("UpdateBackupPolicyResponse.Data["+ i +"].IsEnabled"));
-			account.setBackupWay(_ctx.stringValue("UpdateBackupPolicyResponse.Data["+ i +"].BackupWay"));
-			account.setRemoveLogRetention(_ctx.integerValue("UpdateBackupPolicyResponse.Data["+ i +"].RemoveLogRetention"));
-			account.setLocalLogRetention(_ctx.integerValue("UpdateBackupPolicyResponse.Data["+ i +"].LocalLogRetention"));
-			account.setLogLocalRetentionSpace(_ctx.integerValue("UpdateBackupPolicyResponse.Data["+ i +"].LogLocalRetentionSpace"));
-			account.setForceCleanOnHighSpaceUsage(_ctx.integerValue("UpdateBackupPolicyResponse.Data["+ i +"].ForceCleanOnHighSpaceUsage"));
+			account.setColdDataBackupInterval(_ctx.integerValue("UpdateBackupPolicyResponse.Data["+ i +"].ColdDataBackupInterval"));
+			account.setColdDataBackupRetention(_ctx.integerValue("UpdateBackupPolicyResponse.Data["+ i +"].ColdDataBackupRetention"));
+			account.setLocalLogRetentionNumber(_ctx.integerValue("UpdateBackupPolicyResponse.Data["+ i +"].LocalLogRetentionNumber"));
+			account.setIsCrossRegionDataBackupEnabled(_ctx.booleanValue("UpdateBackupPolicyResponse.Data["+ i +"].IsCrossRegionDataBackupEnabled"));
+			account.setIsCrossRegionLogBackupEnabled(_ctx.booleanValue("UpdateBackupPolicyResponse.Data["+ i +"].IsCrossRegionLogBackupEnabled"));
+			account.setDestCrossRegion(_ctx.stringValue("UpdateBackupPolicyResponse.Data["+ i +"].DestCrossRegion"));
+			account.setCrossRegionDataBackupRetention(_ctx.integerValue("UpdateBackupPolicyResponse.Data["+ i +"].CrossRegionDataBackupRetention"));
+			account.setCrossRegionLogBackupRetention(_ctx.integerValue("UpdateBackupPolicyResponse.Data["+ i +"].CrossRegionLogBackupRetention"));
 
 			data.add(account);
 		}

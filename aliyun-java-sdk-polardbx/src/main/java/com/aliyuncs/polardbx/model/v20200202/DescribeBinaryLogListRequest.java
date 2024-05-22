@@ -34,6 +34,8 @@ public class DescribeBinaryLogListRequest extends RpcAcsRequest<DescribeBinaryLo
 	private Integer pageSize;
 
 	private String endTime;
+
+	private String instanceName;
 	public DescribeBinaryLogListRequest() {
 		super("polardbx", "2020-02-02", "DescribeBinaryLogList", "polardbx");
 		setMethod(MethodType.POST);
@@ -95,6 +97,17 @@ public class DescribeBinaryLogListRequest extends RpcAcsRequest<DescribeBinaryLo
 		this.endTime = endTime;
 		if(endTime != null){
 			putQueryParameter("EndTime", endTime);
+		}
+	}
+
+	public String getInstanceName() {
+		return this.instanceName;
+	}
+
+	public void setInstanceName(String instanceName) {
+		this.instanceName = instanceName;
+		if(instanceName != null){
+			putQueryParameter("InstanceName", instanceName);
 		}
 	}
 

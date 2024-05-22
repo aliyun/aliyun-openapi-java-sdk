@@ -47,21 +47,13 @@ public class DescribeParametersResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String engine;
-
 		private String engineVersion;
+
+		private String engine;
 
 		private List<DBInstanceParameter> configParameters;
 
 		private List<DBInstanceParameter> runningParameters;
-
-		public String getEngine() {
-			return this.engine;
-		}
-
-		public void setEngine(String engine) {
-			this.engine = engine;
-		}
 
 		public String getEngineVersion() {
 			return this.engineVersion;
@@ -69,6 +61,14 @@ public class DescribeParametersResponse extends AcsResponse {
 
 		public void setEngineVersion(String engineVersion) {
 			this.engineVersion = engineVersion;
+		}
+
+		public String getEngine() {
+			return this.engine;
+		}
+
+		public void setEngine(String engine) {
+			this.engine = engine;
 		}
 
 		public List<DBInstanceParameter> getConfigParameters() {

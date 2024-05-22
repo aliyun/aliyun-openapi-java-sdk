@@ -23,8 +23,8 @@ public class DeleteDBResponseUnmarshaller {
 	public static DeleteDBResponse unmarshall(DeleteDBResponse deleteDBResponse, UnmarshallerContext _ctx) {
 		
 		deleteDBResponse.setRequestId(_ctx.stringValue("DeleteDBResponse.RequestId"));
-		deleteDBResponse.setSuccess(_ctx.booleanValue("DeleteDBResponse.Success"));
 		deleteDBResponse.setMessage(_ctx.stringValue("DeleteDBResponse.Message"));
+		deleteDBResponse.setSuccess(_ctx.booleanValue("DeleteDBResponse.Success"));
 	 
 	 	return deleteDBResponse;
 	}

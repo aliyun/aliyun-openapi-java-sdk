@@ -23,8 +23,8 @@ public class ModifySecurityIpsResponseUnmarshaller {
 	public static ModifySecurityIpsResponse unmarshall(ModifySecurityIpsResponse modifySecurityIpsResponse, UnmarshallerContext _ctx) {
 		
 		modifySecurityIpsResponse.setRequestId(_ctx.stringValue("ModifySecurityIpsResponse.RequestId"));
-		modifySecurityIpsResponse.setSuccess(_ctx.booleanValue("ModifySecurityIpsResponse.Success"));
 		modifySecurityIpsResponse.setMessage(_ctx.stringValue("ModifySecurityIpsResponse.Message"));
+		modifySecurityIpsResponse.setSuccess(_ctx.booleanValue("ModifySecurityIpsResponse.Success"));
 	 
 	 	return modifySecurityIpsResponse;
 	}

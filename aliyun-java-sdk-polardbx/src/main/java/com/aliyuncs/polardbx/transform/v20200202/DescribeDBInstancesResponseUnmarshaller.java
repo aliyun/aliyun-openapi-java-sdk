@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.polardbx.model.v20200202.DescribeDBInstancesResponse;
 import com.aliyuncs.polardbx.model.v20200202.DescribeDBInstancesResponse.DBInstance;
 import com.aliyuncs.polardbx.model.v20200202.DescribeDBInstancesResponse.DBInstance.PolarDBXNode;
+import com.aliyuncs.polardbx.model.v20200202.DescribeDBInstancesResponse.DBInstance.TagSetItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -35,28 +36,46 @@ public class DescribeDBInstancesResponseUnmarshaller {
 		List<DBInstance> dBInstances = new ArrayList<DBInstance>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDBInstancesResponse.DBInstances.Length"); i++) {
 			DBInstance dBInstance = new DBInstance();
-			dBInstance.setId(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].Id"));
-			dBInstance.setDescription(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].Description"));
-			dBInstance.setPayType(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].PayType"));
-			dBInstance.setCreateTime(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].CreateTime"));
+			dBInstance.setType(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].Type"));
+			dBInstance.setStatus(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].Status"));
+			dBInstance.setCommodityCode(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].CommodityCode"));
 			dBInstance.setExpireTime(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].ExpireTime"));
 			dBInstance.setExpired(_ctx.booleanValue("DescribeDBInstancesResponse.DBInstances["+ i +"].Expired"));
-			dBInstance.setRegionId(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].RegionId"));
-			dBInstance.setZoneId(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].ZoneId"));
-			dBInstance.setNetwork(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].Network"));
-			dBInstance.setVPCId(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].VPCId"));
-			dBInstance.setEngine(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].Engine"));
-			dBInstance.setDBType(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].DBType"));
-			dBInstance.setDBVersion(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].DBVersion"));
-			dBInstance.setStatus(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].Status"));
-			dBInstance.setLockMode(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].LockMode"));
+			dBInstance.setCreateTime(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].CreateTime"));
+			dBInstance.setPayType(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].PayType"));
 			dBInstance.setLockReason(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].LockReason"));
-			dBInstance.setNodeCount(_ctx.integerValue("DescribeDBInstancesResponse.DBInstances["+ i +"].NodeCount"));
+			dBInstance.setDBType(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].DBType"));
+			dBInstance.setLockMode(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].LockMode"));
+			dBInstance.setVPCId(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].VPCId"));
+			dBInstance.setMinorVersion(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].MinorVersion"));
+			dBInstance.setRegionId(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].RegionId"));
+			dBInstance.setNetwork(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].Network"));
+			dBInstance.setDBVersion(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].DBVersion"));
+			dBInstance.setDescription(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].Description"));
 			dBInstance.setNodeClass(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].NodeClass"));
 			dBInstance.setStorageUsed(_ctx.longValue("DescribeDBInstancesResponse.DBInstances["+ i +"].StorageUsed"));
-			dBInstance.setCommodityCode(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].CommodityCode"));
-			dBInstance.setType(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].Type"));
-			dBInstance.setMinorVersion(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].MinorVersion"));
+			dBInstance.setNodeCount(_ctx.integerValue("DescribeDBInstancesResponse.DBInstances["+ i +"].NodeCount"));
+			dBInstance.setZoneId(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].ZoneId"));
+			dBInstance.setEngine(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].Engine"));
+			dBInstance.setId(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].Id"));
+			dBInstance.setResourceGroupId(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].ResourceGroupId"));
+			dBInstance.setDBInstanceName(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].DBInstanceName"));
+			dBInstance.setDnNodeCount(_ctx.integerValue("DescribeDBInstancesResponse.DBInstances["+ i +"].DnNodeCount"));
+			dBInstance.setCnNodeCount(_ctx.integerValue("DescribeDBInstancesResponse.DBInstances["+ i +"].CnNodeCount"));
+			dBInstance.setCnNodeClassCode(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].CnNodeClassCode"));
+			dBInstance.setDnNodeClassCode(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].DnNodeClassCode"));
+			dBInstance.setSeries(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].Series"));
+			dBInstance.setContainBinlogX(_ctx.booleanValue("DescribeDBInstancesResponse.DBInstances["+ i +"].ContainBinlogX"));
+			dBInstance.setSupportBinlogX(_ctx.booleanValue("DescribeDBInstancesResponse.DBInstances["+ i +"].SupportBinlogX"));
+			dBInstance.setCdcInstanceName(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].CdcInstanceName"));
+			dBInstance.setTopologyType(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].TopologyType"));
+			dBInstance.setTertiaryZone(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].TertiaryZone"));
+			dBInstance.setPrimaryZone(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].PrimaryZone"));
+			dBInstance.setSecondaryZone(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].SecondaryZone"));
+			dBInstance.setColumnarInstanceName(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].ColumnarInstanceName"));
+			dBInstance.setIsInGdn(_ctx.booleanValue("DescribeDBInstancesResponse.DBInstances["+ i +"].isInGdn"));
+			dBInstance.setGdnRole(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].gdnRole"));
+			dBInstance.setCpuType(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].CpuType"));
 
 			List<String> readDBInstances = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDBInstancesResponse.DBInstances["+ i +"].ReadDBInstances.Length"); j++) {
@@ -64,17 +83,33 @@ public class DescribeDBInstancesResponseUnmarshaller {
 			}
 			dBInstance.setReadDBInstances(readDBInstances);
 
+			List<String> columnarReadDBInstances = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeDBInstancesResponse.DBInstances["+ i +"].ColumnarReadDBInstances.Length"); j++) {
+				columnarReadDBInstances.add(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].ColumnarReadDBInstances["+ j +"]"));
+			}
+			dBInstance.setColumnarReadDBInstances(columnarReadDBInstances);
+
 			List<PolarDBXNode> nodes = new ArrayList<PolarDBXNode>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDBInstancesResponse.DBInstances["+ i +"].Nodes.Length"); j++) {
 				PolarDBXNode polarDBXNode = new PolarDBXNode();
+				polarDBXNode.setZoneId(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].Nodes["+ j +"].ZoneId"));
 				polarDBXNode.setId(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].Nodes["+ j +"].Id"));
 				polarDBXNode.setClassCode(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].Nodes["+ j +"].ClassCode"));
 				polarDBXNode.setRegionId(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].Nodes["+ j +"].RegionId"));
-				polarDBXNode.setZoneId(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].Nodes["+ j +"].ZoneId"));
 
 				nodes.add(polarDBXNode);
 			}
 			dBInstance.setNodes(nodes);
+
+			List<TagSetItem> tagSet = new ArrayList<TagSetItem>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeDBInstancesResponse.DBInstances["+ i +"].TagSet.Length"); j++) {
+				TagSetItem tagSetItem = new TagSetItem();
+				tagSetItem.setKey(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].TagSet["+ j +"].Key"));
+				tagSetItem.setValue(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].TagSet["+ j +"].Value"));
+
+				tagSet.add(tagSetItem);
+			}
+			dBInstance.setTagSet(tagSet);
 
 			dBInstances.add(dBInstance);
 		}

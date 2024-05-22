@@ -77,42 +77,34 @@ public class DescribeBinaryLogListResponse extends AcsResponse {
 
 	public static class LogListItem {
 
-		private Long id;
-
-		private String createdTime;
+		private String endTime;
 
 		private String modifiedTime;
 
-		private String fileName;
+		private String uploadHost;
 
 		private Integer uploadStatus;
 
-		private Integer purgeStatus;
-
-		private String uploadHost;
+		private String downloadLink;
 
 		private String beginTime;
 
-		private String endTime;
-
 		private Long logSize;
 
-		private String downloadLink;
+		private String fileName;
 
-		public Long getId() {
-			return this.id;
+		private String createdTime;
+
+		private Integer purgeStatus;
+
+		private Long id;
+
+		public String getEndTime() {
+			return this.endTime;
 		}
 
-		public void setId(Long id) {
-			this.id = id;
-		}
-
-		public String getCreatedTime() {
-			return this.createdTime;
-		}
-
-		public void setCreatedTime(String createdTime) {
-			this.createdTime = createdTime;
+		public void setEndTime(String endTime) {
+			this.endTime = endTime;
 		}
 
 		public String getModifiedTime() {
@@ -123,12 +115,12 @@ public class DescribeBinaryLogListResponse extends AcsResponse {
 			this.modifiedTime = modifiedTime;
 		}
 
-		public String getFileName() {
-			return this.fileName;
+		public String getUploadHost() {
+			return this.uploadHost;
 		}
 
-		public void setFileName(String fileName) {
-			this.fileName = fileName;
+		public void setUploadHost(String uploadHost) {
+			this.uploadHost = uploadHost;
 		}
 
 		public Integer getUploadStatus() {
@@ -139,20 +131,12 @@ public class DescribeBinaryLogListResponse extends AcsResponse {
 			this.uploadStatus = uploadStatus;
 		}
 
-		public Integer getPurgeStatus() {
-			return this.purgeStatus;
+		public String getDownloadLink() {
+			return this.downloadLink;
 		}
 
-		public void setPurgeStatus(Integer purgeStatus) {
-			this.purgeStatus = purgeStatus;
-		}
-
-		public String getUploadHost() {
-			return this.uploadHost;
-		}
-
-		public void setUploadHost(String uploadHost) {
-			this.uploadHost = uploadHost;
+		public void setDownloadLink(String downloadLink) {
+			this.downloadLink = downloadLink;
 		}
 
 		public String getBeginTime() {
@@ -163,14 +147,6 @@ public class DescribeBinaryLogListResponse extends AcsResponse {
 			this.beginTime = beginTime;
 		}
 
-		public String getEndTime() {
-			return this.endTime;
-		}
-
-		public void setEndTime(String endTime) {
-			this.endTime = endTime;
-		}
-
 		public Long getLogSize() {
 			return this.logSize;
 		}
@@ -179,12 +155,36 @@ public class DescribeBinaryLogListResponse extends AcsResponse {
 			this.logSize = logSize;
 		}
 
-		public String getDownloadLink() {
-			return this.downloadLink;
+		public String getFileName() {
+			return this.fileName;
 		}
 
-		public void setDownloadLink(String downloadLink) {
-			this.downloadLink = downloadLink;
+		public void setFileName(String fileName) {
+			this.fileName = fileName;
+		}
+
+		public String getCreatedTime() {
+			return this.createdTime;
+		}
+
+		public void setCreatedTime(String createdTime) {
+			this.createdTime = createdTime;
+		}
+
+		public Integer getPurgeStatus() {
+			return this.purgeStatus;
+		}
+
+		public void setPurgeStatus(Integer purgeStatus) {
+			this.purgeStatus = purgeStatus;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
 		}
 	}
 

@@ -25,11 +25,23 @@ import com.aliyuncs.polardbx.Endpoint;
 public class ModifyDBInstanceClassRequest extends RpcAcsRequest<ModifyDBInstanceClassResponse> {
 	   
 
+	private String specifiedDNSpecMapJson;
+
+	private String cnClass;
+
+	private String targetDBInstanceClass;
+
+	private Boolean specifiedDNScale;
+
 	private String dBInstanceName;
 
 	private String clientToken;
 
-	private String targetDBInstanceClass;
+	private String switchTimeMode;
+
+	private String switchTime;
+
+	private String dnClass;
 	public ModifyDBInstanceClassRequest() {
 		super("polardbx", "2020-02-02", "ModifyDBInstanceClass", "polardbx");
 		setMethod(MethodType.POST);
@@ -37,6 +49,50 @@ public class ModifyDBInstanceClassRequest extends RpcAcsRequest<ModifyDBInstance
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getSpecifiedDNSpecMapJson() {
+		return this.specifiedDNSpecMapJson;
+	}
+
+	public void setSpecifiedDNSpecMapJson(String specifiedDNSpecMapJson) {
+		this.specifiedDNSpecMapJson = specifiedDNSpecMapJson;
+		if(specifiedDNSpecMapJson != null){
+			putQueryParameter("SpecifiedDNSpecMapJson", specifiedDNSpecMapJson);
+		}
+	}
+
+	public String getCnClass() {
+		return this.cnClass;
+	}
+
+	public void setCnClass(String cnClass) {
+		this.cnClass = cnClass;
+		if(cnClass != null){
+			putQueryParameter("CnClass", cnClass);
+		}
+	}
+
+	public String getTargetDBInstanceClass() {
+		return this.targetDBInstanceClass;
+	}
+
+	public void setTargetDBInstanceClass(String targetDBInstanceClass) {
+		this.targetDBInstanceClass = targetDBInstanceClass;
+		if(targetDBInstanceClass != null){
+			putQueryParameter("TargetDBInstanceClass", targetDBInstanceClass);
+		}
+	}
+
+	public Boolean getSpecifiedDNScale() {
+		return this.specifiedDNScale;
+	}
+
+	public void setSpecifiedDNScale(Boolean specifiedDNScale) {
+		this.specifiedDNScale = specifiedDNScale;
+		if(specifiedDNScale != null){
+			putQueryParameter("SpecifiedDNScale", specifiedDNScale.toString());
+		}
 	}
 
 	public String getDBInstanceName() {
@@ -61,14 +117,36 @@ public class ModifyDBInstanceClassRequest extends RpcAcsRequest<ModifyDBInstance
 		}
 	}
 
-	public String getTargetDBInstanceClass() {
-		return this.targetDBInstanceClass;
+	public String getSwitchTimeMode() {
+		return this.switchTimeMode;
 	}
 
-	public void setTargetDBInstanceClass(String targetDBInstanceClass) {
-		this.targetDBInstanceClass = targetDBInstanceClass;
-		if(targetDBInstanceClass != null){
-			putQueryParameter("TargetDBInstanceClass", targetDBInstanceClass);
+	public void setSwitchTimeMode(String switchTimeMode) {
+		this.switchTimeMode = switchTimeMode;
+		if(switchTimeMode != null){
+			putQueryParameter("SwitchTimeMode", switchTimeMode);
+		}
+	}
+
+	public String getSwitchTime() {
+		return this.switchTime;
+	}
+
+	public void setSwitchTime(String switchTime) {
+		this.switchTime = switchTime;
+		if(switchTime != null){
+			putQueryParameter("SwitchTime", switchTime);
+		}
+	}
+
+	public String getDnClass() {
+		return this.dnClass;
+	}
+
+	public void setDnClass(String dnClass) {
+		this.dnClass = dnClass;
+		if(dnClass != null){
+			putQueryParameter("DnClass", dnClass);
 		}
 	}
 

@@ -29,16 +29,16 @@ public class DescribeRegionsResponseUnmarshaller {
 		
 		describeRegionsResponse.setRequestId(_ctx.stringValue("DescribeRegionsResponse.RequestId"));
 		describeRegionsResponse.setCode(_ctx.integerValue("DescribeRegionsResponse.Code"));
-		describeRegionsResponse.setErrorCode(_ctx.integerValue("DescribeRegionsResponse.ErrorCode"));
-		describeRegionsResponse.setSuccess(_ctx.booleanValue("DescribeRegionsResponse.Success"));
 		describeRegionsResponse.setMessage(_ctx.stringValue("DescribeRegionsResponse.Message"));
+		describeRegionsResponse.setSuccess(_ctx.booleanValue("DescribeRegionsResponse.Success"));
+		describeRegionsResponse.setErrorCode(_ctx.integerValue("DescribeRegionsResponse.ErrorCode"));
 
 		List<Region> regions = new ArrayList<Region>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeRegionsResponse.Regions.Length"); i++) {
 			Region region = new Region();
-			region.setRegionId(_ctx.stringValue("DescribeRegionsResponse.Regions["+ i +"].RegionId"));
-			region.setSupportPolarx20(_ctx.booleanValue("DescribeRegionsResponse.Regions["+ i +"].SupportPolarx20"));
 			region.setSupportPolarx10(_ctx.booleanValue("DescribeRegionsResponse.Regions["+ i +"].SupportPolarx10"));
+			region.setSupportPolarx20(_ctx.booleanValue("DescribeRegionsResponse.Regions["+ i +"].SupportPolarx20"));
+			region.setRegionId(_ctx.stringValue("DescribeRegionsResponse.Regions["+ i +"].RegionId"));
 
 			List<Zone> zones = new ArrayList<Zone>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeRegionsResponse.Regions["+ i +"].Zones.Length"); j++) {

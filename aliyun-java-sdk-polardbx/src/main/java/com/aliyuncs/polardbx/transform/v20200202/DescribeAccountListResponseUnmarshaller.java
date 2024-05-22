@@ -33,13 +33,13 @@ public class DescribeAccountListResponseUnmarshaller {
 		List<Account> data = new ArrayList<Account>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAccountListResponse.Data.Length"); i++) {
 			Account account = new Account();
+			account.setGmtCreated(_ctx.stringValue("DescribeAccountListResponse.Data["+ i +"].GmtCreated"));
+			account.setDBInstanceName(_ctx.stringValue("DescribeAccountListResponse.Data["+ i +"].DBInstanceName"));
 			account.setAccountDescription(_ctx.stringValue("DescribeAccountListResponse.Data["+ i +"].AccountDescription"));
-			account.setAccountName(_ctx.stringValue("DescribeAccountListResponse.Data["+ i +"].AccountName"));
+			account.setDBName(_ctx.stringValue("DescribeAccountListResponse.Data["+ i +"].DBName"));
 			account.setAccountPrivilege(_ctx.stringValue("DescribeAccountListResponse.Data["+ i +"].AccountPrivilege"));
 			account.setAccountType(_ctx.stringValue("DescribeAccountListResponse.Data["+ i +"].AccountType"));
-			account.setDBInstanceName(_ctx.stringValue("DescribeAccountListResponse.Data["+ i +"].DBInstanceName"));
-			account.setDBName(_ctx.stringValue("DescribeAccountListResponse.Data["+ i +"].DBName"));
-			account.setGmtCreated(_ctx.stringValue("DescribeAccountListResponse.Data["+ i +"].GmtCreated"));
+			account.setAccountName(_ctx.stringValue("DescribeAccountListResponse.Data["+ i +"].AccountName"));
 
 			data.add(account);
 		}

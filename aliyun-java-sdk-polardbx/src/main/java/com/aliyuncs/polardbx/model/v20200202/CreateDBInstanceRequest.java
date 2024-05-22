@@ -29,9 +29,15 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 
 	private String engineVersion;
 
+	private String tertiaryZone;
+
+	private String cnClass;
+
 	private String resourceGroupId;
 
 	private String dBNodeClass;
+
+	private String secondaryZone;
 
 	private String period;
 
@@ -43,13 +49,27 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 
 	private String zoneId;
 
+	private String cNNodeCount;
+
 	private String primaryDBInstanceName;
+
+	private String topologyType;
 
 	private String clientToken;
 
+	private Boolean isColumnarReadDBInstance;
+
+	private String dNNodeCount;
+
 	private Integer dBNodeCount;
 
+	private String dnClass;
+
 	private Integer usedTime;
+
+	private String primaryZone;
+
+	private String series;
 
 	private String vPCId;
 
@@ -85,6 +105,28 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		}
 	}
 
+	public String getTertiaryZone() {
+		return this.tertiaryZone;
+	}
+
+	public void setTertiaryZone(String tertiaryZone) {
+		this.tertiaryZone = tertiaryZone;
+		if(tertiaryZone != null){
+			putQueryParameter("TertiaryZone", tertiaryZone);
+		}
+	}
+
+	public String getCnClass() {
+		return this.cnClass;
+	}
+
+	public void setCnClass(String cnClass) {
+		this.cnClass = cnClass;
+		if(cnClass != null){
+			putQueryParameter("CnClass", cnClass);
+		}
+	}
+
 	public String getResourceGroupId() {
 		return this.resourceGroupId;
 	}
@@ -104,6 +146,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.dBNodeClass = dBNodeClass;
 		if(dBNodeClass != null){
 			putQueryParameter("DBNodeClass", dBNodeClass);
+		}
+	}
+
+	public String getSecondaryZone() {
+		return this.secondaryZone;
+	}
+
+	public void setSecondaryZone(String secondaryZone) {
+		this.secondaryZone = secondaryZone;
+		if(secondaryZone != null){
+			putQueryParameter("SecondaryZone", secondaryZone);
 		}
 	}
 
@@ -162,6 +215,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		}
 	}
 
+	public String getCNNodeCount() {
+		return this.cNNodeCount;
+	}
+
+	public void setCNNodeCount(String cNNodeCount) {
+		this.cNNodeCount = cNNodeCount;
+		if(cNNodeCount != null){
+			putQueryParameter("CNNodeCount", cNNodeCount);
+		}
+	}
+
 	public String getPrimaryDBInstanceName() {
 		return this.primaryDBInstanceName;
 	}
@@ -170,6 +234,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.primaryDBInstanceName = primaryDBInstanceName;
 		if(primaryDBInstanceName != null){
 			putQueryParameter("PrimaryDBInstanceName", primaryDBInstanceName);
+		}
+	}
+
+	public String getTopologyType() {
+		return this.topologyType;
+	}
+
+	public void setTopologyType(String topologyType) {
+		this.topologyType = topologyType;
+		if(topologyType != null){
+			putQueryParameter("TopologyType", topologyType);
 		}
 	}
 
@@ -184,6 +259,28 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		}
 	}
 
+	public Boolean getIsColumnarReadDBInstance() {
+		return this.isColumnarReadDBInstance;
+	}
+
+	public void setIsColumnarReadDBInstance(Boolean isColumnarReadDBInstance) {
+		this.isColumnarReadDBInstance = isColumnarReadDBInstance;
+		if(isColumnarReadDBInstance != null){
+			putQueryParameter("IsColumnarReadDBInstance", isColumnarReadDBInstance.toString());
+		}
+	}
+
+	public String getDNNodeCount() {
+		return this.dNNodeCount;
+	}
+
+	public void setDNNodeCount(String dNNodeCount) {
+		this.dNNodeCount = dNNodeCount;
+		if(dNNodeCount != null){
+			putQueryParameter("DNNodeCount", dNNodeCount);
+		}
+	}
+
 	public Integer getDBNodeCount() {
 		return this.dBNodeCount;
 	}
@@ -195,6 +292,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		}
 	}
 
+	public String getDnClass() {
+		return this.dnClass;
+	}
+
+	public void setDnClass(String dnClass) {
+		this.dnClass = dnClass;
+		if(dnClass != null){
+			putQueryParameter("DnClass", dnClass);
+		}
+	}
+
 	public Integer getUsedTime() {
 		return this.usedTime;
 	}
@@ -203,6 +311,28 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.usedTime = usedTime;
 		if(usedTime != null){
 			putQueryParameter("UsedTime", usedTime.toString());
+		}
+	}
+
+	public String getPrimaryZone() {
+		return this.primaryZone;
+	}
+
+	public void setPrimaryZone(String primaryZone) {
+		this.primaryZone = primaryZone;
+		if(primaryZone != null){
+			putQueryParameter("PrimaryZone", primaryZone);
+		}
+	}
+
+	public String getSeries() {
+		return this.series;
+	}
+
+	public void setSeries(String series) {
+		this.series = series;
+		if(series != null){
+			putQueryParameter("Series", series);
 		}
 	}
 

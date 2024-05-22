@@ -33,13 +33,13 @@ public class DescribeBackupSetListResponseUnmarshaller {
 		List<BackupSet> data = new ArrayList<BackupSet>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeBackupSetListResponse.Data.Length"); i++) {
 			BackupSet backupSet = new BackupSet();
-			backupSet.setBackupSetId(_ctx.longValue("DescribeBackupSetListResponse.Data["+ i +"].BackupSetId"));
-			backupSet.setBeginTime(_ctx.longValue("DescribeBackupSetListResponse.Data["+ i +"].BeginTime"));
 			backupSet.setEndTime(_ctx.longValue("DescribeBackupSetListResponse.Data["+ i +"].EndTime"));
-			backupSet.setBackupSetSize(_ctx.longValue("DescribeBackupSetListResponse.Data["+ i +"].BackupSetSize"));
-			backupSet.setBackupModel(_ctx.integerValue("DescribeBackupSetListResponse.Data["+ i +"].BackupModel"));
 			backupSet.setStatus(_ctx.integerValue("DescribeBackupSetListResponse.Data["+ i +"].Status"));
+			backupSet.setBackupSetSize(_ctx.longValue("DescribeBackupSetListResponse.Data["+ i +"].BackupSetSize"));
+			backupSet.setBackupSetId(_ctx.longValue("DescribeBackupSetListResponse.Data["+ i +"].BackupSetId"));
 			backupSet.setBackupType(_ctx.integerValue("DescribeBackupSetListResponse.Data["+ i +"].BackupType"));
+			backupSet.setBeginTime(_ctx.longValue("DescribeBackupSetListResponse.Data["+ i +"].BeginTime"));
+			backupSet.setBackupModel(_ctx.integerValue("DescribeBackupSetListResponse.Data["+ i +"].BackupModel"));
 
 			data.add(backupSet);
 		}

@@ -67,11 +67,21 @@ public class UpdateBackupPolicyResponse extends AcsResponse {
 
 	public static class Account {
 
+		private Integer logLocalRetentionSpace;
+
 		private String dBInstanceName;
+
+		private String backupWay;
+
+		private String backupPeriod;
+
+		private Integer forceCleanOnHighSpaceUsage;
 
 		private String backupType;
 
-		private String backupPeriod;
+		private Integer localLogRetention;
+
+		private Integer removeLogRetention;
 
 		private String backupPlanBegin;
 
@@ -79,15 +89,29 @@ public class UpdateBackupPolicyResponse extends AcsResponse {
 
 		private Integer isEnabled;
 
-		private String backupWay;
+		private Integer coldDataBackupInterval;
 
-		private Integer removeLogRetention;
+		private Integer coldDataBackupRetention;
 
-		private Integer localLogRetention;
+		private Integer localLogRetentionNumber;
 
-		private Integer logLocalRetentionSpace;
+		private Boolean isCrossRegionDataBackupEnabled;
 
-		private Integer forceCleanOnHighSpaceUsage;
+		private Boolean isCrossRegionLogBackupEnabled;
+
+		private String destCrossRegion;
+
+		private Integer crossRegionDataBackupRetention;
+
+		private Integer crossRegionLogBackupRetention;
+
+		public Integer getLogLocalRetentionSpace() {
+			return this.logLocalRetentionSpace;
+		}
+
+		public void setLogLocalRetentionSpace(Integer logLocalRetentionSpace) {
+			this.logLocalRetentionSpace = logLocalRetentionSpace;
+		}
 
 		public String getDBInstanceName() {
 			return this.dBInstanceName;
@@ -95,6 +119,30 @@ public class UpdateBackupPolicyResponse extends AcsResponse {
 
 		public void setDBInstanceName(String dBInstanceName) {
 			this.dBInstanceName = dBInstanceName;
+		}
+
+		public String getBackupWay() {
+			return this.backupWay;
+		}
+
+		public void setBackupWay(String backupWay) {
+			this.backupWay = backupWay;
+		}
+
+		public String getBackupPeriod() {
+			return this.backupPeriod;
+		}
+
+		public void setBackupPeriod(String backupPeriod) {
+			this.backupPeriod = backupPeriod;
+		}
+
+		public Integer getForceCleanOnHighSpaceUsage() {
+			return this.forceCleanOnHighSpaceUsage;
+		}
+
+		public void setForceCleanOnHighSpaceUsage(Integer forceCleanOnHighSpaceUsage) {
+			this.forceCleanOnHighSpaceUsage = forceCleanOnHighSpaceUsage;
 		}
 
 		public String getBackupType() {
@@ -105,12 +153,20 @@ public class UpdateBackupPolicyResponse extends AcsResponse {
 			this.backupType = backupType;
 		}
 
-		public String getBackupPeriod() {
-			return this.backupPeriod;
+		public Integer getLocalLogRetention() {
+			return this.localLogRetention;
 		}
 
-		public void setBackupPeriod(String backupPeriod) {
-			this.backupPeriod = backupPeriod;
+		public void setLocalLogRetention(Integer localLogRetention) {
+			this.localLogRetention = localLogRetention;
+		}
+
+		public Integer getRemoveLogRetention() {
+			return this.removeLogRetention;
+		}
+
+		public void setRemoveLogRetention(Integer removeLogRetention) {
+			this.removeLogRetention = removeLogRetention;
 		}
 
 		public String getBackupPlanBegin() {
@@ -137,44 +193,68 @@ public class UpdateBackupPolicyResponse extends AcsResponse {
 			this.isEnabled = isEnabled;
 		}
 
-		public String getBackupWay() {
-			return this.backupWay;
+		public Integer getColdDataBackupInterval() {
+			return this.coldDataBackupInterval;
 		}
 
-		public void setBackupWay(String backupWay) {
-			this.backupWay = backupWay;
+		public void setColdDataBackupInterval(Integer coldDataBackupInterval) {
+			this.coldDataBackupInterval = coldDataBackupInterval;
 		}
 
-		public Integer getRemoveLogRetention() {
-			return this.removeLogRetention;
+		public Integer getColdDataBackupRetention() {
+			return this.coldDataBackupRetention;
 		}
 
-		public void setRemoveLogRetention(Integer removeLogRetention) {
-			this.removeLogRetention = removeLogRetention;
+		public void setColdDataBackupRetention(Integer coldDataBackupRetention) {
+			this.coldDataBackupRetention = coldDataBackupRetention;
 		}
 
-		public Integer getLocalLogRetention() {
-			return this.localLogRetention;
+		public Integer getLocalLogRetentionNumber() {
+			return this.localLogRetentionNumber;
 		}
 
-		public void setLocalLogRetention(Integer localLogRetention) {
-			this.localLogRetention = localLogRetention;
+		public void setLocalLogRetentionNumber(Integer localLogRetentionNumber) {
+			this.localLogRetentionNumber = localLogRetentionNumber;
 		}
 
-		public Integer getLogLocalRetentionSpace() {
-			return this.logLocalRetentionSpace;
+		public Boolean getIsCrossRegionDataBackupEnabled() {
+			return this.isCrossRegionDataBackupEnabled;
 		}
 
-		public void setLogLocalRetentionSpace(Integer logLocalRetentionSpace) {
-			this.logLocalRetentionSpace = logLocalRetentionSpace;
+		public void setIsCrossRegionDataBackupEnabled(Boolean isCrossRegionDataBackupEnabled) {
+			this.isCrossRegionDataBackupEnabled = isCrossRegionDataBackupEnabled;
 		}
 
-		public Integer getForceCleanOnHighSpaceUsage() {
-			return this.forceCleanOnHighSpaceUsage;
+		public Boolean getIsCrossRegionLogBackupEnabled() {
+			return this.isCrossRegionLogBackupEnabled;
 		}
 
-		public void setForceCleanOnHighSpaceUsage(Integer forceCleanOnHighSpaceUsage) {
-			this.forceCleanOnHighSpaceUsage = forceCleanOnHighSpaceUsage;
+		public void setIsCrossRegionLogBackupEnabled(Boolean isCrossRegionLogBackupEnabled) {
+			this.isCrossRegionLogBackupEnabled = isCrossRegionLogBackupEnabled;
+		}
+
+		public String getDestCrossRegion() {
+			return this.destCrossRegion;
+		}
+
+		public void setDestCrossRegion(String destCrossRegion) {
+			this.destCrossRegion = destCrossRegion;
+		}
+
+		public Integer getCrossRegionDataBackupRetention() {
+			return this.crossRegionDataBackupRetention;
+		}
+
+		public void setCrossRegionDataBackupRetention(Integer crossRegionDataBackupRetention) {
+			this.crossRegionDataBackupRetention = crossRegionDataBackupRetention;
+		}
+
+		public Integer getCrossRegionLogBackupRetention() {
+			return this.crossRegionLogBackupRetention;
+		}
+
+		public void setCrossRegionLogBackupRetention(Integer crossRegionLogBackupRetention) {
+			this.crossRegionLogBackupRetention = crossRegionLogBackupRetention;
 		}
 	}
 

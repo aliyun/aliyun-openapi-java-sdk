@@ -25,13 +25,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDistributeTableListResponse extends AcsResponse {
 
+	private String message;
+
 	private String requestId;
 
 	private Boolean success;
 
-	private String message;
-
 	private Data data;
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -47,14 +55,6 @@ public class DescribeDistributeTableListResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
 	}
 
 	public Data getData() {
@@ -83,9 +83,9 @@ public class DescribeDistributeTableListResponse extends AcsResponse {
 
 			private String tableType;
 
-			private String dbKey;
-
 			private String tbKey;
+
+			private String dbKey;
 
 			public String getTableName() {
 				return this.tableName;
@@ -103,20 +103,20 @@ public class DescribeDistributeTableListResponse extends AcsResponse {
 				this.tableType = tableType;
 			}
 
-			public String getDbKey() {
-				return this.dbKey;
-			}
-
-			public void setDbKey(String dbKey) {
-				this.dbKey = dbKey;
-			}
-
 			public String getTbKey() {
 				return this.tbKey;
 			}
 
 			public void setTbKey(String tbKey) {
 				this.tbKey = tbKey;
+			}
+
+			public String getDbKey() {
+				return this.dbKey;
+			}
+
+			public void setDbKey(String dbKey) {
+				this.dbKey = dbKey;
 			}
 		}
 	}

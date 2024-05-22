@@ -27,21 +27,37 @@ public class UpdateBackupPolicyRequest extends RpcAcsRequest<UpdateBackupPolicyR
 
 	private String dBInstanceName;
 
+	private Integer crossRegionDataBackupRetention;
+
 	private Integer forceCleanOnHighSpaceUsage;
 
 	private String backupPlanBegin;
 
 	private Integer removeLogRetention;
 
+	private Integer coldDataBackupRetention;
+
+	private Integer localLogRetentionNumber;
+
 	private String backupType;
 
 	private Integer isEnabled;
 
+	private Integer coldDataBackupInterval;
+
 	private String backupWay;
+
+	private String destCrossRegion;
 
 	private Integer backupSetRetention;
 
+	private Boolean isCrossRegionDataBackupEnabled;
+
+	private Integer crossRegionLogBackupRetention;
+
 	private String backupPeriod;
+
+	private Boolean isCrossRegionLogBackupEnabled;
 
 	private Integer localLogRetention;
 
@@ -63,6 +79,17 @@ public class UpdateBackupPolicyRequest extends RpcAcsRequest<UpdateBackupPolicyR
 		this.dBInstanceName = dBInstanceName;
 		if(dBInstanceName != null){
 			putQueryParameter("DBInstanceName", dBInstanceName);
+		}
+	}
+
+	public Integer getCrossRegionDataBackupRetention() {
+		return this.crossRegionDataBackupRetention;
+	}
+
+	public void setCrossRegionDataBackupRetention(Integer crossRegionDataBackupRetention) {
+		this.crossRegionDataBackupRetention = crossRegionDataBackupRetention;
+		if(crossRegionDataBackupRetention != null){
+			putQueryParameter("CrossRegionDataBackupRetention", crossRegionDataBackupRetention.toString());
 		}
 	}
 
@@ -99,6 +126,28 @@ public class UpdateBackupPolicyRequest extends RpcAcsRequest<UpdateBackupPolicyR
 		}
 	}
 
+	public Integer getColdDataBackupRetention() {
+		return this.coldDataBackupRetention;
+	}
+
+	public void setColdDataBackupRetention(Integer coldDataBackupRetention) {
+		this.coldDataBackupRetention = coldDataBackupRetention;
+		if(coldDataBackupRetention != null){
+			putQueryParameter("ColdDataBackupRetention", coldDataBackupRetention.toString());
+		}
+	}
+
+	public Integer getLocalLogRetentionNumber() {
+		return this.localLogRetentionNumber;
+	}
+
+	public void setLocalLogRetentionNumber(Integer localLogRetentionNumber) {
+		this.localLogRetentionNumber = localLogRetentionNumber;
+		if(localLogRetentionNumber != null){
+			putQueryParameter("LocalLogRetentionNumber", localLogRetentionNumber.toString());
+		}
+	}
+
 	public String getBackupType() {
 		return this.backupType;
 	}
@@ -121,6 +170,17 @@ public class UpdateBackupPolicyRequest extends RpcAcsRequest<UpdateBackupPolicyR
 		}
 	}
 
+	public Integer getColdDataBackupInterval() {
+		return this.coldDataBackupInterval;
+	}
+
+	public void setColdDataBackupInterval(Integer coldDataBackupInterval) {
+		this.coldDataBackupInterval = coldDataBackupInterval;
+		if(coldDataBackupInterval != null){
+			putQueryParameter("ColdDataBackupInterval", coldDataBackupInterval.toString());
+		}
+	}
+
 	public String getBackupWay() {
 		return this.backupWay;
 	}
@@ -129,6 +189,17 @@ public class UpdateBackupPolicyRequest extends RpcAcsRequest<UpdateBackupPolicyR
 		this.backupWay = backupWay;
 		if(backupWay != null){
 			putQueryParameter("BackupWay", backupWay);
+		}
+	}
+
+	public String getDestCrossRegion() {
+		return this.destCrossRegion;
+	}
+
+	public void setDestCrossRegion(String destCrossRegion) {
+		this.destCrossRegion = destCrossRegion;
+		if(destCrossRegion != null){
+			putQueryParameter("DestCrossRegion", destCrossRegion);
 		}
 	}
 
@@ -143,6 +214,28 @@ public class UpdateBackupPolicyRequest extends RpcAcsRequest<UpdateBackupPolicyR
 		}
 	}
 
+	public Boolean getIsCrossRegionDataBackupEnabled() {
+		return this.isCrossRegionDataBackupEnabled;
+	}
+
+	public void setIsCrossRegionDataBackupEnabled(Boolean isCrossRegionDataBackupEnabled) {
+		this.isCrossRegionDataBackupEnabled = isCrossRegionDataBackupEnabled;
+		if(isCrossRegionDataBackupEnabled != null){
+			putQueryParameter("IsCrossRegionDataBackupEnabled", isCrossRegionDataBackupEnabled.toString());
+		}
+	}
+
+	public Integer getCrossRegionLogBackupRetention() {
+		return this.crossRegionLogBackupRetention;
+	}
+
+	public void setCrossRegionLogBackupRetention(Integer crossRegionLogBackupRetention) {
+		this.crossRegionLogBackupRetention = crossRegionLogBackupRetention;
+		if(crossRegionLogBackupRetention != null){
+			putQueryParameter("CrossRegionLogBackupRetention", crossRegionLogBackupRetention.toString());
+		}
+	}
+
 	public String getBackupPeriod() {
 		return this.backupPeriod;
 	}
@@ -151,6 +244,17 @@ public class UpdateBackupPolicyRequest extends RpcAcsRequest<UpdateBackupPolicyR
 		this.backupPeriod = backupPeriod;
 		if(backupPeriod != null){
 			putQueryParameter("BackupPeriod", backupPeriod);
+		}
+	}
+
+	public Boolean getIsCrossRegionLogBackupEnabled() {
+		return this.isCrossRegionLogBackupEnabled;
+	}
+
+	public void setIsCrossRegionLogBackupEnabled(Boolean isCrossRegionLogBackupEnabled) {
+		this.isCrossRegionLogBackupEnabled = isCrossRegionLogBackupEnabled;
+		if(isCrossRegionLogBackupEnabled != null){
+			putQueryParameter("IsCrossRegionLogBackupEnabled", isCrossRegionLogBackupEnabled.toString());
 		}
 	}
 

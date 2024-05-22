@@ -24,21 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class UpgradeDBInstanceKernelVersionResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String dBInstanceName;
-
-	private String taskId;
 
 	private String targetMinorVersion;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+	private String requestId;
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String taskId;
 
 	public String getDBInstanceName() {
 		return this.dBInstanceName;
@@ -48,20 +40,28 @@ public class UpgradeDBInstanceKernelVersionResponse extends AcsResponse {
 		this.dBInstanceName = dBInstanceName;
 	}
 
-	public String getTaskId() {
-		return this.taskId;
-	}
-
-	public void setTaskId(String taskId) {
-		this.taskId = taskId;
-	}
-
 	public String getTargetMinorVersion() {
 		return this.targetMinorVersion;
 	}
 
 	public void setTargetMinorVersion(String targetMinorVersion) {
 		this.targetMinorVersion = targetMinorVersion;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getTaskId() {
+		return this.taskId;
+	}
+
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
 	}
 
 	@Override

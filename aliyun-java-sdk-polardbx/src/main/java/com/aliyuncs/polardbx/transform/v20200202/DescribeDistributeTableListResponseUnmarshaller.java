@@ -28,8 +28,8 @@ public class DescribeDistributeTableListResponseUnmarshaller {
 	public static DescribeDistributeTableListResponse unmarshall(DescribeDistributeTableListResponse describeDistributeTableListResponse, UnmarshallerContext _ctx) {
 		
 		describeDistributeTableListResponse.setRequestId(_ctx.stringValue("DescribeDistributeTableListResponse.RequestId"));
-		describeDistributeTableListResponse.setSuccess(_ctx.booleanValue("DescribeDistributeTableListResponse.Success"));
 		describeDistributeTableListResponse.setMessage(_ctx.stringValue("DescribeDistributeTableListResponse.Message"));
+		describeDistributeTableListResponse.setSuccess(_ctx.booleanValue("DescribeDistributeTableListResponse.Success"));
 
 		Data data = new Data();
 
@@ -38,8 +38,8 @@ public class DescribeDistributeTableListResponseUnmarshaller {
 			Table table = new Table();
 			table.setTableName(_ctx.stringValue("DescribeDistributeTableListResponse.Data.Tables["+ i +"].TableName"));
 			table.setTableType(_ctx.stringValue("DescribeDistributeTableListResponse.Data.Tables["+ i +"].TableType"));
-			table.setDbKey(_ctx.stringValue("DescribeDistributeTableListResponse.Data.Tables["+ i +"].DbKey"));
 			table.setTbKey(_ctx.stringValue("DescribeDistributeTableListResponse.Data.Tables["+ i +"].TbKey"));
+			table.setDbKey(_ctx.stringValue("DescribeDistributeTableListResponse.Data.Tables["+ i +"].DbKey"));
 
 			tables.add(table);
 		}
