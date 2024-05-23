@@ -16,18 +16,18 @@ package com.aliyuncs.oceanbasepro.model.v20190901;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.oceanbasepro.transform.v20190901.DescribeMetricsDataResponseUnmarshaller;
+import com.aliyuncs.oceanbasepro.transform.v20190901.BatchKillProcessListResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeMetricsDataResponse extends AcsResponse {
+public class BatchKillProcessListResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<String> data;
+	private List<DataItem> data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -37,17 +37,30 @@ public class DescribeMetricsDataResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<String> getData() {
+	public List<DataItem> getData() {
 		return this.data;
 	}
 
-	public void setData(List<String> data) {
+	public void setData(List<DataItem> data) {
 		this.data = data;
 	}
 
+	public static class DataItem {
+
+		private Boolean success;
+
+		public Boolean getSuccess() {
+			return this.success;
+		}
+
+		public void setSuccess(Boolean success) {
+			this.success = success;
+		}
+	}
+
 	@Override
-	public DescribeMetricsDataResponse getInstance(UnmarshallerContext context) {
-		return	DescribeMetricsDataResponseUnmarshaller.unmarshall(this, context);
+	public BatchKillProcessListResponse getInstance(UnmarshallerContext context) {
+		return	BatchKillProcessListResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

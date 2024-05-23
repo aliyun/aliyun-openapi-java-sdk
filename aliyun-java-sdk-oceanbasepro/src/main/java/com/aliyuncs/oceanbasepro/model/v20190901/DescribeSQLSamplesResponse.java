@@ -151,6 +151,8 @@ public class DescribeSQLSamplesResponse extends AcsResponse {
 
 		private String fullSqlText;
 
+		private String sqlText;
+
 		public String getRequestId() {
 			return this.requestId;
 		}
@@ -565,6 +567,14 @@ public class DescribeSQLSamplesResponse extends AcsResponse {
 
 		public void setFullSqlText(String fullSqlText) {
 			this.fullSqlText = fullSqlText;
+		}
+
+		public String getSqlText() {
+			return this.sqlText;
+		}
+
+		public void setSqlText(String sqlText) {
+			this.sqlText = sqlText;
 		}
 	}
 

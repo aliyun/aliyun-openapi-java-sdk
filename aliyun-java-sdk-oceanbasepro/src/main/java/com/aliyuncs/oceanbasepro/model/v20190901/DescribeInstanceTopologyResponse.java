@@ -173,7 +173,7 @@ public class DescribeInstanceTopologyResponse extends AcsResponse {
 
 				private String tenantZoneRole;
 
-				private String isPrimaryTenantZone;
+				private Boolean isPrimaryTenantZone;
 
 				private String tenantZoneId;
 
@@ -187,11 +187,11 @@ public class DescribeInstanceTopologyResponse extends AcsResponse {
 					this.tenantZoneRole = tenantZoneRole;
 				}
 
-				public String getIsPrimaryTenantZone() {
+				public Boolean getIsPrimaryTenantZone() {
 					return this.isPrimaryTenantZone;
 				}
 
-				public void setIsPrimaryTenantZone(String isPrimaryTenantZone) {
+				public void setIsPrimaryTenantZone(Boolean isPrimaryTenantZone) {
 					this.isPrimaryTenantZone = isPrimaryTenantZone;
 				}
 

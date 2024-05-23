@@ -14,40 +14,19 @@
 
 package com.aliyuncs.oceanbasepro.model.v20190901;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.oceanbasepro.transform.v20190901.DescribeMetricsDataResponseUnmarshaller;
+import com.aliyuncs.oceanbasepro.transform.v20190901.UpdateProjectConfigResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeMetricsDataResponse extends AcsResponse {
-
-	private String requestId;
-
-	private List<String> data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public List<String> getData() {
-		return this.data;
-	}
-
-	public void setData(List<String> data) {
-		this.data = data;
-	}
+public class UpdateProjectConfigResponse extends AcsResponse {
 
 	@Override
-	public DescribeMetricsDataResponse getInstance(UnmarshallerContext context) {
-		return	DescribeMetricsDataResponseUnmarshaller.unmarshall(this, context);
+	public UpdateProjectConfigResponse getInstance(UnmarshallerContext context) {
+		return	UpdateProjectConfigResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

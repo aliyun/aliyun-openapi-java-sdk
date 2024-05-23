@@ -22,16 +22,16 @@ import com.aliyuncs.oceanbasepro.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeZonesRequest extends RpcAcsRequest<DescribeZonesResponse> {
+public class BatchKillProcessListRequest extends RpcAcsRequest<BatchKillProcessListResponse> {
 	   
 
-	private String series;
+	private String sessionList;
 
-	private String cpuArch;
+	private String instanceId;
 
-	private String deployType;
-	public DescribeZonesRequest() {
-		super("OceanBasePro", "2019-09-01", "DescribeZones", "oceanbase");
+	private String tenantId;
+	public BatchKillProcessListRequest() {
+		super("OceanBasePro", "2019-09-01", "BatchKillProcessList", "oceanbase");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,42 +39,42 @@ public class DescribeZonesRequest extends RpcAcsRequest<DescribeZonesResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getSeries() {
-		return this.series;
+	public String getSessionList() {
+		return this.sessionList;
 	}
 
-	public void setSeries(String series) {
-		this.series = series;
-		if(series != null){
-			putBodyParameter("Series", series);
+	public void setSessionList(String sessionList) {
+		this.sessionList = sessionList;
+		if(sessionList != null){
+			putBodyParameter("SessionList", sessionList);
 		}
 	}
 
-	public String getCpuArch() {
-		return this.cpuArch;
+	public String getInstanceId() {
+		return this.instanceId;
 	}
 
-	public void setCpuArch(String cpuArch) {
-		this.cpuArch = cpuArch;
-		if(cpuArch != null){
-			putBodyParameter("CpuArch", cpuArch);
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putBodyParameter("InstanceId", instanceId);
 		}
 	}
 
-	public String getDeployType() {
-		return this.deployType;
+	public String getTenantId() {
+		return this.tenantId;
 	}
 
-	public void setDeployType(String deployType) {
-		this.deployType = deployType;
-		if(deployType != null){
-			putBodyParameter("DeployType", deployType);
+	public void setTenantId(String tenantId) {
+		this.tenantId = tenantId;
+		if(tenantId != null){
+			putBodyParameter("TenantId", tenantId);
 		}
 	}
 
 	@Override
-	public Class<DescribeZonesResponse> getResponseClass() {
-		return DescribeZonesResponse.class;
+	public Class<BatchKillProcessListResponse> getResponseClass() {
+		return BatchKillProcessListResponse.class;
 	}
 
 }

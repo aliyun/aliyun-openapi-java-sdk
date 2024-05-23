@@ -43,6 +43,7 @@ public class DescribeAvailableZoneResponseUnmarshaller {
 			availableZonesItem.setDeployType(_ctx.stringValue("DescribeAvailableZoneResponse.Data.AvailableZones["+ i +"].DeployType"));
 			availableZonesItem.setInstanceType(_ctx.stringValue("DescribeAvailableZoneResponse.Data.AvailableZones["+ i +"].InstanceType"));
 			availableZonesItem.setSeries(_ctx.stringValue("DescribeAvailableZoneResponse.Data.AvailableZones["+ i +"].Series"));
+			availableZonesItem.setCpuArch(_ctx.stringValue("DescribeAvailableZoneResponse.Data.AvailableZones["+ i +"].CpuArch"));
 
 			List<SupportSpecificationsItem> supportSpecifications = new ArrayList<SupportSpecificationsItem>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeAvailableZoneResponse.Data.AvailableZones["+ i +"].SupportSpecifications.Length"); j++) {

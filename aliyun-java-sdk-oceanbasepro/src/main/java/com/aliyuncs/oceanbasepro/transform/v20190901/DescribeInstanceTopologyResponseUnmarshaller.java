@@ -58,7 +58,7 @@ public class DescribeInstanceTopologyResponseUnmarshaller {
 			for (int j = 0; j < _ctx.lengthValue("DescribeInstanceTopologyResponse.InstanceTopology.Tenants["+ i +"].TenantZones.Length"); j++) {
 				TenantZonesItem tenantZonesItem = new TenantZonesItem();
 				tenantZonesItem.setTenantZoneRole(_ctx.stringValue("DescribeInstanceTopologyResponse.InstanceTopology.Tenants["+ i +"].TenantZones["+ j +"].TenantZoneRole"));
-				tenantZonesItem.setIsPrimaryTenantZone(_ctx.stringValue("DescribeInstanceTopologyResponse.InstanceTopology.Tenants["+ i +"].TenantZones["+ j +"].IsPrimaryTenantZone"));
+				tenantZonesItem.setIsPrimaryTenantZone(_ctx.booleanValue("DescribeInstanceTopologyResponse.InstanceTopology.Tenants["+ i +"].TenantZones["+ j +"].IsPrimaryTenantZone"));
 				tenantZonesItem.setTenantZoneId(_ctx.stringValue("DescribeInstanceTopologyResponse.InstanceTopology.Tenants["+ i +"].TenantZones["+ j +"].TenantZoneId"));
 
 				List<UnitsItem> units = new ArrayList<UnitsItem>();

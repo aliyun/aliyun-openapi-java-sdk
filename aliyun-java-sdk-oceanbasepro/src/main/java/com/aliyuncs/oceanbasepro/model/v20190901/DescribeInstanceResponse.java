@@ -119,6 +119,10 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 		private Boolean enableReadOnlyReplicaManagement;
 
+		private String primaryInstance;
+
+		private String primaryRegion;
+
 		private List<String> availableZones;
 
 		private List<String> zones;
@@ -417,6 +421,22 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 		public void setEnableReadOnlyReplicaManagement(Boolean enableReadOnlyReplicaManagement) {
 			this.enableReadOnlyReplicaManagement = enableReadOnlyReplicaManagement;
+		}
+
+		public String getPrimaryInstance() {
+			return this.primaryInstance;
+		}
+
+		public void setPrimaryInstance(String primaryInstance) {
+			this.primaryInstance = primaryInstance;
+		}
+
+		public String getPrimaryRegion() {
+			return this.primaryRegion;
+		}
+
+		public void setPrimaryRegion(String primaryRegion) {
+			this.primaryRegion = primaryRegion;
 		}
 
 		public List<String> getAvailableZones() {

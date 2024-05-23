@@ -41,6 +41,8 @@ public class ModifyTenantPrimaryZoneRequest extends RpcAcsRequest<ModifyTenantPr
 
 	private String vpcId;
 
+	private String userVpcOwnerId;
+
 	private String userDirectVSwitchId;
 	public ModifyTenantPrimaryZoneRequest() {
 		super("OceanBasePro", "2019-09-01", "ModifyTenantPrimaryZone", "oceanbase");
@@ -136,6 +138,17 @@ public class ModifyTenantPrimaryZoneRequest extends RpcAcsRequest<ModifyTenantPr
 		this.vpcId = vpcId;
 		if(vpcId != null){
 			putBodyParameter("VpcId", vpcId);
+		}
+	}
+
+	public String getUserVpcOwnerId() {
+		return this.userVpcOwnerId;
+	}
+
+	public void setUserVpcOwnerId(String userVpcOwnerId) {
+		this.userVpcOwnerId = userVpcOwnerId;
+		if(userVpcOwnerId != null){
+			putBodyParameter("UserVpcOwnerId", userVpcOwnerId);
 		}
 	}
 

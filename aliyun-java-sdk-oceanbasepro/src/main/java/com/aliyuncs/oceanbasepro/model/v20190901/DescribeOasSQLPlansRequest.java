@@ -25,7 +25,11 @@ import com.aliyuncs.oceanbasepro.Endpoint;
 public class DescribeOasSQLPlansRequest extends RpcAcsRequest<DescribeOasSQLPlansResponse> {
 	   
 
+	private Boolean returnBriefInfo;
+
 	private String startTime;
+
+	private String planUnionHash;
 
 	private Boolean dynamicSql;
 
@@ -49,6 +53,17 @@ public class DescribeOasSQLPlansRequest extends RpcAcsRequest<DescribeOasSQLPlan
 		} catch (Exception e) {}
 	}
 
+	public Boolean getReturnBriefInfo() {
+		return this.returnBriefInfo;
+	}
+
+	public void setReturnBriefInfo(Boolean returnBriefInfo) {
+		this.returnBriefInfo = returnBriefInfo;
+		if(returnBriefInfo != null){
+			putBodyParameter("ReturnBriefInfo", returnBriefInfo.toString());
+		}
+	}
+
 	public String getStartTime() {
 		return this.startTime;
 	}
@@ -57,6 +72,17 @@ public class DescribeOasSQLPlansRequest extends RpcAcsRequest<DescribeOasSQLPlan
 		this.startTime = startTime;
 		if(startTime != null){
 			putBodyParameter("StartTime", startTime);
+		}
+	}
+
+	public String getPlanUnionHash() {
+		return this.planUnionHash;
+	}
+
+	public void setPlanUnionHash(String planUnionHash) {
+		this.planUnionHash = planUnionHash;
+		if(planUnionHash != null){
+			putBodyParameter("PlanUnionHash", planUnionHash);
 		}
 	}
 

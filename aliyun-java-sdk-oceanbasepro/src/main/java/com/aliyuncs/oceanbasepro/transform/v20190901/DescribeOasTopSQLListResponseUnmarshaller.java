@@ -32,7 +32,7 @@ public class DescribeOasTopSQLListResponseUnmarshaller {
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeOasTopSQLListResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setExecutions(_ctx.doubleValue("DescribeOasTopSQLListResponse.Data["+ i +"].Executions"));
+			dataItem.setExecutions(_ctx.longValue("DescribeOasTopSQLListResponse.Data["+ i +"].Executions"));
 			dataItem.setRpcCount(_ctx.doubleValue("DescribeOasTopSQLListResponse.Data["+ i +"].RpcCount"));
 			dataItem.setRemotePlans(_ctx.doubleValue("DescribeOasTopSQLListResponse.Data["+ i +"].RemotePlans"));
 			dataItem.setMissPlans(_ctx.doubleValue("DescribeOasTopSQLListResponse.Data["+ i +"].MissPlans"));
@@ -116,7 +116,7 @@ public class DescribeOasTopSQLListResponseUnmarshaller {
 			List<SqlListItem> sqlList = new ArrayList<SqlListItem>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeOasTopSQLListResponse.Data["+ i +"].SqlList.Length"); j++) {
 				SqlListItem sqlListItem = new SqlListItem();
-				sqlListItem.setExecutions(_ctx.doubleValue("DescribeOasTopSQLListResponse.Data["+ i +"].SqlList["+ j +"].Executions"));
+				sqlListItem.setExecutions(_ctx.longValue("DescribeOasTopSQLListResponse.Data["+ i +"].SqlList["+ j +"].Executions"));
 				sqlListItem.setRpcCount(_ctx.doubleValue("DescribeOasTopSQLListResponse.Data["+ i +"].SqlList["+ j +"].RpcCount"));
 				sqlListItem.setRemotePlans(_ctx.doubleValue("DescribeOasTopSQLListResponse.Data["+ i +"].SqlList["+ j +"].RemotePlans"));
 				sqlListItem.setMissPlans(_ctx.doubleValue("DescribeOasTopSQLListResponse.Data["+ i +"].SqlList["+ j +"].MissPlans"));

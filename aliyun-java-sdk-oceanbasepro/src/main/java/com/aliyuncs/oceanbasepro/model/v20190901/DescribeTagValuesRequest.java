@@ -22,16 +22,12 @@ import com.aliyuncs.oceanbasepro.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeZonesRequest extends RpcAcsRequest<DescribeZonesResponse> {
+public class DescribeTagValuesRequest extends RpcAcsRequest<DescribeTagValuesResponse> {
 	   
 
-	private String series;
-
-	private String cpuArch;
-
-	private String deployType;
-	public DescribeZonesRequest() {
-		super("OceanBasePro", "2019-09-01", "DescribeZones", "oceanbase");
+	private String resourceType;
+	public DescribeTagValuesRequest() {
+		super("OceanBasePro", "2019-09-01", "DescribeTagValues", "oceanbase");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,42 +35,20 @@ public class DescribeZonesRequest extends RpcAcsRequest<DescribeZonesResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getSeries() {
-		return this.series;
+	public String getResourceType() {
+		return this.resourceType;
 	}
 
-	public void setSeries(String series) {
-		this.series = series;
-		if(series != null){
-			putBodyParameter("Series", series);
-		}
-	}
-
-	public String getCpuArch() {
-		return this.cpuArch;
-	}
-
-	public void setCpuArch(String cpuArch) {
-		this.cpuArch = cpuArch;
-		if(cpuArch != null){
-			putBodyParameter("CpuArch", cpuArch);
-		}
-	}
-
-	public String getDeployType() {
-		return this.deployType;
-	}
-
-	public void setDeployType(String deployType) {
-		this.deployType = deployType;
-		if(deployType != null){
-			putBodyParameter("DeployType", deployType);
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putBodyParameter("ResourceType", resourceType);
 		}
 	}
 
 	@Override
-	public Class<DescribeZonesResponse> getResponseClass() {
-		return DescribeZonesResponse.class;
+	public Class<DescribeTagValuesResponse> getResponseClass() {
+		return DescribeTagValuesResponse.class;
 	}
 
 }

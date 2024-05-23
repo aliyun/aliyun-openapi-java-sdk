@@ -411,62 +411,62 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 			public static class Cpu {
 
-				private Long totalCpu;
+				private Double totalCpu;
 
-				private Long usedCpu;
+				private Double usedCpu;
 
-				private Long unitCpu;
+				private Double unitCpu;
 
-				private Long originalTotalCpu;
+				private Double originalTotalCpu;
 
-				public Long getTotalCpu() {
+				public Double getTotalCpu() {
 					return this.totalCpu;
 				}
 
-				public void setTotalCpu(Long totalCpu) {
+				public void setTotalCpu(Double totalCpu) {
 					this.totalCpu = totalCpu;
 				}
 
-				public Long getUsedCpu() {
+				public Double getUsedCpu() {
 					return this.usedCpu;
 				}
 
-				public void setUsedCpu(Long usedCpu) {
+				public void setUsedCpu(Double usedCpu) {
 					this.usedCpu = usedCpu;
 				}
 
-				public Long getUnitCpu() {
+				public Double getUnitCpu() {
 					return this.unitCpu;
 				}
 
-				public void setUnitCpu(Long unitCpu) {
+				public void setUnitCpu(Double unitCpu) {
 					this.unitCpu = unitCpu;
 				}
 
-				public Long getOriginalTotalCpu() {
+				public Double getOriginalTotalCpu() {
 					return this.originalTotalCpu;
 				}
 
-				public void setOriginalTotalCpu(Long originalTotalCpu) {
+				public void setOriginalTotalCpu(Double originalTotalCpu) {
 					this.originalTotalCpu = originalTotalCpu;
 				}
 			}
 
 			public static class Memory {
 
-				private Long totalMemory;
+				private Double totalMemory;
 
 				private Long usedMemory;
 
 				private Long unitMemory;
 
-				private Long originalTotalMemory;
+				private Double originalTotalMemory;
 
-				public Long getTotalMemory() {
+				public Double getTotalMemory() {
 					return this.totalMemory;
 				}
 
-				public void setTotalMemory(Long totalMemory) {
+				public void setTotalMemory(Double totalMemory) {
 					this.totalMemory = totalMemory;
 				}
 
@@ -486,30 +486,30 @@ public class DescribeInstancesResponse extends AcsResponse {
 					this.unitMemory = unitMemory;
 				}
 
-				public Long getOriginalTotalMemory() {
+				public Double getOriginalTotalMemory() {
 					return this.originalTotalMemory;
 				}
 
-				public void setOriginalTotalMemory(Long originalTotalMemory) {
+				public void setOriginalTotalMemory(Double originalTotalMemory) {
 					this.originalTotalMemory = originalTotalMemory;
 				}
 			}
 
 			public static class DiskSize {
 
-				private Long totalDiskSize;
+				private Double totalDiskSize;
 
 				private Long usedDiskSize;
 
-				private Long unitDiskSize;
+				private Double unitDiskSize;
 
-				private Long originalTotalDiskSize;
+				private Double originalTotalDiskSize;
 
-				public Long getTotalDiskSize() {
+				public Double getTotalDiskSize() {
 					return this.totalDiskSize;
 				}
 
-				public void setTotalDiskSize(Long totalDiskSize) {
+				public void setTotalDiskSize(Double totalDiskSize) {
 					this.totalDiskSize = totalDiskSize;
 				}
 
@@ -521,19 +521,19 @@ public class DescribeInstancesResponse extends AcsResponse {
 					this.usedDiskSize = usedDiskSize;
 				}
 
-				public Long getUnitDiskSize() {
+				public Double getUnitDiskSize() {
 					return this.unitDiskSize;
 				}
 
-				public void setUnitDiskSize(Long unitDiskSize) {
+				public void setUnitDiskSize(Double unitDiskSize) {
 					this.unitDiskSize = unitDiskSize;
 				}
 
-				public Long getOriginalTotalDiskSize() {
+				public Double getOriginalTotalDiskSize() {
 					return this.originalTotalDiskSize;
 				}
 
-				public void setOriginalTotalDiskSize(Long originalTotalDiskSize) {
+				public void setOriginalTotalDiskSize(Double originalTotalDiskSize) {
 					this.originalTotalDiskSize = originalTotalDiskSize;
 				}
 			}
@@ -576,17 +576,17 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 			private Boolean autoScale;
 
-			private Long upperbound;
+			private Double upperbound;
 
-			private Long upperThreshold;
+			private Double upperThreshold;
 
-			private Long upperMergeThreshold;
+			private Double upperMergeThreshold;
 
 			private Long maxDiskSize;
 
-			private Long scaleStepInNormal;
+			private Double scaleStepInNormal;
 
-			private Long scaleStepInMerge;
+			private Double scaleStepInMerge;
 
 			private String upperScaleStrategy;
 
@@ -598,27 +598,27 @@ public class DescribeInstancesResponse extends AcsResponse {
 				this.autoScale = autoScale;
 			}
 
-			public Long getUpperbound() {
+			public Double getUpperbound() {
 				return this.upperbound;
 			}
 
-			public void setUpperbound(Long upperbound) {
+			public void setUpperbound(Double upperbound) {
 				this.upperbound = upperbound;
 			}
 
-			public Long getUpperThreshold() {
+			public Double getUpperThreshold() {
 				return this.upperThreshold;
 			}
 
-			public void setUpperThreshold(Long upperThreshold) {
+			public void setUpperThreshold(Double upperThreshold) {
 				this.upperThreshold = upperThreshold;
 			}
 
-			public Long getUpperMergeThreshold() {
+			public Double getUpperMergeThreshold() {
 				return this.upperMergeThreshold;
 			}
 
-			public void setUpperMergeThreshold(Long upperMergeThreshold) {
+			public void setUpperMergeThreshold(Double upperMergeThreshold) {
 				this.upperMergeThreshold = upperMergeThreshold;
 			}
 
@@ -630,19 +630,19 @@ public class DescribeInstancesResponse extends AcsResponse {
 				this.maxDiskSize = maxDiskSize;
 			}
 
-			public Long getScaleStepInNormal() {
+			public Double getScaleStepInNormal() {
 				return this.scaleStepInNormal;
 			}
 
-			public void setScaleStepInNormal(Long scaleStepInNormal) {
+			public void setScaleStepInNormal(Double scaleStepInNormal) {
 				this.scaleStepInNormal = scaleStepInNormal;
 			}
 
-			public Long getScaleStepInMerge() {
+			public Double getScaleStepInMerge() {
 				return this.scaleStepInMerge;
 			}
 
-			public void setScaleStepInMerge(Long scaleStepInMerge) {
+			public void setScaleStepInMerge(Double scaleStepInMerge) {
 				this.scaleStepInMerge = scaleStepInMerge;
 			}
 

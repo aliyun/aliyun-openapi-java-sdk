@@ -83,6 +83,7 @@ public class DescribeSQLSamplesResponseUnmarshaller {
 			dataItem.setStatement(_ctx.stringValue("DescribeSQLSamplesResponse.Data["+ i +"].Statement"));
 			dataItem.setTransHash(_ctx.stringValue("DescribeSQLSamplesResponse.Data["+ i +"].TransHash"));
 			dataItem.setFullSqlText(_ctx.stringValue("DescribeSQLSamplesResponse.Data["+ i +"].FullSqlText"));
+			dataItem.setSqlText(_ctx.stringValue("DescribeSQLSamplesResponse.Data["+ i +"].SqlText"));
 
 			data.add(dataItem);
 		}

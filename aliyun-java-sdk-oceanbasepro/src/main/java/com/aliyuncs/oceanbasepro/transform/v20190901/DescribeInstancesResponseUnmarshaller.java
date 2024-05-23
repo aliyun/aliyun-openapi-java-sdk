@@ -76,24 +76,24 @@ public class DescribeInstancesResponseUnmarshaller {
 			resource.setUnitCount(_ctx.longValue("DescribeInstancesResponse.Instances["+ i +"].Resource.UnitCount"));
 
 			Cpu cpu = new Cpu();
-			cpu.setTotalCpu(_ctx.longValue("DescribeInstancesResponse.Instances["+ i +"].Resource.Cpu.TotalCpu"));
-			cpu.setUsedCpu(_ctx.longValue("DescribeInstancesResponse.Instances["+ i +"].Resource.Cpu.UsedCpu"));
-			cpu.setUnitCpu(_ctx.longValue("DescribeInstancesResponse.Instances["+ i +"].Resource.Cpu.UnitCpu"));
-			cpu.setOriginalTotalCpu(_ctx.longValue("DescribeInstancesResponse.Instances["+ i +"].Resource.Cpu.OriginalTotalCpu"));
+			cpu.setTotalCpu(_ctx.doubleValue("DescribeInstancesResponse.Instances["+ i +"].Resource.Cpu.TotalCpu"));
+			cpu.setUsedCpu(_ctx.doubleValue("DescribeInstancesResponse.Instances["+ i +"].Resource.Cpu.UsedCpu"));
+			cpu.setUnitCpu(_ctx.doubleValue("DescribeInstancesResponse.Instances["+ i +"].Resource.Cpu.UnitCpu"));
+			cpu.setOriginalTotalCpu(_ctx.doubleValue("DescribeInstancesResponse.Instances["+ i +"].Resource.Cpu.OriginalTotalCpu"));
 			resource.setCpu(cpu);
 
 			Memory memory = new Memory();
-			memory.setTotalMemory(_ctx.longValue("DescribeInstancesResponse.Instances["+ i +"].Resource.Memory.TotalMemory"));
+			memory.setTotalMemory(_ctx.doubleValue("DescribeInstancesResponse.Instances["+ i +"].Resource.Memory.TotalMemory"));
 			memory.setUsedMemory(_ctx.longValue("DescribeInstancesResponse.Instances["+ i +"].Resource.Memory.UsedMemory"));
 			memory.setUnitMemory(_ctx.longValue("DescribeInstancesResponse.Instances["+ i +"].Resource.Memory.UnitMemory"));
-			memory.setOriginalTotalMemory(_ctx.longValue("DescribeInstancesResponse.Instances["+ i +"].Resource.Memory.OriginalTotalMemory"));
+			memory.setOriginalTotalMemory(_ctx.doubleValue("DescribeInstancesResponse.Instances["+ i +"].Resource.Memory.OriginalTotalMemory"));
 			resource.setMemory(memory);
 
 			DiskSize diskSize = new DiskSize();
-			diskSize.setTotalDiskSize(_ctx.longValue("DescribeInstancesResponse.Instances["+ i +"].Resource.DiskSize.TotalDiskSize"));
+			diskSize.setTotalDiskSize(_ctx.doubleValue("DescribeInstancesResponse.Instances["+ i +"].Resource.DiskSize.TotalDiskSize"));
 			diskSize.setUsedDiskSize(_ctx.longValue("DescribeInstancesResponse.Instances["+ i +"].Resource.DiskSize.UsedDiskSize"));
-			diskSize.setUnitDiskSize(_ctx.longValue("DescribeInstancesResponse.Instances["+ i +"].Resource.DiskSize.UnitDiskSize"));
-			diskSize.setOriginalTotalDiskSize(_ctx.longValue("DescribeInstancesResponse.Instances["+ i +"].Resource.DiskSize.OriginalTotalDiskSize"));
+			diskSize.setUnitDiskSize(_ctx.doubleValue("DescribeInstancesResponse.Instances["+ i +"].Resource.DiskSize.UnitDiskSize"));
+			diskSize.setOriginalTotalDiskSize(_ctx.doubleValue("DescribeInstancesResponse.Instances["+ i +"].Resource.DiskSize.OriginalTotalDiskSize"));
 			resource.setDiskSize(diskSize);
 
 			CapacityUnit capacityUnit = new CapacityUnit();
@@ -105,12 +105,12 @@ public class DescribeInstancesResponseUnmarshaller {
 
 			DataDiskAutoScaleConfig dataDiskAutoScaleConfig = new DataDiskAutoScaleConfig();
 			dataDiskAutoScaleConfig.setAutoScale(_ctx.booleanValue("DescribeInstancesResponse.Instances["+ i +"].DataDiskAutoScaleConfig.AutoScale"));
-			dataDiskAutoScaleConfig.setUpperbound(_ctx.longValue("DescribeInstancesResponse.Instances["+ i +"].DataDiskAutoScaleConfig.Upperbound"));
-			dataDiskAutoScaleConfig.setUpperThreshold(_ctx.longValue("DescribeInstancesResponse.Instances["+ i +"].DataDiskAutoScaleConfig.UpperThreshold"));
-			dataDiskAutoScaleConfig.setUpperMergeThreshold(_ctx.longValue("DescribeInstancesResponse.Instances["+ i +"].DataDiskAutoScaleConfig.UpperMergeThreshold"));
+			dataDiskAutoScaleConfig.setUpperbound(_ctx.doubleValue("DescribeInstancesResponse.Instances["+ i +"].DataDiskAutoScaleConfig.Upperbound"));
+			dataDiskAutoScaleConfig.setUpperThreshold(_ctx.doubleValue("DescribeInstancesResponse.Instances["+ i +"].DataDiskAutoScaleConfig.UpperThreshold"));
+			dataDiskAutoScaleConfig.setUpperMergeThreshold(_ctx.doubleValue("DescribeInstancesResponse.Instances["+ i +"].DataDiskAutoScaleConfig.UpperMergeThreshold"));
 			dataDiskAutoScaleConfig.setMaxDiskSize(_ctx.longValue("DescribeInstancesResponse.Instances["+ i +"].DataDiskAutoScaleConfig.MaxDiskSize"));
-			dataDiskAutoScaleConfig.setScaleStepInNormal(_ctx.longValue("DescribeInstancesResponse.Instances["+ i +"].DataDiskAutoScaleConfig.ScaleStepInNormal"));
-			dataDiskAutoScaleConfig.setScaleStepInMerge(_ctx.longValue("DescribeInstancesResponse.Instances["+ i +"].DataDiskAutoScaleConfig.ScaleStepInMerge"));
+			dataDiskAutoScaleConfig.setScaleStepInNormal(_ctx.doubleValue("DescribeInstancesResponse.Instances["+ i +"].DataDiskAutoScaleConfig.ScaleStepInNormal"));
+			dataDiskAutoScaleConfig.setScaleStepInMerge(_ctx.doubleValue("DescribeInstancesResponse.Instances["+ i +"].DataDiskAutoScaleConfig.ScaleStepInMerge"));
 			dataDiskAutoScaleConfig.setUpperScaleStrategy(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].DataDiskAutoScaleConfig.UpperScaleStrategy"));
 			data.setDataDiskAutoScaleConfig(dataDiskAutoScaleConfig);
 

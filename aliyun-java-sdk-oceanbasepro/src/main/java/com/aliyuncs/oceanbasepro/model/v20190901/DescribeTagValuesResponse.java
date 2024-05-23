@@ -14,20 +14,27 @@
 
 package com.aliyuncs.oceanbasepro.model.v20190901;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.oceanbasepro.transform.v20190901.DescribeMetricsDataResponseUnmarshaller;
+import com.aliyuncs.oceanbasepro.transform.v20190901.DescribeTagValuesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeMetricsDataResponse extends AcsResponse {
+public class DescribeTagValuesResponse extends AcsResponse {
+
+	private String map;
 
 	private String requestId;
 
-	private List<String> data;
+	public String getMap() {
+		return this.map;
+	}
+
+	public void setMap(String map) {
+		this.map = map;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -37,17 +44,9 @@ public class DescribeMetricsDataResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<String> getData() {
-		return this.data;
-	}
-
-	public void setData(List<String> data) {
-		this.data = data;
-	}
-
 	@Override
-	public DescribeMetricsDataResponse getInstance(UnmarshallerContext context) {
-		return	DescribeMetricsDataResponseUnmarshaller.unmarshall(this, context);
+	public DescribeTagValuesResponse getInstance(UnmarshallerContext context) {
+		return	DescribeTagValuesResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

@@ -103,6 +103,10 @@ public class DescribeTenantResponse extends AcsResponse {
 
 		private Boolean enableReadOnlyReplica;
 
+		private String lowerCaseTableNames;
+
+		private String version;
+
 		private List<TenantConnectionsItem> tenantConnections;
 
 		private List<TenantZonesItem> tenantZones;
@@ -335,6 +339,22 @@ public class DescribeTenantResponse extends AcsResponse {
 
 		public void setEnableReadOnlyReplica(Boolean enableReadOnlyReplica) {
 			this.enableReadOnlyReplica = enableReadOnlyReplica;
+		}
+
+		public String getLowerCaseTableNames() {
+			return this.lowerCaseTableNames;
+		}
+
+		public void setLowerCaseTableNames(String lowerCaseTableNames) {
+			this.lowerCaseTableNames = lowerCaseTableNames;
+		}
+
+		public String getVersion() {
+			return this.version;
+		}
+
+		public void setVersion(String version) {
+			this.version = version;
 		}
 
 		public List<TenantConnectionsItem> getTenantConnections() {

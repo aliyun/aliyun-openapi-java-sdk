@@ -22,16 +22,14 @@ import com.aliyuncs.oceanbasepro.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeZonesRequest extends RpcAcsRequest<DescribeZonesResponse> {
+public class ModifyTagNameRequest extends RpcAcsRequest<ModifyTagNameResponse> {
 	   
 
-	private String series;
+	private String newKey;
 
-	private String cpuArch;
-
-	private String deployType;
-	public DescribeZonesRequest() {
-		super("OceanBasePro", "2019-09-01", "DescribeZones", "oceanbase");
+	private String key;
+	public ModifyTagNameRequest() {
+		super("OceanBasePro", "2019-09-01", "ModifyTagName", "oceanbase");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,42 +37,31 @@ public class DescribeZonesRequest extends RpcAcsRequest<DescribeZonesResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getSeries() {
-		return this.series;
+	public String getNewKey() {
+		return this.newKey;
 	}
 
-	public void setSeries(String series) {
-		this.series = series;
-		if(series != null){
-			putBodyParameter("Series", series);
+	public void setNewKey(String newKey) {
+		this.newKey = newKey;
+		if(newKey != null){
+			putBodyParameter("NewKey", newKey);
 		}
 	}
 
-	public String getCpuArch() {
-		return this.cpuArch;
+	public String getKey() {
+		return this.key;
 	}
 
-	public void setCpuArch(String cpuArch) {
-		this.cpuArch = cpuArch;
-		if(cpuArch != null){
-			putBodyParameter("CpuArch", cpuArch);
-		}
-	}
-
-	public String getDeployType() {
-		return this.deployType;
-	}
-
-	public void setDeployType(String deployType) {
-		this.deployType = deployType;
-		if(deployType != null){
-			putBodyParameter("DeployType", deployType);
+	public void setKey(String key) {
+		this.key = key;
+		if(key != null){
+			putBodyParameter("Key", key);
 		}
 	}
 
 	@Override
-	public Class<DescribeZonesResponse> getResponseClass() {
-		return DescribeZonesResponse.class;
+	public Class<ModifyTagNameResponse> getResponseClass() {
+		return ModifyTagNameResponse.class;
 	}
 
 }

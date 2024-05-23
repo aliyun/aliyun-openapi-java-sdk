@@ -22,24 +22,26 @@ import com.aliyuncs.oceanbasepro.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeSQLSamplesRequest extends RpcAcsRequest<DescribeSQLSamplesResponse> {
+public class DescribeProcessStatsCompositionRequest extends RpcAcsRequest<DescribeProcessStatsCompositionResponse> {
 	   
 
-	private Boolean returnSqlText;
+	private String uId;
 
-	private String startTime;
+	private String sqlText;
+
+	private String clientIp;
 
 	private String tenantId;
 
-	private String sqlId;
+	private String serverIp;
 
-	private String endTime;
+	private String users;
 
 	private String instanceId;
 
-	private String dbName;
-	public DescribeSQLSamplesRequest() {
-		super("OceanBasePro", "2019-09-01", "DescribeSQLSamples", "oceanbase");
+	private String status;
+	public DescribeProcessStatsCompositionRequest() {
+		super("OceanBasePro", "2019-09-01", "DescribeProcessStatsComposition", "oceanbase");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -47,25 +49,36 @@ public class DescribeSQLSamplesRequest extends RpcAcsRequest<DescribeSQLSamplesR
 		} catch (Exception e) {}
 	}
 
-	public Boolean getReturnSqlText() {
-		return this.returnSqlText;
+	public String getUId() {
+		return this.uId;
 	}
 
-	public void setReturnSqlText(Boolean returnSqlText) {
-		this.returnSqlText = returnSqlText;
-		if(returnSqlText != null){
-			putBodyParameter("ReturnSqlText", returnSqlText.toString());
+	public void setUId(String uId) {
+		this.uId = uId;
+		if(uId != null){
+			putBodyParameter("UId", uId);
 		}
 	}
 
-	public String getStartTime() {
-		return this.startTime;
+	public String getSqlText() {
+		return this.sqlText;
 	}
 
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putBodyParameter("StartTime", startTime);
+	public void setSqlText(String sqlText) {
+		this.sqlText = sqlText;
+		if(sqlText != null){
+			putBodyParameter("SqlText", sqlText);
+		}
+	}
+
+	public String getClientIp() {
+		return this.clientIp;
+	}
+
+	public void setClientIp(String clientIp) {
+		this.clientIp = clientIp;
+		if(clientIp != null){
+			putBodyParameter("ClientIp", clientIp);
 		}
 	}
 
@@ -80,25 +93,25 @@ public class DescribeSQLSamplesRequest extends RpcAcsRequest<DescribeSQLSamplesR
 		}
 	}
 
-	public String getSqlId() {
-		return this.sqlId;
+	public String getServerIp() {
+		return this.serverIp;
 	}
 
-	public void setSqlId(String sqlId) {
-		this.sqlId = sqlId;
-		if(sqlId != null){
-			putBodyParameter("SqlId", sqlId);
+	public void setServerIp(String serverIp) {
+		this.serverIp = serverIp;
+		if(serverIp != null){
+			putBodyParameter("ServerIp", serverIp);
 		}
 	}
 
-	public String getEndTime() {
-		return this.endTime;
+	public String getUsers() {
+		return this.users;
 	}
 
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putBodyParameter("EndTime", endTime);
+	public void setUsers(String users) {
+		this.users = users;
+		if(users != null){
+			putBodyParameter("Users", users);
 		}
 	}
 
@@ -113,20 +126,20 @@ public class DescribeSQLSamplesRequest extends RpcAcsRequest<DescribeSQLSamplesR
 		}
 	}
 
-	public String getDbName() {
-		return this.dbName;
+	public String getStatus() {
+		return this.status;
 	}
 
-	public void setDbName(String dbName) {
-		this.dbName = dbName;
-		if(dbName != null){
-			putBodyParameter("DbName", dbName);
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putBodyParameter("Status", status);
 		}
 	}
 
 	@Override
-	public Class<DescribeSQLSamplesResponse> getResponseClass() {
-		return DescribeSQLSamplesResponse.class;
+	public Class<DescribeProcessStatsCompositionResponse> getResponseClass() {
+		return DescribeProcessStatsCompositionResponse.class;
 	}
 
 }

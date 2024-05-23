@@ -79,6 +79,8 @@ public class DescribeInstanceResponseUnmarshaller {
 		instance.setExclusiveUnitNumLimit(_ctx.integerValue("DescribeInstanceResponse.Instance.ExclusiveUnitNumLimit"));
 		instance.setEnableReadOnlyReplica(_ctx.booleanValue("DescribeInstanceResponse.Instance.EnableReadOnlyReplica"));
 		instance.setEnableReadOnlyReplicaManagement(_ctx.booleanValue("DescribeInstanceResponse.Instance.EnableReadOnlyReplicaManagement"));
+		instance.setPrimaryInstance(_ctx.stringValue("DescribeInstanceResponse.Instance.PrimaryInstance"));
+		instance.setPrimaryRegion(_ctx.stringValue("DescribeInstanceResponse.Instance.PrimaryRegion"));
 
 		List<String> availableZones = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceResponse.Instance.AvailableZones.Length"); i++) {

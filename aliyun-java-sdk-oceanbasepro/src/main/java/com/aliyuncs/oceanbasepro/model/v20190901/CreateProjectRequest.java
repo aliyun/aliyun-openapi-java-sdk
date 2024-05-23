@@ -56,6 +56,9 @@ public class CreateProjectRequest extends RpcAcsRequest<CreateProjectResponse> {
 	@SerializedName("structTransferConfig")
 	private StructTransferConfig structTransferConfig;
 
+	@SerializedName("reverseIncrTransferConfig")
+	private ReverseIncrTransferConfig reverseIncrTransferConfig;
+
 	private Boolean enableIncrTransfer;
 
 	private Boolean enableFullTransfer;
@@ -212,6 +215,17 @@ public class CreateProjectRequest extends RpcAcsRequest<CreateProjectResponse> {
 		}	
 	}
 
+	public ReverseIncrTransferConfig getReverseIncrTransferConfig() {
+		return this.reverseIncrTransferConfig;
+	}
+
+	public void setReverseIncrTransferConfig(ReverseIncrTransferConfig reverseIncrTransferConfig) {
+		this.reverseIncrTransferConfig = reverseIncrTransferConfig;	
+		if (reverseIncrTransferConfig != null) {
+			putBodyParameter("ReverseIncrTransferConfig" , new Gson().toJson(reverseIncrTransferConfig));
+		}	
+	}
+
 	public Boolean getEnableIncrTransfer() {
 		return this.enableIncrTransfer;
 	}
@@ -294,14 +308,26 @@ public class CreateProjectRequest extends RpcAcsRequest<CreateProjectResponse> {
 		@SerializedName("NonePkUkTruncateDstTable")
 		private Boolean nonePkUkTruncateDstTable;
 
+		@SerializedName("ThrottleRps")
+		private Integer throttleRps;
+
 		@SerializedName("FullVerifySpeedMode")
 		private String fullVerifySpeedMode;
+
+		@SerializedName("WriteWorkerNum")
+		private Integer writeWorkerNum;
+
+		@SerializedName("ReadWorkerNum")
+		private Integer readWorkerNum;
 
 		@SerializedName("FullTransferSpeedMode")
 		private String fullTransferSpeedMode;
 
 		@SerializedName("AllowDestTableNotEmpty")
 		private Boolean allowDestTableNotEmpty;
+
+		@SerializedName("ThrottleIOPS")
+		private Integer throttleIOPS;
 
 		public Boolean getNonePkUkTruncateDstTable() {
 			return this.nonePkUkTruncateDstTable;
@@ -311,12 +337,36 @@ public class CreateProjectRequest extends RpcAcsRequest<CreateProjectResponse> {
 			this.nonePkUkTruncateDstTable = nonePkUkTruncateDstTable;
 		}
 
+		public Integer getThrottleRps() {
+			return this.throttleRps;
+		}
+
+		public void setThrottleRps(Integer throttleRps) {
+			this.throttleRps = throttleRps;
+		}
+
 		public String getFullVerifySpeedMode() {
 			return this.fullVerifySpeedMode;
 		}
 
 		public void setFullVerifySpeedMode(String fullVerifySpeedMode) {
 			this.fullVerifySpeedMode = fullVerifySpeedMode;
+		}
+
+		public Integer getWriteWorkerNum() {
+			return this.writeWorkerNum;
+		}
+
+		public void setWriteWorkerNum(Integer writeWorkerNum) {
+			this.writeWorkerNum = writeWorkerNum;
+		}
+
+		public Integer getReadWorkerNum() {
+			return this.readWorkerNum;
+		}
+
+		public void setReadWorkerNum(Integer readWorkerNum) {
+			this.readWorkerNum = readWorkerNum;
 		}
 
 		public String getFullTransferSpeedMode() {
@@ -333,6 +383,14 @@ public class CreateProjectRequest extends RpcAcsRequest<CreateProjectResponse> {
 
 		public void setAllowDestTableNotEmpty(Boolean allowDestTableNotEmpty) {
 			this.allowDestTableNotEmpty = allowDestTableNotEmpty;
+		}
+
+		public Integer getThrottleIOPS() {
+			return this.throttleIOPS;
+		}
+
+		public void setThrottleIOPS(Integer throttleIOPS) {
+			this.throttleIOPS = throttleIOPS;
 		}
 	}
 
@@ -1821,10 +1879,16 @@ public class CreateProjectRequest extends RpcAcsRequest<CreateProjectResponse> {
 		}
 	}
 
-	public static class IncrTransferConfig {
+	public static class ReverseIncrTransferConfig {
+
+		@SerializedName("ThrottleRps")
+		private Integer throttleRps;
 
 		@SerializedName("EnableSequencingWithinTxn")
 		private Boolean enableSequencingWithinTxn;
+
+		@SerializedName("SupportDDLTypes")
+		private List<String> supportDDLTypes;
 
 		@SerializedName("StoreLogKeptHour")
 		private Integer storeLogKeptHour;
@@ -1841,12 +1905,31 @@ public class CreateProjectRequest extends RpcAcsRequest<CreateProjectResponse> {
 		@SerializedName("EnableIncrSyncStatistics")
 		private Boolean enableIncrSyncStatistics;
 
+		@SerializedName("ThrottleIOPS")
+		private Integer throttleIOPS;
+
+		public Integer getThrottleRps() {
+			return this.throttleRps;
+		}
+
+		public void setThrottleRps(Integer throttleRps) {
+			this.throttleRps = throttleRps;
+		}
+
 		public Boolean getEnableSequencingWithinTxn() {
 			return this.enableSequencingWithinTxn;
 		}
 
 		public void setEnableSequencingWithinTxn(Boolean enableSequencingWithinTxn) {
 			this.enableSequencingWithinTxn = enableSequencingWithinTxn;
+		}
+
+		public List<String> getSupportDDLTypes() {
+			return this.supportDDLTypes;
+		}
+
+		public void setSupportDDLTypes(List<String> supportDDLTypes) {
+			this.supportDDLTypes = supportDDLTypes;
 		}
 
 		public Integer getStoreLogKeptHour() {
@@ -1887,6 +1970,116 @@ public class CreateProjectRequest extends RpcAcsRequest<CreateProjectResponse> {
 
 		public void setEnableIncrSyncStatistics(Boolean enableIncrSyncStatistics) {
 			this.enableIncrSyncStatistics = enableIncrSyncStatistics;
+		}
+
+		public Integer getThrottleIOPS() {
+			return this.throttleIOPS;
+		}
+
+		public void setThrottleIOPS(Integer throttleIOPS) {
+			this.throttleIOPS = throttleIOPS;
+		}
+	}
+
+	public static class IncrTransferConfig {
+
+		@SerializedName("ThrottleRps")
+		private Integer throttleRps;
+
+		@SerializedName("EnableSequencingWithinTxn")
+		private Boolean enableSequencingWithinTxn;
+
+		@SerializedName("SupportDDLTypes")
+		private List<String> supportDDLTypes;
+
+		@SerializedName("StoreLogKeptHour")
+		private Integer storeLogKeptHour;
+
+		@SerializedName("StartTimestamp")
+		private String startTimestamp;
+
+		@SerializedName("RecordTypeWhiteList")
+		private List<String> recordTypeWhiteList;
+
+		@SerializedName("IncrSyncConcurrency")
+		private Integer incrSyncConcurrency;
+
+		@SerializedName("EnableIncrSyncStatistics")
+		private Boolean enableIncrSyncStatistics;
+
+		@SerializedName("ThrottleIOPS")
+		private Integer throttleIOPS;
+
+		public Integer getThrottleRps() {
+			return this.throttleRps;
+		}
+
+		public void setThrottleRps(Integer throttleRps) {
+			this.throttleRps = throttleRps;
+		}
+
+		public Boolean getEnableSequencingWithinTxn() {
+			return this.enableSequencingWithinTxn;
+		}
+
+		public void setEnableSequencingWithinTxn(Boolean enableSequencingWithinTxn) {
+			this.enableSequencingWithinTxn = enableSequencingWithinTxn;
+		}
+
+		public List<String> getSupportDDLTypes() {
+			return this.supportDDLTypes;
+		}
+
+		public void setSupportDDLTypes(List<String> supportDDLTypes) {
+			this.supportDDLTypes = supportDDLTypes;
+		}
+
+		public Integer getStoreLogKeptHour() {
+			return this.storeLogKeptHour;
+		}
+
+		public void setStoreLogKeptHour(Integer storeLogKeptHour) {
+			this.storeLogKeptHour = storeLogKeptHour;
+		}
+
+		public String getStartTimestamp() {
+			return this.startTimestamp;
+		}
+
+		public void setStartTimestamp(String startTimestamp) {
+			this.startTimestamp = startTimestamp;
+		}
+
+		public List<String> getRecordTypeWhiteList() {
+			return this.recordTypeWhiteList;
+		}
+
+		public void setRecordTypeWhiteList(List<String> recordTypeWhiteList) {
+			this.recordTypeWhiteList = recordTypeWhiteList;
+		}
+
+		public Integer getIncrSyncConcurrency() {
+			return this.incrSyncConcurrency;
+		}
+
+		public void setIncrSyncConcurrency(Integer incrSyncConcurrency) {
+			this.incrSyncConcurrency = incrSyncConcurrency;
+		}
+
+		public Boolean getEnableIncrSyncStatistics() {
+			return this.enableIncrSyncStatistics;
+		}
+
+		public void setEnableIncrSyncStatistics(Boolean enableIncrSyncStatistics) {
+			this.enableIncrSyncStatistics = enableIncrSyncStatistics;
+		}
+
+		public Integer getThrottleIOPS() {
+			return this.throttleIOPS;
+		}
+
+		public void setThrottleIOPS(Integer throttleIOPS) {
+			this.throttleIOPS = throttleIOPS;
 		}
 	}
 

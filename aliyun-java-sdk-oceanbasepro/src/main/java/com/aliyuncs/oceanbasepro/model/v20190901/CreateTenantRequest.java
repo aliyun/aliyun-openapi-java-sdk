@@ -15,6 +15,9 @@
 package com.aliyuncs.oceanbasepro.model.v20190901;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.Map;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.oceanbasepro.Endpoint;
 
@@ -48,6 +51,11 @@ public class CreateTenantRequest extends RpcAcsRequest<CreateTenantResponse> {
 	private String instanceId;
 
 	private String primaryZone;
+
+	private String userVpcOwnerId;
+
+	@SerializedName("createParams")
+	private Map<String,String> createParams;
 
 	private String tenantName;
 
@@ -191,6 +199,28 @@ public class CreateTenantRequest extends RpcAcsRequest<CreateTenantResponse> {
 		if(primaryZone != null){
 			putBodyParameter("PrimaryZone", primaryZone);
 		}
+	}
+
+	public String getUserVpcOwnerId() {
+		return this.userVpcOwnerId;
+	}
+
+	public void setUserVpcOwnerId(String userVpcOwnerId) {
+		this.userVpcOwnerId = userVpcOwnerId;
+		if(userVpcOwnerId != null){
+			putBodyParameter("UserVpcOwnerId", userVpcOwnerId);
+		}
+	}
+
+	public Map<String,String> getCreateParams() {
+		return this.createParams;
+	}
+
+	public void setCreateParams(Map<String,String> createParams) {
+		this.createParams = createParams;	
+		if (createParams != null) {
+			putBodyParameter("CreateParams" , new Gson().toJson(createParams));
+		}	
 	}
 
 	public String getTenantName() {

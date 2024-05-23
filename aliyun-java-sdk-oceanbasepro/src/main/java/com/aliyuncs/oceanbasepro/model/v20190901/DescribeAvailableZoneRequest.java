@@ -28,11 +28,13 @@ public class DescribeAvailableZoneRequest extends RpcAcsRequest<DescribeAvailabl
 
 	private String spec;
 
+	private String instanceType;
+
 	private String obVersion;
 
 	private String series;
 
-	private String instanceType;
+	private String cpuArch;
 
 	private String deployType;
 	public DescribeAvailableZoneRequest() {
@@ -53,6 +55,17 @@ public class DescribeAvailableZoneRequest extends RpcAcsRequest<DescribeAvailabl
 		this.spec = spec;
 		if(spec != null){
 			putBodyParameter("Spec", spec);
+		}
+	}
+
+	public String getInstanceType() {
+		return this.instanceType;
+	}
+
+	public void setInstanceType(String instanceType) {
+		this.instanceType = instanceType;
+		if(instanceType != null){
+			putBodyParameter("InstanceType", instanceType);
 		}
 	}
 
@@ -78,14 +91,14 @@ public class DescribeAvailableZoneRequest extends RpcAcsRequest<DescribeAvailabl
 		}
 	}
 
-	public String getInstanceType() {
-		return this.instanceType;
+	public String getCpuArch() {
+		return this.cpuArch;
 	}
 
-	public void setInstanceType(String instanceType) {
-		this.instanceType = instanceType;
-		if(instanceType != null){
-			putBodyParameter("InstanceType", instanceType);
+	public void setCpuArch(String cpuArch) {
+		this.cpuArch = cpuArch;
+		if(cpuArch != null){
+			putBodyParameter("CpuArch", cpuArch);
 		}
 	}
 

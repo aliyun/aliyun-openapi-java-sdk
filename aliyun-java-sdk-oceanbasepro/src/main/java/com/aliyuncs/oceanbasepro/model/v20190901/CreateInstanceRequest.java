@@ -55,6 +55,8 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	private String series;
 
+	private String cpuArch;
+
 	private String primaryInstance;
 
 	private String primaryRegion;
@@ -231,6 +233,17 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		this.series = series;
 		if(series != null){
 			putBodyParameter("Series", series);
+		}
+	}
+
+	public String getCpuArch() {
+		return this.cpuArch;
+	}
+
+	public void setCpuArch(String cpuArch) {
+		this.cpuArch = cpuArch;
+		if(cpuArch != null){
+			putBodyParameter("CpuArch", cpuArch);
 		}
 	}
 

@@ -47,7 +47,7 @@ public class DescribeOasTopSQLListResponse extends AcsResponse {
 
 	public static class DataItem {
 
-		private Double executions;
+		private Long executions;
 
 		private Double rpcCount;
 
@@ -209,11 +209,11 @@ public class DescribeOasTopSQLListResponse extends AcsResponse {
 
 		private List<SqlListItem> sqlList;
 
-		public Double getExecutions() {
+		public Long getExecutions() {
 			return this.executions;
 		}
 
-		public void setExecutions(Double executions) {
+		public void setExecutions(Long executions) {
 			this.executions = executions;
 		}
 
@@ -859,7 +859,7 @@ public class DescribeOasTopSQLListResponse extends AcsResponse {
 
 		public static class SqlListItem {
 
-			private Double executions;
+			private Long executions;
 
 			private Double rpcCount;
 
@@ -1015,11 +1015,11 @@ public class DescribeOasTopSQLListResponse extends AcsResponse {
 
 			private Double sumDbTime;
 
-			public Double getExecutions() {
+			public Long getExecutions() {
 				return this.executions;
 			}
 
-			public void setExecutions(Double executions) {
+			public void setExecutions(Long executions) {
 				this.executions = executions;
 			}
 

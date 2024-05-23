@@ -71,6 +71,8 @@ public class DescribeAvailableZoneResponse extends AcsResponse {
 
 			private String series;
 
+			private String cpuArch;
+
 			private List<SupportSpecificationsItem> supportSpecifications;
 
 			public String getRegion() {
@@ -119,6 +121,14 @@ public class DescribeAvailableZoneResponse extends AcsResponse {
 
 			public void setSeries(String series) {
 				this.series = series;
+			}
+
+			public String getCpuArch() {
+				return this.cpuArch;
+			}
+
+			public void setCpuArch(String cpuArch) {
+				this.cpuArch = cpuArch;
 			}
 
 			public List<SupportSpecificationsItem> getSupportSpecifications() {

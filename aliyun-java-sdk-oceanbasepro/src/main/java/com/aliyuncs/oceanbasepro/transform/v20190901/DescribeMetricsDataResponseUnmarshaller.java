@@ -14,6 +14,9 @@
 
 package com.aliyuncs.oceanbasepro.transform.v20190901;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.oceanbasepro.model.v20190901.DescribeMetricsDataResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -23,7 +26,12 @@ public class DescribeMetricsDataResponseUnmarshaller {
 	public static DescribeMetricsDataResponse unmarshall(DescribeMetricsDataResponse describeMetricsDataResponse, UnmarshallerContext _ctx) {
 		
 		describeMetricsDataResponse.setRequestId(_ctx.stringValue("DescribeMetricsDataResponse.RequestId"));
-		describeMetricsDataResponse.setData(_ctx.stringValue("DescribeMetricsDataResponse.Data"));
+
+		List<String> data = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeMetricsDataResponse.Data.Length"); i++) {
+			data.add(_ctx.stringValue("DescribeMetricsDataResponse.Data["+ i +"]"));
+		}
+		describeMetricsDataResponse.setData(data);
 	 
 	 	return describeMetricsDataResponse;
 	}
