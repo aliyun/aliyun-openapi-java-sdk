@@ -34,6 +34,8 @@ public class ModifyNetworkInterfaceAttributeRequest extends RpcAcsRequest<Modify
 
 	private String description;
 
+	private NetworkInterfaceTrafficConfig networkInterfaceTrafficConfig;
+
 	private String networkInterfaceName;
 
 	private Integer txQueueSize;
@@ -47,6 +49,8 @@ public class ModifyNetworkInterfaceAttributeRequest extends RpcAcsRequest<Modify
 	private Integer rxQueueSize;
 
 	private Long ownerId;
+
+	private ConnectionTrackingConfiguration connectionTrackingConfiguration;
 
 	private String networkInterfaceId;
 	public ModifyNetworkInterfaceAttributeRequest() {
@@ -102,6 +106,22 @@ public class ModifyNetworkInterfaceAttributeRequest extends RpcAcsRequest<Modify
 		if(description != null){
 			putQueryParameter("Description", description);
 		}
+	}
+
+	public NetworkInterfaceTrafficConfig getNetworkInterfaceTrafficConfig() {
+		return this.networkInterfaceTrafficConfig;
+	}
+
+	public void setNetworkInterfaceTrafficConfig(NetworkInterfaceTrafficConfig networkInterfaceTrafficConfig) {
+		this.networkInterfaceTrafficConfig = networkInterfaceTrafficConfig;	
+		if (networkInterfaceTrafficConfig != null) {
+			
+				putQueryParameter("NetworkInterfaceTrafficConfig.NetworkInterfaceTrafficMode" , networkInterfaceTrafficConfig.getNetworkInterfaceTrafficMode());
+				putQueryParameter("NetworkInterfaceTrafficConfig.QueueNumber" , networkInterfaceTrafficConfig.getQueueNumber());
+				putQueryParameter("NetworkInterfaceTrafficConfig.QueuePairNumber" , networkInterfaceTrafficConfig.getQueuePairNumber());
+				putQueryParameter("NetworkInterfaceTrafficConfig.RxQueueSize" , networkInterfaceTrafficConfig.getRxQueueSize());
+				putQueryParameter("NetworkInterfaceTrafficConfig.TxQueueSize" , networkInterfaceTrafficConfig.getTxQueueSize());
+		}	
 	}
 
 	public String getNetworkInterfaceName() {
@@ -181,6 +201,20 @@ public class ModifyNetworkInterfaceAttributeRequest extends RpcAcsRequest<Modify
 		}
 	}
 
+	public ConnectionTrackingConfiguration getConnectionTrackingConfiguration() {
+		return this.connectionTrackingConfiguration;
+	}
+
+	public void setConnectionTrackingConfiguration(ConnectionTrackingConfiguration connectionTrackingConfiguration) {
+		this.connectionTrackingConfiguration = connectionTrackingConfiguration;	
+		if (connectionTrackingConfiguration != null) {
+			
+				putQueryParameter("ConnectionTrackingConfiguration.TcpEstablishedTimeout" , connectionTrackingConfiguration.getTcpEstablishedTimeout());
+				putQueryParameter("ConnectionTrackingConfiguration.TcpClosedAndTimeWaitTimeout" , connectionTrackingConfiguration.getTcpClosedAndTimeWaitTimeout());
+				putQueryParameter("ConnectionTrackingConfiguration.UdpTimeout" , connectionTrackingConfiguration.getUdpTimeout());
+		}	
+	}
+
 	public String getNetworkInterfaceId() {
 		return this.networkInterfaceId;
 	}
@@ -189,6 +223,92 @@ public class ModifyNetworkInterfaceAttributeRequest extends RpcAcsRequest<Modify
 		this.networkInterfaceId = networkInterfaceId;
 		if(networkInterfaceId != null){
 			putQueryParameter("NetworkInterfaceId", networkInterfaceId);
+		}
+	}
+
+	public static class NetworkInterfaceTrafficConfig {
+
+		private String networkInterfaceTrafficMode;
+
+		private Integer queueNumber;
+
+		private Integer queuePairNumber;
+
+		private Integer rxQueueSize;
+
+		private Integer txQueueSize;
+
+		public String getNetworkInterfaceTrafficMode() {
+			return this.networkInterfaceTrafficMode;
+		}
+
+		public void setNetworkInterfaceTrafficMode(String networkInterfaceTrafficMode) {
+			this.networkInterfaceTrafficMode = networkInterfaceTrafficMode;
+		}
+
+		public Integer getQueueNumber() {
+			return this.queueNumber;
+		}
+
+		public void setQueueNumber(Integer queueNumber) {
+			this.queueNumber = queueNumber;
+		}
+
+		public Integer getQueuePairNumber() {
+			return this.queuePairNumber;
+		}
+
+		public void setQueuePairNumber(Integer queuePairNumber) {
+			this.queuePairNumber = queuePairNumber;
+		}
+
+		public Integer getRxQueueSize() {
+			return this.rxQueueSize;
+		}
+
+		public void setRxQueueSize(Integer rxQueueSize) {
+			this.rxQueueSize = rxQueueSize;
+		}
+
+		public Integer getTxQueueSize() {
+			return this.txQueueSize;
+		}
+
+		public void setTxQueueSize(Integer txQueueSize) {
+			this.txQueueSize = txQueueSize;
+		}
+	}
+
+	public static class ConnectionTrackingConfiguration {
+
+		private Integer tcpEstablishedTimeout;
+
+		private Integer tcpClosedAndTimeWaitTimeout;
+
+		private Integer udpTimeout;
+
+		public Integer getTcpEstablishedTimeout() {
+			return this.tcpEstablishedTimeout;
+		}
+
+		public void setTcpEstablishedTimeout(Integer tcpEstablishedTimeout) {
+			this.tcpEstablishedTimeout = tcpEstablishedTimeout;
+		}
+
+		public Integer getTcpClosedAndTimeWaitTimeout() {
+			return this.tcpClosedAndTimeWaitTimeout;
+		}
+
+		public void setTcpClosedAndTimeWaitTimeout(Integer tcpClosedAndTimeWaitTimeout) {
+			this.tcpClosedAndTimeWaitTimeout = tcpClosedAndTimeWaitTimeout;
+		}
+
+		public Integer getUdpTimeout() {
+			return this.udpTimeout;
+		}
+
+		public void setUdpTimeout(Integer udpTimeout) {
+			this.udpTimeout = udpTimeout;
 		}
 	}
 

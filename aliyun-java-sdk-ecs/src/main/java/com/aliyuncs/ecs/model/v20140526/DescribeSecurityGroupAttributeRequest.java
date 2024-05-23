@@ -31,6 +31,8 @@ public class DescribeSecurityGroupAttributeRequest extends RpcAcsRequest<Describ
 
 	private String securityGroupId;
 
+	private String nextToken;
+
 	private String direction;
 
 	private String resourceOwnerAccount;
@@ -38,6 +40,8 @@ public class DescribeSecurityGroupAttributeRequest extends RpcAcsRequest<Describ
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private Integer maxResults;
 	public DescribeSecurityGroupAttributeRequest() {
 		super("Ecs", "2014-05-26", "DescribeSecurityGroupAttribute", "ecs");
 		setMethod(MethodType.POST);
@@ -77,6 +81,17 @@ public class DescribeSecurityGroupAttributeRequest extends RpcAcsRequest<Describ
 		this.securityGroupId = securityGroupId;
 		if(securityGroupId != null){
 			putQueryParameter("SecurityGroupId", securityGroupId);
+		}
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
 		}
 	}
 
@@ -121,6 +136,17 @@ public class DescribeSecurityGroupAttributeRequest extends RpcAcsRequest<Describ
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Integer getMaxResults() {
+		return this.maxResults;
+	}
+
+	public void setMaxResults(Integer maxResults) {
+		this.maxResults = maxResults;
+		if(maxResults != null){
+			putQueryParameter("MaxResults", maxResults.toString());
 		}
 	}
 

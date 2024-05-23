@@ -133,6 +133,8 @@ public class DescribeInvocationResultsResponse extends AcsResponse {
 
 			private String containerName;
 
+			private String terminationMode;
+
 			private List<Tag> tags;
 
 			public String getInvocationStatus() {
@@ -269,6 +271,14 @@ public class DescribeInvocationResultsResponse extends AcsResponse {
 
 			public void setContainerName(String containerName) {
 				this.containerName = containerName;
+			}
+
+			public String getTerminationMode() {
+				return this.terminationMode;
+			}
+
+			public void setTerminationMode(String terminationMode) {
+				this.terminationMode = terminationMode;
 			}
 
 			public List<Tag> getTags() {

@@ -22,6 +22,7 @@ import com.aliyuncs.ecs.model.v20140526.DescribeDisksResponse.Disk;
 import com.aliyuncs.ecs.model.v20140526.DescribeDisksResponse.Disk.Attachment;
 import com.aliyuncs.ecs.model.v20140526.DescribeDisksResponse.Disk.MountInstance;
 import com.aliyuncs.ecs.model.v20140526.DescribeDisksResponse.Disk.OperationLock;
+import com.aliyuncs.ecs.model.v20140526.DescribeDisksResponse.Disk.Placement;
 import com.aliyuncs.ecs.model.v20140526.DescribeDisksResponse.Disk.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -83,6 +84,10 @@ public class DescribeDisksResponseUnmarshaller {
 			disk.setThroughput(_ctx.integerValue("DescribeDisksResponse.Disks["+ i +"].Throughput"));
 			disk.setThroughputRead(_ctx.integerValue("DescribeDisksResponse.Disks["+ i +"].ThroughputRead"));
 			disk.setThroughputWrite(_ctx.integerValue("DescribeDisksResponse.Disks["+ i +"].ThroughputWrite"));
+
+			Placement placement = new Placement();
+			placement.setZoneIds(_ctx.stringValue("DescribeDisksResponse.Disks["+ i +"].Placement.ZoneIds"));
+			disk.setPlacement(placement);
 
 			List<OperationLock> operationLocks = new ArrayList<OperationLock>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDisksResponse.Disks["+ i +"].OperationLocks.Length"); j++) {

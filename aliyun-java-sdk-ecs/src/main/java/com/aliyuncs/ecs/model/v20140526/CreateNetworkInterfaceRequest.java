@@ -32,6 +32,8 @@ public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkIn
 
 	private List<String> ipv4Prefixs;
 
+	private NetworkInterfaceTrafficConfig networkInterfaceTrafficConfig;
+
 	private Integer secondaryPrivateIpAddressCount;
 
 	private String businessType;
@@ -84,6 +86,8 @@ public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkIn
 
 	private Integer ipv4PrefixCount;
 
+	private ConnectionTrackingConfiguration connectionTrackingConfiguration;
+
 	private String primaryIpAddress;
 	public CreateNetworkInterfaceRequest() {
 		super("Ecs", "2014-05-26", "CreateNetworkInterface", "ecs");
@@ -126,6 +130,22 @@ public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkIn
 			for (int i = 0; i < ipv4Prefixs.size(); i++) {
 				putQueryParameter("Ipv4Prefix." + (i + 1) , ipv4Prefixs.get(i));
 			}
+		}	
+	}
+
+	public NetworkInterfaceTrafficConfig getNetworkInterfaceTrafficConfig() {
+		return this.networkInterfaceTrafficConfig;
+	}
+
+	public void setNetworkInterfaceTrafficConfig(NetworkInterfaceTrafficConfig networkInterfaceTrafficConfig) {
+		this.networkInterfaceTrafficConfig = networkInterfaceTrafficConfig;	
+		if (networkInterfaceTrafficConfig != null) {
+			
+				putQueryParameter("NetworkInterfaceTrafficConfig.QueueNumber" , networkInterfaceTrafficConfig.getQueueNumber());
+				putQueryParameter("NetworkInterfaceTrafficConfig.NetworkInterfaceTrafficMode" , networkInterfaceTrafficConfig.getNetworkInterfaceTrafficMode());
+				putQueryParameter("NetworkInterfaceTrafficConfig.QueuePairNumber" , networkInterfaceTrafficConfig.getQueuePairNumber());
+				putQueryParameter("NetworkInterfaceTrafficConfig.TxQueueSize" , networkInterfaceTrafficConfig.getTxQueueSize());
+				putQueryParameter("NetworkInterfaceTrafficConfig.RxQueueSize" , networkInterfaceTrafficConfig.getRxQueueSize());
 		}	
 	}
 
@@ -426,6 +446,20 @@ public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkIn
 		}
 	}
 
+	public ConnectionTrackingConfiguration getConnectionTrackingConfiguration() {
+		return this.connectionTrackingConfiguration;
+	}
+
+	public void setConnectionTrackingConfiguration(ConnectionTrackingConfiguration connectionTrackingConfiguration) {
+		this.connectionTrackingConfiguration = connectionTrackingConfiguration;	
+		if (connectionTrackingConfiguration != null) {
+			
+				putQueryParameter("ConnectionTrackingConfiguration.TcpEstablishedTimeout" , connectionTrackingConfiguration.getTcpEstablishedTimeout());
+				putQueryParameter("ConnectionTrackingConfiguration.TcpClosedAndTimeWaitTimeout" , connectionTrackingConfiguration.getTcpClosedAndTimeWaitTimeout());
+				putQueryParameter("ConnectionTrackingConfiguration.UdpTimeout" , connectionTrackingConfiguration.getUdpTimeout());
+		}	
+	}
+
 	public String getPrimaryIpAddress() {
 		return this.primaryIpAddress;
 	}
@@ -434,6 +468,59 @@ public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkIn
 		this.primaryIpAddress = primaryIpAddress;
 		if(primaryIpAddress != null){
 			putQueryParameter("PrimaryIpAddress", primaryIpAddress);
+		}
+	}
+
+	public static class NetworkInterfaceTrafficConfig {
+
+		private Integer queueNumber;
+
+		private String networkInterfaceTrafficMode;
+
+		private Integer queuePairNumber;
+
+		private Integer txQueueSize;
+
+		private Integer rxQueueSize;
+
+		public Integer getQueueNumber() {
+			return this.queueNumber;
+		}
+
+		public void setQueueNumber(Integer queueNumber) {
+			this.queueNumber = queueNumber;
+		}
+
+		public String getNetworkInterfaceTrafficMode() {
+			return this.networkInterfaceTrafficMode;
+		}
+
+		public void setNetworkInterfaceTrafficMode(String networkInterfaceTrafficMode) {
+			this.networkInterfaceTrafficMode = networkInterfaceTrafficMode;
+		}
+
+		public Integer getQueuePairNumber() {
+			return this.queuePairNumber;
+		}
+
+		public void setQueuePairNumber(Integer queuePairNumber) {
+			this.queuePairNumber = queuePairNumber;
+		}
+
+		public Integer getTxQueueSize() {
+			return this.txQueueSize;
+		}
+
+		public void setTxQueueSize(Integer txQueueSize) {
+			this.txQueueSize = txQueueSize;
+		}
+
+		public Integer getRxQueueSize() {
+			return this.rxQueueSize;
+		}
+
+		public void setRxQueueSize(Integer rxQueueSize) {
+			this.rxQueueSize = rxQueueSize;
 		}
 	}
 
@@ -457,6 +544,39 @@ public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkIn
 
 		public void setValue(String value) {
 			this.value = value;
+		}
+	}
+
+	public static class ConnectionTrackingConfiguration {
+
+		private Integer tcpEstablishedTimeout;
+
+		private Integer tcpClosedAndTimeWaitTimeout;
+
+		private Integer udpTimeout;
+
+		public Integer getTcpEstablishedTimeout() {
+			return this.tcpEstablishedTimeout;
+		}
+
+		public void setTcpEstablishedTimeout(Integer tcpEstablishedTimeout) {
+			this.tcpEstablishedTimeout = tcpEstablishedTimeout;
+		}
+
+		public Integer getTcpClosedAndTimeWaitTimeout() {
+			return this.tcpClosedAndTimeWaitTimeout;
+		}
+
+		public void setTcpClosedAndTimeWaitTimeout(Integer tcpClosedAndTimeWaitTimeout) {
+			this.tcpClosedAndTimeWaitTimeout = tcpClosedAndTimeWaitTimeout;
+		}
+
+		public Integer getUdpTimeout() {
+			return this.udpTimeout;
+		}
+
+		public void setUdpTimeout(Integer udpTimeout) {
+			this.udpTimeout = udpTimeout;
 		}
 	}
 

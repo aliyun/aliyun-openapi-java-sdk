@@ -76,6 +76,8 @@ public class RunCommandRequest extends RpcAcsRequest<RunCommandResponse> {
 
 	private String ownerAccount;
 
+	private String terminationMode;
+
 	private Boolean enableParameter;
 
 	private String username;
@@ -357,6 +359,17 @@ public class RunCommandRequest extends RpcAcsRequest<RunCommandResponse> {
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getTerminationMode() {
+		return this.terminationMode;
+	}
+
+	public void setTerminationMode(String terminationMode) {
+		this.terminationMode = terminationMode;
+		if(terminationMode != null){
+			putQueryParameter("TerminationMode", terminationMode);
 		}
 	}
 

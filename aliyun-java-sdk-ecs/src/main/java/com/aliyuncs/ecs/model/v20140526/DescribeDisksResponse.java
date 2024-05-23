@@ -183,6 +183,8 @@ public class DescribeDisksResponse extends AcsResponse {
 
 		private List<Attachment> attachments;
 
+		private Placement placement;
+
 		public String getSerialNumber() {
 			return this.serialNumber;
 		}
@@ -567,6 +569,14 @@ public class DescribeDisksResponse extends AcsResponse {
 			this.attachments = attachments;
 		}
 
+		public Placement getPlacement() {
+			return this.placement;
+		}
+
+		public void setPlacement(Placement placement) {
+			this.placement = placement;
+		}
+
 		public static class OperationLock {
 
 			private String lockReason;
@@ -666,6 +676,19 @@ public class DescribeDisksResponse extends AcsResponse {
 
 			public void setAttachedTime(String attachedTime) {
 				this.attachedTime = attachedTime;
+			}
+		}
+
+		public static class Placement {
+
+			private String zoneIds;
+
+			public String getZoneIds() {
+				return this.zoneIds;
+			}
+
+			public void setZoneIds(String zoneIds) {
+				this.zoneIds = zoneIds;
 			}
 		}
 	}

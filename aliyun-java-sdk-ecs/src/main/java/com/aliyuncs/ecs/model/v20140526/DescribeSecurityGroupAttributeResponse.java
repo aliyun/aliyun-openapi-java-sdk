@@ -39,6 +39,8 @@ public class DescribeSecurityGroupAttributeResponse extends AcsResponse {
 
 	private String regionId;
 
+	private String nextToken;
+
 	private List<Permission> permissions;
 
 	private ReferencedInfo referencedInfo;
@@ -97,6 +99,14 @@ public class DescribeSecurityGroupAttributeResponse extends AcsResponse {
 
 	public void setRegionId(String regionId) {
 		this.regionId = regionId;
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
 	}
 
 	public List<Permission> getPermissions() {

@@ -89,6 +89,10 @@ public class DescribeNetworkInterfaceAttributeResponse extends AcsResponse {
 
 	private SlaveInterfaceSpecification slaveInterfaceSpecification;
 
+	private NetworkInterfaceTrafficConfig networkInterfaceTrafficConfig;
+
+	private ConnectionTrackingConfiguration connectionTrackingConfiguration;
+
 	public String getCreationTime() {
 		return this.creationTime;
 	}
@@ -343,6 +347,22 @@ public class DescribeNetworkInterfaceAttributeResponse extends AcsResponse {
 
 	public void setSlaveInterfaceSpecification(SlaveInterfaceSpecification slaveInterfaceSpecification) {
 		this.slaveInterfaceSpecification = slaveInterfaceSpecification;
+	}
+
+	public NetworkInterfaceTrafficConfig getNetworkInterfaceTrafficConfig() {
+		return this.networkInterfaceTrafficConfig;
+	}
+
+	public void setNetworkInterfaceTrafficConfig(NetworkInterfaceTrafficConfig networkInterfaceTrafficConfig) {
+		this.networkInterfaceTrafficConfig = networkInterfaceTrafficConfig;
+	}
+
+	public ConnectionTrackingConfiguration getConnectionTrackingConfiguration() {
+		return this.connectionTrackingConfiguration;
+	}
+
+	public void setConnectionTrackingConfiguration(ConnectionTrackingConfiguration connectionTrackingConfiguration) {
+		this.connectionTrackingConfiguration = connectionTrackingConfiguration;
 	}
 
 	public static class PrivateIpSet {
@@ -625,6 +645,72 @@ public class DescribeNetworkInterfaceAttributeResponse extends AcsResponse {
 
 		public void setBondNetworkInterfaceId(String bondNetworkInterfaceId) {
 			this.bondNetworkInterfaceId = bondNetworkInterfaceId;
+		}
+	}
+
+	public static class NetworkInterfaceTrafficConfig {
+
+		private String networkInterfaceTrafficMode;
+
+		private Integer queueNumber;
+
+		private Integer queuePairNumber;
+
+		public String getNetworkInterfaceTrafficMode() {
+			return this.networkInterfaceTrafficMode;
+		}
+
+		public void setNetworkInterfaceTrafficMode(String networkInterfaceTrafficMode) {
+			this.networkInterfaceTrafficMode = networkInterfaceTrafficMode;
+		}
+
+		public Integer getQueueNumber() {
+			return this.queueNumber;
+		}
+
+		public void setQueueNumber(Integer queueNumber) {
+			this.queueNumber = queueNumber;
+		}
+
+		public Integer getQueuePairNumber() {
+			return this.queuePairNumber;
+		}
+
+		public void setQueuePairNumber(Integer queuePairNumber) {
+			this.queuePairNumber = queuePairNumber;
+		}
+	}
+
+	public static class ConnectionTrackingConfiguration {
+
+		private Integer tcpEstablishedTimeout;
+
+		private Integer tcpClosedAndTimeWaitTimeout;
+
+		private Integer udpTimeout;
+
+		public Integer getTcpEstablishedTimeout() {
+			return this.tcpEstablishedTimeout;
+		}
+
+		public void setTcpEstablishedTimeout(Integer tcpEstablishedTimeout) {
+			this.tcpEstablishedTimeout = tcpEstablishedTimeout;
+		}
+
+		public Integer getTcpClosedAndTimeWaitTimeout() {
+			return this.tcpClosedAndTimeWaitTimeout;
+		}
+
+		public void setTcpClosedAndTimeWaitTimeout(Integer tcpClosedAndTimeWaitTimeout) {
+			this.tcpClosedAndTimeWaitTimeout = tcpClosedAndTimeWaitTimeout;
+		}
+
+		public Integer getUdpTimeout() {
+			return this.udpTimeout;
+		}
+
+		public void setUdpTimeout(Integer udpTimeout) {
+			this.udpTimeout = udpTimeout;
 		}
 	}
 

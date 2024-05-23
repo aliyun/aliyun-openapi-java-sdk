@@ -35,6 +35,7 @@ public class DescribeSecurityGroupAttributeResponseUnmarshaller {
 		describeSecurityGroupAttributeResponse.setSecurityGroupId(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.SecurityGroupId"));
 		describeSecurityGroupAttributeResponse.setSecurityGroupName(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.SecurityGroupName"));
 		describeSecurityGroupAttributeResponse.setRegionId(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.RegionId"));
+		describeSecurityGroupAttributeResponse.setNextToken(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.NextToken"));
 
 		ReferencedInfo referencedInfo = new ReferencedInfo();
 

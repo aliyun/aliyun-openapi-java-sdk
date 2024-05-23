@@ -141,6 +141,8 @@ public class DescribeSnapshotsResponse extends AcsResponse {
 
 		private String sourceRegionId;
 
+		private String snapshotLinkId;
+
 		private List<Tag> tags;
 
 		public String getStatus() {
@@ -357,6 +359,14 @@ public class DescribeSnapshotsResponse extends AcsResponse {
 
 		public void setSourceRegionId(String sourceRegionId) {
 			this.sourceRegionId = sourceRegionId;
+		}
+
+		public String getSnapshotLinkId() {
+			return this.snapshotLinkId;
+		}
+
+		public void setSnapshotLinkId(String snapshotLinkId) {
+			this.snapshotLinkId = snapshotLinkId;
 		}
 
 		public List<Tag> getTags() {

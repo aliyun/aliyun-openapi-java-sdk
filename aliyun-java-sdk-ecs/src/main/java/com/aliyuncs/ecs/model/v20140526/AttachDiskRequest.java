@@ -45,6 +45,8 @@ public class AttachDiskRequest extends RpcAcsRequest<AttachDiskResponse> {
 
 	private String instanceId;
 
+	private Boolean force;
+
 	private String device;
 	public AttachDiskRequest() {
 		super("Ecs", "2014-05-26", "AttachDisk", "ecs");
@@ -162,6 +164,17 @@ public class AttachDiskRequest extends RpcAcsRequest<AttachDiskResponse> {
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public Boolean getForce() {
+		return this.force;
+	}
+
+	public void setForce(Boolean force) {
+		this.force = force;
+		if(force != null){
+			putQueryParameter("Force", force.toString());
 		}
 	}
 

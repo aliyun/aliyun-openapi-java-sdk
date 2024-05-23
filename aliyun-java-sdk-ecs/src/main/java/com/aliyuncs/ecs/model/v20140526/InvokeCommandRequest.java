@@ -58,6 +58,8 @@ public class InvokeCommandRequest extends RpcAcsRequest<InvokeCommandResponse> {
 
 	private Long ownerId;
 
+	private String terminationMode;
+
 	private List<String> instanceIds;
 
 	private String containerId;
@@ -242,6 +244,17 @@ public class InvokeCommandRequest extends RpcAcsRequest<InvokeCommandResponse> {
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getTerminationMode() {
+		return this.terminationMode;
+	}
+
+	public void setTerminationMode(String terminationMode) {
+		this.terminationMode = terminationMode;
+		if(terminationMode != null){
+			putQueryParameter("TerminationMode", terminationMode);
 		}
 	}
 
