@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.ccc.model.v20200701.ListRealtimeSkillGroupStatesResponse;
 import com.aliyuncs.ccc.model.v20200701.ListRealtimeSkillGroupStatesResponse.Data;
 import com.aliyuncs.ccc.model.v20200701.ListRealtimeSkillGroupStatesResponse.Data.SkillGroupState;
+import com.aliyuncs.ccc.model.v20200701.ListRealtimeSkillGroupStatesResponse.Data.SkillGroupState.BreakCodeDetail;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -51,6 +52,17 @@ public class ListRealtimeSkillGroupStatesResponseUnmarshaller {
 			skillGroupState.setReadyAgents(_ctx.longValue("ListRealtimeSkillGroupStatesResponse.Data.List["+ i +"].ReadyAgents"));
 			skillGroupState.setInstanceId(_ctx.stringValue("ListRealtimeSkillGroupStatesResponse.Data.List["+ i +"].InstanceId"));
 			skillGroupState.setOutboundScenarioReadyAgents(_ctx.longValue("ListRealtimeSkillGroupStatesResponse.Data.List["+ i +"].OutboundScenarioReadyAgents"));
+			skillGroupState.setTotalAgents(_ctx.longValue("ListRealtimeSkillGroupStatesResponse.Data.List["+ i +"].TotalAgents"));
+
+			List<BreakCodeDetail> breakCodeDetailList = new ArrayList<BreakCodeDetail>();
+			for (int j = 0; j < _ctx.lengthValue("ListRealtimeSkillGroupStatesResponse.Data.List["+ i +"].BreakCodeDetailList.Length"); j++) {
+				BreakCodeDetail breakCodeDetail = new BreakCodeDetail();
+				breakCodeDetail.setBreakCode(_ctx.stringValue("ListRealtimeSkillGroupStatesResponse.Data.List["+ i +"].BreakCodeDetailList["+ j +"].BreakCode"));
+				breakCodeDetail.setCount(_ctx.longValue("ListRealtimeSkillGroupStatesResponse.Data.List["+ i +"].BreakCodeDetailList["+ j +"].Count"));
+
+				breakCodeDetailList.add(breakCodeDetail);
+			}
+			skillGroupState.setBreakCodeDetailList(breakCodeDetailList);
 
 			list.add(skillGroupState);
 		}

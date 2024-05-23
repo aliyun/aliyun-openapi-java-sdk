@@ -48,6 +48,8 @@ public class GetCampaignResponseUnmarshaller {
 		data.setSimulation(_ctx.booleanValue("GetCampaignResponse.Data.Simulation"));
 		data.setSimulationParameters(_ctx.stringValue("GetCampaignResponse.Data.SimulationParameters"));
 		data.setCasesUncompletedAfterAttempted(_ctx.longValue("GetCampaignResponse.Data.CasesUncompletedAfterAttempted"));
+		data.setCasesUncompletedAfterAttempt(_ctx.stringValue("GetCampaignResponse.Data.CasesUncompletedAfterAttempt"));
+		data.setCompletionRate(_ctx.floatValue("GetCampaignResponse.Data.CompletionRate"));
 		getCampaignResponse.setData(data);
 	 
 	 	return getCampaignResponse;

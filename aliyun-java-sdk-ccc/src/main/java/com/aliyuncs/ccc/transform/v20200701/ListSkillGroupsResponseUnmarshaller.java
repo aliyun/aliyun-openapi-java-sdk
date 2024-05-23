@@ -47,6 +47,7 @@ public class ListSkillGroupsResponseUnmarshaller {
 			skillGroup.setSkillGroupName(_ctx.stringValue("ListSkillGroupsResponse.Data.List["+ i +"].SkillGroupName"));
 			skillGroup.setUserCount(_ctx.integerValue("ListSkillGroupsResponse.Data.List["+ i +"].UserCount"));
 			skillGroup.setInstanceId(_ctx.stringValue("ListSkillGroupsResponse.Data.List["+ i +"].InstanceId"));
+			skillGroup.setMediaType(_ctx.stringValue("ListSkillGroupsResponse.Data.List["+ i +"].MediaType"));
 
 			list.add(skillGroup);
 		}

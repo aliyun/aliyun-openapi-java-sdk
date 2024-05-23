@@ -25,6 +25,8 @@ import com.aliyuncs.ccc.Endpoint;
 public class GetLoginDetailsRequest extends RpcAcsRequest<GetLoginDetailsResponse> {
 	   
 
+	private String chatDeviceId;
+
 	private String userId;
 
 	private String instanceId;
@@ -35,6 +37,17 @@ public class GetLoginDetailsRequest extends RpcAcsRequest<GetLoginDetailsRespons
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getChatDeviceId() {
+		return this.chatDeviceId;
+	}
+
+	public void setChatDeviceId(String chatDeviceId) {
+		this.chatDeviceId = chatDeviceId;
+		if(chatDeviceId != null){
+			putQueryParameter("ChatDeviceId", chatDeviceId);
+		}
 	}
 
 	public String getUserId() {

@@ -21,7 +21,10 @@ import com.aliyuncs.ccc.model.v20200701.PollUserStatusResponse;
 import com.aliyuncs.ccc.model.v20200701.PollUserStatusResponse.Data;
 import com.aliyuncs.ccc.model.v20200701.PollUserStatusResponse.Data.CallContext;
 import com.aliyuncs.ccc.model.v20200701.PollUserStatusResponse.Data.CallContext.ChannelContext;
+import com.aliyuncs.ccc.model.v20200701.PollUserStatusResponse.Data.ChatContext;
+import com.aliyuncs.ccc.model.v20200701.PollUserStatusResponse.Data.ChatContext.ChatMember;
 import com.aliyuncs.ccc.model.v20200701.PollUserStatusResponse.Data.UserContext;
+import com.aliyuncs.ccc.model.v20200701.PollUserStatusResponse.Data.UserContext.JobStatus;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -92,7 +95,45 @@ public class PollUserStatusResponseUnmarshaller {
 			signedSkillGroupIdList.add(_ctx.stringValue("PollUserStatusResponse.Data.UserContext.SignedSkillGroupIdList["+ i +"]"));
 		}
 		userContext.setSignedSkillGroupIdList(signedSkillGroupIdList);
+
+		List<JobStatus> parallelJobList = new ArrayList<JobStatus>();
+		for (int i = 0; i < _ctx.lengthValue("PollUserStatusResponse.Data.UserContext.ParallelJobList.Length"); i++) {
+			JobStatus jobStatus = new JobStatus();
+			jobStatus.setJobId(_ctx.stringValue("PollUserStatusResponse.Data.UserContext.ParallelJobList["+ i +"].JobId"));
+			jobStatus.setStatus(_ctx.stringValue("PollUserStatusResponse.Data.UserContext.ParallelJobList["+ i +"].Status"));
+			jobStatus.setTimestamp(_ctx.longValue("PollUserStatusResponse.Data.UserContext.ParallelJobList["+ i +"].Timestamp"));
+
+			parallelJobList.add(jobStatus);
+		}
+		userContext.setParallelJobList(parallelJobList);
 		data.setUserContext(userContext);
+
+		List<ChatContext> chatContexts = new ArrayList<ChatContext>();
+		for (int i = 0; i < _ctx.lengthValue("PollUserStatusResponse.Data.ChatContexts.Length"); i++) {
+			ChatContext chatContext = new ChatContext();
+			chatContext.setInstanceId(_ctx.stringValue("PollUserStatusResponse.Data.ChatContexts["+ i +"].InstanceId"));
+			chatContext.setJobId(_ctx.stringValue("PollUserStatusResponse.Data.ChatContexts["+ i +"].JobId"));
+			chatContext.setChatType(_ctx.stringValue("PollUserStatusResponse.Data.ChatContexts["+ i +"].ChatType"));
+			chatContext.setCallVariables(_ctx.stringValue("PollUserStatusResponse.Data.ChatContexts["+ i +"].CallVariables"));
+
+			List<ChatMember> members = new ArrayList<ChatMember>();
+			for (int j = 0; j < _ctx.lengthValue("PollUserStatusResponse.Data.ChatContexts["+ i +"].Members.Length"); j++) {
+				ChatMember chatMember = new ChatMember();
+				chatMember.setIndex(_ctx.integerValue("PollUserStatusResponse.Data.ChatContexts["+ i +"].Members["+ j +"].Index"));
+				chatMember.setUserId(_ctx.stringValue("PollUserStatusResponse.Data.ChatContexts["+ i +"].Members["+ j +"].UserId"));
+				chatMember.setUserType(_ctx.stringValue("PollUserStatusResponse.Data.ChatContexts["+ i +"].Members["+ j +"].UserType"));
+				chatMember.setStatus(_ctx.stringValue("PollUserStatusResponse.Data.ChatContexts["+ i +"].Members["+ j +"].Status"));
+				chatMember.setSkillGroupId(_ctx.stringValue("PollUserStatusResponse.Data.ChatContexts["+ i +"].Members["+ j +"].SkillGroupId"));
+				chatMember.setReleaseInitiator(_ctx.stringValue("PollUserStatusResponse.Data.ChatContexts["+ i +"].Members["+ j +"].ReleaseInitiator"));
+				chatMember.setReleaseReason(_ctx.stringValue("PollUserStatusResponse.Data.ChatContexts["+ i +"].Members["+ j +"].ReleaseReason"));
+
+				members.add(chatMember);
+			}
+			chatContext.setMembers(members);
+
+			chatContexts.add(chatContext);
+		}
+		data.setChatContexts(chatContexts);
 		pollUserStatusResponse.setData(data);
 	 
 	 	return pollUserStatusResponse;

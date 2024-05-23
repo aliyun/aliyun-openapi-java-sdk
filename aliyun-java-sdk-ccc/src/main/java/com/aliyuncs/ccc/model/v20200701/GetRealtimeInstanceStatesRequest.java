@@ -26,6 +26,8 @@ public class GetRealtimeInstanceStatesRequest extends RpcAcsRequest<GetRealtimeI
 	   
 
 	private String instanceId;
+
+	private String mediaType;
 	public GetRealtimeInstanceStatesRequest() {
 		super("CCC", "2020-07-01", "GetRealtimeInstanceStates", "CCC");
 		setMethod(MethodType.POST);
@@ -43,6 +45,17 @@ public class GetRealtimeInstanceStatesRequest extends RpcAcsRequest<GetRealtimeI
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getMediaType() {
+		return this.mediaType;
+	}
+
+	public void setMediaType(String mediaType) {
+		this.mediaType = mediaType;
+		if(mediaType != null){
+			putQueryParameter("MediaType", mediaType);
 		}
 	}
 

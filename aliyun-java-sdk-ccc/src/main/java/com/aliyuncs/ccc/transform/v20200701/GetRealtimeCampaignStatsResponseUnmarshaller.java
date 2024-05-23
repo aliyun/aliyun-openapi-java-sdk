@@ -36,6 +36,10 @@ public class GetRealtimeCampaignStatsResponseUnmarshaller {
 		data.setWorkingAgents(_ctx.longValue("GetRealtimeCampaignStatsResponse.Data.WorkingAgents"));
 		data.setCaps(_ctx.longValue("GetRealtimeCampaignStatsResponse.Data.Caps"));
 		data.setTotalAgents(_ctx.longValue("GetRealtimeCampaignStatsResponse.Data.TotalAgents"));
+		data.setOutboundScenarioReadyAgents(_ctx.longValue("GetRealtimeCampaignStatsResponse.Data.OutboundScenarioReadyAgents"));
+		data.setOutboundScenarioBreakingAgents(_ctx.longValue("GetRealtimeCampaignStatsResponse.Data.OutboundScenarioBreakingAgents"));
+		data.setOutboundScenarioTalkingAgents(_ctx.longValue("GetRealtimeCampaignStatsResponse.Data.OutboundScenarioTalkingAgents"));
+		data.setOutboundScenarioWorkingAgents(_ctx.longValue("GetRealtimeCampaignStatsResponse.Data.OutboundScenarioWorkingAgents"));
 		getRealtimeCampaignStatsResponse.setData(data);
 	 
 	 	return getRealtimeCampaignStatsResponse;

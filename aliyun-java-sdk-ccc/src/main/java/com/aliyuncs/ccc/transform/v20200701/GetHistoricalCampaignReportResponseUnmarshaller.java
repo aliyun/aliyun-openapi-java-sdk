@@ -33,7 +33,9 @@ public class GetHistoricalCampaignReportResponseUnmarshaller {
 		data.setCallsDialed(_ctx.longValue("GetHistoricalCampaignReportResponse.Data.CallsDialed"));
 		data.setCallsAbandoned(_ctx.longValue("GetHistoricalCampaignReportResponse.Data.CallsAbandoned"));
 		data.setConnectedRate(_ctx.floatValue("GetHistoricalCampaignReportResponse.Data.ConnectedRate"));
+		data.setAnswerRate(_ctx.floatValue("GetHistoricalCampaignReportResponse.Data.AnswerRate"));
 		data.setAbandonedRate(_ctx.floatValue("GetHistoricalCampaignReportResponse.Data.AbandonedRate"));
+		data.setAbandonRate(_ctx.floatValue("GetHistoricalCampaignReportResponse.Data.AbandonRate"));
 		data.setOccupancyRate(_ctx.floatValue("GetHistoricalCampaignReportResponse.Data.OccupancyRate"));
 		getHistoricalCampaignReportResponse.setData(data);
 	 

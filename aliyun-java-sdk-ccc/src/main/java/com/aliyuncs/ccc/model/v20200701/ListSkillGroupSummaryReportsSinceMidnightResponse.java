@@ -424,6 +424,10 @@ public class ListSkillGroupSummaryReportsSinceMidnightResponse extends AcsRespon
 
 				private Long callsBlindTransferOut;
 
+				private Long callsQueuingTimeout;
+
+				private Long callsTimeout;
+
 				public Long getAverageRingTime() {
 					return this.averageRingTime;
 				}
@@ -663,6 +667,22 @@ public class ListSkillGroupSummaryReportsSinceMidnightResponse extends AcsRespon
 				public void setCallsBlindTransferOut(Long callsBlindTransferOut) {
 					this.callsBlindTransferOut = callsBlindTransferOut;
 				}
+
+				public Long getCallsQueuingTimeout() {
+					return this.callsQueuingTimeout;
+				}
+
+				public void setCallsQueuingTimeout(Long callsQueuingTimeout) {
+					this.callsQueuingTimeout = callsQueuingTimeout;
+				}
+
+				public Long getCallsTimeout() {
+					return this.callsTimeout;
+				}
+
+				public void setCallsTimeout(Long callsTimeout) {
+					this.callsTimeout = callsTimeout;
+				}
 			}
 
 			public static class Outbound {
@@ -698,6 +718,28 @@ public class ListSkillGroupSummaryReportsSinceMidnightResponse extends AcsRespon
 				private Long averageDialingTime;
 
 				private String callsServiceLevel30;
+
+				private Long callsOffered;
+
+				private Long callsAbandoned;
+
+				private Long callsQueuingTimeout;
+
+				private Long callsQueuingOverflow;
+
+				private Long callsQueuingFailed;
+
+				private Long callsQueuingRerouted;
+
+				private Long callsQueuingCancelled;
+
+				private Long callsQueuingFailure;
+
+				private Long totalWaitTime;
+
+				private Long callsAgentHandled;
+
+				private Long callsServiceLevel30V2;
 
 				public Long getTotalTalkTime() {
 					return this.totalTalkTime;
@@ -825,6 +867,94 @@ public class ListSkillGroupSummaryReportsSinceMidnightResponse extends AcsRespon
 
 				public void setCallsServiceLevel30(String callsServiceLevel30) {
 					this.callsServiceLevel30 = callsServiceLevel30;
+				}
+
+				public Long getCallsOffered() {
+					return this.callsOffered;
+				}
+
+				public void setCallsOffered(Long callsOffered) {
+					this.callsOffered = callsOffered;
+				}
+
+				public Long getCallsAbandoned() {
+					return this.callsAbandoned;
+				}
+
+				public void setCallsAbandoned(Long callsAbandoned) {
+					this.callsAbandoned = callsAbandoned;
+				}
+
+				public Long getCallsQueuingTimeout() {
+					return this.callsQueuingTimeout;
+				}
+
+				public void setCallsQueuingTimeout(Long callsQueuingTimeout) {
+					this.callsQueuingTimeout = callsQueuingTimeout;
+				}
+
+				public Long getCallsQueuingOverflow() {
+					return this.callsQueuingOverflow;
+				}
+
+				public void setCallsQueuingOverflow(Long callsQueuingOverflow) {
+					this.callsQueuingOverflow = callsQueuingOverflow;
+				}
+
+				public Long getCallsQueuingFailed() {
+					return this.callsQueuingFailed;
+				}
+
+				public void setCallsQueuingFailed(Long callsQueuingFailed) {
+					this.callsQueuingFailed = callsQueuingFailed;
+				}
+
+				public Long getCallsQueuingRerouted() {
+					return this.callsQueuingRerouted;
+				}
+
+				public void setCallsQueuingRerouted(Long callsQueuingRerouted) {
+					this.callsQueuingRerouted = callsQueuingRerouted;
+				}
+
+				public Long getCallsQueuingCancelled() {
+					return this.callsQueuingCancelled;
+				}
+
+				public void setCallsQueuingCancelled(Long callsQueuingCancelled) {
+					this.callsQueuingCancelled = callsQueuingCancelled;
+				}
+
+				public Long getCallsQueuingFailure() {
+					return this.callsQueuingFailure;
+				}
+
+				public void setCallsQueuingFailure(Long callsQueuingFailure) {
+					this.callsQueuingFailure = callsQueuingFailure;
+				}
+
+				public Long getTotalWaitTime() {
+					return this.totalWaitTime;
+				}
+
+				public void setTotalWaitTime(Long totalWaitTime) {
+					this.totalWaitTime = totalWaitTime;
+				}
+
+				public Long getCallsAgentHandled() {
+					return this.callsAgentHandled;
+				}
+
+				public void setCallsAgentHandled(Long callsAgentHandled) {
+					this.callsAgentHandled = callsAgentHandled;
+				}
+
+				public Long getCallsServiceLevel30V2() {
+					return this.callsServiceLevel30V2;
+				}
+
+				public void setCallsServiceLevel30V2(Long callsServiceLevel30V2) {
+					this.callsServiceLevel30V2 = callsServiceLevel30V2;
 				}
 			}
 		}

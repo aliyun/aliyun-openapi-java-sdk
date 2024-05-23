@@ -47,6 +47,9 @@ public class ListAudioFilesResponseUnmarshaller {
 			contactFlow.setInstanceId(_ctx.stringValue("ListAudioFilesResponse.Data.List["+ i +"].InstanceId"));
 			contactFlow.setName(_ctx.stringValue("ListAudioFilesResponse.Data.List["+ i +"].Name"));
 			contactFlow.setCreatedTime(_ctx.stringValue("ListAudioFilesResponse.Data.List["+ i +"].CreatedTime"));
+			contactFlow.setStatus(_ctx.stringValue("ListAudioFilesResponse.Data.List["+ i +"].Status"));
+			contactFlow.setUsage(_ctx.stringValue("ListAudioFilesResponse.Data.List["+ i +"].Usage"));
+			contactFlow.setAuditResult(_ctx.stringValue("ListAudioFilesResponse.Data.List["+ i +"].AuditResult"));
 
 			list.add(contactFlow);
 		}

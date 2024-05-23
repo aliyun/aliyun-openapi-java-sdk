@@ -105,6 +105,8 @@ public class SignInGroupResponse extends AcsResponse {
 
 		private String userState;
 
+		private String chatDeviceId;
+
 		private List<String> signedSkillGroupIdList;
 
 		public String getExtension() {
@@ -177,6 +179,14 @@ public class SignInGroupResponse extends AcsResponse {
 
 		public void setUserState(String userState) {
 			this.userState = userState;
+		}
+
+		public String getChatDeviceId() {
+			return this.chatDeviceId;
+		}
+
+		public void setChatDeviceId(String chatDeviceId) {
+			this.chatDeviceId = chatDeviceId;
 		}
 
 		public List<String> getSignedSkillGroupIdList() {

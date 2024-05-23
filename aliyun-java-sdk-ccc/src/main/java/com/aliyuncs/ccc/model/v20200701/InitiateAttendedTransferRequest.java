@@ -29,19 +29,29 @@ public class InitiateAttendedTransferRequest extends RpcAcsRequest<InitiateAtten
 
 	private String transferor;
 
+	private String routingType;
+
+	private Long queuingOverflowThreshold;
+
 	private String userId;
-
-	private String deviceId;
-
-	private String strategyName;
 
 	private Integer timeoutSeconds;
 
 	private String jobId;
 
+	private String strategyParams;
+
+	private String deviceId;
+
+	private String transfereeType;
+
+	private String tags;
+
+	private String strategyName;
+
 	private String instanceId;
 
-	private String strategyParams;
+	private Long queuingTimeoutSeconds;
 
 	private Integer callPriority;
 	public InitiateAttendedTransferRequest() {
@@ -75,6 +85,28 @@ public class InitiateAttendedTransferRequest extends RpcAcsRequest<InitiateAtten
 		}
 	}
 
+	public String getRoutingType() {
+		return this.routingType;
+	}
+
+	public void setRoutingType(String routingType) {
+		this.routingType = routingType;
+		if(routingType != null){
+			putQueryParameter("RoutingType", routingType);
+		}
+	}
+
+	public Long getQueuingOverflowThreshold() {
+		return this.queuingOverflowThreshold;
+	}
+
+	public void setQueuingOverflowThreshold(Long queuingOverflowThreshold) {
+		this.queuingOverflowThreshold = queuingOverflowThreshold;
+		if(queuingOverflowThreshold != null){
+			putQueryParameter("QueuingOverflowThreshold", queuingOverflowThreshold.toString());
+		}
+	}
+
 	public String getUserId() {
 		return this.userId;
 	}
@@ -83,28 +115,6 @@ public class InitiateAttendedTransferRequest extends RpcAcsRequest<InitiateAtten
 		this.userId = userId;
 		if(userId != null){
 			putQueryParameter("UserId", userId);
-		}
-	}
-
-	public String getDeviceId() {
-		return this.deviceId;
-	}
-
-	public void setDeviceId(String deviceId) {
-		this.deviceId = deviceId;
-		if(deviceId != null){
-			putQueryParameter("DeviceId", deviceId);
-		}
-	}
-
-	public String getStrategyName() {
-		return this.strategyName;
-	}
-
-	public void setStrategyName(String strategyName) {
-		this.strategyName = strategyName;
-		if(strategyName != null){
-			putQueryParameter("StrategyName", strategyName);
 		}
 	}
 
@@ -130,6 +140,61 @@ public class InitiateAttendedTransferRequest extends RpcAcsRequest<InitiateAtten
 		}
 	}
 
+	public String getStrategyParams() {
+		return this.strategyParams;
+	}
+
+	public void setStrategyParams(String strategyParams) {
+		this.strategyParams = strategyParams;
+		if(strategyParams != null){
+			putQueryParameter("StrategyParams", strategyParams);
+		}
+	}
+
+	public String getDeviceId() {
+		return this.deviceId;
+	}
+
+	public void setDeviceId(String deviceId) {
+		this.deviceId = deviceId;
+		if(deviceId != null){
+			putQueryParameter("DeviceId", deviceId);
+		}
+	}
+
+	public String getTransfereeType() {
+		return this.transfereeType;
+	}
+
+	public void setTransfereeType(String transfereeType) {
+		this.transfereeType = transfereeType;
+		if(transfereeType != null){
+			putQueryParameter("TransfereeType", transfereeType);
+		}
+	}
+
+	public String getTags() {
+		return this.tags;
+	}
+
+	public void setTags(String tags) {
+		this.tags = tags;
+		if(tags != null){
+			putQueryParameter("Tags", tags);
+		}
+	}
+
+	public String getStrategyName() {
+		return this.strategyName;
+	}
+
+	public void setStrategyName(String strategyName) {
+		this.strategyName = strategyName;
+		if(strategyName != null){
+			putQueryParameter("StrategyName", strategyName);
+		}
+	}
+
 	public String getInstanceId() {
 		return this.instanceId;
 	}
@@ -141,14 +206,14 @@ public class InitiateAttendedTransferRequest extends RpcAcsRequest<InitiateAtten
 		}
 	}
 
-	public String getStrategyParams() {
-		return this.strategyParams;
+	public Long getQueuingTimeoutSeconds() {
+		return this.queuingTimeoutSeconds;
 	}
 
-	public void setStrategyParams(String strategyParams) {
-		this.strategyParams = strategyParams;
-		if(strategyParams != null){
-			putQueryParameter("StrategyParams", strategyParams);
+	public void setQueuingTimeoutSeconds(Long queuingTimeoutSeconds) {
+		this.queuingTimeoutSeconds = queuingTimeoutSeconds;
+		if(queuingTimeoutSeconds != null){
+			putQueryParameter("QueuingTimeoutSeconds", queuingTimeoutSeconds.toString());
 		}
 	}
 

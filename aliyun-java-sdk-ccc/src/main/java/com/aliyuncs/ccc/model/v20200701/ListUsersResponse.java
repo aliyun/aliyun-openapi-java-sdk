@@ -33,6 +33,8 @@ public class ListUsersResponse extends AcsResponse {
 
 	private String requestId;
 
+	private List<String> params;
+
 	private Data data;
 
 	public String getCode() {
@@ -65,6 +67,14 @@ public class ListUsersResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public List<String> getParams() {
+		return this.params;
+	}
+
+	public void setParams(List<String> params) {
+		this.params = params;
 	}
 
 	public Data getData() {
@@ -148,6 +158,8 @@ public class ListUsersResponse extends AcsResponse {
 			private String deviceExt;
 
 			private String deviceState;
+
+			private Boolean primary;
 
 			private List<PhoneNumber> personalOutboundNumberList;
 
@@ -271,6 +283,14 @@ public class ListUsersResponse extends AcsResponse {
 
 			public void setDeviceState(String deviceState) {
 				this.deviceState = deviceState;
+			}
+
+			public Boolean getPrimary() {
+				return this.primary;
+			}
+
+			public void setPrimary(Boolean primary) {
+				this.primary = primary;
 			}
 
 			public List<PhoneNumber> getPersonalOutboundNumberList() {

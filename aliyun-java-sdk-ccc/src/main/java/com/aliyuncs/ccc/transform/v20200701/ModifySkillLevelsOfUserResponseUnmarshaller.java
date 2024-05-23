@@ -26,6 +26,7 @@ public class ModifySkillLevelsOfUserResponseUnmarshaller {
 		modifySkillLevelsOfUserResponse.setCode(_ctx.stringValue("ModifySkillLevelsOfUserResponse.Code"));
 		modifySkillLevelsOfUserResponse.setHttpStatusCode(_ctx.integerValue("ModifySkillLevelsOfUserResponse.HttpStatusCode"));
 		modifySkillLevelsOfUserResponse.setMessage(_ctx.stringValue("ModifySkillLevelsOfUserResponse.Message"));
+		modifySkillLevelsOfUserResponse.setData(_ctx.stringValue("ModifySkillLevelsOfUserResponse.Data"));
 	 
 	 	return modifySkillLevelsOfUserResponse;
 	}

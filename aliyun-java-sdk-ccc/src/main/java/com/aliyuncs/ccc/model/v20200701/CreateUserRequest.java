@@ -25,9 +25,19 @@ import com.aliyuncs.ccc.Endpoint;
 public class CreateUserRequest extends RpcAcsRequest<CreateUserResponse> {
 	   
 
-	private String loginName;
+	private String avatarUrl;
 
 	private String roleId;
+
+	private String nickname;
+
+	private Boolean resetPassword;
+
+	private String displayId;
+
+	private String email;
+
+	private String loginName;
 
 	private String mobile;
 
@@ -37,13 +47,7 @@ public class CreateUserRequest extends RpcAcsRequest<CreateUserResponse> {
 
 	private String displayName;
 
-	private Boolean resetPassword;
-
-	private String displayId;
-
 	private String skillLevelList;
-
-	private String email;
 	public CreateUserRequest() {
 		super("CCC", "2020-07-01", "CreateUser", "CCC");
 		setMethod(MethodType.POST);
@@ -53,14 +57,14 @@ public class CreateUserRequest extends RpcAcsRequest<CreateUserResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getLoginName() {
-		return this.loginName;
+	public String getAvatarUrl() {
+		return this.avatarUrl;
 	}
 
-	public void setLoginName(String loginName) {
-		this.loginName = loginName;
-		if(loginName != null){
-			putQueryParameter("LoginName", loginName);
+	public void setAvatarUrl(String avatarUrl) {
+		this.avatarUrl = avatarUrl;
+		if(avatarUrl != null){
+			putQueryParameter("AvatarUrl", avatarUrl);
 		}
 	}
 
@@ -72,6 +76,61 @@ public class CreateUserRequest extends RpcAcsRequest<CreateUserResponse> {
 		this.roleId = roleId;
 		if(roleId != null){
 			putQueryParameter("RoleId", roleId);
+		}
+	}
+
+	public String getNickname() {
+		return this.nickname;
+	}
+
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
+		if(nickname != null){
+			putQueryParameter("Nickname", nickname);
+		}
+	}
+
+	public Boolean getResetPassword() {
+		return this.resetPassword;
+	}
+
+	public void setResetPassword(Boolean resetPassword) {
+		this.resetPassword = resetPassword;
+		if(resetPassword != null){
+			putQueryParameter("ResetPassword", resetPassword.toString());
+		}
+	}
+
+	public String getDisplayId() {
+		return this.displayId;
+	}
+
+	public void setDisplayId(String displayId) {
+		this.displayId = displayId;
+		if(displayId != null){
+			putQueryParameter("DisplayId", displayId);
+		}
+	}
+
+	public String getEmail() {
+		return this.email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+		if(email != null){
+			putQueryParameter("Email", email);
+		}
+	}
+
+	public String getLoginName() {
+		return this.loginName;
+	}
+
+	public void setLoginName(String loginName) {
+		this.loginName = loginName;
+		if(loginName != null){
+			putQueryParameter("LoginName", loginName);
 		}
 	}
 
@@ -119,28 +178,6 @@ public class CreateUserRequest extends RpcAcsRequest<CreateUserResponse> {
 		}
 	}
 
-	public Boolean getResetPassword() {
-		return this.resetPassword;
-	}
-
-	public void setResetPassword(Boolean resetPassword) {
-		this.resetPassword = resetPassword;
-		if(resetPassword != null){
-			putQueryParameter("ResetPassword", resetPassword.toString());
-		}
-	}
-
-	public String getDisplayId() {
-		return this.displayId;
-	}
-
-	public void setDisplayId(String displayId) {
-		this.displayId = displayId;
-		if(displayId != null){
-			putQueryParameter("DisplayId", displayId);
-		}
-	}
-
 	public String getSkillLevelList() {
 		return this.skillLevelList;
 	}
@@ -149,17 +186,6 @@ public class CreateUserRequest extends RpcAcsRequest<CreateUserResponse> {
 		this.skillLevelList = skillLevelList;
 		if(skillLevelList != null){
 			putQueryParameter("SkillLevelList", skillLevelList);
-		}
-	}
-
-	public String getEmail() {
-		return this.email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-		if(email != null){
-			putQueryParameter("Email", email);
 		}
 	}
 

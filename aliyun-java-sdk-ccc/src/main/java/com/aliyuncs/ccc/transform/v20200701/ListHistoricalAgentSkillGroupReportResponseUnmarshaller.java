@@ -78,6 +78,11 @@ public class ListHistoricalAgentSkillGroupReportResponseUnmarshaller {
 			inbound.setHandleRate(_ctx.floatValue("ListHistoricalAgentSkillGroupReportResponse.Data.List["+ i +"].Inbound.HandleRate"));
 			inbound.setSatisfactionSurveysResponded(_ctx.longValue("ListHistoricalAgentSkillGroupReportResponse.Data.List["+ i +"].Inbound.SatisfactionSurveysResponded"));
 			inbound.setAverageHoldTime(_ctx.floatValue("ListHistoricalAgentSkillGroupReportResponse.Data.List["+ i +"].Inbound.AverageHoldTime"));
+			inbound.setTotalMessagesSent(_ctx.longValue("ListHistoricalAgentSkillGroupReportResponse.Data.List["+ i +"].Inbound.TotalMessagesSent"));
+			inbound.setTotalMessagesSentByAgent(_ctx.longValue("ListHistoricalAgentSkillGroupReportResponse.Data.List["+ i +"].Inbound.TotalMessagesSentByAgent"));
+			inbound.setTotalMessagesSentByCustomer(_ctx.longValue("ListHistoricalAgentSkillGroupReportResponse.Data.List["+ i +"].Inbound.TotalMessagesSentByCustomer"));
+			inbound.setAverageFirstResponseTime(_ctx.floatValue("ListHistoricalAgentSkillGroupReportResponse.Data.List["+ i +"].Inbound.AverageFirstResponseTime"));
+			inbound.setAverageResponseTime(_ctx.floatValue("ListHistoricalAgentSkillGroupReportResponse.Data.List["+ i +"].Inbound.AverageResponseTime"));
 			reportItem.setInbound(inbound);
 
 			Outbound outbound = new Outbound();
@@ -138,6 +143,10 @@ public class ListHistoricalAgentSkillGroupReportResponseUnmarshaller {
 			overall.setLastCheckOutTime(_ctx.longValue("ListHistoricalAgentSkillGroupReportResponse.Data.List["+ i +"].Overall.LastCheckOutTime"));
 			overall.setTotalOutboundScenarioTime(_ctx.longValue("ListHistoricalAgentSkillGroupReportResponse.Data.List["+ i +"].Overall.TotalOutboundScenarioTime"));
 			overall.setTotalOutboundScenarioReadyTime(_ctx.longValue("ListHistoricalAgentSkillGroupReportResponse.Data.List["+ i +"].Overall.TotalOutboundScenarioReadyTime"));
+			overall.setTotalOutboundScenarioLoggedInTime(_ctx.longValue("ListHistoricalAgentSkillGroupReportResponse.Data.List["+ i +"].Overall.TotalOutboundScenarioLoggedInTime"));
+			overall.setTotalOfficePhoneLoggedInTime(_ctx.longValue("ListHistoricalAgentSkillGroupReportResponse.Data.List["+ i +"].Overall.TotalOfficePhoneLoggedInTime"));
+			overall.setTotalOffSiteLggedInTime(_ctx.longValue("ListHistoricalAgentSkillGroupReportResponse.Data.List["+ i +"].Overall.TotalOffSiteLggedInTime"));
+			overall.setTotalOnSiteLoggedInTime(_ctx.stringValue("ListHistoricalAgentSkillGroupReportResponse.Data.List["+ i +"].Overall.TotalOnSiteLoggedInTime"));
 
 			List<BreakCodeDetail> breakCodeDetailList = new ArrayList<BreakCodeDetail>();
 			for (int j = 0; j < _ctx.lengthValue("ListHistoricalAgentSkillGroupReportResponse.Data.List["+ i +"].Overall.BreakCodeDetailList.Length"); j++) {
@@ -160,6 +169,7 @@ public class ListHistoricalAgentSkillGroupReportResponseUnmarshaller {
 			internal.setCallsTalk(_ctx.longValue("ListHistoricalAgentSkillGroupReportResponse.Data.List["+ i +"].Internal.CallsTalk"));
 			internal.setCallsDialed(_ctx.longValue("ListHistoricalAgentSkillGroupReportResponse.Data.List["+ i +"].Internal.CallsDialed"));
 			internal.setCallsAnswered(_ctx.longValue("ListHistoricalAgentSkillGroupReportResponse.Data.List["+ i +"].Internal.CallsAnswered"));
+			internal.setCallsTalked(_ctx.longValue("ListHistoricalAgentSkillGroupReportResponse.Data.List["+ i +"].Internal.CallsTalked"));
 			reportItem.setInternal(internal);
 
 			Back2Back back2Back = new Back2Back();
@@ -178,6 +188,10 @@ public class ListHistoricalAgentSkillGroupReportResponseUnmarshaller {
 			back2Back.setTotalCustomerRingTime(_ctx.longValue("ListHistoricalAgentSkillGroupReportResponse.Data.List["+ i +"].Back2Back.TotalCustomerRingTime"));
 			back2Back.setMaxCustomerRingTime(_ctx.longValue("ListHistoricalAgentSkillGroupReportResponse.Data.List["+ i +"].Back2Back.MaxCustomerRingTime"));
 			back2Back.setAverageCustomerRingTime(_ctx.floatValue("ListHistoricalAgentSkillGroupReportResponse.Data.List["+ i +"].Back2Back.AverageCustomerRingTime"));
+			back2Back.setAgentHandleRate(_ctx.floatValue("ListHistoricalAgentSkillGroupReportResponse.Data.List["+ i +"].Back2Back.AgentHandleRate"));
+			back2Back.setCallsCustomerAnswered(_ctx.longValue("ListHistoricalAgentSkillGroupReportResponse.Data.List["+ i +"].Back2Back.CallsCustomerAnswered"));
+			back2Back.setCustomerAnswerRate(_ctx.floatValue("ListHistoricalAgentSkillGroupReportResponse.Data.List["+ i +"].Back2Back.CustomerAnswerRate"));
+			back2Back.setCallsAgentHandled(_ctx.longValue("ListHistoricalAgentSkillGroupReportResponse.Data.List["+ i +"].Back2Back.CallsAgentHandled"));
 			reportItem.setBack2Back(back2Back);
 
 			list.add(reportItem);

@@ -92,6 +92,14 @@ public class ListIntervalInstanceReportResponseUnmarshaller {
 			inbound.setAverageHoldTime(_ctx.floatValue("ListIntervalInstanceReportResponse.Data["+ i +"].Inbound.AverageHoldTime"));
 			inbound.setCallsAbandonedInQueue(_ctx.longValue("ListIntervalInstanceReportResponse.Data["+ i +"].Inbound.CallsAbandonedInQueue"));
 			inbound.setTotalAbandonedInQueueTime(_ctx.longValue("ListIntervalInstanceReportResponse.Data["+ i +"].Inbound.TotalAbandonedInQueueTime"));
+			inbound.setAbandonRate(_ctx.floatValue("ListIntervalInstanceReportResponse.Data["+ i +"].Inbound.AbandonRate"));
+			inbound.setCallsCausedIVRException(_ctx.longValue("ListIntervalInstanceReportResponse.Data["+ i +"].Inbound.CallsCausedIVRException"));
+			inbound.setCallsToVoicemail(_ctx.longValue("ListIntervalInstanceReportResponse.Data["+ i +"].Inbound.CallsToVoicemail"));
+			inbound.setAverageFirstResponseTime(_ctx.floatValue("ListIntervalInstanceReportResponse.Data["+ i +"].Inbound.AverageFirstResponseTime"));
+			inbound.setAverageResponseTime(_ctx.floatValue("ListIntervalInstanceReportResponse.Data["+ i +"].Inbound.AverageResponseTime"));
+			inbound.setTotalMessagesSent(_ctx.longValue("ListIntervalInstanceReportResponse.Data["+ i +"].Inbound.TotalMessagesSent"));
+			inbound.setTotalMessagesSentByAgent(_ctx.longValue("ListIntervalInstanceReportResponse.Data["+ i +"].Inbound.TotalMessagesSentByAgent"));
+			inbound.setTotalMessagesSentByCustomer(_ctx.longValue("ListIntervalInstanceReportResponse.Data["+ i +"].Inbound.TotalMessagesSentByCustomer"));
 			dataItem.setInbound(inbound);
 
 			Outbound outbound = new Outbound();

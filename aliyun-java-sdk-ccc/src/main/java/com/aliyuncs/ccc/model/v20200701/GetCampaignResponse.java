@@ -106,6 +106,10 @@ public class GetCampaignResponse extends AcsResponse {
 
 		private Long casesUncompletedAfterAttempted;
 
+		private String casesUncompletedAfterAttempt;
+
+		private Float completionRate;
+
 		public Long getActualEndTime() {
 			return this.actualEndTime;
 		}
@@ -264,6 +268,22 @@ public class GetCampaignResponse extends AcsResponse {
 
 		public void setCasesUncompletedAfterAttempted(Long casesUncompletedAfterAttempted) {
 			this.casesUncompletedAfterAttempted = casesUncompletedAfterAttempted;
+		}
+
+		public String getCasesUncompletedAfterAttempt() {
+			return this.casesUncompletedAfterAttempt;
+		}
+
+		public void setCasesUncompletedAfterAttempt(String casesUncompletedAfterAttempt) {
+			this.casesUncompletedAfterAttempt = casesUncompletedAfterAttempt;
+		}
+
+		public Float getCompletionRate() {
+			return this.completionRate;
+		}
+
+		public void setCompletionRate(Float completionRate) {
+			this.completionRate = completionRate;
 		}
 	}
 

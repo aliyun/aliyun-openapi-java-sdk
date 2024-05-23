@@ -14,6 +14,7 @@
 
 package com.aliyuncs.ccc.model.v20200701;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.ccc.transform.v20200701.CreateUserResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -31,6 +32,8 @@ public class CreateUserResponse extends AcsResponse {
 	private String message;
 
 	private String requestId;
+
+	private List<String> params;
 
 	private Data data;
 
@@ -66,6 +69,14 @@ public class CreateUserResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public List<String> getParams() {
+		return this.params;
+	}
+
+	public void setParams(List<String> params) {
+		this.params = params;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -89,6 +100,10 @@ public class CreateUserResponse extends AcsResponse {
 		private String mobile;
 
 		private String userId;
+
+		private String avatarUrl;
+
+		private String nickname;
 
 		public String getDisplayName() {
 			return this.displayName;
@@ -144,6 +159,22 @@ public class CreateUserResponse extends AcsResponse {
 
 		public void setUserId(String userId) {
 			this.userId = userId;
+		}
+
+		public String getAvatarUrl() {
+			return this.avatarUrl;
+		}
+
+		public void setAvatarUrl(String avatarUrl) {
+			this.avatarUrl = avatarUrl;
+		}
+
+		public String getNickname() {
+			return this.nickname;
+		}
+
+		public void setNickname(String nickname) {
+			this.nickname = nickname;
 		}
 	}
 

@@ -14,9 +14,14 @@
 
 package com.aliyuncs.ccc.transform.v20200701;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.ccc.model.v20200701.GetHistoricalInstanceReportResponse;
 import com.aliyuncs.ccc.model.v20200701.GetHistoricalInstanceReportResponse.Data;
 import com.aliyuncs.ccc.model.v20200701.GetHistoricalInstanceReportResponse.Data.Inbound;
+import com.aliyuncs.ccc.model.v20200701.GetHistoricalInstanceReportResponse.Data.Inbound.AccessChannelTypeDetail;
+import com.aliyuncs.ccc.model.v20200701.GetHistoricalInstanceReportResponse.Data.Internal;
 import com.aliyuncs.ccc.model.v20200701.GetHistoricalInstanceReportResponse.Data.Outbound;
 import com.aliyuncs.ccc.model.v20200701.GetHistoricalInstanceReportResponse.Data.Overall;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -86,6 +91,25 @@ public class GetHistoricalInstanceReportResponseUnmarshaller {
 		inbound.setAverageHoldTime(_ctx.floatValue("GetHistoricalInstanceReportResponse.Data.Inbound.AverageHoldTime"));
 		inbound.setCallsAbandonedInQueue(_ctx.longValue("GetHistoricalInstanceReportResponse.Data.Inbound.CallsAbandonedInQueue"));
 		inbound.setTotalAbandonedInQueueTime(_ctx.longValue("GetHistoricalInstanceReportResponse.Data.Inbound.TotalAbandonedInQueueTime"));
+		inbound.setCallsCausedIVRException(_ctx.longValue("GetHistoricalInstanceReportResponse.Data.Inbound.CallsCausedIVRException"));
+		inbound.setCallsToVoicemail(_ctx.longValue("GetHistoricalInstanceReportResponse.Data.Inbound.CallsToVoicemail"));
+		inbound.setServiceLevel15(_ctx.floatValue("GetHistoricalInstanceReportResponse.Data.Inbound.ServiceLevel15"));
+		inbound.setServiceLevel30(_ctx.floatValue("GetHistoricalInstanceReportResponse.Data.Inbound.ServiceLevel30"));
+		inbound.setTotalMessagesSent(_ctx.longValue("GetHistoricalInstanceReportResponse.Data.Inbound.TotalMessagesSent"));
+		inbound.setTotalMessagesSentByAgent(_ctx.longValue("GetHistoricalInstanceReportResponse.Data.Inbound.TotalMessagesSentByAgent"));
+		inbound.setTotalMessagesSentByCustomer(_ctx.longValue("GetHistoricalInstanceReportResponse.Data.Inbound.TotalMessagesSentByCustomer"));
+		inbound.setAverageFirstResponseTime(_ctx.floatValue("GetHistoricalInstanceReportResponse.Data.Inbound.AverageFirstResponseTime"));
+		inbound.setAverageResponseTime(_ctx.floatValue("GetHistoricalInstanceReportResponse.Data.Inbound.AverageResponseTime"));
+
+		List<AccessChannelTypeDetail> accessChannelTypeDetailList = new ArrayList<AccessChannelTypeDetail>();
+		for (int i = 0; i < _ctx.lengthValue("GetHistoricalInstanceReportResponse.Data.Inbound.AccessChannelTypeDetailList.Length"); i++) {
+			AccessChannelTypeDetail accessChannelTypeDetail = new AccessChannelTypeDetail();
+			accessChannelTypeDetail.setAccessChannelType(_ctx.stringValue("GetHistoricalInstanceReportResponse.Data.Inbound.AccessChannelTypeDetailList["+ i +"].AccessChannelType"));
+			accessChannelTypeDetail.setCallsOffered(_ctx.longValue("GetHistoricalInstanceReportResponse.Data.Inbound.AccessChannelTypeDetailList["+ i +"].CallsOffered"));
+
+			accessChannelTypeDetailList.add(accessChannelTypeDetail);
+		}
+		inbound.setAccessChannelTypeDetailList(accessChannelTypeDetailList);
 		data.setInbound(inbound);
 
 		Outbound outbound = new Outbound();
@@ -140,7 +164,13 @@ public class GetHistoricalInstanceReportResponseUnmarshaller {
 		overall.setTotalBreakTime(_ctx.longValue("GetHistoricalInstanceReportResponse.Data.Overall.TotalBreakTime"));
 		overall.setMaxTalkTime(_ctx.longValue("GetHistoricalInstanceReportResponse.Data.Overall.MaxTalkTime"));
 		overall.setTotalCalls(_ctx.longValue("GetHistoricalInstanceReportResponse.Data.Overall.TotalCalls"));
+		overall.setMaxLoggedInAgents(_ctx.longValue("GetHistoricalInstanceReportResponse.Data.Overall.MaxLoggedInAgents"));
 		data.setOverall(overall);
+
+		Internal internal = new Internal();
+		internal.setCallsDialed(_ctx.longValue("GetHistoricalInstanceReportResponse.Data.Internal.CallsDialed"));
+		internal.setCallsAnswered(_ctx.longValue("GetHistoricalInstanceReportResponse.Data.Internal.CallsAnswered"));
+		data.setInternal(internal);
 		getHistoricalInstanceReportResponse.setData(data);
 	 
 	 	return getHistoricalInstanceReportResponse;

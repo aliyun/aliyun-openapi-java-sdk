@@ -51,6 +51,14 @@ public class GetLoginDetailsResponseUnmarshaller {
 		data.setSignature2(_ctx.stringValue("GetLoginDetailsResponse.Data.Signature2"));
 		data.setDeviceExt(_ctx.stringValue("GetLoginDetailsResponse.Data.DeviceExt"));
 		data.setDeviceState(_ctx.stringValue("GetLoginDetailsResponse.Data.DeviceState"));
+		data.setChatUserId(_ctx.stringValue("GetLoginDetailsResponse.Data.ChatUserId"));
+		data.setChatDeviceId(_ctx.stringValue("GetLoginDetailsResponse.Data.ChatDeviceId"));
+		data.setChatLoginToken(_ctx.stringValue("GetLoginDetailsResponse.Data.ChatLoginToken"));
+		data.setChatAppId(_ctx.stringValue("GetLoginDetailsResponse.Data.ChatAppId"));
+		data.setChatAppKey(_ctx.stringValue("GetLoginDetailsResponse.Data.ChatAppKey"));
+		data.setChatServerUrl(_ctx.stringValue("GetLoginDetailsResponse.Data.ChatServerUrl"));
+		data.setNickname(_ctx.stringValue("GetLoginDetailsResponse.Data.Nickname"));
+		data.setAvatarUrl(_ctx.stringValue("GetLoginDetailsResponse.Data.AvatarUrl"));
 		getLoginDetailsResponse.setData(data);
 	 
 	 	return getLoginDetailsResponse;

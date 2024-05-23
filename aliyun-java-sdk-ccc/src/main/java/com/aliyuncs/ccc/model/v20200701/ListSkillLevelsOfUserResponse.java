@@ -125,6 +125,8 @@ public class ListSkillLevelsOfUserResponse extends AcsResponse {
 
 			private String skillGroupName;
 
+			private String mediaType;
+
 			public String getSkillLevel() {
 				return this.skillLevel;
 			}
@@ -147,6 +149,14 @@ public class ListSkillLevelsOfUserResponse extends AcsResponse {
 
 			public void setSkillGroupName(String skillGroupName) {
 				this.skillGroupName = skillGroupName;
+			}
+
+			public String getMediaType() {
+				return this.mediaType;
+			}
+
+			public void setMediaType(String mediaType) {
+				this.mediaType = mediaType;
 			}
 		}
 	}

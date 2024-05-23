@@ -14,6 +14,9 @@
 
 package com.aliyuncs.ccc.transform.v20200701;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.ccc.model.v20200701.ModifyUserResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -27,6 +30,12 @@ public class ModifyUserResponseUnmarshaller {
 		modifyUserResponse.setCode(_ctx.stringValue("ModifyUserResponse.Code"));
 		modifyUserResponse.setMessage(_ctx.stringValue("ModifyUserResponse.Message"));
 		modifyUserResponse.setData(_ctx.stringValue("ModifyUserResponse.Data"));
+
+		List<String> params = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("ModifyUserResponse.Params.Length"); i++) {
+			params.add(_ctx.stringValue("ModifyUserResponse.Params["+ i +"]"));
+		}
+		modifyUserResponse.setParams(params);
 	 
 	 	return modifyUserResponse;
 	}

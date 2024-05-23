@@ -141,6 +141,10 @@ public class ListRealtimeSkillGroupStatesResponse extends AcsResponse {
 
 			private Long outboundScenarioReadyAgents;
 
+			private Long totalAgents;
+
+			private List<BreakCodeDetail> breakCodeDetailList;
+
 			public Long getWorkingAgents() {
 				return this.workingAgents;
 			}
@@ -227,6 +231,45 @@ public class ListRealtimeSkillGroupStatesResponse extends AcsResponse {
 
 			public void setOutboundScenarioReadyAgents(Long outboundScenarioReadyAgents) {
 				this.outboundScenarioReadyAgents = outboundScenarioReadyAgents;
+			}
+
+			public Long getTotalAgents() {
+				return this.totalAgents;
+			}
+
+			public void setTotalAgents(Long totalAgents) {
+				this.totalAgents = totalAgents;
+			}
+
+			public List<BreakCodeDetail> getBreakCodeDetailList() {
+				return this.breakCodeDetailList;
+			}
+
+			public void setBreakCodeDetailList(List<BreakCodeDetail> breakCodeDetailList) {
+				this.breakCodeDetailList = breakCodeDetailList;
+			}
+
+			public static class BreakCodeDetail {
+
+				private String breakCode;
+
+				private Long count;
+
+				public String getBreakCode() {
+					return this.breakCode;
+				}
+
+				public void setBreakCode(String breakCode) {
+					this.breakCode = breakCode;
+				}
+
+				public Long getCount() {
+					return this.count;
+				}
+
+				public void setCount(Long count) {
+					this.count = count;
+				}
 			}
 		}
 	}

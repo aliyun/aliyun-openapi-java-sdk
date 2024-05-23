@@ -25,6 +25,8 @@ import com.aliyuncs.ccc.Endpoint;
 public class ModifyUserRequest extends RpcAcsRequest<ModifyUserResponse> {
 	   
 
+	private String avatarUrl;
+
 	private String roleId;
 
 	private String mobile;
@@ -37,6 +39,8 @@ public class ModifyUserRequest extends RpcAcsRequest<ModifyUserResponse> {
 
 	private String displayName;
 
+	private String nickname;
+
 	private Boolean force;
 
 	private String displayId;
@@ -47,6 +51,17 @@ public class ModifyUserRequest extends RpcAcsRequest<ModifyUserResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getAvatarUrl() {
+		return this.avatarUrl;
+	}
+
+	public void setAvatarUrl(String avatarUrl) {
+		this.avatarUrl = avatarUrl;
+		if(avatarUrl != null){
+			putQueryParameter("AvatarUrl", avatarUrl);
+		}
 	}
 
 	public String getRoleId() {
@@ -112,6 +127,17 @@ public class ModifyUserRequest extends RpcAcsRequest<ModifyUserResponse> {
 		this.displayName = displayName;
 		if(displayName != null){
 			putQueryParameter("DisplayName", displayName);
+		}
+	}
+
+	public String getNickname() {
+		return this.nickname;
+	}
+
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
+		if(nickname != null){
+			putQueryParameter("Nickname", nickname);
 		}
 	}
 

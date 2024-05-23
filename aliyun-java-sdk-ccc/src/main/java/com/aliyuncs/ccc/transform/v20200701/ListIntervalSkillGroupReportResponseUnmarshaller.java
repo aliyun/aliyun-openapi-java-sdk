@@ -19,9 +19,11 @@ import java.util.List;
 
 import com.aliyuncs.ccc.model.v20200701.ListIntervalSkillGroupReportResponse;
 import com.aliyuncs.ccc.model.v20200701.ListIntervalSkillGroupReportResponse.DataItem;
+import com.aliyuncs.ccc.model.v20200701.ListIntervalSkillGroupReportResponse.DataItem.Back2Back;
 import com.aliyuncs.ccc.model.v20200701.ListIntervalSkillGroupReportResponse.DataItem.Inbound;
 import com.aliyuncs.ccc.model.v20200701.ListIntervalSkillGroupReportResponse.DataItem.Outbound;
 import com.aliyuncs.ccc.model.v20200701.ListIntervalSkillGroupReportResponse.DataItem.Overall;
+import com.aliyuncs.ccc.model.v20200701.ListIntervalSkillGroupReportResponse.DataItem.Overall.BreakCodeDetail;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -85,6 +87,13 @@ public class ListIntervalSkillGroupReportResponseUnmarshaller {
 			inbound.setAverageHoldTime(_ctx.floatValue("ListIntervalSkillGroupReportResponse.Data["+ i +"].Inbound.AverageHoldTime"));
 			inbound.setTotalAbandonedInQueueTime(_ctx.longValue("ListIntervalSkillGroupReportResponse.Data["+ i +"].Inbound.TotalAbandonedInQueueTime"));
 			inbound.setCallsAbandonedInQueue(_ctx.longValue("ListIntervalSkillGroupReportResponse.Data["+ i +"].Inbound.CallsAbandonedInQueue"));
+			inbound.setCallsQueuingOverflow(_ctx.longValue("ListIntervalSkillGroupReportResponse.Data["+ i +"].Inbound.CallsQueuingOverflow"));
+			inbound.setCallsQueuingTimeout(_ctx.longValue("ListIntervalSkillGroupReportResponse.Data["+ i +"].Inbound.CallsQueuingTimeout"));
+			inbound.setTotalMessagesSent(_ctx.longValue("ListIntervalSkillGroupReportResponse.Data["+ i +"].Inbound.TotalMessagesSent"));
+			inbound.setTotalMessagesSentByAgent(_ctx.longValue("ListIntervalSkillGroupReportResponse.Data["+ i +"].Inbound.TotalMessagesSentByAgent"));
+			inbound.setTotalMessagesSentByCustomer(_ctx.longValue("ListIntervalSkillGroupReportResponse.Data["+ i +"].Inbound.TotalMessagesSentByCustomer"));
+			inbound.setAverageFirstResponseTime(_ctx.floatValue("ListIntervalSkillGroupReportResponse.Data["+ i +"].Inbound.AverageFirstResponseTime"));
+			inbound.setAverageResponseTime(_ctx.floatValue("ListIntervalSkillGroupReportResponse.Data["+ i +"].Inbound.AverageResponseTime"));
 			dataItem.setInbound(inbound);
 
 			Outbound outbound = new Outbound();
@@ -141,7 +150,37 @@ public class ListIntervalSkillGroupReportResponseUnmarshaller {
 			overall.setTotalBreakTime(_ctx.longValue("ListIntervalSkillGroupReportResponse.Data["+ i +"].Overall.TotalBreakTime"));
 			overall.setMaxTalkTime(_ctx.longValue("ListIntervalSkillGroupReportResponse.Data["+ i +"].Overall.MaxTalkTime"));
 			overall.setTotalCalls(_ctx.longValue("ListIntervalSkillGroupReportResponse.Data["+ i +"].Overall.TotalCalls"));
+
+			List<BreakCodeDetail> breakCodeDetailList = new ArrayList<BreakCodeDetail>();
+			for (int j = 0; j < _ctx.lengthValue("ListIntervalSkillGroupReportResponse.Data["+ i +"].Overall.BreakCodeDetailList.Length"); j++) {
+				BreakCodeDetail breakCodeDetail = new BreakCodeDetail();
+				breakCodeDetail.setBreakCode(_ctx.stringValue("ListIntervalSkillGroupReportResponse.Data["+ i +"].Overall.BreakCodeDetailList["+ j +"].BreakCode"));
+				breakCodeDetail.setCount(_ctx.longValue("ListIntervalSkillGroupReportResponse.Data["+ i +"].Overall.BreakCodeDetailList["+ j +"].Count"));
+				breakCodeDetail.setDuration(_ctx.longValue("ListIntervalSkillGroupReportResponse.Data["+ i +"].Overall.BreakCodeDetailList["+ j +"].Duration"));
+
+				breakCodeDetailList.add(breakCodeDetail);
+			}
+			overall.setBreakCodeDetailList(breakCodeDetailList);
 			dataItem.setOverall(overall);
+
+			Back2Back back2Back = new Back2Back();
+			back2Back.setMaxRingTime(_ctx.longValue("ListIntervalSkillGroupReportResponse.Data["+ i +"].Back2Back.MaxRingTime"));
+			back2Back.setAverageCustomerRingTime(_ctx.floatValue("ListIntervalSkillGroupReportResponse.Data["+ i +"].Back2Back.AverageCustomerRingTime"));
+			back2Back.setCallsCustomerAnswered(_ctx.longValue("ListIntervalSkillGroupReportResponse.Data["+ i +"].Back2Back.CallsCustomerAnswered"));
+			back2Back.setCustomerAnswerRate(_ctx.floatValue("ListIntervalSkillGroupReportResponse.Data["+ i +"].Back2Back.CustomerAnswerRate"));
+			back2Back.setTotalRingTime(_ctx.longValue("ListIntervalSkillGroupReportResponse.Data["+ i +"].Back2Back.TotalRingTime"));
+			back2Back.setCallsDialed(_ctx.longValue("ListIntervalSkillGroupReportResponse.Data["+ i +"].Back2Back.CallsDialed"));
+			back2Back.setCallsAnswered(_ctx.longValue("ListIntervalSkillGroupReportResponse.Data["+ i +"].Back2Back.CallsAnswered"));
+			back2Back.setTotalTalkTime(_ctx.longValue("ListIntervalSkillGroupReportResponse.Data["+ i +"].Back2Back.TotalTalkTime"));
+			back2Back.setAverageRingTime(_ctx.floatValue("ListIntervalSkillGroupReportResponse.Data["+ i +"].Back2Back.AverageRingTime"));
+			back2Back.setMaxCustomerRingTime(_ctx.longValue("ListIntervalSkillGroupReportResponse.Data["+ i +"].Back2Back.MaxCustomerRingTime"));
+			back2Back.setTotalCustomerRingTime(_ctx.longValue("ListIntervalSkillGroupReportResponse.Data["+ i +"].Back2Back.TotalCustomerRingTime"));
+			back2Back.setAgentHandleRate(_ctx.floatValue("ListIntervalSkillGroupReportResponse.Data["+ i +"].Back2Back.AgentHandleRate"));
+			back2Back.setMaxTalkTime(_ctx.stringValue("ListIntervalSkillGroupReportResponse.Data["+ i +"].Back2Back.MaxTalkTime"));
+			back2Back.setAnswerRate(_ctx.stringValue("ListIntervalSkillGroupReportResponse.Data["+ i +"].Back2Back.AnswerRate"));
+			back2Back.setAverageTalkTime(_ctx.stringValue("ListIntervalSkillGroupReportResponse.Data["+ i +"].Back2Back.AverageTalkTime"));
+			back2Back.setCallsAgentHandled(_ctx.longValue("ListIntervalSkillGroupReportResponse.Data["+ i +"].Back2Back.CallsAgentHandled"));
+			dataItem.setBack2Back(back2Back);
 
 			data.add(dataItem);
 		}

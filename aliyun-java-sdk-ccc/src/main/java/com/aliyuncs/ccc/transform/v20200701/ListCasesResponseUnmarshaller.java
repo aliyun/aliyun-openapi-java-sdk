@@ -47,6 +47,7 @@ public class ListCasesResponseUnmarshaller {
 			listItem.setState(_ctx.stringValue("ListCasesResponse.Data.List["+ i +"].State"));
 			listItem.setCaseId(_ctx.stringValue("ListCasesResponse.Data.List["+ i +"].CaseId"));
 			listItem.setCustomVariables(_ctx.stringValue("ListCasesResponse.Data.List["+ i +"].CustomVariables"));
+			listItem.setAbandonPhase(_ctx.stringValue("ListCasesResponse.Data.List["+ i +"].AbandonPhase"));
 
 			list.add(listItem);
 		}

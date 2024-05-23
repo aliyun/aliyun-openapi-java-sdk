@@ -14,8 +14,12 @@
 
 package com.aliyuncs.ccc.transform.v20200701;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.ccc.model.v20200701.GetRealtimeInstanceStatesResponse;
 import com.aliyuncs.ccc.model.v20200701.GetRealtimeInstanceStatesResponse.Data;
+import com.aliyuncs.ccc.model.v20200701.GetRealtimeInstanceStatesResponse.Data.BreakCodeDetail;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -39,6 +43,16 @@ public class GetRealtimeInstanceStatesResponseUnmarshaller {
 		data.setInteractiveCalls(_ctx.longValue("GetRealtimeInstanceStatesResponse.Data.InteractiveCalls"));
 		data.setReadyAgents(_ctx.longValue("GetRealtimeInstanceStatesResponse.Data.ReadyAgents"));
 		data.setInstanceId(_ctx.stringValue("GetRealtimeInstanceStatesResponse.Data.InstanceId"));
+
+		List<BreakCodeDetail> breakCodeDetailList = new ArrayList<BreakCodeDetail>();
+		for (int i = 0; i < _ctx.lengthValue("GetRealtimeInstanceStatesResponse.Data.BreakCodeDetailList.Length"); i++) {
+			BreakCodeDetail breakCodeDetail = new BreakCodeDetail();
+			breakCodeDetail.setBreakCode(_ctx.stringValue("GetRealtimeInstanceStatesResponse.Data.BreakCodeDetailList["+ i +"].BreakCode"));
+			breakCodeDetail.setCount(_ctx.longValue("GetRealtimeInstanceStatesResponse.Data.BreakCodeDetailList["+ i +"].Count"));
+
+			breakCodeDetailList.add(breakCodeDetail);
+		}
+		data.setBreakCodeDetailList(breakCodeDetailList);
 		getRealtimeInstanceStatesResponse.setData(data);
 	 
 	 	return getRealtimeInstanceStatesResponse;

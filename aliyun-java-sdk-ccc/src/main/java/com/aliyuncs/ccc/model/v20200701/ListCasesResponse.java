@@ -133,6 +133,8 @@ public class ListCasesResponse extends AcsResponse {
 
 			private String customVariables;
 
+			private String abandonPhase;
+
 			public String getAbandonType() {
 				return this.abandonType;
 			}
@@ -187,6 +189,14 @@ public class ListCasesResponse extends AcsResponse {
 
 			public void setCustomVariables(String customVariables) {
 				this.customVariables = customVariables;
+			}
+
+			public String getAbandonPhase() {
+				return this.abandonPhase;
+			}
+
+			public void setAbandonPhase(String abandonPhase) {
+				this.abandonPhase = abandonPhase;
 			}
 		}
 	}

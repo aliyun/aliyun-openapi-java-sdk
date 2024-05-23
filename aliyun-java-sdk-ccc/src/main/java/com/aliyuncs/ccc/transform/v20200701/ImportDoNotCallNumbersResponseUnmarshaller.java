@@ -14,6 +14,9 @@
 
 package com.aliyuncs.ccc.transform.v20200701;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.ccc.model.v20200701.ImportDoNotCallNumbersResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -26,6 +29,12 @@ public class ImportDoNotCallNumbersResponseUnmarshaller {
 		importDoNotCallNumbersResponse.setCode(_ctx.stringValue("ImportDoNotCallNumbersResponse.Code"));
 		importDoNotCallNumbersResponse.setHttpStatusCode(_ctx.integerValue("ImportDoNotCallNumbersResponse.HttpStatusCode"));
 		importDoNotCallNumbersResponse.setMessage(_ctx.stringValue("ImportDoNotCallNumbersResponse.Message"));
+
+		List<String> params = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("ImportDoNotCallNumbersResponse.Params.Length"); i++) {
+			params.add(_ctx.stringValue("ImportDoNotCallNumbersResponse.Params["+ i +"]"));
+		}
+		importDoNotCallNumbersResponse.setParams(params);
 	 
 	 	return importDoNotCallNumbersResponse;
 	}

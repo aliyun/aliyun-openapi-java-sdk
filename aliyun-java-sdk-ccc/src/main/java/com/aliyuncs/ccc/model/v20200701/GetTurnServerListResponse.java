@@ -14,6 +14,7 @@
 
 package com.aliyuncs.ccc.model.v20200701;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.ccc.transform.v20200701.GetTurnServerListResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -33,6 +34,8 @@ public class GetTurnServerListResponse extends AcsResponse {
 	private String requestId;
 
 	private String data;
+
+	private List<String> params;
 
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
@@ -72,6 +75,14 @@ public class GetTurnServerListResponse extends AcsResponse {
 
 	public void setData(String data) {
 		this.data = data;
+	}
+
+	public List<String> getParams() {
+		return this.params;
+	}
+
+	public void setParams(List<String> params) {
+		this.params = params;
 	}
 
 	@Override

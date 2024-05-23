@@ -59,6 +59,7 @@ public class ListCampaignsResponseUnmarshaller {
 			listItem.setStrategyParameters(_ctx.stringValue("ListCampaignsResponse.Data.List["+ i +"].StrategyParameters"));
 			listItem.setQueueId(_ctx.stringValue("ListCampaignsResponse.Data.List["+ i +"].QueueId"));
 			listItem.setSimulation(_ctx.booleanValue("ListCampaignsResponse.Data.List["+ i +"].Simulation"));
+			listItem.setCompletionRate(_ctx.floatValue("ListCampaignsResponse.Data.List["+ i +"].CompletionRate"));
 
 			list.add(listItem);
 		}

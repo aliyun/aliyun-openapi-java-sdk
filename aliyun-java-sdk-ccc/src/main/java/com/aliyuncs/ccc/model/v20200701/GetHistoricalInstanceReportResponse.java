@@ -14,6 +14,7 @@
 
 package com.aliyuncs.ccc.model.v20200701;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.ccc.transform.v20200701.GetHistoricalInstanceReportResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -82,6 +83,8 @@ public class GetHistoricalInstanceReportResponse extends AcsResponse {
 
 		private Overall overall;
 
+		private Internal internal;
+
 		public Inbound getInbound() {
 			return this.inbound;
 		}
@@ -104,6 +107,14 @@ public class GetHistoricalInstanceReportResponse extends AcsResponse {
 
 		public void setOverall(Overall overall) {
 			this.overall = overall;
+		}
+
+		public Internal getInternal() {
+			return this.internal;
+		}
+
+		public void setInternal(Internal internal) {
+			this.internal = internal;
 		}
 
 		public static class Inbound {
@@ -211,6 +222,26 @@ public class GetHistoricalInstanceReportResponse extends AcsResponse {
 			private Long callsAbandonedInQueue;
 
 			private Long totalAbandonedInQueueTime;
+
+			private Long callsCausedIVRException;
+
+			private Long callsToVoicemail;
+
+			private Float serviceLevel15;
+
+			private Float serviceLevel30;
+
+			private Long totalMessagesSent;
+
+			private Long totalMessagesSentByAgent;
+
+			private Long totalMessagesSentByCustomer;
+
+			private Float averageFirstResponseTime;
+
+			private Float averageResponseTime;
+
+			private List<AccessChannelTypeDetail> accessChannelTypeDetailList;
 
 			public Float getAverageRingTime() {
 				return this.averageRingTime;
@@ -627,6 +658,109 @@ public class GetHistoricalInstanceReportResponse extends AcsResponse {
 			public void setTotalAbandonedInQueueTime(Long totalAbandonedInQueueTime) {
 				this.totalAbandonedInQueueTime = totalAbandonedInQueueTime;
 			}
+
+			public Long getCallsCausedIVRException() {
+				return this.callsCausedIVRException;
+			}
+
+			public void setCallsCausedIVRException(Long callsCausedIVRException) {
+				this.callsCausedIVRException = callsCausedIVRException;
+			}
+
+			public Long getCallsToVoicemail() {
+				return this.callsToVoicemail;
+			}
+
+			public void setCallsToVoicemail(Long callsToVoicemail) {
+				this.callsToVoicemail = callsToVoicemail;
+			}
+
+			public Float getServiceLevel15() {
+				return this.serviceLevel15;
+			}
+
+			public void setServiceLevel15(Float serviceLevel15) {
+				this.serviceLevel15 = serviceLevel15;
+			}
+
+			public Float getServiceLevel30() {
+				return this.serviceLevel30;
+			}
+
+			public void setServiceLevel30(Float serviceLevel30) {
+				this.serviceLevel30 = serviceLevel30;
+			}
+
+			public Long getTotalMessagesSent() {
+				return this.totalMessagesSent;
+			}
+
+			public void setTotalMessagesSent(Long totalMessagesSent) {
+				this.totalMessagesSent = totalMessagesSent;
+			}
+
+			public Long getTotalMessagesSentByAgent() {
+				return this.totalMessagesSentByAgent;
+			}
+
+			public void setTotalMessagesSentByAgent(Long totalMessagesSentByAgent) {
+				this.totalMessagesSentByAgent = totalMessagesSentByAgent;
+			}
+
+			public Long getTotalMessagesSentByCustomer() {
+				return this.totalMessagesSentByCustomer;
+			}
+
+			public void setTotalMessagesSentByCustomer(Long totalMessagesSentByCustomer) {
+				this.totalMessagesSentByCustomer = totalMessagesSentByCustomer;
+			}
+
+			public Float getAverageFirstResponseTime() {
+				return this.averageFirstResponseTime;
+			}
+
+			public void setAverageFirstResponseTime(Float averageFirstResponseTime) {
+				this.averageFirstResponseTime = averageFirstResponseTime;
+			}
+
+			public Float getAverageResponseTime() {
+				return this.averageResponseTime;
+			}
+
+			public void setAverageResponseTime(Float averageResponseTime) {
+				this.averageResponseTime = averageResponseTime;
+			}
+
+			public List<AccessChannelTypeDetail> getAccessChannelTypeDetailList() {
+				return this.accessChannelTypeDetailList;
+			}
+
+			public void setAccessChannelTypeDetailList(List<AccessChannelTypeDetail> accessChannelTypeDetailList) {
+				this.accessChannelTypeDetailList = accessChannelTypeDetailList;
+			}
+
+			public static class AccessChannelTypeDetail {
+
+				private String accessChannelType;
+
+				private Long callsOffered;
+
+				public String getAccessChannelType() {
+					return this.accessChannelType;
+				}
+
+				public void setAccessChannelType(String accessChannelType) {
+					this.accessChannelType = accessChannelType;
+				}
+
+				public Long getCallsOffered() {
+					return this.callsOffered;
+				}
+
+				public void setCallsOffered(Long callsOffered) {
+					this.callsOffered = callsOffered;
+				}
+			}
 		}
 
 		public static class Outbound {
@@ -938,6 +1072,8 @@ public class GetHistoricalInstanceReportResponse extends AcsResponse {
 
 			private Long totalCalls;
 
+			private Long maxLoggedInAgents;
+
 			public Long getTotalTalkTime() {
 				return this.totalTalkTime;
 			}
@@ -1112,6 +1248,37 @@ public class GetHistoricalInstanceReportResponse extends AcsResponse {
 
 			public void setTotalCalls(Long totalCalls) {
 				this.totalCalls = totalCalls;
+			}
+
+			public Long getMaxLoggedInAgents() {
+				return this.maxLoggedInAgents;
+			}
+
+			public void setMaxLoggedInAgents(Long maxLoggedInAgents) {
+				this.maxLoggedInAgents = maxLoggedInAgents;
+			}
+		}
+
+		public static class Internal {
+
+			private Long callsDialed;
+
+			private Long callsAnswered;
+
+			public Long getCallsDialed() {
+				return this.callsDialed;
+			}
+
+			public void setCallsDialed(Long callsDialed) {
+				this.callsDialed = callsDialed;
+			}
+
+			public Long getCallsAnswered() {
+				return this.callsAnswered;
+			}
+
+			public void setCallsAnswered(Long callsAnswered) {
+				this.callsAnswered = callsAnswered;
 			}
 		}
 	}

@@ -33,6 +33,8 @@ public class ListDoNotCallNumbersResponse extends AcsResponse {
 
 	private String requestId;
 
+	private List<String> params;
+
 	private Data data;
 
 	public String getCode() {
@@ -65,6 +67,14 @@ public class ListDoNotCallNumbersResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public List<String> getParams() {
+		return this.params;
+	}
+
+	public void setParams(List<String> params) {
+		this.params = params;
 	}
 
 	public Data getData() {
@@ -129,6 +139,8 @@ public class ListDoNotCallNumbersResponse extends AcsResponse {
 
 			private String creator;
 
+			private Long createdTime;
+
 			public String getNumber() {
 				return this.number;
 			}
@@ -167,6 +179,14 @@ public class ListDoNotCallNumbersResponse extends AcsResponse {
 
 			public void setCreator(String creator) {
 				this.creator = creator;
+			}
+
+			public Long getCreatedTime() {
+				return this.createdTime;
+			}
+
+			public void setCreatedTime(Long createdTime) {
+				this.createdTime = createdTime;
 			}
 		}
 	}

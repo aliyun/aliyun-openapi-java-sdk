@@ -31,6 +31,8 @@ public class ListUsersRequest extends RpcAcsRequest<ListUsersResponse> {
 
 	private String instanceId;
 
+	private String skillGroupId;
+
 	private Integer pageSize;
 	public ListUsersRequest() {
 		super("CCC", "2020-07-01", "ListUsers", "CCC");
@@ -71,6 +73,17 @@ public class ListUsersRequest extends RpcAcsRequest<ListUsersResponse> {
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getSkillGroupId() {
+		return this.skillGroupId;
+	}
+
+	public void setSkillGroupId(String skillGroupId) {
+		this.skillGroupId = skillGroupId;
+		if(skillGroupId != null){
+			putQueryParameter("SkillGroupId", skillGroupId);
 		}
 	}
 

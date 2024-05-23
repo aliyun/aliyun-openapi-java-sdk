@@ -89,6 +89,8 @@ public class PollUserStatusResponse extends AcsResponse {
 
 		private Long contextId;
 
+		private List<ChatContext> chatContexts;
+
 		private CallContext callContext;
 
 		private UserContext userContext;
@@ -99,6 +101,14 @@ public class PollUserStatusResponse extends AcsResponse {
 
 		public void setContextId(Long contextId) {
 			this.contextId = contextId;
+		}
+
+		public List<ChatContext> getChatContexts() {
+			return this.chatContexts;
+		}
+
+		public void setChatContexts(List<ChatContext> chatContexts) {
+			this.chatContexts = chatContexts;
 		}
 
 		public CallContext getCallContext() {
@@ -115,6 +125,132 @@ public class PollUserStatusResponse extends AcsResponse {
 
 		public void setUserContext(UserContext userContext) {
 			this.userContext = userContext;
+		}
+
+		public static class ChatContext {
+
+			private String instanceId;
+
+			private String jobId;
+
+			private String chatType;
+
+			private String callVariables;
+
+			private List<ChatMember> members;
+
+			public String getInstanceId() {
+				return this.instanceId;
+			}
+
+			public void setInstanceId(String instanceId) {
+				this.instanceId = instanceId;
+			}
+
+			public String getJobId() {
+				return this.jobId;
+			}
+
+			public void setJobId(String jobId) {
+				this.jobId = jobId;
+			}
+
+			public String getChatType() {
+				return this.chatType;
+			}
+
+			public void setChatType(String chatType) {
+				this.chatType = chatType;
+			}
+
+			public String getCallVariables() {
+				return this.callVariables;
+			}
+
+			public void setCallVariables(String callVariables) {
+				this.callVariables = callVariables;
+			}
+
+			public List<ChatMember> getMembers() {
+				return this.members;
+			}
+
+			public void setMembers(List<ChatMember> members) {
+				this.members = members;
+			}
+
+			public static class ChatMember {
+
+				private Integer index;
+
+				private String userId;
+
+				private String userType;
+
+				private String status;
+
+				private String skillGroupId;
+
+				private String releaseInitiator;
+
+				private String releaseReason;
+
+				public Integer getIndex() {
+					return this.index;
+				}
+
+				public void setIndex(Integer index) {
+					this.index = index;
+				}
+
+				public String getUserId() {
+					return this.userId;
+				}
+
+				public void setUserId(String userId) {
+					this.userId = userId;
+				}
+
+				public String getUserType() {
+					return this.userType;
+				}
+
+				public void setUserType(String userType) {
+					this.userType = userType;
+				}
+
+				public String getStatus() {
+					return this.status;
+				}
+
+				public void setStatus(String status) {
+					this.status = status;
+				}
+
+				public String getSkillGroupId() {
+					return this.skillGroupId;
+				}
+
+				public void setSkillGroupId(String skillGroupId) {
+					this.skillGroupId = skillGroupId;
+				}
+
+				public String getReleaseInitiator() {
+					return this.releaseInitiator;
+				}
+
+				public void setReleaseInitiator(String releaseInitiator) {
+					this.releaseInitiator = releaseInitiator;
+				}
+
+				public String getReleaseReason() {
+					return this.releaseReason;
+				}
+
+				public void setReleaseReason(String releaseReason) {
+					this.releaseReason = releaseReason;
+				}
+			}
 		}
 
 		public static class CallContext {
@@ -349,6 +485,8 @@ public class PollUserStatusResponse extends AcsResponse {
 
 			private String userState;
 
+			private List<JobStatus> parallelJobList;
+
 			private List<String> signedSkillGroupIdList;
 
 			public String getExtension() {
@@ -447,12 +585,53 @@ public class PollUserStatusResponse extends AcsResponse {
 				this.userState = userState;
 			}
 
+			public List<JobStatus> getParallelJobList() {
+				return this.parallelJobList;
+			}
+
+			public void setParallelJobList(List<JobStatus> parallelJobList) {
+				this.parallelJobList = parallelJobList;
+			}
+
 			public List<String> getSignedSkillGroupIdList() {
 				return this.signedSkillGroupIdList;
 			}
 
 			public void setSignedSkillGroupIdList(List<String> signedSkillGroupIdList) {
 				this.signedSkillGroupIdList = signedSkillGroupIdList;
+			}
+
+			public static class JobStatus {
+
+				private String jobId;
+
+				private String status;
+
+				private Long timestamp;
+
+				public String getJobId() {
+					return this.jobId;
+				}
+
+				public void setJobId(String jobId) {
+					this.jobId = jobId;
+				}
+
+				public String getStatus() {
+					return this.status;
+				}
+
+				public void setStatus(String status) {
+					this.status = status;
+				}
+
+				public Long getTimestamp() {
+					return this.timestamp;
+				}
+
+				public void setTimestamp(Long timestamp) {
+					this.timestamp = timestamp;
+				}
 			}
 		}
 	}

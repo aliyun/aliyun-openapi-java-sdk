@@ -34,6 +34,7 @@ public class GetSkillGroupResponseUnmarshaller {
 		data.setName(_ctx.stringValue("GetSkillGroupResponse.Data.Name"));
 		data.setDescription(_ctx.stringValue("GetSkillGroupResponse.Data.Description"));
 		data.setSkillGroupId(_ctx.stringValue("GetSkillGroupResponse.Data.SkillGroupId"));
+		data.setMediaType(_ctx.stringValue("GetSkillGroupResponse.Data.MediaType"));
 		getSkillGroupResponse.setData(data);
 	 
 	 	return getSkillGroupResponse;

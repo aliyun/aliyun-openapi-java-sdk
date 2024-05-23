@@ -34,6 +34,12 @@ public class ListUsersResponseUnmarshaller {
 		listUsersResponse.setHttpStatusCode(_ctx.integerValue("ListUsersResponse.HttpStatusCode"));
 		listUsersResponse.setMessage(_ctx.stringValue("ListUsersResponse.Message"));
 
+		List<String> params = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("ListUsersResponse.Params.Length"); i++) {
+			params.add(_ctx.stringValue("ListUsersResponse.Params["+ i +"]"));
+		}
+		listUsersResponse.setParams(params);
+
 		Data data = new Data();
 		data.setPageNumber(_ctx.integerValue("ListUsersResponse.Data.PageNumber"));
 		data.setPageSize(_ctx.integerValue("ListUsersResponse.Data.PageSize"));
@@ -57,6 +63,7 @@ public class ListUsersResponseUnmarshaller {
 			userDetail.setDeviceId(_ctx.stringValue("ListUsersResponse.Data.List["+ i +"].DeviceId"));
 			userDetail.setDeviceExt(_ctx.stringValue("ListUsersResponse.Data.List["+ i +"].DeviceExt"));
 			userDetail.setDeviceState(_ctx.stringValue("ListUsersResponse.Data.List["+ i +"].DeviceState"));
+			userDetail.setPrimary(_ctx.booleanValue("ListUsersResponse.Data.List["+ i +"].Primary"));
 
 			List<PhoneNumber> personalOutboundNumberList = new ArrayList<PhoneNumber>();
 			for (int j = 0; j < _ctx.lengthValue("ListUsersResponse.Data.List["+ i +"].PersonalOutboundNumberList.Length"); j++) {

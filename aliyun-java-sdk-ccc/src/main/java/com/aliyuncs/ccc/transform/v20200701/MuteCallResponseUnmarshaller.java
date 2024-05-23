@@ -63,6 +63,7 @@ public class MuteCallResponseUnmarshaller {
 			channelContext.setChannelId(_ctx.stringValue("MuteCallResponse.Data.CallContext.ChannelContexts["+ i +"].ChannelId"));
 			channelContext.setUserExtension(_ctx.stringValue("MuteCallResponse.Data.CallContext.ChannelContexts["+ i +"].UserExtension"));
 			channelContext.setOriginator(_ctx.stringValue("MuteCallResponse.Data.CallContext.ChannelContexts["+ i +"].Originator"));
+			channelContext.setSkillGroupId(_ctx.stringValue("MuteCallResponse.Data.CallContext.ChannelContexts["+ i +"].SkillGroupId"));
 
 			channelContexts.add(channelContext);
 		}

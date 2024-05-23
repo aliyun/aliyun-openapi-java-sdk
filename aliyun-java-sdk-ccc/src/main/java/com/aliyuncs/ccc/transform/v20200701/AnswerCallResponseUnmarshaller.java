@@ -51,6 +51,7 @@ public class AnswerCallResponseUnmarshaller {
 		List<ChannelContext> channelContexts = new ArrayList<ChannelContext>();
 		for (int i = 0; i < _ctx.lengthValue("AnswerCallResponse.Data.CallContext.ChannelContexts.Length"); i++) {
 			ChannelContext channelContext = new ChannelContext();
+			channelContext.setIndex(_ctx.longValue("AnswerCallResponse.Data.CallContext.ChannelContexts["+ i +"].Index"));
 			channelContext.setReleaseInitiator(_ctx.stringValue("AnswerCallResponse.Data.CallContext.ChannelContexts["+ i +"].ReleaseInitiator"));
 			channelContext.setChannelState(_ctx.stringValue("AnswerCallResponse.Data.CallContext.ChannelContexts["+ i +"].ChannelState"));
 			channelContext.setDestination(_ctx.stringValue("AnswerCallResponse.Data.CallContext.ChannelContexts["+ i +"].Destination"));

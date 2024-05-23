@@ -185,6 +185,8 @@ public class MakeCallResponse extends AcsResponse {
 
 				private String userExtension;
 
+				private String mediaType;
+
 				public String getReleaseInitiator() {
 					return this.releaseInitiator;
 				}
@@ -279,6 +281,14 @@ public class MakeCallResponse extends AcsResponse {
 
 				public void setUserExtension(String userExtension) {
 					this.userExtension = userExtension;
+				}
+
+				public String getMediaType() {
+					return this.mediaType;
+				}
+
+				public void setMediaType(String mediaType) {
+					this.mediaType = mediaType;
 				}
 			}
 		}

@@ -177,6 +177,8 @@ public class MuteCallResponse extends AcsResponse {
 
 				private String originator;
 
+				private String skillGroupId;
+
 				public Integer getIndex() {
 					return this.index;
 				}
@@ -279,6 +281,14 @@ public class MuteCallResponse extends AcsResponse {
 
 				public void setOriginator(String originator) {
 					this.originator = originator;
+				}
+
+				public String getSkillGroupId() {
+					return this.skillGroupId;
+				}
+
+				public void setSkillGroupId(String skillGroupId) {
+					this.skillGroupId = skillGroupId;
 				}
 			}
 		}

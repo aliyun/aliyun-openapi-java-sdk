@@ -85,6 +85,10 @@ public class ListIntervalAgentReportResponse extends AcsResponse {
 
 		private Overall overall;
 
+		private Back2Back back2Back;
+
+		private Internal internal;
+
 		public Long getStatsTime() {
 			return this.statsTime;
 		}
@@ -115,6 +119,22 @@ public class ListIntervalAgentReportResponse extends AcsResponse {
 
 		public void setOverall(Overall overall) {
 			this.overall = overall;
+		}
+
+		public Back2Back getBack2Back() {
+			return this.back2Back;
+		}
+
+		public void setBack2Back(Back2Back back2Back) {
+			this.back2Back = back2Back;
+		}
+
+		public Internal getInternal() {
+			return this.internal;
+		}
+
+		public void setInternal(Internal internal) {
+			this.internal = internal;
 		}
 
 		public static class Inbound {
@@ -168,6 +188,20 @@ public class ListIntervalAgentReportResponse extends AcsResponse {
 			private Long satisfactionSurveysResponded;
 
 			private Float averageHoldTime;
+
+			private Float averageFirstResponseTime;
+
+			private Float averageResponseTime;
+
+			private Float serviceLevel15;
+
+			private Long totalMessagesSent;
+
+			private Long totalMessagesSentByAgent;
+
+			private Long totalMessagesSentByCustomer;
+
+			private List<AccessChannelTypeDetail> accessChannelTypeDetails;
 
 			public Float getAverageRingTime() {
 				return this.averageRingTime;
@@ -367,6 +401,85 @@ public class ListIntervalAgentReportResponse extends AcsResponse {
 
 			public void setAverageHoldTime(Float averageHoldTime) {
 				this.averageHoldTime = averageHoldTime;
+			}
+
+			public Float getAverageFirstResponseTime() {
+				return this.averageFirstResponseTime;
+			}
+
+			public void setAverageFirstResponseTime(Float averageFirstResponseTime) {
+				this.averageFirstResponseTime = averageFirstResponseTime;
+			}
+
+			public Float getAverageResponseTime() {
+				return this.averageResponseTime;
+			}
+
+			public void setAverageResponseTime(Float averageResponseTime) {
+				this.averageResponseTime = averageResponseTime;
+			}
+
+			public Float getServiceLevel15() {
+				return this.serviceLevel15;
+			}
+
+			public void setServiceLevel15(Float serviceLevel15) {
+				this.serviceLevel15 = serviceLevel15;
+			}
+
+			public Long getTotalMessagesSent() {
+				return this.totalMessagesSent;
+			}
+
+			public void setTotalMessagesSent(Long totalMessagesSent) {
+				this.totalMessagesSent = totalMessagesSent;
+			}
+
+			public Long getTotalMessagesSentByAgent() {
+				return this.totalMessagesSentByAgent;
+			}
+
+			public void setTotalMessagesSentByAgent(Long totalMessagesSentByAgent) {
+				this.totalMessagesSentByAgent = totalMessagesSentByAgent;
+			}
+
+			public Long getTotalMessagesSentByCustomer() {
+				return this.totalMessagesSentByCustomer;
+			}
+
+			public void setTotalMessagesSentByCustomer(Long totalMessagesSentByCustomer) {
+				this.totalMessagesSentByCustomer = totalMessagesSentByCustomer;
+			}
+
+			public List<AccessChannelTypeDetail> getAccessChannelTypeDetails() {
+				return this.accessChannelTypeDetails;
+			}
+
+			public void setAccessChannelTypeDetails(List<AccessChannelTypeDetail> accessChannelTypeDetails) {
+				this.accessChannelTypeDetails = accessChannelTypeDetails;
+			}
+
+			public static class AccessChannelTypeDetail {
+
+				private String accessChannelType;
+
+				private Long callsOffered;
+
+				public String getAccessChannelType() {
+					return this.accessChannelType;
+				}
+
+				public void setAccessChannelType(String accessChannelType) {
+					this.accessChannelType = accessChannelType;
+				}
+
+				public Long getCallsOffered() {
+					return this.callsOffered;
+				}
+
+				public void setCallsOffered(Long callsOffered) {
+					this.callsOffered = callsOffered;
+				}
 			}
 		}
 
@@ -677,6 +790,8 @@ public class ListIntervalAgentReportResponse extends AcsResponse {
 
 			private Long lastCheckoutTime;
 
+			private Long lastCheckOutTime;
+
 			private Long totalCalls;
 
 			private Long totalLoggedInTime;
@@ -712,6 +827,14 @@ public class ListIntervalAgentReportResponse extends AcsResponse {
 			private Long totalOutboundScenarioReadyTime;
 
 			private Long firstCheckInTime;
+
+			private Long totalOfficePhoneLoggedInTime;
+
+			private Long totalOffSiteLoggedInTime;
+
+			private Long totalOnSiteLoggedInTime;
+
+			private Long totalOutboundScenarioLoggedInTime;
 
 			private List<BreakCodeDetail> breakCodeDetailList;
 
@@ -801,6 +924,14 @@ public class ListIntervalAgentReportResponse extends AcsResponse {
 
 			public void setLastCheckoutTime(Long lastCheckoutTime) {
 				this.lastCheckoutTime = lastCheckoutTime;
+			}
+
+			public Long getLastCheckOutTime() {
+				return this.lastCheckOutTime;
+			}
+
+			public void setLastCheckOutTime(Long lastCheckOutTime) {
+				this.lastCheckOutTime = lastCheckOutTime;
 			}
 
 			public Long getTotalCalls() {
@@ -947,6 +1078,38 @@ public class ListIntervalAgentReportResponse extends AcsResponse {
 				this.firstCheckInTime = firstCheckInTime;
 			}
 
+			public Long getTotalOfficePhoneLoggedInTime() {
+				return this.totalOfficePhoneLoggedInTime;
+			}
+
+			public void setTotalOfficePhoneLoggedInTime(Long totalOfficePhoneLoggedInTime) {
+				this.totalOfficePhoneLoggedInTime = totalOfficePhoneLoggedInTime;
+			}
+
+			public Long getTotalOffSiteLoggedInTime() {
+				return this.totalOffSiteLoggedInTime;
+			}
+
+			public void setTotalOffSiteLoggedInTime(Long totalOffSiteLoggedInTime) {
+				this.totalOffSiteLoggedInTime = totalOffSiteLoggedInTime;
+			}
+
+			public Long getTotalOnSiteLoggedInTime() {
+				return this.totalOnSiteLoggedInTime;
+			}
+
+			public void setTotalOnSiteLoggedInTime(Long totalOnSiteLoggedInTime) {
+				this.totalOnSiteLoggedInTime = totalOnSiteLoggedInTime;
+			}
+
+			public Long getTotalOutboundScenarioLoggedInTime() {
+				return this.totalOutboundScenarioLoggedInTime;
+			}
+
+			public void setTotalOutboundScenarioLoggedInTime(Long totalOutboundScenarioLoggedInTime) {
+				this.totalOutboundScenarioLoggedInTime = totalOutboundScenarioLoggedInTime;
+			}
+
 			public List<BreakCodeDetail> getBreakCodeDetailList() {
 				return this.breakCodeDetailList;
 			}
@@ -986,6 +1149,232 @@ public class ListIntervalAgentReportResponse extends AcsResponse {
 				public void setDuration(Long duration) {
 					this.duration = duration;
 				}
+			}
+		}
+
+		public static class Back2Back {
+
+			private Long callsDialed;
+
+			private Float answerRate;
+
+			private Long callsAnswered;
+
+			private Long totalTalkTime;
+
+			private Long maxTalkTime;
+
+			private Float averageTalkTime;
+
+			private Long totalRingTime;
+
+			private Long maxRingTime;
+
+			private Float averageRingTime;
+
+			private Long totalCustomerRingTime;
+
+			private Long maxCustomerRingTime;
+
+			private Float averageCustomerRingTime;
+
+			private Long callsAgentHandled;
+
+			private Float agentHandleRate;
+
+			private Long callsCustomerAnswered;
+
+			private Float customerAnswerRate;
+
+			public Long getCallsDialed() {
+				return this.callsDialed;
+			}
+
+			public void setCallsDialed(Long callsDialed) {
+				this.callsDialed = callsDialed;
+			}
+
+			public Float getAnswerRate() {
+				return this.answerRate;
+			}
+
+			public void setAnswerRate(Float answerRate) {
+				this.answerRate = answerRate;
+			}
+
+			public Long getCallsAnswered() {
+				return this.callsAnswered;
+			}
+
+			public void setCallsAnswered(Long callsAnswered) {
+				this.callsAnswered = callsAnswered;
+			}
+
+			public Long getTotalTalkTime() {
+				return this.totalTalkTime;
+			}
+
+			public void setTotalTalkTime(Long totalTalkTime) {
+				this.totalTalkTime = totalTalkTime;
+			}
+
+			public Long getMaxTalkTime() {
+				return this.maxTalkTime;
+			}
+
+			public void setMaxTalkTime(Long maxTalkTime) {
+				this.maxTalkTime = maxTalkTime;
+			}
+
+			public Float getAverageTalkTime() {
+				return this.averageTalkTime;
+			}
+
+			public void setAverageTalkTime(Float averageTalkTime) {
+				this.averageTalkTime = averageTalkTime;
+			}
+
+			public Long getTotalRingTime() {
+				return this.totalRingTime;
+			}
+
+			public void setTotalRingTime(Long totalRingTime) {
+				this.totalRingTime = totalRingTime;
+			}
+
+			public Long getMaxRingTime() {
+				return this.maxRingTime;
+			}
+
+			public void setMaxRingTime(Long maxRingTime) {
+				this.maxRingTime = maxRingTime;
+			}
+
+			public Float getAverageRingTime() {
+				return this.averageRingTime;
+			}
+
+			public void setAverageRingTime(Float averageRingTime) {
+				this.averageRingTime = averageRingTime;
+			}
+
+			public Long getTotalCustomerRingTime() {
+				return this.totalCustomerRingTime;
+			}
+
+			public void setTotalCustomerRingTime(Long totalCustomerRingTime) {
+				this.totalCustomerRingTime = totalCustomerRingTime;
+			}
+
+			public Long getMaxCustomerRingTime() {
+				return this.maxCustomerRingTime;
+			}
+
+			public void setMaxCustomerRingTime(Long maxCustomerRingTime) {
+				this.maxCustomerRingTime = maxCustomerRingTime;
+			}
+
+			public Float getAverageCustomerRingTime() {
+				return this.averageCustomerRingTime;
+			}
+
+			public void setAverageCustomerRingTime(Float averageCustomerRingTime) {
+				this.averageCustomerRingTime = averageCustomerRingTime;
+			}
+
+			public Long getCallsAgentHandled() {
+				return this.callsAgentHandled;
+			}
+
+			public void setCallsAgentHandled(Long callsAgentHandled) {
+				this.callsAgentHandled = callsAgentHandled;
+			}
+
+			public Float getAgentHandleRate() {
+				return this.agentHandleRate;
+			}
+
+			public void setAgentHandleRate(Float agentHandleRate) {
+				this.agentHandleRate = agentHandleRate;
+			}
+
+			public Long getCallsCustomerAnswered() {
+				return this.callsCustomerAnswered;
+			}
+
+			public void setCallsCustomerAnswered(Long callsCustomerAnswered) {
+				this.callsCustomerAnswered = callsCustomerAnswered;
+			}
+
+			public Float getCustomerAnswerRate() {
+				return this.customerAnswerRate;
+			}
+
+			public void setCustomerAnswerRate(Float customerAnswerRate) {
+				this.customerAnswerRate = customerAnswerRate;
+			}
+		}
+
+		public static class Internal {
+
+			private Float averageTalkTime;
+
+			private Long callsAnswered;
+
+			private Long callsDialed;
+
+			private Long callsHandled;
+
+			private Long callsOffered;
+
+			private Long callsTalked;
+
+			public Float getAverageTalkTime() {
+				return this.averageTalkTime;
+			}
+
+			public void setAverageTalkTime(Float averageTalkTime) {
+				this.averageTalkTime = averageTalkTime;
+			}
+
+			public Long getCallsAnswered() {
+				return this.callsAnswered;
+			}
+
+			public void setCallsAnswered(Long callsAnswered) {
+				this.callsAnswered = callsAnswered;
+			}
+
+			public Long getCallsDialed() {
+				return this.callsDialed;
+			}
+
+			public void setCallsDialed(Long callsDialed) {
+				this.callsDialed = callsDialed;
+			}
+
+			public Long getCallsHandled() {
+				return this.callsHandled;
+			}
+
+			public void setCallsHandled(Long callsHandled) {
+				this.callsHandled = callsHandled;
+			}
+
+			public Long getCallsOffered() {
+				return this.callsOffered;
+			}
+
+			public void setCallsOffered(Long callsOffered) {
+				this.callsOffered = callsOffered;
+			}
+
+			public Long getCallsTalked() {
+				return this.callsTalked;
+			}
+
+			public void setCallsTalked(Long callsTalked) {
+				this.callsTalked = callsTalked;
 			}
 		}
 	}

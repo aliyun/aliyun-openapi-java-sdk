@@ -30,6 +30,8 @@ public class GetHistoricalInstanceReportRequest extends RpcAcsRequest<GetHistori
 	private Long startTime;
 
 	private String instanceId;
+
+	private String mediaType;
 	public GetHistoricalInstanceReportRequest() {
 		super("CCC", "2020-07-01", "GetHistoricalInstanceReport", "CCC");
 		setMethod(MethodType.POST);
@@ -69,6 +71,17 @@ public class GetHistoricalInstanceReportRequest extends RpcAcsRequest<GetHistori
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getMediaType() {
+		return this.mediaType;
+	}
+
+	public void setMediaType(String mediaType) {
+		this.mediaType = mediaType;
+		if(mediaType != null){
+			putQueryParameter("MediaType", mediaType);
 		}
 	}
 

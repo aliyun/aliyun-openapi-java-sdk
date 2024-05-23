@@ -47,6 +47,7 @@ public class SignInGroupResponseUnmarshaller {
 		data.setInstanceId(_ctx.stringValue("SignInGroupResponse.Data.InstanceId"));
 		data.setOutboundScenario(_ctx.booleanValue("SignInGroupResponse.Data.OutboundScenario"));
 		data.setUserState(_ctx.stringValue("SignInGroupResponse.Data.UserState"));
+		data.setChatDeviceId(_ctx.stringValue("SignInGroupResponse.Data.ChatDeviceId"));
 
 		List<String> signedSkillGroupIdList = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("SignInGroupResponse.Data.SignedSkillGroupIdList.Length"); i++) {

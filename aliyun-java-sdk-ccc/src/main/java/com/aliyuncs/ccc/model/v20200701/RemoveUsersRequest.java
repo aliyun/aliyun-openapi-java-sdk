@@ -27,7 +27,11 @@ public class RemoveUsersRequest extends RpcAcsRequest<RemoveUsersResponse> {
 
 	private String userIdList;
 
+	private String notificationEmail;
+
 	private String instanceId;
+
+	private String filePath;
 
 	private Boolean force;
 	public RemoveUsersRequest() {
@@ -50,6 +54,17 @@ public class RemoveUsersRequest extends RpcAcsRequest<RemoveUsersResponse> {
 		}
 	}
 
+	public String getNotificationEmail() {
+		return this.notificationEmail;
+	}
+
+	public void setNotificationEmail(String notificationEmail) {
+		this.notificationEmail = notificationEmail;
+		if(notificationEmail != null){
+			putQueryParameter("NotificationEmail", notificationEmail);
+		}
+	}
+
 	public String getInstanceId() {
 		return this.instanceId;
 	}
@@ -58,6 +73,17 @@ public class RemoveUsersRequest extends RpcAcsRequest<RemoveUsersResponse> {
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getFilePath() {
+		return this.filePath;
+	}
+
+	public void setFilePath(String filePath) {
+		this.filePath = filePath;
+		if(filePath != null){
+			putQueryParameter("FilePath", filePath);
 		}
 	}
 

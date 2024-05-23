@@ -161,6 +161,8 @@ public class AnswerCallResponse extends AcsResponse {
 
 			public static class ChannelContext {
 
+				private Long index;
+
 				private String releaseInitiator;
 
 				private String channelState;
@@ -186,6 +188,14 @@ public class AnswerCallResponse extends AcsResponse {
 				private String userExtension;
 
 				private String channelVariables;
+
+				public Long getIndex() {
+					return this.index;
+				}
+
+				public void setIndex(Long index) {
+					this.index = index;
+				}
 
 				public String getReleaseInitiator() {
 					return this.releaseInitiator;

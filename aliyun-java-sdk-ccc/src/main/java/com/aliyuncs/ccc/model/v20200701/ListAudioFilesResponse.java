@@ -133,6 +133,12 @@ public class ListAudioFilesResponse extends AcsResponse {
 
 			private String createdTime;
 
+			private String status;
+
+			private String usage;
+
+			private String auditResult;
+
 			public String getAudioFileName() {
 				return this.audioFileName;
 			}
@@ -187,6 +193,30 @@ public class ListAudioFilesResponse extends AcsResponse {
 
 			public void setCreatedTime(String createdTime) {
 				this.createdTime = createdTime;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
+			public String getUsage() {
+				return this.usage;
+			}
+
+			public void setUsage(String usage) {
+				this.usage = usage;
+			}
+
+			public String getAuditResult() {
+				return this.auditResult;
+			}
+
+			public void setAuditResult(String auditResult) {
+				this.auditResult = auditResult;
 			}
 		}
 	}

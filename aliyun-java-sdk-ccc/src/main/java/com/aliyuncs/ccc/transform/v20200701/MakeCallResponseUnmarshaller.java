@@ -63,6 +63,7 @@ public class MakeCallResponseUnmarshaller {
 			channelContext.setChannelId(_ctx.stringValue("MakeCallResponse.Data.CallContext.ChannelContexts["+ i +"].ChannelId"));
 			channelContext.setOriginator(_ctx.stringValue("MakeCallResponse.Data.CallContext.ChannelContexts["+ i +"].Originator"));
 			channelContext.setUserExtension(_ctx.stringValue("MakeCallResponse.Data.CallContext.ChannelContexts["+ i +"].UserExtension"));
+			channelContext.setMediaType(_ctx.stringValue("MakeCallResponse.Data.CallContext.ChannelContexts["+ i +"].MediaType"));
 
 			channelContexts.add(channelContext);
 		}

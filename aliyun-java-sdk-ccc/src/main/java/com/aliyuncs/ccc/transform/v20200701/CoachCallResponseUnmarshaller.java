@@ -80,7 +80,6 @@ public class CoachCallResponseUnmarshaller {
 		userContext.setBreakCode(_ctx.stringValue("CoachCallResponse.Data.UserContext.BreakCode"));
 		userContext.setInstanceId(_ctx.stringValue("CoachCallResponse.Data.UserContext.InstanceId"));
 		userContext.setOutboundScenario(_ctx.booleanValue("CoachCallResponse.Data.UserContext.OutboundScenario"));
-		userContext.setUri(_ctx.stringValue("CoachCallResponse.Data.UserContext.Uri"));
 		userContext.setDeviceState(_ctx.stringValue("CoachCallResponse.Data.UserContext.DeviceState"));
 		userContext.setMobile(_ctx.stringValue("CoachCallResponse.Data.UserContext.Mobile"));
 		userContext.setJobId(_ctx.stringValue("CoachCallResponse.Data.UserContext.JobId"));

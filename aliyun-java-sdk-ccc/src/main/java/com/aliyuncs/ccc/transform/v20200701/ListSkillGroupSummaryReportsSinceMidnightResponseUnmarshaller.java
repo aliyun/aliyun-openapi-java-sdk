@@ -99,6 +99,8 @@ public class ListSkillGroupSummaryReportsSinceMidnightResponseUnmarshaller {
 			inbound.setCallsServiceLevel10(_ctx.longValue("ListSkillGroupSummaryReportsSinceMidnightResponse.PagedSkillGroupSummaryReport.List["+ i +"].Inbound.CallsServiceLevel10"));
 			inbound.setCallsAttendedTransferOut(_ctx.longValue("ListSkillGroupSummaryReportsSinceMidnightResponse.PagedSkillGroupSummaryReport.List["+ i +"].Inbound.CallsAttendedTransferOut"));
 			inbound.setCallsBlindTransferOut(_ctx.longValue("ListSkillGroupSummaryReportsSinceMidnightResponse.PagedSkillGroupSummaryReport.List["+ i +"].Inbound.CallsBlindTransferOut"));
+			inbound.setCallsQueuingTimeout(_ctx.longValue("ListSkillGroupSummaryReportsSinceMidnightResponse.PagedSkillGroupSummaryReport.List["+ i +"].Inbound.CallsQueuingTimeout"));
+			inbound.setCallsTimeout(_ctx.longValue("ListSkillGroupSummaryReportsSinceMidnightResponse.PagedSkillGroupSummaryReport.List["+ i +"].Inbound.CallsTimeout"));
 			skillGroupSummaryReport.setInbound(inbound);
 
 			Outbound outbound = new Outbound();
@@ -118,6 +120,17 @@ public class ListSkillGroupSummaryReportsSinceMidnightResponseUnmarshaller {
 			outbound.setMaxTalkTime(_ctx.longValue("ListSkillGroupSummaryReportsSinceMidnightResponse.PagedSkillGroupSummaryReport.List["+ i +"].Outbound.MaxTalkTime"));
 			outbound.setAverageDialingTime(_ctx.longValue("ListSkillGroupSummaryReportsSinceMidnightResponse.PagedSkillGroupSummaryReport.List["+ i +"].Outbound.AverageDialingTime"));
 			outbound.setCallsServiceLevel30(_ctx.stringValue("ListSkillGroupSummaryReportsSinceMidnightResponse.PagedSkillGroupSummaryReport.List["+ i +"].Outbound.CallsServiceLevel30"));
+			outbound.setCallsOffered(_ctx.longValue("ListSkillGroupSummaryReportsSinceMidnightResponse.PagedSkillGroupSummaryReport.List["+ i +"].Outbound.CallsOffered"));
+			outbound.setCallsAbandoned(_ctx.longValue("ListSkillGroupSummaryReportsSinceMidnightResponse.PagedSkillGroupSummaryReport.List["+ i +"].Outbound.CallsAbandoned"));
+			outbound.setCallsQueuingTimeout(_ctx.longValue("ListSkillGroupSummaryReportsSinceMidnightResponse.PagedSkillGroupSummaryReport.List["+ i +"].Outbound.CallsQueuingTimeout"));
+			outbound.setCallsQueuingOverflow(_ctx.longValue("ListSkillGroupSummaryReportsSinceMidnightResponse.PagedSkillGroupSummaryReport.List["+ i +"].Outbound.CallsQueuingOverflow"));
+			outbound.setCallsQueuingFailed(_ctx.longValue("ListSkillGroupSummaryReportsSinceMidnightResponse.PagedSkillGroupSummaryReport.List["+ i +"].Outbound.CallsQueuingFailed"));
+			outbound.setCallsQueuingRerouted(_ctx.longValue("ListSkillGroupSummaryReportsSinceMidnightResponse.PagedSkillGroupSummaryReport.List["+ i +"].Outbound.CallsQueuingRerouted"));
+			outbound.setCallsQueuingCancelled(_ctx.longValue("ListSkillGroupSummaryReportsSinceMidnightResponse.PagedSkillGroupSummaryReport.List["+ i +"].Outbound.CallsQueuingCancelled"));
+			outbound.setCallsQueuingFailure(_ctx.longValue("ListSkillGroupSummaryReportsSinceMidnightResponse.PagedSkillGroupSummaryReport.List["+ i +"].Outbound.CallsQueuingFailure"));
+			outbound.setTotalWaitTime(_ctx.longValue("ListSkillGroupSummaryReportsSinceMidnightResponse.PagedSkillGroupSummaryReport.List["+ i +"].Outbound.TotalWaitTime"));
+			outbound.setCallsAgentHandled(_ctx.longValue("ListSkillGroupSummaryReportsSinceMidnightResponse.PagedSkillGroupSummaryReport.List["+ i +"].Outbound.CallsAgentHandled"));
+			outbound.setCallsServiceLevel30V2(_ctx.longValue("ListSkillGroupSummaryReportsSinceMidnightResponse.PagedSkillGroupSummaryReport.List["+ i +"].Outbound.CallsServiceLevel30V2"));
 			skillGroupSummaryReport.setOutbound(outbound);
 
 			list.add(skillGroupSummaryReport);

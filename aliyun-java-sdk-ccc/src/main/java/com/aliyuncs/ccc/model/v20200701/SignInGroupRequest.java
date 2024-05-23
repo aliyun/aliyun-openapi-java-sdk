@@ -27,9 +27,13 @@ public class SignInGroupRequest extends RpcAcsRequest<SignInGroupResponse> {
 
 	private String signedSkillGroupIdList;
 
+	private String chatDeviceId;
+
 	private String userId;
 
 	private String deviceId;
+
+	private Boolean additivity;
 
 	private String instanceId;
 	public SignInGroupRequest() {
@@ -52,6 +56,17 @@ public class SignInGroupRequest extends RpcAcsRequest<SignInGroupResponse> {
 		}
 	}
 
+	public String getChatDeviceId() {
+		return this.chatDeviceId;
+	}
+
+	public void setChatDeviceId(String chatDeviceId) {
+		this.chatDeviceId = chatDeviceId;
+		if(chatDeviceId != null){
+			putQueryParameter("ChatDeviceId", chatDeviceId);
+		}
+	}
+
 	public String getUserId() {
 		return this.userId;
 	}
@@ -71,6 +86,17 @@ public class SignInGroupRequest extends RpcAcsRequest<SignInGroupResponse> {
 		this.deviceId = deviceId;
 		if(deviceId != null){
 			putQueryParameter("DeviceId", deviceId);
+		}
+	}
+
+	public Boolean getAdditivity() {
+		return this.additivity;
+	}
+
+	public void setAdditivity(Boolean additivity) {
+		this.additivity = additivity;
+		if(additivity != null){
+			putQueryParameter("Additivity", additivity.toString());
 		}
 	}
 

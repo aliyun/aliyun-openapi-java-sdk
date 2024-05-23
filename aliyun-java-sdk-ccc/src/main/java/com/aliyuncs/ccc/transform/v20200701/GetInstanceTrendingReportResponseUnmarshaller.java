@@ -21,6 +21,7 @@ import com.aliyuncs.ccc.model.v20200701.GetInstanceTrendingReportResponse;
 import com.aliyuncs.ccc.model.v20200701.GetInstanceTrendingReportResponse.Data;
 import com.aliyuncs.ccc.model.v20200701.GetInstanceTrendingReportResponse.Data.InboundItem;
 import com.aliyuncs.ccc.model.v20200701.GetInstanceTrendingReportResponse.Data.OutboundItem;
+import com.aliyuncs.ccc.model.v20200701.GetInstanceTrendingReportResponse.Data.OverallItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -60,6 +61,16 @@ public class GetInstanceTrendingReportResponseUnmarshaller {
 			outbound.add(outboundItem);
 		}
 		data.setOutbound(outbound);
+
+		List<OverallItem> overall = new ArrayList<OverallItem>();
+		for (int i = 0; i < _ctx.lengthValue("GetInstanceTrendingReportResponse.Data.Overall.Length"); i++) {
+			OverallItem overallItem = new OverallItem();
+			overallItem.setStatsTime(_ctx.longValue("GetInstanceTrendingReportResponse.Data.Overall["+ i +"].StatsTime"));
+			overallItem.setMaxLoggedInAgents(_ctx.longValue("GetInstanceTrendingReportResponse.Data.Overall["+ i +"].MaxLoggedInAgents"));
+
+			overall.add(overallItem);
+		}
+		data.setOverall(overall);
 		getInstanceTrendingReportResponse.setData(data);
 	 
 	 	return getInstanceTrendingReportResponse;

@@ -313,8 +313,6 @@ public class CoachCallResponse extends AcsResponse {
 
 			private Boolean outboundScenario;
 
-			private String uri;
-
 			private String deviceState;
 
 			private String mobile;
@@ -395,14 +393,6 @@ public class CoachCallResponse extends AcsResponse {
 
 			public void setOutboundScenario(Boolean outboundScenario) {
 				this.outboundScenario = outboundScenario;
-			}
-
-			public String getUri() {
-				return this.uri;
-			}
-
-			public void setUri(String uri) {
-				this.uri = uri;
 			}
 
 			public String getDeviceState() {

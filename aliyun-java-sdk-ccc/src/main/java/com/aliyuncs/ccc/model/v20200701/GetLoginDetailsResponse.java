@@ -113,6 +113,22 @@ public class GetLoginDetailsResponse extends AcsResponse {
 
 		private String deviceState;
 
+		private String chatUserId;
+
+		private String chatDeviceId;
+
+		private String chatLoginToken;
+
+		private String chatAppId;
+
+		private String chatAppKey;
+
+		private String chatServerUrl;
+
+		private String nickname;
+
+		private String avatarUrl;
+
 		public String getDisplayName() {
 			return this.displayName;
 		}
@@ -215,6 +231,70 @@ public class GetLoginDetailsResponse extends AcsResponse {
 
 		public void setDeviceState(String deviceState) {
 			this.deviceState = deviceState;
+		}
+
+		public String getChatUserId() {
+			return this.chatUserId;
+		}
+
+		public void setChatUserId(String chatUserId) {
+			this.chatUserId = chatUserId;
+		}
+
+		public String getChatDeviceId() {
+			return this.chatDeviceId;
+		}
+
+		public void setChatDeviceId(String chatDeviceId) {
+			this.chatDeviceId = chatDeviceId;
+		}
+
+		public String getChatLoginToken() {
+			return this.chatLoginToken;
+		}
+
+		public void setChatLoginToken(String chatLoginToken) {
+			this.chatLoginToken = chatLoginToken;
+		}
+
+		public String getChatAppId() {
+			return this.chatAppId;
+		}
+
+		public void setChatAppId(String chatAppId) {
+			this.chatAppId = chatAppId;
+		}
+
+		public String getChatAppKey() {
+			return this.chatAppKey;
+		}
+
+		public void setChatAppKey(String chatAppKey) {
+			this.chatAppKey = chatAppKey;
+		}
+
+		public String getChatServerUrl() {
+			return this.chatServerUrl;
+		}
+
+		public void setChatServerUrl(String chatServerUrl) {
+			this.chatServerUrl = chatServerUrl;
+		}
+
+		public String getNickname() {
+			return this.nickname;
+		}
+
+		public void setNickname(String nickname) {
+			this.nickname = nickname;
+		}
+
+		public String getAvatarUrl() {
+			return this.avatarUrl;
+		}
+
+		public void setAvatarUrl(String avatarUrl) {
+			this.avatarUrl = avatarUrl;
 		}
 	}
 

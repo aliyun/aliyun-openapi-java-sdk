@@ -14,6 +14,9 @@
 
 package com.aliyuncs.ccc.transform.v20200701;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.ccc.model.v20200701.GetTurnCredentialsResponse;
 import com.aliyuncs.ccc.model.v20200701.GetTurnCredentialsResponse.Data;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -27,6 +30,12 @@ public class GetTurnCredentialsResponseUnmarshaller {
 		getTurnCredentialsResponse.setCode(_ctx.stringValue("GetTurnCredentialsResponse.Code"));
 		getTurnCredentialsResponse.setHttpStatusCode(_ctx.integerValue("GetTurnCredentialsResponse.HttpStatusCode"));
 		getTurnCredentialsResponse.setMessage(_ctx.stringValue("GetTurnCredentialsResponse.Message"));
+
+		List<String> params = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("GetTurnCredentialsResponse.Params.Length"); i++) {
+			params.add(_ctx.stringValue("GetTurnCredentialsResponse.Params["+ i +"]"));
+		}
+		getTurnCredentialsResponse.setParams(params);
 
 		Data data = new Data();
 		data.setUserName(_ctx.stringValue("GetTurnCredentialsResponse.Data.UserName"));

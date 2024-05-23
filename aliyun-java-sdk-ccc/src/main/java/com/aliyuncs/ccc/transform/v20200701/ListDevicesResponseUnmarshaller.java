@@ -47,6 +47,7 @@ public class ListDevicesResponseUnmarshaller {
 			device.setUserId(_ctx.stringValue("ListDevicesResponse.Data["+ i +"].UserId"));
 			device.setCallId(_ctx.stringValue("ListDevicesResponse.Data["+ i +"].CallId"));
 			device.setInstanceId(_ctx.stringValue("ListDevicesResponse.Data["+ i +"].InstanceId"));
+			device.setDeviceType(_ctx.stringValue("ListDevicesResponse.Data["+ i +"].DeviceType"));
 
 			data.add(device);
 		}

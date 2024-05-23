@@ -84,7 +84,11 @@ public class GetHistoricalCampaignReportResponse extends AcsResponse {
 
 		private Float connectedRate;
 
+		private Float answerRate;
+
 		private Float abandonedRate;
+
+		private Float abandonRate;
 
 		private Float occupancyRate;
 
@@ -120,12 +124,28 @@ public class GetHistoricalCampaignReportResponse extends AcsResponse {
 			this.connectedRate = connectedRate;
 		}
 
+		public Float getAnswerRate() {
+			return this.answerRate;
+		}
+
+		public void setAnswerRate(Float answerRate) {
+			this.answerRate = answerRate;
+		}
+
 		public Float getAbandonedRate() {
 			return this.abandonedRate;
 		}
 
 		public void setAbandonedRate(Float abandonedRate) {
 			this.abandonedRate = abandonedRate;
+		}
+
+		public Float getAbandonRate() {
+			return this.abandonRate;
+		}
+
+		public void setAbandonRate(Float abandonRate) {
+			this.abandonRate = abandonRate;
 		}
 
 		public Float getOccupancyRate() {
