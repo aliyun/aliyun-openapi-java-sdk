@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeMeterLiveInteractionDauResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Double peakDau;
 
+	private String requestId;
+
 	private List<DataItem> data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Double getPeakDau() {
 		return this.peakDau;
@@ -45,6 +37,14 @@ public class DescribeMeterLiveInteractionDauResponse extends AcsResponse {
 
 	public void setPeakDau(Double peakDau) {
 		this.peakDau = peakDau;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<DataItem> getData() {
@@ -57,17 +57,9 @@ public class DescribeMeterLiveInteractionDauResponse extends AcsResponse {
 
 	public static class DataItem {
 
-		private Long timestamp;
-
 		private Double dau;
 
-		public Long getTimestamp() {
-			return this.timestamp;
-		}
-
-		public void setTimestamp(Long timestamp) {
-			this.timestamp = timestamp;
-		}
+		private Long timestamp;
 
 		public Double getDau() {
 			return this.dau;
@@ -75,6 +67,14 @@ public class DescribeMeterLiveInteractionDauResponse extends AcsResponse {
 
 		public void setDau(Double dau) {
 			this.dau = dau;
+		}
+
+		public Long getTimestamp() {
+			return this.timestamp;
+		}
+
+		public void setTimestamp(Long timestamp) {
+			this.timestamp = timestamp;
 		}
 	}
 

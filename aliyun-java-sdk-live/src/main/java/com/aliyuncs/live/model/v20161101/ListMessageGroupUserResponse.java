@@ -47,19 +47,11 @@ public class ListMessageGroupUserResponse extends AcsResponse {
 
 	public static class Result {
 
-		private Integer total;
-
 		private Boolean hasMore;
 
+		private Integer total;
+
 		private List<UserListItem> userList;
-
-		public Integer getTotal() {
-			return this.total;
-		}
-
-		public void setTotal(Integer total) {
-			this.total = total;
-		}
 
 		public Boolean getHasMore() {
 			return this.hasMore;
@@ -67,6 +59,14 @@ public class ListMessageGroupUserResponse extends AcsResponse {
 
 		public void setHasMore(Boolean hasMore) {
 			this.hasMore = hasMore;
+		}
+
+		public Integer getTotal() {
+			return this.total;
+		}
+
+		public void setTotal(Integer total) {
+			this.total = total;
 		}
 
 		public List<UserListItem> getUserList() {
@@ -79,17 +79,9 @@ public class ListMessageGroupUserResponse extends AcsResponse {
 
 		public static class UserListItem {
 
-			private String userId;
-
 			private Long joinTime;
 
-			public String getUserId() {
-				return this.userId;
-			}
-
-			public void setUserId(String userId) {
-				this.userId = userId;
-			}
+			private String userId;
 
 			public Long getJoinTime() {
 				return this.joinTime;
@@ -97,6 +89,14 @@ public class ListMessageGroupUserResponse extends AcsResponse {
 
 			public void setJoinTime(Long joinTime) {
 				this.joinTime = joinTime;
+			}
+
+			public String getUserId() {
+				return this.userId;
+			}
+
+			public void setUserId(String userId) {
+				this.userId = userId;
 			}
 		}
 	}

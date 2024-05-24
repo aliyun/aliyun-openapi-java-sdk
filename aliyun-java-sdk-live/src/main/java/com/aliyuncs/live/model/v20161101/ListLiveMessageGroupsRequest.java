@@ -28,6 +28,8 @@ public class ListLiveMessageGroupsRequest extends RpcAcsRequest<ListLiveMessageG
 
 	private Integer sortType;
 
+	private Integer groupStatus;
+
 	private Long nextPageToken;
 
 	private String dataCenter;
@@ -51,6 +53,17 @@ public class ListLiveMessageGroupsRequest extends RpcAcsRequest<ListLiveMessageG
 		this.sortType = sortType;
 		if(sortType != null){
 			putQueryParameter("SortType", sortType.toString());
+		}
+	}
+
+	public Integer getGroupStatus() {
+		return this.groupStatus;
+	}
+
+	public void setGroupStatus(Integer groupStatus) {
+		this.groupStatus = groupStatus;
+		if(groupStatus != null){
+			putQueryParameter("GroupStatus", groupStatus.toString());
 		}
 	}
 

@@ -34,9 +34,9 @@ public class BatchGetOnlineUsersResponseUnmarshaller {
 		List<OnlineUsersItem> onlineUsers = new ArrayList<OnlineUsersItem>();
 		for (int i = 0; i < _ctx.lengthValue("BatchGetOnlineUsersResponse.Result.OnlineUsers.Length"); i++) {
 			OnlineUsersItem onlineUsersItem = new OnlineUsersItem();
-			onlineUsersItem.setUserId(_ctx.stringValue("BatchGetOnlineUsersResponse.Result.OnlineUsers["+ i +"].UserId"));
 			onlineUsersItem.setJoinTime(_ctx.longValue("BatchGetOnlineUsersResponse.Result.OnlineUsers["+ i +"].JoinTime"));
 			onlineUsersItem.setOnline(_ctx.booleanValue("BatchGetOnlineUsersResponse.Result.OnlineUsers["+ i +"].Online"));
+			onlineUsersItem.setUserId(_ctx.stringValue("BatchGetOnlineUsersResponse.Result.OnlineUsers["+ i +"].UserId"));
 
 			onlineUsers.add(onlineUsersItem);
 		}

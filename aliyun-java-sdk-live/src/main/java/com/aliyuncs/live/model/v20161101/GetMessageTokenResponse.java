@@ -48,9 +48,9 @@ public class GetMessageTokenResponse extends AcsResponse {
 
 		private String accessToken;
 
-		private String refreshToken;
-
 		private Long accessTokenExpiredTime;
+
+		private String refreshToken;
 
 		public String getAccessToken() {
 			return this.accessToken;
@@ -60,20 +60,20 @@ public class GetMessageTokenResponse extends AcsResponse {
 			this.accessToken = accessToken;
 		}
 
-		public String getRefreshToken() {
-			return this.refreshToken;
-		}
-
-		public void setRefreshToken(String refreshToken) {
-			this.refreshToken = refreshToken;
-		}
-
 		public Long getAccessTokenExpiredTime() {
 			return this.accessTokenExpiredTime;
 		}
 
 		public void setAccessTokenExpiredTime(Long accessTokenExpiredTime) {
 			this.accessTokenExpiredTime = accessTokenExpiredTime;
+		}
+
+		public String getRefreshToken() {
+			return this.refreshToken;
+		}
+
+		public void setRefreshToken(String refreshToken) {
+			this.refreshToken = refreshToken;
 		}
 	}
 

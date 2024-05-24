@@ -35,11 +35,11 @@ public class ListMessageResponseUnmarshaller {
 		List<MessageListItem> messageList = new ArrayList<MessageListItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListMessageResponse.Result.MessageList.Length"); i++) {
 			MessageListItem messageListItem = new MessageListItem();
+			messageListItem.setData(_ctx.stringValue("ListMessageResponse.Result.MessageList["+ i +"].Data"));
 			messageListItem.setGroupId(_ctx.stringValue("ListMessageResponse.Result.MessageList["+ i +"].GroupId"));
 			messageListItem.setMessageId(_ctx.stringValue("ListMessageResponse.Result.MessageList["+ i +"].MessageId"));
-			messageListItem.setType(_ctx.integerValue("ListMessageResponse.Result.MessageList["+ i +"].Type"));
 			messageListItem.setSenderId(_ctx.stringValue("ListMessageResponse.Result.MessageList["+ i +"].SenderId"));
-			messageListItem.setData(_ctx.stringValue("ListMessageResponse.Result.MessageList["+ i +"].Data"));
+			messageListItem.setType(_ctx.integerValue("ListMessageResponse.Result.MessageList["+ i +"].Type"));
 
 			messageList.add(messageListItem);
 		}

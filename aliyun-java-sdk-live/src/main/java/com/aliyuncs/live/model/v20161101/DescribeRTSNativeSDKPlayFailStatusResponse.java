@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeRTSNativeSDKPlayFailStatusResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String dataInterval;
-
-	private String startTime;
 
 	private String endTime;
 
+	private String requestId;
+
+	private String startTime;
+
 	private List<Data> playFailStatus;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getDataInterval() {
 		return this.dataInterval;
@@ -51,20 +43,28 @@ public class DescribeRTSNativeSDKPlayFailStatusResponse extends AcsResponse {
 		this.dataInterval = dataInterval;
 	}
 
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-	}
-
 	public String getEndTime() {
 		return this.endTime;
 	}
 
 	public void setEndTime(String endTime) {
 		this.endTime = endTime;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
 	}
 
 	public List<Data> getPlayFailStatus() {

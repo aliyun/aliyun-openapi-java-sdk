@@ -27,8 +27,8 @@ public class GetMessageTokenResponseUnmarshaller {
 
 		Result result = new Result();
 		result.setAccessToken(_ctx.stringValue("GetMessageTokenResponse.Result.AccessToken"));
-		result.setRefreshToken(_ctx.stringValue("GetMessageTokenResponse.Result.RefreshToken"));
 		result.setAccessTokenExpiredTime(_ctx.longValue("GetMessageTokenResponse.Result.AccessTokenExpiredTime"));
+		result.setRefreshToken(_ctx.stringValue("GetMessageTokenResponse.Result.RefreshToken"));
 		getMessageTokenResponse.setResult(result);
 	 
 	 	return getMessageTokenResponse;

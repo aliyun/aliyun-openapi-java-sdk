@@ -31,11 +31,11 @@ public class DescribeLiveCenterStreamRateDataResponseUnmarshaller {
 		List<Data> rateDatas = new ArrayList<Data>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLiveCenterStreamRateDataResponse.RateDatas.Length"); i++) {
 			Data data = new Data();
-			data.setVideoFps(_ctx.stringValue("DescribeLiveCenterStreamRateDataResponse.RateDatas["+ i +"].VideoFps"));
-			data.setVideoRate(_ctx.stringValue("DescribeLiveCenterStreamRateDataResponse.RateDatas["+ i +"].VideoRate"));
 			data.setAudioFps(_ctx.stringValue("DescribeLiveCenterStreamRateDataResponse.RateDatas["+ i +"].AudioFps"));
 			data.setAudioRate(_ctx.stringValue("DescribeLiveCenterStreamRateDataResponse.RateDatas["+ i +"].AudioRate"));
 			data.setTime(_ctx.stringValue("DescribeLiveCenterStreamRateDataResponse.RateDatas["+ i +"].Time"));
+			data.setVideoFps(_ctx.stringValue("DescribeLiveCenterStreamRateDataResponse.RateDatas["+ i +"].VideoFps"));
+			data.setVideoRate(_ctx.stringValue("DescribeLiveCenterStreamRateDataResponse.RateDatas["+ i +"].VideoRate"));
 
 			rateDatas.add(data);
 		}

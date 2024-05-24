@@ -47,19 +47,11 @@ public class ListMuteGroupUserResponse extends AcsResponse {
 
 	public static class Result {
 
-		private Integer total;
-
 		private Boolean hasMore;
 
+		private Integer total;
+
 		private List<UserListItem> userList;
-
-		public Integer getTotal() {
-			return this.total;
-		}
-
-		public void setTotal(Integer total) {
-			this.total = total;
-		}
 
 		public Boolean getHasMore() {
 			return this.hasMore;
@@ -67,6 +59,14 @@ public class ListMuteGroupUserResponse extends AcsResponse {
 
 		public void setHasMore(Boolean hasMore) {
 			this.hasMore = hasMore;
+		}
+
+		public Integer getTotal() {
+			return this.total;
+		}
+
+		public void setTotal(Integer total) {
+			this.total = total;
 		}
 
 		public List<UserListItem> getUserList() {

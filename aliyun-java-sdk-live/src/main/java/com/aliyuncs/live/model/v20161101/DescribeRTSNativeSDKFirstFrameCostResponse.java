@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeRTSNativeSDKFirstFrameCostResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String dataInterval;
-
-	private String startTime;
 
 	private String endTime;
 
+	private String requestId;
+
+	private String startTime;
+
 	private List<Data> firstFrameCostData;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getDataInterval() {
 		return this.dataInterval;
@@ -51,20 +43,28 @@ public class DescribeRTSNativeSDKFirstFrameCostResponse extends AcsResponse {
 		this.dataInterval = dataInterval;
 	}
 
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-	}
-
 	public String getEndTime() {
 		return this.endTime;
 	}
 
 	public void setEndTime(String endTime) {
 		this.endTime = endTime;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
 	}
 
 	public List<Data> getFirstFrameCostData() {
@@ -77,33 +77,17 @@ public class DescribeRTSNativeSDKFirstFrameCostResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String timeStamp;
-
-		private String initialized;
-
 		private String connected;
 
 		private String finishGetStreamInfo;
 
-		private String firstPacket;
-
 		private String firstFrameComplete;
 
-		public String getTimeStamp() {
-			return this.timeStamp;
-		}
+		private String firstPacket;
 
-		public void setTimeStamp(String timeStamp) {
-			this.timeStamp = timeStamp;
-		}
+		private String initialized;
 
-		public String getInitialized() {
-			return this.initialized;
-		}
-
-		public void setInitialized(String initialized) {
-			this.initialized = initialized;
-		}
+		private String timeStamp;
 
 		public String getConnected() {
 			return this.connected;
@@ -121,6 +105,14 @@ public class DescribeRTSNativeSDKFirstFrameCostResponse extends AcsResponse {
 			this.finishGetStreamInfo = finishGetStreamInfo;
 		}
 
+		public String getFirstFrameComplete() {
+			return this.firstFrameComplete;
+		}
+
+		public void setFirstFrameComplete(String firstFrameComplete) {
+			this.firstFrameComplete = firstFrameComplete;
+		}
+
 		public String getFirstPacket() {
 			return this.firstPacket;
 		}
@@ -129,12 +121,20 @@ public class DescribeRTSNativeSDKFirstFrameCostResponse extends AcsResponse {
 			this.firstPacket = firstPacket;
 		}
 
-		public String getFirstFrameComplete() {
-			return this.firstFrameComplete;
+		public String getInitialized() {
+			return this.initialized;
 		}
 
-		public void setFirstFrameComplete(String firstFrameComplete) {
-			this.firstFrameComplete = firstFrameComplete;
+		public void setInitialized(String initialized) {
+			this.initialized = initialized;
+		}
+
+		public String getTimeStamp() {
+			return this.timeStamp;
+		}
+
+		public void setTimeStamp(String timeStamp) {
+			this.timeStamp = timeStamp;
 		}
 	}
 

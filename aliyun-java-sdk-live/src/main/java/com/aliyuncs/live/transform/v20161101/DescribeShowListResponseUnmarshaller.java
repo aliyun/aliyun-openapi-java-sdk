@@ -32,25 +32,25 @@ public class DescribeShowListResponseUnmarshaller {
 		describeShowListResponse.setShowList(_ctx.stringValue("DescribeShowListResponse.ShowList"));
 
 		ShowListInfo showListInfo = new ShowListInfo();
-		showListInfo.setHighPriorityShowStartTime(_ctx.stringValue("DescribeShowListResponse.ShowListInfo.HighPriorityShowStartTime"));
-		showListInfo.setTotalShowListRepeatTimes(_ctx.integerValue("DescribeShowListResponse.ShowListInfo.TotalShowListRepeatTimes"));
-		showListInfo.setShowListRepeatTimes(_ctx.integerValue("DescribeShowListResponse.ShowListInfo.ShowListRepeatTimes"));
 		showListInfo.setCurrentShowId(_ctx.stringValue("DescribeShowListResponse.ShowListInfo.CurrentShowId"));
 		showListInfo.setHighPriorityShowId(_ctx.stringValue("DescribeShowListResponse.ShowListInfo.HighPriorityShowId"));
+		showListInfo.setHighPriorityShowStartTime(_ctx.stringValue("DescribeShowListResponse.ShowListInfo.HighPriorityShowStartTime"));
+		showListInfo.setShowListRepeatTimes(_ctx.integerValue("DescribeShowListResponse.ShowListInfo.ShowListRepeatTimes"));
+		showListInfo.setTotalShowListRepeatTimes(_ctx.integerValue("DescribeShowListResponse.ShowListInfo.TotalShowListRepeatTimes"));
 
 		List<Show> showList = new ArrayList<Show>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeShowListResponse.ShowListInfo.ShowList.Length"); i++) {
 			Show show = new Show();
-			show.setShowName(_ctx.stringValue("DescribeShowListResponse.ShowListInfo.ShowList["+ i +"].ShowName"));
 			show.setDuration(_ctx.longValue("DescribeShowListResponse.ShowListInfo.ShowList["+ i +"].Duration"));
 			show.setRepeatTimes(_ctx.integerValue("DescribeShowListResponse.ShowListInfo.ShowList["+ i +"].RepeatTimes"));
 			show.setShowId(_ctx.stringValue("DescribeShowListResponse.ShowListInfo.ShowList["+ i +"].ShowId"));
+			show.setShowName(_ctx.stringValue("DescribeShowListResponse.ShowListInfo.ShowList["+ i +"].ShowName"));
 
 			ResourceInfo resourceInfo = new ResourceInfo();
 			resourceInfo.setLiveInputType(_ctx.integerValue("DescribeShowListResponse.ShowListInfo.ShowList["+ i +"].ResourceInfo.LiveInputType"));
-			resourceInfo.setResourceUrl(_ctx.stringValue("DescribeShowListResponse.ShowListInfo.ShowList["+ i +"].ResourceInfo.ResourceUrl"));
-			resourceInfo.setResourceType(_ctx.stringValue("DescribeShowListResponse.ShowListInfo.ShowList["+ i +"].ResourceInfo.ResourceType"));
 			resourceInfo.setResourceId(_ctx.stringValue("DescribeShowListResponse.ShowListInfo.ShowList["+ i +"].ResourceInfo.ResourceId"));
+			resourceInfo.setResourceType(_ctx.stringValue("DescribeShowListResponse.ShowListInfo.ShowList["+ i +"].ResourceInfo.ResourceType"));
+			resourceInfo.setResourceUrl(_ctx.stringValue("DescribeShowListResponse.ShowListInfo.ShowList["+ i +"].ResourceInfo.ResourceUrl"));
 			show.setResourceInfo(resourceInfo);
 
 			showList.add(show);

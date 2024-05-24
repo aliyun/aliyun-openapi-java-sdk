@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeRTSNativeSDKPlayTimeResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String dataInterval;
-
-	private String startTime;
 
 	private String endTime;
 
+	private String requestId;
+
+	private String startTime;
+
 	private List<Data> playTimeData;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getDataInterval() {
 		return this.dataInterval;
@@ -51,20 +43,28 @@ public class DescribeRTSNativeSDKPlayTimeResponse extends AcsResponse {
 		this.dataInterval = dataInterval;
 	}
 
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-	}
-
 	public String getEndTime() {
 		return this.endTime;
 	}
 
 	public void setEndTime(String endTime) {
 		this.endTime = endTime;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
 	}
 
 	public List<Data> getPlayTimeData() {
@@ -77,19 +77,11 @@ public class DescribeRTSNativeSDKPlayTimeResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String timeStamp;
-
 		private String playTime;
 
 		private String stallTime;
 
-		public String getTimeStamp() {
-			return this.timeStamp;
-		}
-
-		public void setTimeStamp(String timeStamp) {
-			this.timeStamp = timeStamp;
-		}
+		private String timeStamp;
 
 		public String getPlayTime() {
 			return this.playTime;
@@ -105,6 +97,14 @@ public class DescribeRTSNativeSDKPlayTimeResponse extends AcsResponse {
 
 		public void setStallTime(String stallTime) {
 			this.stallTime = stallTime;
+		}
+
+		public String getTimeStamp() {
+			return this.timeStamp;
+		}
+
+		public void setTimeStamp(String timeStamp) {
+			this.timeStamp = timeStamp;
 		}
 	}
 

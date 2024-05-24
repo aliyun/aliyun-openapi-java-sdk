@@ -23,11 +23,11 @@ public class DescribeLiveDelayConfigResponseUnmarshaller {
 	public static DescribeLiveDelayConfigResponse unmarshall(DescribeLiveDelayConfigResponse describeLiveDelayConfigResponse, UnmarshallerContext _ctx) {
 		
 		describeLiveDelayConfigResponse.setRequestId(_ctx.stringValue("DescribeLiveDelayConfigResponse.RequestId"));
-		describeLiveDelayConfigResponse.setDomain(_ctx.stringValue("DescribeLiveDelayConfigResponse.Domain"));
-		describeLiveDelayConfigResponse.setTaskTriggerMode(_ctx.stringValue("DescribeLiveDelayConfigResponse.TaskTriggerMode"));
 		describeLiveDelayConfigResponse.setApp(_ctx.stringValue("DescribeLiveDelayConfigResponse.App"));
 		describeLiveDelayConfigResponse.setDelayTime(_ctx.stringValue("DescribeLiveDelayConfigResponse.DelayTime"));
+		describeLiveDelayConfigResponse.setDomain(_ctx.stringValue("DescribeLiveDelayConfigResponse.Domain"));
 		describeLiveDelayConfigResponse.setStream(_ctx.stringValue("DescribeLiveDelayConfigResponse.Stream"));
+		describeLiveDelayConfigResponse.setTaskTriggerMode(_ctx.stringValue("DescribeLiveDelayConfigResponse.TaskTriggerMode"));
 	 
 	 	return describeLiveDelayConfigResponse;
 	}

@@ -27,12 +27,12 @@ public class GetMessageAppResponseUnmarshaller {
 		getMessageAppResponse.setRequestId(_ctx.stringValue("GetMessageAppResponse.RequestId"));
 
 		Result result = new Result();
+		result.setAppConfig(_ctx.mapValue("GetMessageAppResponse.Result.AppConfig"));
 		result.setAppId(_ctx.stringValue("GetMessageAppResponse.Result.AppId"));
 		result.setAppName(_ctx.stringValue("GetMessageAppResponse.Result.AppName"));
 		result.setCreateTime(_ctx.longValue("GetMessageAppResponse.Result.CreateTime"));
-		result.setStatus(_ctx.integerValue("GetMessageAppResponse.Result.Status"));
-		result.setAppConfig(_ctx.mapValue("GetMessageAppResponse.Result.AppConfig"));
 		result.setExtension(_ctx.mapValue("GetMessageAppResponse.Result.Extension"));
+		result.setStatus(_ctx.integerValue("GetMessageAppResponse.Result.Status"));
 		getMessageAppResponse.setResult(result);
 	 
 	 	return getMessageAppResponse;

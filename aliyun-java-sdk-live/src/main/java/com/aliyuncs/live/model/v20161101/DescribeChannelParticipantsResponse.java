@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeChannelParticipantsResponse extends AcsResponse {
 
-	private Integer totalPage;
-
 	private String requestId;
-
-	private Integer totalNum;
 
 	private Long times;
 
+	private Integer totalNum;
+
+	private Integer totalPage;
+
 	private List<String> userList;
-
-	public Integer getTotalPage() {
-		return this.totalPage;
-	}
-
-	public void setTotalPage(Integer totalPage) {
-		this.totalPage = totalPage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,6 +41,14 @@ public class DescribeChannelParticipantsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Long getTimes() {
+		return this.times;
+	}
+
+	public void setTimes(Long times) {
+		this.times = times;
 	}
 
 	public Integer getTotalNum() {
@@ -59,12 +59,12 @@ public class DescribeChannelParticipantsResponse extends AcsResponse {
 		this.totalNum = totalNum;
 	}
 
-	public Long getTimes() {
-		return this.times;
+	public Integer getTotalPage() {
+		return this.totalPage;
 	}
 
-	public void setTimes(Long times) {
-		this.times = times;
+	public void setTotalPage(Integer totalPage) {
+		this.totalPage = totalPage;
 	}
 
 	public List<String> getUserList() {

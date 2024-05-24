@@ -47,17 +47,25 @@ public class GetMessageAppResponse extends AcsResponse {
 
 	public static class Result {
 
+		private Map<Object,Object> appConfig;
+
 		private String appId;
 
 		private String appName;
 
 		private Long createTime;
 
+		private Map<Object,Object> extension;
+
 		private Integer status;
 
-		private Map<Object,Object> appConfig;
+		public Map<Object,Object> getAppConfig() {
+			return this.appConfig;
+		}
 
-		private Map<Object,Object> extension;
+		public void setAppConfig(Map<Object,Object> appConfig) {
+			this.appConfig = appConfig;
+		}
 
 		public String getAppId() {
 			return this.appId;
@@ -83,28 +91,20 @@ public class GetMessageAppResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public Integer getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(Integer status) {
-			this.status = status;
-		}
-
-		public Map<Object,Object> getAppConfig() {
-			return this.appConfig;
-		}
-
-		public void setAppConfig(Map<Object,Object> appConfig) {
-			this.appConfig = appConfig;
-		}
-
 		public Map<Object,Object> getExtension() {
 			return this.extension;
 		}
 
 		public void setExtension(Map<Object,Object> extension) {
 			this.extension = extension;
+		}
+
+		public Integer getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(Integer status) {
+			this.status = status;
 		}
 	}
 

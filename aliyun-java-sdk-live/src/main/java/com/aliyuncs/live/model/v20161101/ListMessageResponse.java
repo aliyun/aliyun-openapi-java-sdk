@@ -69,15 +69,23 @@ public class ListMessageResponse extends AcsResponse {
 
 		public static class MessageListItem {
 
+			private String data;
+
 			private String groupId;
 
 			private String messageId;
 
-			private Integer type;
-
 			private String senderId;
 
-			private String data;
+			private Integer type;
+
+			public String getData() {
+				return this.data;
+			}
+
+			public void setData(String data) {
+				this.data = data;
+			}
 
 			public String getGroupId() {
 				return this.groupId;
@@ -95,14 +103,6 @@ public class ListMessageResponse extends AcsResponse {
 				this.messageId = messageId;
 			}
 
-			public Integer getType() {
-				return this.type;
-			}
-
-			public void setType(Integer type) {
-				this.type = type;
-			}
-
 			public String getSenderId() {
 				return this.senderId;
 			}
@@ -111,12 +111,12 @@ public class ListMessageResponse extends AcsResponse {
 				this.senderId = senderId;
 			}
 
-			public String getData() {
-				return this.data;
+			public Integer getType() {
+				return this.type;
 			}
 
-			public void setData(String data) {
-				this.data = data;
+			public void setType(Integer type) {
+				this.type = type;
 			}
 		}
 	}

@@ -59,19 +59,11 @@ public class BatchGetOnlineUsersResponse extends AcsResponse {
 
 		public static class OnlineUsersItem {
 
-			private String userId;
-
 			private Long joinTime;
 
 			private Boolean online;
 
-			public String getUserId() {
-				return this.userId;
-			}
-
-			public void setUserId(String userId) {
-				this.userId = userId;
-			}
+			private String userId;
 
 			public Long getJoinTime() {
 				return this.joinTime;
@@ -87,6 +79,14 @@ public class BatchGetOnlineUsersResponse extends AcsResponse {
 
 			public void setOnline(Boolean online) {
 				this.online = online;
+			}
+
+			public String getUserId() {
+				return this.userId;
+			}
+
+			public void setUserId(String userId) {
+				this.userId = userId;
 			}
 		}
 	}

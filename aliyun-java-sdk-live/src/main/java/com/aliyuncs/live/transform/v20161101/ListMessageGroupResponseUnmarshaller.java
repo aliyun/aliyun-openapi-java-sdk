@@ -31,18 +31,18 @@ public class ListMessageGroupResponseUnmarshaller {
 		listMessageGroupResponse.setRequestId(_ctx.stringValue("ListMessageGroupResponse.RequestId"));
 
 		Result result = new Result();
-		result.setTotal(_ctx.integerValue("ListMessageGroupResponse.Result.Total"));
 		result.setHasMore(_ctx.booleanValue("ListMessageGroupResponse.Result.HasMore"));
+		result.setTotal(_ctx.integerValue("ListMessageGroupResponse.Result.Total"));
 
 		List<GroupListItem> groupList = new ArrayList<GroupListItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListMessageGroupResponse.Result.GroupList.Length"); i++) {
 			GroupListItem groupListItem = new GroupListItem();
-			groupListItem.setGroupId(_ctx.stringValue("ListMessageGroupResponse.Result.GroupList["+ i +"].GroupId"));
 			groupListItem.setAppId(_ctx.stringValue("ListMessageGroupResponse.Result.GroupList["+ i +"].AppId"));
 			groupListItem.setCreateTime(_ctx.longValue("ListMessageGroupResponse.Result.GroupList["+ i +"].CreateTime"));
-			groupListItem.setStatus(_ctx.integerValue("ListMessageGroupResponse.Result.GroupList["+ i +"].Status"));
 			groupListItem.setCreatorId(_ctx.stringValue("ListMessageGroupResponse.Result.GroupList["+ i +"].CreatorId"));
 			groupListItem.setExtension(_ctx.mapValue("ListMessageGroupResponse.Result.GroupList["+ i +"].Extension"));
+			groupListItem.setGroupId(_ctx.stringValue("ListMessageGroupResponse.Result.GroupList["+ i +"].GroupId"));
+			groupListItem.setStatus(_ctx.integerValue("ListMessageGroupResponse.Result.GroupList["+ i +"].Status"));
 
 			groupList.add(groupListItem);
 		}

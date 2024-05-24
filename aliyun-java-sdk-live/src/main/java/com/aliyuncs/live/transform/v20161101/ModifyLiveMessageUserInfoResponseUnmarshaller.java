@@ -29,6 +29,18 @@ public class ModifyLiveMessageUserInfoResponseUnmarshaller {
 		
 		modifyLiveMessageUserInfoResponse.setRequestId(_ctx.stringValue("ModifyLiveMessageUserInfoResponse.RequestId"));
 
+		List<FailGroups> failList = new ArrayList<FailGroups>();
+		for (int i = 0; i < _ctx.lengthValue("ModifyLiveMessageUserInfoResponse.FailList.Length"); i++) {
+			FailGroups failGroups = new FailGroups();
+			failGroups.setCode(_ctx.integerValue("ModifyLiveMessageUserInfoResponse.FailList["+ i +"].Code"));
+			failGroups.setGroupId(_ctx.stringValue("ModifyLiveMessageUserInfoResponse.FailList["+ i +"].GroupId"));
+			failGroups.setReason(_ctx.stringValue("ModifyLiveMessageUserInfoResponse.FailList["+ i +"].Reason"));
+			failGroups.setSuccess(_ctx.booleanValue("ModifyLiveMessageUserInfoResponse.FailList["+ i +"].Success"));
+
+			failList.add(failGroups);
+		}
+		modifyLiveMessageUserInfoResponse.setFailList(failList);
+
 		List<SuccessGroups> successList = new ArrayList<SuccessGroups>();
 		for (int i = 0; i < _ctx.lengthValue("ModifyLiveMessageUserInfoResponse.SuccessList.Length"); i++) {
 			SuccessGroups successGroups = new SuccessGroups();
@@ -38,18 +50,6 @@ public class ModifyLiveMessageUserInfoResponseUnmarshaller {
 			successList.add(successGroups);
 		}
 		modifyLiveMessageUserInfoResponse.setSuccessList(successList);
-
-		List<FailGroups> failList = new ArrayList<FailGroups>();
-		for (int i = 0; i < _ctx.lengthValue("ModifyLiveMessageUserInfoResponse.FailList.Length"); i++) {
-			FailGroups failGroups = new FailGroups();
-			failGroups.setGroupId(_ctx.stringValue("ModifyLiveMessageUserInfoResponse.FailList["+ i +"].GroupId"));
-			failGroups.setSuccess(_ctx.booleanValue("ModifyLiveMessageUserInfoResponse.FailList["+ i +"].Success"));
-			failGroups.setReason(_ctx.stringValue("ModifyLiveMessageUserInfoResponse.FailList["+ i +"].Reason"));
-			failGroups.setCode(_ctx.integerValue("ModifyLiveMessageUserInfoResponse.FailList["+ i +"].Code"));
-
-			failList.add(failGroups);
-		}
-		modifyLiveMessageUserInfoResponse.setFailList(failList);
 	 
 	 	return modifyLiveMessageUserInfoResponse;
 	}

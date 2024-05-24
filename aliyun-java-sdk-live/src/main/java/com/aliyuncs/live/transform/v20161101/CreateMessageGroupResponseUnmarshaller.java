@@ -27,8 +27,8 @@ public class CreateMessageGroupResponseUnmarshaller {
 		createMessageGroupResponse.setRequestId(_ctx.stringValue("CreateMessageGroupResponse.RequestId"));
 
 		Result result = new Result();
-		result.setGroupId(_ctx.stringValue("CreateMessageGroupResponse.Result.GroupId"));
 		result.setExtension(_ctx.mapValue("CreateMessageGroupResponse.Result.Extension"));
+		result.setGroupId(_ctx.stringValue("CreateMessageGroupResponse.Result.GroupId"));
 		createMessageGroupResponse.setResult(result);
 	 
 	 	return createMessageGroupResponse;

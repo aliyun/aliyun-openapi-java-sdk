@@ -30,14 +30,14 @@ public class ListMessageGroupUserResponseUnmarshaller {
 		listMessageGroupUserResponse.setRequestId(_ctx.stringValue("ListMessageGroupUserResponse.RequestId"));
 
 		Result result = new Result();
-		result.setTotal(_ctx.integerValue("ListMessageGroupUserResponse.Result.Total"));
 		result.setHasMore(_ctx.booleanValue("ListMessageGroupUserResponse.Result.HasMore"));
+		result.setTotal(_ctx.integerValue("ListMessageGroupUserResponse.Result.Total"));
 
 		List<UserListItem> userList = new ArrayList<UserListItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListMessageGroupUserResponse.Result.UserList.Length"); i++) {
 			UserListItem userListItem = new UserListItem();
-			userListItem.setUserId(_ctx.stringValue("ListMessageGroupUserResponse.Result.UserList["+ i +"].UserId"));
 			userListItem.setJoinTime(_ctx.longValue("ListMessageGroupUserResponse.Result.UserList["+ i +"].JoinTime"));
+			userListItem.setUserId(_ctx.stringValue("ListMessageGroupUserResponse.Result.UserList["+ i +"].UserId"));
 
 			userList.add(userListItem);
 		}

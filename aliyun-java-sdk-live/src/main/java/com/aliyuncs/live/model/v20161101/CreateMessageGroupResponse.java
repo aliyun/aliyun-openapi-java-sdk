@@ -47,17 +47,9 @@ public class CreateMessageGroupResponse extends AcsResponse {
 
 	public static class Result {
 
-		private String groupId;
-
 		private Map<Object,Object> extension;
 
-		public String getGroupId() {
-			return this.groupId;
-		}
-
-		public void setGroupId(String groupId) {
-			this.groupId = groupId;
-		}
+		private String groupId;
 
 		public Map<Object,Object> getExtension() {
 			return this.extension;
@@ -65,6 +57,14 @@ public class CreateMessageGroupResponse extends AcsResponse {
 
 		public void setExtension(Map<Object,Object> extension) {
 			this.extension = extension;
+		}
+
+		public String getGroupId() {
+			return this.groupId;
+		}
+
+		public void setGroupId(String groupId) {
+			this.groupId = groupId;
 		}
 	}
 

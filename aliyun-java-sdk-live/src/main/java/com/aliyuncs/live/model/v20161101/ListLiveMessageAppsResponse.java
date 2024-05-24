@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListLiveMessageAppsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean hasMore;
 
 	private Long nextPageToken;
 
+	private String requestId;
+
 	private List<Apps> appList;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Boolean getHasMore() {
 		return this.hasMore;
@@ -57,6 +49,14 @@ public class ListLiveMessageAppsResponse extends AcsResponse {
 		this.nextPageToken = nextPageToken;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public List<Apps> getAppList() {
 		return this.appList;
 	}
@@ -71,17 +71,17 @@ public class ListLiveMessageAppsResponse extends AcsResponse {
 
 		private String appKey;
 
-		private String appSign;
-
-		private String disable;
-
 		private String appName;
+
+		private String appSign;
 
 		private Long createTime;
 
-		private Long modifyTime;
-
 		private String dataCenter;
+
+		private String disable;
+
+		private Long modifyTime;
 
 		public String getAppId() {
 			return this.appId;
@@ -99,28 +99,20 @@ public class ListLiveMessageAppsResponse extends AcsResponse {
 			this.appKey = appKey;
 		}
 
-		public String getAppSign() {
-			return this.appSign;
-		}
-
-		public void setAppSign(String appSign) {
-			this.appSign = appSign;
-		}
-
-		public String getDisable() {
-			return this.disable;
-		}
-
-		public void setDisable(String disable) {
-			this.disable = disable;
-		}
-
 		public String getAppName() {
 			return this.appName;
 		}
 
 		public void setAppName(String appName) {
 			this.appName = appName;
+		}
+
+		public String getAppSign() {
+			return this.appSign;
+		}
+
+		public void setAppSign(String appSign) {
+			this.appSign = appSign;
 		}
 
 		public Long getCreateTime() {
@@ -131,20 +123,28 @@ public class ListLiveMessageAppsResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public Long getModifyTime() {
-			return this.modifyTime;
-		}
-
-		public void setModifyTime(Long modifyTime) {
-			this.modifyTime = modifyTime;
-		}
-
 		public String getDataCenter() {
 			return this.dataCenter;
 		}
 
 		public void setDataCenter(String dataCenter) {
 			this.dataCenter = dataCenter;
+		}
+
+		public String getDisable() {
+			return this.disable;
+		}
+
+		public void setDisable(String disable) {
+			this.disable = disable;
+		}
+
+		public Long getModifyTime() {
+			return this.modifyTime;
+		}
+
+		public void setModifyTime(Long modifyTime) {
+			this.modifyTime = modifyTime;
 		}
 	}
 

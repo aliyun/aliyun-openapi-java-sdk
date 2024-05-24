@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeRTSNativeSDKVvDataResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String dataInterval;
-
-	private String startTime;
 
 	private String endTime;
 
+	private String requestId;
+
+	private String startTime;
+
 	private List<Data> vvData;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getDataInterval() {
 		return this.dataInterval;
@@ -51,20 +43,28 @@ public class DescribeRTSNativeSDKVvDataResponse extends AcsResponse {
 		this.dataInterval = dataInterval;
 	}
 
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-	}
-
 	public String getEndTime() {
 		return this.endTime;
 	}
 
 	public void setEndTime(String endTime) {
 		this.endTime = endTime;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
 	}
 
 	public List<Data> getVvData() {
@@ -79,9 +79,9 @@ public class DescribeRTSNativeSDKVvDataResponse extends AcsResponse {
 
 		private String timeStamp;
 
-		private String vvTotal;
-
 		private String vvSuccess;
+
+		private String vvTotal;
 
 		public String getTimeStamp() {
 			return this.timeStamp;
@@ -91,20 +91,20 @@ public class DescribeRTSNativeSDKVvDataResponse extends AcsResponse {
 			this.timeStamp = timeStamp;
 		}
 
-		public String getVvTotal() {
-			return this.vvTotal;
-		}
-
-		public void setVvTotal(String vvTotal) {
-			this.vvTotal = vvTotal;
-		}
-
 		public String getVvSuccess() {
 			return this.vvSuccess;
 		}
 
 		public void setVvSuccess(String vvSuccess) {
 			this.vvSuccess = vvSuccess;
+		}
+
+		public String getVvTotal() {
+			return this.vvTotal;
+		}
+
+		public void setVvTotal(String vvTotal) {
+			this.vvTotal = vvTotal;
 		}
 	}
 

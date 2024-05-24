@@ -27,8 +27,8 @@ public class DescribeMeterLiveRtcDurationResponseUnmarshaller {
 	public static DescribeMeterLiveRtcDurationResponse unmarshall(DescribeMeterLiveRtcDurationResponse describeMeterLiveRtcDurationResponse, UnmarshallerContext _ctx) {
 		
 		describeMeterLiveRtcDurationResponse.setRequestId(_ctx.stringValue("DescribeMeterLiveRtcDurationResponse.RequestId"));
-		describeMeterLiveRtcDurationResponse.setTotalSummaryDuration(_ctx.longValue("DescribeMeterLiveRtcDurationResponse.TotalSummaryDuration"));
 		describeMeterLiveRtcDurationResponse.setAudioSummaryDuration(_ctx.longValue("DescribeMeterLiveRtcDurationResponse.AudioSummaryDuration"));
+		describeMeterLiveRtcDurationResponse.setTotalSummaryDuration(_ctx.longValue("DescribeMeterLiveRtcDurationResponse.TotalSummaryDuration"));
 		describeMeterLiveRtcDurationResponse.setV480SummaryDuration(_ctx.longValue("DescribeMeterLiveRtcDurationResponse.V480SummaryDuration"));
 		describeMeterLiveRtcDurationResponse.setV720SummaryDuration(_ctx.longValue("DescribeMeterLiveRtcDurationResponse.V720SummaryDuration"));
 		describeMeterLiveRtcDurationResponse.setV1080SummaryDuration(_ctx.longValue("DescribeMeterLiveRtcDurationResponse.V1080SummaryDuration"));
@@ -36,9 +36,9 @@ public class DescribeMeterLiveRtcDurationResponseUnmarshaller {
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeMeterLiveRtcDurationResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
+			dataItem.setAudioDuration(_ctx.longValue("DescribeMeterLiveRtcDurationResponse.Data["+ i +"].AudioDuration"));
 			dataItem.setTimestamp(_ctx.stringValue("DescribeMeterLiveRtcDurationResponse.Data["+ i +"].Timestamp"));
 			dataItem.setTotalDuration(_ctx.longValue("DescribeMeterLiveRtcDurationResponse.Data["+ i +"].TotalDuration"));
-			dataItem.setAudioDuration(_ctx.longValue("DescribeMeterLiveRtcDurationResponse.Data["+ i +"].AudioDuration"));
 			dataItem.setV480Duration(_ctx.longValue("DescribeMeterLiveRtcDurationResponse.Data["+ i +"].V480Duration"));
 			dataItem.setV720Duration(_ctx.longValue("DescribeMeterLiveRtcDurationResponse.Data["+ i +"].V720Duration"));
 			dataItem.setV1080Duration(_ctx.longValue("DescribeMeterLiveRtcDurationResponse.Data["+ i +"].V1080Duration"));

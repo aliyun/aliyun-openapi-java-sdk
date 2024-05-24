@@ -26,17 +26,17 @@ public class GetEdgeTranscodeJobResponseUnmarshaller {
 		getEdgeTranscodeJobResponse.setRequestId(_ctx.stringValue("GetEdgeTranscodeJobResponse.RequestId"));
 
 		Job job = new Job();
-		job.setStatus(_ctx.stringValue("GetEdgeTranscodeJobResponse.Job.Status"));
-		job.setType(_ctx.stringValue("GetEdgeTranscodeJobResponse.Job.Type"));
-		job.setStreamInput(_ctx.stringValue("GetEdgeTranscodeJobResponse.Job.StreamInput"));
-		job.setStreamOutput(_ctx.stringValue("GetEdgeTranscodeJobResponse.Job.StreamOutput"));
-		job.setLastStopAt(_ctx.stringValue("GetEdgeTranscodeJobResponse.Job.LastStopAt"));
-		job.setLastStartAt(_ctx.stringValue("GetEdgeTranscodeJobResponse.Job.LastStartAt"));
 		job.setCreateTime(_ctx.stringValue("GetEdgeTranscodeJobResponse.Job.CreateTime"));
 		job.setJobId(_ctx.stringValue("GetEdgeTranscodeJobResponse.Job.JobId"));
-		job.setTemplateName(_ctx.stringValue("GetEdgeTranscodeJobResponse.Job.TemplateName"));
+		job.setLastStartAt(_ctx.stringValue("GetEdgeTranscodeJobResponse.Job.LastStartAt"));
+		job.setLastStopAt(_ctx.stringValue("GetEdgeTranscodeJobResponse.Job.LastStopAt"));
 		job.setName(_ctx.stringValue("GetEdgeTranscodeJobResponse.Job.Name"));
+		job.setStatus(_ctx.stringValue("GetEdgeTranscodeJobResponse.Job.Status"));
+		job.setStreamInput(_ctx.stringValue("GetEdgeTranscodeJobResponse.Job.StreamInput"));
+		job.setStreamOutput(_ctx.stringValue("GetEdgeTranscodeJobResponse.Job.StreamOutput"));
 		job.setTemplateId(_ctx.stringValue("GetEdgeTranscodeJobResponse.Job.TemplateId"));
+		job.setTemplateName(_ctx.stringValue("GetEdgeTranscodeJobResponse.Job.TemplateName"));
+		job.setType(_ctx.stringValue("GetEdgeTranscodeJobResponse.Job.Type"));
 		getEdgeTranscodeJobResponse.setJob(job);
 	 
 	 	return getEdgeTranscodeJobResponse;

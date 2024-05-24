@@ -28,8 +28,8 @@ public class DescribeRTSNativeSDKPlayFailStatusResponseUnmarshaller {
 		
 		describeRTSNativeSDKPlayFailStatusResponse.setRequestId(_ctx.stringValue("DescribeRTSNativeSDKPlayFailStatusResponse.RequestId"));
 		describeRTSNativeSDKPlayFailStatusResponse.setDataInterval(_ctx.stringValue("DescribeRTSNativeSDKPlayFailStatusResponse.DataInterval"));
-		describeRTSNativeSDKPlayFailStatusResponse.setStartTime(_ctx.stringValue("DescribeRTSNativeSDKPlayFailStatusResponse.StartTime"));
 		describeRTSNativeSDKPlayFailStatusResponse.setEndTime(_ctx.stringValue("DescribeRTSNativeSDKPlayFailStatusResponse.EndTime"));
+		describeRTSNativeSDKPlayFailStatusResponse.setStartTime(_ctx.stringValue("DescribeRTSNativeSDKPlayFailStatusResponse.StartTime"));
 
 		List<Data> playFailStatus = new ArrayList<Data>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeRTSNativeSDKPlayFailStatusResponse.PlayFailStatus.Length"); i++) {

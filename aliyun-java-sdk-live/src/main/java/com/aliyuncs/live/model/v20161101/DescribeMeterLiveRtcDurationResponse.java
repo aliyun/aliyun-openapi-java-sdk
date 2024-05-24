@@ -25,11 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeMeterLiveRtcDurationResponse extends AcsResponse {
 
+	private Long audioSummaryDuration;
+
 	private String requestId;
 
 	private Long totalSummaryDuration;
-
-	private Long audioSummaryDuration;
 
 	private Long v480SummaryDuration;
 
@@ -38,6 +38,14 @@ public class DescribeMeterLiveRtcDurationResponse extends AcsResponse {
 	private Long v1080SummaryDuration;
 
 	private List<DataItem> data;
+
+	public Long getAudioSummaryDuration() {
+		return this.audioSummaryDuration;
+	}
+
+	public void setAudioSummaryDuration(Long audioSummaryDuration) {
+		this.audioSummaryDuration = audioSummaryDuration;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -53,14 +61,6 @@ public class DescribeMeterLiveRtcDurationResponse extends AcsResponse {
 
 	public void setTotalSummaryDuration(Long totalSummaryDuration) {
 		this.totalSummaryDuration = totalSummaryDuration;
-	}
-
-	public Long getAudioSummaryDuration() {
-		return this.audioSummaryDuration;
-	}
-
-	public void setAudioSummaryDuration(Long audioSummaryDuration) {
-		this.audioSummaryDuration = audioSummaryDuration;
 	}
 
 	public Long getV480SummaryDuration() {
@@ -97,17 +97,25 @@ public class DescribeMeterLiveRtcDurationResponse extends AcsResponse {
 
 	public static class DataItem {
 
+		private Long audioDuration;
+
 		private String timestamp;
 
 		private Long totalDuration;
-
-		private Long audioDuration;
 
 		private Long v480Duration;
 
 		private Long v720Duration;
 
 		private Long v1080Duration;
+
+		public Long getAudioDuration() {
+			return this.audioDuration;
+		}
+
+		public void setAudioDuration(Long audioDuration) {
+			this.audioDuration = audioDuration;
+		}
 
 		public String getTimestamp() {
 			return this.timestamp;
@@ -123,14 +131,6 @@ public class DescribeMeterLiveRtcDurationResponse extends AcsResponse {
 
 		public void setTotalDuration(Long totalDuration) {
 			this.totalDuration = totalDuration;
-		}
-
-		public Long getAudioDuration() {
-			return this.audioDuration;
-		}
-
-		public void setAudioDuration(Long audioDuration) {
-			this.audioDuration = audioDuration;
 		}
 
 		public Long getV480Duration() {

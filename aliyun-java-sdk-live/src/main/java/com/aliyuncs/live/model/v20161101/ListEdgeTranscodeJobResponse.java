@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListEdgeTranscodeJobResponse extends AcsResponse {
 
-	private Integer totalCount;
-
 	private String requestId;
 
+	private Integer totalCount;
+
 	private List<Job> jobList;
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,6 +37,14 @@ public class ListEdgeTranscodeJobResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<Job> getJobList() {
@@ -57,27 +57,67 @@ public class ListEdgeTranscodeJobResponse extends AcsResponse {
 
 	public static class Job {
 
-		private String status;
+		private String createTime;
 
-		private String type;
+		private String jobId;
+
+		private String lastStartAt;
+
+		private String lastStopAt;
+
+		private String name;
+
+		private String status;
 
 		private String streamInput;
 
 		private String streamOutput;
 
-		private String lastStopAt;
-
-		private String lastStartAt;
-
-		private String createTime;
-
-		private String jobId;
+		private String templateId;
 
 		private String templateName;
 
-		private String name;
+		private String type;
 
-		private String templateId;
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getJobId() {
+			return this.jobId;
+		}
+
+		public void setJobId(String jobId) {
+			this.jobId = jobId;
+		}
+
+		public String getLastStartAt() {
+			return this.lastStartAt;
+		}
+
+		public void setLastStartAt(String lastStartAt) {
+			this.lastStartAt = lastStartAt;
+		}
+
+		public String getLastStopAt() {
+			return this.lastStopAt;
+		}
+
+		public void setLastStopAt(String lastStopAt) {
+			this.lastStopAt = lastStopAt;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
 
 		public String getStatus() {
 			return this.status;
@@ -85,14 +125,6 @@ public class ListEdgeTranscodeJobResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
-		}
-
-		public String getType() {
-			return this.type;
-		}
-
-		public void setType(String type) {
-			this.type = type;
 		}
 
 		public String getStreamInput() {
@@ -111,36 +143,12 @@ public class ListEdgeTranscodeJobResponse extends AcsResponse {
 			this.streamOutput = streamOutput;
 		}
 
-		public String getLastStopAt() {
-			return this.lastStopAt;
+		public String getTemplateId() {
+			return this.templateId;
 		}
 
-		public void setLastStopAt(String lastStopAt) {
-			this.lastStopAt = lastStopAt;
-		}
-
-		public String getLastStartAt() {
-			return this.lastStartAt;
-		}
-
-		public void setLastStartAt(String lastStartAt) {
-			this.lastStartAt = lastStartAt;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-
-		public String getJobId() {
-			return this.jobId;
-		}
-
-		public void setJobId(String jobId) {
-			this.jobId = jobId;
+		public void setTemplateId(String templateId) {
+			this.templateId = templateId;
 		}
 
 		public String getTemplateName() {
@@ -151,20 +159,12 @@ public class ListEdgeTranscodeJobResponse extends AcsResponse {
 			this.templateName = templateName;
 		}
 
-		public String getName() {
-			return this.name;
+		public String getType() {
+			return this.type;
 		}
 
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getTemplateId() {
-			return this.templateId;
-		}
-
-		public void setTemplateId(String templateId) {
-			this.templateId = templateId;
+		public void setType(String type) {
+			this.type = type;
 		}
 	}
 

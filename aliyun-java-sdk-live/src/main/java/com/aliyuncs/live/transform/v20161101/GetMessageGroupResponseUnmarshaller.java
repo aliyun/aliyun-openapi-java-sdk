@@ -27,12 +27,12 @@ public class GetMessageGroupResponseUnmarshaller {
 		getMessageGroupResponse.setRequestId(_ctx.stringValue("GetMessageGroupResponse.RequestId"));
 
 		Result result = new Result();
-		result.setGroupId(_ctx.stringValue("GetMessageGroupResponse.Result.GroupId"));
 		result.setCreateTime(_ctx.longValue("GetMessageGroupResponse.Result.CreateTime"));
-		result.setStatus(_ctx.integerValue("GetMessageGroupResponse.Result.Status"));
 		result.setCreatorId(_ctx.stringValue("GetMessageGroupResponse.Result.CreatorId"));
 		result.setExtension(_ctx.mapValue("GetMessageGroupResponse.Result.Extension"));
+		result.setGroupId(_ctx.stringValue("GetMessageGroupResponse.Result.GroupId"));
 		result.setIsMuteAll(_ctx.booleanValue("GetMessageGroupResponse.Result.IsMuteAll"));
+		result.setStatus(_ctx.integerValue("GetMessageGroupResponse.Result.Status"));
 		getMessageGroupResponse.setResult(result);
 	 
 	 	return getMessageGroupResponse;

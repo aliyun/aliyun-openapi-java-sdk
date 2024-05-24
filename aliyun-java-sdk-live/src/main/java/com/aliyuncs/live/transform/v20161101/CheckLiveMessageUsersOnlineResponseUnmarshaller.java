@@ -31,8 +31,8 @@ public class CheckLiveMessageUsersOnlineResponseUnmarshaller {
 		List<Users> userList = new ArrayList<Users>();
 		for (int i = 0; i < _ctx.lengthValue("CheckLiveMessageUsersOnlineResponse.UserList.Length"); i++) {
 			Users users = new Users();
-			users.setUserId(_ctx.stringValue("CheckLiveMessageUsersOnlineResponse.UserList["+ i +"].UserId"));
 			users.setOnline(_ctx.booleanValue("CheckLiveMessageUsersOnlineResponse.UserList["+ i +"].Online"));
+			users.setUserId(_ctx.stringValue("CheckLiveMessageUsersOnlineResponse.UserList["+ i +"].UserId"));
 
 			userList.add(users);
 		}

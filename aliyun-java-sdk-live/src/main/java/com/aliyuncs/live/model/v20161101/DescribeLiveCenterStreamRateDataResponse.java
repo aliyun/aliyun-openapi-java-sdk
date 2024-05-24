@@ -47,31 +47,15 @@ public class DescribeLiveCenterStreamRateDataResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String videoFps;
-
-		private String videoRate;
-
 		private String audioFps;
 
 		private String audioRate;
 
 		private String time;
 
-		public String getVideoFps() {
-			return this.videoFps;
-		}
+		private String videoFps;
 
-		public void setVideoFps(String videoFps) {
-			this.videoFps = videoFps;
-		}
-
-		public String getVideoRate() {
-			return this.videoRate;
-		}
-
-		public void setVideoRate(String videoRate) {
-			this.videoRate = videoRate;
-		}
+		private String videoRate;
 
 		public String getAudioFps() {
 			return this.audioFps;
@@ -95,6 +79,22 @@ public class DescribeLiveCenterStreamRateDataResponse extends AcsResponse {
 
 		public void setTime(String time) {
 			this.time = time;
+		}
+
+		public String getVideoFps() {
+			return this.videoFps;
+		}
+
+		public void setVideoFps(String videoFps) {
+			this.videoFps = videoFps;
+		}
+
+		public String getVideoRate() {
+			return this.videoRate;
+		}
+
+		public void setVideoRate(String videoRate) {
+			this.videoRate = videoRate;
 		}
 	}
 

@@ -31,13 +31,13 @@ public class DescribeLiveStreamDetailFrameRateAndBitRateDataResponseUnmarshaller
 		List<Frabr> frameRateAndBitRateInfos = new ArrayList<Frabr>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLiveStreamDetailFrameRateAndBitRateDataResponse.FrameRateAndBitRateInfos.Length"); i++) {
 			Frabr frabr = new Frabr();
-			frabr.setTime(_ctx.stringValue("DescribeLiveStreamDetailFrameRateAndBitRateDataResponse.FrameRateAndBitRateInfos["+ i +"].Time"));
-			frabr.setVideoFrameRate(_ctx.floatValue("DescribeLiveStreamDetailFrameRateAndBitRateDataResponse.FrameRateAndBitRateInfos["+ i +"].VideoFrameRate"));
-			frabr.setAudioFrameRate(_ctx.floatValue("DescribeLiveStreamDetailFrameRateAndBitRateDataResponse.FrameRateAndBitRateInfos["+ i +"].AudioFrameRate"));
-			frabr.setStreamUrl(_ctx.stringValue("DescribeLiveStreamDetailFrameRateAndBitRateDataResponse.FrameRateAndBitRateInfos["+ i +"].StreamUrl"));
-			frabr.setBitRate(_ctx.floatValue("DescribeLiveStreamDetailFrameRateAndBitRateDataResponse.FrameRateAndBitRateInfos["+ i +"].BitRate"));
-			frabr.setVideoBitRate(_ctx.floatValue("DescribeLiveStreamDetailFrameRateAndBitRateDataResponse.FrameRateAndBitRateInfos["+ i +"].VideoBitRate"));
 			frabr.setAudioBitRate(_ctx.floatValue("DescribeLiveStreamDetailFrameRateAndBitRateDataResponse.FrameRateAndBitRateInfos["+ i +"].AudioBitRate"));
+			frabr.setAudioFrameRate(_ctx.floatValue("DescribeLiveStreamDetailFrameRateAndBitRateDataResponse.FrameRateAndBitRateInfos["+ i +"].AudioFrameRate"));
+			frabr.setBitRate(_ctx.floatValue("DescribeLiveStreamDetailFrameRateAndBitRateDataResponse.FrameRateAndBitRateInfos["+ i +"].BitRate"));
+			frabr.setStreamUrl(_ctx.stringValue("DescribeLiveStreamDetailFrameRateAndBitRateDataResponse.FrameRateAndBitRateInfos["+ i +"].StreamUrl"));
+			frabr.setTime(_ctx.stringValue("DescribeLiveStreamDetailFrameRateAndBitRateDataResponse.FrameRateAndBitRateInfos["+ i +"].Time"));
+			frabr.setVideoBitRate(_ctx.floatValue("DescribeLiveStreamDetailFrameRateAndBitRateDataResponse.FrameRateAndBitRateInfos["+ i +"].VideoBitRate"));
+			frabr.setVideoFrameRate(_ctx.floatValue("DescribeLiveStreamDetailFrameRateAndBitRateDataResponse.FrameRateAndBitRateInfos["+ i +"].VideoFrameRate"));
 
 			frameRateAndBitRateInfos.add(frabr);
 		}

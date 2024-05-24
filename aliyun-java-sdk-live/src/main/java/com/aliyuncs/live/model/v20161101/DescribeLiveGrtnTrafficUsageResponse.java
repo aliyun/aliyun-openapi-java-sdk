@@ -25,51 +25,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeLiveGrtnTrafficUsageResponse extends AcsResponse {
 
-	private String endTime;
-
-	private String startTime;
-
-	private String requestId;
-
-	private String filed;
-
 	private String appId;
 
 	private String area;
 
+	private String endTime;
+
+	private String filed;
+
+	private String requestId;
+
+	private String startTime;
+
 	private List<UsageData> usageDataPerInterval;
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getFiled() {
-		return this.filed;
-	}
-
-	public void setFiled(String filed) {
-		this.filed = filed;
-	}
 
 	public String getAppId() {
 		return this.appId;
@@ -87,6 +55,38 @@ public class DescribeLiveGrtnTrafficUsageResponse extends AcsResponse {
 		this.area = area;
 	}
 
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+	}
+
+	public String getFiled() {
+		return this.filed;
+	}
+
+	public void setFiled(String filed) {
+		this.filed = filed;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+	}
+
 	public List<UsageData> getUsageDataPerInterval() {
 		return this.usageDataPerInterval;
 	}
@@ -97,17 +97,9 @@ public class DescribeLiveGrtnTrafficUsageResponse extends AcsResponse {
 
 	public static class UsageData {
 
-		private Double value;
-
 		private String timeStamp;
 
-		public Double getValue() {
-			return this.value;
-		}
-
-		public void setValue(Double value) {
-			this.value = value;
-		}
+		private Double value;
 
 		public String getTimeStamp() {
 			return this.timeStamp;
@@ -115,6 +107,14 @@ public class DescribeLiveGrtnTrafficUsageResponse extends AcsResponse {
 
 		public void setTimeStamp(String timeStamp) {
 			this.timeStamp = timeStamp;
+		}
+
+		public Double getValue() {
+			return this.value;
+		}
+
+		public void setValue(Double value) {
+			this.value = value;
 		}
 	}
 

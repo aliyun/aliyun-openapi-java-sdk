@@ -28,18 +28,18 @@ public class DescribeRTSNativeSDKFirstFrameCostResponseUnmarshaller {
 		
 		describeRTSNativeSDKFirstFrameCostResponse.setRequestId(_ctx.stringValue("DescribeRTSNativeSDKFirstFrameCostResponse.RequestId"));
 		describeRTSNativeSDKFirstFrameCostResponse.setDataInterval(_ctx.stringValue("DescribeRTSNativeSDKFirstFrameCostResponse.DataInterval"));
-		describeRTSNativeSDKFirstFrameCostResponse.setStartTime(_ctx.stringValue("DescribeRTSNativeSDKFirstFrameCostResponse.StartTime"));
 		describeRTSNativeSDKFirstFrameCostResponse.setEndTime(_ctx.stringValue("DescribeRTSNativeSDKFirstFrameCostResponse.EndTime"));
+		describeRTSNativeSDKFirstFrameCostResponse.setStartTime(_ctx.stringValue("DescribeRTSNativeSDKFirstFrameCostResponse.StartTime"));
 
 		List<Data> firstFrameCostData = new ArrayList<Data>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeRTSNativeSDKFirstFrameCostResponse.FirstFrameCostData.Length"); i++) {
 			Data data = new Data();
-			data.setTimeStamp(_ctx.stringValue("DescribeRTSNativeSDKFirstFrameCostResponse.FirstFrameCostData["+ i +"].TimeStamp"));
-			data.setInitialized(_ctx.stringValue("DescribeRTSNativeSDKFirstFrameCostResponse.FirstFrameCostData["+ i +"].Initialized"));
 			data.setConnected(_ctx.stringValue("DescribeRTSNativeSDKFirstFrameCostResponse.FirstFrameCostData["+ i +"].Connected"));
 			data.setFinishGetStreamInfo(_ctx.stringValue("DescribeRTSNativeSDKFirstFrameCostResponse.FirstFrameCostData["+ i +"].FinishGetStreamInfo"));
-			data.setFirstPacket(_ctx.stringValue("DescribeRTSNativeSDKFirstFrameCostResponse.FirstFrameCostData["+ i +"].FirstPacket"));
 			data.setFirstFrameComplete(_ctx.stringValue("DescribeRTSNativeSDKFirstFrameCostResponse.FirstFrameCostData["+ i +"].FirstFrameComplete"));
+			data.setFirstPacket(_ctx.stringValue("DescribeRTSNativeSDKFirstFrameCostResponse.FirstFrameCostData["+ i +"].FirstPacket"));
+			data.setInitialized(_ctx.stringValue("DescribeRTSNativeSDKFirstFrameCostResponse.FirstFrameCostData["+ i +"].Initialized"));
+			data.setTimeStamp(_ctx.stringValue("DescribeRTSNativeSDKFirstFrameCostResponse.FirstFrameCostData["+ i +"].TimeStamp"));
 
 			firstFrameCostData.add(data);
 		}

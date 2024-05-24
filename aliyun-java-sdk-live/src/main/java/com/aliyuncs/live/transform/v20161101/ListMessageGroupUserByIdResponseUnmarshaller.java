@@ -30,17 +30,17 @@ public class ListMessageGroupUserByIdResponseUnmarshaller {
 		listMessageGroupUserByIdResponse.setRequestId(_ctx.stringValue("ListMessageGroupUserByIdResponse.RequestId"));
 
 		Result result = new Result();
-		result.setTotal(_ctx.integerValue("ListMessageGroupUserByIdResponse.Result.Total"));
 		result.setHasMore(_ctx.booleanValue("ListMessageGroupUserByIdResponse.Result.HasMore"));
+		result.setTotal(_ctx.integerValue("ListMessageGroupUserByIdResponse.Result.Total"));
 
 		List<UserListItem> userList = new ArrayList<UserListItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListMessageGroupUserByIdResponse.Result.UserList.Length"); i++) {
 			UserListItem userListItem = new UserListItem();
-			userListItem.setUserId(_ctx.stringValue("ListMessageGroupUserByIdResponse.Result.UserList["+ i +"].UserId"));
-			userListItem.setUserNick(_ctx.stringValue("ListMessageGroupUserByIdResponse.Result.UserList["+ i +"].UserNick"));
+			userListItem.setIsMute(_ctx.booleanValue("ListMessageGroupUserByIdResponse.Result.UserList["+ i +"].IsMute"));
 			userListItem.setUserAvatar(_ctx.stringValue("ListMessageGroupUserByIdResponse.Result.UserList["+ i +"].UserAvatar"));
 			userListItem.setUserExtension(_ctx.stringValue("ListMessageGroupUserByIdResponse.Result.UserList["+ i +"].UserExtension"));
-			userListItem.setIsMute(_ctx.booleanValue("ListMessageGroupUserByIdResponse.Result.UserList["+ i +"].IsMute"));
+			userListItem.setUserId(_ctx.stringValue("ListMessageGroupUserByIdResponse.Result.UserList["+ i +"].UserId"));
+			userListItem.setUserNick(_ctx.stringValue("ListMessageGroupUserByIdResponse.Result.UserList["+ i +"].UserNick"));
 
 			List<String> muteBy = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListMessageGroupUserByIdResponse.Result.UserList["+ i +"].MuteBy.Length"); j++) {

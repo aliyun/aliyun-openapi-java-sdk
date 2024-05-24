@@ -32,17 +32,17 @@ public class ListEdgeTranscodeJobResponseUnmarshaller {
 		List<Job> jobList = new ArrayList<Job>();
 		for (int i = 0; i < _ctx.lengthValue("ListEdgeTranscodeJobResponse.JobList.Length"); i++) {
 			Job job = new Job();
-			job.setStatus(_ctx.stringValue("ListEdgeTranscodeJobResponse.JobList["+ i +"].Status"));
-			job.setType(_ctx.stringValue("ListEdgeTranscodeJobResponse.JobList["+ i +"].Type"));
-			job.setStreamInput(_ctx.stringValue("ListEdgeTranscodeJobResponse.JobList["+ i +"].StreamInput"));
-			job.setStreamOutput(_ctx.stringValue("ListEdgeTranscodeJobResponse.JobList["+ i +"].StreamOutput"));
-			job.setLastStopAt(_ctx.stringValue("ListEdgeTranscodeJobResponse.JobList["+ i +"].LastStopAt"));
-			job.setLastStartAt(_ctx.stringValue("ListEdgeTranscodeJobResponse.JobList["+ i +"].LastStartAt"));
 			job.setCreateTime(_ctx.stringValue("ListEdgeTranscodeJobResponse.JobList["+ i +"].CreateTime"));
 			job.setJobId(_ctx.stringValue("ListEdgeTranscodeJobResponse.JobList["+ i +"].JobId"));
-			job.setTemplateName(_ctx.stringValue("ListEdgeTranscodeJobResponse.JobList["+ i +"].TemplateName"));
+			job.setLastStartAt(_ctx.stringValue("ListEdgeTranscodeJobResponse.JobList["+ i +"].LastStartAt"));
+			job.setLastStopAt(_ctx.stringValue("ListEdgeTranscodeJobResponse.JobList["+ i +"].LastStopAt"));
 			job.setName(_ctx.stringValue("ListEdgeTranscodeJobResponse.JobList["+ i +"].Name"));
+			job.setStatus(_ctx.stringValue("ListEdgeTranscodeJobResponse.JobList["+ i +"].Status"));
+			job.setStreamInput(_ctx.stringValue("ListEdgeTranscodeJobResponse.JobList["+ i +"].StreamInput"));
+			job.setStreamOutput(_ctx.stringValue("ListEdgeTranscodeJobResponse.JobList["+ i +"].StreamOutput"));
 			job.setTemplateId(_ctx.stringValue("ListEdgeTranscodeJobResponse.JobList["+ i +"].TemplateId"));
+			job.setTemplateName(_ctx.stringValue("ListEdgeTranscodeJobResponse.JobList["+ i +"].TemplateName"));
+			job.setType(_ctx.stringValue("ListEdgeTranscodeJobResponse.JobList["+ i +"].Type"));
 
 			jobList.add(job);
 		}

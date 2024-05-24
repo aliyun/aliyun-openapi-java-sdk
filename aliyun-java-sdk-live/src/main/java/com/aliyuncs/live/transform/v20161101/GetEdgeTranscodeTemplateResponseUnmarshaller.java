@@ -26,15 +26,15 @@ public class GetEdgeTranscodeTemplateResponseUnmarshaller {
 		getEdgeTranscodeTemplateResponse.setRequestId(_ctx.stringValue("GetEdgeTranscodeTemplateResponse.RequestId"));
 
 		Template template = new Template();
-		template.setType(_ctx.stringValue("GetEdgeTranscodeTemplateResponse.Template.Type"));
-		template.setGop(_ctx.stringValue("GetEdgeTranscodeTemplateResponse.Template.Gop"));
-		template.setCreateTime(_ctx.stringValue("GetEdgeTranscodeTemplateResponse.Template.CreateTime"));
-		template.setCodec(_ctx.stringValue("GetEdgeTranscodeTemplateResponse.Template.Codec"));
-		template.setFps(_ctx.stringValue("GetEdgeTranscodeTemplateResponse.Template.Fps"));
 		template.setBitrate(_ctx.stringValue("GetEdgeTranscodeTemplateResponse.Template.Bitrate"));
+		template.setCodec(_ctx.stringValue("GetEdgeTranscodeTemplateResponse.Template.Codec"));
+		template.setCreateTime(_ctx.stringValue("GetEdgeTranscodeTemplateResponse.Template.CreateTime"));
+		template.setFps(_ctx.stringValue("GetEdgeTranscodeTemplateResponse.Template.Fps"));
+		template.setGop(_ctx.stringValue("GetEdgeTranscodeTemplateResponse.Template.Gop"));
 		template.setName(_ctx.stringValue("GetEdgeTranscodeTemplateResponse.Template.Name"));
 		template.setResolution(_ctx.stringValue("GetEdgeTranscodeTemplateResponse.Template.Resolution"));
 		template.setTemplateId(_ctx.stringValue("GetEdgeTranscodeTemplateResponse.Template.TemplateId"));
+		template.setType(_ctx.stringValue("GetEdgeTranscodeTemplateResponse.Template.Type"));
 		getEdgeTranscodeTemplateResponse.setTemplate(template);
 	 
 	 	return getEdgeTranscodeTemplateResponse;

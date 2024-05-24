@@ -47,19 +47,11 @@ public class ListMessageGroupUserByIdResponse extends AcsResponse {
 
 	public static class Result {
 
-		private Integer total;
-
 		private Boolean hasMore;
 
+		private Integer total;
+
 		private List<UserListItem> userList;
-
-		public Integer getTotal() {
-			return this.total;
-		}
-
-		public void setTotal(Integer total) {
-			this.total = total;
-		}
 
 		public Boolean getHasMore() {
 			return this.hasMore;
@@ -67,6 +59,14 @@ public class ListMessageGroupUserByIdResponse extends AcsResponse {
 
 		public void setHasMore(Boolean hasMore) {
 			this.hasMore = hasMore;
+		}
+
+		public Integer getTotal() {
+			return this.total;
+		}
+
+		public void setTotal(Integer total) {
+			this.total = total;
 		}
 
 		public List<UserListItem> getUserList() {
@@ -79,32 +79,24 @@ public class ListMessageGroupUserByIdResponse extends AcsResponse {
 
 		public static class UserListItem {
 
-			private String userId;
-
-			private String userNick;
+			private Boolean isMute;
 
 			private String userAvatar;
 
 			private String userExtension;
 
-			private Boolean isMute;
+			private String userId;
+
+			private String userNick;
 
 			private List<String> muteBy;
 
-			public String getUserId() {
-				return this.userId;
+			public Boolean getIsMute() {
+				return this.isMute;
 			}
 
-			public void setUserId(String userId) {
-				this.userId = userId;
-			}
-
-			public String getUserNick() {
-				return this.userNick;
-			}
-
-			public void setUserNick(String userNick) {
-				this.userNick = userNick;
+			public void setIsMute(Boolean isMute) {
+				this.isMute = isMute;
 			}
 
 			public String getUserAvatar() {
@@ -123,12 +115,20 @@ public class ListMessageGroupUserByIdResponse extends AcsResponse {
 				this.userExtension = userExtension;
 			}
 
-			public Boolean getIsMute() {
-				return this.isMute;
+			public String getUserId() {
+				return this.userId;
 			}
 
-			public void setIsMute(Boolean isMute) {
-				this.isMute = isMute;
+			public void setUserId(String userId) {
+				this.userId = userId;
+			}
+
+			public String getUserNick() {
+				return this.userNick;
+			}
+
+			public void setUserNick(String userNick) {
+				this.userNick = userNick;
 			}
 
 			public List<String> getMuteBy() {

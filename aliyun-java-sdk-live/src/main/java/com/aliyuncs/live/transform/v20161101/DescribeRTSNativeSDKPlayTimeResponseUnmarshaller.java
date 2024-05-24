@@ -28,15 +28,15 @@ public class DescribeRTSNativeSDKPlayTimeResponseUnmarshaller {
 		
 		describeRTSNativeSDKPlayTimeResponse.setRequestId(_ctx.stringValue("DescribeRTSNativeSDKPlayTimeResponse.RequestId"));
 		describeRTSNativeSDKPlayTimeResponse.setDataInterval(_ctx.stringValue("DescribeRTSNativeSDKPlayTimeResponse.DataInterval"));
-		describeRTSNativeSDKPlayTimeResponse.setStartTime(_ctx.stringValue("DescribeRTSNativeSDKPlayTimeResponse.StartTime"));
 		describeRTSNativeSDKPlayTimeResponse.setEndTime(_ctx.stringValue("DescribeRTSNativeSDKPlayTimeResponse.EndTime"));
+		describeRTSNativeSDKPlayTimeResponse.setStartTime(_ctx.stringValue("DescribeRTSNativeSDKPlayTimeResponse.StartTime"));
 
 		List<Data> playTimeData = new ArrayList<Data>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeRTSNativeSDKPlayTimeResponse.PlayTimeData.Length"); i++) {
 			Data data = new Data();
-			data.setTimeStamp(_ctx.stringValue("DescribeRTSNativeSDKPlayTimeResponse.PlayTimeData["+ i +"].TimeStamp"));
 			data.setPlayTime(_ctx.stringValue("DescribeRTSNativeSDKPlayTimeResponse.PlayTimeData["+ i +"].PlayTime"));
 			data.setStallTime(_ctx.stringValue("DescribeRTSNativeSDKPlayTimeResponse.PlayTimeData["+ i +"].StallTime"));
+			data.setTimeStamp(_ctx.stringValue("DescribeRTSNativeSDKPlayTimeResponse.PlayTimeData["+ i +"].TimeStamp"));
 
 			playTimeData.add(data);
 		}

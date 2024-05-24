@@ -27,9 +27,9 @@ public class ModifyLiveMessageUserInfoResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<SuccessGroups> successList;
-
 	private List<FailGroups> failList;
+
+	private List<SuccessGroups> successList;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -37,6 +37,14 @@ public class ModifyLiveMessageUserInfoResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public List<FailGroups> getFailList() {
+		return this.failList;
+	}
+
+	public void setFailList(List<FailGroups> failList) {
+		this.failList = failList;
 	}
 
 	public List<SuccessGroups> getSuccessList() {
@@ -47,12 +55,47 @@ public class ModifyLiveMessageUserInfoResponse extends AcsResponse {
 		this.successList = successList;
 	}
 
-	public List<FailGroups> getFailList() {
-		return this.failList;
-	}
+	public static class FailGroups {
 
-	public void setFailList(List<FailGroups> failList) {
-		this.failList = failList;
+		private Integer code;
+
+		private String groupId;
+
+		private String reason;
+
+		private Boolean success;
+
+		public Integer getCode() {
+			return this.code;
+		}
+
+		public void setCode(Integer code) {
+			this.code = code;
+		}
+
+		public String getGroupId() {
+			return this.groupId;
+		}
+
+		public void setGroupId(String groupId) {
+			this.groupId = groupId;
+		}
+
+		public String getReason() {
+			return this.reason;
+		}
+
+		public void setReason(String reason) {
+			this.reason = reason;
+		}
+
+		public Boolean getSuccess() {
+			return this.success;
+		}
+
+		public void setSuccess(Boolean success) {
+			this.success = success;
+		}
 	}
 
 	public static class SuccessGroups {
@@ -75,49 +118,6 @@ public class ModifyLiveMessageUserInfoResponse extends AcsResponse {
 
 		public void setSuccess(Boolean success) {
 			this.success = success;
-		}
-	}
-
-	public static class FailGroups {
-
-		private String groupId;
-
-		private Boolean success;
-
-		private String reason;
-
-		private Integer code;
-
-		public String getGroupId() {
-			return this.groupId;
-		}
-
-		public void setGroupId(String groupId) {
-			this.groupId = groupId;
-		}
-
-		public Boolean getSuccess() {
-			return this.success;
-		}
-
-		public void setSuccess(Boolean success) {
-			this.success = success;
-		}
-
-		public String getReason() {
-			return this.reason;
-		}
-
-		public void setReason(String reason) {
-			this.reason = reason;
-		}
-
-		public Integer getCode() {
-			return this.code;
-		}
-
-		public void setCode(Integer code) {
-			this.code = code;
 		}
 	}
 

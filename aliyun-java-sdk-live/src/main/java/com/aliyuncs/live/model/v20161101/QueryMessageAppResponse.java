@@ -48,19 +48,11 @@ public class QueryMessageAppResponse extends AcsResponse {
 
 	public static class ResultItem {
 
-		private Integer totalCount;
-
 		private Boolean hasMore;
 
+		private Integer totalCount;
+
 		private List<AppListItem> appList;
-
-		public Integer getTotalCount() {
-			return this.totalCount;
-		}
-
-		public void setTotalCount(Integer totalCount) {
-			this.totalCount = totalCount;
-		}
 
 		public Boolean getHasMore() {
 			return this.hasMore;
@@ -68,6 +60,14 @@ public class QueryMessageAppResponse extends AcsResponse {
 
 		public void setHasMore(Boolean hasMore) {
 			this.hasMore = hasMore;
+		}
+
+		public Integer getTotalCount() {
+			return this.totalCount;
+		}
+
+		public void setTotalCount(Integer totalCount) {
+			this.totalCount = totalCount;
 		}
 
 		public List<AppListItem> getAppList() {
@@ -80,17 +80,25 @@ public class QueryMessageAppResponse extends AcsResponse {
 
 		public static class AppListItem {
 
+			private Map<Object,Object> appConfig;
+
 			private String appId;
 
 			private String appName;
 
 			private Long createTime;
 
+			private Map<Object,Object> extension;
+
 			private Integer status;
 
-			private Map<Object,Object> appConfig;
+			public Map<Object,Object> getAppConfig() {
+				return this.appConfig;
+			}
 
-			private Map<Object,Object> extension;
+			public void setAppConfig(Map<Object,Object> appConfig) {
+				this.appConfig = appConfig;
+			}
 
 			public String getAppId() {
 				return this.appId;
@@ -116,28 +124,20 @@ public class QueryMessageAppResponse extends AcsResponse {
 				this.createTime = createTime;
 			}
 
-			public Integer getStatus() {
-				return this.status;
-			}
-
-			public void setStatus(Integer status) {
-				this.status = status;
-			}
-
-			public Map<Object,Object> getAppConfig() {
-				return this.appConfig;
-			}
-
-			public void setAppConfig(Map<Object,Object> appConfig) {
-				this.appConfig = appConfig;
-			}
-
 			public Map<Object,Object> getExtension() {
 				return this.extension;
 			}
 
 			public void setExtension(Map<Object,Object> extension) {
 				this.extension = extension;
+			}
+
+			public Integer getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(Integer status) {
+				this.status = status;
 			}
 		}
 	}

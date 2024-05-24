@@ -47,25 +47,17 @@ public class GetMessageGroupResponse extends AcsResponse {
 
 	public static class Result {
 
-		private String groupId;
-
 		private Long createTime;
-
-		private Integer status;
 
 		private String creatorId;
 
 		private Map<Object,Object> extension;
 
+		private String groupId;
+
 		private Boolean isMuteAll;
 
-		public String getGroupId() {
-			return this.groupId;
-		}
-
-		public void setGroupId(String groupId) {
-			this.groupId = groupId;
-		}
+		private Integer status;
 
 		public Long getCreateTime() {
 			return this.createTime;
@@ -73,14 +65,6 @@ public class GetMessageGroupResponse extends AcsResponse {
 
 		public void setCreateTime(Long createTime) {
 			this.createTime = createTime;
-		}
-
-		public Integer getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(Integer status) {
-			this.status = status;
 		}
 
 		public String getCreatorId() {
@@ -99,12 +83,28 @@ public class GetMessageGroupResponse extends AcsResponse {
 			this.extension = extension;
 		}
 
+		public String getGroupId() {
+			return this.groupId;
+		}
+
+		public void setGroupId(String groupId) {
+			this.groupId = groupId;
+		}
+
 		public Boolean getIsMuteAll() {
 			return this.isMuteAll;
 		}
 
 		public void setIsMuteAll(Boolean isMuteAll) {
 			this.isMuteAll = isMuteAll;
+		}
+
+		public Integer getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(Integer status) {
+			this.status = status;
 		}
 	}
 

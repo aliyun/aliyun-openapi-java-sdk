@@ -32,8 +32,8 @@ public class DescribeMeterLiveInteractionDauResponseUnmarshaller {
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeMeterLiveInteractionDauResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setTimestamp(_ctx.longValue("DescribeMeterLiveInteractionDauResponse.Data["+ i +"].Timestamp"));
 			dataItem.setDau(_ctx.doubleValue("DescribeMeterLiveInteractionDauResponse.Data["+ i +"].Dau"));
+			dataItem.setTimestamp(_ctx.longValue("DescribeMeterLiveInteractionDauResponse.Data["+ i +"].Timestamp"));
 
 			data.add(dataItem);
 		}

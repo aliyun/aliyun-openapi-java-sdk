@@ -47,34 +47,26 @@ public class DescribeLiveStreamDetailFrameRateAndBitRateDataResponse extends Acs
 
 	public static class Frabr {
 
-		private String time;
-
-		private Float videoFrameRate;
+		private Float audioBitRate;
 
 		private Float audioFrameRate;
 
+		private Float bitRate;
+
 		private String streamUrl;
 
-		private Float bitRate;
+		private String time;
 
 		private Float videoBitRate;
 
-		private Float audioBitRate;
+		private Float videoFrameRate;
 
-		public String getTime() {
-			return this.time;
+		public Float getAudioBitRate() {
+			return this.audioBitRate;
 		}
 
-		public void setTime(String time) {
-			this.time = time;
-		}
-
-		public Float getVideoFrameRate() {
-			return this.videoFrameRate;
-		}
-
-		public void setVideoFrameRate(Float videoFrameRate) {
-			this.videoFrameRate = videoFrameRate;
+		public void setAudioBitRate(Float audioBitRate) {
+			this.audioBitRate = audioBitRate;
 		}
 
 		public Float getAudioFrameRate() {
@@ -85,6 +77,14 @@ public class DescribeLiveStreamDetailFrameRateAndBitRateDataResponse extends Acs
 			this.audioFrameRate = audioFrameRate;
 		}
 
+		public Float getBitRate() {
+			return this.bitRate;
+		}
+
+		public void setBitRate(Float bitRate) {
+			this.bitRate = bitRate;
+		}
+
 		public String getStreamUrl() {
 			return this.streamUrl;
 		}
@@ -93,12 +93,12 @@ public class DescribeLiveStreamDetailFrameRateAndBitRateDataResponse extends Acs
 			this.streamUrl = streamUrl;
 		}
 
-		public Float getBitRate() {
-			return this.bitRate;
+		public String getTime() {
+			return this.time;
 		}
 
-		public void setBitRate(Float bitRate) {
-			this.bitRate = bitRate;
+		public void setTime(String time) {
+			this.time = time;
 		}
 
 		public Float getVideoBitRate() {
@@ -109,12 +109,12 @@ public class DescribeLiveStreamDetailFrameRateAndBitRateDataResponse extends Acs
 			this.videoBitRate = videoBitRate;
 		}
 
-		public Float getAudioBitRate() {
-			return this.audioBitRate;
+		public Float getVideoFrameRate() {
+			return this.videoFrameRate;
 		}
 
-		public void setAudioBitRate(Float audioBitRate) {
-			this.audioBitRate = audioBitRate;
+		public void setVideoFrameRate(Float videoFrameRate) {
+			this.videoFrameRate = videoFrameRate;
 		}
 	}
 

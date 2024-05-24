@@ -28,15 +28,15 @@ public class DescribeRTSNativeSDKVvDataResponseUnmarshaller {
 		
 		describeRTSNativeSDKVvDataResponse.setRequestId(_ctx.stringValue("DescribeRTSNativeSDKVvDataResponse.RequestId"));
 		describeRTSNativeSDKVvDataResponse.setDataInterval(_ctx.stringValue("DescribeRTSNativeSDKVvDataResponse.DataInterval"));
-		describeRTSNativeSDKVvDataResponse.setStartTime(_ctx.stringValue("DescribeRTSNativeSDKVvDataResponse.StartTime"));
 		describeRTSNativeSDKVvDataResponse.setEndTime(_ctx.stringValue("DescribeRTSNativeSDKVvDataResponse.EndTime"));
+		describeRTSNativeSDKVvDataResponse.setStartTime(_ctx.stringValue("DescribeRTSNativeSDKVvDataResponse.StartTime"));
 
 		List<Data> vvData = new ArrayList<Data>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeRTSNativeSDKVvDataResponse.VvData.Length"); i++) {
 			Data data = new Data();
 			data.setTimeStamp(_ctx.stringValue("DescribeRTSNativeSDKVvDataResponse.VvData["+ i +"].TimeStamp"));
-			data.setVvTotal(_ctx.stringValue("DescribeRTSNativeSDKVvDataResponse.VvData["+ i +"].VvTotal"));
 			data.setVvSuccess(_ctx.stringValue("DescribeRTSNativeSDKVvDataResponse.VvData["+ i +"].VvSuccess"));
+			data.setVvTotal(_ctx.stringValue("DescribeRTSNativeSDKVvDataResponse.VvData["+ i +"].VvTotal"));
 
 			vvData.add(data);
 		}

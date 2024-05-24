@@ -30,8 +30,8 @@ public class ListMuteGroupUserResponseUnmarshaller {
 		listMuteGroupUserResponse.setRequestId(_ctx.stringValue("ListMuteGroupUserResponse.RequestId"));
 
 		Result result = new Result();
-		result.setTotal(_ctx.integerValue("ListMuteGroupUserResponse.Result.Total"));
 		result.setHasMore(_ctx.booleanValue("ListMuteGroupUserResponse.Result.HasMore"));
+		result.setTotal(_ctx.integerValue("ListMuteGroupUserResponse.Result.Total"));
 
 		List<UserListItem> userList = new ArrayList<UserListItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListMuteGroupUserResponse.Result.UserList.Length"); i++) {

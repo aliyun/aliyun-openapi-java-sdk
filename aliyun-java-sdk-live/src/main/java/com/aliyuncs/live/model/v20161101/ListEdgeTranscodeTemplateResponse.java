@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListEdgeTranscodeTemplateResponse extends AcsResponse {
 
-	private Integer totalCount;
-
 	private String requestId;
 
+	private Integer totalCount;
+
 	private List<Template> templateList;
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,6 +37,14 @@ public class ListEdgeTranscodeTemplateResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<Template> getTemplateList() {
@@ -57,17 +57,15 @@ public class ListEdgeTranscodeTemplateResponse extends AcsResponse {
 
 	public static class Template {
 
-		private String type;
-
-		private String gop;
-
-		private String createTime;
+		private String bitrate;
 
 		private String codec;
 
+		private String createTime;
+
 		private String fps;
 
-		private String bitrate;
+		private String gop;
 
 		private String name;
 
@@ -75,28 +73,14 @@ public class ListEdgeTranscodeTemplateResponse extends AcsResponse {
 
 		private String templateId;
 
-		public String getType() {
-			return this.type;
+		private String type;
+
+		public String getBitrate() {
+			return this.bitrate;
 		}
 
-		public void setType(String type) {
-			this.type = type;
-		}
-
-		public String getGop() {
-			return this.gop;
-		}
-
-		public void setGop(String gop) {
-			this.gop = gop;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
+		public void setBitrate(String bitrate) {
+			this.bitrate = bitrate;
 		}
 
 		public String getCodec() {
@@ -107,6 +91,14 @@ public class ListEdgeTranscodeTemplateResponse extends AcsResponse {
 			this.codec = codec;
 		}
 
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
 		public String getFps() {
 			return this.fps;
 		}
@@ -115,12 +107,12 @@ public class ListEdgeTranscodeTemplateResponse extends AcsResponse {
 			this.fps = fps;
 		}
 
-		public String getBitrate() {
-			return this.bitrate;
+		public String getGop() {
+			return this.gop;
 		}
 
-		public void setBitrate(String bitrate) {
-			this.bitrate = bitrate;
+		public void setGop(String gop) {
+			this.gop = gop;
 		}
 
 		public String getName() {
@@ -145,6 +137,14 @@ public class ListEdgeTranscodeTemplateResponse extends AcsResponse {
 
 		public void setTemplateId(String templateId) {
 			this.templateId = templateId;
+		}
+
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
 		}
 	}
 

@@ -27,17 +27,17 @@ public class DescribeLiveGrtnTrafficUsageResponseUnmarshaller {
 	public static DescribeLiveGrtnTrafficUsageResponse unmarshall(DescribeLiveGrtnTrafficUsageResponse describeLiveGrtnTrafficUsageResponse, UnmarshallerContext _ctx) {
 		
 		describeLiveGrtnTrafficUsageResponse.setRequestId(_ctx.stringValue("DescribeLiveGrtnTrafficUsageResponse.RequestId"));
-		describeLiveGrtnTrafficUsageResponse.setEndTime(_ctx.stringValue("DescribeLiveGrtnTrafficUsageResponse.EndTime"));
-		describeLiveGrtnTrafficUsageResponse.setStartTime(_ctx.stringValue("DescribeLiveGrtnTrafficUsageResponse.StartTime"));
-		describeLiveGrtnTrafficUsageResponse.setFiled(_ctx.stringValue("DescribeLiveGrtnTrafficUsageResponse.Filed"));
 		describeLiveGrtnTrafficUsageResponse.setAppId(_ctx.stringValue("DescribeLiveGrtnTrafficUsageResponse.AppId"));
 		describeLiveGrtnTrafficUsageResponse.setArea(_ctx.stringValue("DescribeLiveGrtnTrafficUsageResponse.Area"));
+		describeLiveGrtnTrafficUsageResponse.setEndTime(_ctx.stringValue("DescribeLiveGrtnTrafficUsageResponse.EndTime"));
+		describeLiveGrtnTrafficUsageResponse.setFiled(_ctx.stringValue("DescribeLiveGrtnTrafficUsageResponse.Filed"));
+		describeLiveGrtnTrafficUsageResponse.setStartTime(_ctx.stringValue("DescribeLiveGrtnTrafficUsageResponse.StartTime"));
 
 		List<UsageData> usageDataPerInterval = new ArrayList<UsageData>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLiveGrtnTrafficUsageResponse.UsageDataPerInterval.Length"); i++) {
 			UsageData usageData = new UsageData();
-			usageData.setValue(_ctx.doubleValue("DescribeLiveGrtnTrafficUsageResponse.UsageDataPerInterval["+ i +"].Value"));
 			usageData.setTimeStamp(_ctx.stringValue("DescribeLiveGrtnTrafficUsageResponse.UsageDataPerInterval["+ i +"].TimeStamp"));
+			usageData.setValue(_ctx.doubleValue("DescribeLiveGrtnTrafficUsageResponse.UsageDataPerInterval["+ i +"].Value"));
 
 			usageDataPerInterval.add(usageData);
 		}

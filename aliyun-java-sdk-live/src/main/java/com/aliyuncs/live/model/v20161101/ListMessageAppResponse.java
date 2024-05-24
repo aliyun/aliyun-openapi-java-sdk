@@ -48,19 +48,11 @@ public class ListMessageAppResponse extends AcsResponse {
 
 	public static class Result {
 
-		private Integer total;
-
 		private Boolean hasMore;
 
+		private Integer total;
+
 		private List<AppListItem> appList;
-
-		public Integer getTotal() {
-			return this.total;
-		}
-
-		public void setTotal(Integer total) {
-			this.total = total;
-		}
 
 		public Boolean getHasMore() {
 			return this.hasMore;
@@ -68,6 +60,14 @@ public class ListMessageAppResponse extends AcsResponse {
 
 		public void setHasMore(Boolean hasMore) {
 			this.hasMore = hasMore;
+		}
+
+		public Integer getTotal() {
+			return this.total;
+		}
+
+		public void setTotal(Integer total) {
+			this.total = total;
 		}
 
 		public List<AppListItem> getAppList() {
@@ -80,17 +80,25 @@ public class ListMessageAppResponse extends AcsResponse {
 
 		public static class AppListItem {
 
+			private Map<Object,Object> appConfig;
+
 			private String appId;
 
 			private String appName;
 
 			private Long createTime;
 
+			private Map<Object,Object> extension;
+
 			private Integer status;
 
-			private Map<Object,Object> appConfig;
+			public Map<Object,Object> getAppConfig() {
+				return this.appConfig;
+			}
 
-			private Map<Object,Object> extension;
+			public void setAppConfig(Map<Object,Object> appConfig) {
+				this.appConfig = appConfig;
+			}
 
 			public String getAppId() {
 				return this.appId;
@@ -116,28 +124,20 @@ public class ListMessageAppResponse extends AcsResponse {
 				this.createTime = createTime;
 			}
 
-			public Integer getStatus() {
-				return this.status;
-			}
-
-			public void setStatus(Integer status) {
-				this.status = status;
-			}
-
-			public Map<Object,Object> getAppConfig() {
-				return this.appConfig;
-			}
-
-			public void setAppConfig(Map<Object,Object> appConfig) {
-				this.appConfig = appConfig;
-			}
-
 			public Map<Object,Object> getExtension() {
 				return this.extension;
 			}
 
 			public void setExtension(Map<Object,Object> extension) {
 				this.extension = extension;
+			}
+
+			public Integer getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(Integer status) {
+				this.status = status;
 			}
 		}
 	}

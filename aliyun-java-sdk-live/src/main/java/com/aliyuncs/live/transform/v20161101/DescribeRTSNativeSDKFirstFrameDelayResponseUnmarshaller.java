@@ -28,14 +28,14 @@ public class DescribeRTSNativeSDKFirstFrameDelayResponseUnmarshaller {
 		
 		describeRTSNativeSDKFirstFrameDelayResponse.setRequestId(_ctx.stringValue("DescribeRTSNativeSDKFirstFrameDelayResponse.RequestId"));
 		describeRTSNativeSDKFirstFrameDelayResponse.setDataInterval(_ctx.stringValue("DescribeRTSNativeSDKFirstFrameDelayResponse.DataInterval"));
-		describeRTSNativeSDKFirstFrameDelayResponse.setStartTime(_ctx.stringValue("DescribeRTSNativeSDKFirstFrameDelayResponse.StartTime"));
 		describeRTSNativeSDKFirstFrameDelayResponse.setEndTime(_ctx.stringValue("DescribeRTSNativeSDKFirstFrameDelayResponse.EndTime"));
+		describeRTSNativeSDKFirstFrameDelayResponse.setStartTime(_ctx.stringValue("DescribeRTSNativeSDKFirstFrameDelayResponse.StartTime"));
 
 		List<Data> frameDelayData = new ArrayList<Data>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeRTSNativeSDKFirstFrameDelayResponse.FrameDelayData.Length"); i++) {
 			Data data = new Data();
-			data.setTimeStamp(_ctx.stringValue("DescribeRTSNativeSDKFirstFrameDelayResponse.FrameDelayData["+ i +"].TimeStamp"));
 			data.setFrameDelay(_ctx.stringValue("DescribeRTSNativeSDKFirstFrameDelayResponse.FrameDelayData["+ i +"].FrameDelay"));
+			data.setTimeStamp(_ctx.stringValue("DescribeRTSNativeSDKFirstFrameDelayResponse.FrameDelayData["+ i +"].TimeStamp"));
 
 			frameDelayData.add(data);
 		}

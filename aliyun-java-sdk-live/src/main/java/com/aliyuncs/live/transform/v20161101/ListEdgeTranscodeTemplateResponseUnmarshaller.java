@@ -32,15 +32,15 @@ public class ListEdgeTranscodeTemplateResponseUnmarshaller {
 		List<Template> templateList = new ArrayList<Template>();
 		for (int i = 0; i < _ctx.lengthValue("ListEdgeTranscodeTemplateResponse.TemplateList.Length"); i++) {
 			Template template = new Template();
-			template.setType(_ctx.stringValue("ListEdgeTranscodeTemplateResponse.TemplateList["+ i +"].Type"));
-			template.setGop(_ctx.stringValue("ListEdgeTranscodeTemplateResponse.TemplateList["+ i +"].Gop"));
-			template.setCreateTime(_ctx.stringValue("ListEdgeTranscodeTemplateResponse.TemplateList["+ i +"].CreateTime"));
-			template.setCodec(_ctx.stringValue("ListEdgeTranscodeTemplateResponse.TemplateList["+ i +"].Codec"));
-			template.setFps(_ctx.stringValue("ListEdgeTranscodeTemplateResponse.TemplateList["+ i +"].Fps"));
 			template.setBitrate(_ctx.stringValue("ListEdgeTranscodeTemplateResponse.TemplateList["+ i +"].Bitrate"));
+			template.setCodec(_ctx.stringValue("ListEdgeTranscodeTemplateResponse.TemplateList["+ i +"].Codec"));
+			template.setCreateTime(_ctx.stringValue("ListEdgeTranscodeTemplateResponse.TemplateList["+ i +"].CreateTime"));
+			template.setFps(_ctx.stringValue("ListEdgeTranscodeTemplateResponse.TemplateList["+ i +"].Fps"));
+			template.setGop(_ctx.stringValue("ListEdgeTranscodeTemplateResponse.TemplateList["+ i +"].Gop"));
 			template.setName(_ctx.stringValue("ListEdgeTranscodeTemplateResponse.TemplateList["+ i +"].Name"));
 			template.setResolution(_ctx.stringValue("ListEdgeTranscodeTemplateResponse.TemplateList["+ i +"].Resolution"));
 			template.setTemplateId(_ctx.stringValue("ListEdgeTranscodeTemplateResponse.TemplateList["+ i +"].TemplateId"));
+			template.setType(_ctx.stringValue("ListEdgeTranscodeTemplateResponse.TemplateList["+ i +"].Type"));
 
 			templateList.add(template);
 		}

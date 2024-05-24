@@ -24,41 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeLiveDelayConfigResponse extends AcsResponse {
 
-	private String domain;
-
-	private String requestId;
-
-	private String taskTriggerMode;
-
 	private String app;
 
 	private String delayTime;
 
+	private String domain;
+
+	private String requestId;
+
 	private String stream;
 
-	public String getDomain() {
-		return this.domain;
-	}
-
-	public void setDomain(String domain) {
-		this.domain = domain;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getTaskTriggerMode() {
-		return this.taskTriggerMode;
-	}
-
-	public void setTaskTriggerMode(String taskTriggerMode) {
-		this.taskTriggerMode = taskTriggerMode;
-	}
+	private String taskTriggerMode;
 
 	public String getApp() {
 		return this.app;
@@ -76,12 +52,36 @@ public class DescribeLiveDelayConfigResponse extends AcsResponse {
 		this.delayTime = delayTime;
 	}
 
+	public String getDomain() {
+		return this.domain;
+	}
+
+	public void setDomain(String domain) {
+		this.domain = domain;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public String getStream() {
 		return this.stream;
 	}
 
 	public void setStream(String stream) {
 		this.stream = stream;
+	}
+
+	public String getTaskTriggerMode() {
+		return this.taskTriggerMode;
+	}
+
+	public void setTaskTriggerMode(String taskTriggerMode) {
+		this.taskTriggerMode = taskTriggerMode;
 	}
 
 	@Override

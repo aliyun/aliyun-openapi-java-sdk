@@ -389,20 +389,20 @@ public class StartLiveMPUTaskRequest extends RpcAcsRequest<StartLiveMPUTaskRespo
 				@SerializedName("ZOrder")
 				private String zOrder;
 
-				@SerializedName("X")
-				private String x;
-
 				@SerializedName("Width")
 				private String width;
+
+				@SerializedName("X")
+				private String x;
 
 				@SerializedName("Y")
 				private String y;
 
-				@SerializedName("UserInfo")
-				private UserInfo userInfo;
-
 				@SerializedName("RenderMode")
 				private String renderMode;
+
+				@SerializedName("UserInfo")
+				private UserInfo userInfo;
 
 				@SerializedName("Height")
 				private String height;
@@ -423,20 +423,20 @@ public class StartLiveMPUTaskRequest extends RpcAcsRequest<StartLiveMPUTaskRespo
 					this.zOrder = zOrder;
 				}
 
-				public String getX() {
-					return this.x;
-				}
-
-				public void setX(String x) {
-					this.x = x;
-				}
-
 				public String getWidth() {
 					return this.width;
 				}
 
 				public void setWidth(String width) {
 					this.width = width;
+				}
+
+				public String getX() {
+					return this.x;
+				}
+
+				public void setX(String x) {
+					this.x = x;
 				}
 
 				public String getY() {
@@ -447,20 +447,20 @@ public class StartLiveMPUTaskRequest extends RpcAcsRequest<StartLiveMPUTaskRespo
 					this.y = y;
 				}
 
-				public UserInfo getUserInfo() {
-					return this.userInfo;
-				}
-
-				public void setUserInfo(UserInfo userInfo) {
-					this.userInfo = userInfo;
-				}
-
 				public String getRenderMode() {
 					return this.renderMode;
 				}
 
 				public void setRenderMode(String renderMode) {
 					this.renderMode = renderMode;
+				}
+
+				public UserInfo getUserInfo() {
+					return this.userInfo;
+				}
+
+				public void setUserInfo(UserInfo userInfo) {
+					this.userInfo = userInfo;
 				}
 
 				public String getHeight() {
@@ -536,19 +536,11 @@ public class StartLiveMPUTaskRequest extends RpcAcsRequest<StartLiveMPUTaskRespo
 
 		public static class Background {
 
-			@SerializedName("URL")
-			private String uRL;
-
 			@SerializedName("RenderMode")
 			private String renderMode;
 
-			public String getURL() {
-				return this.uRL;
-			}
-
-			public void setURL(String uRL) {
-				this.uRL = uRL;
-			}
+			@SerializedName("URL")
+			private String uRL;
 
 			public String getRenderMode() {
 				return this.renderMode;
@@ -556,6 +548,14 @@ public class StartLiveMPUTaskRequest extends RpcAcsRequest<StartLiveMPUTaskRespo
 
 			public void setRenderMode(String renderMode) {
 				this.renderMode = renderMode;
+			}
+
+			public String getURL() {
+				return this.uRL;
+			}
+
+			public void setURL(String uRL) {
+				this.uRL = uRL;
 			}
 		}
 
@@ -612,17 +612,17 @@ public class StartLiveMPUTaskRequest extends RpcAcsRequest<StartLiveMPUTaskRespo
 			@SerializedName("VideoHeight")
 			private String videoHeight;
 
-			@SerializedName("VideoBitrate")
-			private String videoBitrate;
-
 			@SerializedName("AudioSampleRate")
 			private String audioSampleRate;
 
-			@SerializedName("VideoGop")
-			private String videoGop;
+			@SerializedName("VideoBitrate")
+			private String videoBitrate;
 
 			@SerializedName("AudioChannels")
 			private String audioChannels;
+
+			@SerializedName("VideoGop")
+			private String videoGop;
 
 			public String getAudioOnly() {
 				return this.audioOnly;
@@ -664,14 +664,6 @@ public class StartLiveMPUTaskRequest extends RpcAcsRequest<StartLiveMPUTaskRespo
 				this.videoHeight = videoHeight;
 			}
 
-			public String getVideoBitrate() {
-				return this.videoBitrate;
-			}
-
-			public void setVideoBitrate(String videoBitrate) {
-				this.videoBitrate = videoBitrate;
-			}
-
 			public String getAudioSampleRate() {
 				return this.audioSampleRate;
 			}
@@ -680,12 +672,12 @@ public class StartLiveMPUTaskRequest extends RpcAcsRequest<StartLiveMPUTaskRespo
 				this.audioSampleRate = audioSampleRate;
 			}
 
-			public String getVideoGop() {
-				return this.videoGop;
+			public String getVideoBitrate() {
+				return this.videoBitrate;
 			}
 
-			public void setVideoGop(String videoGop) {
-				this.videoGop = videoGop;
+			public void setVideoBitrate(String videoBitrate) {
+				this.videoBitrate = videoBitrate;
 			}
 
 			public String getAudioChannels() {
@@ -694,6 +686,14 @@ public class StartLiveMPUTaskRequest extends RpcAcsRequest<StartLiveMPUTaskRespo
 
 			public void setAudioChannels(String audioChannels) {
 				this.audioChannels = audioChannels;
+			}
+
+			public String getVideoGop() {
+				return this.videoGop;
+			}
+
+			public void setVideoGop(String videoGop) {
+				this.videoGop = videoGop;
 			}
 		}
 	}

@@ -47,17 +47,9 @@ public class CheckLiveMessageUsersOnlineResponse extends AcsResponse {
 
 	public static class Users {
 
-		private String userId;
-
 		private Boolean online;
 
-		public String getUserId() {
-			return this.userId;
-		}
-
-		public void setUserId(String userId) {
-			this.userId = userId;
-		}
+		private String userId;
 
 		public Boolean getOnline() {
 			return this.online;
@@ -65,6 +57,14 @@ public class CheckLiveMessageUsersOnlineResponse extends AcsResponse {
 
 		public void setOnline(Boolean online) {
 			this.online = online;
+		}
+
+		public String getUserId() {
+			return this.userId;
+		}
+
+		public void setUserId(String userId) {
+			this.userId = userId;
 		}
 	}
 

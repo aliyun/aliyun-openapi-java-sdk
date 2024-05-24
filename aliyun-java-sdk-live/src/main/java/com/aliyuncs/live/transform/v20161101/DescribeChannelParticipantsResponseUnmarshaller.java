@@ -26,9 +26,9 @@ public class DescribeChannelParticipantsResponseUnmarshaller {
 	public static DescribeChannelParticipantsResponse unmarshall(DescribeChannelParticipantsResponse describeChannelParticipantsResponse, UnmarshallerContext _ctx) {
 		
 		describeChannelParticipantsResponse.setRequestId(_ctx.stringValue("DescribeChannelParticipantsResponse.RequestId"));
-		describeChannelParticipantsResponse.setTotalPage(_ctx.integerValue("DescribeChannelParticipantsResponse.TotalPage"));
-		describeChannelParticipantsResponse.setTotalNum(_ctx.integerValue("DescribeChannelParticipantsResponse.TotalNum"));
 		describeChannelParticipantsResponse.setTimes(_ctx.longValue("DescribeChannelParticipantsResponse.Times"));
+		describeChannelParticipantsResponse.setTotalNum(_ctx.integerValue("DescribeChannelParticipantsResponse.TotalNum"));
+		describeChannelParticipantsResponse.setTotalPage(_ctx.integerValue("DescribeChannelParticipantsResponse.TotalPage"));
 
 		List<String> userList = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeChannelParticipantsResponse.UserList.Length"); i++) {

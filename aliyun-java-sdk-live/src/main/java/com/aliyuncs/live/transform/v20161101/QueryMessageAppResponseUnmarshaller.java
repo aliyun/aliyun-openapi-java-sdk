@@ -33,18 +33,18 @@ public class QueryMessageAppResponseUnmarshaller {
 		List<ResultItem> result = new ArrayList<ResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryMessageAppResponse.Result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
-			resultItem.setTotalCount(_ctx.integerValue("QueryMessageAppResponse.Result["+ i +"].TotalCount"));
 			resultItem.setHasMore(_ctx.booleanValue("QueryMessageAppResponse.Result["+ i +"].HasMore"));
+			resultItem.setTotalCount(_ctx.integerValue("QueryMessageAppResponse.Result["+ i +"].TotalCount"));
 
 			List<AppListItem> appList = new ArrayList<AppListItem>();
 			for (int j = 0; j < _ctx.lengthValue("QueryMessageAppResponse.Result["+ i +"].AppList.Length"); j++) {
 				AppListItem appListItem = new AppListItem();
+				appListItem.setAppConfig(_ctx.mapValue("QueryMessageAppResponse.Result["+ i +"].AppList["+ j +"].AppConfig"));
 				appListItem.setAppId(_ctx.stringValue("QueryMessageAppResponse.Result["+ i +"].AppList["+ j +"].AppId"));
 				appListItem.setAppName(_ctx.stringValue("QueryMessageAppResponse.Result["+ i +"].AppList["+ j +"].AppName"));
 				appListItem.setCreateTime(_ctx.longValue("QueryMessageAppResponse.Result["+ i +"].AppList["+ j +"].CreateTime"));
-				appListItem.setStatus(_ctx.integerValue("QueryMessageAppResponse.Result["+ i +"].AppList["+ j +"].Status"));
-				appListItem.setAppConfig(_ctx.mapValue("QueryMessageAppResponse.Result["+ i +"].AppList["+ j +"].AppConfig"));
 				appListItem.setExtension(_ctx.mapValue("QueryMessageAppResponse.Result["+ i +"].AppList["+ j +"].Extension"));
+				appListItem.setStatus(_ctx.integerValue("QueryMessageAppResponse.Result["+ i +"].AppList["+ j +"].Status"));
 
 				appList.add(appListItem);
 			}
