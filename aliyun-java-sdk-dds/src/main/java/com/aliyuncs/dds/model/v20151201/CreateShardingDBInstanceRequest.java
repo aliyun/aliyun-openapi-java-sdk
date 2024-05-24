@@ -34,6 +34,8 @@ public class CreateShardingDBInstanceRequest extends RpcAcsRequest<CreateShardin
 
 	private String networkType;
 
+	private String srcRegion;
+
 	private List<ReplicaSet> replicaSets;
 
 	private String storageType;
@@ -47,6 +49,8 @@ public class CreateShardingDBInstanceRequest extends RpcAcsRequest<CreateShardin
 	private String globalSecurityGroupIds;
 
 	private Integer period;
+
+	private String backupId;
 
 	private String encryptionKey;
 
@@ -76,11 +80,15 @@ public class CreateShardingDBInstanceRequest extends RpcAcsRequest<CreateShardin
 
 	private String restoreTime;
 
+	private String destRegion;
+
 	private String resourceOwnerAccount;
 
 	private String srcDBInstanceId;
 
 	private String ownerAccount;
+
+	private String restoreType;
 
 	private String accountPassword;
 
@@ -141,6 +149,17 @@ public class CreateShardingDBInstanceRequest extends RpcAcsRequest<CreateShardin
 		this.networkType = networkType;
 		if(networkType != null){
 			putQueryParameter("NetworkType", networkType);
+		}
+	}
+
+	public String getSrcRegion() {
+		return this.srcRegion;
+	}
+
+	public void setSrcRegion(String srcRegion) {
+		this.srcRegion = srcRegion;
+		if(srcRegion != null){
+			putQueryParameter("SrcRegion", srcRegion);
 		}
 	}
 
@@ -225,6 +244,17 @@ public class CreateShardingDBInstanceRequest extends RpcAcsRequest<CreateShardin
 		this.period = period;
 		if(period != null){
 			putQueryParameter("Period", period.toString());
+		}
+	}
+
+	public String getBackupId() {
+		return this.backupId;
+	}
+
+	public void setBackupId(String backupId) {
+		this.backupId = backupId;
+		if(backupId != null){
+			putQueryParameter("BackupId", backupId);
 		}
 	}
 
@@ -387,6 +417,17 @@ public class CreateShardingDBInstanceRequest extends RpcAcsRequest<CreateShardin
 		}
 	}
 
+	public String getDestRegion() {
+		return this.destRegion;
+	}
+
+	public void setDestRegion(String destRegion) {
+		this.destRegion = destRegion;
+		if(destRegion != null){
+			putQueryParameter("DestRegion", destRegion);
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -417,6 +458,17 @@ public class CreateShardingDBInstanceRequest extends RpcAcsRequest<CreateShardin
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getRestoreType() {
+		return this.restoreType;
+	}
+
+	public void setRestoreType(String restoreType) {
+		this.restoreType = restoreType;
+		if(restoreType != null){
+			putQueryParameter("RestoreType", restoreType);
 		}
 	}
 

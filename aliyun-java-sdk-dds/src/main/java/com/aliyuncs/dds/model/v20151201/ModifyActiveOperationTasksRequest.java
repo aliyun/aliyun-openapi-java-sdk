@@ -22,34 +22,24 @@ import com.aliyuncs.dds.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeDBInstancePerformanceRequest extends RpcAcsRequest<DescribeDBInstancePerformanceResponse> {
+public class ModifyActiveOperationTasksRequest extends RpcAcsRequest<ModifyActiveOperationTasksResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String roleId;
-
-	private String startTime;
-
-	private String replicaSetRole;
-
-	private String dBInstanceId;
-
-	private String nodeId;
-
-	private String key;
+	private String switchTime;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String endTime;
-
 	private Long ownerId;
 
-	private String interval;
-	public DescribeDBInstancePerformanceRequest() {
-		super("Dds", "2015-12-01", "DescribeDBInstancePerformance", "dds");
+	private String ids;
+
+	private Integer immediateStart;
+	public ModifyActiveOperationTasksRequest() {
+		super("Dds", "2015-12-01", "ModifyActiveOperationTasks", "dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -68,69 +58,14 @@ public class DescribeDBInstancePerformanceRequest extends RpcAcsRequest<Describe
 		}
 	}
 
-	public String getRoleId() {
-		return this.roleId;
+	public String getSwitchTime() {
+		return this.switchTime;
 	}
 
-	public void setRoleId(String roleId) {
-		this.roleId = roleId;
-		if(roleId != null){
-			putQueryParameter("RoleId", roleId);
-		}
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
-		}
-	}
-
-	public String getReplicaSetRole() {
-		return this.replicaSetRole;
-	}
-
-	public void setReplicaSetRole(String replicaSetRole) {
-		this.replicaSetRole = replicaSetRole;
-		if(replicaSetRole != null){
-			putQueryParameter("ReplicaSetRole", replicaSetRole);
-		}
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
-		}
-	}
-
-	public String getNodeId() {
-		return this.nodeId;
-	}
-
-	public void setNodeId(String nodeId) {
-		this.nodeId = nodeId;
-		if(nodeId != null){
-			putQueryParameter("NodeId", nodeId);
-		}
-	}
-
-	public String getKey() {
-		return this.key;
-	}
-
-	public void setKey(String key) {
-		this.key = key;
-		if(key != null){
-			putQueryParameter("Key", key);
+	public void setSwitchTime(String switchTime) {
+		this.switchTime = switchTime;
+		if(switchTime != null){
+			putQueryParameter("SwitchTime", switchTime);
 		}
 	}
 
@@ -156,17 +91,6 @@ public class DescribeDBInstancePerformanceRequest extends RpcAcsRequest<Describe
 		}
 	}
 
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -178,20 +102,31 @@ public class DescribeDBInstancePerformanceRequest extends RpcAcsRequest<Describe
 		}
 	}
 
-	public String getInterval() {
-		return this.interval;
+	public String getIds() {
+		return this.ids;
 	}
 
-	public void setInterval(String interval) {
-		this.interval = interval;
-		if(interval != null){
-			putQueryParameter("Interval", interval);
+	public void setIds(String ids) {
+		this.ids = ids;
+		if(ids != null){
+			putQueryParameter("Ids", ids);
+		}
+	}
+
+	public Integer getImmediateStart() {
+		return this.immediateStart;
+	}
+
+	public void setImmediateStart(Integer immediateStart) {
+		this.immediateStart = immediateStart;
+		if(immediateStart != null){
+			putQueryParameter("ImmediateStart", immediateStart.toString());
 		}
 	}
 
 	@Override
-	public Class<DescribeDBInstancePerformanceResponse> getResponseClass() {
-		return DescribeDBInstancePerformanceResponse.class;
+	public Class<ModifyActiveOperationTasksResponse> getResponseClass() {
+		return ModifyActiveOperationTasksResponse.class;
 	}
 
 }

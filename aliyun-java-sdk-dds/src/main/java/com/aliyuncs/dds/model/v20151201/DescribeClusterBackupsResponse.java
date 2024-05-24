@@ -93,6 +93,8 @@ public class DescribeClusterBackupsResponse extends AcsResponse {
 
 		private String progress;
 
+		private String attachLogStatus;
+
 		private List<Backup> backups;
 
 		private ExtraInfo extraInfo;
@@ -161,6 +163,14 @@ public class DescribeClusterBackupsResponse extends AcsResponse {
 			this.progress = progress;
 		}
 
+		public String getAttachLogStatus() {
+			return this.attachLogStatus;
+		}
+
+		public void setAttachLogStatus(String attachLogStatus) {
+			this.attachLogStatus = attachLogStatus;
+		}
+
 		public List<Backup> getBackups() {
 			return this.backups;
 		}
@@ -198,6 +208,8 @@ public class DescribeClusterBackupsResponse extends AcsResponse {
 			private String backupStatus;
 
 			private String backupName;
+
+			private ExtraInfo1 extraInfo1;
 
 			public String getBackupId() {
 				return this.backupId;
@@ -277,6 +289,57 @@ public class DescribeClusterBackupsResponse extends AcsResponse {
 
 			public void setBackupName(String backupName) {
 				this.backupName = backupName;
+			}
+
+			public ExtraInfo1 getExtraInfo1() {
+				return this.extraInfo1;
+			}
+
+			public void setExtraInfo1(ExtraInfo1 extraInfo1) {
+				this.extraInfo1 = extraInfo1;
+			}
+
+			public static class ExtraInfo1 {
+
+				private String nodeId;
+
+				private String storageSize;
+
+				private String instanceClass;
+
+				private String nodeType;
+
+				public String getNodeId() {
+					return this.nodeId;
+				}
+
+				public void setNodeId(String nodeId) {
+					this.nodeId = nodeId;
+				}
+
+				public String getStorageSize() {
+					return this.storageSize;
+				}
+
+				public void setStorageSize(String storageSize) {
+					this.storageSize = storageSize;
+				}
+
+				public String getInstanceClass() {
+					return this.instanceClass;
+				}
+
+				public void setInstanceClass(String instanceClass) {
+					this.instanceClass = instanceClass;
+				}
+
+				public String getNodeType() {
+					return this.nodeType;
+				}
+
+				public void setNodeType(String nodeType) {
+					this.nodeType = nodeType;
+				}
 			}
 		}
 

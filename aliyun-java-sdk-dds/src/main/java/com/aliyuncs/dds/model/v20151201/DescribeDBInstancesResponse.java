@@ -129,6 +129,10 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 
 		private String hiddenZoneId;
 
+		private Integer backupRetentionPolicy;
+
+		private String releaseTime;
+
 		private List<Tag> tags;
 
 		private List<MongosAttribute> mongosList;
@@ -341,6 +345,22 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 
 		public void setHiddenZoneId(String hiddenZoneId) {
 			this.hiddenZoneId = hiddenZoneId;
+		}
+
+		public Integer getBackupRetentionPolicy() {
+			return this.backupRetentionPolicy;
+		}
+
+		public void setBackupRetentionPolicy(Integer backupRetentionPolicy) {
+			this.backupRetentionPolicy = backupRetentionPolicy;
+		}
+
+		public String getReleaseTime() {
+			return this.releaseTime;
+		}
+
+		public void setReleaseTime(String releaseTime) {
+			this.releaseTime = releaseTime;
 		}
 
 		public List<Tag> getTags() {

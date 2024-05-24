@@ -25,7 +25,7 @@ import com.aliyuncs.dds.Endpoint;
 public class DescribeBackupTasksRequest extends RpcAcsRequest<DescribeBackupTasksResponse> {
 	   
 
-	private Long backupJobId;
+	private String backupJobId;
 
 	private Long resourceOwnerId;
 
@@ -47,14 +47,14 @@ public class DescribeBackupTasksRequest extends RpcAcsRequest<DescribeBackupTask
 		} catch (Exception e) {}
 	}
 
-	public Long getBackupJobId() {
+	public String getBackupJobId() {
 		return this.backupJobId;
 	}
 
-	public void setBackupJobId(Long backupJobId) {
+	public void setBackupJobId(String backupJobId) {
 		this.backupJobId = backupJobId;
 		if(backupJobId != null){
-			putQueryParameter("BackupJobId", backupJobId.toString());
+			putQueryParameter("BackupJobId", backupJobId);
 		}
 	}
 

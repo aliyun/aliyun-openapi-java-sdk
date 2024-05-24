@@ -27,11 +27,17 @@ public class CheckRecoveryConditionRequest extends RpcAcsRequest<CheckRecoveryCo
 
 	private Long resourceOwnerId;
 
+	private String srcRegion;
+
 	private String resourceGroupId;
 
 	private String databaseNames;
 
+	private String instanceType;
+
 	private String restoreTime;
+
+	private String destRegion;
 
 	private String resourceOwnerAccount;
 
@@ -42,6 +48,8 @@ public class CheckRecoveryConditionRequest extends RpcAcsRequest<CheckRecoveryCo
 	private String sourceDBInstance;
 
 	private Long ownerId;
+
+	private String restoreType;
 	public CheckRecoveryConditionRequest() {
 		super("Dds", "2015-12-01", "CheckRecoveryCondition", "dds");
 		setMethod(MethodType.POST);
@@ -59,6 +67,17 @@ public class CheckRecoveryConditionRequest extends RpcAcsRequest<CheckRecoveryCo
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getSrcRegion() {
+		return this.srcRegion;
+	}
+
+	public void setSrcRegion(String srcRegion) {
+		this.srcRegion = srcRegion;
+		if(srcRegion != null){
+			putQueryParameter("SrcRegion", srcRegion);
 		}
 	}
 
@@ -84,6 +103,17 @@ public class CheckRecoveryConditionRequest extends RpcAcsRequest<CheckRecoveryCo
 		}
 	}
 
+	public String getInstanceType() {
+		return this.instanceType;
+	}
+
+	public void setInstanceType(String instanceType) {
+		this.instanceType = instanceType;
+		if(instanceType != null){
+			putQueryParameter("InstanceType", instanceType);
+		}
+	}
+
 	public String getRestoreTime() {
 		return this.restoreTime;
 	}
@@ -92,6 +122,17 @@ public class CheckRecoveryConditionRequest extends RpcAcsRequest<CheckRecoveryCo
 		this.restoreTime = restoreTime;
 		if(restoreTime != null){
 			putQueryParameter("RestoreTime", restoreTime);
+		}
+	}
+
+	public String getDestRegion() {
+		return this.destRegion;
+	}
+
+	public void setDestRegion(String destRegion) {
+		this.destRegion = destRegion;
+		if(destRegion != null){
+			putQueryParameter("DestRegion", destRegion);
 		}
 	}
 
@@ -147,6 +188,17 @@ public class CheckRecoveryConditionRequest extends RpcAcsRequest<CheckRecoveryCo
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getRestoreType() {
+		return this.restoreType;
+	}
+
+	public void setRestoreType(String restoreType) {
+		this.restoreType = restoreType;
+		if(restoreType != null){
+			putQueryParameter("RestoreType", restoreType);
 		}
 	}
 

@@ -47,7 +47,7 @@ public class DescribeBackupTasksResponse extends AcsResponse {
 
 	public static class BackupTask {
 
-		private Long backupjobId;
+		private String backupjobId;
 
 		private String backupSetStatus;
 
@@ -57,11 +57,11 @@ public class DescribeBackupTasksResponse extends AcsResponse {
 
 		private String jobMode;
 
-		public Long getBackupjobId() {
+		public String getBackupjobId() {
 			return this.backupjobId;
 		}
 
-		public void setBackupjobId(Long backupjobId) {
+		public void setBackupjobId(String backupjobId) {
 			this.backupjobId = backupjobId;
 		}
 

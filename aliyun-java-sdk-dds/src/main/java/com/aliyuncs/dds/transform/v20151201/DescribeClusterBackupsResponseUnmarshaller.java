@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.dds.model.v20151201.DescribeClusterBackupsResponse;
 import com.aliyuncs.dds.model.v20151201.DescribeClusterBackupsResponse.ClusterBackup;
 import com.aliyuncs.dds.model.v20151201.DescribeClusterBackupsResponse.ClusterBackup.Backup;
+import com.aliyuncs.dds.model.v20151201.DescribeClusterBackupsResponse.ClusterBackup.Backup.ExtraInfo1;
 import com.aliyuncs.dds.model.v20151201.DescribeClusterBackupsResponse.ClusterBackup.ExtraInfo;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -44,6 +45,7 @@ public class DescribeClusterBackupsResponseUnmarshaller {
 			clusterBackup.setClusterBackupEndTime(_ctx.stringValue("DescribeClusterBackupsResponse.ClusterBackups["+ i +"].ClusterBackupEndTime"));
 			clusterBackup.setClusterBackupMode(_ctx.stringValue("DescribeClusterBackupsResponse.ClusterBackups["+ i +"].ClusterBackupMode"));
 			clusterBackup.setProgress(_ctx.stringValue("DescribeClusterBackupsResponse.ClusterBackups["+ i +"].Progress"));
+			clusterBackup.setAttachLogStatus(_ctx.stringValue("DescribeClusterBackupsResponse.ClusterBackups["+ i +"].AttachLogStatus"));
 
 			ExtraInfo extraInfo = new ExtraInfo();
 			extraInfo.setRegistryFromHistory(_ctx.stringValue("DescribeClusterBackupsResponse.ClusterBackups["+ i +"].ExtraInfo.RegistryFromHistory"));
@@ -62,6 +64,13 @@ public class DescribeClusterBackupsResponseUnmarshaller {
 				backup.setIsAvail(_ctx.stringValue("DescribeClusterBackupsResponse.ClusterBackups["+ i +"].Backups["+ j +"].IsAvail"));
 				backup.setBackupStatus(_ctx.stringValue("DescribeClusterBackupsResponse.ClusterBackups["+ i +"].Backups["+ j +"].BackupStatus"));
 				backup.setBackupName(_ctx.stringValue("DescribeClusterBackupsResponse.ClusterBackups["+ i +"].Backups["+ j +"].BackupName"));
+
+				ExtraInfo1 extraInfo1 = new ExtraInfo1();
+				extraInfo1.setNodeId(_ctx.stringValue("DescribeClusterBackupsResponse.ClusterBackups["+ i +"].Backups["+ j +"].ExtraInfo.NodeId"));
+				extraInfo1.setStorageSize(_ctx.stringValue("DescribeClusterBackupsResponse.ClusterBackups["+ i +"].Backups["+ j +"].ExtraInfo.StorageSize"));
+				extraInfo1.setInstanceClass(_ctx.stringValue("DescribeClusterBackupsResponse.ClusterBackups["+ i +"].Backups["+ j +"].ExtraInfo.InstanceClass"));
+				extraInfo1.setNodeType(_ctx.stringValue("DescribeClusterBackupsResponse.ClusterBackups["+ i +"].Backups["+ j +"].ExtraInfo.NodeType"));
+				backup.setExtraInfo1(extraInfo1);
 
 				backups.add(backup);
 			}

@@ -110,7 +110,7 @@ public class DescribePriceResponse extends AcsResponse {
 
 		private List<OptionalPromotion> optionalPromotions;
 
-		private List<PromDetal3> promDetailList;
+		private List<PromDetail3> promDetailList;
 
 		private List<String> ruleIds;
 
@@ -204,11 +204,11 @@ public class DescribePriceResponse extends AcsResponse {
 			this.optionalPromotions = optionalPromotions;
 		}
 
-		public List<PromDetal3> getPromDetailList() {
+		public List<PromDetail3> getPromDetailList() {
 			return this.promDetailList;
 		}
 
-		public void setPromDetailList(List<PromDetal3> promDetailList) {
+		public void setPromDetailList(List<PromDetail3> promDetailList) {
 			this.promDetailList = promDetailList;
 		}
 
@@ -252,7 +252,9 @@ public class DescribePriceResponse extends AcsResponse {
 
 			private Boolean contractActivity;
 
-			private List<PromDetal> promDetailList2;
+			private Double standDiscountPrice;
+
+			private List<PromDetail> promDetailList2;
 
 			private List<ModuleAttr> moduleAttrs;
 
@@ -346,11 +348,19 @@ public class DescribePriceResponse extends AcsResponse {
 				this.contractActivity = contractActivity;
 			}
 
-			public List<PromDetal> getPromDetailList2() {
+			public Double getStandDiscountPrice() {
+				return this.standDiscountPrice;
+			}
+
+			public void setStandDiscountPrice(Double standDiscountPrice) {
+				this.standDiscountPrice = standDiscountPrice;
+			}
+
+			public List<PromDetail> getPromDetailList2() {
 				return this.promDetailList2;
 			}
 
-			public void setPromDetailList2(List<PromDetal> promDetailList2) {
+			public void setPromDetailList2(List<PromDetail> promDetailList2) {
 				this.promDetailList2 = promDetailList2;
 			}
 
@@ -370,7 +380,7 @@ public class DescribePriceResponse extends AcsResponse {
 				this.depreciateInfo1 = depreciateInfo1;
 			}
 
-			public static class PromDetal {
+			public static class PromDetail {
 
 				private Double finalPromFee;
 
@@ -610,6 +620,8 @@ public class DescribePriceResponse extends AcsResponse {
 
 			private List<String> targetArticleItemCodes;
 
+			private List<String> promotionRuleIdList;
+
 			public String getActivityCategory() {
 				return this.activityCategory;
 			}
@@ -681,9 +693,17 @@ public class DescribePriceResponse extends AcsResponse {
 			public void setTargetArticleItemCodes(List<String> targetArticleItemCodes) {
 				this.targetArticleItemCodes = targetArticleItemCodes;
 			}
+
+			public List<String> getPromotionRuleIdList() {
+				return this.promotionRuleIdList;
+			}
+
+			public void setPromotionRuleIdList(List<String> promotionRuleIdList) {
+				this.promotionRuleIdList = promotionRuleIdList;
+			}
 		}
 
-		public static class PromDetal3 {
+		public static class PromDetail3 {
 
 			private Double finalPromFee;
 
@@ -786,6 +806,8 @@ public class DescribePriceResponse extends AcsResponse {
 
 			private String isShow;
 
+			private String startTime;
+
 			private ContractActivity contractActivity;
 
 			public Double getListPrice() {
@@ -858,6 +880,14 @@ public class DescribePriceResponse extends AcsResponse {
 
 			public void setIsShow(String isShow) {
 				this.isShow = isShow;
+			}
+
+			public String getStartTime() {
+				return this.startTime;
+			}
+
+			public void setStartTime(String startTime) {
+				this.startTime = startTime;
 			}
 
 			public ContractActivity getContractActivity() {
@@ -1162,9 +1192,9 @@ public class DescribePriceResponse extends AcsResponse {
 
 			private String activityCategory;
 
-			private List<Long> promotionRuleIdList;
+			private List<Long> promotionRuleIdList6;
 
-			private List<String> targetArticleItemCodes6;
+			private List<String> targetArticleItemCodes7;
 
 			public String getDescription() {
 				return this.description;
@@ -1254,20 +1284,20 @@ public class DescribePriceResponse extends AcsResponse {
 				this.activityCategory = activityCategory;
 			}
 
-			public List<Long> getPromotionRuleIdList() {
-				return this.promotionRuleIdList;
+			public List<Long> getPromotionRuleIdList6() {
+				return this.promotionRuleIdList6;
 			}
 
-			public void setPromotionRuleIdList(List<Long> promotionRuleIdList) {
-				this.promotionRuleIdList = promotionRuleIdList;
+			public void setPromotionRuleIdList6(List<Long> promotionRuleIdList6) {
+				this.promotionRuleIdList6 = promotionRuleIdList6;
 			}
 
-			public List<String> getTargetArticleItemCodes6() {
-				return this.targetArticleItemCodes6;
+			public List<String> getTargetArticleItemCodes7() {
+				return this.targetArticleItemCodes7;
 			}
 
-			public void setTargetArticleItemCodes6(List<String> targetArticleItemCodes6) {
-				this.targetArticleItemCodes6 = targetArticleItemCodes6;
+			public void setTargetArticleItemCodes7(List<String> targetArticleItemCodes7) {
+				this.targetArticleItemCodes7 = targetArticleItemCodes7;
 			}
 		}
 
@@ -1291,7 +1321,7 @@ public class DescribePriceResponse extends AcsResponse {
 
 			private String isShow;
 
-			private ContractActivity7 contractActivity7;
+			private ContractActivity8 contractActivity8;
 
 			public Double getListPrice() {
 				return this.listPrice;
@@ -1365,15 +1395,15 @@ public class DescribePriceResponse extends AcsResponse {
 				this.isShow = isShow;
 			}
 
-			public ContractActivity7 getContractActivity7() {
-				return this.contractActivity7;
+			public ContractActivity8 getContractActivity8() {
+				return this.contractActivity8;
 			}
 
-			public void setContractActivity7(ContractActivity7 contractActivity7) {
-				this.contractActivity7 = contractActivity7;
+			public void setContractActivity8(ContractActivity8 contractActivity8) {
+				this.contractActivity8 = contractActivity8;
 			}
 
-			public static class ContractActivity7 {
+			public static class ContractActivity8 {
 
 				private Double finalPromFee;
 
@@ -1387,7 +1417,7 @@ public class DescribePriceResponse extends AcsResponse {
 
 				private String activityName;
 
-				private List<Long> optionIds8;
+				private List<Long> optionIds9;
 
 				public Double getFinalPromFee() {
 					return this.finalPromFee;
@@ -1437,12 +1467,12 @@ public class DescribePriceResponse extends AcsResponse {
 					this.activityName = activityName;
 				}
 
-				public List<Long> getOptionIds8() {
-					return this.optionIds8;
+				public List<Long> getOptionIds9() {
+					return this.optionIds9;
 				}
 
-				public void setOptionIds8(List<Long> optionIds8) {
-					this.optionIds8 = optionIds8;
+				public void setOptionIds9(List<Long> optionIds9) {
+					this.optionIds9 = optionIds9;
 				}
 			}
 		}

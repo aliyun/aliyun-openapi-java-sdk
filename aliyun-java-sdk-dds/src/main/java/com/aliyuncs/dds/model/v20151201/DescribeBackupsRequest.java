@@ -29,6 +29,8 @@ public class DescribeBackupsRequest extends RpcAcsRequest<DescribeBackupsRespons
 
 	private String startTime;
 
+	private String srcRegion;
+
 	private Integer pageNumber;
 
 	private Integer pageSize;
@@ -36,6 +38,8 @@ public class DescribeBackupsRequest extends RpcAcsRequest<DescribeBackupsRespons
 	private String dBInstanceId;
 
 	private String nodeId;
+
+	private String destRegion;
 
 	private String resourceOwnerAccount;
 
@@ -74,6 +78,17 @@ public class DescribeBackupsRequest extends RpcAcsRequest<DescribeBackupsRespons
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public String getSrcRegion() {
+		return this.srcRegion;
+	}
+
+	public void setSrcRegion(String srcRegion) {
+		this.srcRegion = srcRegion;
+		if(srcRegion != null){
+			putQueryParameter("SrcRegion", srcRegion);
 		}
 	}
 
@@ -118,6 +133,17 @@ public class DescribeBackupsRequest extends RpcAcsRequest<DescribeBackupsRespons
 		this.nodeId = nodeId;
 		if(nodeId != null){
 			putQueryParameter("NodeId", nodeId);
+		}
+	}
+
+	public String getDestRegion() {
+		return this.destRegion;
+	}
+
+	public void setDestRegion(String destRegion) {
+		this.destRegion = destRegion;
+		if(destRegion != null){
+			putQueryParameter("DestRegion", destRegion);
 		}
 	}
 

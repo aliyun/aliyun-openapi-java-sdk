@@ -29,6 +29,8 @@ public class ReleasePublicNetworkAddressRequest extends RpcAcsRequest<ReleasePub
 
 	private String dBInstanceId;
 
+	private String connectionType;
+
 	private String nodeId;
 
 	private String resourceOwnerAccount;
@@ -64,6 +66,17 @@ public class ReleasePublicNetworkAddressRequest extends RpcAcsRequest<ReleasePub
 		this.dBInstanceId = dBInstanceId;
 		if(dBInstanceId != null){
 			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public String getConnectionType() {
+		return this.connectionType;
+	}
+
+	public void setConnectionType(String connectionType) {
+		this.connectionType = connectionType;
+		if(connectionType != null){
+			putQueryParameter("ConnectionType", connectionType);
 		}
 	}
 

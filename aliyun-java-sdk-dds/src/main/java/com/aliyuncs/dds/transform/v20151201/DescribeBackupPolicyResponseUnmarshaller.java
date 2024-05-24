@@ -32,6 +32,15 @@ public class DescribeBackupPolicyResponseUnmarshaller {
 		describeBackupPolicyResponse.setSnapshotBackupType(_ctx.stringValue("DescribeBackupPolicyResponse.SnapshotBackupType"));
 		describeBackupPolicyResponse.setBackupInterval(_ctx.integerValue("DescribeBackupPolicyResponse.BackupInterval"));
 		describeBackupPolicyResponse.setHighFrequencyBackupRetention(_ctx.stringValue("DescribeBackupPolicyResponse.HighFrequencyBackupRetention"));
+		describeBackupPolicyResponse.setBackupRetentionPolicyOnClusterDeletion(_ctx.integerValue("DescribeBackupPolicyResponse.BackupRetentionPolicyOnClusterDeletion"));
+		describeBackupPolicyResponse.setSrcRegion(_ctx.stringValue("DescribeBackupPolicyResponse.SrcRegion"));
+		describeBackupPolicyResponse.setDestRegion(_ctx.stringValue("DescribeBackupPolicyResponse.DestRegion"));
+		describeBackupPolicyResponse.setCrossRetentionType(_ctx.stringValue("DescribeBackupPolicyResponse.CrossRetentionType"));
+		describeBackupPolicyResponse.setCrossRetentionValue(_ctx.integerValue("DescribeBackupPolicyResponse.CrossRetentionValue"));
+		describeBackupPolicyResponse.setCrossBackupPeriod(_ctx.stringValue("DescribeBackupPolicyResponse.CrossBackupPeriod"));
+		describeBackupPolicyResponse.setEnableCrossLogBackup(_ctx.integerValue("DescribeBackupPolicyResponse.EnableCrossLogBackup"));
+		describeBackupPolicyResponse.setCrossLogRetentionType(_ctx.stringValue("DescribeBackupPolicyResponse.CrossLogRetentionType"));
+		describeBackupPolicyResponse.setCrossLogRetentionValue(_ctx.integerValue("DescribeBackupPolicyResponse.CrossLogRetentionValue"));
 	 
 	 	return describeBackupPolicyResponse;
 	}

@@ -93,13 +93,19 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 		private String backupEndTime;
 
-		private Integer backupId;
+		private String backupId;
 
 		private String backupDBNames;
 
 		private String backupMethod;
 
-		private Long backupJobId;
+		private String backupJobId;
+
+		private String backupName;
+
+		private String backupScale;
+
+		private Boolean isAvail;
 
 		public String getBackupStatus() {
 			return this.backupStatus;
@@ -165,11 +171,11 @@ public class DescribeBackupsResponse extends AcsResponse {
 			this.backupEndTime = backupEndTime;
 		}
 
-		public Integer getBackupId() {
+		public String getBackupId() {
 			return this.backupId;
 		}
 
-		public void setBackupId(Integer backupId) {
+		public void setBackupId(String backupId) {
 			this.backupId = backupId;
 		}
 
@@ -189,12 +195,36 @@ public class DescribeBackupsResponse extends AcsResponse {
 			this.backupMethod = backupMethod;
 		}
 
-		public Long getBackupJobId() {
+		public String getBackupJobId() {
 			return this.backupJobId;
 		}
 
-		public void setBackupJobId(Long backupJobId) {
+		public void setBackupJobId(String backupJobId) {
 			this.backupJobId = backupJobId;
+		}
+
+		public String getBackupName() {
+			return this.backupName;
+		}
+
+		public void setBackupName(String backupName) {
+			this.backupName = backupName;
+		}
+
+		public String getBackupScale() {
+			return this.backupScale;
+		}
+
+		public void setBackupScale(String backupScale) {
+			this.backupScale = backupScale;
+		}
+
+		public Boolean getIsAvail() {
+			return this.isAvail;
+		}
+
+		public void setIsAvail(Boolean isAvail) {
+			this.isAvail = isAvail;
 		}
 	}
 

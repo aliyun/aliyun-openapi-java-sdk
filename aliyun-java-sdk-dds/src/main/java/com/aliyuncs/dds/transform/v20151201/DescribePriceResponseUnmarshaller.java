@@ -21,7 +21,7 @@ import com.aliyuncs.dds.model.v20151201.DescribePriceResponse;
 import com.aliyuncs.dds.model.v20151201.DescribePriceResponse.Order;
 import com.aliyuncs.dds.model.v20151201.DescribePriceResponse.Order.Coupon;
 import com.aliyuncs.dds.model.v20151201.DescribePriceResponse.Order.DepreciateInfo5;
-import com.aliyuncs.dds.model.v20151201.DescribePriceResponse.Order.DepreciateInfo5.ContractActivity7;
+import com.aliyuncs.dds.model.v20151201.DescribePriceResponse.Order.DepreciateInfo5.ContractActivity8;
 import com.aliyuncs.dds.model.v20151201.DescribePriceResponse.Rule;
 import com.aliyuncs.dds.model.v20151201.DescribePriceResponse.SubOrder;
 import com.aliyuncs.dds.model.v20151201.DescribePriceResponse.SubOrder.DepreciateInfo;
@@ -29,9 +29,9 @@ import com.aliyuncs.dds.model.v20151201.DescribePriceResponse.SubOrder.Depreciat
 import com.aliyuncs.dds.model.v20151201.DescribePriceResponse.SubOrder.ModuleInstanceItem;
 import com.aliyuncs.dds.model.v20151201.DescribePriceResponse.SubOrder.ModuleInstanceItem.DepreciateInfo1;
 import com.aliyuncs.dds.model.v20151201.DescribePriceResponse.SubOrder.ModuleInstanceItem.ModuleAttr;
-import com.aliyuncs.dds.model.v20151201.DescribePriceResponse.SubOrder.ModuleInstanceItem.PromDetal;
+import com.aliyuncs.dds.model.v20151201.DescribePriceResponse.SubOrder.ModuleInstanceItem.PromDetail;
 import com.aliyuncs.dds.model.v20151201.DescribePriceResponse.SubOrder.OptionalPromotion;
-import com.aliyuncs.dds.model.v20151201.DescribePriceResponse.SubOrder.PromDetal3;
+import com.aliyuncs.dds.model.v20151201.DescribePriceResponse.SubOrder.PromDetail3;
 import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -76,20 +76,20 @@ public class DescribePriceResponseUnmarshaller {
 		depreciateInfo5.setIsContractActivity(_ctx.booleanValue("DescribePriceResponse.Order.DepreciateInfo.IsContractActivity"));
 		depreciateInfo5.setIsShow(_ctx.stringValue("DescribePriceResponse.Order.DepreciateInfo.IsShow"));
 
-		ContractActivity7 contractActivity7 = new ContractActivity7();
-		contractActivity7.setFinalPromFee(_ctx.doubleValue("DescribePriceResponse.Order.DepreciateInfo.ContractActivity.FinalPromFee"));
-		contractActivity7.setFinalFee(_ctx.doubleValue("DescribePriceResponse.Order.DepreciateInfo.ContractActivity.FinalFee"));
-		contractActivity7.setProdFee(_ctx.doubleValue("DescribePriceResponse.Order.DepreciateInfo.ContractActivity.ProdFee"));
-		contractActivity7.setActivityId(_ctx.longValue("DescribePriceResponse.Order.DepreciateInfo.ContractActivity.ActivityId"));
-		contractActivity7.setOptionCode(_ctx.stringValue("DescribePriceResponse.Order.DepreciateInfo.ContractActivity.OptionCode"));
-		contractActivity7.setActivityName(_ctx.stringValue("DescribePriceResponse.Order.DepreciateInfo.ContractActivity.ActivityName"));
+		ContractActivity8 contractActivity8 = new ContractActivity8();
+		contractActivity8.setFinalPromFee(_ctx.doubleValue("DescribePriceResponse.Order.DepreciateInfo.ContractActivity.FinalPromFee"));
+		contractActivity8.setFinalFee(_ctx.doubleValue("DescribePriceResponse.Order.DepreciateInfo.ContractActivity.FinalFee"));
+		contractActivity8.setProdFee(_ctx.doubleValue("DescribePriceResponse.Order.DepreciateInfo.ContractActivity.ProdFee"));
+		contractActivity8.setActivityId(_ctx.longValue("DescribePriceResponse.Order.DepreciateInfo.ContractActivity.ActivityId"));
+		contractActivity8.setOptionCode(_ctx.stringValue("DescribePriceResponse.Order.DepreciateInfo.ContractActivity.OptionCode"));
+		contractActivity8.setActivityName(_ctx.stringValue("DescribePriceResponse.Order.DepreciateInfo.ContractActivity.ActivityName"));
 
-		List<Long> optionIds8 = new ArrayList<Long>();
+		List<Long> optionIds9 = new ArrayList<Long>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePriceResponse.Order.DepreciateInfo.ContractActivity.OptionIds.Length"); i++) {
-			optionIds8.add(_ctx.longValue("DescribePriceResponse.Order.DepreciateInfo.ContractActivity.OptionIds["+ i +"]"));
+			optionIds9.add(_ctx.longValue("DescribePriceResponse.Order.DepreciateInfo.ContractActivity.OptionIds["+ i +"]"));
 		}
-		contractActivity7.setOptionIds8(optionIds8);
-		depreciateInfo5.setContractActivity7(contractActivity7);
+		contractActivity8.setOptionIds9(optionIds9);
+		depreciateInfo5.setContractActivity8(contractActivity8);
 		order.setDepreciateInfo5(depreciateInfo5);
 
 		List<Coupon> coupons = new ArrayList<Coupon>();
@@ -107,17 +107,17 @@ public class DescribePriceResponseUnmarshaller {
 			coupon.setOptionCode(_ctx.stringValue("DescribePriceResponse.Order.Coupons["+ i +"].OptionCode"));
 			coupon.setActivityCategory(_ctx.stringValue("DescribePriceResponse.Order.Coupons["+ i +"].ActivityCategory"));
 
-			List<Long> promotionRuleIdList = new ArrayList<Long>();
+			List<Long> promotionRuleIdList6 = new ArrayList<Long>();
 			for (int j = 0; j < _ctx.lengthValue("DescribePriceResponse.Order.Coupons["+ i +"].PromotionRuleIdList.Length"); j++) {
-				promotionRuleIdList.add(_ctx.longValue("DescribePriceResponse.Order.Coupons["+ i +"].PromotionRuleIdList["+ j +"]"));
+				promotionRuleIdList6.add(_ctx.longValue("DescribePriceResponse.Order.Coupons["+ i +"].PromotionRuleIdList["+ j +"]"));
 			}
-			coupon.setPromotionRuleIdList(promotionRuleIdList);
+			coupon.setPromotionRuleIdList6(promotionRuleIdList6);
 
-			List<String> targetArticleItemCodes6 = new ArrayList<String>();
+			List<String> targetArticleItemCodes7 = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribePriceResponse.Order.Coupons["+ i +"].TargetArticleItemCodes.Length"); j++) {
-				targetArticleItemCodes6.add(_ctx.stringValue("DescribePriceResponse.Order.Coupons["+ i +"].TargetArticleItemCodes["+ j +"]"));
+				targetArticleItemCodes7.add(_ctx.stringValue("DescribePriceResponse.Order.Coupons["+ i +"].TargetArticleItemCodes["+ j +"]"));
 			}
-			coupon.setTargetArticleItemCodes6(targetArticleItemCodes6);
+			coupon.setTargetArticleItemCodes7(targetArticleItemCodes7);
 
 			coupons.add(coupon);
 		}
@@ -153,6 +153,7 @@ public class DescribePriceResponseUnmarshaller {
 			depreciateInfo.setMonthPrice(_ctx.doubleValue("DescribePriceResponse.SubOrders["+ i +"].DepreciateInfo.MonthPrice"));
 			depreciateInfo.setIsContractActivity(_ctx.booleanValue("DescribePriceResponse.SubOrders["+ i +"].DepreciateInfo.IsContractActivity"));
 			depreciateInfo.setIsShow(_ctx.stringValue("DescribePriceResponse.SubOrders["+ i +"].DepreciateInfo.IsShow"));
+			depreciateInfo.setStartTime(_ctx.stringValue("DescribePriceResponse.SubOrders["+ i +"].DepreciateInfo.StartTime"));
 
 			ContractActivity contractActivity = new ContractActivity();
 			contractActivity.setFinalPromFee(_ctx.doubleValue("DescribePriceResponse.SubOrders["+ i +"].DepreciateInfo.ContractActivity.FinalPromFee"));
@@ -184,6 +185,7 @@ public class DescribePriceResponseUnmarshaller {
 				moduleInstanceItem.setStandPrice(_ctx.doubleValue("DescribePriceResponse.SubOrders["+ i +"].ModuleInstance["+ j +"].StandPrice"));
 				moduleInstanceItem.setTotalProductFee(_ctx.doubleValue("DescribePriceResponse.SubOrders["+ i +"].ModuleInstance["+ j +"].TotalProductFee"));
 				moduleInstanceItem.setContractActivity(_ctx.booleanValue("DescribePriceResponse.SubOrders["+ i +"].ModuleInstance["+ j +"].ContractActivity"));
+				moduleInstanceItem.setStandDiscountPrice(_ctx.doubleValue("DescribePriceResponse.SubOrders["+ i +"].ModuleInstance["+ j +"].StandDiscountPrice"));
 
 				DepreciateInfo1 depreciateInfo1 = new DepreciateInfo1();
 				depreciateInfo1.setListPrice(_ctx.doubleValue("DescribePriceResponse.SubOrders["+ i +"].ModuleInstance["+ j +"].DepreciateInfo.ListPrice"));
@@ -197,19 +199,19 @@ public class DescribePriceResponseUnmarshaller {
 				depreciateInfo1.setIsShow(_ctx.stringValue("DescribePriceResponse.SubOrders["+ i +"].ModuleInstance["+ j +"].DepreciateInfo.IsShow"));
 				moduleInstanceItem.setDepreciateInfo1(depreciateInfo1);
 
-				List<PromDetal> promDetailList2 = new ArrayList<PromDetal>();
+				List<PromDetail> promDetailList2 = new ArrayList<PromDetail>();
 				for (int k = 0; k < _ctx.lengthValue("DescribePriceResponse.SubOrders["+ i +"].ModuleInstance["+ j +"].PromDetailList.Length"); k++) {
-					PromDetal promDetal = new PromDetal();
-					promDetal.setFinalPromFee(_ctx.doubleValue("DescribePriceResponse.SubOrders["+ i +"].ModuleInstance["+ j +"].PromDetailList["+ k +"].FinalPromFee"));
-					promDetal.setActivityExtInfo(_ctx.mapValue("DescribePriceResponse.SubOrders["+ i +"].ModuleInstance["+ j +"].PromDetailList["+ k +"].ActivityExtInfo"));
-					promDetal.setOptionCode(_ctx.stringValue("DescribePriceResponse.SubOrders["+ i +"].ModuleInstance["+ j +"].PromDetailList["+ k +"].OptionCode"));
-					promDetal.setPromType(_ctx.stringValue("DescribePriceResponse.SubOrders["+ i +"].ModuleInstance["+ j +"].PromDetailList["+ k +"].PromType"));
-					promDetal.setPromotionId(_ctx.longValue("DescribePriceResponse.SubOrders["+ i +"].ModuleInstance["+ j +"].PromDetailList["+ k +"].PromotionId"));
-					promDetal.setPromotionName(_ctx.stringValue("DescribePriceResponse.SubOrders["+ i +"].ModuleInstance["+ j +"].PromDetailList["+ k +"].PromotionName"));
-					promDetal.setPromotionCode(_ctx.stringValue("DescribePriceResponse.SubOrders["+ i +"].ModuleInstance["+ j +"].PromDetailList["+ k +"].PromotionCode"));
-					promDetal.setDerivedPromType(_ctx.stringValue("DescribePriceResponse.SubOrders["+ i +"].ModuleInstance["+ j +"].PromDetailList["+ k +"].DerivedPromType"));
+					PromDetail promDetail = new PromDetail();
+					promDetail.setFinalPromFee(_ctx.doubleValue("DescribePriceResponse.SubOrders["+ i +"].ModuleInstance["+ j +"].PromDetailList["+ k +"].FinalPromFee"));
+					promDetail.setActivityExtInfo(_ctx.mapValue("DescribePriceResponse.SubOrders["+ i +"].ModuleInstance["+ j +"].PromDetailList["+ k +"].ActivityExtInfo"));
+					promDetail.setOptionCode(_ctx.stringValue("DescribePriceResponse.SubOrders["+ i +"].ModuleInstance["+ j +"].PromDetailList["+ k +"].OptionCode"));
+					promDetail.setPromType(_ctx.stringValue("DescribePriceResponse.SubOrders["+ i +"].ModuleInstance["+ j +"].PromDetailList["+ k +"].PromType"));
+					promDetail.setPromotionId(_ctx.longValue("DescribePriceResponse.SubOrders["+ i +"].ModuleInstance["+ j +"].PromDetailList["+ k +"].PromotionId"));
+					promDetail.setPromotionName(_ctx.stringValue("DescribePriceResponse.SubOrders["+ i +"].ModuleInstance["+ j +"].PromDetailList["+ k +"].PromotionName"));
+					promDetail.setPromotionCode(_ctx.stringValue("DescribePriceResponse.SubOrders["+ i +"].ModuleInstance["+ j +"].PromDetailList["+ k +"].PromotionCode"));
+					promDetail.setDerivedPromType(_ctx.stringValue("DescribePriceResponse.SubOrders["+ i +"].ModuleInstance["+ j +"].PromDetailList["+ k +"].DerivedPromType"));
 
-					promDetailList2.add(promDetal);
+					promDetailList2.add(promDetail);
 				}
 				moduleInstanceItem.setPromDetailList2(promDetailList2);
 
@@ -247,23 +249,29 @@ public class DescribePriceResponseUnmarshaller {
 				}
 				optionalPromotion.setTargetArticleItemCodes(targetArticleItemCodes);
 
+				List<String> promotionRuleIdList = new ArrayList<String>();
+				for (int k = 0; k < _ctx.lengthValue("DescribePriceResponse.SubOrders["+ i +"].OptionalPromotions["+ j +"].PromotionRuleIdList.Length"); k++) {
+					promotionRuleIdList.add(_ctx.stringValue("DescribePriceResponse.SubOrders["+ i +"].OptionalPromotions["+ j +"].PromotionRuleIdList["+ k +"]"));
+				}
+				optionalPromotion.setPromotionRuleIdList(promotionRuleIdList);
+
 				optionalPromotions.add(optionalPromotion);
 			}
 			subOrder.setOptionalPromotions(optionalPromotions);
 
-			List<PromDetal3> promDetailList = new ArrayList<PromDetal3>();
+			List<PromDetail3> promDetailList = new ArrayList<PromDetail3>();
 			for (int j = 0; j < _ctx.lengthValue("DescribePriceResponse.SubOrders["+ i +"].PromDetailList.Length"); j++) {
-				PromDetal3 promDetal3 = new PromDetal3();
-				promDetal3.setFinalPromFee(_ctx.doubleValue("DescribePriceResponse.SubOrders["+ i +"].PromDetailList["+ j +"].FinalPromFee"));
-				promDetal3.setActivityExtInfo(_ctx.mapValue("DescribePriceResponse.SubOrders["+ i +"].PromDetailList["+ j +"].ActivityExtInfo"));
-				promDetal3.setOptionCode(_ctx.stringValue("DescribePriceResponse.SubOrders["+ i +"].PromDetailList["+ j +"].OptionCode"));
-				promDetal3.setPromType(_ctx.stringValue("DescribePriceResponse.SubOrders["+ i +"].PromDetailList["+ j +"].PromType"));
-				promDetal3.setPromotionId(_ctx.longValue("DescribePriceResponse.SubOrders["+ i +"].PromDetailList["+ j +"].PromotionId"));
-				promDetal3.setPromotionName(_ctx.stringValue("DescribePriceResponse.SubOrders["+ i +"].PromDetailList["+ j +"].PromotionName"));
-				promDetal3.setPromotionCode(_ctx.stringValue("DescribePriceResponse.SubOrders["+ i +"].PromDetailList["+ j +"].PromotionCode"));
-				promDetal3.setDerivedPromType(_ctx.stringValue("DescribePriceResponse.SubOrders["+ i +"].PromDetailList["+ j +"].DerivedPromType"));
+				PromDetail3 promDetail3 = new PromDetail3();
+				promDetail3.setFinalPromFee(_ctx.doubleValue("DescribePriceResponse.SubOrders["+ i +"].PromDetailList["+ j +"].FinalPromFee"));
+				promDetail3.setActivityExtInfo(_ctx.mapValue("DescribePriceResponse.SubOrders["+ i +"].PromDetailList["+ j +"].ActivityExtInfo"));
+				promDetail3.setOptionCode(_ctx.stringValue("DescribePriceResponse.SubOrders["+ i +"].PromDetailList["+ j +"].OptionCode"));
+				promDetail3.setPromType(_ctx.stringValue("DescribePriceResponse.SubOrders["+ i +"].PromDetailList["+ j +"].PromType"));
+				promDetail3.setPromotionId(_ctx.longValue("DescribePriceResponse.SubOrders["+ i +"].PromDetailList["+ j +"].PromotionId"));
+				promDetail3.setPromotionName(_ctx.stringValue("DescribePriceResponse.SubOrders["+ i +"].PromDetailList["+ j +"].PromotionName"));
+				promDetail3.setPromotionCode(_ctx.stringValue("DescribePriceResponse.SubOrders["+ i +"].PromDetailList["+ j +"].PromotionCode"));
+				promDetail3.setDerivedPromType(_ctx.stringValue("DescribePriceResponse.SubOrders["+ i +"].PromDetailList["+ j +"].DerivedPromType"));
 
-				promDetailList.add(promDetal3);
+				promDetailList.add(promDetail3);
 			}
 			subOrder.setPromDetailList(promDetailList);
 
