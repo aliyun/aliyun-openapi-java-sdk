@@ -27,6 +27,8 @@ public class DescribeL7RsPolicyResponse extends AcsResponse {
 
 	private String proxyMode;
 
+	private Integer upstreamRetry;
+
 	private String requestId;
 
 	private List<AttributeItem> attributes;
@@ -37,6 +39,14 @@ public class DescribeL7RsPolicyResponse extends AcsResponse {
 
 	public void setProxyMode(String proxyMode) {
 		this.proxyMode = proxyMode;
+	}
+
+	public Integer getUpstreamRetry() {
+		return this.upstreamRetry;
+	}
+
+	public void setUpstreamRetry(Integer upstreamRetry) {
+		this.upstreamRetry = upstreamRetry;
 	}
 
 	public String getRequestId() {
@@ -91,12 +101,72 @@ public class DescribeL7RsPolicyResponse extends AcsResponse {
 
 			private Integer weight;
 
+			private Integer connectTimeout;
+
+			private Integer failTimeout;
+
+			private Integer maxFails;
+
+			private String mode;
+
+			private Integer readTimeout;
+
+			private Integer sendTimeout;
+
 			public Integer getWeight() {
 				return this.weight;
 			}
 
 			public void setWeight(Integer weight) {
 				this.weight = weight;
+			}
+
+			public Integer getConnectTimeout() {
+				return this.connectTimeout;
+			}
+
+			public void setConnectTimeout(Integer connectTimeout) {
+				this.connectTimeout = connectTimeout;
+			}
+
+			public Integer getFailTimeout() {
+				return this.failTimeout;
+			}
+
+			public void setFailTimeout(Integer failTimeout) {
+				this.failTimeout = failTimeout;
+			}
+
+			public Integer getMaxFails() {
+				return this.maxFails;
+			}
+
+			public void setMaxFails(Integer maxFails) {
+				this.maxFails = maxFails;
+			}
+
+			public String getMode() {
+				return this.mode;
+			}
+
+			public void setMode(String mode) {
+				this.mode = mode;
+			}
+
+			public Integer getReadTimeout() {
+				return this.readTimeout;
+			}
+
+			public void setReadTimeout(Integer readTimeout) {
+				this.readTimeout = readTimeout;
+			}
+
+			public Integer getSendTimeout() {
+				return this.sendTimeout;
+			}
+
+			public void setSendTimeout(Integer sendTimeout) {
+				this.sendTimeout = sendTimeout;
 			}
 		}
 	}

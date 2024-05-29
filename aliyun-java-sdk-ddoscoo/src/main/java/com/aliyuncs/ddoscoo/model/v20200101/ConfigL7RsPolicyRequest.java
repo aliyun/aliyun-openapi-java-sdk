@@ -25,6 +25,8 @@ import com.aliyuncs.ddoscoo.Endpoint;
 public class ConfigL7RsPolicyRequest extends RpcAcsRequest<ConfigL7RsPolicyResponse> {
 	   
 
+	private Integer upstreamRetry;
+
 	private String resourceGroupId;
 
 	private String domain;
@@ -37,6 +39,17 @@ public class ConfigL7RsPolicyRequest extends RpcAcsRequest<ConfigL7RsPolicyRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Integer getUpstreamRetry() {
+		return this.upstreamRetry;
+	}
+
+	public void setUpstreamRetry(Integer upstreamRetry) {
+		this.upstreamRetry = upstreamRetry;
+		if(upstreamRetry != null){
+			putQueryParameter("UpstreamRetry", upstreamRetry.toString());
+		}
 	}
 
 	public String getResourceGroupId() {

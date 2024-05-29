@@ -1,3 +1,6 @@
+2024-05-29 Version: 1.0.13
+- Support body
+
 2024-04-28 Version: 1.0.12
 - Update sdk.
 
