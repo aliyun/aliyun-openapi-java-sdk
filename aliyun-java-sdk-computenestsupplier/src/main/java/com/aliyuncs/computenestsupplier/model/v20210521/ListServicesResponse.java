@@ -143,6 +143,8 @@ public class ListServicesResponse extends AcsResponse {
 
 		private Boolean hasBeta;
 
+		private String buildInfo;
+
 		private List<ServiceInfo> serviceInfos;
 
 		private List<Tag> tags;
@@ -411,6 +413,14 @@ public class ListServicesResponse extends AcsResponse {
 
 		public void setHasBeta(Boolean hasBeta) {
 			this.hasBeta = hasBeta;
+		}
+
+		public String getBuildInfo() {
+			return this.buildInfo;
+		}
+
+		public void setBuildInfo(String buildInfo) {
+			this.buildInfo = buildInfo;
 		}
 
 		public List<ServiceInfo> getServiceInfos() {

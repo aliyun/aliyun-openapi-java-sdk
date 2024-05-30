@@ -16,6 +16,8 @@ package com.aliyuncs.computenestsupplier.model.v20210521;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.computenestsupplier.Endpoint;
 
@@ -55,6 +57,9 @@ public class UpdateServiceRequest extends RpcAcsRequest<UpdateServiceResponse> {
 	private String logMetadata;
 
 	private List<ServiceInfo> serviceInfos;
+
+	@SerializedName("updateOption")
+	private UpdateOption updateOption;
 
 	private String serviceId;
 
@@ -249,6 +254,17 @@ public class UpdateServiceRequest extends RpcAcsRequest<UpdateServiceResponse> {
 		}	
 	}
 
+	public UpdateOption getUpdateOption() {
+		return this.updateOption;
+	}
+
+	public void setUpdateOption(UpdateOption updateOption) {
+		this.updateOption = updateOption;	
+		if (updateOption != null) {
+			putQueryParameter("UpdateOption" , new Gson().toJson(updateOption));
+		}	
+	}
+
 	public String getServiceId() {
 		return this.serviceId;
 	}
@@ -376,6 +392,20 @@ public class UpdateServiceRequest extends RpcAcsRequest<UpdateServiceResponse> {
 			public void setUrl(String url) {
 				this.url = url;
 			}
+		}
+	}
+
+	public static class UpdateOption {
+
+		@SerializedName("UpdateFrom")
+		private String updateFrom;
+
+		public String getUpdateFrom() {
+			return this.updateFrom;
+		}
+
+		public void setUpdateFrom(String updateFrom) {
+			this.updateFrom = updateFrom;
 		}
 	}
 

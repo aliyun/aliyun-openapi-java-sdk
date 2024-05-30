@@ -70,6 +70,7 @@ public class ListServicesResponseUnmarshaller {
 			service.setServiceDiscoverable(_ctx.stringValue("ListServicesResponse.Services["+ i +"].ServiceDiscoverable"));
 			service.setHasDraft(_ctx.booleanValue("ListServicesResponse.Services["+ i +"].HasDraft"));
 			service.setHasBeta(_ctx.booleanValue("ListServicesResponse.Services["+ i +"].HasBeta"));
+			service.setBuildInfo(_ctx.stringValue("ListServicesResponse.Services["+ i +"].BuildInfo"));
 
 			Commodity commodity = new Commodity();
 			commodity.setCommodityCode(_ctx.stringValue("ListServicesResponse.Services["+ i +"].Commodity.CommodityCode"));
