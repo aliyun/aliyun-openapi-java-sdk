@@ -25,7 +25,13 @@ import com.aliyuncs.cams.Endpoint;
 public class QueryChatappBindWabaRequest extends RpcAcsRequest<QueryChatappBindWabaResponse> {
 	   
 
+	private Long resourceOwnerId;
+
 	private String isvCode;
+
+	private String resourceOwnerAccount;
+
+	private Long ownerId;
 
 	private String custSpaceId;
 	public QueryChatappBindWabaRequest() {
@@ -37,6 +43,17 @@ public class QueryChatappBindWabaRequest extends RpcAcsRequest<QueryChatappBindW
 		} catch (Exception e) {}
 	}
 
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
 	public String getIsvCode() {
 		return this.isvCode;
 	}
@@ -45,6 +62,28 @@ public class QueryChatappBindWabaRequest extends RpcAcsRequest<QueryChatappBindW
 		this.isvCode = isvCode;
 		if(isvCode != null){
 			putQueryParameter("IsvCode", isvCode);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

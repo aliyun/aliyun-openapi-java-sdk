@@ -14,6 +14,7 @@
 
 package com.aliyuncs.cams.model.v20200606;
 
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.cams.transform.v20200606.QueryChatappBindWabaResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -24,15 +25,33 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryChatappBindWabaResponse extends AcsResponse {
 
+	private String accessDeniedDetail;
+
+	private String message;
+
 	private String requestId;
 
 	private String code;
 
-	private String message;
-
-	private String accessDeniedDetail;
+	private Boolean success;
 
 	private Data data;
+
+	public String getAccessDeniedDetail() {
+		return this.accessDeniedDetail;
+	}
+
+	public void setAccessDeniedDetail(String accessDeniedDetail) {
+		this.accessDeniedDetail = accessDeniedDetail;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -50,20 +69,12 @@ public class QueryChatappBindWabaResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public String getAccessDeniedDetail() {
-		return this.accessDeniedDetail;
-	}
-
-	public void setAccessDeniedDetail(String accessDeniedDetail) {
-		this.accessDeniedDetail = accessDeniedDetail;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -76,22 +87,26 @@ public class QueryChatappBindWabaResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String name;
+		private Map<Object,Object> authInternationalRateEligibility;
 
 		private String currency;
 
 		private String id;
 
-		private String messageTemplateNamespace;
-
 		private String accountReviewStatus;
 
-		public String getName() {
-			return this.name;
+		private String messageTemplateNamespace;
+
+		private String name;
+
+		private String primaryBusinessLocation;
+
+		public Map<Object,Object> getAuthInternationalRateEligibility() {
+			return this.authInternationalRateEligibility;
 		}
 
-		public void setName(String name) {
-			this.name = name;
+		public void setAuthInternationalRateEligibility(Map<Object,Object> authInternationalRateEligibility) {
+			this.authInternationalRateEligibility = authInternationalRateEligibility;
 		}
 
 		public String getCurrency() {
@@ -110,6 +125,14 @@ public class QueryChatappBindWabaResponse extends AcsResponse {
 			this.id = id;
 		}
 
+		public String getAccountReviewStatus() {
+			return this.accountReviewStatus;
+		}
+
+		public void setAccountReviewStatus(String accountReviewStatus) {
+			this.accountReviewStatus = accountReviewStatus;
+		}
+
 		public String getMessageTemplateNamespace() {
 			return this.messageTemplateNamespace;
 		}
@@ -118,12 +141,20 @@ public class QueryChatappBindWabaResponse extends AcsResponse {
 			this.messageTemplateNamespace = messageTemplateNamespace;
 		}
 
-		public String getAccountReviewStatus() {
-			return this.accountReviewStatus;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setAccountReviewStatus(String accountReviewStatus) {
-			this.accountReviewStatus = accountReviewStatus;
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getPrimaryBusinessLocation() {
+			return this.primaryBusinessLocation;
+		}
+
+		public void setPrimaryBusinessLocation(String primaryBusinessLocation) {
+			this.primaryBusinessLocation = primaryBusinessLocation;
 		}
 	}
 

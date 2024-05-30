@@ -15,6 +15,8 @@
 package com.aliyuncs.cams.model.v20200606;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cams.Endpoint;
 
@@ -25,17 +27,12 @@ import com.aliyuncs.cams.Endpoint;
 public class ListFlowRequest extends RpcAcsRequest<ListFlowResponse> {
 	   
 
-	private Long resourceOwnerId;
+	private String custSpaceId;
 
-	private Long pageSize;
+	private String flowName;
 
-	private String resourceOwnerAccount;
-
-	private Long ownerId;
-
-	private Long pageNo;
-
-	private String status;
+	@SerializedName("page")
+	private Page page;
 	public ListFlowRequest() {
 		super("cams", "2020-06-06", "ListFlow", "cams");
 		setMethod(MethodType.POST);
@@ -45,69 +42,61 @@ public class ListFlowRequest extends RpcAcsRequest<ListFlowResponse> {
 		} catch (Exception e) {}
 	}
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
+	public String getCustSpaceId() {
+		return this.custSpaceId;
 	}
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+	public void setCustSpaceId(String custSpaceId) {
+		this.custSpaceId = custSpaceId;
+		if(custSpaceId != null){
+			putBodyParameter("CustSpaceId", custSpaceId);
 		}
 	}
 
-	public Long getPageSize() {
-		return this.pageSize;
+	public String getFlowName() {
+		return this.flowName;
 	}
 
-	public void setPageSize(Long pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
+	public void setFlowName(String flowName) {
+		this.flowName = flowName;
+		if(flowName != null){
+			putBodyParameter("FlowName", flowName);
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
+	public Page getPage() {
+		return this.page;
 	}
 
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	public void setPage(Page page) {
+		this.page = page;	
+		if (page != null) {
+			putBodyParameter("Page" , new Gson().toJson(page));
+		}	
+	}
+
+	public static class Page {
+
+		@SerializedName("Size")
+		private Integer size;
+
+		@SerializedName("Index")
+		private Integer index;
+
+		public Integer getSize() {
+			return this.size;
 		}
-	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
+		public void setSize(Integer size) {
+			this.size = size;
 		}
-	}
 
-	public Long getPageNo() {
-		return this.pageNo;
-	}
-
-	public void setPageNo(Long pageNo) {
-		this.pageNo = pageNo;
-		if(pageNo != null){
-			putQueryParameter("PageNo", pageNo.toString());
+		public Integer getIndex() {
+			return this.index;
 		}
-	}
 
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-		if(status != null){
-			putQueryParameter("Status", status);
+		public void setIndex(Integer index) {
+			this.index = index;
 		}
 	}
 

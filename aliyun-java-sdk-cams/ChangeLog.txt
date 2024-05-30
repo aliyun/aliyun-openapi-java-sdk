@@ -1,3 +1,6 @@
+2024-05-30 Version: 1.0.12
+- Generated 2020-06-06 for `cams`.
+
 2024-04-11 Version: 1.0.11
 - Generated 2020-06-06 for `cams`.
 

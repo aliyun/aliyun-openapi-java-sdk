@@ -15,7 +15,6 @@
 package com.aliyuncs.cams.model.v20200606;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.cams.transform.v20200606.ListFlowResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -26,40 +25,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListFlowResponse extends AcsResponse {
 
-	private Map<Object,Object> response;
-
-	private String accessDeniedDetail;
-
-	private String message;
+	private String requestId;
 
 	private String code;
 
-	private Boolean success;
+	private String message;
 
-	private List<DataItem> data;
+	private List<返回结果> data;
 
-	public Map<Object,Object> getResponse() {
-		return this.response;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setResponse(Map<Object,Object> response) {
-		this.response = response;
-	}
-
-	public String getAccessDeniedDetail() {
-		return this.accessDeniedDetail;
-	}
-
-	public void setAccessDeniedDetail(String accessDeniedDetail) {
-		this.accessDeniedDetail = accessDeniedDetail;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getCode() {
@@ -70,112 +49,52 @@ public class ListFlowResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
-	public List<DataItem> getData() {
+	public List<返回结果> getData() {
 		return this.data;
 	}
 
-	public void setData(List<DataItem> data) {
+	public void setData(List<返回结果> data) {
 		this.data = data;
 	}
 
-	public static class DataItem {
+	public static class 返回结果 {
 
-		private String status;
+		private String flowId;
 
-		private String gmtCreate;
+		private String flowName;
 
-		private String gmtModified;
+		private List<String> categories;
 
-		private String title;
-
-		private String partnerId;
-
-		private String id;
-
-		private String code;
-
-		private String bizCode;
-
-		private String remark;
-
-		public String getStatus() {
-			return this.status;
+		public String getFlowId() {
+			return this.flowId;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setFlowId(String flowId) {
+			this.flowId = flowId;
 		}
 
-		public String getGmtCreate() {
-			return this.gmtCreate;
+		public String getFlowName() {
+			return this.flowName;
 		}
 
-		public void setGmtCreate(String gmtCreate) {
-			this.gmtCreate = gmtCreate;
+		public void setFlowName(String flowName) {
+			this.flowName = flowName;
 		}
 
-		public String getGmtModified() {
-			return this.gmtModified;
+		public List<String> getCategories() {
+			return this.categories;
 		}
 
-		public void setGmtModified(String gmtModified) {
-			this.gmtModified = gmtModified;
-		}
-
-		public String getTitle() {
-			return this.title;
-		}
-
-		public void setTitle(String title) {
-			this.title = title;
-		}
-
-		public String getPartnerId() {
-			return this.partnerId;
-		}
-
-		public void setPartnerId(String partnerId) {
-			this.partnerId = partnerId;
-		}
-
-		public String getId() {
-			return this.id;
-		}
-
-		public void setId(String id) {
-			this.id = id;
-		}
-
-		public String getCode() {
-			return this.code;
-		}
-
-		public void setCode(String code) {
-			this.code = code;
-		}
-
-		public String getBizCode() {
-			return this.bizCode;
-		}
-
-		public void setBizCode(String bizCode) {
-			this.bizCode = bizCode;
-		}
-
-		public String getRemark() {
-			return this.remark;
-		}
-
-		public void setRemark(String remark) {
-			this.remark = remark;
+		public void setCategories(List<String> categories) {
+			this.categories = categories;
 		}
 	}
 

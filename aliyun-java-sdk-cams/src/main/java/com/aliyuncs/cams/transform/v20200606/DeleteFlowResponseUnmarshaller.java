@@ -15,7 +15,6 @@
 package com.aliyuncs.cams.transform.v20200606;
 
 import com.aliyuncs.cams.model.v20200606.DeleteFlowResponse;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -23,11 +22,9 @@ public class DeleteFlowResponseUnmarshaller {
 
 	public static DeleteFlowResponse unmarshall(DeleteFlowResponse deleteFlowResponse, UnmarshallerContext _ctx) {
 		
-		deleteFlowResponse.setResponse(_ctx.mapValue("DeleteFlowResponse.Response"));
-		deleteFlowResponse.setAccessDeniedDetail(_ctx.stringValue("DeleteFlowResponse.AccessDeniedDetail"));
-		deleteFlowResponse.setMessage(_ctx.stringValue("DeleteFlowResponse.Message"));
+		deleteFlowResponse.setRequestId(_ctx.stringValue("DeleteFlowResponse.RequestId"));
 		deleteFlowResponse.setCode(_ctx.stringValue("DeleteFlowResponse.Code"));
-		deleteFlowResponse.setSuccess(_ctx.booleanValue("DeleteFlowResponse.Success"));
+		deleteFlowResponse.setMessage(_ctx.stringValue("DeleteFlowResponse.Message"));
 	 
 	 	return deleteFlowResponse;
 	}

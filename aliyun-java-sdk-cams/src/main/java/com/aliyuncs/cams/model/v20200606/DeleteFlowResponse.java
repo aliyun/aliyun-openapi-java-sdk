@@ -14,7 +14,6 @@
 
 package com.aliyuncs.cams.model.v20200606;
 
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.cams.transform.v20200606.DeleteFlowResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -25,38 +24,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DeleteFlowResponse extends AcsResponse {
 
-	private Map<Object,Object> response;
-
-	private String accessDeniedDetail;
-
-	private String message;
+	private String requestId;
 
 	private String code;
 
-	private Boolean success;
+	private String message;
 
-	public Map<Object,Object> getResponse() {
-		return this.response;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setResponse(Map<Object,Object> response) {
-		this.response = response;
-	}
-
-	public String getAccessDeniedDetail() {
-		return this.accessDeniedDetail;
-	}
-
-	public void setAccessDeniedDetail(String accessDeniedDetail) {
-		this.accessDeniedDetail = accessDeniedDetail;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getCode() {
@@ -67,12 +46,12 @@ public class DeleteFlowResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	@Override

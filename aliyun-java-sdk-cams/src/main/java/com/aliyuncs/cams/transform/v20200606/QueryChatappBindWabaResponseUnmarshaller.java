@@ -16,6 +16,7 @@ package com.aliyuncs.cams.transform.v20200606;
 
 import com.aliyuncs.cams.model.v20200606.QueryChatappBindWabaResponse;
 import com.aliyuncs.cams.model.v20200606.QueryChatappBindWabaResponse.Data;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -24,16 +25,19 @@ public class QueryChatappBindWabaResponseUnmarshaller {
 	public static QueryChatappBindWabaResponse unmarshall(QueryChatappBindWabaResponse queryChatappBindWabaResponse, UnmarshallerContext _ctx) {
 		
 		queryChatappBindWabaResponse.setRequestId(_ctx.stringValue("QueryChatappBindWabaResponse.RequestId"));
-		queryChatappBindWabaResponse.setCode(_ctx.stringValue("QueryChatappBindWabaResponse.Code"));
-		queryChatappBindWabaResponse.setMessage(_ctx.stringValue("QueryChatappBindWabaResponse.Message"));
 		queryChatappBindWabaResponse.setAccessDeniedDetail(_ctx.stringValue("QueryChatappBindWabaResponse.AccessDeniedDetail"));
+		queryChatappBindWabaResponse.setMessage(_ctx.stringValue("QueryChatappBindWabaResponse.Message"));
+		queryChatappBindWabaResponse.setCode(_ctx.stringValue("QueryChatappBindWabaResponse.Code"));
+		queryChatappBindWabaResponse.setSuccess(_ctx.booleanValue("QueryChatappBindWabaResponse.Success"));
 
 		Data data = new Data();
-		data.setName(_ctx.stringValue("QueryChatappBindWabaResponse.Data.Name"));
+		data.setAuthInternationalRateEligibility(_ctx.mapValue("QueryChatappBindWabaResponse.Data.AuthInternationalRateEligibility"));
 		data.setCurrency(_ctx.stringValue("QueryChatappBindWabaResponse.Data.Currency"));
 		data.setId(_ctx.stringValue("QueryChatappBindWabaResponse.Data.Id"));
-		data.setMessageTemplateNamespace(_ctx.stringValue("QueryChatappBindWabaResponse.Data.MessageTemplateNamespace"));
 		data.setAccountReviewStatus(_ctx.stringValue("QueryChatappBindWabaResponse.Data.AccountReviewStatus"));
+		data.setMessageTemplateNamespace(_ctx.stringValue("QueryChatappBindWabaResponse.Data.MessageTemplateNamespace"));
+		data.setName(_ctx.stringValue("QueryChatappBindWabaResponse.Data.Name"));
+		data.setPrimaryBusinessLocation(_ctx.stringValue("QueryChatappBindWabaResponse.Data.PrimaryBusinessLocation"));
 		queryChatappBindWabaResponse.setData(data);
 	 
 	 	return queryChatappBindWabaResponse;

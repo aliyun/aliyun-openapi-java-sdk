@@ -18,8 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.cams.model.v20200606.ListFlowResponse;
-import com.aliyuncs.cams.model.v20200606.ListFlowResponse.DataItem;
-import java.util.Map;
+import com.aliyuncs.cams.model.v20200606.ListFlowResponse.返回结果;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -27,26 +26,23 @@ public class ListFlowResponseUnmarshaller {
 
 	public static ListFlowResponse unmarshall(ListFlowResponse listFlowResponse, UnmarshallerContext _ctx) {
 		
-		listFlowResponse.setResponse(_ctx.mapValue("ListFlowResponse.Response"));
-		listFlowResponse.setAccessDeniedDetail(_ctx.stringValue("ListFlowResponse.AccessDeniedDetail"));
-		listFlowResponse.setMessage(_ctx.stringValue("ListFlowResponse.Message"));
+		listFlowResponse.setRequestId(_ctx.stringValue("ListFlowResponse.RequestId"));
 		listFlowResponse.setCode(_ctx.stringValue("ListFlowResponse.Code"));
-		listFlowResponse.setSuccess(_ctx.booleanValue("ListFlowResponse.Success"));
+		listFlowResponse.setMessage(_ctx.stringValue("ListFlowResponse.Message"));
 
-		List<DataItem> data = new ArrayList<DataItem>();
+		List<返回结果> data = new ArrayList<返回结果>();
 		for (int i = 0; i < _ctx.lengthValue("ListFlowResponse.Data.Length"); i++) {
-			DataItem dataItem = new DataItem();
-			dataItem.setStatus(_ctx.stringValue("ListFlowResponse.Data["+ i +"].Status"));
-			dataItem.setGmtCreate(_ctx.stringValue("ListFlowResponse.Data["+ i +"].GmtCreate"));
-			dataItem.setGmtModified(_ctx.stringValue("ListFlowResponse.Data["+ i +"].GmtModified"));
-			dataItem.setTitle(_ctx.stringValue("ListFlowResponse.Data["+ i +"].Title"));
-			dataItem.setPartnerId(_ctx.stringValue("ListFlowResponse.Data["+ i +"].PartnerId"));
-			dataItem.setId(_ctx.stringValue("ListFlowResponse.Data["+ i +"].Id"));
-			dataItem.setCode(_ctx.stringValue("ListFlowResponse.Data["+ i +"].Code"));
-			dataItem.setBizCode(_ctx.stringValue("ListFlowResponse.Data["+ i +"].BizCode"));
-			dataItem.setRemark(_ctx.stringValue("ListFlowResponse.Data["+ i +"].Remark"));
+			返回结果 返回结果 = new 返回结果();
+			返回结果.setFlowId(_ctx.stringValue("ListFlowResponse.Data["+ i +"].FlowId"));
+			返回结果.setFlowName(_ctx.stringValue("ListFlowResponse.Data["+ i +"].FlowName"));
 
-			data.add(dataItem);
+			List<String> categories = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("ListFlowResponse.Data["+ i +"].Categories.Length"); j++) {
+				categories.add(_ctx.stringValue("ListFlowResponse.Data["+ i +"].Categories["+ j +"]"));
+			}
+			返回结果.setCategories(categories);
+
+			data.add(返回结果);
 		}
 		listFlowResponse.setData(data);
 	 

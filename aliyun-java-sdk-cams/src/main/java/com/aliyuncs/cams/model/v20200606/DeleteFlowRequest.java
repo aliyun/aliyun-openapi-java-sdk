@@ -25,13 +25,9 @@ import com.aliyuncs.cams.Endpoint;
 public class DeleteFlowRequest extends RpcAcsRequest<DeleteFlowResponse> {
 	   
 
-	private Long resourceOwnerId;
+	private String custSpaceId;
 
-	private String code;
-
-	private String resourceOwnerAccount;
-
-	private Long ownerId;
+	private String flowId;
 	public DeleteFlowRequest() {
 		super("cams", "2020-06-06", "DeleteFlow", "cams");
 		setMethod(MethodType.POST);
@@ -41,47 +37,25 @@ public class DeleteFlowRequest extends RpcAcsRequest<DeleteFlowResponse> {
 		} catch (Exception e) {}
 	}
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
+	public String getCustSpaceId() {
+		return this.custSpaceId;
 	}
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+	public void setCustSpaceId(String custSpaceId) {
+		this.custSpaceId = custSpaceId;
+		if(custSpaceId != null){
+			putBodyParameter("CustSpaceId", custSpaceId);
 		}
 	}
 
-	public String getCode() {
-		return this.code;
+	public String getFlowId() {
+		return this.flowId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
-		if(code != null){
-			putQueryParameter("Code", code);
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
+	public void setFlowId(String flowId) {
+		this.flowId = flowId;
+		if(flowId != null){
+			putBodyParameter("FlowId", flowId);
 		}
 	}
 

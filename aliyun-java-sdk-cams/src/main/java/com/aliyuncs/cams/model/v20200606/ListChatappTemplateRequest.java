@@ -27,6 +27,8 @@ import com.aliyuncs.cams.Endpoint;
 public class ListChatappTemplateRequest extends RpcAcsRequest<ListChatappTemplateResponse> {
 	   
 
+	private String code;
+
 	private String language;
 
 	private String custWabaId;
@@ -50,6 +52,17 @@ public class ListChatappTemplateRequest extends RpcAcsRequest<ListChatappTemplat
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+		if(code != null){
+			putQueryParameter("Code", code);
+		}
 	}
 
 	public String getLanguage() {
