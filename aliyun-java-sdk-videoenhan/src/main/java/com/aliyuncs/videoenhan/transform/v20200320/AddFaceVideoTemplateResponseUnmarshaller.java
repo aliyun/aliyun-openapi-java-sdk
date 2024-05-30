@@ -33,6 +33,7 @@ public class AddFaceVideoTemplateResponseUnmarshaller {
 
 		Date date = new Date();
 		date.setTemplateId(_ctx.stringValue("AddFaceVideoTemplateResponse.Date.TemplateId"));
+		date.setTransResult(_ctx.stringValue("AddFaceVideoTemplateResponse.Date.TransResult"));
 
 		List<FaceInfosItem> faceInfos = new ArrayList<FaceInfosItem>();
 		for (int i = 0; i < _ctx.lengthValue("AddFaceVideoTemplateResponse.Date.FaceInfos.Length"); i++) {

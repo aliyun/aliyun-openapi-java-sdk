@@ -69,6 +69,8 @@ public class AddFaceVideoTemplateResponse extends AcsResponse {
 
 		private String templateId;
 
+		private String transResult;
+
 		private List<FaceInfosItem> faceInfos;
 
 		public String getTemplateId() {
@@ -77,6 +79,14 @@ public class AddFaceVideoTemplateResponse extends AcsResponse {
 
 		public void setTemplateId(String templateId) {
 			this.templateId = templateId;
+		}
+
+		public String getTransResult() {
+			return this.transResult;
+		}
+
+		public void setTransResult(String transResult) {
+			this.transResult = transResult;
 		}
 
 		public List<FaceInfosItem> getFaceInfos() {
