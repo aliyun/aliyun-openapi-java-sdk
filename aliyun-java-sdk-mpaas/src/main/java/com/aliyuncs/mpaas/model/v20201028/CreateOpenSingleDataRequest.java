@@ -33,6 +33,8 @@ public class CreateOpenSingleDataRequest extends RpcAcsRequest<CreateOpenSingleD
 
 	private String payload;
 
+	private String tenantId;
+
 	private Boolean checkOnline;
 
 	private String appMinVersion;
@@ -100,6 +102,17 @@ public class CreateOpenSingleDataRequest extends RpcAcsRequest<CreateOpenSingleD
 		this.payload = payload;
 		if(payload != null){
 			putBodyParameter("Payload", payload);
+		}
+	}
+
+	public String getTenantId() {
+		return this.tenantId;
+	}
+
+	public void setTenantId(String tenantId) {
+		this.tenantId = tenantId;
+		if(tenantId != null){
+			putBodyParameter("TenantId", tenantId);
 		}
 	}
 

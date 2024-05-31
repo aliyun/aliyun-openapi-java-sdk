@@ -15,20 +15,22 @@
 package com.aliyuncs.mpaas.model.v20201028;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.mpaas.transform.v20201028.OpenApiEncodeResponseUnmarshaller;
+import com.aliyuncs.mpaas.transform.v20201028.UpdateLinkResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class OpenApiEncodeResponse extends AcsResponse {
+public class UpdateLinkResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String resultMessage;
+
 	private String resultCode;
 
-	private String resultContent;
+	private ResultContent resultContent;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,6 +38,14 @@ public class OpenApiEncodeResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getResultMessage() {
+		return this.resultMessage;
+	}
+
+	public void setResultMessage(String resultMessage) {
+		this.resultMessage = resultMessage;
 	}
 
 	public String getResultCode() {
@@ -46,17 +56,50 @@ public class OpenApiEncodeResponse extends AcsResponse {
 		this.resultCode = resultCode;
 	}
 
-	public String getResultContent() {
+	public ResultContent getResultContent() {
 		return this.resultContent;
 	}
 
-	public void setResultContent(String resultContent) {
+	public void setResultContent(ResultContent resultContent) {
 		this.resultContent = resultContent;
 	}
 
+	public static class ResultContent {
+
+		private String target;
+
+		private String data;
+
+		private String version;
+
+		public String getTarget() {
+			return this.target;
+		}
+
+		public void setTarget(String target) {
+			this.target = target;
+		}
+
+		public String getData() {
+			return this.data;
+		}
+
+		public void setData(String data) {
+			this.data = data;
+		}
+
+		public String getVersion() {
+			return this.version;
+		}
+
+		public void setVersion(String version) {
+			this.version = version;
+		}
+	}
+
 	@Override
-	public OpenApiEncodeResponse getInstance(UnmarshallerContext context) {
-		return	OpenApiEncodeResponseUnmarshaller.unmarshall(this, context);
+	public UpdateLinkResponse getInstance(UnmarshallerContext context) {
+		return	UpdateLinkResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

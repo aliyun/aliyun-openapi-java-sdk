@@ -33,6 +33,8 @@ public class QueryPushSchedulerListRequest extends RpcAcsRequest<QueryPushSchedu
 
 	private Integer pageSize;
 
+	private String tenantId;
+
 	private String uniqueId;
 
 	private Long endTime;
@@ -90,6 +92,17 @@ public class QueryPushSchedulerListRequest extends RpcAcsRequest<QueryPushSchedu
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putBodyParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getTenantId() {
+		return this.tenantId;
+	}
+
+	public void setTenantId(String tenantId) {
+		this.tenantId = tenantId;
+		if(tenantId != null){
+			putBodyParameter("TenantId", tenantId);
 		}
 	}
 

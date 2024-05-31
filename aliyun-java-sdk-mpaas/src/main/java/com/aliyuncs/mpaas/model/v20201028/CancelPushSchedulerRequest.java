@@ -27,6 +27,8 @@ public class CancelPushSchedulerRequest extends RpcAcsRequest<CancelPushSchedule
 
 	private Integer type;
 
+	private String tenantId;
+
 	private String uniqueIds;
 
 	private String appId;
@@ -49,6 +51,17 @@ public class CancelPushSchedulerRequest extends RpcAcsRequest<CancelPushSchedule
 		this.type = type;
 		if(type != null){
 			putBodyParameter("Type", type.toString());
+		}
+	}
+
+	public String getTenantId() {
+		return this.tenantId;
+	}
+
+	public void setTenantId(String tenantId) {
+		this.tenantId = tenantId;
+		if(tenantId != null){
+			putBodyParameter("TenantId", tenantId);
 		}
 	}
 

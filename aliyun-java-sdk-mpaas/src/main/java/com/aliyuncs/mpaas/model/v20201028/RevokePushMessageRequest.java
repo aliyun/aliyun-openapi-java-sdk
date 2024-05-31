@@ -29,6 +29,8 @@ public class RevokePushMessageRequest extends RpcAcsRequest<RevokePushMessageRes
 
 	private String messageId;
 
+	private String tenantId;
+
 	private String appId;
 
 	private String workspaceId;
@@ -60,6 +62,17 @@ public class RevokePushMessageRequest extends RpcAcsRequest<RevokePushMessageRes
 		this.messageId = messageId;
 		if(messageId != null){
 			putBodyParameter("MessageId", messageId);
+		}
+	}
+
+	public String getTenantId() {
+		return this.tenantId;
+	}
+
+	public void setTenantId(String tenantId) {
+		this.tenantId = tenantId;
+		if(tenantId != null){
+			putBodyParameter("TenantId", tenantId);
 		}
 	}
 

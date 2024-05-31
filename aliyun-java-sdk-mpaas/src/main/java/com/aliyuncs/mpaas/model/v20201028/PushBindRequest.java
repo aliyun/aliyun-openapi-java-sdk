@@ -29,6 +29,8 @@ public class PushBindRequest extends RpcAcsRequest<PushBindResponse> {
 
 	private String userId;
 
+	private String tenantId;
+
 	private String deliveryToken;
 
 	private Integer osType;
@@ -64,6 +66,17 @@ public class PushBindRequest extends RpcAcsRequest<PushBindResponse> {
 		this.userId = userId;
 		if(userId != null){
 			putBodyParameter("UserId", userId);
+		}
+	}
+
+	public String getTenantId() {
+		return this.tenantId;
+	}
+
+	public void setTenantId(String tenantId) {
+		this.tenantId = tenantId;
+		if(tenantId != null){
+			putBodyParameter("TenantId", tenantId);
 		}
 	}
 

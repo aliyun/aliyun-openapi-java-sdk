@@ -37,6 +37,8 @@ public class CreateOpenGlobalDataRequest extends RpcAcsRequest<CreateOpenGlobalD
 
 	private String uids;
 
+	private String tenantId;
+
 	private String appMinVersion;
 
 	private Long validTimeStart;
@@ -124,6 +126,17 @@ public class CreateOpenGlobalDataRequest extends RpcAcsRequest<CreateOpenGlobalD
 		this.uids = uids;
 		if(uids != null){
 			putBodyParameter("Uids", uids);
+		}
+	}
+
+	public String getTenantId() {
+		return this.tenantId;
+	}
+
+	public void setTenantId(String tenantId) {
+		this.tenantId = tenantId;
+		if(tenantId != null){
+			putBodyParameter("TenantId", tenantId);
 		}
 	}
 

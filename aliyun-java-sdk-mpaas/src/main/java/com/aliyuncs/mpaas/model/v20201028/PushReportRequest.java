@@ -29,6 +29,8 @@ public class PushReportRequest extends RpcAcsRequest<PushReportResponse> {
 
 	private String imsi;
 
+	private String tenantId;
+
 	private String model;
 
 	private String deliveryToken;
@@ -78,6 +80,17 @@ public class PushReportRequest extends RpcAcsRequest<PushReportResponse> {
 		this.imsi = imsi;
 		if(imsi != null){
 			putBodyParameter("Imsi", imsi);
+		}
+	}
+
+	public String getTenantId() {
+		return this.tenantId;
+	}
+
+	public void setTenantId(String tenantId) {
+		this.tenantId = tenantId;
+		if(tenantId != null){
+			putBodyParameter("TenantId", tenantId);
 		}
 	}
 

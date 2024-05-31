@@ -33,6 +33,8 @@ public class QueryPushAnalysisCoreIndexRequest extends RpcAcsRequest<QueryPushAn
 
 	private String platform;
 
+	private String tenantId;
+
 	private String taskId;
 
 	private Long endTime;
@@ -90,6 +92,17 @@ public class QueryPushAnalysisCoreIndexRequest extends RpcAcsRequest<QueryPushAn
 		this.platform = platform;
 		if(platform != null){
 			putBodyParameter("Platform", platform);
+		}
+	}
+
+	public String getTenantId() {
+		return this.tenantId;
+	}
+
+	public void setTenantId(String tenantId) {
+		this.tenantId = tenantId;
+		if(tenantId != null){
+			putBodyParameter("TenantId", tenantId);
 		}
 	}
 

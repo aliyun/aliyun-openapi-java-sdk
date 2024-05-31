@@ -27,6 +27,8 @@ public class PushUnBindRequest extends RpcAcsRequest<PushUnBindResponse> {
 
 	private String userId;
 
+	private String tenantId;
+
 	private String deliveryToken;
 
 	private String appId;
@@ -49,6 +51,17 @@ public class PushUnBindRequest extends RpcAcsRequest<PushUnBindResponse> {
 		this.userId = userId;
 		if(userId != null){
 			putBodyParameter("UserId", userId);
+		}
+	}
+
+	public String getTenantId() {
+		return this.tenantId;
+	}
+
+	public void setTenantId(String tenantId) {
+		this.tenantId = tenantId;
+		if(tenantId != null){
+			putBodyParameter("TenantId", tenantId);
 		}
 	}
 

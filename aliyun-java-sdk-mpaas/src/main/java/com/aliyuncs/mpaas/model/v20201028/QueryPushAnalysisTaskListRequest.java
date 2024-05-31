@@ -33,6 +33,8 @@ public class QueryPushAnalysisTaskListRequest extends RpcAcsRequest<QueryPushAna
 
 	private Integer pageSize;
 
+	private String tenantId;
+
 	private String taskId;
 
 	private String appId;
@@ -88,6 +90,17 @@ public class QueryPushAnalysisTaskListRequest extends RpcAcsRequest<QueryPushAna
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putBodyParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getTenantId() {
+		return this.tenantId;
+	}
+
+	public void setTenantId(String tenantId) {
+		this.tenantId = tenantId;
+		if(tenantId != null){
+			putBodyParameter("TenantId", tenantId);
 		}
 	}
 

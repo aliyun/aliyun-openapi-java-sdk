@@ -25,6 +25,8 @@ import com.aliyuncs.mpaas.Endpoint;
 public class QueryPushAnalysisTaskDetailRequest extends RpcAcsRequest<QueryPushAnalysisTaskDetailResponse> {
 	   
 
+	private String tenantId;
+
 	private String taskId;
 
 	private String appId;
@@ -37,6 +39,17 @@ public class QueryPushAnalysisTaskDetailRequest extends RpcAcsRequest<QueryPushA
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getTenantId() {
+		return this.tenantId;
+	}
+
+	public void setTenantId(String tenantId) {
+		this.tenantId = tenantId;
+		if(tenantId != null){
+			putBodyParameter("TenantId", tenantId);
+		}
 	}
 
 	public String getTaskId() {
