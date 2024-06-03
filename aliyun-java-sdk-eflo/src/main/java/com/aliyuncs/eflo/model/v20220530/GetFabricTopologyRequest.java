@@ -25,7 +25,11 @@ import com.aliyuncs.http.MethodType;
 public class GetFabricTopologyRequest extends RpcAcsRequest<GetFabricTopologyResponse> {
 	   
 
+	private String clusterId;
+
 	private String vpdId;
+
+	private String vpcId;
 
 	private List<String> lniIdss;
 
@@ -33,6 +37,17 @@ public class GetFabricTopologyRequest extends RpcAcsRequest<GetFabricTopologyRes
 	public GetFabricTopologyRequest() {
 		super("eflo", "2022-05-30", "GetFabricTopology", "eflo");
 		setMethod(MethodType.POST);
+	}
+
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putBodyParameter("ClusterId", clusterId);
+		}
 	}
 
 	public String getVpdId() {
@@ -43,6 +58,17 @@ public class GetFabricTopologyRequest extends RpcAcsRequest<GetFabricTopologyRes
 		this.vpdId = vpdId;
 		if(vpdId != null){
 			putBodyParameter("VpdId", vpdId);
+		}
+	}
+
+	public String getVpcId() {
+		return this.vpcId;
+	}
+
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+		if(vpcId != null){
+			putBodyParameter("VpcId", vpcId);
 		}
 	}
 

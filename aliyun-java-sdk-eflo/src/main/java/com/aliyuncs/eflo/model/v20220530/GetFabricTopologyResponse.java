@@ -71,6 +71,10 @@ public class GetFabricTopologyResponse extends AcsResponse {
 
 		private String vpdId;
 
+		private String vpcId;
+
+		private String clusterId;
+
 		private List<Layer> topoInfo;
 
 		public String getRegionId() {
@@ -87,6 +91,22 @@ public class GetFabricTopologyResponse extends AcsResponse {
 
 		public void setVpdId(String vpdId) {
 			this.vpdId = vpdId;
+		}
+
+		public String getVpcId() {
+			return this.vpcId;
+		}
+
+		public void setVpcId(String vpcId) {
+			this.vpcId = vpcId;
+		}
+
+		public String getClusterId() {
+			return this.clusterId;
+		}
+
+		public void setClusterId(String clusterId) {
+			this.clusterId = clusterId;
 		}
 
 		public List<Layer> getTopoInfo() {

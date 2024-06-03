@@ -40,6 +40,8 @@ public class ListNodeInfosForPodResponseUnmarshaller {
 			contentItem.setNodeId(_ctx.stringValue("ListNodeInfosForPodResponse.Content["+ i +"].NodeId"));
 			contentItem.setLeniQuota(_ctx.integerValue("ListNodeInfosForPodResponse.Content["+ i +"].LeniQuota"));
 			contentItem.setLniSipQuota(_ctx.integerValue("ListNodeInfosForPodResponse.Content["+ i +"].LniSipQuota"));
+			contentItem.setLeniSipQuota(_ctx.integerValue("ListNodeInfosForPodResponse.Content["+ i +"].LeniSipQuota"));
+			contentItem.setHdeniQuota(_ctx.integerValue("ListNodeInfosForPodResponse.Content["+ i +"].HdeniQuota"));
 
 			List<String> vSwitches = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListNodeInfosForPodResponse.Content["+ i +"].VSwitches.Length"); j++) {

@@ -81,6 +81,8 @@ public class GetNodeInfoForPodResponse extends AcsResponse {
 
 		private Integer lniSipQuota;
 
+		private Integer leniSipQuota;
+
 		private Integer hdeniQuota;
 
 		private List<String> vSwitches;
@@ -139,6 +141,14 @@ public class GetNodeInfoForPodResponse extends AcsResponse {
 
 		public void setLniSipQuota(Integer lniSipQuota) {
 			this.lniSipQuota = lniSipQuota;
+		}
+
+		public Integer getLeniSipQuota() {
+			return this.leniSipQuota;
+		}
+
+		public void setLeniSipQuota(Integer leniSipQuota) {
+			this.leniSipQuota = leniSipQuota;
 		}
 
 		public Integer getHdeniQuota() {

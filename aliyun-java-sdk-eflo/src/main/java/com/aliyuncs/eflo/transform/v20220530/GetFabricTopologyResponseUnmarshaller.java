@@ -34,6 +34,8 @@ public class GetFabricTopologyResponseUnmarshaller {
 		Content content = new Content();
 		content.setRegionId(_ctx.stringValue("GetFabricTopologyResponse.Content.RegionId"));
 		content.setVpdId(_ctx.stringValue("GetFabricTopologyResponse.Content.VpdId"));
+		content.setVpcId(_ctx.stringValue("GetFabricTopologyResponse.Content.VpcId"));
+		content.setClusterId(_ctx.stringValue("GetFabricTopologyResponse.Content.ClusterId"));
 
 		List<Layer> topoInfo = new ArrayList<Layer>();
 		for (int i = 0; i < _ctx.lengthValue("GetFabricTopologyResponse.Content.TopoInfo.Length"); i++) {
