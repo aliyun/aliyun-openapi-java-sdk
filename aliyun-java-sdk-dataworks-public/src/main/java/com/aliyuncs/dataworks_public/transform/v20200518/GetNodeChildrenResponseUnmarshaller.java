@@ -48,6 +48,7 @@ public class GetNodeChildrenResponseUnmarshaller {
 			nodesItem.setOwnerId(_ctx.stringValue("GetNodeChildrenResponse.Data.Nodes["+ i +"].OwnerId"));
 			nodesItem.setCronExpress(_ctx.stringValue("GetNodeChildrenResponse.Data.Nodes["+ i +"].CronExpress"));
 			nodesItem.setNodeId(_ctx.longValue("GetNodeChildrenResponse.Data.Nodes["+ i +"].NodeId"));
+			nodesItem.setStepType(_ctx.stringValue("GetNodeChildrenResponse.Data.Nodes["+ i +"].StepType"));
 
 			nodes.add(nodesItem);
 		}

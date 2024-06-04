@@ -438,9 +438,19 @@ public class GetDIJobResponse extends AcsResponse {
 
 		public static class ResourceSettings {
 
+			private Float requestedCu;
+
 			private OfflineResourceSettings offlineResourceSettings;
 
 			private RealtimeResourceSettings realtimeResourceSettings;
+
+			public Float getRequestedCu() {
+				return this.requestedCu;
+			}
+
+			public void setRequestedCu(Float requestedCu) {
+				this.requestedCu = requestedCu;
+			}
 
 			public OfflineResourceSettings getOfflineResourceSettings() {
 				return this.offlineResourceSettings;

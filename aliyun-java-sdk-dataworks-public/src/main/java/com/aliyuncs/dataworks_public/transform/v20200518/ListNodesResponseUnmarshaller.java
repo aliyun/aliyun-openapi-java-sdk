@@ -62,6 +62,11 @@ public class ListNodesResponseUnmarshaller {
 			nodesItem.setNodeId(_ctx.longValue("ListNodesResponse.Data.Nodes["+ i +"].NodeId"));
 			nodesItem.setResGroupIdentifier(_ctx.stringValue("ListNodesResponse.Data.Nodes["+ i +"].ResGroupIdentifier"));
 			nodesItem.setFileType(_ctx.integerValue("ListNodesResponse.Data.Nodes["+ i +"].FileType"));
+			nodesItem.setFileId(_ctx.longValue("ListNodesResponse.Data.Nodes["+ i +"].FileId"));
+			nodesItem.setFileVersion(_ctx.integerValue("ListNodesResponse.Data.Nodes["+ i +"].FileVersion"));
+			nodesItem.setDeployDate(_ctx.longValue("ListNodesResponse.Data.Nodes["+ i +"].DeployDate"));
+			nodesItem.setCreateTime(_ctx.longValue("ListNodesResponse.Data.Nodes["+ i +"].CreateTime"));
+			nodesItem.setModifyTime(_ctx.longValue("ListNodesResponse.Data.Nodes["+ i +"].ModifyTime"));
 
 			nodes.add(nodesItem);
 		}

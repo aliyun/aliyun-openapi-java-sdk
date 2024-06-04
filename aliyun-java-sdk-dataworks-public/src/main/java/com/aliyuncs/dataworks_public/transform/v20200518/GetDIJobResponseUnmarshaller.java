@@ -62,6 +62,7 @@ public class GetDIJobResponseUnmarshaller {
 		data.setRunStats(_ctx.mapValue("GetDIJobResponse.Data.RunStats"));
 
 		ResourceSettings resourceSettings = new ResourceSettings();
+		resourceSettings.setRequestedCu(_ctx.floatValue("GetDIJobResponse.Data.ResourceSettings.RequestedCu"));
 
 		OfflineResourceSettings offlineResourceSettings = new OfflineResourceSettings();
 		offlineResourceSettings.setResourceGroupIdentifier(_ctx.stringValue("GetDIJobResponse.Data.ResourceSettings.OfflineResourceSettings.ResourceGroupIdentifier"));

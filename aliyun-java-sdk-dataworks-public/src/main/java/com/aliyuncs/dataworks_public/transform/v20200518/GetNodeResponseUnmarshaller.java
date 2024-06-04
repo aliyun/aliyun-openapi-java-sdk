@@ -51,6 +51,11 @@ public class GetNodeResponseUnmarshaller {
 		data.setNodeId(_ctx.longValue("GetNodeResponse.Data.NodeId"));
 		data.setResGroupIdentifier(_ctx.stringValue("GetNodeResponse.Data.ResGroupIdentifier"));
 		data.setFileType(_ctx.integerValue("GetNodeResponse.Data.FileType"));
+		data.setFileId(_ctx.longValue("GetNodeResponse.Data.FileId"));
+		data.setFileVersion(_ctx.integerValue("GetNodeResponse.Data.FileVersion"));
+		data.setDeployDate(_ctx.longValue("GetNodeResponse.Data.DeployDate"));
+		data.setCreateTime(_ctx.longValue("GetNodeResponse.Data.CreateTime"));
+		data.setModifyTime(_ctx.longValue("GetNodeResponse.Data.ModifyTime"));
 		getNodeResponse.setData(data);
 	 
 	 	return getNodeResponse;

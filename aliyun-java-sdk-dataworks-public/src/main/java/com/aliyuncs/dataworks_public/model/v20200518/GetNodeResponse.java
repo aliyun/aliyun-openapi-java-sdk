@@ -128,6 +128,16 @@ public class GetNodeResponse extends AcsResponse {
 
 		private Integer fileType;
 
+		private Long fileId;
+
+		private Integer fileVersion;
+
+		private Long deployDate;
+
+		private Long createTime;
+
+		private Long modifyTime;
+
 		public String getSchedulerType() {
 			return this.schedulerType;
 		}
@@ -294,6 +304,46 @@ public class GetNodeResponse extends AcsResponse {
 
 		public void setFileType(Integer fileType) {
 			this.fileType = fileType;
+		}
+
+		public Long getFileId() {
+			return this.fileId;
+		}
+
+		public void setFileId(Long fileId) {
+			this.fileId = fileId;
+		}
+
+		public Integer getFileVersion() {
+			return this.fileVersion;
+		}
+
+		public void setFileVersion(Integer fileVersion) {
+			this.fileVersion = fileVersion;
+		}
+
+		public Long getDeployDate() {
+			return this.deployDate;
+		}
+
+		public void setDeployDate(Long deployDate) {
+			this.deployDate = deployDate;
+		}
+
+		public Long getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
+		}
+
+		public Long getModifyTime() {
+			return this.modifyTime;
+		}
+
+		public void setModifyTime(Long modifyTime) {
+			this.modifyTime = modifyTime;
 		}
 	}
 
