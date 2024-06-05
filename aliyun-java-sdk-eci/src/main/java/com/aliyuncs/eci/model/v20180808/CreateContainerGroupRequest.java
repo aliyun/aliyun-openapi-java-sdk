@@ -142,6 +142,8 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 
 	private List<String> computeCategory;
 
+	private String gpuDriverVersion;
+
     public Integer getEphemeralStorage() {
         return this.ephemeralStorage;
     }
@@ -663,6 +665,17 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 			for (int i = 0; i < computeCategory.size(); i++){
 				putQueryParameter("ComputeCategory." + (i + 1), computeCategory.get(i));
 			}
+		}
+	}
+
+	public String getGpuDriverVersion() {
+		return gpuDriverVersion;
+	}
+
+	public void setGpuDriverVersion(String gpuDriverVersion) {
+		this.gpuDriverVersion = gpuDriverVersion;
+		if (gpuDriverVersion != null) {
+			putQueryParameter("GpuDriverVersion", gpuDriverVersion);
 		}
 	}
 

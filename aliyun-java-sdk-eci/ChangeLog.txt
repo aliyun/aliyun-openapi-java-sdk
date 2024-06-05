@@ -1,3 +1,6 @@
+2024-06-05 Version 1.5.4
+1、CreateContainerGroup support gpuDriverVersion
+
 2024-03-26 Version 1.5.3
 1、Add api: ResizeContainerGroupEphemeralStorage
 2、Fix SecurityContextSysctls parameters
