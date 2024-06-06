@@ -43,6 +43,8 @@ public class ListUserDevicesRequest extends RpcAcsRequest<ListUserDevicesRespons
 
 	private String department;
 
+	private String innerIp;
+
 	private List<String> iaStatuses;
 
 	private String deviceBelong;
@@ -169,6 +171,17 @@ public class ListUserDevicesRequest extends RpcAcsRequest<ListUserDevicesRespons
 		this.department = department;
 		if(department != null){
 			putQueryParameter("Department", department);
+		}
+	}
+
+	public String getInnerIp() {
+		return this.innerIp;
+	}
+
+	public void setInnerIp(String innerIp) {
+		this.innerIp = innerIp;
+		if(innerIp != null){
+			putQueryParameter("InnerIp", innerIp);
 		}
 	}
 
