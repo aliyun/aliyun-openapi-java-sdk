@@ -15,7 +15,6 @@ public class V3SignatureComposer implements ISignatureComposer {
     protected final static String QUERY_SEPARATOR = "&";
     protected final static String HEADER_SEPARATOR = "\n";
     private final static String DELIMITER = ";";
-    private final static String UTF8 = "UTF-8";
     private static ISignatureComposer composer = null;
     private final static String SIGNED_HEADERS = "signedHeaders";
     private final static String CANONICAL_HEADERS = "canonicalHeaders";
