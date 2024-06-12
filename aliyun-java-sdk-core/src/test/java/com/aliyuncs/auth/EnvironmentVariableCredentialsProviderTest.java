@@ -3,7 +3,6 @@ package com.aliyuncs.auth;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.utils.AuthUtils;
 import com.aliyuncs.utils.EnvHelper;
-import com.aliyuncs.utils.EnvironmentUtils;
 
 import org.junit.Assert;
 import org.junit.Test;
