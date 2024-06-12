@@ -2,6 +2,8 @@ package com.aliyuncs.auth;
 
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.utils.AuthUtils;
+import com.aliyuncs.utils.EnvHelper;
+
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -23,7 +25,7 @@ public class DefaultCredentialsProviderTest {
     @Test
     public void getCredentialsTest() throws ClientException {
         DefaultCredentialsProvider provider = new DefaultCredentialsProvider();
-        AuthUtils.setEnvironmentECSMetaData("");
+        EnvHelper.setenv("ALIBABA_CLOUD_ECS_METADATA", "");
         try {
             new DefaultCredentialsProvider();
             Assert.fail();
@@ -32,8 +34,8 @@ public class DefaultCredentialsProviderTest {
                     e.getMessage());
         }
 
-        AuthUtils.setEnvironmentAccessKeyId("test");
-        AuthUtils.setEnvironmentAccessKeySecret("test");
+        EnvHelper.setenv("ALIBABA_CLOUD_ACCESS_KEY_ID", "test");
+        EnvHelper.setenv("ALIBABA_CLOUD_ACCESS_KEY_SECRET", "test");
         AlibabaCloudCredentials credential = provider.getCredentials();
         Assert.assertTrue(credential instanceof BasicCredentials);
 
@@ -53,11 +55,11 @@ public class DefaultCredentialsProviderTest {
         Assert.assertTrue(credential instanceof BasicCredentials);
 
         DefaultCredentialsProvider.clearCredentialsProvider();
-        AuthUtils.setEnvironmentECSMetaData(null);
-        AuthUtils.setEnvironmentAccessKeyId(null);
-        AuthUtils.setEnvironmentAccessKeySecret(null);
+        EnvHelper.setenv("ALIBABA_CLOUD_ECS_METADATA", null);
+        EnvHelper.setenv("ALIBABA_CLOUD_ACCESS_KEY_ID", null);
+        EnvHelper.setenv("ALIBABA_CLOUD_ACCESS_KEY_SECRET", null);
         System.setProperty(AuthConstant.SYSTEM_ACCESSKEYID, "");
-        AuthUtils.setEnvironmentCredentialsFile(null);
+        EnvHelper.setenv("ALIBABA_CLOUD_CREDENTIALS_FILE", null);
         try {
             provider.getCredentials();
         } catch (ClientException e) {
@@ -68,15 +70,15 @@ public class DefaultCredentialsProviderTest {
     @Test
     public void defaultCredentialsProviderTest() throws ClientException {
         DefaultCredentialsProvider.clearCredentialsProvider();
-        AuthUtils.setEnvironmentECSMetaData("test");
-        AuthUtils.setEnvironmentAccessKeyId("test");
-        AuthUtils.setEnvironmentAccessKeySecret("test");
+        EnvHelper.setenv("ALIBABA_CLOUD_ECS_METADATA", "test");
+        EnvHelper.setenv("ALIBABA_CLOUD_ACCESS_KEY_ID", "test");
+        EnvHelper.setenv("ALIBABA_CLOUD_ACCESS_KEY_SECRET", "test");
         DefaultCredentialsProvider provider = new DefaultCredentialsProvider();
         DefaultCredentialsProvider.addCredentialsProvider(new SystemPropertiesCredentialsProvider());
         Assert.assertTrue(provider.getCredentials() instanceof BasicCredentials);
-        AuthUtils.setEnvironmentECSMetaData(null);
-        AuthUtils.setEnvironmentAccessKeyId(null);
-        AuthUtils.setEnvironmentAccessKeySecret(null);
+        EnvHelper.setenv("ALIBABA_CLOUD_ECS_METADATA", null);
+        EnvHelper.setenv("ALIBABA_CLOUD_ACCESS_KEY_ID", null);
+        EnvHelper.setenv("ALIBABA_CLOUD_ACCESS_KEY_SECRET", null);
         DefaultCredentialsProvider.clearCredentialsProvider();
     }
 

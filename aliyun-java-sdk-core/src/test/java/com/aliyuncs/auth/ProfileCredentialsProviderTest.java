@@ -2,6 +2,8 @@ package com.aliyuncs.auth;
 
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.utils.AuthUtils;
+import com.aliyuncs.utils.EnvHelper;
+
 import org.ini4j.Wini;
 import org.junit.Assert;
 import org.junit.Test;
@@ -12,12 +14,11 @@ import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
 
-
 public class ProfileCredentialsProviderTest {
 
     @Test
     public void getCredentialsTest() throws ClientException {
-        AuthUtils.setEnvironmentCredentialsFile("");
+        EnvHelper.setenv("ALIBABA_CLOUD_CREDENTIALS_FILE", "");
         ProfileCredentialsProvider provider = new ProfileCredentialsProvider();
         try {
             provider.getCredentials();
@@ -25,9 +26,8 @@ public class ProfileCredentialsProviderTest {
         } catch (ClientException e) {
             Assert.assertEquals("The specified credentials file is empty", e.getMessage());
         }
-        String filePath = ProfileCredentialsProviderTest.class.getClassLoader().
-                getResource("configTest.ini").getPath();
-        AuthUtils.setEnvironmentCredentialsFile(filePath);
+        String filePath = ProfileCredentialsProviderTest.class.getClassLoader().getResource("configTest.ini").getPath();
+        EnvHelper.setenv("ALIBABA_CLOUD_CREDENTIALS_FILE", filePath);
         provider = new ProfileCredentialsProvider();
         Assert.assertNotNull(provider.getCredentials());
 
@@ -57,7 +57,6 @@ public class ProfileCredentialsProviderTest {
         } catch (Exception e) {
             Assert.assertEquals("The configured client type is empty", e.getCause().getLocalizedMessage());
         }
-
 
         client.put(AuthConstant.INI_TYPE, AuthConstant.INI_TYPE_RAM);
         try {
@@ -118,7 +117,7 @@ public class ProfileCredentialsProviderTest {
     }
 
     @Test
-    public void  getSTSGetSessionAccessKeyCredentialsTest() throws NoSuchMethodException {
+    public void getSTSGetSessionAccessKeyCredentialsTest() throws NoSuchMethodException {
         ProfileCredentialsProvider provider = new ProfileCredentialsProvider();
         Class providerClass = provider.getClass();
         Method createCredential = providerClass.getDeclaredMethod(
@@ -146,10 +145,9 @@ public class ProfileCredentialsProviderTest {
         AuthUtils.setPrivateKey(null);
     }
 
-
     @Test
-    public void createCredentialsProviderTest() throws
-            NoSuchMethodException, InvocationTargetException, IllegalAccessException, ClientException {
+    public void createCredentialsProviderTest()
+            throws NoSuchMethodException, InvocationTargetException, IllegalAccessException, ClientException {
         ProfileCredentialsProvider profileCredentialsProvider = new ProfileCredentialsProvider();
         Class providerClass = profileCredentialsProvider.getClass();
         Method createCredential = providerClass.getDeclaredMethod(
@@ -162,12 +160,12 @@ public class ProfileCredentialsProviderTest {
         client.put(AuthConstant.INI_ROLE_SESSION_NAME, AuthConstant.INI_TYPE_ARN);
         client.put(AuthConstant.INI_ROLE_ARN, AuthConstant.INI_TYPE_ARN);
         client.put(AuthConstant.DEFAULT_REGION, AuthConstant.INI_TYPE_ARN);
-        STSAssumeRoleSessionCredentialsProvider stsAssumeRoleSessionCredentialsProvider =
-                Mockito.mock(STSAssumeRoleSessionCredentialsProvider.class);
+        STSAssumeRoleSessionCredentialsProvider stsAssumeRoleSessionCredentialsProvider = Mockito
+                .mock(STSAssumeRoleSessionCredentialsProvider.class);
         Mockito.when(stsAssumeRoleSessionCredentialsProvider.getCredentials()).thenReturn(null);
         CredentialsProviderFactory factory = Mockito.mock(CredentialsProviderFactory.class);
-        Mockito.when(factory.createCredentialsProvider(Mockito.any(STSAssumeRoleSessionCredentialsProvider.class))).
-                thenReturn(stsAssumeRoleSessionCredentialsProvider);
+        Mockito.when(factory.createCredentialsProvider(Mockito.any(STSAssumeRoleSessionCredentialsProvider.class)))
+                .thenReturn(stsAssumeRoleSessionCredentialsProvider);
         Assert.assertNull(createCredential.invoke(profileCredentialsProvider, client, factory));
 
         client.clear();
@@ -176,22 +174,22 @@ public class ProfileCredentialsProviderTest {
         client.put(AuthConstant.INI_PRIVATE_KEY, AuthConstant.INI_TYPE_KEY_PAIR);
         client.put(AuthConstant.INI_PRIVATE_KEY_FILE, AuthConstant.INI_TYPE_KEY_PAIR);
         AuthUtils.setPrivateKey("test");
-        STSGetSessionAccessKeyCredentialsProvider stsGetSessionAccessKeyCredentialsProvider =
-                Mockito.mock(STSGetSessionAccessKeyCredentialsProvider.class);
+        STSGetSessionAccessKeyCredentialsProvider stsGetSessionAccessKeyCredentialsProvider = Mockito
+                .mock(STSGetSessionAccessKeyCredentialsProvider.class);
         Mockito.when(stsGetSessionAccessKeyCredentialsProvider.getCredentials()).thenReturn(null);
-        Mockito.when(factory.createCredentialsProvider(Mockito.any(STSGetSessionAccessKeyCredentialsProvider.class))).
-                thenReturn(stsGetSessionAccessKeyCredentialsProvider);
+        Mockito.when(factory.createCredentialsProvider(Mockito.any(STSGetSessionAccessKeyCredentialsProvider.class)))
+                .thenReturn(stsGetSessionAccessKeyCredentialsProvider);
         Assert.assertNull(createCredential.invoke(profileCredentialsProvider, client, factory));
         AuthUtils.setPrivateKey(null);
 
         client.clear();
         client.put(AuthConstant.INI_TYPE, AuthConstant.INI_TYPE_RAM);
         client.put(AuthConstant.INI_ROLE_NAME, AuthConstant.INI_TYPE_KEY_PAIR);
-        InstanceProfileCredentialsProvider instanceProfileCredentialsProvider =
-                Mockito.mock(InstanceProfileCredentialsProvider.class);
+        InstanceProfileCredentialsProvider instanceProfileCredentialsProvider = Mockito
+                .mock(InstanceProfileCredentialsProvider.class);
         Mockito.when(instanceProfileCredentialsProvider.getCredentials()).thenReturn(null);
-        Mockito.when(factory.createCredentialsProvider(Mockito.any(InstanceProfileCredentialsProvider.class))).
-                thenReturn(instanceProfileCredentialsProvider);
+        Mockito.when(factory.createCredentialsProvider(Mockito.any(InstanceProfileCredentialsProvider.class)))
+                .thenReturn(instanceProfileCredentialsProvider);
         Assert.assertNull(createCredential.invoke(profileCredentialsProvider, client, factory));
     }
 
@@ -202,8 +200,7 @@ public class ProfileCredentialsProviderTest {
         Method getIni = providerClass.getDeclaredMethod(
                 "getIni", String.class);
         getIni.setAccessible(true);
-        String file = ProfileCredentialsProviderTest.class.getClassLoader().
-                getResource("configTest.ini").getPath();
+        String file = ProfileCredentialsProviderTest.class.getClassLoader().getResource("configTest.ini").getPath();
         Wini firstIni = (Wini) getIni.invoke(profileCredentialsProvider, file);
         Wini secondIni = (Wini) getIni.invoke(profileCredentialsProvider, file);
         Assert.assertTrue(firstIni.equals(secondIni));
