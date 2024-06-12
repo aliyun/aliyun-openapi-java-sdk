@@ -2,7 +2,7 @@ package com.aliyuncs.http.clients;
 
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.http.*;
-import com.aliyuncs.utils.EnvironmentUtils;
+import com.aliyuncs.utils.EnvHelper;
 import com.aliyuncs.utils.IOUtils;
 import com.aliyuncs.utils.StringUtils;
 import org.apache.http.Header;
@@ -271,16 +271,16 @@ public class ApacheHttpClient extends IHttpClient {
     }
 
     private HttpHost calcProxy(HttpRequest apiReq) throws MalformedURLException, ClientException {
-        boolean needProxy = HttpUtil.needProxy(new URL(apiReq.getSysUrl()).getHost(), clientConfig.getNoProxy(), EnvironmentUtils.getNoProxy());
+        boolean needProxy = HttpUtil.needProxy(new URL(apiReq.getSysUrl()).getHost(), clientConfig.getNoProxy(), EnvHelper.getenv("NO_PROXY"));
         if (!needProxy) {
             return null;
         }
         URL url = new URL(apiReq.getSysUrl());
         HttpHost proxy = null;
         if ("https".equalsIgnoreCase(url.getProtocol())) {
-            proxy = HttpUtil.getApacheProxy(clientConfig.getHttpsProxy(), EnvironmentUtils.getHttpsProxy(), apiReq);
+            proxy = HttpUtil.getApacheProxy(clientConfig.getHttpsProxy(), EnvHelper.getenv("HTTPS_PROXY"), apiReq);
         } else {
-            proxy = HttpUtil.getApacheProxy(clientConfig.getHttpProxy(), EnvironmentUtils.getHttpProxy(), apiReq);
+            proxy = HttpUtil.getApacheProxy(clientConfig.getHttpProxy(), EnvHelper.getenv("HTTP_PROXY"), apiReq);
         }
         return proxy;
     }
