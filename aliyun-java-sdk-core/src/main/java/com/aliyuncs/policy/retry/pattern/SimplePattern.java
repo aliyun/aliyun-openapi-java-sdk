@@ -7,7 +7,7 @@ public class SimplePattern implements Pattern {
     private SimplePattern anotherPattern;
 
     public SimplePattern(String context) {
-        this.context = context;
+        SimplePattern.context = context;
     }
 
     public String getContext() {
