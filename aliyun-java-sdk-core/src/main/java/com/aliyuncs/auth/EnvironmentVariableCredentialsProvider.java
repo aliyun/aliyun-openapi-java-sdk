@@ -2,6 +2,7 @@ package com.aliyuncs.auth;
 
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.utils.AuthUtils;
+import com.aliyuncs.utils.EnvHelper;
 
 public class EnvironmentVariableCredentialsProvider implements AlibabaCloudCredentialsProvider {
     @Override
@@ -10,8 +11,9 @@ public class EnvironmentVariableCredentialsProvider implements AlibabaCloudCrede
             return null;
         }
 
-        String accessKeyId = AuthUtils.getEnvironmentAccessKeyId();
-        String accessKeySecret = AuthUtils.getEnvironmentAccessKeySecret();
+        String accessKeyId = EnvHelper.getenv("ALIBABA_CLOUD_ACCESS_KEY_ID");
+        String accessKeySecret = EnvHelper.getenv("ALIBABA_CLOUD_ACCESS_KEY_SECRET");
+
         if (accessKeyId == null || accessKeySecret == null) {
             return null;
         }
