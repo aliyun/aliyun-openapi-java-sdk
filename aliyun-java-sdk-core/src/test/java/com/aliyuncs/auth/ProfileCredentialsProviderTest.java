@@ -47,12 +47,11 @@ public class ProfileCredentialsProviderTest {
         ProfileCredentialsProvider provider = new ProfileCredentialsProvider();
         Class providerClass = provider.getClass();
         Method createCredential = providerClass.getDeclaredMethod(
-                "createCredential", Map.class, CredentialsProviderFactory.class);
+                "createCredential", Map.class);
         createCredential.setAccessible(true);
-        CredentialsProviderFactory factory = new CredentialsProviderFactory();
         Map<String, String> client = new HashMap<String, String>();
         try {
-            createCredential.invoke(provider, client, factory);
+            createCredential.invoke(provider, client);
             Assert.fail();
         } catch (Exception e) {
             Assert.assertEquals("The configured client type is empty", e.getCause().getLocalizedMessage());
@@ -61,7 +60,7 @@ public class ProfileCredentialsProviderTest {
 
         client.put(AuthConstant.INI_TYPE, AuthConstant.INI_TYPE_RAM);
         try {
-            createCredential.invoke(provider, client, factory);
+            createCredential.invoke(provider, client);
             Assert.fail();
         } catch (Exception e) {
             Assert.assertEquals("The configured role_name is empty",
@@ -71,7 +70,7 @@ public class ProfileCredentialsProviderTest {
         client.clear();
         client.put(AuthConstant.INI_ACCESS_KEY_ID, AuthConstant.INI_TYPE_RAM);
         client.put(AuthConstant.INI_TYPE, "access_key");
-        Assert.assertNull(createCredential.invoke(provider, client, factory));
+        Assert.assertNull(createCredential.invoke(provider, client));
     }
 
     @Test
@@ -79,13 +78,12 @@ public class ProfileCredentialsProviderTest {
         ProfileCredentialsProvider provider = new ProfileCredentialsProvider();
         Class providerClass = provider.getClass();
         Method createCredential = providerClass.getDeclaredMethod(
-                "createCredential", Map.class, CredentialsProviderFactory.class);
+                "createCredential", Map.class);
         createCredential.setAccessible(true);
-        CredentialsProviderFactory factory = new CredentialsProviderFactory();
         Map<String, String> client = new HashMap<String, String>();
         client.put(AuthConstant.INI_TYPE, AuthConstant.INI_TYPE_ARN);
         try {
-            createCredential.invoke(provider, client, factory);
+            createCredential.invoke(provider, client);
             Assert.fail();
         } catch (Exception e) {
             Assert.assertEquals("The configured access_key_id or access_key_secret is empty",
@@ -94,7 +92,7 @@ public class ProfileCredentialsProviderTest {
 
         try {
             client.put(AuthConstant.INI_ACCESS_KEY_ID, AuthConstant.INI_TYPE_ARN);
-            createCredential.invoke(provider, client, factory);
+            createCredential.invoke(provider, client);
             Assert.fail();
         } catch (Exception e) {
             Assert.assertEquals("The configured access_key_id or access_key_secret is empty",
@@ -102,7 +100,7 @@ public class ProfileCredentialsProviderTest {
         }
         try {
             client.put(AuthConstant.INI_ACCESS_KEY_IDSECRET, AuthConstant.INI_TYPE_ARN);
-            createCredential.invoke(provider, client, factory);
+            createCredential.invoke(provider, client);
             Assert.fail();
         } catch (Exception e) {
             Assert.assertEquals("The configured role_session_name or role_arn is empty",
@@ -110,7 +108,7 @@ public class ProfileCredentialsProviderTest {
         }
         try {
             client.put(AuthConstant.INI_ROLE_SESSION_NAME, AuthConstant.INI_TYPE_ARN);
-            createCredential.invoke(provider, client, factory);
+            createCredential.invoke(provider, client);
         } catch (Exception e) {
             Assert.assertEquals("The configured role_session_name or role_arn is empty",
                     e.getCause().getLocalizedMessage());
@@ -122,13 +120,12 @@ public class ProfileCredentialsProviderTest {
         ProfileCredentialsProvider provider = new ProfileCredentialsProvider();
         Class providerClass = provider.getClass();
         Method createCredential = providerClass.getDeclaredMethod(
-                "createCredential", Map.class, CredentialsProviderFactory.class);
+                "createCredential", Map.class);
         createCredential.setAccessible(true);
-        CredentialsProviderFactory factory = new CredentialsProviderFactory();
         Map<String, String> client = new HashMap<String, String>();
         client.put(AuthConstant.INI_TYPE, AuthConstant.INI_TYPE_KEY_PAIR);
         try {
-            createCredential.invoke(provider, client, factory);
+            createCredential.invoke(provider, client);
             Assert.fail();
         } catch (Exception e) {
             Assert.assertEquals("The configured private_key_file is empty",
@@ -137,7 +134,7 @@ public class ProfileCredentialsProviderTest {
         client.put(AuthConstant.INI_PRIVATE_KEY_FILE, "sads");
         AuthUtils.setPrivateKey("test");
         try {
-            createCredential.invoke(provider, client, factory);
+            createCredential.invoke(provider, client);
             Assert.fail();
         } catch (Exception e) {
             Assert.assertEquals("The configured public_key_id or private_key_file content is empty",
@@ -153,7 +150,7 @@ public class ProfileCredentialsProviderTest {
         ProfileCredentialsProvider profileCredentialsProvider = new ProfileCredentialsProvider();
         Class providerClass = profileCredentialsProvider.getClass();
         Method createCredential = providerClass.getDeclaredMethod(
-                "createCredential", Map.class, CredentialsProviderFactory.class);
+                "createCredential", Map.class);
         createCredential.setAccessible(true);
         Map<String, String> client = new HashMap<String, String>();
         client.put(AuthConstant.INI_TYPE, AuthConstant.INI_TYPE_ARN);
@@ -165,10 +162,9 @@ public class ProfileCredentialsProviderTest {
         STSAssumeRoleSessionCredentialsProvider stsAssumeRoleSessionCredentialsProvider =
                 Mockito.mock(STSAssumeRoleSessionCredentialsProvider.class);
         Mockito.when(stsAssumeRoleSessionCredentialsProvider.getCredentials()).thenReturn(null);
-        CredentialsProviderFactory factory = Mockito.mock(CredentialsProviderFactory.class);
-        Mockito.when(factory.createCredentialsProvider(Mockito.any(STSAssumeRoleSessionCredentialsProvider.class))).
+        Mockito.when(Mockito.any(STSAssumeRoleSessionCredentialsProvider.class)).
                 thenReturn(stsAssumeRoleSessionCredentialsProvider);
-        Assert.assertNull(createCredential.invoke(profileCredentialsProvider, client, factory));
+        Assert.assertNull(createCredential.invoke(profileCredentialsProvider, client));
 
         client.clear();
         client.put(AuthConstant.INI_TYPE, AuthConstant.INI_TYPE_KEY_PAIR);
@@ -179,9 +175,9 @@ public class ProfileCredentialsProviderTest {
         STSGetSessionAccessKeyCredentialsProvider stsGetSessionAccessKeyCredentialsProvider =
                 Mockito.mock(STSGetSessionAccessKeyCredentialsProvider.class);
         Mockito.when(stsGetSessionAccessKeyCredentialsProvider.getCredentials()).thenReturn(null);
-        Mockito.when(factory.createCredentialsProvider(Mockito.any(STSGetSessionAccessKeyCredentialsProvider.class))).
+        Mockito.when(Mockito.any(STSGetSessionAccessKeyCredentialsProvider.class)).
                 thenReturn(stsGetSessionAccessKeyCredentialsProvider);
-        Assert.assertNull(createCredential.invoke(profileCredentialsProvider, client, factory));
+        Assert.assertNull(createCredential.invoke(profileCredentialsProvider, client));
         AuthUtils.setPrivateKey(null);
 
         client.clear();
@@ -190,9 +186,9 @@ public class ProfileCredentialsProviderTest {
         InstanceProfileCredentialsProvider instanceProfileCredentialsProvider =
                 Mockito.mock(InstanceProfileCredentialsProvider.class);
         Mockito.when(instanceProfileCredentialsProvider.getCredentials()).thenReturn(null);
-        Mockito.when(factory.createCredentialsProvider(Mockito.any(InstanceProfileCredentialsProvider.class))).
+        Mockito.when(Mockito.any(InstanceProfileCredentialsProvider.class)).
                 thenReturn(instanceProfileCredentialsProvider);
-        Assert.assertNull(createCredential.invoke(profileCredentialsProvider, client, factory));
+        Assert.assertNull(createCredential.invoke(profileCredentialsProvider, client));
     }
 
     @Test
