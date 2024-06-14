@@ -22,43 +22,19 @@ import com.aliyuncs.oceanbasepro.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeInstanceRequest extends RpcAcsRequest<DescribeInstanceResponse> {
+public class ModifyInstanceSSLRequest extends RpcAcsRequest<ModifyInstanceSSLResponse> {
 	   
 
-	private Integer pageNumber;
-
-	private String maxConnectionLimit;
-
 	private String instanceId;
-	public DescribeInstanceRequest() {
-		super("OceanBasePro", "2019-09-01", "DescribeInstance", "oceanbase");
+
+	private String enableSSL;
+	public ModifyInstanceSSLRequest() {
+		super("OceanBasePro", "2019-09-01", "ModifyInstanceSSL", "oceanbase");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putBodyParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public String getMaxConnectionLimit() {
-		return this.maxConnectionLimit;
-	}
-
-	public void setMaxConnectionLimit(String maxConnectionLimit) {
-		this.maxConnectionLimit = maxConnectionLimit;
-		if(maxConnectionLimit != null){
-			putBodyParameter("MaxConnectionLimit", maxConnectionLimit);
-		}
 	}
 
 	public String getInstanceId() {
@@ -72,9 +48,20 @@ public class DescribeInstanceRequest extends RpcAcsRequest<DescribeInstanceRespo
 		}
 	}
 
+	public String getEnableSSL() {
+		return this.enableSSL;
+	}
+
+	public void setEnableSSL(String enableSSL) {
+		this.enableSSL = enableSSL;
+		if(enableSSL != null){
+			putBodyParameter("EnableSSL", enableSSL);
+		}
+	}
+
 	@Override
-	public Class<DescribeInstanceResponse> getResponseClass() {
-		return DescribeInstanceResponse.class;
+	public Class<ModifyInstanceSSLResponse> getResponseClass() {
+		return ModifyInstanceSSLResponse.class;
 	}
 
 }

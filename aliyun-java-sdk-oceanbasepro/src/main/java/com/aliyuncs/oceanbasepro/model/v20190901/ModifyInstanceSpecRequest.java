@@ -34,6 +34,8 @@ public class ModifyInstanceSpecRequest extends RpcAcsRequest<ModifyInstanceSpecR
 	private String diskType;
 
 	private String instanceId;
+
+	private Boolean upgradeSpecNative;
 	public ModifyInstanceSpecRequest() {
 		super("OceanBasePro", "2019-09-01", "ModifyInstanceSpec", "oceanbase");
 		setMethod(MethodType.POST);
@@ -95,6 +97,17 @@ public class ModifyInstanceSpecRequest extends RpcAcsRequest<ModifyInstanceSpecR
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putBodyParameter("InstanceId", instanceId);
+		}
+	}
+
+	public Boolean getUpgradeSpecNative() {
+		return this.upgradeSpecNative;
+	}
+
+	public void setUpgradeSpecNative(Boolean upgradeSpecNative) {
+		this.upgradeSpecNative = upgradeSpecNative;
+		if(upgradeSpecNative != null){
+			putBodyParameter("UpgradeSpecNative", upgradeSpecNative.toString());
 		}
 	}
 

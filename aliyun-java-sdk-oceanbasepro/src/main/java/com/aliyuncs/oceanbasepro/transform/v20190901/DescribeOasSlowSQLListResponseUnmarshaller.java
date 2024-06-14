@@ -43,8 +43,8 @@ public class DescribeOasSlowSQLListResponseUnmarshaller {
 			dataItem.setClientIp(_ctx.stringValue("DescribeOasSlowSQLListResponse.Data["+ i +"].ClientIp"));
 			dataItem.setUserName(_ctx.stringValue("DescribeOasSlowSQLListResponse.Data["+ i +"].UserName"));
 			dataItem.setDbName(_ctx.stringValue("DescribeOasSlowSQLListResponse.Data["+ i +"].DbName"));
-			dataItem.setRetCode4012Count(_ctx.doubleValue("DescribeOasSlowSQLListResponse.Data["+ i +"].RetCode4012Count"));
-			dataItem.setRetCode4013Count(_ctx.doubleValue("DescribeOasSlowSQLListResponse.Data["+ i +"].RetCode4013Count"));
+			dataItem.setRetCode4012Count(_ctx.longValue("DescribeOasSlowSQLListResponse.Data["+ i +"].RetCode4012Count"));
+			dataItem.setRetCode4013Count(_ctx.longValue("DescribeOasSlowSQLListResponse.Data["+ i +"].RetCode4013Count"));
 			dataItem.setRetCode5001Count(_ctx.doubleValue("DescribeOasSlowSQLListResponse.Data["+ i +"].RetCode5001Count"));
 			dataItem.setRetCode5024Count(_ctx.doubleValue("DescribeOasSlowSQLListResponse.Data["+ i +"].RetCode5024Count"));
 			dataItem.setRetCode5167Count(_ctx.doubleValue("DescribeOasSlowSQLListResponse.Data["+ i +"].RetCode5167Count"));

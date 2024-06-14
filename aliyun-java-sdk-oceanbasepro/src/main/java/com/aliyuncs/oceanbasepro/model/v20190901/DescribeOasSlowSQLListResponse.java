@@ -69,9 +69,9 @@ public class DescribeOasSlowSQLListResponse extends AcsResponse {
 
 		private String dbName;
 
-		private Double retCode4012Count;
+		private Long retCode4012Count;
 
-		private Double retCode4013Count;
+		private Long retCode4013Count;
 
 		private Double retCode5001Count;
 
@@ -293,19 +293,19 @@ public class DescribeOasSlowSQLListResponse extends AcsResponse {
 			this.dbName = dbName;
 		}
 
-		public Double getRetCode4012Count() {
+		public Long getRetCode4012Count() {
 			return this.retCode4012Count;
 		}
 
-		public void setRetCode4012Count(Double retCode4012Count) {
+		public void setRetCode4012Count(Long retCode4012Count) {
 			this.retCode4012Count = retCode4012Count;
 		}
 
-		public Double getRetCode4013Count() {
+		public Long getRetCode4013Count() {
 			return this.retCode4013Count;
 		}
 
-		public void setRetCode4013Count(Double retCode4013Count) {
+		public void setRetCode4013Count(Long retCode4013Count) {
 			this.retCode4013Count = retCode4013Count;
 		}
 

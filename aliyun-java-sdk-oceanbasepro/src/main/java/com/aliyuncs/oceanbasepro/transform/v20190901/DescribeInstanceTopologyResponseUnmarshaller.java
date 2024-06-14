@@ -19,6 +19,11 @@ import java.util.List;
 
 import com.aliyuncs.oceanbasepro.model.v20190901.DescribeInstanceTopologyResponse;
 import com.aliyuncs.oceanbasepro.model.v20190901.DescribeInstanceTopologyResponse.InstanceTopology;
+import com.aliyuncs.oceanbasepro.model.v20190901.DescribeInstanceTopologyResponse.InstanceTopology.ReplicasItem;
+import com.aliyuncs.oceanbasepro.model.v20190901.DescribeInstanceTopologyResponse.InstanceTopology.ReplicasItem.ReplicaResource;
+import com.aliyuncs.oceanbasepro.model.v20190901.DescribeInstanceTopologyResponse.InstanceTopology.ReplicasItem.ReplicaResource.Cpu4;
+import com.aliyuncs.oceanbasepro.model.v20190901.DescribeInstanceTopologyResponse.InstanceTopology.ReplicasItem.ReplicaResource.DiskSize3;
+import com.aliyuncs.oceanbasepro.model.v20190901.DescribeInstanceTopologyResponse.InstanceTopology.ReplicasItem.ReplicaResource.Memory2;
 import com.aliyuncs.oceanbasepro.model.v20190901.DescribeInstanceTopologyResponse.InstanceTopology.TenantsItem;
 import com.aliyuncs.oceanbasepro.model.v20190901.DescribeInstanceTopologyResponse.InstanceTopology.TenantsItem.TenantZonesItem;
 import com.aliyuncs.oceanbasepro.model.v20190901.DescribeInstanceTopologyResponse.InstanceTopology.TenantsItem.TenantZonesItem.UnitsItem;
@@ -53,6 +58,9 @@ public class DescribeInstanceTopologyResponseUnmarshaller {
 			tenantsItem.setTenantDeployType(_ctx.stringValue("DescribeInstanceTopologyResponse.InstanceTopology.Tenants["+ i +"].TenantDeployType"));
 			tenantsItem.setTenantUnitNum(_ctx.integerValue("DescribeInstanceTopologyResponse.InstanceTopology.Tenants["+ i +"].TenantUnitNum"));
 			tenantsItem.setPrimaryZoneDeployType(_ctx.stringValue("DescribeInstanceTopologyResponse.InstanceTopology.Tenants["+ i +"].PrimaryZoneDeployType"));
+			tenantsItem.setTenantDiskSize(_ctx.floatValue("DescribeInstanceTopologyResponse.InstanceTopology.Tenants["+ i +"].TenantDiskSize"));
+			tenantsItem.setTenantUnitCpu(_ctx.floatValue("DescribeInstanceTopologyResponse.InstanceTopology.Tenants["+ i +"].TenantUnitCpu"));
+			tenantsItem.setTenantUnitMemory(_ctx.floatValue("DescribeInstanceTopologyResponse.InstanceTopology.Tenants["+ i +"].TenantUnitMemory"));
 
 			List<TenantZonesItem> tenantZones = new ArrayList<TenantZonesItem>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeInstanceTopologyResponse.InstanceTopology.Tenants["+ i +"].TenantZones.Length"); j++) {
@@ -60,6 +68,8 @@ public class DescribeInstanceTopologyResponseUnmarshaller {
 				tenantZonesItem.setTenantZoneRole(_ctx.stringValue("DescribeInstanceTopologyResponse.InstanceTopology.Tenants["+ i +"].TenantZones["+ j +"].TenantZoneRole"));
 				tenantZonesItem.setIsPrimaryTenantZone(_ctx.booleanValue("DescribeInstanceTopologyResponse.InstanceTopology.Tenants["+ i +"].TenantZones["+ j +"].IsPrimaryTenantZone"));
 				tenantZonesItem.setTenantZoneId(_ctx.stringValue("DescribeInstanceTopologyResponse.InstanceTopology.Tenants["+ i +"].TenantZones["+ j +"].TenantZoneId"));
+				tenantZonesItem.setLogicalZone(_ctx.stringValue("DescribeInstanceTopologyResponse.InstanceTopology.Tenants["+ i +"].TenantZones["+ j +"].LogicalZone"));
+				tenantZonesItem.setReplicaType(_ctx.stringValue("DescribeInstanceTopologyResponse.InstanceTopology.Tenants["+ i +"].TenantZones["+ j +"].ReplicaType"));
 
 				List<UnitsItem> units = new ArrayList<UnitsItem>();
 				for (int k = 0; k < _ctx.lengthValue("DescribeInstanceTopologyResponse.InstanceTopology.Tenants["+ i +"].TenantZones["+ j +"].Units.Length"); k++) {
@@ -116,6 +126,7 @@ public class DescribeInstanceTopologyResponseUnmarshaller {
 				nodesItem.setReplicaType(_ctx.stringValue("DescribeInstanceTopologyResponse.InstanceTopology.Zones["+ i +"].Nodes["+ j +"].ReplicaType"));
 				nodesItem.setFullCopyId(_ctx.longValue("DescribeInstanceTopologyResponse.InstanceTopology.Zones["+ i +"].Nodes["+ j +"].FullCopyId"));
 				nodesItem.setReadOnlyCopyId(_ctx.longValue("DescribeInstanceTopologyResponse.InstanceTopology.Zones["+ i +"].Nodes["+ j +"].ReadOnlyCopyId"));
+				nodesItem.setLogicalZone(_ctx.stringValue("DescribeInstanceTopologyResponse.InstanceTopology.Zones["+ i +"].Nodes["+ j +"].LogicalZone"));
 
 				List<NodeResourceItem> nodeResource = new ArrayList<NodeResourceItem>();
 				for (int k = 0; k < _ctx.lengthValue("DescribeInstanceTopologyResponse.InstanceTopology.Zones["+ i +"].Nodes["+ j +"].NodeResource.Length"); k++) {
@@ -147,6 +158,39 @@ public class DescribeInstanceTopologyResponseUnmarshaller {
 			zones.add(zonesItem);
 		}
 		instanceTopology.setZones(zones);
+
+		List<ReplicasItem> replicas = new ArrayList<ReplicasItem>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceTopologyResponse.InstanceTopology.Replicas.Length"); i++) {
+			ReplicasItem replicasItem = new ReplicasItem();
+			replicasItem.setLogicalZone(_ctx.stringValue("DescribeInstanceTopologyResponse.InstanceTopology.Replicas["+ i +"].LogicalZone"));
+			replicasItem.setNodeNum(_ctx.integerValue("DescribeInstanceTopologyResponse.InstanceTopology.Replicas["+ i +"].NodeNum"));
+			replicasItem.setZoneLogicalName(_ctx.stringValue("DescribeInstanceTopologyResponse.InstanceTopology.Replicas["+ i +"].ZoneLogicalName"));
+			replicasItem.setZoneRegionName(_ctx.stringValue("DescribeInstanceTopologyResponse.InstanceTopology.Replicas["+ i +"].ZoneRegionName"));
+			replicasItem.setZoneLogicalId(_ctx.integerValue("DescribeInstanceTopologyResponse.InstanceTopology.Replicas["+ i +"].ZoneLogicalId"));
+			replicasItem.setReplicaType(_ctx.stringValue("DescribeInstanceTopologyResponse.InstanceTopology.Replicas["+ i +"].ReplicaType"));
+			replicasItem.setStatus(_ctx.stringValue("DescribeInstanceTopologyResponse.InstanceTopology.Replicas["+ i +"].Status"));
+
+			ReplicaResource replicaResource = new ReplicaResource();
+
+			Memory2 memory2 = new Memory2();
+			memory2.setUsedMemory(_ctx.longValue("DescribeInstanceTopologyResponse.InstanceTopology.Replicas["+ i +"].ReplicaResource.Memory.UsedMemory"));
+			memory2.setTotalMemory(_ctx.longValue("DescribeInstanceTopologyResponse.InstanceTopology.Replicas["+ i +"].ReplicaResource.Memory.TotalMemory"));
+			replicaResource.setMemory2(memory2);
+
+			DiskSize3 diskSize3 = new DiskSize3();
+			diskSize3.setUsedDiskSize(_ctx.floatValue("DescribeInstanceTopologyResponse.InstanceTopology.Replicas["+ i +"].ReplicaResource.DiskSize.UsedDiskSize"));
+			diskSize3.setTotalDiskSize(_ctx.longValue("DescribeInstanceTopologyResponse.InstanceTopology.Replicas["+ i +"].ReplicaResource.DiskSize.TotalDiskSize"));
+			replicaResource.setDiskSize3(diskSize3);
+
+			Cpu4 cpu4 = new Cpu4();
+			cpu4.setTotalCpu(_ctx.integerValue("DescribeInstanceTopologyResponse.InstanceTopology.Replicas["+ i +"].ReplicaResource.Cpu.TotalCpu"));
+			cpu4.setUsedCpu(_ctx.integerValue("DescribeInstanceTopologyResponse.InstanceTopology.Replicas["+ i +"].ReplicaResource.Cpu.UsedCpu"));
+			replicaResource.setCpu4(cpu4);
+			replicasItem.setReplicaResource(replicaResource);
+
+			replicas.add(replicasItem);
+		}
+		instanceTopology.setReplicas(replicas);
 		describeInstanceTopologyResponse.setInstanceTopology(instanceTopology);
 	 
 	 	return describeInstanceTopologyResponse;

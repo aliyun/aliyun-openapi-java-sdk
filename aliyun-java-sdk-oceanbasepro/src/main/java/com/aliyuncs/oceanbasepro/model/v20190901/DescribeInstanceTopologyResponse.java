@@ -51,6 +51,8 @@ public class DescribeInstanceTopologyResponse extends AcsResponse {
 
 		private List<ZonesItem> zones;
 
+		private List<ReplicasItem> replicas;
+
 		public List<TenantsItem> getTenants() {
 			return this.tenants;
 		}
@@ -65,6 +67,14 @@ public class DescribeInstanceTopologyResponse extends AcsResponse {
 
 		public void setZones(List<ZonesItem> zones) {
 			this.zones = zones;
+		}
+
+		public List<ReplicasItem> getReplicas() {
+			return this.replicas;
+		}
+
+		public void setReplicas(List<ReplicasItem> replicas) {
+			this.replicas = replicas;
 		}
 
 		public static class TenantsItem {
@@ -86,6 +96,12 @@ public class DescribeInstanceTopologyResponse extends AcsResponse {
 			private Integer tenantUnitNum;
 
 			private String primaryZoneDeployType;
+
+			private Float tenantDiskSize;
+
+			private Float tenantUnitCpu;
+
+			private Float tenantUnitMemory;
 
 			private List<TenantZonesItem> tenantZones;
 
@@ -161,6 +177,30 @@ public class DescribeInstanceTopologyResponse extends AcsResponse {
 				this.primaryZoneDeployType = primaryZoneDeployType;
 			}
 
+			public Float getTenantDiskSize() {
+				return this.tenantDiskSize;
+			}
+
+			public void setTenantDiskSize(Float tenantDiskSize) {
+				this.tenantDiskSize = tenantDiskSize;
+			}
+
+			public Float getTenantUnitCpu() {
+				return this.tenantUnitCpu;
+			}
+
+			public void setTenantUnitCpu(Float tenantUnitCpu) {
+				this.tenantUnitCpu = tenantUnitCpu;
+			}
+
+			public Float getTenantUnitMemory() {
+				return this.tenantUnitMemory;
+			}
+
+			public void setTenantUnitMemory(Float tenantUnitMemory) {
+				this.tenantUnitMemory = tenantUnitMemory;
+			}
+
 			public List<TenantZonesItem> getTenantZones() {
 				return this.tenantZones;
 			}
@@ -176,6 +216,10 @@ public class DescribeInstanceTopologyResponse extends AcsResponse {
 				private Boolean isPrimaryTenantZone;
 
 				private String tenantZoneId;
+
+				private String logicalZone;
+
+				private String replicaType;
 
 				private List<UnitsItem> units;
 
@@ -201,6 +245,22 @@ public class DescribeInstanceTopologyResponse extends AcsResponse {
 
 				public void setTenantZoneId(String tenantZoneId) {
 					this.tenantZoneId = tenantZoneId;
+				}
+
+				public String getLogicalZone() {
+					return this.logicalZone;
+				}
+
+				public void setLogicalZone(String logicalZone) {
+					this.logicalZone = logicalZone;
+				}
+
+				public String getReplicaType() {
+					return this.replicaType;
+				}
+
+				public void setReplicaType(String replicaType) {
+					this.replicaType = replicaType;
 				}
 
 				public List<UnitsItem> getUnits() {
@@ -382,6 +442,8 @@ public class DescribeInstanceTopologyResponse extends AcsResponse {
 
 				private Long readOnlyCopyId;
 
+				private String logicalZone;
+
 				private List<NodeResourceItem> nodeResource;
 
 				public String getNodeId() {
@@ -430,6 +492,14 @@ public class DescribeInstanceTopologyResponse extends AcsResponse {
 
 				public void setReadOnlyCopyId(Long readOnlyCopyId) {
 					this.readOnlyCopyId = readOnlyCopyId;
+				}
+
+				public String getLogicalZone() {
+					return this.logicalZone;
+				}
+
+				public void setLogicalZone(String logicalZone) {
+					this.logicalZone = logicalZone;
 				}
 
 				public List<NodeResourceItem> getNodeResource() {
@@ -575,6 +645,191 @@ public class DescribeInstanceTopologyResponse extends AcsResponse {
 
 					public void setMaxDiskUsedObServer(List<String> maxDiskUsedObServer) {
 						this.maxDiskUsedObServer = maxDiskUsedObServer;
+					}
+				}
+			}
+		}
+
+		public static class ReplicasItem {
+
+			private String logicalZone;
+
+			private Integer nodeNum;
+
+			private String zoneLogicalName;
+
+			private String zoneRegionName;
+
+			private Integer zoneLogicalId;
+
+			private String replicaType;
+
+			private String status;
+
+			private ReplicaResource replicaResource;
+
+			public String getLogicalZone() {
+				return this.logicalZone;
+			}
+
+			public void setLogicalZone(String logicalZone) {
+				this.logicalZone = logicalZone;
+			}
+
+			public Integer getNodeNum() {
+				return this.nodeNum;
+			}
+
+			public void setNodeNum(Integer nodeNum) {
+				this.nodeNum = nodeNum;
+			}
+
+			public String getZoneLogicalName() {
+				return this.zoneLogicalName;
+			}
+
+			public void setZoneLogicalName(String zoneLogicalName) {
+				this.zoneLogicalName = zoneLogicalName;
+			}
+
+			public String getZoneRegionName() {
+				return this.zoneRegionName;
+			}
+
+			public void setZoneRegionName(String zoneRegionName) {
+				this.zoneRegionName = zoneRegionName;
+			}
+
+			public Integer getZoneLogicalId() {
+				return this.zoneLogicalId;
+			}
+
+			public void setZoneLogicalId(Integer zoneLogicalId) {
+				this.zoneLogicalId = zoneLogicalId;
+			}
+
+			public String getReplicaType() {
+				return this.replicaType;
+			}
+
+			public void setReplicaType(String replicaType) {
+				this.replicaType = replicaType;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
+			public ReplicaResource getReplicaResource() {
+				return this.replicaResource;
+			}
+
+			public void setReplicaResource(ReplicaResource replicaResource) {
+				this.replicaResource = replicaResource;
+			}
+
+			public static class ReplicaResource {
+
+				private Memory2 memory2;
+
+				private DiskSize3 diskSize3;
+
+				private Cpu4 cpu4;
+
+				public Memory2 getMemory2() {
+					return this.memory2;
+				}
+
+				public void setMemory2(Memory2 memory2) {
+					this.memory2 = memory2;
+				}
+
+				public DiskSize3 getDiskSize3() {
+					return this.diskSize3;
+				}
+
+				public void setDiskSize3(DiskSize3 diskSize3) {
+					this.diskSize3 = diskSize3;
+				}
+
+				public Cpu4 getCpu4() {
+					return this.cpu4;
+				}
+
+				public void setCpu4(Cpu4 cpu4) {
+					this.cpu4 = cpu4;
+				}
+
+				public static class Memory2 {
+
+					private Long usedMemory;
+
+					private Long totalMemory;
+
+					public Long getUsedMemory() {
+						return this.usedMemory;
+					}
+
+					public void setUsedMemory(Long usedMemory) {
+						this.usedMemory = usedMemory;
+					}
+
+					public Long getTotalMemory() {
+						return this.totalMemory;
+					}
+
+					public void setTotalMemory(Long totalMemory) {
+						this.totalMemory = totalMemory;
+					}
+				}
+
+				public static class DiskSize3 {
+
+					private Float usedDiskSize;
+
+					private Long totalDiskSize;
+
+					public Float getUsedDiskSize() {
+						return this.usedDiskSize;
+					}
+
+					public void setUsedDiskSize(Float usedDiskSize) {
+						this.usedDiskSize = usedDiskSize;
+					}
+
+					public Long getTotalDiskSize() {
+						return this.totalDiskSize;
+					}
+
+					public void setTotalDiskSize(Long totalDiskSize) {
+						this.totalDiskSize = totalDiskSize;
+					}
+				}
+
+				public static class Cpu4 {
+
+					private Integer totalCpu;
+
+					private Integer usedCpu;
+
+					public Integer getTotalCpu() {
+						return this.totalCpu;
+					}
+
+					public void setTotalCpu(Integer totalCpu) {
+						this.totalCpu = totalCpu;
+					}
+
+					public Integer getUsedCpu() {
+						return this.usedCpu;
+					}
+
+					public void setUsedCpu(Integer usedCpu) {
+						this.usedCpu = usedCpu;
 					}
 				}
 			}

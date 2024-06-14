@@ -111,6 +111,8 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private Boolean enableReadOnlyReplicaManagement;
 
+		private String specType;
+
 		private List<String> availableZones;
 
 		private Resource resource;
@@ -331,6 +333,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		public void setEnableReadOnlyReplicaManagement(Boolean enableReadOnlyReplicaManagement) {
 			this.enableReadOnlyReplicaManagement = enableReadOnlyReplicaManagement;
+		}
+
+		public String getSpecType() {
+			return this.specType;
+		}
+
+		public void setSpecType(String specType) {
+			this.specType = specType;
 		}
 
 		public List<String> getAvailableZones() {

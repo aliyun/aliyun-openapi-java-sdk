@@ -15,6 +15,7 @@
 package com.aliyuncs.oceanbasepro.model.v20190901;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.oceanbasepro.Endpoint;
 
@@ -22,43 +23,20 @@ import com.aliyuncs.oceanbasepro.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeInstanceRequest extends RpcAcsRequest<DescribeInstanceResponse> {
+public class DescribeTenantReadableScnRequest extends RpcAcsRequest<DescribeTenantReadableScnResponse> {
 	   
 
-	private Integer pageNumber;
-
-	private String maxConnectionLimit;
-
 	private String instanceId;
-	public DescribeInstanceRequest() {
-		super("OceanBasePro", "2019-09-01", "DescribeInstance", "oceanbase");
+
+	private String tenantId;
+	public DescribeTenantReadableScnRequest() {
+		super("OceanBasePro", "2019-09-01", "DescribeTenantReadableScn", "oceanbase");
+		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putBodyParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public String getMaxConnectionLimit() {
-		return this.maxConnectionLimit;
-	}
-
-	public void setMaxConnectionLimit(String maxConnectionLimit) {
-		this.maxConnectionLimit = maxConnectionLimit;
-		if(maxConnectionLimit != null){
-			putBodyParameter("MaxConnectionLimit", maxConnectionLimit);
-		}
 	}
 
 	public String getInstanceId() {
@@ -72,9 +50,20 @@ public class DescribeInstanceRequest extends RpcAcsRequest<DescribeInstanceRespo
 		}
 	}
 
+	public String getTenantId() {
+		return this.tenantId;
+	}
+
+	public void setTenantId(String tenantId) {
+		this.tenantId = tenantId;
+		if(tenantId != null){
+			putBodyParameter("TenantId", tenantId);
+		}
+	}
+
 	@Override
-	public Class<DescribeInstanceResponse> getResponseClass() {
-		return DescribeInstanceResponse.class;
+	public Class<DescribeTenantReadableScnResponse> getResponseClass() {
+		return DescribeTenantReadableScnResponse.class;
 	}
 
 }

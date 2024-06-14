@@ -103,6 +103,8 @@ public class DescribeTenantResponse extends AcsResponse {
 
 		private Boolean enableReadOnlyReplica;
 
+		private String recycleBinStatus;
+
 		private String lowerCaseTableNames;
 
 		private String version;
@@ -341,6 +343,14 @@ public class DescribeTenantResponse extends AcsResponse {
 			this.enableReadOnlyReplica = enableReadOnlyReplica;
 		}
 
+		public String getRecycleBinStatus() {
+			return this.recycleBinStatus;
+		}
+
+		public void setRecycleBinStatus(String recycleBinStatus) {
+			this.recycleBinStatus = recycleBinStatus;
+		}
+
 		public String getLowerCaseTableNames() {
 			return this.lowerCaseTableNames;
 		}
@@ -433,7 +443,21 @@ public class DescribeTenantResponse extends AcsResponse {
 
 			private String connectionReplicaType;
 
+			private String proxyClusterId;
+
+			private Long maxConnectionLimit;
+
+			private Long internetMaxConnectionLimit;
+
+			private Integer intranetRpcPort;
+
+			private Long internetMaxConnectionNum;
+
+			private Integer internetRpcPort;
+
 			private List<String> connectionZones;
+
+			private List<String> connectionLogicalZones;
 
 			public String getIntranetAddress() {
 				return this.intranetAddress;
@@ -571,12 +595,68 @@ public class DescribeTenantResponse extends AcsResponse {
 				this.connectionReplicaType = connectionReplicaType;
 			}
 
+			public String getProxyClusterId() {
+				return this.proxyClusterId;
+			}
+
+			public void setProxyClusterId(String proxyClusterId) {
+				this.proxyClusterId = proxyClusterId;
+			}
+
+			public Long getMaxConnectionLimit() {
+				return this.maxConnectionLimit;
+			}
+
+			public void setMaxConnectionLimit(Long maxConnectionLimit) {
+				this.maxConnectionLimit = maxConnectionLimit;
+			}
+
+			public Long getInternetMaxConnectionLimit() {
+				return this.internetMaxConnectionLimit;
+			}
+
+			public void setInternetMaxConnectionLimit(Long internetMaxConnectionLimit) {
+				this.internetMaxConnectionLimit = internetMaxConnectionLimit;
+			}
+
+			public Integer getIntranetRpcPort() {
+				return this.intranetRpcPort;
+			}
+
+			public void setIntranetRpcPort(Integer intranetRpcPort) {
+				this.intranetRpcPort = intranetRpcPort;
+			}
+
+			public Long getInternetMaxConnectionNum() {
+				return this.internetMaxConnectionNum;
+			}
+
+			public void setInternetMaxConnectionNum(Long internetMaxConnectionNum) {
+				this.internetMaxConnectionNum = internetMaxConnectionNum;
+			}
+
+			public Integer getInternetRpcPort() {
+				return this.internetRpcPort;
+			}
+
+			public void setInternetRpcPort(Integer internetRpcPort) {
+				this.internetRpcPort = internetRpcPort;
+			}
+
 			public List<String> getConnectionZones() {
 				return this.connectionZones;
 			}
 
 			public void setConnectionZones(List<String> connectionZones) {
 				this.connectionZones = connectionZones;
+			}
+
+			public List<String> getConnectionLogicalZones() {
+				return this.connectionLogicalZones;
+			}
+
+			public void setConnectionLogicalZones(List<String> connectionLogicalZones) {
+				this.connectionLogicalZones = connectionLogicalZones;
 			}
 		}
 

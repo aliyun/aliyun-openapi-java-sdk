@@ -72,6 +72,7 @@ public class DescribeTenantResponseUnmarshaller {
 		tenant.setTimeZone(_ctx.stringValue("DescribeTenantResponse.Tenant.TimeZone"));
 		tenant.setDataMergeTime(_ctx.stringValue("DescribeTenantResponse.Tenant.DataMergeTime"));
 		tenant.setEnableReadOnlyReplica(_ctx.booleanValue("DescribeTenantResponse.Tenant.EnableReadOnlyReplica"));
+		tenant.setRecycleBinStatus(_ctx.stringValue("DescribeTenantResponse.Tenant.RecycleBinStatus"));
 		tenant.setLowerCaseTableNames(_ctx.stringValue("DescribeTenantResponse.Tenant.LowerCaseTableNames"));
 		tenant.setVersion(_ctx.stringValue("DescribeTenantResponse.Tenant.Version"));
 
@@ -163,12 +164,24 @@ public class DescribeTenantResponseUnmarshaller {
 			tenantConnectionsItem.setTenantEndpointId(_ctx.stringValue("DescribeTenantResponse.Tenant.TenantConnections["+ i +"].TenantEndpointId"));
 			tenantConnectionsItem.setMaxConnectionNum(_ctx.longValue("DescribeTenantResponse.Tenant.TenantConnections["+ i +"].MaxConnectionNum"));
 			tenantConnectionsItem.setConnectionReplicaType(_ctx.stringValue("DescribeTenantResponse.Tenant.TenantConnections["+ i +"].ConnectionReplicaType"));
+			tenantConnectionsItem.setProxyClusterId(_ctx.stringValue("DescribeTenantResponse.Tenant.TenantConnections["+ i +"].ProxyClusterId"));
+			tenantConnectionsItem.setMaxConnectionLimit(_ctx.longValue("DescribeTenantResponse.Tenant.TenantConnections["+ i +"].MaxConnectionLimit"));
+			tenantConnectionsItem.setInternetMaxConnectionLimit(_ctx.longValue("DescribeTenantResponse.Tenant.TenantConnections["+ i +"].InternetMaxConnectionLimit"));
+			tenantConnectionsItem.setIntranetRpcPort(_ctx.integerValue("DescribeTenantResponse.Tenant.TenantConnections["+ i +"].IntranetRpcPort"));
+			tenantConnectionsItem.setInternetMaxConnectionNum(_ctx.longValue("DescribeTenantResponse.Tenant.TenantConnections["+ i +"].InternetMaxConnectionNum"));
+			tenantConnectionsItem.setInternetRpcPort(_ctx.integerValue("DescribeTenantResponse.Tenant.TenantConnections["+ i +"].InternetRpcPort"));
 
 			List<String> connectionZones = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeTenantResponse.Tenant.TenantConnections["+ i +"].ConnectionZones.Length"); j++) {
 				connectionZones.add(_ctx.stringValue("DescribeTenantResponse.Tenant.TenantConnections["+ i +"].ConnectionZones["+ j +"]"));
 			}
 			tenantConnectionsItem.setConnectionZones(connectionZones);
+
+			List<String> connectionLogicalZones = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeTenantResponse.Tenant.TenantConnections["+ i +"].ConnectionLogicalZones.Length"); j++) {
+				connectionLogicalZones.add(_ctx.stringValue("DescribeTenantResponse.Tenant.TenantConnections["+ i +"].ConnectionLogicalZones["+ j +"]"));
+			}
+			tenantConnectionsItem.setConnectionLogicalZones(connectionLogicalZones);
 
 			tenantConnections.add(tenantConnectionsItem);
 		}

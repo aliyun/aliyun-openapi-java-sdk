@@ -123,6 +123,10 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 		private String primaryRegion;
 
+		private String specType;
+
+		private Boolean allowModifyInternetAddressConnectionLimit;
+
 		private List<String> availableZones;
 
 		private List<String> zones;
@@ -437,6 +441,22 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 		public void setPrimaryRegion(String primaryRegion) {
 			this.primaryRegion = primaryRegion;
+		}
+
+		public String getSpecType() {
+			return this.specType;
+		}
+
+		public void setSpecType(String specType) {
+			this.specType = specType;
+		}
+
+		public Boolean getAllowModifyInternetAddressConnectionLimit() {
+			return this.allowModifyInternetAddressConnectionLimit;
+		}
+
+		public void setAllowModifyInternetAddressConnectionLimit(Boolean allowModifyInternetAddressConnectionLimit) {
+			this.allowModifyInternetAddressConnectionLimit = allowModifyInternetAddressConnectionLimit;
 		}
 
 		public List<String> getAvailableZones() {
