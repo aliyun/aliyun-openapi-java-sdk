@@ -14,16 +14,16 @@
 
 package com.aliyuncs.live.transform.v20161101;
 
-import com.aliyuncs.live.model.v20161101.RealTimeSnapshotCommandResponse;
+import com.aliyuncs.live.model.v20161101.UpdateRtcMPUEventSubResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class RealTimeSnapshotCommandResponseUnmarshaller {
+public class UpdateRtcMPUEventSubResponseUnmarshaller {
 
-	public static RealTimeSnapshotCommandResponse unmarshall(RealTimeSnapshotCommandResponse realTimeSnapshotCommandResponse, UnmarshallerContext _ctx) {
+	public static UpdateRtcMPUEventSubResponse unmarshall(UpdateRtcMPUEventSubResponse updateRtcMPUEventSubResponse, UnmarshallerContext _ctx) {
 		
-		realTimeSnapshotCommandResponse.setRequestId(_ctx.stringValue("RealTimeSnapshotCommandResponse.RequestId"));
+		updateRtcMPUEventSubResponse.setRequestId(_ctx.stringValue("UpdateRtcMPUEventSubResponse.RequestId"));
 	 
-	 	return realTimeSnapshotCommandResponse;
+	 	return updateRtcMPUEventSubResponse;
 	}
 }

@@ -22,18 +22,14 @@ import com.aliyuncs.live.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateLiveTranscodeTemplateRequest extends RpcAcsRequest<CreateLiveTranscodeTemplateResponse> {
+public class DeleteRtcAsrTaskRequest extends RpcAcsRequest<DeleteRtcAsrTaskResponse> {
 	   
 
-	private String type;
-
-	private String securityToken;
-
-	private String templateConfig;
+	private String taskId;
 
 	private Long ownerId;
-	public CreateLiveTranscodeTemplateRequest() {
-		super("live", "2016-11-01", "CreateLiveTranscodeTemplate", "live");
+	public DeleteRtcAsrTaskRequest() {
+		super("live", "2016-11-01", "DeleteRtcAsrTask", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -41,36 +37,14 @@ public class CreateLiveTranscodeTemplateRequest extends RpcAcsRequest<CreateLive
 		} catch (Exception e) {}
 	}
 
-	public String getType() {
-		return this.type;
+	public String getTaskId() {
+		return this.taskId;
 	}
 
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public String getTemplateConfig() {
-		return this.templateConfig;
-	}
-
-	public void setTemplateConfig(String templateConfig) {
-		this.templateConfig = templateConfig;
-		if(templateConfig != null){
-			putQueryParameter("TemplateConfig", templateConfig);
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
+		if(taskId != null){
+			putQueryParameter("TaskId", taskId);
 		}
 	}
 
@@ -86,8 +60,8 @@ public class CreateLiveTranscodeTemplateRequest extends RpcAcsRequest<CreateLive
 	}
 
 	@Override
-	public Class<CreateLiveTranscodeTemplateResponse> getResponseClass() {
-		return CreateLiveTranscodeTemplateResponse.class;
+	public Class<DeleteRtcAsrTaskResponse> getResponseClass() {
+		return DeleteRtcAsrTaskResponse.class;
 	}
 
 }

@@ -15,35 +15,27 @@
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.live.transform.v20161101.DeleteMultiRateConfigResponseUnmarshaller;
+import com.aliyuncs.live.transform.v20161101.DeleteRtcAsrTaskResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DeleteMultiRateConfigResponse extends AcsResponse {
+public class DeleteRtcAsrTaskResponse extends AcsResponse {
 
-	private Integer code;
-
-	private String message;
+	private String description;
 
 	private String requestId;
 
-	public Integer getCode() {
-		return this.code;
+	private Long retCode;
+
+	public String getDescription() {
+		return this.description;
 	}
 
-	public void setCode(Integer code) {
-		this.code = code;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	public String getRequestId() {
@@ -54,8 +46,16 @@ public class DeleteMultiRateConfigResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public Long getRetCode() {
+		return this.retCode;
+	}
+
+	public void setRetCode(Long retCode) {
+		this.retCode = retCode;
+	}
+
 	@Override
-	public DeleteMultiRateConfigResponse getInstance(UnmarshallerContext context) {
-		return	DeleteMultiRateConfigResponseUnmarshaller.unmarshall(this, context);
+	public DeleteRtcAsrTaskResponse getInstance(UnmarshallerContext context) {
+		return	DeleteRtcAsrTaskResponseUnmarshaller.unmarshall(this, context);
 	}
 }

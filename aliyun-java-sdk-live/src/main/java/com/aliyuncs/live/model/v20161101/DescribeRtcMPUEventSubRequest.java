@@ -22,14 +22,12 @@ import com.aliyuncs.live.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetMultiRateConfigListRequest extends RpcAcsRequest<GetMultiRateConfigListResponse> {
+public class DescribeRtcMPUEventSubRequest extends RpcAcsRequest<DescribeRtcMPUEventSubResponse> {
 	   
 
-	private String domainName;
-
-	private Long ownerId;
-	public GetMultiRateConfigListRequest() {
-		super("live", "2016-11-01", "GetMultiRateConfigList", "live");
+	private String appId;
+	public DescribeRtcMPUEventSubRequest() {
+		super("live", "2016-11-01", "DescribeRtcMPUEventSub", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +35,20 @@ public class GetMultiRateConfigListRequest extends RpcAcsRequest<GetMultiRateCon
 		} catch (Exception e) {}
 	}
 
-	public String getDomainName() {
-		return this.domainName;
+	public String getAppId() {
+		return this.appId;
 	}
 
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
+	public void setAppId(String appId) {
+		this.appId = appId;
+		if(appId != null){
+			putQueryParameter("AppId", appId);
 		}
 	}
 
 	@Override
-	public Class<GetMultiRateConfigListResponse> getResponseClass() {
-		return GetMultiRateConfigListResponse.class;
+	public Class<DescribeRtcMPUEventSubResponse> getResponseClass() {
+		return DescribeRtcMPUEventSubResponse.class;
 	}
 
 }

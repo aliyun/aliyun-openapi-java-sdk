@@ -15,16 +15,18 @@
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.live.transform.v20161101.RealTimeSnapshotCommandResponseUnmarshaller;
+import com.aliyuncs.live.transform.v20161101.CreateRtcMPUEventSubResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class RealTimeSnapshotCommandResponse extends AcsResponse {
+public class CreateRtcMPUEventSubResponse extends AcsResponse {
 
 	private String requestId;
+
+	private String subId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -34,8 +36,16 @@ public class RealTimeSnapshotCommandResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getSubId() {
+		return this.subId;
+	}
+
+	public void setSubId(String subId) {
+		this.subId = subId;
+	}
+
 	@Override
-	public RealTimeSnapshotCommandResponse getInstance(UnmarshallerContext context) {
-		return	RealTimeSnapshotCommandResponseUnmarshaller.unmarshall(this, context);
+	public CreateRtcMPUEventSubResponse getInstance(UnmarshallerContext context) {
+		return	CreateRtcMPUEventSubResponseUnmarshaller.unmarshall(this, context);
 	}
 }

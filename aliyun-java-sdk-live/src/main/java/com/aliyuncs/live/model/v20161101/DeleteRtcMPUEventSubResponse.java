@@ -15,14 +15,14 @@
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.live.transform.v20161101.SetLiveStreamOptimizedFeatureConfigResponseUnmarshaller;
+import com.aliyuncs.live.transform.v20161101.DeleteRtcMPUEventSubResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class SetLiveStreamOptimizedFeatureConfigResponse extends AcsResponse {
+public class DeleteRtcMPUEventSubResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -35,7 +35,7 @@ public class SetLiveStreamOptimizedFeatureConfigResponse extends AcsResponse {
 	}
 
 	@Override
-	public SetLiveStreamOptimizedFeatureConfigResponse getInstance(UnmarshallerContext context) {
-		return	SetLiveStreamOptimizedFeatureConfigResponseUnmarshaller.unmarshall(this, context);
+	public DeleteRtcMPUEventSubResponse getInstance(UnmarshallerContext context) {
+		return	DeleteRtcMPUEventSubResponseUnmarshaller.unmarshall(this, context);
 	}
 }

@@ -374,11 +374,11 @@ public class UpdateLiveMPUTaskRequest extends RpcAcsRequest<UpdateLiveMPUTaskRes
 				@SerializedName("Y")
 				private String y;
 
-				@SerializedName("RenderMode")
-				private String renderMode;
-
 				@SerializedName("UserInfo")
 				private UserInfo userInfo;
+
+				@SerializedName("RenderMode")
+				private String renderMode;
 
 				@SerializedName("Height")
 				private String height;
@@ -423,20 +423,20 @@ public class UpdateLiveMPUTaskRequest extends RpcAcsRequest<UpdateLiveMPUTaskRes
 					this.y = y;
 				}
 
-				public String getRenderMode() {
-					return this.renderMode;
-				}
-
-				public void setRenderMode(String renderMode) {
-					this.renderMode = renderMode;
-				}
-
 				public UserInfo getUserInfo() {
 					return this.userInfo;
 				}
 
 				public void setUserInfo(UserInfo userInfo) {
 					this.userInfo = userInfo;
+				}
+
+				public String getRenderMode() {
+					return this.renderMode;
+				}
+
+				public void setRenderMode(String renderMode) {
+					this.renderMode = renderMode;
 				}
 
 				public String getHeight() {
@@ -582,6 +582,9 @@ public class UpdateLiveMPUTaskRequest extends RpcAcsRequest<UpdateLiveMPUTaskRes
 			@SerializedName("AudioBitrate")
 			private String audioBitrate;
 
+			@SerializedName("EnhancedParam")
+			private String enhancedParam;
+
 			@SerializedName("VideoFramerate")
 			private String videoFramerate;
 
@@ -593,6 +596,9 @@ public class UpdateLiveMPUTaskRequest extends RpcAcsRequest<UpdateLiveMPUTaskRes
 
 			@SerializedName("VideoBitrate")
 			private String videoBitrate;
+
+			@SerializedName("VideoCodec")
+			private String videoCodec;
 
 			@SerializedName("AudioChannels")
 			private String audioChannels;
@@ -622,6 +628,14 @@ public class UpdateLiveMPUTaskRequest extends RpcAcsRequest<UpdateLiveMPUTaskRes
 
 			public void setAudioBitrate(String audioBitrate) {
 				this.audioBitrate = audioBitrate;
+			}
+
+			public String getEnhancedParam() {
+				return this.enhancedParam;
+			}
+
+			public void setEnhancedParam(String enhancedParam) {
+				this.enhancedParam = enhancedParam;
 			}
 
 			public String getVideoFramerate() {
@@ -654,6 +668,14 @@ public class UpdateLiveMPUTaskRequest extends RpcAcsRequest<UpdateLiveMPUTaskRes
 
 			public void setVideoBitrate(String videoBitrate) {
 				this.videoBitrate = videoBitrate;
+			}
+
+			public String getVideoCodec() {
+				return this.videoCodec;
+			}
+
+			public void setVideoCodec(String videoCodec) {
+				this.videoCodec = videoCodec;
 			}
 
 			public String getAudioChannels() {

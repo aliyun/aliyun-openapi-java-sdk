@@ -14,16 +14,16 @@
 
 package com.aliyuncs.live.transform.v20161101;
 
-import com.aliyuncs.live.model.v20161101.SetLiveStreamOptimizedFeatureConfigResponse;
+import com.aliyuncs.live.model.v20161101.DeleteRtcMPUEventSubResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class SetLiveStreamOptimizedFeatureConfigResponseUnmarshaller {
+public class DeleteRtcMPUEventSubResponseUnmarshaller {
 
-	public static SetLiveStreamOptimizedFeatureConfigResponse unmarshall(SetLiveStreamOptimizedFeatureConfigResponse setLiveStreamOptimizedFeatureConfigResponse, UnmarshallerContext _ctx) {
+	public static DeleteRtcMPUEventSubResponse unmarshall(DeleteRtcMPUEventSubResponse deleteRtcMPUEventSubResponse, UnmarshallerContext _ctx) {
 		
-		setLiveStreamOptimizedFeatureConfigResponse.setRequestId(_ctx.stringValue("SetLiveStreamOptimizedFeatureConfigResponse.RequestId"));
+		deleteRtcMPUEventSubResponse.setRequestId(_ctx.stringValue("DeleteRtcMPUEventSubResponse.RequestId"));
 	 
-	 	return setLiveStreamOptimizedFeatureConfigResponse;
+	 	return deleteRtcMPUEventSubResponse;
 	}
 }

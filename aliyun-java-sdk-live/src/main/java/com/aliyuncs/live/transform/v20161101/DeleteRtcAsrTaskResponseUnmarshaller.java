@@ -14,18 +14,18 @@
 
 package com.aliyuncs.live.transform.v20161101;
 
-import com.aliyuncs.live.model.v20161101.DeleteMultiRateConfigResponse;
+import com.aliyuncs.live.model.v20161101.DeleteRtcAsrTaskResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class DeleteMultiRateConfigResponseUnmarshaller {
+public class DeleteRtcAsrTaskResponseUnmarshaller {
 
-	public static DeleteMultiRateConfigResponse unmarshall(DeleteMultiRateConfigResponse deleteMultiRateConfigResponse, UnmarshallerContext _ctx) {
+	public static DeleteRtcAsrTaskResponse unmarshall(DeleteRtcAsrTaskResponse deleteRtcAsrTaskResponse, UnmarshallerContext _ctx) {
 		
-		deleteMultiRateConfigResponse.setRequestId(_ctx.stringValue("DeleteMultiRateConfigResponse.RequestId"));
-		deleteMultiRateConfigResponse.setCode(_ctx.integerValue("DeleteMultiRateConfigResponse.Code"));
-		deleteMultiRateConfigResponse.setMessage(_ctx.stringValue("DeleteMultiRateConfigResponse.Message"));
+		deleteRtcAsrTaskResponse.setRequestId(_ctx.stringValue("DeleteRtcAsrTaskResponse.RequestId"));
+		deleteRtcAsrTaskResponse.setDescription(_ctx.stringValue("DeleteRtcAsrTaskResponse.Description"));
+		deleteRtcAsrTaskResponse.setRetCode(_ctx.longValue("DeleteRtcAsrTaskResponse.RetCode"));
 	 
-	 	return deleteMultiRateConfigResponse;
+	 	return deleteRtcAsrTaskResponse;
 	}
 }

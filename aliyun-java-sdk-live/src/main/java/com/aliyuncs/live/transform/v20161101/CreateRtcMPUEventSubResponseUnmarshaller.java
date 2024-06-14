@@ -14,17 +14,17 @@
 
 package com.aliyuncs.live.transform.v20161101;
 
-import com.aliyuncs.live.model.v20161101.CreateLiveTranscodeTemplateResponse;
+import com.aliyuncs.live.model.v20161101.CreateRtcMPUEventSubResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class CreateLiveTranscodeTemplateResponseUnmarshaller {
+public class CreateRtcMPUEventSubResponseUnmarshaller {
 
-	public static CreateLiveTranscodeTemplateResponse unmarshall(CreateLiveTranscodeTemplateResponse createLiveTranscodeTemplateResponse, UnmarshallerContext _ctx) {
+	public static CreateRtcMPUEventSubResponse unmarshall(CreateRtcMPUEventSubResponse createRtcMPUEventSubResponse, UnmarshallerContext _ctx) {
 		
-		createLiveTranscodeTemplateResponse.setRequestId(_ctx.stringValue("CreateLiveTranscodeTemplateResponse.RequestId"));
-		createLiveTranscodeTemplateResponse.setTemplateId(_ctx.stringValue("CreateLiveTranscodeTemplateResponse.TemplateId"));
+		createRtcMPUEventSubResponse.setRequestId(_ctx.stringValue("CreateRtcMPUEventSubResponse.RequestId"));
+		createRtcMPUEventSubResponse.setSubId(_ctx.stringValue("CreateRtcMPUEventSubResponse.SubId"));
 	 
-	 	return createLiveTranscodeTemplateResponse;
+	 	return createRtcMPUEventSubResponse;
 	}
 }

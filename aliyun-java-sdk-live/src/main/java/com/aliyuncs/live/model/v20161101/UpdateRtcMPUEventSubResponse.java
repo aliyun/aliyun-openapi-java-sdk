@@ -15,18 +15,16 @@
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.live.transform.v20161101.CreateLiveTranscodeTemplateResponseUnmarshaller;
+import com.aliyuncs.live.transform.v20161101.UpdateRtcMPUEventSubResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateLiveTranscodeTemplateResponse extends AcsResponse {
+public class UpdateRtcMPUEventSubResponse extends AcsResponse {
 
 	private String requestId;
-
-	private String templateId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,16 +34,8 @@ public class CreateLiveTranscodeTemplateResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getTemplateId() {
-		return this.templateId;
-	}
-
-	public void setTemplateId(String templateId) {
-		this.templateId = templateId;
-	}
-
 	@Override
-	public CreateLiveTranscodeTemplateResponse getInstance(UnmarshallerContext context) {
-		return	CreateLiveTranscodeTemplateResponseUnmarshaller.unmarshall(this, context);
+	public UpdateRtcMPUEventSubResponse getInstance(UnmarshallerContext context) {
+		return	UpdateRtcMPUEventSubResponseUnmarshaller.unmarshall(this, context);
 	}
 }

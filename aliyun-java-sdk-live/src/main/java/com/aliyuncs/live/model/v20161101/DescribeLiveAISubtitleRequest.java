@@ -31,6 +31,8 @@ public class DescribeLiveAISubtitleRequest extends RpcAcsRequest<DescribeLiveAIS
 
 	private String pageSize;
 
+	private Boolean isDefault;
+
 	private Long ownerId;
 
 	private String subtitleId;
@@ -73,6 +75,17 @@ public class DescribeLiveAISubtitleRequest extends RpcAcsRequest<DescribeLiveAIS
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize);
+		}
+	}
+
+	public Boolean getIsDefault() {
+		return this.isDefault;
+	}
+
+	public void setIsDefault(Boolean isDefault) {
+		this.isDefault = isDefault;
+		if(isDefault != null){
+			putQueryParameter("IsDefault", isDefault.toString());
 		}
 	}
 
