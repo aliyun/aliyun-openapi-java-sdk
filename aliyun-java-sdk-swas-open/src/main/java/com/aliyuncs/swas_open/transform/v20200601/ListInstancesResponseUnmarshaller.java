@@ -56,6 +56,7 @@ public class ListInstancesResponseUnmarshaller {
 			instance.setCombination(_ctx.booleanValue("ListInstancesResponse.Instances["+ i +"].Combination"));
 			instance.setCombinationInstanceId(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].CombinationInstanceId"));
 			instance.setUuid(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].Uuid"));
+			instance.setResourceGroupId(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].ResourceGroupId"));
 
 			ResourceSpec resourceSpec = new ResourceSpec();
 			resourceSpec.setDiskCategory(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].ResourceSpec.DiskCategory"));
@@ -99,6 +100,7 @@ public class ListInstancesResponseUnmarshaller {
 				disk.setDiskId(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].Disks["+ j +"].DiskId"));
 				disk.setRegionId(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].Disks["+ j +"].RegionId"));
 				disk.setRemark(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].Disks["+ j +"].Remark"));
+				disk.setResourceGroupId(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].Disks["+ j +"].ResourceGroupId"));
 
 				List<Tag1> diskTags = new ArrayList<Tag1>();
 				for (int k = 0; k < _ctx.lengthValue("ListInstancesResponse.Instances["+ i +"].Disks["+ j +"].DiskTags.Length"); k++) {

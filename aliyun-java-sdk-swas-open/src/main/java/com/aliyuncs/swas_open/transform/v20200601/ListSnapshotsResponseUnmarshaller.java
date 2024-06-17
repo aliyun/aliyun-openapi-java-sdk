@@ -46,6 +46,7 @@ public class ListSnapshotsResponseUnmarshaller {
 			snapshot.setRegionId(_ctx.stringValue("ListSnapshotsResponse.Snapshots["+ i +"].RegionId"));
 			snapshot.setInstanceId(_ctx.stringValue("ListSnapshotsResponse.Snapshots["+ i +"].InstanceId"));
 			snapshot.setRollbackTime(_ctx.stringValue("ListSnapshotsResponse.Snapshots["+ i +"].RollbackTime"));
+			snapshot.setResourceGroupId(_ctx.stringValue("ListSnapshotsResponse.Snapshots["+ i +"].ResourceGroupId"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("ListSnapshotsResponse.Snapshots["+ i +"].Tags.Length"); j++) {

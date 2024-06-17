@@ -25,31 +25,22 @@ import com.aliyuncs.http.MethodType;
 public class ListDisksRequest extends RpcAcsRequest<ListDisksResponse> {
 	   
 
-	private String diskType;
-
 	private Integer pageNumber;
 
-	private String instanceId;
+	private String resourceGroupId;
 
 	private Integer pageSize;
 
 	private String diskIds;
 
 	private List<Tag> tags;
+
+	private String diskType;
+
+	private String instanceId;
 	public ListDisksRequest() {
 		super("SWAS-OPEN", "2020-06-01", "ListDisks", "SWAS-OPEN");
 		setMethod(MethodType.POST);
-	}
-
-	public String getDiskType() {
-		return this.diskType;
-	}
-
-	public void setDiskType(String diskType) {
-		this.diskType = diskType;
-		if(diskType != null){
-			putQueryParameter("DiskType", diskType);
-		}
 	}
 
 	public Integer getPageNumber() {
@@ -63,14 +54,14 @@ public class ListDisksRequest extends RpcAcsRequest<ListDisksResponse> {
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 
@@ -108,6 +99,28 @@ public class ListDisksRequest extends RpcAcsRequest<ListDisksResponse> {
 				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
 			}
 		}	
+	}
+
+	public String getDiskType() {
+		return this.diskType;
+	}
+
+	public void setDiskType(String diskType) {
+		this.diskType = diskType;
+		if(diskType != null){
+			putQueryParameter("DiskType", diskType);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
 	}
 
 	public static class Tag {

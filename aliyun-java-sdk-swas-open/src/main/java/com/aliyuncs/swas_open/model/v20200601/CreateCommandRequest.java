@@ -35,6 +35,8 @@ public class CreateCommandRequest extends RpcAcsRequest<CreateCommandResponse> {
 
 	private Long timeout;
 
+	private String resourceGroupId;
+
 	private List<Tag> tags;
 
 	private String name;
@@ -97,6 +99,17 @@ public class CreateCommandRequest extends RpcAcsRequest<CreateCommandResponse> {
 		this.timeout = timeout;
 		if(timeout != null){
 			putQueryParameter("Timeout", timeout.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

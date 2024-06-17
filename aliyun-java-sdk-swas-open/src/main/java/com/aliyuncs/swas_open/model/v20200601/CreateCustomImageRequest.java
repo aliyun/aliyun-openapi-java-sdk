@@ -33,6 +33,8 @@ public class CreateCustomImageRequest extends RpcAcsRequest<CreateCustomImageRes
 
 	private String description;
 
+	private String resoureGroupId;
+
 	private String imageName;
 
 	private List<Tag> tags;
@@ -84,6 +86,17 @@ public class CreateCustomImageRequest extends RpcAcsRequest<CreateCustomImageRes
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getResoureGroupId() {
+		return this.resoureGroupId;
+	}
+
+	public void setResoureGroupId(String resoureGroupId) {
+		this.resoureGroupId = resoureGroupId;
+		if(resoureGroupId != null){
+			putQueryParameter("ResoureGroupId", resoureGroupId);
 		}
 	}
 

@@ -99,6 +99,8 @@ public class ListSnapshotsResponse extends AcsResponse {
 
 		private String rollbackTime;
 
+		private String resourceGroupId;
+
 		private List<Tag> tags;
 
 		public String getStatus() {
@@ -187,6 +189,14 @@ public class ListSnapshotsResponse extends AcsResponse {
 
 		public void setRollbackTime(String rollbackTime) {
 			this.rollbackTime = rollbackTime;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 
 		public List<Tag> getTags() {

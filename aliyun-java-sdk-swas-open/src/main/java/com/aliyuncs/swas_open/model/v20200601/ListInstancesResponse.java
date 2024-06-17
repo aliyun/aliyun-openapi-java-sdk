@@ -111,6 +111,8 @@ public class ListInstancesResponse extends AcsResponse {
 
 		private String uuid;
 
+		private String resourceGroupId;
+
 		private List<Tag> tags;
 
 		private List<Disk> disks;
@@ -255,6 +257,14 @@ public class ListInstancesResponse extends AcsResponse {
 			this.uuid = uuid;
 		}
 
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
 		public List<Tag> getTags() {
 			return this.tags;
 		}
@@ -333,6 +343,8 @@ public class ListInstancesResponse extends AcsResponse {
 			private String regionId;
 
 			private String remark;
+
+			private String resourceGroupId;
 
 			private List<Tag1> diskTags;
 
@@ -422,6 +434,14 @@ public class ListInstancesResponse extends AcsResponse {
 
 			public void setRemark(String remark) {
 				this.remark = remark;
+			}
+
+			public String getResourceGroupId() {
+				return this.resourceGroupId;
+			}
+
+			public void setResourceGroupId(String resourceGroupId) {
+				this.resourceGroupId = resourceGroupId;
 			}
 
 			public List<Tag1> getDiskTags() {

@@ -103,6 +103,8 @@ public class ListDisksResponse extends AcsResponse {
 
 		private String instanceName;
 
+		private String resourceGroupId;
+
 		private List<Tag> tags;
 
 		public String getCreationTime() {
@@ -207,6 +209,14 @@ public class ListDisksResponse extends AcsResponse {
 
 		public void setInstanceName(String instanceName) {
 			this.instanceName = instanceName;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 
 		public List<Tag> getTags() {
