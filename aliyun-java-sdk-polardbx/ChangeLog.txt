@@ -1,3 +1,6 @@
+2024-06-17 Version: 1.0.4
+- CreateDBInstance add DNStorageSpace
+
 2024-05-22 Version: 1.0.3
 - DescribeDBInstances, add cpuType.
 

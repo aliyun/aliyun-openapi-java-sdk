@@ -135,6 +135,8 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		private Boolean canNotCreateColumnar;
 
+		private String specCategory;
+
 		private List<DBNode> dBNodes;
 
 		private List<ConnAddr> connAddrs;
@@ -497,6 +499,14 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		public void setCanNotCreateColumnar(Boolean canNotCreateColumnar) {
 			this.canNotCreateColumnar = canNotCreateColumnar;
+		}
+
+		public String getSpecCategory() {
+			return this.specCategory;
+		}
+
+		public void setSpecCategory(String specCategory) {
+			this.specCategory = specCategory;
 		}
 
 		public List<DBNode> getDBNodes() {

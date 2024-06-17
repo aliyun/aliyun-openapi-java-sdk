@@ -27,13 +27,13 @@ public class SwitchDBInstanceHARequest extends RpcAcsRequest<SwitchDBInstanceHAR
 
 	private String dBInstanceName;
 
-	private String targetPrimaryRegionId;
-
 	private String switchTimeMode;
 
-	private String targetPrimaryAzoneId;
-
 	private String switchTime;
+
+	private String targetPrimaryRegionId;
+
+	private String targetPrimaryAzoneId;
 	public SwitchDBInstanceHARequest() {
 		super("polardbx", "2020-02-02", "SwitchDBInstanceHA", "polardbx");
 		setMethod(MethodType.POST);
@@ -54,17 +54,6 @@ public class SwitchDBInstanceHARequest extends RpcAcsRequest<SwitchDBInstanceHAR
 		}
 	}
 
-	public String getTargetPrimaryRegionId() {
-		return this.targetPrimaryRegionId;
-	}
-
-	public void setTargetPrimaryRegionId(String targetPrimaryRegionId) {
-		this.targetPrimaryRegionId = targetPrimaryRegionId;
-		if(targetPrimaryRegionId != null){
-			putQueryParameter("TargetPrimaryRegionId", targetPrimaryRegionId);
-		}
-	}
-
 	public String getSwitchTimeMode() {
 		return this.switchTimeMode;
 	}
@@ -76,17 +65,6 @@ public class SwitchDBInstanceHARequest extends RpcAcsRequest<SwitchDBInstanceHAR
 		}
 	}
 
-	public String getTargetPrimaryAzoneId() {
-		return this.targetPrimaryAzoneId;
-	}
-
-	public void setTargetPrimaryAzoneId(String targetPrimaryAzoneId) {
-		this.targetPrimaryAzoneId = targetPrimaryAzoneId;
-		if(targetPrimaryAzoneId != null){
-			putQueryParameter("TargetPrimaryAzoneId", targetPrimaryAzoneId);
-		}
-	}
-
 	public String getSwitchTime() {
 		return this.switchTime;
 	}
@@ -95,6 +73,28 @@ public class SwitchDBInstanceHARequest extends RpcAcsRequest<SwitchDBInstanceHAR
 		this.switchTime = switchTime;
 		if(switchTime != null){
 			putQueryParameter("SwitchTime", switchTime);
+		}
+	}
+
+	public String getTargetPrimaryRegionId() {
+		return this.targetPrimaryRegionId;
+	}
+
+	public void setTargetPrimaryRegionId(String targetPrimaryRegionId) {
+		this.targetPrimaryRegionId = targetPrimaryRegionId;
+		if(targetPrimaryRegionId != null){
+			putQueryParameter("TargetPrimaryRegionId", targetPrimaryRegionId);
+		}
+	}
+
+	public String getTargetPrimaryAzoneId() {
+		return this.targetPrimaryAzoneId;
+	}
+
+	public void setTargetPrimaryAzoneId(String targetPrimaryAzoneId) {
+		this.targetPrimaryAzoneId = targetPrimaryAzoneId;
+		if(targetPrimaryAzoneId != null){
+			putQueryParameter("TargetPrimaryAzoneId", targetPrimaryAzoneId);
 		}
 	}
 

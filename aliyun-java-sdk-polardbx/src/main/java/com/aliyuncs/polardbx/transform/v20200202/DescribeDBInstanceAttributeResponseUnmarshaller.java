@@ -76,6 +76,7 @@ public class DescribeDBInstanceAttributeResponseUnmarshaller {
 		dBInstance.setDifferentDNSpec(_ctx.booleanValue("DescribeDBInstanceAttributeResponse.DBInstance.DifferentDNSpec"));
 		dBInstance.setColumnarInstanceName(_ctx.stringValue("DescribeDBInstanceAttributeResponse.DBInstance.ColumnarInstanceName"));
 		dBInstance.setCanNotCreateColumnar(_ctx.booleanValue("DescribeDBInstanceAttributeResponse.DBInstance.CanNotCreateColumnar"));
+		dBInstance.setSpecCategory(_ctx.stringValue("DescribeDBInstanceAttributeResponse.DBInstance.SpecCategory"));
 
 		List<String> readDBInstances = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDBInstanceAttributeResponse.DBInstance.ReadDBInstances.Length"); i++) {

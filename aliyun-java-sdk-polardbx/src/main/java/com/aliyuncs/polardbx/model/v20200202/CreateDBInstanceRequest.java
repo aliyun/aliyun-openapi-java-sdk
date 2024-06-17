@@ -67,6 +67,8 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 
 	private Integer usedTime;
 
+	private String dnStorageSpace;
+
 	private String primaryZone;
 
 	private String series;
@@ -311,6 +313,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.usedTime = usedTime;
 		if(usedTime != null){
 			putQueryParameter("UsedTime", usedTime.toString());
+		}
+	}
+
+	public String getDnStorageSpace() {
+		return this.dnStorageSpace;
+	}
+
+	public void setDnStorageSpace(String dnStorageSpace) {
+		this.dnStorageSpace = dnStorageSpace;
+		if(dnStorageSpace != null){
+			putQueryParameter("DnStorageSpace", dnStorageSpace);
 		}
 	}
 
