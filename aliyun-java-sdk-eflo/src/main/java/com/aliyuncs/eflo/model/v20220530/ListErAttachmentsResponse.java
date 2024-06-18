@@ -119,6 +119,8 @@ public class ListErAttachmentsResponse extends AcsResponse {
 
 			private String resourceTenantId;
 
+			private String resourceGroupId;
+
 			public String getCreateTime() {
 				return this.createTime;
 			}
@@ -237,6 +239,14 @@ public class ListErAttachmentsResponse extends AcsResponse {
 
 			public void setResourceTenantId(String resourceTenantId) {
 				this.resourceTenantId = resourceTenantId;
+			}
+
+			public String getResourceGroupId() {
+				return this.resourceGroupId;
+			}
+
+			public void setResourceGroupId(String resourceGroupId) {
+				this.resourceGroupId = resourceGroupId;
 			}
 		}
 	}

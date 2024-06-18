@@ -88,6 +88,8 @@ public class GetVccRouteEntryResponse extends AcsResponse {
 
 		private String message;
 
+		private String resourceGroupId;
+
 		public String getRegionId() {
 			return this.regionId;
 		}
@@ -174,6 +176,14 @@ public class GetVccRouteEntryResponse extends AcsResponse {
 
 		public void setMessage(String message) {
 			this.message = message;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 	}
 

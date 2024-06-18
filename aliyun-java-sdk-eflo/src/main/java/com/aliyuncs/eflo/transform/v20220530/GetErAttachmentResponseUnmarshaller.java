@@ -43,6 +43,7 @@ public class GetErAttachmentResponseUnmarshaller {
 		content.setAutoReceiveAllRoute(_ctx.booleanValue("GetErAttachmentResponse.Content.AutoReceiveAllRoute"));
 		content.setAcross(_ctx.booleanValue("GetErAttachmentResponse.Content.Across"));
 		content.setResourceTenantId(_ctx.stringValue("GetErAttachmentResponse.Content.ResourceTenantId"));
+		content.setResourceGroupId(_ctx.stringValue("GetErAttachmentResponse.Content.ResourceGroupId"));
 		getErAttachmentResponse.setContent(content);
 	 
 	 	return getErAttachmentResponse;

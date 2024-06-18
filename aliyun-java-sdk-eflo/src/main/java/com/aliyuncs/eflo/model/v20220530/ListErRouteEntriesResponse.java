@@ -111,6 +111,8 @@ public class ListErRouteEntriesResponse extends AcsResponse {
 
 			private String gmtModified;
 
+			private String resourceGroupId;
+
 			public String getErId() {
 				return this.erId;
 			}
@@ -197,6 +199,14 @@ public class ListErRouteEntriesResponse extends AcsResponse {
 
 			public void setGmtModified(String gmtModified) {
 				this.gmtModified = gmtModified;
+			}
+
+			public String getResourceGroupId() {
+				return this.resourceGroupId;
+			}
+
+			public void setResourceGroupId(String resourceGroupId) {
+				this.resourceGroupId = resourceGroupId;
 			}
 		}
 	}

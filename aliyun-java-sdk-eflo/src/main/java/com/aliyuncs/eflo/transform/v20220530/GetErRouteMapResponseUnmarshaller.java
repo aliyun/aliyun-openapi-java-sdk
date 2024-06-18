@@ -34,7 +34,6 @@ public class GetErRouteMapResponseUnmarshaller {
 		content.setGmtModified(_ctx.stringValue("GetErRouteMapResponse.Content.GmtModified"));
 		content.setMessage(_ctx.stringValue("GetErRouteMapResponse.Content.Message"));
 		content.setStatus(_ctx.stringValue("GetErRouteMapResponse.Content.Status"));
-		content.setErRouteMapName(_ctx.stringValue("GetErRouteMapResponse.Content.ErRouteMapName"));
 		content.setErRouteMapId(_ctx.stringValue("GetErRouteMapResponse.Content.ErRouteMapId"));
 		content.setErId(_ctx.stringValue("GetErRouteMapResponse.Content.ErId"));
 		content.setRouteMapNum(_ctx.integerValue("GetErRouteMapResponse.Content.RouteMapNum"));
@@ -49,6 +48,8 @@ public class GetErRouteMapResponseUnmarshaller {
 		content.setAction(_ctx.stringValue("GetErRouteMapResponse.Content.Action"));
 		content.setTransmissionInstanceOwner(_ctx.stringValue("GetErRouteMapResponse.Content.TransmissionInstanceOwner"));
 		content.setReceptionInstanceOwner(_ctx.stringValue("GetErRouteMapResponse.Content.ReceptionInstanceOwner"));
+		content.setResourceGroupId(_ctx.stringValue("GetErRouteMapResponse.Content.ResourceGroupId"));
+		content.setErRouteMapName(_ctx.stringValue("GetErRouteMapResponse.Content.ErRouteMapName"));
 		getErRouteMapResponse.setContent(content);
 	 
 	 	return getErRouteMapResponse;

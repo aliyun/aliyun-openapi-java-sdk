@@ -86,6 +86,8 @@ public class GetErRouteEntryResponse extends AcsResponse {
 
 		private String gmtModified;
 
+		private String resourceGroupId;
+
 		public String getRegionId() {
 			return this.regionId;
 		}
@@ -164,6 +166,14 @@ public class GetErRouteEntryResponse extends AcsResponse {
 
 		public void setGmtModified(String gmtModified) {
 			this.gmtModified = gmtModified;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 	}
 

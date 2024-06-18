@@ -26,6 +26,8 @@ public class UpdateElasticNetworkInterfaceRequest extends RpcAcsRequest<UpdateEl
 
 	private String clientToken;
 
+	private String securityGroupId;
+
 	private String description;
 
 	private String elasticNetworkInterfaceId;
@@ -42,6 +44,17 @@ public class UpdateElasticNetworkInterfaceRequest extends RpcAcsRequest<UpdateEl
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putBodyParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getSecurityGroupId() {
+		return this.securityGroupId;
+	}
+
+	public void setSecurityGroupId(String securityGroupId) {
+		this.securityGroupId = securityGroupId;
+		if(securityGroupId != null){
+			putBodyParameter("SecurityGroupId", securityGroupId);
 		}
 	}
 

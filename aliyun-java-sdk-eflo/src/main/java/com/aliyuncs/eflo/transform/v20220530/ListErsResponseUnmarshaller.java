@@ -49,6 +49,7 @@ public class ListErsResponseUnmarshaller {
 			dataItem.setDescription(_ctx.stringValue("ListErsResponse.Content.Data["+ i +"].Description"));
 			dataItem.setConnections(_ctx.longValue("ListErsResponse.Content.Data["+ i +"].Connections"));
 			dataItem.setRouteMaps(_ctx.longValue("ListErsResponse.Content.Data["+ i +"].RouteMaps"));
+			dataItem.setResourceGroupId(_ctx.stringValue("ListErsResponse.Content.Data["+ i +"].ResourceGroupId"));
 
 			data.add(dataItem);
 		}

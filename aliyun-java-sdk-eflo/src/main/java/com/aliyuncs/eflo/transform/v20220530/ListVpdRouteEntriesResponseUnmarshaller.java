@@ -48,6 +48,7 @@ public class ListVpdRouteEntriesResponseUnmarshaller {
 			dataItem.setRouteType(_ctx.stringValue("ListVpdRouteEntriesResponse.Content.Data["+ i +"].RouteType"));
 			dataItem.setStatus(_ctx.stringValue("ListVpdRouteEntriesResponse.Content.Data["+ i +"].Status"));
 			dataItem.setGmtModified(_ctx.stringValue("ListVpdRouteEntriesResponse.Content.Data["+ i +"].GmtModified"));
+			dataItem.setResourceGroupId(_ctx.stringValue("ListVpdRouteEntriesResponse.Content.Data["+ i +"].ResourceGroupId"));
 
 			data.add(dataItem);
 		}

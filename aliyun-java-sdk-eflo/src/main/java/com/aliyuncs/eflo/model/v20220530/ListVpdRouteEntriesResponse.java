@@ -111,6 +111,8 @@ public class ListVpdRouteEntriesResponse extends AcsResponse {
 
 			private String gmtModified;
 
+			private String resourceGroupId;
+
 			public String getVpdId() {
 				return this.vpdId;
 			}
@@ -197,6 +199,14 @@ public class ListVpdRouteEntriesResponse extends AcsResponse {
 
 			public void setGmtModified(String gmtModified) {
 				this.gmtModified = gmtModified;
+			}
+
+			public String getResourceGroupId() {
+				return this.resourceGroupId;
+			}
+
+			public void setResourceGroupId(String resourceGroupId) {
+				this.resourceGroupId = resourceGroupId;
 			}
 		}
 	}

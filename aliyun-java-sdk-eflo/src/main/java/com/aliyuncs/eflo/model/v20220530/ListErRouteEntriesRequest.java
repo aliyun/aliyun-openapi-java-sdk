@@ -30,6 +30,8 @@ public class ListErRouteEntriesRequest extends RpcAcsRequest<ListErRouteEntriesR
 
 	private String routeType;
 
+	private String resourceGroupId;
+
 	private Integer pageSize;
 
 	private String nextHopId;
@@ -80,6 +82,17 @@ public class ListErRouteEntriesRequest extends RpcAcsRequest<ListErRouteEntriesR
 		this.routeType = routeType;
 		if(routeType != null){
 			putBodyParameter("RouteType", routeType);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putBodyParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

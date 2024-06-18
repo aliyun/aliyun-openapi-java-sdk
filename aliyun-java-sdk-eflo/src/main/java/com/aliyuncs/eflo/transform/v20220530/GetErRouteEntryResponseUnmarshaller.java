@@ -38,6 +38,7 @@ public class GetErRouteEntryResponseUnmarshaller {
 		content.setRouteType(_ctx.stringValue("GetErRouteEntryResponse.Content.RouteType"));
 		content.setStatus(_ctx.stringValue("GetErRouteEntryResponse.Content.Status"));
 		content.setGmtModified(_ctx.stringValue("GetErRouteEntryResponse.Content.GmtModified"));
+		content.setResourceGroupId(_ctx.stringValue("GetErRouteEntryResponse.Content.ResourceGroupId"));
 		getErRouteEntryResponse.setContent(content);
 	 
 	 	return getErRouteEntryResponse;

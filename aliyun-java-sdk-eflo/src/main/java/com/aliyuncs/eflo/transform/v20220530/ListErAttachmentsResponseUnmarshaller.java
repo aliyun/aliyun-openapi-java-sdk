@@ -52,6 +52,7 @@ public class ListErAttachmentsResponseUnmarshaller {
 			dataItem.setAutoReceiveAllRoute(_ctx.booleanValue("ListErAttachmentsResponse.Content.Data["+ i +"].AutoReceiveAllRoute"));
 			dataItem.setAcross(_ctx.booleanValue("ListErAttachmentsResponse.Content.Data["+ i +"].Across"));
 			dataItem.setResourceTenantId(_ctx.stringValue("ListErAttachmentsResponse.Content.Data["+ i +"].ResourceTenantId"));
+			dataItem.setResourceGroupId(_ctx.stringValue("ListErAttachmentsResponse.Content.Data["+ i +"].ResourceGroupId"));
 
 			data.add(dataItem);
 		}

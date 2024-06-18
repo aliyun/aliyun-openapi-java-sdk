@@ -113,6 +113,8 @@ public class ListVccRouteEntriesResponse extends AcsResponse {
 
 			private String message;
 
+			private String resourceGroupId;
+
 			public String getVccId() {
 				return this.vccId;
 			}
@@ -207,6 +209,14 @@ public class ListVccRouteEntriesResponse extends AcsResponse {
 
 			public void setMessage(String message) {
 				this.message = message;
+			}
+
+			public String getResourceGroupId() {
+				return this.resourceGroupId;
+			}
+
+			public void setResourceGroupId(String resourceGroupId) {
+				this.resourceGroupId = resourceGroupId;
 			}
 		}
 	}

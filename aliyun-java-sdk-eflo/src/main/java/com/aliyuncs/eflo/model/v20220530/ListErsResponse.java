@@ -113,6 +113,8 @@ public class ListErsResponse extends AcsResponse {
 
 			private Long routeMaps;
 
+			private String resourceGroupId;
+
 			public String getCreateTime() {
 				return this.createTime;
 			}
@@ -207,6 +209,14 @@ public class ListErsResponse extends AcsResponse {
 
 			public void setRouteMaps(Long routeMaps) {
 				this.routeMaps = routeMaps;
+			}
+
+			public String getResourceGroupId() {
+				return this.resourceGroupId;
+			}
+
+			public void setResourceGroupId(String resourceGroupId) {
+				this.resourceGroupId = resourceGroupId;
 			}
 		}
 	}

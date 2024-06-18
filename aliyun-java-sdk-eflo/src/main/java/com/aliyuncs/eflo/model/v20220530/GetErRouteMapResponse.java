@@ -78,8 +78,6 @@ public class GetErRouteMapResponse extends AcsResponse {
 
 		private String status;
 
-		private String erRouteMapName;
-
 		private String erRouteMapId;
 
 		private String erId;
@@ -107,6 +105,10 @@ public class GetErRouteMapResponse extends AcsResponse {
 		private String transmissionInstanceOwner;
 
 		private String receptionInstanceOwner;
+
+		private String resourceGroupId;
+
+		private String erRouteMapName;
 
 		public String getRegionId() {
 			return this.regionId;
@@ -154,14 +156,6 @@ public class GetErRouteMapResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
-		}
-
-		public String getErRouteMapName() {
-			return this.erRouteMapName;
-		}
-
-		public void setErRouteMapName(String erRouteMapName) {
-			this.erRouteMapName = erRouteMapName;
 		}
 
 		public String getErRouteMapId() {
@@ -274,6 +268,22 @@ public class GetErRouteMapResponse extends AcsResponse {
 
 		public void setReceptionInstanceOwner(String receptionInstanceOwner) {
 			this.receptionInstanceOwner = receptionInstanceOwner;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getErRouteMapName() {
+			return this.erRouteMapName;
+		}
+
+		public void setErRouteMapName(String erRouteMapName) {
+			this.erRouteMapName = erRouteMapName;
 		}
 	}
 

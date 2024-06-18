@@ -29,6 +29,8 @@ public class CreateErRequest extends RpcAcsRequest<CreateErResponse> {
 	private String erName;
 
 	private String masterZoneId;
+
+	private String resourceGroupId;
 	public CreateErRequest() {
 		super("eflo", "2022-05-30", "CreateEr", "eflo");
 		setMethod(MethodType.POST);
@@ -64,6 +66,17 @@ public class CreateErRequest extends RpcAcsRequest<CreateErResponse> {
 		this.masterZoneId = masterZoneId;
 		if(masterZoneId != null){
 			putBodyParameter("MasterZoneId", masterZoneId);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putBodyParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

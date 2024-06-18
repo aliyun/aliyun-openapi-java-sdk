@@ -32,6 +32,8 @@ public class ListErRouteMapsRequest extends RpcAcsRequest<ListErRouteMapsRespons
 
 	private Integer pageNumber;
 
+	private String resourceGroupId;
+
 	private String routeMapAction;
 
 	private String transmissionInstanceType;
@@ -97,6 +99,17 @@ public class ListErRouteMapsRequest extends RpcAcsRequest<ListErRouteMapsRespons
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putBodyParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putBodyParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

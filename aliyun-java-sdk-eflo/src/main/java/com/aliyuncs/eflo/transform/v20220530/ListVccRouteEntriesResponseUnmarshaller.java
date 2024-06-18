@@ -49,6 +49,7 @@ public class ListVccRouteEntriesResponseUnmarshaller {
 			dataItem.setStatus(_ctx.stringValue("ListVccRouteEntriesResponse.Content.Data["+ i +"].Status"));
 			dataItem.setGmtModified(_ctx.stringValue("ListVccRouteEntriesResponse.Content.Data["+ i +"].GmtModified"));
 			dataItem.setMessage(_ctx.stringValue("ListVccRouteEntriesResponse.Content.Data["+ i +"].Message"));
+			dataItem.setResourceGroupId(_ctx.stringValue("ListVccRouteEntriesResponse.Content.Data["+ i +"].ResourceGroupId"));
 
 			data.add(dataItem);
 		}

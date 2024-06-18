@@ -28,6 +28,8 @@ public class ListErAttachmentsRequest extends RpcAcsRequest<ListErAttachmentsRes
 
 	private String resourceTenantId;
 
+	private String resourceGroupId;
+
 	private Boolean autoReceiveAllRoute;
 
 	private Integer pageSize;
@@ -69,6 +71,17 @@ public class ListErAttachmentsRequest extends RpcAcsRequest<ListErAttachmentsRes
 		this.resourceTenantId = resourceTenantId;
 		if(resourceTenantId != null){
 			putBodyParameter("ResourceTenantId", resourceTenantId);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putBodyParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

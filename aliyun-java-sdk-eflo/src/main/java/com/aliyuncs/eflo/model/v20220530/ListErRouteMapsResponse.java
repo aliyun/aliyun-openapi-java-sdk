@@ -129,6 +129,8 @@ public class ListErRouteMapsResponse extends AcsResponse {
 
 			private String receptionInstanceOwner;
 
+			private String resourceGroupId;
+
 			public String getRegionId() {
 				return this.regionId;
 			}
@@ -287,6 +289,14 @@ public class ListErRouteMapsResponse extends AcsResponse {
 
 			public void setReceptionInstanceOwner(String receptionInstanceOwner) {
 				this.receptionInstanceOwner = receptionInstanceOwner;
+			}
+
+			public String getResourceGroupId() {
+				return this.resourceGroupId;
+			}
+
+			public void setResourceGroupId(String resourceGroupId) {
+				this.resourceGroupId = resourceGroupId;
 			}
 		}
 	}

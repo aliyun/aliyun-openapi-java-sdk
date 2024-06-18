@@ -38,6 +38,7 @@ public class GetVpdRouteEntryResponseUnmarshaller {
 		content.setRouteType(_ctx.stringValue("GetVpdRouteEntryResponse.Content.RouteType"));
 		content.setStatus(_ctx.stringValue("GetVpdRouteEntryResponse.Content.Status"));
 		content.setGmtModified(_ctx.stringValue("GetVpdRouteEntryResponse.Content.GmtModified"));
+		content.setResourceGroupId(_ctx.stringValue("GetVpdRouteEntryResponse.Content.ResourceGroupId"));
 		getVpdRouteEntryResponse.setContent(content);
 	 
 	 	return getVpdRouteEntryResponse;

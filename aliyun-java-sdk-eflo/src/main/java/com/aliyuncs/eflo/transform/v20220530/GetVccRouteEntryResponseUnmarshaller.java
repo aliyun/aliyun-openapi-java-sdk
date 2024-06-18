@@ -39,6 +39,7 @@ public class GetVccRouteEntryResponseUnmarshaller {
 		content.setStatus(_ctx.stringValue("GetVccRouteEntryResponse.Content.Status"));
 		content.setGmtModified(_ctx.stringValue("GetVccRouteEntryResponse.Content.GmtModified"));
 		content.setMessage(_ctx.stringValue("GetVccRouteEntryResponse.Content.Message"));
+		content.setResourceGroupId(_ctx.stringValue("GetVccRouteEntryResponse.Content.ResourceGroupId"));
 		getVccRouteEntryResponse.setContent(content);
 	 
 	 	return getVccRouteEntryResponse;

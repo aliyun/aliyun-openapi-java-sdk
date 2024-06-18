@@ -57,6 +57,7 @@ public class ListErRouteMapsResponseUnmarshaller {
 			dataItem.setAction(_ctx.stringValue("ListErRouteMapsResponse.Content.Data["+ i +"].Action"));
 			dataItem.setTransmissionInstanceOwner(_ctx.stringValue("ListErRouteMapsResponse.Content.Data["+ i +"].TransmissionInstanceOwner"));
 			dataItem.setReceptionInstanceOwner(_ctx.stringValue("ListErRouteMapsResponse.Content.Data["+ i +"].ReceptionInstanceOwner"));
+			dataItem.setResourceGroupId(_ctx.stringValue("ListErRouteMapsResponse.Content.Data["+ i +"].ResourceGroupId"));
 
 			data.add(dataItem);
 		}

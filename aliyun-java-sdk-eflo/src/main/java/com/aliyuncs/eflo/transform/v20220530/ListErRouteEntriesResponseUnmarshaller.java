@@ -48,6 +48,7 @@ public class ListErRouteEntriesResponseUnmarshaller {
 			dataItem.setRouteType(_ctx.stringValue("ListErRouteEntriesResponse.Content.Data["+ i +"].RouteType"));
 			dataItem.setStatus(_ctx.stringValue("ListErRouteEntriesResponse.Content.Data["+ i +"].Status"));
 			dataItem.setGmtModified(_ctx.stringValue("ListErRouteEntriesResponse.Content.Data["+ i +"].GmtModified"));
+			dataItem.setResourceGroupId(_ctx.stringValue("ListErRouteEntriesResponse.Content.Data["+ i +"].ResourceGroupId"));
 
 			data.add(dataItem);
 		}
