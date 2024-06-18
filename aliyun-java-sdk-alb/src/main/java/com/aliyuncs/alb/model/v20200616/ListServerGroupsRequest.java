@@ -36,6 +36,8 @@ public class ListServerGroupsRequest extends RpcAcsRequest<ListServerGroupsRespo
 
 	private List<String> serverGroupIds;
 
+	private String serverGroupType;
+
 	private String vpcId;
 
 	private Integer maxResults;
@@ -111,6 +113,17 @@ public class ListServerGroupsRequest extends RpcAcsRequest<ListServerGroupsRespo
 				putQueryParameter("ServerGroupIds." + (depth1 + 1) , serverGroupIds.get(depth1));
 			}
 		}	
+	}
+
+	public String getServerGroupType() {
+		return this.serverGroupType;
+	}
+
+	public void setServerGroupType(String serverGroupType) {
+		this.serverGroupType = serverGroupType;
+		if(serverGroupType != null){
+			putQueryParameter("ServerGroupType", serverGroupType);
+		}
 	}
 
 	public String getVpcId() {

@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.alb.model.v20200616.ListLoadBalancersResponse;
 import com.aliyuncs.alb.model.v20200616.ListLoadBalancersResponse.LoadBalancer;
 import com.aliyuncs.alb.model.v20200616.ListLoadBalancersResponse.LoadBalancer.AccessLogConfig;
+import com.aliyuncs.alb.model.v20200616.ListLoadBalancersResponse.LoadBalancer.AssociatedResource;
 import com.aliyuncs.alb.model.v20200616.ListLoadBalancersResponse.LoadBalancer.DeletionProtectionConfig;
 import com.aliyuncs.alb.model.v20200616.ListLoadBalancersResponse.LoadBalancer.LoadBalancerBillingConfig;
 import com.aliyuncs.alb.model.v20200616.ListLoadBalancersResponse.LoadBalancer.LoadBalancerOperationLock;
@@ -99,6 +100,19 @@ public class ListLoadBalancersResponseUnmarshaller {
 				tags.add(tag);
 			}
 			loadBalancer.setTags(tags);
+
+			List<AssociatedResource> associatedResources = new ArrayList<AssociatedResource>();
+			for (int j = 0; j < _ctx.lengthValue("ListLoadBalancersResponse.LoadBalancers["+ i +"].AssociatedResources.Length"); j++) {
+				AssociatedResource associatedResource = new AssociatedResource();
+				associatedResource.setAssociatedResourceType(_ctx.stringValue("ListLoadBalancersResponse.LoadBalancers["+ i +"].AssociatedResources["+ j +"].AssociatedResourceType"));
+				associatedResource.setAssociatedResourceId(_ctx.stringValue("ListLoadBalancersResponse.LoadBalancers["+ i +"].AssociatedResources["+ j +"].AssociatedResourceId"));
+				associatedResource.setPolicyId(_ctx.stringValue("ListLoadBalancersResponse.LoadBalancers["+ i +"].AssociatedResources["+ j +"].PolicyId"));
+				associatedResource.setStatus(_ctx.stringValue("ListLoadBalancersResponse.LoadBalancers["+ i +"].AssociatedResources["+ j +"].Status"));
+				associatedResource.setAssociatedMode(_ctx.stringValue("ListLoadBalancersResponse.LoadBalancers["+ i +"].AssociatedResources["+ j +"].AssociatedMode"));
+
+				associatedResources.add(associatedResource);
+			}
+			loadBalancer.setAssociatedResources(associatedResources);
 
 			loadBalancers.add(loadBalancer);
 		}

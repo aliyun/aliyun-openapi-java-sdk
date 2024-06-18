@@ -19,7 +19,9 @@ import java.util.List;
 
 import com.aliyuncs.alb.model.v20200616.ListServerGroupsResponse;
 import com.aliyuncs.alb.model.v20200616.ListServerGroupsResponse.ServerGroup;
+import com.aliyuncs.alb.model.v20200616.ListServerGroupsResponse.ServerGroup.ConnectionDrainConfig;
 import com.aliyuncs.alb.model.v20200616.ListServerGroupsResponse.ServerGroup.HealthCheckConfig;
+import com.aliyuncs.alb.model.v20200616.ListServerGroupsResponse.ServerGroup.SlowStartConfig;
 import com.aliyuncs.alb.model.v20200616.ListServerGroupsResponse.ServerGroup.StickySessionConfig;
 import com.aliyuncs.alb.model.v20200616.ListServerGroupsResponse.ServerGroup.Tag;
 import com.aliyuncs.alb.model.v20200616.ListServerGroupsResponse.ServerGroup.UchConfig;
@@ -111,6 +113,16 @@ public class ListServerGroupsResponseUnmarshaller {
 			uchConfig.setType(_ctx.stringValue("ListServerGroupsResponse.ServerGroups["+ i +"].UchConfig.Type"));
 			uchConfig.setValue(_ctx.stringValue("ListServerGroupsResponse.ServerGroups["+ i +"].UchConfig.Value"));
 			serverGroup.setUchConfig(uchConfig);
+
+			ConnectionDrainConfig connectionDrainConfig = new ConnectionDrainConfig();
+			connectionDrainConfig.setConnectionDrainEnabled(_ctx.booleanValue("ListServerGroupsResponse.ServerGroups["+ i +"].ConnectionDrainConfig.ConnectionDrainEnabled"));
+			connectionDrainConfig.setConnectionDrainTimeout(_ctx.integerValue("ListServerGroupsResponse.ServerGroups["+ i +"].ConnectionDrainConfig.ConnectionDrainTimeout"));
+			serverGroup.setConnectionDrainConfig(connectionDrainConfig);
+
+			SlowStartConfig slowStartConfig = new SlowStartConfig();
+			slowStartConfig.setSlowStartEnabled(_ctx.booleanValue("ListServerGroupsResponse.ServerGroups["+ i +"].SlowStartConfig.SlowStartEnabled"));
+			slowStartConfig.setSlowStartDuration(_ctx.integerValue("ListServerGroupsResponse.ServerGroups["+ i +"].SlowStartConfig.SlowStartDuration"));
+			serverGroup.setSlowStartConfig(slowStartConfig);
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("ListServerGroupsResponse.ServerGroups["+ i +"].Tags.Length"); j++) {

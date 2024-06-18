@@ -77,6 +77,8 @@ public class GetLoadBalancerAttributeResponse extends AcsResponse {
 
 	private List<ZoneMapping> zoneMappings;
 
+	private List<AssociatedResource> associatedResources;
+
 	private List<String> featureLabels;
 
 	private List<String> securityGroupIds;
@@ -295,6 +297,14 @@ public class GetLoadBalancerAttributeResponse extends AcsResponse {
 
 	public void setZoneMappings(List<ZoneMapping> zoneMappings) {
 		this.zoneMappings = zoneMappings;
+	}
+
+	public List<AssociatedResource> getAssociatedResources() {
+		return this.associatedResources;
+	}
+
+	public void setAssociatedResources(List<AssociatedResource> associatedResources) {
+		this.associatedResources = associatedResources;
 	}
 
 	public List<String> getFeatureLabels() {
@@ -524,6 +534,59 @@ public class GetLoadBalancerAttributeResponse extends AcsResponse {
 			public void setIpv6AddressHcStatus(String ipv6AddressHcStatus) {
 				this.ipv6AddressHcStatus = ipv6AddressHcStatus;
 			}
+		}
+	}
+
+	public static class AssociatedResource {
+
+		private String associatedResourceType;
+
+		private String associatedResourceId;
+
+		private String policyId;
+
+		private String status;
+
+		private String associatedMode;
+
+		public String getAssociatedResourceType() {
+			return this.associatedResourceType;
+		}
+
+		public void setAssociatedResourceType(String associatedResourceType) {
+			this.associatedResourceType = associatedResourceType;
+		}
+
+		public String getAssociatedResourceId() {
+			return this.associatedResourceId;
+		}
+
+		public void setAssociatedResourceId(String associatedResourceId) {
+			this.associatedResourceId = associatedResourceId;
+		}
+
+		public String getPolicyId() {
+			return this.policyId;
+		}
+
+		public void setPolicyId(String policyId) {
+			this.policyId = policyId;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getAssociatedMode() {
+			return this.associatedMode;
+		}
+
+		public void setAssociatedMode(String associatedMode) {
+			this.associatedMode = associatedMode;
 		}
 	}
 

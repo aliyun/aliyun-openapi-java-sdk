@@ -123,6 +123,10 @@ public class ListServerGroupsResponse extends AcsResponse {
 
 		private UchConfig uchConfig;
 
+		private ConnectionDrainConfig connectionDrainConfig;
+
+		private SlowStartConfig slowStartConfig;
+
 		public String getBizProtocol() {
 			return this.protocol;
 		}
@@ -305,6 +309,22 @@ public class ListServerGroupsResponse extends AcsResponse {
 
 		public void setUchConfig(UchConfig uchConfig) {
 			this.uchConfig = uchConfig;
+		}
+
+		public ConnectionDrainConfig getConnectionDrainConfig() {
+			return this.connectionDrainConfig;
+		}
+
+		public void setConnectionDrainConfig(ConnectionDrainConfig connectionDrainConfig) {
+			this.connectionDrainConfig = connectionDrainConfig;
+		}
+
+		public SlowStartConfig getSlowStartConfig() {
+			return this.slowStartConfig;
+		}
+
+		public void setSlowStartConfig(SlowStartConfig slowStartConfig) {
+			this.slowStartConfig = slowStartConfig;
 		}
 
 		public static class Tag {
@@ -536,6 +556,52 @@ public class ListServerGroupsResponse extends AcsResponse {
 
 			public void setValue(String value) {
 				this.value = value;
+			}
+		}
+
+		public static class ConnectionDrainConfig {
+
+			private Boolean connectionDrainEnabled;
+
+			private Integer connectionDrainTimeout;
+
+			public Boolean getConnectionDrainEnabled() {
+				return this.connectionDrainEnabled;
+			}
+
+			public void setConnectionDrainEnabled(Boolean connectionDrainEnabled) {
+				this.connectionDrainEnabled = connectionDrainEnabled;
+			}
+
+			public Integer getConnectionDrainTimeout() {
+				return this.connectionDrainTimeout;
+			}
+
+			public void setConnectionDrainTimeout(Integer connectionDrainTimeout) {
+				this.connectionDrainTimeout = connectionDrainTimeout;
+			}
+		}
+
+		public static class SlowStartConfig {
+
+			private Boolean slowStartEnabled;
+
+			private Integer slowStartDuration;
+
+			public Boolean getSlowStartEnabled() {
+				return this.slowStartEnabled;
+			}
+
+			public void setSlowStartEnabled(Boolean slowStartEnabled) {
+				this.slowStartEnabled = slowStartEnabled;
+			}
+
+			public Integer getSlowStartDuration() {
+				return this.slowStartDuration;
+			}
+
+			public void setSlowStartDuration(Integer slowStartDuration) {
+				this.slowStartDuration = slowStartDuration;
 			}
 		}
 	}

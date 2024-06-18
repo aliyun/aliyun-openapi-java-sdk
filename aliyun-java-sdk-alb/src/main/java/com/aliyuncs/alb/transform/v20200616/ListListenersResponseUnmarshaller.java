@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.alb.model.v20200616.ListListenersResponse;
 import com.aliyuncs.alb.model.v20200616.ListListenersResponse.Listener;
+import com.aliyuncs.alb.model.v20200616.ListListenersResponse.Listener.AssociatedResource;
 import com.aliyuncs.alb.model.v20200616.ListListenersResponse.Listener.DefaultAction;
 import com.aliyuncs.alb.model.v20200616.ListListenersResponse.Listener.DefaultAction.ForwardGroupConfig;
 import com.aliyuncs.alb.model.v20200616.ListListenersResponse.Listener.DefaultAction.ForwardGroupConfig.ServerGroupTuple;
@@ -119,6 +120,19 @@ public class ListListenersResponseUnmarshaller {
 				tags.add(tag);
 			}
 			listener.setTags(tags);
+
+			List<AssociatedResource> associatedResources = new ArrayList<AssociatedResource>();
+			for (int j = 0; j < _ctx.lengthValue("ListListenersResponse.Listeners["+ i +"].AssociatedResources.Length"); j++) {
+				AssociatedResource associatedResource = new AssociatedResource();
+				associatedResource.setAssociatedResourceType(_ctx.stringValue("ListListenersResponse.Listeners["+ i +"].AssociatedResources["+ j +"].AssociatedResourceType"));
+				associatedResource.setAssociatedResourceId(_ctx.stringValue("ListListenersResponse.Listeners["+ i +"].AssociatedResources["+ j +"].AssociatedResourceId"));
+				associatedResource.setPolicyId(_ctx.stringValue("ListListenersResponse.Listeners["+ i +"].AssociatedResources["+ j +"].PolicyId"));
+				associatedResource.setStatus(_ctx.stringValue("ListListenersResponse.Listeners["+ i +"].AssociatedResources["+ j +"].Status"));
+				associatedResource.setAssociatedMode(_ctx.stringValue("ListListenersResponse.Listeners["+ i +"].AssociatedResources["+ j +"].AssociatedMode"));
+
+				associatedResources.add(associatedResource);
+			}
+			listener.setAssociatedResources(associatedResources);
 
 			listeners.add(listener);
 		}

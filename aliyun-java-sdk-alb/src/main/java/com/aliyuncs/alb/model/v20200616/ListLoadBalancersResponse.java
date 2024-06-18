@@ -117,6 +117,8 @@ public class ListLoadBalancersResponse extends AcsResponse {
 
 		private List<Tag> tags;
 
+		private List<AssociatedResource> associatedResources;
+
 		private AccessLogConfig accessLogConfig;
 
 		private DeletionProtectionConfig deletionProtectionConfig;
@@ -285,6 +287,14 @@ public class ListLoadBalancersResponse extends AcsResponse {
 			this.tags = tags;
 		}
 
+		public List<AssociatedResource> getAssociatedResources() {
+			return this.associatedResources;
+		}
+
+		public void setAssociatedResources(List<AssociatedResource> associatedResources) {
+			this.associatedResources = associatedResources;
+		}
+
 		public AccessLogConfig getAccessLogConfig() {
 			return this.accessLogConfig;
 		}
@@ -360,6 +370,59 @@ public class ListLoadBalancersResponse extends AcsResponse {
 
 			public void setValue(String value) {
 				this.value = value;
+			}
+		}
+
+		public static class AssociatedResource {
+
+			private String associatedResourceType;
+
+			private String associatedResourceId;
+
+			private String policyId;
+
+			private String status;
+
+			private String associatedMode;
+
+			public String getAssociatedResourceType() {
+				return this.associatedResourceType;
+			}
+
+			public void setAssociatedResourceType(String associatedResourceType) {
+				this.associatedResourceType = associatedResourceType;
+			}
+
+			public String getAssociatedResourceId() {
+				return this.associatedResourceId;
+			}
+
+			public void setAssociatedResourceId(String associatedResourceId) {
+				this.associatedResourceId = associatedResourceId;
+			}
+
+			public String getPolicyId() {
+				return this.policyId;
+			}
+
+			public void setPolicyId(String policyId) {
+				this.policyId = policyId;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
+			public String getAssociatedMode() {
+				return this.associatedMode;
+			}
+
+			public void setAssociatedMode(String associatedMode) {
+				this.associatedMode = associatedMode;
 			}
 		}
 

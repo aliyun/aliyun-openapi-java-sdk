@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.alb.model.v20200616.GetLoadBalancerAttributeResponse;
 import com.aliyuncs.alb.model.v20200616.GetLoadBalancerAttributeResponse.AccessLogConfig;
+import com.aliyuncs.alb.model.v20200616.GetLoadBalancerAttributeResponse.AssociatedResource;
 import com.aliyuncs.alb.model.v20200616.GetLoadBalancerAttributeResponse.DeletionProtectionConfig;
 import com.aliyuncs.alb.model.v20200616.GetLoadBalancerAttributeResponse.LoadBalancerBillingConfig;
 import com.aliyuncs.alb.model.v20200616.GetLoadBalancerAttributeResponse.LoadBalancerOperationLock;
@@ -137,6 +138,19 @@ public class GetLoadBalancerAttributeResponseUnmarshaller {
 			zoneMappings.add(zoneMapping);
 		}
 		getLoadBalancerAttributeResponse.setZoneMappings(zoneMappings);
+
+		List<AssociatedResource> associatedResources = new ArrayList<AssociatedResource>();
+		for (int i = 0; i < _ctx.lengthValue("GetLoadBalancerAttributeResponse.AssociatedResources.Length"); i++) {
+			AssociatedResource associatedResource = new AssociatedResource();
+			associatedResource.setAssociatedResourceType(_ctx.stringValue("GetLoadBalancerAttributeResponse.AssociatedResources["+ i +"].AssociatedResourceType"));
+			associatedResource.setAssociatedResourceId(_ctx.stringValue("GetLoadBalancerAttributeResponse.AssociatedResources["+ i +"].AssociatedResourceId"));
+			associatedResource.setPolicyId(_ctx.stringValue("GetLoadBalancerAttributeResponse.AssociatedResources["+ i +"].PolicyId"));
+			associatedResource.setStatus(_ctx.stringValue("GetLoadBalancerAttributeResponse.AssociatedResources["+ i +"].Status"));
+			associatedResource.setAssociatedMode(_ctx.stringValue("GetLoadBalancerAttributeResponse.AssociatedResources["+ i +"].AssociatedMode"));
+
+			associatedResources.add(associatedResource);
+		}
+		getLoadBalancerAttributeResponse.setAssociatedResources(associatedResources);
 	 
 	 	return getLoadBalancerAttributeResponse;
 	}

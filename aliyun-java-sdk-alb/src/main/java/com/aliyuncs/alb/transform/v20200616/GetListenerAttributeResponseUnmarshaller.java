@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.alb.model.v20200616.GetListenerAttributeResponse;
 import com.aliyuncs.alb.model.v20200616.GetListenerAttributeResponse.AclConfig;
 import com.aliyuncs.alb.model.v20200616.GetListenerAttributeResponse.AclConfig.AclRelation;
+import com.aliyuncs.alb.model.v20200616.GetListenerAttributeResponse.AssociatedResource;
 import com.aliyuncs.alb.model.v20200616.GetListenerAttributeResponse.Certificate;
 import com.aliyuncs.alb.model.v20200616.GetListenerAttributeResponse.Certificate1;
 import com.aliyuncs.alb.model.v20200616.GetListenerAttributeResponse.DefaultAction;
@@ -150,6 +151,19 @@ public class GetListenerAttributeResponseUnmarshaller {
 			tags.add(tag);
 		}
 		getListenerAttributeResponse.setTags(tags);
+
+		List<AssociatedResource> associatedResources = new ArrayList<AssociatedResource>();
+		for (int i = 0; i < _ctx.lengthValue("GetListenerAttributeResponse.AssociatedResources.Length"); i++) {
+			AssociatedResource associatedResource = new AssociatedResource();
+			associatedResource.setAssociatedResourceType(_ctx.stringValue("GetListenerAttributeResponse.AssociatedResources["+ i +"].AssociatedResourceType"));
+			associatedResource.setAssociatedResourceId(_ctx.stringValue("GetListenerAttributeResponse.AssociatedResources["+ i +"].AssociatedResourceId"));
+			associatedResource.setPolicyId(_ctx.stringValue("GetListenerAttributeResponse.AssociatedResources["+ i +"].PolicyId"));
+			associatedResource.setStatus(_ctx.stringValue("GetListenerAttributeResponse.AssociatedResources["+ i +"].Status"));
+			associatedResource.setAssociatedMode(_ctx.stringValue("GetListenerAttributeResponse.AssociatedResources["+ i +"].AssociatedMode"));
+
+			associatedResources.add(associatedResource);
+		}
+		getListenerAttributeResponse.setAssociatedResources(associatedResources);
 	 
 	 	return getListenerAttributeResponse;
 	}

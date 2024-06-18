@@ -32,6 +32,8 @@ public class CreateServerGroupRequest extends RpcAcsRequest<CreateServerGroupRes
 
 	private HealthCheckConfig healthCheckConfig;
 
+	private SlowStartConfig slowStartConfig;
+
 	private String scheduler;
 
 	private String resourceGroupId;
@@ -47,6 +49,8 @@ public class CreateServerGroupRequest extends RpcAcsRequest<CreateServerGroupRes
 	private StickySessionConfig stickySessionConfig;
 
 	private Boolean dryRun;
+
+	private ConnectionDrainConfig connectionDrainConfig;
 
 	private String serverGroupType;
 
@@ -114,6 +118,19 @@ public class CreateServerGroupRequest extends RpcAcsRequest<CreateServerGroupRes
 				}
 				putQueryParameter("HealthCheckConfig.HealthCheckHttpVersion" , healthCheckConfig.getHealthCheckHttpVersion());
 				putQueryParameter("HealthCheckConfig.HealthCheckConnectPort" , healthCheckConfig.getHealthCheckConnectPort());
+		}	
+	}
+
+	public SlowStartConfig getSlowStartConfig() {
+		return this.slowStartConfig;
+	}
+
+	public void setSlowStartConfig(SlowStartConfig slowStartConfig) {
+		this.slowStartConfig = slowStartConfig;	
+		if (slowStartConfig != null) {
+			
+				putQueryParameter("SlowStartConfig.SlowStartDuration" , slowStartConfig.getSlowStartDuration());
+				putQueryParameter("SlowStartConfig.SlowStartEnabled" , slowStartConfig.getSlowStartEnabled());
 		}	
 	}
 
@@ -213,6 +230,19 @@ public class CreateServerGroupRequest extends RpcAcsRequest<CreateServerGroupRes
 		if(dryRun != null){
 			putQueryParameter("DryRun", dryRun.toString());
 		}
+	}
+
+	public ConnectionDrainConfig getConnectionDrainConfig() {
+		return this.connectionDrainConfig;
+	}
+
+	public void setConnectionDrainConfig(ConnectionDrainConfig connectionDrainConfig) {
+		this.connectionDrainConfig = connectionDrainConfig;	
+		if (connectionDrainConfig != null) {
+			
+				putQueryParameter("ConnectionDrainConfig.ConnectionDrainEnabled" , connectionDrainConfig.getConnectionDrainEnabled());
+				putQueryParameter("ConnectionDrainConfig.ConnectionDrainTimeout" , connectionDrainConfig.getConnectionDrainTimeout());
+		}	
 	}
 
 	public String getServerGroupType() {
@@ -393,6 +423,29 @@ public class CreateServerGroupRequest extends RpcAcsRequest<CreateServerGroupRes
 		}
 	}
 
+	public static class SlowStartConfig {
+
+		private Integer slowStartDuration;
+
+		private Boolean slowStartEnabled;
+
+		public Integer getSlowStartDuration() {
+			return this.slowStartDuration;
+		}
+
+		public void setSlowStartDuration(Integer slowStartDuration) {
+			this.slowStartDuration = slowStartDuration;
+		}
+
+		public Boolean getSlowStartEnabled() {
+			return this.slowStartEnabled;
+		}
+
+		public void setSlowStartEnabled(Boolean slowStartEnabled) {
+			this.slowStartEnabled = slowStartEnabled;
+		}
+	}
+
 	public static class Tag {
 
 		private String value;
@@ -456,6 +509,29 @@ public class CreateServerGroupRequest extends RpcAcsRequest<CreateServerGroupRes
 
 		public void setStickySessionType(String stickySessionType) {
 			this.stickySessionType = stickySessionType;
+		}
+	}
+
+	public static class ConnectionDrainConfig {
+
+		private Boolean connectionDrainEnabled;
+
+		private Integer connectionDrainTimeout;
+
+		public Boolean getConnectionDrainEnabled() {
+			return this.connectionDrainEnabled;
+		}
+
+		public void setConnectionDrainEnabled(Boolean connectionDrainEnabled) {
+			this.connectionDrainEnabled = connectionDrainEnabled;
+		}
+
+		public Integer getConnectionDrainTimeout() {
+			return this.connectionDrainTimeout;
+		}
+
+		public void setConnectionDrainTimeout(Integer connectionDrainTimeout) {
+			this.connectionDrainTimeout = connectionDrainTimeout;
 		}
 	}
 
