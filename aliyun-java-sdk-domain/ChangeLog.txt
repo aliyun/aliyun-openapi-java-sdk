@@ -1,3 +1,6 @@
+2024-06-18 Version: 3.15.8
+- Generated 2018-02-08 for `Domain`.
+
 2024-05-09 Version: 3.15.7
 - Add price info to check domain api
 
