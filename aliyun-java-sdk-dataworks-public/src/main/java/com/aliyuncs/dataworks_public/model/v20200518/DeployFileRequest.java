@@ -25,13 +25,13 @@ import com.aliyuncs.dataworks_public.Endpoint;
 public class DeployFileRequest extends RpcAcsRequest<DeployFileResponse> {
 	   
 
+	private String projectIdentifier;
+
 	private String comment;
 
 	private Long projectId;
 
 	private Long nodeId;
-
-	private String projectIdentifier;
 
 	private Long fileId;
 	public DeployFileRequest() {
@@ -41,6 +41,17 @@ public class DeployFileRequest extends RpcAcsRequest<DeployFileResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getProjectIdentifier() {
+		return this.projectIdentifier;
+	}
+
+	public void setProjectIdentifier(String projectIdentifier) {
+		this.projectIdentifier = projectIdentifier;
+		if(projectIdentifier != null){
+			putBodyParameter("ProjectIdentifier", projectIdentifier);
+		}
 	}
 
 	public String getComment() {
@@ -73,17 +84,6 @@ public class DeployFileRequest extends RpcAcsRequest<DeployFileResponse> {
 		this.nodeId = nodeId;
 		if(nodeId != null){
 			putBodyParameter("NodeId", nodeId.toString());
-		}
-	}
-
-	public String getProjectIdentifier() {
-		return this.projectIdentifier;
-	}
-
-	public void setProjectIdentifier(String projectIdentifier) {
-		this.projectIdentifier = projectIdentifier;
-		if(projectIdentifier != null){
-			putBodyParameter("ProjectIdentifier", projectIdentifier);
 		}
 	}
 

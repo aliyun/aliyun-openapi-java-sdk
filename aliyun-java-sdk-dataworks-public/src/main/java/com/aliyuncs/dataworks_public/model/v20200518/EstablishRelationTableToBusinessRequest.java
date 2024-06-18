@@ -25,15 +25,15 @@ import com.aliyuncs.dataworks_public.Endpoint;
 public class EstablishRelationTableToBusinessRequest extends RpcAcsRequest<EstablishRelationTableToBusinessResponse> {
 	   
 
-	private String tableGuid;
-
 	private String businessId;
-
-	private Long projectId;
 
 	private String projectIdentifier;
 
 	private String folderId;
+
+	private String tableGuid;
+
+	private Long projectId;
 	public EstablishRelationTableToBusinessRequest() {
 		super("dataworks-public", "2020-05-18", "EstablishRelationTableToBusiness");
 		setMethod(MethodType.POST);
@@ -41,17 +41,6 @@ public class EstablishRelationTableToBusinessRequest extends RpcAcsRequest<Estab
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getTableGuid() {
-		return this.tableGuid;
-	}
-
-	public void setTableGuid(String tableGuid) {
-		this.tableGuid = tableGuid;
-		if(tableGuid != null){
-			putBodyParameter("TableGuid", tableGuid);
-		}
 	}
 
 	public String getBusinessId() {
@@ -62,17 +51,6 @@ public class EstablishRelationTableToBusinessRequest extends RpcAcsRequest<Estab
 		this.businessId = businessId;
 		if(businessId != null){
 			putBodyParameter("BusinessId", businessId);
-		}
-	}
-
-	public Long getProjectId() {
-		return this.projectId;
-	}
-
-	public void setProjectId(Long projectId) {
-		this.projectId = projectId;
-		if(projectId != null){
-			putBodyParameter("ProjectId", projectId.toString());
 		}
 	}
 
@@ -95,6 +73,28 @@ public class EstablishRelationTableToBusinessRequest extends RpcAcsRequest<Estab
 		this.folderId = folderId;
 		if(folderId != null){
 			putBodyParameter("FolderId", folderId);
+		}
+	}
+
+	public String getTableGuid() {
+		return this.tableGuid;
+	}
+
+	public void setTableGuid(String tableGuid) {
+		this.tableGuid = tableGuid;
+		if(tableGuid != null){
+			putBodyParameter("TableGuid", tableGuid);
+		}
+	}
+
+	public Long getProjectId() {
+		return this.projectId;
+	}
+
+	public void setProjectId(Long projectId) {
+		this.projectId = projectId;
+		if(projectId != null){
+			putBodyParameter("ProjectId", projectId.toString());
 		}
 	}
 
