@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.computenest.model.v20210601.ListServiceInstancesResponse;
 import com.aliyuncs.computenest.model.v20210601.ListServiceInstancesResponse.ServiceInstance;
 import com.aliyuncs.computenest.model.v20210601.ListServiceInstancesResponse.ServiceInstance.Service;
+import com.aliyuncs.computenest.model.v20210601.ListServiceInstancesResponse.ServiceInstance.Service.Commodity;
 import com.aliyuncs.computenest.model.v20210601.ListServiceInstancesResponse.ServiceInstance.Service.ServiceInfo;
 import com.aliyuncs.computenest.model.v20210601.ListServiceInstancesResponse.ServiceInstance.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -59,6 +60,7 @@ public class ListServiceInstancesResponseUnmarshaller {
 			serviceInstance.setMarketInstanceId(_ctx.stringValue("ListServiceInstancesResponse.ServiceInstances["+ i +"].MarketInstanceId"));
 			serviceInstance.setResourceGroupId(_ctx.stringValue("ListServiceInstancesResponse.ServiceInstances["+ i +"].ResourceGroupId"));
 			serviceInstance.setBizStatus(_ctx.stringValue("ListServiceInstancesResponse.ServiceInstances["+ i +"].BizStatus"));
+			serviceInstance.setOrderId(_ctx.stringValue("ListServiceInstancesResponse.ServiceInstances["+ i +"].OrderId"));
 
 			Service service = new Service();
 			service.setStatus(_ctx.stringValue("ListServiceInstancesResponse.ServiceInstances["+ i +"].Service.Status"));
@@ -70,6 +72,11 @@ public class ListServiceInstancesResponseUnmarshaller {
 			service.setServiceType(_ctx.stringValue("ListServiceInstancesResponse.ServiceInstances["+ i +"].Service.ServiceType"));
 			service.setSupplierName(_ctx.stringValue("ListServiceInstancesResponse.ServiceInstances["+ i +"].Service.SupplierName"));
 			service.setVersionName(_ctx.stringValue("ListServiceInstancesResponse.ServiceInstances["+ i +"].Service.VersionName"));
+
+			Commodity commodity = new Commodity();
+			commodity.setSaasBoostMetadata(_ctx.stringValue("ListServiceInstancesResponse.ServiceInstances["+ i +"].Service.Commodity.SaasBoostMetadata"));
+			commodity.setType(_ctx.stringValue("ListServiceInstancesResponse.ServiceInstances["+ i +"].Service.Commodity.Type"));
+			service.setCommodity(commodity);
 
 			List<ServiceInfo> serviceInfos = new ArrayList<ServiceInfo>();
 			for (int j = 0; j < _ctx.lengthValue("ListServiceInstancesResponse.ServiceInstances["+ i +"].Service.ServiceInfos.Length"); j++) {

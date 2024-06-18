@@ -121,6 +121,8 @@ public class ListServiceInstancesResponse extends AcsResponse {
 
 		private String bizStatus;
 
+		private String orderId;
+
 		private List<Tag> tags;
 
 		private Service service;
@@ -301,6 +303,14 @@ public class ListServiceInstancesResponse extends AcsResponse {
 			this.bizStatus = bizStatus;
 		}
 
+		public String getOrderId() {
+			return this.orderId;
+		}
+
+		public void setOrderId(String orderId) {
+			this.orderId = orderId;
+		}
+
 		public List<Tag> getTags() {
 			return this.tags;
 		}
@@ -361,6 +371,8 @@ public class ListServiceInstancesResponse extends AcsResponse {
 			private String versionName;
 
 			private List<ServiceInfo> serviceInfos;
+
+			private Commodity commodity;
 
 			public String getStatus() {
 				return this.status;
@@ -442,6 +454,14 @@ public class ListServiceInstancesResponse extends AcsResponse {
 				this.serviceInfos = serviceInfos;
 			}
 
+			public Commodity getCommodity() {
+				return this.commodity;
+			}
+
+			public void setCommodity(Commodity commodity) {
+				this.commodity = commodity;
+			}
+
 			public static class ServiceInfo {
 
 				private String locale;
@@ -482,6 +502,29 @@ public class ListServiceInstancesResponse extends AcsResponse {
 
 				public void setShortDescription(String shortDescription) {
 					this.shortDescription = shortDescription;
+				}
+			}
+
+			public static class Commodity {
+
+				private String saasBoostMetadata;
+
+				private String type;
+
+				public String getSaasBoostMetadata() {
+					return this.saasBoostMetadata;
+				}
+
+				public void setSaasBoostMetadata(String saasBoostMetadata) {
+					this.saasBoostMetadata = saasBoostMetadata;
+				}
+
+				public String getType() {
+					return this.type;
+				}
+
+				public void setType(String type) {
+					this.type = type;
 				}
 			}
 		}
