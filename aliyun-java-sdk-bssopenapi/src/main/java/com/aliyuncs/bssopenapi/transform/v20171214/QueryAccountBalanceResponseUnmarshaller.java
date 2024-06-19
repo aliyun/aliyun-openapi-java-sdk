@@ -34,6 +34,7 @@ public class QueryAccountBalanceResponseUnmarshaller {
 		data.setMybankCreditAmount(_ctx.stringValue("QueryAccountBalanceResponse.Data.MybankCreditAmount"));
 		data.setCurrency(_ctx.stringValue("QueryAccountBalanceResponse.Data.Currency"));
 		data.setAvailableCashAmount(_ctx.stringValue("QueryAccountBalanceResponse.Data.AvailableCashAmount"));
+		data.setQuotaLimit(_ctx.stringValue("QueryAccountBalanceResponse.Data.QuotaLimit"));
 		queryAccountBalanceResponse.setData(data);
 	 
 	 	return queryAccountBalanceResponse;

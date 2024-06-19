@@ -52,6 +52,12 @@ public class QuerySavingsPlansDeductLogResponseUnmarshaller {
 			savingsPlansDeductDetailResponse.setDeductRate(_ctx.stringValue("QuerySavingsPlansDeductLogResponse.Data.Items["+ i +"].DeductRate"));
 			savingsPlansDeductDetailResponse.setDeductFee(_ctx.stringValue("QuerySavingsPlansDeductLogResponse.Data.Items["+ i +"].DeductFee"));
 			savingsPlansDeductDetailResponse.setOwnerId(_ctx.longValue("QuerySavingsPlansDeductLogResponse.Data.Items["+ i +"].OwnerId"));
+			savingsPlansDeductDetailResponse.setBillingCycle(_ctx.stringValue("QuerySavingsPlansDeductLogResponse.Data.Items["+ i +"].BillingCycle"));
+			savingsPlansDeductDetailResponse.setRegion(_ctx.stringValue("QuerySavingsPlansDeductLogResponse.Data.Items["+ i +"].Region"));
+			savingsPlansDeductDetailResponse.setInstanceSpec(_ctx.stringValue("QuerySavingsPlansDeductLogResponse.Data.Items["+ i +"].InstanceSpec"));
+			savingsPlansDeductDetailResponse.setInstanceTypeFamily(_ctx.stringValue("QuerySavingsPlansDeductLogResponse.Data.Items["+ i +"].InstanceTypeFamily"));
+			savingsPlansDeductDetailResponse.setBillingOfficialPrice(_ctx.stringValue("QuerySavingsPlansDeductLogResponse.Data.Items["+ i +"].BillingOfficialPrice"));
+			savingsPlansDeductDetailResponse.setDeductedOfficialPrice(_ctx.stringValue("QuerySavingsPlansDeductLogResponse.Data.Items["+ i +"].DeductedOfficialPrice"));
 
 			items.add(savingsPlansDeductDetailResponse);
 		}

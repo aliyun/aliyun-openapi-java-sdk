@@ -28,6 +28,8 @@ public class DescribeSplitItemBillRequest extends RpcAcsRequest<DescribeSplitIte
 
 	private String productCode;
 
+	private Boolean isHideZeroCharge;
+
 	private String subscriptionType;
 
 	private Long billOwnerId;
@@ -51,6 +53,8 @@ public class DescribeSplitItemBillRequest extends RpcAcsRequest<DescribeSplitIte
 	private String granularity;
 
 	private Integer maxResults;
+
+	private String pipCode;
 	public DescribeSplitItemBillRequest() {
 		super("BssOpenApi", "2017-12-14", "DescribeSplitItemBill", "bssopenapi");
 		setMethod(MethodType.POST);
@@ -68,6 +72,17 @@ public class DescribeSplitItemBillRequest extends RpcAcsRequest<DescribeSplitIte
 		this.productCode = productCode;
 		if(productCode != null){
 			putQueryParameter("ProductCode", productCode);
+		}
+	}
+
+	public Boolean getIsHideZeroCharge() {
+		return this.isHideZeroCharge;
+	}
+
+	public void setIsHideZeroCharge(Boolean isHideZeroCharge) {
+		this.isHideZeroCharge = isHideZeroCharge;
+		if(isHideZeroCharge != null){
+			putQueryParameter("IsHideZeroCharge", isHideZeroCharge.toString());
 		}
 	}
 
@@ -207,6 +222,17 @@ public class DescribeSplitItemBillRequest extends RpcAcsRequest<DescribeSplitIte
 		this.maxResults = maxResults;
 		if(maxResults != null){
 			putQueryParameter("MaxResults", maxResults.toString());
+		}
+	}
+
+	public String getPipCode() {
+		return this.pipCode;
+	}
+
+	public void setPipCode(String pipCode) {
+		this.pipCode = pipCode;
+		if(pipCode != null){
+			putQueryParameter("PipCode", pipCode);
 		}
 	}
 

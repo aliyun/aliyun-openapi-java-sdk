@@ -15,6 +15,7 @@
 package com.aliyuncs.bssopenapi.model.v20171214;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.bssopenapi.transform.v20171214.GetOrderDetailResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -182,6 +183,8 @@ public class GetOrderDetailResponse extends AcsResponse {
 			private String orderId;
 
 			private String productCode;
+
+			private Map<Object,Object> extendInfos;
 
 			public String getOrderSubType() {
 				return this.orderSubType;
@@ -397,6 +400,14 @@ public class GetOrderDetailResponse extends AcsResponse {
 
 			public void setProductCode(String productCode) {
 				this.productCode = productCode;
+			}
+
+			public Map<Object,Object> getExtendInfos() {
+				return this.extendInfos;
+			}
+
+			public void setExtendInfos(Map<Object,Object> extendInfos) {
+				this.extendInfos = extendInfos;
 			}
 		}
 	}

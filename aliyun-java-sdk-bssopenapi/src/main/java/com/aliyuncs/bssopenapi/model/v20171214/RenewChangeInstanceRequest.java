@@ -31,6 +31,8 @@ public class RenewChangeInstanceRequest extends RpcAcsRequest<RenewChangeInstanc
 
 	private String clientToken;
 
+	private Long ownerId;
+
 	private String productType;
 
 	private String instanceId;
@@ -67,6 +69,17 @@ public class RenewChangeInstanceRequest extends RpcAcsRequest<RenewChangeInstanc
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

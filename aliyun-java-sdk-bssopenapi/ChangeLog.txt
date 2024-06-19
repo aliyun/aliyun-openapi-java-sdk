@@ -1,3 +1,6 @@
+2024-06-19 Version: 1.8.13
+- Generated 2017-12-14 for `BssOpenApi`.
+
 2023-09-06 Version: 1.8.12
  - Add new action of DescribeInstanceDeductAmortizedCostByAmortizationPeriod.
 

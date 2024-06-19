@@ -50,6 +50,8 @@ public class DescribeInstanceBillRequest extends RpcAcsRequest<DescribeInstanceB
 	private String granularity;
 
 	private Integer maxResults;
+
+	private String pipCode;
 	public DescribeInstanceBillRequest() {
 		super("BssOpenApi", "2017-12-14", "DescribeInstanceBill", "bssopenapi");
 		setMethod(MethodType.POST);
@@ -199,6 +201,17 @@ public class DescribeInstanceBillRequest extends RpcAcsRequest<DescribeInstanceB
 		this.maxResults = maxResults;
 		if(maxResults != null){
 			putQueryParameter("MaxResults", maxResults.toString());
+		}
+	}
+
+	public String getPipCode() {
+		return this.pipCode;
+	}
+
+	public void setPipCode(String pipCode) {
+		this.pipCode = pipCode;
+		if(pipCode != null){
+			putQueryParameter("PipCode", pipCode);
 		}
 	}
 

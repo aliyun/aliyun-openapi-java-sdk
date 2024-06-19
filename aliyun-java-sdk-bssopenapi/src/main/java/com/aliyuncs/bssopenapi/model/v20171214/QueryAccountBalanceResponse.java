@@ -86,6 +86,8 @@ public class QueryAccountBalanceResponse extends AcsResponse {
 
 		private String availableCashAmount;
 
+		private String quotaLimit;
+
 		public String getAvailableAmount() {
 			return this.availableAmount;
 		}
@@ -124,6 +126,14 @@ public class QueryAccountBalanceResponse extends AcsResponse {
 
 		public void setAvailableCashAmount(String availableCashAmount) {
 			this.availableCashAmount = availableCashAmount;
+		}
+
+		public String getQuotaLimit() {
+			return this.quotaLimit;
+		}
+
+		public void setQuotaLimit(String quotaLimit) {
+			this.quotaLimit = quotaLimit;
 		}
 	}
 

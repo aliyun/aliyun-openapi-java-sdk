@@ -111,6 +111,8 @@ public class DescribeSavingsPlansCoverageDetailResponse extends AcsResponse {
 
 			private Long userId;
 
+			private Long ownerId;
+
 			private String instanceId;
 
 			private String currency;
@@ -139,6 +141,14 @@ public class DescribeSavingsPlansCoverageDetailResponse extends AcsResponse {
 
 			public void setUserId(Long userId) {
 				this.userId = userId;
+			}
+
+			public Long getOwnerId() {
+				return this.ownerId;
+			}
+
+			public void setOwnerId(Long ownerId) {
+				this.ownerId = ownerId;
 			}
 
 			public String getInstanceId() {
