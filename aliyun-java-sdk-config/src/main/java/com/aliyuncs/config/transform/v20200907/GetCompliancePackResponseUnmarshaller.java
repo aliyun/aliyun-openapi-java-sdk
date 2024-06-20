@@ -22,6 +22,8 @@ import com.aliyuncs.config.model.v20200907.GetCompliancePackResponse.ComplianceP
 import com.aliyuncs.config.model.v20200907.GetCompliancePackResponse.CompliancePack.ConfigRulesItem;
 import com.aliyuncs.config.model.v20200907.GetCompliancePackResponse.CompliancePack.ConfigRulesItem.ConfigRuleParametersItem;
 import com.aliyuncs.config.model.v20200907.GetCompliancePackResponse.CompliancePack.Scope;
+import com.aliyuncs.config.model.v20200907.GetCompliancePackResponse.CompliancePack.Scope.ExcludeTagsScopeItem;
+import com.aliyuncs.config.model.v20200907.GetCompliancePackResponse.CompliancePack.Scope.TagsScopeItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -43,11 +45,34 @@ public class GetCompliancePackResponseUnmarshaller {
 		compliancePack.setCreateTimestamp(_ctx.longValue("GetCompliancePackResponse.CompliancePack.CreateTimestamp"));
 
 		Scope scope = new Scope();
+		scope.setExcludeRegionIdsScope(_ctx.stringValue("GetCompliancePackResponse.CompliancePack.Scope.ExcludeRegionIdsScope"));
+		scope.setResourceIdsScope(_ctx.stringValue("GetCompliancePackResponse.CompliancePack.Scope.ResourceIdsScope"));
+		scope.setExcludeResourceGroupIdsScope(_ctx.stringValue("GetCompliancePackResponse.CompliancePack.Scope.ExcludeResourceGroupIdsScope"));
+		scope.setTagKeyScope(_ctx.stringValue("GetCompliancePackResponse.CompliancePack.Scope.TagKeyScope"));
+		scope.setTagValueScope(_ctx.stringValue("GetCompliancePackResponse.CompliancePack.Scope.TagValueScope"));
 		scope.setRegionIdsScope(_ctx.stringValue("GetCompliancePackResponse.CompliancePack.Scope.RegionIdsScope"));
 		scope.setExcludeResourceIdsScope(_ctx.stringValue("GetCompliancePackResponse.CompliancePack.Scope.ExcludeResourceIdsScope"));
 		scope.setResourceGroupIdsScope(_ctx.stringValue("GetCompliancePackResponse.CompliancePack.Scope.ResourceGroupIdsScope"));
-		scope.setTagKeyScope(_ctx.stringValue("GetCompliancePackResponse.CompliancePack.Scope.TagKeyScope"));
-		scope.setTagValueScope(_ctx.stringValue("GetCompliancePackResponse.CompliancePack.Scope.TagValueScope"));
+
+		List<TagsScopeItem> tagsScope = new ArrayList<TagsScopeItem>();
+		for (int i = 0; i < _ctx.lengthValue("GetCompliancePackResponse.CompliancePack.Scope.TagsScope.Length"); i++) {
+			TagsScopeItem tagsScopeItem = new TagsScopeItem();
+			tagsScopeItem.setTagKey(_ctx.stringValue("GetCompliancePackResponse.CompliancePack.Scope.TagsScope["+ i +"].TagKey"));
+			tagsScopeItem.setTagValue(_ctx.stringValue("GetCompliancePackResponse.CompliancePack.Scope.TagsScope["+ i +"].TagValue"));
+
+			tagsScope.add(tagsScopeItem);
+		}
+		scope.setTagsScope(tagsScope);
+
+		List<ExcludeTagsScopeItem> excludeTagsScope = new ArrayList<ExcludeTagsScopeItem>();
+		for (int i = 0; i < _ctx.lengthValue("GetCompliancePackResponse.CompliancePack.Scope.ExcludeTagsScope.Length"); i++) {
+			ExcludeTagsScopeItem excludeTagsScopeItem = new ExcludeTagsScopeItem();
+			excludeTagsScopeItem.setTagKey(_ctx.stringValue("GetCompliancePackResponse.CompliancePack.Scope.ExcludeTagsScope["+ i +"].TagKey"));
+			excludeTagsScopeItem.setTagValue(_ctx.stringValue("GetCompliancePackResponse.CompliancePack.Scope.ExcludeTagsScope["+ i +"].TagValue"));
+
+			excludeTagsScope.add(excludeTagsScopeItem);
+		}
+		scope.setExcludeTagsScope(excludeTagsScope);
 		compliancePack.setScope(scope);
 
 		List<ConfigRulesItem> configRules = new ArrayList<ConfigRulesItem>();

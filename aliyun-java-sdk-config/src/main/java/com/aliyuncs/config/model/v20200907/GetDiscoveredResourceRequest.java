@@ -27,12 +27,14 @@ public class GetDiscoveredResourceRequest extends RpcAcsRequest<GetDiscoveredRes
 
 	private String resourceId;
 
+	private Integer complianceOption;
+
 	private String resourceType;
 
 	private String region;
 	public GetDiscoveredResourceRequest() {
 		super("Config", "2020-09-07", "GetDiscoveredResource", "config");
-		setMethod(MethodType.GET);
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -47,6 +49,17 @@ public class GetDiscoveredResourceRequest extends RpcAcsRequest<GetDiscoveredRes
 		this.resourceId = resourceId;
 		if(resourceId != null){
 			putQueryParameter("ResourceId", resourceId);
+		}
+	}
+
+	public Integer getComplianceOption() {
+		return this.complianceOption;
+	}
+
+	public void setComplianceOption(Integer complianceOption) {
+		this.complianceOption = complianceOption;
+		if(complianceOption != null){
+			putQueryParameter("ComplianceOption", complianceOption.toString());
 		}
 	}
 

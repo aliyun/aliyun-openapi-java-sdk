@@ -34,6 +34,8 @@ public class CreateConfigRuleRequest extends RpcAcsRequest<CreateConfigRuleRespo
 
 	private String description;
 
+	private String excludeResourceGroupIdsScope;
+
 	private String configRuleTriggerTypes;
 
 	private String sourceIdentifier;
@@ -42,17 +44,25 @@ public class CreateConfigRuleRequest extends RpcAcsRequest<CreateConfigRuleRespo
 
 	private String regionIdsScope;
 
+	private String resourceIdsScope;
+
+	private List<ExcludeTagsScope> excludeTagsScope;
+
 	private Integer riskLevel;
+
+	private List<TagsScope> tagsScope;
 
 	private String sourceOwner;
 
 	private String resourceGroupIdsScope;
 
+	private String excludeRegionIdsScope;
+
 	private String inputParameters;
 
-	private String configRuleName;
-
 	private String tagKeyLogicScope;
+
+	private String configRuleName;
 
 	private String maximumExecutionFrequency;
 
@@ -117,6 +127,17 @@ public class CreateConfigRuleRequest extends RpcAcsRequest<CreateConfigRuleRespo
 		}
 	}
 
+	public String getExcludeResourceGroupIdsScope() {
+		return this.excludeResourceGroupIdsScope;
+	}
+
+	public void setExcludeResourceGroupIdsScope(String excludeResourceGroupIdsScope) {
+		this.excludeResourceGroupIdsScope = excludeResourceGroupIdsScope;
+		if(excludeResourceGroupIdsScope != null){
+			putBodyParameter("ExcludeResourceGroupIdsScope", excludeResourceGroupIdsScope);
+		}
+	}
+
 	public String getConfigRuleTriggerTypes() {
 		return this.configRuleTriggerTypes;
 	}
@@ -161,6 +182,34 @@ public class CreateConfigRuleRequest extends RpcAcsRequest<CreateConfigRuleRespo
 		}
 	}
 
+	public String getResourceIdsScope() {
+		return this.resourceIdsScope;
+	}
+
+	public void setResourceIdsScope(String resourceIdsScope) {
+		this.resourceIdsScope = resourceIdsScope;
+		if(resourceIdsScope != null){
+			putBodyParameter("ResourceIdsScope", resourceIdsScope);
+		}
+	}
+
+	public List<ExcludeTagsScope> getExcludeTagsScope() {
+		return this.excludeTagsScope;
+	}
+
+	public void setExcludeTagsScope(List<ExcludeTagsScope> excludeTagsScope) {
+		this.excludeTagsScope = excludeTagsScope;	
+		if (excludeTagsScope != null) {
+			for (int depth1 = 0; depth1 < excludeTagsScope.size(); depth1++) {
+				if (excludeTagsScope.get(depth1) != null) {
+					
+						putBodyParameter("ExcludeTagsScope." + (depth1 + 1) + ".TagValue" , excludeTagsScope.get(depth1).getTagValue());
+						putBodyParameter("ExcludeTagsScope." + (depth1 + 1) + ".TagKey" , excludeTagsScope.get(depth1).getTagKey());
+				}
+			}
+		}	
+	}
+
 	public Integer getRiskLevel() {
 		return this.riskLevel;
 	}
@@ -170,6 +219,23 @@ public class CreateConfigRuleRequest extends RpcAcsRequest<CreateConfigRuleRespo
 		if(riskLevel != null){
 			putBodyParameter("RiskLevel", riskLevel.toString());
 		}
+	}
+
+	public List<TagsScope> getTagsScope() {
+		return this.tagsScope;
+	}
+
+	public void setTagsScope(List<TagsScope> tagsScope) {
+		this.tagsScope = tagsScope;	
+		if (tagsScope != null) {
+			for (int depth1 = 0; depth1 < tagsScope.size(); depth1++) {
+				if (tagsScope.get(depth1) != null) {
+					
+						putBodyParameter("TagsScope." + (depth1 + 1) + ".TagValue" , tagsScope.get(depth1).getTagValue());
+						putBodyParameter("TagsScope." + (depth1 + 1) + ".TagKey" , tagsScope.get(depth1).getTagKey());
+				}
+			}
+		}	
 	}
 
 	public String getSourceOwner() {
@@ -194,6 +260,17 @@ public class CreateConfigRuleRequest extends RpcAcsRequest<CreateConfigRuleRespo
 		}
 	}
 
+	public String getExcludeRegionIdsScope() {
+		return this.excludeRegionIdsScope;
+	}
+
+	public void setExcludeRegionIdsScope(String excludeRegionIdsScope) {
+		this.excludeRegionIdsScope = excludeRegionIdsScope;
+		if(excludeRegionIdsScope != null){
+			putBodyParameter("ExcludeRegionIdsScope", excludeRegionIdsScope);
+		}
+	}
+
 	public String getInputParameters() {
 		return this.inputParameters;
 	}
@@ -205,17 +282,6 @@ public class CreateConfigRuleRequest extends RpcAcsRequest<CreateConfigRuleRespo
 		}
 	}
 
-	public String getConfigRuleName() {
-		return this.configRuleName;
-	}
-
-	public void setConfigRuleName(String configRuleName) {
-		this.configRuleName = configRuleName;
-		if(configRuleName != null){
-			putBodyParameter("ConfigRuleName", configRuleName);
-		}
-	}
-
 	public String getTagKeyLogicScope() {
 		return this.tagKeyLogicScope;
 	}
@@ -224,6 +290,17 @@ public class CreateConfigRuleRequest extends RpcAcsRequest<CreateConfigRuleRespo
 		this.tagKeyLogicScope = tagKeyLogicScope;
 		if(tagKeyLogicScope != null){
 			putBodyParameter("TagKeyLogicScope", tagKeyLogicScope);
+		}
+	}
+
+	public String getConfigRuleName() {
+		return this.configRuleName;
+	}
+
+	public void setConfigRuleName(String configRuleName) {
+		this.configRuleName = configRuleName;
+		if(configRuleName != null){
+			putBodyParameter("ConfigRuleName", configRuleName);
 		}
 	}
 
@@ -246,6 +323,52 @@ public class CreateConfigRuleRequest extends RpcAcsRequest<CreateConfigRuleRespo
 		this.excludeResourceIdsScope = excludeResourceIdsScope;
 		if(excludeResourceIdsScope != null){
 			putBodyParameter("ExcludeResourceIdsScope", excludeResourceIdsScope);
+		}
+	}
+
+	public static class ExcludeTagsScope {
+
+		private String tagValue;
+
+		private String tagKey;
+
+		public String getTagValue() {
+			return this.tagValue;
+		}
+
+		public void setTagValue(String tagValue) {
+			this.tagValue = tagValue;
+		}
+
+		public String getTagKey() {
+			return this.tagKey;
+		}
+
+		public void setTagKey(String tagKey) {
+			this.tagKey = tagKey;
+		}
+	}
+
+	public static class TagsScope {
+
+		private String tagValue;
+
+		private String tagKey;
+
+		public String getTagValue() {
+			return this.tagValue;
+		}
+
+		public void setTagValue(String tagValue) {
+			this.tagValue = tagValue;
+		}
+
+		public String getTagKey() {
+			return this.tagKey;
+		}
+
+		public void setTagKey(String tagKey) {
+			this.tagKey = tagKey;
 		}
 	}
 

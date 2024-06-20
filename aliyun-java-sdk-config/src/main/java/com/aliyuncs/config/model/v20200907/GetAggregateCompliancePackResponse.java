@@ -275,15 +275,65 @@ public class GetAggregateCompliancePackResponse extends AcsResponse {
 
 		public static class Scope {
 
+			private String excludeRegionIdsScope;
+
+			private String resourceIdsScope;
+
+			private String excludeResourceGroupIdsScope;
+
+			private String tagKeyScope;
+
+			private String tagValueScope;
+
 			private String regionIdsScope;
 
 			private String excludeResourceIdsScope;
 
 			private String resourceGroupIdsScope;
 
-			private String tagKeyScope;
+			private List<TagsScopeItem> tagsScope;
 
-			private String tagValueScope;
+			private List<ExcludeTagsScopeItem> excludeTagsScope;
+
+			public String getExcludeRegionIdsScope() {
+				return this.excludeRegionIdsScope;
+			}
+
+			public void setExcludeRegionIdsScope(String excludeRegionIdsScope) {
+				this.excludeRegionIdsScope = excludeRegionIdsScope;
+			}
+
+			public String getResourceIdsScope() {
+				return this.resourceIdsScope;
+			}
+
+			public void setResourceIdsScope(String resourceIdsScope) {
+				this.resourceIdsScope = resourceIdsScope;
+			}
+
+			public String getExcludeResourceGroupIdsScope() {
+				return this.excludeResourceGroupIdsScope;
+			}
+
+			public void setExcludeResourceGroupIdsScope(String excludeResourceGroupIdsScope) {
+				this.excludeResourceGroupIdsScope = excludeResourceGroupIdsScope;
+			}
+
+			public String getTagKeyScope() {
+				return this.tagKeyScope;
+			}
+
+			public void setTagKeyScope(String tagKeyScope) {
+				this.tagKeyScope = tagKeyScope;
+			}
+
+			public String getTagValueScope() {
+				return this.tagValueScope;
+			}
+
+			public void setTagValueScope(String tagValueScope) {
+				this.tagValueScope = tagValueScope;
+			}
 
 			public String getRegionIdsScope() {
 				return this.regionIdsScope;
@@ -309,20 +359,66 @@ public class GetAggregateCompliancePackResponse extends AcsResponse {
 				this.resourceGroupIdsScope = resourceGroupIdsScope;
 			}
 
-			public String getTagKeyScope() {
-				return this.tagKeyScope;
+			public List<TagsScopeItem> getTagsScope() {
+				return this.tagsScope;
 			}
 
-			public void setTagKeyScope(String tagKeyScope) {
-				this.tagKeyScope = tagKeyScope;
+			public void setTagsScope(List<TagsScopeItem> tagsScope) {
+				this.tagsScope = tagsScope;
 			}
 
-			public String getTagValueScope() {
-				return this.tagValueScope;
+			public List<ExcludeTagsScopeItem> getExcludeTagsScope() {
+				return this.excludeTagsScope;
 			}
 
-			public void setTagValueScope(String tagValueScope) {
-				this.tagValueScope = tagValueScope;
+			public void setExcludeTagsScope(List<ExcludeTagsScopeItem> excludeTagsScope) {
+				this.excludeTagsScope = excludeTagsScope;
+			}
+
+			public static class TagsScopeItem {
+
+				private String tagKey;
+
+				private String tagValue;
+
+				public String getTagKey() {
+					return this.tagKey;
+				}
+
+				public void setTagKey(String tagKey) {
+					this.tagKey = tagKey;
+				}
+
+				public String getTagValue() {
+					return this.tagValue;
+				}
+
+				public void setTagValue(String tagValue) {
+					this.tagValue = tagValue;
+				}
+			}
+
+			public static class ExcludeTagsScopeItem {
+
+				private String tagKey;
+
+				private String tagValue;
+
+				public String getTagKey() {
+					return this.tagKey;
+				}
+
+				public void setTagKey(String tagKey) {
+					this.tagKey = tagKey;
+				}
+
+				public String getTagValue() {
+					return this.tagValue;
+				}
+
+				public void setTagValue(String tagValue) {
+					this.tagValue = tagValue;
+				}
 			}
 		}
 	}

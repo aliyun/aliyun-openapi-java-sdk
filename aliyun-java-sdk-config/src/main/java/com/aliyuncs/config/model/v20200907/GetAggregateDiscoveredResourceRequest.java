@@ -25,35 +25,26 @@ import com.aliyuncs.config.Endpoint;
 public class GetAggregateDiscoveredResourceRequest extends RpcAcsRequest<GetAggregateDiscoveredResourceResponse> {
 	   
 
-	private String resourceId;
-
 	private Long resourceOwnerId;
 
 	private String aggregatorId;
 
-	private String resourceType;
-
 	private Long resourceAccountId;
+
+	private String resourceId;
+
+	private Integer complianceOption;
+
+	private String resourceType;
 
 	private String region;
 	public GetAggregateDiscoveredResourceRequest() {
 		super("Config", "2020-09-07", "GetAggregateDiscoveredResource", "config");
-		setMethod(MethodType.GET);
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getResourceId() {
-		return this.resourceId;
-	}
-
-	public void setResourceId(String resourceId) {
-		this.resourceId = resourceId;
-		if(resourceId != null){
-			putQueryParameter("ResourceId", resourceId);
-		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -78,17 +69,6 @@ public class GetAggregateDiscoveredResourceRequest extends RpcAcsRequest<GetAggr
 		}
 	}
 
-	public String getResourceType() {
-		return this.resourceType;
-	}
-
-	public void setResourceType(String resourceType) {
-		this.resourceType = resourceType;
-		if(resourceType != null){
-			putQueryParameter("ResourceType", resourceType);
-		}
-	}
-
 	public Long getResourceAccountId() {
 		return this.resourceAccountId;
 	}
@@ -97,6 +77,39 @@ public class GetAggregateDiscoveredResourceRequest extends RpcAcsRequest<GetAggr
 		this.resourceAccountId = resourceAccountId;
 		if(resourceAccountId != null){
 			putQueryParameter("ResourceAccountId", resourceAccountId.toString());
+		}
+	}
+
+	public String getResourceId() {
+		return this.resourceId;
+	}
+
+	public void setResourceId(String resourceId) {
+		this.resourceId = resourceId;
+		if(resourceId != null){
+			putQueryParameter("ResourceId", resourceId);
+		}
+	}
+
+	public Integer getComplianceOption() {
+		return this.complianceOption;
+	}
+
+	public void setComplianceOption(Integer complianceOption) {
+		this.complianceOption = complianceOption;
+		if(complianceOption != null){
+			putQueryParameter("ComplianceOption", complianceOption.toString());
+		}
+	}
+
+	public String getResourceType() {
+		return this.resourceType;
+	}
+
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType);
 		}
 	}
 

@@ -28,13 +28,15 @@ import com.aliyuncs.config.Endpoint;
 public class CreateAggregatorRequest extends RpcAcsRequest<CreateAggregatorResponse> {
 	   
 
-	private String aggregatorType;
-
 	private String clientToken;
 
 	private String aggregatorName;
 
 	private String description;
+
+	private String folderId;
+
+	private String aggregatorType;
 
 	@SerializedName("aggregatorAccounts")
 	private List<AggregatorAccounts> aggregatorAccounts;
@@ -45,17 +47,6 @@ public class CreateAggregatorRequest extends RpcAcsRequest<CreateAggregatorRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getAggregatorType() {
-		return this.aggregatorType;
-	}
-
-	public void setAggregatorType(String aggregatorType) {
-		this.aggregatorType = aggregatorType;
-		if(aggregatorType != null){
-			putBodyParameter("AggregatorType", aggregatorType);
-		}
 	}
 
 	public String getClientToken() {
@@ -88,6 +79,28 @@ public class CreateAggregatorRequest extends RpcAcsRequest<CreateAggregatorRespo
 		this.description = description;
 		if(description != null){
 			putBodyParameter("Description", description);
+		}
+	}
+
+	public String getFolderId() {
+		return this.folderId;
+	}
+
+	public void setFolderId(String folderId) {
+		this.folderId = folderId;
+		if(folderId != null){
+			putBodyParameter("FolderId", folderId);
+		}
+	}
+
+	public String getAggregatorType() {
+		return this.aggregatorType;
+	}
+
+	public void setAggregatorType(String aggregatorType) {
+		this.aggregatorType = aggregatorType;
+		if(aggregatorType != null){
+			putBodyParameter("AggregatorType", aggregatorType);
 		}
 	}
 

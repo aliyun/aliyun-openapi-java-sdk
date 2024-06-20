@@ -38,18 +38,28 @@ public class UpdateAggregateCompliancePackRequest extends RpcAcsRequest<UpdateAg
 
 	private String aggregatorId;
 
+	private String excludeResourceGroupIdsScope;
+
 	private String tagValueScope;
 
 	private String regionIdsScope;
 
 	private String compliancePackId;
 
+	private String resourceIdsScope;
+
 	@SerializedName("configRules")
 	private List<ConfigRules> configRules;
 
+	private List<ExcludeTagsScope> excludeTagsScope;
+
 	private Integer riskLevel;
 
+	private List<TagsScope> tagsScope;
+
 	private String resourceGroupIdsScope;
+
+	private String excludeRegionIdsScope;
 
 	private String excludeResourceIdsScope;
 	public UpdateAggregateCompliancePackRequest() {
@@ -116,6 +126,17 @@ public class UpdateAggregateCompliancePackRequest extends RpcAcsRequest<UpdateAg
 		}
 	}
 
+	public String getExcludeResourceGroupIdsScope() {
+		return this.excludeResourceGroupIdsScope;
+	}
+
+	public void setExcludeResourceGroupIdsScope(String excludeResourceGroupIdsScope) {
+		this.excludeResourceGroupIdsScope = excludeResourceGroupIdsScope;
+		if(excludeResourceGroupIdsScope != null){
+			putBodyParameter("ExcludeResourceGroupIdsScope", excludeResourceGroupIdsScope);
+		}
+	}
+
 	public String getTagValueScope() {
 		return this.tagValueScope;
 	}
@@ -149,6 +170,17 @@ public class UpdateAggregateCompliancePackRequest extends RpcAcsRequest<UpdateAg
 		}
 	}
 
+	public String getResourceIdsScope() {
+		return this.resourceIdsScope;
+	}
+
+	public void setResourceIdsScope(String resourceIdsScope) {
+		this.resourceIdsScope = resourceIdsScope;
+		if(resourceIdsScope != null){
+			putBodyParameter("ResourceIdsScope", resourceIdsScope);
+		}
+	}
+
 	public List<ConfigRules> getConfigRules() {
 		return this.configRules;
 	}
@@ -157,6 +189,23 @@ public class UpdateAggregateCompliancePackRequest extends RpcAcsRequest<UpdateAg
 		this.configRules = configRules;	
 		if (configRules != null) {
 			putBodyParameter("ConfigRules" , new Gson().toJson(configRules));
+		}	
+	}
+
+	public List<ExcludeTagsScope> getExcludeTagsScope() {
+		return this.excludeTagsScope;
+	}
+
+	public void setExcludeTagsScope(List<ExcludeTagsScope> excludeTagsScope) {
+		this.excludeTagsScope = excludeTagsScope;	
+		if (excludeTagsScope != null) {
+			for (int depth1 = 0; depth1 < excludeTagsScope.size(); depth1++) {
+				if (excludeTagsScope.get(depth1) != null) {
+					
+						putBodyParameter("ExcludeTagsScope." + (depth1 + 1) + ".TagValue" , excludeTagsScope.get(depth1).getTagValue());
+						putBodyParameter("ExcludeTagsScope." + (depth1 + 1) + ".TagKey" , excludeTagsScope.get(depth1).getTagKey());
+				}
+			}
 		}	
 	}
 
@@ -171,6 +220,23 @@ public class UpdateAggregateCompliancePackRequest extends RpcAcsRequest<UpdateAg
 		}
 	}
 
+	public List<TagsScope> getTagsScope() {
+		return this.tagsScope;
+	}
+
+	public void setTagsScope(List<TagsScope> tagsScope) {
+		this.tagsScope = tagsScope;	
+		if (tagsScope != null) {
+			for (int depth1 = 0; depth1 < tagsScope.size(); depth1++) {
+				if (tagsScope.get(depth1) != null) {
+					
+						putBodyParameter("TagsScope." + (depth1 + 1) + ".TagValue" , tagsScope.get(depth1).getTagValue());
+						putBodyParameter("TagsScope." + (depth1 + 1) + ".TagKey" , tagsScope.get(depth1).getTagKey());
+				}
+			}
+		}	
+	}
+
 	public String getResourceGroupIdsScope() {
 		return this.resourceGroupIdsScope;
 	}
@@ -179,6 +245,17 @@ public class UpdateAggregateCompliancePackRequest extends RpcAcsRequest<UpdateAg
 		this.resourceGroupIdsScope = resourceGroupIdsScope;
 		if(resourceGroupIdsScope != null){
 			putBodyParameter("ResourceGroupIdsScope", resourceGroupIdsScope);
+		}
+	}
+
+	public String getExcludeRegionIdsScope() {
+		return this.excludeRegionIdsScope;
+	}
+
+	public void setExcludeRegionIdsScope(String excludeRegionIdsScope) {
+		this.excludeRegionIdsScope = excludeRegionIdsScope;
+		if(excludeRegionIdsScope != null){
+			putBodyParameter("ExcludeRegionIdsScope", excludeRegionIdsScope);
 		}
 	}
 
@@ -284,6 +361,52 @@ public class UpdateAggregateCompliancePackRequest extends RpcAcsRequest<UpdateAg
 			public void setParameterName(String parameterName) {
 				this.parameterName = parameterName;
 			}
+		}
+	}
+
+	public static class ExcludeTagsScope {
+
+		private String tagValue;
+
+		private String tagKey;
+
+		public String getTagValue() {
+			return this.tagValue;
+		}
+
+		public void setTagValue(String tagValue) {
+			this.tagValue = tagValue;
+		}
+
+		public String getTagKey() {
+			return this.tagKey;
+		}
+
+		public void setTagKey(String tagKey) {
+			this.tagKey = tagKey;
+		}
+	}
+
+	public static class TagsScope {
+
+		private String tagValue;
+
+		private String tagKey;
+
+		public String getTagValue() {
+			return this.tagValue;
+		}
+
+		public void setTagValue(String tagValue) {
+			this.tagValue = tagValue;
+		}
+
+		public String getTagKey() {
+			return this.tagKey;
+		}
+
+		public void setTagKey(String tagKey) {
+			this.tagKey = tagKey;
 		}
 	}
 

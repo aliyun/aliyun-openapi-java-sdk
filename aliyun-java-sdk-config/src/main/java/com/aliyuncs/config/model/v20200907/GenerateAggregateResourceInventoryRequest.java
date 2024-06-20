@@ -25,6 +25,8 @@ import com.aliyuncs.config.Endpoint;
 public class GenerateAggregateResourceInventoryRequest extends RpcAcsRequest<GenerateAggregateResourceInventoryResponse> {
 	   
 
+	private Integer resourceDeleted;
+
 	private String regions;
 
 	private String resourceTypes;
@@ -39,6 +41,17 @@ public class GenerateAggregateResourceInventoryRequest extends RpcAcsRequest<Gen
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Integer getResourceDeleted() {
+		return this.resourceDeleted;
+	}
+
+	public void setResourceDeleted(Integer resourceDeleted) {
+		this.resourceDeleted = resourceDeleted;
+		if(resourceDeleted != null){
+			putQueryParameter("ResourceDeleted", resourceDeleted.toString());
+		}
 	}
 
 	public String getRegions() {

@@ -27,13 +27,13 @@ public class ListAggregateRemediationExecutionsRequest extends RpcAcsRequest<Lis
 
 	private String configRuleId;
 
-	private String executionStatus;
-
 	private String aggregatorId;
 
 	private Long resourceAccountId;
 
 	private String nextToken;
+
+	private String executionStatus;
 
 	private Long maxResults;
 	public ListAggregateRemediationExecutionsRequest() {
@@ -53,17 +53,6 @@ public class ListAggregateRemediationExecutionsRequest extends RpcAcsRequest<Lis
 		this.configRuleId = configRuleId;
 		if(configRuleId != null){
 			putQueryParameter("ConfigRuleId", configRuleId);
-		}
-	}
-
-	public String getExecutionStatus() {
-		return this.executionStatus;
-	}
-
-	public void setExecutionStatus(String executionStatus) {
-		this.executionStatus = executionStatus;
-		if(executionStatus != null){
-			putQueryParameter("ExecutionStatus", executionStatus);
 		}
 	}
 
@@ -97,6 +86,17 @@ public class ListAggregateRemediationExecutionsRequest extends RpcAcsRequest<Lis
 		this.nextToken = nextToken;
 		if(nextToken != null){
 			putQueryParameter("NextToken", nextToken);
+		}
+	}
+
+	public String getExecutionStatus() {
+		return this.executionStatus;
+	}
+
+	public void setExecutionStatus(String executionStatus) {
+		this.executionStatus = executionStatus;
+		if(executionStatus != null){
+			putQueryParameter("ExecutionStatus", executionStatus);
 		}
 	}
 

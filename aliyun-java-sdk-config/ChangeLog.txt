@@ -1,3 +1,6 @@
+2024-06-20 Version: 2.2.14
+- ConfigRule scope upgrade.
+
 2024-01-05 Version: 2.2.13
 - Generated 2020-09-07 for `Config`.
 

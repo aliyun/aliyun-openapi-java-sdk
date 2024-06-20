@@ -38,6 +38,7 @@ public class GetAggregatorResponseUnmarshaller {
 		aggregator.setAggregatorType(_ctx.stringValue("GetAggregatorResponse.Aggregator.AggregatorType"));
 		aggregator.setAccountId(_ctx.longValue("GetAggregatorResponse.Aggregator.AccountId"));
 		aggregator.setAggregatorId(_ctx.stringValue("GetAggregatorResponse.Aggregator.AggregatorId"));
+		aggregator.setFolderId(_ctx.stringValue("GetAggregatorResponse.Aggregator.FolderId"));
 
 		List<AggregatorAccountsItem> aggregatorAccounts = new ArrayList<AggregatorAccountsItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetAggregatorResponse.Aggregator.AggregatorAccounts.Length"); i++) {

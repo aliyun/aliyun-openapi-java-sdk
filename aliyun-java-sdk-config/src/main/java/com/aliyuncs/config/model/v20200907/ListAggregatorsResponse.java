@@ -95,6 +95,8 @@ public class ListAggregatorsResponse extends AcsResponse {
 
 			private String aggregatorId;
 
+			private String folderId;
+
 			public Long getAggregatorCreateTimestamp() {
 				return this.aggregatorCreateTimestamp;
 			}
@@ -157,6 +159,14 @@ public class ListAggregatorsResponse extends AcsResponse {
 
 			public void setAggregatorId(String aggregatorId) {
 				this.aggregatorId = aggregatorId;
+			}
+
+			public String getFolderId() {
+				return this.folderId;
+			}
+
+			public void setFolderId(String folderId) {
+				this.folderId = folderId;
 			}
 		}
 	}

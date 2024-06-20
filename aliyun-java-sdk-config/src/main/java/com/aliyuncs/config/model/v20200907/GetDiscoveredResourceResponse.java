@@ -70,6 +70,8 @@ public class GetDiscoveredResourceResponse extends AcsResponse {
 
 		private Long version;
 
+		private String complianceType;
+
 		public String getAvailabilityZone() {
 			return this.availabilityZone;
 		}
@@ -164,6 +166,14 @@ public class GetDiscoveredResourceResponse extends AcsResponse {
 
 		public void setVersion(Long version) {
 			this.version = version;
+		}
+
+		public String getComplianceType() {
+			return this.complianceType;
+		}
+
+		public void setComplianceType(String complianceType) {
+			this.complianceType = complianceType;
 		}
 	}
 

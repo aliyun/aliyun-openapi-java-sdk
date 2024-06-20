@@ -38,6 +38,7 @@ public class GetDiscoveredResourceResponseUnmarshaller {
 		discoveredResourceDetail.setResourceName(_ctx.stringValue("GetDiscoveredResourceResponse.DiscoveredResourceDetail.ResourceName"));
 		discoveredResourceDetail.setResourceStatus(_ctx.stringValue("GetDiscoveredResourceResponse.DiscoveredResourceDetail.ResourceStatus"));
 		discoveredResourceDetail.setVersion(_ctx.longValue("GetDiscoveredResourceResponse.DiscoveredResourceDetail.Version"));
+		discoveredResourceDetail.setComplianceType(_ctx.stringValue("GetDiscoveredResourceResponse.DiscoveredResourceDetail.ComplianceType"));
 		getDiscoveredResourceResponse.setDiscoveredResourceDetail(discoveredResourceDetail);
 	 
 	 	return getDiscoveredResourceResponse;

@@ -44,6 +44,7 @@ public class ListAggregatorsResponseUnmarshaller {
 			aggregatorsItem.setAggregatorType(_ctx.stringValue("ListAggregatorsResponse.AggregatorsResult.Aggregators["+ i +"].AggregatorType"));
 			aggregatorsItem.setAccountId(_ctx.longValue("ListAggregatorsResponse.AggregatorsResult.Aggregators["+ i +"].AccountId"));
 			aggregatorsItem.setAggregatorId(_ctx.stringValue("ListAggregatorsResponse.AggregatorsResult.Aggregators["+ i +"].AggregatorId"));
+			aggregatorsItem.setFolderId(_ctx.stringValue("ListAggregatorsResponse.AggregatorsResult.Aggregators["+ i +"].FolderId"));
 
 			aggregators.add(aggregatorsItem);
 		}

@@ -70,11 +70,13 @@ public class GetConfigRuleResponse extends AcsResponse {
 
 		private String resourceTypesScope;
 
-		private String regionIdsScope;
+		private String excludeRegionIdsScope;
+
+		private String resourceIdsScope;
 
 		private String excludeResourceIdsScope;
 
-		private String resourceGroupIdsScope;
+		private String excludeResourceGroupIdsScope;
 
 		private String tagKeyScope;
 
@@ -87,6 +89,14 @@ public class GetConfigRuleResponse extends AcsResponse {
 		private Long accountId;
 
 		private String serviceChannel;
+
+		private String regionIdsScope;
+
+		private String resourceGroupIdsScope;
+
+		private List<TagsScopeItem> tagsScope;
+
+		private List<ComplianceExcludeTagsScope> excludeTagsScope;
 
 		private Source source;
 
@@ -188,12 +198,20 @@ public class GetConfigRuleResponse extends AcsResponse {
 			this.resourceTypesScope = resourceTypesScope;
 		}
 
-		public String getRegionIdsScope() {
-			return this.regionIdsScope;
+		public String getExcludeRegionIdsScope() {
+			return this.excludeRegionIdsScope;
 		}
 
-		public void setRegionIdsScope(String regionIdsScope) {
-			this.regionIdsScope = regionIdsScope;
+		public void setExcludeRegionIdsScope(String excludeRegionIdsScope) {
+			this.excludeRegionIdsScope = excludeRegionIdsScope;
+		}
+
+		public String getResourceIdsScope() {
+			return this.resourceIdsScope;
+		}
+
+		public void setResourceIdsScope(String resourceIdsScope) {
+			this.resourceIdsScope = resourceIdsScope;
 		}
 
 		public String getExcludeResourceIdsScope() {
@@ -204,12 +222,12 @@ public class GetConfigRuleResponse extends AcsResponse {
 			this.excludeResourceIdsScope = excludeResourceIdsScope;
 		}
 
-		public String getResourceGroupIdsScope() {
-			return this.resourceGroupIdsScope;
+		public String getExcludeResourceGroupIdsScope() {
+			return this.excludeResourceGroupIdsScope;
 		}
 
-		public void setResourceGroupIdsScope(String resourceGroupIdsScope) {
-			this.resourceGroupIdsScope = resourceGroupIdsScope;
+		public void setExcludeResourceGroupIdsScope(String excludeResourceGroupIdsScope) {
+			this.excludeResourceGroupIdsScope = excludeResourceGroupIdsScope;
 		}
 
 		public String getTagKeyScope() {
@@ -260,6 +278,38 @@ public class GetConfigRuleResponse extends AcsResponse {
 			this.serviceChannel = serviceChannel;
 		}
 
+		public String getRegionIdsScope() {
+			return this.regionIdsScope;
+		}
+
+		public void setRegionIdsScope(String regionIdsScope) {
+			this.regionIdsScope = regionIdsScope;
+		}
+
+		public String getResourceGroupIdsScope() {
+			return this.resourceGroupIdsScope;
+		}
+
+		public void setResourceGroupIdsScope(String resourceGroupIdsScope) {
+			this.resourceGroupIdsScope = resourceGroupIdsScope;
+		}
+
+		public List<TagsScopeItem> getTagsScope() {
+			return this.tagsScope;
+		}
+
+		public void setTagsScope(List<TagsScopeItem> tagsScope) {
+			this.tagsScope = tagsScope;
+		}
+
+		public List<ComplianceExcludeTagsScope> getExcludeTagsScope() {
+			return this.excludeTagsScope;
+		}
+
+		public void setExcludeTagsScope(List<ComplianceExcludeTagsScope> excludeTagsScope) {
+			this.excludeTagsScope = excludeTagsScope;
+		}
+
 		public Source getSource() {
 			return this.source;
 		}
@@ -306,6 +356,52 @@ public class GetConfigRuleResponse extends AcsResponse {
 
 		public void setCompliance(Compliance compliance) {
 			this.compliance = compliance;
+		}
+
+		public static class TagsScopeItem {
+
+			private String tagKey;
+
+			private String tagValue;
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
+			}
+
+			public String getTagValue() {
+				return this.tagValue;
+			}
+
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
+			}
+		}
+
+		public static class ComplianceExcludeTagsScope {
+
+			private String tagKey;
+
+			private String tagValue;
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
+			}
+
+			public String getTagValue() {
+				return this.tagValue;
+			}
+
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
+			}
 		}
 
 		public static class Source {

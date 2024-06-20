@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.config.model.v20200907.GetConfigRuleResponse;
 import com.aliyuncs.config.model.v20200907.GetConfigRuleResponse.ConfigRule;
 import com.aliyuncs.config.model.v20200907.GetConfigRuleResponse.ConfigRule.Compliance;
+import com.aliyuncs.config.model.v20200907.GetConfigRuleResponse.ConfigRule.ComplianceExcludeTagsScope;
 import com.aliyuncs.config.model.v20200907.GetConfigRuleResponse.ConfigRule.ConfigRuleEvaluationStatus;
 import com.aliyuncs.config.model.v20200907.GetConfigRuleResponse.ConfigRule.CreateBy;
 import com.aliyuncs.config.model.v20200907.GetConfigRuleResponse.ConfigRule.ManagedRule;
@@ -27,6 +28,7 @@ import com.aliyuncs.config.model.v20200907.GetConfigRuleResponse.ConfigRule.Mana
 import com.aliyuncs.config.model.v20200907.GetConfigRuleResponse.ConfigRule.Scope;
 import com.aliyuncs.config.model.v20200907.GetConfigRuleResponse.ConfigRule.Source;
 import com.aliyuncs.config.model.v20200907.GetConfigRuleResponse.ConfigRule.Source.SourceDetailsItem;
+import com.aliyuncs.config.model.v20200907.GetConfigRuleResponse.ConfigRule.TagsScopeItem;
 import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -49,15 +51,18 @@ public class GetConfigRuleResponseUnmarshaller {
 		configRule.setModifiedTimestamp(_ctx.longValue("GetConfigRuleResponse.ConfigRule.ModifiedTimestamp"));
 		configRule.setCreateTimestamp(_ctx.longValue("GetConfigRuleResponse.ConfigRule.CreateTimestamp"));
 		configRule.setResourceTypesScope(_ctx.stringValue("GetConfigRuleResponse.ConfigRule.ResourceTypesScope"));
-		configRule.setRegionIdsScope(_ctx.stringValue("GetConfigRuleResponse.ConfigRule.RegionIdsScope"));
+		configRule.setExcludeRegionIdsScope(_ctx.stringValue("GetConfigRuleResponse.ConfigRule.ExcludeRegionIdsScope"));
+		configRule.setResourceIdsScope(_ctx.stringValue("GetConfigRuleResponse.ConfigRule.ResourceIdsScope"));
 		configRule.setExcludeResourceIdsScope(_ctx.stringValue("GetConfigRuleResponse.ConfigRule.ExcludeResourceIdsScope"));
-		configRule.setResourceGroupIdsScope(_ctx.stringValue("GetConfigRuleResponse.ConfigRule.ResourceGroupIdsScope"));
+		configRule.setExcludeResourceGroupIdsScope(_ctx.stringValue("GetConfigRuleResponse.ConfigRule.ExcludeResourceGroupIdsScope"));
 		configRule.setTagKeyScope(_ctx.stringValue("GetConfigRuleResponse.ConfigRule.TagKeyScope"));
 		configRule.setTagValueScope(_ctx.stringValue("GetConfigRuleResponse.ConfigRule.TagValueScope"));
 		configRule.setConfigRuleTriggerTypes(_ctx.stringValue("GetConfigRuleResponse.ConfigRule.ConfigRuleTriggerTypes"));
 		configRule.setTagKeyLogicScope(_ctx.stringValue("GetConfigRuleResponse.ConfigRule.TagKeyLogicScope"));
 		configRule.setAccountId(_ctx.longValue("GetConfigRuleResponse.ConfigRule.AccountId"));
 		configRule.setServiceChannel(_ctx.stringValue("GetConfigRuleResponse.ConfigRule.ServiceChannel"));
+		configRule.setRegionIdsScope(_ctx.stringValue("GetConfigRuleResponse.ConfigRule.RegionIdsScope"));
+		configRule.setResourceGroupIdsScope(_ctx.stringValue("GetConfigRuleResponse.ConfigRule.ResourceGroupIdsScope"));
 
 		Source source = new Source();
 		source.setOwner(_ctx.stringValue("GetConfigRuleResponse.ConfigRule.Source.Owner"));
@@ -139,6 +144,26 @@ public class GetConfigRuleResponseUnmarshaller {
 		compliance.setComplianceType(_ctx.stringValue("GetConfigRuleResponse.ConfigRule.Compliance.ComplianceType"));
 		compliance.setCount(_ctx.integerValue("GetConfigRuleResponse.ConfigRule.Compliance.Count"));
 		configRule.setCompliance(compliance);
+
+		List<TagsScopeItem> tagsScope = new ArrayList<TagsScopeItem>();
+		for (int i = 0; i < _ctx.lengthValue("GetConfigRuleResponse.ConfigRule.TagsScope.Length"); i++) {
+			TagsScopeItem tagsScopeItem = new TagsScopeItem();
+			tagsScopeItem.setTagKey(_ctx.stringValue("GetConfigRuleResponse.ConfigRule.TagsScope["+ i +"].TagKey"));
+			tagsScopeItem.setTagValue(_ctx.stringValue("GetConfigRuleResponse.ConfigRule.TagsScope["+ i +"].TagValue"));
+
+			tagsScope.add(tagsScopeItem);
+		}
+		configRule.setTagsScope(tagsScope);
+
+		List<ComplianceExcludeTagsScope> excludeTagsScope = new ArrayList<ComplianceExcludeTagsScope>();
+		for (int i = 0; i < _ctx.lengthValue("GetConfigRuleResponse.ConfigRule.ExcludeTagsScope.Length"); i++) {
+			ComplianceExcludeTagsScope complianceExcludeTagsScope = new ComplianceExcludeTagsScope();
+			complianceExcludeTagsScope.setTagKey(_ctx.stringValue("GetConfigRuleResponse.ConfigRule.ExcludeTagsScope["+ i +"].TagKey"));
+			complianceExcludeTagsScope.setTagValue(_ctx.stringValue("GetConfigRuleResponse.ConfigRule.ExcludeTagsScope["+ i +"].TagValue"));
+
+			excludeTagsScope.add(complianceExcludeTagsScope);
+		}
+		configRule.setExcludeTagsScope(excludeTagsScope);
 		getConfigRuleResponse.setConfigRule(configRule);
 	 
 	 	return getConfigRuleResponse;
