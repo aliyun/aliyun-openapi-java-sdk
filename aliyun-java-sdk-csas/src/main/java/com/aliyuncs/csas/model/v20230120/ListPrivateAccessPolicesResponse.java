@@ -77,6 +77,8 @@ public class ListPrivateAccessPolicesResponse extends AcsResponse {
 
 		private String deviceAttributeId;
 
+		private String deviceAttributeAction;
+
 		private List<CustomUserAttribute> customUserAttributes;
 
 		private List<String> userGroupIds;
@@ -163,6 +165,14 @@ public class ListPrivateAccessPolicesResponse extends AcsResponse {
 
 		public void setDeviceAttributeId(String deviceAttributeId) {
 			this.deviceAttributeId = deviceAttributeId;
+		}
+
+		public String getDeviceAttributeAction() {
+			return this.deviceAttributeAction;
+		}
+
+		public void setDeviceAttributeAction(String deviceAttributeAction) {
+			this.deviceAttributeAction = deviceAttributeAction;
 		}
 
 		public List<CustomUserAttribute> getCustomUserAttributes() {

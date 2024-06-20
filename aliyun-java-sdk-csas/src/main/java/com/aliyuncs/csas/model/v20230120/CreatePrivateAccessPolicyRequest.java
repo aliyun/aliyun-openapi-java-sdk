@@ -39,6 +39,8 @@ public class CreatePrivateAccessPolicyRequest extends RpcAcsRequest<CreatePrivat
 
 	private Integer priority;
 
+	private String deviceAttributeAction;
+
 	private List<String> applicationIds;
 
 	private String userGroupMode;
@@ -139,6 +141,17 @@ public class CreatePrivateAccessPolicyRequest extends RpcAcsRequest<CreatePrivat
 		this.priority = priority;
 		if(priority != null){
 			putBodyParameter("Priority", priority.toString());
+		}
+	}
+
+	public String getDeviceAttributeAction() {
+		return this.deviceAttributeAction;
+	}
+
+	public void setDeviceAttributeAction(String deviceAttributeAction) {
+		this.deviceAttributeAction = deviceAttributeAction;
+		if(deviceAttributeAction != null){
+			putBodyParameter("DeviceAttributeAction", deviceAttributeAction);
 		}
 	}
 

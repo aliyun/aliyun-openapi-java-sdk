@@ -40,6 +40,7 @@ public class GetPrivateAccessPolicyResponseUnmarshaller {
 		policy.setUserGroupMode(_ctx.stringValue("GetPrivateAccessPolicyResponse.Policy.UserGroupMode"));
 		policy.setApplicationType(_ctx.stringValue("GetPrivateAccessPolicyResponse.Policy.ApplicationType"));
 		policy.setDeviceAttributeId(_ctx.stringValue("GetPrivateAccessPolicyResponse.Policy.DeviceAttributeId"));
+		policy.setDeviceAttributeAction(_ctx.stringValue("GetPrivateAccessPolicyResponse.Policy.DeviceAttributeAction"));
 
 		List<String> userGroupIds = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetPrivateAccessPolicyResponse.Policy.UserGroupIds.Length"); i++) {
