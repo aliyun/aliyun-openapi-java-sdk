@@ -22,6 +22,7 @@ import com.aliyuncs.cams.model.v20200606.GetChatappTemplateDetailResponse.Data;
 import com.aliyuncs.cams.model.v20200606.GetChatappTemplateDetailResponse.Data.Component;
 import com.aliyuncs.cams.model.v20200606.GetChatappTemplateDetailResponse.Data.Component.Button;
 import com.aliyuncs.cams.model.v20200606.GetChatappTemplateDetailResponse.Data.Component.Button.ExtendAttrs;
+import com.aliyuncs.cams.model.v20200606.GetChatappTemplateDetailResponse.Data.Component.Button.SupportedAppsItem;
 import com.aliyuncs.cams.model.v20200606.GetChatappTemplateDetailResponse.Data.Component.轮播卡片列表;
 import com.aliyuncs.cams.model.v20200606.GetChatappTemplateDetailResponse.Data.Component.轮播卡片列表.卡片控件列表;
 import com.aliyuncs.cams.model.v20200606.GetChatappTemplateDetailResponse.Data.Component.轮播卡片列表.卡片控件列表.卡片按钮列表;
@@ -95,6 +96,16 @@ public class GetChatappTemplateDetailResponseUnmarshaller {
 				extendAttrs.setAction(_ctx.stringValue("GetChatappTemplateDetailResponse.Data.Components["+ i +"].Buttons["+ j +"].ExtendAttrs.Action"));
 				extendAttrs.setIntentCode(_ctx.stringValue("GetChatappTemplateDetailResponse.Data.Components["+ i +"].Buttons["+ j +"].ExtendAttrs.IntentCode"));
 				button.setExtendAttrs(extendAttrs);
+
+				List<SupportedAppsItem> supportedApps = new ArrayList<SupportedAppsItem>();
+				for (int k = 0; k < _ctx.lengthValue("GetChatappTemplateDetailResponse.Data.Components["+ i +"].Buttons["+ j +"].SupportedApps.Length"); k++) {
+					SupportedAppsItem supportedAppsItem = new SupportedAppsItem();
+					supportedAppsItem.setSignatureHash(_ctx.stringValue("GetChatappTemplateDetailResponse.Data.Components["+ i +"].Buttons["+ j +"].SupportedApps["+ k +"].SignatureHash"));
+					supportedAppsItem.setPackageName(_ctx.stringValue("GetChatappTemplateDetailResponse.Data.Components["+ i +"].Buttons["+ j +"].SupportedApps["+ k +"].PackageName"));
+
+					supportedApps.add(supportedAppsItem);
+				}
+				button.setSupportedApps(supportedApps);
 
 				buttons.add(button);
 			}

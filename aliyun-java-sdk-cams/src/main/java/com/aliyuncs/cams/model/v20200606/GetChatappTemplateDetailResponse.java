@@ -408,6 +408,8 @@ public class GetChatappTemplateDetailResponse extends AcsResponse {
 
 				private String navigateScreen;
 
+				private List<SupportedAppsItem> supportedApps;
+
 				private ExtendAttrs extendAttrs;
 
 				public String getType() {
@@ -514,12 +516,43 @@ public class GetChatappTemplateDetailResponse extends AcsResponse {
 					this.navigateScreen = navigateScreen;
 				}
 
+				public List<SupportedAppsItem> getSupportedApps() {
+					return this.supportedApps;
+				}
+
+				public void setSupportedApps(List<SupportedAppsItem> supportedApps) {
+					this.supportedApps = supportedApps;
+				}
+
 				public ExtendAttrs getExtendAttrs() {
 					return this.extendAttrs;
 				}
 
 				public void setExtendAttrs(ExtendAttrs extendAttrs) {
 					this.extendAttrs = extendAttrs;
+				}
+
+				public static class SupportedAppsItem {
+
+					private String signatureHash;
+
+					private String packageName;
+
+					public String getSignatureHash() {
+						return this.signatureHash;
+					}
+
+					public void setSignatureHash(String signatureHash) {
+						this.signatureHash = signatureHash;
+					}
+
+					public String getPackageName() {
+						return this.packageName;
+					}
+
+					public void setPackageName(String packageName) {
+						this.packageName = packageName;
+					}
 				}
 
 				public static class ExtendAttrs {

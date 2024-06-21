@@ -379,6 +379,9 @@ public class CreateChatappTemplateRequest extends RpcAcsRequest<CreateChatappTem
 			@SerializedName("NavigateScreen")
 			private String navigateScreen;
 
+			@SerializedName("SupportedApps")
+			private List<SupportedAppsItem> supportedApps;
+
 			public String getType() {
 				return this.type;
 			}
@@ -481,6 +484,39 @@ public class CreateChatappTemplateRequest extends RpcAcsRequest<CreateChatappTem
 
 			public void setNavigateScreen(String navigateScreen) {
 				this.navigateScreen = navigateScreen;
+			}
+
+			public List<SupportedAppsItem> getSupportedApps() {
+				return this.supportedApps;
+			}
+
+			public void setSupportedApps(List<SupportedAppsItem> supportedApps) {
+				this.supportedApps = supportedApps;
+			}
+
+			public static class SupportedAppsItem {
+
+				@SerializedName("SignatureHash")
+				private String signatureHash;
+
+				@SerializedName("PackageName")
+				private String packageName;
+
+				public String getSignatureHash() {
+					return this.signatureHash;
+				}
+
+				public void setSignatureHash(String signatureHash) {
+					this.signatureHash = signatureHash;
+				}
+
+				public String getPackageName() {
+					return this.packageName;
+				}
+
+				public void setPackageName(String packageName) {
+					this.packageName = packageName;
+				}
 			}
 		}
 
