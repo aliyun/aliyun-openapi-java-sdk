@@ -44,6 +44,8 @@ public class CreateAppGroupRequest extends RpcAcsRequest<CreateAppGroupResponse>
 
 	private Integer appType;
 
+	private Integer appVersion;
+
 	private String monitorConfigJson;
 
 	private String namespace;
@@ -52,7 +54,7 @@ public class CreateAppGroupRequest extends RpcAcsRequest<CreateAppGroupResponse>
 
 	private String appKey;
 	public CreateAppGroupRequest() {
-		super("schedulerx2", "2019-04-30", "CreateAppGroup");
+		super("schedulerx2", "2019-04-30", "CreateAppGroup", "schedulerx2");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.GET);
 		try {
@@ -157,6 +159,17 @@ public class CreateAppGroupRequest extends RpcAcsRequest<CreateAppGroupResponse>
 		this.appType = appType;
 		if(appType != null){
 			putQueryParameter("AppType", appType.toString());
+		}
+	}
+
+	public Integer getAppVersion() {
+		return this.appVersion;
+	}
+
+	public void setAppVersion(Integer appVersion) {
+		this.appVersion = appVersion;
+		if(appVersion != null){
+			putQueryParameter("AppVersion", appVersion.toString());
 		}
 	}
 

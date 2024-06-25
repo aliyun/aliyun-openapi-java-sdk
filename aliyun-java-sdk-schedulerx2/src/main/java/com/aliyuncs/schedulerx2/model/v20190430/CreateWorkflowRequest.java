@@ -43,7 +43,7 @@ public class CreateWorkflowRequest extends RpcAcsRequest<CreateWorkflowResponse>
 
 	private Integer timeType;
 	public CreateWorkflowRequest() {
-		super("schedulerx2", "2019-04-30", "CreateWorkflow");
+		super("schedulerx2", "2019-04-30", "CreateWorkflow", "schedulerx2");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

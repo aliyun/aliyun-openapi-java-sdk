@@ -33,7 +33,7 @@ public class GetWorkFlowRequest extends RpcAcsRequest<GetWorkFlowResponse> {
 
 	private Long workflowId;
 	public GetWorkFlowRequest() {
-		super("schedulerx2", "2019-04-30", "GetWorkFlow");
+		super("schedulerx2", "2019-04-30", "GetWorkFlow", "schedulerx2");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

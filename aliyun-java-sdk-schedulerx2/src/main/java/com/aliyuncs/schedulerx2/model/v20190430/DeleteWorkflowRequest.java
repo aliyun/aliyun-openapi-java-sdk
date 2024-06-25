@@ -34,7 +34,7 @@ public class DeleteWorkflowRequest extends RpcAcsRequest<DeleteWorkflowResponse>
 
 	private Long workflowId;
 	public DeleteWorkflowRequest() {
-		super("schedulerx2", "2019-04-30", "DeleteWorkflow");
+		super("schedulerx2", "2019-04-30", "DeleteWorkflow", "schedulerx2");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.GET);
 		try {

@@ -31,7 +31,7 @@ public class DeleteAppGroupRequest extends RpcAcsRequest<DeleteAppGroupResponse>
 
 	private String namespace;
 	public DeleteAppGroupRequest() {
-		super("schedulerx2", "2019-04-30", "DeleteAppGroup");
+		super("schedulerx2", "2019-04-30", "DeleteAppGroup", "schedulerx2");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

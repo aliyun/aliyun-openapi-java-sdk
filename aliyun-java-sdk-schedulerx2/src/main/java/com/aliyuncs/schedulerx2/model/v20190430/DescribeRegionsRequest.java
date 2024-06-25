@@ -25,7 +25,7 @@ import com.aliyuncs.schedulerx2.Endpoint;
 public class DescribeRegionsRequest extends RpcAcsRequest<DescribeRegionsResponse> {
 	   
 	public DescribeRegionsRequest() {
-		super("schedulerx2", "2019-04-30", "DescribeRegions");
+		super("schedulerx2", "2019-04-30", "DescribeRegions", "schedulerx2");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

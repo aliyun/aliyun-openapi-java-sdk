@@ -37,7 +37,7 @@ public class GrantPermissionRequest extends RpcAcsRequest<GrantPermissionRespons
 
 	private String userName;
 	public GrantPermissionRequest() {
-		super("schedulerx2", "2019-04-30", "GrantPermission");
+		super("schedulerx2", "2019-04-30", "GrantPermission", "schedulerx2");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

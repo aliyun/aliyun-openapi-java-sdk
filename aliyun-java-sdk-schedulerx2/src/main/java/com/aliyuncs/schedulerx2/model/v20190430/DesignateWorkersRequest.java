@@ -41,7 +41,7 @@ public class DesignateWorkersRequest extends RpcAcsRequest<DesignateWorkersRespo
 
 	private String namespace;
 	public DesignateWorkersRequest() {
-		super("schedulerx2", "2019-04-30", "DesignateWorkers");
+		super("schedulerx2", "2019-04-30", "DesignateWorkers", "schedulerx2");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

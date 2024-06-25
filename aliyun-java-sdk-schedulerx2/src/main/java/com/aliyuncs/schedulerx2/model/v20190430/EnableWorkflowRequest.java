@@ -34,7 +34,7 @@ public class EnableWorkflowRequest extends RpcAcsRequest<EnableWorkflowResponse>
 
 	private Long workflowId;
 	public EnableWorkflowRequest() {
-		super("schedulerx2", "2019-04-30", "EnableWorkflow");
+		super("schedulerx2", "2019-04-30", "EnableWorkflow", "schedulerx2");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.GET);
 		try {

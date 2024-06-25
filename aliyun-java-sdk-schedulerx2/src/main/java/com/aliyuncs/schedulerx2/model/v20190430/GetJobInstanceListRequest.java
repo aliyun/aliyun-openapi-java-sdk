@@ -27,19 +27,23 @@ public class GetJobInstanceListRequest extends RpcAcsRequest<GetJobInstanceListR
 
 	private String namespaceSource;
 
-	private String groupId;
-
 	private Long startTimestamp;
+
+	private Integer pageNum;
 
 	private Long endTimestamp;
 
 	private Long jobId;
 
+	private Integer pageSize;
+
+	private String groupId;
+
 	private String namespace;
 
 	private Integer status;
 	public GetJobInstanceListRequest() {
-		super("schedulerx2", "2019-04-30", "GetJobInstanceList");
+		super("schedulerx2", "2019-04-30", "GetJobInstanceList", "schedulerx2");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -58,17 +62,6 @@ public class GetJobInstanceListRequest extends RpcAcsRequest<GetJobInstanceListR
 		}
 	}
 
-	public String getGroupId() {
-		return this.groupId;
-	}
-
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
-		if(groupId != null){
-			putQueryParameter("GroupId", groupId);
-		}
-	}
-
 	public Long getStartTimestamp() {
 		return this.startTimestamp;
 	}
@@ -77,6 +70,17 @@ public class GetJobInstanceListRequest extends RpcAcsRequest<GetJobInstanceListR
 		this.startTimestamp = startTimestamp;
 		if(startTimestamp != null){
 			putQueryParameter("StartTimestamp", startTimestamp.toString());
+		}
+	}
+
+	public Integer getPageNum() {
+		return this.pageNum;
+	}
+
+	public void setPageNum(Integer pageNum) {
+		this.pageNum = pageNum;
+		if(pageNum != null){
+			putQueryParameter("PageNum", pageNum.toString());
 		}
 	}
 
@@ -99,6 +103,28 @@ public class GetJobInstanceListRequest extends RpcAcsRequest<GetJobInstanceListR
 		this.jobId = jobId;
 		if(jobId != null){
 			putQueryParameter("JobId", jobId.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
 		}
 	}
 

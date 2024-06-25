@@ -31,7 +31,7 @@ public class DeleteRouteStrategyRequest extends RpcAcsRequest<DeleteRouteStrateg
 
 	private String namespace;
 	public DeleteRouteStrategyRequest() {
-		super("schedulerx2", "2019-04-30", "DeleteRouteStrategy");
+		super("schedulerx2", "2019-04-30", "DeleteRouteStrategy", "schedulerx2");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

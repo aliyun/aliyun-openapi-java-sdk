@@ -29,17 +29,17 @@ public class RerunJobRequest extends RpcAcsRequest<RerunJobResponse> {
 
 	private String dataTime;
 
-	private String groupId;
-
 	private Long startDate;
 
 	private Long jobId;
+
+	private String groupId;
 
 	private Long endDate;
 
 	private String namespace;
 	public RerunJobRequest() {
-		super("schedulerx2", "2019-04-30", "RerunJob");
+		super("schedulerx2", "2019-04-30", "RerunJob", "schedulerx2");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -69,17 +69,6 @@ public class RerunJobRequest extends RpcAcsRequest<RerunJobResponse> {
 		}
 	}
 
-	public String getGroupId() {
-		return this.groupId;
-	}
-
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
-		if(groupId != null){
-			putBodyParameter("GroupId", groupId);
-		}
-	}
-
 	public Long getStartDate() {
 		return this.startDate;
 	}
@@ -99,6 +88,17 @@ public class RerunJobRequest extends RpcAcsRequest<RerunJobResponse> {
 		this.jobId = jobId;
 		if(jobId != null){
 			putBodyParameter("JobId", jobId.toString());
+		}
+	}
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putBodyParameter("GroupId", groupId);
 		}
 	}
 

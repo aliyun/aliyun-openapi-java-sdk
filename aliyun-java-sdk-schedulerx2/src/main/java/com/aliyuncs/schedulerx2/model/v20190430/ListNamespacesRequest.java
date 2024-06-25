@@ -29,7 +29,7 @@ public class ListNamespacesRequest extends RpcAcsRequest<ListNamespacesResponse>
 
 	private String namespace;
 	public ListNamespacesRequest() {
-		super("schedulerx2", "2019-04-30", "ListNamespaces");
+		super("schedulerx2", "2019-04-30", "ListNamespaces", "schedulerx2");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

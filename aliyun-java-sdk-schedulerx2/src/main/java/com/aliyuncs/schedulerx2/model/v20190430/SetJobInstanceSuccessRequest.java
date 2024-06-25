@@ -35,7 +35,7 @@ public class SetJobInstanceSuccessRequest extends RpcAcsRequest<SetJobInstanceSu
 
 	private Long jobInstanceId;
 	public SetJobInstanceSuccessRequest() {
-		super("schedulerx2", "2019-04-30", "SetJobInstanceSuccess");
+		super("schedulerx2", "2019-04-30", "SetJobInstanceSuccess", "schedulerx2");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

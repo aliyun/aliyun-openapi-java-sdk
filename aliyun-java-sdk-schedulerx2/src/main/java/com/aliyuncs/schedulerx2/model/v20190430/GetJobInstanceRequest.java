@@ -36,7 +36,7 @@ public class GetJobInstanceRequest extends RpcAcsRequest<GetJobInstanceResponse>
 
 	private Long jobInstanceId;
 	public GetJobInstanceRequest() {
-		super("schedulerx2", "2019-04-30", "GetJobInstance");
+		super("schedulerx2", "2019-04-30", "GetJobInstance", "schedulerx2");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.GET);
 		try {

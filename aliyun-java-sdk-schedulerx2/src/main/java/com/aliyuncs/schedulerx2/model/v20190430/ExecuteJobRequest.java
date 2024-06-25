@@ -43,7 +43,7 @@ public class ExecuteJobRequest extends RpcAcsRequest<ExecuteJobResponse> {
 
 	private String namespace;
 	public ExecuteJobRequest() {
-		super("schedulerx2", "2019-04-30", "ExecuteJob");
+		super("schedulerx2", "2019-04-30", "ExecuteJob", "schedulerx2");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

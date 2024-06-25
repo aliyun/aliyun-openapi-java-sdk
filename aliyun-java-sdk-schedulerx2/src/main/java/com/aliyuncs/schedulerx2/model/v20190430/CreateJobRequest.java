@@ -96,7 +96,7 @@ public class CreateJobRequest extends RpcAcsRequest<CreateJobResponse> {
 
 	private Integer maxConcurrency;
 	public CreateJobRequest() {
-		super("schedulerx2", "2019-04-30", "CreateJob");
+		super("schedulerx2", "2019-04-30", "CreateJob", "schedulerx2");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

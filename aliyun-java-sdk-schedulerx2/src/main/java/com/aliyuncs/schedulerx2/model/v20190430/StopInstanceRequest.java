@@ -36,7 +36,7 @@ public class StopInstanceRequest extends RpcAcsRequest<StopInstanceResponse> {
 
 	private String namespace;
 	public StopInstanceRequest() {
-		super("schedulerx2", "2019-04-30", "StopInstance");
+		super("schedulerx2", "2019-04-30", "StopInstance", "schedulerx2");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.GET);
 		try {

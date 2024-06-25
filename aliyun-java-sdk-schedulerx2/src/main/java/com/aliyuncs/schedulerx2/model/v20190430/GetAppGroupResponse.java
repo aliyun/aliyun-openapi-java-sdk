@@ -104,6 +104,8 @@ public class GetAppGroupResponse extends AcsResponse {
 
 		private String xattrs;
 
+		private String appVersion;
+
 		public String getAppName() {
 			return this.appName;
 		}
@@ -214,6 +216,14 @@ public class GetAppGroupResponse extends AcsResponse {
 
 		public void setXattrs(String xattrs) {
 			this.xattrs = xattrs;
+		}
+
+		public String getAppVersion() {
+			return this.appVersion;
+		}
+
+		public void setAppVersion(String appVersion) {
+			this.appVersion = appVersion;
 		}
 	}
 

@@ -31,7 +31,7 @@ public class GetWorkerListRequest extends RpcAcsRequest<GetWorkerListResponse> {
 
 	private String namespace;
 	public GetWorkerListRequest() {
-		super("schedulerx2", "2019-04-30", "GetWorkerList");
+		super("schedulerx2", "2019-04-30", "GetWorkerList", "schedulerx2");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -43,6 +43,7 @@ public class ListGroupsResponseUnmarshaller {
 			appGroup.setDescription(_ctx.stringValue("ListGroupsResponse.Data.AppGroups["+ i +"].Description"));
 			appGroup.setGroupId(_ctx.stringValue("ListGroupsResponse.Data.AppGroups["+ i +"].GroupId"));
 			appGroup.setXattrs(_ctx.stringValue("ListGroupsResponse.Data.AppGroups["+ i +"].Xattrs"));
+			appGroup.setAppVersion(_ctx.integerValue("ListGroupsResponse.Data.AppGroups["+ i +"].AppVersion"));
 
 			appGroups.add(appGroup);
 		}

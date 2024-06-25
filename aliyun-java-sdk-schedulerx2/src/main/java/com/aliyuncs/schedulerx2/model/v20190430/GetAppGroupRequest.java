@@ -29,7 +29,7 @@ public class GetAppGroupRequest extends RpcAcsRequest<GetAppGroupResponse> {
 
 	private String namespace;
 	public GetAppGroupRequest() {
-		super("schedulerx2", "2019-04-30", "GetAppGroup");
+		super("schedulerx2", "2019-04-30", "GetAppGroup", "schedulerx2");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

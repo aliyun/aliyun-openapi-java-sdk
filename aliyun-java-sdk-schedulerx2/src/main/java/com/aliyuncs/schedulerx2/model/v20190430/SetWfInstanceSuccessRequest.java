@@ -35,7 +35,7 @@ public class SetWfInstanceSuccessRequest extends RpcAcsRequest<SetWfInstanceSucc
 
 	private Long workflowId;
 	public SetWfInstanceSuccessRequest() {
-		super("schedulerx2", "2019-04-30", "SetWfInstanceSuccess");
+		super("schedulerx2", "2019-04-30", "SetWfInstanceSuccess", "schedulerx2");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

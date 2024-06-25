@@ -41,7 +41,7 @@ public class UpdateWorkflowRequest extends RpcAcsRequest<UpdateWorkflowResponse>
 
 	private Integer timeType;
 	public UpdateWorkflowRequest() {
-		super("schedulerx2", "2019-04-30", "UpdateWorkflow");
+		super("schedulerx2", "2019-04-30", "UpdateWorkflow", "schedulerx2");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,17 +29,17 @@ public class GetOverviewRequest extends RpcAcsRequest<GetOverviewResponse> {
 
 	private String namespaceSource;
 
+	private Long startTime;
+
 	private String groupId;
 
 	private Long endTime;
-
-	private Long startTime;
 
 	private String operate;
 
 	private String namespace;
 	public GetOverviewRequest() {
-		super("schedulerx2", "2019-04-30", "GetOverview");
+		super("schedulerx2", "2019-04-30", "GetOverview", "schedulerx2");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -69,6 +69,17 @@ public class GetOverviewRequest extends RpcAcsRequest<GetOverviewResponse> {
 		}
 	}
 
+	public Long getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(Long startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime.toString());
+		}
+	}
+
 	public String getGroupId() {
 		return this.groupId;
 	}
@@ -88,17 +99,6 @@ public class GetOverviewRequest extends RpcAcsRequest<GetOverviewResponse> {
 		this.endTime = endTime;
 		if(endTime != null){
 			putQueryParameter("EndTime", endTime.toString());
-		}
-	}
-
-	public Long getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(Long startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime.toString());
 		}
 	}
 

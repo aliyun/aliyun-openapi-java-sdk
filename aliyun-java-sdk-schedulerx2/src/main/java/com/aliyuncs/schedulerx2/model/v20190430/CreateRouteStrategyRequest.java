@@ -25,13 +25,13 @@ import com.aliyuncs.schedulerx2.Endpoint;
 public class CreateRouteStrategyRequest extends RpcAcsRequest<CreateRouteStrategyResponse> {
 	   
 
-	private String groupId;
-
-	private String strategyContent;
-
 	private Integer type;
 
 	private Long jobId;
+
+	private String groupId;
+
+	private String strategyContent;
 
 	private String name;
 
@@ -39,34 +39,12 @@ public class CreateRouteStrategyRequest extends RpcAcsRequest<CreateRouteStrateg
 
 	private Integer status;
 	public CreateRouteStrategyRequest() {
-		super("schedulerx2", "2019-04-30", "CreateRouteStrategy");
+		super("schedulerx2", "2019-04-30", "CreateRouteStrategy", "schedulerx2");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getGroupId() {
-		return this.groupId;
-	}
-
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
-		if(groupId != null){
-			putQueryParameter("GroupId", groupId);
-		}
-	}
-
-	public String getStrategyContent() {
-		return this.strategyContent;
-	}
-
-	public void setStrategyContent(String strategyContent) {
-		this.strategyContent = strategyContent;
-		if(strategyContent != null){
-			putQueryParameter("StrategyContent", strategyContent);
-		}
 	}
 
 	public Integer getType() {
@@ -88,6 +66,28 @@ public class CreateRouteStrategyRequest extends RpcAcsRequest<CreateRouteStrateg
 		this.jobId = jobId;
 		if(jobId != null){
 			putQueryParameter("JobId", jobId.toString());
+		}
+	}
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
+		}
+	}
+
+	public String getStrategyContent() {
+		return this.strategyContent;
+	}
+
+	public void setStrategyContent(String strategyContent) {
+		this.strategyContent = strategyContent;
+		if(strategyContent != null){
+			putQueryParameter("StrategyContent", strategyContent);
 		}
 	}
 

@@ -29,11 +29,13 @@ public class UpdateAppGroupRequest extends RpcAcsRequest<UpdateAppGroupResponse>
 
 	private String groupId;
 
+	private Integer appVersion;
+
 	private String namespace;
 
 	private Integer maxConcurrency;
 	public UpdateAppGroupRequest() {
-		super("schedulerx2", "2019-04-30", "UpdateAppGroup");
+		super("schedulerx2", "2019-04-30", "UpdateAppGroup", "schedulerx2");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -60,6 +62,17 @@ public class UpdateAppGroupRequest extends RpcAcsRequest<UpdateAppGroupResponse>
 		this.groupId = groupId;
 		if(groupId != null){
 			putQueryParameter("GroupId", groupId);
+		}
+	}
+
+	public Integer getAppVersion() {
+		return this.appVersion;
+	}
+
+	public void setAppVersion(Integer appVersion) {
+		this.appVersion = appVersion;
+		if(appVersion != null){
+			putQueryParameter("AppVersion", appVersion.toString());
 		}
 	}
 

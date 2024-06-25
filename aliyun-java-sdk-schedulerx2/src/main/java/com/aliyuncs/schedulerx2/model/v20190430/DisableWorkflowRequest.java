@@ -34,7 +34,7 @@ public class DisableWorkflowRequest extends RpcAcsRequest<DisableWorkflowRespons
 
 	private Long workflowId;
 	public DisableWorkflowRequest() {
-		super("schedulerx2", "2019-04-30", "DisableWorkflow");
+		super("schedulerx2", "2019-04-30", "DisableWorkflow", "schedulerx2");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.GET);
 		try {
