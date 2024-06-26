@@ -1,3 +1,6 @@
+2024-06-26 Version: 1.0.15
+- Supported AssumeRoleProxyChain for CreateHighDensityElasticNetworkInterface.
+
 2024-06-18 Version: 1.0.14
 - Supported modification of securityGroupId for UpdateElasticNetworkInterface API.
 
