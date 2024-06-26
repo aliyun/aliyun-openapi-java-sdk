@@ -1,3 +1,7 @@
+2024-06-26 Version: 3.13.15
+- Support harmony app.
+- QueryPushRecords API Source parameter support OpenAPIExplorer.
+
 2023-12-19 Version: 3.13.14
 - Supported AndroidVivoReceiptId for Push and MassPush.
 

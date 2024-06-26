@@ -25,13 +25,13 @@ import com.aliyuncs.push.Endpoint;
 public class PushNoticeToAndroidRequest extends RpcAcsRequest<PushNoticeToAndroidResponse> {
 	   
 
-	private String extParameters;
-
-	private Boolean storeOffline;
-
 	private String title;
 
 	private String body;
+
+	private String extParameters;
+
+	private Boolean storeOffline;
 
 	private String jobKey;
 
@@ -47,28 +47,6 @@ public class PushNoticeToAndroidRequest extends RpcAcsRequest<PushNoticeToAndroi
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getExtParameters() {
-		return this.extParameters;
-	}
-
-	public void setExtParameters(String extParameters) {
-		this.extParameters = extParameters;
-		if(extParameters != null){
-			putQueryParameter("ExtParameters", extParameters);
-		}
-	}
-
-	public Boolean getStoreOffline() {
-		return this.storeOffline;
-	}
-
-	public void setStoreOffline(Boolean storeOffline) {
-		this.storeOffline = storeOffline;
-		if(storeOffline != null){
-			putQueryParameter("StoreOffline", storeOffline.toString());
-		}
 	}
 
 	public String getTitle() {
@@ -90,6 +68,28 @@ public class PushNoticeToAndroidRequest extends RpcAcsRequest<PushNoticeToAndroi
 		this.body = body;
 		if(body != null){
 			putQueryParameter("Body", body);
+		}
+	}
+
+	public String getExtParameters() {
+		return this.extParameters;
+	}
+
+	public void setExtParameters(String extParameters) {
+		this.extParameters = extParameters;
+		if(extParameters != null){
+			putQueryParameter("ExtParameters", extParameters);
+		}
+	}
+
+	public Boolean getStoreOffline() {
+		return this.storeOffline;
+	}
+
+	public void setStoreOffline(Boolean storeOffline) {
+		this.storeOffline = storeOffline;
+		if(storeOffline != null){
+			putQueryParameter("StoreOffline", storeOffline.toString());
 		}
 	}
 

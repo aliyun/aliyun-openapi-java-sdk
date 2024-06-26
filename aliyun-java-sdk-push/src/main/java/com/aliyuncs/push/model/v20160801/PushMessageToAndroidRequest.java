@@ -25,11 +25,11 @@ import com.aliyuncs.push.Endpoint;
 public class PushMessageToAndroidRequest extends RpcAcsRequest<PushMessageToAndroidResponse> {
 	   
 
-	private Boolean storeOffline;
-
 	private String title;
 
 	private String body;
+
+	private Boolean storeOffline;
 
 	private String jobKey;
 
@@ -45,17 +45,6 @@ public class PushMessageToAndroidRequest extends RpcAcsRequest<PushMessageToAndr
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Boolean getStoreOffline() {
-		return this.storeOffline;
-	}
-
-	public void setStoreOffline(Boolean storeOffline) {
-		this.storeOffline = storeOffline;
-		if(storeOffline != null){
-			putQueryParameter("StoreOffline", storeOffline.toString());
-		}
 	}
 
 	public String getTitle() {
@@ -77,6 +66,17 @@ public class PushMessageToAndroidRequest extends RpcAcsRequest<PushMessageToAndr
 		this.body = body;
 		if(body != null){
 			putQueryParameter("Body", body);
+		}
+	}
+
+	public Boolean getStoreOffline() {
+		return this.storeOffline;
+	}
+
+	public void setStoreOffline(Boolean storeOffline) {
+		this.storeOffline = storeOffline;
+		if(storeOffline != null){
+			putQueryParameter("StoreOffline", storeOffline.toString());
 		}
 	}
 

@@ -53,6 +53,8 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 				putBodyParameter("PushTask." + (depth1 + 1) + ".SendSpeed" , pushTasks.get(depth1).getSendSpeed());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidNotificationHuaweiChannel" , pushTasks.get(depth1).getAndroidNotificationHuaweiChannel());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidPopupActivity" , pushTasks.get(depth1).getAndroidPopupActivity());
+				putBodyParameter("PushTask." + (depth1 + 1) + ".HarmonyNotifyId" , pushTasks.get(depth1).getHarmonyNotifyId());
+				putBodyParameter("PushTask." + (depth1 + 1) + ".HarmonyRenderStyle" , pushTasks.get(depth1).getHarmonyRenderStyle());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".iOSRemindBody" , pushTasks.get(depth1).getIOSRemindBody());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".Trim" , pushTasks.get(depth1).getTrim());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidMessageVivoCategory" , pushTasks.get(depth1).getAndroidMessageVivoCategory());
@@ -66,48 +68,61 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 				putBodyParameter("PushTask." + (depth1 + 1) + ".ExpireTime" , pushTasks.get(depth1).getExpireTime());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidImageUrl" , pushTasks.get(depth1).getAndroidImageUrl());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidHonorTargetUserType" , pushTasks.get(depth1).getAndroidHonorTargetUserType());
+				putBodyParameter("PushTask." + (depth1 + 1) + ".HarmonyRemindBody" , pushTasks.get(depth1).getHarmonyRemindBody());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidNotificationVivoChannel" , pushTasks.get(depth1).getAndroidNotificationVivoChannel());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidVivoReceiptId" , pushTasks.get(depth1).getAndroidVivoReceiptId());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".iOSNotificationCategory" , pushTasks.get(depth1).getIOSNotificationCategory());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidNotificationXiaomiChannel" , pushTasks.get(depth1).getAndroidNotificationXiaomiChannel());
+				putBodyParameter("PushTask." + (depth1 + 1) + ".HarmonyAction" , pushTasks.get(depth1).getHarmonyAction());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".StoreOffline" , pushTasks.get(depth1).getStoreOffline());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".iOSRelevanceScore" , pushTasks.get(depth1).getIOSRelevanceScore());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidVivoPushMode" , pushTasks.get(depth1).getAndroidVivoPushMode());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidInboxBody" , pushTasks.get(depth1).getAndroidInboxBody());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".JobKey" , pushTasks.get(depth1).getJobKey());
+				putBodyParameter("PushTask." + (depth1 + 1) + ".HarmonyReceiptId" , pushTasks.get(depth1).getHarmonyReceiptId());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidOpenUrl" , pushTasks.get(depth1).getAndroidOpenUrl());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidXiaoMiNotifyBody" , pushTasks.get(depth1).getAndroidXiaoMiNotifyBody());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".iOSSubtitle" , pushTasks.get(depth1).getIOSSubtitle());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidXiaomiBigPictureUrl" , pushTasks.get(depth1).getAndroidXiaomiBigPictureUrl());
+				putBodyParameter("PushTask." + (depth1 + 1) + ".HarmonyCategory" , pushTasks.get(depth1).getHarmonyCategory());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".iOSRemind" , pushTasks.get(depth1).getIOSRemind());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".iOSNotificationThreadId" , pushTasks.get(depth1).getIOSNotificationThreadId());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidHuaweiTargetUserType" , pushTasks.get(depth1).getAndroidHuaweiTargetUserType());
+				putBodyParameter("PushTask." + (depth1 + 1) + ".HarmonyRemind" , pushTasks.get(depth1).getHarmonyRemind());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidMusic" , pushTasks.get(depth1).getAndroidMusic());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".iOSNotificationCollapseId" , pushTasks.get(depth1).getIOSNotificationCollapseId());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidMessageHuaweiUrgency" , pushTasks.get(depth1).getAndroidMessageHuaweiUrgency());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".PushType" , pushTasks.get(depth1).getPushType());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".iOSInterruptionLevel" , pushTasks.get(depth1).getIOSInterruptionLevel());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidExtParameters" , pushTasks.get(depth1).getAndroidExtParameters());
+				putBodyParameter("PushTask." + (depth1 + 1) + ".HarmonyImageUrl" , pushTasks.get(depth1).getHarmonyImageUrl());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".iOSBadge" , pushTasks.get(depth1).getIOSBadge());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidBigBody" , pushTasks.get(depth1).getAndroidBigBody());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".iOSBadgeAutoIncrement" , pushTasks.get(depth1).getIOSBadgeAutoIncrement());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidOpenType" , pushTasks.get(depth1).getAndroidOpenType());
+				putBodyParameter("PushTask." + (depth1 + 1) + ".HarmonyRemindTitle" , pushTasks.get(depth1).getHarmonyRemindTitle());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".Title" , pushTasks.get(depth1).getTitle());
+				putBodyParameter("PushTask." + (depth1 + 1) + ".HarmonyTestMessage" , pushTasks.get(depth1).getHarmonyTestMessage());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidRenderStyle" , pushTasks.get(depth1).getAndroidRenderStyle());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".iOSExtParameters" , pushTasks.get(depth1).getIOSExtParameters());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidHuaweiReceiptId" , pushTasks.get(depth1).getAndroidHuaweiReceiptId());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidNotificationHonorChannel" , pushTasks.get(depth1).getAndroidNotificationHonorChannel());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidXiaomiImageUrl" , pushTasks.get(depth1).getAndroidXiaomiImageUrl());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidTargetUserType" , pushTasks.get(depth1).getAndroidTargetUserType());
+				putBodyParameter("PushTask." + (depth1 + 1) + ".HarmonyUri" , pushTasks.get(depth1).getHarmonyUri());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidPopupBody" , pushTasks.get(depth1).getAndroidPopupBody());
+				putBodyParameter("PushTask." + (depth1 + 1) + ".HarmonyExtParameters" , pushTasks.get(depth1).getHarmonyExtParameters());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidBigPictureUrl" , pushTasks.get(depth1).getAndroidBigPictureUrl());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".iOSSilentNotification" , pushTasks.get(depth1).getIOSSilentNotification());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidNotificationGroup" , pushTasks.get(depth1).getAndroidNotificationGroup());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".SendChannels" , pushTasks.get(depth1).getSendChannels());
+				putBodyParameter("PushTask." + (depth1 + 1) + ".HarmonyActionType" , pushTasks.get(depth1).getHarmonyActionType());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".Target" , pushTasks.get(depth1).getTarget());
+				putBodyParameter("PushTask." + (depth1 + 1) + ".HarmonyNotificationSlotType" , pushTasks.get(depth1).getHarmonyNotificationSlotType());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidBigTitle" , pushTasks.get(depth1).getAndroidBigTitle());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidNotificationChannel" , pushTasks.get(depth1).getAndroidNotificationChannel());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidRemind" , pushTasks.get(depth1).getAndroidRemind());
+				putBodyParameter("PushTask." + (depth1 + 1) + ".HarmonyInboxContent" , pushTasks.get(depth1).getHarmonyInboxContent());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidActivity" , pushTasks.get(depth1).getAndroidActivity());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidNotificationNotifyId" , pushTasks.get(depth1).getAndroidNotificationNotifyId());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".TargetValue" , pushTasks.get(depth1).getTargetValue());
@@ -144,6 +159,10 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 
 		private String androidPopupActivity;
 
+		private Integer harmonyNotifyId;
+
+		private String harmonyRenderStyle;
+
 		private String iOSRemindBody;
 
 		private Boolean trim;
@@ -170,6 +189,8 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 
 		private Integer androidHonorTargetUserType;
 
+		private String harmonyRemindBody;
+
 		private String androidNotificationVivoChannel;
 
 		private String androidVivoReceiptId;
@@ -177,6 +198,8 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 		private String iOSNotificationCategory;
 
 		private String androidNotificationXiaomiChannel;
+
+		private String harmonyAction;
 
 		private Boolean storeOffline;
 
@@ -188,6 +211,8 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 
 		private String jobKey;
 
+		private String harmonyReceiptId;
+
 		private String androidOpenUrl;
 
 		private String androidXiaoMiNotifyBody;
@@ -196,11 +221,15 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 
 		private String androidXiaomiBigPictureUrl;
 
+		private String harmonyCategory;
+
 		private Boolean iOSRemind;
 
 		private String iOSNotificationThreadId;
 
 		private Integer androidHuaweiTargetUserType;
+
+		private Boolean harmonyRemind;
 
 		private String androidMusic;
 
@@ -214,6 +243,8 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 
 		private String androidExtParameters;
 
+		private String harmonyImageUrl;
+
 		private Integer iOSBadge;
 
 		private String androidBigBody;
@@ -222,7 +253,11 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 
 		private String androidOpenType;
 
+		private String harmonyRemindTitle;
+
 		private String title;
+
+		private Boolean harmonyTestMessage;
 
 		private String androidRenderStyle;
 
@@ -236,7 +271,11 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 
 		private Integer androidTargetUserType;
 
+		private String harmonyUri;
+
 		private String androidPopupBody;
+
+		private String harmonyExtParameters;
 
 		private String androidBigPictureUrl;
 
@@ -246,13 +285,19 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 
 		private String sendChannels;
 
+		private String harmonyActionType;
+
 		private String target;
+
+		private String harmonyNotificationSlotType;
 
 		private String androidBigTitle;
 
 		private String androidNotificationChannel;
 
 		private Boolean androidRemind;
+
+		private String harmonyInboxContent;
 
 		private String androidActivity;
 
@@ -318,6 +363,22 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 
 		public void setAndroidPopupActivity(String androidPopupActivity) {
 			this.androidPopupActivity = androidPopupActivity;
+		}
+
+		public Integer getHarmonyNotifyId() {
+			return this.harmonyNotifyId;
+		}
+
+		public void setHarmonyNotifyId(Integer harmonyNotifyId) {
+			this.harmonyNotifyId = harmonyNotifyId;
+		}
+
+		public String getHarmonyRenderStyle() {
+			return this.harmonyRenderStyle;
+		}
+
+		public void setHarmonyRenderStyle(String harmonyRenderStyle) {
+			this.harmonyRenderStyle = harmonyRenderStyle;
 		}
 
 		public String getIOSRemindBody() {
@@ -424,6 +485,14 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 			this.androidHonorTargetUserType = androidHonorTargetUserType;
 		}
 
+		public String getHarmonyRemindBody() {
+			return this.harmonyRemindBody;
+		}
+
+		public void setHarmonyRemindBody(String harmonyRemindBody) {
+			this.harmonyRemindBody = harmonyRemindBody;
+		}
+
 		public String getAndroidNotificationVivoChannel() {
 			return this.androidNotificationVivoChannel;
 		}
@@ -454,6 +523,14 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 
 		public void setAndroidNotificationXiaomiChannel(String androidNotificationXiaomiChannel) {
 			this.androidNotificationXiaomiChannel = androidNotificationXiaomiChannel;
+		}
+
+		public String getHarmonyAction() {
+			return this.harmonyAction;
+		}
+
+		public void setHarmonyAction(String harmonyAction) {
+			this.harmonyAction = harmonyAction;
 		}
 
 		public Boolean getStoreOffline() {
@@ -496,6 +573,14 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 			this.jobKey = jobKey;
 		}
 
+		public String getHarmonyReceiptId() {
+			return this.harmonyReceiptId;
+		}
+
+		public void setHarmonyReceiptId(String harmonyReceiptId) {
+			this.harmonyReceiptId = harmonyReceiptId;
+		}
+
 		public String getAndroidOpenUrl() {
 			return this.androidOpenUrl;
 		}
@@ -528,6 +613,14 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 			this.androidXiaomiBigPictureUrl = androidXiaomiBigPictureUrl;
 		}
 
+		public String getHarmonyCategory() {
+			return this.harmonyCategory;
+		}
+
+		public void setHarmonyCategory(String harmonyCategory) {
+			this.harmonyCategory = harmonyCategory;
+		}
+
 		public Boolean getIOSRemind() {
 			return this.iOSRemind;
 		}
@@ -550,6 +643,14 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 
 		public void setAndroidHuaweiTargetUserType(Integer androidHuaweiTargetUserType) {
 			this.androidHuaweiTargetUserType = androidHuaweiTargetUserType;
+		}
+
+		public Boolean getHarmonyRemind() {
+			return this.harmonyRemind;
+		}
+
+		public void setHarmonyRemind(Boolean harmonyRemind) {
+			this.harmonyRemind = harmonyRemind;
 		}
 
 		public String getAndroidMusic() {
@@ -600,6 +701,14 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 			this.androidExtParameters = androidExtParameters;
 		}
 
+		public String getHarmonyImageUrl() {
+			return this.harmonyImageUrl;
+		}
+
+		public void setHarmonyImageUrl(String harmonyImageUrl) {
+			this.harmonyImageUrl = harmonyImageUrl;
+		}
+
 		public Integer getIOSBadge() {
 			return this.iOSBadge;
 		}
@@ -632,12 +741,28 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 			this.androidOpenType = androidOpenType;
 		}
 
+		public String getHarmonyRemindTitle() {
+			return this.harmonyRemindTitle;
+		}
+
+		public void setHarmonyRemindTitle(String harmonyRemindTitle) {
+			this.harmonyRemindTitle = harmonyRemindTitle;
+		}
+
 		public String getTitle() {
 			return this.title;
 		}
 
 		public void setTitle(String title) {
 			this.title = title;
+		}
+
+		public Boolean getHarmonyTestMessage() {
+			return this.harmonyTestMessage;
+		}
+
+		public void setHarmonyTestMessage(Boolean harmonyTestMessage) {
+			this.harmonyTestMessage = harmonyTestMessage;
 		}
 
 		public String getAndroidRenderStyle() {
@@ -688,12 +813,28 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 			this.androidTargetUserType = androidTargetUserType;
 		}
 
+		public String getHarmonyUri() {
+			return this.harmonyUri;
+		}
+
+		public void setHarmonyUri(String harmonyUri) {
+			this.harmonyUri = harmonyUri;
+		}
+
 		public String getAndroidPopupBody() {
 			return this.androidPopupBody;
 		}
 
 		public void setAndroidPopupBody(String androidPopupBody) {
 			this.androidPopupBody = androidPopupBody;
+		}
+
+		public String getHarmonyExtParameters() {
+			return this.harmonyExtParameters;
+		}
+
+		public void setHarmonyExtParameters(String harmonyExtParameters) {
+			this.harmonyExtParameters = harmonyExtParameters;
 		}
 
 		public String getAndroidBigPictureUrl() {
@@ -728,12 +869,28 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 			this.sendChannels = sendChannels;
 		}
 
+		public String getHarmonyActionType() {
+			return this.harmonyActionType;
+		}
+
+		public void setHarmonyActionType(String harmonyActionType) {
+			this.harmonyActionType = harmonyActionType;
+		}
+
 		public String getTarget() {
 			return this.target;
 		}
 
 		public void setTarget(String target) {
 			this.target = target;
+		}
+
+		public String getHarmonyNotificationSlotType() {
+			return this.harmonyNotificationSlotType;
+		}
+
+		public void setHarmonyNotificationSlotType(String harmonyNotificationSlotType) {
+			this.harmonyNotificationSlotType = harmonyNotificationSlotType;
 		}
 
 		public String getAndroidBigTitle() {
@@ -758,6 +915,14 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 
 		public void setAndroidRemind(Boolean androidRemind) {
 			this.androidRemind = androidRemind;
+		}
+
+		public String getHarmonyInboxContent() {
+			return this.harmonyInboxContent;
+		}
+
+		public void setHarmonyInboxContent(String harmonyInboxContent) {
+			this.harmonyInboxContent = harmonyInboxContent;
 		}
 
 		public String getAndroidActivity() {
