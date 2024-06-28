@@ -30,6 +30,8 @@ public class UpdateUserRequest extends RpcAcsRequest<UpdateUserResponse> {
 
 	private String userId;
 
+	private Boolean isDeleted;
+
 	private String roleIds;
 
 	private String nickName;
@@ -70,6 +72,17 @@ public class UpdateUserRequest extends RpcAcsRequest<UpdateUserResponse> {
 		this.userId = userId;
 		if(userId != null){
 			putQueryParameter("UserId", userId);
+		}
+	}
+
+	public Boolean getIsDeleted() {
+		return this.isDeleted;
+	}
+
+	public void setIsDeleted(Boolean isDeleted) {
+		this.isDeleted = isDeleted;
+		if(isDeleted != null){
+			putQueryParameter("IsDeleted", isDeleted.toString());
 		}
 	}
 

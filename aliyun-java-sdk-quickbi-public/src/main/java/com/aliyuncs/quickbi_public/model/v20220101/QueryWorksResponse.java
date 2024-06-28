@@ -84,6 +84,10 @@ public class QueryWorksResponse extends AcsResponse {
 
 		private Integer status;
 
+		private Boolean publicFlag;
+
+		private Long publicInvalidTime;
+
 		private Directory directory;
 
 		public String getWorksId() {
@@ -196,6 +200,22 @@ public class QueryWorksResponse extends AcsResponse {
 
 		public void setStatus(Integer status) {
 			this.status = status;
+		}
+
+		public Boolean getPublicFlag() {
+			return this.publicFlag;
+		}
+
+		public void setPublicFlag(Boolean publicFlag) {
+			this.publicFlag = publicFlag;
+		}
+
+		public Long getPublicInvalidTime() {
+			return this.publicInvalidTime;
+		}
+
+		public void setPublicInvalidTime(Long publicInvalidTime) {
+			this.publicInvalidTime = publicInvalidTime;
 		}
 
 		public Directory getDirectory() {

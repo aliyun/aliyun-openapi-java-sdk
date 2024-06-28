@@ -127,6 +127,10 @@ public class QueryUserListResponse extends AcsResponse {
 
 			private String accountName;
 
+			private Long joinedDate;
+
+			private Long lastLoginTime;
+
 			private List<Long> roleIdList;
 
 			public Integer getUserType() {
@@ -199,6 +203,22 @@ public class QueryUserListResponse extends AcsResponse {
 
 			public void setAccountName(String accountName) {
 				this.accountName = accountName;
+			}
+
+			public Long getJoinedDate() {
+				return this.joinedDate;
+			}
+
+			public void setJoinedDate(Long joinedDate) {
+				this.joinedDate = joinedDate;
+			}
+
+			public Long getLastLoginTime() {
+				return this.lastLoginTime;
+			}
+
+			public void setLastLoginTime(Long lastLoginTime) {
+				this.lastLoginTime = lastLoginTime;
 			}
 
 			public List<Long> getRoleIdList() {

@@ -54,6 +54,8 @@ public class QueryWorksByOrganizationResponseUnmarshaller {
 			dataItem.setDescription(_ctx.stringValue("QueryWorksByOrganizationResponse.Result.Data["+ i +"].Description"));
 			dataItem.setWorkName(_ctx.stringValue("QueryWorksByOrganizationResponse.Result.Data["+ i +"].WorkName"));
 			dataItem.setGmtCreate(_ctx.stringValue("QueryWorksByOrganizationResponse.Result.Data["+ i +"].GmtCreate"));
+			dataItem.setPublicFlag(_ctx.booleanValue("QueryWorksByOrganizationResponse.Result.Data["+ i +"].PublicFlag"));
+			dataItem.setPublicInvalidTime(_ctx.longValue("QueryWorksByOrganizationResponse.Result.Data["+ i +"].PublicInvalidTime"));
 
 			Directory directory = new Directory();
 			directory.setPathId(_ctx.stringValue("QueryWorksByOrganizationResponse.Result.Data["+ i +"].Directory.PathId"));

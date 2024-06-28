@@ -42,6 +42,8 @@ public class QueryWorksResponseUnmarshaller {
 		result.setGmtCreate(_ctx.stringValue("QueryWorksResponse.Result.GmtCreate"));
 		result.setGmtModify(_ctx.stringValue("QueryWorksResponse.Result.GmtModify"));
 		result.setStatus(_ctx.integerValue("QueryWorksResponse.Result.Status"));
+		result.setPublicFlag(_ctx.booleanValue("QueryWorksResponse.Result.PublicFlag"));
+		result.setPublicInvalidTime(_ctx.longValue("QueryWorksResponse.Result.PublicInvalidTime"));
 
 		Directory directory = new Directory();
 		directory.setId(_ctx.stringValue("QueryWorksResponse.Result.Directory.Id"));

@@ -137,6 +137,10 @@ public class QueryWorksByWorkspaceResponse extends AcsResponse {
 
 			private String gmtCreate;
 
+			private Boolean publicFlag;
+
+			private Long publicInvalidTime;
+
 			private Directory directory;
 
 			public Integer getStatus() {
@@ -249,6 +253,22 @@ public class QueryWorksByWorkspaceResponse extends AcsResponse {
 
 			public void setGmtCreate(String gmtCreate) {
 				this.gmtCreate = gmtCreate;
+			}
+
+			public Boolean getPublicFlag() {
+				return this.publicFlag;
+			}
+
+			public void setPublicFlag(Boolean publicFlag) {
+				this.publicFlag = publicFlag;
+			}
+
+			public Long getPublicInvalidTime() {
+				return this.publicInvalidTime;
+			}
+
+			public void setPublicInvalidTime(Long publicInvalidTime) {
+				this.publicInvalidTime = publicInvalidTime;
 			}
 
 			public Directory getDirectory() {

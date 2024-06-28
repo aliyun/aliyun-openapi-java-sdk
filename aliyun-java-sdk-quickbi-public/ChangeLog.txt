@@ -1,3 +1,7 @@
+2024-06-28 Version: 2.1.7
+- Add QueryAuditLog, QueryApprovalInfo, DataSourceBlood, DataSetBlood and QueryDataServiceList APIs.
+- QueryUserInfoByAccount API updates error code.
+
 2024-05-22 Version: 2.1.6
 - Add CreateTicket4Copilot API.
 - QueryDatasetList and QueryDatasetInfo APIs add response parameters.

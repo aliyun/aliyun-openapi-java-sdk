@@ -54,6 +54,8 @@ public class QueryWorksByWorkspaceResponseUnmarshaller {
 			dataItem.setDescription(_ctx.stringValue("QueryWorksByWorkspaceResponse.Result.Data["+ i +"].Description"));
 			dataItem.setWorkName(_ctx.stringValue("QueryWorksByWorkspaceResponse.Result.Data["+ i +"].WorkName"));
 			dataItem.setGmtCreate(_ctx.stringValue("QueryWorksByWorkspaceResponse.Result.Data["+ i +"].GmtCreate"));
+			dataItem.setPublicFlag(_ctx.booleanValue("QueryWorksByWorkspaceResponse.Result.Data["+ i +"].PublicFlag"));
+			dataItem.setPublicInvalidTime(_ctx.longValue("QueryWorksByWorkspaceResponse.Result.Data["+ i +"].PublicInvalidTime"));
 
 			Directory directory = new Directory();
 			directory.setPathId(_ctx.stringValue("QueryWorksByWorkspaceResponse.Result.Data["+ i +"].Directory.PathId"));
