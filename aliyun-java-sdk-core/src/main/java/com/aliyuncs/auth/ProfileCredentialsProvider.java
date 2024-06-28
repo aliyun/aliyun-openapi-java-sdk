@@ -2,6 +2,7 @@ package com.aliyuncs.auth;
 
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.utils.AuthUtils;
+import com.aliyuncs.utils.EnvHelper;
 import com.aliyuncs.utils.StringUtils;
 import org.ini4j.Profile;
 import org.ini4j.Wini;
@@ -27,13 +28,15 @@ public class ProfileCredentialsProvider implements AlibabaCloudCredentialsProvid
 
     @Override
     public AlibabaCloudCredentials getCredentials() throws ClientException {
-        String filePath = AuthUtils.getEnvironmentCredentialsFile();
+        String filePath = EnvHelper.getenv("ALIBABA_CLOUD_CREDENTIALS_FILE");
         if (filePath == null) {
             filePath = AuthConstant.DEFAULT_CREDENTIALS_FILE_PATH;
         }
+
         if (filePath.length() == 0) {
             throw new ClientException("The specified credentials file is empty");
         }
+
         Wini ini;
         try {
             ini = getIni(filePath);
