@@ -21,6 +21,7 @@ import com.aliyuncs.quotas.model.v20200510.GetProductQuotaResponse;
 import com.aliyuncs.quotas.model.v20200510.GetProductQuotaResponse.Quota;
 import com.aliyuncs.quotas.model.v20200510.GetProductQuotaResponse.Quota.Period;
 import com.aliyuncs.quotas.model.v20200510.GetProductQuotaResponse.Quota.QuotaItemsItem;
+import com.aliyuncs.quotas.model.v20200510.GetProductQuotaResponse.Quota.UsageMetric;
 import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -50,6 +51,7 @@ public class GetProductQuotaResponseUnmarshaller {
 		quota.setExpireTime(_ctx.stringValue("GetProductQuotaResponse.Quota.ExpireTime"));
 		quota.setQuotaCategory(_ctx.stringValue("GetProductQuotaResponse.Quota.QuotaCategory"));
 		quota.setApplyReasonTips(_ctx.stringValue("GetProductQuotaResponse.Quota.ApplyReasonTips"));
+		quota.setGlobalQuota(_ctx.booleanValue("GetProductQuotaResponse.Quota.GlobalQuota"));
 
 		List<Float> applicableRange = new ArrayList<Float>();
 		for (int i = 0; i < _ctx.lengthValue("GetProductQuotaResponse.Quota.ApplicableRange.Length"); i++) {
@@ -67,6 +69,12 @@ public class GetProductQuotaResponseUnmarshaller {
 		period.setPeriodValue(_ctx.integerValue("GetProductQuotaResponse.Quota.Period.PeriodValue"));
 		period.setPeriodUnit(_ctx.stringValue("GetProductQuotaResponse.Quota.Period.PeriodUnit"));
 		quota.setPeriod(period);
+
+		UsageMetric usageMetric = new UsageMetric();
+		usageMetric.setMetricNamespace(_ctx.stringValue("GetProductQuotaResponse.Quota.UsageMetric.MetricNamespace"));
+		usageMetric.setMetricName(_ctx.stringValue("GetProductQuotaResponse.Quota.UsageMetric.MetricName"));
+		usageMetric.setMetricDimensions(_ctx.mapValue("GetProductQuotaResponse.Quota.UsageMetric.MetricDimensions"));
+		quota.setUsageMetric(usageMetric);
 
 		List<QuotaItemsItem> quotaItems = new ArrayList<QuotaItemsItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetProductQuotaResponse.Quota.QuotaItems.Length"); i++) {

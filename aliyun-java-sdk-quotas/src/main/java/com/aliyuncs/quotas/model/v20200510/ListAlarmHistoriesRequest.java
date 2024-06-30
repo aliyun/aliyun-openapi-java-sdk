@@ -35,6 +35,8 @@ public class ListAlarmHistoriesRequest extends RpcAcsRequest<ListAlarmHistoriesR
 
 	private Long endTime;
 
+	private String alarmId;
+
 	private Integer maxResults;
 	public ListAlarmHistoriesRequest() {
 		super("quotas", "2020-05-10", "ListAlarmHistories", "quotas");
@@ -97,6 +99,17 @@ public class ListAlarmHistoriesRequest extends RpcAcsRequest<ListAlarmHistoriesR
 		this.endTime = endTime;
 		if(endTime != null){
 			putBodyParameter("EndTime", endTime.toString());
+		}
+	}
+
+	public String getAlarmId() {
+		return this.alarmId;
+	}
+
+	public void setAlarmId(String alarmId) {
+		this.alarmId = alarmId;
+		if(alarmId != null){
+			putBodyParameter("AlarmId", alarmId);
 		}
 	}
 

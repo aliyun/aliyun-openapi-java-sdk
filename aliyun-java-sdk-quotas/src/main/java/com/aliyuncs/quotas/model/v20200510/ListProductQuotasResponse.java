@@ -114,6 +114,8 @@ public class ListProductQuotasResponse extends AcsResponse {
 
 		private String applyReasonTips;
 
+		private Boolean globalQuota;
+
 		private List<QuotaItemsItem> quotaItems;
 
 		private List<Float> applicableRange;
@@ -121,6 +123,8 @@ public class ListProductQuotasResponse extends AcsResponse {
 		private List<Float> supportedRange;
 
 		private Period period;
+
+		private UsageMetric usageMetric;
 
 		public String getQuotaUnit() {
 			return this.quotaUnit;
@@ -266,6 +270,14 @@ public class ListProductQuotasResponse extends AcsResponse {
 			this.applyReasonTips = applyReasonTips;
 		}
 
+		public Boolean getGlobalQuota() {
+			return this.globalQuota;
+		}
+
+		public void setGlobalQuota(Boolean globalQuota) {
+			this.globalQuota = globalQuota;
+		}
+
 		public List<QuotaItemsItem> getQuotaItems() {
 			return this.quotaItems;
 		}
@@ -296,6 +308,14 @@ public class ListProductQuotasResponse extends AcsResponse {
 
 		public void setPeriod(Period period) {
 			this.period = period;
+		}
+
+		public UsageMetric getUsageMetric() {
+			return this.usageMetric;
+		}
+
+		public void setUsageMetric(UsageMetric usageMetric) {
+			this.usageMetric = usageMetric;
 		}
 
 		public static class QuotaItemsItem {
@@ -361,6 +381,39 @@ public class ListProductQuotasResponse extends AcsResponse {
 
 			public void setPeriodUnit(String periodUnit) {
 				this.periodUnit = periodUnit;
+			}
+		}
+
+		public static class UsageMetric {
+
+			private String metricNamespace;
+
+			private String metricName;
+
+			private Map<Object,Object> metricDimensions;
+
+			public String getMetricNamespace() {
+				return this.metricNamespace;
+			}
+
+			public void setMetricNamespace(String metricNamespace) {
+				this.metricNamespace = metricNamespace;
+			}
+
+			public String getMetricName() {
+				return this.metricName;
+			}
+
+			public void setMetricName(String metricName) {
+				this.metricName = metricName;
+			}
+
+			public Map<Object,Object> getMetricDimensions() {
+				return this.metricDimensions;
+			}
+
+			public void setMetricDimensions(Map<Object,Object> metricDimensions) {
+				this.metricDimensions = metricDimensions;
 			}
 		}
 	}

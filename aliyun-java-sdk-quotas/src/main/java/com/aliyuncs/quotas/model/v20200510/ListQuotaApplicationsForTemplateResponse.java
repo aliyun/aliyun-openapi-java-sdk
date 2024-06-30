@@ -96,7 +96,11 @@ public class ListQuotaApplicationsForTemplateResponse extends AcsResponse {
 
 		private Map<Object,Object> dimensions;
 
+		private String reason;
+
 		private List<AuditStatusVo> auditStatusVos;
+
+		private List<String> aliyunUids;
 
 		public String getProductCode() {
 			return this.productCode;
@@ -170,12 +174,28 @@ public class ListQuotaApplicationsForTemplateResponse extends AcsResponse {
 			this.dimensions = dimensions;
 		}
 
+		public String getReason() {
+			return this.reason;
+		}
+
+		public void setReason(String reason) {
+			this.reason = reason;
+		}
+
 		public List<AuditStatusVo> getAuditStatusVos() {
 			return this.auditStatusVos;
 		}
 
 		public void setAuditStatusVos(List<AuditStatusVo> auditStatusVos) {
 			this.auditStatusVos = auditStatusVos;
+		}
+
+		public List<String> getAliyunUids() {
+			return this.aliyunUids;
+		}
+
+		public void setAliyunUids(List<String> aliyunUids) {
+			this.aliyunUids = aliyunUids;
 		}
 
 		public static class AuditStatusVo {

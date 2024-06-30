@@ -45,6 +45,13 @@ public class ListQuotaApplicationsForTemplateResponseUnmarshaller {
 			quotaBatchApplicationsItem.setDesireValue(_ctx.doubleValue("ListQuotaApplicationsForTemplateResponse.QuotaBatchApplications["+ i +"].DesireValue"));
 			quotaBatchApplicationsItem.setQuotaCategory(_ctx.stringValue("ListQuotaApplicationsForTemplateResponse.QuotaBatchApplications["+ i +"].QuotaCategory"));
 			quotaBatchApplicationsItem.setDimensions(_ctx.mapValue("ListQuotaApplicationsForTemplateResponse.QuotaBatchApplications["+ i +"].Dimensions"));
+			quotaBatchApplicationsItem.setReason(_ctx.stringValue("ListQuotaApplicationsForTemplateResponse.QuotaBatchApplications["+ i +"].Reason"));
+
+			List<String> aliyunUids = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("ListQuotaApplicationsForTemplateResponse.QuotaBatchApplications["+ i +"].AliyunUids.Length"); j++) {
+				aliyunUids.add(_ctx.stringValue("ListQuotaApplicationsForTemplateResponse.QuotaBatchApplications["+ i +"].AliyunUids["+ j +"]"));
+			}
+			quotaBatchApplicationsItem.setAliyunUids(aliyunUids);
 
 			List<AuditStatusVo> auditStatusVos = new ArrayList<AuditStatusVo>();
 			for (int j = 0; j < _ctx.lengthValue("ListQuotaApplicationsForTemplateResponse.QuotaBatchApplications["+ i +"].AuditStatusVos.Length"); j++) {

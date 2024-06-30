@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.quotas.model.v20200510.CreateQuotaApplicationsForTemplateResponse;
+import com.aliyuncs.quotas.model.v20200510.CreateQuotaApplicationsForTemplateResponse.FailResultsItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -33,6 +34,16 @@ public class CreateQuotaApplicationsForTemplateResponseUnmarshaller {
 			aliyunUids.add(_ctx.stringValue("CreateQuotaApplicationsForTemplateResponse.AliyunUids["+ i +"]"));
 		}
 		createQuotaApplicationsForTemplateResponse.setAliyunUids(aliyunUids);
+
+		List<FailResultsItem> failResults = new ArrayList<FailResultsItem>();
+		for (int i = 0; i < _ctx.lengthValue("CreateQuotaApplicationsForTemplateResponse.FailResults.Length"); i++) {
+			FailResultsItem failResultsItem = new FailResultsItem();
+			failResultsItem.setAliyunUid(_ctx.stringValue("CreateQuotaApplicationsForTemplateResponse.FailResults["+ i +"].AliyunUid"));
+			failResultsItem.setReason(_ctx.stringValue("CreateQuotaApplicationsForTemplateResponse.FailResults["+ i +"].Reason"));
+
+			failResults.add(failResultsItem);
+		}
+		createQuotaApplicationsForTemplateResponse.setFailResults(failResults);
 	 
 	 	return createQuotaApplicationsForTemplateResponse;
 	}

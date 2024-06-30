@@ -29,6 +29,8 @@ public class CreateQuotaApplicationsForTemplateResponse extends AcsResponse {
 
 	private String batchQuotaApplicationId;
 
+	private List<FailResultsItem> failResults;
+
 	private List<String> aliyunUids;
 
 	public String getRequestId() {
@@ -47,12 +49,43 @@ public class CreateQuotaApplicationsForTemplateResponse extends AcsResponse {
 		this.batchQuotaApplicationId = batchQuotaApplicationId;
 	}
 
+	public List<FailResultsItem> getFailResults() {
+		return this.failResults;
+	}
+
+	public void setFailResults(List<FailResultsItem> failResults) {
+		this.failResults = failResults;
+	}
+
 	public List<String> getAliyunUids() {
 		return this.aliyunUids;
 	}
 
 	public void setAliyunUids(List<String> aliyunUids) {
 		this.aliyunUids = aliyunUids;
+	}
+
+	public static class FailResultsItem {
+
+		private String aliyunUid;
+
+		private String reason;
+
+		public String getAliyunUid() {
+			return this.aliyunUid;
+		}
+
+		public void setAliyunUid(String aliyunUid) {
+			this.aliyunUid = aliyunUid;
+		}
+
+		public String getReason() {
+			return this.reason;
+		}
+
+		public void setReason(String reason) {
+			this.reason = reason;
+		}
 	}
 
 	@Override

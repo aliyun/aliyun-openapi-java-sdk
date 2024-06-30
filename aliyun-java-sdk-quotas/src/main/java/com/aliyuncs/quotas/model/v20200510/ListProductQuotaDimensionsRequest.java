@@ -29,9 +29,9 @@ public class ListProductQuotaDimensionsRequest extends RpcAcsRequest<ListProduct
 
 	private String nextToken;
 
-	private Integer maxResults;
-
 	private String quotaCategory;
+
+	private Integer maxResults;
 	public ListProductQuotaDimensionsRequest() {
 		super("quotas", "2020-05-10", "ListProductQuotaDimensions", "quotas");
 		setMethod(MethodType.POST);
@@ -63,17 +63,6 @@ public class ListProductQuotaDimensionsRequest extends RpcAcsRequest<ListProduct
 		}
 	}
 
-	public Integer getMaxResults() {
-		return this.maxResults;
-	}
-
-	public void setMaxResults(Integer maxResults) {
-		this.maxResults = maxResults;
-		if(maxResults != null){
-			putBodyParameter("MaxResults", maxResults.toString());
-		}
-	}
-
 	public String getQuotaCategory() {
 		return this.quotaCategory;
 	}
@@ -82,6 +71,17 @@ public class ListProductQuotaDimensionsRequest extends RpcAcsRequest<ListProduct
 		this.quotaCategory = quotaCategory;
 		if(quotaCategory != null){
 			putBodyParameter("QuotaCategory", quotaCategory);
+		}
+	}
+
+	public Integer getMaxResults() {
+		return this.maxResults;
+	}
+
+	public void setMaxResults(Integer maxResults) {
+		this.maxResults = maxResults;
+		if(maxResults != null){
+			putBodyParameter("MaxResults", maxResults.toString());
 		}
 	}
 

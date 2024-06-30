@@ -21,6 +21,7 @@ import com.aliyuncs.quotas.model.v20200510.ListProductQuotasResponse;
 import com.aliyuncs.quotas.model.v20200510.ListProductQuotasResponse.QuotasItem;
 import com.aliyuncs.quotas.model.v20200510.ListProductQuotasResponse.QuotasItem.Period;
 import com.aliyuncs.quotas.model.v20200510.ListProductQuotasResponse.QuotasItem.QuotaItemsItem;
+import com.aliyuncs.quotas.model.v20200510.ListProductQuotasResponse.QuotasItem.UsageMetric;
 import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -55,6 +56,7 @@ public class ListProductQuotasResponseUnmarshaller {
 			quotasItem.setExpireTime(_ctx.stringValue("ListProductQuotasResponse.Quotas["+ i +"].ExpireTime"));
 			quotasItem.setQuotaCategory(_ctx.stringValue("ListProductQuotasResponse.Quotas["+ i +"].QuotaCategory"));
 			quotasItem.setApplyReasonTips(_ctx.stringValue("ListProductQuotasResponse.Quotas["+ i +"].ApplyReasonTips"));
+			quotasItem.setGlobalQuota(_ctx.booleanValue("ListProductQuotasResponse.Quotas["+ i +"].GlobalQuota"));
 
 			List<Float> applicableRange = new ArrayList<Float>();
 			for (int j = 0; j < _ctx.lengthValue("ListProductQuotasResponse.Quotas["+ i +"].ApplicableRange.Length"); j++) {
@@ -72,6 +74,12 @@ public class ListProductQuotasResponseUnmarshaller {
 			period.setPeriodValue(_ctx.integerValue("ListProductQuotasResponse.Quotas["+ i +"].Period.PeriodValue"));
 			period.setPeriodUnit(_ctx.stringValue("ListProductQuotasResponse.Quotas["+ i +"].Period.PeriodUnit"));
 			quotasItem.setPeriod(period);
+
+			UsageMetric usageMetric = new UsageMetric();
+			usageMetric.setMetricNamespace(_ctx.stringValue("ListProductQuotasResponse.Quotas["+ i +"].UsageMetric.MetricNamespace"));
+			usageMetric.setMetricName(_ctx.stringValue("ListProductQuotasResponse.Quotas["+ i +"].UsageMetric.MetricName"));
+			usageMetric.setMetricDimensions(_ctx.mapValue("ListProductQuotasResponse.Quotas["+ i +"].UsageMetric.MetricDimensions"));
+			quotasItem.setUsageMetric(usageMetric);
 
 			List<QuotaItemsItem> quotaItems = new ArrayList<QuotaItemsItem>();
 			for (int j = 0; j < _ctx.lengthValue("ListProductQuotasResponse.Quotas["+ i +"].QuotaItems.Length"); j++) {

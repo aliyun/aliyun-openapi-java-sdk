@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.quotas.model.v20200510.ListProductQuotaDimensionsResponse;
 import com.aliyuncs.quotas.model.v20200510.ListProductQuotaDimensionsResponse.QuotaDimensionsItem;
 import com.aliyuncs.quotas.model.v20200510.ListProductQuotaDimensionsResponse.QuotaDimensionsItem.DimensionValueDetailItem;
+import com.aliyuncs.quotas.model.v20200510.ListProductQuotaDimensionsResponse.QuotaDimensionsItem.DimensionValueDetailItem.DependentDimension;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -56,6 +57,16 @@ public class ListProductQuotaDimensionsResponseUnmarshaller {
 				DimensionValueDetailItem dimensionValueDetailItem = new DimensionValueDetailItem();
 				dimensionValueDetailItem.setName(_ctx.stringValue("ListProductQuotaDimensionsResponse.QuotaDimensions["+ i +"].DimensionValueDetail["+ j +"].Name"));
 				dimensionValueDetailItem.setValue(_ctx.stringValue("ListProductQuotaDimensionsResponse.QuotaDimensions["+ i +"].DimensionValueDetail["+ j +"].Value"));
+
+				List<DependentDimension> dependentDimensions1 = new ArrayList<DependentDimension>();
+				for (int k = 0; k < _ctx.lengthValue("ListProductQuotaDimensionsResponse.QuotaDimensions["+ i +"].DimensionValueDetail["+ j +"].DependentDimensions.Length"); k++) {
+					DependentDimension dependentDimension = new DependentDimension();
+					dependentDimension.setKey(_ctx.stringValue("ListProductQuotaDimensionsResponse.QuotaDimensions["+ i +"].DimensionValueDetail["+ j +"].DependentDimensions["+ k +"].Key"));
+					dependentDimension.setValue(_ctx.stringValue("ListProductQuotaDimensionsResponse.QuotaDimensions["+ i +"].DimensionValueDetail["+ j +"].DependentDimensions["+ k +"].Value"));
+
+					dependentDimensions1.add(dependentDimension);
+				}
+				dimensionValueDetailItem.setDependentDimensions1(dependentDimensions1);
 
 				dimensionValueDetail.add(dimensionValueDetailItem);
 			}

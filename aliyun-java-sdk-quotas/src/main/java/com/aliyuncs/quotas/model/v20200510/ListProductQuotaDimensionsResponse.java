@@ -143,6 +143,8 @@ public class ListProductQuotaDimensionsResponse extends AcsResponse {
 
 			private String value;
 
+			private List<DependentDimension> dependentDimensions1;
+
 			public String getName() {
 				return this.name;
 			}
@@ -157,6 +159,37 @@ public class ListProductQuotaDimensionsResponse extends AcsResponse {
 
 			public void setValue(String value) {
 				this.value = value;
+			}
+
+			public List<DependentDimension> getDependentDimensions1() {
+				return this.dependentDimensions1;
+			}
+
+			public void setDependentDimensions1(List<DependentDimension> dependentDimensions1) {
+				this.dependentDimensions1 = dependentDimensions1;
+			}
+
+			public static class DependentDimension {
+
+				private String key;
+
+				private String value;
+
+				public String getKey() {
+					return this.key;
+				}
+
+				public void setKey(String key) {
+					this.key = key;
+				}
+
+				public String getValue() {
+					return this.value;
+				}
+
+				public void setValue(String value) {
+					this.value = value;
+				}
 			}
 		}
 	}
