@@ -25,36 +25,28 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryTaskListResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Integer totalItemNum;
+	private Boolean prePage;
 
 	private Integer currentPageNum;
 
-	private Integer totalPageNum;
+	private String requestId;
 
 	private Integer pageSize;
 
-	private Boolean prePage;
+	private Integer totalPageNum;
+
+	private Integer totalItemNum;
 
 	private Boolean nextPage;
 
 	private List<TaskInfo> data;
 
-	public String getRequestId() {
-		return this.requestId;
+	public Boolean getPrePage() {
+		return this.prePage;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Integer getTotalItemNum() {
-		return this.totalItemNum;
-	}
-
-	public void setTotalItemNum(Integer totalItemNum) {
-		this.totalItemNum = totalItemNum;
+	public void setPrePage(Boolean prePage) {
+		this.prePage = prePage;
 	}
 
 	public Integer getCurrentPageNum() {
@@ -65,12 +57,12 @@ public class QueryTaskListResponse extends AcsResponse {
 		this.currentPageNum = currentPageNum;
 	}
 
-	public Integer getTotalPageNum() {
-		return this.totalPageNum;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setTotalPageNum(Integer totalPageNum) {
-		this.totalPageNum = totalPageNum;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageSize() {
@@ -81,12 +73,20 @@ public class QueryTaskListResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Boolean getPrePage() {
-		return this.prePage;
+	public Integer getTotalPageNum() {
+		return this.totalPageNum;
 	}
 
-	public void setPrePage(Boolean prePage) {
-		this.prePage = prePage;
+	public void setTotalPageNum(Integer totalPageNum) {
+		this.totalPageNum = totalPageNum;
+	}
+
+	public Integer getTotalItemNum() {
+		return this.totalItemNum;
+	}
+
+	public void setTotalItemNum(Integer totalItemNum) {
+		this.totalItemNum = totalItemNum;
 	}
 
 	public Boolean getNextPage() {
@@ -109,19 +109,23 @@ public class QueryTaskListResponse extends AcsResponse {
 
 		private String taskType;
 
-		private Integer taskNum;
+		private String taskCancelStatus;
+
+		private String taskNo;
+
+		private Integer taskCancelStatusCode;
+
+		private Integer taskStatusCode;
 
 		private String taskStatus;
+
+		private String taskTypeDescription;
+
+		private Integer taskNum;
 
 		private String createTime;
 
 		private String clientip;
-
-		private String taskNo;
-
-		private String taskTypeDescription;
-
-		private Integer taskStatusCode;
 
 		public String getTaskType() {
 			return this.taskType;
@@ -131,12 +135,36 @@ public class QueryTaskListResponse extends AcsResponse {
 			this.taskType = taskType;
 		}
 
-		public Integer getTaskNum() {
-			return this.taskNum;
+		public String getTaskCancelStatus() {
+			return this.taskCancelStatus;
 		}
 
-		public void setTaskNum(Integer taskNum) {
-			this.taskNum = taskNum;
+		public void setTaskCancelStatus(String taskCancelStatus) {
+			this.taskCancelStatus = taskCancelStatus;
+		}
+
+		public String getTaskNo() {
+			return this.taskNo;
+		}
+
+		public void setTaskNo(String taskNo) {
+			this.taskNo = taskNo;
+		}
+
+		public Integer getTaskCancelStatusCode() {
+			return this.taskCancelStatusCode;
+		}
+
+		public void setTaskCancelStatusCode(Integer taskCancelStatusCode) {
+			this.taskCancelStatusCode = taskCancelStatusCode;
+		}
+
+		public Integer getTaskStatusCode() {
+			return this.taskStatusCode;
+		}
+
+		public void setTaskStatusCode(Integer taskStatusCode) {
+			this.taskStatusCode = taskStatusCode;
 		}
 
 		public String getTaskStatus() {
@@ -145,6 +173,22 @@ public class QueryTaskListResponse extends AcsResponse {
 
 		public void setTaskStatus(String taskStatus) {
 			this.taskStatus = taskStatus;
+		}
+
+		public String getTaskTypeDescription() {
+			return this.taskTypeDescription;
+		}
+
+		public void setTaskTypeDescription(String taskTypeDescription) {
+			this.taskTypeDescription = taskTypeDescription;
+		}
+
+		public Integer getTaskNum() {
+			return this.taskNum;
+		}
+
+		public void setTaskNum(Integer taskNum) {
+			this.taskNum = taskNum;
 		}
 
 		public String getCreateTime() {
@@ -161,30 +205,6 @@ public class QueryTaskListResponse extends AcsResponse {
 
 		public void setClientip(String clientip) {
 			this.clientip = clientip;
-		}
-
-		public String getTaskNo() {
-			return this.taskNo;
-		}
-
-		public void setTaskNo(String taskNo) {
-			this.taskNo = taskNo;
-		}
-
-		public String getTaskTypeDescription() {
-			return this.taskTypeDescription;
-		}
-
-		public void setTaskTypeDescription(String taskTypeDescription) {
-			this.taskTypeDescription = taskTypeDescription;
-		}
-
-		public Integer getTaskStatusCode() {
-			return this.taskStatusCode;
-		}
-
-		public void setTaskStatusCode(Integer taskStatusCode) {
-			this.taskStatusCode = taskStatusCode;
 		}
 	}
 

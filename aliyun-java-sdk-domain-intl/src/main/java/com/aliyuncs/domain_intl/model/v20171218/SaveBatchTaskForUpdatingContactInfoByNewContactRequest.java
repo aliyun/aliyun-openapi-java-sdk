@@ -16,34 +16,20 @@ package com.aliyuncs.domain_intl.model.v20171218;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class SaveBatchTaskForUpdatingContactInfoByNewContactRequest extends RpcAcsRequest<SaveBatchTaskForUpdatingContactInfoByNewContactResponse> {
-	
-	public SaveBatchTaskForUpdatingContactInfoByNewContactRequest() {
-		super("Domain-intl", "2017-12-18", "SaveBatchTaskForUpdatingContactInfoByNewContact", "domain");
-	}
+	   
 
 	private String country;
 
-	private String address;
-
-	private String telArea;
-
-	private String contactType;
-
 	private String city;
 
-	private List<String> domainNames;
-
-	private String telephone;
-
 	private Boolean transferOutProhibited;
-
-	private String registrantOrganization;
 
 	private String telExt;
 
@@ -51,13 +37,29 @@ public class SaveBatchTaskForUpdatingContactInfoByNewContactRequest extends RpcA
 
 	private String postalCode;
 
-	private String userClientIp;
-
 	private String lang;
 
 	private String email;
 
+	private String address;
+
+	private String telArea;
+
+	private String contactType;
+
+	private List<String> domainNames;
+
+	private String telephone;
+
+	private String registrantOrganization;
+
+	private String userClientIp;
+
 	private String registrantName;
+	public SaveBatchTaskForUpdatingContactInfoByNewContactRequest() {
+		super("Domain-intl", "2017-12-18", "SaveBatchTaskForUpdatingContactInfoByNewContact");
+		setMethod(MethodType.POST);
+	}
 
 	public String getCountry() {
 		return this.country;
@@ -67,39 +69,6 @@ public class SaveBatchTaskForUpdatingContactInfoByNewContactRequest extends RpcA
 		this.country = country;
 		if(country != null){
 			putQueryParameter("Country", country);
-		}
-	}
-
-	public String getAddress() {
-		return this.address;
-	}
-
-	public void setAddress(String address) {
-		this.address = address;
-		if(address != null){
-			putQueryParameter("Address", address);
-		}
-	}
-
-	public String getTelArea() {
-		return this.telArea;
-	}
-
-	public void setTelArea(String telArea) {
-		this.telArea = telArea;
-		if(telArea != null){
-			putQueryParameter("TelArea", telArea);
-		}
-	}
-
-	public String getContactType() {
-		return this.contactType;
-	}
-
-	public void setContactType(String contactType) {
-		this.contactType = contactType;
-		if(contactType != null){
-			putQueryParameter("ContactType", contactType);
 		}
 	}
 
@@ -114,30 +83,6 @@ public class SaveBatchTaskForUpdatingContactInfoByNewContactRequest extends RpcA
 		}
 	}
 
-	public List<String> getDomainNames() {
-		return this.domainNames;
-	}
-
-	public void setDomainNames(List<String> domainNames) {
-		this.domainNames = domainNames;	
-		if (domainNames != null) {
-			for (int i = 0; i < domainNames.size(); i++) {
-				putQueryParameter("DomainName." + (i + 1) , domainNames.get(i));
-			}
-		}	
-	}
-
-	public String getTelephone() {
-		return this.telephone;
-	}
-
-	public void setTelephone(String telephone) {
-		this.telephone = telephone;
-		if(telephone != null){
-			putQueryParameter("Telephone", telephone);
-		}
-	}
-
 	public Boolean getTransferOutProhibited() {
 		return this.transferOutProhibited;
 	}
@@ -146,17 +91,6 @@ public class SaveBatchTaskForUpdatingContactInfoByNewContactRequest extends RpcA
 		this.transferOutProhibited = transferOutProhibited;
 		if(transferOutProhibited != null){
 			putQueryParameter("TransferOutProhibited", transferOutProhibited.toString());
-		}
-	}
-
-	public String getRegistrantOrganization() {
-		return this.registrantOrganization;
-	}
-
-	public void setRegistrantOrganization(String registrantOrganization) {
-		this.registrantOrganization = registrantOrganization;
-		if(registrantOrganization != null){
-			putQueryParameter("RegistrantOrganization", registrantOrganization);
 		}
 	}
 
@@ -193,17 +127,6 @@ public class SaveBatchTaskForUpdatingContactInfoByNewContactRequest extends RpcA
 		}
 	}
 
-	public String getUserClientIp() {
-		return this.userClientIp;
-	}
-
-	public void setUserClientIp(String userClientIp) {
-		this.userClientIp = userClientIp;
-		if(userClientIp != null){
-			putQueryParameter("UserClientIp", userClientIp);
-		}
-	}
-
 	public String getLang() {
 		return this.lang;
 	}
@@ -223,6 +146,85 @@ public class SaveBatchTaskForUpdatingContactInfoByNewContactRequest extends RpcA
 		this.email = email;
 		if(email != null){
 			putQueryParameter("Email", email);
+		}
+	}
+
+	public String getAddress() {
+		return this.address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+		if(address != null){
+			putQueryParameter("Address", address);
+		}
+	}
+
+	public String getTelArea() {
+		return this.telArea;
+	}
+
+	public void setTelArea(String telArea) {
+		this.telArea = telArea;
+		if(telArea != null){
+			putQueryParameter("TelArea", telArea);
+		}
+	}
+
+	public String getContactType() {
+		return this.contactType;
+	}
+
+	public void setContactType(String contactType) {
+		this.contactType = contactType;
+		if(contactType != null){
+			putQueryParameter("ContactType", contactType);
+		}
+	}
+
+	public List<String> getDomainNames() {
+		return this.domainNames;
+	}
+
+	public void setDomainNames(List<String> domainNames) {
+		this.domainNames = domainNames;	
+		if (domainNames != null) {
+			for (int i = 0; i < domainNames.size(); i++) {
+				putQueryParameter("DomainName." + (i + 1) , domainNames.get(i));
+			}
+		}	
+	}
+
+	public String getTelephone() {
+		return this.telephone;
+	}
+
+	public void setTelephone(String telephone) {
+		this.telephone = telephone;
+		if(telephone != null){
+			putQueryParameter("Telephone", telephone);
+		}
+	}
+
+	public String getRegistrantOrganization() {
+		return this.registrantOrganization;
+	}
+
+	public void setRegistrantOrganization(String registrantOrganization) {
+		this.registrantOrganization = registrantOrganization;
+		if(registrantOrganization != null){
+			putQueryParameter("RegistrantOrganization", registrantOrganization);
+		}
+	}
+
+	public String getUserClientIp() {
+		return this.userClientIp;
+	}
+
+	public void setUserClientIp(String userClientIp) {
+		this.userClientIp = userClientIp;
+		if(userClientIp != null){
+			putQueryParameter("UserClientIp", userClientIp);
 		}
 	}
 

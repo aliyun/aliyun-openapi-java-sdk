@@ -47,29 +47,13 @@ public class QueryDSRecordResponse extends AcsResponse {
 
 	public static class DSRecord {
 
-		private Integer keyTag;
-
-		private Integer algorithm;
-
 		private Integer digestType;
 
 		private String digest;
 
-		public Integer getKeyTag() {
-			return this.keyTag;
-		}
+		private Integer algorithm;
 
-		public void setKeyTag(Integer keyTag) {
-			this.keyTag = keyTag;
-		}
-
-		public Integer getAlgorithm() {
-			return this.algorithm;
-		}
-
-		public void setAlgorithm(Integer algorithm) {
-			this.algorithm = algorithm;
-		}
+		private Integer keyTag;
 
 		public Integer getDigestType() {
 			return this.digestType;
@@ -85,6 +69,22 @@ public class QueryDSRecordResponse extends AcsResponse {
 
 		public void setDigest(String digest) {
 			this.digest = digest;
+		}
+
+		public Integer getAlgorithm() {
+			return this.algorithm;
+		}
+
+		public void setAlgorithm(Integer algorithm) {
+			this.algorithm = algorithm;
+		}
+
+		public Integer getKeyTag() {
+			return this.keyTag;
+		}
+
+		public void setKeyTag(Integer keyTag) {
+			this.keyTag = keyTag;
 		}
 	}
 

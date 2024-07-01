@@ -16,20 +16,16 @@ package com.aliyuncs.domain_intl.model.v20171218;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class SaveBatchTaskForUpdatingContactInfoRequest extends RpcAcsRequest<SaveBatchTaskForUpdatingContactInfoResponse> {
-	
-	public SaveBatchTaskForUpdatingContactInfoRequest() {
-		super("Domain-intl", "2017-12-18", "SaveBatchTaskForUpdatingContactInfo", "domain");
-	}
+	   
 
 	private String contactType;
-
-	private String userClientIp;
 
 	private Long registrantProfileId;
 
@@ -37,7 +33,13 @@ public class SaveBatchTaskForUpdatingContactInfoRequest extends RpcAcsRequest<Sa
 
 	private Boolean addTransferLock;
 
+	private String userClientIp;
+
 	private String lang;
+	public SaveBatchTaskForUpdatingContactInfoRequest() {
+		super("Domain-intl", "2017-12-18", "SaveBatchTaskForUpdatingContactInfo");
+		setMethod(MethodType.POST);
+	}
 
 	public String getContactType() {
 		return this.contactType;
@@ -47,17 +49,6 @@ public class SaveBatchTaskForUpdatingContactInfoRequest extends RpcAcsRequest<Sa
 		this.contactType = contactType;
 		if(contactType != null){
 			putQueryParameter("ContactType", contactType);
-		}
-	}
-
-	public String getUserClientIp() {
-		return this.userClientIp;
-	}
-
-	public void setUserClientIp(String userClientIp) {
-		this.userClientIp = userClientIp;
-		if(userClientIp != null){
-			putQueryParameter("UserClientIp", userClientIp);
 		}
 	}
 
@@ -93,6 +84,17 @@ public class SaveBatchTaskForUpdatingContactInfoRequest extends RpcAcsRequest<Sa
 		this.addTransferLock = addTransferLock;
 		if(addTransferLock != null){
 			putQueryParameter("AddTransferLock", addTransferLock.toString());
+		}
+	}
+
+	public String getUserClientIp() {
+		return this.userClientIp;
+	}
+
+	public void setUserClientIp(String userClientIp) {
+		this.userClientIp = userClientIp;
+		if(userClientIp != null){
+			putQueryParameter("UserClientIp", userClientIp);
 		}
 	}
 

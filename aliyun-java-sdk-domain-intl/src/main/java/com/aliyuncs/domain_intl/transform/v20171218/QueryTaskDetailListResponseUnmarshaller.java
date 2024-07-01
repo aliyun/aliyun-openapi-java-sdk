@@ -24,32 +24,32 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryTaskDetailListResponseUnmarshaller {
 
-	public static QueryTaskDetailListResponse unmarshall(QueryTaskDetailListResponse queryTaskDetailListResponse, UnmarshallerContext context) {
+	public static QueryTaskDetailListResponse unmarshall(QueryTaskDetailListResponse queryTaskDetailListResponse, UnmarshallerContext _ctx) {
 		
-		queryTaskDetailListResponse.setRequestId(context.stringValue("QueryTaskDetailListResponse.RequestId"));
-		queryTaskDetailListResponse.setTotalItemNum(context.integerValue("QueryTaskDetailListResponse.TotalItemNum"));
-		queryTaskDetailListResponse.setCurrentPageNum(context.integerValue("QueryTaskDetailListResponse.CurrentPageNum"));
-		queryTaskDetailListResponse.setTotalPageNum(context.integerValue("QueryTaskDetailListResponse.TotalPageNum"));
-		queryTaskDetailListResponse.setPageSize(context.integerValue("QueryTaskDetailListResponse.PageSize"));
-		queryTaskDetailListResponse.setPrePage(context.booleanValue("QueryTaskDetailListResponse.PrePage"));
-		queryTaskDetailListResponse.setNextPage(context.booleanValue("QueryTaskDetailListResponse.NextPage"));
+		queryTaskDetailListResponse.setRequestId(_ctx.stringValue("QueryTaskDetailListResponse.RequestId"));
+		queryTaskDetailListResponse.setPrePage(_ctx.booleanValue("QueryTaskDetailListResponse.PrePage"));
+		queryTaskDetailListResponse.setCurrentPageNum(_ctx.integerValue("QueryTaskDetailListResponse.CurrentPageNum"));
+		queryTaskDetailListResponse.setPageSize(_ctx.integerValue("QueryTaskDetailListResponse.PageSize"));
+		queryTaskDetailListResponse.setTotalPageNum(_ctx.integerValue("QueryTaskDetailListResponse.TotalPageNum"));
+		queryTaskDetailListResponse.setTotalItemNum(_ctx.integerValue("QueryTaskDetailListResponse.TotalItemNum"));
+		queryTaskDetailListResponse.setNextPage(_ctx.booleanValue("QueryTaskDetailListResponse.NextPage"));
 
 		List<TaskDetail> data = new ArrayList<TaskDetail>();
-		for (int i = 0; i < context.lengthValue("QueryTaskDetailListResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryTaskDetailListResponse.Data.Length"); i++) {
 			TaskDetail taskDetail = new TaskDetail();
-			taskDetail.setTaskNo(context.stringValue("QueryTaskDetailListResponse.Data["+ i +"].TaskNo"));
-			taskDetail.setTaskDetailNo(context.stringValue("QueryTaskDetailListResponse.Data["+ i +"].TaskDetailNo"));
-			taskDetail.setTaskType(context.stringValue("QueryTaskDetailListResponse.Data["+ i +"].TaskType"));
-			taskDetail.setInstanceId(context.stringValue("QueryTaskDetailListResponse.Data["+ i +"].InstanceId"));
-			taskDetail.setDomainName(context.stringValue("QueryTaskDetailListResponse.Data["+ i +"].DomainName"));
-			taskDetail.setTaskStatus(context.stringValue("QueryTaskDetailListResponse.Data["+ i +"].TaskStatus"));
-			taskDetail.setUpdateTime(context.stringValue("QueryTaskDetailListResponse.Data["+ i +"].UpdateTime"));
-			taskDetail.setCreateTime(context.stringValue("QueryTaskDetailListResponse.Data["+ i +"].CreateTime"));
-			taskDetail.setTryCount(context.integerValue("QueryTaskDetailListResponse.Data["+ i +"].TryCount"));
-			taskDetail.setErrorMsg(context.stringValue("QueryTaskDetailListResponse.Data["+ i +"].ErrorMsg"));
-			taskDetail.setTaskStatusCode(context.integerValue("QueryTaskDetailListResponse.Data["+ i +"].TaskStatusCode"));
-			taskDetail.setTaskResult(context.stringValue("QueryTaskDetailListResponse.Data["+ i +"].TaskResult"));
-			taskDetail.setTaskTypeDescription(context.stringValue("QueryTaskDetailListResponse.Data["+ i +"].TaskTypeDescription"));
+			taskDetail.setUpdateTime(_ctx.stringValue("QueryTaskDetailListResponse.Data["+ i +"].UpdateTime"));
+			taskDetail.setTaskDetailNo(_ctx.stringValue("QueryTaskDetailListResponse.Data["+ i +"].TaskDetailNo"));
+			taskDetail.setCreateTime(_ctx.stringValue("QueryTaskDetailListResponse.Data["+ i +"].CreateTime"));
+			taskDetail.setInstanceId(_ctx.stringValue("QueryTaskDetailListResponse.Data["+ i +"].InstanceId"));
+			taskDetail.setDomainName(_ctx.stringValue("QueryTaskDetailListResponse.Data["+ i +"].DomainName"));
+			taskDetail.setTaskType(_ctx.stringValue("QueryTaskDetailListResponse.Data["+ i +"].TaskType"));
+			taskDetail.setTaskNo(_ctx.stringValue("QueryTaskDetailListResponse.Data["+ i +"].TaskNo"));
+			taskDetail.setTaskResult(_ctx.stringValue("QueryTaskDetailListResponse.Data["+ i +"].TaskResult"));
+			taskDetail.setTaskStatusCode(_ctx.integerValue("QueryTaskDetailListResponse.Data["+ i +"].TaskStatusCode"));
+			taskDetail.setTaskStatus(_ctx.stringValue("QueryTaskDetailListResponse.Data["+ i +"].TaskStatus"));
+			taskDetail.setTaskTypeDescription(_ctx.stringValue("QueryTaskDetailListResponse.Data["+ i +"].TaskTypeDescription"));
+			taskDetail.setTryCount(_ctx.integerValue("QueryTaskDetailListResponse.Data["+ i +"].TryCount"));
+			taskDetail.setErrorMsg(_ctx.stringValue("QueryTaskDetailListResponse.Data["+ i +"].ErrorMsg"));
 
 			data.add(taskDetail);
 		}

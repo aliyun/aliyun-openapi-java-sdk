@@ -16,30 +16,32 @@ package com.aliyuncs.domain_intl.model.v20171218;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class SaveBatchTaskForCreatingOrderActivateRequest extends RpcAcsRequest<SaveBatchTaskForCreatingOrderActivateResponse> {
-	
-	public SaveBatchTaskForCreatingOrderActivateRequest() {
-		super("Domain-intl", "2017-12-18", "SaveBatchTaskForCreatingOrderActivate", "domain");
-	}
+	   
 
 	private List<OrderActivateParam> orderActivateParams;
-
-	private String promotionNo;
-
-	private String userClientIp;
 
 	private String couponNo;
 
 	private Boolean useCoupon;
 
+	private String promotionNo;
+
+	private String userClientIp;
+
 	private String lang;
 
 	private Boolean usePromotion;
+	public SaveBatchTaskForCreatingOrderActivateRequest() {
+		super("Domain-intl", "2017-12-18", "SaveBatchTaskForCreatingOrderActivate");
+		setMethod(MethodType.POST);
+	}
 
 	public List<OrderActivateParam> getOrderActivateParams() {
 		return this.orderActivateParams;
@@ -50,18 +52,18 @@ public class SaveBatchTaskForCreatingOrderActivateRequest extends RpcAcsRequest<
 		if (orderActivateParams != null) {
 			for (int depth1 = 0; depth1 < orderActivateParams.size(); depth1++) {
 				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".Country" , orderActivateParams.get(depth1).getCountry());
-				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".SubscriptionDuration" , orderActivateParams.get(depth1).getSubscriptionDuration());
 				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".Address" , orderActivateParams.get(depth1).getAddress());
+				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".SubscriptionDuration" , orderActivateParams.get(depth1).getSubscriptionDuration());
 				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".PermitPremiumActivation" , orderActivateParams.get(depth1).getPermitPremiumActivation());
 				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".TelArea" , orderActivateParams.get(depth1).getTelArea());
 				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".City" , orderActivateParams.get(depth1).getCity());
 				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".Dns2" , orderActivateParams.get(depth1).getDns2());
 				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".Dns1" , orderActivateParams.get(depth1).getDns1());
-				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".DomainName" , orderActivateParams.get(depth1).getDomainName());
 				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".RegistrantProfileId" , orderActivateParams.get(depth1).getRegistrantProfileId());
+				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".DomainName" , orderActivateParams.get(depth1).getDomainName());
 				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".RegistrantType" , orderActivateParams.get(depth1).getRegistrantType());
-				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".Telephone" , orderActivateParams.get(depth1).getTelephone());
 				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".TrademarkDomainActivation" , orderActivateParams.get(depth1).getTrademarkDomainActivation());
+				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".Telephone" , orderActivateParams.get(depth1).getTelephone());
 				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".AliyunDns" , orderActivateParams.get(depth1).getAliyunDns());
 				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".RegistrantOrganization" , orderActivateParams.get(depth1).getRegistrantOrganization());
 				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".TelExt" , orderActivateParams.get(depth1).getTelExt());
@@ -72,28 +74,6 @@ public class SaveBatchTaskForCreatingOrderActivateRequest extends RpcAcsRequest<
 				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".RegistrantName" , orderActivateParams.get(depth1).getRegistrantName());
 			}
 		}	
-	}
-
-	public String getPromotionNo() {
-		return this.promotionNo;
-	}
-
-	public void setPromotionNo(String promotionNo) {
-		this.promotionNo = promotionNo;
-		if(promotionNo != null){
-			putQueryParameter("PromotionNo", promotionNo);
-		}
-	}
-
-	public String getUserClientIp() {
-		return this.userClientIp;
-	}
-
-	public void setUserClientIp(String userClientIp) {
-		this.userClientIp = userClientIp;
-		if(userClientIp != null){
-			putQueryParameter("UserClientIp", userClientIp);
-		}
 	}
 
 	public String getCouponNo() {
@@ -115,6 +95,28 @@ public class SaveBatchTaskForCreatingOrderActivateRequest extends RpcAcsRequest<
 		this.useCoupon = useCoupon;
 		if(useCoupon != null){
 			putQueryParameter("UseCoupon", useCoupon.toString());
+		}
+	}
+
+	public String getPromotionNo() {
+		return this.promotionNo;
+	}
+
+	public void setPromotionNo(String promotionNo) {
+		this.promotionNo = promotionNo;
+		if(promotionNo != null){
+			putQueryParameter("PromotionNo", promotionNo);
+		}
+	}
+
+	public String getUserClientIp() {
+		return this.userClientIp;
+	}
+
+	public void setUserClientIp(String userClientIp) {
+		this.userClientIp = userClientIp;
+		if(userClientIp != null){
+			putQueryParameter("UserClientIp", userClientIp);
 		}
 	}
 
@@ -144,9 +146,9 @@ public class SaveBatchTaskForCreatingOrderActivateRequest extends RpcAcsRequest<
 
 		private String country;
 
-		private Integer subscriptionDuration;
-
 		private String address;
+
+		private Integer subscriptionDuration;
 
 		private Boolean permitPremiumActivation;
 
@@ -158,15 +160,15 @@ public class SaveBatchTaskForCreatingOrderActivateRequest extends RpcAcsRequest<
 
 		private String dns1;
 
-		private String domainName;
-
 		private Long registrantProfileId;
+
+		private String domainName;
 
 		private String registrantType;
 
-		private String telephone;
-
 		private Boolean trademarkDomainActivation;
+
+		private String telephone;
 
 		private Boolean aliyunDns;
 
@@ -192,20 +194,20 @@ public class SaveBatchTaskForCreatingOrderActivateRequest extends RpcAcsRequest<
 			this.country = country;
 		}
 
-		public Integer getSubscriptionDuration() {
-			return this.subscriptionDuration;
-		}
-
-		public void setSubscriptionDuration(Integer subscriptionDuration) {
-			this.subscriptionDuration = subscriptionDuration;
-		}
-
 		public String getAddress() {
 			return this.address;
 		}
 
 		public void setAddress(String address) {
 			this.address = address;
+		}
+
+		public Integer getSubscriptionDuration() {
+			return this.subscriptionDuration;
+		}
+
+		public void setSubscriptionDuration(Integer subscriptionDuration) {
+			this.subscriptionDuration = subscriptionDuration;
 		}
 
 		public Boolean getPermitPremiumActivation() {
@@ -248,20 +250,20 @@ public class SaveBatchTaskForCreatingOrderActivateRequest extends RpcAcsRequest<
 			this.dns1 = dns1;
 		}
 
-		public String getDomainName() {
-			return this.domainName;
-		}
-
-		public void setDomainName(String domainName) {
-			this.domainName = domainName;
-		}
-
 		public Long getRegistrantProfileId() {
 			return this.registrantProfileId;
 		}
 
 		public void setRegistrantProfileId(Long registrantProfileId) {
 			this.registrantProfileId = registrantProfileId;
+		}
+
+		public String getDomainName() {
+			return this.domainName;
+		}
+
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
 		}
 
 		public String getRegistrantType() {
@@ -272,20 +274,20 @@ public class SaveBatchTaskForCreatingOrderActivateRequest extends RpcAcsRequest<
 			this.registrantType = registrantType;
 		}
 
-		public String getTelephone() {
-			return this.telephone;
-		}
-
-		public void setTelephone(String telephone) {
-			this.telephone = telephone;
-		}
-
 		public Boolean getTrademarkDomainActivation() {
 			return this.trademarkDomainActivation;
 		}
 
 		public void setTrademarkDomainActivation(Boolean trademarkDomainActivation) {
 			this.trademarkDomainActivation = trademarkDomainActivation;
+		}
+
+		public String getTelephone() {
+			return this.telephone;
+		}
+
+		public void setTelephone(String telephone) {
+			this.telephone = telephone;
 		}
 
 		public Boolean getAliyunDns() {

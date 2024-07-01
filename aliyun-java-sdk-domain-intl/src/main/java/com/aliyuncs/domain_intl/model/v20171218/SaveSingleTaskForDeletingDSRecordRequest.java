@@ -15,16 +15,14 @@
 package com.aliyuncs.domain_intl.model.v20171218;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class SaveSingleTaskForDeletingDSRecordRequest extends RpcAcsRequest<SaveSingleTaskForDeletingDSRecordResponse> {
-	
-	public SaveSingleTaskForDeletingDSRecordRequest() {
-		super("Domain-intl", "2017-12-18", "SaveSingleTaskForDeletingDSRecord", "domain");
-	}
+	   
 
 	private Integer keyTag;
 
@@ -33,6 +31,10 @@ public class SaveSingleTaskForDeletingDSRecordRequest extends RpcAcsRequest<Save
 	private String userClientIp;
 
 	private String lang;
+	public SaveSingleTaskForDeletingDSRecordRequest() {
+		super("Domain-intl", "2017-12-18", "SaveSingleTaskForDeletingDSRecord");
+		setMethod(MethodType.POST);
+	}
 
 	public Integer getKeyTag() {
 		return this.keyTag;

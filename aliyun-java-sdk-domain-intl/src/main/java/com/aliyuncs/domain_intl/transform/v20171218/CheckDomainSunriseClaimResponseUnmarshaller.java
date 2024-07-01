@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CheckDomainSunriseClaimResponseUnmarshaller {
 
-	public static CheckDomainSunriseClaimResponse unmarshall(CheckDomainSunriseClaimResponse checkDomainSunriseClaimResponse, UnmarshallerContext context) {
+	public static CheckDomainSunriseClaimResponse unmarshall(CheckDomainSunriseClaimResponse checkDomainSunriseClaimResponse, UnmarshallerContext _ctx) {
 		
-		checkDomainSunriseClaimResponse.setRequestId(context.stringValue("CheckDomainSunriseClaimResponse.RequestId"));
-		checkDomainSunriseClaimResponse.setResult(context.integerValue("CheckDomainSunriseClaimResponse.Result"));
-		checkDomainSunriseClaimResponse.setClaimKey(context.stringValue("CheckDomainSunriseClaimResponse.ClaimKey"));
+		checkDomainSunriseClaimResponse.setRequestId(_ctx.stringValue("CheckDomainSunriseClaimResponse.RequestId"));
+		checkDomainSunriseClaimResponse.setClaimKey(_ctx.stringValue("CheckDomainSunriseClaimResponse.ClaimKey"));
+		checkDomainSunriseClaimResponse.setResult(_ctx.integerValue("CheckDomainSunriseClaimResponse.Result"));
 	 
 	 	return checkDomainSunriseClaimResponse;
 	}

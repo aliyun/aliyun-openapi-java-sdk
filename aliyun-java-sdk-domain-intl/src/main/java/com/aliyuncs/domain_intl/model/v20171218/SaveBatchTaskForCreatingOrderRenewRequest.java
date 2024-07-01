@@ -16,16 +16,18 @@ package com.aliyuncs.domain_intl.model.v20171218;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class SaveBatchTaskForCreatingOrderRenewRequest extends RpcAcsRequest<SaveBatchTaskForCreatingOrderRenewResponse> {
-	
-	public SaveBatchTaskForCreatingOrderRenewRequest() {
-		super("Domain-intl", "2017-12-18", "SaveBatchTaskForCreatingOrderRenew", "domain");
-	}
+	   
+
+	private String couponNo;
+
+	private Boolean useCoupon;
 
 	private String promotionNo;
 
@@ -33,13 +35,35 @@ public class SaveBatchTaskForCreatingOrderRenewRequest extends RpcAcsRequest<Sav
 
 	private List<OrderRenewParam> orderRenewParams;
 
-	private String couponNo;
-
-	private Boolean useCoupon;
-
 	private String lang;
 
 	private Boolean usePromotion;
+	public SaveBatchTaskForCreatingOrderRenewRequest() {
+		super("Domain-intl", "2017-12-18", "SaveBatchTaskForCreatingOrderRenew");
+		setMethod(MethodType.POST);
+	}
+
+	public String getCouponNo() {
+		return this.couponNo;
+	}
+
+	public void setCouponNo(String couponNo) {
+		this.couponNo = couponNo;
+		if(couponNo != null){
+			putQueryParameter("CouponNo", couponNo);
+		}
+	}
+
+	public Boolean getUseCoupon() {
+		return this.useCoupon;
+	}
+
+	public void setUseCoupon(Boolean useCoupon) {
+		this.useCoupon = useCoupon;
+		if(useCoupon != null){
+			putQueryParameter("UseCoupon", useCoupon.toString());
+		}
+	}
 
 	public String getPromotionNo() {
 		return this.promotionNo;
@@ -76,28 +100,6 @@ public class SaveBatchTaskForCreatingOrderRenewRequest extends RpcAcsRequest<Sav
 				putQueryParameter("OrderRenewParam." + (depth1 + 1) + ".DomainName" , orderRenewParams.get(depth1).getDomainName());
 			}
 		}	
-	}
-
-	public String getCouponNo() {
-		return this.couponNo;
-	}
-
-	public void setCouponNo(String couponNo) {
-		this.couponNo = couponNo;
-		if(couponNo != null){
-			putQueryParameter("CouponNo", couponNo);
-		}
-	}
-
-	public Boolean getUseCoupon() {
-		return this.useCoupon;
-	}
-
-	public void setUseCoupon(Boolean useCoupon) {
-		this.useCoupon = useCoupon;
-		if(useCoupon != null){
-			putQueryParameter("UseCoupon", useCoupon.toString());
-		}
 	}
 
 	public String getLang() {

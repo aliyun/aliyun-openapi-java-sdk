@@ -15,34 +15,25 @@
 package com.aliyuncs.domain_intl.model.v20171218;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class TransferInReenterTransferAuthorizationCodeRequest extends RpcAcsRequest<TransferInReenterTransferAuthorizationCodeResponse> {
-	
-	public TransferInReenterTransferAuthorizationCodeRequest() {
-		super("Domain-intl", "2017-12-18", "TransferInReenterTransferAuthorizationCode", "domain");
-	}
-
-	private String transferAuthorizationCode;
+	   
 
 	private String domainName;
+
+	private String transferAuthorizationCode;
 
 	private String userClientIp;
 
 	private String lang;
-
-	public String getTransferAuthorizationCode() {
-		return this.transferAuthorizationCode;
-	}
-
-	public void setTransferAuthorizationCode(String transferAuthorizationCode) {
-		this.transferAuthorizationCode = transferAuthorizationCode;
-		if(transferAuthorizationCode != null){
-			putQueryParameter("TransferAuthorizationCode", transferAuthorizationCode);
-		}
+	public TransferInReenterTransferAuthorizationCodeRequest() {
+		super("Domain-intl", "2017-12-18", "TransferInReenterTransferAuthorizationCode");
+		setMethod(MethodType.POST);
 	}
 
 	public String getDomainName() {
@@ -53,6 +44,17 @@ public class TransferInReenterTransferAuthorizationCodeRequest extends RpcAcsReq
 		this.domainName = domainName;
 		if(domainName != null){
 			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public String getTransferAuthorizationCode() {
+		return this.transferAuthorizationCode;
+	}
+
+	public void setTransferAuthorizationCode(String transferAuthorizationCode) {
+		this.transferAuthorizationCode = transferAuthorizationCode;
+		if(transferAuthorizationCode != null){
+			putQueryParameter("TransferAuthorizationCode", transferAuthorizationCode);
 		}
 	}
 

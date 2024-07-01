@@ -23,19 +23,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class TransferInCheckMailTokenResponseUnmarshaller {
 
-	public static TransferInCheckMailTokenResponse unmarshall(TransferInCheckMailTokenResponse transferInCheckMailTokenResponse, UnmarshallerContext context) {
+	public static TransferInCheckMailTokenResponse unmarshall(TransferInCheckMailTokenResponse transferInCheckMailTokenResponse, UnmarshallerContext _ctx) {
 		
-		transferInCheckMailTokenResponse.setRequestId(context.stringValue("TransferInCheckMailTokenResponse.RequestId"));
+		transferInCheckMailTokenResponse.setRequestId(_ctx.stringValue("TransferInCheckMailTokenResponse.RequestId"));
 
 		List<String> successList = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("TransferInCheckMailTokenResponse.SuccessList.Length"); i++) {
-			successList.add(context.stringValue("TransferInCheckMailTokenResponse.SuccessList["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("TransferInCheckMailTokenResponse.SuccessList.Length"); i++) {
+			successList.add(_ctx.stringValue("TransferInCheckMailTokenResponse.SuccessList["+ i +"]"));
 		}
 		transferInCheckMailTokenResponse.setSuccessList(successList);
 
 		List<String> failList = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("TransferInCheckMailTokenResponse.FailList.Length"); i++) {
-			failList.add(context.stringValue("TransferInCheckMailTokenResponse.FailList["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("TransferInCheckMailTokenResponse.FailList.Length"); i++) {
+			failList.add(_ctx.stringValue("TransferInCheckMailTokenResponse.FailList["+ i +"]"));
 		}
 		transferInCheckMailTokenResponse.setFailList(failList);
 	 

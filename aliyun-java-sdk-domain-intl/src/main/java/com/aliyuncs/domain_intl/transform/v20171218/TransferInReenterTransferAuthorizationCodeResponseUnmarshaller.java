@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class TransferInReenterTransferAuthorizationCodeResponseUnmarshaller {
 
-	public static TransferInReenterTransferAuthorizationCodeResponse unmarshall(TransferInReenterTransferAuthorizationCodeResponse transferInReenterTransferAuthorizationCodeResponse, UnmarshallerContext context) {
+	public static TransferInReenterTransferAuthorizationCodeResponse unmarshall(TransferInReenterTransferAuthorizationCodeResponse transferInReenterTransferAuthorizationCodeResponse, UnmarshallerContext _ctx) {
 		
-		transferInReenterTransferAuthorizationCodeResponse.setRequestId(context.stringValue("TransferInReenterTransferAuthorizationCodeResponse.RequestId"));
+		transferInReenterTransferAuthorizationCodeResponse.setRequestId(_ctx.stringValue("TransferInReenterTransferAuthorizationCodeResponse.RequestId"));
 	 
 	 	return transferInReenterTransferAuthorizationCodeResponse;
 	}

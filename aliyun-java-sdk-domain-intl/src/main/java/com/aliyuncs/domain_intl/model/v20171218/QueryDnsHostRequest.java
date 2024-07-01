@@ -15,22 +15,24 @@
 package com.aliyuncs.domain_intl.model.v20171218;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class QueryDnsHostRequest extends RpcAcsRequest<QueryDnsHostResponse> {
-	
-	public QueryDnsHostRequest() {
-		super("Domain-intl", "2017-12-18", "QueryDnsHost", "domain");
-	}
+	   
 
 	private String instanceId;
 
 	private String userClientIp;
 
 	private String lang;
+	public QueryDnsHostRequest() {
+		super("Domain-intl", "2017-12-18", "QueryDnsHost");
+		setMethod(MethodType.POST);
+	}
 
 	public String getInstanceId() {
 		return this.instanceId;

@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SaveSingleTaskForDeletingDnsHostResponseUnmarshaller {
 
-	public static SaveSingleTaskForDeletingDnsHostResponse unmarshall(SaveSingleTaskForDeletingDnsHostResponse saveSingleTaskForDeletingDnsHostResponse, UnmarshallerContext context) {
+	public static SaveSingleTaskForDeletingDnsHostResponse unmarshall(SaveSingleTaskForDeletingDnsHostResponse saveSingleTaskForDeletingDnsHostResponse, UnmarshallerContext _ctx) {
 		
-		saveSingleTaskForDeletingDnsHostResponse.setRequestId(context.stringValue("SaveSingleTaskForDeletingDnsHostResponse.RequestId"));
-		saveSingleTaskForDeletingDnsHostResponse.setTaskNo(context.stringValue("SaveSingleTaskForDeletingDnsHostResponse.TaskNo"));
+		saveSingleTaskForDeletingDnsHostResponse.setRequestId(_ctx.stringValue("SaveSingleTaskForDeletingDnsHostResponse.RequestId"));
+		saveSingleTaskForDeletingDnsHostResponse.setTaskNo(_ctx.stringValue("SaveSingleTaskForDeletingDnsHostResponse.TaskNo"));
 	 
 	 	return saveSingleTaskForDeletingDnsHostResponse;
 	}

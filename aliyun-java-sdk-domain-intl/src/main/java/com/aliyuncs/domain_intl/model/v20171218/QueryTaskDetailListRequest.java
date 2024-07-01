@@ -15,16 +15,18 @@
 package com.aliyuncs.domain_intl.model.v20171218;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class QueryTaskDetailListRequest extends RpcAcsRequest<QueryTaskDetailListResponse> {
-	
-	public QueryTaskDetailListRequest() {
-		super("Domain-intl", "2017-12-18", "QueryTaskDetailList", "domain");
-	}
+	   
+
+	private String domainName;
+
+	private Integer pageNum;
 
 	private Integer taskStatus;
 
@@ -34,13 +36,35 @@ public class QueryTaskDetailListRequest extends RpcAcsRequest<QueryTaskDetailLis
 
 	private String taskNo;
 
-	private String domainName;
-
 	private Integer pageSize;
 
 	private String lang;
+	public QueryTaskDetailListRequest() {
+		super("Domain-intl", "2017-12-18", "QueryTaskDetailList");
+		setMethod(MethodType.POST);
+	}
 
-	private Integer pageNum;
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public Integer getPageNum() {
+		return this.pageNum;
+	}
+
+	public void setPageNum(Integer pageNum) {
+		this.pageNum = pageNum;
+		if(pageNum != null){
+			putQueryParameter("PageNum", pageNum.toString());
+		}
+	}
 
 	public Integer getTaskStatus() {
 		return this.taskStatus;
@@ -86,17 +110,6 @@ public class QueryTaskDetailListRequest extends RpcAcsRequest<QueryTaskDetailLis
 		}
 	}
 
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
-		}
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -116,17 +129,6 @@ public class QueryTaskDetailListRequest extends RpcAcsRequest<QueryTaskDetailLis
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
-		}
-	}
-
-	public Integer getPageNum() {
-		return this.pageNum;
-	}
-
-	public void setPageNum(Integer pageNum) {
-		this.pageNum = pageNum;
-		if(pageNum != null){
-			putQueryParameter("PageNum", pageNum.toString());
 		}
 	}
 

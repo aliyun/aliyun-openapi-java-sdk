@@ -16,36 +16,27 @@ package com.aliyuncs.domain_intl.model.v20171218;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class SaveSingleTaskForModifyingDnsHostRequest extends RpcAcsRequest<SaveSingleTaskForModifyingDnsHostResponse> {
-	
-	public SaveSingleTaskForModifyingDnsHostRequest() {
-		super("Domain-intl", "2017-12-18", "SaveSingleTaskForModifyingDnsHost", "domain");
-	}
-
-	private String instanceId;
+	   
 
 	private List<String> ips;
+
+	private String instanceId;
 
 	private String dnsName;
 
 	private String userClientIp;
 
 	private String lang;
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
+	public SaveSingleTaskForModifyingDnsHostRequest() {
+		super("Domain-intl", "2017-12-18", "SaveSingleTaskForModifyingDnsHost");
+		setMethod(MethodType.POST);
 	}
 
 	public List<String> getIps() {
@@ -59,6 +50,17 @@ public class SaveSingleTaskForModifyingDnsHostRequest extends RpcAcsRequest<Save
 				putQueryParameter("Ip." + (i + 1) , ips.get(i));
 			}
 		}	
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
 	}
 
 	public String getDnsName() {

@@ -15,22 +15,24 @@
 package com.aliyuncs.domain_intl.model.v20171218;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class EmailVerifiedRequest extends RpcAcsRequest<EmailVerifiedResponse> {
-	
-	public EmailVerifiedRequest() {
-		super("Domain-intl", "2017-12-18", "EmailVerified", "domain");
-	}
+	   
 
 	private String userClientIp;
 
 	private String lang;
 
 	private String email;
+	public EmailVerifiedRequest() {
+		super("Domain-intl", "2017-12-18", "EmailVerified");
+		setMethod(MethodType.POST);
+	}
 
 	public String getUserClientIp() {
 		return this.userClientIp;

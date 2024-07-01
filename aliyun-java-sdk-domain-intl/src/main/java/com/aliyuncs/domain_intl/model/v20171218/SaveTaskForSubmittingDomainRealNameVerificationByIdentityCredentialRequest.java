@@ -23,23 +23,23 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialRequest extends RpcAcsRequest<SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialResponse> {
-	
-	public SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialRequest() {
-		super("Domain-intl", "2017-12-18", "SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredential", "domain");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String identityCredentialType;
-
-	private String userClientIp;
 
 	private String identityCredential;
 
 	private List<String> domainNames;
 
+	private String userClientIp;
+
 	private String lang;
 
 	private String identityCredentialNo;
+	public SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialRequest() {
+		super("Domain-intl", "2017-12-18", "SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredential");
+		setMethod(MethodType.POST);
+	}
 
 	public String getIdentityCredentialType() {
 		return this.identityCredentialType;
@@ -49,17 +49,6 @@ public class SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredential
 		this.identityCredentialType = identityCredentialType;
 		if(identityCredentialType != null){
 			putQueryParameter("IdentityCredentialType", identityCredentialType);
-		}
-	}
-
-	public String getUserClientIp() {
-		return this.userClientIp;
-	}
-
-	public void setUserClientIp(String userClientIp) {
-		this.userClientIp = userClientIp;
-		if(userClientIp != null){
-			putQueryParameter("UserClientIp", userClientIp);
 		}
 	}
 
@@ -85,6 +74,17 @@ public class SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredential
 				putQueryParameter("DomainName." + (i + 1) , domainNames.get(i));
 			}
 		}	
+	}
+
+	public String getUserClientIp() {
+		return this.userClientIp;
+	}
+
+	public void setUserClientIp(String userClientIp) {
+		this.userClientIp = userClientIp;
+		if(userClientIp != null){
+			putQueryParameter("UserClientIp", userClientIp);
+		}
 	}
 
 	public String getLang() {

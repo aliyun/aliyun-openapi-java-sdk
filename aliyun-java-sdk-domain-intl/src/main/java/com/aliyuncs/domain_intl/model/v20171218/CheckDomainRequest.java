@@ -15,28 +15,41 @@
 package com.aliyuncs.domain_intl.model.v20171218;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class CheckDomainRequest extends RpcAcsRequest<CheckDomainResponse> {
-	
-	public CheckDomainRequest() {
-		super("Domain-intl", "2017-12-18", "CheckDomain", "domain");
-	}
+	   
+
+	private String domainName;
 
 	private String feeCurrency;
 
 	private Integer feePeriod;
-
-	private String domainName;
 
 	private String userClientIp;
 
 	private String feeCommand;
 
 	private String lang;
+	public CheckDomainRequest() {
+		super("Domain-intl", "2017-12-18", "CheckDomain");
+		setMethod(MethodType.POST);
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
 
 	public String getFeeCurrency() {
 		return this.feeCurrency;
@@ -57,17 +70,6 @@ public class CheckDomainRequest extends RpcAcsRequest<CheckDomainResponse> {
 		this.feePeriod = feePeriod;
 		if(feePeriod != null){
 			putQueryParameter("FeePeriod", feePeriod.toString());
-		}
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
 		}
 	}
 

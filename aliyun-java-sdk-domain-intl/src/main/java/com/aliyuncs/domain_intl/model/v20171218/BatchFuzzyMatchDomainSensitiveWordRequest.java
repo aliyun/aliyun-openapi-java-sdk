@@ -15,22 +15,24 @@
 package com.aliyuncs.domain_intl.model.v20171218;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class BatchFuzzyMatchDomainSensitiveWordRequest extends RpcAcsRequest<BatchFuzzyMatchDomainSensitiveWordResponse> {
-	
-	public BatchFuzzyMatchDomainSensitiveWordRequest() {
-		super("Domain-intl", "2017-12-18", "BatchFuzzyMatchDomainSensitiveWord", "domain");
-	}
+	   
 
 	private String userClientIp;
 
 	private String keyword;
 
 	private String lang;
+	public BatchFuzzyMatchDomainSensitiveWordRequest() {
+		super("Domain-intl", "2017-12-18", "BatchFuzzyMatchDomainSensitiveWord");
+		setMethod(MethodType.POST);
+	}
 
 	public String getUserClientIp() {
 		return this.userClientIp;

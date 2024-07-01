@@ -24,15 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryFailReasonForRegistrantProfileRealNameVerificationResponseUnmarshaller {
 
-	public static QueryFailReasonForRegistrantProfileRealNameVerificationResponse unmarshall(QueryFailReasonForRegistrantProfileRealNameVerificationResponse queryFailReasonForRegistrantProfileRealNameVerificationResponse, UnmarshallerContext context) {
+	public static QueryFailReasonForRegistrantProfileRealNameVerificationResponse unmarshall(QueryFailReasonForRegistrantProfileRealNameVerificationResponse queryFailReasonForRegistrantProfileRealNameVerificationResponse, UnmarshallerContext _ctx) {
 		
-		queryFailReasonForRegistrantProfileRealNameVerificationResponse.setRequestId(context.stringValue("QueryFailReasonForRegistrantProfileRealNameVerificationResponse.RequestId"));
+		queryFailReasonForRegistrantProfileRealNameVerificationResponse.setRequestId(_ctx.stringValue("QueryFailReasonForRegistrantProfileRealNameVerificationResponse.RequestId"));
 
 		List<FailRecord> data = new ArrayList<FailRecord>();
-		for (int i = 0; i < context.lengthValue("QueryFailReasonForRegistrantProfileRealNameVerificationResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryFailReasonForRegistrantProfileRealNameVerificationResponse.Data.Length"); i++) {
 			FailRecord failRecord = new FailRecord();
-			failRecord.setDate(context.stringValue("QueryFailReasonForRegistrantProfileRealNameVerificationResponse.Data["+ i +"].Date"));
-			failRecord.setFailReason(context.stringValue("QueryFailReasonForRegistrantProfileRealNameVerificationResponse.Data["+ i +"].FailReason"));
+			failRecord.setDate(_ctx.stringValue("QueryFailReasonForRegistrantProfileRealNameVerificationResponse.Data["+ i +"].Date"));
+			failRecord.setFailReason(_ctx.stringValue("QueryFailReasonForRegistrantProfileRealNameVerificationResponse.Data["+ i +"].FailReason"));
 
 			data.add(failRecord);
 		}

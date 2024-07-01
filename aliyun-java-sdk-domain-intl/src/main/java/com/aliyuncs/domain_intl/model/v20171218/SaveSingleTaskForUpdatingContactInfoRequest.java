@@ -15,22 +15,16 @@
 package com.aliyuncs.domain_intl.model.v20171218;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class SaveSingleTaskForUpdatingContactInfoRequest extends RpcAcsRequest<SaveSingleTaskForUpdatingContactInfoResponse> {
-	
-	public SaveSingleTaskForUpdatingContactInfoRequest() {
-		super("Domain-intl", "2017-12-18", "SaveSingleTaskForUpdatingContactInfo", "domain");
-	}
-
-	private String instanceId;
+	   
 
 	private String contactType;
-
-	private String userClientIp;
 
 	private String domainName;
 
@@ -38,17 +32,14 @@ public class SaveSingleTaskForUpdatingContactInfoRequest extends RpcAcsRequest<S
 
 	private Boolean addTransferLock;
 
+	private String instanceId;
+
+	private String userClientIp;
+
 	private String lang;
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
+	public SaveSingleTaskForUpdatingContactInfoRequest() {
+		super("Domain-intl", "2017-12-18", "SaveSingleTaskForUpdatingContactInfo");
+		setMethod(MethodType.POST);
 	}
 
 	public String getContactType() {
@@ -59,17 +50,6 @@ public class SaveSingleTaskForUpdatingContactInfoRequest extends RpcAcsRequest<S
 		this.contactType = contactType;
 		if(contactType != null){
 			putQueryParameter("ContactType", contactType);
-		}
-	}
-
-	public String getUserClientIp() {
-		return this.userClientIp;
-	}
-
-	public void setUserClientIp(String userClientIp) {
-		this.userClientIp = userClientIp;
-		if(userClientIp != null){
-			putQueryParameter("UserClientIp", userClientIp);
 		}
 	}
 
@@ -103,6 +83,28 @@ public class SaveSingleTaskForUpdatingContactInfoRequest extends RpcAcsRequest<S
 		this.addTransferLock = addTransferLock;
 		if(addTransferLock != null){
 			putQueryParameter("AddTransferLock", addTransferLock.toString());
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getUserClientIp() {
+		return this.userClientIp;
+	}
+
+	public void setUserClientIp(String userClientIp) {
+		this.userClientIp = userClientIp;
+		if(userClientIp != null){
+			putQueryParameter("UserClientIp", userClientIp);
 		}
 	}
 

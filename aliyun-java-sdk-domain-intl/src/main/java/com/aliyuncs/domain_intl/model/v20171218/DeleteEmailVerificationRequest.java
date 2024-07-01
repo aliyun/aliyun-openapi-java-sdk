@@ -15,22 +15,24 @@
 package com.aliyuncs.domain_intl.model.v20171218;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DeleteEmailVerificationRequest extends RpcAcsRequest<DeleteEmailVerificationResponse> {
-	
-	public DeleteEmailVerificationRequest() {
-		super("Domain-intl", "2017-12-18", "DeleteEmailVerification", "domain");
-	}
+	   
 
 	private String userClientIp;
 
 	private String lang;
 
 	private String email;
+	public DeleteEmailVerificationRequest() {
+		super("Domain-intl", "2017-12-18", "DeleteEmailVerification");
+		setMethod(MethodType.POST);
+	}
 
 	public String getUserClientIp() {
 		return this.userClientIp;

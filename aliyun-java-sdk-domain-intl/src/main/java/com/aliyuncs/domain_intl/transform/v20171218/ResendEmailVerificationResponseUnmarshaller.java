@@ -24,29 +24,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ResendEmailVerificationResponseUnmarshaller {
 
-	public static ResendEmailVerificationResponse unmarshall(ResendEmailVerificationResponse resendEmailVerificationResponse, UnmarshallerContext context) {
+	public static ResendEmailVerificationResponse unmarshall(ResendEmailVerificationResponse resendEmailVerificationResponse, UnmarshallerContext _ctx) {
 		
-		resendEmailVerificationResponse.setRequestId(context.stringValue("ResendEmailVerificationResponse.RequestId"));
+		resendEmailVerificationResponse.setRequestId(_ctx.stringValue("ResendEmailVerificationResponse.RequestId"));
 
 		List<SendResult> successList = new ArrayList<SendResult>();
-		for (int i = 0; i < context.lengthValue("ResendEmailVerificationResponse.SuccessList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ResendEmailVerificationResponse.SuccessList.Length"); i++) {
 			SendResult sendResult = new SendResult();
-			sendResult.setEmail(context.stringValue("ResendEmailVerificationResponse.SuccessList["+ i +"].Email"));
-			sendResult.setCode(context.stringValue("ResendEmailVerificationResponse.SuccessList["+ i +"].Code"));
-			sendResult.setMessage(context.stringValue("ResendEmailVerificationResponse.SuccessList["+ i +"].Message"));
+			sendResult.setEmail(_ctx.stringValue("ResendEmailVerificationResponse.SuccessList["+ i +"].Email"));
+			sendResult.setCode(_ctx.stringValue("ResendEmailVerificationResponse.SuccessList["+ i +"].Code"));
+			sendResult.setMessage(_ctx.stringValue("ResendEmailVerificationResponse.SuccessList["+ i +"].Message"));
 
 			successList.add(sendResult);
 		}
 		resendEmailVerificationResponse.setSuccessList(successList);
 
 		List<SendResult> failList = new ArrayList<SendResult>();
-		for (int i = 0; i < context.lengthValue("ResendEmailVerificationResponse.FailList.Length"); i++) {
-			SendResult sendResult = new SendResult();
-			sendResult.setEmail(context.stringValue("ResendEmailVerificationResponse.FailList["+ i +"].Email"));
-			sendResult.setCode(context.stringValue("ResendEmailVerificationResponse.FailList["+ i +"].Code"));
-			sendResult.setMessage(context.stringValue("ResendEmailVerificationResponse.FailList["+ i +"].Message"));
+		for (int i = 0; i < _ctx.lengthValue("ResendEmailVerificationResponse.FailList.Length"); i++) {
+			SendResult sendResult1 = new SendResult();
+			sendResult1.setEmail(_ctx.stringValue("ResendEmailVerificationResponse.FailList["+ i +"].Email"));
+			sendResult1.setCode(_ctx.stringValue("ResendEmailVerificationResponse.FailList["+ i +"].Code"));
+			sendResult1.setMessage(_ctx.stringValue("ResendEmailVerificationResponse.FailList["+ i +"].Message"));
 
-			failList.add(sendResult);
+			failList.add(sendResult1);
 		}
 		resendEmailVerificationResponse.setFailList(failList);
 	 

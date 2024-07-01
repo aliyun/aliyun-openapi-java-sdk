@@ -15,24 +15,26 @@
 package com.aliyuncs.domain_intl.model.v20171218;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class QueryContactInfoRequest extends RpcAcsRequest<QueryContactInfoResponse> {
-	
-	public QueryContactInfoRequest() {
-		super("Domain-intl", "2017-12-18", "QueryContactInfo", "domain");
-	}
+	   
 
 	private String contactType;
 
-	private String userClientIp;
-
 	private String domainName;
 
+	private String userClientIp;
+
 	private String lang;
+	public QueryContactInfoRequest() {
+		super("Domain-intl", "2017-12-18", "QueryContactInfo");
+		setMethod(MethodType.POST);
+	}
 
 	public String getContactType() {
 		return this.contactType;
@@ -45,17 +47,6 @@ public class QueryContactInfoRequest extends RpcAcsRequest<QueryContactInfoRespo
 		}
 	}
 
-	public String getUserClientIp() {
-		return this.userClientIp;
-	}
-
-	public void setUserClientIp(String userClientIp) {
-		this.userClientIp = userClientIp;
-		if(userClientIp != null){
-			putQueryParameter("UserClientIp", userClientIp);
-		}
-	}
-
 	public String getDomainName() {
 		return this.domainName;
 	}
@@ -64,6 +55,17 @@ public class QueryContactInfoRequest extends RpcAcsRequest<QueryContactInfoRespo
 		this.domainName = domainName;
 		if(domainName != null){
 			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public String getUserClientIp() {
+		return this.userClientIp;
+	}
+
+	public void setUserClientIp(String userClientIp) {
+		this.userClientIp = userClientIp;
+		if(userClientIp != null){
+			putQueryParameter("UserClientIp", userClientIp);
 		}
 	}
 

@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class VerifyContactFieldResponseUnmarshaller {
 
-	public static VerifyContactFieldResponse unmarshall(VerifyContactFieldResponse verifyContactFieldResponse, UnmarshallerContext context) {
+	public static VerifyContactFieldResponse unmarshall(VerifyContactFieldResponse verifyContactFieldResponse, UnmarshallerContext _ctx) {
 		
-		verifyContactFieldResponse.setRequestId(context.stringValue("VerifyContactFieldResponse.RequestId"));
+		verifyContactFieldResponse.setRequestId(_ctx.stringValue("VerifyContactFieldResponse.RequestId"));
 	 
 	 	return verifyContactFieldResponse;
 	}

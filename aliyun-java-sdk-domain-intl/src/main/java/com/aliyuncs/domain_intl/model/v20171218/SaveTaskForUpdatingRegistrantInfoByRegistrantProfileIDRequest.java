@@ -16,18 +16,14 @@ package com.aliyuncs.domain_intl.model.v20171218;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest extends RpcAcsRequest<SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDResponse> {
-	
-	public SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest() {
-		super("Domain-intl", "2017-12-18", "SaveTaskForUpdatingRegistrantInfoByRegistrantProfileID", "domain");
-	}
-
-	private String userClientIp;
+	   
 
 	private Long registrantProfileId;
 
@@ -35,17 +31,12 @@ public class SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest exten
 
 	private Boolean transferOutProhibited;
 
+	private String userClientIp;
+
 	private String lang;
-
-	public String getUserClientIp() {
-		return this.userClientIp;
-	}
-
-	public void setUserClientIp(String userClientIp) {
-		this.userClientIp = userClientIp;
-		if(userClientIp != null){
-			putQueryParameter("UserClientIp", userClientIp);
-		}
+	public SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest() {
+		super("Domain-intl", "2017-12-18", "SaveTaskForUpdatingRegistrantInfoByRegistrantProfileID");
+		setMethod(MethodType.POST);
 	}
 
 	public Long getRegistrantProfileId() {
@@ -80,6 +71,17 @@ public class SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest exten
 		this.transferOutProhibited = transferOutProhibited;
 		if(transferOutProhibited != null){
 			putQueryParameter("TransferOutProhibited", transferOutProhibited.toString());
+		}
+	}
+
+	public String getUserClientIp() {
+		return this.userClientIp;
+	}
+
+	public void setUserClientIp(String userClientIp) {
+		this.userClientIp = userClientIp;
+		if(userClientIp != null){
+			putQueryParameter("UserClientIp", userClientIp);
 		}
 	}
 

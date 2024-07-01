@@ -15,16 +15,14 @@
 package com.aliyuncs.domain_intl.model.v20171218;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class CancelDomainVerificationRequest extends RpcAcsRequest<CancelDomainVerificationResponse> {
-	
-	public CancelDomainVerificationRequest() {
-		super("Domain-intl", "2017-12-18", "CancelDomainVerification", "domain");
-	}
+	   
 
 	private String actionType;
 
@@ -33,6 +31,10 @@ public class CancelDomainVerificationRequest extends RpcAcsRequest<CancelDomainV
 	private String userClientIp;
 
 	private String lang;
+	public CancelDomainVerificationRequest() {
+		super("Domain-intl", "2017-12-18", "CancelDomainVerification");
+		setMethod(MethodType.POST);
+	}
 
 	public String getActionType() {
 		return this.actionType;

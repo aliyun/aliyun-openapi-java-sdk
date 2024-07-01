@@ -22,23 +22,23 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class RegistrantProfileRealNameVerificationRequest extends RpcAcsRequest<RegistrantProfileRealNameVerificationResponse> {
-	
-	public RegistrantProfileRealNameVerificationRequest() {
-		super("Domain-intl", "2017-12-18", "RegistrantProfileRealNameVerification", "domain");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String identityCredentialType;
-
-	private String userClientIp;
 
 	private Long registrantProfileID;
 
 	private String identityCredential;
 
+	private String userClientIp;
+
 	private String lang;
 
 	private String identityCredentialNo;
+	public RegistrantProfileRealNameVerificationRequest() {
+		super("Domain-intl", "2017-12-18", "RegistrantProfileRealNameVerification");
+		setMethod(MethodType.POST);
+	}
 
 	public String getIdentityCredentialType() {
 		return this.identityCredentialType;
@@ -48,17 +48,6 @@ public class RegistrantProfileRealNameVerificationRequest extends RpcAcsRequest<
 		this.identityCredentialType = identityCredentialType;
 		if(identityCredentialType != null){
 			putQueryParameter("IdentityCredentialType", identityCredentialType);
-		}
-	}
-
-	public String getUserClientIp() {
-		return this.userClientIp;
-	}
-
-	public void setUserClientIp(String userClientIp) {
-		this.userClientIp = userClientIp;
-		if(userClientIp != null){
-			putQueryParameter("UserClientIp", userClientIp);
 		}
 	}
 
@@ -81,6 +70,17 @@ public class RegistrantProfileRealNameVerificationRequest extends RpcAcsRequest<
 		this.identityCredential = identityCredential;
 		if(identityCredential != null){
 			putBodyParameter("IdentityCredential", identityCredential);
+		}
+	}
+
+	public String getUserClientIp() {
+		return this.userClientIp;
+	}
+
+	public void setUserClientIp(String userClientIp) {
+		this.userClientIp = userClientIp;
+		if(userClientIp != null){
+			putQueryParameter("UserClientIp", userClientIp);
 		}
 	}
 

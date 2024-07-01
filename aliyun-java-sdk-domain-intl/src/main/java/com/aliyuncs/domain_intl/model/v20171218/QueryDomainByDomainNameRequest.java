@@ -15,32 +15,23 @@
 package com.aliyuncs.domain_intl.model.v20171218;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class QueryDomainByDomainNameRequest extends RpcAcsRequest<QueryDomainByDomainNameResponse> {
-	
-	public QueryDomainByDomainNameRequest() {
-		super("Domain-intl", "2017-12-18", "QueryDomainByDomainName", "domain");
-	}
-
-	private String userClientIp;
+	   
 
 	private String domainName;
 
+	private String userClientIp;
+
 	private String lang;
-
-	public String getUserClientIp() {
-		return this.userClientIp;
-	}
-
-	public void setUserClientIp(String userClientIp) {
-		this.userClientIp = userClientIp;
-		if(userClientIp != null){
-			putQueryParameter("UserClientIp", userClientIp);
-		}
+	public QueryDomainByDomainNameRequest() {
+		super("Domain-intl", "2017-12-18", "QueryDomainByDomainName");
+		setMethod(MethodType.POST);
 	}
 
 	public String getDomainName() {
@@ -51,6 +42,17 @@ public class QueryDomainByDomainNameRequest extends RpcAcsRequest<QueryDomainByD
 		this.domainName = domainName;
 		if(domainName != null){
 			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public String getUserClientIp() {
+		return this.userClientIp;
+	}
+
+	public void setUserClientIp(String userClientIp) {
+		this.userClientIp = userClientIp;
+		if(userClientIp != null){
+			putQueryParameter("UserClientIp", userClientIp);
 		}
 	}
 

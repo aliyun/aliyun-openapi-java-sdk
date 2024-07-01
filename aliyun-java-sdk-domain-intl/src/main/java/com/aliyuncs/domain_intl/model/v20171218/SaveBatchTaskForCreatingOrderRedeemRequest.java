@@ -16,16 +16,18 @@ package com.aliyuncs.domain_intl.model.v20171218;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class SaveBatchTaskForCreatingOrderRedeemRequest extends RpcAcsRequest<SaveBatchTaskForCreatingOrderRedeemResponse> {
-	
-	public SaveBatchTaskForCreatingOrderRedeemRequest() {
-		super("Domain-intl", "2017-12-18", "SaveBatchTaskForCreatingOrderRedeem", "domain");
-	}
+	   
+
+	private String couponNo;
+
+	private Boolean useCoupon;
 
 	private String promotionNo;
 
@@ -33,13 +35,35 @@ public class SaveBatchTaskForCreatingOrderRedeemRequest extends RpcAcsRequest<Sa
 
 	private String userClientIp;
 
-	private String couponNo;
-
-	private Boolean useCoupon;
-
 	private String lang;
 
 	private Boolean usePromotion;
+	public SaveBatchTaskForCreatingOrderRedeemRequest() {
+		super("Domain-intl", "2017-12-18", "SaveBatchTaskForCreatingOrderRedeem");
+		setMethod(MethodType.POST);
+	}
+
+	public String getCouponNo() {
+		return this.couponNo;
+	}
+
+	public void setCouponNo(String couponNo) {
+		this.couponNo = couponNo;
+		if(couponNo != null){
+			putQueryParameter("CouponNo", couponNo);
+		}
+	}
+
+	public Boolean getUseCoupon() {
+		return this.useCoupon;
+	}
+
+	public void setUseCoupon(Boolean useCoupon) {
+		this.useCoupon = useCoupon;
+		if(useCoupon != null){
+			putQueryParameter("UseCoupon", useCoupon.toString());
+		}
+	}
 
 	public String getPromotionNo() {
 		return this.promotionNo;
@@ -74,28 +98,6 @@ public class SaveBatchTaskForCreatingOrderRedeemRequest extends RpcAcsRequest<Sa
 		this.userClientIp = userClientIp;
 		if(userClientIp != null){
 			putQueryParameter("UserClientIp", userClientIp);
-		}
-	}
-
-	public String getCouponNo() {
-		return this.couponNo;
-	}
-
-	public void setCouponNo(String couponNo) {
-		this.couponNo = couponNo;
-		if(couponNo != null){
-			putQueryParameter("CouponNo", couponNo);
-		}
-	}
-
-	public Boolean getUseCoupon() {
-		return this.useCoupon;
-	}
-
-	public void setUseCoupon(Boolean useCoupon) {
-		this.useCoupon = useCoupon;
-		if(useCoupon != null){
-			putQueryParameter("UseCoupon", useCoupon.toString());
 		}
 	}
 

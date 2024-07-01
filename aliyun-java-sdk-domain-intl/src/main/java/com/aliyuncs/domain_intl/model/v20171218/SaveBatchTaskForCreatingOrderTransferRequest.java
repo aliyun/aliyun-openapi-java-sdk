@@ -16,40 +16,31 @@ package com.aliyuncs.domain_intl.model.v20171218;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class SaveBatchTaskForCreatingOrderTransferRequest extends RpcAcsRequest<SaveBatchTaskForCreatingOrderTransferResponse> {
-	
-	public SaveBatchTaskForCreatingOrderTransferRequest() {
-		super("Domain-intl", "2017-12-18", "SaveBatchTaskForCreatingOrderTransfer", "domain");
-	}
-
-	private String promotionNo;
+	   
 
 	private List<OrderTransferParam> orderTransferParams;
-
-	private String userClientIp;
 
 	private String couponNo;
 
 	private Boolean useCoupon;
 
+	private String promotionNo;
+
+	private String userClientIp;
+
 	private String lang;
 
 	private Boolean usePromotion;
-
-	public String getPromotionNo() {
-		return this.promotionNo;
-	}
-
-	public void setPromotionNo(String promotionNo) {
-		this.promotionNo = promotionNo;
-		if(promotionNo != null){
-			putQueryParameter("PromotionNo", promotionNo);
-		}
+	public SaveBatchTaskForCreatingOrderTransferRequest() {
+		super("Domain-intl", "2017-12-18", "SaveBatchTaskForCreatingOrderTransfer");
+		setMethod(MethodType.POST);
 	}
 
 	public List<OrderTransferParam> getOrderTransferParams() {
@@ -62,21 +53,10 @@ public class SaveBatchTaskForCreatingOrderTransferRequest extends RpcAcsRequest<
 			for (int depth1 = 0; depth1 < orderTransferParams.size(); depth1++) {
 				putQueryParameter("OrderTransferParam." + (depth1 + 1) + ".PermitPremiumTransfer" , orderTransferParams.get(depth1).getPermitPremiumTransfer());
 				putQueryParameter("OrderTransferParam." + (depth1 + 1) + ".AuthorizationCode" , orderTransferParams.get(depth1).getAuthorizationCode());
-				putQueryParameter("OrderTransferParam." + (depth1 + 1) + ".DomainName" , orderTransferParams.get(depth1).getDomainName());
 				putQueryParameter("OrderTransferParam." + (depth1 + 1) + ".RegistrantProfileId" , orderTransferParams.get(depth1).getRegistrantProfileId());
+				putQueryParameter("OrderTransferParam." + (depth1 + 1) + ".DomainName" , orderTransferParams.get(depth1).getDomainName());
 			}
 		}	
-	}
-
-	public String getUserClientIp() {
-		return this.userClientIp;
-	}
-
-	public void setUserClientIp(String userClientIp) {
-		this.userClientIp = userClientIp;
-		if(userClientIp != null){
-			putQueryParameter("UserClientIp", userClientIp);
-		}
 	}
 
 	public String getCouponNo() {
@@ -98,6 +78,28 @@ public class SaveBatchTaskForCreatingOrderTransferRequest extends RpcAcsRequest<
 		this.useCoupon = useCoupon;
 		if(useCoupon != null){
 			putQueryParameter("UseCoupon", useCoupon.toString());
+		}
+	}
+
+	public String getPromotionNo() {
+		return this.promotionNo;
+	}
+
+	public void setPromotionNo(String promotionNo) {
+		this.promotionNo = promotionNo;
+		if(promotionNo != null){
+			putQueryParameter("PromotionNo", promotionNo);
+		}
+	}
+
+	public String getUserClientIp() {
+		return this.userClientIp;
+	}
+
+	public void setUserClientIp(String userClientIp) {
+		this.userClientIp = userClientIp;
+		if(userClientIp != null){
+			putQueryParameter("UserClientIp", userClientIp);
 		}
 	}
 
@@ -129,9 +131,9 @@ public class SaveBatchTaskForCreatingOrderTransferRequest extends RpcAcsRequest<
 
 		private String authorizationCode;
 
-		private String domainName;
-
 		private Long registrantProfileId;
+
+		private String domainName;
 
 		public Boolean getPermitPremiumTransfer() {
 			return this.permitPremiumTransfer;
@@ -149,20 +151,20 @@ public class SaveBatchTaskForCreatingOrderTransferRequest extends RpcAcsRequest<
 			this.authorizationCode = authorizationCode;
 		}
 
-		public String getDomainName() {
-			return this.domainName;
-		}
-
-		public void setDomainName(String domainName) {
-			this.domainName = domainName;
-		}
-
 		public Long getRegistrantProfileId() {
 			return this.registrantProfileId;
 		}
 
 		public void setRegistrantProfileId(Long registrantProfileId) {
 			this.registrantProfileId = registrantProfileId;
+		}
+
+		public String getDomainName() {
+			return this.domainName;
+		}
+
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
 		}
 	}
 

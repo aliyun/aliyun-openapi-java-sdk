@@ -25,9 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryRegistrantProfilesResponse extends AcsResponse {
 
+	private Boolean nextPage;
+
 	private String requestId;
 
 	private Integer totalItemNum;
+
+	private Boolean prePage;
 
 	private Integer currentPageNum;
 
@@ -35,11 +39,15 @@ public class QueryRegistrantProfilesResponse extends AcsResponse {
 
 	private Integer pageSize;
 
-	private Boolean prePage;
-
-	private Boolean nextPage;
-
 	private List<RegistrantProfile> registrantProfiles;
+
+	public Boolean getNextPage() {
+		return this.nextPage;
+	}
+
+	public void setNextPage(Boolean nextPage) {
+		this.nextPage = nextPage;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -55,6 +63,14 @@ public class QueryRegistrantProfilesResponse extends AcsResponse {
 
 	public void setTotalItemNum(Integer totalItemNum) {
 		this.totalItemNum = totalItemNum;
+	}
+
+	public Boolean getPrePage() {
+		return this.prePage;
+	}
+
+	public void setPrePage(Boolean prePage) {
+		this.prePage = prePage;
 	}
 
 	public Integer getCurrentPageNum() {
@@ -81,22 +97,6 @@ public class QueryRegistrantProfilesResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Boolean getPrePage() {
-		return this.prePage;
-	}
-
-	public void setPrePage(Boolean prePage) {
-		this.prePage = prePage;
-	}
-
-	public Boolean getNextPage() {
-		return this.nextPage;
-	}
-
-	public void setNextPage(Boolean nextPage) {
-		this.nextPage = nextPage;
-	}
-
 	public List<RegistrantProfile> getRegistrantProfiles() {
 		return this.registrantProfiles;
 	}
@@ -107,131 +107,43 @@ public class QueryRegistrantProfilesResponse extends AcsResponse {
 
 	public static class RegistrantProfile {
 
-		private Long registrantProfileId;
-
-		private String createTime;
-
-		private String updateTime;
-
-		private Boolean defaultRegistrantProfile;
-
-		private String registrantName;
-
-		private String registrantOrganization;
-
-		private String country;
-
-		private String province;
-
-		private String city;
-
-		private String address;
-
-		private String email;
-
 		private String postalCode;
-
-		private String telArea;
-
-		private String telephone;
 
 		private String telExt;
 
-		private Integer emailVerificationStatus;
-
-		private String registrantType;
-
-		private String realNameStatus;
+		private String updateTime;
 
 		private String registrantProfileType;
 
-		public Long getRegistrantProfileId() {
-			return this.registrantProfileId;
-		}
+		private Long registrantProfileId;
 
-		public void setRegistrantProfileId(Long registrantProfileId) {
-			this.registrantProfileId = registrantProfileId;
-		}
+		private String telephone;
 
-		public String getCreateTime() {
-			return this.createTime;
-		}
+		private String createTime;
 
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
+		private Boolean defaultRegistrantProfile;
 
-		public String getUpdateTime() {
-			return this.updateTime;
-		}
+		private String registrantOrganization;
 
-		public void setUpdateTime(String updateTime) {
-			this.updateTime = updateTime;
-		}
+		private String city;
 
-		public Boolean getDefaultRegistrantProfile() {
-			return this.defaultRegistrantProfile;
-		}
+		private String email;
 
-		public void setDefaultRegistrantProfile(Boolean defaultRegistrantProfile) {
-			this.defaultRegistrantProfile = defaultRegistrantProfile;
-		}
+		private String registrantType;
 
-		public String getRegistrantName() {
-			return this.registrantName;
-		}
+		private String telArea;
 
-		public void setRegistrantName(String registrantName) {
-			this.registrantName = registrantName;
-		}
+		private String address;
 
-		public String getRegistrantOrganization() {
-			return this.registrantOrganization;
-		}
+		private String country;
 
-		public void setRegistrantOrganization(String registrantOrganization) {
-			this.registrantOrganization = registrantOrganization;
-		}
+		private String registrantName;
 
-		public String getCountry() {
-			return this.country;
-		}
+		private String realNameStatus;
 
-		public void setCountry(String country) {
-			this.country = country;
-		}
+		private Integer emailVerificationStatus;
 
-		public String getProvince() {
-			return this.province;
-		}
-
-		public void setProvince(String province) {
-			this.province = province;
-		}
-
-		public String getCity() {
-			return this.city;
-		}
-
-		public void setCity(String city) {
-			this.city = city;
-		}
-
-		public String getAddress() {
-			return this.address;
-		}
-
-		public void setAddress(String address) {
-			this.address = address;
-		}
-
-		public String getEmail() {
-			return this.email;
-		}
-
-		public void setEmail(String email) {
-			this.email = email;
-		}
+		private String province;
 
 		public String getPostalCode() {
 			return this.postalCode;
@@ -239,22 +151,6 @@ public class QueryRegistrantProfilesResponse extends AcsResponse {
 
 		public void setPostalCode(String postalCode) {
 			this.postalCode = postalCode;
-		}
-
-		public String getTelArea() {
-			return this.telArea;
-		}
-
-		public void setTelArea(String telArea) {
-			this.telArea = telArea;
-		}
-
-		public String getTelephone() {
-			return this.telephone;
-		}
-
-		public void setTelephone(String telephone) {
-			this.telephone = telephone;
 		}
 
 		public String getTelExt() {
@@ -265,12 +161,76 @@ public class QueryRegistrantProfilesResponse extends AcsResponse {
 			this.telExt = telExt;
 		}
 
-		public Integer getEmailVerificationStatus() {
-			return this.emailVerificationStatus;
+		public String getUpdateTime() {
+			return this.updateTime;
 		}
 
-		public void setEmailVerificationStatus(Integer emailVerificationStatus) {
-			this.emailVerificationStatus = emailVerificationStatus;
+		public void setUpdateTime(String updateTime) {
+			this.updateTime = updateTime;
+		}
+
+		public String getRegistrantProfileType() {
+			return this.registrantProfileType;
+		}
+
+		public void setRegistrantProfileType(String registrantProfileType) {
+			this.registrantProfileType = registrantProfileType;
+		}
+
+		public Long getRegistrantProfileId() {
+			return this.registrantProfileId;
+		}
+
+		public void setRegistrantProfileId(Long registrantProfileId) {
+			this.registrantProfileId = registrantProfileId;
+		}
+
+		public String getTelephone() {
+			return this.telephone;
+		}
+
+		public void setTelephone(String telephone) {
+			this.telephone = telephone;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public Boolean getDefaultRegistrantProfile() {
+			return this.defaultRegistrantProfile;
+		}
+
+		public void setDefaultRegistrantProfile(Boolean defaultRegistrantProfile) {
+			this.defaultRegistrantProfile = defaultRegistrantProfile;
+		}
+
+		public String getRegistrantOrganization() {
+			return this.registrantOrganization;
+		}
+
+		public void setRegistrantOrganization(String registrantOrganization) {
+			this.registrantOrganization = registrantOrganization;
+		}
+
+		public String getCity() {
+			return this.city;
+		}
+
+		public void setCity(String city) {
+			this.city = city;
+		}
+
+		public String getEmail() {
+			return this.email;
+		}
+
+		public void setEmail(String email) {
+			this.email = email;
 		}
 
 		public String getRegistrantType() {
@@ -281,6 +241,38 @@ public class QueryRegistrantProfilesResponse extends AcsResponse {
 			this.registrantType = registrantType;
 		}
 
+		public String getTelArea() {
+			return this.telArea;
+		}
+
+		public void setTelArea(String telArea) {
+			this.telArea = telArea;
+		}
+
+		public String getAddress() {
+			return this.address;
+		}
+
+		public void setAddress(String address) {
+			this.address = address;
+		}
+
+		public String getCountry() {
+			return this.country;
+		}
+
+		public void setCountry(String country) {
+			this.country = country;
+		}
+
+		public String getRegistrantName() {
+			return this.registrantName;
+		}
+
+		public void setRegistrantName(String registrantName) {
+			this.registrantName = registrantName;
+		}
+
 		public String getRealNameStatus() {
 			return this.realNameStatus;
 		}
@@ -289,12 +281,20 @@ public class QueryRegistrantProfilesResponse extends AcsResponse {
 			this.realNameStatus = realNameStatus;
 		}
 
-		public String getRegistrantProfileType() {
-			return this.registrantProfileType;
+		public Integer getEmailVerificationStatus() {
+			return this.emailVerificationStatus;
 		}
 
-		public void setRegistrantProfileType(String registrantProfileType) {
-			this.registrantProfileType = registrantProfileType;
+		public void setEmailVerificationStatus(Integer emailVerificationStatus) {
+			this.emailVerificationStatus = emailVerificationStatus;
+		}
+
+		public String getProvince() {
+			return this.province;
+		}
+
+		public void setProvince(String province) {
+			this.province = province;
 		}
 	}
 

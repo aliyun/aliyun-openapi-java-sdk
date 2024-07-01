@@ -24,18 +24,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryDnsHostResponseUnmarshaller {
 
-	public static QueryDnsHostResponse unmarshall(QueryDnsHostResponse queryDnsHostResponse, UnmarshallerContext context) {
+	public static QueryDnsHostResponse unmarshall(QueryDnsHostResponse queryDnsHostResponse, UnmarshallerContext _ctx) {
 		
-		queryDnsHostResponse.setRequestId(context.stringValue("QueryDnsHostResponse.RequestId"));
+		queryDnsHostResponse.setRequestId(_ctx.stringValue("QueryDnsHostResponse.RequestId"));
 
 		List<DnsHost> dnsHostList = new ArrayList<DnsHost>();
-		for (int i = 0; i < context.lengthValue("QueryDnsHostResponse.DnsHostList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryDnsHostResponse.DnsHostList.Length"); i++) {
 			DnsHost dnsHost = new DnsHost();
-			dnsHost.setDnsName(context.stringValue("QueryDnsHostResponse.DnsHostList["+ i +"].DnsName"));
+			dnsHost.setDnsName(_ctx.stringValue("QueryDnsHostResponse.DnsHostList["+ i +"].DnsName"));
 
 			List<String> ipList = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("QueryDnsHostResponse.DnsHostList["+ i +"].IpList.Length"); j++) {
-				ipList.add(context.stringValue("QueryDnsHostResponse.DnsHostList["+ i +"].IpList["+ j +"]"));
+			for (int j = 0; j < _ctx.lengthValue("QueryDnsHostResponse.DnsHostList["+ i +"].IpList.Length"); j++) {
+				ipList.add(_ctx.stringValue("QueryDnsHostResponse.DnsHostList["+ i +"].IpList["+ j +"]"));
 			}
 			dnsHost.setIpList(ipList);
 

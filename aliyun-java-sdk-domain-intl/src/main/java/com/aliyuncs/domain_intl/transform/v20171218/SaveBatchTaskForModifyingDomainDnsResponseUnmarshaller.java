@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SaveBatchTaskForModifyingDomainDnsResponseUnmarshaller {
 
-	public static SaveBatchTaskForModifyingDomainDnsResponse unmarshall(SaveBatchTaskForModifyingDomainDnsResponse saveBatchTaskForModifyingDomainDnsResponse, UnmarshallerContext context) {
+	public static SaveBatchTaskForModifyingDomainDnsResponse unmarshall(SaveBatchTaskForModifyingDomainDnsResponse saveBatchTaskForModifyingDomainDnsResponse, UnmarshallerContext _ctx) {
 		
-		saveBatchTaskForModifyingDomainDnsResponse.setRequestId(context.stringValue("SaveBatchTaskForModifyingDomainDnsResponse.RequestId"));
-		saveBatchTaskForModifyingDomainDnsResponse.setTaskNo(context.stringValue("SaveBatchTaskForModifyingDomainDnsResponse.TaskNo"));
+		saveBatchTaskForModifyingDomainDnsResponse.setRequestId(_ctx.stringValue("SaveBatchTaskForModifyingDomainDnsResponse.RequestId"));
+		saveBatchTaskForModifyingDomainDnsResponse.setTaskNo(_ctx.stringValue("SaveBatchTaskForModifyingDomainDnsResponse.TaskNo"));
 	 
 	 	return saveBatchTaskForModifyingDomainDnsResponse;
 	}

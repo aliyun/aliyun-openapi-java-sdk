@@ -15,16 +15,14 @@
 package com.aliyuncs.domain_intl.model.v20171218;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class SubmitEmailVerificationRequest extends RpcAcsRequest<SubmitEmailVerificationResponse> {
-	
-	public SubmitEmailVerificationRequest() {
-		super("Domain-intl", "2017-12-18", "SubmitEmailVerification", "domain");
-	}
+	   
 
 	private Boolean sendIfExist;
 
@@ -33,6 +31,10 @@ public class SubmitEmailVerificationRequest extends RpcAcsRequest<SubmitEmailVer
 	private String lang;
 
 	private String email;
+	public SubmitEmailVerificationRequest() {
+		super("Domain-intl", "2017-12-18", "SubmitEmailVerification");
+		setMethod(MethodType.POST);
+	}
 
 	public Boolean getSendIfExist() {
 		return this.sendIfExist;

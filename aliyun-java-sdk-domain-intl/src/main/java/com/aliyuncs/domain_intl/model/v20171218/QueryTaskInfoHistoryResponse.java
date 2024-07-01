@@ -25,25 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryTaskInfoHistoryResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer pageSize;
+
+	private String requestId;
 
 	private List<TaskInfoHistory> objects;
 
 	private CurrentPageCursor currentPageCursor;
 
-	private NextPageCursor nextPageCursor;
-
 	private PrePageCursor prePageCursor;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private NextPageCursor nextPageCursor;
 
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -51,6 +43,14 @@ public class QueryTaskInfoHistoryResponse extends AcsResponse {
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<TaskInfoHistory> getObjects() {
@@ -69,14 +69,6 @@ public class QueryTaskInfoHistoryResponse extends AcsResponse {
 		this.currentPageCursor = currentPageCursor;
 	}
 
-	public NextPageCursor getNextPageCursor() {
-		return this.nextPageCursor;
-	}
-
-	public void setNextPageCursor(NextPageCursor nextPageCursor) {
-		this.nextPageCursor = nextPageCursor;
-	}
-
 	public PrePageCursor getPrePageCursor() {
 		return this.prePageCursor;
 	}
@@ -85,25 +77,33 @@ public class QueryTaskInfoHistoryResponse extends AcsResponse {
 		this.prePageCursor = prePageCursor;
 	}
 
+	public NextPageCursor getNextPageCursor() {
+		return this.nextPageCursor;
+	}
+
+	public void setNextPageCursor(NextPageCursor nextPageCursor) {
+		this.nextPageCursor = nextPageCursor;
+	}
+
 	public static class TaskInfoHistory {
 
 		private String taskType;
 
-		private Integer taskNum;
-
-		private String taskStatus;
-
-		private String createTime;
-
-		private String clientip;
-
 		private String taskNo;
-
-		private Long createTimeLong;
 
 		private Integer taskStatusCode;
 
+		private String taskStatus;
+
 		private String taskTypeDescription;
+
+		private Integer taskNum;
+
+		private String createTime;
+
+		private Long createTimeLong;
+
+		private String clientip;
 
 		public String getTaskType() {
 			return this.taskType;
@@ -111,38 +111,6 @@ public class QueryTaskInfoHistoryResponse extends AcsResponse {
 
 		public void setTaskType(String taskType) {
 			this.taskType = taskType;
-		}
-
-		public Integer getTaskNum() {
-			return this.taskNum;
-		}
-
-		public void setTaskNum(Integer taskNum) {
-			this.taskNum = taskNum;
-		}
-
-		public String getTaskStatus() {
-			return this.taskStatus;
-		}
-
-		public void setTaskStatus(String taskStatus) {
-			this.taskStatus = taskStatus;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-
-		public String getClientip() {
-			return this.clientip;
-		}
-
-		public void setClientip(String clientip) {
-			this.clientip = clientip;
 		}
 
 		public String getTaskNo() {
@@ -153,14 +121,6 @@ public class QueryTaskInfoHistoryResponse extends AcsResponse {
 			this.taskNo = taskNo;
 		}
 
-		public Long getCreateTimeLong() {
-			return this.createTimeLong;
-		}
-
-		public void setCreateTimeLong(Long createTimeLong) {
-			this.createTimeLong = createTimeLong;
-		}
-
 		public Integer getTaskStatusCode() {
 			return this.taskStatusCode;
 		}
@@ -169,12 +129,52 @@ public class QueryTaskInfoHistoryResponse extends AcsResponse {
 			this.taskStatusCode = taskStatusCode;
 		}
 
+		public String getTaskStatus() {
+			return this.taskStatus;
+		}
+
+		public void setTaskStatus(String taskStatus) {
+			this.taskStatus = taskStatus;
+		}
+
 		public String getTaskTypeDescription() {
 			return this.taskTypeDescription;
 		}
 
 		public void setTaskTypeDescription(String taskTypeDescription) {
 			this.taskTypeDescription = taskTypeDescription;
+		}
+
+		public Integer getTaskNum() {
+			return this.taskNum;
+		}
+
+		public void setTaskNum(Integer taskNum) {
+			this.taskNum = taskNum;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public Long getCreateTimeLong() {
+			return this.createTimeLong;
+		}
+
+		public void setCreateTimeLong(Long createTimeLong) {
+			this.createTimeLong = createTimeLong;
+		}
+
+		public String getClientip() {
+			return this.clientip;
+		}
+
+		public void setClientip(String clientip) {
+			this.clientip = clientip;
 		}
 	}
 
@@ -182,21 +182,21 @@ public class QueryTaskInfoHistoryResponse extends AcsResponse {
 
 		private String taskType;
 
-		private Integer taskNum;
-
-		private String taskStatus;
-
-		private String createTime;
-
-		private String clientip;
-
 		private String taskNo;
-
-		private Long createTimeLong;
 
 		private Integer taskStatusCode;
 
+		private String taskStatus;
+
 		private String taskTypeDescription;
+
+		private Integer taskNum;
+
+		private String createTime;
+
+		private Long createTimeLong;
+
+		private String clientip;
 
 		public String getTaskType() {
 			return this.taskType;
@@ -204,38 +204,6 @@ public class QueryTaskInfoHistoryResponse extends AcsResponse {
 
 		public void setTaskType(String taskType) {
 			this.taskType = taskType;
-		}
-
-		public Integer getTaskNum() {
-			return this.taskNum;
-		}
-
-		public void setTaskNum(Integer taskNum) {
-			this.taskNum = taskNum;
-		}
-
-		public String getTaskStatus() {
-			return this.taskStatus;
-		}
-
-		public void setTaskStatus(String taskStatus) {
-			this.taskStatus = taskStatus;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-
-		public String getClientip() {
-			return this.clientip;
-		}
-
-		public void setClientip(String clientip) {
-			this.clientip = clientip;
 		}
 
 		public String getTaskNo() {
@@ -246,65 +214,12 @@ public class QueryTaskInfoHistoryResponse extends AcsResponse {
 			this.taskNo = taskNo;
 		}
 
-		public Long getCreateTimeLong() {
-			return this.createTimeLong;
-		}
-
-		public void setCreateTimeLong(Long createTimeLong) {
-			this.createTimeLong = createTimeLong;
-		}
-
 		public Integer getTaskStatusCode() {
 			return this.taskStatusCode;
 		}
 
 		public void setTaskStatusCode(Integer taskStatusCode) {
 			this.taskStatusCode = taskStatusCode;
-		}
-
-		public String getTaskTypeDescription() {
-			return this.taskTypeDescription;
-		}
-
-		public void setTaskTypeDescription(String taskTypeDescription) {
-			this.taskTypeDescription = taskTypeDescription;
-		}
-	}
-
-	public static class NextPageCursor {
-
-		private String taskType;
-
-		private Integer taskNum;
-
-		private String taskStatus;
-
-		private String createTime;
-
-		private String clientip;
-
-		private String taskNo;
-
-		private Long createTimeLong;
-
-		private Integer taskStatusCode;
-
-		private String taskTypeDescription;
-
-		public String getTaskType() {
-			return this.taskType;
-		}
-
-		public void setTaskType(String taskType) {
-			this.taskType = taskType;
-		}
-
-		public Integer getTaskNum() {
-			return this.taskNum;
-		}
-
-		public void setTaskNum(Integer taskNum) {
-			this.taskNum = taskNum;
 		}
 
 		public String getTaskStatus() {
@@ -315,28 +230,28 @@ public class QueryTaskInfoHistoryResponse extends AcsResponse {
 			this.taskStatus = taskStatus;
 		}
 
+		public String getTaskTypeDescription() {
+			return this.taskTypeDescription;
+		}
+
+		public void setTaskTypeDescription(String taskTypeDescription) {
+			this.taskTypeDescription = taskTypeDescription;
+		}
+
+		public Integer getTaskNum() {
+			return this.taskNum;
+		}
+
+		public void setTaskNum(Integer taskNum) {
+			this.taskNum = taskNum;
+		}
+
 		public String getCreateTime() {
 			return this.createTime;
 		}
 
 		public void setCreateTime(String createTime) {
 			this.createTime = createTime;
-		}
-
-		public String getClientip() {
-			return this.clientip;
-		}
-
-		public void setClientip(String clientip) {
-			this.clientip = clientip;
-		}
-
-		public String getTaskNo() {
-			return this.taskNo;
-		}
-
-		public void setTaskNo(String taskNo) {
-			this.taskNo = taskNo;
 		}
 
 		public Long getCreateTimeLong() {
@@ -347,20 +262,12 @@ public class QueryTaskInfoHistoryResponse extends AcsResponse {
 			this.createTimeLong = createTimeLong;
 		}
 
-		public Integer getTaskStatusCode() {
-			return this.taskStatusCode;
+		public String getClientip() {
+			return this.clientip;
 		}
 
-		public void setTaskStatusCode(Integer taskStatusCode) {
-			this.taskStatusCode = taskStatusCode;
-		}
-
-		public String getTaskTypeDescription() {
-			return this.taskTypeDescription;
-		}
-
-		public void setTaskTypeDescription(String taskTypeDescription) {
-			this.taskTypeDescription = taskTypeDescription;
+		public void setClientip(String clientip) {
+			this.clientip = clientip;
 		}
 	}
 
@@ -368,21 +275,21 @@ public class QueryTaskInfoHistoryResponse extends AcsResponse {
 
 		private String taskType;
 
-		private Integer taskNum;
-
-		private String taskStatus;
-
-		private String createTime;
-
-		private String clientip;
-
 		private String taskNo;
-
-		private Long createTimeLong;
 
 		private Integer taskStatusCode;
 
+		private String taskStatus;
+
 		private String taskTypeDescription;
+
+		private Integer taskNum;
+
+		private String createTime;
+
+		private Long createTimeLong;
+
+		private String clientip;
 
 		public String getTaskType() {
 			return this.taskType;
@@ -390,38 +297,6 @@ public class QueryTaskInfoHistoryResponse extends AcsResponse {
 
 		public void setTaskType(String taskType) {
 			this.taskType = taskType;
-		}
-
-		public Integer getTaskNum() {
-			return this.taskNum;
-		}
-
-		public void setTaskNum(Integer taskNum) {
-			this.taskNum = taskNum;
-		}
-
-		public String getTaskStatus() {
-			return this.taskStatus;
-		}
-
-		public void setTaskStatus(String taskStatus) {
-			this.taskStatus = taskStatus;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-
-		public String getClientip() {
-			return this.clientip;
-		}
-
-		public void setClientip(String clientip) {
-			this.clientip = clientip;
 		}
 
 		public String getTaskNo() {
@@ -432,12 +307,97 @@ public class QueryTaskInfoHistoryResponse extends AcsResponse {
 			this.taskNo = taskNo;
 		}
 
+		public Integer getTaskStatusCode() {
+			return this.taskStatusCode;
+		}
+
+		public void setTaskStatusCode(Integer taskStatusCode) {
+			this.taskStatusCode = taskStatusCode;
+		}
+
+		public String getTaskStatus() {
+			return this.taskStatus;
+		}
+
+		public void setTaskStatus(String taskStatus) {
+			this.taskStatus = taskStatus;
+		}
+
+		public String getTaskTypeDescription() {
+			return this.taskTypeDescription;
+		}
+
+		public void setTaskTypeDescription(String taskTypeDescription) {
+			this.taskTypeDescription = taskTypeDescription;
+		}
+
+		public Integer getTaskNum() {
+			return this.taskNum;
+		}
+
+		public void setTaskNum(Integer taskNum) {
+			this.taskNum = taskNum;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
 		public Long getCreateTimeLong() {
 			return this.createTimeLong;
 		}
 
 		public void setCreateTimeLong(Long createTimeLong) {
 			this.createTimeLong = createTimeLong;
+		}
+
+		public String getClientip() {
+			return this.clientip;
+		}
+
+		public void setClientip(String clientip) {
+			this.clientip = clientip;
+		}
+	}
+
+	public static class NextPageCursor {
+
+		private String taskType;
+
+		private String taskNo;
+
+		private Integer taskStatusCode;
+
+		private String taskStatus;
+
+		private String taskTypeDescription;
+
+		private Integer taskNum;
+
+		private String createTime;
+
+		private Long createTimeLong;
+
+		private String clientip;
+
+		public String getTaskType() {
+			return this.taskType;
+		}
+
+		public void setTaskType(String taskType) {
+			this.taskType = taskType;
+		}
+
+		public String getTaskNo() {
+			return this.taskNo;
+		}
+
+		public void setTaskNo(String taskNo) {
+			this.taskNo = taskNo;
 		}
 
 		public Integer getTaskStatusCode() {
@@ -448,12 +408,52 @@ public class QueryTaskInfoHistoryResponse extends AcsResponse {
 			this.taskStatusCode = taskStatusCode;
 		}
 
+		public String getTaskStatus() {
+			return this.taskStatus;
+		}
+
+		public void setTaskStatus(String taskStatus) {
+			this.taskStatus = taskStatus;
+		}
+
 		public String getTaskTypeDescription() {
 			return this.taskTypeDescription;
 		}
 
 		public void setTaskTypeDescription(String taskTypeDescription) {
 			this.taskTypeDescription = taskTypeDescription;
+		}
+
+		public Integer getTaskNum() {
+			return this.taskNum;
+		}
+
+		public void setTaskNum(Integer taskNum) {
+			this.taskNum = taskNum;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public Long getCreateTimeLong() {
+			return this.createTimeLong;
+		}
+
+		public void setCreateTimeLong(Long createTimeLong) {
+			this.createTimeLong = createTimeLong;
+		}
+
+		public String getClientip() {
+			return this.clientip;
+		}
+
+		public void setClientip(String clientip) {
+			this.clientip = clientip;
 		}
 	}
 

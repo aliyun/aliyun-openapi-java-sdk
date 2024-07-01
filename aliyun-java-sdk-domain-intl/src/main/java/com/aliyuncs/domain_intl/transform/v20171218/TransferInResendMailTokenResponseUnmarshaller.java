@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class TransferInResendMailTokenResponseUnmarshaller {
 
-	public static TransferInResendMailTokenResponse unmarshall(TransferInResendMailTokenResponse transferInResendMailTokenResponse, UnmarshallerContext context) {
+	public static TransferInResendMailTokenResponse unmarshall(TransferInResendMailTokenResponse transferInResendMailTokenResponse, UnmarshallerContext _ctx) {
 		
-		transferInResendMailTokenResponse.setRequestId(context.stringValue("TransferInResendMailTokenResponse.RequestId"));
+		transferInResendMailTokenResponse.setRequestId(_ctx.stringValue("TransferInResendMailTokenResponse.RequestId"));
 	 
 	 	return transferInResendMailTokenResponse;
 	}

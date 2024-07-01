@@ -27,13 +27,13 @@ public class LookupTmchNoticeResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String label;
+
 	private Long id;
 
 	private String notBefore;
 
 	private String notAfter;
-
-	private String label;
 
 	private List<Claim> claims;
 
@@ -43,6 +43,14 @@ public class LookupTmchNoticeResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getLabel() {
+		return this.label;
+	}
+
+	public void setLabel(String label) {
+		this.label = label;
 	}
 
 	public Long getId() {
@@ -69,14 +77,6 @@ public class LookupTmchNoticeResponse extends AcsResponse {
 		this.notAfter = notAfter;
 	}
 
-	public String getLabel() {
-		return this.label;
-	}
-
-	public void setLabel(String label) {
-		this.label = label;
-	}
-
 	public List<Claim> getClaims() {
 		return this.claims;
 	}
@@ -87,25 +87,17 @@ public class LookupTmchNoticeResponse extends AcsResponse {
 
 	public static class Claim {
 
-		private String markName;
-
 		private String goodsAndServices;
 
-		private List<Holder> holders;
+		private String markName;
 
 		private List<Contact> contacts;
 
 		private List<ClassDesc> classDescs;
 
+		private List<Holder> holders;
+
 		private JurDesc jurDesc;
-
-		public String getMarkName() {
-			return this.markName;
-		}
-
-		public void setMarkName(String markName) {
-			this.markName = markName;
-		}
 
 		public String getGoodsAndServices() {
 			return this.goodsAndServices;
@@ -115,12 +107,12 @@ public class LookupTmchNoticeResponse extends AcsResponse {
 			this.goodsAndServices = goodsAndServices;
 		}
 
-		public List<Holder> getHolders() {
-			return this.holders;
+		public String getMarkName() {
+			return this.markName;
 		}
 
-		public void setHolders(List<Holder> holders) {
-			this.holders = holders;
+		public void setMarkName(String markName) {
+			this.markName = markName;
 		}
 
 		public List<Contact> getContacts() {
@@ -139,6 +131,14 @@ public class LookupTmchNoticeResponse extends AcsResponse {
 			this.classDescs = classDescs;
 		}
 
+		public List<Holder> getHolders() {
+			return this.holders;
+		}
+
+		public void setHolders(List<Holder> holders) {
+			this.holders = holders;
+		}
+
 		public JurDesc getJurDesc() {
 			return this.jurDesc;
 		}
@@ -147,20 +147,52 @@ public class LookupTmchNoticeResponse extends AcsResponse {
 			this.jurDesc = jurDesc;
 		}
 
-		public static class Holder {
+		public static class Contact {
 
-			private String entitlement;
+			private String type;
+
+			private String voice;
+
+			private String email;
+
+			private String fax;
 
 			private String org;
 
+			private String name;
+
 			private Addr addr;
 
-			public String getEntitlement() {
-				return this.entitlement;
+			public String getType() {
+				return this.type;
 			}
 
-			public void setEntitlement(String entitlement) {
-				this.entitlement = entitlement;
+			public void setType(String type) {
+				this.type = type;
+			}
+
+			public String getVoice() {
+				return this.voice;
+			}
+
+			public void setVoice(String voice) {
+				this.voice = voice;
+			}
+
+			public String getEmail() {
+				return this.email;
+			}
+
+			public void setEmail(String email) {
+				this.email = email;
+			}
+
+			public String getFax() {
+				return this.fax;
+			}
+
+			public void setFax(String fax) {
+				this.fax = fax;
 			}
 
 			public String getOrg() {
@@ -169,6 +201,14 @@ public class LookupTmchNoticeResponse extends AcsResponse {
 
 			public void setOrg(String org) {
 				this.org = org;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
 			}
 
 			public Addr getAddr() {
@@ -181,22 +221,22 @@ public class LookupTmchNoticeResponse extends AcsResponse {
 
 			public static class Addr {
 
-				private String city;
+				private String cc;
 
 				private String sp;
 
 				private String pc;
 
-				private String cc;
+				private String city;
 
 				private List<String> street;
 
-				public String getCity() {
-					return this.city;
+				public String getCc() {
+					return this.cc;
 				}
 
-				public void setCity(String city) {
-					this.city = city;
+				public void setCc(String cc) {
+					this.cc = cc;
 				}
 
 				public String getSp() {
@@ -215,12 +255,12 @@ public class LookupTmchNoticeResponse extends AcsResponse {
 					this.pc = pc;
 				}
 
-				public String getCc() {
-					return this.cc;
+				public String getCity() {
+					return this.city;
 				}
 
-				public void setCc(String cc) {
-					this.cc = cc;
+				public void setCity(String city) {
+					this.city = city;
 				}
 
 				public List<String> getStreet() {
@@ -229,132 +269,6 @@ public class LookupTmchNoticeResponse extends AcsResponse {
 
 				public void setStreet(List<String> street) {
 					this.street = street;
-				}
-			}
-		}
-
-		public static class Contact {
-
-			private String type;
-
-			private String name;
-
-			private String org;
-
-			private String voice;
-
-			private String fax;
-
-			private String email;
-
-			private Addr1 addr1;
-
-			public String getType() {
-				return this.type;
-			}
-
-			public void setType(String type) {
-				this.type = type;
-			}
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
-
-			public String getOrg() {
-				return this.org;
-			}
-
-			public void setOrg(String org) {
-				this.org = org;
-			}
-
-			public String getVoice() {
-				return this.voice;
-			}
-
-			public void setVoice(String voice) {
-				this.voice = voice;
-			}
-
-			public String getFax() {
-				return this.fax;
-			}
-
-			public void setFax(String fax) {
-				this.fax = fax;
-			}
-
-			public String getEmail() {
-				return this.email;
-			}
-
-			public void setEmail(String email) {
-				this.email = email;
-			}
-
-			public Addr1 getAddr1() {
-				return this.addr1;
-			}
-
-			public void setAddr1(Addr1 addr1) {
-				this.addr1 = addr1;
-			}
-
-			public static class Addr1 {
-
-				private String city;
-
-				private String sp;
-
-				private String pc;
-
-				private String cc;
-
-				private List<String> street2;
-
-				public String getCity() {
-					return this.city;
-				}
-
-				public void setCity(String city) {
-					this.city = city;
-				}
-
-				public String getSp() {
-					return this.sp;
-				}
-
-				public void setSp(String sp) {
-					this.sp = sp;
-				}
-
-				public String getPc() {
-					return this.pc;
-				}
-
-				public void setPc(String pc) {
-					this.pc = pc;
-				}
-
-				public String getCc() {
-					return this.cc;
-				}
-
-				public void setCc(String cc) {
-					this.cc = cc;
-				}
-
-				public List<String> getStreet2() {
-					return this.street2;
-				}
-
-				public void setStreet2(List<String> street2) {
-					this.street2 = street2;
 				}
 			}
 		}
@@ -379,6 +293,92 @@ public class LookupTmchNoticeResponse extends AcsResponse {
 
 			public void setDesc(String desc) {
 				this.desc = desc;
+			}
+		}
+
+		public static class Holder {
+
+			private String entitlement;
+
+			private String org;
+
+			private Addr1 addr1;
+
+			public String getEntitlement() {
+				return this.entitlement;
+			}
+
+			public void setEntitlement(String entitlement) {
+				this.entitlement = entitlement;
+			}
+
+			public String getOrg() {
+				return this.org;
+			}
+
+			public void setOrg(String org) {
+				this.org = org;
+			}
+
+			public Addr1 getAddr1() {
+				return this.addr1;
+			}
+
+			public void setAddr1(Addr1 addr1) {
+				this.addr1 = addr1;
+			}
+
+			public static class Addr1 {
+
+				private String cc;
+
+				private String sp;
+
+				private String pc;
+
+				private String city;
+
+				private List<String> street2;
+
+				public String getCc() {
+					return this.cc;
+				}
+
+				public void setCc(String cc) {
+					this.cc = cc;
+				}
+
+				public String getSp() {
+					return this.sp;
+				}
+
+				public void setSp(String sp) {
+					this.sp = sp;
+				}
+
+				public String getPc() {
+					return this.pc;
+				}
+
+				public void setPc(String pc) {
+					this.pc = pc;
+				}
+
+				public String getCity() {
+					return this.city;
+				}
+
+				public void setCity(String city) {
+					this.city = city;
+				}
+
+				public List<String> getStreet2() {
+					return this.street2;
+				}
+
+				public void setStreet2(List<String> street2) {
+					this.street2 = street2;
+				}
 			}
 		}
 

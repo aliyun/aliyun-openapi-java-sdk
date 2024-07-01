@@ -25,13 +25,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class FuzzyMatchDomainSensitiveWordResponse extends AcsResponse {
 
+	private Boolean exist;
+
 	private String requestId;
 
 	private String keyword;
 
-	private Boolean exist;
-
 	private List<MatchedSensitiveWord> matchedSentiveWords;
+
+	public Boolean getExist() {
+		return this.exist;
+	}
+
+	public void setExist(Boolean exist) {
+		this.exist = exist;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -47,14 +55,6 @@ public class FuzzyMatchDomainSensitiveWordResponse extends AcsResponse {
 
 	public void setKeyword(String keyword) {
 		this.keyword = keyword;
-	}
-
-	public Boolean getExist() {
-		return this.exist;
-	}
-
-	public void setExist(Boolean exist) {
-		this.exist = exist;
 	}
 
 	public List<MatchedSensitiveWord> getMatchedSentiveWords() {

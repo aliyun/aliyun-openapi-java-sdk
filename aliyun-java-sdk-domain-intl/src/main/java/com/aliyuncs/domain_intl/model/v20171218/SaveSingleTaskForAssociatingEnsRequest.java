@@ -15,16 +15,14 @@
 package com.aliyuncs.domain_intl.model.v20171218;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class SaveSingleTaskForAssociatingEnsRequest extends RpcAcsRequest<SaveSingleTaskForAssociatingEnsResponse> {
-	
-	public SaveSingleTaskForAssociatingEnsRequest() {
-		super("Domain-intl", "2017-12-18", "SaveSingleTaskForAssociatingEns", "domain");
-	}
+	   
 
 	private String address;
 
@@ -33,6 +31,10 @@ public class SaveSingleTaskForAssociatingEnsRequest extends RpcAcsRequest<SaveSi
 	private String userClientIp;
 
 	private String lang;
+	public SaveSingleTaskForAssociatingEnsRequest() {
+		super("Domain-intl", "2017-12-18", "SaveSingleTaskForAssociatingEns");
+		setMethod(MethodType.POST);
+	}
 
 	public String getAddress() {
 		return this.address;

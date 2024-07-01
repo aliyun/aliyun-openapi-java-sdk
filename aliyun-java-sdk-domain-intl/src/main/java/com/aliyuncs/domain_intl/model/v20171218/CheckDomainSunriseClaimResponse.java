@@ -24,11 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CheckDomainSunriseClaimResponse extends AcsResponse {
 
+	private String claimKey;
+
 	private String requestId;
 
 	private Integer result;
 
-	private String claimKey;
+	public String getClaimKey() {
+		return this.claimKey;
+	}
+
+	public void setClaimKey(String claimKey) {
+		this.claimKey = claimKey;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,14 +52,6 @@ public class CheckDomainSunriseClaimResponse extends AcsResponse {
 
 	public void setResult(Integer result) {
 		this.result = result;
-	}
-
-	public String getClaimKey() {
-		return this.claimKey;
-	}
-
-	public void setClaimKey(String claimKey) {
-		this.claimKey = claimKey;
 	}
 
 	@Override

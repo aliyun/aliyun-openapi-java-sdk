@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SaveSingleTaskForCancelingTransferOutResponseUnmarshaller {
 
-	public static SaveSingleTaskForCancelingTransferOutResponse unmarshall(SaveSingleTaskForCancelingTransferOutResponse saveSingleTaskForCancelingTransferOutResponse, UnmarshallerContext context) {
+	public static SaveSingleTaskForCancelingTransferOutResponse unmarshall(SaveSingleTaskForCancelingTransferOutResponse saveSingleTaskForCancelingTransferOutResponse, UnmarshallerContext _ctx) {
 		
-		saveSingleTaskForCancelingTransferOutResponse.setRequestId(context.stringValue("SaveSingleTaskForCancelingTransferOutResponse.RequestId"));
-		saveSingleTaskForCancelingTransferOutResponse.setTaskNo(context.stringValue("SaveSingleTaskForCancelingTransferOutResponse.TaskNo"));
+		saveSingleTaskForCancelingTransferOutResponse.setRequestId(_ctx.stringValue("SaveSingleTaskForCancelingTransferOutResponse.RequestId"));
+		saveSingleTaskForCancelingTransferOutResponse.setTaskNo(_ctx.stringValue("SaveSingleTaskForCancelingTransferOutResponse.TaskNo"));
 	 
 	 	return saveSingleTaskForCancelingTransferOutResponse;
 	}

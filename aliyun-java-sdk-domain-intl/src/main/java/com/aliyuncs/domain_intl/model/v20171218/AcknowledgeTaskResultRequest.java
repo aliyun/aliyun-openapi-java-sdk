@@ -16,22 +16,24 @@ package com.aliyuncs.domain_intl.model.v20171218;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class AcknowledgeTaskResultRequest extends RpcAcsRequest<AcknowledgeTaskResultResponse> {
-	
-	public AcknowledgeTaskResultRequest() {
-		super("Domain-intl", "2017-12-18", "AcknowledgeTaskResult", "domain");
-	}
+	   
 
 	private List<String> taskDetailNos;
 
 	private String userClientIp;
 
 	private String lang;
+	public AcknowledgeTaskResultRequest() {
+		super("Domain-intl", "2017-12-18", "AcknowledgeTaskResult");
+		setMethod(MethodType.POST);
+	}
 
 	public List<String> getTaskDetailNos() {
 		return this.taskDetailNos;

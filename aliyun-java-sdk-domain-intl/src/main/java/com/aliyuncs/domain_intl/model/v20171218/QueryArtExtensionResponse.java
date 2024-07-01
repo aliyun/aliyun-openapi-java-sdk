@@ -24,35 +24,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryArtExtensionResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String objectType;
 
 	private String materialsAndTechniques;
+
+	private String inscriptionsAndMarkings;
+
+	private String requestId;
+
+	private String reference;
+
+	private String dateOrPeriod;
 
 	private String dimensions;
 
 	private String title;
 
-	private String dateOrPeriod;
-
-	private String maker;
-
-	private String inscriptionsAndMarkings;
+	private String features;
 
 	private String subject;
 
-	private String features;
-
-	private String reference;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String maker;
 
 	public String getObjectType() {
 		return this.objectType;
@@ -68,6 +60,38 @@ public class QueryArtExtensionResponse extends AcsResponse {
 
 	public void setMaterialsAndTechniques(String materialsAndTechniques) {
 		this.materialsAndTechniques = materialsAndTechniques;
+	}
+
+	public String getInscriptionsAndMarkings() {
+		return this.inscriptionsAndMarkings;
+	}
+
+	public void setInscriptionsAndMarkings(String inscriptionsAndMarkings) {
+		this.inscriptionsAndMarkings = inscriptionsAndMarkings;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getReference() {
+		return this.reference;
+	}
+
+	public void setReference(String reference) {
+		this.reference = reference;
+	}
+
+	public String getDateOrPeriod() {
+		return this.dateOrPeriod;
+	}
+
+	public void setDateOrPeriod(String dateOrPeriod) {
+		this.dateOrPeriod = dateOrPeriod;
 	}
 
 	public String getDimensions() {
@@ -86,28 +110,12 @@ public class QueryArtExtensionResponse extends AcsResponse {
 		this.title = title;
 	}
 
-	public String getDateOrPeriod() {
-		return this.dateOrPeriod;
+	public String getFeatures() {
+		return this.features;
 	}
 
-	public void setDateOrPeriod(String dateOrPeriod) {
-		this.dateOrPeriod = dateOrPeriod;
-	}
-
-	public String getMaker() {
-		return this.maker;
-	}
-
-	public void setMaker(String maker) {
-		this.maker = maker;
-	}
-
-	public String getInscriptionsAndMarkings() {
-		return this.inscriptionsAndMarkings;
-	}
-
-	public void setInscriptionsAndMarkings(String inscriptionsAndMarkings) {
-		this.inscriptionsAndMarkings = inscriptionsAndMarkings;
+	public void setFeatures(String features) {
+		this.features = features;
 	}
 
 	public String getSubject() {
@@ -118,20 +126,12 @@ public class QueryArtExtensionResponse extends AcsResponse {
 		this.subject = subject;
 	}
 
-	public String getFeatures() {
-		return this.features;
+	public String getMaker() {
+		return this.maker;
 	}
 
-	public void setFeatures(String features) {
-		this.features = features;
-	}
-
-	public String getReference() {
-		return this.reference;
-	}
-
-	public void setReference(String reference) {
-		this.reference = reference;
+	public void setMaker(String maker) {
+		this.maker = maker;
 	}
 
 	@Override

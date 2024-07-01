@@ -15,22 +15,24 @@
 package com.aliyuncs.domain_intl.model.v20171218;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class SaveTaskForSubmittingDomainDeleteRequest extends RpcAcsRequest<SaveTaskForSubmittingDomainDeleteResponse> {
-	
-	public SaveTaskForSubmittingDomainDeleteRequest() {
-		super("Domain-intl", "2017-12-18", "SaveTaskForSubmittingDomainDelete", "domain");
-	}
+	   
 
 	private String instanceId;
 
 	private String userClientIp;
 
 	private String lang;
+	public SaveTaskForSubmittingDomainDeleteRequest() {
+		super("Domain-intl", "2017-12-18", "SaveTaskForSubmittingDomainDelete");
+		setMethod(MethodType.POST);
+	}
 
 	public String getInstanceId() {
 		return this.instanceId;

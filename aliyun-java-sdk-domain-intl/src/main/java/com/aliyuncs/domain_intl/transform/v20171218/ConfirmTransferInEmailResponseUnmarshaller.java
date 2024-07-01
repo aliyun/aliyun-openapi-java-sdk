@@ -23,19 +23,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ConfirmTransferInEmailResponseUnmarshaller {
 
-	public static ConfirmTransferInEmailResponse unmarshall(ConfirmTransferInEmailResponse confirmTransferInEmailResponse, UnmarshallerContext context) {
+	public static ConfirmTransferInEmailResponse unmarshall(ConfirmTransferInEmailResponse confirmTransferInEmailResponse, UnmarshallerContext _ctx) {
 		
-		confirmTransferInEmailResponse.setRequestId(context.stringValue("ConfirmTransferInEmailResponse.RequestId"));
+		confirmTransferInEmailResponse.setRequestId(_ctx.stringValue("ConfirmTransferInEmailResponse.RequestId"));
 
 		List<String> successList = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("ConfirmTransferInEmailResponse.SuccessList.Length"); i++) {
-			successList.add(context.stringValue("ConfirmTransferInEmailResponse.SuccessList["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("ConfirmTransferInEmailResponse.SuccessList.Length"); i++) {
+			successList.add(_ctx.stringValue("ConfirmTransferInEmailResponse.SuccessList["+ i +"]"));
 		}
 		confirmTransferInEmailResponse.setSuccessList(successList);
 
 		List<String> failList = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("ConfirmTransferInEmailResponse.FailList.Length"); i++) {
-			failList.add(context.stringValue("ConfirmTransferInEmailResponse.FailList["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("ConfirmTransferInEmailResponse.FailList.Length"); i++) {
+			failList.add(_ctx.stringValue("ConfirmTransferInEmailResponse.FailList["+ i +"]"));
 		}
 		confirmTransferInEmailResponse.setFailList(failList);
 	 

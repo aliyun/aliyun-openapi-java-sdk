@@ -15,22 +15,24 @@
 package com.aliyuncs.domain_intl.model.v20171218;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class QueryTransferInByInstanceIdRequest extends RpcAcsRequest<QueryTransferInByInstanceIdResponse> {
-	
-	public QueryTransferInByInstanceIdRequest() {
-		super("Domain-intl", "2017-12-18", "QueryTransferInByInstanceId", "domain");
-	}
+	   
 
 	private String instanceId;
 
 	private String userClientIp;
 
 	private String lang;
+	public QueryTransferInByInstanceIdRequest() {
+		super("Domain-intl", "2017-12-18", "QueryTransferInByInstanceId");
+		setMethod(MethodType.POST);
+	}
 
 	public String getInstanceId() {
 		return this.instanceId;

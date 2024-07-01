@@ -23,33 +23,17 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest extends RpcAcsRequest<SaveTaskForUpdatingRegistrantInfoByIdentityCredentialResponse> {
-	
-	public SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest() {
-		super("Domain-intl", "2017-12-18", "SaveTaskForUpdatingRegistrantInfoByIdentityCredential", "domain");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String country;
 
 	private String identityCredentialType;
 
-	private String address;
-
-	private String telArea;
-
 	private String city;
-
-	private String registrantType;
-
-	private List<String> domainNames;
 
 	private String identityCredential;
 
-	private String telephone;
-
 	private Boolean transferOutProhibited;
-
-	private String registrantOrganization;
 
 	private String telExt;
 
@@ -57,15 +41,31 @@ public class SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest extend
 
 	private String postalCode;
 
-	private String userClientIp;
-
 	private String lang;
-
-	private String identityCredentialNo;
 
 	private String email;
 
+	private String address;
+
+	private String telArea;
+
+	private String registrantType;
+
+	private List<String> domainNames;
+
+	private String telephone;
+
+	private String registrantOrganization;
+
+	private String userClientIp;
+
+	private String identityCredentialNo;
+
 	private String registrantName;
+	public SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest() {
+		super("Domain-intl", "2017-12-18", "SaveTaskForUpdatingRegistrantInfoByIdentityCredential");
+		setMethod(MethodType.POST);
+	}
 
 	public String getCountry() {
 		return this.country;
@@ -89,28 +89,6 @@ public class SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest extend
 		}
 	}
 
-	public String getAddress() {
-		return this.address;
-	}
-
-	public void setAddress(String address) {
-		this.address = address;
-		if(address != null){
-			putQueryParameter("Address", address);
-		}
-	}
-
-	public String getTelArea() {
-		return this.telArea;
-	}
-
-	public void setTelArea(String telArea) {
-		this.telArea = telArea;
-		if(telArea != null){
-			putQueryParameter("TelArea", telArea);
-		}
-	}
-
 	public String getCity() {
 		return this.city;
 	}
@@ -120,30 +98,6 @@ public class SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest extend
 		if(city != null){
 			putQueryParameter("City", city);
 		}
-	}
-
-	public String getRegistrantType() {
-		return this.registrantType;
-	}
-
-	public void setRegistrantType(String registrantType) {
-		this.registrantType = registrantType;
-		if(registrantType != null){
-			putQueryParameter("RegistrantType", registrantType);
-		}
-	}
-
-	public List<String> getDomainNames() {
-		return this.domainNames;
-	}
-
-	public void setDomainNames(List<String> domainNames) {
-		this.domainNames = domainNames;	
-		if (domainNames != null) {
-			for (int i = 0; i < domainNames.size(); i++) {
-				putQueryParameter("DomainName." + (i + 1) , domainNames.get(i));
-			}
-		}	
 	}
 
 	public String getIdentityCredential() {
@@ -157,17 +111,6 @@ public class SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest extend
 		}
 	}
 
-	public String getTelephone() {
-		return this.telephone;
-	}
-
-	public void setTelephone(String telephone) {
-		this.telephone = telephone;
-		if(telephone != null){
-			putQueryParameter("Telephone", telephone);
-		}
-	}
-
 	public Boolean getTransferOutProhibited() {
 		return this.transferOutProhibited;
 	}
@@ -176,17 +119,6 @@ public class SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest extend
 		this.transferOutProhibited = transferOutProhibited;
 		if(transferOutProhibited != null){
 			putQueryParameter("TransferOutProhibited", transferOutProhibited.toString());
-		}
-	}
-
-	public String getRegistrantOrganization() {
-		return this.registrantOrganization;
-	}
-
-	public void setRegistrantOrganization(String registrantOrganization) {
-		this.registrantOrganization = registrantOrganization;
-		if(registrantOrganization != null){
-			putQueryParameter("RegistrantOrganization", registrantOrganization);
 		}
 	}
 
@@ -223,17 +155,6 @@ public class SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest extend
 		}
 	}
 
-	public String getUserClientIp() {
-		return this.userClientIp;
-	}
-
-	public void setUserClientIp(String userClientIp) {
-		this.userClientIp = userClientIp;
-		if(userClientIp != null){
-			putQueryParameter("UserClientIp", userClientIp);
-		}
-	}
-
 	public String getLang() {
 		return this.lang;
 	}
@@ -245,17 +166,6 @@ public class SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest extend
 		}
 	}
 
-	public String getIdentityCredentialNo() {
-		return this.identityCredentialNo;
-	}
-
-	public void setIdentityCredentialNo(String identityCredentialNo) {
-		this.identityCredentialNo = identityCredentialNo;
-		if(identityCredentialNo != null){
-			putQueryParameter("IdentityCredentialNo", identityCredentialNo);
-		}
-	}
-
 	public String getEmail() {
 		return this.email;
 	}
@@ -264,6 +174,96 @@ public class SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest extend
 		this.email = email;
 		if(email != null){
 			putQueryParameter("Email", email);
+		}
+	}
+
+	public String getAddress() {
+		return this.address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+		if(address != null){
+			putQueryParameter("Address", address);
+		}
+	}
+
+	public String getTelArea() {
+		return this.telArea;
+	}
+
+	public void setTelArea(String telArea) {
+		this.telArea = telArea;
+		if(telArea != null){
+			putQueryParameter("TelArea", telArea);
+		}
+	}
+
+	public String getRegistrantType() {
+		return this.registrantType;
+	}
+
+	public void setRegistrantType(String registrantType) {
+		this.registrantType = registrantType;
+		if(registrantType != null){
+			putQueryParameter("RegistrantType", registrantType);
+		}
+	}
+
+	public List<String> getDomainNames() {
+		return this.domainNames;
+	}
+
+	public void setDomainNames(List<String> domainNames) {
+		this.domainNames = domainNames;	
+		if (domainNames != null) {
+			for (int i = 0; i < domainNames.size(); i++) {
+				putQueryParameter("DomainName." + (i + 1) , domainNames.get(i));
+			}
+		}	
+	}
+
+	public String getTelephone() {
+		return this.telephone;
+	}
+
+	public void setTelephone(String telephone) {
+		this.telephone = telephone;
+		if(telephone != null){
+			putQueryParameter("Telephone", telephone);
+		}
+	}
+
+	public String getRegistrantOrganization() {
+		return this.registrantOrganization;
+	}
+
+	public void setRegistrantOrganization(String registrantOrganization) {
+		this.registrantOrganization = registrantOrganization;
+		if(registrantOrganization != null){
+			putQueryParameter("RegistrantOrganization", registrantOrganization);
+		}
+	}
+
+	public String getUserClientIp() {
+		return this.userClientIp;
+	}
+
+	public void setUserClientIp(String userClientIp) {
+		this.userClientIp = userClientIp;
+		if(userClientIp != null){
+			putQueryParameter("UserClientIp", userClientIp);
+		}
+	}
+
+	public String getIdentityCredentialNo() {
+		return this.identityCredentialNo;
+	}
+
+	public void setIdentityCredentialNo(String identityCredentialNo) {
+		this.identityCredentialNo = identityCredentialNo;
+		if(identityCredentialNo != null){
+			putQueryParameter("IdentityCredentialNo", identityCredentialNo);
 		}
 	}
 

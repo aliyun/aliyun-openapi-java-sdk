@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SaveSingleTaskForUpdateProhibitionLockResponseUnmarshaller {
 
-	public static SaveSingleTaskForUpdateProhibitionLockResponse unmarshall(SaveSingleTaskForUpdateProhibitionLockResponse saveSingleTaskForUpdateProhibitionLockResponse, UnmarshallerContext context) {
+	public static SaveSingleTaskForUpdateProhibitionLockResponse unmarshall(SaveSingleTaskForUpdateProhibitionLockResponse saveSingleTaskForUpdateProhibitionLockResponse, UnmarshallerContext _ctx) {
 		
-		saveSingleTaskForUpdateProhibitionLockResponse.setRequestId(context.stringValue("SaveSingleTaskForUpdateProhibitionLockResponse.RequestId"));
-		saveSingleTaskForUpdateProhibitionLockResponse.setTaskNo(context.stringValue("SaveSingleTaskForUpdateProhibitionLockResponse.TaskNo"));
+		saveSingleTaskForUpdateProhibitionLockResponse.setRequestId(_ctx.stringValue("SaveSingleTaskForUpdateProhibitionLockResponse.RequestId"));
+		saveSingleTaskForUpdateProhibitionLockResponse.setTaskNo(_ctx.stringValue("SaveSingleTaskForUpdateProhibitionLockResponse.TaskNo"));
 	 
 	 	return saveSingleTaskForUpdateProhibitionLockResponse;
 	}

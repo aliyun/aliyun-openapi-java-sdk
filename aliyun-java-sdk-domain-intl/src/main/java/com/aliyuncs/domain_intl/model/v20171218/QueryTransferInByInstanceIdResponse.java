@@ -24,49 +24,81 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryTransferInByInstanceIdResponse extends AcsResponse {
 
+	private Integer status;
+
+	private String transferAuthorizationCodeSubmissionDate;
+
+	private String email;
+
+	private Integer progressBarType;
+
 	private String requestId;
-
-	private String submissionDate;
-
-	private String modificationDate;
-
-	private String userId;
 
 	private String instanceId;
 
 	private String domainName;
 
-	private Integer status;
+	private Long submissionDateLong;
+
+	private String submissionDate;
 
 	private String simpleTransferInStatus;
+
+	private Long transferAuthorizationCodeSubmissionDateLong;
+
+	private Long expirationDateLong;
+
+	private String expirationDate;
+
+	private Boolean needMailCheck;
+
+	private String userId;
+
+	private String modificationDate;
+
+	private Long resultDateLong;
+
+	private String resultMsg;
+
+	private Boolean whoisMailStatus;
+
+	private Long modificationDateLong;
 
 	private String resultCode;
 
 	private String resultDate;
 
-	private String resultMsg;
+	public Integer getStatus() {
+		return this.status;
+	}
 
-	private String transferAuthorizationCodeSubmissionDate;
+	public void setStatus(Integer status) {
+		this.status = status;
+	}
 
-	private Boolean needMailCheck;
+	public String getTransferAuthorizationCodeSubmissionDate() {
+		return this.transferAuthorizationCodeSubmissionDate;
+	}
 
-	private String email;
+	public void setTransferAuthorizationCodeSubmissionDate(String transferAuthorizationCodeSubmissionDate) {
+		this.transferAuthorizationCodeSubmissionDate = transferAuthorizationCodeSubmissionDate;
+	}
 
-	private Boolean whoisMailStatus;
+	public String getEmail() {
+		return this.email;
+	}
 
-	private String expirationDate;
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
-	private Integer progressBarType;
+	public Integer getProgressBarType() {
+		return this.progressBarType;
+	}
 
-	private Long submissionDateLong;
-
-	private Long modificationDateLong;
-
-	private Long resultDateLong;
-
-	private Long expirationDateLong;
-
-	private Long transferAuthorizationCodeSubmissionDateLong;
+	public void setProgressBarType(Integer progressBarType) {
+		this.progressBarType = progressBarType;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -74,30 +106,6 @@ public class QueryTransferInByInstanceIdResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getSubmissionDate() {
-		return this.submissionDate;
-	}
-
-	public void setSubmissionDate(String submissionDate) {
-		this.submissionDate = submissionDate;
-	}
-
-	public String getModificationDate() {
-		return this.modificationDate;
-	}
-
-	public void setModificationDate(String modificationDate) {
-		this.modificationDate = modificationDate;
-	}
-
-	public String getUserId() {
-		return this.userId;
-	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
 	}
 
 	public String getInstanceId() {
@@ -116,12 +124,20 @@ public class QueryTransferInByInstanceIdResponse extends AcsResponse {
 		this.domainName = domainName;
 	}
 
-	public Integer getStatus() {
-		return this.status;
+	public Long getSubmissionDateLong() {
+		return this.submissionDateLong;
 	}
 
-	public void setStatus(Integer status) {
-		this.status = status;
+	public void setSubmissionDateLong(Long submissionDateLong) {
+		this.submissionDateLong = submissionDateLong;
+	}
+
+	public String getSubmissionDate() {
+		return this.submissionDate;
+	}
+
+	public void setSubmissionDate(String submissionDate) {
+		this.submissionDate = submissionDate;
 	}
 
 	public String getSimpleTransferInStatus() {
@@ -130,6 +146,86 @@ public class QueryTransferInByInstanceIdResponse extends AcsResponse {
 
 	public void setSimpleTransferInStatus(String simpleTransferInStatus) {
 		this.simpleTransferInStatus = simpleTransferInStatus;
+	}
+
+	public Long getTransferAuthorizationCodeSubmissionDateLong() {
+		return this.transferAuthorizationCodeSubmissionDateLong;
+	}
+
+	public void setTransferAuthorizationCodeSubmissionDateLong(Long transferAuthorizationCodeSubmissionDateLong) {
+		this.transferAuthorizationCodeSubmissionDateLong = transferAuthorizationCodeSubmissionDateLong;
+	}
+
+	public Long getExpirationDateLong() {
+		return this.expirationDateLong;
+	}
+
+	public void setExpirationDateLong(Long expirationDateLong) {
+		this.expirationDateLong = expirationDateLong;
+	}
+
+	public String getExpirationDate() {
+		return this.expirationDate;
+	}
+
+	public void setExpirationDate(String expirationDate) {
+		this.expirationDate = expirationDate;
+	}
+
+	public Boolean getNeedMailCheck() {
+		return this.needMailCheck;
+	}
+
+	public void setNeedMailCheck(Boolean needMailCheck) {
+		this.needMailCheck = needMailCheck;
+	}
+
+	public String getUserId() {
+		return this.userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+
+	public String getModificationDate() {
+		return this.modificationDate;
+	}
+
+	public void setModificationDate(String modificationDate) {
+		this.modificationDate = modificationDate;
+	}
+
+	public Long getResultDateLong() {
+		return this.resultDateLong;
+	}
+
+	public void setResultDateLong(Long resultDateLong) {
+		this.resultDateLong = resultDateLong;
+	}
+
+	public String getResultMsg() {
+		return this.resultMsg;
+	}
+
+	public void setResultMsg(String resultMsg) {
+		this.resultMsg = resultMsg;
+	}
+
+	public Boolean getWhoisMailStatus() {
+		return this.whoisMailStatus;
+	}
+
+	public void setWhoisMailStatus(Boolean whoisMailStatus) {
+		this.whoisMailStatus = whoisMailStatus;
+	}
+
+	public Long getModificationDateLong() {
+		return this.modificationDateLong;
+	}
+
+	public void setModificationDateLong(Long modificationDateLong) {
+		this.modificationDateLong = modificationDateLong;
 	}
 
 	public String getResultCode() {
@@ -146,102 +242,6 @@ public class QueryTransferInByInstanceIdResponse extends AcsResponse {
 
 	public void setResultDate(String resultDate) {
 		this.resultDate = resultDate;
-	}
-
-	public String getResultMsg() {
-		return this.resultMsg;
-	}
-
-	public void setResultMsg(String resultMsg) {
-		this.resultMsg = resultMsg;
-	}
-
-	public String getTransferAuthorizationCodeSubmissionDate() {
-		return this.transferAuthorizationCodeSubmissionDate;
-	}
-
-	public void setTransferAuthorizationCodeSubmissionDate(String transferAuthorizationCodeSubmissionDate) {
-		this.transferAuthorizationCodeSubmissionDate = transferAuthorizationCodeSubmissionDate;
-	}
-
-	public Boolean getNeedMailCheck() {
-		return this.needMailCheck;
-	}
-
-	public void setNeedMailCheck(Boolean needMailCheck) {
-		this.needMailCheck = needMailCheck;
-	}
-
-	public String getEmail() {
-		return this.email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public Boolean getWhoisMailStatus() {
-		return this.whoisMailStatus;
-	}
-
-	public void setWhoisMailStatus(Boolean whoisMailStatus) {
-		this.whoisMailStatus = whoisMailStatus;
-	}
-
-	public String getExpirationDate() {
-		return this.expirationDate;
-	}
-
-	public void setExpirationDate(String expirationDate) {
-		this.expirationDate = expirationDate;
-	}
-
-	public Integer getProgressBarType() {
-		return this.progressBarType;
-	}
-
-	public void setProgressBarType(Integer progressBarType) {
-		this.progressBarType = progressBarType;
-	}
-
-	public Long getSubmissionDateLong() {
-		return this.submissionDateLong;
-	}
-
-	public void setSubmissionDateLong(Long submissionDateLong) {
-		this.submissionDateLong = submissionDateLong;
-	}
-
-	public Long getModificationDateLong() {
-		return this.modificationDateLong;
-	}
-
-	public void setModificationDateLong(Long modificationDateLong) {
-		this.modificationDateLong = modificationDateLong;
-	}
-
-	public Long getResultDateLong() {
-		return this.resultDateLong;
-	}
-
-	public void setResultDateLong(Long resultDateLong) {
-		this.resultDateLong = resultDateLong;
-	}
-
-	public Long getExpirationDateLong() {
-		return this.expirationDateLong;
-	}
-
-	public void setExpirationDateLong(Long expirationDateLong) {
-		this.expirationDateLong = expirationDateLong;
-	}
-
-	public Long getTransferAuthorizationCodeSubmissionDateLong() {
-		return this.transferAuthorizationCodeSubmissionDateLong;
-	}
-
-	public void setTransferAuthorizationCodeSubmissionDateLong(Long transferAuthorizationCodeSubmissionDateLong) {
-		this.transferAuthorizationCodeSubmissionDateLong = transferAuthorizationCodeSubmissionDateLong;
 	}
 
 	@Override

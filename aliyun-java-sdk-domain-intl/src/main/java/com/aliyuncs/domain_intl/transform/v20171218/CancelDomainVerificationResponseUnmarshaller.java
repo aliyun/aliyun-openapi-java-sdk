@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CancelDomainVerificationResponseUnmarshaller {
 
-	public static CancelDomainVerificationResponse unmarshall(CancelDomainVerificationResponse cancelDomainVerificationResponse, UnmarshallerContext context) {
+	public static CancelDomainVerificationResponse unmarshall(CancelDomainVerificationResponse cancelDomainVerificationResponse, UnmarshallerContext _ctx) {
 		
-		cancelDomainVerificationResponse.setRequestId(context.stringValue("CancelDomainVerificationResponse.RequestId"));
+		cancelDomainVerificationResponse.setRequestId(_ctx.stringValue("CancelDomainVerificationResponse.RequestId"));
 	 
 	 	return cancelDomainVerificationResponse;
 	}

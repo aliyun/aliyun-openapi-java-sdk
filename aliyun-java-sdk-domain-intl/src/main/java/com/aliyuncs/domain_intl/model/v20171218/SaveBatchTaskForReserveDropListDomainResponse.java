@@ -15,26 +15,18 @@
 package com.aliyuncs.domain_intl.model.v20171218;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.domain_intl.transform.v20171218.SaveRegistrantProfileResponseUnmarshaller;
+import com.aliyuncs.domain_intl.transform.v20171218.SaveBatchTaskForReserveDropListDomainResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class SaveRegistrantProfileResponse extends AcsResponse {
-
-	private Long registrantProfileId;
+public class SaveBatchTaskForReserveDropListDomainResponse extends AcsResponse {
 
 	private String requestId;
 
-	public Long getRegistrantProfileId() {
-		return this.registrantProfileId;
-	}
-
-	public void setRegistrantProfileId(Long registrantProfileId) {
-		this.registrantProfileId = registrantProfileId;
-	}
+	private String taskNo;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,8 +36,21 @@ public class SaveRegistrantProfileResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getTaskNo() {
+		return this.taskNo;
+	}
+
+	public void setTaskNo(String taskNo) {
+		this.taskNo = taskNo;
+	}
+
 	@Override
-	public SaveRegistrantProfileResponse getInstance(UnmarshallerContext context) {
-		return	SaveRegistrantProfileResponseUnmarshaller.unmarshall(this, context);
+	public SaveBatchTaskForReserveDropListDomainResponse getInstance(UnmarshallerContext context) {
+		return	SaveBatchTaskForReserveDropListDomainResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

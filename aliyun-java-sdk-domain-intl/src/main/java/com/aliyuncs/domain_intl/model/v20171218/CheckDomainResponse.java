@@ -26,17 +26,17 @@ public class CheckDomainResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String domainName;
-
 	private String avail;
-
-	private String premium;
-
-	private String reason;
 
 	private Long price;
 
+	private String domainName;
+
+	private String premium;
+
 	private Boolean dynamicCheck;
+
+	private String reason;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,14 +44,6 @@ public class CheckDomainResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
 	}
 
 	public String getAvail() {
@@ -62,22 +54,6 @@ public class CheckDomainResponse extends AcsResponse {
 		this.avail = avail;
 	}
 
-	public String getPremium() {
-		return this.premium;
-	}
-
-	public void setPremium(String premium) {
-		this.premium = premium;
-	}
-
-	public String getReason() {
-		return this.reason;
-	}
-
-	public void setReason(String reason) {
-		this.reason = reason;
-	}
-
 	public Long getPrice() {
 		return this.price;
 	}
@@ -86,12 +62,36 @@ public class CheckDomainResponse extends AcsResponse {
 		this.price = price;
 	}
 
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+	}
+
+	public String getPremium() {
+		return this.premium;
+	}
+
+	public void setPremium(String premium) {
+		this.premium = premium;
+	}
+
 	public Boolean getDynamicCheck() {
 		return this.dynamicCheck;
 	}
 
 	public void setDynamicCheck(Boolean dynamicCheck) {
 		this.dynamicCheck = dynamicCheck;
+	}
+
+	public String getReason() {
+		return this.reason;
+	}
+
+	public void setReason(String reason) {
+		this.reason = reason;
 	}
 
 	@Override
