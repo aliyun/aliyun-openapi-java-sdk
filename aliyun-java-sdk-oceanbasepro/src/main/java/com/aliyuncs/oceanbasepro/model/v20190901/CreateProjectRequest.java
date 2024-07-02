@@ -1683,6 +1683,9 @@ public class CreateProjectRequest extends RpcAcsRequest<CreateProjectResponse> {
 		@SerializedName("ActiveActive")
 		private Boolean activeActive;
 
+		@SerializedName("SinkStoreFormat")
+		private String sinkStoreFormat;
+
 		@SerializedName("RocketMqEnableMsgTrace")
 		private Boolean rocketMqEnableMsgTrace;
 
@@ -1709,6 +1712,9 @@ public class CreateProjectRequest extends RpcAcsRequest<CreateProjectResponse> {
 
 		@SerializedName("DataWorksBusinessName")
 		private String dataWorksBusinessName;
+
+		@SerializedName("SourceStoreFormat")
+		private String sourceStoreFormat;
 
 		@SerializedName("SyncSchema")
 		private Boolean syncSchema;
@@ -1738,6 +1744,14 @@ public class CreateProjectRequest extends RpcAcsRequest<CreateProjectResponse> {
 
 		public void setActiveActive(Boolean activeActive) {
 			this.activeActive = activeActive;
+		}
+
+		public String getSinkStoreFormat() {
+			return this.sinkStoreFormat;
+		}
+
+		public void setSinkStoreFormat(String sinkStoreFormat) {
+			this.sinkStoreFormat = sinkStoreFormat;
 		}
 
 		public Boolean getRocketMqEnableMsgTrace() {
@@ -1810,6 +1824,14 @@ public class CreateProjectRequest extends RpcAcsRequest<CreateProjectResponse> {
 
 		public void setDataWorksBusinessName(String dataWorksBusinessName) {
 			this.dataWorksBusinessName = dataWorksBusinessName;
+		}
+
+		public String getSourceStoreFormat() {
+			return this.sourceStoreFormat;
+		}
+
+		public void setSourceStoreFormat(String sourceStoreFormat) {
+			this.sourceStoreFormat = sourceStoreFormat;
 		}
 
 		public Boolean getSyncSchema() {

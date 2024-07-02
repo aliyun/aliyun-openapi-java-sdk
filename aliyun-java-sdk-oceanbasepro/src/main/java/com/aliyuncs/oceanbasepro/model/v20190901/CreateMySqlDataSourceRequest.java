@@ -31,6 +31,8 @@ public class CreateMySqlDataSourceRequest extends RpcAcsRequest<CreateMySqlDataS
 
 	private String type;
 
+	private Boolean useSsl;
+
 	private String password;
 
 	private String dgInstanceId;
@@ -85,6 +87,17 @@ public class CreateMySqlDataSourceRequest extends RpcAcsRequest<CreateMySqlDataS
 		this.type = type;
 		if(type != null){
 			putBodyParameter("Type", type);
+		}
+	}
+
+	public Boolean getUseSsl() {
+		return this.useSsl;
+	}
+
+	public void setUseSsl(Boolean useSsl) {
+		this.useSsl = useSsl;
+		if(useSsl != null){
+			putBodyParameter("UseSsl", useSsl.toString());
 		}
 	}
 

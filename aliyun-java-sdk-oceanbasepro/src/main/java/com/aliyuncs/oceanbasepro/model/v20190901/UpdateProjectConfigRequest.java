@@ -28,6 +28,9 @@ import com.aliyuncs.oceanbasepro.Endpoint;
 public class UpdateProjectConfigRequest extends RpcAcsRequest<UpdateProjectConfigResponse> {
 	   
 
+	@SerializedName("commonTransferConfig")
+	private CommonTransferConfig commonTransferConfig;
+
 	@SerializedName("reverseIncrTransferConfig")
 	private ReverseIncrTransferConfig reverseIncrTransferConfig;
 
@@ -45,6 +48,17 @@ public class UpdateProjectConfigRequest extends RpcAcsRequest<UpdateProjectConfi
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public CommonTransferConfig getCommonTransferConfig() {
+		return this.commonTransferConfig;
+	}
+
+	public void setCommonTransferConfig(CommonTransferConfig commonTransferConfig) {
+		this.commonTransferConfig = commonTransferConfig;	
+		if (commonTransferConfig != null) {
+			putBodyParameter("CommonTransferConfig" , new Gson().toJson(commonTransferConfig));
+		}	
 	}
 
 	public ReverseIncrTransferConfig getReverseIncrTransferConfig() {
@@ -89,6 +103,31 @@ public class UpdateProjectConfigRequest extends RpcAcsRequest<UpdateProjectConfi
 		if (incrTransferConfig != null) {
 			putBodyParameter("IncrTransferConfig" , new Gson().toJson(incrTransferConfig));
 		}	
+	}
+
+	public static class CommonTransferConfig {
+
+		@SerializedName("SinkStoreFormat")
+		private String sinkStoreFormat;
+
+		@SerializedName("SourceStoreFormat")
+		private String sourceStoreFormat;
+
+		public String getSinkStoreFormat() {
+			return this.sinkStoreFormat;
+		}
+
+		public void setSinkStoreFormat(String sinkStoreFormat) {
+			this.sinkStoreFormat = sinkStoreFormat;
+		}
+
+		public String getSourceStoreFormat() {
+			return this.sourceStoreFormat;
+		}
+
+		public void setSourceStoreFormat(String sourceStoreFormat) {
+			this.sourceStoreFormat = sourceStoreFormat;
+		}
 	}
 
 	public static class ReverseIncrTransferConfig {
