@@ -65,6 +65,8 @@ public class DescribeBackupsResponseUnmarshaller {
 			backup.setBackupExtractionStatus(_ctx.stringValue("DescribeBackupsResponse.Items["+ i +"].BackupExtractionStatus"));
 			backup.setChecksum(_ctx.stringValue("DescribeBackupsResponse.Items["+ i +"].Checksum"));
 			backup.setResourceGroupId(_ctx.stringValue("DescribeBackupsResponse.Items["+ i +"].ResourceGroupId"));
+			backup.setEngine(_ctx.stringValue("DescribeBackupsResponse.Items["+ i +"].Engine"));
+			backup.setEngineVersion(_ctx.stringValue("DescribeBackupsResponse.Items["+ i +"].EngineVersion"));
 
 			List<BackupDownloadLinkByDBItem> backupDownloadLinkByDB = new ArrayList<BackupDownloadLinkByDBItem>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeBackupsResponse.Items["+ i +"].BackupDownloadLinkByDB.Length"); j++) {

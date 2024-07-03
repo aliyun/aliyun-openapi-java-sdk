@@ -128,6 +128,7 @@ public class DescribeDBInstanceAttributeResponseUnmarshaller {
 			extra.setReplicaGroupStatus(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].Extra.ReplicaGroupStatus"));
 			extra.setActiveReplicaDBInstanceID(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].Extra.ActiveReplicaDBInstanceID"));
 			extra.setReplicaGroupID(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].Extra.ReplicaGroupID"));
+			extra.setRecoveryModel(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].Extra.RecoveryModel"));
 
 			List<String> dBInstanceIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].Extra.DBInstanceIds.Length"); j++) {

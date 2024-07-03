@@ -153,6 +153,10 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 		private String resourceGroupId;
 
+		private String engine;
+
+		private String engineVersion;
+
 		private List<BackupDownloadLinkByDBItem> backupDownloadLinkByDB;
 
 		public String getStorageClass() {
@@ -377,6 +381,22 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 		public void setResourceGroupId(String resourceGroupId) {
 			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getEngine() {
+			return this.engine;
+		}
+
+		public void setEngine(String engine) {
+			this.engine = engine;
+		}
+
+		public String getEngineVersion() {
+			return this.engineVersion;
+		}
+
+		public void setEngineVersion(String engineVersion) {
+			this.engineVersion = engineVersion;
 		}
 
 		public List<BackupDownloadLinkByDBItem> getBackupDownloadLinkByDB() {

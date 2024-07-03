@@ -1094,6 +1094,8 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 			private String replicaGroupID;
 
+			private String recoveryModel;
+
 			private List<String> dBInstanceIds;
 
 			public String getReplicaGroupStatus() {
@@ -1118,6 +1120,14 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 			public void setReplicaGroupID(String replicaGroupID) {
 				this.replicaGroupID = replicaGroupID;
+			}
+
+			public String getRecoveryModel() {
+				return this.recoveryModel;
+			}
+
+			public void setRecoveryModel(String recoveryModel) {
+				this.recoveryModel = recoveryModel;
 			}
 
 			public List<String> getDBInstanceIds() {

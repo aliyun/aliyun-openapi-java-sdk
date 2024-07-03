@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.rds.model.v20140815.DescribeParametersResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeParametersResponse.DBInstanceParameter;
+import com.aliyuncs.rds.model.v20140815.DescribeParametersResponse.DBInstanceParameter1;
 import com.aliyuncs.rds.model.v20140815.DescribeParametersResponse.ParamGroupInfo;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -49,12 +50,14 @@ public class DescribeParametersResponseUnmarshaller {
 		}
 		describeParametersResponse.setConfigParameters(configParameters);
 
-		List<DBInstanceParameter> runningParameters = new ArrayList<DBInstanceParameter>();
+		List<DBInstanceParameter1> runningParameters = new ArrayList<DBInstanceParameter1>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeParametersResponse.RunningParameters.Length"); i++) {
-			DBInstanceParameter dBInstanceParameter1 = new DBInstanceParameter();
+			DBInstanceParameter1 dBInstanceParameter1 = new DBInstanceParameter1();
 			dBInstanceParameter1.setParameterDescription(_ctx.stringValue("DescribeParametersResponse.RunningParameters["+ i +"].ParameterDescription"));
 			dBInstanceParameter1.setParameterName(_ctx.stringValue("DescribeParametersResponse.RunningParameters["+ i +"].ParameterName"));
 			dBInstanceParameter1.setParameterValue(_ctx.stringValue("DescribeParametersResponse.RunningParameters["+ i +"].ParameterValue"));
+			dBInstanceParameter1.setParameterValueRange(_ctx.stringValue("DescribeParametersResponse.RunningParameters["+ i +"].ParameterValueRange"));
+			dBInstanceParameter1.setParameterDefaultValue(_ctx.stringValue("DescribeParametersResponse.RunningParameters["+ i +"].ParameterDefaultValue"));
 
 			runningParameters.add(dBInstanceParameter1);
 		}

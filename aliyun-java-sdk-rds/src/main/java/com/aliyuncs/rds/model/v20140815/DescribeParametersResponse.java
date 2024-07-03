@@ -33,7 +33,7 @@ public class DescribeParametersResponse extends AcsResponse {
 
 	private List<DBInstanceParameter> configParameters;
 
-	private List<DBInstanceParameter> runningParameters;
+	private List<DBInstanceParameter1> runningParameters;
 
 	private ParamGroupInfo paramGroupInfo;
 
@@ -69,11 +69,11 @@ public class DescribeParametersResponse extends AcsResponse {
 		this.configParameters = configParameters;
 	}
 
-	public List<DBInstanceParameter> getRunningParameters() {
+	public List<DBInstanceParameter1> getRunningParameters() {
 		return this.runningParameters;
 	}
 
-	public void setRunningParameters(List<DBInstanceParameter> runningParameters) {
+	public void setRunningParameters(List<DBInstanceParameter1> runningParameters) {
 		this.runningParameters = runningParameters;
 	}
 
@@ -115,6 +115,59 @@ public class DescribeParametersResponse extends AcsResponse {
 
 		public void setParameterValue(String parameterValue) {
 			this.parameterValue = parameterValue;
+		}
+	}
+
+	public static class DBInstanceParameter1 {
+
+		private String parameterDescription;
+
+		private String parameterName;
+
+		private String parameterValue;
+
+		private String parameterValueRange;
+
+		private String parameterDefaultValue;
+
+		public String getParameterDescription() {
+			return this.parameterDescription;
+		}
+
+		public void setParameterDescription(String parameterDescription) {
+			this.parameterDescription = parameterDescription;
+		}
+
+		public String getParameterName() {
+			return this.parameterName;
+		}
+
+		public void setParameterName(String parameterName) {
+			this.parameterName = parameterName;
+		}
+
+		public String getParameterValue() {
+			return this.parameterValue;
+		}
+
+		public void setParameterValue(String parameterValue) {
+			this.parameterValue = parameterValue;
+		}
+
+		public String getParameterValueRange() {
+			return this.parameterValueRange;
+		}
+
+		public void setParameterValueRange(String parameterValueRange) {
+			this.parameterValueRange = parameterValueRange;
+		}
+
+		public String getParameterDefaultValue() {
+			return this.parameterDefaultValue;
+		}
+
+		public void setParameterDefaultValue(String parameterDefaultValue) {
+			this.parameterDefaultValue = parameterDefaultValue;
 		}
 	}
 
