@@ -16,14 +16,14 @@ package com.aliyuncs.ens.model.v20171110;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ens.transform.v20171110.DeleteSDGResponseUnmarshaller;
+import com.aliyuncs.ens.transform.v20171110.PreloadRegionSDGResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DeleteSDGResponse extends AcsResponse {
+public class PreloadRegionSDGResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -111,45 +111,32 @@ public class DeleteSDGResponse extends AcsResponse {
 
 			public static class FailedItemsItem {
 
-				private String errMessage;
+				private String errorMessage;
 
-				private Item item;
+				private String destinationRegionId;
 
-				public String getErrMessage() {
-					return this.errMessage;
+				public String getErrorMessage() {
+					return this.errorMessage;
 				}
 
-				public void setErrMessage(String errMessage) {
-					this.errMessage = errMessage;
+				public void setErrorMessage(String errorMessage) {
+					this.errorMessage = errorMessage;
 				}
 
-				public Item getItem() {
-					return this.item;
+				public String getDestinationRegionId() {
+					return this.destinationRegionId;
 				}
 
-				public void setItem(Item item) {
-					this.item = item;
-				}
-
-				public static class Item {
-
-					private String sdgId;
-
-					public String getSdgId() {
-						return this.sdgId;
-					}
-
-					public void setSdgId(String sdgId) {
-						this.sdgId = sdgId;
-					}
+				public void setDestinationRegionId(String destinationRegionId) {
+					this.destinationRegionId = destinationRegionId;
 				}
 			}
 		}
 	}
 
 	@Override
-	public DeleteSDGResponse getInstance(UnmarshallerContext context) {
-		return	DeleteSDGResponseUnmarshaller.unmarshall(this, context);
+	public PreloadRegionSDGResponse getInstance(UnmarshallerContext context) {
+		return	PreloadRegionSDGResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

@@ -32,6 +32,8 @@ public class PutBucketRequest extends RpcAcsRequest<PutBucketResponse> {
 
 	private String bucketAcl;
 
+	private String dispatchScope;
+
 	private String comment;
 	public PutBucketRequest() {
 		super("Ens", "2017-11-10", "PutBucket", "ens");
@@ -79,6 +81,17 @@ public class PutBucketRequest extends RpcAcsRequest<PutBucketResponse> {
 		this.bucketAcl = bucketAcl;
 		if(bucketAcl != null){
 			putBodyParameter("BucketAcl", bucketAcl);
+		}
+	}
+
+	public String getDispatchScope() {
+		return this.dispatchScope;
+	}
+
+	public void setDispatchScope(String dispatchScope) {
+		this.dispatchScope = dispatchScope;
+		if(dispatchScope != null){
+			putBodyParameter("DispatchScope", dispatchScope);
 		}
 	}
 

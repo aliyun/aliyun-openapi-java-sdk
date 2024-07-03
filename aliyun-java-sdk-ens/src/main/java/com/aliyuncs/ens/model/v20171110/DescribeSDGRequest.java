@@ -24,17 +24,40 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class DescribeSDGsRequest extends RpcAcsRequest<DescribeSDGsResponse> {
+public class DescribeSDGRequest extends RpcAcsRequest<DescribeSDGResponse> {
 	   
+
+	private Integer pageNumber;
+
+	private Integer pageSize;
 
 	@SerializedName("sDGIds")
 	private List<String> sDGIds;
-
-	@SerializedName("instanceIds")
-	private List<String> instanceIds;
-	public DescribeSDGsRequest() {
-		super("Ens", "2017-11-10", "DescribeSDGs", "ens");
+	public DescribeSDGRequest() {
+		super("Ens", "2017-11-10", "DescribeSDG", "ens");
 		setMethod(MethodType.POST);
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
 	}
 
 	public List<String> getSDGIds() {
@@ -48,20 +71,9 @@ public class DescribeSDGsRequest extends RpcAcsRequest<DescribeSDGsResponse> {
 		}	
 	}
 
-	public List<String> getInstanceIds() {
-		return this.instanceIds;
-	}
-
-	public void setInstanceIds(List<String> instanceIds) {
-		this.instanceIds = instanceIds;	
-		if (instanceIds != null) {
-			putQueryParameter("InstanceIds" , new Gson().toJson(instanceIds));
-		}	
-	}
-
 	@Override
-	public Class<DescribeSDGsResponse> getResponseClass() {
-		return DescribeSDGsResponse.class;
+	public Class<DescribeSDGResponse> getResponseClass() {
+		return DescribeSDGResponse.class;
 	}
 
 }

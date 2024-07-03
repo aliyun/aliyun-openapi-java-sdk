@@ -74,6 +74,8 @@ public class DescribeLoadBalancerHTTPListenerAttributeResponse extends AcsRespon
 
 	private String healthCheckMethod;
 
+	private String xForwardedFor;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -272,6 +274,14 @@ public class DescribeLoadBalancerHTTPListenerAttributeResponse extends AcsRespon
 
 	public void setHealthCheckMethod(String healthCheckMethod) {
 		this.healthCheckMethod = healthCheckMethod;
+	}
+
+	public String getXForwardedFor() {
+		return this.xForwardedFor;
+	}
+
+	public void setXForwardedFor(String xForwardedFor) {
+		this.xForwardedFor = xForwardedFor;
 	}
 
 	@Override

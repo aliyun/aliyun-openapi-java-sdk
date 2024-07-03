@@ -30,6 +30,8 @@ public class DeleteEnsSaleConditionControlRequest extends RpcAcsRequest<DeleteEn
 	@SerializedName("saleControls")
 	private List<SaleControls> saleControls;
 
+	private String customAccount;
+
 	private String commodityCode;
 
 	private String aliUidAccount;
@@ -47,6 +49,17 @@ public class DeleteEnsSaleConditionControlRequest extends RpcAcsRequest<DeleteEn
 		if (saleControls != null) {
 			putQueryParameter("SaleControls" , new Gson().toJson(saleControls));
 		}	
+	}
+
+	public String getCustomAccount() {
+		return this.customAccount;
+	}
+
+	public void setCustomAccount(String customAccount) {
+		this.customAccount = customAccount;
+		if(customAccount != null){
+			putQueryParameter("CustomAccount", customAccount);
+		}
 	}
 
 	public String getCommodityCode() {

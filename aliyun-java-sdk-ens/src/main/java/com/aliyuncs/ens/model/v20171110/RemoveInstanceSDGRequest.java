@@ -24,30 +24,30 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class DeleteSDGRequest extends RpcAcsRequest<DeleteSDGResponse> {
+public class RemoveInstanceSDGRequest extends RpcAcsRequest<RemoveInstanceSDGResponse> {
 	   
 
-	@SerializedName("sDGId")
-	private List<String> sDGId;
-	public DeleteSDGRequest() {
-		super("Ens", "2017-11-10", "DeleteSDG", "ens");
+	@SerializedName("instanceIds")
+	private List<String> instanceIds;
+	public RemoveInstanceSDGRequest() {
+		super("Ens", "2017-11-10", "RemoveInstanceSDG", "ens");
 		setMethod(MethodType.POST);
 	}
 
-	public List<String> getSDGId() {
-		return this.sDGId;
+	public List<String> getInstanceIds() {
+		return this.instanceIds;
 	}
 
-	public void setSDGId(List<String> sDGId) {
-		this.sDGId = sDGId;	
-		if (sDGId != null) {
-			putQueryParameter("SDGId" , new Gson().toJson(sDGId));
+	public void setInstanceIds(List<String> instanceIds) {
+		this.instanceIds = instanceIds;	
+		if (instanceIds != null) {
+			putQueryParameter("InstanceIds" , new Gson().toJson(instanceIds));
 		}	
 	}
 
 	@Override
-	public Class<DeleteSDGResponse> getResponseClass() {
-		return DeleteSDGResponse.class;
+	public Class<RemoveInstanceSDGResponse> getResponseClass() {
+		return RemoveInstanceSDGResponse.class;
 	}
 
 }

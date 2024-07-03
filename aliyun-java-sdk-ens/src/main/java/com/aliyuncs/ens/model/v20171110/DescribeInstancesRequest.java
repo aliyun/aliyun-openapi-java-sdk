@@ -62,6 +62,8 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 
 	private String pageSize;
 
+	private String instanceType;
+
 	private String ensRegionIds;
 	public DescribeInstancesRequest() {
 		super("Ens", "2017-11-10", "DescribeInstances", "ens");
@@ -252,6 +254,17 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize);
+		}
+	}
+
+	public String getInstanceType() {
+		return this.instanceType;
+	}
+
+	public void setInstanceType(String instanceType) {
+		this.instanceType = instanceType;
+		if(instanceType != null){
+			putQueryParameter("InstanceType", instanceType);
 		}
 	}
 

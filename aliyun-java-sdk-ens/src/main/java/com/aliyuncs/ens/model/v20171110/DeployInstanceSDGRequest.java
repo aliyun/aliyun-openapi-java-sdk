@@ -24,28 +24,40 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class DescribeSDGsRequest extends RpcAcsRequest<DescribeSDGsResponse> {
+public class DeployInstanceSDGRequest extends RpcAcsRequest<DeployInstanceSDGResponse> {
 	   
 
-	@SerializedName("sDGIds")
-	private List<String> sDGIds;
+	private String deploymentType;
+
+	private String sDGId;
 
 	@SerializedName("instanceIds")
 	private List<String> instanceIds;
-	public DescribeSDGsRequest() {
-		super("Ens", "2017-11-10", "DescribeSDGs", "ens");
+	public DeployInstanceSDGRequest() {
+		super("Ens", "2017-11-10", "DeployInstanceSDG", "ens");
 		setMethod(MethodType.POST);
 	}
 
-	public List<String> getSDGIds() {
-		return this.sDGIds;
+	public String getDeploymentType() {
+		return this.deploymentType;
 	}
 
-	public void setSDGIds(List<String> sDGIds) {
-		this.sDGIds = sDGIds;	
-		if (sDGIds != null) {
-			putQueryParameter("SDGIds" , new Gson().toJson(sDGIds));
-		}	
+	public void setDeploymentType(String deploymentType) {
+		this.deploymentType = deploymentType;
+		if(deploymentType != null){
+			putQueryParameter("DeploymentType", deploymentType);
+		}
+	}
+
+	public String getSDGId() {
+		return this.sDGId;
+	}
+
+	public void setSDGId(String sDGId) {
+		this.sDGId = sDGId;
+		if(sDGId != null){
+			putQueryParameter("SDGId", sDGId);
+		}
 	}
 
 	public List<String> getInstanceIds() {
@@ -60,8 +72,8 @@ public class DescribeSDGsRequest extends RpcAcsRequest<DescribeSDGsResponse> {
 	}
 
 	@Override
-	public Class<DescribeSDGsResponse> getResponseClass() {
-		return DescribeSDGsResponse.class;
+	public Class<DeployInstanceSDGResponse> getResponseClass() {
+		return DeployInstanceSDGResponse.class;
 	}
 
 }

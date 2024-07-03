@@ -16,14 +16,14 @@ package com.aliyuncs.ens.model.v20171110;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ens.transform.v20171110.DeleteSDGResponseUnmarshaller;
+import com.aliyuncs.ens.transform.v20171110.DeployInstanceSDGResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DeleteSDGResponse extends AcsResponse {
+public class DeployInstanceSDGResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -83,7 +83,7 @@ public class DeleteSDGResponse extends AcsResponse {
 
 			private Long successCount;
 
-			private List<FailedItemsItem> failedItems;
+			private List<FailedItem> failedItems;
 
 			public Long getFailedCount() {
 				return this.failedCount;
@@ -101,19 +101,19 @@ public class DeleteSDGResponse extends AcsResponse {
 				this.successCount = successCount;
 			}
 
-			public List<FailedItemsItem> getFailedItems() {
+			public List<FailedItem> getFailedItems() {
 				return this.failedItems;
 			}
 
-			public void setFailedItems(List<FailedItemsItem> failedItems) {
+			public void setFailedItems(List<FailedItem> failedItems) {
 				this.failedItems = failedItems;
 			}
 
-			public static class FailedItemsItem {
+			public static class FailedItem {
 
 				private String errMessage;
 
-				private Item item;
+				private String instanceId;
 
 				public String getErrMessage() {
 					return this.errMessage;
@@ -123,33 +123,20 @@ public class DeleteSDGResponse extends AcsResponse {
 					this.errMessage = errMessage;
 				}
 
-				public Item getItem() {
-					return this.item;
+				public String getInstanceId() {
+					return this.instanceId;
 				}
 
-				public void setItem(Item item) {
-					this.item = item;
-				}
-
-				public static class Item {
-
-					private String sdgId;
-
-					public String getSdgId() {
-						return this.sdgId;
-					}
-
-					public void setSdgId(String sdgId) {
-						this.sdgId = sdgId;
-					}
+				public void setInstanceId(String instanceId) {
+					this.instanceId = instanceId;
 				}
 			}
 		}
 	}
 
 	@Override
-	public DeleteSDGResponse getInstance(UnmarshallerContext context) {
-		return	DeleteSDGResponseUnmarshaller.unmarshall(this, context);
+	public DeployInstanceSDGResponse getInstance(UnmarshallerContext context) {
+		return	DeployInstanceSDGResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

@@ -16,16 +16,18 @@ package com.aliyuncs.ens.model.v20171110;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ens.transform.v20171110.DeleteSDGResponseUnmarshaller;
+import com.aliyuncs.ens.transform.v20171110.RemoveInstanceSDGResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DeleteSDGResponse extends AcsResponse {
+public class RemoveInstanceSDGResponse extends AcsResponse {
 
 	private String requestId;
+
+	private Integer code;
 
 	private Data data;
 
@@ -35,6 +37,14 @@ public class DeleteSDGResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getCode() {
+		return this.code;
+	}
+
+	public void setCode(Integer code) {
+		this.code = code;
 	}
 
 	public Data getData() {
@@ -113,7 +123,7 @@ public class DeleteSDGResponse extends AcsResponse {
 
 				private String errMessage;
 
-				private Item item;
+				private String instanceId;
 
 				public String getErrMessage() {
 					return this.errMessage;
@@ -123,33 +133,20 @@ public class DeleteSDGResponse extends AcsResponse {
 					this.errMessage = errMessage;
 				}
 
-				public Item getItem() {
-					return this.item;
+				public String getInstanceId() {
+					return this.instanceId;
 				}
 
-				public void setItem(Item item) {
-					this.item = item;
-				}
-
-				public static class Item {
-
-					private String sdgId;
-
-					public String getSdgId() {
-						return this.sdgId;
-					}
-
-					public void setSdgId(String sdgId) {
-						this.sdgId = sdgId;
-					}
+				public void setInstanceId(String instanceId) {
+					this.instanceId = instanceId;
 				}
 			}
 		}
 	}
 
 	@Override
-	public DeleteSDGResponse getInstance(UnmarshallerContext context) {
-		return	DeleteSDGResponseUnmarshaller.unmarshall(this, context);
+	public RemoveInstanceSDGResponse getInstance(UnmarshallerContext context) {
+		return	RemoveInstanceSDGResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
