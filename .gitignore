@@ -10,3 +10,4 @@
 .DS_Store
 */lib/
 .factorypath
+jacoco.exec
