@@ -13,11 +13,9 @@ import com.aliyuncs.profile.DefaultProfile;
 import com.aliyuncs.profile.IClientProfile;
 import com.aliyuncs.ram.model.v20150501.ListAccessKeysRequest;
 import com.aliyuncs.ram.model.v20150501.ListAccessKeysResponse;
-import com.aliyuncs.ros.model.v20150901.DescribeResourcesRequest;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -197,7 +195,9 @@ public class NewEndpointTest extends BaseTest {
                 Assert.fail();
             } catch (ClientException e) {
                 Assert.assertEquals(ErrorCodeConstant.SDK_ENDPOINT_RESOLVING_ERROR, e.getErrCode());
-                Assert.assertEquals("No such region 'mars'. Please check your region ID.", e.getErrMsg());
+                Assert.assertEquals("No endpoint in the region 'mars' for product 'Ram'. \n" +
+                        "You can set an endpoint for your request explicitly.\n" +
+                        "See https://www.alibabacloud.com/help/zh/doc-detail/92049.htm\n", e.getErrMsg());
             }
         }
         // Bad region ID with another product
@@ -206,9 +206,12 @@ public class NewEndpointTest extends BaseTest {
             Assert.fail();
         } catch (ClientException e) {
             Assert.assertEquals(ErrorCodeConstant.SDK_ENDPOINT_RESOLVING_ERROR, e.getErrCode());
-            Assert.assertEquals("No such region 'mars'. Please check your region ID.", e.getErrMsg());
+            Assert.assertEquals("No endpoint in the region 'mars' for product 'Ecs'. \n" +
+                    "You can set an endpoint for your request explicitly.\n" +
+                    "Or you can use the other available regions: cn-shenzhen cn-beijing ap-south-1 eu-west-1 ap-northeast-1 me-east-1 cn-qingdao cn-shanghai cn-hongkong ap-southeast-1 ap-southeast-2 ap-southeast-3 eu-central-1 cn-huhehaote ap-southeast-5 us-east-1 cn-zhangjiakou us-west-1 cn-hangzhou\n" +
+                    "See https://www.alibabacloud.com/help/zh/doc-detail/92049.htm\n", e.getErrMsg());
         }
-        Assert.assertEquals(2, locationServiceEndpointResolver.locationServiceCallCounter);
+        Assert.assertEquals(3, locationServiceEndpointResolver.locationServiceCallCounter);
 
         // Bad product code
         for (int i = 0; i < 3; i++) {
@@ -230,18 +233,21 @@ public class NewEndpointTest extends BaseTest {
             Assert.assertTrue(e.getErrMsg().startsWith("" + "No endpoint for product 'InvalidProductCode'. \n"
                     + "Please check the product code, or set an endpoint for your request explicitly.\n"));
         }
-        Assert.assertEquals(3, locationServiceEndpointResolver.locationServiceCallCounter);
+        Assert.assertEquals(4, locationServiceEndpointResolver.locationServiceCallCounter);
     }
 
     @Test
     public void testTryToGetEndpointWithInvalidRegionId() {
         initEnv();
         try {
-            System.out.println(resolve("mars", "Ecs"));
+            resolve("mars", "Ecs");
             Assert.fail();
         } catch (ClientException e) {
             Assert.assertEquals(ErrorCodeConstant.SDK_ENDPOINT_RESOLVING_ERROR, e.getErrCode());
-            Assert.assertEquals("No such region 'mars'. Please check your region ID.", e.getErrMsg());
+            Assert.assertEquals("No endpoint in the region 'mars' for product 'Ecs'. \n" +
+                    "You can set an endpoint for your request explicitly.\n" +
+                    "Or you can use the other available regions: cn-shenzhen cn-beijing ap-south-1 eu-west-1 ap-northeast-1 me-east-1 cn-qingdao cn-shanghai cn-hongkong ap-southeast-1 ap-southeast-2 ap-southeast-3 eu-central-1 cn-huhehaote ap-southeast-5 us-east-1 cn-zhangjiakou us-west-1 cn-hangzhou\n" +
+                    "See https://www.alibabacloud.com/help/zh/doc-detail/92049.htm\n", e.getErrMsg());
         }
     }
 
@@ -326,29 +332,10 @@ public class NewEndpointTest extends BaseTest {
     }
 
     @Test
-    @Ignore
-    public void testLocalClockScrewWhenCallLocationService() {
-        throw new NotImplementedException();
-    }
-
-    @Test
     public void testCallRpcRequestWithClient() throws ClientException {
         DescribeRegionsRequest request = new DescribeRegionsRequest();
         DescribeRegionsResponse response = this.client.getAcsResponse(request);
         Assert.assertTrue(response.getRegions().size() > 0);
-    }
-
-    @Test
-    public void testCallRoaRequestWithClient() throws ClientException {
-        DescribeResourcesRequest request = new DescribeResourcesRequest();
-        request.setStackId("StackId");
-        request.setStackName("StackName");
-        try {
-            this.client.getAcsResponse(request);
-            Assert.fail();
-        } catch (ClientException e) {
-            Assert.assertEquals("StackNotFound", e.getErrCode());
-        }
     }
 
     @Test

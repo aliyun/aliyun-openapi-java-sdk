@@ -15,10 +15,10 @@ public class EndpointResolverTest extends BaseTest {
         DefaultAcsClient client = new DefaultAcsClient(profile);
         DescribeRegionsRequest request = new DescribeRegionsRequest();
         ProductDomain domain = client.getDomain(request, "cn-qingdao");
-        Assert.assertEquals("ecs-cn-hangzhou.aliyuncs.com", domain.getDomainName());
+        Assert.assertEquals("ecs.cn-qingdao.aliyuncs.com", domain.getDomainName());
 
         domain = client.getDomain(request, new String("cn-qingdao"));
-        Assert.assertEquals("ecs-cn-hangzhou.aliyuncs.com", domain.getDomainName());
+        Assert.assertEquals("ecs.cn-qingdao.aliyuncs.com", domain.getDomainName());
     }
 
     @Test
