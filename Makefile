@@ -18,6 +18,8 @@ travis-test:
 	mv ./aliyun-java-sdk-ros/target/*.jar ./java-sdk-function-test/lib/ros.jar
 	mvn package -Dmaven.test.skip=true -f ./aliyun-java-sdk-ram/pom.xml
 	mv ./aliyun-java-sdk-ram/target/*.jar ./java-sdk-function-test/lib/ram.jar
+	mvn package -Dmaven.test.skip=true -f ./aliyun-java-sdk-sts/pom.xml
+	mv ./aliyun-java-sdk-sts/target/*.jar ./java-sdk-function-test/lib/sts.jar
 	mvn package -Dmaven.test.skip=true -f ./aliyun-java-sdk-vpc/pom.xml
 	mv ./aliyun-java-sdk-vpc/target/*.jar ./java-sdk-function-test/lib/vpc.jar
 	mvn package -Dmaven.test.skip=true -f ./aliyun-java-sdk-rds/pom.xml

@@ -12,6 +12,9 @@ defaults:
   run:
     shell: bash
 
+permissions:
+  id-token: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -33,6 +36,17 @@ jobs:
       uses: codecov/codecov-action@v4
       with:
         token: ${{ secrets.CODECOV_TOKEN }} # required
+    - name: Setup OIDC
+      run: npm install @actions/core@1.6.0 @actions/http-client
+    - name: Get Id Token
+      uses: actions/github-script@v6
+      id: idtoken
+      with:
+        script: |
+          const coreDemo = require('@actions/core');
+          const idToken = await coreDemo.getIDToken('sts.aliyuncs.com');
+          const fsx = require('fs/promises');
+          await fsx.writeFile('/tmp/oidc_token', idToken);
     - name: Integration Test
       if: ${{ env.ACCESS_KEY_ID != '' }}
       run: |
@@ -45,3 +59,6 @@ jobs:
         RAMAccessKeyId: ${{ secrets.RAM_ACCESS_KEY_ID }}
         RAMAccessKeySecret: ${{ secrets.RAM_ACCESS_KEY_SECRET }}
         roleArn: ${{ secrets.ROLE_ARN }}
+        ALIBABA_CLOUD_OIDC_PROVIDER_ARN: ${{ secrets.OIDC_PROVIDER_ARN }}
+        ALIBABA_CLOUD_OIDC_TOKEN_FILE: "/tmp/oidc_token"
+        ALIBABA_CLOUD_ROLE_ARN: ${{ secrets.OIDC_ROLE_ARN }}
