@@ -23,7 +23,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Setup java
-      uses: actions/setup-java@v2
+      uses: actions/setup-java@v4
       with:
         distribution: 'zulu'
         java-version: ${{ matrix.java }}
@@ -33,3 +33,15 @@ jobs:
       uses: codecov/codecov-action@v4
       with:
         token: ${{ secrets.CODECOV_TOKEN }} # required
+    - name: Integration Test
+      if: ${{ env.ACCESS_KEY_ID != '' }}
+      run: |
+        npm i o_o -g
+        o_o &
+        make travis-test
+      env:
+        ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY_ID }}
+        ACCESS_KEY_SECRET: ${{ secrets.ACCESS_KEY_SECRET }}
+        RAMAccessKeyId: ${{ secrets.RAM_ACCESS_KEY_ID }}
+        RAMAccessKeySecret: ${{ secrets.RAM_ACCESS_KEY_SECRET }}
+        roleArn: ${{ secrets.ROLE_ARN }}
