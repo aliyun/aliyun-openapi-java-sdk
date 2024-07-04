@@ -444,7 +444,7 @@ public class DescribeInstanceTopologyResponse extends AcsResponse {
 
 				private String logicalZone;
 
-				private List<NodeResourceItem> nodeResource;
+				private NodeResource nodeResource;
 
 				public String getNodeId() {
 					return this.nodeId;
@@ -502,15 +502,15 @@ public class DescribeInstanceTopologyResponse extends AcsResponse {
 					this.logicalZone = logicalZone;
 				}
 
-				public List<NodeResourceItem> getNodeResource() {
+				public NodeResource getNodeResource() {
 					return this.nodeResource;
 				}
 
-				public void setNodeResource(List<NodeResourceItem> nodeResource) {
+				public void setNodeResource(NodeResource nodeResource) {
 					this.nodeResource = nodeResource;
 				}
 
-				public static class NodeResourceItem {
+				public static class NodeResource {
 
 					private Cpu cpu;
 

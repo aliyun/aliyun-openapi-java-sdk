@@ -29,10 +29,10 @@ import com.aliyuncs.oceanbasepro.model.v20190901.DescribeInstanceTopologyRespons
 import com.aliyuncs.oceanbasepro.model.v20190901.DescribeInstanceTopologyResponse.InstanceTopology.TenantsItem.TenantZonesItem.UnitsItem;
 import com.aliyuncs.oceanbasepro.model.v20190901.DescribeInstanceTopologyResponse.InstanceTopology.ZonesItem;
 import com.aliyuncs.oceanbasepro.model.v20190901.DescribeInstanceTopologyResponse.InstanceTopology.ZonesItem.NodesItem;
-import com.aliyuncs.oceanbasepro.model.v20190901.DescribeInstanceTopologyResponse.InstanceTopology.ZonesItem.NodesItem.NodeResourceItem;
-import com.aliyuncs.oceanbasepro.model.v20190901.DescribeInstanceTopologyResponse.InstanceTopology.ZonesItem.NodesItem.NodeResourceItem.Cpu;
-import com.aliyuncs.oceanbasepro.model.v20190901.DescribeInstanceTopologyResponse.InstanceTopology.ZonesItem.NodesItem.NodeResourceItem.DiskSize;
-import com.aliyuncs.oceanbasepro.model.v20190901.DescribeInstanceTopologyResponse.InstanceTopology.ZonesItem.NodesItem.NodeResourceItem.Memory;
+import com.aliyuncs.oceanbasepro.model.v20190901.DescribeInstanceTopologyResponse.InstanceTopology.ZonesItem.NodesItem.NodeResource;
+import com.aliyuncs.oceanbasepro.model.v20190901.DescribeInstanceTopologyResponse.InstanceTopology.ZonesItem.NodesItem.NodeResource.Cpu;
+import com.aliyuncs.oceanbasepro.model.v20190901.DescribeInstanceTopologyResponse.InstanceTopology.ZonesItem.NodesItem.NodeResource.DiskSize;
+import com.aliyuncs.oceanbasepro.model.v20190901.DescribeInstanceTopologyResponse.InstanceTopology.ZonesItem.NodesItem.NodeResource.Memory;
 import com.aliyuncs.oceanbasepro.model.v20190901.DescribeInstanceTopologyResponse.InstanceTopology.ZonesItem.ZoneResource;
 import com.aliyuncs.oceanbasepro.model.v20190901.DescribeInstanceTopologyResponse.InstanceTopology.ZonesItem.ZoneResource.DiskSize1;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -128,27 +128,22 @@ public class DescribeInstanceTopologyResponseUnmarshaller {
 				nodesItem.setReadOnlyCopyId(_ctx.longValue("DescribeInstanceTopologyResponse.InstanceTopology.Zones["+ i +"].Nodes["+ j +"].ReadOnlyCopyId"));
 				nodesItem.setLogicalZone(_ctx.stringValue("DescribeInstanceTopologyResponse.InstanceTopology.Zones["+ i +"].Nodes["+ j +"].LogicalZone"));
 
-				List<NodeResourceItem> nodeResource = new ArrayList<NodeResourceItem>();
-				for (int k = 0; k < _ctx.lengthValue("DescribeInstanceTopologyResponse.InstanceTopology.Zones["+ i +"].Nodes["+ j +"].NodeResource.Length"); k++) {
-					NodeResourceItem nodeResourceItem = new NodeResourceItem();
+				NodeResource nodeResource = new NodeResource();
 
-					Cpu cpu = new Cpu();
-					cpu.setUsedCpu(_ctx.floatValue("DescribeInstanceTopologyResponse.InstanceTopology.Zones["+ i +"].Nodes["+ j +"].NodeResource["+ k +"].Cpu.UsedCpu"));
-					cpu.setTotalCpu(_ctx.integerValue("DescribeInstanceTopologyResponse.InstanceTopology.Zones["+ i +"].Nodes["+ j +"].NodeResource["+ k +"].Cpu.TotalCpu"));
-					nodeResourceItem.setCpu(cpu);
+				Cpu cpu = new Cpu();
+				cpu.setUsedCpu(_ctx.floatValue("DescribeInstanceTopologyResponse.InstanceTopology.Zones["+ i +"].Nodes["+ j +"].NodeResource.Cpu.UsedCpu"));
+				cpu.setTotalCpu(_ctx.integerValue("DescribeInstanceTopologyResponse.InstanceTopology.Zones["+ i +"].Nodes["+ j +"].NodeResource.Cpu.TotalCpu"));
+				nodeResource.setCpu(cpu);
 
-					Memory memory = new Memory();
-					memory.setUsedMemory(_ctx.floatValue("DescribeInstanceTopologyResponse.InstanceTopology.Zones["+ i +"].Nodes["+ j +"].NodeResource["+ k +"].Memory.UsedMemory"));
-					memory.setTotalMemory(_ctx.longValue("DescribeInstanceTopologyResponse.InstanceTopology.Zones["+ i +"].Nodes["+ j +"].NodeResource["+ k +"].Memory.TotalMemory"));
-					nodeResourceItem.setMemory(memory);
+				Memory memory = new Memory();
+				memory.setUsedMemory(_ctx.floatValue("DescribeInstanceTopologyResponse.InstanceTopology.Zones["+ i +"].Nodes["+ j +"].NodeResource.Memory.UsedMemory"));
+				memory.setTotalMemory(_ctx.longValue("DescribeInstanceTopologyResponse.InstanceTopology.Zones["+ i +"].Nodes["+ j +"].NodeResource.Memory.TotalMemory"));
+				nodeResource.setMemory(memory);
 
-					DiskSize diskSize = new DiskSize();
-					diskSize.setTotalDiskSize(_ctx.doubleValue("DescribeInstanceTopologyResponse.InstanceTopology.Zones["+ i +"].Nodes["+ j +"].NodeResource["+ k +"].DiskSize.TotalDiskSize"));
-					diskSize.setUsedDiskSize(_ctx.doubleValue("DescribeInstanceTopologyResponse.InstanceTopology.Zones["+ i +"].Nodes["+ j +"].NodeResource["+ k +"].DiskSize.UsedDiskSize"));
-					nodeResourceItem.setDiskSize(diskSize);
-
-					nodeResource.add(nodeResourceItem);
-				}
+				DiskSize diskSize = new DiskSize();
+				diskSize.setTotalDiskSize(_ctx.doubleValue("DescribeInstanceTopologyResponse.InstanceTopology.Zones["+ i +"].Nodes["+ j +"].NodeResource.DiskSize.TotalDiskSize"));
+				diskSize.setUsedDiskSize(_ctx.doubleValue("DescribeInstanceTopologyResponse.InstanceTopology.Zones["+ i +"].Nodes["+ j +"].NodeResource.DiskSize.UsedDiskSize"));
+				nodeResource.setDiskSize(diskSize);
 				nodesItem.setNodeResource(nodeResource);
 
 				nodes.add(nodesItem);
