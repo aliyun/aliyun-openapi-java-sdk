@@ -97,7 +97,6 @@ public class InstanceProfileCredentialsTest {
         long duration = 6000L;
         InstanceProfileCredentials credentials = new InstanceProfileCredentials(ak, sk, token, expirationStr, duration);
         Assert.assertTrue(credentials.isExpired());
-
     }
 
     @Test

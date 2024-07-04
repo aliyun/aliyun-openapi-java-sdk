@@ -60,10 +60,14 @@ public class CompatibleUrlConnClient extends IHttpClient {
                     out.write(request.getHttpContent());
                 }
                 out.flush();
-
             }
 
             content = httpConn.getInputStream();
+            response = new HttpResponse(httpConn.getURL().toString());
+            parseHttpConn(response, httpConn, content);
+            return response;
+        } catch (IOException e) {
+            content = httpConn.getErrorStream();
             response = new HttpResponse(httpConn.getURL().toString());
             parseHttpConn(response, httpConn, content);
             return response;
