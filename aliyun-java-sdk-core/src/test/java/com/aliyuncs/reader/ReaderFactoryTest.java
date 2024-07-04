@@ -1,25 +1,25 @@
 package com.aliyuncs.reader;
 
 import org.junit.Assert;
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
+import org.junit.function.ThrowingRunnable;
 
 import com.aliyuncs.http.FormatType;
 
+@SuppressWarnings("deprecation")
 public class ReaderFactoryTest {
 
-    @Rule
-    public ExpectedException thrown = ExpectedException.none();
-
-    @SuppressWarnings("deprecation")
     @Test
     public void testCreateInstance() {
         Assert.assertTrue(ReaderFactory.createInstance(FormatType.JSON) instanceof JsonReader);
         Assert.assertTrue(ReaderFactory.createInstance(FormatType.XML) instanceof XmlReader);
-        thrown.expect(IllegalStateException.class);
-        thrown.expectMessage("Server response has a bad format type: " + FormatType.RAW);
-        ReaderFactory.createInstance(FormatType.RAW);
+        IllegalStateException ex = Assert.assertThrows(IllegalStateException.class, new ThrowingRunnable() {
+            @Override
+            public void run() throws Throwable {
+                ReaderFactory.createInstance(FormatType.RAW);
+            }
+        });
+        Assert.assertEquals("Server response has a bad format type: " + FormatType.RAW, ex.getLocalizedMessage());
     }
 
     @Test

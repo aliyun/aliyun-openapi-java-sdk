@@ -4,10 +4,6 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-/**
- * Created by haowei.yao on 2017/9/12.
- */
-
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.http.HttpRequest;
 import com.aliyuncs.http.HttpResponse;
@@ -89,9 +85,12 @@ public class ECSMetadataServiceCredentialsFetcher {
         if (!"Success".equals(jsonObject.get("Code").getAsString())) {
             throw new ClientException(ECS_METADAT_FETCH_ERROR_MSG);
         }
-        return new InstanceProfileCredentials(jsonObject.get("AccessKeyId").getAsString(), jsonObject.get(
-                "AccessKeySecret").getAsString(), jsonObject.get("SecurityToken").getAsString(), jsonObject.get(
-                        "Expiration").getAsString(), DEFAULT_ECS_SESSION_TOKEN_DURATION_SECONDS);
+        return new InstanceProfileCredentials(
+            jsonObject.get("AccessKeyId").getAsString(),
+            jsonObject.get("AccessKeySecret").getAsString(),
+            jsonObject.get("SecurityToken").getAsString(),
+            jsonObject.get("Expiration").getAsString(),
+            DEFAULT_ECS_SESSION_TOKEN_DURATION_SECONDS);
     }
 
     public InstanceProfileCredentials fetch(int retryTimes) throws ClientException {
