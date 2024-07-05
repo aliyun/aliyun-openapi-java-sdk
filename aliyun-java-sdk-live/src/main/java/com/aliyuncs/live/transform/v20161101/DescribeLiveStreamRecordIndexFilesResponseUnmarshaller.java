@@ -50,6 +50,7 @@ public class DescribeLiveStreamRecordIndexFilesResponseUnmarshaller {
 			recordIndexInfo.setWidth(_ctx.integerValue("DescribeLiveStreamRecordIndexFilesResponse.RecordIndexInfoList["+ i +"].Width"));
 			recordIndexInfo.setDuration(_ctx.floatValue("DescribeLiveStreamRecordIndexFilesResponse.RecordIndexInfoList["+ i +"].Duration"));
 			recordIndexInfo.setOssEndpoint(_ctx.stringValue("DescribeLiveStreamRecordIndexFilesResponse.RecordIndexInfoList["+ i +"].OssEndpoint"));
+			recordIndexInfo.setFormat(_ctx.stringValue("DescribeLiveStreamRecordIndexFilesResponse.RecordIndexInfoList["+ i +"].Format"));
 
 			recordIndexInfoList.add(recordIndexInfo);
 		}

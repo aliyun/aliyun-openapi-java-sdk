@@ -15,6 +15,7 @@
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.live.Endpoint;
 
@@ -22,16 +23,17 @@ import com.aliyuncs.live.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteRoomRequest extends RpcAcsRequest<DeleteRoomResponse> {
+public class RecoverLiveMessageDeletedGroupRequest extends RpcAcsRequest<RecoverLiveMessageDeletedGroupResponse> {
 	   
 
-	private Long ownerId;
+	private String groupId;
 
-	private String roomId;
+	private String dataCenter;
 
 	private String appId;
-	public DeleteRoomRequest() {
-		super("live", "2016-11-01", "DeleteRoom", "live");
+	public RecoverLiveMessageDeletedGroupRequest() {
+		super("live", "2016-11-01", "RecoverLiveMessageDeletedGroup", "live");
+		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,25 +41,25 @@ public class DeleteRoomRequest extends RpcAcsRequest<DeleteRoomResponse> {
 		} catch (Exception e) {}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	public String getGroupId() {
+		return this.groupId;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
 		}
 	}
 
-	public String getRoomId() {
-		return this.roomId;
+	public String getDataCenter() {
+		return this.dataCenter;
 	}
 
-	public void setRoomId(String roomId) {
-		this.roomId = roomId;
-		if(roomId != null){
-			putQueryParameter("RoomId", roomId);
+	public void setDataCenter(String dataCenter) {
+		this.dataCenter = dataCenter;
+		if(dataCenter != null){
+			putQueryParameter("DataCenter", dataCenter);
 		}
 	}
 
@@ -73,8 +75,8 @@ public class DeleteRoomRequest extends RpcAcsRequest<DeleteRoomResponse> {
 	}
 
 	@Override
-	public Class<DeleteRoomResponse> getResponseClass() {
-		return DeleteRoomResponse.class;
+	public Class<RecoverLiveMessageDeletedGroupResponse> getResponseClass() {
+		return RecoverLiveMessageDeletedGroupResponse.class;
 	}
 
 }

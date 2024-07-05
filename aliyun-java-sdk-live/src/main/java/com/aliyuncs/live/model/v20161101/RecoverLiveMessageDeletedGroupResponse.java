@@ -15,16 +15,18 @@
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.live.transform.v20161101.ForbidPushStreamResponseUnmarshaller;
+import com.aliyuncs.live.transform.v20161101.RecoverLiveMessageDeletedGroupResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ForbidPushStreamResponse extends AcsResponse {
+public class RecoverLiveMessageDeletedGroupResponse extends AcsResponse {
 
 	private String requestId;
+
+	private String groupId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -34,8 +36,21 @@ public class ForbidPushStreamResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+	}
+
 	@Override
-	public ForbidPushStreamResponse getInstance(UnmarshallerContext context) {
-		return	ForbidPushStreamResponseUnmarshaller.unmarshall(this, context);
+	public RecoverLiveMessageDeletedGroupResponse getInstance(UnmarshallerContext context) {
+		return	RecoverLiveMessageDeletedGroupResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

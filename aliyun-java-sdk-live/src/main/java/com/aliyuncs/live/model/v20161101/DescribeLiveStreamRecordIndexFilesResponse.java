@@ -125,6 +125,8 @@ public class DescribeLiveStreamRecordIndexFilesResponse extends AcsResponse {
 
 		private String ossEndpoint;
 
+		private String format;
+
 		public String getRecordUrl() {
 			return this.recordUrl;
 		}
@@ -235,6 +237,14 @@ public class DescribeLiveStreamRecordIndexFilesResponse extends AcsResponse {
 
 		public void setOssEndpoint(String ossEndpoint) {
 			this.ossEndpoint = ossEndpoint;
+		}
+
+		public String getFormat() {
+			return this.format;
+		}
+
+		public void setFormat(String format) {
+			this.format = format;
 		}
 	}
 

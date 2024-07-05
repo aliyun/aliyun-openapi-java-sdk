@@ -41,8 +41,6 @@ public class UpdateLiveAIProduceRulesRequest extends RpcAcsRequest<UpdateLiveAIP
 
 	private String domain;
 
-	private Boolean isOrigin;
-
 	private String subtitleId;
 	public UpdateLiveAIProduceRulesRequest() {
 		super("live", "2016-11-01", "UpdateLiveAIProduceRules", "live");
@@ -138,17 +136,6 @@ public class UpdateLiveAIProduceRulesRequest extends RpcAcsRequest<UpdateLiveAIP
 		this.domain = domain;
 		if(domain != null){
 			putQueryParameter("Domain", domain);
-		}
-	}
-
-	public Boolean getIsOrigin() {
-		return this.isOrigin;
-	}
-
-	public void setIsOrigin(Boolean isOrigin) {
-		this.isOrigin = isOrigin;
-		if(isOrigin != null){
-			putQueryParameter("IsOrigin", isOrigin.toString());
 		}
 	}
 

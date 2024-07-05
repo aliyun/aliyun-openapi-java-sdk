@@ -14,16 +14,17 @@
 
 package com.aliyuncs.live.transform.v20161101;
 
-import com.aliyuncs.live.model.v20161101.AllowPushStreamResponse;
+import com.aliyuncs.live.model.v20161101.RecoverLiveMessageDeletedGroupResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class AllowPushStreamResponseUnmarshaller {
+public class RecoverLiveMessageDeletedGroupResponseUnmarshaller {
 
-	public static AllowPushStreamResponse unmarshall(AllowPushStreamResponse allowPushStreamResponse, UnmarshallerContext _ctx) {
+	public static RecoverLiveMessageDeletedGroupResponse unmarshall(RecoverLiveMessageDeletedGroupResponse recoverLiveMessageDeletedGroupResponse, UnmarshallerContext _ctx) {
 		
-		allowPushStreamResponse.setRequestId(_ctx.stringValue("AllowPushStreamResponse.RequestId"));
+		recoverLiveMessageDeletedGroupResponse.setRequestId(_ctx.stringValue("RecoverLiveMessageDeletedGroupResponse.RequestId"));
+		recoverLiveMessageDeletedGroupResponse.setGroupId(_ctx.stringValue("RecoverLiveMessageDeletedGroupResponse.GroupId"));
 	 
-	 	return allowPushStreamResponse;
+	 	return recoverLiveMessageDeletedGroupResponse;
 	}
 }

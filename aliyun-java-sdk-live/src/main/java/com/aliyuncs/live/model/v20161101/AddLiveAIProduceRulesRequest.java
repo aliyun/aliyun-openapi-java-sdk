@@ -38,8 +38,6 @@ public class AddLiveAIProduceRulesRequest extends RpcAcsRequest<AddLiveAIProduce
 	private String liveTemplate;
 
 	private String domain;
-
-	private Boolean isOrigin;
 	public AddLiveAIProduceRulesRequest() {
 		super("live", "2016-11-01", "AddLiveAIProduceRules", "live");
 		setMethod(MethodType.POST);
@@ -123,17 +121,6 @@ public class AddLiveAIProduceRulesRequest extends RpcAcsRequest<AddLiveAIProduce
 		this.domain = domain;
 		if(domain != null){
 			putQueryParameter("Domain", domain);
-		}
-	}
-
-	public Boolean getIsOrigin() {
-		return this.isOrigin;
-	}
-
-	public void setIsOrigin(Boolean isOrigin) {
-		this.isOrigin = isOrigin;
-		if(isOrigin != null){
-			putQueryParameter("IsOrigin", isOrigin.toString());
 		}
 	}
 
