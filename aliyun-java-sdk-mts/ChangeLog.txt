@@ -1,3 +1,6 @@
+2024-07-05 Version: 3.3.60
+- SubmitSnapshotJob suport timeArray.
+
 2024-04-24 Version: 3.3.59
 - SubmitSnapshotJob suport timeArray.
 

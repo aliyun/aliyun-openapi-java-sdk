@@ -36,6 +36,10 @@ public class UpdateMediaWorkflowRequest extends RpcAcsRequest<UpdateMediaWorkflo
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private String triggerMode;
+
+	private String name;
 	public UpdateMediaWorkflowRequest() {
 		super("Mts", "2014-06-18", "UpdateMediaWorkflow", "mts");
 		setMethod(MethodType.POST);
@@ -108,6 +112,28 @@ public class UpdateMediaWorkflowRequest extends RpcAcsRequest<UpdateMediaWorkflo
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getTriggerMode() {
+		return this.triggerMode;
+	}
+
+	public void setTriggerMode(String triggerMode) {
+		this.triggerMode = triggerMode;
+		if(triggerMode != null){
+			putQueryParameter("TriggerMode", triggerMode);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 
