@@ -12,11 +12,13 @@ public class SystemPropertiesCredentialsProvider implements AlibabaCloudCredenti
         if (!"default".equals(AuthUtils.getClientType())) {
             return null;
         }
+
         String accessKeyId = System.getProperty(AuthConstant.SYSTEM_ACCESSKEYID);
         String accessKeySecret = System.getProperty(AuthConstant.SYSTEM_ACCESSKEYSECRET);
         if (StringUtils.isEmpty(accessKeyId) || StringUtils.isEmpty(accessKeySecret)) {
             return null;
         }
+
         return new BasicCredentials(accessKeyId, accessKeySecret);
     }
 }

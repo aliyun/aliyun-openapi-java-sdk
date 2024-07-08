@@ -2,6 +2,7 @@ package com.aliyuncs.auth;
 
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.utils.AuthUtils;
+import com.aliyuncs.utils.StringUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +16,14 @@ public class DefaultCredentialsProvider implements AlibabaCloudCredentialsProvid
     public DefaultCredentialsProvider() throws ClientException {
         defaultProviders.add(new SystemPropertiesCredentialsProvider());
         defaultProviders.add(new EnvironmentVariableCredentialsProvider());
+        // Add oidc credentials provider
+        String oidcProviderArn = System.getenv("ALIBABA_CLOUD_OIDC_PROVIDER_ARN");
+        String roleArn = System.getenv("ALIBABA_CLOUD_ROLE_ARN");
+        String oidcTokenFile = System.getenv("ALIBABA_CLOUD_OIDC_TOKEN_FILE");
+        if (!StringUtils.isEmpty(oidcProviderArn) && !StringUtils.isEmpty(oidcTokenFile) && !StringUtils.isEmpty(roleArn)) {
+            defaultProviders.add(new OIDCCredentialsProvider(roleArn, oidcProviderArn, oidcTokenFile, "java-sdk-v1-default-rsn", null));
+        }
+
         defaultProviders.add(new ProfileCredentialsProvider());
         String roleName = AuthUtils.getEnvironmentECSMetaData();
         if (roleName != null) {
@@ -42,6 +51,7 @@ public class DefaultCredentialsProvider implements AlibabaCloudCredentialsProvid
                 return credential;
             }
         }
+
         throw new ClientException("not found credentials");
     }
 

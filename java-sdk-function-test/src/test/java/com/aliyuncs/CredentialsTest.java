@@ -45,4 +45,13 @@ public class CredentialsTest extends BaseTest {
         Assert.assertTrue(response.getArn().endsWith("/sessionname"));
     }
 
+    @Test
+    public void oidcProviderForDefaultCredentialsProviderTest() throws ClientException {
+        DefaultAcsClient client = new DefaultAcsClient(this.regionId);
+        GetCallerIdentityRequest request = new GetCallerIdentityRequest();
+        GetCallerIdentityResponse response = client.getAcsResponse(request);
+        Assert.assertNotNull(response);
+        Assert.assertEquals("AssumedRoleUser", response.getIdentityType());
+        Assert.assertTrue(response.getArn().endsWith("/java-sdk-v1-default-rsn"));
+    }
 }
