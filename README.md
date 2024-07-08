@@ -1,17 +1,14 @@
 English | [简体中文](./README-CN.md)
 
 <p align="center">
-<a href=" https://www.alibabacloud.com"><img src="https://aliyunsdk-pages.alicdn.com/icons/AlibabaCloud.svg"></a>
+<a href=" https://www.alibabacloud.com"><img src="https://aliyunsdk-pages.alicdn.com/icons/AlibabaCloud.svg" alt="alibaba cloud logo"></a>
 </p>
 
 <h1 align="center">Alibaba Cloud SDK for Java</h1>
 
-<p align="center">
-<a href="https://search.maven.org/search?q=g:%22com.aliyun%22%20AND%20a:%22aliyun-java-sdk-core%22"><img src="https://img.shields.io/maven-central/v/com.aliyun/aliyun-java-sdk-core.svg?label=Maven%20Central" alt="Latest Stable Version"/></a>
-<a href="https://github.com/aliyun/aliyun-openapi-java-sdk/actions/workflows/maven.yml"><img src="https://github.com/aliyun/aliyun-openapi-java-sdk/actions/workflows/maven.yml/badge.svg" /></a>
-<a href="https://codecov.io/gh/aliyun/aliyun-openapi-java-sdk"><img src="https://codecov.io/gh/aliyun/aliyun-openapi-java-sdk/branch/master/graph/badge.svg"/></a>
-<a href="https://ci.appveyor.com/project/aliyun/aliyun-openapi-java-sdk"><img src="https://ci.appveyor.com/api/projects/status/levg38kb55k0pn1v/branch/master?svg=true"/></a>
-</p>
+[![Maven Central Version](https://img.shields.io/maven-central/v/com.aliyun/aliyun-java-sdk-core)](https://search.maven.org/search?q=g:%22com.aliyun%22%20AND%20a:%22aliyun-java-sdk-core%22)
+[![Java CI with Maven](https://github.com/aliyun/aliyun-openapi-java-sdk/actions/workflows/maven.yml/badge.svg)](https://github.com/aliyun/aliyun-openapi-java-sdk/actions/workflows/maven.yml)
+[![codecov](https://codecov.io/gh/aliyun/aliyun-openapi-java-sdk/graph/badge.svg?token=4LHp6BfqKF)](https://codecov.io/gh/aliyun/aliyun-openapi-java-sdk)
 
 The Alibaba Cloud SDK for Java allows you to access Alibaba Cloud services such as Elastic Compute Service (ECS), Server Load Balancer (SLB), and CloudMonitor. You can access Alibaba Cloud services without the need to handle API related tasks, such as signing and constructing your requests.
 
@@ -49,6 +46,7 @@ To use the Ecs SDK as an example, you only need to declare the following two dep
 ```
 
 If maven is not downloading jar packages from a central repository, you need to add these dependencies in the pom.xml file, or a NoClassDefFoundError exception will be reported
+
 ```xml
 <dependency>
     <groupId>com.google.code.gson</groupId>
@@ -68,6 +66,7 @@ If maven is not downloading jar packages from a central repository, you need to 
 ```
 
 ## Troubleshoot
+
 [Troubleshoot](https://troubleshoot.api.aliyun.com/?source=github_sdk) Provide OpenAPI diagnosis service to help developers quickly locate and troubleshoot errors by using `RequestID` or `error message`, and provide solutions.
 
 ## Quick Examples
@@ -115,36 +114,40 @@ public class Main {
 }
 ```
 
-
 ## Documentation
-* [Requirements](./docs/0-Requirements-EN.md)
-* [Installation](./docs/1-Installation-EN.md)
-* [Client & Credentials](./docs/2-Client-EN.md)
-* [Connection Pool](./docs/3-Pool-EN.md)
-* [Timeout](./docs/4-Timeout-EN.md)
-* [HTTPS Configurations](./docs/5-HTTPS-EN.md)
-* [Proxy Configurations](./docs/6-Proxy-EN.md)
-* [Debug](./docs/7-Debug-EN.md)
-* [Log](./docs/8-Log-EN.md)
-* [Exception](./docs/9-Exception-EN.md)
-* [Endpoint](./docs/10-Endpoint-EN.md)
 
+- [Requirements](./docs/0-Requirements-EN.md)
+- [Installation](./docs/1-Installation-EN.md)
+- [Client & Credentials](./docs/2-Client-EN.md)
+- [Connection Pool](./docs/3-Pool-EN.md)
+- [Timeout](./docs/4-Timeout-EN.md)
+- [HTTPS Configurations](./docs/5-HTTPS-EN.md)
+- [Proxy Configurations](./docs/6-Proxy-EN.md)
+- [Debug](./docs/7-Debug-EN.md)
+- [Log](./docs/8-Log-EN.md)
+- [Exception](./docs/9-Exception-EN.md)
+- [Endpoint](./docs/10-Endpoint-EN.md)
 
 ## Issues
+
 [Opening an Issue](https://github.com/aliyun/aliyun-openapi-java-sdk/issues/new), Issues not conforming to the guidelines may be closed immediately.
 
 ## Changelog
+
 Detailed changes for each release are documented in the [release notes](./aliyun-java-sdk-core/ChangeLog.txt).
 
 ## Contribution
+
 Please make sure to read the [Contributing Guide](CONTRIBUTING.md) before making a pull request.
 
 ## References
-* [Alibaba Cloud Regions & Endpoints](https://developer.aliyun.com/endpoints)
-* [Alibab Cloud OpenAPI Portal](https://api.aliyun.com/)
-* [Latest Release](https://github.com/aliyun/aliyun-openapi-java-sdk)
+
+- [Alibaba Cloud Regions & Endpoints](https://developer.aliyun.com/endpoints)
+- [Alibab Cloud OpenAPI Portal](https://api.aliyun.com/)
+- [Latest Release](https://github.com/aliyun/aliyun-openapi-java-sdk)
 
 ## License
+
 [Apache-2.0](http://www.apache.org/licenses/LICENSE-2.0)
 
 Copyright (c) 2009-present, Alibaba Cloud All rights reserved.
