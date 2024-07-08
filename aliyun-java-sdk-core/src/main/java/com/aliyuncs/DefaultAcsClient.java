@@ -38,12 +38,10 @@ import java.util.regex.Pattern;
 @SuppressWarnings("deprecation")
 public class DefaultAcsClient implements IAcsClient {
 
-    /*
-        Now maxRetryNumber and autoRetry has no effect.
-     */
+    // Now maxRetryNumber and autoRetry has no effect.
     private int maxRetryNumber = 3;
     private boolean autoRetry = true;
-    private IClientProfile clientProfile = null;
+    private IClientProfile clientProfile;
     private AlibabaCloudCredentialsProvider credentialsProvider;
 
     private IHttpClient httpClient;
@@ -118,12 +116,10 @@ public class DefaultAcsClient implements IAcsClient {
             request.setSysSignatureAlgorithm(this.signatureAlgorithm);
         }
         Signer signer = Signer.getSigner(new LegacyCredentials(credential), request.getSysSignatureVersion(), request.getSysSignatureAlgorithm());
-        FormatType format = null;
         if (null == request.getSysRegionId()) {
             request.setSysRegionId(regionId);
         }
-        return doAction(request, autoRetry, maxRetryNumber, regionId, new LegacyCredentials(credential), signer,
-                format);
+        return doAction(request, regionId, new LegacyCredentials(credential), signer, null);
     }
 
     @Override
@@ -191,8 +187,6 @@ public class DefaultAcsClient implements IAcsClient {
         if (null == profile) {
             throw new ClientException("SDK.InvalidProfile", "No active profile found.");
         }
-        boolean retry = autoRetry;
-        int retryNumber = maxRetryCounts;
         String region = profile.getRegionId();
         if (null == request.getSysRegionId()) {
             request.setSysRegionId(region);
@@ -212,7 +206,7 @@ public class DefaultAcsClient implements IAcsClient {
         Signer signer = Signer.getSigner(credentials, request.getSysSignatureVersion(), request.getSysSignatureAlgorithm());
         FormatType format = profile.getFormat();
 
-        return this.doAction(request, retry, retryNumber, request.getSysRegionId(), credentials, signer, format);
+        return this.doAction(request, request.getSysRegionId(), credentials, signer, format);
     }
 
     private <T extends AcsResponse> T parseAcsResponse(AcsRequest<T> request, HttpResponse baseResponse)
@@ -254,13 +248,13 @@ public class DefaultAcsClient implements IAcsClient {
     public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request, boolean autoRetry, int maxRetryNumber,
                                                          String regionId, Credential credential, Signer signer, FormatType format)
             throws ClientException, ServerException {
-        return doAction(request, autoRetry, maxRetryNumber, regionId, new LegacyCredentials(credential), signer,
+        return doAction(request, regionId, new LegacyCredentials(credential), signer,
                 format);
     }
 
     public ProductDomain getDomain(AcsRequest request, String regionId)
             throws ClientException {
-        ProductDomain domain = null;
+        ProductDomain domain;
         if (request.getSysProductDomain() != null) {
             domain = request.getSysProductDomain();
         } else {
@@ -283,11 +277,11 @@ public class DefaultAcsClient implements IAcsClient {
         return domain;
     }
 
-    private <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request, boolean autoRetry, int maxRetryNumber,
+    private <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request,
                                                           String regionId, AlibabaCloudCredentials credentials, Signer signer, FormatType format)
             throws ClientException, ServerException {
         if (!GlobalTracer.isRegistered() || clientProfile.isCloseTrace()) {
-            return doRealAction(request, autoRetry, maxRetryNumber, regionId, credentials, signer, format);
+            return doRealAction(request, regionId, credentials, signer, format);
         }
 
         Tracer tracer = GlobalTracer.get();
@@ -302,7 +296,7 @@ public class DefaultAcsClient implements IAcsClient {
                 .start();
         tracer.inject(span.context(), Format.Builtin.HTTP_HEADERS, new HttpHeadersInjectAdapter(request));
         try {
-            HttpResponse response = doRealAction(request, autoRetry, maxRetryNumber, regionId, credentials, signer, format);
+            HttpResponse response = doRealAction(request, regionId, credentials, signer, format);
             span.setTag("status", response.getStatus());
             span.setTag("ReasonPhrase", response.getReasonPhrase());
             return response;
@@ -315,7 +309,7 @@ public class DefaultAcsClient implements IAcsClient {
 
     }
 
-    private <T extends AcsResponse> HttpResponse doRealAction(AcsRequest<T> request, boolean autoRetry, int maxRetryNumber,
+    private <T extends AcsResponse> HttpResponse doRealAction(AcsRequest<T> request,
                                                               String regionId, AlibabaCloudCredentials credentials, Signer signer, FormatType format)
             throws ClientException, ServerException {
 
@@ -454,17 +448,17 @@ public class DefaultAcsClient implements IAcsClient {
      * 2019-01-03 change access control from private to protected, then subClass can
      * override it and rewrite httpResponse processing
      */
-    protected <T extends AcsResponse> T readResponse(Class<T> clasz, HttpResponse httpResponse, FormatType format)
+    protected <T extends AcsResponse> T readResponse(Class<T> clazz, HttpResponse httpResponse, FormatType format)
             throws ClientException {
         // new version response contains "@XmlRootElement" annotation
-        if (clasz.isAnnotationPresent(XmlRootElement.class)
+        if (clazz.isAnnotationPresent(XmlRootElement.class)
                 && !clientProfile.getHttpClientConfig().isCompatibleMode()) {
             Unmarshaller unmarshaller = UnmarshallerFactory.getUnmarshaller(format);
-            return unmarshaller.unmarshal(clasz, httpResponse.getHttpContentString());
+            return unmarshaller.unmarshal(clazz, httpResponse.getHttpContentString());
         } else {
             Reader reader = ReaderFactory.createInstance(format);
             UnmarshallerContext context = new UnmarshallerContext();
-            T response = null;
+            T response;
             String stringContent = httpResponse.getHttpContentString();
 
             if (stringContent == null) {
@@ -473,13 +467,13 @@ public class DefaultAcsClient implements IAcsClient {
             }
 
             try {
-                response = clasz.newInstance();
+                response = clazz.newInstance();
             } catch (Exception e) {
                 throw new ClientException("SDK.InvalidResponseClass",
-                        "Unable to allocate " + clasz.getName() + " class");
+                        "Unable to allocate " + clazz.getName() + " class");
             }
 
-            String responseEndpoint = clasz.getName().substring(clasz.getName().lastIndexOf(".") + 1);
+            String responseEndpoint = clazz.getName().substring(clazz.getName().lastIndexOf(".") + 1);
             if (response.checkShowJsonItemName()) {
                 context.setResponseMap(reader.read(stringContent, responseEndpoint));
             } else {
@@ -532,6 +526,7 @@ public class DefaultAcsClient implements IAcsClient {
             config.setHttpsProxy(httpsProxy);
             return;
         }
+        return;
     }
 
     /**
