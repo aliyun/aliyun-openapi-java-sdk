@@ -75,8 +75,7 @@ public class DefaultProfile implements IClientProfile {
      * @Deprecated : Use addEndpoint(String regionId, String product, String endpoint) instead of this
      */
     @Deprecated
-    public synchronized static void addEndpoint(String endpointName, String regionId, String product, String domain)
-            throws ClientException {
+    public synchronized static void addEndpoint(String endpointName, String regionId, String product, String domain) {
         addEndpoint(endpointName, regionId, product, domain, true);
     }
 

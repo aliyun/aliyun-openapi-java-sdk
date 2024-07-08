@@ -15,7 +15,7 @@ import com.google.gson.JsonParser;
 public class ECSMetadataServiceCredentialsFetcher {
     private static final String URL_IN_ECS_METADATA = "/latest/meta-data/ram/security-credentials/";
     private static final int DEFAULT_TIMEOUT_IN_MILLISECONDS = 1000;
-    private static final String ECS_METADAT_FETCH_ERROR_MSG = "Failed to get RAM session credentials from ECS metadata service.";
+    private static final String ECS_METADATA_FETCH_ERROR_MSG = "Failed to get RAM session credentials from ECS metadata service.";
     private static final int DEFAULT_ECS_SESSION_TOKEN_DURATION_SECONDS = 3600 * 6;
     private URL credentialUrl;
     private String roleName;
@@ -28,7 +28,7 @@ public class ECSMetadataServiceCredentialsFetcher {
 
     public void setRoleName(String roleName) {
         if (null == roleName) {
-            throw new NullPointerException("You must specifiy a valid role name.");
+            throw new NullPointerException("You must specify a valid role name.");
         }
         this.roleName = roleName;
         setCredentialUrl();
@@ -68,7 +68,7 @@ public class ECSMetadataServiceCredentialsFetcher {
         }
 
         if (response.getStatus() != HttpURLConnection.HTTP_OK) {
-            throw new ClientException(ECS_METADAT_FETCH_ERROR_MSG + " HttpCode=" + response.getStatus());
+            throw new ClientException(ECS_METADATA_FETCH_ERROR_MSG + " HttpCode=" + response.getStatus());
         }
 
         return new String(response.getHttpContent());
@@ -76,14 +76,14 @@ public class ECSMetadataServiceCredentialsFetcher {
 
     public InstanceProfileCredentials fetch() throws ClientException {
         String jsonContent = getMetadata();
-        JsonObject jsonObject = JsonParser.parseString(jsonContent).getAsJsonObject();;
+        JsonObject jsonObject = JsonParser.parseString(jsonContent).getAsJsonObject();
         if (!jsonObject.has("Code") || !jsonObject.has("AccessKeyId") || !jsonObject.has("AccessKeySecret") || !jsonObject
                 .has("SecurityToken") || !jsonObject.has("Expiration")) {
             throw new ClientException("Invalid json got from ECS Metadata service.");
         }
 
         if (!"Success".equals(jsonObject.get("Code").getAsString())) {
-            throw new ClientException(ECS_METADAT_FETCH_ERROR_MSG);
+            throw new ClientException(ECS_METADATA_FETCH_ERROR_MSG);
         }
         return new InstanceProfileCredentials(
             jsonObject.get("AccessKeyId").getAsString(),

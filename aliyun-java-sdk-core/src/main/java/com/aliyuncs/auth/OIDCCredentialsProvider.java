@@ -5,7 +5,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Date;
 
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -136,7 +135,7 @@ public class OIDCCredentialsProvider implements AlibabaCloudCredentialsProvider 
         queries.put("Format", "JSON");
         queries.put("Version", "2015-04-01");
         queries.put("Timestamp", ParameterHelper.getISO8601Time(new Date()));
-        String url = null;
+        String url;
         try {
             url = this.stsEndpoint + "?" + new String(ParameterHelper.getFormData(queries));
         } catch (UnsupportedEncodingException e) {
@@ -148,11 +147,11 @@ public class OIDCCredentialsProvider implements AlibabaCloudCredentialsProvider 
         httpRequest.setHttpContentType(FormatType.FORM);
         httpRequest.setSysConnectTimeout(1000);
         httpRequest.setSysReadTimeout(3000);
-        String oidcToken = null;
+        String oidcToken;
         FileInputStream in = null;
         byte[] buffer;
         try {
-            in = new FileInputStream(new File(oidcTokenFilePath));
+            in = new FileInputStream(oidcTokenFilePath);
             buffer = new byte[in.available()];
             in.read(buffer);
             oidcToken = new String(buffer, "UTF-8");
