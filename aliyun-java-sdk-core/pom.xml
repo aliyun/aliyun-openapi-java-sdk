@@ -4,9 +4,9 @@
     <groupId>com.aliyun</groupId>
     <artifactId>aliyun-java-sdk-core</artifactId>
     <packaging>jar</packaging>
-    <version>4.6.4</version>
+    <version>4.7.0</version>
     <name>aliyun-java-sdk-core</name>
-    <url>http://www.aliyun.com</url>
+    <url>https://www.aliyun.com</url>
     <description>Aliyun Open API SDK for Java
 
         Copyright (C) Alibaba Cloud Computing
@@ -14,7 +14,7 @@
 
         版权所有 （C）阿里云计算有限公司
 
-        http://www.aliyun.com
+        https://www.aliyun.com
     </description>
 
     <distributionManagement>
@@ -96,8 +96,8 @@
         </dependency>
         <dependency>
             <groupId>org.bouncycastle</groupId>
-            <artifactId>bcprov-jdk15on</artifactId>
-            <version>1.70</version>
+            <artifactId>bcprov-jdk18on</artifactId>
+            <version>1.78.1</version>
         </dependency>
         <dependency>
             <groupId>org.mockito</groupId>
@@ -197,7 +197,6 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>3.4.2</version>
-                <configuration></configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
