@@ -319,7 +319,6 @@ public class DefaultAcsClient implements IAcsClient {
                                                               String regionId, AlibabaCloudCredentials credentials, Signer signer, FormatType format)
             throws ClientException, ServerException {
 
-
         doActionWithProxy(request.getSysProtocol(), System.getenv("HTTPS_PROXY"), System.getenv("HTTP_PROXY"));
         doActionWithIgnoreSSL(request, X509TrustAll.ignoreSSLCerts);
 
@@ -584,7 +583,6 @@ public class DefaultAcsClient implements IAcsClient {
             IOUtils.closeQuietly(this.httpClient);
             this.httpClient = null;
         }
-
     }
 
     public DefaultProfile getProfile() {
