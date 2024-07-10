@@ -1,0 +1,3 @@
+2024-07-10 Version: 1.0.0
+- Added param for ActivateLicenseResponse .
+
