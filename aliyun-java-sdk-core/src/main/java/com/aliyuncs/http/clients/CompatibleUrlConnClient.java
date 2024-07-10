@@ -2,7 +2,7 @@ package com.aliyuncs.http.clients;
 
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.http.*;
-import com.aliyuncs.utils.EnvironmentUtils;
+import com.aliyuncs.utils.EnvHelper;
 import org.apache.http.conn.ssl.DefaultHostnameVerifier;
 import org.apache.http.conn.ssl.NoopHostnameVerifier;
 
@@ -169,16 +169,16 @@ public class CompatibleUrlConnClient extends IHttpClient {
 
     private Proxy calcProxy(URL url, HttpRequest request) throws ClientException {
         String targetHost = url.getHost();
-        boolean needProxy = HttpUtil.needProxy(targetHost, clientConfig.getNoProxy(), EnvironmentUtils.getNoProxy());
+        boolean needProxy = HttpUtil.needProxy(targetHost, clientConfig.getNoProxy(), EnvHelper.getenv("NO_PROXY"));
         if (!needProxy) {
             return Proxy.NO_PROXY;
         }
         Proxy proxy;
         if ("https".equalsIgnoreCase(url.getProtocol())) {
-            String httpsProxy = EnvironmentUtils.getHttpsProxy();
+            String httpsProxy = EnvHelper.getenv("HTTPS_PROXY");
             proxy = HttpUtil.getJDKProxy(clientConfig.getHttpsProxy(), httpsProxy, request);
         } else {
-            String httpProxy = EnvironmentUtils.getHttpProxy();
+            String httpProxy = EnvHelper.getenv("HTTP_PROXY");
             proxy = HttpUtil.getJDKProxy(clientConfig.getHttpProxy(), httpProxy, request);
         }
         return proxy;

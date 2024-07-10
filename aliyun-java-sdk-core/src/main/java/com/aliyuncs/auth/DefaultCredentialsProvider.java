@@ -1,8 +1,8 @@
 package com.aliyuncs.auth;
 
 import com.aliyuncs.exceptions.ClientException;
-import com.aliyuncs.utils.AuthUtils;
 import com.aliyuncs.utils.StringUtils;
+import com.aliyuncs.utils.EnvHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +25,7 @@ public class DefaultCredentialsProvider implements AlibabaCloudCredentialsProvid
         }
 
         defaultProviders.add(new ProfileCredentialsProvider());
-        String roleName = AuthUtils.getEnvironmentECSMetaData();
+        String roleName = EnvHelper.getenv("ALIBABA_CLOUD_ECS_METADATA");
         if (roleName != null) {
             if (roleName.length() == 0) {
                 throw new ClientException("Environment variable roleName('ALIBABA_CLOUD_ECS_METADATA') cannot be empty");
