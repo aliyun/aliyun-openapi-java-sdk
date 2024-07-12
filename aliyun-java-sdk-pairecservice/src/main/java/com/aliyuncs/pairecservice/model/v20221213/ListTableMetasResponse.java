@@ -81,6 +81,8 @@ public class ListTableMetasResponse extends AcsResponse {
 
 		private String url;
 
+		private String config;
+
 		private List<FieldsItem> fields;
 
 		public String getTableMetaId() {
@@ -177,6 +179,14 @@ public class ListTableMetasResponse extends AcsResponse {
 
 		public void setUrl(String url) {
 			this.url = url;
+		}
+
+		public String getConfig() {
+			return this.config;
+		}
+
+		public void setConfig(String config) {
+			this.config = config;
 		}
 
 		public List<FieldsItem> getFields() {

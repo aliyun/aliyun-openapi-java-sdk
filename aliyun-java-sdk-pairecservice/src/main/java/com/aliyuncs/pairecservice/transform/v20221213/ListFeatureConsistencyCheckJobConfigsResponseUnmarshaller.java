@@ -67,6 +67,13 @@ public class ListFeatureConsistencyCheckJobConfigsResponseUnmarshaller {
 			featureConsistencyCheckConfigsItem.setFeatureDisplayExclude(_ctx.stringValue("ListFeatureConsistencyCheckJobConfigsResponse.FeatureConsistencyCheckConfigs["+ i +"].FeatureDisplayExclude"));
 			featureConsistencyCheckConfigsItem.setGmtCreateTime(_ctx.stringValue("ListFeatureConsistencyCheckJobConfigsResponse.FeatureConsistencyCheckConfigs["+ i +"].GmtCreateTime"));
 			featureConsistencyCheckConfigsItem.setGmtModifiedTime(_ctx.stringValue("ListFeatureConsistencyCheckJobConfigsResponse.FeatureConsistencyCheckConfigs["+ i +"].GmtModifiedTime"));
+			featureConsistencyCheckConfigsItem.setUseFeatureStore(_ctx.stringValue("ListFeatureConsistencyCheckJobConfigsResponse.FeatureConsistencyCheckConfigs["+ i +"].UseFeatureStore"));
+			featureConsistencyCheckConfigsItem.setFeatureStoreProjectName(_ctx.stringValue("ListFeatureConsistencyCheckJobConfigsResponse.FeatureConsistencyCheckConfigs["+ i +"].FeatureStoreProjectName"));
+			featureConsistencyCheckConfigsItem.setFeatureStoreModelId(_ctx.stringValue("ListFeatureConsistencyCheckJobConfigsResponse.FeatureConsistencyCheckConfigs["+ i +"].FeatureStoreModelId"));
+			featureConsistencyCheckConfigsItem.setFeatureStoreUserId(_ctx.stringValue("ListFeatureConsistencyCheckJobConfigsResponse.FeatureConsistencyCheckConfigs["+ i +"].FeatureStoreUserId"));
+			featureConsistencyCheckConfigsItem.setFeatureStoreItemId(_ctx.stringValue("ListFeatureConsistencyCheckJobConfigsResponse.FeatureConsistencyCheckConfigs["+ i +"].FeatureStoreItemId"));
+			featureConsistencyCheckConfigsItem.setFeatureStoreSeqFeatureView(_ctx.stringValue("ListFeatureConsistencyCheckJobConfigsResponse.FeatureConsistencyCheckConfigs["+ i +"].FeatureStoreSeqFeatureView"));
+			featureConsistencyCheckConfigsItem.setFeatureStoreProjectId(_ctx.stringValue("ListFeatureConsistencyCheckJobConfigsResponse.FeatureConsistencyCheckConfigs["+ i +"].FeatureStoreProjectId"));
 
 			featureConsistencyCheckConfigs.add(featureConsistencyCheckConfigsItem);
 		}

@@ -36,6 +36,7 @@ public class GetInstanceResourceTableResponseUnmarshaller {
 			fieldsItem.setType(_ctx.stringValue("GetInstanceResourceTableResponse.Fields["+ i +"].Type"));
 			fieldsItem.setMeaning(_ctx.stringValue("GetInstanceResourceTableResponse.Fields["+ i +"].Meaning"));
 			fieldsItem.setIsDimensionField(_ctx.booleanValue("GetInstanceResourceTableResponse.Fields["+ i +"].IsDimensionField"));
+			fieldsItem.setIsPartitionField(_ctx.booleanValue("GetInstanceResourceTableResponse.Fields["+ i +"].IsPartitionField"));
 
 			fields.add(fieldsItem);
 		}

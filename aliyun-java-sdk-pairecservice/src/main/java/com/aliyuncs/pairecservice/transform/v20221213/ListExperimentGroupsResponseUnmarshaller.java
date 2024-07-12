@@ -49,6 +49,9 @@ public class ListExperimentGroupsResponseUnmarshaller {
 			experimentGroupsItem.setConfig(_ctx.stringValue("ListExperimentGroupsResponse.ExperimentGroups["+ i +"].Config"));
 			experimentGroupsItem.setReservedBuckets(_ctx.stringValue("ListExperimentGroupsResponse.ExperimentGroups["+ i +"].ReservedBuckets"));
 			experimentGroupsItem.setStatus(_ctx.stringValue("ListExperimentGroupsResponse.ExperimentGroups["+ i +"].Status"));
+			experimentGroupsItem.setCrowdTargetType(_ctx.stringValue("ListExperimentGroupsResponse.ExperimentGroups["+ i +"].CrowdTargetType"));
+			experimentGroupsItem.setRandomFlow(_ctx.longValue("ListExperimentGroupsResponse.ExperimentGroups["+ i +"].RandomFlow"));
+			experimentGroupsItem.setHoldingBuckets(_ctx.stringValue("ListExperimentGroupsResponse.ExperimentGroups["+ i +"].HoldingBuckets"));
 
 			experimentGroups.add(experimentGroupsItem);
 		}

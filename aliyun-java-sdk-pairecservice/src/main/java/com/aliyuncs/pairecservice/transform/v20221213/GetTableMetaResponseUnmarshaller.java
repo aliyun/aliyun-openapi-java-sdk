@@ -37,6 +37,9 @@ public class GetTableMetaResponseUnmarshaller {
 		getTableMetaResponse.setGmtCreateTime(_ctx.stringValue("GetTableMetaResponse.GmtCreateTime"));
 		getTableMetaResponse.setGmtModifiedTime(_ctx.stringValue("GetTableMetaResponse.GmtModifiedTime"));
 		getTableMetaResponse.setUrl(_ctx.stringValue("GetTableMetaResponse.Url"));
+		getTableMetaResponse.setTableMetaId(_ctx.stringValue("GetTableMetaResponse.TableMetaId"));
+		getTableMetaResponse.setGmtImportedTime(_ctx.stringValue("GetTableMetaResponse.GmtImportedTime"));
+		getTableMetaResponse.setConfig(_ctx.stringValue("GetTableMetaResponse.Config"));
 
 		List<FieldsItem> fields = new ArrayList<FieldsItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetTableMetaResponse.Fields.Length"); i++) {

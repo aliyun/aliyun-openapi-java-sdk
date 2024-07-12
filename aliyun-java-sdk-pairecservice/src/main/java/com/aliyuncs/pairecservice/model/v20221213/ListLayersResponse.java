@@ -67,6 +67,10 @@ public class ListLayersResponse extends AcsResponse {
 
 		private String description;
 
+		private Long residualFlow;
+
+		private String gmtCreateTime;
+
 		public String getLayerId() {
 			return this.layerId;
 		}
@@ -105,6 +109,22 @@ public class ListLayersResponse extends AcsResponse {
 
 		public void setDescription(String description) {
 			this.description = description;
+		}
+
+		public Long getResidualFlow() {
+			return this.residualFlow;
+		}
+
+		public void setResidualFlow(Long residualFlow) {
+			this.residualFlow = residualFlow;
+		}
+
+		public String getGmtCreateTime() {
+			return this.gmtCreateTime;
+		}
+
+		public void setGmtCreateTime(String gmtCreateTime) {
+			this.gmtCreateTime = gmtCreateTime;
 		}
 	}
 

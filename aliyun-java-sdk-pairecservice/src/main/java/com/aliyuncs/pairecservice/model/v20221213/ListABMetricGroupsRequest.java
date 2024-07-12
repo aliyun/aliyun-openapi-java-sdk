@@ -32,7 +32,11 @@ public class ListABMetricGroupsRequest extends RoaAcsRequest<ListABMetricGroupsR
 
 	private Integer pageSize;
 
+	private String sortBy;
+
 	private Integer pageNumber;
+
+	private String order;
 	public ListABMetricGroupsRequest() {
 		super("PaiRecService", "2022-12-13", "ListABMetricGroups");
 		setUriPattern("/api/v1/abmetricgroups");
@@ -83,6 +87,17 @@ public class ListABMetricGroupsRequest extends RoaAcsRequest<ListABMetricGroupsR
 		}
 	}
 
+	public String getSortBy() {
+		return this.sortBy;
+	}
+
+	public void setSortBy(String sortBy) {
+		this.sortBy = sortBy;
+		if(sortBy != null){
+			putQueryParameter("SortBy", sortBy);
+		}
+	}
+
 	public Integer getPageNumber() {
 		return this.pageNumber;
 	}
@@ -91,6 +106,17 @@ public class ListABMetricGroupsRequest extends RoaAcsRequest<ListABMetricGroupsR
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getOrder() {
+		return this.order;
+	}
+
+	public void setOrder(String order) {
+		this.order = order;
+		if(order != null){
+			putQueryParameter("Order", order);
 		}
 	}
 

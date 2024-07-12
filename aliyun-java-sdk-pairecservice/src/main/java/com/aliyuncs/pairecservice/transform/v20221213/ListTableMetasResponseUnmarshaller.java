@@ -45,6 +45,7 @@ public class ListTableMetasResponseUnmarshaller {
 			tableMetasItem.setGmtModifiedTime(_ctx.stringValue("ListTableMetasResponse.TableMetas["+ i +"].GmtModifiedTime"));
 			tableMetasItem.setGmtImportedTime(_ctx.stringValue("ListTableMetasResponse.TableMetas["+ i +"].GmtImportedTime"));
 			tableMetasItem.setUrl(_ctx.stringValue("ListTableMetasResponse.TableMetas["+ i +"].Url"));
+			tableMetasItem.setConfig(_ctx.stringValue("ListTableMetasResponse.TableMetas["+ i +"].Config"));
 
 			List<FieldsItem> fields = new ArrayList<FieldsItem>();
 			for (int j = 0; j < _ctx.lengthValue("ListTableMetasResponse.TableMetas["+ i +"].Fields.Length"); j++) {

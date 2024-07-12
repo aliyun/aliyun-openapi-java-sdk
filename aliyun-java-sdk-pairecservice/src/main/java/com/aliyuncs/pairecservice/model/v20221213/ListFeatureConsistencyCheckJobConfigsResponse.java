@@ -127,6 +127,20 @@ public class ListFeatureConsistencyCheckJobConfigsResponse extends AcsResponse {
 
 		private String gmtModifiedTime;
 
+		private String useFeatureStore;
+
+		private String featureStoreProjectName;
+
+		private String featureStoreModelId;
+
+		private String featureStoreUserId;
+
+		private String featureStoreItemId;
+
+		private String featureStoreSeqFeatureView;
+
+		private String featureStoreProjectId;
+
 		public String getFeatureConsistencyCheckJobConfigId() {
 			return this.featureConsistencyCheckJobConfigId;
 		}
@@ -405,6 +419,62 @@ public class ListFeatureConsistencyCheckJobConfigsResponse extends AcsResponse {
 
 		public void setGmtModifiedTime(String gmtModifiedTime) {
 			this.gmtModifiedTime = gmtModifiedTime;
+		}
+
+		public String getUseFeatureStore() {
+			return this.useFeatureStore;
+		}
+
+		public void setUseFeatureStore(String useFeatureStore) {
+			this.useFeatureStore = useFeatureStore;
+		}
+
+		public String getFeatureStoreProjectName() {
+			return this.featureStoreProjectName;
+		}
+
+		public void setFeatureStoreProjectName(String featureStoreProjectName) {
+			this.featureStoreProjectName = featureStoreProjectName;
+		}
+
+		public String getFeatureStoreModelId() {
+			return this.featureStoreModelId;
+		}
+
+		public void setFeatureStoreModelId(String featureStoreModelId) {
+			this.featureStoreModelId = featureStoreModelId;
+		}
+
+		public String getFeatureStoreUserId() {
+			return this.featureStoreUserId;
+		}
+
+		public void setFeatureStoreUserId(String featureStoreUserId) {
+			this.featureStoreUserId = featureStoreUserId;
+		}
+
+		public String getFeatureStoreItemId() {
+			return this.featureStoreItemId;
+		}
+
+		public void setFeatureStoreItemId(String featureStoreItemId) {
+			this.featureStoreItemId = featureStoreItemId;
+		}
+
+		public String getFeatureStoreSeqFeatureView() {
+			return this.featureStoreSeqFeatureView;
+		}
+
+		public void setFeatureStoreSeqFeatureView(String featureStoreSeqFeatureView) {
+			this.featureStoreSeqFeatureView = featureStoreSeqFeatureView;
+		}
+
+		public String getFeatureStoreProjectId() {
+			return this.featureStoreProjectId;
+		}
+
+		public void setFeatureStoreProjectId(String featureStoreProjectId) {
+			this.featureStoreProjectId = featureStoreProjectId;
 		}
 	}
 

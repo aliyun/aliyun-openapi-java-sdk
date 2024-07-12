@@ -24,15 +24,30 @@ import com.aliyuncs.http.MethodType;
 public class ListExperimentGroupsRequest extends RoaAcsRequest<ListExperimentGroupsResponse> {
 	   
 
+	private String timeRangeEnd;
+
 	private String layerId;
 
 	private String instanceId;
+
+	private String timeRangeStart;
 
 	private String status;
 	public ListExperimentGroupsRequest() {
 		super("PaiRecService", "2022-12-13", "ListExperimentGroups");
 		setUriPattern("/api/v1/experimentgroups");
 		setMethod(MethodType.GET);
+	}
+
+	public String getTimeRangeEnd() {
+		return this.timeRangeEnd;
+	}
+
+	public void setTimeRangeEnd(String timeRangeEnd) {
+		this.timeRangeEnd = timeRangeEnd;
+		if(timeRangeEnd != null){
+			putQueryParameter("TimeRangeEnd", timeRangeEnd);
+		}
 	}
 
 	public String getLayerId() {
@@ -54,6 +69,17 @@ public class ListExperimentGroupsRequest extends RoaAcsRequest<ListExperimentGro
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getTimeRangeStart() {
+		return this.timeRangeStart;
+	}
+
+	public void setTimeRangeStart(String timeRangeStart) {
+		this.timeRangeStart = timeRangeStart;
+		if(timeRangeStart != null){
+			putQueryParameter("TimeRangeStart", timeRangeStart);
 		}
 	}
 

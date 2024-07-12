@@ -39,6 +39,9 @@ public class GetExperimentGroupResponseUnmarshaller {
 		getExperimentGroupResponse.setConfig(_ctx.stringValue("GetExperimentGroupResponse.Config"));
 		getExperimentGroupResponse.setReservedBuckets(_ctx.stringValue("GetExperimentGroupResponse.ReservedBuckets"));
 		getExperimentGroupResponse.setStatus(_ctx.stringValue("GetExperimentGroupResponse.Status"));
+		getExperimentGroupResponse.setCrowdTargetType(_ctx.stringValue("GetExperimentGroupResponse.CrowdTargetType"));
+		getExperimentGroupResponse.setRandomFlow(_ctx.longValue("GetExperimentGroupResponse.RandomFlow"));
+		getExperimentGroupResponse.setHoldingBuckets(_ctx.stringValue("GetExperimentGroupResponse.HoldingBuckets"));
 	 
 	 	return getExperimentGroupResponse;
 	}

@@ -65,6 +65,8 @@ public class GetInstanceResourceTableResponse extends AcsResponse {
 
 		private Boolean isDimensionField;
 
+		private Boolean isPartitionField;
+
 		public String getName() {
 			return this.name;
 		}
@@ -95,6 +97,14 @@ public class GetInstanceResourceTableResponse extends AcsResponse {
 
 		public void setIsDimensionField(Boolean isDimensionField) {
 			this.isDimensionField = isDimensionField;
+		}
+
+		public Boolean getIsPartitionField() {
+			return this.isPartitionField;
+		}
+
+		public void setIsPartitionField(Boolean isPartitionField) {
+			this.isPartitionField = isPartitionField;
 		}
 	}
 

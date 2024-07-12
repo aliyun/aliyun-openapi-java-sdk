@@ -47,6 +47,12 @@ public class GetTableMetaResponse extends AcsResponse {
 
 	private String url;
 
+	private String tableMetaId;
+
+	private String gmtImportedTime;
+
+	private String config;
+
 	private List<FieldsItem> fields;
 
 	public String getRequestId() {
@@ -135,6 +141,30 @@ public class GetTableMetaResponse extends AcsResponse {
 
 	public void setUrl(String url) {
 		this.url = url;
+	}
+
+	public String getTableMetaId() {
+		return this.tableMetaId;
+	}
+
+	public void setTableMetaId(String tableMetaId) {
+		this.tableMetaId = tableMetaId;
+	}
+
+	public String getGmtImportedTime() {
+		return this.gmtImportedTime;
+	}
+
+	public void setGmtImportedTime(String gmtImportedTime) {
+		this.gmtImportedTime = gmtImportedTime;
+	}
+
+	public String getConfig() {
+		return this.config;
+	}
+
+	public void setConfig(String config) {
+		this.config = config;
 	}
 
 	public List<FieldsItem> getFields() {

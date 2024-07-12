@@ -37,6 +37,8 @@ public class ListLayersResponseUnmarshaller {
 			layersItem.setSceneId(_ctx.stringValue("ListLayersResponse.Layers["+ i +"].SceneId"));
 			layersItem.setName(_ctx.stringValue("ListLayersResponse.Layers["+ i +"].Name"));
 			layersItem.setDescription(_ctx.stringValue("ListLayersResponse.Layers["+ i +"].Description"));
+			layersItem.setResidualFlow(_ctx.longValue("ListLayersResponse.Layers["+ i +"].ResidualFlow"));
+			layersItem.setGmtCreateTime(_ctx.stringValue("ListLayersResponse.Layers["+ i +"].GmtCreateTime"));
 
 			layers.add(layersItem);
 		}

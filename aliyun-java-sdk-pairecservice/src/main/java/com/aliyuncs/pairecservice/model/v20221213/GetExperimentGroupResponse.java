@@ -58,6 +58,12 @@ public class GetExperimentGroupResponse extends AcsResponse {
 
 	private String status;
 
+	private String crowdTargetType;
+
+	private Long randomFlow;
+
+	private String holdingBuckets;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -192,6 +198,30 @@ public class GetExperimentGroupResponse extends AcsResponse {
 
 	public void setStatus(String status) {
 		this.status = status;
+	}
+
+	public String getCrowdTargetType() {
+		return this.crowdTargetType;
+	}
+
+	public void setCrowdTargetType(String crowdTargetType) {
+		this.crowdTargetType = crowdTargetType;
+	}
+
+	public Long getRandomFlow() {
+		return this.randomFlow;
+	}
+
+	public void setRandomFlow(Long randomFlow) {
+		this.randomFlow = randomFlow;
+	}
+
+	public String getHoldingBuckets() {
+		return this.holdingBuckets;
+	}
+
+	public void setHoldingBuckets(String holdingBuckets) {
+		this.holdingBuckets = holdingBuckets;
 	}
 
 	@Override

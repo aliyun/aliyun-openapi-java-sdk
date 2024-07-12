@@ -57,6 +57,13 @@ public class GetFeatureConsistencyCheckJobConfigResponseUnmarshaller {
 		getFeatureConsistencyCheckJobConfigResponse.setFeatureDisplayExclude(_ctx.stringValue("GetFeatureConsistencyCheckJobConfigResponse.FeatureDisplayExclude"));
 		getFeatureConsistencyCheckJobConfigResponse.setGmtCreateTime(_ctx.stringValue("GetFeatureConsistencyCheckJobConfigResponse.GmtCreateTime"));
 		getFeatureConsistencyCheckJobConfigResponse.setGmtModifiedTime(_ctx.stringValue("GetFeatureConsistencyCheckJobConfigResponse.GmtModifiedTime"));
+		getFeatureConsistencyCheckJobConfigResponse.setUseFeatureStore(_ctx.booleanValue("GetFeatureConsistencyCheckJobConfigResponse.UseFeatureStore"));
+		getFeatureConsistencyCheckJobConfigResponse.setFeatureStoreProjectName(_ctx.stringValue("GetFeatureConsistencyCheckJobConfigResponse.FeatureStoreProjectName"));
+		getFeatureConsistencyCheckJobConfigResponse.setFeatureStoreModelId(_ctx.stringValue("GetFeatureConsistencyCheckJobConfigResponse.FeatureStoreModelId"));
+		getFeatureConsistencyCheckJobConfigResponse.setFeatureStoreUserId(_ctx.stringValue("GetFeatureConsistencyCheckJobConfigResponse.FeatureStoreUserId"));
+		getFeatureConsistencyCheckJobConfigResponse.setFeatureStoreItemId(_ctx.stringValue("GetFeatureConsistencyCheckJobConfigResponse.FeatureStoreItemId"));
+		getFeatureConsistencyCheckJobConfigResponse.setFeatureStoreSeqFeatureView(_ctx.stringValue("GetFeatureConsistencyCheckJobConfigResponse.FeatureStoreSeqFeatureView"));
+		getFeatureConsistencyCheckJobConfigResponse.setFeatureStoreProjectId(_ctx.stringValue("GetFeatureConsistencyCheckJobConfigResponse.FeatureStoreProjectId"));
 	 
 	 	return getFeatureConsistencyCheckJobConfigResponse;
 	}

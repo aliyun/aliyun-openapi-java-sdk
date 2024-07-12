@@ -27,6 +27,8 @@ public class GetLayerResponseUnmarshaller {
 		getLayerResponse.setSceneId(_ctx.stringValue("GetLayerResponse.SceneId"));
 		getLayerResponse.setName(_ctx.stringValue("GetLayerResponse.Name"));
 		getLayerResponse.setDescription(_ctx.stringValue("GetLayerResponse.Description"));
+		getLayerResponse.setResidualFlow(_ctx.longValue("GetLayerResponse.ResidualFlow"));
+		getLayerResponse.setGmtCreateTime(_ctx.stringValue("GetLayerResponse.GmtCreateTime"));
 	 
 	 	return getLayerResponse;
 	}
