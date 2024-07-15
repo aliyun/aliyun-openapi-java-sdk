@@ -157,6 +157,10 @@ public class GetResultResponse extends AcsResponse {
 
 		private List<HitScoreItem> hitScore;
 
+		private List<ReviewHistory> reviewHistoryList;
+
+		private List<ReviewTypeIdListItem> reviewTypeIdList;
+
 		private List<Long> schemeIdList;
 
 		private List<String> schemeNameList;
@@ -323,6 +327,22 @@ public class GetResultResponse extends AcsResponse {
 
 		public void setHitScore(List<HitScoreItem> hitScore) {
 			this.hitScore = hitScore;
+		}
+
+		public List<ReviewHistory> getReviewHistoryList() {
+			return this.reviewHistoryList;
+		}
+
+		public void setReviewHistoryList(List<ReviewHistory> reviewHistoryList) {
+			this.reviewHistoryList = reviewHistoryList;
+		}
+
+		public List<ReviewTypeIdListItem> getReviewTypeIdList() {
+			return this.reviewTypeIdList;
+		}
+
+		public void setReviewTypeIdList(List<ReviewTypeIdListItem> reviewTypeIdList) {
+			this.reviewTypeIdList = reviewTypeIdList;
 		}
 
 		public List<Long> getSchemeIdList() {
@@ -1322,6 +1342,175 @@ public class GetResultResponse extends AcsResponse {
 
 			public void setRuleId(String ruleId) {
 				this.ruleId = ruleId;
+			}
+		}
+
+		public static class ReviewHistory {
+
+			private Integer type;
+
+			private String operatorName;
+
+			private String timeStr;
+
+			private Integer score;
+
+			private Integer reviewResult;
+
+			private Integer complainResult;
+
+			private Integer oldScore;
+
+			private String reviewManagerType;
+
+			private Long time;
+
+			private String comments;
+
+			private Long operator;
+
+			private ReviewRightRule reviewRightRule;
+
+			public Integer getType() {
+				return this.type;
+			}
+
+			public void setType(Integer type) {
+				this.type = type;
+			}
+
+			public String getOperatorName() {
+				return this.operatorName;
+			}
+
+			public void setOperatorName(String operatorName) {
+				this.operatorName = operatorName;
+			}
+
+			public String getTimeStr() {
+				return this.timeStr;
+			}
+
+			public void setTimeStr(String timeStr) {
+				this.timeStr = timeStr;
+			}
+
+			public Integer getScore() {
+				return this.score;
+			}
+
+			public void setScore(Integer score) {
+				this.score = score;
+			}
+
+			public Integer getReviewResult() {
+				return this.reviewResult;
+			}
+
+			public void setReviewResult(Integer reviewResult) {
+				this.reviewResult = reviewResult;
+			}
+
+			public Integer getComplainResult() {
+				return this.complainResult;
+			}
+
+			public void setComplainResult(Integer complainResult) {
+				this.complainResult = complainResult;
+			}
+
+			public Integer getOldScore() {
+				return this.oldScore;
+			}
+
+			public void setOldScore(Integer oldScore) {
+				this.oldScore = oldScore;
+			}
+
+			public String getReviewManagerType() {
+				return this.reviewManagerType;
+			}
+
+			public void setReviewManagerType(String reviewManagerType) {
+				this.reviewManagerType = reviewManagerType;
+			}
+
+			public Long getTime() {
+				return this.time;
+			}
+
+			public void setTime(Long time) {
+				this.time = time;
+			}
+
+			public String getComments() {
+				return this.comments;
+			}
+
+			public void setComments(String comments) {
+				this.comments = comments;
+			}
+
+			public Long getOperator() {
+				return this.operator;
+			}
+
+			public void setOperator(Long operator) {
+				this.operator = operator;
+			}
+
+			public ReviewRightRule getReviewRightRule() {
+				return this.reviewRightRule;
+			}
+
+			public void setReviewRightRule(ReviewRightRule reviewRightRule) {
+				this.reviewRightRule = reviewRightRule;
+			}
+
+			public static class ReviewRightRule {
+
+				private String ruleName;
+
+				private Long rid;
+
+				public String getRuleName() {
+					return this.ruleName;
+				}
+
+				public void setRuleName(String ruleName) {
+					this.ruleName = ruleName;
+				}
+
+				public Long getRid() {
+					return this.rid;
+				}
+
+				public void setRid(Long rid) {
+					this.rid = rid;
+				}
+			}
+		}
+
+		public static class ReviewTypeIdListItem {
+
+			private Long reviewTypeId;
+
+			private List<Long> reviewKeyIdList;
+
+			public Long getReviewTypeId() {
+				return this.reviewTypeId;
+			}
+
+			public void setReviewTypeId(Long reviewTypeId) {
+				this.reviewTypeId = reviewTypeId;
+			}
+
+			public List<Long> getReviewKeyIdList() {
+				return this.reviewKeyIdList;
+			}
+
+			public void setReviewKeyIdList(List<Long> reviewKeyIdList) {
+				this.reviewKeyIdList = reviewKeyIdList;
 			}
 		}
 

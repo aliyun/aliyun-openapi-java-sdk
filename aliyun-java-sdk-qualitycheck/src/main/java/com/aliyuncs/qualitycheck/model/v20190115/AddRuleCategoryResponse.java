@@ -78,12 +78,22 @@ public class AddRuleCategoryResponse extends AcsResponse {
 
 		private Boolean select;
 
+		private Integer type;
+
 		public Boolean getSelect() {
 			return this.select;
 		}
 
 		public void setSelect(Boolean select) {
 			this.select = select;
+		}
+
+		public Integer getType() {
+			return this.type;
+		}
+
+		public void setType(Integer type) {
+			this.type = type;
 		}
 	}
 

@@ -30,6 +30,7 @@ public class AddRuleCategoryResponseUnmarshaller {
 
 		Data data = new Data();
 		data.setSelect(_ctx.booleanValue("AddRuleCategoryResponse.Data.Select"));
+		data.setType(_ctx.integerValue("AddRuleCategoryResponse.Data.Type"));
 		addRuleCategoryResponse.setData(data);
 	 
 	 	return addRuleCategoryResponse;
