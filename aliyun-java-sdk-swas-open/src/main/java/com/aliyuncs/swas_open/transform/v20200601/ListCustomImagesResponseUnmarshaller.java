@@ -39,6 +39,7 @@ public class ListCustomImagesResponseUnmarshaller {
 			customImage.setDataSnapshotName(_ctx.stringValue("ListCustomImagesResponse.CustomImages["+ i +"].DataSnapshotName"));
 			customImage.setSystemSnapshotId(_ctx.stringValue("ListCustomImagesResponse.CustomImages["+ i +"].SystemSnapshotId"));
 			customImage.setInShare(_ctx.booleanValue("ListCustomImagesResponse.CustomImages["+ i +"].InShare"));
+			customImage.setInShareUser(_ctx.booleanValue("ListCustomImagesResponse.CustomImages["+ i +"].InShareUser"));
 			customImage.setInstanceId(_ctx.stringValue("ListCustomImagesResponse.CustomImages["+ i +"].InstanceId"));
 			customImage.setDataSnapshotId(_ctx.stringValue("ListCustomImagesResponse.CustomImages["+ i +"].DataSnapshotId"));
 			customImage.setRegionId(_ctx.stringValue("ListCustomImagesResponse.CustomImages["+ i +"].RegionId"));
@@ -49,6 +50,14 @@ public class ListCustomImagesResponseUnmarshaller {
 			customImage.setStatus(_ctx.stringValue("ListCustomImagesResponse.CustomImages["+ i +"].Status"));
 			customImage.setInstanceName(_ctx.stringValue("ListCustomImagesResponse.CustomImages["+ i +"].InstanceName"));
 			customImage.setResourceGroupId(_ctx.stringValue("ListCustomImagesResponse.CustomImages["+ i +"].ResourceGroupId"));
+			customImage.setUserId(_ctx.longValue("ListCustomImagesResponse.CustomImages["+ i +"].UserId"));
+			customImage.setOsType(_ctx.stringValue("ListCustomImagesResponse.CustomImages["+ i +"].OsType"));
+
+			List<String> createInstances = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("ListCustomImagesResponse.CustomImages["+ i +"].CreateInstances.Length"); j++) {
+				createInstances.add(_ctx.stringValue("ListCustomImagesResponse.CustomImages["+ i +"].CreateInstances["+ j +"]"));
+			}
+			customImage.setCreateInstances(createInstances);
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("ListCustomImagesResponse.CustomImages["+ i +"].Tags.Length"); j++) {

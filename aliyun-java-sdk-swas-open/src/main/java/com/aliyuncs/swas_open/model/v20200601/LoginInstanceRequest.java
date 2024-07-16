@@ -28,6 +28,8 @@ public class LoginInstanceRequest extends RpcAcsRequest<LoginInstanceResponse> {
 
 	private String instanceId;
 
+	private Integer port;
+
 	private String username;
 	public LoginInstanceRequest() {
 		super("SWAS-OPEN", "2020-06-01", "LoginInstance", "SWAS-OPEN");
@@ -53,6 +55,17 @@ public class LoginInstanceRequest extends RpcAcsRequest<LoginInstanceResponse> {
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public Integer getPort() {
+		return this.port;
+	}
+
+	public void setPort(Integer port) {
+		this.port = port;
+		if(port != null){
+			putQueryParameter("Port", port.toString());
 		}
 	}
 

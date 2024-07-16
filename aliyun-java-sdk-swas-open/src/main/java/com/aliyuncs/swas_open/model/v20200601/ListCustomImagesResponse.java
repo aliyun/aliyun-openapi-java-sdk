@@ -85,6 +85,8 @@ public class ListCustomImagesResponse extends AcsResponse {
 
 		private Boolean inShare;
 
+		private Boolean inShareUser;
+
 		private String instanceId;
 
 		private String dataSnapshotId;
@@ -105,7 +107,13 @@ public class ListCustomImagesResponse extends AcsResponse {
 
 		private String resourceGroupId;
 
+		private Long userId;
+
+		private String osType;
+
 		private List<Tag> tags;
+
+		private List<String> createInstances;
 
 		public String getCreationTime() {
 			return this.creationTime;
@@ -137,6 +145,14 @@ public class ListCustomImagesResponse extends AcsResponse {
 
 		public void setInShare(Boolean inShare) {
 			this.inShare = inShare;
+		}
+
+		public Boolean getInShareUser() {
+			return this.inShareUser;
+		}
+
+		public void setInShareUser(Boolean inShareUser) {
+			this.inShareUser = inShareUser;
 		}
 
 		public String getInstanceId() {
@@ -219,12 +235,36 @@ public class ListCustomImagesResponse extends AcsResponse {
 			this.resourceGroupId = resourceGroupId;
 		}
 
+		public Long getUserId() {
+			return this.userId;
+		}
+
+		public void setUserId(Long userId) {
+			this.userId = userId;
+		}
+
+		public String getOsType() {
+			return this.osType;
+		}
+
+		public void setOsType(String osType) {
+			this.osType = osType;
+		}
+
 		public List<Tag> getTags() {
 			return this.tags;
 		}
 
 		public void setTags(List<Tag> tags) {
 			this.tags = tags;
+		}
+
+		public List<String> getCreateInstances() {
+			return this.createInstances;
+		}
+
+		public void setCreateInstances(List<String> createInstances) {
+			this.createInstances = createInstances;
 		}
 
 		public static class Tag {

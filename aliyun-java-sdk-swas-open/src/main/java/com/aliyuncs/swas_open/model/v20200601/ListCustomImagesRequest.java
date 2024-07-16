@@ -39,7 +39,11 @@ public class ListCustomImagesRequest extends RpcAcsRequest<ListCustomImagesRespo
 
 	private Integer pageSize;
 
+	private Boolean share;
+
 	private List<Tag> tags;
+
+	private String instanceId;
 
 	private String imageIds;
 	public ListCustomImagesRequest() {
@@ -124,6 +128,17 @@ public class ListCustomImagesRequest extends RpcAcsRequest<ListCustomImagesRespo
 		}
 	}
 
+	public Boolean getShare() {
+		return this.share;
+	}
+
+	public void setShare(Boolean share) {
+		this.share = share;
+		if(share != null){
+			putQueryParameter("Share", share.toString());
+		}
+	}
+
 	public List<Tag> getTags() {
 		return this.tags;
 	}
@@ -136,6 +151,17 @@ public class ListCustomImagesRequest extends RpcAcsRequest<ListCustomImagesRespo
 				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
 			}
 		}	
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
 	}
 
 	public String getImageIds() {
