@@ -32,6 +32,12 @@ public class LocationServiceEndpointResolver extends EndpointResolverBase {
         validRegionIds = new HashSet<String>();
     }
 
+    public LocationServiceEndpointResolver(IAcsClient client, String locationServiceEndpoint, String locationServiceApiVersion) {
+        this(client);
+        this.locationServiceEndpoint = locationServiceEndpoint;
+        this.locationServiceApiVersion = locationServiceApiVersion;
+    }
+
     public static void setLocationServiceEndpoint(String endpoint) {
         locationServiceEndpoint = endpoint;
     }
@@ -143,6 +149,7 @@ public class LocationServiceEndpointResolver extends EndpointResolverBase {
         );
     }
 
+    @Deprecated
     public String makeRegionIdKey(ResolveEndpointRequest request) {
         return request.locationServiceCode + "." + request.regionId + "." + request.endpointType;
     }

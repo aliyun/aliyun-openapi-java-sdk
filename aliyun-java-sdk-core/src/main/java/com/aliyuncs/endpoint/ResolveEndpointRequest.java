@@ -30,7 +30,6 @@ public class ResolveEndpointRequest {
 
         this.endpointType = endpointType;
         this.locationServiceCode = locationServiceCode;
-
     }
 
     public boolean isOpenApiEndpoint() {
