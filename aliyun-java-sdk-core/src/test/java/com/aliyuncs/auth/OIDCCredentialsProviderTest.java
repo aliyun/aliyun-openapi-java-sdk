@@ -66,7 +66,7 @@ public class OIDCCredentialsProviderTest {
     @Test
     public void getCredentialsTest() throws ClientException {
         String filePath = OIDCCredentialsProviderTest.class.getClassLoader().getResource("oidctoken").getPath();
-        final AlibabaCloudCredentialsProvider provider = new OIDCCredentialsProvider("roleArn", "providerArn", filePath, null, null);
+        final AlibabaCloudCredentialsProvider provider = new OIDCCredentialsProvider("roleArn", "providerArn", filePath, null, "us-west-1");
         Assert.assertNotNull(provider);
         ClientException ex = Assert.assertThrows(ClientException.class, new ThrowingRunnable() {
             @Override

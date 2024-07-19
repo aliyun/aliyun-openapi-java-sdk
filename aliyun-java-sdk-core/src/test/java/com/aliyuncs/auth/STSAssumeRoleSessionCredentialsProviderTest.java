@@ -124,7 +124,6 @@ public class STSAssumeRoleSessionCredentialsProviderTest {
         STSAssumeRoleSessionCredentialsProvider provider = new STSAssumeRoleSessionCredentialsProvider(credentials,
                 roleArn, clientProfile);
         provider.withRoleSessionDurationSeconds(duration);
-
     }
 
     @Test
@@ -137,7 +136,6 @@ public class STSAssumeRoleSessionCredentialsProviderTest {
         STSAssumeRoleSessionCredentialsProvider provider = new STSAssumeRoleSessionCredentialsProvider(credentials,
                 roleArn, clientProfile);
         provider.withRoleSessionDurationSeconds(duration);
-
     }
 
     @Test
@@ -193,6 +191,5 @@ public class STSAssumeRoleSessionCredentialsProviderTest {
 
         AlibabaCloudCredentials credentials3 = provider.getCredentials();
         Assert.assertEquals(credentials2, credentials3);
-
     }
 }
