@@ -79,4 +79,12 @@ public interface IClientProfile {
     boolean isCloseTrace();
 
     void setCloseTrace(boolean closeTrace);
+
+    String getLocationServiceEndpoint();
+
+    void setLocationServiceEndpoint(String locationServiceEndpoint);
+
+    String getLocationServiceApiVersion();
+
+    void setLocationServiceApiVersion(String locationServiceApiVersion);
 }

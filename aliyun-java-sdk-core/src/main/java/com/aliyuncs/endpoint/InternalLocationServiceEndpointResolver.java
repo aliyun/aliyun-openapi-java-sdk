@@ -21,6 +21,7 @@ package com.aliyuncs.endpoint;
 
 import com.aliyuncs.IAcsClient;
 
+@Deprecated
 public class InternalLocationServiceEndpointResolver extends LocationServiceEndpointResolver {
 
     private final static String INNER_LOCATION_SERVICE_ENDPOINT = "location-inner.aliyuncs.com";

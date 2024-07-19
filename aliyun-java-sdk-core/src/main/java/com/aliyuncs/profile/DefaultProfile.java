@@ -24,6 +24,8 @@ public class DefaultProfile implements IClientProfile {
     private Logger logger;
     private String logFormat = DEFAULT_LOG_FORMAT;
     private boolean isCloseTrace = false;
+    private String locationServiceEndpoint = null;
+    private String locationServiceApiVersion = null;
 
     private DefaultProfile() {
     }
@@ -203,5 +205,25 @@ public class DefaultProfile implements IClientProfile {
     @Override
     public void setCloseTrace(boolean closeTrace) {
         isCloseTrace = closeTrace;
+    }
+
+    @Override
+    public String getLocationServiceEndpoint() {
+        return locationServiceEndpoint;
+    }
+
+    @Override
+    public void setLocationServiceEndpoint(String locationServiceEndpoint) {
+        this.locationServiceEndpoint = locationServiceEndpoint;
+    }
+
+    @Override
+    public String getLocationServiceApiVersion() {
+        return locationServiceApiVersion;
+    }
+
+    @Override
+    public void setLocationServiceApiVersion(String locationServiceApiVersion) {
+        this.locationServiceApiVersion = locationServiceApiVersion;
     }
 }
