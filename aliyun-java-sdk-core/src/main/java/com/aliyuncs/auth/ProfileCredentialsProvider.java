@@ -45,8 +45,7 @@ public class ProfileCredentialsProvider implements AlibabaCloudCredentialsProvid
         if (clientConfig == null) {
             throw new ClientException("Client is not open in the specified credentials file");
         }
-        CredentialsProviderFactory credentialsProviderFactory = new CredentialsProviderFactory();
-        return createCredential(clientConfig, credentialsProviderFactory);
+        return createCredential(clientConfig);
     }
 
     private Map<String, Map<String, String>> loadIni(Wini ini) {
@@ -65,20 +64,19 @@ public class ProfileCredentialsProvider implements AlibabaCloudCredentialsProvid
         return client;
     }
 
-    private AlibabaCloudCredentials createCredential(Map<String, String> clientConfig,
-                                                     CredentialsProviderFactory factory) throws ClientException {
+    private AlibabaCloudCredentials createCredential(Map<String, String> clientConfig) throws ClientException {
         String configType = clientConfig.get(AuthConstant.INI_TYPE);
         if (StringUtils.isEmpty(configType)) {
             throw new ClientException("The configured client type is empty");
         }
         if (AuthConstant.INI_TYPE_ARN.equals(configType)) {
-            return getSTSAssumeRoleSessionCredentials(clientConfig, factory);
+            return getSTSAssumeRoleSessionCredentials(clientConfig);
         }
         if (AuthConstant.INI_TYPE_KEY_PAIR.equals(configType)) {
-            return getSTSGetSessionAccessKeyCredentials(clientConfig, factory);
+            return getSTSGetSessionAccessKeyCredentials(clientConfig);
         }
         if (AuthConstant.INI_TYPE_RAM.equals(configType)) {
-            return getInstanceProfileCredentials(clientConfig, factory);
+            return getInstanceProfileCredentials(clientConfig);
         }
         String accessKeyId = clientConfig.get(AuthConstant.INI_ACCESS_KEY_ID);
         String accessKeySecret = clientConfig.get(AuthConstant.INI_ACCESS_KEY_IDSECRET);
@@ -88,8 +86,7 @@ public class ProfileCredentialsProvider implements AlibabaCloudCredentialsProvid
         return new BasicCredentials(accessKeyId, accessKeySecret);
     }
 
-    private AlibabaCloudCredentials getSTSAssumeRoleSessionCredentials(Map<String, String> clientConfig,
-                                                                       CredentialsProviderFactory factory)
+    private AlibabaCloudCredentials getSTSAssumeRoleSessionCredentials(Map<String, String> clientConfig)
             throws ClientException {
         String accessKeyId = clientConfig.get(AuthConstant.INI_ACCESS_KEY_ID);
         String accessKeySecret = clientConfig.get(AuthConstant.INI_ACCESS_KEY_IDSECRET);
@@ -103,14 +100,12 @@ public class ProfileCredentialsProvider implements AlibabaCloudCredentialsProvid
         if (StringUtils.isEmpty(roleSessionName) || StringUtils.isEmpty(roleArn)) {
             throw new ClientException("The configured role_session_name or role_arn is empty");
         }
-        STSAssumeRoleSessionCredentialsProvider provider =
-                factory.createCredentialsProvider(new STSAssumeRoleSessionCredentialsProvider(accessKeyId,
-                        accessKeySecret, roleSessionName, roleArn, regionId, policy));
+        STSAssumeRoleSessionCredentialsProvider provider = new STSAssumeRoleSessionCredentialsProvider(accessKeyId,
+                        accessKeySecret, roleSessionName, roleArn, regionId, policy);
         return provider.getCredentials();
     }
 
-    private AlibabaCloudCredentials getSTSGetSessionAccessKeyCredentials(Map<String, String> clientConfig,
-                                                                         CredentialsProviderFactory factory)
+    private AlibabaCloudCredentials getSTSGetSessionAccessKeyCredentials(Map<String, String> clientConfig)
             throws ClientException {
         String publicKeyId = clientConfig.get(AuthConstant.INI_PUBLIC_KEY_ID);
         String privateKeyFile = clientConfig.get(AuthConstant.INI_PRIVATE_KEY_FILE);
@@ -121,20 +116,16 @@ public class ProfileCredentialsProvider implements AlibabaCloudCredentialsProvid
         if (StringUtils.isEmpty(publicKeyId) || StringUtils.isEmpty(privateKey)) {
             throw new ClientException("The configured public_key_id or private_key_file content is empty");
         }
-        STSGetSessionAccessKeyCredentialsProvider provider =
-                factory.createCredentialsProvider(new STSGetSessionAccessKeyCredentialsProvider(publicKeyId, privateKey));
+        STSGetSessionAccessKeyCredentialsProvider provider = new STSGetSessionAccessKeyCredentialsProvider(publicKeyId, privateKey);
         return provider.getCredentials();
     }
 
-    private AlibabaCloudCredentials getInstanceProfileCredentials(Map<String, String> clientConfig,
-                                                                  CredentialsProviderFactory factory)
-            throws ClientException {
+    private AlibabaCloudCredentials getInstanceProfileCredentials(Map<String, String> clientConfig) throws ClientException {
         String roleName = clientConfig.get(AuthConstant.INI_ROLE_NAME);
         if (StringUtils.isEmpty(roleName)) {
             throw new ClientException("The configured role_name is empty");
         }
-        InstanceProfileCredentialsProvider provider =
-                factory.createCredentialsProvider(new InstanceProfileCredentialsProvider(roleName));
+        InstanceProfileCredentialsProvider provider = new InstanceProfileCredentialsProvider(roleName);
         return provider.getCredentials();
     }
 
