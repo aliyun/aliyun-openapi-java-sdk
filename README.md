@@ -19,10 +19,8 @@ If you have any problem while using Alibaba Cloud SDK for Java, please [submit a
 ## Requirements
 
 - To use Alibaba Cloud SDK for Java, you must have an Alibaba Cloud account as well as an `AccessKey ID` and an `AccessKey Secret`. Create and view your AccessKey on the [RAM console](https://ram.console.aliyun.com "RAM console") or contact your system administrator.
-
 - To use the Alibaba Cloud SDK for Java to access the APIs of a product, you must first activate the product on the [Alibaba Cloud console](https://home.console.aliyun.com) if required.
-
-- The Alibaba Cloud Java SDK requires JDK 1.6 or later.
+- The Alibaba Cloud Java SDK requires JDK 1.8 or later.
 
 ## Installation
 
@@ -71,34 +69,32 @@ If maven is not downloading jar packages from a central repository, you need to 
 
 ## Quick Examples
 
-The following code example shows the three main steps to use Alibaba Cloud SDK for Java :
-
-1. Create and initialize a `DefaultAcsClient` instance.
-
-2. Create an API request and set parameters.
-
-3. Initiate the request and handle the response or exceptions.
+The following code example shows how to use Alibaba Cloud SDK for Java :
 
 ```java
 package com.testprogram;
+
 import com.aliyuncs.profile.DefaultProfile;
 import com.aliyuncs.DefaultAcsClient;
 import com.aliyuncs.IAcsClient;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.exceptions.ServerException;
 import com.aliyuncs.ecs.model.v20140526.*;
+
 public class Main {
     public static void main(String[] args) {
-        // Create and initialize a DefaultAcsClient instance
+        // 1. Create and initialize a DefaultAcsClient instance
         DefaultProfile profile = DefaultProfile.getProfile(
             "<your-region-id>",          // The region ID
             "<your-access-key-id>",      // The AccessKey ID of the RAM account
             "<your-access-key-secret>"); // The AccessKey Secret of the RAM account
         IAcsClient client = new DefaultAcsClient(profile);
-        // Create an API request and set parameters
+
+        // 2. Create an API request and set parameters
         DescribeInstancesRequest request = new DescribeInstancesRequest();
         request.setPageSize(10);
-        // Initiate the request and handle the response or exceptions
+
+        // 3. Initiate the request and handle the response or exceptions
         DescribeInstancesResponse response;
         try {
             response = client.getAcsResponse(request);
@@ -113,6 +109,9 @@ public class Main {
     }
 }
 ```
+
+> For security reason, we don't recommend to hard code credentials information in source code. You should access
+> credentials from external configurations or environment variables.
 
 ## Documentation
 
