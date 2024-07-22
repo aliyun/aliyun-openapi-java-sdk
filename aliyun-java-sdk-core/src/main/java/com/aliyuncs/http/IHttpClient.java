@@ -16,7 +16,6 @@ public abstract class IHttpClient implements Closeable {
         }
         this.clientConfig = clientConfig;
         init(clientConfig);
-
     }
 
     public IHttpClient() {

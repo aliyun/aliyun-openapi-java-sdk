@@ -57,7 +57,7 @@ public class MapUtils {
             obj = currMap;
             return obj;
         }
-        if (remainKey.length() == 0) {
+        if (remainKey.isEmpty()) {
             if (key.contains("[")) {
                 int index = getIndexFromKey(key);
                 List currList = initList(obj, index);

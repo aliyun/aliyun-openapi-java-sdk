@@ -55,7 +55,7 @@ public class Base64Helper {
             return null;
         }
 
-        StringBuilder strBuilder = new StringBuilder("");
+        StringBuilder strBuilder = new StringBuilder();
         int paddingCount = (3 - (buff.length % 3)) % 3;
         byte[] stringArray = zeroPad(buff.length + paddingCount, buff);
         for (int i = 0; i < stringArray.length; i += 3) {

@@ -48,9 +48,9 @@ public class CompatibleUrlConnClient extends IHttpClient {
     @Override
     public HttpResponse syncInvoke(HttpRequest request) throws IOException, ClientException {
         InputStream content = null;
-        HttpResponse response = null;
+        HttpResponse response;
         HttpURLConnection httpConn = buildHttpConnection(request);
-        OutputStream out = null;
+        OutputStream out;
 
         try {
             httpConn.connect();
@@ -85,8 +85,7 @@ public class CompatibleUrlConnClient extends IHttpClient {
     }
 
     private boolean calcIgnoreSSLCert(HttpRequest request) {
-        boolean ignoreSSLCert = request.isIgnoreSSLCerts() ? request.isIgnoreSSLCerts() : clientConfig.isIgnoreSSLCerts();
-        return ignoreSSLCert;
+        return request.isIgnoreSSLCerts() ? request.isIgnoreSSLCerts() : clientConfig.isIgnoreSSLCerts();
     }
 
     private CompositeX509TrustManager calcX509TrustManager(HttpRequest request) throws KeyStoreException, NoSuchAlgorithmException {
@@ -246,7 +245,7 @@ public class CompatibleUrlConnClient extends IHttpClient {
     private HttpURLConnection buildHttpConnection(HttpRequest request) throws IOException, ClientException {
         checkHttpRequest(request);
         String strUrl = request.getSysUrl();
-        URL url = null;
+        URL url;
         String[] urlArray = null;
         if (MethodType.POST.equals(request.getSysMethod()) && null == request.getHttpContent()) {
             urlArray = strUrl.split("\\?");

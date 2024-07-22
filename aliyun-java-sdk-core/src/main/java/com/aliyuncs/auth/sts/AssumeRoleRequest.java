@@ -19,16 +19,9 @@
 
 package com.aliyuncs.auth.sts;
 
-/**
- * Created by haowei.yao on 2017/9/14.
- */
-
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.ProtocolType;
 
-/**
- * @author auto create
- */
 public class AssumeRoleRequest extends RpcAcsRequest<AssumeRoleResponse> {
 
     private Long durationSeconds;

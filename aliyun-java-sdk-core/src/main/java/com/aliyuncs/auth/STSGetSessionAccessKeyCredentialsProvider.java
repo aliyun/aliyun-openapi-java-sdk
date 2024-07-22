@@ -65,7 +65,7 @@ public class STSGetSessionAccessKeyCredentialsProvider implements AlibabaCloudCr
 
         return new BasicSessionCredentials(
                 response.getSessionAccessKey().getSessionAccessKeyId(),
-                response.getSessionAccessKey().getSessionAccessKeySecert(),
+                response.getSessionAccessKey().getSessionAccessKeySecret(),
                 null,
                 sessionDurationSeconds
         );

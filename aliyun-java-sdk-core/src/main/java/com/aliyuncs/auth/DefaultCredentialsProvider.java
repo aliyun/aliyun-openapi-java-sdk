@@ -27,7 +27,7 @@ public class DefaultCredentialsProvider implements AlibabaCloudCredentialsProvid
         defaultProviders.add(new ProfileCredentialsProvider());
         String roleName = AuthUtils.getEnvironmentECSMetaData();
         if (roleName != null) {
-            if (roleName.length() == 0) {
+            if (roleName.isEmpty()) {
                 throw new ClientException("Environment variable roleName('ALIBABA_CLOUD_ECS_METADATA') cannot be empty");
             }
             defaultProviders.add(new InstanceProfileCredentialsProvider(roleName));

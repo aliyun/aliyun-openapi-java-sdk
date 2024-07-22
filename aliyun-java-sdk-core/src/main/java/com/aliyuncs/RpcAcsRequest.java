@@ -131,7 +131,7 @@ public abstract class RpcAcsRequest<T extends AcsResponse> extends AcsRequest<T>
     @Override
     public String composeUrl(String endpoint, Map<String, String> queries) throws UnsupportedEncodingException {
         Map<String, String> mapQueries = (queries == null) ? this.getSysQueryParameters() : queries;
-        StringBuilder urlBuilder = new StringBuilder("");
+        StringBuilder urlBuilder = new StringBuilder();
         urlBuilder.append(this.getSysProtocol().toString());
         urlBuilder.append("://").append(endpoint);
         if (-1 == urlBuilder.indexOf("?")) {
@@ -166,7 +166,7 @@ public abstract class RpcAcsRequest<T extends AcsResponse> extends AcsRequest<T>
                 format);
         headerMap.putAll(this.getSysHeaders());
         headerMap = this.composer.refreshSignParameters(headerMap, signer, null, null);
-        if (imutableMap.get("RegionId") == null && this.getSysRegionId() != null && !this.getSysRegionId().equals("")) {
+        if (imutableMap.get("RegionId") == null && this.getSysRegionId() != null && !this.getSysRegionId().isEmpty()) {
             if ((bodyParams == null || bodyParams.get("RegionId") == null)) {
                 imutableMap.put("RegionId", getSysRegionId());
             }

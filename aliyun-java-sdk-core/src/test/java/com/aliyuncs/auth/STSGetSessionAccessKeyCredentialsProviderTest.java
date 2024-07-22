@@ -27,9 +27,8 @@ public class STSGetSessionAccessKeyCredentialsProviderTest {
         Field stsClient = providerClass.getDeclaredField("stsClient");
         keyPairCredentials.setAccessible(true);
         stsClient.setAccessible(true);
-        Assert.assertTrue(credentials == keyPairCredentials.get(provider));
+        Assert.assertSame(credentials, keyPairCredentials.get(provider));
         Assert.assertTrue(stsClient.get(provider) instanceof DefaultAcsClient);
-
 
         provider = new STSGetSessionAccessKeyCredentialsProvider("", "");
         Field publicKeyId = providerClass.getDeclaredField("publicKeyId");
@@ -79,7 +78,7 @@ public class STSGetSessionAccessKeyCredentialsProviderTest {
         GenerateSessionAccessKeyResponse.SessionAccessKey sessionAccessKey = mock(
                 GenerateSessionAccessKeyResponse.SessionAccessKey.class);
         when(sessionAccessKey.getSessionAccessKeyId()).thenReturn("ak");
-        when(sessionAccessKey.getSessionAccessKeySecert()).thenReturn("sk");
+        when(sessionAccessKey.getSessionAccessKeySecret()).thenReturn("sk");
         when(akResponse.getSessionAccessKey()).thenReturn(sessionAccessKey);
         when(acsClient.getAcsResponse(any(GetSessionAccessKeyRequest.class))).thenReturn(akResponse);
         STSGetSessionAccessKeyCredentialsProvider provider = new STSGetSessionAccessKeyCredentialsProvider(
@@ -96,7 +95,7 @@ public class STSGetSessionAccessKeyCredentialsProviderTest {
         GenerateSessionAccessKeyResponse.SessionAccessKey sessionAccessKey = mock(
                 GenerateSessionAccessKeyResponse.SessionAccessKey.class);
         when(sessionAccessKey.getSessionAccessKeyId()).thenReturn("ak");
-        when(sessionAccessKey.getSessionAccessKeySecert()).thenReturn("sk");
+        when(sessionAccessKey.getSessionAccessKeySecret()).thenReturn("sk");
         when(akResponse.getSessionAccessKey()).thenReturn(sessionAccessKey);
         when(acsClient.getAcsResponse(any(GetSessionAccessKeyRequest.class))).thenReturn(akResponse);
         KeyPairCredentials credentials = mock(KeyPairCredentials.class);

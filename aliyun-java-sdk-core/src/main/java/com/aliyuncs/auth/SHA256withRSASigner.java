@@ -41,8 +41,7 @@ public class SHA256withRSASigner extends Signer {
             rsaSign.initSign(privateKey);
             rsaSign.update(stringToSign.getBytes(ENCODING));
             byte[] sign = rsaSign.sign();
-            String signature = DatatypeConverter.printBase64Binary(sign);
-            return signature;
+            return DatatypeConverter.printBase64Binary(sign);
         } catch (NoSuchAlgorithmException e) {
             throw new IllegalArgumentException(e.toString());
         } catch (InvalidKeySpecException e) {
