@@ -31,7 +31,7 @@ public class ProfileCredentialsProvider implements AlibabaCloudCredentialsProvid
         if (filePath == null) {
             filePath = AuthConstant.DEFAULT_CREDENTIALS_FILE_PATH;
         }
-        if (filePath.length() == 0) {
+        if (filePath.isEmpty()) {
             throw new ClientException("The specified credentials file is empty");
         }
         Wini ini;

@@ -1,6 +1,5 @@
 package com.aliyuncs.utils;
 
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
@@ -20,7 +19,7 @@ public class AuthUtils {
                     FileInputStream in = null;
                     byte[] buffer;
                     try {
-                        in = new FileInputStream(new File(filePath));
+                        in = new FileInputStream(filePath);
                         buffer = new byte[in.available()];
                         in.read(buffer);
                         privateKey = new String(buffer, "UTF-8");
@@ -48,10 +47,8 @@ public class AuthUtils {
     public static String getClientType() {
         if (null == clientType) {
             AuthUtils.clientType = "default";
-            return AuthUtils.clientType;
-        } else {
-            return AuthUtils.clientType;
         }
+        return AuthUtils.clientType;
     }
 
     public static void setClientType(String clientType) {

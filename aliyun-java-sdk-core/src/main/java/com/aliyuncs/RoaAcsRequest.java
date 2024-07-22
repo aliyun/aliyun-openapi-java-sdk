@@ -114,7 +114,7 @@ public abstract class RoaAcsRequest<T extends AcsResponse> extends AcsRequest<T>
     @Override
     public String composeUrl(String endpoint, Map<String, String> queries) throws UnsupportedEncodingException {
         Map<String, String> mapQueries = (queries == null) ? this.getSysQueryParameters() : queries;
-        StringBuilder urlBuilder = new StringBuilder("");
+        StringBuilder urlBuilder = new StringBuilder();
         urlBuilder.append(this.getSysProtocol().toString());
         urlBuilder.append("://").append(endpoint);
         if (null != this.uriPattern) {

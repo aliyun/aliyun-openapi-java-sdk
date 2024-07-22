@@ -84,7 +84,7 @@ public class V3SignatureComposer implements ISignatureComposer {
     }
 
     private String getCanonicalizedResource(Map<String, String> query) {
-        if (query == null || query.size() == 0) {
+        if (query == null || query.isEmpty()) {
             return "";
         }
         String[] keys = query.keySet().toArray(new String[query.size()]);

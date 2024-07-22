@@ -7,7 +7,6 @@ import com.aliyuncs.http.FormatType;
 import com.aliyuncs.http.HttpClientConfig;
 import org.slf4j.Logger;
 
-@SuppressWarnings("deprecation")
 public interface IClientProfile {
 
     /**

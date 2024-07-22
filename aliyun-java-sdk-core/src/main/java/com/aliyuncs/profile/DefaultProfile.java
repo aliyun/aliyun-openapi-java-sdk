@@ -2,7 +2,6 @@ package com.aliyuncs.profile;
 
 import com.aliyuncs.auth.*;
 import com.aliyuncs.endpoint.DefaultEndpointResolver;
-import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.http.FormatType;
 import com.aliyuncs.http.HttpClientConfig;
 import com.aliyuncs.utils.ParameterHelper;
@@ -57,8 +56,7 @@ public class DefaultProfile implements IClientProfile {
     }
 
     public synchronized static DefaultProfile getProfile(String regionId, String accessKeyId, String secret) {
-        Credential creden = new Credential(accessKeyId, secret);
-        profile = new DefaultProfile(regionId, creden);
+        profile = new DefaultProfile(regionId, new Credential(accessKeyId, secret));
         return profile;
     }
 

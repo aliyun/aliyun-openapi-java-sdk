@@ -17,9 +17,9 @@ public class GenerateSessionAccessKeyResponseTest {
         sessionAccessKey.setSessionAccessKeyId("sessionAccessKeyId");
         Assert.assertEquals("sessionAccessKeyId", sessionAccessKey.getSessionAccessKeyId());
 
-        Assert.assertNull(sessionAccessKey.getSessionAccessKeySecert());
-        sessionAccessKey.setSessionAccessKeySecert("sessionAccessKeySecert");
-        Assert.assertEquals("sessionAccessKeySecert", sessionAccessKey.getSessionAccessKeySecert());
+        Assert.assertNull(sessionAccessKey.getSessionAccessKeySecret());
+        sessionAccessKey.setSessionAccessKeySecret("sessionAccessKeySecret");
+        Assert.assertEquals("sessionAccessKeySecret", sessionAccessKey.getSessionAccessKeySecret());
 
         Assert.assertNull(sessionAccessKey.getExpiration());
         sessionAccessKey.setExpiration("expiration");

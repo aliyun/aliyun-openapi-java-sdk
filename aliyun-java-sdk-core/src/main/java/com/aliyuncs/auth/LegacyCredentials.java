@@ -5,8 +5,8 @@ public class LegacyCredentials implements AlibabaCloudCredentials {
 
     private final Credential legacyCredential;
 
-    public LegacyCredentials(Credential legacyCrendential) {
-        this.legacyCredential = legacyCrendential;
+    public LegacyCredentials(Credential legacyCredential) {
+        this.legacyCredential = legacyCredential;
     }
 
     @Override

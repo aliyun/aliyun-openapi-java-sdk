@@ -12,7 +12,7 @@ public class GetSessionAccessKeyResponseUnmarshaller {
 
         SessionAccessKey credentials = new SessionAccessKey();
         credentials.setSessionAccessKeyId(context.stringValue("GenerateSessionAccessKeyResponse.SessionAccessKey.SessionAccessKeyId"));
-        credentials.setSessionAccessKeySecert(context.stringValue("GenerateSessionAccessKeyResponse.SessionAccessKey.SessionAccessKeySecret"));
+        credentials.setSessionAccessKeySecret(context.stringValue("GenerateSessionAccessKeyResponse.SessionAccessKey.SessionAccessKeySecret"));
         credentials.setExpiration(context.stringValue("GenerateSessionAccessKeyResponse.SessionAccessKey.Expiration"));
 
         getSessionAccessKeyResponse.setSessionAccessKey(credentials);

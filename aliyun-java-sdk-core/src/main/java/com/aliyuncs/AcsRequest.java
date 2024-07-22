@@ -24,7 +24,7 @@ public abstract class AcsRequest<T extends AcsResponse> extends HttpRequest {
     private UserAgentConfig userAgentConfig;
     protected ISignatureComposer composer = null;
     private String version = null;
-    private String product = null;
+    private String product;
     private String actionName = null;
     private String regionId = null;
     private String securityToken = null;
@@ -76,7 +76,7 @@ public abstract class AcsRequest<T extends AcsResponse> extends HttpRequest {
             return null;
         }
 
-        StringBuilder urlBuilder = new StringBuilder("");
+        StringBuilder urlBuilder = new StringBuilder();
         for (Entry<String, String> entry : parameters.entrySet()) {
             String key = entry.getKey();
             String val = entry.getValue();
