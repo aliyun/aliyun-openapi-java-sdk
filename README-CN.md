@@ -18,7 +18,7 @@
 
 1. 要使用 Alibaba Cloud SDK for Java ，您需要一个云账号以及一对`Access Key ID`和`Access Key Secret`。 请在阿里云控制台中的[RAM管理页面](https://ram.console.aliyun.com)上创建和查看您的Access Key，或者联系您的系统管理员。
 2. 要使用 Alibaba Cloud SDK for Java 访问某个产品的API，您需要事先在[阿里云控制台](https://home.console.aliyun.com)中开通这个产品。
-3. Alibaba Cloud SDK for Java 需要1.6以上的JDK。
+3. Alibaba Cloud SDK for Java 需要 1.8 以上的 JDK。
 
 ## 安装依赖
 
@@ -68,32 +68,32 @@
 
 ## 快速使用
 
-以下这个代码示例向您展示了调用 Alibaba Cloud SDK for Java 的3个主要步骤：
-
-1. 创建DefaultAcsClient实例并初始化。
-2. 创建API请求并设置参数。
-3. 发起请求并处理应答或异常。
+以下这个代码示例向您展示了如何调用 Alibaba Cloud SDK for Java：
 
 ```java
 package com.testprogram;
+
 import com.aliyuncs.profile.DefaultProfile;
 import com.aliyuncs.DefaultAcsClient;
 import com.aliyuncs.IAcsClient;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.exceptions.ServerException;
 import com.aliyuncs.ecs.model.v20140526.*;
+
 public class Main {
     public static void main(String[] args) {
-         // 创建DefaultAcsClient实例并初始化
+        // 1. 创建DefaultAcsClient实例并初始化。
         DefaultProfile profile = DefaultProfile.getProfile(
             "<your-region-id>",          // 地域ID
             "<your-access-key-id>",      // RAM账号的AccessKey ID
             "<your-access-key-secret>"); // RAM账号Access Key Secret
         IAcsClient client = new DefaultAcsClient(profile);
-         // 创建API请求并设置参数
+
+        // 2. 创建API请求并设置参数
         DescribeInstancesRequest request = new DescribeInstancesRequest();
         request.setPageSize(10);
-        // 发起请求并处理应答或异常
+
+        // 3. 发起请求并处理应答或异常
         DescribeInstancesResponse response;
         try {
             response = client.getAcsResponse(request);
@@ -108,6 +108,8 @@ public class Main {
     }
 }
 ```
+
+> 因为安全的原因，我们不推荐在源代码中硬编码凭证信息。你应该通过外部配置或者环境变量的方式来访问凭证信息。
 
 ## 文档
 
