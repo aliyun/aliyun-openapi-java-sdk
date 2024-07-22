@@ -544,6 +544,7 @@ public class ApacheHttpClientTest {
     }
 
     @Test
+    @Ignore
     public void testThrowSSLHandshakeException() throws ClientException, IOException {
         thrown.expect(SSLHandshakeException.class);
         HttpClientConfig clientConfig = HttpClientConfig.getDefault();

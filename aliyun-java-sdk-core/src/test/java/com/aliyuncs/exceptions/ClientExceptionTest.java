@@ -3,7 +3,20 @@ package com.aliyuncs.exceptions;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class ClientExceptionTest {
+
+    @Test
+    public void constructorTest0() {
+        Map<String, Object> detail = new HashMap<String, Object>();
+        ClientException ex = new ClientException("code", "message", "requestid", "description", detail);
+        Assert.assertSame(detail, ex.getAccessDeniedDetail());
+        ClientException ex4 = new ClientException("code", "message", new Exception("cause"));
+        Assert.assertEquals(ErrorType.Client, ex4.getErrorType());
+    }
+
     @Test
     public void constructorTest() {
         ClientException ex = new ClientException("client exception message");
