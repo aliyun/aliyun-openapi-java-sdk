@@ -29,6 +29,8 @@ public class UninstallPluginRequest extends RoaAcsRequest<UninstallPluginRespons
 
 	private String clientToken;
 
+	private Boolean force;
+
 	private String body;
 	public UninstallPluginRequest() {
 		super("elasticsearch", "2017-06-13", "UninstallPlugin", "elasticsearch");
@@ -59,6 +61,17 @@ public class UninstallPluginRequest extends RoaAcsRequest<UninstallPluginRespons
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("clientToken", clientToken);
+		}
+	}
+
+	public Boolean getForce() {
+		return this.force;
+	}
+
+	public void setForce(Boolean force) {
+		this.force = force;
+		if(force != null){
+			putQueryParameter("force", force.toString());
 		}
 	}
 

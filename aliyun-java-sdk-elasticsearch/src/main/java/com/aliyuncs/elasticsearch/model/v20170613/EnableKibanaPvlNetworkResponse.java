@@ -15,17 +15,42 @@
 package com.aliyuncs.elasticsearch.model.v20170613;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.elasticsearch.transform.v20170613.CreateInstanceResponseUnmarshaller;
+import com.aliyuncs.elasticsearch.transform.v20170613.EnableKibanaPvlNetworkResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateInstanceResponse extends AcsResponse {
+public class EnableKibanaPvlNetworkResponse extends AcsResponse {
+
+	private Boolean result;
+
+	private String requestId;
+
+	public Boolean getResult() {
+		return this.result;
+	}
+
+	public void setResult(Boolean result) {
+		this.result = result;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
 	@Override
-	public CreateInstanceResponse getInstance(UnmarshallerContext context) {
-		return	CreateInstanceResponseUnmarshaller.unmarshall(this, context);
+	public EnableKibanaPvlNetworkResponse getInstance(UnmarshallerContext context) {
+		return	EnableKibanaPvlNetworkResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

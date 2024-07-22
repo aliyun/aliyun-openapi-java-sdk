@@ -108,6 +108,12 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 		private String kibanaDomain;
 
+		private String instanceCategory;
+
+		private Long endtime;
+
+		private String archType;
+
 		private List<DictListItem> dictList;
 
 		private List<SynonymsDictsItem> synonymsDicts;
@@ -388,6 +394,30 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 		public void setKibanaDomain(String kibanaDomain) {
 			this.kibanaDomain = kibanaDomain;
+		}
+
+		public String getInstanceCategory() {
+			return this.instanceCategory;
+		}
+
+		public void setInstanceCategory(String instanceCategory) {
+			this.instanceCategory = instanceCategory;
+		}
+
+		public Long getEndtime() {
+			return this.endtime;
+		}
+
+		public void setEndtime(Long endtime) {
+			this.endtime = endtime;
+		}
+
+		public String getArchType() {
+			return this.archType;
+		}
+
+		public void setArchType(String archType) {
+			this.archType = archType;
 		}
 
 		public List<DictListItem> getDictList() {
@@ -788,6 +818,8 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 			private String performanceLevel;
 
+			private String specInfo;
+
 			public String getSpec() {
 				return this.spec;
 			}
@@ -826,6 +858,14 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 			public void setPerformanceLevel(String performanceLevel) {
 				this.performanceLevel = performanceLevel;
+			}
+
+			public String getSpecInfo() {
+				return this.specInfo;
+			}
+
+			public void setSpecInfo(String specInfo) {
+				this.specInfo = specInfo;
 			}
 		}
 
@@ -923,6 +963,8 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 			private Integer disk;
 
+			private String specInfo;
+
 			public Integer getAmount() {
 				return this.amount;
 			}
@@ -945,6 +987,14 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 			public void setDisk(Integer disk) {
 				this.disk = disk;
+			}
+
+			public String getSpecInfo() {
+				return this.specInfo;
+			}
+
+			public void setSpecInfo(String specInfo) {
+				this.specInfo = specInfo;
 			}
 		}
 
@@ -958,6 +1008,8 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 			private String diskType;
 
+			private String specInfo;
+
 			public String getSpec() {
 				return this.spec;
 			}
@@ -988,6 +1040,14 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 			public void setDiskType(String diskType) {
 				this.diskType = diskType;
+			}
+
+			public String getSpecInfo() {
+				return this.specInfo;
+			}
+
+			public void setSpecInfo(String specInfo) {
+				this.specInfo = specInfo;
 			}
 		}
 
@@ -1001,6 +1061,8 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 			private String diskType;
 
+			private String specInfo;
+
 			public String getSpec() {
 				return this.spec;
 			}
@@ -1031,6 +1093,14 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 			public void setDiskType(String diskType) {
 				this.diskType = diskType;
+			}
+
+			public String getSpecInfo() {
+				return this.specInfo;
+			}
+
+			public void setSpecInfo(String specInfo) {
+				this.specInfo = specInfo;
 			}
 		}
 
@@ -1045,6 +1115,8 @@ public class DescribeInstanceResponse extends AcsResponse {
 			private Boolean diskEncryption;
 
 			private String diskType;
+
+			private String specInfo;
 
 			public Integer getAmount() {
 				return this.amount;
@@ -1084,6 +1156,14 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 			public void setDiskType(String diskType) {
 				this.diskType = diskType;
+			}
+
+			public String getSpecInfo() {
+				return this.specInfo;
+			}
+
+			public void setSpecInfo(String specInfo) {
+				this.specInfo = specInfo;
 			}
 		}
 
@@ -1112,6 +1192,8 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 			private String diskType;
 
+			private String specInfo;
+
 			public Integer getAmount() {
 				return this.amount;
 			}
@@ -1150,6 +1232,14 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 			public void setDiskType(String diskType) {
 				this.diskType = diskType;
+			}
+
+			public String getSpecInfo() {
+				return this.specInfo;
+			}
+
+			public void setSpecInfo(String specInfo) {
+				this.specInfo = specInfo;
 			}
 		}
 	}

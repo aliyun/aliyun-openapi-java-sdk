@@ -14,15 +14,17 @@
 
 package com.aliyuncs.elasticsearch.transform.v20170613;
 
-import com.aliyuncs.elasticsearch.model.v20170613.CreateInstanceResponse;
+import com.aliyuncs.elasticsearch.model.v20170613.EnableKibanaPvlNetworkResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class CreateInstanceResponseUnmarshaller {
+public class EnableKibanaPvlNetworkResponseUnmarshaller {
 
-	public static CreateInstanceResponse unmarshall(CreateInstanceResponse createInstanceResponse, UnmarshallerContext _ctx) {
+	public static EnableKibanaPvlNetworkResponse unmarshall(EnableKibanaPvlNetworkResponse enableKibanaPvlNetworkResponse, UnmarshallerContext _ctx) {
 		
+		enableKibanaPvlNetworkResponse.setRequestId(_ctx.stringValue("EnableKibanaPvlNetworkResponse.RequestId"));
+		enableKibanaPvlNetworkResponse.setResult(_ctx.booleanValue("EnableKibanaPvlNetworkResponse.Result"));
 	 
-	 	return createInstanceResponse;
+	 	return enableKibanaPvlNetworkResponse;
 	}
 }

@@ -15,6 +15,7 @@
 package com.aliyuncs.elasticsearch.model.v20170613;
 
 import com.aliyuncs.RoaAcsRequest;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.elasticsearch.Endpoint;
 
@@ -22,17 +23,16 @@ import com.aliyuncs.elasticsearch.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateSnapshotRequest extends RoaAcsRequest<CreateSnapshotResponse> {
+public class EnableKibanaPvlNetworkRequest extends RoaAcsRequest<EnableKibanaPvlNetworkResponse> {
 	   
 
-	private String clientToken;
+	private String instanceId;
 
 	private String body;
-
-	private String instanceId;
-	public CreateSnapshotRequest() {
-		super("elasticsearch", "2017-06-13", "CreateSnapshot", "elasticsearch");
-		setUriPattern("/openapi/instances/[InstanceId]/snapshots");
+	public EnableKibanaPvlNetworkRequest() {
+		super("elasticsearch", "2017-06-13", "EnableKibanaPvlNetwork", "elasticsearch");
+		setProtocol(ProtocolType.HTTPS);
+		setUriPattern("/openapi/instances/[InstanceId]/actions/enable-kibana-private");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -40,14 +40,14 @@ public class CreateSnapshotRequest extends RoaAcsRequest<CreateSnapshotResponse>
 		} catch (Exception e) {}
 	}
 
-	public String getClientToken() {
-		return this.clientToken;
+	public String getInstanceId() {
+		return this.instanceId;
 	}
 
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putPathParameter("InstanceId", instanceId);
 		}
 	}
 
@@ -62,20 +62,9 @@ public class CreateSnapshotRequest extends RoaAcsRequest<CreateSnapshotResponse>
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putPathParameter("InstanceId", instanceId);
-		}
-	}
-
 	@Override
-	public Class<CreateSnapshotResponse> getResponseClass() {
-		return CreateSnapshotResponse.class;
+	public Class<EnableKibanaPvlNetworkResponse> getResponseClass() {
+		return EnableKibanaPvlNetworkResponse.class;
 	}
 
 }

@@ -73,6 +73,8 @@ public class ListLogstashResponse extends AcsResponse {
 
 		private String version;
 
+		private String resourceGroupId;
+
 		private List<TagsItem> tags;
 
 		private NodeSpec nodeSpec;
@@ -141,6 +143,14 @@ public class ListLogstashResponse extends AcsResponse {
 
 		public void setVersion(String version) {
 			this.version = version;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 
 		public List<TagsItem> getTags() {

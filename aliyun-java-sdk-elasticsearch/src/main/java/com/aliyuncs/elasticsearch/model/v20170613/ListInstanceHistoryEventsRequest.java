@@ -41,6 +41,8 @@ public class ListInstanceHistoryEventsRequest extends RoaAcsRequest<ListInstance
 
 	private String eventCreateEndTime;
 
+	private String body;
+
 	private String eventCreateStartTime;
 
 	private String eventExecuteEndTime;
@@ -139,6 +141,17 @@ public class ListInstanceHistoryEventsRequest extends RoaAcsRequest<ListInstance
 		this.eventCreateEndTime = eventCreateEndTime;
 		if(eventCreateEndTime != null){
 			putQueryParameter("eventCreateEndTime", eventCreateEndTime);
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 

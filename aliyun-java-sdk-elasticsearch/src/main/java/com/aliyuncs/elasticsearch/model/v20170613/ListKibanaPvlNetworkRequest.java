@@ -15,6 +15,7 @@
 package com.aliyuncs.elasticsearch.model.v20170613;
 
 import com.aliyuncs.RoaAcsRequest;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.elasticsearch.Endpoint;
 
@@ -22,44 +23,19 @@ import com.aliyuncs.elasticsearch.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateSnapshotRequest extends RoaAcsRequest<CreateSnapshotResponse> {
+public class ListKibanaPvlNetworkRequest extends RoaAcsRequest<ListKibanaPvlNetworkResponse> {
 	   
 
-	private String clientToken;
-
-	private String body;
-
 	private String instanceId;
-	public CreateSnapshotRequest() {
-		super("elasticsearch", "2017-06-13", "CreateSnapshot", "elasticsearch");
-		setUriPattern("/openapi/instances/[InstanceId]/snapshots");
-		setMethod(MethodType.POST);
+	public ListKibanaPvlNetworkRequest() {
+		super("elasticsearch", "2017-06-13", "ListKibanaPvlNetwork", "elasticsearch");
+		setProtocol(ProtocolType.HTTPS);
+		setUriPattern("/openapi/instances/[InstanceId]/actions/get-kibana-private");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
-	public String getBody() {
-		return this.body;
-	}
-
-	public void setBody(String body) {
-		this.body = body;
-		if(body != null){
-			putBodyParameter("body", body);
-		}
 	}
 
 	public String getInstanceId() {
@@ -74,8 +50,8 @@ public class CreateSnapshotRequest extends RoaAcsRequest<CreateSnapshotResponse>
 	}
 
 	@Override
-	public Class<CreateSnapshotResponse> getResponseClass() {
-		return CreateSnapshotResponse.class;
+	public Class<ListKibanaPvlNetworkResponse> getResponseClass() {
+		return ListKibanaPvlNetworkResponse.class;
 	}
 
 }

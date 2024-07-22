@@ -15,6 +15,7 @@
 package com.aliyuncs.elasticsearch.model.v20170613;
 
 import com.aliyuncs.RoaAcsRequest;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.elasticsearch.Endpoint;
 
@@ -22,22 +23,34 @@ import com.aliyuncs.elasticsearch.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateDataTasksRequest extends RoaAcsRequest<CreateDataTasksResponse> {
+public class UpdateKibanaPvlNetworkRequest extends RoaAcsRequest<UpdateKibanaPvlNetworkResponse> {
 	   
+
+	private String pvlId;
 
 	private String instanceId;
 
-	private String clientToken;
-
 	private String body;
-	public CreateDataTasksRequest() {
-		super("elasticsearch", "2017-06-13", "CreateDataTasks", "elasticsearch");
-		setUriPattern("/openapi/instances/[InstanceId]/data-task");
+	public UpdateKibanaPvlNetworkRequest() {
+		super("elasticsearch", "2017-06-13", "UpdateKibanaPvlNetwork", "elasticsearch");
+		setProtocol(ProtocolType.HTTPS);
+		setUriPattern("/openapi/instances/[InstanceId]/actions/update-kibana-private");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getPvlId() {
+		return this.pvlId;
+	}
+
+	public void setPvlId(String pvlId) {
+		this.pvlId = pvlId;
+		if(pvlId != null){
+			putQueryParameter("pvlId", pvlId);
+		}
 	}
 
 	public String getInstanceId() {
@@ -48,17 +61,6 @@ public class CreateDataTasksRequest extends RoaAcsRequest<CreateDataTasksRespons
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putPathParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
@@ -74,8 +76,8 @@ public class CreateDataTasksRequest extends RoaAcsRequest<CreateDataTasksRespons
 	}
 
 	@Override
-	public Class<CreateDataTasksResponse> getResponseClass() {
-		return CreateDataTasksResponse.class;
+	public Class<UpdateKibanaPvlNetworkResponse> getResponseClass() {
+		return UpdateKibanaPvlNetworkResponse.class;
 	}
 
 }

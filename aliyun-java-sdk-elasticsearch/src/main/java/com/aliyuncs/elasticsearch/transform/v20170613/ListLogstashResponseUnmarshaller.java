@@ -47,6 +47,7 @@ public class ListLogstashResponseUnmarshaller {
 			instance.setUpdatedAt(_ctx.stringValue("ListLogstashResponse.Result["+ i +"].updatedAt"));
 			instance.setInstanceId(_ctx.stringValue("ListLogstashResponse.Result["+ i +"].instanceId"));
 			instance.setVersion(_ctx.stringValue("ListLogstashResponse.Result["+ i +"].version"));
+			instance.setResourceGroupId(_ctx.stringValue("ListLogstashResponse.Result["+ i +"].resourceGroupId"));
 
 			NodeSpec nodeSpec = new NodeSpec();
 			nodeSpec.setSpec(_ctx.stringValue("ListLogstashResponse.Result["+ i +"].nodeSpec.spec"));
