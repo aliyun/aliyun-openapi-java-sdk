@@ -1,4 +1,7 @@
-﻿2024-07-08 Version:4.7.0
+﻿2024-07-22 Version:4.7.1
+1, Support custom location service.
+
+2024-07-08 Version:4.7.0
 1, Support OIDC credentials provider.
 2, Add OIDC credentials provider into default credentials provider chain.
 3, Cleanup some imports.
