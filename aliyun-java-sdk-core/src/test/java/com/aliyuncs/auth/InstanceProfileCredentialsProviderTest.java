@@ -34,7 +34,7 @@ public class InstanceProfileCredentialsProviderTest {
         final String roleName = "roleName";
         InstanceProfileCredentialsProvider provider = new InstanceProfileCredentialsProvider(roleName);
         ECSMetadataServiceCredentialsFetcher fetcher = mock(ECSMetadataServiceCredentialsFetcher.class);
-        doAnswer(new Answer() {
+        doAnswer(new Answer<Object>() {
             @Override
             public Object answer(InvocationOnMock invocationOnMock) {
                 String roleNameAgru = invocationOnMock.getArgument(0, String.class);
