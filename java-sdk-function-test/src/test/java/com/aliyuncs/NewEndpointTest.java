@@ -195,9 +195,9 @@ public class NewEndpointTest extends BaseTest {
                 Assert.fail();
             } catch (ClientException e) {
                 Assert.assertEquals(ErrorCodeConstant.SDK_ENDPOINT_RESOLVING_ERROR, e.getErrCode());
-                Assert.assertEquals("No endpoint in the region 'mars' for product 'Ram'. \n" +
+                Assert.assertEquals("No endpoint in the region 'mars' for product 'Ram'.\n" +
                         "You can set an endpoint for your request explicitly.\n" +
-                        "See https://www.alibabacloud.com/help/zh/doc-detail/92049.htm\n", e.getErrMsg());
+                        "See https://api.alibabacloud.com/product/Ram", e.getErrMsg());
             }
         }
         // Bad region ID with another product
@@ -206,10 +206,10 @@ public class NewEndpointTest extends BaseTest {
             Assert.fail();
         } catch (ClientException e) {
             Assert.assertEquals(ErrorCodeConstant.SDK_ENDPOINT_RESOLVING_ERROR, e.getErrCode());
-            Assert.assertEquals("No endpoint in the region 'mars' for product 'Ecs'. \n" +
+            Assert.assertEquals("No endpoint in the region 'mars' for product 'Ecs'.\n" +
                     "You can set an endpoint for your request explicitly.\n" +
                     "Or you can use the other available regions: cn-shenzhen cn-beijing ap-south-1 eu-west-1 ap-northeast-1 me-east-1 cn-qingdao cn-shanghai cn-hongkong ap-southeast-1 ap-southeast-2 ap-southeast-3 eu-central-1 cn-huhehaote ap-southeast-5 us-east-1 cn-zhangjiakou us-west-1 cn-hangzhou\n" +
-                    "See https://www.alibabacloud.com/help/zh/doc-detail/92049.htm\n", e.getErrMsg());
+                    "See https://api.alibabacloud.com/product/Ecs", e.getErrMsg());
         }
         Assert.assertEquals(3, locationServiceEndpointResolver.locationServiceCallCounter);
 
@@ -220,7 +220,7 @@ public class NewEndpointTest extends BaseTest {
                 Assert.fail();
             } catch (ClientException e) {
                 Assert.assertEquals(ErrorCodeConstant.SDK_ENDPOINT_RESOLVING_ERROR, e.getErrCode());
-                Assert.assertTrue(e.getErrMsg().startsWith("" + "No endpoint for product 'InvalidProductCode'. \n"
+                Assert.assertTrue(e.getErrMsg().startsWith("No endpoint for product 'InvalidProductCode'.\n"
                         + "Please check the product code, or set an endpoint for your request explicitly.\n"));
             }
         }
@@ -230,7 +230,7 @@ public class NewEndpointTest extends BaseTest {
             Assert.fail();
         } catch (ClientException e) {
             Assert.assertEquals(ErrorCodeConstant.SDK_ENDPOINT_RESOLVING_ERROR, e.getErrCode());
-            Assert.assertTrue(e.getErrMsg().startsWith("" + "No endpoint for product 'InvalidProductCode'. \n"
+            Assert.assertTrue(e.getErrMsg().startsWith("No endpoint for product 'InvalidProductCode'.\n"
                     + "Please check the product code, or set an endpoint for your request explicitly.\n"));
         }
         Assert.assertEquals(4, locationServiceEndpointResolver.locationServiceCallCounter);
@@ -244,10 +244,10 @@ public class NewEndpointTest extends BaseTest {
             Assert.fail();
         } catch (ClientException e) {
             Assert.assertEquals(ErrorCodeConstant.SDK_ENDPOINT_RESOLVING_ERROR, e.getErrCode());
-            Assert.assertEquals("No endpoint in the region 'mars' for product 'Ecs'. \n" +
+            Assert.assertEquals("No endpoint in the region 'mars' for product 'Ecs'.\n" +
                     "You can set an endpoint for your request explicitly.\n" +
                     "Or you can use the other available regions: cn-shenzhen cn-beijing ap-south-1 eu-west-1 ap-northeast-1 me-east-1 cn-qingdao cn-shanghai cn-hongkong ap-southeast-1 ap-southeast-2 ap-southeast-3 eu-central-1 cn-huhehaote ap-southeast-5 us-east-1 cn-zhangjiakou us-west-1 cn-hangzhou\n" +
-                    "See https://www.alibabacloud.com/help/zh/doc-detail/92049.htm\n", e.getErrMsg());
+                    "See https://api.alibabacloud.com/product/Ecs", e.getErrMsg());
         }
     }
 
@@ -260,7 +260,7 @@ public class NewEndpointTest extends BaseTest {
         } catch (ClientException e) {
             Assert.assertEquals(ErrorCodeConstant.SDK_ENDPOINT_RESOLVING_ERROR, e.getErrCode());
             System.out.println(e.getErrMsg());
-            Assert.assertTrue(e.getErrMsg().startsWith("" + "No endpoint for product 'InvalidProductCode'. \n"
+            Assert.assertTrue(e.getErrMsg().startsWith("No endpoint for product 'InvalidProductCode'.\n"
                     + "Please check the product code, or set an endpoint for your request explicitly.\n"));
         }
     }
