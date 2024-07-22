@@ -54,10 +54,4 @@ public class HttpResponseTest {
         response.setStatus(100);
         Assert.assertFalse(response.isSuccess());
     }
-
-    @Test
-    public void toStringTest() {
-        HttpResponse response = new HttpResponse("testURL");
-        Assert.assertTrue(response.toString().contains("testURL"));
-    }
 }

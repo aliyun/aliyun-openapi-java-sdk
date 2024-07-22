@@ -182,7 +182,6 @@ public class CompatibleUrlConnClient extends IHttpClient {
             proxy = HttpUtil.getJDKProxy(clientConfig.getHttpProxy(), httpProxy, request);
         }
         return proxy;
-
     }
 
     private HttpURLConnection initHttpConnection(URL url, HttpRequest request) throws ClientException, IOException {
