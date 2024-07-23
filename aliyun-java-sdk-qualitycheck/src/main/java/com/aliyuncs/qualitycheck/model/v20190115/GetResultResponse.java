@@ -1369,7 +1369,7 @@ public class GetResultResponse extends AcsResponse {
 
 			private Long operator;
 
-			private ReviewRightRule reviewRightRule;
+			private List<ReviewRightRuleItem> reviewRightRule;
 
 			public Integer getType() {
 				return this.type;
@@ -1459,15 +1459,15 @@ public class GetResultResponse extends AcsResponse {
 				this.operator = operator;
 			}
 
-			public ReviewRightRule getReviewRightRule() {
+			public List<ReviewRightRuleItem> getReviewRightRule() {
 				return this.reviewRightRule;
 			}
 
-			public void setReviewRightRule(ReviewRightRule reviewRightRule) {
+			public void setReviewRightRule(List<ReviewRightRuleItem> reviewRightRule) {
 				this.reviewRightRule = reviewRightRule;
 			}
 
-			public static class ReviewRightRule {
+			public static class ReviewRightRuleItem {
 
 				private String ruleName;
 

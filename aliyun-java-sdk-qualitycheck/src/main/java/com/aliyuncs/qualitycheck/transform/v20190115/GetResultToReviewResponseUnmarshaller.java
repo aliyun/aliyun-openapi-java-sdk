@@ -29,7 +29,7 @@ import com.aliyuncs.qualitycheck.model.v20190115.GetResultToReviewResponse.Data.
 import com.aliyuncs.qualitycheck.model.v20190115.GetResultToReviewResponse.Data.ManualScoreInfo;
 import com.aliyuncs.qualitycheck.model.v20190115.GetResultToReviewResponse.Data.ManualScoreInfo.ComplainHistoriesItem2;
 import com.aliyuncs.qualitycheck.model.v20190115.GetResultToReviewResponse.Data.ReviewHistory;
-import com.aliyuncs.qualitycheck.model.v20190115.GetResultToReviewResponse.Data.ReviewHistory.ReviewRightRule;
+import com.aliyuncs.qualitycheck.model.v20190115.GetResultToReviewResponse.Data.ReviewHistory.ReviewRightRuleItem;
 import com.aliyuncs.qualitycheck.model.v20190115.GetResultToReviewResponse.Data.ReviewTypeIdListItem;
 import com.aliyuncs.qualitycheck.model.v20190115.GetResultToReviewResponse.Data.ScorePo;
 import com.aliyuncs.qualitycheck.model.v20190115.GetResultToReviewResponse.Data.ScorePo.ScoreParam;
@@ -221,9 +221,14 @@ public class GetResultToReviewResponseUnmarshaller {
 			reviewHistory.setComments(_ctx.stringValue("GetResultToReviewResponse.Data.ReviewHistoryList["+ i +"].Comments"));
 			reviewHistory.setOperator(_ctx.longValue("GetResultToReviewResponse.Data.ReviewHistoryList["+ i +"].Operator"));
 
-			ReviewRightRule reviewRightRule = new ReviewRightRule();
-			reviewRightRule.setRuleName(_ctx.stringValue("GetResultToReviewResponse.Data.ReviewHistoryList["+ i +"].ReviewRightRule.RuleName"));
-			reviewRightRule.setRid(_ctx.longValue("GetResultToReviewResponse.Data.ReviewHistoryList["+ i +"].ReviewRightRule.Rid"));
+			List<ReviewRightRuleItem> reviewRightRule = new ArrayList<ReviewRightRuleItem>();
+			for (int j = 0; j < _ctx.lengthValue("GetResultToReviewResponse.Data.ReviewHistoryList["+ i +"].ReviewRightRule.Length"); j++) {
+				ReviewRightRuleItem reviewRightRuleItem = new ReviewRightRuleItem();
+				reviewRightRuleItem.setRuleName(_ctx.stringValue("GetResultToReviewResponse.Data.ReviewHistoryList["+ i +"].ReviewRightRule["+ j +"].ruleName"));
+				reviewRightRuleItem.setRid(_ctx.longValue("GetResultToReviewResponse.Data.ReviewHistoryList["+ i +"].ReviewRightRule["+ j +"].rid"));
+
+				reviewRightRule.add(reviewRightRuleItem);
+			}
 			reviewHistory.setReviewRightRule(reviewRightRule);
 
 			reviewHistoryList.add(reviewHistory);

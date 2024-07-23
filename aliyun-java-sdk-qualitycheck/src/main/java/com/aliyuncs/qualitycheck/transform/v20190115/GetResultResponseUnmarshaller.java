@@ -38,7 +38,7 @@ import com.aliyuncs.qualitycheck.model.v20190115.GetResultResponse.ResultInfo.Hi
 import com.aliyuncs.qualitycheck.model.v20190115.GetResultResponse.ResultInfo.HitScoreItem;
 import com.aliyuncs.qualitycheck.model.v20190115.GetResultResponse.ResultInfo.Recording;
 import com.aliyuncs.qualitycheck.model.v20190115.GetResultResponse.ResultInfo.ReviewHistory;
-import com.aliyuncs.qualitycheck.model.v20190115.GetResultResponse.ResultInfo.ReviewHistory.ReviewRightRule;
+import com.aliyuncs.qualitycheck.model.v20190115.GetResultResponse.ResultInfo.ReviewHistory.ReviewRightRuleItem;
 import com.aliyuncs.qualitycheck.model.v20190115.GetResultResponse.ResultInfo.ReviewTypeIdListItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -323,9 +323,14 @@ public class GetResultResponseUnmarshaller {
 				reviewHistory.setComments(_ctx.stringValue("GetResultResponse.Data["+ i +"].ReviewHistoryList["+ j +"].Comments"));
 				reviewHistory.setOperator(_ctx.longValue("GetResultResponse.Data["+ i +"].ReviewHistoryList["+ j +"].Operator"));
 
-				ReviewRightRule reviewRightRule = new ReviewRightRule();
-				reviewRightRule.setRuleName(_ctx.stringValue("GetResultResponse.Data["+ i +"].ReviewHistoryList["+ j +"].ReviewRightRule.RuleName"));
-				reviewRightRule.setRid(_ctx.longValue("GetResultResponse.Data["+ i +"].ReviewHistoryList["+ j +"].ReviewRightRule.Rid"));
+				List<ReviewRightRuleItem> reviewRightRule = new ArrayList<ReviewRightRuleItem>();
+				for (int k = 0; k < _ctx.lengthValue("GetResultResponse.Data["+ i +"].ReviewHistoryList["+ j +"].ReviewRightRule.Length"); k++) {
+					ReviewRightRuleItem reviewRightRuleItem = new ReviewRightRuleItem();
+					reviewRightRuleItem.setRuleName(_ctx.stringValue("GetResultResponse.Data["+ i +"].ReviewHistoryList["+ j +"].ReviewRightRule["+ k +"].ruleName"));
+					reviewRightRuleItem.setRid(_ctx.longValue("GetResultResponse.Data["+ i +"].ReviewHistoryList["+ j +"].ReviewRightRule["+ k +"].rid"));
+
+					reviewRightRule.add(reviewRightRuleItem);
+				}
 				reviewHistory.setReviewRightRule(reviewRightRule);
 
 				reviewHistoryList.add(reviewHistory);
