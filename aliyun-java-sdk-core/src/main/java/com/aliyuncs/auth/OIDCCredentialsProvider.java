@@ -17,6 +17,7 @@ import com.aliyuncs.http.HttpRequest;
 import com.aliyuncs.http.HttpResponse;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.http.clients.CompatibleUrlConnClient;
+import com.aliyuncs.utils.AuthUtils;
 import com.aliyuncs.utils.ParameterHelper;
 import com.aliyuncs.utils.StringUtils;
 import com.google.gson.Gson;
@@ -147,24 +148,9 @@ public class OIDCCredentialsProvider implements AlibabaCloudCredentialsProvider 
         httpRequest.setHttpContentType(FormatType.FORM);
         httpRequest.setSysConnectTimeout(1000);
         httpRequest.setSysReadTimeout(3000);
-        String oidcToken;
-        FileInputStream in = null;
-        byte[] buffer;
-        try {
-            in = new FileInputStream(oidcTokenFilePath);
-            buffer = new byte[in.available()];
-            in.read(buffer);
-            oidcToken = new String(buffer, "UTF-8");
-        } catch (IOException e) {
-            throw new ClientException("Read OIDC token failed " + e.toString());
-        } finally {
-            if (in != null) {
-                try {
-                    in.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
+        String oidcToken = AuthUtils.readFile(oidcTokenFilePath);
+        if (oidcToken == null) {
+            throw new ClientException("Read OIDC token failed");
         }
 
         Map<String, String> body = new HashMap<String, String>();

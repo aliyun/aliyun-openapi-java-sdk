@@ -11,7 +11,8 @@ public class AuthUtils {
     private static volatile String environmentECSMetaData;
     private static volatile String environmentCredentialsFile;
 
-    public static String getPrivateKey(String filePath) {
+
+    public static String readFile(String filePath) {
         FileInputStream in = null;
         byte[] buffer;
         try {
@@ -31,6 +32,11 @@ public class AuthUtils {
                 }
             }
         }
+    }
+
+    @Deprecated
+    public static String getPrivateKey(String filePath) {
+        return readFile(filePath);
     }
 
     @Deprecated
