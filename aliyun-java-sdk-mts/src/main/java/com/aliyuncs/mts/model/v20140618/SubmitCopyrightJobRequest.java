@@ -33,7 +33,7 @@ public class SubmitCopyrightJobRequest extends RpcAcsRequest<SubmitCopyrightJobR
 
 	private String userData;
 
-	private String level;
+	private Long level;
 
 	private String message;
 
@@ -99,14 +99,14 @@ public class SubmitCopyrightJobRequest extends RpcAcsRequest<SubmitCopyrightJobR
 		}
 	}
 
-	public String getLevel() {
+	public Long getLevel() {
 		return this.level;
 	}
 
-	public void setLevel(String level) {
+	public void setLevel(Long level) {
 		this.level = level;
 		if(level != null){
-			putQueryParameter("Level", level);
+			putQueryParameter("Level", level.toString());
 		}
 	}
 

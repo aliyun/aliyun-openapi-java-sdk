@@ -33,7 +33,7 @@ public class SubmitTraceAbJobRequest extends RpcAcsRequest<SubmitTraceAbJobRespo
 
 	private String cipherBase64ed;
 
-	private String level;
+	private Long level;
 
 	private String url;
 
@@ -95,14 +95,14 @@ public class SubmitTraceAbJobRequest extends RpcAcsRequest<SubmitTraceAbJobRespo
 		}
 	}
 
-	public String getLevel() {
+	public Long getLevel() {
 		return this.level;
 	}
 
-	public void setLevel(String level) {
+	public void setLevel(Long level) {
 		this.level = level;
 		if(level != null){
-			putQueryParameter("Level", level);
+			putQueryParameter("Level", level.toString());
 		}
 	}
 
