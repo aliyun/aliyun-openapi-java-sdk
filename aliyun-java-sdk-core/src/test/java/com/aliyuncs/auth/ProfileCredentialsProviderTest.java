@@ -174,15 +174,13 @@ public class ProfileCredentialsProviderTest {
         client.put(AuthConstant.INI_TYPE, AuthConstant.INI_TYPE_KEY_PAIR);
         client.put(AuthConstant.INI_PUBLIC_KEY_ID, AuthConstant.INI_TYPE_KEY_PAIR);
         client.put(AuthConstant.INI_PRIVATE_KEY, AuthConstant.INI_TYPE_KEY_PAIR);
-        client.put(AuthConstant.INI_PRIVATE_KEY_FILE, AuthConstant.INI_TYPE_KEY_PAIR);
-        AuthUtils.setPrivateKey("test");
+        client.put(AuthConstant.INI_PRIVATE_KEY_FILE, ProfileCredentialsProviderTest.class.getClassLoader().getResource("test").getPath());
         STSGetSessionAccessKeyCredentialsProvider stsGetSessionAccessKeyCredentialsProvider =
                 Mockito.mock(STSGetSessionAccessKeyCredentialsProvider.class);
         Mockito.when(stsGetSessionAccessKeyCredentialsProvider.getCredentials()).thenReturn(null);
         Mockito.when(factory.createCredentialsProvider(Mockito.any(STSGetSessionAccessKeyCredentialsProvider.class))).
                 thenReturn(stsGetSessionAccessKeyCredentialsProvider);
         Assert.assertNull(createCredential.invoke(profileCredentialsProvider, client, factory));
-        AuthUtils.setPrivateKey(null);
 
         client.clear();
         client.put(AuthConstant.INI_TYPE, AuthConstant.INI_TYPE_RAM);
