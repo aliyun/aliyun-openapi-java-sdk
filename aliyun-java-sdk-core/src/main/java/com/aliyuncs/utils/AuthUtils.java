@@ -10,38 +10,31 @@ public class AuthUtils {
     private static volatile String environmentAccesskeySecret;
     private static volatile String environmentECSMetaData;
     private static volatile String environmentCredentialsFile;
-    private static volatile String privateKey;
 
     public static String getPrivateKey(String filePath) {
-        if (null == privateKey) {
-            synchronized (AuthUtils.class) {
-                if (null == privateKey) {
-                    FileInputStream in = null;
-                    byte[] buffer;
-                    try {
-                        in = new FileInputStream(filePath);
-                        buffer = new byte[in.available()];
-                        in.read(buffer);
-                        privateKey = new String(buffer, "UTF-8");
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    } finally {
-                        if (in != null) {
-                            try {
-                                in.close();
-                            } catch (IOException e) {
-                                e.printStackTrace();
-                            }
-                        }
-                    }
+        FileInputStream in = null;
+        byte[] buffer;
+        try {
+            in = new FileInputStream(filePath);
+            buffer = new byte[in.available()];
+            in.read(buffer);
+            return new String(buffer, "UTF-8");
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            if (in != null) {
+                try {
+                    in.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
                 }
             }
         }
-        return privateKey;
     }
 
+    @Deprecated
     public static void setPrivateKey(String key) {
-        privateKey = key;
     }
 
     public static String getClientType() {
