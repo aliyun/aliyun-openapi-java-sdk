@@ -29,11 +29,11 @@ public class QueryRecommendByCodeRequest extends RpcAcsRequest<QueryRecommendByC
 
 	private String code;
 
+	private String resourceGroupId;
+
 	private String resourceOwnerAccount;
 
 	private String ownerId;
-
-	private String resourceGroupId;
 	public QueryRecommendByCodeRequest() {
 		super("Rds", "2014-08-15", "QueryRecommendByCode", "rds");
 		setMethod(MethodType.POST);
@@ -65,6 +65,17 @@ public class QueryRecommendByCodeRequest extends RpcAcsRequest<QueryRecommendByC
 		}
 	}
 
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -84,17 +95,6 @@ public class QueryRecommendByCodeRequest extends RpcAcsRequest<QueryRecommendByC
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId);
-		}
-	}
-
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
-	}
-
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

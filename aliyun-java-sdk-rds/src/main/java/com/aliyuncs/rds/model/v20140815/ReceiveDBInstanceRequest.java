@@ -27,15 +27,15 @@ public class ReceiveDBInstanceRequest extends RpcAcsRequest<ReceiveDBInstanceRes
 
 	private Long resourceOwnerId;
 
+	private String dBInstanceId;
+
+	private String guardDBInstanceId;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	private String dBInstanceId;
-
-	private String guardDBInstanceId;
 	public ReceiveDBInstanceRequest() {
 		super("Rds", "2014-08-15", "ReceiveDBInstance", "rds");
 		setMethod(MethodType.POST);
@@ -53,6 +53,28 @@ public class ReceiveDBInstanceRequest extends RpcAcsRequest<ReceiveDBInstanceRes
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public String getGuardDBInstanceId() {
+		return this.guardDBInstanceId;
+	}
+
+	public void setGuardDBInstanceId(String guardDBInstanceId) {
+		this.guardDBInstanceId = guardDBInstanceId;
+		if(guardDBInstanceId != null){
+			putQueryParameter("GuardDBInstanceId", guardDBInstanceId);
 		}
 	}
 
@@ -86,28 +108,6 @@ public class ReceiveDBInstanceRequest extends RpcAcsRequest<ReceiveDBInstanceRes
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
-		}
-	}
-
-	public String getGuardDBInstanceId() {
-		return this.guardDBInstanceId;
-	}
-
-	public void setGuardDBInstanceId(String guardDBInstanceId) {
-		this.guardDBInstanceId = guardDBInstanceId;
-		if(guardDBInstanceId != null){
-			putQueryParameter("GuardDBInstanceId", guardDBInstanceId);
 		}
 	}
 

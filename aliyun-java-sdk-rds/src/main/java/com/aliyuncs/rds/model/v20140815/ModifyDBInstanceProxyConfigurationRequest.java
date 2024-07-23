@@ -27,6 +27,8 @@ public class ModifyDBInstanceProxyConfigurationRequest extends RpcAcsRequest<Mod
 
 	private Long resourceOwnerId;
 
+	private String dBInstanceId;
+
 	private String resourceOwnerAccount;
 
 	private String proxyConfigurationValue;
@@ -34,8 +36,6 @@ public class ModifyDBInstanceProxyConfigurationRequest extends RpcAcsRequest<Mod
 	private Long ownerId;
 
 	private String proxyConfigurationKey;
-
-	private String dBInstanceId;
 	public ModifyDBInstanceProxyConfigurationRequest() {
 		super("Rds", "2014-08-15", "ModifyDBInstanceProxyConfiguration", "rds");
 		setMethod(MethodType.POST);
@@ -53,6 +53,17 @@ public class ModifyDBInstanceProxyConfigurationRequest extends RpcAcsRequest<Mod
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
 		}
 	}
 
@@ -97,17 +108,6 @@ public class ModifyDBInstanceProxyConfigurationRequest extends RpcAcsRequest<Mod
 		this.proxyConfigurationKey = proxyConfigurationKey;
 		if(proxyConfigurationKey != null){
 			putQueryParameter("ProxyConfigurationKey", proxyConfigurationKey);
-		}
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
 		}
 	}
 

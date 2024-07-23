@@ -27,15 +27,15 @@ public class DescribeDBInstanceDetailRequest extends RpcAcsRequest<DescribeDBIns
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
 	private String clientToken;
-
-	private Long ownerId;
 
 	private String resourceGroupId;
 
 	private String dBInstanceId;
+
+	private String resourceOwnerAccount;
+
+	private Long ownerId;
 	public DescribeDBInstanceDetailRequest() {
 		super("Rds", "2014-08-15", "DescribeDBInstanceDetail", "rds");
 		setMethod(MethodType.POST);
@@ -56,17 +56,6 @@ public class DescribeDBInstanceDetailRequest extends RpcAcsRequest<DescribeDBIns
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
 	public String getClientToken() {
 		return this.clientToken;
 	}
@@ -75,17 +64,6 @@ public class DescribeDBInstanceDetailRequest extends RpcAcsRequest<DescribeDBIns
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
@@ -108,6 +86,28 @@ public class DescribeDBInstanceDetailRequest extends RpcAcsRequest<DescribeDBIns
 		this.dBInstanceId = dBInstanceId;
 		if(dBInstanceId != null){
 			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
