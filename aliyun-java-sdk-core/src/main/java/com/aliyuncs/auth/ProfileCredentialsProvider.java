@@ -117,7 +117,7 @@ public class ProfileCredentialsProvider implements AlibabaCloudCredentialsProvid
         if (StringUtils.isEmpty(privateKeyFile)) {
             throw new ClientException("The configured private_key_file is empty");
         }
-        String privateKey = AuthUtils.getPrivateKey(privateKeyFile);
+        String privateKey = AuthUtils.readFile(privateKeyFile);
         if (StringUtils.isEmpty(publicKeyId) || StringUtils.isEmpty(privateKey)) {
             throw new ClientException("The configured public_key_id or private_key_file content is empty");
         }

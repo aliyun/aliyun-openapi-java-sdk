@@ -135,7 +135,6 @@ public class ProfileCredentialsProviderTest {
                     e.getCause().getLocalizedMessage());
         }
         client.put(AuthConstant.INI_PRIVATE_KEY_FILE, "sads");
-        AuthUtils.setPrivateKey("test");
         try {
             createCredential.invoke(provider, client, factory);
             Assert.fail();
@@ -143,7 +142,6 @@ public class ProfileCredentialsProviderTest {
             Assert.assertEquals("The configured public_key_id or private_key_file content is empty",
                     e.getCause().getLocalizedMessage());
         }
-        AuthUtils.setPrivateKey(null);
     }
 
 
