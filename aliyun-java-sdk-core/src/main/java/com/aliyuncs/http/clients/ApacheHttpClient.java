@@ -7,6 +7,9 @@ import com.aliyuncs.utils.IOUtils;
 import com.aliyuncs.utils.StringUtils;
 import org.apache.http.Header;
 import org.apache.http.HttpHost;
+import org.apache.http.auth.AuthScope;
+import org.apache.http.auth.Credentials;
+import org.apache.http.auth.UsernamePasswordCredentials;
 import org.apache.http.client.CredentialsProvider;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.entity.EntityBuilder;
@@ -25,6 +28,7 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.DefaultConnectionKeepAliveStrategy;
 import org.apache.http.impl.client.DefaultHttpRequestRetryHandler;
 import org.apache.http.impl.client.HttpClientBuilder;
+import org.apache.http.impl.client.BasicCredentialsProvider;
 import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
 import org.apache.http.protocol.HttpContext;
 import org.apache.http.util.EntityUtils;
@@ -188,6 +192,19 @@ public class ApacheHttpClient extends IHttpClient {
         CredentialsProvider credentialsProvider = this.clientConfig.getCredentialsProvider();
         if (null != credentialsProvider) {
             builder.setDefaultCredentialsProvider(credentialsProvider);
+        } else {
+            BasicCredentialsProvider crePro = new BasicCredentialsProvider();
+            if (!StringUtils.isEmpty(clientConfig.getHttpsProxy())) {
+                HttpUtil.readCredentialsFromApacheProxy(crePro, clientConfig.getHttpsProxy());
+            } else if (!StringUtils.isEmpty(EnvironmentUtils.getHttpsProxy())) {
+                HttpUtil.readCredentialsFromApacheProxy(crePro, EnvironmentUtils.getHttpsProxy());
+            }
+            if (!StringUtils.isEmpty(clientConfig.getHttpProxy())) {
+                HttpUtil.readCredentialsFromApacheProxy(crePro, clientConfig.getHttpProxy());
+            } else if (!StringUtils.isEmpty(EnvironmentUtils.getHttpProxy())) {
+                HttpUtil.readCredentialsFromApacheProxy(crePro, EnvironmentUtils.getHttpProxy());
+            }
+            builder.setDefaultCredentialsProvider(crePro);
         }
         // default request config
         RequestConfig defaultConfig = RequestConfig.custom().setConnectTimeout((int) config
