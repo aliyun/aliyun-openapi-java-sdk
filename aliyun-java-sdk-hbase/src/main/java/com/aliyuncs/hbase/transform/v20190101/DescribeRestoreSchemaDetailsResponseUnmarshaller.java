@@ -31,19 +31,19 @@ public class DescribeRestoreSchemaDetailsResponseUnmarshaller {
 
 		RestoreSchema restoreSchema = new RestoreSchema();
 		restoreSchema.setSucceed(_ctx.integerValue("DescribeRestoreSchemaDetailsResponse.RestoreSchema.Succeed"));
+		restoreSchema.setPageSize(_ctx.integerValue("DescribeRestoreSchemaDetailsResponse.RestoreSchema.PageSize"));
+		restoreSchema.setPageNumber(_ctx.integerValue("DescribeRestoreSchemaDetailsResponse.RestoreSchema.PageNumber"));
 		restoreSchema.setFail(_ctx.integerValue("DescribeRestoreSchemaDetailsResponse.RestoreSchema.Fail"));
 		restoreSchema.setTotal(_ctx.longValue("DescribeRestoreSchemaDetailsResponse.RestoreSchema.Total"));
-		restoreSchema.setPageNumber(_ctx.integerValue("DescribeRestoreSchemaDetailsResponse.RestoreSchema.PageNumber"));
-		restoreSchema.setPageSize(_ctx.integerValue("DescribeRestoreSchemaDetailsResponse.RestoreSchema.PageSize"));
 
 		List<RestoreSchemaDetail> restoreSchemaDetails = new ArrayList<RestoreSchemaDetail>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeRestoreSchemaDetailsResponse.RestoreSchema.RestoreSchemaDetails.Length"); i++) {
 			RestoreSchemaDetail restoreSchemaDetail = new RestoreSchemaDetail();
-			restoreSchemaDetail.setTable(_ctx.stringValue("DescribeRestoreSchemaDetailsResponse.RestoreSchema.RestoreSchemaDetails["+ i +"].Table"));
-			restoreSchemaDetail.setStartTime(_ctx.stringValue("DescribeRestoreSchemaDetailsResponse.RestoreSchema.RestoreSchemaDetails["+ i +"].StartTime"));
 			restoreSchemaDetail.setEndTime(_ctx.stringValue("DescribeRestoreSchemaDetailsResponse.RestoreSchema.RestoreSchemaDetails["+ i +"].EndTime"));
-			restoreSchemaDetail.setState(_ctx.stringValue("DescribeRestoreSchemaDetailsResponse.RestoreSchema.RestoreSchemaDetails["+ i +"].State"));
 			restoreSchemaDetail.setMessage(_ctx.stringValue("DescribeRestoreSchemaDetailsResponse.RestoreSchema.RestoreSchemaDetails["+ i +"].Message"));
+			restoreSchemaDetail.setStartTime(_ctx.stringValue("DescribeRestoreSchemaDetailsResponse.RestoreSchema.RestoreSchemaDetails["+ i +"].StartTime"));
+			restoreSchemaDetail.setTable(_ctx.stringValue("DescribeRestoreSchemaDetailsResponse.RestoreSchema.RestoreSchemaDetails["+ i +"].Table"));
+			restoreSchemaDetail.setState(_ctx.stringValue("DescribeRestoreSchemaDetailsResponse.RestoreSchema.RestoreSchemaDetails["+ i +"].State"));
 
 			restoreSchemaDetails.add(restoreSchemaDetail);
 		}

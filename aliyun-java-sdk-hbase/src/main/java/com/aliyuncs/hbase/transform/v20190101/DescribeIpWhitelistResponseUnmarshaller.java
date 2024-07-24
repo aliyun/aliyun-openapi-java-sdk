@@ -31,8 +31,8 @@ public class DescribeIpWhitelistResponseUnmarshaller {
 		List<Group> groups = new ArrayList<Group>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeIpWhitelistResponse.Groups.Length"); i++) {
 			Group group = new Group();
-			group.setGroupName(_ctx.stringValue("DescribeIpWhitelistResponse.Groups["+ i +"].GroupName"));
 			group.setIpVersion(_ctx.integerValue("DescribeIpWhitelistResponse.Groups["+ i +"].IpVersion"));
+			group.setGroupName(_ctx.stringValue("DescribeIpWhitelistResponse.Groups["+ i +"].GroupName"));
 
 			List<String> ipList = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeIpWhitelistResponse.Groups["+ i +"].IpList.Length"); j++) {

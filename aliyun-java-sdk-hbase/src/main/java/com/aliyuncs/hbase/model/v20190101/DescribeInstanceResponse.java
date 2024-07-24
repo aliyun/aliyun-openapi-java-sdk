@@ -121,7 +121,13 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 	private String taskProgress;
 
+	private String taskStatus;
+
 	private Integer coreNodeCount;
+
+	private Boolean enableHbaseProxy;
+
+	private String lproxyMinorVersion;
 
 	private List<Tag> tags;
 
@@ -511,12 +517,36 @@ public class DescribeInstanceResponse extends AcsResponse {
 		this.taskProgress = taskProgress;
 	}
 
+	public String getTaskStatus() {
+		return this.taskStatus;
+	}
+
+	public void setTaskStatus(String taskStatus) {
+		this.taskStatus = taskStatus;
+	}
+
 	public Integer getCoreNodeCount() {
 		return this.coreNodeCount;
 	}
 
 	public void setCoreNodeCount(Integer coreNodeCount) {
 		this.coreNodeCount = coreNodeCount;
+	}
+
+	public Boolean getEnableHbaseProxy() {
+		return this.enableHbaseProxy;
+	}
+
+	public void setEnableHbaseProxy(Boolean enableHbaseProxy) {
+		this.enableHbaseProxy = enableHbaseProxy;
+	}
+
+	public String getLproxyMinorVersion() {
+		return this.lproxyMinorVersion;
+	}
+
+	public void setLproxyMinorVersion(String lproxyMinorVersion) {
+		this.lproxyMinorVersion = lproxyMinorVersion;
 	}
 
 	public List<Tag> getTags() {

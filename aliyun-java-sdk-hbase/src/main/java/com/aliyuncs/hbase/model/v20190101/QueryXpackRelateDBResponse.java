@@ -47,34 +47,26 @@ public class QueryXpackRelateDBResponse extends AcsResponse {
 
 	public static class Cluster {
 
-		private String clusterId;
-
-		private String clusterName;
+		private String status;
 
 		private String dBVersion;
 
-		private String status;
+		private Boolean isRelated;
+
+		private String clusterName;
 
 		private String dBType;
 
-		private Boolean isRelated;
-
 		private String lockMode;
 
-		public String getClusterId() {
-			return this.clusterId;
+		private String clusterId;
+
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setClusterId(String clusterId) {
-			this.clusterId = clusterId;
-		}
-
-		public String getClusterName() {
-			return this.clusterName;
-		}
-
-		public void setClusterName(String clusterName) {
-			this.clusterName = clusterName;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getDBVersion() {
@@ -85,12 +77,20 @@ public class QueryXpackRelateDBResponse extends AcsResponse {
 			this.dBVersion = dBVersion;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public Boolean getIsRelated() {
+			return this.isRelated;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setIsRelated(Boolean isRelated) {
+			this.isRelated = isRelated;
+		}
+
+		public String getClusterName() {
+			return this.clusterName;
+		}
+
+		public void setClusterName(String clusterName) {
+			this.clusterName = clusterName;
 		}
 
 		public String getDBType() {
@@ -101,20 +101,20 @@ public class QueryXpackRelateDBResponse extends AcsResponse {
 			this.dBType = dBType;
 		}
 
-		public Boolean getIsRelated() {
-			return this.isRelated;
-		}
-
-		public void setIsRelated(Boolean isRelated) {
-			this.isRelated = isRelated;
-		}
-
 		public String getLockMode() {
 			return this.lockMode;
 		}
 
 		public void setLockMode(String lockMode) {
 			this.lockMode = lockMode;
+		}
+
+		public String getClusterId() {
+			return this.clusterId;
+		}
+
+		public void setClusterId(String clusterId) {
+			this.clusterId = clusterId;
 		}
 	}
 

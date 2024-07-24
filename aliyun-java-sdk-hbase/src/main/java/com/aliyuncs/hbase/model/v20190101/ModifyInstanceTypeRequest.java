@@ -31,7 +31,7 @@ public class ModifyInstanceTypeRequest extends RpcAcsRequest<ModifyInstanceTypeR
 
 	private String coreInstanceType;
 	public ModifyInstanceTypeRequest() {
-		super("HBase", "2019-01-01", "ModifyInstanceType", "hbase");
+		super("HBase", "2019-01-01", "ModifyInstanceType");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

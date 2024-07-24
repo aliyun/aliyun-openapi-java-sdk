@@ -47,21 +47,13 @@ public class DescribeMultiZoneAvailableRegionsResponse extends AcsResponse {
 
 	public static class Region {
 
-		private String localName;
-
 		private String regionEndpoint;
+
+		private String localName;
 
 		private String regionId;
 
 		private List<AvailableCombine> availableCombines;
-
-		public String getLocalName() {
-			return this.localName;
-		}
-
-		public void setLocalName(String localName) {
-			this.localName = localName;
-		}
 
 		public String getRegionEndpoint() {
 			return this.regionEndpoint;
@@ -69,6 +61,14 @@ public class DescribeMultiZoneAvailableRegionsResponse extends AcsResponse {
 
 		public void setRegionEndpoint(String regionEndpoint) {
 			this.regionEndpoint = regionEndpoint;
+		}
+
+		public String getLocalName() {
+			return this.localName;
+		}
+
+		public void setLocalName(String localName) {
+			this.localName = localName;
 		}
 
 		public String getRegionId() {

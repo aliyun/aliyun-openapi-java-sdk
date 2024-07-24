@@ -33,7 +33,7 @@ public class ConvertInstanceRequest extends RpcAcsRequest<ConvertInstanceRespons
 
 	private String payType;
 	public ConvertInstanceRequest() {
-		super("HBase", "2019-01-01", "ConvertInstance", "hbase");
+		super("HBase", "2019-01-01", "ConvertInstance");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

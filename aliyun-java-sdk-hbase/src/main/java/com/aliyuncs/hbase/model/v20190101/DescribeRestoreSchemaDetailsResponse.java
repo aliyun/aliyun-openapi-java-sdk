@@ -49,13 +49,13 @@ public class DescribeRestoreSchemaDetailsResponse extends AcsResponse {
 
 		private Integer succeed;
 
-		private Integer fail;
-
-		private Long total;
+		private Integer pageSize;
 
 		private Integer pageNumber;
 
-		private Integer pageSize;
+		private Integer fail;
+
+		private Long total;
 
 		private List<RestoreSchemaDetail> restoreSchemaDetails;
 
@@ -65,6 +65,22 @@ public class DescribeRestoreSchemaDetailsResponse extends AcsResponse {
 
 		public void setSucceed(Integer succeed) {
 			this.succeed = succeed;
+		}
+
+		public Integer getPageSize() {
+			return this.pageSize;
+		}
+
+		public void setPageSize(Integer pageSize) {
+			this.pageSize = pageSize;
+		}
+
+		public Integer getPageNumber() {
+			return this.pageNumber;
+		}
+
+		public void setPageNumber(Integer pageNumber) {
+			this.pageNumber = pageNumber;
 		}
 
 		public Integer getFail() {
@@ -83,22 +99,6 @@ public class DescribeRestoreSchemaDetailsResponse extends AcsResponse {
 			this.total = total;
 		}
 
-		public Integer getPageNumber() {
-			return this.pageNumber;
-		}
-
-		public void setPageNumber(Integer pageNumber) {
-			this.pageNumber = pageNumber;
-		}
-
-		public Integer getPageSize() {
-			return this.pageSize;
-		}
-
-		public void setPageSize(Integer pageSize) {
-			this.pageSize = pageSize;
-		}
-
 		public List<RestoreSchemaDetail> getRestoreSchemaDetails() {
 			return this.restoreSchemaDetails;
 		}
@@ -109,22 +109,30 @@ public class DescribeRestoreSchemaDetailsResponse extends AcsResponse {
 
 		public static class RestoreSchemaDetail {
 
-			private String table;
-
-			private String startTime;
-
 			private String endTime;
-
-			private String state;
 
 			private String message;
 
-			public String getTable() {
-				return this.table;
+			private String startTime;
+
+			private String table;
+
+			private String state;
+
+			public String getEndTime() {
+				return this.endTime;
 			}
 
-			public void setTable(String table) {
-				this.table = table;
+			public void setEndTime(String endTime) {
+				this.endTime = endTime;
+			}
+
+			public String getMessage() {
+				return this.message;
+			}
+
+			public void setMessage(String message) {
+				this.message = message;
 			}
 
 			public String getStartTime() {
@@ -135,12 +143,12 @@ public class DescribeRestoreSchemaDetailsResponse extends AcsResponse {
 				this.startTime = startTime;
 			}
 
-			public String getEndTime() {
-				return this.endTime;
+			public String getTable() {
+				return this.table;
 			}
 
-			public void setEndTime(String endTime) {
-				this.endTime = endTime;
+			public void setTable(String table) {
+				this.table = table;
 			}
 
 			public String getState() {
@@ -149,14 +157,6 @@ public class DescribeRestoreSchemaDetailsResponse extends AcsResponse {
 
 			public void setState(String state) {
 				this.state = state;
-			}
-
-			public String getMessage() {
-				return this.message;
-			}
-
-			public void setMessage(String message) {
-				this.message = message;
 			}
 		}
 	}

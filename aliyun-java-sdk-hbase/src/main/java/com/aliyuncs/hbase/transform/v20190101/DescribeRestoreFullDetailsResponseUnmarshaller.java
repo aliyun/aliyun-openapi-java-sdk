@@ -31,24 +31,24 @@ public class DescribeRestoreFullDetailsResponseUnmarshaller {
 
 		RestoreFull restoreFull = new RestoreFull();
 		restoreFull.setSucceed(_ctx.integerValue("DescribeRestoreFullDetailsResponse.RestoreFull.Succeed"));
-		restoreFull.setFail(_ctx.integerValue("DescribeRestoreFullDetailsResponse.RestoreFull.Fail"));
 		restoreFull.setDataSize(_ctx.stringValue("DescribeRestoreFullDetailsResponse.RestoreFull.DataSize"));
 		restoreFull.setSpeed(_ctx.stringValue("DescribeRestoreFullDetailsResponse.RestoreFull.Speed"));
-		restoreFull.setTotal(_ctx.longValue("DescribeRestoreFullDetailsResponse.RestoreFull.Total"));
-		restoreFull.setPageNumber(_ctx.integerValue("DescribeRestoreFullDetailsResponse.RestoreFull.PageNumber"));
 		restoreFull.setPageSize(_ctx.integerValue("DescribeRestoreFullDetailsResponse.RestoreFull.PageSize"));
+		restoreFull.setFail(_ctx.integerValue("DescribeRestoreFullDetailsResponse.RestoreFull.Fail"));
+		restoreFull.setPageNumber(_ctx.integerValue("DescribeRestoreFullDetailsResponse.RestoreFull.PageNumber"));
+		restoreFull.setTotal(_ctx.longValue("DescribeRestoreFullDetailsResponse.RestoreFull.Total"));
 
 		List<RestoreFullDetail> restoreFullDetails = new ArrayList<RestoreFullDetail>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeRestoreFullDetailsResponse.RestoreFull.RestoreFullDetails.Length"); i++) {
 			RestoreFullDetail restoreFullDetail = new RestoreFullDetail();
-			restoreFullDetail.setTable(_ctx.stringValue("DescribeRestoreFullDetailsResponse.RestoreFull.RestoreFullDetails["+ i +"].Table"));
-			restoreFullDetail.setState(_ctx.stringValue("DescribeRestoreFullDetailsResponse.RestoreFull.RestoreFullDetails["+ i +"].State"));
-			restoreFullDetail.setStartTime(_ctx.stringValue("DescribeRestoreFullDetailsResponse.RestoreFull.RestoreFullDetails["+ i +"].StartTime"));
 			restoreFullDetail.setEndTime(_ctx.stringValue("DescribeRestoreFullDetailsResponse.RestoreFull.RestoreFullDetails["+ i +"].EndTime"));
+			restoreFullDetail.setStartTime(_ctx.stringValue("DescribeRestoreFullDetailsResponse.RestoreFull.RestoreFullDetails["+ i +"].StartTime"));
 			restoreFullDetail.setProcess(_ctx.stringValue("DescribeRestoreFullDetailsResponse.RestoreFull.RestoreFullDetails["+ i +"].Process"));
 			restoreFullDetail.setDataSize(_ctx.stringValue("DescribeRestoreFullDetailsResponse.RestoreFull.RestoreFullDetails["+ i +"].DataSize"));
 			restoreFullDetail.setSpeed(_ctx.stringValue("DescribeRestoreFullDetailsResponse.RestoreFull.RestoreFullDetails["+ i +"].Speed"));
+			restoreFullDetail.setState(_ctx.stringValue("DescribeRestoreFullDetailsResponse.RestoreFull.RestoreFullDetails["+ i +"].State"));
 			restoreFullDetail.setMessage(_ctx.stringValue("DescribeRestoreFullDetailsResponse.RestoreFull.RestoreFullDetails["+ i +"].Message"));
+			restoreFullDetail.setTable(_ctx.stringValue("DescribeRestoreFullDetailsResponse.RestoreFull.RestoreFullDetails["+ i +"].Table"));
 
 			restoreFullDetails.add(restoreFullDetail);
 		}

@@ -59,7 +59,7 @@ public class EnableHBaseueModuleRequest extends RpcAcsRequest<EnableHBaseueModul
 
 	private String payType;
 	public EnableHBaseueModuleRequest() {
-		super("HBase", "2019-01-01", "EnableHBaseueModule", "hbase");
+		super("HBase", "2019-01-01", "EnableHBaseueModule");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,9 +27,9 @@ public class DescribeBackupTablesResponseUnmarshaller {
 	public static DescribeBackupTablesResponse unmarshall(DescribeBackupTablesResponse describeBackupTablesResponse, UnmarshallerContext _ctx) {
 		
 		describeBackupTablesResponse.setRequestId(_ctx.stringValue("DescribeBackupTablesResponse.RequestId"));
-		describeBackupTablesResponse.setTotal(_ctx.longValue("DescribeBackupTablesResponse.Total"));
-		describeBackupTablesResponse.setPageSize(_ctx.integerValue("DescribeBackupTablesResponse.PageSize"));
 		describeBackupTablesResponse.setPageNumber(_ctx.integerValue("DescribeBackupTablesResponse.PageNumber"));
+		describeBackupTablesResponse.setPageSize(_ctx.integerValue("DescribeBackupTablesResponse.PageSize"));
+		describeBackupTablesResponse.setTotal(_ctx.longValue("DescribeBackupTablesResponse.Total"));
 
 		List<String> tables = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeBackupTablesResponse.Tables.Length"); i++) {
@@ -40,14 +40,14 @@ public class DescribeBackupTablesResponseUnmarshaller {
 		List<BackupRecord> backupRecords = new ArrayList<BackupRecord>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeBackupTablesResponse.BackupRecords.Length"); i++) {
 			BackupRecord backupRecord = new BackupRecord();
-			backupRecord.setTable(_ctx.stringValue("DescribeBackupTablesResponse.BackupRecords["+ i +"].Table"));
-			backupRecord.setState(_ctx.stringValue("DescribeBackupTablesResponse.BackupRecords["+ i +"].State"));
-			backupRecord.setStartTime(_ctx.stringValue("DescribeBackupTablesResponse.BackupRecords["+ i +"].StartTime"));
 			backupRecord.setEndTime(_ctx.stringValue("DescribeBackupTablesResponse.BackupRecords["+ i +"].EndTime"));
+			backupRecord.setStartTime(_ctx.stringValue("DescribeBackupTablesResponse.BackupRecords["+ i +"].StartTime"));
 			backupRecord.setProcess(_ctx.stringValue("DescribeBackupTablesResponse.BackupRecords["+ i +"].Process"));
 			backupRecord.setDataSize(_ctx.stringValue("DescribeBackupTablesResponse.BackupRecords["+ i +"].DataSize"));
 			backupRecord.setSpeed(_ctx.stringValue("DescribeBackupTablesResponse.BackupRecords["+ i +"].Speed"));
+			backupRecord.setState(_ctx.stringValue("DescribeBackupTablesResponse.BackupRecords["+ i +"].State"));
 			backupRecord.setMessage(_ctx.stringValue("DescribeBackupTablesResponse.BackupRecords["+ i +"].Message"));
+			backupRecord.setTable(_ctx.stringValue("DescribeBackupTablesResponse.BackupRecords["+ i +"].Table"));
 
 			backupRecords.add(backupRecord);
 		}

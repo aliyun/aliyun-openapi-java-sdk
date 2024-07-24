@@ -27,7 +27,7 @@ public class GetMultimodeCmsUrlRequest extends RpcAcsRequest<GetMultimodeCmsUrlR
 
 	private String clusterId;
 	public GetMultimodeCmsUrlRequest() {
-		super("HBase", "2019-01-01", "GetMultimodeCmsUrl", "hbase");
+		super("HBase", "2019-01-01", "GetMultimodeCmsUrl");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

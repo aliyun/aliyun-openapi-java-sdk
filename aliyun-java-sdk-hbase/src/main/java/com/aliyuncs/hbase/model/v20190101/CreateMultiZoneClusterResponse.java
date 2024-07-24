@@ -24,18 +24,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateMultiZoneClusterResponse extends AcsResponse {
 
-	private String clusterId;
+	private String requestId;
 
 	private String orderId;
 
-	private String requestId;
+	private String clusterId;
 
-	public String getClusterId() {
-		return this.clusterId;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getOrderId() {
@@ -46,12 +46,12 @@ public class CreateMultiZoneClusterResponse extends AcsResponse {
 		this.orderId = orderId;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getClusterId() {
+		return this.clusterId;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
 	}
 
 	@Override

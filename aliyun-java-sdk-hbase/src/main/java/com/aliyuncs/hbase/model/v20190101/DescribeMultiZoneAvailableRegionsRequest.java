@@ -27,7 +27,7 @@ public class DescribeMultiZoneAvailableRegionsRequest extends RpcAcsRequest<Desc
 
 	private String acceptLanguage;
 	public DescribeMultiZoneAvailableRegionsRequest() {
-		super("HBase", "2019-01-01", "DescribeMultiZoneAvailableRegions", "hbase");
+		super("HBase", "2019-01-01", "DescribeMultiZoneAvailableRegions");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

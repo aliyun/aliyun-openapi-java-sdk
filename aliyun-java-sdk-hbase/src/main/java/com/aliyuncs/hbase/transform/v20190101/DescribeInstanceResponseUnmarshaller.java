@@ -74,7 +74,10 @@ public class DescribeInstanceResponseUnmarshaller {
 		describeInstanceResponse.setMajorVersion(_ctx.stringValue("DescribeInstanceResponse.MajorVersion"));
 		describeInstanceResponse.setCoreDiskCount(_ctx.stringValue("DescribeInstanceResponse.CoreDiskCount"));
 		describeInstanceResponse.setTaskProgress(_ctx.stringValue("DescribeInstanceResponse.TaskProgress"));
+		describeInstanceResponse.setTaskStatus(_ctx.stringValue("DescribeInstanceResponse.TaskStatus"));
 		describeInstanceResponse.setCoreNodeCount(_ctx.integerValue("DescribeInstanceResponse.CoreNodeCount"));
+		describeInstanceResponse.setEnableHbaseProxy(_ctx.booleanValue("DescribeInstanceResponse.EnableHbaseProxy"));
+		describeInstanceResponse.setLproxyMinorVersion(_ctx.stringValue("DescribeInstanceResponse.LproxyMinorVersion"));
 
 		List<String> needUpgradeComps = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceResponse.NeedUpgradeComps.Length"); i++) {

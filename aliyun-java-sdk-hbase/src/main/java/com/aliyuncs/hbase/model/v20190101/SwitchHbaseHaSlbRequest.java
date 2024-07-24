@@ -33,7 +33,7 @@ public class SwitchHbaseHaSlbRequest extends RpcAcsRequest<SwitchHbaseHaSlbRespo
 
 	private String haId;
 	public SwitchHbaseHaSlbRequest() {
-		super("HBase", "2019-01-01", "SwitchHbaseHaSlb", "hbase");
+		super("HBase", "2019-01-01", "SwitchHbaseHaSlb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

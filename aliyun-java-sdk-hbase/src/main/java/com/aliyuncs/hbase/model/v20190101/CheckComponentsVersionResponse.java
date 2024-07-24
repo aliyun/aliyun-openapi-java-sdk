@@ -47,17 +47,9 @@ public class CheckComponentsVersionResponse extends AcsResponse {
 
 	public static class Component {
 
-		private String component;
-
 		private String isLatestVersion;
 
-		public String getComponent() {
-			return this.component;
-		}
-
-		public void setComponent(String component) {
-			this.component = component;
-		}
+		private String component;
 
 		public String getIsLatestVersion() {
 			return this.isLatestVersion;
@@ -65,6 +57,14 @@ public class CheckComponentsVersionResponse extends AcsResponse {
 
 		public void setIsLatestVersion(String isLatestVersion) {
 			this.isLatestVersion = isLatestVersion;
+		}
+
+		public String getComponent() {
+			return this.component;
+		}
+
+		public void setComponent(String component) {
+			this.component = component;
 		}
 	}
 

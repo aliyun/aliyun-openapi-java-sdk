@@ -34,13 +34,13 @@ public class ListInstanceServiceConfigurationsResponseUnmarshaller {
 		List<Config> configureList = new ArrayList<Config>();
 		for (int i = 0; i < _ctx.lengthValue("ListInstanceServiceConfigurationsResponse.ConfigureList.Length"); i++) {
 			Config config = new Config();
-			config.setConfigureName(_ctx.stringValue("ListInstanceServiceConfigurationsResponse.ConfigureList["+ i +"].ConfigureName"));
-			config.setDefaultValue(_ctx.stringValue("ListInstanceServiceConfigurationsResponse.ConfigureList["+ i +"].DefaultValue"));
+			config.setDescription(_ctx.stringValue("ListInstanceServiceConfigurationsResponse.ConfigureList["+ i +"].Description"));
 			config.setRunningValue(_ctx.stringValue("ListInstanceServiceConfigurationsResponse.ConfigureList["+ i +"].RunningValue"));
 			config.setConfigureUnit(_ctx.stringValue("ListInstanceServiceConfigurationsResponse.ConfigureList["+ i +"].ConfigureUnit"));
+			config.setConfigureName(_ctx.stringValue("ListInstanceServiceConfigurationsResponse.ConfigureList["+ i +"].ConfigureName"));
 			config.setValueRange(_ctx.stringValue("ListInstanceServiceConfigurationsResponse.ConfigureList["+ i +"].ValueRange"));
+			config.setDefaultValue(_ctx.stringValue("ListInstanceServiceConfigurationsResponse.ConfigureList["+ i +"].DefaultValue"));
 			config.setNeedRestart(_ctx.stringValue("ListInstanceServiceConfigurationsResponse.ConfigureList["+ i +"].NeedRestart"));
-			config.setDescription(_ctx.stringValue("ListInstanceServiceConfigurationsResponse.ConfigureList["+ i +"].Description"));
 
 			configureList.add(config);
 		}

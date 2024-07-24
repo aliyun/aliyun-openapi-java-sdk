@@ -31,7 +31,7 @@ public class XpackRelateDBRequest extends RpcAcsRequest<XpackRelateDBResponse> {
 
 	private String dbClusterIds;
 	public XpackRelateDBRequest() {
-		super("HBase", "2019-01-01", "XpackRelateDB", "hbase");
+		super("HBase", "2019-01-01", "XpackRelateDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

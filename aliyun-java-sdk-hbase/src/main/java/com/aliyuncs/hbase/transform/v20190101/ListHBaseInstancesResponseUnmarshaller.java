@@ -31,9 +31,9 @@ public class ListHBaseInstancesResponseUnmarshaller {
 		List<Instance> instances = new ArrayList<Instance>();
 		for (int i = 0; i < _ctx.lengthValue("ListHBaseInstancesResponse.Instances.Length"); i++) {
 			Instance instance = new Instance();
+			instance.setIsDefault(_ctx.booleanValue("ListHBaseInstancesResponse.Instances["+ i +"].IsDefault"));
 			instance.setInstanceId(_ctx.stringValue("ListHBaseInstancesResponse.Instances["+ i +"].InstanceId"));
 			instance.setInstanceName(_ctx.stringValue("ListHBaseInstancesResponse.Instances["+ i +"].InstanceName"));
-			instance.setIsDefault(_ctx.booleanValue("ListHBaseInstancesResponse.Instances["+ i +"].IsDefault"));
 
 			instances.add(instance);
 		}

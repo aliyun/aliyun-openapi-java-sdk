@@ -31,7 +31,7 @@ public class CreateHBaseSlbServerRequest extends RpcAcsRequest<CreateHBaseSlbSer
 
 	private String slbServer;
 	public CreateHBaseSlbServerRequest() {
-		super("HBase", "2019-01-01", "CreateHBaseSlbServer", "hbase");
+		super("HBase", "2019-01-01", "CreateHBaseSlbServer");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

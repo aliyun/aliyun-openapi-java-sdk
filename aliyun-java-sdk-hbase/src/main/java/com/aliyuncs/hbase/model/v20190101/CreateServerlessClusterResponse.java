@@ -26,11 +26,11 @@ public class CreateServerlessClusterResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String clusterId;
+	private String passWord;
 
 	private String orderId;
 
-	private String passWord;
+	private String clusterId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,12 +40,12 @@ public class CreateServerlessClusterResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getClusterId() {
-		return this.clusterId;
+	public String getPassWord() {
+		return this.passWord;
 	}
 
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
+	public void setPassWord(String passWord) {
+		this.passWord = passWord;
 	}
 
 	public String getOrderId() {
@@ -56,12 +56,12 @@ public class CreateServerlessClusterResponse extends AcsResponse {
 		this.orderId = orderId;
 	}
 
-	public String getPassWord() {
-		return this.passWord;
+	public String getClusterId() {
+		return this.clusterId;
 	}
 
-	public void setPassWord(String passWord) {
-		this.passWord = passWord;
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
 	}
 
 	@Override

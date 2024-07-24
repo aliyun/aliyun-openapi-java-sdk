@@ -37,7 +37,7 @@ public class UpgradeMultiZoneClusterRequest extends RpcAcsRequest<UpgradeMultiZo
 
 	private String versions;
 	public UpgradeMultiZoneClusterRequest() {
-		super("HBase", "2019-01-01", "UpgradeMultiZoneCluster", "hbase");
+		super("HBase", "2019-01-01", "UpgradeMultiZoneCluster");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

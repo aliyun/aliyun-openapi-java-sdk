@@ -77,34 +77,26 @@ public class ListInstanceServiceConfigurationsResponse extends AcsResponse {
 
 	public static class Config {
 
-		private String configureName;
-
-		private String defaultValue;
+		private String description;
 
 		private String runningValue;
 
 		private String configureUnit;
 
+		private String configureName;
+
 		private String valueRange;
+
+		private String defaultValue;
 
 		private String needRestart;
 
-		private String description;
-
-		public String getConfigureName() {
-			return this.configureName;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setConfigureName(String configureName) {
-			this.configureName = configureName;
-		}
-
-		public String getDefaultValue() {
-			return this.defaultValue;
-		}
-
-		public void setDefaultValue(String defaultValue) {
-			this.defaultValue = defaultValue;
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public String getRunningValue() {
@@ -123,6 +115,14 @@ public class ListInstanceServiceConfigurationsResponse extends AcsResponse {
 			this.configureUnit = configureUnit;
 		}
 
+		public String getConfigureName() {
+			return this.configureName;
+		}
+
+		public void setConfigureName(String configureName) {
+			this.configureName = configureName;
+		}
+
 		public String getValueRange() {
 			return this.valueRange;
 		}
@@ -131,20 +131,20 @@ public class ListInstanceServiceConfigurationsResponse extends AcsResponse {
 			this.valueRange = valueRange;
 		}
 
+		public String getDefaultValue() {
+			return this.defaultValue;
+		}
+
+		public void setDefaultValue(String defaultValue) {
+			this.defaultValue = defaultValue;
+		}
+
 		public String getNeedRestart() {
 			return this.needRestart;
 		}
 
 		public void setNeedRestart(String needRestart) {
 			this.needRestart = needRestart;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
 		}
 	}
 

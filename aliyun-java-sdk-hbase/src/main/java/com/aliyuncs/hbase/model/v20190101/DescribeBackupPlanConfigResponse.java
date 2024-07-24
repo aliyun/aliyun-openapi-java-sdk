@@ -27,11 +27,11 @@ public class DescribeBackupPlanConfigResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Integer fullBackupCycle;
-
 	private Integer minHFileBackupCount;
 
 	private String nextFullBackupDate;
+
+	private Integer fullBackupCycle;
 
 	private List<String> tables;
 
@@ -41,14 +41,6 @@ public class DescribeBackupPlanConfigResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getFullBackupCycle() {
-		return this.fullBackupCycle;
-	}
-
-	public void setFullBackupCycle(Integer fullBackupCycle) {
-		this.fullBackupCycle = fullBackupCycle;
 	}
 
 	public Integer getMinHFileBackupCount() {
@@ -65,6 +57,14 @@ public class DescribeBackupPlanConfigResponse extends AcsResponse {
 
 	public void setNextFullBackupDate(String nextFullBackupDate) {
 		this.nextFullBackupDate = nextFullBackupDate;
+	}
+
+	public Integer getFullBackupCycle() {
+		return this.fullBackupCycle;
+	}
+
+	public void setFullBackupCycle(Integer fullBackupCycle) {
+		this.fullBackupCycle = fullBackupCycle;
 	}
 
 	public List<String> getTables() {

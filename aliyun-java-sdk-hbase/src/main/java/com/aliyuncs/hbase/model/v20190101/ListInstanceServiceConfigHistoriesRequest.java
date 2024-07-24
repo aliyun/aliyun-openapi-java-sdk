@@ -31,7 +31,7 @@ public class ListInstanceServiceConfigHistoriesRequest extends RpcAcsRequest<Lis
 
 	private Integer pageSize;
 	public ListInstanceServiceConfigHistoriesRequest() {
-		super("HBase", "2019-01-01", "ListInstanceServiceConfigHistories", "hbase");
+		super("HBase", "2019-01-01", "ListInstanceServiceConfigHistories");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -35,7 +35,7 @@ public class ModifyBackupPlanConfigRequest extends RpcAcsRequest<ModifyBackupPla
 
 	private String nextFullBackupDate;
 	public ModifyBackupPlanConfigRequest() {
-		super("HBase", "2019-01-01", "ModifyBackupPlanConfig", "hbase");
+		super("HBase", "2019-01-01", "ModifyBackupPlanConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

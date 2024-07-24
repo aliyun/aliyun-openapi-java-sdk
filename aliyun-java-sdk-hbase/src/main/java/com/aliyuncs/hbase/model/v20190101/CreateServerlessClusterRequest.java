@@ -59,7 +59,7 @@ public class CreateServerlessClusterRequest extends RpcAcsRequest<CreateServerle
 
 	private String serverlessSpec;
 	public CreateServerlessClusterRequest() {
-		super("HBase", "2019-01-01", "CreateServerlessCluster", "hbase");
+		super("HBase", "2019-01-01", "CreateServerlessCluster");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

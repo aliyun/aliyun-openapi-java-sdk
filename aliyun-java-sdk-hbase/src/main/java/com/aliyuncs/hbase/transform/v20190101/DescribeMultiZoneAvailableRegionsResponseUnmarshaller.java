@@ -32,8 +32,8 @@ public class DescribeMultiZoneAvailableRegionsResponseUnmarshaller {
 		List<Region> regions = new ArrayList<Region>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeMultiZoneAvailableRegionsResponse.Regions.Length"); i++) {
 			Region region = new Region();
-			region.setLocalName(_ctx.stringValue("DescribeMultiZoneAvailableRegionsResponse.Regions["+ i +"].LocalName"));
 			region.setRegionEndpoint(_ctx.stringValue("DescribeMultiZoneAvailableRegionsResponse.Regions["+ i +"].RegionEndpoint"));
+			region.setLocalName(_ctx.stringValue("DescribeMultiZoneAvailableRegionsResponse.Regions["+ i +"].LocalName"));
 			region.setRegionId(_ctx.stringValue("DescribeMultiZoneAvailableRegionsResponse.Regions["+ i +"].RegionId"));
 
 			List<AvailableCombine> availableCombines = new ArrayList<AvailableCombine>();

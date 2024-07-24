@@ -49,17 +49,17 @@ public class DescribeRestoreFullDetailsResponse extends AcsResponse {
 
 		private Integer succeed;
 
-		private Integer fail;
-
 		private String dataSize;
 
 		private String speed;
 
-		private Long total;
+		private Integer pageSize;
+
+		private Integer fail;
 
 		private Integer pageNumber;
 
-		private Integer pageSize;
+		private Long total;
 
 		private List<RestoreFullDetail> restoreFullDetails;
 
@@ -69,14 +69,6 @@ public class DescribeRestoreFullDetailsResponse extends AcsResponse {
 
 		public void setSucceed(Integer succeed) {
 			this.succeed = succeed;
-		}
-
-		public Integer getFail() {
-			return this.fail;
-		}
-
-		public void setFail(Integer fail) {
-			this.fail = fail;
 		}
 
 		public String getDataSize() {
@@ -95,12 +87,20 @@ public class DescribeRestoreFullDetailsResponse extends AcsResponse {
 			this.speed = speed;
 		}
 
-		public Long getTotal() {
-			return this.total;
+		public Integer getPageSize() {
+			return this.pageSize;
 		}
 
-		public void setTotal(Long total) {
-			this.total = total;
+		public void setPageSize(Integer pageSize) {
+			this.pageSize = pageSize;
+		}
+
+		public Integer getFail() {
+			return this.fail;
+		}
+
+		public void setFail(Integer fail) {
+			this.fail = fail;
 		}
 
 		public Integer getPageNumber() {
@@ -111,12 +111,12 @@ public class DescribeRestoreFullDetailsResponse extends AcsResponse {
 			this.pageNumber = pageNumber;
 		}
 
-		public Integer getPageSize() {
-			return this.pageSize;
+		public Long getTotal() {
+			return this.total;
 		}
 
-		public void setPageSize(Integer pageSize) {
-			this.pageSize = pageSize;
+		public void setTotal(Long total) {
+			this.total = total;
 		}
 
 		public List<RestoreFullDetail> getRestoreFullDetails() {
@@ -129,13 +129,9 @@ public class DescribeRestoreFullDetailsResponse extends AcsResponse {
 
 		public static class RestoreFullDetail {
 
-			private String table;
-
-			private String state;
+			private String endTime;
 
 			private String startTime;
-
-			private String endTime;
 
 			private String process;
 
@@ -143,22 +139,18 @@ public class DescribeRestoreFullDetailsResponse extends AcsResponse {
 
 			private String speed;
 
+			private String state;
+
 			private String message;
 
-			public String getTable() {
-				return this.table;
+			private String table;
+
+			public String getEndTime() {
+				return this.endTime;
 			}
 
-			public void setTable(String table) {
-				this.table = table;
-			}
-
-			public String getState() {
-				return this.state;
-			}
-
-			public void setState(String state) {
-				this.state = state;
+			public void setEndTime(String endTime) {
+				this.endTime = endTime;
 			}
 
 			public String getStartTime() {
@@ -167,14 +159,6 @@ public class DescribeRestoreFullDetailsResponse extends AcsResponse {
 
 			public void setStartTime(String startTime) {
 				this.startTime = startTime;
-			}
-
-			public String getEndTime() {
-				return this.endTime;
-			}
-
-			public void setEndTime(String endTime) {
-				this.endTime = endTime;
 			}
 
 			public String getProcess() {
@@ -201,12 +185,28 @@ public class DescribeRestoreFullDetailsResponse extends AcsResponse {
 				this.speed = speed;
 			}
 
+			public String getState() {
+				return this.state;
+			}
+
+			public void setState(String state) {
+				this.state = state;
+			}
+
 			public String getMessage() {
 				return this.message;
 			}
 
 			public void setMessage(String message) {
 				this.message = message;
+			}
+
+			public String getTable() {
+				return this.table;
+			}
+
+			public void setTable(String table) {
+				this.table = table;
 			}
 		}
 	}

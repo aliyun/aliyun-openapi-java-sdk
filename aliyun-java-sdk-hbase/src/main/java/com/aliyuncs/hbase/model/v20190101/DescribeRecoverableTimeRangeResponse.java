@@ -24,19 +24,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeRecoverableTimeRangeResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String timeBegin;
 
 	private String timeEnd;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getTimeBegin() {
 		return this.timeBegin;
@@ -52,6 +44,14 @@ public class DescribeRecoverableTimeRangeResponse extends AcsResponse {
 
 	public void setTimeEnd(String timeEnd) {
 		this.timeEnd = timeEnd;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

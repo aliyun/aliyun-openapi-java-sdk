@@ -28,24 +28,24 @@ public class QueryHBaseHaDBResponseUnmarshaller {
 	public static QueryHBaseHaDBResponse unmarshall(QueryHBaseHaDBResponse queryHBaseHaDBResponse, UnmarshallerContext _ctx) {
 		
 		queryHBaseHaDBResponse.setRequestId(_ctx.stringValue("QueryHBaseHaDBResponse.RequestId"));
-		queryHBaseHaDBResponse.setTotalCount(_ctx.longValue("QueryHBaseHaDBResponse.TotalCount"));
-		queryHBaseHaDBResponse.setPageNumber(_ctx.integerValue("QueryHBaseHaDBResponse.PageNumber"));
 		queryHBaseHaDBResponse.setPageSize(_ctx.integerValue("QueryHBaseHaDBResponse.PageSize"));
+		queryHBaseHaDBResponse.setPageNumber(_ctx.integerValue("QueryHBaseHaDBResponse.PageNumber"));
+		queryHBaseHaDBResponse.setTotalCount(_ctx.longValue("QueryHBaseHaDBResponse.TotalCount"));
 
 		List<Cluster> clusterList = new ArrayList<Cluster>();
 		for (int i = 0; i < _ctx.lengthValue("QueryHBaseHaDBResponse.ClusterList.Length"); i++) {
 			Cluster cluster = new Cluster();
-			cluster.setHaName(_ctx.stringValue("QueryHBaseHaDBResponse.ClusterList["+ i +"].HaName"));
 			cluster.setBdsName(_ctx.stringValue("QueryHBaseHaDBResponse.ClusterList["+ i +"].BdsName"));
 			cluster.setActiveName(_ctx.stringValue("QueryHBaseHaDBResponse.ClusterList["+ i +"].ActiveName"));
+			cluster.setHaName(_ctx.stringValue("QueryHBaseHaDBResponse.ClusterList["+ i +"].HaName"));
 			cluster.setStandbyName(_ctx.stringValue("QueryHBaseHaDBResponse.ClusterList["+ i +"].StandbyName"));
 
 			List<HaSlbConn> haSlbConnList = new ArrayList<HaSlbConn>();
 			for (int j = 0; j < _ctx.lengthValue("QueryHBaseHaDBResponse.ClusterList["+ i +"].HaSlbConnList.Length"); j++) {
 				HaSlbConn haSlbConn = new HaSlbConn();
+				haSlbConn.setHbaseType(_ctx.stringValue("QueryHBaseHaDBResponse.ClusterList["+ i +"].HaSlbConnList["+ j +"].HbaseType"));
 				haSlbConn.setSlbType(_ctx.stringValue("QueryHBaseHaDBResponse.ClusterList["+ i +"].HaSlbConnList["+ j +"].SlbType"));
 				haSlbConn.setSlbConnAddr(_ctx.stringValue("QueryHBaseHaDBResponse.ClusterList["+ i +"].HaSlbConnList["+ j +"].SlbConnAddr"));
-				haSlbConn.setHbaseType(_ctx.stringValue("QueryHBaseHaDBResponse.ClusterList["+ i +"].HaSlbConnList["+ j +"].HbaseType"));
 
 				haSlbConnList.add(haSlbConn);
 			}

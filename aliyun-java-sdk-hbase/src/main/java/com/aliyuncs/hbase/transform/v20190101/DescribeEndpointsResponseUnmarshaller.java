@@ -27,17 +27,17 @@ public class DescribeEndpointsResponseUnmarshaller {
 	public static DescribeEndpointsResponse unmarshall(DescribeEndpointsResponse describeEndpointsResponse, UnmarshallerContext _ctx) {
 		
 		describeEndpointsResponse.setRequestId(_ctx.stringValue("DescribeEndpointsResponse.RequestId"));
-		describeEndpointsResponse.setNetType(_ctx.stringValue("DescribeEndpointsResponse.NetType"));
 		describeEndpointsResponse.setVpcId(_ctx.stringValue("DescribeEndpointsResponse.VpcId"));
 		describeEndpointsResponse.setVSwitchId(_ctx.stringValue("DescribeEndpointsResponse.VSwitchId"));
 		describeEndpointsResponse.setEngine(_ctx.stringValue("DescribeEndpointsResponse.Engine"));
+		describeEndpointsResponse.setNetType(_ctx.stringValue("DescribeEndpointsResponse.NetType"));
 
 		List<ConnAddrInfo> connAddrs = new ArrayList<ConnAddrInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeEndpointsResponse.ConnAddrs.Length"); i++) {
 			ConnAddrInfo connAddrInfo = new ConnAddrInfo();
-			connAddrInfo.setConnType(_ctx.stringValue("DescribeEndpointsResponse.ConnAddrs["+ i +"].ConnType"));
 			connAddrInfo.setConnAddr(_ctx.stringValue("DescribeEndpointsResponse.ConnAddrs["+ i +"].ConnAddr"));
 			connAddrInfo.setConnAddrPort(_ctx.stringValue("DescribeEndpointsResponse.ConnAddrs["+ i +"].ConnAddrPort"));
+			connAddrInfo.setConnType(_ctx.stringValue("DescribeEndpointsResponse.ConnAddrs["+ i +"].ConnType"));
 			connAddrInfo.setNetType(_ctx.stringValue("DescribeEndpointsResponse.ConnAddrs["+ i +"].NetType"));
 
 			connAddrs.add(connAddrInfo);

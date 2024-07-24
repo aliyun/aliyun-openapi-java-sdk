@@ -33,7 +33,7 @@ public class DescribeRestoreFullDetailsRequest extends RpcAcsRequest<DescribeRes
 
 	private String restoreRecordId;
 	public DescribeRestoreFullDetailsRequest() {
-		super("HBase", "2019-01-01", "DescribeRestoreFullDetails", "hbase");
+		super("HBase", "2019-01-01", "DescribeRestoreFullDetails");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

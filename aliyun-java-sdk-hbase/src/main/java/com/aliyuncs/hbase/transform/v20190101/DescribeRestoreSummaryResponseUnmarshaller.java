@@ -27,22 +27,22 @@ public class DescribeRestoreSummaryResponseUnmarshaller {
 	public static DescribeRestoreSummaryResponse unmarshall(DescribeRestoreSummaryResponse describeRestoreSummaryResponse, UnmarshallerContext _ctx) {
 		
 		describeRestoreSummaryResponse.setRequestId(_ctx.stringValue("DescribeRestoreSummaryResponse.RequestId"));
-		describeRestoreSummaryResponse.setHasMoreRestoreRecord(_ctx.integerValue("DescribeRestoreSummaryResponse.HasMoreRestoreRecord"));
-		describeRestoreSummaryResponse.setPageNumber(_ctx.integerValue("DescribeRestoreSummaryResponse.PageNumber"));
 		describeRestoreSummaryResponse.setPageSize(_ctx.integerValue("DescribeRestoreSummaryResponse.PageSize"));
+		describeRestoreSummaryResponse.setPageNumber(_ctx.integerValue("DescribeRestoreSummaryResponse.PageNumber"));
 		describeRestoreSummaryResponse.setTotal(_ctx.integerValue("DescribeRestoreSummaryResponse.Total"));
+		describeRestoreSummaryResponse.setHasMoreRestoreRecord(_ctx.integerValue("DescribeRestoreSummaryResponse.HasMoreRestoreRecord"));
 
 		List<Rescord> rescords = new ArrayList<Rescord>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeRestoreSummaryResponse.Rescords.Length"); i++) {
 			Rescord rescord = new Rescord();
-			rescord.setRecordId(_ctx.stringValue("DescribeRestoreSummaryResponse.Rescords["+ i +"].RecordId"));
+			rescord.setStatus(_ctx.stringValue("DescribeRestoreSummaryResponse.Rescords["+ i +"].Status"));
 			rescord.setFinishTime(_ctx.stringValue("DescribeRestoreSummaryResponse.Rescords["+ i +"].FinishTime"));
 			rescord.setSchemaProcess(_ctx.stringValue("DescribeRestoreSummaryResponse.Rescords["+ i +"].SchemaProcess"));
-			rescord.setHfileRestoreProcess(_ctx.stringValue("DescribeRestoreSummaryResponse.Rescords["+ i +"].HfileRestoreProcess"));
-			rescord.setCreateTime(_ctx.stringValue("DescribeRestoreSummaryResponse.Rescords["+ i +"].CreateTime"));
 			rescord.setBulkLoadProcess(_ctx.stringValue("DescribeRestoreSummaryResponse.Rescords["+ i +"].BulkLoadProcess"));
-			rescord.setStatus(_ctx.stringValue("DescribeRestoreSummaryResponse.Rescords["+ i +"].Status"));
+			rescord.setRecordId(_ctx.stringValue("DescribeRestoreSummaryResponse.Rescords["+ i +"].RecordId"));
+			rescord.setCreateTime(_ctx.stringValue("DescribeRestoreSummaryResponse.Rescords["+ i +"].CreateTime"));
 			rescord.setLogProcess(_ctx.stringValue("DescribeRestoreSummaryResponse.Rescords["+ i +"].LogProcess"));
+			rescord.setHfileRestoreProcess(_ctx.stringValue("DescribeRestoreSummaryResponse.Rescords["+ i +"].HfileRestoreProcess"));
 
 			rescords.add(rescord);
 		}

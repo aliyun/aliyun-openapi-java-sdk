@@ -29,7 +29,7 @@ public class DeleteHBaseSlbServerRequest extends RpcAcsRequest<DeleteHBaseSlbSer
 
 	private String slbServer;
 	public DeleteHBaseSlbServerRequest() {
-		super("HBase", "2019-01-01", "DeleteHBaseSlbServer", "hbase");
+		super("HBase", "2019-01-01", "DeleteHBaseSlbServer");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

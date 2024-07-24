@@ -31,7 +31,7 @@ public class DescribeBackupSummaryRequest extends RpcAcsRequest<DescribeBackupSu
 
 	private Integer pageSize;
 	public DescribeBackupSummaryRequest() {
-		super("HBase", "2019-01-01", "DescribeBackupSummary", "hbase");
+		super("HBase", "2019-01-01", "DescribeBackupSummary");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

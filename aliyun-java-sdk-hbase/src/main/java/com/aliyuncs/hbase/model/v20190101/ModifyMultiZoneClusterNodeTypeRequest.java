@@ -33,7 +33,7 @@ public class ModifyMultiZoneClusterNodeTypeRequest extends RpcAcsRequest<ModifyM
 
 	private String coreInstanceType;
 	public ModifyMultiZoneClusterNodeTypeRequest() {
-		super("HBase", "2019-01-01", "ModifyMultiZoneClusterNodeType", "hbase");
+		super("HBase", "2019-01-01", "ModifyMultiZoneClusterNodeType");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

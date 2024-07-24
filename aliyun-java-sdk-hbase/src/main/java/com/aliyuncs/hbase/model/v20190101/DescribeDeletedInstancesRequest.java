@@ -29,7 +29,7 @@ public class DescribeDeletedInstancesRequest extends RpcAcsRequest<DescribeDelet
 
 	private Integer pageSize;
 	public DescribeDeletedInstancesRequest() {
-		super("HBase", "2019-01-01", "DescribeDeletedInstances", "hbase");
+		super("HBase", "2019-01-01", "DescribeDeletedInstances");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

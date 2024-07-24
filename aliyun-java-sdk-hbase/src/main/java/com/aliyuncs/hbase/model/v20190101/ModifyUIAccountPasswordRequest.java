@@ -31,7 +31,7 @@ public class ModifyUIAccountPasswordRequest extends RpcAcsRequest<ModifyUIAccoun
 
 	private String accountName;
 	public ModifyUIAccountPasswordRequest() {
-		super("HBase", "2019-01-01", "ModifyUIAccountPassword", "hbase");
+		super("HBase", "2019-01-01", "ModifyUIAccountPassword");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

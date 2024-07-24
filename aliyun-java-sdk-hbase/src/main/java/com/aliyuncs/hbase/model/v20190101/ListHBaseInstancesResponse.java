@@ -47,11 +47,19 @@ public class ListHBaseInstancesResponse extends AcsResponse {
 
 	public static class Instance {
 
+		private Boolean isDefault;
+
 		private String instanceId;
 
 		private String instanceName;
 
-		private Boolean isDefault;
+		public Boolean getIsDefault() {
+			return this.isDefault;
+		}
+
+		public void setIsDefault(Boolean isDefault) {
+			this.isDefault = isDefault;
+		}
 
 		public String getInstanceId() {
 			return this.instanceId;
@@ -67,14 +75,6 @@ public class ListHBaseInstancesResponse extends AcsResponse {
 
 		public void setInstanceName(String instanceName) {
 			this.instanceName = instanceName;
-		}
-
-		public Boolean getIsDefault() {
-			return this.isDefault;
-		}
-
-		public void setIsDefault(Boolean isDefault) {
-			this.isDefault = isDefault;
 		}
 	}
 

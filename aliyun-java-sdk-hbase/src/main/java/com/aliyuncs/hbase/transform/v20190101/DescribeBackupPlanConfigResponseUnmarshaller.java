@@ -26,9 +26,9 @@ public class DescribeBackupPlanConfigResponseUnmarshaller {
 	public static DescribeBackupPlanConfigResponse unmarshall(DescribeBackupPlanConfigResponse describeBackupPlanConfigResponse, UnmarshallerContext _ctx) {
 		
 		describeBackupPlanConfigResponse.setRequestId(_ctx.stringValue("DescribeBackupPlanConfigResponse.RequestId"));
-		describeBackupPlanConfigResponse.setFullBackupCycle(_ctx.integerValue("DescribeBackupPlanConfigResponse.FullBackupCycle"));
 		describeBackupPlanConfigResponse.setMinHFileBackupCount(_ctx.integerValue("DescribeBackupPlanConfigResponse.MinHFileBackupCount"));
 		describeBackupPlanConfigResponse.setNextFullBackupDate(_ctx.stringValue("DescribeBackupPlanConfigResponse.NextFullBackupDate"));
+		describeBackupPlanConfigResponse.setFullBackupCycle(_ctx.integerValue("DescribeBackupPlanConfigResponse.FullBackupCycle"));
 
 		List<String> tables = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeBackupPlanConfigResponse.Tables.Length"); i++) {

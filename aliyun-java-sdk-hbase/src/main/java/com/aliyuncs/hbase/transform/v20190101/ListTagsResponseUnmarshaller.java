@@ -31,8 +31,8 @@ public class ListTagsResponseUnmarshaller {
 		List<Tag> tags = new ArrayList<Tag>();
 		for (int i = 0; i < _ctx.lengthValue("ListTagsResponse.Tags.Length"); i++) {
 			Tag tag = new Tag();
-			tag.setTagKey(_ctx.stringValue("ListTagsResponse.Tags["+ i +"].TagKey"));
 			tag.setTagValue(_ctx.stringValue("ListTagsResponse.Tags["+ i +"].TagValue"));
+			tag.setTagKey(_ctx.stringValue("ListTagsResponse.Tags["+ i +"].TagKey"));
 
 			tags.add(tag);
 		}

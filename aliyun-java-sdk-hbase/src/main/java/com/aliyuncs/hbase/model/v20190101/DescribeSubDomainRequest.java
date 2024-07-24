@@ -27,7 +27,7 @@ public class DescribeSubDomainRequest extends RpcAcsRequest<DescribeSubDomainRes
 
 	private String zoneId;
 	public DescribeSubDomainRequest() {
-		super("HBase", "2019-01-01", "DescribeSubDomain", "hbase");
+		super("HBase", "2019-01-01", "DescribeSubDomain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

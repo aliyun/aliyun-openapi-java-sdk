@@ -33,7 +33,7 @@ public class DescribeRestoreSchemaDetailsRequest extends RpcAcsRequest<DescribeR
 
 	private String restoreRecordId;
 	public DescribeRestoreSchemaDetailsRequest() {
-		super("HBase", "2019-01-01", "DescribeRestoreSchemaDetails", "hbase");
+		super("HBase", "2019-01-01", "DescribeRestoreSchemaDetails");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

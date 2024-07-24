@@ -41,7 +41,7 @@ public class DescribeBackupsRequest extends RpcAcsRequest<DescribeBackupsRespons
 
 	private String endTimeUTC;
 	public DescribeBackupsRequest() {
-		super("HBase", "2019-01-01", "DescribeBackups", "hbase");
+		super("HBase", "2019-01-01", "DescribeBackups");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

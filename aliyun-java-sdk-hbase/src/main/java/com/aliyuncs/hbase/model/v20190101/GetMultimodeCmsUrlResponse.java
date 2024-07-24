@@ -24,11 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetMultimodeCmsUrlResponse extends AcsResponse {
 
+	private String multimodCmsUrl;
+
 	private String requestId;
 
 	private String clusterId;
 
-	private String multimodCmsUrl;
+	public String getMultimodCmsUrl() {
+		return this.multimodCmsUrl;
+	}
+
+	public void setMultimodCmsUrl(String multimodCmsUrl) {
+		this.multimodCmsUrl = multimodCmsUrl;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,14 +52,6 @@ public class GetMultimodeCmsUrlResponse extends AcsResponse {
 
 	public void setClusterId(String clusterId) {
 		this.clusterId = clusterId;
-	}
-
-	public String getMultimodCmsUrl() {
-		return this.multimodCmsUrl;
-	}
-
-	public void setMultimodCmsUrl(String multimodCmsUrl) {
-		this.multimodCmsUrl = multimodCmsUrl;
 	}
 
 	@Override

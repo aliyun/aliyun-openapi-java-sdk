@@ -33,7 +33,7 @@ public class EnableHBaseueBackupRequest extends RpcAcsRequest<EnableHBaseueBacku
 
 	private Integer nodeCount;
 	public EnableHBaseueBackupRequest() {
-		super("HBase", "2019-01-01", "EnableHBaseueBackup", "hbase");
+		super("HBase", "2019-01-01", "EnableHBaseueBackup");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

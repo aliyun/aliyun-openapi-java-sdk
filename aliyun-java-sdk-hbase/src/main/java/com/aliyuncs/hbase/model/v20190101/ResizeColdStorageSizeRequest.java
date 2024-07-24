@@ -29,7 +29,7 @@ public class ResizeColdStorageSizeRequest extends RpcAcsRequest<ResizeColdStorag
 
 	private Integer coldStorageSize;
 	public ResizeColdStorageSizeRequest() {
-		super("HBase", "2019-01-01", "ResizeColdStorageSize", "hbase");
+		super("HBase", "2019-01-01", "ResizeColdStorageSize");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

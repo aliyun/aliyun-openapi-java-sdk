@@ -81,7 +81,7 @@ public class CreateMultiZoneClusterRequest extends RpcAcsRequest<CreateMultiZone
 
 	private String arbiterVSwitchId;
 	public CreateMultiZoneClusterRequest() {
-		super("HBase", "2019-01-01", "CreateMultiZoneCluster", "hbase");
+		super("HBase", "2019-01-01", "CreateMultiZoneCluster");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

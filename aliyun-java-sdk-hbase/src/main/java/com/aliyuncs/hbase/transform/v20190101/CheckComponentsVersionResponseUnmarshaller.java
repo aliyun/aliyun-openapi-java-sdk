@@ -31,8 +31,8 @@ public class CheckComponentsVersionResponseUnmarshaller {
 		List<Component> components = new ArrayList<Component>();
 		for (int i = 0; i < _ctx.lengthValue("CheckComponentsVersionResponse.Components.Length"); i++) {
 			Component component = new Component();
-			component.setComponent(_ctx.stringValue("CheckComponentsVersionResponse.Components["+ i +"].Component"));
 			component.setIsLatestVersion(_ctx.stringValue("CheckComponentsVersionResponse.Components["+ i +"].IsLatestVersion"));
+			component.setComponent(_ctx.stringValue("CheckComponentsVersionResponse.Components["+ i +"].Component"));
 
 			components.add(component);
 		}

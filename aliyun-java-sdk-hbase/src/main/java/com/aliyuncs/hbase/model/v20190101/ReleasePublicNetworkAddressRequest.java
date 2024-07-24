@@ -27,7 +27,7 @@ public class ReleasePublicNetworkAddressRequest extends RpcAcsRequest<ReleasePub
 
 	private String clusterId;
 	public ReleasePublicNetworkAddressRequest() {
-		super("HBase", "2019-01-01", "ReleasePublicNetworkAddress", "hbase");
+		super("HBase", "2019-01-01", "ReleasePublicNetworkAddress");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

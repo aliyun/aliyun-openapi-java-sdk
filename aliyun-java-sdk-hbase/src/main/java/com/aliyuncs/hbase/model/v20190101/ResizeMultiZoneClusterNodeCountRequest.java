@@ -41,7 +41,7 @@ public class ResizeMultiZoneClusterNodeCountRequest extends RpcAcsRequest<Resize
 
 	private String arbiterVSwitchId;
 	public ResizeMultiZoneClusterNodeCountRequest() {
-		super("HBase", "2019-01-01", "ResizeMultiZoneClusterNodeCount", "hbase");
+		super("HBase", "2019-01-01", "ResizeMultiZoneClusterNodeCount");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

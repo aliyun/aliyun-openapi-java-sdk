@@ -29,7 +29,7 @@ public class DeleteMultiZoneClusterRequest extends RpcAcsRequest<DeleteMultiZone
 
 	private String clusterId;
 	public DeleteMultiZoneClusterRequest() {
-		super("HBase", "2019-01-01", "DeleteMultiZoneCluster", "hbase");
+		super("HBase", "2019-01-01", "DeleteMultiZoneCluster");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

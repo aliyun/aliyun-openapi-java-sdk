@@ -29,7 +29,7 @@ public class CheckComponentsVersionRequest extends RpcAcsRequest<CheckComponents
 
 	private String clusterId;
 	public CheckComponentsVersionRequest() {
-		super("HBase", "2019-01-01", "CheckComponentsVersion", "hbase");
+		super("HBase", "2019-01-01", "CheckComponentsVersion");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

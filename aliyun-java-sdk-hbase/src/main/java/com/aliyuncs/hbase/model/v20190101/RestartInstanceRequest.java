@@ -29,7 +29,7 @@ public class RestartInstanceRequest extends RpcAcsRequest<RestartInstanceRespons
 
 	private String clusterId;
 	public RestartInstanceRequest() {
-		super("HBase", "2019-01-01", "RestartInstance", "hbase");
+		super("HBase", "2019-01-01", "RestartInstance");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

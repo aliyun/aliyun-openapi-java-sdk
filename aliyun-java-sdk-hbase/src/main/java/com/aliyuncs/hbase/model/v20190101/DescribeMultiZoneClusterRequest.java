@@ -27,7 +27,7 @@ public class DescribeMultiZoneClusterRequest extends RpcAcsRequest<DescribeMulti
 
 	private String clusterId;
 	public DescribeMultiZoneClusterRequest() {
-		super("HBase", "2019-01-01", "DescribeMultiZoneCluster", "hbase");
+		super("HBase", "2019-01-01", "DescribeMultiZoneCluster");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

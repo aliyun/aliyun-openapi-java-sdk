@@ -29,7 +29,7 @@ public class ModifyDiskWarningLineRequest extends RpcAcsRequest<ModifyDiskWarnin
 
 	private Integer warningLine;
 	public ModifyDiskWarningLineRequest() {
-		super("HBase", "2019-01-01", "ModifyDiskWarningLine", "hbase");
+		super("HBase", "2019-01-01", "ModifyDiskWarningLine");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

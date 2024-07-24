@@ -23,8 +23,8 @@ public class GetMultimodeCmsUrlResponseUnmarshaller {
 	public static GetMultimodeCmsUrlResponse unmarshall(GetMultimodeCmsUrlResponse getMultimodeCmsUrlResponse, UnmarshallerContext _ctx) {
 		
 		getMultimodeCmsUrlResponse.setRequestId(_ctx.stringValue("GetMultimodeCmsUrlResponse.RequestId"));
-		getMultimodeCmsUrlResponse.setClusterId(_ctx.stringValue("GetMultimodeCmsUrlResponse.ClusterId"));
 		getMultimodeCmsUrlResponse.setMultimodCmsUrl(_ctx.stringValue("GetMultimodeCmsUrlResponse.MultimodCmsUrl"));
+		getMultimodeCmsUrlResponse.setClusterId(_ctx.stringValue("GetMultimodeCmsUrlResponse.ClusterId"));
 	 
 	 	return getMultimodeCmsUrlResponse;
 	}
