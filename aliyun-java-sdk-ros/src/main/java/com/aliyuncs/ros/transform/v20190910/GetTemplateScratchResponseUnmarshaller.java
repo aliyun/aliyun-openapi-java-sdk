@@ -89,6 +89,12 @@ public class GetTemplateScratchResponseUnmarshaller {
 			sourceResource.setResourceId(_ctx.stringValue("GetTemplateScratchResponse.TemplateScratch.SourceResources["+ i +"].ResourceId"));
 			sourceResource.setResourceType(_ctx.stringValue("GetTemplateScratchResponse.TemplateScratch.SourceResources["+ i +"].ResourceType"));
 
+			List<String> relatedResourceTypeFilter = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("GetTemplateScratchResponse.TemplateScratch.SourceResources["+ i +"].RelatedResourceTypeFilter.Length"); j++) {
+				relatedResourceTypeFilter.add(_ctx.stringValue("GetTemplateScratchResponse.TemplateScratch.SourceResources["+ i +"].RelatedResourceTypeFilter["+ j +"]"));
+			}
+			sourceResource.setRelatedResourceTypeFilter(relatedResourceTypeFilter);
+
 			sourceResources.add(sourceResource);
 		}
 		templateScratch.setSourceResources(sourceResources);

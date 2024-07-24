@@ -30,6 +30,8 @@ public class GetStackInstanceRequest extends RpcAcsRequest<GetStackInstanceRespo
 	private String stackInstanceRegionId;
 
 	private String stackInstanceAccountId;
+
+	private String outputOption;
 	public GetStackInstanceRequest() {
 		super("ROS", "2019-09-10", "GetStackInstance", "ros");
 		setMethod(MethodType.POST);
@@ -69,6 +71,17 @@ public class GetStackInstanceRequest extends RpcAcsRequest<GetStackInstanceRespo
 		this.stackInstanceAccountId = stackInstanceAccountId;
 		if(stackInstanceAccountId != null){
 			putQueryParameter("StackInstanceAccountId", stackInstanceAccountId);
+		}
+	}
+
+	public String getOutputOption() {
+		return this.outputOption;
+	}
+
+	public void setOutputOption(String outputOption) {
+		this.outputOption = outputOption;
+		if(outputOption != null){
+			putQueryParameter("OutputOption", outputOption);
 		}
 	}
 

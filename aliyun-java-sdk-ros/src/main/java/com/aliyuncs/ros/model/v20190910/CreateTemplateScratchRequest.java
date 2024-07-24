@@ -192,6 +192,9 @@ public class CreateTemplateScratchRequest extends RpcAcsRequest<CreateTemplateSc
 		@SerializedName("ResourceId")
 		private String resourceId;
 
+		@SerializedName("RelatedResourceTypeFilter")
+		private List<String> relatedResourceTypeFilter;
+
 		@SerializedName("RegionId")
 		private String regionId;
 
@@ -204,6 +207,14 @@ public class CreateTemplateScratchRequest extends RpcAcsRequest<CreateTemplateSc
 
 		public void setResourceId(String resourceId) {
 			this.resourceId = resourceId;
+		}
+
+		public List<String> getRelatedResourceTypeFilter() {
+			return this.relatedResourceTypeFilter;
+		}
+
+		public void setRelatedResourceTypeFilter(List<String> relatedResourceTypeFilter) {
+			this.relatedResourceTypeFilter = relatedResourceTypeFilter;
 		}
 
 		public String getRegionId() {

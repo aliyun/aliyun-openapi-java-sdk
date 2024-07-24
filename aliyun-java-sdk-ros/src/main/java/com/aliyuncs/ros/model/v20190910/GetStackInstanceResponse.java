@@ -15,6 +15,7 @@
 package com.aliyuncs.ros.model.v20190910;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.ros.transform.v20190910.GetStackInstanceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -68,6 +69,8 @@ public class GetStackInstanceResponse extends AcsResponse {
 		private String rdFolderId;
 
 		private List<ParameterOverride> parameterOverrides;
+
+		private List<Map<Object,Object>> outputs;
 
 		public String getStatus() {
 			return this.status;
@@ -155,6 +158,14 @@ public class GetStackInstanceResponse extends AcsResponse {
 
 		public void setParameterOverrides(List<ParameterOverride> parameterOverrides) {
 			this.parameterOverrides = parameterOverrides;
+		}
+
+		public List<Map<Object,Object>> getOutputs() {
+			return this.outputs;
+		}
+
+		public void setOutputs(List<Map<Object,Object>> outputs) {
+			this.outputs = outputs;
 		}
 
 		public static class ParameterOverride {

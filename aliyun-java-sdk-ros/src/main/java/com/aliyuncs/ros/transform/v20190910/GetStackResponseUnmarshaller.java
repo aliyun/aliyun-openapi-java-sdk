@@ -64,6 +64,7 @@ public class GetStackResponseUnmarshaller {
 		getStackResponse.setServiceName(_ctx.stringValue("GetStackResponse.ServiceName"));
 		getStackResponse.setCheckedStackResourceCount(_ctx.integerValue("GetStackResponse.CheckedStackResourceCount"));
 		getStackResponse.setNotCheckedStackResourceCount(_ctx.integerValue("GetStackResponse.NotCheckedStackResourceCount"));
+		getStackResponse.setRollbackFailedRootReason(_ctx.stringValue("GetStackResponse.RollbackFailedRootReason"));
 
 		List<Map<Object, Object>> outputs = _ctx.listMapValue("GetStackResponse.Outputs");
 		getStackResponse.setOutputs(outputs);

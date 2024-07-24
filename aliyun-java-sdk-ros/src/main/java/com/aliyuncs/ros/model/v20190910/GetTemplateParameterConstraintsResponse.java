@@ -61,6 +61,8 @@ public class GetTemplateParameterConstraintsResponse extends AcsResponse {
 
 		private List<OriginalConstraint> originalConstraints;
 
+		private List<QueryTimeoutDetail> queryTimeoutDetails;
+
 		private List<String> allowedValues;
 
 		private List<String> associationParameterNames;
@@ -123,6 +125,14 @@ public class GetTemplateParameterConstraintsResponse extends AcsResponse {
 
 		public void setOriginalConstraints(List<OriginalConstraint> originalConstraints) {
 			this.originalConstraints = originalConstraints;
+		}
+
+		public List<QueryTimeoutDetail> getQueryTimeoutDetails() {
+			return this.queryTimeoutDetails;
+		}
+
+		public void setQueryTimeoutDetails(List<QueryTimeoutDetail> queryTimeoutDetails) {
+			this.queryTimeoutDetails = queryTimeoutDetails;
 		}
 
 		public List<String> getAllowedValues() {
@@ -253,6 +263,39 @@ public class GetTemplateParameterConstraintsResponse extends AcsResponse {
 
 			public void setAllowedValues1(List<String> allowedValues1) {
 				this.allowedValues1 = allowedValues1;
+			}
+		}
+
+		public static class QueryTimeoutDetail {
+
+			private String resourceType;
+
+			private String resourceName;
+
+			private String errorMessage;
+
+			public String getResourceType() {
+				return this.resourceType;
+			}
+
+			public void setResourceType(String resourceType) {
+				this.resourceType = resourceType;
+			}
+
+			public String getResourceName() {
+				return this.resourceName;
+			}
+
+			public void setResourceName(String resourceName) {
+				this.resourceName = resourceName;
+			}
+
+			public String getErrorMessage() {
+				return this.errorMessage;
+			}
+
+			public void setErrorMessage(String errorMessage) {
+				this.errorMessage = errorMessage;
 			}
 		}
 	}

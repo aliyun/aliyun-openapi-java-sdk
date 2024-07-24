@@ -84,6 +84,8 @@ public class GetStackResponse extends AcsResponse {
 
 	private Integer notCheckedStackResourceCount;
 
+	private String rollbackFailedRootReason;
+
 	private List<Parameter> parameters;
 
 	private List<Tag> tags;
@@ -330,6 +332,14 @@ public class GetStackResponse extends AcsResponse {
 
 	public void setNotCheckedStackResourceCount(Integer notCheckedStackResourceCount) {
 		this.notCheckedStackResourceCount = notCheckedStackResourceCount;
+	}
+
+	public String getRollbackFailedRootReason() {
+		return this.rollbackFailedRootReason;
+	}
+
+	public void setRollbackFailedRootReason(String rollbackFailedRootReason) {
+		this.rollbackFailedRootReason = rollbackFailedRootReason;
 	}
 
 	public List<Parameter> getParameters() {

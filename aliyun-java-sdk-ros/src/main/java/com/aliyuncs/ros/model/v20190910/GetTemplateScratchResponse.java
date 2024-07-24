@@ -247,6 +247,8 @@ public class GetTemplateScratchResponse extends AcsResponse {
 
 			private String resourceType;
 
+			private List<String> relatedResourceTypeFilter;
+
 			public String getResourceId() {
 				return this.resourceId;
 			}
@@ -261,6 +263,14 @@ public class GetTemplateScratchResponse extends AcsResponse {
 
 			public void setResourceType(String resourceType) {
 				this.resourceType = resourceType;
+			}
+
+			public List<String> getRelatedResourceTypeFilter() {
+				return this.relatedResourceTypeFilter;
+			}
+
+			public void setRelatedResourceTypeFilter(List<String> relatedResourceTypeFilter) {
+				this.relatedResourceTypeFilter = relatedResourceTypeFilter;
 			}
 		}
 

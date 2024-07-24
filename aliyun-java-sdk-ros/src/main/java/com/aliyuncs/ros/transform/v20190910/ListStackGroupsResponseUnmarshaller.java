@@ -44,6 +44,8 @@ public class ListStackGroupsResponseUnmarshaller {
 			stackGroup.setStackGroupName(_ctx.stringValue("ListStackGroupsResponse.StackGroups["+ i +"].StackGroupName"));
 			stackGroup.setResourceGroupId(_ctx.stringValue("ListStackGroupsResponse.StackGroups["+ i +"].ResourceGroupId"));
 			stackGroup.setPermissionModel(_ctx.stringValue("ListStackGroupsResponse.StackGroups["+ i +"].PermissionModel"));
+			stackGroup.setCreateTime(_ctx.stringValue("ListStackGroupsResponse.StackGroups["+ i +"].CreateTime"));
+			stackGroup.setUpdateTime(_ctx.stringValue("ListStackGroupsResponse.StackGroups["+ i +"].UpdateTime"));
 
 			AutoDeployment autoDeployment = new AutoDeployment();
 			autoDeployment.setEnabled(_ctx.booleanValue("ListStackGroupsResponse.StackGroups["+ i +"].AutoDeployment.Enabled"));

@@ -67,6 +67,10 @@ public class GetStackGroupResponse extends AcsResponse {
 
 		private String templateContent;
 
+		private String createTime;
+
+		private String updateTime;
+
 		private List<Parameter> parameters;
 
 		private List<String> rdFolderIds;
@@ -153,6 +157,22 @@ public class GetStackGroupResponse extends AcsResponse {
 
 		public void setTemplateContent(String templateContent) {
 			this.templateContent = templateContent;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getUpdateTime() {
+			return this.updateTime;
+		}
+
+		public void setUpdateTime(String updateTime) {
+			this.updateTime = updateTime;
 		}
 
 		public List<Parameter> getParameters() {

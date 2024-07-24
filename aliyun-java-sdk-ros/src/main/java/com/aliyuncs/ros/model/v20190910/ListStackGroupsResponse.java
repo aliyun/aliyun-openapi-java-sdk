@@ -93,6 +93,10 @@ public class ListStackGroupsResponse extends AcsResponse {
 
 		private String permissionModel;
 
+		private String createTime;
+
+		private String updateTime;
+
 		private List<TagsItem> tags;
 
 		private AutoDeployment autoDeployment;
@@ -159,6 +163,22 @@ public class ListStackGroupsResponse extends AcsResponse {
 
 		public void setPermissionModel(String permissionModel) {
 			this.permissionModel = permissionModel;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getUpdateTime() {
+			return this.updateTime;
+		}
+
+		public void setUpdateTime(String updateTime) {
+			this.updateTime = updateTime;
 		}
 
 		public List<TagsItem> getTags() {

@@ -22,6 +22,7 @@ import com.aliyuncs.ros.model.v20190910.GetTemplateParameterConstraintsResponse.
 import com.aliyuncs.ros.model.v20190910.GetTemplateParameterConstraintsResponse.ParameterConstraint.NotSupportResource;
 import com.aliyuncs.ros.model.v20190910.GetTemplateParameterConstraintsResponse.ParameterConstraint.OriginalConstraint;
 import com.aliyuncs.ros.model.v20190910.GetTemplateParameterConstraintsResponse.ParameterConstraint.QueryError;
+import com.aliyuncs.ros.model.v20190910.GetTemplateParameterConstraintsResponse.ParameterConstraint.QueryTimeoutDetail;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -100,6 +101,17 @@ public class GetTemplateParameterConstraintsResponseUnmarshaller {
 				originalConstraints.add(originalConstraint);
 			}
 			parameterConstraint.setOriginalConstraints(originalConstraints);
+
+			List<QueryTimeoutDetail> queryTimeoutDetails = new ArrayList<QueryTimeoutDetail>();
+			for (int j = 0; j < _ctx.lengthValue("GetTemplateParameterConstraintsResponse.ParameterConstraints["+ i +"].QueryTimeoutDetails.Length"); j++) {
+				QueryTimeoutDetail queryTimeoutDetail = new QueryTimeoutDetail();
+				queryTimeoutDetail.setResourceType(_ctx.stringValue("GetTemplateParameterConstraintsResponse.ParameterConstraints["+ i +"].QueryTimeoutDetails["+ j +"].ResourceType"));
+				queryTimeoutDetail.setResourceName(_ctx.stringValue("GetTemplateParameterConstraintsResponse.ParameterConstraints["+ i +"].QueryTimeoutDetails["+ j +"].ResourceName"));
+				queryTimeoutDetail.setErrorMessage(_ctx.stringValue("GetTemplateParameterConstraintsResponse.ParameterConstraints["+ i +"].QueryTimeoutDetails["+ j +"].ErrorMessage"));
+
+				queryTimeoutDetails.add(queryTimeoutDetail);
+			}
+			parameterConstraint.setQueryTimeoutDetails(queryTimeoutDetails);
 
 			parameterConstraints.add(parameterConstraint);
 		}

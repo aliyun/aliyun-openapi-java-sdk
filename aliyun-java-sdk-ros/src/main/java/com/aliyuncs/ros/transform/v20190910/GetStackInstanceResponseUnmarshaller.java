@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.ros.model.v20190910.GetStackInstanceResponse;
 import com.aliyuncs.ros.model.v20190910.GetStackInstanceResponse.StackInstance;
 import com.aliyuncs.ros.model.v20190910.GetStackInstanceResponse.StackInstance.ParameterOverride;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -40,6 +41,9 @@ public class GetStackInstanceResponseUnmarshaller {
 		stackInstance.setAccountId(_ctx.stringValue("GetStackInstanceResponse.StackInstance.AccountId"));
 		stackInstance.setRegionId(_ctx.stringValue("GetStackInstanceResponse.StackInstance.RegionId"));
 		stackInstance.setRdFolderId(_ctx.stringValue("GetStackInstanceResponse.StackInstance.RdFolderId"));
+
+		List<Map<Object, Object>> outputs = _ctx.listMapValue("GetStackInstanceResponse.StackInstance.Outputs");
+		stackInstance.setOutputs(outputs);
 
 		List<ParameterOverride> parameterOverrides = new ArrayList<ParameterOverride>();
 		for (int i = 0; i < _ctx.lengthValue("GetStackInstanceResponse.StackInstance.ParameterOverrides.Length"); i++) {

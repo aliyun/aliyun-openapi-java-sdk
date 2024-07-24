@@ -27,6 +27,8 @@ public class CreateDiagnosticRequest extends RpcAcsRequest<CreateDiagnosticRespo
 
 	private String diagnosticKey;
 
+	private String lang;
+
 	private String diagnosticType;
 
 	private String product;
@@ -47,6 +49,17 @@ public class CreateDiagnosticRequest extends RpcAcsRequest<CreateDiagnosticRespo
 		this.diagnosticKey = diagnosticKey;
 		if(diagnosticKey != null){
 			putQueryParameter("DiagnosticKey", diagnosticKey);
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
 		}
 	}
 
