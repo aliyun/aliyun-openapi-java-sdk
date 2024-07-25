@@ -1,3 +1,7 @@
+2024-07-25 Version: 1.0.14
+- 增加号码开场白、命令等
+- 模板列表增加最迟更新时间
+
 2024-06-21 Version: 1.0.13
 - Authentication template add SupportApps
 

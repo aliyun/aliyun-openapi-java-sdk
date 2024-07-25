@@ -23,8 +23,10 @@ public class UpdateCommerceSettingResponseUnmarshaller {
 	public static UpdateCommerceSettingResponse unmarshall(UpdateCommerceSettingResponse updateCommerceSettingResponse, UnmarshallerContext _ctx) {
 		
 		updateCommerceSettingResponse.setRequestId(_ctx.stringValue("UpdateCommerceSettingResponse.RequestId"));
-		updateCommerceSettingResponse.setCode(_ctx.stringValue("UpdateCommerceSettingResponse.Code"));
+		updateCommerceSettingResponse.setAccessDeniedDetail(_ctx.stringValue("UpdateCommerceSettingResponse.AccessDeniedDetail"));
 		updateCommerceSettingResponse.setMessage(_ctx.stringValue("UpdateCommerceSettingResponse.Message"));
+		updateCommerceSettingResponse.setCode(_ctx.stringValue("UpdateCommerceSettingResponse.Code"));
+		updateCommerceSettingResponse.setSuccess(_ctx.booleanValue("UpdateCommerceSettingResponse.Success"));
 	 
 	 	return updateCommerceSettingResponse;
 	}

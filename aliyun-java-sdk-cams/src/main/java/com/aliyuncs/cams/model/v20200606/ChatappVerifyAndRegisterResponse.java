@@ -24,13 +24,31 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ChatappVerifyAndRegisterResponse extends AcsResponse {
 
+	private String accessDeniedDetail;
+
+	private String message;
+
 	private String requestId;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
-	private String accessDeniedDetail;
+	public String getAccessDeniedDetail() {
+		return this.accessDeniedDetail;
+	}
+
+	public void setAccessDeniedDetail(String accessDeniedDetail) {
+		this.accessDeniedDetail = accessDeniedDetail;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -48,20 +66,12 @@ public class ChatappVerifyAndRegisterResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public String getAccessDeniedDetail() {
-		return this.accessDeniedDetail;
-	}
-
-	public void setAccessDeniedDetail(String accessDeniedDetail) {
-		this.accessDeniedDetail = accessDeniedDetail;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

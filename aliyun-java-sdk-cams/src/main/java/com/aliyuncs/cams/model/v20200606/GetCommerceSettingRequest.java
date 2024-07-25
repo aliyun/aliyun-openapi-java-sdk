@@ -25,7 +25,13 @@ import com.aliyuncs.cams.Endpoint;
 public class GetCommerceSettingRequest extends RpcAcsRequest<GetCommerceSettingResponse> {
 	   
 
+	private Long resourceOwnerId;
+
 	private String phoneNumber;
+
+	private String resourceOwnerAccount;
+
+	private Long ownerId;
 
 	private String custSpaceId;
 	public GetCommerceSettingRequest() {
@@ -37,6 +43,17 @@ public class GetCommerceSettingRequest extends RpcAcsRequest<GetCommerceSettingR
 		} catch (Exception e) {}
 	}
 
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
 	public String getPhoneNumber() {
 		return this.phoneNumber;
 	}
@@ -45,6 +62,28 @@ public class GetCommerceSettingRequest extends RpcAcsRequest<GetCommerceSettingR
 		this.phoneNumber = phoneNumber;
 		if(phoneNumber != null){
 			putQueryParameter("PhoneNumber", phoneNumber);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

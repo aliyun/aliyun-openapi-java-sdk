@@ -23,9 +23,10 @@ public class ModifyPhoneBusinessProfileResponseUnmarshaller {
 	public static ModifyPhoneBusinessProfileResponse unmarshall(ModifyPhoneBusinessProfileResponse modifyPhoneBusinessProfileResponse, UnmarshallerContext _ctx) {
 		
 		modifyPhoneBusinessProfileResponse.setRequestId(_ctx.stringValue("ModifyPhoneBusinessProfileResponse.RequestId"));
-		modifyPhoneBusinessProfileResponse.setCode(_ctx.stringValue("ModifyPhoneBusinessProfileResponse.Code"));
-		modifyPhoneBusinessProfileResponse.setMessage(_ctx.stringValue("ModifyPhoneBusinessProfileResponse.Message"));
 		modifyPhoneBusinessProfileResponse.setAccessDeniedDetail(_ctx.stringValue("ModifyPhoneBusinessProfileResponse.AccessDeniedDetail"));
+		modifyPhoneBusinessProfileResponse.setMessage(_ctx.stringValue("ModifyPhoneBusinessProfileResponse.Message"));
+		modifyPhoneBusinessProfileResponse.setCode(_ctx.stringValue("ModifyPhoneBusinessProfileResponse.Code"));
+		modifyPhoneBusinessProfileResponse.setSuccess(_ctx.booleanValue("ModifyPhoneBusinessProfileResponse.Success"));
 	 
 	 	return modifyPhoneBusinessProfileResponse;
 	}

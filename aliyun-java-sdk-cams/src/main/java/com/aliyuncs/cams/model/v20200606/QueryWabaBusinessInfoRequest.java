@@ -25,6 +25,12 @@ import com.aliyuncs.cams.Endpoint;
 public class QueryWabaBusinessInfoRequest extends RpcAcsRequest<QueryWabaBusinessInfoResponse> {
 	   
 
+	private Long resourceOwnerId;
+
+	private String resourceOwnerAccount;
+
+	private Long ownerId;
+
 	private String wabaId;
 
 	private String custSpaceId;
@@ -35,6 +41,39 @@ public class QueryWabaBusinessInfoRequest extends RpcAcsRequest<QueryWabaBusines
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	public String getWabaId() {

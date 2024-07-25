@@ -23,9 +23,10 @@ public class AddChatappPhoneNumberResponseUnmarshaller {
 	public static AddChatappPhoneNumberResponse unmarshall(AddChatappPhoneNumberResponse addChatappPhoneNumberResponse, UnmarshallerContext _ctx) {
 		
 		addChatappPhoneNumberResponse.setRequestId(_ctx.stringValue("AddChatappPhoneNumberResponse.RequestId"));
-		addChatappPhoneNumberResponse.setCode(_ctx.stringValue("AddChatappPhoneNumberResponse.Code"));
-		addChatappPhoneNumberResponse.setMessage(_ctx.stringValue("AddChatappPhoneNumberResponse.Message"));
 		addChatappPhoneNumberResponse.setAccessDeniedDetail(_ctx.stringValue("AddChatappPhoneNumberResponse.AccessDeniedDetail"));
+		addChatappPhoneNumberResponse.setMessage(_ctx.stringValue("AddChatappPhoneNumberResponse.Message"));
+		addChatappPhoneNumberResponse.setCode(_ctx.stringValue("AddChatappPhoneNumberResponse.Code"));
+		addChatappPhoneNumberResponse.setSuccess(_ctx.booleanValue("AddChatappPhoneNumberResponse.Success"));
 	 
 	 	return addChatappPhoneNumberResponse;
 	}

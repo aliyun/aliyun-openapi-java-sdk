@@ -27,15 +27,16 @@ public class QueryPhoneBusinessProfileResponseUnmarshaller {
 	public static QueryPhoneBusinessProfileResponse unmarshall(QueryPhoneBusinessProfileResponse queryPhoneBusinessProfileResponse, UnmarshallerContext _ctx) {
 		
 		queryPhoneBusinessProfileResponse.setRequestId(_ctx.stringValue("QueryPhoneBusinessProfileResponse.RequestId"));
-		queryPhoneBusinessProfileResponse.setCode(_ctx.stringValue("QueryPhoneBusinessProfileResponse.Code"));
-		queryPhoneBusinessProfileResponse.setMessage(_ctx.stringValue("QueryPhoneBusinessProfileResponse.Message"));
 		queryPhoneBusinessProfileResponse.setAccessDeniedDetail(_ctx.stringValue("QueryPhoneBusinessProfileResponse.AccessDeniedDetail"));
+		queryPhoneBusinessProfileResponse.setMessage(_ctx.stringValue("QueryPhoneBusinessProfileResponse.Message"));
+		queryPhoneBusinessProfileResponse.setCode(_ctx.stringValue("QueryPhoneBusinessProfileResponse.Code"));
+		queryPhoneBusinessProfileResponse.setSuccess(_ctx.booleanValue("QueryPhoneBusinessProfileResponse.Success"));
 
 		Data data = new Data();
-		data.setAddress(_ctx.stringValue("QueryPhoneBusinessProfileResponse.Data.Address"));
-		data.setDescription(_ctx.stringValue("QueryPhoneBusinessProfileResponse.Data.Description"));
 		data.setVertical(_ctx.stringValue("QueryPhoneBusinessProfileResponse.Data.Vertical"));
+		data.setDescription(_ctx.stringValue("QueryPhoneBusinessProfileResponse.Data.Description"));
 		data.setEmail(_ctx.stringValue("QueryPhoneBusinessProfileResponse.Data.Email"));
+		data.setAddress(_ctx.stringValue("QueryPhoneBusinessProfileResponse.Data.Address"));
 		data.setProfilePictureUrl(_ctx.stringValue("QueryPhoneBusinessProfileResponse.Data.ProfilePictureUrl"));
 		data.setAbout(_ctx.stringValue("QueryPhoneBusinessProfileResponse.Data.About"));
 

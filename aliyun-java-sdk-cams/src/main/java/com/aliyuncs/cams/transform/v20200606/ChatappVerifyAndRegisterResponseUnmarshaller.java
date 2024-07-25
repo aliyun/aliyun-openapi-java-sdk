@@ -23,9 +23,10 @@ public class ChatappVerifyAndRegisterResponseUnmarshaller {
 	public static ChatappVerifyAndRegisterResponse unmarshall(ChatappVerifyAndRegisterResponse chatappVerifyAndRegisterResponse, UnmarshallerContext _ctx) {
 		
 		chatappVerifyAndRegisterResponse.setRequestId(_ctx.stringValue("ChatappVerifyAndRegisterResponse.RequestId"));
-		chatappVerifyAndRegisterResponse.setCode(_ctx.stringValue("ChatappVerifyAndRegisterResponse.Code"));
-		chatappVerifyAndRegisterResponse.setMessage(_ctx.stringValue("ChatappVerifyAndRegisterResponse.Message"));
 		chatappVerifyAndRegisterResponse.setAccessDeniedDetail(_ctx.stringValue("ChatappVerifyAndRegisterResponse.AccessDeniedDetail"));
+		chatappVerifyAndRegisterResponse.setMessage(_ctx.stringValue("ChatappVerifyAndRegisterResponse.Message"));
+		chatappVerifyAndRegisterResponse.setCode(_ctx.stringValue("ChatappVerifyAndRegisterResponse.Code"));
+		chatappVerifyAndRegisterResponse.setSuccess(_ctx.booleanValue("ChatappVerifyAndRegisterResponse.Success"));
 	 
 	 	return chatappVerifyAndRegisterResponse;
 	}

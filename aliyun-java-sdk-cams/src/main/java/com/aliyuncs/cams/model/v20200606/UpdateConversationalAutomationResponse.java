@@ -15,14 +15,14 @@
 package com.aliyuncs.cams.model.v20200606;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cams.transform.v20200606.ModifyPhoneBusinessProfileResponseUnmarshaller;
+import com.aliyuncs.cams.transform.v20200606.UpdateConversationalAutomationResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ModifyPhoneBusinessProfileResponse extends AcsResponse {
+public class UpdateConversationalAutomationResponse extends AcsResponse {
 
 	private String accessDeniedDetail;
 
@@ -75,8 +75,8 @@ public class ModifyPhoneBusinessProfileResponse extends AcsResponse {
 	}
 
 	@Override
-	public ModifyPhoneBusinessProfileResponse getInstance(UnmarshallerContext context) {
-		return	ModifyPhoneBusinessProfileResponseUnmarshaller.unmarshall(this, context);
+	public UpdateConversationalAutomationResponse getInstance(UnmarshallerContext context) {
+		return	UpdateConversationalAutomationResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

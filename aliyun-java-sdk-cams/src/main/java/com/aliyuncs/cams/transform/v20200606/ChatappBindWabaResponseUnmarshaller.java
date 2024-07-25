@@ -24,9 +24,10 @@ public class ChatappBindWabaResponseUnmarshaller {
 	public static ChatappBindWabaResponse unmarshall(ChatappBindWabaResponse chatappBindWabaResponse, UnmarshallerContext _ctx) {
 		
 		chatappBindWabaResponse.setRequestId(_ctx.stringValue("ChatappBindWabaResponse.RequestId"));
-		chatappBindWabaResponse.setCode(_ctx.stringValue("ChatappBindWabaResponse.Code"));
-		chatappBindWabaResponse.setMessage(_ctx.stringValue("ChatappBindWabaResponse.Message"));
 		chatappBindWabaResponse.setAccessDeniedDetail(_ctx.stringValue("ChatappBindWabaResponse.AccessDeniedDetail"));
+		chatappBindWabaResponse.setMessage(_ctx.stringValue("ChatappBindWabaResponse.Message"));
+		chatappBindWabaResponse.setCode(_ctx.stringValue("ChatappBindWabaResponse.Code"));
+		chatappBindWabaResponse.setSuccess(_ctx.booleanValue("ChatappBindWabaResponse.Success"));
 
 		Data data = new Data();
 		data.setCustSpaceId(_ctx.stringValue("ChatappBindWabaResponse.Data.CustSpaceId"));

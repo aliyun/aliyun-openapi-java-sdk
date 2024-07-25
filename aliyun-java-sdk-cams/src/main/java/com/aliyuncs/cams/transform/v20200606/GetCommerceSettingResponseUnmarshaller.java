@@ -24,8 +24,10 @@ public class GetCommerceSettingResponseUnmarshaller {
 	public static GetCommerceSettingResponse unmarshall(GetCommerceSettingResponse getCommerceSettingResponse, UnmarshallerContext _ctx) {
 		
 		getCommerceSettingResponse.setRequestId(_ctx.stringValue("GetCommerceSettingResponse.RequestId"));
-		getCommerceSettingResponse.setCode(_ctx.stringValue("GetCommerceSettingResponse.Code"));
+		getCommerceSettingResponse.setAccessDeniedDetail(_ctx.stringValue("GetCommerceSettingResponse.AccessDeniedDetail"));
 		getCommerceSettingResponse.setMessage(_ctx.stringValue("GetCommerceSettingResponse.Message"));
+		getCommerceSettingResponse.setCode(_ctx.stringValue("GetCommerceSettingResponse.Code"));
+		getCommerceSettingResponse.setSuccess(_ctx.booleanValue("GetCommerceSettingResponse.Success"));
 
 		Data data = new Data();
 		data.setCartEnable(_ctx.booleanValue("GetCommerceSettingResponse.Data.CartEnable"));

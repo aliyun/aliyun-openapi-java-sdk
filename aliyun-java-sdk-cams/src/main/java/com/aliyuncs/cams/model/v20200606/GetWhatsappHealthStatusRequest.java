@@ -22,24 +22,28 @@ import com.aliyuncs.cams.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetChatappVerifyCodeRequest extends RpcAcsRequest<GetChatappVerifyCodeResponse> {
+public class GetWhatsappHealthStatusRequest extends RpcAcsRequest<GetWhatsappHealthStatusResponse> {
 	   
 
 	private Long resourceOwnerId;
 
+	private String nodeType;
+
 	private String phoneNumber;
 
-	private String locale;
-
-	private String method;
+	private String language;
 
 	private String resourceOwnerAccount;
 
 	private Long ownerId;
 
+	private String wabaId;
+
 	private String custSpaceId;
-	public GetChatappVerifyCodeRequest() {
-		super("cams", "2020-06-06", "GetChatappVerifyCode", "cams");
+
+	private String templateCode;
+	public GetWhatsappHealthStatusRequest() {
+		super("cams", "2020-06-06", "GetWhatsappHealthStatus", "cams");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -58,6 +62,17 @@ public class GetChatappVerifyCodeRequest extends RpcAcsRequest<GetChatappVerifyC
 		}
 	}
 
+	public String getNodeType() {
+		return this.nodeType;
+	}
+
+	public void setNodeType(String nodeType) {
+		this.nodeType = nodeType;
+		if(nodeType != null){
+			putQueryParameter("NodeType", nodeType);
+		}
+	}
+
 	public String getPhoneNumber() {
 		return this.phoneNumber;
 	}
@@ -69,25 +84,14 @@ public class GetChatappVerifyCodeRequest extends RpcAcsRequest<GetChatappVerifyC
 		}
 	}
 
-	public String getLocale() {
-		return this.locale;
+	public String getLanguage() {
+		return this.language;
 	}
 
-	public void setLocale(String locale) {
-		this.locale = locale;
-		if(locale != null){
-			putQueryParameter("Locale", locale);
-		}
-	}
-
-	public String getBizMethod() {
-		return this.method;
-	}
-
-	public void setBizMethod(String method) {
-		this.method = method;
-		if(method != null){
-			putQueryParameter("Method", method);
+	public void setLanguage(String language) {
+		this.language = language;
+		if(language != null){
+			putQueryParameter("Language", language);
 		}
 	}
 
@@ -113,6 +117,17 @@ public class GetChatappVerifyCodeRequest extends RpcAcsRequest<GetChatappVerifyC
 		}
 	}
 
+	public String getWabaId() {
+		return this.wabaId;
+	}
+
+	public void setWabaId(String wabaId) {
+		this.wabaId = wabaId;
+		if(wabaId != null){
+			putQueryParameter("WabaId", wabaId);
+		}
+	}
+
 	public String getCustSpaceId() {
 		return this.custSpaceId;
 	}
@@ -124,9 +139,20 @@ public class GetChatappVerifyCodeRequest extends RpcAcsRequest<GetChatappVerifyC
 		}
 	}
 
+	public String getTemplateCode() {
+		return this.templateCode;
+	}
+
+	public void setTemplateCode(String templateCode) {
+		this.templateCode = templateCode;
+		if(templateCode != null){
+			putQueryParameter("TemplateCode", templateCode);
+		}
+	}
+
 	@Override
-	public Class<GetChatappVerifyCodeResponse> getResponseClass() {
-		return GetChatappVerifyCodeResponse.class;
+	public Class<GetWhatsappHealthStatusResponse> getResponseClass() {
+		return GetWhatsappHealthStatusResponse.class;
 	}
 
 }

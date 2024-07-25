@@ -15,6 +15,9 @@
 package com.aliyuncs.cams.model.v20200606;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cams.Endpoint;
 
@@ -22,24 +25,28 @@ import com.aliyuncs.cams.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetChatappVerifyCodeRequest extends RpcAcsRequest<GetChatappVerifyCodeResponse> {
+public class UpdateConversationalAutomationRequest extends RpcAcsRequest<UpdateConversationalAutomationResponse> {
 	   
 
 	private Long resourceOwnerId;
 
 	private String phoneNumber;
 
-	private String locale;
+	private Boolean enableWelcomeMessage;
 
-	private String method;
+	@SerializedName("commands")
+	private List<Commands> commands;
+
+	@SerializedName("prompts")
+	private List<String> prompts;
 
 	private String resourceOwnerAccount;
 
 	private Long ownerId;
 
 	private String custSpaceId;
-	public GetChatappVerifyCodeRequest() {
-		super("cams", "2020-06-06", "GetChatappVerifyCode", "cams");
+	public UpdateConversationalAutomationRequest() {
+		super("cams", "2020-06-06", "UpdateConversationalAutomation", "cams");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -69,26 +76,37 @@ public class GetChatappVerifyCodeRequest extends RpcAcsRequest<GetChatappVerifyC
 		}
 	}
 
-	public String getLocale() {
-		return this.locale;
+	public Boolean getEnableWelcomeMessage() {
+		return this.enableWelcomeMessage;
 	}
 
-	public void setLocale(String locale) {
-		this.locale = locale;
-		if(locale != null){
-			putQueryParameter("Locale", locale);
+	public void setEnableWelcomeMessage(Boolean enableWelcomeMessage) {
+		this.enableWelcomeMessage = enableWelcomeMessage;
+		if(enableWelcomeMessage != null){
+			putQueryParameter("EnableWelcomeMessage", enableWelcomeMessage.toString());
 		}
 	}
 
-	public String getBizMethod() {
-		return this.method;
+	public List<Commands> getCommands() {
+		return this.commands;
 	}
 
-	public void setBizMethod(String method) {
-		this.method = method;
-		if(method != null){
-			putQueryParameter("Method", method);
-		}
+	public void setCommands(List<Commands> commands) {
+		this.commands = commands;	
+		if (commands != null) {
+			putQueryParameter("Commands" , new Gson().toJson(commands));
+		}	
+	}
+
+	public List<String> getPrompts() {
+		return this.prompts;
+	}
+
+	public void setPrompts(List<String> prompts) {
+		this.prompts = prompts;	
+		if (prompts != null) {
+			putQueryParameter("Prompts" , new Gson().toJson(prompts));
+		}	
 	}
 
 	public String getResourceOwnerAccount() {
@@ -124,9 +142,34 @@ public class GetChatappVerifyCodeRequest extends RpcAcsRequest<GetChatappVerifyC
 		}
 	}
 
+	public static class Commands {
+
+		@SerializedName("CommandDescription")
+		private String commandDescription;
+
+		@SerializedName("CommandName")
+		private String commandName;
+
+		public String getCommandDescription() {
+			return this.commandDescription;
+		}
+
+		public void setCommandDescription(String commandDescription) {
+			this.commandDescription = commandDescription;
+		}
+
+		public String getCommandName() {
+			return this.commandName;
+		}
+
+		public void setCommandName(String commandName) {
+			this.commandName = commandName;
+		}
+	}
+
 	@Override
-	public Class<GetChatappVerifyCodeResponse> getResponseClass() {
-		return GetChatappVerifyCodeResponse.class;
+	public Class<UpdateConversationalAutomationResponse> getResponseClass() {
+		return UpdateConversationalAutomationResponse.class;
 	}
 
 }

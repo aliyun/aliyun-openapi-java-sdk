@@ -14,15 +14,16 @@
 
 package com.aliyuncs.cams.model.v20200606;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cams.transform.v20200606.QueryWabaBusinessInfoResponseUnmarshaller;
+import com.aliyuncs.cams.transform.v20200606.GetConversationalAutomationResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class QueryWabaBusinessInfoResponse extends AcsResponse {
+public class GetConversationalAutomationResponse extends AcsResponse {
 
 	private String accessDeniedDetail;
 
@@ -86,50 +87,73 @@ public class QueryWabaBusinessInfoResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String vertical;
+		private String phoneNumber;
 
-		private String verificationStatus;
+		private Boolean enableWelcomeMessage;
 
-		private String businessName;
+		private List<CommandsItem> commands;
 
-		private String businessId;
+		private List<String> prompts;
 
-		public String getVertical() {
-			return this.vertical;
+		public String getPhoneNumber() {
+			return this.phoneNumber;
 		}
 
-		public void setVertical(String vertical) {
-			this.vertical = vertical;
+		public void setPhoneNumber(String phoneNumber) {
+			this.phoneNumber = phoneNumber;
 		}
 
-		public String getVerificationStatus() {
-			return this.verificationStatus;
+		public Boolean getEnableWelcomeMessage() {
+			return this.enableWelcomeMessage;
 		}
 
-		public void setVerificationStatus(String verificationStatus) {
-			this.verificationStatus = verificationStatus;
+		public void setEnableWelcomeMessage(Boolean enableWelcomeMessage) {
+			this.enableWelcomeMessage = enableWelcomeMessage;
 		}
 
-		public String getBusinessName() {
-			return this.businessName;
+		public List<CommandsItem> getCommands() {
+			return this.commands;
 		}
 
-		public void setBusinessName(String businessName) {
-			this.businessName = businessName;
+		public void setCommands(List<CommandsItem> commands) {
+			this.commands = commands;
 		}
 
-		public String getBusinessId() {
-			return this.businessId;
+		public List<String> getPrompts() {
+			return this.prompts;
 		}
 
-		public void setBusinessId(String businessId) {
-			this.businessId = businessId;
+		public void setPrompts(List<String> prompts) {
+			this.prompts = prompts;
+		}
+
+		public static class CommandsItem {
+
+			private String commandDescription;
+
+			private String commandName;
+
+			public String getCommandDescription() {
+				return this.commandDescription;
+			}
+
+			public void setCommandDescription(String commandDescription) {
+				this.commandDescription = commandDescription;
+			}
+
+			public String getCommandName() {
+				return this.commandName;
+			}
+
+			public void setCommandName(String commandName) {
+				this.commandName = commandName;
+			}
 		}
 	}
 
 	@Override
-	public QueryWabaBusinessInfoResponse getInstance(UnmarshallerContext context) {
-		return	QueryWabaBusinessInfoResponseUnmarshaller.unmarshall(this, context);
+	public GetConversationalAutomationResponse getInstance(UnmarshallerContext context) {
+		return	GetConversationalAutomationResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

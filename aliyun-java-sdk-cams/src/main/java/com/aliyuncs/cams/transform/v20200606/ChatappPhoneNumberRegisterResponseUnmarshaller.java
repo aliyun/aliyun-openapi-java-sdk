@@ -23,9 +23,10 @@ public class ChatappPhoneNumberRegisterResponseUnmarshaller {
 	public static ChatappPhoneNumberRegisterResponse unmarshall(ChatappPhoneNumberRegisterResponse chatappPhoneNumberRegisterResponse, UnmarshallerContext _ctx) {
 		
 		chatappPhoneNumberRegisterResponse.setRequestId(_ctx.stringValue("ChatappPhoneNumberRegisterResponse.RequestId"));
-		chatappPhoneNumberRegisterResponse.setCode(_ctx.stringValue("ChatappPhoneNumberRegisterResponse.Code"));
-		chatappPhoneNumberRegisterResponse.setMessage(_ctx.stringValue("ChatappPhoneNumberRegisterResponse.Message"));
 		chatappPhoneNumberRegisterResponse.setAccessDeniedDetail(_ctx.stringValue("ChatappPhoneNumberRegisterResponse.AccessDeniedDetail"));
+		chatappPhoneNumberRegisterResponse.setMessage(_ctx.stringValue("ChatappPhoneNumberRegisterResponse.Message"));
+		chatappPhoneNumberRegisterResponse.setCode(_ctx.stringValue("ChatappPhoneNumberRegisterResponse.Code"));
+		chatappPhoneNumberRegisterResponse.setSuccess(_ctx.booleanValue("ChatappPhoneNumberRegisterResponse.Success"));
 	 
 	 	return chatappPhoneNumberRegisterResponse;
 	}

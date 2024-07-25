@@ -101,6 +101,8 @@ public class ListChatappTemplateResponse extends AcsResponse {
 
 		private String reason;
 
+		private Long lastUpdateTime;
+
 		public String getTemplateName() {
 			return this.templateName;
 		}
@@ -155,6 +157,14 @@ public class ListChatappTemplateResponse extends AcsResponse {
 
 		public void setReason(String reason) {
 			this.reason = reason;
+		}
+
+		public Long getLastUpdateTime() {
+			return this.lastUpdateTime;
+		}
+
+		public void setLastUpdateTime(Long lastUpdateTime) {
+			this.lastUpdateTime = lastUpdateTime;
 		}
 	}
 

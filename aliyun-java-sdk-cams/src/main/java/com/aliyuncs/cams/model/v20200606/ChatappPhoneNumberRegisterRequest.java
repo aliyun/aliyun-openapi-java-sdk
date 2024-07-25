@@ -25,7 +25,13 @@ import com.aliyuncs.cams.Endpoint;
 public class ChatappPhoneNumberRegisterRequest extends RpcAcsRequest<ChatappPhoneNumberRegisterResponse> {
 	   
 
+	private Long resourceOwnerId;
+
 	private String phoneNumber;
+
+	private String resourceOwnerAccount;
+
+	private Long ownerId;
 
 	private String custSpaceId;
 	public ChatappPhoneNumberRegisterRequest() {
@@ -37,6 +43,17 @@ public class ChatappPhoneNumberRegisterRequest extends RpcAcsRequest<ChatappPhon
 		} catch (Exception e) {}
 	}
 
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
 	public String getPhoneNumber() {
 		return this.phoneNumber;
 	}
@@ -44,7 +61,29 @@ public class ChatappPhoneNumberRegisterRequest extends RpcAcsRequest<ChatappPhon
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 		if(phoneNumber != null){
-			putBodyParameter("PhoneNumber", phoneNumber);
+			putQueryParameter("PhoneNumber", phoneNumber);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
@@ -55,7 +94,7 @@ public class ChatappPhoneNumberRegisterRequest extends RpcAcsRequest<ChatappPhon
 	public void setCustSpaceId(String custSpaceId) {
 		this.custSpaceId = custSpaceId;
 		if(custSpaceId != null){
-			putBodyParameter("CustSpaceId", custSpaceId);
+			putQueryParameter("CustSpaceId", custSpaceId);
 		}
 	}
 

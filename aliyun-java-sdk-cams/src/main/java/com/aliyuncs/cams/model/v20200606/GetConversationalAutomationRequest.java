@@ -22,24 +22,20 @@ import com.aliyuncs.cams.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetChatappVerifyCodeRequest extends RpcAcsRequest<GetChatappVerifyCodeResponse> {
+public class GetConversationalAutomationRequest extends RpcAcsRequest<GetConversationalAutomationResponse> {
 	   
 
 	private Long resourceOwnerId;
 
 	private String phoneNumber;
 
-	private String locale;
-
-	private String method;
-
 	private String resourceOwnerAccount;
 
 	private Long ownerId;
 
 	private String custSpaceId;
-	public GetChatappVerifyCodeRequest() {
-		super("cams", "2020-06-06", "GetChatappVerifyCode", "cams");
+	public GetConversationalAutomationRequest() {
+		super("cams", "2020-06-06", "GetConversationalAutomation", "cams");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -66,28 +62,6 @@ public class GetChatappVerifyCodeRequest extends RpcAcsRequest<GetChatappVerifyC
 		this.phoneNumber = phoneNumber;
 		if(phoneNumber != null){
 			putQueryParameter("PhoneNumber", phoneNumber);
-		}
-	}
-
-	public String getLocale() {
-		return this.locale;
-	}
-
-	public void setLocale(String locale) {
-		this.locale = locale;
-		if(locale != null){
-			putQueryParameter("Locale", locale);
-		}
-	}
-
-	public String getBizMethod() {
-		return this.method;
-	}
-
-	public void setBizMethod(String method) {
-		this.method = method;
-		if(method != null){
-			putQueryParameter("Method", method);
 		}
 	}
 
@@ -125,8 +99,8 @@ public class GetChatappVerifyCodeRequest extends RpcAcsRequest<GetChatappVerifyC
 	}
 
 	@Override
-	public Class<GetChatappVerifyCodeResponse> getResponseClass() {
-		return GetChatappVerifyCodeResponse.class;
+	public Class<GetConversationalAutomationResponse> getResponseClass() {
+		return GetConversationalAutomationResponse.class;
 	}
 
 }

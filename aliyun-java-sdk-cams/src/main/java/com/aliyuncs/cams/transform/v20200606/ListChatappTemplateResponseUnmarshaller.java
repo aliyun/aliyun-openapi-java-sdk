@@ -42,6 +42,7 @@ public class ListChatappTemplateResponseUnmarshaller {
 			template.setCategory(_ctx.stringValue("ListChatappTemplateResponse.ListTemplate["+ i +"].Category"));
 			template.setTemplateType(_ctx.stringValue("ListChatappTemplateResponse.ListTemplate["+ i +"].TemplateType"));
 			template.setReason(_ctx.stringValue("ListChatappTemplateResponse.ListTemplate["+ i +"].Reason"));
+			template.setLastUpdateTime(_ctx.longValue("ListChatappTemplateResponse.ListTemplate["+ i +"].LastUpdateTime"));
 
 			listTemplate.add(template);
 		}

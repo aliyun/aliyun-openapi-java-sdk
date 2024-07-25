@@ -25,15 +25,33 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryPhoneBusinessProfileResponse extends AcsResponse {
 
+	private String accessDeniedDetail;
+
+	private String message;
+
 	private String requestId;
 
 	private String code;
 
-	private String message;
-
-	private String accessDeniedDetail;
+	private Boolean success;
 
 	private Data data;
+
+	public String getAccessDeniedDetail() {
+		return this.accessDeniedDetail;
+	}
+
+	public void setAccessDeniedDetail(String accessDeniedDetail) {
+		this.accessDeniedDetail = accessDeniedDetail;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -51,20 +69,12 @@ public class QueryPhoneBusinessProfileResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public String getAccessDeniedDetail() {
-		return this.accessDeniedDetail;
-	}
-
-	public void setAccessDeniedDetail(String accessDeniedDetail) {
-		this.accessDeniedDetail = accessDeniedDetail;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -77,13 +87,13 @@ public class QueryPhoneBusinessProfileResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String address;
+		private String vertical;
 
 		private String description;
 
-		private String vertical;
-
 		private String email;
+
+		private String address;
 
 		private String profilePictureUrl;
 
@@ -91,12 +101,12 @@ public class QueryPhoneBusinessProfileResponse extends AcsResponse {
 
 		private List<String> websites;
 
-		public String getAddress() {
-			return this.address;
+		public String getVertical() {
+			return this.vertical;
 		}
 
-		public void setAddress(String address) {
-			this.address = address;
+		public void setVertical(String vertical) {
+			this.vertical = vertical;
 		}
 
 		public String getDescription() {
@@ -107,20 +117,20 @@ public class QueryPhoneBusinessProfileResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public String getVertical() {
-			return this.vertical;
-		}
-
-		public void setVertical(String vertical) {
-			this.vertical = vertical;
-		}
-
 		public String getEmail() {
 			return this.email;
 		}
 
 		public void setEmail(String email) {
 			this.email = email;
+		}
+
+		public String getAddress() {
+			return this.address;
+		}
+
+		public void setAddress(String address) {
+			this.address = address;
 		}
 
 		public String getProfilePictureUrl() {

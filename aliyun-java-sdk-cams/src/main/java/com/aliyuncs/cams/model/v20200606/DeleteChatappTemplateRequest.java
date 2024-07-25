@@ -25,6 +25,8 @@ import com.aliyuncs.cams.Endpoint;
 public class DeleteChatappTemplateRequest extends RpcAcsRequest<DeleteChatappTemplateResponse> {
 	   
 
+	private Long resourceOwnerId;
+
 	private String custWabaId;
 
 	private String language;
@@ -34,6 +36,10 @@ public class DeleteChatappTemplateRequest extends RpcAcsRequest<DeleteChatappTem
 	private String templateName;
 
 	private String isvCode;
+
+	private String resourceOwnerAccount;
+
+	private Long ownerId;
 
 	private String custSpaceId;
 
@@ -45,6 +51,17 @@ public class DeleteChatappTemplateRequest extends RpcAcsRequest<DeleteChatappTem
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public String getCustWabaId() {
@@ -99,6 +116,28 @@ public class DeleteChatappTemplateRequest extends RpcAcsRequest<DeleteChatappTem
 		this.isvCode = isvCode;
 		if(isvCode != null){
 			putQueryParameter("IsvCode", isvCode);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

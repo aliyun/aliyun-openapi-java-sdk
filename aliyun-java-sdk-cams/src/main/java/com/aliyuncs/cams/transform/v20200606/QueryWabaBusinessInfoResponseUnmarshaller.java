@@ -24,15 +24,16 @@ public class QueryWabaBusinessInfoResponseUnmarshaller {
 	public static QueryWabaBusinessInfoResponse unmarshall(QueryWabaBusinessInfoResponse queryWabaBusinessInfoResponse, UnmarshallerContext _ctx) {
 		
 		queryWabaBusinessInfoResponse.setRequestId(_ctx.stringValue("QueryWabaBusinessInfoResponse.RequestId"));
-		queryWabaBusinessInfoResponse.setCode(_ctx.stringValue("QueryWabaBusinessInfoResponse.Code"));
-		queryWabaBusinessInfoResponse.setMessage(_ctx.stringValue("QueryWabaBusinessInfoResponse.Message"));
 		queryWabaBusinessInfoResponse.setAccessDeniedDetail(_ctx.stringValue("QueryWabaBusinessInfoResponse.AccessDeniedDetail"));
+		queryWabaBusinessInfoResponse.setMessage(_ctx.stringValue("QueryWabaBusinessInfoResponse.Message"));
+		queryWabaBusinessInfoResponse.setCode(_ctx.stringValue("QueryWabaBusinessInfoResponse.Code"));
+		queryWabaBusinessInfoResponse.setSuccess(_ctx.booleanValue("QueryWabaBusinessInfoResponse.Success"));
 
 		Data data = new Data();
-		data.setBusinessId(_ctx.stringValue("QueryWabaBusinessInfoResponse.Data.BusinessId"));
-		data.setBusinessName(_ctx.stringValue("QueryWabaBusinessInfoResponse.Data.BusinessName"));
-		data.setVerificationStatus(_ctx.stringValue("QueryWabaBusinessInfoResponse.Data.VerificationStatus"));
 		data.setVertical(_ctx.stringValue("QueryWabaBusinessInfoResponse.Data.Vertical"));
+		data.setVerificationStatus(_ctx.stringValue("QueryWabaBusinessInfoResponse.Data.VerificationStatus"));
+		data.setBusinessName(_ctx.stringValue("QueryWabaBusinessInfoResponse.Data.BusinessName"));
+		data.setBusinessId(_ctx.stringValue("QueryWabaBusinessInfoResponse.Data.BusinessId"));
 		queryWabaBusinessInfoResponse.setData(data);
 	 
 	 	return queryWabaBusinessInfoResponse;

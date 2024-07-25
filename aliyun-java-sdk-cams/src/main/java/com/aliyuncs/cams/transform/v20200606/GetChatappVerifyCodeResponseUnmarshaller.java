@@ -23,9 +23,10 @@ public class GetChatappVerifyCodeResponseUnmarshaller {
 	public static GetChatappVerifyCodeResponse unmarshall(GetChatappVerifyCodeResponse getChatappVerifyCodeResponse, UnmarshallerContext _ctx) {
 		
 		getChatappVerifyCodeResponse.setRequestId(_ctx.stringValue("GetChatappVerifyCodeResponse.RequestId"));
-		getChatappVerifyCodeResponse.setCode(_ctx.stringValue("GetChatappVerifyCodeResponse.Code"));
-		getChatappVerifyCodeResponse.setMessage(_ctx.stringValue("GetChatappVerifyCodeResponse.Message"));
 		getChatappVerifyCodeResponse.setAccessDeniedDetail(_ctx.stringValue("GetChatappVerifyCodeResponse.AccessDeniedDetail"));
+		getChatappVerifyCodeResponse.setMessage(_ctx.stringValue("GetChatappVerifyCodeResponse.Message"));
+		getChatappVerifyCodeResponse.setCode(_ctx.stringValue("GetChatappVerifyCodeResponse.Code"));
+		getChatappVerifyCodeResponse.setSuccess(_ctx.booleanValue("GetChatappVerifyCodeResponse.Success"));
 	 
 	 	return getChatappVerifyCodeResponse;
 	}

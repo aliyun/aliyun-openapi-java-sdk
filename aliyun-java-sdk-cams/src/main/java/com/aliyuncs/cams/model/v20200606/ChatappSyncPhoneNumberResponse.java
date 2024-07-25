@@ -25,15 +25,33 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ChatappSyncPhoneNumberResponse extends AcsResponse {
 
+	private String accessDeniedDetail;
+
+	private String message;
+
 	private String requestId;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
-	private String accessDeniedDetail;
+	private List<Content> phoneNumbers;
 
-	private List<PhoneNumbersItem> phoneNumbers;
+	public String getAccessDeniedDetail() {
+		return this.accessDeniedDetail;
+	}
+
+	public void setAccessDeniedDetail(String accessDeniedDetail) {
+		this.accessDeniedDetail = accessDeniedDetail;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -51,62 +69,86 @@ public class ChatappSyncPhoneNumberResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
-	public String getAccessDeniedDetail() {
-		return this.accessDeniedDetail;
-	}
-
-	public void setAccessDeniedDetail(String accessDeniedDetail) {
-		this.accessDeniedDetail = accessDeniedDetail;
-	}
-
-	public List<PhoneNumbersItem> getPhoneNumbers() {
+	public List<Content> getPhoneNumbers() {
 		return this.phoneNumbers;
 	}
 
-	public void setPhoneNumbers(List<PhoneNumbersItem> phoneNumbers) {
+	public void setPhoneNumbers(List<Content> phoneNumbers) {
 		this.phoneNumbers = phoneNumbers;
 	}
 
-	public static class PhoneNumbersItem {
+	public static class Content {
 
-		private String upQueue;
+		private String verifiedName;
+
+		private String status;
+
+		private String qualityRating;
+
+		private String codeVerificationStatus;
+
+		private String newNameStatus;
 
 		private String phoneNumber;
 
 		private String statusQueue;
 
-		private String verifiedName;
-
-		private String statusCallbackUrl;
-
-		private String upCallbackUrl;
-
-		private String qualityRating;
-
-		private String status;
-
-		private String codeVerificationStatus;
+		private String upQueue;
 
 		private String nameStatus;
 
+		private String upCallbackUrl;
+
 		private String messagingLimitTier;
 
-		private String newNameStatus;
+		private String statusCallbackUrl;
 
-		public String getUpQueue() {
-			return this.upQueue;
+		public String getVerifiedName() {
+			return this.verifiedName;
 		}
 
-		public void setUpQueue(String upQueue) {
-			this.upQueue = upQueue;
+		public void setVerifiedName(String verifiedName) {
+			this.verifiedName = verifiedName;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getQualityRating() {
+			return this.qualityRating;
+		}
+
+		public void setQualityRating(String qualityRating) {
+			this.qualityRating = qualityRating;
+		}
+
+		public String getCodeVerificationStatus() {
+			return this.codeVerificationStatus;
+		}
+
+		public void setCodeVerificationStatus(String codeVerificationStatus) {
+			this.codeVerificationStatus = codeVerificationStatus;
+		}
+
+		public String getNewNameStatus() {
+			return this.newNameStatus;
+		}
+
+		public void setNewNameStatus(String newNameStatus) {
+			this.newNameStatus = newNameStatus;
 		}
 
 		public String getPhoneNumber() {
@@ -125,52 +167,12 @@ public class ChatappSyncPhoneNumberResponse extends AcsResponse {
 			this.statusQueue = statusQueue;
 		}
 
-		public String getVerifiedName() {
-			return this.verifiedName;
+		public String getUpQueue() {
+			return this.upQueue;
 		}
 
-		public void setVerifiedName(String verifiedName) {
-			this.verifiedName = verifiedName;
-		}
-
-		public String getStatusCallbackUrl() {
-			return this.statusCallbackUrl;
-		}
-
-		public void setStatusCallbackUrl(String statusCallbackUrl) {
-			this.statusCallbackUrl = statusCallbackUrl;
-		}
-
-		public String getUpCallbackUrl() {
-			return this.upCallbackUrl;
-		}
-
-		public void setUpCallbackUrl(String upCallbackUrl) {
-			this.upCallbackUrl = upCallbackUrl;
-		}
-
-		public String getQualityRating() {
-			return this.qualityRating;
-		}
-
-		public void setQualityRating(String qualityRating) {
-			this.qualityRating = qualityRating;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getCodeVerificationStatus() {
-			return this.codeVerificationStatus;
-		}
-
-		public void setCodeVerificationStatus(String codeVerificationStatus) {
-			this.codeVerificationStatus = codeVerificationStatus;
+		public void setUpQueue(String upQueue) {
+			this.upQueue = upQueue;
 		}
 
 		public String getNameStatus() {
@@ -181,6 +183,14 @@ public class ChatappSyncPhoneNumberResponse extends AcsResponse {
 			this.nameStatus = nameStatus;
 		}
 
+		public String getUpCallbackUrl() {
+			return this.upCallbackUrl;
+		}
+
+		public void setUpCallbackUrl(String upCallbackUrl) {
+			this.upCallbackUrl = upCallbackUrl;
+		}
+
 		public String getMessagingLimitTier() {
 			return this.messagingLimitTier;
 		}
@@ -189,12 +199,12 @@ public class ChatappSyncPhoneNumberResponse extends AcsResponse {
 			this.messagingLimitTier = messagingLimitTier;
 		}
 
-		public String getNewNameStatus() {
-			return this.newNameStatus;
+		public String getStatusCallbackUrl() {
+			return this.statusCallbackUrl;
 		}
 
-		public void setNewNameStatus(String newNameStatus) {
-			this.newNameStatus = newNameStatus;
+		public void setStatusCallbackUrl(String statusCallbackUrl) {
+			this.statusCallbackUrl = statusCallbackUrl;
 		}
 	}
 

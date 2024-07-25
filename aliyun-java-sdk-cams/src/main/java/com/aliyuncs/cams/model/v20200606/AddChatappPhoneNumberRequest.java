@@ -25,6 +25,8 @@ import com.aliyuncs.cams.Endpoint;
 public class AddChatappPhoneNumberRequest extends RpcAcsRequest<AddChatappPhoneNumberResponse> {
 	   
 
+	private Long resourceOwnerId;
+
 	private String preValidateId;
 
 	private String verifiedName;
@@ -32,6 +34,10 @@ public class AddChatappPhoneNumberRequest extends RpcAcsRequest<AddChatappPhoneN
 	private String phoneNumber;
 
 	private String cc;
+
+	private String resourceOwnerAccount;
+
+	private Long ownerId;
 
 	private String custSpaceId;
 	public AddChatappPhoneNumberRequest() {
@@ -43,6 +49,17 @@ public class AddChatappPhoneNumberRequest extends RpcAcsRequest<AddChatappPhoneN
 		} catch (Exception e) {}
 	}
 
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
 	public String getPreValidateId() {
 		return this.preValidateId;
 	}
@@ -50,7 +67,7 @@ public class AddChatappPhoneNumberRequest extends RpcAcsRequest<AddChatappPhoneN
 	public void setPreValidateId(String preValidateId) {
 		this.preValidateId = preValidateId;
 		if(preValidateId != null){
-			putBodyParameter("PreValidateId", preValidateId);
+			putQueryParameter("PreValidateId", preValidateId);
 		}
 	}
 
@@ -61,7 +78,7 @@ public class AddChatappPhoneNumberRequest extends RpcAcsRequest<AddChatappPhoneN
 	public void setVerifiedName(String verifiedName) {
 		this.verifiedName = verifiedName;
 		if(verifiedName != null){
-			putBodyParameter("VerifiedName", verifiedName);
+			putQueryParameter("VerifiedName", verifiedName);
 		}
 	}
 
@@ -72,7 +89,7 @@ public class AddChatappPhoneNumberRequest extends RpcAcsRequest<AddChatappPhoneN
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 		if(phoneNumber != null){
-			putBodyParameter("PhoneNumber", phoneNumber);
+			putQueryParameter("PhoneNumber", phoneNumber);
 		}
 	}
 
@@ -83,7 +100,29 @@ public class AddChatappPhoneNumberRequest extends RpcAcsRequest<AddChatappPhoneN
 	public void setCc(String cc) {
 		this.cc = cc;
 		if(cc != null){
-			putBodyParameter("Cc", cc);
+			putQueryParameter("Cc", cc);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
@@ -94,7 +133,7 @@ public class AddChatappPhoneNumberRequest extends RpcAcsRequest<AddChatappPhoneN
 	public void setCustSpaceId(String custSpaceId) {
 		this.custSpaceId = custSpaceId;
 		if(custSpaceId != null){
-			putBodyParameter("CustSpaceId", custSpaceId);
+			putQueryParameter("CustSpaceId", custSpaceId);
 		}
 	}
 

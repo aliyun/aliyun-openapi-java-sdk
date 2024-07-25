@@ -25,11 +25,17 @@ import com.aliyuncs.cams.Endpoint;
 public class UpdateCommerceSettingRequest extends RpcAcsRequest<UpdateCommerceSettingResponse> {
 	   
 
+	private Long resourceOwnerId;
+
 	private String phoneNumber;
 
 	private Boolean catalogVisible;
 
 	private Boolean cartEnable;
+
+	private String resourceOwnerAccount;
+
+	private Long ownerId;
 
 	private String custSpaceId;
 	public UpdateCommerceSettingRequest() {
@@ -39,6 +45,17 @@ public class UpdateCommerceSettingRequest extends RpcAcsRequest<UpdateCommerceSe
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public String getPhoneNumber() {
@@ -71,6 +88,28 @@ public class UpdateCommerceSettingRequest extends RpcAcsRequest<UpdateCommerceSe
 		this.cartEnable = cartEnable;
 		if(cartEnable != null){
 			putQueryParameter("CartEnable", cartEnable.toString());
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
