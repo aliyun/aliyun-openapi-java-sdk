@@ -134,6 +134,7 @@
             <artifactId>org.jacoco.agent</artifactId>
             <version>0.8.12</version>
             <classifier>runtime</classifier>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.ini4j</groupId>
