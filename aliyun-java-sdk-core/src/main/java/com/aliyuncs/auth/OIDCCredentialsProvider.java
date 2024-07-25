@@ -16,6 +16,7 @@ import com.aliyuncs.http.FormatType;
 import com.aliyuncs.http.HttpRequest;
 import com.aliyuncs.http.HttpResponse;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.http.UserAgentConfig;
 import com.aliyuncs.http.clients.CompatibleUrlConnClient;
 import com.aliyuncs.utils.AuthUtils;
 import com.aliyuncs.utils.ParameterHelper;
@@ -148,6 +149,7 @@ public class OIDCCredentialsProvider implements AlibabaCloudCredentialsProvider 
         httpRequest.setHttpContentType(FormatType.FORM);
         httpRequest.setSysConnectTimeout(1000);
         httpRequest.setSysReadTimeout(3000);
+        httpRequest.putHeaderParameter("UserAgent", UserAgentConfig.resolve(null, null));
         String oidcToken = AuthUtils.readFile(oidcTokenFilePath);
         if (oidcToken == null) {
             throw new ClientException("Read OIDC token failed");
