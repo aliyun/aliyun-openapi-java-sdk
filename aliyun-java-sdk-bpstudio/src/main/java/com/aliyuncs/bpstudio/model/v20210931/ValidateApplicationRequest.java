@@ -24,12 +24,25 @@ import com.aliyuncs.http.MethodType;
 public class ValidateApplicationRequest extends RpcAcsRequest<ValidateApplicationResponse> {
 	   
 
+	private String clientToken;
+
 	private String resourceGroupId;
 
 	private String applicationId;
 	public ValidateApplicationRequest() {
 		super("BPStudio", "2021-09-31", "ValidateApplication", "bpstudio");
 		setMethod(MethodType.POST);
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putBodyParameter("ClientToken", clientToken);
+		}
 	}
 
 	public String getResourceGroupId() {

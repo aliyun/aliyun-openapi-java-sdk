@@ -24,6 +24,8 @@ import com.aliyuncs.http.MethodType;
 public class ExecuteOperationASyncRequest extends RpcAcsRequest<ExecuteOperationASyncResponse> {
 	   
 
+	private String clientToken;
+
 	private String resourceGroupId;
 
 	private String serviceType;
@@ -36,6 +38,17 @@ public class ExecuteOperationASyncRequest extends RpcAcsRequest<ExecuteOperation
 	public ExecuteOperationASyncRequest() {
 		super("BPStudio", "2021-09-31", "ExecuteOperationASync", "bpstudio");
 		setMethod(MethodType.POST);
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putBodyParameter("ClientToken", clientToken);
+		}
 	}
 
 	public String getResourceGroupId() {

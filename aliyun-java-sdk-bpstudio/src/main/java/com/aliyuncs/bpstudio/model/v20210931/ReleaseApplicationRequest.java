@@ -24,12 +24,25 @@ import com.aliyuncs.http.MethodType;
 public class ReleaseApplicationRequest extends RpcAcsRequest<ReleaseApplicationResponse> {
 	   
 
+	private String clientToken;
+
 	private String resourceGroupId;
 
 	private String applicationId;
 	public ReleaseApplicationRequest() {
 		super("BPStudio", "2021-09-31", "ReleaseApplication", "bpstudio");
 		setMethod(MethodType.POST);
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putBodyParameter("ClientToken", clientToken);
+		}
 	}
 
 	public String getResourceGroupId() {

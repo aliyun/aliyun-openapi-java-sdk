@@ -21,16 +21,22 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class DeployApplicationRequest extends RpcAcsRequest<DeployApplicationResponse> {
+public class ExecuteOperationSyncRequest extends RpcAcsRequest<ExecuteOperationSyncResponse> {
 	   
 
 	private String clientToken;
 
 	private String resourceGroupId;
 
+	private String serviceType;
+
+	private String attributes;
+
 	private String applicationId;
-	public DeployApplicationRequest() {
-		super("BPStudio", "2021-09-31", "DeployApplication", "bpstudio");
+
+	private String operation;
+	public ExecuteOperationSyncRequest() {
+		super("BPStudio", "2021-09-31", "ExecuteOperationSync", "bpstudio");
 		setMethod(MethodType.POST);
 	}
 
@@ -56,6 +62,28 @@ public class DeployApplicationRequest extends RpcAcsRequest<DeployApplicationRes
 		}
 	}
 
+	public String getServiceType() {
+		return this.serviceType;
+	}
+
+	public void setServiceType(String serviceType) {
+		this.serviceType = serviceType;
+		if(serviceType != null){
+			putBodyParameter("ServiceType", serviceType);
+		}
+	}
+
+	public String getAttributes() {
+		return this.attributes;
+	}
+
+	public void setAttributes(String attributes) {
+		this.attributes = attributes;
+		if(attributes != null){
+			putBodyParameter("Attributes", attributes);
+		}
+	}
+
 	public String getApplicationId() {
 		return this.applicationId;
 	}
@@ -63,13 +91,24 @@ public class DeployApplicationRequest extends RpcAcsRequest<DeployApplicationRes
 	public void setApplicationId(String applicationId) {
 		this.applicationId = applicationId;
 		if(applicationId != null){
-			putQueryParameter("ApplicationId", applicationId);
+			putBodyParameter("ApplicationId", applicationId);
+		}
+	}
+
+	public String getOperation() {
+		return this.operation;
+	}
+
+	public void setOperation(String operation) {
+		this.operation = operation;
+		if(operation != null){
+			putBodyParameter("Operation", operation);
 		}
 	}
 
 	@Override
-	public Class<DeployApplicationResponse> getResponseClass() {
-		return DeployApplicationResponse.class;
+	public Class<ExecuteOperationSyncResponse> getResponseClass() {
+		return ExecuteOperationSyncResponse.class;
 	}
 
 }
