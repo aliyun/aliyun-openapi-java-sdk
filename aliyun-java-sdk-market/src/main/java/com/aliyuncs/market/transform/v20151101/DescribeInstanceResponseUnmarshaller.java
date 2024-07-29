@@ -47,6 +47,8 @@ public class DescribeInstanceResponseUnmarshaller {
 		describeInstanceResponse.setProductCode(_ctx.stringValue("DescribeInstanceResponse.ProductCode"));
 		describeInstanceResponse.setSupplierName(_ctx.stringValue("DescribeInstanceResponse.SupplierName"));
 		describeInstanceResponse.setAutoRenewal(_ctx.stringValue("DescribeInstanceResponse.AutoRenewal"));
+		describeInstanceResponse.setActiveAddress(_ctx.stringValue("DescribeInstanceResponse.ActiveAddress"));
+		describeInstanceResponse.setLicenseCode(_ctx.stringValue("DescribeInstanceResponse.LicenseCode"));
 
 		RelationalData relationalData = new RelationalData();
 		relationalData.setServiceStatus(_ctx.stringValue("DescribeInstanceResponse.RelationalData.ServiceStatus"));

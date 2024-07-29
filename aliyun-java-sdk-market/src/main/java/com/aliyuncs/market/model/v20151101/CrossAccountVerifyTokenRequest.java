@@ -28,7 +28,7 @@ public class CrossAccountVerifyTokenRequest extends RpcAcsRequest<CrossAccountVe
 
 	private String token;
 	public CrossAccountVerifyTokenRequest() {
-		super("Market", "2015-11-01", "CrossAccountVerifyToken");
+		super("Market", "2015-11-01", "CrossAccountVerifyToken", "yunmarket");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

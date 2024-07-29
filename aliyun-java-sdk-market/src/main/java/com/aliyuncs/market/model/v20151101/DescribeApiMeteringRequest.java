@@ -31,7 +31,7 @@ public class DescribeApiMeteringRequest extends RpcAcsRequest<DescribeApiMeterin
 
 	private Integer pageNum;
 	public DescribeApiMeteringRequest() {
-		super("Market", "2015-11-01", "DescribeApiMetering");
+		super("Market", "2015-11-01", "DescribeApiMetering", "yunmarket");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

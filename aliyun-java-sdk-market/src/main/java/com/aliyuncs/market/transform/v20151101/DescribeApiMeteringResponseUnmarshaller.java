@@ -44,6 +44,7 @@ public class DescribeApiMeteringResponseUnmarshaller {
 			resultItem.setProductName(_ctx.stringValue("DescribeApiMeteringResponse.Result["+ i +"].ProductName"));
 			resultItem.setTotalQuota(_ctx.longValue("DescribeApiMeteringResponse.Result["+ i +"].TotalQuota"));
 			resultItem.setTotalUsage(_ctx.longValue("DescribeApiMeteringResponse.Result["+ i +"].TotalUsage"));
+			resultItem.setTotalCapacity(_ctx.longValue("DescribeApiMeteringResponse.Result["+ i +"].TotalCapacity"));
 			resultItem.setUnit(_ctx.stringValue("DescribeApiMeteringResponse.Result["+ i +"].Unit"));
 
 			result.add(resultItem);

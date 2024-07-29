@@ -27,13 +27,13 @@ public class FinishCurrentProjectNodeRequest extends RpcAcsRequest<FinishCurrent
 
 	private String templateForm;
 
-	private String instanceId;
-
 	private String remark;
+
+	private String instanceId;
 
 	private Long nodeId;
 	public FinishCurrentProjectNodeRequest() {
-		super("Market", "2015-11-01", "FinishCurrentProjectNode");
+		super("Market", "2015-11-01", "FinishCurrentProjectNode", "yunmarket");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -52,17 +52,6 @@ public class FinishCurrentProjectNodeRequest extends RpcAcsRequest<FinishCurrent
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
 	public String getRemark() {
 		return this.remark;
 	}
@@ -71,6 +60,17 @@ public class FinishCurrentProjectNodeRequest extends RpcAcsRequest<FinishCurrent
 		this.remark = remark;
 		if(remark != null){
 			putQueryParameter("Remark", remark);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

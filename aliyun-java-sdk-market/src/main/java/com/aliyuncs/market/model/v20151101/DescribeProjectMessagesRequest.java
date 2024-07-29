@@ -29,7 +29,7 @@ public class DescribeProjectMessagesRequest extends RpcAcsRequest<DescribeProjec
 
 	private Integer pageIndex;
 	public DescribeProjectMessagesRequest() {
-		super("Market", "2015-11-01", "DescribeProjectMessages");
+		super("Market", "2015-11-01", "DescribeProjectMessages", "yunmarket");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -35,7 +35,7 @@ public class AutoRenewInstanceRequest extends RpcAcsRequest<AutoRenewInstanceRes
 
 	private Long orderBizId;
 	public AutoRenewInstanceRequest() {
-		super("Market", "2015-11-01", "AutoRenewInstance");
+		super("Market", "2015-11-01", "AutoRenewInstance", "yunmarket");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

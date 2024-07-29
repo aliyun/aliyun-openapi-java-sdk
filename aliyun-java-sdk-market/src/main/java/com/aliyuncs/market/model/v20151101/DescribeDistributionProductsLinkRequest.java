@@ -31,7 +31,7 @@ public class DescribeDistributionProductsLinkRequest extends RpcAcsRequest<Descr
 	@SerializedName("codes")
 	private List<String> codes;
 	public DescribeDistributionProductsLinkRequest() {
-		super("Market", "2015-11-01", "DescribeDistributionProductsLink");
+		super("Market", "2015-11-01", "DescribeDistributionProductsLink", "yunmarket");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

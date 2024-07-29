@@ -32,7 +32,7 @@ public class DescribeDistributionProductsRequest extends RpcAcsRequest<DescribeD
 
 	private Long pageSize;
 	public DescribeDistributionProductsRequest() {
-		super("Market", "2015-11-01", "DescribeDistributionProducts");
+		super("Market", "2015-11-01", "DescribeDistributionProducts", "yunmarket");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

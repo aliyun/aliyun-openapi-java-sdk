@@ -1,3 +1,6 @@
+2024-07-29 Version: 2.0.42
+- Update DescribeApiMetering API.
+
 2023-06-20 Version: 2.0.41
 - Add DistributionProducts API.
 

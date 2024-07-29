@@ -61,6 +61,10 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 	private String autoRenewal;
 
+	private String activeAddress;
+
+	private String licenseCode;
+
 	private List<Module> modules;
 
 	private RelationalData relationalData;
@@ -207,6 +211,22 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 	public void setAutoRenewal(String autoRenewal) {
 		this.autoRenewal = autoRenewal;
+	}
+
+	public String getActiveAddress() {
+		return this.activeAddress;
+	}
+
+	public void setActiveAddress(String activeAddress) {
+		this.activeAddress = activeAddress;
+	}
+
+	public String getLicenseCode() {
+		return this.licenseCode;
+	}
+
+	public void setLicenseCode(String licenseCode) {
+		this.licenseCode = licenseCode;
 	}
 
 	public List<Module> getModules() {

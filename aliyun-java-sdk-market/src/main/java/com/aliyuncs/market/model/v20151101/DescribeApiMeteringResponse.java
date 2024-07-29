@@ -137,6 +137,8 @@ public class DescribeApiMeteringResponse extends AcsResponse {
 
 		private Long totalUsage;
 
+		private Long totalCapacity;
+
 		private String unit;
 
 		public Long getAliyunPk() {
@@ -177,6 +179,14 @@ public class DescribeApiMeteringResponse extends AcsResponse {
 
 		public void setTotalUsage(Long totalUsage) {
 			this.totalUsage = totalUsage;
+		}
+
+		public Long getTotalCapacity() {
+			return this.totalCapacity;
+		}
+
+		public void setTotalCapacity(Long totalCapacity) {
+			this.totalCapacity = totalCapacity;
 		}
 
 		public String getUnit() {
