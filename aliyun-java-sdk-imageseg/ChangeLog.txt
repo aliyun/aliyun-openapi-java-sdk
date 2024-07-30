@@ -1,3 +1,6 @@
+2024-07-30 Version: 1.1.15
+- Update SegmentCloth.
+
 2023-12-06 Version: 1.1.14
 - Update SegmentCloth.
 

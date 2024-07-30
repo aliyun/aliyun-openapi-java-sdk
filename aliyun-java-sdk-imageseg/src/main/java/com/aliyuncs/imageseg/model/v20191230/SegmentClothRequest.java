@@ -30,6 +30,8 @@ public class SegmentClothRequest extends RpcAcsRequest<SegmentClothResponse> {
 
 	private String returnForm;
 
+	private Long outMode;
+
 	private String imageURL;
 	public SegmentClothRequest() {
 		super("imageseg", "2019-12-30", "SegmentCloth", "imageseg");
@@ -61,6 +63,17 @@ public class SegmentClothRequest extends RpcAcsRequest<SegmentClothResponse> {
 		this.returnForm = returnForm;
 		if(returnForm != null){
 			putQueryParameter("ReturnForm", returnForm);
+		}
+	}
+
+	public Long getOutMode() {
+		return this.outMode;
+	}
+
+	public void setOutMode(Long outMode) {
+		this.outMode = outMode;
+		if(outMode != null){
+			putQueryParameter("OutMode", outMode.toString());
 		}
 	}
 
