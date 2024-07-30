@@ -1,3 +1,8 @@
+2024-07-30 Version: 1.0.6
+- Add RunSynchronizationJob API.
+- Add GetSynchronizationJob API.
+- Update ListSynchronizationJobs API.
+
 2023-12-21 Version: 1.0.5
 - Support vpn api.
 

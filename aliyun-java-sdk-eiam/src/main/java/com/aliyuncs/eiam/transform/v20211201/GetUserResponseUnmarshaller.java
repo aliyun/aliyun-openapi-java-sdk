@@ -54,6 +54,7 @@ public class GetUserResponseUnmarshaller {
 		user.setDescription(_ctx.stringValue("GetUserResponse.User.Description"));
 		user.setPrimaryOrganizationalUnitId(_ctx.stringValue("GetUserResponse.User.PrimaryOrganizationalUnitId"));
 		user.setInstanceId(_ctx.stringValue("GetUserResponse.User.InstanceId"));
+		user.setPreferredLanguage(_ctx.stringValue("GetUserResponse.User.PreferredLanguage"));
 
 		List<OrganizationalUnit> organizationalUnits = new ArrayList<OrganizationalUnit>();
 		for (int i = 0; i < _ctx.lengthValue("GetUserResponse.User.OrganizationalUnits.Length"); i++) {

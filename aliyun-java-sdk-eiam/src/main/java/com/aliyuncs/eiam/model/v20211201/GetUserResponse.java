@@ -92,6 +92,8 @@ public class GetUserResponse extends AcsResponse {
 
 		private String instanceId;
 
+		private String preferredLanguage;
+
 		private List<OrganizationalUnit> organizationalUnits;
 
 		private List<CustomField> customFields;
@@ -272,6 +274,14 @@ public class GetUserResponse extends AcsResponse {
 
 		public void setInstanceId(String instanceId) {
 			this.instanceId = instanceId;
+		}
+
+		public String getPreferredLanguage() {
+			return this.preferredLanguage;
+		}
+
+		public void setPreferredLanguage(String preferredLanguage) {
+			this.preferredLanguage = preferredLanguage;
 		}
 
 		public List<OrganizationalUnit> getOrganizationalUnits() {

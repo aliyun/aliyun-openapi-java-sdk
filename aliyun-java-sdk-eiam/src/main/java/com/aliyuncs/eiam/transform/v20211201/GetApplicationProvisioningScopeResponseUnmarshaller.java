@@ -29,12 +29,20 @@ public class GetApplicationProvisioningScopeResponseUnmarshaller {
 		getApplicationProvisioningScopeResponse.setRequestId(_ctx.stringValue("GetApplicationProvisioningScopeResponse.RequestId"));
 
 		ApplicationProvisioningScope applicationProvisioningScope = new ApplicationProvisioningScope();
+		applicationProvisioningScope.setUsedQuota(_ctx.integerValue("GetApplicationProvisioningScopeResponse.ApplicationProvisioningScope.UsedQuota"));
+		applicationProvisioningScope.setMaxQuota(_ctx.integerValue("GetApplicationProvisioningScopeResponse.ApplicationProvisioningScope.MaxQuota"));
 
 		List<String> organizationalUnitIds = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetApplicationProvisioningScopeResponse.ApplicationProvisioningScope.OrganizationalUnitIds.Length"); i++) {
 			organizationalUnitIds.add(_ctx.stringValue("GetApplicationProvisioningScopeResponse.ApplicationProvisioningScope.OrganizationalUnitIds["+ i +"]"));
 		}
 		applicationProvisioningScope.setOrganizationalUnitIds(organizationalUnitIds);
+
+		List<String> groupIds = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("GetApplicationProvisioningScopeResponse.ApplicationProvisioningScope.GroupIds.Length"); i++) {
+			groupIds.add(_ctx.stringValue("GetApplicationProvisioningScopeResponse.ApplicationProvisioningScope.GroupIds["+ i +"]"));
+		}
+		applicationProvisioningScope.setGroupIds(groupIds);
 		getApplicationProvisioningScopeResponse.setApplicationProvisioningScope(applicationProvisioningScope);
 	 
 	 	return getApplicationProvisioningScopeResponse;

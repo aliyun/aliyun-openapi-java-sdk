@@ -47,7 +47,29 @@ public class GetApplicationProvisioningScopeResponse extends AcsResponse {
 
 	public static class ApplicationProvisioningScope {
 
+		private Integer usedQuota;
+
+		private Integer maxQuota;
+
 		private List<String> organizationalUnitIds;
+
+		private List<String> groupIds;
+
+		public Integer getUsedQuota() {
+			return this.usedQuota;
+		}
+
+		public void setUsedQuota(Integer usedQuota) {
+			this.usedQuota = usedQuota;
+		}
+
+		public Integer getMaxQuota() {
+			return this.maxQuota;
+		}
+
+		public void setMaxQuota(Integer maxQuota) {
+			this.maxQuota = maxQuota;
+		}
 
 		public List<String> getOrganizationalUnitIds() {
 			return this.organizationalUnitIds;
@@ -55,6 +77,14 @@ public class GetApplicationProvisioningScopeResponse extends AcsResponse {
 
 		public void setOrganizationalUnitIds(List<String> organizationalUnitIds) {
 			this.organizationalUnitIds = organizationalUnitIds;
+		}
+
+		public List<String> getGroupIds() {
+			return this.groupIds;
+		}
+
+		public void setGroupIds(List<String> groupIds) {
+			this.groupIds = groupIds;
 		}
 	}
 

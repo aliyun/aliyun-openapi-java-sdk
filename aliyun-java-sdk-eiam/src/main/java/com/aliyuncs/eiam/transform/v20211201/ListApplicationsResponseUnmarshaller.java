@@ -46,6 +46,7 @@ public class ListApplicationsResponseUnmarshaller {
 			application.setUpdateTime(_ctx.longValue("ListApplicationsResponse.Applications["+ i +"].UpdateTime"));
 			application.setServiceManaged(_ctx.booleanValue("ListApplicationsResponse.Applications["+ i +"].ServiceManaged"));
 			application.setManagedServiceCode(_ctx.stringValue("ListApplicationsResponse.Applications["+ i +"].ManagedServiceCode"));
+			application.setApplicationTemplateId(_ctx.stringValue("ListApplicationsResponse.Applications["+ i +"].ApplicationTemplateId"));
 
 			applications.add(application);
 		}

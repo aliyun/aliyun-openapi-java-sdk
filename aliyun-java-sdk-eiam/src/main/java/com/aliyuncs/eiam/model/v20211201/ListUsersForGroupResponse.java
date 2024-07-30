@@ -59,12 +59,32 @@ public class ListUsersForGroupResponse extends AcsResponse {
 
 		private String userId;
 
+		private String groupMemberRelationSourceId;
+
+		private String groupMemberRelationSourceType;
+
 		public String getUserId() {
 			return this.userId;
 		}
 
 		public void setUserId(String userId) {
 			this.userId = userId;
+		}
+
+		public String getGroupMemberRelationSourceId() {
+			return this.groupMemberRelationSourceId;
+		}
+
+		public void setGroupMemberRelationSourceId(String groupMemberRelationSourceId) {
+			this.groupMemberRelationSourceId = groupMemberRelationSourceId;
+		}
+
+		public String getGroupMemberRelationSourceType() {
+			return this.groupMemberRelationSourceType;
+		}
+
+		public void setGroupMemberRelationSourceType(String groupMemberRelationSourceType) {
+			this.groupMemberRelationSourceType = groupMemberRelationSourceType;
 		}
 	}
 

@@ -85,6 +85,8 @@ public class ListApplicationsResponse extends AcsResponse {
 
 		private String managedServiceCode;
 
+		private String applicationTemplateId;
+
 		public String getInstanceId() {
 			return this.instanceId;
 		}
@@ -195,6 +197,14 @@ public class ListApplicationsResponse extends AcsResponse {
 
 		public void setManagedServiceCode(String managedServiceCode) {
 			this.managedServiceCode = managedServiceCode;
+		}
+
+		public String getApplicationTemplateId() {
+			return this.applicationTemplateId;
+		}
+
+		public void setApplicationTemplateId(String applicationTemplateId) {
+			this.applicationTemplateId = applicationTemplateId;
 		}
 	}
 

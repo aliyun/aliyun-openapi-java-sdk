@@ -31,6 +31,8 @@ public class SetApplicationProvisioningScopeRequest extends RpcAcsRequest<SetApp
 	private List<String> organizationalUnitIds;
 
 	private String instanceId;
+
+	private List<String> groupIds;
 	public SetApplicationProvisioningScopeRequest() {
 		super("Eiam", "2021-12-01", "SetApplicationProvisioningScope", "eiam");
 		setProtocol(ProtocolType.HTTPS);
@@ -70,6 +72,19 @@ public class SetApplicationProvisioningScopeRequest extends RpcAcsRequest<SetApp
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
 		}
+	}
+
+	public List<String> getGroupIds() {
+		return this.groupIds;
+	}
+
+	public void setGroupIds(List<String> groupIds) {
+		this.groupIds = groupIds;	
+		if (groupIds != null) {
+			for (int depth1 = 0; depth1 < groupIds.size(); depth1++) {
+				putQueryParameter("GroupIds." + (depth1 + 1) , groupIds.get(depth1));
+			}
+		}	
 	}
 
 	@Override

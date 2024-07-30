@@ -33,6 +33,8 @@ public class ListUsersForGroupResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("ListUsersForGroupResponse.Users.Length"); i++) {
 			User user = new User();
 			user.setUserId(_ctx.stringValue("ListUsersForGroupResponse.Users["+ i +"].UserId"));
+			user.setGroupMemberRelationSourceId(_ctx.stringValue("ListUsersForGroupResponse.Users["+ i +"].GroupMemberRelationSourceId"));
+			user.setGroupMemberRelationSourceType(_ctx.stringValue("ListUsersForGroupResponse.Users["+ i +"].GroupMemberRelationSourceType"));
 
 			users.add(user);
 		}
