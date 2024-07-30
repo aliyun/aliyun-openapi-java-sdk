@@ -391,6 +391,8 @@ public class GetResultResponse extends AcsResponse {
 
 			private String role;
 
+			private String identity;
+
 			public String getWords() {
 				return this.words;
 			}
@@ -437,6 +439,14 @@ public class GetResultResponse extends AcsResponse {
 
 			public void setRole(String role) {
 				this.role = role;
+			}
+
+			public String getIdentity() {
+				return this.identity;
+			}
+
+			public void setIdentity(String identity) {
+				this.identity = identity;
 			}
 		}
 

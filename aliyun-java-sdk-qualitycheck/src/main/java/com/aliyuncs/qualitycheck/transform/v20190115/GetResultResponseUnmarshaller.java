@@ -135,6 +135,7 @@ public class GetResultResponseUnmarshaller {
 				asrResultItem.setEnd(_ctx.longValue("GetResultResponse.Data["+ i +"].AsrResult["+ j +"].End"));
 				asrResultItem.setSpeechRate(_ctx.integerValue("GetResultResponse.Data["+ i +"].AsrResult["+ j +"].SpeechRate"));
 				asrResultItem.setRole(_ctx.stringValue("GetResultResponse.Data["+ i +"].AsrResult["+ j +"].Role"));
+				asrResultItem.setIdentity(_ctx.stringValue("GetResultResponse.Data["+ i +"].AsrResult["+ j +"].Identity"));
 
 				asrResult.add(asrResultItem);
 			}
