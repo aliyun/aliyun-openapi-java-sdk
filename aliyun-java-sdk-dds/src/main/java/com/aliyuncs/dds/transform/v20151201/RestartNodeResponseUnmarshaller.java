@@ -14,16 +14,16 @@
 
 package com.aliyuncs.dds.transform.v20151201;
 
-import com.aliyuncs.dds.model.v20151201.RestoreDBInstanceResponse;
+import com.aliyuncs.dds.model.v20151201.RestartNodeResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class RestoreDBInstanceResponseUnmarshaller {
+public class RestartNodeResponseUnmarshaller {
 
-	public static RestoreDBInstanceResponse unmarshall(RestoreDBInstanceResponse restoreDBInstanceResponse, UnmarshallerContext _ctx) {
+	public static RestartNodeResponse unmarshall(RestartNodeResponse restartNodeResponse, UnmarshallerContext _ctx) {
 		
-		restoreDBInstanceResponse.setRequestId(_ctx.stringValue("RestoreDBInstanceResponse.RequestId"));
+		restartNodeResponse.setRequestId(_ctx.stringValue("RestartNodeResponse.RequestId"));
 	 
-	 	return restoreDBInstanceResponse;
+	 	return restartNodeResponse;
 	}
 }

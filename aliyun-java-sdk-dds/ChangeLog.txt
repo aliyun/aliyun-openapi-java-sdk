@@ -1,3 +1,6 @@
+2024-08-01 Version: 3.7.19
+- Generated 2015-12-01 for `Dds`.
+
 2024-05-24 Version: 3.7.18
 - Generated 2015-12-01 for `Dds`.
 

@@ -15,14 +15,14 @@
 package com.aliyuncs.dds.model.v20151201;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.dds.transform.v20151201.RestoreDBInstanceResponseUnmarshaller;
+import com.aliyuncs.dds.transform.v20151201.RestartNodeResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class RestoreDBInstanceResponse extends AcsResponse {
+public class RestartNodeResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -35,7 +35,7 @@ public class RestoreDBInstanceResponse extends AcsResponse {
 	}
 
 	@Override
-	public RestoreDBInstanceResponse getInstance(UnmarshallerContext context) {
-		return	RestoreDBInstanceResponseUnmarshaller.unmarshall(this, context);
+	public RestartNodeResponse getInstance(UnmarshallerContext context) {
+		return	RestartNodeResponseUnmarshaller.unmarshall(this, context);
 	}
 }

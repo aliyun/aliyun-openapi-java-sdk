@@ -22,22 +22,24 @@ import com.aliyuncs.dds.Endpoint;
  * @author auto create
  * @version 
  */
-public class RestoreDBInstanceRequest extends RpcAcsRequest<RestoreDBInstanceResponse> {
+public class RestartNodeRequest extends RpcAcsRequest<RestartNodeResponse> {
 	   
 
 	private Long resourceOwnerId;
 
+	private String roleId;
+
 	private String dBInstanceId;
+
+	private String nodeId;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private Integer backupId;
-
 	private Long ownerId;
-	public RestoreDBInstanceRequest() {
-		super("Dds", "2015-12-01", "RestoreDBInstance", "dds");
+	public RestartNodeRequest() {
+		super("Dds", "2015-12-01", "RestartNode", "dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -56,6 +58,17 @@ public class RestoreDBInstanceRequest extends RpcAcsRequest<RestoreDBInstanceRes
 		}
 	}
 
+	public String getRoleId() {
+		return this.roleId;
+	}
+
+	public void setRoleId(String roleId) {
+		this.roleId = roleId;
+		if(roleId != null){
+			putQueryParameter("RoleId", roleId);
+		}
+	}
+
 	public String getDBInstanceId() {
 		return this.dBInstanceId;
 	}
@@ -64,6 +77,17 @@ public class RestoreDBInstanceRequest extends RpcAcsRequest<RestoreDBInstanceRes
 		this.dBInstanceId = dBInstanceId;
 		if(dBInstanceId != null){
 			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public String getNodeId() {
+		return this.nodeId;
+	}
+
+	public void setNodeId(String nodeId) {
+		this.nodeId = nodeId;
+		if(nodeId != null){
+			putQueryParameter("NodeId", nodeId);
 		}
 	}
 
@@ -89,17 +113,6 @@ public class RestoreDBInstanceRequest extends RpcAcsRequest<RestoreDBInstanceRes
 		}
 	}
 
-	public Integer getBackupId() {
-		return this.backupId;
-	}
-
-	public void setBackupId(Integer backupId) {
-		this.backupId = backupId;
-		if(backupId != null){
-			putQueryParameter("BackupId", backupId.toString());
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -112,8 +125,8 @@ public class RestoreDBInstanceRequest extends RpcAcsRequest<RestoreDBInstanceRes
 	}
 
 	@Override
-	public Class<RestoreDBInstanceResponse> getResponseClass() {
-		return RestoreDBInstanceResponse.class;
+	public Class<RestartNodeResponse> getResponseClass() {
+		return RestartNodeResponse.class;
 	}
 
 }

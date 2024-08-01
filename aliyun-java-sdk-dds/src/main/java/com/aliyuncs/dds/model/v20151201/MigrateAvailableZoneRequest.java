@@ -27,7 +27,11 @@ public class MigrateAvailableZoneRequest extends RpcAcsRequest<MigrateAvailableZ
 
 	private Long resourceOwnerId;
 
+	private String secondaryZoneId;
+
 	private String effectiveTime;
+
+	private String hiddenZoneId;
 
 	private String dBInstanceId;
 
@@ -60,6 +64,17 @@ public class MigrateAvailableZoneRequest extends RpcAcsRequest<MigrateAvailableZ
 		}
 	}
 
+	public String getSecondaryZoneId() {
+		return this.secondaryZoneId;
+	}
+
+	public void setSecondaryZoneId(String secondaryZoneId) {
+		this.secondaryZoneId = secondaryZoneId;
+		if(secondaryZoneId != null){
+			putQueryParameter("SecondaryZoneId", secondaryZoneId);
+		}
+	}
+
 	public String getEffectiveTime() {
 		return this.effectiveTime;
 	}
@@ -68,6 +83,17 @@ public class MigrateAvailableZoneRequest extends RpcAcsRequest<MigrateAvailableZ
 		this.effectiveTime = effectiveTime;
 		if(effectiveTime != null){
 			putQueryParameter("EffectiveTime", effectiveTime);
+		}
+	}
+
+	public String getHiddenZoneId() {
+		return this.hiddenZoneId;
+	}
+
+	public void setHiddenZoneId(String hiddenZoneId) {
+		this.hiddenZoneId = hiddenZoneId;
+		if(hiddenZoneId != null){
+			putQueryParameter("HiddenZoneId", hiddenZoneId);
 		}
 	}
 
