@@ -83,6 +83,8 @@ public class ListLiveMessageAppsResponse extends AcsResponse {
 
 		private Long modifyTime;
 
+		private Integer msgLifeCycle;
+
 		public String getAppId() {
 			return this.appId;
 		}
@@ -145,6 +147,14 @@ public class ListLiveMessageAppsResponse extends AcsResponse {
 
 		public void setModifyTime(Long modifyTime) {
 			this.modifyTime = modifyTime;
+		}
+
+		public Integer getMsgLifeCycle() {
+			return this.msgLifeCycle;
+		}
+
+		public void setMsgLifeCycle(Integer msgLifeCycle) {
+			this.msgLifeCycle = msgLifeCycle;
 		}
 	}
 

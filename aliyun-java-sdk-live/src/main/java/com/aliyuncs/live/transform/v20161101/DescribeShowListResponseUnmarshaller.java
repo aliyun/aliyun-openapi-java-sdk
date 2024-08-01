@@ -33,6 +33,8 @@ public class DescribeShowListResponseUnmarshaller {
 
 		ShowListInfo showListInfo = new ShowListInfo();
 		showListInfo.setCurrentShowId(_ctx.stringValue("DescribeShowListResponse.ShowListInfo.CurrentShowId"));
+		showListInfo.setBackground(_ctx.stringValue("DescribeShowListResponse.ShowListInfo.Background"));
+		showListInfo.setWatermark(_ctx.stringValue("DescribeShowListResponse.ShowListInfo.Watermark"));
 		showListInfo.setHighPriorityShowId(_ctx.stringValue("DescribeShowListResponse.ShowListInfo.HighPriorityShowId"));
 		showListInfo.setHighPriorityShowStartTime(_ctx.stringValue("DescribeShowListResponse.ShowListInfo.HighPriorityShowStartTime"));
 		showListInfo.setShowListRepeatTimes(_ctx.integerValue("DescribeShowListResponse.ShowListInfo.ShowListRepeatTimes"));

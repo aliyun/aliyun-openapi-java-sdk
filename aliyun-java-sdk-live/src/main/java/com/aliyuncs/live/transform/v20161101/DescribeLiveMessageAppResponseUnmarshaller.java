@@ -34,6 +34,7 @@ public class DescribeLiveMessageAppResponseUnmarshaller {
 		describeLiveMessageAppResponse.setDisable(_ctx.booleanValue("DescribeLiveMessageAppResponse.Disable"));
 		describeLiveMessageAppResponse.setCreateTime(_ctx.longValue("DescribeLiveMessageAppResponse.CreateTime"));
 		describeLiveMessageAppResponse.setModifyTime(_ctx.longValue("DescribeLiveMessageAppResponse.ModifyTime"));
+		describeLiveMessageAppResponse.setMsgLifeCycle(_ctx.integerValue("DescribeLiveMessageAppResponse.MsgLifeCycle"));
 		describeLiveMessageAppResponse.setDataCenter(_ctx.stringValue("DescribeLiveMessageAppResponse.DataCenter"));
 	 
 	 	return describeLiveMessageAppResponse;

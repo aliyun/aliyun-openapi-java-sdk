@@ -25,17 +25,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeLiveStreamsOnlineListResponse extends AcsResponse {
 
+	private String requestId;
+
 	private Integer totalPage;
 
 	private Integer pageNum;
 
 	private Integer pageSize;
 
-	private String requestId;
-
 	private Integer totalNum;
 
 	private List<LiveStreamOnlineInfo> onlineInfo;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
 	public Integer getTotalPage() {
 		return this.totalPage;
@@ -59,14 +67,6 @@ public class DescribeLiveStreamsOnlineListResponse extends AcsResponse {
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
 	}
 
 	public Integer getTotalNum() {
@@ -126,6 +126,18 @@ public class DescribeLiveStreamsOnlineListResponse extends AcsResponse {
 		private String serverIp;
 
 		private String streamUrlArgs;
+
+		private Integer currAudioDataRate;
+
+		private Integer currVideoDataRate;
+
+		private Integer currWidth;
+
+		private Integer currHeight;
+
+		private Integer currFrameRate;
+
+		private Integer currVideoCodecId;
 
 		public Integer getAudioDataRate() {
 			return this.audioDataRate;
@@ -285,6 +297,54 @@ public class DescribeLiveStreamsOnlineListResponse extends AcsResponse {
 
 		public void setStreamUrlArgs(String streamUrlArgs) {
 			this.streamUrlArgs = streamUrlArgs;
+		}
+
+		public Integer getCurrAudioDataRate() {
+			return this.currAudioDataRate;
+		}
+
+		public void setCurrAudioDataRate(Integer currAudioDataRate) {
+			this.currAudioDataRate = currAudioDataRate;
+		}
+
+		public Integer getCurrVideoDataRate() {
+			return this.currVideoDataRate;
+		}
+
+		public void setCurrVideoDataRate(Integer currVideoDataRate) {
+			this.currVideoDataRate = currVideoDataRate;
+		}
+
+		public Integer getCurrWidth() {
+			return this.currWidth;
+		}
+
+		public void setCurrWidth(Integer currWidth) {
+			this.currWidth = currWidth;
+		}
+
+		public Integer getCurrHeight() {
+			return this.currHeight;
+		}
+
+		public void setCurrHeight(Integer currHeight) {
+			this.currHeight = currHeight;
+		}
+
+		public Integer getCurrFrameRate() {
+			return this.currFrameRate;
+		}
+
+		public void setCurrFrameRate(Integer currFrameRate) {
+			this.currFrameRate = currFrameRate;
+		}
+
+		public Integer getCurrVideoCodecId() {
+			return this.currVideoCodecId;
+		}
+
+		public void setCurrVideoCodecId(Integer currVideoCodecId) {
+			this.currVideoCodecId = currVideoCodecId;
 		}
 	}
 

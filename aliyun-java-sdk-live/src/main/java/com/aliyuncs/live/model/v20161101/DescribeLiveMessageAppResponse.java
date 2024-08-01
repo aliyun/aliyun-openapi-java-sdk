@@ -48,6 +48,8 @@ public class DescribeLiveMessageAppResponse extends AcsResponse {
 
 	private Long modifyTime;
 
+	private Integer msgLifeCycle;
+
 	private String dataCenter;
 
 	public String getRequestId() {
@@ -144,6 +146,14 @@ public class DescribeLiveMessageAppResponse extends AcsResponse {
 
 	public void setModifyTime(Long modifyTime) {
 		this.modifyTime = modifyTime;
+	}
+
+	public Integer getMsgLifeCycle() {
+		return this.msgLifeCycle;
+	}
+
+	public void setMsgLifeCycle(Integer msgLifeCycle) {
+		this.msgLifeCycle = msgLifeCycle;
 	}
 
 	public String getDataCenter() {

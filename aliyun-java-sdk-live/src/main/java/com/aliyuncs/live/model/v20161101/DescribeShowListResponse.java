@@ -59,6 +59,10 @@ public class DescribeShowListResponse extends AcsResponse {
 
 		private String currentShowId;
 
+		private String background;
+
+		private String watermark;
+
 		private String highPriorityShowId;
 
 		private String highPriorityShowStartTime;
@@ -75,6 +79,22 @@ public class DescribeShowListResponse extends AcsResponse {
 
 		public void setCurrentShowId(String currentShowId) {
 			this.currentShowId = currentShowId;
+		}
+
+		public String getBackground() {
+			return this.background;
+		}
+
+		public void setBackground(String background) {
+			this.background = background;
+		}
+
+		public String getWatermark() {
+			return this.watermark;
+		}
+
+		public void setWatermark(String watermark) {
+			this.watermark = watermark;
 		}
 
 		public String getHighPriorityShowId() {

@@ -41,6 +41,7 @@ public class ListLiveMessageAppsResponseUnmarshaller {
 			apps.setDataCenter(_ctx.stringValue("ListLiveMessageAppsResponse.AppList["+ i +"].DataCenter"));
 			apps.setDisable(_ctx.stringValue("ListLiveMessageAppsResponse.AppList["+ i +"].Disable"));
 			apps.setModifyTime(_ctx.longValue("ListLiveMessageAppsResponse.AppList["+ i +"].ModifyTime"));
+			apps.setMsgLifeCycle(_ctx.integerValue("ListLiveMessageAppsResponse.AppList["+ i +"].MsgLifeCycle"));
 
 			appList.add(apps);
 		}

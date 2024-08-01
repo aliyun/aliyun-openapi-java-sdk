@@ -55,6 +55,12 @@ public class DescribeLiveStreamsOnlineListResponseUnmarshaller {
 			liveStreamOnlineInfo.setClientIp(_ctx.stringValue("DescribeLiveStreamsOnlineListResponse.OnlineInfo["+ i +"].ClientIp"));
 			liveStreamOnlineInfo.setServerIp(_ctx.stringValue("DescribeLiveStreamsOnlineListResponse.OnlineInfo["+ i +"].ServerIp"));
 			liveStreamOnlineInfo.setStreamUrlArgs(_ctx.stringValue("DescribeLiveStreamsOnlineListResponse.OnlineInfo["+ i +"].StreamUrlArgs"));
+			liveStreamOnlineInfo.setCurrAudioDataRate(_ctx.integerValue("DescribeLiveStreamsOnlineListResponse.OnlineInfo["+ i +"].CurrAudioDataRate"));
+			liveStreamOnlineInfo.setCurrVideoDataRate(_ctx.integerValue("DescribeLiveStreamsOnlineListResponse.OnlineInfo["+ i +"].CurrVideoDataRate"));
+			liveStreamOnlineInfo.setCurrWidth(_ctx.integerValue("DescribeLiveStreamsOnlineListResponse.OnlineInfo["+ i +"].CurrWidth"));
+			liveStreamOnlineInfo.setCurrHeight(_ctx.integerValue("DescribeLiveStreamsOnlineListResponse.OnlineInfo["+ i +"].CurrHeight"));
+			liveStreamOnlineInfo.setCurrFrameRate(_ctx.integerValue("DescribeLiveStreamsOnlineListResponse.OnlineInfo["+ i +"].CurrFrameRate"));
+			liveStreamOnlineInfo.setCurrVideoCodecId(_ctx.integerValue("DescribeLiveStreamsOnlineListResponse.OnlineInfo["+ i +"].CurrVideoCodecId"));
 
 			onlineInfo.add(liveStreamOnlineInfo);
 		}
