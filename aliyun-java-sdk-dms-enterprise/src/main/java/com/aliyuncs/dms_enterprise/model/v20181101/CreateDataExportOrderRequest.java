@@ -38,6 +38,8 @@ public class CreateDataExportOrderRequest extends RpcAcsRequest<CreateDataExport
 	@SerializedName("pluginParam")
 	private PluginParam pluginParam;
 
+	private String realLoginUserUid;
+
 	private String attachmentKey;
 
 	private String comment;
@@ -92,6 +94,17 @@ public class CreateDataExportOrderRequest extends RpcAcsRequest<CreateDataExport
 		if (pluginParam != null) {
 			putQueryParameter("PluginParam" , new Gson().toJson(pluginParam));
 		}	
+	}
+
+	public String getRealLoginUserUid() {
+		return this.realLoginUserUid;
+	}
+
+	public void setRealLoginUserUid(String realLoginUserUid) {
+		this.realLoginUserUid = realLoginUserUid;
+		if(realLoginUserUid != null){
+			putQueryParameter("RealLoginUserUid", realLoginUserUid);
+		}
 	}
 
 	public String getAttachmentKey() {

@@ -133,14 +133,17 @@ public class CreateDataArchiveOrderRequest extends RpcAcsRequest<CreateDataArchi
 		@SerializedName("OrderAfter")
 		private List<String> orderAfter;
 
+		@SerializedName("TargetInstanceHost")
+		private String targetInstanceHost;
+
+		@SerializedName("TableIncludes")
+		private List<TableIncludesItem> tableIncludes;
+
 		@SerializedName("SourceCatalogName")
 		private String sourceCatalogName;
 
 		@SerializedName("RunMethod")
 		private String runMethod;
-
-		@SerializedName("TargetInstanceHost")
-		private String targetInstanceHost;
 
 		@SerializedName("Logic")
 		private Boolean logic;
@@ -151,8 +154,8 @@ public class CreateDataArchiveOrderRequest extends RpcAcsRequest<CreateDataArchi
 		@SerializedName("ArchiveMethod")
 		private String archiveMethod;
 
-		@SerializedName("TableIncludes")
-		private List<TableIncludesItem> tableIncludes;
+		@SerializedName("DatabaseId")
+		private String databaseId;
 
 		public List<VariablesItem> getVariables() {
 			return this.variables;
@@ -194,6 +197,22 @@ public class CreateDataArchiveOrderRequest extends RpcAcsRequest<CreateDataArchi
 			this.orderAfter = orderAfter;
 		}
 
+		public String getTargetInstanceHost() {
+			return this.targetInstanceHost;
+		}
+
+		public void setTargetInstanceHost(String targetInstanceHost) {
+			this.targetInstanceHost = targetInstanceHost;
+		}
+
+		public List<TableIncludesItem> getTableIncludes() {
+			return this.tableIncludes;
+		}
+
+		public void setTableIncludes(List<TableIncludesItem> tableIncludes) {
+			this.tableIncludes = tableIncludes;
+		}
+
 		public String getSourceCatalogName() {
 			return this.sourceCatalogName;
 		}
@@ -208,14 +227,6 @@ public class CreateDataArchiveOrderRequest extends RpcAcsRequest<CreateDataArchi
 
 		public void setRunMethod(String runMethod) {
 			this.runMethod = runMethod;
-		}
-
-		public String getTargetInstanceHost() {
-			return this.targetInstanceHost;
-		}
-
-		public void setTargetInstanceHost(String targetInstanceHost) {
-			this.targetInstanceHost = targetInstanceHost;
 		}
 
 		public Boolean getLogic() {
@@ -242,12 +253,12 @@ public class CreateDataArchiveOrderRequest extends RpcAcsRequest<CreateDataArchi
 			this.archiveMethod = archiveMethod;
 		}
 
-		public List<TableIncludesItem> getTableIncludes() {
-			return this.tableIncludes;
+		public String getDatabaseId() {
+			return this.databaseId;
 		}
 
-		public void setTableIncludes(List<TableIncludesItem> tableIncludes) {
-			this.tableIncludes = tableIncludes;
+		public void setDatabaseId(String databaseId) {
+			this.databaseId = databaseId;
 		}
 
 		public static class VariablesItem {

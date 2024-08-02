@@ -37,6 +37,8 @@ public class ApproveOrderRequest extends RpcAcsRequest<ApproveOrderResponse> {
 
 	private Long oldApprover;
 
+	private String realLoginUserUid;
+
 	private String comment;
 
 	private String approvalNodePos;
@@ -114,6 +116,17 @@ public class ApproveOrderRequest extends RpcAcsRequest<ApproveOrderResponse> {
 		this.oldApprover = oldApprover;
 		if(oldApprover != null){
 			putQueryParameter("OldApprover", oldApprover.toString());
+		}
+	}
+
+	public String getRealLoginUserUid() {
+		return this.realLoginUserUid;
+	}
+
+	public void setRealLoginUserUid(String realLoginUserUid) {
+		this.realLoginUserUid = realLoginUserUid;
+		if(realLoginUserUid != null){
+			putQueryParameter("RealLoginUserUid", realLoginUserUid);
 		}
 	}
 

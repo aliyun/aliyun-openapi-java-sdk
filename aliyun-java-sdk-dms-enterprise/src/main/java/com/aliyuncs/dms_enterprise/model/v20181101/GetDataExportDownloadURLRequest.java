@@ -28,6 +28,8 @@ public class GetDataExportDownloadURLRequest extends RpcAcsRequest<GetDataExport
 	private Long tid;
 
 	private Long orderId;
+
+	private String realLoginUserUid;
 	public GetDataExportDownloadURLRequest() {
 		super("dms-enterprise", "2018-11-01", "GetDataExportDownloadURL", "dms-enterprise");
 		setMethod(MethodType.POST);
@@ -56,6 +58,17 @@ public class GetDataExportDownloadURLRequest extends RpcAcsRequest<GetDataExport
 		this.orderId = orderId;
 		if(orderId != null){
 			putQueryParameter("OrderId", orderId.toString());
+		}
+	}
+
+	public String getRealLoginUserUid() {
+		return this.realLoginUserUid;
+	}
+
+	public void setRealLoginUserUid(String realLoginUserUid) {
+		this.realLoginUserUid = realLoginUserUid;
+		if(realLoginUserUid != null){
+			putQueryParameter("RealLoginUserUid", realLoginUserUid);
 		}
 	}
 

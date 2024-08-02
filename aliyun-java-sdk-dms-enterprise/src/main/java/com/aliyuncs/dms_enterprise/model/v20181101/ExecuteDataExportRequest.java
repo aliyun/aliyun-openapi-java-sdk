@@ -32,6 +32,8 @@ public class ExecuteDataExportRequest extends RpcAcsRequest<ExecuteDataExportRes
 	private Map<Object,Object> actionDetail;
 
 	private Long orderId;
+
+	private String realLoginUserUid;
 	public ExecuteDataExportRequest() {
 		super("dms-enterprise", "2018-11-01", "ExecuteDataExport", "dms-enterprise");
 		setMethod(MethodType.POST);
@@ -71,6 +73,17 @@ public class ExecuteDataExportRequest extends RpcAcsRequest<ExecuteDataExportRes
 		this.orderId = orderId;
 		if(orderId != null){
 			putQueryParameter("OrderId", orderId.toString());
+		}
+	}
+
+	public String getRealLoginUserUid() {
+		return this.realLoginUserUid;
+	}
+
+	public void setRealLoginUserUid(String realLoginUserUid) {
+		this.realLoginUserUid = realLoginUserUid;
+		if(realLoginUserUid != null){
+			putQueryParameter("RealLoginUserUid", realLoginUserUid);
 		}
 	}
 

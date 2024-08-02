@@ -36,6 +36,8 @@ public class CreateDataCorrectOrderRequest extends RpcAcsRequest<CreateDataCorre
 	@SerializedName("relatedUserList")
 	private List<Long> relatedUserList;
 
+	private String realLoginUserUid;
+
 	private String attachmentKey;
 
 	private String comment;
@@ -79,6 +81,17 @@ public class CreateDataCorrectOrderRequest extends RpcAcsRequest<CreateDataCorre
 		if (relatedUserList != null) {
 			putQueryParameter("RelatedUserList" , new Gson().toJson(relatedUserList));
 		}	
+	}
+
+	public String getRealLoginUserUid() {
+		return this.realLoginUserUid;
+	}
+
+	public void setRealLoginUserUid(String realLoginUserUid) {
+		this.realLoginUserUid = realLoginUserUid;
+		if(realLoginUserUid != null){
+			putQueryParameter("RealLoginUserUid", realLoginUserUid);
+		}
 	}
 
 	public String getAttachmentKey() {
