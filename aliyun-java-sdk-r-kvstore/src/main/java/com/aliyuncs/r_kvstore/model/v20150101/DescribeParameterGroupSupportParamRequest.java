@@ -22,16 +22,16 @@ import com.aliyuncs.r_kvstore.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteAccountRequest extends RpcAcsRequest<DeleteAccountResponse> {
+public class DescribeParameterGroupSupportParamRequest extends RpcAcsRequest<DescribeParameterGroupSupportParamResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String accountName;
+	private String engineVersion;
 
 	private String securityToken;
 
-	private String sourceBiz;
+	private String engineType;
 
 	private String resourceOwnerAccount;
 
@@ -39,9 +39,9 @@ public class DeleteAccountRequest extends RpcAcsRequest<DeleteAccountResponse> {
 
 	private Long ownerId;
 
-	private String instanceId;
-	public DeleteAccountRequest() {
-		super("R-kvstore", "2015-01-01", "DeleteAccount", "redisa");
+	private String category;
+	public DescribeParameterGroupSupportParamRequest() {
+		super("R-kvstore", "2015-01-01", "DescribeParameterGroupSupportParam", "redisa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -60,14 +60,14 @@ public class DeleteAccountRequest extends RpcAcsRequest<DeleteAccountResponse> {
 		}
 	}
 
-	public String getAccountName() {
-		return this.accountName;
+	public String getEngineVersion() {
+		return this.engineVersion;
 	}
 
-	public void setAccountName(String accountName) {
-		this.accountName = accountName;
-		if(accountName != null){
-			putQueryParameter("AccountName", accountName);
+	public void setEngineVersion(String engineVersion) {
+		this.engineVersion = engineVersion;
+		if(engineVersion != null){
+			putQueryParameter("EngineVersion", engineVersion);
 		}
 	}
 
@@ -82,14 +82,14 @@ public class DeleteAccountRequest extends RpcAcsRequest<DeleteAccountResponse> {
 		}
 	}
 
-	public String getSourceBiz() {
-		return this.sourceBiz;
+	public String getEngineType() {
+		return this.engineType;
 	}
 
-	public void setSourceBiz(String sourceBiz) {
-		this.sourceBiz = sourceBiz;
-		if(sourceBiz != null){
-			putQueryParameter("SourceBiz", sourceBiz);
+	public void setEngineType(String engineType) {
+		this.engineType = engineType;
+		if(engineType != null){
+			putQueryParameter("EngineType", engineType);
 		}
 	}
 
@@ -126,20 +126,20 @@ public class DeleteAccountRequest extends RpcAcsRequest<DeleteAccountResponse> {
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public String getCategory() {
+		return this.category;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
+	public void setCategory(String category) {
+		this.category = category;
+		if(category != null){
+			putQueryParameter("Category", category);
 		}
 	}
 
 	@Override
-	public Class<DeleteAccountResponse> getResponseClass() {
-		return DeleteAccountResponse.class;
+	public Class<DescribeParameterGroupSupportParamResponse> getResponseClass() {
+		return DescribeParameterGroupSupportParamResponse.class;
 	}
 
 }

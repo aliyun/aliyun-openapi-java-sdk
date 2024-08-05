@@ -22,16 +22,14 @@ import com.aliyuncs.r_kvstore.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteAccountRequest extends RpcAcsRequest<DeleteAccountResponse> {
+public class ModifyActiveOperationTasksRequest extends RpcAcsRequest<ModifyActiveOperationTasksResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String accountName;
-
 	private String securityToken;
 
-	private String sourceBiz;
+	private String switchTime;
 
 	private String resourceOwnerAccount;
 
@@ -39,9 +37,11 @@ public class DeleteAccountRequest extends RpcAcsRequest<DeleteAccountResponse> {
 
 	private Long ownerId;
 
-	private String instanceId;
-	public DeleteAccountRequest() {
-		super("R-kvstore", "2015-01-01", "DeleteAccount", "redisa");
+	private String ids;
+
+	private Integer immediateStart;
+	public ModifyActiveOperationTasksRequest() {
+		super("R-kvstore", "2015-01-01", "ModifyActiveOperationTasks", "redisa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -60,17 +60,6 @@ public class DeleteAccountRequest extends RpcAcsRequest<DeleteAccountResponse> {
 		}
 	}
 
-	public String getAccountName() {
-		return this.accountName;
-	}
-
-	public void setAccountName(String accountName) {
-		this.accountName = accountName;
-		if(accountName != null){
-			putQueryParameter("AccountName", accountName);
-		}
-	}
-
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
@@ -82,14 +71,14 @@ public class DeleteAccountRequest extends RpcAcsRequest<DeleteAccountResponse> {
 		}
 	}
 
-	public String getSourceBiz() {
-		return this.sourceBiz;
+	public String getSwitchTime() {
+		return this.switchTime;
 	}
 
-	public void setSourceBiz(String sourceBiz) {
-		this.sourceBiz = sourceBiz;
-		if(sourceBiz != null){
-			putQueryParameter("SourceBiz", sourceBiz);
+	public void setSwitchTime(String switchTime) {
+		this.switchTime = switchTime;
+		if(switchTime != null){
+			putQueryParameter("SwitchTime", switchTime);
 		}
 	}
 
@@ -126,20 +115,31 @@ public class DeleteAccountRequest extends RpcAcsRequest<DeleteAccountResponse> {
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public String getIds() {
+		return this.ids;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
+	public void setIds(String ids) {
+		this.ids = ids;
+		if(ids != null){
+			putQueryParameter("Ids", ids);
+		}
+	}
+
+	public Integer getImmediateStart() {
+		return this.immediateStart;
+	}
+
+	public void setImmediateStart(Integer immediateStart) {
+		this.immediateStart = immediateStart;
+		if(immediateStart != null){
+			putQueryParameter("ImmediateStart", immediateStart.toString());
 		}
 	}
 
 	@Override
-	public Class<DeleteAccountResponse> getResponseClass() {
-		return DeleteAccountResponse.class;
+	public Class<ModifyActiveOperationTasksResponse> getResponseClass() {
+		return ModifyActiveOperationTasksResponse.class;
 	}
 
 }

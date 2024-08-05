@@ -22,26 +22,24 @@ import com.aliyuncs.r_kvstore.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteAccountRequest extends RpcAcsRequest<DeleteAccountResponse> {
+public class ModifyDBInstanceAutoUpgradeRequest extends RpcAcsRequest<ModifyDBInstanceAutoUpgradeResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String accountName;
-
 	private String securityToken;
 
-	private String sourceBiz;
+	private String dBInstanceId;
+
+	private String value;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	private String instanceId;
-	public DeleteAccountRequest() {
-		super("R-kvstore", "2015-01-01", "DeleteAccount", "redisa");
+	public ModifyDBInstanceAutoUpgradeRequest() {
+		super("R-kvstore", "2015-01-01", "ModifyDBInstanceAutoUpgrade", "redisa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -60,17 +58,6 @@ public class DeleteAccountRequest extends RpcAcsRequest<DeleteAccountResponse> {
 		}
 	}
 
-	public String getAccountName() {
-		return this.accountName;
-	}
-
-	public void setAccountName(String accountName) {
-		this.accountName = accountName;
-		if(accountName != null){
-			putQueryParameter("AccountName", accountName);
-		}
-	}
-
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
@@ -82,14 +69,25 @@ public class DeleteAccountRequest extends RpcAcsRequest<DeleteAccountResponse> {
 		}
 	}
 
-	public String getSourceBiz() {
-		return this.sourceBiz;
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
 	}
 
-	public void setSourceBiz(String sourceBiz) {
-		this.sourceBiz = sourceBiz;
-		if(sourceBiz != null){
-			putQueryParameter("SourceBiz", sourceBiz);
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public String getValue() {
+		return this.value;
+	}
+
+	public void setValue(String value) {
+		this.value = value;
+		if(value != null){
+			putQueryParameter("Value", value);
 		}
 	}
 
@@ -126,20 +124,9 @@ public class DeleteAccountRequest extends RpcAcsRequest<DeleteAccountResponse> {
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
 	@Override
-	public Class<DeleteAccountResponse> getResponseClass() {
-		return DeleteAccountResponse.class;
+	public Class<ModifyDBInstanceAutoUpgradeResponse> getResponseClass() {
+		return ModifyDBInstanceAutoUpgradeResponse.class;
 	}
 
 }

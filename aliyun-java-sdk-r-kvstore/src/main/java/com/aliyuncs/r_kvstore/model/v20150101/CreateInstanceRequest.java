@@ -32,6 +32,8 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	private String secondaryZoneId;
 
+	private Integer slaveReadOnlyCount;
+
 	private String couponNo;
 
 	private String networkType;
@@ -98,6 +100,8 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	private Boolean globalInstance;
 
+	private String recoverConfigMode;
+
 	private String token;
 
 	private String globalInstanceId;
@@ -150,6 +154,17 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		this.secondaryZoneId = secondaryZoneId;
 		if(secondaryZoneId != null){
 			putQueryParameter("SecondaryZoneId", secondaryZoneId);
+		}
+	}
+
+	public Integer getSlaveReadOnlyCount() {
+		return this.slaveReadOnlyCount;
+	}
+
+	public void setSlaveReadOnlyCount(Integer slaveReadOnlyCount) {
+		this.slaveReadOnlyCount = slaveReadOnlyCount;
+		if(slaveReadOnlyCount != null){
+			putQueryParameter("SlaveReadOnlyCount", slaveReadOnlyCount.toString());
 		}
 	}
 
@@ -516,6 +531,17 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		this.globalInstance = globalInstance;
 		if(globalInstance != null){
 			putQueryParameter("GlobalInstance", globalInstance.toString());
+		}
+	}
+
+	public String getRecoverConfigMode() {
+		return this.recoverConfigMode;
+	}
+
+	public void setRecoverConfigMode(String recoverConfigMode) {
+		this.recoverConfigMode = recoverConfigMode;
+		if(recoverConfigMode != null){
+			putQueryParameter("RecoverConfigMode", recoverConfigMode);
 		}
 	}
 

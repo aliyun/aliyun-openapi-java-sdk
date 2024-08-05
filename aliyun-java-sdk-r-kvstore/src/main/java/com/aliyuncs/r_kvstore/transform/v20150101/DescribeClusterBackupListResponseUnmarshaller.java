@@ -61,6 +61,7 @@ public class DescribeClusterBackupListResponseUnmarshaller {
 				backup.setInstanceName(_ctx.stringValue("DescribeClusterBackupListResponse.ClusterBackups["+ i +"].Backups["+ j +"].InstanceName"));
 				backup.setBackupDownloadURL(_ctx.stringValue("DescribeClusterBackupListResponse.ClusterBackups["+ i +"].Backups["+ j +"].BackupDownloadURL"));
 				backup.setBackupIntranetDownloadURL(_ctx.stringValue("DescribeClusterBackupListResponse.ClusterBackups["+ i +"].Backups["+ j +"].BackupIntranetDownloadURL"));
+				backup.setRecoverConfigMode(_ctx.stringValue("DescribeClusterBackupListResponse.ClusterBackups["+ i +"].Backups["+ j +"].RecoverConfigMode"));
 				backup.setBackupStartTime(_ctx.stringValue("DescribeClusterBackupListResponse.ClusterBackups["+ i +"].Backups["+ j +"].BackupStartTime"));
 				backup.setBackupEndTime(_ctx.stringValue("DescribeClusterBackupListResponse.ClusterBackups["+ i +"].Backups["+ j +"].BackupEndTime"));
 				backup.setBackupSize(_ctx.stringValue("DescribeClusterBackupListResponse.ClusterBackups["+ i +"].Backups["+ j +"].BackupSize"));

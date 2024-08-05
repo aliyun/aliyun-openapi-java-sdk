@@ -151,6 +151,8 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private Integer proxyCount;
 
+		private String computingType;
+
 		private String cloudType;
 
 		private String editionType;
@@ -455,6 +457,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		public void setProxyCount(Integer proxyCount) {
 			this.proxyCount = proxyCount;
+		}
+
+		public String getComputingType() {
+			return this.computingType;
+		}
+
+		public void setComputingType(String computingType) {
+			this.computingType = computingType;
 		}
 
 		public String getCloudType() {

@@ -227,6 +227,8 @@ public class DescribeClusterBackupListResponse extends AcsResponse {
 
 			private String backupIntranetDownloadURL;
 
+			private String recoverConfigMode;
+
 			private String backupStartTime;
 
 			private String backupEndTime;
@@ -273,6 +275,14 @@ public class DescribeClusterBackupListResponse extends AcsResponse {
 
 			public void setBackupIntranetDownloadURL(String backupIntranetDownloadURL) {
 				this.backupIntranetDownloadURL = backupIntranetDownloadURL;
+			}
+
+			public String getRecoverConfigMode() {
+				return this.recoverConfigMode;
+			}
+
+			public void setRecoverConfigMode(String recoverConfigMode) {
+				this.recoverConfigMode = recoverConfigMode;
 			}
 
 			public String getBackupStartTime() {

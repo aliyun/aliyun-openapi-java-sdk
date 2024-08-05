@@ -22,16 +22,12 @@ import com.aliyuncs.r_kvstore.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteAccountRequest extends RpcAcsRequest<DeleteAccountResponse> {
+public class DescribeParameterGroupsRequest extends RpcAcsRequest<DescribeParameterGroupsResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String accountName;
-
 	private String securityToken;
-
-	private String sourceBiz;
 
 	private String resourceOwnerAccount;
 
@@ -39,9 +35,9 @@ public class DeleteAccountRequest extends RpcAcsRequest<DeleteAccountResponse> {
 
 	private Long ownerId;
 
-	private String instanceId;
-	public DeleteAccountRequest() {
-		super("R-kvstore", "2015-01-01", "DeleteAccount", "redisa");
+	private String dbType;
+	public DescribeParameterGroupsRequest() {
+		super("R-kvstore", "2015-01-01", "DescribeParameterGroups", "redisa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -60,17 +56,6 @@ public class DeleteAccountRequest extends RpcAcsRequest<DeleteAccountResponse> {
 		}
 	}
 
-	public String getAccountName() {
-		return this.accountName;
-	}
-
-	public void setAccountName(String accountName) {
-		this.accountName = accountName;
-		if(accountName != null){
-			putQueryParameter("AccountName", accountName);
-		}
-	}
-
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
@@ -79,17 +64,6 @@ public class DeleteAccountRequest extends RpcAcsRequest<DeleteAccountResponse> {
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public String getSourceBiz() {
-		return this.sourceBiz;
-	}
-
-	public void setSourceBiz(String sourceBiz) {
-		this.sourceBiz = sourceBiz;
-		if(sourceBiz != null){
-			putQueryParameter("SourceBiz", sourceBiz);
 		}
 	}
 
@@ -126,20 +100,20 @@ public class DeleteAccountRequest extends RpcAcsRequest<DeleteAccountResponse> {
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public String getDbType() {
+		return this.dbType;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
+	public void setDbType(String dbType) {
+		this.dbType = dbType;
+		if(dbType != null){
+			putQueryParameter("DbType", dbType);
 		}
 	}
 
 	@Override
-	public Class<DeleteAccountResponse> getResponseClass() {
-		return DeleteAccountResponse.class;
+	public Class<DescribeParameterGroupsResponse> getResponseClass() {
+		return DescribeParameterGroupsResponse.class;
 	}
 
 }

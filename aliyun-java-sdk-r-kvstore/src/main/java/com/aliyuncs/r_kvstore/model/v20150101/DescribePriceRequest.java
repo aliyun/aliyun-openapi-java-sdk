@@ -41,6 +41,8 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 
 	private String businessInfo;
 
+	private Integer shardCount;
+
 	private Long period;
 
 	private Long quantity;
@@ -156,6 +158,17 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 		this.businessInfo = businessInfo;
 		if(businessInfo != null){
 			putQueryParameter("BusinessInfo", businessInfo);
+		}
+	}
+
+	public Integer getShardCount() {
+		return this.shardCount;
+	}
+
+	public void setShardCount(Integer shardCount) {
+		this.shardCount = shardCount;
+		if(shardCount != null){
+			putQueryParameter("ShardCount", shardCount.toString());
 		}
 	}
 

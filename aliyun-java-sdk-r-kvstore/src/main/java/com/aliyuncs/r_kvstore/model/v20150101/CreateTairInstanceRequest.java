@@ -96,6 +96,8 @@ public class CreateTairInstanceRequest extends RpcAcsRequest<CreateTairInstanceR
 
 	private String ownerAccount;
 
+	private String recoverConfigMode;
+
 	private String globalInstanceId;
 
 	private String paramGroupId;
@@ -501,6 +503,17 @@ public class CreateTairInstanceRequest extends RpcAcsRequest<CreateTairInstanceR
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getRecoverConfigMode() {
+		return this.recoverConfigMode;
+	}
+
+	public void setRecoverConfigMode(String recoverConfigMode) {
+		this.recoverConfigMode = recoverConfigMode;
+		if(recoverConfigMode != null){
+			putQueryParameter("RecoverConfigMode", recoverConfigMode);
 		}
 	}
 

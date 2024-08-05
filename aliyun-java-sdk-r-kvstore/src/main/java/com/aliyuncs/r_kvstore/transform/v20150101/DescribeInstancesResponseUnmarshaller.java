@@ -72,6 +72,7 @@ public class DescribeInstancesResponseUnmarshaller {
 			kVStoreInstance.setZoneId(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].ZoneId"));
 			kVStoreInstance.setInstanceStatus(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].InstanceStatus"));
 			kVStoreInstance.setProxyCount(_ctx.integerValue("DescribeInstancesResponse.Instances["+ i +"].ProxyCount"));
+			kVStoreInstance.setComputingType(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].ComputingType"));
 			kVStoreInstance.setCloudType(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].CloudType"));
 			kVStoreInstance.setEditionType(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].EditionType"));
 			kVStoreInstance.setReadOnlyCount(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].ReadOnlyCount"));

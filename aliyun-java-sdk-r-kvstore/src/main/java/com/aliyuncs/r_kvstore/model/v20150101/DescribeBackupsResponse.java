@@ -145,6 +145,8 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 		private Long backupJobID;
 
+		private String recoverConfigMode;
+
 		public String getBackupStatus() {
 			return this.backupStatus;
 		}
@@ -255,6 +257,14 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 		public void setBackupJobID(Long backupJobID) {
 			this.backupJobID = backupJobID;
+		}
+
+		public String getRecoverConfigMode() {
+			return this.recoverConfigMode;
+		}
+
+		public void setRecoverConfigMode(String recoverConfigMode) {
+			this.recoverConfigMode = recoverConfigMode;
 		}
 	}
 
