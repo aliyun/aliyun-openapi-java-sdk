@@ -15,6 +15,7 @@
 package com.aliyuncs.arms.model.v20190808;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.arms.Endpoint;
 
@@ -22,14 +23,15 @@ import com.aliyuncs.arms.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeletePrometheusRemoteWriteRequest extends RpcAcsRequest<DeletePrometheusRemoteWriteResponse> {
+public class DeleteRumAppRequest extends RpcAcsRequest<DeleteRumAppResponse> {
 	   
 
-	private String remoteWriteNames;
+	private String appGroup;
 
-	private String clusterId;
-	public DeletePrometheusRemoteWriteRequest() {
-		super("ARMS", "2019-08-08", "DeletePrometheusRemoteWrite", "arms");
+	private String appId;
+	public DeleteRumAppRequest() {
+		super("ARMS", "2019-08-08", "DeleteRumApp", "arms");
+		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +39,31 @@ public class DeletePrometheusRemoteWriteRequest extends RpcAcsRequest<DeleteProm
 		} catch (Exception e) {}
 	}
 
-	public String getRemoteWriteNames() {
-		return this.remoteWriteNames;
+	public String getAppGroup() {
+		return this.appGroup;
 	}
 
-	public void setRemoteWriteNames(String remoteWriteNames) {
-		this.remoteWriteNames = remoteWriteNames;
-		if(remoteWriteNames != null){
-			putQueryParameter("RemoteWriteNames", remoteWriteNames);
+	public void setAppGroup(String appGroup) {
+		this.appGroup = appGroup;
+		if(appGroup != null){
+			putQueryParameter("AppGroup", appGroup);
 		}
 	}
 
-	public String getClusterId() {
-		return this.clusterId;
+	public String getAppId() {
+		return this.appId;
 	}
 
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putQueryParameter("ClusterId", clusterId);
+	public void setAppId(String appId) {
+		this.appId = appId;
+		if(appId != null){
+			putQueryParameter("AppId", appId);
 		}
 	}
 
 	@Override
-	public Class<DeletePrometheusRemoteWriteResponse> getResponseClass() {
-		return DeletePrometheusRemoteWriteResponse.class;
+	public Class<DeleteRumAppResponse> getResponseClass() {
+		return DeleteRumAppResponse.class;
 	}
 
 }

@@ -28,7 +28,8 @@ public class QueryCommercialUsageResponseUnmarshaller {
 	public static QueryCommercialUsageResponse unmarshall(QueryCommercialUsageResponse queryCommercialUsageResponse, UnmarshallerContext _ctx) {
 		
 		queryCommercialUsageResponse.setRequestId(_ctx.stringValue("QueryCommercialUsageResponse.RequestId"));
-		queryCommercialUsageResponse.setCode(_ctx.stringValue("QueryCommercialUsageResponse.Code"));
+		queryCommercialUsageResponse.setCode(_ctx.integerValue("QueryCommercialUsageResponse.Code"));
+		queryCommercialUsageResponse.setHttpStatusCode(_ctx.integerValue("QueryCommercialUsageResponse.HttpStatusCode"));
 		queryCommercialUsageResponse.setMessage(_ctx.stringValue("QueryCommercialUsageResponse.Message"));
 		queryCommercialUsageResponse.setSuccess(_ctx.booleanValue("QueryCommercialUsageResponse.Success"));
 

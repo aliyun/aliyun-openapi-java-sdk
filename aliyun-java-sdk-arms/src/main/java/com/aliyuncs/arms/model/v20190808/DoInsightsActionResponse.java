@@ -14,26 +14,25 @@
 
 package com.aliyuncs.arms.model.v20190808;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.arms.transform.v20190808.ListPrometheusRemoteWritesResponseUnmarshaller;
+import com.aliyuncs.arms.transform.v20190808.DoInsightsActionResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ListPrometheusRemoteWritesResponse extends AcsResponse {
+public class DoInsightsActionResponse extends AcsResponse {
 
 	private String requestId;
+
+	private Integer code;
 
 	private Boolean success;
 
 	private String message;
 
-	private Integer code;
-
-	private List<RemoteWrite> data;
+	private String data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,6 +40,14 @@ public class ListPrometheusRemoteWritesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getCode() {
+		return this.code;
+	}
+
+	public void setCode(Integer code) {
+		this.code = code;
 	}
 
 	public Boolean getSuccess() {
@@ -59,58 +66,17 @@ public class ListPrometheusRemoteWritesResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Integer getCode() {
-		return this.code;
-	}
-
-	public void setCode(Integer code) {
-		this.code = code;
-	}
-
-	public List<RemoteWrite> getData() {
+	public String getData() {
 		return this.data;
 	}
 
-	public void setData(List<RemoteWrite> data) {
+	public void setData(String data) {
 		this.data = data;
 	}
 
-	public static class RemoteWrite {
-
-		private String clusterId;
-
-		private String remoteWriteName;
-
-		private String remoteWriteYaml;
-
-		public String getClusterId() {
-			return this.clusterId;
-		}
-
-		public void setClusterId(String clusterId) {
-			this.clusterId = clusterId;
-		}
-
-		public String getRemoteWriteName() {
-			return this.remoteWriteName;
-		}
-
-		public void setRemoteWriteName(String remoteWriteName) {
-			this.remoteWriteName = remoteWriteName;
-		}
-
-		public String getRemoteWriteYaml() {
-			return this.remoteWriteYaml;
-		}
-
-		public void setRemoteWriteYaml(String remoteWriteYaml) {
-			this.remoteWriteYaml = remoteWriteYaml;
-		}
-	}
-
 	@Override
-	public ListPrometheusRemoteWritesResponse getInstance(UnmarshallerContext context) {
-		return	ListPrometheusRemoteWritesResponseUnmarshaller.unmarshall(this, context);
+	public DoInsightsActionResponse getInstance(UnmarshallerContext context) {
+		return	DoInsightsActionResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

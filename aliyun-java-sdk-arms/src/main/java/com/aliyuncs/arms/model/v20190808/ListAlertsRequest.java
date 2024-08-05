@@ -27,6 +27,8 @@ public class ListAlertsRequest extends RpcAcsRequest<ListAlertsResponse> {
 
 	private String severity;
 
+	private String owner;
+
 	private String integrationType;
 
 	private String alertName;
@@ -63,6 +65,17 @@ public class ListAlertsRequest extends RpcAcsRequest<ListAlertsResponse> {
 		this.severity = severity;
 		if(severity != null){
 			putQueryParameter("Severity", severity);
+		}
+	}
+
+	public String getOwner() {
+		return this.owner;
+	}
+
+	public void setOwner(String owner) {
+		this.owner = owner;
+		if(owner != null){
+			putQueryParameter("Owner", owner);
 		}
 	}
 

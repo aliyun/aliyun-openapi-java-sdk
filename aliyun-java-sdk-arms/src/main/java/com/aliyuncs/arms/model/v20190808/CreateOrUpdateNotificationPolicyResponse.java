@@ -63,6 +63,8 @@ public class CreateOrUpdateNotificationPolicyResponse extends AcsResponse {
 
 		private Boolean directedMode;
 
+		private String state;
+
 		private List<MatchingRulesItem> matchingRules;
 
 		private GroupRule groupRule;
@@ -133,6 +135,14 @@ public class CreateOrUpdateNotificationPolicyResponse extends AcsResponse {
 
 		public void setDirectedMode(Boolean directedMode) {
 			this.directedMode = directedMode;
+		}
+
+		public String getState() {
+			return this.state;
+		}
+
+		public void setState(String state) {
+			this.state = state;
 		}
 
 		public List<MatchingRulesItem> getMatchingRules() {

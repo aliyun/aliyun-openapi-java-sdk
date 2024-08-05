@@ -29,6 +29,8 @@ public class CreateOrUpdateContactRequest extends RpcAcsRequest<CreateOrUpdateCo
 
 	private Long reissueSendNotice;
 
+	private String corpUserId;
+
 	private String contactName;
 
 	private String resourceGroupId;
@@ -68,6 +70,17 @@ public class CreateOrUpdateContactRequest extends RpcAcsRequest<CreateOrUpdateCo
 		this.reissueSendNotice = reissueSendNotice;
 		if(reissueSendNotice != null){
 			putBodyParameter("ReissueSendNotice", reissueSendNotice.toString());
+		}
+	}
+
+	public String getCorpUserId() {
+		return this.corpUserId;
+	}
+
+	public void setCorpUserId(String corpUserId) {
+		this.corpUserId = corpUserId;
+		if(corpUserId != null){
+			putBodyParameter("CorpUserId", corpUserId);
 		}
 	}
 

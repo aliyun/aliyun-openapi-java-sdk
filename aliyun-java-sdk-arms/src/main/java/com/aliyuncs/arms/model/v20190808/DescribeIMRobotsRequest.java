@@ -25,11 +25,11 @@ import com.aliyuncs.arms.Endpoint;
 public class DescribeIMRobotsRequest extends RpcAcsRequest<DescribeIMRobotsResponse> {
 	   
 
-	private Long size;
-
 	private String robotIds;
 
 	private String robotName;
+
+	private Long size;
 
 	private Long page;
 	public DescribeIMRobotsRequest() {
@@ -39,17 +39,6 @@ public class DescribeIMRobotsRequest extends RpcAcsRequest<DescribeIMRobotsRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getSize() {
-		return this.size;
-	}
-
-	public void setSize(Long size) {
-		this.size = size;
-		if(size != null){
-			putQueryParameter("Size", size.toString());
-		}
 	}
 
 	public String getRobotIds() {
@@ -71,6 +60,17 @@ public class DescribeIMRobotsRequest extends RpcAcsRequest<DescribeIMRobotsRespo
 		this.robotName = robotName;
 		if(robotName != null){
 			putQueryParameter("RobotName", robotName);
+		}
+	}
+
+	public Long getSize() {
+		return this.size;
+	}
+
+	public void setSize(Long size) {
+		this.size = size;
+		if(size != null){
+			putQueryParameter("Size", size.toString());
 		}
 	}
 

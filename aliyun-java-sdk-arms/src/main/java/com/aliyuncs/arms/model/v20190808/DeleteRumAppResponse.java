@@ -15,24 +15,28 @@
 package com.aliyuncs.arms.model.v20190808;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.arms.transform.v20190808.UpdatePrometheusRemoteWriteResponseUnmarshaller;
+import com.aliyuncs.arms.transform.v20190808.DeleteRumAppResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class UpdatePrometheusRemoteWriteResponse extends AcsResponse {
+public class DeleteRumAppResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String data;
+	private Integer code;
 
 	private Boolean success;
 
 	private String message;
 
-	private Integer code;
+	private Integer httpStatusCode;
+
+	private String result;
+
+	private String resourceGroupId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,12 +46,12 @@ public class UpdatePrometheusRemoteWriteResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getData() {
-		return this.data;
+	public Integer getCode() {
+		return this.code;
 	}
 
-	public void setData(String data) {
-		this.data = data;
+	public void setCode(Integer code) {
+		this.code = code;
 	}
 
 	public Boolean getSuccess() {
@@ -66,17 +70,33 @@ public class UpdatePrometheusRemoteWriteResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Integer getCode() {
-		return this.code;
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
 	}
 
-	public void setCode(Integer code) {
-		this.code = code;
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
+
+	public String getResult() {
+		return this.result;
+	}
+
+	public void setResult(String result) {
+		this.result = result;
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
 	}
 
 	@Override
-	public UpdatePrometheusRemoteWriteResponse getInstance(UnmarshallerContext context) {
-		return	UpdatePrometheusRemoteWriteResponseUnmarshaller.unmarshall(this, context);
+	public DeleteRumAppResponse getInstance(UnmarshallerContext context) {
+		return	DeleteRumAppResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

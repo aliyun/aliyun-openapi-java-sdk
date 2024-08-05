@@ -139,6 +139,8 @@ public class ListEnvironmentsResponse extends AcsResponse {
 
 			private String managedType;
 
+			private String feePackage;
+
 			private List<AddonsItem> addons;
 
 			private List<FeaturesItem> features;
@@ -303,6 +305,14 @@ public class ListEnvironmentsResponse extends AcsResponse {
 
 			public void setManagedType(String managedType) {
 				this.managedType = managedType;
+			}
+
+			public String getFeePackage() {
+				return this.feePackage;
+			}
+
+			public void setFeePackage(String feePackage) {
+				this.feePackage = feePackage;
 			}
 
 			public List<AddonsItem> getAddons() {

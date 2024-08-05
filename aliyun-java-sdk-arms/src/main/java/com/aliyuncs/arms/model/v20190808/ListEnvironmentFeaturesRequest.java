@@ -25,6 +25,8 @@ import com.aliyuncs.arms.Endpoint;
 public class ListEnvironmentFeaturesRequest extends RpcAcsRequest<ListEnvironmentFeaturesResponse> {
 	   
 
+	private String aliyunLang;
+
 	private String environmentId;
 	public ListEnvironmentFeaturesRequest() {
 		super("ARMS", "2019-08-08", "ListEnvironmentFeatures", "arms");
@@ -33,6 +35,17 @@ public class ListEnvironmentFeaturesRequest extends RpcAcsRequest<ListEnvironmen
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getAliyunLang() {
+		return this.aliyunLang;
+	}
+
+	public void setAliyunLang(String aliyunLang) {
+		this.aliyunLang = aliyunLang;
+		if(aliyunLang != null){
+			putQueryParameter("AliyunLang", aliyunLang);
+		}
 	}
 
 	public String getEnvironmentId() {

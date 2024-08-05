@@ -50,12 +50,22 @@ public class GetPrometheusInstanceResponseUnmarshaller {
 		data.setHttpApiIntraUrl(_ctx.stringValue("GetPrometheusInstanceResponse.Data.HttpApiIntraUrl"));
 		data.setHttpApiInterUrl(_ctx.stringValue("GetPrometheusInstanceResponse.Data.HttpApiInterUrl"));
 		data.setAuthToken(_ctx.stringValue("GetPrometheusInstanceResponse.Data.AuthToken"));
+		data.setAccessType(_ctx.stringValue("GetPrometheusInstanceResponse.Data.AccessType"));
 		data.setPaymentType(_ctx.stringValue("GetPrometheusInstanceResponse.Data.PaymentType"));
 		data.setStorageDuration(_ctx.integerValue("GetPrometheusInstanceResponse.Data.StorageDuration"));
 		data.setArchiveDuration(_ctx.integerValue("GetPrometheusInstanceResponse.Data.ArchiveDuration"));
 		data.setGrafanaInstanceId(_ctx.stringValue("GetPrometheusInstanceResponse.Data.GrafanaInstanceId"));
 		data.setResourceGroupId(_ctx.stringValue("GetPrometheusInstanceResponse.Data.ResourceGroupId"));
 		data.setResourceType(_ctx.stringValue("GetPrometheusInstanceResponse.Data.ResourceType"));
+		data.setEnableAuthToken(_ctx.stringValue("GetPrometheusInstanceResponse.Data.EnableAuthToken"));
+		data.setProduct(_ctx.stringValue("GetPrometheusInstanceResponse.Data.Product"));
+		data.setDbInstanceStatus(_ctx.stringValue("GetPrometheusInstanceResponse.Data.DbInstanceStatus"));
+
+		List<String> surpportAuthTypes = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("GetPrometheusInstanceResponse.Data.SurpportAuthTypes.Length"); i++) {
+			surpportAuthTypes.add(_ctx.stringValue("GetPrometheusInstanceResponse.Data.SurpportAuthTypes["+ i +"]"));
+		}
+		data.setSurpportAuthTypes(surpportAuthTypes);
 
 		List<TagsItem> tags = new ArrayList<TagsItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetPrometheusInstanceResponse.Data.Tags.Length"); i++) {

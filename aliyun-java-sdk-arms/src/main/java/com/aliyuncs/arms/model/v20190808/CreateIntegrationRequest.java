@@ -25,13 +25,13 @@ import com.aliyuncs.arms.Endpoint;
 public class CreateIntegrationRequest extends RpcAcsRequest<CreateIntegrationResponse> {
 	   
 
+	private String description;
+
 	private Boolean autoRecover;
 
 	private Long recoverTime;
 
 	private String integrationName;
-
-	private String description;
 
 	private String integrationProductType;
 	public CreateIntegrationRequest() {
@@ -41,6 +41,17 @@ public class CreateIntegrationRequest extends RpcAcsRequest<CreateIntegrationRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putBodyParameter("Description", description);
+		}
 	}
 
 	public Boolean getAutoRecover() {
@@ -73,17 +84,6 @@ public class CreateIntegrationRequest extends RpcAcsRequest<CreateIntegrationRes
 		this.integrationName = integrationName;
 		if(integrationName != null){
 			putBodyParameter("IntegrationName", integrationName);
-		}
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putBodyParameter("Description", description);
 		}
 	}
 

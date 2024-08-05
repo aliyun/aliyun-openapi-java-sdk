@@ -103,6 +103,8 @@ public class GetPrometheusInstanceResponse extends AcsResponse {
 
 		private String authToken;
 
+		private String accessType;
+
 		private String paymentType;
 
 		private Integer storageDuration;
@@ -115,7 +117,15 @@ public class GetPrometheusInstanceResponse extends AcsResponse {
 
 		private String resourceType;
 
+		private String enableAuthToken;
+
+		private String product;
+
+		private String dbInstanceStatus;
+
 		private List<TagsItem> tags;
+
+		private List<String> surpportAuthTypes;
 
 		public String getClusterId() {
 			return this.clusterId;
@@ -261,6 +271,14 @@ public class GetPrometheusInstanceResponse extends AcsResponse {
 			this.authToken = authToken;
 		}
 
+		public String getAccessType() {
+			return this.accessType;
+		}
+
+		public void setAccessType(String accessType) {
+			this.accessType = accessType;
+		}
+
 		public String getPaymentType() {
 			return this.paymentType;
 		}
@@ -309,12 +327,44 @@ public class GetPrometheusInstanceResponse extends AcsResponse {
 			this.resourceType = resourceType;
 		}
 
+		public String getEnableAuthToken() {
+			return this.enableAuthToken;
+		}
+
+		public void setEnableAuthToken(String enableAuthToken) {
+			this.enableAuthToken = enableAuthToken;
+		}
+
+		public String getProduct() {
+			return this.product;
+		}
+
+		public void setProduct(String product) {
+			this.product = product;
+		}
+
+		public String getDbInstanceStatus() {
+			return this.dbInstanceStatus;
+		}
+
+		public void setDbInstanceStatus(String dbInstanceStatus) {
+			this.dbInstanceStatus = dbInstanceStatus;
+		}
+
 		public List<TagsItem> getTags() {
 			return this.tags;
 		}
 
 		public void setTags(List<TagsItem> tags) {
 			this.tags = tags;
+		}
+
+		public List<String> getSurpportAuthTypes() {
+			return this.surpportAuthTypes;
+		}
+
+		public void setSurpportAuthTypes(List<String> surpportAuthTypes) {
+			this.surpportAuthTypes = surpportAuthTypes;
 		}
 
 		public static class TagsItem {

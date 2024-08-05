@@ -89,7 +89,7 @@ public class GetAlertRulesResponse extends AcsResponse {
 
 		public static class AlertRulesItem {
 
-			private Float alertId;
+			private Long alertId;
 
 			private String alertName;
 
@@ -141,11 +141,11 @@ public class GetAlertRulesResponse extends AcsResponse {
 
 			private Filters filters;
 
-			public Float getAlertId() {
+			public Long getAlertId() {
 				return this.alertId;
 			}
 
-			public void setAlertId(Float alertId) {
+			public void setAlertId(Long alertId) {
 				this.alertId = alertId;
 			}
 
@@ -442,7 +442,7 @@ public class GetAlertRulesResponse extends AcsResponse {
 
 				public static class AlertRuleItemsItem {
 
-					private Float n;
+					private Long n;
 
 					private String metricKey;
 
@@ -452,11 +452,11 @@ public class GetAlertRulesResponse extends AcsResponse {
 
 					private String value;
 
-					public Float getN() {
+					public Long getN() {
 						return this.n;
 					}
 
-					public void setN(Float n) {
+					public void setN(Long n) {
 						this.n = n;
 					}
 

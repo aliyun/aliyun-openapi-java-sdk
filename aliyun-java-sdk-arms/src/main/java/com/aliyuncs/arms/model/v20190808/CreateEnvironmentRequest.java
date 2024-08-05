@@ -30,11 +30,15 @@ public class CreateEnvironmentRequest extends RpcAcsRequest<CreateEnvironmentRes
 
 	private String environmentName;
 
+	private Boolean initEnvironment;
+
 	private String prometheusInstanceId;
 
 	private String environmentSubType;
 
 	private List<Tags> tagss;
+
+	private String grafanaWorkspaceId;
 
 	private String resourceGroupId;
 
@@ -76,6 +80,17 @@ public class CreateEnvironmentRequest extends RpcAcsRequest<CreateEnvironmentRes
 		}
 	}
 
+	public Boolean getInitEnvironment() {
+		return this.initEnvironment;
+	}
+
+	public void setInitEnvironment(Boolean initEnvironment) {
+		this.initEnvironment = initEnvironment;
+		if(initEnvironment != null){
+			putQueryParameter("InitEnvironment", initEnvironment.toString());
+		}
+	}
+
 	public String getPrometheusInstanceId() {
 		return this.prometheusInstanceId;
 	}
@@ -110,6 +125,17 @@ public class CreateEnvironmentRequest extends RpcAcsRequest<CreateEnvironmentRes
 				putQueryParameter("Tags." + (depth1 + 1) + ".Key" , tagss.get(depth1).getKey());
 			}
 		}	
+	}
+
+	public String getGrafanaWorkspaceId() {
+		return this.grafanaWorkspaceId;
+	}
+
+	public void setGrafanaWorkspaceId(String grafanaWorkspaceId) {
+		this.grafanaWorkspaceId = grafanaWorkspaceId;
+		if(grafanaWorkspaceId != null){
+			putQueryParameter("GrafanaWorkspaceId", grafanaWorkspaceId);
+		}
 	}
 
 	public String getResourceGroupId() {

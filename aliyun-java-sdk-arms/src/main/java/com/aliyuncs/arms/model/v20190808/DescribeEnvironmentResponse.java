@@ -93,6 +93,8 @@ public class DescribeEnvironmentResponse extends AcsResponse {
 
 		private String prometheusInstanceName;
 
+		private String grafanaWorkspaceId;
+
 		private String grafanaFolderUid;
 
 		private String grafanaDatasourceUid;
@@ -112,6 +114,10 @@ public class DescribeEnvironmentResponse extends AcsResponse {
 		private String feePackage;
 
 		private String dbInstanceStatus;
+
+		private String securityGroupId;
+
+		private String vswitchId;
 
 		private String resourceGroupId;
 
@@ -221,6 +227,14 @@ public class DescribeEnvironmentResponse extends AcsResponse {
 			this.prometheusInstanceName = prometheusInstanceName;
 		}
 
+		public String getGrafanaWorkspaceId() {
+			return this.grafanaWorkspaceId;
+		}
+
+		public void setGrafanaWorkspaceId(String grafanaWorkspaceId) {
+			this.grafanaWorkspaceId = grafanaWorkspaceId;
+		}
+
 		public String getGrafanaFolderUid() {
 			return this.grafanaFolderUid;
 		}
@@ -299,6 +313,22 @@ public class DescribeEnvironmentResponse extends AcsResponse {
 
 		public void setDbInstanceStatus(String dbInstanceStatus) {
 			this.dbInstanceStatus = dbInstanceStatus;
+		}
+
+		public String getSecurityGroupId() {
+			return this.securityGroupId;
+		}
+
+		public void setSecurityGroupId(String securityGroupId) {
+			this.securityGroupId = securityGroupId;
+		}
+
+		public String getVswitchId() {
+			return this.vswitchId;
+		}
+
+		public void setVswitchId(String vswitchId) {
+			this.vswitchId = vswitchId;
 		}
 
 		public String getResourceGroupId() {

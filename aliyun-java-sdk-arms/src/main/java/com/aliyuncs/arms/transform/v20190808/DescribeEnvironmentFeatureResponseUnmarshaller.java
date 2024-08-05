@@ -55,6 +55,15 @@ public class DescribeEnvironmentFeatureResponseUnmarshaller {
 		featureStatus.setName(_ctx.stringValue("DescribeEnvironmentFeatureResponse.Data.FeatureStatus.Name"));
 		featureStatus.setNamespace(_ctx.stringValue("DescribeEnvironmentFeatureResponse.Data.FeatureStatus.Namespace"));
 		featureStatus.setStatus(_ctx.stringValue("DescribeEnvironmentFeatureResponse.Data.FeatureStatus.Status"));
+		featureStatus.setSecurityGroupId(_ctx.stringValue("DescribeEnvironmentFeatureResponse.Data.FeatureStatus.SecurityGroupId"));
+		featureStatus.setVSwitchId(_ctx.stringValue("DescribeEnvironmentFeatureResponse.Data.FeatureStatus.VSwitchId"));
+		featureStatus.setBindResourceId(_ctx.stringValue("DescribeEnvironmentFeatureResponse.Data.FeatureStatus.BindResourceId"));
+
+		List<String> ips = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeEnvironmentFeatureResponse.Data.FeatureStatus.Ips.Length"); i++) {
+			ips.add(_ctx.stringValue("DescribeEnvironmentFeatureResponse.Data.FeatureStatus.Ips["+ i +"]"));
+		}
+		featureStatus.setIps(ips);
 
 		List<FeatureContainersItem> featureContainers = new ArrayList<FeatureContainersItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeEnvironmentFeatureResponse.Data.FeatureStatus.FeatureContainers.Length"); i++) {

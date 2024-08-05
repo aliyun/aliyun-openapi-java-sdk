@@ -25,29 +25,31 @@ import com.aliyuncs.arms.Endpoint;
 public class CreateOrUpdateNotificationPolicyRequest extends RpcAcsRequest<CreateOrUpdateNotificationPolicyResponse> {
 	   
 
-	private Long escalationPolicyId;
-
-	private Boolean sendRecoverMessage;
-
 	private Long integrationId;
-
-	private String matchingRules;
-
-	private Boolean directedMode;
 
 	private String groupRule;
 
 	private Boolean repeat;
 
-	private String name;
-
 	private Long id;
 
 	private String notifyRule;
 
-	private String notifyTemplate;
+	private String state;
 
 	private Long repeatInterval;
+
+	private Long escalationPolicyId;
+
+	private Boolean sendRecoverMessage;
+
+	private String matchingRules;
+
+	private Boolean directedMode;
+
+	private String name;
+
+	private String notifyTemplate;
 	public CreateOrUpdateNotificationPolicyRequest() {
 		super("ARMS", "2019-08-08", "CreateOrUpdateNotificationPolicy", "arms");
 		setMethod(MethodType.POST);
@@ -55,28 +57,6 @@ public class CreateOrUpdateNotificationPolicyRequest extends RpcAcsRequest<Creat
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getEscalationPolicyId() {
-		return this.escalationPolicyId;
-	}
-
-	public void setEscalationPolicyId(Long escalationPolicyId) {
-		this.escalationPolicyId = escalationPolicyId;
-		if(escalationPolicyId != null){
-			putBodyParameter("EscalationPolicyId", escalationPolicyId.toString());
-		}
-	}
-
-	public Boolean getSendRecoverMessage() {
-		return this.sendRecoverMessage;
-	}
-
-	public void setSendRecoverMessage(Boolean sendRecoverMessage) {
-		this.sendRecoverMessage = sendRecoverMessage;
-		if(sendRecoverMessage != null){
-			putBodyParameter("SendRecoverMessage", sendRecoverMessage.toString());
-		}
 	}
 
 	public Long getIntegrationId() {
@@ -87,28 +67,6 @@ public class CreateOrUpdateNotificationPolicyRequest extends RpcAcsRequest<Creat
 		this.integrationId = integrationId;
 		if(integrationId != null){
 			putBodyParameter("IntegrationId", integrationId.toString());
-		}
-	}
-
-	public String getMatchingRules() {
-		return this.matchingRules;
-	}
-
-	public void setMatchingRules(String matchingRules) {
-		this.matchingRules = matchingRules;
-		if(matchingRules != null){
-			putBodyParameter("MatchingRules", matchingRules);
-		}
-	}
-
-	public Boolean getDirectedMode() {
-		return this.directedMode;
-	}
-
-	public void setDirectedMode(Boolean directedMode) {
-		this.directedMode = directedMode;
-		if(directedMode != null){
-			putBodyParameter("DirectedMode", directedMode.toString());
 		}
 	}
 
@@ -134,17 +92,6 @@ public class CreateOrUpdateNotificationPolicyRequest extends RpcAcsRequest<Creat
 		}
 	}
 
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putBodyParameter("Name", name);
-		}
-	}
-
 	public Long getId() {
 		return this.id;
 	}
@@ -167,14 +114,14 @@ public class CreateOrUpdateNotificationPolicyRequest extends RpcAcsRequest<Creat
 		}
 	}
 
-	public String getNotifyTemplate() {
-		return this.notifyTemplate;
+	public String getState() {
+		return this.state;
 	}
 
-	public void setNotifyTemplate(String notifyTemplate) {
-		this.notifyTemplate = notifyTemplate;
-		if(notifyTemplate != null){
-			putBodyParameter("NotifyTemplate", notifyTemplate);
+	public void setState(String state) {
+		this.state = state;
+		if(state != null){
+			putBodyParameter("State", state);
 		}
 	}
 
@@ -186,6 +133,72 @@ public class CreateOrUpdateNotificationPolicyRequest extends RpcAcsRequest<Creat
 		this.repeatInterval = repeatInterval;
 		if(repeatInterval != null){
 			putBodyParameter("RepeatInterval", repeatInterval.toString());
+		}
+	}
+
+	public Long getEscalationPolicyId() {
+		return this.escalationPolicyId;
+	}
+
+	public void setEscalationPolicyId(Long escalationPolicyId) {
+		this.escalationPolicyId = escalationPolicyId;
+		if(escalationPolicyId != null){
+			putBodyParameter("EscalationPolicyId", escalationPolicyId.toString());
+		}
+	}
+
+	public Boolean getSendRecoverMessage() {
+		return this.sendRecoverMessage;
+	}
+
+	public void setSendRecoverMessage(Boolean sendRecoverMessage) {
+		this.sendRecoverMessage = sendRecoverMessage;
+		if(sendRecoverMessage != null){
+			putBodyParameter("SendRecoverMessage", sendRecoverMessage.toString());
+		}
+	}
+
+	public String getMatchingRules() {
+		return this.matchingRules;
+	}
+
+	public void setMatchingRules(String matchingRules) {
+		this.matchingRules = matchingRules;
+		if(matchingRules != null){
+			putBodyParameter("MatchingRules", matchingRules);
+		}
+	}
+
+	public Boolean getDirectedMode() {
+		return this.directedMode;
+	}
+
+	public void setDirectedMode(Boolean directedMode) {
+		this.directedMode = directedMode;
+		if(directedMode != null){
+			putBodyParameter("DirectedMode", directedMode.toString());
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putBodyParameter("Name", name);
+		}
+	}
+
+	public String getNotifyTemplate() {
+		return this.notifyTemplate;
+	}
+
+	public void setNotifyTemplate(String notifyTemplate) {
+		this.notifyTemplate = notifyTemplate;
+		if(notifyTemplate != null){
+			putBodyParameter("NotifyTemplate", notifyTemplate);
 		}
 	}
 

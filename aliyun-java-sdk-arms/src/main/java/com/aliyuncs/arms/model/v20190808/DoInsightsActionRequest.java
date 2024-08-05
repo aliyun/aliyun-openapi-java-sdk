@@ -15,6 +15,7 @@
 package com.aliyuncs.arms.model.v20190808;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.arms.Endpoint;
 
@@ -22,14 +23,15 @@ import com.aliyuncs.arms.Endpoint;
  * @author auto create
  * @version 
  */
-public class AddPrometheusRemoteWriteRequest extends RpcAcsRequest<AddPrometheusRemoteWriteResponse> {
+public class DoInsightsActionRequest extends RpcAcsRequest<DoInsightsActionResponse> {
 	   
 
-	private String clusterId;
+	private String data;
 
-	private String remoteWriteYaml;
-	public AddPrometheusRemoteWriteRequest() {
-		super("ARMS", "2019-08-08", "AddPrometheusRemoteWrite", "arms");
+	private String module;
+	public DoInsightsActionRequest() {
+		super("ARMS", "2019-08-08", "DoInsightsAction", "arms");
+		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +39,31 @@ public class AddPrometheusRemoteWriteRequest extends RpcAcsRequest<AddPrometheus
 		} catch (Exception e) {}
 	}
 
-	public String getClusterId() {
-		return this.clusterId;
+	public String getData() {
+		return this.data;
 	}
 
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putQueryParameter("ClusterId", clusterId);
+	public void setData(String data) {
+		this.data = data;
+		if(data != null){
+			putBodyParameter("Data", data);
 		}
 	}
 
-	public String getRemoteWriteYaml() {
-		return this.remoteWriteYaml;
+	public String getModule() {
+		return this.module;
 	}
 
-	public void setRemoteWriteYaml(String remoteWriteYaml) {
-		this.remoteWriteYaml = remoteWriteYaml;
-		if(remoteWriteYaml != null){
-			putBodyParameter("RemoteWriteYaml", remoteWriteYaml);
+	public void setModule(String module) {
+		this.module = module;
+		if(module != null){
+			putBodyParameter("Module", module);
 		}
 	}
 
 	@Override
-	public Class<AddPrometheusRemoteWriteResponse> getResponseClass() {
-		return AddPrometheusRemoteWriteResponse.class;
+	public Class<DoInsightsActionResponse> getResponseClass() {
+		return DoInsightsActionResponse.class;
 	}
 
 }

@@ -61,6 +61,7 @@ public class ListEnvironmentsResponseUnmarshaller {
 			environmentsItem.setReleaseCount(_ctx.integerValue("ListEnvironmentsResponse.Data.Environments["+ i +"].ReleaseCount"));
 			environmentsItem.setLatestReleaseCreateTime(_ctx.stringValue("ListEnvironmentsResponse.Data.Environments["+ i +"].LatestReleaseCreateTime"));
 			environmentsItem.setManagedType(_ctx.stringValue("ListEnvironmentsResponse.Data.Environments["+ i +"].ManagedType"));
+			environmentsItem.setFeePackage(_ctx.stringValue("ListEnvironmentsResponse.Data.Environments["+ i +"].FeePackage"));
 
 			List<AddonsItem> addons = new ArrayList<AddonsItem>();
 			for (int j = 0; j < _ctx.lengthValue("ListEnvironmentsResponse.Data.Environments["+ i +"].Addons.Length"); j++) {

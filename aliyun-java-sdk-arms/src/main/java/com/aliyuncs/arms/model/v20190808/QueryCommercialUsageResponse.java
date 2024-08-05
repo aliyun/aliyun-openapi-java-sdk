@@ -26,7 +26,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryCommercialUsageResponse extends AcsResponse {
 
-	private String code;
+	private Integer code;
+
+	private Integer httpStatusCode;
 
 	private String message;
 
@@ -36,12 +38,20 @@ public class QueryCommercialUsageResponse extends AcsResponse {
 
 	private Data data;
 
-	public String getCode() {
+	public Integer getCode() {
 		return this.code;
 	}
 
-	public void setCode(String code) {
+	public void setCode(Integer code) {
 		this.code = code;
+	}
+
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
 	public String getMessage() {

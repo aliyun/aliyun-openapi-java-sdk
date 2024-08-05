@@ -21,6 +21,7 @@ import com.aliyuncs.arms.model.v20190808.ListAlertEventsResponse;
 import com.aliyuncs.arms.model.v20190808.ListAlertEventsResponse.PageBean;
 import com.aliyuncs.arms.model.v20190808.ListAlertEventsResponse.PageBean.EventsItem;
 import com.aliyuncs.arms.model.v20190808.ListAlertEventsResponse.PageBean.EventsItem.AlarmsItem;
+import com.aliyuncs.arms.model.v20190808.ListAlertEventsResponse.PageBean.EventsItem.NotificationPolicy;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -51,6 +52,7 @@ public class ListAlertEventsResponseUnmarshaller {
 			eventsItem.setAnnotations(_ctx.stringValue("ListAlertEventsResponse.PageBean.Events["+ i +"].Annotations"));
 			eventsItem.setLabels(_ctx.stringValue("ListAlertEventsResponse.PageBean.Events["+ i +"].Labels"));
 			eventsItem.setHandlerName(_ctx.stringValue("ListAlertEventsResponse.PageBean.Events["+ i +"].HandlerName"));
+			eventsItem.setTriggerCount(_ctx.longValue("ListAlertEventsResponse.PageBean.Events["+ i +"].TriggerCount"));
 
 			List<AlarmsItem> alarms = new ArrayList<AlarmsItem>();
 			for (int j = 0; j < _ctx.lengthValue("ListAlertEventsResponse.PageBean.Events["+ i +"].Alarms.Length"); j++) {
@@ -63,6 +65,16 @@ public class ListAlertEventsResponseUnmarshaller {
 				alarms.add(alarmsItem);
 			}
 			eventsItem.setAlarms(alarms);
+
+			List<NotificationPolicy> notificationPolicies = new ArrayList<NotificationPolicy>();
+			for (int j = 0; j < _ctx.lengthValue("ListAlertEventsResponse.PageBean.Events["+ i +"].NotificationPolicies.Length"); j++) {
+				NotificationPolicy notificationPolicy = new NotificationPolicy();
+				notificationPolicy.setId(_ctx.longValue("ListAlertEventsResponse.PageBean.Events["+ i +"].NotificationPolicies["+ j +"].Id"));
+				notificationPolicy.setName(_ctx.stringValue("ListAlertEventsResponse.PageBean.Events["+ i +"].NotificationPolicies["+ j +"].Name"));
+
+				notificationPolicies.add(notificationPolicy);
+			}
+			eventsItem.setNotificationPolicies(notificationPolicies);
 
 			events.add(eventsItem);
 		}

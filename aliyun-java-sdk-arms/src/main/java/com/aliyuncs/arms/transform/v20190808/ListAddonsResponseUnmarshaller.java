@@ -91,6 +91,12 @@ public class ListAddonsResponseUnmarshaller {
 					services.add(_ctx.stringValue("ListAddonsResponse.Data["+ i +"].Environments["+ j +"].Dependencies.Services["+ k +"]"));
 				}
 				dependencies.setServices(services);
+
+				List<String> clusterTypes = new ArrayList<String>();
+				for (int k = 0; k < _ctx.lengthValue("ListAddonsResponse.Data["+ i +"].Environments["+ j +"].Dependencies.ClusterTypes.Length"); k++) {
+					clusterTypes.add(_ctx.stringValue("ListAddonsResponse.Data["+ i +"].Environments["+ j +"].Dependencies.ClusterTypes["+ k +"]"));
+				}
+				dependencies.setClusterTypes(clusterTypes);
 				environmentsItem.setDependencies(dependencies);
 
 				Policies policies = new Policies();

@@ -28,6 +28,8 @@ import com.aliyuncs.arms.Endpoint;
 public class ListEnvironmentsRequest extends RpcAcsRequest<ListEnvironmentsResponse> {
 	   
 
+	private String filterRegionIds;
+
 	private String resourceGroupId;
 
 	private String addonName;
@@ -38,6 +40,8 @@ public class ListEnvironmentsRequest extends RpcAcsRequest<ListEnvironmentsRespo
 	private List<Tag> tag;
 
 	private String bindResourceId;
+
+	private String feePackage;
 	public ListEnvironmentsRequest() {
 		super("ARMS", "2019-08-08", "ListEnvironments", "arms");
 		setMethod(MethodType.POST);
@@ -45,6 +49,17 @@ public class ListEnvironmentsRequest extends RpcAcsRequest<ListEnvironmentsRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getFilterRegionIds() {
+		return this.filterRegionIds;
+	}
+
+	public void setFilterRegionIds(String filterRegionIds) {
+		this.filterRegionIds = filterRegionIds;
+		if(filterRegionIds != null){
+			putQueryParameter("FilterRegionIds", filterRegionIds);
+		}
 	}
 
 	public String getResourceGroupId() {
@@ -99,6 +114,17 @@ public class ListEnvironmentsRequest extends RpcAcsRequest<ListEnvironmentsRespo
 		this.bindResourceId = bindResourceId;
 		if(bindResourceId != null){
 			putQueryParameter("BindResourceId", bindResourceId);
+		}
+	}
+
+	public String getFeePackage() {
+		return this.feePackage;
+	}
+
+	public void setFeePackage(String feePackage) {
+		this.feePackage = feePackage;
+		if(feePackage != null){
+			putQueryParameter("FeePackage", feePackage);
 		}
 	}
 

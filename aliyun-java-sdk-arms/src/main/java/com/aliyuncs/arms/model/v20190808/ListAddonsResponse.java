@@ -319,6 +319,8 @@ public class ListAddonsResponse extends AcsResponse {
 
 				private List<String> services;
 
+				private List<String> clusterTypes;
+
 				public Map<Object,Object> getFeatures() {
 					return this.features;
 				}
@@ -333,6 +335,14 @@ public class ListAddonsResponse extends AcsResponse {
 
 				public void setServices(List<String> services) {
 					this.services = services;
+				}
+
+				public List<String> getClusterTypes() {
+					return this.clusterTypes;
+				}
+
+				public void setClusterTypes(List<String> clusterTypes) {
+					this.clusterTypes = clusterTypes;
 				}
 			}
 

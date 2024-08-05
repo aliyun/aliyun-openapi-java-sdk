@@ -51,6 +51,8 @@ public class CreateOrUpdateSilencePolicyResponse extends AcsResponse {
 
 		private String name;
 
+		private String state;
+
 		private List<MatchingRulesItem> matchingRules;
 
 		public Long getId() {
@@ -67,6 +69,14 @@ public class CreateOrUpdateSilencePolicyResponse extends AcsResponse {
 
 		public void setName(String name) {
 			this.name = name;
+		}
+
+		public String getState() {
+			return this.state;
+		}
+
+		public void setState(String state) {
+			this.state = state;
 		}
 
 		public List<MatchingRulesItem> getMatchingRules() {

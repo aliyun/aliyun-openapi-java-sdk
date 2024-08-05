@@ -45,6 +45,7 @@ public class DescribeEnvironmentResponseUnmarshaller {
 		data.setBindVpcCidr(_ctx.stringValue("DescribeEnvironmentResponse.Data.BindVpcCidr"));
 		data.setPrometheusInstanceId(_ctx.stringValue("DescribeEnvironmentResponse.Data.PrometheusInstanceId"));
 		data.setPrometheusInstanceName(_ctx.stringValue("DescribeEnvironmentResponse.Data.PrometheusInstanceName"));
+		data.setGrafanaWorkspaceId(_ctx.stringValue("DescribeEnvironmentResponse.Data.GrafanaWorkspaceId"));
 		data.setGrafanaFolderUid(_ctx.stringValue("DescribeEnvironmentResponse.Data.GrafanaFolderUid"));
 		data.setGrafanaDatasourceUid(_ctx.stringValue("DescribeEnvironmentResponse.Data.GrafanaDatasourceUid"));
 		data.setVpcId(_ctx.stringValue("DescribeEnvironmentResponse.Data.VpcId"));
@@ -55,6 +56,8 @@ public class DescribeEnvironmentResponseUnmarshaller {
 		data.setManagedType(_ctx.stringValue("DescribeEnvironmentResponse.Data.ManagedType"));
 		data.setFeePackage(_ctx.stringValue("DescribeEnvironmentResponse.Data.FeePackage"));
 		data.setDbInstanceStatus(_ctx.stringValue("DescribeEnvironmentResponse.Data.DbInstanceStatus"));
+		data.setSecurityGroupId(_ctx.stringValue("DescribeEnvironmentResponse.Data.SecurityGroupId"));
+		data.setVswitchId(_ctx.stringValue("DescribeEnvironmentResponse.Data.VswitchId"));
 		data.setResourceGroupId(_ctx.stringValue("DescribeEnvironmentResponse.Data.ResourceGroupId"));
 
 		List<TagsItem> tags = new ArrayList<TagsItem>();

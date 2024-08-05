@@ -25,10 +25,6 @@ import com.aliyuncs.arms.Endpoint;
 public class UpdateIntegrationRequest extends RpcAcsRequest<UpdateIntegrationResponse> {
 	   
 
-	private String fieldRedefineRules;
-
-	private String stat;
-
 	private String initiativeRecoverValue;
 
 	private String liveness;
@@ -36,8 +32,6 @@ public class UpdateIntegrationRequest extends RpcAcsRequest<UpdateIntegrationRes
 	private Long integrationId;
 
 	private String description;
-
-	private Boolean autoRecover;
 
 	private Long recoverTime;
 
@@ -47,9 +41,15 @@ public class UpdateIntegrationRequest extends RpcAcsRequest<UpdateIntegrationRes
 
 	private Boolean state;
 
-	private String extendedFieldRedefineRules;
-
 	private String initiativeRecoverField;
+
+	private String fieldRedefineRules;
+
+	private String stat;
+
+	private Boolean autoRecover;
+
+	private String extendedFieldRedefineRules;
 
 	private String integrationProductType;
 	public UpdateIntegrationRequest() {
@@ -59,28 +59,6 @@ public class UpdateIntegrationRequest extends RpcAcsRequest<UpdateIntegrationRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getFieldRedefineRules() {
-		return this.fieldRedefineRules;
-	}
-
-	public void setFieldRedefineRules(String fieldRedefineRules) {
-		this.fieldRedefineRules = fieldRedefineRules;
-		if(fieldRedefineRules != null){
-			putBodyParameter("FieldRedefineRules", fieldRedefineRules);
-		}
-	}
-
-	public String getStat() {
-		return this.stat;
-	}
-
-	public void setStat(String stat) {
-		this.stat = stat;
-		if(stat != null){
-			putBodyParameter("Stat", stat);
-		}
 	}
 
 	public String getInitiativeRecoverValue() {
@@ -124,17 +102,6 @@ public class UpdateIntegrationRequest extends RpcAcsRequest<UpdateIntegrationRes
 		this.description = description;
 		if(description != null){
 			putBodyParameter("Description", description);
-		}
-	}
-
-	public Boolean getAutoRecover() {
-		return this.autoRecover;
-	}
-
-	public void setAutoRecover(Boolean autoRecover) {
-		this.autoRecover = autoRecover;
-		if(autoRecover != null){
-			putBodyParameter("AutoRecover", autoRecover.toString());
 		}
 	}
 
@@ -182,17 +149,6 @@ public class UpdateIntegrationRequest extends RpcAcsRequest<UpdateIntegrationRes
 		}
 	}
 
-	public String getExtendedFieldRedefineRules() {
-		return this.extendedFieldRedefineRules;
-	}
-
-	public void setExtendedFieldRedefineRules(String extendedFieldRedefineRules) {
-		this.extendedFieldRedefineRules = extendedFieldRedefineRules;
-		if(extendedFieldRedefineRules != null){
-			putBodyParameter("ExtendedFieldRedefineRules", extendedFieldRedefineRules);
-		}
-	}
-
 	public String getInitiativeRecoverField() {
 		return this.initiativeRecoverField;
 	}
@@ -201,6 +157,50 @@ public class UpdateIntegrationRequest extends RpcAcsRequest<UpdateIntegrationRes
 		this.initiativeRecoverField = initiativeRecoverField;
 		if(initiativeRecoverField != null){
 			putBodyParameter("InitiativeRecoverField", initiativeRecoverField);
+		}
+	}
+
+	public String getFieldRedefineRules() {
+		return this.fieldRedefineRules;
+	}
+
+	public void setFieldRedefineRules(String fieldRedefineRules) {
+		this.fieldRedefineRules = fieldRedefineRules;
+		if(fieldRedefineRules != null){
+			putBodyParameter("FieldRedefineRules", fieldRedefineRules);
+		}
+	}
+
+	public String getStat() {
+		return this.stat;
+	}
+
+	public void setStat(String stat) {
+		this.stat = stat;
+		if(stat != null){
+			putBodyParameter("Stat", stat);
+		}
+	}
+
+	public Boolean getAutoRecover() {
+		return this.autoRecover;
+	}
+
+	public void setAutoRecover(Boolean autoRecover) {
+		this.autoRecover = autoRecover;
+		if(autoRecover != null){
+			putBodyParameter("AutoRecover", autoRecover.toString());
+		}
+	}
+
+	public String getExtendedFieldRedefineRules() {
+		return this.extendedFieldRedefineRules;
+	}
+
+	public void setExtendedFieldRedefineRules(String extendedFieldRedefineRules) {
+		this.extendedFieldRedefineRules = extendedFieldRedefineRules;
+		if(extendedFieldRedefineRules != null){
+			putBodyParameter("ExtendedFieldRedefineRules", extendedFieldRedefineRules);
 		}
 	}
 

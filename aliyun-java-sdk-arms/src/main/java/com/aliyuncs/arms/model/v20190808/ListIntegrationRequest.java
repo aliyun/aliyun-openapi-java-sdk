@@ -25,11 +25,11 @@ import com.aliyuncs.arms.Endpoint;
 public class ListIntegrationRequest extends RpcAcsRequest<ListIntegrationResponse> {
 	   
 
+	private Boolean isDetail;
+
 	private Long size;
 
 	private String integrationName;
-
-	private Boolean isDetail;
 
 	private Long page;
 
@@ -41,6 +41,17 @@ public class ListIntegrationRequest extends RpcAcsRequest<ListIntegrationRespons
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Boolean getIsDetail() {
+		return this.isDetail;
+	}
+
+	public void setIsDetail(Boolean isDetail) {
+		this.isDetail = isDetail;
+		if(isDetail != null){
+			putQueryParameter("IsDetail", isDetail.toString());
+		}
 	}
 
 	public Long getSize() {
@@ -62,17 +73,6 @@ public class ListIntegrationRequest extends RpcAcsRequest<ListIntegrationRespons
 		this.integrationName = integrationName;
 		if(integrationName != null){
 			putQueryParameter("IntegrationName", integrationName);
-		}
-	}
-
-	public Boolean getIsDetail() {
-		return this.isDetail;
-	}
-
-	public void setIsDetail(Boolean isDetail) {
-		this.isDetail = isDetail;
-		if(isDetail != null){
-			putQueryParameter("IsDetail", isDetail.toString());
 		}
 	}
 

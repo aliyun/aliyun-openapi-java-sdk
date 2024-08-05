@@ -25,13 +25,13 @@ import com.aliyuncs.arms.Endpoint;
 public class DescribeWebhookContactsRequest extends RpcAcsRequest<DescribeWebhookContactsResponse> {
 	   
 
-	private Long size;
-
 	private String webhookName;
 
-	private Long page;
-
 	private String contactIds;
+
+	private Long size;
+
+	private Long page;
 	public DescribeWebhookContactsRequest() {
 		super("ARMS", "2019-08-08", "DescribeWebhookContacts", "arms");
 		setMethod(MethodType.GET);
@@ -39,17 +39,6 @@ public class DescribeWebhookContactsRequest extends RpcAcsRequest<DescribeWebhoo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getSize() {
-		return this.size;
-	}
-
-	public void setSize(Long size) {
-		this.size = size;
-		if(size != null){
-			putQueryParameter("Size", size.toString());
-		}
 	}
 
 	public String getWebhookName() {
@@ -63,17 +52,6 @@ public class DescribeWebhookContactsRequest extends RpcAcsRequest<DescribeWebhoo
 		}
 	}
 
-	public Long getPage() {
-		return this.page;
-	}
-
-	public void setPage(Long page) {
-		this.page = page;
-		if(page != null){
-			putQueryParameter("Page", page.toString());
-		}
-	}
-
 	public String getContactIds() {
 		return this.contactIds;
 	}
@@ -82,6 +60,28 @@ public class DescribeWebhookContactsRequest extends RpcAcsRequest<DescribeWebhoo
 		this.contactIds = contactIds;
 		if(contactIds != null){
 			putQueryParameter("ContactIds", contactIds);
+		}
+	}
+
+	public Long getSize() {
+		return this.size;
+	}
+
+	public void setSize(Long size) {
+		this.size = size;
+		if(size != null){
+			putQueryParameter("Size", size.toString());
+		}
+	}
+
+	public Long getPage() {
+		return this.page;
+	}
+
+	public void setPage(Long page) {
+		this.page = page;
+		if(page != null){
+			putQueryParameter("Page", page.toString());
 		}
 	}
 

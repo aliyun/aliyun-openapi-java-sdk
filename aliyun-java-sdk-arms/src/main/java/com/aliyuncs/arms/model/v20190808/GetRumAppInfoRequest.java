@@ -15,6 +15,7 @@
 package com.aliyuncs.arms.model.v20190808;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.arms.Endpoint;
 
@@ -22,12 +23,15 @@ import com.aliyuncs.arms.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListPrometheusRemoteWritesRequest extends RpcAcsRequest<ListPrometheusRemoteWritesResponse> {
+public class GetRumAppInfoRequest extends RpcAcsRequest<GetRumAppInfoResponse> {
 	   
 
-	private String clusterId;
-	public ListPrometheusRemoteWritesRequest() {
-		super("ARMS", "2019-08-08", "ListPrometheusRemoteWrites", "arms");
+	private String appGroup;
+
+	private String pid;
+	public GetRumAppInfoRequest() {
+		super("ARMS", "2019-08-08", "GetRumAppInfo", "arms");
+		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -35,20 +39,31 @@ public class ListPrometheusRemoteWritesRequest extends RpcAcsRequest<ListPrometh
 		} catch (Exception e) {}
 	}
 
-	public String getClusterId() {
-		return this.clusterId;
+	public String getAppGroup() {
+		return this.appGroup;
 	}
 
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putQueryParameter("ClusterId", clusterId);
+	public void setAppGroup(String appGroup) {
+		this.appGroup = appGroup;
+		if(appGroup != null){
+			putQueryParameter("AppGroup", appGroup);
+		}
+	}
+
+	public String getPid() {
+		return this.pid;
+	}
+
+	public void setPid(String pid) {
+		this.pid = pid;
+		if(pid != null){
+			putQueryParameter("Pid", pid);
 		}
 	}
 
 	@Override
-	public Class<ListPrometheusRemoteWritesResponse> getResponseClass() {
-		return ListPrometheusRemoteWritesResponse.class;
+	public Class<GetRumAppInfoResponse> getResponseClass() {
+		return GetRumAppInfoResponse.class;
 	}
 
 }

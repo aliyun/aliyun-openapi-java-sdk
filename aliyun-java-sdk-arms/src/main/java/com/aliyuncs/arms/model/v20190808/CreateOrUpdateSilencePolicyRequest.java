@@ -25,11 +25,13 @@ import com.aliyuncs.arms.Endpoint;
 public class CreateOrUpdateSilencePolicyRequest extends RpcAcsRequest<CreateOrUpdateSilencePolicyResponse> {
 	   
 
+	private String matchingRules;
+
 	private String name;
 
 	private Long id;
 
-	private String matchingRules;
+	private String state;
 	public CreateOrUpdateSilencePolicyRequest() {
 		super("ARMS", "2019-08-08", "CreateOrUpdateSilencePolicy", "arms");
 		setMethod(MethodType.POST);
@@ -37,6 +39,17 @@ public class CreateOrUpdateSilencePolicyRequest extends RpcAcsRequest<CreateOrUp
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getMatchingRules() {
+		return this.matchingRules;
+	}
+
+	public void setMatchingRules(String matchingRules) {
+		this.matchingRules = matchingRules;
+		if(matchingRules != null){
+			putBodyParameter("MatchingRules", matchingRules);
+		}
 	}
 
 	public String getName() {
@@ -61,14 +74,14 @@ public class CreateOrUpdateSilencePolicyRequest extends RpcAcsRequest<CreateOrUp
 		}
 	}
 
-	public String getMatchingRules() {
-		return this.matchingRules;
+	public String getState() {
+		return this.state;
 	}
 
-	public void setMatchingRules(String matchingRules) {
-		this.matchingRules = matchingRules;
-		if(matchingRules != null){
-			putBodyParameter("MatchingRules", matchingRules);
+	public void setState(String state) {
+		this.state = state;
+		if(state != null){
+			putBodyParameter("State", state);
 		}
 	}
 

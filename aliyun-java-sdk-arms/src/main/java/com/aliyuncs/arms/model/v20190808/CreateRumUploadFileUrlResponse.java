@@ -15,24 +15,26 @@
 package com.aliyuncs.arms.model.v20190808;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.arms.transform.v20190808.AddPrometheusRemoteWriteResponseUnmarshaller;
+import com.aliyuncs.arms.transform.v20190808.CreateRumUploadFileUrlResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class AddPrometheusRemoteWriteResponse extends AcsResponse {
+public class CreateRumUploadFileUrlResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String data;
+	private Integer code;
 
 	private Boolean success;
 
 	private String message;
 
-	private Integer code;
+	private Integer httpStatusCode;
+
+	private String data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,12 +44,12 @@ public class AddPrometheusRemoteWriteResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getData() {
-		return this.data;
+	public Integer getCode() {
+		return this.code;
 	}
 
-	public void setData(String data) {
-		this.data = data;
+	public void setCode(Integer code) {
+		this.code = code;
 	}
 
 	public Boolean getSuccess() {
@@ -66,17 +68,25 @@ public class AddPrometheusRemoteWriteResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Integer getCode() {
-		return this.code;
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
 	}
 
-	public void setCode(Integer code) {
-		this.code = code;
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
+
+	public String getData() {
+		return this.data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
 	}
 
 	@Override
-	public AddPrometheusRemoteWriteResponse getInstance(UnmarshallerContext context) {
-		return	AddPrometheusRemoteWriteResponseUnmarshaller.unmarshall(this, context);
+	public CreateRumUploadFileUrlResponse getInstance(UnmarshallerContext context) {
+		return	CreateRumUploadFileUrlResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

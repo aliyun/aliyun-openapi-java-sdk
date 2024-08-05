@@ -15,6 +15,7 @@
 package com.aliyuncs.arms.model.v20190808;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.arms.Endpoint;
 
@@ -22,14 +23,13 @@ import com.aliyuncs.arms.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetPrometheusRemoteWriteRequest extends RpcAcsRequest<GetPrometheusRemoteWriteResponse> {
+public class GetTraceAppConfigRequest extends RpcAcsRequest<GetTraceAppConfigResponse> {
 	   
 
-	private String clusterId;
-
-	private String remoteWriteName;
-	public GetPrometheusRemoteWriteRequest() {
-		super("ARMS", "2019-08-08", "GetPrometheusRemoteWrite", "arms");
+	private String pid;
+	public GetTraceAppConfigRequest() {
+		super("ARMS", "2019-08-08", "GetTraceAppConfig", "arms");
+		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +37,20 @@ public class GetPrometheusRemoteWriteRequest extends RpcAcsRequest<GetPrometheus
 		} catch (Exception e) {}
 	}
 
-	public String getClusterId() {
-		return this.clusterId;
+	public String getPid() {
+		return this.pid;
 	}
 
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putQueryParameter("ClusterId", clusterId);
-		}
-	}
-
-	public String getRemoteWriteName() {
-		return this.remoteWriteName;
-	}
-
-	public void setRemoteWriteName(String remoteWriteName) {
-		this.remoteWriteName = remoteWriteName;
-		if(remoteWriteName != null){
-			putQueryParameter("RemoteWriteName", remoteWriteName);
+	public void setPid(String pid) {
+		this.pid = pid;
+		if(pid != null){
+			putQueryParameter("Pid", pid);
 		}
 	}
 
 	@Override
-	public Class<GetPrometheusRemoteWriteResponse> getResponseClass() {
-		return GetPrometheusRemoteWriteResponse.class;
+	public Class<GetTraceAppConfigResponse> getResponseClass() {
+		return GetTraceAppConfigResponse.class;
 	}
 
 }

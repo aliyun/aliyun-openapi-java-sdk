@@ -29,6 +29,8 @@ public class DeleteAddonReleaseRequest extends RpcAcsRequest<DeleteAddonReleaseR
 
 	private String environmentId;
 
+	private String addonName;
+
 	private Boolean force;
 	public DeleteAddonReleaseRequest() {
 		super("ARMS", "2019-08-08", "DeleteAddonRelease", "arms");
@@ -58,6 +60,17 @@ public class DeleteAddonReleaseRequest extends RpcAcsRequest<DeleteAddonReleaseR
 		this.environmentId = environmentId;
 		if(environmentId != null){
 			putQueryParameter("EnvironmentId", environmentId);
+		}
+	}
+
+	public String getAddonName() {
+		return this.addonName;
+	}
+
+	public void setAddonName(String addonName) {
+		this.addonName = addonName;
+		if(addonName != null){
+			putQueryParameter("AddonName", addonName);
 		}
 	}
 

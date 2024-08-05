@@ -42,6 +42,7 @@ public class CreateGrafanaWorkspaceResponseUnmarshaller {
 		data.setGrafanaWorkspaceIp(_ctx.stringValue("CreateGrafanaWorkspaceResponse.Data.grafanaWorkspaceIp"));
 		data.setSnatIp(_ctx.stringValue("CreateGrafanaWorkspaceResponse.Data.snatIp"));
 		data.setGrafanaWorkspaceDomain(_ctx.stringValue("CreateGrafanaWorkspaceResponse.Data.grafanaWorkspaceDomain"));
+		data.setGrafanaWorkspaceDomainStatus(_ctx.stringValue("CreateGrafanaWorkspaceResponse.Data.grafanaWorkspaceDomainStatus"));
 		data.setCommercial(_ctx.booleanValue("CreateGrafanaWorkspaceResponse.Data.commercial"));
 		data.setGrafanaWorkspaceName(_ctx.stringValue("CreateGrafanaWorkspaceResponse.Data.grafanaWorkspaceName"));
 		data.setGrafanaVersion(_ctx.stringValue("CreateGrafanaWorkspaceResponse.Data.grafanaVersion"));

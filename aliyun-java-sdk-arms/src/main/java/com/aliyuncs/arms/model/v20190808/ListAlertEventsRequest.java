@@ -35,6 +35,8 @@ public class ListAlertEventsRequest extends RpcAcsRequest<ListAlertEventsRespons
 
 	private String matchingConditions;
 
+	private Boolean showNotificationPolicies;
+
 	private Long page;
 
 	private String status;
@@ -99,6 +101,17 @@ public class ListAlertEventsRequest extends RpcAcsRequest<ListAlertEventsRespons
 		this.matchingConditions = matchingConditions;
 		if(matchingConditions != null){
 			putQueryParameter("MatchingConditions", matchingConditions);
+		}
+	}
+
+	public Boolean getShowNotificationPolicies() {
+		return this.showNotificationPolicies;
+	}
+
+	public void setShowNotificationPolicies(Boolean showNotificationPolicies) {
+		this.showNotificationPolicies = showNotificationPolicies;
+		if(showNotificationPolicies != null){
+			putQueryParameter("ShowNotificationPolicies", showNotificationPolicies.toString());
 		}
 	}
 

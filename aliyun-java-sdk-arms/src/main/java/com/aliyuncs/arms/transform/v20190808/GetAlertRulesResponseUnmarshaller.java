@@ -45,7 +45,7 @@ public class GetAlertRulesResponseUnmarshaller {
 		List<AlertRulesItem> alertRules = new ArrayList<AlertRulesItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetAlertRulesResponse.PageBean.AlertRules.Length"); i++) {
 			AlertRulesItem alertRulesItem = new AlertRulesItem();
-			alertRulesItem.setAlertId(_ctx.floatValue("GetAlertRulesResponse.PageBean.AlertRules["+ i +"].AlertId"));
+			alertRulesItem.setAlertId(_ctx.longValue("GetAlertRulesResponse.PageBean.AlertRules["+ i +"].AlertId"));
 			alertRulesItem.setAlertName(_ctx.stringValue("GetAlertRulesResponse.PageBean.AlertRules["+ i +"].AlertName"));
 			alertRulesItem.setUserId(_ctx.stringValue("GetAlertRulesResponse.PageBean.AlertRules["+ i +"].UserId"));
 			alertRulesItem.setRegionId(_ctx.stringValue("GetAlertRulesResponse.PageBean.AlertRules["+ i +"].RegionId"));
@@ -78,7 +78,7 @@ public class GetAlertRulesResponseUnmarshaller {
 			List<AlertRuleItemsItem> alertRuleItems = new ArrayList<AlertRuleItemsItem>();
 			for (int j = 0; j < _ctx.lengthValue("GetAlertRulesResponse.PageBean.AlertRules["+ i +"].AlertRuleContent.AlertRuleItems.Length"); j++) {
 				AlertRuleItemsItem alertRuleItemsItem = new AlertRuleItemsItem();
-				alertRuleItemsItem.setN(_ctx.floatValue("GetAlertRulesResponse.PageBean.AlertRules["+ i +"].AlertRuleContent.AlertRuleItems["+ j +"].N"));
+				alertRuleItemsItem.setN(_ctx.longValue("GetAlertRulesResponse.PageBean.AlertRules["+ i +"].AlertRuleContent.AlertRuleItems["+ j +"].N"));
 				alertRuleItemsItem.setMetricKey(_ctx.stringValue("GetAlertRulesResponse.PageBean.AlertRules["+ i +"].AlertRuleContent.AlertRuleItems["+ j +"].MetricKey"));
 				alertRuleItemsItem.setAggregate(_ctx.stringValue("GetAlertRulesResponse.PageBean.AlertRules["+ i +"].AlertRuleContent.AlertRuleItems["+ j +"].Aggregate"));
 				alertRuleItemsItem.setOperator(_ctx.stringValue("GetAlertRulesResponse.PageBean.AlertRules["+ i +"].AlertRuleContent.AlertRuleItems["+ j +"].Operator"));

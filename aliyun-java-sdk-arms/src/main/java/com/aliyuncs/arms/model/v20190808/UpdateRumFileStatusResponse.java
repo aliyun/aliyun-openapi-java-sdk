@@ -15,24 +15,16 @@
 package com.aliyuncs.arms.model.v20190808;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.arms.transform.v20190808.DeletePrometheusRemoteWriteResponseUnmarshaller;
+import com.aliyuncs.arms.transform.v20190808.UpdateRumFileStatusResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DeletePrometheusRemoteWriteResponse extends AcsResponse {
+public class UpdateRumFileStatusResponse extends AcsResponse {
 
 	private String requestId;
-
-	private String data;
-
-	private Boolean success;
-
-	private String message;
-
-	private Integer code;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,41 +34,9 @@ public class DeletePrometheusRemoteWriteResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getData() {
-		return this.data;
-	}
-
-	public void setData(String data) {
-		this.data = data;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public Integer getCode() {
-		return this.code;
-	}
-
-	public void setCode(Integer code) {
-		this.code = code;
-	}
-
 	@Override
-	public DeletePrometheusRemoteWriteResponse getInstance(UnmarshallerContext context) {
-		return	DeletePrometheusRemoteWriteResponseUnmarshaller.unmarshall(this, context);
+	public UpdateRumFileStatusResponse getInstance(UnmarshallerContext context) {
+		return	UpdateRumFileStatusResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

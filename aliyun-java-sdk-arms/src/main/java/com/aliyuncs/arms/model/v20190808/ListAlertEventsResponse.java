@@ -115,7 +115,11 @@ public class ListAlertEventsResponse extends AcsResponse {
 
 			private String handlerName;
 
+			private Long triggerCount;
+
 			private List<AlarmsItem> alarms;
+
+			private List<NotificationPolicy> notificationPolicies;
 
 			public String getAlertName() {
 				return this.alertName;
@@ -221,12 +225,28 @@ public class ListAlertEventsResponse extends AcsResponse {
 				this.handlerName = handlerName;
 			}
 
+			public Long getTriggerCount() {
+				return this.triggerCount;
+			}
+
+			public void setTriggerCount(Long triggerCount) {
+				this.triggerCount = triggerCount;
+			}
+
 			public List<AlarmsItem> getAlarms() {
 				return this.alarms;
 			}
 
 			public void setAlarms(List<AlarmsItem> alarms) {
 				this.alarms = alarms;
+			}
+
+			public List<NotificationPolicy> getNotificationPolicies() {
+				return this.notificationPolicies;
+			}
+
+			public void setNotificationPolicies(List<NotificationPolicy> notificationPolicies) {
+				this.notificationPolicies = notificationPolicies;
 			}
 
 			public static class AlarmsItem {
@@ -269,6 +289,29 @@ public class ListAlertEventsResponse extends AcsResponse {
 
 				public void setCreateTime(String createTime) {
 					this.createTime = createTime;
+				}
+			}
+
+			public static class NotificationPolicy {
+
+				private Long id;
+
+				private String name;
+
+				public Long getId() {
+					return this.id;
+				}
+
+				public void setId(Long id) {
+					this.id = id;
+				}
+
+				public String getName() {
+					return this.name;
+				}
+
+				public void setName(String name) {
+					this.name = name;
 				}
 			}
 		}

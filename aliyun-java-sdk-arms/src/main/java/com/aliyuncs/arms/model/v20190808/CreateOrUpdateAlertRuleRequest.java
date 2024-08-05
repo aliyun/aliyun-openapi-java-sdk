@@ -38,6 +38,8 @@ public class CreateOrUpdateAlertRuleRequest extends RpcAcsRequest<CreateOrUpdate
 
 	private Long duration;
 
+	private String autoAddTargetConfig;
+
 	private String metricsKey;
 
 	private String alertPiplines;
@@ -151,6 +153,17 @@ public class CreateOrUpdateAlertRuleRequest extends RpcAcsRequest<CreateOrUpdate
 		this.duration = duration;
 		if(duration != null){
 			putBodyParameter("Duration", duration.toString());
+		}
+	}
+
+	public String getAutoAddTargetConfig() {
+		return this.autoAddTargetConfig;
+	}
+
+	public void setAutoAddTargetConfig(String autoAddTargetConfig) {
+		this.autoAddTargetConfig = autoAddTargetConfig;
+		if(autoAddTargetConfig != null){
+			putBodyParameter("AutoAddTargetConfig", autoAddTargetConfig);
 		}
 	}
 

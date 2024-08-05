@@ -15,22 +15,24 @@
 package com.aliyuncs.arms.model.v20190808;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.arms.transform.v20190808.GetPrometheusRemoteWriteResponseUnmarshaller;
+import com.aliyuncs.arms.transform.v20190808.UpdateRumAppResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetPrometheusRemoteWriteResponse extends AcsResponse {
+public class UpdateRumAppResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String code;
+
+	private String success;
 
 	private String message;
 
-	private Integer code;
+	private String httpStatusCode;
 
 	private Data data;
 
@@ -42,11 +44,19 @@ public class GetPrometheusRemoteWriteResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getSuccess() {
 		return this.success;
 	}
 
-	public void setSuccess(Boolean success) {
+	public void setSuccess(String success) {
 		this.success = success;
 	}
 
@@ -58,12 +68,12 @@ public class GetPrometheusRemoteWriteResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Integer getCode() {
-		return this.code;
+	public String getHttpStatusCode() {
+		return this.httpStatusCode;
 	}
 
-	public void setCode(Integer code) {
-		this.code = code;
+	public void setHttpStatusCode(String httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
 	public Data getData() {
@@ -76,40 +86,50 @@ public class GetPrometheusRemoteWriteResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String clusterId;
+		private String config;
 
-		private String remoteWriteName;
+		private Integer usage;
 
-		private String remoteWriteYaml;
+		private Integer limit;
 
-		public String getClusterId() {
-			return this.clusterId;
+		private Boolean limited;
+
+		public String getConfig() {
+			return this.config;
 		}
 
-		public void setClusterId(String clusterId) {
-			this.clusterId = clusterId;
+		public void setConfig(String config) {
+			this.config = config;
 		}
 
-		public String getRemoteWriteName() {
-			return this.remoteWriteName;
+		public Integer getUsage() {
+			return this.usage;
 		}
 
-		public void setRemoteWriteName(String remoteWriteName) {
-			this.remoteWriteName = remoteWriteName;
+		public void setUsage(Integer usage) {
+			this.usage = usage;
 		}
 
-		public String getRemoteWriteYaml() {
-			return this.remoteWriteYaml;
+		public Integer getLimit() {
+			return this.limit;
 		}
 
-		public void setRemoteWriteYaml(String remoteWriteYaml) {
-			this.remoteWriteYaml = remoteWriteYaml;
+		public void setLimit(Integer limit) {
+			this.limit = limit;
+		}
+
+		public Boolean getLimited() {
+			return this.limited;
+		}
+
+		public void setLimited(Boolean limited) {
+			this.limited = limited;
 		}
 	}
 
 	@Override
-	public GetPrometheusRemoteWriteResponse getInstance(UnmarshallerContext context) {
-		return	GetPrometheusRemoteWriteResponseUnmarshaller.unmarshall(this, context);
+	public UpdateRumAppResponse getInstance(UnmarshallerContext context) {
+		return	UpdateRumAppResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

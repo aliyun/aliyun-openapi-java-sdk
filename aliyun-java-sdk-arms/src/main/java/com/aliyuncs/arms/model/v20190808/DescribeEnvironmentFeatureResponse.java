@@ -219,7 +219,15 @@ public class DescribeEnvironmentFeatureResponse extends AcsResponse {
 
 			private String status;
 
+			private String securityGroupId;
+
+			private String vSwitchId;
+
+			private String bindResourceId;
+
 			private List<FeatureContainersItem> featureContainers;
+
+			private List<String> ips;
 
 			public String getName() {
 				return this.name;
@@ -245,12 +253,44 @@ public class DescribeEnvironmentFeatureResponse extends AcsResponse {
 				this.status = status;
 			}
 
+			public String getSecurityGroupId() {
+				return this.securityGroupId;
+			}
+
+			public void setSecurityGroupId(String securityGroupId) {
+				this.securityGroupId = securityGroupId;
+			}
+
+			public String getVSwitchId() {
+				return this.vSwitchId;
+			}
+
+			public void setVSwitchId(String vSwitchId) {
+				this.vSwitchId = vSwitchId;
+			}
+
+			public String getBindResourceId() {
+				return this.bindResourceId;
+			}
+
+			public void setBindResourceId(String bindResourceId) {
+				this.bindResourceId = bindResourceId;
+			}
+
 			public List<FeatureContainersItem> getFeatureContainers() {
 				return this.featureContainers;
 			}
 
 			public void setFeatureContainers(List<FeatureContainersItem> featureContainers) {
 				this.featureContainers = featureContainers;
+			}
+
+			public List<String> getIps() {
+				return this.ips;
+			}
+
+			public void setIps(List<String> ips) {
+				this.ips = ips;
 			}
 
 			public static class FeatureContainersItem {

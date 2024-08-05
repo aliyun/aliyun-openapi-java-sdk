@@ -103,6 +103,8 @@ public class CreateGrafanaWorkspaceResponse extends AcsResponse {
 
 		private String grafanaWorkspaceDomain;
 
+		private String grafanaWorkspaceDomainStatus;
+
 		private Boolean commercial;
 
 		private String grafanaWorkspaceName;
@@ -201,6 +203,14 @@ public class CreateGrafanaWorkspaceResponse extends AcsResponse {
 
 		public void setGrafanaWorkspaceDomain(String grafanaWorkspaceDomain) {
 			this.grafanaWorkspaceDomain = grafanaWorkspaceDomain;
+		}
+
+		public String getGrafanaWorkspaceDomainStatus() {
+			return this.grafanaWorkspaceDomainStatus;
+		}
+
+		public void setGrafanaWorkspaceDomainStatus(String grafanaWorkspaceDomainStatus) {
+			this.grafanaWorkspaceDomainStatus = grafanaWorkspaceDomainStatus;
 		}
 
 		public Boolean getCommercial() {
