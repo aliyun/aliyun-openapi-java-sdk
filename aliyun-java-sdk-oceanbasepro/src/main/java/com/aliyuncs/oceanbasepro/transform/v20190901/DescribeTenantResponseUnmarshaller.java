@@ -73,7 +73,7 @@ public class DescribeTenantResponseUnmarshaller {
 		tenant.setDataMergeTime(_ctx.stringValue("DescribeTenantResponse.Tenant.DataMergeTime"));
 		tenant.setEnableReadOnlyReplica(_ctx.booleanValue("DescribeTenantResponse.Tenant.EnableReadOnlyReplica"));
 		tenant.setRecycleBinStatus(_ctx.stringValue("DescribeTenantResponse.Tenant.RecycleBinStatus"));
-		tenant.setLowerCaseTableNames(_ctx.stringValue("DescribeTenantResponse.Tenant.LowerCaseTableNames"));
+		tenant.setLowerCaseTableNames(_ctx.integerValue("DescribeTenantResponse.Tenant.LowerCaseTableNames"));
 		tenant.setVersion(_ctx.stringValue("DescribeTenantResponse.Tenant.Version"));
 
 		List<String> availableZones = new ArrayList<String>();

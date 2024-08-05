@@ -105,7 +105,7 @@ public class DescribeTenantResponse extends AcsResponse {
 
 		private String recycleBinStatus;
 
-		private String lowerCaseTableNames;
+		private Integer lowerCaseTableNames;
 
 		private String version;
 
@@ -351,11 +351,11 @@ public class DescribeTenantResponse extends AcsResponse {
 			this.recycleBinStatus = recycleBinStatus;
 		}
 
-		public String getLowerCaseTableNames() {
+		public Integer getLowerCaseTableNames() {
 			return this.lowerCaseTableNames;
 		}
 
-		public void setLowerCaseTableNames(String lowerCaseTableNames) {
+		public void setLowerCaseTableNames(Integer lowerCaseTableNames) {
 			this.lowerCaseTableNames = lowerCaseTableNames;
 		}
 
