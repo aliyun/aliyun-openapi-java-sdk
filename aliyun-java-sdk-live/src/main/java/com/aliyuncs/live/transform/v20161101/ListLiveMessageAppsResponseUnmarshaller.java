@@ -35,13 +35,13 @@ public class ListLiveMessageAppsResponseUnmarshaller {
 			Apps apps = new Apps();
 			apps.setAppId(_ctx.stringValue("ListLiveMessageAppsResponse.AppList["+ i +"].AppId"));
 			apps.setAppKey(_ctx.stringValue("ListLiveMessageAppsResponse.AppList["+ i +"].AppKey"));
-			apps.setAppName(_ctx.stringValue("ListLiveMessageAppsResponse.AppList["+ i +"].AppName"));
 			apps.setAppSign(_ctx.stringValue("ListLiveMessageAppsResponse.AppList["+ i +"].AppSign"));
-			apps.setCreateTime(_ctx.longValue("ListLiveMessageAppsResponse.AppList["+ i +"].CreateTime"));
-			apps.setDataCenter(_ctx.stringValue("ListLiveMessageAppsResponse.AppList["+ i +"].DataCenter"));
 			apps.setDisable(_ctx.stringValue("ListLiveMessageAppsResponse.AppList["+ i +"].Disable"));
+			apps.setAppName(_ctx.stringValue("ListLiveMessageAppsResponse.AppList["+ i +"].AppName"));
+			apps.setCreateTime(_ctx.longValue("ListLiveMessageAppsResponse.AppList["+ i +"].CreateTime"));
 			apps.setModifyTime(_ctx.longValue("ListLiveMessageAppsResponse.AppList["+ i +"].ModifyTime"));
 			apps.setMsgLifeCycle(_ctx.integerValue("ListLiveMessageAppsResponse.AppList["+ i +"].MsgLifeCycle"));
+			apps.setDataCenter(_ctx.stringValue("ListLiveMessageAppsResponse.AppList["+ i +"].DataCenter"));
 
 			appList.add(apps);
 		}

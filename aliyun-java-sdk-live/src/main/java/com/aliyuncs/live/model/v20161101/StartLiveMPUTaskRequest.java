@@ -31,6 +31,13 @@ public class StartLiveMPUTaskRequest extends RpcAcsRequest<StartLiveMPUTaskRespo
 	@SerializedName("singleSubParams")
 	private SingleSubParams singleSubParams;
 
+	private String taskId;
+
+	private String streamURL;
+
+	@SerializedName("multiStreamURL")
+	private List<MultiStreamURL> multiStreamURL;
+
 	@SerializedName("seiParams")
 	private SeiParams seiParams;
 
@@ -44,10 +51,6 @@ public class StartLiveMPUTaskRequest extends RpcAcsRequest<StartLiveMPUTaskRespo
 	private String mixMode;
 
 	private String channelId;
-
-	private String taskId;
-
-	private String streamURL;
 	public StartLiveMPUTaskRequest() {
 		super("live", "2016-11-01", "StartLiveMPUTask", "live");
 		setMethod(MethodType.POST);
@@ -65,6 +68,39 @@ public class StartLiveMPUTaskRequest extends RpcAcsRequest<StartLiveMPUTaskRespo
 		this.singleSubParams = singleSubParams;	
 		if (singleSubParams != null) {
 			putQueryParameter("SingleSubParams" , new Gson().toJson(singleSubParams));
+		}	
+	}
+
+	public String getTaskId() {
+		return this.taskId;
+	}
+
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
+		if(taskId != null){
+			putQueryParameter("TaskId", taskId);
+		}
+	}
+
+	public String getStreamURL() {
+		return this.streamURL;
+	}
+
+	public void setStreamURL(String streamURL) {
+		this.streamURL = streamURL;
+		if(streamURL != null){
+			putQueryParameter("StreamURL", streamURL);
+		}
+	}
+
+	public List<MultiStreamURL> getMultiStreamURL() {
+		return this.multiStreamURL;
+	}
+
+	public void setMultiStreamURL(List<MultiStreamURL> multiStreamURL) {
+		this.multiStreamURL = multiStreamURL;	
+		if (multiStreamURL != null) {
+			putQueryParameter("MultiStreamURL" , new Gson().toJson(multiStreamURL));
 		}	
 	}
 
@@ -134,28 +170,6 @@ public class StartLiveMPUTaskRequest extends RpcAcsRequest<StartLiveMPUTaskRespo
 		}
 	}
 
-	public String getTaskId() {
-		return this.taskId;
-	}
-
-	public void setTaskId(String taskId) {
-		this.taskId = taskId;
-		if(taskId != null){
-			putQueryParameter("TaskId", taskId);
-		}
-	}
-
-	public String getStreamURL() {
-		return this.streamURL;
-	}
-
-	public void setStreamURL(String streamURL) {
-		this.streamURL = streamURL;
-		if(streamURL != null){
-			putQueryParameter("StreamURL", streamURL);
-		}
-	}
-
 	public static class SingleSubParams {
 
 		@SerializedName("StreamType")
@@ -189,6 +203,20 @@ public class StartLiveMPUTaskRequest extends RpcAcsRequest<StartLiveMPUTaskRespo
 
 		public void setUserId(String userId) {
 			this.userId = userId;
+		}
+	}
+
+	public static class MultiStreamURL {
+
+		@SerializedName("URL")
+		private String uRL;
+
+		public String getURL() {
+			return this.uRL;
+		}
+
+		public void setURL(String uRL) {
+			this.uRL = uRL;
 		}
 	}
 

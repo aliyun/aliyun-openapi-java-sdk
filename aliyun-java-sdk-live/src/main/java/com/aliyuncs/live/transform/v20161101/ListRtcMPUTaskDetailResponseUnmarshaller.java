@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.live.model.v20161101.ListRtcMPUTaskDetailResponse;
 import com.aliyuncs.live.model.v20161101.ListRtcMPUTaskDetailResponse.MpuTask;
+import com.aliyuncs.live.model.v20161101.ListRtcMPUTaskDetailResponse.MpuTask.MultiStreamURLItem;
 import com.aliyuncs.live.model.v20161101.ListRtcMPUTaskDetailResponse.MpuTask.SeiParams;
 import com.aliyuncs.live.model.v20161101.ListRtcMPUTaskDetailResponse.MpuTask.SeiParams.LayoutVolume;
 import com.aliyuncs.live.model.v20161101.ListRtcMPUTaskDetailResponse.MpuTask.SeiParams.PassThrough;
@@ -134,6 +135,15 @@ public class ListRtcMPUTaskDetailResponseUnmarshaller {
 			passThrough.setPayloadContentKey(_ctx.stringValue("ListRtcMPUTaskDetailResponse.MPUTasks["+ i +"].SeiParams.PassThrough.PayloadContentKey"));
 			seiParams.setPassThrough(passThrough);
 			mpuTask.setSeiParams(seiParams);
+
+			List<MultiStreamURLItem> multiStreamURL = new ArrayList<MultiStreamURLItem>();
+			for (int j = 0; j < _ctx.lengthValue("ListRtcMPUTaskDetailResponse.MPUTasks["+ i +"].MultiStreamURL.Length"); j++) {
+				MultiStreamURLItem multiStreamURLItem = new MultiStreamURLItem();
+				multiStreamURLItem.setURL(_ctx.stringValue("ListRtcMPUTaskDetailResponse.MPUTasks["+ i +"].MultiStreamURL["+ j +"].URL"));
+
+				multiStreamURL.add(multiStreamURLItem);
+			}
+			mpuTask.setMultiStreamURL(multiStreamURL);
 
 			mPUTasks.add(mpuTask);
 		}

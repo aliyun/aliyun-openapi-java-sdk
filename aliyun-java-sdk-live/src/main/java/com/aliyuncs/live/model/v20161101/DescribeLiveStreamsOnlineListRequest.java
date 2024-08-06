@@ -33,8 +33,6 @@ public class DescribeLiveStreamsOnlineListRequest extends RpcAcsRequest<Describe
 
 	private Integer pageSize;
 
-	private Boolean isGetCurrentRate;
-
 	private String streamName;
 
 	private String queryType;
@@ -94,17 +92,6 @@ public class DescribeLiveStreamsOnlineListRequest extends RpcAcsRequest<Describe
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public Boolean getIsGetCurrentRate() {
-		return this.isGetCurrentRate;
-	}
-
-	public void setIsGetCurrentRate(Boolean isGetCurrentRate) {
-		this.isGetCurrentRate = isGetCurrentRate;
-		if(isGetCurrentRate != null){
-			putQueryParameter("IsGetCurrentRate", isGetCurrentRate.toString());
 		}
 	}
 

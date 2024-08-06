@@ -28,6 +28,9 @@ import com.aliyuncs.live.Endpoint;
 public class UpdateLiveMPUTaskRequest extends RpcAcsRequest<UpdateLiveMPUTaskResponse> {
 	   
 
+	@SerializedName("multiStreamURL")
+	private List<MultiStreamURL> multiStreamURL;
+
 	@SerializedName("singleSubParams")
 	private SingleSubParams singleSubParams;
 
@@ -53,6 +56,17 @@ public class UpdateLiveMPUTaskRequest extends RpcAcsRequest<UpdateLiveMPUTaskRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public List<MultiStreamURL> getMultiStreamURL() {
+		return this.multiStreamURL;
+	}
+
+	public void setMultiStreamURL(List<MultiStreamURL> multiStreamURL) {
+		this.multiStreamURL = multiStreamURL;	
+		if (multiStreamURL != null) {
+			putQueryParameter("MultiStreamURL" , new Gson().toJson(multiStreamURL));
+		}	
 	}
 
 	public SingleSubParams getSingleSubParams() {
@@ -140,6 +154,20 @@ public class UpdateLiveMPUTaskRequest extends RpcAcsRequest<UpdateLiveMPUTaskRes
 		this.streamURL = streamURL;
 		if(streamURL != null){
 			putQueryParameter("StreamURL", streamURL);
+		}
+	}
+
+	public static class MultiStreamURL {
+
+		@SerializedName("URL")
+		private String uRL;
+
+		public String getURL() {
+			return this.uRL;
+		}
+
+		public void setURL(String uRL) {
+			this.uRL = uRL;
 		}
 	}
 

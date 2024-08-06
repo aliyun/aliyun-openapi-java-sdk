@@ -59,6 +59,8 @@ public class ListRtcMPUTaskDetailResponse extends AcsResponse {
 
 		private String region;
 
+		private List<MultiStreamURLItem> multiStreamURL;
+
 		private SingleSubParams singleSubParams;
 
 		private TranscodeParams transcodeParams;
@@ -113,6 +115,14 @@ public class ListRtcMPUTaskDetailResponse extends AcsResponse {
 			this.region = region;
 		}
 
+		public List<MultiStreamURLItem> getMultiStreamURL() {
+			return this.multiStreamURL;
+		}
+
+		public void setMultiStreamURL(List<MultiStreamURLItem> multiStreamURL) {
+			this.multiStreamURL = multiStreamURL;
+		}
+
 		public SingleSubParams getSingleSubParams() {
 			return this.singleSubParams;
 		}
@@ -135,6 +145,19 @@ public class ListRtcMPUTaskDetailResponse extends AcsResponse {
 
 		public void setSeiParams(SeiParams seiParams) {
 			this.seiParams = seiParams;
+		}
+
+		public static class MultiStreamURLItem {
+
+			private String uRL;
+
+			public String getURL() {
+				return this.uRL;
+			}
+
+			public void setURL(String uRL) {
+				this.uRL = uRL;
+			}
 		}
 
 		public static class SingleSubParams {

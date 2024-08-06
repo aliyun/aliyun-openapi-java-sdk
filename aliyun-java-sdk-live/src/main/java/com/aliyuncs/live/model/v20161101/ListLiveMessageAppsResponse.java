@@ -25,13 +25,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListLiveMessageAppsResponse extends AcsResponse {
 
+	private String requestId;
+
 	private Boolean hasMore;
 
 	private Long nextPageToken;
 
-	private String requestId;
-
 	private List<Apps> appList;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
 	public Boolean getHasMore() {
 		return this.hasMore;
@@ -49,14 +57,6 @@ public class ListLiveMessageAppsResponse extends AcsResponse {
 		this.nextPageToken = nextPageToken;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public List<Apps> getAppList() {
 		return this.appList;
 	}
@@ -71,19 +71,19 @@ public class ListLiveMessageAppsResponse extends AcsResponse {
 
 		private String appKey;
 
-		private String appName;
-
 		private String appSign;
 
-		private Long createTime;
-
-		private String dataCenter;
-
 		private String disable;
+
+		private String appName;
+
+		private Long createTime;
 
 		private Long modifyTime;
 
 		private Integer msgLifeCycle;
+
+		private String dataCenter;
 
 		public String getAppId() {
 			return this.appId;
@@ -101,14 +101,6 @@ public class ListLiveMessageAppsResponse extends AcsResponse {
 			this.appKey = appKey;
 		}
 
-		public String getAppName() {
-			return this.appName;
-		}
-
-		public void setAppName(String appName) {
-			this.appName = appName;
-		}
-
 		public String getAppSign() {
 			return this.appSign;
 		}
@@ -117,28 +109,28 @@ public class ListLiveMessageAppsResponse extends AcsResponse {
 			this.appSign = appSign;
 		}
 
-		public Long getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(Long createTime) {
-			this.createTime = createTime;
-		}
-
-		public String getDataCenter() {
-			return this.dataCenter;
-		}
-
-		public void setDataCenter(String dataCenter) {
-			this.dataCenter = dataCenter;
-		}
-
 		public String getDisable() {
 			return this.disable;
 		}
 
 		public void setDisable(String disable) {
 			this.disable = disable;
+		}
+
+		public String getAppName() {
+			return this.appName;
+		}
+
+		public void setAppName(String appName) {
+			this.appName = appName;
+		}
+
+		public Long getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
 		}
 
 		public Long getModifyTime() {
@@ -155,6 +147,14 @@ public class ListLiveMessageAppsResponse extends AcsResponse {
 
 		public void setMsgLifeCycle(Integer msgLifeCycle) {
 			this.msgLifeCycle = msgLifeCycle;
+		}
+
+		public String getDataCenter() {
+			return this.dataCenter;
+		}
+
+		public void setDataCenter(String dataCenter) {
+			this.dataCenter = dataCenter;
 		}
 	}
 
