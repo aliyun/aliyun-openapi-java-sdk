@@ -47,10 +47,12 @@ public class PostCustomizeRuleResponseUnmarshaller {
 		data.setRuleGroup(_ctx.stringValue("PostCustomizeRuleResponse.Data.RuleGroup"));
 		data.setRuleThreshold(_ctx.stringValue("PostCustomizeRuleResponse.Data.RuleThreshold"));
 		data.setQueryCycle(_ctx.stringValue("PostCustomizeRuleResponse.Data.QueryCycle"));
+		data.setAttCk(_ctx.stringValue("PostCustomizeRuleResponse.Data.AttCk"));
 		data.setEventTransferSwitch(_ctx.integerValue("PostCustomizeRuleResponse.Data.EventTransferSwitch"));
 		data.setEventTransferType(_ctx.stringValue("PostCustomizeRuleResponse.Data.EventTransferType"));
 		data.setEventTransferExt(_ctx.stringValue("PostCustomizeRuleResponse.Data.EventTransferExt"));
 		data.setStatus(_ctx.integerValue("PostCustomizeRuleResponse.Data.Status"));
+		data.setDataType(_ctx.integerValue("PostCustomizeRuleResponse.Data.DataType"));
 		postCustomizeRuleResponse.setData(data);
 	 
 	 	return postCustomizeRuleResponse;

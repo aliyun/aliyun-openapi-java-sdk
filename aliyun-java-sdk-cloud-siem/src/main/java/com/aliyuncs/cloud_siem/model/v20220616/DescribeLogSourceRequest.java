@@ -24,10 +24,25 @@ import com.aliyuncs.http.MethodType;
 public class DescribeLogSourceRequest extends RpcAcsRequest<DescribeLogSourceResponse> {
 	   
 
+	private Long roleFor;
+
 	private String logType;
+
+	private Integer roleType;
 	public DescribeLogSourceRequest() {
 		super("cloud-siem", "2022-06-16", "DescribeLogSource", "cloud-siem");
 		setMethod(MethodType.POST);
+	}
+
+	public Long getRoleFor() {
+		return this.roleFor;
+	}
+
+	public void setRoleFor(Long roleFor) {
+		this.roleFor = roleFor;
+		if(roleFor != null){
+			putBodyParameter("RoleFor", roleFor.toString());
+		}
 	}
 
 	public String getLogType() {
@@ -38,6 +53,17 @@ public class DescribeLogSourceRequest extends RpcAcsRequest<DescribeLogSourceRes
 		this.logType = logType;
 		if(logType != null){
 			putBodyParameter("LogType", logType);
+		}
+	}
+
+	public Integer getRoleType() {
+		return this.roleType;
+	}
+
+	public void setRoleType(Integer roleType) {
+		this.roleType = roleType;
+		if(roleType != null){
+			putBodyParameter("RoleType", roleType.toString());
 		}
 	}
 

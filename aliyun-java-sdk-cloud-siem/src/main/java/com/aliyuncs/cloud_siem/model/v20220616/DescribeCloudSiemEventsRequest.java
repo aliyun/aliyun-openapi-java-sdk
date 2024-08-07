@@ -25,11 +25,15 @@ import com.aliyuncs.http.MethodType;
 public class DescribeCloudSiemEventsRequest extends RpcAcsRequest<DescribeCloudSiemEventsResponse> {
 	   
 
+	private Long roleFor;
+
 	private Long startTime;
 
 	private String eventName;
 
 	private Integer pageSize;
+
+	private Integer roleType;
 
 	private String orderField;
 
@@ -49,6 +53,17 @@ public class DescribeCloudSiemEventsRequest extends RpcAcsRequest<DescribeCloudS
 	public DescribeCloudSiemEventsRequest() {
 		super("cloud-siem", "2022-06-16", "DescribeCloudSiemEvents", "cloud-siem");
 		setMethod(MethodType.POST);
+	}
+
+	public Long getRoleFor() {
+		return this.roleFor;
+	}
+
+	public void setRoleFor(Long roleFor) {
+		this.roleFor = roleFor;
+		if(roleFor != null){
+			putBodyParameter("RoleFor", roleFor.toString());
+		}
 	}
 
 	public Long getStartTime() {
@@ -81,6 +96,17 @@ public class DescribeCloudSiemEventsRequest extends RpcAcsRequest<DescribeCloudS
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putBodyParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Integer getRoleType() {
+		return this.roleType;
+	}
+
+	public void setRoleType(Integer roleType) {
+		this.roleType = roleType;
+		if(roleType != null){
+			putBodyParameter("RoleType", roleType.toString());
 		}
 	}
 

@@ -121,6 +121,8 @@ public class ListAutomateResponseConfigsResponse extends AcsResponse {
 
 			private Integer status;
 
+			private Integer dataType;
+
 			public Long getId() {
 				return this.id;
 			}
@@ -207,6 +209,14 @@ public class ListAutomateResponseConfigsResponse extends AcsResponse {
 
 			public void setStatus(Integer status) {
 				this.status = status;
+			}
+
+			public Integer getDataType() {
+				return this.dataType;
+			}
+
+			public void setDataType(Integer dataType) {
+				this.dataType = dataType;
 			}
 		}
 

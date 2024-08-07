@@ -1,3 +1,6 @@
+2024-08-07 Version: 1.0.5
+- Add parameters to control different role.
+
 2024-03-27 Version: 1.0.4
 - Standardizing api.
 

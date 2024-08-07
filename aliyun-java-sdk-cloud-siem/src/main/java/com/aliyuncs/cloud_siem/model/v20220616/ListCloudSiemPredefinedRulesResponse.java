@@ -107,6 +107,10 @@ public class ListCloudSiemPredefinedRulesResponse extends AcsResponse {
 
 			private String ruleName;
 
+			private String ruleNameCn;
+
+			private String ruleNameEn;
+
 			private String ruleNameMds;
 
 			private String ruleDescMds;
@@ -116,6 +120,10 @@ public class ListCloudSiemPredefinedRulesResponse extends AcsResponse {
 			private String alertType;
 
 			private String source;
+
+			private String eventTransferType;
+
+			private String attCk;
 
 			private Integer status;
 
@@ -149,6 +157,22 @@ public class ListCloudSiemPredefinedRulesResponse extends AcsResponse {
 
 			public void setRuleName(String ruleName) {
 				this.ruleName = ruleName;
+			}
+
+			public String getRuleNameCn() {
+				return this.ruleNameCn;
+			}
+
+			public void setRuleNameCn(String ruleNameCn) {
+				this.ruleNameCn = ruleNameCn;
+			}
+
+			public String getRuleNameEn() {
+				return this.ruleNameEn;
+			}
+
+			public void setRuleNameEn(String ruleNameEn) {
+				this.ruleNameEn = ruleNameEn;
 			}
 
 			public String getRuleNameMds() {
@@ -189,6 +213,22 @@ public class ListCloudSiemPredefinedRulesResponse extends AcsResponse {
 
 			public void setSource(String source) {
 				this.source = source;
+			}
+
+			public String getEventTransferType() {
+				return this.eventTransferType;
+			}
+
+			public void setEventTransferType(String eventTransferType) {
+				this.eventTransferType = eventTransferType;
+			}
+
+			public String getAttCk() {
+				return this.attCk;
+			}
+
+			public void setAttCk(String attCk) {
+				this.attCk = attCk;
 			}
 
 			public Integer getStatus() {

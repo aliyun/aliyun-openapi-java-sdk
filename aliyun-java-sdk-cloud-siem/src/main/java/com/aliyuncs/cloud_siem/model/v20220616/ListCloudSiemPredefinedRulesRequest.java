@@ -25,13 +25,23 @@ import com.aliyuncs.http.MethodType;
 public class ListCloudSiemPredefinedRulesRequest extends RpcAcsRequest<ListCloudSiemPredefinedRulesResponse> {
 	   
 
+	private Long roleFor;
+
+	private String attCk;
+
 	private String ruleName;
 
 	private Long startTime;
 
 	private Integer pageSize;
 
+	private Integer roleType;
+
 	private String id;
+
+	private String orderField;
+
+	private String order;
 
 	private String ruleType;
 
@@ -39,7 +49,11 @@ public class ListCloudSiemPredefinedRulesRequest extends RpcAcsRequest<ListCloud
 
 	private Integer currentPage;
 
+	private String logSource;
+
 	private String alertType;
+
+	private String eventTransferType;
 
 	private List<String> threatLevels;
 
@@ -47,6 +61,28 @@ public class ListCloudSiemPredefinedRulesRequest extends RpcAcsRequest<ListCloud
 	public ListCloudSiemPredefinedRulesRequest() {
 		super("cloud-siem", "2022-06-16", "ListCloudSiemPredefinedRules", "cloud-siem");
 		setMethod(MethodType.POST);
+	}
+
+	public Long getRoleFor() {
+		return this.roleFor;
+	}
+
+	public void setRoleFor(Long roleFor) {
+		this.roleFor = roleFor;
+		if(roleFor != null){
+			putBodyParameter("RoleFor", roleFor.toString());
+		}
+	}
+
+	public String getAttCk() {
+		return this.attCk;
+	}
+
+	public void setAttCk(String attCk) {
+		this.attCk = attCk;
+		if(attCk != null){
+			putBodyParameter("AttCk", attCk);
+		}
 	}
 
 	public String getRuleName() {
@@ -82,6 +118,17 @@ public class ListCloudSiemPredefinedRulesRequest extends RpcAcsRequest<ListCloud
 		}
 	}
 
+	public Integer getRoleType() {
+		return this.roleType;
+	}
+
+	public void setRoleType(Integer roleType) {
+		this.roleType = roleType;
+		if(roleType != null){
+			putBodyParameter("RoleType", roleType.toString());
+		}
+	}
+
 	public String getId() {
 		return this.id;
 	}
@@ -90,6 +137,28 @@ public class ListCloudSiemPredefinedRulesRequest extends RpcAcsRequest<ListCloud
 		this.id = id;
 		if(id != null){
 			putBodyParameter("Id", id);
+		}
+	}
+
+	public String getOrderField() {
+		return this.orderField;
+	}
+
+	public void setOrderField(String orderField) {
+		this.orderField = orderField;
+		if(orderField != null){
+			putBodyParameter("OrderField", orderField);
+		}
+	}
+
+	public String getOrder() {
+		return this.order;
+	}
+
+	public void setOrder(String order) {
+		this.order = order;
+		if(order != null){
+			putBodyParameter("Order", order);
 		}
 	}
 
@@ -126,6 +195,17 @@ public class ListCloudSiemPredefinedRulesRequest extends RpcAcsRequest<ListCloud
 		}
 	}
 
+	public String getLogSource() {
+		return this.logSource;
+	}
+
+	public void setLogSource(String logSource) {
+		this.logSource = logSource;
+		if(logSource != null){
+			putBodyParameter("LogSource", logSource);
+		}
+	}
+
 	public String getAlertType() {
 		return this.alertType;
 	}
@@ -134,6 +214,17 @@ public class ListCloudSiemPredefinedRulesRequest extends RpcAcsRequest<ListCloud
 		this.alertType = alertType;
 		if(alertType != null){
 			putBodyParameter("AlertType", alertType);
+		}
+	}
+
+	public String getEventTransferType() {
+		return this.eventTransferType;
+	}
+
+	public void setEventTransferType(String eventTransferType) {
+		this.eventTransferType = eventTransferType;
+		if(eventTransferType != null){
+			putBodyParameter("EventTransferType", eventTransferType);
 		}
 	}
 

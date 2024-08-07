@@ -23,9 +23,35 @@ import com.aliyuncs.http.MethodType;
  */
 public class ListDeliveryRequest extends RpcAcsRequest<ListDeliveryResponse> {
 	   
+
+	private Long roleFor;
+
+	private Integer roleType;
 	public ListDeliveryRequest() {
 		super("cloud-siem", "2022-06-16", "ListDelivery", "cloud-siem");
 		setMethod(MethodType.POST);
+	}
+
+	public Long getRoleFor() {
+		return this.roleFor;
+	}
+
+	public void setRoleFor(Long roleFor) {
+		this.roleFor = roleFor;
+		if(roleFor != null){
+			putBodyParameter("RoleFor", roleFor.toString());
+		}
+	}
+
+	public Integer getRoleType() {
+		return this.roleType;
+	}
+
+	public void setRoleType(Integer roleType) {
+		this.roleType = roleType;
+		if(roleType != null){
+			putBodyParameter("RoleType", roleType.toString());
+		}
 	}
 
 	@Override

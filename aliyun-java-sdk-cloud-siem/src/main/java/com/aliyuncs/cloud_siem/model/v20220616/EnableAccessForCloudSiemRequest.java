@@ -23,9 +23,48 @@ import com.aliyuncs.http.MethodType;
  */
 public class EnableAccessForCloudSiemRequest extends RpcAcsRequest<EnableAccessForCloudSiemResponse> {
 	   
+
+	private Long roleFor;
+
+	private Integer autoSubmit;
+
+	private Integer roleType;
 	public EnableAccessForCloudSiemRequest() {
 		super("cloud-siem", "2022-06-16", "EnableAccessForCloudSiem", "cloud-siem");
 		setMethod(MethodType.POST);
+	}
+
+	public Long getRoleFor() {
+		return this.roleFor;
+	}
+
+	public void setRoleFor(Long roleFor) {
+		this.roleFor = roleFor;
+		if(roleFor != null){
+			putBodyParameter("RoleFor", roleFor.toString());
+		}
+	}
+
+	public Integer getAutoSubmit() {
+		return this.autoSubmit;
+	}
+
+	public void setAutoSubmit(Integer autoSubmit) {
+		this.autoSubmit = autoSubmit;
+		if(autoSubmit != null){
+			putBodyParameter("AutoSubmit", autoSubmit.toString());
+		}
+	}
+
+	public Integer getRoleType() {
+		return this.roleType;
+	}
+
+	public void setRoleType(Integer roleType) {
+		this.roleType = roleType;
+		if(roleType != null){
+			putBodyParameter("RoleType", roleType.toString());
+		}
 	}
 
 	@Override

@@ -153,6 +153,8 @@ public class DescribeAlertsWithEventResponse extends AcsResponse {
 
 			private String logUuid;
 
+			private String entityList;
+
 			private String attCk;
 
 			private Long subUserId;
@@ -377,6 +379,14 @@ public class DescribeAlertsWithEventResponse extends AcsResponse {
 
 			public void setLogUuid(String logUuid) {
 				this.logUuid = logUuid;
+			}
+
+			public String getEntityList() {
+				return this.entityList;
+			}
+
+			public void setEntityList(String entityList) {
+				this.entityList = entityList;
 			}
 
 			public String getAttCk() {

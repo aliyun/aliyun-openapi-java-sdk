@@ -33,6 +33,14 @@ public class DescribeCustomizeRuleCountResponseUnmarshaller {
 		data.setHighRuleNum(_ctx.integerValue("DescribeCustomizeRuleCountResponse.Data.HighRuleNum"));
 		data.setMediumRuleNum(_ctx.integerValue("DescribeCustomizeRuleCountResponse.Data.MediumRuleNum"));
 		data.setLowRuleNum(_ctx.integerValue("DescribeCustomizeRuleCountResponse.Data.LowRuleNum"));
+		data.setTotalRuleNum(_ctx.integerValue("DescribeCustomizeRuleCountResponse.Data.TotalRuleNum"));
+		data.setCustomizeRuleNum(_ctx.integerValue("DescribeCustomizeRuleCountResponse.Data.CustomizeRuleNum"));
+		data.setPredefinedRuleNum(_ctx.integerValue("DescribeCustomizeRuleCountResponse.Data.PredefinedRuleNum"));
+		data.setUnEventRuleNum(_ctx.integerValue("DescribeCustomizeRuleCountResponse.Data.UnEventRuleNum"));
+		data.setExpertRuleNum(_ctx.integerValue("DescribeCustomizeRuleCountResponse.Data.ExpertRuleNum"));
+		data.setGraphComputingRuleNum(_ctx.integerValue("DescribeCustomizeRuleCountResponse.Data.GraphComputingRuleNum"));
+		data.setSingleAlertRuleNum(_ctx.integerValue("DescribeCustomizeRuleCountResponse.Data.SingleAlertRuleNum"));
+		data.setAggregationRuleNum(_ctx.integerValue("DescribeCustomizeRuleCountResponse.Data.AggregationRuleNum"));
 		describeCustomizeRuleCountResponse.setData(data);
 	 
 	 	return describeCustomizeRuleCountResponse;

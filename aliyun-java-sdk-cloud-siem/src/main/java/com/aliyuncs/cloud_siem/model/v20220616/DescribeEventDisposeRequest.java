@@ -24,7 +24,11 @@ import com.aliyuncs.http.MethodType;
 public class DescribeEventDisposeRequest extends RpcAcsRequest<DescribeEventDisposeResponse> {
 	   
 
+	private Long roleFor;
+
 	private Integer pageSize;
+
+	private Integer roleType;
 
 	private Integer currentPage;
 
@@ -32,6 +36,17 @@ public class DescribeEventDisposeRequest extends RpcAcsRequest<DescribeEventDisp
 	public DescribeEventDisposeRequest() {
 		super("cloud-siem", "2022-06-16", "DescribeEventDispose", "cloud-siem");
 		setMethod(MethodType.POST);
+	}
+
+	public Long getRoleFor() {
+		return this.roleFor;
+	}
+
+	public void setRoleFor(Long roleFor) {
+		this.roleFor = roleFor;
+		if(roleFor != null){
+			putBodyParameter("RoleFor", roleFor.toString());
+		}
 	}
 
 	public Integer getPageSize() {
@@ -42,6 +57,17 @@ public class DescribeEventDisposeRequest extends RpcAcsRequest<DescribeEventDisp
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putBodyParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Integer getRoleType() {
+		return this.roleType;
+	}
+
+	public void setRoleType(Integer roleType) {
+		this.roleType = roleType;
+		if(roleType != null){
+			putBodyParameter("RoleType", roleType.toString());
 		}
 	}
 

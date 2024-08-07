@@ -24,9 +24,13 @@ import com.aliyuncs.http.MethodType;
 public class DescribeAttackTimeLineRequest extends RpcAcsRequest<DescribeAttackTimeLineResponse> {
 	   
 
+	private Long roleFor;
+
 	private String assetName;
 
 	private Long startTime;
+
+	private Integer roleType;
 
 	private Long endTime;
 
@@ -34,6 +38,17 @@ public class DescribeAttackTimeLineRequest extends RpcAcsRequest<DescribeAttackT
 	public DescribeAttackTimeLineRequest() {
 		super("cloud-siem", "2022-06-16", "DescribeAttackTimeLine", "cloud-siem");
 		setMethod(MethodType.POST);
+	}
+
+	public Long getRoleFor() {
+		return this.roleFor;
+	}
+
+	public void setRoleFor(Long roleFor) {
+		this.roleFor = roleFor;
+		if(roleFor != null){
+			putBodyParameter("RoleFor", roleFor.toString());
+		}
 	}
 
 	public String getAssetName() {
@@ -55,6 +70,17 @@ public class DescribeAttackTimeLineRequest extends RpcAcsRequest<DescribeAttackT
 		this.startTime = startTime;
 		if(startTime != null){
 			putBodyParameter("StartTime", startTime.toString());
+		}
+	}
+
+	public Integer getRoleType() {
+		return this.roleType;
+	}
+
+	public void setRoleType(Integer roleType) {
+		this.roleType = roleType;
+		if(roleType != null){
+			putBodyParameter("RoleType", roleType.toString());
 		}
 	}
 

@@ -24,6 +24,8 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class PostAutomateResponseConfigResponse extends AcsResponse {
 
+	private String data;
+
 	private Boolean success;
 
 	private Integer code;
@@ -32,7 +34,13 @@ public class PostAutomateResponseConfigResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String data;
+	public String getData() {
+		return this.data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
+	}
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -64,14 +72,6 @@ public class PostAutomateResponseConfigResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getData() {
-		return this.data;
-	}
-
-	public void setData(String data) {
-		this.data = data;
 	}
 
 	@Override

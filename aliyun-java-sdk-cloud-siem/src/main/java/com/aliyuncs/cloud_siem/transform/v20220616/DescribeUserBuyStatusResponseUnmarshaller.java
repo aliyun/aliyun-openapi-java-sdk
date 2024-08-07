@@ -37,6 +37,7 @@ public class DescribeUserBuyStatusResponseUnmarshaller {
 		data.setCanBuy(_ctx.booleanValue("DescribeUserBuyStatusResponse.Data.CanBuy"));
 		data.setEndTime(_ctx.longValue("DescribeUserBuyStatusResponse.Data.EndTime"));
 		data.setDurationDays(_ctx.longValue("DescribeUserBuyStatusResponse.Data.DurationDays"));
+		data.setRdOrder(_ctx.integerValue("DescribeUserBuyStatusResponse.Data.RdOrder"));
 		describeUserBuyStatusResponse.setData(data);
 	 
 	 	return describeUserBuyStatusResponse;

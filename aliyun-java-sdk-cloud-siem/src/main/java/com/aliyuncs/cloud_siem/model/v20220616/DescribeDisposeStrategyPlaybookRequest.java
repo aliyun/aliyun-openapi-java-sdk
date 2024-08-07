@@ -24,12 +24,27 @@ import com.aliyuncs.http.MethodType;
 public class DescribeDisposeStrategyPlaybookRequest extends RpcAcsRequest<DescribeDisposeStrategyPlaybookResponse> {
 	   
 
+	private Long roleFor;
+
 	private Long startTime;
+
+	private Integer roleType;
 
 	private Long endTime;
 	public DescribeDisposeStrategyPlaybookRequest() {
 		super("cloud-siem", "2022-06-16", "DescribeDisposeStrategyPlaybook", "cloud-siem");
 		setMethod(MethodType.POST);
+	}
+
+	public Long getRoleFor() {
+		return this.roleFor;
+	}
+
+	public void setRoleFor(Long roleFor) {
+		this.roleFor = roleFor;
+		if(roleFor != null){
+			putBodyParameter("RoleFor", roleFor.toString());
+		}
 	}
 
 	public Long getStartTime() {
@@ -40,6 +55,17 @@ public class DescribeDisposeStrategyPlaybookRequest extends RpcAcsRequest<Descri
 		this.startTime = startTime;
 		if(startTime != null){
 			putBodyParameter("StartTime", startTime.toString());
+		}
+	}
+
+	public Integer getRoleType() {
+		return this.roleType;
+	}
+
+	public void setRoleType(Integer roleType) {
+		this.roleType = roleType;
+		if(roleType != null){
+			putBodyParameter("RoleType", roleType.toString());
 		}
 	}
 

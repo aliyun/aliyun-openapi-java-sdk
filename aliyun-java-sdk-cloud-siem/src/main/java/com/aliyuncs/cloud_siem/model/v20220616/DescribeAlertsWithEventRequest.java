@@ -25,6 +25,8 @@ import com.aliyuncs.http.MethodType;
 public class DescribeAlertsWithEventRequest extends RpcAcsRequest<DescribeAlertsWithEventResponse> {
 	   
 
+	private Long roleFor;
+
 	private String source;
 
 	private String isDefend;
@@ -32,6 +34,8 @@ public class DescribeAlertsWithEventRequest extends RpcAcsRequest<DescribeAlerts
 	private Long subUserId;
 
 	private Integer pageSize;
+
+	private Integer roleType;
 
 	private List<String> levels;
 
@@ -43,6 +47,17 @@ public class DescribeAlertsWithEventRequest extends RpcAcsRequest<DescribeAlerts
 	public DescribeAlertsWithEventRequest() {
 		super("cloud-siem", "2022-06-16", "DescribeAlertsWithEvent", "cloud-siem");
 		setMethod(MethodType.POST);
+	}
+
+	public Long getRoleFor() {
+		return this.roleFor;
+	}
+
+	public void setRoleFor(Long roleFor) {
+		this.roleFor = roleFor;
+		if(roleFor != null){
+			putBodyParameter("RoleFor", roleFor.toString());
+		}
 	}
 
 	public String getSource() {
@@ -86,6 +101,17 @@ public class DescribeAlertsWithEventRequest extends RpcAcsRequest<DescribeAlerts
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putBodyParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Integer getRoleType() {
+		return this.roleType;
+	}
+
+	public void setRoleType(Integer roleType) {
+		this.roleType = roleType;
+		if(roleType != null){
+			putBodyParameter("RoleType", roleType.toString());
 		}
 	}
 

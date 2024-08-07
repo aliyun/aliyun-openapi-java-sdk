@@ -65,6 +65,8 @@ public class ListImportedLogsByProdResponse extends AcsResponse {
 
 		private Integer autoImported;
 
+		private Integer logType;
+
 		private String cloudCode;
 
 		public String getProdCode() {
@@ -137,6 +139,14 @@ public class ListImportedLogsByProdResponse extends AcsResponse {
 
 		public void setAutoImported(Integer autoImported) {
 			this.autoImported = autoImported;
+		}
+
+		public Integer getLogType() {
+			return this.logType;
+		}
+
+		public void setLogType(Integer logType) {
+			this.logType = logType;
 		}
 
 		public String getCloudCode() {

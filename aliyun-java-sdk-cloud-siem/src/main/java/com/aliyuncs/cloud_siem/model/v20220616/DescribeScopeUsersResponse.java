@@ -81,6 +81,10 @@ public class DescribeScopeUsersResponse extends AcsResponse {
 
 		private String userName;
 
+		private String userId;
+
+		private String cloudCode;
+
 		private String instanceId;
 
 		private List<String> domains;
@@ -99,6 +103,22 @@ public class DescribeScopeUsersResponse extends AcsResponse {
 
 		public void setUserName(String userName) {
 			this.userName = userName;
+		}
+
+		public String getUserId() {
+			return this.userId;
+		}
+
+		public void setUserId(String userId) {
+			this.userId = userId;
+		}
+
+		public String getCloudCode() {
+			return this.cloudCode;
+		}
+
+		public void setCloudCode(String cloudCode) {
+			this.cloudCode = cloudCode;
 		}
 
 		public String getInstanceId() {

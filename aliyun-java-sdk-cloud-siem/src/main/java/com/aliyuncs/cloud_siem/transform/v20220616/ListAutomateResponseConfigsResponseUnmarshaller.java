@@ -55,6 +55,7 @@ public class ListAutomateResponseConfigsResponseUnmarshaller {
 			responseDataItem.setActionType(_ctx.stringValue("ListAutomateResponseConfigsResponse.Data.ResponseData["+ i +"].ActionType"));
 			responseDataItem.setActionConfig(_ctx.stringValue("ListAutomateResponseConfigsResponse.Data.ResponseData["+ i +"].ActionConfig"));
 			responseDataItem.setStatus(_ctx.integerValue("ListAutomateResponseConfigsResponse.Data.ResponseData["+ i +"].Status"));
+			responseDataItem.setDataType(_ctx.integerValue("ListAutomateResponseConfigsResponse.Data.ResponseData["+ i +"].DataType"));
 
 			responseData.add(responseDataItem);
 		}

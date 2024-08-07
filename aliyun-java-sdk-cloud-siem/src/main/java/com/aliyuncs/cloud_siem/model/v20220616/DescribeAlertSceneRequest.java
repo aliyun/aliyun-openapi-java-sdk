@@ -23,9 +23,35 @@ import com.aliyuncs.http.MethodType;
  */
 public class DescribeAlertSceneRequest extends RpcAcsRequest<DescribeAlertSceneResponse> {
 	   
+
+	private Long roleFor;
+
+	private Integer roleType;
 	public DescribeAlertSceneRequest() {
 		super("cloud-siem", "2022-06-16", "DescribeAlertScene", "cloud-siem");
 		setMethod(MethodType.POST);
+	}
+
+	public Long getRoleFor() {
+		return this.roleFor;
+	}
+
+	public void setRoleFor(Long roleFor) {
+		this.roleFor = roleFor;
+		if(roleFor != null){
+			putBodyParameter("RoleFor", roleFor.toString());
+		}
+	}
+
+	public Integer getRoleType() {
+		return this.roleType;
+	}
+
+	public void setRoleType(Integer roleType) {
+		this.roleType = roleType;
+		if(roleType != null){
+			putBodyParameter("RoleType", roleType.toString());
+		}
 	}
 
 	@Override

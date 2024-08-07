@@ -26,6 +26,8 @@ public class ListAutomateResponseConfigsRequest extends RpcAcsRequest<ListAutoma
 
 	private String actionType;
 
+	private Long roleFor;
+
 	private String ruleName;
 
 	private Long subUserId;
@@ -33,6 +35,8 @@ public class ListAutomateResponseConfigsRequest extends RpcAcsRequest<ListAutoma
 	private Integer pageSize;
 
 	private String autoResponseType;
+
+	private Integer roleType;
 
 	private Long id;
 
@@ -54,6 +58,17 @@ public class ListAutomateResponseConfigsRequest extends RpcAcsRequest<ListAutoma
 		this.actionType = actionType;
 		if(actionType != null){
 			putBodyParameter("ActionType", actionType);
+		}
+	}
+
+	public Long getRoleFor() {
+		return this.roleFor;
+	}
+
+	public void setRoleFor(Long roleFor) {
+		this.roleFor = roleFor;
+		if(roleFor != null){
+			putBodyParameter("RoleFor", roleFor.toString());
 		}
 	}
 
@@ -98,6 +113,17 @@ public class ListAutomateResponseConfigsRequest extends RpcAcsRequest<ListAutoma
 		this.autoResponseType = autoResponseType;
 		if(autoResponseType != null){
 			putBodyParameter("AutoResponseType", autoResponseType);
+		}
+	}
+
+	public Integer getRoleType() {
+		return this.roleType;
+	}
+
+	public void setRoleType(Integer roleType) {
+		this.roleType = roleType;
+		if(roleType != null){
+			putBodyParameter("RoleType", roleType.toString());
 		}
 	}
 

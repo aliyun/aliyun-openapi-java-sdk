@@ -30,9 +30,13 @@ public class ListDisposeStrategyRequest extends RpcAcsRequest<ListDisposeStrateg
 
 	private String playbookTypes;
 
+	private Long roleFor;
+
 	private Long startTime;
 
 	private Integer pageSize;
+
+	private Integer roleType;
 
 	private String orderField;
 
@@ -87,6 +91,17 @@ public class ListDisposeStrategyRequest extends RpcAcsRequest<ListDisposeStrateg
 		}
 	}
 
+	public Long getRoleFor() {
+		return this.roleFor;
+	}
+
+	public void setRoleFor(Long roleFor) {
+		this.roleFor = roleFor;
+		if(roleFor != null){
+			putBodyParameter("RoleFor", roleFor.toString());
+		}
+	}
+
 	public Long getStartTime() {
 		return this.startTime;
 	}
@@ -106,6 +121,17 @@ public class ListDisposeStrategyRequest extends RpcAcsRequest<ListDisposeStrateg
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putBodyParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Integer getRoleType() {
+		return this.roleType;
+	}
+
+	public void setRoleType(Integer roleType) {
+		this.roleType = roleType;
+		if(roleType != null){
+			putBodyParameter("RoleType", roleType.toString());
 		}
 	}
 

@@ -62,10 +62,12 @@ public class ListCloudSiemCustomizeRulesResponseUnmarshaller {
 			responseDataItem.setRuleGroup(_ctx.stringValue("ListCloudSiemCustomizeRulesResponse.Data.ResponseData["+ i +"].RuleGroup"));
 			responseDataItem.setRuleThreshold(_ctx.stringValue("ListCloudSiemCustomizeRulesResponse.Data.ResponseData["+ i +"].RuleThreshold"));
 			responseDataItem.setQueryCycle(_ctx.stringValue("ListCloudSiemCustomizeRulesResponse.Data.ResponseData["+ i +"].QueryCycle"));
+			responseDataItem.setAttCk(_ctx.stringValue("ListCloudSiemCustomizeRulesResponse.Data.ResponseData["+ i +"].AttCk"));
 			responseDataItem.setEventTransferSwitch(_ctx.integerValue("ListCloudSiemCustomizeRulesResponse.Data.ResponseData["+ i +"].EventTransferSwitch"));
 			responseDataItem.setEventTransferType(_ctx.stringValue("ListCloudSiemCustomizeRulesResponse.Data.ResponseData["+ i +"].EventTransferType"));
 			responseDataItem.setEventTransferExt(_ctx.stringValue("ListCloudSiemCustomizeRulesResponse.Data.ResponseData["+ i +"].EventTransferExt"));
 			responseDataItem.setStatus(_ctx.integerValue("ListCloudSiemCustomizeRulesResponse.Data.ResponseData["+ i +"].Status"));
+			responseDataItem.setDataType(_ctx.integerValue("ListCloudSiemCustomizeRulesResponse.Data.ResponseData["+ i +"].DataType"));
 
 			responseData.add(responseDataItem);
 		}

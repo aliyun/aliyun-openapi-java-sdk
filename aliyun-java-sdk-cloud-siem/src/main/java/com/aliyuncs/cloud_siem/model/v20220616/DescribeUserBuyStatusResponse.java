@@ -68,6 +68,8 @@ public class DescribeUserBuyStatusResponse extends AcsResponse {
 
 		private Long durationDays;
 
+		private Integer rdOrder;
+
 		public Long getMasterUserId() {
 			return this.masterUserId;
 		}
@@ -154,6 +156,14 @@ public class DescribeUserBuyStatusResponse extends AcsResponse {
 
 		public void setDurationDays(Long durationDays) {
 			this.durationDays = durationDays;
+		}
+
+		public Integer getRdOrder() {
+			return this.rdOrder;
+		}
+
+		public void setRdOrder(Integer rdOrder) {
+			this.rdOrder = rdOrder;
 		}
 	}
 

@@ -23,10 +23,10 @@ public class UpdateAutomateResponseConfigStatusResponseUnmarshaller {
 	public static UpdateAutomateResponseConfigStatusResponse unmarshall(UpdateAutomateResponseConfigStatusResponse updateAutomateResponseConfigStatusResponse, UnmarshallerContext _ctx) {
 		
 		updateAutomateResponseConfigStatusResponse.setRequestId(_ctx.stringValue("UpdateAutomateResponseConfigStatusResponse.RequestId"));
+		updateAutomateResponseConfigStatusResponse.setData(_ctx.stringValue("UpdateAutomateResponseConfigStatusResponse.Data"));
 		updateAutomateResponseConfigStatusResponse.setSuccess(_ctx.booleanValue("UpdateAutomateResponseConfigStatusResponse.Success"));
 		updateAutomateResponseConfigStatusResponse.setCode(_ctx.integerValue("UpdateAutomateResponseConfigStatusResponse.Code"));
 		updateAutomateResponseConfigStatusResponse.setMessage(_ctx.stringValue("UpdateAutomateResponseConfigStatusResponse.Message"));
-		updateAutomateResponseConfigStatusResponse.setData(_ctx.stringValue("UpdateAutomateResponseConfigStatusResponse.Data"));
 	 
 	 	return updateAutomateResponseConfigStatusResponse;
 	}

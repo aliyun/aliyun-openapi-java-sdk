@@ -24,7 +24,11 @@ import com.aliyuncs.http.MethodType;
 public class DescribeCloudSiemAssetsRequest extends RpcAcsRequest<DescribeCloudSiemAssetsResponse> {
 	   
 
+	private Long roleFor;
+
 	private Integer pageSize;
+
+	private Integer roleType;
 
 	private String assetType;
 
@@ -36,6 +40,17 @@ public class DescribeCloudSiemAssetsRequest extends RpcAcsRequest<DescribeCloudS
 		setMethod(MethodType.POST);
 	}
 
+	public Long getRoleFor() {
+		return this.roleFor;
+	}
+
+	public void setRoleFor(Long roleFor) {
+		this.roleFor = roleFor;
+		if(roleFor != null){
+			putBodyParameter("RoleFor", roleFor.toString());
+		}
+	}
+
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -44,6 +59,17 @@ public class DescribeCloudSiemAssetsRequest extends RpcAcsRequest<DescribeCloudS
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putBodyParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Integer getRoleType() {
+		return this.roleType;
+	}
+
+	public void setRoleType(Integer roleType) {
+		this.roleType = roleType;
+		if(roleType != null){
+			putBodyParameter("RoleType", roleType.toString());
 		}
 	}
 

@@ -24,10 +24,25 @@ import com.aliyuncs.http.MethodType;
 public class DescribeWafScopeRequest extends RpcAcsRequest<DescribeWafScopeResponse> {
 	   
 
+	private Long roleFor;
+
 	private Long entityId;
+
+	private Integer roleType;
 	public DescribeWafScopeRequest() {
 		super("cloud-siem", "2022-06-16", "DescribeWafScope", "cloud-siem");
 		setMethod(MethodType.POST);
+	}
+
+	public Long getRoleFor() {
+		return this.roleFor;
+	}
+
+	public void setRoleFor(Long roleFor) {
+		this.roleFor = roleFor;
+		if(roleFor != null){
+			putBodyParameter("RoleFor", roleFor.toString());
+		}
 	}
 
 	public Long getEntityId() {
@@ -38,6 +53,17 @@ public class DescribeWafScopeRequest extends RpcAcsRequest<DescribeWafScopeRespo
 		this.entityId = entityId;
 		if(entityId != null){
 			putBodyParameter("EntityId", entityId.toString());
+		}
+	}
+
+	public Integer getRoleType() {
+		return this.roleType;
+	}
+
+	public void setRoleType(Integer roleType) {
+		this.roleType = roleType;
+		if(roleType != null){
+			putBodyParameter("RoleType", roleType.toString());
 		}
 	}
 

@@ -25,6 +25,10 @@ public class ListBindAccountRequest extends RpcAcsRequest<ListBindAccountRespons
 	   
 
 	private String cloudCode;
+
+	private Long roleFor;
+
+	private Integer roleType;
 	public ListBindAccountRequest() {
 		super("cloud-siem", "2022-06-16", "ListBindAccount", "cloud-siem");
 		setMethod(MethodType.POST);
@@ -38,6 +42,28 @@ public class ListBindAccountRequest extends RpcAcsRequest<ListBindAccountRespons
 		this.cloudCode = cloudCode;
 		if(cloudCode != null){
 			putBodyParameter("CloudCode", cloudCode);
+		}
+	}
+
+	public Long getRoleFor() {
+		return this.roleFor;
+	}
+
+	public void setRoleFor(Long roleFor) {
+		this.roleFor = roleFor;
+		if(roleFor != null){
+			putBodyParameter("RoleFor", roleFor.toString());
+		}
+	}
+
+	public Integer getRoleType() {
+		return this.roleType;
+	}
+
+	public void setRoleType(Integer roleType) {
+		this.roleType = roleType;
+		if(roleType != null){
+			putBodyParameter("RoleType", roleType.toString());
 		}
 	}
 

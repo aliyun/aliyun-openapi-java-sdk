@@ -26,6 +26,10 @@ public class ListImportedLogsByProdRequest extends RpcAcsRequest<ListImportedLog
 
 	private String cloudCode;
 
+	private Long roleFor;
+
+	private Integer roleType;
+
 	private String prodCode;
 	public ListImportedLogsByProdRequest() {
 		super("cloud-siem", "2022-06-16", "ListImportedLogsByProd", "cloud-siem");
@@ -40,6 +44,28 @@ public class ListImportedLogsByProdRequest extends RpcAcsRequest<ListImportedLog
 		this.cloudCode = cloudCode;
 		if(cloudCode != null){
 			putBodyParameter("CloudCode", cloudCode);
+		}
+	}
+
+	public Long getRoleFor() {
+		return this.roleFor;
+	}
+
+	public void setRoleFor(Long roleFor) {
+		this.roleFor = roleFor;
+		if(roleFor != null){
+			putBodyParameter("RoleFor", roleFor.toString());
+		}
+	}
+
+	public Integer getRoleType() {
+		return this.roleType;
+	}
+
+	public void setRoleType(Integer roleType) {
+		this.roleType = roleType;
+		if(roleType != null){
+			putBodyParameter("RoleType", roleType.toString());
 		}
 	}
 

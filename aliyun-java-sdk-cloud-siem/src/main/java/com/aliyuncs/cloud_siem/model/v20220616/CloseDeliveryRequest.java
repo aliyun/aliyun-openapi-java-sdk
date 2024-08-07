@@ -26,7 +26,11 @@ public class CloseDeliveryRequest extends RpcAcsRequest<CloseDeliveryResponse> {
 
 	private String productCode;
 
+	private Long roleFor;
+
 	private String logCode;
+
+	private Integer roleType;
 	public CloseDeliveryRequest() {
 		super("cloud-siem", "2022-06-16", "CloseDelivery", "cloud-siem");
 		setMethod(MethodType.POST);
@@ -43,6 +47,17 @@ public class CloseDeliveryRequest extends RpcAcsRequest<CloseDeliveryResponse> {
 		}
 	}
 
+	public Long getRoleFor() {
+		return this.roleFor;
+	}
+
+	public void setRoleFor(Long roleFor) {
+		this.roleFor = roleFor;
+		if(roleFor != null){
+			putBodyParameter("RoleFor", roleFor.toString());
+		}
+	}
+
 	public String getLogCode() {
 		return this.logCode;
 	}
@@ -51,6 +66,17 @@ public class CloseDeliveryRequest extends RpcAcsRequest<CloseDeliveryResponse> {
 		this.logCode = logCode;
 		if(logCode != null){
 			putBodyParameter("LogCode", logCode);
+		}
+	}
+
+	public Integer getRoleType() {
+		return this.roleType;
+	}
+
+	public void setRoleType(Integer roleType) {
+		this.roleType = roleType;
+		if(roleType != null){
+			putBodyParameter("RoleType", roleType.toString());
 		}
 	}
 

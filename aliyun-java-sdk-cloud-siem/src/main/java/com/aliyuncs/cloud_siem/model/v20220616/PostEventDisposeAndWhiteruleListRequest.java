@@ -24,11 +24,15 @@ import com.aliyuncs.http.MethodType;
 public class PostEventDisposeAndWhiteruleListRequest extends RpcAcsRequest<PostEventDisposeAndWhiteruleListResponse> {
 	   
 
+	private Long roleFor;
+
 	private String remark;
 
 	private String eventDispose;
 
 	private String receiverInfo;
+
+	private Integer roleType;
 
 	private String incidentUuid;
 
@@ -36,6 +40,17 @@ public class PostEventDisposeAndWhiteruleListRequest extends RpcAcsRequest<PostE
 	public PostEventDisposeAndWhiteruleListRequest() {
 		super("cloud-siem", "2022-06-16", "PostEventDisposeAndWhiteruleList", "cloud-siem");
 		setMethod(MethodType.POST);
+	}
+
+	public Long getRoleFor() {
+		return this.roleFor;
+	}
+
+	public void setRoleFor(Long roleFor) {
+		this.roleFor = roleFor;
+		if(roleFor != null){
+			putBodyParameter("RoleFor", roleFor.toString());
+		}
 	}
 
 	public String getRemark() {
@@ -68,6 +83,17 @@ public class PostEventDisposeAndWhiteruleListRequest extends RpcAcsRequest<PostE
 		this.receiverInfo = receiverInfo;
 		if(receiverInfo != null){
 			putBodyParameter("ReceiverInfo", receiverInfo);
+		}
+	}
+
+	public Integer getRoleType() {
+		return this.roleType;
+	}
+
+	public void setRoleType(Integer roleType) {
+		this.roleType = roleType;
+		if(roleType != null){
+			putBodyParameter("RoleType", roleType.toString());
 		}
 	}
 

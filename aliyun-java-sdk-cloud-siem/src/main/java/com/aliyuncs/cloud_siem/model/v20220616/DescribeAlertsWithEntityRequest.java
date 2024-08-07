@@ -24,9 +24,13 @@ import com.aliyuncs.http.MethodType;
 public class DescribeAlertsWithEntityRequest extends RpcAcsRequest<DescribeAlertsWithEntityResponse> {
 	   
 
+	private Long roleFor;
+
 	private Long entityId;
 
 	private Integer pageSize;
+
+	private Integer roleType;
 
 	private String sophonTaskId;
 
@@ -36,6 +40,17 @@ public class DescribeAlertsWithEntityRequest extends RpcAcsRequest<DescribeAlert
 	public DescribeAlertsWithEntityRequest() {
 		super("cloud-siem", "2022-06-16", "DescribeAlertsWithEntity", "cloud-siem");
 		setMethod(MethodType.POST);
+	}
+
+	public Long getRoleFor() {
+		return this.roleFor;
+	}
+
+	public void setRoleFor(Long roleFor) {
+		this.roleFor = roleFor;
+		if(roleFor != null){
+			putBodyParameter("RoleFor", roleFor.toString());
+		}
 	}
 
 	public Long getEntityId() {
@@ -57,6 +72,17 @@ public class DescribeAlertsWithEntityRequest extends RpcAcsRequest<DescribeAlert
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putBodyParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Integer getRoleType() {
+		return this.roleType;
+	}
+
+	public void setRoleType(Integer roleType) {
+		this.roleType = roleType;
+		if(roleType != null){
+			putBodyParameter("RoleType", roleType.toString());
 		}
 	}
 

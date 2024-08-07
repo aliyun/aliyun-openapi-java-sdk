@@ -23,10 +23,10 @@ public class PostEventDisposeAndWhiteruleListResponseUnmarshaller {
 	public static PostEventDisposeAndWhiteruleListResponse unmarshall(PostEventDisposeAndWhiteruleListResponse postEventDisposeAndWhiteruleListResponse, UnmarshallerContext _ctx) {
 		
 		postEventDisposeAndWhiteruleListResponse.setRequestId(_ctx.stringValue("PostEventDisposeAndWhiteruleListResponse.RequestId"));
+		postEventDisposeAndWhiteruleListResponse.setData(_ctx.stringValue("PostEventDisposeAndWhiteruleListResponse.Data"));
 		postEventDisposeAndWhiteruleListResponse.setSuccess(_ctx.booleanValue("PostEventDisposeAndWhiteruleListResponse.Success"));
 		postEventDisposeAndWhiteruleListResponse.setCode(_ctx.integerValue("PostEventDisposeAndWhiteruleListResponse.Code"));
 		postEventDisposeAndWhiteruleListResponse.setMessage(_ctx.stringValue("PostEventDisposeAndWhiteruleListResponse.Message"));
-		postEventDisposeAndWhiteruleListResponse.setData(_ctx.stringValue("PostEventDisposeAndWhiteruleListResponse.Data"));
 	 
 	 	return postEventDisposeAndWhiteruleListResponse;
 	}

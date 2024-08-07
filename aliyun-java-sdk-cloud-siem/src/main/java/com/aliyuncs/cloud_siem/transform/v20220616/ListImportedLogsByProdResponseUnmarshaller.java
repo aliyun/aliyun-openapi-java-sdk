@@ -40,6 +40,7 @@ public class ListImportedLogsByProdResponseUnmarshaller {
 			dataItem.setModifyTime(_ctx.stringValue("ListImportedLogsByProdResponse.Data["+ i +"].ModifyTime"));
 			dataItem.setImported(_ctx.integerValue("ListImportedLogsByProdResponse.Data["+ i +"].Imported"));
 			dataItem.setAutoImported(_ctx.integerValue("ListImportedLogsByProdResponse.Data["+ i +"].AutoImported"));
+			dataItem.setLogType(_ctx.integerValue("ListImportedLogsByProdResponse.Data["+ i +"].LogType"));
 			dataItem.setCloudCode(_ctx.stringValue("ListImportedLogsByProdResponse.Data["+ i +"].CloudCode"));
 
 			data.add(dataItem);

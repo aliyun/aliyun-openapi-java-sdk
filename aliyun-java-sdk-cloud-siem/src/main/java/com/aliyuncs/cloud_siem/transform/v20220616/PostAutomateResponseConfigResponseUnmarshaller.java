@@ -23,10 +23,10 @@ public class PostAutomateResponseConfigResponseUnmarshaller {
 	public static PostAutomateResponseConfigResponse unmarshall(PostAutomateResponseConfigResponse postAutomateResponseConfigResponse, UnmarshallerContext _ctx) {
 		
 		postAutomateResponseConfigResponse.setRequestId(_ctx.stringValue("PostAutomateResponseConfigResponse.RequestId"));
+		postAutomateResponseConfigResponse.setData(_ctx.stringValue("PostAutomateResponseConfigResponse.Data"));
 		postAutomateResponseConfigResponse.setSuccess(_ctx.booleanValue("PostAutomateResponseConfigResponse.Success"));
 		postAutomateResponseConfigResponse.setCode(_ctx.integerValue("PostAutomateResponseConfigResponse.Code"));
 		postAutomateResponseConfigResponse.setMessage(_ctx.stringValue("PostAutomateResponseConfigResponse.Message"));
-		postAutomateResponseConfigResponse.setData(_ctx.stringValue("PostAutomateResponseConfigResponse.Data"));
 	 
 	 	return postAutomateResponseConfigResponse;
 	}

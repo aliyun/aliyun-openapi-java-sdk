@@ -26,7 +26,11 @@ public class DeleteBindAccountRequest extends RpcAcsRequest<DeleteBindAccountRes
 
 	private String cloudCode;
 
+	private Long roleFor;
+
 	private String accountId;
+
+	private Integer roleType;
 
 	private Long bindId;
 
@@ -47,6 +51,17 @@ public class DeleteBindAccountRequest extends RpcAcsRequest<DeleteBindAccountRes
 		}
 	}
 
+	public Long getRoleFor() {
+		return this.roleFor;
+	}
+
+	public void setRoleFor(Long roleFor) {
+		this.roleFor = roleFor;
+		if(roleFor != null){
+			putBodyParameter("RoleFor", roleFor.toString());
+		}
+	}
+
 	public String getAccountId() {
 		return this.accountId;
 	}
@@ -55,6 +70,17 @@ public class DeleteBindAccountRequest extends RpcAcsRequest<DeleteBindAccountRes
 		this.accountId = accountId;
 		if(accountId != null){
 			putBodyParameter("AccountId", accountId);
+		}
+	}
+
+	public Integer getRoleType() {
+		return this.roleType;
+	}
+
+	public void setRoleType(Integer roleType) {
+		this.roleType = roleType;
+		if(roleType != null){
+			putBodyParameter("RoleType", roleType.toString());
 		}
 	}
 

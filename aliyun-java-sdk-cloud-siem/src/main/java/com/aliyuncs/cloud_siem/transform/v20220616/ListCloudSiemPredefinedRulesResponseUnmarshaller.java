@@ -48,11 +48,15 @@ public class ListCloudSiemPredefinedRulesResponseUnmarshaller {
 			responseDataItem.setGmtCreate(_ctx.stringValue("ListCloudSiemPredefinedRulesResponse.Data.ResponseData["+ i +"].GmtCreate"));
 			responseDataItem.setGmtModified(_ctx.stringValue("ListCloudSiemPredefinedRulesResponse.Data.ResponseData["+ i +"].GmtModified"));
 			responseDataItem.setRuleName(_ctx.stringValue("ListCloudSiemPredefinedRulesResponse.Data.ResponseData["+ i +"].RuleName"));
+			responseDataItem.setRuleNameCn(_ctx.stringValue("ListCloudSiemPredefinedRulesResponse.Data.ResponseData["+ i +"].RuleNameCn"));
+			responseDataItem.setRuleNameEn(_ctx.stringValue("ListCloudSiemPredefinedRulesResponse.Data.ResponseData["+ i +"].RuleNameEn"));
 			responseDataItem.setRuleNameMds(_ctx.stringValue("ListCloudSiemPredefinedRulesResponse.Data.ResponseData["+ i +"].RuleNameMds"));
 			responseDataItem.setRuleDescMds(_ctx.stringValue("ListCloudSiemPredefinedRulesResponse.Data.ResponseData["+ i +"].RuleDescMds"));
 			responseDataItem.setThreatLevel(_ctx.stringValue("ListCloudSiemPredefinedRulesResponse.Data.ResponseData["+ i +"].ThreatLevel"));
 			responseDataItem.setAlertType(_ctx.stringValue("ListCloudSiemPredefinedRulesResponse.Data.ResponseData["+ i +"].AlertType"));
 			responseDataItem.setSource(_ctx.stringValue("ListCloudSiemPredefinedRulesResponse.Data.ResponseData["+ i +"].Source"));
+			responseDataItem.setEventTransferType(_ctx.stringValue("ListCloudSiemPredefinedRulesResponse.Data.ResponseData["+ i +"].EventTransferType"));
+			responseDataItem.setAttCk(_ctx.stringValue("ListCloudSiemPredefinedRulesResponse.Data.ResponseData["+ i +"].AttCk"));
 			responseDataItem.setStatus(_ctx.integerValue("ListCloudSiemPredefinedRulesResponse.Data.ResponseData["+ i +"].Status"));
 
 			responseData.add(responseDataItem);

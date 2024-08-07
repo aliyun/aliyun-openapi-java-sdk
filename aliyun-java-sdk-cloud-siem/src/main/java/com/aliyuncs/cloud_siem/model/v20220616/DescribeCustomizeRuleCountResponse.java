@@ -84,6 +84,22 @@ public class DescribeCustomizeRuleCountResponse extends AcsResponse {
 
 		private Integer lowRuleNum;
 
+		private Integer totalRuleNum;
+
+		private Integer customizeRuleNum;
+
+		private Integer predefinedRuleNum;
+
+		private Integer unEventRuleNum;
+
+		private Integer expertRuleNum;
+
+		private Integer graphComputingRuleNum;
+
+		private Integer singleAlertRuleNum;
+
+		private Integer aggregationRuleNum;
+
 		public Integer getInUseRuleNum() {
 			return this.inUseRuleNum;
 		}
@@ -114,6 +130,70 @@ public class DescribeCustomizeRuleCountResponse extends AcsResponse {
 
 		public void setLowRuleNum(Integer lowRuleNum) {
 			this.lowRuleNum = lowRuleNum;
+		}
+
+		public Integer getTotalRuleNum() {
+			return this.totalRuleNum;
+		}
+
+		public void setTotalRuleNum(Integer totalRuleNum) {
+			this.totalRuleNum = totalRuleNum;
+		}
+
+		public Integer getCustomizeRuleNum() {
+			return this.customizeRuleNum;
+		}
+
+		public void setCustomizeRuleNum(Integer customizeRuleNum) {
+			this.customizeRuleNum = customizeRuleNum;
+		}
+
+		public Integer getPredefinedRuleNum() {
+			return this.predefinedRuleNum;
+		}
+
+		public void setPredefinedRuleNum(Integer predefinedRuleNum) {
+			this.predefinedRuleNum = predefinedRuleNum;
+		}
+
+		public Integer getUnEventRuleNum() {
+			return this.unEventRuleNum;
+		}
+
+		public void setUnEventRuleNum(Integer unEventRuleNum) {
+			this.unEventRuleNum = unEventRuleNum;
+		}
+
+		public Integer getExpertRuleNum() {
+			return this.expertRuleNum;
+		}
+
+		public void setExpertRuleNum(Integer expertRuleNum) {
+			this.expertRuleNum = expertRuleNum;
+		}
+
+		public Integer getGraphComputingRuleNum() {
+			return this.graphComputingRuleNum;
+		}
+
+		public void setGraphComputingRuleNum(Integer graphComputingRuleNum) {
+			this.graphComputingRuleNum = graphComputingRuleNum;
+		}
+
+		public Integer getSingleAlertRuleNum() {
+			return this.singleAlertRuleNum;
+		}
+
+		public void setSingleAlertRuleNum(Integer singleAlertRuleNum) {
+			this.singleAlertRuleNum = singleAlertRuleNum;
+		}
+
+		public Integer getAggregationRuleNum() {
+			return this.aggregationRuleNum;
+		}
+
+		public void setAggregationRuleNum(Integer aggregationRuleNum) {
+			this.aggregationRuleNum = aggregationRuleNum;
 		}
 	}
 

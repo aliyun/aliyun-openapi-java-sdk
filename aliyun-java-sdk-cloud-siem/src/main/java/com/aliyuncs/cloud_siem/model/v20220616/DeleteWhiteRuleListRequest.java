@@ -24,10 +24,36 @@ import com.aliyuncs.http.MethodType;
 public class DeleteWhiteRuleListRequest extends RpcAcsRequest<DeleteWhiteRuleListResponse> {
 	   
 
+	private Long roleFor;
+
+	private Integer roleType;
+
 	private Long id;
 	public DeleteWhiteRuleListRequest() {
 		super("cloud-siem", "2022-06-16", "DeleteWhiteRuleList", "cloud-siem");
 		setMethod(MethodType.POST);
+	}
+
+	public Long getRoleFor() {
+		return this.roleFor;
+	}
+
+	public void setRoleFor(Long roleFor) {
+		this.roleFor = roleFor;
+		if(roleFor != null){
+			putBodyParameter("RoleFor", roleFor.toString());
+		}
+	}
+
+	public Integer getRoleType() {
+		return this.roleType;
+	}
+
+	public void setRoleType(Integer roleType) {
+		this.roleType = roleType;
+		if(roleType != null){
+			putBodyParameter("RoleType", roleType.toString());
+		}
 	}
 
 	public Long getId() {

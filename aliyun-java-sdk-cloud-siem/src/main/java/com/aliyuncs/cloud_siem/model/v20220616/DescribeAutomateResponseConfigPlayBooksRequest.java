@@ -24,12 +24,27 @@ import com.aliyuncs.http.MethodType;
 public class DescribeAutomateResponseConfigPlayBooksRequest extends RpcAcsRequest<DescribeAutomateResponseConfigPlayBooksResponse> {
 	   
 
+	private Long roleFor;
+
 	private String autoResponseType;
+
+	private Integer roleType;
 
 	private String entityType;
 	public DescribeAutomateResponseConfigPlayBooksRequest() {
 		super("cloud-siem", "2022-06-16", "DescribeAutomateResponseConfigPlayBooks", "cloud-siem");
 		setMethod(MethodType.POST);
+	}
+
+	public Long getRoleFor() {
+		return this.roleFor;
+	}
+
+	public void setRoleFor(Long roleFor) {
+		this.roleFor = roleFor;
+		if(roleFor != null){
+			putBodyParameter("RoleFor", roleFor.toString());
+		}
 	}
 
 	public String getAutoResponseType() {
@@ -40,6 +55,17 @@ public class DescribeAutomateResponseConfigPlayBooksRequest extends RpcAcsReques
 		this.autoResponseType = autoResponseType;
 		if(autoResponseType != null){
 			putBodyParameter("AutoResponseType", autoResponseType);
+		}
+	}
+
+	public Integer getRoleType() {
+		return this.roleType;
+	}
+
+	public void setRoleType(Integer roleType) {
+		this.roleType = roleType;
+		if(roleType != null){
+			putBodyParameter("RoleType", roleType.toString());
 		}
 	}
 

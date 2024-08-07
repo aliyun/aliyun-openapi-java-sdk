@@ -25,7 +25,11 @@ import com.aliyuncs.http.MethodType;
 public class DescribeAlertSourceRequest extends RpcAcsRequest<DescribeAlertSourceResponse> {
 	   
 
+	private Long roleFor;
+
 	private Long startTime;
+
+	private Integer roleType;
 
 	private List<String> levels;
 
@@ -33,6 +37,17 @@ public class DescribeAlertSourceRequest extends RpcAcsRequest<DescribeAlertSourc
 	public DescribeAlertSourceRequest() {
 		super("cloud-siem", "2022-06-16", "DescribeAlertSource", "cloud-siem");
 		setMethod(MethodType.POST);
+	}
+
+	public Long getRoleFor() {
+		return this.roleFor;
+	}
+
+	public void setRoleFor(Long roleFor) {
+		this.roleFor = roleFor;
+		if(roleFor != null){
+			putBodyParameter("RoleFor", roleFor.toString());
+		}
 	}
 
 	public Long getStartTime() {
@@ -43,6 +58,17 @@ public class DescribeAlertSourceRequest extends RpcAcsRequest<DescribeAlertSourc
 		this.startTime = startTime;
 		if(startTime != null){
 			putBodyParameter("StartTime", startTime.toString());
+		}
+	}
+
+	public Integer getRoleType() {
+		return this.roleType;
+	}
+
+	public void setRoleType(Integer roleType) {
+		this.roleType = roleType;
+		if(roleType != null){
+			putBodyParameter("RoleType", roleType.toString());
 		}
 	}
 

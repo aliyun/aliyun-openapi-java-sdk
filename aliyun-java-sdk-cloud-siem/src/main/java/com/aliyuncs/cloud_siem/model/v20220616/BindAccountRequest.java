@@ -26,9 +26,13 @@ public class BindAccountRequest extends RpcAcsRequest<BindAccountResponse> {
 
 	private String cloudCode;
 
+	private Long roleFor;
+
 	private String accountId;
 
 	private String accountName;
+
+	private Integer roleType;
 
 	private String accessId;
 	public BindAccountRequest() {
@@ -44,6 +48,17 @@ public class BindAccountRequest extends RpcAcsRequest<BindAccountResponse> {
 		this.cloudCode = cloudCode;
 		if(cloudCode != null){
 			putBodyParameter("CloudCode", cloudCode);
+		}
+	}
+
+	public Long getRoleFor() {
+		return this.roleFor;
+	}
+
+	public void setRoleFor(Long roleFor) {
+		this.roleFor = roleFor;
+		if(roleFor != null){
+			putBodyParameter("RoleFor", roleFor.toString());
 		}
 	}
 
@@ -66,6 +81,17 @@ public class BindAccountRequest extends RpcAcsRequest<BindAccountResponse> {
 		this.accountName = accountName;
 		if(accountName != null){
 			putBodyParameter("AccountName", accountName);
+		}
+	}
+
+	public Integer getRoleType() {
+		return this.roleType;
+	}
+
+	public void setRoleType(Integer roleType) {
+		this.roleType = roleType;
+		if(roleType != null){
+			putBodyParameter("RoleType", roleType.toString());
 		}
 	}
 

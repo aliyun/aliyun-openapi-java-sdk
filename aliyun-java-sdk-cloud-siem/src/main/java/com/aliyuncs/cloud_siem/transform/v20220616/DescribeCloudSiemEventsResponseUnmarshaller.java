@@ -58,6 +58,7 @@ public class DescribeCloudSiemEventsResponseUnmarshaller {
 			responseDataItem.setThreatScore(_ctx.floatValue("DescribeCloudSiemEventsResponse.Data.ResponseData["+ i +"].ThreatScore"));
 			responseDataItem.setExtContent(_ctx.stringValue("DescribeCloudSiemEventsResponse.Data.ResponseData["+ i +"].ExtContent"));
 			responseDataItem.setStatus(_ctx.integerValue("DescribeCloudSiemEventsResponse.Data.ResponseData["+ i +"].Status"));
+			responseDataItem.setReferAccount(_ctx.stringValue("DescribeCloudSiemEventsResponse.Data.ResponseData["+ i +"].ReferAccount"));
 			responseDataItem.setRemark(_ctx.stringValue("DescribeCloudSiemEventsResponse.Data.ResponseData["+ i +"].Remark"));
 
 			List<String> dataSources = new ArrayList<String>();

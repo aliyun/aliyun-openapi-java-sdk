@@ -36,6 +36,8 @@ public class DescribeScopeUsersResponseUnmarshaller {
 			DataItem dataItem = new DataItem();
 			dataItem.setAliUid(_ctx.longValue("DescribeScopeUsersResponse.Data["+ i +"].AliUid"));
 			dataItem.setUserName(_ctx.stringValue("DescribeScopeUsersResponse.Data["+ i +"].UserName"));
+			dataItem.setUserId(_ctx.stringValue("DescribeScopeUsersResponse.Data["+ i +"].UserId"));
+			dataItem.setCloudCode(_ctx.stringValue("DescribeScopeUsersResponse.Data["+ i +"].CloudCode"));
 			dataItem.setInstanceId(_ctx.stringValue("DescribeScopeUsersResponse.Data["+ i +"].InstanceId"));
 
 			List<String> domains = new ArrayList<String>();

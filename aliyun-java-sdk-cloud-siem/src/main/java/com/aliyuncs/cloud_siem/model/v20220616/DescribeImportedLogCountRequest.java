@@ -23,9 +23,35 @@ import com.aliyuncs.http.MethodType;
  */
 public class DescribeImportedLogCountRequest extends RpcAcsRequest<DescribeImportedLogCountResponse> {
 	   
+
+	private String roleFor;
+
+	private String roleType;
 	public DescribeImportedLogCountRequest() {
 		super("cloud-siem", "2022-06-16", "DescribeImportedLogCount", "cloud-siem");
 		setMethod(MethodType.POST);
+	}
+
+	public String getRoleFor() {
+		return this.roleFor;
+	}
+
+	public void setRoleFor(String roleFor) {
+		this.roleFor = roleFor;
+		if(roleFor != null){
+			putBodyParameter("RoleFor", roleFor);
+		}
+	}
+
+	public String getRoleType() {
+		return this.roleType;
+	}
+
+	public void setRoleType(String roleType) {
+		this.roleType = roleType;
+		if(roleType != null){
+			putBodyParameter("RoleType", roleType);
+		}
 	}
 
 	@Override

@@ -24,6 +24,8 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DeleteCustomizeRuleResponse extends AcsResponse {
 
+	private Integer data;
+
 	private Boolean success;
 
 	private Integer code;
@@ -32,7 +34,13 @@ public class DeleteCustomizeRuleResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Integer data;
+	public Integer getData() {
+		return this.data;
+	}
+
+	public void setData(Integer data) {
+		this.data = data;
+	}
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -64,14 +72,6 @@ public class DeleteCustomizeRuleResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getData() {
-		return this.data;
-	}
-
-	public void setData(Integer data) {
-		this.data = data;
 	}
 
 	@Override

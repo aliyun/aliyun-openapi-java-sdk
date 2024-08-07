@@ -112,6 +112,8 @@ public class PostCustomizeRuleResponse extends AcsResponse {
 
 		private String queryCycle;
 
+		private String attCk;
+
 		private Integer eventTransferSwitch;
 
 		private String eventTransferType;
@@ -119,6 +121,8 @@ public class PostCustomizeRuleResponse extends AcsResponse {
 		private String eventTransferExt;
 
 		private Integer status;
+
+		private Integer dataType;
 
 		public Long getId() {
 			return this.id;
@@ -264,6 +268,14 @@ public class PostCustomizeRuleResponse extends AcsResponse {
 			this.queryCycle = queryCycle;
 		}
 
+		public String getAttCk() {
+			return this.attCk;
+		}
+
+		public void setAttCk(String attCk) {
+			this.attCk = attCk;
+		}
+
 		public Integer getEventTransferSwitch() {
 			return this.eventTransferSwitch;
 		}
@@ -294,6 +306,14 @@ public class PostCustomizeRuleResponse extends AcsResponse {
 
 		public void setStatus(Integer status) {
 			this.status = status;
+		}
+
+		public Integer getDataType() {
+			return this.dataType;
+		}
+
+		public void setDataType(Integer dataType) {
+			this.dataType = dataType;
 		}
 	}
 

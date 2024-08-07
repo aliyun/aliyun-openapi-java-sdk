@@ -26,7 +26,11 @@ public class DescribeEntityInfoRequest extends RpcAcsRequest<DescribeEntityInfoR
 
 	private String entityIdentity;
 
+	private Long roleFor;
+
 	private Long entityId;
+
+	private Integer roleType;
 
 	private String sophonTaskId;
 
@@ -47,6 +51,17 @@ public class DescribeEntityInfoRequest extends RpcAcsRequest<DescribeEntityInfoR
 		}
 	}
 
+	public Long getRoleFor() {
+		return this.roleFor;
+	}
+
+	public void setRoleFor(Long roleFor) {
+		this.roleFor = roleFor;
+		if(roleFor != null){
+			putBodyParameter("RoleFor", roleFor.toString());
+		}
+	}
+
 	public Long getEntityId() {
 		return this.entityId;
 	}
@@ -55,6 +70,17 @@ public class DescribeEntityInfoRequest extends RpcAcsRequest<DescribeEntityInfoR
 		this.entityId = entityId;
 		if(entityId != null){
 			putBodyParameter("EntityId", entityId.toString());
+		}
+	}
+
+	public Integer getRoleType() {
+		return this.roleType;
+	}
+
+	public void setRoleType(Integer roleType) {
+		this.roleType = roleType;
+		if(roleType != null){
+			putBodyParameter("RoleType", roleType.toString());
 		}
 	}
 

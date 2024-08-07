@@ -23,10 +23,10 @@ public class DeleteCustomizeRuleResponseUnmarshaller {
 	public static DeleteCustomizeRuleResponse unmarshall(DeleteCustomizeRuleResponse deleteCustomizeRuleResponse, UnmarshallerContext _ctx) {
 		
 		deleteCustomizeRuleResponse.setRequestId(_ctx.stringValue("DeleteCustomizeRuleResponse.RequestId"));
+		deleteCustomizeRuleResponse.setData(_ctx.integerValue("DeleteCustomizeRuleResponse.Data"));
 		deleteCustomizeRuleResponse.setSuccess(_ctx.booleanValue("DeleteCustomizeRuleResponse.Success"));
 		deleteCustomizeRuleResponse.setCode(_ctx.integerValue("DeleteCustomizeRuleResponse.Code"));
 		deleteCustomizeRuleResponse.setMessage(_ctx.stringValue("DeleteCustomizeRuleResponse.Message"));
-		deleteCustomizeRuleResponse.setData(_ctx.integerValue("DeleteCustomizeRuleResponse.Data"));
 	 
 	 	return deleteCustomizeRuleResponse;
 	}

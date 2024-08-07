@@ -24,6 +24,10 @@ import com.aliyuncs.http.MethodType;
 public class PostCustomizeRuleRequest extends RpcAcsRequest<PostCustomizeRuleResponse> {
 	   
 
+	private Long roleFor;
+
+	private String attCk;
+
 	private String ruleDesc;
 
 	private String ruleName;
@@ -37,6 +41,8 @@ public class PostCustomizeRuleRequest extends RpcAcsRequest<PostCustomizeRuleRes
 	private String logType;
 
 	private String logTypeMds;
+
+	private Integer roleType;
 
 	private Long id;
 
@@ -60,6 +66,28 @@ public class PostCustomizeRuleRequest extends RpcAcsRequest<PostCustomizeRuleRes
 	public PostCustomizeRuleRequest() {
 		super("cloud-siem", "2022-06-16", "PostCustomizeRule", "cloud-siem");
 		setMethod(MethodType.POST);
+	}
+
+	public Long getRoleFor() {
+		return this.roleFor;
+	}
+
+	public void setRoleFor(Long roleFor) {
+		this.roleFor = roleFor;
+		if(roleFor != null){
+			putBodyParameter("RoleFor", roleFor.toString());
+		}
+	}
+
+	public String getAttCk() {
+		return this.attCk;
+	}
+
+	public void setAttCk(String attCk) {
+		this.attCk = attCk;
+		if(attCk != null){
+			putBodyParameter("AttCk", attCk);
+		}
 	}
 
 	public String getRuleDesc() {
@@ -136,6 +164,17 @@ public class PostCustomizeRuleRequest extends RpcAcsRequest<PostCustomizeRuleRes
 		this.logTypeMds = logTypeMds;
 		if(logTypeMds != null){
 			putBodyParameter("LogTypeMds", logTypeMds);
+		}
+	}
+
+	public Integer getRoleType() {
+		return this.roleType;
+	}
+
+	public void setRoleType(Integer roleType) {
+		this.roleType = roleType;
+		if(roleType != null){
+			putBodyParameter("RoleType", roleType.toString());
 		}
 	}
 

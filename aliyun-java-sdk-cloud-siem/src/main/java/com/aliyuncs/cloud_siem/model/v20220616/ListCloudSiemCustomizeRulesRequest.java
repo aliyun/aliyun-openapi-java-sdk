@@ -25,13 +25,21 @@ import com.aliyuncs.http.MethodType;
 public class ListCloudSiemCustomizeRulesRequest extends RpcAcsRequest<ListCloudSiemCustomizeRulesResponse> {
 	   
 
+	private Long roleFor;
+
 	private String ruleName;
 
 	private Long startTime;
 
 	private Integer pageSize;
 
+	private Integer roleType;
+
 	private String id;
+
+	private String orderField;
+
+	private String order;
 
 	private String ruleType;
 
@@ -47,6 +55,17 @@ public class ListCloudSiemCustomizeRulesRequest extends RpcAcsRequest<ListCloudS
 	public ListCloudSiemCustomizeRulesRequest() {
 		super("cloud-siem", "2022-06-16", "ListCloudSiemCustomizeRules", "cloud-siem");
 		setMethod(MethodType.POST);
+	}
+
+	public Long getRoleFor() {
+		return this.roleFor;
+	}
+
+	public void setRoleFor(Long roleFor) {
+		this.roleFor = roleFor;
+		if(roleFor != null){
+			putBodyParameter("RoleFor", roleFor.toString());
+		}
 	}
 
 	public String getRuleName() {
@@ -82,6 +101,17 @@ public class ListCloudSiemCustomizeRulesRequest extends RpcAcsRequest<ListCloudS
 		}
 	}
 
+	public Integer getRoleType() {
+		return this.roleType;
+	}
+
+	public void setRoleType(Integer roleType) {
+		this.roleType = roleType;
+		if(roleType != null){
+			putBodyParameter("RoleType", roleType.toString());
+		}
+	}
+
 	public String getId() {
 		return this.id;
 	}
@@ -90,6 +120,28 @@ public class ListCloudSiemCustomizeRulesRequest extends RpcAcsRequest<ListCloudS
 		this.id = id;
 		if(id != null){
 			putBodyParameter("Id", id);
+		}
+	}
+
+	public String getOrderField() {
+		return this.orderField;
+	}
+
+	public void setOrderField(String orderField) {
+		this.orderField = orderField;
+		if(orderField != null){
+			putBodyParameter("OrderField", orderField);
+		}
+	}
+
+	public String getOrder() {
+		return this.order;
+	}
+
+	public void setOrder(String order) {
+		this.order = order;
+		if(order != null){
+			putBodyParameter("Order", order);
 		}
 	}
 
