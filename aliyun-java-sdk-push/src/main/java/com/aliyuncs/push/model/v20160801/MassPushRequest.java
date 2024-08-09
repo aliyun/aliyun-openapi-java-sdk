@@ -81,6 +81,7 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 				putBodyParameter("PushTask." + (depth1 + 1) + ".JobKey" , pushTasks.get(depth1).getJobKey());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".HarmonyReceiptId" , pushTasks.get(depth1).getHarmonyReceiptId());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidOpenUrl" , pushTasks.get(depth1).getAndroidOpenUrl());
+				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidBadgeSetNum" , pushTasks.get(depth1).getAndroidBadgeSetNum());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidXiaoMiNotifyBody" , pushTasks.get(depth1).getAndroidXiaoMiNotifyBody());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".iOSSubtitle" , pushTasks.get(depth1).getIOSSubtitle());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidXiaomiBigPictureUrl" , pushTasks.get(depth1).getAndroidXiaomiBigPictureUrl());
@@ -102,9 +103,11 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidOpenType" , pushTasks.get(depth1).getAndroidOpenType());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".HarmonyRemindTitle" , pushTasks.get(depth1).getHarmonyRemindTitle());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".Title" , pushTasks.get(depth1).getTitle());
+				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidBadgeClass" , pushTasks.get(depth1).getAndroidBadgeClass());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".HarmonyTestMessage" , pushTasks.get(depth1).getHarmonyTestMessage());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidRenderStyle" , pushTasks.get(depth1).getAndroidRenderStyle());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".iOSExtParameters" , pushTasks.get(depth1).getIOSExtParameters());
+				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidBadgeAddNum" , pushTasks.get(depth1).getAndroidBadgeAddNum());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidHuaweiReceiptId" , pushTasks.get(depth1).getAndroidHuaweiReceiptId());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidNotificationHonorChannel" , pushTasks.get(depth1).getAndroidNotificationHonorChannel());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidXiaomiImageUrl" , pushTasks.get(depth1).getAndroidXiaomiImageUrl());
@@ -215,6 +218,8 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 
 		private String androidOpenUrl;
 
+		private Integer androidBadgeSetNum;
+
 		private String androidXiaoMiNotifyBody;
 
 		private String iOSSubtitle;
@@ -257,11 +262,15 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 
 		private String title;
 
+		private String androidBadgeClass;
+
 		private Boolean harmonyTestMessage;
 
 		private String androidRenderStyle;
 
 		private String iOSExtParameters;
+
+		private Integer androidBadgeAddNum;
 
 		private String androidHuaweiReceiptId;
 
@@ -589,6 +598,14 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 			this.androidOpenUrl = androidOpenUrl;
 		}
 
+		public Integer getAndroidBadgeSetNum() {
+			return this.androidBadgeSetNum;
+		}
+
+		public void setAndroidBadgeSetNum(Integer androidBadgeSetNum) {
+			this.androidBadgeSetNum = androidBadgeSetNum;
+		}
+
 		public String getAndroidXiaoMiNotifyBody() {
 			return this.androidXiaoMiNotifyBody;
 		}
@@ -757,6 +774,14 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 			this.title = title;
 		}
 
+		public String getAndroidBadgeClass() {
+			return this.androidBadgeClass;
+		}
+
+		public void setAndroidBadgeClass(String androidBadgeClass) {
+			this.androidBadgeClass = androidBadgeClass;
+		}
+
 		public Boolean getHarmonyTestMessage() {
 			return this.harmonyTestMessage;
 		}
@@ -779,6 +804,14 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 
 		public void setIOSExtParameters(String iOSExtParameters) {
 			this.iOSExtParameters = iOSExtParameters;
+		}
+
+		public Integer getAndroidBadgeAddNum() {
+			return this.androidBadgeAddNum;
+		}
+
+		public void setAndroidBadgeAddNum(Integer androidBadgeAddNum) {
+			this.androidBadgeAddNum = androidBadgeAddNum;
 		}
 
 		public String getAndroidHuaweiReceiptId() {

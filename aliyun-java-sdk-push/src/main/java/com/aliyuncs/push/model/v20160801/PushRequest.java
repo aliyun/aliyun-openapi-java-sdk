@@ -75,6 +75,8 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 
 	private String harmonyRemindTitle;
 
+	private String androidBadgeClass;
+
 	private Integer smsDelaySecs;
 
 	private Integer androidRenderStyle;
@@ -161,6 +163,8 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 
 	private String androidOpenUrl;
 
+	private Integer androidBadgeSetNum;
+
 	private String androidXiaoMiNotifyBody;
 
 	private String iOSSubtitle;
@@ -180,6 +184,8 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 	private String title;
 
 	private Boolean harmonyTestMessage;
+
+	private Integer androidBadgeAddNum;
 
 	private String androidHuaweiReceiptId;
 
@@ -481,6 +487,17 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 		this.harmonyRemindTitle = harmonyRemindTitle;
 		if(harmonyRemindTitle != null){
 			putQueryParameter("HarmonyRemindTitle", harmonyRemindTitle);
+		}
+	}
+
+	public String getAndroidBadgeClass() {
+		return this.androidBadgeClass;
+	}
+
+	public void setAndroidBadgeClass(String androidBadgeClass) {
+		this.androidBadgeClass = androidBadgeClass;
+		if(androidBadgeClass != null){
+			putQueryParameter("AndroidBadgeClass", androidBadgeClass);
 		}
 	}
 
@@ -957,6 +974,17 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 		}
 	}
 
+	public Integer getAndroidBadgeSetNum() {
+		return this.androidBadgeSetNum;
+	}
+
+	public void setAndroidBadgeSetNum(Integer androidBadgeSetNum) {
+		this.androidBadgeSetNum = androidBadgeSetNum;
+		if(androidBadgeSetNum != null){
+			putQueryParameter("AndroidBadgeSetNum", androidBadgeSetNum.toString());
+		}
+	}
+
 	public String getAndroidXiaoMiNotifyBody() {
 		return this.androidXiaoMiNotifyBody;
 	}
@@ -1064,6 +1092,17 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 		this.harmonyTestMessage = harmonyTestMessage;
 		if(harmonyTestMessage != null){
 			putQueryParameter("HarmonyTestMessage", harmonyTestMessage.toString());
+		}
+	}
+
+	public Integer getAndroidBadgeAddNum() {
+		return this.androidBadgeAddNum;
+	}
+
+	public void setAndroidBadgeAddNum(Integer androidBadgeAddNum) {
+		this.androidBadgeAddNum = androidBadgeAddNum;
+		if(androidBadgeAddNum != null){
+			putQueryParameter("AndroidBadgeAddNum", androidBadgeAddNum.toString());
 		}
 	}
 
