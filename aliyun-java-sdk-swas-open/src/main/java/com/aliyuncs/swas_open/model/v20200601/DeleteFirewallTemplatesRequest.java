@@ -28,8 +28,6 @@ public class DeleteFirewallTemplatesRequest extends RpcAcsRequest<DeleteFirewall
 	private List<String> firewallTemplateIds;
 
 	private String clientToken;
-
-	private String instanceId;
 	public DeleteFirewallTemplatesRequest() {
 		super("SWAS-OPEN", "2020-06-01", "DeleteFirewallTemplates", "SWAS-OPEN");
 		setMethod(MethodType.POST);
@@ -56,17 +54,6 @@ public class DeleteFirewallTemplatesRequest extends RpcAcsRequest<DeleteFirewall
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

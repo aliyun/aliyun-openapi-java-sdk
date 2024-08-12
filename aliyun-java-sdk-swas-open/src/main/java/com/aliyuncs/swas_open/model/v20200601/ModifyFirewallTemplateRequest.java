@@ -31,8 +31,6 @@ public class ModifyFirewallTemplateRequest extends RpcAcsRequest<ModifyFirewallT
 
 	private String description;
 
-	private String instanceId;
-
 	private List<FirewallTemplateRule> firewallTemplateRules;
 
 	private String name;
@@ -71,17 +69,6 @@ public class ModifyFirewallTemplateRequest extends RpcAcsRequest<ModifyFirewallT
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
-		}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

@@ -31,8 +31,6 @@ public class DescribeFirewallTemplateApplyResultsRequest extends RpcAcsRequest<D
 
 	private Integer pageNumber;
 
-	private String instanceId;
-
 	private Integer pageSize;
 
 	private List<String> taskIds;
@@ -71,17 +69,6 @@ public class DescribeFirewallTemplateApplyResultsRequest extends RpcAcsRequest<D
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
