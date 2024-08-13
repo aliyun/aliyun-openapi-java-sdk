@@ -25,6 +25,8 @@ import com.aliyuncs.vod.Endpoint;
 public class ListAppInfoRequest extends RpcAcsRequest<ListAppInfoResponse> {
 	   
 
+	private String resourceGroupId;
+
 	private Integer pageSize;
 
 	private Integer pageNo;
@@ -37,6 +39,17 @@ public class ListAppInfoRequest extends RpcAcsRequest<ListAppInfoResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
 	}
 
 	public Integer getPageSize() {

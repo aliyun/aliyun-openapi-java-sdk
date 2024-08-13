@@ -41,6 +41,13 @@ public class DescribeVodCertificateListResponseUnmarshaller {
 			cert.setIssuer(_ctx.stringValue("DescribeVodCertificateListResponse.CertificateListModel.CertList["+ i +"].Issuer"));
 			cert.setCertId(_ctx.longValue("DescribeVodCertificateListResponse.CertificateListModel.CertList["+ i +"].CertId"));
 			cert.setCommon(_ctx.stringValue("DescribeVodCertificateListResponse.CertificateListModel.CertList["+ i +"].Common"));
+			cert.setCreateTime(_ctx.longValue("DescribeVodCertificateListResponse.CertificateListModel.CertList["+ i +"].CreateTime"));
+			cert.setEndTime(_ctx.longValue("DescribeVodCertificateListResponse.CertificateListModel.CertList["+ i +"].EndTime"));
+			cert.setAlgorithm(_ctx.stringValue("DescribeVodCertificateListResponse.CertificateListModel.CertList["+ i +"].Algorithm"));
+			cert.setCertIdentifier(_ctx.stringValue("DescribeVodCertificateListResponse.CertificateListModel.CertList["+ i +"].CertIdentifier"));
+			cert.setDomainMatchCert(_ctx.booleanValue("DescribeVodCertificateListResponse.CertificateListModel.CertList["+ i +"].DomainMatchCert"));
+			cert.setInstanceId(_ctx.stringValue("DescribeVodCertificateListResponse.CertificateListModel.CertList["+ i +"].InstanceId"));
+			cert.setSignAlgorithm(_ctx.stringValue("DescribeVodCertificateListResponse.CertificateListModel.CertList["+ i +"].SignAlgorithm"));
 
 			certList.add(cert);
 		}

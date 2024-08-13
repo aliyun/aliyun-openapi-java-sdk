@@ -73,6 +73,8 @@ public class ListAppInfoResponse extends AcsResponse {
 
 		private String regionId;
 
+		private String resourceGroupId;
+
 		private List<TagsItem> tags;
 
 		public String getType() {
@@ -137,6 +139,14 @@ public class ListAppInfoResponse extends AcsResponse {
 
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 
 		public List<TagsItem> getTags() {

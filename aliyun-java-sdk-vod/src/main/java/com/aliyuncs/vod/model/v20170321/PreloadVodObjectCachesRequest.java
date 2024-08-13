@@ -27,9 +27,15 @@ public class PreloadVodObjectCachesRequest extends RpcAcsRequest<PreloadVodObjec
 
 	private String objectPath;
 
-	private Long ownerId;
-
 	private String securityToken;
+
+	private Boolean l2Preload;
+
+	private String area;
+
+	private String withHeader;
+
+	private Long ownerId;
 	public PreloadVodObjectCachesRequest() {
 		super("vod", "2017-03-21", "PreloadVodObjectCaches", "vod");
 		setMethod(MethodType.POST);
@@ -50,17 +56,6 @@ public class PreloadVodObjectCachesRequest extends RpcAcsRequest<PreloadVodObjec
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
@@ -69,6 +64,50 @@ public class PreloadVodObjectCachesRequest extends RpcAcsRequest<PreloadVodObjec
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public Boolean getL2Preload() {
+		return this.l2Preload;
+	}
+
+	public void setL2Preload(Boolean l2Preload) {
+		this.l2Preload = l2Preload;
+		if(l2Preload != null){
+			putQueryParameter("L2Preload", l2Preload.toString());
+		}
+	}
+
+	public String getArea() {
+		return this.area;
+	}
+
+	public void setArea(String area) {
+		this.area = area;
+		if(area != null){
+			putQueryParameter("Area", area);
+		}
+	}
+
+	public String getWithHeader() {
+		return this.withHeader;
+	}
+
+	public void setWithHeader(String withHeader) {
+		this.withHeader = withHeader;
+		if(withHeader != null){
+			putQueryParameter("WithHeader", withHeader);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

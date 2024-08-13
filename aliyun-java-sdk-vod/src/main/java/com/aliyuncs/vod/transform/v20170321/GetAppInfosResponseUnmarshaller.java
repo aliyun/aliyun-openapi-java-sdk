@@ -45,6 +45,7 @@ public class GetAppInfosResponseUnmarshaller {
 			appInfo.setDescription(_ctx.stringValue("GetAppInfosResponse.AppInfoList["+ i +"].Description"));
 			appInfo.setAppId(_ctx.stringValue("GetAppInfosResponse.AppInfoList["+ i +"].AppId"));
 			appInfo.setModificationTime(_ctx.stringValue("GetAppInfosResponse.AppInfoList["+ i +"].ModificationTime"));
+			appInfo.setResourceGroupId(_ctx.stringValue("GetAppInfosResponse.AppInfoList["+ i +"].ResourceGroupId"));
 
 			appInfoList.add(appInfo);
 		}

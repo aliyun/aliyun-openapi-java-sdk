@@ -15,6 +15,7 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.vod.Endpoint;
 
@@ -22,24 +23,21 @@ import com.aliyuncs.vod.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeVodStorageDataRequest extends RpcAcsRequest<DescribeVodStorageDataResponse> {
+public class DescribeVodTieringStorageRetrievalDataRequest extends RpcAcsRequest<DescribeVodTieringStorageRetrievalDataResponse> {
 	   
 
 	private String startTime;
-
-	private String storage;
-
-	private String storageType;
 
 	private String endTime;
 
 	private Long ownerId;
 
-	private String appId;
+	private String storageClass;
 
 	private String region;
-	public DescribeVodStorageDataRequest() {
-		super("vod", "2017-03-21", "DescribeVodStorageData", "vod");
+	public DescribeVodTieringStorageRetrievalDataRequest() {
+		super("vod", "2017-03-21", "DescribeVodTieringStorageRetrievalData", "vod");
+		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -55,28 +53,6 @@ public class DescribeVodStorageDataRequest extends RpcAcsRequest<DescribeVodStor
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime);
-		}
-	}
-
-	public String getStorage() {
-		return this.storage;
-	}
-
-	public void setStorage(String storage) {
-		this.storage = storage;
-		if(storage != null){
-			putQueryParameter("Storage", storage);
-		}
-	}
-
-	public String getStorageType() {
-		return this.storageType;
-	}
-
-	public void setStorageType(String storageType) {
-		this.storageType = storageType;
-		if(storageType != null){
-			putQueryParameter("StorageType", storageType);
 		}
 	}
 
@@ -102,14 +78,14 @@ public class DescribeVodStorageDataRequest extends RpcAcsRequest<DescribeVodStor
 		}
 	}
 
-	public String getAppId() {
-		return this.appId;
+	public String getStorageClass() {
+		return this.storageClass;
 	}
 
-	public void setAppId(String appId) {
-		this.appId = appId;
-		if(appId != null){
-			putQueryParameter("AppId", appId);
+	public void setStorageClass(String storageClass) {
+		this.storageClass = storageClass;
+		if(storageClass != null){
+			putQueryParameter("StorageClass", storageClass);
 		}
 	}
 
@@ -125,8 +101,8 @@ public class DescribeVodStorageDataRequest extends RpcAcsRequest<DescribeVodStor
 	}
 
 	@Override
-	public Class<DescribeVodStorageDataResponse> getResponseClass() {
-		return DescribeVodStorageDataResponse.class;
+	public Class<DescribeVodTieringStorageRetrievalDataResponse> getResponseClass() {
+		return DescribeVodTieringStorageRetrievalDataResponse.class;
 	}
 
 }

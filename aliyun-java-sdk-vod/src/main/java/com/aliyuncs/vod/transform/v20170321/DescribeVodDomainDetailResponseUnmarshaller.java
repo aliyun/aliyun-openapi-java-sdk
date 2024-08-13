@@ -50,6 +50,7 @@ public class DescribeVodDomainDetailResponseUnmarshaller {
 			source.setPort(_ctx.integerValue("DescribeVodDomainDetailResponse.DomainDetail.Sources["+ i +"].Port"));
 			source.setContent(_ctx.stringValue("DescribeVodDomainDetailResponse.DomainDetail.Sources["+ i +"].Content"));
 			source.setEnabled(_ctx.stringValue("DescribeVodDomainDetailResponse.DomainDetail.Sources["+ i +"].Enabled"));
+			source.setWeight(_ctx.stringValue("DescribeVodDomainDetailResponse.DomainDetail.Sources["+ i +"].Weight"));
 
 			sources.add(source);
 		}

@@ -81,6 +81,8 @@ public class GetAppInfosResponse extends AcsResponse {
 
 		private String modificationTime;
 
+		private String resourceGroupId;
+
 		public String getType() {
 			return this.type;
 		}
@@ -135,6 +137,14 @@ public class GetAppInfosResponse extends AcsResponse {
 
 		public void setModificationTime(String modificationTime) {
 			this.modificationTime = modificationTime;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 	}
 

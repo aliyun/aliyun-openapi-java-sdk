@@ -27,6 +27,8 @@ public class CreateAppInfoRequest extends RpcAcsRequest<CreateAppInfoResponse> {
 
 	private String description;
 
+	private String resourceGroupId;
+
 	private String appName;
 	public CreateAppInfoRequest() {
 		super("vod", "2017-03-21", "CreateAppInfo", "vod");
@@ -45,6 +47,17 @@ public class CreateAppInfoRequest extends RpcAcsRequest<CreateAppInfoResponse> {
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 
