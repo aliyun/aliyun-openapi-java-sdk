@@ -31,8 +31,6 @@ public class DescribeBackupsRequest extends RpcAcsRequest<DescribeBackupsRespons
 
 	private Integer pageNumber;
 
-	private String resourceGroupId;
-
 	private Integer pageSize;
 
 	private String dBInstanceId;
@@ -85,17 +83,6 @@ public class DescribeBackupsRequest extends RpcAcsRequest<DescribeBackupsRespons
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
-	}
-
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

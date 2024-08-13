@@ -40,6 +40,8 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 
 	private String connectionString;
 
+	private Boolean autoCreateProxy;
+
 	private String engineVersion;
 
 	private Boolean deletionProtection;
@@ -210,6 +212,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.connectionString = connectionString;
 		if(connectionString != null){
 			putQueryParameter("ConnectionString", connectionString);
+		}
+	}
+
+	public Boolean getAutoCreateProxy() {
+		return this.autoCreateProxy;
+	}
+
+	public void setAutoCreateProxy(Boolean autoCreateProxy) {
+		this.autoCreateProxy = autoCreateProxy;
+		if(autoCreateProxy != null){
+			putQueryParameter("AutoCreateProxy", autoCreateProxy.toString());
 		}
 	}
 

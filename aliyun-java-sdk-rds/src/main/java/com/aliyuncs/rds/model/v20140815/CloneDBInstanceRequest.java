@@ -49,6 +49,8 @@ public class CloneDBInstanceRequest extends RpcAcsRequest<CloneDBInstanceRespons
 
 	private String instanceNetworkType;
 
+	private String clientToken;
+
 	private String zoneIdSlave1;
 
 	private String zoneIdSlave2;
@@ -212,6 +214,17 @@ public class CloneDBInstanceRequest extends RpcAcsRequest<CloneDBInstanceRespons
 		this.instanceNetworkType = instanceNetworkType;
 		if(instanceNetworkType != null){
 			putQueryParameter("InstanceNetworkType", instanceNetworkType);
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 

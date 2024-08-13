@@ -29,6 +29,8 @@ public class CreateReadOnlyDBInstanceRequest extends RpcAcsRequest<CreateReadOnl
 
 	private Integer dBInstanceStorage;
 
+	private Boolean autoCreateProxy;
+
 	private String engineVersion;
 
 	private Boolean deletionProtection;
@@ -120,6 +122,17 @@ public class CreateReadOnlyDBInstanceRequest extends RpcAcsRequest<CreateReadOnl
 		this.dBInstanceStorage = dBInstanceStorage;
 		if(dBInstanceStorage != null){
 			putQueryParameter("DBInstanceStorage", dBInstanceStorage.toString());
+		}
+	}
+
+	public Boolean getAutoCreateProxy() {
+		return this.autoCreateProxy;
+	}
+
+	public void setAutoCreateProxy(Boolean autoCreateProxy) {
+		this.autoCreateProxy = autoCreateProxy;
+		if(autoCreateProxy != null){
+			putQueryParameter("AutoCreateProxy", autoCreateProxy.toString());
 		}
 	}
 

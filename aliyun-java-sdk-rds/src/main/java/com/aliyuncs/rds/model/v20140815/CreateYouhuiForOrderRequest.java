@@ -25,7 +25,7 @@ import com.aliyuncs.rds.Endpoint;
 public class CreateYouhuiForOrderRequest extends RpcAcsRequest<CreateYouhuiForOrderResponse> {
 	   
 
-	private String resourceOwnerId;
+	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
@@ -43,14 +43,14 @@ public class CreateYouhuiForOrderRequest extends RpcAcsRequest<CreateYouhuiForOr
 		} catch (Exception e) {}
 	}
 
-	public String getResourceOwnerId() {
+	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
 
-	public void setResourceOwnerId(String resourceOwnerId) {
+	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId);
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
 	}
 
