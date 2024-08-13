@@ -33,8 +33,6 @@ public class CreateRtcAsrTaskRequest extends RpcAcsRequest<CreateRtcAsrTaskRespo
 
 	private Boolean translateEnabled;
 
-	private String tag;
-
 	private String streamURL;
 
 	private String targetLanguages;
@@ -104,17 +102,6 @@ public class CreateRtcAsrTaskRequest extends RpcAcsRequest<CreateRtcAsrTaskRespo
 		this.translateEnabled = translateEnabled;
 		if(translateEnabled != null){
 			putQueryParameter("TranslateEnabled", translateEnabled.toString());
-		}
-	}
-
-	public String getTag() {
-		return this.tag;
-	}
-
-	public void setTag(String tag) {
-		this.tag = tag;
-		if(tag != null){
-			putQueryParameter("Tag", tag);
 		}
 	}
 

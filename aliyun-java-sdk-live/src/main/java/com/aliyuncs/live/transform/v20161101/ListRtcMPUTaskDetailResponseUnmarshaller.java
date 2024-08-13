@@ -84,6 +84,7 @@ public class ListRtcMPUTaskDetailResponseUnmarshaller {
 			MaxVideoUser maxVideoUser = new MaxVideoUser();
 			maxVideoUser.setSourceType(_ctx.stringValue("ListRtcMPUTaskDetailResponse.MPUTasks["+ i +"].TranscodeParams.Layout.MaxVideoUser.SourceType"));
 			maxVideoUser.setStreamType(_ctx.stringValue("ListRtcMPUTaskDetailResponse.MPUTasks["+ i +"].TranscodeParams.Layout.MaxVideoUser.StreamType"));
+			maxVideoUser.setChannelId(_ctx.stringValue("ListRtcMPUTaskDetailResponse.MPUTasks["+ i +"].TranscodeParams.Layout.MaxVideoUser.ChannelId"));
 			maxVideoUser.setUserId(_ctx.stringValue("ListRtcMPUTaskDetailResponse.MPUTasks["+ i +"].TranscodeParams.Layout.MaxVideoUser.UserId"));
 			layout.setMaxVideoUser(maxVideoUser);
 
@@ -100,6 +101,7 @@ public class ListRtcMPUTaskDetailResponseUnmarshaller {
 
 				UserInfo1 userInfo1 = new UserInfo1();
 				userInfo1.setSourceType(_ctx.stringValue("ListRtcMPUTaskDetailResponse.MPUTasks["+ i +"].TranscodeParams.Layout.UserPanes["+ j +"].UserInfo.SourceType"));
+				userInfo1.setChannelId(_ctx.stringValue("ListRtcMPUTaskDetailResponse.MPUTasks["+ i +"].TranscodeParams.Layout.UserPanes["+ j +"].UserInfo.ChannelId"));
 				userInfo1.setUserId(_ctx.stringValue("ListRtcMPUTaskDetailResponse.MPUTasks["+ i +"].TranscodeParams.Layout.UserPanes["+ j +"].UserInfo.UserId"));
 				userPane.setUserInfo1(userInfo1);
 
@@ -111,6 +113,7 @@ public class ListRtcMPUTaskDetailResponseUnmarshaller {
 			List<UserInfo> userInfos = new ArrayList<UserInfo>();
 			for (int j = 0; j < _ctx.lengthValue("ListRtcMPUTaskDetailResponse.MPUTasks["+ i +"].TranscodeParams.UserInfos.Length"); j++) {
 				UserInfo userInfo = new UserInfo();
+				userInfo.setChannelId(_ctx.stringValue("ListRtcMPUTaskDetailResponse.MPUTasks["+ i +"].TranscodeParams.UserInfos["+ j +"].ChannelId"));
 				userInfo.setUserId(_ctx.stringValue("ListRtcMPUTaskDetailResponse.MPUTasks["+ i +"].TranscodeParams.UserInfos["+ j +"].UserId"));
 				userInfo.setSourceType(_ctx.stringValue("ListRtcMPUTaskDetailResponse.MPUTasks["+ i +"].TranscodeParams.UserInfos["+ j +"].SourceType"));
 				userInfo.setStreamType(_ctx.stringValue("ListRtcMPUTaskDetailResponse.MPUTasks["+ i +"].TranscodeParams.UserInfos["+ j +"].StreamType"));

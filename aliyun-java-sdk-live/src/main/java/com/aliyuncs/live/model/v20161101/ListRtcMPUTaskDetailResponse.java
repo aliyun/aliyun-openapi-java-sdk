@@ -237,11 +237,21 @@ public class ListRtcMPUTaskDetailResponse extends AcsResponse {
 
 			public static class UserInfo {
 
+				private String channelId;
+
 				private String userId;
 
 				private String sourceType;
 
 				private String streamType;
+
+				public String getChannelId() {
+					return this.channelId;
+				}
+
+				public void setChannelId(String channelId) {
+					this.channelId = channelId;
+				}
 
 				public String getUserId() {
 					return this.userId;
@@ -522,6 +532,8 @@ public class ListRtcMPUTaskDetailResponse extends AcsResponse {
 
 						private String sourceType;
 
+						private String channelId;
+
 						private String userId;
 
 						public String getSourceType() {
@@ -530,6 +542,14 @@ public class ListRtcMPUTaskDetailResponse extends AcsResponse {
 
 						public void setSourceType(String sourceType) {
 							this.sourceType = sourceType;
+						}
+
+						public String getChannelId() {
+							return this.channelId;
+						}
+
+						public void setChannelId(String channelId) {
+							this.channelId = channelId;
 						}
 
 						public String getUserId() {
@@ -548,6 +568,8 @@ public class ListRtcMPUTaskDetailResponse extends AcsResponse {
 
 					private String streamType;
 
+					private String channelId;
+
 					private String userId;
 
 					public String getSourceType() {
@@ -564,6 +586,14 @@ public class ListRtcMPUTaskDetailResponse extends AcsResponse {
 
 					public void setStreamType(String streamType) {
 						this.streamType = streamType;
+					}
+
+					public String getChannelId() {
+						return this.channelId;
+					}
+
+					public void setChannelId(String channelId) {
+						this.channelId = channelId;
 					}
 
 					public String getUserId() {

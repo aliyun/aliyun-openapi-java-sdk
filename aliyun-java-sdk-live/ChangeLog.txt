@@ -1,3 +1,6 @@
+2024-08-13 Version: 3.9.58
+- Update to support new apis.
+
 2024-08-06 Version: 3.9.57
 - Update to support new apis.
 

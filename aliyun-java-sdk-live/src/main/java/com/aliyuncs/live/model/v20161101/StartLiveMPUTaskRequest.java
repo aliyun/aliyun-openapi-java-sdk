@@ -507,6 +507,9 @@ public class StartLiveMPUTaskRequest extends RpcAcsRequest<StartLiveMPUTaskRespo
 					@SerializedName("UserId")
 					private String userId;
 
+					@SerializedName("ChannelId")
+					private String channelId;
+
 					public String getSourceType() {
 						return this.sourceType;
 					}
@@ -522,6 +525,14 @@ public class StartLiveMPUTaskRequest extends RpcAcsRequest<StartLiveMPUTaskRespo
 					public void setUserId(String userId) {
 						this.userId = userId;
 					}
+
+					public String getChannelId() {
+						return this.channelId;
+					}
+
+					public void setChannelId(String channelId) {
+						this.channelId = channelId;
+					}
 				}
 			}
 
@@ -535,6 +546,9 @@ public class StartLiveMPUTaskRequest extends RpcAcsRequest<StartLiveMPUTaskRespo
 
 				@SerializedName("UserId")
 				private String userId;
+
+				@SerializedName("ChannelId")
+				private String channelId;
 
 				public String getStreamType() {
 					return this.streamType;
@@ -558,6 +572,14 @@ public class StartLiveMPUTaskRequest extends RpcAcsRequest<StartLiveMPUTaskRespo
 
 				public void setUserId(String userId) {
 					this.userId = userId;
+				}
+
+				public String getChannelId() {
+					return this.channelId;
+				}
+
+				public void setChannelId(String channelId) {
+					this.channelId = channelId;
 				}
 			}
 		}
@@ -598,6 +620,9 @@ public class StartLiveMPUTaskRequest extends RpcAcsRequest<StartLiveMPUTaskRespo
 			@SerializedName("UserId")
 			private String userId;
 
+			@SerializedName("ChannelId")
+			private String channelId;
+
 			public String getStreamType() {
 				return this.streamType;
 			}
@@ -620,6 +645,14 @@ public class StartLiveMPUTaskRequest extends RpcAcsRequest<StartLiveMPUTaskRespo
 
 			public void setUserId(String userId) {
 				this.userId = userId;
+			}
+
+			public String getChannelId() {
+				return this.channelId;
+			}
+
+			public void setChannelId(String channelId) {
+				this.channelId = channelId;
 			}
 		}
 

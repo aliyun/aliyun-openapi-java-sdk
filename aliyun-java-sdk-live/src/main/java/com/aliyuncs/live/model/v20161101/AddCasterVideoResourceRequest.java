@@ -33,8 +33,6 @@ public class AddCasterVideoResourceRequest extends RpcAcsRequest<AddCasterVideoR
 
 	private String vodUrl;
 
-	private String streamId;
-
 	private String casterId;
 
 	private Long ownerId;
@@ -104,17 +102,6 @@ public class AddCasterVideoResourceRequest extends RpcAcsRequest<AddCasterVideoR
 		this.vodUrl = vodUrl;
 		if(vodUrl != null){
 			putQueryParameter("VodUrl", vodUrl);
-		}
-	}
-
-	public String getStreamId() {
-		return this.streamId;
-	}
-
-	public void setStreamId(String streamId) {
-		this.streamId = streamId;
-		if(streamId != null){
-			putQueryParameter("StreamId", streamId);
 		}
 	}
 
