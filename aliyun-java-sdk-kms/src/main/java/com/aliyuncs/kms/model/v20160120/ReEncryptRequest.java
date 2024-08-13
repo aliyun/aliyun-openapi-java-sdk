@@ -28,6 +28,8 @@ public class ReEncryptRequest extends RpcAcsRequest<ReEncryptResponse> {
 
 	private String destinationEncryptionContext;
 
+	private String dryRun;
+
 	private String sourceKeyId;
 
 	private String sourceEncryptionAlgorithm;
@@ -57,6 +59,17 @@ public class ReEncryptRequest extends RpcAcsRequest<ReEncryptResponse> {
 		this.destinationEncryptionContext = destinationEncryptionContext;
 		if(destinationEncryptionContext != null){
 			putQueryParameter("DestinationEncryptionContext", destinationEncryptionContext);
+		}
+	}
+
+	public String getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(String dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun);
 		}
 	}
 

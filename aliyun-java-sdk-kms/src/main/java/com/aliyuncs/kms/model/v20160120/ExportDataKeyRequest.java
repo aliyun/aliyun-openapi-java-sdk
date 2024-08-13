@@ -26,6 +26,8 @@ import com.aliyuncs.kms.Endpoint;
 public class ExportDataKeyRequest extends RpcAcsRequest<ExportDataKeyResponse> {
 	   
 
+	private String dryRun;
+
 	private String publicKeyBlob;
 
 	private String encryptionContext;
@@ -43,6 +45,17 @@ public class ExportDataKeyRequest extends RpcAcsRequest<ExportDataKeyResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(String dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun);
+		}
 	}
 
 	public String getPublicKeyBlob() {

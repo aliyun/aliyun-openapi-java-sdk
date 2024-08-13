@@ -68,9 +68,4 @@ public class ExportDataKeyResponse extends AcsResponse {
 	public ExportDataKeyResponse getInstance(UnmarshallerContext context) {
 		return	ExportDataKeyResponseUnmarshaller.unmarshall(this, context);
 	}
-
-	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
-	}
 }

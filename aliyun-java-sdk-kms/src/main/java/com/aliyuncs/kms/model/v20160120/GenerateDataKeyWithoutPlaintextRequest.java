@@ -26,6 +26,8 @@ import com.aliyuncs.kms.Endpoint;
 public class GenerateDataKeyWithoutPlaintextRequest extends RpcAcsRequest<GenerateDataKeyWithoutPlaintextResponse> {
 	   
 
+	private String dryRun;
+
 	private String keyId;
 
 	private String keySpec;
@@ -41,6 +43,17 @@ public class GenerateDataKeyWithoutPlaintextRequest extends RpcAcsRequest<Genera
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(String dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun);
+		}
 	}
 
 	public String getKeyId() {

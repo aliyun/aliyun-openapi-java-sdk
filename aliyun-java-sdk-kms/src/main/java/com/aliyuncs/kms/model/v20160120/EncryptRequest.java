@@ -26,6 +26,8 @@ import com.aliyuncs.kms.Endpoint;
 public class EncryptRequest extends RpcAcsRequest<EncryptResponse> {
 	   
 
+	private String dryRun;
+
 	private String keyId;
 
 	private String plaintext;
@@ -39,6 +41,17 @@ public class EncryptRequest extends RpcAcsRequest<EncryptResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(String dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun);
+		}
 	}
 
 	public String getKeyId() {
