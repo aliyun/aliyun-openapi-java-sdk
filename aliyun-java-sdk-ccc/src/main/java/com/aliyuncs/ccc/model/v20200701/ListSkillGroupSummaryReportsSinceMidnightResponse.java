@@ -428,6 +428,16 @@ public class ListSkillGroupSummaryReportsSinceMidnightResponse extends AcsRespon
 
 				private Long callsTimeout;
 
+				private String callsQueuingCanceled;
+
+				private String callsQueuingFailure;
+
+				private String callsQueuingRerouted;
+
+				private Long callsAbandoned;
+
+				private String callsOverflow;
+
 				public Long getAverageRingTime() {
 					return this.averageRingTime;
 				}
@@ -682,6 +692,46 @@ public class ListSkillGroupSummaryReportsSinceMidnightResponse extends AcsRespon
 
 				public void setCallsTimeout(Long callsTimeout) {
 					this.callsTimeout = callsTimeout;
+				}
+
+				public String getCallsQueuingCanceled() {
+					return this.callsQueuingCanceled;
+				}
+
+				public void setCallsQueuingCanceled(String callsQueuingCanceled) {
+					this.callsQueuingCanceled = callsQueuingCanceled;
+				}
+
+				public String getCallsQueuingFailure() {
+					return this.callsQueuingFailure;
+				}
+
+				public void setCallsQueuingFailure(String callsQueuingFailure) {
+					this.callsQueuingFailure = callsQueuingFailure;
+				}
+
+				public String getCallsQueuingRerouted() {
+					return this.callsQueuingRerouted;
+				}
+
+				public void setCallsQueuingRerouted(String callsQueuingRerouted) {
+					this.callsQueuingRerouted = callsQueuingRerouted;
+				}
+
+				public Long getCallsAbandoned() {
+					return this.callsAbandoned;
+				}
+
+				public void setCallsAbandoned(Long callsAbandoned) {
+					this.callsAbandoned = callsAbandoned;
+				}
+
+				public String getCallsOverflow() {
+					return this.callsOverflow;
+				}
+
+				public void setCallsOverflow(String callsOverflow) {
+					this.callsOverflow = callsOverflow;
 				}
 			}
 

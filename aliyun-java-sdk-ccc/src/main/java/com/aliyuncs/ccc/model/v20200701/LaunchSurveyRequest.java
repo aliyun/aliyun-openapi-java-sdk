@@ -27,11 +27,15 @@ public class LaunchSurveyRequest extends RpcAcsRequest<LaunchSurveyResponse> {
 
 	private String contactFlowId;
 
+	private String surveyTemplateVariables;
+
 	private String contactFlowVariables;
 
 	private String userId;
 
 	private String deviceId;
+
+	private String surveyTemplateId;
 
 	private String jobId;
 
@@ -57,6 +61,17 @@ public class LaunchSurveyRequest extends RpcAcsRequest<LaunchSurveyResponse> {
 		this.contactFlowId = contactFlowId;
 		if(contactFlowId != null){
 			putQueryParameter("ContactFlowId", contactFlowId);
+		}
+	}
+
+	public String getSurveyTemplateVariables() {
+		return this.surveyTemplateVariables;
+	}
+
+	public void setSurveyTemplateVariables(String surveyTemplateVariables) {
+		this.surveyTemplateVariables = surveyTemplateVariables;
+		if(surveyTemplateVariables != null){
+			putQueryParameter("SurveyTemplateVariables", surveyTemplateVariables);
 		}
 	}
 
@@ -90,6 +105,17 @@ public class LaunchSurveyRequest extends RpcAcsRequest<LaunchSurveyResponse> {
 		this.deviceId = deviceId;
 		if(deviceId != null){
 			putQueryParameter("DeviceId", deviceId);
+		}
+	}
+
+	public String getSurveyTemplateId() {
+		return this.surveyTemplateId;
+	}
+
+	public void setSurveyTemplateId(String surveyTemplateId) {
+		this.surveyTemplateId = surveyTemplateId;
+		if(surveyTemplateId != null){
+			putQueryParameter("SurveyTemplateId", surveyTemplateId);
 		}
 	}
 

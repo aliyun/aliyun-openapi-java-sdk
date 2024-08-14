@@ -50,6 +50,7 @@ public class GetCampaignResponseUnmarshaller {
 		data.setCasesUncompletedAfterAttempted(_ctx.longValue("GetCampaignResponse.Data.CasesUncompletedAfterAttempted"));
 		data.setCasesUncompletedAfterAttempt(_ctx.stringValue("GetCampaignResponse.Data.CasesUncompletedAfterAttempt"));
 		data.setCompletionRate(_ctx.floatValue("GetCampaignResponse.Data.CompletionRate"));
+		data.setContactFlowId(_ctx.stringValue("GetCampaignResponse.Data.ContactFlowId"));
 		getCampaignResponse.setData(data);
 	 
 	 	return getCampaignResponse;

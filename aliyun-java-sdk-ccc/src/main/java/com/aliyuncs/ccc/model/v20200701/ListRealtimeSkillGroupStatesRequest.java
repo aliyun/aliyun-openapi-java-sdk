@@ -32,6 +32,8 @@ public class ListRealtimeSkillGroupStatesRequest extends RpcAcsRequest<ListRealt
 	private String instanceId;
 
 	private Integer pageSize;
+
+	private String mediaType;
 	public ListRealtimeSkillGroupStatesRequest() {
 		super("CCC", "2020-07-01", "ListRealtimeSkillGroupStates", "CCC");
 		setMethod(MethodType.POST);
@@ -82,6 +84,17 @@ public class ListRealtimeSkillGroupStatesRequest extends RpcAcsRequest<ListRealt
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getMediaType() {
+		return this.mediaType;
+	}
+
+	public void setMediaType(String mediaType) {
+		this.mediaType = mediaType;
+		if(mediaType != null){
+			putQueryParameter("MediaType", mediaType);
 		}
 	}
 

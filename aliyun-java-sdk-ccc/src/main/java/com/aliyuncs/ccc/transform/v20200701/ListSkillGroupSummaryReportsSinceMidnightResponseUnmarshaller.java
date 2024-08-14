@@ -101,6 +101,11 @@ public class ListSkillGroupSummaryReportsSinceMidnightResponseUnmarshaller {
 			inbound.setCallsBlindTransferOut(_ctx.longValue("ListSkillGroupSummaryReportsSinceMidnightResponse.PagedSkillGroupSummaryReport.List["+ i +"].Inbound.CallsBlindTransferOut"));
 			inbound.setCallsQueuingTimeout(_ctx.longValue("ListSkillGroupSummaryReportsSinceMidnightResponse.PagedSkillGroupSummaryReport.List["+ i +"].Inbound.CallsQueuingTimeout"));
 			inbound.setCallsTimeout(_ctx.longValue("ListSkillGroupSummaryReportsSinceMidnightResponse.PagedSkillGroupSummaryReport.List["+ i +"].Inbound.CallsTimeout"));
+			inbound.setCallsQueuingCanceled(_ctx.stringValue("ListSkillGroupSummaryReportsSinceMidnightResponse.PagedSkillGroupSummaryReport.List["+ i +"].Inbound.CallsQueuingCanceled"));
+			inbound.setCallsQueuingFailure(_ctx.stringValue("ListSkillGroupSummaryReportsSinceMidnightResponse.PagedSkillGroupSummaryReport.List["+ i +"].Inbound.CallsQueuingFailure"));
+			inbound.setCallsQueuingRerouted(_ctx.stringValue("ListSkillGroupSummaryReportsSinceMidnightResponse.PagedSkillGroupSummaryReport.List["+ i +"].Inbound.CallsQueuingRerouted"));
+			inbound.setCallsAbandoned(_ctx.longValue("ListSkillGroupSummaryReportsSinceMidnightResponse.PagedSkillGroupSummaryReport.List["+ i +"].Inbound.CallsAbandoned"));
+			inbound.setCallsOverflow(_ctx.stringValue("ListSkillGroupSummaryReportsSinceMidnightResponse.PagedSkillGroupSummaryReport.List["+ i +"].Inbound.CallsOverflow"));
 			skillGroupSummaryReport.setInbound(inbound);
 
 			Outbound outbound = new Outbound();

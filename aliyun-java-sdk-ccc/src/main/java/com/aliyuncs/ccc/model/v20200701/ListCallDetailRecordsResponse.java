@@ -187,6 +187,8 @@ public class ListCallDetailRecordsResponse extends AcsResponse {
 
 			private Long heldTime;
 
+			private String callIds;
+
 			public String getContactDisposition() {
 				return this.contactDisposition;
 			}
@@ -457,6 +459,14 @@ public class ListCallDetailRecordsResponse extends AcsResponse {
 
 			public void setHeldTime(Long heldTime) {
 				this.heldTime = heldTime;
+			}
+
+			public String getCallIds() {
+				return this.callIds;
+			}
+
+			public void setCallIds(String callIds) {
+				this.callIds = callIds;
 			}
 		}
 	}

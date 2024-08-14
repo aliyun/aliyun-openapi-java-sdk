@@ -74,6 +74,7 @@ public class ListCallDetailRecordsResponseUnmarshaller {
 			callDetailRecord.setDialingTime(_ctx.longValue("ListCallDetailRecordsResponse.Data.List["+ i +"].DialingTime"));
 			callDetailRecord.setTalkTime(_ctx.longValue("ListCallDetailRecordsResponse.Data.List["+ i +"].TalkTime"));
 			callDetailRecord.setHeldTime(_ctx.longValue("ListCallDetailRecordsResponse.Data.List["+ i +"].HeldTime"));
+			callDetailRecord.setCallIds(_ctx.stringValue("ListCallDetailRecordsResponse.Data.List["+ i +"].CallIds"));
 
 			list.add(callDetailRecord);
 		}

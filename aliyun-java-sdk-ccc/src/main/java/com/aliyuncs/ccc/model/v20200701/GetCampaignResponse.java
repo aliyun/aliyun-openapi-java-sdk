@@ -110,6 +110,8 @@ public class GetCampaignResponse extends AcsResponse {
 
 		private Float completionRate;
 
+		private String contactFlowId;
+
 		public Long getActualEndTime() {
 			return this.actualEndTime;
 		}
@@ -284,6 +286,14 @@ public class GetCampaignResponse extends AcsResponse {
 
 		public void setCompletionRate(Float completionRate) {
 			this.completionRate = completionRate;
+		}
+
+		public String getContactFlowId() {
+			return this.contactFlowId;
+		}
+
+		public void setContactFlowId(String contactFlowId) {
+			this.contactFlowId = contactFlowId;
 		}
 	}
 
