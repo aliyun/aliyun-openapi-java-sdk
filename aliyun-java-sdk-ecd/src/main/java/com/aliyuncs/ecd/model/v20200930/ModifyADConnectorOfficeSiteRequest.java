@@ -40,11 +40,15 @@ public class ModifyADConnectorOfficeSiteRequest extends RpcAcsRequest<ModifyADCo
 
 	private String officeSiteName;
 
+	private String backupDns;
+
 	private Boolean mfaEnabled;
 
 	private String domainUserName;
 
 	private List<String> dnsAddresss;
+
+	private String backupDCHostname;
 
 	private String oUName;
 	public ModifyADConnectorOfficeSiteRequest() {
@@ -135,6 +139,17 @@ public class ModifyADConnectorOfficeSiteRequest extends RpcAcsRequest<ModifyADCo
 		}
 	}
 
+	public String getBackupDns() {
+		return this.backupDns;
+	}
+
+	public void setBackupDns(String backupDns) {
+		this.backupDns = backupDns;
+		if(backupDns != null){
+			putQueryParameter("BackupDns", backupDns);
+		}
+	}
+
 	public Boolean getMfaEnabled() {
 		return this.mfaEnabled;
 	}
@@ -168,6 +183,17 @@ public class ModifyADConnectorOfficeSiteRequest extends RpcAcsRequest<ModifyADCo
 				putQueryParameter("DnsAddress." + (i + 1) , dnsAddresss.get(i));
 			}
 		}	
+	}
+
+	public String getBackupDCHostname() {
+		return this.backupDCHostname;
+	}
+
+	public void setBackupDCHostname(String backupDCHostname) {
+		this.backupDCHostname = backupDCHostname;
+		if(backupDCHostname != null){
+			putQueryParameter("BackupDCHostname", backupDCHostname);
+		}
 	}
 
 	public String getOUName() {

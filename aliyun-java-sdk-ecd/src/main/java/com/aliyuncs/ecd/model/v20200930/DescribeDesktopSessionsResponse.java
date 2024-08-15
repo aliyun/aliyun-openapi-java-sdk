@@ -91,6 +91,10 @@ public class DescribeDesktopSessionsResponse extends AcsResponse {
 
 		private Long endUserApplyCoordinateTime;
 
+		private String subPayType;
+
+		private String osSessionStatus;
+
 		public String getSessionStatus() {
 			return this.sessionStatus;
 		}
@@ -225,6 +229,22 @@ public class DescribeDesktopSessionsResponse extends AcsResponse {
 
 		public void setEndUserApplyCoordinateTime(Long endUserApplyCoordinateTime) {
 			this.endUserApplyCoordinateTime = endUserApplyCoordinateTime;
+		}
+
+		public String getSubPayType() {
+			return this.subPayType;
+		}
+
+		public void setSubPayType(String subPayType) {
+			this.subPayType = subPayType;
+		}
+
+		public String getOsSessionStatus() {
+			return this.osSessionStatus;
+		}
+
+		public void setOsSessionStatus(String osSessionStatus) {
+			this.osSessionStatus = osSessionStatus;
 		}
 	}
 

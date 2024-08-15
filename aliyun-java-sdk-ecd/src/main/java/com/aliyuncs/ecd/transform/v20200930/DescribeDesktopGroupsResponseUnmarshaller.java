@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.ecd.model.v20200930.DescribeDesktopGroupsResponse;
 import com.aliyuncs.ecd.model.v20200930.DescribeDesktopGroupsResponse.DesktopGroup;
 import com.aliyuncs.ecd.model.v20200930.DescribeDesktopGroupsResponse.DesktopGroup.CountPerStatusItem;
+import com.aliyuncs.ecd.model.v20200930.DescribeDesktopGroupsResponse.DesktopGroup.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -91,6 +92,16 @@ public class DescribeDesktopGroupsResponseUnmarshaller {
 				countPerStatus.add(countPerStatusItem);
 			}
 			desktopGroup.setCountPerStatus(countPerStatus);
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeDesktopGroupsResponse.DesktopGroups["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(_ctx.stringValue("DescribeDesktopGroupsResponse.DesktopGroups["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("DescribeDesktopGroupsResponse.DesktopGroups["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			desktopGroup.setTags(tags);
 
 			desktopGroups.add(desktopGroup);
 		}

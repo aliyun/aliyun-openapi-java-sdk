@@ -63,6 +63,8 @@ public class DescribeBundlesRequest extends RpcAcsRequest<DescribeBundlesRespons
 	private Integer cpuCount;
 
 	private Boolean supportMultiSession;
+
+	private String gpuDriverType;
 	public DescribeBundlesRequest() {
 		super("ecd", "2020-09-30", "DescribeBundles", "gwsecd");
 		setMethod(MethodType.POST);
@@ -282,6 +284,17 @@ public class DescribeBundlesRequest extends RpcAcsRequest<DescribeBundlesRespons
 		this.supportMultiSession = supportMultiSession;
 		if(supportMultiSession != null){
 			putQueryParameter("SupportMultiSession", supportMultiSession.toString());
+		}
+	}
+
+	public String getGpuDriverType() {
+		return this.gpuDriverType;
+	}
+
+	public void setGpuDriverType(String gpuDriverType) {
+		this.gpuDriverType = gpuDriverType;
+		if(gpuDriverType != null){
+			putQueryParameter("GpuDriverType", gpuDriverType);
 		}
 	}
 

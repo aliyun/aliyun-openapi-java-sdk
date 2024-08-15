@@ -22,6 +22,8 @@ import com.aliyuncs.ecd.model.v20200930.DescribePolicyGroupsResponse.DescribePol
 import com.aliyuncs.ecd.model.v20200930.DescribePolicyGroupsResponse.DescribePolicyGroup.AuthorizeAccessPolicyRule;
 import com.aliyuncs.ecd.model.v20200930.DescribePolicyGroupsResponse.DescribePolicyGroup.AuthorizeSecurityPolicyRule;
 import com.aliyuncs.ecd.model.v20200930.DescribePolicyGroupsResponse.DescribePolicyGroup.ClientType;
+import com.aliyuncs.ecd.model.v20200930.DescribePolicyGroupsResponse.DescribePolicyGroup.DeviceRedirect;
+import com.aliyuncs.ecd.model.v20200930.DescribePolicyGroupsResponse.DescribePolicyGroup.DeviceRule;
 import com.aliyuncs.ecd.model.v20200930.DescribePolicyGroupsResponse.DescribePolicyGroup.DomainResolveRuleItem;
 import com.aliyuncs.ecd.model.v20200930.DescribePolicyGroupsResponse.DescribePolicyGroup.NetRedirectRuleItem;
 import com.aliyuncs.ecd.model.v20200930.DescribePolicyGroupsResponse.DescribePolicyGroup.UsbSupplyRedirectRuleItem;
@@ -99,6 +101,21 @@ public class DescribePolicyGroupsResponseUnmarshaller {
 			describePolicyGroup.setRecordingUserNotify(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].RecordingUserNotify"));
 			describePolicyGroup.setRecordingUserNotifyMessage(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].RecordingUserNotifyMessage"));
 			describePolicyGroup.setAdminAccess(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].AdminAccess"));
+			describePolicyGroup.setEnableSessionRateLimiting(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].EnableSessionRateLimiting"));
+			describePolicyGroup.setSessionMaxRateKbps(_ctx.integerValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].SessionMaxRateKbps"));
+			describePolicyGroup.setMaxReconnectTime(_ctx.integerValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].MaxReconnectTime"));
+			describePolicyGroup.setDisplayMode(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].DisplayMode"));
+			describePolicyGroup.setStreamingMode(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].StreamingMode"));
+			describePolicyGroup.setColorEnhancement(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].ColorEnhancement"));
+			describePolicyGroup.setSmoothEnhancement(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].SmoothEnhancement"));
+			describePolicyGroup.setQualityEnhancement(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].QualityEnhancement"));
+			describePolicyGroup.setVideoEncPolicy(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].VideoEncPolicy"));
+			describePolicyGroup.setTargetFps(_ctx.integerValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].TargetFps"));
+			describePolicyGroup.setVideoEncMinQP(_ctx.integerValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].VideoEncMinQP"));
+			describePolicyGroup.setVideoEncMaxQP(_ctx.integerValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].VideoEncMaxQP"));
+			describePolicyGroup.setVideoEncAvgKbps(_ctx.integerValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].VideoEncAvgKbps"));
+			describePolicyGroup.setVideoEncPeakKbps(_ctx.integerValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].VideoEncPeakKbps"));
+			describePolicyGroup.setWyAssistant(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].WyAssistant"));
 
 			List<String> preemptLoginUsers = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].PreemptLoginUsers.Length"); j++) {
@@ -195,6 +212,30 @@ public class DescribePolicyGroupsResponseUnmarshaller {
 				netRedirectRule.add(netRedirectRuleItem);
 			}
 			describePolicyGroup.setNetRedirectRule(netRedirectRule);
+
+			List<DeviceRedirect> deviceRedirects = new ArrayList<DeviceRedirect>();
+			for (int j = 0; j < _ctx.lengthValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].DeviceRedirects.Length"); j++) {
+				DeviceRedirect deviceRedirect = new DeviceRedirect();
+				deviceRedirect.setDeviceType(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].DeviceRedirects["+ j +"].DeviceType"));
+				deviceRedirect.setRedirectType(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].DeviceRedirects["+ j +"].RedirectType"));
+
+				deviceRedirects.add(deviceRedirect);
+			}
+			describePolicyGroup.setDeviceRedirects(deviceRedirects);
+
+			List<DeviceRule> deviceRules = new ArrayList<DeviceRule>();
+			for (int j = 0; j < _ctx.lengthValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].DeviceRules.Length"); j++) {
+				DeviceRule deviceRule = new DeviceRule();
+				deviceRule.setDeviceType(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].DeviceRules["+ j +"].DeviceType"));
+				deviceRule.setDeviceName(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].DeviceRules["+ j +"].DeviceName"));
+				deviceRule.setDeviceVid(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].DeviceRules["+ j +"].DeviceVid"));
+				deviceRule.setDevicePid(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].DeviceRules["+ j +"].DevicePid"));
+				deviceRule.setRedirectType(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].DeviceRules["+ j +"].RedirectType"));
+				deviceRule.setOptCommand(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].DeviceRules["+ j +"].OptCommand"));
+
+				deviceRules.add(deviceRule);
+			}
+			describePolicyGroup.setDeviceRules(deviceRules);
 
 			describePolicyGroups.add(describePolicyGroup);
 		}

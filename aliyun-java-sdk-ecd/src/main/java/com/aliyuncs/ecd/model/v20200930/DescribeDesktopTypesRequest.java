@@ -41,6 +41,8 @@ public class DescribeDesktopTypesRequest extends RpcAcsRequest<DescribeDesktopTy
 
 	private Integer cpuCount;
 
+	private String gpuDriverType;
+
 	private String orderType;
 	public DescribeDesktopTypesRequest() {
 		super("ecd", "2020-09-30", "DescribeDesktopTypes", "gwsecd");
@@ -136,6 +138,17 @@ public class DescribeDesktopTypesRequest extends RpcAcsRequest<DescribeDesktopTy
 		this.cpuCount = cpuCount;
 		if(cpuCount != null){
 			putQueryParameter("CpuCount", cpuCount.toString());
+		}
+	}
+
+	public String getGpuDriverType() {
+		return this.gpuDriverType;
+	}
+
+	public void setGpuDriverType(String gpuDriverType) {
+		this.gpuDriverType = gpuDriverType;
+		if(gpuDriverType != null){
+			putQueryParameter("GpuDriverType", gpuDriverType);
 		}
 	}
 

@@ -51,6 +51,11 @@ public class DescribeCloudDriveGroupsResponseUnmarshaller {
 				EndUserIdWithNickNameModel endUserIdWithNickNameModel = new EndUserIdWithNickNameModel();
 				endUserIdWithNickNameModel.setEndUserId(_ctx.stringValue("DescribeCloudDriveGroupsResponse.CloudDriveGroups["+ i +"].AdminUserInfos["+ j +"].EndUserId"));
 				endUserIdWithNickNameModel.setNickName(_ctx.stringValue("DescribeCloudDriveGroupsResponse.CloudDriveGroups["+ i +"].AdminUserInfos["+ j +"].NickName"));
+				endUserIdWithNickNameModel.setRealNickName(_ctx.stringValue("DescribeCloudDriveGroupsResponse.CloudDriveGroups["+ i +"].AdminUserInfos["+ j +"].RealNickName"));
+				endUserIdWithNickNameModel.setRemark(_ctx.stringValue("DescribeCloudDriveGroupsResponse.CloudDriveGroups["+ i +"].AdminUserInfos["+ j +"].Remark"));
+				endUserIdWithNickNameModel.setPhone(_ctx.stringValue("DescribeCloudDriveGroupsResponse.CloudDriveGroups["+ i +"].AdminUserInfos["+ j +"].Phone"));
+				endUserIdWithNickNameModel.setEmail(_ctx.stringValue("DescribeCloudDriveGroupsResponse.CloudDriveGroups["+ i +"].AdminUserInfos["+ j +"].Email"));
+				endUserIdWithNickNameModel.setJobNumber(_ctx.stringValue("DescribeCloudDriveGroupsResponse.CloudDriveGroups["+ i +"].AdminUserInfos["+ j +"].JobNumber"));
 
 				adminUserInfos.add(endUserIdWithNickNameModel);
 			}

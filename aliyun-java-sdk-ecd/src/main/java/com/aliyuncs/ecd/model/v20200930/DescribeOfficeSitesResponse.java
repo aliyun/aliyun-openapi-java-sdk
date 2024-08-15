@@ -29,6 +29,8 @@ public class DescribeOfficeSitesResponse extends AcsResponse {
 
 	private String requestId;
 
+	private Integer totalCount;
+
 	private List<OfficeSite> officeSites;
 
 	public String getNextToken() {
@@ -45,6 +47,14 @@ public class DescribeOfficeSitesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<OfficeSite> getOfficeSites() {
@@ -134,6 +144,18 @@ public class DescribeOfficeSitesResponse extends AcsResponse {
 		private String rdsLicenseAddress;
 
 		private String rdsLicenseDomainName;
+
+		private String backupDns;
+
+		private String backupDCHostname;
+
+		private Boolean enableServiceRoute;
+
+		private String subnetMode;
+
+		private String securityProtection;
+
+		private String customAccessPoint;
 
 		private List<ADConnector> aDConnectors;
 
@@ -457,6 +479,54 @@ public class DescribeOfficeSitesResponse extends AcsResponse {
 
 		public void setRdsLicenseDomainName(String rdsLicenseDomainName) {
 			this.rdsLicenseDomainName = rdsLicenseDomainName;
+		}
+
+		public String getBackupDns() {
+			return this.backupDns;
+		}
+
+		public void setBackupDns(String backupDns) {
+			this.backupDns = backupDns;
+		}
+
+		public String getBackupDCHostname() {
+			return this.backupDCHostname;
+		}
+
+		public void setBackupDCHostname(String backupDCHostname) {
+			this.backupDCHostname = backupDCHostname;
+		}
+
+		public Boolean getEnableServiceRoute() {
+			return this.enableServiceRoute;
+		}
+
+		public void setEnableServiceRoute(Boolean enableServiceRoute) {
+			this.enableServiceRoute = enableServiceRoute;
+		}
+
+		public String getSubnetMode() {
+			return this.subnetMode;
+		}
+
+		public void setSubnetMode(String subnetMode) {
+			this.subnetMode = subnetMode;
+		}
+
+		public String getSecurityProtection() {
+			return this.securityProtection;
+		}
+
+		public void setSecurityProtection(String securityProtection) {
+			this.securityProtection = securityProtection;
+		}
+
+		public String getCustomAccessPoint() {
+			return this.customAccessPoint;
+		}
+
+		public void setCustomAccessPoint(String customAccessPoint) {
+			this.customAccessPoint = customAccessPoint;
 		}
 
 		public List<ADConnector> getADConnectors() {

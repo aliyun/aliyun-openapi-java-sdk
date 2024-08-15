@@ -179,6 +179,36 @@ public class DescribePolicyGroupsResponse extends AcsResponse {
 
 		private String adminAccess;
 
+		private String enableSessionRateLimiting;
+
+		private Integer sessionMaxRateKbps;
+
+		private Integer maxReconnectTime;
+
+		private String displayMode;
+
+		private String streamingMode;
+
+		private String colorEnhancement;
+
+		private String smoothEnhancement;
+
+		private String qualityEnhancement;
+
+		private String videoEncPolicy;
+
+		private Integer targetFps;
+
+		private Integer videoEncMinQP;
+
+		private Integer videoEncMaxQP;
+
+		private Integer videoEncAvgKbps;
+
+		private Integer videoEncPeakKbps;
+
+		private String wyAssistant;
+
 		private List<AuthorizeSecurityPolicyRule> authorizeSecurityPolicyRules;
 
 		private List<AuthorizeAccessPolicyRule> authorizeAccessPolicyRules;
@@ -190,6 +220,10 @@ public class DescribePolicyGroupsResponse extends AcsResponse {
 		private List<DomainResolveRuleItem> domainResolveRule;
 
 		private List<NetRedirectRuleItem> netRedirectRule;
+
+		private List<DeviceRedirect> deviceRedirects;
+
+		private List<DeviceRule> deviceRules;
 
 		private List<String> preemptLoginUsers;
 
@@ -687,6 +721,126 @@ public class DescribePolicyGroupsResponse extends AcsResponse {
 			this.adminAccess = adminAccess;
 		}
 
+		public String getEnableSessionRateLimiting() {
+			return this.enableSessionRateLimiting;
+		}
+
+		public void setEnableSessionRateLimiting(String enableSessionRateLimiting) {
+			this.enableSessionRateLimiting = enableSessionRateLimiting;
+		}
+
+		public Integer getSessionMaxRateKbps() {
+			return this.sessionMaxRateKbps;
+		}
+
+		public void setSessionMaxRateKbps(Integer sessionMaxRateKbps) {
+			this.sessionMaxRateKbps = sessionMaxRateKbps;
+		}
+
+		public Integer getMaxReconnectTime() {
+			return this.maxReconnectTime;
+		}
+
+		public void setMaxReconnectTime(Integer maxReconnectTime) {
+			this.maxReconnectTime = maxReconnectTime;
+		}
+
+		public String getDisplayMode() {
+			return this.displayMode;
+		}
+
+		public void setDisplayMode(String displayMode) {
+			this.displayMode = displayMode;
+		}
+
+		public String getStreamingMode() {
+			return this.streamingMode;
+		}
+
+		public void setStreamingMode(String streamingMode) {
+			this.streamingMode = streamingMode;
+		}
+
+		public String getColorEnhancement() {
+			return this.colorEnhancement;
+		}
+
+		public void setColorEnhancement(String colorEnhancement) {
+			this.colorEnhancement = colorEnhancement;
+		}
+
+		public String getSmoothEnhancement() {
+			return this.smoothEnhancement;
+		}
+
+		public void setSmoothEnhancement(String smoothEnhancement) {
+			this.smoothEnhancement = smoothEnhancement;
+		}
+
+		public String getQualityEnhancement() {
+			return this.qualityEnhancement;
+		}
+
+		public void setQualityEnhancement(String qualityEnhancement) {
+			this.qualityEnhancement = qualityEnhancement;
+		}
+
+		public String getVideoEncPolicy() {
+			return this.videoEncPolicy;
+		}
+
+		public void setVideoEncPolicy(String videoEncPolicy) {
+			this.videoEncPolicy = videoEncPolicy;
+		}
+
+		public Integer getTargetFps() {
+			return this.targetFps;
+		}
+
+		public void setTargetFps(Integer targetFps) {
+			this.targetFps = targetFps;
+		}
+
+		public Integer getVideoEncMinQP() {
+			return this.videoEncMinQP;
+		}
+
+		public void setVideoEncMinQP(Integer videoEncMinQP) {
+			this.videoEncMinQP = videoEncMinQP;
+		}
+
+		public Integer getVideoEncMaxQP() {
+			return this.videoEncMaxQP;
+		}
+
+		public void setVideoEncMaxQP(Integer videoEncMaxQP) {
+			this.videoEncMaxQP = videoEncMaxQP;
+		}
+
+		public Integer getVideoEncAvgKbps() {
+			return this.videoEncAvgKbps;
+		}
+
+		public void setVideoEncAvgKbps(Integer videoEncAvgKbps) {
+			this.videoEncAvgKbps = videoEncAvgKbps;
+		}
+
+		public Integer getVideoEncPeakKbps() {
+			return this.videoEncPeakKbps;
+		}
+
+		public void setVideoEncPeakKbps(Integer videoEncPeakKbps) {
+			this.videoEncPeakKbps = videoEncPeakKbps;
+		}
+
+		public String getWyAssistant() {
+			return this.wyAssistant;
+		}
+
+		public void setWyAssistant(String wyAssistant) {
+			this.wyAssistant = wyAssistant;
+		}
+
 		public List<AuthorizeSecurityPolicyRule> getAuthorizeSecurityPolicyRules() {
 			return this.authorizeSecurityPolicyRules;
 		}
@@ -733,6 +887,22 @@ public class DescribePolicyGroupsResponse extends AcsResponse {
 
 		public void setNetRedirectRule(List<NetRedirectRuleItem> netRedirectRule) {
 			this.netRedirectRule = netRedirectRule;
+		}
+
+		public List<DeviceRedirect> getDeviceRedirects() {
+			return this.deviceRedirects;
+		}
+
+		public void setDeviceRedirects(List<DeviceRedirect> deviceRedirects) {
+			this.deviceRedirects = deviceRedirects;
+		}
+
+		public List<DeviceRule> getDeviceRules() {
+			return this.deviceRules;
+		}
+
+		public void setDeviceRules(List<DeviceRule> deviceRules) {
+			this.deviceRules = deviceRules;
 		}
 
 		public List<String> getPreemptLoginUsers() {
@@ -1022,6 +1192,92 @@ public class DescribePolicyGroupsResponse extends AcsResponse {
 
 			public void setPolicy(String policy) {
 				this.policy = policy;
+			}
+		}
+
+		public static class DeviceRedirect {
+
+			private String deviceType;
+
+			private String redirectType;
+
+			public String getDeviceType() {
+				return this.deviceType;
+			}
+
+			public void setDeviceType(String deviceType) {
+				this.deviceType = deviceType;
+			}
+
+			public String getRedirectType() {
+				return this.redirectType;
+			}
+
+			public void setRedirectType(String redirectType) {
+				this.redirectType = redirectType;
+			}
+		}
+
+		public static class DeviceRule {
+
+			private String deviceType;
+
+			private String deviceName;
+
+			private String deviceVid;
+
+			private String devicePid;
+
+			private String redirectType;
+
+			private String optCommand;
+
+			public String getDeviceType() {
+				return this.deviceType;
+			}
+
+			public void setDeviceType(String deviceType) {
+				this.deviceType = deviceType;
+			}
+
+			public String getDeviceName() {
+				return this.deviceName;
+			}
+
+			public void setDeviceName(String deviceName) {
+				this.deviceName = deviceName;
+			}
+
+			public String getDeviceVid() {
+				return this.deviceVid;
+			}
+
+			public void setDeviceVid(String deviceVid) {
+				this.deviceVid = deviceVid;
+			}
+
+			public String getDevicePid() {
+				return this.devicePid;
+			}
+
+			public void setDevicePid(String devicePid) {
+				this.devicePid = devicePid;
+			}
+
+			public String getRedirectType() {
+				return this.redirectType;
+			}
+
+			public void setRedirectType(String redirectType) {
+				this.redirectType = redirectType;
+			}
+
+			public String getOptCommand() {
+				return this.optCommand;
+			}
+
+			public void setOptCommand(String optCommand) {
+				this.optCommand = optCommand;
 			}
 		}
 	}

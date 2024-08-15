@@ -50,6 +50,8 @@ public class DescribeDesktopOversoldGroupResponseUnmarshaller {
 			dataItem.setExpireTime(_ctx.stringValue("DescribeDesktopOversoldGroupResponse.Data["+ i +"].ExpireTime"));
 			dataItem.setDescription(_ctx.stringValue("DescribeDesktopOversoldGroupResponse.Data["+ i +"].Description"));
 			dataItem.setCurConcurrenceCount(_ctx.integerValue("DescribeDesktopOversoldGroupResponse.Data["+ i +"].CurConcurrenceCount"));
+			dataItem.setKeepDuration(_ctx.stringValue("DescribeDesktopOversoldGroupResponse.Data["+ i +"].KeepDuration"));
+			dataItem.setIdleDisconnectDuration(_ctx.stringValue("DescribeDesktopOversoldGroupResponse.Data["+ i +"].IdleDisconnectDuration"));
 
 			data.add(dataItem);
 		}

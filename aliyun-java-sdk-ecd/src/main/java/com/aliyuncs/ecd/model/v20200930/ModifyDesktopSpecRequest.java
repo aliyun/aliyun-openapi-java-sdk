@@ -15,6 +15,7 @@
 package com.aliyuncs.ecd.model.v20200930;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ecd.Endpoint;
 
@@ -29,9 +30,13 @@ public class ModifyDesktopSpecRequest extends RpcAcsRequest<ModifyDesktopSpecRes
 
 	private String userDiskPerformanceLevel;
 
+	private String resourceType;
+
 	private String promotionId;
 
 	private Integer userDiskSizeGib;
+
+	private List<ResourceSpecs> resourceSpecss;
 
 	private String desktopId;
 
@@ -69,6 +74,17 @@ public class ModifyDesktopSpecRequest extends RpcAcsRequest<ModifyDesktopSpecRes
 		}
 	}
 
+	public String getResourceType() {
+		return this.resourceType;
+	}
+
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType);
+		}
+	}
+
 	public String getPromotionId() {
 		return this.promotionId;
 	}
@@ -89,6 +105,21 @@ public class ModifyDesktopSpecRequest extends RpcAcsRequest<ModifyDesktopSpecRes
 		if(userDiskSizeGib != null){
 			putQueryParameter("UserDiskSizeGib", userDiskSizeGib.toString());
 		}
+	}
+
+	public List<ResourceSpecs> getResourceSpecss() {
+		return this.resourceSpecss;
+	}
+
+	public void setResourceSpecss(List<ResourceSpecs> resourceSpecss) {
+		this.resourceSpecss = resourceSpecss;	
+		if (resourceSpecss != null) {
+			for (int depth1 = 0; depth1 < resourceSpecss.size(); depth1++) {
+				putQueryParameter("ResourceSpecs." + (depth1 + 1) + ".UserDiskSizeGib" , resourceSpecss.get(depth1).getUserDiskSizeGib());
+				putQueryParameter("ResourceSpecs." + (depth1 + 1) + ".DesktopId" , resourceSpecss.get(depth1).getDesktopId());
+				putQueryParameter("ResourceSpecs." + (depth1 + 1) + ".RootDiskSizeGib" , resourceSpecss.get(depth1).getRootDiskSizeGib());
+			}
+		}	
 	}
 
 	public String getDesktopId() {
@@ -121,6 +152,39 @@ public class ModifyDesktopSpecRequest extends RpcAcsRequest<ModifyDesktopSpecRes
 		this.rootDiskSizeGib = rootDiskSizeGib;
 		if(rootDiskSizeGib != null){
 			putQueryParameter("RootDiskSizeGib", rootDiskSizeGib.toString());
+		}
+	}
+
+	public static class ResourceSpecs {
+
+		private Integer userDiskSizeGib;
+
+		private String desktopId;
+
+		private Integer rootDiskSizeGib;
+
+		public Integer getUserDiskSizeGib() {
+			return this.userDiskSizeGib;
+		}
+
+		public void setUserDiskSizeGib(Integer userDiskSizeGib) {
+			this.userDiskSizeGib = userDiskSizeGib;
+		}
+
+		public String getDesktopId() {
+			return this.desktopId;
+		}
+
+		public void setDesktopId(String desktopId) {
+			this.desktopId = desktopId;
+		}
+
+		public Integer getRootDiskSizeGib() {
+			return this.rootDiskSizeGib;
+		}
+
+		public void setRootDiskSizeGib(Integer rootDiskSizeGib) {
+			this.rootDiskSizeGib = rootDiskSizeGib;
 		}
 	}
 

@@ -30,9 +30,13 @@ public class DescribeDesktopsRequest extends RpcAcsRequest<DescribeDesktopsRespo
 
 	private String snapshotPolicyId;
 
+	private String qosRuleId;
+
 	private List<String> imageIds;
 
 	private String desktopStatus;
+
+	private String resourceGroupId;
 
 	private String desktopGroupId;
 
@@ -62,13 +66,19 @@ public class DescribeDesktopsRequest extends RpcAcsRequest<DescribeDesktopsRespo
 
 	private List<String> excludedEndUserIds;
 
+	private String gpuInstanceGroupId;
+
 	private Boolean filterDesktopGroup;
 
 	private String managementFlag;
 
+	private String subPayType;
+
 	private String expiredTime;
 
 	private Integer maxResults;
+
+	private Boolean fillResourceGroup;
 
 	private List<String> osTypess;
 
@@ -110,6 +120,17 @@ public class DescribeDesktopsRequest extends RpcAcsRequest<DescribeDesktopsRespo
 		}
 	}
 
+	public String getQosRuleId() {
+		return this.qosRuleId;
+	}
+
+	public void setQosRuleId(String qosRuleId) {
+		this.qosRuleId = qosRuleId;
+		if(qosRuleId != null){
+			putQueryParameter("QosRuleId", qosRuleId);
+		}
+	}
+
 	public List<String> getImageIds() {
 		return this.imageIds;
 	}
@@ -131,6 +152,17 @@ public class DescribeDesktopsRequest extends RpcAcsRequest<DescribeDesktopsRespo
 		this.desktopStatus = desktopStatus;
 		if(desktopStatus != null){
 			putQueryParameter("DesktopStatus", desktopStatus);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 
@@ -299,6 +331,17 @@ public class DescribeDesktopsRequest extends RpcAcsRequest<DescribeDesktopsRespo
 		}	
 	}
 
+	public String getGpuInstanceGroupId() {
+		return this.gpuInstanceGroupId;
+	}
+
+	public void setGpuInstanceGroupId(String gpuInstanceGroupId) {
+		this.gpuInstanceGroupId = gpuInstanceGroupId;
+		if(gpuInstanceGroupId != null){
+			putQueryParameter("GpuInstanceGroupId", gpuInstanceGroupId);
+		}
+	}
+
 	public Boolean getFilterDesktopGroup() {
 		return this.filterDesktopGroup;
 	}
@@ -321,6 +364,17 @@ public class DescribeDesktopsRequest extends RpcAcsRequest<DescribeDesktopsRespo
 		}
 	}
 
+	public String getSubPayType() {
+		return this.subPayType;
+	}
+
+	public void setSubPayType(String subPayType) {
+		this.subPayType = subPayType;
+		if(subPayType != null){
+			putQueryParameter("SubPayType", subPayType);
+		}
+	}
+
 	public String getExpiredTime() {
 		return this.expiredTime;
 	}
@@ -340,6 +394,17 @@ public class DescribeDesktopsRequest extends RpcAcsRequest<DescribeDesktopsRespo
 		this.maxResults = maxResults;
 		if(maxResults != null){
 			putQueryParameter("MaxResults", maxResults.toString());
+		}
+	}
+
+	public Boolean getFillResourceGroup() {
+		return this.fillResourceGroup;
+	}
+
+	public void setFillResourceGroup(Boolean fillResourceGroup) {
+		this.fillResourceGroup = fillResourceGroup;
+		if(fillResourceGroup != null){
+			putQueryParameter("FillResourceGroup", fillResourceGroup.toString());
 		}
 	}
 

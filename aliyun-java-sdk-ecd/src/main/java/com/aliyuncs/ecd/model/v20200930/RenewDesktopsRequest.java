@@ -30,9 +30,13 @@ public class RenewDesktopsRequest extends RpcAcsRequest<RenewDesktopsResponse> {
 
 	private Boolean autoPay;
 
+	private String resourceType;
+
 	private String promotionId;
 
 	private String periodUnit;
+
+	private Boolean autoRenew;
 
 	private List<String> desktopIds;
 	public RenewDesktopsRequest() {
@@ -66,6 +70,17 @@ public class RenewDesktopsRequest extends RpcAcsRequest<RenewDesktopsResponse> {
 		}
 	}
 
+	public String getResourceType() {
+		return this.resourceType;
+	}
+
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType);
+		}
+	}
+
 	public String getPromotionId() {
 		return this.promotionId;
 	}
@@ -85,6 +100,17 @@ public class RenewDesktopsRequest extends RpcAcsRequest<RenewDesktopsResponse> {
 		this.periodUnit = periodUnit;
 		if(periodUnit != null){
 			putQueryParameter("PeriodUnit", periodUnit);
+		}
+	}
+
+	public Boolean getAutoRenew() {
+		return this.autoRenew;
+	}
+
+	public void setAutoRenew(Boolean autoRenew) {
+		this.autoRenew = autoRenew;
+		if(autoRenew != null){
+			putQueryParameter("AutoRenew", autoRenew.toString());
 		}
 	}
 

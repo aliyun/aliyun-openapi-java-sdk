@@ -26,19 +26,11 @@ import com.aliyuncs.ecd.Endpoint;
 public class CreatePolicyGroupRequest extends RpcAcsRequest<CreatePolicyGroupResponse> {
 	   
 
-	private Long recordingExpires;
-
 	private String printerRedirection;
 
-	private List<String> preemptLoginUsers;
-
-	private String domainList;
-
-	private String netRedirect;
+	private String wyAssistant;
 
 	private String localDrive;
-
-	private Integer watermarkTransparencyValue;
 
 	private List<AuthorizeSecurityPolicyRule> authorizeSecurityPolicyRules;
 
@@ -50,17 +42,57 @@ public class CreatePolicyGroupRequest extends RpcAcsRequest<CreatePolicyGroupRes
 
 	private String usbRedirect;
 
-	private String watermarkType;
-
 	private String recordingStartTime;
-
-	private String adminAccess;
-
-	private Integer recordingDuration;
 
 	private Integer watermarkColor;
 
 	private String watermark;
+
+	private List<DomainResolveRule> domainResolveRules;
+
+	private String watermarkPower;
+
+	private List<ClientType> clientTypes;
+
+	private List<DeviceRedirects> deviceRedirectss;
+
+	private List<String> scopeValues;
+
+	private Long recordingFps;
+
+	private String watermarkFontStyle;
+
+	private String recordingUserNotifyMessage;
+
+	private String endUserGroupCoordinate;
+
+	private Double watermarkDegree;
+
+	private String remoteCoordinate;
+
+	private String gpuAcceleration;
+
+	private String html5FileTransfer;
+
+	private List<DeviceRules> deviceRuless;
+
+	private String internetCommunicationProtocol;
+
+	private Long recordingExpires;
+
+	private List<String> preemptLoginUsers;
+
+	private String domainList;
+
+	private String netRedirect;
+
+	private Integer watermarkTransparencyValue;
+
+	private String watermarkType;
+
+	private String adminAccess;
+
+	private Integer recordingDuration;
 
 	private String cameraRedirect;
 
@@ -68,19 +100,15 @@ public class CreatePolicyGroupRequest extends RpcAcsRequest<CreatePolicyGroupRes
 
 	private String appContentProtection;
 
-	private List<DomainResolveRule> domainResolveRules;
-
 	private List<AuthorizeAccessPolicyRule> authorizeAccessPolicyRules;
+
+	private Integer maxReconnectTime;
 
 	private String watermarkTransparency;
 
 	private String name;
 
-	private String watermarkPower;
-
 	private String preemptLogin;
-
-	private List<ClientType> clientTypes;
 
 	private List<UsbSupplyRedirectRule> usbSupplyRedirectRules;
 
@@ -90,15 +118,7 @@ public class CreatePolicyGroupRequest extends RpcAcsRequest<CreatePolicyGroupRes
 
 	private String recording;
 
-	private List<String> scopeValues;
-
 	private String domainResolveRuleType;
-
-	private Long recordingFps;
-
-	private String watermarkFontStyle;
-
-	private String recordingUserNotifyMessage;
 
 	private String recordContent;
 
@@ -106,29 +126,17 @@ public class CreatePolicyGroupRequest extends RpcAcsRequest<CreatePolicyGroupRes
 
 	private Integer watermarkRowAmount;
 
-	private String endUserGroupCoordinate;
-
-	private Double watermarkDegree;
-
 	private Long recordContentExpires;
 
 	private String recordingAudio;
 
-	private String remoteCoordinate;
-
 	private String html5Access;
-
-	private String gpuAcceleration;
-
-	private String html5FileTransfer;
 
 	private String visualQuality;
 
 	private String recordingEndTime;
 
 	private String recordingUserNotify;
-
-	private String internetCommunicationProtocol;
 	public CreatePolicyGroupRequest() {
 		super("ecd", "2020-09-30", "CreatePolicyGroup", "gwsecd");
 		setMethod(MethodType.POST);
@@ -136,17 +144,6 @@ public class CreatePolicyGroupRequest extends RpcAcsRequest<CreatePolicyGroupRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getRecordingExpires() {
-		return this.recordingExpires;
-	}
-
-	public void setRecordingExpires(Long recordingExpires) {
-		this.recordingExpires = recordingExpires;
-		if(recordingExpires != null){
-			putQueryParameter("RecordingExpires", recordingExpires.toString());
-		}
 	}
 
 	public String getPrinterRedirection() {
@@ -160,38 +157,14 @@ public class CreatePolicyGroupRequest extends RpcAcsRequest<CreatePolicyGroupRes
 		}
 	}
 
-	public List<String> getPreemptLoginUsers() {
-		return this.preemptLoginUsers;
+	public String getWyAssistant() {
+		return this.wyAssistant;
 	}
 
-	public void setPreemptLoginUsers(List<String> preemptLoginUsers) {
-		this.preemptLoginUsers = preemptLoginUsers;	
-		if (preemptLoginUsers != null) {
-			for (int i = 0; i < preemptLoginUsers.size(); i++) {
-				putQueryParameter("PreemptLoginUser." + (i + 1) , preemptLoginUsers.get(i));
-			}
-		}	
-	}
-
-	public String getDomainList() {
-		return this.domainList;
-	}
-
-	public void setDomainList(String domainList) {
-		this.domainList = domainList;
-		if(domainList != null){
-			putQueryParameter("DomainList", domainList);
-		}
-	}
-
-	public String getNetRedirect() {
-		return this.netRedirect;
-	}
-
-	public void setNetRedirect(String netRedirect) {
-		this.netRedirect = netRedirect;
-		if(netRedirect != null){
-			putQueryParameter("NetRedirect", netRedirect);
+	public void setWyAssistant(String wyAssistant) {
+		this.wyAssistant = wyAssistant;
+		if(wyAssistant != null){
+			putQueryParameter("WyAssistant", wyAssistant);
 		}
 	}
 
@@ -203,17 +176,6 @@ public class CreatePolicyGroupRequest extends RpcAcsRequest<CreatePolicyGroupRes
 		this.localDrive = localDrive;
 		if(localDrive != null){
 			putQueryParameter("LocalDrive", localDrive);
-		}
-	}
-
-	public Integer getWatermarkTransparencyValue() {
-		return this.watermarkTransparencyValue;
-	}
-
-	public void setWatermarkTransparencyValue(Integer watermarkTransparencyValue) {
-		this.watermarkTransparencyValue = watermarkTransparencyValue;
-		if(watermarkTransparencyValue != null){
-			putQueryParameter("WatermarkTransparencyValue", watermarkTransparencyValue.toString());
 		}
 	}
 
@@ -280,17 +242,6 @@ public class CreatePolicyGroupRequest extends RpcAcsRequest<CreatePolicyGroupRes
 		}
 	}
 
-	public String getWatermarkType() {
-		return this.watermarkType;
-	}
-
-	public void setWatermarkType(String watermarkType) {
-		this.watermarkType = watermarkType;
-		if(watermarkType != null){
-			putQueryParameter("WatermarkType", watermarkType);
-		}
-	}
-
 	public String getRecordingStartTime() {
 		return this.recordingStartTime;
 	}
@@ -299,28 +250,6 @@ public class CreatePolicyGroupRequest extends RpcAcsRequest<CreatePolicyGroupRes
 		this.recordingStartTime = recordingStartTime;
 		if(recordingStartTime != null){
 			putQueryParameter("RecordingStartTime", recordingStartTime);
-		}
-	}
-
-	public String getAdminAccess() {
-		return this.adminAccess;
-	}
-
-	public void setAdminAccess(String adminAccess) {
-		this.adminAccess = adminAccess;
-		if(adminAccess != null){
-			putQueryParameter("AdminAccess", adminAccess);
-		}
-	}
-
-	public Integer getRecordingDuration() {
-		return this.recordingDuration;
-	}
-
-	public void setRecordingDuration(Integer recordingDuration) {
-		this.recordingDuration = recordingDuration;
-		if(recordingDuration != null){
-			putQueryParameter("RecordingDuration", recordingDuration.toString());
 		}
 	}
 
@@ -343,6 +272,280 @@ public class CreatePolicyGroupRequest extends RpcAcsRequest<CreatePolicyGroupRes
 		this.watermark = watermark;
 		if(watermark != null){
 			putQueryParameter("Watermark", watermark);
+		}
+	}
+
+	public List<DomainResolveRule> getDomainResolveRules() {
+		return this.domainResolveRules;
+	}
+
+	public void setDomainResolveRules(List<DomainResolveRule> domainResolveRules) {
+		this.domainResolveRules = domainResolveRules;	
+		if (domainResolveRules != null) {
+			for (int depth1 = 0; depth1 < domainResolveRules.size(); depth1++) {
+				putQueryParameter("DomainResolveRule." + (depth1 + 1) + ".Domain" , domainResolveRules.get(depth1).getDomain());
+				putQueryParameter("DomainResolveRule." + (depth1 + 1) + ".Description" , domainResolveRules.get(depth1).getDescription());
+				putQueryParameter("DomainResolveRule." + (depth1 + 1) + ".Policy" , domainResolveRules.get(depth1).getPolicy());
+			}
+		}	
+	}
+
+	public String getWatermarkPower() {
+		return this.watermarkPower;
+	}
+
+	public void setWatermarkPower(String watermarkPower) {
+		this.watermarkPower = watermarkPower;
+		if(watermarkPower != null){
+			putQueryParameter("WatermarkPower", watermarkPower);
+		}
+	}
+
+	public List<ClientType> getClientTypes() {
+		return this.clientTypes;
+	}
+
+	public void setClientTypes(List<ClientType> clientTypes) {
+		this.clientTypes = clientTypes;	
+		if (clientTypes != null) {
+			for (int depth1 = 0; depth1 < clientTypes.size(); depth1++) {
+				putQueryParameter("ClientType." + (depth1 + 1) + ".ClientType" , clientTypes.get(depth1).getClientType());
+				putQueryParameter("ClientType." + (depth1 + 1) + ".Status" , clientTypes.get(depth1).getStatus());
+			}
+		}	
+	}
+
+	public List<DeviceRedirects> getDeviceRedirectss() {
+		return this.deviceRedirectss;
+	}
+
+	public void setDeviceRedirectss(List<DeviceRedirects> deviceRedirectss) {
+		this.deviceRedirectss = deviceRedirectss;	
+		if (deviceRedirectss != null) {
+			for (int depth1 = 0; depth1 < deviceRedirectss.size(); depth1++) {
+				putQueryParameter("DeviceRedirects." + (depth1 + 1) + ".RedirectType" , deviceRedirectss.get(depth1).getRedirectType());
+				putQueryParameter("DeviceRedirects." + (depth1 + 1) + ".DeviceType" , deviceRedirectss.get(depth1).getDeviceType());
+			}
+		}	
+	}
+
+	public List<String> getScopeValues() {
+		return this.scopeValues;
+	}
+
+	public void setScopeValues(List<String> scopeValues) {
+		this.scopeValues = scopeValues;	
+		if (scopeValues != null) {
+			for (int i = 0; i < scopeValues.size(); i++) {
+				putQueryParameter("ScopeValue." + (i + 1) , scopeValues.get(i));
+			}
+		}	
+	}
+
+	public Long getRecordingFps() {
+		return this.recordingFps;
+	}
+
+	public void setRecordingFps(Long recordingFps) {
+		this.recordingFps = recordingFps;
+		if(recordingFps != null){
+			putQueryParameter("RecordingFps", recordingFps.toString());
+		}
+	}
+
+	public String getWatermarkFontStyle() {
+		return this.watermarkFontStyle;
+	}
+
+	public void setWatermarkFontStyle(String watermarkFontStyle) {
+		this.watermarkFontStyle = watermarkFontStyle;
+		if(watermarkFontStyle != null){
+			putQueryParameter("WatermarkFontStyle", watermarkFontStyle);
+		}
+	}
+
+	public String getRecordingUserNotifyMessage() {
+		return this.recordingUserNotifyMessage;
+	}
+
+	public void setRecordingUserNotifyMessage(String recordingUserNotifyMessage) {
+		this.recordingUserNotifyMessage = recordingUserNotifyMessage;
+		if(recordingUserNotifyMessage != null){
+			putQueryParameter("RecordingUserNotifyMessage", recordingUserNotifyMessage);
+		}
+	}
+
+	public String getEndUserGroupCoordinate() {
+		return this.endUserGroupCoordinate;
+	}
+
+	public void setEndUserGroupCoordinate(String endUserGroupCoordinate) {
+		this.endUserGroupCoordinate = endUserGroupCoordinate;
+		if(endUserGroupCoordinate != null){
+			putQueryParameter("EndUserGroupCoordinate", endUserGroupCoordinate);
+		}
+	}
+
+	public Double getWatermarkDegree() {
+		return this.watermarkDegree;
+	}
+
+	public void setWatermarkDegree(Double watermarkDegree) {
+		this.watermarkDegree = watermarkDegree;
+		if(watermarkDegree != null){
+			putQueryParameter("WatermarkDegree", watermarkDegree.toString());
+		}
+	}
+
+	public String getRemoteCoordinate() {
+		return this.remoteCoordinate;
+	}
+
+	public void setRemoteCoordinate(String remoteCoordinate) {
+		this.remoteCoordinate = remoteCoordinate;
+		if(remoteCoordinate != null){
+			putQueryParameter("RemoteCoordinate", remoteCoordinate);
+		}
+	}
+
+	public String getGpuAcceleration() {
+		return this.gpuAcceleration;
+	}
+
+	public void setGpuAcceleration(String gpuAcceleration) {
+		this.gpuAcceleration = gpuAcceleration;
+		if(gpuAcceleration != null){
+			putQueryParameter("GpuAcceleration", gpuAcceleration);
+		}
+	}
+
+	public String getHtml5FileTransfer() {
+		return this.html5FileTransfer;
+	}
+
+	public void setHtml5FileTransfer(String html5FileTransfer) {
+		this.html5FileTransfer = html5FileTransfer;
+		if(html5FileTransfer != null){
+			putQueryParameter("Html5FileTransfer", html5FileTransfer);
+		}
+	}
+
+	public List<DeviceRules> getDeviceRuless() {
+		return this.deviceRuless;
+	}
+
+	public void setDeviceRuless(List<DeviceRules> deviceRuless) {
+		this.deviceRuless = deviceRuless;	
+		if (deviceRuless != null) {
+			for (int depth1 = 0; depth1 < deviceRuless.size(); depth1++) {
+				putQueryParameter("DeviceRules." + (depth1 + 1) + ".DevicePid" , deviceRuless.get(depth1).getDevicePid());
+				putQueryParameter("DeviceRules." + (depth1 + 1) + ".DeviceName" , deviceRuless.get(depth1).getDeviceName());
+				putQueryParameter("DeviceRules." + (depth1 + 1) + ".DeviceVid" , deviceRuless.get(depth1).getDeviceVid());
+				putQueryParameter("DeviceRules." + (depth1 + 1) + ".RedirectType" , deviceRuless.get(depth1).getRedirectType());
+				putQueryParameter("DeviceRules." + (depth1 + 1) + ".DeviceType" , deviceRuless.get(depth1).getDeviceType());
+				putQueryParameter("DeviceRules." + (depth1 + 1) + ".OptCommand" , deviceRuless.get(depth1).getOptCommand());
+			}
+		}	
+	}
+
+	public String getInternetCommunicationProtocol() {
+		return this.internetCommunicationProtocol;
+	}
+
+	public void setInternetCommunicationProtocol(String internetCommunicationProtocol) {
+		this.internetCommunicationProtocol = internetCommunicationProtocol;
+		if(internetCommunicationProtocol != null){
+			putQueryParameter("InternetCommunicationProtocol", internetCommunicationProtocol);
+		}
+	}
+
+	public Long getRecordingExpires() {
+		return this.recordingExpires;
+	}
+
+	public void setRecordingExpires(Long recordingExpires) {
+		this.recordingExpires = recordingExpires;
+		if(recordingExpires != null){
+			putQueryParameter("RecordingExpires", recordingExpires.toString());
+		}
+	}
+
+	public List<String> getPreemptLoginUsers() {
+		return this.preemptLoginUsers;
+	}
+
+	public void setPreemptLoginUsers(List<String> preemptLoginUsers) {
+		this.preemptLoginUsers = preemptLoginUsers;	
+		if (preemptLoginUsers != null) {
+			for (int i = 0; i < preemptLoginUsers.size(); i++) {
+				putQueryParameter("PreemptLoginUser." + (i + 1) , preemptLoginUsers.get(i));
+			}
+		}	
+	}
+
+	public String getDomainList() {
+		return this.domainList;
+	}
+
+	public void setDomainList(String domainList) {
+		this.domainList = domainList;
+		if(domainList != null){
+			putQueryParameter("DomainList", domainList);
+		}
+	}
+
+	public String getNetRedirect() {
+		return this.netRedirect;
+	}
+
+	public void setNetRedirect(String netRedirect) {
+		this.netRedirect = netRedirect;
+		if(netRedirect != null){
+			putQueryParameter("NetRedirect", netRedirect);
+		}
+	}
+
+	public Integer getWatermarkTransparencyValue() {
+		return this.watermarkTransparencyValue;
+	}
+
+	public void setWatermarkTransparencyValue(Integer watermarkTransparencyValue) {
+		this.watermarkTransparencyValue = watermarkTransparencyValue;
+		if(watermarkTransparencyValue != null){
+			putQueryParameter("WatermarkTransparencyValue", watermarkTransparencyValue.toString());
+		}
+	}
+
+	public String getWatermarkType() {
+		return this.watermarkType;
+	}
+
+	public void setWatermarkType(String watermarkType) {
+		this.watermarkType = watermarkType;
+		if(watermarkType != null){
+			putQueryParameter("WatermarkType", watermarkType);
+		}
+	}
+
+	public String getAdminAccess() {
+		return this.adminAccess;
+	}
+
+	public void setAdminAccess(String adminAccess) {
+		this.adminAccess = adminAccess;
+		if(adminAccess != null){
+			putQueryParameter("AdminAccess", adminAccess);
+		}
+	}
+
+	public Integer getRecordingDuration() {
+		return this.recordingDuration;
+	}
+
+	public void setRecordingDuration(Integer recordingDuration) {
+		this.recordingDuration = recordingDuration;
+		if(recordingDuration != null){
+			putQueryParameter("RecordingDuration", recordingDuration.toString());
 		}
 	}
 
@@ -379,21 +582,6 @@ public class CreatePolicyGroupRequest extends RpcAcsRequest<CreatePolicyGroupRes
 		}
 	}
 
-	public List<DomainResolveRule> getDomainResolveRules() {
-		return this.domainResolveRules;
-	}
-
-	public void setDomainResolveRules(List<DomainResolveRule> domainResolveRules) {
-		this.domainResolveRules = domainResolveRules;	
-		if (domainResolveRules != null) {
-			for (int depth1 = 0; depth1 < domainResolveRules.size(); depth1++) {
-				putQueryParameter("DomainResolveRule." + (depth1 + 1) + ".Domain" , domainResolveRules.get(depth1).getDomain());
-				putQueryParameter("DomainResolveRule." + (depth1 + 1) + ".Description" , domainResolveRules.get(depth1).getDescription());
-				putQueryParameter("DomainResolveRule." + (depth1 + 1) + ".Policy" , domainResolveRules.get(depth1).getPolicy());
-			}
-		}	
-	}
-
 	public List<AuthorizeAccessPolicyRule> getAuthorizeAccessPolicyRules() {
 		return this.authorizeAccessPolicyRules;
 	}
@@ -406,6 +594,17 @@ public class CreatePolicyGroupRequest extends RpcAcsRequest<CreatePolicyGroupRes
 				putQueryParameter("AuthorizeAccessPolicyRule." + (depth1 + 1) + ".CidrIp" , authorizeAccessPolicyRules.get(depth1).getCidrIp());
 			}
 		}	
+	}
+
+	public Integer getMaxReconnectTime() {
+		return this.maxReconnectTime;
+	}
+
+	public void setMaxReconnectTime(Integer maxReconnectTime) {
+		this.maxReconnectTime = maxReconnectTime;
+		if(maxReconnectTime != null){
+			putQueryParameter("MaxReconnectTime", maxReconnectTime.toString());
+		}
 	}
 
 	public String getWatermarkTransparency() {
@@ -430,17 +629,6 @@ public class CreatePolicyGroupRequest extends RpcAcsRequest<CreatePolicyGroupRes
 		}
 	}
 
-	public String getWatermarkPower() {
-		return this.watermarkPower;
-	}
-
-	public void setWatermarkPower(String watermarkPower) {
-		this.watermarkPower = watermarkPower;
-		if(watermarkPower != null){
-			putQueryParameter("WatermarkPower", watermarkPower);
-		}
-	}
-
 	public String getPreemptLogin() {
 		return this.preemptLogin;
 	}
@@ -450,20 +638,6 @@ public class CreatePolicyGroupRequest extends RpcAcsRequest<CreatePolicyGroupRes
 		if(preemptLogin != null){
 			putQueryParameter("PreemptLogin", preemptLogin);
 		}
-	}
-
-	public List<ClientType> getClientTypes() {
-		return this.clientTypes;
-	}
-
-	public void setClientTypes(List<ClientType> clientTypes) {
-		this.clientTypes = clientTypes;	
-		if (clientTypes != null) {
-			for (int depth1 = 0; depth1 < clientTypes.size(); depth1++) {
-				putQueryParameter("ClientType." + (depth1 + 1) + ".ClientType" , clientTypes.get(depth1).getClientType());
-				putQueryParameter("ClientType." + (depth1 + 1) + ".Status" , clientTypes.get(depth1).getStatus());
-			}
-		}	
 	}
 
 	public List<UsbSupplyRedirectRule> getUsbSupplyRedirectRules() {
@@ -518,19 +692,6 @@ public class CreatePolicyGroupRequest extends RpcAcsRequest<CreatePolicyGroupRes
 		}
 	}
 
-	public List<String> getScopeValues() {
-		return this.scopeValues;
-	}
-
-	public void setScopeValues(List<String> scopeValues) {
-		this.scopeValues = scopeValues;	
-		if (scopeValues != null) {
-			for (int i = 0; i < scopeValues.size(); i++) {
-				putQueryParameter("ScopeValue." + (i + 1) , scopeValues.get(i));
-			}
-		}	
-	}
-
 	public String getDomainResolveRuleType() {
 		return this.domainResolveRuleType;
 	}
@@ -539,39 +700,6 @@ public class CreatePolicyGroupRequest extends RpcAcsRequest<CreatePolicyGroupRes
 		this.domainResolveRuleType = domainResolveRuleType;
 		if(domainResolveRuleType != null){
 			putQueryParameter("DomainResolveRuleType", domainResolveRuleType);
-		}
-	}
-
-	public Long getRecordingFps() {
-		return this.recordingFps;
-	}
-
-	public void setRecordingFps(Long recordingFps) {
-		this.recordingFps = recordingFps;
-		if(recordingFps != null){
-			putQueryParameter("RecordingFps", recordingFps.toString());
-		}
-	}
-
-	public String getWatermarkFontStyle() {
-		return this.watermarkFontStyle;
-	}
-
-	public void setWatermarkFontStyle(String watermarkFontStyle) {
-		this.watermarkFontStyle = watermarkFontStyle;
-		if(watermarkFontStyle != null){
-			putQueryParameter("WatermarkFontStyle", watermarkFontStyle);
-		}
-	}
-
-	public String getRecordingUserNotifyMessage() {
-		return this.recordingUserNotifyMessage;
-	}
-
-	public void setRecordingUserNotifyMessage(String recordingUserNotifyMessage) {
-		this.recordingUserNotifyMessage = recordingUserNotifyMessage;
-		if(recordingUserNotifyMessage != null){
-			putQueryParameter("RecordingUserNotifyMessage", recordingUserNotifyMessage);
 		}
 	}
 
@@ -608,28 +736,6 @@ public class CreatePolicyGroupRequest extends RpcAcsRequest<CreatePolicyGroupRes
 		}
 	}
 
-	public String getEndUserGroupCoordinate() {
-		return this.endUserGroupCoordinate;
-	}
-
-	public void setEndUserGroupCoordinate(String endUserGroupCoordinate) {
-		this.endUserGroupCoordinate = endUserGroupCoordinate;
-		if(endUserGroupCoordinate != null){
-			putQueryParameter("EndUserGroupCoordinate", endUserGroupCoordinate);
-		}
-	}
-
-	public Double getWatermarkDegree() {
-		return this.watermarkDegree;
-	}
-
-	public void setWatermarkDegree(Double watermarkDegree) {
-		this.watermarkDegree = watermarkDegree;
-		if(watermarkDegree != null){
-			putQueryParameter("WatermarkDegree", watermarkDegree.toString());
-		}
-	}
-
 	public Long getRecordContentExpires() {
 		return this.recordContentExpires;
 	}
@@ -652,17 +758,6 @@ public class CreatePolicyGroupRequest extends RpcAcsRequest<CreatePolicyGroupRes
 		}
 	}
 
-	public String getRemoteCoordinate() {
-		return this.remoteCoordinate;
-	}
-
-	public void setRemoteCoordinate(String remoteCoordinate) {
-		this.remoteCoordinate = remoteCoordinate;
-		if(remoteCoordinate != null){
-			putQueryParameter("RemoteCoordinate", remoteCoordinate);
-		}
-	}
-
 	public String getHtml5Access() {
 		return this.html5Access;
 	}
@@ -671,28 +766,6 @@ public class CreatePolicyGroupRequest extends RpcAcsRequest<CreatePolicyGroupRes
 		this.html5Access = html5Access;
 		if(html5Access != null){
 			putQueryParameter("Html5Access", html5Access);
-		}
-	}
-
-	public String getGpuAcceleration() {
-		return this.gpuAcceleration;
-	}
-
-	public void setGpuAcceleration(String gpuAcceleration) {
-		this.gpuAcceleration = gpuAcceleration;
-		if(gpuAcceleration != null){
-			putQueryParameter("GpuAcceleration", gpuAcceleration);
-		}
-	}
-
-	public String getHtml5FileTransfer() {
-		return this.html5FileTransfer;
-	}
-
-	public void setHtml5FileTransfer(String html5FileTransfer) {
-		this.html5FileTransfer = html5FileTransfer;
-		if(html5FileTransfer != null){
-			putQueryParameter("Html5FileTransfer", html5FileTransfer);
 		}
 	}
 
@@ -726,17 +799,6 @@ public class CreatePolicyGroupRequest extends RpcAcsRequest<CreatePolicyGroupRes
 		this.recordingUserNotify = recordingUserNotify;
 		if(recordingUserNotify != null){
 			putQueryParameter("RecordingUserNotify", recordingUserNotify);
-		}
-	}
-
-	public String getInternetCommunicationProtocol() {
-		return this.internetCommunicationProtocol;
-	}
-
-	public void setInternetCommunicationProtocol(String internetCommunicationProtocol) {
-		this.internetCommunicationProtocol = internetCommunicationProtocol;
-		if(internetCommunicationProtocol != null){
-			putQueryParameter("InternetCommunicationProtocol", internetCommunicationProtocol);
 		}
 	}
 
@@ -846,29 +908,6 @@ public class CreatePolicyGroupRequest extends RpcAcsRequest<CreatePolicyGroupRes
 		}
 	}
 
-	public static class AuthorizeAccessPolicyRule {
-
-		private String description;
-
-		private String cidrIp;
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getCidrIp() {
-			return this.cidrIp;
-		}
-
-		public void setCidrIp(String cidrIp) {
-			this.cidrIp = cidrIp;
-		}
-	}
-
 	public static class ClientType {
 
 		private String clientType;
@@ -889,6 +928,115 @@ public class CreatePolicyGroupRequest extends RpcAcsRequest<CreatePolicyGroupRes
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+	}
+
+	public static class DeviceRedirects {
+
+		private String redirectType;
+
+		private String deviceType;
+
+		public String getRedirectType() {
+			return this.redirectType;
+		}
+
+		public void setRedirectType(String redirectType) {
+			this.redirectType = redirectType;
+		}
+
+		public String getDeviceType() {
+			return this.deviceType;
+		}
+
+		public void setDeviceType(String deviceType) {
+			this.deviceType = deviceType;
+		}
+	}
+
+	public static class DeviceRules {
+
+		private String devicePid;
+
+		private String deviceName;
+
+		private String deviceVid;
+
+		private String redirectType;
+
+		private String deviceType;
+
+		private String optCommand;
+
+		public String getDevicePid() {
+			return this.devicePid;
+		}
+
+		public void setDevicePid(String devicePid) {
+			this.devicePid = devicePid;
+		}
+
+		public String getDeviceName() {
+			return this.deviceName;
+		}
+
+		public void setDeviceName(String deviceName) {
+			this.deviceName = deviceName;
+		}
+
+		public String getDeviceVid() {
+			return this.deviceVid;
+		}
+
+		public void setDeviceVid(String deviceVid) {
+			this.deviceVid = deviceVid;
+		}
+
+		public String getRedirectType() {
+			return this.redirectType;
+		}
+
+		public void setRedirectType(String redirectType) {
+			this.redirectType = redirectType;
+		}
+
+		public String getDeviceType() {
+			return this.deviceType;
+		}
+
+		public void setDeviceType(String deviceType) {
+			this.deviceType = deviceType;
+		}
+
+		public String getOptCommand() {
+			return this.optCommand;
+		}
+
+		public void setOptCommand(String optCommand) {
+			this.optCommand = optCommand;
+		}
+	}
+
+	public static class AuthorizeAccessPolicyRule {
+
+		private String description;
+
+		private String cidrIp;
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getCidrIp() {
+			return this.cidrIp;
+		}
+
+		public void setCidrIp(String cidrIp) {
+			this.cidrIp = cidrIp;
 		}
 	}
 

@@ -14,6 +14,7 @@
 
 package com.aliyuncs.ecd.model.v20200930;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.ecd.transform.v20200930.ModifyDesktopSpecResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -27,6 +28,8 @@ public class ModifyDesktopSpecResponse extends AcsResponse {
 	private String orderId;
 
 	private String requestId;
+
+	private List<Long> orderIds;
 
 	public String getOrderId() {
 		return this.orderId;
@@ -42,6 +45,14 @@ public class ModifyDesktopSpecResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public List<Long> getOrderIds() {
+		return this.orderIds;
+	}
+
+	public void setOrderIds(List<Long> orderIds) {
+		this.orderIds = orderIds;
 	}
 
 	@Override

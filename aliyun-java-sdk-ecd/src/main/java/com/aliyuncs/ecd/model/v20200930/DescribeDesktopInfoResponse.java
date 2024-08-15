@@ -63,6 +63,8 @@ public class DescribeDesktopInfoResponse extends AcsResponse {
 
 		private Long newAppSize;
 
+		private String desktopGroupId;
+
 		private List<String> managementFlag;
 
 		public String getCurrentAppVersion() {
@@ -127,6 +129,14 @@ public class DescribeDesktopInfoResponse extends AcsResponse {
 
 		public void setNewAppSize(Long newAppSize) {
 			this.newAppSize = newAppSize;
+		}
+
+		public String getDesktopGroupId() {
+			return this.desktopGroupId;
+		}
+
+		public void setDesktopGroupId(String desktopGroupId) {
+			this.desktopGroupId = desktopGroupId;
 		}
 
 		public List<String> getManagementFlag() {

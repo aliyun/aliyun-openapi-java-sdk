@@ -14,6 +14,9 @@
 
 package com.aliyuncs.ecd.transform.v20200930;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.ecd.model.v20200930.ModifyDesktopSpecResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -24,6 +27,12 @@ public class ModifyDesktopSpecResponseUnmarshaller {
 		
 		modifyDesktopSpecResponse.setRequestId(_ctx.stringValue("ModifyDesktopSpecResponse.RequestId"));
 		modifyDesktopSpecResponse.setOrderId(_ctx.stringValue("ModifyDesktopSpecResponse.OrderId"));
+
+		List<Long> orderIds = new ArrayList<Long>();
+		for (int i = 0; i < _ctx.lengthValue("ModifyDesktopSpecResponse.OrderIds.Length"); i++) {
+			orderIds.add(_ctx.longValue("ModifyDesktopSpecResponse.OrderIds["+ i +"]"));
+		}
+		modifyDesktopSpecResponse.setOrderIds(orderIds);
 	 
 	 	return modifyDesktopSpecResponse;
 	}

@@ -28,9 +28,13 @@ public class CreateCloudDriveServiceRequest extends RpcAcsRequest<CreateCloudDri
 
 	private String officeSiteId;
 
+	private String cdsChargeType;
+
 	private String cenId;
 
 	private String officeSiteType;
+
+	private Long userCount;
 
 	private List<String> endUserIds;
 
@@ -38,9 +42,17 @@ public class CreateCloudDriveServiceRequest extends RpcAcsRequest<CreateCloudDri
 
 	private Long userMaxSize;
 
+	private Long period;
+
+	private Boolean autoPay;
+
 	private String domainName;
 
 	private Integer bizType;
+
+	private String periodUnit;
+
+	private Boolean autoRenew;
 
 	private String name;
 
@@ -65,6 +77,17 @@ public class CreateCloudDriveServiceRequest extends RpcAcsRequest<CreateCloudDri
 		}
 	}
 
+	public String getCdsChargeType() {
+		return this.cdsChargeType;
+	}
+
+	public void setCdsChargeType(String cdsChargeType) {
+		this.cdsChargeType = cdsChargeType;
+		if(cdsChargeType != null){
+			putQueryParameter("CdsChargeType", cdsChargeType);
+		}
+	}
+
 	public String getCenId() {
 		return this.cenId;
 	}
@@ -84,6 +107,17 @@ public class CreateCloudDriveServiceRequest extends RpcAcsRequest<CreateCloudDri
 		this.officeSiteType = officeSiteType;
 		if(officeSiteType != null){
 			putQueryParameter("OfficeSiteType", officeSiteType);
+		}
+	}
+
+	public Long getUserCount() {
+		return this.userCount;
+	}
+
+	public void setUserCount(Long userCount) {
+		this.userCount = userCount;
+		if(userCount != null){
+			putQueryParameter("UserCount", userCount.toString());
 		}
 	}
 
@@ -122,6 +156,28 @@ public class CreateCloudDriveServiceRequest extends RpcAcsRequest<CreateCloudDri
 		}
 	}
 
+	public Long getPeriod() {
+		return this.period;
+	}
+
+	public void setPeriod(Long period) {
+		this.period = period;
+		if(period != null){
+			putQueryParameter("Period", period.toString());
+		}
+	}
+
+	public Boolean getAutoPay() {
+		return this.autoPay;
+	}
+
+	public void setAutoPay(Boolean autoPay) {
+		this.autoPay = autoPay;
+		if(autoPay != null){
+			putQueryParameter("AutoPay", autoPay.toString());
+		}
+	}
+
 	public String getDomainName() {
 		return this.domainName;
 	}
@@ -141,6 +197,28 @@ public class CreateCloudDriveServiceRequest extends RpcAcsRequest<CreateCloudDri
 		this.bizType = bizType;
 		if(bizType != null){
 			putQueryParameter("BizType", bizType.toString());
+		}
+	}
+
+	public String getPeriodUnit() {
+		return this.periodUnit;
+	}
+
+	public void setPeriodUnit(String periodUnit) {
+		this.periodUnit = periodUnit;
+		if(periodUnit != null){
+			putQueryParameter("PeriodUnit", periodUnit);
+		}
+	}
+
+	public Boolean getAutoRenew() {
+		return this.autoRenew;
+	}
+
+	public void setAutoRenew(Boolean autoRenew) {
+		this.autoRenew = autoRenew;
+		if(autoRenew != null){
+			putQueryParameter("AutoRenew", autoRenew.toString());
 		}
 	}
 

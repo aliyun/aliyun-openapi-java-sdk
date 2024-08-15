@@ -33,9 +33,13 @@ public class ModifyDesktopOversoldGroupRequest extends RpcAcsRequest<ModifyDeskt
 
 	private Integer oversoldWarn;
 
+	private Long idleDisconnectDuration;
+
 	private String oversoldGroupId;
 
 	private Integer stopDuration;
+
+	private Integer keepDuration;
 
 	private String name;
 
@@ -95,6 +99,17 @@ public class ModifyDesktopOversoldGroupRequest extends RpcAcsRequest<ModifyDeskt
 		}
 	}
 
+	public Long getIdleDisconnectDuration() {
+		return this.idleDisconnectDuration;
+	}
+
+	public void setIdleDisconnectDuration(Long idleDisconnectDuration) {
+		this.idleDisconnectDuration = idleDisconnectDuration;
+		if(idleDisconnectDuration != null){
+			putQueryParameter("IdleDisconnectDuration", idleDisconnectDuration.toString());
+		}
+	}
+
 	public String getOversoldGroupId() {
 		return this.oversoldGroupId;
 	}
@@ -114,6 +129,17 @@ public class ModifyDesktopOversoldGroupRequest extends RpcAcsRequest<ModifyDeskt
 		this.stopDuration = stopDuration;
 		if(stopDuration != null){
 			putQueryParameter("StopDuration", stopDuration.toString());
+		}
+	}
+
+	public Integer getKeepDuration() {
+		return this.keepDuration;
+	}
+
+	public void setKeepDuration(Integer keepDuration) {
+		this.keepDuration = keepDuration;
+		if(keepDuration != null){
+			putQueryParameter("KeepDuration", keepDuration.toString());
 		}
 	}
 

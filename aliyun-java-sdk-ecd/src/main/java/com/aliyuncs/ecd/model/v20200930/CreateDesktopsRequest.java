@@ -26,6 +26,8 @@ import com.aliyuncs.ecd.Endpoint;
 public class CreateDesktopsRequest extends RpcAcsRequest<CreateDesktopsResponse> {
 	   
 
+	private String resourceGroupId;
+
 	private String hostname;
 
 	private List<DesktopTimers> desktopTimerss;
@@ -39,6 +41,8 @@ public class CreateDesktopsRequest extends RpcAcsRequest<CreateDesktopsResponse>
 	private List<BundleModels> bundleModelss;
 
 	private Boolean volumeEncryptionEnabled;
+
+	private MonthDesktopSetting monthDesktopSetting;
 
 	private Integer period;
 
@@ -55,6 +59,8 @@ public class CreateDesktopsRequest extends RpcAcsRequest<CreateDesktopsResponse>
 	private String volumeEncryptionKey;
 
 	private String officeSiteId;
+
+	private String snapshotPolicyId;
 
 	private String bundleId;
 
@@ -84,6 +90,17 @@ public class CreateDesktopsRequest extends RpcAcsRequest<CreateDesktopsResponse>
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
 	}
 
 	public String getHostname() {
@@ -188,6 +205,21 @@ public class CreateDesktopsRequest extends RpcAcsRequest<CreateDesktopsResponse>
 		}
 	}
 
+	public MonthDesktopSetting getMonthDesktopSetting() {
+		return this.monthDesktopSetting;
+	}
+
+	public void setMonthDesktopSetting(MonthDesktopSetting monthDesktopSetting) {
+		this.monthDesktopSetting = monthDesktopSetting;	
+		if (monthDesktopSetting != null) {
+			
+				putQueryParameter("MonthDesktopSetting.PostPaidAfterUsedUp" , monthDesktopSetting.getPostPaidAfterUsedUp());
+				putQueryParameter("MonthDesktopSetting.DesktopId" , monthDesktopSetting.getDesktopId());
+				putQueryParameter("MonthDesktopSetting.UseDuration" , monthDesktopSetting.getUseDuration());
+				putQueryParameter("MonthDesktopSetting.BuyerId" , monthDesktopSetting.getBuyerId());
+		}	
+	}
+
 	public Integer getPeriod() {
 		return this.period;
 	}
@@ -277,6 +309,17 @@ public class CreateDesktopsRequest extends RpcAcsRequest<CreateDesktopsResponse>
 		this.officeSiteId = officeSiteId;
 		if(officeSiteId != null){
 			putQueryParameter("OfficeSiteId", officeSiteId);
+		}
+	}
+
+	public String getSnapshotPolicyId() {
+		return this.snapshotPolicyId;
+	}
+
+	public void setSnapshotPolicyId(String snapshotPolicyId) {
+		this.snapshotPolicyId = snapshotPolicyId;
+		if(snapshotPolicyId != null){
+			putQueryParameter("SnapshotPolicyId", snapshotPolicyId);
 		}
 	}
 
@@ -567,6 +610,49 @@ public class CreateDesktopsRequest extends RpcAcsRequest<CreateDesktopsResponse>
 
 		public void setBundleId(String bundleId) {
 			this.bundleId = bundleId;
+		}
+	}
+
+	public static class MonthDesktopSetting {
+
+		private Boolean postPaidAfterUsedUp;
+
+		private String desktopId;
+
+		private Integer useDuration;
+
+		private Long buyerId;
+
+		public Boolean getPostPaidAfterUsedUp() {
+			return this.postPaidAfterUsedUp;
+		}
+
+		public void setPostPaidAfterUsedUp(Boolean postPaidAfterUsedUp) {
+			this.postPaidAfterUsedUp = postPaidAfterUsedUp;
+		}
+
+		public String getDesktopId() {
+			return this.desktopId;
+		}
+
+		public void setDesktopId(String desktopId) {
+			this.desktopId = desktopId;
+		}
+
+		public Integer getUseDuration() {
+			return this.useDuration;
+		}
+
+		public void setUseDuration(Integer useDuration) {
+			this.useDuration = useDuration;
+		}
+
+		public Long getBuyerId() {
+			return this.buyerId;
+		}
+
+		public void setBuyerId(Long buyerId) {
+			this.buyerId = buyerId;
 		}
 	}
 

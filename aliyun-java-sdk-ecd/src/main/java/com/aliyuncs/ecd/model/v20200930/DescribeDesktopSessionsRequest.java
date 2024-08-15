@@ -15,6 +15,7 @@
 package com.aliyuncs.ecd.model.v20200930;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ecd.Endpoint;
 
@@ -27,8 +28,6 @@ public class DescribeDesktopSessionsRequest extends RpcAcsRequest<DescribeDeskto
 
 	private String officeSiteId;
 
-	private String endTime;
-
 	private String startTime;
 
 	private Integer pageNumber;
@@ -38,6 +37,16 @@ public class DescribeDesktopSessionsRequest extends RpcAcsRequest<DescribeDeskto
 	private Integer pageSize;
 
 	private String endUserId;
+
+	private List<String> desktopIds;
+
+	private String desktopName;
+
+	private String endTime;
+
+	private String subPayType;
+
+	private Boolean checkOsSession;
 	public DescribeDesktopSessionsRequest() {
 		super("ecd", "2020-09-30", "DescribeDesktopSessions", "gwsecd");
 		setMethod(MethodType.POST);
@@ -55,17 +64,6 @@ public class DescribeDesktopSessionsRequest extends RpcAcsRequest<DescribeDeskto
 		this.officeSiteId = officeSiteId;
 		if(officeSiteId != null){
 			putQueryParameter("OfficeSiteId", officeSiteId);
-		}
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
 		}
 	}
 
@@ -121,6 +119,63 @@ public class DescribeDesktopSessionsRequest extends RpcAcsRequest<DescribeDeskto
 		this.endUserId = endUserId;
 		if(endUserId != null){
 			putQueryParameter("EndUserId", endUserId);
+		}
+	}
+
+	public List<String> getDesktopIds() {
+		return this.desktopIds;
+	}
+
+	public void setDesktopIds(List<String> desktopIds) {
+		this.desktopIds = desktopIds;	
+		if (desktopIds != null) {
+			for (int i = 0; i < desktopIds.size(); i++) {
+				putQueryParameter("DesktopId." + (i + 1) , desktopIds.get(i));
+			}
+		}	
+	}
+
+	public String getDesktopName() {
+		return this.desktopName;
+	}
+
+	public void setDesktopName(String desktopName) {
+		this.desktopName = desktopName;
+		if(desktopName != null){
+			putQueryParameter("DesktopName", desktopName);
+		}
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
+	}
+
+	public String getSubPayType() {
+		return this.subPayType;
+	}
+
+	public void setSubPayType(String subPayType) {
+		this.subPayType = subPayType;
+		if(subPayType != null){
+			putQueryParameter("SubPayType", subPayType);
+		}
+	}
+
+	public Boolean getCheckOsSession() {
+		return this.checkOsSession;
+	}
+
+	public void setCheckOsSession(Boolean checkOsSession) {
+		this.checkOsSession = checkOsSession;
+		if(checkOsSession != null){
+			putQueryParameter("CheckOsSession", checkOsSession.toString());
 		}
 	}
 

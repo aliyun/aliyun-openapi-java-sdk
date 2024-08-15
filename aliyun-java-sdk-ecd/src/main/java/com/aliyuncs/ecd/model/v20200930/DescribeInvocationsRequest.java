@@ -45,6 +45,8 @@ public class DescribeInvocationsRequest extends RpcAcsRequest<DescribeInvocation
 	private String commandType;
 
 	private Integer maxResults;
+
+	private Boolean includeInvokeDesktops;
 	public DescribeInvocationsRequest() {
 		super("ecd", "2020-09-30", "DescribeInvocations", "gwsecd");
 		setMethod(MethodType.POST);
@@ -163,6 +165,17 @@ public class DescribeInvocationsRequest extends RpcAcsRequest<DescribeInvocation
 		this.maxResults = maxResults;
 		if(maxResults != null){
 			putQueryParameter("MaxResults", maxResults.toString());
+		}
+	}
+
+	public Boolean getIncludeInvokeDesktops() {
+		return this.includeInvokeDesktops;
+	}
+
+	public void setIncludeInvokeDesktops(Boolean includeInvokeDesktops) {
+		this.includeInvokeDesktops = includeInvokeDesktops;
+		if(includeInvokeDesktops != null){
+			putQueryParameter("IncludeInvokeDesktops", includeInvokeDesktops.toString());
 		}
 	}
 

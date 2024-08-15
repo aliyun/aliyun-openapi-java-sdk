@@ -32,6 +32,8 @@ public class CreateDesktopGroupRequest extends RpcAcsRequest<CreateDesktopGroupR
 
 	private Integer groupVersion;
 
+	private List<Tag> tags;
+
 	private Boolean allClassifyUsers;
 
 	private Integer maxDesktopsCount;
@@ -94,6 +96,8 @@ public class CreateDesktopGroupRequest extends RpcAcsRequest<CreateDesktopGroupR
 
 	private Long stopDuration;
 
+	private String promotionId;
+
 	private Long connectDuration;
 
 	private String vpcId;
@@ -139,6 +143,20 @@ public class CreateDesktopGroupRequest extends RpcAcsRequest<CreateDesktopGroupR
 		if(groupVersion != null){
 			putQueryParameter("GroupVersion", groupVersion.toString());
 		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
 	}
 
 	public Boolean getAllClassifyUsers() {
@@ -484,6 +502,17 @@ public class CreateDesktopGroupRequest extends RpcAcsRequest<CreateDesktopGroupR
 		}
 	}
 
+	public String getPromotionId() {
+		return this.promotionId;
+	}
+
+	public void setPromotionId(String promotionId) {
+		this.promotionId = promotionId;
+		if(promotionId != null){
+			putQueryParameter("PromotionId", promotionId);
+		}
+	}
+
 	public Long getConnectDuration() {
 		return this.connectDuration;
 	}
@@ -514,6 +543,29 @@ public class CreateDesktopGroupRequest extends RpcAcsRequest<CreateDesktopGroupR
 		this.chargeType = chargeType;
 		if(chargeType != null){
 			putQueryParameter("ChargeType", chargeType);
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

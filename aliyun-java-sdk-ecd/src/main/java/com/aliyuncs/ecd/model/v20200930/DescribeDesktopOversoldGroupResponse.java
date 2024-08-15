@@ -101,6 +101,10 @@ public class DescribeDesktopOversoldGroupResponse extends AcsResponse {
 
 		private Integer curConcurrenceCount;
 
+		private String keepDuration;
+
+		private String idleDisconnectDuration;
+
 		public String getDirectoryId() {
 			return this.directoryId;
 		}
@@ -235,6 +239,22 @@ public class DescribeDesktopOversoldGroupResponse extends AcsResponse {
 
 		public void setCurConcurrenceCount(Integer curConcurrenceCount) {
 			this.curConcurrenceCount = curConcurrenceCount;
+		}
+
+		public String getKeepDuration() {
+			return this.keepDuration;
+		}
+
+		public void setKeepDuration(String keepDuration) {
+			this.keepDuration = keepDuration;
+		}
+
+		public String getIdleDisconnectDuration() {
+			return this.idleDisconnectDuration;
+		}
+
+		public void setIdleDisconnectDuration(String idleDisconnectDuration) {
+			this.idleDisconnectDuration = idleDisconnectDuration;
 		}
 	}
 

@@ -193,6 +193,16 @@ public class DescribeCloudDriveGroupsResponse extends AcsResponse {
 
 			private String nickName;
 
+			private String realNickName;
+
+			private String remark;
+
+			private String phone;
+
+			private String email;
+
+			private String jobNumber;
+
 			public String getEndUserId() {
 				return this.endUserId;
 			}
@@ -207,6 +217,46 @@ public class DescribeCloudDriveGroupsResponse extends AcsResponse {
 
 			public void setNickName(String nickName) {
 				this.nickName = nickName;
+			}
+
+			public String getRealNickName() {
+				return this.realNickName;
+			}
+
+			public void setRealNickName(String realNickName) {
+				this.realNickName = realNickName;
+			}
+
+			public String getRemark() {
+				return this.remark;
+			}
+
+			public void setRemark(String remark) {
+				this.remark = remark;
+			}
+
+			public String getPhone() {
+				return this.phone;
+			}
+
+			public void setPhone(String phone) {
+				this.phone = phone;
+			}
+
+			public String getEmail() {
+				return this.email;
+			}
+
+			public void setEmail(String email) {
+				this.email = email;
+			}
+
+			public String getJobNumber() {
+				return this.jobNumber;
+			}
+
+			public void setJobNumber(String jobNumber) {
+				this.jobNumber = jobNumber;
 			}
 		}
 	}

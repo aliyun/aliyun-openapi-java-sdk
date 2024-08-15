@@ -14,7 +14,13 @@
 
 package com.aliyuncs.ecd.transform.v20200930;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.ecd.model.v20200930.CreateCloudDriveServiceResponse;
+import com.aliyuncs.ecd.model.v20200930.CreateCloudDriveServiceResponse.ConflictCdsAndOrder;
+import com.aliyuncs.ecd.model.v20200930.CreateCloudDriveServiceResponse.ConflictCdsAndOrder.ConflictCdsItem;
+import com.aliyuncs.ecd.model.v20200930.CreateCloudDriveServiceResponse.ConflictCdsAndOrder.ConflictOrderItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -29,6 +35,32 @@ public class CreateCloudDriveServiceResponseUnmarshaller {
 		createCloudDriveServiceResponse.setOfficeSiteType(_ctx.stringValue("CreateCloudDriveServiceResponse.OfficeSiteType"));
 		createCloudDriveServiceResponse.setCenId(_ctx.stringValue("CreateCloudDriveServiceResponse.CenId"));
 		createCloudDriveServiceResponse.setDomainName(_ctx.stringValue("CreateCloudDriveServiceResponse.DomainName"));
+		createCloudDriveServiceResponse.setOrderId(_ctx.stringValue("CreateCloudDriveServiceResponse.OrderId"));
+		createCloudDriveServiceResponse.setErrorCode(_ctx.stringValue("CreateCloudDriveServiceResponse.ErrorCode"));
+
+		ConflictCdsAndOrder conflictCdsAndOrder = new ConflictCdsAndOrder();
+
+		List<ConflictCdsItem> conflictCds = new ArrayList<ConflictCdsItem>();
+		for (int i = 0; i < _ctx.lengthValue("CreateCloudDriveServiceResponse.ConflictCdsAndOrder.ConflictCds.Length"); i++) {
+			ConflictCdsItem conflictCdsItem = new ConflictCdsItem();
+			conflictCdsItem.setCdsId(_ctx.stringValue("CreateCloudDriveServiceResponse.ConflictCdsAndOrder.ConflictCds["+ i +"].CdsId"));
+			conflictCdsItem.setRegionId(_ctx.stringValue("CreateCloudDriveServiceResponse.ConflictCdsAndOrder.ConflictCds["+ i +"].RegionId"));
+
+			conflictCds.add(conflictCdsItem);
+		}
+		conflictCdsAndOrder.setConflictCds(conflictCds);
+
+		List<ConflictOrderItem> conflictOrder = new ArrayList<ConflictOrderItem>();
+		for (int i = 0; i < _ctx.lengthValue("CreateCloudDriveServiceResponse.ConflictCdsAndOrder.ConflictOrder.Length"); i++) {
+			ConflictOrderItem conflictOrderItem = new ConflictOrderItem();
+			conflictOrderItem.setCdsId(_ctx.stringValue("CreateCloudDriveServiceResponse.ConflictCdsAndOrder.ConflictOrder["+ i +"].CdsId"));
+			conflictOrderItem.setOrderId(_ctx.stringValue("CreateCloudDriveServiceResponse.ConflictCdsAndOrder.ConflictOrder["+ i +"].OrderId"));
+			conflictOrderItem.setRegionId(_ctx.stringValue("CreateCloudDriveServiceResponse.ConflictCdsAndOrder.ConflictOrder["+ i +"].RegionId"));
+
+			conflictOrder.add(conflictOrderItem);
+		}
+		conflictCdsAndOrder.setConflictOrder(conflictOrder);
+		createCloudDriveServiceResponse.setConflictCdsAndOrder(conflictCdsAndOrder);
 	 
 	 	return createCloudDriveServiceResponse;
 	}

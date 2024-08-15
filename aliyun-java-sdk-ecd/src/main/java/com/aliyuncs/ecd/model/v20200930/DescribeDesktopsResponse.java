@@ -169,6 +169,12 @@ public class DescribeDesktopsResponse extends AcsResponse {
 
 		private Boolean hibernationBeta;
 
+		private String subPayType;
+
+		private String gpuInstanceGroupId;
+
+		private String qosRuleId;
+
 		private List<Disk> disks;
 
 		private List<Tag> tags;
@@ -176,6 +182,8 @@ public class DescribeDesktopsResponse extends AcsResponse {
 		private List<Session> sessions;
 
 		private List<DesktopDuration> desktopDurationList;
+
+		private List<ResourceGroup> resourceGroups;
 
 		private List<String> endUserIds;
 
@@ -595,6 +603,30 @@ public class DescribeDesktopsResponse extends AcsResponse {
 			this.hibernationBeta = hibernationBeta;
 		}
 
+		public String getSubPayType() {
+			return this.subPayType;
+		}
+
+		public void setSubPayType(String subPayType) {
+			this.subPayType = subPayType;
+		}
+
+		public String getGpuInstanceGroupId() {
+			return this.gpuInstanceGroupId;
+		}
+
+		public void setGpuInstanceGroupId(String gpuInstanceGroupId) {
+			this.gpuInstanceGroupId = gpuInstanceGroupId;
+		}
+
+		public String getQosRuleId() {
+			return this.qosRuleId;
+		}
+
+		public void setQosRuleId(String qosRuleId) {
+			this.qosRuleId = qosRuleId;
+		}
+
 		public List<Disk> getDisks() {
 			return this.disks;
 		}
@@ -625,6 +657,14 @@ public class DescribeDesktopsResponse extends AcsResponse {
 
 		public void setDesktopDurationList(List<DesktopDuration> desktopDurationList) {
 			this.desktopDurationList = desktopDurationList;
+		}
+
+		public List<ResourceGroup> getResourceGroups() {
+			return this.resourceGroups;
+		}
+
+		public void setResourceGroups(List<ResourceGroup> resourceGroups) {
+			this.resourceGroups = resourceGroups;
 		}
 
 		public List<String> getEndUserIds() {
@@ -780,6 +820,18 @@ public class DescribeDesktopsResponse extends AcsResponse {
 
 			private String packageStatus;
 
+			private String packageType;
+
+			private String periodStartTime;
+
+			private String periodEndTime;
+
+			private Float postPaidLimitFee;
+
+			private String packageUsedUpStrategy;
+
+			private String orderInstanceId;
+
 			public String getPackageId() {
 				return this.packageId;
 			}
@@ -826,6 +878,77 @@ public class DescribeDesktopsResponse extends AcsResponse {
 
 			public void setPackageStatus(String packageStatus) {
 				this.packageStatus = packageStatus;
+			}
+
+			public String getPackageType() {
+				return this.packageType;
+			}
+
+			public void setPackageType(String packageType) {
+				this.packageType = packageType;
+			}
+
+			public String getPeriodStartTime() {
+				return this.periodStartTime;
+			}
+
+			public void setPeriodStartTime(String periodStartTime) {
+				this.periodStartTime = periodStartTime;
+			}
+
+			public String getPeriodEndTime() {
+				return this.periodEndTime;
+			}
+
+			public void setPeriodEndTime(String periodEndTime) {
+				this.periodEndTime = periodEndTime;
+			}
+
+			public Float getPostPaidLimitFee() {
+				return this.postPaidLimitFee;
+			}
+
+			public void setPostPaidLimitFee(Float postPaidLimitFee) {
+				this.postPaidLimitFee = postPaidLimitFee;
+			}
+
+			public String getPackageUsedUpStrategy() {
+				return this.packageUsedUpStrategy;
+			}
+
+			public void setPackageUsedUpStrategy(String packageUsedUpStrategy) {
+				this.packageUsedUpStrategy = packageUsedUpStrategy;
+			}
+
+			public String getOrderInstanceId() {
+				return this.orderInstanceId;
+			}
+
+			public void setOrderInstanceId(String orderInstanceId) {
+				this.orderInstanceId = orderInstanceId;
+			}
+		}
+
+		public static class ResourceGroup {
+
+			private String name;
+
+			private String id;
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getId() {
+				return this.id;
+			}
+
+			public void setId(String id) {
+				this.id = id;
 			}
 		}
 

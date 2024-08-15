@@ -39,6 +39,7 @@ public class DescribeDesktopInfoResponseUnmarshaller {
 			desktop.setNewAppVersion(_ctx.stringValue("DescribeDesktopInfoResponse.Desktops["+ i +"].NewAppVersion"));
 			desktop.setReleaseNote(_ctx.stringValue("DescribeDesktopInfoResponse.Desktops["+ i +"].ReleaseNote"));
 			desktop.setNewAppSize(_ctx.longValue("DescribeDesktopInfoResponse.Desktops["+ i +"].NewAppSize"));
+			desktop.setDesktopGroupId(_ctx.stringValue("DescribeDesktopInfoResponse.Desktops["+ i +"].DesktopGroupId"));
 
 			List<String> managementFlag = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDesktopInfoResponse.Desktops["+ i +"].ManagementFlag.Length"); j++) {

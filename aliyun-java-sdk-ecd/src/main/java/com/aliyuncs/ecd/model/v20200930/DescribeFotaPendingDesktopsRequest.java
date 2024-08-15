@@ -38,7 +38,7 @@ public class DescribeFotaPendingDesktopsRequest extends RpcAcsRequest<DescribeFo
 	private String desktopId;
 	public DescribeFotaPendingDesktopsRequest() {
 		super("ecd", "2020-09-30", "DescribeFotaPendingDesktops", "gwsecd");
-		setMethod(MethodType.GET);
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);

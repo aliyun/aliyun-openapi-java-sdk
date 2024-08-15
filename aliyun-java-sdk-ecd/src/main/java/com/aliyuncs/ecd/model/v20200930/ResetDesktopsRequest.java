@@ -28,6 +28,8 @@ public class ResetDesktopsRequest extends RpcAcsRequest<ResetDesktopsResponse> {
 
 	private String imageId;
 
+	private String resetScope;
+
 	private String resetType;
 
 	private String desktopGroupId;
@@ -35,6 +37,8 @@ public class ResetDesktopsRequest extends RpcAcsRequest<ResetDesktopsResponse> {
 	private List<String> desktopIds;
 
 	private String payType;
+
+	private List<String> desktopGroupIdss;
 	public ResetDesktopsRequest() {
 		super("ecd", "2020-09-30", "ResetDesktops", "gwsecd");
 		setMethod(MethodType.POST);
@@ -52,6 +56,17 @@ public class ResetDesktopsRequest extends RpcAcsRequest<ResetDesktopsResponse> {
 		this.imageId = imageId;
 		if(imageId != null){
 			putQueryParameter("ImageId", imageId);
+		}
+	}
+
+	public String getResetScope() {
+		return this.resetScope;
+	}
+
+	public void setResetScope(String resetScope) {
+		this.resetScope = resetScope;
+		if(resetScope != null){
+			putQueryParameter("ResetScope", resetScope);
 		}
 	}
 
@@ -99,6 +114,19 @@ public class ResetDesktopsRequest extends RpcAcsRequest<ResetDesktopsResponse> {
 		if(payType != null){
 			putQueryParameter("PayType", payType);
 		}
+	}
+
+	public List<String> getDesktopGroupIdss() {
+		return this.desktopGroupIdss;
+	}
+
+	public void setDesktopGroupIdss(List<String> desktopGroupIdss) {
+		this.desktopGroupIdss = desktopGroupIdss;	
+		if (desktopGroupIdss != null) {
+			for (int i = 0; i < desktopGroupIdss.size(); i++) {
+				putQueryParameter("DesktopGroupIds." + (i + 1) , desktopGroupIdss.get(i));
+			}
+		}	
 	}
 
 	@Override

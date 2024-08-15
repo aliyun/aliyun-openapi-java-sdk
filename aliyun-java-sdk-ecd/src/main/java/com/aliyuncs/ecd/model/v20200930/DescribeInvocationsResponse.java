@@ -69,6 +69,10 @@ public class DescribeInvocationsResponse extends AcsResponse {
 
 		private String endUserId;
 
+		private Integer invokeDesktopCount;
+
+		private Integer invokeDesktopSucceedCount;
+
 		private List<InvokeDesktop> invokeDesktops;
 
 		public String getInvokeId() {
@@ -117,6 +121,22 @@ public class DescribeInvocationsResponse extends AcsResponse {
 
 		public void setEndUserId(String endUserId) {
 			this.endUserId = endUserId;
+		}
+
+		public Integer getInvokeDesktopCount() {
+			return this.invokeDesktopCount;
+		}
+
+		public void setInvokeDesktopCount(Integer invokeDesktopCount) {
+			this.invokeDesktopCount = invokeDesktopCount;
+		}
+
+		public Integer getInvokeDesktopSucceedCount() {
+			return this.invokeDesktopSucceedCount;
+		}
+
+		public void setInvokeDesktopSucceedCount(Integer invokeDesktopSucceedCount) {
+			this.invokeDesktopSucceedCount = invokeDesktopSucceedCount;
 		}
 
 		public List<InvokeDesktop> getInvokeDesktops() {

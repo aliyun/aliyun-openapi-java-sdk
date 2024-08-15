@@ -33,6 +33,8 @@ public class CreateDesktopOversoldGroupRequest extends RpcAcsRequest<CreateDeskt
 
 	private Integer oversoldWarn;
 
+	private Long idleDisconnectDuration;
+
 	private Integer systemDiskSize;
 
 	private String directoryId;
@@ -42,6 +44,8 @@ public class CreateDesktopOversoldGroupRequest extends RpcAcsRequest<CreateDeskt
 	private Integer period;
 
 	private Integer stopDuration;
+
+	private Integer keepDuration;
 
 	private String periodUnit;
 
@@ -105,6 +109,17 @@ public class CreateDesktopOversoldGroupRequest extends RpcAcsRequest<CreateDeskt
 		}
 	}
 
+	public Long getIdleDisconnectDuration() {
+		return this.idleDisconnectDuration;
+	}
+
+	public void setIdleDisconnectDuration(Long idleDisconnectDuration) {
+		this.idleDisconnectDuration = idleDisconnectDuration;
+		if(idleDisconnectDuration != null){
+			putQueryParameter("IdleDisconnectDuration", idleDisconnectDuration.toString());
+		}
+	}
+
 	public Integer getSystemDiskSize() {
 		return this.systemDiskSize;
 	}
@@ -157,6 +172,17 @@ public class CreateDesktopOversoldGroupRequest extends RpcAcsRequest<CreateDeskt
 		this.stopDuration = stopDuration;
 		if(stopDuration != null){
 			putQueryParameter("StopDuration", stopDuration.toString());
+		}
+	}
+
+	public Integer getKeepDuration() {
+		return this.keepDuration;
+	}
+
+	public void setKeepDuration(Integer keepDuration) {
+		this.keepDuration = keepDuration;
+		if(keepDuration != null){
+			putQueryParameter("KeepDuration", keepDuration.toString());
 		}
 	}
 

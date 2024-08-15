@@ -32,6 +32,8 @@ public class DescribeOfficeSitesRequest extends RpcAcsRequest<DescribeOfficeSite
 
 	private String nextToken;
 
+	private String securityProtection;
+
 	private Integer maxResults;
 
 	private String status;
@@ -76,6 +78,17 @@ public class DescribeOfficeSitesRequest extends RpcAcsRequest<DescribeOfficeSite
 		this.nextToken = nextToken;
 		if(nextToken != null){
 			putQueryParameter("NextToken", nextToken);
+		}
+	}
+
+	public String getSecurityProtection() {
+		return this.securityProtection;
+	}
+
+	public void setSecurityProtection(String securityProtection) {
+		this.securityProtection = securityProtection;
+		if(securityProtection != null){
+			putQueryParameter("SecurityProtection", securityProtection);
 		}
 	}
 

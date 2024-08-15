@@ -49,6 +49,8 @@ public class DescribeDesktopSessionsResponseUnmarshaller {
 			session.setSessionIdleTime(_ctx.longValue("DescribeDesktopSessionsResponse.Sessions["+ i +"].SessionIdleTime"));
 			session.setOsType(_ctx.stringValue("DescribeDesktopSessionsResponse.Sessions["+ i +"].OsType"));
 			session.setEndUserApplyCoordinateTime(_ctx.longValue("DescribeDesktopSessionsResponse.Sessions["+ i +"].EndUserApplyCoordinateTime"));
+			session.setSubPayType(_ctx.stringValue("DescribeDesktopSessionsResponse.Sessions["+ i +"].SubPayType"));
+			session.setOsSessionStatus(_ctx.stringValue("DescribeDesktopSessionsResponse.Sessions["+ i +"].OsSessionStatus"));
 
 			sessions.add(session);
 		}
