@@ -42,6 +42,9 @@ public class ListSilencePoliciesResponseUnmarshaller {
 			policies.setId(_ctx.longValue("ListSilencePoliciesResponse.PageBean.SilencePolicies["+ i +"].Id"));
 			policies.setName(_ctx.stringValue("ListSilencePoliciesResponse.PageBean.SilencePolicies["+ i +"].Name"));
 			policies.setState(_ctx.stringValue("ListSilencePoliciesResponse.PageBean.SilencePolicies["+ i +"].State"));
+			policies.setTimeSlots(_ctx.stringValue("ListSilencePoliciesResponse.PageBean.SilencePolicies["+ i +"].TimeSlots"));
+			policies.setTimePeriod(_ctx.stringValue("ListSilencePoliciesResponse.PageBean.SilencePolicies["+ i +"].TimePeriod"));
+			policies.setEffectiveTimeType(_ctx.stringValue("ListSilencePoliciesResponse.PageBean.SilencePolicies["+ i +"].EffectiveTimeType"));
 
 			List<MatchingRulesItem> matchingRules = new ArrayList<MatchingRulesItem>();
 			for (int j = 0; j < _ctx.lengthValue("ListSilencePoliciesResponse.PageBean.SilencePolicies["+ i +"].MatchingRules.Length"); j++) {

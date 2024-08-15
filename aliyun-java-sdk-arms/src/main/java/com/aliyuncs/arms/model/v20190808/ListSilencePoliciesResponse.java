@@ -95,6 +95,12 @@ public class ListSilencePoliciesResponse extends AcsResponse {
 
 			private String state;
 
+			private String timeSlots;
+
+			private String timePeriod;
+
+			private String effectiveTimeType;
+
 			private List<MatchingRulesItem> matchingRules;
 
 			public Long getId() {
@@ -119,6 +125,30 @@ public class ListSilencePoliciesResponse extends AcsResponse {
 
 			public void setState(String state) {
 				this.state = state;
+			}
+
+			public String getTimeSlots() {
+				return this.timeSlots;
+			}
+
+			public void setTimeSlots(String timeSlots) {
+				this.timeSlots = timeSlots;
+			}
+
+			public String getTimePeriod() {
+				return this.timePeriod;
+			}
+
+			public void setTimePeriod(String timePeriod) {
+				this.timePeriod = timePeriod;
+			}
+
+			public String getEffectiveTimeType() {
+				return this.effectiveTimeType;
+			}
+
+			public void setEffectiveTimeType(String effectiveTimeType) {
+				this.effectiveTimeType = effectiveTimeType;
 			}
 
 			public List<MatchingRulesItem> getMatchingRules() {

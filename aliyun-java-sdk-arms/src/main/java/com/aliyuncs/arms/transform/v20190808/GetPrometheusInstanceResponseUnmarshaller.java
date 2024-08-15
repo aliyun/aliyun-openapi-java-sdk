@@ -61,11 +61,11 @@ public class GetPrometheusInstanceResponseUnmarshaller {
 		data.setProduct(_ctx.stringValue("GetPrometheusInstanceResponse.Data.Product"));
 		data.setDbInstanceStatus(_ctx.stringValue("GetPrometheusInstanceResponse.Data.DbInstanceStatus"));
 
-		List<String> surpportAuthTypes = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("GetPrometheusInstanceResponse.Data.SurpportAuthTypes.Length"); i++) {
-			surpportAuthTypes.add(_ctx.stringValue("GetPrometheusInstanceResponse.Data.SurpportAuthTypes["+ i +"]"));
+		List<String> supportAuthTypes = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("GetPrometheusInstanceResponse.Data.SupportAuthTypes.Length"); i++) {
+			supportAuthTypes.add(_ctx.stringValue("GetPrometheusInstanceResponse.Data.SupportAuthTypes["+ i +"]"));
 		}
-		data.setSurpportAuthTypes(surpportAuthTypes);
+		data.setSupportAuthTypes(supportAuthTypes);
 
 		List<TagsItem> tags = new ArrayList<TagsItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetPrometheusInstanceResponse.Data.Tags.Length"); i++) {

@@ -125,7 +125,7 @@ public class GetPrometheusInstanceResponse extends AcsResponse {
 
 		private List<TagsItem> tags;
 
-		private List<String> surpportAuthTypes;
+		private List<String> supportAuthTypes;
 
 		public String getClusterId() {
 			return this.clusterId;
@@ -359,12 +359,12 @@ public class GetPrometheusInstanceResponse extends AcsResponse {
 			this.tags = tags;
 		}
 
-		public List<String> getSurpportAuthTypes() {
-			return this.surpportAuthTypes;
+		public List<String> getSupportAuthTypes() {
+			return this.supportAuthTypes;
 		}
 
-		public void setSurpportAuthTypes(List<String> surpportAuthTypes) {
-			this.surpportAuthTypes = surpportAuthTypes;
+		public void setSupportAuthTypes(List<String> supportAuthTypes) {
+			this.supportAuthTypes = supportAuthTypes;
 		}
 
 		public static class TagsItem {

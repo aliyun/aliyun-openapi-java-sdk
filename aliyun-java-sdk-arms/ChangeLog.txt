@@ -1,3 +1,7 @@
+2024-08-15 Version: 2.8.37
+- Support effective time for CreateOrUpdateSilencePolicy interface.
+- Fix spelling errors in the field SupportAuthTypes.
+
 2024-08-05 Version: 2.8.36
 - Offline remote write related APIs.
 - Mark the managedPrometheus related APIs as deprecated.
