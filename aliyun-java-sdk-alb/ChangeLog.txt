@@ -1,3 +1,6 @@
+2024-08-19 Version: 1.0.19
+- support slow-start and connection drain for server group
+
 2024-07-24 Version: 1.0.18
 - Generated 2020-06-16 for `Alb`.
 
