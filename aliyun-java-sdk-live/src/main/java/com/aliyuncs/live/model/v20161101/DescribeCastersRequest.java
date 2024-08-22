@@ -29,6 +29,8 @@ public class DescribeCastersRequest extends RpcAcsRequest<DescribeCastersRespons
 
 	private Integer pageNum;
 
+	private String resourceGroupId;
+
 	private String casterName;
 
 	private Integer pageSize;
@@ -74,6 +76,17 @@ public class DescribeCastersRequest extends RpcAcsRequest<DescribeCastersRespons
 		this.pageNum = pageNum;
 		if(pageNum != null){
 			putQueryParameter("PageNum", pageNum.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

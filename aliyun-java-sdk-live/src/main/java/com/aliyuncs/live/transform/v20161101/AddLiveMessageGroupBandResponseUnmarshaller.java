@@ -14,16 +14,16 @@
 
 package com.aliyuncs.live.transform.v20161101;
 
-import com.aliyuncs.live.model.v20161101.SetCasterTimedEventResponse;
+import com.aliyuncs.live.model.v20161101.AddLiveMessageGroupBandResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class SetCasterTimedEventResponseUnmarshaller {
+public class AddLiveMessageGroupBandResponseUnmarshaller {
 
-	public static SetCasterTimedEventResponse unmarshall(SetCasterTimedEventResponse setCasterTimedEventResponse, UnmarshallerContext _ctx) {
+	public static AddLiveMessageGroupBandResponse unmarshall(AddLiveMessageGroupBandResponse addLiveMessageGroupBandResponse, UnmarshallerContext _ctx) {
 		
-		setCasterTimedEventResponse.setRequestId(_ctx.stringValue("SetCasterTimedEventResponse.RequestId"));
+		addLiveMessageGroupBandResponse.setRequestId(_ctx.stringValue("AddLiveMessageGroupBandResponse.RequestId"));
 	 
-	 	return setCasterTimedEventResponse;
+	 	return addLiveMessageGroupBandResponse;
 	}
 }

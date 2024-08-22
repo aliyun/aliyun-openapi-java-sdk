@@ -15,14 +15,14 @@
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.live.transform.v20161101.TagLiveResourcesResponseUnmarshaller;
+import com.aliyuncs.live.transform.v20161101.RemoveLiveMessageGroupBandResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class TagLiveResourcesResponse extends AcsResponse {
+public class RemoveLiveMessageGroupBandResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -35,7 +35,12 @@ public class TagLiveResourcesResponse extends AcsResponse {
 	}
 
 	@Override
-	public TagLiveResourcesResponse getInstance(UnmarshallerContext context) {
-		return	TagLiveResourcesResponseUnmarshaller.unmarshall(this, context);
+	public RemoveLiveMessageGroupBandResponse getInstance(UnmarshallerContext context) {
+		return	RemoveLiveMessageGroupBandResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

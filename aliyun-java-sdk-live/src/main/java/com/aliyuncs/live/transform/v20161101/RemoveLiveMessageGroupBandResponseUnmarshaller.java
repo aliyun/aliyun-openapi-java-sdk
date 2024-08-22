@@ -14,16 +14,16 @@
 
 package com.aliyuncs.live.transform.v20161101;
 
-import com.aliyuncs.live.model.v20161101.TagLiveResourcesResponse;
+import com.aliyuncs.live.model.v20161101.RemoveLiveMessageGroupBandResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class TagLiveResourcesResponseUnmarshaller {
+public class RemoveLiveMessageGroupBandResponseUnmarshaller {
 
-	public static TagLiveResourcesResponse unmarshall(TagLiveResourcesResponse tagLiveResourcesResponse, UnmarshallerContext _ctx) {
+	public static RemoveLiveMessageGroupBandResponse unmarshall(RemoveLiveMessageGroupBandResponse removeLiveMessageGroupBandResponse, UnmarshallerContext _ctx) {
 		
-		tagLiveResourcesResponse.setRequestId(_ctx.stringValue("TagLiveResourcesResponse.RequestId"));
+		removeLiveMessageGroupBandResponse.setRequestId(_ctx.stringValue("RemoveLiveMessageGroupBandResponse.RequestId"));
 	 
-	 	return tagLiveResourcesResponse;
+	 	return removeLiveMessageGroupBandResponse;
 	}
 }

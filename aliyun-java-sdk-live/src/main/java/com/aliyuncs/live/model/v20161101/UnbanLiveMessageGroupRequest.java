@@ -15,6 +15,7 @@
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.live.Endpoint;
 
@@ -22,14 +23,17 @@ import com.aliyuncs.live.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeCasterSyncGroupRequest extends RpcAcsRequest<DescribeCasterSyncGroupResponse> {
+public class UnbanLiveMessageGroupRequest extends RpcAcsRequest<UnbanLiveMessageGroupResponse> {
 	   
 
-	private String casterId;
+	private String groupId;
 
-	private Long ownerId;
-	public DescribeCasterSyncGroupRequest() {
-		super("live", "2016-11-01", "DescribeCasterSyncGroup", "live");
+	private String dataCenter;
+
+	private String appId;
+	public UnbanLiveMessageGroupRequest() {
+		super("live", "2016-11-01", "UnbanLiveMessageGroup", "live");
+		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +41,42 @@ public class DescribeCasterSyncGroupRequest extends RpcAcsRequest<DescribeCaster
 		} catch (Exception e) {}
 	}
 
-	public String getCasterId() {
-		return this.casterId;
+	public String getGroupId() {
+		return this.groupId;
 	}
 
-	public void setCasterId(String casterId) {
-		this.casterId = casterId;
-		if(casterId != null){
-			putQueryParameter("CasterId", casterId);
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	public String getDataCenter() {
+		return this.dataCenter;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
+	public void setDataCenter(String dataCenter) {
+		this.dataCenter = dataCenter;
+		if(dataCenter != null){
+			putQueryParameter("DataCenter", dataCenter);
+		}
+	}
+
+	public String getAppId() {
+		return this.appId;
+	}
+
+	public void setAppId(String appId) {
+		this.appId = appId;
+		if(appId != null){
+			putQueryParameter("AppId", appId);
 		}
 	}
 
 	@Override
-	public Class<DescribeCasterSyncGroupResponse> getResponseClass() {
-		return DescribeCasterSyncGroupResponse.class;
+	public Class<UnbanLiveMessageGroupResponse> getResponseClass() {
+		return UnbanLiveMessageGroupResponse.class;
 	}
 
 }

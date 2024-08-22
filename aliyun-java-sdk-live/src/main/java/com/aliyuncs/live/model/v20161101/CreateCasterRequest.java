@@ -27,6 +27,8 @@ public class CreateCasterRequest extends RpcAcsRequest<CreateCasterResponse> {
 
 	private String clientToken;
 
+	private String resourceGroupId;
+
 	private String casterName;
 
 	private String casterTemplate;
@@ -57,6 +59,17 @@ public class CreateCasterRequest extends RpcAcsRequest<CreateCasterResponse> {
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

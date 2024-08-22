@@ -15,14 +15,14 @@
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.live.transform.v20161101.UpdateLiveTopLevelDomainResponseUnmarshaller;
+import com.aliyuncs.live.transform.v20161101.BanLiveMessageGroupResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class UpdateLiveTopLevelDomainResponse extends AcsResponse {
+public class BanLiveMessageGroupResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -35,7 +35,12 @@ public class UpdateLiveTopLevelDomainResponse extends AcsResponse {
 	}
 
 	@Override
-	public UpdateLiveTopLevelDomainResponse getInstance(UnmarshallerContext context) {
-		return	UpdateLiveTopLevelDomainResponseUnmarshaller.unmarshall(this, context);
+	public BanLiveMessageGroupResponse getInstance(UnmarshallerContext context) {
+		return	BanLiveMessageGroupResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

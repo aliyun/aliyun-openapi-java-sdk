@@ -14,16 +14,16 @@
 
 package com.aliyuncs.live.transform.v20161101;
 
-import com.aliyuncs.live.model.v20161101.UpdateLiveTopLevelDomainResponse;
+import com.aliyuncs.live.model.v20161101.UnbanLiveMessageGroupResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class UpdateLiveTopLevelDomainResponseUnmarshaller {
+public class UnbanLiveMessageGroupResponseUnmarshaller {
 
-	public static UpdateLiveTopLevelDomainResponse unmarshall(UpdateLiveTopLevelDomainResponse updateLiveTopLevelDomainResponse, UnmarshallerContext _ctx) {
+	public static UnbanLiveMessageGroupResponse unmarshall(UnbanLiveMessageGroupResponse unbanLiveMessageGroupResponse, UnmarshallerContext _ctx) {
 		
-		updateLiveTopLevelDomainResponse.setRequestId(_ctx.stringValue("UpdateLiveTopLevelDomainResponse.RequestId"));
+		unbanLiveMessageGroupResponse.setRequestId(_ctx.stringValue("UnbanLiveMessageGroupResponse.RequestId"));
 	 
-	 	return updateLiveTopLevelDomainResponse;
+	 	return unbanLiveMessageGroupResponse;
 	}
 }

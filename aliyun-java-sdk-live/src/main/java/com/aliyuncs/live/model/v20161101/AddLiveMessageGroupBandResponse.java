@@ -15,14 +15,14 @@
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.live.transform.v20161101.SetCasterSyncGroupResponseUnmarshaller;
+import com.aliyuncs.live.transform.v20161101.AddLiveMessageGroupBandResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class SetCasterSyncGroupResponse extends AcsResponse {
+public class AddLiveMessageGroupBandResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -35,7 +35,12 @@ public class SetCasterSyncGroupResponse extends AcsResponse {
 	}
 
 	@Override
-	public SetCasterSyncGroupResponse getInstance(UnmarshallerContext context) {
-		return	SetCasterSyncGroupResponseUnmarshaller.unmarshall(this, context);
+	public AddLiveMessageGroupBandResponse getInstance(UnmarshallerContext context) {
+		return	AddLiveMessageGroupBandResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }
