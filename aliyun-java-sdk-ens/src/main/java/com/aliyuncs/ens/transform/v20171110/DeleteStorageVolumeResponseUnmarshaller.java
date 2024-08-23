@@ -14,17 +14,16 @@
 
 package com.aliyuncs.ens.transform.v20171110;
 
-import com.aliyuncs.ens.model.v20171110.PutBucketLifecycleResponse;
+import com.aliyuncs.ens.model.v20171110.DeleteStorageVolumeResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class PutBucketLifecycleResponseUnmarshaller {
+public class DeleteStorageVolumeResponseUnmarshaller {
 
-	public static PutBucketLifecycleResponse unmarshall(PutBucketLifecycleResponse putBucketLifecycleResponse, UnmarshallerContext _ctx) {
+	public static DeleteStorageVolumeResponse unmarshall(DeleteStorageVolumeResponse deleteStorageVolumeResponse, UnmarshallerContext _ctx) {
 		
-		putBucketLifecycleResponse.setRequestId(_ctx.stringValue("PutBucketLifecycleResponse.RequestId"));
-		putBucketLifecycleResponse.setRuleId(_ctx.stringValue("PutBucketLifecycleResponse.RuleId"));
+		deleteStorageVolumeResponse.setRequestId(_ctx.stringValue("DeleteStorageVolumeResponse.RequestId"));
 	 
-	 	return putBucketLifecycleResponse;
+	 	return deleteStorageVolumeResponse;
 	}
 }

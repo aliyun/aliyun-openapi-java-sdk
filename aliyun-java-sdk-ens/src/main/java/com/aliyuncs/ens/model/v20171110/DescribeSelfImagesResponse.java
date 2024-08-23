@@ -81,6 +81,8 @@ public class DescribeSelfImagesResponse extends AcsResponse {
 
 		private String snapshotId;
 
+		private String imageStorageSize;
+
 		public String getArchitecture() {
 			return this.architecture;
 		}
@@ -175,6 +177,14 @@ public class DescribeSelfImagesResponse extends AcsResponse {
 
 		public void setSnapshotId(String snapshotId) {
 			this.snapshotId = snapshotId;
+		}
+
+		public String getImageStorageSize() {
+			return this.imageStorageSize;
+		}
+
+		public void setImageStorageSize(String imageStorageSize) {
+			this.imageStorageSize = imageStorageSize;
 		}
 	}
 

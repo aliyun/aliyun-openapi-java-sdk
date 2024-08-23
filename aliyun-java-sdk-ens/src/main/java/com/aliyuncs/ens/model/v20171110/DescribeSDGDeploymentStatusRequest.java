@@ -15,6 +15,9 @@
 package com.aliyuncs.ens.model.v20171110;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 
@@ -25,25 +28,79 @@ import com.aliyuncs.http.MethodType;
 public class DescribeSDGDeploymentStatusRequest extends RpcAcsRequest<DescribeSDGDeploymentStatusResponse> {
 	   
 
-	private String pageNumber;
+	@SerializedName("regionIds")
+	private List<String> regionIds;
+
+	@SerializedName("instanceIds")
+	private List<String> instanceIds;
+
+	private String status;
+
+	private String deploymentType;
+
+	private Integer pageNumber;
 
 	private String sDGId;
 
-	private String pageSize;
+	private Integer pageSize;
 	public DescribeSDGDeploymentStatusRequest() {
 		super("Ens", "2017-11-10", "DescribeSDGDeploymentStatus", "ens");
 		setProtocol(ProtocolType.HTTPS);
-		setMethod(MethodType.GET);
+		setMethod(MethodType.POST);
 	}
 
-	public String getPageNumber() {
+	public List<String> getRegionIds() {
+		return this.regionIds;
+	}
+
+	public void setRegionIds(List<String> regionIds) {
+		this.regionIds = regionIds;	
+		if (regionIds != null) {
+			putQueryParameter("RegionIds" , new Gson().toJson(regionIds));
+		}	
+	}
+
+	public List<String> getInstanceIds() {
+		return this.instanceIds;
+	}
+
+	public void setInstanceIds(List<String> instanceIds) {
+		this.instanceIds = instanceIds;	
+		if (instanceIds != null) {
+			putQueryParameter("InstanceIds" , new Gson().toJson(instanceIds));
+		}	
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status);
+		}
+	}
+
+	public String getDeploymentType() {
+		return this.deploymentType;
+	}
+
+	public void setDeploymentType(String deploymentType) {
+		this.deploymentType = deploymentType;
+		if(deploymentType != null){
+			putQueryParameter("DeploymentType", deploymentType);
+		}
+	}
+
+	public Integer getPageNumber() {
 		return this.pageNumber;
 	}
 
-	public void setPageNumber(String pageNumber) {
+	public void setPageNumber(Integer pageNumber) {
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber);
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
@@ -58,14 +115,14 @@ public class DescribeSDGDeploymentStatusRequest extends RpcAcsRequest<DescribeSD
 		}
 	}
 
-	public String getPageSize() {
+	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
-	public void setPageSize(String pageSize) {
+	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
 		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize);
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

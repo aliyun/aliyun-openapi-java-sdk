@@ -44,6 +44,7 @@ public class DescribeSelfImagesResponseUnmarshaller {
 			image.setStatus(_ctx.stringValue("DescribeSelfImagesResponse.Images["+ i +"].Status"));
 			image.setComputeType(_ctx.stringValue("DescribeSelfImagesResponse.Images["+ i +"].ComputeType"));
 			image.setSnapshotId(_ctx.stringValue("DescribeSelfImagesResponse.Images["+ i +"].SnapshotId"));
+			image.setImageStorageSize(_ctx.stringValue("DescribeSelfImagesResponse.Images["+ i +"].ImageStorageSize"));
 
 			images.add(image);
 		}

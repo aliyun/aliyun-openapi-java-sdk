@@ -56,6 +56,8 @@ public class DescribeLoadBalancerUDPListenerAttributeResponse extends AcsRespons
 
 	private String eipTransmit;
 
+	private Integer establishedTimeout;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -182,6 +184,14 @@ public class DescribeLoadBalancerUDPListenerAttributeResponse extends AcsRespons
 
 	public void setEipTransmit(String eipTransmit) {
 		this.eipTransmit = eipTransmit;
+	}
+
+	public Integer getEstablishedTimeout() {
+		return this.establishedTimeout;
+	}
+
+	public void setEstablishedTimeout(Integer establishedTimeout) {
+		this.establishedTimeout = establishedTimeout;
 	}
 
 	@Override

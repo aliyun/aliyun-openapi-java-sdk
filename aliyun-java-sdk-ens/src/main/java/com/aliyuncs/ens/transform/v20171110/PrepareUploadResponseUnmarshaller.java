@@ -14,17 +14,19 @@
 
 package com.aliyuncs.ens.transform.v20171110;
 
-import com.aliyuncs.ens.model.v20171110.PutBucketLifecycleResponse;
+import com.aliyuncs.ens.model.v20171110.PrepareUploadResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class PutBucketLifecycleResponseUnmarshaller {
+public class PrepareUploadResponseUnmarshaller {
 
-	public static PutBucketLifecycleResponse unmarshall(PutBucketLifecycleResponse putBucketLifecycleResponse, UnmarshallerContext _ctx) {
+	public static PrepareUploadResponse unmarshall(PrepareUploadResponse prepareUploadResponse, UnmarshallerContext _ctx) {
 		
-		putBucketLifecycleResponse.setRequestId(_ctx.stringValue("PutBucketLifecycleResponse.RequestId"));
-		putBucketLifecycleResponse.setRuleId(_ctx.stringValue("PutBucketLifecycleResponse.RuleId"));
+		prepareUploadResponse.setRequestId(_ctx.stringValue("PrepareUploadResponse.RequestId"));
+		prepareUploadResponse.setBucketName(_ctx.stringValue("PrepareUploadResponse.BucketName"));
+		prepareUploadResponse.setEndpoint(_ctx.stringValue("PrepareUploadResponse.Endpoint"));
+		prepareUploadResponse.setAdditionInfo(_ctx.stringValue("PrepareUploadResponse.AdditionInfo"));
 	 
-	 	return putBucketLifecycleResponse;
+	 	return prepareUploadResponse;
 	}
 }

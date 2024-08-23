@@ -76,6 +76,8 @@ public class DescribeLoadBalancerHTTPListenerAttributeResponse extends AcsRespon
 
 	private String xForwardedFor;
 
+	private Integer backendServerPort;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -282,6 +284,14 @@ public class DescribeLoadBalancerHTTPListenerAttributeResponse extends AcsRespon
 
 	public void setXForwardedFor(String xForwardedFor) {
 		this.xForwardedFor = xForwardedFor;
+	}
+
+	public Integer getBackendServerPort() {
+		return this.backendServerPort;
+	}
+
+	public void setBackendServerPort(Integer backendServerPort) {
+		this.backendServerPort = backendServerPort;
 	}
 
 	@Override

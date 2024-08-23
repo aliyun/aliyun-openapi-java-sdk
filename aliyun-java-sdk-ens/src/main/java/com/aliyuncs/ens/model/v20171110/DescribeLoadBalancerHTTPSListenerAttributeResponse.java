@@ -74,6 +74,8 @@ public class DescribeLoadBalancerHTTPSListenerAttributeResponse extends AcsRespo
 
 	private String healthCheckMethod;
 
+	private Integer backendServerPort;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -272,6 +274,14 @@ public class DescribeLoadBalancerHTTPSListenerAttributeResponse extends AcsRespo
 
 	public void setHealthCheckMethod(String healthCheckMethod) {
 		this.healthCheckMethod = healthCheckMethod;
+	}
+
+	public Integer getBackendServerPort() {
+		return this.backendServerPort;
+	}
+
+	public void setBackendServerPort(Integer backendServerPort) {
+		this.backendServerPort = backendServerPort;
 	}
 
 	@Override

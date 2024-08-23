@@ -15,18 +15,22 @@
 package com.aliyuncs.ens.model.v20171110;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ens.transform.v20171110.PutBucketLifecycleResponseUnmarshaller;
+import com.aliyuncs.ens.transform.v20171110.PrepareUploadResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class PutBucketLifecycleResponse extends AcsResponse {
+public class PrepareUploadResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String ruleId;
+	private String bucketName;
+
+	private String endpoint;
+
+	private String additionInfo;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,17 +40,33 @@ public class PutBucketLifecycleResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getRuleId() {
-		return this.ruleId;
+	public String getBucketName() {
+		return this.bucketName;
 	}
 
-	public void setRuleId(String ruleId) {
-		this.ruleId = ruleId;
+	public void setBucketName(String bucketName) {
+		this.bucketName = bucketName;
+	}
+
+	public String getEndpoint() {
+		return this.endpoint;
+	}
+
+	public void setEndpoint(String endpoint) {
+		this.endpoint = endpoint;
+	}
+
+	public String getAdditionInfo() {
+		return this.additionInfo;
+	}
+
+	public void setAdditionInfo(String additionInfo) {
+		this.additionInfo = additionInfo;
 	}
 
 	@Override
-	public PutBucketLifecycleResponse getInstance(UnmarshallerContext context) {
-		return	PutBucketLifecycleResponseUnmarshaller.unmarshall(this, context);
+	public PrepareUploadResponse getInstance(UnmarshallerContext context) {
+		return	PrepareUploadResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

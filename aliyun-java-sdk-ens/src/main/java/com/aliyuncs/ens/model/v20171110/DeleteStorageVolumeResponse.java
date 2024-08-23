@@ -15,18 +15,16 @@
 package com.aliyuncs.ens.model.v20171110;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ens.transform.v20171110.PutBucketLifecycleResponseUnmarshaller;
+import com.aliyuncs.ens.transform.v20171110.DeleteStorageVolumeResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class PutBucketLifecycleResponse extends AcsResponse {
+public class DeleteStorageVolumeResponse extends AcsResponse {
 
 	private String requestId;
-
-	private String ruleId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,17 +34,9 @@ public class PutBucketLifecycleResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getRuleId() {
-		return this.ruleId;
-	}
-
-	public void setRuleId(String ruleId) {
-		this.ruleId = ruleId;
-	}
-
 	@Override
-	public PutBucketLifecycleResponse getInstance(UnmarshallerContext context) {
-		return	PutBucketLifecycleResponseUnmarshaller.unmarshall(this, context);
+	public DeleteStorageVolumeResponse getInstance(UnmarshallerContext context) {
+		return	DeleteStorageVolumeResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

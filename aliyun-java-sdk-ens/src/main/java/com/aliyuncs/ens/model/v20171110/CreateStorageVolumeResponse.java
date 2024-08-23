@@ -14,19 +14,20 @@
 
 package com.aliyuncs.ens.model.v20171110;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ens.transform.v20171110.PutBucketLifecycleResponseUnmarshaller;
+import com.aliyuncs.ens.transform.v20171110.CreateStorageVolumeResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class PutBucketLifecycleResponse extends AcsResponse {
+public class CreateStorageVolumeResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String ruleId;
+	private List<String> volumeId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,17 +37,17 @@ public class PutBucketLifecycleResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getRuleId() {
-		return this.ruleId;
+	public List<String> getVolumeId() {
+		return this.volumeId;
 	}
 
-	public void setRuleId(String ruleId) {
-		this.ruleId = ruleId;
+	public void setVolumeId(List<String> volumeId) {
+		this.volumeId = volumeId;
 	}
 
 	@Override
-	public PutBucketLifecycleResponse getInstance(UnmarshallerContext context) {
-		return	PutBucketLifecycleResponseUnmarshaller.unmarshall(this, context);
+	public CreateStorageVolumeResponse getInstance(UnmarshallerContext context) {
+		return	CreateStorageVolumeResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

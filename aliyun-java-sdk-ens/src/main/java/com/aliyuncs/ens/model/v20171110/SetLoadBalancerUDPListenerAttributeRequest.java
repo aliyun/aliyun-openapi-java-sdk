@@ -24,6 +24,8 @@ import com.aliyuncs.http.MethodType;
 public class SetLoadBalancerUDPListenerAttributeRequest extends RpcAcsRequest<SetLoadBalancerUDPListenerAttributeResponse> {
 	   
 
+	private Integer establishedTimeout;
+
 	private String loadBalancerId;
 
 	private String healthCheckReq;
@@ -50,6 +52,17 @@ public class SetLoadBalancerUDPListenerAttributeRequest extends RpcAcsRequest<Se
 	public SetLoadBalancerUDPListenerAttributeRequest() {
 		super("Ens", "2017-11-10", "SetLoadBalancerUDPListenerAttribute", "ens");
 		setMethod(MethodType.POST);
+	}
+
+	public Integer getEstablishedTimeout() {
+		return this.establishedTimeout;
+	}
+
+	public void setEstablishedTimeout(Integer establishedTimeout) {
+		this.establishedTimeout = establishedTimeout;
+		if(establishedTimeout != null){
+			putQueryParameter("EstablishedTimeout", establishedTimeout.toString());
+		}
 	}
 
 	public String getLoadBalancerId() {

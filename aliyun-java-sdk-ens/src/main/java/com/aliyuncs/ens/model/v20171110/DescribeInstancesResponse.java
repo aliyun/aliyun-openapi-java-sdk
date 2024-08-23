@@ -389,6 +389,10 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 			private Integer diskSize;
 
+			private String encryptKeyId;
+
+			private Boolean encrypted;
+
 			public String getDevice_type() {
 				return this.device_type;
 			}
@@ -467,6 +471,22 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 			public void setDiskSize(Integer diskSize) {
 				this.diskSize = diskSize;
+			}
+
+			public String getEncryptKeyId() {
+				return this.encryptKeyId;
+			}
+
+			public void setEncryptKeyId(String encryptKeyId) {
+				this.encryptKeyId = encryptKeyId;
+			}
+
+			public Boolean getEncrypted() {
+				return this.encrypted;
+			}
+
+			public void setEncrypted(Boolean encrypted) {
+				this.encrypted = encrypted;
 			}
 		}
 

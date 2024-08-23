@@ -115,6 +115,8 @@ public class DescribeInstancesResponseUnmarshaller {
 				dataDiskItem.setCategory(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].DataDisk["+ j +"].Category"));
 				dataDiskItem.setName(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].DataDisk["+ j +"].name"));
 				dataDiskItem.setDiskSize(_ctx.integerValue("DescribeInstancesResponse.Instances["+ i +"].DataDisk["+ j +"].DiskSize"));
+				dataDiskItem.setEncryptKeyId(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].DataDisk["+ j +"].EncryptKeyId"));
+				dataDiskItem.setEncrypted(_ctx.booleanValue("DescribeInstancesResponse.Instances["+ i +"].DataDisk["+ j +"].Encrypted"));
 
 				dataDisk.add(dataDiskItem);
 			}
