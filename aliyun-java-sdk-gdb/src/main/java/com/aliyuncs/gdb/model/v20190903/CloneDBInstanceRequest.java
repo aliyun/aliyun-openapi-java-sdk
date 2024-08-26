@@ -22,7 +22,7 @@ import com.aliyuncs.gdb.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceResponse> {
+public class CloneDBInstanceRequest extends RpcAcsRequest<CloneDBInstanceResponse> {
 	   
 
 	private Long resourceOwnerId;
@@ -41,9 +41,13 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 
 	private String period;
 
+	private String restoreTime;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
+
+	private String backupSetId;
 
 	private Long ownerId;
 
@@ -54,6 +58,10 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 	private String vSwitchId;
 
 	private String securityIPList;
+
+	private String restoreType;
+
+	private String sourceDBInstanceId;
 
 	private String dBNodeStorage;
 
@@ -68,8 +76,8 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 	private String zoneId;
 
 	private String payType;
-	public CreateDBInstanceRequest() {
-		super("gdb", "2019-09-03", "CreateDBInstance", "gds");
+	public CloneDBInstanceRequest() {
+		super("gdb", "2019-09-03", "CloneDBInstance", "gds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -165,6 +173,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		}
 	}
 
+	public String getRestoreTime() {
+		return this.restoreTime;
+	}
+
+	public void setRestoreTime(String restoreTime) {
+		this.restoreTime = restoreTime;
+		if(restoreTime != null){
+			putQueryParameter("RestoreTime", restoreTime);
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -184,6 +203,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getBackupSetId() {
+		return this.backupSetId;
+	}
+
+	public void setBackupSetId(String backupSetId) {
+		this.backupSetId = backupSetId;
+		if(backupSetId != null){
+			putQueryParameter("BackupSetId", backupSetId);
 		}
 	}
 
@@ -239,6 +269,28 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.securityIPList = securityIPList;
 		if(securityIPList != null){
 			putQueryParameter("SecurityIPList", securityIPList);
+		}
+	}
+
+	public String getRestoreType() {
+		return this.restoreType;
+	}
+
+	public void setRestoreType(String restoreType) {
+		this.restoreType = restoreType;
+		if(restoreType != null){
+			putQueryParameter("RestoreType", restoreType);
+		}
+	}
+
+	public String getSourceDBInstanceId() {
+		return this.sourceDBInstanceId;
+	}
+
+	public void setSourceDBInstanceId(String sourceDBInstanceId) {
+		this.sourceDBInstanceId = sourceDBInstanceId;
+		if(sourceDBInstanceId != null){
+			putQueryParameter("SourceDBInstanceId", sourceDBInstanceId);
 		}
 	}
 
@@ -320,8 +372,8 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 	}
 
 	@Override
-	public Class<CreateDBInstanceResponse> getResponseClass() {
-		return CreateDBInstanceResponse.class;
+	public Class<CloneDBInstanceResponse> getResponseClass() {
+		return CloneDBInstanceResponse.class;
 	}
 
 }

@@ -47,155 +47,73 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 	public static class DBInstance {
 
-		private String regionId;
-
-		private String zoneId;
-
-		private String dBInstanceId;
-
-		private String dBInstanceType;
-
-		private String dBInstanceDescription;
-
-		private String category;
-
-		private String lockMode;
-
-		private String lockReason;
-
-		private String payType;
-
-		private String dBVersion;
-
-		private String dBInstanceStatus;
-
 		private String vpcId;
-
-		private String vSwitchId;
-
-		private String connectionString;
-
-		private String port;
-
-		private String publicConnectionString;
-
-		private Integer publicPort;
-
-		private Long dBNodeStorage;
-
-		private String dBNodeClass;
-
-		private Long dBNodeCount;
 
 		private String creationTime;
 
-		private String expireTime;
+		private Long dBNodeCount;
+
+		private String dBInstanceStorageType;
+
+		private Long dBInstanceMemory;
 
 		private String expired;
 
 		private String maintainTime;
 
-		private String dBInstanceCPU;
+		private String payType;
 
-		private Long dBInstanceMemory;
+		private String publicConnectionString;
 
-		private String dBInstanceStorageType;
+		private String port;
+
+		private String lockMode;
+
+		private String connectionString;
+
+		private String masterInstanceId;
+
+		private String dBInstanceDescription;
 
 		private String dBInstanceNetworkType;
 
+		private String dBInstanceCPU;
+
 		private String currentMinorVersion;
+
+		private String expireTime;
+
+		private Long dBNodeStorage;
+
+		private String dBInstanceType;
+
+		private String dBNodeClass;
 
 		private String latestMinorVersion;
 
+		private String lockReason;
+
+		private String dBInstanceStatus;
+
+		private String regionId;
+
+		private Integer publicPort;
+
+		private String dBVersion;
+
+		private String vSwitchId;
+
+		private String zoneId;
+
+		private String dBInstanceId;
+
+		private String category;
+
+		private String resourceGroupId;
+
 		private List<Tag> tags;
 
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getZoneId() {
-			return this.zoneId;
-		}
-
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
-		}
-
-		public String getDBInstanceId() {
-			return this.dBInstanceId;
-		}
-
-		public void setDBInstanceId(String dBInstanceId) {
-			this.dBInstanceId = dBInstanceId;
-		}
-
-		public String getDBInstanceType() {
-			return this.dBInstanceType;
-		}
-
-		public void setDBInstanceType(String dBInstanceType) {
-			this.dBInstanceType = dBInstanceType;
-		}
-
-		public String getDBInstanceDescription() {
-			return this.dBInstanceDescription;
-		}
-
-		public void setDBInstanceDescription(String dBInstanceDescription) {
-			this.dBInstanceDescription = dBInstanceDescription;
-		}
-
-		public String getCategory() {
-			return this.category;
-		}
-
-		public void setCategory(String category) {
-			this.category = category;
-		}
-
-		public String getLockMode() {
-			return this.lockMode;
-		}
-
-		public void setLockMode(String lockMode) {
-			this.lockMode = lockMode;
-		}
-
-		public String getLockReason() {
-			return this.lockReason;
-		}
-
-		public void setLockReason(String lockReason) {
-			this.lockReason = lockReason;
-		}
-
-		public String getPayType() {
-			return this.payType;
-		}
-
-		public void setPayType(String payType) {
-			this.payType = payType;
-		}
-
-		public String getDBVersion() {
-			return this.dBVersion;
-		}
-
-		public void setDBVersion(String dBVersion) {
-			this.dBVersion = dBVersion;
-		}
-
-		public String getDBInstanceStatus() {
-			return this.dBInstanceStatus;
-		}
-
-		public void setDBInstanceStatus(String dBInstanceStatus) {
-			this.dBInstanceStatus = dBInstanceStatus;
-		}
+		private List<ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
 
 		public String getVpcId() {
 			return this.vpcId;
@@ -203,70 +121,6 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		public void setVpcId(String vpcId) {
 			this.vpcId = vpcId;
-		}
-
-		public String getVSwitchId() {
-			return this.vSwitchId;
-		}
-
-		public void setVSwitchId(String vSwitchId) {
-			this.vSwitchId = vSwitchId;
-		}
-
-		public String getConnectionString() {
-			return this.connectionString;
-		}
-
-		public void setConnectionString(String connectionString) {
-			this.connectionString = connectionString;
-		}
-
-		public String getPort() {
-			return this.port;
-		}
-
-		public void setPort(String port) {
-			this.port = port;
-		}
-
-		public String getPublicConnectionString() {
-			return this.publicConnectionString;
-		}
-
-		public void setPublicConnectionString(String publicConnectionString) {
-			this.publicConnectionString = publicConnectionString;
-		}
-
-		public Integer getPublicPort() {
-			return this.publicPort;
-		}
-
-		public void setPublicPort(Integer publicPort) {
-			this.publicPort = publicPort;
-		}
-
-		public Long getDBNodeStorage() {
-			return this.dBNodeStorage;
-		}
-
-		public void setDBNodeStorage(Long dBNodeStorage) {
-			this.dBNodeStorage = dBNodeStorage;
-		}
-
-		public String getDBNodeClass() {
-			return this.dBNodeClass;
-		}
-
-		public void setDBNodeClass(String dBNodeClass) {
-			this.dBNodeClass = dBNodeClass;
-		}
-
-		public Long getDBNodeCount() {
-			return this.dBNodeCount;
-		}
-
-		public void setDBNodeCount(Long dBNodeCount) {
-			this.dBNodeCount = dBNodeCount;
 		}
 
 		public String getCreationTime() {
@@ -277,12 +131,28 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 			this.creationTime = creationTime;
 		}
 
-		public String getExpireTime() {
-			return this.expireTime;
+		public Long getDBNodeCount() {
+			return this.dBNodeCount;
 		}
 
-		public void setExpireTime(String expireTime) {
-			this.expireTime = expireTime;
+		public void setDBNodeCount(Long dBNodeCount) {
+			this.dBNodeCount = dBNodeCount;
+		}
+
+		public String getDBInstanceStorageType() {
+			return this.dBInstanceStorageType;
+		}
+
+		public void setDBInstanceStorageType(String dBInstanceStorageType) {
+			this.dBInstanceStorageType = dBInstanceStorageType;
+		}
+
+		public Long getDBInstanceMemory() {
+			return this.dBInstanceMemory;
+		}
+
+		public void setDBInstanceMemory(Long dBInstanceMemory) {
+			this.dBInstanceMemory = dBInstanceMemory;
 		}
 
 		public String getExpired() {
@@ -301,28 +171,60 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 			this.maintainTime = maintainTime;
 		}
 
-		public String getDBInstanceCPU() {
-			return this.dBInstanceCPU;
+		public String getPayType() {
+			return this.payType;
 		}
 
-		public void setDBInstanceCPU(String dBInstanceCPU) {
-			this.dBInstanceCPU = dBInstanceCPU;
+		public void setPayType(String payType) {
+			this.payType = payType;
 		}
 
-		public Long getDBInstanceMemory() {
-			return this.dBInstanceMemory;
+		public String getPublicConnectionString() {
+			return this.publicConnectionString;
 		}
 
-		public void setDBInstanceMemory(Long dBInstanceMemory) {
-			this.dBInstanceMemory = dBInstanceMemory;
+		public void setPublicConnectionString(String publicConnectionString) {
+			this.publicConnectionString = publicConnectionString;
 		}
 
-		public String getDBInstanceStorageType() {
-			return this.dBInstanceStorageType;
+		public String getPort() {
+			return this.port;
 		}
 
-		public void setDBInstanceStorageType(String dBInstanceStorageType) {
-			this.dBInstanceStorageType = dBInstanceStorageType;
+		public void setPort(String port) {
+			this.port = port;
+		}
+
+		public String getLockMode() {
+			return this.lockMode;
+		}
+
+		public void setLockMode(String lockMode) {
+			this.lockMode = lockMode;
+		}
+
+		public String getConnectionString() {
+			return this.connectionString;
+		}
+
+		public void setConnectionString(String connectionString) {
+			this.connectionString = connectionString;
+		}
+
+		public String getMasterInstanceId() {
+			return this.masterInstanceId;
+		}
+
+		public void setMasterInstanceId(String masterInstanceId) {
+			this.masterInstanceId = masterInstanceId;
+		}
+
+		public String getDBInstanceDescription() {
+			return this.dBInstanceDescription;
+		}
+
+		public void setDBInstanceDescription(String dBInstanceDescription) {
+			this.dBInstanceDescription = dBInstanceDescription;
 		}
 
 		public String getDBInstanceNetworkType() {
@@ -333,12 +235,52 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 			this.dBInstanceNetworkType = dBInstanceNetworkType;
 		}
 
+		public String getDBInstanceCPU() {
+			return this.dBInstanceCPU;
+		}
+
+		public void setDBInstanceCPU(String dBInstanceCPU) {
+			this.dBInstanceCPU = dBInstanceCPU;
+		}
+
 		public String getCurrentMinorVersion() {
 			return this.currentMinorVersion;
 		}
 
 		public void setCurrentMinorVersion(String currentMinorVersion) {
 			this.currentMinorVersion = currentMinorVersion;
+		}
+
+		public String getExpireTime() {
+			return this.expireTime;
+		}
+
+		public void setExpireTime(String expireTime) {
+			this.expireTime = expireTime;
+		}
+
+		public Long getDBNodeStorage() {
+			return this.dBNodeStorage;
+		}
+
+		public void setDBNodeStorage(Long dBNodeStorage) {
+			this.dBNodeStorage = dBNodeStorage;
+		}
+
+		public String getDBInstanceType() {
+			return this.dBInstanceType;
+		}
+
+		public void setDBInstanceType(String dBInstanceType) {
+			this.dBInstanceType = dBInstanceType;
+		}
+
+		public String getDBNodeClass() {
+			return this.dBNodeClass;
+		}
+
+		public void setDBNodeClass(String dBNodeClass) {
+			this.dBNodeClass = dBNodeClass;
 		}
 
 		public String getLatestMinorVersion() {
@@ -349,12 +291,100 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 			this.latestMinorVersion = latestMinorVersion;
 		}
 
+		public String getLockReason() {
+			return this.lockReason;
+		}
+
+		public void setLockReason(String lockReason) {
+			this.lockReason = lockReason;
+		}
+
+		public String getDBInstanceStatus() {
+			return this.dBInstanceStatus;
+		}
+
+		public void setDBInstanceStatus(String dBInstanceStatus) {
+			this.dBInstanceStatus = dBInstanceStatus;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public Integer getPublicPort() {
+			return this.publicPort;
+		}
+
+		public void setPublicPort(Integer publicPort) {
+			this.publicPort = publicPort;
+		}
+
+		public String getDBVersion() {
+			return this.dBVersion;
+		}
+
+		public void setDBVersion(String dBVersion) {
+			this.dBVersion = dBVersion;
+		}
+
+		public String getVSwitchId() {
+			return this.vSwitchId;
+		}
+
+		public void setVSwitchId(String vSwitchId) {
+			this.vSwitchId = vSwitchId;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
+
+		public String getDBInstanceId() {
+			return this.dBInstanceId;
+		}
+
+		public void setDBInstanceId(String dBInstanceId) {
+			this.dBInstanceId = dBInstanceId;
+		}
+
+		public String getCategory() {
+			return this.category;
+		}
+
+		public void setCategory(String category) {
+			this.category = category;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
 		public List<Tag> getTags() {
 			return this.tags;
 		}
 
 		public void setTags(List<Tag> tags) {
 			this.tags = tags;
+		}
+
+		public List<ReadOnlyDBInstanceId> getReadOnlyDBInstanceIds() {
+			return this.readOnlyDBInstanceIds;
+		}
+
+		public void setReadOnlyDBInstanceIds(List<ReadOnlyDBInstanceId> readOnlyDBInstanceIds) {
+			this.readOnlyDBInstanceIds = readOnlyDBInstanceIds;
 		}
 
 		public static class Tag {
@@ -377,6 +407,19 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 			public void setValue(String value) {
 				this.value = value;
+			}
+		}
+
+		public static class ReadOnlyDBInstanceId {
+
+			private String dBInstanceId;
+
+			public String getDBInstanceId() {
+				return this.dBInstanceId;
+			}
+
+			public void setDBInstanceId(String dBInstanceId) {
+				this.dBInstanceId = dBInstanceId;
 			}
 		}
 	}

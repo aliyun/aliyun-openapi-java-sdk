@@ -22,16 +22,10 @@ import com.aliyuncs.gdb.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
+public class DeleteDBDataRequest extends RpcAcsRequest<DeleteDBDataResponse> {
 	   
 
 	private Long resourceOwnerId;
-
-	private String clientToken;
-
-	private String accountDescription;
-
-	private String accountName;
 
 	private String dBInstanceId;
 
@@ -40,10 +34,8 @@ public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	private String accountPassword;
-	public CreateAccountRequest() {
-		super("gdb", "2019-09-03", "CreateAccount", "gds");
+	public DeleteDBDataRequest() {
+		super("gdb", "2019-09-03", "DeleteDBData", "gds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -59,39 +51,6 @@ public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
-	public String getAccountDescription() {
-		return this.accountDescription;
-	}
-
-	public void setAccountDescription(String accountDescription) {
-		this.accountDescription = accountDescription;
-		if(accountDescription != null){
-			putQueryParameter("AccountDescription", accountDescription);
-		}
-	}
-
-	public String getAccountName() {
-		return this.accountName;
-	}
-
-	public void setAccountName(String accountName) {
-		this.accountName = accountName;
-		if(accountName != null){
-			putQueryParameter("AccountName", accountName);
 		}
 	}
 
@@ -139,20 +98,9 @@ public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
 		}
 	}
 
-	public String getAccountPassword() {
-		return this.accountPassword;
-	}
-
-	public void setAccountPassword(String accountPassword) {
-		this.accountPassword = accountPassword;
-		if(accountPassword != null){
-			putQueryParameter("AccountPassword", accountPassword);
-		}
-	}
-
 	@Override
-	public Class<CreateAccountResponse> getResponseClass() {
-		return CreateAccountResponse.class;
+	public Class<DeleteDBDataResponse> getResponseClass() {
+		return DeleteDBDataResponse.class;
 	}
 
 }

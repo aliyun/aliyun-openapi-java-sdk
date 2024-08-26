@@ -31,15 +31,15 @@ public class CreateServiceLinkedRoleResponseUnmarshaller {
 		List<RoleItem> role = new ArrayList<RoleItem>();
 		for (int i = 0; i < _ctx.lengthValue("CreateServiceLinkedRoleResponse.Role.Length"); i++) {
 			RoleItem roleItem = new RoleItem();
-			roleItem.setRoleName(_ctx.stringValue("CreateServiceLinkedRoleResponse.Role["+ i +"].RoleName"));
-			roleItem.setDescription(_ctx.stringValue("CreateServiceLinkedRoleResponse.Role["+ i +"].Description"));
 			roleItem.setAssumeRolePolicyDocument(_ctx.stringValue("CreateServiceLinkedRoleResponse.Role["+ i +"].AssumeRolePolicyDocument"));
-			roleItem.setArn(_ctx.stringValue("CreateServiceLinkedRoleResponse.Role["+ i +"].Arn"));
+			roleItem.setRolePrincipalName(_ctx.stringValue("CreateServiceLinkedRoleResponse.Role["+ i +"].RolePrincipalName"));
+			roleItem.setDescription(_ctx.stringValue("CreateServiceLinkedRoleResponse.Role["+ i +"].Description"));
+			roleItem.setLatestDeletionTask(_ctx.booleanValue("CreateServiceLinkedRoleResponse.Role["+ i +"].LatestDeletionTask"));
+			roleItem.setRoleName(_ctx.stringValue("CreateServiceLinkedRoleResponse.Role["+ i +"].RoleName"));
 			roleItem.setCreateDate(_ctx.stringValue("CreateServiceLinkedRoleResponse.Role["+ i +"].CreateDate"));
 			roleItem.setRoleId(_ctx.stringValue("CreateServiceLinkedRoleResponse.Role["+ i +"].RoleId"));
-			roleItem.setRolePrincipalName(_ctx.stringValue("CreateServiceLinkedRoleResponse.Role["+ i +"].RolePrincipalName"));
+			roleItem.setArn(_ctx.stringValue("CreateServiceLinkedRoleResponse.Role["+ i +"].Arn"));
 			roleItem.setIsServiceLinkedRole(_ctx.booleanValue("CreateServiceLinkedRoleResponse.Role["+ i +"].IsServiceLinkedRole"));
-			roleItem.setLatestDeletionTask(_ctx.booleanValue("CreateServiceLinkedRoleResponse.Role["+ i +"].LatestDeletionTask"));
 
 			role.add(roleItem);
 		}

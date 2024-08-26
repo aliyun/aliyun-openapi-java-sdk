@@ -22,18 +22,14 @@ import com.aliyuncs.gdb.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
+public class DescribeTagsRequest extends RpcAcsRequest<DescribeTagsResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String clientToken;
+	private String resourceGroupId;
 
-	private String accountDescription;
-
-	private String accountName;
-
-	private String dBInstanceId;
+	private String nextToken;
 
 	private String resourceOwnerAccount;
 
@@ -41,9 +37,9 @@ public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
 
 	private Long ownerId;
 
-	private String accountPassword;
-	public CreateAccountRequest() {
-		super("gdb", "2019-09-03", "CreateAccount", "gds");
+	private String resourceType;
+	public DescribeTagsRequest() {
+		super("gdb", "2019-09-03", "DescribeTags", "gds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -62,47 +58,25 @@ public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
 		}
 	}
 
-	public String getClientToken() {
-		return this.clientToken;
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
 	}
 
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 
-	public String getAccountDescription() {
-		return this.accountDescription;
+	public String getNextToken() {
+		return this.nextToken;
 	}
 
-	public void setAccountDescription(String accountDescription) {
-		this.accountDescription = accountDescription;
-		if(accountDescription != null){
-			putQueryParameter("AccountDescription", accountDescription);
-		}
-	}
-
-	public String getAccountName() {
-		return this.accountName;
-	}
-
-	public void setAccountName(String accountName) {
-		this.accountName = accountName;
-		if(accountName != null){
-			putQueryParameter("AccountName", accountName);
-		}
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
 		}
 	}
 
@@ -139,20 +113,20 @@ public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
 		}
 	}
 
-	public String getAccountPassword() {
-		return this.accountPassword;
+	public String getResourceType() {
+		return this.resourceType;
 	}
 
-	public void setAccountPassword(String accountPassword) {
-		this.accountPassword = accountPassword;
-		if(accountPassword != null){
-			putQueryParameter("AccountPassword", accountPassword);
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType);
 		}
 	}
 
 	@Override
-	public Class<CreateAccountResponse> getResponseClass() {
-		return CreateAccountResponse.class;
+	public Class<DescribeTagsResponse> getResponseClass() {
+		return DescribeTagsResponse.class;
 	}
 
 }

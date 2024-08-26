@@ -22,18 +22,24 @@ import com.aliyuncs.gdb.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
+public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceSpecResponse> {
 	   
 
 	private Long resourceOwnerId;
 
+	private Integer dBInstanceStorage;
+
+	private String orderParam;
+
 	private String clientToken;
 
-	private String accountDescription;
+	private String engineVersion;
 
-	private String accountName;
+	private String effectiveTime;
 
 	private String dBInstanceId;
+
+	private String dBInstanceStorageType;
 
 	private String resourceOwnerAccount;
 
@@ -41,9 +47,11 @@ public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
 
 	private Long ownerId;
 
-	private String accountPassword;
-	public CreateAccountRequest() {
-		super("gdb", "2019-09-03", "CreateAccount", "gds");
+	private String dBInstanceClass;
+
+	private String orderType;
+	public ModifyDBInstanceSpecRequest() {
+		super("gdb", "2019-09-03", "ModifyDBInstanceSpec", "gds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -62,6 +70,28 @@ public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
 		}
 	}
 
+	public Integer getDBInstanceStorage() {
+		return this.dBInstanceStorage;
+	}
+
+	public void setDBInstanceStorage(Integer dBInstanceStorage) {
+		this.dBInstanceStorage = dBInstanceStorage;
+		if(dBInstanceStorage != null){
+			putQueryParameter("DBInstanceStorage", dBInstanceStorage.toString());
+		}
+	}
+
+	public String getOrderParam() {
+		return this.orderParam;
+	}
+
+	public void setOrderParam(String orderParam) {
+		this.orderParam = orderParam;
+		if(orderParam != null){
+			putQueryParameter("OrderParam", orderParam);
+		}
+	}
+
 	public String getClientToken() {
 		return this.clientToken;
 	}
@@ -73,25 +103,25 @@ public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
 		}
 	}
 
-	public String getAccountDescription() {
-		return this.accountDescription;
+	public String getEngineVersion() {
+		return this.engineVersion;
 	}
 
-	public void setAccountDescription(String accountDescription) {
-		this.accountDescription = accountDescription;
-		if(accountDescription != null){
-			putQueryParameter("AccountDescription", accountDescription);
+	public void setEngineVersion(String engineVersion) {
+		this.engineVersion = engineVersion;
+		if(engineVersion != null){
+			putQueryParameter("EngineVersion", engineVersion);
 		}
 	}
 
-	public String getAccountName() {
-		return this.accountName;
+	public String getEffectiveTime() {
+		return this.effectiveTime;
 	}
 
-	public void setAccountName(String accountName) {
-		this.accountName = accountName;
-		if(accountName != null){
-			putQueryParameter("AccountName", accountName);
+	public void setEffectiveTime(String effectiveTime) {
+		this.effectiveTime = effectiveTime;
+		if(effectiveTime != null){
+			putQueryParameter("EffectiveTime", effectiveTime);
 		}
 	}
 
@@ -103,6 +133,17 @@ public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
 		this.dBInstanceId = dBInstanceId;
 		if(dBInstanceId != null){
 			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public String getDBInstanceStorageType() {
+		return this.dBInstanceStorageType;
+	}
+
+	public void setDBInstanceStorageType(String dBInstanceStorageType) {
+		this.dBInstanceStorageType = dBInstanceStorageType;
+		if(dBInstanceStorageType != null){
+			putQueryParameter("DBInstanceStorageType", dBInstanceStorageType);
 		}
 	}
 
@@ -139,20 +180,31 @@ public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
 		}
 	}
 
-	public String getAccountPassword() {
-		return this.accountPassword;
+	public String getDBInstanceClass() {
+		return this.dBInstanceClass;
 	}
 
-	public void setAccountPassword(String accountPassword) {
-		this.accountPassword = accountPassword;
-		if(accountPassword != null){
-			putQueryParameter("AccountPassword", accountPassword);
+	public void setDBInstanceClass(String dBInstanceClass) {
+		this.dBInstanceClass = dBInstanceClass;
+		if(dBInstanceClass != null){
+			putQueryParameter("DBInstanceClass", dBInstanceClass);
+		}
+	}
+
+	public String getOrderType() {
+		return this.orderType;
+	}
+
+	public void setOrderType(String orderType) {
+		this.orderType = orderType;
+		if(orderType != null){
+			putQueryParameter("OrderType", orderType);
 		}
 	}
 
 	@Override
-	public Class<CreateAccountResponse> getResponseClass() {
-		return CreateAccountResponse.class;
+	public Class<ModifyDBInstanceSpecResponse> getResponseClass() {
+		return ModifyDBInstanceSpecResponse.class;
 	}
 
 }

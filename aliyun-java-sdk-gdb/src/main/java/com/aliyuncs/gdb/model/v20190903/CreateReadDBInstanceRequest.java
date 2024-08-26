@@ -22,54 +22,52 @@ import com.aliyuncs.gdb.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceResponse> {
+public class CreateReadDBInstanceRequest extends RpcAcsRequest<CreateReadDBInstanceResponse> {
 	   
 
 	private Long resourceOwnerId;
 
+	private String orderParam;
+
 	private String clientToken;
+
+	private String engineVersion;
 
 	private String dBInstanceCategory;
 
 	private String resourceGroupId;
 
+	private String dBNodeClass;
+
+	private String effectiveTime;
+
 	private String dBNodeStorageType;
 
-	private String dBInstanceDescription;
+	private String dBInstanceId;
 
 	private String autoRenewPeriod;
-
-	private String period;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
+	private String backupSetId;
+
 	private Long ownerId;
-
-	private String usedTime;
-
-	private String dBInstanceClass;
 
 	private String vSwitchId;
 
-	private String securityIPList;
+	private String dBInstanceNetworkType;
 
 	private String dBNodeStorage;
 
-	private String dBInstanceNetworkType;
-
 	private String autoRenew;
 
-	private String dBInstanceVersion;
+	private String vpcId;
 
-	private String vPCId;
-
-	private String zoneId;
-
-	private String payType;
-	public CreateDBInstanceRequest() {
-		super("gdb", "2019-09-03", "CreateDBInstance", "gds");
+	private String orderType;
+	public CreateReadDBInstanceRequest() {
+		super("gdb", "2019-09-03", "CreateReadDBInstance", "gds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -88,6 +86,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		}
 	}
 
+	public String getOrderParam() {
+		return this.orderParam;
+	}
+
+	public void setOrderParam(String orderParam) {
+		this.orderParam = orderParam;
+		if(orderParam != null){
+			putQueryParameter("OrderParam", orderParam);
+		}
+	}
+
 	public String getClientToken() {
 		return this.clientToken;
 	}
@@ -96,6 +105,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getEngineVersion() {
+		return this.engineVersion;
+	}
+
+	public void setEngineVersion(String engineVersion) {
+		this.engineVersion = engineVersion;
+		if(engineVersion != null){
+			putQueryParameter("EngineVersion", engineVersion);
 		}
 	}
 
@@ -121,6 +141,28 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		}
 	}
 
+	public String getDBNodeClass() {
+		return this.dBNodeClass;
+	}
+
+	public void setDBNodeClass(String dBNodeClass) {
+		this.dBNodeClass = dBNodeClass;
+		if(dBNodeClass != null){
+			putQueryParameter("DBNodeClass", dBNodeClass);
+		}
+	}
+
+	public String getEffectiveTime() {
+		return this.effectiveTime;
+	}
+
+	public void setEffectiveTime(String effectiveTime) {
+		this.effectiveTime = effectiveTime;
+		if(effectiveTime != null){
+			putQueryParameter("EffectiveTime", effectiveTime);
+		}
+	}
+
 	public String getDBNodeStorageType() {
 		return this.dBNodeStorageType;
 	}
@@ -132,14 +174,14 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		}
 	}
 
-	public String getDBInstanceDescription() {
-		return this.dBInstanceDescription;
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
 	}
 
-	public void setDBInstanceDescription(String dBInstanceDescription) {
-		this.dBInstanceDescription = dBInstanceDescription;
-		if(dBInstanceDescription != null){
-			putQueryParameter("DBInstanceDescription", dBInstanceDescription);
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
 		}
 	}
 
@@ -151,17 +193,6 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.autoRenewPeriod = autoRenewPeriod;
 		if(autoRenewPeriod != null){
 			putQueryParameter("AutoRenewPeriod", autoRenewPeriod);
-		}
-	}
-
-	public String getPeriod() {
-		return this.period;
-	}
-
-	public void setPeriod(String period) {
-		this.period = period;
-		if(period != null){
-			putQueryParameter("Period", period);
 		}
 	}
 
@@ -187,6 +218,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		}
 	}
 
+	public String getBackupSetId() {
+		return this.backupSetId;
+	}
+
+	public void setBackupSetId(String backupSetId) {
+		this.backupSetId = backupSetId;
+		if(backupSetId != null){
+			putQueryParameter("BackupSetId", backupSetId);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -195,28 +237,6 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getUsedTime() {
-		return this.usedTime;
-	}
-
-	public void setUsedTime(String usedTime) {
-		this.usedTime = usedTime;
-		if(usedTime != null){
-			putQueryParameter("UsedTime", usedTime);
-		}
-	}
-
-	public String getDBInstanceClass() {
-		return this.dBInstanceClass;
-	}
-
-	public void setDBInstanceClass(String dBInstanceClass) {
-		this.dBInstanceClass = dBInstanceClass;
-		if(dBInstanceClass != null){
-			putQueryParameter("DBInstanceClass", dBInstanceClass);
 		}
 	}
 
@@ -231,14 +251,14 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		}
 	}
 
-	public String getSecurityIPList() {
-		return this.securityIPList;
+	public String getDBInstanceNetworkType() {
+		return this.dBInstanceNetworkType;
 	}
 
-	public void setSecurityIPList(String securityIPList) {
-		this.securityIPList = securityIPList;
-		if(securityIPList != null){
-			putQueryParameter("SecurityIPList", securityIPList);
+	public void setDBInstanceNetworkType(String dBInstanceNetworkType) {
+		this.dBInstanceNetworkType = dBInstanceNetworkType;
+		if(dBInstanceNetworkType != null){
+			putQueryParameter("DBInstanceNetworkType", dBInstanceNetworkType);
 		}
 	}
 
@@ -253,17 +273,6 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		}
 	}
 
-	public String getDBInstanceNetworkType() {
-		return this.dBInstanceNetworkType;
-	}
-
-	public void setDBInstanceNetworkType(String dBInstanceNetworkType) {
-		this.dBInstanceNetworkType = dBInstanceNetworkType;
-		if(dBInstanceNetworkType != null){
-			putQueryParameter("DBInstanceNetworkType", dBInstanceNetworkType);
-		}
-	}
-
 	public String getAutoRenew() {
 		return this.autoRenew;
 	}
@@ -275,53 +284,31 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		}
 	}
 
-	public String getDBInstanceVersion() {
-		return this.dBInstanceVersion;
+	public String getVpcId() {
+		return this.vpcId;
 	}
 
-	public void setDBInstanceVersion(String dBInstanceVersion) {
-		this.dBInstanceVersion = dBInstanceVersion;
-		if(dBInstanceVersion != null){
-			putQueryParameter("DBInstanceVersion", dBInstanceVersion);
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+		if(vpcId != null){
+			putQueryParameter("VpcId", vpcId);
 		}
 	}
 
-	public String getVPCId() {
-		return this.vPCId;
+	public String getOrderType() {
+		return this.orderType;
 	}
 
-	public void setVPCId(String vPCId) {
-		this.vPCId = vPCId;
-		if(vPCId != null){
-			putQueryParameter("VPCId", vPCId);
-		}
-	}
-
-	public String getZoneId() {
-		return this.zoneId;
-	}
-
-	public void setZoneId(String zoneId) {
-		this.zoneId = zoneId;
-		if(zoneId != null){
-			putQueryParameter("ZoneId", zoneId);
-		}
-	}
-
-	public String getPayType() {
-		return this.payType;
-	}
-
-	public void setPayType(String payType) {
-		this.payType = payType;
-		if(payType != null){
-			putQueryParameter("PayType", payType);
+	public void setOrderType(String orderType) {
+		this.orderType = orderType;
+		if(orderType != null){
+			putQueryParameter("OrderType", orderType);
 		}
 	}
 
 	@Override
-	public Class<CreateDBInstanceResponse> getResponseClass() {
-		return CreateDBInstanceResponse.class;
+	public Class<CreateReadDBInstanceResponse> getResponseClass() {
+		return CreateReadDBInstanceResponse.class;
 	}
 
 }

@@ -22,16 +22,12 @@ import com.aliyuncs.gdb.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
+public class ModifySecurityGroupConfigurationRequest extends RpcAcsRequest<ModifySecurityGroupConfigurationResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String clientToken;
-
-	private String accountDescription;
-
-	private String accountName;
+	private String securityGroupId;
 
 	private String dBInstanceId;
 
@@ -40,10 +36,8 @@ public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	private String accountPassword;
-	public CreateAccountRequest() {
-		super("gdb", "2019-09-03", "CreateAccount", "gds");
+	public ModifySecurityGroupConfigurationRequest() {
+		super("gdb", "2019-09-03", "ModifySecurityGroupConfiguration", "gds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -62,36 +56,14 @@ public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
 		}
 	}
 
-	public String getClientToken() {
-		return this.clientToken;
+	public String getSecurityGroupId() {
+		return this.securityGroupId;
 	}
 
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
-	public String getAccountDescription() {
-		return this.accountDescription;
-	}
-
-	public void setAccountDescription(String accountDescription) {
-		this.accountDescription = accountDescription;
-		if(accountDescription != null){
-			putQueryParameter("AccountDescription", accountDescription);
-		}
-	}
-
-	public String getAccountName() {
-		return this.accountName;
-	}
-
-	public void setAccountName(String accountName) {
-		this.accountName = accountName;
-		if(accountName != null){
-			putQueryParameter("AccountName", accountName);
+	public void setSecurityGroupId(String securityGroupId) {
+		this.securityGroupId = securityGroupId;
+		if(securityGroupId != null){
+			putQueryParameter("SecurityGroupId", securityGroupId);
 		}
 	}
 
@@ -139,20 +111,9 @@ public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
 		}
 	}
 
-	public String getAccountPassword() {
-		return this.accountPassword;
-	}
-
-	public void setAccountPassword(String accountPassword) {
-		this.accountPassword = accountPassword;
-		if(accountPassword != null){
-			putQueryParameter("AccountPassword", accountPassword);
-		}
-	}
-
 	@Override
-	public Class<CreateAccountResponse> getResponseClass() {
-		return CreateAccountResponse.class;
+	public Class<ModifySecurityGroupConfigurationResponse> getResponseClass() {
+		return ModifySecurityGroupConfigurationResponse.class;
 	}
 
 }

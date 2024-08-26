@@ -24,45 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeResourceUsageResponse extends AcsResponse {
 
+	private Long diskUsed;
+
+	private Long dataSize;
+
 	private String requestId;
+
+	private Long backupSize;
+
+	private Long logSize;
 
 	private String dBInstanceId;
 
 	private String engine;
 
-	private Long diskUsed;
-
-	private Long dataSize;
-
-	private Long logSize;
-
-	private Long backupSize;
-
 	private Long coldBackupSize;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-	}
-
-	public String getEngine() {
-		return this.engine;
-	}
-
-	public void setEngine(String engine) {
-		this.engine = engine;
-	}
 
 	public Long getDiskUsed() {
 		return this.diskUsed;
@@ -80,12 +56,12 @@ public class DescribeResourceUsageResponse extends AcsResponse {
 		this.dataSize = dataSize;
 	}
 
-	public Long getLogSize() {
-		return this.logSize;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setLogSize(Long logSize) {
-		this.logSize = logSize;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Long getBackupSize() {
@@ -94,6 +70,30 @@ public class DescribeResourceUsageResponse extends AcsResponse {
 
 	public void setBackupSize(Long backupSize) {
 		this.backupSize = backupSize;
+	}
+
+	public Long getLogSize() {
+		return this.logSize;
+	}
+
+	public void setLogSize(Long logSize) {
+		this.logSize = logSize;
+	}
+
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+	}
+
+	public String getEngine() {
+		return this.engine;
+	}
+
+	public void setEngine(String engine) {
+		this.engine = engine;
 	}
 
 	public Long getColdBackupSize() {

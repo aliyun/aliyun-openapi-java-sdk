@@ -25,24 +25,32 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDBInstancePerformanceResponse extends AcsResponse {
 
-	private String requestId;
+	private String endTime;
+
+	private String startTime;
 
 	private String dBInstanceId;
 
 	private String engine;
 
-	private String startTime;
-
-	private String endTime;
+	private String requestId;
 
 	private List<PerformanceItem> performanceKeys;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getEndTime() {
+		return this.endTime;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
 	}
 
 	public String getDBInstanceId() {
@@ -61,20 +69,12 @@ public class DescribeDBInstancePerformanceResponse extends AcsResponse {
 		this.engine = engine;
 	}
 
-	public String getStartTime() {
-		return this.startTime;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<PerformanceItem> getPerformanceKeys() {

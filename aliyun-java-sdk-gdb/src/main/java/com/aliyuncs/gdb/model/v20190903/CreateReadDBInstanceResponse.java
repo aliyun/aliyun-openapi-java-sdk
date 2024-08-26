@@ -15,14 +15,14 @@
 package com.aliyuncs.gdb.model.v20190903;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.gdb.transform.v20190903.CreateDBInstanceResponseUnmarshaller;
+import com.aliyuncs.gdb.transform.v20190903.CreateReadDBInstanceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateDBInstanceResponse extends AcsResponse {
+public class CreateReadDBInstanceResponse extends AcsResponse {
 
 	private String dBInstanceId;
 
@@ -55,7 +55,7 @@ public class CreateDBInstanceResponse extends AcsResponse {
 	}
 
 	@Override
-	public CreateDBInstanceResponse getInstance(UnmarshallerContext context) {
-		return	CreateDBInstanceResponseUnmarshaller.unmarshall(this, context);
+	public CreateReadDBInstanceResponse getInstance(UnmarshallerContext context) {
+		return	CreateReadDBInstanceResponseUnmarshaller.unmarshall(this, context);
 	}
 }

@@ -15,28 +15,16 @@
 package com.aliyuncs.gdb.model.v20190903;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.gdb.transform.v20190903.CreateDBInstanceResponseUnmarshaller;
+import com.aliyuncs.gdb.transform.v20190903.TagResourcesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateDBInstanceResponse extends AcsResponse {
-
-	private String dBInstanceId;
+public class TagResourcesResponse extends AcsResponse {
 
 	private String requestId;
-
-	private String orderId;
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -46,16 +34,8 @@ public class CreateDBInstanceResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getOrderId() {
-		return this.orderId;
-	}
-
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
-	}
-
 	@Override
-	public CreateDBInstanceResponse getInstance(UnmarshallerContext context) {
-		return	CreateDBInstanceResponseUnmarshaller.unmarshall(this, context);
+	public TagResourcesResponse getInstance(UnmarshallerContext context) {
+		return	TagResourcesResponseUnmarshaller.unmarshall(this, context);
 	}
 }
