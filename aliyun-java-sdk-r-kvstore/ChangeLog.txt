@@ -1,3 +1,6 @@
+2024-08-28 Version: 2.20.21
+- DescibePrice add ShardCount parameters.
+
 2024-08-05 Version: 2.20.20
 - DescibePrice add ShardCount parameters.
 
