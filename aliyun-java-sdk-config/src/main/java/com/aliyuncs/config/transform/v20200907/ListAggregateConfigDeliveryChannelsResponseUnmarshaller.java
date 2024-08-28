@@ -31,21 +31,22 @@ public class ListAggregateConfigDeliveryChannelsResponseUnmarshaller {
 		List<DeliveryChannel> deliveryChannels = new ArrayList<DeliveryChannel>();
 		for (int i = 0; i < _ctx.lengthValue("ListAggregateConfigDeliveryChannelsResponse.DeliveryChannels.Length"); i++) {
 			DeliveryChannel deliveryChannel = new DeliveryChannel();
-			deliveryChannel.setStatus(_ctx.integerValue("ListAggregateConfigDeliveryChannelsResponse.DeliveryChannels["+ i +"].Status"));
-			deliveryChannel.setDeliveryChannelName(_ctx.stringValue("ListAggregateConfigDeliveryChannelsResponse.DeliveryChannels["+ i +"].DeliveryChannelName"));
-			deliveryChannel.setDeliveryChannelId(_ctx.stringValue("ListAggregateConfigDeliveryChannelsResponse.DeliveryChannels["+ i +"].DeliveryChannelId"));
-			deliveryChannel.setDeliveryChannelType(_ctx.stringValue("ListAggregateConfigDeliveryChannelsResponse.DeliveryChannels["+ i +"].DeliveryChannelType"));
-			deliveryChannel.setDeliveryChannelTargetArn(_ctx.stringValue("ListAggregateConfigDeliveryChannelsResponse.DeliveryChannels["+ i +"].DeliveryChannelTargetArn"));
+			deliveryChannel.setAccountId(_ctx.longValue("ListAggregateConfigDeliveryChannelsResponse.DeliveryChannels["+ i +"].AccountId"));
+			deliveryChannel.setAggregatorId(_ctx.stringValue("ListAggregateConfigDeliveryChannelsResponse.DeliveryChannels["+ i +"].AggregatorId"));
+			deliveryChannel.setCompliantSnapshot(_ctx.booleanValue("ListAggregateConfigDeliveryChannelsResponse.DeliveryChannels["+ i +"].CompliantSnapshot"));
+			deliveryChannel.setConfigurationItemChangeNotification(_ctx.booleanValue("ListAggregateConfigDeliveryChannelsResponse.DeliveryChannels["+ i +"].ConfigurationItemChangeNotification"));
+			deliveryChannel.setConfigurationSnapshot(_ctx.booleanValue("ListAggregateConfigDeliveryChannelsResponse.DeliveryChannels["+ i +"].ConfigurationSnapshot"));
 			deliveryChannel.setDeliveryChannelAssumeRoleArn(_ctx.stringValue("ListAggregateConfigDeliveryChannelsResponse.DeliveryChannels["+ i +"].DeliveryChannelAssumeRoleArn"));
 			deliveryChannel.setDeliveryChannelCondition(_ctx.stringValue("ListAggregateConfigDeliveryChannelsResponse.DeliveryChannels["+ i +"].DeliveryChannelCondition"));
-			deliveryChannel.setOversizedDataOSSTargetArn(_ctx.stringValue("ListAggregateConfigDeliveryChannelsResponse.DeliveryChannels["+ i +"].OversizedDataOSSTargetArn"));
-			deliveryChannel.setDescription(_ctx.stringValue("ListAggregateConfigDeliveryChannelsResponse.DeliveryChannels["+ i +"].Description"));
-			deliveryChannel.setConfigurationSnapshot(_ctx.booleanValue("ListAggregateConfigDeliveryChannelsResponse.DeliveryChannels["+ i +"].ConfigurationSnapshot"));
-			deliveryChannel.setConfigurationItemChangeNotification(_ctx.booleanValue("ListAggregateConfigDeliveryChannelsResponse.DeliveryChannels["+ i +"].ConfigurationItemChangeNotification"));
-			deliveryChannel.setNonCompliantNotification(_ctx.booleanValue("ListAggregateConfigDeliveryChannelsResponse.DeliveryChannels["+ i +"].NonCompliantNotification"));
-			deliveryChannel.setAggregatorId(_ctx.stringValue("ListAggregateConfigDeliveryChannelsResponse.DeliveryChannels["+ i +"].AggregatorId"));
-			deliveryChannel.setAccountId(_ctx.longValue("ListAggregateConfigDeliveryChannelsResponse.DeliveryChannels["+ i +"].AccountId"));
+			deliveryChannel.setDeliveryChannelId(_ctx.stringValue("ListAggregateConfigDeliveryChannelsResponse.DeliveryChannels["+ i +"].DeliveryChannelId"));
+			deliveryChannel.setDeliveryChannelName(_ctx.stringValue("ListAggregateConfigDeliveryChannelsResponse.DeliveryChannels["+ i +"].DeliveryChannelName"));
+			deliveryChannel.setDeliveryChannelTargetArn(_ctx.stringValue("ListAggregateConfigDeliveryChannelsResponse.DeliveryChannels["+ i +"].DeliveryChannelTargetArn"));
+			deliveryChannel.setDeliveryChannelType(_ctx.stringValue("ListAggregateConfigDeliveryChannelsResponse.DeliveryChannels["+ i +"].DeliveryChannelType"));
 			deliveryChannel.setDeliverySnapshotTime(_ctx.stringValue("ListAggregateConfigDeliveryChannelsResponse.DeliveryChannels["+ i +"].DeliverySnapshotTime"));
+			deliveryChannel.setDescription(_ctx.stringValue("ListAggregateConfigDeliveryChannelsResponse.DeliveryChannels["+ i +"].Description"));
+			deliveryChannel.setNonCompliantNotification(_ctx.booleanValue("ListAggregateConfigDeliveryChannelsResponse.DeliveryChannels["+ i +"].NonCompliantNotification"));
+			deliveryChannel.setOversizedDataOSSTargetArn(_ctx.stringValue("ListAggregateConfigDeliveryChannelsResponse.DeliveryChannels["+ i +"].OversizedDataOSSTargetArn"));
+			deliveryChannel.setStatus(_ctx.integerValue("ListAggregateConfigDeliveryChannelsResponse.DeliveryChannels["+ i +"].Status"));
 
 			deliveryChannels.add(deliveryChannel);
 		}

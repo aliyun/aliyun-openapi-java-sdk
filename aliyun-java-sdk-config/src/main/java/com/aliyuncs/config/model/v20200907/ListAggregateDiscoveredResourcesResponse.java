@@ -47,21 +47,13 @@ public class ListAggregateDiscoveredResourcesResponse extends AcsResponse {
 
 	public static class DiscoveredResourceProfiles {
 
-		private String nextToken;
-
 		private Integer maxResults;
+
+		private String nextToken;
 
 		private Integer totalCount;
 
 		private List<DiscoveredResourceProfile> discoveredResourceProfileList;
-
-		public String getNextToken() {
-			return this.nextToken;
-		}
-
-		public void setNextToken(String nextToken) {
-			this.nextToken = nextToken;
-		}
 
 		public Integer getMaxResults() {
 			return this.maxResults;
@@ -69,6 +61,14 @@ public class ListAggregateDiscoveredResourcesResponse extends AcsResponse {
 
 		public void setMaxResults(Integer maxResults) {
 			this.maxResults = maxResults;
+		}
+
+		public String getNextToken() {
+			return this.nextToken;
+		}
+
+		public void setNextToken(String nextToken) {
+			this.nextToken = nextToken;
 		}
 
 		public Integer getTotalCount() {
@@ -89,36 +89,46 @@ public class ListAggregateDiscoveredResourcesResponse extends AcsResponse {
 
 		public static class DiscoveredResourceProfile {
 
-			private String resourceType;
+			private Long accountId;
+
+			private String availabilityZone;
 
 			private String region;
 
 			private Long resourceCreationTime;
 
-			private String tags;
-
-			private Long accountId;
+			private Integer resourceDeleted;
 
 			private String resourceId;
 
 			private String resourceName;
 
-			private Integer resourceDeleted;
+			private Long resourceOwnerId;
 
 			private String resourceStatus;
 
-			private Long resourceOwnerId;
+			private String resourceType;
+
+			private String tags;
+
+			private Long updateTime;
 
 			private Long version;
 
-			private String availabilityZone;
-
-			public String getResourceType() {
-				return this.resourceType;
+			public Long getAccountId() {
+				return this.accountId;
 			}
 
-			public void setResourceType(String resourceType) {
-				this.resourceType = resourceType;
+			public void setAccountId(Long accountId) {
+				this.accountId = accountId;
+			}
+
+			public String getAvailabilityZone() {
+				return this.availabilityZone;
+			}
+
+			public void setAvailabilityZone(String availabilityZone) {
+				this.availabilityZone = availabilityZone;
 			}
 
 			public String getRegion() {
@@ -137,20 +147,12 @@ public class ListAggregateDiscoveredResourcesResponse extends AcsResponse {
 				this.resourceCreationTime = resourceCreationTime;
 			}
 
-			public String getTags() {
-				return this.tags;
+			public Integer getResourceDeleted() {
+				return this.resourceDeleted;
 			}
 
-			public void setTags(String tags) {
-				this.tags = tags;
-			}
-
-			public Long getAccountId() {
-				return this.accountId;
-			}
-
-			public void setAccountId(Long accountId) {
-				this.accountId = accountId;
+			public void setResourceDeleted(Integer resourceDeleted) {
+				this.resourceDeleted = resourceDeleted;
 			}
 
 			public String getResourceId() {
@@ -169,12 +171,12 @@ public class ListAggregateDiscoveredResourcesResponse extends AcsResponse {
 				this.resourceName = resourceName;
 			}
 
-			public Integer getResourceDeleted() {
-				return this.resourceDeleted;
+			public Long getResourceOwnerId() {
+				return this.resourceOwnerId;
 			}
 
-			public void setResourceDeleted(Integer resourceDeleted) {
-				this.resourceDeleted = resourceDeleted;
+			public void setResourceOwnerId(Long resourceOwnerId) {
+				this.resourceOwnerId = resourceOwnerId;
 			}
 
 			public String getResourceStatus() {
@@ -185,12 +187,28 @@ public class ListAggregateDiscoveredResourcesResponse extends AcsResponse {
 				this.resourceStatus = resourceStatus;
 			}
 
-			public Long getResourceOwnerId() {
-				return this.resourceOwnerId;
+			public String getResourceType() {
+				return this.resourceType;
 			}
 
-			public void setResourceOwnerId(Long resourceOwnerId) {
-				this.resourceOwnerId = resourceOwnerId;
+			public void setResourceType(String resourceType) {
+				this.resourceType = resourceType;
+			}
+
+			public String getTags() {
+				return this.tags;
+			}
+
+			public void setTags(String tags) {
+				this.tags = tags;
+			}
+
+			public Long getUpdateTime() {
+				return this.updateTime;
+			}
+
+			public void setUpdateTime(Long updateTime) {
+				this.updateTime = updateTime;
 			}
 
 			public Long getVersion() {
@@ -199,14 +217,6 @@ public class ListAggregateDiscoveredResourcesResponse extends AcsResponse {
 
 			public void setVersion(Long version) {
 				this.version = version;
-			}
-
-			public String getAvailabilityZone() {
-				return this.availabilityZone;
-			}
-
-			public void setAvailabilityZone(String availabilityZone) {
-				this.availabilityZone = availabilityZone;
 			}
 		}
 	}

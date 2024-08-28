@@ -26,20 +26,21 @@ public class GetConfigDeliveryChannelResponseUnmarshaller {
 		getConfigDeliveryChannelResponse.setRequestId(_ctx.stringValue("GetConfigDeliveryChannelResponse.RequestId"));
 
 		DeliveryChannel deliveryChannel = new DeliveryChannel();
-		deliveryChannel.setStatus(_ctx.integerValue("GetConfigDeliveryChannelResponse.DeliveryChannel.Status"));
-		deliveryChannel.setDeliveryChannelId(_ctx.stringValue("GetConfigDeliveryChannelResponse.DeliveryChannel.DeliveryChannelId"));
-		deliveryChannel.setDeliveryChannelName(_ctx.stringValue("GetConfigDeliveryChannelResponse.DeliveryChannel.DeliveryChannelName"));
-		deliveryChannel.setDeliveryChannelType(_ctx.stringValue("GetConfigDeliveryChannelResponse.DeliveryChannel.DeliveryChannelType"));
-		deliveryChannel.setDeliveryChannelTargetArn(_ctx.stringValue("GetConfigDeliveryChannelResponse.DeliveryChannel.DeliveryChannelTargetArn"));
+		deliveryChannel.setAccountId(_ctx.longValue("GetConfigDeliveryChannelResponse.DeliveryChannel.AccountId"));
+		deliveryChannel.setCompliantSnapshot(_ctx.booleanValue("GetConfigDeliveryChannelResponse.DeliveryChannel.CompliantSnapshot"));
+		deliveryChannel.setConfigurationItemChangeNotification(_ctx.booleanValue("GetConfigDeliveryChannelResponse.DeliveryChannel.ConfigurationItemChangeNotification"));
+		deliveryChannel.setConfigurationSnapshot(_ctx.booleanValue("GetConfigDeliveryChannelResponse.DeliveryChannel.ConfigurationSnapshot"));
 		deliveryChannel.setDeliveryChannelAssumeRoleArn(_ctx.stringValue("GetConfigDeliveryChannelResponse.DeliveryChannel.DeliveryChannelAssumeRoleArn"));
 		deliveryChannel.setDeliveryChannelCondition(_ctx.stringValue("GetConfigDeliveryChannelResponse.DeliveryChannel.DeliveryChannelCondition"));
-		deliveryChannel.setOversizedDataOSSTargetArn(_ctx.stringValue("GetConfigDeliveryChannelResponse.DeliveryChannel.OversizedDataOSSTargetArn"));
-		deliveryChannel.setDescription(_ctx.stringValue("GetConfigDeliveryChannelResponse.DeliveryChannel.Description"));
-		deliveryChannel.setConfigurationSnapshot(_ctx.booleanValue("GetConfigDeliveryChannelResponse.DeliveryChannel.ConfigurationSnapshot"));
-		deliveryChannel.setConfigurationItemChangeNotification(_ctx.booleanValue("GetConfigDeliveryChannelResponse.DeliveryChannel.ConfigurationItemChangeNotification"));
-		deliveryChannel.setNonCompliantNotification(_ctx.booleanValue("GetConfigDeliveryChannelResponse.DeliveryChannel.NonCompliantNotification"));
-		deliveryChannel.setAccountId(_ctx.longValue("GetConfigDeliveryChannelResponse.DeliveryChannel.AccountId"));
+		deliveryChannel.setDeliveryChannelId(_ctx.stringValue("GetConfigDeliveryChannelResponse.DeliveryChannel.DeliveryChannelId"));
+		deliveryChannel.setDeliveryChannelName(_ctx.stringValue("GetConfigDeliveryChannelResponse.DeliveryChannel.DeliveryChannelName"));
+		deliveryChannel.setDeliveryChannelTargetArn(_ctx.stringValue("GetConfigDeliveryChannelResponse.DeliveryChannel.DeliveryChannelTargetArn"));
+		deliveryChannel.setDeliveryChannelType(_ctx.stringValue("GetConfigDeliveryChannelResponse.DeliveryChannel.DeliveryChannelType"));
 		deliveryChannel.setDeliverySnapshotTime(_ctx.stringValue("GetConfigDeliveryChannelResponse.DeliveryChannel.DeliverySnapshotTime"));
+		deliveryChannel.setDescription(_ctx.stringValue("GetConfigDeliveryChannelResponse.DeliveryChannel.Description"));
+		deliveryChannel.setNonCompliantNotification(_ctx.booleanValue("GetConfigDeliveryChannelResponse.DeliveryChannel.NonCompliantNotification"));
+		deliveryChannel.setOversizedDataOSSTargetArn(_ctx.stringValue("GetConfigDeliveryChannelResponse.DeliveryChannel.OversizedDataOSSTargetArn"));
+		deliveryChannel.setStatus(_ctx.integerValue("GetConfigDeliveryChannelResponse.DeliveryChannel.Status"));
 		getConfigDeliveryChannelResponse.setDeliveryChannel(deliveryChannel);
 	 
 	 	return getConfigDeliveryChannelResponse;

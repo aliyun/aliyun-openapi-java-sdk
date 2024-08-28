@@ -39,6 +39,8 @@ public class UpdateConfigDeliveryChannelRequest extends RpcAcsRequest<UpdateConf
 
 	private Boolean configurationItemChangeNotification;
 
+	private Boolean compliantSnapshot;
+
 	private String deliveryChannelName;
 
 	private String deliverySnapshotTime;
@@ -131,6 +133,17 @@ public class UpdateConfigDeliveryChannelRequest extends RpcAcsRequest<UpdateConf
 		this.configurationItemChangeNotification = configurationItemChangeNotification;
 		if(configurationItemChangeNotification != null){
 			putQueryParameter("ConfigurationItemChangeNotification", configurationItemChangeNotification.toString());
+		}
+	}
+
+	public Boolean getCompliantSnapshot() {
+		return this.compliantSnapshot;
+	}
+
+	public void setCompliantSnapshot(Boolean compliantSnapshot) {
+		this.compliantSnapshot = compliantSnapshot;
+		if(compliantSnapshot != null){
+			putQueryParameter("CompliantSnapshot", compliantSnapshot.toString());
 		}
 	}
 

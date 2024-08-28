@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateConfigDeliveryChannelResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String deliveryChannelId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getDeliveryChannelId() {
 		return this.deliveryChannelId;
@@ -42,6 +34,14 @@ public class CreateConfigDeliveryChannelResponse extends AcsResponse {
 
 	public void setDeliveryChannelId(String deliveryChannelId) {
 		this.deliveryChannelId = deliveryChannelId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

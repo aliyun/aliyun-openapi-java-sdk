@@ -26,21 +26,22 @@ public class GetAggregateConfigDeliveryChannelResponseUnmarshaller {
 		getAggregateConfigDeliveryChannelResponse.setRequestId(_ctx.stringValue("GetAggregateConfigDeliveryChannelResponse.RequestId"));
 
 		DeliveryChannel deliveryChannel = new DeliveryChannel();
-		deliveryChannel.setStatus(_ctx.integerValue("GetAggregateConfigDeliveryChannelResponse.DeliveryChannel.Status"));
-		deliveryChannel.setDeliveryChannelId(_ctx.stringValue("GetAggregateConfigDeliveryChannelResponse.DeliveryChannel.DeliveryChannelId"));
-		deliveryChannel.setDeliveryChannelName(_ctx.stringValue("GetAggregateConfigDeliveryChannelResponse.DeliveryChannel.DeliveryChannelName"));
-		deliveryChannel.setDeliveryChannelType(_ctx.stringValue("GetAggregateConfigDeliveryChannelResponse.DeliveryChannel.DeliveryChannelType"));
-		deliveryChannel.setDeliveryChannelTargetArn(_ctx.stringValue("GetAggregateConfigDeliveryChannelResponse.DeliveryChannel.DeliveryChannelTargetArn"));
+		deliveryChannel.setAccountId(_ctx.stringValue("GetAggregateConfigDeliveryChannelResponse.DeliveryChannel.AccountId"));
+		deliveryChannel.setAggregatorId(_ctx.stringValue("GetAggregateConfigDeliveryChannelResponse.DeliveryChannel.AggregatorId"));
+		deliveryChannel.setCompliantSnapshot(_ctx.booleanValue("GetAggregateConfigDeliveryChannelResponse.DeliveryChannel.CompliantSnapshot"));
+		deliveryChannel.setConfigurationItemChangeNotification(_ctx.booleanValue("GetAggregateConfigDeliveryChannelResponse.DeliveryChannel.ConfigurationItemChangeNotification"));
+		deliveryChannel.setConfigurationSnapshot(_ctx.booleanValue("GetAggregateConfigDeliveryChannelResponse.DeliveryChannel.ConfigurationSnapshot"));
 		deliveryChannel.setDeliveryChannelAssumeRoleArn(_ctx.stringValue("GetAggregateConfigDeliveryChannelResponse.DeliveryChannel.DeliveryChannelAssumeRoleArn"));
 		deliveryChannel.setDeliveryChannelCondition(_ctx.stringValue("GetAggregateConfigDeliveryChannelResponse.DeliveryChannel.DeliveryChannelCondition"));
-		deliveryChannel.setOversizedDataOSSTargetArn(_ctx.stringValue("GetAggregateConfigDeliveryChannelResponse.DeliveryChannel.OversizedDataOSSTargetArn"));
-		deliveryChannel.setDescription(_ctx.stringValue("GetAggregateConfigDeliveryChannelResponse.DeliveryChannel.Description"));
-		deliveryChannel.setConfigurationSnapshot(_ctx.booleanValue("GetAggregateConfigDeliveryChannelResponse.DeliveryChannel.ConfigurationSnapshot"));
-		deliveryChannel.setConfigurationItemChangeNotification(_ctx.booleanValue("GetAggregateConfigDeliveryChannelResponse.DeliveryChannel.ConfigurationItemChangeNotification"));
-		deliveryChannel.setNonCompliantNotification(_ctx.booleanValue("GetAggregateConfigDeliveryChannelResponse.DeliveryChannel.NonCompliantNotification"));
-		deliveryChannel.setAggregatorId(_ctx.stringValue("GetAggregateConfigDeliveryChannelResponse.DeliveryChannel.AggregatorId"));
-		deliveryChannel.setAccountId(_ctx.stringValue("GetAggregateConfigDeliveryChannelResponse.DeliveryChannel.AccountId"));
+		deliveryChannel.setDeliveryChannelId(_ctx.stringValue("GetAggregateConfigDeliveryChannelResponse.DeliveryChannel.DeliveryChannelId"));
+		deliveryChannel.setDeliveryChannelName(_ctx.stringValue("GetAggregateConfigDeliveryChannelResponse.DeliveryChannel.DeliveryChannelName"));
+		deliveryChannel.setDeliveryChannelTargetArn(_ctx.stringValue("GetAggregateConfigDeliveryChannelResponse.DeliveryChannel.DeliveryChannelTargetArn"));
+		deliveryChannel.setDeliveryChannelType(_ctx.stringValue("GetAggregateConfigDeliveryChannelResponse.DeliveryChannel.DeliveryChannelType"));
 		deliveryChannel.setDeliverySnapshotTime(_ctx.stringValue("GetAggregateConfigDeliveryChannelResponse.DeliveryChannel.DeliverySnapshotTime"));
+		deliveryChannel.setDescription(_ctx.stringValue("GetAggregateConfigDeliveryChannelResponse.DeliveryChannel.Description"));
+		deliveryChannel.setNonCompliantNotification(_ctx.booleanValue("GetAggregateConfigDeliveryChannelResponse.DeliveryChannel.NonCompliantNotification"));
+		deliveryChannel.setOversizedDataOSSTargetArn(_ctx.stringValue("GetAggregateConfigDeliveryChannelResponse.DeliveryChannel.OversizedDataOSSTargetArn"));
+		deliveryChannel.setStatus(_ctx.integerValue("GetAggregateConfigDeliveryChannelResponse.DeliveryChannel.Status"));
 		getAggregateConfigDeliveryChannelResponse.setDeliveryChannel(deliveryChannel);
 	 
 	 	return getAggregateConfigDeliveryChannelResponse;

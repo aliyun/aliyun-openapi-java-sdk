@@ -1,3 +1,6 @@
+2024-08-28 Version: 2.2.15
+- Support for rule feature.
+
 2024-06-20 Version: 2.2.14
 - ConfigRule scope upgrade.
 

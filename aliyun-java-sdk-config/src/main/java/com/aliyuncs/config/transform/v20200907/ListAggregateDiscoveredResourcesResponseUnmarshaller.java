@@ -30,25 +30,26 @@ public class ListAggregateDiscoveredResourcesResponseUnmarshaller {
 		listAggregateDiscoveredResourcesResponse.setRequestId(_ctx.stringValue("ListAggregateDiscoveredResourcesResponse.RequestId"));
 
 		DiscoveredResourceProfiles discoveredResourceProfiles = new DiscoveredResourceProfiles();
-		discoveredResourceProfiles.setNextToken(_ctx.stringValue("ListAggregateDiscoveredResourcesResponse.DiscoveredResourceProfiles.NextToken"));
 		discoveredResourceProfiles.setMaxResults(_ctx.integerValue("ListAggregateDiscoveredResourcesResponse.DiscoveredResourceProfiles.MaxResults"));
+		discoveredResourceProfiles.setNextToken(_ctx.stringValue("ListAggregateDiscoveredResourcesResponse.DiscoveredResourceProfiles.NextToken"));
 		discoveredResourceProfiles.setTotalCount(_ctx.integerValue("ListAggregateDiscoveredResourcesResponse.DiscoveredResourceProfiles.TotalCount"));
 
 		List<DiscoveredResourceProfile> discoveredResourceProfileList = new ArrayList<DiscoveredResourceProfile>();
 		for (int i = 0; i < _ctx.lengthValue("ListAggregateDiscoveredResourcesResponse.DiscoveredResourceProfiles.DiscoveredResourceProfileList.Length"); i++) {
 			DiscoveredResourceProfile discoveredResourceProfile = new DiscoveredResourceProfile();
-			discoveredResourceProfile.setResourceType(_ctx.stringValue("ListAggregateDiscoveredResourcesResponse.DiscoveredResourceProfiles.DiscoveredResourceProfileList["+ i +"].ResourceType"));
+			discoveredResourceProfile.setAccountId(_ctx.longValue("ListAggregateDiscoveredResourcesResponse.DiscoveredResourceProfiles.DiscoveredResourceProfileList["+ i +"].AccountId"));
+			discoveredResourceProfile.setAvailabilityZone(_ctx.stringValue("ListAggregateDiscoveredResourcesResponse.DiscoveredResourceProfiles.DiscoveredResourceProfileList["+ i +"].AvailabilityZone"));
 			discoveredResourceProfile.setRegion(_ctx.stringValue("ListAggregateDiscoveredResourcesResponse.DiscoveredResourceProfiles.DiscoveredResourceProfileList["+ i +"].Region"));
 			discoveredResourceProfile.setResourceCreationTime(_ctx.longValue("ListAggregateDiscoveredResourcesResponse.DiscoveredResourceProfiles.DiscoveredResourceProfileList["+ i +"].ResourceCreationTime"));
-			discoveredResourceProfile.setTags(_ctx.stringValue("ListAggregateDiscoveredResourcesResponse.DiscoveredResourceProfiles.DiscoveredResourceProfileList["+ i +"].Tags"));
-			discoveredResourceProfile.setAccountId(_ctx.longValue("ListAggregateDiscoveredResourcesResponse.DiscoveredResourceProfiles.DiscoveredResourceProfileList["+ i +"].AccountId"));
+			discoveredResourceProfile.setResourceDeleted(_ctx.integerValue("ListAggregateDiscoveredResourcesResponse.DiscoveredResourceProfiles.DiscoveredResourceProfileList["+ i +"].ResourceDeleted"));
 			discoveredResourceProfile.setResourceId(_ctx.stringValue("ListAggregateDiscoveredResourcesResponse.DiscoveredResourceProfiles.DiscoveredResourceProfileList["+ i +"].ResourceId"));
 			discoveredResourceProfile.setResourceName(_ctx.stringValue("ListAggregateDiscoveredResourcesResponse.DiscoveredResourceProfiles.DiscoveredResourceProfileList["+ i +"].ResourceName"));
-			discoveredResourceProfile.setResourceDeleted(_ctx.integerValue("ListAggregateDiscoveredResourcesResponse.DiscoveredResourceProfiles.DiscoveredResourceProfileList["+ i +"].ResourceDeleted"));
-			discoveredResourceProfile.setResourceStatus(_ctx.stringValue("ListAggregateDiscoveredResourcesResponse.DiscoveredResourceProfiles.DiscoveredResourceProfileList["+ i +"].ResourceStatus"));
 			discoveredResourceProfile.setResourceOwnerId(_ctx.longValue("ListAggregateDiscoveredResourcesResponse.DiscoveredResourceProfiles.DiscoveredResourceProfileList["+ i +"].ResourceOwnerId"));
+			discoveredResourceProfile.setResourceStatus(_ctx.stringValue("ListAggregateDiscoveredResourcesResponse.DiscoveredResourceProfiles.DiscoveredResourceProfileList["+ i +"].ResourceStatus"));
+			discoveredResourceProfile.setResourceType(_ctx.stringValue("ListAggregateDiscoveredResourcesResponse.DiscoveredResourceProfiles.DiscoveredResourceProfileList["+ i +"].ResourceType"));
+			discoveredResourceProfile.setTags(_ctx.stringValue("ListAggregateDiscoveredResourcesResponse.DiscoveredResourceProfiles.DiscoveredResourceProfileList["+ i +"].Tags"));
+			discoveredResourceProfile.setUpdateTime(_ctx.longValue("ListAggregateDiscoveredResourcesResponse.DiscoveredResourceProfiles.DiscoveredResourceProfileList["+ i +"].UpdateTime"));
 			discoveredResourceProfile.setVersion(_ctx.longValue("ListAggregateDiscoveredResourcesResponse.DiscoveredResourceProfiles.DiscoveredResourceProfileList["+ i +"].Version"));
-			discoveredResourceProfile.setAvailabilityZone(_ctx.stringValue("ListAggregateDiscoveredResourcesResponse.DiscoveredResourceProfiles.DiscoveredResourceProfileList["+ i +"].AvailabilityZone"));
 
 			discoveredResourceProfileList.add(discoveredResourceProfile);
 		}

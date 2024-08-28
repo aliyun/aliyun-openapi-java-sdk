@@ -33,13 +33,19 @@ public class ListAggregateDiscoveredResourcesRequest extends RpcAcsRequest<ListA
 
 	private String aggregatorId;
 
+	private Long endUpdateTimestamp;
+
 	private Long resourceAccountId;
 
 	private String nextToken;
 
+	private Long startUpdateTimestamp;
+
 	private String resourceId;
 
 	private String resourceTypes;
+
+	private String excludeResourceTypes;
 
 	private Integer maxResults;
 	public ListAggregateDiscoveredResourcesRequest() {
@@ -95,6 +101,17 @@ public class ListAggregateDiscoveredResourcesRequest extends RpcAcsRequest<ListA
 		}
 	}
 
+	public Long getEndUpdateTimestamp() {
+		return this.endUpdateTimestamp;
+	}
+
+	public void setEndUpdateTimestamp(Long endUpdateTimestamp) {
+		this.endUpdateTimestamp = endUpdateTimestamp;
+		if(endUpdateTimestamp != null){
+			putQueryParameter("EndUpdateTimestamp", endUpdateTimestamp.toString());
+		}
+	}
+
 	public Long getResourceAccountId() {
 		return this.resourceAccountId;
 	}
@@ -117,6 +134,17 @@ public class ListAggregateDiscoveredResourcesRequest extends RpcAcsRequest<ListA
 		}
 	}
 
+	public Long getStartUpdateTimestamp() {
+		return this.startUpdateTimestamp;
+	}
+
+	public void setStartUpdateTimestamp(Long startUpdateTimestamp) {
+		this.startUpdateTimestamp = startUpdateTimestamp;
+		if(startUpdateTimestamp != null){
+			putQueryParameter("StartUpdateTimestamp", startUpdateTimestamp.toString());
+		}
+	}
+
 	public String getResourceId() {
 		return this.resourceId;
 	}
@@ -136,6 +164,17 @@ public class ListAggregateDiscoveredResourcesRequest extends RpcAcsRequest<ListA
 		this.resourceTypes = resourceTypes;
 		if(resourceTypes != null){
 			putQueryParameter("ResourceTypes", resourceTypes);
+		}
+	}
+
+	public String getExcludeResourceTypes() {
+		return this.excludeResourceTypes;
+	}
+
+	public void setExcludeResourceTypes(String excludeResourceTypes) {
+		this.excludeResourceTypes = excludeResourceTypes;
+		if(excludeResourceTypes != null){
+			putQueryParameter("ExcludeResourceTypes", excludeResourceTypes);
 		}
 	}
 

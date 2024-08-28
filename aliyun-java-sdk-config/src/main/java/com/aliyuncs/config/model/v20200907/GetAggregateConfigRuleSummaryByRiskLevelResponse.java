@@ -47,19 +47,11 @@ public class GetAggregateConfigRuleSummaryByRiskLevelResponse extends AcsRespons
 
 	public static class Data {
 
-		private Integer riskLevel;
-
 		private Integer compliantCount;
 
 		private Integer nonCompliantCount;
 
-		public Integer getRiskLevel() {
-			return this.riskLevel;
-		}
-
-		public void setRiskLevel(Integer riskLevel) {
-			this.riskLevel = riskLevel;
-		}
+		private Integer riskLevel;
 
 		public Integer getCompliantCount() {
 			return this.compliantCount;
@@ -75,6 +67,14 @@ public class GetAggregateConfigRuleSummaryByRiskLevelResponse extends AcsRespons
 
 		public void setNonCompliantCount(Integer nonCompliantCount) {
 			this.nonCompliantCount = nonCompliantCount;
+		}
+
+		public Integer getRiskLevel() {
+			return this.riskLevel;
+		}
+
+		public void setRiskLevel(Integer riskLevel) {
+			this.riskLevel = riskLevel;
 		}
 	}
 

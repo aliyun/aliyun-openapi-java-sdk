@@ -30,24 +30,25 @@ public class ListDiscoveredResourcesResponseUnmarshaller {
 		listDiscoveredResourcesResponse.setRequestId(_ctx.stringValue("ListDiscoveredResourcesResponse.RequestId"));
 
 		DiscoveredResourceProfiles discoveredResourceProfiles = new DiscoveredResourceProfiles();
-		discoveredResourceProfiles.setNextToken(_ctx.stringValue("ListDiscoveredResourcesResponse.DiscoveredResourceProfiles.NextToken"));
 		discoveredResourceProfiles.setMaxResults(_ctx.integerValue("ListDiscoveredResourcesResponse.DiscoveredResourceProfiles.MaxResults"));
+		discoveredResourceProfiles.setNextToken(_ctx.stringValue("ListDiscoveredResourcesResponse.DiscoveredResourceProfiles.NextToken"));
 		discoveredResourceProfiles.setTotalCount(_ctx.integerValue("ListDiscoveredResourcesResponse.DiscoveredResourceProfiles.TotalCount"));
 
 		List<DiscoveredResourceProfile> discoveredResourceProfileList = new ArrayList<DiscoveredResourceProfile>();
 		for (int i = 0; i < _ctx.lengthValue("ListDiscoveredResourcesResponse.DiscoveredResourceProfiles.DiscoveredResourceProfileList.Length"); i++) {
 			DiscoveredResourceProfile discoveredResourceProfile = new DiscoveredResourceProfile();
-			discoveredResourceProfile.setResourceType(_ctx.stringValue("ListDiscoveredResourcesResponse.DiscoveredResourceProfiles.DiscoveredResourceProfileList["+ i +"].ResourceType"));
+			discoveredResourceProfile.setAccountId(_ctx.longValue("ListDiscoveredResourcesResponse.DiscoveredResourceProfiles.DiscoveredResourceProfileList["+ i +"].AccountId"));
+			discoveredResourceProfile.setAvailabilityZone(_ctx.stringValue("ListDiscoveredResourcesResponse.DiscoveredResourceProfiles.DiscoveredResourceProfileList["+ i +"].AvailabilityZone"));
 			discoveredResourceProfile.setRegion(_ctx.stringValue("ListDiscoveredResourcesResponse.DiscoveredResourceProfiles.DiscoveredResourceProfileList["+ i +"].Region"));
 			discoveredResourceProfile.setResourceCreationTime(_ctx.longValue("ListDiscoveredResourcesResponse.DiscoveredResourceProfiles.DiscoveredResourceProfileList["+ i +"].ResourceCreationTime"));
-			discoveredResourceProfile.setTags(_ctx.stringValue("ListDiscoveredResourcesResponse.DiscoveredResourceProfiles.DiscoveredResourceProfileList["+ i +"].Tags"));
-			discoveredResourceProfile.setAccountId(_ctx.longValue("ListDiscoveredResourcesResponse.DiscoveredResourceProfiles.DiscoveredResourceProfileList["+ i +"].AccountId"));
+			discoveredResourceProfile.setResourceDeleted(_ctx.integerValue("ListDiscoveredResourcesResponse.DiscoveredResourceProfiles.DiscoveredResourceProfileList["+ i +"].ResourceDeleted"));
 			discoveredResourceProfile.setResourceId(_ctx.stringValue("ListDiscoveredResourcesResponse.DiscoveredResourceProfiles.DiscoveredResourceProfileList["+ i +"].ResourceId"));
 			discoveredResourceProfile.setResourceName(_ctx.stringValue("ListDiscoveredResourcesResponse.DiscoveredResourceProfiles.DiscoveredResourceProfileList["+ i +"].ResourceName"));
-			discoveredResourceProfile.setResourceDeleted(_ctx.integerValue("ListDiscoveredResourcesResponse.DiscoveredResourceProfiles.DiscoveredResourceProfileList["+ i +"].ResourceDeleted"));
 			discoveredResourceProfile.setResourceStatus(_ctx.stringValue("ListDiscoveredResourcesResponse.DiscoveredResourceProfiles.DiscoveredResourceProfileList["+ i +"].ResourceStatus"));
+			discoveredResourceProfile.setResourceType(_ctx.stringValue("ListDiscoveredResourcesResponse.DiscoveredResourceProfiles.DiscoveredResourceProfileList["+ i +"].ResourceType"));
+			discoveredResourceProfile.setTags(_ctx.stringValue("ListDiscoveredResourcesResponse.DiscoveredResourceProfiles.DiscoveredResourceProfileList["+ i +"].Tags"));
+			discoveredResourceProfile.setUpdateTime(_ctx.longValue("ListDiscoveredResourcesResponse.DiscoveredResourceProfiles.DiscoveredResourceProfileList["+ i +"].UpdateTime"));
 			discoveredResourceProfile.setVersion(_ctx.longValue("ListDiscoveredResourcesResponse.DiscoveredResourceProfiles.DiscoveredResourceProfileList["+ i +"].Version"));
-			discoveredResourceProfile.setAvailabilityZone(_ctx.stringValue("ListDiscoveredResourcesResponse.DiscoveredResourceProfiles.DiscoveredResourceProfileList["+ i +"].AvailabilityZone"));
 
 			discoveredResourceProfileList.add(discoveredResourceProfile);
 		}
