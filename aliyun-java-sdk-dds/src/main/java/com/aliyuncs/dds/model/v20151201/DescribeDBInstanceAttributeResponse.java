@@ -697,6 +697,8 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 			private String vpcCloudInstanceId;
 
+			private String lockMode;
+
 			private Integer maxIOPS;
 
 			private String vSwitchId;
@@ -723,6 +725,14 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 			public void setVpcCloudInstanceId(String vpcCloudInstanceId) {
 				this.vpcCloudInstanceId = vpcCloudInstanceId;
+			}
+
+			public String getLockMode() {
+				return this.lockMode;
+			}
+
+			public void setLockMode(String lockMode) {
+				this.lockMode = lockMode;
 			}
 
 			public Integer getMaxIOPS() {
@@ -808,6 +818,8 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		public static class ShardAttribute {
 
+			private String lockMode;
+
 			private Integer maxIOPS;
 
 			private String connectString;
@@ -829,6 +841,14 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 			private String status;
 
 			private String maxDiskMbps;
+
+			public String getLockMode() {
+				return this.lockMode;
+			}
+
+			public void setLockMode(String lockMode) {
+				this.lockMode = lockMode;
+			}
 
 			public Integer getMaxIOPS() {
 				return this.maxIOPS;
@@ -923,6 +943,8 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 			private Integer maxIOPS;
 
+			private String lockMode;
+
 			private String connectString;
 
 			private String nodeClass;
@@ -945,6 +967,14 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 			public void setMaxIOPS(Integer maxIOPS) {
 				this.maxIOPS = maxIOPS;
+			}
+
+			public String getLockMode() {
+				return this.lockMode;
+			}
+
+			public void setLockMode(String lockMode) {
+				this.lockMode = lockMode;
 			}
 
 			public String getConnectString() {

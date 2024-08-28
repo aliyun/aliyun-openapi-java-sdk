@@ -56,7 +56,7 @@ public class Endpoint {
             put("cn-hongkong-finance-pop", "mongodb.aliyuncs.com");
             put("cn-shanghai", "mongodb.aliyuncs.com");
             put("cn-shanghai-finance-1", "mongodb.aliyuncs.com");
-            put("cn-hongkong", "mongodb.aliyuncs.com");
+            put("cn-hongkong", "mongodb.cn-hongkong.aliyuncs.com");
             put("eu-central-1", "mongodb.eu-central-1.aliyuncs.com");
             put("cn-shenzhen", "mongodb.aliyuncs.com");
             put("cn-zhengzhou-nebula-1", "mongodb.aliyuncs.com");
