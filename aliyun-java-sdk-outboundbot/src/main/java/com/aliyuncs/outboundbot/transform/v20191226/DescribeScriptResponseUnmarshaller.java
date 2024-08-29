@@ -51,6 +51,10 @@ public class DescribeScriptResponseUnmarshaller {
 		script.setNewBargeInEnable(_ctx.booleanValue("DescribeScriptResponse.Script.NewBargeInEnable"));
 		script.setLongWaitEnable(_ctx.booleanValue("DescribeScriptResponse.Script.LongWaitEnable"));
 		script.setEmotionEnable(_ctx.booleanValue("DescribeScriptResponse.Script.EmotionEnable"));
+		script.setAgentId(_ctx.longValue("DescribeScriptResponse.Script.AgentId"));
+		script.setAgentKey(_ctx.stringValue("DescribeScriptResponse.Script.AgentKey"));
+		script.setAgentLlm(_ctx.booleanValue("DescribeScriptResponse.Script.AgentLlm"));
+		script.setChatConfig(_ctx.stringValue("DescribeScriptResponse.Script.ChatConfig"));
 		describeScriptResponse.setScript(script);
 	 
 	 	return describeScriptResponse;

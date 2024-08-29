@@ -29,7 +29,7 @@ public class ChangeResourceGroupRequest extends RpcAcsRequest<ChangeResourceGrou
 
 	private String newResourceGroupId;
 	public ChangeResourceGroupRequest() {
-		super("OutboundBot", "2019-12-26", "ChangeResourceGroup");
+		super("OutboundBot", "2019-12-26", "ChangeResourceGroup", "outboundbot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

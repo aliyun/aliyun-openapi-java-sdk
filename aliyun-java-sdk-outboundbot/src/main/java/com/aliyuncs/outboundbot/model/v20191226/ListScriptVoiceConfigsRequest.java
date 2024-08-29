@@ -33,7 +33,7 @@ public class ListScriptVoiceConfigsRequest extends RpcAcsRequest<ListScriptVoice
 
 	private Integer pageSize;
 	public ListScriptVoiceConfigsRequest() {
-		super("OutboundBot", "2019-12-26", "ListScriptVoiceConfigs");
+		super("OutboundBot", "2019-12-26", "ListScriptVoiceConfigs", "outboundbot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

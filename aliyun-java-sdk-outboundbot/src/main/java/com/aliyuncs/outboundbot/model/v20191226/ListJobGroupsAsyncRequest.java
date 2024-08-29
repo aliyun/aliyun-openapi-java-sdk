@@ -27,7 +27,7 @@ public class ListJobGroupsAsyncRequest extends RpcAcsRequest<ListJobGroupsAsyncR
 
 	private String asyncTaskId;
 	public ListJobGroupsAsyncRequest() {
-		super("OutboundBot", "2019-12-26", "ListJobGroupsAsync");
+		super("OutboundBot", "2019-12-26", "ListJobGroupsAsync", "outboundbot");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

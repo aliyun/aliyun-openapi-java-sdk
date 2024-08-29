@@ -31,7 +31,7 @@ public class SaveMaxAttemptsPerDayRequest extends RpcAcsRequest<SaveMaxAttemptsP
 
 	private String entryId;
 	public SaveMaxAttemptsPerDayRequest() {
-		super("OutboundBot", "2019-12-26", "SaveMaxAttemptsPerDay");
+		super("OutboundBot", "2019-12-26", "SaveMaxAttemptsPerDay", "outboundbot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

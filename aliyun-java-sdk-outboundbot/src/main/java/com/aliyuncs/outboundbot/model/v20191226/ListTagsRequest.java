@@ -29,7 +29,7 @@ public class ListTagsRequest extends RpcAcsRequest<ListTagsResponse> {
 
 	private String instanceId;
 	public ListTagsRequest() {
-		super("OutboundBot", "2019-12-26", "ListTags");
+		super("OutboundBot", "2019-12-26", "ListTags", "outboundbot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

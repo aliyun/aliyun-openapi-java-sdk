@@ -29,7 +29,7 @@ public class DescribeTTSConfigRequest extends RpcAcsRequest<DescribeTTSConfigRes
 
 	private String instanceId;
 	public DescribeTTSConfigRequest() {
-		super("OutboundBot", "2019-12-26", "DescribeTTSConfig");
+		super("OutboundBot", "2019-12-26", "DescribeTTSConfig", "outboundbot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

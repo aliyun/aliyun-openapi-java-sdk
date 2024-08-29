@@ -31,7 +31,7 @@ public class DescribeIntentStatisticsRequest extends RpcAcsRequest<DescribeInten
 
 	private Integer limit;
 	public DescribeIntentStatisticsRequest() {
-		super("OutboundBot", "2019-12-26", "DescribeIntentStatistics");
+		super("OutboundBot", "2019-12-26", "DescribeIntentStatistics", "outboundbot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

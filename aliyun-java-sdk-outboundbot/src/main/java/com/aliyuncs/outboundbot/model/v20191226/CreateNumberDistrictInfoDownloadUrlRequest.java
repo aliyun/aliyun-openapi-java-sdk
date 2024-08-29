@@ -27,7 +27,7 @@ public class CreateNumberDistrictInfoDownloadUrlRequest extends RpcAcsRequest<Cr
 
 	private String versionId;
 	public CreateNumberDistrictInfoDownloadUrlRequest() {
-		super("OutboundBot", "2019-12-26", "CreateNumberDistrictInfoDownloadUrl");
+		super("OutboundBot", "2019-12-26", "CreateNumberDistrictInfoDownloadUrl", "outboundbot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

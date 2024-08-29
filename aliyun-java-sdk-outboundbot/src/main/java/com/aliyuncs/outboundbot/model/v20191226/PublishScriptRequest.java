@@ -31,7 +31,7 @@ public class PublishScriptRequest extends RpcAcsRequest<PublishScriptResponse> {
 
 	private String instanceId;
 	public PublishScriptRequest() {
-		super("OutboundBot", "2019-12-26", "PublishScript");
+		super("OutboundBot", "2019-12-26", "PublishScript", "outboundbot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

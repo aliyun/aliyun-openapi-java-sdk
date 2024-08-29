@@ -136,6 +136,9 @@ public class DescribeJobResponseUnmarshaller {
 			task.setTaskId(_ctx.stringValue("DescribeJobResponse.Job.Tasks["+ i +"].TaskId"));
 			task.setHangUpDirection(_ctx.stringValue("DescribeJobResponse.Job.Tasks["+ i +"].HangUpDirection"));
 			task.setRingingDuration(_ctx.longValue("DescribeJobResponse.Job.Tasks["+ i +"].RingingDuration"));
+			task.setSipCode(_ctx.stringValue("DescribeJobResponse.Job.Tasks["+ i +"].SipCode"));
+			task.setRealRingingDuration(_ctx.longValue("DescribeJobResponse.Job.Tasks["+ i +"].RealRingingDuration"));
+			task.setSipDuration(_ctx.longValue("DescribeJobResponse.Job.Tasks["+ i +"].SipDuration"));
 
 			Contact3 contact3 = new Contact3();
 			contact3.setPhoneNumber(_ctx.stringValue("DescribeJobResponse.Job.Tasks["+ i +"].Contact.PhoneNumber"));

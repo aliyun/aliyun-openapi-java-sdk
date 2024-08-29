@@ -25,7 +25,7 @@ import com.aliyuncs.outboundbot.Endpoint;
 public class GetNumberDistrictInfoTemplateDownloadUrlRequest extends RpcAcsRequest<GetNumberDistrictInfoTemplateDownloadUrlResponse> {
 	   
 	public GetNumberDistrictInfoTemplateDownloadUrlRequest() {
-		super("OutboundBot", "2019-12-26", "GetNumberDistrictInfoTemplateDownloadUrl");
+		super("OutboundBot", "2019-12-26", "GetNumberDistrictInfoTemplateDownloadUrl", "outboundbot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

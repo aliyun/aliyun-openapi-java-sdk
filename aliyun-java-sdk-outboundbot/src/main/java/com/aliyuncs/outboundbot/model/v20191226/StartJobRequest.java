@@ -38,7 +38,7 @@ public class StartJobRequest extends RpcAcsRequest<StartJobResponse> {
 
 	private String scenarioId;
 	public StartJobRequest() {
-		super("OutboundBot", "2019-12-26", "StartJob");
+		super("OutboundBot", "2019-12-26", "StartJob", "outboundbot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

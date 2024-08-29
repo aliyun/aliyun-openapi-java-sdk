@@ -25,7 +25,7 @@ import com.aliyuncs.outboundbot.Endpoint;
 public class ListAllTenantBindNumberBindingRequest extends RpcAcsRequest<ListAllTenantBindNumberBindingResponse> {
 	   
 	public ListAllTenantBindNumberBindingRequest() {
-		super("OutboundBot", "2019-12-26", "ListAllTenantBindNumberBinding");
+		super("OutboundBot", "2019-12-26", "ListAllTenantBindNumberBinding", "outboundbot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

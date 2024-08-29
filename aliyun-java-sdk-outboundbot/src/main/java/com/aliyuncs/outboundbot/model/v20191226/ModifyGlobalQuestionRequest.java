@@ -39,7 +39,7 @@ public class ModifyGlobalQuestionRequest extends RpcAcsRequest<ModifyGlobalQuest
 
 	private String globalQuestionType;
 	public ModifyGlobalQuestionRequest() {
-		super("OutboundBot", "2019-12-26", "ModifyGlobalQuestion");
+		super("OutboundBot", "2019-12-26", "ModifyGlobalQuestion", "outboundbot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

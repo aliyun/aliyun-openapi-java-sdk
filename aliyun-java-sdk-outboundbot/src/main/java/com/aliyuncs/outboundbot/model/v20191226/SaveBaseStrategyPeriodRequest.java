@@ -28,6 +28,8 @@ public class SaveBaseStrategyPeriodRequest extends RpcAcsRequest<SaveBaseStrateg
 
 	private Integer strategyLevel;
 
+	private Boolean onlyWorkdays;
+
 	private String entryId;
 
 	private Boolean onlyWeekdays;
@@ -36,7 +38,7 @@ public class SaveBaseStrategyPeriodRequest extends RpcAcsRequest<SaveBaseStrateg
 
 	private List<String> workingTimes;
 	public SaveBaseStrategyPeriodRequest() {
-		super("OutboundBot", "2019-12-26", "SaveBaseStrategyPeriod");
+		super("OutboundBot", "2019-12-26", "SaveBaseStrategyPeriod", "outboundbot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -52,6 +54,17 @@ public class SaveBaseStrategyPeriodRequest extends RpcAcsRequest<SaveBaseStrateg
 		this.strategyLevel = strategyLevel;
 		if(strategyLevel != null){
 			putQueryParameter("StrategyLevel", strategyLevel.toString());
+		}
+	}
+
+	public Boolean getOnlyWorkdays() {
+		return this.onlyWorkdays;
+	}
+
+	public void setOnlyWorkdays(Boolean onlyWorkdays) {
+		this.onlyWorkdays = onlyWorkdays;
+		if(onlyWorkdays != null){
+			putQueryParameter("OnlyWorkdays", onlyWorkdays.toString());
 		}
 	}
 

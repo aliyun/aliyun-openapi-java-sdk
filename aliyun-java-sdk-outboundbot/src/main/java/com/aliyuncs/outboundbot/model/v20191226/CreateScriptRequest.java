@@ -32,15 +32,25 @@ public class CreateScriptRequest extends RpcAcsRequest<CreateScriptResponse> {
 
 	private String scriptName;
 
+	private String nluEngine;
+
 	private String scene;
+
+	private String nluAccessType;
 
 	private List<String> scriptWaveforms;
 
 	private String asrConfig;
 
+	private Boolean agentLlm;
+
 	private Boolean emotionEnable;
 
+	private Long agentId;
+
 	private Boolean newBargeInEnable;
+
+	private String agentKey;
 
 	private Boolean miniPlaybackEnable;
 
@@ -54,7 +64,7 @@ public class CreateScriptRequest extends RpcAcsRequest<CreateScriptResponse> {
 
 	private List<String> scriptContents;
 	public CreateScriptRequest() {
-		super("OutboundBot", "2019-12-26", "CreateScript");
+		super("OutboundBot", "2019-12-26", "CreateScript", "outboundbot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -95,6 +105,17 @@ public class CreateScriptRequest extends RpcAcsRequest<CreateScriptResponse> {
 		}
 	}
 
+	public String getNluEngine() {
+		return this.nluEngine;
+	}
+
+	public void setNluEngine(String nluEngine) {
+		this.nluEngine = nluEngine;
+		if(nluEngine != null){
+			putQueryParameter("NluEngine", nluEngine);
+		}
+	}
+
 	public String getScene() {
 		return this.scene;
 	}
@@ -103,6 +124,17 @@ public class CreateScriptRequest extends RpcAcsRequest<CreateScriptResponse> {
 		this.scene = scene;
 		if(scene != null){
 			putQueryParameter("Scene", scene);
+		}
+	}
+
+	public String getNluAccessType() {
+		return this.nluAccessType;
+	}
+
+	public void setNluAccessType(String nluAccessType) {
+		this.nluAccessType = nluAccessType;
+		if(nluAccessType != null){
+			putQueryParameter("NluAccessType", nluAccessType);
 		}
 	}
 
@@ -130,6 +162,17 @@ public class CreateScriptRequest extends RpcAcsRequest<CreateScriptResponse> {
 		}
 	}
 
+	public Boolean getAgentLlm() {
+		return this.agentLlm;
+	}
+
+	public void setAgentLlm(Boolean agentLlm) {
+		this.agentLlm = agentLlm;
+		if(agentLlm != null){
+			putQueryParameter("AgentLlm", agentLlm.toString());
+		}
+	}
+
 	public Boolean getEmotionEnable() {
 		return this.emotionEnable;
 	}
@@ -141,6 +184,17 @@ public class CreateScriptRequest extends RpcAcsRequest<CreateScriptResponse> {
 		}
 	}
 
+	public Long getAgentId() {
+		return this.agentId;
+	}
+
+	public void setAgentId(Long agentId) {
+		this.agentId = agentId;
+		if(agentId != null){
+			putQueryParameter("AgentId", agentId.toString());
+		}
+	}
+
 	public Boolean getNewBargeInEnable() {
 		return this.newBargeInEnable;
 	}
@@ -149,6 +203,17 @@ public class CreateScriptRequest extends RpcAcsRequest<CreateScriptResponse> {
 		this.newBargeInEnable = newBargeInEnable;
 		if(newBargeInEnable != null){
 			putQueryParameter("NewBargeInEnable", newBargeInEnable.toString());
+		}
+	}
+
+	public String getAgentKey() {
+		return this.agentKey;
+	}
+
+	public void setAgentKey(String agentKey) {
+		this.agentKey = agentKey;
+		if(agentKey != null){
+			putQueryParameter("AgentKey", agentKey);
 		}
 	}
 

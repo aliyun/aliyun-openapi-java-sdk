@@ -22,14 +22,12 @@ import com.aliyuncs.outboundbot.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetMaxAttemptsPerDayRequest extends RpcAcsRequest<GetMaxAttemptsPerDayResponse> {
+public class GetAnnotationMissionSummaryRequest extends RpcAcsRequest<GetAnnotationMissionSummaryResponse> {
 	   
 
-	private Integer strategyLevel;
-
-	private String entryId;
-	public GetMaxAttemptsPerDayRequest() {
-		super("OutboundBot", "2019-12-26", "GetMaxAttemptsPerDay");
+	private String annotationMissionId;
+	public GetAnnotationMissionSummaryRequest() {
+		super("OutboundBot", "2019-12-26", "GetAnnotationMissionSummary", "outboundbot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +35,20 @@ public class GetMaxAttemptsPerDayRequest extends RpcAcsRequest<GetMaxAttemptsPer
 		} catch (Exception e) {}
 	}
 
-	public Integer getStrategyLevel() {
-		return this.strategyLevel;
+	public String getAnnotationMissionId() {
+		return this.annotationMissionId;
 	}
 
-	public void setStrategyLevel(Integer strategyLevel) {
-		this.strategyLevel = strategyLevel;
-		if(strategyLevel != null){
-			putQueryParameter("StrategyLevel", strategyLevel.toString());
-		}
-	}
-
-	public String getEntryId() {
-		return this.entryId;
-	}
-
-	public void setEntryId(String entryId) {
-		this.entryId = entryId;
-		if(entryId != null){
-			putQueryParameter("EntryId", entryId);
+	public void setAnnotationMissionId(String annotationMissionId) {
+		this.annotationMissionId = annotationMissionId;
+		if(annotationMissionId != null){
+			putQueryParameter("AnnotationMissionId", annotationMissionId);
 		}
 	}
 
 	@Override
-	public Class<GetMaxAttemptsPerDayResponse> getResponseClass() {
-		return GetMaxAttemptsPerDayResponse.class;
+	public Class<GetAnnotationMissionSummaryResponse> getResponseClass() {
+		return GetAnnotationMissionSummaryResponse.class;
 	}
 
 }

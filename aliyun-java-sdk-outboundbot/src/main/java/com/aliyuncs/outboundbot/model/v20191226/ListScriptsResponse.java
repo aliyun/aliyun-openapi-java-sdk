@@ -163,6 +163,18 @@ public class ListScriptsResponse extends AcsResponse {
 
 			private Boolean isPreset;
 
+			private String agentKey;
+
+			private Boolean agentLlm;
+
+			private Long agentId;
+
+			private String nluEngine;
+
+			private String nluAccessType;
+
+			private Long createTime;
+
 			public String getStatus() {
 				return this.status;
 			}
@@ -297,6 +309,54 @@ public class ListScriptsResponse extends AcsResponse {
 
 			public void setIsPreset(Boolean isPreset) {
 				this.isPreset = isPreset;
+			}
+
+			public String getAgentKey() {
+				return this.agentKey;
+			}
+
+			public void setAgentKey(String agentKey) {
+				this.agentKey = agentKey;
+			}
+
+			public Boolean getAgentLlm() {
+				return this.agentLlm;
+			}
+
+			public void setAgentLlm(Boolean agentLlm) {
+				this.agentLlm = agentLlm;
+			}
+
+			public Long getAgentId() {
+				return this.agentId;
+			}
+
+			public void setAgentId(Long agentId) {
+				this.agentId = agentId;
+			}
+
+			public String getNluEngine() {
+				return this.nluEngine;
+			}
+
+			public void setNluEngine(String nluEngine) {
+				this.nluEngine = nluEngine;
+			}
+
+			public String getNluAccessType() {
+				return this.nluAccessType;
+			}
+
+			public void setNluAccessType(String nluAccessType) {
+				this.nluAccessType = nluAccessType;
+			}
+
+			public Long getCreateTime() {
+				return this.createTime;
+			}
+
+			public void setCreateTime(Long createTime) {
+				this.createTime = createTime;
 			}
 		}
 	}

@@ -35,6 +35,12 @@ public class ListInstancesResponse extends AcsResponse {
 
 	private Boolean success;
 
+	private Integer totalCount;
+
+	private Integer pageNumber;
+
+	private Integer pageSize;
+
 	private List<Instance> instances;
 
 	public Integer getHttpStatusCode() {
@@ -75,6 +81,30 @@ public class ListInstancesResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
 	}
 
 	public List<Instance> getInstances() {

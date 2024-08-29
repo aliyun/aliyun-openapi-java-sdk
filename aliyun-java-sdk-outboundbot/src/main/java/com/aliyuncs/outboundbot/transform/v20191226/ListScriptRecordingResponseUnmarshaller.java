@@ -51,6 +51,7 @@ public class ListScriptRecordingResponseUnmarshaller {
 			scriptRecording.setRecordingName(_ctx.stringValue("ListScriptRecordingResponse.ScriptRecordings["+ i +"].RecordingName"));
 			scriptRecording.setGmtCreate(_ctx.longValue("ListScriptRecordingResponse.ScriptRecordings["+ i +"].GmtCreate"));
 			scriptRecording.setInnerId(_ctx.stringValue("ListScriptRecordingResponse.ScriptRecordings["+ i +"].InnerId"));
+			scriptRecording.setRefId(_ctx.stringValue("ListScriptRecordingResponse.ScriptRecordings["+ i +"].RefId"));
 
 			scriptRecordings.add(scriptRecording);
 		}

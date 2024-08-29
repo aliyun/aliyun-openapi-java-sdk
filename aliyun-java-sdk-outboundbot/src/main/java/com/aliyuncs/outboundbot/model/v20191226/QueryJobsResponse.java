@@ -153,6 +153,8 @@ public class QueryJobsResponse extends AcsResponse {
 
 			private List<Task> tasks;
 
+			private List<TagHit> tagHits;
+
 			private List<String> callingNumbers;
 
 			public String getStatus() {
@@ -249,6 +251,14 @@ public class QueryJobsResponse extends AcsResponse {
 
 			public void setTasks(List<Task> tasks) {
 				this.tasks = tasks;
+			}
+
+			public List<TagHit> getTagHits() {
+				return this.tagHits;
+			}
+
+			public void setTagHits(List<TagHit> tagHits) {
+				this.tagHits = tagHits;
 			}
 
 			public List<String> getCallingNumbers() {
@@ -661,6 +671,29 @@ public class QueryJobsResponse extends AcsResponse {
 					public void setReferenceId(String referenceId) {
 						this.referenceId = referenceId;
 					}
+				}
+			}
+
+			public static class TagHit {
+
+				private String tagName;
+
+				private String tagGroup;
+
+				public String getTagName() {
+					return this.tagName;
+				}
+
+				public void setTagName(String tagName) {
+					this.tagName = tagName;
+				}
+
+				public String getTagGroup() {
+					return this.tagGroup;
+				}
+
+				public void setTagGroup(String tagGroup) {
+					this.tagGroup = tagGroup;
 				}
 			}
 		}

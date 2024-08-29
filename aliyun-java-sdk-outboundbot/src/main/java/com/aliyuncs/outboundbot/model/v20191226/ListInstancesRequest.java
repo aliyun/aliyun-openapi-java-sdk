@@ -26,16 +26,33 @@ import com.aliyuncs.outboundbot.Endpoint;
 public class ListInstancesRequest extends RpcAcsRequest<ListInstancesResponse> {
 	   
 
+	private Integer pageNumber;
+
 	private String resourceGroupId;
+
+	private String name;
+
+	private Integer pageSize;
 
 	private List<Tag> tags;
 	public ListInstancesRequest() {
-		super("OutboundBot", "2019-12-26", "ListInstances");
+		super("OutboundBot", "2019-12-26", "ListInstances", "outboundbot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
 	}
 
 	public String getResourceGroupId() {
@@ -46,6 +63,28 @@ public class ListInstancesRequest extends RpcAcsRequest<ListInstancesResponse> {
 		this.resourceGroupId = resourceGroupId;
 		if(resourceGroupId != null){
 			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

@@ -58,6 +58,12 @@ public class ListScriptsResponseUnmarshaller {
 			script.setLongWaitEnable(_ctx.booleanValue("ListScriptsResponse.Scripts.List["+ i +"].LongWaitEnable"));
 			script.setEmotionEnable(_ctx.booleanValue("ListScriptsResponse.Scripts.List["+ i +"].EmotionEnable"));
 			script.setIsPreset(_ctx.booleanValue("ListScriptsResponse.Scripts.List["+ i +"].IsPreset"));
+			script.setAgentKey(_ctx.stringValue("ListScriptsResponse.Scripts.List["+ i +"].AgentKey"));
+			script.setAgentLlm(_ctx.booleanValue("ListScriptsResponse.Scripts.List["+ i +"].AgentLlm"));
+			script.setAgentId(_ctx.longValue("ListScriptsResponse.Scripts.List["+ i +"].agentId"));
+			script.setNluEngine(_ctx.stringValue("ListScriptsResponse.Scripts.List["+ i +"].NluEngine"));
+			script.setNluAccessType(_ctx.stringValue("ListScriptsResponse.Scripts.List["+ i +"].NluAccessType"));
+			script.setCreateTime(_ctx.longValue("ListScriptsResponse.Scripts.List["+ i +"].CreateTime"));
 
 			list.add(script);
 		}

@@ -29,7 +29,7 @@ public class CreateJobDataParsingTaskRequest extends RpcAcsRequest<CreateJobData
 
 	private String instanceId;
 	public CreateJobDataParsingTaskRequest() {
-		super("OutboundBot", "2019-12-26", "CreateJobDataParsingTask");
+		super("OutboundBot", "2019-12-26", "CreateJobDataParsingTask", "outboundbot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

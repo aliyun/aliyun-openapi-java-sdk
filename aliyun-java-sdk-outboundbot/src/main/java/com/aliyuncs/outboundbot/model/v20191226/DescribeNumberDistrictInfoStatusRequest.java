@@ -25,7 +25,7 @@ import com.aliyuncs.outboundbot.Endpoint;
 public class DescribeNumberDistrictInfoStatusRequest extends RpcAcsRequest<DescribeNumberDistrictInfoStatusResponse> {
 	   
 	public DescribeNumberDistrictInfoStatusRequest() {
-		super("OutboundBot", "2019-12-26", "DescribeNumberDistrictInfoStatus");
+		super("OutboundBot", "2019-12-26", "DescribeNumberDistrictInfoStatus", "outboundbot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

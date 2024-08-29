@@ -29,7 +29,7 @@ public class GetEffectiveDaysRequest extends RpcAcsRequest<GetEffectiveDaysRespo
 
 	private String entryId;
 	public GetEffectiveDaysRequest() {
-		super("OutboundBot", "2019-12-26", "GetEffectiveDays");
+		super("OutboundBot", "2019-12-26", "GetEffectiveDays", "outboundbot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

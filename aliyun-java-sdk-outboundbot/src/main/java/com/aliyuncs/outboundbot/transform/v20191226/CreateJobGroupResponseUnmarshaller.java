@@ -58,6 +58,12 @@ public class CreateJobGroupResponseUnmarshaller {
 		}
 		jobGroup.setCallingNumbers(callingNumbers);
 
+		List<String> recallCallingNumbers = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("CreateJobGroupResponse.JobGroup.RecallCallingNumbers.Length"); i++) {
+			recallCallingNumbers.add(_ctx.stringValue("CreateJobGroupResponse.JobGroup.RecallCallingNumbers["+ i +"]"));
+		}
+		jobGroup.setRecallCallingNumbers(recallCallingNumbers);
+
 		ExportProgress exportProgress = new ExportProgress();
 		exportProgress.setStatus(_ctx.stringValue("CreateJobGroupResponse.JobGroup.ExportProgress.Status"));
 		exportProgress.setFileHttpUrl(_ctx.stringValue("CreateJobGroupResponse.JobGroup.ExportProgress.FileHttpUrl"));

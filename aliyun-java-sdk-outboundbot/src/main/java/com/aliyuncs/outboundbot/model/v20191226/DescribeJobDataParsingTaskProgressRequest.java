@@ -29,7 +29,7 @@ public class DescribeJobDataParsingTaskProgressRequest extends RpcAcsRequest<Des
 
 	private String jobDataParsingTaskId;
 	public DescribeJobDataParsingTaskProgressRequest() {
-		super("OutboundBot", "2019-12-26", "DescribeJobDataParsingTaskProgress");
+		super("OutboundBot", "2019-12-26", "DescribeJobDataParsingTaskProgress", "outboundbot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

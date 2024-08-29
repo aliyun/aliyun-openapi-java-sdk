@@ -117,6 +117,8 @@ public class CreateJobGroupResponse extends AcsResponse {
 
 		private List<String> callingNumbers;
 
+		private List<String> recallCallingNumbers;
+
 		private ExportProgress exportProgress;
 
 		private Strategy strategy;
@@ -241,6 +243,14 @@ public class CreateJobGroupResponse extends AcsResponse {
 
 		public void setCallingNumbers(List<String> callingNumbers) {
 			this.callingNumbers = callingNumbers;
+		}
+
+		public List<String> getRecallCallingNumbers() {
+			return this.recallCallingNumbers;
+		}
+
+		public void setRecallCallingNumbers(List<String> recallCallingNumbers) {
+			this.recallCallingNumbers = recallCallingNumbers;
 		}
 
 		public ExportProgress getExportProgress() {

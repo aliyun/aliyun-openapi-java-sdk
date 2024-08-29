@@ -38,7 +38,7 @@ public class SuspendJobsRequest extends RpcAcsRequest<SuspendJobsResponse> {
 
 	private String scenarioId;
 	public SuspendJobsRequest() {
-		super("OutboundBot", "2019-12-26", "SuspendJobs");
+		super("OutboundBot", "2019-12-26", "SuspendJobs", "outboundbot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

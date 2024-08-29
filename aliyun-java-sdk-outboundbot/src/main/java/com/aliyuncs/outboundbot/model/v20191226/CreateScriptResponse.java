@@ -116,6 +116,10 @@ public class CreateScriptResponse extends AcsResponse {
 
 		private String scene;
 
+		private String nluEngine;
+
+		private String nluAccessType;
+
 		public String getStatus() {
 			return this.status;
 		}
@@ -194,6 +198,22 @@ public class CreateScriptResponse extends AcsResponse {
 
 		public void setScene(String scene) {
 			this.scene = scene;
+		}
+
+		public String getNluEngine() {
+			return this.nluEngine;
+		}
+
+		public void setNluEngine(String nluEngine) {
+			this.nluEngine = nluEngine;
+		}
+
+		public String getNluAccessType() {
+			return this.nluAccessType;
+		}
+
+		public void setNluAccessType(String nluAccessType) {
+			this.nluAccessType = nluAccessType;
 		}
 	}
 

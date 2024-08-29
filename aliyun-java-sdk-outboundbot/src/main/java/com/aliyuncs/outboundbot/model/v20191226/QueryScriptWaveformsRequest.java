@@ -31,7 +31,7 @@ public class QueryScriptWaveformsRequest extends RpcAcsRequest<QueryScriptWavefo
 
 	private String scriptContent;
 	public QueryScriptWaveformsRequest() {
-		super("OutboundBot", "2019-12-26", "QueryScriptWaveforms");
+		super("OutboundBot", "2019-12-26", "QueryScriptWaveforms", "outboundbot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

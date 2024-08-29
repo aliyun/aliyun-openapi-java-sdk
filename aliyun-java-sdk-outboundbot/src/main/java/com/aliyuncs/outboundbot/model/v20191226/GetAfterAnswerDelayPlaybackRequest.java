@@ -29,7 +29,7 @@ public class GetAfterAnswerDelayPlaybackRequest extends RpcAcsRequest<GetAfterAn
 
 	private String entryId;
 	public GetAfterAnswerDelayPlaybackRequest() {
-		super("OutboundBot", "2019-12-26", "GetAfterAnswerDelayPlayback");
+		super("OutboundBot", "2019-12-26", "GetAfterAnswerDelayPlayback", "outboundbot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

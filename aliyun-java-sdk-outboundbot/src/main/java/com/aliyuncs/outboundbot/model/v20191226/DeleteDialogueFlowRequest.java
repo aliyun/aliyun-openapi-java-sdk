@@ -31,7 +31,7 @@ public class DeleteDialogueFlowRequest extends RpcAcsRequest<DeleteDialogueFlowR
 
 	private String dialogueFlowId;
 	public DeleteDialogueFlowRequest() {
-		super("OutboundBot", "2019-12-26", "DeleteDialogueFlow");
+		super("OutboundBot", "2019-12-26", "DeleteDialogueFlow", "outboundbot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

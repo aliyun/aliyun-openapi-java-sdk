@@ -38,7 +38,7 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	private String nluServiceType;
 	public CreateInstanceRequest() {
-		super("OutboundBot", "2019-12-26", "CreateInstance");
+		super("OutboundBot", "2019-12-26", "CreateInstance", "outboundbot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

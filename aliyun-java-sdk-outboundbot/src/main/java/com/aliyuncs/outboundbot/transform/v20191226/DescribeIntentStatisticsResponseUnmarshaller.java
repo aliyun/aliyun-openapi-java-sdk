@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.outboundbot.model.v20191226.DescribeIntentStatisticsResponse;
 import com.aliyuncs.outboundbot.model.v20191226.DescribeIntentStatisticsResponse.IntentStatisticsItem;
 import com.aliyuncs.outboundbot.model.v20191226.DescribeIntentStatisticsResponse.IntentStatisticsItem1;
+import com.aliyuncs.outboundbot.model.v20191226.DescribeIntentStatisticsResponse.IntentStatisticsItem2;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -47,14 +48,15 @@ public class DescribeIntentStatisticsResponseUnmarshaller {
 			intentStatisticsItem.setHitNum(_ctx.integerValue("DescribeIntentStatisticsResponse.ProcessIntents["+ i +"].HitNum"));
 			intentStatisticsItem.setIntentId(_ctx.stringValue("DescribeIntentStatisticsResponse.ProcessIntents["+ i +"].IntentId"));
 			intentStatisticsItem.setIntentName(_ctx.stringValue("DescribeIntentStatisticsResponse.ProcessIntents["+ i +"].IntentName"));
+			intentStatisticsItem.setRateDisplay(_ctx.stringValue("DescribeIntentStatisticsResponse.ProcessIntents["+ i +"].RateDisplay"));
 
 			processIntents.add(intentStatisticsItem);
 		}
 		describeIntentStatisticsResponse.setProcessIntents(processIntents);
 
-		List<IntentStatisticsItem> globalIntents = new ArrayList<IntentStatisticsItem>();
+		List<IntentStatisticsItem1> globalIntents = new ArrayList<IntentStatisticsItem1>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeIntentStatisticsResponse.GlobalIntents.Length"); i++) {
-			IntentStatisticsItem intentStatisticsItem1 = new IntentStatisticsItem();
+			IntentStatisticsItem1 intentStatisticsItem1 = new IntentStatisticsItem1();
 			intentStatisticsItem1.setType(_ctx.stringValue("DescribeIntentStatisticsResponse.GlobalIntents["+ i +"].Type"));
 			intentStatisticsItem1.setGroupId(_ctx.stringValue("DescribeIntentStatisticsResponse.GlobalIntents["+ i +"].GroupId"));
 			intentStatisticsItem1.setHitAfterNoAnswer(_ctx.integerValue("DescribeIntentStatisticsResponse.GlobalIntents["+ i +"].HitAfterNoAnswer"));
@@ -67,12 +69,16 @@ public class DescribeIntentStatisticsResponseUnmarshaller {
 		}
 		describeIntentStatisticsResponse.setGlobalIntents(globalIntents);
 
-		List<IntentStatisticsItem1> intentsAfterNoAnswer = new ArrayList<IntentStatisticsItem1>();
+		List<IntentStatisticsItem2> intentsAfterNoAnswer = new ArrayList<IntentStatisticsItem2>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeIntentStatisticsResponse.IntentsAfterNoAnswer.Length"); i++) {
-			IntentStatisticsItem1 intentStatisticsItem11 = new IntentStatisticsItem1();
-			intentStatisticsItem11.setInstanceId(_ctx.stringValue("DescribeIntentStatisticsResponse.IntentsAfterNoAnswer["+ i +"].InstanceId"));
+			IntentStatisticsItem2 intentStatisticsItem2 = new IntentStatisticsItem2();
+			intentStatisticsItem2.setInstanceId(_ctx.stringValue("DescribeIntentStatisticsResponse.IntentsAfterNoAnswer["+ i +"].InstanceId"));
+			intentStatisticsItem2.setGroupId(_ctx.stringValue("DescribeIntentStatisticsResponse.IntentsAfterNoAnswer["+ i +"].GroupId"));
+			intentStatisticsItem2.setHitAfterNoAnswer(_ctx.integerValue("DescribeIntentStatisticsResponse.IntentsAfterNoAnswer["+ i +"].HitAfterNoAnswer"));
+			intentStatisticsItem2.setIntentId(_ctx.stringValue("DescribeIntentStatisticsResponse.IntentsAfterNoAnswer["+ i +"].IntentId"));
+			intentStatisticsItem2.setIntentName(_ctx.stringValue("DescribeIntentStatisticsResponse.IntentsAfterNoAnswer["+ i +"].IntentName"));
 
-			intentsAfterNoAnswer.add(intentStatisticsItem11);
+			intentsAfterNoAnswer.add(intentStatisticsItem2);
 		}
 		describeIntentStatisticsResponse.setIntentsAfterNoAnswer(intentsAfterNoAnswer);
 	 

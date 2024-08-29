@@ -31,7 +31,7 @@ public class DescribeDialogueNodeStatisticsRequest extends RpcAcsRequest<Describ
 
 	private Integer limit;
 	public DescribeDialogueNodeStatisticsRequest() {
-		super("OutboundBot", "2019-12-26", "DescribeDialogueNodeStatistics");
+		super("OutboundBot", "2019-12-26", "DescribeDialogueNodeStatistics", "outboundbot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

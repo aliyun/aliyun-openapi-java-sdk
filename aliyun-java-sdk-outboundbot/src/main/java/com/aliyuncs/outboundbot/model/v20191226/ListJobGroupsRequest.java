@@ -31,6 +31,8 @@ public class ListJobGroupsRequest extends RpcAcsRequest<ListJobGroupsResponse> {
 
 	private Long endTime;
 
+	private Boolean onlyMinConcurrencyEnabled;
+
 	private Long startTime;
 
 	private Integer pageNumber;
@@ -41,7 +43,7 @@ public class ListJobGroupsRequest extends RpcAcsRequest<ListJobGroupsResponse> {
 
 	private Integer pageSize;
 	public ListJobGroupsRequest() {
-		super("OutboundBot", "2019-12-26", "ListJobGroups");
+		super("OutboundBot", "2019-12-26", "ListJobGroups", "outboundbot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -79,6 +81,17 @@ public class ListJobGroupsRequest extends RpcAcsRequest<ListJobGroupsResponse> {
 		this.endTime = endTime;
 		if(endTime != null){
 			putQueryParameter("EndTime", endTime.toString());
+		}
+	}
+
+	public Boolean getOnlyMinConcurrencyEnabled() {
+		return this.onlyMinConcurrencyEnabled;
+	}
+
+	public void setOnlyMinConcurrencyEnabled(Boolean onlyMinConcurrencyEnabled) {
+		this.onlyMinConcurrencyEnabled = onlyMinConcurrencyEnabled;
+		if(onlyMinConcurrencyEnabled != null){
+			putQueryParameter("OnlyMinConcurrencyEnabled", onlyMinConcurrencyEnabled.toString());
 		}
 	}
 

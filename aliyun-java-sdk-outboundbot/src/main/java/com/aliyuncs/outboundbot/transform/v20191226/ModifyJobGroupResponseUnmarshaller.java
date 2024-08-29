@@ -51,6 +51,7 @@ public class ModifyJobGroupResponseUnmarshaller {
 		jobGroup.setRingingDuration(_ctx.longValue("ModifyJobGroupResponse.JobGroup.RingingDuration"));
 		jobGroup.setPriority(_ctx.stringValue("ModifyJobGroupResponse.JobGroup.Priority"));
 		jobGroup.setMinConcurrency(_ctx.longValue("ModifyJobGroupResponse.JobGroup.MinConcurrency"));
+		jobGroup.setFlashSmsExtras(_ctx.stringValue("ModifyJobGroupResponse.JobGroup.FlashSmsExtras"));
 
 		List<String> callingNumbers = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("ModifyJobGroupResponse.JobGroup.CallingNumbers.Length"); i++) {

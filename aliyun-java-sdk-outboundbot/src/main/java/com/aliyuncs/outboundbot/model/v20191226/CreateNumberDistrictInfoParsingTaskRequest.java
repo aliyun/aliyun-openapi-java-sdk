@@ -29,7 +29,7 @@ public class CreateNumberDistrictInfoParsingTaskRequest extends RpcAcsRequest<Cr
 
 	private String filePath;
 	public CreateNumberDistrictInfoParsingTaskRequest() {
-		super("OutboundBot", "2019-12-26", "CreateNumberDistrictInfoParsingTask");
+		super("OutboundBot", "2019-12-26", "CreateNumberDistrictInfoParsingTask", "outboundbot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

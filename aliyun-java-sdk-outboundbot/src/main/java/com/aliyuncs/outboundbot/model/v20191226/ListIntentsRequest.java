@@ -35,7 +35,7 @@ public class ListIntentsRequest extends RpcAcsRequest<ListIntentsResponse> {
 
 	private String keyword;
 	public ListIntentsRequest() {
-		super("OutboundBot", "2019-12-26", "ListIntents");
+		super("OutboundBot", "2019-12-26", "ListIntents", "outboundbot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

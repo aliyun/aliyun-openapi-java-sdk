@@ -161,6 +161,8 @@ public class ListJobGroupsResponse extends AcsResponse {
 
 			private String modifyTime;
 
+			private Integer minConcurrency;
+
 			private Progress progress;
 
 			private ExportProgress exportProgress;
@@ -253,6 +255,14 @@ public class ListJobGroupsResponse extends AcsResponse {
 
 			public void setModifyTime(String modifyTime) {
 				this.modifyTime = modifyTime;
+			}
+
+			public Integer getMinConcurrency() {
+				return this.minConcurrency;
+			}
+
+			public void setMinConcurrency(Integer minConcurrency) {
+				this.minConcurrency = minConcurrency;
 			}
 
 			public Progress getProgress() {

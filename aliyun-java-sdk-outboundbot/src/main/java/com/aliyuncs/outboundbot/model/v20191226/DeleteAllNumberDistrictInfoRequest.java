@@ -25,7 +25,7 @@ import com.aliyuncs.outboundbot.Endpoint;
 public class DeleteAllNumberDistrictInfoRequest extends RpcAcsRequest<DeleteAllNumberDistrictInfoResponse> {
 	   
 	public DeleteAllNumberDistrictInfoRequest() {
-		super("OutboundBot", "2019-12-26", "DeleteAllNumberDistrictInfo");
+		super("OutboundBot", "2019-12-26", "DeleteAllNumberDistrictInfo", "outboundbot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

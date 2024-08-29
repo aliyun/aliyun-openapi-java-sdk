@@ -31,7 +31,7 @@ public class RollbackScriptRequest extends RpcAcsRequest<RollbackScriptResponse>
 
 	private String rollbackVersion;
 	public RollbackScriptRequest() {
-		super("OutboundBot", "2019-12-26", "RollbackScript");
+		super("OutboundBot", "2019-12-26", "RollbackScript", "outboundbot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

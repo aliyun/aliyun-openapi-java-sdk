@@ -29,7 +29,7 @@ public class DescribeScriptRequest extends RpcAcsRequest<DescribeScriptResponse>
 
 	private String instanceId;
 	public DescribeScriptRequest() {
-		super("OutboundBot", "2019-12-26", "DescribeScript");
+		super("OutboundBot", "2019-12-26", "DescribeScript", "outboundbot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

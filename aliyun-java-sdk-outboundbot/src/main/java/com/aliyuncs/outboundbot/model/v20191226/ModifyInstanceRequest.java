@@ -36,7 +36,7 @@ public class ModifyInstanceRequest extends RpcAcsRequest<ModifyInstanceResponse>
 
 	private String instanceDescription;
 	public ModifyInstanceRequest() {
-		super("OutboundBot", "2019-12-26", "ModifyInstance");
+		super("OutboundBot", "2019-12-26", "ModifyInstance", "outboundbot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

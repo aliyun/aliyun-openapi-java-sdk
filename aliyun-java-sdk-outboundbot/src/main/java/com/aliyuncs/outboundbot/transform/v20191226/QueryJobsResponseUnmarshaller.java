@@ -23,6 +23,7 @@ import com.aliyuncs.outboundbot.model.v20191226.QueryJobsResponse.Jobs.Job;
 import com.aliyuncs.outboundbot.model.v20191226.QueryJobsResponse.Jobs.Job.Contact;
 import com.aliyuncs.outboundbot.model.v20191226.QueryJobsResponse.Jobs.Job.KeyValuePair;
 import com.aliyuncs.outboundbot.model.v20191226.QueryJobsResponse.Jobs.Job.SummaryItem;
+import com.aliyuncs.outboundbot.model.v20191226.QueryJobsResponse.Jobs.Job.TagHit;
 import com.aliyuncs.outboundbot.model.v20191226.QueryJobsResponse.Jobs.Job.Task;
 import com.aliyuncs.outboundbot.model.v20191226.QueryJobsResponse.Jobs.Job.Task.Contact1;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -133,6 +134,16 @@ public class QueryJobsResponseUnmarshaller {
 				tasks.add(task);
 			}
 			job.setTasks(tasks);
+
+			List<TagHit> tagHits = new ArrayList<TagHit>();
+			for (int j = 0; j < _ctx.lengthValue("QueryJobsResponse.Jobs.List["+ i +"].TagHits.Length"); j++) {
+				TagHit tagHit = new TagHit();
+				tagHit.setTagName(_ctx.stringValue("QueryJobsResponse.Jobs.List["+ i +"].TagHits["+ j +"].TagName"));
+				tagHit.setTagGroup(_ctx.stringValue("QueryJobsResponse.Jobs.List["+ i +"].TagHits["+ j +"].TagGroup"));
+
+				tagHits.add(tagHit);
+			}
+			job.setTagHits(tagHits);
 
 			list.add(job);
 		}

@@ -226,6 +226,8 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 			private String agentId;
 
+			private String agentKey;
+
 			public String getAccessKey() {
 				return this.accessKey;
 			}
@@ -256,6 +258,14 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 			public void setAgentId(String agentId) {
 				this.agentId = agentId;
+			}
+
+			public String getAgentKey() {
+				return this.agentKey;
+			}
+
+			public void setAgentKey(String agentKey) {
+				this.agentKey = agentKey;
 			}
 		}
 	}

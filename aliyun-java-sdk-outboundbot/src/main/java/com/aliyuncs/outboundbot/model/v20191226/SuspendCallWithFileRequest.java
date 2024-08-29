@@ -31,7 +31,7 @@ public class SuspendCallWithFileRequest extends RpcAcsRequest<SuspendCallWithFil
 
 	private String filePath;
 	public SuspendCallWithFileRequest() {
-		super("OutboundBot", "2019-12-26", "SuspendCallWithFile");
+		super("OutboundBot", "2019-12-26", "SuspendCallWithFile", "outboundbot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

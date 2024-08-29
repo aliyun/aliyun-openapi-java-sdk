@@ -34,7 +34,7 @@ public class QueryScriptsByStatusRequest extends RpcAcsRequest<QueryScriptsBySta
 
 	private Integer pageSize;
 	public QueryScriptsByStatusRequest() {
-		super("OutboundBot", "2019-12-26", "QueryScriptsByStatus");
+		super("OutboundBot", "2019-12-26", "QueryScriptsByStatus", "outboundbot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

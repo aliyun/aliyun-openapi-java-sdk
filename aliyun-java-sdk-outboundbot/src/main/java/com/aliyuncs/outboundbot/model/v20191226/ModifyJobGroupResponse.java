@@ -115,6 +115,8 @@ public class ModifyJobGroupResponse extends AcsResponse {
 
 		private Long minConcurrency;
 
+		private String flashSmsExtras;
+
 		private List<String> callingNumbers;
 
 		private ExportProgress exportProgress;
@@ -233,6 +235,14 @@ public class ModifyJobGroupResponse extends AcsResponse {
 
 		public void setMinConcurrency(Long minConcurrency) {
 			this.minConcurrency = minConcurrency;
+		}
+
+		public String getFlashSmsExtras() {
+			return this.flashSmsExtras;
+		}
+
+		public void setFlashSmsExtras(String flashSmsExtras) {
+			this.flashSmsExtras = flashSmsExtras;
 		}
 
 		public List<String> getCallingNumbers() {

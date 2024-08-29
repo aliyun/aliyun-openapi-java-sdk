@@ -29,7 +29,7 @@ public class GenerateUploadUrlRequest extends RpcAcsRequest<GenerateUploadUrlRes
 
 	private String key;
 	public GenerateUploadUrlRequest() {
-		super("OutboundBot", "2019-12-26", "GenerateUploadUrl");
+		super("OutboundBot", "2019-12-26", "GenerateUploadUrl", "outboundbot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

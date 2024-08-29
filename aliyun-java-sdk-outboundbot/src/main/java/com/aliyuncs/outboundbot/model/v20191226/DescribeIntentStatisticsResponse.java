@@ -45,9 +45,9 @@ public class DescribeIntentStatisticsResponse extends AcsResponse {
 
 	private List<IntentStatisticsItem> processIntents;
 
-	private List<IntentStatisticsItem> globalIntents;
+	private List<IntentStatisticsItem1> globalIntents;
 
-	private List<IntentStatisticsItem1> intentsAfterNoAnswer;
+	private List<IntentStatisticsItem2> intentsAfterNoAnswer;
 
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
@@ -129,23 +129,106 @@ public class DescribeIntentStatisticsResponse extends AcsResponse {
 		this.processIntents = processIntents;
 	}
 
-	public List<IntentStatisticsItem> getGlobalIntents() {
+	public List<IntentStatisticsItem1> getGlobalIntents() {
 		return this.globalIntents;
 	}
 
-	public void setGlobalIntents(List<IntentStatisticsItem> globalIntents) {
+	public void setGlobalIntents(List<IntentStatisticsItem1> globalIntents) {
 		this.globalIntents = globalIntents;
 	}
 
-	public List<IntentStatisticsItem1> getIntentsAfterNoAnswer() {
+	public List<IntentStatisticsItem2> getIntentsAfterNoAnswer() {
 		return this.intentsAfterNoAnswer;
 	}
 
-	public void setIntentsAfterNoAnswer(List<IntentStatisticsItem1> intentsAfterNoAnswer) {
+	public void setIntentsAfterNoAnswer(List<IntentStatisticsItem2> intentsAfterNoAnswer) {
 		this.intentsAfterNoAnswer = intentsAfterNoAnswer;
 	}
 
 	public static class IntentStatisticsItem {
+
+		private String type;
+
+		private String groupId;
+
+		private Integer hitAfterNoAnswer;
+
+		private String instanceId;
+
+		private Integer hitNum;
+
+		private String intentId;
+
+		private String intentName;
+
+		private String rateDisplay;
+
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
+		}
+
+		public String getGroupId() {
+			return this.groupId;
+		}
+
+		public void setGroupId(String groupId) {
+			this.groupId = groupId;
+		}
+
+		public Integer getHitAfterNoAnswer() {
+			return this.hitAfterNoAnswer;
+		}
+
+		public void setHitAfterNoAnswer(Integer hitAfterNoAnswer) {
+			this.hitAfterNoAnswer = hitAfterNoAnswer;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public Integer getHitNum() {
+			return this.hitNum;
+		}
+
+		public void setHitNum(Integer hitNum) {
+			this.hitNum = hitNum;
+		}
+
+		public String getIntentId() {
+			return this.intentId;
+		}
+
+		public void setIntentId(String intentId) {
+			this.intentId = intentId;
+		}
+
+		public String getIntentName() {
+			return this.intentName;
+		}
+
+		public void setIntentName(String intentName) {
+			this.intentName = intentName;
+		}
+
+		public String getRateDisplay() {
+			return this.rateDisplay;
+		}
+
+		public void setRateDisplay(String rateDisplay) {
+			this.rateDisplay = rateDisplay;
+		}
+	}
+
+	public static class IntentStatisticsItem1 {
 
 		private String type;
 
@@ -218,9 +301,17 @@ public class DescribeIntentStatisticsResponse extends AcsResponse {
 		}
 	}
 
-	public static class IntentStatisticsItem1 {
+	public static class IntentStatisticsItem2 {
 
 		private String instanceId;
+
+		private String groupId;
+
+		private Integer hitAfterNoAnswer;
+
+		private String intentId;
+
+		private String intentName;
 
 		public String getInstanceId() {
 			return this.instanceId;
@@ -228,6 +319,38 @@ public class DescribeIntentStatisticsResponse extends AcsResponse {
 
 		public void setInstanceId(String instanceId) {
 			this.instanceId = instanceId;
+		}
+
+		public String getGroupId() {
+			return this.groupId;
+		}
+
+		public void setGroupId(String groupId) {
+			this.groupId = groupId;
+		}
+
+		public Integer getHitAfterNoAnswer() {
+			return this.hitAfterNoAnswer;
+		}
+
+		public void setHitAfterNoAnswer(Integer hitAfterNoAnswer) {
+			this.hitAfterNoAnswer = hitAfterNoAnswer;
+		}
+
+		public String getIntentId() {
+			return this.intentId;
+		}
+
+		public void setIntentId(String intentId) {
+			this.intentId = intentId;
+		}
+
+		public String getIntentName() {
+			return this.intentName;
+		}
+
+		public void setIntentName(String intentName) {
+			this.intentName = intentName;
 		}
 	}
 

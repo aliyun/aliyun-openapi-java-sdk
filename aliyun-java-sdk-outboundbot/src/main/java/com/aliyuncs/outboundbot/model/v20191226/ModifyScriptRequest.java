@@ -26,27 +26,39 @@ import com.aliyuncs.outboundbot.Endpoint;
 public class ModifyScriptRequest extends RpcAcsRequest<ModifyScriptResponse> {
 	   
 
+	private String chatConfig;
+
 	private String ttsConfig;
 
 	private String industry;
 
 	private String scriptName;
 
+	private String nluEngine;
+
 	private String scene;
 
 	private String scriptId;
+
+	private String nluAccessType;
 
 	private List<String> scriptWaveforms;
 
 	private String asrConfig;
 
+	private Boolean agentLlm;
+
 	private String miniPlaybackConfigListJsonString;
 
 	private Boolean emotionEnable;
 
+	private Long agentId;
+
 	private String nlsConfig;
 
 	private Boolean newBargeInEnable;
+
+	private String agentKey;
 
 	private Boolean miniPlaybackEnable;
 
@@ -60,12 +72,23 @@ public class ModifyScriptRequest extends RpcAcsRequest<ModifyScriptResponse> {
 
 	private List<String> scriptContents;
 	public ModifyScriptRequest() {
-		super("OutboundBot", "2019-12-26", "ModifyScript");
+		super("OutboundBot", "2019-12-26", "ModifyScript", "outboundbot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getChatConfig() {
+		return this.chatConfig;
+	}
+
+	public void setChatConfig(String chatConfig) {
+		this.chatConfig = chatConfig;
+		if(chatConfig != null){
+			putQueryParameter("ChatConfig", chatConfig);
+		}
 	}
 
 	public String getTtsConfig() {
@@ -101,6 +124,17 @@ public class ModifyScriptRequest extends RpcAcsRequest<ModifyScriptResponse> {
 		}
 	}
 
+	public String getNluEngine() {
+		return this.nluEngine;
+	}
+
+	public void setNluEngine(String nluEngine) {
+		this.nluEngine = nluEngine;
+		if(nluEngine != null){
+			putQueryParameter("NluEngine", nluEngine);
+		}
+	}
+
 	public String getScene() {
 		return this.scene;
 	}
@@ -120,6 +154,17 @@ public class ModifyScriptRequest extends RpcAcsRequest<ModifyScriptResponse> {
 		this.scriptId = scriptId;
 		if(scriptId != null){
 			putQueryParameter("ScriptId", scriptId);
+		}
+	}
+
+	public String getNluAccessType() {
+		return this.nluAccessType;
+	}
+
+	public void setNluAccessType(String nluAccessType) {
+		this.nluAccessType = nluAccessType;
+		if(nluAccessType != null){
+			putQueryParameter("NluAccessType", nluAccessType);
 		}
 	}
 
@@ -147,6 +192,17 @@ public class ModifyScriptRequest extends RpcAcsRequest<ModifyScriptResponse> {
 		}
 	}
 
+	public Boolean getAgentLlm() {
+		return this.agentLlm;
+	}
+
+	public void setAgentLlm(Boolean agentLlm) {
+		this.agentLlm = agentLlm;
+		if(agentLlm != null){
+			putQueryParameter("AgentLlm", agentLlm.toString());
+		}
+	}
+
 	public String getMiniPlaybackConfigListJsonString() {
 		return this.miniPlaybackConfigListJsonString;
 	}
@@ -169,6 +225,17 @@ public class ModifyScriptRequest extends RpcAcsRequest<ModifyScriptResponse> {
 		}
 	}
 
+	public Long getAgentId() {
+		return this.agentId;
+	}
+
+	public void setAgentId(Long agentId) {
+		this.agentId = agentId;
+		if(agentId != null){
+			putQueryParameter("AgentId", agentId.toString());
+		}
+	}
+
 	public String getNlsConfig() {
 		return this.nlsConfig;
 	}
@@ -188,6 +255,17 @@ public class ModifyScriptRequest extends RpcAcsRequest<ModifyScriptResponse> {
 		this.newBargeInEnable = newBargeInEnable;
 		if(newBargeInEnable != null){
 			putQueryParameter("NewBargeInEnable", newBargeInEnable.toString());
+		}
+	}
+
+	public String getAgentKey() {
+		return this.agentKey;
+	}
+
+	public void setAgentKey(String agentKey) {
+		this.agentKey = agentKey;
+		if(agentKey != null){
+			putQueryParameter("AgentKey", agentKey);
 		}
 	}
 

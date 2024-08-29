@@ -22,45 +22,21 @@ import com.aliyuncs.outboundbot.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetContactWhiteListRequest extends RpcAcsRequest<GetContactWhiteListResponse> {
+public class GetAnnotationMissionTagInfoListRequest extends RpcAcsRequest<GetAnnotationMissionTagInfoListResponse> {
 	   
-
-	private Boolean countTotalRow;
-
-	private Integer pageNumber;
 
 	private String instanceId;
 
 	private Integer pageSize;
-	public GetContactWhiteListRequest() {
-		super("OutboundBot", "2019-12-26", "GetContactWhiteList");
+
+	private Integer pageIndex;
+	public GetAnnotationMissionTagInfoListRequest() {
+		super("OutboundBot", "2019-12-26", "GetAnnotationMissionTagInfoList", "outboundbot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Boolean getCountTotalRow() {
-		return this.countTotalRow;
-	}
-
-	public void setCountTotalRow(Boolean countTotalRow) {
-		this.countTotalRow = countTotalRow;
-		if(countTotalRow != null){
-			putQueryParameter("CountTotalRow", countTotalRow.toString());
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
 	}
 
 	public String getInstanceId() {
@@ -85,9 +61,20 @@ public class GetContactWhiteListRequest extends RpcAcsRequest<GetContactWhiteLis
 		}
 	}
 
+	public Integer getPageIndex() {
+		return this.pageIndex;
+	}
+
+	public void setPageIndex(Integer pageIndex) {
+		this.pageIndex = pageIndex;
+		if(pageIndex != null){
+			putQueryParameter("PageIndex", pageIndex.toString());
+		}
+	}
+
 	@Override
-	public Class<GetContactWhiteListResponse> getResponseClass() {
-		return GetContactWhiteListResponse.class;
+	public Class<GetAnnotationMissionTagInfoListResponse> getResponseClass() {
+		return GetAnnotationMissionTagInfoListResponse.class;
 	}
 
 }

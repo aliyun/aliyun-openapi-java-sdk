@@ -35,7 +35,7 @@ public class ModifyOutboundCallNumberRequest extends RpcAcsRequest<ModifyOutboun
 
 	private Integer rateLimitPeriod;
 	public ModifyOutboundCallNumberRequest() {
-		super("OutboundBot", "2019-12-26", "ModifyOutboundCallNumber");
+		super("OutboundBot", "2019-12-26", "ModifyOutboundCallNumber", "outboundbot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

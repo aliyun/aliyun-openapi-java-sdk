@@ -160,6 +160,14 @@ public class DescribeScriptResponse extends AcsResponse {
 
 		private Boolean emotionEnable;
 
+		private Long agentId;
+
+		private String agentKey;
+
+		private Boolean agentLlm;
+
+		private String chatConfig;
+
 		public String getStatus() {
 			return this.status;
 		}
@@ -294,6 +302,38 @@ public class DescribeScriptResponse extends AcsResponse {
 
 		public void setEmotionEnable(Boolean emotionEnable) {
 			this.emotionEnable = emotionEnable;
+		}
+
+		public Long getAgentId() {
+			return this.agentId;
+		}
+
+		public void setAgentId(Long agentId) {
+			this.agentId = agentId;
+		}
+
+		public String getAgentKey() {
+			return this.agentKey;
+		}
+
+		public void setAgentKey(String agentKey) {
+			this.agentKey = agentKey;
+		}
+
+		public Boolean getAgentLlm() {
+			return this.agentLlm;
+		}
+
+		public void setAgentLlm(Boolean agentLlm) {
+			this.agentLlm = agentLlm;
+		}
+
+		public String getChatConfig() {
+			return this.chatConfig;
+		}
+
+		public void setChatConfig(String chatConfig) {
+			this.chatConfig = chatConfig;
 		}
 	}
 

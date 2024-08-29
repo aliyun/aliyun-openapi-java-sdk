@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.outboundbot.model.v20191226.DescribeJobGroupResponse;
 import com.aliyuncs.outboundbot.model.v20191226.DescribeJobGroupResponse.JobGroup;
 import com.aliyuncs.outboundbot.model.v20191226.DescribeJobGroupResponse.JobGroup.ExportProgress;
+import com.aliyuncs.outboundbot.model.v20191226.DescribeJobGroupResponse.JobGroup.FlashSmsExtras;
 import com.aliyuncs.outboundbot.model.v20191226.DescribeJobGroupResponse.JobGroup.Progress;
 import com.aliyuncs.outboundbot.model.v20191226.DescribeJobGroupResponse.JobGroup.Progress.KeyValuePair;
 import com.aliyuncs.outboundbot.model.v20191226.DescribeJobGroupResponse.JobGroup.RecallStrategy;
@@ -61,6 +62,12 @@ public class DescribeJobGroupResponseUnmarshaller {
 			callingNumbers.add(_ctx.stringValue("DescribeJobGroupResponse.JobGroup.CallingNumbers["+ i +"]"));
 		}
 		jobGroup.setCallingNumbers(callingNumbers);
+
+		List<String> recallCallingNumbers = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeJobGroupResponse.JobGroup.RecallCallingNumbers.Length"); i++) {
+			recallCallingNumbers.add(_ctx.stringValue("DescribeJobGroupResponse.JobGroup.RecallCallingNumbers["+ i +"]"));
+		}
+		jobGroup.setRecallCallingNumbers(recallCallingNumbers);
 
 		ExportProgress exportProgress = new ExportProgress();
 		exportProgress.setStatus(_ctx.stringValue("DescribeJobGroupResponse.JobGroup.ExportProgress.Status"));
@@ -116,6 +123,7 @@ public class DescribeJobGroupResponseUnmarshaller {
 		strategy.setMinAttemptInterval(_ctx.integerValue("DescribeJobGroupResponse.JobGroup.Strategy.MinAttemptInterval"));
 		strategy.setStrategyDescription(_ctx.stringValue("DescribeJobGroupResponse.JobGroup.Strategy.StrategyDescription"));
 		strategy.setRepeatBy(_ctx.stringValue("DescribeJobGroupResponse.JobGroup.Strategy.RepeatBy"));
+		strategy.setRepeatable(_ctx.booleanValue("DescribeJobGroupResponse.JobGroup.Strategy.Repeatable"));
 
 		List<String> repeatDays = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeJobGroupResponse.JobGroup.Strategy.RepeatDays.Length"); i++) {
@@ -147,6 +155,11 @@ public class DescribeJobGroupResponseUnmarshaller {
 		result.setClientHangupNum(_ctx.integerValue("DescribeJobGroupResponse.JobGroup.Result.ClientHangupNum"));
 		result.setUnrecognizedNum(_ctx.integerValue("DescribeJobGroupResponse.JobGroup.Result.UnrecognizedNum"));
 		jobGroup.setResult(result);
+
+		FlashSmsExtras flashSmsExtras = new FlashSmsExtras();
+		flashSmsExtras.setConfigId(_ctx.stringValue("DescribeJobGroupResponse.JobGroup.FlashSmsExtras.ConfigId"));
+		flashSmsExtras.setTemplateId(_ctx.stringValue("DescribeJobGroupResponse.JobGroup.FlashSmsExtras.TemplateId"));
+		jobGroup.setFlashSmsExtras(flashSmsExtras);
 		describeJobGroupResponse.setJobGroup(jobGroup);
 	 
 	 	return describeJobGroupResponse;

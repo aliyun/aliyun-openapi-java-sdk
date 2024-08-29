@@ -143,6 +143,8 @@ public class ListScriptRecordingResponse extends AcsResponse {
 
 		private String innerId;
 
+		private String refId;
+
 		public String getRecordingContent() {
 			return this.recordingContent;
 		}
@@ -245,6 +247,14 @@ public class ListScriptRecordingResponse extends AcsResponse {
 
 		public void setInnerId(String innerId) {
 			this.innerId = innerId;
+		}
+
+		public String getRefId() {
+			return this.refId;
+		}
+
+		public void setRefId(String refId) {
+			this.refId = refId;
 		}
 	}
 

@@ -29,7 +29,7 @@ public class DescribeDsReportsRequest extends RpcAcsRequest<DescribeDsReportsRes
 
 	private String jobGroupId;
 	public DescribeDsReportsRequest() {
-		super("OutboundBot", "2019-12-26", "DescribeDsReports");
+		super("OutboundBot", "2019-12-26", "DescribeDsReports", "outboundbot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -35,7 +35,7 @@ public class UploadScriptRecordingRequest extends RpcAcsRequest<UploadScriptReco
 
 	private String fileId;
 	public UploadScriptRecordingRequest() {
-		super("OutboundBot", "2019-12-26", "UploadScriptRecording");
+		super("OutboundBot", "2019-12-26", "UploadScriptRecording", "outboundbot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

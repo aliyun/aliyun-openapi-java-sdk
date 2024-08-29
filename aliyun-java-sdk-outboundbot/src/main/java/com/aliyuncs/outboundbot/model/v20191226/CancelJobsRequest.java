@@ -38,7 +38,7 @@ public class CancelJobsRequest extends RpcAcsRequest<CancelJobsResponse> {
 
 	private String scenarioId;
 	public CancelJobsRequest() {
-		super("OutboundBot", "2019-12-26", "CancelJobs");
+		super("OutboundBot", "2019-12-26", "CancelJobs", "outboundbot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

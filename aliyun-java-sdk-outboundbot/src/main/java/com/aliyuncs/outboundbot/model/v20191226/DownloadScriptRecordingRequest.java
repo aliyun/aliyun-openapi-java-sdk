@@ -31,7 +31,7 @@ public class DownloadScriptRecordingRequest extends RpcAcsRequest<DownloadScript
 
 	private String instanceId;
 	public DownloadScriptRecordingRequest() {
-		super("OutboundBot", "2019-12-26", "DownloadScriptRecording");
+		super("OutboundBot", "2019-12-26", "DownloadScriptRecording", "outboundbot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

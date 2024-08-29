@@ -31,7 +31,7 @@ public class DeleteScriptWaveformRequest extends RpcAcsRequest<DeleteScriptWavef
 
 	private String instanceId;
 	public DeleteScriptWaveformRequest() {
-		super("OutboundBot", "2019-12-26", "DeleteScriptWaveform");
+		super("OutboundBot", "2019-12-26", "DeleteScriptWaveform", "outboundbot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

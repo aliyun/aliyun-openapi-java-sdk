@@ -25,6 +25,8 @@ import com.aliyuncs.outboundbot.Endpoint;
 public class ListScriptRecordingRequest extends RpcAcsRequest<ListScriptRecordingResponse> {
 	   
 
+	private String refIdsJson;
+
 	private String uuidsJson;
 
 	private String statesJson;
@@ -39,12 +41,23 @@ public class ListScriptRecordingRequest extends RpcAcsRequest<ListScriptRecordin
 
 	private Integer pageSize;
 	public ListScriptRecordingRequest() {
-		super("OutboundBot", "2019-12-26", "ListScriptRecording");
+		super("OutboundBot", "2019-12-26", "ListScriptRecording", "outboundbot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getRefIdsJson() {
+		return this.refIdsJson;
+	}
+
+	public void setRefIdsJson(String refIdsJson) {
+		this.refIdsJson = refIdsJson;
+		if(refIdsJson != null){
+			putQueryParameter("RefIdsJson", refIdsJson);
+		}
 	}
 
 	public String getUuidsJson() {

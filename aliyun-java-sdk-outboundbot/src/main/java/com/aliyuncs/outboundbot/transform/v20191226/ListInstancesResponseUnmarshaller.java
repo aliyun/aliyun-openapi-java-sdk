@@ -33,6 +33,9 @@ public class ListInstancesResponseUnmarshaller {
 		listInstancesResponse.setCode(_ctx.stringValue("ListInstancesResponse.Code"));
 		listInstancesResponse.setMessage(_ctx.stringValue("ListInstancesResponse.Message"));
 		listInstancesResponse.setSuccess(_ctx.booleanValue("ListInstancesResponse.Success"));
+		listInstancesResponse.setTotalCount(_ctx.integerValue("ListInstancesResponse.TotalCount"));
+		listInstancesResponse.setPageNumber(_ctx.integerValue("ListInstancesResponse.PageNumber"));
+		listInstancesResponse.setPageSize(_ctx.integerValue("ListInstancesResponse.PageSize"));
 
 		List<Instance> instances = new ArrayList<Instance>();
 		for (int i = 0; i < _ctx.lengthValue("ListInstancesResponse.Instances.Length"); i++) {

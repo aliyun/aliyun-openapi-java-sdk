@@ -34,6 +34,8 @@ public class CreateJobGroupRequest extends RpcAcsRequest<CreateJobGroupResponse>
 
 	private String strategyJson;
 
+	private List<String> recallCallingNumbers;
+
 	private Long ringingDuration;
 
 	private String scenarioId;
@@ -42,13 +44,15 @@ public class CreateJobGroupRequest extends RpcAcsRequest<CreateJobGroupResponse>
 
 	private String jobGroupDescription;
 
+	private String flashSmsExtras;
+
 	private List<String> callingNumbers;
 
 	private String instanceId;
 
 	private Long minConcurrency;
 	public CreateJobGroupRequest() {
-		super("OutboundBot", "2019-12-26", "CreateJobGroup");
+		super("OutboundBot", "2019-12-26", "CreateJobGroup", "outboundbot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -100,6 +104,19 @@ public class CreateJobGroupRequest extends RpcAcsRequest<CreateJobGroupResponse>
 		}
 	}
 
+	public List<String> getRecallCallingNumbers() {
+		return this.recallCallingNumbers;
+	}
+
+	public void setRecallCallingNumbers(List<String> recallCallingNumbers) {
+		this.recallCallingNumbers = recallCallingNumbers;	
+		if (recallCallingNumbers != null) {
+			for (int i = 0; i < recallCallingNumbers.size(); i++) {
+				putQueryParameter("RecallCallingNumber." + (i + 1) , recallCallingNumbers.get(i));
+			}
+		}	
+	}
+
 	public Long getRingingDuration() {
 		return this.ringingDuration;
 	}
@@ -141,6 +158,17 @@ public class CreateJobGroupRequest extends RpcAcsRequest<CreateJobGroupResponse>
 		this.jobGroupDescription = jobGroupDescription;
 		if(jobGroupDescription != null){
 			putQueryParameter("JobGroupDescription", jobGroupDescription);
+		}
+	}
+
+	public String getFlashSmsExtras() {
+		return this.flashSmsExtras;
+	}
+
+	public void setFlashSmsExtras(String flashSmsExtras) {
+		this.flashSmsExtras = flashSmsExtras;
+		if(flashSmsExtras != null){
+			putQueryParameter("FlashSmsExtras", flashSmsExtras);
 		}
 	}
 

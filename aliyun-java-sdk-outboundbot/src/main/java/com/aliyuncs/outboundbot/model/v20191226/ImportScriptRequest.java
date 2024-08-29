@@ -27,9 +27,11 @@ public class ImportScriptRequest extends RpcAcsRequest<ImportScriptResponse> {
 
 	private String signatureUrl;
 
+	private String nluEngine;
+
 	private String instanceId;
 	public ImportScriptRequest() {
-		super("OutboundBot", "2019-12-26", "ImportScript");
+		super("OutboundBot", "2019-12-26", "ImportScript", "outboundbot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -45,6 +47,17 @@ public class ImportScriptRequest extends RpcAcsRequest<ImportScriptResponse> {
 		this.signatureUrl = signatureUrl;
 		if(signatureUrl != null){
 			putQueryParameter("SignatureUrl", signatureUrl);
+		}
+	}
+
+	public String getNluEngine() {
+		return this.nluEngine;
+	}
+
+	public void setNluEngine(String nluEngine) {
+		this.nluEngine = nluEngine;
+		if(nluEngine != null){
+			putQueryParameter("NluEngine", nluEngine);
 		}
 	}
 

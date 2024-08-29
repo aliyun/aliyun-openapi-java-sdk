@@ -41,6 +41,8 @@ public class CreateScriptResponseUnmarshaller {
 		script.setIsDebugDrafted(_ctx.booleanValue("CreateScriptResponse.Script.IsDebugDrafted"));
 		script.setScriptName(_ctx.stringValue("CreateScriptResponse.Script.ScriptName"));
 		script.setScene(_ctx.stringValue("CreateScriptResponse.Script.Scene"));
+		script.setNluEngine(_ctx.stringValue("CreateScriptResponse.Script.NluEngine"));
+		script.setNluAccessType(_ctx.stringValue("CreateScriptResponse.Script.NluAccessType"));
 		createScriptResponse.setScript(script);
 	 
 	 	return createScriptResponse;

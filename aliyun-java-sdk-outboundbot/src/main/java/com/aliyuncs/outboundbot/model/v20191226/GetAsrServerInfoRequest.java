@@ -29,7 +29,7 @@ public class GetAsrServerInfoRequest extends RpcAcsRequest<GetAsrServerInfoRespo
 
 	private String entryId;
 	public GetAsrServerInfoRequest() {
-		super("OutboundBot", "2019-12-26", "GetAsrServerInfo");
+		super("OutboundBot", "2019-12-26", "GetAsrServerInfo", "outboundbot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
