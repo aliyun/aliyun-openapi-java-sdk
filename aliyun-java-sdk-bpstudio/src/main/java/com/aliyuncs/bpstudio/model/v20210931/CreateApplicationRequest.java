@@ -29,7 +29,7 @@ public class CreateApplicationRequest extends RpcAcsRequest<CreateApplicationRes
 	   
 
 	@SerializedName("variables")
-	private Map<String,String> variables;
+	private Map<String,Object> variables;
 
 	private String clientToken;
 
@@ -51,11 +51,11 @@ public class CreateApplicationRequest extends RpcAcsRequest<CreateApplicationRes
 		setMethod(MethodType.POST);
 	}
 
-	public Map<String,String> getVariables() {
+	public Map<String,Object> getVariables() {
 		return this.variables;
 	}
 
-	public void setVariables(Map<String,String> variables) {
+	public void setVariables(Map<String,Object> variables) {
 		this.variables = variables;	
 		if (variables != null) {
 			putBodyParameter("Variables" , new Gson().toJson(variables));
