@@ -85,6 +85,8 @@ public class GetApplicationResponse extends AcsResponse {
 
 		private String error;
 
+		private Double deployPercent;
+
 		private List<Item> priceList;
 
 		private List<Item1> checklist;
@@ -161,6 +163,14 @@ public class GetApplicationResponse extends AcsResponse {
 
 		public void setError(String error) {
 			this.error = error;
+		}
+
+		public Double getDeployPercent() {
+			return this.deployPercent;
+		}
+
+		public void setDeployPercent(Double deployPercent) {
+			this.deployPercent = deployPercent;
 		}
 
 		public List<Item> getPriceList() {
@@ -421,6 +431,8 @@ public class GetApplicationResponse extends AcsResponse {
 
 			private String lifecycle;
 
+			private String nodeLabel;
+
 			public String getStatus() {
 				return this.status;
 			}
@@ -483,6 +495,14 @@ public class GetApplicationResponse extends AcsResponse {
 
 			public void setLifecycle(String lifecycle) {
 				this.lifecycle = lifecycle;
+			}
+
+			public String getNodeLabel() {
+				return this.nodeLabel;
+			}
+
+			public void setNodeLabel(String nodeLabel) {
+				this.nodeLabel = nodeLabel;
 			}
 		}
 	}

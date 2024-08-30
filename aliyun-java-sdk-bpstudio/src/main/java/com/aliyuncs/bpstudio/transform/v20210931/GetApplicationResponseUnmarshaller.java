@@ -43,6 +43,7 @@ public class GetApplicationResponseUnmarshaller {
 		data.setResourceGroupId(_ctx.stringValue("GetApplicationResponse.Data.ResourceGroupId"));
 		data.setStatus(_ctx.stringValue("GetApplicationResponse.Data.Status"));
 		data.setError(_ctx.stringValue("GetApplicationResponse.Data.Error"));
+		data.setDeployPercent(_ctx.doubleValue("GetApplicationResponse.Data.DeployPercent"));
 
 		List<Item> priceList = new ArrayList<Item>();
 		for (int i = 0; i < _ctx.lengthValue("GetApplicationResponse.Data.PriceList.Length"); i++) {
@@ -92,6 +93,7 @@ public class GetApplicationResponseUnmarshaller {
 			item2.setResourceType(_ctx.stringValue("GetApplicationResponse.Data.ResourceList["+ i +"].ResourceType"));
 			item2.setRemark(_ctx.stringValue("GetApplicationResponse.Data.ResourceList["+ i +"].Remark"));
 			item2.setLifecycle(_ctx.stringValue("GetApplicationResponse.Data.ResourceList["+ i +"].Lifecycle"));
+			item2.setNodeLabel(_ctx.stringValue("GetApplicationResponse.Data.ResourceList["+ i +"].NodeLabel"));
 
 			resourceList.add(item2);
 		}
