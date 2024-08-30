@@ -1,3 +1,6 @@
+2024-08-30 Version: 1.0.4
+- QuotaApplication Add QuotaCategory.
+
 2024-06-30 Version: 1.0.3
 - Add UsageMetric.
 

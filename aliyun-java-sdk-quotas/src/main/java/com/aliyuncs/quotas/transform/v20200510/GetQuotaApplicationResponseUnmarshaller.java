@@ -27,23 +27,24 @@ public class GetQuotaApplicationResponseUnmarshaller {
 		getQuotaApplicationResponse.setRequestId(_ctx.stringValue("GetQuotaApplicationResponse.RequestId"));
 
 		QuotaApplication quotaApplication = new QuotaApplication();
-		quotaApplication.setStatus(_ctx.stringValue("GetQuotaApplicationResponse.QuotaApplication.Status"));
-		quotaApplication.setDesireValue(_ctx.integerValue("GetQuotaApplicationResponse.QuotaApplication.DesireValue"));
-		quotaApplication.setQuotaActionCode(_ctx.stringValue("GetQuotaApplicationResponse.QuotaApplication.QuotaActionCode"));
-		quotaApplication.setQuotaName(_ctx.stringValue("GetQuotaApplicationResponse.QuotaApplication.QuotaName"));
 		quotaApplication.setApplicationId(_ctx.stringValue("GetQuotaApplicationResponse.QuotaApplication.ApplicationId"));
-		quotaApplication.setReason(_ctx.stringValue("GetQuotaApplicationResponse.QuotaApplication.Reason"));
-		quotaApplication.setAuditReason(_ctx.stringValue("GetQuotaApplicationResponse.QuotaApplication.AuditReason"));
-		quotaApplication.setQuotaDescription(_ctx.stringValue("GetQuotaApplicationResponse.QuotaApplication.QuotaDescription"));
-		quotaApplication.setProductCode(_ctx.stringValue("GetQuotaApplicationResponse.QuotaApplication.ProductCode"));
-		quotaApplication.setQuotaArn(_ctx.stringValue("GetQuotaApplicationResponse.QuotaApplication.QuotaArn"));
 		quotaApplication.setApplyTime(_ctx.stringValue("GetQuotaApplicationResponse.QuotaApplication.ApplyTime"));
 		quotaApplication.setApproveValue(_ctx.floatValue("GetQuotaApplicationResponse.QuotaApplication.ApproveValue"));
+		quotaApplication.setAuditReason(_ctx.stringValue("GetQuotaApplicationResponse.QuotaApplication.AuditReason"));
+		quotaApplication.setDesireValue(_ctx.integerValue("GetQuotaApplicationResponse.QuotaApplication.DesireValue"));
 		quotaApplication.setDimension(_ctx.mapValue("GetQuotaApplicationResponse.QuotaApplication.Dimension"));
-		quotaApplication.setNoticeType(_ctx.longValue("GetQuotaApplicationResponse.QuotaApplication.NoticeType"));
 		quotaApplication.setEffectiveTime(_ctx.stringValue("GetQuotaApplicationResponse.QuotaApplication.EffectiveTime"));
 		quotaApplication.setExpireTime(_ctx.stringValue("GetQuotaApplicationResponse.QuotaApplication.ExpireTime"));
+		quotaApplication.setNoticeType(_ctx.longValue("GetQuotaApplicationResponse.QuotaApplication.NoticeType"));
+		quotaApplication.setProductCode(_ctx.stringValue("GetQuotaApplicationResponse.QuotaApplication.ProductCode"));
+		quotaApplication.setQuotaActionCode(_ctx.stringValue("GetQuotaApplicationResponse.QuotaApplication.QuotaActionCode"));
+		quotaApplication.setQuotaArn(_ctx.stringValue("GetQuotaApplicationResponse.QuotaApplication.QuotaArn"));
+		quotaApplication.setQuotaCategory(_ctx.stringValue("GetQuotaApplicationResponse.QuotaApplication.QuotaCategory"));
+		quotaApplication.setQuotaDescription(_ctx.stringValue("GetQuotaApplicationResponse.QuotaApplication.QuotaDescription"));
+		quotaApplication.setQuotaName(_ctx.stringValue("GetQuotaApplicationResponse.QuotaApplication.QuotaName"));
 		quotaApplication.setQuotaUnit(_ctx.stringValue("GetQuotaApplicationResponse.QuotaApplication.QuotaUnit"));
+		quotaApplication.setReason(_ctx.stringValue("GetQuotaApplicationResponse.QuotaApplication.Reason"));
+		quotaApplication.setStatus(_ctx.stringValue("GetQuotaApplicationResponse.QuotaApplication.Status"));
 		getQuotaApplicationResponse.setQuotaApplication(quotaApplication);
 	 
 	 	return getQuotaApplicationResponse;
