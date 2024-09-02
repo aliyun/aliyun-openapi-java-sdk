@@ -113,6 +113,8 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private String specType;
 
+		private String obRpmVersion;
+
 		private List<String> availableZones;
 
 		private Resource resource;
@@ -341,6 +343,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		public void setSpecType(String specType) {
 			this.specType = specType;
+		}
+
+		public String getObRpmVersion() {
+			return this.obRpmVersion;
+		}
+
+		public void setObRpmVersion(String obRpmVersion) {
+			this.obRpmVersion = obRpmVersion;
 		}
 
 		public List<String> getAvailableZones() {

@@ -69,6 +69,12 @@ public class DescribeOasSQLPlansResponse extends AcsResponse {
 
 		private Boolean bounded;
 
+		private Boolean tableScan;
+
+		private String outlineId;
+
+		private String outlineStatus;
+
 		private List<PlansItem> plans;
 
 		private PlanExplain planExplain;
@@ -159,6 +165,30 @@ public class DescribeOasSQLPlansResponse extends AcsResponse {
 
 		public void setBounded(Boolean bounded) {
 			this.bounded = bounded;
+		}
+
+		public Boolean getTableScan() {
+			return this.tableScan;
+		}
+
+		public void setTableScan(Boolean tableScan) {
+			this.tableScan = tableScan;
+		}
+
+		public String getOutlineId() {
+			return this.outlineId;
+		}
+
+		public void setOutlineId(String outlineId) {
+			this.outlineId = outlineId;
+		}
+
+		public String getOutlineStatus() {
+			return this.outlineStatus;
+		}
+
+		public void setOutlineStatus(String outlineStatus) {
+			this.outlineStatus = outlineStatus;
 		}
 
 		public List<PlansItem> getPlans() {

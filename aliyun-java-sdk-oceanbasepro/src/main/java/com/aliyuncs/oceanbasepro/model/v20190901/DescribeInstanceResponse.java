@@ -127,6 +127,8 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 		private Boolean allowModifyInternetAddressConnectionLimit;
 
+		private Boolean allowCreateProxySqlFirewallRule;
+
 		private List<String> availableZones;
 
 		private List<String> zones;
@@ -457,6 +459,14 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 		public void setAllowModifyInternetAddressConnectionLimit(Boolean allowModifyInternetAddressConnectionLimit) {
 			this.allowModifyInternetAddressConnectionLimit = allowModifyInternetAddressConnectionLimit;
+		}
+
+		public Boolean getAllowCreateProxySqlFirewallRule() {
+			return this.allowCreateProxySqlFirewallRule;
+		}
+
+		public void setAllowCreateProxySqlFirewallRule(Boolean allowCreateProxySqlFirewallRule) {
+			this.allowCreateProxySqlFirewallRule = allowCreateProxySqlFirewallRule;
 		}
 
 		public List<String> getAvailableZones() {

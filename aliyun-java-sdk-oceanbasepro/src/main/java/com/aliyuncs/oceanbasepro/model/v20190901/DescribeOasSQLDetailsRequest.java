@@ -27,6 +27,8 @@ public class DescribeOasSQLDetailsRequest extends RpcAcsRequest<DescribeOasSQLDe
 
 	private String startTime;
 
+	private Boolean parseTable;
+
 	private Boolean dynamicSql;
 
 	private String tenantId;
@@ -55,6 +57,17 @@ public class DescribeOasSQLDetailsRequest extends RpcAcsRequest<DescribeOasSQLDe
 		this.startTime = startTime;
 		if(startTime != null){
 			putBodyParameter("StartTime", startTime);
+		}
+	}
+
+	public Boolean getParseTable() {
+		return this.parseTable;
+	}
+
+	public void setParseTable(Boolean parseTable) {
+		this.parseTable = parseTable;
+		if(parseTable != null){
+			putBodyParameter("ParseTable", parseTable.toString());
 		}
 	}
 

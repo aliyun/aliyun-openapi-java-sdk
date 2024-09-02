@@ -44,6 +44,9 @@ public class DescribeOasSQLPlansResponseUnmarshaller {
 			dataItem.setPlanUnionHash(_ctx.stringValue("DescribeOasSQLPlansResponse.Data["+ i +"].PlanUnionHash"));
 			dataItem.setQuerySql(_ctx.stringValue("DescribeOasSQLPlansResponse.Data["+ i +"].QuerySql"));
 			dataItem.setBounded(_ctx.booleanValue("DescribeOasSQLPlansResponse.Data["+ i +"].Bounded"));
+			dataItem.setTableScan(_ctx.booleanValue("DescribeOasSQLPlansResponse.Data["+ i +"].TableScan"));
+			dataItem.setOutlineId(_ctx.stringValue("DescribeOasSQLPlansResponse.Data["+ i +"].OutlineId"));
+			dataItem.setOutlineStatus(_ctx.stringValue("DescribeOasSQLPlansResponse.Data["+ i +"].OutlineStatus"));
 
 			PlanExplain planExplain = new PlanExplain();
 			planExplain.setPlanJsonString(_ctx.stringValue("DescribeOasSQLPlansResponse.Data["+ i +"].PlanExplain.PlanJsonString"));

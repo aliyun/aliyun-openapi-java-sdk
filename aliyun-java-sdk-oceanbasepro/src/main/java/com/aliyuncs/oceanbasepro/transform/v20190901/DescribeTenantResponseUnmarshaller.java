@@ -75,6 +75,7 @@ public class DescribeTenantResponseUnmarshaller {
 		tenant.setRecycleBinStatus(_ctx.stringValue("DescribeTenantResponse.Tenant.RecycleBinStatus"));
 		tenant.setLowerCaseTableNames(_ctx.integerValue("DescribeTenantResponse.Tenant.LowerCaseTableNames"));
 		tenant.setVersion(_ctx.stringValue("DescribeTenantResponse.Tenant.Version"));
+		tenant.setOdpVersion(_ctx.stringValue("DescribeTenantResponse.Tenant.OdpVersion"));
 
 		List<String> availableZones = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeTenantResponse.Tenant.AvailableZones.Length"); i++) {
@@ -170,6 +171,8 @@ public class DescribeTenantResponseUnmarshaller {
 			tenantConnectionsItem.setIntranetRpcPort(_ctx.integerValue("DescribeTenantResponse.Tenant.TenantConnections["+ i +"].IntranetRpcPort"));
 			tenantConnectionsItem.setInternetMaxConnectionNum(_ctx.longValue("DescribeTenantResponse.Tenant.TenantConnections["+ i +"].InternetMaxConnectionNum"));
 			tenantConnectionsItem.setInternetRpcPort(_ctx.integerValue("DescribeTenantResponse.Tenant.TenantConnections["+ i +"].InternetRpcPort"));
+			tenantConnectionsItem.setIntranetSqlPort(_ctx.integerValue("DescribeTenantResponse.Tenant.TenantConnections["+ i +"].IntranetSqlPort"));
+			tenantConnectionsItem.setOdpVersion(_ctx.stringValue("DescribeTenantResponse.Tenant.TenantConnections["+ i +"].OdpVersion"));
 
 			List<String> connectionZones = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeTenantResponse.Tenant.TenantConnections["+ i +"].ConnectionZones.Length"); j++) {
