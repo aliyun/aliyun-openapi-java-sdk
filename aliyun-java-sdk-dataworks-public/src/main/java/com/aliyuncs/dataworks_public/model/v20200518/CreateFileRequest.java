@@ -53,6 +53,8 @@ public class CreateFileRequest extends RpcAcsRequest<CreateFileResponse> {
 
 	private Boolean createFolderIfNotExists;
 
+	private Boolean applyScheduleImmediately;
+
 	private String rerunMode;
 
 	private String connectionName;
@@ -246,6 +248,17 @@ public class CreateFileRequest extends RpcAcsRequest<CreateFileResponse> {
 		this.createFolderIfNotExists = createFolderIfNotExists;
 		if(createFolderIfNotExists != null){
 			putBodyParameter("CreateFolderIfNotExists", createFolderIfNotExists.toString());
+		}
+	}
+
+	public Boolean getApplyScheduleImmediately() {
+		return this.applyScheduleImmediately;
+	}
+
+	public void setApplyScheduleImmediately(Boolean applyScheduleImmediately) {
+		this.applyScheduleImmediately = applyScheduleImmediately;
+		if(applyScheduleImmediately != null){
+			putBodyParameter("ApplyScheduleImmediately", applyScheduleImmediately.toString());
 		}
 	}
 

@@ -29,6 +29,8 @@ public class DeleteLineageRelationRequest extends RpcAcsRequest<DeleteLineageRel
 
 	private String destEntityQualifiedName;
 
+	private String relationshipType;
+
 	private String relationshipGuid;
 	public DeleteLineageRelationRequest() {
 		super("dataworks-public", "2020-05-18", "DeleteLineageRelation");
@@ -58,6 +60,17 @@ public class DeleteLineageRelationRequest extends RpcAcsRequest<DeleteLineageRel
 		this.destEntityQualifiedName = destEntityQualifiedName;
 		if(destEntityQualifiedName != null){
 			putQueryParameter("DestEntityQualifiedName", destEntityQualifiedName);
+		}
+	}
+
+	public String getRelationshipType() {
+		return this.relationshipType;
+	}
+
+	public void setRelationshipType(String relationshipType) {
+		this.relationshipType = relationshipType;
+		if(relationshipType != null){
+			putQueryParameter("RelationshipType", relationshipType);
 		}
 	}
 

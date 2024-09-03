@@ -370,6 +370,8 @@ public class GetFileResponse extends AcsResponse {
 
 			private Boolean startImmediately;
 
+			private String applyScheduleImmediately;
+
 			private List<NodeInputOutput> inputList;
 
 			private List<NodeInputOutput1> outputList;
@@ -488,6 +490,14 @@ public class GetFileResponse extends AcsResponse {
 
 			public void setStartImmediately(Boolean startImmediately) {
 				this.startImmediately = startImmediately;
+			}
+
+			public String getApplyScheduleImmediately() {
+				return this.applyScheduleImmediately;
+			}
+
+			public void setApplyScheduleImmediately(String applyScheduleImmediately) {
+				this.applyScheduleImmediately = applyScheduleImmediately;
 			}
 
 			public List<NodeInputOutput> getInputList() {

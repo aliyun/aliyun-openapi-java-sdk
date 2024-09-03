@@ -15,6 +15,7 @@
 package com.aliyuncs.dataworks_public.model.v20200518;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.Map;
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
@@ -97,8 +98,14 @@ public class RegisterLineageRelationRequest extends RpcAcsRequest<RegisterLineag
 
 		public static class DestEntity {
 
+			@SerializedName("Owner")
+			private String owner;
+
 			@SerializedName("ParentName")
 			private String parentName;
+
+			@SerializedName("EntityType")
+			private String entityType;
 
 			@SerializedName("QualifiedName")
 			private String qualifiedName;
@@ -106,8 +113,19 @@ public class RegisterLineageRelationRequest extends RpcAcsRequest<RegisterLineag
 			@SerializedName("Name")
 			private String name;
 
+			@SerializedName("Attributes")
+			private Map<String,String> attributes;
+
 			@SerializedName("DetailUrl")
 			private String detailUrl;
+
+			public String getOwner() {
+				return this.owner;
+			}
+
+			public void setOwner(String owner) {
+				this.owner = owner;
+			}
 
 			public String getParentName() {
 				return this.parentName;
@@ -115,6 +133,14 @@ public class RegisterLineageRelationRequest extends RpcAcsRequest<RegisterLineag
 
 			public void setParentName(String parentName) {
 				this.parentName = parentName;
+			}
+
+			public String getEntityType() {
+				return this.entityType;
+			}
+
+			public void setEntityType(String entityType) {
+				this.entityType = entityType;
 			}
 
 			public String getQualifiedName() {
@@ -131,6 +157,14 @@ public class RegisterLineageRelationRequest extends RpcAcsRequest<RegisterLineag
 
 			public void setName(String name) {
 				this.name = name;
+			}
+
+			public Map<String,String> getAttributes() {
+				return this.attributes;
+			}
+
+			public void setAttributes(Map<String,String> attributes) {
+				this.attributes = attributes;
 			}
 
 			public String getDetailUrl() {
@@ -144,22 +178,50 @@ public class RegisterLineageRelationRequest extends RpcAcsRequest<RegisterLineag
 
 		public static class Relationship {
 
-			@SerializedName("Type")
-			private String type;
+			@SerializedName("RelationshipType")
+			private String relationshipType;
 
-			public String getType() {
-				return this.type;
+			@SerializedName("Attributes")
+			private Map<String,String> attributes;
+
+			@SerializedName("RelationshipGuid")
+			private String relationshipGuid;
+
+			public String getRelationshipType() {
+				return this.relationshipType;
 			}
 
-			public void setType(String type) {
-				this.type = type;
+			public void setRelationshipType(String relationshipType) {
+				this.relationshipType = relationshipType;
+			}
+
+			public Map<String,String> getAttributes() {
+				return this.attributes;
+			}
+
+			public void setAttributes(Map<String,String> attributes) {
+				this.attributes = attributes;
+			}
+
+			public String getRelationshipGuid() {
+				return this.relationshipGuid;
+			}
+
+			public void setRelationshipGuid(String relationshipGuid) {
+				this.relationshipGuid = relationshipGuid;
 			}
 		}
 
 		public static class SrcEntity {
 
+			@SerializedName("Owner")
+			private String owner;
+
 			@SerializedName("ParentName")
 			private String parentName;
+
+			@SerializedName("EntityType")
+			private String entityType;
 
 			@SerializedName("QualifiedName")
 			private String qualifiedName;
@@ -167,8 +229,19 @@ public class RegisterLineageRelationRequest extends RpcAcsRequest<RegisterLineag
 			@SerializedName("Name")
 			private String name;
 
+			@SerializedName("Attributes")
+			private Map<String,String> attributes;
+
 			@SerializedName("DetailUrl")
 			private String detailUrl;
+
+			public String getOwner() {
+				return this.owner;
+			}
+
+			public void setOwner(String owner) {
+				this.owner = owner;
+			}
 
 			public String getParentName() {
 				return this.parentName;
@@ -176,6 +249,14 @@ public class RegisterLineageRelationRequest extends RpcAcsRequest<RegisterLineag
 
 			public void setParentName(String parentName) {
 				this.parentName = parentName;
+			}
+
+			public String getEntityType() {
+				return this.entityType;
+			}
+
+			public void setEntityType(String entityType) {
+				this.entityType = entityType;
 			}
 
 			public String getQualifiedName() {
@@ -192,6 +273,14 @@ public class RegisterLineageRelationRequest extends RpcAcsRequest<RegisterLineag
 
 			public void setName(String name) {
 				this.name = name;
+			}
+
+			public Map<String,String> getAttributes() {
+				return this.attributes;
+			}
+
+			public void setAttributes(Map<String,String> attributes) {
+				this.attributes = attributes;
 			}
 
 			public String getDetailUrl() {

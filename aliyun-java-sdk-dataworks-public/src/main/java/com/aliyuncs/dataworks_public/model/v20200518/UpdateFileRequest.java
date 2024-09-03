@@ -51,6 +51,8 @@ public class UpdateFileRequest extends RpcAcsRequest<UpdateFileResponse> {
 
 	private String inputList;
 
+	private Boolean applyScheduleImmediately;
+
 	private String rerunMode;
 
 	private String connectionName;
@@ -233,6 +235,17 @@ public class UpdateFileRequest extends RpcAcsRequest<UpdateFileResponse> {
 		this.inputList = inputList;
 		if(inputList != null){
 			putBodyParameter("InputList", inputList);
+		}
+	}
+
+	public Boolean getApplyScheduleImmediately() {
+		return this.applyScheduleImmediately;
+	}
+
+	public void setApplyScheduleImmediately(Boolean applyScheduleImmediately) {
+		this.applyScheduleImmediately = applyScheduleImmediately;
+		if(applyScheduleImmediately != null){
+			putBodyParameter("ApplyScheduleImmediately", applyScheduleImmediately.toString());
 		}
 	}
 

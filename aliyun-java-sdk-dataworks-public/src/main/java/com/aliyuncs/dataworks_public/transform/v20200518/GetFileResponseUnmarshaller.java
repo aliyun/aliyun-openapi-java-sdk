@@ -81,6 +81,7 @@ public class GetFileResponseUnmarshaller {
 		nodeConfiguration.setAutoRerunIntervalMillis(_ctx.integerValue("GetFileResponse.Data.NodeConfiguration.AutoRerunIntervalMillis"));
 		nodeConfiguration.setCronExpress(_ctx.stringValue("GetFileResponse.Data.NodeConfiguration.CronExpress"));
 		nodeConfiguration.setStartImmediately(_ctx.booleanValue("GetFileResponse.Data.NodeConfiguration.StartImmediately"));
+		nodeConfiguration.setApplyScheduleImmediately(_ctx.stringValue("GetFileResponse.Data.NodeConfiguration.ApplyScheduleImmediately"));
 
 		List<NodeInputOutput> inputList = new ArrayList<NodeInputOutput>();
 		for (int i = 0; i < _ctx.lengthValue("GetFileResponse.Data.NodeConfiguration.InputList.Length"); i++) {
