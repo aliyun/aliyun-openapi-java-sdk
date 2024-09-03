@@ -89,6 +89,8 @@ public class QueryChatappBindWabaResponse extends AcsResponse {
 
 		private Map<Object,Object> authInternationalRateEligibility;
 
+		private String businessName;
+
 		private String currency;
 
 		private String id;
@@ -96,6 +98,8 @@ public class QueryChatappBindWabaResponse extends AcsResponse {
 		private String accountReviewStatus;
 
 		private String messageTemplateNamespace;
+
+		private String businessId;
 
 		private String name;
 
@@ -107,6 +111,14 @@ public class QueryChatappBindWabaResponse extends AcsResponse {
 
 		public void setAuthInternationalRateEligibility(Map<Object,Object> authInternationalRateEligibility) {
 			this.authInternationalRateEligibility = authInternationalRateEligibility;
+		}
+
+		public String getBusinessName() {
+			return this.businessName;
+		}
+
+		public void setBusinessName(String businessName) {
+			this.businessName = businessName;
 		}
 
 		public String getCurrency() {
@@ -139,6 +151,14 @@ public class QueryChatappBindWabaResponse extends AcsResponse {
 
 		public void setMessageTemplateNamespace(String messageTemplateNamespace) {
 			this.messageTemplateNamespace = messageTemplateNamespace;
+		}
+
+		public String getBusinessId() {
+			return this.businessId;
+		}
+
+		public void setBusinessId(String businessId) {
+			this.businessId = businessId;
 		}
 
 		public String getName() {

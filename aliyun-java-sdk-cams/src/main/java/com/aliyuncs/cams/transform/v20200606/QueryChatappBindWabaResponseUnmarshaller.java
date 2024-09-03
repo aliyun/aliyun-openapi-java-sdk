@@ -32,10 +32,12 @@ public class QueryChatappBindWabaResponseUnmarshaller {
 
 		Data data = new Data();
 		data.setAuthInternationalRateEligibility(_ctx.mapValue("QueryChatappBindWabaResponse.Data.AuthInternationalRateEligibility"));
+		data.setBusinessName(_ctx.stringValue("QueryChatappBindWabaResponse.Data.BusinessName"));
 		data.setCurrency(_ctx.stringValue("QueryChatappBindWabaResponse.Data.Currency"));
 		data.setId(_ctx.stringValue("QueryChatappBindWabaResponse.Data.Id"));
 		data.setAccountReviewStatus(_ctx.stringValue("QueryChatappBindWabaResponse.Data.AccountReviewStatus"));
 		data.setMessageTemplateNamespace(_ctx.stringValue("QueryChatappBindWabaResponse.Data.MessageTemplateNamespace"));
+		data.setBusinessId(_ctx.stringValue("QueryChatappBindWabaResponse.Data.BusinessId"));
 		data.setName(_ctx.stringValue("QueryChatappBindWabaResponse.Data.Name"));
 		data.setPrimaryBusinessLocation(_ctx.stringValue("QueryChatappBindWabaResponse.Data.PrimaryBusinessLocation"));
 		queryChatappBindWabaResponse.setData(data);
