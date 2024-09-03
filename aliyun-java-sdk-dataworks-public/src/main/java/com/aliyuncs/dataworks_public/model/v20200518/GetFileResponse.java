@@ -91,6 +91,8 @@ public class GetFileResponse extends AcsResponse {
 
 		private NodeConfiguration nodeConfiguration;
 
+		private ResourceDownloadLink resourceDownloadLink;
+
 		public File getFile() {
 			return this.file;
 		}
@@ -105,6 +107,14 @@ public class GetFileResponse extends AcsResponse {
 
 		public void setNodeConfiguration(NodeConfiguration nodeConfiguration) {
 			this.nodeConfiguration = nodeConfiguration;
+		}
+
+		public ResourceDownloadLink getResourceDownloadLink() {
+			return this.resourceDownloadLink;
+		}
+
+		public void setResourceDownloadLink(ResourceDownloadLink resourceDownloadLink) {
+			this.resourceDownloadLink = resourceDownloadLink;
 		}
 
 		public static class File {
@@ -642,6 +652,19 @@ public class GetFileResponse extends AcsResponse {
 				public void setDescription(String description) {
 					this.description = description;
 				}
+			}
+		}
+
+		public static class ResourceDownloadLink {
+
+			private String downloadLink;
+
+			public String getDownloadLink() {
+				return this.downloadLink;
+			}
+
+			public void setDownloadLink(String downloadLink) {
+				this.downloadLink = downloadLink;
 			}
 		}
 	}

@@ -25,6 +25,7 @@ import com.aliyuncs.dataworks_public.model.v20200518.GetFileResponse.Data.NodeCo
 import com.aliyuncs.dataworks_public.model.v20200518.GetFileResponse.Data.NodeConfiguration.NodeInputOutput;
 import com.aliyuncs.dataworks_public.model.v20200518.GetFileResponse.Data.NodeConfiguration.NodeInputOutput1;
 import com.aliyuncs.dataworks_public.model.v20200518.GetFileResponse.Data.NodeConfiguration.OutputContextParameter;
+import com.aliyuncs.dataworks_public.model.v20200518.GetFileResponse.Data.ResourceDownloadLink;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -125,6 +126,10 @@ public class GetFileResponseUnmarshaller {
 		}
 		nodeConfiguration.setOutputParameters(outputParameters);
 		data.setNodeConfiguration(nodeConfiguration);
+
+		ResourceDownloadLink resourceDownloadLink = new ResourceDownloadLink();
+		resourceDownloadLink.setDownloadLink(_ctx.stringValue("GetFileResponse.Data.ResourceDownloadLink.downloadLink"));
+		data.setResourceDownloadLink(resourceDownloadLink);
 		getFileResponse.setData(data);
 	 
 	 	return getFileResponse;
