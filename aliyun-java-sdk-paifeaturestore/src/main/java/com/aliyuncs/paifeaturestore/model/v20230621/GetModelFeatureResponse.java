@@ -49,6 +49,8 @@ public class GetModelFeatureResponse extends AcsResponse {
 
 	private String exportTrainingSetTableScript;
 
+	private Long labelPriorityLevel;
+
 	private List<FeaturesItem> features;
 
 	private Relations relations;
@@ -147,6 +149,14 @@ public class GetModelFeatureResponse extends AcsResponse {
 
 	public void setExportTrainingSetTableScript(String exportTrainingSetTableScript) {
 		this.exportTrainingSetTableScript = exportTrainingSetTableScript;
+	}
+
+	public Long getLabelPriorityLevel() {
+		return this.labelPriorityLevel;
+	}
+
+	public void setLabelPriorityLevel(Long labelPriorityLevel) {
+		this.labelPriorityLevel = labelPriorityLevel;
 	}
 
 	public List<FeaturesItem> getFeatures() {

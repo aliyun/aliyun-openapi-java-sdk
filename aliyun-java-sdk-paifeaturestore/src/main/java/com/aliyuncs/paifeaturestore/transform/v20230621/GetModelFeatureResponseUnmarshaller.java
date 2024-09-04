@@ -41,6 +41,7 @@ public class GetModelFeatureResponseUnmarshaller {
 		getModelFeatureResponse.setTrainingSetTable(_ctx.stringValue("GetModelFeatureResponse.TrainingSetTable"));
 		getModelFeatureResponse.setTrainingSetFGTable(_ctx.stringValue("GetModelFeatureResponse.TrainingSetFGTable"));
 		getModelFeatureResponse.setExportTrainingSetTableScript(_ctx.stringValue("GetModelFeatureResponse.ExportTrainingSetTableScript"));
+		getModelFeatureResponse.setLabelPriorityLevel(_ctx.longValue("GetModelFeatureResponse.LabelPriorityLevel"));
 
 		Relations relations = new Relations();
 
