@@ -15,6 +15,8 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ecs.Endpoint;
 
@@ -22,20 +24,29 @@ import com.aliyuncs.ecs.Endpoint;
  * @author auto create
  * @version 
  */
-public class StartElasticityAssuranceRequest extends RpcAcsRequest<StartElasticityAssuranceResponse> {
+public class RenewElasticityAssurancesRequest extends RpcAcsRequest<RenewElasticityAssurancesResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String privatePoolOptionsId;
+	private String clientToken;
+
+	private List<String> privatePoolOptionsIds;
+
+	private Integer period;
+
+	private Boolean autoPay;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-	public StartElasticityAssuranceRequest() {
-		super("Ecs", "2014-05-26", "StartElasticityAssurance", "ecs");
+
+	private String periodUnit;
+	public RenewElasticityAssurancesRequest() {
+		super("Ecs", "2014-05-26", "RenewElasticityAssurances", "ecs");
+		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -54,14 +65,49 @@ public class StartElasticityAssuranceRequest extends RpcAcsRequest<StartElastici
 		}
 	}
 
-	public String getPrivatePoolOptionsId() {
-		return this.privatePoolOptionsId;
+	public String getClientToken() {
+		return this.clientToken;
 	}
 
-	public void setPrivatePoolOptionsId(String privatePoolOptionsId) {
-		this.privatePoolOptionsId = privatePoolOptionsId;
-		if(privatePoolOptionsId != null){
-			putQueryParameter("PrivatePoolOptions.Id", privatePoolOptionsId);
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public List<String> getPrivatePoolOptionsIds() {
+		return this.privatePoolOptionsIds;
+	}
+
+	public void setPrivatePoolOptionsIds(List<String> privatePoolOptionsIds) {
+		this.privatePoolOptionsIds = privatePoolOptionsIds;	
+		if (privatePoolOptionsIds != null) {
+			for (int i = 0; i < privatePoolOptionsIds.size(); i++) {
+				putQueryParameter("PrivatePoolOptions.Id." + (i + 1) , privatePoolOptionsIds.get(i));
+			}
+		}	
+	}
+
+	public Integer getPeriod() {
+		return this.period;
+	}
+
+	public void setPeriod(Integer period) {
+		this.period = period;
+		if(period != null){
+			putQueryParameter("Period", period.toString());
+		}
+	}
+
+	public Boolean getAutoPay() {
+		return this.autoPay;
+	}
+
+	public void setAutoPay(Boolean autoPay) {
+		this.autoPay = autoPay;
+		if(autoPay != null){
+			putQueryParameter("AutoPay", autoPay.toString());
 		}
 	}
 
@@ -98,9 +144,20 @@ public class StartElasticityAssuranceRequest extends RpcAcsRequest<StartElastici
 		}
 	}
 
+	public String getPeriodUnit() {
+		return this.periodUnit;
+	}
+
+	public void setPeriodUnit(String periodUnit) {
+		this.periodUnit = periodUnit;
+		if(periodUnit != null){
+			putQueryParameter("PeriodUnit", periodUnit);
+		}
+	}
+
 	@Override
-	public Class<StartElasticityAssuranceResponse> getResponseClass() {
-		return StartElasticityAssuranceResponse.class;
+	public Class<RenewElasticityAssurancesResponse> getResponseClass() {
+		return RenewElasticityAssurancesResponse.class;
 	}
 
 }

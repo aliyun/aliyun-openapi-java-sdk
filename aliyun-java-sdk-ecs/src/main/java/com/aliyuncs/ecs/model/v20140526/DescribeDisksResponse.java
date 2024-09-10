@@ -654,6 +654,16 @@ public class DescribeDisksResponse extends AcsResponse {
 
 			private String attachedTime;
 
+			private Long nsId;
+
+			private String nguid;
+
+			private String identifier;
+
+			private String targetDevice;
+
+			private String accessToken;
+
 			public String getInstanceId() {
 				return this.instanceId;
 			}
@@ -676,6 +686,46 @@ public class DescribeDisksResponse extends AcsResponse {
 
 			public void setAttachedTime(String attachedTime) {
 				this.attachedTime = attachedTime;
+			}
+
+			public Long getNsId() {
+				return this.nsId;
+			}
+
+			public void setNsId(Long nsId) {
+				this.nsId = nsId;
+			}
+
+			public String getNguid() {
+				return this.nguid;
+			}
+
+			public void setNguid(String nguid) {
+				this.nguid = nguid;
+			}
+
+			public String getIdentifier() {
+				return this.identifier;
+			}
+
+			public void setIdentifier(String identifier) {
+				this.identifier = identifier;
+			}
+
+			public String getTargetDevice() {
+				return this.targetDevice;
+			}
+
+			public void setTargetDevice(String targetDevice) {
+				this.targetDevice = targetDevice;
+			}
+
+			public String getAccessToken() {
+				return this.accessToken;
+			}
+
+			public void setAccessToken(String accessToken) {
+				this.accessToken = accessToken;
 			}
 		}
 

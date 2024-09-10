@@ -125,6 +125,8 @@ public class DescribeInvocationsResponse extends AcsResponse {
 
 		private String terminationMode;
 
+		private String launcher;
+
 		private List<InvokeInstance> invokeInstances;
 
 		private List<Tag> tags;
@@ -279,6 +281,14 @@ public class DescribeInvocationsResponse extends AcsResponse {
 
 		public void setTerminationMode(String terminationMode) {
 			this.terminationMode = terminationMode;
+		}
+
+		public String getLauncher() {
+			return this.launcher;
+		}
+
+		public void setLauncher(String launcher) {
+			this.launcher = launcher;
 		}
 
 		public List<InvokeInstance> getInvokeInstances() {

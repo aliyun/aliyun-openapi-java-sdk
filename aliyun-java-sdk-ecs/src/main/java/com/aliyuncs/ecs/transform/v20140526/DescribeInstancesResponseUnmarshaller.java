@@ -33,6 +33,7 @@ import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse.Instance.Netwo
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse.Instance.NetworkInterface.Ipv6PrefixSet;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse.Instance.NetworkInterface.Ipv6Set;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse.Instance.NetworkInterface.PrivateIpSet;
+import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse.Instance.PrivateDnsNameOptions;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse.Instance.Tag;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse.Instance.VpcAttributes;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -181,6 +182,14 @@ public class DescribeInstancesResponseUnmarshaller {
 			imageOptions.setLoginAsNonRoot(_ctx.booleanValue("DescribeInstancesResponse.Instances["+ i +"].ImageOptions.LoginAsNonRoot"));
 			instance.setImageOptions(imageOptions);
 
+			PrivateDnsNameOptions privateDnsNameOptions = new PrivateDnsNameOptions();
+			privateDnsNameOptions.setEnableInstanceIdDnsARecord(_ctx.booleanValue("DescribeInstancesResponse.Instances["+ i +"].PrivateDnsNameOptions.EnableInstanceIdDnsARecord"));
+			privateDnsNameOptions.setEnableInstanceIdDnsAAAARecord(_ctx.booleanValue("DescribeInstancesResponse.Instances["+ i +"].PrivateDnsNameOptions.EnableInstanceIdDnsAAAARecord"));
+			privateDnsNameOptions.setEnableIpDnsARecord(_ctx.booleanValue("DescribeInstancesResponse.Instances["+ i +"].PrivateDnsNameOptions.EnableIpDnsARecord"));
+			privateDnsNameOptions.setEnableIpDnsPtrRecord(_ctx.booleanValue("DescribeInstancesResponse.Instances["+ i +"].PrivateDnsNameOptions.EnableIpDnsPtrRecord"));
+			privateDnsNameOptions.setHostnameType(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].PrivateDnsNameOptions.HostnameType"));
+			instance.setPrivateDnsNameOptions(privateDnsNameOptions);
+
 			List<NetworkInterface> networkInterfaces = new ArrayList<NetworkInterface>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeInstancesResponse.Instances["+ i +"].NetworkInterfaces.Length"); j++) {
 				NetworkInterface networkInterface = new NetworkInterface();
@@ -194,6 +203,7 @@ public class DescribeInstancesResponseUnmarshaller {
 					PrivateIpSet privateIpSet = new PrivateIpSet();
 					privateIpSet.setPrivateIpAddress(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].NetworkInterfaces["+ j +"].PrivateIpSets["+ k +"].PrivateIpAddress"));
 					privateIpSet.setPrimary(_ctx.booleanValue("DescribeInstancesResponse.Instances["+ i +"].NetworkInterfaces["+ j +"].PrivateIpSets["+ k +"].Primary"));
+					privateIpSet.setPrivateDnsName(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].NetworkInterfaces["+ j +"].PrivateIpSets["+ k +"].PrivateDnsName"));
 
 					privateIpSets.add(privateIpSet);
 				}

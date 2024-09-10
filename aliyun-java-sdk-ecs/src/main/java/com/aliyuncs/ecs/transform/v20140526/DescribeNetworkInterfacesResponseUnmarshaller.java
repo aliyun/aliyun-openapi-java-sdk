@@ -87,6 +87,7 @@ public class DescribeNetworkInterfacesResponseUnmarshaller {
 				PrivateIpSet privateIpSet = new PrivateIpSet();
 				privateIpSet.setPrivateIpAddress(_ctx.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].PrivateIpSets["+ j +"].PrivateIpAddress"));
 				privateIpSet.setPrimary(_ctx.booleanValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].PrivateIpSets["+ j +"].Primary"));
+				privateIpSet.setPrivateDnsName(_ctx.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].PrivateIpSets["+ j +"].PrivateDnsName"));
 
 				AssociatedPublicIp1 associatedPublicIp1 = new AssociatedPublicIp1();
 				associatedPublicIp1.setPublicIpAddress(_ctx.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].PrivateIpSets["+ j +"].AssociatedPublicIp.PublicIpAddress"));

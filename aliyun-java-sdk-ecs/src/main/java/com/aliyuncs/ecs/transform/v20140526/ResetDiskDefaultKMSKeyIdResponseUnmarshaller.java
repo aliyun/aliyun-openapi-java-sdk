@@ -14,16 +14,16 @@
 
 package com.aliyuncs.ecs.transform.v20140526;
 
-import com.aliyuncs.ecs.model.v20140526.StartElasticityAssuranceResponse;
+import com.aliyuncs.ecs.model.v20140526.ResetDiskDefaultKMSKeyIdResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class StartElasticityAssuranceResponseUnmarshaller {
+public class ResetDiskDefaultKMSKeyIdResponseUnmarshaller {
 
-	public static StartElasticityAssuranceResponse unmarshall(StartElasticityAssuranceResponse startElasticityAssuranceResponse, UnmarshallerContext _ctx) {
+	public static ResetDiskDefaultKMSKeyIdResponse unmarshall(ResetDiskDefaultKMSKeyIdResponse resetDiskDefaultKMSKeyIdResponse, UnmarshallerContext _ctx) {
 		
-		startElasticityAssuranceResponse.setRequestId(_ctx.stringValue("StartElasticityAssuranceResponse.RequestId"));
+		resetDiskDefaultKMSKeyIdResponse.setRequestId(_ctx.stringValue("ResetDiskDefaultKMSKeyIdResponse.RequestId"));
 	 
-	 	return startElasticityAssuranceResponse;
+	 	return resetDiskDefaultKMSKeyIdResponse;
 	}
 }

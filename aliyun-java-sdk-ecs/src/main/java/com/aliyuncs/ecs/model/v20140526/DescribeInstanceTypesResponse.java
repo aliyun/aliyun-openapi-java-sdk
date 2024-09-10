@@ -135,6 +135,8 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 
 		private List<String> supportedBootModes;
 
+		private EnhancedNetwork enhancedNetwork;
+
 		public Integer getEniTotalQuantity() {
 			return this.eniTotalQuantity;
 		}
@@ -447,6 +449,14 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 			this.supportedBootModes = supportedBootModes;
 		}
 
+		public EnhancedNetwork getEnhancedNetwork() {
+			return this.enhancedNetwork;
+		}
+
+		public void setEnhancedNetwork(EnhancedNetwork enhancedNetwork) {
+			this.enhancedNetwork = enhancedNetwork;
+		}
+
 		public static class NetworkCardInfo {
 
 			private Integer networkCardIndex;
@@ -457,6 +467,29 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 
 			public void setNetworkCardIndex(Integer networkCardIndex) {
 				this.networkCardIndex = networkCardIndex;
+			}
+		}
+
+		public static class EnhancedNetwork {
+
+			private Boolean sriovSupport;
+
+			private Integer vfQueueNumberPerEni;
+
+			public Boolean getSriovSupport() {
+				return this.sriovSupport;
+			}
+
+			public void setSriovSupport(Boolean sriovSupport) {
+				this.sriovSupport = sriovSupport;
+			}
+
+			public Integer getVfQueueNumberPerEni() {
+				return this.vfQueueNumberPerEni;
+			}
+
+			public void setVfQueueNumberPerEni(Integer vfQueueNumberPerEni) {
+				this.vfQueueNumberPerEni = vfQueueNumberPerEni;
 			}
 		}
 	}

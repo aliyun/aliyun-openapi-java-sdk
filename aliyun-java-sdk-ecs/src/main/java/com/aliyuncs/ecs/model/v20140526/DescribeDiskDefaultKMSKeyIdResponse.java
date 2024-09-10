@@ -15,16 +15,18 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ecs.transform.v20140526.StartElasticityAssuranceResponseUnmarshaller;
+import com.aliyuncs.ecs.transform.v20140526.DescribeDiskDefaultKMSKeyIdResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class StartElasticityAssuranceResponse extends AcsResponse {
+public class DescribeDiskDefaultKMSKeyIdResponse extends AcsResponse {
 
 	private String requestId;
+
+	private String kMSKeyId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -34,8 +36,21 @@ public class StartElasticityAssuranceResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getKMSKeyId() {
+		return this.kMSKeyId;
+	}
+
+	public void setKMSKeyId(String kMSKeyId) {
+		this.kMSKeyId = kMSKeyId;
+	}
+
 	@Override
-	public StartElasticityAssuranceResponse getInstance(UnmarshallerContext context) {
-		return	StartElasticityAssuranceResponseUnmarshaller.unmarshall(this, context);
+	public DescribeDiskDefaultKMSKeyIdResponse getInstance(UnmarshallerContext context) {
+		return	DescribeDiskDefaultKMSKeyIdResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

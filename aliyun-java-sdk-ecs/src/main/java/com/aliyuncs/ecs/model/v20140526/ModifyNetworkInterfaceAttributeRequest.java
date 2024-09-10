@@ -36,6 +36,8 @@ public class ModifyNetworkInterfaceAttributeRequest extends RpcAcsRequest<Modify
 
 	private NetworkInterfaceTrafficConfig networkInterfaceTrafficConfig;
 
+	private EnhancedNetwork enhancedNetwork;
+
 	private String networkInterfaceName;
 
 	private Integer txQueueSize;
@@ -121,6 +123,18 @@ public class ModifyNetworkInterfaceAttributeRequest extends RpcAcsRequest<Modify
 				putQueryParameter("NetworkInterfaceTrafficConfig.QueuePairNumber" , networkInterfaceTrafficConfig.getQueuePairNumber());
 				putQueryParameter("NetworkInterfaceTrafficConfig.RxQueueSize" , networkInterfaceTrafficConfig.getRxQueueSize());
 				putQueryParameter("NetworkInterfaceTrafficConfig.TxQueueSize" , networkInterfaceTrafficConfig.getTxQueueSize());
+		}	
+	}
+
+	public EnhancedNetwork getEnhancedNetwork() {
+		return this.enhancedNetwork;
+	}
+
+	public void setEnhancedNetwork(EnhancedNetwork enhancedNetwork) {
+		this.enhancedNetwork = enhancedNetwork;	
+		if (enhancedNetwork != null) {
+			
+				putQueryParameter("EnhancedNetwork.EnableSriov" , enhancedNetwork.getEnableSriov());
 		}	
 	}
 
@@ -276,6 +290,19 @@ public class ModifyNetworkInterfaceAttributeRequest extends RpcAcsRequest<Modify
 
 		public void setTxQueueSize(Integer txQueueSize) {
 			this.txQueueSize = txQueueSize;
+		}
+	}
+
+	public static class EnhancedNetwork {
+
+		private Boolean enableSriov;
+
+		public Boolean getEnableSriov() {
+			return this.enableSriov;
+		}
+
+		public void setEnableSriov(Boolean enableSriov) {
+			this.enableSriov = enableSriov;
 		}
 	}
 

@@ -90,6 +90,8 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 	private Boolean passwordInherit;
 
+	private PrivateDnsNameOptions privateDnsNameOptions;
+
 	private String instanceType;
 
 	private List<Arn> arns;
@@ -563,6 +565,22 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		if(passwordInherit != null){
 			putQueryParameter("PasswordInherit", passwordInherit.toString());
 		}
+	}
+
+	public PrivateDnsNameOptions getPrivateDnsNameOptions() {
+		return this.privateDnsNameOptions;
+	}
+
+	public void setPrivateDnsNameOptions(PrivateDnsNameOptions privateDnsNameOptions) {
+		this.privateDnsNameOptions = privateDnsNameOptions;	
+		if (privateDnsNameOptions != null) {
+			
+				putQueryParameter("PrivateDnsNameOptions.EnableInstanceIdDnsARecord" , privateDnsNameOptions.getEnableInstanceIdDnsARecord());
+				putQueryParameter("PrivateDnsNameOptions.EnableInstanceIdDnsAAAARecord" , privateDnsNameOptions.getEnableInstanceIdDnsAAAARecord());
+				putQueryParameter("PrivateDnsNameOptions.EnableIpDnsARecord" , privateDnsNameOptions.getEnableIpDnsARecord());
+				putQueryParameter("PrivateDnsNameOptions.EnableIpDnsPtrRecord" , privateDnsNameOptions.getEnableIpDnsPtrRecord());
+				putQueryParameter("PrivateDnsNameOptions.HostnameType" , privateDnsNameOptions.getHostnameType());
+		}	
 	}
 
 	public String getInstanceType() {
@@ -1288,6 +1306,59 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 		public void setLoginAsNonRoot(Boolean loginAsNonRoot) {
 			this.loginAsNonRoot = loginAsNonRoot;
+		}
+	}
+
+	public static class PrivateDnsNameOptions {
+
+		private Boolean enableInstanceIdDnsARecord;
+
+		private Boolean enableInstanceIdDnsAAAARecord;
+
+		private Boolean enableIpDnsARecord;
+
+		private Boolean enableIpDnsPtrRecord;
+
+		private String hostnameType;
+
+		public Boolean getEnableInstanceIdDnsARecord() {
+			return this.enableInstanceIdDnsARecord;
+		}
+
+		public void setEnableInstanceIdDnsARecord(Boolean enableInstanceIdDnsARecord) {
+			this.enableInstanceIdDnsARecord = enableInstanceIdDnsARecord;
+		}
+
+		public Boolean getEnableInstanceIdDnsAAAARecord() {
+			return this.enableInstanceIdDnsAAAARecord;
+		}
+
+		public void setEnableInstanceIdDnsAAAARecord(Boolean enableInstanceIdDnsAAAARecord) {
+			this.enableInstanceIdDnsAAAARecord = enableInstanceIdDnsAAAARecord;
+		}
+
+		public Boolean getEnableIpDnsARecord() {
+			return this.enableIpDnsARecord;
+		}
+
+		public void setEnableIpDnsARecord(Boolean enableIpDnsARecord) {
+			this.enableIpDnsARecord = enableIpDnsARecord;
+		}
+
+		public Boolean getEnableIpDnsPtrRecord() {
+			return this.enableIpDnsPtrRecord;
+		}
+
+		public void setEnableIpDnsPtrRecord(Boolean enableIpDnsPtrRecord) {
+			this.enableIpDnsPtrRecord = enableIpDnsPtrRecord;
+		}
+
+		public String getHostnameType() {
+			return this.hostnameType;
+		}
+
+		public void setHostnameType(String hostnameType) {
+			this.hostnameType = hostnameType;
 		}
 	}
 

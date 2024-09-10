@@ -67,6 +67,8 @@ public class InvokeCommandRequest extends RpcAcsRequest<InvokeCommandResponse> {
 	private Map<Object,Object> parameters;
 
 	private String username;
+
+	private String launcher;
 	public InvokeCommandRequest() {
 		super("Ecs", "2014-05-26", "InvokeCommand", "ecs");
 		setMethod(MethodType.POST);
@@ -301,6 +303,17 @@ public class InvokeCommandRequest extends RpcAcsRequest<InvokeCommandResponse> {
 		this.username = username;
 		if(username != null){
 			putQueryParameter("Username", username);
+		}
+	}
+
+	public String getLauncher() {
+		return this.launcher;
+	}
+
+	public void setLauncher(String launcher) {
+		this.launcher = launcher;
+		if(launcher != null){
+			putQueryParameter("Launcher", launcher);
 		}
 	}
 

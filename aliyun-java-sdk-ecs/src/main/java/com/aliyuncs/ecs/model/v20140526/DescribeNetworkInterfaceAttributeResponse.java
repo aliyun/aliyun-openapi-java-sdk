@@ -81,6 +81,10 @@ public class DescribeNetworkInterfaceAttributeResponse extends AcsResponse {
 
 	private List<String> securityGroupIds;
 
+	private ConnectionTrackingConfiguration connectionTrackingConfiguration;
+
+	private NetworkInterfaceTrafficConfig networkInterfaceTrafficConfig;
+
 	private AssociatedPublicIp associatedPublicIp;
 
 	private Attachment attachment;
@@ -89,9 +93,7 @@ public class DescribeNetworkInterfaceAttributeResponse extends AcsResponse {
 
 	private SlaveInterfaceSpecification slaveInterfaceSpecification;
 
-	private NetworkInterfaceTrafficConfig networkInterfaceTrafficConfig;
-
-	private ConnectionTrackingConfiguration connectionTrackingConfiguration;
+	private EnhancedNetwork enhancedNetwork;
 
 	public String getCreationTime() {
 		return this.creationTime;
@@ -317,6 +319,22 @@ public class DescribeNetworkInterfaceAttributeResponse extends AcsResponse {
 		this.securityGroupIds = securityGroupIds;
 	}
 
+	public ConnectionTrackingConfiguration getConnectionTrackingConfiguration() {
+		return this.connectionTrackingConfiguration;
+	}
+
+	public void setConnectionTrackingConfiguration(ConnectionTrackingConfiguration connectionTrackingConfiguration) {
+		this.connectionTrackingConfiguration = connectionTrackingConfiguration;
+	}
+
+	public NetworkInterfaceTrafficConfig getNetworkInterfaceTrafficConfig() {
+		return this.networkInterfaceTrafficConfig;
+	}
+
+	public void setNetworkInterfaceTrafficConfig(NetworkInterfaceTrafficConfig networkInterfaceTrafficConfig) {
+		this.networkInterfaceTrafficConfig = networkInterfaceTrafficConfig;
+	}
+
 	public AssociatedPublicIp getAssociatedPublicIp() {
 		return this.associatedPublicIp;
 	}
@@ -349,20 +367,12 @@ public class DescribeNetworkInterfaceAttributeResponse extends AcsResponse {
 		this.slaveInterfaceSpecification = slaveInterfaceSpecification;
 	}
 
-	public NetworkInterfaceTrafficConfig getNetworkInterfaceTrafficConfig() {
-		return this.networkInterfaceTrafficConfig;
+	public EnhancedNetwork getEnhancedNetwork() {
+		return this.enhancedNetwork;
 	}
 
-	public void setNetworkInterfaceTrafficConfig(NetworkInterfaceTrafficConfig networkInterfaceTrafficConfig) {
-		this.networkInterfaceTrafficConfig = networkInterfaceTrafficConfig;
-	}
-
-	public ConnectionTrackingConfiguration getConnectionTrackingConfiguration() {
-		return this.connectionTrackingConfiguration;
-	}
-
-	public void setConnectionTrackingConfiguration(ConnectionTrackingConfiguration connectionTrackingConfiguration) {
-		this.connectionTrackingConfiguration = connectionTrackingConfiguration;
+	public void setEnhancedNetwork(EnhancedNetwork enhancedNetwork) {
+		this.enhancedNetwork = enhancedNetwork;
 	}
 
 	public static class PrivateIpSet {
@@ -480,6 +490,72 @@ public class DescribeNetworkInterfaceAttributeResponse extends AcsResponse {
 
 		public void setTagKey(String tagKey) {
 			this.tagKey = tagKey;
+		}
+	}
+
+	public static class ConnectionTrackingConfiguration {
+
+		private Integer tcpClosedAndTimeWaitTimeout;
+
+		private Integer tcpEstablishedTimeout;
+
+		private Integer udpTimeout;
+
+		public Integer getTcpClosedAndTimeWaitTimeout() {
+			return this.tcpClosedAndTimeWaitTimeout;
+		}
+
+		public void setTcpClosedAndTimeWaitTimeout(Integer tcpClosedAndTimeWaitTimeout) {
+			this.tcpClosedAndTimeWaitTimeout = tcpClosedAndTimeWaitTimeout;
+		}
+
+		public Integer getTcpEstablishedTimeout() {
+			return this.tcpEstablishedTimeout;
+		}
+
+		public void setTcpEstablishedTimeout(Integer tcpEstablishedTimeout) {
+			this.tcpEstablishedTimeout = tcpEstablishedTimeout;
+		}
+
+		public Integer getUdpTimeout() {
+			return this.udpTimeout;
+		}
+
+		public void setUdpTimeout(Integer udpTimeout) {
+			this.udpTimeout = udpTimeout;
+		}
+	}
+
+	public static class NetworkInterfaceTrafficConfig {
+
+		private String networkInterfaceTrafficMode;
+
+		private Integer queueNumber;
+
+		private Integer queuePairNumber;
+
+		public String getNetworkInterfaceTrafficMode() {
+			return this.networkInterfaceTrafficMode;
+		}
+
+		public void setNetworkInterfaceTrafficMode(String networkInterfaceTrafficMode) {
+			this.networkInterfaceTrafficMode = networkInterfaceTrafficMode;
+		}
+
+		public Integer getQueueNumber() {
+			return this.queueNumber;
+		}
+
+		public void setQueueNumber(Integer queueNumber) {
+			this.queueNumber = queueNumber;
+		}
+
+		public Integer getQueuePairNumber() {
+			return this.queuePairNumber;
+		}
+
+		public void setQueuePairNumber(Integer queuePairNumber) {
+			this.queuePairNumber = queuePairNumber;
 		}
 	}
 
@@ -648,69 +724,16 @@ public class DescribeNetworkInterfaceAttributeResponse extends AcsResponse {
 		}
 	}
 
-	public static class NetworkInterfaceTrafficConfig {
+	public static class EnhancedNetwork {
 
-		private String networkInterfaceTrafficMode;
+		private Boolean enableSriov;
 
-		private Integer queueNumber;
-
-		private Integer queuePairNumber;
-
-		public String getNetworkInterfaceTrafficMode() {
-			return this.networkInterfaceTrafficMode;
+		public Boolean getEnableSriov() {
+			return this.enableSriov;
 		}
 
-		public void setNetworkInterfaceTrafficMode(String networkInterfaceTrafficMode) {
-			this.networkInterfaceTrafficMode = networkInterfaceTrafficMode;
-		}
-
-		public Integer getQueueNumber() {
-			return this.queueNumber;
-		}
-
-		public void setQueueNumber(Integer queueNumber) {
-			this.queueNumber = queueNumber;
-		}
-
-		public Integer getQueuePairNumber() {
-			return this.queuePairNumber;
-		}
-
-		public void setQueuePairNumber(Integer queuePairNumber) {
-			this.queuePairNumber = queuePairNumber;
-		}
-	}
-
-	public static class ConnectionTrackingConfiguration {
-
-		private Integer tcpEstablishedTimeout;
-
-		private Integer tcpClosedAndTimeWaitTimeout;
-
-		private Integer udpTimeout;
-
-		public Integer getTcpEstablishedTimeout() {
-			return this.tcpEstablishedTimeout;
-		}
-
-		public void setTcpEstablishedTimeout(Integer tcpEstablishedTimeout) {
-			this.tcpEstablishedTimeout = tcpEstablishedTimeout;
-		}
-
-		public Integer getTcpClosedAndTimeWaitTimeout() {
-			return this.tcpClosedAndTimeWaitTimeout;
-		}
-
-		public void setTcpClosedAndTimeWaitTimeout(Integer tcpClosedAndTimeWaitTimeout) {
-			this.tcpClosedAndTimeWaitTimeout = tcpClosedAndTimeWaitTimeout;
-		}
-
-		public Integer getUdpTimeout() {
-			return this.udpTimeout;
-		}
-
-		public void setUdpTimeout(Integer udpTimeout) {
-			this.udpTimeout = udpTimeout;
+		public void setEnableSriov(Boolean enableSriov) {
+			this.enableSriov = enableSriov;
 		}
 	}
 

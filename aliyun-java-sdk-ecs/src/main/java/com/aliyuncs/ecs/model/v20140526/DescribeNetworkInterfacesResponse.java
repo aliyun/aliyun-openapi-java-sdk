@@ -373,6 +373,8 @@ public class DescribeNetworkInterfacesResponse extends AcsResponse {
 
 			private Boolean primary;
 
+			private String privateDnsName;
+
 			private AssociatedPublicIp1 associatedPublicIp1;
 
 			public String getPrivateIpAddress() {
@@ -389,6 +391,14 @@ public class DescribeNetworkInterfacesResponse extends AcsResponse {
 
 			public void setPrimary(Boolean primary) {
 				this.primary = primary;
+			}
+
+			public String getPrivateDnsName() {
+				return this.privateDnsName;
+			}
+
+			public void setPrivateDnsName(String privateDnsName) {
+				this.privateDnsName = privateDnsName;
 			}
 
 			public AssociatedPublicIp1 getAssociatedPublicIp1() {

@@ -42,6 +42,8 @@ public class ModifyInstanceAttributeRequest extends RpcAcsRequest<ModifyInstance
 
 	private String hostName;
 
+	private PrivateDnsNameOptions privateDnsNameOptions;
+
 	private String cpuOptionsTopologyType;
 
 	private Boolean enableJumboFrame;
@@ -158,6 +160,22 @@ public class ModifyInstanceAttributeRequest extends RpcAcsRequest<ModifyInstance
 		}
 	}
 
+	public PrivateDnsNameOptions getPrivateDnsNameOptions() {
+		return this.privateDnsNameOptions;
+	}
+
+	public void setPrivateDnsNameOptions(PrivateDnsNameOptions privateDnsNameOptions) {
+		this.privateDnsNameOptions = privateDnsNameOptions;	
+		if (privateDnsNameOptions != null) {
+			
+				putQueryParameter("PrivateDnsNameOptions.HostnameType" , privateDnsNameOptions.getHostnameType());
+				putQueryParameter("PrivateDnsNameOptions.EnableInstanceIdDnsARecord" , privateDnsNameOptions.getEnableInstanceIdDnsARecord());
+				putQueryParameter("PrivateDnsNameOptions.EnableInstanceIdDnsAAAARecord" , privateDnsNameOptions.getEnableInstanceIdDnsAAAARecord());
+				putQueryParameter("PrivateDnsNameOptions.EnableIpDnsARecord" , privateDnsNameOptions.getEnableIpDnsARecord());
+				putQueryParameter("PrivateDnsNameOptions.EnableIpDnsPtrRecord" , privateDnsNameOptions.getEnableIpDnsPtrRecord());
+		}	
+	}
+
 	public String getCpuOptionsTopologyType() {
 		return this.cpuOptionsTopologyType;
 	}
@@ -270,6 +288,59 @@ public class ModifyInstanceAttributeRequest extends RpcAcsRequest<ModifyInstance
 				putQueryParameter("RemoteConnectionOptions.Password" , remoteConnectionOptions.getPassword());
 				putQueryParameter("RemoteConnectionOptions.Type" , remoteConnectionOptions.getType());
 		}	
+	}
+
+	public static class PrivateDnsNameOptions {
+
+		private String hostnameType;
+
+		private Boolean enableInstanceIdDnsARecord;
+
+		private Boolean enableInstanceIdDnsAAAARecord;
+
+		private Boolean enableIpDnsARecord;
+
+		private Boolean enableIpDnsPtrRecord;
+
+		public String getHostnameType() {
+			return this.hostnameType;
+		}
+
+		public void setHostnameType(String hostnameType) {
+			this.hostnameType = hostnameType;
+		}
+
+		public Boolean getEnableInstanceIdDnsARecord() {
+			return this.enableInstanceIdDnsARecord;
+		}
+
+		public void setEnableInstanceIdDnsARecord(Boolean enableInstanceIdDnsARecord) {
+			this.enableInstanceIdDnsARecord = enableInstanceIdDnsARecord;
+		}
+
+		public Boolean getEnableInstanceIdDnsAAAARecord() {
+			return this.enableInstanceIdDnsAAAARecord;
+		}
+
+		public void setEnableInstanceIdDnsAAAARecord(Boolean enableInstanceIdDnsAAAARecord) {
+			this.enableInstanceIdDnsAAAARecord = enableInstanceIdDnsAAAARecord;
+		}
+
+		public Boolean getEnableIpDnsARecord() {
+			return this.enableIpDnsARecord;
+		}
+
+		public void setEnableIpDnsARecord(Boolean enableIpDnsARecord) {
+			this.enableIpDnsARecord = enableIpDnsARecord;
+		}
+
+		public Boolean getEnableIpDnsPtrRecord() {
+			return this.enableIpDnsPtrRecord;
+		}
+
+		public void setEnableIpDnsPtrRecord(Boolean enableIpDnsPtrRecord) {
+			this.enableIpDnsPtrRecord = enableIpDnsPtrRecord;
+		}
 	}
 
 	public static class RemoteConnectionOptions {

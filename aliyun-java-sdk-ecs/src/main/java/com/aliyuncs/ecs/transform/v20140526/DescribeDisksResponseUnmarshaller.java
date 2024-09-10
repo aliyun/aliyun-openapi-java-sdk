@@ -125,6 +125,11 @@ public class DescribeDisksResponseUnmarshaller {
 				attachment.setInstanceId(_ctx.stringValue("DescribeDisksResponse.Disks["+ i +"].Attachments["+ j +"].InstanceId"));
 				attachment.setDevice(_ctx.stringValue("DescribeDisksResponse.Disks["+ i +"].Attachments["+ j +"].Device"));
 				attachment.setAttachedTime(_ctx.stringValue("DescribeDisksResponse.Disks["+ i +"].Attachments["+ j +"].AttachedTime"));
+				attachment.setNsId(_ctx.longValue("DescribeDisksResponse.Disks["+ i +"].Attachments["+ j +"].NsId"));
+				attachment.setNguid(_ctx.stringValue("DescribeDisksResponse.Disks["+ i +"].Attachments["+ j +"].Nguid"));
+				attachment.setIdentifier(_ctx.stringValue("DescribeDisksResponse.Disks["+ i +"].Attachments["+ j +"].Identifier"));
+				attachment.setTargetDevice(_ctx.stringValue("DescribeDisksResponse.Disks["+ i +"].Attachments["+ j +"].TargetDevice"));
+				attachment.setAccessToken(_ctx.stringValue("DescribeDisksResponse.Disks["+ i +"].Attachments["+ j +"].AccessToken"));
 
 				attachments.add(attachment);
 			}

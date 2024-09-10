@@ -215,6 +215,8 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private ImageOptions imageOptions;
 
+		private PrivateDnsNameOptions privateDnsNameOptions;
+
 		public String getCreationTime() {
 			return this.creationTime;
 		}
@@ -727,6 +729,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 			this.imageOptions = imageOptions;
 		}
 
+		public PrivateDnsNameOptions getPrivateDnsNameOptions() {
+			return this.privateDnsNameOptions;
+		}
+
+		public void setPrivateDnsNameOptions(PrivateDnsNameOptions privateDnsNameOptions) {
+			this.privateDnsNameOptions = privateDnsNameOptions;
+		}
+
 		public static class NetworkInterface {
 
 			private String type;
@@ -815,6 +825,8 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 				private Boolean primary;
 
+				private String privateDnsName;
+
 				public String getPrivateIpAddress() {
 					return this.privateIpAddress;
 				}
@@ -829,6 +841,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 				public void setPrimary(Boolean primary) {
 					this.primary = primary;
+				}
+
+				public String getPrivateDnsName() {
+					return this.privateDnsName;
+				}
+
+				public void setPrivateDnsName(String privateDnsName) {
+					this.privateDnsName = privateDnsName;
 				}
 			}
 
@@ -1192,6 +1212,59 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 			public void setLoginAsNonRoot(Boolean loginAsNonRoot) {
 				this.loginAsNonRoot = loginAsNonRoot;
+			}
+		}
+
+		public static class PrivateDnsNameOptions {
+
+			private Boolean enableInstanceIdDnsARecord;
+
+			private Boolean enableInstanceIdDnsAAAARecord;
+
+			private Boolean enableIpDnsARecord;
+
+			private Boolean enableIpDnsPtrRecord;
+
+			private String hostnameType;
+
+			public Boolean getEnableInstanceIdDnsARecord() {
+				return this.enableInstanceIdDnsARecord;
+			}
+
+			public void setEnableInstanceIdDnsARecord(Boolean enableInstanceIdDnsARecord) {
+				this.enableInstanceIdDnsARecord = enableInstanceIdDnsARecord;
+			}
+
+			public Boolean getEnableInstanceIdDnsAAAARecord() {
+				return this.enableInstanceIdDnsAAAARecord;
+			}
+
+			public void setEnableInstanceIdDnsAAAARecord(Boolean enableInstanceIdDnsAAAARecord) {
+				this.enableInstanceIdDnsAAAARecord = enableInstanceIdDnsAAAARecord;
+			}
+
+			public Boolean getEnableIpDnsARecord() {
+				return this.enableIpDnsARecord;
+			}
+
+			public void setEnableIpDnsARecord(Boolean enableIpDnsARecord) {
+				this.enableIpDnsARecord = enableIpDnsARecord;
+			}
+
+			public Boolean getEnableIpDnsPtrRecord() {
+				return this.enableIpDnsPtrRecord;
+			}
+
+			public void setEnableIpDnsPtrRecord(Boolean enableIpDnsPtrRecord) {
+				this.enableIpDnsPtrRecord = enableIpDnsPtrRecord;
+			}
+
+			public String getHostnameType() {
+				return this.hostnameType;
+			}
+
+			public void setHostnameType(String hostnameType) {
+				this.hostnameType = hostnameType;
 			}
 		}
 	}

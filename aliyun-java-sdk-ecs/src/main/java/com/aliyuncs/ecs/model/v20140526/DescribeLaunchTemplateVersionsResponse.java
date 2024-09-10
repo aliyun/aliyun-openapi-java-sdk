@@ -257,6 +257,12 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 
 			private String creditSpecification;
 
+			private Boolean autoRenew;
+
+			private Integer autoRenewPeriod;
+
+			private String periodUnit;
+
 			private List<DataDisk> dataDisks;
 
 			private List<NetworkInterface> networkInterfaces;
@@ -615,6 +621,30 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 
 			public void setCreditSpecification(String creditSpecification) {
 				this.creditSpecification = creditSpecification;
+			}
+
+			public Boolean getAutoRenew() {
+				return this.autoRenew;
+			}
+
+			public void setAutoRenew(Boolean autoRenew) {
+				this.autoRenew = autoRenew;
+			}
+
+			public Integer getAutoRenewPeriod() {
+				return this.autoRenewPeriod;
+			}
+
+			public void setAutoRenewPeriod(Integer autoRenewPeriod) {
+				this.autoRenewPeriod = autoRenewPeriod;
+			}
+
+			public String getPeriodUnit() {
+				return this.periodUnit;
+			}
+
+			public void setPeriodUnit(String periodUnit) {
+				this.periodUnit = periodUnit;
 			}
 
 			public List<DataDisk> getDataDisks() {

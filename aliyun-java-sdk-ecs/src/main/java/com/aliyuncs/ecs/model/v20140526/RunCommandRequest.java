@@ -56,6 +56,8 @@ public class RunCommandRequest extends RpcAcsRequest<RunCommandResponse> {
 
 	private Map<Object,Object> parameters;
 
+	private String launcher;
+
 	private String containerName;
 
 	private String clientToken;
@@ -246,6 +248,17 @@ public class RunCommandRequest extends RpcAcsRequest<RunCommandResponse> {
 		this.parameters = parameters;
 		if(parameters != null){
 			putQueryParameter("Parameters", new Gson().toJson(parameters));
+		}
+	}
+
+	public String getLauncher() {
+		return this.launcher;
+	}
+
+	public void setLauncher(String launcher) {
+		this.launcher = launcher;
+		if(launcher != null){
+			putQueryParameter("Launcher", launcher);
 		}
 	}
 

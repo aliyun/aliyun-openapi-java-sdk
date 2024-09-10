@@ -135,6 +135,8 @@ public class DescribeInvocationResultsResponse extends AcsResponse {
 
 			private String terminationMode;
 
+			private String launcher;
+
 			private List<Tag> tags;
 
 			public String getInvocationStatus() {
@@ -279,6 +281,14 @@ public class DescribeInvocationResultsResponse extends AcsResponse {
 
 			public void setTerminationMode(String terminationMode) {
 				this.terminationMode = terminationMode;
+			}
+
+			public String getLauncher() {
+				return this.launcher;
+			}
+
+			public void setLauncher(String launcher) {
+				this.launcher = launcher;
 			}
 
 			public List<Tag> getTags() {

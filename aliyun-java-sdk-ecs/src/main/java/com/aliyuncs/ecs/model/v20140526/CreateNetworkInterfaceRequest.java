@@ -40,6 +40,8 @@ public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkIn
 
 	private String resourceGroupId;
 
+	private EnhancedNetwork enhancedNetwork;
+
 	private List<Tag> tags;
 
 	private String networkInterfaceName;
@@ -180,6 +182,18 @@ public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkIn
 		if(resourceGroupId != null){
 			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
+	}
+
+	public EnhancedNetwork getEnhancedNetwork() {
+		return this.enhancedNetwork;
+	}
+
+	public void setEnhancedNetwork(EnhancedNetwork enhancedNetwork) {
+		this.enhancedNetwork = enhancedNetwork;	
+		if (enhancedNetwork != null) {
+			
+				putQueryParameter("EnhancedNetwork.EnableSriov" , enhancedNetwork.getEnableSriov());
+		}	
 	}
 
 	public List<Tag> getTags() {
@@ -521,6 +535,19 @@ public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkIn
 
 		public void setRxQueueSize(Integer rxQueueSize) {
 			this.rxQueueSize = rxQueueSize;
+		}
+	}
+
+	public static class EnhancedNetwork {
+
+		private Boolean enableSriov;
+
+		public Boolean getEnableSriov() {
+			return this.enableSriov;
+		}
+
+		public void setEnableSriov(Boolean enableSriov) {
+			this.enableSriov = enableSriov;
 		}
 	}
 

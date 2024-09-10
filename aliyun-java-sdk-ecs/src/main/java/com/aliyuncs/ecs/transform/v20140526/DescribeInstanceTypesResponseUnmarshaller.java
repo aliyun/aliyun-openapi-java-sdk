@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.ecs.model.v20140526.DescribeInstanceTypesResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstanceTypesResponse.InstanceType;
+import com.aliyuncs.ecs.model.v20140526.DescribeInstanceTypesResponse.InstanceType.EnhancedNetwork;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstanceTypesResponse.InstanceType.NetworkCardInfo;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -76,6 +77,11 @@ public class DescribeInstanceTypesResponseUnmarshaller {
 				supportedBootModes.add(_ctx.stringValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].SupportedBootModes["+ j +"]"));
 			}
 			instanceType.setSupportedBootModes(supportedBootModes);
+
+			EnhancedNetwork enhancedNetwork = new EnhancedNetwork();
+			enhancedNetwork.setSriovSupport(_ctx.booleanValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].EnhancedNetwork.SriovSupport"));
+			enhancedNetwork.setVfQueueNumberPerEni(_ctx.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].EnhancedNetwork.VfQueueNumberPerEni"));
+			instanceType.setEnhancedNetwork(enhancedNetwork);
 
 			List<NetworkCardInfo> networkCards = new ArrayList<NetworkCardInfo>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].NetworkCards.Length"); j++) {
