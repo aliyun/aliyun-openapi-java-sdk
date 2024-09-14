@@ -38,6 +38,8 @@ public class ModifyNetworkInterfaceAttributeRequest extends RpcAcsRequest<Modify
 
 	private EnhancedNetwork enhancedNetwork;
 
+	private Boolean sourceDestCheck;
+
 	private String networkInterfaceName;
 
 	private Integer txQueueSize;
@@ -136,6 +138,17 @@ public class ModifyNetworkInterfaceAttributeRequest extends RpcAcsRequest<Modify
 			
 				putQueryParameter("EnhancedNetwork.EnableSriov" , enhancedNetwork.getEnableSriov());
 		}	
+	}
+
+	public Boolean getSourceDestCheck() {
+		return this.sourceDestCheck;
+	}
+
+	public void setSourceDestCheck(Boolean sourceDestCheck) {
+		this.sourceDestCheck = sourceDestCheck;
+		if(sourceDestCheck != null){
+			putQueryParameter("SourceDestCheck", sourceDestCheck.toString());
+		}
 	}
 
 	public String getNetworkInterfaceName() {

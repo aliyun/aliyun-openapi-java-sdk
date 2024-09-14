@@ -127,6 +127,8 @@ public class DescribeNetworkInterfacesResponse extends AcsResponse {
 
 		private Boolean deleteOnRelease;
 
+		private Boolean sourceDestCheck;
+
 		private List<PrivateIpSet> privateIpSets;
 
 		private List<Ipv6Set> ipv6Sets;
@@ -301,6 +303,14 @@ public class DescribeNetworkInterfacesResponse extends AcsResponse {
 
 		public void setDeleteOnRelease(Boolean deleteOnRelease) {
 			this.deleteOnRelease = deleteOnRelease;
+		}
+
+		public Boolean getSourceDestCheck() {
+			return this.sourceDestCheck;
+		}
+
+		public void setSourceDestCheck(Boolean sourceDestCheck) {
+			this.sourceDestCheck = sourceDestCheck;
 		}
 
 		public List<PrivateIpSet> getPrivateIpSets() {

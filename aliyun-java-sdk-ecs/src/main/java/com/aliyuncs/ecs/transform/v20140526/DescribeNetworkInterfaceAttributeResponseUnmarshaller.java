@@ -61,24 +61,13 @@ public class DescribeNetworkInterfaceAttributeResponseUnmarshaller {
 		describeNetworkInterfaceAttributeResponse.setQueueNumber(_ctx.integerValue("DescribeNetworkInterfaceAttributeResponse.QueueNumber"));
 		describeNetworkInterfaceAttributeResponse.setDeleteOnRelease(_ctx.booleanValue("DescribeNetworkInterfaceAttributeResponse.DeleteOnRelease"));
 		describeNetworkInterfaceAttributeResponse.setTcpOptionAddressEnabled(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.TcpOptionAddressEnabled"));
+		describeNetworkInterfaceAttributeResponse.setSourceDestCheck(_ctx.booleanValue("DescribeNetworkInterfaceAttributeResponse.SourceDestCheck"));
 
 		List<String> securityGroupIds = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeNetworkInterfaceAttributeResponse.SecurityGroupIds.Length"); i++) {
 			securityGroupIds.add(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.SecurityGroupIds["+ i +"]"));
 		}
 		describeNetworkInterfaceAttributeResponse.setSecurityGroupIds(securityGroupIds);
-
-		ConnectionTrackingConfiguration connectionTrackingConfiguration = new ConnectionTrackingConfiguration();
-		connectionTrackingConfiguration.setTcpClosedAndTimeWaitTimeout(_ctx.integerValue("DescribeNetworkInterfaceAttributeResponse.ConnectionTrackingConfiguration.TcpClosedAndTimeWaitTimeout"));
-		connectionTrackingConfiguration.setTcpEstablishedTimeout(_ctx.integerValue("DescribeNetworkInterfaceAttributeResponse.ConnectionTrackingConfiguration.TcpEstablishedTimeout"));
-		connectionTrackingConfiguration.setUdpTimeout(_ctx.integerValue("DescribeNetworkInterfaceAttributeResponse.ConnectionTrackingConfiguration.UdpTimeout"));
-		describeNetworkInterfaceAttributeResponse.setConnectionTrackingConfiguration(connectionTrackingConfiguration);
-
-		NetworkInterfaceTrafficConfig networkInterfaceTrafficConfig = new NetworkInterfaceTrafficConfig();
-		networkInterfaceTrafficConfig.setNetworkInterfaceTrafficMode(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.NetworkInterfaceTrafficConfig.NetworkInterfaceTrafficMode"));
-		networkInterfaceTrafficConfig.setQueueNumber(_ctx.integerValue("DescribeNetworkInterfaceAttributeResponse.NetworkInterfaceTrafficConfig.QueueNumber"));
-		networkInterfaceTrafficConfig.setQueuePairNumber(_ctx.integerValue("DescribeNetworkInterfaceAttributeResponse.NetworkInterfaceTrafficConfig.QueuePairNumber"));
-		describeNetworkInterfaceAttributeResponse.setNetworkInterfaceTrafficConfig(networkInterfaceTrafficConfig);
 
 		AssociatedPublicIp associatedPublicIp = new AssociatedPublicIp();
 		associatedPublicIp.setPublicIpAddress(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.AssociatedPublicIp.PublicIpAddress"));
@@ -118,6 +107,18 @@ public class DescribeNetworkInterfaceAttributeResponseUnmarshaller {
 		slaveInterfaceSpecification.setWorkState(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.SlaveInterfaceSpecification.WorkState"));
 		slaveInterfaceSpecification.setBondNetworkInterfaceId(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.SlaveInterfaceSpecification.BondNetworkInterfaceId"));
 		describeNetworkInterfaceAttributeResponse.setSlaveInterfaceSpecification(slaveInterfaceSpecification);
+
+		NetworkInterfaceTrafficConfig networkInterfaceTrafficConfig = new NetworkInterfaceTrafficConfig();
+		networkInterfaceTrafficConfig.setNetworkInterfaceTrafficMode(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.NetworkInterfaceTrafficConfig.NetworkInterfaceTrafficMode"));
+		networkInterfaceTrafficConfig.setQueueNumber(_ctx.integerValue("DescribeNetworkInterfaceAttributeResponse.NetworkInterfaceTrafficConfig.QueueNumber"));
+		networkInterfaceTrafficConfig.setQueuePairNumber(_ctx.integerValue("DescribeNetworkInterfaceAttributeResponse.NetworkInterfaceTrafficConfig.QueuePairNumber"));
+		describeNetworkInterfaceAttributeResponse.setNetworkInterfaceTrafficConfig(networkInterfaceTrafficConfig);
+
+		ConnectionTrackingConfiguration connectionTrackingConfiguration = new ConnectionTrackingConfiguration();
+		connectionTrackingConfiguration.setTcpEstablishedTimeout(_ctx.integerValue("DescribeNetworkInterfaceAttributeResponse.ConnectionTrackingConfiguration.TcpEstablishedTimeout"));
+		connectionTrackingConfiguration.setTcpClosedAndTimeWaitTimeout(_ctx.integerValue("DescribeNetworkInterfaceAttributeResponse.ConnectionTrackingConfiguration.TcpClosedAndTimeWaitTimeout"));
+		connectionTrackingConfiguration.setUdpTimeout(_ctx.integerValue("DescribeNetworkInterfaceAttributeResponse.ConnectionTrackingConfiguration.UdpTimeout"));
+		describeNetworkInterfaceAttributeResponse.setConnectionTrackingConfiguration(connectionTrackingConfiguration);
 
 		EnhancedNetwork enhancedNetwork = new EnhancedNetwork();
 		enhancedNetwork.setEnableSriov(_ctx.booleanValue("DescribeNetworkInterfaceAttributeResponse.EnhancedNetwork.EnableSriov"));
