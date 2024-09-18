@@ -23,6 +23,7 @@ import com.aliyuncs.dataworks_public.model.v20200518.GetRemindResponse.Data.Base
 import com.aliyuncs.dataworks_public.model.v20200518.GetRemindResponse.Data.BizProcessesItem;
 import com.aliyuncs.dataworks_public.model.v20200518.GetRemindResponse.Data.NodesItem;
 import com.aliyuncs.dataworks_public.model.v20200518.GetRemindResponse.Data.ProjectsItem;
+import com.aliyuncs.dataworks_public.model.v20200518.GetRemindResponse.Data.ReceiversItem;
 import com.aliyuncs.dataworks_public.model.v20200518.GetRemindResponse.Data.RobotsItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -68,6 +69,12 @@ public class GetRemindResponseUnmarshaller {
 			webhooks.add(_ctx.stringValue("GetRemindResponse.Data.Webhooks["+ i +"]"));
 		}
 		data.setWebhooks(webhooks);
+
+		List<Long> allowNodes = new ArrayList<Long>();
+		for (int i = 0; i < _ctx.lengthValue("GetRemindResponse.Data.AllowNodes.Length"); i++) {
+			allowNodes.add(_ctx.longValue("GetRemindResponse.Data.AllowNodes["+ i +"]"));
+		}
+		data.setAllowNodes(allowNodes);
 
 		List<RobotsItem> robots = new ArrayList<RobotsItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetRemindResponse.Data.Robots.Length"); i++) {
@@ -119,6 +126,21 @@ public class GetRemindResponseUnmarshaller {
 			bizProcesses.add(bizProcessesItem);
 		}
 		data.setBizProcesses(bizProcesses);
+
+		List<ReceiversItem> receivers = new ArrayList<ReceiversItem>();
+		for (int i = 0; i < _ctx.lengthValue("GetRemindResponse.Data.Receivers.Length"); i++) {
+			ReceiversItem receiversItem = new ReceiversItem();
+			receiversItem.setAlertUnit(_ctx.stringValue("GetRemindResponse.Data.Receivers["+ i +"].AlertUnit"));
+
+			List<String> alertTargets1 = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("GetRemindResponse.Data.Receivers["+ i +"].AlertTargets.Length"); j++) {
+				alertTargets1.add(_ctx.stringValue("GetRemindResponse.Data.Receivers["+ i +"].AlertTargets["+ j +"]"));
+			}
+			receiversItem.setAlertTargets1(alertTargets1);
+
+			receivers.add(receiversItem);
+		}
+		data.setReceivers(receivers);
 		getRemindResponse.setData(data);
 	 
 	 	return getRemindResponse;

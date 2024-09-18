@@ -121,11 +121,15 @@ public class GetRemindResponse extends AcsResponse {
 
 		private List<BizProcessesItem> bizProcesses;
 
+		private List<ReceiversItem> receivers;
+
 		private List<String> alertTargets;
 
 		private List<String> alertMethods;
 
 		private List<String> webhooks;
+
+		private List<Long> allowNodes;
 
 		public Integer getMaxAlertTimes() {
 			return this.maxAlertTimes;
@@ -263,6 +267,14 @@ public class GetRemindResponse extends AcsResponse {
 			this.bizProcesses = bizProcesses;
 		}
 
+		public List<ReceiversItem> getReceivers() {
+			return this.receivers;
+		}
+
+		public void setReceivers(List<ReceiversItem> receivers) {
+			this.receivers = receivers;
+		}
+
 		public List<String> getAlertTargets() {
 			return this.alertTargets;
 		}
@@ -285,6 +297,14 @@ public class GetRemindResponse extends AcsResponse {
 
 		public void setWebhooks(List<String> webhooks) {
 			this.webhooks = webhooks;
+		}
+
+		public List<Long> getAllowNodes() {
+			return this.allowNodes;
+		}
+
+		public void setAllowNodes(List<Long> allowNodes) {
+			this.allowNodes = allowNodes;
 		}
 
 		public static class RobotsItem {
@@ -409,6 +429,29 @@ public class GetRemindResponse extends AcsResponse {
 
 			public void setBizId(Long bizId) {
 				this.bizId = bizId;
+			}
+		}
+
+		public static class ReceiversItem {
+
+			private String alertUnit;
+
+			private List<String> alertTargets1;
+
+			public String getAlertUnit() {
+				return this.alertUnit;
+			}
+
+			public void setAlertUnit(String alertUnit) {
+				this.alertUnit = alertUnit;
+			}
+
+			public List<String> getAlertTargets1() {
+				return this.alertTargets1;
+			}
+
+			public void setAlertTargets1(List<String> alertTargets1) {
+				this.alertTargets1 = alertTargets1;
 			}
 		}
 	}
