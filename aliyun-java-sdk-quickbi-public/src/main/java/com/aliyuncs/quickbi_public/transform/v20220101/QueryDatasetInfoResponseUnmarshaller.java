@@ -34,39 +34,39 @@ public class QueryDatasetInfoResponseUnmarshaller {
 		queryDatasetInfoResponse.setSuccess(_ctx.booleanValue("QueryDatasetInfoResponse.Success"));
 
 		Result result = new Result();
-		result.setGmtModify(_ctx.stringValue("QueryDatasetInfoResponse.Result.GmtModify"));
-		result.setDsName(_ctx.stringValue("QueryDatasetInfoResponse.Result.DsName"));
-		result.setDsId(_ctx.stringValue("QueryDatasetInfoResponse.Result.DsId"));
-		result.setOwnerName(_ctx.stringValue("QueryDatasetInfoResponse.Result.OwnerName"));
-		result.setWorkspaceName(_ctx.stringValue("QueryDatasetInfoResponse.Result.WorkspaceName"));
-		result.setOwnerId(_ctx.stringValue("QueryDatasetInfoResponse.Result.OwnerId"));
+		result.setCustimzeSql(_ctx.booleanValue("QueryDatasetInfoResponse.Result.CustimzeSql"));
+		result.setDatasetId(_ctx.stringValue("QueryDatasetInfoResponse.Result.DatasetId"));
 		result.setDatasetName(_ctx.stringValue("QueryDatasetInfoResponse.Result.DatasetName"));
+		result.setDsId(_ctx.stringValue("QueryDatasetInfoResponse.Result.DsId"));
+		result.setDsName(_ctx.stringValue("QueryDatasetInfoResponse.Result.DsName"));
+		result.setDsType(_ctx.stringValue("QueryDatasetInfoResponse.Result.DsType"));
+		result.setGmtCreate(_ctx.stringValue("QueryDatasetInfoResponse.Result.GmtCreate"));
+		result.setGmtModify(_ctx.stringValue("QueryDatasetInfoResponse.Result.GmtModify"));
+		result.setOpenOfflineAcceleration(_ctx.booleanValue("QueryDatasetInfoResponse.Result.OpenOfflineAcceleration"));
+		result.setOwnerId(_ctx.stringValue("QueryDatasetInfoResponse.Result.OwnerId"));
+		result.setOwnerName(_ctx.stringValue("QueryDatasetInfoResponse.Result.OwnerName"));
 		result.setRowLevel(_ctx.booleanValue("QueryDatasetInfoResponse.Result.RowLevel"));
 		result.setWorkspaceId(_ctx.stringValue("QueryDatasetInfoResponse.Result.WorkspaceId"));
-		result.setCustimzeSql(_ctx.booleanValue("QueryDatasetInfoResponse.Result.CustimzeSql"));
-		result.setGmtCreate(_ctx.stringValue("QueryDatasetInfoResponse.Result.GmtCreate"));
-		result.setDsType(_ctx.stringValue("QueryDatasetInfoResponse.Result.DsType"));
-		result.setDatasetId(_ctx.stringValue("QueryDatasetInfoResponse.Result.DatasetId"));
-		result.setOpenOfflineAcceleration(_ctx.booleanValue("QueryDatasetInfoResponse.Result.OpenOfflineAcceleration"));
+		result.setWorkspaceName(_ctx.stringValue("QueryDatasetInfoResponse.Result.WorkspaceName"));
 
 		Directory directory = new Directory();
+		directory.setId(_ctx.stringValue("QueryDatasetInfoResponse.Result.Directory.Id"));
+		directory.setName(_ctx.stringValue("QueryDatasetInfoResponse.Result.Directory.Name"));
 		directory.setPathId(_ctx.stringValue("QueryDatasetInfoResponse.Result.Directory.PathId"));
 		directory.setPathName(_ctx.stringValue("QueryDatasetInfoResponse.Result.Directory.PathName"));
-		directory.setName(_ctx.stringValue("QueryDatasetInfoResponse.Result.Directory.Name"));
-		directory.setId(_ctx.stringValue("QueryDatasetInfoResponse.Result.Directory.Id"));
 		result.setDirectory(directory);
 
 		List<CubeTableListItem> cubeTableList = new ArrayList<CubeTableListItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryDatasetInfoResponse.Result.CubeTableList.Length"); i++) {
 			CubeTableListItem cubeTableListItem = new CubeTableListItem();
-			cubeTableListItem.setTableName(_ctx.stringValue("QueryDatasetInfoResponse.Result.CubeTableList["+ i +"].TableName"));
-			cubeTableListItem.setDatasourceId(_ctx.stringValue("QueryDatasetInfoResponse.Result.CubeTableList["+ i +"].DatasourceId"));
-			cubeTableListItem.setDsType(_ctx.stringValue("QueryDatasetInfoResponse.Result.CubeTableList["+ i +"].DsType"));
-			cubeTableListItem.setUniqueId(_ctx.stringValue("QueryDatasetInfoResponse.Result.CubeTableList["+ i +"].UniqueId"));
-			cubeTableListItem.setFactTable(_ctx.booleanValue("QueryDatasetInfoResponse.Result.CubeTableList["+ i +"].FactTable"));
 			cubeTableListItem.setCaption(_ctx.stringValue("QueryDatasetInfoResponse.Result.CubeTableList["+ i +"].Caption"));
 			cubeTableListItem.setCustomsql(_ctx.booleanValue("QueryDatasetInfoResponse.Result.CubeTableList["+ i +"].Customsql"));
+			cubeTableListItem.setDatasourceId(_ctx.stringValue("QueryDatasetInfoResponse.Result.CubeTableList["+ i +"].DatasourceId"));
+			cubeTableListItem.setDsType(_ctx.stringValue("QueryDatasetInfoResponse.Result.CubeTableList["+ i +"].DsType"));
+			cubeTableListItem.setFactTable(_ctx.booleanValue("QueryDatasetInfoResponse.Result.CubeTableList["+ i +"].FactTable"));
 			cubeTableListItem.setSql(_ctx.stringValue("QueryDatasetInfoResponse.Result.CubeTableList["+ i +"].Sql"));
+			cubeTableListItem.setTableName(_ctx.stringValue("QueryDatasetInfoResponse.Result.CubeTableList["+ i +"].TableName"));
+			cubeTableListItem.setUniqueId(_ctx.stringValue("QueryDatasetInfoResponse.Result.CubeTableList["+ i +"].UniqueId"));
 
 			cubeTableList.add(cubeTableListItem);
 		}
@@ -75,15 +75,16 @@ public class QueryDatasetInfoResponseUnmarshaller {
 		List<DimensionListItem> dimensionList = new ArrayList<DimensionListItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryDatasetInfoResponse.Result.DimensionList.Length"); i++) {
 			DimensionListItem dimensionListItem = new DimensionListItem();
+			dimensionListItem.setCaption(_ctx.stringValue("QueryDatasetInfoResponse.Result.DimensionList["+ i +"].Caption"));
 			dimensionListItem.setDataType(_ctx.stringValue("QueryDatasetInfoResponse.Result.DimensionList["+ i +"].DataType"));
+			dimensionListItem.setDimensionType(_ctx.stringValue("QueryDatasetInfoResponse.Result.DimensionList["+ i +"].DimensionType"));
 			dimensionListItem.setExpression(_ctx.stringValue("QueryDatasetInfoResponse.Result.DimensionList["+ i +"].Expression"));
 			dimensionListItem.setFactColumn(_ctx.stringValue("QueryDatasetInfoResponse.Result.DimensionList["+ i +"].FactColumn"));
-			dimensionListItem.setDimensionType(_ctx.stringValue("QueryDatasetInfoResponse.Result.DimensionList["+ i +"].DimensionType"));
+			dimensionListItem.setFieldDescription(_ctx.stringValue("QueryDatasetInfoResponse.Result.DimensionList["+ i +"].FieldDescription"));
 			dimensionListItem.setGranularity(_ctx.stringValue("QueryDatasetInfoResponse.Result.DimensionList["+ i +"].Granularity"));
 			dimensionListItem.setRefUid(_ctx.stringValue("QueryDatasetInfoResponse.Result.DimensionList["+ i +"].RefUid"));
-			dimensionListItem.setCaption(_ctx.stringValue("QueryDatasetInfoResponse.Result.DimensionList["+ i +"].Caption"));
-			dimensionListItem.setUid(_ctx.stringValue("QueryDatasetInfoResponse.Result.DimensionList["+ i +"].Uid"));
 			dimensionListItem.setTableUniqueId(_ctx.stringValue("QueryDatasetInfoResponse.Result.DimensionList["+ i +"].TableUniqueId"));
+			dimensionListItem.setUid(_ctx.stringValue("QueryDatasetInfoResponse.Result.DimensionList["+ i +"].Uid"));
 
 			dimensionList.add(dimensionListItem);
 		}
@@ -92,11 +93,12 @@ public class QueryDatasetInfoResponseUnmarshaller {
 		List<MeasureListItem> measureList = new ArrayList<MeasureListItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryDatasetInfoResponse.Result.MeasureList.Length"); i++) {
 			MeasureListItem measureListItem = new MeasureListItem();
+			measureListItem.setCaption(_ctx.stringValue("QueryDatasetInfoResponse.Result.MeasureList["+ i +"].Caption"));
 			measureListItem.setDataType(_ctx.stringValue("QueryDatasetInfoResponse.Result.MeasureList["+ i +"].DataType"));
 			measureListItem.setExpression(_ctx.stringValue("QueryDatasetInfoResponse.Result.MeasureList["+ i +"].Expression"));
-			measureListItem.setMeasureType(_ctx.stringValue("QueryDatasetInfoResponse.Result.MeasureList["+ i +"].MeasureType"));
 			measureListItem.setFactColumn(_ctx.stringValue("QueryDatasetInfoResponse.Result.MeasureList["+ i +"].FactColumn"));
-			measureListItem.setCaption(_ctx.stringValue("QueryDatasetInfoResponse.Result.MeasureList["+ i +"].Caption"));
+			measureListItem.setFieldDescription(_ctx.stringValue("QueryDatasetInfoResponse.Result.MeasureList["+ i +"].FieldDescription"));
+			measureListItem.setMeasureType(_ctx.stringValue("QueryDatasetInfoResponse.Result.MeasureList["+ i +"].MeasureType"));
 			measureListItem.setTableUniqueId(_ctx.stringValue("QueryDatasetInfoResponse.Result.MeasureList["+ i +"].TableUniqueId"));
 			measureListItem.setUid(_ctx.stringValue("QueryDatasetInfoResponse.Result.MeasureList["+ i +"].Uid"));
 

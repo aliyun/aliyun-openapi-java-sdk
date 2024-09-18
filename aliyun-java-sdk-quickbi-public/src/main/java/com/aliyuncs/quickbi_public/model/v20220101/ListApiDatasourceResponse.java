@@ -101,23 +101,23 @@ public class ListApiDatasourceResponse extends AcsResponse {
 
 			private String apiId;
 
-			private String jobId;
-
-			private String showName;
+			private String body;
 
 			private Float dataSize;
-
-			private Integer statusType;
-
-			private String parameters;
-
-			private String body;
 
 			private String dateUpdateTime;
 
 			private String gmtCreate;
 
 			private String gmtModified;
+
+			private String jobId;
+
+			private String parameters;
+
+			private String showName;
+
+			private Integer statusType;
 
 			public String getApiId() {
 				return this.apiId;
@@ -127,20 +127,12 @@ public class ListApiDatasourceResponse extends AcsResponse {
 				this.apiId = apiId;
 			}
 
-			public String getJobId() {
-				return this.jobId;
+			public String getBody() {
+				return this.body;
 			}
 
-			public void setJobId(String jobId) {
-				this.jobId = jobId;
-			}
-
-			public String getShowName() {
-				return this.showName;
-			}
-
-			public void setShowName(String showName) {
-				this.showName = showName;
+			public void setBody(String body) {
+				this.body = body;
 			}
 
 			public Float getDataSize() {
@@ -149,30 +141,6 @@ public class ListApiDatasourceResponse extends AcsResponse {
 
 			public void setDataSize(Float dataSize) {
 				this.dataSize = dataSize;
-			}
-
-			public Integer getStatusType() {
-				return this.statusType;
-			}
-
-			public void setStatusType(Integer statusType) {
-				this.statusType = statusType;
-			}
-
-			public String getParameters() {
-				return this.parameters;
-			}
-
-			public void setParameters(String parameters) {
-				this.parameters = parameters;
-			}
-
-			public String getBody() {
-				return this.body;
-			}
-
-			public void setBody(String body) {
-				this.body = body;
 			}
 
 			public String getDateUpdateTime() {
@@ -197,6 +165,38 @@ public class ListApiDatasourceResponse extends AcsResponse {
 
 			public void setGmtModified(String gmtModified) {
 				this.gmtModified = gmtModified;
+			}
+
+			public String getJobId() {
+				return this.jobId;
+			}
+
+			public void setJobId(String jobId) {
+				this.jobId = jobId;
+			}
+
+			public String getParameters() {
+				return this.parameters;
+			}
+
+			public void setParameters(String parameters) {
+				this.parameters = parameters;
+			}
+
+			public String getShowName() {
+				return this.showName;
+			}
+
+			public void setShowName(String showName) {
+				this.showName = showName;
+			}
+
+			public Integer getStatusType() {
+				return this.statusType;
+			}
+
+			public void setStatusType(Integer statusType) {
+				this.statusType = statusType;
 			}
 		}
 	}

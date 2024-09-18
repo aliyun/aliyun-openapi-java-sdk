@@ -37,9 +37,9 @@ public class QueryDataRangeResponseUnmarshaller {
 		List<ApiCopilotLlmCubeModelsItem> apiCopilotLlmCubeModels = new ArrayList<ApiCopilotLlmCubeModelsItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryDataRangeResponse.Result.ApiCopilotLlmCubeModels.Length"); i++) {
 			ApiCopilotLlmCubeModelsItem apiCopilotLlmCubeModelsItem = new ApiCopilotLlmCubeModelsItem();
-			apiCopilotLlmCubeModelsItem.setLlmCubeId(_ctx.stringValue("QueryDataRangeResponse.Result.ApiCopilotLlmCubeModels["+ i +"].LlmCubeId"));
 			apiCopilotLlmCubeModelsItem.setAlias(_ctx.stringValue("QueryDataRangeResponse.Result.ApiCopilotLlmCubeModels["+ i +"].Alias"));
 			apiCopilotLlmCubeModelsItem.setCreateUser(_ctx.stringValue("QueryDataRangeResponse.Result.ApiCopilotLlmCubeModels["+ i +"].CreateUser"));
+			apiCopilotLlmCubeModelsItem.setLlmCubeId(_ctx.stringValue("QueryDataRangeResponse.Result.ApiCopilotLlmCubeModels["+ i +"].LlmCubeId"));
 
 			apiCopilotLlmCubeModels.add(apiCopilotLlmCubeModelsItem);
 		}
@@ -48,16 +48,16 @@ public class QueryDataRangeResponseUnmarshaller {
 		List<ApiCopilotThemeModelsItem> apiCopilotThemeModels = new ArrayList<ApiCopilotThemeModelsItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryDataRangeResponse.Result.ApiCopilotThemeModels.Length"); i++) {
 			ApiCopilotThemeModelsItem apiCopilotThemeModelsItem = new ApiCopilotThemeModelsItem();
+			apiCopilotThemeModelsItem.setCreateUser(_ctx.stringValue("QueryDataRangeResponse.Result.ApiCopilotThemeModels["+ i +"].CreateUser"));
 			apiCopilotThemeModelsItem.setThemeId(_ctx.stringValue("QueryDataRangeResponse.Result.ApiCopilotThemeModels["+ i +"].ThemeId"));
 			apiCopilotThemeModelsItem.setThemeName(_ctx.stringValue("QueryDataRangeResponse.Result.ApiCopilotThemeModels["+ i +"].ThemeName"));
-			apiCopilotThemeModelsItem.setCreateUser(_ctx.stringValue("QueryDataRangeResponse.Result.ApiCopilotThemeModels["+ i +"].CreateUser"));
 
 			List<ApiCopilotLlmCubeModelsItem2> apiCopilotLlmCubeModels1 = new ArrayList<ApiCopilotLlmCubeModelsItem2>();
 			for (int j = 0; j < _ctx.lengthValue("QueryDataRangeResponse.Result.ApiCopilotThemeModels["+ i +"].ApiCopilotLlmCubeModels.Length"); j++) {
 				ApiCopilotLlmCubeModelsItem2 apiCopilotLlmCubeModelsItem2 = new ApiCopilotLlmCubeModelsItem2();
-				apiCopilotLlmCubeModelsItem2.setLlmCubeId(_ctx.stringValue("QueryDataRangeResponse.Result.ApiCopilotThemeModels["+ i +"].ApiCopilotLlmCubeModels["+ j +"].LlmCubeId"));
 				apiCopilotLlmCubeModelsItem2.setAlias(_ctx.stringValue("QueryDataRangeResponse.Result.ApiCopilotThemeModels["+ i +"].ApiCopilotLlmCubeModels["+ j +"].Alias"));
 				apiCopilotLlmCubeModelsItem2.setCreateUser(_ctx.stringValue("QueryDataRangeResponse.Result.ApiCopilotThemeModels["+ i +"].ApiCopilotLlmCubeModels["+ j +"].CreateUser"));
+				apiCopilotLlmCubeModelsItem2.setLlmCubeId(_ctx.stringValue("QueryDataRangeResponse.Result.ApiCopilotThemeModels["+ i +"].ApiCopilotLlmCubeModels["+ j +"].LlmCubeId"));
 
 				apiCopilotLlmCubeModels1.add(apiCopilotLlmCubeModelsItem2);
 			}

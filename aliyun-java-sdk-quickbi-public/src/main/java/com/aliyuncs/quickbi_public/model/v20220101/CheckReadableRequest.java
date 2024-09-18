@@ -24,23 +24,12 @@ import com.aliyuncs.http.MethodType;
 public class CheckReadableRequest extends RpcAcsRequest<CheckReadableResponse> {
 	   
 
-	private String worksId;
-
 	private String userId;
+
+	private String worksId;
 	public CheckReadableRequest() {
 		super("quickbi-public", "2022-01-01", "CheckReadable", "2.2.0");
 		setMethod(MethodType.POST);
-	}
-
-	public String getWorksId() {
-		return this.worksId;
-	}
-
-	public void setWorksId(String worksId) {
-		this.worksId = worksId;
-		if(worksId != null){
-			putQueryParameter("WorksId", worksId);
-		}
 	}
 
 	public String getUserId() {
@@ -51,6 +40,17 @@ public class CheckReadableRequest extends RpcAcsRequest<CheckReadableResponse> {
 		this.userId = userId;
 		if(userId != null){
 			putQueryParameter("UserId", userId);
+		}
+	}
+
+	public String getWorksId() {
+		return this.worksId;
+	}
+
+	public void setWorksId(String worksId) {
+		this.worksId = worksId;
+		if(worksId != null){
+			putQueryParameter("WorksId", worksId);
 		}
 	}
 

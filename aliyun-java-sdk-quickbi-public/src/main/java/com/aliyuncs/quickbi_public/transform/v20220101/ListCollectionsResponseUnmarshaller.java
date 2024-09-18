@@ -32,13 +32,13 @@ public class ListCollectionsResponseUnmarshaller {
 		List<Data> result = new ArrayList<Data>();
 		for (int i = 0; i < _ctx.lengthValue("ListCollectionsResponse.Result.Length"); i++) {
 			Data data = new Data();
-			data.setWorkspaceId(_ctx.stringValue("ListCollectionsResponse.Result["+ i +"].WorkspaceId"));
-			data.setWorksType(_ctx.stringValue("ListCollectionsResponse.Result["+ i +"].WorksType"));
 			data.setFavoriteId(_ctx.integerValue("ListCollectionsResponse.Result["+ i +"].FavoriteId"));
+			data.setOwnerId(_ctx.stringValue("ListCollectionsResponse.Result["+ i +"].OwnerId"));
 			data.setWorksId(_ctx.stringValue("ListCollectionsResponse.Result["+ i +"].WorksId"));
 			data.setWorksName(_ctx.stringValue("ListCollectionsResponse.Result["+ i +"].WorksName"));
+			data.setWorksType(_ctx.stringValue("ListCollectionsResponse.Result["+ i +"].WorksType"));
+			data.setWorkspaceId(_ctx.stringValue("ListCollectionsResponse.Result["+ i +"].WorkspaceId"));
 			data.setWorkspaceName(_ctx.stringValue("ListCollectionsResponse.Result["+ i +"].WorkspaceName"));
-			data.setOwnerId(_ctx.stringValue("ListCollectionsResponse.Result["+ i +"].OwnerId"));
 
 			result.add(data);
 		}

@@ -24,13 +24,13 @@ import com.aliyuncs.http.MethodType;
 public class QueryWorksByWorkspaceRequest extends RpcAcsRequest<QueryWorksByWorkspaceResponse> {
 	   
 
-	private String worksType;
-
 	private Integer thirdPartAuthFlag;
 
 	private Integer pageNum;
 
 	private Integer pageSize;
+
+	private String worksType;
 
 	private String workspaceId;
 
@@ -38,17 +38,6 @@ public class QueryWorksByWorkspaceRequest extends RpcAcsRequest<QueryWorksByWork
 	public QueryWorksByWorkspaceRequest() {
 		super("quickbi-public", "2022-01-01", "QueryWorksByWorkspace", "2.2.0");
 		setMethod(MethodType.POST);
-	}
-
-	public String getWorksType() {
-		return this.worksType;
-	}
-
-	public void setWorksType(String worksType) {
-		this.worksType = worksType;
-		if(worksType != null){
-			putQueryParameter("WorksType", worksType);
-		}
 	}
 
 	public Integer getThirdPartAuthFlag() {
@@ -81,6 +70,17 @@ public class QueryWorksByWorkspaceRequest extends RpcAcsRequest<QueryWorksByWork
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getWorksType() {
+		return this.worksType;
+	}
+
+	public void setWorksType(String worksType) {
+		this.worksType = worksType;
+		if(worksType != null){
+			putQueryParameter("WorksType", worksType);
 		}
 	}
 

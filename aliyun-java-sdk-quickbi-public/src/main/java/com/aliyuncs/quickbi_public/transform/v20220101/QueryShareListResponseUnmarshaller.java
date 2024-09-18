@@ -32,13 +32,13 @@ public class QueryShareListResponseUnmarshaller {
 		List<Data> result = new ArrayList<Data>();
 		for (int i = 0; i < _ctx.lengthValue("QueryShareListResponse.Result.Length"); i++) {
 			Data data = new Data();
-			data.setShareId(_ctx.stringValue("QueryShareListResponse.Result["+ i +"].ShareId"));
-			data.setShareToId(_ctx.stringValue("QueryShareListResponse.Result["+ i +"].ShareToId"));
 			data.setAuthPoint(_ctx.integerValue("QueryShareListResponse.Result["+ i +"].AuthPoint"));
 			data.setExpireDate(_ctx.longValue("QueryShareListResponse.Result["+ i +"].ExpireDate"));
-			data.setShareToType(_ctx.integerValue("QueryShareListResponse.Result["+ i +"].ShareToType"));
 			data.setReportId(_ctx.stringValue("QueryShareListResponse.Result["+ i +"].ReportId"));
+			data.setShareId(_ctx.stringValue("QueryShareListResponse.Result["+ i +"].ShareId"));
+			data.setShareToId(_ctx.stringValue("QueryShareListResponse.Result["+ i +"].ShareToId"));
 			data.setShareToName(_ctx.stringValue("QueryShareListResponse.Result["+ i +"].ShareToName"));
+			data.setShareToType(_ctx.integerValue("QueryShareListResponse.Result["+ i +"].ShareToType"));
 			data.setShareType(_ctx.stringValue("QueryShareListResponse.Result["+ i +"].ShareType"));
 
 			result.add(data);

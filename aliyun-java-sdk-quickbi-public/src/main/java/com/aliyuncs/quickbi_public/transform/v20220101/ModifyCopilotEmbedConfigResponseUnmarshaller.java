@@ -23,8 +23,8 @@ public class ModifyCopilotEmbedConfigResponseUnmarshaller {
 	public static ModifyCopilotEmbedConfigResponse unmarshall(ModifyCopilotEmbedConfigResponse modifyCopilotEmbedConfigResponse, UnmarshallerContext _ctx) {
 		
 		modifyCopilotEmbedConfigResponse.setRequestId(_ctx.stringValue("ModifyCopilotEmbedConfigResponse.RequestId"));
-		modifyCopilotEmbedConfigResponse.setSuccess(_ctx.booleanValue("ModifyCopilotEmbedConfigResponse.Success"));
 		modifyCopilotEmbedConfigResponse.setResult(_ctx.booleanValue("ModifyCopilotEmbedConfigResponse.Result"));
+		modifyCopilotEmbedConfigResponse.setSuccess(_ctx.booleanValue("ModifyCopilotEmbedConfigResponse.Success"));
 	 
 	 	return modifyCopilotEmbedConfigResponse;
 	}

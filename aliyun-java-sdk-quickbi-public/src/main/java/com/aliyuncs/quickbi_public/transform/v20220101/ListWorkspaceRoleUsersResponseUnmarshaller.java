@@ -31,18 +31,18 @@ public class ListWorkspaceRoleUsersResponseUnmarshaller {
 		listWorkspaceRoleUsersResponse.setSuccess(_ctx.booleanValue("ListWorkspaceRoleUsersResponse.Success"));
 
 		Result result = new Result();
-		result.setTotalNum(_ctx.integerValue("ListWorkspaceRoleUsersResponse.Result.TotalNum"));
-		result.setTotalPages(_ctx.integerValue("ListWorkspaceRoleUsersResponse.Result.TotalPages"));
 		result.setPageNum(_ctx.integerValue("ListWorkspaceRoleUsersResponse.Result.PageNum"));
 		result.setPageSize(_ctx.integerValue("ListWorkspaceRoleUsersResponse.Result.PageSize"));
+		result.setTotalNum(_ctx.integerValue("ListWorkspaceRoleUsersResponse.Result.TotalNum"));
+		result.setTotalPages(_ctx.integerValue("ListWorkspaceRoleUsersResponse.Result.TotalPages"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListWorkspaceRoleUsersResponse.Result.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setUserId(_ctx.stringValue("ListWorkspaceRoleUsersResponse.Result.Data["+ i +"].UserId"));
 			dataItem.setNickName(_ctx.stringValue("ListWorkspaceRoleUsersResponse.Result.Data["+ i +"].NickName"));
-			dataItem.setWorkspaceName(_ctx.stringValue("ListWorkspaceRoleUsersResponse.Result.Data["+ i +"].WorkspaceName"));
+			dataItem.setUserId(_ctx.stringValue("ListWorkspaceRoleUsersResponse.Result.Data["+ i +"].UserId"));
 			dataItem.setWorkspaceId(_ctx.stringValue("ListWorkspaceRoleUsersResponse.Result.Data["+ i +"].WorkspaceId"));
+			dataItem.setWorkspaceName(_ctx.stringValue("ListWorkspaceRoleUsersResponse.Result.Data["+ i +"].WorkspaceName"));
 
 			data.add(dataItem);
 		}

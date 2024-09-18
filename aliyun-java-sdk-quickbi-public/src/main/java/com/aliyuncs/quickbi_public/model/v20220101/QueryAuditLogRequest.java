@@ -26,11 +26,11 @@ public class QueryAuditLogRequest extends RpcAcsRequest<QueryAuditLogResponse> {
 
 	private String startDate;
 
+	private String logType;
+
 	private String resourceType;
 
 	private String operatorTypes;
-
-	private String logType;
 
 	private String endDate;
 
@@ -53,6 +53,17 @@ public class QueryAuditLogRequest extends RpcAcsRequest<QueryAuditLogResponse> {
 		}
 	}
 
+	public String getLogType() {
+		return this.logType;
+	}
+
+	public void setLogType(String logType) {
+		this.logType = logType;
+		if(logType != null){
+			putQueryParameter("LogType", logType);
+		}
+	}
+
 	public String getResourceType() {
 		return this.resourceType;
 	}
@@ -72,17 +83,6 @@ public class QueryAuditLogRequest extends RpcAcsRequest<QueryAuditLogResponse> {
 		this.operatorTypes = operatorTypes;
 		if(operatorTypes != null){
 			putQueryParameter("OperatorTypes", operatorTypes);
-		}
-	}
-
-	public String getLogType() {
-		return this.logType;
-	}
-
-	public void setLogType(String logType) {
-		this.logType = logType;
-		if(logType != null){
-			putQueryParameter("LogType", logType);
 		}
 	}
 

@@ -57,31 +57,15 @@ public class ListOrganizationRoleUsersResponse extends AcsResponse {
 
 	public static class Result {
 
-		private Integer totalNum;
-
-		private Integer totalPages;
-
 		private Integer pageNum;
 
 		private Integer pageSize;
 
+		private Integer totalNum;
+
+		private Integer totalPages;
+
 		private List<DataItem> data;
-
-		public Integer getTotalNum() {
-			return this.totalNum;
-		}
-
-		public void setTotalNum(Integer totalNum) {
-			this.totalNum = totalNum;
-		}
-
-		public Integer getTotalPages() {
-			return this.totalPages;
-		}
-
-		public void setTotalPages(Integer totalPages) {
-			this.totalPages = totalPages;
-		}
 
 		public Integer getPageNum() {
 			return this.pageNum;
@@ -99,6 +83,22 @@ public class ListOrganizationRoleUsersResponse extends AcsResponse {
 			this.pageSize = pageSize;
 		}
 
+		public Integer getTotalNum() {
+			return this.totalNum;
+		}
+
+		public void setTotalNum(Integer totalNum) {
+			this.totalNum = totalNum;
+		}
+
+		public Integer getTotalPages() {
+			return this.totalPages;
+		}
+
+		public void setTotalPages(Integer totalPages) {
+			this.totalPages = totalPages;
+		}
+
 		public List<DataItem> getData() {
 			return this.data;
 		}
@@ -109,17 +109,9 @@ public class ListOrganizationRoleUsersResponse extends AcsResponse {
 
 		public static class DataItem {
 
-			private String userId;
-
 			private String nickName;
 
-			public String getUserId() {
-				return this.userId;
-			}
-
-			public void setUserId(String userId) {
-				this.userId = userId;
-			}
+			private String userId;
 
 			public String getNickName() {
 				return this.nickName;
@@ -127,6 +119,14 @@ public class ListOrganizationRoleUsersResponse extends AcsResponse {
 
 			public void setNickName(String nickName) {
 				this.nickName = nickName;
+			}
+
+			public String getUserId() {
+				return this.userId;
+			}
+
+			public void setUserId(String userId) {
+				this.userId = userId;
 			}
 		}
 	}

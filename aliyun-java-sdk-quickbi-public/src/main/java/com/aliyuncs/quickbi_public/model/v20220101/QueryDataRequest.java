@@ -24,16 +24,27 @@ import com.aliyuncs.http.MethodType;
 public class QueryDataRequest extends RpcAcsRequest<QueryDataResponse> {
 	   
 
+	private String userId;
+
 	private String returnFields;
 
 	private String conditions;
-
-	private String userId;
 
 	private String apiId;
 	public QueryDataRequest() {
 		super("quickbi-public", "2022-01-01", "QueryData", "2.2.0");
 		setMethod(MethodType.POST);
+	}
+
+	public String getUserId() {
+		return this.userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+		if(userId != null){
+			putQueryParameter("UserId", userId);
+		}
 	}
 
 	public String getReturnFields() {
@@ -55,17 +66,6 @@ public class QueryDataRequest extends RpcAcsRequest<QueryDataResponse> {
 		this.conditions = conditions;
 		if(conditions != null){
 			putQueryParameter("Conditions", conditions);
-		}
-	}
-
-	public String getUserId() {
-		return this.userId;
-	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putQueryParameter("UserId", userId);
 		}
 	}
 

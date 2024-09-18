@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryWorkspaceUserListResponse extends AcsResponse {
 
-	private Boolean success;
-
 	private String requestId;
 
+	private Boolean success;
+
 	private Result result;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,6 +37,14 @@ public class QueryWorkspaceUserListResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Result getResult() {
@@ -57,23 +57,15 @@ public class QueryWorkspaceUserListResponse extends AcsResponse {
 
 	public static class Result {
 
-		private Integer totalPages;
-
 		private Integer pageNum;
 
 		private Integer pageSize;
 
 		private Integer totalNum;
 
+		private Integer totalPages;
+
 		private List<DataItem> data;
-
-		public Integer getTotalPages() {
-			return this.totalPages;
-		}
-
-		public void setTotalPages(Integer totalPages) {
-			this.totalPages = totalPages;
-		}
 
 		public Integer getPageNum() {
 			return this.pageNum;
@@ -99,6 +91,14 @@ public class QueryWorkspaceUserListResponse extends AcsResponse {
 			this.totalNum = totalNum;
 		}
 
+		public Integer getTotalPages() {
+			return this.totalPages;
+		}
+
+		public void setTotalPages(Integer totalPages) {
+			this.totalPages = totalPages;
+		}
+
 		public List<DataItem> getData() {
 			return this.data;
 		}
@@ -109,35 +109,19 @@ public class QueryWorkspaceUserListResponse extends AcsResponse {
 
 		public static class DataItem {
 
-			private String email;
-
-			private String userId;
-
 			private String accountId;
+
+			private String accountName;
+
+			private String email;
 
 			private String nickName;
 
 			private String phone;
 
-			private String accountName;
+			private String userId;
 
 			private Role role;
-
-			public String getEmail() {
-				return this.email;
-			}
-
-			public void setEmail(String email) {
-				this.email = email;
-			}
-
-			public String getUserId() {
-				return this.userId;
-			}
-
-			public void setUserId(String userId) {
-				this.userId = userId;
-			}
 
 			public String getAccountId() {
 				return this.accountId;
@@ -145,6 +129,22 @@ public class QueryWorkspaceUserListResponse extends AcsResponse {
 
 			public void setAccountId(String accountId) {
 				this.accountId = accountId;
+			}
+
+			public String getAccountName() {
+				return this.accountName;
+			}
+
+			public void setAccountName(String accountName) {
+				this.accountName = accountName;
+			}
+
+			public String getEmail() {
+				return this.email;
+			}
+
+			public void setEmail(String email) {
+				this.email = email;
 			}
 
 			public String getNickName() {
@@ -163,12 +163,12 @@ public class QueryWorkspaceUserListResponse extends AcsResponse {
 				this.phone = phone;
 			}
 
-			public String getAccountName() {
-				return this.accountName;
+			public String getUserId() {
+				return this.userId;
 			}
 
-			public void setAccountName(String accountName) {
-				this.accountName = accountName;
+			public void setUserId(String userId) {
+				this.userId = userId;
 			}
 
 			public Role getRole() {
@@ -183,9 +183,9 @@ public class QueryWorkspaceUserListResponse extends AcsResponse {
 
 				private String roleCode;
 
-				private String roleName;
-
 				private Long roleId;
+
+				private String roleName;
 
 				public String getRoleCode() {
 					return this.roleCode;
@@ -195,20 +195,20 @@ public class QueryWorkspaceUserListResponse extends AcsResponse {
 					this.roleCode = roleCode;
 				}
 
-				public String getRoleName() {
-					return this.roleName;
-				}
-
-				public void setRoleName(String roleName) {
-					this.roleName = roleName;
-				}
-
 				public Long getRoleId() {
 					return this.roleId;
 				}
 
 				public void setRoleId(Long roleId) {
 					this.roleId = roleId;
+				}
+
+				public String getRoleName() {
+					return this.roleName;
+				}
+
+				public void setRoleName(String roleName) {
+					this.roleName = roleName;
 				}
 			}
 		}

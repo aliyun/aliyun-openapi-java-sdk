@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryOrganizationWorkspaceListResponse extends AcsResponse {
 
-	private Boolean success;
-
 	private String requestId;
 
+	private Boolean success;
+
 	private Result result;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,6 +37,14 @@ public class QueryOrganizationWorkspaceListResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Result getResult() {
@@ -57,23 +57,15 @@ public class QueryOrganizationWorkspaceListResponse extends AcsResponse {
 
 	public static class Result {
 
-		private Integer totalPages;
-
 		private Integer pageNum;
 
 		private Integer pageSize;
 
 		private Integer totalNum;
 
+		private Integer totalPages;
+
 		private List<DataItem> data;
-
-		public Integer getTotalPages() {
-			return this.totalPages;
-		}
-
-		public void setTotalPages(Integer totalPages) {
-			this.totalPages = totalPages;
-		}
 
 		public Integer getPageNum() {
 			return this.pageNum;
@@ -99,6 +91,14 @@ public class QueryOrganizationWorkspaceListResponse extends AcsResponse {
 			this.totalNum = totalNum;
 		}
 
+		public Integer getTotalPages() {
+			return this.totalPages;
+		}
+
+		public void setTotalPages(Integer totalPages) {
+			this.totalPages = totalPages;
+		}
+
 		public List<DataItem> getData() {
 			return this.data;
 		}
@@ -109,80 +109,40 @@ public class QueryOrganizationWorkspaceListResponse extends AcsResponse {
 
 		public static class DataItem {
 
-			private String createUserAccountName;
-
-			private String owner;
-
-			private String createTime;
-
-			private String workspaceName;
-
-			private String organizationId;
-
-			private String workspaceId;
+			private Boolean allowPublishOperation;
 
 			private Boolean allowShareOperation;
 
+			private String createTime;
+
 			private String createUser;
+
+			private String createUserAccountName;
 
 			private String modifiedTime;
 
-			private String workspaceDescription;
-
 			private String modifyUser;
-
-			private Boolean allowPublishOperation;
-
-			private String ownerAccountName;
 
 			private String modifyUserAccountName;
 
-			public String getCreateUserAccountName() {
-				return this.createUserAccountName;
+			private String organizationId;
+
+			private String owner;
+
+			private String ownerAccountName;
+
+			private String workspaceDescription;
+
+			private String workspaceId;
+
+			private String workspaceName;
+
+			public Boolean getAllowPublishOperation() {
+				return this.allowPublishOperation;
 			}
 
-			public void setCreateUserAccountName(String createUserAccountName) {
-				this.createUserAccountName = createUserAccountName;
-			}
-
-			public String getOwner() {
-				return this.owner;
-			}
-
-			public void setOwner(String owner) {
-				this.owner = owner;
-			}
-
-			public String getCreateTime() {
-				return this.createTime;
-			}
-
-			public void setCreateTime(String createTime) {
-				this.createTime = createTime;
-			}
-
-			public String getWorkspaceName() {
-				return this.workspaceName;
-			}
-
-			public void setWorkspaceName(String workspaceName) {
-				this.workspaceName = workspaceName;
-			}
-
-			public String getOrganizationId() {
-				return this.organizationId;
-			}
-
-			public void setOrganizationId(String organizationId) {
-				this.organizationId = organizationId;
-			}
-
-			public String getWorkspaceId() {
-				return this.workspaceId;
-			}
-
-			public void setWorkspaceId(String workspaceId) {
-				this.workspaceId = workspaceId;
+			public void setAllowPublishOperation(Boolean allowPublishOperation) {
+				this.allowPublishOperation = allowPublishOperation;
 			}
 
 			public Boolean getAllowShareOperation() {
@@ -193,12 +153,28 @@ public class QueryOrganizationWorkspaceListResponse extends AcsResponse {
 				this.allowShareOperation = allowShareOperation;
 			}
 
+			public String getCreateTime() {
+				return this.createTime;
+			}
+
+			public void setCreateTime(String createTime) {
+				this.createTime = createTime;
+			}
+
 			public String getCreateUser() {
 				return this.createUser;
 			}
 
 			public void setCreateUser(String createUser) {
 				this.createUser = createUser;
+			}
+
+			public String getCreateUserAccountName() {
+				return this.createUserAccountName;
+			}
+
+			public void setCreateUserAccountName(String createUserAccountName) {
+				this.createUserAccountName = createUserAccountName;
 			}
 
 			public String getModifiedTime() {
@@ -209,14 +185,6 @@ public class QueryOrganizationWorkspaceListResponse extends AcsResponse {
 				this.modifiedTime = modifiedTime;
 			}
 
-			public String getWorkspaceDescription() {
-				return this.workspaceDescription;
-			}
-
-			public void setWorkspaceDescription(String workspaceDescription) {
-				this.workspaceDescription = workspaceDescription;
-			}
-
 			public String getModifyUser() {
 				return this.modifyUser;
 			}
@@ -225,12 +193,28 @@ public class QueryOrganizationWorkspaceListResponse extends AcsResponse {
 				this.modifyUser = modifyUser;
 			}
 
-			public Boolean getAllowPublishOperation() {
-				return this.allowPublishOperation;
+			public String getModifyUserAccountName() {
+				return this.modifyUserAccountName;
 			}
 
-			public void setAllowPublishOperation(Boolean allowPublishOperation) {
-				this.allowPublishOperation = allowPublishOperation;
+			public void setModifyUserAccountName(String modifyUserAccountName) {
+				this.modifyUserAccountName = modifyUserAccountName;
+			}
+
+			public String getOrganizationId() {
+				return this.organizationId;
+			}
+
+			public void setOrganizationId(String organizationId) {
+				this.organizationId = organizationId;
+			}
+
+			public String getOwner() {
+				return this.owner;
+			}
+
+			public void setOwner(String owner) {
+				this.owner = owner;
 			}
 
 			public String getOwnerAccountName() {
@@ -241,12 +225,28 @@ public class QueryOrganizationWorkspaceListResponse extends AcsResponse {
 				this.ownerAccountName = ownerAccountName;
 			}
 
-			public String getModifyUserAccountName() {
-				return this.modifyUserAccountName;
+			public String getWorkspaceDescription() {
+				return this.workspaceDescription;
 			}
 
-			public void setModifyUserAccountName(String modifyUserAccountName) {
-				this.modifyUserAccountName = modifyUserAccountName;
+			public void setWorkspaceDescription(String workspaceDescription) {
+				this.workspaceDescription = workspaceDescription;
+			}
+
+			public String getWorkspaceId() {
+				return this.workspaceId;
+			}
+
+			public void setWorkspaceId(String workspaceId) {
+				this.workspaceId = workspaceId;
+			}
+
+			public String getWorkspaceName() {
+				return this.workspaceName;
+			}
+
+			public void setWorkspaceName(String workspaceName) {
+				this.workspaceName = workspaceName;
 			}
 		}
 	}

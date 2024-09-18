@@ -31,9 +31,9 @@ public class QueryOrganizationRoleConfigResponseUnmarshaller {
 		queryOrganizationRoleConfigResponse.setSuccess(_ctx.booleanValue("QueryOrganizationRoleConfigResponse.Success"));
 
 		Result result = new Result();
+		result.setIsSystemRole(_ctx.booleanValue("QueryOrganizationRoleConfigResponse.Result.IsSystemRole"));
 		result.setRoleId(_ctx.longValue("QueryOrganizationRoleConfigResponse.Result.RoleId"));
 		result.setRoleName(_ctx.stringValue("QueryOrganizationRoleConfigResponse.Result.RoleName"));
-		result.setIsSystemRole(_ctx.booleanValue("QueryOrganizationRoleConfigResponse.Result.IsSystemRole"));
 
 		List<AuthConfigListItem> authConfigList = new ArrayList<AuthConfigListItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryOrganizationRoleConfigResponse.Result.AuthConfigList.Length"); i++) {

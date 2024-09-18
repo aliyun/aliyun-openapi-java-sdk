@@ -24,23 +24,12 @@ import com.aliyuncs.http.MethodType;
 public class CancelCollectionRequest extends RpcAcsRequest<CancelCollectionResponse> {
 	   
 
-	private String worksId;
-
 	private String userId;
+
+	private String worksId;
 	public CancelCollectionRequest() {
 		super("quickbi-public", "2022-01-01", "CancelCollection", "2.2.0");
 		setMethod(MethodType.POST);
-	}
-
-	public String getWorksId() {
-		return this.worksId;
-	}
-
-	public void setWorksId(String worksId) {
-		this.worksId = worksId;
-		if(worksId != null){
-			putQueryParameter("WorksId", worksId);
-		}
 	}
 
 	public String getUserId() {
@@ -51,6 +40,17 @@ public class CancelCollectionRequest extends RpcAcsRequest<CancelCollectionRespo
 		this.userId = userId;
 		if(userId != null){
 			putQueryParameter("UserId", userId);
+		}
+	}
+
+	public String getWorksId() {
+		return this.worksId;
+	}
+
+	public void setWorksId(String worksId) {
+		this.worksId = worksId;
+		if(worksId != null){
+			putQueryParameter("WorksId", worksId);
 		}
 	}
 

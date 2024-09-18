@@ -57,34 +57,26 @@ public class QueryAuditLogResponse extends AcsResponse {
 
 	public static class LogApiResultModel {
 
-		private String workspaceId;
-
-		private String operatorName;
+		private String gmtCreate;
 
 		private String operatorAccountName;
 
-		private String operatorType;
+		private String operatorName;
 
-		private String targetType;
+		private String operatorType;
 
 		private String targetName;
 
-		private String gmtCreate;
+		private String targetType;
 
-		public String getWorkspaceId() {
-			return this.workspaceId;
+		private String workspaceId;
+
+		public String getGmtCreate() {
+			return this.gmtCreate;
 		}
 
-		public void setWorkspaceId(String workspaceId) {
-			this.workspaceId = workspaceId;
-		}
-
-		public String getOperatorName() {
-			return this.operatorName;
-		}
-
-		public void setOperatorName(String operatorName) {
-			this.operatorName = operatorName;
+		public void setGmtCreate(String gmtCreate) {
+			this.gmtCreate = gmtCreate;
 		}
 
 		public String getOperatorAccountName() {
@@ -95,20 +87,20 @@ public class QueryAuditLogResponse extends AcsResponse {
 			this.operatorAccountName = operatorAccountName;
 		}
 
+		public String getOperatorName() {
+			return this.operatorName;
+		}
+
+		public void setOperatorName(String operatorName) {
+			this.operatorName = operatorName;
+		}
+
 		public String getOperatorType() {
 			return this.operatorType;
 		}
 
 		public void setOperatorType(String operatorType) {
 			this.operatorType = operatorType;
-		}
-
-		public String getTargetType() {
-			return this.targetType;
-		}
-
-		public void setTargetType(String targetType) {
-			this.targetType = targetType;
 		}
 
 		public String getTargetName() {
@@ -119,12 +111,20 @@ public class QueryAuditLogResponse extends AcsResponse {
 			this.targetName = targetName;
 		}
 
-		public String getGmtCreate() {
-			return this.gmtCreate;
+		public String getTargetType() {
+			return this.targetType;
 		}
 
-		public void setGmtCreate(String gmtCreate) {
-			this.gmtCreate = gmtCreate;
+		public void setTargetType(String targetType) {
+			this.targetType = targetType;
+		}
+
+		public String getWorkspaceId() {
+			return this.workspaceId;
+		}
+
+		public void setWorkspaceId(String workspaceId) {
+			this.workspaceId = workspaceId;
 		}
 	}
 

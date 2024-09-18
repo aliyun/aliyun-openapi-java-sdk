@@ -24,38 +24,16 @@ import com.aliyuncs.http.MethodType;
 public class QueryOrganizationWorkspaceListRequest extends RpcAcsRequest<QueryOrganizationWorkspaceListResponse> {
 	   
 
-	private Integer pageSize;
-
-	private String keyword;
-
 	private Integer pageNum;
 
 	private String userId;
+
+	private Integer pageSize;
+
+	private String keyword;
 	public QueryOrganizationWorkspaceListRequest() {
 		super("quickbi-public", "2022-01-01", "QueryOrganizationWorkspaceList", "2.2.0");
 		setMethod(MethodType.POST);
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getKeyword() {
-		return this.keyword;
-	}
-
-	public void setKeyword(String keyword) {
-		this.keyword = keyword;
-		if(keyword != null){
-			putQueryParameter("Keyword", keyword);
-		}
 	}
 
 	public Integer getPageNum() {
@@ -77,6 +55,28 @@ public class QueryOrganizationWorkspaceListRequest extends RpcAcsRequest<QueryOr
 		this.userId = userId;
 		if(userId != null){
 			putQueryParameter("UserId", userId);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getKeyword() {
+		return this.keyword;
+	}
+
+	public void setKeyword(String keyword) {
+		this.keyword = keyword;
+		if(keyword != null){
+			putQueryParameter("Keyword", keyword);
 		}
 	}
 

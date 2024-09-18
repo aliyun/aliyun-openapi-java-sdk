@@ -24,18 +24,29 @@ import com.aliyuncs.http.MethodType;
 public class BatchAddFeishuUsersRequest extends RpcAcsRequest<BatchAddFeishuUsersResponse> {
 	   
 
-	private Boolean isAdmin;
+	private Boolean isAuthAdmin;
 
-	private String feishuUsers;
+	private Boolean isAdmin;
 
 	private Integer userType;
 
 	private String userGroupIds;
 
-	private Boolean isAuthAdmin;
+	private String feishuUsers;
 	public BatchAddFeishuUsersRequest() {
 		super("quickbi-public", "2022-01-01", "BatchAddFeishuUsers", "2.2.0");
 		setMethod(MethodType.POST);
+	}
+
+	public Boolean getIsAuthAdmin() {
+		return this.isAuthAdmin;
+	}
+
+	public void setIsAuthAdmin(Boolean isAuthAdmin) {
+		this.isAuthAdmin = isAuthAdmin;
+		if(isAuthAdmin != null){
+			putQueryParameter("IsAuthAdmin", isAuthAdmin.toString());
+		}
 	}
 
 	public Boolean getIsAdmin() {
@@ -46,17 +57,6 @@ public class BatchAddFeishuUsersRequest extends RpcAcsRequest<BatchAddFeishuUser
 		this.isAdmin = isAdmin;
 		if(isAdmin != null){
 			putQueryParameter("IsAdmin", isAdmin.toString());
-		}
-	}
-
-	public String getFeishuUsers() {
-		return this.feishuUsers;
-	}
-
-	public void setFeishuUsers(String feishuUsers) {
-		this.feishuUsers = feishuUsers;
-		if(feishuUsers != null){
-			putQueryParameter("FeishuUsers", feishuUsers);
 		}
 	}
 
@@ -82,14 +82,14 @@ public class BatchAddFeishuUsersRequest extends RpcAcsRequest<BatchAddFeishuUser
 		}
 	}
 
-	public Boolean getIsAuthAdmin() {
-		return this.isAuthAdmin;
+	public String getFeishuUsers() {
+		return this.feishuUsers;
 	}
 
-	public void setIsAuthAdmin(Boolean isAuthAdmin) {
-		this.isAuthAdmin = isAuthAdmin;
-		if(isAuthAdmin != null){
-			putQueryParameter("IsAuthAdmin", isAuthAdmin.toString());
+	public void setFeishuUsers(String feishuUsers) {
+		this.feishuUsers = feishuUsers;
+		if(feishuUsers != null){
+			putQueryParameter("FeishuUsers", feishuUsers);
 		}
 	}
 

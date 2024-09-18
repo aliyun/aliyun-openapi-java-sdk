@@ -28,22 +28,22 @@ public class QueryWorksResponseUnmarshaller {
 		queryWorksResponse.setSuccess(_ctx.booleanValue("QueryWorksResponse.Success"));
 
 		Result result = new Result();
-		result.setWorksId(_ctx.stringValue("QueryWorksResponse.Result.WorksId"));
-		result.setWorkType(_ctx.stringValue("QueryWorksResponse.Result.WorkType"));
-		result.setWorkName(_ctx.stringValue("QueryWorksResponse.Result.WorkName"));
-		result.setWorkspaceId(_ctx.stringValue("QueryWorksResponse.Result.WorkspaceId"));
-		result.setWorkspaceName(_ctx.stringValue("QueryWorksResponse.Result.WorkspaceName"));
-		result.setSecurityLevel(_ctx.stringValue("QueryWorksResponse.Result.SecurityLevel"));
 		result.setAuth3rdFlag(_ctx.integerValue("QueryWorksResponse.Result.Auth3rdFlag"));
 		result.setDescription(_ctx.stringValue("QueryWorksResponse.Result.Description"));
-		result.setOwnerId(_ctx.stringValue("QueryWorksResponse.Result.OwnerId"));
-		result.setOwnerName(_ctx.stringValue("QueryWorksResponse.Result.OwnerName"));
-		result.setModifyName(_ctx.stringValue("QueryWorksResponse.Result.ModifyName"));
 		result.setGmtCreate(_ctx.stringValue("QueryWorksResponse.Result.GmtCreate"));
 		result.setGmtModify(_ctx.stringValue("QueryWorksResponse.Result.GmtModify"));
-		result.setStatus(_ctx.integerValue("QueryWorksResponse.Result.Status"));
+		result.setModifyName(_ctx.stringValue("QueryWorksResponse.Result.ModifyName"));
+		result.setOwnerId(_ctx.stringValue("QueryWorksResponse.Result.OwnerId"));
+		result.setOwnerName(_ctx.stringValue("QueryWorksResponse.Result.OwnerName"));
 		result.setPublicFlag(_ctx.booleanValue("QueryWorksResponse.Result.PublicFlag"));
 		result.setPublicInvalidTime(_ctx.longValue("QueryWorksResponse.Result.PublicInvalidTime"));
+		result.setSecurityLevel(_ctx.stringValue("QueryWorksResponse.Result.SecurityLevel"));
+		result.setStatus(_ctx.integerValue("QueryWorksResponse.Result.Status"));
+		result.setWorkName(_ctx.stringValue("QueryWorksResponse.Result.WorkName"));
+		result.setWorkType(_ctx.stringValue("QueryWorksResponse.Result.WorkType"));
+		result.setWorksId(_ctx.stringValue("QueryWorksResponse.Result.WorksId"));
+		result.setWorkspaceId(_ctx.stringValue("QueryWorksResponse.Result.WorkspaceId"));
+		result.setWorkspaceName(_ctx.stringValue("QueryWorksResponse.Result.WorkspaceName"));
 
 		Directory directory = new Directory();
 		directory.setId(_ctx.stringValue("QueryWorksResponse.Result.Directory.Id"));

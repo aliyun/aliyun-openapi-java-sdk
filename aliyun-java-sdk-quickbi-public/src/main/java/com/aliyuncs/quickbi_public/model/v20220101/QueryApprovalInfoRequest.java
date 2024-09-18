@@ -24,16 +24,27 @@ import com.aliyuncs.http.MethodType;
 public class QueryApprovalInfoRequest extends RpcAcsRequest<QueryApprovalInfoResponse> {
 	   
 
+	private String userId;
+
 	private Integer pageSize;
 
 	private Integer page;
-
-	private String userId;
 
 	private Integer status;
 	public QueryApprovalInfoRequest() {
 		super("quickbi-public", "2022-01-01", "QueryApprovalInfo", "2.2.0");
 		setMethod(MethodType.POST);
+	}
+
+	public String getUserId() {
+		return this.userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+		if(userId != null){
+			putQueryParameter("UserId", userId);
+		}
 	}
 
 	public Integer getPageSize() {
@@ -55,17 +66,6 @@ public class QueryApprovalInfoRequest extends RpcAcsRequest<QueryApprovalInfoRes
 		this.page = page;
 		if(page != null){
 			putQueryParameter("Page", page.toString());
-		}
-	}
-
-	public String getUserId() {
-		return this.userId;
-	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putQueryParameter("UserId", userId);
 		}
 	}
 

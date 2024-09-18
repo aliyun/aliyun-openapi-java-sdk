@@ -26,13 +26,13 @@ public class AddDataLevelPermissionWhiteListRequest extends RpcAcsRequest<AddDat
 
 	private String targetType;
 
+	private String cubeId;
+
 	private String targetIds;
 
 	private String ruleType;
 
 	private String operateType;
-
-	private String cubeId;
 	public AddDataLevelPermissionWhiteListRequest() {
 		super("quickbi-public", "2022-01-01", "AddDataLevelPermissionWhiteList", "2.2.0");
 		setMethod(MethodType.POST);
@@ -46,6 +46,17 @@ public class AddDataLevelPermissionWhiteListRequest extends RpcAcsRequest<AddDat
 		this.targetType = targetType;
 		if(targetType != null){
 			putQueryParameter("TargetType", targetType);
+		}
+	}
+
+	public String getCubeId() {
+		return this.cubeId;
+	}
+
+	public void setCubeId(String cubeId) {
+		this.cubeId = cubeId;
+		if(cubeId != null){
+			putQueryParameter("CubeId", cubeId);
 		}
 	}
 
@@ -79,17 +90,6 @@ public class AddDataLevelPermissionWhiteListRequest extends RpcAcsRequest<AddDat
 		this.operateType = operateType;
 		if(operateType != null){
 			putQueryParameter("OperateType", operateType);
-		}
-	}
-
-	public String getCubeId() {
-		return this.cubeId;
-	}
-
-	public void setCubeId(String cubeId) {
-		this.cubeId = cubeId;
-		if(cubeId != null){
-			putQueryParameter("CubeId", cubeId);
 		}
 	}
 

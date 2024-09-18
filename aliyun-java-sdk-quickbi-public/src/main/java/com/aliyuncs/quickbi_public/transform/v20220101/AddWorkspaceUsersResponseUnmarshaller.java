@@ -30,8 +30,8 @@ public class AddWorkspaceUsersResponseUnmarshaller {
 		Result result = new Result();
 		result.setFailure(_ctx.integerValue("AddWorkspaceUsersResponse.Result.Failure"));
 		result.setFailureDetail(_ctx.mapValue("AddWorkspaceUsersResponse.Result.FailureDetail"));
-		result.setTotal(_ctx.integerValue("AddWorkspaceUsersResponse.Result.Total"));
 		result.setSuccess(_ctx.integerValue("AddWorkspaceUsersResponse.Result.Success"));
+		result.setTotal(_ctx.integerValue("AddWorkspaceUsersResponse.Result.Total"));
 		addWorkspaceUsersResponse.setResult(result);
 	 
 	 	return addWorkspaceUsersResponse;

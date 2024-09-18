@@ -26,9 +26,9 @@ public class ListWorkspaceRoleUsersRequest extends RpcAcsRequest<ListWorkspaceRo
 
 	private Long roleId;
 
-	private Integer pageSize;
-
 	private Integer pageNum;
+
+	private Integer pageSize;
 
 	private String keyword;
 
@@ -49,17 +49,6 @@ public class ListWorkspaceRoleUsersRequest extends RpcAcsRequest<ListWorkspaceRo
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
 	public Integer getPageNum() {
 		return this.pageNum;
 	}
@@ -68,6 +57,17 @@ public class ListWorkspaceRoleUsersRequest extends RpcAcsRequest<ListWorkspaceRo
 		this.pageNum = pageNum;
 		if(pageNum != null){
 			putQueryParameter("PageNum", pageNum.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

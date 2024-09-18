@@ -31,30 +31,30 @@ public class ListRecentViewReportsResponseUnmarshaller {
 		listRecentViewReportsResponse.setSuccess(_ctx.booleanValue("ListRecentViewReportsResponse.Success"));
 
 		Result result = new Result();
-		result.setTotalNum(_ctx.integerValue("ListRecentViewReportsResponse.Result.TotalNum"));
-		result.setTotalPages(_ctx.integerValue("ListRecentViewReportsResponse.Result.TotalPages"));
+		result.setAttention(_ctx.stringValue("ListRecentViewReportsResponse.Result.Attention"));
 		result.setPageNum(_ctx.integerValue("ListRecentViewReportsResponse.Result.PageNum"));
 		result.setPageSize(_ctx.integerValue("ListRecentViewReportsResponse.Result.PageSize"));
-		result.setAttention(_ctx.stringValue("ListRecentViewReportsResponse.Result.Attention"));
+		result.setTotalNum(_ctx.integerValue("ListRecentViewReportsResponse.Result.TotalNum"));
+		result.setTotalPages(_ctx.integerValue("ListRecentViewReportsResponse.Result.TotalPages"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListRecentViewReportsResponse.Result.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setTreeId(_ctx.stringValue("ListRecentViewReportsResponse.Result.Data["+ i +"].TreeId"));
-			dataItem.setType(_ctx.stringValue("ListRecentViewReportsResponse.Result.Data["+ i +"].Type"));
-			dataItem.setName(_ctx.stringValue("ListRecentViewReportsResponse.Result.Data["+ i +"].Name"));
-			dataItem.setOwnerNum(_ctx.stringValue("ListRecentViewReportsResponse.Result.Data["+ i +"].OwnerNum"));
-			dataItem.setOwnerName(_ctx.stringValue("ListRecentViewReportsResponse.Result.Data["+ i +"].OwnerName"));
+			dataItem.setFavorite(_ctx.booleanValue("ListRecentViewReportsResponse.Result.Data["+ i +"].Favorite"));
 			dataItem.setGmtCreate(_ctx.stringValue("ListRecentViewReportsResponse.Result.Data["+ i +"].GmtCreate"));
 			dataItem.setGmtModified(_ctx.stringValue("ListRecentViewReportsResponse.Result.Data["+ i +"].GmtModified"));
-			dataItem.setPublishStatus(_ctx.integerValue("ListRecentViewReportsResponse.Result.Data["+ i +"].PublishStatus"));
-			dataItem.setFavorite(_ctx.booleanValue("ListRecentViewReportsResponse.Result.Data["+ i +"].Favorite"));
-			dataItem.setHasViewAuth(_ctx.booleanValue("ListRecentViewReportsResponse.Result.Data["+ i +"].HasViewAuth"));
 			dataItem.setHasEditAuth(_ctx.booleanValue("ListRecentViewReportsResponse.Result.Data["+ i +"].HasEditAuth"));
+			dataItem.setHasViewAuth(_ctx.booleanValue("ListRecentViewReportsResponse.Result.Data["+ i +"].HasViewAuth"));
+			dataItem.setLatestViewTime(_ctx.stringValue("ListRecentViewReportsResponse.Result.Data["+ i +"].LatestViewTime"));
+			dataItem.setName(_ctx.stringValue("ListRecentViewReportsResponse.Result.Data["+ i +"].Name"));
+			dataItem.setOwnerName(_ctx.stringValue("ListRecentViewReportsResponse.Result.Data["+ i +"].OwnerName"));
+			dataItem.setOwnerNum(_ctx.stringValue("ListRecentViewReportsResponse.Result.Data["+ i +"].OwnerNum"));
+			dataItem.setPublishStatus(_ctx.integerValue("ListRecentViewReportsResponse.Result.Data["+ i +"].PublishStatus"));
+			dataItem.setTreeId(_ctx.stringValue("ListRecentViewReportsResponse.Result.Data["+ i +"].TreeId"));
+			dataItem.setType(_ctx.stringValue("ListRecentViewReportsResponse.Result.Data["+ i +"].Type"));
+			dataItem.setViewCount(_ctx.longValue("ListRecentViewReportsResponse.Result.Data["+ i +"].ViewCount"));
 			dataItem.setWorkspaceId(_ctx.stringValue("ListRecentViewReportsResponse.Result.Data["+ i +"].WorkspaceId"));
 			dataItem.setWorkspaceName(_ctx.stringValue("ListRecentViewReportsResponse.Result.Data["+ i +"].WorkspaceName"));
-			dataItem.setViewCount(_ctx.longValue("ListRecentViewReportsResponse.Result.Data["+ i +"].ViewCount"));
-			dataItem.setLatestViewTime(_ctx.stringValue("ListRecentViewReportsResponse.Result.Data["+ i +"].LatestViewTime"));
 
 			data.add(dataItem);
 		}

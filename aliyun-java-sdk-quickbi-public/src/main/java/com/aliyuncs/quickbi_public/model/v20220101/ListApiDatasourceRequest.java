@@ -24,9 +24,9 @@ import com.aliyuncs.http.MethodType;
 public class ListApiDatasourceRequest extends RpcAcsRequest<ListApiDatasourceResponse> {
 	   
 
-	private Integer pageSize;
-
 	private Integer pageNum;
+
+	private Integer pageSize;
 
 	private String keyWord;
 
@@ -34,17 +34,6 @@ public class ListApiDatasourceRequest extends RpcAcsRequest<ListApiDatasourceRes
 	public ListApiDatasourceRequest() {
 		super("quickbi-public", "2022-01-01", "ListApiDatasource", "2.2.0");
 		setMethod(MethodType.POST);
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
 	}
 
 	public Integer getPageNum() {
@@ -55,6 +44,17 @@ public class ListApiDatasourceRequest extends RpcAcsRequest<ListApiDatasourceRes
 		this.pageNum = pageNum;
 		if(pageNum != null){
 			putQueryParameter("PageNum", pageNum.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

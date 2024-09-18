@@ -24,14 +24,25 @@ import com.aliyuncs.http.MethodType;
 public class QueryUserListRequest extends RpcAcsRequest<QueryUserListResponse> {
 	   
 
+	private Integer pageNum;
+
 	private Integer pageSize;
 
 	private String keyword;
-
-	private Integer pageNum;
 	public QueryUserListRequest() {
 		super("quickbi-public", "2022-01-01", "QueryUserList", "2.2.0");
 		setMethod(MethodType.GET);
+	}
+
+	public Integer getPageNum() {
+		return this.pageNum;
+	}
+
+	public void setPageNum(Integer pageNum) {
+		this.pageNum = pageNum;
+		if(pageNum != null){
+			putQueryParameter("PageNum", pageNum.toString());
+		}
 	}
 
 	public Integer getPageSize() {
@@ -53,17 +64,6 @@ public class QueryUserListRequest extends RpcAcsRequest<QueryUserListResponse> {
 		this.keyword = keyword;
 		if(keyword != null){
 			putQueryParameter("Keyword", keyword);
-		}
-	}
-
-	public Integer getPageNum() {
-		return this.pageNum;
-	}
-
-	public void setPageNum(Integer pageNum) {
-		this.pageNum = pageNum;
-		if(pageNum != null){
-			putQueryParameter("PageNum", pageNum.toString());
 		}
 	}
 

@@ -26,19 +26,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryDataResponse extends AcsResponse {
 
-	private Boolean success;
-
 	private String requestId;
 
+	private Boolean success;
+
 	private Result result;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -46,6 +38,14 @@ public class QueryDataResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Result getResult() {
@@ -90,7 +90,9 @@ public class QueryDataResponse extends AcsResponse {
 
 		public static class HeadersItem {
 
-			private String type;
+			private String aggregator;
+
+			private String column;
 
 			private String dataType;
 
@@ -98,16 +100,22 @@ public class QueryDataResponse extends AcsResponse {
 
 			private String label;
 
-			private String column;
+			private String type;
 
-			private String aggregator;
-
-			public String getType() {
-				return this.type;
+			public String getAggregator() {
+				return this.aggregator;
 			}
 
-			public void setType(String type) {
-				this.type = type;
+			public void setAggregator(String aggregator) {
+				this.aggregator = aggregator;
+			}
+
+			public String getColumn() {
+				return this.column;
+			}
+
+			public void setColumn(String column) {
+				this.column = column;
 			}
 
 			public String getDataType() {
@@ -134,20 +142,12 @@ public class QueryDataResponse extends AcsResponse {
 				this.label = label;
 			}
 
-			public String getColumn() {
-				return this.column;
+			public String getType() {
+				return this.type;
 			}
 
-			public void setColumn(String column) {
-				this.column = column;
-			}
-
-			public String getAggregator() {
-				return this.aggregator;
-			}
-
-			public void setAggregator(String aggregator) {
-				this.aggregator = aggregator;
+			public void setType(String type) {
+				this.type = type;
 			}
 		}
 	}

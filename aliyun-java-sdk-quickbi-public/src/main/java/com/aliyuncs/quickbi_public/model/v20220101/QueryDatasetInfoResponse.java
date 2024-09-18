@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryDatasetInfoResponse extends AcsResponse {
 
-	private Boolean success;
-
 	private String requestId;
 
+	private Boolean success;
+
 	private Result result;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,6 +37,14 @@ public class QueryDatasetInfoResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Result getResult() {
@@ -57,33 +57,33 @@ public class QueryDatasetInfoResponse extends AcsResponse {
 
 	public static class Result {
 
-		private String gmtModify;
+		private Boolean custimzeSql;
 
-		private String dsName;
+		private String datasetId;
+
+		private String datasetName;
 
 		private String dsId;
 
-		private String ownerName;
+		private String dsName;
 
-		private String workspaceName;
+		private String dsType;
+
+		private String gmtCreate;
+
+		private String gmtModify;
+
+		private Boolean openOfflineAcceleration;
 
 		private String ownerId;
 
-		private String datasetName;
+		private String ownerName;
 
 		private Boolean rowLevel;
 
 		private String workspaceId;
 
-		private Boolean custimzeSql;
-
-		private String gmtCreate;
-
-		private String dsType;
-
-		private String datasetId;
-
-		private Boolean openOfflineAcceleration;
+		private String workspaceName;
 
 		private List<CubeTableListItem> cubeTableList;
 
@@ -93,20 +93,28 @@ public class QueryDatasetInfoResponse extends AcsResponse {
 
 		private Directory directory;
 
-		public String getGmtModify() {
-			return this.gmtModify;
+		public Boolean getCustimzeSql() {
+			return this.custimzeSql;
 		}
 
-		public void setGmtModify(String gmtModify) {
-			this.gmtModify = gmtModify;
+		public void setCustimzeSql(Boolean custimzeSql) {
+			this.custimzeSql = custimzeSql;
 		}
 
-		public String getDsName() {
-			return this.dsName;
+		public String getDatasetId() {
+			return this.datasetId;
 		}
 
-		public void setDsName(String dsName) {
-			this.dsName = dsName;
+		public void setDatasetId(String datasetId) {
+			this.datasetId = datasetId;
+		}
+
+		public String getDatasetName() {
+			return this.datasetName;
+		}
+
+		public void setDatasetName(String datasetName) {
+			this.datasetName = datasetName;
 		}
 
 		public String getDsId() {
@@ -117,20 +125,44 @@ public class QueryDatasetInfoResponse extends AcsResponse {
 			this.dsId = dsId;
 		}
 
-		public String getOwnerName() {
-			return this.ownerName;
+		public String getDsName() {
+			return this.dsName;
 		}
 
-		public void setOwnerName(String ownerName) {
-			this.ownerName = ownerName;
+		public void setDsName(String dsName) {
+			this.dsName = dsName;
 		}
 
-		public String getWorkspaceName() {
-			return this.workspaceName;
+		public String getDsType() {
+			return this.dsType;
 		}
 
-		public void setWorkspaceName(String workspaceName) {
-			this.workspaceName = workspaceName;
+		public void setDsType(String dsType) {
+			this.dsType = dsType;
+		}
+
+		public String getGmtCreate() {
+			return this.gmtCreate;
+		}
+
+		public void setGmtCreate(String gmtCreate) {
+			this.gmtCreate = gmtCreate;
+		}
+
+		public String getGmtModify() {
+			return this.gmtModify;
+		}
+
+		public void setGmtModify(String gmtModify) {
+			this.gmtModify = gmtModify;
+		}
+
+		public Boolean getOpenOfflineAcceleration() {
+			return this.openOfflineAcceleration;
+		}
+
+		public void setOpenOfflineAcceleration(Boolean openOfflineAcceleration) {
+			this.openOfflineAcceleration = openOfflineAcceleration;
 		}
 
 		public String getOwnerId() {
@@ -141,12 +173,12 @@ public class QueryDatasetInfoResponse extends AcsResponse {
 			this.ownerId = ownerId;
 		}
 
-		public String getDatasetName() {
-			return this.datasetName;
+		public String getOwnerName() {
+			return this.ownerName;
 		}
 
-		public void setDatasetName(String datasetName) {
-			this.datasetName = datasetName;
+		public void setOwnerName(String ownerName) {
+			this.ownerName = ownerName;
 		}
 
 		public Boolean getRowLevel() {
@@ -165,44 +197,12 @@ public class QueryDatasetInfoResponse extends AcsResponse {
 			this.workspaceId = workspaceId;
 		}
 
-		public Boolean getCustimzeSql() {
-			return this.custimzeSql;
+		public String getWorkspaceName() {
+			return this.workspaceName;
 		}
 
-		public void setCustimzeSql(Boolean custimzeSql) {
-			this.custimzeSql = custimzeSql;
-		}
-
-		public String getGmtCreate() {
-			return this.gmtCreate;
-		}
-
-		public void setGmtCreate(String gmtCreate) {
-			this.gmtCreate = gmtCreate;
-		}
-
-		public String getDsType() {
-			return this.dsType;
-		}
-
-		public void setDsType(String dsType) {
-			this.dsType = dsType;
-		}
-
-		public String getDatasetId() {
-			return this.datasetId;
-		}
-
-		public void setDatasetId(String datasetId) {
-			this.datasetId = datasetId;
-		}
-
-		public Boolean getOpenOfflineAcceleration() {
-			return this.openOfflineAcceleration;
-		}
-
-		public void setOpenOfflineAcceleration(Boolean openOfflineAcceleration) {
-			this.openOfflineAcceleration = openOfflineAcceleration;
+		public void setWorkspaceName(String workspaceName) {
+			this.workspaceName = workspaceName;
 		}
 
 		public List<CubeTableListItem> getCubeTableList() {
@@ -239,28 +239,36 @@ public class QueryDatasetInfoResponse extends AcsResponse {
 
 		public static class CubeTableListItem {
 
-			private String tableName;
+			private String caption;
+
+			private Boolean customsql;
 
 			private String datasourceId;
 
 			private String dsType;
 
-			private String uniqueId;
-
 			private Boolean factTable;
-
-			private String caption;
-
-			private Boolean customsql;
 
 			private String sql;
 
-			public String getTableName() {
-				return this.tableName;
+			private String tableName;
+
+			private String uniqueId;
+
+			public String getCaption() {
+				return this.caption;
 			}
 
-			public void setTableName(String tableName) {
-				this.tableName = tableName;
+			public void setCaption(String caption) {
+				this.caption = caption;
+			}
+
+			public Boolean getCustomsql() {
+				return this.customsql;
+			}
+
+			public void setCustomsql(Boolean customsql) {
+				this.customsql = customsql;
 			}
 
 			public String getDatasourceId() {
@@ -279,36 +287,12 @@ public class QueryDatasetInfoResponse extends AcsResponse {
 				this.dsType = dsType;
 			}
 
-			public String getUniqueId() {
-				return this.uniqueId;
-			}
-
-			public void setUniqueId(String uniqueId) {
-				this.uniqueId = uniqueId;
-			}
-
 			public Boolean getFactTable() {
 				return this.factTable;
 			}
 
 			public void setFactTable(Boolean factTable) {
 				this.factTable = factTable;
-			}
-
-			public String getCaption() {
-				return this.caption;
-			}
-
-			public void setCaption(String caption) {
-				this.caption = caption;
-			}
-
-			public Boolean getCustomsql() {
-				return this.customsql;
-			}
-
-			public void setCustomsql(Boolean customsql) {
-				this.customsql = customsql;
 			}
 
 			public String getSql() {
@@ -318,27 +302,53 @@ public class QueryDatasetInfoResponse extends AcsResponse {
 			public void setSql(String sql) {
 				this.sql = sql;
 			}
+
+			public String getTableName() {
+				return this.tableName;
+			}
+
+			public void setTableName(String tableName) {
+				this.tableName = tableName;
+			}
+
+			public String getUniqueId() {
+				return this.uniqueId;
+			}
+
+			public void setUniqueId(String uniqueId) {
+				this.uniqueId = uniqueId;
+			}
 		}
 
 		public static class DimensionListItem {
 
+			private String caption;
+
 			private String dataType;
+
+			private String dimensionType;
 
 			private String expression;
 
 			private String factColumn;
 
-			private String dimensionType;
+			private String fieldDescription;
 
 			private String granularity;
 
 			private String refUid;
 
-			private String caption;
+			private String tableUniqueId;
 
 			private String uid;
 
-			private String tableUniqueId;
+			public String getCaption() {
+				return this.caption;
+			}
+
+			public void setCaption(String caption) {
+				this.caption = caption;
+			}
 
 			public String getDataType() {
 				return this.dataType;
@@ -346,6 +356,14 @@ public class QueryDatasetInfoResponse extends AcsResponse {
 
 			public void setDataType(String dataType) {
 				this.dataType = dataType;
+			}
+
+			public String getDimensionType() {
+				return this.dimensionType;
+			}
+
+			public void setDimensionType(String dimensionType) {
+				this.dimensionType = dimensionType;
 			}
 
 			public String getExpression() {
@@ -364,12 +382,12 @@ public class QueryDatasetInfoResponse extends AcsResponse {
 				this.factColumn = factColumn;
 			}
 
-			public String getDimensionType() {
-				return this.dimensionType;
+			public String getFieldDescription() {
+				return this.fieldDescription;
 			}
 
-			public void setDimensionType(String dimensionType) {
-				this.dimensionType = dimensionType;
+			public void setFieldDescription(String fieldDescription) {
+				this.fieldDescription = fieldDescription;
 			}
 
 			public String getGranularity() {
@@ -388,12 +406,12 @@ public class QueryDatasetInfoResponse extends AcsResponse {
 				this.refUid = refUid;
 			}
 
-			public String getCaption() {
-				return this.caption;
+			public String getTableUniqueId() {
+				return this.tableUniqueId;
 			}
 
-			public void setCaption(String caption) {
-				this.caption = caption;
+			public void setTableUniqueId(String tableUniqueId) {
+				this.tableUniqueId = tableUniqueId;
 			}
 
 			public String getUid() {
@@ -403,31 +421,33 @@ public class QueryDatasetInfoResponse extends AcsResponse {
 			public void setUid(String uid) {
 				this.uid = uid;
 			}
-
-			public String getTableUniqueId() {
-				return this.tableUniqueId;
-			}
-
-			public void setTableUniqueId(String tableUniqueId) {
-				this.tableUniqueId = tableUniqueId;
-			}
 		}
 
 		public static class MeasureListItem {
+
+			private String caption;
 
 			private String dataType;
 
 			private String expression;
 
-			private String measureType;
-
 			private String factColumn;
 
-			private String caption;
+			private String fieldDescription;
+
+			private String measureType;
 
 			private String tableUniqueId;
 
 			private String uid;
+
+			public String getCaption() {
+				return this.caption;
+			}
+
+			public void setCaption(String caption) {
+				this.caption = caption;
+			}
 
 			public String getDataType() {
 				return this.dataType;
@@ -445,14 +465,6 @@ public class QueryDatasetInfoResponse extends AcsResponse {
 				this.expression = expression;
 			}
 
-			public String getMeasureType() {
-				return this.measureType;
-			}
-
-			public void setMeasureType(String measureType) {
-				this.measureType = measureType;
-			}
-
 			public String getFactColumn() {
 				return this.factColumn;
 			}
@@ -461,12 +473,20 @@ public class QueryDatasetInfoResponse extends AcsResponse {
 				this.factColumn = factColumn;
 			}
 
-			public String getCaption() {
-				return this.caption;
+			public String getFieldDescription() {
+				return this.fieldDescription;
 			}
 
-			public void setCaption(String caption) {
-				this.caption = caption;
+			public void setFieldDescription(String fieldDescription) {
+				this.fieldDescription = fieldDescription;
+			}
+
+			public String getMeasureType() {
+				return this.measureType;
+			}
+
+			public void setMeasureType(String measureType) {
+				this.measureType = measureType;
 			}
 
 			public String getTableUniqueId() {
@@ -488,13 +508,29 @@ public class QueryDatasetInfoResponse extends AcsResponse {
 
 		public static class Directory {
 
+			private String id;
+
+			private String name;
+
 			private String pathId;
 
 			private String pathName;
 
-			private String name;
+			public String getId() {
+				return this.id;
+			}
 
-			private String id;
+			public void setId(String id) {
+				this.id = id;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
 
 			public String getPathId() {
 				return this.pathId;
@@ -510,22 +546,6 @@ public class QueryDatasetInfoResponse extends AcsResponse {
 
 			public void setPathName(String pathName) {
 				this.pathName = pathName;
-			}
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
-
-			public String getId() {
-				return this.id;
-			}
-
-			public void setId(String id) {
-				this.id = id;
 			}
 		}
 	}

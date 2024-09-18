@@ -24,27 +24,16 @@ import com.aliyuncs.http.MethodType;
 public class CreateUserGroupRequest extends RpcAcsRequest<CreateUserGroupResponse> {
 	   
 
-	private String userGroupId;
-
 	private String userGroupName;
 
-	private String userGroupDescription;
-
 	private String parentUserGroupId;
+
+	private String userGroupId;
+
+	private String userGroupDescription;
 	public CreateUserGroupRequest() {
 		super("quickbi-public", "2022-01-01", "CreateUserGroup", "2.2.0");
 		setMethod(MethodType.POST);
-	}
-
-	public String getUserGroupId() {
-		return this.userGroupId;
-	}
-
-	public void setUserGroupId(String userGroupId) {
-		this.userGroupId = userGroupId;
-		if(userGroupId != null){
-			putQueryParameter("UserGroupId", userGroupId);
-		}
 	}
 
 	public String getUserGroupName() {
@@ -58,17 +47,6 @@ public class CreateUserGroupRequest extends RpcAcsRequest<CreateUserGroupRespons
 		}
 	}
 
-	public String getUserGroupDescription() {
-		return this.userGroupDescription;
-	}
-
-	public void setUserGroupDescription(String userGroupDescription) {
-		this.userGroupDescription = userGroupDescription;
-		if(userGroupDescription != null){
-			putQueryParameter("UserGroupDescription", userGroupDescription);
-		}
-	}
-
 	public String getParentUserGroupId() {
 		return this.parentUserGroupId;
 	}
@@ -77,6 +55,28 @@ public class CreateUserGroupRequest extends RpcAcsRequest<CreateUserGroupRespons
 		this.parentUserGroupId = parentUserGroupId;
 		if(parentUserGroupId != null){
 			putQueryParameter("ParentUserGroupId", parentUserGroupId);
+		}
+	}
+
+	public String getUserGroupId() {
+		return this.userGroupId;
+	}
+
+	public void setUserGroupId(String userGroupId) {
+		this.userGroupId = userGroupId;
+		if(userGroupId != null){
+			putQueryParameter("UserGroupId", userGroupId);
+		}
+	}
+
+	public String getUserGroupDescription() {
+		return this.userGroupDescription;
+	}
+
+	public void setUserGroupDescription(String userGroupDescription) {
+		this.userGroupDescription = userGroupDescription;
+		if(userGroupDescription != null){
+			putQueryParameter("UserGroupDescription", userGroupDescription);
 		}
 	}
 

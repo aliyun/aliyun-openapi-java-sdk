@@ -26,13 +26,13 @@ public class AuthorizeMenuRequest extends RpcAcsRequest<AuthorizeMenuResponse> {
 
 	private String dataPortalId;
 
-	private String userIds;
-
 	private Integer authPointsValue;
+
+	private String menuIds;
 
 	private String userGroupIds;
 
-	private String menuIds;
+	private String userIds;
 	public AuthorizeMenuRequest() {
 		super("quickbi-public", "2022-01-01", "AuthorizeMenu", "2.2.0");
 		setMethod(MethodType.POST);
@@ -49,17 +49,6 @@ public class AuthorizeMenuRequest extends RpcAcsRequest<AuthorizeMenuResponse> {
 		}
 	}
 
-	public String getUserIds() {
-		return this.userIds;
-	}
-
-	public void setUserIds(String userIds) {
-		this.userIds = userIds;
-		if(userIds != null){
-			putQueryParameter("UserIds", userIds);
-		}
-	}
-
 	public Integer getAuthPointsValue() {
 		return this.authPointsValue;
 	}
@@ -68,6 +57,17 @@ public class AuthorizeMenuRequest extends RpcAcsRequest<AuthorizeMenuResponse> {
 		this.authPointsValue = authPointsValue;
 		if(authPointsValue != null){
 			putQueryParameter("AuthPointsValue", authPointsValue.toString());
+		}
+	}
+
+	public String getMenuIds() {
+		return this.menuIds;
+	}
+
+	public void setMenuIds(String menuIds) {
+		this.menuIds = menuIds;
+		if(menuIds != null){
+			putQueryParameter("MenuIds", menuIds);
 		}
 	}
 
@@ -82,14 +82,14 @@ public class AuthorizeMenuRequest extends RpcAcsRequest<AuthorizeMenuResponse> {
 		}
 	}
 
-	public String getMenuIds() {
-		return this.menuIds;
+	public String getUserIds() {
+		return this.userIds;
 	}
 
-	public void setMenuIds(String menuIds) {
-		this.menuIds = menuIds;
-		if(menuIds != null){
-			putQueryParameter("MenuIds", menuIds);
+	public void setUserIds(String userIds) {
+		this.userIds = userIds;
+		if(userIds != null){
+			putQueryParameter("UserIds", userIds);
 		}
 	}
 

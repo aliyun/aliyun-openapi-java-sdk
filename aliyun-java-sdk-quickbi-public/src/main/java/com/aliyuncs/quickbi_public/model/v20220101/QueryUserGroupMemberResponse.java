@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryUserGroupMemberResponse extends AcsResponse {
 
-	private Boolean success;
-
 	private String requestId;
 
+	private Boolean success;
+
 	private List<Data> result;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,6 +37,14 @@ public class QueryUserGroupMemberResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<Data> getResult() {
@@ -57,7 +57,7 @@ public class QueryUserGroupMemberResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String parentUserGroupName;
+		private String id;
 
 		private Boolean isUserGroup;
 
@@ -65,14 +65,14 @@ public class QueryUserGroupMemberResponse extends AcsResponse {
 
 		private String parentUserGroupId;
 
-		private String id;
+		private String parentUserGroupName;
 
-		public String getParentUserGroupName() {
-			return this.parentUserGroupName;
+		public String getId() {
+			return this.id;
 		}
 
-		public void setParentUserGroupName(String parentUserGroupName) {
-			this.parentUserGroupName = parentUserGroupName;
+		public void setId(String id) {
+			this.id = id;
 		}
 
 		public Boolean getIsUserGroup() {
@@ -99,12 +99,12 @@ public class QueryUserGroupMemberResponse extends AcsResponse {
 			this.parentUserGroupId = parentUserGroupId;
 		}
 
-		public String getId() {
-			return this.id;
+		public String getParentUserGroupName() {
+			return this.parentUserGroupName;
 		}
 
-		public void setId(String id) {
-			this.id = id;
+		public void setParentUserGroupName(String parentUserGroupName) {
+			this.parentUserGroupName = parentUserGroupName;
 		}
 	}
 

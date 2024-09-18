@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryShareListResponse extends AcsResponse {
 
-	private Boolean success;
-
 	private String requestId;
 
+	private Boolean success;
+
 	private List<Data> result;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,6 +37,14 @@ public class QueryShareListResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<Data> getResult() {
@@ -57,37 +57,21 @@ public class QueryShareListResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String shareId;
-
-		private String shareToId;
-
 		private Integer authPoint;
 
 		private Long expireDate;
 
-		private Integer shareToType;
-
 		private String reportId;
+
+		private String shareId;
+
+		private String shareToId;
 
 		private String shareToName;
 
+		private Integer shareToType;
+
 		private String shareType;
-
-		public String getShareId() {
-			return this.shareId;
-		}
-
-		public void setShareId(String shareId) {
-			this.shareId = shareId;
-		}
-
-		public String getShareToId() {
-			return this.shareToId;
-		}
-
-		public void setShareToId(String shareToId) {
-			this.shareToId = shareToId;
-		}
 
 		public Integer getAuthPoint() {
 			return this.authPoint;
@@ -105,14 +89,6 @@ public class QueryShareListResponse extends AcsResponse {
 			this.expireDate = expireDate;
 		}
 
-		public Integer getShareToType() {
-			return this.shareToType;
-		}
-
-		public void setShareToType(Integer shareToType) {
-			this.shareToType = shareToType;
-		}
-
 		public String getReportId() {
 			return this.reportId;
 		}
@@ -121,12 +97,36 @@ public class QueryShareListResponse extends AcsResponse {
 			this.reportId = reportId;
 		}
 
+		public String getShareId() {
+			return this.shareId;
+		}
+
+		public void setShareId(String shareId) {
+			this.shareId = shareId;
+		}
+
+		public String getShareToId() {
+			return this.shareToId;
+		}
+
+		public void setShareToId(String shareToId) {
+			this.shareToId = shareToId;
+		}
+
 		public String getShareToName() {
 			return this.shareToName;
 		}
 
 		public void setShareToName(String shareToName) {
 			this.shareToName = shareToName;
+		}
+
+		public Integer getShareToType() {
+			return this.shareToType;
+		}
+
+		public void setShareToType(Integer shareToType) {
+			this.shareToType = shareToType;
 		}
 
 		public String getShareType() {

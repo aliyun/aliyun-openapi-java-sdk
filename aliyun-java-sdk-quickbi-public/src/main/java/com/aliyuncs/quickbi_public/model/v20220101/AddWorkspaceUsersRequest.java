@@ -24,25 +24,14 @@ import com.aliyuncs.http.MethodType;
 public class AddWorkspaceUsersRequest extends RpcAcsRequest<AddWorkspaceUsersResponse> {
 	   
 
-	private String userIds;
-
 	private Long roleId;
+
+	private String userIds;
 
 	private String workspaceId;
 	public AddWorkspaceUsersRequest() {
 		super("quickbi-public", "2022-01-01", "AddWorkspaceUsers", "2.2.0");
 		setMethod(MethodType.POST);
-	}
-
-	public String getUserIds() {
-		return this.userIds;
-	}
-
-	public void setUserIds(String userIds) {
-		this.userIds = userIds;
-		if(userIds != null){
-			putQueryParameter("UserIds", userIds);
-		}
 	}
 
 	public Long getRoleId() {
@@ -53,6 +42,17 @@ public class AddWorkspaceUsersRequest extends RpcAcsRequest<AddWorkspaceUsersRes
 		this.roleId = roleId;
 		if(roleId != null){
 			putQueryParameter("RoleId", roleId.toString());
+		}
+	}
+
+	public String getUserIds() {
+		return this.userIds;
+	}
+
+	public void setUserIds(String userIds) {
+		this.userIds = userIds;
+		if(userIds != null){
+			putQueryParameter("UserIds", userIds);
 		}
 	}
 

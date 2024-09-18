@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryWorksBloodRelationshipResponse extends AcsResponse {
 
-	private Boolean success;
-
 	private String requestId;
 
+	private Boolean success;
+
 	private List<Item> result;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,6 +37,14 @@ public class QueryWorksBloodRelationshipResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<Item> getResult() {
@@ -119,9 +119,9 @@ public class QueryWorksBloodRelationshipResponse extends AcsResponse {
 
 		public static class QueryParam {
 
-			private String uid;
+			private String areaId;
 
-			private String pathId;
+			private String areaName;
 
 			private String caption;
 
@@ -129,24 +129,24 @@ public class QueryWorksBloodRelationshipResponse extends AcsResponse {
 
 			private Boolean isMeasure;
 
-			private String areaId;
+			private String pathId;
 
-			private String areaName;
+			private String uid;
 
-			public String getUid() {
-				return this.uid;
+			public String getAreaId() {
+				return this.areaId;
 			}
 
-			public void setUid(String uid) {
-				this.uid = uid;
+			public void setAreaId(String areaId) {
+				this.areaId = areaId;
 			}
 
-			public String getPathId() {
-				return this.pathId;
+			public String getAreaName() {
+				return this.areaName;
 			}
 
-			public void setPathId(String pathId) {
-				this.pathId = pathId;
+			public void setAreaName(String areaName) {
+				this.areaName = areaName;
 			}
 
 			public String getCaption() {
@@ -173,20 +173,20 @@ public class QueryWorksBloodRelationshipResponse extends AcsResponse {
 				this.isMeasure = isMeasure;
 			}
 
-			public String getAreaId() {
-				return this.areaId;
+			public String getPathId() {
+				return this.pathId;
 			}
 
-			public void setAreaId(String areaId) {
-				this.areaId = areaId;
+			public void setPathId(String pathId) {
+				this.pathId = pathId;
 			}
 
-			public String getAreaName() {
-				return this.areaName;
+			public String getUid() {
+				return this.uid;
 			}
 
-			public void setAreaName(String areaName) {
-				this.areaName = areaName;
+			public void setUid(String uid) {
+				this.uid = uid;
 			}
 		}
 	}

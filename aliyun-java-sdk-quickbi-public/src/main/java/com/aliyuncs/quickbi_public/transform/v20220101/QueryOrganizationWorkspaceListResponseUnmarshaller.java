@@ -31,28 +31,28 @@ public class QueryOrganizationWorkspaceListResponseUnmarshaller {
 		queryOrganizationWorkspaceListResponse.setSuccess(_ctx.booleanValue("QueryOrganizationWorkspaceListResponse.Success"));
 
 		Result result = new Result();
-		result.setTotalPages(_ctx.integerValue("QueryOrganizationWorkspaceListResponse.Result.TotalPages"));
 		result.setPageNum(_ctx.integerValue("QueryOrganizationWorkspaceListResponse.Result.PageNum"));
 		result.setPageSize(_ctx.integerValue("QueryOrganizationWorkspaceListResponse.Result.PageSize"));
 		result.setTotalNum(_ctx.integerValue("QueryOrganizationWorkspaceListResponse.Result.TotalNum"));
+		result.setTotalPages(_ctx.integerValue("QueryOrganizationWorkspaceListResponse.Result.TotalPages"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryOrganizationWorkspaceListResponse.Result.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setCreateUserAccountName(_ctx.stringValue("QueryOrganizationWorkspaceListResponse.Result.Data["+ i +"].CreateUserAccountName"));
-			dataItem.setOwner(_ctx.stringValue("QueryOrganizationWorkspaceListResponse.Result.Data["+ i +"].Owner"));
-			dataItem.setCreateTime(_ctx.stringValue("QueryOrganizationWorkspaceListResponse.Result.Data["+ i +"].CreateTime"));
-			dataItem.setWorkspaceName(_ctx.stringValue("QueryOrganizationWorkspaceListResponse.Result.Data["+ i +"].WorkspaceName"));
-			dataItem.setOrganizationId(_ctx.stringValue("QueryOrganizationWorkspaceListResponse.Result.Data["+ i +"].OrganizationId"));
-			dataItem.setWorkspaceId(_ctx.stringValue("QueryOrganizationWorkspaceListResponse.Result.Data["+ i +"].WorkspaceId"));
-			dataItem.setAllowShareOperation(_ctx.booleanValue("QueryOrganizationWorkspaceListResponse.Result.Data["+ i +"].AllowShareOperation"));
-			dataItem.setCreateUser(_ctx.stringValue("QueryOrganizationWorkspaceListResponse.Result.Data["+ i +"].CreateUser"));
-			dataItem.setModifiedTime(_ctx.stringValue("QueryOrganizationWorkspaceListResponse.Result.Data["+ i +"].ModifiedTime"));
-			dataItem.setWorkspaceDescription(_ctx.stringValue("QueryOrganizationWorkspaceListResponse.Result.Data["+ i +"].WorkspaceDescription"));
-			dataItem.setModifyUser(_ctx.stringValue("QueryOrganizationWorkspaceListResponse.Result.Data["+ i +"].ModifyUser"));
 			dataItem.setAllowPublishOperation(_ctx.booleanValue("QueryOrganizationWorkspaceListResponse.Result.Data["+ i +"].AllowPublishOperation"));
-			dataItem.setOwnerAccountName(_ctx.stringValue("QueryOrganizationWorkspaceListResponse.Result.Data["+ i +"].OwnerAccountName"));
+			dataItem.setAllowShareOperation(_ctx.booleanValue("QueryOrganizationWorkspaceListResponse.Result.Data["+ i +"].AllowShareOperation"));
+			dataItem.setCreateTime(_ctx.stringValue("QueryOrganizationWorkspaceListResponse.Result.Data["+ i +"].CreateTime"));
+			dataItem.setCreateUser(_ctx.stringValue("QueryOrganizationWorkspaceListResponse.Result.Data["+ i +"].CreateUser"));
+			dataItem.setCreateUserAccountName(_ctx.stringValue("QueryOrganizationWorkspaceListResponse.Result.Data["+ i +"].CreateUserAccountName"));
+			dataItem.setModifiedTime(_ctx.stringValue("QueryOrganizationWorkspaceListResponse.Result.Data["+ i +"].ModifiedTime"));
+			dataItem.setModifyUser(_ctx.stringValue("QueryOrganizationWorkspaceListResponse.Result.Data["+ i +"].ModifyUser"));
 			dataItem.setModifyUserAccountName(_ctx.stringValue("QueryOrganizationWorkspaceListResponse.Result.Data["+ i +"].ModifyUserAccountName"));
+			dataItem.setOrganizationId(_ctx.stringValue("QueryOrganizationWorkspaceListResponse.Result.Data["+ i +"].OrganizationId"));
+			dataItem.setOwner(_ctx.stringValue("QueryOrganizationWorkspaceListResponse.Result.Data["+ i +"].Owner"));
+			dataItem.setOwnerAccountName(_ctx.stringValue("QueryOrganizationWorkspaceListResponse.Result.Data["+ i +"].OwnerAccountName"));
+			dataItem.setWorkspaceDescription(_ctx.stringValue("QueryOrganizationWorkspaceListResponse.Result.Data["+ i +"].WorkspaceDescription"));
+			dataItem.setWorkspaceId(_ctx.stringValue("QueryOrganizationWorkspaceListResponse.Result.Data["+ i +"].WorkspaceId"));
+			dataItem.setWorkspaceName(_ctx.stringValue("QueryOrganizationWorkspaceListResponse.Result.Data["+ i +"].WorkspaceName"));
 
 			data.add(dataItem);
 		}

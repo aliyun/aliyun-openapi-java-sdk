@@ -36,29 +36,29 @@ public class QueryDataServiceListResponseUnmarshaller {
 		queryDataServiceListResponse.setSuccess(_ctx.booleanValue("QueryDataServiceListResponse.Success"));
 
 		Result result = new Result();
-		result.setTotalPages(_ctx.integerValue("QueryDataServiceListResponse.Result.TotalPages"));
-		result.setTotalNum(_ctx.integerValue("QueryDataServiceListResponse.Result.TotalNum"));
 		result.setPageNum(_ctx.integerValue("QueryDataServiceListResponse.Result.PageNum"));
 		result.setPageSize(_ctx.integerValue("QueryDataServiceListResponse.Result.PageSize"));
+		result.setTotalNum(_ctx.integerValue("QueryDataServiceListResponse.Result.TotalNum"));
+		result.setTotalPages(_ctx.integerValue("QueryDataServiceListResponse.Result.TotalPages"));
 
 		List<QueryDataServiceModel> data = new ArrayList<QueryDataServiceModel>();
 		for (int i = 0; i < _ctx.lengthValue("QueryDataServiceListResponse.Result.Data.Length"); i++) {
 			QueryDataServiceModel queryDataServiceModel = new QueryDataServiceModel();
-			queryDataServiceModel.setSid(_ctx.stringValue("QueryDataServiceListResponse.Result.Data["+ i +"].Sid"));
-			queryDataServiceModel.setName(_ctx.stringValue("QueryDataServiceListResponse.Result.Data["+ i +"].Name"));
-			queryDataServiceModel.setDesc(_ctx.stringValue("QueryDataServiceListResponse.Result.Data["+ i +"].Desc"));
-			queryDataServiceModel.setCubeId(_ctx.stringValue("QueryDataServiceListResponse.Result.Data["+ i +"].CubeId"));
-			queryDataServiceModel.setCubeName(_ctx.stringValue("QueryDataServiceListResponse.Result.Data["+ i +"].CubeName"));
-			queryDataServiceModel.setWorkspaceId(_ctx.stringValue("QueryDataServiceListResponse.Result.Data["+ i +"].WorkspaceId"));
-			queryDataServiceModel.setWorkspaceName(_ctx.stringValue("QueryDataServiceListResponse.Result.Data["+ i +"].WorkspaceName"));
-			queryDataServiceModel.setGmtCreate(_ctx.stringValue("QueryDataServiceListResponse.Result.Data["+ i +"].GmtCreate"));
-			queryDataServiceModel.setGmtModified(_ctx.stringValue("QueryDataServiceListResponse.Result.Data["+ i +"].GmtModified"));
 			queryDataServiceModel.setCreatorId(_ctx.stringValue("QueryDataServiceListResponse.Result.Data["+ i +"].CreatorId"));
 			queryDataServiceModel.setCreatorName(_ctx.stringValue("QueryDataServiceListResponse.Result.Data["+ i +"].CreatorName"));
+			queryDataServiceModel.setCubeId(_ctx.stringValue("QueryDataServiceListResponse.Result.Data["+ i +"].CubeId"));
+			queryDataServiceModel.setCubeName(_ctx.stringValue("QueryDataServiceListResponse.Result.Data["+ i +"].CubeName"));
+			queryDataServiceModel.setDesc(_ctx.stringValue("QueryDataServiceListResponse.Result.Data["+ i +"].Desc"));
+			queryDataServiceModel.setGmtCreate(_ctx.stringValue("QueryDataServiceListResponse.Result.Data["+ i +"].GmtCreate"));
+			queryDataServiceModel.setGmtModified(_ctx.stringValue("QueryDataServiceListResponse.Result.Data["+ i +"].GmtModified"));
 			queryDataServiceModel.setModifierId(_ctx.stringValue("QueryDataServiceListResponse.Result.Data["+ i +"].ModifierId"));
 			queryDataServiceModel.setModifierName(_ctx.stringValue("QueryDataServiceListResponse.Result.Data["+ i +"].ModifierName"));
+			queryDataServiceModel.setName(_ctx.stringValue("QueryDataServiceListResponse.Result.Data["+ i +"].Name"));
 			queryDataServiceModel.setOwnerId(_ctx.stringValue("QueryDataServiceListResponse.Result.Data["+ i +"].OwnerId"));
 			queryDataServiceModel.setOwnerName(_ctx.stringValue("QueryDataServiceListResponse.Result.Data["+ i +"].OwnerName"));
+			queryDataServiceModel.setSid(_ctx.stringValue("QueryDataServiceListResponse.Result.Data["+ i +"].Sid"));
+			queryDataServiceModel.setWorkspaceId(_ctx.stringValue("QueryDataServiceListResponse.Result.Data["+ i +"].WorkspaceId"));
+			queryDataServiceModel.setWorkspaceName(_ctx.stringValue("QueryDataServiceListResponse.Result.Data["+ i +"].WorkspaceName"));
 
 			Content content = new Content();
 			content.setCubeId(_ctx.stringValue("QueryDataServiceListResponse.Result.Data["+ i +"].Content.CubeId"));
@@ -76,19 +76,19 @@ public class QueryDataServiceListResponseUnmarshaller {
 			List<SelectFieldModel> returnFields = new ArrayList<SelectFieldModel>();
 			for (int j = 0; j < _ctx.lengthValue("QueryDataServiceListResponse.Result.Data["+ i +"].Content.ReturnFields.Length"); j++) {
 				SelectFieldModel selectFieldModel = new SelectFieldModel();
+				selectFieldModel.setAggregator(_ctx.stringValue("QueryDataServiceListResponse.Result.Data["+ i +"].Content.ReturnFields["+ j +"].Aggregator"));
 				selectFieldModel.setAlias(_ctx.stringValue("QueryDataServiceListResponse.Result.Data["+ i +"].Content.ReturnFields["+ j +"].Alias"));
 				selectFieldModel.setDesc(_ctx.stringValue("QueryDataServiceListResponse.Result.Data["+ i +"].Content.ReturnFields["+ j +"].Desc"));
-				selectFieldModel.setAggregator(_ctx.stringValue("QueryDataServiceListResponse.Result.Data["+ i +"].Content.ReturnFields["+ j +"].Aggregator"));
 				selectFieldModel.setOrderby(_ctx.stringValue("QueryDataServiceListResponse.Result.Data["+ i +"].Content.ReturnFields["+ j +"].Orderby"));
 
 				Field field = new Field();
-				field.setFid(_ctx.stringValue("QueryDataServiceListResponse.Result.Data["+ i +"].Content.ReturnFields["+ j +"].Field.Fid"));
-				field.setName(_ctx.stringValue("QueryDataServiceListResponse.Result.Data["+ i +"].Content.ReturnFields["+ j +"].Field.Name"));
-				field.setType(_ctx.stringValue("QueryDataServiceListResponse.Result.Data["+ i +"].Content.ReturnFields["+ j +"].Field.Type"));
 				field.setCaption(_ctx.stringValue("QueryDataServiceListResponse.Result.Data["+ i +"].Content.ReturnFields["+ j +"].Field.Caption"));
 				field.setColumn(_ctx.stringValue("QueryDataServiceListResponse.Result.Data["+ i +"].Content.ReturnFields["+ j +"].Field.Column"));
 				field.setDataType(_ctx.stringValue("QueryDataServiceListResponse.Result.Data["+ i +"].Content.ReturnFields["+ j +"].Field.DataType"));
+				field.setFid(_ctx.stringValue("QueryDataServiceListResponse.Result.Data["+ i +"].Content.ReturnFields["+ j +"].Field.Fid"));
 				field.setGranularity(_ctx.stringValue("QueryDataServiceListResponse.Result.Data["+ i +"].Content.ReturnFields["+ j +"].Field.Granularity"));
+				field.setName(_ctx.stringValue("QueryDataServiceListResponse.Result.Data["+ i +"].Content.ReturnFields["+ j +"].Field.Name"));
+				field.setType(_ctx.stringValue("QueryDataServiceListResponse.Result.Data["+ i +"].Content.ReturnFields["+ j +"].Field.Type"));
 				selectFieldModel.setField(field);
 
 				returnFields.add(selectFieldModel);

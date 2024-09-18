@@ -33,9 +33,9 @@ public class ListOrganizationRolesResponseUnmarshaller {
 		List<Data> result = new ArrayList<Data>();
 		for (int i = 0; i < _ctx.lengthValue("ListOrganizationRolesResponse.Result.Length"); i++) {
 			Data data = new Data();
+			data.setIsSystemRole(_ctx.booleanValue("ListOrganizationRolesResponse.Result["+ i +"].IsSystemRole"));
 			data.setRoleId(_ctx.longValue("ListOrganizationRolesResponse.Result["+ i +"].RoleId"));
 			data.setRoleName(_ctx.stringValue("ListOrganizationRolesResponse.Result["+ i +"].RoleName"));
-			data.setIsSystemRole(_ctx.booleanValue("ListOrganizationRolesResponse.Result["+ i +"].IsSystemRole"));
 
 			List<AuthConfigListItem> authConfigList = new ArrayList<AuthConfigListItem>();
 			for (int j = 0; j < _ctx.lengthValue("ListOrganizationRolesResponse.Result["+ i +"].AuthConfigList.Length"); j++) {

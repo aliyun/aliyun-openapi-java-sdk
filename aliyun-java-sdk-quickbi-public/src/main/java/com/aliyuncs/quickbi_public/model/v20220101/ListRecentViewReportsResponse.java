@@ -57,32 +57,24 @@ public class ListRecentViewReportsResponse extends AcsResponse {
 
 	public static class Result {
 
-		private Integer totalNum;
-
-		private Integer totalPages;
+		private String attention;
 
 		private Integer pageNum;
 
 		private Integer pageSize;
 
-		private String attention;
+		private Integer totalNum;
+
+		private Integer totalPages;
 
 		private List<DataItem> data;
 
-		public Integer getTotalNum() {
-			return this.totalNum;
+		public String getAttention() {
+			return this.attention;
 		}
 
-		public void setTotalNum(Integer totalNum) {
-			this.totalNum = totalNum;
-		}
-
-		public Integer getTotalPages() {
-			return this.totalPages;
-		}
-
-		public void setTotalPages(Integer totalPages) {
-			this.totalPages = totalPages;
+		public void setAttention(String attention) {
+			this.attention = attention;
 		}
 
 		public Integer getPageNum() {
@@ -101,12 +93,20 @@ public class ListRecentViewReportsResponse extends AcsResponse {
 			this.pageSize = pageSize;
 		}
 
-		public String getAttention() {
-			return this.attention;
+		public Integer getTotalNum() {
+			return this.totalNum;
 		}
 
-		public void setAttention(String attention) {
-			this.attention = attention;
+		public void setTotalNum(Integer totalNum) {
+			this.totalNum = totalNum;
+		}
+
+		public Integer getTotalPages() {
+			return this.totalPages;
+		}
+
+		public void setTotalPages(Integer totalPages) {
+			this.totalPages = totalPages;
 		}
 
 		public List<DataItem> getData() {
@@ -119,74 +119,42 @@ public class ListRecentViewReportsResponse extends AcsResponse {
 
 		public static class DataItem {
 
-			private String treeId;
-
-			private String type;
-
-			private String name;
-
-			private String ownerNum;
-
-			private String ownerName;
+			private Boolean favorite;
 
 			private String gmtCreate;
 
 			private String gmtModified;
 
-			private Integer publishStatus;
-
-			private Boolean favorite;
+			private Boolean hasEditAuth;
 
 			private Boolean hasViewAuth;
 
-			private Boolean hasEditAuth;
+			private String latestViewTime;
+
+			private String name;
+
+			private String ownerName;
+
+			private String ownerNum;
+
+			private Integer publishStatus;
+
+			private String treeId;
+
+			private String type;
+
+			private Long viewCount;
 
 			private String workspaceId;
 
 			private String workspaceName;
 
-			private Long viewCount;
-
-			private String latestViewTime;
-
-			public String getTreeId() {
-				return this.treeId;
+			public Boolean getFavorite() {
+				return this.favorite;
 			}
 
-			public void setTreeId(String treeId) {
-				this.treeId = treeId;
-			}
-
-			public String getType() {
-				return this.type;
-			}
-
-			public void setType(String type) {
-				this.type = type;
-			}
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
-
-			public String getOwnerNum() {
-				return this.ownerNum;
-			}
-
-			public void setOwnerNum(String ownerNum) {
-				this.ownerNum = ownerNum;
-			}
-
-			public String getOwnerName() {
-				return this.ownerName;
-			}
-
-			public void setOwnerName(String ownerName) {
-				this.ownerName = ownerName;
+			public void setFavorite(Boolean favorite) {
+				this.favorite = favorite;
 			}
 
 			public String getGmtCreate() {
@@ -205,20 +173,12 @@ public class ListRecentViewReportsResponse extends AcsResponse {
 				this.gmtModified = gmtModified;
 			}
 
-			public Integer getPublishStatus() {
-				return this.publishStatus;
+			public Boolean getHasEditAuth() {
+				return this.hasEditAuth;
 			}
 
-			public void setPublishStatus(Integer publishStatus) {
-				this.publishStatus = publishStatus;
-			}
-
-			public Boolean getFavorite() {
-				return this.favorite;
-			}
-
-			public void setFavorite(Boolean favorite) {
-				this.favorite = favorite;
+			public void setHasEditAuth(Boolean hasEditAuth) {
+				this.hasEditAuth = hasEditAuth;
 			}
 
 			public Boolean getHasViewAuth() {
@@ -229,12 +189,68 @@ public class ListRecentViewReportsResponse extends AcsResponse {
 				this.hasViewAuth = hasViewAuth;
 			}
 
-			public Boolean getHasEditAuth() {
-				return this.hasEditAuth;
+			public String getLatestViewTime() {
+				return this.latestViewTime;
 			}
 
-			public void setHasEditAuth(Boolean hasEditAuth) {
-				this.hasEditAuth = hasEditAuth;
+			public void setLatestViewTime(String latestViewTime) {
+				this.latestViewTime = latestViewTime;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getOwnerName() {
+				return this.ownerName;
+			}
+
+			public void setOwnerName(String ownerName) {
+				this.ownerName = ownerName;
+			}
+
+			public String getOwnerNum() {
+				return this.ownerNum;
+			}
+
+			public void setOwnerNum(String ownerNum) {
+				this.ownerNum = ownerNum;
+			}
+
+			public Integer getPublishStatus() {
+				return this.publishStatus;
+			}
+
+			public void setPublishStatus(Integer publishStatus) {
+				this.publishStatus = publishStatus;
+			}
+
+			public String getTreeId() {
+				return this.treeId;
+			}
+
+			public void setTreeId(String treeId) {
+				this.treeId = treeId;
+			}
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
+			}
+
+			public Long getViewCount() {
+				return this.viewCount;
+			}
+
+			public void setViewCount(Long viewCount) {
+				this.viewCount = viewCount;
 			}
 
 			public String getWorkspaceId() {
@@ -251,22 +267,6 @@ public class ListRecentViewReportsResponse extends AcsResponse {
 
 			public void setWorkspaceName(String workspaceName) {
 				this.workspaceName = workspaceName;
-			}
-
-			public Long getViewCount() {
-				return this.viewCount;
-			}
-
-			public void setViewCount(Long viewCount) {
-				this.viewCount = viewCount;
-			}
-
-			public String getLatestViewTime() {
-				return this.latestViewTime;
-			}
-
-			public void setLatestViewTime(String latestViewTime) {
-				this.latestViewTime = latestViewTime;
 			}
 		}
 	}

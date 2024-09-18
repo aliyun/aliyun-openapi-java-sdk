@@ -26,8 +26,6 @@ public class AddUserRequest extends RpcAcsRequest<AddUserResponse> {
 
 	private Boolean adminUser;
 
-	private Integer userType;
-
 	private String roleIds;
 
 	private String accountName;
@@ -35,6 +33,8 @@ public class AddUserRequest extends RpcAcsRequest<AddUserResponse> {
 	private String nickName;
 
 	private Boolean authAdminUser;
+
+	private Integer userType;
 	public AddUserRequest() {
 		super("quickbi-public", "2022-01-01", "AddUser", "2.2.0");
 		setMethod(MethodType.POST);
@@ -48,17 +48,6 @@ public class AddUserRequest extends RpcAcsRequest<AddUserResponse> {
 		this.adminUser = adminUser;
 		if(adminUser != null){
 			putQueryParameter("AdminUser", adminUser.toString());
-		}
-	}
-
-	public Integer getUserType() {
-		return this.userType;
-	}
-
-	public void setUserType(Integer userType) {
-		this.userType = userType;
-		if(userType != null){
-			putQueryParameter("UserType", userType.toString());
 		}
 	}
 
@@ -103,6 +92,17 @@ public class AddUserRequest extends RpcAcsRequest<AddUserResponse> {
 		this.authAdminUser = authAdminUser;
 		if(authAdminUser != null){
 			putQueryParameter("AuthAdminUser", authAdminUser.toString());
+		}
+	}
+
+	public Integer getUserType() {
+		return this.userType;
+	}
+
+	public void setUserType(Integer userType) {
+		this.userType = userType;
+		if(userType != null){
+			putQueryParameter("UserType", userType.toString());
 		}
 	}
 

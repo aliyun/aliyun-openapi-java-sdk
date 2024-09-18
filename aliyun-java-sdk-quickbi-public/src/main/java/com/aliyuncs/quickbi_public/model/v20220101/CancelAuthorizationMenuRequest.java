@@ -26,9 +26,9 @@ public class CancelAuthorizationMenuRequest extends RpcAcsRequest<CancelAuthoriz
 
 	private String dataPortalId;
 
-	private String userIds;
-
 	private String userGroupIds;
+
+	private String userIds;
 
 	private String menuIds;
 	public CancelAuthorizationMenuRequest() {
@@ -47,17 +47,6 @@ public class CancelAuthorizationMenuRequest extends RpcAcsRequest<CancelAuthoriz
 		}
 	}
 
-	public String getUserIds() {
-		return this.userIds;
-	}
-
-	public void setUserIds(String userIds) {
-		this.userIds = userIds;
-		if(userIds != null){
-			putQueryParameter("UserIds", userIds);
-		}
-	}
-
 	public String getUserGroupIds() {
 		return this.userGroupIds;
 	}
@@ -66,6 +55,17 @@ public class CancelAuthorizationMenuRequest extends RpcAcsRequest<CancelAuthoriz
 		this.userGroupIds = userGroupIds;
 		if(userGroupIds != null){
 			putQueryParameter("UserGroupIds", userGroupIds);
+		}
+	}
+
+	public String getUserIds() {
+		return this.userIds;
+	}
+
+	public void setUserIds(String userIds) {
+		this.userIds = userIds;
+		if(userIds != null){
+			putQueryParameter("UserIds", userIds);
 		}
 	}
 

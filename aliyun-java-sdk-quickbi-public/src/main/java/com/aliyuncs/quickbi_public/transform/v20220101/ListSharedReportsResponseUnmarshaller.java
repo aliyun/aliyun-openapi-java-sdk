@@ -31,25 +31,25 @@ public class ListSharedReportsResponseUnmarshaller {
 		listSharedReportsResponse.setSuccess(_ctx.booleanValue("ListSharedReportsResponse.Success"));
 
 		Result result = new Result();
-		result.setTotalNum(_ctx.integerValue("ListSharedReportsResponse.Result.TotalNum"));
-		result.setTotalPages(_ctx.integerValue("ListSharedReportsResponse.Result.TotalPages"));
 		result.setPageNum(_ctx.integerValue("ListSharedReportsResponse.Result.PageNum"));
 		result.setPageSize(_ctx.integerValue("ListSharedReportsResponse.Result.PageSize"));
+		result.setTotalNum(_ctx.integerValue("ListSharedReportsResponse.Result.TotalNum"));
+		result.setTotalPages(_ctx.integerValue("ListSharedReportsResponse.Result.TotalPages"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListSharedReportsResponse.Result.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setTreeId(_ctx.stringValue("ListSharedReportsResponse.Result.Data["+ i +"].TreeId"));
-			dataItem.setType(_ctx.stringValue("ListSharedReportsResponse.Result.Data["+ i +"].Type"));
-			dataItem.setName(_ctx.stringValue("ListSharedReportsResponse.Result.Data["+ i +"].Name"));
-			dataItem.setOwnerNum(_ctx.stringValue("ListSharedReportsResponse.Result.Data["+ i +"].OwnerNum"));
-			dataItem.setOwnerName(_ctx.stringValue("ListSharedReportsResponse.Result.Data["+ i +"].OwnerName"));
+			dataItem.setFavorite(_ctx.booleanValue("ListSharedReportsResponse.Result.Data["+ i +"].Favorite"));
 			dataItem.setGmtCreate(_ctx.stringValue("ListSharedReportsResponse.Result.Data["+ i +"].GmtCreate"));
 			dataItem.setGmtModified(_ctx.stringValue("ListSharedReportsResponse.Result.Data["+ i +"].GmtModified"));
-			dataItem.setPublishStatus(_ctx.integerValue("ListSharedReportsResponse.Result.Data["+ i +"].PublishStatus"));
-			dataItem.setFavorite(_ctx.booleanValue("ListSharedReportsResponse.Result.Data["+ i +"].Favorite"));
-			dataItem.setHasViewAuth(_ctx.booleanValue("ListSharedReportsResponse.Result.Data["+ i +"].HasViewAuth"));
 			dataItem.setHasEditAuth(_ctx.booleanValue("ListSharedReportsResponse.Result.Data["+ i +"].HasEditAuth"));
+			dataItem.setHasViewAuth(_ctx.booleanValue("ListSharedReportsResponse.Result.Data["+ i +"].HasViewAuth"));
+			dataItem.setName(_ctx.stringValue("ListSharedReportsResponse.Result.Data["+ i +"].Name"));
+			dataItem.setOwnerName(_ctx.stringValue("ListSharedReportsResponse.Result.Data["+ i +"].OwnerName"));
+			dataItem.setOwnerNum(_ctx.stringValue("ListSharedReportsResponse.Result.Data["+ i +"].OwnerNum"));
+			dataItem.setPublishStatus(_ctx.integerValue("ListSharedReportsResponse.Result.Data["+ i +"].PublishStatus"));
+			dataItem.setTreeId(_ctx.stringValue("ListSharedReportsResponse.Result.Data["+ i +"].TreeId"));
+			dataItem.setType(_ctx.stringValue("ListSharedReportsResponse.Result.Data["+ i +"].Type"));
 			dataItem.setWorkspaceId(_ctx.stringValue("ListSharedReportsResponse.Result.Data["+ i +"].WorkspaceId"));
 			dataItem.setWorkspaceName(_ctx.stringValue("ListSharedReportsResponse.Result.Data["+ i +"].WorkspaceName"));
 

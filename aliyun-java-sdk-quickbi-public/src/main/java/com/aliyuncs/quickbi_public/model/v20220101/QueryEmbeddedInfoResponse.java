@@ -24,19 +24,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryEmbeddedInfoResponse extends AcsResponse {
 
-	private Boolean success;
-
 	private String requestId;
 
+	private Boolean success;
+
 	private Result result;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,6 +36,14 @@ public class QueryEmbeddedInfoResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Result getResult() {
@@ -90,9 +90,9 @@ public class QueryEmbeddedInfoResponse extends AcsResponse {
 
 			private Integer dashboardOfflineQuery;
 
-			private Integer report;
-
 			private Integer page;
+
+			private Integer report;
 
 			public Integer getDashboardOfflineQuery() {
 				return this.dashboardOfflineQuery;
@@ -102,20 +102,20 @@ public class QueryEmbeddedInfoResponse extends AcsResponse {
 				this.dashboardOfflineQuery = dashboardOfflineQuery;
 			}
 
-			public Integer getReport() {
-				return this.report;
-			}
-
-			public void setReport(Integer report) {
-				this.report = report;
-			}
-
 			public Integer getPage() {
 				return this.page;
 			}
 
 			public void setPage(Integer page) {
 				this.page = page;
+			}
+
+			public Integer getReport() {
+				return this.report;
+			}
+
+			public void setReport(Integer report) {
+				this.report = report;
 			}
 		}
 	}

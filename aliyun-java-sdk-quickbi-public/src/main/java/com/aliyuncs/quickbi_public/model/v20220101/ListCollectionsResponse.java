@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListCollectionsResponse extends AcsResponse {
 
-	private Boolean success;
-
 	private String requestId;
 
+	private Boolean success;
+
 	private List<Data> result;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,6 +37,14 @@ public class ListCollectionsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<Data> getResult() {
@@ -57,35 +57,19 @@ public class ListCollectionsResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String workspaceId;
-
-		private String worksType;
-
 		private Integer favoriteId;
+
+		private String ownerId;
 
 		private String worksId;
 
 		private String worksName;
 
+		private String worksType;
+
+		private String workspaceId;
+
 		private String workspaceName;
-
-		private String ownerId;
-
-		public String getWorkspaceId() {
-			return this.workspaceId;
-		}
-
-		public void setWorkspaceId(String workspaceId) {
-			this.workspaceId = workspaceId;
-		}
-
-		public String getWorksType() {
-			return this.worksType;
-		}
-
-		public void setWorksType(String worksType) {
-			this.worksType = worksType;
-		}
 
 		public Integer getFavoriteId() {
 			return this.favoriteId;
@@ -93,6 +77,14 @@ public class ListCollectionsResponse extends AcsResponse {
 
 		public void setFavoriteId(Integer favoriteId) {
 			this.favoriteId = favoriteId;
+		}
+
+		public String getOwnerId() {
+			return this.ownerId;
+		}
+
+		public void setOwnerId(String ownerId) {
+			this.ownerId = ownerId;
 		}
 
 		public String getWorksId() {
@@ -111,20 +103,28 @@ public class ListCollectionsResponse extends AcsResponse {
 			this.worksName = worksName;
 		}
 
+		public String getWorksType() {
+			return this.worksType;
+		}
+
+		public void setWorksType(String worksType) {
+			this.worksType = worksType;
+		}
+
+		public String getWorkspaceId() {
+			return this.workspaceId;
+		}
+
+		public void setWorkspaceId(String workspaceId) {
+			this.workspaceId = workspaceId;
+		}
+
 		public String getWorkspaceName() {
 			return this.workspaceName;
 		}
 
 		public void setWorkspaceName(String workspaceName) {
 			this.workspaceName = workspaceName;
-		}
-
-		public String getOwnerId() {
-			return this.ownerId;
-		}
-
-		public void setOwnerId(String ownerId) {
-			this.ownerId = ownerId;
 		}
 	}
 

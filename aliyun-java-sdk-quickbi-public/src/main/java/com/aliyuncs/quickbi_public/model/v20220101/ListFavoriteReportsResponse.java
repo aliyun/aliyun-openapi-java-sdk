@@ -57,31 +57,15 @@ public class ListFavoriteReportsResponse extends AcsResponse {
 
 	public static class Result {
 
-		private Integer totalNum;
-
-		private Integer totalPages;
-
 		private Integer pageNum;
 
 		private Integer pageSize;
 
+		private Integer totalNum;
+
+		private Integer totalPages;
+
 		private List<DataItem> data;
-
-		public Integer getTotalNum() {
-			return this.totalNum;
-		}
-
-		public void setTotalNum(Integer totalNum) {
-			this.totalNum = totalNum;
-		}
-
-		public Integer getTotalPages() {
-			return this.totalPages;
-		}
-
-		public void setTotalPages(Integer totalPages) {
-			this.totalPages = totalPages;
-		}
 
 		public Integer getPageNum() {
 			return this.pageNum;
@@ -99,6 +83,22 @@ public class ListFavoriteReportsResponse extends AcsResponse {
 			this.pageSize = pageSize;
 		}
 
+		public Integer getTotalNum() {
+			return this.totalNum;
+		}
+
+		public void setTotalNum(Integer totalNum) {
+			this.totalNum = totalNum;
+		}
+
+		public Integer getTotalPages() {
+			return this.totalPages;
+		}
+
+		public void setTotalPages(Integer totalPages) {
+			this.totalPages = totalPages;
+		}
+
 		public List<DataItem> getData() {
 			return this.data;
 		}
@@ -109,72 +109,48 @@ public class ListFavoriteReportsResponse extends AcsResponse {
 
 		public static class DataItem {
 
-			private String treeId;
+			private Boolean favorite;
 
-			private String type;
-
-			private String name;
-
-			private String ownerNum;
-
-			private String ownerName;
+			private String favoriteDate;
 
 			private String gmtCreate;
 
 			private String gmtModified;
 
-			private Integer publishStatus;
-
-			private Boolean favorite;
+			private Boolean hasEditAuth;
 
 			private Boolean hasViewAuth;
 
-			private Boolean hasEditAuth;
+			private String name;
+
+			private String ownerName;
+
+			private String ownerNum;
+
+			private Integer publishStatus;
+
+			private String treeId;
+
+			private String type;
 
 			private String workspaceId;
 
 			private String workspaceName;
 
-			private String favoriteDate;
-
-			public String getTreeId() {
-				return this.treeId;
+			public Boolean getFavorite() {
+				return this.favorite;
 			}
 
-			public void setTreeId(String treeId) {
-				this.treeId = treeId;
+			public void setFavorite(Boolean favorite) {
+				this.favorite = favorite;
 			}
 
-			public String getType() {
-				return this.type;
+			public String getFavoriteDate() {
+				return this.favoriteDate;
 			}
 
-			public void setType(String type) {
-				this.type = type;
-			}
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
-
-			public String getOwnerNum() {
-				return this.ownerNum;
-			}
-
-			public void setOwnerNum(String ownerNum) {
-				this.ownerNum = ownerNum;
-			}
-
-			public String getOwnerName() {
-				return this.ownerName;
-			}
-
-			public void setOwnerName(String ownerName) {
-				this.ownerName = ownerName;
+			public void setFavoriteDate(String favoriteDate) {
+				this.favoriteDate = favoriteDate;
 			}
 
 			public String getGmtCreate() {
@@ -193,20 +169,12 @@ public class ListFavoriteReportsResponse extends AcsResponse {
 				this.gmtModified = gmtModified;
 			}
 
-			public Integer getPublishStatus() {
-				return this.publishStatus;
+			public Boolean getHasEditAuth() {
+				return this.hasEditAuth;
 			}
 
-			public void setPublishStatus(Integer publishStatus) {
-				this.publishStatus = publishStatus;
-			}
-
-			public Boolean getFavorite() {
-				return this.favorite;
-			}
-
-			public void setFavorite(Boolean favorite) {
-				this.favorite = favorite;
+			public void setHasEditAuth(Boolean hasEditAuth) {
+				this.hasEditAuth = hasEditAuth;
 			}
 
 			public Boolean getHasViewAuth() {
@@ -217,12 +185,52 @@ public class ListFavoriteReportsResponse extends AcsResponse {
 				this.hasViewAuth = hasViewAuth;
 			}
 
-			public Boolean getHasEditAuth() {
-				return this.hasEditAuth;
+			public String getName() {
+				return this.name;
 			}
 
-			public void setHasEditAuth(Boolean hasEditAuth) {
-				this.hasEditAuth = hasEditAuth;
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getOwnerName() {
+				return this.ownerName;
+			}
+
+			public void setOwnerName(String ownerName) {
+				this.ownerName = ownerName;
+			}
+
+			public String getOwnerNum() {
+				return this.ownerNum;
+			}
+
+			public void setOwnerNum(String ownerNum) {
+				this.ownerNum = ownerNum;
+			}
+
+			public Integer getPublishStatus() {
+				return this.publishStatus;
+			}
+
+			public void setPublishStatus(Integer publishStatus) {
+				this.publishStatus = publishStatus;
+			}
+
+			public String getTreeId() {
+				return this.treeId;
+			}
+
+			public void setTreeId(String treeId) {
+				this.treeId = treeId;
+			}
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
 			}
 
 			public String getWorkspaceId() {
@@ -239,14 +247,6 @@ public class ListFavoriteReportsResponse extends AcsResponse {
 
 			public void setWorkspaceName(String workspaceName) {
 				this.workspaceName = workspaceName;
-			}
-
-			public String getFavoriteDate() {
-				return this.favoriteDate;
-			}
-
-			public void setFavoriteDate(String favoriteDate) {
-				this.favoriteDate = favoriteDate;
 			}
 		}
 	}

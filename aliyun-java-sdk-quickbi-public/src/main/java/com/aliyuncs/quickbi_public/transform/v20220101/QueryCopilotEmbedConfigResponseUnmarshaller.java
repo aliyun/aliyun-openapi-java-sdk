@@ -33,29 +33,29 @@ public class QueryCopilotEmbedConfigResponseUnmarshaller {
 		List<ResultItem> result = new ArrayList<ResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryCopilotEmbedConfigResponse.Result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
+			resultItem.setAgentName(_ctx.stringValue("QueryCopilotEmbedConfigResponse.Result["+ i +"].AgentName"));
 			resultItem.setCopilotId(_ctx.stringValue("QueryCopilotEmbedConfigResponse.Result["+ i +"].CopilotId"));
-			resultItem.setShowName(_ctx.stringValue("QueryCopilotEmbedConfigResponse.Result["+ i +"].ShowName"));
 			resultItem.setCreateUser(_ctx.stringValue("QueryCopilotEmbedConfigResponse.Result["+ i +"].CreateUser"));
 			resultItem.setCreateUserName(_ctx.stringValue("QueryCopilotEmbedConfigResponse.Result["+ i +"].CreateUserName"));
 			resultItem.setModifyUser(_ctx.stringValue("QueryCopilotEmbedConfigResponse.Result["+ i +"].ModifyUser"));
 			resultItem.setModuleName(_ctx.stringValue("QueryCopilotEmbedConfigResponse.Result["+ i +"].ModuleName"));
-			resultItem.setAgentName(_ctx.stringValue("QueryCopilotEmbedConfigResponse.Result["+ i +"].AgentName"));
+			resultItem.setShowName(_ctx.stringValue("QueryCopilotEmbedConfigResponse.Result["+ i +"].ShowName"));
 
 			DataRange dataRange = new DataRange();
-			dataRange.setAllTheme(_ctx.booleanValue("QueryCopilotEmbedConfigResponse.Result["+ i +"].DataRange.AllTheme"));
 			dataRange.setAllCube(_ctx.booleanValue("QueryCopilotEmbedConfigResponse.Result["+ i +"].DataRange.AllCube"));
-
-			List<String> themes = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("QueryCopilotEmbedConfigResponse.Result["+ i +"].DataRange.Themes.Length"); j++) {
-				themes.add(_ctx.stringValue("QueryCopilotEmbedConfigResponse.Result["+ i +"].DataRange.Themes["+ j +"]"));
-			}
-			dataRange.setThemes(themes);
+			dataRange.setAllTheme(_ctx.booleanValue("QueryCopilotEmbedConfigResponse.Result["+ i +"].DataRange.AllTheme"));
 
 			List<String> llmCubes = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("QueryCopilotEmbedConfigResponse.Result["+ i +"].DataRange.LlmCubes.Length"); j++) {
 				llmCubes.add(_ctx.stringValue("QueryCopilotEmbedConfigResponse.Result["+ i +"].DataRange.LlmCubes["+ j +"]"));
 			}
 			dataRange.setLlmCubes(llmCubes);
+
+			List<String> themes = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("QueryCopilotEmbedConfigResponse.Result["+ i +"].DataRange.Themes.Length"); j++) {
+				themes.add(_ctx.stringValue("QueryCopilotEmbedConfigResponse.Result["+ i +"].DataRange.Themes["+ j +"]"));
+			}
+			dataRange.setThemes(themes);
 			resultItem.setDataRange(dataRange);
 
 			result.add(resultItem);

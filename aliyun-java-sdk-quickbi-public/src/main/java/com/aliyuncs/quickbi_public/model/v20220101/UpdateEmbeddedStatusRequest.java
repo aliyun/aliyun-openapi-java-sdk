@@ -24,23 +24,12 @@ import com.aliyuncs.http.MethodType;
 public class UpdateEmbeddedStatusRequest extends RpcAcsRequest<UpdateEmbeddedStatusResponse> {
 	   
 
-	private String worksId;
-
 	private Boolean thirdPartAuthFlag;
+
+	private String worksId;
 	public UpdateEmbeddedStatusRequest() {
 		super("quickbi-public", "2022-01-01", "UpdateEmbeddedStatus", "2.2.0");
 		setMethod(MethodType.POST);
-	}
-
-	public String getWorksId() {
-		return this.worksId;
-	}
-
-	public void setWorksId(String worksId) {
-		this.worksId = worksId;
-		if(worksId != null){
-			putQueryParameter("WorksId", worksId);
-		}
 	}
 
 	public Boolean getThirdPartAuthFlag() {
@@ -51,6 +40,17 @@ public class UpdateEmbeddedStatusRequest extends RpcAcsRequest<UpdateEmbeddedSta
 		this.thirdPartAuthFlag = thirdPartAuthFlag;
 		if(thirdPartAuthFlag != null){
 			putQueryParameter("ThirdPartAuthFlag", thirdPartAuthFlag.toString());
+		}
+	}
+
+	public String getWorksId() {
+		return this.worksId;
+	}
+
+	public void setWorksId(String worksId) {
+		this.worksId = worksId;
+		if(worksId != null){
+			putQueryParameter("WorksId", worksId);
 		}
 	}
 

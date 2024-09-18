@@ -32,8 +32,8 @@ public class BatchAddFeishuUsersResponseUnmarshaller {
 		batchAddFeishuUsersResponse.setSuccess(_ctx.booleanValue("BatchAddFeishuUsersResponse.Success"));
 
 		Result result = new Result();
-		result.setOkCount(_ctx.integerValue("BatchAddFeishuUsersResponse.Result.OkCount"));
 		result.setFailCount(_ctx.integerValue("BatchAddFeishuUsersResponse.Result.FailCount"));
+		result.setOkCount(_ctx.integerValue("BatchAddFeishuUsersResponse.Result.OkCount"));
 
 		List<FailResultsItem> failResults = new ArrayList<FailResultsItem>();
 		for (int i = 0; i < _ctx.lengthValue("BatchAddFeishuUsersResponse.Result.FailResults.Length"); i++) {
@@ -43,8 +43,8 @@ public class BatchAddFeishuUsersResponseUnmarshaller {
 			for (int j = 0; j < _ctx.lengthValue("BatchAddFeishuUsersResponse.Result.FailResults["+ i +"].FailInfos.Length"); j++) {
 				FailInfosItem failInfosItem = new FailInfosItem();
 				failInfosItem.setCode(_ctx.stringValue("BatchAddFeishuUsersResponse.Result.FailResults["+ i +"].FailInfos["+ j +"].Code"));
-				failInfosItem.setInput(_ctx.stringValue("BatchAddFeishuUsersResponse.Result.FailResults["+ i +"].FailInfos["+ j +"].Input"));
 				failInfosItem.setCodeDesc(_ctx.stringValue("BatchAddFeishuUsersResponse.Result.FailResults["+ i +"].FailInfos["+ j +"].CodeDesc"));
+				failInfosItem.setInput(_ctx.stringValue("BatchAddFeishuUsersResponse.Result.FailResults["+ i +"].FailInfos["+ j +"].Input"));
 
 				failInfos.add(failInfosItem);
 			}

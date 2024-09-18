@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class UpdateWorkspaceUsersRoleResponse extends AcsResponse {
 
-	private Boolean success;
-
 	private String requestId;
 
+	private Boolean success;
+
 	private Result result;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,6 +37,14 @@ public class UpdateWorkspaceUsersRoleResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Result getResult() {
@@ -61,9 +61,9 @@ public class UpdateWorkspaceUsersRoleResponse extends AcsResponse {
 
 		private Map<Object,Object> failureDetail;
 
-		private Integer total;
-
 		private Integer success;
+
+		private Integer total;
 
 		public Integer getFailure() {
 			return this.failure;
@@ -81,20 +81,20 @@ public class UpdateWorkspaceUsersRoleResponse extends AcsResponse {
 			this.failureDetail = failureDetail;
 		}
 
-		public Integer getTotal() {
-			return this.total;
-		}
-
-		public void setTotal(Integer total) {
-			this.total = total;
-		}
-
 		public Integer getSuccess() {
 			return this.success;
 		}
 
 		public void setSuccess(Integer success) {
 			this.success = success;
+		}
+
+		public Integer getTotal() {
+			return this.total;
+		}
+
+		public void setTotal(Integer total) {
+			this.total = total;
 		}
 	}
 

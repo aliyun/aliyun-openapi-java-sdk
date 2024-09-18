@@ -28,16 +28,16 @@ public class QueryTicketInfoResponseUnmarshaller {
 
 		Result result = new Result();
 		result.setAccessTicket(_ctx.stringValue("QueryTicketInfoResponse.Result.AccessTicket"));
-		result.setOrganizationId(_ctx.stringValue("QueryTicketInfoResponse.Result.OrganizationId"));
-		result.setUserId(_ctx.stringValue("QueryTicketInfoResponse.Result.UserId"));
-		result.setUsedTicketNum(_ctx.integerValue("QueryTicketInfoResponse.Result.UsedTicketNum"));
-		result.setMaxTicketNum(_ctx.integerValue("QueryTicketInfoResponse.Result.MaxTicketNum"));
-		result.setRegisterTime(_ctx.stringValue("QueryTicketInfoResponse.Result.RegisterTime"));
-		result.setInvalidTime(_ctx.stringValue("QueryTicketInfoResponse.Result.InvalidTime"));
-		result.setWorksId(_ctx.stringValue("QueryTicketInfoResponse.Result.WorksId"));
 		result.setCmptId(_ctx.stringValue("QueryTicketInfoResponse.Result.CmptId"));
 		result.setGlobalParam(_ctx.stringValue("QueryTicketInfoResponse.Result.GlobalParam"));
+		result.setInvalidTime(_ctx.stringValue("QueryTicketInfoResponse.Result.InvalidTime"));
+		result.setMaxTicketNum(_ctx.integerValue("QueryTicketInfoResponse.Result.MaxTicketNum"));
+		result.setOrganizationId(_ctx.stringValue("QueryTicketInfoResponse.Result.OrganizationId"));
+		result.setRegisterTime(_ctx.stringValue("QueryTicketInfoResponse.Result.RegisterTime"));
+		result.setUsedTicketNum(_ctx.integerValue("QueryTicketInfoResponse.Result.UsedTicketNum"));
+		result.setUserId(_ctx.stringValue("QueryTicketInfoResponse.Result.UserId"));
 		result.setWatermarkParam(_ctx.stringValue("QueryTicketInfoResponse.Result.WatermarkParam"));
+		result.setWorksId(_ctx.stringValue("QueryTicketInfoResponse.Result.WorksId"));
 		queryTicketInfoResponse.setResult(result);
 	 
 	 	return queryTicketInfoResponse;

@@ -57,9 +57,9 @@ public class QueryCopilotEmbedConfigResponse extends AcsResponse {
 
 	public static class ResultItem {
 
-		private String copilotId;
+		private String agentName;
 
-		private String showName;
+		private String copilotId;
 
 		private String createUser;
 
@@ -69,9 +69,17 @@ public class QueryCopilotEmbedConfigResponse extends AcsResponse {
 
 		private String moduleName;
 
-		private String agentName;
+		private String showName;
 
 		private DataRange dataRange;
+
+		public String getAgentName() {
+			return this.agentName;
+		}
+
+		public void setAgentName(String agentName) {
+			this.agentName = agentName;
+		}
 
 		public String getCopilotId() {
 			return this.copilotId;
@@ -79,14 +87,6 @@ public class QueryCopilotEmbedConfigResponse extends AcsResponse {
 
 		public void setCopilotId(String copilotId) {
 			this.copilotId = copilotId;
-		}
-
-		public String getShowName() {
-			return this.showName;
-		}
-
-		public void setShowName(String showName) {
-			this.showName = showName;
 		}
 
 		public String getCreateUser() {
@@ -121,12 +121,12 @@ public class QueryCopilotEmbedConfigResponse extends AcsResponse {
 			this.moduleName = moduleName;
 		}
 
-		public String getAgentName() {
-			return this.agentName;
+		public String getShowName() {
+			return this.showName;
 		}
 
-		public void setAgentName(String agentName) {
-			this.agentName = agentName;
+		public void setShowName(String showName) {
+			this.showName = showName;
 		}
 
 		public DataRange getDataRange() {
@@ -139,21 +139,13 @@ public class QueryCopilotEmbedConfigResponse extends AcsResponse {
 
 		public static class DataRange {
 
-			private Boolean allTheme;
-
 			private Boolean allCube;
 
-			private List<String> themes;
+			private Boolean allTheme;
 
 			private List<String> llmCubes;
 
-			public Boolean getAllTheme() {
-				return this.allTheme;
-			}
-
-			public void setAllTheme(Boolean allTheme) {
-				this.allTheme = allTheme;
-			}
+			private List<String> themes;
 
 			public Boolean getAllCube() {
 				return this.allCube;
@@ -163,12 +155,12 @@ public class QueryCopilotEmbedConfigResponse extends AcsResponse {
 				this.allCube = allCube;
 			}
 
-			public List<String> getThemes() {
-				return this.themes;
+			public Boolean getAllTheme() {
+				return this.allTheme;
 			}
 
-			public void setThemes(List<String> themes) {
-				this.themes = themes;
+			public void setAllTheme(Boolean allTheme) {
+				this.allTheme = allTheme;
 			}
 
 			public List<String> getLlmCubes() {
@@ -177,6 +169,14 @@ public class QueryCopilotEmbedConfigResponse extends AcsResponse {
 
 			public void setLlmCubes(List<String> llmCubes) {
 				this.llmCubes = llmCubes;
+			}
+
+			public List<String> getThemes() {
+				return this.themes;
+			}
+
+			public void setThemes(List<String> themes) {
+				this.themes = themes;
 			}
 		}
 	}

@@ -31,16 +31,16 @@ public class ListOrganizationRoleUsersResponseUnmarshaller {
 		listOrganizationRoleUsersResponse.setSuccess(_ctx.booleanValue("ListOrganizationRoleUsersResponse.Success"));
 
 		Result result = new Result();
-		result.setTotalNum(_ctx.integerValue("ListOrganizationRoleUsersResponse.Result.TotalNum"));
-		result.setTotalPages(_ctx.integerValue("ListOrganizationRoleUsersResponse.Result.TotalPages"));
 		result.setPageNum(_ctx.integerValue("ListOrganizationRoleUsersResponse.Result.PageNum"));
 		result.setPageSize(_ctx.integerValue("ListOrganizationRoleUsersResponse.Result.PageSize"));
+		result.setTotalNum(_ctx.integerValue("ListOrganizationRoleUsersResponse.Result.TotalNum"));
+		result.setTotalPages(_ctx.integerValue("ListOrganizationRoleUsersResponse.Result.TotalPages"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListOrganizationRoleUsersResponse.Result.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setUserId(_ctx.stringValue("ListOrganizationRoleUsersResponse.Result.Data["+ i +"].UserId"));
 			dataItem.setNickName(_ctx.stringValue("ListOrganizationRoleUsersResponse.Result.Data["+ i +"].NickName"));
+			dataItem.setUserId(_ctx.stringValue("ListOrganizationRoleUsersResponse.Result.Data["+ i +"].UserId"));
 
 			data.add(dataItem);
 		}

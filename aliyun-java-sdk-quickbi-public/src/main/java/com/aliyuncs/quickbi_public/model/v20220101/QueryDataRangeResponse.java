@@ -79,19 +79,11 @@ public class QueryDataRangeResponse extends AcsResponse {
 
 		public static class ApiCopilotLlmCubeModelsItem {
 
-			private String llmCubeId;
-
 			private String alias;
 
 			private String createUser;
 
-			public String getLlmCubeId() {
-				return this.llmCubeId;
-			}
-
-			public void setLlmCubeId(String llmCubeId) {
-				this.llmCubeId = llmCubeId;
-			}
+			private String llmCubeId;
 
 			public String getAlias() {
 				return this.alias;
@@ -108,17 +100,33 @@ public class QueryDataRangeResponse extends AcsResponse {
 			public void setCreateUser(String createUser) {
 				this.createUser = createUser;
 			}
+
+			public String getLlmCubeId() {
+				return this.llmCubeId;
+			}
+
+			public void setLlmCubeId(String llmCubeId) {
+				this.llmCubeId = llmCubeId;
+			}
 		}
 
 		public static class ApiCopilotThemeModelsItem {
+
+			private String createUser;
 
 			private String themeId;
 
 			private String themeName;
 
-			private String createUser;
-
 			private List<ApiCopilotLlmCubeModelsItem2> apiCopilotLlmCubeModels1;
+
+			public String getCreateUser() {
+				return this.createUser;
+			}
+
+			public void setCreateUser(String createUser) {
+				this.createUser = createUser;
+			}
 
 			public String getThemeId() {
 				return this.themeId;
@@ -136,14 +144,6 @@ public class QueryDataRangeResponse extends AcsResponse {
 				this.themeName = themeName;
 			}
 
-			public String getCreateUser() {
-				return this.createUser;
-			}
-
-			public void setCreateUser(String createUser) {
-				this.createUser = createUser;
-			}
-
 			public List<ApiCopilotLlmCubeModelsItem2> getApiCopilotLlmCubeModels1() {
 				return this.apiCopilotLlmCubeModels1;
 			}
@@ -154,19 +154,11 @@ public class QueryDataRangeResponse extends AcsResponse {
 
 			public static class ApiCopilotLlmCubeModelsItem2 {
 
-				private String llmCubeId;
-
 				private String alias;
 
 				private String createUser;
 
-				public String getLlmCubeId() {
-					return this.llmCubeId;
-				}
-
-				public void setLlmCubeId(String llmCubeId) {
-					this.llmCubeId = llmCubeId;
-				}
+				private String llmCubeId;
 
 				public String getAlias() {
 					return this.alias;
@@ -182,6 +174,14 @@ public class QueryDataRangeResponse extends AcsResponse {
 
 				public void setCreateUser(String createUser) {
 					this.createUser = createUser;
+				}
+
+				public String getLlmCubeId() {
+					return this.llmCubeId;
+				}
+
+				public void setLlmCubeId(String llmCubeId) {
+					this.llmCubeId = llmCubeId;
 				}
 			}
 		}

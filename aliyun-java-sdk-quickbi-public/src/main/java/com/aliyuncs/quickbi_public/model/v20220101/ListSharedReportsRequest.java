@@ -24,26 +24,26 @@ import com.aliyuncs.http.MethodType;
 public class ListSharedReportsRequest extends RpcAcsRequest<ListSharedReportsResponse> {
 	   
 
-	private String treeType;
+	private String userId;
 
 	private Integer pageSize;
 
 	private String keyword;
 
-	private String userId;
+	private String treeType;
 	public ListSharedReportsRequest() {
 		super("quickbi-public", "2022-01-01", "ListSharedReports", "2.2.0");
 		setMethod(MethodType.POST);
 	}
 
-	public String getTreeType() {
-		return this.treeType;
+	public String getUserId() {
+		return this.userId;
 	}
 
-	public void setTreeType(String treeType) {
-		this.treeType = treeType;
-		if(treeType != null){
-			putQueryParameter("TreeType", treeType);
+	public void setUserId(String userId) {
+		this.userId = userId;
+		if(userId != null){
+			putQueryParameter("UserId", userId);
 		}
 	}
 
@@ -69,14 +69,14 @@ public class ListSharedReportsRequest extends RpcAcsRequest<ListSharedReportsRes
 		}
 	}
 
-	public String getUserId() {
-		return this.userId;
+	public String getTreeType() {
+		return this.treeType;
 	}
 
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putQueryParameter("UserId", userId);
+	public void setTreeType(String treeType) {
+		this.treeType = treeType;
+		if(treeType != null){
+			putQueryParameter("TreeType", treeType);
 		}
 	}
 

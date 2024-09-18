@@ -26,11 +26,11 @@ public class ModifyCopilotEmbedConfigRequest extends RpcAcsRequest<ModifyCopilot
 
 	private String copilotId;
 
-	private String agentName;
-
 	private String dataRange;
 
 	private String moduleName;
+
+	private String agentName;
 	public ModifyCopilotEmbedConfigRequest() {
 		super("quickbi-public", "2022-01-01", "ModifyCopilotEmbedConfig", "2.2.0");
 		setMethod(MethodType.POST);
@@ -44,17 +44,6 @@ public class ModifyCopilotEmbedConfigRequest extends RpcAcsRequest<ModifyCopilot
 		this.copilotId = copilotId;
 		if(copilotId != null){
 			putQueryParameter("CopilotId", copilotId);
-		}
-	}
-
-	public String getAgentName() {
-		return this.agentName;
-	}
-
-	public void setAgentName(String agentName) {
-		this.agentName = agentName;
-		if(agentName != null){
-			putQueryParameter("AgentName", agentName);
 		}
 	}
 
@@ -77,6 +66,17 @@ public class ModifyCopilotEmbedConfigRequest extends RpcAcsRequest<ModifyCopilot
 		this.moduleName = moduleName;
 		if(moduleName != null){
 			putQueryParameter("ModuleName", moduleName);
+		}
+	}
+
+	public String getAgentName() {
+		return this.agentName;
+	}
+
+	public void setAgentName(String agentName) {
+		this.agentName = agentName;
+		if(agentName != null){
+			putQueryParameter("AgentName", agentName);
 		}
 	}
 

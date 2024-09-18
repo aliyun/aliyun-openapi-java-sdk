@@ -26,9 +26,9 @@ public class ListOrganizationRoleUsersRequest extends RpcAcsRequest<ListOrganiza
 
 	private Long roleId;
 
-	private Integer pageSize;
-
 	private Integer pageNum;
+
+	private Integer pageSize;
 
 	private String keyword;
 	public ListOrganizationRoleUsersRequest() {
@@ -47,17 +47,6 @@ public class ListOrganizationRoleUsersRequest extends RpcAcsRequest<ListOrganiza
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
 	public Integer getPageNum() {
 		return this.pageNum;
 	}
@@ -66,6 +55,17 @@ public class ListOrganizationRoleUsersRequest extends RpcAcsRequest<ListOrganiza
 		this.pageNum = pageNum;
 		if(pageNum != null){
 			putQueryParameter("PageNum", pageNum.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

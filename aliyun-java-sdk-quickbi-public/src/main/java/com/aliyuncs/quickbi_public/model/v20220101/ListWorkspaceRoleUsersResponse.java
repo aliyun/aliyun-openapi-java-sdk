@@ -57,31 +57,15 @@ public class ListWorkspaceRoleUsersResponse extends AcsResponse {
 
 	public static class Result {
 
-		private Integer totalNum;
-
-		private Integer totalPages;
-
 		private Integer pageNum;
 
 		private Integer pageSize;
 
+		private Integer totalNum;
+
+		private Integer totalPages;
+
 		private List<DataItem> data;
-
-		public Integer getTotalNum() {
-			return this.totalNum;
-		}
-
-		public void setTotalNum(Integer totalNum) {
-			this.totalNum = totalNum;
-		}
-
-		public Integer getTotalPages() {
-			return this.totalPages;
-		}
-
-		public void setTotalPages(Integer totalPages) {
-			this.totalPages = totalPages;
-		}
 
 		public Integer getPageNum() {
 			return this.pageNum;
@@ -99,6 +83,22 @@ public class ListWorkspaceRoleUsersResponse extends AcsResponse {
 			this.pageSize = pageSize;
 		}
 
+		public Integer getTotalNum() {
+			return this.totalNum;
+		}
+
+		public void setTotalNum(Integer totalNum) {
+			this.totalNum = totalNum;
+		}
+
+		public Integer getTotalPages() {
+			return this.totalPages;
+		}
+
+		public void setTotalPages(Integer totalPages) {
+			this.totalPages = totalPages;
+		}
+
 		public List<DataItem> getData() {
 			return this.data;
 		}
@@ -109,21 +109,13 @@ public class ListWorkspaceRoleUsersResponse extends AcsResponse {
 
 		public static class DataItem {
 
-			private String userId;
-
 			private String nickName;
 
-			private String workspaceName;
+			private String userId;
 
 			private String workspaceId;
 
-			public String getUserId() {
-				return this.userId;
-			}
-
-			public void setUserId(String userId) {
-				this.userId = userId;
-			}
+			private String workspaceName;
 
 			public String getNickName() {
 				return this.nickName;
@@ -133,12 +125,12 @@ public class ListWorkspaceRoleUsersResponse extends AcsResponse {
 				this.nickName = nickName;
 			}
 
-			public String getWorkspaceName() {
-				return this.workspaceName;
+			public String getUserId() {
+				return this.userId;
 			}
 
-			public void setWorkspaceName(String workspaceName) {
-				this.workspaceName = workspaceName;
+			public void setUserId(String userId) {
+				this.userId = userId;
 			}
 
 			public String getWorkspaceId() {
@@ -147,6 +139,14 @@ public class ListWorkspaceRoleUsersResponse extends AcsResponse {
 
 			public void setWorkspaceId(String workspaceId) {
 				this.workspaceId = workspaceId;
+			}
+
+			public String getWorkspaceName() {
+				return this.workspaceName;
+			}
+
+			public void setWorkspaceName(String workspaceName) {
+				this.workspaceName = workspaceName;
 			}
 		}
 	}

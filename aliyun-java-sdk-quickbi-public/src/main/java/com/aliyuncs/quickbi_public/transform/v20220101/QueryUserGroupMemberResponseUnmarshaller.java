@@ -32,11 +32,11 @@ public class QueryUserGroupMemberResponseUnmarshaller {
 		List<Data> result = new ArrayList<Data>();
 		for (int i = 0; i < _ctx.lengthValue("QueryUserGroupMemberResponse.Result.Length"); i++) {
 			Data data = new Data();
-			data.setParentUserGroupName(_ctx.stringValue("QueryUserGroupMemberResponse.Result["+ i +"].ParentUserGroupName"));
+			data.setId(_ctx.stringValue("QueryUserGroupMemberResponse.Result["+ i +"].Id"));
 			data.setIsUserGroup(_ctx.booleanValue("QueryUserGroupMemberResponse.Result["+ i +"].IsUserGroup"));
 			data.setName(_ctx.stringValue("QueryUserGroupMemberResponse.Result["+ i +"].Name"));
 			data.setParentUserGroupId(_ctx.stringValue("QueryUserGroupMemberResponse.Result["+ i +"].ParentUserGroupId"));
-			data.setId(_ctx.stringValue("QueryUserGroupMemberResponse.Result["+ i +"].Id"));
+			data.setParentUserGroupName(_ctx.stringValue("QueryUserGroupMemberResponse.Result["+ i +"].ParentUserGroupName"));
 
 			result.add(data);
 		}

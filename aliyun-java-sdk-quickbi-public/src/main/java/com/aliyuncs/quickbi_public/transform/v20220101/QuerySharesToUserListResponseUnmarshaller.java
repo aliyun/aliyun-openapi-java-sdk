@@ -33,26 +33,26 @@ public class QuerySharesToUserListResponseUnmarshaller {
 		List<Data> result = new ArrayList<Data>();
 		for (int i = 0; i < _ctx.lengthValue("QuerySharesToUserListResponse.Result.Length"); i++) {
 			Data data = new Data();
+			data.setCreateTime(_ctx.stringValue("QuerySharesToUserListResponse.Result["+ i +"].CreateTime"));
+			data.setDescription(_ctx.stringValue("QuerySharesToUserListResponse.Result["+ i +"].Description"));
+			data.setModifyName(_ctx.stringValue("QuerySharesToUserListResponse.Result["+ i +"].ModifyName"));
+			data.setModifyTime(_ctx.stringValue("QuerySharesToUserListResponse.Result["+ i +"].ModifyTime"));
+			data.setOwnerId(_ctx.stringValue("QuerySharesToUserListResponse.Result["+ i +"].OwnerId"));
+			data.setOwnerName(_ctx.stringValue("QuerySharesToUserListResponse.Result["+ i +"].OwnerName"));
+			data.setSecurityLevel(_ctx.stringValue("QuerySharesToUserListResponse.Result["+ i +"].SecurityLevel"));
 			data.setStatus(_ctx.integerValue("QuerySharesToUserListResponse.Result["+ i +"].Status"));
 			data.setThirdPartAuthFlag(_ctx.integerValue("QuerySharesToUserListResponse.Result["+ i +"].ThirdPartAuthFlag"));
-			data.setWorksId(_ctx.stringValue("QuerySharesToUserListResponse.Result["+ i +"].WorksId"));
-			data.setCreateTime(_ctx.stringValue("QuerySharesToUserListResponse.Result["+ i +"].CreateTime"));
-			data.setWorkType(_ctx.stringValue("QuerySharesToUserListResponse.Result["+ i +"].WorkType"));
-			data.setOwnerName(_ctx.stringValue("QuerySharesToUserListResponse.Result["+ i +"].OwnerName"));
-			data.setWorkspaceName(_ctx.stringValue("QuerySharesToUserListResponse.Result["+ i +"].WorkspaceName"));
-			data.setOwnerId(_ctx.stringValue("QuerySharesToUserListResponse.Result["+ i +"].OwnerId"));
-			data.setModifyName(_ctx.stringValue("QuerySharesToUserListResponse.Result["+ i +"].ModifyName"));
-			data.setWorkspaceId(_ctx.stringValue("QuerySharesToUserListResponse.Result["+ i +"].WorkspaceId"));
-			data.setSecurityLevel(_ctx.stringValue("QuerySharesToUserListResponse.Result["+ i +"].SecurityLevel"));
-			data.setDescription(_ctx.stringValue("QuerySharesToUserListResponse.Result["+ i +"].Description"));
 			data.setWorkName(_ctx.stringValue("QuerySharesToUserListResponse.Result["+ i +"].WorkName"));
-			data.setModifyTime(_ctx.stringValue("QuerySharesToUserListResponse.Result["+ i +"].ModifyTime"));
+			data.setWorkType(_ctx.stringValue("QuerySharesToUserListResponse.Result["+ i +"].WorkType"));
+			data.setWorksId(_ctx.stringValue("QuerySharesToUserListResponse.Result["+ i +"].WorksId"));
+			data.setWorkspaceId(_ctx.stringValue("QuerySharesToUserListResponse.Result["+ i +"].WorkspaceId"));
+			data.setWorkspaceName(_ctx.stringValue("QuerySharesToUserListResponse.Result["+ i +"].WorkspaceName"));
 
 			Directory directory = new Directory();
+			directory.setId(_ctx.stringValue("QuerySharesToUserListResponse.Result["+ i +"].Directory.Id"));
+			directory.setName(_ctx.stringValue("QuerySharesToUserListResponse.Result["+ i +"].Directory.Name"));
 			directory.setPathId(_ctx.stringValue("QuerySharesToUserListResponse.Result["+ i +"].Directory.PathId"));
 			directory.setPathName(_ctx.stringValue("QuerySharesToUserListResponse.Result["+ i +"].Directory.PathName"));
-			directory.setName(_ctx.stringValue("QuerySharesToUserListResponse.Result["+ i +"].Directory.Name"));
-			directory.setId(_ctx.stringValue("QuerySharesToUserListResponse.Result["+ i +"].Directory.Id"));
 			data.setDirectory(directory);
 
 			result.add(data);

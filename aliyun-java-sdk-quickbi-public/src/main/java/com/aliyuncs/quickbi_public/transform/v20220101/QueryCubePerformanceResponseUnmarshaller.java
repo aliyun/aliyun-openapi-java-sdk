@@ -32,27 +32,27 @@ public class QueryCubePerformanceResponseUnmarshaller {
 		List<Data> result = new ArrayList<Data>();
 		for (int i = 0; i < _ctx.lengthValue("QueryCubePerformanceResponse.Result.Length"); i++) {
 			Data data = new Data();
-			data.setCubeId(_ctx.stringValue("QueryCubePerformanceResponse.Result["+ i +"].CubeId"));
-			data.setCubeName(_ctx.stringValue("QueryCubePerformanceResponse.Result["+ i +"].CubeName"));
-			data.setQueryTimeoutCount(_ctx.integerValue("QueryCubePerformanceResponse.Result["+ i +"].QueryTimeoutCount"));
-			data.setRepeatSqlQueryPercent(_ctx.stringValue("QueryCubePerformanceResponse.Result["+ i +"].RepeatSqlQueryPercent"));
-			data.setWorkspaceName(_ctx.stringValue("QueryCubePerformanceResponse.Result["+ i +"].WorkspaceName"));
-			data.setWorkspaceId(_ctx.stringValue("QueryCubePerformanceResponse.Result["+ i +"].WorkspaceId"));
-			data.setRepeatQueryPercentNum(_ctx.doubleValue("QueryCubePerformanceResponse.Result["+ i +"].RepeatQueryPercentNum"));
-			data.setRepeatQueryPercent(_ctx.stringValue("QueryCubePerformanceResponse.Result["+ i +"].RepeatQueryPercent"));
-			data.setQuickIndexCostTimeAvg(_ctx.doubleValue("QueryCubePerformanceResponse.Result["+ i +"].QuickIndexCostTimeAvg"));
-			data.setQuickIndexQueryCount(_ctx.integerValue("QueryCubePerformanceResponse.Result["+ i +"].QuickIndexQueryCount"));
 			data.setCacheCostTimeAvg(_ctx.doubleValue("QueryCubePerformanceResponse.Result["+ i +"].CacheCostTimeAvg"));
 			data.setCacheQueryCount(_ctx.integerValue("QueryCubePerformanceResponse.Result["+ i +"].CacheQueryCount"));
-			data.setRepeatSqlQueryCount(_ctx.integerValue("QueryCubePerformanceResponse.Result["+ i +"].RepeatSqlQueryCount"));
 			data.setCostTimeAvg(_ctx.doubleValue("QueryCubePerformanceResponse.Result["+ i +"].CostTimeAvg"));
-			data.setQueryCountAvg(_ctx.doubleValue("QueryCubePerformanceResponse.Result["+ i +"].QueryCountAvg"));
+			data.setCubeId(_ctx.stringValue("QueryCubePerformanceResponse.Result["+ i +"].CubeId"));
+			data.setCubeName(_ctx.stringValue("QueryCubePerformanceResponse.Result["+ i +"].CubeName"));
 			data.setQueryCount(_ctx.integerValue("QueryCubePerformanceResponse.Result["+ i +"].QueryCount"));
-			data.setQueryTimeoutCountPercent(_ctx.doubleValue("QueryCubePerformanceResponse.Result["+ i +"].QueryTimeoutCountPercent"));
-			data.setQueryOverTenSecPercentNum(_ctx.doubleValue("QueryCubePerformanceResponse.Result["+ i +"].QueryOverTenSecPercentNum"));
+			data.setQueryCountAvg(_ctx.doubleValue("QueryCubePerformanceResponse.Result["+ i +"].QueryCountAvg"));
 			data.setQueryOverFivePercentNum(_ctx.doubleValue("QueryCubePerformanceResponse.Result["+ i +"].QueryOverFivePercentNum"));
-			data.setQueryOverTenSecPercent(_ctx.stringValue("QueryCubePerformanceResponse.Result["+ i +"].QueryOverTenSecPercent"));
 			data.setQueryOverFiveSecPercent(_ctx.stringValue("QueryCubePerformanceResponse.Result["+ i +"].QueryOverFiveSecPercent"));
+			data.setQueryOverTenSecPercent(_ctx.stringValue("QueryCubePerformanceResponse.Result["+ i +"].QueryOverTenSecPercent"));
+			data.setQueryOverTenSecPercentNum(_ctx.doubleValue("QueryCubePerformanceResponse.Result["+ i +"].QueryOverTenSecPercentNum"));
+			data.setQueryTimeoutCount(_ctx.integerValue("QueryCubePerformanceResponse.Result["+ i +"].QueryTimeoutCount"));
+			data.setQueryTimeoutCountPercent(_ctx.doubleValue("QueryCubePerformanceResponse.Result["+ i +"].QueryTimeoutCountPercent"));
+			data.setQuickIndexCostTimeAvg(_ctx.doubleValue("QueryCubePerformanceResponse.Result["+ i +"].QuickIndexCostTimeAvg"));
+			data.setQuickIndexQueryCount(_ctx.integerValue("QueryCubePerformanceResponse.Result["+ i +"].QuickIndexQueryCount"));
+			data.setRepeatQueryPercent(_ctx.stringValue("QueryCubePerformanceResponse.Result["+ i +"].RepeatQueryPercent"));
+			data.setRepeatQueryPercentNum(_ctx.doubleValue("QueryCubePerformanceResponse.Result["+ i +"].RepeatQueryPercentNum"));
+			data.setRepeatSqlQueryCount(_ctx.integerValue("QueryCubePerformanceResponse.Result["+ i +"].RepeatSqlQueryCount"));
+			data.setRepeatSqlQueryPercent(_ctx.stringValue("QueryCubePerformanceResponse.Result["+ i +"].RepeatSqlQueryPercent"));
+			data.setWorkspaceId(_ctx.stringValue("QueryCubePerformanceResponse.Result["+ i +"].WorkspaceId"));
+			data.setWorkspaceName(_ctx.stringValue("QueryCubePerformanceResponse.Result["+ i +"].WorkspaceName"));
 
 			result.add(data);
 		}

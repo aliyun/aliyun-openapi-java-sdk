@@ -24,19 +24,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryWorksResponse extends AcsResponse {
 
-	private Boolean success;
-
 	private String requestId;
 
+	private Boolean success;
+
 	private Result result;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,6 +36,14 @@ public class QueryWorksResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Result getResult() {
@@ -56,87 +56,39 @@ public class QueryWorksResponse extends AcsResponse {
 
 	public static class Result {
 
-		private String worksId;
-
-		private String workType;
-
-		private String workName;
-
-		private String workspaceId;
-
-		private String workspaceName;
-
-		private String securityLevel;
-
 		private Integer auth3rdFlag;
 
 		private String description;
-
-		private String ownerId;
-
-		private String ownerName;
-
-		private String modifyName;
 
 		private String gmtCreate;
 
 		private String gmtModify;
 
-		private Integer status;
+		private String modifyName;
+
+		private String ownerId;
+
+		private String ownerName;
 
 		private Boolean publicFlag;
 
 		private Long publicInvalidTime;
 
+		private String securityLevel;
+
+		private Integer status;
+
+		private String workName;
+
+		private String workType;
+
+		private String worksId;
+
+		private String workspaceId;
+
+		private String workspaceName;
+
 		private Directory directory;
-
-		public String getWorksId() {
-			return this.worksId;
-		}
-
-		public void setWorksId(String worksId) {
-			this.worksId = worksId;
-		}
-
-		public String getWorkType() {
-			return this.workType;
-		}
-
-		public void setWorkType(String workType) {
-			this.workType = workType;
-		}
-
-		public String getWorkName() {
-			return this.workName;
-		}
-
-		public void setWorkName(String workName) {
-			this.workName = workName;
-		}
-
-		public String getWorkspaceId() {
-			return this.workspaceId;
-		}
-
-		public void setWorkspaceId(String workspaceId) {
-			this.workspaceId = workspaceId;
-		}
-
-		public String getWorkspaceName() {
-			return this.workspaceName;
-		}
-
-		public void setWorkspaceName(String workspaceName) {
-			this.workspaceName = workspaceName;
-		}
-
-		public String getSecurityLevel() {
-			return this.securityLevel;
-		}
-
-		public void setSecurityLevel(String securityLevel) {
-			this.securityLevel = securityLevel;
-		}
 
 		public Integer getAuth3rdFlag() {
 			return this.auth3rdFlag;
@@ -152,30 +104,6 @@ public class QueryWorksResponse extends AcsResponse {
 
 		public void setDescription(String description) {
 			this.description = description;
-		}
-
-		public String getOwnerId() {
-			return this.ownerId;
-		}
-
-		public void setOwnerId(String ownerId) {
-			this.ownerId = ownerId;
-		}
-
-		public String getOwnerName() {
-			return this.ownerName;
-		}
-
-		public void setOwnerName(String ownerName) {
-			this.ownerName = ownerName;
-		}
-
-		public String getModifyName() {
-			return this.modifyName;
-		}
-
-		public void setModifyName(String modifyName) {
-			this.modifyName = modifyName;
 		}
 
 		public String getGmtCreate() {
@@ -194,12 +122,28 @@ public class QueryWorksResponse extends AcsResponse {
 			this.gmtModify = gmtModify;
 		}
 
-		public Integer getStatus() {
-			return this.status;
+		public String getModifyName() {
+			return this.modifyName;
 		}
 
-		public void setStatus(Integer status) {
-			this.status = status;
+		public void setModifyName(String modifyName) {
+			this.modifyName = modifyName;
+		}
+
+		public String getOwnerId() {
+			return this.ownerId;
+		}
+
+		public void setOwnerId(String ownerId) {
+			this.ownerId = ownerId;
+		}
+
+		public String getOwnerName() {
+			return this.ownerName;
+		}
+
+		public void setOwnerName(String ownerName) {
+			this.ownerName = ownerName;
 		}
 
 		public Boolean getPublicFlag() {
@@ -216,6 +160,62 @@ public class QueryWorksResponse extends AcsResponse {
 
 		public void setPublicInvalidTime(Long publicInvalidTime) {
 			this.publicInvalidTime = publicInvalidTime;
+		}
+
+		public String getSecurityLevel() {
+			return this.securityLevel;
+		}
+
+		public void setSecurityLevel(String securityLevel) {
+			this.securityLevel = securityLevel;
+		}
+
+		public Integer getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(Integer status) {
+			this.status = status;
+		}
+
+		public String getWorkName() {
+			return this.workName;
+		}
+
+		public void setWorkName(String workName) {
+			this.workName = workName;
+		}
+
+		public String getWorkType() {
+			return this.workType;
+		}
+
+		public void setWorkType(String workType) {
+			this.workType = workType;
+		}
+
+		public String getWorksId() {
+			return this.worksId;
+		}
+
+		public void setWorksId(String worksId) {
+			this.worksId = worksId;
+		}
+
+		public String getWorkspaceId() {
+			return this.workspaceId;
+		}
+
+		public void setWorkspaceId(String workspaceId) {
+			this.workspaceId = workspaceId;
+		}
+
+		public String getWorkspaceName() {
+			return this.workspaceName;
+		}
+
+		public void setWorkspaceName(String workspaceName) {
+			this.workspaceName = workspaceName;
 		}
 
 		public Directory getDirectory() {

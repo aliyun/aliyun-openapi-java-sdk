@@ -24,16 +24,27 @@ import com.aliyuncs.http.MethodType;
 public class QueryWorkspaceUserListRequest extends RpcAcsRequest<QueryWorkspaceUserListResponse> {
 	   
 
+	private Integer pageNum;
+
 	private Integer pageSize;
 
 	private String keyword;
-
-	private Integer pageNum;
 
 	private String workspaceId;
 	public QueryWorkspaceUserListRequest() {
 		super("quickbi-public", "2022-01-01", "QueryWorkspaceUserList", "2.2.0");
 		setMethod(MethodType.POST);
+	}
+
+	public Integer getPageNum() {
+		return this.pageNum;
+	}
+
+	public void setPageNum(Integer pageNum) {
+		this.pageNum = pageNum;
+		if(pageNum != null){
+			putQueryParameter("PageNum", pageNum.toString());
+		}
 	}
 
 	public Integer getPageSize() {
@@ -55,17 +66,6 @@ public class QueryWorkspaceUserListRequest extends RpcAcsRequest<QueryWorkspaceU
 		this.keyword = keyword;
 		if(keyword != null){
 			putQueryParameter("Keyword", keyword);
-		}
-	}
-
-	public Integer getPageNum() {
-		return this.pageNum;
-	}
-
-	public void setPageNum(Integer pageNum) {
-		this.pageNum = pageNum;
-		if(pageNum != null){
-			putQueryParameter("PageNum", pageNum.toString());
 		}
 	}
 

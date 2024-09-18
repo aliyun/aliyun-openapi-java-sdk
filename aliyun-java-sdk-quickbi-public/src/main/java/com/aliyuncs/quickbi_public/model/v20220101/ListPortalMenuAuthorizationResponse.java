@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListPortalMenuAuthorizationResponse extends AcsResponse {
 
-	private Boolean success;
-
 	private String requestId;
 
+	private Boolean success;
+
 	private List<Data> result;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,6 +37,14 @@ public class ListPortalMenuAuthorizationResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<Data> getResult() {
@@ -57,19 +57,11 @@ public class ListPortalMenuAuthorizationResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Boolean showOnlyWithAccess;
-
 		private String menuId;
 
+		private Boolean showOnlyWithAccess;
+
 		private List<ReceiversItem> receivers;
-
-		public Boolean getShowOnlyWithAccess() {
-			return this.showOnlyWithAccess;
-		}
-
-		public void setShowOnlyWithAccess(Boolean showOnlyWithAccess) {
-			this.showOnlyWithAccess = showOnlyWithAccess;
-		}
 
 		public String getMenuId() {
 			return this.menuId;
@@ -77,6 +69,14 @@ public class ListPortalMenuAuthorizationResponse extends AcsResponse {
 
 		public void setMenuId(String menuId) {
 			this.menuId = menuId;
+		}
+
+		public Boolean getShowOnlyWithAccess() {
+			return this.showOnlyWithAccess;
+		}
+
+		public void setShowOnlyWithAccess(Boolean showOnlyWithAccess) {
+			this.showOnlyWithAccess = showOnlyWithAccess;
 		}
 
 		public List<ReceiversItem> getReceivers() {

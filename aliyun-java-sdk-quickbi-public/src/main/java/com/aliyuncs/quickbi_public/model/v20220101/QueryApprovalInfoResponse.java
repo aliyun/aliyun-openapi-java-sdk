@@ -57,17 +57,41 @@ public class QueryApprovalInfoResponse extends AcsResponse {
 
 	public static class Result {
 
+		private Integer page;
+
+		private Integer pageSize;
+
+		private Integer start;
+
 		private Integer total;
 
 		private Integer totalPages;
 
-		private Integer start;
-
-		private Integer pageSize;
-
-		private Integer page;
-
 		private List<ApprovalsResultModel> data;
+
+		public Integer getPage() {
+			return this.page;
+		}
+
+		public void setPage(Integer page) {
+			this.page = page;
+		}
+
+		public Integer getPageSize() {
+			return this.pageSize;
+		}
+
+		public void setPageSize(Integer pageSize) {
+			this.pageSize = pageSize;
+		}
+
+		public Integer getStart() {
+			return this.start;
+		}
+
+		public void setStart(Integer start) {
+			this.start = start;
+		}
 
 		public Integer getTotal() {
 			return this.total;
@@ -85,30 +109,6 @@ public class QueryApprovalInfoResponse extends AcsResponse {
 			this.totalPages = totalPages;
 		}
 
-		public Integer getStart() {
-			return this.start;
-		}
-
-		public void setStart(Integer start) {
-			this.start = start;
-		}
-
-		public Integer getPageSize() {
-			return this.pageSize;
-		}
-
-		public void setPageSize(Integer pageSize) {
-			this.pageSize = pageSize;
-		}
-
-		public Integer getPage() {
-			return this.page;
-		}
-
-		public void setPage(Integer page) {
-			this.page = page;
-		}
-
 		public List<ApprovalsResultModel> getData() {
 			return this.data;
 		}
@@ -119,17 +119,29 @@ public class QueryApprovalInfoResponse extends AcsResponse {
 
 		public static class ApprovalsResultModel {
 
-			private String workspaceName;
-
-			private String applicationId;
-
 			private String applicantId;
 
 			private String applicantName;
 
+			private String applicationId;
+
+			private String applyReason;
+
 			private String approverId;
 
 			private String approverName;
+
+			private Boolean deleteFlag;
+
+			private Long expireDate;
+
+			private Integer flagStatus;
+
+			private Long gmtCreate;
+
+			private Long gmtModified;
+
+			private String handleReason;
 
 			private String resourceId;
 
@@ -137,35 +149,7 @@ public class QueryApprovalInfoResponse extends AcsResponse {
 
 			private String resourceType;
 
-			private String applyReason;
-
-			private String handleReason;
-
-			private Long expireDate;
-
-			private Long gmtCreate;
-
-			private Long gmtModified;
-
-			private Integer flagStatus;
-
-			private Boolean deleteFlag;
-
-			public String getWorkspaceName() {
-				return this.workspaceName;
-			}
-
-			public void setWorkspaceName(String workspaceName) {
-				this.workspaceName = workspaceName;
-			}
-
-			public String getApplicationId() {
-				return this.applicationId;
-			}
-
-			public void setApplicationId(String applicationId) {
-				this.applicationId = applicationId;
-			}
+			private String workspaceName;
 
 			public String getApplicantId() {
 				return this.applicantId;
@@ -183,6 +167,22 @@ public class QueryApprovalInfoResponse extends AcsResponse {
 				this.applicantName = applicantName;
 			}
 
+			public String getApplicationId() {
+				return this.applicationId;
+			}
+
+			public void setApplicationId(String applicationId) {
+				this.applicationId = applicationId;
+			}
+
+			public String getApplyReason() {
+				return this.applyReason;
+			}
+
+			public void setApplyReason(String applyReason) {
+				this.applyReason = applyReason;
+			}
+
 			public String getApproverId() {
 				return this.approverId;
 			}
@@ -197,6 +197,54 @@ public class QueryApprovalInfoResponse extends AcsResponse {
 
 			public void setApproverName(String approverName) {
 				this.approverName = approverName;
+			}
+
+			public Boolean getDeleteFlag() {
+				return this.deleteFlag;
+			}
+
+			public void setDeleteFlag(Boolean deleteFlag) {
+				this.deleteFlag = deleteFlag;
+			}
+
+			public Long getExpireDate() {
+				return this.expireDate;
+			}
+
+			public void setExpireDate(Long expireDate) {
+				this.expireDate = expireDate;
+			}
+
+			public Integer getFlagStatus() {
+				return this.flagStatus;
+			}
+
+			public void setFlagStatus(Integer flagStatus) {
+				this.flagStatus = flagStatus;
+			}
+
+			public Long getGmtCreate() {
+				return this.gmtCreate;
+			}
+
+			public void setGmtCreate(Long gmtCreate) {
+				this.gmtCreate = gmtCreate;
+			}
+
+			public Long getGmtModified() {
+				return this.gmtModified;
+			}
+
+			public void setGmtModified(Long gmtModified) {
+				this.gmtModified = gmtModified;
+			}
+
+			public String getHandleReason() {
+				return this.handleReason;
+			}
+
+			public void setHandleReason(String handleReason) {
+				this.handleReason = handleReason;
 			}
 
 			public String getResourceId() {
@@ -223,60 +271,12 @@ public class QueryApprovalInfoResponse extends AcsResponse {
 				this.resourceType = resourceType;
 			}
 
-			public String getApplyReason() {
-				return this.applyReason;
+			public String getWorkspaceName() {
+				return this.workspaceName;
 			}
 
-			public void setApplyReason(String applyReason) {
-				this.applyReason = applyReason;
-			}
-
-			public String getHandleReason() {
-				return this.handleReason;
-			}
-
-			public void setHandleReason(String handleReason) {
-				this.handleReason = handleReason;
-			}
-
-			public Long getExpireDate() {
-				return this.expireDate;
-			}
-
-			public void setExpireDate(Long expireDate) {
-				this.expireDate = expireDate;
-			}
-
-			public Long getGmtCreate() {
-				return this.gmtCreate;
-			}
-
-			public void setGmtCreate(Long gmtCreate) {
-				this.gmtCreate = gmtCreate;
-			}
-
-			public Long getGmtModified() {
-				return this.gmtModified;
-			}
-
-			public void setGmtModified(Long gmtModified) {
-				this.gmtModified = gmtModified;
-			}
-
-			public Integer getFlagStatus() {
-				return this.flagStatus;
-			}
-
-			public void setFlagStatus(Integer flagStatus) {
-				this.flagStatus = flagStatus;
-			}
-
-			public Boolean getDeleteFlag() {
-				return this.deleteFlag;
-			}
-
-			public void setDeleteFlag(Boolean deleteFlag) {
-				this.deleteFlag = deleteFlag;
+			public void setWorkspaceName(String workspaceName) {
+				this.workspaceName = workspaceName;
 			}
 		}
 	}

@@ -26,9 +26,9 @@ public class CancelReportShareRequest extends RpcAcsRequest<CancelReportShareRes
 
 	private String reportId;
 
-	private Integer shareToType;
-
 	private String shareToIds;
+
+	private Integer shareToType;
 	public CancelReportShareRequest() {
 		super("quickbi-public", "2022-01-01", "CancelReportShare", "2.2.0");
 		setMethod(MethodType.POST);
@@ -45,17 +45,6 @@ public class CancelReportShareRequest extends RpcAcsRequest<CancelReportShareRes
 		}
 	}
 
-	public Integer getShareToType() {
-		return this.shareToType;
-	}
-
-	public void setShareToType(Integer shareToType) {
-		this.shareToType = shareToType;
-		if(shareToType != null){
-			putQueryParameter("ShareToType", shareToType.toString());
-		}
-	}
-
 	public String getShareToIds() {
 		return this.shareToIds;
 	}
@@ -64,6 +53,17 @@ public class CancelReportShareRequest extends RpcAcsRequest<CancelReportShareRes
 		this.shareToIds = shareToIds;
 		if(shareToIds != null){
 			putQueryParameter("ShareToIds", shareToIds);
+		}
+	}
+
+	public Integer getShareToType() {
+		return this.shareToType;
+	}
+
+	public void setShareToType(Integer shareToType) {
+		this.shareToType = shareToType;
+		if(shareToType != null){
+			putQueryParameter("ShareToType", shareToType.toString());
 		}
 	}
 

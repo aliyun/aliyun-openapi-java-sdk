@@ -24,9 +24,9 @@ import com.aliyuncs.http.MethodType;
 public class AddShareReportRequest extends RpcAcsRequest<AddShareReportResponse> {
 	   
 
-	private Integer authPoint;
-
 	private Long expireDate;
+
+	private Integer authPoint;
 
 	private Integer shareToType;
 
@@ -38,17 +38,6 @@ public class AddShareReportRequest extends RpcAcsRequest<AddShareReportResponse>
 		setMethod(MethodType.POST);
 	}
 
-	public Integer getAuthPoint() {
-		return this.authPoint;
-	}
-
-	public void setAuthPoint(Integer authPoint) {
-		this.authPoint = authPoint;
-		if(authPoint != null){
-			putQueryParameter("AuthPoint", authPoint.toString());
-		}
-	}
-
 	public Long getExpireDate() {
 		return this.expireDate;
 	}
@@ -57,6 +46,17 @@ public class AddShareReportRequest extends RpcAcsRequest<AddShareReportResponse>
 		this.expireDate = expireDate;
 		if(expireDate != null){
 			putQueryParameter("ExpireDate", expireDate.toString());
+		}
+	}
+
+	public Integer getAuthPoint() {
+		return this.authPoint;
+	}
+
+	public void setAuthPoint(Integer authPoint) {
+		this.authPoint = authPoint;
+		if(authPoint != null){
+			putQueryParameter("AuthPoint", authPoint.toString());
 		}
 	}
 

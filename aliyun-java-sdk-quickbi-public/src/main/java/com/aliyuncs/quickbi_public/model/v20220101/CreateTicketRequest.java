@@ -24,15 +24,15 @@ import com.aliyuncs.http.MethodType;
 public class CreateTicketRequest extends RpcAcsRequest<CreateTicketResponse> {
 	   
 
-	private Integer expireTime;
-
 	private Integer accountType;
-
-	private String cmptId;
 
 	private String userId;
 
 	private String accountName;
+
+	private Integer expireTime;
+
+	private String cmptId;
 
 	private String globalParam;
 
@@ -46,17 +46,6 @@ public class CreateTicketRequest extends RpcAcsRequest<CreateTicketResponse> {
 		setMethod(MethodType.POST);
 	}
 
-	public Integer getExpireTime() {
-		return this.expireTime;
-	}
-
-	public void setExpireTime(Integer expireTime) {
-		this.expireTime = expireTime;
-		if(expireTime != null){
-			putQueryParameter("ExpireTime", expireTime.toString());
-		}
-	}
-
 	public Integer getAccountType() {
 		return this.accountType;
 	}
@@ -65,17 +54,6 @@ public class CreateTicketRequest extends RpcAcsRequest<CreateTicketResponse> {
 		this.accountType = accountType;
 		if(accountType != null){
 			putQueryParameter("AccountType", accountType.toString());
-		}
-	}
-
-	public String getCmptId() {
-		return this.cmptId;
-	}
-
-	public void setCmptId(String cmptId) {
-		this.cmptId = cmptId;
-		if(cmptId != null){
-			putQueryParameter("CmptId", cmptId);
 		}
 	}
 
@@ -98,6 +76,28 @@ public class CreateTicketRequest extends RpcAcsRequest<CreateTicketResponse> {
 		this.accountName = accountName;
 		if(accountName != null){
 			putQueryParameter("AccountName", accountName);
+		}
+	}
+
+	public Integer getExpireTime() {
+		return this.expireTime;
+	}
+
+	public void setExpireTime(Integer expireTime) {
+		this.expireTime = expireTime;
+		if(expireTime != null){
+			putQueryParameter("ExpireTime", expireTime.toString());
+		}
+	}
+
+	public String getCmptId() {
+		return this.cmptId;
+	}
+
+	public void setCmptId(String cmptId) {
+		this.cmptId = cmptId;
+		if(cmptId != null){
+			putQueryParameter("CmptId", cmptId);
 		}
 	}
 

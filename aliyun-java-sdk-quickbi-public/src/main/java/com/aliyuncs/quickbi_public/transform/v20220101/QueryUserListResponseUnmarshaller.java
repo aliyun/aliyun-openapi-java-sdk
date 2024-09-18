@@ -31,25 +31,25 @@ public class QueryUserListResponseUnmarshaller {
 		queryUserListResponse.setSuccess(_ctx.booleanValue("QueryUserListResponse.Success"));
 
 		Result result = new Result();
-		result.setTotalPages(_ctx.integerValue("QueryUserListResponse.Result.TotalPages"));
 		result.setPageNum(_ctx.integerValue("QueryUserListResponse.Result.PageNum"));
 		result.setPageSize(_ctx.integerValue("QueryUserListResponse.Result.PageSize"));
 		result.setTotalNum(_ctx.integerValue("QueryUserListResponse.Result.TotalNum"));
+		result.setTotalPages(_ctx.integerValue("QueryUserListResponse.Result.TotalPages"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryUserListResponse.Result.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setUserType(_ctx.integerValue("QueryUserListResponse.Result.Data["+ i +"].UserType"));
-			dataItem.setEmail(_ctx.stringValue("QueryUserListResponse.Result.Data["+ i +"].Email"));
-			dataItem.setUserId(_ctx.stringValue("QueryUserListResponse.Result.Data["+ i +"].UserId"));
-			dataItem.setAuthAdminUser(_ctx.booleanValue("QueryUserListResponse.Result.Data["+ i +"].AuthAdminUser"));
 			dataItem.setAccountId(_ctx.stringValue("QueryUserListResponse.Result.Data["+ i +"].AccountId"));
-			dataItem.setNickName(_ctx.stringValue("QueryUserListResponse.Result.Data["+ i +"].NickName"));
-			dataItem.setAdminUser(_ctx.booleanValue("QueryUserListResponse.Result.Data["+ i +"].AdminUser"));
-			dataItem.setPhone(_ctx.stringValue("QueryUserListResponse.Result.Data["+ i +"].Phone"));
 			dataItem.setAccountName(_ctx.stringValue("QueryUserListResponse.Result.Data["+ i +"].AccountName"));
+			dataItem.setAdminUser(_ctx.booleanValue("QueryUserListResponse.Result.Data["+ i +"].AdminUser"));
+			dataItem.setAuthAdminUser(_ctx.booleanValue("QueryUserListResponse.Result.Data["+ i +"].AuthAdminUser"));
+			dataItem.setEmail(_ctx.stringValue("QueryUserListResponse.Result.Data["+ i +"].Email"));
 			dataItem.setJoinedDate(_ctx.longValue("QueryUserListResponse.Result.Data["+ i +"].JoinedDate"));
 			dataItem.setLastLoginTime(_ctx.longValue("QueryUserListResponse.Result.Data["+ i +"].LastLoginTime"));
+			dataItem.setNickName(_ctx.stringValue("QueryUserListResponse.Result.Data["+ i +"].NickName"));
+			dataItem.setPhone(_ctx.stringValue("QueryUserListResponse.Result.Data["+ i +"].Phone"));
+			dataItem.setUserId(_ctx.stringValue("QueryUserListResponse.Result.Data["+ i +"].UserId"));
+			dataItem.setUserType(_ctx.integerValue("QueryUserListResponse.Result.Data["+ i +"].UserType"));
 
 			List<Long> roleIdList = new ArrayList<Long>();
 			for (int j = 0; j < _ctx.lengthValue("QueryUserListResponse.Result.Data["+ i +"].RoleIdList.Length"); j++) {

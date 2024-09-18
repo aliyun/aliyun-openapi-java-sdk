@@ -24,16 +24,38 @@ import com.aliyuncs.http.MethodType;
 public class QueryDataServiceListRequest extends RpcAcsRequest<QueryDataServiceListResponse> {
 	   
 
-	private Integer pageNo;
-
-	private String name;
+	private String userId;
 
 	private Integer pageSize;
 
-	private String userId;
+	private Integer pageNo;
+
+	private String name;
 	public QueryDataServiceListRequest() {
 		super("quickbi-public", "2022-01-01", "QueryDataServiceList", "2.2.0");
 		setMethod(MethodType.POST);
+	}
+
+	public String getUserId() {
+		return this.userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+		if(userId != null){
+			putQueryParameter("UserId", userId);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
 	}
 
 	public Integer getPageNo() {
@@ -55,28 +77,6 @@ public class QueryDataServiceListRequest extends RpcAcsRequest<QueryDataServiceL
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getUserId() {
-		return this.userId;
-	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putQueryParameter("UserId", userId);
 		}
 	}
 

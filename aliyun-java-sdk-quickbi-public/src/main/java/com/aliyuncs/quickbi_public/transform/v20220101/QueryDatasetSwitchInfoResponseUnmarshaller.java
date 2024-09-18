@@ -27,9 +27,9 @@ public class QueryDatasetSwitchInfoResponseUnmarshaller {
 		queryDatasetSwitchInfoResponse.setSuccess(_ctx.booleanValue("QueryDatasetSwitchInfoResponse.Success"));
 
 		Result result = new Result();
-		result.setIsOpenRowLevelPermission(_ctx.integerValue("QueryDatasetSwitchInfoResponse.Result.IsOpenRowLevelPermission"));
 		result.setCubeId(_ctx.stringValue("QueryDatasetSwitchInfoResponse.Result.CubeId"));
 		result.setIsOpenColumnLevelPermission(_ctx.integerValue("QueryDatasetSwitchInfoResponse.Result.IsOpenColumnLevelPermission"));
+		result.setIsOpenRowLevelPermission(_ctx.integerValue("QueryDatasetSwitchInfoResponse.Result.IsOpenRowLevelPermission"));
 		queryDatasetSwitchInfoResponse.setResult(result);
 	 
 	 	return queryDatasetSwitchInfoResponse;

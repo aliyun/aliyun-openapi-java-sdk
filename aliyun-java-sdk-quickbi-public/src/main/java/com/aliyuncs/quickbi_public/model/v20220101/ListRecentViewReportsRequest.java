@@ -28,13 +28,13 @@ public class ListRecentViewReportsRequest extends RpcAcsRequest<ListRecentViewRe
 
 	private String userId;
 
-	private String queryMode;
-
-	private String treeType;
-
 	private Integer pageSize;
 
 	private String keyword;
+
+	private String queryMode;
+
+	private String treeType;
 	public ListRecentViewReportsRequest() {
 		super("quickbi-public", "2022-01-01", "ListRecentViewReports", "2.2.0");
 		setMethod(MethodType.POST);
@@ -62,28 +62,6 @@ public class ListRecentViewReportsRequest extends RpcAcsRequest<ListRecentViewRe
 		}
 	}
 
-	public String getQueryMode() {
-		return this.queryMode;
-	}
-
-	public void setQueryMode(String queryMode) {
-		this.queryMode = queryMode;
-		if(queryMode != null){
-			putQueryParameter("QueryMode", queryMode);
-		}
-	}
-
-	public String getTreeType() {
-		return this.treeType;
-	}
-
-	public void setTreeType(String treeType) {
-		this.treeType = treeType;
-		if(treeType != null){
-			putQueryParameter("TreeType", treeType);
-		}
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -103,6 +81,28 @@ public class ListRecentViewReportsRequest extends RpcAcsRequest<ListRecentViewRe
 		this.keyword = keyword;
 		if(keyword != null){
 			putQueryParameter("Keyword", keyword);
+		}
+	}
+
+	public String getQueryMode() {
+		return this.queryMode;
+	}
+
+	public void setQueryMode(String queryMode) {
+		this.queryMode = queryMode;
+		if(queryMode != null){
+			putQueryParameter("QueryMode", queryMode);
+		}
+	}
+
+	public String getTreeType() {
+		return this.treeType;
+	}
+
+	public void setTreeType(String treeType) {
+		this.treeType = treeType;
+		if(treeType != null){
+			putQueryParameter("TreeType", treeType);
 		}
 	}
 

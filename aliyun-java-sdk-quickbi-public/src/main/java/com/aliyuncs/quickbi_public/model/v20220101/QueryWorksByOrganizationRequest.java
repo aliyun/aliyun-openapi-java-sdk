@@ -24,29 +24,18 @@ import com.aliyuncs.http.MethodType;
 public class QueryWorksByOrganizationRequest extends RpcAcsRequest<QueryWorksByOrganizationResponse> {
 	   
 
-	private String worksType;
-
 	private Integer thirdPartAuthFlag;
+
+	private Integer pageNum;
 
 	private Integer pageSize;
 
-	private Integer pageNum;
+	private String worksType;
 
 	private Integer status;
 	public QueryWorksByOrganizationRequest() {
 		super("quickbi-public", "2022-01-01", "QueryWorksByOrganization", "2.2.0");
 		setMethod(MethodType.POST);
-	}
-
-	public String getWorksType() {
-		return this.worksType;
-	}
-
-	public void setWorksType(String worksType) {
-		this.worksType = worksType;
-		if(worksType != null){
-			putQueryParameter("WorksType", worksType);
-		}
 	}
 
 	public Integer getThirdPartAuthFlag() {
@@ -57,6 +46,17 @@ public class QueryWorksByOrganizationRequest extends RpcAcsRequest<QueryWorksByO
 		this.thirdPartAuthFlag = thirdPartAuthFlag;
 		if(thirdPartAuthFlag != null){
 			putQueryParameter("ThirdPartAuthFlag", thirdPartAuthFlag.toString());
+		}
+	}
+
+	public Integer getPageNum() {
+		return this.pageNum;
+	}
+
+	public void setPageNum(Integer pageNum) {
+		this.pageNum = pageNum;
+		if(pageNum != null){
+			putQueryParameter("PageNum", pageNum.toString());
 		}
 	}
 
@@ -71,14 +71,14 @@ public class QueryWorksByOrganizationRequest extends RpcAcsRequest<QueryWorksByO
 		}
 	}
 
-	public Integer getPageNum() {
-		return this.pageNum;
+	public String getWorksType() {
+		return this.worksType;
 	}
 
-	public void setPageNum(Integer pageNum) {
-		this.pageNum = pageNum;
-		if(pageNum != null){
-			putQueryParameter("PageNum", pageNum.toString());
+	public void setWorksType(String worksType) {
+		this.worksType = worksType;
+		if(worksType != null){
+			putQueryParameter("WorksType", worksType);
 		}
 	}
 

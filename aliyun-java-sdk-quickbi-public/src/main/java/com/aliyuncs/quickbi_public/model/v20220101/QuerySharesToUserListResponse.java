@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QuerySharesToUserListResponse extends AcsResponse {
 
-	private Boolean success;
-
 	private String requestId;
 
+	private Boolean success;
+
 	private List<Data> result;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,6 +37,14 @@ public class QuerySharesToUserListResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<Data> getResult() {
@@ -57,35 +57,91 @@ public class QuerySharesToUserListResponse extends AcsResponse {
 
 	public static class Data {
 
+		private String createTime;
+
+		private String description;
+
+		private String modifyName;
+
+		private String modifyTime;
+
+		private String ownerId;
+
+		private String ownerName;
+
+		private String securityLevel;
+
 		private Integer status;
 
 		private Integer thirdPartAuthFlag;
 
-		private String worksId;
-
-		private String createTime;
+		private String workName;
 
 		private String workType;
 
-		private String ownerName;
-
-		private String workspaceName;
-
-		private String ownerId;
-
-		private String modifyName;
+		private String worksId;
 
 		private String workspaceId;
 
-		private String securityLevel;
-
-		private String description;
-
-		private String workName;
-
-		private String modifyTime;
+		private String workspaceName;
 
 		private Directory directory;
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getModifyName() {
+			return this.modifyName;
+		}
+
+		public void setModifyName(String modifyName) {
+			this.modifyName = modifyName;
+		}
+
+		public String getModifyTime() {
+			return this.modifyTime;
+		}
+
+		public void setModifyTime(String modifyTime) {
+			this.modifyTime = modifyTime;
+		}
+
+		public String getOwnerId() {
+			return this.ownerId;
+		}
+
+		public void setOwnerId(String ownerId) {
+			this.ownerId = ownerId;
+		}
+
+		public String getOwnerName() {
+			return this.ownerName;
+		}
+
+		public void setOwnerName(String ownerName) {
+			this.ownerName = ownerName;
+		}
+
+		public String getSecurityLevel() {
+			return this.securityLevel;
+		}
+
+		public void setSecurityLevel(String securityLevel) {
+			this.securityLevel = securityLevel;
+		}
 
 		public Integer getStatus() {
 			return this.status;
@@ -103,20 +159,12 @@ public class QuerySharesToUserListResponse extends AcsResponse {
 			this.thirdPartAuthFlag = thirdPartAuthFlag;
 		}
 
-		public String getWorksId() {
-			return this.worksId;
+		public String getWorkName() {
+			return this.workName;
 		}
 
-		public void setWorksId(String worksId) {
-			this.worksId = worksId;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
+		public void setWorkName(String workName) {
+			this.workName = workName;
 		}
 
 		public String getWorkType() {
@@ -127,36 +175,12 @@ public class QuerySharesToUserListResponse extends AcsResponse {
 			this.workType = workType;
 		}
 
-		public String getOwnerName() {
-			return this.ownerName;
+		public String getWorksId() {
+			return this.worksId;
 		}
 
-		public void setOwnerName(String ownerName) {
-			this.ownerName = ownerName;
-		}
-
-		public String getWorkspaceName() {
-			return this.workspaceName;
-		}
-
-		public void setWorkspaceName(String workspaceName) {
-			this.workspaceName = workspaceName;
-		}
-
-		public String getOwnerId() {
-			return this.ownerId;
-		}
-
-		public void setOwnerId(String ownerId) {
-			this.ownerId = ownerId;
-		}
-
-		public String getModifyName() {
-			return this.modifyName;
-		}
-
-		public void setModifyName(String modifyName) {
-			this.modifyName = modifyName;
+		public void setWorksId(String worksId) {
+			this.worksId = worksId;
 		}
 
 		public String getWorkspaceId() {
@@ -167,36 +191,12 @@ public class QuerySharesToUserListResponse extends AcsResponse {
 			this.workspaceId = workspaceId;
 		}
 
-		public String getSecurityLevel() {
-			return this.securityLevel;
+		public String getWorkspaceName() {
+			return this.workspaceName;
 		}
 
-		public void setSecurityLevel(String securityLevel) {
-			this.securityLevel = securityLevel;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getWorkName() {
-			return this.workName;
-		}
-
-		public void setWorkName(String workName) {
-			this.workName = workName;
-		}
-
-		public String getModifyTime() {
-			return this.modifyTime;
-		}
-
-		public void setModifyTime(String modifyTime) {
-			this.modifyTime = modifyTime;
+		public void setWorkspaceName(String workspaceName) {
+			this.workspaceName = workspaceName;
 		}
 
 		public Directory getDirectory() {
@@ -209,13 +209,29 @@ public class QuerySharesToUserListResponse extends AcsResponse {
 
 		public static class Directory {
 
+			private String id;
+
+			private String name;
+
 			private String pathId;
 
 			private String pathName;
 
-			private String name;
+			public String getId() {
+				return this.id;
+			}
 
-			private String id;
+			public void setId(String id) {
+				this.id = id;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
 
 			public String getPathId() {
 				return this.pathId;
@@ -231,22 +247,6 @@ public class QuerySharesToUserListResponse extends AcsResponse {
 
 			public void setPathName(String pathName) {
 				this.pathName = pathName;
-			}
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
-
-			public String getId() {
-				return this.id;
-			}
-
-			public void setId(String id) {
-				this.id = id;
 			}
 		}
 	}

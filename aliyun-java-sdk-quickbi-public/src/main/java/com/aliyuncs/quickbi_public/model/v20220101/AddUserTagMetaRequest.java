@@ -24,23 +24,12 @@ import com.aliyuncs.http.MethodType;
 public class AddUserTagMetaRequest extends RpcAcsRequest<AddUserTagMetaResponse> {
 	   
 
-	private String tagDescription;
-
 	private String tagName;
+
+	private String tagDescription;
 	public AddUserTagMetaRequest() {
 		super("quickbi-public", "2022-01-01", "AddUserTagMeta", "2.2.0");
 		setMethod(MethodType.POST);
-	}
-
-	public String getTagDescription() {
-		return this.tagDescription;
-	}
-
-	public void setTagDescription(String tagDescription) {
-		this.tagDescription = tagDescription;
-		if(tagDescription != null){
-			putQueryParameter("TagDescription", tagDescription);
-		}
 	}
 
 	public String getTagName() {
@@ -51,6 +40,17 @@ public class AddUserTagMetaRequest extends RpcAcsRequest<AddUserTagMetaResponse>
 		this.tagName = tagName;
 		if(tagName != null){
 			putQueryParameter("TagName", tagName);
+		}
+	}
+
+	public String getTagDescription() {
+		return this.tagDescription;
+	}
+
+	public void setTagDescription(String tagDescription) {
+		this.tagDescription = tagDescription;
+		if(tagDescription != null){
+			putQueryParameter("TagDescription", tagDescription);
 		}
 	}
 

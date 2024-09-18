@@ -30,15 +30,15 @@ public class QueryUserInfoByUserIdResponseUnmarshaller {
 		queryUserInfoByUserIdResponse.setSuccess(_ctx.booleanValue("QueryUserInfoByUserIdResponse.Success"));
 
 		Result result = new Result();
-		result.setUserType(_ctx.integerValue("QueryUserInfoByUserIdResponse.Result.UserType"));
-		result.setEmail(_ctx.stringValue("QueryUserInfoByUserIdResponse.Result.Email"));
-		result.setUserId(_ctx.stringValue("QueryUserInfoByUserIdResponse.Result.UserId"));
-		result.setAuthAdminUser(_ctx.booleanValue("QueryUserInfoByUserIdResponse.Result.AuthAdminUser"));
 		result.setAccountId(_ctx.stringValue("QueryUserInfoByUserIdResponse.Result.AccountId"));
-		result.setNickName(_ctx.stringValue("QueryUserInfoByUserIdResponse.Result.NickName"));
-		result.setAdminUser(_ctx.booleanValue("QueryUserInfoByUserIdResponse.Result.AdminUser"));
-		result.setPhone(_ctx.stringValue("QueryUserInfoByUserIdResponse.Result.Phone"));
 		result.setAccountName(_ctx.stringValue("QueryUserInfoByUserIdResponse.Result.AccountName"));
+		result.setAdminUser(_ctx.booleanValue("QueryUserInfoByUserIdResponse.Result.AdminUser"));
+		result.setAuthAdminUser(_ctx.booleanValue("QueryUserInfoByUserIdResponse.Result.AuthAdminUser"));
+		result.setEmail(_ctx.stringValue("QueryUserInfoByUserIdResponse.Result.Email"));
+		result.setNickName(_ctx.stringValue("QueryUserInfoByUserIdResponse.Result.NickName"));
+		result.setPhone(_ctx.stringValue("QueryUserInfoByUserIdResponse.Result.Phone"));
+		result.setUserId(_ctx.stringValue("QueryUserInfoByUserIdResponse.Result.UserId"));
+		result.setUserType(_ctx.integerValue("QueryUserInfoByUserIdResponse.Result.UserType"));
 
 		List<Long> roleIdList = new ArrayList<Long>();
 		for (int i = 0; i < _ctx.lengthValue("QueryUserInfoByUserIdResponse.Result.RoleIdList.Length"); i++) {

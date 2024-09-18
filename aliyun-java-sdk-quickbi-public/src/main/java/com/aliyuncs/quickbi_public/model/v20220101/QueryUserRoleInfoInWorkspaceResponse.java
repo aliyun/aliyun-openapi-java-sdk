@@ -24,19 +24,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryUserRoleInfoInWorkspaceResponse extends AcsResponse {
 
-	private Boolean success;
-
 	private String requestId;
 
+	private Boolean success;
+
 	private Result result;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,6 +36,14 @@ public class QueryUserRoleInfoInWorkspaceResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Result getResult() {
@@ -58,9 +58,9 @@ public class QueryUserRoleInfoInWorkspaceResponse extends AcsResponse {
 
 		private String roleCode;
 
-		private String roleName;
-
 		private Long roleId;
+
+		private String roleName;
 
 		public String getRoleCode() {
 			return this.roleCode;
@@ -70,20 +70,20 @@ public class QueryUserRoleInfoInWorkspaceResponse extends AcsResponse {
 			this.roleCode = roleCode;
 		}
 
-		public String getRoleName() {
-			return this.roleName;
-		}
-
-		public void setRoleName(String roleName) {
-			this.roleName = roleName;
-		}
-
 		public Long getRoleId() {
 			return this.roleId;
 		}
 
 		public void setRoleId(Long roleId) {
 			this.roleId = roleId;
+		}
+
+		public String getRoleName() {
+			return this.roleName;
+		}
+
+		public void setRoleName(String roleName) {
+			this.roleName = roleName;
 		}
 	}
 

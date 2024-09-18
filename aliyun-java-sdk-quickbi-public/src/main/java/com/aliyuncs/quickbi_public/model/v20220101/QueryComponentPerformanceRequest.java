@@ -28,13 +28,13 @@ public class QueryComponentPerformanceRequest extends RpcAcsRequest<QueryCompone
 
 	private Integer pageNum;
 
-	private String resourceType;
-
 	private Integer pageSize;
 
 	private Integer costTimeAvgMin;
 
 	private String queryType;
+
+	private String resourceType;
 
 	private String workspaceId;
 	public QueryComponentPerformanceRequest() {
@@ -61,17 +61,6 @@ public class QueryComponentPerformanceRequest extends RpcAcsRequest<QueryCompone
 		this.pageNum = pageNum;
 		if(pageNum != null){
 			putQueryParameter("PageNum", pageNum.toString());
-		}
-	}
-
-	public String getResourceType() {
-		return this.resourceType;
-	}
-
-	public void setResourceType(String resourceType) {
-		this.resourceType = resourceType;
-		if(resourceType != null){
-			putQueryParameter("ResourceType", resourceType);
 		}
 	}
 
@@ -105,6 +94,17 @@ public class QueryComponentPerformanceRequest extends RpcAcsRequest<QueryCompone
 		this.queryType = queryType;
 		if(queryType != null){
 			putQueryParameter("QueryType", queryType);
+		}
+	}
+
+	public String getResourceType() {
+		return this.resourceType;
+	}
+
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType);
 		}
 	}
 

@@ -57,9 +57,43 @@ public class QueryComponentPerformanceResponse extends AcsResponse {
 
 	public static class Data {
 
+		private Double cacheCostTimeAvg;
+
+		private Integer cacheQueryCount;
+
 		private String componentId;
 
 		private String componentName;
+
+		private Double costTimeAvg;
+
+		private Integer queryCount;
+
+		private Double queryCountAvg;
+
+		private Double queryOverFivePercentNum;
+
+		private String queryOverFiveSecPercent;
+
+		private String queryOverTenSecPercent;
+
+		private Double queryOverTenSecPercentNum;
+
+		private Integer queryTimeoutCount;
+
+		private Double queryTimeoutCountPercent;
+
+		private Double quickIndexCostTimeAvg;
+
+		private Integer quickIndexQueryCount;
+
+		private String repeatQueryPercent;
+
+		private Double repeatQueryPercentNum;
+
+		private Integer repeatSqlQueryCount;
+
+		private String repeatSqlQueryPercent;
 
 		private String reportId;
 
@@ -67,43 +101,25 @@ public class QueryComponentPerformanceResponse extends AcsResponse {
 
 		private String reportType;
 
-		private Integer queryTimeoutCount;
-
-		private String repeatSqlQueryPercent;
+		private String workspaceId;
 
 		private String workspaceName;
 
-		private String workspaceId;
+		public Double getCacheCostTimeAvg() {
+			return this.cacheCostTimeAvg;
+		}
 
-		private Double repeatQueryPercentNum;
+		public void setCacheCostTimeAvg(Double cacheCostTimeAvg) {
+			this.cacheCostTimeAvg = cacheCostTimeAvg;
+		}
 
-		private String repeatQueryPercent;
+		public Integer getCacheQueryCount() {
+			return this.cacheQueryCount;
+		}
 
-		private Double quickIndexCostTimeAvg;
-
-		private Integer quickIndexQueryCount;
-
-		private Double cacheCostTimeAvg;
-
-		private Integer cacheQueryCount;
-
-		private Integer repeatSqlQueryCount;
-
-		private Double costTimeAvg;
-
-		private Double queryCountAvg;
-
-		private Integer queryCount;
-
-		private Double queryTimeoutCountPercent;
-
-		private Double queryOverTenSecPercentNum;
-
-		private Double queryOverFivePercentNum;
-
-		private String queryOverTenSecPercent;
-
-		private String queryOverFiveSecPercent;
+		public void setCacheQueryCount(Integer cacheQueryCount) {
+			this.cacheQueryCount = cacheQueryCount;
+		}
 
 		public String getComponentId() {
 			return this.componentId;
@@ -119,6 +135,126 @@ public class QueryComponentPerformanceResponse extends AcsResponse {
 
 		public void setComponentName(String componentName) {
 			this.componentName = componentName;
+		}
+
+		public Double getCostTimeAvg() {
+			return this.costTimeAvg;
+		}
+
+		public void setCostTimeAvg(Double costTimeAvg) {
+			this.costTimeAvg = costTimeAvg;
+		}
+
+		public Integer getQueryCount() {
+			return this.queryCount;
+		}
+
+		public void setQueryCount(Integer queryCount) {
+			this.queryCount = queryCount;
+		}
+
+		public Double getQueryCountAvg() {
+			return this.queryCountAvg;
+		}
+
+		public void setQueryCountAvg(Double queryCountAvg) {
+			this.queryCountAvg = queryCountAvg;
+		}
+
+		public Double getQueryOverFivePercentNum() {
+			return this.queryOverFivePercentNum;
+		}
+
+		public void setQueryOverFivePercentNum(Double queryOverFivePercentNum) {
+			this.queryOverFivePercentNum = queryOverFivePercentNum;
+		}
+
+		public String getQueryOverFiveSecPercent() {
+			return this.queryOverFiveSecPercent;
+		}
+
+		public void setQueryOverFiveSecPercent(String queryOverFiveSecPercent) {
+			this.queryOverFiveSecPercent = queryOverFiveSecPercent;
+		}
+
+		public String getQueryOverTenSecPercent() {
+			return this.queryOverTenSecPercent;
+		}
+
+		public void setQueryOverTenSecPercent(String queryOverTenSecPercent) {
+			this.queryOverTenSecPercent = queryOverTenSecPercent;
+		}
+
+		public Double getQueryOverTenSecPercentNum() {
+			return this.queryOverTenSecPercentNum;
+		}
+
+		public void setQueryOverTenSecPercentNum(Double queryOverTenSecPercentNum) {
+			this.queryOverTenSecPercentNum = queryOverTenSecPercentNum;
+		}
+
+		public Integer getQueryTimeoutCount() {
+			return this.queryTimeoutCount;
+		}
+
+		public void setQueryTimeoutCount(Integer queryTimeoutCount) {
+			this.queryTimeoutCount = queryTimeoutCount;
+		}
+
+		public Double getQueryTimeoutCountPercent() {
+			return this.queryTimeoutCountPercent;
+		}
+
+		public void setQueryTimeoutCountPercent(Double queryTimeoutCountPercent) {
+			this.queryTimeoutCountPercent = queryTimeoutCountPercent;
+		}
+
+		public Double getQuickIndexCostTimeAvg() {
+			return this.quickIndexCostTimeAvg;
+		}
+
+		public void setQuickIndexCostTimeAvg(Double quickIndexCostTimeAvg) {
+			this.quickIndexCostTimeAvg = quickIndexCostTimeAvg;
+		}
+
+		public Integer getQuickIndexQueryCount() {
+			return this.quickIndexQueryCount;
+		}
+
+		public void setQuickIndexQueryCount(Integer quickIndexQueryCount) {
+			this.quickIndexQueryCount = quickIndexQueryCount;
+		}
+
+		public String getRepeatQueryPercent() {
+			return this.repeatQueryPercent;
+		}
+
+		public void setRepeatQueryPercent(String repeatQueryPercent) {
+			this.repeatQueryPercent = repeatQueryPercent;
+		}
+
+		public Double getRepeatQueryPercentNum() {
+			return this.repeatQueryPercentNum;
+		}
+
+		public void setRepeatQueryPercentNum(Double repeatQueryPercentNum) {
+			this.repeatQueryPercentNum = repeatQueryPercentNum;
+		}
+
+		public Integer getRepeatSqlQueryCount() {
+			return this.repeatSqlQueryCount;
+		}
+
+		public void setRepeatSqlQueryCount(Integer repeatSqlQueryCount) {
+			this.repeatSqlQueryCount = repeatSqlQueryCount;
+		}
+
+		public String getRepeatSqlQueryPercent() {
+			return this.repeatSqlQueryPercent;
+		}
+
+		public void setRepeatSqlQueryPercent(String repeatSqlQueryPercent) {
+			this.repeatSqlQueryPercent = repeatSqlQueryPercent;
 		}
 
 		public String getReportId() {
@@ -145,30 +281,6 @@ public class QueryComponentPerformanceResponse extends AcsResponse {
 			this.reportType = reportType;
 		}
 
-		public Integer getQueryTimeoutCount() {
-			return this.queryTimeoutCount;
-		}
-
-		public void setQueryTimeoutCount(Integer queryTimeoutCount) {
-			this.queryTimeoutCount = queryTimeoutCount;
-		}
-
-		public String getRepeatSqlQueryPercent() {
-			return this.repeatSqlQueryPercent;
-		}
-
-		public void setRepeatSqlQueryPercent(String repeatSqlQueryPercent) {
-			this.repeatSqlQueryPercent = repeatSqlQueryPercent;
-		}
-
-		public String getWorkspaceName() {
-			return this.workspaceName;
-		}
-
-		public void setWorkspaceName(String workspaceName) {
-			this.workspaceName = workspaceName;
-		}
-
 		public String getWorkspaceId() {
 			return this.workspaceId;
 		}
@@ -177,124 +289,12 @@ public class QueryComponentPerformanceResponse extends AcsResponse {
 			this.workspaceId = workspaceId;
 		}
 
-		public Double getRepeatQueryPercentNum() {
-			return this.repeatQueryPercentNum;
+		public String getWorkspaceName() {
+			return this.workspaceName;
 		}
 
-		public void setRepeatQueryPercentNum(Double repeatQueryPercentNum) {
-			this.repeatQueryPercentNum = repeatQueryPercentNum;
-		}
-
-		public String getRepeatQueryPercent() {
-			return this.repeatQueryPercent;
-		}
-
-		public void setRepeatQueryPercent(String repeatQueryPercent) {
-			this.repeatQueryPercent = repeatQueryPercent;
-		}
-
-		public Double getQuickIndexCostTimeAvg() {
-			return this.quickIndexCostTimeAvg;
-		}
-
-		public void setQuickIndexCostTimeAvg(Double quickIndexCostTimeAvg) {
-			this.quickIndexCostTimeAvg = quickIndexCostTimeAvg;
-		}
-
-		public Integer getQuickIndexQueryCount() {
-			return this.quickIndexQueryCount;
-		}
-
-		public void setQuickIndexQueryCount(Integer quickIndexQueryCount) {
-			this.quickIndexQueryCount = quickIndexQueryCount;
-		}
-
-		public Double getCacheCostTimeAvg() {
-			return this.cacheCostTimeAvg;
-		}
-
-		public void setCacheCostTimeAvg(Double cacheCostTimeAvg) {
-			this.cacheCostTimeAvg = cacheCostTimeAvg;
-		}
-
-		public Integer getCacheQueryCount() {
-			return this.cacheQueryCount;
-		}
-
-		public void setCacheQueryCount(Integer cacheQueryCount) {
-			this.cacheQueryCount = cacheQueryCount;
-		}
-
-		public Integer getRepeatSqlQueryCount() {
-			return this.repeatSqlQueryCount;
-		}
-
-		public void setRepeatSqlQueryCount(Integer repeatSqlQueryCount) {
-			this.repeatSqlQueryCount = repeatSqlQueryCount;
-		}
-
-		public Double getCostTimeAvg() {
-			return this.costTimeAvg;
-		}
-
-		public void setCostTimeAvg(Double costTimeAvg) {
-			this.costTimeAvg = costTimeAvg;
-		}
-
-		public Double getQueryCountAvg() {
-			return this.queryCountAvg;
-		}
-
-		public void setQueryCountAvg(Double queryCountAvg) {
-			this.queryCountAvg = queryCountAvg;
-		}
-
-		public Integer getQueryCount() {
-			return this.queryCount;
-		}
-
-		public void setQueryCount(Integer queryCount) {
-			this.queryCount = queryCount;
-		}
-
-		public Double getQueryTimeoutCountPercent() {
-			return this.queryTimeoutCountPercent;
-		}
-
-		public void setQueryTimeoutCountPercent(Double queryTimeoutCountPercent) {
-			this.queryTimeoutCountPercent = queryTimeoutCountPercent;
-		}
-
-		public Double getQueryOverTenSecPercentNum() {
-			return this.queryOverTenSecPercentNum;
-		}
-
-		public void setQueryOverTenSecPercentNum(Double queryOverTenSecPercentNum) {
-			this.queryOverTenSecPercentNum = queryOverTenSecPercentNum;
-		}
-
-		public Double getQueryOverFivePercentNum() {
-			return this.queryOverFivePercentNum;
-		}
-
-		public void setQueryOverFivePercentNum(Double queryOverFivePercentNum) {
-			this.queryOverFivePercentNum = queryOverFivePercentNum;
-		}
-
-		public String getQueryOverTenSecPercent() {
-			return this.queryOverTenSecPercent;
-		}
-
-		public void setQueryOverTenSecPercent(String queryOverTenSecPercent) {
-			this.queryOverTenSecPercent = queryOverTenSecPercent;
-		}
-
-		public String getQueryOverFiveSecPercent() {
-			return this.queryOverFiveSecPercent;
-		}
-
-		public void setQueryOverFiveSecPercent(String queryOverFiveSecPercent) {
-			this.queryOverFiveSecPercent = queryOverFiveSecPercent;
+		public void setWorkspaceName(String workspaceName) {
+			this.workspaceName = workspaceName;
 		}
 	}
 
