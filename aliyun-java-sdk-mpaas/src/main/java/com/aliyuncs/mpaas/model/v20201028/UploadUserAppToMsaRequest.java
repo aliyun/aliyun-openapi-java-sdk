@@ -27,6 +27,8 @@ public class UploadUserAppToMsaRequest extends RpcAcsRequest<UploadUserAppToMsaR
 
 	private String tenantId;
 
+	private String fileName;
+
 	private String appId;
 
 	private String fileUrl;
@@ -49,6 +51,17 @@ public class UploadUserAppToMsaRequest extends RpcAcsRequest<UploadUserAppToMsaR
 		this.tenantId = tenantId;
 		if(tenantId != null){
 			putBodyParameter("TenantId", tenantId);
+		}
+	}
+
+	public String getFileName() {
+		return this.fileName;
+	}
+
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+		if(fileName != null){
+			putBodyParameter("FileName", fileName);
 		}
 	}
 
