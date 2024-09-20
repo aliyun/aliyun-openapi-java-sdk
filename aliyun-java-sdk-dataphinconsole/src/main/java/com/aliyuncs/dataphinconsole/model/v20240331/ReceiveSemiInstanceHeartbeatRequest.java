@@ -26,6 +26,8 @@ public class ReceiveSemiInstanceHeartbeatRequest extends RpcAcsRequest<ReceiveSe
 	   
 
 	private String instanceId;
+
+	private String instanceVersion;
 	public ReceiveSemiInstanceHeartbeatRequest() {
 		super("DataphinConsole", "2024-03-31", "ReceiveSemiInstanceHeartbeat");
 		setProtocol(ProtocolType.HTTPS);
@@ -40,6 +42,17 @@ public class ReceiveSemiInstanceHeartbeatRequest extends RpcAcsRequest<ReceiveSe
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putBodyParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getInstanceVersion() {
+		return this.instanceVersion;
+	}
+
+	public void setInstanceVersion(String instanceVersion) {
+		this.instanceVersion = instanceVersion;
+		if(instanceVersion != null){
+			putQueryParameter("InstanceVersion", instanceVersion);
 		}
 	}
 
