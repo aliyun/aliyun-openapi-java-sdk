@@ -115,6 +115,8 @@ public class DescribeApplicationScalingRuleResponse extends AcsResponse {
 
 		private Integer minReadyInstanceRatio;
 
+		private Boolean enableIdle;
+
 		private Timer timer;
 
 		private Metric metric;
@@ -189,6 +191,14 @@ public class DescribeApplicationScalingRuleResponse extends AcsResponse {
 
 		public void setMinReadyInstanceRatio(Integer minReadyInstanceRatio) {
 			this.minReadyInstanceRatio = minReadyInstanceRatio;
+		}
+
+		public Boolean getEnableIdle() {
+			return this.enableIdle;
+		}
+
+		public void setEnableIdle(Boolean enableIdle) {
+			this.enableIdle = enableIdle;
 		}
 
 		public Timer getTimer() {

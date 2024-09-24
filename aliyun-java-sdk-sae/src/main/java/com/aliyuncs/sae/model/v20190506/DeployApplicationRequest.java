@@ -85,6 +85,8 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 
 	private String kafkaConfigs;
 
+	private String dotnet;
+
 	private Integer memory;
 
 	private String commandArgs;
@@ -109,7 +111,13 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 
 	private String edasContainerVersion;
 
+	private String serviceTags;
+
 	private String packageUrl;
+
+	private Boolean enableNewArms;
+
+	private String microRegistrationConfig;
 
 	private Integer terminationGracePeriodSeconds;
 
@@ -480,6 +488,17 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 		}
 	}
 
+	public String getDotnet() {
+		return this.dotnet;
+	}
+
+	public void setDotnet(String dotnet) {
+		this.dotnet = dotnet;
+		if(dotnet != null){
+			putQueryParameter("Dotnet", dotnet);
+		}
+	}
+
 	public Integer getMemory() {
 		return this.memory;
 	}
@@ -612,6 +631,17 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 		}
 	}
 
+	public String getServiceTags() {
+		return this.serviceTags;
+	}
+
+	public void setServiceTags(String serviceTags) {
+		this.serviceTags = serviceTags;
+		if(serviceTags != null){
+			putBodyParameter("ServiceTags", serviceTags);
+		}
+	}
+
 	public String getPackageUrl() {
 		return this.packageUrl;
 	}
@@ -620,6 +650,28 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 		this.packageUrl = packageUrl;
 		if(packageUrl != null){
 			putQueryParameter("PackageUrl", packageUrl);
+		}
+	}
+
+	public Boolean getEnableNewArms() {
+		return this.enableNewArms;
+	}
+
+	public void setEnableNewArms(Boolean enableNewArms) {
+		this.enableNewArms = enableNewArms;
+		if(enableNewArms != null){
+			putQueryParameter("EnableNewArms", enableNewArms.toString());
+		}
+	}
+
+	public String getMicroRegistrationConfig() {
+		return this.microRegistrationConfig;
+	}
+
+	public void setMicroRegistrationConfig(String microRegistrationConfig) {
+		this.microRegistrationConfig = microRegistrationConfig;
+		if(microRegistrationConfig != null){
+			putBodyParameter("MicroRegistrationConfig", microRegistrationConfig);
 		}
 	}
 

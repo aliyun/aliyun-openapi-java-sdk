@@ -29,9 +29,13 @@ public class BindSlbRequest extends RoaAcsRequest<BindSlbResponse> {
 
 	private String intranetSlbId;
 
+	private String intranetSlbChargeType;
+
 	private String internetSlbId;
 
 	private String appId;
+
+	private String internetSlbChargeType;
 
 	private String internet;
 	public BindSlbRequest() {
@@ -66,6 +70,17 @@ public class BindSlbRequest extends RoaAcsRequest<BindSlbResponse> {
 		}
 	}
 
+	public String getIntranetSlbChargeType() {
+		return this.intranetSlbChargeType;
+	}
+
+	public void setIntranetSlbChargeType(String intranetSlbChargeType) {
+		this.intranetSlbChargeType = intranetSlbChargeType;
+		if(intranetSlbChargeType != null){
+			putQueryParameter("IntranetSlbChargeType", intranetSlbChargeType);
+		}
+	}
+
 	public String getInternetSlbId() {
 		return this.internetSlbId;
 	}
@@ -85,6 +100,17 @@ public class BindSlbRequest extends RoaAcsRequest<BindSlbResponse> {
 		this.appId = appId;
 		if(appId != null){
 			putQueryParameter("AppId", appId);
+		}
+	}
+
+	public String getInternetSlbChargeType() {
+		return this.internetSlbChargeType;
+	}
+
+	public void setInternetSlbChargeType(String internetSlbChargeType) {
+		this.internetSlbChargeType = internetSlbChargeType;
+		if(internetSlbChargeType != null){
+			putQueryParameter("InternetSlbChargeType", internetSlbChargeType);
 		}
 	}
 

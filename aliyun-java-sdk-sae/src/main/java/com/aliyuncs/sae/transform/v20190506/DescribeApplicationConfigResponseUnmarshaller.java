@@ -23,6 +23,7 @@ import com.aliyuncs.sae.model.v20190506.DescribeApplicationConfigResponse.Data.C
 import com.aliyuncs.sae.model.v20190506.DescribeApplicationConfigResponse.Data.MountDescItem;
 import com.aliyuncs.sae.model.v20190506.DescribeApplicationConfigResponse.Data.OssMountDesc;
 import com.aliyuncs.sae.model.v20190506.DescribeApplicationConfigResponse.Data.Tag;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -101,9 +102,14 @@ public class DescribeApplicationConfigResponseUnmarshaller {
 		data.setNasConfigs(_ctx.stringValue("DescribeApplicationConfigResponse.Data.NasConfigs"));
 		data.setPython(_ctx.stringValue("DescribeApplicationConfigResponse.Data.Python"));
 		data.setPythonModules(_ctx.stringValue("DescribeApplicationConfigResponse.Data.PythonModules"));
+		data.setDotnet(_ctx.stringValue("DescribeApplicationConfigResponse.Data.Dotnet"));
 		data.setMseApplicationName(_ctx.stringValue("DescribeApplicationConfigResponse.Data.MseApplicationName"));
 		data.setSaeVersion(_ctx.stringValue("DescribeApplicationConfigResponse.Data.SaeVersion"));
 		data.setAppSource(_ctx.stringValue("DescribeApplicationConfigResponse.Data.AppSource"));
+		data.setServiceTags(_ctx.mapValue("DescribeApplicationConfigResponse.Data.ServiceTags"));
+		data.setMicroRegistrationConfig(_ctx.stringValue("DescribeApplicationConfigResponse.Data.MicroRegistrationConfig"));
+		data.setEnableIdle(_ctx.booleanValue("DescribeApplicationConfigResponse.Data.EnableIdle"));
+		data.setEnableNewArms(_ctx.booleanValue("DescribeApplicationConfigResponse.Data.EnableNewArms"));
 
 		List<ConfigMapMountDescItem> configMapMountDesc = new ArrayList<ConfigMapMountDescItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeApplicationConfigResponse.Data.ConfigMapMountDesc.Length"); i++) {

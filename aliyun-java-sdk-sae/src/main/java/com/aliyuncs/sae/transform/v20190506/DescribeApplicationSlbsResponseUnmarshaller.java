@@ -42,6 +42,8 @@ public class DescribeApplicationSlbsResponseUnmarshaller {
 		data.setIntranetIp(_ctx.stringValue("DescribeApplicationSlbsResponse.Data.IntranetIp"));
 		data.setInternetSlbExpired(_ctx.booleanValue("DescribeApplicationSlbsResponse.Data.InternetSlbExpired"));
 		data.setIntranetSlbExpired(_ctx.booleanValue("DescribeApplicationSlbsResponse.Data.IntranetSlbExpired"));
+		data.setInternetSlbChargeType(_ctx.stringValue("DescribeApplicationSlbsResponse.Data.InternetSlbChargeType"));
+		data.setIntranetSlbChargeType(_ctx.stringValue("DescribeApplicationSlbsResponse.Data.IntranetSlbChargeType"));
 
 		List<IntranetItem> intranet = new ArrayList<IntranetItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeApplicationSlbsResponse.Data.Intranet.Length"); i++) {
@@ -50,6 +52,11 @@ public class DescribeApplicationSlbsResponseUnmarshaller {
 			intranetItem.setBizProtocol(_ctx.stringValue("DescribeApplicationSlbsResponse.Data.Intranet["+ i +"].Protocol"));
 			intranetItem.setTargetPort(_ctx.integerValue("DescribeApplicationSlbsResponse.Data.Intranet["+ i +"].TargetPort"));
 			intranetItem.setPort(_ctx.integerValue("DescribeApplicationSlbsResponse.Data.Intranet["+ i +"].Port"));
+			intranetItem.setHttpsCaCertId(_ctx.stringValue("DescribeApplicationSlbsResponse.Data.Intranet["+ i +"].HttpsCaCertId"));
+			intranetItem.setStickySession(_ctx.booleanValue("DescribeApplicationSlbsResponse.Data.Intranet["+ i +"].StickySession"));
+			intranetItem.setStickySessionType(_ctx.stringValue("DescribeApplicationSlbsResponse.Data.Intranet["+ i +"].StickySessionType"));
+			intranetItem.setCookieTimeout(_ctx.integerValue("DescribeApplicationSlbsResponse.Data.Intranet["+ i +"].CookieTimeout"));
+			intranetItem.setCookie(_ctx.stringValue("DescribeApplicationSlbsResponse.Data.Intranet["+ i +"].Cookie"));
 
 			intranet.add(intranetItem);
 		}
@@ -62,6 +69,11 @@ public class DescribeApplicationSlbsResponseUnmarshaller {
 			internetItem.setBizProtocol(_ctx.stringValue("DescribeApplicationSlbsResponse.Data.Internet["+ i +"].Protocol"));
 			internetItem.setTargetPort(_ctx.integerValue("DescribeApplicationSlbsResponse.Data.Internet["+ i +"].TargetPort"));
 			internetItem.setPort(_ctx.integerValue("DescribeApplicationSlbsResponse.Data.Internet["+ i +"].Port"));
+			internetItem.setHttpsCaCertId(_ctx.stringValue("DescribeApplicationSlbsResponse.Data.Internet["+ i +"].HttpsCaCertId"));
+			internetItem.setStickySession(_ctx.booleanValue("DescribeApplicationSlbsResponse.Data.Internet["+ i +"].StickySession"));
+			internetItem.setStickySessionType(_ctx.stringValue("DescribeApplicationSlbsResponse.Data.Internet["+ i +"].StickySessionType"));
+			internetItem.setCookieTimeout(_ctx.integerValue("DescribeApplicationSlbsResponse.Data.Internet["+ i +"].CookieTimeout"));
+			internetItem.setCookie(_ctx.stringValue("DescribeApplicationSlbsResponse.Data.Internet["+ i +"].Cookie"));
 
 			internet.add(internetItem);
 		}

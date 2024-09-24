@@ -45,6 +45,7 @@ public class CreateApplicationScalingRuleResponseUnmarshaller {
 		data.setScaleRuleEnabled(_ctx.booleanValue("CreateApplicationScalingRuleResponse.Data.ScaleRuleEnabled"));
 		data.setScaleRuleType(_ctx.stringValue("CreateApplicationScalingRuleResponse.Data.ScaleRuleType"));
 		data.setScaleRuleName(_ctx.stringValue("CreateApplicationScalingRuleResponse.Data.ScaleRuleName"));
+		data.setEnableIdle(_ctx.booleanValue("CreateApplicationScalingRuleResponse.Data.EnableIdle"));
 
 		Timer timer = new Timer();
 		timer.setEndDate(_ctx.stringValue("CreateApplicationScalingRuleResponse.Data.Timer.EndDate"));

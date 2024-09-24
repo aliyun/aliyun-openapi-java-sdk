@@ -119,6 +119,12 @@ public class DescribeIngressResponse extends AcsResponse {
 
 		private String certIds;
 
+		private String securityPolicyId;
+
+		private Integer requestTimeout;
+
+		private Integer idleTimeout;
+
 		private List<Rule> rules;
 
 		private List<Svc> svcs;
@@ -211,6 +217,30 @@ public class DescribeIngressResponse extends AcsResponse {
 
 		public void setCertIds(String certIds) {
 			this.certIds = certIds;
+		}
+
+		public String getSecurityPolicyId() {
+			return this.securityPolicyId;
+		}
+
+		public void setSecurityPolicyId(String securityPolicyId) {
+			this.securityPolicyId = securityPolicyId;
+		}
+
+		public Integer getRequestTimeout() {
+			return this.requestTimeout;
+		}
+
+		public void setRequestTimeout(Integer requestTimeout) {
+			this.requestTimeout = requestTimeout;
+		}
+
+		public Integer getIdleTimeout() {
+			return this.idleTimeout;
+		}
+
+		public void setIdleTimeout(Integer idleTimeout) {
+			this.idleTimeout = idleTimeout;
 		}
 
 		public List<Rule> getRules() {

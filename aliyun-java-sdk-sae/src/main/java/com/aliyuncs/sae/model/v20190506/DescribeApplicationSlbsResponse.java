@@ -109,6 +109,10 @@ public class DescribeApplicationSlbsResponse extends AcsResponse {
 
 		private Boolean intranetSlbExpired;
 
+		private String internetSlbChargeType;
+
+		private String intranetSlbChargeType;
+
 		private List<IntranetItem> intranet;
 
 		private List<InternetItem> internet;
@@ -161,6 +165,22 @@ public class DescribeApplicationSlbsResponse extends AcsResponse {
 			this.intranetSlbExpired = intranetSlbExpired;
 		}
 
+		public String getInternetSlbChargeType() {
+			return this.internetSlbChargeType;
+		}
+
+		public void setInternetSlbChargeType(String internetSlbChargeType) {
+			this.internetSlbChargeType = internetSlbChargeType;
+		}
+
+		public String getIntranetSlbChargeType() {
+			return this.intranetSlbChargeType;
+		}
+
+		public void setIntranetSlbChargeType(String intranetSlbChargeType) {
+			this.intranetSlbChargeType = intranetSlbChargeType;
+		}
+
 		public List<IntranetItem> getIntranet() {
 			return this.intranet;
 		}
@@ -187,6 +207,16 @@ public class DescribeApplicationSlbsResponse extends AcsResponse {
 
 			private Integer port;
 
+			private String httpsCaCertId;
+
+			private Boolean stickySession;
+
+			private String stickySessionType;
+
+			private Integer cookieTimeout;
+
+			private String cookie;
+
 			public String getHttpsCertId() {
 				return this.httpsCertId;
 			}
@@ -217,6 +247,46 @@ public class DescribeApplicationSlbsResponse extends AcsResponse {
 
 			public void setPort(Integer port) {
 				this.port = port;
+			}
+
+			public String getHttpsCaCertId() {
+				return this.httpsCaCertId;
+			}
+
+			public void setHttpsCaCertId(String httpsCaCertId) {
+				this.httpsCaCertId = httpsCaCertId;
+			}
+
+			public Boolean getStickySession() {
+				return this.stickySession;
+			}
+
+			public void setStickySession(Boolean stickySession) {
+				this.stickySession = stickySession;
+			}
+
+			public String getStickySessionType() {
+				return this.stickySessionType;
+			}
+
+			public void setStickySessionType(String stickySessionType) {
+				this.stickySessionType = stickySessionType;
+			}
+
+			public Integer getCookieTimeout() {
+				return this.cookieTimeout;
+			}
+
+			public void setCookieTimeout(Integer cookieTimeout) {
+				this.cookieTimeout = cookieTimeout;
+			}
+
+			public String getCookie() {
+				return this.cookie;
+			}
+
+			public void setCookie(String cookie) {
+				this.cookie = cookie;
 			}
 		}
 
@@ -230,6 +300,16 @@ public class DescribeApplicationSlbsResponse extends AcsResponse {
 
 			private Integer port;
 
+			private String httpsCaCertId;
+
+			private Boolean stickySession;
+
+			private String stickySessionType;
+
+			private Integer cookieTimeout;
+
+			private String cookie;
+
 			public String getHttpsCertId() {
 				return this.httpsCertId;
 			}
@@ -260,6 +340,46 @@ public class DescribeApplicationSlbsResponse extends AcsResponse {
 
 			public void setPort(Integer port) {
 				this.port = port;
+			}
+
+			public String getHttpsCaCertId() {
+				return this.httpsCaCertId;
+			}
+
+			public void setHttpsCaCertId(String httpsCaCertId) {
+				this.httpsCaCertId = httpsCaCertId;
+			}
+
+			public Boolean getStickySession() {
+				return this.stickySession;
+			}
+
+			public void setStickySession(Boolean stickySession) {
+				this.stickySession = stickySession;
+			}
+
+			public String getStickySessionType() {
+				return this.stickySessionType;
+			}
+
+			public void setStickySessionType(String stickySessionType) {
+				this.stickySessionType = stickySessionType;
+			}
+
+			public Integer getCookieTimeout() {
+				return this.cookieTimeout;
+			}
+
+			public void setCookieTimeout(Integer cookieTimeout) {
+				this.cookieTimeout = cookieTimeout;
+			}
+
+			public String getCookie() {
+				return this.cookie;
+			}
+
+			public void setCookie(String cookie) {
+				this.cookie = cookie;
 			}
 		}
 	}

@@ -111,6 +111,8 @@ public class CreateApplicationScalingRuleResponse extends AcsResponse {
 
 		private String scaleRuleName;
 
+		private Boolean enableIdle;
+
 		private Timer timer;
 
 		private Metric metric;
@@ -169,6 +171,14 @@ public class CreateApplicationScalingRuleResponse extends AcsResponse {
 
 		public void setScaleRuleName(String scaleRuleName) {
 			this.scaleRuleName = scaleRuleName;
+		}
+
+		public Boolean getEnableIdle() {
+			return this.enableIdle;
+		}
+
+		public void setEnableIdle(Boolean enableIdle) {
+			this.enableIdle = enableIdle;
 		}
 
 		public Timer getTimer() {

@@ -61,6 +61,8 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 
 	private String ossMountDescs;
 
+	private String baseAppId;
+
 	private String imagePullSecrets;
 
 	private String preStop;
@@ -89,6 +91,8 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 
 	private String kafkaConfigs;
 
+	private String dotnet;
+
 	private String commandArgs;
 
 	private String acrAssumeRoleArn;
@@ -111,7 +115,13 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 
 	private String edasContainerVersion;
 
+	private String serviceTags;
+
 	private String packageUrl;
+
+	private Boolean enableNewArms;
+
+	private String microRegistrationConfig;
 
 	private Integer terminationGracePeriodSeconds;
 
@@ -348,6 +358,17 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 		}
 	}
 
+	public String getBaseAppId() {
+		return this.baseAppId;
+	}
+
+	public void setBaseAppId(String baseAppId) {
+		this.baseAppId = baseAppId;
+		if(baseAppId != null){
+			putBodyParameter("BaseAppId", baseAppId);
+		}
+	}
+
 	public String getImagePullSecrets() {
 		return this.imagePullSecrets;
 	}
@@ -502,6 +523,17 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 		}
 	}
 
+	public String getDotnet() {
+		return this.dotnet;
+	}
+
+	public void setDotnet(String dotnet) {
+		this.dotnet = dotnet;
+		if(dotnet != null){
+			putQueryParameter("Dotnet", dotnet);
+		}
+	}
+
 	public String getCommandArgs() {
 		return this.commandArgs;
 	}
@@ -623,6 +655,17 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 		}
 	}
 
+	public String getServiceTags() {
+		return this.serviceTags;
+	}
+
+	public void setServiceTags(String serviceTags) {
+		this.serviceTags = serviceTags;
+		if(serviceTags != null){
+			putBodyParameter("ServiceTags", serviceTags);
+		}
+	}
+
 	public String getPackageUrl() {
 		return this.packageUrl;
 	}
@@ -631,6 +674,28 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 		this.packageUrl = packageUrl;
 		if(packageUrl != null){
 			putQueryParameter("PackageUrl", packageUrl);
+		}
+	}
+
+	public Boolean getEnableNewArms() {
+		return this.enableNewArms;
+	}
+
+	public void setEnableNewArms(Boolean enableNewArms) {
+		this.enableNewArms = enableNewArms;
+		if(enableNewArms != null){
+			putQueryParameter("EnableNewArms", enableNewArms.toString());
+		}
+	}
+
+	public String getMicroRegistrationConfig() {
+		return this.microRegistrationConfig;
+	}
+
+	public void setMicroRegistrationConfig(String microRegistrationConfig) {
+		this.microRegistrationConfig = microRegistrationConfig;
+		if(microRegistrationConfig != null){
+			putBodyParameter("MicroRegistrationConfig", microRegistrationConfig);
 		}
 	}
 

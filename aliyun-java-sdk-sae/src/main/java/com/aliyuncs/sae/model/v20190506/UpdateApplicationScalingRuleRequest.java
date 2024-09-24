@@ -33,6 +33,8 @@ public class UpdateApplicationScalingRuleRequest extends RoaAcsRequest<UpdateApp
 
 	private String scalingRuleMetric;
 
+	private Boolean enableIdle;
+
 	private String appId;
 
 	private Integer minReadyInstanceRatio;
@@ -87,6 +89,17 @@ public class UpdateApplicationScalingRuleRequest extends RoaAcsRequest<UpdateApp
 		this.scalingRuleMetric = scalingRuleMetric;
 		if(scalingRuleMetric != null){
 			putQueryParameter("ScalingRuleMetric", scalingRuleMetric);
+		}
+	}
+
+	public Boolean getEnableIdle() {
+		return this.enableIdle;
+	}
+
+	public void setEnableIdle(Boolean enableIdle) {
+		this.enableIdle = enableIdle;
+		if(enableIdle != null){
+			putQueryParameter("EnableIdle", enableIdle.toString());
 		}
 	}
 

@@ -48,6 +48,9 @@ public class DescribeIngressResponseUnmarshaller {
 		data.setLoadBalanceType(_ctx.stringValue("DescribeIngressResponse.Data.LoadBalanceType"));
 		data.setListenerProtocol(_ctx.stringValue("DescribeIngressResponse.Data.ListenerProtocol"));
 		data.setCertIds(_ctx.stringValue("DescribeIngressResponse.Data.CertIds"));
+		data.setSecurityPolicyId(_ctx.stringValue("DescribeIngressResponse.Data.SecurityPolicyId"));
+		data.setRequestTimeout(_ctx.integerValue("DescribeIngressResponse.Data.RequestTimeout"));
+		data.setIdleTimeout(_ctx.integerValue("DescribeIngressResponse.Data.IdleTimeout"));
 
 		DefaultRule defaultRule = new DefaultRule();
 		defaultRule.setContainerPort(_ctx.integerValue("DescribeIngressResponse.Data.DefaultRule.ContainerPort"));

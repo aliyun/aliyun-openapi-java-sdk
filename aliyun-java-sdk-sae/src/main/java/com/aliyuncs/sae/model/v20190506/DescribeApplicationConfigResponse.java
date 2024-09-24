@@ -15,6 +15,7 @@
 package com.aliyuncs.sae.model.v20190506;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.sae.transform.v20190506.DescribeApplicationConfigResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -223,11 +224,21 @@ public class DescribeApplicationConfigResponse extends AcsResponse {
 
 		private String pythonModules;
 
+		private String dotnet;
+
 		private String mseApplicationName;
 
 		private String saeVersion;
 
 		private String appSource;
+
+		private Map<Object,Object> serviceTags;
+
+		private String microRegistrationConfig;
+
+		private Boolean enableIdle;
+
+		private Boolean enableNewArms;
 
 		private List<ConfigMapMountDescItem> configMapMountDesc;
 
@@ -741,6 +752,14 @@ public class DescribeApplicationConfigResponse extends AcsResponse {
 			this.pythonModules = pythonModules;
 		}
 
+		public String getDotnet() {
+			return this.dotnet;
+		}
+
+		public void setDotnet(String dotnet) {
+			this.dotnet = dotnet;
+		}
+
 		public String getMseApplicationName() {
 			return this.mseApplicationName;
 		}
@@ -763,6 +782,38 @@ public class DescribeApplicationConfigResponse extends AcsResponse {
 
 		public void setAppSource(String appSource) {
 			this.appSource = appSource;
+		}
+
+		public Map<Object,Object> getServiceTags() {
+			return this.serviceTags;
+		}
+
+		public void setServiceTags(Map<Object,Object> serviceTags) {
+			this.serviceTags = serviceTags;
+		}
+
+		public String getMicroRegistrationConfig() {
+			return this.microRegistrationConfig;
+		}
+
+		public void setMicroRegistrationConfig(String microRegistrationConfig) {
+			this.microRegistrationConfig = microRegistrationConfig;
+		}
+
+		public Boolean getEnableIdle() {
+			return this.enableIdle;
+		}
+
+		public void setEnableIdle(Boolean enableIdle) {
+			this.enableIdle = enableIdle;
+		}
+
+		public Boolean getEnableNewArms() {
+			return this.enableNewArms;
+		}
+
+		public void setEnableNewArms(Boolean enableNewArms) {
+			this.enableNewArms = enableNewArms;
 		}
 
 		public List<ConfigMapMountDescItem> getConfigMapMountDesc() {

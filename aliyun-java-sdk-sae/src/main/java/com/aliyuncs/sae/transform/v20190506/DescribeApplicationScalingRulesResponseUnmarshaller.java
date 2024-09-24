@@ -60,6 +60,7 @@ public class DescribeApplicationScalingRulesResponseUnmarshaller {
 			applicationScalingRule.setScaleRuleName(_ctx.stringValue("DescribeApplicationScalingRulesResponse.Data.ApplicationScalingRules["+ i +"].ScaleRuleName"));
 			applicationScalingRule.setMinReadyInstances(_ctx.integerValue("DescribeApplicationScalingRulesResponse.Data.ApplicationScalingRules["+ i +"].MinReadyInstances"));
 			applicationScalingRule.setMinReadyInstanceRatio(_ctx.integerValue("DescribeApplicationScalingRulesResponse.Data.ApplicationScalingRules["+ i +"].MinReadyInstanceRatio"));
+			applicationScalingRule.setEnableIdle(_ctx.booleanValue("DescribeApplicationScalingRulesResponse.Data.ApplicationScalingRules["+ i +"].EnableIdle"));
 
 			Timer timer = new Timer();
 			timer.setEndDate(_ctx.stringValue("DescribeApplicationScalingRulesResponse.Data.ApplicationScalingRules["+ i +"].Timer.EndDate"));

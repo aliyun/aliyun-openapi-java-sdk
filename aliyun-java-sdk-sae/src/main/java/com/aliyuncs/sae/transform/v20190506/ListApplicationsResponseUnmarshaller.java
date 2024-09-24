@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.sae.model.v20190506.ListApplicationsResponse;
 import com.aliyuncs.sae.model.v20190506.ListApplicationsResponse.Data;
 import com.aliyuncs.sae.model.v20190506.ListApplicationsResponse.Data.Application;
+import com.aliyuncs.sae.model.v20190506.ListApplicationsResponse.Data.Application.ChildrenItem;
 import com.aliyuncs.sae.model.v20190506.ListApplicationsResponse.Data.Application.TagsItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -57,6 +58,12 @@ public class ListApplicationsResponseUnmarshaller {
 			application.setAppDescription(_ctx.stringValue("ListApplicationsResponse.Data.Applications["+ i +"].AppDescription"));
 			application.setCpu(_ctx.integerValue("ListApplicationsResponse.Data.Applications["+ i +"].Cpu"));
 			application.setMem(_ctx.integerValue("ListApplicationsResponse.Data.Applications["+ i +"].Mem"));
+			application.setMseEnabled(_ctx.booleanValue("ListApplicationsResponse.Data.Applications["+ i +"].MseEnabled"));
+			application.setMseNamespaceId(_ctx.stringValue("ListApplicationsResponse.Data.Applications["+ i +"].MseNamespaceId"));
+			application.setBaseAppId(_ctx.stringValue("ListApplicationsResponse.Data.Applications["+ i +"].BaseAppId"));
+			application.setProgrammingLanguage(_ctx.stringValue("ListApplicationsResponse.Data.Applications["+ i +"].ProgrammingLanguage"));
+			application.setImageUrl(_ctx.stringValue("ListApplicationsResponse.Data.Applications["+ i +"].ImageUrl"));
+			application.setPackageUrl(_ctx.stringValue("ListApplicationsResponse.Data.Applications["+ i +"].PackageUrl"));
 
 			List<TagsItem> tags = new ArrayList<TagsItem>();
 			for (int j = 0; j < _ctx.lengthValue("ListApplicationsResponse.Data.Applications["+ i +"].Tags.Length"); j++) {
@@ -67,6 +74,39 @@ public class ListApplicationsResponseUnmarshaller {
 				tags.add(tagsItem);
 			}
 			application.setTags(tags);
+
+			List<ChildrenItem> children = new ArrayList<ChildrenItem>();
+			for (int j = 0; j < _ctx.lengthValue("ListApplicationsResponse.Data.Applications["+ i +"].Children.Length"); j++) {
+				ChildrenItem childrenItem = new ChildrenItem();
+				childrenItem.setAppName(_ctx.stringValue("ListApplicationsResponse.Data.Applications["+ i +"].Children["+ j +"].AppName"));
+				childrenItem.setNamespaceId(_ctx.stringValue("ListApplicationsResponse.Data.Applications["+ i +"].Children["+ j +"].NamespaceId"));
+				childrenItem.setAppDeletingStatus(_ctx.booleanValue("ListApplicationsResponse.Data.Applications["+ i +"].Children["+ j +"].AppDeletingStatus"));
+				childrenItem.setAppId(_ctx.stringValue("ListApplicationsResponse.Data.Applications["+ i +"].Children["+ j +"].AppId"));
+				childrenItem.setScaleRuleEnabled(_ctx.booleanValue("ListApplicationsResponse.Data.Applications["+ i +"].Children["+ j +"].ScaleRuleEnabled"));
+				childrenItem.setScaleRuleType(_ctx.stringValue("ListApplicationsResponse.Data.Applications["+ i +"].Children["+ j +"].ScaleRuleType"));
+				childrenItem.setRunningInstances(_ctx.integerValue("ListApplicationsResponse.Data.Applications["+ i +"].Children["+ j +"].RunningInstances"));
+				childrenItem.setInstances(_ctx.integerValue("ListApplicationsResponse.Data.Applications["+ i +"].Children["+ j +"].Instances"));
+				childrenItem.setRegionId(_ctx.stringValue("ListApplicationsResponse.Data.Applications["+ i +"].Children["+ j +"].RegionId"));
+				childrenItem.setAppDescription(_ctx.stringValue("ListApplicationsResponse.Data.Applications["+ i +"].Children["+ j +"].AppDescription"));
+				childrenItem.setCpu(_ctx.integerValue("ListApplicationsResponse.Data.Applications["+ i +"].Children["+ j +"].Cpu"));
+				childrenItem.setMem(_ctx.integerValue("ListApplicationsResponse.Data.Applications["+ i +"].Children["+ j +"].Mem"));
+				childrenItem.setMseEnabled(_ctx.booleanValue("ListApplicationsResponse.Data.Applications["+ i +"].Children["+ j +"].MseEnabled"));
+				childrenItem.setBaseAppId(_ctx.stringValue("ListApplicationsResponse.Data.Applications["+ i +"].Children["+ j +"].BaseAppId"));
+				childrenItem.setProgrammingLanguage(_ctx.stringValue("ListApplicationsResponse.Data.Applications["+ i +"].Children["+ j +"].ProgrammingLanguage"));
+
+				List<TagsItem> tags1 = new ArrayList<TagsItem>();
+				for (int k = 0; k < _ctx.lengthValue("ListApplicationsResponse.Data.Applications["+ i +"].Children["+ j +"].Tags.Length"); k++) {
+					TagsItem tagsItem1 = new TagsItem();
+					tagsItem1.setKey(_ctx.stringValue("ListApplicationsResponse.Data.Applications["+ i +"].Children["+ j +"].Tags["+ k +"].Key"));
+					tagsItem1.setValue(_ctx.stringValue("ListApplicationsResponse.Data.Applications["+ i +"].Children["+ j +"].Tags["+ k +"].Value"));
+
+					tags1.add(tagsItem1);
+				}
+				childrenItem.setTags1(tags1);
+
+				children.add(childrenItem);
+			}
+			application.setChildren(children);
 
 			applications.add(application);
 		}

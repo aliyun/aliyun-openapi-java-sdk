@@ -29,7 +29,7 @@ public class CreateIngressRequest extends RoaAcsRequest<CreateIngressResponse> {
 
 	private String slbId;
 
-	private String namespaceId;
+	private Integer requestTimeout;
 
 	private String description;
 
@@ -42,6 +42,12 @@ public class CreateIngressRequest extends RoaAcsRequest<CreateIngressResponse> {
 	private String certIds;
 
 	private String listenerProtocol;
+
+	private String securityPolicyId;
+
+	private Integer idleTimeout;
+
+	private String namespaceId;
 
 	private String defaultRule;
 	public CreateIngressRequest() {
@@ -76,14 +82,14 @@ public class CreateIngressRequest extends RoaAcsRequest<CreateIngressResponse> {
 		}
 	}
 
-	public String getNamespaceId() {
-		return this.namespaceId;
+	public Integer getRequestTimeout() {
+		return this.requestTimeout;
 	}
 
-	public void setNamespaceId(String namespaceId) {
-		this.namespaceId = namespaceId;
-		if(namespaceId != null){
-			putQueryParameter("NamespaceId", namespaceId);
+	public void setRequestTimeout(Integer requestTimeout) {
+		this.requestTimeout = requestTimeout;
+		if(requestTimeout != null){
+			putQueryParameter("RequestTimeout", requestTimeout.toString());
 		}
 	}
 
@@ -150,6 +156,39 @@ public class CreateIngressRequest extends RoaAcsRequest<CreateIngressResponse> {
 		this.listenerProtocol = listenerProtocol;
 		if(listenerProtocol != null){
 			putQueryParameter("ListenerProtocol", listenerProtocol);
+		}
+	}
+
+	public String getSecurityPolicyId() {
+		return this.securityPolicyId;
+	}
+
+	public void setSecurityPolicyId(String securityPolicyId) {
+		this.securityPolicyId = securityPolicyId;
+		if(securityPolicyId != null){
+			putQueryParameter("SecurityPolicyId", securityPolicyId);
+		}
+	}
+
+	public Integer getIdleTimeout() {
+		return this.idleTimeout;
+	}
+
+	public void setIdleTimeout(Integer idleTimeout) {
+		this.idleTimeout = idleTimeout;
+		if(idleTimeout != null){
+			putQueryParameter("IdleTimeout", idleTimeout.toString());
+		}
+	}
+
+	public String getNamespaceId() {
+		return this.namespaceId;
+	}
+
+	public void setNamespaceId(String namespaceId) {
+		this.namespaceId = namespaceId;
+		if(namespaceId != null){
+			putQueryParameter("NamespaceId", namespaceId);
 		}
 	}
 

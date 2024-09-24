@@ -52,6 +52,7 @@ public class DescribeApplicationScalingRuleResponseUnmarshaller {
 		data.setScaleRuleName(_ctx.stringValue("DescribeApplicationScalingRuleResponse.Data.ScaleRuleName"));
 		data.setMinReadyInstances(_ctx.integerValue("DescribeApplicationScalingRuleResponse.Data.MinReadyInstances"));
 		data.setMinReadyInstanceRatio(_ctx.integerValue("DescribeApplicationScalingRuleResponse.Data.MinReadyInstanceRatio"));
+		data.setEnableIdle(_ctx.booleanValue("DescribeApplicationScalingRuleResponse.Data.EnableIdle"));
 
 		Timer timer = new Timer();
 		timer.setEndDate(_ctx.stringValue("DescribeApplicationScalingRuleResponse.Data.Timer.EndDate"));
