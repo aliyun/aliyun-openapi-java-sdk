@@ -45,7 +45,7 @@ public class GetResult4QueryInstancePrice4ModifyResponseUnmarshaller {
 			item.setOriginalAmount(_ctx.doubleValue("GetResult4QueryInstancePrice4ModifyResponse.Data.PriceList["+ i +"].OriginalAmount"));
 			item.setPriceUnit(_ctx.stringValue("GetResult4QueryInstancePrice4ModifyResponse.Data.PriceList["+ i +"].PriceUnit"));
 			item.setPromotionName(_ctx.stringValue("GetResult4QueryInstancePrice4ModifyResponse.Data.PriceList["+ i +"].PromotionName"));
-			item.setERROR(_ctx.stringValue("GetResult4QueryInstancePrice4ModifyResponse.Data.PriceList["+ i +"].ERROR"));
+			item.setError(_ctx.stringValue("GetResult4QueryInstancePrice4ModifyResponse.Data.PriceList["+ i +"].Error"));
 
 			priceList.add(item);
 		}

@@ -121,7 +121,7 @@ public class GetResult4QueryInstancePrice4ModifyResponse extends AcsResponse {
 
 			private String promotionName;
 
-			private String eRROR;
+			private String error;
 
 			public String getNodeType() {
 				return this.nodeType;
@@ -171,12 +171,12 @@ public class GetResult4QueryInstancePrice4ModifyResponse extends AcsResponse {
 				this.promotionName = promotionName;
 			}
 
-			public String getERROR() {
-				return this.eRROR;
+			public String getError() {
+				return this.error;
 			}
 
-			public void setERROR(String eRROR) {
-				this.eRROR = eRROR;
+			public void setError(String error) {
+				this.error = error;
 			}
 		}
 	}
