@@ -25,11 +25,17 @@ import com.aliyuncs.sae.Endpoint;
 public class RescaleApplicationVerticallyRequest extends RoaAcsRequest<RescaleApplicationVerticallyResponse> {
 	   
 
+	private Integer minReadyInstances;
+
 	private String memory;
 
 	private String appId;
 
+	private Integer minReadyInstanceRatio;
+
 	private String cpu;
+
+	private Boolean autoEnableApplicationScalingRule;
 	public RescaleApplicationVerticallyRequest() {
 		super("sae", "2019-05-06", "RescaleApplicationVertically", "serverless");
 		setUriPattern("/pop/v1/sam/app/rescaleApplicationVertically");
@@ -38,6 +44,17 @@ public class RescaleApplicationVerticallyRequest extends RoaAcsRequest<RescaleAp
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Integer getMinReadyInstances() {
+		return this.minReadyInstances;
+	}
+
+	public void setMinReadyInstances(Integer minReadyInstances) {
+		this.minReadyInstances = minReadyInstances;
+		if(minReadyInstances != null){
+			putQueryParameter("minReadyInstances", minReadyInstances.toString());
+		}
 	}
 
 	public String getMemory() {
@@ -62,6 +79,17 @@ public class RescaleApplicationVerticallyRequest extends RoaAcsRequest<RescaleAp
 		}
 	}
 
+	public Integer getMinReadyInstanceRatio() {
+		return this.minReadyInstanceRatio;
+	}
+
+	public void setMinReadyInstanceRatio(Integer minReadyInstanceRatio) {
+		this.minReadyInstanceRatio = minReadyInstanceRatio;
+		if(minReadyInstanceRatio != null){
+			putQueryParameter("minReadyInstanceRatio", minReadyInstanceRatio.toString());
+		}
+	}
+
 	public String getCpu() {
 		return this.cpu;
 	}
@@ -70,6 +98,17 @@ public class RescaleApplicationVerticallyRequest extends RoaAcsRequest<RescaleAp
 		this.cpu = cpu;
 		if(cpu != null){
 			putQueryParameter("Cpu", cpu);
+		}
+	}
+
+	public Boolean getAutoEnableApplicationScalingRule() {
+		return this.autoEnableApplicationScalingRule;
+	}
+
+	public void setAutoEnableApplicationScalingRule(Boolean autoEnableApplicationScalingRule) {
+		this.autoEnableApplicationScalingRule = autoEnableApplicationScalingRule;
+		if(autoEnableApplicationScalingRule != null){
+			putQueryParameter("autoEnableApplicationScalingRule", autoEnableApplicationScalingRule.toString());
 		}
 	}
 
