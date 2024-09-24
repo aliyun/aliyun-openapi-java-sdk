@@ -60,6 +60,7 @@ public abstract class AcsRequest<T extends AcsResponse> extends HttpRequest {
         super(null);
         this.headers.put("x-sdk-client", "Java/2.0.0");
         this.headers.put("x-sdk-invoke-type", "normal");
+        this.headers.put("x-sdk-core", "3.x");
         this.product = product;
     }
 
