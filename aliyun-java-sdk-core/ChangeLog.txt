@@ -1,3 +1,6 @@
+2024-09-24 Version: 3.7.2
+1, Add x-sdk-core header
+
 2018-04-14 Version: 3.7.1
 1, Support bearer Token
 
