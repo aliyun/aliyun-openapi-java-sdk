@@ -172,6 +172,9 @@ public class StartLiveMPUTaskRequest extends RpcAcsRequest<StartLiveMPUTaskRespo
 
 	public static class SingleSubParams {
 
+		@SerializedName("MixAudioUserIds")
+		private List<String> mixAudioUserIds;
+
 		@SerializedName("StreamType")
 		private String streamType;
 
@@ -180,6 +183,14 @@ public class StartLiveMPUTaskRequest extends RpcAcsRequest<StartLiveMPUTaskRespo
 
 		@SerializedName("UserId")
 		private String userId;
+
+		public List<String> getMixAudioUserIds() {
+			return this.mixAudioUserIds;
+		}
+
+		public void setMixAudioUserIds(List<String> mixAudioUserIds) {
+			this.mixAudioUserIds = mixAudioUserIds;
+		}
 
 		public String getStreamType() {
 			return this.streamType;

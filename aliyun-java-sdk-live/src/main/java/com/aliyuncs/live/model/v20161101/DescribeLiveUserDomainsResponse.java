@@ -93,6 +93,8 @@ public class DescribeLiveUserDomainsResponse extends AcsResponse {
 
 		private String regionName;
 
+		private String resourceGroupId;
+
 		public String getCname() {
 			return this.cname;
 		}
@@ -155,6 +157,14 @@ public class DescribeLiveUserDomainsResponse extends AcsResponse {
 
 		public void setRegionName(String regionName) {
 			this.regionName = regionName;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 	}
 

@@ -25,6 +25,8 @@ import com.aliyuncs.live.Endpoint;
 public class AddLiveDomainRequest extends RpcAcsRequest<AddLiveDomainResponse> {
 	   
 
+	private String resourceGroupId;
+
 	private String securityToken;
 
 	private String scope;
@@ -49,6 +51,17 @@ public class AddLiveDomainRequest extends RpcAcsRequest<AddLiveDomainResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
 	}
 
 	public String getSecurityToken() {

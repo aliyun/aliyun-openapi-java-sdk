@@ -42,6 +42,7 @@ public class DescribeLiveUserDomainsResponseUnmarshaller {
 			pageData.setLiveDomainStatus(_ctx.stringValue("DescribeLiveUserDomainsResponse.Domains["+ i +"].LiveDomainStatus"));
 			pageData.setLiveDomainType(_ctx.stringValue("DescribeLiveUserDomainsResponse.Domains["+ i +"].LiveDomainType"));
 			pageData.setRegionName(_ctx.stringValue("DescribeLiveUserDomainsResponse.Domains["+ i +"].RegionName"));
+			pageData.setResourceGroupId(_ctx.stringValue("DescribeLiveUserDomainsResponse.Domains["+ i +"].ResourceGroupId"));
 
 			domains.add(pageData);
 		}

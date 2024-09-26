@@ -38,6 +38,7 @@ public class DescribeLiveDomainDetailResponseUnmarshaller {
 		domainDetail.setSSLProtocol(_ctx.stringValue("DescribeLiveDomainDetailResponse.DomainDetail.SSLProtocol"));
 		domainDetail.setSSLPub(_ctx.stringValue("DescribeLiveDomainDetailResponse.DomainDetail.SSLPub"));
 		domainDetail.setScope(_ctx.stringValue("DescribeLiveDomainDetailResponse.DomainDetail.Scope"));
+		domainDetail.setResourceGroupId(_ctx.stringValue("DescribeLiveDomainDetailResponse.DomainDetail.ResourceGroupId"));
 		describeLiveDomainDetailResponse.setDomainDetail(domainDetail);
 	 
 	 	return describeLiveDomainDetailResponse;

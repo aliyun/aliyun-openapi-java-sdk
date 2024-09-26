@@ -70,6 +70,8 @@ public class DescribeLiveDomainDetailResponse extends AcsResponse {
 
 		private String scope;
 
+		private String resourceGroupId;
+
 		public String getCertName() {
 			return this.certName;
 		}
@@ -164,6 +166,14 @@ public class DescribeLiveDomainDetailResponse extends AcsResponse {
 
 		public void setScope(String scope) {
 			this.scope = scope;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 	}
 
