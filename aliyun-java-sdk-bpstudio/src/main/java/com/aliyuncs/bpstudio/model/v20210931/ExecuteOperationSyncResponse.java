@@ -28,9 +28,9 @@ public class ExecuteOperationSyncResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String data;
-
 	private Integer code;
+
+	private Data data;
 
 	public String getMessage() {
 		return this.message;
@@ -48,20 +48,63 @@ public class ExecuteOperationSyncResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getData() {
-		return this.data;
-	}
-
-	public void setData(String data) {
-		this.data = data;
-	}
-
 	public Integer getCode() {
 		return this.code;
 	}
 
 	public void setCode(Integer code) {
 		this.code = code;
+	}
+
+	public Data getData() {
+		return this.data;
+	}
+
+	public void setData(Data data) {
+		this.data = data;
+	}
+
+	public static class Data {
+
+		private String operationId;
+
+		private String status;
+
+		private String message;
+
+		private String arguments;
+
+		public String getOperationId() {
+			return this.operationId;
+		}
+
+		public void setOperationId(String operationId) {
+			this.operationId = operationId;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getMessage() {
+			return this.message;
+		}
+
+		public void setMessage(String message) {
+			this.message = message;
+		}
+
+		public String getArguments() {
+			return this.arguments;
+		}
+
+		public void setArguments(String arguments) {
+			this.arguments = arguments;
+		}
 	}
 
 	@Override

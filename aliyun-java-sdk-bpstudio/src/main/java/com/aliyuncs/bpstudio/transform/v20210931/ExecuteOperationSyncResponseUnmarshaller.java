@@ -15,6 +15,7 @@
 package com.aliyuncs.bpstudio.transform.v20210931;
 
 import com.aliyuncs.bpstudio.model.v20210931.ExecuteOperationSyncResponse;
+import com.aliyuncs.bpstudio.model.v20210931.ExecuteOperationSyncResponse.Data;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -24,8 +25,14 @@ public class ExecuteOperationSyncResponseUnmarshaller {
 		
 		executeOperationSyncResponse.setRequestId(_ctx.stringValue("ExecuteOperationSyncResponse.RequestId"));
 		executeOperationSyncResponse.setMessage(_ctx.stringValue("ExecuteOperationSyncResponse.Message"));
-		executeOperationSyncResponse.setData(_ctx.stringValue("ExecuteOperationSyncResponse.Data"));
 		executeOperationSyncResponse.setCode(_ctx.integerValue("ExecuteOperationSyncResponse.Code"));
+
+		Data data = new Data();
+		data.setOperationId(_ctx.stringValue("ExecuteOperationSyncResponse.Data.OperationId"));
+		data.setStatus(_ctx.stringValue("ExecuteOperationSyncResponse.Data.Status"));
+		data.setMessage(_ctx.stringValue("ExecuteOperationSyncResponse.Data.Message"));
+		data.setArguments(_ctx.stringValue("ExecuteOperationSyncResponse.Data.Arguments"));
+		executeOperationSyncResponse.setData(data);
 	 
 	 	return executeOperationSyncResponse;
 	}
