@@ -2,23 +2,20 @@ package com.aliyuncs.auth;
 
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.utils.AuthUtils;
+import com.aliyuncs.utils.ProfileUtils;
 import com.aliyuncs.utils.StringUtils;
-import org.ini4j.Profile;
-import org.ini4j.Wini;
-
-import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
 public class ProfileCredentialsProvider implements AlibabaCloudCredentialsProvider {
-    private static volatile Wini ini;
+    private static volatile Map<String, Map<String, String>> ini;
 
-    private static Wini getIni(String filePath) throws IOException {
+    private static Map<String, Map<String, String>> getIni(String filePath) throws IOException {
         if (null == ini) {
             synchronized (ProfileCredentialsProvider.class) {
                 if (null == ini) {
-                    ini = new Wini(new File(filePath));
+                    ini = ProfileUtils.parseFile(filePath);
                 }
             }
         }
@@ -34,7 +31,7 @@ public class ProfileCredentialsProvider implements AlibabaCloudCredentialsProvid
         if (filePath.isEmpty()) {
             throw new ClientException("The specified credentials file is empty");
         }
-        Wini ini;
+        Map<String, Map<String, String>> ini;
         try {
             ini = getIni(filePath);
         } catch (IOException e) {
@@ -49,16 +46,14 @@ public class ProfileCredentialsProvider implements AlibabaCloudCredentialsProvid
         return createCredential(clientConfig, credentialsProviderFactory);
     }
 
-    private Map<String, Map<String, String>> loadIni(Wini ini) {
+    private Map<String, Map<String, String>> loadIni(Map<String, Map<String, String>> ini) {
         Map<String, Map<String, String>> client = new HashMap<String, Map<String, String>>();
-        boolean enable;
-        for (Map.Entry<String, Profile.Section> clientType : ini.entrySet()) {
-            enable = clientType.getValue().get(AuthConstant.INI_ENABLE, boolean.class);
-            if (enable) {
+        String enable;
+        for (Map.Entry<String, Map<String, String>> clientType : ini.entrySet()) {
+            enable = clientType.getValue().get(AuthConstant.INI_ENABLE);
+            if (Boolean.parseBoolean(enable)) {
                 Map<String, String> clientConfig = new HashMap<String, String>();
-                for (Map.Entry<String, String> enabledClient : clientType.getValue().entrySet()) {
-                    clientConfig.put(enabledClient.getKey(), enabledClient.getValue());
-                }
+                clientConfig.putAll(clientType.getValue());
                 client.put(clientType.getKey(), clientConfig);
             }
         }
