@@ -73,8 +73,8 @@ public class APIEncapsulateTest extends BaseTest {
         List<AddSmsSignRequest.SignFileList> list = new ArrayList<AddSmsSignRequest.SignFileList>();
         list.add(signFileList);
         request.setSignFileLists(list);
-        try {	
-            this.client.getAcsResponse(request);	
+        try {
+            this.client.getAcsResponse(request);
             Assert.fail();
         } catch (ClientException e) {
             Assert.assertEquals("MissingSignName", e.getErrCode());

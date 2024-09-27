@@ -6,9 +6,8 @@
     <packaging>jar</packaging>
     <version>4.0.8</version>
     <name>java-sdk-function-test</name>
-    <url>http://www.aliyun.com</url>
+    <url>https://www.aliyun.com</url>
     <description>Aliyun Open API SDK for Java
-
 
         Copyright (C) Alibaba Cloud Computing
         All rights reserved.
@@ -217,8 +216,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.13.0</version>
                 <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
+                    <source>8</source>
+                    <target>8</target>
                     <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>

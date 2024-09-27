@@ -134,6 +134,7 @@ public class CoreTest extends BaseTest {
         try {
             client.getCommonResponse(request);
         } catch (Exception e) {
+            e.printStackTrace();
             Assert.fail();
         }
     }
