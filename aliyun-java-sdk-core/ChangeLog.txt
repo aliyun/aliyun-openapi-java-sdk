@@ -1,4 +1,7 @@
-﻿2024-07-22 Version:4.7.1
+﻿2024-09-27 Version:4.7.2
+1.Remove ini4j && improve ini config file parsing.
+
+2024-07-22 Version:4.7.1
 1, Support custom location service.
 
 2024-07-08 Version:4.7.0
