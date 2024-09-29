@@ -33,6 +33,7 @@ public class GetNodeResponseUnmarshaller {
 		data.setSchedulerType(_ctx.stringValue("GetNodeResponse.Data.SchedulerType"));
 		data.setRepeatInterval(_ctx.longValue("GetNodeResponse.Data.RepeatInterval"));
 		data.setRepeatability(_ctx.stringValue("GetNodeResponse.Data.Repeatability"));
+		data.setRepeatMode(_ctx.integerValue("GetNodeResponse.Data.RepeatMode"));
 		data.setProjectId(_ctx.longValue("GetNodeResponse.Data.ProjectId"));
 		data.setProgramType(_ctx.stringValue("GetNodeResponse.Data.ProgramType"));
 		data.setPriority(_ctx.integerValue("GetNodeResponse.Data.Priority"));

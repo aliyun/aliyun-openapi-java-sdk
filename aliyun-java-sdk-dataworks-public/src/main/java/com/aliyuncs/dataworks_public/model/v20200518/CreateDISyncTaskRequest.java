@@ -96,7 +96,7 @@ public class CreateDISyncTaskRequest extends RpcAcsRequest<CreateDISyncTaskRespo
 	public void setTaskContent(String taskContent) {
 		this.taskContent = taskContent;
 		if(taskContent != null){
-			putQueryParameter("TaskContent", taskContent);
+			putBodyParameter("TaskContent", taskContent);
 		}
 	}
 

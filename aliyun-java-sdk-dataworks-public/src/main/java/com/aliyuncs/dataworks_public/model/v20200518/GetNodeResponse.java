@@ -92,6 +92,8 @@ public class GetNodeResponse extends AcsResponse {
 
 		private String repeatability;
 
+		private Integer repeatMode;
+
 		private Long projectId;
 
 		private String programType;
@@ -160,6 +162,14 @@ public class GetNodeResponse extends AcsResponse {
 
 		public void setRepeatability(String repeatability) {
 			this.repeatability = repeatability;
+		}
+
+		public Integer getRepeatMode() {
+			return this.repeatMode;
+		}
+
+		public void setRepeatMode(Integer repeatMode) {
+			this.repeatMode = repeatMode;
 		}
 
 		public Long getProjectId() {
