@@ -34,6 +34,8 @@ public class GetPolicyEnableStatusRequest extends RpcAcsRequest<GetPolicyEnableS
 	private String userType;
 
 	private Long ownerId;
+
+	private String openType;
 	public GetPolicyEnableStatusRequest() {
 		super("Tag", "2018-08-28", "GetPolicyEnableStatus", "tag");
 		setMethod(MethodType.POST);
@@ -95,6 +97,17 @@ public class GetPolicyEnableStatusRequest extends RpcAcsRequest<GetPolicyEnableS
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getOpenType() {
+		return this.openType;
+	}
+
+	public void setOpenType(String openType) {
+		this.openType = openType;
+		if(openType != null){
+			putQueryParameter("OpenType", openType);
 		}
 	}
 

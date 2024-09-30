@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.tag.model.v20180828.ListSupportResourceTypesResponse;
 import com.aliyuncs.tag.model.v20180828.ListSupportResourceTypesResponse.SupportResourceType;
 import com.aliyuncs.tag.model.v20180828.ListSupportResourceTypesResponse.SupportResourceType.SupportItemsItem;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -33,14 +34,18 @@ public class ListSupportResourceTypesResponseUnmarshaller {
 		List<SupportResourceType> supportResourceTypes = new ArrayList<SupportResourceType>();
 		for (int i = 0; i < _ctx.lengthValue("ListSupportResourceTypesResponse.SupportResourceTypes.Length"); i++) {
 			SupportResourceType supportResourceType = new SupportResourceType();
+			supportResourceType.setArnTemplate(_ctx.stringValue("ListSupportResourceTypesResponse.SupportResourceTypes["+ i +"].ArnTemplate"));
 			supportResourceType.setProductCode(_ctx.stringValue("ListSupportResourceTypesResponse.SupportResourceTypes["+ i +"].ProductCode"));
 			supportResourceType.setResourceType(_ctx.stringValue("ListSupportResourceTypesResponse.SupportResourceTypes["+ i +"].ResourceType"));
 
 			List<SupportItemsItem> supportItems = new ArrayList<SupportItemsItem>();
 			for (int j = 0; j < _ctx.lengthValue("ListSupportResourceTypesResponse.SupportResourceTypes["+ i +"].SupportItems.Length"); j++) {
 				SupportItemsItem supportItemsItem = new SupportItemsItem();
-				supportItemsItem.setSupportCode(_ctx.stringValue("ListSupportResourceTypesResponse.SupportResourceTypes["+ i +"].SupportItems["+ j +"].SupportCode"));
 				supportItemsItem.setSupport(_ctx.booleanValue("ListSupportResourceTypesResponse.SupportResourceTypes["+ i +"].SupportItems["+ j +"].Support"));
+				supportItemsItem.setSupportCode(_ctx.stringValue("ListSupportResourceTypesResponse.SupportResourceTypes["+ i +"].SupportItems["+ j +"].SupportCode"));
+
+				List<Map<Object, Object>> supportDetails = _ctx.listMapValue("ListSupportResourceTypesResponse.SupportResourceTypes["+ i +"].SupportItems["+ j +"].SupportDetails");
+				supportItemsItem.setSupportDetails(supportDetails);
 
 				supportItems.add(supportItemsItem);
 			}

@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CheckCreatedByEnabledResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean openStatus;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public Boolean getOpenStatus() {
 		return this.openStatus;
@@ -42,6 +34,14 @@ public class CheckCreatedByEnabledResponse extends AcsResponse {
 
 	public void setOpenStatus(Boolean openStatus) {
 		this.openStatus = openStatus;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

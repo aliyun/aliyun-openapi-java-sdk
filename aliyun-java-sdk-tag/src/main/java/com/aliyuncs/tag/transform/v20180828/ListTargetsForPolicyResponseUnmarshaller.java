@@ -28,8 +28,8 @@ public class ListTargetsForPolicyResponseUnmarshaller {
 		
 		listTargetsForPolicyResponse.setRequestId(_ctx.stringValue("ListTargetsForPolicyResponse.RequestId"));
 		listTargetsForPolicyResponse.setIsRd(_ctx.booleanValue("ListTargetsForPolicyResponse.IsRd"));
-		listTargetsForPolicyResponse.setRdId(_ctx.stringValue("ListTargetsForPolicyResponse.RdId"));
 		listTargetsForPolicyResponse.setNextToken(_ctx.stringValue("ListTargetsForPolicyResponse.NextToken"));
+		listTargetsForPolicyResponse.setRdId(_ctx.stringValue("ListTargetsForPolicyResponse.RdId"));
 
 		List<Target> targets = new ArrayList<Target>();
 		for (int i = 0; i < _ctx.lengthValue("ListTargetsForPolicyResponse.Targets.Length"); i++) {

@@ -38,9 +38,9 @@ public class ListResourcesByTagResponseUnmarshaller {
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("ListResourcesByTagResponse.Resources["+ i +"].Tags.Length"); j++) {
 				Tag tag = new Tag();
+				tag.setCategory(_ctx.stringValue("ListResourcesByTagResponse.Resources["+ i +"].Tags["+ j +"].Category"));
 				tag.setKey(_ctx.stringValue("ListResourcesByTagResponse.Resources["+ i +"].Tags["+ j +"].Key"));
 				tag.setValue(_ctx.stringValue("ListResourcesByTagResponse.Resources["+ i +"].Tags["+ j +"].Value"));
-				tag.setCategory(_ctx.stringValue("ListResourcesByTagResponse.Resources["+ i +"].Tags["+ j +"].Category"));
 
 				tags.add(tag);
 			}

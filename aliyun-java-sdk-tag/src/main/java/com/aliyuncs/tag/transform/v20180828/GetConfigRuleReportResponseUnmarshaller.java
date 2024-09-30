@@ -24,12 +24,12 @@ public class GetConfigRuleReportResponseUnmarshaller {
 	public static GetConfigRuleReportResponse unmarshall(GetConfigRuleReportResponse getConfigRuleReportResponse, UnmarshallerContext _ctx) {
 		
 		getConfigRuleReportResponse.setRequestId(_ctx.stringValue("GetConfigRuleReportResponse.RequestId"));
-		getConfigRuleReportResponse.setSuccess(_ctx.booleanValue("GetConfigRuleReportResponse.Success"));
 		getConfigRuleReportResponse.setHttpStatusCode(_ctx.integerValue("GetConfigRuleReportResponse.HttpStatusCode"));
+		getConfigRuleReportResponse.setSuccess(_ctx.booleanValue("GetConfigRuleReportResponse.Success"));
 
 		Data data = new Data();
-		data.setReportId(_ctx.stringValue("GetConfigRuleReportResponse.Data.ReportId"));
 		data.setCreatedTime(_ctx.longValue("GetConfigRuleReportResponse.Data.CreatedTime"));
+		data.setReportId(_ctx.stringValue("GetConfigRuleReportResponse.Data.ReportId"));
 		data.setTargetId(_ctx.stringValue("GetConfigRuleReportResponse.Data.TargetId"));
 		data.setTargetType(_ctx.stringValue("GetConfigRuleReportResponse.Data.TargetType"));
 		getConfigRuleReportResponse.setData(data);

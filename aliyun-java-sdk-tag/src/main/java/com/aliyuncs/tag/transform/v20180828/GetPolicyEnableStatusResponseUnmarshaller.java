@@ -31,8 +31,8 @@ public class GetPolicyEnableStatusResponseUnmarshaller {
 		List<StatusModelsItem> statusModels = new ArrayList<StatusModelsItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetPolicyEnableStatusResponse.StatusModels.Length"); i++) {
 			StatusModelsItem statusModelsItem = new StatusModelsItem();
-			statusModelsItem.setUserType(_ctx.stringValue("GetPolicyEnableStatusResponse.StatusModels["+ i +"].UserType"));
 			statusModelsItem.setStatus(_ctx.stringValue("GetPolicyEnableStatusResponse.StatusModels["+ i +"].Status"));
+			statusModelsItem.setUserType(_ctx.stringValue("GetPolicyEnableStatusResponse.StatusModels["+ i +"].UserType"));
 
 			statusModels.add(statusModelsItem);
 		}

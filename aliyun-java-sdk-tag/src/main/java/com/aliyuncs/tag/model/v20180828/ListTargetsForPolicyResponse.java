@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListTargetsForPolicyResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean isRd;
-
-	private String rdId;
 
 	private String nextToken;
 
+	private String rdId;
+
+	private String requestId;
+
 	private List<Target> targets;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Boolean getIsRd() {
 		return this.isRd;
@@ -49,6 +41,14 @@ public class ListTargetsForPolicyResponse extends AcsResponse {
 
 	public void setIsRd(Boolean isRd) {
 		this.isRd = isRd;
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
 	}
 
 	public String getRdId() {
@@ -59,12 +59,12 @@ public class ListTargetsForPolicyResponse extends AcsResponse {
 		this.rdId = rdId;
 	}
 
-	public String getNextToken() {
-		return this.nextToken;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<Target> getTargets() {
