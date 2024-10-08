@@ -24,38 +24,16 @@ import com.aliyuncs.http.MethodType;
 public class GetMultiAccountResourceConfigurationRequest extends RpcAcsRequest<GetMultiAccountResourceConfigurationResponse> {
 	   
 
-	private String resourceId;
-
-	private String resourceType;
-
 	private String accountId;
 
 	private String resourceRegionId;
+
+	private String resourceId;
+
+	private String resourceType;
 	public GetMultiAccountResourceConfigurationRequest() {
 		super("ResourceCenter", "2022-12-01", "GetMultiAccountResourceConfiguration");
 		setMethod(MethodType.POST);
-	}
-
-	public String getResourceId() {
-		return this.resourceId;
-	}
-
-	public void setResourceId(String resourceId) {
-		this.resourceId = resourceId;
-		if(resourceId != null){
-			putQueryParameter("ResourceId", resourceId);
-		}
-	}
-
-	public String getResourceType() {
-		return this.resourceType;
-	}
-
-	public void setResourceType(String resourceType) {
-		this.resourceType = resourceType;
-		if(resourceType != null){
-			putQueryParameter("ResourceType", resourceType);
-		}
 	}
 
 	public String getAccountId() {
@@ -77,6 +55,28 @@ public class GetMultiAccountResourceConfigurationRequest extends RpcAcsRequest<G
 		this.resourceRegionId = resourceRegionId;
 		if(resourceRegionId != null){
 			putQueryParameter("ResourceRegionId", resourceRegionId);
+		}
+	}
+
+	public String getResourceId() {
+		return this.resourceId;
+	}
+
+	public void setResourceId(String resourceId) {
+		this.resourceId = resourceId;
+		if(resourceId != null){
+			putQueryParameter("ResourceId", resourceId);
+		}
+	}
+
+	public String getResourceType() {
+		return this.resourceType;
+	}
+
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType);
 		}
 	}
 

@@ -126,7 +126,11 @@ public class SearchResourcesResponse extends AcsResponse {
 
 		private String regionId;
 
+		private String expireTime;
+
 		private List<Tag> tags;
+
+		private List<IpAddressAttribute> ipAddressAttributes;
 
 		private List<String> ipAddresses;
 
@@ -194,12 +198,28 @@ public class SearchResourcesResponse extends AcsResponse {
 			this.regionId = regionId;
 		}
 
+		public String getExpireTime() {
+			return this.expireTime;
+		}
+
+		public void setExpireTime(String expireTime) {
+			this.expireTime = expireTime;
+		}
+
 		public List<Tag> getTags() {
 			return this.tags;
 		}
 
 		public void setTags(List<Tag> tags) {
 			this.tags = tags;
+		}
+
+		public List<IpAddressAttribute> getIpAddressAttributes() {
+			return this.ipAddressAttributes;
+		}
+
+		public void setIpAddressAttributes(List<IpAddressAttribute> ipAddressAttributes) {
+			this.ipAddressAttributes = ipAddressAttributes;
 		}
 
 		public List<String> getIpAddresses() {
@@ -230,6 +250,39 @@ public class SearchResourcesResponse extends AcsResponse {
 
 			public void setValue(String value) {
 				this.value = value;
+			}
+		}
+
+		public static class IpAddressAttribute {
+
+			private String ipAddress;
+
+			private String networkType;
+
+			private String version;
+
+			public String getIpAddress() {
+				return this.ipAddress;
+			}
+
+			public void setIpAddress(String ipAddress) {
+				this.ipAddress = ipAddress;
+			}
+
+			public String getNetworkType() {
+				return this.networkType;
+			}
+
+			public void setNetworkType(String networkType) {
+				this.networkType = networkType;
+			}
+
+			public String getVersion() {
+				return this.version;
+			}
+
+			public void setVersion(String version) {
+				this.version = version;
 			}
 		}
 	}

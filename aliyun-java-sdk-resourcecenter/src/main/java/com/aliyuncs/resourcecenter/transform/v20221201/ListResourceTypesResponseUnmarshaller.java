@@ -29,17 +29,18 @@ public class ListResourceTypesResponseUnmarshaller {
 	public static ListResourceTypesResponse unmarshall(ListResourceTypesResponse listResourceTypesResponse, UnmarshallerContext _ctx) {
 		
 		listResourceTypesResponse.setRequestId(_ctx.stringValue("ListResourceTypesResponse.RequestId"));
-		listResourceTypesResponse.setSuccess(_ctx.booleanValue("ListResourceTypesResponse.Success"));
-		listResourceTypesResponse.setErrorCode(_ctx.stringValue("ListResourceTypesResponse.ErrorCode"));
-		listResourceTypesResponse.setErrorMessage(_ctx.stringValue("ListResourceTypesResponse.ErrorMessage"));
 		listResourceTypesResponse.setDynamicCode(_ctx.stringValue("ListResourceTypesResponse.DynamicCode"));
 		listResourceTypesResponse.setDynamicMessage(_ctx.stringValue("ListResourceTypesResponse.DynamicMessage"));
+		listResourceTypesResponse.setErrorCode(_ctx.stringValue("ListResourceTypesResponse.ErrorCode"));
+		listResourceTypesResponse.setErrorMessage(_ctx.stringValue("ListResourceTypesResponse.ErrorMessage"));
+		listResourceTypesResponse.setSuccess(_ctx.booleanValue("ListResourceTypesResponse.Success"));
 
 		List<ResourceType> resourceTypes = new ArrayList<ResourceType>();
 		for (int i = 0; i < _ctx.lengthValue("ListResourceTypesResponse.ResourceTypes.Length"); i++) {
 			ResourceType resourceType = new ResourceType();
-			resourceType.setResourceType(_ctx.stringValue("ListResourceTypesResponse.ResourceTypes["+ i +"].ResourceType"));
+			resourceType.setAuthorized(_ctx.booleanValue("ListResourceTypesResponse.ResourceTypes["+ i +"].Authorized"));
 			resourceType.setProductName(_ctx.stringValue("ListResourceTypesResponse.ResourceTypes["+ i +"].ProductName"));
+			resourceType.setResourceType(_ctx.stringValue("ListResourceTypesResponse.ResourceTypes["+ i +"].ResourceType"));
 			resourceType.setResourceTypeName(_ctx.stringValue("ListResourceTypesResponse.ResourceTypes["+ i +"].ResourceTypeName"));
 
 			List<String> filterKeys = new ArrayList<String>();

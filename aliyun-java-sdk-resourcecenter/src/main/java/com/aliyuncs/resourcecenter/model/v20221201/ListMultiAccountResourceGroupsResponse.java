@@ -25,12 +25,6 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListMultiAccountResourceGroupsResponse extends AcsResponse {
 
-	private String nextToken;
-
-	private String requestId;
-
-	private Boolean success;
-
 	private String dynamicCode;
 
 	private String dynamicMessage;
@@ -39,31 +33,13 @@ public class ListMultiAccountResourceGroupsResponse extends AcsResponse {
 
 	private String errorMessage;
 
+	private String nextToken;
+
+	private String requestId;
+
+	private Boolean success;
+
 	private List<ResourceGroup> resourceGroups;
-
-	public String getNextToken() {
-		return this.nextToken;
-	}
-
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getDynamicCode() {
 		return this.dynamicCode;
@@ -97,6 +73,30 @@ public class ListMultiAccountResourceGroupsResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public List<ResourceGroup> getResourceGroups() {
 		return this.resourceGroups;
 	}
@@ -107,33 +107,17 @@ public class ListMultiAccountResourceGroupsResponse extends AcsResponse {
 
 	public static class ResourceGroup {
 
-		private String displayName;
-
-		private String status;
-
 		private String accountId;
-
-		private String name;
 
 		private String createDate;
 
+		private String displayName;
+
 		private String id;
 
-		public String getDisplayName() {
-			return this.displayName;
-		}
+		private String name;
 
-		public void setDisplayName(String displayName) {
-			this.displayName = displayName;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
+		private String status;
 
 		public String getAccountId() {
 			return this.accountId;
@@ -141,14 +125,6 @@ public class ListMultiAccountResourceGroupsResponse extends AcsResponse {
 
 		public void setAccountId(String accountId) {
 			this.accountId = accountId;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
 		}
 
 		public String getCreateDate() {
@@ -159,12 +135,36 @@ public class ListMultiAccountResourceGroupsResponse extends AcsResponse {
 			this.createDate = createDate;
 		}
 
+		public String getDisplayName() {
+			return this.displayName;
+		}
+
+		public void setDisplayName(String displayName) {
+			this.displayName = displayName;
+		}
+
 		public String getId() {
 			return this.id;
 		}
 
 		public void setId(String id) {
 			this.id = id;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
 		}
 	}
 

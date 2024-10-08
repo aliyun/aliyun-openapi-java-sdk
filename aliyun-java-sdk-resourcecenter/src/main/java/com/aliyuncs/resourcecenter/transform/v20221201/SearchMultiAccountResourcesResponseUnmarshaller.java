@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.resourcecenter.model.v20221201.SearchMultiAccountResourcesResponse;
 import com.aliyuncs.resourcecenter.model.v20221201.SearchMultiAccountResourcesResponse.Filter;
 import com.aliyuncs.resourcecenter.model.v20221201.SearchMultiAccountResourcesResponse.Resource;
+import com.aliyuncs.resourcecenter.model.v20221201.SearchMultiAccountResourcesResponse.Resource.IpAddressAttribute;
 import com.aliyuncs.resourcecenter.model.v20221201.SearchMultiAccountResourcesResponse.Resource.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -29,9 +30,9 @@ public class SearchMultiAccountResourcesResponseUnmarshaller {
 	public static SearchMultiAccountResourcesResponse unmarshall(SearchMultiAccountResourcesResponse searchMultiAccountResourcesResponse, UnmarshallerContext _ctx) {
 		
 		searchMultiAccountResourcesResponse.setRequestId(_ctx.stringValue("SearchMultiAccountResourcesResponse.RequestId"));
+		searchMultiAccountResourcesResponse.setMaxResults(_ctx.integerValue("SearchMultiAccountResourcesResponse.MaxResults"));
 		searchMultiAccountResourcesResponse.setNextToken(_ctx.stringValue("SearchMultiAccountResourcesResponse.NextToken"));
 		searchMultiAccountResourcesResponse.setScope(_ctx.stringValue("SearchMultiAccountResourcesResponse.Scope"));
-		searchMultiAccountResourcesResponse.setMaxResults(_ctx.integerValue("SearchMultiAccountResourcesResponse.MaxResults"));
 
 		List<Filter> filters = new ArrayList<Filter>();
 		for (int i = 0; i < _ctx.lengthValue("SearchMultiAccountResourcesResponse.Filters.Length"); i++) {
@@ -52,20 +53,32 @@ public class SearchMultiAccountResourcesResponseUnmarshaller {
 		List<Resource> resources = new ArrayList<Resource>();
 		for (int i = 0; i < _ctx.lengthValue("SearchMultiAccountResourcesResponse.Resources.Length"); i++) {
 			Resource resource = new Resource();
-			resource.setResourceType(_ctx.stringValue("SearchMultiAccountResourcesResponse.Resources["+ i +"].ResourceType"));
-			resource.setCreateTime(_ctx.stringValue("SearchMultiAccountResourcesResponse.Resources["+ i +"].CreateTime"));
-			resource.setResourceGroupId(_ctx.stringValue("SearchMultiAccountResourcesResponse.Resources["+ i +"].ResourceGroupId"));
-			resource.setZoneId(_ctx.stringValue("SearchMultiAccountResourcesResponse.Resources["+ i +"].ZoneId"));
 			resource.setAccountId(_ctx.stringValue("SearchMultiAccountResourcesResponse.Resources["+ i +"].AccountId"));
+			resource.setCreateTime(_ctx.stringValue("SearchMultiAccountResourcesResponse.Resources["+ i +"].CreateTime"));
+			resource.setExpireTime(_ctx.stringValue("SearchMultiAccountResourcesResponse.Resources["+ i +"].ExpireTime"));
+			resource.setRegionId(_ctx.stringValue("SearchMultiAccountResourcesResponse.Resources["+ i +"].RegionId"));
+			resource.setResourceGroupId(_ctx.stringValue("SearchMultiAccountResourcesResponse.Resources["+ i +"].ResourceGroupId"));
 			resource.setResourceId(_ctx.stringValue("SearchMultiAccountResourcesResponse.Resources["+ i +"].ResourceId"));
 			resource.setResourceName(_ctx.stringValue("SearchMultiAccountResourcesResponse.Resources["+ i +"].ResourceName"));
-			resource.setRegionId(_ctx.stringValue("SearchMultiAccountResourcesResponse.Resources["+ i +"].RegionId"));
+			resource.setResourceType(_ctx.stringValue("SearchMultiAccountResourcesResponse.Resources["+ i +"].ResourceType"));
+			resource.setZoneId(_ctx.stringValue("SearchMultiAccountResourcesResponse.Resources["+ i +"].ZoneId"));
 
 			List<String> ipAddresses = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("SearchMultiAccountResourcesResponse.Resources["+ i +"].IpAddresses.Length"); j++) {
 				ipAddresses.add(_ctx.stringValue("SearchMultiAccountResourcesResponse.Resources["+ i +"].IpAddresses["+ j +"]"));
 			}
 			resource.setIpAddresses(ipAddresses);
+
+			List<IpAddressAttribute> ipAddressAttributes = new ArrayList<IpAddressAttribute>();
+			for (int j = 0; j < _ctx.lengthValue("SearchMultiAccountResourcesResponse.Resources["+ i +"].IpAddressAttributes.Length"); j++) {
+				IpAddressAttribute ipAddressAttribute = new IpAddressAttribute();
+				ipAddressAttribute.setIpAddress(_ctx.stringValue("SearchMultiAccountResourcesResponse.Resources["+ i +"].IpAddressAttributes["+ j +"].IpAddress"));
+				ipAddressAttribute.setNetworkType(_ctx.stringValue("SearchMultiAccountResourcesResponse.Resources["+ i +"].IpAddressAttributes["+ j +"].NetworkType"));
+				ipAddressAttribute.setVersion(_ctx.stringValue("SearchMultiAccountResourcesResponse.Resources["+ i +"].IpAddressAttributes["+ j +"].Version"));
+
+				ipAddressAttributes.add(ipAddressAttribute);
+			}
+			resource.setIpAddressAttributes(ipAddressAttributes);
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("SearchMultiAccountResourcesResponse.Resources["+ i +"].Tags.Length"); j++) {

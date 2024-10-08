@@ -25,24 +25,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class SearchMultiAccountResourcesResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer maxResults;
 
 	private String nextToken;
 
-	private String scope;
+	private String requestId;
 
-	private Integer maxResults;
+	private String scope;
 
 	private List<Filter> filters;
 
 	private List<Resource> resources;
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getMaxResults() {
+		return this.maxResults;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setMaxResults(Integer maxResults) {
+		this.maxResults = maxResults;
 	}
 
 	public String getNextToken() {
@@ -53,20 +53,20 @@ public class SearchMultiAccountResourcesResponse extends AcsResponse {
 		this.nextToken = nextToken;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public String getScope() {
 		return this.scope;
 	}
 
 	public void setScope(String scope) {
 		this.scope = scope;
-	}
-
-	public Integer getMaxResults() {
-		return this.maxResults;
-	}
-
-	public void setMaxResults(Integer maxResults) {
-		this.maxResults = maxResults;
 	}
 
 	public List<Filter> getFilters() {
@@ -120,32 +120,36 @@ public class SearchMultiAccountResourcesResponse extends AcsResponse {
 
 	public static class Resource {
 
-		private String resourceType;
+		private String accountId;
 
 		private String createTime;
 
+		private String expireTime;
+
+		private String regionId;
+
 		private String resourceGroupId;
-
-		private String zoneId;
-
-		private String accountId;
 
 		private String resourceId;
 
 		private String resourceName;
 
-		private String regionId;
+		private String resourceType;
+
+		private String zoneId;
+
+		private List<IpAddressAttribute> ipAddressAttributes;
 
 		private List<Tag> tags;
 
 		private List<String> ipAddresses;
 
-		public String getResourceType() {
-			return this.resourceType;
+		public String getAccountId() {
+			return this.accountId;
 		}
 
-		public void setResourceType(String resourceType) {
-			this.resourceType = resourceType;
+		public void setAccountId(String accountId) {
+			this.accountId = accountId;
 		}
 
 		public String getCreateTime() {
@@ -156,28 +160,28 @@ public class SearchMultiAccountResourcesResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
+		public String getExpireTime() {
+			return this.expireTime;
+		}
+
+		public void setExpireTime(String expireTime) {
+			this.expireTime = expireTime;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
 		public String getResourceGroupId() {
 			return this.resourceGroupId;
 		}
 
 		public void setResourceGroupId(String resourceGroupId) {
 			this.resourceGroupId = resourceGroupId;
-		}
-
-		public String getZoneId() {
-			return this.zoneId;
-		}
-
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
-		}
-
-		public String getAccountId() {
-			return this.accountId;
-		}
-
-		public void setAccountId(String accountId) {
-			this.accountId = accountId;
 		}
 
 		public String getResourceId() {
@@ -196,12 +200,28 @@ public class SearchMultiAccountResourcesResponse extends AcsResponse {
 			this.resourceName = resourceName;
 		}
 
-		public String getRegionId() {
-			return this.regionId;
+		public String getResourceType() {
+			return this.resourceType;
 		}
 
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
+		public void setResourceType(String resourceType) {
+			this.resourceType = resourceType;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
+
+		public List<IpAddressAttribute> getIpAddressAttributes() {
+			return this.ipAddressAttributes;
+		}
+
+		public void setIpAddressAttributes(List<IpAddressAttribute> ipAddressAttributes) {
+			this.ipAddressAttributes = ipAddressAttributes;
 		}
 
 		public List<Tag> getTags() {
@@ -218,6 +238,39 @@ public class SearchMultiAccountResourcesResponse extends AcsResponse {
 
 		public void setIpAddresses(List<String> ipAddresses) {
 			this.ipAddresses = ipAddresses;
+		}
+
+		public static class IpAddressAttribute {
+
+			private String ipAddress;
+
+			private String networkType;
+
+			private String version;
+
+			public String getIpAddress() {
+				return this.ipAddress;
+			}
+
+			public void setIpAddress(String ipAddress) {
+				this.ipAddress = ipAddress;
+			}
+
+			public String getNetworkType() {
+				return this.networkType;
+			}
+
+			public void setNetworkType(String networkType) {
+				this.networkType = networkType;
+			}
+
+			public String getVersion() {
+				return this.version;
+			}
+
+			public void setVersion(String version) {
+				this.version = version;
+			}
 		}
 
 		public static class Tag {

@@ -27,22 +27,22 @@ public class ListMultiAccountResourceGroupsResponseUnmarshaller {
 	public static ListMultiAccountResourceGroupsResponse unmarshall(ListMultiAccountResourceGroupsResponse listMultiAccountResourceGroupsResponse, UnmarshallerContext _ctx) {
 		
 		listMultiAccountResourceGroupsResponse.setRequestId(_ctx.stringValue("ListMultiAccountResourceGroupsResponse.RequestId"));
-		listMultiAccountResourceGroupsResponse.setNextToken(_ctx.stringValue("ListMultiAccountResourceGroupsResponse.NextToken"));
-		listMultiAccountResourceGroupsResponse.setSuccess(_ctx.booleanValue("ListMultiAccountResourceGroupsResponse.Success"));
 		listMultiAccountResourceGroupsResponse.setDynamicCode(_ctx.stringValue("ListMultiAccountResourceGroupsResponse.DynamicCode"));
 		listMultiAccountResourceGroupsResponse.setDynamicMessage(_ctx.stringValue("ListMultiAccountResourceGroupsResponse.DynamicMessage"));
 		listMultiAccountResourceGroupsResponse.setErrorCode(_ctx.stringValue("ListMultiAccountResourceGroupsResponse.ErrorCode"));
 		listMultiAccountResourceGroupsResponse.setErrorMessage(_ctx.stringValue("ListMultiAccountResourceGroupsResponse.ErrorMessage"));
+		listMultiAccountResourceGroupsResponse.setNextToken(_ctx.stringValue("ListMultiAccountResourceGroupsResponse.NextToken"));
+		listMultiAccountResourceGroupsResponse.setSuccess(_ctx.booleanValue("ListMultiAccountResourceGroupsResponse.Success"));
 
 		List<ResourceGroup> resourceGroups = new ArrayList<ResourceGroup>();
 		for (int i = 0; i < _ctx.lengthValue("ListMultiAccountResourceGroupsResponse.ResourceGroups.Length"); i++) {
 			ResourceGroup resourceGroup = new ResourceGroup();
-			resourceGroup.setDisplayName(_ctx.stringValue("ListMultiAccountResourceGroupsResponse.ResourceGroups["+ i +"].DisplayName"));
-			resourceGroup.setStatus(_ctx.stringValue("ListMultiAccountResourceGroupsResponse.ResourceGroups["+ i +"].Status"));
 			resourceGroup.setAccountId(_ctx.stringValue("ListMultiAccountResourceGroupsResponse.ResourceGroups["+ i +"].AccountId"));
-			resourceGroup.setName(_ctx.stringValue("ListMultiAccountResourceGroupsResponse.ResourceGroups["+ i +"].Name"));
 			resourceGroup.setCreateDate(_ctx.stringValue("ListMultiAccountResourceGroupsResponse.ResourceGroups["+ i +"].CreateDate"));
+			resourceGroup.setDisplayName(_ctx.stringValue("ListMultiAccountResourceGroupsResponse.ResourceGroups["+ i +"].DisplayName"));
 			resourceGroup.setId(_ctx.stringValue("ListMultiAccountResourceGroupsResponse.ResourceGroups["+ i +"].Id"));
+			resourceGroup.setName(_ctx.stringValue("ListMultiAccountResourceGroupsResponse.ResourceGroups["+ i +"].Name"));
+			resourceGroup.setStatus(_ctx.stringValue("ListMultiAccountResourceGroupsResponse.ResourceGroups["+ i +"].Status"));
 
 			resourceGroups.add(resourceGroup);
 		}

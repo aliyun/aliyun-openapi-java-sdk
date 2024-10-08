@@ -27,9 +27,9 @@ public class ListMultiAccountResourceGroupsRequest extends RpcAcsRequest<ListMul
 
 	private String accountId;
 
-	private List<String> resourceGroupIdss;
-
 	private String nextToken;
+
+	private List<String> resourceGroupIdss;
 
 	private Integer maxResults;
 	public ListMultiAccountResourceGroupsRequest() {
@@ -48,6 +48,17 @@ public class ListMultiAccountResourceGroupsRequest extends RpcAcsRequest<ListMul
 		}
 	}
 
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
+		}
+	}
+
 	public List<String> getResourceGroupIdss() {
 		return this.resourceGroupIdss;
 	}
@@ -59,17 +70,6 @@ public class ListMultiAccountResourceGroupsRequest extends RpcAcsRequest<ListMul
 				putQueryParameter("ResourceGroupIds." + (i + 1) , resourceGroupIdss.get(i));
 			}
 		}	
-	}
-
-	public String getNextToken() {
-		return this.nextToken;
-	}
-
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
-		if(nextToken != null){
-			putQueryParameter("NextToken", nextToken);
-		}
 	}
 
 	public Integer getMaxResults() {

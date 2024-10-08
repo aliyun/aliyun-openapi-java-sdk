@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.resourcecenter.model.v20221201.SearchResourcesResponse;
 import com.aliyuncs.resourcecenter.model.v20221201.SearchResourcesResponse.Filter;
 import com.aliyuncs.resourcecenter.model.v20221201.SearchResourcesResponse.Resource;
+import com.aliyuncs.resourcecenter.model.v20221201.SearchResourcesResponse.Resource.IpAddressAttribute;
 import com.aliyuncs.resourcecenter.model.v20221201.SearchResourcesResponse.Resource.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -59,6 +60,7 @@ public class SearchResourcesResponseUnmarshaller {
 			resource.setResourceId(_ctx.stringValue("SearchResourcesResponse.Resources["+ i +"].ResourceId"));
 			resource.setResourceName(_ctx.stringValue("SearchResourcesResponse.Resources["+ i +"].ResourceName"));
 			resource.setRegionId(_ctx.stringValue("SearchResourcesResponse.Resources["+ i +"].RegionId"));
+			resource.setExpireTime(_ctx.stringValue("SearchResourcesResponse.Resources["+ i +"].ExpireTime"));
 
 			List<String> ipAddresses = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("SearchResourcesResponse.Resources["+ i +"].IpAddresses.Length"); j++) {
@@ -75,6 +77,17 @@ public class SearchResourcesResponseUnmarshaller {
 				tags.add(tag);
 			}
 			resource.setTags(tags);
+
+			List<IpAddressAttribute> ipAddressAttributes = new ArrayList<IpAddressAttribute>();
+			for (int j = 0; j < _ctx.lengthValue("SearchResourcesResponse.Resources["+ i +"].IpAddressAttributes.Length"); j++) {
+				IpAddressAttribute ipAddressAttribute = new IpAddressAttribute();
+				ipAddressAttribute.setIpAddress(_ctx.stringValue("SearchResourcesResponse.Resources["+ i +"].IpAddressAttributes["+ j +"].IpAddress"));
+				ipAddressAttribute.setNetworkType(_ctx.stringValue("SearchResourcesResponse.Resources["+ i +"].IpAddressAttributes["+ j +"].NetworkType"));
+				ipAddressAttribute.setVersion(_ctx.stringValue("SearchResourcesResponse.Resources["+ i +"].IpAddressAttributes["+ j +"].Version"));
+
+				ipAddressAttributes.add(ipAddressAttribute);
+			}
+			resource.setIpAddressAttributes(ipAddressAttributes);
 
 			resources.add(resource);
 		}

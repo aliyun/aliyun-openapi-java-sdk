@@ -25,34 +25,34 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListResourceTypesResponse extends AcsResponse {
 
-	private String requestId;
+	private String dynamicCode;
 
-	private Boolean success;
+	private String dynamicMessage;
 
 	private String errorCode;
 
 	private String errorMessage;
 
-	private String dynamicCode;
+	private String requestId;
 
-	private String dynamicMessage;
+	private Boolean success;
 
 	private List<ResourceType> resourceTypes;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getDynamicCode() {
+		return this.dynamicCode;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setDynamicCode(String dynamicCode) {
+		this.dynamicCode = dynamicCode;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getDynamicMessage() {
+		return this.dynamicMessage;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setDynamicMessage(String dynamicMessage) {
+		this.dynamicMessage = dynamicMessage;
 	}
 
 	public String getErrorCode() {
@@ -71,20 +71,20 @@ public class ListResourceTypesResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public String getDynamicCode() {
-		return this.dynamicCode;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setDynamicCode(String dynamicCode) {
-		this.dynamicCode = dynamicCode;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
-	public String getDynamicMessage() {
-		return this.dynamicMessage;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setDynamicMessage(String dynamicMessage) {
-		this.dynamicMessage = dynamicMessage;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<ResourceType> getResourceTypes() {
@@ -97,9 +97,11 @@ public class ListResourceTypesResponse extends AcsResponse {
 
 	public static class ResourceType {
 
-		private String resourceType;
+		private Boolean authorized;
 
 		private String productName;
+
+		private String resourceType;
 
 		private String resourceTypeName;
 
@@ -109,12 +111,12 @@ public class ListResourceTypesResponse extends AcsResponse {
 
 		private Urls urls;
 
-		public String getResourceType() {
-			return this.resourceType;
+		public Boolean getAuthorized() {
+			return this.authorized;
 		}
 
-		public void setResourceType(String resourceType) {
-			this.resourceType = resourceType;
+		public void setAuthorized(Boolean authorized) {
+			this.authorized = authorized;
 		}
 
 		public String getProductName() {
@@ -123,6 +125,14 @@ public class ListResourceTypesResponse extends AcsResponse {
 
 		public void setProductName(String productName) {
 			this.productName = productName;
+		}
+
+		public String getResourceType() {
+			return this.resourceType;
+		}
+
+		public void setResourceType(String resourceType) {
+			this.resourceType = resourceType;
 		}
 
 		public String getResourceTypeName() {

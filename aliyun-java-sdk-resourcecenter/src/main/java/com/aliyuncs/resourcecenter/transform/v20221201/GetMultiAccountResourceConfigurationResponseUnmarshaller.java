@@ -14,7 +14,13 @@
 
 package com.aliyuncs.resourcecenter.transform.v20221201;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.resourcecenter.model.v20221201.GetMultiAccountResourceConfigurationResponse;
+import com.aliyuncs.resourcecenter.model.v20221201.GetMultiAccountResourceConfigurationResponse.IpAddressAttribute;
+import com.aliyuncs.resourcecenter.model.v20221201.GetMultiAccountResourceConfigurationResponse.Tag;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -22,6 +28,44 @@ public class GetMultiAccountResourceConfigurationResponseUnmarshaller {
 
 	public static GetMultiAccountResourceConfigurationResponse unmarshall(GetMultiAccountResourceConfigurationResponse getMultiAccountResourceConfigurationResponse, UnmarshallerContext _ctx) {
 		
+		getMultiAccountResourceConfigurationResponse.setRequestId(_ctx.stringValue("GetMultiAccountResourceConfigurationResponse.RequestId"));
+		getMultiAccountResourceConfigurationResponse.setAccountId(_ctx.stringValue("GetMultiAccountResourceConfigurationResponse.AccountId"));
+		getMultiAccountResourceConfigurationResponse.setConfiguration(_ctx.mapValue("GetMultiAccountResourceConfigurationResponse.Configuration"));
+		getMultiAccountResourceConfigurationResponse.setCreateTime(_ctx.stringValue("GetMultiAccountResourceConfigurationResponse.CreateTime"));
+		getMultiAccountResourceConfigurationResponse.setExpireTime(_ctx.stringValue("GetMultiAccountResourceConfigurationResponse.ExpireTime"));
+		getMultiAccountResourceConfigurationResponse.setRegionId(_ctx.stringValue("GetMultiAccountResourceConfigurationResponse.RegionId"));
+		getMultiAccountResourceConfigurationResponse.setResourceGroupId(_ctx.stringValue("GetMultiAccountResourceConfigurationResponse.ResourceGroupId"));
+		getMultiAccountResourceConfigurationResponse.setResourceId(_ctx.stringValue("GetMultiAccountResourceConfigurationResponse.ResourceId"));
+		getMultiAccountResourceConfigurationResponse.setResourceName(_ctx.stringValue("GetMultiAccountResourceConfigurationResponse.ResourceName"));
+		getMultiAccountResourceConfigurationResponse.setResourceType(_ctx.stringValue("GetMultiAccountResourceConfigurationResponse.ResourceType"));
+		getMultiAccountResourceConfigurationResponse.setZoneId(_ctx.stringValue("GetMultiAccountResourceConfigurationResponse.ZoneId"));
+
+		List<String> ipAddresses = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("GetMultiAccountResourceConfigurationResponse.IpAddresses.Length"); i++) {
+			ipAddresses.add(_ctx.stringValue("GetMultiAccountResourceConfigurationResponse.IpAddresses["+ i +"]"));
+		}
+		getMultiAccountResourceConfigurationResponse.setIpAddresses(ipAddresses);
+
+		List<IpAddressAttribute> ipAddressAttributes = new ArrayList<IpAddressAttribute>();
+		for (int i = 0; i < _ctx.lengthValue("GetMultiAccountResourceConfigurationResponse.IpAddressAttributes.Length"); i++) {
+			IpAddressAttribute ipAddressAttribute = new IpAddressAttribute();
+			ipAddressAttribute.setIpAddress(_ctx.stringValue("GetMultiAccountResourceConfigurationResponse.IpAddressAttributes["+ i +"].IpAddress"));
+			ipAddressAttribute.setNetworkType(_ctx.stringValue("GetMultiAccountResourceConfigurationResponse.IpAddressAttributes["+ i +"].NetworkType"));
+			ipAddressAttribute.setVersion(_ctx.stringValue("GetMultiAccountResourceConfigurationResponse.IpAddressAttributes["+ i +"].Version"));
+
+			ipAddressAttributes.add(ipAddressAttribute);
+		}
+		getMultiAccountResourceConfigurationResponse.setIpAddressAttributes(ipAddressAttributes);
+
+		List<Tag> tags = new ArrayList<Tag>();
+		for (int i = 0; i < _ctx.lengthValue("GetMultiAccountResourceConfigurationResponse.Tags.Length"); i++) {
+			Tag tag = new Tag();
+			tag.setKey(_ctx.stringValue("GetMultiAccountResourceConfigurationResponse.Tags["+ i +"].Key"));
+			tag.setValue(_ctx.stringValue("GetMultiAccountResourceConfigurationResponse.Tags["+ i +"].Value"));
+
+			tags.add(tag);
+		}
+		getMultiAccountResourceConfigurationResponse.setTags(tags);
 	 
 	 	return getMultiAccountResourceConfigurationResponse;
 	}

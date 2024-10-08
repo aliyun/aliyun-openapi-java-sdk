@@ -26,12 +26,12 @@ public class ListMultiAccountTagValuesResponseUnmarshaller {
 	public static ListMultiAccountTagValuesResponse unmarshall(ListMultiAccountTagValuesResponse listMultiAccountTagValuesResponse, UnmarshallerContext _ctx) {
 		
 		listMultiAccountTagValuesResponse.setRequestId(_ctx.stringValue("ListMultiAccountTagValuesResponse.RequestId"));
-		listMultiAccountTagValuesResponse.setNextToken(_ctx.stringValue("ListMultiAccountTagValuesResponse.NextToken"));
-		listMultiAccountTagValuesResponse.setSuccess(_ctx.booleanValue("ListMultiAccountTagValuesResponse.Success"));
 		listMultiAccountTagValuesResponse.setDynamicCode(_ctx.stringValue("ListMultiAccountTagValuesResponse.DynamicCode"));
 		listMultiAccountTagValuesResponse.setDynamicMessage(_ctx.stringValue("ListMultiAccountTagValuesResponse.DynamicMessage"));
 		listMultiAccountTagValuesResponse.setErrorCode(_ctx.stringValue("ListMultiAccountTagValuesResponse.ErrorCode"));
 		listMultiAccountTagValuesResponse.setErrorMessage(_ctx.stringValue("ListMultiAccountTagValuesResponse.ErrorMessage"));
+		listMultiAccountTagValuesResponse.setNextToken(_ctx.stringValue("ListMultiAccountTagValuesResponse.NextToken"));
+		listMultiAccountTagValuesResponse.setSuccess(_ctx.booleanValue("ListMultiAccountTagValuesResponse.Success"));
 
 		List<String> tagValues = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("ListMultiAccountTagValuesResponse.TagValues.Length"); i++) {
