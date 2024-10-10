@@ -1,3 +1,6 @@
+2024-10-10 Version: 2.1.10
+- Add ManualRunMailTask, GetMailTaskStatus and GetWorksEmbedList apis.
+
 2024-09-18 Version: 2.1.9
 - Add API Ram meta.
 
