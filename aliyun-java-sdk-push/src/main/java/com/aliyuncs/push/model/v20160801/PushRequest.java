@@ -113,6 +113,8 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 
 	private String targetValue;
 
+	private Integer harmonyBadgeSetNum;
+
 	private String androidXiaoMiNotifyTitle;
 
 	private Integer smsSendPolicy;
@@ -173,15 +175,21 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 
 	private String androidMusic;
 
+	private Boolean harmonyExtensionPush;
+
 	private String iOSNotificationCollapseId;
 
 	private String pushType;
+
+	private String harmonyExtensionExtraData;
 
 	private String harmonyImageUrl;
 
 	private String androidBigBody;
 
 	private String title;
+
+	private Integer harmonyBadgeAddNum;
 
 	private Boolean harmonyTestMessage;
 
@@ -699,6 +707,17 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 		}
 	}
 
+	public Integer getHarmonyBadgeSetNum() {
+		return this.harmonyBadgeSetNum;
+	}
+
+	public void setHarmonyBadgeSetNum(Integer harmonyBadgeSetNum) {
+		this.harmonyBadgeSetNum = harmonyBadgeSetNum;
+		if(harmonyBadgeSetNum != null){
+			putQueryParameter("HarmonyBadgeSetNum", harmonyBadgeSetNum.toString());
+		}
+	}
+
 	public String getAndroidXiaoMiNotifyTitle() {
 		return this.androidXiaoMiNotifyTitle;
 	}
@@ -1029,6 +1048,17 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 		}
 	}
 
+	public Boolean getHarmonyExtensionPush() {
+		return this.harmonyExtensionPush;
+	}
+
+	public void setHarmonyExtensionPush(Boolean harmonyExtensionPush) {
+		this.harmonyExtensionPush = harmonyExtensionPush;
+		if(harmonyExtensionPush != null){
+			putQueryParameter("HarmonyExtensionPush", harmonyExtensionPush.toString());
+		}
+	}
+
 	public String getIOSNotificationCollapseId() {
 		return this.iOSNotificationCollapseId;
 	}
@@ -1048,6 +1078,17 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 		this.pushType = pushType;
 		if(pushType != null){
 			putQueryParameter("PushType", pushType);
+		}
+	}
+
+	public String getHarmonyExtensionExtraData() {
+		return this.harmonyExtensionExtraData;
+	}
+
+	public void setHarmonyExtensionExtraData(String harmonyExtensionExtraData) {
+		this.harmonyExtensionExtraData = harmonyExtensionExtraData;
+		if(harmonyExtensionExtraData != null){
+			putQueryParameter("HarmonyExtensionExtraData", harmonyExtensionExtraData);
 		}
 	}
 
@@ -1081,6 +1122,17 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 		this.title = title;
 		if(title != null){
 			putQueryParameter("Title", title);
+		}
+	}
+
+	public Integer getHarmonyBadgeAddNum() {
+		return this.harmonyBadgeAddNum;
+	}
+
+	public void setHarmonyBadgeAddNum(Integer harmonyBadgeAddNum) {
+		this.harmonyBadgeAddNum = harmonyBadgeAddNum;
+		if(harmonyBadgeAddNum != null){
+			putQueryParameter("HarmonyBadgeAddNum", harmonyBadgeAddNum.toString());
 		}
 	}
 

@@ -91,10 +91,12 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidHuaweiTargetUserType" , pushTasks.get(depth1).getAndroidHuaweiTargetUserType());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".HarmonyRemind" , pushTasks.get(depth1).getHarmonyRemind());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidMusic" , pushTasks.get(depth1).getAndroidMusic());
+				putBodyParameter("PushTask." + (depth1 + 1) + ".HarmonyExtensionPush" , pushTasks.get(depth1).getHarmonyExtensionPush());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".iOSNotificationCollapseId" , pushTasks.get(depth1).getIOSNotificationCollapseId());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidMessageHuaweiUrgency" , pushTasks.get(depth1).getAndroidMessageHuaweiUrgency());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".PushType" , pushTasks.get(depth1).getPushType());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".iOSInterruptionLevel" , pushTasks.get(depth1).getIOSInterruptionLevel());
+				putBodyParameter("PushTask." + (depth1 + 1) + ".HarmonyExtensionExtraData" , pushTasks.get(depth1).getHarmonyExtensionExtraData());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidExtParameters" , pushTasks.get(depth1).getAndroidExtParameters());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".HarmonyImageUrl" , pushTasks.get(depth1).getHarmonyImageUrl());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".iOSBadge" , pushTasks.get(depth1).getIOSBadge());
@@ -104,6 +106,7 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 				putBodyParameter("PushTask." + (depth1 + 1) + ".HarmonyRemindTitle" , pushTasks.get(depth1).getHarmonyRemindTitle());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".Title" , pushTasks.get(depth1).getTitle());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidBadgeClass" , pushTasks.get(depth1).getAndroidBadgeClass());
+				putBodyParameter("PushTask." + (depth1 + 1) + ".HarmonyBadgeAddNum" , pushTasks.get(depth1).getHarmonyBadgeAddNum());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".HarmonyTestMessage" , pushTasks.get(depth1).getHarmonyTestMessage());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidRenderStyle" , pushTasks.get(depth1).getAndroidRenderStyle());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".iOSExtParameters" , pushTasks.get(depth1).getIOSExtParameters());
@@ -129,6 +132,7 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidActivity" , pushTasks.get(depth1).getAndroidActivity());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidNotificationNotifyId" , pushTasks.get(depth1).getAndroidNotificationNotifyId());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".TargetValue" , pushTasks.get(depth1).getTargetValue());
+				putBodyParameter("PushTask." + (depth1 + 1) + ".HarmonyBadgeSetNum" , pushTasks.get(depth1).getHarmonyBadgeSetNum());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidXiaoMiNotifyTitle" , pushTasks.get(depth1).getAndroidXiaoMiNotifyTitle());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidXiaoMiActivity" , pushTasks.get(depth1).getAndroidXiaoMiActivity());
 			}
@@ -238,6 +242,8 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 
 		private String androidMusic;
 
+		private Boolean harmonyExtensionPush;
+
 		private String iOSNotificationCollapseId;
 
 		private String androidMessageHuaweiUrgency;
@@ -245,6 +251,8 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 		private String pushType;
 
 		private String iOSInterruptionLevel;
+
+		private String harmonyExtensionExtraData;
 
 		private String androidExtParameters;
 
@@ -263,6 +271,8 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 		private String title;
 
 		private String androidBadgeClass;
+
+		private Integer harmonyBadgeAddNum;
 
 		private Boolean harmonyTestMessage;
 
@@ -313,6 +323,8 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 		private Integer androidNotificationNotifyId;
 
 		private String targetValue;
+
+		private Integer harmonyBadgeSetNum;
 
 		private String androidXiaoMiNotifyTitle;
 
@@ -678,6 +690,14 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 			this.androidMusic = androidMusic;
 		}
 
+		public Boolean getHarmonyExtensionPush() {
+			return this.harmonyExtensionPush;
+		}
+
+		public void setHarmonyExtensionPush(Boolean harmonyExtensionPush) {
+			this.harmonyExtensionPush = harmonyExtensionPush;
+		}
+
 		public String getIOSNotificationCollapseId() {
 			return this.iOSNotificationCollapseId;
 		}
@@ -708,6 +728,14 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 
 		public void setIOSInterruptionLevel(String iOSInterruptionLevel) {
 			this.iOSInterruptionLevel = iOSInterruptionLevel;
+		}
+
+		public String getHarmonyExtensionExtraData() {
+			return this.harmonyExtensionExtraData;
+		}
+
+		public void setHarmonyExtensionExtraData(String harmonyExtensionExtraData) {
+			this.harmonyExtensionExtraData = harmonyExtensionExtraData;
 		}
 
 		public String getAndroidExtParameters() {
@@ -780,6 +808,14 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 
 		public void setAndroidBadgeClass(String androidBadgeClass) {
 			this.androidBadgeClass = androidBadgeClass;
+		}
+
+		public Integer getHarmonyBadgeAddNum() {
+			return this.harmonyBadgeAddNum;
+		}
+
+		public void setHarmonyBadgeAddNum(Integer harmonyBadgeAddNum) {
+			this.harmonyBadgeAddNum = harmonyBadgeAddNum;
 		}
 
 		public Boolean getHarmonyTestMessage() {
@@ -980,6 +1016,14 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 
 		public void setTargetValue(String targetValue) {
 			this.targetValue = targetValue;
+		}
+
+		public Integer getHarmonyBadgeSetNum() {
+			return this.harmonyBadgeSetNum;
+		}
+
+		public void setHarmonyBadgeSetNum(Integer harmonyBadgeSetNum) {
+			this.harmonyBadgeSetNum = harmonyBadgeSetNum;
 		}
 
 		public String getAndroidXiaoMiNotifyTitle() {

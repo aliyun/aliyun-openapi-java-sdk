@@ -1,3 +1,8 @@
+2024-10-10 Version: 3.13.17
+- Support Android badge.
+- Support Harmony badge.
+- Support Harmony Extension Push Message.
+
 2024-08-09 Version: 3.13.16
 - Support Android badge.
 
