@@ -107,6 +107,8 @@ public class GetResource4ModifyRecordResponse extends AcsResponse {
 
 		private String attribute;
 
+		private String error;
+
 		public String getResourceId() {
 			return this.resourceId;
 		}
@@ -145,6 +147,14 @@ public class GetResource4ModifyRecordResponse extends AcsResponse {
 
 		public void setAttribute(String attribute) {
 			this.attribute = attribute;
+		}
+
+		public String getError() {
+			return this.error;
+		}
+
+		public void setError(String error) {
+			this.error = error;
 		}
 	}
 

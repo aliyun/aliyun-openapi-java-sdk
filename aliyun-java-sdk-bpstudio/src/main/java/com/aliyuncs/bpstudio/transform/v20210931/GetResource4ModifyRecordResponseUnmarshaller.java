@@ -41,6 +41,7 @@ public class GetResource4ModifyRecordResponseUnmarshaller {
 			item.setStatus(_ctx.stringValue("GetResource4ModifyRecordResponse.Data["+ i +"].Status"));
 			item.setModifyTime(_ctx.stringValue("GetResource4ModifyRecordResponse.Data["+ i +"].ModifyTime"));
 			item.setAttribute(_ctx.stringValue("GetResource4ModifyRecordResponse.Data["+ i +"].Attribute"));
+			item.setError(_ctx.stringValue("GetResource4ModifyRecordResponse.Data["+ i +"].Error"));
 
 			data.add(item);
 		}
