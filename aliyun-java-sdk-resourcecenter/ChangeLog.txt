@@ -1,3 +1,6 @@
+2024-10-10 Version: 1.0.5
+- Generated 2022-12-01 for `ResourceCenter`.
+
 2024-10-08 Version: 1.0.4
 - Generated 2022-12-01 for `ResourceCenter`.
 

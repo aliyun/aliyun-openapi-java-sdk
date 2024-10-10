@@ -27,7 +27,11 @@ public class ExecuteMultiAccountSQLQueryRequest extends RpcAcsRequest<ExecuteMul
 
 	private String expression;
 
+	private String nextToken;
+
 	private String scope;
+
+	private Integer maxResults;
 	public ExecuteMultiAccountSQLQueryRequest() {
 		super("ResourceCenter", "2022-12-01", "ExecuteMultiAccountSQLQuery");
 		setProtocol(ProtocolType.HTTPS);
@@ -45,6 +49,17 @@ public class ExecuteMultiAccountSQLQueryRequest extends RpcAcsRequest<ExecuteMul
 		}
 	}
 
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
+		}
+	}
+
 	public String getScope() {
 		return this.scope;
 	}
@@ -53,6 +68,17 @@ public class ExecuteMultiAccountSQLQueryRequest extends RpcAcsRequest<ExecuteMul
 		this.scope = scope;
 		if(scope != null){
 			putQueryParameter("Scope", scope);
+		}
+	}
+
+	public Integer getMaxResults() {
+		return this.maxResults;
+	}
+
+	public void setMaxResults(Integer maxResults) {
+		this.maxResults = maxResults;
+		if(maxResults != null){
+			putQueryParameter("MaxResults", maxResults.toString());
 		}
 	}
 
