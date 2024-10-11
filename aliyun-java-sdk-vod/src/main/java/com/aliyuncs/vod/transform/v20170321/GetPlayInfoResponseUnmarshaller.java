@@ -69,6 +69,7 @@ public class GetPlayInfoResponseUnmarshaller {
 			playInfo.setDefinition(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Definition"));
 			playInfo.setRand(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Rand"));
 			playInfo.setEncryptType(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].EncryptType"));
+			playInfo.setEncryptMode(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].EncryptMode"));
 			playInfo.setPreprocessStatus(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].PreprocessStatus"));
 			playInfo.setStreamType(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].StreamType"));
 			playInfo.setJobId(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].JobId"));

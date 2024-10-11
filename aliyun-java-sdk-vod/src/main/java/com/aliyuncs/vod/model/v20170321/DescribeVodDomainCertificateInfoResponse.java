@@ -47,30 +47,42 @@ public class DescribeVodDomainCertificateInfoResponse extends AcsResponse {
 
 	public static class CertInfo {
 
-		private String status;
+		private String certExpireTime;
 
 		private String certLife;
 
-		private String certExpireTime;
+		private String status;
 
-		private String certType;
-
-		private String serverCertificateStatus;
+		private String certUpdateTime;
 
 		private String certDomainName;
 
-		private String certName;
+		private String serverCertificateStatus;
 
 		private String certOrg;
 
 		private String domainName;
 
-		public String getStatus() {
-			return this.status;
+		private String certStartTime;
+
+		private String certType;
+
+		private String certName;
+
+		private String domainCnameStatus;
+
+		private String serverCertificate;
+
+		private String certId;
+
+		private String certRegion;
+
+		public String getCertExpireTime() {
+			return this.certExpireTime;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setCertExpireTime(String certExpireTime) {
+			this.certExpireTime = certExpireTime;
 		}
 
 		public String getCertLife() {
@@ -81,28 +93,20 @@ public class DescribeVodDomainCertificateInfoResponse extends AcsResponse {
 			this.certLife = certLife;
 		}
 
-		public String getCertExpireTime() {
-			return this.certExpireTime;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setCertExpireTime(String certExpireTime) {
-			this.certExpireTime = certExpireTime;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
-		public String getCertType() {
-			return this.certType;
+		public String getCertUpdateTime() {
+			return this.certUpdateTime;
 		}
 
-		public void setCertType(String certType) {
-			this.certType = certType;
-		}
-
-		public String getServerCertificateStatus() {
-			return this.serverCertificateStatus;
-		}
-
-		public void setServerCertificateStatus(String serverCertificateStatus) {
-			this.serverCertificateStatus = serverCertificateStatus;
+		public void setCertUpdateTime(String certUpdateTime) {
+			this.certUpdateTime = certUpdateTime;
 		}
 
 		public String getCertDomainName() {
@@ -113,12 +117,12 @@ public class DescribeVodDomainCertificateInfoResponse extends AcsResponse {
 			this.certDomainName = certDomainName;
 		}
 
-		public String getCertName() {
-			return this.certName;
+		public String getServerCertificateStatus() {
+			return this.serverCertificateStatus;
 		}
 
-		public void setCertName(String certName) {
-			this.certName = certName;
+		public void setServerCertificateStatus(String serverCertificateStatus) {
+			this.serverCertificateStatus = serverCertificateStatus;
 		}
 
 		public String getCertOrg() {
@@ -135,6 +139,62 @@ public class DescribeVodDomainCertificateInfoResponse extends AcsResponse {
 
 		public void setDomainName(String domainName) {
 			this.domainName = domainName;
+		}
+
+		public String getCertStartTime() {
+			return this.certStartTime;
+		}
+
+		public void setCertStartTime(String certStartTime) {
+			this.certStartTime = certStartTime;
+		}
+
+		public String getCertType() {
+			return this.certType;
+		}
+
+		public void setCertType(String certType) {
+			this.certType = certType;
+		}
+
+		public String getCertName() {
+			return this.certName;
+		}
+
+		public void setCertName(String certName) {
+			this.certName = certName;
+		}
+
+		public String getDomainCnameStatus() {
+			return this.domainCnameStatus;
+		}
+
+		public void setDomainCnameStatus(String domainCnameStatus) {
+			this.domainCnameStatus = domainCnameStatus;
+		}
+
+		public String getServerCertificate() {
+			return this.serverCertificate;
+		}
+
+		public void setServerCertificate(String serverCertificate) {
+			this.serverCertificate = serverCertificate;
+		}
+
+		public String getCertId() {
+			return this.certId;
+		}
+
+		public void setCertId(String certId) {
+			this.certId = certId;
+		}
+
+		public String getCertRegion() {
+			return this.certRegion;
+		}
+
+		public void setCertRegion(String certRegion) {
+			this.certRegion = certRegion;
 		}
 	}
 

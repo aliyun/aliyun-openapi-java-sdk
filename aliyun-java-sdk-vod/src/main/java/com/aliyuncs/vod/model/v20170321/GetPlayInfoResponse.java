@@ -83,6 +83,8 @@ public class GetPlayInfoResponse extends AcsResponse {
 
 		private String encryptType;
 
+		private String encryptMode;
+
 		private String preprocessStatus;
 
 		private String streamType;
@@ -213,6 +215,14 @@ public class GetPlayInfoResponse extends AcsResponse {
 
 		public void setEncryptType(String encryptType) {
 			this.encryptType = encryptType;
+		}
+
+		public String getEncryptMode() {
+			return this.encryptMode;
+		}
+
+		public void setEncryptMode(String encryptMode) {
+			this.encryptMode = encryptMode;
 		}
 
 		public String getPreprocessStatus() {
