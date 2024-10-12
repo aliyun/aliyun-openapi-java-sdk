@@ -6,6 +6,7 @@ import com.aliyuncs.endpoint.location.model.v20150612.DescribeEndpointsResponse;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.http.FormatType;
 import com.aliyuncs.http.ProtocolType;
+import com.aliyuncs.utils.StringUtils;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -44,7 +45,7 @@ public class LocationServiceEndpointResolver extends EndpointResolverBase {
 
     @Override
     public String resolve(ResolveEndpointRequest request) throws ClientException {
-        if (request.locationServiceCode == null || request.locationServiceCode.length() == 0) {
+        if (StringUtils.isEmpty(request.locationServiceCode)) {
             return null;
         }
 
@@ -112,7 +113,6 @@ public class LocationServiceEndpointResolver extends EndpointResolverBase {
         validProductCodes.add(request.productCodeLower);
         validRegionIds.add(request.regionId);
 
-
         boolean foundFlag = false;
         for (DescribeEndpointsResponse.Endpoint endpoint : response.getEndpoints()) {
             if (endpoint.getSerivceCode().equals(request.locationServiceCode)
@@ -147,11 +147,6 @@ public class LocationServiceEndpointResolver extends EndpointResolverBase {
                 request.productCode, request.locationServiceCode,
                 request.regionId, request.endpointType
         );
-    }
-
-    @Deprecated
-    public String makeRegionIdKey(ResolveEndpointRequest request) {
-        return request.locationServiceCode + "." + request.regionId + "." + request.endpointType;
     }
 
     public String makeEndpointKey(String productCode, String locationServiceCode, String regionId,
