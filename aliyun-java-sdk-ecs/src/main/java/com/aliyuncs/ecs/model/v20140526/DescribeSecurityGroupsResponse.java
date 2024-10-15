@@ -119,6 +119,10 @@ public class DescribeSecurityGroupsResponse extends AcsResponse {
 
 		private Long serviceID;
 
+		private Integer ruleCount;
+
+		private Integer groupToGroupRuleCount;
+
 		private List<Tag> tags;
 
 		public String getSecurityGroupId() {
@@ -207,6 +211,22 @@ public class DescribeSecurityGroupsResponse extends AcsResponse {
 
 		public void setServiceID(Long serviceID) {
 			this.serviceID = serviceID;
+		}
+
+		public Integer getRuleCount() {
+			return this.ruleCount;
+		}
+
+		public void setRuleCount(Integer ruleCount) {
+			this.ruleCount = ruleCount;
+		}
+
+		public Integer getGroupToGroupRuleCount() {
+			return this.groupToGroupRuleCount;
+		}
+
+		public void setGroupToGroupRuleCount(Integer groupToGroupRuleCount) {
+			this.groupToGroupRuleCount = groupToGroupRuleCount;
 		}
 
 		public List<Tag> getTags() {

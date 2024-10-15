@@ -30,6 +30,8 @@ public class CreateLaunchTemplateVersionRequest extends RpcAcsRequest<CreateLaun
 
 	private Long resourceOwnerId;
 
+	private Integer httpPutResponseHopLimit;
+
 	private String securityEnhancementStrategy;
 
 	private String networkType;
@@ -104,6 +106,8 @@ public class CreateLaunchTemplateVersionRequest extends RpcAcsRequest<CreateLaun
 
 	private Boolean passwordInherit;
 
+	private String httpEndpoint;
+
 	private String instanceType;
 
 	private String instanceChargeType;
@@ -138,6 +142,8 @@ public class CreateLaunchTemplateVersionRequest extends RpcAcsRequest<CreateLaun
 
 	private String vpcId;
 
+	private String httpTokens;
+
 	private String systemDiskDescription;
 
 	private String systemDiskEncrypted;
@@ -169,6 +175,17 @@ public class CreateLaunchTemplateVersionRequest extends RpcAcsRequest<CreateLaun
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public Integer getHttpPutResponseHopLimit() {
+		return this.httpPutResponseHopLimit;
+	}
+
+	public void setHttpPutResponseHopLimit(Integer httpPutResponseHopLimit) {
+		this.httpPutResponseHopLimit = httpPutResponseHopLimit;
+		if(httpPutResponseHopLimit != null){
+			putQueryParameter("HttpPutResponseHopLimit", httpPutResponseHopLimit.toString());
 		}
 	}
 
@@ -582,6 +599,17 @@ public class CreateLaunchTemplateVersionRequest extends RpcAcsRequest<CreateLaun
 		}
 	}
 
+	public String getHttpEndpoint() {
+		return this.httpEndpoint;
+	}
+
+	public void setHttpEndpoint(String httpEndpoint) {
+		this.httpEndpoint = httpEndpoint;
+		if(httpEndpoint != null){
+			putQueryParameter("HttpEndpoint", httpEndpoint);
+		}
+	}
+
 	public String getInstanceType() {
 		return this.instanceType;
 	}
@@ -794,6 +822,17 @@ public class CreateLaunchTemplateVersionRequest extends RpcAcsRequest<CreateLaun
 		this.vpcId = vpcId;
 		if(vpcId != null){
 			putQueryParameter("VpcId", vpcId);
+		}
+	}
+
+	public String getHttpTokens() {
+		return this.httpTokens;
+	}
+
+	public void setHttpTokens(String httpTokens) {
+		this.httpTokens = httpTokens;
+		if(httpTokens != null){
+			putQueryParameter("HttpTokens", httpTokens);
 		}
 	}
 

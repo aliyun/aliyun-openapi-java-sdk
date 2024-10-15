@@ -15,6 +15,7 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ecs.Endpoint;
 
@@ -22,24 +23,31 @@ import com.aliyuncs.ecs.Endpoint;
  * @author auto create
  * @version 
  */
-public class EipNotifyPaidRequest extends RpcAcsRequest<EipNotifyPaidResponse> {
+public class PurchaseElasticityAssuranceRequest extends RpcAcsRequest<PurchaseElasticityAssuranceResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String data;
-
 	private String clientToken;
 
-	private String userCidr;
+	private String startTime;
+
+	private String privatePoolOptionsMatchCriteria;
+
+	private String privatePoolOptionsId;
+
+	private Integer period;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-	public EipNotifyPaidRequest() {
-		super("Ecs", "2014-05-26", "EipNotifyPaid", "ecs");
+
+	private String periodUnit;
+	public PurchaseElasticityAssuranceRequest() {
+		super("Ecs", "2014-05-26", "PurchaseElasticityAssurance", "ecs");
+		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -58,17 +66,6 @@ public class EipNotifyPaidRequest extends RpcAcsRequest<EipNotifyPaidResponse> {
 		}
 	}
 
-	public String getData() {
-		return this.data;
-	}
-
-	public void setData(String data) {
-		this.data = data;
-		if(data != null){
-			putQueryParameter("data", data);
-		}
-	}
-
 	public String getClientToken() {
 		return this.clientToken;
 	}
@@ -80,14 +77,47 @@ public class EipNotifyPaidRequest extends RpcAcsRequest<EipNotifyPaidResponse> {
 		}
 	}
 
-	public String getUserCidr() {
-		return this.userCidr;
+	public String getStartTime() {
+		return this.startTime;
 	}
 
-	public void setUserCidr(String userCidr) {
-		this.userCidr = userCidr;
-		if(userCidr != null){
-			putQueryParameter("UserCidr", userCidr);
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public String getPrivatePoolOptionsMatchCriteria() {
+		return this.privatePoolOptionsMatchCriteria;
+	}
+
+	public void setPrivatePoolOptionsMatchCriteria(String privatePoolOptionsMatchCriteria) {
+		this.privatePoolOptionsMatchCriteria = privatePoolOptionsMatchCriteria;
+		if(privatePoolOptionsMatchCriteria != null){
+			putQueryParameter("PrivatePoolOptions.MatchCriteria", privatePoolOptionsMatchCriteria);
+		}
+	}
+
+	public String getPrivatePoolOptionsId() {
+		return this.privatePoolOptionsId;
+	}
+
+	public void setPrivatePoolOptionsId(String privatePoolOptionsId) {
+		this.privatePoolOptionsId = privatePoolOptionsId;
+		if(privatePoolOptionsId != null){
+			putQueryParameter("PrivatePoolOptions.Id", privatePoolOptionsId);
+		}
+	}
+
+	public Integer getPeriod() {
+		return this.period;
+	}
+
+	public void setPeriod(Integer period) {
+		this.period = period;
+		if(period != null){
+			putQueryParameter("Period", period.toString());
 		}
 	}
 
@@ -124,9 +154,20 @@ public class EipNotifyPaidRequest extends RpcAcsRequest<EipNotifyPaidResponse> {
 		}
 	}
 
+	public String getPeriodUnit() {
+		return this.periodUnit;
+	}
+
+	public void setPeriodUnit(String periodUnit) {
+		this.periodUnit = periodUnit;
+		if(periodUnit != null){
+			putQueryParameter("PeriodUnit", periodUnit);
+		}
+	}
+
 	@Override
-	public Class<EipNotifyPaidResponse> getResponseClass() {
-		return EipNotifyPaidResponse.class;
+	public Class<PurchaseElasticityAssuranceResponse> getResponseClass() {
+		return PurchaseElasticityAssuranceResponse.class;
 	}
 
 }

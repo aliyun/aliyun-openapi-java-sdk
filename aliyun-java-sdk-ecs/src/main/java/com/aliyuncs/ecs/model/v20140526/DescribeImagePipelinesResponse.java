@@ -105,6 +105,12 @@ public class DescribeImagePipelinesResponse extends AcsResponse {
 
 		private String buildContent;
 
+		private String repairMode;
+
+		private String testContent;
+
+		private String imageFamily;
+
 		private List<Tag> tags;
 
 		private List<String> toRegionIds;
@@ -221,6 +227,30 @@ public class DescribeImagePipelinesResponse extends AcsResponse {
 
 		public void setBuildContent(String buildContent) {
 			this.buildContent = buildContent;
+		}
+
+		public String getRepairMode() {
+			return this.repairMode;
+		}
+
+		public void setRepairMode(String repairMode) {
+			this.repairMode = repairMode;
+		}
+
+		public String getTestContent() {
+			return this.testContent;
+		}
+
+		public void setTestContent(String testContent) {
+			this.testContent = testContent;
+		}
+
+		public String getImageFamily() {
+			return this.imageFamily;
+		}
+
+		public void setImageFamily(String imageFamily) {
+			this.imageFamily = imageFamily;
 		}
 
 		public List<Tag> getTags() {

@@ -15,56 +15,16 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ecs.transform.v20140526.EipFillParamsResponseUnmarshaller;
+import com.aliyuncs.ecs.transform.v20140526.PurchaseElasticityAssuranceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class EipFillParamsResponse extends AcsResponse {
-
-	private String code;
-
-	private Boolean success;
-
-	private String message;
-
-	private String data;
+public class PurchaseElasticityAssuranceResponse extends AcsResponse {
 
 	private String requestId;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public String getData() {
-		return this.data;
-	}
-
-	public void setData(String data) {
-		this.data = data;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -75,7 +35,12 @@ public class EipFillParamsResponse extends AcsResponse {
 	}
 
 	@Override
-	public EipFillParamsResponse getInstance(UnmarshallerContext context) {
-		return	EipFillParamsResponseUnmarshaller.unmarshall(this, context);
+	public PurchaseElasticityAssuranceResponse getInstance(UnmarshallerContext context) {
+		return	PurchaseElasticityAssuranceResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

@@ -52,6 +52,8 @@ public class CreateImagePipelineRequest extends RpcAcsRequest<CreateImagePipelin
 
 	private String ownerAccount;
 
+	private String repairMode;
+
 	private Long ownerId;
 
 	private String baseImage;
@@ -64,7 +66,11 @@ public class CreateImagePipelineRequest extends RpcAcsRequest<CreateImagePipelin
 
 	private String name;
 
+	private String imageFamily;
+
 	private String buildContent;
+
+	private String testContent;
 	public CreateImagePipelineRequest() {
 		super("Ecs", "2014-05-26", "CreateImagePipeline", "ecs");
 		setMethod(MethodType.POST);
@@ -222,6 +228,17 @@ public class CreateImagePipelineRequest extends RpcAcsRequest<CreateImagePipelin
 		}
 	}
 
+	public String getRepairMode() {
+		return this.repairMode;
+	}
+
+	public void setRepairMode(String repairMode) {
+		this.repairMode = repairMode;
+		if(repairMode != null){
+			putQueryParameter("RepairMode", repairMode);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -290,6 +307,17 @@ public class CreateImagePipelineRequest extends RpcAcsRequest<CreateImagePipelin
 		}
 	}
 
+	public String getImageFamily() {
+		return this.imageFamily;
+	}
+
+	public void setImageFamily(String imageFamily) {
+		this.imageFamily = imageFamily;
+		if(imageFamily != null){
+			putQueryParameter("ImageFamily", imageFamily);
+		}
+	}
+
 	public String getBuildContent() {
 		return this.buildContent;
 	}
@@ -298,6 +326,17 @@ public class CreateImagePipelineRequest extends RpcAcsRequest<CreateImagePipelin
 		this.buildContent = buildContent;
 		if(buildContent != null){
 			putQueryParameter("BuildContent", buildContent);
+		}
+	}
+
+	public String getTestContent() {
+		return this.testContent;
+	}
+
+	public void setTestContent(String testContent) {
+		this.testContent = testContent;
+		if(testContent != null){
+			putQueryParameter("TestContent", testContent);
 		}
 	}
 

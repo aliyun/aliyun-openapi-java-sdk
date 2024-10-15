@@ -48,6 +48,8 @@ public class DescribeSecurityGroupsResponseUnmarshaller {
 			securityGroup.setResourceGroupId(_ctx.stringValue("DescribeSecurityGroupsResponse.SecurityGroups["+ i +"].ResourceGroupId"));
 			securityGroup.setServiceManaged(_ctx.booleanValue("DescribeSecurityGroupsResponse.SecurityGroups["+ i +"].ServiceManaged"));
 			securityGroup.setServiceID(_ctx.longValue("DescribeSecurityGroupsResponse.SecurityGroups["+ i +"].ServiceID"));
+			securityGroup.setRuleCount(_ctx.integerValue("DescribeSecurityGroupsResponse.SecurityGroups["+ i +"].RuleCount"));
+			securityGroup.setGroupToGroupRuleCount(_ctx.integerValue("DescribeSecurityGroupsResponse.SecurityGroups["+ i +"].GroupToGroupRuleCount"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeSecurityGroupsResponse.SecurityGroups["+ i +"].Tags.Length"); j++) {

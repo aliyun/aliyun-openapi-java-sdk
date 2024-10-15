@@ -36,6 +36,8 @@ public class ImportImageRequest extends RpcAcsRequest<ImportImageResponse> {
 
 	private String resourceGroupId;
 
+	private Features features;
+
 	private String bootMode;
 
 	private String imageName;
@@ -49,6 +51,8 @@ public class ImportImageRequest extends RpcAcsRequest<ImportImageResponse> {
 	private String licenseType;
 
 	private String detectionStrategy;
+
+	private Boolean dryRun;
 
 	private String resourceOwnerAccount;
 
@@ -128,6 +132,18 @@ public class ImportImageRequest extends RpcAcsRequest<ImportImageResponse> {
 		}
 	}
 
+	public Features getFeatures() {
+		return this.features;
+	}
+
+	public void setFeatures(Features features) {
+		this.features = features;	
+		if (features != null) {
+			
+				putQueryParameter("Features.NvmeSupport" , features.getNvmeSupport());
+		}	
+	}
+
 	public String getBootMode() {
 		return this.bootMode;
 	}
@@ -205,6 +221,17 @@ public class ImportImageRequest extends RpcAcsRequest<ImportImageResponse> {
 		this.detectionStrategy = detectionStrategy;
 		if(detectionStrategy != null){
 			putQueryParameter("DetectionStrategy", detectionStrategy);
+		}
+	}
+
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
 		}
 	}
 
@@ -312,6 +339,19 @@ public class ImportImageRequest extends RpcAcsRequest<ImportImageResponse> {
 
 		public void setDiskImageSize(Integer diskImageSize) {
 			this.diskImageSize = diskImageSize;
+		}
+	}
+
+	public static class Features {
+
+		private String nvmeSupport;
+
+		public String getNvmeSupport() {
+			return this.nvmeSupport;
+		}
+
+		public void setNvmeSupport(String nvmeSupport) {
+			this.nvmeSupport = nvmeSupport;
 		}
 	}
 

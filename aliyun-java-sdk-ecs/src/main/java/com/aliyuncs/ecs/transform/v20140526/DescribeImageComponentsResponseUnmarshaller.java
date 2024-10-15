@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.ecs.model.v20140526.DescribeImageComponentsResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeImageComponentsResponse.ImageComponentSet;
+import com.aliyuncs.ecs.model.v20140526.DescribeImageComponentsResponse.ImageComponentSet.Parameter;
 import com.aliyuncs.ecs.model.v20140526.DescribeImageComponentsResponse.ImageComponentSet.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -44,6 +45,7 @@ public class DescribeImageComponentsResponseUnmarshaller {
 			imageComponentSet.setName(_ctx.stringValue("DescribeImageComponentsResponse.ImageComponent["+ i +"].Name"));
 			imageComponentSet.setContent(_ctx.stringValue("DescribeImageComponentsResponse.ImageComponent["+ i +"].Content"));
 			imageComponentSet.setOwner(_ctx.stringValue("DescribeImageComponentsResponse.ImageComponent["+ i +"].Owner"));
+			imageComponentSet.setComponentVersion(_ctx.stringValue("DescribeImageComponentsResponse.ImageComponent["+ i +"].ComponentVersion"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeImageComponentsResponse.ImageComponent["+ i +"].Tags.Length"); j++) {
@@ -54,6 +56,17 @@ public class DescribeImageComponentsResponseUnmarshaller {
 				tags.add(tag);
 			}
 			imageComponentSet.setTags(tags);
+
+			List<Parameter> parameters = new ArrayList<Parameter>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeImageComponentsResponse.ImageComponent["+ i +"].Parameters.Length"); j++) {
+				Parameter parameter = new Parameter();
+				parameter.setName(_ctx.stringValue("DescribeImageComponentsResponse.ImageComponent["+ i +"].Parameters["+ j +"].Name"));
+				parameter.setType(_ctx.stringValue("DescribeImageComponentsResponse.ImageComponent["+ i +"].Parameters["+ j +"].Type"));
+				parameter.setDefaultValue(_ctx.stringValue("DescribeImageComponentsResponse.ImageComponent["+ i +"].Parameters["+ j +"].DefaultValue"));
+
+				parameters.add(parameter);
+			}
+			imageComponentSet.setParameters(parameters);
 
 			imageComponent.add(imageComponentSet);
 		}

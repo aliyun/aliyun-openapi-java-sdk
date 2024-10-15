@@ -263,6 +263,12 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 
 			private String periodUnit;
 
+			private String httpEndpoint;
+
+			private String httpTokens;
+
+			private Integer httpPutResponseHopLimit;
+
 			private List<DataDisk> dataDisks;
 
 			private List<NetworkInterface> networkInterfaces;
@@ -645,6 +651,30 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 
 			public void setPeriodUnit(String periodUnit) {
 				this.periodUnit = periodUnit;
+			}
+
+			public String getHttpEndpoint() {
+				return this.httpEndpoint;
+			}
+
+			public void setHttpEndpoint(String httpEndpoint) {
+				this.httpEndpoint = httpEndpoint;
+			}
+
+			public String getHttpTokens() {
+				return this.httpTokens;
+			}
+
+			public void setHttpTokens(String httpTokens) {
+				this.httpTokens = httpTokens;
+			}
+
+			public Integer getHttpPutResponseHopLimit() {
+				return this.httpPutResponseHopLimit;
+			}
+
+			public void setHttpPutResponseHopLimit(Integer httpPutResponseHopLimit) {
+				this.httpPutResponseHopLimit = httpPutResponseHopLimit;
 			}
 
 			public List<DataDisk> getDataDisks() {

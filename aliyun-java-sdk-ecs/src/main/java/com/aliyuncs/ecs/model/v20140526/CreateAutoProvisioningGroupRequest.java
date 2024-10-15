@@ -16,6 +16,8 @@ package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ecs.Endpoint;
 
@@ -103,6 +105,9 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 	private String launchConfigurationInstanceDescription;
 
 	private String spotAllocationStrategy;
+
+	@SerializedName("resourcePoolOptions")
+	private ResourcePoolOptions resourcePoolOptions;
 
 	private Boolean terminateInstances;
 
@@ -619,6 +624,17 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 		if(spotAllocationStrategy != null){
 			putQueryParameter("SpotAllocationStrategy", spotAllocationStrategy);
 		}
+	}
+
+	public ResourcePoolOptions getResourcePoolOptions() {
+		return this.resourcePoolOptions;
+	}
+
+	public void setResourcePoolOptions(ResourcePoolOptions resourcePoolOptions) {
+		this.resourcePoolOptions = resourcePoolOptions;	
+		if (resourcePoolOptions != null) {
+			putQueryParameter("ResourcePoolOptions" , new Gson().toJson(resourcePoolOptions));
+		}	
 	}
 
 	public Boolean getTerminateInstances() {
@@ -1176,6 +1192,31 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 
 		public void setBurstingEnabled(Boolean burstingEnabled) {
 			this.burstingEnabled = burstingEnabled;
+		}
+	}
+
+	public static class ResourcePoolOptions {
+
+		@SerializedName("Strategy")
+		private String strategy;
+
+		@SerializedName("PrivatePoolIds")
+		private List<String> privatePoolIds;
+
+		public String getStrategy() {
+			return this.strategy;
+		}
+
+		public void setStrategy(String strategy) {
+			this.strategy = strategy;
+		}
+
+		public List<String> getPrivatePoolIds() {
+			return this.privatePoolIds;
+		}
+
+		public void setPrivatePoolIds(List<String> privatePoolIds) {
+			this.privatePoolIds = privatePoolIds;
 		}
 	}
 

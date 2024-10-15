@@ -27,6 +27,8 @@ public class ModifyElasticityAssuranceRequest extends RpcAcsRequest<ModifyElasti
 
 	private Long resourceOwnerId;
 
+	private String clientToken;
+
 	private String description;
 
 	private String privatePoolOptionsId;
@@ -38,6 +40,8 @@ public class ModifyElasticityAssuranceRequest extends RpcAcsRequest<ModifyElasti
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private Integer instanceAmount;
 	public ModifyElasticityAssuranceRequest() {
 		super("Ecs", "2014-05-26", "ModifyElasticityAssurance", "ecs");
 		setMethod(MethodType.POST);
@@ -55,6 +59,17 @@ public class ModifyElasticityAssuranceRequest extends RpcAcsRequest<ModifyElasti
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
@@ -121,6 +136,17 @@ public class ModifyElasticityAssuranceRequest extends RpcAcsRequest<ModifyElasti
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Integer getInstanceAmount() {
+		return this.instanceAmount;
+	}
+
+	public void setInstanceAmount(Integer instanceAmount) {
+		this.instanceAmount = instanceAmount;
+		if(instanceAmount != null){
+			putQueryParameter("InstanceAmount", instanceAmount.toString());
 		}
 	}
 

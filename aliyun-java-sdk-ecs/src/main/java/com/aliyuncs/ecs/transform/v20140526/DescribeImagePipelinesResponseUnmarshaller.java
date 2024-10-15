@@ -49,6 +49,9 @@ public class DescribeImagePipelinesResponseUnmarshaller {
 			imagePipelineSet.setBaseImageType(_ctx.stringValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].BaseImageType"));
 			imagePipelineSet.setName(_ctx.stringValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].Name"));
 			imagePipelineSet.setBuildContent(_ctx.stringValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].BuildContent"));
+			imagePipelineSet.setRepairMode(_ctx.stringValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].RepairMode"));
+			imagePipelineSet.setTestContent(_ctx.stringValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].TestContent"));
+			imagePipelineSet.setImageFamily(_ctx.stringValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].ImageFamily"));
 
 			List<String> toRegionIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].ToRegionIds.Length"); j++) {
