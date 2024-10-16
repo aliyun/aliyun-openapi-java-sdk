@@ -1,0 +1,3 @@
+2024-10-16 Version: 1.0.0
+- Gwlb Open API released.
+
