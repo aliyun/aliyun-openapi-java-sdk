@@ -1,3 +1,6 @@
+2024-10-17 Version: 3.15.9
+- Supported query exchange rate.
+
 2024-06-18 Version: 3.15.8
 - Generated 2018-02-08 for `Domain`.
 
