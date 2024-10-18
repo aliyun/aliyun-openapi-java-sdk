@@ -28,7 +28,7 @@ public class ListListenersRequest extends RpcAcsRequest<ListListenersResponse> {
 
 	private List<String> loadBalancerIds;
 
-	private Long skip;
+	private Integer skip;
 
 	private String nextToken;
 
@@ -56,11 +56,11 @@ public class ListListenersRequest extends RpcAcsRequest<ListListenersResponse> {
 		}	
 	}
 
-	public Long getSkip() {
+	public Integer getSkip() {
 		return this.skip;
 	}
 
-	public void setSkip(Long skip) {
+	public void setSkip(Integer skip) {
 		this.skip = skip;
 		if(skip != null){
 			putBodyParameter("Skip", skip.toString());
