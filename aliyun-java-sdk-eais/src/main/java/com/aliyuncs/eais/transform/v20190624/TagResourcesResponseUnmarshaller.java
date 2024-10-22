@@ -14,18 +14,16 @@
 
 package com.aliyuncs.eais.transform.v20190624;
 
-import com.aliyuncs.eais.model.v20190624.CreateEaiAllResponse;
+import com.aliyuncs.eais.model.v20190624.TagResourcesResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class CreateEaiAllResponseUnmarshaller {
+public class TagResourcesResponseUnmarshaller {
 
-	public static CreateEaiAllResponse unmarshall(CreateEaiAllResponse createEaiAllResponse, UnmarshallerContext _ctx) {
+	public static TagResourcesResponse unmarshall(TagResourcesResponse tagResourcesResponse, UnmarshallerContext _ctx) {
 		
-		createEaiAllResponse.setRequestId(_ctx.stringValue("CreateEaiAllResponse.RequestId"));
-		createEaiAllResponse.setElasticAcceleratedInstanceId(_ctx.stringValue("CreateEaiAllResponse.ElasticAcceleratedInstanceId"));
-		createEaiAllResponse.setClientInstanceId(_ctx.stringValue("CreateEaiAllResponse.ClientInstanceId"));
+		tagResourcesResponse.setRequestId(_ctx.stringValue("TagResourcesResponse.RequestId"));
 	 
-	 	return createEaiAllResponse;
+	 	return tagResourcesResponse;
 	}
 }

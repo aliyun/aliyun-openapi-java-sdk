@@ -15,20 +15,16 @@
 package com.aliyuncs.eais.model.v20190624;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.eais.transform.v20190624.CreateEaiAllResponseUnmarshaller;
+import com.aliyuncs.eais.transform.v20190624.TagResourcesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateEaiAllResponse extends AcsResponse {
+public class TagResourcesResponse extends AcsResponse {
 
 	private String requestId;
-
-	private String elasticAcceleratedInstanceId;
-
-	private String clientInstanceId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,25 +34,9 @@ public class CreateEaiAllResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getElasticAcceleratedInstanceId() {
-		return this.elasticAcceleratedInstanceId;
-	}
-
-	public void setElasticAcceleratedInstanceId(String elasticAcceleratedInstanceId) {
-		this.elasticAcceleratedInstanceId = elasticAcceleratedInstanceId;
-	}
-
-	public String getClientInstanceId() {
-		return this.clientInstanceId;
-	}
-
-	public void setClientInstanceId(String clientInstanceId) {
-		this.clientInstanceId = clientInstanceId;
-	}
-
 	@Override
-	public CreateEaiAllResponse getInstance(UnmarshallerContext context) {
-		return	CreateEaiAllResponseUnmarshaller.unmarshall(this, context);
+	public TagResourcesResponse getInstance(UnmarshallerContext context) {
+		return	TagResourcesResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
