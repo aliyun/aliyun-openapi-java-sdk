@@ -36,6 +36,7 @@ public class ListUserBasicInfosResponseUnmarshaller {
 			userBasicInfo.setUserPrincipalName(_ctx.stringValue("ListUserBasicInfosResponse.UserBasicInfos["+ i +"].UserPrincipalName"));
 			userBasicInfo.setDisplayName(_ctx.stringValue("ListUserBasicInfosResponse.UserBasicInfos["+ i +"].DisplayName"));
 			userBasicInfo.setUserId(_ctx.stringValue("ListUserBasicInfosResponse.UserBasicInfos["+ i +"].UserId"));
+			userBasicInfo.setStatus(_ctx.stringValue("ListUserBasicInfosResponse.UserBasicInfos["+ i +"].Status"));
 
 			userBasicInfos.add(userBasicInfo);
 		}

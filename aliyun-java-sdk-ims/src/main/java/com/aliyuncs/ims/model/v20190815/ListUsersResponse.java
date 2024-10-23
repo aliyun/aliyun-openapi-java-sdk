@@ -87,6 +87,8 @@ public class ListUsersResponse extends AcsResponse {
 
 		private String provisionType;
 
+		private String status;
+
 		private List<Tag> tags;
 
 		public String getDisplayName() {
@@ -167,6 +169,14 @@ public class ListUsersResponse extends AcsResponse {
 
 		public void setProvisionType(String provisionType) {
 			this.provisionType = provisionType;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public List<Tag> getTags() {

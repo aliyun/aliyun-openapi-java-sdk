@@ -44,6 +44,7 @@ public class ListUsersResponseUnmarshaller {
 			user.setLastLoginDate(_ctx.stringValue("ListUsersResponse.Users["+ i +"].LastLoginDate"));
 			user.setCreateDate(_ctx.stringValue("ListUsersResponse.Users["+ i +"].CreateDate"));
 			user.setProvisionType(_ctx.stringValue("ListUsersResponse.Users["+ i +"].ProvisionType"));
+			user.setStatus(_ctx.stringValue("ListUsersResponse.Users["+ i +"].Status"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("ListUsersResponse.Users["+ i +"].Tags.Length"); j++) {

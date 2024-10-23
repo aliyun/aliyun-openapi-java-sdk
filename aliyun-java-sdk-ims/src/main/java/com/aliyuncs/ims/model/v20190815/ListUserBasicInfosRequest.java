@@ -26,11 +26,13 @@ import com.aliyuncs.ims.Endpoint;
 public class ListUserBasicInfosRequest extends RpcAcsRequest<ListUserBasicInfosResponse> {
 	   
 
-	private String marker;
-
 	private List<Tag> tags;
 
+	private String marker;
+
 	private Integer maxItems;
+
+	private String status;
 	public ListUserBasicInfosRequest() {
 		super("Ims", "2019-08-15", "ListUserBasicInfos", "ims");
 		setMethod(MethodType.POST);
@@ -38,17 +40,6 @@ public class ListUserBasicInfosRequest extends RpcAcsRequest<ListUserBasicInfosR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getMarker() {
-		return this.marker;
-	}
-
-	public void setMarker(String marker) {
-		this.marker = marker;
-		if(marker != null){
-			putQueryParameter("Marker", marker);
-		}
 	}
 
 	public List<Tag> getTags() {
@@ -65,6 +56,17 @@ public class ListUserBasicInfosRequest extends RpcAcsRequest<ListUserBasicInfosR
 		}	
 	}
 
+	public String getMarker() {
+		return this.marker;
+	}
+
+	public void setMarker(String marker) {
+		this.marker = marker;
+		if(marker != null){
+			putQueryParameter("Marker", marker);
+		}
+	}
+
 	public Integer getMaxItems() {
 		return this.maxItems;
 	}
@@ -73,6 +75,17 @@ public class ListUserBasicInfosRequest extends RpcAcsRequest<ListUserBasicInfosR
 		this.maxItems = maxItems;
 		if(maxItems != null){
 			putQueryParameter("MaxItems", maxItems.toString());
+		}
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status);
 		}
 	}
 

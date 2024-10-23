@@ -73,6 +73,8 @@ public class ListUserBasicInfosResponse extends AcsResponse {
 
 		private String userId;
 
+		private String status;
+
 		public String getUserPrincipalName() {
 			return this.userPrincipalName;
 		}
@@ -95,6 +97,14 @@ public class ListUserBasicInfosResponse extends AcsResponse {
 
 		public void setUserId(String userId) {
 			this.userId = userId;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
 		}
 	}
 

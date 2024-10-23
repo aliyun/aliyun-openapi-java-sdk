@@ -31,6 +31,8 @@ public class ListUsersRequest extends RpcAcsRequest<ListUsersResponse> {
 	private String marker;
 
 	private Integer maxItems;
+
+	private String status;
 	public ListUsersRequest() {
 		super("Ims", "2019-08-15", "ListUsers", "ims");
 		setMethod(MethodType.POST);
@@ -73,6 +75,17 @@ public class ListUsersRequest extends RpcAcsRequest<ListUsersResponse> {
 		this.maxItems = maxItems;
 		if(maxItems != null){
 			putQueryParameter("MaxItems", maxItems.toString());
+		}
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status);
 		}
 	}
 

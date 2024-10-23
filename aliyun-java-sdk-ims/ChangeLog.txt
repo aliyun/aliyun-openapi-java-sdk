@@ -1,3 +1,6 @@
+2024-10-23 Version: 3.3.9
+ListUsers，ListUserBasicInfos api新增支持status字段
+
 2024-05-07 Version: 3.3.8
 - GetVerificationInfo api, make visibility public.
 
