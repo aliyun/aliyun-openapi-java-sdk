@@ -48,27 +48,27 @@ public class QueryDeviceInfoResponse extends AcsResponse {
 
 		private String account;
 
+		private String alias;
+
+		private String brand;
+
+		private String deviceId;
+
+		private String deviceToken;
+
+		private String deviceType;
+
 		private String lastOnlineTime;
+
+		private String model;
+
+		private Boolean online;
 
 		private String phoneNumber;
 
 		private Boolean pushEnabled;
 
-		private String deviceType;
-
-		private String deviceId;
-
-		private Boolean online;
-
 		private String tags;
-
-		private String deviceToken;
-
-		private String alias;
-
-		private String brand;
-
-		private String model;
 
 		public String getAccount() {
 			return this.account;
@@ -76,70 +76,6 @@ public class QueryDeviceInfoResponse extends AcsResponse {
 
 		public void setAccount(String account) {
 			this.account = account;
-		}
-
-		public String getLastOnlineTime() {
-			return this.lastOnlineTime;
-		}
-
-		public void setLastOnlineTime(String lastOnlineTime) {
-			this.lastOnlineTime = lastOnlineTime;
-		}
-
-		public String getPhoneNumber() {
-			return this.phoneNumber;
-		}
-
-		public void setPhoneNumber(String phoneNumber) {
-			this.phoneNumber = phoneNumber;
-		}
-
-		public Boolean getPushEnabled() {
-			return this.pushEnabled;
-		}
-
-		public void setPushEnabled(Boolean pushEnabled) {
-			this.pushEnabled = pushEnabled;
-		}
-
-		public String getDeviceType() {
-			return this.deviceType;
-		}
-
-		public void setDeviceType(String deviceType) {
-			this.deviceType = deviceType;
-		}
-
-		public String getDeviceId() {
-			return this.deviceId;
-		}
-
-		public void setDeviceId(String deviceId) {
-			this.deviceId = deviceId;
-		}
-
-		public Boolean getOnline() {
-			return this.online;
-		}
-
-		public void setOnline(Boolean online) {
-			this.online = online;
-		}
-
-		public String getTags() {
-			return this.tags;
-		}
-
-		public void setTags(String tags) {
-			this.tags = tags;
-		}
-
-		public String getDeviceToken() {
-			return this.deviceToken;
-		}
-
-		public void setDeviceToken(String deviceToken) {
-			this.deviceToken = deviceToken;
 		}
 
 		public String getAlias() {
@@ -158,12 +94,76 @@ public class QueryDeviceInfoResponse extends AcsResponse {
 			this.brand = brand;
 		}
 
+		public String getDeviceId() {
+			return this.deviceId;
+		}
+
+		public void setDeviceId(String deviceId) {
+			this.deviceId = deviceId;
+		}
+
+		public String getDeviceToken() {
+			return this.deviceToken;
+		}
+
+		public void setDeviceToken(String deviceToken) {
+			this.deviceToken = deviceToken;
+		}
+
+		public String getDeviceType() {
+			return this.deviceType;
+		}
+
+		public void setDeviceType(String deviceType) {
+			this.deviceType = deviceType;
+		}
+
+		public String getLastOnlineTime() {
+			return this.lastOnlineTime;
+		}
+
+		public void setLastOnlineTime(String lastOnlineTime) {
+			this.lastOnlineTime = lastOnlineTime;
+		}
+
 		public String getModel() {
 			return this.model;
 		}
 
 		public void setModel(String model) {
 			this.model = model;
+		}
+
+		public Boolean getOnline() {
+			return this.online;
+		}
+
+		public void setOnline(Boolean online) {
+			this.online = online;
+		}
+
+		public String getPhoneNumber() {
+			return this.phoneNumber;
+		}
+
+		public void setPhoneNumber(String phoneNumber) {
+			this.phoneNumber = phoneNumber;
+		}
+
+		public Boolean getPushEnabled() {
+			return this.pushEnabled;
+		}
+
+		public void setPushEnabled(Boolean pushEnabled) {
+			this.pushEnabled = pushEnabled;
+		}
+
+		public String getTags() {
+			return this.tags;
+		}
+
+		public void setTags(String tags) {
+			this.tags = tags;
 		}
 	}
 

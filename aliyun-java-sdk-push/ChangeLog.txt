@@ -1,3 +1,6 @@
+2024-10-23 Version: 3.13.18
+- Update API Push and MassPush: add param AndroidNotificationThreadId
+
 2024-10-10 Version: 3.13.17
 - Support Android badge.
 - Support Harmony badge.

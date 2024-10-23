@@ -85,9 +85,9 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 
 	private String androidXiaomiImageUrl;
 
-	private String smsTemplateName;
-
 	private String harmonyUri;
+
+	private String smsTemplateName;
 
 	private String harmonyExtParameters;
 
@@ -138,6 +138,8 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 	private String iOSMusic;
 
 	private Boolean iOSMutableContent;
+
+	private String androidNotificationThreadId;
 
 	private Integer androidHonorTargetUserType;
 
@@ -553,17 +555,6 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 		}
 	}
 
-	public String getSmsTemplateName() {
-		return this.smsTemplateName;
-	}
-
-	public void setSmsTemplateName(String smsTemplateName) {
-		this.smsTemplateName = smsTemplateName;
-		if(smsTemplateName != null){
-			putQueryParameter("SmsTemplateName", smsTemplateName);
-		}
-	}
-
 	public String getHarmonyUri() {
 		return this.harmonyUri;
 	}
@@ -572,6 +563,17 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 		this.harmonyUri = harmonyUri;
 		if(harmonyUri != null){
 			putQueryParameter("HarmonyUri", harmonyUri);
+		}
+	}
+
+	public String getSmsTemplateName() {
+		return this.smsTemplateName;
+	}
+
+	public void setSmsTemplateName(String smsTemplateName) {
+		this.smsTemplateName = smsTemplateName;
+		if(smsTemplateName != null){
+			putQueryParameter("SmsTemplateName", smsTemplateName);
 		}
 	}
 
@@ -847,6 +849,17 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 		this.iOSMutableContent = iOSMutableContent;
 		if(iOSMutableContent != null){
 			putQueryParameter("iOSMutableContent", iOSMutableContent.toString());
+		}
+	}
+
+	public String getAndroidNotificationThreadId() {
+		return this.androidNotificationThreadId;
+	}
+
+	public void setAndroidNotificationThreadId(String androidNotificationThreadId) {
+		this.androidNotificationThreadId = androidNotificationThreadId;
+		if(androidNotificationThreadId != null){
+			putQueryParameter("AndroidNotificationThreadId", androidNotificationThreadId);
 		}
 	}
 

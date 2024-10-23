@@ -27,17 +27,17 @@ public class QueryDeviceInfoResponseUnmarshaller {
 
 		DeviceInfo deviceInfo = new DeviceInfo();
 		deviceInfo.setAccount(_ctx.stringValue("QueryDeviceInfoResponse.DeviceInfo.Account"));
-		deviceInfo.setLastOnlineTime(_ctx.stringValue("QueryDeviceInfoResponse.DeviceInfo.LastOnlineTime"));
-		deviceInfo.setPhoneNumber(_ctx.stringValue("QueryDeviceInfoResponse.DeviceInfo.PhoneNumber"));
-		deviceInfo.setPushEnabled(_ctx.booleanValue("QueryDeviceInfoResponse.DeviceInfo.PushEnabled"));
-		deviceInfo.setDeviceType(_ctx.stringValue("QueryDeviceInfoResponse.DeviceInfo.DeviceType"));
-		deviceInfo.setDeviceId(_ctx.stringValue("QueryDeviceInfoResponse.DeviceInfo.DeviceId"));
-		deviceInfo.setOnline(_ctx.booleanValue("QueryDeviceInfoResponse.DeviceInfo.Online"));
-		deviceInfo.setTags(_ctx.stringValue("QueryDeviceInfoResponse.DeviceInfo.Tags"));
-		deviceInfo.setDeviceToken(_ctx.stringValue("QueryDeviceInfoResponse.DeviceInfo.DeviceToken"));
 		deviceInfo.setAlias(_ctx.stringValue("QueryDeviceInfoResponse.DeviceInfo.Alias"));
 		deviceInfo.setBrand(_ctx.stringValue("QueryDeviceInfoResponse.DeviceInfo.Brand"));
+		deviceInfo.setDeviceId(_ctx.stringValue("QueryDeviceInfoResponse.DeviceInfo.DeviceId"));
+		deviceInfo.setDeviceToken(_ctx.stringValue("QueryDeviceInfoResponse.DeviceInfo.DeviceToken"));
+		deviceInfo.setDeviceType(_ctx.stringValue("QueryDeviceInfoResponse.DeviceInfo.DeviceType"));
+		deviceInfo.setLastOnlineTime(_ctx.stringValue("QueryDeviceInfoResponse.DeviceInfo.LastOnlineTime"));
 		deviceInfo.setModel(_ctx.stringValue("QueryDeviceInfoResponse.DeviceInfo.Model"));
+		deviceInfo.setOnline(_ctx.booleanValue("QueryDeviceInfoResponse.DeviceInfo.Online"));
+		deviceInfo.setPhoneNumber(_ctx.stringValue("QueryDeviceInfoResponse.DeviceInfo.PhoneNumber"));
+		deviceInfo.setPushEnabled(_ctx.booleanValue("QueryDeviceInfoResponse.DeviceInfo.PushEnabled"));
+		deviceInfo.setTags(_ctx.stringValue("QueryDeviceInfoResponse.DeviceInfo.Tags"));
 		queryDeviceInfoResponse.setDeviceInfo(deviceInfo);
 	 
 	 	return queryDeviceInfoResponse;

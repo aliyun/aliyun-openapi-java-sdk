@@ -31,9 +31,9 @@ public class QueryDeviceStatResponseUnmarshaller {
 		List<AppDeviceStat> appDeviceStats = new ArrayList<AppDeviceStat>();
 		for (int i = 0; i < _ctx.lengthValue("QueryDeviceStatResponse.AppDeviceStats.Length"); i++) {
 			AppDeviceStat appDeviceStat = new AppDeviceStat();
-			appDeviceStat.setTime(_ctx.stringValue("QueryDeviceStatResponse.AppDeviceStats["+ i +"].Time"));
-			appDeviceStat.setDeviceType(_ctx.stringValue("QueryDeviceStatResponse.AppDeviceStats["+ i +"].DeviceType"));
 			appDeviceStat.setCount(_ctx.longValue("QueryDeviceStatResponse.AppDeviceStats["+ i +"].Count"));
+			appDeviceStat.setDeviceType(_ctx.stringValue("QueryDeviceStatResponse.AppDeviceStats["+ i +"].DeviceType"));
+			appDeviceStat.setTime(_ctx.stringValue("QueryDeviceStatResponse.AppDeviceStats["+ i +"].Time"));
 
 			appDeviceStats.add(appDeviceStat);
 		}
