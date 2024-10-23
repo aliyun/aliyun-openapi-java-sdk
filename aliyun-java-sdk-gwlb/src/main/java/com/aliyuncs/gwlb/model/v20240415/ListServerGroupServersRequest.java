@@ -18,6 +18,7 @@ import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.gwlb.Endpoint;
 
 /**
  * @author auto create
@@ -38,9 +39,13 @@ public class ListServerGroupServersRequest extends RpcAcsRequest<ListServerGroup
 
 	private Integer maxResults;
 	public ListServerGroupServersRequest() {
-		super("Gwlb", "2024-04-15", "ListServerGroupServers");
+		super("Gwlb", "2024-04-15", "ListServerGroupServers", "gwlb");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Integer getSkip() {

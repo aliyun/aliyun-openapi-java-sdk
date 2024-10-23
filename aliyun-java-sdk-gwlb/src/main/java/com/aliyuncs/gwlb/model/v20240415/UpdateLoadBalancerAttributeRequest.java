@@ -17,6 +17,7 @@ package com.aliyuncs.gwlb.model.v20240415;
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.gwlb.Endpoint;
 
 /**
  * @author auto create
@@ -33,9 +34,13 @@ public class UpdateLoadBalancerAttributeRequest extends RpcAcsRequest<UpdateLoad
 
 	private String loadBalancerId;
 	public UpdateLoadBalancerAttributeRequest() {
-		super("Gwlb", "2024-04-15", "UpdateLoadBalancerAttribute");
+		super("Gwlb", "2024-04-15", "UpdateLoadBalancerAttribute", "gwlb");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getClientToken() {
