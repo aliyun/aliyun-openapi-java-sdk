@@ -39,9 +39,13 @@ public class CreateVerifySchemeRequest extends RpcAcsRequest<CreateVerifySchemeR
 
 	private String email;
 
+	private String hmSignName;
+
 	private String packSign;
 
 	private String packName;
+
+	private String hmAppIdentifier;
 
 	private Long cuApiCode;
 
@@ -62,6 +66,8 @@ public class CreateVerifySchemeRequest extends RpcAcsRequest<CreateVerifySchemeR
 	private String schemeName;
 
 	private String smsSignName;
+
+	private String hmPackageName;
 	public CreateVerifySchemeRequest() {
 		super("Dypnsapi", "2017-05-25", "CreateVerifyScheme", "dypnsapi");
 		setMethod(MethodType.POST);
@@ -148,6 +154,17 @@ public class CreateVerifySchemeRequest extends RpcAcsRequest<CreateVerifySchemeR
 		}
 	}
 
+	public String getHmSignName() {
+		return this.hmSignName;
+	}
+
+	public void setHmSignName(String hmSignName) {
+		this.hmSignName = hmSignName;
+		if(hmSignName != null){
+			putQueryParameter("HmSignName", hmSignName);
+		}
+	}
+
 	public String getPackSign() {
 		return this.packSign;
 	}
@@ -167,6 +184,17 @@ public class CreateVerifySchemeRequest extends RpcAcsRequest<CreateVerifySchemeR
 		this.packName = packName;
 		if(packName != null){
 			putQueryParameter("PackName", packName);
+		}
+	}
+
+	public String getHmAppIdentifier() {
+		return this.hmAppIdentifier;
+	}
+
+	public void setHmAppIdentifier(String hmAppIdentifier) {
+		this.hmAppIdentifier = hmAppIdentifier;
+		if(hmAppIdentifier != null){
+			putQueryParameter("HmAppIdentifier", hmAppIdentifier);
 		}
 	}
 
@@ -277,6 +305,17 @@ public class CreateVerifySchemeRequest extends RpcAcsRequest<CreateVerifySchemeR
 		this.smsSignName = smsSignName;
 		if(smsSignName != null){
 			putQueryParameter("SmsSignName", smsSignName);
+		}
+	}
+
+	public String getHmPackageName() {
+		return this.hmPackageName;
+	}
+
+	public void setHmPackageName(String hmPackageName) {
+		this.hmPackageName = hmPackageName;
+		if(hmPackageName != null){
+			putQueryParameter("HmPackageName", hmPackageName);
 		}
 	}
 
