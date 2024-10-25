@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.ens.model.v20171110.DescribeImageInfosResponse;
 import com.aliyuncs.ens.model.v20171110.DescribeImageInfosResponse.Image;
+import com.aliyuncs.ens.model.v20171110.DescribeImageInfosResponse.Image.DiskDeviceMapping;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -39,6 +40,18 @@ public class DescribeImageInfosResponseUnmarshaller {
 			image.setOSName(_ctx.stringValue("DescribeImageInfosResponse.Images["+ i +"].OSName"));
 			image.setOSType(_ctx.stringValue("DescribeImageInfosResponse.Images["+ i +"].OSType"));
 			image.setComputeType(_ctx.stringValue("DescribeImageInfosResponse.Images["+ i +"].ComputeType"));
+
+			List<DiskDeviceMapping> diskDeviceMappings = new ArrayList<DiskDeviceMapping>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeImageInfosResponse.Images["+ i +"].DiskDeviceMappings.Length"); j++) {
+				DiskDeviceMapping diskDeviceMapping = new DiskDeviceMapping();
+				diskDeviceMapping.setType(_ctx.stringValue("DescribeImageInfosResponse.Images["+ i +"].DiskDeviceMappings["+ j +"].Type"));
+				diskDeviceMapping.setSize(_ctx.stringValue("DescribeImageInfosResponse.Images["+ i +"].DiskDeviceMappings["+ j +"].Size"));
+				diskDeviceMapping.setFormat(_ctx.stringValue("DescribeImageInfosResponse.Images["+ i +"].DiskDeviceMappings["+ j +"].Format"));
+				diskDeviceMapping.setImageId(_ctx.stringValue("DescribeImageInfosResponse.Images["+ i +"].DiskDeviceMappings["+ j +"].imageId"));
+
+				diskDeviceMappings.add(diskDeviceMapping);
+			}
+			image.setDiskDeviceMappings(diskDeviceMappings);
 
 			images.add(image);
 		}

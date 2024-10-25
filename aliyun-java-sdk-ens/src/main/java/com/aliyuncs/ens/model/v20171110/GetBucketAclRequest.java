@@ -29,7 +29,7 @@ public class GetBucketAclRequest extends RpcAcsRequest<GetBucketAclResponse> {
 	public GetBucketAclRequest() {
 		super("Ens", "2017-11-10", "GetBucketAcl", "ens");
 		setProtocol(ProtocolType.HTTPS);
-		setMethod(MethodType.GET);
+		setMethod(MethodType.POST);
 	}
 
 	public String getBucketName() {

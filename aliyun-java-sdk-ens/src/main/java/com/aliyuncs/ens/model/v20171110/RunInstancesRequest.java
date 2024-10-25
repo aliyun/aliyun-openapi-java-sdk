@@ -94,6 +94,8 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 	private String ipType;
 
+	private Integer spotDuration;
+
 	@SerializedName("dataDisk")
 	private List<DataDisk> dataDisk;
 
@@ -468,6 +470,17 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		this.ipType = ipType;
 		if(ipType != null){
 			putQueryParameter("IpType", ipType);
+		}
+	}
+
+	public Integer getSpotDuration() {
+		return this.spotDuration;
+	}
+
+	public void setSpotDuration(Integer spotDuration) {
+		this.spotDuration = spotDuration;
+		if(spotDuration != null){
+			putQueryParameter("SpotDuration", spotDuration.toString());
 		}
 	}
 

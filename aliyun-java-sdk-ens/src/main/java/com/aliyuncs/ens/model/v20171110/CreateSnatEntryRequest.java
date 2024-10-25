@@ -36,6 +36,8 @@ public class CreateSnatEntryRequest extends RpcAcsRequest<CreateSnatEntryRespons
 
 	private String natGatewayId;
 
+	private Integer idleTimeout;
+
 	private String snatEntryName;
 	public CreateSnatEntryRequest() {
 		super("Ens", "2017-11-10", "CreateSnatEntry", "ens");
@@ -105,6 +107,17 @@ public class CreateSnatEntryRequest extends RpcAcsRequest<CreateSnatEntryRespons
 		this.natGatewayId = natGatewayId;
 		if(natGatewayId != null){
 			putQueryParameter("NatGatewayId", natGatewayId);
+		}
+	}
+
+	public Integer getIdleTimeout() {
+		return this.idleTimeout;
+	}
+
+	public void setIdleTimeout(Integer idleTimeout) {
+		this.idleTimeout = idleTimeout;
+		if(idleTimeout != null){
+			putQueryParameter("IdleTimeout", idleTimeout.toString());
 		}
 	}
 

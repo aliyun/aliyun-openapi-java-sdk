@@ -125,6 +125,8 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private String spotStrategy;
 
+		private String keyPairName;
+
 		private List<DataDiskItem> dataDisk;
 
 		private List<PublicIpAddress> publicIpAddresses;
@@ -132,6 +134,8 @@ public class DescribeInstancesResponse extends AcsResponse {
 		private List<PrivateIpAddress> privateIpAddresses;
 
 		private List<TagsItem> tags;
+
+		private List<NetworkInterfacesItem> networkInterfaces;
 
 		private List<String> securityGroupIds;
 
@@ -295,6 +299,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 			this.spotStrategy = spotStrategy;
 		}
 
+		public String getKeyPairName() {
+			return this.keyPairName;
+		}
+
+		public void setKeyPairName(String keyPairName) {
+			this.keyPairName = keyPairName;
+		}
+
 		public List<DataDiskItem> getDataDisk() {
 			return this.dataDisk;
 		}
@@ -325,6 +337,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		public void setTags(List<TagsItem> tags) {
 			this.tags = tags;
+		}
+
+		public List<NetworkInterfacesItem> getNetworkInterfaces() {
+			return this.networkInterfaces;
+		}
+
+		public void setNetworkInterfaces(List<NetworkInterfacesItem> networkInterfaces) {
+			this.networkInterfaces = networkInterfaces;
 		}
 
 		public List<String> getSecurityGroupIds() {
@@ -576,6 +596,105 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 			public void setTagKey(String tagKey) {
 				this.tagKey = tagKey;
+			}
+		}
+
+		public static class NetworkInterfacesItem {
+
+			private String type;
+
+			private String macAddress;
+
+			private String primaryIpAddress;
+
+			private String networkInterfaceId;
+
+			private List<PrivateIpSet> privateIpSets;
+
+			private List<Ipv6Set> ipv6Sets;
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
+			}
+
+			public String getMacAddress() {
+				return this.macAddress;
+			}
+
+			public void setMacAddress(String macAddress) {
+				this.macAddress = macAddress;
+			}
+
+			public String getPrimaryIpAddress() {
+				return this.primaryIpAddress;
+			}
+
+			public void setPrimaryIpAddress(String primaryIpAddress) {
+				this.primaryIpAddress = primaryIpAddress;
+			}
+
+			public String getNetworkInterfaceId() {
+				return this.networkInterfaceId;
+			}
+
+			public void setNetworkInterfaceId(String networkInterfaceId) {
+				this.networkInterfaceId = networkInterfaceId;
+			}
+
+			public List<PrivateIpSet> getPrivateIpSets() {
+				return this.privateIpSets;
+			}
+
+			public void setPrivateIpSets(List<PrivateIpSet> privateIpSets) {
+				this.privateIpSets = privateIpSets;
+			}
+
+			public List<Ipv6Set> getIpv6Sets() {
+				return this.ipv6Sets;
+			}
+
+			public void setIpv6Sets(List<Ipv6Set> ipv6Sets) {
+				this.ipv6Sets = ipv6Sets;
+			}
+
+			public static class PrivateIpSet {
+
+				private String privateIpAddress;
+
+				private Boolean primary;
+
+				public String getPrivateIpAddress() {
+					return this.privateIpAddress;
+				}
+
+				public void setPrivateIpAddress(String privateIpAddress) {
+					this.privateIpAddress = privateIpAddress;
+				}
+
+				public Boolean getPrimary() {
+					return this.primary;
+				}
+
+				public void setPrimary(Boolean primary) {
+					this.primary = primary;
+				}
+			}
+
+			public static class Ipv6Set {
+
+				private String ipv6Address;
+
+				public String getIpv6Address() {
+					return this.ipv6Address;
+				}
+
+				public void setIpv6Address(String ipv6Address) {
+					this.ipv6Address = ipv6Address;
+				}
 			}
 		}
 

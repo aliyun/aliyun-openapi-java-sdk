@@ -15,26 +15,16 @@
 package com.aliyuncs.ens.model.v20171110;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ens.transform.v20171110.DescribeApplicationResourceSummaryResponseUnmarshaller;
+import com.aliyuncs.ens.transform.v20171110.UnassociateHaVipResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeApplicationResourceSummaryResponse extends AcsResponse {
-
-	private String applicationResource;
+public class UnassociateHaVipResponse extends AcsResponse {
 
 	private String requestId;
-
-	public String getApplicationResource() {
-		return this.applicationResource;
-	}
-
-	public void setApplicationResource(String applicationResource) {
-		this.applicationResource = applicationResource;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,7 +35,12 @@ public class DescribeApplicationResourceSummaryResponse extends AcsResponse {
 	}
 
 	@Override
-	public DescribeApplicationResourceSummaryResponse getInstance(UnmarshallerContext context) {
-		return	DescribeApplicationResourceSummaryResponseUnmarshaller.unmarshall(this, context);
+	public UnassociateHaVipResponse getInstance(UnmarshallerContext context) {
+		return	UnassociateHaVipResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

@@ -15,6 +15,7 @@
 package com.aliyuncs.ens.model.v20171110;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 
 /**
@@ -35,6 +36,8 @@ public class DescribeNetworkInterfacesRequest extends RpcAcsRequest<DescribeNetw
 	private String instanceId;
 
 	private String networkId;
+
+	private List<String> ipv6Address;
 
 	private String status;
 
@@ -116,6 +119,24 @@ public class DescribeNetworkInterfacesRequest extends RpcAcsRequest<DescribeNetw
 		if(networkId != null){
 			putQueryParameter("NetworkId", networkId);
 		}
+	}
+
+	public List<String> getIpv6Address() {
+		return this.ipv6Address;
+	}
+
+	public void setIpv6Address(List<String> ipv6Address) {
+		this.ipv6Address = ipv6Address;	
+		if (ipv6Address != null) {
+			String ipv6AddressArrVal = "";
+			for(int depth1 = 0; depth1 < ipv6Address.size(); depth1++) {
+				ipv6AddressArrVal += ipv6Address.get(depth1) + ",";
+			}
+			if (ipv6AddressArrVal.length() > 0) {
+				ipv6AddressArrVal = ipv6AddressArrVal.substring(0, ipv6AddressArrVal.length() - 1);
+			}
+			putQueryParameter("Ipv6Address" , ipv6AddressArrVal);
+		}	
 	}
 
 	public String getStatus() {

@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.ens.model.v20171110.DescribeNetworkInterfacesResponse;
 import com.aliyuncs.ens.model.v20171110.DescribeNetworkInterfacesResponse.NetworkInterfaceSet;
+import com.aliyuncs.ens.model.v20171110.DescribeNetworkInterfacesResponse.NetworkInterfaceSet.Ipv6Set;
 import com.aliyuncs.ens.model.v20171110.DescribeNetworkInterfacesResponse.NetworkInterfaceSet.PrivateIpSet;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -65,6 +66,15 @@ public class DescribeNetworkInterfacesResponseUnmarshaller {
 				privateIpSets.add(privateIpSet);
 			}
 			networkInterfaceSet.setPrivateIpSets(privateIpSets);
+
+			List<Ipv6Set> ipv6Sets = new ArrayList<Ipv6Set>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].Ipv6Sets.Length"); j++) {
+				Ipv6Set ipv6Set = new Ipv6Set();
+				ipv6Set.setIpv6Address(_ctx.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].Ipv6Sets["+ j +"].Ipv6Address"));
+
+				ipv6Sets.add(ipv6Set);
+			}
+			networkInterfaceSet.setIpv6Sets(ipv6Sets);
 
 			networkInterfaceSets.add(networkInterfaceSet);
 		}

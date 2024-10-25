@@ -21,42 +21,42 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class DescribeEipAddressesRequest extends RpcAcsRequest<DescribeEipAddressesResponse> {
+public class ModifyHaVipAttributeRequest extends RpcAcsRequest<ModifyHaVipAttributeResponse> {
 	   
 
-	private String eips;
+	private String haVipId;
 
-	private String ensRegionId;
-	public DescribeEipAddressesRequest() {
-		super("Ens", "2017-11-10", "DescribeEipAddresses", "ens");
+	private String name;
+	public ModifyHaVipAttributeRequest() {
+		super("Ens", "2017-11-10", "ModifyHaVipAttribute", "ens");
 		setMethod(MethodType.POST);
 	}
 
-	public String getEips() {
-		return this.eips;
+	public String getHaVipId() {
+		return this.haVipId;
 	}
 
-	public void setEips(String eips) {
-		this.eips = eips;
-		if(eips != null){
-			putQueryParameter("Eips", eips);
+	public void setHaVipId(String haVipId) {
+		this.haVipId = haVipId;
+		if(haVipId != null){
+			putQueryParameter("HaVipId", haVipId);
 		}
 	}
 
-	public String getEnsRegionId() {
-		return this.ensRegionId;
+	public String getName() {
+		return this.name;
 	}
 
-	public void setEnsRegionId(String ensRegionId) {
-		this.ensRegionId = ensRegionId;
-		if(ensRegionId != null){
-			putQueryParameter("EnsRegionId", ensRegionId);
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 
 	@Override
-	public Class<DescribeEipAddressesResponse> getResponseClass() {
-		return DescribeEipAddressesResponse.class;
+	public Class<ModifyHaVipAttributeResponse> getResponseClass() {
+		return ModifyHaVipAttributeResponse.class;
 	}
 
 }

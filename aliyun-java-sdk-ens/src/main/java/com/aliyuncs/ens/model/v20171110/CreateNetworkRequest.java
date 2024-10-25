@@ -15,6 +15,7 @@
 package com.aliyuncs.ens.model.v20171110;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 
 /**
@@ -29,6 +30,8 @@ public class CreateNetworkRequest extends RpcAcsRequest<CreateNetworkResponse> {
 	private String ensRegionId;
 
 	private String networkName;
+
+	private List<Tag> tags;
 
 	private String cidrBlock;
 	public CreateNetworkRequest() {
@@ -69,6 +72,20 @@ public class CreateNetworkRequest extends RpcAcsRequest<CreateNetworkResponse> {
 		}
 	}
 
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
+	}
+
 	public String getCidrBlock() {
 		return this.cidrBlock;
 	}
@@ -77,6 +94,29 @@ public class CreateNetworkRequest extends RpcAcsRequest<CreateNetworkResponse> {
 		this.cidrBlock = cidrBlock;
 		if(cidrBlock != null){
 			putQueryParameter("CidrBlock", cidrBlock);
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

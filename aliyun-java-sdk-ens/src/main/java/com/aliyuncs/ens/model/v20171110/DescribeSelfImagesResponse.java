@@ -83,6 +83,8 @@ public class DescribeSelfImagesResponse extends AcsResponse {
 
 		private String imageStorageSize;
 
+		private List<DiskDeviceMapping> diskDeviceMappings;
+
 		public String getArchitecture() {
 			return this.architecture;
 		}
@@ -185,6 +187,57 @@ public class DescribeSelfImagesResponse extends AcsResponse {
 
 		public void setImageStorageSize(String imageStorageSize) {
 			this.imageStorageSize = imageStorageSize;
+		}
+
+		public List<DiskDeviceMapping> getDiskDeviceMappings() {
+			return this.diskDeviceMappings;
+		}
+
+		public void setDiskDeviceMappings(List<DiskDeviceMapping> diskDeviceMappings) {
+			this.diskDeviceMappings = diskDeviceMappings;
+		}
+
+		public static class DiskDeviceMapping {
+
+			private String type;
+
+			private String size;
+
+			private String format;
+
+			private String imageId;
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
+			}
+
+			public String getSize() {
+				return this.size;
+			}
+
+			public void setSize(String size) {
+				this.size = size;
+			}
+
+			public String getFormat() {
+				return this.format;
+			}
+
+			public void setFormat(String format) {
+				this.format = format;
+			}
+
+			public String getImageId() {
+				return this.imageId;
+			}
+
+			public void setImageId(String imageId) {
+				this.imageId = imageId;
+			}
 		}
 	}
 
