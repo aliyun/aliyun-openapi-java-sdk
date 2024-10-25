@@ -121,6 +121,8 @@ public class DescribeFlowLogsResponse extends AcsResponse {
 
 		private String flowLogDeliverErrorMessage;
 
+		private String ipVersion;
+
 		private List<Tag> tags;
 
 		private List<String> trafficPath;
@@ -259,6 +261,14 @@ public class DescribeFlowLogsResponse extends AcsResponse {
 
 		public void setFlowLogDeliverErrorMessage(String flowLogDeliverErrorMessage) {
 			this.flowLogDeliverErrorMessage = flowLogDeliverErrorMessage;
+		}
+
+		public String getIpVersion() {
+			return this.ipVersion;
+		}
+
+		public void setIpVersion(String ipVersion) {
+			this.ipVersion = ipVersion;
 		}
 
 		public List<Tag> getTags() {

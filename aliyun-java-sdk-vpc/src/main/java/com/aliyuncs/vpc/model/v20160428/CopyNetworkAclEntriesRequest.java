@@ -33,7 +33,11 @@ public class CopyNetworkAclEntriesRequest extends RpcAcsRequest<CopyNetworkAclEn
 
 	private String sourceNetworkAclId;
 
+	private Boolean dryRun;
+
 	private String resourceOwnerAccount;
+
+	private String ownerAccount;
 
 	private Long ownerId;
 	public CopyNetworkAclEntriesRequest() {
@@ -89,6 +93,17 @@ public class CopyNetworkAclEntriesRequest extends RpcAcsRequest<CopyNetworkAclEn
 		}
 	}
 
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -97,6 +112,17 @@ public class CopyNetworkAclEntriesRequest extends RpcAcsRequest<CopyNetworkAclEn
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
 		}
 	}
 

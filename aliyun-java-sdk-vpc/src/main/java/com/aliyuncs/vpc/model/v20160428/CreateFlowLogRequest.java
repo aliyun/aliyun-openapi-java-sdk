@@ -32,6 +32,8 @@ public class CreateFlowLogRequest extends RpcAcsRequest<CreateFlowLogResponse> {
 
 	private String resourceGroupId;
 
+	private String ipVersion;
+
 	private List<Tag> tags;
 
 	private String resourceId;
@@ -94,6 +96,17 @@ public class CreateFlowLogRequest extends RpcAcsRequest<CreateFlowLogResponse> {
 		this.resourceGroupId = resourceGroupId;
 		if(resourceGroupId != null){
 			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getIpVersion() {
+		return this.ipVersion;
+	}
+
+	public void setIpVersion(String ipVersion) {
+		this.ipVersion = ipVersion;
+		if(ipVersion != null){
+			putQueryParameter("IpVersion", ipVersion);
 		}
 	}
 

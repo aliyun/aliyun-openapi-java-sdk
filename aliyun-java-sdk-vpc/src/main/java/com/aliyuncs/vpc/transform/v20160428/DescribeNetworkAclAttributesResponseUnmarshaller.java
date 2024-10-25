@@ -51,6 +51,7 @@ public class DescribeNetworkAclAttributesResponseUnmarshaller {
 			ingressAclEntry.setPolicy(_ctx.stringValue("DescribeNetworkAclAttributesResponse.NetworkAclAttribute.IngressAclEntries["+ i +"].Policy"));
 			ingressAclEntry.setDescription(_ctx.stringValue("DescribeNetworkAclAttributesResponse.NetworkAclAttribute.IngressAclEntries["+ i +"].Description"));
 			ingressAclEntry.setSourceCidrIp(_ctx.stringValue("DescribeNetworkAclAttributesResponse.NetworkAclAttribute.IngressAclEntries["+ i +"].SourceCidrIp"));
+			ingressAclEntry.setIpVersion(_ctx.stringValue("DescribeNetworkAclAttributesResponse.NetworkAclAttribute.IngressAclEntries["+ i +"].IpVersion"));
 			ingressAclEntry.setBizProtocol(_ctx.stringValue("DescribeNetworkAclAttributesResponse.NetworkAclAttribute.IngressAclEntries["+ i +"].Protocol"));
 			ingressAclEntry.setPort(_ctx.stringValue("DescribeNetworkAclAttributesResponse.NetworkAclAttribute.IngressAclEntries["+ i +"].Port"));
 
@@ -68,6 +69,7 @@ public class DescribeNetworkAclAttributesResponseUnmarshaller {
 			egressAclEntry.setDescription(_ctx.stringValue("DescribeNetworkAclAttributesResponse.NetworkAclAttribute.EgressAclEntries["+ i +"].Description"));
 			egressAclEntry.setBizProtocol(_ctx.stringValue("DescribeNetworkAclAttributesResponse.NetworkAclAttribute.EgressAclEntries["+ i +"].Protocol"));
 			egressAclEntry.setDestinationCidrIp(_ctx.stringValue("DescribeNetworkAclAttributesResponse.NetworkAclAttribute.EgressAclEntries["+ i +"].DestinationCidrIp"));
+			egressAclEntry.setIpVersion(_ctx.stringValue("DescribeNetworkAclAttributesResponse.NetworkAclAttribute.EgressAclEntries["+ i +"].IpVersion"));
 			egressAclEntry.setPort(_ctx.stringValue("DescribeNetworkAclAttributesResponse.NetworkAclAttribute.EgressAclEntries["+ i +"].Port"));
 
 			egressAclEntries.add(egressAclEntry);

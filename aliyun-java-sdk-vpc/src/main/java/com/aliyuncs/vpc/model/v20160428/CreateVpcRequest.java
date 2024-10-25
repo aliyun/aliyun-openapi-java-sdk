@@ -34,6 +34,8 @@ public class CreateVpcRequest extends RpcAcsRequest<CreateVpcResponse> {
 
 	private String description;
 
+	private Integer ipv4CidrMask;
+
 	private String vpcName;
 
 	private String resourceGroupId;
@@ -47,6 +49,8 @@ public class CreateVpcRequest extends RpcAcsRequest<CreateVpcResponse> {
 	private List<Tag> tags;
 
 	private Boolean dryRun;
+
+	private Boolean enableDnsHostname;
 
 	private String resourceOwnerAccount;
 
@@ -107,6 +111,17 @@ public class CreateVpcRequest extends RpcAcsRequest<CreateVpcResponse> {
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public Integer getIpv4CidrMask() {
+		return this.ipv4CidrMask;
+	}
+
+	public void setIpv4CidrMask(Integer ipv4CidrMask) {
+		this.ipv4CidrMask = ipv4CidrMask;
+		if(ipv4CidrMask != null){
+			putQueryParameter("Ipv4CidrMask", ipv4CidrMask.toString());
 		}
 	}
 
@@ -187,6 +202,17 @@ public class CreateVpcRequest extends RpcAcsRequest<CreateVpcResponse> {
 		this.dryRun = dryRun;
 		if(dryRun != null){
 			putQueryParameter("DryRun", dryRun.toString());
+		}
+	}
+
+	public Boolean getEnableDnsHostname() {
+		return this.enableDnsHostname;
+	}
+
+	public void setEnableDnsHostname(Boolean enableDnsHostname) {
+		this.enableDnsHostname = enableDnsHostname;
+		if(enableDnsHostname != null){
+			putQueryParameter("EnableDnsHostname", enableDnsHostname.toString());
 		}
 	}
 

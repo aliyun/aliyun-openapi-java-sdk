@@ -40,6 +40,7 @@ public class ModifyVpnGatewayAttributeResponseUnmarshaller {
 		modifyVpnGatewayAttributeResponse.setDisasterRecoveryInternetIp(_ctx.stringValue("ModifyVpnGatewayAttributeResponse.DisasterRecoveryInternetIp"));
 		modifyVpnGatewayAttributeResponse.setDisasterRecoveryVSwitchId(_ctx.stringValue("ModifyVpnGatewayAttributeResponse.DisasterRecoveryVSwitchId"));
 		modifyVpnGatewayAttributeResponse.setSslVpnInternetIp(_ctx.stringValue("ModifyVpnGatewayAttributeResponse.SslVpnInternetIp"));
+		modifyVpnGatewayAttributeResponse.setResourceGroupId(_ctx.stringValue("ModifyVpnGatewayAttributeResponse.ResourceGroupId"));
 	 
 	 	return modifyVpnGatewayAttributeResponse;
 	}

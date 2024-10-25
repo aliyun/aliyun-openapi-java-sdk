@@ -26,12 +26,22 @@ public class AddPublicIpAddressPoolCidrBlockResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String cidrBlock;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getCidrBlock() {
+		return this.cidrBlock;
+	}
+
+	public void setCidrBlock(String cidrBlock) {
+		this.cidrBlock = cidrBlock;
 	}
 
 	@Override

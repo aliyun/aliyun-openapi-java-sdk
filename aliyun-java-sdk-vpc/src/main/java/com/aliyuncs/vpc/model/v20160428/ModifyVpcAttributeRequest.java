@@ -35,6 +35,8 @@ public class ModifyVpcAttributeRequest extends RpcAcsRequest<ModifyVpcAttributeR
 
 	private String ipv6Isp;
 
+	private Boolean enableDnsHostname;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -107,6 +109,17 @@ public class ModifyVpcAttributeRequest extends RpcAcsRequest<ModifyVpcAttributeR
 		this.ipv6Isp = ipv6Isp;
 		if(ipv6Isp != null){
 			putQueryParameter("Ipv6Isp", ipv6Isp);
+		}
+	}
+
+	public Boolean getEnableDnsHostname() {
+		return this.enableDnsHostname;
+	}
+
+	public void setEnableDnsHostname(Boolean enableDnsHostname) {
+		this.enableDnsHostname = enableDnsHostname;
+		if(enableDnsHostname != null){
+			putQueryParameter("EnableDnsHostname", enableDnsHostname.toString());
 		}
 	}
 

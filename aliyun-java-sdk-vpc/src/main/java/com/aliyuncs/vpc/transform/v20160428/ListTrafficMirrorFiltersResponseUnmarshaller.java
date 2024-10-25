@@ -42,6 +42,7 @@ public class ListTrafficMirrorFiltersResponseUnmarshaller {
 			trafficMirrorFilter.setTrafficMirrorFilterId(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].TrafficMirrorFilterId"));
 			trafficMirrorFilter.setTrafficMirrorFilterName(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].TrafficMirrorFilterName"));
 			trafficMirrorFilter.setResourceGroupId(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].ResourceGroupId"));
+			trafficMirrorFilter.setCreationTime(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].CreationTime"));
 
 			List<TrafficMirrorRule> ingressRules = new ArrayList<TrafficMirrorRule>();
 			for (int j = 0; j < _ctx.lengthValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].IngressRules.Length"); j++) {

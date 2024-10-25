@@ -59,6 +59,8 @@ public class CreatePhysicalConnectionRequest extends RpcAcsRequest<CreatePhysica
 	private String lineOperator;
 
 	private String name;
+
+	private List<String> deviceAdvancedCapacitys;
 	public CreatePhysicalConnectionRequest() {
 		super("Vpc", "2016-04-28", "CreatePhysicalConnection", "vpc");
 		setMethod(MethodType.POST);
@@ -256,6 +258,19 @@ public class CreatePhysicalConnectionRequest extends RpcAcsRequest<CreatePhysica
 		if(name != null){
 			putQueryParameter("Name", name);
 		}
+	}
+
+	public List<String> getDeviceAdvancedCapacitys() {
+		return this.deviceAdvancedCapacitys;
+	}
+
+	public void setDeviceAdvancedCapacitys(List<String> deviceAdvancedCapacitys) {
+		this.deviceAdvancedCapacitys = deviceAdvancedCapacitys;	
+		if (deviceAdvancedCapacitys != null) {
+			for (int i = 0; i < deviceAdvancedCapacitys.size(); i++) {
+				putQueryParameter("DeviceAdvancedCapacity." + (i + 1) , deviceAdvancedCapacitys.get(i));
+			}
+		}	
 	}
 
 	public static class Tag {

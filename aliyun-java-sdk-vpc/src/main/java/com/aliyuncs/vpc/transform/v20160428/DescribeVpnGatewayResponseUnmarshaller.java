@@ -51,6 +51,13 @@ public class DescribeVpnGatewayResponseUnmarshaller {
 		describeVpnGatewayResponse.setDisasterRecoveryInternetIp(_ctx.stringValue("DescribeVpnGatewayResponse.DisasterRecoveryInternetIp"));
 		describeVpnGatewayResponse.setDisasterRecoveryVSwitchId(_ctx.stringValue("DescribeVpnGatewayResponse.DisasterRecoveryVSwitchId"));
 		describeVpnGatewayResponse.setSslVpnInternetIp(_ctx.stringValue("DescribeVpnGatewayResponse.SslVpnInternetIp"));
+		describeVpnGatewayResponse.setResourceGroupId(_ctx.stringValue("DescribeVpnGatewayResponse.ResourceGroupId"));
+
+		List<String> eniInstanceIds = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeVpnGatewayResponse.EniInstanceIds.Length"); i++) {
+			eniInstanceIds.add(_ctx.stringValue("DescribeVpnGatewayResponse.EniInstanceIds["+ i +"]"));
+		}
+		describeVpnGatewayResponse.setEniInstanceIds(eniInstanceIds);
 
 		ReservationData reservationData = new ReservationData();
 		reservationData.setStatus(_ctx.stringValue("DescribeVpnGatewayResponse.ReservationData.Status"));

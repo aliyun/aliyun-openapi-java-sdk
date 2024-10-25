@@ -119,6 +119,10 @@ public class DescribeCommonBandwidthPackagesResponse extends AcsResponse {
 
 		private String hasReservationData;
 
+		private String bizType;
+
+		private String zone;
+
 		private List<PublicIpAddresse> publicIpAddresses;
 
 		private List<Tag> tags;
@@ -291,6 +295,22 @@ public class DescribeCommonBandwidthPackagesResponse extends AcsResponse {
 
 		public void setHasReservationData(String hasReservationData) {
 			this.hasReservationData = hasReservationData;
+		}
+
+		public String getBizType() {
+			return this.bizType;
+		}
+
+		public void setBizType(String bizType) {
+			this.bizType = bizType;
+		}
+
+		public String getZone() {
+			return this.zone;
+		}
+
+		public void setZone(String zone) {
+			this.zone = zone;
 		}
 
 		public List<PublicIpAddresse> getPublicIpAddresses() {

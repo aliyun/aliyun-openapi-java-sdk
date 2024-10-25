@@ -51,6 +51,9 @@ public class DescribeSslVpnServersResponseUnmarshaller {
 			sslVpnServer.setEnableMultiFactorAuth(_ctx.booleanValue("DescribeSslVpnServersResponse.SslVpnServers["+ i +"].EnableMultiFactorAuth"));
 			sslVpnServer.setClientIpPool(_ctx.stringValue("DescribeSslVpnServersResponse.SslVpnServers["+ i +"].ClientIpPool"));
 			sslVpnServer.setProto(_ctx.stringValue("DescribeSslVpnServersResponse.SslVpnServers["+ i +"].Proto"));
+			sslVpnServer.setResourceGroupId(_ctx.stringValue("DescribeSslVpnServersResponse.SslVpnServers["+ i +"].ResourceGroupId"));
+			sslVpnServer.setIDaaSApplicationId(_ctx.stringValue("DescribeSslVpnServersResponse.SslVpnServers["+ i +"].IDaaSApplicationId"));
+			sslVpnServer.setIDaaSInstanceVersion(_ctx.stringValue("DescribeSslVpnServersResponse.SslVpnServers["+ i +"].IDaaSInstanceVersion"));
 
 			sslVpnServers.add(sslVpnServer);
 		}

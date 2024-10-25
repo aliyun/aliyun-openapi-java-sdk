@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.vpc.model.v20160428.DescribeNatGatewaysResponse;
 import com.aliyuncs.vpc.model.v20160428.DescribeNatGatewaysResponse.NatGateway;
+import com.aliyuncs.vpc.model.v20160428.DescribeNatGatewaysResponse.NatGateway.AccessMode;
 import com.aliyuncs.vpc.model.v20160428.DescribeNatGatewaysResponse.NatGateway.IpList;
 import com.aliyuncs.vpc.model.v20160428.DescribeNatGatewaysResponse.NatGateway.NatGatewayPrivateInfo;
 import com.aliyuncs.vpc.model.v20160428.DescribeNatGatewaysResponse.NatGateway.Tag;
@@ -60,6 +61,7 @@ public class DescribeNatGatewaysResponseUnmarshaller {
 			natGateway.setPrivateLinkEnabled(_ctx.booleanValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].PrivateLinkEnabled"));
 			natGateway.setPrivateLinkMode(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].PrivateLinkMode"));
 			natGateway.setEipBindMode(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].EipBindMode"));
+			natGateway.setEnableSessionLog(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].EnableSessionLog"));
 
 			List<String> forwardTableIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].ForwardTableIds.Length"); j++) {
@@ -95,6 +97,11 @@ public class DescribeNatGatewaysResponseUnmarshaller {
 			natGatewayPrivateInfo.setIzNo(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].NatGatewayPrivateInfo.IzNo"));
 			natGatewayPrivateInfo.setEniType(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].NatGatewayPrivateInfo.EniType"));
 			natGateway.setNatGatewayPrivateInfo(natGatewayPrivateInfo);
+
+			AccessMode accessMode = new AccessMode();
+			accessMode.setModeValue(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].AccessMode.ModeValue"));
+			accessMode.setTunnelType(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].AccessMode.TunnelType"));
+			natGateway.setAccessMode(accessMode);
 
 			List<IpList> ipLists = new ArrayList<IpList>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].IpLists.Length"); j++) {

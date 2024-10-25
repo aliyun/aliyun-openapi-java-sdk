@@ -145,6 +145,14 @@ public class DescribeVirtualBorderRoutersResponse extends AcsResponse {
 
 		private String resourceGroupId;
 
+		private String ecrId;
+
+		private Boolean sitelinkEnable;
+
+		private String ecrAttatchStatus;
+
+		private String ecrOwnerId;
+
 		private List<AssociatedPhysicalConnection> associatedPhysicalConnections;
 
 		private List<AssociatedCen> associatedCens;
@@ -421,6 +429,38 @@ public class DescribeVirtualBorderRoutersResponse extends AcsResponse {
 
 		public void setResourceGroupId(String resourceGroupId) {
 			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getEcrId() {
+			return this.ecrId;
+		}
+
+		public void setEcrId(String ecrId) {
+			this.ecrId = ecrId;
+		}
+
+		public Boolean getSitelinkEnable() {
+			return this.sitelinkEnable;
+		}
+
+		public void setSitelinkEnable(Boolean sitelinkEnable) {
+			this.sitelinkEnable = sitelinkEnable;
+		}
+
+		public String getEcrAttatchStatus() {
+			return this.ecrAttatchStatus;
+		}
+
+		public void setEcrAttatchStatus(String ecrAttatchStatus) {
+			this.ecrAttatchStatus = ecrAttatchStatus;
+		}
+
+		public String getEcrOwnerId() {
+			return this.ecrOwnerId;
+		}
+
+		public void setEcrOwnerId(String ecrOwnerId) {
+			this.ecrOwnerId = ecrOwnerId;
 		}
 
 		public List<AssociatedPhysicalConnection> getAssociatedPhysicalConnections() {

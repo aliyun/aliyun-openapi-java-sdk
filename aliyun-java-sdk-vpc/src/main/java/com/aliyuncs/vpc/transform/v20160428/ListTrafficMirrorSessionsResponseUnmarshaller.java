@@ -47,6 +47,7 @@ public class ListTrafficMirrorSessionsResponseUnmarshaller {
 			trafficMirrorSession.setTrafficMirrorFilterId(_ctx.stringValue("ListTrafficMirrorSessionsResponse.TrafficMirrorSessions["+ i +"].TrafficMirrorFilterId"));
 			trafficMirrorSession.setTrafficMirrorSessionName(_ctx.stringValue("ListTrafficMirrorSessionsResponse.TrafficMirrorSessions["+ i +"].TrafficMirrorSessionName"));
 			trafficMirrorSession.setResourceGroupId(_ctx.stringValue("ListTrafficMirrorSessionsResponse.TrafficMirrorSessions["+ i +"].ResourceGroupId"));
+			trafficMirrorSession.setCreationTime(_ctx.stringValue("ListTrafficMirrorSessionsResponse.TrafficMirrorSessions["+ i +"].CreationTime"));
 
 			List<String> trafficMirrorSourceIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListTrafficMirrorSessionsResponse.TrafficMirrorSessions["+ i +"].TrafficMirrorSourceIds.Length"); j++) {

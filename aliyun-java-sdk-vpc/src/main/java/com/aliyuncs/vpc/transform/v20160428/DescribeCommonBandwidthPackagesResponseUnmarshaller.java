@@ -57,6 +57,8 @@ public class DescribeCommonBandwidthPackagesResponseUnmarshaller {
 			commonBandwidthPackage.setName(_ctx.stringValue("DescribeCommonBandwidthPackagesResponse.CommonBandwidthPackages["+ i +"].Name"));
 			commonBandwidthPackage.setISP(_ctx.stringValue("DescribeCommonBandwidthPackagesResponse.CommonBandwidthPackages["+ i +"].ISP"));
 			commonBandwidthPackage.setHasReservationData(_ctx.stringValue("DescribeCommonBandwidthPackagesResponse.CommonBandwidthPackages["+ i +"].HasReservationData"));
+			commonBandwidthPackage.setBizType(_ctx.stringValue("DescribeCommonBandwidthPackagesResponse.CommonBandwidthPackages["+ i +"].BizType"));
+			commonBandwidthPackage.setZone(_ctx.stringValue("DescribeCommonBandwidthPackagesResponse.CommonBandwidthPackages["+ i +"].Zone"));
 
 			List<String> securityProtectionTypes = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeCommonBandwidthPackagesResponse.CommonBandwidthPackages["+ i +"].SecurityProtectionTypes.Length"); j++) {

@@ -31,6 +31,8 @@ public class DescribePublicIpAddressRequest extends RpcAcsRequest<DescribePublic
 
 	private Integer pageSize;
 
+	private String ipVersion;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -75,6 +77,17 @@ public class DescribePublicIpAddressRequest extends RpcAcsRequest<DescribePublic
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getIpVersion() {
+		return this.ipVersion;
+	}
+
+	public void setIpVersion(String ipVersion) {
+		this.ipVersion = ipVersion;
+		if(ipVersion != null){
+			putQueryParameter("IpVersion", ipVersion);
 		}
 	}
 

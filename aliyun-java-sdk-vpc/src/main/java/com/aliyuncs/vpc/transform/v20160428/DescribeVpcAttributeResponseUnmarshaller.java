@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.vpc.model.v20160428.DescribeVpcAttributeResponse;
 import com.aliyuncs.vpc.model.v20160428.DescribeVpcAttributeResponse.AssociatedCen;
+import com.aliyuncs.vpc.model.v20160428.DescribeVpcAttributeResponse.AssociatedPropagationSourcesItem;
 import com.aliyuncs.vpc.model.v20160428.DescribeVpcAttributeResponse.CloudResourceSetType;
 import com.aliyuncs.vpc.model.v20160428.DescribeVpcAttributeResponse.Ipv6CidrBlock;
 import com.aliyuncs.vpc.model.v20160428.DescribeVpcAttributeResponse.Tag;
@@ -48,6 +49,8 @@ public class DescribeVpcAttributeResponseUnmarshaller {
 		describeVpcAttributeResponse.setIpv6CidrBlock(_ctx.stringValue("DescribeVpcAttributeResponse.Ipv6CidrBlock"));
 		describeVpcAttributeResponse.setSupportIpv4Gateway(_ctx.booleanValue("DescribeVpcAttributeResponse.SupportIpv4Gateway"));
 		describeVpcAttributeResponse.setIpv4GatewayId(_ctx.stringValue("DescribeVpcAttributeResponse.Ipv4GatewayId"));
+		describeVpcAttributeResponse.setEnabledIpv6(_ctx.booleanValue("DescribeVpcAttributeResponse.EnabledIpv6"));
+		describeVpcAttributeResponse.setDnsHostnameStatus(_ctx.stringValue("DescribeVpcAttributeResponse.DnsHostnameStatus"));
 
 		List<String> vSwitchIds = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeVpcAttributeResponse.VSwitchIds.Length"); i++) {
@@ -107,6 +110,19 @@ public class DescribeVpcAttributeResponseUnmarshaller {
 			tags.add(tag);
 		}
 		describeVpcAttributeResponse.setTags(tags);
+
+		List<AssociatedPropagationSourcesItem> associatedPropagationSources = new ArrayList<AssociatedPropagationSourcesItem>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeVpcAttributeResponse.AssociatedPropagationSources.Length"); i++) {
+			AssociatedPropagationSourcesItem associatedPropagationSourcesItem = new AssociatedPropagationSourcesItem();
+			associatedPropagationSourcesItem.setSourceType(_ctx.stringValue("DescribeVpcAttributeResponse.AssociatedPropagationSources["+ i +"].SourceType"));
+			associatedPropagationSourcesItem.setSourceOwnerId(_ctx.longValue("DescribeVpcAttributeResponse.AssociatedPropagationSources["+ i +"].SourceOwnerId"));
+			associatedPropagationSourcesItem.setSourceInstanceId(_ctx.stringValue("DescribeVpcAttributeResponse.AssociatedPropagationSources["+ i +"].SourceInstanceId"));
+			associatedPropagationSourcesItem.setStatus(_ctx.stringValue("DescribeVpcAttributeResponse.AssociatedPropagationSources["+ i +"].Status"));
+			associatedPropagationSourcesItem.setRoutePropagated(_ctx.booleanValue("DescribeVpcAttributeResponse.AssociatedPropagationSources["+ i +"].RoutePropagated"));
+
+			associatedPropagationSources.add(associatedPropagationSourcesItem);
+		}
+		describeVpcAttributeResponse.setAssociatedPropagationSources(associatedPropagationSources);
 	 
 	 	return describeVpcAttributeResponse;
 	}

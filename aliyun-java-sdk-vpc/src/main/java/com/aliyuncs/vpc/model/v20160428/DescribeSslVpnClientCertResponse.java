@@ -48,6 +48,8 @@ public class DescribeSslVpnClientCertResponse extends AcsResponse {
 
 	private String name;
 
+	private String resourceGroupId;
+
 	public String getStatus() {
 		return this.status;
 	}
@@ -142,6 +144,14 @@ public class DescribeSslVpnClientCertResponse extends AcsResponse {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
 	}
 
 	@Override

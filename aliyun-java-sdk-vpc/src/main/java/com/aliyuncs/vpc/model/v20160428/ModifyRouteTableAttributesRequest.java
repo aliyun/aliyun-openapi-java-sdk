@@ -37,6 +37,8 @@ public class ModifyRouteTableAttributesRequest extends RpcAcsRequest<ModifyRoute
 
 	private String ownerAccount;
 
+	private Boolean routePropagationEnable;
+
 	private Long ownerId;
 	public ModifyRouteTableAttributesRequest() {
 		super("Vpc", "2016-04-28", "ModifyRouteTableAttributes", "vpc");
@@ -110,6 +112,17 @@ public class ModifyRouteTableAttributesRequest extends RpcAcsRequest<ModifyRoute
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Boolean getRoutePropagationEnable() {
+		return this.routePropagationEnable;
+	}
+
+	public void setRoutePropagationEnable(Boolean routePropagationEnable) {
+		this.routePropagationEnable = routePropagationEnable;
+		if(routePropagationEnable != null){
+			putQueryParameter("RoutePropagationEnable", routePropagationEnable.toString());
 		}
 	}
 

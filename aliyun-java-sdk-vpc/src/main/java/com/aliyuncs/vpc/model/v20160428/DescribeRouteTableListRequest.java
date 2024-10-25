@@ -15,6 +15,7 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.vpc.Endpoint;
 
@@ -35,6 +36,8 @@ public class DescribeRouteTableListRequest extends RpcAcsRequest<DescribeRouteTa
 
 	private Integer pageSize;
 
+	private List<Tag> tags;
+
 	private String routeTableId;
 
 	private String resourceOwnerAccount;
@@ -48,6 +51,8 @@ public class DescribeRouteTableListRequest extends RpcAcsRequest<DescribeRouteTa
 	private String routerId;
 
 	private String vpcId;
+
+	private String routeTableType;
 	public DescribeRouteTableListRequest() {
 		super("Vpc", "2016-04-28", "DescribeRouteTableList", "vpc");
 		setMethod(MethodType.POST);
@@ -110,6 +115,20 @@ public class DescribeRouteTableListRequest extends RpcAcsRequest<DescribeRouteTa
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
 		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
 	}
 
 	public String getRouteTableId() {
@@ -186,6 +205,40 @@ public class DescribeRouteTableListRequest extends RpcAcsRequest<DescribeRouteTa
 		this.vpcId = vpcId;
 		if(vpcId != null){
 			putQueryParameter("VpcId", vpcId);
+		}
+	}
+
+	public String getRouteTableType() {
+		return this.routeTableType;
+	}
+
+	public void setRouteTableType(String routeTableType) {
+		this.routeTableType = routeTableType;
+		if(routeTableType != null){
+			putQueryParameter("RouteTableType", routeTableType);
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

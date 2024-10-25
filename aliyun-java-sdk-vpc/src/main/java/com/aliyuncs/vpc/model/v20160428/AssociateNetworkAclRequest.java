@@ -32,9 +32,13 @@ public class AssociateNetworkAclRequest extends RpcAcsRequest<AssociateNetworkAc
 
 	private String networkAclId;
 
+	private Boolean dryRun;
+
 	private List<Resource> resources;
 
 	private String resourceOwnerAccount;
+
+	private String ownerAccount;
 
 	private Long ownerId;
 	public AssociateNetworkAclRequest() {
@@ -79,6 +83,17 @@ public class AssociateNetworkAclRequest extends RpcAcsRequest<AssociateNetworkAc
 		}
 	}
 
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
+		}
+	}
+
 	public List<Resource> getResources() {
 		return this.resources;
 	}
@@ -101,6 +116,17 @@ public class AssociateNetworkAclRequest extends RpcAcsRequest<AssociateNetworkAc
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
 		}
 	}
 

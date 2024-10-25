@@ -181,6 +181,8 @@ public class DescribeNetworkAclAttributesResponse extends AcsResponse {
 
 			private String sourceCidrIp;
 
+			private String ipVersion;
+
 			private String protocol;
 
 			private String port;
@@ -233,6 +235,14 @@ public class DescribeNetworkAclAttributesResponse extends AcsResponse {
 				this.sourceCidrIp = sourceCidrIp;
 			}
 
+			public String getIpVersion() {
+				return this.ipVersion;
+			}
+
+			public void setIpVersion(String ipVersion) {
+				this.ipVersion = ipVersion;
+			}
+
 			public String getBizProtocol() {
 				return this.protocol;
 			}
@@ -265,6 +275,8 @@ public class DescribeNetworkAclAttributesResponse extends AcsResponse {
 			private String protocol;
 
 			private String destinationCidrIp;
+
+			private String ipVersion;
 
 			private String port;
 
@@ -322,6 +334,14 @@ public class DescribeNetworkAclAttributesResponse extends AcsResponse {
 
 			public void setDestinationCidrIp(String destinationCidrIp) {
 				this.destinationCidrIp = destinationCidrIp;
+			}
+
+			public String getIpVersion() {
+				return this.ipVersion;
+			}
+
+			public void setIpVersion(String ipVersion) {
+				this.ipVersion = ipVersion;
 			}
 
 			public String getPort() {

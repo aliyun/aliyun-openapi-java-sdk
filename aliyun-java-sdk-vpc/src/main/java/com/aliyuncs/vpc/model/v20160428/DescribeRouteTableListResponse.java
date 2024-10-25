@@ -131,6 +131,8 @@ public class DescribeRouteTableListResponse extends AcsResponse {
 
 		private String routeTableName;
 
+		private Boolean routePropagationEnable;
+
 		private List<Tag> tags;
 
 		private List<String> vSwitchIds;
@@ -231,6 +233,14 @@ public class DescribeRouteTableListResponse extends AcsResponse {
 
 		public void setRouteTableName(String routeTableName) {
 			this.routeTableName = routeTableName;
+		}
+
+		public Boolean getRoutePropagationEnable() {
+			return this.routePropagationEnable;
+		}
+
+		public void setRoutePropagationEnable(Boolean routePropagationEnable) {
+			this.routePropagationEnable = routePropagationEnable;
 		}
 
 		public List<Tag> getTags() {

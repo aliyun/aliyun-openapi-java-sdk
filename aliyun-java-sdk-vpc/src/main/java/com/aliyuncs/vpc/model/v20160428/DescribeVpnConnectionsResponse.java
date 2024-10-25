@@ -121,6 +121,8 @@ public class DescribeVpnConnectionsResponse extends AcsResponse {
 
 		private Boolean enableTunnelsBgp;
 
+		private String resourceGroupId;
+
 		private List<TagItem> tag;
 
 		private List<TunnelOptions> tunnelOptionsSpecification;
@@ -309,6 +311,14 @@ public class DescribeVpnConnectionsResponse extends AcsResponse {
 			this.enableTunnelsBgp = enableTunnelsBgp;
 		}
 
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
 		public List<TagItem> getTag() {
 			return this.tag;
 		}
@@ -382,6 +392,8 @@ public class DescribeVpnConnectionsResponse extends AcsResponse {
 
 		public static class TunnelOptions {
 
+			private String tunnelId;
+
 			private String customerGatewayId;
 
 			private String enableDpd;
@@ -394,11 +406,11 @@ public class DescribeVpnConnectionsResponse extends AcsResponse {
 
 			private String role;
 
+			private Integer tunnelIndex;
+
 			private String state;
 
 			private String status;
-
-			private String tunnelId;
 
 			private String zoneNo;
 
@@ -407,6 +419,14 @@ public class DescribeVpnConnectionsResponse extends AcsResponse {
 			private TunnelIkeConfig tunnelIkeConfig;
 
 			private TunnelIpsecConfig tunnelIpsecConfig;
+
+			public String getTunnelId() {
+				return this.tunnelId;
+			}
+
+			public void setTunnelId(String tunnelId) {
+				this.tunnelId = tunnelId;
+			}
 
 			public String getCustomerGatewayId() {
 				return this.customerGatewayId;
@@ -456,6 +476,14 @@ public class DescribeVpnConnectionsResponse extends AcsResponse {
 				this.role = role;
 			}
 
+			public Integer getTunnelIndex() {
+				return this.tunnelIndex;
+			}
+
+			public void setTunnelIndex(Integer tunnelIndex) {
+				this.tunnelIndex = tunnelIndex;
+			}
+
 			public String getState() {
 				return this.state;
 			}
@@ -470,14 +498,6 @@ public class DescribeVpnConnectionsResponse extends AcsResponse {
 
 			public void setStatus(String status) {
 				this.status = status;
-			}
-
-			public String getTunnelId() {
-				return this.tunnelId;
-			}
-
-			public void setTunnelId(String tunnelId) {
-				this.tunnelId = tunnelId;
 			}
 
 			public String getZoneNo() {
@@ -516,8 +536,6 @@ public class DescribeVpnConnectionsResponse extends AcsResponse {
 
 				private String bgpStatus;
 
-				private String enableBgp;
-
 				private String localAsn;
 
 				private String localBgpIp;
@@ -534,14 +552,6 @@ public class DescribeVpnConnectionsResponse extends AcsResponse {
 
 				public void setBgpStatus(String bgpStatus) {
 					this.bgpStatus = bgpStatus;
-				}
-
-				public String getEnableBgp() {
-					return this.enableBgp;
-				}
-
-				public void setEnableBgp(String enableBgp) {
-					this.enableBgp = enableBgp;
 				}
 
 				public String getLocalAsn() {

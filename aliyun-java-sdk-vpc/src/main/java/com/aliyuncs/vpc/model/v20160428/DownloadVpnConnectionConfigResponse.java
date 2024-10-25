@@ -125,8 +125,6 @@ public class DownloadVpnConnectionConfigResponse extends AcsResponse {
 
 			private String remote;
 
-			private String rightCaCert;
-
 			private IkeConfig1 ikeConfig1;
 
 			private IpsecConfig2 ipsecConfig2;
@@ -153,14 +151,6 @@ public class DownloadVpnConnectionConfigResponse extends AcsResponse {
 
 			public void setRemote(String remote) {
 				this.remote = remote;
-			}
-
-			public String getRightCaCert() {
-				return this.rightCaCert;
-			}
-
-			public void setRightCaCert(String rightCaCert) {
-				this.rightCaCert = rightCaCert;
 			}
 
 			public IkeConfig1 getIkeConfig1() {

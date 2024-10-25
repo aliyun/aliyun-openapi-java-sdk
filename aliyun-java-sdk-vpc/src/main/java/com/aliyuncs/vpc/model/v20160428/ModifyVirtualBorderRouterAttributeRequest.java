@@ -65,6 +65,8 @@ public class ModifyVirtualBorderRouterAttributeRequest extends RpcAcsRequest<Mod
 
 	private Long minRxInterval;
 
+	private Boolean sitelinkEnable;
+
 	private String localIpv6GatewayIp;
 
 	private String name;
@@ -294,6 +296,17 @@ public class ModifyVirtualBorderRouterAttributeRequest extends RpcAcsRequest<Mod
 		this.minRxInterval = minRxInterval;
 		if(minRxInterval != null){
 			putQueryParameter("MinRxInterval", minRxInterval.toString());
+		}
+	}
+
+	public Boolean getSitelinkEnable() {
+		return this.sitelinkEnable;
+	}
+
+	public void setSitelinkEnable(Boolean sitelinkEnable) {
+		this.sitelinkEnable = sitelinkEnable;
+		if(sitelinkEnable != null){
+			putQueryParameter("SitelinkEnable", sitelinkEnable.toString());
 		}
 	}
 

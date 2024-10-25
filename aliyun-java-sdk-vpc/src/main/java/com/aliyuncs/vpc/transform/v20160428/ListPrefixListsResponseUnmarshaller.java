@@ -47,6 +47,7 @@ public class ListPrefixListsResponseUnmarshaller {
 			prefixList.setPrefixListStatus(_ctx.stringValue("ListPrefixListsResponse.PrefixLists["+ i +"].PrefixListStatus"));
 			prefixList.setRegionId(_ctx.stringValue("ListPrefixListsResponse.PrefixLists["+ i +"].RegionId"));
 			prefixList.setResourceGroupId(_ctx.stringValue("ListPrefixListsResponse.PrefixLists["+ i +"].ResourceGroupId"));
+			prefixList.setPrefixListType(_ctx.stringValue("ListPrefixListsResponse.PrefixLists["+ i +"].PrefixListType"));
 
 			List<String> cidrBlocks = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListPrefixListsResponse.PrefixLists["+ i +"].CidrBlocks.Length"); j++) {

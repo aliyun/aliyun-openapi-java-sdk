@@ -93,6 +93,8 @@ public class ListTrafficMirrorSessionsResponse extends AcsResponse {
 
 		private String resourceGroupId;
 
+		private String creationTime;
+
 		private List<Tag> tags;
 
 		private List<String> trafficMirrorSourceIds;
@@ -199,6 +201,14 @@ public class ListTrafficMirrorSessionsResponse extends AcsResponse {
 
 		public void setResourceGroupId(String resourceGroupId) {
 			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getCreationTime() {
+			return this.creationTime;
+		}
+
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
 		public List<Tag> getTags() {

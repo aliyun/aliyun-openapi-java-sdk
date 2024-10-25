@@ -153,6 +153,8 @@ public class DescribeEipAddressesResponse extends AcsResponse {
 
 		private String zone;
 
+		private String bizType;
+
 		private List<LockReason> operationLocks;
 
 		private List<Tag> tags;
@@ -463,6 +465,14 @@ public class DescribeEipAddressesResponse extends AcsResponse {
 
 		public void setZone(String zone) {
 			this.zone = zone;
+		}
+
+		public String getBizType() {
+			return this.bizType;
+		}
+
+		public void setBizType(String bizType) {
+			this.bizType = bizType;
 		}
 
 		public List<LockReason> getOperationLocks() {

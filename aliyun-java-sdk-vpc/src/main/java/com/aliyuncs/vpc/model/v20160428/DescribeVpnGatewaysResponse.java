@@ -123,7 +123,11 @@ public class DescribeVpnGatewaysResponse extends AcsResponse {
 
 		private String sslVpnInternetIp;
 
+		private String resourceGroupId;
+
 		private List<Tag> tags;
+
+		private List<String> eniInstanceIds;
 
 		private ReservationData reservationData;
 
@@ -311,12 +315,28 @@ public class DescribeVpnGatewaysResponse extends AcsResponse {
 			this.sslVpnInternetIp = sslVpnInternetIp;
 		}
 
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
 		public List<Tag> getTags() {
 			return this.tags;
 		}
 
 		public void setTags(List<Tag> tags) {
 			this.tags = tags;
+		}
+
+		public List<String> getEniInstanceIds() {
+			return this.eniInstanceIds;
+		}
+
+		public void setEniInstanceIds(List<String> eniInstanceIds) {
+			this.eniInstanceIds = eniInstanceIds;
 		}
 
 		public ReservationData getReservationData() {

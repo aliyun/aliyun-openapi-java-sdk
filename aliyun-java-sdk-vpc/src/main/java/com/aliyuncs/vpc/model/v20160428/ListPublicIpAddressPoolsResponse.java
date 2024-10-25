@@ -97,7 +97,7 @@ public class ListPublicIpAddressPoolsResponse extends AcsResponse {
 
 		private Boolean ipAddressRemaining;
 
-		private Boolean userType;
+		private String userType;
 
 		private Long ownerId;
 
@@ -105,9 +105,17 @@ public class ListPublicIpAddressPoolsResponse extends AcsResponse {
 
 		private String resourceGroupId;
 
+		private String bizType;
+
+		private String businessStatus;
+
 		private List<PublicIpCidrBlock> publicIpCidrBlockList;
 
 		private List<Tag> tags;
+
+		private List<String> zones;
+
+		private List<String> securityProtectionTypes;
 
 		public String getPublicIpAddressPoolId() {
 			return this.publicIpAddressPoolId;
@@ -189,11 +197,11 @@ public class ListPublicIpAddressPoolsResponse extends AcsResponse {
 			this.ipAddressRemaining = ipAddressRemaining;
 		}
 
-		public Boolean getUserType() {
+		public String getUserType() {
 			return this.userType;
 		}
 
-		public void setUserType(Boolean userType) {
+		public void setUserType(String userType) {
 			this.userType = userType;
 		}
 
@@ -221,6 +229,22 @@ public class ListPublicIpAddressPoolsResponse extends AcsResponse {
 			this.resourceGroupId = resourceGroupId;
 		}
 
+		public String getBizType() {
+			return this.bizType;
+		}
+
+		public void setBizType(String bizType) {
+			this.bizType = bizType;
+		}
+
+		public String getBusinessStatus() {
+			return this.businessStatus;
+		}
+
+		public void setBusinessStatus(String businessStatus) {
+			this.businessStatus = businessStatus;
+		}
+
 		public List<PublicIpCidrBlock> getPublicIpCidrBlockList() {
 			return this.publicIpCidrBlockList;
 		}
@@ -235,6 +259,22 @@ public class ListPublicIpAddressPoolsResponse extends AcsResponse {
 
 		public void setTags(List<Tag> tags) {
 			this.tags = tags;
+		}
+
+		public List<String> getZones() {
+			return this.zones;
+		}
+
+		public void setZones(List<String> zones) {
+			this.zones = zones;
+		}
+
+		public List<String> getSecurityProtectionTypes() {
+			return this.securityProtectionTypes;
+		}
+
+		public void setSecurityProtectionTypes(List<String> securityProtectionTypes) {
+			this.securityProtectionTypes = securityProtectionTypes;
 		}
 
 		public static class PublicIpCidrBlock {

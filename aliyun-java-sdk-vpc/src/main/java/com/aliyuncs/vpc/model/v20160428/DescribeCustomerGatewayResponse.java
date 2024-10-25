@@ -41,6 +41,8 @@ public class DescribeCustomerGatewayResponse extends AcsResponse {
 
 	private String authKey;
 
+	private String resourceGroupId;
+
 	private List<Tag> tags;
 
 	public Long getAsn() {
@@ -105,6 +107,14 @@ public class DescribeCustomerGatewayResponse extends AcsResponse {
 
 	public void setAuthKey(String authKey) {
 		this.authKey = authKey;
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
 	}
 
 	public List<Tag> getTags() {

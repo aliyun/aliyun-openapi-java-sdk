@@ -44,9 +44,15 @@ public class CreatePublicIpAddressPoolRequest extends RpcAcsRequest<CreatePublic
 
 	private String ownerAccount;
 
+	private List<String> zoness;
+
 	private Long ownerId;
 
+	private String bizType;
+
 	private String name;
+
+	private List<String> securityProtectionTypess;
 	public CreatePublicIpAddressPoolRequest() {
 		super("Vpc", "2016-04-28", "CreatePublicIpAddressPool", "vpc");
 		setMethod(MethodType.POST);
@@ -158,6 +164,19 @@ public class CreatePublicIpAddressPoolRequest extends RpcAcsRequest<CreatePublic
 		}
 	}
 
+	public List<String> getZoness() {
+		return this.zoness;
+	}
+
+	public void setZoness(List<String> zoness) {
+		this.zoness = zoness;	
+		if (zoness != null) {
+			for (int i = 0; i < zoness.size(); i++) {
+				putQueryParameter("Zones." + (i + 1) , zoness.get(i));
+			}
+		}	
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -166,6 +185,17 @@ public class CreatePublicIpAddressPoolRequest extends RpcAcsRequest<CreatePublic
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getBizType() {
+		return this.bizType;
+	}
+
+	public void setBizType(String bizType) {
+		this.bizType = bizType;
+		if(bizType != null){
+			putQueryParameter("BizType", bizType);
 		}
 	}
 
@@ -178,6 +208,19 @@ public class CreatePublicIpAddressPoolRequest extends RpcAcsRequest<CreatePublic
 		if(name != null){
 			putQueryParameter("Name", name);
 		}
+	}
+
+	public List<String> getSecurityProtectionTypess() {
+		return this.securityProtectionTypess;
+	}
+
+	public void setSecurityProtectionTypess(List<String> securityProtectionTypess) {
+		this.securityProtectionTypess = securityProtectionTypess;	
+		if (securityProtectionTypess != null) {
+			for (int i = 0; i < securityProtectionTypess.size(); i++) {
+				putQueryParameter("SecurityProtectionTypes." + (i + 1) , securityProtectionTypess.get(i));
+			}
+		}	
 	}
 
 	public static class Tag {

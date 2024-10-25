@@ -44,6 +44,7 @@ public class DescribeRouteEntryListResponseUnmarshaller {
 			routeEntry.setRouteTableId(_ctx.stringValue("DescribeRouteEntryListResponse.RouteEntrys["+ i +"].RouteTableId"));
 			routeEntry.setGmtModified(_ctx.stringValue("DescribeRouteEntryListResponse.RouteEntrys["+ i +"].GmtModified"));
 			routeEntry.setServiceType(_ctx.stringValue("DescribeRouteEntryListResponse.RouteEntrys["+ i +"].ServiceType"));
+			routeEntry.setOrigin(_ctx.stringValue("DescribeRouteEntryListResponse.RouteEntrys["+ i +"].Origin"));
 
 			List<NextHop> nextHops = new ArrayList<NextHop>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeRouteEntryListResponse.RouteEntrys["+ i +"].NextHops.Length"); j++) {

@@ -34,6 +34,7 @@ public class DescribeCustomerGatewayResponseUnmarshaller {
 		describeCustomerGatewayResponse.setCreateTime(_ctx.longValue("DescribeCustomerGatewayResponse.CreateTime"));
 		describeCustomerGatewayResponse.setName(_ctx.stringValue("DescribeCustomerGatewayResponse.Name"));
 		describeCustomerGatewayResponse.setAuthKey(_ctx.stringValue("DescribeCustomerGatewayResponse.AuthKey"));
+		describeCustomerGatewayResponse.setResourceGroupId(_ctx.stringValue("DescribeCustomerGatewayResponse.ResourceGroupId"));
 
 		List<Tag> tags = new ArrayList<Tag>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCustomerGatewayResponse.Tags.Length"); i++) {

@@ -16,6 +16,8 @@ package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.vpc.Endpoint;
 
@@ -64,9 +66,14 @@ public class CreateNatGatewayRequest extends RpcAcsRequest<CreateNatGatewayRespo
 
 	private String name;
 
+	private Boolean privateLinkEnabled;
+
 	private String eipBindMode;
 
 	private String pricingCycle;
+
+	@SerializedName("accessMode")
+	private AccessMode accessMode;
 	public CreateNatGatewayRequest() {
 		super("Vpc", "2016-04-28", "CreateNatGateway", "vpc");
 		setMethod(MethodType.POST);
@@ -288,6 +295,17 @@ public class CreateNatGatewayRequest extends RpcAcsRequest<CreateNatGatewayRespo
 		}
 	}
 
+	public Boolean getPrivateLinkEnabled() {
+		return this.privateLinkEnabled;
+	}
+
+	public void setPrivateLinkEnabled(Boolean privateLinkEnabled) {
+		this.privateLinkEnabled = privateLinkEnabled;
+		if(privateLinkEnabled != null){
+			putQueryParameter("PrivateLinkEnabled", privateLinkEnabled.toString());
+		}
+	}
+
 	public String getEipBindMode() {
 		return this.eipBindMode;
 	}
@@ -310,6 +328,17 @@ public class CreateNatGatewayRequest extends RpcAcsRequest<CreateNatGatewayRespo
 		}
 	}
 
+	public AccessMode getAccessMode() {
+		return this.accessMode;
+	}
+
+	public void setAccessMode(AccessMode accessMode) {
+		this.accessMode = accessMode;	
+		if (accessMode != null) {
+			putQueryParameter("AccessMode" , new Gson().toJson(accessMode));
+		}	
+	}
+
 	public static class Tag {
 
 		private String value;
@@ -330,6 +359,31 @@ public class CreateNatGatewayRequest extends RpcAcsRequest<CreateNatGatewayRespo
 
 		public void setKey(String key) {
 			this.key = key;
+		}
+	}
+
+	public static class AccessMode {
+
+		@SerializedName("ModeValue")
+		private String modeValue;
+
+		@SerializedName("TunnelType")
+		private String tunnelType;
+
+		public String getModeValue() {
+			return this.modeValue;
+		}
+
+		public void setModeValue(String modeValue) {
+			this.modeValue = modeValue;
+		}
+
+		public String getTunnelType() {
+			return this.tunnelType;
+		}
+
+		public void setTunnelType(String tunnelType) {
+			this.tunnelType = tunnelType;
 		}
 	}
 

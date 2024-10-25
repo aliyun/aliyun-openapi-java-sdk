@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.vpc.model.v20160428.DescribePhysicalConnectionsResponse;
 import com.aliyuncs.vpc.model.v20160428.DescribePhysicalConnectionsResponse.PhysicalConnectionType;
+import com.aliyuncs.vpc.model.v20160428.DescribePhysicalConnectionsResponse.PhysicalConnectionType.TagsItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -70,6 +71,17 @@ public class DescribePhysicalConnectionsResponseUnmarshaller {
 			physicalConnectionType.setExpectSpec(_ctx.stringValue("DescribePhysicalConnectionsResponse.PhysicalConnectionSet["+ i +"].ExpectSpec"));
 			physicalConnectionType.setResourceGroupId(_ctx.stringValue("DescribePhysicalConnectionsResponse.PhysicalConnectionSet["+ i +"].ResourceGroupId"));
 			physicalConnectionType.setAdDetailLocation(_ctx.stringValue("DescribePhysicalConnectionsResponse.PhysicalConnectionSet["+ i +"].AdDetailLocation"));
+			physicalConnectionType.setQosId(_ctx.stringValue("DescribePhysicalConnectionsResponse.PhysicalConnectionSet["+ i +"].QosId"));
+
+			List<TagsItem> tags = new ArrayList<TagsItem>();
+			for (int j = 0; j < _ctx.lengthValue("DescribePhysicalConnectionsResponse.PhysicalConnectionSet["+ i +"].Tags.Length"); j++) {
+				TagsItem tagsItem = new TagsItem();
+				tagsItem.setKey(_ctx.stringValue("DescribePhysicalConnectionsResponse.PhysicalConnectionSet["+ i +"].Tags["+ j +"].Key"));
+				tagsItem.setValue(_ctx.stringValue("DescribePhysicalConnectionsResponse.PhysicalConnectionSet["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tagsItem);
+			}
+			physicalConnectionType.setTags(tags);
 
 			physicalConnectionSet.add(physicalConnectionType);
 		}

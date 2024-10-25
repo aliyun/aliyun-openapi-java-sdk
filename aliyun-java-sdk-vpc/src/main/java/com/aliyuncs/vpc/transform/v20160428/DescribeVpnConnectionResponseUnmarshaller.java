@@ -58,6 +58,7 @@ public class DescribeVpnConnectionResponseUnmarshaller {
 		describeVpnConnectionResponse.setTransitRouterName(_ctx.stringValue("DescribeVpnConnectionResponse.TransitRouterName"));
 		describeVpnConnectionResponse.setCrossAccountAuthorized(_ctx.booleanValue("DescribeVpnConnectionResponse.CrossAccountAuthorized"));
 		describeVpnConnectionResponse.setEnableTunnelsBgp(_ctx.booleanValue("DescribeVpnConnectionResponse.EnableTunnelsBgp"));
+		describeVpnConnectionResponse.setResourceGroupId(_ctx.stringValue("DescribeVpnConnectionResponse.ResourceGroupId"));
 
 		IkeConfig ikeConfig = new IkeConfig();
 		ikeConfig.setRemoteId(_ctx.stringValue("DescribeVpnConnectionResponse.IkeConfig.RemoteId"));
@@ -119,13 +120,13 @@ public class DescribeVpnConnectionResponseUnmarshaller {
 			tunnelOptions.setInternetIp(_ctx.stringValue("DescribeVpnConnectionResponse.TunnelOptionsSpecification["+ i +"].InternetIp"));
 			tunnelOptions.setRemoteCaCertificate(_ctx.stringValue("DescribeVpnConnectionResponse.TunnelOptionsSpecification["+ i +"].RemoteCaCertificate"));
 			tunnelOptions.setRole(_ctx.stringValue("DescribeVpnConnectionResponse.TunnelOptionsSpecification["+ i +"].Role"));
+			tunnelOptions.setTunnelIndex(_ctx.integerValue("DescribeVpnConnectionResponse.TunnelOptionsSpecification["+ i +"].TunnelIndex"));
 			tunnelOptions.setState(_ctx.stringValue("DescribeVpnConnectionResponse.TunnelOptionsSpecification["+ i +"].State"));
 			tunnelOptions.setStatus(_ctx.stringValue("DescribeVpnConnectionResponse.TunnelOptionsSpecification["+ i +"].Status"));
 			tunnelOptions.setZoneNo(_ctx.stringValue("DescribeVpnConnectionResponse.TunnelOptionsSpecification["+ i +"].ZoneNo"));
 
 			TunnelBgpConfig tunnelBgpConfig = new TunnelBgpConfig();
 			tunnelBgpConfig.setBgpStatus(_ctx.stringValue("DescribeVpnConnectionResponse.TunnelOptionsSpecification["+ i +"].TunnelBgpConfig.BgpStatus"));
-			tunnelBgpConfig.setEnableBgp(_ctx.stringValue("DescribeVpnConnectionResponse.TunnelOptionsSpecification["+ i +"].TunnelBgpConfig.EnableBgp"));
 			tunnelBgpConfig.setLocalAsn(_ctx.stringValue("DescribeVpnConnectionResponse.TunnelOptionsSpecification["+ i +"].TunnelBgpConfig.LocalAsn"));
 			tunnelBgpConfig.setLocalBgpIp(_ctx.stringValue("DescribeVpnConnectionResponse.TunnelOptionsSpecification["+ i +"].TunnelBgpConfig.LocalBgpIp"));
 			tunnelBgpConfig.setPeerAsn(_ctx.stringValue("DescribeVpnConnectionResponse.TunnelOptionsSpecification["+ i +"].TunnelBgpConfig.PeerAsn"));

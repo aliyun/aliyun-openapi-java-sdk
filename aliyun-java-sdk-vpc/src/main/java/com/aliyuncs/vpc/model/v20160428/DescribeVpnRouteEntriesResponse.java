@@ -35,6 +35,8 @@ public class DescribeVpnRouteEntriesResponse extends AcsResponse {
 
 	private List<VpnRouteEntry> vpnRouteEntries;
 
+	private List<VpnRouteCount> vpnRouteCounts;
+
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -73,6 +75,14 @@ public class DescribeVpnRouteEntriesResponse extends AcsResponse {
 
 	public void setVpnRouteEntries(List<VpnRouteEntry> vpnRouteEntries) {
 		this.vpnRouteEntries = vpnRouteEntries;
+	}
+
+	public List<VpnRouteCount> getVpnRouteCounts() {
+		return this.vpnRouteCounts;
+	}
+
+	public void setVpnRouteCounts(List<VpnRouteCount> vpnRouteCounts) {
+		this.vpnRouteCounts = vpnRouteCounts;
 	}
 
 	public static class VpnRouteEntry {
@@ -185,6 +195,39 @@ public class DescribeVpnRouteEntriesResponse extends AcsResponse {
 
 		public void setNextHopTunnelId(String nextHopTunnelId) {
 			this.nextHopTunnelId = nextHopTunnelId;
+		}
+	}
+
+	public static class VpnRouteCount {
+
+		private String routeEntryType;
+
+		private Integer routeCount;
+
+		private String source;
+
+		public String getRouteEntryType() {
+			return this.routeEntryType;
+		}
+
+		public void setRouteEntryType(String routeEntryType) {
+			this.routeEntryType = routeEntryType;
+		}
+
+		public Integer getRouteCount() {
+			return this.routeCount;
+		}
+
+		public void setRouteCount(Integer routeCount) {
+			this.routeCount = routeCount;
+		}
+
+		public String getSource() {
+			return this.source;
+		}
+
+		public void setSource(String source) {
+			this.source = source;
 		}
 	}
 

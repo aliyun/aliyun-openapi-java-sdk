@@ -15,6 +15,7 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.vpc.Endpoint;
 
@@ -29,6 +30,8 @@ public class DescribeVpcsRequest extends RpcAcsRequest<DescribeVpcsResponse> {
 
 	private Long vpcOwnerId;
 
+	private Boolean enableIpv6;
+
 	private Integer pageNumber;
 
 	private String vpcName;
@@ -38,6 +41,8 @@ public class DescribeVpcsRequest extends RpcAcsRequest<DescribeVpcsResponse> {
 	private Integer pageSize;
 
 	private Boolean isDefault;
+
+	private List<Tag> tags;
 
 	private Boolean dryRun;
 
@@ -78,6 +83,17 @@ public class DescribeVpcsRequest extends RpcAcsRequest<DescribeVpcsResponse> {
 		this.vpcOwnerId = vpcOwnerId;
 		if(vpcOwnerId != null){
 			putQueryParameter("VpcOwnerId", vpcOwnerId.toString());
+		}
+	}
+
+	public Boolean getEnableIpv6() {
+		return this.enableIpv6;
+	}
+
+	public void setEnableIpv6(Boolean enableIpv6) {
+		this.enableIpv6 = enableIpv6;
+		if(enableIpv6 != null){
+			putQueryParameter("EnableIpv6", enableIpv6.toString());
 		}
 	}
 
@@ -134,6 +150,20 @@ public class DescribeVpcsRequest extends RpcAcsRequest<DescribeVpcsResponse> {
 		if(isDefault != null){
 			putQueryParameter("IsDefault", isDefault.toString());
 		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
 	}
 
 	public Boolean getDryRun() {
@@ -199,6 +229,29 @@ public class DescribeVpcsRequest extends RpcAcsRequest<DescribeVpcsResponse> {
 		this.vpcId = vpcId;
 		if(vpcId != null){
 			putQueryParameter("VpcId", vpcId);
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

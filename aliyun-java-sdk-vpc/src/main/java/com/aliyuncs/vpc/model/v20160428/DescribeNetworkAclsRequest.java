@@ -40,6 +40,8 @@ public class DescribeNetworkAclsRequest extends RpcAcsRequest<DescribeNetworkAcl
 
 	private String resourceOwnerAccount;
 
+	private String ownerAccount;
+
 	private String networkAclName;
 
 	private Long ownerId;
@@ -132,6 +134,17 @@ public class DescribeNetworkAclsRequest extends RpcAcsRequest<DescribeNetworkAcl
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
 		}
 	}
 

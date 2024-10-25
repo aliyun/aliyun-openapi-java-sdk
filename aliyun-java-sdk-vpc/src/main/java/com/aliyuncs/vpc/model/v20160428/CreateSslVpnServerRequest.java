@@ -39,6 +39,8 @@ public class CreateSslVpnServerRequest extends RpcAcsRequest<CreateSslVpnServerR
 
 	private String cipher;
 
+	private String iDaaSApplicationId;
+
 	private String clientIpPool;
 
 	private String resourceOwnerAccount;
@@ -139,6 +141,17 @@ public class CreateSslVpnServerRequest extends RpcAcsRequest<CreateSslVpnServerR
 		this.cipher = cipher;
 		if(cipher != null){
 			putQueryParameter("Cipher", cipher);
+		}
+	}
+
+	public String getIDaaSApplicationId() {
+		return this.iDaaSApplicationId;
+	}
+
+	public void setIDaaSApplicationId(String iDaaSApplicationId) {
+		this.iDaaSApplicationId = iDaaSApplicationId;
+		if(iDaaSApplicationId != null){
+			putQueryParameter("IDaaSApplicationId", iDaaSApplicationId);
 		}
 	}
 

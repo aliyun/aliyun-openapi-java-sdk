@@ -41,6 +41,9 @@ public class DescribeSnatTableEntriesResponseUnmarshaller {
 			snatTableEntry.setSnatEntryId(_ctx.stringValue("DescribeSnatTableEntriesResponse.SnatTableEntries["+ i +"].SnatEntryId"));
 			snatTableEntry.setSnatTableId(_ctx.stringValue("DescribeSnatTableEntriesResponse.SnatTableEntries["+ i +"].SnatTableId"));
 			snatTableEntry.setSnatIp(_ctx.stringValue("DescribeSnatTableEntriesResponse.SnatTableEntries["+ i +"].SnatIp"));
+			snatTableEntry.setNatGatewayId(_ctx.stringValue("DescribeSnatTableEntriesResponse.SnatTableEntries["+ i +"].NatGatewayId"));
+			snatTableEntry.setEipAffinity(_ctx.stringValue("DescribeSnatTableEntriesResponse.SnatTableEntries["+ i +"].EipAffinity"));
+			snatTableEntry.setNetworkInterfaceId(_ctx.stringValue("DescribeSnatTableEntriesResponse.SnatTableEntries["+ i +"].NetworkInterfaceId"));
 
 			snatTableEntries.add(snatTableEntry);
 		}

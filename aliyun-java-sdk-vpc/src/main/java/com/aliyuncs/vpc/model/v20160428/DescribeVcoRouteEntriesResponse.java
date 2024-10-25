@@ -35,6 +35,8 @@ public class DescribeVcoRouteEntriesResponse extends AcsResponse {
 
 	private List<VcoRouteEntrie> vcoRouteEntries;
 
+	private List<VpnRouteCount> vpnRouteCounts;
+
 	public Integer getTotalCount() {
 		return this.totalCount;
 	}
@@ -75,6 +77,14 @@ public class DescribeVcoRouteEntriesResponse extends AcsResponse {
 		this.vcoRouteEntries = vcoRouteEntries;
 	}
 
+	public List<VpnRouteCount> getVpnRouteCounts() {
+		return this.vpnRouteCounts;
+	}
+
+	public void setVpnRouteCounts(List<VpnRouteCount> vpnRouteCounts) {
+		this.vpnRouteCounts = vpnRouteCounts;
+	}
+
 	public static class VcoRouteEntrie {
 
 		private String vpnConnectionId;
@@ -96,6 +106,8 @@ public class DescribeVcoRouteEntriesResponse extends AcsResponse {
 		private String community;
 
 		private String source;
+
+		private List<String> nextHopTunnelIdList;
 
 		public String getVpnConnectionId() {
 			return this.vpnConnectionId;
@@ -167,6 +179,47 @@ public class DescribeVcoRouteEntriesResponse extends AcsResponse {
 
 		public void setCommunity(String community) {
 			this.community = community;
+		}
+
+		public String getSource() {
+			return this.source;
+		}
+
+		public void setSource(String source) {
+			this.source = source;
+		}
+
+		public List<String> getNextHopTunnelIdList() {
+			return this.nextHopTunnelIdList;
+		}
+
+		public void setNextHopTunnelIdList(List<String> nextHopTunnelIdList) {
+			this.nextHopTunnelIdList = nextHopTunnelIdList;
+		}
+	}
+
+	public static class VpnRouteCount {
+
+		private String routeEntryType;
+
+		private Integer routeCount;
+
+		private String source;
+
+		public String getRouteEntryType() {
+			return this.routeEntryType;
+		}
+
+		public void setRouteEntryType(String routeEntryType) {
+			this.routeEntryType = routeEntryType;
+		}
+
+		public Integer getRouteCount() {
+			return this.routeCount;
+		}
+
+		public void setRouteCount(Integer routeCount) {
+			this.routeCount = routeCount;
 		}
 
 		public String getSource() {

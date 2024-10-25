@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.vpc.model.v20160428.ListVirtualPhysicalConnectionsResponse;
 import com.aliyuncs.vpc.model.v20160428.ListVirtualPhysicalConnectionsResponse.VirtualPhysicalConnection;
+import com.aliyuncs.vpc.model.v20160428.ListVirtualPhysicalConnectionsResponse.VirtualPhysicalConnection.TagsItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -64,6 +65,16 @@ public class ListVirtualPhysicalConnectionsResponseUnmarshaller {
 			virtualPhysicalConnection.setVlanId(_ctx.stringValue("ListVirtualPhysicalConnectionsResponse.VirtualPhysicalConnections["+ i +"].VlanId"));
 			virtualPhysicalConnection.setExpectSpec(_ctx.stringValue("ListVirtualPhysicalConnectionsResponse.VirtualPhysicalConnections["+ i +"].ExpectSpec"));
 			virtualPhysicalConnection.setResourceGroupId(_ctx.stringValue("ListVirtualPhysicalConnectionsResponse.VirtualPhysicalConnections["+ i +"].ResourceGroupId"));
+
+			List<TagsItem> tags = new ArrayList<TagsItem>();
+			for (int j = 0; j < _ctx.lengthValue("ListVirtualPhysicalConnectionsResponse.VirtualPhysicalConnections["+ i +"].Tags.Length"); j++) {
+				TagsItem tagsItem = new TagsItem();
+				tagsItem.setKey(_ctx.stringValue("ListVirtualPhysicalConnectionsResponse.VirtualPhysicalConnections["+ i +"].Tags["+ j +"].Key"));
+				tagsItem.setValue(_ctx.stringValue("ListVirtualPhysicalConnectionsResponse.VirtualPhysicalConnections["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tagsItem);
+			}
+			virtualPhysicalConnection.setTags(tags);
 
 			virtualPhysicalConnections.add(virtualPhysicalConnection);
 		}

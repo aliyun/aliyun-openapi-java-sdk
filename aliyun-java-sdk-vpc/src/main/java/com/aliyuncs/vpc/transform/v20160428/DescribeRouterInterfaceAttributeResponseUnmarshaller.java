@@ -70,6 +70,7 @@ public class DescribeRouterInterfaceAttributeResponseUnmarshaller {
 		describeRouterInterfaceAttributeResponse.setHasReservationData(_ctx.stringValue("DescribeRouterInterfaceAttributeResponse.HasReservationData"));
 		describeRouterInterfaceAttributeResponse.setAccessPointId(_ctx.stringValue("DescribeRouterInterfaceAttributeResponse.AccessPointId"));
 		describeRouterInterfaceAttributeResponse.setResourceGroupId(_ctx.stringValue("DescribeRouterInterfaceAttributeResponse.ResourceGroupId"));
+		describeRouterInterfaceAttributeResponse.setFastLinkMode(_ctx.stringValue("DescribeRouterInterfaceAttributeResponse.FastLinkMode"));
 
 		List<TagsItem> tags = new ArrayList<TagsItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeRouterInterfaceAttributeResponse.Tags.Length"); i++) {

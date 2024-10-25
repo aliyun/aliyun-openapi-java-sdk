@@ -123,6 +123,8 @@ public class DescribeNatGatewaysResponse extends AcsResponse {
 
 		private String eipBindMode;
 
+		private String enableSessionLog;
+
 		private List<IpList> ipLists;
 
 		private List<Tag> tags;
@@ -136,6 +138,8 @@ public class DescribeNatGatewaysResponse extends AcsResponse {
 		private List<String> bandwidthPackageIds;
 
 		private NatGatewayPrivateInfo natGatewayPrivateInfo;
+
+		private AccessMode accessMode;
 
 		public String getStatus() {
 			return this.status;
@@ -321,6 +325,14 @@ public class DescribeNatGatewaysResponse extends AcsResponse {
 			this.eipBindMode = eipBindMode;
 		}
 
+		public String getEnableSessionLog() {
+			return this.enableSessionLog;
+		}
+
+		public void setEnableSessionLog(String enableSessionLog) {
+			this.enableSessionLog = enableSessionLog;
+		}
+
 		public List<IpList> getIpLists() {
 			return this.ipLists;
 		}
@@ -375,6 +387,14 @@ public class DescribeNatGatewaysResponse extends AcsResponse {
 
 		public void setNatGatewayPrivateInfo(NatGatewayPrivateInfo natGatewayPrivateInfo) {
 			this.natGatewayPrivateInfo = natGatewayPrivateInfo;
+		}
+
+		public AccessMode getAccessMode() {
+			return this.accessMode;
+		}
+
+		public void setAccessMode(AccessMode accessMode) {
+			this.accessMode = accessMode;
 		}
 
 		public static class IpList {
@@ -543,6 +563,29 @@ public class DescribeNatGatewaysResponse extends AcsResponse {
 
 			public void setEniType(String eniType) {
 				this.eniType = eniType;
+			}
+		}
+
+		public static class AccessMode {
+
+			private String modeValue;
+
+			private String tunnelType;
+
+			public String getModeValue() {
+				return this.modeValue;
+			}
+
+			public void setModeValue(String modeValue) {
+				this.modeValue = modeValue;
+			}
+
+			public String getTunnelType() {
+				return this.tunnelType;
+			}
+
+			public void setTunnelType(String tunnelType) {
+				this.tunnelType = tunnelType;
 			}
 		}
 	}

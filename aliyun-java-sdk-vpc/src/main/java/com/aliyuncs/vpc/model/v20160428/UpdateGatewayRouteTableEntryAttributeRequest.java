@@ -45,6 +45,8 @@ public class UpdateGatewayRouteTableEntryAttributeRequest extends RpcAcsRequest<
 
 	private String ownerAccount;
 
+	private String gatewayRouteTableId;
+
 	private Long ownerId;
 
 	private String name;
@@ -164,6 +166,17 @@ public class UpdateGatewayRouteTableEntryAttributeRequest extends RpcAcsRequest<
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getGatewayRouteTableId() {
+		return this.gatewayRouteTableId;
+	}
+
+	public void setGatewayRouteTableId(String gatewayRouteTableId) {
+		this.gatewayRouteTableId = gatewayRouteTableId;
+		if(gatewayRouteTableId != null){
+			putQueryParameter("GatewayRouteTableId", gatewayRouteTableId);
 		}
 	}
 

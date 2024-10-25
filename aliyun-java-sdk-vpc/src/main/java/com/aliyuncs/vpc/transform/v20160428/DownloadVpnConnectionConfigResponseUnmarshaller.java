@@ -64,7 +64,6 @@ public class DownloadVpnConnectionConfigResponseUnmarshaller {
 			tunnelConfig.setTunnelId(_ctx.stringValue("DownloadVpnConnectionConfigResponse.VpnConnectionConfig.TunnelsConfig["+ i +"].TunnelId"));
 			tunnelConfig.setLocal(_ctx.stringValue("DownloadVpnConnectionConfigResponse.VpnConnectionConfig.TunnelsConfig["+ i +"].Local"));
 			tunnelConfig.setRemote(_ctx.stringValue("DownloadVpnConnectionConfigResponse.VpnConnectionConfig.TunnelsConfig["+ i +"].Remote"));
-			tunnelConfig.setRightCaCert(_ctx.stringValue("DownloadVpnConnectionConfigResponse.VpnConnectionConfig.TunnelsConfig["+ i +"].RightCaCert"));
 
 			IkeConfig1 ikeConfig1 = new IkeConfig1();
 			ikeConfig1.setPsk(_ctx.stringValue("DownloadVpnConnectionConfigResponse.VpnConnectionConfig.TunnelsConfig["+ i +"].IkeConfig.Psk"));

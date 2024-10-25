@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.vpc.model.v20160428.DescribeVpnRouteEntriesResponse;
+import com.aliyuncs.vpc.model.v20160428.DescribeVpnRouteEntriesResponse.VpnRouteCount;
 import com.aliyuncs.vpc.model.v20160428.DescribeVpnRouteEntriesResponse.VpnRouteEntry;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -49,6 +50,17 @@ public class DescribeVpnRouteEntriesResponseUnmarshaller {
 			vpnRouteEntries.add(vpnRouteEntry);
 		}
 		describeVpnRouteEntriesResponse.setVpnRouteEntries(vpnRouteEntries);
+
+		List<VpnRouteCount> vpnRouteCounts = new ArrayList<VpnRouteCount>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeVpnRouteEntriesResponse.VpnRouteCounts.Length"); i++) {
+			VpnRouteCount vpnRouteCount = new VpnRouteCount();
+			vpnRouteCount.setRouteEntryType(_ctx.stringValue("DescribeVpnRouteEntriesResponse.VpnRouteCounts["+ i +"].RouteEntryType"));
+			vpnRouteCount.setRouteCount(_ctx.integerValue("DescribeVpnRouteEntriesResponse.VpnRouteCounts["+ i +"].RouteCount"));
+			vpnRouteCount.setSource(_ctx.stringValue("DescribeVpnRouteEntriesResponse.VpnRouteCounts["+ i +"].Source"));
+
+			vpnRouteCounts.add(vpnRouteCount);
+		}
+		describeVpnRouteEntriesResponse.setVpnRouteCounts(vpnRouteCounts);
 	 
 	 	return describeVpnRouteEntriesResponse;
 	}

@@ -36,6 +36,8 @@ public class ModifyCustomerGatewayAttributeResponse extends AcsResponse {
 
 	private String name;
 
+	private String resourceGroupId;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -82,6 +84,14 @@ public class ModifyCustomerGatewayAttributeResponse extends AcsResponse {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
 	}
 
 	@Override

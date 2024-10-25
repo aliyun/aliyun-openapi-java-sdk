@@ -35,6 +35,8 @@ public class EnablePhysicalConnectionRequest extends RpcAcsRequest<EnablePhysica
 
 	private Long ownerId;
 
+	private Boolean byPassSp;
+
 	private String physicalConnectionId;
 	public EnablePhysicalConnectionRequest() {
 		super("Vpc", "2016-04-28", "EnablePhysicalConnection", "vpc");
@@ -97,6 +99,17 @@ public class EnablePhysicalConnectionRequest extends RpcAcsRequest<EnablePhysica
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Boolean getByPassSp() {
+		return this.byPassSp;
+	}
+
+	public void setByPassSp(Boolean byPassSp) {
+		this.byPassSp = byPassSp;
+		if(byPassSp != null){
+			putQueryParameter("ByPassSp", byPassSp.toString());
 		}
 	}
 

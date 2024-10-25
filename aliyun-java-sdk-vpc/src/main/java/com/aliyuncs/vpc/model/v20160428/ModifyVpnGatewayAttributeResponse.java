@@ -60,6 +60,8 @@ public class ModifyVpnGatewayAttributeResponse extends AcsResponse {
 
 	private String sslVpnInternetIp;
 
+	private String resourceGroupId;
+
 	public String getVpcId() {
 		return this.vpcId;
 	}
@@ -202,6 +204,14 @@ public class ModifyVpnGatewayAttributeResponse extends AcsResponse {
 
 	public void setSslVpnInternetIp(String sslVpnInternetIp) {
 		this.sslVpnInternetIp = sslVpnInternetIp;
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
 	}
 
 	@Override

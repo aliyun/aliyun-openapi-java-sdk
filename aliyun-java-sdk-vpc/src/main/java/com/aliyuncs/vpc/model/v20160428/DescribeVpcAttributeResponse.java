@@ -63,6 +63,10 @@ public class DescribeVpcAttributeResponse extends AcsResponse {
 
 	private String ipv4GatewayId;
 
+	private Boolean enabledIpv6;
+
+	private String dnsHostnameStatus;
+
 	private List<AssociatedCen> associatedCens;
 
 	private List<CloudResourceSetType> cloudResources;
@@ -70,6 +74,8 @@ public class DescribeVpcAttributeResponse extends AcsResponse {
 	private List<Ipv6CidrBlock> ipv6CidrBlocks;
 
 	private List<Tag> tags;
+
+	private List<AssociatedPropagationSourcesItem> associatedPropagationSources;
 
 	private List<String> vSwitchIds;
 
@@ -229,6 +235,22 @@ public class DescribeVpcAttributeResponse extends AcsResponse {
 		this.ipv4GatewayId = ipv4GatewayId;
 	}
 
+	public Boolean getEnabledIpv6() {
+		return this.enabledIpv6;
+	}
+
+	public void setEnabledIpv6(Boolean enabledIpv6) {
+		this.enabledIpv6 = enabledIpv6;
+	}
+
+	public String getDnsHostnameStatus() {
+		return this.dnsHostnameStatus;
+	}
+
+	public void setDnsHostnameStatus(String dnsHostnameStatus) {
+		this.dnsHostnameStatus = dnsHostnameStatus;
+	}
+
 	public List<AssociatedCen> getAssociatedCens() {
 		return this.associatedCens;
 	}
@@ -259,6 +281,14 @@ public class DescribeVpcAttributeResponse extends AcsResponse {
 
 	public void setTags(List<Tag> tags) {
 		this.tags = tags;
+	}
+
+	public List<AssociatedPropagationSourcesItem> getAssociatedPropagationSources() {
+		return this.associatedPropagationSources;
+	}
+
+	public void setAssociatedPropagationSources(List<AssociatedPropagationSourcesItem> associatedPropagationSources) {
+		this.associatedPropagationSources = associatedPropagationSources;
 	}
 
 	public List<String> getVSwitchIds() {
@@ -384,6 +414,59 @@ public class DescribeVpcAttributeResponse extends AcsResponse {
 
 		public void setValue(String value) {
 			this.value = value;
+		}
+	}
+
+	public static class AssociatedPropagationSourcesItem {
+
+		private String sourceType;
+
+		private Long sourceOwnerId;
+
+		private String sourceInstanceId;
+
+		private String status;
+
+		private Boolean routePropagated;
+
+		public String getSourceType() {
+			return this.sourceType;
+		}
+
+		public void setSourceType(String sourceType) {
+			this.sourceType = sourceType;
+		}
+
+		public Long getSourceOwnerId() {
+			return this.sourceOwnerId;
+		}
+
+		public void setSourceOwnerId(Long sourceOwnerId) {
+			this.sourceOwnerId = sourceOwnerId;
+		}
+
+		public String getSourceInstanceId() {
+			return this.sourceInstanceId;
+		}
+
+		public void setSourceInstanceId(String sourceInstanceId) {
+			this.sourceInstanceId = sourceInstanceId;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public Boolean getRoutePropagated() {
+			return this.routePropagated;
+		}
+
+		public void setRoutePropagated(Boolean routePropagated) {
+			this.routePropagated = routePropagated;
 		}
 	}
 

@@ -41,6 +41,8 @@ public class AssociateVpcCidrBlockRequest extends RpcAcsRequest<AssociateVpcCidr
 
 	private String iPv6CidrBlock;
 
+	private Integer secondaryCidrMask;
+
 	private String secondaryCidrBlock;
 
 	private String vpcId;
@@ -138,6 +140,17 @@ public class AssociateVpcCidrBlockRequest extends RpcAcsRequest<AssociateVpcCidr
 		this.iPv6CidrBlock = iPv6CidrBlock;
 		if(iPv6CidrBlock != null){
 			putQueryParameter("IPv6CidrBlock", iPv6CidrBlock);
+		}
+	}
+
+	public Integer getSecondaryCidrMask() {
+		return this.secondaryCidrMask;
+	}
+
+	public void setSecondaryCidrMask(Integer secondaryCidrMask) {
+		this.secondaryCidrMask = secondaryCidrMask;
+		if(secondaryCidrMask != null){
+			putQueryParameter("SecondaryCidrMask", secondaryCidrMask.toString());
 		}
 	}
 

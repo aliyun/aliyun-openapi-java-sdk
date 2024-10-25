@@ -15,6 +15,8 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.vpc.Endpoint;
 
@@ -29,6 +31,9 @@ public class ModifyNatGatewayAttributeRequest extends RpcAcsRequest<ModifyNatGat
 
 	private String description;
 
+	@SerializedName("logDelivery")
+	private LogDelivery logDelivery;
+
 	private Boolean icmpReplyEnabled;
 
 	private String natGatewayId;
@@ -38,6 +43,8 @@ public class ModifyNatGatewayAttributeRequest extends RpcAcsRequest<ModifyNatGat
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private Boolean enableSessionLog;
 
 	private String name;
 
@@ -71,6 +78,17 @@ public class ModifyNatGatewayAttributeRequest extends RpcAcsRequest<ModifyNatGat
 		if(description != null){
 			putQueryParameter("Description", description);
 		}
+	}
+
+	public LogDelivery getLogDelivery() {
+		return this.logDelivery;
+	}
+
+	public void setLogDelivery(LogDelivery logDelivery) {
+		this.logDelivery = logDelivery;	
+		if (logDelivery != null) {
+			putQueryParameter("LogDelivery" , new Gson().toJson(logDelivery));
+		}	
 	}
 
 	public Boolean getIcmpReplyEnabled() {
@@ -128,6 +146,17 @@ public class ModifyNatGatewayAttributeRequest extends RpcAcsRequest<ModifyNatGat
 		}
 	}
 
+	public Boolean getEnableSessionLog() {
+		return this.enableSessionLog;
+	}
+
+	public void setEnableSessionLog(Boolean enableSessionLog) {
+		this.enableSessionLog = enableSessionLog;
+		if(enableSessionLog != null){
+			putQueryParameter("EnableSessionLog", enableSessionLog.toString());
+		}
+	}
+
 	public String getName() {
 		return this.name;
 	}
@@ -147,6 +176,31 @@ public class ModifyNatGatewayAttributeRequest extends RpcAcsRequest<ModifyNatGat
 		this.eipBindMode = eipBindMode;
 		if(eipBindMode != null){
 			putQueryParameter("EipBindMode", eipBindMode);
+		}
+	}
+
+	public static class LogDelivery {
+
+		@SerializedName("LogDeliveryType")
+		private String logDeliveryType;
+
+		@SerializedName("LogDestination")
+		private String logDestination;
+
+		public String getLogDeliveryType() {
+			return this.logDeliveryType;
+		}
+
+		public void setLogDeliveryType(String logDeliveryType) {
+			this.logDeliveryType = logDeliveryType;
+		}
+
+		public String getLogDestination() {
+			return this.logDestination;
+		}
+
+		public void setLogDestination(String logDestination) {
+			this.logDestination = logDestination;
 		}
 	}
 

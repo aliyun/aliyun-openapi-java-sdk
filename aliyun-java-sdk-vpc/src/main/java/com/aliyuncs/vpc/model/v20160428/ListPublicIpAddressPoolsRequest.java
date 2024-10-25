@@ -28,6 +28,8 @@ public class ListPublicIpAddressPoolsRequest extends RpcAcsRequest<ListPublicIpA
 
 	private Long resourceOwnerId;
 
+	private Boolean securityProtectionEnabled;
+
 	private String isp;
 
 	private String resourceGroupId;
@@ -68,6 +70,17 @@ public class ListPublicIpAddressPoolsRequest extends RpcAcsRequest<ListPublicIpA
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public Boolean getSecurityProtectionEnabled() {
+		return this.securityProtectionEnabled;
+	}
+
+	public void setSecurityProtectionEnabled(Boolean securityProtectionEnabled) {
+		this.securityProtectionEnabled = securityProtectionEnabled;
+		if(securityProtectionEnabled != null){
+			putQueryParameter("SecurityProtectionEnabled", securityProtectionEnabled.toString());
 		}
 	}
 

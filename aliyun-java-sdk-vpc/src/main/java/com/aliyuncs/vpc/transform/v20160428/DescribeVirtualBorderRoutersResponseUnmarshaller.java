@@ -71,6 +71,10 @@ public class DescribeVirtualBorderRoutersResponseUnmarshaller {
 			virtualBorderRouterType.setPhysicalConnectionId(_ctx.stringValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].PhysicalConnectionId"));
 			virtualBorderRouterType.setBandwidth(_ctx.integerValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].Bandwidth"));
 			virtualBorderRouterType.setResourceGroupId(_ctx.stringValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].ResourceGroupId"));
+			virtualBorderRouterType.setEcrId(_ctx.stringValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].EcrId"));
+			virtualBorderRouterType.setSitelinkEnable(_ctx.booleanValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].SitelinkEnable"));
+			virtualBorderRouterType.setEcrAttatchStatus(_ctx.stringValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].EcrAttatchStatus"));
+			virtualBorderRouterType.setEcrOwnerId(_ctx.stringValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].EcrOwnerId"));
 
 			List<AssociatedPhysicalConnection> associatedPhysicalConnections = new ArrayList<AssociatedPhysicalConnection>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].AssociatedPhysicalConnections.Length"); j++) {

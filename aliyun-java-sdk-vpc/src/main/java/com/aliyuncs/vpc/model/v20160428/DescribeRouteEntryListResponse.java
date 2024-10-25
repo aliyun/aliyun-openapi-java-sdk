@@ -77,6 +77,8 @@ public class DescribeRouteEntryListResponse extends AcsResponse {
 
 		private String serviceType;
 
+		private String origin;
+
 		private List<NextHop> nextHops;
 
 		public String getStatus() {
@@ -157,6 +159,14 @@ public class DescribeRouteEntryListResponse extends AcsResponse {
 
 		public void setServiceType(String serviceType) {
 			this.serviceType = serviceType;
+		}
+
+		public String getOrigin() {
+			return this.origin;
+		}
+
+		public void setOrigin(String origin) {
+			this.origin = origin;
 		}
 
 		public List<NextHop> getNextHops() {

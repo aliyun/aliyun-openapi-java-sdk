@@ -33,6 +33,8 @@ public class CreateVpnGatewayRequest extends RpcAcsRequest<CreateVpnGatewayRespo
 
 	private String networkType;
 
+	private String resourceGroupId;
+
 	private String instanceChargeType;
 
 	private Integer period;
@@ -110,6 +112,17 @@ public class CreateVpnGatewayRequest extends RpcAcsRequest<CreateVpnGatewayRespo
 		this.networkType = networkType;
 		if(networkType != null){
 			putQueryParameter("NetworkType", networkType);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

@@ -256,6 +256,7 @@ public class ModifyVpnConnectionAttributeRequest extends RpcAcsRequest<ModifyVpn
 								putBodyParameter("TunnelOptionsSpecification." + (depth1 + 1) + ".TunnelIpsecConfig.IpsecAuthAlg" , tunnelOptionsSpecification.get(depth1).getTunnelIpsecConfig().getIpsecAuthAlg());
 								putBodyParameter("TunnelOptionsSpecification." + (depth1 + 1) + ".TunnelIpsecConfig.IpsecEncAlg" , tunnelOptionsSpecification.get(depth1).getTunnelIpsecConfig().getIpsecEncAlg());
 						}
+						putBodyParameter("TunnelOptionsSpecification." + (depth1 + 1) + ".Role" , tunnelOptionsSpecification.get(depth1).getRole());
 						if (tunnelOptionsSpecification.get(depth1).getTunnelBgpConfig() != null) {
 							
 								putBodyParameter("TunnelOptionsSpecification." + (depth1 + 1) + ".TunnelBgpConfig.LocalAsn" , tunnelOptionsSpecification.get(depth1).getTunnelBgpConfig().getLocalAsn());
@@ -278,6 +279,7 @@ public class ModifyVpnConnectionAttributeRequest extends RpcAcsRequest<ModifyVpn
 						}
 						putBodyParameter("TunnelOptionsSpecification." + (depth1 + 1) + ".EnableNatTraversal" , tunnelOptionsSpecification.get(depth1).getEnableNatTraversal());
 						putBodyParameter("TunnelOptionsSpecification." + (depth1 + 1) + ".EnableDpd" , tunnelOptionsSpecification.get(depth1).getEnableDpd());
+						putBodyParameter("TunnelOptionsSpecification." + (depth1 + 1) + ".CustomerGatewayId" , tunnelOptionsSpecification.get(depth1).getCustomerGatewayId());
 				}
 			}
 		}	
@@ -331,6 +333,8 @@ public class ModifyVpnConnectionAttributeRequest extends RpcAcsRequest<ModifyVpn
 
 		private TunnelIpsecConfig tunnelIpsecConfig;
 
+		private String role;
+
 		private TunnelBgpConfig tunnelBgpConfig;
 
 		private String remoteCaCertificate;
@@ -343,12 +347,22 @@ public class ModifyVpnConnectionAttributeRequest extends RpcAcsRequest<ModifyVpn
 
 		private Boolean enableDpd;
 
+		private String customerGatewayId;
+
 		public TunnelIpsecConfig getTunnelIpsecConfig() {
 			return this.tunnelIpsecConfig;
 		}
 
 		public void setTunnelIpsecConfig(TunnelIpsecConfig tunnelIpsecConfig) {
 			this.tunnelIpsecConfig = tunnelIpsecConfig;
+		}
+
+		public String getRole() {
+			return this.role;
+		}
+
+		public void setRole(String role) {
+			this.role = role;
 		}
 
 		public TunnelBgpConfig getTunnelBgpConfig() {
@@ -397,6 +411,14 @@ public class ModifyVpnConnectionAttributeRequest extends RpcAcsRequest<ModifyVpn
 
 		public void setEnableDpd(Boolean enableDpd) {
 			this.enableDpd = enableDpd;
+		}
+
+		public String getCustomerGatewayId() {
+			return this.customerGatewayId;
+		}
+
+		public void setCustomerGatewayId(String customerGatewayId) {
+			this.customerGatewayId = customerGatewayId;
 		}
 
 		public static class TunnelIpsecConfig {

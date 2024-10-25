@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.vpc.model.v20160428.DescribeVcoRouteEntriesResponse;
 import com.aliyuncs.vpc.model.v20160428.DescribeVcoRouteEntriesResponse.VcoRouteEntrie;
+import com.aliyuncs.vpc.model.v20160428.DescribeVcoRouteEntriesResponse.VpnRouteCount;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -45,9 +46,26 @@ public class DescribeVcoRouteEntriesResponseUnmarshaller {
 			vcoRouteEntrie.setCommunity(_ctx.stringValue("DescribeVcoRouteEntriesResponse.VcoRouteEntries["+ i +"].Community"));
 			vcoRouteEntrie.setSource(_ctx.stringValue("DescribeVcoRouteEntriesResponse.VcoRouteEntries["+ i +"].Source"));
 
+			List<String> nextHopTunnelIdList = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeVcoRouteEntriesResponse.VcoRouteEntries["+ i +"].NextHopTunnelIdList.Length"); j++) {
+				nextHopTunnelIdList.add(_ctx.stringValue("DescribeVcoRouteEntriesResponse.VcoRouteEntries["+ i +"].NextHopTunnelIdList["+ j +"]"));
+			}
+			vcoRouteEntrie.setNextHopTunnelIdList(nextHopTunnelIdList);
+
 			vcoRouteEntries.add(vcoRouteEntrie);
 		}
 		describeVcoRouteEntriesResponse.setVcoRouteEntries(vcoRouteEntries);
+
+		List<VpnRouteCount> vpnRouteCounts = new ArrayList<VpnRouteCount>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeVcoRouteEntriesResponse.VpnRouteCounts.Length"); i++) {
+			VpnRouteCount vpnRouteCount = new VpnRouteCount();
+			vpnRouteCount.setRouteEntryType(_ctx.stringValue("DescribeVcoRouteEntriesResponse.VpnRouteCounts["+ i +"].RouteEntryType"));
+			vpnRouteCount.setRouteCount(_ctx.integerValue("DescribeVcoRouteEntriesResponse.VpnRouteCounts["+ i +"].RouteCount"));
+			vpnRouteCount.setSource(_ctx.stringValue("DescribeVcoRouteEntriesResponse.VpnRouteCounts["+ i +"].Source"));
+
+			vpnRouteCounts.add(vpnRouteCount);
+		}
+		describeVcoRouteEntriesResponse.setVpnRouteCounts(vpnRouteCounts);
 	 
 	 	return describeVcoRouteEntriesResponse;
 	}

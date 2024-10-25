@@ -34,9 +34,9 @@ public class CreateVpnAttachmentResponse extends AcsResponse {
 
 	private String code;
 
-	private Boolean success;
-
 	private String message;
+
+	private Boolean success;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -78,20 +78,20 @@ public class CreateVpnAttachmentResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

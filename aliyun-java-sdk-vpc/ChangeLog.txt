@@ -1,3 +1,6 @@
+2024-10-25 Version: 3.2.29
+- Support HA VPN attachment.
+
 2023-07-21 Version: 3.2.28
 - Add error code.
 - Add Deliver Param.

@@ -14,9 +14,16 @@
 
 package com.aliyuncs.vpc.transform.v20160428;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.vpc.model.v20160428.ModifyVpnAttachmentAttributeResponse;
 import com.aliyuncs.vpc.model.v20160428.ModifyVpnAttachmentAttributeResponse.IkeConfig;
 import com.aliyuncs.vpc.model.v20160428.ModifyVpnAttachmentAttributeResponse.IpsecConfig;
+import com.aliyuncs.vpc.model.v20160428.ModifyVpnAttachmentAttributeResponse.TunnelOptions;
+import com.aliyuncs.vpc.model.v20160428.ModifyVpnAttachmentAttributeResponse.TunnelOptions.TunnelBgpConfig;
+import com.aliyuncs.vpc.model.v20160428.ModifyVpnAttachmentAttributeResponse.TunnelOptions.TunnelIkeConfig;
+import com.aliyuncs.vpc.model.v20160428.ModifyVpnAttachmentAttributeResponse.TunnelOptions.TunnelIpsecConfig;
 import com.aliyuncs.vpc.model.v20160428.ModifyVpnAttachmentAttributeResponse.VcoHealthCheck;
 import com.aliyuncs.vpc.model.v20160428.ModifyVpnAttachmentAttributeResponse.VpnBgpConfig;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -43,6 +50,8 @@ public class ModifyVpnAttachmentAttributeResponseUnmarshaller {
 		modifyVpnAttachmentAttributeResponse.setNetworkType(_ctx.stringValue("ModifyVpnAttachmentAttributeResponse.NetworkType"));
 		modifyVpnAttachmentAttributeResponse.setAttachInstanceId(_ctx.stringValue("ModifyVpnAttachmentAttributeResponse.AttachInstanceId"));
 		modifyVpnAttachmentAttributeResponse.setSpec(_ctx.stringValue("ModifyVpnAttachmentAttributeResponse.Spec"));
+		modifyVpnAttachmentAttributeResponse.setResourceGroupId(_ctx.stringValue("ModifyVpnAttachmentAttributeResponse.ResourceGroupId"));
+		modifyVpnAttachmentAttributeResponse.setEnableTunnelsBgp(_ctx.booleanValue("ModifyVpnAttachmentAttributeResponse.EnableTunnelsBgp"));
 
 		IkeConfig ikeConfig = new IkeConfig();
 		ikeConfig.setPsk(_ctx.stringValue("ModifyVpnAttachmentAttributeResponse.IkeConfig.Psk"));
@@ -81,6 +90,50 @@ public class ModifyVpnAttachmentAttributeResponseUnmarshaller {
 		vpnBgpConfig.setPeerAsn(_ctx.longValue("ModifyVpnAttachmentAttributeResponse.VpnBgpConfig.PeerAsn"));
 		vpnBgpConfig.setStatus(_ctx.stringValue("ModifyVpnAttachmentAttributeResponse.VpnBgpConfig.Status"));
 		modifyVpnAttachmentAttributeResponse.setVpnBgpConfig(vpnBgpConfig);
+
+		List<TunnelOptions> tunnelOptionsSpecification = new ArrayList<TunnelOptions>();
+		for (int i = 0; i < _ctx.lengthValue("ModifyVpnAttachmentAttributeResponse.TunnelOptionsSpecification.Length"); i++) {
+			TunnelOptions tunnelOptions = new TunnelOptions();
+			tunnelOptions.setCustomerGatewayId(_ctx.stringValue("ModifyVpnAttachmentAttributeResponse.TunnelOptionsSpecification["+ i +"].CustomerGatewayId"));
+			tunnelOptions.setEnableDpd(_ctx.booleanValue("ModifyVpnAttachmentAttributeResponse.TunnelOptionsSpecification["+ i +"].EnableDpd"));
+			tunnelOptions.setEnableNatTraversal(_ctx.booleanValue("ModifyVpnAttachmentAttributeResponse.TunnelOptionsSpecification["+ i +"].EnableNatTraversal"));
+			tunnelOptions.setInternetIp(_ctx.stringValue("ModifyVpnAttachmentAttributeResponse.TunnelOptionsSpecification["+ i +"].InternetIp"));
+			tunnelOptions.setRemoteCaCertificate(_ctx.stringValue("ModifyVpnAttachmentAttributeResponse.TunnelOptionsSpecification["+ i +"].RemoteCaCertificate"));
+			tunnelOptions.setRole(_ctx.stringValue("ModifyVpnAttachmentAttributeResponse.TunnelOptionsSpecification["+ i +"].Role"));
+			tunnelOptions.setTunnelId(_ctx.stringValue("ModifyVpnAttachmentAttributeResponse.TunnelOptionsSpecification["+ i +"].TunnelId"));
+			tunnelOptions.setTunnelIndex(_ctx.integerValue("ModifyVpnAttachmentAttributeResponse.TunnelOptionsSpecification["+ i +"].TunnelIndex"));
+			tunnelOptions.setState(_ctx.stringValue("ModifyVpnAttachmentAttributeResponse.TunnelOptionsSpecification["+ i +"].State"));
+
+			TunnelBgpConfig tunnelBgpConfig = new TunnelBgpConfig();
+			tunnelBgpConfig.setLocalAsn(_ctx.longValue("ModifyVpnAttachmentAttributeResponse.TunnelOptionsSpecification["+ i +"].TunnelBgpConfig.LocalAsn"));
+			tunnelBgpConfig.setLocalBgpIp(_ctx.stringValue("ModifyVpnAttachmentAttributeResponse.TunnelOptionsSpecification["+ i +"].TunnelBgpConfig.LocalBgpIp"));
+			tunnelBgpConfig.setPeerAsn(_ctx.longValue("ModifyVpnAttachmentAttributeResponse.TunnelOptionsSpecification["+ i +"].TunnelBgpConfig.PeerAsn"));
+			tunnelBgpConfig.setPeerBgpIp(_ctx.stringValue("ModifyVpnAttachmentAttributeResponse.TunnelOptionsSpecification["+ i +"].TunnelBgpConfig.PeerBgpIp"));
+			tunnelBgpConfig.setTunnelCidr(_ctx.stringValue("ModifyVpnAttachmentAttributeResponse.TunnelOptionsSpecification["+ i +"].TunnelBgpConfig.TunnelCidr"));
+			tunnelOptions.setTunnelBgpConfig(tunnelBgpConfig);
+
+			TunnelIkeConfig tunnelIkeConfig = new TunnelIkeConfig();
+			tunnelIkeConfig.setIkeAuthAlg(_ctx.stringValue("ModifyVpnAttachmentAttributeResponse.TunnelOptionsSpecification["+ i +"].TunnelIkeConfig.IkeAuthAlg"));
+			tunnelIkeConfig.setIkeEncAlg(_ctx.stringValue("ModifyVpnAttachmentAttributeResponse.TunnelOptionsSpecification["+ i +"].TunnelIkeConfig.IkeEncAlg"));
+			tunnelIkeConfig.setIkeLifetime(_ctx.longValue("ModifyVpnAttachmentAttributeResponse.TunnelOptionsSpecification["+ i +"].TunnelIkeConfig.IkeLifetime"));
+			tunnelIkeConfig.setIkeMode(_ctx.stringValue("ModifyVpnAttachmentAttributeResponse.TunnelOptionsSpecification["+ i +"].TunnelIkeConfig.IkeMode"));
+			tunnelIkeConfig.setIkePfs(_ctx.stringValue("ModifyVpnAttachmentAttributeResponse.TunnelOptionsSpecification["+ i +"].TunnelIkeConfig.IkePfs"));
+			tunnelIkeConfig.setIkeVersion(_ctx.stringValue("ModifyVpnAttachmentAttributeResponse.TunnelOptionsSpecification["+ i +"].TunnelIkeConfig.IkeVersion"));
+			tunnelIkeConfig.setLocalId(_ctx.stringValue("ModifyVpnAttachmentAttributeResponse.TunnelOptionsSpecification["+ i +"].TunnelIkeConfig.LocalId"));
+			tunnelIkeConfig.setPsk(_ctx.stringValue("ModifyVpnAttachmentAttributeResponse.TunnelOptionsSpecification["+ i +"].TunnelIkeConfig.Psk"));
+			tunnelIkeConfig.setRemoteId(_ctx.stringValue("ModifyVpnAttachmentAttributeResponse.TunnelOptionsSpecification["+ i +"].TunnelIkeConfig.RemoteId"));
+			tunnelOptions.setTunnelIkeConfig(tunnelIkeConfig);
+
+			TunnelIpsecConfig tunnelIpsecConfig = new TunnelIpsecConfig();
+			tunnelIpsecConfig.setIpsecAuthAlg(_ctx.stringValue("ModifyVpnAttachmentAttributeResponse.TunnelOptionsSpecification["+ i +"].TunnelIpsecConfig.IpsecAuthAlg"));
+			tunnelIpsecConfig.setIpsecEncAlg(_ctx.stringValue("ModifyVpnAttachmentAttributeResponse.TunnelOptionsSpecification["+ i +"].TunnelIpsecConfig.IpsecEncAlg"));
+			tunnelIpsecConfig.setIpsecLifetime(_ctx.longValue("ModifyVpnAttachmentAttributeResponse.TunnelOptionsSpecification["+ i +"].TunnelIpsecConfig.IpsecLifetime"));
+			tunnelIpsecConfig.setIpsecPfs(_ctx.stringValue("ModifyVpnAttachmentAttributeResponse.TunnelOptionsSpecification["+ i +"].TunnelIpsecConfig.IpsecPfs"));
+			tunnelOptions.setTunnelIpsecConfig(tunnelIpsecConfig);
+
+			tunnelOptionsSpecification.add(tunnelOptions);
+		}
+		modifyVpnAttachmentAttributeResponse.setTunnelOptionsSpecification(tunnelOptionsSpecification);
 	 
 	 	return modifyVpnAttachmentAttributeResponse;
 	}

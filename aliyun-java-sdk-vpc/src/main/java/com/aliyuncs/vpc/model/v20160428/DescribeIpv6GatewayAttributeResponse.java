@@ -51,6 +51,8 @@ public class DescribeIpv6GatewayAttributeResponse extends AcsResponse {
 
 	private String resourceGroupId;
 
+	private String gatewayRouteTableId;
+
 	private List<Tag> tags;
 
 	public String getVpcId() {
@@ -155,6 +157,14 @@ public class DescribeIpv6GatewayAttributeResponse extends AcsResponse {
 
 	public void setResourceGroupId(String resourceGroupId) {
 		this.resourceGroupId = resourceGroupId;
+	}
+
+	public String getGatewayRouteTableId() {
+		return this.gatewayRouteTableId;
+	}
+
+	public void setGatewayRouteTableId(String gatewayRouteTableId) {
+		this.gatewayRouteTableId = gatewayRouteTableId;
 	}
 
 	public List<Tag> getTags() {

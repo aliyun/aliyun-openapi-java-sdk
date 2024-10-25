@@ -27,8 +27,8 @@ public class CreateVpnAttachmentResponseUnmarshaller {
 		createVpnAttachmentResponse.setName(_ctx.stringValue("CreateVpnAttachmentResponse.Name"));
 		createVpnAttachmentResponse.setCreateTime(_ctx.longValue("CreateVpnAttachmentResponse.CreateTime"));
 		createVpnAttachmentResponse.setCode(_ctx.stringValue("CreateVpnAttachmentResponse.Code"));
-		createVpnAttachmentResponse.setSuccess(_ctx.booleanValue("CreateVpnAttachmentResponse.Success"));
 		createVpnAttachmentResponse.setMessage(_ctx.stringValue("CreateVpnAttachmentResponse.Message"));
+		createVpnAttachmentResponse.setSuccess(_ctx.booleanValue("CreateVpnAttachmentResponse.Success"));
 	 
 	 	return createVpnAttachmentResponse;
 	}

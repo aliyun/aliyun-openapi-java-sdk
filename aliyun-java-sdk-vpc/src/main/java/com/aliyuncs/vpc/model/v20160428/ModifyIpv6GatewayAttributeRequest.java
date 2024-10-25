@@ -27,7 +27,11 @@ public class ModifyIpv6GatewayAttributeRequest extends RpcAcsRequest<ModifyIpv6G
 
 	private Long resourceOwnerId;
 
+	private String clientToken;
+
 	private String description;
+
+	private Boolean dryRun;
 
 	private String resourceOwnerAccount;
 
@@ -58,6 +62,17 @@ public class ModifyIpv6GatewayAttributeRequest extends RpcAcsRequest<ModifyIpv6G
 		}
 	}
 
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
 	public String getDescription() {
 		return this.description;
 	}
@@ -66,6 +81,17 @@ public class ModifyIpv6GatewayAttributeRequest extends RpcAcsRequest<ModifyIpv6G
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
 		}
 	}
 

@@ -149,6 +149,10 @@ public class DescribePhysicalConnectionsResponse extends AcsResponse {
 
 		private String adDetailLocation;
 
+		private String qosId;
+
+		private List<TagsItem> tags;
+
 		public String getType() {
 			return this.type;
 		}
@@ -435,6 +439,45 @@ public class DescribePhysicalConnectionsResponse extends AcsResponse {
 
 		public void setAdDetailLocation(String adDetailLocation) {
 			this.adDetailLocation = adDetailLocation;
+		}
+
+		public String getQosId() {
+			return this.qosId;
+		}
+
+		public void setQosId(String qosId) {
+			this.qosId = qosId;
+		}
+
+		public List<TagsItem> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<TagsItem> tags) {
+			this.tags = tags;
+		}
+
+		public static class TagsItem {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
 		}
 	}
 

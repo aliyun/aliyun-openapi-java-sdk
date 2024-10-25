@@ -101,6 +101,8 @@ public class ListPrefixListsResponse extends AcsResponse {
 
 		private String resourceGroupId;
 
+		private String prefixListType;
+
 		private List<Tag> tags;
 
 		private List<String> cidrBlocks;
@@ -199,6 +201,14 @@ public class ListPrefixListsResponse extends AcsResponse {
 
 		public void setResourceGroupId(String resourceGroupId) {
 			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getPrefixListType() {
+			return this.prefixListType;
+		}
+
+		public void setPrefixListType(String prefixListType) {
+			this.prefixListType = prefixListType;
 		}
 
 		public List<Tag> getTags() {

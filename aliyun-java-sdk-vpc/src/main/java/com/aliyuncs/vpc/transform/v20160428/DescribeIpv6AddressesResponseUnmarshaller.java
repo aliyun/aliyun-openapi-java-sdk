@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.vpc.model.v20160428.DescribeIpv6AddressesResponse;
 import com.aliyuncs.vpc.model.v20160428.DescribeIpv6AddressesResponse.Ipv6Address;
 import com.aliyuncs.vpc.model.v20160428.DescribeIpv6AddressesResponse.Ipv6Address.Ipv6InternetBandwidth;
+import com.aliyuncs.vpc.model.v20160428.DescribeIpv6AddressesResponse.Ipv6Address.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -40,14 +41,18 @@ public class DescribeIpv6AddressesResponseUnmarshaller {
 			ipv6Address.setIpv6AddressId(_ctx.stringValue("DescribeIpv6AddressesResponse.Ipv6Addresses["+ i +"].Ipv6AddressId"));
 			ipv6Address.setAllocationTime(_ctx.stringValue("DescribeIpv6AddressesResponse.Ipv6Addresses["+ i +"].AllocationTime"));
 			ipv6Address.setIpv6AddressName(_ctx.stringValue("DescribeIpv6AddressesResponse.Ipv6Addresses["+ i +"].Ipv6AddressName"));
+			ipv6Address.setIpv6AddressDescription(_ctx.stringValue("DescribeIpv6AddressesResponse.Ipv6Addresses["+ i +"].Ipv6AddressDescription"));
 			ipv6Address.setAssociatedInstanceType(_ctx.stringValue("DescribeIpv6AddressesResponse.Ipv6Addresses["+ i +"].AssociatedInstanceType"));
 			ipv6Address.setAssociatedInstanceId(_ctx.stringValue("DescribeIpv6AddressesResponse.Ipv6Addresses["+ i +"].AssociatedInstanceId"));
 			ipv6Address.setNetworkType(_ctx.stringValue("DescribeIpv6AddressesResponse.Ipv6Addresses["+ i +"].NetworkType"));
 			ipv6Address.setIpv6Address(_ctx.stringValue("DescribeIpv6AddressesResponse.Ipv6Addresses["+ i +"].Ipv6Address"));
+			ipv6Address.setAddressType(_ctx.stringValue("DescribeIpv6AddressesResponse.Ipv6Addresses["+ i +"].AddressType"));
 			ipv6Address.setIpv6Isp(_ctx.stringValue("DescribeIpv6AddressesResponse.Ipv6Addresses["+ i +"].Ipv6Isp"));
 			ipv6Address.setVSwitchId(_ctx.stringValue("DescribeIpv6AddressesResponse.Ipv6Addresses["+ i +"].VSwitchId"));
 			ipv6Address.setIpv6GatewayId(_ctx.stringValue("DescribeIpv6AddressesResponse.Ipv6Addresses["+ i +"].Ipv6GatewayId"));
 			ipv6Address.setRealBandwidth(_ctx.integerValue("DescribeIpv6AddressesResponse.Ipv6Addresses["+ i +"].RealBandwidth"));
+			ipv6Address.setResourceGroupId(_ctx.stringValue("DescribeIpv6AddressesResponse.Ipv6Addresses["+ i +"].ResourceGroupId"));
+			ipv6Address.setServiceManaged(_ctx.integerValue("DescribeIpv6AddressesResponse.Ipv6Addresses["+ i +"].ServiceManaged"));
 
 			Ipv6InternetBandwidth ipv6InternetBandwidth = new Ipv6InternetBandwidth();
 			ipv6InternetBandwidth.setInternetChargeType(_ctx.stringValue("DescribeIpv6AddressesResponse.Ipv6Addresses["+ i +"].Ipv6InternetBandwidth.InternetChargeType"));
@@ -61,6 +66,16 @@ public class DescribeIpv6AddressesResponseUnmarshaller {
 			ipv6InternetBandwidth.setReservationActiveTime(_ctx.stringValue("DescribeIpv6AddressesResponse.Ipv6Addresses["+ i +"].Ipv6InternetBandwidth.ReservationActiveTime"));
 			ipv6InternetBandwidth.setReservationBandwidth(_ctx.longValue("DescribeIpv6AddressesResponse.Ipv6Addresses["+ i +"].Ipv6InternetBandwidth.ReservationBandwidth"));
 			ipv6Address.setIpv6InternetBandwidth(ipv6InternetBandwidth);
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeIpv6AddressesResponse.Ipv6Addresses["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(_ctx.stringValue("DescribeIpv6AddressesResponse.Ipv6Addresses["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("DescribeIpv6AddressesResponse.Ipv6Addresses["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			ipv6Address.setTags(tags);
 
 			ipv6Addresses.add(ipv6Address);
 		}

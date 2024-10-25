@@ -39,6 +39,7 @@ public class DescribeIpv6GatewayAttributeResponseUnmarshaller {
 		describeIpv6GatewayAttributeResponse.setBusinessStatus(_ctx.stringValue("DescribeIpv6GatewayAttributeResponse.BusinessStatus"));
 		describeIpv6GatewayAttributeResponse.setName(_ctx.stringValue("DescribeIpv6GatewayAttributeResponse.Name"));
 		describeIpv6GatewayAttributeResponse.setResourceGroupId(_ctx.stringValue("DescribeIpv6GatewayAttributeResponse.ResourceGroupId"));
+		describeIpv6GatewayAttributeResponse.setGatewayRouteTableId(_ctx.stringValue("DescribeIpv6GatewayAttributeResponse.GatewayRouteTableId"));
 
 		List<Tag> tags = new ArrayList<Tag>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeIpv6GatewayAttributeResponse.Tags.Length"); i++) {

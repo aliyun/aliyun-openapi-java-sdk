@@ -97,6 +97,8 @@ public class ListTrafficMirrorFiltersResponse extends AcsResponse {
 
 		private String resourceGroupId;
 
+		private String creationTime;
+
 		private List<TrafficMirrorRule> ingressRules;
 
 		private List<TrafficMirrorRule> egressRules;
@@ -141,6 +143,14 @@ public class ListTrafficMirrorFiltersResponse extends AcsResponse {
 
 		public void setResourceGroupId(String resourceGroupId) {
 			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getCreationTime() {
+			return this.creationTime;
+		}
+
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
 		public List<TrafficMirrorRule> getIngressRules() {

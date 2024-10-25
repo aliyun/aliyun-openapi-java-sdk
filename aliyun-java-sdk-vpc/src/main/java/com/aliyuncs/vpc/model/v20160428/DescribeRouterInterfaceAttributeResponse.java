@@ -113,6 +113,8 @@ public class DescribeRouterInterfaceAttributeResponse extends AcsResponse {
 
 	private String resourceGroupId;
 
+	private String fastLinkMode;
+
 	private List<TagsItem> tags;
 
 	public String getReservationActiveTime() {
@@ -465,6 +467,14 @@ public class DescribeRouterInterfaceAttributeResponse extends AcsResponse {
 
 	public void setResourceGroupId(String resourceGroupId) {
 		this.resourceGroupId = resourceGroupId;
+	}
+
+	public String getFastLinkMode() {
+		return this.fastLinkMode;
+	}
+
+	public void setFastLinkMode(String fastLinkMode) {
+		this.fastLinkMode = fastLinkMode;
 	}
 
 	public List<TagsItem> getTags() {

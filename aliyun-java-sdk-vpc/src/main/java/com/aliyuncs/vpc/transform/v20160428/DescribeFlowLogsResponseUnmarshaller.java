@@ -53,6 +53,7 @@ public class DescribeFlowLogsResponseUnmarshaller {
 			flowLog.setResourceGroupId(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].ResourceGroupId"));
 			flowLog.setFlowLogDeliverStatus(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].FlowLogDeliverStatus"));
 			flowLog.setFlowLogDeliverErrorMessage(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].FlowLogDeliverErrorMessage"));
+			flowLog.setIpVersion(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].IpVersion"));
 
 			List<String> trafficPath = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].TrafficPath.Length"); j++) {

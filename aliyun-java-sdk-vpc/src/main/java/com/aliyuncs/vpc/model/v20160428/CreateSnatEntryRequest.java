@@ -46,6 +46,8 @@ public class CreateSnatEntryRequest extends RpcAcsRequest<CreateSnatEntryRespons
 	private Long ownerId;
 
 	private String snatEntryName;
+
+	private String networkInterfaceId;
 	public CreateSnatEntryRequest() {
 		super("Vpc", "2016-04-28", "CreateSnatEntry", "vpc");
 		setMethod(MethodType.POST);
@@ -173,6 +175,17 @@ public class CreateSnatEntryRequest extends RpcAcsRequest<CreateSnatEntryRespons
 		this.snatEntryName = snatEntryName;
 		if(snatEntryName != null){
 			putQueryParameter("SnatEntryName", snatEntryName);
+		}
+	}
+
+	public String getNetworkInterfaceId() {
+		return this.networkInterfaceId;
+	}
+
+	public void setNetworkInterfaceId(String networkInterfaceId) {
+		this.networkInterfaceId = networkInterfaceId;
+		if(networkInterfaceId != null){
+			putQueryParameter("NetworkInterfaceId", networkInterfaceId);
 		}
 	}
 

@@ -18,11 +18,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.vpc.model.v20160428.GetNatGatewayAttributeResponse;
+import com.aliyuncs.vpc.model.v20160428.GetNatGatewayAttributeResponse.AccessMode;
 import com.aliyuncs.vpc.model.v20160428.GetNatGatewayAttributeResponse.BillingConfig;
 import com.aliyuncs.vpc.model.v20160428.GetNatGatewayAttributeResponse.DeletionProtectionInfo;
 import com.aliyuncs.vpc.model.v20160428.GetNatGatewayAttributeResponse.ForwardTable;
 import com.aliyuncs.vpc.model.v20160428.GetNatGatewayAttributeResponse.FullNatTable;
 import com.aliyuncs.vpc.model.v20160428.GetNatGatewayAttributeResponse.IpListItem;
+import com.aliyuncs.vpc.model.v20160428.GetNatGatewayAttributeResponse.LogDelivery;
 import com.aliyuncs.vpc.model.v20160428.GetNatGatewayAttributeResponse.PrivateInfo;
 import com.aliyuncs.vpc.model.v20160428.GetNatGatewayAttributeResponse.SnatTable;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -48,6 +50,7 @@ public class GetNatGatewayAttributeResponseUnmarshaller {
 		getNatGatewayAttributeResponse.setName(_ctx.stringValue("GetNatGatewayAttributeResponse.Name"));
 		getNatGatewayAttributeResponse.setPrivateLinkEnabled(_ctx.booleanValue("GetNatGatewayAttributeResponse.PrivateLinkEnabled"));
 		getNatGatewayAttributeResponse.setPrivateLinkMode(_ctx.stringValue("GetNatGatewayAttributeResponse.PrivateLinkMode"));
+		getNatGatewayAttributeResponse.setEnableSessionLog(_ctx.booleanValue("GetNatGatewayAttributeResponse.EnableSessionLog"));
 
 		ForwardTable forwardTable = new ForwardTable();
 		forwardTable.setForwardTableId(_ctx.stringValue("GetNatGatewayAttributeResponse.ForwardTable.ForwardTableId"));
@@ -82,6 +85,18 @@ public class GetNatGatewayAttributeResponseUnmarshaller {
 		DeletionProtectionInfo deletionProtectionInfo = new DeletionProtectionInfo();
 		deletionProtectionInfo.setEnabled(_ctx.booleanValue("GetNatGatewayAttributeResponse.DeletionProtectionInfo.Enabled"));
 		getNatGatewayAttributeResponse.setDeletionProtectionInfo(deletionProtectionInfo);
+
+		LogDelivery logDelivery = new LogDelivery();
+		logDelivery.setLogDeliveryType(_ctx.stringValue("GetNatGatewayAttributeResponse.LogDelivery.LogDeliveryType"));
+		logDelivery.setLogDestination(_ctx.stringValue("GetNatGatewayAttributeResponse.LogDelivery.LogDestination"));
+		logDelivery.setDeliveryStatus(_ctx.stringValue("GetNatGatewayAttributeResponse.LogDelivery.DeliveryStatus"));
+		logDelivery.setDeliverLogsErrorMessage(_ctx.stringValue("GetNatGatewayAttributeResponse.LogDelivery.DeliverLogsErrorMessage"));
+		getNatGatewayAttributeResponse.setLogDelivery(logDelivery);
+
+		AccessMode accessMode = new AccessMode();
+		accessMode.setModeValue(_ctx.stringValue("GetNatGatewayAttributeResponse.AccessMode.ModeValue"));
+		accessMode.setTunnelType(_ctx.stringValue("GetNatGatewayAttributeResponse.AccessMode.TunnelType"));
+		getNatGatewayAttributeResponse.setAccessMode(accessMode);
 
 		List<IpListItem> ipList = new ArrayList<IpListItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetNatGatewayAttributeResponse.IpList.Length"); i++) {

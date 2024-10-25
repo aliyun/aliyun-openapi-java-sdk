@@ -34,6 +34,7 @@ public class DescribeSslVpnClientCertResponseUnmarshaller {
 		describeSslVpnClientCertResponse.setSslVpnClientCertId(_ctx.stringValue("DescribeSslVpnClientCertResponse.SslVpnClientCertId"));
 		describeSslVpnClientCertResponse.setSslVpnServerId(_ctx.stringValue("DescribeSslVpnClientCertResponse.SslVpnServerId"));
 		describeSslVpnClientCertResponse.setName(_ctx.stringValue("DescribeSslVpnClientCertResponse.Name"));
+		describeSslVpnClientCertResponse.setResourceGroupId(_ctx.stringValue("DescribeSslVpnClientCertResponse.ResourceGroupId"));
 	 
 	 	return describeSslVpnClientCertResponse;
 	}

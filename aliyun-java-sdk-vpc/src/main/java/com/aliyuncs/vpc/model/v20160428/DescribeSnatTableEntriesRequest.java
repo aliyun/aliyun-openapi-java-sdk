@@ -15,6 +15,7 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.vpc.Endpoint;
 
@@ -26,6 +27,8 @@ public class DescribeSnatTableEntriesRequest extends RpcAcsRequest<DescribeSnatT
 	   
 
 	private Long resourceOwnerId;
+
+	private List<String> networkInterfaceIds;
 
 	private String sourceCIDR;
 
@@ -68,6 +71,19 @@ public class DescribeSnatTableEntriesRequest extends RpcAcsRequest<DescribeSnatT
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
+	}
+
+	public List<String> getNetworkInterfaceIds() {
+		return this.networkInterfaceIds;
+	}
+
+	public void setNetworkInterfaceIds(List<String> networkInterfaceIds) {
+		this.networkInterfaceIds = networkInterfaceIds;	
+		if (networkInterfaceIds != null) {
+			for (int depth1 = 0; depth1 < networkInterfaceIds.size(); depth1++) {
+				putQueryParameter("NetworkInterfaceIds." + (depth1 + 1) , networkInterfaceIds.get(depth1));
+			}
+		}	
 	}
 
 	public String getSourceCIDR() {

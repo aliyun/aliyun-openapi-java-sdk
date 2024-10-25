@@ -34,7 +34,11 @@ public class CreateNetworkAclRequest extends RpcAcsRequest<CreateNetworkAclRespo
 
 	private List<Tag> tags;
 
+	private Boolean dryRun;
+
 	private String resourceOwnerAccount;
+
+	private String ownerAccount;
 
 	private String networkAclName;
 
@@ -97,6 +101,17 @@ public class CreateNetworkAclRequest extends RpcAcsRequest<CreateNetworkAclRespo
 		}	
 	}
 
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -105,6 +120,17 @@ public class CreateNetworkAclRequest extends RpcAcsRequest<CreateNetworkAclRespo
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
 		}
 	}
 

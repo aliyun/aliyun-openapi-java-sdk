@@ -15,6 +15,7 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.vpc.Endpoint;
 
@@ -31,19 +32,11 @@ public class DescribeEipAddressesRequest extends RpcAcsRequest<DescribeEipAddres
 
 	private String filter2Value;
 
-	private Boolean securityProtectionEnabled;
-
 	private String iSP;
 
 	private String eipName;
 
-	private String allocationId;
-
-	private Boolean includeReservationData;
-
 	private String eipAddress;
-
-	private Integer pageNumber;
 
 	private String resourceGroupId;
 
@@ -51,29 +44,41 @@ public class DescribeEipAddressesRequest extends RpcAcsRequest<DescribeEipAddres
 
 	private String filter1Key;
 
-	private String associatedInstanceType;
-
-	private Integer pageSize;
+	private List<Tag> tags;
 
 	private String segmentInstanceId;
 
 	private Boolean dryRun;
 
+	private String filter1Value;
+
+	private Long ownerId;
+
+	private String status;
+
+	private Boolean securityProtectionEnabled;
+
+	private Boolean serviceManaged;
+
+	private String allocationId;
+
+	private Boolean includeReservationData;
+
+	private Integer pageNumber;
+
+	private String associatedInstanceType;
+
+	private Integer pageSize;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String filter1Value;
-
 	private String filter2Key;
-
-	private Long ownerId;
 
 	private String chargeType;
 
 	private String associatedInstanceId;
-
-	private String status;
 	public DescribeEipAddressesRequest() {
 		super("Vpc", "2016-04-28", "DescribeEipAddresses", "vpc");
 		setMethod(MethodType.POST);
@@ -116,17 +121,6 @@ public class DescribeEipAddressesRequest extends RpcAcsRequest<DescribeEipAddres
 		}
 	}
 
-	public Boolean getSecurityProtectionEnabled() {
-		return this.securityProtectionEnabled;
-	}
-
-	public void setSecurityProtectionEnabled(Boolean securityProtectionEnabled) {
-		this.securityProtectionEnabled = securityProtectionEnabled;
-		if(securityProtectionEnabled != null){
-			putQueryParameter("SecurityProtectionEnabled", securityProtectionEnabled.toString());
-		}
-	}
-
 	public String getISP() {
 		return this.iSP;
 	}
@@ -149,28 +143,6 @@ public class DescribeEipAddressesRequest extends RpcAcsRequest<DescribeEipAddres
 		}
 	}
 
-	public String getAllocationId() {
-		return this.allocationId;
-	}
-
-	public void setAllocationId(String allocationId) {
-		this.allocationId = allocationId;
-		if(allocationId != null){
-			putQueryParameter("AllocationId", allocationId);
-		}
-	}
-
-	public Boolean getIncludeReservationData() {
-		return this.includeReservationData;
-	}
-
-	public void setIncludeReservationData(Boolean includeReservationData) {
-		this.includeReservationData = includeReservationData;
-		if(includeReservationData != null){
-			putQueryParameter("IncludeReservationData", includeReservationData.toString());
-		}
-	}
-
 	public String getEipAddress() {
 		return this.eipAddress;
 	}
@@ -179,17 +151,6 @@ public class DescribeEipAddressesRequest extends RpcAcsRequest<DescribeEipAddres
 		this.eipAddress = eipAddress;
 		if(eipAddress != null){
 			putQueryParameter("EipAddress", eipAddress);
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
@@ -226,26 +187,18 @@ public class DescribeEipAddressesRequest extends RpcAcsRequest<DescribeEipAddres
 		}
 	}
 
-	public String getAssociatedInstanceType() {
-		return this.associatedInstanceType;
+	public List<Tag> getTags() {
+		return this.tags;
 	}
 
-	public void setAssociatedInstanceType(String associatedInstanceType) {
-		this.associatedInstanceType = associatedInstanceType;
-		if(associatedInstanceType != null){
-			putQueryParameter("AssociatedInstanceType", associatedInstanceType);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
 	}
 
 	public String getSegmentInstanceId() {
@@ -267,6 +220,116 @@ public class DescribeEipAddressesRequest extends RpcAcsRequest<DescribeEipAddres
 		this.dryRun = dryRun;
 		if(dryRun != null){
 			putQueryParameter("DryRun", dryRun.toString());
+		}
+	}
+
+	public String getFilter1Value() {
+		return this.filter1Value;
+	}
+
+	public void setFilter1Value(String filter1Value) {
+		this.filter1Value = filter1Value;
+		if(filter1Value != null){
+			putQueryParameter("Filter.1.Value", filter1Value);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status);
+		}
+	}
+
+	public Boolean getSecurityProtectionEnabled() {
+		return this.securityProtectionEnabled;
+	}
+
+	public void setSecurityProtectionEnabled(Boolean securityProtectionEnabled) {
+		this.securityProtectionEnabled = securityProtectionEnabled;
+		if(securityProtectionEnabled != null){
+			putQueryParameter("SecurityProtectionEnabled", securityProtectionEnabled.toString());
+		}
+	}
+
+	public Boolean getServiceManaged() {
+		return this.serviceManaged;
+	}
+
+	public void setServiceManaged(Boolean serviceManaged) {
+		this.serviceManaged = serviceManaged;
+		if(serviceManaged != null){
+			putQueryParameter("ServiceManaged", serviceManaged.toString());
+		}
+	}
+
+	public String getAllocationId() {
+		return this.allocationId;
+	}
+
+	public void setAllocationId(String allocationId) {
+		this.allocationId = allocationId;
+		if(allocationId != null){
+			putQueryParameter("AllocationId", allocationId);
+		}
+	}
+
+	public Boolean getIncludeReservationData() {
+		return this.includeReservationData;
+	}
+
+	public void setIncludeReservationData(Boolean includeReservationData) {
+		this.includeReservationData = includeReservationData;
+		if(includeReservationData != null){
+			putQueryParameter("IncludeReservationData", includeReservationData.toString());
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getAssociatedInstanceType() {
+		return this.associatedInstanceType;
+	}
+
+	public void setAssociatedInstanceType(String associatedInstanceType) {
+		this.associatedInstanceType = associatedInstanceType;
+		if(associatedInstanceType != null){
+			putQueryParameter("AssociatedInstanceType", associatedInstanceType);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -292,17 +355,6 @@ public class DescribeEipAddressesRequest extends RpcAcsRequest<DescribeEipAddres
 		}
 	}
 
-	public String getFilter1Value() {
-		return this.filter1Value;
-	}
-
-	public void setFilter1Value(String filter1Value) {
-		this.filter1Value = filter1Value;
-		if(filter1Value != null){
-			putQueryParameter("Filter.1.Value", filter1Value);
-		}
-	}
-
 	public String getFilter2Key() {
 		return this.filter2Key;
 	}
@@ -311,17 +363,6 @@ public class DescribeEipAddressesRequest extends RpcAcsRequest<DescribeEipAddres
 		this.filter2Key = filter2Key;
 		if(filter2Key != null){
 			putQueryParameter("Filter.2.Key", filter2Key);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
@@ -347,14 +388,26 @@ public class DescribeEipAddressesRequest extends RpcAcsRequest<DescribeEipAddres
 		}
 	}
 
-	public String getStatus() {
-		return this.status;
-	}
+	public static class Tag {
 
-	public void setStatus(String status) {
-		this.status = status;
-		if(status != null){
-			putQueryParameter("Status", status);
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

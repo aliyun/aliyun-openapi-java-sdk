@@ -28,6 +28,7 @@ public class ModifyCustomerGatewayAttributeResponseUnmarshaller {
 		modifyCustomerGatewayAttributeResponse.setCustomerGatewayId(_ctx.stringValue("ModifyCustomerGatewayAttributeResponse.CustomerGatewayId"));
 		modifyCustomerGatewayAttributeResponse.setCreateTime(_ctx.longValue("ModifyCustomerGatewayAttributeResponse.CreateTime"));
 		modifyCustomerGatewayAttributeResponse.setName(_ctx.stringValue("ModifyCustomerGatewayAttributeResponse.Name"));
+		modifyCustomerGatewayAttributeResponse.setResourceGroupId(_ctx.stringValue("ModifyCustomerGatewayAttributeResponse.ResourceGroupId"));
 	 
 	 	return modifyCustomerGatewayAttributeResponse;
 	}
