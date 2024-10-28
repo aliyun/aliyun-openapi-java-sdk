@@ -27,11 +27,15 @@ public class DescribeLifecyclePoliciesRequest extends RpcAcsRequest<DescribeLife
 
 	private Integer pageNumber;
 
+	private String storageType;
+
+	private String lifecyclePolicyName;
+
 	private Integer pageSize;
 
 	private String fileSystemId;
 	public DescribeLifecyclePoliciesRequest() {
-		super("NAS", "2017-06-26", "DescribeLifecyclePolicies", "NAS");
+		super("NAS", "2017-06-26", "DescribeLifecyclePolicies", "nas");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -47,6 +51,28 @@ public class DescribeLifecyclePoliciesRequest extends RpcAcsRequest<DescribeLife
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getStorageType() {
+		return this.storageType;
+	}
+
+	public void setStorageType(String storageType) {
+		this.storageType = storageType;
+		if(storageType != null){
+			putQueryParameter("StorageType", storageType);
+		}
+	}
+
+	public String getLifecyclePolicyName() {
+		return this.lifecyclePolicyName;
+	}
+
+	public void setLifecyclePolicyName(String lifecyclePolicyName) {
+		this.lifecyclePolicyName = lifecyclePolicyName;
+		if(lifecyclePolicyName != null){
+			putQueryParameter("LifecyclePolicyName", lifecyclePolicyName);
 		}
 	}
 

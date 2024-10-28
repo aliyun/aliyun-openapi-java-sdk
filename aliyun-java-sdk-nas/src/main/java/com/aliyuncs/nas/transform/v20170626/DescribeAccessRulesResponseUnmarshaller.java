@@ -40,6 +40,9 @@ public class DescribeAccessRulesResponseUnmarshaller {
 			accessRule.setRWAccess(_ctx.stringValue("DescribeAccessRulesResponse.AccessRules["+ i +"].RWAccess"));
 			accessRule.setUserAccess(_ctx.stringValue("DescribeAccessRulesResponse.AccessRules["+ i +"].UserAccess"));
 			accessRule.setPriority(_ctx.integerValue("DescribeAccessRulesResponse.AccessRules["+ i +"].Priority"));
+			accessRule.setFileSystemType(_ctx.stringValue("DescribeAccessRulesResponse.AccessRules["+ i +"].FileSystemType"));
+			accessRule.setAccessGroupName(_ctx.stringValue("DescribeAccessRulesResponse.AccessRules["+ i +"].AccessGroupName"));
+			accessRule.setRegionId(_ctx.stringValue("DescribeAccessRulesResponse.AccessRules["+ i +"].RegionId"));
 
 			accessRules.add(accessRule);
 		}

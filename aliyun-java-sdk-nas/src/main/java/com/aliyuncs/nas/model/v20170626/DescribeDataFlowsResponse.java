@@ -87,6 +87,8 @@ public class DescribeDataFlowsResponse extends AcsResponse {
 
 		private String autoRefreshPolicy;
 
+		private String sourceStoragePath;
+
 		private List<AutoRefreshItem> autoRefresh;
 
 		public String getFileSystemId() {
@@ -207,6 +209,14 @@ public class DescribeDataFlowsResponse extends AcsResponse {
 
 		public void setAutoRefreshPolicy(String autoRefreshPolicy) {
 			this.autoRefreshPolicy = autoRefreshPolicy;
+		}
+
+		public String getSourceStoragePath() {
+			return this.sourceStoragePath;
+		}
+
+		public void setSourceStoragePath(String sourceStoragePath) {
+			this.sourceStoragePath = sourceStoragePath;
 		}
 
 		public List<AutoRefreshItem> getAutoRefresh() {

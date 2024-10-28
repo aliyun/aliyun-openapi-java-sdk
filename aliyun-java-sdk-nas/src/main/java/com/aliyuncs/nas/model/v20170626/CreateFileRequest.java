@@ -35,7 +35,7 @@ public class CreateFileRequest extends RpcAcsRequest<CreateFileResponse> {
 
 	private String owner;
 	public CreateFileRequest() {
-		super("NAS", "2017-06-26", "CreateFile", "NAS");
+		super("NAS", "2017-06-26", "CreateFile", "nas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

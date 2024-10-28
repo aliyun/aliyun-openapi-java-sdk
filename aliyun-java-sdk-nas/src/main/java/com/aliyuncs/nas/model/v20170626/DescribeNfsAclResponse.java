@@ -15,18 +15,18 @@
 package com.aliyuncs.nas.model.v20170626;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.nas.transform.v20170626.DescribeLDAPConfigResponseUnmarshaller;
+import com.aliyuncs.nas.transform.v20170626.DescribeNfsAclResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeLDAPConfigResponse extends AcsResponse {
+public class DescribeNfsAclResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Ldap ldap;
+	private Acl acl;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,49 +36,34 @@ public class DescribeLDAPConfigResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Ldap getLdap() {
-		return this.ldap;
+	public Acl getAcl() {
+		return this.acl;
 	}
 
-	public void setLdap(Ldap ldap) {
-		this.ldap = ldap;
+	public void setAcl(Acl acl) {
+		this.acl = acl;
 	}
 
-	public static class Ldap {
+	public static class Acl {
 
-		private String bindDN;
+		private Boolean enabled;
 
-		private String searchBase;
-
-		private String uRI;
-
-		public String getBindDN() {
-			return this.bindDN;
+		public Boolean getEnabled() {
+			return this.enabled;
 		}
 
-		public void setBindDN(String bindDN) {
-			this.bindDN = bindDN;
-		}
-
-		public String getSearchBase() {
-			return this.searchBase;
-		}
-
-		public void setSearchBase(String searchBase) {
-			this.searchBase = searchBase;
-		}
-
-		public String getURI() {
-			return this.uRI;
-		}
-
-		public void setURI(String uRI) {
-			this.uRI = uRI;
+		public void setEnabled(Boolean enabled) {
+			this.enabled = enabled;
 		}
 	}
 
 	@Override
-	public DescribeLDAPConfigResponse getInstance(UnmarshallerContext context) {
-		return	DescribeLDAPConfigResponseUnmarshaller.unmarshall(this, context);
+	public DescribeNfsAclResponse getInstance(UnmarshallerContext context) {
+		return	DescribeNfsAclResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

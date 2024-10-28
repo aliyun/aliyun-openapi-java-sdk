@@ -87,6 +87,18 @@ public class DescribeDataFlowTasksResponse extends AcsResponse {
 
 		private String fsPath;
 
+		private String conflictPolicy;
+
+		private String directory;
+
+		private String dstDirectory;
+
+		private String errorMsg;
+
+		private List<Report> reports;
+
+		private ProgressStats progressStats;
+
 		public String getFilesystemId() {
 			return this.filesystemId;
 		}
@@ -205,6 +217,160 @@ public class DescribeDataFlowTasksResponse extends AcsResponse {
 
 		public void setFsPath(String fsPath) {
 			this.fsPath = fsPath;
+		}
+
+		public String getConflictPolicy() {
+			return this.conflictPolicy;
+		}
+
+		public void setConflictPolicy(String conflictPolicy) {
+			this.conflictPolicy = conflictPolicy;
+		}
+
+		public String getDirectory() {
+			return this.directory;
+		}
+
+		public void setDirectory(String directory) {
+			this.directory = directory;
+		}
+
+		public String getDstDirectory() {
+			return this.dstDirectory;
+		}
+
+		public void setDstDirectory(String dstDirectory) {
+			this.dstDirectory = dstDirectory;
+		}
+
+		public String getErrorMsg() {
+			return this.errorMsg;
+		}
+
+		public void setErrorMsg(String errorMsg) {
+			this.errorMsg = errorMsg;
+		}
+
+		public List<Report> getReports() {
+			return this.reports;
+		}
+
+		public void setReports(List<Report> reports) {
+			this.reports = reports;
+		}
+
+		public ProgressStats getProgressStats() {
+			return this.progressStats;
+		}
+
+		public void setProgressStats(ProgressStats progressStats) {
+			this.progressStats = progressStats;
+		}
+
+		public static class Report {
+
+			private String name;
+
+			private String path;
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getPath() {
+				return this.path;
+			}
+
+			public void setPath(String path) {
+				this.path = path;
+			}
+		}
+
+		public static class ProgressStats {
+
+			private Long filesTotal;
+
+			private Long filesDone;
+
+			private Long actualFiles;
+
+			private Long bytesTotal;
+
+			private Long bytesDone;
+
+			private Long actualBytes;
+
+			private Long remainTime;
+
+			private Long averageSpeed;
+
+			public Long getFilesTotal() {
+				return this.filesTotal;
+			}
+
+			public void setFilesTotal(Long filesTotal) {
+				this.filesTotal = filesTotal;
+			}
+
+			public Long getFilesDone() {
+				return this.filesDone;
+			}
+
+			public void setFilesDone(Long filesDone) {
+				this.filesDone = filesDone;
+			}
+
+			public Long getActualFiles() {
+				return this.actualFiles;
+			}
+
+			public void setActualFiles(Long actualFiles) {
+				this.actualFiles = actualFiles;
+			}
+
+			public Long getBytesTotal() {
+				return this.bytesTotal;
+			}
+
+			public void setBytesTotal(Long bytesTotal) {
+				this.bytesTotal = bytesTotal;
+			}
+
+			public Long getBytesDone() {
+				return this.bytesDone;
+			}
+
+			public void setBytesDone(Long bytesDone) {
+				this.bytesDone = bytesDone;
+			}
+
+			public Long getActualBytes() {
+				return this.actualBytes;
+			}
+
+			public void setActualBytes(Long actualBytes) {
+				this.actualBytes = actualBytes;
+			}
+
+			public Long getRemainTime() {
+				return this.remainTime;
+			}
+
+			public void setRemainTime(Long remainTime) {
+				this.remainTime = remainTime;
+			}
+
+			public Long getAverageSpeed() {
+				return this.averageSpeed;
+			}
+
+			public void setAverageSpeed(Long averageSpeed) {
+				this.averageSpeed = averageSpeed;
+			}
 		}
 	}
 

@@ -93,6 +93,8 @@ public class DescribeMountTargetsResponse extends AcsResponse {
 
 		private String iPVersion;
 
+		private String mountTargetIp;
+
 		private List<ClientMasterNode> clientMasterNodes;
 
 		private List<Tag> tags;
@@ -159,6 +161,14 @@ public class DescribeMountTargetsResponse extends AcsResponse {
 
 		public void setIPVersion(String iPVersion) {
 			this.iPVersion = iPVersion;
+		}
+
+		public String getMountTargetIp() {
+			return this.mountTargetIp;
+		}
+
+		public void setMountTargetIp(String mountTargetIp) {
+			this.mountTargetIp = mountTargetIp;
 		}
 
 		public List<ClientMasterNode> getClientMasterNodes() {

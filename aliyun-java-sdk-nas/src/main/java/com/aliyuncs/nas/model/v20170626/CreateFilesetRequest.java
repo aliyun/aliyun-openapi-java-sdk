@@ -29,13 +29,17 @@ public class CreateFilesetRequest extends RpcAcsRequest<CreateFilesetResponse> {
 
 	private String description;
 
+	private Boolean deletionProtection;
+
+	private Quota quota;
+
 	private String fileSystemId;
 
 	private Boolean dryRun;
 
 	private String fileSystemPath;
 	public CreateFilesetRequest() {
-		super("NAS", "2017-06-26", "CreateFileset", "NAS");
+		super("NAS", "2017-06-26", "CreateFileset", "nas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -63,6 +67,30 @@ public class CreateFilesetRequest extends RpcAcsRequest<CreateFilesetResponse> {
 		if(description != null){
 			putQueryParameter("Description", description);
 		}
+	}
+
+	public Boolean getDeletionProtection() {
+		return this.deletionProtection;
+	}
+
+	public void setDeletionProtection(Boolean deletionProtection) {
+		this.deletionProtection = deletionProtection;
+		if(deletionProtection != null){
+			putQueryParameter("DeletionProtection", deletionProtection.toString());
+		}
+	}
+
+	public Quota getQuota() {
+		return this.quota;
+	}
+
+	public void setQuota(Quota quota) {
+		this.quota = quota;	
+		if (quota != null) {
+			
+				putQueryParameter("Quota.SizeLimit" , quota.getSizeLimit());
+				putQueryParameter("Quota.FileCountLimit" , quota.getFileCountLimit());
+		}	
 	}
 
 	public String getFileSystemId() {
@@ -95,6 +123,29 @@ public class CreateFilesetRequest extends RpcAcsRequest<CreateFilesetResponse> {
 		this.fileSystemPath = fileSystemPath;
 		if(fileSystemPath != null){
 			putQueryParameter("FileSystemPath", fileSystemPath);
+		}
+	}
+
+	public static class Quota {
+
+		private Long sizeLimit;
+
+		private Long fileCountLimit;
+
+		public Long getSizeLimit() {
+			return this.sizeLimit;
+		}
+
+		public void setSizeLimit(Long sizeLimit) {
+			this.sizeLimit = sizeLimit;
+		}
+
+		public Long getFileCountLimit() {
+			return this.fileCountLimit;
+		}
+
+		public void setFileCountLimit(Long fileCountLimit) {
+			this.fileCountLimit = fileCountLimit;
 		}
 	}
 

@@ -25,6 +25,8 @@ import com.aliyuncs.nas.Endpoint;
 public class CreateDataFlowTaskRequest extends RpcAcsRequest<CreateDataFlowTaskResponse> {
 	   
 
+	private String dstDirectory;
+
 	private String clientToken;
 
 	private String directory;
@@ -32,6 +34,8 @@ public class CreateDataFlowTaskRequest extends RpcAcsRequest<CreateDataFlowTaskR
 	private String srcTaskId;
 
 	private String dataType;
+
+	private Boolean createDirIfNotExist;
 
 	private String fileSystemId;
 
@@ -41,14 +45,27 @@ public class CreateDataFlowTaskRequest extends RpcAcsRequest<CreateDataFlowTaskR
 
 	private String entryList;
 
+	private String conflictPolicy;
+
 	private String taskAction;
 	public CreateDataFlowTaskRequest() {
-		super("NAS", "2017-06-26", "CreateDataFlowTask", "NAS");
+		super("NAS", "2017-06-26", "CreateDataFlowTask", "nas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getDstDirectory() {
+		return this.dstDirectory;
+	}
+
+	public void setDstDirectory(String dstDirectory) {
+		this.dstDirectory = dstDirectory;
+		if(dstDirectory != null){
+			putQueryParameter("DstDirectory", dstDirectory);
+		}
 	}
 
 	public String getClientToken() {
@@ -95,6 +112,17 @@ public class CreateDataFlowTaskRequest extends RpcAcsRequest<CreateDataFlowTaskR
 		}
 	}
 
+	public Boolean getCreateDirIfNotExist() {
+		return this.createDirIfNotExist;
+	}
+
+	public void setCreateDirIfNotExist(Boolean createDirIfNotExist) {
+		this.createDirIfNotExist = createDirIfNotExist;
+		if(createDirIfNotExist != null){
+			putQueryParameter("CreateDirIfNotExist", createDirIfNotExist.toString());
+		}
+	}
+
 	public String getFileSystemId() {
 		return this.fileSystemId;
 	}
@@ -136,6 +164,17 @@ public class CreateDataFlowTaskRequest extends RpcAcsRequest<CreateDataFlowTaskR
 		this.entryList = entryList;
 		if(entryList != null){
 			putQueryParameter("EntryList", entryList);
+		}
+	}
+
+	public String getConflictPolicy() {
+		return this.conflictPolicy;
+	}
+
+	public void setConflictPolicy(String conflictPolicy) {
+		this.conflictPolicy = conflictPolicy;
+		if(conflictPolicy != null){
+			putQueryParameter("ConflictPolicy", conflictPolicy);
 		}
 	}
 

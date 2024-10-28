@@ -47,8 +47,12 @@ public class CreateDataFlowRequest extends RpcAcsRequest<CreateDataFlowResponse>
 	private Boolean dryRun;
 
 	private Long autoRefreshInterval;
+
+	private String sourceStoragePath;
+
+	private String fileSystemPath;
 	public CreateDataFlowRequest() {
-		super("NAS", "2017-06-26", "CreateDataFlow", "NAS");
+		super("NAS", "2017-06-26", "CreateDataFlow", "nas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -176,6 +180,28 @@ public class CreateDataFlowRequest extends RpcAcsRequest<CreateDataFlowResponse>
 		this.autoRefreshInterval = autoRefreshInterval;
 		if(autoRefreshInterval != null){
 			putQueryParameter("AutoRefreshInterval", autoRefreshInterval.toString());
+		}
+	}
+
+	public String getSourceStoragePath() {
+		return this.sourceStoragePath;
+	}
+
+	public void setSourceStoragePath(String sourceStoragePath) {
+		this.sourceStoragePath = sourceStoragePath;
+		if(sourceStoragePath != null){
+			putQueryParameter("SourceStoragePath", sourceStoragePath);
+		}
+	}
+
+	public String getFileSystemPath() {
+		return this.fileSystemPath;
+	}
+
+	public void setFileSystemPath(String fileSystemPath) {
+		this.fileSystemPath = fileSystemPath;
+		if(fileSystemPath != null){
+			putQueryParameter("FileSystemPath", fileSystemPath);
 		}
 	}
 

@@ -30,6 +30,8 @@ public class DescribeFileSystemsRequest extends RpcAcsRequest<DescribeFileSystem
 
 	private Integer pageNumber;
 
+	private String resourceGroupId;
+
 	private Integer pageSize;
 
 	private List<Tag> tags;
@@ -38,7 +40,7 @@ public class DescribeFileSystemsRequest extends RpcAcsRequest<DescribeFileSystem
 
 	private String vpcId;
 	public DescribeFileSystemsRequest() {
-		super("NAS", "2017-06-26", "DescribeFileSystems", "NAS");
+		super("NAS", "2017-06-26", "DescribeFileSystems", "nas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -65,6 +67,17 @@ public class DescribeFileSystemsRequest extends RpcAcsRequest<DescribeFileSystem
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

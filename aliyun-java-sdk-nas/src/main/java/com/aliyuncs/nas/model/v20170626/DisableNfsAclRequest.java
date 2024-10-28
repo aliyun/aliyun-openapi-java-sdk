@@ -22,12 +22,12 @@ import com.aliyuncs.nas.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeLDAPConfigRequest extends RpcAcsRequest<DescribeLDAPConfigResponse> {
+public class DisableNfsAclRequest extends RpcAcsRequest<DisableNfsAclResponse> {
 	   
 
 	private String fileSystemId;
-	public DescribeLDAPConfigRequest() {
-		super("NAS", "2017-06-26", "DescribeLDAPConfig", "NAS");
+	public DisableNfsAclRequest() {
+		super("NAS", "2017-06-26", "DisableNfsAcl", "nas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -47,8 +47,8 @@ public class DescribeLDAPConfigRequest extends RpcAcsRequest<DescribeLDAPConfigR
 	}
 
 	@Override
-	public Class<DescribeLDAPConfigResponse> getResponseClass() {
-		return DescribeLDAPConfigResponse.class;
+	public Class<DisableNfsAclResponse> getResponseClass() {
+		return DisableNfsAclResponse.class;
 	}
 
 }

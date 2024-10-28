@@ -34,7 +34,7 @@ public class DescribeDataFlowTasksRequest extends RpcAcsRequest<DescribeDataFlow
 
 	private Long maxResults;
 	public DescribeDataFlowTasksRequest() {
-		super("NAS", "2017-06-26", "DescribeDataFlowTasks", "NAS");
+		super("NAS", "2017-06-26", "DescribeDataFlowTasks", "nas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

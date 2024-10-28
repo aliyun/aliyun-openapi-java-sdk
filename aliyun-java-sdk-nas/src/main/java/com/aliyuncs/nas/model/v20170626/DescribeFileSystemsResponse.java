@@ -121,6 +121,18 @@ public class DescribeFileSystemsResponse extends AcsResponse {
 
 		private String vpcId;
 
+		private Integer nodeNum;
+
+		private String hpnZone;
+
+		private String accessPointCount;
+
+		private String resourceGroupId;
+
+		private Long meteredArchiveSize;
+
+		private String quorumVswId;
+
 		private List<Tag> tags;
 
 		private List<MountTarget> mountTargets;
@@ -132,6 +144,10 @@ public class DescribeFileSystemsResponse extends AcsResponse {
 		private List<String> vswIds;
 
 		private Ldap ldap;
+
+		private GuiInfo guiInfo;
+
+		private Options options;
 
 		public String getStatus() {
 			return this.status;
@@ -309,6 +325,54 @@ public class DescribeFileSystemsResponse extends AcsResponse {
 			this.vpcId = vpcId;
 		}
 
+		public Integer getNodeNum() {
+			return this.nodeNum;
+		}
+
+		public void setNodeNum(Integer nodeNum) {
+			this.nodeNum = nodeNum;
+		}
+
+		public String getHpnZone() {
+			return this.hpnZone;
+		}
+
+		public void setHpnZone(String hpnZone) {
+			this.hpnZone = hpnZone;
+		}
+
+		public String getAccessPointCount() {
+			return this.accessPointCount;
+		}
+
+		public void setAccessPointCount(String accessPointCount) {
+			this.accessPointCount = accessPointCount;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public Long getMeteredArchiveSize() {
+			return this.meteredArchiveSize;
+		}
+
+		public void setMeteredArchiveSize(Long meteredArchiveSize) {
+			this.meteredArchiveSize = meteredArchiveSize;
+		}
+
+		public String getQuorumVswId() {
+			return this.quorumVswId;
+		}
+
+		public void setQuorumVswId(String quorumVswId) {
+			this.quorumVswId = quorumVswId;
+		}
+
 		public List<Tag> getTags() {
 			return this.tags;
 		}
@@ -357,6 +421,22 @@ public class DescribeFileSystemsResponse extends AcsResponse {
 			this.ldap = ldap;
 		}
 
+		public GuiInfo getGuiInfo() {
+			return this.guiInfo;
+		}
+
+		public void setGuiInfo(GuiInfo guiInfo) {
+			this.guiInfo = guiInfo;
+		}
+
+		public Options getOptions() {
+			return this.options;
+		}
+
+		public void setOptions(Options options) {
+			this.options = options;
+		}
+
 		public static class Tag {
 
 			private String key;
@@ -395,6 +475,8 @@ public class DescribeFileSystemsResponse extends AcsResponse {
 			private String vswId;
 
 			private String networkType;
+
+			private String mountTargetIp;
 
 			private List<ClientMasterNode> clientMasterNodes;
 
@@ -454,6 +536,14 @@ public class DescribeFileSystemsResponse extends AcsResponse {
 
 			public void setNetworkType(String networkType) {
 				this.networkType = networkType;
+			}
+
+			public String getMountTargetIp() {
+				return this.mountTargetIp;
+			}
+
+			public void setMountTargetIp(String mountTargetIp) {
+				this.mountTargetIp = mountTargetIp;
 			}
 
 			public List<ClientMasterNode> getClientMasterNodes() {
@@ -612,6 +702,52 @@ public class DescribeFileSystemsResponse extends AcsResponse {
 
 			public void setURI(String uRI) {
 				this.uRI = uRI;
+			}
+		}
+
+		public static class GuiInfo {
+
+			private String endpoint;
+
+			private String password;
+
+			private String user;
+
+			public String getEndpoint() {
+				return this.endpoint;
+			}
+
+			public void setEndpoint(String endpoint) {
+				this.endpoint = endpoint;
+			}
+
+			public String getPassword() {
+				return this.password;
+			}
+
+			public void setPassword(String password) {
+				this.password = password;
+			}
+
+			public String getUser() {
+				return this.user;
+			}
+
+			public void setUser(String user) {
+				this.user = user;
+			}
+		}
+
+		public static class Options {
+
+			private Boolean enableOplock;
+
+			public Boolean getEnableOplock() {
+				return this.enableOplock;
+			}
+
+			public void setEnableOplock(Boolean enableOplock) {
+				this.enableOplock = enableOplock;
 			}
 		}
 	}

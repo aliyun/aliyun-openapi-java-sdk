@@ -49,6 +49,7 @@ public class DescribeDirQuotasResponseUnmarshaller {
 				userQuotaInfo.setSizeLimit(_ctx.longValue("DescribeDirQuotasResponse.DirQuotaInfos["+ i +"].UserQuotaInfos["+ j +"].SizeLimit"));
 				userQuotaInfo.setQuotaType(_ctx.stringValue("DescribeDirQuotasResponse.DirQuotaInfos["+ i +"].UserQuotaInfos["+ j +"].QuotaType"));
 				userQuotaInfo.setSizeReal(_ctx.longValue("DescribeDirQuotasResponse.DirQuotaInfos["+ i +"].UserQuotaInfos["+ j +"].SizeReal"));
+				userQuotaInfo.setSizeRealInByte(_ctx.longValue("DescribeDirQuotasResponse.DirQuotaInfos["+ i +"].UserQuotaInfos["+ j +"].SizeRealInByte"));
 
 				userQuotaInfos.add(userQuotaInfo);
 			}

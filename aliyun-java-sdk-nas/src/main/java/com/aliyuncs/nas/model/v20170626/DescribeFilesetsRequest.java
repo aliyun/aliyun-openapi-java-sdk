@@ -34,7 +34,7 @@ public class DescribeFilesetsRequest extends RpcAcsRequest<DescribeFilesetsRespo
 
 	private Long maxResults;
 	public DescribeFilesetsRequest() {
-		super("NAS", "2017-06-26", "DescribeFilesets", "NAS");
+		super("NAS", "2017-06-26", "DescribeFilesets", "nas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -41,6 +41,8 @@ public class CreateFileSystemRequest extends RpcAcsRequest<CreateFileSystemRespo
 
 	private Integer duration;
 
+	private String resourceGroupId;
+
 	private Boolean dryRun;
 
 	private Long bandwidth;
@@ -57,7 +59,7 @@ public class CreateFileSystemRequest extends RpcAcsRequest<CreateFileSystemRespo
 
 	private String kmsKeyId;
 	public CreateFileSystemRequest() {
-		super("NAS", "2017-06-26", "CreateFileSystem", "NAS");
+		super("NAS", "2017-06-26", "CreateFileSystem", "nas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -150,6 +152,17 @@ public class CreateFileSystemRequest extends RpcAcsRequest<CreateFileSystemRespo
 		this.duration = duration;
 		if(duration != null){
 			putQueryParameter("Duration", duration.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

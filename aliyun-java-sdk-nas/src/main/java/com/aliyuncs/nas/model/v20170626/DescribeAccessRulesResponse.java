@@ -89,6 +89,12 @@ public class DescribeAccessRulesResponse extends AcsResponse {
 
 		private Integer priority;
 
+		private String fileSystemType;
+
+		private String accessGroupName;
+
+		private String regionId;
+
 		public String getAccessRuleId() {
 			return this.accessRuleId;
 		}
@@ -135,6 +141,30 @@ public class DescribeAccessRulesResponse extends AcsResponse {
 
 		public void setPriority(Integer priority) {
 			this.priority = priority;
+		}
+
+		public String getFileSystemType() {
+			return this.fileSystemType;
+		}
+
+		public void setFileSystemType(String fileSystemType) {
+			this.fileSystemType = fileSystemType;
+		}
+
+		public String getAccessGroupName() {
+			return this.accessGroupName;
+		}
+
+		public void setAccessGroupName(String accessGroupName) {
+			this.accessGroupName = accessGroupName;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 	}
 

@@ -31,11 +31,13 @@ public class ModifyFilesetRequest extends RpcAcsRequest<ModifyFilesetResponse> {
 
 	private String description;
 
+	private Boolean deletionProtection;
+
 	private String fileSystemId;
 
 	private Boolean dryRun;
 	public ModifyFilesetRequest() {
-		super("NAS", "2017-06-26", "ModifyFileset", "NAS");
+		super("NAS", "2017-06-26", "ModifyFileset", "nas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -73,6 +75,17 @@ public class ModifyFilesetRequest extends RpcAcsRequest<ModifyFilesetResponse> {
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public Boolean getDeletionProtection() {
+		return this.deletionProtection;
+	}
+
+	public void setDeletionProtection(Boolean deletionProtection) {
+		this.deletionProtection = deletionProtection;
+		if(deletionProtection != null){
+			putQueryParameter("DeletionProtection", deletionProtection.toString());
 		}
 	}
 

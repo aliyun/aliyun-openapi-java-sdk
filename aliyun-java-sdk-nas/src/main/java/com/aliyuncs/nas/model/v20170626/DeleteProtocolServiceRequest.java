@@ -33,7 +33,7 @@ public class DeleteProtocolServiceRequest extends RpcAcsRequest<DeleteProtocolSe
 
 	private Boolean dryRun;
 	public DeleteProtocolServiceRequest() {
-		super("NAS", "2017-06-26", "DeleteProtocolService", "NAS");
+		super("NAS", "2017-06-26", "DeleteProtocolService", "nas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -41,6 +41,7 @@ public class ListLifecycleRetrieveJobsResponseUnmarshaller {
 			lifecycleRetrieveJob.setRetrievedFileCount(_ctx.longValue("ListLifecycleRetrieveJobsResponse.LifecycleRetrieveJobs["+ i +"].RetrievedFileCount"));
 			lifecycleRetrieveJob.setJobId(_ctx.stringValue("ListLifecycleRetrieveJobsResponse.LifecycleRetrieveJobs["+ i +"].JobId"));
 			lifecycleRetrieveJob.setCreateTime(_ctx.stringValue("ListLifecycleRetrieveJobsResponse.LifecycleRetrieveJobs["+ i +"].CreateTime"));
+			lifecycleRetrieveJob.setStorageType(_ctx.stringValue("ListLifecycleRetrieveJobsResponse.LifecycleRetrieveJobs["+ i +"].StorageType"));
 
 			List<String> paths = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListLifecycleRetrieveJobsResponse.LifecycleRetrieveJobs["+ i +"].Paths.Length"); j++) {

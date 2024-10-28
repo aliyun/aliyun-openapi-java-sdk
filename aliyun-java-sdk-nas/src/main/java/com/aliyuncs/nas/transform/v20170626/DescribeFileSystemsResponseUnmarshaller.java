@@ -19,10 +19,12 @@ import java.util.List;
 
 import com.aliyuncs.nas.model.v20170626.DescribeFileSystemsResponse;
 import com.aliyuncs.nas.model.v20170626.DescribeFileSystemsResponse.FileSystem;
+import com.aliyuncs.nas.model.v20170626.DescribeFileSystemsResponse.FileSystem.GuiInfo;
 import com.aliyuncs.nas.model.v20170626.DescribeFileSystemsResponse.FileSystem.Ldap;
 import com.aliyuncs.nas.model.v20170626.DescribeFileSystemsResponse.FileSystem.MountTarget;
 import com.aliyuncs.nas.model.v20170626.DescribeFileSystemsResponse.FileSystem.MountTarget.ClientMasterNode;
 import com.aliyuncs.nas.model.v20170626.DescribeFileSystemsResponse.FileSystem.MountTarget.Tag2;
+import com.aliyuncs.nas.model.v20170626.DescribeFileSystemsResponse.FileSystem.Options;
 import com.aliyuncs.nas.model.v20170626.DescribeFileSystemsResponse.FileSystem.Tag;
 import com.aliyuncs.nas.model.v20170626.DescribeFileSystemsResponse.FileSystem._Package;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -62,6 +64,12 @@ public class DescribeFileSystemsResponseUnmarshaller {
 			fileSystem.setExpiredTime(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].ExpiredTime"));
 			fileSystem.setZoneId(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].ZoneId"));
 			fileSystem.setVpcId(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].VpcId"));
+			fileSystem.setNodeNum(_ctx.integerValue("DescribeFileSystemsResponse.FileSystems["+ i +"].NodeNum"));
+			fileSystem.setHpnZone(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].HpnZone"));
+			fileSystem.setAccessPointCount(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].AccessPointCount"));
+			fileSystem.setResourceGroupId(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].ResourceGroupId"));
+			fileSystem.setMeteredArchiveSize(_ctx.longValue("DescribeFileSystemsResponse.FileSystems["+ i +"].MeteredArchiveSize"));
+			fileSystem.setQuorumVswId(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].QuorumVswId"));
 
 			List<String> supportedFeatures = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeFileSystemsResponse.FileSystems["+ i +"].SupportedFeatures.Length"); j++) {
@@ -80,6 +88,16 @@ public class DescribeFileSystemsResponseUnmarshaller {
 			ldap.setSearchBase(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].Ldap.SearchBase"));
 			ldap.setURI(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].Ldap.URI"));
 			fileSystem.setLdap(ldap);
+
+			GuiInfo guiInfo = new GuiInfo();
+			guiInfo.setEndpoint(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].GuiInfo.Endpoint"));
+			guiInfo.setPassword(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].GuiInfo.Password"));
+			guiInfo.setUser(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].GuiInfo.User"));
+			fileSystem.setGuiInfo(guiInfo);
+
+			Options options = new Options();
+			options.setEnableOplock(_ctx.booleanValue("DescribeFileSystemsResponse.FileSystems["+ i +"].Options.EnableOplock"));
+			fileSystem.setOptions(options);
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeFileSystemsResponse.FileSystems["+ i +"].Tags.Length"); j++) {
@@ -101,6 +119,7 @@ public class DescribeFileSystemsResponseUnmarshaller {
 				mountTarget.setDualStackMountTargetDomain(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].MountTargets["+ j +"].DualStackMountTargetDomain"));
 				mountTarget.setVswId(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].MountTargets["+ j +"].VswId"));
 				mountTarget.setNetworkType(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].MountTargets["+ j +"].NetworkType"));
+				mountTarget.setMountTargetIp(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].MountTargets["+ j +"].MountTargetIp"));
 
 				List<ClientMasterNode> clientMasterNodes = new ArrayList<ClientMasterNode>();
 				for (int k = 0; k < _ctx.lengthValue("DescribeFileSystemsResponse.FileSystems["+ i +"].MountTargets["+ j +"].ClientMasterNodes.Length"); k++) {

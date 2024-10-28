@@ -91,6 +91,8 @@ public class ListLifecycleRetrieveJobsResponse extends AcsResponse {
 
 		private String createTime;
 
+		private String storageType;
+
 		private List<String> paths;
 
 		public String getFileSystemId() {
@@ -147,6 +149,14 @@ public class ListLifecycleRetrieveJobsResponse extends AcsResponse {
 
 		public void setCreateTime(String createTime) {
 			this.createTime = createTime;
+		}
+
+		public String getStorageType() {
+			return this.storageType;
+		}
+
+		public void setStorageType(String storageType) {
+			this.storageType = storageType;
 		}
 
 		public List<String> getPaths() {

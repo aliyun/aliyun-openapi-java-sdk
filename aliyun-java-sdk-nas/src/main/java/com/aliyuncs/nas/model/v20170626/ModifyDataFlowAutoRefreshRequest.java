@@ -37,7 +37,7 @@ public class ModifyDataFlowAutoRefreshRequest extends RpcAcsRequest<ModifyDataFl
 
 	private Long autoRefreshInterval;
 	public ModifyDataFlowAutoRefreshRequest() {
-		super("NAS", "2017-06-26", "ModifyDataFlowAutoRefresh", "NAS");
+		super("NAS", "2017-06-26", "ModifyDataFlowAutoRefresh", "nas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

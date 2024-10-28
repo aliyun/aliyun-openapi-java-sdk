@@ -133,6 +133,8 @@ public class DescribeDirQuotasResponse extends AcsResponse {
 
 			private Long sizeReal;
 
+			private Long sizeRealInByte;
+
 			public Long getFileCountReal() {
 				return this.fileCountReal;
 			}
@@ -187,6 +189,14 @@ public class DescribeDirQuotasResponse extends AcsResponse {
 
 			public void setSizeReal(Long sizeReal) {
 				this.sizeReal = sizeReal;
+			}
+
+			public Long getSizeRealInByte() {
+				return this.sizeRealInByte;
+			}
+
+			public void setSizeRealInByte(Long sizeRealInByte) {
+				this.sizeRealInByte = sizeRealInByte;
 			}
 		}
 	}

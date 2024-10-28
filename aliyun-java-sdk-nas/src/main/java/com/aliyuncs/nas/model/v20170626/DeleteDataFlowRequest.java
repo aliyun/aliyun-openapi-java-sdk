@@ -33,7 +33,7 @@ public class DeleteDataFlowRequest extends RpcAcsRequest<DeleteDataFlowResponse>
 
 	private String dataFlowId;
 	public DeleteDataFlowRequest() {
-		super("NAS", "2017-06-26", "DeleteDataFlow", "NAS");
+		super("NAS", "2017-06-26", "DeleteDataFlow", "nas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

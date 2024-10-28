@@ -43,6 +43,7 @@ public class DescribeAutoSnapshotPoliciesResponseUnmarshaller {
 			autoSnapshotPolicy.setRetentionDays(_ctx.integerValue("DescribeAutoSnapshotPoliciesResponse.AutoSnapshotPolicies["+ i +"].RetentionDays"));
 			autoSnapshotPolicy.setFileSystemNums(_ctx.integerValue("DescribeAutoSnapshotPoliciesResponse.AutoSnapshotPolicies["+ i +"].FileSystemNums"));
 			autoSnapshotPolicy.setRegionId(_ctx.stringValue("DescribeAutoSnapshotPoliciesResponse.AutoSnapshotPolicies["+ i +"].RegionId"));
+			autoSnapshotPolicy.setFileSystemType(_ctx.stringValue("DescribeAutoSnapshotPoliciesResponse.AutoSnapshotPolicies["+ i +"].FileSystemType"));
 
 			autoSnapshotPolicies.add(autoSnapshotPolicy);
 		}

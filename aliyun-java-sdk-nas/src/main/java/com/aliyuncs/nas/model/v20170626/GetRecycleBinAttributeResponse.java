@@ -56,6 +56,8 @@ public class GetRecycleBinAttributeResponse extends AcsResponse {
 
 		private String enableTime;
 
+		private Long archiveSize;
+
 		public Long getSize() {
 			return this.size;
 		}
@@ -94,6 +96,14 @@ public class GetRecycleBinAttributeResponse extends AcsResponse {
 
 		public void setEnableTime(String enableTime) {
 			this.enableTime = enableTime;
+		}
+
+		public Long getArchiveSize() {
+			return this.archiveSize;
+		}
+
+		public void setArchiveSize(Long archiveSize) {
+			this.archiveSize = archiveSize;
 		}
 	}
 

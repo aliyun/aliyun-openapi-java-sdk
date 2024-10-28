@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.nas.model.v20170626.DescribeFilesetsResponse;
 import com.aliyuncs.nas.model.v20170626.DescribeFilesetsResponse.Entrie;
+import com.aliyuncs.nas.model.v20170626.DescribeFilesetsResponse.Entrie.Quota;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -39,6 +40,15 @@ public class DescribeFilesetsResponseUnmarshaller {
 			entrie.setStatus(_ctx.stringValue("DescribeFilesetsResponse.Entries["+ i +"].Status"));
 			entrie.setCreateTime(_ctx.stringValue("DescribeFilesetsResponse.Entries["+ i +"].CreateTime"));
 			entrie.setUpdateTime(_ctx.stringValue("DescribeFilesetsResponse.Entries["+ i +"].UpdateTime"));
+			entrie.setDeletionProtection(_ctx.booleanValue("DescribeFilesetsResponse.Entries["+ i +"].DeletionProtection"));
+			entrie.setFileCountUsage(_ctx.longValue("DescribeFilesetsResponse.Entries["+ i +"].FileCountUsage"));
+			entrie.setSpaceUsage(_ctx.longValue("DescribeFilesetsResponse.Entries["+ i +"].SpaceUsage"));
+			entrie.setFileSystemId(_ctx.stringValue("DescribeFilesetsResponse.Entries["+ i +"].FileSystemId"));
+
+			Quota quota = new Quota();
+			quota.setSizeLimit(_ctx.longValue("DescribeFilesetsResponse.Entries["+ i +"].Quota.SizeLimit"));
+			quota.setFileCountLimit(_ctx.longValue("DescribeFilesetsResponse.Entries["+ i +"].Quota.FileCountLimit"));
+			entrie.setQuota(quota);
 
 			entries.add(entrie);
 		}
