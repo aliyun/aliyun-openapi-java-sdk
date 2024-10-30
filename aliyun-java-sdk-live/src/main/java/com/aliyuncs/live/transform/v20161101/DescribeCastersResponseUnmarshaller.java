@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.live.model.v20161101.DescribeCastersResponse;
 import com.aliyuncs.live.model.v20161101.DescribeCastersResponse.Caster;
+import com.aliyuncs.live.model.v20161101.DescribeCastersResponse.Caster.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -48,6 +49,16 @@ public class DescribeCastersResponseUnmarshaller {
 			caster.setStatus(_ctx.integerValue("DescribeCastersResponse.CasterList["+ i +"].Status"));
 			caster.setResourceGroupId(_ctx.integerValue("DescribeCastersResponse.CasterList["+ i +"].ResourceGroupId"));
 			caster.setClientTokenId(_ctx.stringValue("DescribeCastersResponse.CasterList["+ i +"].ClientTokenId"));
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeCastersResponse.CasterList["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setTagKey(_ctx.stringValue("DescribeCastersResponse.CasterList["+ i +"].Tags["+ j +"].TagKey"));
+				tag.setTagValue(_ctx.stringValue("DescribeCastersResponse.CasterList["+ i +"].Tags["+ j +"].TagValue"));
+
+				tags.add(tag);
+			}
+			caster.setTags(tags);
 
 			casterList.add(caster);
 		}

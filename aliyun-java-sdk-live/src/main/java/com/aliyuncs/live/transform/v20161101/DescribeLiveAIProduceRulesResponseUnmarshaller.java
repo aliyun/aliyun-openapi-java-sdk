@@ -40,6 +40,7 @@ public class DescribeLiveAIProduceRulesResponseUnmarshaller {
 			ruleInfo.setLiveTemplate(_ctx.stringValue("DescribeLiveAIProduceRulesResponse.RuleInfoList["+ i +"].LiveTemplate"));
 			ruleInfo.setGmtModifyTime(_ctx.stringValue("DescribeLiveAIProduceRulesResponse.RuleInfoList["+ i +"].GmtModifyTime"));
 			ruleInfo.setSuffixName(_ctx.stringValue("DescribeLiveAIProduceRulesResponse.RuleInfoList["+ i +"].SuffixName"));
+			ruleInfo.setStudioName(_ctx.stringValue("DescribeLiveAIProduceRulesResponse.RuleInfoList["+ i +"].StudioName"));
 			ruleInfo.setDescription(_ctx.stringValue("DescribeLiveAIProduceRulesResponse.RuleInfoList["+ i +"].Description"));
 
 			ruleInfoList.add(ruleInfo);

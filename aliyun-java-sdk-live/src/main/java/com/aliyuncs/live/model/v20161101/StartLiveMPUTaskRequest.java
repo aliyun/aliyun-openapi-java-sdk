@@ -219,8 +219,19 @@ public class StartLiveMPUTaskRequest extends RpcAcsRequest<StartLiveMPUTaskRespo
 
 	public static class MultiStreamURL {
 
+		@SerializedName("IsAliCdn")
+		private Boolean isAliCdn;
+
 		@SerializedName("URL")
 		private String uRL;
+
+		public Boolean getIsAliCdn() {
+			return this.isAliCdn;
+		}
+
+		public void setIsAliCdn(Boolean isAliCdn) {
+			this.isAliCdn = isAliCdn;
+		}
 
 		public String getURL() {
 			return this.uRL;

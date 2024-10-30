@@ -65,6 +65,8 @@ public class DescribeLiveAIProduceRulesResponse extends AcsResponse {
 
 		private String suffixName;
 
+		private String studioName;
+
 		private String description;
 
 		public String getDomain() {
@@ -137,6 +139,14 @@ public class DescribeLiveAIProduceRulesResponse extends AcsResponse {
 
 		public void setSuffixName(String suffixName) {
 			this.suffixName = suffixName;
+		}
+
+		public String getStudioName() {
+			return this.studioName;
+		}
+
+		public void setStudioName(String studioName) {
+			this.studioName = studioName;
 		}
 
 		public String getDescription() {

@@ -15,6 +15,7 @@
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.live.Endpoint;
 
@@ -34,6 +35,8 @@ public class DescribeCastersRequest extends RpcAcsRequest<DescribeCastersRespons
 	private String casterName;
 
 	private Integer pageSize;
+
+	private List<Tag> tags;
 
 	private String normType;
 
@@ -112,6 +115,20 @@ public class DescribeCastersRequest extends RpcAcsRequest<DescribeCastersRespons
 		}
 	}
 
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+			}
+		}	
+	}
+
 	public String getNormType() {
 		return this.normType;
 	}
@@ -186,6 +203,29 @@ public class DescribeCastersRequest extends RpcAcsRequest<DescribeCastersRespons
 		this.status = status;
 		if(status != null){
 			putQueryParameter("Status", status.toString());
+		}
+	}
+
+	public static class Tag {
+
+		private String key;
+
+		private String value;
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
 		}
 	}
 

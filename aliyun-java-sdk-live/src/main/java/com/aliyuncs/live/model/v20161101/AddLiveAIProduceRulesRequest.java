@@ -27,6 +27,8 @@ public class AddLiveAIProduceRulesRequest extends RpcAcsRequest<AddLiveAIProduce
 
 	private String description;
 
+	private String suffix;
+
 	private String subtitleName;
 
 	private String app;
@@ -34,6 +36,8 @@ public class AddLiveAIProduceRulesRequest extends RpcAcsRequest<AddLiveAIProduce
 	private Long ownerId;
 
 	private Boolean isLazy;
+
+	private String studioName;
 
 	private String liveTemplate;
 
@@ -55,6 +59,17 @@ public class AddLiveAIProduceRulesRequest extends RpcAcsRequest<AddLiveAIProduce
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getSuffix() {
+		return this.suffix;
+	}
+
+	public void setSuffix(String suffix) {
+		this.suffix = suffix;
+		if(suffix != null){
+			putQueryParameter("Suffix", suffix);
 		}
 	}
 
@@ -99,6 +114,17 @@ public class AddLiveAIProduceRulesRequest extends RpcAcsRequest<AddLiveAIProduce
 		this.isLazy = isLazy;
 		if(isLazy != null){
 			putQueryParameter("IsLazy", isLazy.toString());
+		}
+	}
+
+	public String getStudioName() {
+		return this.studioName;
+	}
+
+	public void setStudioName(String studioName) {
+		this.studioName = studioName;
+		if(studioName != null){
+			putQueryParameter("StudioName", studioName);
 		}
 	}
 
