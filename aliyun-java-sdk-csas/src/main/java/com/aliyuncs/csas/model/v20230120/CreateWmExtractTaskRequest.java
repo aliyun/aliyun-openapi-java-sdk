@@ -15,6 +15,8 @@
 package com.aliyuncs.csas.model.v20230120;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 
 /**
@@ -31,6 +33,9 @@ public class CreateWmExtractTaskRequest extends RpcAcsRequest<CreateWmExtractTas
 	private String videoSpeed;
 
 	private String wmType;
+
+	@SerializedName("csvControl")
+	private CsvControl csvControl;
 
 	private String filename;
 
@@ -86,6 +91,17 @@ public class CreateWmExtractTaskRequest extends RpcAcsRequest<CreateWmExtractTas
 		}
 	}
 
+	public CsvControl getCsvControl() {
+		return this.csvControl;
+	}
+
+	public void setCsvControl(CsvControl csvControl) {
+		this.csvControl = csvControl;	
+		if (csvControl != null) {
+			putQueryParameter("CsvControl" , new Gson().toJson(csvControl));
+		}	
+	}
+
 	public String getFilename() {
 		return this.filename;
 	}
@@ -116,6 +132,42 @@ public class CreateWmExtractTaskRequest extends RpcAcsRequest<CreateWmExtractTas
 		this.fileUrl = fileUrl;
 		if(fileUrl != null){
 			putBodyParameter("FileUrl", fileUrl);
+		}
+	}
+
+	public static class CsvControl {
+
+		@SerializedName("Method")
+		private String method;
+
+		@SerializedName("EmbedColumn")
+		private Long embedColumn;
+
+		@SerializedName("EmbedPrecision")
+		private Long embedPrecision;
+
+		public String getBizMethod() {
+			return this.method;
+		}
+
+		public void setBizMethod(String method) {
+			this.method = method;
+		}
+
+		public Long getEmbedColumn() {
+			return this.embedColumn;
+		}
+
+		public void setEmbedColumn(Long embedColumn) {
+			this.embedColumn = embedColumn;
+		}
+
+		public Long getEmbedPrecision() {
+			return this.embedPrecision;
+		}
+
+		public void setEmbedPrecision(Long embedPrecision) {
+			this.embedPrecision = embedPrecision;
 		}
 	}
 

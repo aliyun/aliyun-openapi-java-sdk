@@ -31,7 +31,13 @@ public class CreatePrivateAccessApplicationRequest extends RpcAcsRequest<CreateP
 
 	private String protocol;
 
+	private String l7ProxyDomainCustom;
+
+	private String browserAccessStatus;
+
 	private List<String> tagIds;
+
+	private String l7ProxyDomainAutomaticPrefix;
 
 	private List<PortRanges> portRanges;
 
@@ -78,6 +84,28 @@ public class CreatePrivateAccessApplicationRequest extends RpcAcsRequest<CreateP
 		}
 	}
 
+	public String getL7ProxyDomainCustom() {
+		return this.l7ProxyDomainCustom;
+	}
+
+	public void setL7ProxyDomainCustom(String l7ProxyDomainCustom) {
+		this.l7ProxyDomainCustom = l7ProxyDomainCustom;
+		if(l7ProxyDomainCustom != null){
+			putBodyParameter("L7ProxyDomainCustom", l7ProxyDomainCustom);
+		}
+	}
+
+	public String getBrowserAccessStatus() {
+		return this.browserAccessStatus;
+	}
+
+	public void setBrowserAccessStatus(String browserAccessStatus) {
+		this.browserAccessStatus = browserAccessStatus;
+		if(browserAccessStatus != null){
+			putBodyParameter("BrowserAccessStatus", browserAccessStatus);
+		}
+	}
+
 	public List<String> getTagIds() {
 		return this.tagIds;
 	}
@@ -89,6 +117,17 @@ public class CreatePrivateAccessApplicationRequest extends RpcAcsRequest<CreateP
 				putBodyParameter("TagIds." + (depth1 + 1) , tagIds.get(depth1));
 			}
 		}	
+	}
+
+	public String getL7ProxyDomainAutomaticPrefix() {
+		return this.l7ProxyDomainAutomaticPrefix;
+	}
+
+	public void setL7ProxyDomainAutomaticPrefix(String l7ProxyDomainAutomaticPrefix) {
+		this.l7ProxyDomainAutomaticPrefix = l7ProxyDomainAutomaticPrefix;
+		if(l7ProxyDomainAutomaticPrefix != null){
+			putBodyParameter("L7ProxyDomainAutomaticPrefix", l7ProxyDomainAutomaticPrefix);
+		}
 	}
 
 	public List<PortRanges> getPortRanges() {

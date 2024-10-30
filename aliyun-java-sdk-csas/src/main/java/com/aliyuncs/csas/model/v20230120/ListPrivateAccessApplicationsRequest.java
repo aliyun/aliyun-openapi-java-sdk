@@ -39,6 +39,8 @@ public class ListPrivateAccessApplicationsRequest extends RpcAcsRequest<ListPriv
 
 	private List<String> applicationIds;
 
+	private String accessModes;
+
 	private String name;
 
 	private String status;
@@ -124,6 +126,17 @@ public class ListPrivateAccessApplicationsRequest extends RpcAcsRequest<ListPriv
 				putQueryParameter("ApplicationIds." + (depth1 + 1) , applicationIds.get(depth1));
 			}
 		}	
+	}
+
+	public String getAccessModes() {
+		return this.accessModes;
+	}
+
+	public void setAccessModes(String accessModes) {
+		this.accessModes = accessModes;
+		if(accessModes != null){
+			putQueryParameter("AccessModes", accessModes);
+		}
 	}
 
 	public String getName() {

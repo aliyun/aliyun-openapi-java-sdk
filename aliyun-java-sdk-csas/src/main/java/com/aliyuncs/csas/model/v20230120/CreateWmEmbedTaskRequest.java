@@ -39,6 +39,9 @@ public class CreateWmEmbedTaskRequest extends RpcAcsRequest<CreateWmEmbedTaskRes
 
 	private String wmInfoUint;
 
+	@SerializedName("csvControl")
+	private CsvControl csvControl;
+
 	private String filename;
 
 	private Long wmInfoSize;
@@ -117,6 +120,17 @@ public class CreateWmEmbedTaskRequest extends RpcAcsRequest<CreateWmEmbedTaskRes
 		if(wmInfoUint != null){
 			putBodyParameter("WmInfoUint", wmInfoUint);
 		}
+	}
+
+	public CsvControl getCsvControl() {
+		return this.csvControl;
+	}
+
+	public void setCsvControl(CsvControl csvControl) {
+		this.csvControl = csvControl;	
+		if (csvControl != null) {
+			putQueryParameter("CsvControl" , new Gson().toJson(csvControl));
+		}	
 	}
 
 	public String getFilename() {
@@ -414,6 +428,42 @@ public class CreateWmEmbedTaskRequest extends RpcAcsRequest<CreateWmEmbedTaskRes
 					this.opacity = opacity;
 				}
 			}
+		}
+	}
+
+	public static class CsvControl {
+
+		@SerializedName("Method")
+		private String method;
+
+		@SerializedName("EmbedColumn")
+		private Long embedColumn;
+
+		@SerializedName("EmbedPrecision")
+		private Long embedPrecision;
+
+		public String getBizMethod() {
+			return this.method;
+		}
+
+		public void setBizMethod(String method) {
+			this.method = method;
+		}
+
+		public Long getEmbedColumn() {
+			return this.embedColumn;
+		}
+
+		public void setEmbedColumn(Long embedColumn) {
+			this.embedColumn = embedColumn;
+		}
+
+		public Long getEmbedPrecision() {
+			return this.embedPrecision;
+		}
+
+		public void setEmbedPrecision(Long embedPrecision) {
+			this.embedPrecision = embedPrecision;
 		}
 	}
 

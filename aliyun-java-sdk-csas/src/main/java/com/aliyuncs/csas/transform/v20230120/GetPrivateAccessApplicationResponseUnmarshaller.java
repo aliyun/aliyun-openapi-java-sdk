@@ -36,6 +36,9 @@ public class GetPrivateAccessApplicationResponseUnmarshaller {
 		application.setBizProtocol(_ctx.stringValue("GetPrivateAccessApplicationResponse.Application.Protocol"));
 		application.setStatus(_ctx.stringValue("GetPrivateAccessApplicationResponse.Application.Status"));
 		application.setCreateTime(_ctx.stringValue("GetPrivateAccessApplicationResponse.Application.CreateTime"));
+		application.setBrowserAccessStatus(_ctx.stringValue("GetPrivateAccessApplicationResponse.Application.BrowserAccessStatus"));
+		application.setL7ProxyDomainAutomatic(_ctx.stringValue("GetPrivateAccessApplicationResponse.Application.L7ProxyDomainAutomatic"));
+		application.setL7ProxyDomainCustom(_ctx.stringValue("GetPrivateAccessApplicationResponse.Application.L7ProxyDomainCustom"));
 
 		List<String> addresses = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetPrivateAccessApplicationResponse.Application.Addresses.Length"); i++) {

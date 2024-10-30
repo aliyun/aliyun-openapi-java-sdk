@@ -39,6 +39,9 @@ public class ListPrivateAccessApplicationsResponseUnmarshaller {
 			application.setBizProtocol(_ctx.stringValue("ListPrivateAccessApplicationsResponse.Applications["+ i +"].Protocol"));
 			application.setStatus(_ctx.stringValue("ListPrivateAccessApplicationsResponse.Applications["+ i +"].Status"));
 			application.setCreateTime(_ctx.stringValue("ListPrivateAccessApplicationsResponse.Applications["+ i +"].CreateTime"));
+			application.setBrowserAccessStatus(_ctx.stringValue("ListPrivateAccessApplicationsResponse.Applications["+ i +"].BrowserAccessStatus"));
+			application.setL7ProxyDomainAutomatic(_ctx.stringValue("ListPrivateAccessApplicationsResponse.Applications["+ i +"].L7ProxyDomainAutomatic"));
+			application.setL7ProxyDomainCustom(_ctx.stringValue("ListPrivateAccessApplicationsResponse.Applications["+ i +"].L7ProxyDomainCustom"));
 
 			List<String> addresses = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListPrivateAccessApplicationsResponse.Applications["+ i +"].Addresses.Length"); j++) {

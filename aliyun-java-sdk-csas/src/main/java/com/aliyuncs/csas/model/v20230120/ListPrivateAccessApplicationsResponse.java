@@ -69,6 +69,12 @@ public class ListPrivateAccessApplicationsResponse extends AcsResponse {
 
 		private String createTime;
 
+		private String browserAccessStatus;
+
+		private String l7ProxyDomainAutomatic;
+
+		private String l7ProxyDomainCustom;
+
 		private List<PortRange> portRanges;
 
 		private List<String> addresses;
@@ -125,6 +131,30 @@ public class ListPrivateAccessApplicationsResponse extends AcsResponse {
 
 		public void setCreateTime(String createTime) {
 			this.createTime = createTime;
+		}
+
+		public String getBrowserAccessStatus() {
+			return this.browserAccessStatus;
+		}
+
+		public void setBrowserAccessStatus(String browserAccessStatus) {
+			this.browserAccessStatus = browserAccessStatus;
+		}
+
+		public String getL7ProxyDomainAutomatic() {
+			return this.l7ProxyDomainAutomatic;
+		}
+
+		public void setL7ProxyDomainAutomatic(String l7ProxyDomainAutomatic) {
+			this.l7ProxyDomainAutomatic = l7ProxyDomainAutomatic;
+		}
+
+		public String getL7ProxyDomainCustom() {
+			return this.l7ProxyDomainCustom;
+		}
+
+		public void setL7ProxyDomainCustom(String l7ProxyDomainCustom) {
+			this.l7ProxyDomainCustom = l7ProxyDomainCustom;
 		}
 
 		public List<PortRange> getPortRanges() {
