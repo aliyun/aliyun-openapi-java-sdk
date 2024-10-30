@@ -1,3 +1,8 @@
+2024-10-30 Version: 1.0.7
+- Add RunSynchronizationJob API.
+- Add GetSynchronizationJob API.
+- Update ListSynchronizationJobs API.
+
 2024-07-30 Version: 1.0.6
 - Add RunSynchronizationJob API.
 - Add GetSynchronizationJob API.
