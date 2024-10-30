@@ -117,6 +117,8 @@ public class DescribeCommandsResponse extends AcsResponse {
 
 		private String resourceGroupId;
 
+		private String launcher;
+
 		private List<ParameterDefinition> parameterDefinitions;
 
 		private List<Tag> tags;
@@ -241,6 +243,14 @@ public class DescribeCommandsResponse extends AcsResponse {
 
 		public void setResourceGroupId(String resourceGroupId) {
 			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getLauncher() {
+			return this.launcher;
+		}
+
+		public void setLauncher(String launcher) {
+			this.launcher = launcher;
 		}
 
 		public List<ParameterDefinition> getParameterDefinitions() {

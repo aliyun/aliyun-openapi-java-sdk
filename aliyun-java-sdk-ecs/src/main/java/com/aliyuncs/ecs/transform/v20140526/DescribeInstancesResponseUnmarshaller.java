@@ -180,6 +180,7 @@ public class DescribeInstancesResponseUnmarshaller {
 
 			ImageOptions imageOptions = new ImageOptions();
 			imageOptions.setLoginAsNonRoot(_ctx.booleanValue("DescribeInstancesResponse.Instances["+ i +"].ImageOptions.LoginAsNonRoot"));
+			imageOptions.setCurrentOSNVMeSupported(_ctx.booleanValue("DescribeInstancesResponse.Instances["+ i +"].ImageOptions.CurrentOSNVMeSupported"));
 			instance.setImageOptions(imageOptions);
 
 			PrivateDnsNameOptions privateDnsNameOptions = new PrivateDnsNameOptions();

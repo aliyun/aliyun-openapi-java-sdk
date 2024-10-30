@@ -53,6 +53,8 @@ public class CreateCommandRequest extends RpcAcsRequest<CreateCommandResponse> {
 	private String name;
 
 	private Boolean enableParameter;
+
+	private String launcher;
 	public CreateCommandRequest() {
 		super("Ecs", "2014-05-26", "CreateCommand", "ecs");
 		setMethod(MethodType.POST);
@@ -216,6 +218,17 @@ public class CreateCommandRequest extends RpcAcsRequest<CreateCommandResponse> {
 		this.enableParameter = enableParameter;
 		if(enableParameter != null){
 			putQueryParameter("EnableParameter", enableParameter.toString());
+		}
+	}
+
+	public String getLauncher() {
+		return this.launcher;
+	}
+
+	public void setLauncher(String launcher) {
+		this.launcher = launcher;
+		if(launcher != null){
+			putQueryParameter("Launcher", launcher);
 		}
 	}
 

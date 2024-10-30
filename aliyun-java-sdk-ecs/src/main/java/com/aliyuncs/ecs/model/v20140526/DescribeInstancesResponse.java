@@ -1206,12 +1206,22 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 			private Boolean loginAsNonRoot;
 
+			private Boolean currentOSNVMeSupported;
+
 			public Boolean getLoginAsNonRoot() {
 				return this.loginAsNonRoot;
 			}
 
 			public void setLoginAsNonRoot(Boolean loginAsNonRoot) {
 				this.loginAsNonRoot = loginAsNonRoot;
+			}
+
+			public Boolean getCurrentOSNVMeSupported() {
+				return this.currentOSNVMeSupported;
+			}
+
+			public void setCurrentOSNVMeSupported(Boolean currentOSNVMeSupported) {
+				this.currentOSNVMeSupported = currentOSNVMeSupported;
 			}
 		}
 

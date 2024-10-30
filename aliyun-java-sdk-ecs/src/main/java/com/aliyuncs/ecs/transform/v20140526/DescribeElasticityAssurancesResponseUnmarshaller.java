@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.ecs.model.v20140526.DescribeElasticityAssurancesResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeElasticityAssurancesResponse.ElasticityAssuranceItem;
 import com.aliyuncs.ecs.model.v20140526.DescribeElasticityAssurancesResponse.ElasticityAssuranceItem.AllocatedResource;
+import com.aliyuncs.ecs.model.v20140526.DescribeElasticityAssurancesResponse.ElasticityAssuranceItem.AllocatedResource.ElasticityAssuranceUsage;
 import com.aliyuncs.ecs.model.v20140526.DescribeElasticityAssurancesResponse.ElasticityAssuranceItem.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -50,14 +51,27 @@ public class DescribeElasticityAssurancesResponseUnmarshaller {
 			elasticityAssuranceItem.setTotalAssuranceTimes(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].TotalAssuranceTimes"));
 			elasticityAssuranceItem.setInstanceChargeType(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].InstanceChargeType"));
 			elasticityAssuranceItem.setStartTimeType(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].StartTimeType"));
+			elasticityAssuranceItem.setElasticityAssuranceOwnerId(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].ElasticityAssuranceOwnerId"));
 
 			List<AllocatedResource> allocatedResources = new ArrayList<AllocatedResource>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].AllocatedResources.Length"); j++) {
 				AllocatedResource allocatedResource = new AllocatedResource();
 				allocatedResource.setUsedAmount(_ctx.integerValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].AllocatedResources["+ j +"].UsedAmount"));
 				allocatedResource.setTotalAmount(_ctx.integerValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].AllocatedResources["+ j +"].TotalAmount"));
+				allocatedResource.setAvailableAmount(_ctx.integerValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].AllocatedResources["+ j +"].AvailableAmount"));
 				allocatedResource.setZoneId(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].AllocatedResources["+ j +"].zoneId"));
 				allocatedResource.setInstanceType(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].AllocatedResources["+ j +"].InstanceType"));
+
+				List<ElasticityAssuranceUsage> elasticityAssuranceUsages = new ArrayList<ElasticityAssuranceUsage>();
+				for (int k = 0; k < _ctx.lengthValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].AllocatedResources["+ j +"].ElasticityAssuranceUsages.Length"); k++) {
+					ElasticityAssuranceUsage elasticityAssuranceUsage = new ElasticityAssuranceUsage();
+					elasticityAssuranceUsage.setAccountId(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].AllocatedResources["+ j +"].ElasticityAssuranceUsages["+ k +"].AccountId"));
+					elasticityAssuranceUsage.setServiceName(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].AllocatedResources["+ j +"].ElasticityAssuranceUsages["+ k +"].ServiceName"));
+					elasticityAssuranceUsage.setUsedAmount(_ctx.integerValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].AllocatedResources["+ j +"].ElasticityAssuranceUsages["+ k +"].UsedAmount"));
+
+					elasticityAssuranceUsages.add(elasticityAssuranceUsage);
+				}
+				allocatedResource.setElasticityAssuranceUsages(elasticityAssuranceUsages);
 
 				allocatedResources.add(allocatedResource);
 			}

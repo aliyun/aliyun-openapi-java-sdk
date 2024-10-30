@@ -44,6 +44,8 @@ public class ModifyCommandRequest extends RpcAcsRequest<ModifyCommandResponse> {
 	private Long ownerId;
 
 	private String name;
+
+	private String launcher;
 	public ModifyCommandRequest() {
 		super("Ecs", "2014-05-26", "ModifyCommand", "ecs");
 		setMethod(MethodType.POST);
@@ -160,6 +162,17 @@ public class ModifyCommandRequest extends RpcAcsRequest<ModifyCommandResponse> {
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
+		}
+	}
+
+	public String getLauncher() {
+		return this.launcher;
+	}
+
+	public void setLauncher(String launcher) {
+		this.launcher = launcher;
+		if(launcher != null){
+			putQueryParameter("Launcher", launcher);
 		}
 	}
 
