@@ -151,12 +151,22 @@ public class ListRtcMPUTaskDetailResponse extends AcsResponse {
 
 			private String uRL;
 
+			private Boolean isAliCdn;
+
 			public String getURL() {
 				return this.uRL;
 			}
 
 			public void setURL(String uRL) {
 				this.uRL = uRL;
+			}
+
+			public Boolean getIsAliCdn() {
+				return this.isAliCdn;
+			}
+
+			public void setIsAliCdn(Boolean isAliCdn) {
+				this.isAliCdn = isAliCdn;
 			}
 		}
 

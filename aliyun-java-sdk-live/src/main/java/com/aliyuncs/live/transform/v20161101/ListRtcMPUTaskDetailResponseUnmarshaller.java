@@ -143,6 +143,7 @@ public class ListRtcMPUTaskDetailResponseUnmarshaller {
 			for (int j = 0; j < _ctx.lengthValue("ListRtcMPUTaskDetailResponse.MPUTasks["+ i +"].MultiStreamURL.Length"); j++) {
 				MultiStreamURLItem multiStreamURLItem = new MultiStreamURLItem();
 				multiStreamURLItem.setURL(_ctx.stringValue("ListRtcMPUTaskDetailResponse.MPUTasks["+ i +"].MultiStreamURL["+ j +"].URL"));
+				multiStreamURLItem.setIsAliCdn(_ctx.booleanValue("ListRtcMPUTaskDetailResponse.MPUTasks["+ i +"].MultiStreamURL["+ j +"].IsAliCdn"));
 
 				multiStreamURL.add(multiStreamURLItem);
 			}
