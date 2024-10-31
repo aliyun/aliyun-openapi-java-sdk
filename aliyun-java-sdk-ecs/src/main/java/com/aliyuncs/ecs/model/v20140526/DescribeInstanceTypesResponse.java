@@ -137,6 +137,8 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 
 		private EnhancedNetwork enhancedNetwork;
 
+		private CpuOptions cpuOptions;
+
 		public Integer getEniTotalQuantity() {
 			return this.eniTotalQuantity;
 		}
@@ -457,6 +459,14 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 			this.enhancedNetwork = enhancedNetwork;
 		}
 
+		public CpuOptions getCpuOptions() {
+			return this.cpuOptions;
+		}
+
+		public void setCpuOptions(CpuOptions cpuOptions) {
+			this.cpuOptions = cpuOptions;
+		}
+
 		public static class NetworkCardInfo {
 
 			private Integer networkCardIndex;
@@ -490,6 +500,19 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 
 			public void setVfQueueNumberPerEni(Integer vfQueueNumberPerEni) {
 				this.vfQueueNumberPerEni = vfQueueNumberPerEni;
+			}
+		}
+
+		public static class CpuOptions {
+
+			private List<String> supportedTopologyTypes;
+
+			public List<String> getSupportedTopologyTypes() {
+				return this.supportedTopologyTypes;
+			}
+
+			public void setSupportedTopologyTypes(List<String> supportedTopologyTypes) {
+				this.supportedTopologyTypes = supportedTopologyTypes;
 			}
 		}
 	}

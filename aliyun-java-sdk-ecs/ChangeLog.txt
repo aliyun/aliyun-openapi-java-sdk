@@ -1,3 +1,6 @@
+2024-10-31 Version: 5.11.12
+- DescribeInstanceTypes add CpuOptions.
+
 2024-10-30 Version: 5.11.11
 - Support describe and modify NVMe on instance.
 
