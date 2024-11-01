@@ -155,6 +155,7 @@ public class SetApplicationSsoConfigRequest extends RpcAcsRequest<SetApplication
 			
 				putQueryParameter("SamlSsoConfig.SignatureAlgorithm" , samlSsoConfig.getSignatureAlgorithm());
 				putQueryParameter("SamlSsoConfig.NameIdFormat" , samlSsoConfig.getNameIdFormat());
+				putQueryParameter("SamlSsoConfig.IdPEntityId" , samlSsoConfig.getIdPEntityId());
 				putQueryParameter("SamlSsoConfig.AssertionSigned" , samlSsoConfig.getAssertionSigned());
 				putQueryParameter("SamlSsoConfig.SpSsoAcsUrl" , samlSsoConfig.getSpSsoAcsUrl());
 				putQueryParameter("SamlSsoConfig.NameIdValueExpression" , samlSsoConfig.getNameIdValueExpression());
@@ -355,6 +356,8 @@ public class SetApplicationSsoConfigRequest extends RpcAcsRequest<SetApplication
 
 		private String nameIdFormat;
 
+		private String idPEntityId;
+
 		private Boolean assertionSigned;
 
 		private String spSsoAcsUrl;
@@ -383,6 +386,14 @@ public class SetApplicationSsoConfigRequest extends RpcAcsRequest<SetApplication
 
 		public void setNameIdFormat(String nameIdFormat) {
 			this.nameIdFormat = nameIdFormat;
+		}
+
+		public String getIdPEntityId() {
+			return this.idPEntityId;
+		}
+
+		public void setIdPEntityId(String idPEntityId) {
+			this.idPEntityId = idPEntityId;
 		}
 
 		public Boolean getAssertionSigned() {

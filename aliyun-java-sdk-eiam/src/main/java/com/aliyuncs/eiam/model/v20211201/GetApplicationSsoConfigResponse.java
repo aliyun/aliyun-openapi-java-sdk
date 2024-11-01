@@ -125,6 +125,8 @@ public class GetApplicationSsoConfigResponse extends AcsResponse {
 
 			private Boolean assertionSigned;
 
+			private String idPEntityId;
+
 			private List<AttributeStatement> attributeStatements;
 
 			public String getSpSsoAcsUrl() {
@@ -189,6 +191,14 @@ public class GetApplicationSsoConfigResponse extends AcsResponse {
 
 			public void setAssertionSigned(Boolean assertionSigned) {
 				this.assertionSigned = assertionSigned;
+			}
+
+			public String getIdPEntityId() {
+				return this.idPEntityId;
+			}
+
+			public void setIdPEntityId(String idPEntityId) {
+				this.idPEntityId = idPEntityId;
 			}
 
 			public List<AttributeStatement> getAttributeStatements() {

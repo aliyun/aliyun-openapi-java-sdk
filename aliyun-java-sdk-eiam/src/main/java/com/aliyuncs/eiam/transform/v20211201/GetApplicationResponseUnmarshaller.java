@@ -14,6 +14,9 @@
 
 package com.aliyuncs.eiam.transform.v20211201;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.eiam.model.v20211201.GetApplicationResponse;
 import com.aliyuncs.eiam.model.v20211201.GetApplicationResponse.Application;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -26,23 +29,29 @@ public class GetApplicationResponseUnmarshaller {
 		getApplicationResponse.setRequestId(_ctx.stringValue("GetApplicationResponse.RequestId"));
 
 		Application application = new Application();
-		application.setInstanceId(_ctx.stringValue("GetApplicationResponse.Application.InstanceId"));
-		application.setApplicationId(_ctx.stringValue("GetApplicationResponse.Application.ApplicationId"));
-		application.setClientId(_ctx.stringValue("GetApplicationResponse.Application.ClientId"));
-		application.setLogoUrl(_ctx.stringValue("GetApplicationResponse.Application.LogoUrl"));
-		application.setApplicationName(_ctx.stringValue("GetApplicationResponse.Application.ApplicationName"));
-		application.setDescription(_ctx.stringValue("GetApplicationResponse.Application.Description"));
-		application.setApplicationSourceType(_ctx.stringValue("GetApplicationResponse.Application.ApplicationSourceType"));
-		application.setSsoType(_ctx.stringValue("GetApplicationResponse.Application.SsoType"));
-		application.setFeatures(_ctx.stringValue("GetApplicationResponse.Application.Features"));
-		application.setStatus(_ctx.stringValue("GetApplicationResponse.Application.Status"));
-		application.setCreateTime(_ctx.longValue("GetApplicationResponse.Application.CreateTime"));
-		application.setUpdateTime(_ctx.longValue("GetApplicationResponse.Application.UpdateTime"));
-		application.setAuthorizationType(_ctx.stringValue("GetApplicationResponse.Application.AuthorizationType"));
 		application.setApiInvokeStatus(_ctx.stringValue("GetApplicationResponse.Application.ApiInvokeStatus"));
-		application.setServiceManaged(_ctx.booleanValue("GetApplicationResponse.Application.ServiceManaged"));
-		application.setManagedServiceCode(_ctx.stringValue("GetApplicationResponse.Application.ManagedServiceCode"));
+		application.setApplicationId(_ctx.stringValue("GetApplicationResponse.Application.ApplicationId"));
+		application.setApplicationName(_ctx.stringValue("GetApplicationResponse.Application.ApplicationName"));
+		application.setApplicationSourceType(_ctx.stringValue("GetApplicationResponse.Application.ApplicationSourceType"));
 		application.setApplicationTemplateId(_ctx.stringValue("GetApplicationResponse.Application.ApplicationTemplateId"));
+		application.setAuthorizationType(_ctx.stringValue("GetApplicationResponse.Application.AuthorizationType"));
+		application.setClientId(_ctx.stringValue("GetApplicationResponse.Application.ClientId"));
+		application.setCreateTime(_ctx.longValue("GetApplicationResponse.Application.CreateTime"));
+		application.setDescription(_ctx.stringValue("GetApplicationResponse.Application.Description"));
+		application.setFeatures(_ctx.stringValue("GetApplicationResponse.Application.Features"));
+		application.setInstanceId(_ctx.stringValue("GetApplicationResponse.Application.InstanceId"));
+		application.setLogoUrl(_ctx.stringValue("GetApplicationResponse.Application.LogoUrl"));
+		application.setManagedServiceCode(_ctx.stringValue("GetApplicationResponse.Application.ManagedServiceCode"));
+		application.setServiceManaged(_ctx.booleanValue("GetApplicationResponse.Application.ServiceManaged"));
+		application.setSsoType(_ctx.stringValue("GetApplicationResponse.Application.SsoType"));
+		application.setStatus(_ctx.stringValue("GetApplicationResponse.Application.Status"));
+		application.setUpdateTime(_ctx.longValue("GetApplicationResponse.Application.UpdateTime"));
+
+		List<String> applicationVisibility = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("GetApplicationResponse.Application.ApplicationVisibility.Length"); i++) {
+			applicationVisibility.add(_ctx.stringValue("GetApplicationResponse.Application.ApplicationVisibility["+ i +"]"));
+		}
+		application.setApplicationVisibility(applicationVisibility);
 		getApplicationResponse.setApplication(application);
 	 
 	 	return getApplicationResponse;
