@@ -479,6 +479,10 @@ public class GetLoadBalancerAttributeResponse extends AcsResponse {
 
 			private String ipv6AddressHcStatus;
 
+			private List<String> ipv4LocalAddresses;
+
+			private List<String> ipv6LocalAddresses;
+
 			public String getAddress() {
 				return this.address;
 			}
@@ -533,6 +537,22 @@ public class GetLoadBalancerAttributeResponse extends AcsResponse {
 
 			public void setIpv6AddressHcStatus(String ipv6AddressHcStatus) {
 				this.ipv6AddressHcStatus = ipv6AddressHcStatus;
+			}
+
+			public List<String> getIpv4LocalAddresses() {
+				return this.ipv4LocalAddresses;
+			}
+
+			public void setIpv4LocalAddresses(List<String> ipv4LocalAddresses) {
+				this.ipv4LocalAddresses = ipv4LocalAddresses;
+			}
+
+			public List<String> getIpv6LocalAddresses() {
+				return this.ipv6LocalAddresses;
+			}
+
+			public void setIpv6LocalAddresses(List<String> ipv6LocalAddresses) {
+				this.ipv6LocalAddresses = ipv6LocalAddresses;
 			}
 		}
 	}
