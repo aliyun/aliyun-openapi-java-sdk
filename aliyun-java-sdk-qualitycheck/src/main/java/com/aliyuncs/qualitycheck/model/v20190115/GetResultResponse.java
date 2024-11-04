@@ -1582,6 +1582,8 @@ public class GetResultResponse extends AcsResponse {
 
 			private String taskConfigName;
 
+			private String customerName;
+
 			public String getRemark13() {
 				return this.remark13;
 			}
@@ -1804,6 +1806,14 @@ public class GetResultResponse extends AcsResponse {
 
 			public void setTaskConfigName(String taskConfigName) {
 				this.taskConfigName = taskConfigName;
+			}
+
+			public String getCustomerName() {
+				return this.customerName;
+			}
+
+			public void setCustomerName(String customerName) {
+				this.customerName = customerName;
 			}
 		}
 

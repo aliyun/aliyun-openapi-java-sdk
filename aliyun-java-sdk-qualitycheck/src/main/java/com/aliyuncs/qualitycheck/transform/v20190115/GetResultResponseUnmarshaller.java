@@ -118,6 +118,7 @@ public class GetResultResponseUnmarshaller {
 			recording.setCallTime(_ctx.stringValue("GetResultResponse.Data["+ i +"].Recording.CallTime"));
 			recording.setTaskConfigId(_ctx.longValue("GetResultResponse.Data["+ i +"].Recording.TaskConfigId"));
 			recording.setTaskConfigName(_ctx.stringValue("GetResultResponse.Data["+ i +"].Recording.TaskConfigName"));
+			recording.setCustomerName(_ctx.stringValue("GetResultResponse.Data["+ i +"].Recording.CustomerName"));
 			resultInfo.setRecording(recording);
 
 			Agent agent = new Agent();
