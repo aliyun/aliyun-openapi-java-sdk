@@ -33,6 +33,7 @@ public class StopExecutionResponseUnmarshaller {
 		stopExecutionResponse.setExternalOutputUri(_ctx.stringValue("StopExecutionResponse.ExternalOutputUri"));
 		stopExecutionResponse.setName(_ctx.stringValue("StopExecutionResponse.Name"));
 		stopExecutionResponse.setInput(_ctx.stringValue("StopExecutionResponse.Input"));
+		stopExecutionResponse.setRoleArn(_ctx.stringValue("StopExecutionResponse.RoleArn"));
 	 
 	 	return stopExecutionResponse;
 	}

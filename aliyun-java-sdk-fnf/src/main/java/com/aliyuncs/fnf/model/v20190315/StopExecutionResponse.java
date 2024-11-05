@@ -46,6 +46,8 @@ public class StopExecutionResponse extends AcsResponse {
 
 	private String input;
 
+	private String roleArn;
+
 	public String getStatus() {
 		return this.status;
 	}
@@ -132,6 +134,14 @@ public class StopExecutionResponse extends AcsResponse {
 
 	public void setInput(String input) {
 		this.input = input;
+	}
+
+	public String getRoleArn() {
+		return this.roleArn;
+	}
+
+	public void setRoleArn(String roleArn) {
+		this.roleArn = roleArn;
 	}
 
 	@Override

@@ -1,3 +1,6 @@
+2024-11-05 Version: 1.8.7
+- Fix map run api data type.
+
 2024-03-26 Version: 1.8.6
 - DeleteFlow、DeleteSchedule Parameters move to body.
 
