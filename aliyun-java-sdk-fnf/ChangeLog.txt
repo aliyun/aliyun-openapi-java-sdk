@@ -1,3 +1,6 @@
+2024-11-05 Version: 1.9.0
+- Generated 2019-03-15 for `fnf`.
+
 2024-11-05 Version: 1.8.7
 - Fix map run api data type.
 
