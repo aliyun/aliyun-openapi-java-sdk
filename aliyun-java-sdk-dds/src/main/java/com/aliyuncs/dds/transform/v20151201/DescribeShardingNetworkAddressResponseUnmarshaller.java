@@ -57,6 +57,8 @@ public class DescribeShardingNetworkAddressResponseUnmarshaller {
 			networkAddress.setNetworkAddress(_ctx.stringValue("DescribeShardingNetworkAddressResponse.NetworkAddresses["+ i +"].NetworkAddress"));
 			networkAddress.setNodeId(_ctx.stringValue("DescribeShardingNetworkAddressResponse.NetworkAddresses["+ i +"].NodeId"));
 			networkAddress.setIPAddress(_ctx.stringValue("DescribeShardingNetworkAddressResponse.NetworkAddresses["+ i +"].IPAddress"));
+			networkAddress.setConnectionType(_ctx.stringValue("DescribeShardingNetworkAddressResponse.NetworkAddresses["+ i +"].ConnectionType"));
+			networkAddress.setTxtRecord(_ctx.stringValue("DescribeShardingNetworkAddressResponse.NetworkAddresses["+ i +"].TxtRecord"));
 
 			networkAddresses.add(networkAddress);
 		}

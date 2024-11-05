@@ -95,6 +95,8 @@ public class DescribeClusterBackupsResponse extends AcsResponse {
 
 		private String attachLogStatus;
 
+		private String engineVersion;
+
 		private List<Backup> backups;
 
 		private ExtraInfo extraInfo;
@@ -169,6 +171,14 @@ public class DescribeClusterBackupsResponse extends AcsResponse {
 
 		public void setAttachLogStatus(String attachLogStatus) {
 			this.attachLogStatus = attachLogStatus;
+		}
+
+		public String getEngineVersion() {
+			return this.engineVersion;
+		}
+
+		public void setEngineVersion(String engineVersion) {
+			this.engineVersion = engineVersion;
 		}
 
 		public List<Backup> getBackups() {

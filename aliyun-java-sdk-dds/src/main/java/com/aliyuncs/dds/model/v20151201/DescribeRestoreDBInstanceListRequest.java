@@ -15,6 +15,7 @@
 package com.aliyuncs.dds.model.v20151201;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.dds.Endpoint;
 
@@ -22,14 +23,16 @@ import com.aliyuncs.dds.Endpoint;
  * @author auto create
  * @version 
  */
-public class UpgradeDBInstanceEngineVersionRequest extends RpcAcsRequest<UpgradeDBInstanceEngineVersionResponse> {
+public class DescribeRestoreDBInstanceListRequest extends RpcAcsRequest<DescribeRestoreDBInstanceListResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String engineVersion;
+	private String creationTimeAfter;
 
-	private Integer switchMode;
+	private Integer pageNumber;
+
+	private Integer pageSize;
 
 	private String dBInstanceId;
 
@@ -38,8 +41,9 @@ public class UpgradeDBInstanceEngineVersionRequest extends RpcAcsRequest<Upgrade
 	private String ownerAccount;
 
 	private Long ownerId;
-	public UpgradeDBInstanceEngineVersionRequest() {
-		super("Dds", "2015-12-01", "UpgradeDBInstanceEngineVersion", "dds");
+	public DescribeRestoreDBInstanceListRequest() {
+		super("Dds", "2015-12-01", "DescribeRestoreDBInstanceList", "dds");
+		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -58,25 +62,36 @@ public class UpgradeDBInstanceEngineVersionRequest extends RpcAcsRequest<Upgrade
 		}
 	}
 
-	public String getEngineVersion() {
-		return this.engineVersion;
+	public String getCreationTimeAfter() {
+		return this.creationTimeAfter;
 	}
 
-	public void setEngineVersion(String engineVersion) {
-		this.engineVersion = engineVersion;
-		if(engineVersion != null){
-			putQueryParameter("EngineVersion", engineVersion);
+	public void setCreationTimeAfter(String creationTimeAfter) {
+		this.creationTimeAfter = creationTimeAfter;
+		if(creationTimeAfter != null){
+			putQueryParameter("CreationTimeAfter", creationTimeAfter);
 		}
 	}
 
-	public Integer getSwitchMode() {
-		return this.switchMode;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setSwitchMode(Integer switchMode) {
-		this.switchMode = switchMode;
-		if(switchMode != null){
-			putQueryParameter("SwitchMode", switchMode.toString());
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -125,8 +140,8 @@ public class UpgradeDBInstanceEngineVersionRequest extends RpcAcsRequest<Upgrade
 	}
 
 	@Override
-	public Class<UpgradeDBInstanceEngineVersionResponse> getResponseClass() {
-		return UpgradeDBInstanceEngineVersionResponse.class;
+	public Class<DescribeRestoreDBInstanceListResponse> getResponseClass() {
+		return DescribeRestoreDBInstanceListResponse.class;
 	}
 
 }

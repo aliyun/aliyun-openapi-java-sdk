@@ -27,6 +27,8 @@ public class CheckRecoveryConditionRequest extends RpcAcsRequest<CheckRecoveryCo
 
 	private Long resourceOwnerId;
 
+	private String engineVersion;
+
 	private String srcRegion;
 
 	private String resourceGroupId;
@@ -67,6 +69,17 @@ public class CheckRecoveryConditionRequest extends RpcAcsRequest<CheckRecoveryCo
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getEngineVersion() {
+		return this.engineVersion;
+	}
+
+	public void setEngineVersion(String engineVersion) {
+		this.engineVersion = engineVersion;
+		if(engineVersion != null){
+			putQueryParameter("EngineVersion", engineVersion);
 		}
 	}
 

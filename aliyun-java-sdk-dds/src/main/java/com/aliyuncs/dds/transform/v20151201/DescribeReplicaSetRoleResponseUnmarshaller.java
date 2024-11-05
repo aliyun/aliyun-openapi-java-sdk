@@ -38,6 +38,7 @@ public class DescribeReplicaSetRoleResponseUnmarshaller {
 			replicaSet.setConnectionDomain(_ctx.stringValue("DescribeReplicaSetRoleResponse.ReplicaSets["+ i +"].ConnectionDomain"));
 			replicaSet.setNetworkType(_ctx.stringValue("DescribeReplicaSetRoleResponse.ReplicaSets["+ i +"].NetworkType"));
 			replicaSet.setRoleId(_ctx.stringValue("DescribeReplicaSetRoleResponse.ReplicaSets["+ i +"].RoleId"));
+			replicaSet.setConnectionType(_ctx.stringValue("DescribeReplicaSetRoleResponse.ReplicaSets["+ i +"].ConnectionType"));
 
 			replicaSets.add(replicaSet);
 		}

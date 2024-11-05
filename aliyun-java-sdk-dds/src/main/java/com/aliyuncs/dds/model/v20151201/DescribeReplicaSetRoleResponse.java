@@ -69,6 +69,8 @@ public class DescribeReplicaSetRoleResponse extends AcsResponse {
 
 		private String roleId;
 
+		private String connectionType;
+
 		public String getConnectionPort() {
 			return this.connectionPort;
 		}
@@ -115,6 +117,14 @@ public class DescribeReplicaSetRoleResponse extends AcsResponse {
 
 		public void setRoleId(String roleId) {
 			this.roleId = roleId;
+		}
+
+		public String getConnectionType() {
+			return this.connectionType;
+		}
+
+		public void setConnectionType(String connectionType) {
+			this.connectionType = connectionType;
 		}
 	}
 

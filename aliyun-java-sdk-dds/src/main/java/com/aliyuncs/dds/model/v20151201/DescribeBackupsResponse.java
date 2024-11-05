@@ -107,6 +107,8 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 		private Boolean isAvail;
 
+		private String engineVersion;
+
 		public String getBackupStatus() {
 			return this.backupStatus;
 		}
@@ -225,6 +227,14 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 		public void setIsAvail(Boolean isAvail) {
 			this.isAvail = isAvail;
+		}
+
+		public String getEngineVersion() {
+			return this.engineVersion;
+		}
+
+		public void setEngineVersion(String engineVersion) {
+			this.engineVersion = engineVersion;
 		}
 	}
 

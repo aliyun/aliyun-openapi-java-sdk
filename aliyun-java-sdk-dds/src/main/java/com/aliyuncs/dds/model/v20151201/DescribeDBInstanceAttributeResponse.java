@@ -719,6 +719,8 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 			private String status;
 
+			private String currentKernelVersion;
+
 			public String getVpcCloudInstanceId() {
 				return this.vpcCloudInstanceId;
 			}
@@ -814,6 +816,14 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 			public void setStatus(String status) {
 				this.status = status;
 			}
+
+			public String getCurrentKernelVersion() {
+				return this.currentKernelVersion;
+			}
+
+			public void setCurrentKernelVersion(String currentKernelVersion) {
+				this.currentKernelVersion = currentKernelVersion;
+			}
 		}
 
 		public static class ShardAttribute {
@@ -841,6 +851,8 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 			private String status;
 
 			private String maxDiskMbps;
+
+			private String currentKernelVersion;
 
 			public String getLockMode() {
 				return this.lockMode;
@@ -937,6 +949,14 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 			public void setMaxDiskMbps(String maxDiskMbps) {
 				this.maxDiskMbps = maxDiskMbps;
 			}
+
+			public String getCurrentKernelVersion() {
+				return this.currentKernelVersion;
+			}
+
+			public void setCurrentKernelVersion(String currentKernelVersion) {
+				this.currentKernelVersion = currentKernelVersion;
+			}
 		}
 
 		public static class ConfigserverAttribute {
@@ -960,6 +980,8 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 			private Integer nodeStorage;
 
 			private String status;
+
+			private String currentKernelVersion;
 
 			public Integer getMaxIOPS() {
 				return this.maxIOPS;
@@ -1039,6 +1061,14 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 			public void setStatus(String status) {
 				this.status = status;
+			}
+
+			public String getCurrentKernelVersion() {
+				return this.currentKernelVersion;
+			}
+
+			public void setCurrentKernelVersion(String currentKernelVersion) {
+				this.currentKernelVersion = currentKernelVersion;
 			}
 		}
 

@@ -150,6 +150,10 @@ public class DescribeShardingNetworkAddressResponse extends AcsResponse {
 
 		private String iPAddress;
 
+		private String connectionType;
+
+		private String txtRecord;
+
 		public String getNodeType() {
 			return this.nodeType;
 		}
@@ -228,6 +232,22 @@ public class DescribeShardingNetworkAddressResponse extends AcsResponse {
 
 		public void setIPAddress(String iPAddress) {
 			this.iPAddress = iPAddress;
+		}
+
+		public String getConnectionType() {
+			return this.connectionType;
+		}
+
+		public void setConnectionType(String connectionType) {
+			this.connectionType = connectionType;
+		}
+
+		public String getTxtRecord() {
+			return this.txtRecord;
+		}
+
+		public void setTxtRecord(String txtRecord) {
+			this.txtRecord = txtRecord;
 		}
 	}
 
