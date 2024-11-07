@@ -1081,6 +1081,7 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".NetworkInterfaceId" , networkInterfaces.get(depth1).getNetworkInterfaceId());
 				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".RxQueueSize" , networkInterfaces.get(depth1).getRxQueueSize());
 				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".TxQueueSize" , networkInterfaces.get(depth1).getTxQueueSize());
+				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".SourceDestCheck" , networkInterfaces.get(depth1).getSourceDestCheck());
 			}
 		}	
 	}
@@ -1467,6 +1468,8 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 		private Integer txQueueSize;
 
+		private Boolean sourceDestCheck;
+
 		public String getVSwitchId() {
 			return this.vSwitchId;
 		}
@@ -1601,6 +1604,14 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 		public void setTxQueueSize(Integer txQueueSize) {
 			this.txQueueSize = txQueueSize;
+		}
+
+		public Boolean getSourceDestCheck() {
+			return this.sourceDestCheck;
+		}
+
+		public void setSourceDestCheck(Boolean sourceDestCheck) {
+			this.sourceDestCheck = sourceDestCheck;
 		}
 	}
 

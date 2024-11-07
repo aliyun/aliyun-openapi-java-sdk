@@ -45,6 +45,7 @@ public class CreateNetworkInterfaceResponseUnmarshaller {
 		createNetworkInterfaceResponse.setResourceGroupId(_ctx.stringValue("CreateNetworkInterfaceResponse.ResourceGroupId"));
 		createNetworkInterfaceResponse.setZoneId(_ctx.stringValue("CreateNetworkInterfaceResponse.ZoneId"));
 		createNetworkInterfaceResponse.setPrivateIpAddress(_ctx.stringValue("CreateNetworkInterfaceResponse.PrivateIpAddress"));
+		createNetworkInterfaceResponse.setSourceDestCheck(_ctx.booleanValue("CreateNetworkInterfaceResponse.SourceDestCheck"));
 
 		List<String> securityGroupIds = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("CreateNetworkInterfaceResponse.SecurityGroupIds.Length"); i++) {

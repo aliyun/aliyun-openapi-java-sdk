@@ -70,6 +70,8 @@ public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkIn
 
 	private Integer ipv6PrefixCount;
 
+	private Boolean sourceDestCheck;
+
 	private String instanceType;
 
 	private Integer txQueueSize;
@@ -356,6 +358,17 @@ public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkIn
 		this.ipv6PrefixCount = ipv6PrefixCount;
 		if(ipv6PrefixCount != null){
 			putQueryParameter("Ipv6PrefixCount", ipv6PrefixCount.toString());
+		}
+	}
+
+	public Boolean getSourceDestCheck() {
+		return this.sourceDestCheck;
+	}
+
+	public void setSourceDestCheck(Boolean sourceDestCheck) {
+		this.sourceDestCheck = sourceDestCheck;
+		if(sourceDestCheck != null){
+			putQueryParameter("SourceDestCheck", sourceDestCheck.toString());
 		}
 	}
 

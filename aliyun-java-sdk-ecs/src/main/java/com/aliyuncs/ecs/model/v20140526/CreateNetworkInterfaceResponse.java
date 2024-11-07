@@ -55,6 +55,8 @@ public class CreateNetworkInterfaceResponse extends AcsResponse {
 
 	private String privateIpAddress;
 
+	private Boolean sourceDestCheck;
+
 	private List<PrivateIpSet> privateIpSets;
 
 	private List<Tag> tags;
@@ -185,6 +187,14 @@ public class CreateNetworkInterfaceResponse extends AcsResponse {
 
 	public void setPrivateIpAddress(String privateIpAddress) {
 		this.privateIpAddress = privateIpAddress;
+	}
+
+	public Boolean getSourceDestCheck() {
+		return this.sourceDestCheck;
+	}
+
+	public void setSourceDestCheck(Boolean sourceDestCheck) {
+		this.sourceDestCheck = sourceDestCheck;
 	}
 
 	public List<PrivateIpSet> getPrivateIpSets() {
