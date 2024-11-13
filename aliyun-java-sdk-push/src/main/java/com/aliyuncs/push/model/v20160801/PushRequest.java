@@ -27,6 +27,8 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 
 	private Integer androidNotificationBarType;
 
+	private Integer androidMessageOppoNotifyLevel;
+
 	private String deviceType;
 
 	private String pushTime;
@@ -215,6 +217,8 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 
 	private String harmonyInboxContent;
 
+	private String androidMessageOppoCategory;
+
 	private String androidXiaoMiActivity;
 	public PushRequest() {
 		super("Push", "2016-08-01", "Push");
@@ -233,6 +237,17 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 		this.androidNotificationBarType = androidNotificationBarType;
 		if(androidNotificationBarType != null){
 			putQueryParameter("AndroidNotificationBarType", androidNotificationBarType.toString());
+		}
+	}
+
+	public Integer getAndroidMessageOppoNotifyLevel() {
+		return this.androidMessageOppoNotifyLevel;
+	}
+
+	public void setAndroidMessageOppoNotifyLevel(Integer androidMessageOppoNotifyLevel) {
+		this.androidMessageOppoNotifyLevel = androidMessageOppoNotifyLevel;
+		if(androidMessageOppoNotifyLevel != null){
+			putQueryParameter("AndroidMessageOppoNotifyLevel", androidMessageOppoNotifyLevel.toString());
 		}
 	}
 
@@ -1267,6 +1282,17 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 		this.harmonyInboxContent = harmonyInboxContent;
 		if(harmonyInboxContent != null){
 			putQueryParameter("HarmonyInboxContent", harmonyInboxContent);
+		}
+	}
+
+	public String getAndroidMessageOppoCategory() {
+		return this.androidMessageOppoCategory;
+	}
+
+	public void setAndroidMessageOppoCategory(String androidMessageOppoCategory) {
+		this.androidMessageOppoCategory = androidMessageOppoCategory;
+		if(androidMessageOppoCategory != null){
+			putQueryParameter("AndroidMessageOppoCategory", androidMessageOppoCategory);
 		}
 	}
 
