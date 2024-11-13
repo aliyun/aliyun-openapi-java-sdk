@@ -35,7 +35,7 @@ public class ReleaseSecretNoRequest extends RpcAcsRequest<ReleaseSecretNoRespons
 
 	private String poolKey;
 	public ReleaseSecretNoRequest() {
-		super("Dyplsapi", "2017-05-25", "ReleaseSecretNo");
+		super("Dyplsapi", "2017-05-25", "ReleaseSecretNo", "dypls");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

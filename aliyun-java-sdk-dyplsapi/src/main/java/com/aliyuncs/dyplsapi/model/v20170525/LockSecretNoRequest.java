@@ -35,7 +35,7 @@ public class LockSecretNoRequest extends RpcAcsRequest<LockSecretNoResponse> {
 
 	private String poolKey;
 	public LockSecretNoRequest() {
-		super("Dyplsapi", "2017-05-25", "LockSecretNo");
+		super("Dyplsapi", "2017-05-25", "LockSecretNo", "dypls");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

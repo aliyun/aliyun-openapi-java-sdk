@@ -35,7 +35,7 @@ public class QuerySecretNoDetailRequest extends RpcAcsRequest<QuerySecretNoDetai
 
 	private String poolKey;
 	public QuerySecretNoDetailRequest() {
-		super("Dyplsapi", "2017-05-25", "QuerySecretNoDetail");
+		super("Dyplsapi", "2017-05-25", "QuerySecretNoDetail", "dypls");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

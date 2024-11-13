@@ -15,6 +15,7 @@
 package com.aliyuncs.dyplsapi.model.v20170525;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.dyplsapi.Endpoint;
 
@@ -22,38 +23,34 @@ import com.aliyuncs.dyplsapi.Endpoint;
  * @author auto create
  * @version 
  */
-public class QuerySecretNoRemainRequest extends RpcAcsRequest<QuerySecretNoRemainResponse> {
+public class BindXBRequest extends RpcAcsRequest<BindXBResponse> {
 	   
-
-	private Long specId;
 
 	private Long resourceOwnerId;
 
-	private String city;
+	private Long callerParentId;
 
-	private String secretNo;
+	private String telX;
+
+	private String reqId;
+
+	private String telB;
+
+	private String userData;
+
+	private String customerPoolKey;
 
 	private String resourceOwnerAccount;
 
 	private Long ownerId;
-	public QuerySecretNoRemainRequest() {
-		super("Dyplsapi", "2017-05-25", "QuerySecretNoRemain", "dypls");
+	public BindXBRequest() {
+		super("Dyplsapi", "2017-05-25", "BindXB", "dypls");
+		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getSpecId() {
-		return this.specId;
-	}
-
-	public void setSpecId(Long specId) {
-		this.specId = specId;
-		if(specId != null){
-			putQueryParameter("SpecId", specId.toString());
-		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -67,25 +64,69 @@ public class QuerySecretNoRemainRequest extends RpcAcsRequest<QuerySecretNoRemai
 		}
 	}
 
-	public String getCity() {
-		return this.city;
+	public Long getCallerParentId() {
+		return this.callerParentId;
 	}
 
-	public void setCity(String city) {
-		this.city = city;
-		if(city != null){
-			putQueryParameter("City", city);
+	public void setCallerParentId(Long callerParentId) {
+		this.callerParentId = callerParentId;
+		if(callerParentId != null){
+			putQueryParameter("CallerParentId", callerParentId.toString());
 		}
 	}
 
-	public String getSecretNo() {
-		return this.secretNo;
+	public String getTelX() {
+		return this.telX;
 	}
 
-	public void setSecretNo(String secretNo) {
-		this.secretNo = secretNo;
-		if(secretNo != null){
-			putQueryParameter("SecretNo", secretNo);
+	public void setTelX(String telX) {
+		this.telX = telX;
+		if(telX != null){
+			putQueryParameter("TelX", telX);
+		}
+	}
+
+	public String getReqId() {
+		return this.reqId;
+	}
+
+	public void setReqId(String reqId) {
+		this.reqId = reqId;
+		if(reqId != null){
+			putQueryParameter("ReqId", reqId);
+		}
+	}
+
+	public String getTelB() {
+		return this.telB;
+	}
+
+	public void setTelB(String telB) {
+		this.telB = telB;
+		if(telB != null){
+			putQueryParameter("TelB", telB);
+		}
+	}
+
+	public String getUserData() {
+		return this.userData;
+	}
+
+	public void setUserData(String userData) {
+		this.userData = userData;
+		if(userData != null){
+			putQueryParameter("UserData", userData);
+		}
+	}
+
+	public String getCustomerPoolKey() {
+		return this.customerPoolKey;
+	}
+
+	public void setCustomerPoolKey(String customerPoolKey) {
+		this.customerPoolKey = customerPoolKey;
+		if(customerPoolKey != null){
+			putQueryParameter("CustomerPoolKey", customerPoolKey);
 		}
 	}
 
@@ -112,8 +153,8 @@ public class QuerySecretNoRemainRequest extends RpcAcsRequest<QuerySecretNoRemai
 	}
 
 	@Override
-	public Class<QuerySecretNoRemainResponse> getResponseClass() {
-		return QuerySecretNoRemainResponse.class;
+	public Class<BindXBResponse> getResponseClass() {
+		return BindXBResponse.class;
 	}
 
 }

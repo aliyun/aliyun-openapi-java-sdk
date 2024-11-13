@@ -65,7 +65,7 @@ public class CreatePickUpWaybillRequest extends RpcAcsRequest<CreatePickUpWaybil
 
 	private String consigneePhone;
 	public CreatePickUpWaybillRequest() {
-		super("Dyplsapi", "2017-05-25", "CreatePickUpWaybill");
+		super("Dyplsapi", "2017-05-25", "CreatePickUpWaybill", "dypls");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

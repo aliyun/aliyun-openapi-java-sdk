@@ -15,6 +15,7 @@
 package com.aliyuncs.dyplsapi.model.v20170525;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.dyplsapi.Endpoint;
 
@@ -22,24 +23,31 @@ import com.aliyuncs.dyplsapi.Endpoint;
  * @author auto create
  * @version 
  */
-public class UnbindSubscriptionRequest extends RpcAcsRequest<UnbindSubscriptionResponse> {
+public class BindAXBCallRequest extends RpcAcsRequest<BindAXBCallResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String productType;
+	private Long callerParentId;
 
-	private String subsId;
+	private String reqId;
 
-	private String secretNo;
+	private String telA;
+
+	private String userData;
+
+	private String customerPoolKey;
 
 	private String resourceOwnerAccount;
 
 	private Long ownerId;
 
-	private String poolKey;
-	public UnbindSubscriptionRequest() {
-		super("Dyplsapi", "2017-05-25", "UnbindSubscription", "dypls");
+	private String authId;
+
+	private Long expiration;
+	public BindAXBCallRequest() {
+		super("Dyplsapi", "2017-05-25", "BindAXBCall", "dypls");
+		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -58,36 +66,58 @@ public class UnbindSubscriptionRequest extends RpcAcsRequest<UnbindSubscriptionR
 		}
 	}
 
-	public String getProductType() {
-		return this.productType;
+	public Long getCallerParentId() {
+		return this.callerParentId;
 	}
 
-	public void setProductType(String productType) {
-		this.productType = productType;
-		if(productType != null){
-			putQueryParameter("ProductType", productType);
+	public void setCallerParentId(Long callerParentId) {
+		this.callerParentId = callerParentId;
+		if(callerParentId != null){
+			putQueryParameter("CallerParentId", callerParentId.toString());
 		}
 	}
 
-	public String getSubsId() {
-		return this.subsId;
+	public String getReqId() {
+		return this.reqId;
 	}
 
-	public void setSubsId(String subsId) {
-		this.subsId = subsId;
-		if(subsId != null){
-			putQueryParameter("SubsId", subsId);
+	public void setReqId(String reqId) {
+		this.reqId = reqId;
+		if(reqId != null){
+			putQueryParameter("ReqId", reqId);
 		}
 	}
 
-	public String getSecretNo() {
-		return this.secretNo;
+	public String getTelA() {
+		return this.telA;
 	}
 
-	public void setSecretNo(String secretNo) {
-		this.secretNo = secretNo;
-		if(secretNo != null){
-			putQueryParameter("SecretNo", secretNo);
+	public void setTelA(String telA) {
+		this.telA = telA;
+		if(telA != null){
+			putQueryParameter("TelA", telA);
+		}
+	}
+
+	public String getUserData() {
+		return this.userData;
+	}
+
+	public void setUserData(String userData) {
+		this.userData = userData;
+		if(userData != null){
+			putQueryParameter("UserData", userData);
+		}
+	}
+
+	public String getCustomerPoolKey() {
+		return this.customerPoolKey;
+	}
+
+	public void setCustomerPoolKey(String customerPoolKey) {
+		this.customerPoolKey = customerPoolKey;
+		if(customerPoolKey != null){
+			putQueryParameter("CustomerPoolKey", customerPoolKey);
 		}
 	}
 
@@ -113,20 +143,31 @@ public class UnbindSubscriptionRequest extends RpcAcsRequest<UnbindSubscriptionR
 		}
 	}
 
-	public String getPoolKey() {
-		return this.poolKey;
+	public String getAuthId() {
+		return this.authId;
 	}
 
-	public void setPoolKey(String poolKey) {
-		this.poolKey = poolKey;
-		if(poolKey != null){
-			putQueryParameter("PoolKey", poolKey);
+	public void setAuthId(String authId) {
+		this.authId = authId;
+		if(authId != null){
+			putQueryParameter("AuthId", authId);
+		}
+	}
+
+	public Long getExpiration() {
+		return this.expiration;
+	}
+
+	public void setExpiration(Long expiration) {
+		this.expiration = expiration;
+		if(expiration != null){
+			putQueryParameter("Expiration", expiration.toString());
 		}
 	}
 
 	@Override
-	public Class<UnbindSubscriptionResponse> getResponseClass() {
-		return UnbindSubscriptionResponse.class;
+	public Class<BindAXBCallResponse> getResponseClass() {
+		return BindAXBCallResponse.class;
 	}
 
 }

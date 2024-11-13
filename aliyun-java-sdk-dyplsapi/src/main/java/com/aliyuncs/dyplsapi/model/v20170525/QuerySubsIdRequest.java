@@ -35,7 +35,7 @@ public class QuerySubsIdRequest extends RpcAcsRequest<QuerySubsIdResponse> {
 
 	private String poolKey;
 	public QuerySubsIdRequest() {
-		super("Dyplsapi", "2017-05-25", "QuerySubsId");
+		super("Dyplsapi", "2017-05-25", "QuerySubsId", "dypls");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

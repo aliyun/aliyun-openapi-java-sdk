@@ -35,7 +35,7 @@ public class DeleteAxgGroupRequest extends RpcAcsRequest<DeleteAxgGroupResponse>
 
 	private String poolKey;
 	public DeleteAxgGroupRequest() {
-		super("Dyplsapi", "2017-05-25", "DeleteAxgGroup");
+		super("Dyplsapi", "2017-05-25", "DeleteAxgGroup", "dypls");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

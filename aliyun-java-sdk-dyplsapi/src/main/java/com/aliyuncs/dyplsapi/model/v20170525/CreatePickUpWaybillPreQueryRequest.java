@@ -43,7 +43,7 @@ public class CreatePickUpWaybillPreQueryRequest extends RpcAcsRequest<CreatePick
 	@SerializedName("senderInfo")
 	private SenderInfo senderInfo;
 	public CreatePickUpWaybillPreQueryRequest() {
-		super("Dyplsapi", "2017-05-25", "CreatePickUpWaybillPreQuery");
+		super("Dyplsapi", "2017-05-25", "CreatePickUpWaybillPreQuery", "dypls");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

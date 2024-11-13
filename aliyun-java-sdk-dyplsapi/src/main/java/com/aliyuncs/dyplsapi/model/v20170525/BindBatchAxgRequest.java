@@ -39,7 +39,7 @@ public class BindBatchAxgRequest extends RpcAcsRequest<BindBatchAxgResponse> {
 
 	private String poolKey;
 	public BindBatchAxgRequest() {
-		super("Dyplsapi", "2017-05-25", "BindBatchAxg");
+		super("Dyplsapi", "2017-05-25", "BindBatchAxg", "dypls");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
