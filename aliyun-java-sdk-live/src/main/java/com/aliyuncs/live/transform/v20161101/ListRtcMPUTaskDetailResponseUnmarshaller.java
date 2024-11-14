@@ -50,6 +50,7 @@ public class ListRtcMPUTaskDetailResponseUnmarshaller {
 			mpuTask.setMixMode(_ctx.stringValue("ListRtcMPUTaskDetailResponse.MPUTasks["+ i +"].MixMode"));
 			mpuTask.setStreamURL(_ctx.stringValue("ListRtcMPUTaskDetailResponse.MPUTasks["+ i +"].StreamURL"));
 			mpuTask.setRegion(_ctx.stringValue("ListRtcMPUTaskDetailResponse.MPUTasks["+ i +"].Region"));
+			mpuTask.setMaxIdleTime(_ctx.stringValue("ListRtcMPUTaskDetailResponse.MPUTasks["+ i +"].MaxIdleTime"));
 
 			SingleSubParams singleSubParams = new SingleSubParams();
 			singleSubParams.setSourceType(_ctx.stringValue("ListRtcMPUTaskDetailResponse.MPUTasks["+ i +"].SingleSubParams.SourceType"));

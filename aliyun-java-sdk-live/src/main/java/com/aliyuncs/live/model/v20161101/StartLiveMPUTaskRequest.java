@@ -38,6 +38,8 @@ public class StartLiveMPUTaskRequest extends RpcAcsRequest<StartLiveMPUTaskRespo
 	@SerializedName("multiStreamURL")
 	private List<MultiStreamURL> multiStreamURL;
 
+	private String maxIdleTime;
+
 	@SerializedName("seiParams")
 	private SeiParams seiParams;
 
@@ -102,6 +104,17 @@ public class StartLiveMPUTaskRequest extends RpcAcsRequest<StartLiveMPUTaskRespo
 		if (multiStreamURL != null) {
 			putQueryParameter("MultiStreamURL" , new Gson().toJson(multiStreamURL));
 		}	
+	}
+
+	public String getMaxIdleTime() {
+		return this.maxIdleTime;
+	}
+
+	public void setMaxIdleTime(String maxIdleTime) {
+		this.maxIdleTime = maxIdleTime;
+		if(maxIdleTime != null){
+			putQueryParameter("MaxIdleTime", maxIdleTime);
+		}
 	}
 
 	public SeiParams getSeiParams() {

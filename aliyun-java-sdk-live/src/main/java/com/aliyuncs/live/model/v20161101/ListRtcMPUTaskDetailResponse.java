@@ -59,6 +59,8 @@ public class ListRtcMPUTaskDetailResponse extends AcsResponse {
 
 		private String region;
 
+		private String maxIdleTime;
+
 		private List<MultiStreamURLItem> multiStreamURL;
 
 		private SingleSubParams singleSubParams;
@@ -113,6 +115,14 @@ public class ListRtcMPUTaskDetailResponse extends AcsResponse {
 
 		public void setRegion(String region) {
 			this.region = region;
+		}
+
+		public String getMaxIdleTime() {
+			return this.maxIdleTime;
+		}
+
+		public void setMaxIdleTime(String maxIdleTime) {
+			this.maxIdleTime = maxIdleTime;
 		}
 
 		public List<MultiStreamURLItem> getMultiStreamURL() {
