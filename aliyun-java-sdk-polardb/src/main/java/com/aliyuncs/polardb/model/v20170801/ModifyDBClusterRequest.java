@@ -35,6 +35,8 @@ public class ModifyDBClusterRequest extends RpcAcsRequest<ModifyDBClusterRespons
 
 	private String ownerAccount;
 
+	private String dBNodeCrashList;
+
 	private String faultSimulateMode;
 
 	private Long ownerId;
@@ -43,7 +45,11 @@ public class ModifyDBClusterRequest extends RpcAcsRequest<ModifyDBClusterRespons
 
 	private Long storageUpperBound;
 
+	private String imciAutoIndex;
+
 	private String storageAutoScale;
+
+	private String faultInjectionType;
 
 	private String dataSyncMode;
 	public ModifyDBClusterRequest() {
@@ -110,6 +116,17 @@ public class ModifyDBClusterRequest extends RpcAcsRequest<ModifyDBClusterRespons
 		}
 	}
 
+	public String getDBNodeCrashList() {
+		return this.dBNodeCrashList;
+	}
+
+	public void setDBNodeCrashList(String dBNodeCrashList) {
+		this.dBNodeCrashList = dBNodeCrashList;
+		if(dBNodeCrashList != null){
+			putQueryParameter("DBNodeCrashList", dBNodeCrashList);
+		}
+	}
+
 	public String getFaultSimulateMode() {
 		return this.faultSimulateMode;
 	}
@@ -154,6 +171,17 @@ public class ModifyDBClusterRequest extends RpcAcsRequest<ModifyDBClusterRespons
 		}
 	}
 
+	public String getImciAutoIndex() {
+		return this.imciAutoIndex;
+	}
+
+	public void setImciAutoIndex(String imciAutoIndex) {
+		this.imciAutoIndex = imciAutoIndex;
+		if(imciAutoIndex != null){
+			putQueryParameter("ImciAutoIndex", imciAutoIndex);
+		}
+	}
+
 	public String getStorageAutoScale() {
 		return this.storageAutoScale;
 	}
@@ -162,6 +190,17 @@ public class ModifyDBClusterRequest extends RpcAcsRequest<ModifyDBClusterRespons
 		this.storageAutoScale = storageAutoScale;
 		if(storageAutoScale != null){
 			putQueryParameter("StorageAutoScale", storageAutoScale);
+		}
+	}
+
+	public String getFaultInjectionType() {
+		return this.faultInjectionType;
+	}
+
+	public void setFaultInjectionType(String faultInjectionType) {
+		this.faultInjectionType = faultInjectionType;
+		if(faultInjectionType != null){
+			putQueryParameter("FaultInjectionType", faultInjectionType);
 		}
 	}
 

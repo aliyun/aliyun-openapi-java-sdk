@@ -39,6 +39,8 @@ public class DescribeGlobalDatabaseNetworkResponse extends AcsResponse {
 
 	private String gDNDescription;
 
+	private String globalDomainName;
+
 	private String dBClusterId;
 
 	private String resourceGroupId;
@@ -101,6 +103,14 @@ public class DescribeGlobalDatabaseNetworkResponse extends AcsResponse {
 
 	public void setGDNDescription(String gDNDescription) {
 		this.gDNDescription = gDNDescription;
+	}
+
+	public String getGlobalDomainName() {
+		return this.globalDomainName;
+	}
+
+	public void setGlobalDomainName(String globalDomainName) {
+		this.globalDomainName = globalDomainName;
 	}
 
 	public String getDBClusterId() {
@@ -194,9 +204,13 @@ public class DescribeGlobalDatabaseNetworkResponse extends AcsResponse {
 
 		private String dBClusterDescription;
 
+		private String category;
+
 		private String role;
 
 		private String serverlessType;
+
+		private String memberStatus;
 
 		private List<DBNode> dBNodes;
 
@@ -296,6 +310,14 @@ public class DescribeGlobalDatabaseNetworkResponse extends AcsResponse {
 			this.dBClusterDescription = dBClusterDescription;
 		}
 
+		public String getCategory() {
+			return this.category;
+		}
+
+		public void setCategory(String category) {
+			this.category = category;
+		}
+
 		public String getRole() {
 			return this.role;
 		}
@@ -310,6 +332,14 @@ public class DescribeGlobalDatabaseNetworkResponse extends AcsResponse {
 
 		public void setServerlessType(String serverlessType) {
 			this.serverlessType = serverlessType;
+		}
+
+		public String getMemberStatus() {
+			return this.memberStatus;
+		}
+
+		public void setMemberStatus(String memberStatus) {
+			this.memberStatus = memberStatus;
 		}
 
 		public List<DBNode> getDBNodes() {

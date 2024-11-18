@@ -31,7 +31,11 @@ public class ModifyDBClusterEndpointRequest extends RpcAcsRequest<ModifyDBCluste
 
 	private String dBEndpointId;
 
+	private String polarSccWaitTimeout;
+
 	private String readWriteMode;
+
+	private String polarSccTimeoutAction;
 
 	private String resourceOwnerAccount;
 
@@ -46,6 +50,8 @@ public class ModifyDBClusterEndpointRequest extends RpcAcsRequest<ModifyDBCluste
 	private Long ownerId;
 
 	private String nodes;
+
+	private String sccMode;
 	public ModifyDBClusterEndpointRequest() {
 		super("polardb", "2017-08-01", "ModifyDBClusterEndpoint", "polardb");
 		setMethod(MethodType.POST);
@@ -88,6 +94,17 @@ public class ModifyDBClusterEndpointRequest extends RpcAcsRequest<ModifyDBCluste
 		}
 	}
 
+	public String getPolarSccWaitTimeout() {
+		return this.polarSccWaitTimeout;
+	}
+
+	public void setPolarSccWaitTimeout(String polarSccWaitTimeout) {
+		this.polarSccWaitTimeout = polarSccWaitTimeout;
+		if(polarSccWaitTimeout != null){
+			putQueryParameter("PolarSccWaitTimeout", polarSccWaitTimeout);
+		}
+	}
+
 	public String getReadWriteMode() {
 		return this.readWriteMode;
 	}
@@ -96,6 +113,17 @@ public class ModifyDBClusterEndpointRequest extends RpcAcsRequest<ModifyDBCluste
 		this.readWriteMode = readWriteMode;
 		if(readWriteMode != null){
 			putQueryParameter("ReadWriteMode", readWriteMode);
+		}
+	}
+
+	public String getPolarSccTimeoutAction() {
+		return this.polarSccTimeoutAction;
+	}
+
+	public void setPolarSccTimeoutAction(String polarSccTimeoutAction) {
+		this.polarSccTimeoutAction = polarSccTimeoutAction;
+		if(polarSccTimeoutAction != null){
+			putQueryParameter("PolarSccTimeoutAction", polarSccTimeoutAction);
 		}
 	}
 
@@ -173,6 +201,17 @@ public class ModifyDBClusterEndpointRequest extends RpcAcsRequest<ModifyDBCluste
 		this.nodes = nodes;
 		if(nodes != null){
 			putQueryParameter("Nodes", nodes);
+		}
+	}
+
+	public String getSccMode() {
+		return this.sccMode;
+	}
+
+	public void setSccMode(String sccMode) {
+		this.sccMode = sccMode;
+		if(sccMode != null){
+			putQueryParameter("SccMode", sccMode);
 		}
 	}
 

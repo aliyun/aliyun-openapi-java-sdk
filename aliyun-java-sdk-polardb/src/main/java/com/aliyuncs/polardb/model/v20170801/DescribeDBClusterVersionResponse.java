@@ -53,6 +53,8 @@ public class DescribeDBClusterVersionResponse extends AcsResponse {
 
 	private List<DBRevisionVersionListItem> dBRevisionVersionList;
 
+	private List<ProxyRevisionVersionListItem> proxyRevisionVersionList;
+
 	public String getIsLatestVersion() {
 		return this.isLatestVersion;
 	}
@@ -165,7 +167,58 @@ public class DescribeDBClusterVersionResponse extends AcsResponse {
 		this.dBRevisionVersionList = dBRevisionVersionList;
 	}
 
+	public List<ProxyRevisionVersionListItem> getProxyRevisionVersionList() {
+		return this.proxyRevisionVersionList;
+	}
+
+	public void setProxyRevisionVersionList(List<ProxyRevisionVersionListItem> proxyRevisionVersionList) {
+		this.proxyRevisionVersionList = proxyRevisionVersionList;
+	}
+
 	public static class DBRevisionVersionListItem {
+
+		private String releaseType;
+
+		private String revisionVersionCode;
+
+		private String revisionVersionName;
+
+		private String releaseNote;
+
+		public String getReleaseType() {
+			return this.releaseType;
+		}
+
+		public void setReleaseType(String releaseType) {
+			this.releaseType = releaseType;
+		}
+
+		public String getRevisionVersionCode() {
+			return this.revisionVersionCode;
+		}
+
+		public void setRevisionVersionCode(String revisionVersionCode) {
+			this.revisionVersionCode = revisionVersionCode;
+		}
+
+		public String getRevisionVersionName() {
+			return this.revisionVersionName;
+		}
+
+		public void setRevisionVersionName(String revisionVersionName) {
+			this.revisionVersionName = revisionVersionName;
+		}
+
+		public String getReleaseNote() {
+			return this.releaseNote;
+		}
+
+		public void setReleaseNote(String releaseNote) {
+			this.releaseNote = releaseNote;
+		}
+	}
+
+	public static class ProxyRevisionVersionListItem {
 
 		private String releaseType;
 

@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ModifyDBClusterServerlessConfResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String dBClusterId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getDBClusterId() {
 		return this.dBClusterId;
@@ -42,6 +34,14 @@ public class ModifyDBClusterServerlessConfResponse extends AcsResponse {
 
 	public void setDBClusterId(String dBClusterId) {
 		this.dBClusterId = dBClusterId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

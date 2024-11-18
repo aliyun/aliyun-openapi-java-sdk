@@ -39,6 +39,8 @@ public class CreateGlobalDatabaseNetworkRequest extends RpcAcsRequest<CreateGlob
 
 	private String ownerAccount;
 
+	private Boolean enableGlobalDomainName;
+
 	private Long ownerId;
 	public CreateGlobalDatabaseNetworkRequest() {
 		super("polardb", "2017-08-01", "CreateGlobalDatabaseNetwork", "polardb");
@@ -123,6 +125,17 @@ public class CreateGlobalDatabaseNetworkRequest extends RpcAcsRequest<CreateGlob
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Boolean getEnableGlobalDomainName() {
+		return this.enableGlobalDomainName;
+	}
+
+	public void setEnableGlobalDomainName(Boolean enableGlobalDomainName) {
+		this.enableGlobalDomainName = enableGlobalDomainName;
+		if(enableGlobalDomainName != null){
+			putQueryParameter("EnableGlobalDomainName", enableGlobalDomainName.toString());
 		}
 	}
 

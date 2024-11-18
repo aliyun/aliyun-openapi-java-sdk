@@ -49,9 +49,23 @@ public class DescribeDBClusterMigrationResponse extends AcsResponse {
 
 	private String srcDbType;
 
+	private String migrationSwitch;
+
+	private String migrationDtsJobEndpoint;
+
+	private String dstBinlogPosition;
+
+	private String srcBinlogPosition;
+
+	private String migrationProgress;
+
 	private List<DBClusterEndpoint> dBClusterEndpointList;
 
 	private List<RdsEndpoint> rdsEndpointList;
+
+	private List<SrcDtsJob> srcDtsJobList;
+
+	private List<DstDtsJob> dstDtsJobList;
 
 	public String getComment() {
 		return this.comment;
@@ -149,6 +163,46 @@ public class DescribeDBClusterMigrationResponse extends AcsResponse {
 		this.srcDbType = srcDbType;
 	}
 
+	public String getMigrationSwitch() {
+		return this.migrationSwitch;
+	}
+
+	public void setMigrationSwitch(String migrationSwitch) {
+		this.migrationSwitch = migrationSwitch;
+	}
+
+	public String getMigrationDtsJobEndpoint() {
+		return this.migrationDtsJobEndpoint;
+	}
+
+	public void setMigrationDtsJobEndpoint(String migrationDtsJobEndpoint) {
+		this.migrationDtsJobEndpoint = migrationDtsJobEndpoint;
+	}
+
+	public String getDstBinlogPosition() {
+		return this.dstBinlogPosition;
+	}
+
+	public void setDstBinlogPosition(String dstBinlogPosition) {
+		this.dstBinlogPosition = dstBinlogPosition;
+	}
+
+	public String getSrcBinlogPosition() {
+		return this.srcBinlogPosition;
+	}
+
+	public void setSrcBinlogPosition(String srcBinlogPosition) {
+		this.srcBinlogPosition = srcBinlogPosition;
+	}
+
+	public String getMigrationProgress() {
+		return this.migrationProgress;
+	}
+
+	public void setMigrationProgress(String migrationProgress) {
+		this.migrationProgress = migrationProgress;
+	}
+
 	public List<DBClusterEndpoint> getDBClusterEndpointList() {
 		return this.dBClusterEndpointList;
 	}
@@ -163,6 +217,22 @@ public class DescribeDBClusterMigrationResponse extends AcsResponse {
 
 	public void setRdsEndpointList(List<RdsEndpoint> rdsEndpointList) {
 		this.rdsEndpointList = rdsEndpointList;
+	}
+
+	public List<SrcDtsJob> getSrcDtsJobList() {
+		return this.srcDtsJobList;
+	}
+
+	public void setSrcDtsJobList(List<SrcDtsJob> srcDtsJobList) {
+		this.srcDtsJobList = srcDtsJobList;
+	}
+
+	public List<DstDtsJob> getDstDtsJobList() {
+		return this.dstDtsJobList;
+	}
+
+	public void setDstDtsJobList(List<DstDtsJob> dstDtsJobList) {
+		this.dstDtsJobList = dstDtsJobList;
 	}
 
 	public static class DBClusterEndpoint {
@@ -394,6 +464,152 @@ public class DescribeDBClusterMigrationResponse extends AcsResponse {
 			public void setSSLEnabled(String sSLEnabled) {
 				this.sSLEnabled = sSLEnabled;
 			}
+		}
+	}
+
+	public static class SrcDtsJob {
+
+		private String dtsJobId;
+
+		private String dtsJobName;
+
+		private String dtsInstanceID;
+
+		private String dtsJobDirection;
+
+		private String status;
+
+		private String sourceEndpoint;
+
+		private String destinationEndpoint;
+
+		public String getDtsJobId() {
+			return this.dtsJobId;
+		}
+
+		public void setDtsJobId(String dtsJobId) {
+			this.dtsJobId = dtsJobId;
+		}
+
+		public String getDtsJobName() {
+			return this.dtsJobName;
+		}
+
+		public void setDtsJobName(String dtsJobName) {
+			this.dtsJobName = dtsJobName;
+		}
+
+		public String getDtsInstanceID() {
+			return this.dtsInstanceID;
+		}
+
+		public void setDtsInstanceID(String dtsInstanceID) {
+			this.dtsInstanceID = dtsInstanceID;
+		}
+
+		public String getDtsJobDirection() {
+			return this.dtsJobDirection;
+		}
+
+		public void setDtsJobDirection(String dtsJobDirection) {
+			this.dtsJobDirection = dtsJobDirection;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getSourceEndpoint() {
+			return this.sourceEndpoint;
+		}
+
+		public void setSourceEndpoint(String sourceEndpoint) {
+			this.sourceEndpoint = sourceEndpoint;
+		}
+
+		public String getDestinationEndpoint() {
+			return this.destinationEndpoint;
+		}
+
+		public void setDestinationEndpoint(String destinationEndpoint) {
+			this.destinationEndpoint = destinationEndpoint;
+		}
+	}
+
+	public static class DstDtsJob {
+
+		private String dtsJobId;
+
+		private String dtsJobName;
+
+		private String dtsInstanceId;
+
+		private String dtsJobDirection;
+
+		private String status;
+
+		private String sourceEndpoint;
+
+		private String destinationEndpoint;
+
+		public String getDtsJobId() {
+			return this.dtsJobId;
+		}
+
+		public void setDtsJobId(String dtsJobId) {
+			this.dtsJobId = dtsJobId;
+		}
+
+		public String getDtsJobName() {
+			return this.dtsJobName;
+		}
+
+		public void setDtsJobName(String dtsJobName) {
+			this.dtsJobName = dtsJobName;
+		}
+
+		public String getDtsInstanceId() {
+			return this.dtsInstanceId;
+		}
+
+		public void setDtsInstanceId(String dtsInstanceId) {
+			this.dtsInstanceId = dtsInstanceId;
+		}
+
+		public String getDtsJobDirection() {
+			return this.dtsJobDirection;
+		}
+
+		public void setDtsJobDirection(String dtsJobDirection) {
+			this.dtsJobDirection = dtsJobDirection;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getSourceEndpoint() {
+			return this.sourceEndpoint;
+		}
+
+		public void setSourceEndpoint(String sourceEndpoint) {
+			this.sourceEndpoint = sourceEndpoint;
+		}
+
+		public String getDestinationEndpoint() {
+			return this.destinationEndpoint;
+		}
+
+		public void setDestinationEndpoint(String destinationEndpoint) {
+			this.destinationEndpoint = destinationEndpoint;
 		}
 	}
 

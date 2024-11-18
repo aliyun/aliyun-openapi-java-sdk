@@ -31,9 +31,13 @@ public class CreateDBClusterEndpointRequest extends RpcAcsRequest<CreateDBCluste
 
 	private String clientToken;
 
+	private String polarSccWaitTimeout;
+
 	private String readWriteMode;
 
 	private String endpointType;
+
+	private String polarSccTimeoutAction;
 
 	private String resourceOwnerAccount;
 
@@ -48,6 +52,8 @@ public class CreateDBClusterEndpointRequest extends RpcAcsRequest<CreateDBCluste
 	private Long ownerId;
 
 	private String nodes;
+
+	private String sccMode;
 	public CreateDBClusterEndpointRequest() {
 		super("polardb", "2017-08-01", "CreateDBClusterEndpoint", "polardb");
 		setMethod(MethodType.POST);
@@ -90,6 +96,17 @@ public class CreateDBClusterEndpointRequest extends RpcAcsRequest<CreateDBCluste
 		}
 	}
 
+	public String getPolarSccWaitTimeout() {
+		return this.polarSccWaitTimeout;
+	}
+
+	public void setPolarSccWaitTimeout(String polarSccWaitTimeout) {
+		this.polarSccWaitTimeout = polarSccWaitTimeout;
+		if(polarSccWaitTimeout != null){
+			putQueryParameter("PolarSccWaitTimeout", polarSccWaitTimeout);
+		}
+	}
+
 	public String getReadWriteMode() {
 		return this.readWriteMode;
 	}
@@ -109,6 +126,17 @@ public class CreateDBClusterEndpointRequest extends RpcAcsRequest<CreateDBCluste
 		this.endpointType = endpointType;
 		if(endpointType != null){
 			putQueryParameter("EndpointType", endpointType);
+		}
+	}
+
+	public String getPolarSccTimeoutAction() {
+		return this.polarSccTimeoutAction;
+	}
+
+	public void setPolarSccTimeoutAction(String polarSccTimeoutAction) {
+		this.polarSccTimeoutAction = polarSccTimeoutAction;
+		if(polarSccTimeoutAction != null){
+			putQueryParameter("PolarSccTimeoutAction", polarSccTimeoutAction);
 		}
 	}
 
@@ -186,6 +214,17 @@ public class CreateDBClusterEndpointRequest extends RpcAcsRequest<CreateDBCluste
 		this.nodes = nodes;
 		if(nodes != null){
 			putQueryParameter("Nodes", nodes);
+		}
+	}
+
+	public String getSccMode() {
+		return this.sccMode;
+	}
+
+	public void setSccMode(String sccMode) {
+		this.sccMode = sccMode;
+		if(sccMode != null){
+			putQueryParameter("SccMode", sccMode);
 		}
 	}
 

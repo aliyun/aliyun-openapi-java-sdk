@@ -87,6 +87,10 @@ public class DescribeClassListResponse extends AcsResponse {
 
 		private String pl3MaxIOPS;
 
+		private String essdMaxStorageCapacity;
+
+		private String polarStoreMaxStorageCapacity;
+
 		public String getPsl4MaxIOPS() {
 			return this.psl4MaxIOPS;
 		}
@@ -205,6 +209,22 @@ public class DescribeClassListResponse extends AcsResponse {
 
 		public void setPl3MaxIOPS(String pl3MaxIOPS) {
 			this.pl3MaxIOPS = pl3MaxIOPS;
+		}
+
+		public String getEssdMaxStorageCapacity() {
+			return this.essdMaxStorageCapacity;
+		}
+
+		public void setEssdMaxStorageCapacity(String essdMaxStorageCapacity) {
+			this.essdMaxStorageCapacity = essdMaxStorageCapacity;
+		}
+
+		public String getPolarStoreMaxStorageCapacity() {
+			return this.polarStoreMaxStorageCapacity;
+		}
+
+		public void setPolarStoreMaxStorageCapacity(String polarStoreMaxStorageCapacity) {
+			this.polarStoreMaxStorageCapacity = polarStoreMaxStorageCapacity;
 		}
 	}
 

@@ -68,6 +68,10 @@ public class DescribeDBClustersResponseUnmarshaller {
 			dBCluster.setMemorySize(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].MemorySize"));
 			dBCluster.setRemoteMemorySize(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].RemoteMemorySize"));
 			dBCluster.setSubCategory(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].SubCategory"));
+			dBCluster.setDeployUnit(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].DeployUnit"));
+			dBCluster.setStorageType(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].StorageType"));
+			dBCluster.setHotStandbyCluster(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].HotStandbyCluster"));
+			dBCluster.setEngineMigrationStatus(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].EngineMigrationStatus"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDBClustersResponse.Items["+ i +"].Tags.Length"); j++) {

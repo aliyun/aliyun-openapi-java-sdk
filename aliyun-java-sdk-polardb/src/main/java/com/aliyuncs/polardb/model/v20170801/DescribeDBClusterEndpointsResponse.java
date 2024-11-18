@@ -65,6 +65,12 @@ public class DescribeDBClusterEndpointsResponse extends AcsResponse {
 
 		private String dBClusterId;
 
+		private String sccMode;
+
+		private String polarSccTimeoutAction;
+
+		private String polarSccWaitTimeout;
+
 		private List<Address> addressItems;
 
 		public String getNodeWithRoles() {
@@ -137,6 +143,30 @@ public class DescribeDBClusterEndpointsResponse extends AcsResponse {
 
 		public void setDBClusterId(String dBClusterId) {
 			this.dBClusterId = dBClusterId;
+		}
+
+		public String getSccMode() {
+			return this.sccMode;
+		}
+
+		public void setSccMode(String sccMode) {
+			this.sccMode = sccMode;
+		}
+
+		public String getPolarSccTimeoutAction() {
+			return this.polarSccTimeoutAction;
+		}
+
+		public void setPolarSccTimeoutAction(String polarSccTimeoutAction) {
+			this.polarSccTimeoutAction = polarSccTimeoutAction;
+		}
+
+		public String getPolarSccWaitTimeout() {
+			return this.polarSccWaitTimeout;
+		}
+
+		public void setPolarSccWaitTimeout(String polarSccWaitTimeout) {
+			this.polarSccWaitTimeout = polarSccWaitTimeout;
 		}
 
 		public List<Address> getAddressItems() {

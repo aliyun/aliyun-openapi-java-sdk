@@ -33,6 +33,8 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 	private String pageNumber;
 
+	private String totalLevel2BackupSize;
+
 	private List<Backup> items;
 
 	public String getTotalRecordCount() {
@@ -65,6 +67,14 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 	public void setPageNumber(String pageNumber) {
 		this.pageNumber = pageNumber;
+	}
+
+	public String getTotalLevel2BackupSize() {
+		return this.totalLevel2BackupSize;
+	}
+
+	public void setTotalLevel2BackupSize(String totalLevel2BackupSize) {
+		this.totalLevel2BackupSize = totalLevel2BackupSize;
 	}
 
 	public List<Backup> getItems() {

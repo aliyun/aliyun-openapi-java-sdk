@@ -38,7 +38,6 @@ public class Endpoint {
             put("cn-hongkong", "polardb.aliyuncs.com");
             put("cn-beijing-finance-pop", "polardb.aliyuncs.com");
             put("cn-wuhan", "polardb.aliyuncs.com");
-            put("us-west-1", "polardb.aliyuncs.com");
             put("cn-zhangbei", "polardb.aliyuncs.com");
             put("cn-shenzhen", "polardb.aliyuncs.com");
             put("cn-zhengzhou-nebula-1", "polardb.aliyuncs.com");
@@ -55,11 +54,10 @@ public class Endpoint {
             put("cn-hangzhou-test-306", "polardb.aliyuncs.com");
             put("cn-huhehaote-nebula-1", "polardb.aliyuncs.com");
             put("cn-shanghai-et2-b01", "polardb.aliyuncs.com");
+            put("cn-guangzhou", "polardb.aliyuncs.com");
             put("cn-hangzhou-finance", "polardb.aliyuncs.com");
-            put("ap-southeast-1", "polardb.aliyuncs.com");
             put("cn-beijing-nu16-b01", "polardb.aliyuncs.com");
             put("cn-edge-1", "polardb.aliyuncs.com");
-            put("us-east-1", "polardb.aliyuncs.com");
             put("cn-fujian", "polardb.aliyuncs.com");
             put("ap-northeast-2-pop", "polardb.aliyuncs.com");
             put("cn-shenzhen-inner", "polardb.aliyuncs.com");

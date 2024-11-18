@@ -29,23 +29,33 @@ public class ModifyDBClusterServerlessConfRequest extends RpcAcsRequest<ModifyDB
 
 	private Long resourceOwnerId;
 
+	private String serverlessRuleMode;
+
 	private String scaleApRoNumMax;
 
 	private String scaleMax;
 
 	private String plannedEndTime;
 
+	private String serverlessRuleCpuEnlargeThreshold;
+
 	private String secondsUntilAutoPause;
 
 	private String scaleApRoNumMin;
 
+	private String taskId;
+
 	private String scaleMin;
+
+	private String crontabJobId;
 
 	private String resourceOwnerAccount;
 
 	private String dBClusterId;
 
 	private String ownerAccount;
+
+	private String serverlessRuleCpuShrinkThreshold;
 
 	private Long ownerId;
 
@@ -87,6 +97,17 @@ public class ModifyDBClusterServerlessConfRequest extends RpcAcsRequest<ModifyDB
 		}
 	}
 
+	public String getServerlessRuleMode() {
+		return this.serverlessRuleMode;
+	}
+
+	public void setServerlessRuleMode(String serverlessRuleMode) {
+		this.serverlessRuleMode = serverlessRuleMode;
+		if(serverlessRuleMode != null){
+			putQueryParameter("ServerlessRuleMode", serverlessRuleMode);
+		}
+	}
+
 	public String getScaleApRoNumMax() {
 		return this.scaleApRoNumMax;
 	}
@@ -120,6 +141,17 @@ public class ModifyDBClusterServerlessConfRequest extends RpcAcsRequest<ModifyDB
 		}
 	}
 
+	public String getServerlessRuleCpuEnlargeThreshold() {
+		return this.serverlessRuleCpuEnlargeThreshold;
+	}
+
+	public void setServerlessRuleCpuEnlargeThreshold(String serverlessRuleCpuEnlargeThreshold) {
+		this.serverlessRuleCpuEnlargeThreshold = serverlessRuleCpuEnlargeThreshold;
+		if(serverlessRuleCpuEnlargeThreshold != null){
+			putQueryParameter("ServerlessRuleCpuEnlargeThreshold", serverlessRuleCpuEnlargeThreshold);
+		}
+	}
+
 	public String getSecondsUntilAutoPause() {
 		return this.secondsUntilAutoPause;
 	}
@@ -142,6 +174,17 @@ public class ModifyDBClusterServerlessConfRequest extends RpcAcsRequest<ModifyDB
 		}
 	}
 
+	public String getTaskId() {
+		return this.taskId;
+	}
+
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
+		if(taskId != null){
+			putQueryParameter("TaskId", taskId);
+		}
+	}
+
 	public String getScaleMin() {
 		return this.scaleMin;
 	}
@@ -150,6 +193,17 @@ public class ModifyDBClusterServerlessConfRequest extends RpcAcsRequest<ModifyDB
 		this.scaleMin = scaleMin;
 		if(scaleMin != null){
 			putQueryParameter("ScaleMin", scaleMin);
+		}
+	}
+
+	public String getCrontabJobId() {
+		return this.crontabJobId;
+	}
+
+	public void setCrontabJobId(String crontabJobId) {
+		this.crontabJobId = crontabJobId;
+		if(crontabJobId != null){
+			putQueryParameter("CrontabJobId", crontabJobId);
 		}
 	}
 
@@ -183,6 +237,17 @@ public class ModifyDBClusterServerlessConfRequest extends RpcAcsRequest<ModifyDB
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getServerlessRuleCpuShrinkThreshold() {
+		return this.serverlessRuleCpuShrinkThreshold;
+	}
+
+	public void setServerlessRuleCpuShrinkThreshold(String serverlessRuleCpuShrinkThreshold) {
+		this.serverlessRuleCpuShrinkThreshold = serverlessRuleCpuShrinkThreshold;
+		if(serverlessRuleCpuShrinkThreshold != null){
+			putQueryParameter("ServerlessRuleCpuShrinkThreshold", serverlessRuleCpuShrinkThreshold);
 		}
 	}
 

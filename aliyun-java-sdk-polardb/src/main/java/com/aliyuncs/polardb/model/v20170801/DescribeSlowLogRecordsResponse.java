@@ -25,26 +25,42 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSlowLogRecordsResponse extends AcsResponse {
 
-	private Integer totalRecordCount;
+	private String dBClusterId;
+
+	private String engine;
+
+	private Integer pageNumber;
 
 	private Integer pageRecordCount;
 
 	private String requestId;
 
-	private Integer pageNumber;
-
-	private String dBClusterId;
-
-	private String engine;
+	private Integer totalRecordCount;
 
 	private List<SQLSlowRecord> items;
 
-	public Integer getTotalRecordCount() {
-		return this.totalRecordCount;
+	public String getDBClusterId() {
+		return this.dBClusterId;
 	}
 
-	public void setTotalRecordCount(Integer totalRecordCount) {
-		this.totalRecordCount = totalRecordCount;
+	public void setDBClusterId(String dBClusterId) {
+		this.dBClusterId = dBClusterId;
+	}
+
+	public String getEngine() {
+		return this.engine;
+	}
+
+	public void setEngine(String engine) {
+		this.engine = engine;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public Integer getPageRecordCount() {
@@ -63,28 +79,12 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public Integer getTotalRecordCount() {
+		return this.totalRecordCount;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
-	public String getDBClusterId() {
-		return this.dBClusterId;
-	}
-
-	public void setDBClusterId(String dBClusterId) {
-		this.dBClusterId = dBClusterId;
-	}
-
-	public String getEngine() {
-		return this.engine;
-	}
-
-	public void setEngine(String engine) {
-		this.engine = engine;
+	public void setTotalRecordCount(Integer totalRecordCount) {
+		this.totalRecordCount = totalRecordCount;
 	}
 
 	public List<SQLSlowRecord> getItems() {
@@ -97,25 +97,43 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 
 	public static class SQLSlowRecord {
 
+		private String dBName;
+
+		private String dBNodeId;
+
 		private String executionStartTime;
 
 		private String hostAddress;
 
-		private Long queryTimes;
-
-		private String sQLText;
-
-		private Long returnRowCounts;
+		private Long lockTimes;
 
 		private Long parseRowCounts;
 
-		private String dBName;
-
-		private Long lockTimes;
-
-		private String dBNodeId;
-
 		private Long queryTimeMS;
+
+		private Long queryTimes;
+
+		private Long returnRowCounts;
+
+		private String sQLHash;
+
+		private String sQLText;
+
+		public String getDBName() {
+			return this.dBName;
+		}
+
+		public void setDBName(String dBName) {
+			this.dBName = dBName;
+		}
+
+		public String getDBNodeId() {
+			return this.dBNodeId;
+		}
+
+		public void setDBNodeId(String dBNodeId) {
+			this.dBNodeId = dBNodeId;
+		}
 
 		public String getExecutionStartTime() {
 			return this.executionStartTime;
@@ -133,28 +151,12 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 			this.hostAddress = hostAddress;
 		}
 
-		public Long getQueryTimes() {
-			return this.queryTimes;
+		public Long getLockTimes() {
+			return this.lockTimes;
 		}
 
-		public void setQueryTimes(Long queryTimes) {
-			this.queryTimes = queryTimes;
-		}
-
-		public String getSQLText() {
-			return this.sQLText;
-		}
-
-		public void setSQLText(String sQLText) {
-			this.sQLText = sQLText;
-		}
-
-		public Long getReturnRowCounts() {
-			return this.returnRowCounts;
-		}
-
-		public void setReturnRowCounts(Long returnRowCounts) {
-			this.returnRowCounts = returnRowCounts;
+		public void setLockTimes(Long lockTimes) {
+			this.lockTimes = lockTimes;
 		}
 
 		public Long getParseRowCounts() {
@@ -165,36 +167,44 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 			this.parseRowCounts = parseRowCounts;
 		}
 
-		public String getDBName() {
-			return this.dBName;
-		}
-
-		public void setDBName(String dBName) {
-			this.dBName = dBName;
-		}
-
-		public Long getLockTimes() {
-			return this.lockTimes;
-		}
-
-		public void setLockTimes(Long lockTimes) {
-			this.lockTimes = lockTimes;
-		}
-
-		public String getDBNodeId() {
-			return this.dBNodeId;
-		}
-
-		public void setDBNodeId(String dBNodeId) {
-			this.dBNodeId = dBNodeId;
-		}
-
 		public Long getQueryTimeMS() {
 			return this.queryTimeMS;
 		}
 
 		public void setQueryTimeMS(Long queryTimeMS) {
 			this.queryTimeMS = queryTimeMS;
+		}
+
+		public Long getQueryTimes() {
+			return this.queryTimes;
+		}
+
+		public void setQueryTimes(Long queryTimes) {
+			this.queryTimes = queryTimes;
+		}
+
+		public Long getReturnRowCounts() {
+			return this.returnRowCounts;
+		}
+
+		public void setReturnRowCounts(Long returnRowCounts) {
+			this.returnRowCounts = returnRowCounts;
+		}
+
+		public String getSQLHash() {
+			return this.sQLHash;
+		}
+
+		public void setSQLHash(String sQLHash) {
+			this.sQLHash = sQLHash;
+		}
+
+		public String getSQLText() {
+			return this.sQLText;
+		}
+
+		public void setSQLText(String sQLText) {
+			this.sQLText = sQLText;
 		}
 	}
 

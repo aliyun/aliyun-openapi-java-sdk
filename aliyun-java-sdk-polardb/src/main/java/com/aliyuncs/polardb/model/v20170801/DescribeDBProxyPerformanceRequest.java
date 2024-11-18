@@ -25,6 +25,8 @@ import com.aliyuncs.polardb.Endpoint;
 public class DescribeDBProxyPerformanceRequest extends RpcAcsRequest<DescribeDBProxyPerformanceResponse> {
 	   
 
+	private String dBNodeId;
+
 	private String dBEndpointId;
 
 	private String startTime;
@@ -45,6 +47,17 @@ public class DescribeDBProxyPerformanceRequest extends RpcAcsRequest<DescribeDBP
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getDBNodeId() {
+		return this.dBNodeId;
+	}
+
+	public void setDBNodeId(String dBNodeId) {
+		this.dBNodeId = dBNodeId;
+		if(dBNodeId != null){
+			putQueryParameter("DBNodeId", dBNodeId);
+		}
 	}
 
 	public String getDBEndpointId() {

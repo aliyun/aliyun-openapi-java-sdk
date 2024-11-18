@@ -27,19 +27,19 @@ public class DescribeAutoRenewAttributeResponseUnmarshaller {
 	public static DescribeAutoRenewAttributeResponse unmarshall(DescribeAutoRenewAttributeResponse describeAutoRenewAttributeResponse, UnmarshallerContext _ctx) {
 		
 		describeAutoRenewAttributeResponse.setRequestId(_ctx.stringValue("DescribeAutoRenewAttributeResponse.RequestId"));
-		describeAutoRenewAttributeResponse.setTotalRecordCount(_ctx.integerValue("DescribeAutoRenewAttributeResponse.TotalRecordCount"));
-		describeAutoRenewAttributeResponse.setPageRecordCount(_ctx.integerValue("DescribeAutoRenewAttributeResponse.PageRecordCount"));
 		describeAutoRenewAttributeResponse.setPageNumber(_ctx.integerValue("DescribeAutoRenewAttributeResponse.PageNumber"));
+		describeAutoRenewAttributeResponse.setPageRecordCount(_ctx.integerValue("DescribeAutoRenewAttributeResponse.PageRecordCount"));
+		describeAutoRenewAttributeResponse.setTotalRecordCount(_ctx.integerValue("DescribeAutoRenewAttributeResponse.TotalRecordCount"));
 
 		List<AutoRenewAttribute> items = new ArrayList<AutoRenewAttribute>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAutoRenewAttributeResponse.Items.Length"); i++) {
 			AutoRenewAttribute autoRenewAttribute = new AutoRenewAttribute();
-			autoRenewAttribute.setDBClusterId(_ctx.stringValue("DescribeAutoRenewAttributeResponse.Items["+ i +"].DBClusterId"));
-			autoRenewAttribute.setPeriodUnit(_ctx.stringValue("DescribeAutoRenewAttributeResponse.Items["+ i +"].PeriodUnit"));
-			autoRenewAttribute.setDuration(_ctx.integerValue("DescribeAutoRenewAttributeResponse.Items["+ i +"].Duration"));
-			autoRenewAttribute.setRenewalStatus(_ctx.stringValue("DescribeAutoRenewAttributeResponse.Items["+ i +"].RenewalStatus"));
 			autoRenewAttribute.setAutoRenewEnabled(_ctx.booleanValue("DescribeAutoRenewAttributeResponse.Items["+ i +"].AutoRenewEnabled"));
+			autoRenewAttribute.setDBClusterId(_ctx.stringValue("DescribeAutoRenewAttributeResponse.Items["+ i +"].DBClusterId"));
+			autoRenewAttribute.setDuration(_ctx.integerValue("DescribeAutoRenewAttributeResponse.Items["+ i +"].Duration"));
+			autoRenewAttribute.setPeriodUnit(_ctx.stringValue("DescribeAutoRenewAttributeResponse.Items["+ i +"].PeriodUnit"));
 			autoRenewAttribute.setRegionId(_ctx.stringValue("DescribeAutoRenewAttributeResponse.Items["+ i +"].RegionId"));
+			autoRenewAttribute.setRenewalStatus(_ctx.stringValue("DescribeAutoRenewAttributeResponse.Items["+ i +"].RenewalStatus"));
 
 			items.add(autoRenewAttribute);
 		}

@@ -41,6 +41,8 @@ public class ModifyDBNodeClassRequest extends RpcAcsRequest<ModifyDBNodeClassRes
 
 	private String ownerAccount;
 
+	private String plannedFlashingOffTime;
+
 	private Long ownerId;
 
 	private String plannedStartTime;
@@ -142,6 +144,17 @@ public class ModifyDBNodeClassRequest extends RpcAcsRequest<ModifyDBNodeClassRes
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getPlannedFlashingOffTime() {
+		return this.plannedFlashingOffTime;
+	}
+
+	public void setPlannedFlashingOffTime(String plannedFlashingOffTime) {
+		this.plannedFlashingOffTime = plannedFlashingOffTime;
+		if(plannedFlashingOffTime != null){
+			putQueryParameter("PlannedFlashingOffTime", plannedFlashingOffTime);
 		}
 	}
 

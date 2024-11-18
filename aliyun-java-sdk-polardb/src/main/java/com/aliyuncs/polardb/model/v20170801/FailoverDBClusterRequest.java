@@ -37,6 +37,8 @@ public class FailoverDBClusterRequest extends RpcAcsRequest<FailoverDBClusterRes
 
 	private String ownerAccount;
 
+	private String targetZoneType;
+
 	private Long ownerId;
 
 	private String targetDBNodeId;
@@ -112,6 +114,17 @@ public class FailoverDBClusterRequest extends RpcAcsRequest<FailoverDBClusterRes
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getTargetZoneType() {
+		return this.targetZoneType;
+	}
+
+	public void setTargetZoneType(String targetZoneType) {
+		this.targetZoneType = targetZoneType;
+		if(targetZoneType != null){
+			putQueryParameter("TargetZoneType", targetZoneType);
 		}
 	}
 

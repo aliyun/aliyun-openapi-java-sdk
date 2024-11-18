@@ -89,6 +89,13 @@ public class DescribeDBClusterAttributeResponseUnmarshaller {
 		describeDBClusterAttributeResponse.setAiFreeMode(_ctx.stringValue("DescribeDBClusterAttributeResponse.AiFreeMode"));
 		describeDBClusterAttributeResponse.setAiCreatingTime(_ctx.stringValue("DescribeDBClusterAttributeResponse.AiCreatingTime"));
 		describeDBClusterAttributeResponse.setSupportInstantSwitchWithImci(_ctx.stringValue("DescribeDBClusterAttributeResponse.SupportInstantSwitchWithImci"));
+		describeDBClusterAttributeResponse.setOrca(_ctx.stringValue("DescribeDBClusterAttributeResponse.Orca"));
+		describeDBClusterAttributeResponse.setSourceDBCluster(_ctx.stringValue("DescribeDBClusterAttributeResponse.SourceDBCluster"));
+		describeDBClusterAttributeResponse.setRestoreType(_ctx.stringValue("DescribeDBClusterAttributeResponse.RestoreType"));
+		describeDBClusterAttributeResponse.setRestoreDataPoint(_ctx.stringValue("DescribeDBClusterAttributeResponse.RestoreDataPoint"));
+		describeDBClusterAttributeResponse.setSourceRegionId(_ctx.stringValue("DescribeDBClusterAttributeResponse.SourceRegionId"));
+		describeDBClusterAttributeResponse.setImciAutoIndex(_ctx.stringValue("DescribeDBClusterAttributeResponse.ImciAutoIndex"));
+		describeDBClusterAttributeResponse.setBurstingEnabled(_ctx.stringValue("DescribeDBClusterAttributeResponse.BurstingEnabled"));
 
 		RelatedAPInstance relatedAPInstance = new RelatedAPInstance();
 		relatedAPInstance.setName(_ctx.stringValue("DescribeDBClusterAttributeResponse.RelatedAPInstance.Name"));
@@ -123,6 +130,11 @@ public class DescribeDBClusterAttributeResponseUnmarshaller {
 			dBNode.setSubCluster(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].SubCluster"));
 			dBNode.setTair(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].Tair"));
 			dBNode.setRemoteMemorySize(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].RemoteMemorySize"));
+			dBNode.setOrca(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].Orca"));
+			dBNode.setMirrorInsName(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].MirrorInsName"));
+			dBNode.setMultiMasterLocalStandby(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].MultiMasterLocalStandby"));
+			dBNode.setMultiMasterPrimaryNode(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].MultiMasterPrimaryNode"));
+			dBNode.setDBNodeDescription(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].DBNodeDescription"));
 
 			dBNodes.add(dBNode);
 		}

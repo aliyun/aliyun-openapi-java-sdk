@@ -89,7 +89,11 @@ public class DescribeGlobalDatabaseNetworksResponse extends AcsResponse {
 
 		private String gDNDescription;
 
+		private String zoneId;
+
 		private List<DBCluster> dBClusters;
+
+		private List<OutCloudDBCluster> outCloudDBClusters;
 
 		public String getDBVersion() {
 			return this.dBVersion;
@@ -139,12 +143,28 @@ public class DescribeGlobalDatabaseNetworksResponse extends AcsResponse {
 			this.gDNDescription = gDNDescription;
 		}
 
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
+
 		public List<DBCluster> getDBClusters() {
 			return this.dBClusters;
 		}
 
 		public void setDBClusters(List<DBCluster> dBClusters) {
 			this.dBClusters = dBClusters;
+		}
+
+		public List<OutCloudDBCluster> getOutCloudDBClusters() {
+			return this.outCloudDBClusters;
+		}
+
+		public void setOutCloudDBClusters(List<OutCloudDBCluster> outCloudDBClusters) {
+			this.outCloudDBClusters = outCloudDBClusters;
 		}
 
 		public static class DBCluster {
@@ -154,6 +174,49 @@ public class DescribeGlobalDatabaseNetworksResponse extends AcsResponse {
 			private String role;
 
 			private String regionId;
+
+			public String getDBClusterId() {
+				return this.dBClusterId;
+			}
+
+			public void setDBClusterId(String dBClusterId) {
+				this.dBClusterId = dBClusterId;
+			}
+
+			public String getRole() {
+				return this.role;
+			}
+
+			public void setRole(String role) {
+				this.role = role;
+			}
+
+			public String getRegionId() {
+				return this.regionId;
+			}
+
+			public void setRegionId(String regionId) {
+				this.regionId = regionId;
+			}
+		}
+
+		public static class OutCloudDBCluster {
+
+			private String outCloudType;
+
+			private String dBClusterId;
+
+			private String role;
+
+			private String regionId;
+
+			public String getOutCloudType() {
+				return this.outCloudType;
+			}
+
+			public void setOutCloudType(String outCloudType) {
+				this.outCloudType = outCloudType;
+			}
 
 			public String getDBClusterId() {
 				return this.dBClusterId;

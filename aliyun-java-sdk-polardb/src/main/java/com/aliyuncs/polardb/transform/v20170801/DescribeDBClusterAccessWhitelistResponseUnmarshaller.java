@@ -29,6 +29,16 @@ public class DescribeDBClusterAccessWhitelistResponseUnmarshaller {
 		
 		describeDBClusterAccessWhitelistResponse.setRequestId(_ctx.stringValue("DescribeDBClusterAccessWhitelistResponse.RequestId"));
 
+		List<DBClusterSecurityGroup> dBClusterSecurityGroups = new ArrayList<DBClusterSecurityGroup>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeDBClusterAccessWhitelistResponse.DBClusterSecurityGroups.Length"); i++) {
+			DBClusterSecurityGroup dBClusterSecurityGroup = new DBClusterSecurityGroup();
+			dBClusterSecurityGroup.setSecurityGroupId(_ctx.stringValue("DescribeDBClusterAccessWhitelistResponse.DBClusterSecurityGroups["+ i +"].SecurityGroupId"));
+			dBClusterSecurityGroup.setSecurityGroupName(_ctx.stringValue("DescribeDBClusterAccessWhitelistResponse.DBClusterSecurityGroups["+ i +"].SecurityGroupName"));
+
+			dBClusterSecurityGroups.add(dBClusterSecurityGroup);
+		}
+		describeDBClusterAccessWhitelistResponse.setDBClusterSecurityGroups(dBClusterSecurityGroups);
+
 		List<DBClusterIPArray> items = new ArrayList<DBClusterIPArray>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDBClusterAccessWhitelistResponse.Items.Length"); i++) {
 			DBClusterIPArray dBClusterIPArray = new DBClusterIPArray();
@@ -39,16 +49,6 @@ public class DescribeDBClusterAccessWhitelistResponseUnmarshaller {
 			items.add(dBClusterIPArray);
 		}
 		describeDBClusterAccessWhitelistResponse.setItems(items);
-
-		List<DBClusterSecurityGroup> dBClusterSecurityGroups = new ArrayList<DBClusterSecurityGroup>();
-		for (int i = 0; i < _ctx.lengthValue("DescribeDBClusterAccessWhitelistResponse.DBClusterSecurityGroups.Length"); i++) {
-			DBClusterSecurityGroup dBClusterSecurityGroup = new DBClusterSecurityGroup();
-			dBClusterSecurityGroup.setSecurityGroupId(_ctx.stringValue("DescribeDBClusterAccessWhitelistResponse.DBClusterSecurityGroups["+ i +"].SecurityGroupId"));
-			dBClusterSecurityGroup.setSecurityGroupName(_ctx.stringValue("DescribeDBClusterAccessWhitelistResponse.DBClusterSecurityGroups["+ i +"].SecurityGroupName"));
-
-			dBClusterSecurityGroups.add(dBClusterSecurityGroup);
-		}
-		describeDBClusterAccessWhitelistResponse.setDBClusterSecurityGroups(dBClusterSecurityGroups);
 	 
 	 	return describeDBClusterAccessWhitelistResponse;
 	}

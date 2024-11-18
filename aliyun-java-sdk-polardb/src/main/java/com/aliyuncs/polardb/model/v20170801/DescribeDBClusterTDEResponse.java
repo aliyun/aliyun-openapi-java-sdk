@@ -24,32 +24,28 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDBClusterTDEResponse extends AcsResponse {
 
-	private String tDEStatus;
-
-	private String requestId;
+	private String automaticRotation;
 
 	private String dBClusterId;
 
+	private String encryptNewTables;
+
 	private String encryptionKey;
 
-	private String encryptNewTables;
+	private String requestId;
+
+	private String rotationInterval;
 
 	private String tDERegion;
 
-	public String getTDEStatus() {
-		return this.tDEStatus;
+	private String tDEStatus;
+
+	public String getAutomaticRotation() {
+		return this.automaticRotation;
 	}
 
-	public void setTDEStatus(String tDEStatus) {
-		this.tDEStatus = tDEStatus;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setAutomaticRotation(String automaticRotation) {
+		this.automaticRotation = automaticRotation;
 	}
 
 	public String getDBClusterId() {
@@ -60,14 +56,6 @@ public class DescribeDBClusterTDEResponse extends AcsResponse {
 		this.dBClusterId = dBClusterId;
 	}
 
-	public String getEncryptionKey() {
-		return this.encryptionKey;
-	}
-
-	public void setEncryptionKey(String encryptionKey) {
-		this.encryptionKey = encryptionKey;
-	}
-
 	public String getEncryptNewTables() {
 		return this.encryptNewTables;
 	}
@@ -76,12 +64,44 @@ public class DescribeDBClusterTDEResponse extends AcsResponse {
 		this.encryptNewTables = encryptNewTables;
 	}
 
+	public String getEncryptionKey() {
+		return this.encryptionKey;
+	}
+
+	public void setEncryptionKey(String encryptionKey) {
+		this.encryptionKey = encryptionKey;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getRotationInterval() {
+		return this.rotationInterval;
+	}
+
+	public void setRotationInterval(String rotationInterval) {
+		this.rotationInterval = rotationInterval;
+	}
+
 	public String getTDERegion() {
 		return this.tDERegion;
 	}
 
 	public void setTDERegion(String tDERegion) {
 		this.tDERegion = tDERegion;
+	}
+
+	public String getTDEStatus() {
+		return this.tDEStatus;
+	}
+
+	public void setTDEStatus(String tDEStatus) {
+		this.tDEStatus = tDEStatus;
 	}
 
 	@Override

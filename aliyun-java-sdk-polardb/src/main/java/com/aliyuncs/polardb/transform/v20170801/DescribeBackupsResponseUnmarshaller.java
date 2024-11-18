@@ -30,6 +30,7 @@ public class DescribeBackupsResponseUnmarshaller {
 		describeBackupsResponse.setTotalRecordCount(_ctx.stringValue("DescribeBackupsResponse.TotalRecordCount"));
 		describeBackupsResponse.setPageRecordCount(_ctx.stringValue("DescribeBackupsResponse.PageRecordCount"));
 		describeBackupsResponse.setPageNumber(_ctx.stringValue("DescribeBackupsResponse.PageNumber"));
+		describeBackupsResponse.setTotalLevel2BackupSize(_ctx.stringValue("DescribeBackupsResponse.TotalLevel2BackupSize"));
 
 		List<Backup> items = new ArrayList<Backup>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeBackupsResponse.Items.Length"); i++) {

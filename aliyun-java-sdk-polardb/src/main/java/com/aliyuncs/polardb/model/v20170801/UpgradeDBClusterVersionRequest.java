@@ -45,6 +45,8 @@ public class UpgradeDBClusterVersionRequest extends RpcAcsRequest<UpgradeDBClust
 
 	private String targetDBRevisionVersionCode;
 
+	private String targetProxyRevisionVersionCode;
+
 	private String upgradePolicy;
 
 	private Boolean fromTimeService;
@@ -164,6 +166,17 @@ public class UpgradeDBClusterVersionRequest extends RpcAcsRequest<UpgradeDBClust
 		this.targetDBRevisionVersionCode = targetDBRevisionVersionCode;
 		if(targetDBRevisionVersionCode != null){
 			putQueryParameter("TargetDBRevisionVersionCode", targetDBRevisionVersionCode);
+		}
+	}
+
+	public String getTargetProxyRevisionVersionCode() {
+		return this.targetProxyRevisionVersionCode;
+	}
+
+	public void setTargetProxyRevisionVersionCode(String targetProxyRevisionVersionCode) {
+		this.targetProxyRevisionVersionCode = targetProxyRevisionVersionCode;
+		if(targetProxyRevisionVersionCode != null){
+			putQueryParameter("TargetProxyRevisionVersionCode", targetProxyRevisionVersionCode);
 		}
 	}
 

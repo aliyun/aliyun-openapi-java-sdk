@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.polardb.model.v20170801.DescribeGlobalDatabaseNetworksResponse;
 import com.aliyuncs.polardb.model.v20170801.DescribeGlobalDatabaseNetworksResponse.GlobalDatabaseNetwork;
 import com.aliyuncs.polardb.model.v20170801.DescribeGlobalDatabaseNetworksResponse.GlobalDatabaseNetwork.DBCluster;
+import com.aliyuncs.polardb.model.v20170801.DescribeGlobalDatabaseNetworksResponse.GlobalDatabaseNetwork.OutCloudDBCluster;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -41,6 +42,7 @@ public class DescribeGlobalDatabaseNetworksResponseUnmarshaller {
 			globalDatabaseNetwork.setGDNStatus(_ctx.stringValue("DescribeGlobalDatabaseNetworksResponse.Items["+ i +"].GDNStatus"));
 			globalDatabaseNetwork.setDBType(_ctx.stringValue("DescribeGlobalDatabaseNetworksResponse.Items["+ i +"].DBType"));
 			globalDatabaseNetwork.setGDNDescription(_ctx.stringValue("DescribeGlobalDatabaseNetworksResponse.Items["+ i +"].GDNDescription"));
+			globalDatabaseNetwork.setZoneId(_ctx.stringValue("DescribeGlobalDatabaseNetworksResponse.Items["+ i +"].ZoneId"));
 
 			List<DBCluster> dBClusters = new ArrayList<DBCluster>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeGlobalDatabaseNetworksResponse.Items["+ i +"].DBClusters.Length"); j++) {
@@ -52,6 +54,18 @@ public class DescribeGlobalDatabaseNetworksResponseUnmarshaller {
 				dBClusters.add(dBCluster);
 			}
 			globalDatabaseNetwork.setDBClusters(dBClusters);
+
+			List<OutCloudDBCluster> outCloudDBClusters = new ArrayList<OutCloudDBCluster>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeGlobalDatabaseNetworksResponse.Items["+ i +"].OutCloudDBClusters.Length"); j++) {
+				OutCloudDBCluster outCloudDBCluster = new OutCloudDBCluster();
+				outCloudDBCluster.setOutCloudType(_ctx.stringValue("DescribeGlobalDatabaseNetworksResponse.Items["+ i +"].OutCloudDBClusters["+ j +"].OutCloudType"));
+				outCloudDBCluster.setDBClusterId(_ctx.stringValue("DescribeGlobalDatabaseNetworksResponse.Items["+ i +"].OutCloudDBClusters["+ j +"].DBClusterId"));
+				outCloudDBCluster.setRole(_ctx.stringValue("DescribeGlobalDatabaseNetworksResponse.Items["+ i +"].OutCloudDBClusters["+ j +"].Role"));
+				outCloudDBCluster.setRegionId(_ctx.stringValue("DescribeGlobalDatabaseNetworksResponse.Items["+ i +"].OutCloudDBClusters["+ j +"].RegionId"));
+
+				outCloudDBClusters.add(outCloudDBCluster);
+			}
+			globalDatabaseNetwork.setOutCloudDBClusters(outCloudDBClusters);
 
 			items.add(globalDatabaseNetwork);
 		}

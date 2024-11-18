@@ -35,6 +35,7 @@ public class DescribeGlobalDatabaseNetworkResponseUnmarshaller {
 		describeGlobalDatabaseNetworkResponse.setCreateTime(_ctx.stringValue("DescribeGlobalDatabaseNetworkResponse.CreateTime"));
 		describeGlobalDatabaseNetworkResponse.setDBType(_ctx.stringValue("DescribeGlobalDatabaseNetworkResponse.DBType"));
 		describeGlobalDatabaseNetworkResponse.setGDNDescription(_ctx.stringValue("DescribeGlobalDatabaseNetworkResponse.GDNDescription"));
+		describeGlobalDatabaseNetworkResponse.setGlobalDomainName(_ctx.stringValue("DescribeGlobalDatabaseNetworkResponse.GlobalDomainName"));
 		describeGlobalDatabaseNetworkResponse.setDBClusterId(_ctx.stringValue("DescribeGlobalDatabaseNetworkResponse.DBClusterId"));
 		describeGlobalDatabaseNetworkResponse.setResourceGroupId(_ctx.stringValue("DescribeGlobalDatabaseNetworkResponse.ResourceGroupId"));
 
@@ -64,8 +65,10 @@ public class DescribeGlobalDatabaseNetworkResponseUnmarshaller {
 			dBCluster.setDBClusterStatus(_ctx.stringValue("DescribeGlobalDatabaseNetworkResponse.DBClusters["+ i +"].DBClusterStatus"));
 			dBCluster.setStorageUsed(_ctx.stringValue("DescribeGlobalDatabaseNetworkResponse.DBClusters["+ i +"].StorageUsed"));
 			dBCluster.setDBClusterDescription(_ctx.stringValue("DescribeGlobalDatabaseNetworkResponse.DBClusters["+ i +"].DBClusterDescription"));
+			dBCluster.setCategory(_ctx.stringValue("DescribeGlobalDatabaseNetworkResponse.DBClusters["+ i +"].Category"));
 			dBCluster.setRole(_ctx.stringValue("DescribeGlobalDatabaseNetworkResponse.DBClusters["+ i +"].Role"));
 			dBCluster.setServerlessType(_ctx.stringValue("DescribeGlobalDatabaseNetworkResponse.DBClusters["+ i +"].ServerlessType"));
+			dBCluster.setMemberStatus(_ctx.stringValue("DescribeGlobalDatabaseNetworkResponse.DBClusters["+ i +"].MemberStatus"));
 
 			List<DBNode> dBNodes = new ArrayList<DBNode>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeGlobalDatabaseNetworkResponse.DBClusters["+ i +"].DBNodes.Length"); j++) {

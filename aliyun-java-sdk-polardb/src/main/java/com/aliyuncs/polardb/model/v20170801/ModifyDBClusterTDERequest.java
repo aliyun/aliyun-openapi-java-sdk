@@ -37,6 +37,8 @@ public class ModifyDBClusterTDERequest extends RpcAcsRequest<ModifyDBClusterTDER
 
 	private Long ownerId;
 
+	private String enableAutomaticRotation;
+
 	private String roleArn;
 
 	private String encryptNewTables;
@@ -114,6 +116,17 @@ public class ModifyDBClusterTDERequest extends RpcAcsRequest<ModifyDBClusterTDER
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getEnableAutomaticRotation() {
+		return this.enableAutomaticRotation;
+	}
+
+	public void setEnableAutomaticRotation(String enableAutomaticRotation) {
+		this.enableAutomaticRotation = enableAutomaticRotation;
+		if(enableAutomaticRotation != null){
+			putQueryParameter("EnableAutomaticRotation", enableAutomaticRotation);
 		}
 	}
 

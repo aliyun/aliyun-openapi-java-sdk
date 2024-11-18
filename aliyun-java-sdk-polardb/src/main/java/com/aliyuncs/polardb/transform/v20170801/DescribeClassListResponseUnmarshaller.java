@@ -47,6 +47,8 @@ public class DescribeClassListResponseUnmarshaller {
 			itemsItem.setPl1MaxIOPS(_ctx.stringValue("DescribeClassListResponse.Items["+ i +"].Pl1MaxIOPS"));
 			itemsItem.setPl2MaxIOPS(_ctx.stringValue("DescribeClassListResponse.Items["+ i +"].Pl2MaxIOPS"));
 			itemsItem.setPl3MaxIOPS(_ctx.stringValue("DescribeClassListResponse.Items["+ i +"].Pl3MaxIOPS"));
+			itemsItem.setEssdMaxStorageCapacity(_ctx.stringValue("DescribeClassListResponse.Items["+ i +"].EssdMaxStorageCapacity"));
+			itemsItem.setPolarStoreMaxStorageCapacity(_ctx.stringValue("DescribeClassListResponse.Items["+ i +"].PolarStoreMaxStorageCapacity"));
 
 			items.add(itemsItem);
 		}

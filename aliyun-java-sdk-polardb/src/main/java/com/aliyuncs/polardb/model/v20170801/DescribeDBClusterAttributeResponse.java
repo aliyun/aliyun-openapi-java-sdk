@@ -147,6 +147,20 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 	private String supportInstantSwitchWithImci;
 
+	private String orca;
+
+	private String sourceDBCluster;
+
+	private String restoreType;
+
+	private String restoreDataPoint;
+
+	private String sourceRegionId;
+
+	private String imciAutoIndex;
+
+	private String burstingEnabled;
+
 	private List<DBNode> dBNodes;
 
 	private List<Tag> tags;
@@ -641,6 +655,62 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 		this.supportInstantSwitchWithImci = supportInstantSwitchWithImci;
 	}
 
+	public String getOrca() {
+		return this.orca;
+	}
+
+	public void setOrca(String orca) {
+		this.orca = orca;
+	}
+
+	public String getSourceDBCluster() {
+		return this.sourceDBCluster;
+	}
+
+	public void setSourceDBCluster(String sourceDBCluster) {
+		this.sourceDBCluster = sourceDBCluster;
+	}
+
+	public String getRestoreType() {
+		return this.restoreType;
+	}
+
+	public void setRestoreType(String restoreType) {
+		this.restoreType = restoreType;
+	}
+
+	public String getRestoreDataPoint() {
+		return this.restoreDataPoint;
+	}
+
+	public void setRestoreDataPoint(String restoreDataPoint) {
+		this.restoreDataPoint = restoreDataPoint;
+	}
+
+	public String getSourceRegionId() {
+		return this.sourceRegionId;
+	}
+
+	public void setSourceRegionId(String sourceRegionId) {
+		this.sourceRegionId = sourceRegionId;
+	}
+
+	public String getImciAutoIndex() {
+		return this.imciAutoIndex;
+	}
+
+	public void setImciAutoIndex(String imciAutoIndex) {
+		this.imciAutoIndex = imciAutoIndex;
+	}
+
+	public String getBurstingEnabled() {
+		return this.burstingEnabled;
+	}
+
+	public void setBurstingEnabled(String burstingEnabled) {
+		this.burstingEnabled = burstingEnabled;
+	}
+
 	public List<DBNode> getDBNodes() {
 		return this.dBNodes;
 	}
@@ -708,6 +778,16 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 		private String tair;
 
 		private String remoteMemorySize;
+
+		private String orca;
+
+		private String mirrorInsName;
+
+		private String multiMasterLocalStandby;
+
+		private String multiMasterPrimaryNode;
+
+		private String dBNodeDescription;
 
 		public String getCreationTime() {
 			return this.creationTime;
@@ -875,6 +955,46 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 		public void setRemoteMemorySize(String remoteMemorySize) {
 			this.remoteMemorySize = remoteMemorySize;
+		}
+
+		public String getOrca() {
+			return this.orca;
+		}
+
+		public void setOrca(String orca) {
+			this.orca = orca;
+		}
+
+		public String getMirrorInsName() {
+			return this.mirrorInsName;
+		}
+
+		public void setMirrorInsName(String mirrorInsName) {
+			this.mirrorInsName = mirrorInsName;
+		}
+
+		public String getMultiMasterLocalStandby() {
+			return this.multiMasterLocalStandby;
+		}
+
+		public void setMultiMasterLocalStandby(String multiMasterLocalStandby) {
+			this.multiMasterLocalStandby = multiMasterLocalStandby;
+		}
+
+		public String getMultiMasterPrimaryNode() {
+			return this.multiMasterPrimaryNode;
+		}
+
+		public void setMultiMasterPrimaryNode(String multiMasterPrimaryNode) {
+			this.multiMasterPrimaryNode = multiMasterPrimaryNode;
+		}
+
+		public String getDBNodeDescription() {
+			return this.dBNodeDescription;
+		}
+
+		public void setDBNodeDescription(String dBNodeDescription) {
+			this.dBNodeDescription = dBNodeDescription;
 		}
 	}
 

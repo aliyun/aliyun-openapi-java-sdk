@@ -23,11 +23,13 @@ public class DescribeDBClusterTDEResponseUnmarshaller {
 	public static DescribeDBClusterTDEResponse unmarshall(DescribeDBClusterTDEResponse describeDBClusterTDEResponse, UnmarshallerContext _ctx) {
 		
 		describeDBClusterTDEResponse.setRequestId(_ctx.stringValue("DescribeDBClusterTDEResponse.RequestId"));
-		describeDBClusterTDEResponse.setTDEStatus(_ctx.stringValue("DescribeDBClusterTDEResponse.TDEStatus"));
+		describeDBClusterTDEResponse.setAutomaticRotation(_ctx.stringValue("DescribeDBClusterTDEResponse.AutomaticRotation"));
 		describeDBClusterTDEResponse.setDBClusterId(_ctx.stringValue("DescribeDBClusterTDEResponse.DBClusterId"));
-		describeDBClusterTDEResponse.setEncryptionKey(_ctx.stringValue("DescribeDBClusterTDEResponse.EncryptionKey"));
 		describeDBClusterTDEResponse.setEncryptNewTables(_ctx.stringValue("DescribeDBClusterTDEResponse.EncryptNewTables"));
+		describeDBClusterTDEResponse.setEncryptionKey(_ctx.stringValue("DescribeDBClusterTDEResponse.EncryptionKey"));
+		describeDBClusterTDEResponse.setRotationInterval(_ctx.stringValue("DescribeDBClusterTDEResponse.RotationInterval"));
 		describeDBClusterTDEResponse.setTDERegion(_ctx.stringValue("DescribeDBClusterTDEResponse.TDERegion"));
+		describeDBClusterTDEResponse.setTDEStatus(_ctx.stringValue("DescribeDBClusterTDEResponse.TDEStatus"));
 	 
 	 	return describeDBClusterTDEResponse;
 	}

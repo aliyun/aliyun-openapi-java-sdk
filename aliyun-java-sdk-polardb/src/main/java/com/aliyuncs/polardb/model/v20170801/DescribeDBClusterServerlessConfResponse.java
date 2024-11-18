@@ -48,6 +48,16 @@ public class DescribeDBClusterServerlessConfResponse extends AcsResponse {
 
 	private String dBMaxscaleId;
 
+	private String serverlessRuleMode;
+
+	private String serverlessRuleCpuEnlargeThreshold;
+
+	private String serverlessRuleCpuShrinkThreshold;
+
+	private String traditionalScaleMaxThreshold;
+
+	private String agileScaleMax;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -142,6 +152,46 @@ public class DescribeDBClusterServerlessConfResponse extends AcsResponse {
 
 	public void setDBMaxscaleId(String dBMaxscaleId) {
 		this.dBMaxscaleId = dBMaxscaleId;
+	}
+
+	public String getServerlessRuleMode() {
+		return this.serverlessRuleMode;
+	}
+
+	public void setServerlessRuleMode(String serverlessRuleMode) {
+		this.serverlessRuleMode = serverlessRuleMode;
+	}
+
+	public String getServerlessRuleCpuEnlargeThreshold() {
+		return this.serverlessRuleCpuEnlargeThreshold;
+	}
+
+	public void setServerlessRuleCpuEnlargeThreshold(String serverlessRuleCpuEnlargeThreshold) {
+		this.serverlessRuleCpuEnlargeThreshold = serverlessRuleCpuEnlargeThreshold;
+	}
+
+	public String getServerlessRuleCpuShrinkThreshold() {
+		return this.serverlessRuleCpuShrinkThreshold;
+	}
+
+	public void setServerlessRuleCpuShrinkThreshold(String serverlessRuleCpuShrinkThreshold) {
+		this.serverlessRuleCpuShrinkThreshold = serverlessRuleCpuShrinkThreshold;
+	}
+
+	public String getTraditionalScaleMaxThreshold() {
+		return this.traditionalScaleMaxThreshold;
+	}
+
+	public void setTraditionalScaleMaxThreshold(String traditionalScaleMaxThreshold) {
+		this.traditionalScaleMaxThreshold = traditionalScaleMaxThreshold;
+	}
+
+	public String getAgileScaleMax() {
+		return this.agileScaleMax;
+	}
+
+	public void setAgileScaleMax(String agileScaleMax) {
+		this.agileScaleMax = agileScaleMax;
 	}
 
 	@Override

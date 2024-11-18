@@ -23,9 +23,10 @@ public class DescribeAITaskStatusResponseUnmarshaller {
 	public static DescribeAITaskStatusResponse unmarshall(DescribeAITaskStatusResponse describeAITaskStatusResponse, UnmarshallerContext _ctx) {
 		
 		describeAITaskStatusResponse.setRequestId(_ctx.stringValue("DescribeAITaskStatusResponse.RequestId"));
-		describeAITaskStatusResponse.setStatus(_ctx.stringValue("DescribeAITaskStatusResponse.Status"));
 		describeAITaskStatusResponse.setDBClusterId(_ctx.stringValue("DescribeAITaskStatusResponse.DBClusterId"));
+		describeAITaskStatusResponse.setStatus(_ctx.stringValue("DescribeAITaskStatusResponse.Status"));
 		describeAITaskStatusResponse.setStatusName(_ctx.stringValue("DescribeAITaskStatusResponse.StatusName"));
+		describeAITaskStatusResponse.setAccountName(_ctx.stringValue("DescribeAITaskStatusResponse.AccountName"));
 	 
 	 	return describeAITaskStatusResponse;
 	}

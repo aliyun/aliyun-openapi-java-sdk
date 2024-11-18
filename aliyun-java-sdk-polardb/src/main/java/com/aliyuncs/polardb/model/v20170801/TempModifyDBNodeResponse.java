@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class TempModifyDBNodeResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String dBClusterId;
 
 	private String orderId;
 
+	private String requestId;
+
 	private List<String> dBNodeIds;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getDBClusterId() {
 		return this.dBClusterId;
@@ -55,6 +47,14 @@ public class TempModifyDBNodeResponse extends AcsResponse {
 
 	public void setOrderId(String orderId) {
 		this.orderId = orderId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<String> getDBNodeIds() {

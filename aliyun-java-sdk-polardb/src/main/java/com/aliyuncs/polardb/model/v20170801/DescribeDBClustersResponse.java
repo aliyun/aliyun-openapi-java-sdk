@@ -141,6 +141,14 @@ public class DescribeDBClustersResponse extends AcsResponse {
 
 		private String subCategory;
 
+		private String deployUnit;
+
+		private String storageType;
+
+		private String hotStandbyCluster;
+
+		private String engineMigrationStatus;
+
 		private List<Tag> tags;
 
 		private List<DBNode> dBNodes;
@@ -399,6 +407,38 @@ public class DescribeDBClustersResponse extends AcsResponse {
 
 		public void setSubCategory(String subCategory) {
 			this.subCategory = subCategory;
+		}
+
+		public String getDeployUnit() {
+			return this.deployUnit;
+		}
+
+		public void setDeployUnit(String deployUnit) {
+			this.deployUnit = deployUnit;
+		}
+
+		public String getStorageType() {
+			return this.storageType;
+		}
+
+		public void setStorageType(String storageType) {
+			this.storageType = storageType;
+		}
+
+		public String getHotStandbyCluster() {
+			return this.hotStandbyCluster;
+		}
+
+		public void setHotStandbyCluster(String hotStandbyCluster) {
+			this.hotStandbyCluster = hotStandbyCluster;
+		}
+
+		public String getEngineMigrationStatus() {
+			return this.engineMigrationStatus;
+		}
+
+		public void setEngineMigrationStatus(String engineMigrationStatus) {
+			this.engineMigrationStatus = engineMigrationStatus;
 		}
 
 		public List<Tag> getTags() {
