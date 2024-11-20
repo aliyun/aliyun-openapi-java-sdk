@@ -139,6 +139,8 @@ public class BatchCreateContainerGroupsRequest extends RpcAcsRequest<BatchCreate
 
     private Boolean dataCacheBurstingEnabled;
 
+    private String gpuDriverVersion;
+
     public String getDataCacheBucket() {
         return dataCacheBucket;
     }
@@ -180,6 +182,17 @@ public class BatchCreateContainerGroupsRequest extends RpcAcsRequest<BatchCreate
         this.dataCacheBurstingEnabled = dataCacheBurstingEnabled;
         if (null != dataCacheBurstingEnabled){
             putQueryParameter("DataCacheBurstingEnabled", dataCacheBurstingEnabled);
+        }
+    }
+
+    public String getGpuDriverVersion() {
+        return gpuDriverVersion;
+    }
+
+    public void setGpuDriverVersion(String gpuDriverVersion) {
+        this.gpuDriverVersion = gpuDriverVersion;
+        if (gpuDriverVersion != null) {
+            putQueryParameter("GpuDriverVersion", gpuDriverVersion);
         }
     }
 
