@@ -15,22 +15,42 @@
 package com.aliyuncs.qianzhou.model.v20211111;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.qianzhou.transform.v20211111.ListUserClustersResponseUnmarshaller;
+import com.aliyuncs.qianzhou.transform.v20211111.AICreateSessionMessageResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ListUserClustersResponse extends AcsResponse {
+public class AICreateSessionMessageResponse extends AcsResponse {
+
+	private String answer;
+
+	private String session_id;
 
 	private String requestId;
 
-	private String msg;
+	private Long code;
 
 	private String data;
 
-	private Long code;
+	private String msg;
+
+	public String getAnswer() {
+		return this.answer;
+	}
+
+	public void setAnswer(String answer) {
+		this.answer = answer;
+	}
+
+	public String getSession_id() {
+		return this.session_id;
+	}
+
+	public void setSession_id(String session_id) {
+		this.session_id = session_id;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,22 +58,6 @@ public class ListUserClustersResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getMsg() {
-		return this.msg;
-	}
-
-	public void setMsg(String msg) {
-		this.msg = msg;
-	}
-
-	public String getData() {
-		return this.data;
-	}
-
-	public void setData(String data) {
-		this.data = data;
 	}
 
 	public Long getCode() {
@@ -64,9 +68,25 @@ public class ListUserClustersResponse extends AcsResponse {
 		this.code = code;
 	}
 
+	public String getData() {
+		return this.data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
+	}
+
+	public String getMsg() {
+		return this.msg;
+	}
+
+	public void setMsg(String msg) {
+		this.msg = msg;
+	}
+
 	@Override
-	public ListUserClustersResponse getInstance(UnmarshallerContext context) {
-		return	ListUserClustersResponseUnmarshaller.unmarshall(this, context);
+	public AICreateSessionMessageResponse getInstance(UnmarshallerContext context) {
+		return	AICreateSessionMessageResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

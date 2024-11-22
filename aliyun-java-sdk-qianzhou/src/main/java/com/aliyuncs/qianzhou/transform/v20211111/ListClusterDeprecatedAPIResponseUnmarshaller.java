@@ -47,6 +47,10 @@ public class ListClusterDeprecatedAPIResponseUnmarshaller {
 			dataItem.setLabel(_ctx.stringValue("ListClusterDeprecatedAPIResponse.datas.data["+ i +"].label"));
 			dataItem.setCount(_ctx.integerValue("ListClusterDeprecatedAPIResponse.datas.data["+ i +"].count"));
 			dataItem.setContent(_ctx.stringValue("ListClusterDeprecatedAPIResponse.datas.data["+ i +"].content"));
+			dataItem.setDeprecated_k8s_version(_ctx.stringValue("ListClusterDeprecatedAPIResponse.datas.data["+ i +"].deprecated_k8s_version"));
+			dataItem.setSource_ips(_ctx.stringValue("ListClusterDeprecatedAPIResponse.datas.data["+ i +"].source_ips"));
+			dataItem.setLast_time(_ctx.stringValue("ListClusterDeprecatedAPIResponse.datas.data["+ i +"].last_time"));
+			dataItem.setDs(_ctx.stringValue("ListClusterDeprecatedAPIResponse.datas.data["+ i +"].ds"));
 
 			data.add(dataItem);
 		}

@@ -24,11 +24,37 @@ import com.aliyuncs.http.MethodType;
 public class ListUserClustersRequest extends RoaAcsRequest<ListUserClustersResponse> {
 	   
 
+	private String current;
+
+	private String pageSize;
+
 	private String userID;
 	public ListUserClustersRequest() {
 		super("qianzhou", "2021-11-11", "ListUserClusters");
 		setUriPattern("/popapi/listUserClusters");
 		setMethod(MethodType.GET);
+	}
+
+	public String getCurrent() {
+		return this.current;
+	}
+
+	public void setCurrent(String current) {
+		this.current = current;
+		if(current != null){
+			putQueryParameter("current", current);
+		}
+	}
+
+	public String getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(String pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("pageSize", pageSize);
+		}
 	}
 
 	public String getUserID() {

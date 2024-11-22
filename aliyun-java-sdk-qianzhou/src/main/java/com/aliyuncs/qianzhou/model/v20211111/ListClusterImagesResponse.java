@@ -125,6 +125,8 @@ public class ListClusterImagesResponse extends AcsResponse {
 
 			private String updated;
 
+			private String uid;
+
 			public String getCluster_id() {
 				return this.cluster_id;
 			}
@@ -187,6 +189,14 @@ public class ListClusterImagesResponse extends AcsResponse {
 
 			public void setUpdated(String updated) {
 				this.updated = updated;
+			}
+
+			public String getUid() {
+				return this.uid;
+			}
+
+			public void setUid(String uid) {
+				this.uid = uid;
 			}
 		}
 	}

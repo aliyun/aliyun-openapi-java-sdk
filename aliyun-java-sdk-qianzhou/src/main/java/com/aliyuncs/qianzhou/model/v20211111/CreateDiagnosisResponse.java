@@ -15,22 +15,20 @@
 package com.aliyuncs.qianzhou.model.v20211111;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.qianzhou.transform.v20211111.ListUserClustersResponseUnmarshaller;
+import com.aliyuncs.qianzhou.transform.v20211111.CreateDiagnosisResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ListUserClustersResponse extends AcsResponse {
+public class CreateDiagnosisResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String msg;
-
-	private String data;
-
 	private Long code;
+
+	private Object data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,22 +36,6 @@ public class ListUserClustersResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getMsg() {
-		return this.msg;
-	}
-
-	public void setMsg(String msg) {
-		this.msg = msg;
-	}
-
-	public String getData() {
-		return this.data;
-	}
-
-	public void setData(String data) {
-		this.data = data;
 	}
 
 	public Long getCode() {
@@ -64,9 +46,17 @@ public class ListUserClustersResponse extends AcsResponse {
 		this.code = code;
 	}
 
+	public Object getData() {
+		return this.data;
+	}
+
+	public void setData(Object data) {
+		this.data = data;
+	}
+
 	@Override
-	public ListUserClustersResponse getInstance(UnmarshallerContext context) {
-		return	ListUserClustersResponseUnmarshaller.unmarshall(this, context);
+	public CreateDiagnosisResponse getInstance(UnmarshallerContext context) {
+		return	CreateDiagnosisResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

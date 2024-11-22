@@ -125,6 +125,14 @@ public class ListClusterDeprecatedAPIResponse extends AcsResponse {
 
 			private String content;
 
+			private String deprecated_k8s_version;
+
+			private String source_ips;
+
+			private String last_time;
+
+			private String ds;
+
 			public String getCluster_id() {
 				return this.cluster_id;
 			}
@@ -187,6 +195,38 @@ public class ListClusterDeprecatedAPIResponse extends AcsResponse {
 
 			public void setContent(String content) {
 				this.content = content;
+			}
+
+			public String getDeprecated_k8s_version() {
+				return this.deprecated_k8s_version;
+			}
+
+			public void setDeprecated_k8s_version(String deprecated_k8s_version) {
+				this.deprecated_k8s_version = deprecated_k8s_version;
+			}
+
+			public String getSource_ips() {
+				return this.source_ips;
+			}
+
+			public void setSource_ips(String source_ips) {
+				this.source_ips = source_ips;
+			}
+
+			public String getLast_time() {
+				return this.last_time;
+			}
+
+			public void setLast_time(String last_time) {
+				this.last_time = last_time;
+			}
+
+			public String getDs() {
+				return this.ds;
+			}
+
+			public void setDs(String ds) {
+				this.ds = ds;
 			}
 		}
 	}

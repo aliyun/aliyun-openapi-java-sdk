@@ -14,19 +14,17 @@
 
 package com.aliyuncs.qianzhou.transform.v20211111;
 
-import com.aliyuncs.qianzhou.model.v20211111.ListUserClustersResponse;
+import com.aliyuncs.qianzhou.model.v20211111.CreateDiagnosisResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class ListUserClustersResponseUnmarshaller {
+public class CreateDiagnosisResponseUnmarshaller {
 
-	public static ListUserClustersResponse unmarshall(ListUserClustersResponse listUserClustersResponse, UnmarshallerContext _ctx) {
+	public static CreateDiagnosisResponse unmarshall(CreateDiagnosisResponse createDiagnosisResponse, UnmarshallerContext _ctx) {
 		
-		listUserClustersResponse.setRequestId(_ctx.stringValue("ListUserClustersResponse.requestId"));
-		listUserClustersResponse.setMsg(_ctx.stringValue("ListUserClustersResponse.msg"));
-		listUserClustersResponse.setData(_ctx.stringValue("ListUserClustersResponse.data"));
-		listUserClustersResponse.setCode(_ctx.longValue("ListUserClustersResponse.code"));
+		createDiagnosisResponse.setRequestId(_ctx.stringValue("CreateDiagnosisResponse.requestId"));
+		createDiagnosisResponse.setCode(_ctx.longValue("CreateDiagnosisResponse.code"));
 	 
-	 	return listUserClustersResponse;
+	 	return createDiagnosisResponse;
 	}
 }

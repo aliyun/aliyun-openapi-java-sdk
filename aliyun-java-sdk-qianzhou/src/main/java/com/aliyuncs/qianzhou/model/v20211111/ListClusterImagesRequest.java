@@ -26,6 +26,8 @@ public class ListClusterImagesRequest extends RoaAcsRequest<ListClusterImagesRes
 
 	private String image_name;
 
+	private String uid;
+
 	private String cluster_id;
 
 	private String image_hash;
@@ -47,6 +49,17 @@ public class ListClusterImagesRequest extends RoaAcsRequest<ListClusterImagesRes
 		this.image_name = image_name;
 		if(image_name != null){
 			putQueryParameter("image_name", image_name);
+		}
+	}
+
+	public String getUid() {
+		return this.uid;
+	}
+
+	public void setUid(String uid) {
+		this.uid = uid;
+		if(uid != null){
+			putQueryParameter("uid", uid);
 		}
 	}
 

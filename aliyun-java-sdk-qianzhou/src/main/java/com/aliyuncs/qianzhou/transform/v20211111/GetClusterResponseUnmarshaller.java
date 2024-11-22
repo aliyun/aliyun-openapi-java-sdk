@@ -15,6 +15,7 @@
 package com.aliyuncs.qianzhou.transform.v20211111;
 
 import com.aliyuncs.qianzhou.model.v20211111.GetClusterResponse;
+import com.aliyuncs.qianzhou.model.v20211111.GetClusterResponse.Data;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -23,6 +24,19 @@ public class GetClusterResponseUnmarshaller {
 	public static GetClusterResponse unmarshall(GetClusterResponse getClusterResponse, UnmarshallerContext _ctx) {
 		
 		getClusterResponse.setRequestId(_ctx.stringValue("GetClusterResponse.requestId"));
+
+		Data data = new Data();
+		data.setClusterID(_ctx.stringValue("GetClusterResponse.data.clusterID"));
+		data.setName(_ctx.stringValue("GetClusterResponse.data.name"));
+		data.setRegionID(_ctx.stringValue("GetClusterResponse.data.regionID"));
+		data.setState(_ctx.stringValue("GetClusterResponse.data.state"));
+		data.setUserID(_ctx.stringValue("GetClusterResponse.data.userID"));
+		data.setClusterType(_ctx.stringValue("GetClusterResponse.data.clusterType"));
+		data.setCurrentVersion(_ctx.stringValue("GetClusterResponse.data.currentVersion"));
+		data.setSecurityGroupId(_ctx.stringValue("GetClusterResponse.data.securityGroupId"));
+		data.setProfile(_ctx.stringValue("GetClusterResponse.data.profile"));
+		data.setSpec(_ctx.stringValue("GetClusterResponse.data.spec"));
+		getClusterResponse.setData(data);
 	 
 	 	return getClusterResponse;
 	}

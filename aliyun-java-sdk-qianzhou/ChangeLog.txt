@@ -1,3 +1,6 @@
+2024-11-22 Version: 1.0.2
+- Generated 2021-11-11 for `qianzhou`.
+
 2022-11-02 Version: 1.0.1
 - Supported deprecated k8s api.
 

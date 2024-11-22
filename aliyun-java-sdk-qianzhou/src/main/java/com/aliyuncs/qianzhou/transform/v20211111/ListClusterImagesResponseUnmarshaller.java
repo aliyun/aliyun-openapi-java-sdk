@@ -47,6 +47,7 @@ public class ListClusterImagesResponseUnmarshaller {
 			dataItem.setController_name(_ctx.stringValue("ListClusterImagesResponse.datas.data["+ i +"].controller_name"));
 			dataItem.setCreated(_ctx.stringValue("ListClusterImagesResponse.datas.data["+ i +"].created"));
 			dataItem.setUpdated(_ctx.stringValue("ListClusterImagesResponse.datas.data["+ i +"].updated"));
+			dataItem.setUid(_ctx.stringValue("ListClusterImagesResponse.datas.data["+ i +"].uid"));
 
 			data.add(dataItem);
 		}
