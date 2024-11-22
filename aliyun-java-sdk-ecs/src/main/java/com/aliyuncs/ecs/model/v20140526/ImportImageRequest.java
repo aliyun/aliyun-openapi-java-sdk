@@ -30,6 +30,8 @@ public class ImportImageRequest extends RpcAcsRequest<ImportImageResponse> {
 
 	private Long resourceOwnerId;
 
+	private String clientToken;
+
 	private String description;
 
 	private String platform;
@@ -96,6 +98,17 @@ public class ImportImageRequest extends RpcAcsRequest<ImportImageResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 

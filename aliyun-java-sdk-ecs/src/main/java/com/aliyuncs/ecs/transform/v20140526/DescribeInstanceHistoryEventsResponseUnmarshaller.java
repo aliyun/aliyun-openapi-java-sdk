@@ -34,6 +34,7 @@ public class DescribeInstanceHistoryEventsResponseUnmarshaller {
 		describeInstanceHistoryEventsResponse.setPageSize(_ctx.integerValue("DescribeInstanceHistoryEventsResponse.PageSize"));
 		describeInstanceHistoryEventsResponse.setPageNumber(_ctx.integerValue("DescribeInstanceHistoryEventsResponse.PageNumber"));
 		describeInstanceHistoryEventsResponse.setTotalCount(_ctx.integerValue("DescribeInstanceHistoryEventsResponse.TotalCount"));
+		describeInstanceHistoryEventsResponse.setNextToken(_ctx.stringValue("DescribeInstanceHistoryEventsResponse.NextToken"));
 
 		List<InstanceSystemEventType> instanceSystemEventSet = new ArrayList<InstanceSystemEventType>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceHistoryEventsResponse.InstanceSystemEventSet.Length"); i++) {

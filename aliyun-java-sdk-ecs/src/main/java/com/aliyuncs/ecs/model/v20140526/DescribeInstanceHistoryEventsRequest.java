@@ -38,6 +38,8 @@ public class DescribeInstanceHistoryEventsRequest extends RpcAcsRequest<Describe
 
 	private String resourceGroupId;
 
+	private String nextToken;
+
 	private Integer pageSize;
 
 	private List<String> instanceEventCycleStatuss;
@@ -65,6 +67,8 @@ public class DescribeInstanceHistoryEventsRequest extends RpcAcsRequest<Describe
 	private String instanceId;
 
 	private String notBeforeEnd;
+
+	private Long maxResults;
 
 	private String eventType;
 	public DescribeInstanceHistoryEventsRequest() {
@@ -141,6 +145,17 @@ public class DescribeInstanceHistoryEventsRequest extends RpcAcsRequest<Describe
 		this.resourceGroupId = resourceGroupId;
 		if(resourceGroupId != null){
 			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
 		}
 	}
 
@@ -304,6 +319,17 @@ public class DescribeInstanceHistoryEventsRequest extends RpcAcsRequest<Describe
 		this.notBeforeEnd = notBeforeEnd;
 		if(notBeforeEnd != null){
 			putQueryParameter("NotBefore.End", notBeforeEnd);
+		}
+	}
+
+	public Long getMaxResults() {
+		return this.maxResults;
+	}
+
+	public void setMaxResults(Long maxResults) {
+		this.maxResults = maxResults;
+		if(maxResults != null){
+			putQueryParameter("MaxResults", maxResults.toString());
 		}
 	}
 
