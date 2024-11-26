@@ -26,6 +26,8 @@ public class AddUserRequest extends RpcAcsRequest<AddUserResponse> {
 
 	private Boolean adminUser;
 
+	private String accountId;
+
 	private String roleIds;
 
 	private String accountName;
@@ -48,6 +50,17 @@ public class AddUserRequest extends RpcAcsRequest<AddUserResponse> {
 		this.adminUser = adminUser;
 		if(adminUser != null){
 			putQueryParameter("AdminUser", adminUser.toString());
+		}
+	}
+
+	public String getAccountId() {
+		return this.accountId;
+	}
+
+	public void setAccountId(String accountId) {
+		this.accountId = accountId;
+		if(accountId != null){
+			putQueryParameter("AccountId", accountId);
 		}
 	}
 
