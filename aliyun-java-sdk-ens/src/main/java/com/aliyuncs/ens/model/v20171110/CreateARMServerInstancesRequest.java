@@ -48,6 +48,8 @@ public class CreateARMServerInstancesRequest extends RpcAcsRequest<CreateARMServ
 
 	private Integer amount;
 
+	private String environmentVar;
+
 	private String nameSpace;
 
 	private String serverName;
@@ -187,6 +189,17 @@ public class CreateARMServerInstancesRequest extends RpcAcsRequest<CreateARMServ
 		this.amount = amount;
 		if(amount != null){
 			putQueryParameter("Amount", amount.toString());
+		}
+	}
+
+	public String getEnvironmentVar() {
+		return this.environmentVar;
+	}
+
+	public void setEnvironmentVar(String environmentVar) {
+		this.environmentVar = environmentVar;
+		if(environmentVar != null){
+			putQueryParameter("EnvironmentVar", environmentVar);
 		}
 	}
 

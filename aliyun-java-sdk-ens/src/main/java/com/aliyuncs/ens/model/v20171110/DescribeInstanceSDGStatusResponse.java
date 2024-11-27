@@ -16,22 +16,22 @@ package com.aliyuncs.ens.model.v20171110;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ens.transform.v20171110.DescribeSDGDeploymentStatusResponseUnmarshaller;
+import com.aliyuncs.ens.transform.v20171110.DescribeInstanceSDGStatusResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeSDGDeploymentStatusResponse extends AcsResponse {
+public class DescribeInstanceSDGStatusResponse extends AcsResponse {
 
 	private String requestId;
 
 	private Long pageNumber;
 
-	private Long pageSize;
+	private String pageSize;
 
-	private Long totalCount;
+	private String totalCount;
 
 	private List<DeploymentStatusItem> deploymentStatus;
 
@@ -51,19 +51,19 @@ public class DescribeSDGDeploymentStatusResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Long getPageSize() {
+	public String getPageSize() {
 		return this.pageSize;
 	}
 
-	public void setPageSize(Long pageSize) {
+	public void setPageSize(String pageSize) {
 		this.pageSize = pageSize;
 	}
 
-	public Long getTotalCount() {
+	public String getTotalCount() {
 		return this.totalCount;
 	}
 
-	public void setTotalCount(Long totalCount) {
+	public void setTotalCount(String totalCount) {
 		this.totalCount = totalCount;
 	}
 
@@ -79,9 +79,11 @@ public class DescribeSDGDeploymentStatusResponse extends AcsResponse {
 
 		private String instanceId;
 
+		private String sDGId;
+
 		private String mountType;
 
-		private String regionId;
+		private String ensRegionId;
 
 		private String status;
 
@@ -97,6 +99,14 @@ public class DescribeSDGDeploymentStatusResponse extends AcsResponse {
 			this.instanceId = instanceId;
 		}
 
+		public String getSDGId() {
+			return this.sDGId;
+		}
+
+		public void setSDGId(String sDGId) {
+			this.sDGId = sDGId;
+		}
+
 		public String getMountType() {
 			return this.mountType;
 		}
@@ -105,12 +115,12 @@ public class DescribeSDGDeploymentStatusResponse extends AcsResponse {
 			this.mountType = mountType;
 		}
 
-		public String getRegionId() {
-			return this.regionId;
+		public String getEnsRegionId() {
+			return this.ensRegionId;
 		}
 
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
+		public void setEnsRegionId(String ensRegionId) {
+			this.ensRegionId = ensRegionId;
 		}
 
 		public String getStatus() {
@@ -139,8 +149,8 @@ public class DescribeSDGDeploymentStatusResponse extends AcsResponse {
 	}
 
 	@Override
-	public DescribeSDGDeploymentStatusResponse getInstance(UnmarshallerContext context) {
-		return	DescribeSDGDeploymentStatusResponseUnmarshaller.unmarshall(this, context);
+	public DescribeInstanceSDGStatusResponse getInstance(UnmarshallerContext context) {
+		return	DescribeInstanceSDGStatusResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

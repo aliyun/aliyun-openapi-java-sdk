@@ -103,6 +103,8 @@ public class DescribeDisksResponse extends AcsResponse {
 
 		private String instanceName;
 
+		private String description;
+
 		private Integer size;
 
 		private String status;
@@ -118,6 +120,8 @@ public class DescribeDisksResponse extends AcsResponse {
 		private Boolean encrypted;
 
 		private String encryptedKeyId;
+
+		private Boolean deleteWithInstance;
 
 		public String getCategory() {
 			return this.category;
@@ -183,6 +187,14 @@ public class DescribeDisksResponse extends AcsResponse {
 			this.instanceName = instanceName;
 		}
 
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
 		public Integer getSize() {
 			return this.size;
 		}
@@ -245,6 +257,14 @@ public class DescribeDisksResponse extends AcsResponse {
 
 		public void setEncryptedKeyId(String encryptedKeyId) {
 			this.encryptedKeyId = encryptedKeyId;
+		}
+
+		public Boolean getDeleteWithInstance() {
+			return this.deleteWithInstance;
+		}
+
+		public void setDeleteWithInstance(Boolean deleteWithInstance) {
+			this.deleteWithInstance = deleteWithInstance;
 		}
 	}
 

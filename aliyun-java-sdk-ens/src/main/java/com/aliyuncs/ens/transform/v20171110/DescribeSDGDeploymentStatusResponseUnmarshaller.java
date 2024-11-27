@@ -38,6 +38,7 @@ public class DescribeSDGDeploymentStatusResponseUnmarshaller {
 			deploymentStatusItem.setMountType(_ctx.stringValue("DescribeSDGDeploymentStatusResponse.DeploymentStatus["+ i +"].MountType"));
 			deploymentStatusItem.setRegionId(_ctx.stringValue("DescribeSDGDeploymentStatusResponse.DeploymentStatus["+ i +"].RegionId"));
 			deploymentStatusItem.setStatus(_ctx.stringValue("DescribeSDGDeploymentStatusResponse.DeploymentStatus["+ i +"].Status"));
+			deploymentStatusItem.setPhase(_ctx.stringValue("DescribeSDGDeploymentStatusResponse.DeploymentStatus["+ i +"].Phase"));
 			deploymentStatusItem.setUpdateTime(_ctx.stringValue("DescribeSDGDeploymentStatusResponse.DeploymentStatus["+ i +"].UpdateTime"));
 
 			deploymentStatus.add(deploymentStatusItem);

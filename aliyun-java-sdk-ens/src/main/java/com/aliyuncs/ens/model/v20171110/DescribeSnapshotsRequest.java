@@ -24,20 +24,46 @@ import com.aliyuncs.http.MethodType;
 public class DescribeSnapshotsRequest extends RpcAcsRequest<DescribeSnapshotsResponse> {
 	   
 
+	private String ensRegionId;
+
+	private String instanceId;
+
 	private String snapshotId;
 
-	private Integer pageNumber;
+	private String snapshotName;
 
-	private String ensRegionId;
+	private Integer pageNumber;
 
 	private Integer pageSize;
 
 	private String diskId;
 
-	private String instanceId;
+	private String ensRegionIds;
 	public DescribeSnapshotsRequest() {
 		super("Ens", "2017-11-10", "DescribeSnapshots", "ens");
 		setMethod(MethodType.POST);
+	}
+
+	public String getEnsRegionId() {
+		return this.ensRegionId;
+	}
+
+	public void setEnsRegionId(String ensRegionId) {
+		this.ensRegionId = ensRegionId;
+		if(ensRegionId != null){
+			putQueryParameter("EnsRegionId", ensRegionId);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
 	}
 
 	public String getSnapshotId() {
@@ -51,6 +77,17 @@ public class DescribeSnapshotsRequest extends RpcAcsRequest<DescribeSnapshotsRes
 		}
 	}
 
+	public String getSnapshotName() {
+		return this.snapshotName;
+	}
+
+	public void setSnapshotName(String snapshotName) {
+		this.snapshotName = snapshotName;
+		if(snapshotName != null){
+			putQueryParameter("SnapshotName", snapshotName);
+		}
+	}
+
 	public Integer getPageNumber() {
 		return this.pageNumber;
 	}
@@ -59,17 +96,6 @@ public class DescribeSnapshotsRequest extends RpcAcsRequest<DescribeSnapshotsRes
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public String getEnsRegionId() {
-		return this.ensRegionId;
-	}
-
-	public void setEnsRegionId(String ensRegionId) {
-		this.ensRegionId = ensRegionId;
-		if(ensRegionId != null){
-			putQueryParameter("EnsRegionId", ensRegionId);
 		}
 	}
 
@@ -95,14 +121,14 @@ public class DescribeSnapshotsRequest extends RpcAcsRequest<DescribeSnapshotsRes
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public String getEnsRegionIds() {
+		return this.ensRegionIds;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
+	public void setEnsRegionIds(String ensRegionIds) {
+		this.ensRegionIds = ensRegionIds;
+		if(ensRegionIds != null){
+			putQueryParameter("EnsRegionIds", ensRegionIds);
 		}
 	}
 
