@@ -107,6 +107,8 @@ public class GetVideoInfoResponse extends AcsResponse {
 
 		private String restoreExpiration;
 
+		private String userData;
+
 		private List<Thumbnail> thumbnailList;
 
 		private List<String> snapshots;
@@ -309,6 +311,14 @@ public class GetVideoInfoResponse extends AcsResponse {
 
 		public void setRestoreExpiration(String restoreExpiration) {
 			this.restoreExpiration = restoreExpiration;
+		}
+
+		public String getUserData() {
+			return this.userData;
+		}
+
+		public void setUserData(String userData) {
+			this.userData = userData;
 		}
 
 		public List<Thumbnail> getThumbnailList() {

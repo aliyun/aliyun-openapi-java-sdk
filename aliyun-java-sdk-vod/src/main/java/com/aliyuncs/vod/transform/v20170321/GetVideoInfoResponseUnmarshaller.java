@@ -56,6 +56,7 @@ public class GetVideoInfoResponseUnmarshaller {
 		video.setStorageClass(_ctx.stringValue("GetVideoInfoResponse.Video.StorageClass"));
 		video.setRestoreStatus(_ctx.stringValue("GetVideoInfoResponse.Video.RestoreStatus"));
 		video.setRestoreExpiration(_ctx.stringValue("GetVideoInfoResponse.Video.RestoreExpiration"));
+		video.setUserData(_ctx.stringValue("GetVideoInfoResponse.Video.UserData"));
 
 		List<String> snapshots = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetVideoInfoResponse.Video.Snapshots.Length"); i++) {

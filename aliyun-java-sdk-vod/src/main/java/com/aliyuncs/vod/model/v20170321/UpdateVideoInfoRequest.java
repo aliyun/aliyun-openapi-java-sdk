@@ -31,6 +31,8 @@ public class UpdateVideoInfoRequest extends RpcAcsRequest<UpdateVideoInfoRespons
 
 	private String coverURL;
 
+	private String userData;
+
 	private Long cateId;
 
 	private String videoId;
@@ -75,6 +77,17 @@ public class UpdateVideoInfoRequest extends RpcAcsRequest<UpdateVideoInfoRespons
 		this.coverURL = coverURL;
 		if(coverURL != null){
 			putQueryParameter("CoverURL", coverURL);
+		}
+	}
+
+	public String getUserData() {
+		return this.userData;
+	}
+
+	public void setUserData(String userData) {
+		this.userData = userData;
+		if(userData != null){
+			putQueryParameter("UserData", userData);
 		}
 	}
 
