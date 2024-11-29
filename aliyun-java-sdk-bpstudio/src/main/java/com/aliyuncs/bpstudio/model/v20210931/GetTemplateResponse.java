@@ -147,6 +147,8 @@ public class GetTemplateResponse extends AcsResponse {
 
 			private String variable;
 
+			private String options;
+
 			public String getAttribute() {
 				return this.attribute;
 			}
@@ -177,6 +179,14 @@ public class GetTemplateResponse extends AcsResponse {
 
 			public void setVariable(String variable) {
 				this.variable = variable;
+			}
+
+			public String getOptions() {
+				return this.options;
+			}
+
+			public void setOptions(String options) {
+				this.options = options;
 			}
 		}
 	}

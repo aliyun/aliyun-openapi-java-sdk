@@ -46,6 +46,7 @@ public class GetTemplateResponseUnmarshaller {
 			item.setDataType(_ctx.stringValue("GetTemplateResponse.Data.Variables["+ i +"].DataType"));
 			item.setDefaultValue(_ctx.stringValue("GetTemplateResponse.Data.Variables["+ i +"].DefaultValue"));
 			item.setVariable(_ctx.stringValue("GetTemplateResponse.Data.Variables["+ i +"].Variable"));
+			item.setOptions(_ctx.stringValue("GetTemplateResponse.Data.Variables["+ i +"].Options"));
 
 			variables.add(item);
 		}
