@@ -4,9 +4,6 @@ import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Date;
-
-import java.io.FileInputStream;
-import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 
@@ -72,29 +69,31 @@ public class OIDCCredentialsProvider implements AlibabaCloudCredentialsProvider 
 
     private String stsEndpoint;
     private long durationSeconds;
+    private int connectTimeout;
+    private int readTimeout;
 
     // inner cache
     private BasicSessionCredentials credentials;
 
     public OIDCCredentialsProvider(String roleArn, String providerArn, String oidcTokenFilePath, String roleSessionName, String regionId) throws ClientException {
-        this.roleArn = !StringUtils.isEmpty(roleArn) ? roleArn : System.getenv("ALIBABA_CLOUD_ROLE_ARN");
+        this.roleArn = !StringUtils.isEmpty(roleArn) ? roleArn : AuthUtils.getEnvironmentRoleArn();
         if (StringUtils.isEmpty(this.roleArn)) {
             throw new ClientException("roleArn does not exist and env ALIBABA_CLOUD_ROLE_ARN is null.");
         }
 
-        this.oidcProviderArn = !StringUtils.isEmpty(providerArn) ? providerArn : System.getenv("ALIBABA_CLOUD_OIDC_PROVIDER_ARN");
+        this.oidcProviderArn = !StringUtils.isEmpty(providerArn) ? providerArn : AuthUtils.getEnvironmentOIDCProviderArn();
         if (StringUtils.isEmpty(this.oidcProviderArn)) {
             throw new ClientException("OIDCProviderArn does not exist and env ALIBABA_CLOUD_OIDC_PROVIDER_ARN is null.");
         }
 
-        this.oidcTokenFilePath = !StringUtils.isEmpty(oidcTokenFilePath) ? oidcTokenFilePath : System.getenv("ALIBABA_CLOUD_OIDC_TOKEN_FILE");
+        this.oidcTokenFilePath = !StringUtils.isEmpty(oidcTokenFilePath) ? oidcTokenFilePath : AuthUtils.getEnvironmentOIDCTokenFilePath();
         if (StringUtils.isEmpty(this.oidcTokenFilePath)) {
             throw new ClientException("OIDCTokenFilePath does not exist and env ALIBABA_CLOUD_OIDC_TOKEN_FILE is null.");
         }
 
-        this.roleSessionName = !StringUtils.isEmpty(roleSessionName) ? roleSessionName : System.getenv("ALIBABA_CLOUD_ROLE_SESSION_NAME");
+        this.roleSessionName = !StringUtils.isEmpty(roleSessionName) ? roleSessionName : AuthUtils.getEnvironmentRoleSessionName();
         if (StringUtils.isEmpty(this.roleSessionName)) {
-            this.roleSessionName = "DEFAULT_ROLE_SESSION_NAME_FOR_JAVA_SDK_V1";
+            this.roleSessionName = "aliyun-java-sdk-" + System.currentTimeMillis();
         }
 
         if (StringUtils.isEmpty(regionId)) {
@@ -104,6 +103,49 @@ public class OIDCCredentialsProvider implements AlibabaCloudCredentialsProvider 
         }
 
         this.durationSeconds = 3600L;
+        this.connectTimeout = 5000;
+        this.readTimeout = 10000;
+    }
+
+    private OIDCCredentialsProvider(Builder builder) {
+        this.roleSessionName = builder.roleSessionName == null ? !StringUtils.isEmpty(AuthUtils.getEnvironmentRoleSessionName()) ?
+                AuthUtils.getEnvironmentRoleSessionName() : "aliyun-java-sdk-" + System.currentTimeMillis() : builder.roleSessionName;
+        this.durationSeconds = builder.durationSeconds == null ? 3600 : builder.durationSeconds;
+        if (this.durationSeconds < 900) {
+            throw new IllegalArgumentException("Session duration should be in the range of 900s - max session duration.");
+        }
+
+        this.roleArn = builder.roleArn == null ? AuthUtils.getEnvironmentRoleArn() : builder.roleArn;
+        if (StringUtils.isEmpty(this.roleArn)) {
+            throw new IllegalArgumentException("RoleArn or environment variable ALIBABA_CLOUD_ROLE_ARN cannot be empty.");
+        }
+
+        this.oidcProviderArn = builder.oidcProviderArn == null ? AuthUtils.getEnvironmentOIDCProviderArn() : builder.oidcProviderArn;
+        if (StringUtils.isEmpty(this.oidcProviderArn)) {
+            throw new IllegalArgumentException("OIDCProviderArn or environment variable ALIBABA_CLOUD_OIDC_PROVIDER_ARN cannot be empty.");
+        }
+
+        this.oidcTokenFilePath = builder.oidcTokenFilePath == null ? AuthUtils.getEnvironmentOIDCTokenFilePath() : builder.oidcTokenFilePath;
+        if (StringUtils.isEmpty(this.oidcTokenFilePath)) {
+            throw new IllegalArgumentException("OIDCTokenFilePath or environment variable ALIBABA_CLOUD_OIDC_TOKEN_FILE cannot be empty.");
+        }
+
+        this.policy = builder.policy;
+        this.connectTimeout = builder.connectionTimeout == null ? 5000 : builder.connectionTimeout;
+        this.readTimeout = builder.readTimeout == null ? 10000 : builder.readTimeout;
+
+        String prefix = builder.enableVpc != null ? (builder.enableVpc ? "sts-vpc" : "sts") : AuthUtils.isEnableVpcEndpoint() ? "sts-vpc" : "sts";
+        if (!StringUtils.isEmpty(builder.stsRegionId)) {
+            this.stsEndpoint = String.format("https://%s.%s.aliyuncs.com", prefix, builder.stsRegionId);
+        } else if (!StringUtils.isEmpty(AuthUtils.getEnvironmentSTSRegion())) {
+            this.stsEndpoint = String.format("https://%s.%s.aliyuncs.com", prefix, AuthUtils.getEnvironmentSTSRegion());
+        } else {
+            this.stsEndpoint = "https://sts.aliyuncs.com";
+        }
+    }
+
+    public static Builder builder() {
+        return new Builder();
     }
 
     @Override
@@ -147,8 +189,8 @@ public class OIDCCredentialsProvider implements AlibabaCloudCredentialsProvider 
         HttpRequest httpRequest = new HttpRequest(url);
         httpRequest.setSysMethod(MethodType.POST);
         httpRequest.setHttpContentType(FormatType.FORM);
-        httpRequest.setSysConnectTimeout(1000);
-        httpRequest.setSysReadTimeout(3000);
+        httpRequest.setSysConnectTimeout(connectTimeout);
+        httpRequest.setSysReadTimeout(readTimeout);
         httpRequest.putHeaderParameter("UserAgent", UserAgentConfig.resolve(null, null));
         String oidcToken = AuthUtils.readFile(oidcTokenFilePath);
         if (oidcToken == null) {
@@ -161,7 +203,9 @@ public class OIDCCredentialsProvider implements AlibabaCloudCredentialsProvider 
         body.put("OIDCProviderArn", this.oidcProviderArn);
         body.put("OIDCToken", oidcToken);
         body.put("RoleSessionName", this.roleSessionName);
-        body.put("Policy", this.policy);
+        if (policy != null) {
+            body.put("Policy", this.policy);
+        }
 
         StringBuilder content = new StringBuilder();
 
@@ -202,5 +246,72 @@ public class OIDCCredentialsProvider implements AlibabaCloudCredentialsProvider 
         }
 
         return new String(response.getHttpContent());
+    }
+
+    public static final class Builder {
+        private String roleSessionName;
+        private Integer durationSeconds;
+        private String roleArn;
+        private String oidcProviderArn;
+        private String oidcTokenFilePath;
+        private String policy;
+        private Integer connectionTimeout;
+        private Integer readTimeout;
+        private String stsRegionId;
+        private Boolean enableVpc;
+
+        public Builder roleSessionName(String roleSessionName) {
+            this.roleSessionName = roleSessionName;
+            return this;
+        }
+
+        public Builder durationSeconds(Integer durationSeconds) {
+            this.durationSeconds = durationSeconds;
+            return this;
+        }
+
+        public Builder roleArn(String roleArn) {
+            this.roleArn = roleArn;
+            return this;
+        }
+
+        public Builder oidcProviderArn(String oidcProviderArn) {
+            this.oidcProviderArn = oidcProviderArn;
+            return this;
+        }
+
+        public Builder oidcTokenFilePath(String oidcTokenFilePath) {
+            this.oidcTokenFilePath = oidcTokenFilePath;
+            return this;
+        }
+
+        public Builder policy(String policy) {
+            this.policy = policy;
+            return this;
+        }
+
+        public Builder connectionTimeout(Integer connectionTimeout) {
+            this.connectionTimeout = connectionTimeout;
+            return this;
+        }
+
+        public Builder readTimeout(Integer readTimeout) {
+            this.readTimeout = readTimeout;
+            return this;
+        }
+
+        public Builder stsRegionId(String stsRegionId) {
+            this.stsRegionId = stsRegionId;
+            return this;
+        }
+
+        public Builder enableVpc(Boolean enableVpc) {
+            this.enableVpc = enableVpc;
+            return this;
+        }
+
+        public OIDCCredentialsProvider build() {
+            return new OIDCCredentialsProvider(this);
+        }
     }
 }

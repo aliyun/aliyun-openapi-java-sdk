@@ -70,7 +70,19 @@ public class ProfileCredentialsProviderTest {
         client.clear();
         client.put(AuthConstant.INI_ACCESS_KEY_ID, AuthConstant.INI_TYPE_RAM);
         client.put(AuthConstant.INI_TYPE, "access_key");
-        Assert.assertNull(createCredential.invoke(provider, client, factory));
+        try {
+            createCredential.invoke(provider, client, factory);
+            Assert.fail();
+        } catch (Exception e) {
+            Assert.assertEquals("The configured access_key_id or access_key_secret is empty.",
+                    e.getCause().getLocalizedMessage());
+        }
+
+        client.clear();
+        client.put(AuthConstant.INI_ACCESS_KEY_ID, AuthConstant.INI_TYPE_RAM);
+        client.put(AuthConstant.INI_ACCESS_KEY_IDSECRET, AuthConstant.INI_TYPE_RAM);
+        client.put(AuthConstant.INI_TYPE, "access_key");
+        Assert.assertNotNull(createCredential.invoke(provider, client, factory));
     }
 
     @Test
@@ -112,6 +124,50 @@ public class ProfileCredentialsProviderTest {
             createCredential.invoke(provider, client, factory);
         } catch (Exception e) {
             Assert.assertEquals("The configured role_session_name or role_arn is empty",
+                    e.getCause().getLocalizedMessage());
+        }
+    }
+
+    @Test
+    public void getSTSOIDCRoleSessionCredentialsTest() throws NoSuchMethodException {
+        ProfileCredentialsProvider provider = new ProfileCredentialsProvider();
+        Class<ProfileCredentialsProvider> providerClass = ProfileCredentialsProvider.class;
+        Method createCredential = providerClass.getDeclaredMethod(
+                "createCredential", Map.class, CredentialsProviderFactory.class);
+        createCredential.setAccessible(true);
+        CredentialsProviderFactory factory = new CredentialsProviderFactory();
+        Map<String, String> client = new HashMap<String, String>();
+        client.put(AuthConstant.INI_TYPE, AuthConstant.INI_TYPE_OIDC);
+        try {
+            createCredential.invoke(provider, client, factory);
+            Assert.fail();
+        } catch (Exception e) {
+            Assert.assertEquals("The configured role_arn is empty.",
+                    e.getCause().getLocalizedMessage());
+        }
+
+        try {
+            client.put(AuthConstant.INI_ACCESS_KEY_ID, AuthConstant.INI_TYPE_ARN);
+            createCredential.invoke(provider, client, factory);
+            Assert.fail();
+        } catch (Exception e) {
+            Assert.assertEquals("The configured role_arn is empty.",
+                    e.getCause().getLocalizedMessage());
+        }
+        try {
+            client.put(AuthConstant.INI_ACCESS_KEY_IDSECRET, AuthConstant.INI_TYPE_ARN);
+            createCredential.invoke(provider, client, factory);
+            Assert.fail();
+        } catch (Exception e) {
+            Assert.assertEquals("The configured role_arn is empty.",
+                    e.getCause().getLocalizedMessage());
+        }
+        try {
+            client.put(AuthConstant.INI_ROLE_ARN, AuthConstant.INI_TYPE_ARN);
+            createCredential.invoke(provider, client, factory);
+            Assert.fail();
+        } catch (Exception e) {
+            Assert.assertEquals("The configured oidc_provider_arn is empty.",
                     e.getCause().getLocalizedMessage());
         }
     }
@@ -165,6 +221,24 @@ public class ProfileCredentialsProviderTest {
         CredentialsProviderFactory factory = Mockito.mock(CredentialsProviderFactory.class);
         Mockito.when(factory.createCredentialsProvider(Mockito.any(STSAssumeRoleSessionCredentialsProvider.class))).
                 thenReturn(stsAssumeRoleSessionCredentialsProvider);
+        Assert.assertNull(createCredential.invoke(profileCredentialsProvider, client, factory));
+
+        client.clear();
+        client.put(AuthConstant.INI_TYPE, AuthConstant.INI_TYPE_OIDC);
+        client.put(AuthConstant.INI_ACCESS_KEY_ID, AuthConstant.INI_ACCESS_KEY_ID);
+        client.put(AuthConstant.INI_ACCESS_KEY_IDSECRET, AuthConstant.INI_ACCESS_KEY_IDSECRET);
+        client.put(AuthConstant.INI_ROLE_SESSION_NAME, AuthConstant.INI_ROLE_SESSION_NAME);
+        client.put(AuthConstant.INI_ROLE_ARN, AuthConstant.INI_TYPE_ARN);
+        client.put(AuthConstant.INI_OIDC_PROVIDER_ARN, AuthConstant.INI_OIDC_PROVIDER_ARN);
+        client.put(AuthConstant.INI_OIDC_TOKEN_FILE_PATH, ProfileCredentialsProviderTest.class.getClassLoader().
+                getResource("oidctoken").getPath());
+        client.put(AuthConstant.DEFAULT_REGION, AuthConstant.DEFAULT_REGION);
+
+        OIDCCredentialsProvider oidcRoleArnCredentialProvider =
+                Mockito.mock(OIDCCredentialsProvider.class);
+        Mockito.when(oidcRoleArnCredentialProvider.getCredentials()).thenReturn(null);
+        Mockito.when(factory.createCredentialsProvider(Mockito.any(OIDCCredentialsProvider.class))).
+                thenReturn(oidcRoleArnCredentialProvider);
         Assert.assertNull(createCredential.invoke(profileCredentialsProvider, client, factory));
 
         client.clear();

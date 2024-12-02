@@ -26,6 +26,7 @@ public class AssumeRoleRequest extends RpcAcsRequest<AssumeRoleResponse> {
 
     private Long durationSeconds;
     private String policy;
+    private String externalId;
     private String roleArn;
     private String roleSessionName;
 
@@ -50,6 +51,15 @@ public class AssumeRoleRequest extends RpcAcsRequest<AssumeRoleResponse> {
     public void setPolicy(String policy) {
         this.policy = policy;
         putQueryParameter("Policy", policy);
+    }
+
+    public String getExternalId() {
+        return this.externalId;
+    }
+
+    public void setExternalId(String externalId) {
+        this.externalId = externalId;
+        putQueryParameter("ExternalId", externalId);
     }
 
     public String getRoleArn() {
