@@ -1,6 +1,7 @@
 package com.aliyuncs.auth;
 
 import com.aliyuncs.exceptions.ClientException;
+import com.aliyuncs.utils.AuthUtils;
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
@@ -27,6 +28,24 @@ public class InstanceProfileCredentialsProviderTest {
         String roleName = null;
         InstanceProfileCredentialsProvider provider = new InstanceProfileCredentialsProvider(roleName);
         Assert.assertNull(provider);
+    }
+
+    @Test
+    public void builderTest() {
+        AuthUtils.disableECSMetaData(true);
+        try {
+            InstanceProfileCredentialsProvider.builder()
+                    .roleName("test")
+                    .readTimeout(2000)
+                    .connectionTimeout(2000)
+                    .disableIMDSv1(false)
+                    .build();
+            Assert.fail();
+        } catch (IllegalArgumentException e) {
+            Assert.assertEquals("IMDS credentials is disabled.",
+                    e.getMessage());
+        }
+        AuthUtils.disableECSMetaData(false);
     }
 
     @Test

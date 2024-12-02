@@ -52,6 +52,6 @@ public class CredentialsTest extends BaseTest {
         GetCallerIdentityResponse response = client.getAcsResponse(request);
         Assert.assertNotNull(response);
         Assert.assertEquals("AssumedRoleUser", response.getIdentityType());
-        Assert.assertTrue(response.getArn().endsWith("/java-sdk-v1-default-rsn"));
+        Assert.assertTrue(response.getArn().contains("oidc-role-for-java-sdk-v1-ci"));
     }
 }

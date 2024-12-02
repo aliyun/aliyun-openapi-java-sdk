@@ -494,9 +494,14 @@ public class DefaultAcsClientTest {
     @Test
     public void testDoActionEndpointTestabilityException2() throws ClientException,
             IllegalArgumentException, SecurityException {
-        System.setProperty("alibabacloud.accessKeyId", "test");
-        System.setProperty("alibabacloud.accessKeyIdSecret", "test");
-        DefaultAcsClient client = new DefaultAcsClient("test");
+        Credential credential = mock(Credential.class);
+        when(credential.getSecurityToken()).thenReturn(null);
+        when(credential.getAccessKeyId()).thenReturn("test");
+        when(credential.getAccessSecret()).thenReturn("test");
+        DefaultProfile profile = mock(DefaultProfile.class);
+        when(profile.getCredential()).thenReturn(credential);
+        when(profile.getRegionId()).thenReturn("test");
+        DefaultAcsClient client = new DefaultAcsClient(profile);
         DefaultEndpointResolver endpointResolver = mock(DefaultEndpointResolver.class);
         client.setEndpointResolver(endpointResolver);
         String endPoint = "endpoint-test.exception.com";

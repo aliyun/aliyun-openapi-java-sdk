@@ -1,0 +1,50 @@
+{
+  "current": "AK",
+  "profiles": [
+    {
+      "name": "AK",
+      "mode": "AK",
+      "access_key_id": "akid",
+      "access_key_secret": "secret"
+    },
+    {
+      "name": "RamRoleArn",
+      "mode": "RamRoleArn",
+      "access_key_id": "akid",
+      "access_key_secret": "secret",
+      "ram_role_arn": "arn"
+    },
+    {
+      "name": "Invalid_RamRoleArn",
+      "mode": "RamRoleArn"
+
+    },
+    {
+      "name": "EcsRamRole",
+      "mode": "EcsRamRole",
+      "ram_role_name": "rolename"
+    },
+    {
+      "name": "OIDC",
+      "mode": "OIDC",
+      "ram_role_arn": "role_arn",
+      "oidc_token_file": "path/to/oidc/file",
+      "oidc_provider_arn": "provider_arn"
+    },
+    {
+      "name": "ChainableRamRoleArn",
+      "mode": "ChainableRamRoleArn",
+      "ram_role_arn": "arn",
+      "source_profile": "AK"
+    },
+    {
+      "name": "ChainableRamRoleArn2",
+      "mode": "ChainableRamRoleArn",
+      "source_profile": "InvalidSource"
+    },
+    {
+      "name": "Unsupported",
+      "mode": "Unsupported"
+    }
+  ]
+}

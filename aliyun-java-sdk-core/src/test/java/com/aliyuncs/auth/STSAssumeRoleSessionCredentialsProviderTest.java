@@ -6,6 +6,7 @@ import com.aliyuncs.auth.sts.AssumeRoleRequest;
 import com.aliyuncs.auth.sts.AssumeRoleResponse;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.profile.IClientProfile;
+import com.aliyuncs.utils.AuthUtils;
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
@@ -129,7 +130,7 @@ public class STSAssumeRoleSessionCredentialsProviderTest {
     @Test
     public void withRoleSessionDurationSecondsLargerThan3600Seconds() {
         thrown.expect(IllegalArgumentException.class);
-        long duration = 3601;
+        long duration = 899;
         AlibabaCloudCredentials credentials = mock(AlibabaCloudCredentials.class);
         String roleArn = "roleArn";
         IClientProfile clientProfile = mock(IClientProfile.class);
@@ -191,5 +192,117 @@ public class STSAssumeRoleSessionCredentialsProviderTest {
 
         AlibabaCloudCredentials credentials3 = provider.getCredentials();
         Assert.assertEquals(credentials2, credentials3);
+    }
+
+    @Test
+    public void builderTest() throws IllegalAccessException, NoSuchFieldException {
+        STSAssumeRoleSessionCredentialsProvider originalProvider;
+        try {
+            STSAssumeRoleSessionCredentialsProvider.builder().build();
+            Assert.fail();
+        } catch (Exception e) {
+            Assert.assertEquals("RoleArn or environment variable ALIBABA_CLOUD_ROLE_ARN cannot be empty.", e.getMessage());
+        }
+
+        try {
+            STSAssumeRoleSessionCredentialsProvider.builder()
+                    .durationSeconds(100)
+                    .build();
+            Assert.fail();
+        } catch (Exception e) {
+            Assert.assertEquals("Session duration should be in the range of 900s - max session duration.", e.getMessage());
+        }
+
+        originalProvider = STSAssumeRoleSessionCredentialsProvider.builder()
+                .accessKeyId("test")
+                .accessKeySecret("test")
+                .securityToken("test")
+                .roleArn("test")
+                .build();
+        Class<?> clazz = originalProvider.getClass();
+        Field field = clazz.getDeclaredField("stsEndpoint");
+        field.setAccessible(true);
+        Assert.assertEquals("sts.aliyuncs.com", field.get(originalProvider));
+
+        AuthUtils.setEnvironmentSTSRegion("cn-beijing");
+        originalProvider = STSAssumeRoleSessionCredentialsProvider.builder()
+                .accessKeyId("test")
+                .accessKeySecret("test")
+                .securityToken("test")
+                .roleArn("test")
+                .build();
+        Assert.assertEquals("sts.cn-beijing.aliyuncs.com", field.get(originalProvider));
+
+        originalProvider = STSAssumeRoleSessionCredentialsProvider.builder()
+                .accessKeyId("test")
+                .accessKeySecret("test")
+                .securityToken("test")
+                .stsRegionId("cn-hangzhou")
+                .roleArn("test")
+                .build();
+        Assert.assertEquals("sts.cn-hangzhou.aliyuncs.com", field.get(originalProvider));
+
+        AuthUtils.enableVpcEndpoint(true);
+        originalProvider = STSAssumeRoleSessionCredentialsProvider.builder()
+                .accessKeyId("test")
+                .accessKeySecret("test")
+                .securityToken("test")
+                .stsRegionId("cn-hangzhou")
+                .roleArn("test")
+                .build();
+        Assert.assertEquals("sts-vpc.cn-hangzhou.aliyuncs.com", field.get(originalProvider));
+
+        originalProvider = STSAssumeRoleSessionCredentialsProvider.builder()
+                .accessKeyId("test")
+                .accessKeySecret("test")
+                .securityToken("test")
+                .stsRegionId("cn-hangzhou")
+                .enableVpc(true)
+                .roleArn("test")
+                .build();
+        Assert.assertEquals("sts-vpc.cn-hangzhou.aliyuncs.com", field.get(originalProvider));
+
+        AuthUtils.setEnvironmentSTSRegion(null);
+        AuthUtils.enableVpcEndpoint(false);
+
+        originalProvider = STSAssumeRoleSessionCredentialsProvider.builder()
+                .accessKeyId("test")
+                .accessKeySecret("test")
+                .durationSeconds(1000)
+                .roleArn("test")
+                .roleSessionName("test")
+                .policy("test")
+                .externalId("test")
+                .connectionTimeout(2000)
+                .readTimeout(2000)
+                .build();
+        Field connectTimeoutField = clazz.getDeclaredField("connectTimeout");
+        connectTimeoutField.setAccessible(true);
+        Field readTimeoutField = clazz.getDeclaredField("readTimeout");
+        readTimeoutField.setAccessible(true);
+        Field durationSecondsField = clazz.getDeclaredField("roleSessionDurationSeconds");
+        durationSecondsField.setAccessible(true);
+        Assert.assertEquals(2000, connectTimeoutField.get(originalProvider));
+        Assert.assertEquals(2000, readTimeoutField.get(originalProvider));
+        Assert.assertEquals(1000, Integer.parseInt(String.valueOf(durationSecondsField.get(originalProvider))));
+        Assert.assertEquals("sts.aliyuncs.com", field.get(originalProvider));
+        try {
+            originalProvider.getCredentials();
+            Assert.fail();
+        } catch (Exception e) {
+            Assert.assertTrue(e.getMessage().contains("InvalidAccessKeyId.NotFound"));
+        }
+
+        STSAssumeRoleSessionCredentialsProvider provider = STSAssumeRoleSessionCredentialsProvider.builder()
+                .credentialsProvider(originalProvider)
+                .durationSeconds(1000)
+                .roleArn("test")
+                .build();
+        try {
+            provider.getCredentials();
+            Assert.fail();
+        } catch (Exception e) {
+            Assert.assertTrue(e.getMessage().contains("InvalidAccessKeyId.NotFound"));
+        }
     }
 }
