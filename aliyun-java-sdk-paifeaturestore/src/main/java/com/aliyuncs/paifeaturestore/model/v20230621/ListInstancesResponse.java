@@ -69,6 +69,8 @@ public class ListInstancesResponse extends AcsResponse {
 
 		private String gmtModifiedTime;
 
+		private FeatureDBInstanceInfo featureDBInstanceInfo;
+
 		public String getInstanceId() {
 			return this.instanceId;
 		}
@@ -115,6 +117,27 @@ public class ListInstancesResponse extends AcsResponse {
 
 		public void setGmtModifiedTime(String gmtModifiedTime) {
 			this.gmtModifiedTime = gmtModifiedTime;
+		}
+
+		public FeatureDBInstanceInfo getFeatureDBInstanceInfo() {
+			return this.featureDBInstanceInfo;
+		}
+
+		public void setFeatureDBInstanceInfo(FeatureDBInstanceInfo featureDBInstanceInfo) {
+			this.featureDBInstanceInfo = featureDBInstanceInfo;
+		}
+
+		public static class FeatureDBInstanceInfo {
+
+			private String status;
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
 		}
 	}
 

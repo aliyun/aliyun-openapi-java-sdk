@@ -1,3 +1,6 @@
+2024-12-02 Version: 1.0.14
+- Add LabelPriorityLevel in UpdateModelFeature API.
+
 2024-09-04 Version: 1.0.13
 - Add RealTimePartitionCountValue in ExportTranSetTable API.
 - Add LabelPriorityLevel in CreateModelFeature API

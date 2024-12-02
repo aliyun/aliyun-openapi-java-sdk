@@ -15,6 +15,7 @@
 package com.aliyuncs.paifeaturestore.transform.v20230621;
 
 import com.aliyuncs.paifeaturestore.model.v20230621.GetInstanceResponse;
+import com.aliyuncs.paifeaturestore.model.v20230621.GetInstanceResponse.FeatureDBInstanceInfo;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -30,6 +31,10 @@ public class GetInstanceResponseUnmarshaller {
 		getInstanceResponse.setProgress(_ctx.doubleValue("GetInstanceResponse.Progress"));
 		getInstanceResponse.setMessage(_ctx.stringValue("GetInstanceResponse.Message"));
 		getInstanceResponse.setType(_ctx.stringValue("GetInstanceResponse.Type"));
+
+		FeatureDBInstanceInfo featureDBInstanceInfo = new FeatureDBInstanceInfo();
+		featureDBInstanceInfo.setStatus(_ctx.stringValue("GetInstanceResponse.FeatureDBInstanceInfo.Status"));
+		getInstanceResponse.setFeatureDBInstanceInfo(featureDBInstanceInfo);
 	 
 	 	return getInstanceResponse;
 	}

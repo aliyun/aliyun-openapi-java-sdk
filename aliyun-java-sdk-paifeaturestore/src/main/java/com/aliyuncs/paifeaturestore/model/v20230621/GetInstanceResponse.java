@@ -40,6 +40,8 @@ public class GetInstanceResponse extends AcsResponse {
 
 	private String type;
 
+	private FeatureDBInstanceInfo featureDBInstanceInfo;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -102,6 +104,27 @@ public class GetInstanceResponse extends AcsResponse {
 
 	public void setType(String type) {
 		this.type = type;
+	}
+
+	public FeatureDBInstanceInfo getFeatureDBInstanceInfo() {
+		return this.featureDBInstanceInfo;
+	}
+
+	public void setFeatureDBInstanceInfo(FeatureDBInstanceInfo featureDBInstanceInfo) {
+		this.featureDBInstanceInfo = featureDBInstanceInfo;
+	}
+
+	public static class FeatureDBInstanceInfo {
+
+		private String status;
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
 	}
 
 	@Override

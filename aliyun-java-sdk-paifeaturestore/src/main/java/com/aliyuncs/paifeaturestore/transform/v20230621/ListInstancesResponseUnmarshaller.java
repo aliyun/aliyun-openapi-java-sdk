@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.paifeaturestore.model.v20230621.ListInstancesResponse;
 import com.aliyuncs.paifeaturestore.model.v20230621.ListInstancesResponse.InstancesItem;
+import com.aliyuncs.paifeaturestore.model.v20230621.ListInstancesResponse.InstancesItem.FeatureDBInstanceInfo;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -38,6 +39,10 @@ public class ListInstancesResponseUnmarshaller {
 			instancesItem.setRegionId(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].RegionId"));
 			instancesItem.setGmtCreateTime(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].GmtCreateTime"));
 			instancesItem.setGmtModifiedTime(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].GmtModifiedTime"));
+
+			FeatureDBInstanceInfo featureDBInstanceInfo = new FeatureDBInstanceInfo();
+			featureDBInstanceInfo.setStatus(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].FeatureDBInstanceInfo.Status"));
+			instancesItem.setFeatureDBInstanceInfo(featureDBInstanceInfo);
 
 			instances.add(instancesItem);
 		}
