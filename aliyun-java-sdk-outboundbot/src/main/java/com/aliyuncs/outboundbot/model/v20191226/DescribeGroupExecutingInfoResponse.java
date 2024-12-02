@@ -124,6 +124,8 @@ public class DescribeGroupExecutingInfoResponse extends AcsResponse {
 
 		private Integer callFailedNum;
 
+		private Integer noInteractionNum;
+
 		private JobsProgress jobsProgress;
 
 		public Long getEndTime() {
@@ -196,6 +198,14 @@ public class DescribeGroupExecutingInfoResponse extends AcsResponse {
 
 		public void setCallFailedNum(Integer callFailedNum) {
 			this.callFailedNum = callFailedNum;
+		}
+
+		public Integer getNoInteractionNum() {
+			return this.noInteractionNum;
+		}
+
+		public void setNoInteractionNum(Integer noInteractionNum) {
+			this.noInteractionNum = noInteractionNum;
 		}
 
 		public JobsProgress getJobsProgress() {

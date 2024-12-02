@@ -27,11 +27,15 @@ public class QueryJobsWithResultRequest extends RpcAcsRequest<QueryJobsWithResul
 
 	private Boolean hasReachedEndOfFlowFilter;
 
+	private Long endActualTimeFilter;
+
 	private Integer pageNumber;
 
 	private Boolean hasHangUpByRejectionFilter;
 
 	private Integer pageSize;
+
+	private Long startActualTimeFilter;
 
 	private Boolean hasAnsweredFilter;
 
@@ -66,6 +70,17 @@ public class QueryJobsWithResultRequest extends RpcAcsRequest<QueryJobsWithResul
 		}
 	}
 
+	public Long getEndActualTimeFilter() {
+		return this.endActualTimeFilter;
+	}
+
+	public void setEndActualTimeFilter(Long endActualTimeFilter) {
+		this.endActualTimeFilter = endActualTimeFilter;
+		if(endActualTimeFilter != null){
+			putQueryParameter("EndActualTimeFilter", endActualTimeFilter.toString());
+		}
+	}
+
 	public Integer getPageNumber() {
 		return this.pageNumber;
 	}
@@ -96,6 +111,17 @@ public class QueryJobsWithResultRequest extends RpcAcsRequest<QueryJobsWithResul
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Long getStartActualTimeFilter() {
+		return this.startActualTimeFilter;
+	}
+
+	public void setStartActualTimeFilter(Long startActualTimeFilter) {
+		this.startActualTimeFilter = startActualTimeFilter;
+		if(startActualTimeFilter != null){
+			putQueryParameter("StartActualTimeFilter", startActualTimeFilter.toString());
 		}
 	}
 

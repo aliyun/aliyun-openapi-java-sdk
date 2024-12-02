@@ -42,6 +42,7 @@ public class DescribeGroupExecutingInfoResponseUnmarshaller {
 		executingInfo.setTransferByIntentNum(_ctx.integerValue("DescribeGroupExecutingInfoResponse.ExecutingInfo.TransferByIntentNum"));
 		executingInfo.setCallNum(_ctx.integerValue("DescribeGroupExecutingInfoResponse.ExecutingInfo.CallNum"));
 		executingInfo.setCallFailedNum(_ctx.integerValue("DescribeGroupExecutingInfoResponse.ExecutingInfo.CallFailedNum"));
+		executingInfo.setNoInteractionNum(_ctx.integerValue("DescribeGroupExecutingInfoResponse.ExecutingInfo.NoInteractionNum"));
 
 		JobsProgress jobsProgress = new JobsProgress();
 		jobsProgress.setSchedulingNum(_ctx.integerValue("DescribeGroupExecutingInfoResponse.ExecutingInfo.JobsProgress.SchedulingNum"));
