@@ -1,4 +1,10 @@
-﻿2024-09-27 Version:4.7.2
+﻿2024-12-04 Version:4.7.3
+1.Improve all credentials providers.
+2.Support CLI credentials provider.
+2.Support URI credentials provider.
+3.Support ALIBABA_CLOUD_IMDSV1_DISABLED for imds v1 disabled and ALIBABA_CLOUD_ECS_METADATA_DISABLED for imds disabled.
+
+2024-09-27 Version:4.7.2
 1.Remove ini4j && improve ini config file parsing.
 
 2024-07-22 Version:4.7.1
