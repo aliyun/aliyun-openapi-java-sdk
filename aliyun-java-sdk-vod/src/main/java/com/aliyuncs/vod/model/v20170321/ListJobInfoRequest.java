@@ -22,14 +22,14 @@ import com.aliyuncs.vod.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetTranscodeTaskRequest extends RpcAcsRequest<GetTranscodeTaskResponse> {
+public class ListJobInfoRequest extends RpcAcsRequest<ListJobInfoResponse> {
 	   
 
-	private String transcodeTaskId;
+	private String mediaId;
 
-	private String jobIds;
-	public GetTranscodeTaskRequest() {
-		super("vod", "2017-03-21", "GetTranscodeTask", "vod");
+	private String jobType;
+	public ListJobInfoRequest() {
+		super("vod", "2017-03-21", "ListJobInfo", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +37,31 @@ public class GetTranscodeTaskRequest extends RpcAcsRequest<GetTranscodeTaskRespo
 		} catch (Exception e) {}
 	}
 
-	public String getTranscodeTaskId() {
-		return this.transcodeTaskId;
+	public String getMediaId() {
+		return this.mediaId;
 	}
 
-	public void setTranscodeTaskId(String transcodeTaskId) {
-		this.transcodeTaskId = transcodeTaskId;
-		if(transcodeTaskId != null){
-			putQueryParameter("TranscodeTaskId", transcodeTaskId);
+	public void setMediaId(String mediaId) {
+		this.mediaId = mediaId;
+		if(mediaId != null){
+			putQueryParameter("MediaId", mediaId);
 		}
 	}
 
-	public String getJobIds() {
-		return this.jobIds;
+	public String getJobType() {
+		return this.jobType;
 	}
 
-	public void setJobIds(String jobIds) {
-		this.jobIds = jobIds;
-		if(jobIds != null){
-			putQueryParameter("JobIds", jobIds);
+	public void setJobType(String jobType) {
+		this.jobType = jobType;
+		if(jobType != null){
+			putQueryParameter("JobType", jobType);
 		}
 	}
 
 	@Override
-	public Class<GetTranscodeTaskResponse> getResponseClass() {
-		return GetTranscodeTaskResponse.class;
+	public Class<ListJobInfoResponse> getResponseClass() {
+		return ListJobInfoResponse.class;
 	}
 
 }
