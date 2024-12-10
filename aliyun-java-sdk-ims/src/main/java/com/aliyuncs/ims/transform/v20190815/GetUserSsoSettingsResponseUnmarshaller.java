@@ -31,6 +31,7 @@ public class GetUserSsoSettingsResponseUnmarshaller {
 		userSsoSettings.setSsoEnabled(_ctx.booleanValue("GetUserSsoSettingsResponse.UserSsoSettings.SsoEnabled"));
 		userSsoSettings.setUseTenantSpecificSp(_ctx.booleanValue("GetUserSsoSettingsResponse.UserSsoSettings.UseTenantSpecificSp"));
 		userSsoSettings.setName(_ctx.stringValue("GetUserSsoSettingsResponse.UserSsoSettings.Name"));
+		userSsoSettings.setSsoLoginWithDomain(_ctx.booleanValue("GetUserSsoSettingsResponse.UserSsoSettings.SsoLoginWithDomain"));
 		getUserSsoSettingsResponse.setUserSsoSettings(userSsoSettings);
 	 
 	 	return getUserSsoSettingsResponse;

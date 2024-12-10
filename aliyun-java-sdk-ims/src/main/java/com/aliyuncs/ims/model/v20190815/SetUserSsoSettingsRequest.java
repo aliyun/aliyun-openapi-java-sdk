@@ -27,6 +27,8 @@ public class SetUserSsoSettingsRequest extends RpcAcsRequest<SetUserSsoSettingsR
 
 	private String auxiliaryDomain;
 
+	private Boolean ssoLoginWithDomain;
+
 	private String metadataDocument;
 
 	private Boolean ssoEnabled;
@@ -47,6 +49,17 @@ public class SetUserSsoSettingsRequest extends RpcAcsRequest<SetUserSsoSettingsR
 		this.auxiliaryDomain = auxiliaryDomain;
 		if(auxiliaryDomain != null){
 			putQueryParameter("AuxiliaryDomain", auxiliaryDomain);
+		}
+	}
+
+	public Boolean getSsoLoginWithDomain() {
+		return this.ssoLoginWithDomain;
+	}
+
+	public void setSsoLoginWithDomain(Boolean ssoLoginWithDomain) {
+		this.ssoLoginWithDomain = ssoLoginWithDomain;
+		if(ssoLoginWithDomain != null){
+			putQueryParameter("SsoLoginWithDomain", ssoLoginWithDomain.toString());
 		}
 	}
 

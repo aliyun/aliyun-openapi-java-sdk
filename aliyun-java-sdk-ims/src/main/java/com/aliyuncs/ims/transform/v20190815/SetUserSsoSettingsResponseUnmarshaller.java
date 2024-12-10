@@ -30,6 +30,7 @@ public class SetUserSsoSettingsResponseUnmarshaller {
 		userSsoSettings.setMetadataDocument(_ctx.stringValue("SetUserSsoSettingsResponse.UserSsoSettings.MetadataDocument"));
 		userSsoSettings.setSsoEnabled(_ctx.booleanValue("SetUserSsoSettingsResponse.UserSsoSettings.SsoEnabled"));
 		userSsoSettings.setName(_ctx.stringValue("SetUserSsoSettingsResponse.UserSsoSettings.Name"));
+		userSsoSettings.setSsoLoginWithDomain(_ctx.booleanValue("SetUserSsoSettingsResponse.UserSsoSettings.SsoLoginWithDomain"));
 		setUserSsoSettingsResponse.setUserSsoSettings(userSsoSettings);
 	 
 	 	return setUserSsoSettingsResponse;

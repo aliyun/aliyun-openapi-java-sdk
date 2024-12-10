@@ -54,6 +54,8 @@ public class SetUserSsoSettingsResponse extends AcsResponse {
 
 		private String name;
 
+		private Boolean ssoLoginWithDomain;
+
 		public String getAuxiliaryDomain() {
 			return this.auxiliaryDomain;
 		}
@@ -84,6 +86,14 @@ public class SetUserSsoSettingsResponse extends AcsResponse {
 
 		public void setName(String name) {
 			this.name = name;
+		}
+
+		public Boolean getSsoLoginWithDomain() {
+			return this.ssoLoginWithDomain;
+		}
+
+		public void setSsoLoginWithDomain(Boolean ssoLoginWithDomain) {
+			this.ssoLoginWithDomain = ssoLoginWithDomain;
 		}
 	}
 
