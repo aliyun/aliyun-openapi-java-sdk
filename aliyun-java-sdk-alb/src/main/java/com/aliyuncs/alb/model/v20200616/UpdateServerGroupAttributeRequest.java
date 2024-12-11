@@ -26,6 +26,8 @@ import com.aliyuncs.alb.Endpoint;
 public class UpdateServerGroupAttributeRequest extends RpcAcsRequest<UpdateServerGroupAttributeResponse> {
 	   
 
+	private Boolean crossZoneEnabled;
+
 	private String serverGroupName;
 
 	private String clientToken;
@@ -56,6 +58,17 @@ public class UpdateServerGroupAttributeRequest extends RpcAcsRequest<UpdateServe
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Boolean getCrossZoneEnabled() {
+		return this.crossZoneEnabled;
+	}
+
+	public void setCrossZoneEnabled(Boolean crossZoneEnabled) {
+		this.crossZoneEnabled = crossZoneEnabled;
+		if(crossZoneEnabled != null){
+			putQueryParameter("CrossZoneEnabled", crossZoneEnabled.toString());
+		}
 	}
 
 	public String getServerGroupName() {

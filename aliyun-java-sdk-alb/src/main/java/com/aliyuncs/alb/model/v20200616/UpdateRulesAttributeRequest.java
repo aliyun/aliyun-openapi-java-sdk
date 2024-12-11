@@ -69,7 +69,7 @@ public class UpdateRulesAttributeRequest extends RpcAcsRequest<UpdateRulesAttrib
 											
 												if (rules.get(depth1).getRuleConditions().get(depth2).getMethodConfig().getValues() != null) {
 													for (int depth3 = 0; depth3 < rules.get(depth1).getRuleConditions().get(depth2).getMethodConfig().getValues().size(); depth3++) {
-														putQueryParameter("Rules." + (depth1 + 1) + ".RuleConditions." + (depth2 + 1) + ".MethodConfig.Values." + (depth3 + 1) , rules.get(depth1).getRuleConditions().get(depth2).getMethodConfig().getValues().get(depth3));
+														putBodyParameter("Rules." + (depth1 + 1) + ".RuleConditions." + (depth2 + 1) + ".MethodConfig.Values." + (depth3 + 1) , rules.get(depth1).getRuleConditions().get(depth2).getMethodConfig().getValues().get(depth3));
 													}
 												}
 										}
@@ -77,7 +77,7 @@ public class UpdateRulesAttributeRequest extends RpcAcsRequest<UpdateRulesAttrib
 											
 												if (rules.get(depth1).getRuleConditions().get(depth2).getSourceIpConfig().getValues() != null) {
 													for (int depth3 = 0; depth3 < rules.get(depth1).getRuleConditions().get(depth2).getSourceIpConfig().getValues().size(); depth3++) {
-														putQueryParameter("Rules." + (depth1 + 1) + ".RuleConditions." + (depth2 + 1) + ".SourceIpConfig.Values." + (depth3 + 1) , rules.get(depth1).getRuleConditions().get(depth2).getSourceIpConfig().getValues().get(depth3));
+														putBodyParameter("Rules." + (depth1 + 1) + ".RuleConditions." + (depth2 + 1) + ".SourceIpConfig.Values." + (depth3 + 1) , rules.get(depth1).getRuleConditions().get(depth2).getSourceIpConfig().getValues().get(depth3));
 													}
 												}
 										}
@@ -85,7 +85,7 @@ public class UpdateRulesAttributeRequest extends RpcAcsRequest<UpdateRulesAttrib
 											
 												if (rules.get(depth1).getRuleConditions().get(depth2).getHostConfig().getValues() != null) {
 													for (int depth3 = 0; depth3 < rules.get(depth1).getRuleConditions().get(depth2).getHostConfig().getValues().size(); depth3++) {
-														putQueryParameter("Rules." + (depth1 + 1) + ".RuleConditions." + (depth2 + 1) + ".HostConfig.Values." + (depth3 + 1) , rules.get(depth1).getRuleConditions().get(depth2).getHostConfig().getValues().get(depth3));
+														putBodyParameter("Rules." + (depth1 + 1) + ".RuleConditions." + (depth2 + 1) + ".HostConfig.Values." + (depth3 + 1) , rules.get(depth1).getRuleConditions().get(depth2).getHostConfig().getValues().get(depth3));
 													}
 												}
 										}
@@ -95,8 +95,8 @@ public class UpdateRulesAttributeRequest extends RpcAcsRequest<UpdateRulesAttrib
 													for (int depth3 = 0; depth3 < rules.get(depth1).getRuleConditions().get(depth2).getQueryStringConfig().getValues().size(); depth3++) {
 														if (rules.get(depth1).getRuleConditions().get(depth2).getQueryStringConfig().getValues().get(depth3) != null) {
 															
-																putQueryParameter("Rules." + (depth1 + 1) + ".RuleConditions." + (depth2 + 1) + ".QueryStringConfig.Values." + (depth3 + 1) + ".Value" , rules.get(depth1).getRuleConditions().get(depth2).getQueryStringConfig().getValues().get(depth3).getValue());
-																putQueryParameter("Rules." + (depth1 + 1) + ".RuleConditions." + (depth2 + 1) + ".QueryStringConfig.Values." + (depth3 + 1) + ".Key" , rules.get(depth1).getRuleConditions().get(depth2).getQueryStringConfig().getValues().get(depth3).getKey());
+																putBodyParameter("Rules." + (depth1 + 1) + ".RuleConditions." + (depth2 + 1) + ".QueryStringConfig.Values." + (depth3 + 1) + ".Value" , rules.get(depth1).getRuleConditions().get(depth2).getQueryStringConfig().getValues().get(depth3).getValue());
+																putBodyParameter("Rules." + (depth1 + 1) + ".RuleConditions." + (depth2 + 1) + ".QueryStringConfig.Values." + (depth3 + 1) + ".Key" , rules.get(depth1).getRuleConditions().get(depth2).getQueryStringConfig().getValues().get(depth3).getKey());
 														}
 													}
 												}
@@ -105,7 +105,7 @@ public class UpdateRulesAttributeRequest extends RpcAcsRequest<UpdateRulesAttrib
 											
 												if (rules.get(depth1).getRuleConditions().get(depth2).getResponseStatusCodeConfig().getValues() != null) {
 													for (int depth3 = 0; depth3 < rules.get(depth1).getRuleConditions().get(depth2).getResponseStatusCodeConfig().getValues().size(); depth3++) {
-														putQueryParameter("Rules." + (depth1 + 1) + ".RuleConditions." + (depth2 + 1) + ".ResponseStatusCodeConfig.Values." + (depth3 + 1) , rules.get(depth1).getRuleConditions().get(depth2).getResponseStatusCodeConfig().getValues().get(depth3));
+														putBodyParameter("Rules." + (depth1 + 1) + ".RuleConditions." + (depth2 + 1) + ".ResponseStatusCodeConfig.Values." + (depth3 + 1) , rules.get(depth1).getRuleConditions().get(depth2).getResponseStatusCodeConfig().getValues().get(depth3));
 													}
 												}
 										}
@@ -113,7 +113,7 @@ public class UpdateRulesAttributeRequest extends RpcAcsRequest<UpdateRulesAttrib
 											
 												if (rules.get(depth1).getRuleConditions().get(depth2).getPathConfig().getValues() != null) {
 													for (int depth3 = 0; depth3 < rules.get(depth1).getRuleConditions().get(depth2).getPathConfig().getValues().size(); depth3++) {
-														putQueryParameter("Rules." + (depth1 + 1) + ".RuleConditions." + (depth2 + 1) + ".PathConfig.Values." + (depth3 + 1) , rules.get(depth1).getRuleConditions().get(depth2).getPathConfig().getValues().get(depth3));
+														putBodyParameter("Rules." + (depth1 + 1) + ".RuleConditions." + (depth2 + 1) + ".PathConfig.Values." + (depth3 + 1) , rules.get(depth1).getRuleConditions().get(depth2).getPathConfig().getValues().get(depth3));
 													}
 												}
 										}
@@ -123,46 +123,46 @@ public class UpdateRulesAttributeRequest extends RpcAcsRequest<UpdateRulesAttrib
 													for (int depth3 = 0; depth3 < rules.get(depth1).getRuleConditions().get(depth2).getCookieConfig().getValues().size(); depth3++) {
 														if (rules.get(depth1).getRuleConditions().get(depth2).getCookieConfig().getValues().get(depth3) != null) {
 															
-																putQueryParameter("Rules." + (depth1 + 1) + ".RuleConditions." + (depth2 + 1) + ".CookieConfig.Values." + (depth3 + 1) + ".Value" , rules.get(depth1).getRuleConditions().get(depth2).getCookieConfig().getValues().get(depth3).getValue());
-																putQueryParameter("Rules." + (depth1 + 1) + ".RuleConditions." + (depth2 + 1) + ".CookieConfig.Values." + (depth3 + 1) + ".Key" , rules.get(depth1).getRuleConditions().get(depth2).getCookieConfig().getValues().get(depth3).getKey());
+																putBodyParameter("Rules." + (depth1 + 1) + ".RuleConditions." + (depth2 + 1) + ".CookieConfig.Values." + (depth3 + 1) + ".Value" , rules.get(depth1).getRuleConditions().get(depth2).getCookieConfig().getValues().get(depth3).getValue());
+																putBodyParameter("Rules." + (depth1 + 1) + ".RuleConditions." + (depth2 + 1) + ".CookieConfig.Values." + (depth3 + 1) + ".Key" , rules.get(depth1).getRuleConditions().get(depth2).getCookieConfig().getValues().get(depth3).getKey());
 														}
 													}
 												}
 										}
-										putQueryParameter("Rules." + (depth1 + 1) + ".RuleConditions." + (depth2 + 1) + ".Type" , rules.get(depth1).getRuleConditions().get(depth2).getType());
+										putBodyParameter("Rules." + (depth1 + 1) + ".RuleConditions." + (depth2 + 1) + ".Type" , rules.get(depth1).getRuleConditions().get(depth2).getType());
 										if (rules.get(depth1).getRuleConditions().get(depth2).getHeaderConfig() != null) {
 											
 												if (rules.get(depth1).getRuleConditions().get(depth2).getHeaderConfig().getValues() != null) {
 													for (int depth3 = 0; depth3 < rules.get(depth1).getRuleConditions().get(depth2).getHeaderConfig().getValues().size(); depth3++) {
-														putQueryParameter("Rules." + (depth1 + 1) + ".RuleConditions." + (depth2 + 1) + ".HeaderConfig.Values." + (depth3 + 1) , rules.get(depth1).getRuleConditions().get(depth2).getHeaderConfig().getValues().get(depth3));
+														putBodyParameter("Rules." + (depth1 + 1) + ".RuleConditions." + (depth2 + 1) + ".HeaderConfig.Values." + (depth3 + 1) , rules.get(depth1).getRuleConditions().get(depth2).getHeaderConfig().getValues().get(depth3));
 													}
 												}
-												putQueryParameter("Rules." + (depth1 + 1) + ".RuleConditions." + (depth2 + 1) + ".HeaderConfig.Key" , rules.get(depth1).getRuleConditions().get(depth2).getHeaderConfig().getKey());
+												putBodyParameter("Rules." + (depth1 + 1) + ".RuleConditions." + (depth2 + 1) + ".HeaderConfig.Key" , rules.get(depth1).getRuleConditions().get(depth2).getHeaderConfig().getKey());
 										}
 										if (rules.get(depth1).getRuleConditions().get(depth2).getResponseHeaderConfig() != null) {
 											
 												if (rules.get(depth1).getRuleConditions().get(depth2).getResponseHeaderConfig().getValues() != null) {
 													for (int depth3 = 0; depth3 < rules.get(depth1).getRuleConditions().get(depth2).getResponseHeaderConfig().getValues().size(); depth3++) {
-														putQueryParameter("Rules." + (depth1 + 1) + ".RuleConditions." + (depth2 + 1) + ".ResponseHeaderConfig.Values." + (depth3 + 1) , rules.get(depth1).getRuleConditions().get(depth2).getResponseHeaderConfig().getValues().get(depth3));
+														putBodyParameter("Rules." + (depth1 + 1) + ".RuleConditions." + (depth2 + 1) + ".ResponseHeaderConfig.Values." + (depth3 + 1) , rules.get(depth1).getRuleConditions().get(depth2).getResponseHeaderConfig().getValues().get(depth3));
 													}
 												}
-												putQueryParameter("Rules." + (depth1 + 1) + ".RuleConditions." + (depth2 + 1) + ".ResponseHeaderConfig.Key" , rules.get(depth1).getRuleConditions().get(depth2).getResponseHeaderConfig().getKey());
+												putBodyParameter("Rules." + (depth1 + 1) + ".RuleConditions." + (depth2 + 1) + ".ResponseHeaderConfig.Key" , rules.get(depth1).getRuleConditions().get(depth2).getResponseHeaderConfig().getKey());
 										}
 								}
 							}
 						}
-						putQueryParameter("Rules." + (depth1 + 1) + ".RuleName" , rules.get(depth1).getRuleName());
-						putQueryParameter("Rules." + (depth1 + 1) + ".Priority" , rules.get(depth1).getPriority());
-						putQueryParameter("Rules." + (depth1 + 1) + ".RuleId" , rules.get(depth1).getRuleId());
+						putBodyParameter("Rules." + (depth1 + 1) + ".RuleName" , rules.get(depth1).getRuleName());
+						putBodyParameter("Rules." + (depth1 + 1) + ".Priority" , rules.get(depth1).getPriority());
+						putBodyParameter("Rules." + (depth1 + 1) + ".RuleId" , rules.get(depth1).getRuleId());
 						if (rules.get(depth1).getRuleActions() != null) {
 							for (int depth2 = 0; depth2 < rules.get(depth1).getRuleActions().size(); depth2++) {
 								if (rules.get(depth1).getRuleActions().get(depth2) != null) {
 									
 										if (rules.get(depth1).getRuleActions().get(depth2).getFixedResponseConfig() != null) {
 											
-												putQueryParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".FixedResponseConfig.HttpCode" , rules.get(depth1).getRuleActions().get(depth2).getFixedResponseConfig().getHttpCode());
-												putQueryParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".FixedResponseConfig.Content" , rules.get(depth1).getRuleActions().get(depth2).getFixedResponseConfig().getContent());
-												putQueryParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".FixedResponseConfig.ContentType" , rules.get(depth1).getRuleActions().get(depth2).getFixedResponseConfig().getContentType());
+												putBodyParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".FixedResponseConfig.HttpCode" , rules.get(depth1).getRuleActions().get(depth2).getFixedResponseConfig().getHttpCode());
+												putBodyParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".FixedResponseConfig.Content" , rules.get(depth1).getRuleActions().get(depth2).getFixedResponseConfig().getContent());
+												putBodyParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".FixedResponseConfig.ContentType" , rules.get(depth1).getRuleActions().get(depth2).getFixedResponseConfig().getContentType());
 										}
 										if (rules.get(depth1).getRuleActions().get(depth2).getTrafficMirrorConfig() != null) {
 											
@@ -172,87 +172,87 @@ public class UpdateRulesAttributeRequest extends RpcAcsRequest<UpdateRulesAttrib
 															for (int depth3 = 0; depth3 < rules.get(depth1).getRuleActions().get(depth2).getTrafficMirrorConfig().getMirrorGroupConfig().getServerGroupTuples().size(); depth3++) {
 																if (rules.get(depth1).getRuleActions().get(depth2).getTrafficMirrorConfig().getMirrorGroupConfig().getServerGroupTuples().get(depth3) != null) {
 																	
-																		putQueryParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".TrafficMirrorConfig.MirrorGroupConfig.ServerGroupTuples." + (depth3 + 1) + ".ServerGroupId" , rules.get(depth1).getRuleActions().get(depth2).getTrafficMirrorConfig().getMirrorGroupConfig().getServerGroupTuples().get(depth3).getServerGroupId());
+																		putBodyParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".TrafficMirrorConfig.MirrorGroupConfig.ServerGroupTuples." + (depth3 + 1) + ".ServerGroupId" , rules.get(depth1).getRuleActions().get(depth2).getTrafficMirrorConfig().getMirrorGroupConfig().getServerGroupTuples().get(depth3).getServerGroupId());
 																}
 															}
 														}
 												}
-												putQueryParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".TrafficMirrorConfig.TargetType" , rules.get(depth1).getRuleActions().get(depth2).getTrafficMirrorConfig().getTargetType());
+												putBodyParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".TrafficMirrorConfig.TargetType" , rules.get(depth1).getRuleActions().get(depth2).getTrafficMirrorConfig().getTargetType());
 										}
 										if (rules.get(depth1).getRuleActions().get(depth2).getForwardGroupConfig() != null) {
 											
 												if (rules.get(depth1).getRuleActions().get(depth2).getForwardGroupConfig().getServerGroupStickySession() != null) {
 													
-														putQueryParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".ForwardGroupConfig.ServerGroupStickySession.Enabled" , rules.get(depth1).getRuleActions().get(depth2).getForwardGroupConfig().getServerGroupStickySession().getEnabled());
-														putQueryParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".ForwardGroupConfig.ServerGroupStickySession.Timeout" , rules.get(depth1).getRuleActions().get(depth2).getForwardGroupConfig().getServerGroupStickySession().getTimeout());
+														putBodyParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".ForwardGroupConfig.ServerGroupStickySession.Enabled" , rules.get(depth1).getRuleActions().get(depth2).getForwardGroupConfig().getServerGroupStickySession().getEnabled());
+														putBodyParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".ForwardGroupConfig.ServerGroupStickySession.Timeout" , rules.get(depth1).getRuleActions().get(depth2).getForwardGroupConfig().getServerGroupStickySession().getTimeout());
 												}
 												if (rules.get(depth1).getRuleActions().get(depth2).getForwardGroupConfig().getServerGroupTuples() != null) {
 													for (int depth3 = 0; depth3 < rules.get(depth1).getRuleActions().get(depth2).getForwardGroupConfig().getServerGroupTuples().size(); depth3++) {
 														if (rules.get(depth1).getRuleActions().get(depth2).getForwardGroupConfig().getServerGroupTuples().get(depth3) != null) {
 															
-																putQueryParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".ForwardGroupConfig.ServerGroupTuples." + (depth3 + 1) + ".ServerGroupId" , rules.get(depth1).getRuleActions().get(depth2).getForwardGroupConfig().getServerGroupTuples().get(depth3).getServerGroupId());
-																putQueryParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".ForwardGroupConfig.ServerGroupTuples." + (depth3 + 1) + ".Weight" , rules.get(depth1).getRuleActions().get(depth2).getForwardGroupConfig().getServerGroupTuples().get(depth3).getWeight());
+																putBodyParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".ForwardGroupConfig.ServerGroupTuples." + (depth3 + 1) + ".ServerGroupId" , rules.get(depth1).getRuleActions().get(depth2).getForwardGroupConfig().getServerGroupTuples().get(depth3).getServerGroupId());
+																putBodyParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".ForwardGroupConfig.ServerGroupTuples." + (depth3 + 1) + ".Weight" , rules.get(depth1).getRuleActions().get(depth2).getForwardGroupConfig().getServerGroupTuples().get(depth3).getWeight());
 														}
 													}
 												}
 										}
 										if (rules.get(depth1).getRuleActions().get(depth2).getRemoveHeaderConfig() != null) {
 											
-												putQueryParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".RemoveHeaderConfig.Key" , rules.get(depth1).getRuleActions().get(depth2).getRemoveHeaderConfig().getKey());
+												putBodyParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".RemoveHeaderConfig.Key" , rules.get(depth1).getRuleActions().get(depth2).getRemoveHeaderConfig().getKey());
 										}
 										if (rules.get(depth1).getRuleActions().get(depth2).getInsertHeaderConfig() != null) {
 											
-												putQueryParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".InsertHeaderConfig.ValueType" , rules.get(depth1).getRuleActions().get(depth2).getInsertHeaderConfig().getValueType());
-												putQueryParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".InsertHeaderConfig.CoverEnabled" , rules.get(depth1).getRuleActions().get(depth2).getInsertHeaderConfig().getCoverEnabled());
-												putQueryParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".InsertHeaderConfig.Value" , rules.get(depth1).getRuleActions().get(depth2).getInsertHeaderConfig().getValue());
-												putQueryParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".InsertHeaderConfig.Key" , rules.get(depth1).getRuleActions().get(depth2).getInsertHeaderConfig().getKey());
+												putBodyParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".InsertHeaderConfig.ValueType" , rules.get(depth1).getRuleActions().get(depth2).getInsertHeaderConfig().getValueType());
+												putBodyParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".InsertHeaderConfig.CoverEnabled" , rules.get(depth1).getRuleActions().get(depth2).getInsertHeaderConfig().getCoverEnabled());
+												putBodyParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".InsertHeaderConfig.Value" , rules.get(depth1).getRuleActions().get(depth2).getInsertHeaderConfig().getValue());
+												putBodyParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".InsertHeaderConfig.Key" , rules.get(depth1).getRuleActions().get(depth2).getInsertHeaderConfig().getKey());
 										}
 										if (rules.get(depth1).getRuleActions().get(depth2).getTrafficLimitConfig() != null) {
 											
-												putQueryParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".TrafficLimitConfig.QPS" , rules.get(depth1).getRuleActions().get(depth2).getTrafficLimitConfig().getQPS());
-												putQueryParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".TrafficLimitConfig.PerIpQps" , rules.get(depth1).getRuleActions().get(depth2).getTrafficLimitConfig().getPerIpQps());
+												putBodyParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".TrafficLimitConfig.QPS" , rules.get(depth1).getRuleActions().get(depth2).getTrafficLimitConfig().getQPS());
+												putBodyParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".TrafficLimitConfig.PerIpQps" , rules.get(depth1).getRuleActions().get(depth2).getTrafficLimitConfig().getPerIpQps());
 										}
 										if (rules.get(depth1).getRuleActions().get(depth2).getCorsConfig() != null) {
 											
-												putQueryParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".CorsConfig.AllowCredentials" , rules.get(depth1).getRuleActions().get(depth2).getCorsConfig().getAllowCredentials());
+												putBodyParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".CorsConfig.AllowCredentials" , rules.get(depth1).getRuleActions().get(depth2).getCorsConfig().getAllowCredentials());
 												if (rules.get(depth1).getRuleActions().get(depth2).getCorsConfig().getAllowOrigin() != null) {
 													for (int depth3 = 0; depth3 < rules.get(depth1).getRuleActions().get(depth2).getCorsConfig().getAllowOrigin().size(); depth3++) {
-														putQueryParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".CorsConfig.AllowOrigin." + (depth3 + 1) , rules.get(depth1).getRuleActions().get(depth2).getCorsConfig().getAllowOrigin().get(depth3));
+														putBodyParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".CorsConfig.AllowOrigin." + (depth3 + 1) , rules.get(depth1).getRuleActions().get(depth2).getCorsConfig().getAllowOrigin().get(depth3));
 													}
 												}
-												putQueryParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".CorsConfig.MaxAge" , rules.get(depth1).getRuleActions().get(depth2).getCorsConfig().getMaxAge());
+												putBodyParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".CorsConfig.MaxAge" , rules.get(depth1).getRuleActions().get(depth2).getCorsConfig().getMaxAge());
 												if (rules.get(depth1).getRuleActions().get(depth2).getCorsConfig().getAllowMethods() != null) {
 													for (int depth3 = 0; depth3 < rules.get(depth1).getRuleActions().get(depth2).getCorsConfig().getAllowMethods().size(); depth3++) {
-														putQueryParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".CorsConfig.AllowMethods." + (depth3 + 1) , rules.get(depth1).getRuleActions().get(depth2).getCorsConfig().getAllowMethods().get(depth3));
+														putBodyParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".CorsConfig.AllowMethods." + (depth3 + 1) , rules.get(depth1).getRuleActions().get(depth2).getCorsConfig().getAllowMethods().get(depth3));
 													}
 												}
 												if (rules.get(depth1).getRuleActions().get(depth2).getCorsConfig().getAllowHeaders() != null) {
 													for (int depth3 = 0; depth3 < rules.get(depth1).getRuleActions().get(depth2).getCorsConfig().getAllowHeaders().size(); depth3++) {
-														putQueryParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".CorsConfig.AllowHeaders." + (depth3 + 1) , rules.get(depth1).getRuleActions().get(depth2).getCorsConfig().getAllowHeaders().get(depth3));
+														putBodyParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".CorsConfig.AllowHeaders." + (depth3 + 1) , rules.get(depth1).getRuleActions().get(depth2).getCorsConfig().getAllowHeaders().get(depth3));
 													}
 												}
 												if (rules.get(depth1).getRuleActions().get(depth2).getCorsConfig().getExposeHeaders() != null) {
 													for (int depth3 = 0; depth3 < rules.get(depth1).getRuleActions().get(depth2).getCorsConfig().getExposeHeaders().size(); depth3++) {
-														putQueryParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".CorsConfig.ExposeHeaders." + (depth3 + 1) , rules.get(depth1).getRuleActions().get(depth2).getCorsConfig().getExposeHeaders().get(depth3));
+														putBodyParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".CorsConfig.ExposeHeaders." + (depth3 + 1) , rules.get(depth1).getRuleActions().get(depth2).getCorsConfig().getExposeHeaders().get(depth3));
 													}
 												}
 										}
 										if (rules.get(depth1).getRuleActions().get(depth2).getRedirectConfig() != null) {
 											
-												putQueryParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".RedirectConfig.Path" , rules.get(depth1).getRuleActions().get(depth2).getRedirectConfig().getPath());
-												putQueryParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".RedirectConfig.Protocol" , rules.get(depth1).getRuleActions().get(depth2).getRedirectConfig().getBizProtocol());
-												putQueryParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".RedirectConfig.Port" , rules.get(depth1).getRuleActions().get(depth2).getRedirectConfig().getPort());
-												putQueryParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".RedirectConfig.Query" , rules.get(depth1).getRuleActions().get(depth2).getRedirectConfig().getQuery());
-												putQueryParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".RedirectConfig.Host" , rules.get(depth1).getRuleActions().get(depth2).getRedirectConfig().getHost());
-												putQueryParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".RedirectConfig.HttpCode" , rules.get(depth1).getRuleActions().get(depth2).getRedirectConfig().getHttpCode());
+												putBodyParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".RedirectConfig.Path" , rules.get(depth1).getRuleActions().get(depth2).getRedirectConfig().getPath());
+												putBodyParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".RedirectConfig.Protocol" , rules.get(depth1).getRuleActions().get(depth2).getRedirectConfig().getBizProtocol());
+												putBodyParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".RedirectConfig.Port" , rules.get(depth1).getRuleActions().get(depth2).getRedirectConfig().getPort());
+												putBodyParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".RedirectConfig.Query" , rules.get(depth1).getRuleActions().get(depth2).getRedirectConfig().getQuery());
+												putBodyParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".RedirectConfig.Host" , rules.get(depth1).getRuleActions().get(depth2).getRedirectConfig().getHost());
+												putBodyParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".RedirectConfig.HttpCode" , rules.get(depth1).getRuleActions().get(depth2).getRedirectConfig().getHttpCode());
 										}
-										putQueryParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".Type" , rules.get(depth1).getRuleActions().get(depth2).getType());
-										putQueryParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".Order" , rules.get(depth1).getRuleActions().get(depth2).getOrder());
+										putBodyParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".Type" , rules.get(depth1).getRuleActions().get(depth2).getType());
+										putBodyParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".Order" , rules.get(depth1).getRuleActions().get(depth2).getOrder());
 										if (rules.get(depth1).getRuleActions().get(depth2).getRewriteConfig() != null) {
 											
-												putQueryParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".RewriteConfig.Path" , rules.get(depth1).getRuleActions().get(depth2).getRewriteConfig().getPath());
-												putQueryParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".RewriteConfig.Query" , rules.get(depth1).getRuleActions().get(depth2).getRewriteConfig().getQuery());
-												putQueryParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".RewriteConfig.Host" , rules.get(depth1).getRuleActions().get(depth2).getRewriteConfig().getHost());
+												putBodyParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".RewriteConfig.Path" , rules.get(depth1).getRuleActions().get(depth2).getRewriteConfig().getPath());
+												putBodyParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".RewriteConfig.Query" , rules.get(depth1).getRuleActions().get(depth2).getRewriteConfig().getQuery());
+												putBodyParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".RewriteConfig.Host" , rules.get(depth1).getRuleActions().get(depth2).getRewriteConfig().getHost());
 										}
 								}
 							}

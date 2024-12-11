@@ -109,6 +109,8 @@ public class ListServerGroupsResponse extends AcsResponse {
 
 		private String createTime;
 
+		private Boolean crossZoneEnabled;
+
 		private List<Tag> tags;
 
 		private List<String> relatedLoadBalancerIds;
@@ -253,6 +255,14 @@ public class ListServerGroupsResponse extends AcsResponse {
 
 		public void setCreateTime(String createTime) {
 			this.createTime = createTime;
+		}
+
+		public Boolean getCrossZoneEnabled() {
+			return this.crossZoneEnabled;
+		}
+
+		public void setCrossZoneEnabled(Boolean crossZoneEnabled) {
+			this.crossZoneEnabled = crossZoneEnabled;
 		}
 
 		public List<Tag> getTags() {
