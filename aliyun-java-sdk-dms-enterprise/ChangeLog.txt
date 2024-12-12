@@ -1,3 +1,6 @@
+2024-12-12 Version: 1.53.15
+- Supported Pageable of ListDataLakeDatabase API.
+
 2024-11-27 Version: 1.53.14
 - Support ListDataLakeCatalog, ListDataLakeDatabase, ListDataLakeTablebaseInfo, GetDataLakeCatalog, GetDataLakeDatabase, GetDataLakeTable API.
 

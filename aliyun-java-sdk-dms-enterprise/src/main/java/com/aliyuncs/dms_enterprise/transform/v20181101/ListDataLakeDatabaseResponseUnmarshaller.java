@@ -31,6 +31,8 @@ public class ListDataLakeDatabaseResponseUnmarshaller {
 		listDataLakeDatabaseResponse.setSuccess(_ctx.booleanValue("ListDataLakeDatabaseResponse.Success"));
 		listDataLakeDatabaseResponse.setErrorCode(_ctx.stringValue("ListDataLakeDatabaseResponse.ErrorCode"));
 		listDataLakeDatabaseResponse.setErrorMessage(_ctx.stringValue("ListDataLakeDatabaseResponse.ErrorMessage"));
+		listDataLakeDatabaseResponse.setNextToken(_ctx.stringValue("ListDataLakeDatabaseResponse.NextToken"));
+		listDataLakeDatabaseResponse.setMaxResults(_ctx.integerValue("ListDataLakeDatabaseResponse.MaxResults"));
 
 		List<Database> databaseList = new ArrayList<Database>();
 		for (int i = 0; i < _ctx.lengthValue("ListDataLakeDatabaseResponse.DatabaseList.Length"); i++) {

@@ -30,9 +30,13 @@ public class ListDataLakeDatabaseRequest extends RpcAcsRequest<ListDataLakeDatab
 
 	private Long tid;
 
+	private String nextToken;
+
 	private String catalogName;
 
 	private String dataRegion;
+
+	private Integer maxResults;
 	public ListDataLakeDatabaseRequest() {
 		super("dms-enterprise", "2018-11-01", "ListDataLakeDatabase", "dms-enterprise");
 		setProtocol(ProtocolType.HTTPS);
@@ -65,6 +69,17 @@ public class ListDataLakeDatabaseRequest extends RpcAcsRequest<ListDataLakeDatab
 		}
 	}
 
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
+		}
+	}
+
 	public String getCatalogName() {
 		return this.catalogName;
 	}
@@ -84,6 +99,17 @@ public class ListDataLakeDatabaseRequest extends RpcAcsRequest<ListDataLakeDatab
 		this.dataRegion = dataRegion;
 		if(dataRegion != null){
 			putQueryParameter("DataRegion", dataRegion);
+		}
+	}
+
+	public Integer getMaxResults() {
+		return this.maxResults;
+	}
+
+	public void setMaxResults(Integer maxResults) {
+		this.maxResults = maxResults;
+		if(maxResults != null){
+			putQueryParameter("MaxResults", maxResults.toString());
 		}
 	}
 

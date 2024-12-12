@@ -34,6 +34,10 @@ public class ListDataLakeDatabaseResponse extends AcsResponse {
 
 	private String errorMessage;
 
+	private String nextToken;
+
+	private Integer maxResults;
+
 	private List<Database> databaseList;
 
 	public String getRequestId() {
@@ -66,6 +70,22 @@ public class ListDataLakeDatabaseResponse extends AcsResponse {
 
 	public void setErrorMessage(String errorMessage) {
 		this.errorMessage = errorMessage;
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+	}
+
+	public Integer getMaxResults() {
+		return this.maxResults;
+	}
+
+	public void setMaxResults(Integer maxResults) {
+		this.maxResults = maxResults;
 	}
 
 	public List<Database> getDatabaseList() {
