@@ -112,6 +112,8 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 
 	private String burstingEnabled;
 
+	private String targetMinorVersion;
+
 	private Integer dBNodeNum;
 
 	private Long storageUpperBound;
@@ -615,6 +617,17 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		this.burstingEnabled = burstingEnabled;
 		if(burstingEnabled != null){
 			putQueryParameter("BurstingEnabled", burstingEnabled);
+		}
+	}
+
+	public String getTargetMinorVersion() {
+		return this.targetMinorVersion;
+	}
+
+	public void setTargetMinorVersion(String targetMinorVersion) {
+		this.targetMinorVersion = targetMinorVersion;
+		if(targetMinorVersion != null){
+			putQueryParameter("TargetMinorVersion", targetMinorVersion);
 		}
 	}
 

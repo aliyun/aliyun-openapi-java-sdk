@@ -43,6 +43,8 @@ public class ModifyDBClusterAndNodesParametersRequest extends RpcAcsRequest<Modi
 
 	private String plannedStartTime;
 
+	private String standbyClusterIdListNeedToSync;
+
 	private String parameters;
 
 	private Boolean fromTimeService;
@@ -151,6 +153,17 @@ public class ModifyDBClusterAndNodesParametersRequest extends RpcAcsRequest<Modi
 		this.plannedStartTime = plannedStartTime;
 		if(plannedStartTime != null){
 			putQueryParameter("PlannedStartTime", plannedStartTime);
+		}
+	}
+
+	public String getStandbyClusterIdListNeedToSync() {
+		return this.standbyClusterIdListNeedToSync;
+	}
+
+	public void setStandbyClusterIdListNeedToSync(String standbyClusterIdListNeedToSync) {
+		this.standbyClusterIdListNeedToSync = standbyClusterIdListNeedToSync;
+		if(standbyClusterIdListNeedToSync != null){
+			putQueryParameter("StandbyClusterIdListNeedToSync", standbyClusterIdListNeedToSync);
 		}
 	}
 
