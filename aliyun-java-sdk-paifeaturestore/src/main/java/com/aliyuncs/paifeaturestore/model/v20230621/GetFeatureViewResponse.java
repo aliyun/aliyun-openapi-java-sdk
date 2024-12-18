@@ -69,6 +69,8 @@ public class GetFeatureViewResponse extends AcsResponse {
 
 	private String publishTableScript;
 
+	private String mockTableName;
+
 	private List<FieldsItem> fields;
 
 	private List<String> tags;
@@ -247,6 +249,14 @@ public class GetFeatureViewResponse extends AcsResponse {
 
 	public void setPublishTableScript(String publishTableScript) {
 		this.publishTableScript = publishTableScript;
+	}
+
+	public String getMockTableName() {
+		return this.mockTableName;
+	}
+
+	public void setMockTableName(String mockTableName) {
+		this.mockTableName = mockTableName;
 	}
 
 	public List<FieldsItem> getFields() {

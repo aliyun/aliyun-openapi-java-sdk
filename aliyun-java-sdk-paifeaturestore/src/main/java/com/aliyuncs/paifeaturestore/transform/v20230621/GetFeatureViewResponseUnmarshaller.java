@@ -48,6 +48,7 @@ public class GetFeatureViewResponseUnmarshaller {
 		getFeatureViewResponse.setGmtSyncTime(_ctx.stringValue("GetFeatureViewResponse.GmtSyncTime"));
 		getFeatureViewResponse.setLastSyncConfig(_ctx.stringValue("GetFeatureViewResponse.LastSyncConfig"));
 		getFeatureViewResponse.setPublishTableScript(_ctx.stringValue("GetFeatureViewResponse.PublishTableScript"));
+		getFeatureViewResponse.setMockTableName(_ctx.stringValue("GetFeatureViewResponse.MockTableName"));
 
 		List<String> tags = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetFeatureViewResponse.Tags.Length"); i++) {
