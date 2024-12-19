@@ -84,6 +84,7 @@ public class GetPlayInfoResponseUnmarshaller {
 			playInfo.setBitDepth(_ctx.integerValue("GetPlayInfoResponse.PlayInfoList["+ i +"].BitDepth"));
 			playInfo.setJobType(_ctx.integerValue("GetPlayInfoResponse.PlayInfoList["+ i +"].JobType"));
 			playInfo.setJobExt(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].JobExt"));
+			playInfo.setCodecName(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].CodecName"));
 
 			playInfoList.add(playInfo);
 		}

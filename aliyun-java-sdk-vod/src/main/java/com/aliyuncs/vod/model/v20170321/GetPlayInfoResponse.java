@@ -113,6 +113,8 @@ public class GetPlayInfoResponse extends AcsResponse {
 
 		private String jobExt;
 
+		private String codecName;
+
 		public String getCreationTime() {
 			return this.creationTime;
 		}
@@ -335,6 +337,14 @@ public class GetPlayInfoResponse extends AcsResponse {
 
 		public void setJobExt(String jobExt) {
 			this.jobExt = jobExt;
+		}
+
+		public String getCodecName() {
+			return this.codecName;
+		}
+
+		public void setCodecName(String codecName) {
+			this.codecName = codecName;
 		}
 	}
 

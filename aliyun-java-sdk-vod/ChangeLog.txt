@@ -1,3 +1,7 @@
+2024-12-19 Version: 2.16.30
+- Add BatchGetMediaInfos.
+- Modify UploadStreamByURL.
+
 2024-12-06 Version: 2.16.29
 -Release GetJobDetail, ListJobInfo.
 -Modify GetTranscodeTask.
