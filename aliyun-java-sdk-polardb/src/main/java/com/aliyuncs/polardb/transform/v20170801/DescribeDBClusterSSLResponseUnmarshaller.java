@@ -48,6 +48,7 @@ public class DescribeDBClusterSSLResponseUnmarshaller {
 			item.setClientCACert(_ctx.stringValue("DescribeDBClusterSSLResponse.Items["+ i +"].ClientCACert"));
 			item.setClientCrl(_ctx.stringValue("DescribeDBClusterSSLResponse.Items["+ i +"].ClientCrl"));
 			item.setACL(_ctx.stringValue("DescribeDBClusterSSLResponse.Items["+ i +"].ACL"));
+			item.setSSLAutoRotate(_ctx.stringValue("DescribeDBClusterSSLResponse.Items["+ i +"].SSLAutoRotate"));
 
 			List<String> allowedACLs = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDBClusterSSLResponse.Items["+ i +"].AllowedACLs.Length"); j++) {

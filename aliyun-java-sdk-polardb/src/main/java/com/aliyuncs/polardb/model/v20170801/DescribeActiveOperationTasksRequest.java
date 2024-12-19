@@ -22,20 +22,20 @@ import com.aliyuncs.polardb.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
+public class DescribeActiveOperationTasksRequest extends RpcAcsRequest<DescribeActiveOperationTasksResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String clientToken;
+	private String changeLevel;
 
-	private String accountType;
+	private Integer pageNumber;
 
-	private String accountDescription;
+	private String securityToken;
 
-	private String accountPrivilege;
+	private Integer pageSize;
 
-	private String accountName;
+	private String taskType;
 
 	private String resourceOwnerAccount;
 
@@ -43,15 +43,17 @@ public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
 
 	private String ownerAccount;
 
+	private Long allowCancel;
+
 	private Long ownerId;
 
-	private String accountPassword;
+	private String dBType;
 
-	private String dBName;
+	private Long allowChange;
 
-	private String privForAllDB;
-	public CreateAccountRequest() {
-		super("polardb", "2017-08-01", "CreateAccount", "polardb");
+	private Long status;
+	public DescribeActiveOperationTasksRequest() {
+		super("polardb", "2017-08-01", "DescribeActiveOperationTasks", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -70,58 +72,58 @@ public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
 		}
 	}
 
-	public String getClientToken() {
-		return this.clientToken;
+	public String getChangeLevel() {
+		return this.changeLevel;
 	}
 
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
+	public void setChangeLevel(String changeLevel) {
+		this.changeLevel = changeLevel;
+		if(changeLevel != null){
+			putQueryParameter("ChangeLevel", changeLevel);
 		}
 	}
 
-	public String getAccountType() {
-		return this.accountType;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setAccountType(String accountType) {
-		this.accountType = accountType;
-		if(accountType != null){
-			putQueryParameter("AccountType", accountType);
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
-	public String getAccountDescription() {
-		return this.accountDescription;
+	public String getSecurityToken() {
+		return this.securityToken;
 	}
 
-	public void setAccountDescription(String accountDescription) {
-		this.accountDescription = accountDescription;
-		if(accountDescription != null){
-			putQueryParameter("AccountDescription", accountDescription);
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 
-	public String getAccountPrivilege() {
-		return this.accountPrivilege;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setAccountPrivilege(String accountPrivilege) {
-		this.accountPrivilege = accountPrivilege;
-		if(accountPrivilege != null){
-			putQueryParameter("AccountPrivilege", accountPrivilege);
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
-	public String getAccountName() {
-		return this.accountName;
+	public String getTaskType() {
+		return this.taskType;
 	}
 
-	public void setAccountName(String accountName) {
-		this.accountName = accountName;
-		if(accountName != null){
-			putQueryParameter("AccountName", accountName);
+	public void setTaskType(String taskType) {
+		this.taskType = taskType;
+		if(taskType != null){
+			putQueryParameter("TaskType", taskType);
 		}
 	}
 
@@ -158,6 +160,17 @@ public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
 		}
 	}
 
+	public Long getAllowCancel() {
+		return this.allowCancel;
+	}
+
+	public void setAllowCancel(Long allowCancel) {
+		this.allowCancel = allowCancel;
+		if(allowCancel != null){
+			putQueryParameter("AllowCancel", allowCancel.toString());
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -169,42 +182,42 @@ public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
 		}
 	}
 
-	public String getAccountPassword() {
-		return this.accountPassword;
+	public String getDBType() {
+		return this.dBType;
 	}
 
-	public void setAccountPassword(String accountPassword) {
-		this.accountPassword = accountPassword;
-		if(accountPassword != null){
-			putQueryParameter("AccountPassword", accountPassword);
+	public void setDBType(String dBType) {
+		this.dBType = dBType;
+		if(dBType != null){
+			putQueryParameter("DBType", dBType);
 		}
 	}
 
-	public String getDBName() {
-		return this.dBName;
+	public Long getAllowChange() {
+		return this.allowChange;
 	}
 
-	public void setDBName(String dBName) {
-		this.dBName = dBName;
-		if(dBName != null){
-			putQueryParameter("DBName", dBName);
+	public void setAllowChange(Long allowChange) {
+		this.allowChange = allowChange;
+		if(allowChange != null){
+			putQueryParameter("AllowChange", allowChange.toString());
 		}
 	}
 
-	public String getPrivForAllDB() {
-		return this.privForAllDB;
+	public Long getStatus() {
+		return this.status;
 	}
 
-	public void setPrivForAllDB(String privForAllDB) {
-		this.privForAllDB = privForAllDB;
-		if(privForAllDB != null){
-			putQueryParameter("PrivForAllDB", privForAllDB);
+	public void setStatus(Long status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status.toString());
 		}
 	}
 
 	@Override
-	public Class<CreateAccountResponse> getResponseClass() {
-		return CreateAccountResponse.class;
+	public Class<DescribeActiveOperationTasksResponse> getResponseClass() {
+		return DescribeActiveOperationTasksResponse.class;
 	}
 
 }

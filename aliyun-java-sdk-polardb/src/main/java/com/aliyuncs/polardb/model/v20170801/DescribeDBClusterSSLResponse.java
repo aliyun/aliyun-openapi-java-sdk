@@ -87,6 +87,8 @@ public class DescribeDBClusterSSLResponse extends AcsResponse {
 
 		private String aCL;
 
+		private String sSLAutoRotate;
+
 		private List<String> allowedACLs;
 
 		public String getSSLExpireTime() {
@@ -167,6 +169,14 @@ public class DescribeDBClusterSSLResponse extends AcsResponse {
 
 		public void setACL(String aCL) {
 			this.aCL = aCL;
+		}
+
+		public String getSSLAutoRotate() {
+			return this.sSLAutoRotate;
+		}
+
+		public void setSSLAutoRotate(String sSLAutoRotate) {
+			this.sSLAutoRotate = sSLAutoRotate;
 		}
 
 		public List<String> getAllowedACLs() {
