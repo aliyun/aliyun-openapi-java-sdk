@@ -23,6 +23,7 @@ public class ModifyInstanceSpecResponseUnmarshaller {
 	public static ModifyInstanceSpecResponse unmarshall(ModifyInstanceSpecResponse modifyInstanceSpecResponse, UnmarshallerContext _ctx) {
 		
 		modifyInstanceSpecResponse.setRequestId(_ctx.stringValue("ModifyInstanceSpecResponse.RequestId"));
+		modifyInstanceSpecResponse.setTaskId(_ctx.stringValue("ModifyInstanceSpecResponse.TaskId"));
 	 
 	 	return modifyInstanceSpecResponse;
 	}

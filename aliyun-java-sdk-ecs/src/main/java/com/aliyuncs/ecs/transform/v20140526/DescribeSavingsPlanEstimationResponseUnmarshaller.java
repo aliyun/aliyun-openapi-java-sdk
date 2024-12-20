@@ -31,6 +31,7 @@ public class DescribeSavingsPlanEstimationResponseUnmarshaller {
 		describeSavingsPlanEstimationResponse.setPeriodUnit(_ctx.stringValue("DescribeSavingsPlanEstimationResponse.PeriodUnit"));
 		describeSavingsPlanEstimationResponse.setPeriod(_ctx.integerValue("DescribeSavingsPlanEstimationResponse.Period"));
 		describeSavingsPlanEstimationResponse.setPlanType(_ctx.stringValue("DescribeSavingsPlanEstimationResponse.PlanType"));
+		describeSavingsPlanEstimationResponse.setInstanceTypeFamilyGroup(_ctx.stringValue("DescribeSavingsPlanEstimationResponse.InstanceTypeFamilyGroup"));
 	 
 	 	return describeSavingsPlanEstimationResponse;
 	}

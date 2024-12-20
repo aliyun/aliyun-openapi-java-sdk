@@ -603,6 +603,10 @@ public class DescribePriceResponse extends AcsResponse {
 
 				private Float discountOff;
 
+				private String type;
+
+				private Float remainQuota;
+
 				private List<Long> ruleIds3;
 
 				public String getName() {
@@ -619,6 +623,22 @@ public class DescribePriceResponse extends AcsResponse {
 
 				public void setDiscountOff(Float discountOff) {
 					this.discountOff = discountOff;
+				}
+
+				public String getType() {
+					return this.type;
+				}
+
+				public void setType(String type) {
+					this.type = type;
+				}
+
+				public Float getRemainQuota() {
+					return this.remainQuota;
+				}
+
+				public void setRemainQuota(Float remainQuota) {
+					this.remainQuota = remainQuota;
 				}
 
 				public List<Long> getRuleIds3() {

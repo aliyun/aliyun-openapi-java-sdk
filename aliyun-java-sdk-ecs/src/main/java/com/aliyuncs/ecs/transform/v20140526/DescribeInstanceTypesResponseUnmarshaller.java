@@ -72,6 +72,7 @@ public class DescribeInstanceTypesResponseUnmarshaller {
 			instanceType.setCpuArchitecture(_ctx.stringValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].CpuArchitecture"));
 			instanceType.setGPUMemorySize(_ctx.floatValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].GPUMemorySize"));
 			instanceType.setNetworkCardQuantity(_ctx.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].NetworkCardQuantity"));
+			instanceType.setJumboFrameSupport(_ctx.booleanValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].JumboFrameSupport"));
 
 			List<String> supportedBootModes = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].SupportedBootModes.Length"); j++) {
@@ -85,6 +86,10 @@ public class DescribeInstanceTypesResponseUnmarshaller {
 			instanceType.setEnhancedNetwork(enhancedNetwork);
 
 			CpuOptions cpuOptions = new CpuOptions();
+			cpuOptions.setThreadsPerCore(_ctx.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].CpuOptions.ThreadsPerCore"));
+			cpuOptions.setCore(_ctx.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].CpuOptions.Core"));
+			cpuOptions.setCoreFactor(_ctx.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].CpuOptions.CoreFactor"));
+			cpuOptions.setHyperThreadingAdjustable(_ctx.booleanValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].CpuOptions.HyperThreadingAdjustable"));
 
 			List<String> supportedTopologyTypes = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].CpuOptions.SupportedTopologyTypes.Length"); j++) {

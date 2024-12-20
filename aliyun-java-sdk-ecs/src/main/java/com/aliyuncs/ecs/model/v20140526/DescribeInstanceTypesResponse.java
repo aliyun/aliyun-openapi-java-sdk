@@ -131,6 +131,8 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 
 		private Integer networkCardQuantity;
 
+		private Boolean jumboFrameSupport;
+
 		private List<NetworkCardInfo> networkCards;
 
 		private List<String> supportedBootModes;
@@ -435,6 +437,14 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 			this.networkCardQuantity = networkCardQuantity;
 		}
 
+		public Boolean getJumboFrameSupport() {
+			return this.jumboFrameSupport;
+		}
+
+		public void setJumboFrameSupport(Boolean jumboFrameSupport) {
+			this.jumboFrameSupport = jumboFrameSupport;
+		}
+
 		public List<NetworkCardInfo> getNetworkCards() {
 			return this.networkCards;
 		}
@@ -505,7 +515,47 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 
 		public static class CpuOptions {
 
+			private Integer threadsPerCore;
+
+			private Integer core;
+
+			private Integer coreFactor;
+
+			private Boolean hyperThreadingAdjustable;
+
 			private List<String> supportedTopologyTypes;
+
+			public Integer getThreadsPerCore() {
+				return this.threadsPerCore;
+			}
+
+			public void setThreadsPerCore(Integer threadsPerCore) {
+				this.threadsPerCore = threadsPerCore;
+			}
+
+			public Integer getCore() {
+				return this.core;
+			}
+
+			public void setCore(Integer core) {
+				this.core = core;
+			}
+
+			public Integer getCoreFactor() {
+				return this.coreFactor;
+			}
+
+			public void setCoreFactor(Integer coreFactor) {
+				this.coreFactor = coreFactor;
+			}
+
+			public Boolean getHyperThreadingAdjustable() {
+				return this.hyperThreadingAdjustable;
+			}
+
+			public void setHyperThreadingAdjustable(Boolean hyperThreadingAdjustable) {
+				this.hyperThreadingAdjustable = hyperThreadingAdjustable;
+			}
 
 			public List<String> getSupportedTopologyTypes() {
 				return this.supportedTopologyTypes;

@@ -42,6 +42,8 @@ public class DescribeSavingsPlanEstimationResponse extends AcsResponse {
 
 	private String planType;
 
+	private String instanceTypeFamilyGroup;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -112,6 +114,14 @@ public class DescribeSavingsPlanEstimationResponse extends AcsResponse {
 
 	public void setPlanType(String planType) {
 		this.planType = planType;
+	}
+
+	public String getInstanceTypeFamilyGroup() {
+		return this.instanceTypeFamilyGroup;
+	}
+
+	public void setInstanceTypeFamilyGroup(String instanceTypeFamilyGroup) {
+		this.instanceTypeFamilyGroup = instanceTypeFamilyGroup;
 	}
 
 	@Override

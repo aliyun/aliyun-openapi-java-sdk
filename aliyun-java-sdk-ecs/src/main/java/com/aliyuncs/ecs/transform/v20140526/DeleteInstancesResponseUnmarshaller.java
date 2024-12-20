@@ -23,6 +23,7 @@ public class DeleteInstancesResponseUnmarshaller {
 	public static DeleteInstancesResponse unmarshall(DeleteInstancesResponse deleteInstancesResponse, UnmarshallerContext _ctx) {
 		
 		deleteInstancesResponse.setRequestId(_ctx.stringValue("DeleteInstancesResponse.RequestId"));
+		deleteInstancesResponse.setTaskGroupId(_ctx.stringValue("DeleteInstancesResponse.TaskGroupId"));
 	 
 	 	return deleteInstancesResponse;
 	}

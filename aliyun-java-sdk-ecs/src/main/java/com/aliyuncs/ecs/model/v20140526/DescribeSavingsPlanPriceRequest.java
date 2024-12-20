@@ -27,6 +27,8 @@ import com.aliyuncs.ecs.Endpoint;
 public class DescribeSavingsPlanPriceRequest extends RpcAcsRequest<DescribeSavingsPlanPriceResponse> {
 	   
 
+	private String instanceTypeFamilyGroup;
+
 	private Integer period;
 
 	private List<String> resourceIds;
@@ -48,6 +50,17 @@ public class DescribeSavingsPlanPriceRequest extends RpcAcsRequest<DescribeSavin
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getInstanceTypeFamilyGroup() {
+		return this.instanceTypeFamilyGroup;
+	}
+
+	public void setInstanceTypeFamilyGroup(String instanceTypeFamilyGroup) {
+		this.instanceTypeFamilyGroup = instanceTypeFamilyGroup;
+		if(instanceTypeFamilyGroup != null){
+			putQueryParameter("InstanceTypeFamilyGroup", instanceTypeFamilyGroup);
+		}
 	}
 
 	public Integer getPeriod() {

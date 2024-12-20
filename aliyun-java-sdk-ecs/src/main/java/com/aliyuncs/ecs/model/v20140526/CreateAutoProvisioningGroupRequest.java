@@ -722,6 +722,7 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 						putQueryParameter("LaunchTemplateConfig." + (depth1 + 1) + ".SecondaryNetworkInterface." + (depth2 + 1) + ".VSwitchId" , launchTemplateConfigs.get(depth1).getSecondaryNetworkInterfaces().get(depth2).getVSwitchId());
 					}
 				}
+				putQueryParameter("LaunchTemplateConfig." + (depth1 + 1) + ".ImageId" , launchTemplateConfigs.get(depth1).getImageId());
 			}
 		}	
 	}
@@ -1248,6 +1249,8 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 
 		private List<SecondaryNetworkInterface> secondaryNetworkInterfaces;
 
+		private String imageId;
+
 		public String getVSwitchId() {
 			return this.vSwitchId;
 		}
@@ -1350,6 +1353,14 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 
 		public void setSecondaryNetworkInterfaces(List<SecondaryNetworkInterface> secondaryNetworkInterfaces) {
 			this.secondaryNetworkInterfaces = secondaryNetworkInterfaces;
+		}
+
+		public String getImageId() {
+			return this.imageId;
+		}
+
+		public void setImageId(String imageId) {
+			this.imageId = imageId;
 		}
 
 		public static class SecondaryNetworkInterface {

@@ -146,6 +146,8 @@ public class DescribePriceResponseUnmarshaller {
 			Promotion promotion = new Promotion();
 			promotion.setName(_ctx.stringValue("DescribePriceResponse.PriceInfo.Price.Promotions["+ i +"].Name"));
 			promotion.setDiscountOff(_ctx.floatValue("DescribePriceResponse.PriceInfo.Price.Promotions["+ i +"].DiscountOff"));
+			promotion.setType(_ctx.stringValue("DescribePriceResponse.PriceInfo.Price.Promotions["+ i +"].Type"));
+			promotion.setRemainQuota(_ctx.floatValue("DescribePriceResponse.PriceInfo.Price.Promotions["+ i +"].RemainQuota"));
 
 			List<Long> ruleIds3 = new ArrayList<Long>();
 			for (int j = 0; j < _ctx.lengthValue("DescribePriceResponse.PriceInfo.Price.Promotions["+ i +"].RuleIds.Length"); j++) {

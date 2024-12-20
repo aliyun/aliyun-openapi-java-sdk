@@ -27,21 +27,23 @@ import com.aliyuncs.ecs.Endpoint;
 public class CreateSavingsPlanRequest extends RpcAcsRequest<CreateSavingsPlanResponse> {
 	   
 
+	private String instanceTypeFamilyGroup;
+
+	private String planType;
+
+	private String committedAmount;
+
 	private String period;
 
 	private List<String> resourceIds;
 
 	private String instanceTypeFamily;
 
-	private String planType;
-
 	private String periodUnit;
 
 	private String offeringType;
 
 	private String chargeType;
-
-	private String committedAmount;
 	public CreateSavingsPlanRequest() {
 		super("Ecs", "2014-05-26", "CreateSavingsPlan", "ecs");
 		setProtocol(ProtocolType.HTTPS);
@@ -50,6 +52,39 @@ public class CreateSavingsPlanRequest extends RpcAcsRequest<CreateSavingsPlanRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getInstanceTypeFamilyGroup() {
+		return this.instanceTypeFamilyGroup;
+	}
+
+	public void setInstanceTypeFamilyGroup(String instanceTypeFamilyGroup) {
+		this.instanceTypeFamilyGroup = instanceTypeFamilyGroup;
+		if(instanceTypeFamilyGroup != null){
+			putQueryParameter("InstanceTypeFamilyGroup", instanceTypeFamilyGroup);
+		}
+	}
+
+	public String getPlanType() {
+		return this.planType;
+	}
+
+	public void setPlanType(String planType) {
+		this.planType = planType;
+		if(planType != null){
+			putQueryParameter("PlanType", planType);
+		}
+	}
+
+	public String getCommittedAmount() {
+		return this.committedAmount;
+	}
+
+	public void setCommittedAmount(String committedAmount) {
+		this.committedAmount = committedAmount;
+		if(committedAmount != null){
+			putQueryParameter("CommittedAmount", committedAmount);
+		}
 	}
 
 	public String getPeriod() {
@@ -87,17 +122,6 @@ public class CreateSavingsPlanRequest extends RpcAcsRequest<CreateSavingsPlanRes
 		}
 	}
 
-	public String getPlanType() {
-		return this.planType;
-	}
-
-	public void setPlanType(String planType) {
-		this.planType = planType;
-		if(planType != null){
-			putQueryParameter("PlanType", planType);
-		}
-	}
-
 	public String getPeriodUnit() {
 		return this.periodUnit;
 	}
@@ -128,17 +152,6 @@ public class CreateSavingsPlanRequest extends RpcAcsRequest<CreateSavingsPlanRes
 		this.chargeType = chargeType;
 		if(chargeType != null){
 			putQueryParameter("ChargeType", chargeType);
-		}
-	}
-
-	public String getCommittedAmount() {
-		return this.committedAmount;
-	}
-
-	public void setCommittedAmount(String committedAmount) {
-		this.committedAmount = committedAmount;
-		if(committedAmount != null){
-			putQueryParameter("CommittedAmount", committedAmount);
 		}
 	}
 

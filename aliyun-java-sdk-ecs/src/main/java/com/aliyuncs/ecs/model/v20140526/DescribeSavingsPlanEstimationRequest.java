@@ -32,9 +32,13 @@ public class DescribeSavingsPlanEstimationRequest extends RpcAcsRequest<Describe
 
 	private String planType;
 
+	private String instanceTypeScope;
+
 	private String periodUnit;
 
 	private String offeringType;
+
+	private String estimationResource;
 	public DescribeSavingsPlanEstimationRequest() {
 		super("Ecs", "2014-05-26", "DescribeSavingsPlanEstimation", "ecs");
 		setProtocol(ProtocolType.HTTPS);
@@ -78,6 +82,17 @@ public class DescribeSavingsPlanEstimationRequest extends RpcAcsRequest<Describe
 		}
 	}
 
+	public String getInstanceTypeScope() {
+		return this.instanceTypeScope;
+	}
+
+	public void setInstanceTypeScope(String instanceTypeScope) {
+		this.instanceTypeScope = instanceTypeScope;
+		if(instanceTypeScope != null){
+			putQueryParameter("InstanceTypeScope", instanceTypeScope);
+		}
+	}
+
 	public String getPeriodUnit() {
 		return this.periodUnit;
 	}
@@ -97,6 +112,17 @@ public class DescribeSavingsPlanEstimationRequest extends RpcAcsRequest<Describe
 		this.offeringType = offeringType;
 		if(offeringType != null){
 			putQueryParameter("OfferingType", offeringType);
+		}
+	}
+
+	public String getEstimationResource() {
+		return this.estimationResource;
+	}
+
+	public void setEstimationResource(String estimationResource) {
+		this.estimationResource = estimationResource;
+		if(estimationResource != null){
+			putQueryParameter("EstimationResource", estimationResource);
 		}
 	}
 

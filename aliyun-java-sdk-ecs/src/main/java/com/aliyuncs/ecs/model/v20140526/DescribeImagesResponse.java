@@ -427,6 +427,8 @@ public class DescribeImagesResponse extends AcsResponse {
 
 			private String format;
 
+			private String encrypted;
+
 			public String getType() {
 				return this.type;
 			}
@@ -497,6 +499,14 @@ public class DescribeImagesResponse extends AcsResponse {
 
 			public void setFormat(String format) {
 				this.format = format;
+			}
+
+			public String getEncrypted() {
+				return this.encrypted;
+			}
+
+			public void setEncrypted(String encrypted) {
+				this.encrypted = encrypted;
 			}
 		}
 
@@ -593,12 +603,22 @@ public class DescribeImagesResponse extends AcsResponse {
 
 			private String nvmeSupport;
 
+			private String imdsSupport;
+
 			public String getNvmeSupport() {
 				return this.nvmeSupport;
 			}
 
 			public void setNvmeSupport(String nvmeSupport) {
 				this.nvmeSupport = nvmeSupport;
+			}
+
+			public String getImdsSupport() {
+				return this.imdsSupport;
+			}
+
+			public void setImdsSupport(String imdsSupport) {
+				this.imdsSupport = imdsSupport;
 			}
 		}
 	}

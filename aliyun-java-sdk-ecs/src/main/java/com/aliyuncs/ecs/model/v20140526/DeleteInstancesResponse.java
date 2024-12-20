@@ -26,12 +26,22 @@ public class DeleteInstancesResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String taskGroupId;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getTaskGroupId() {
+		return this.taskGroupId;
+	}
+
+	public void setTaskGroupId(String taskGroupId) {
+		this.taskGroupId = taskGroupId;
 	}
 
 	@Override

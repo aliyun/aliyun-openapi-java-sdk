@@ -217,6 +217,8 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private PrivateDnsNameOptions privateDnsNameOptions;
 
+		private AdditionalInfo additionalInfo;
+
 		public String getCreationTime() {
 			return this.creationTime;
 		}
@@ -735,6 +737,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		public void setPrivateDnsNameOptions(PrivateDnsNameOptions privateDnsNameOptions) {
 			this.privateDnsNameOptions = privateDnsNameOptions;
+		}
+
+		public AdditionalInfo getAdditionalInfo() {
+			return this.additionalInfo;
+		}
+
+		public void setAdditionalInfo(AdditionalInfo additionalInfo) {
+			this.additionalInfo = additionalInfo;
 		}
 
 		public static class NetworkInterface {
@@ -1275,6 +1285,19 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 			public void setHostnameType(String hostnameType) {
 				this.hostnameType = hostnameType;
+			}
+		}
+
+		public static class AdditionalInfo {
+
+			private Boolean enableHighDensityMode;
+
+			public Boolean getEnableHighDensityMode() {
+				return this.enableHighDensityMode;
+			}
+
+			public void setEnableHighDensityMode(Boolean enableHighDensityMode) {
+				this.enableHighDensityMode = enableHighDensityMode;
 			}
 		}
 	}

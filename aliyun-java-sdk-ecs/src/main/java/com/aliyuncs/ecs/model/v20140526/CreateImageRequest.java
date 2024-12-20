@@ -40,6 +40,8 @@ public class CreateImageRequest extends RpcAcsRequest<CreateImageResponse> {
 
 	private String resourceGroupId;
 
+	private Features features;
+
 	private String bootMode;
 
 	private String imageName;
@@ -150,6 +152,18 @@ public class CreateImageRequest extends RpcAcsRequest<CreateImageResponse> {
 		if(resourceGroupId != null){
 			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
+	}
+
+	public Features getFeatures() {
+		return this.features;
+	}
+
+	public void setFeatures(Features features) {
+		this.features = features;	
+		if (features != null) {
+			
+				putQueryParameter("Features.ImdsSupport" , features.getImdsSupport());
+		}	
 	}
 
 	public String getBootMode() {
@@ -316,6 +330,19 @@ public class CreateImageRequest extends RpcAcsRequest<CreateImageResponse> {
 
 		public void setDevice(String device) {
 			this.device = device;
+		}
+	}
+
+	public static class Features {
+
+		private String imdsSupport;
+
+		public String getImdsSupport() {
+			return this.imdsSupport;
+		}
+
+		public void setImdsSupport(String imdsSupport) {
+			this.imdsSupport = imdsSupport;
 		}
 	}
 

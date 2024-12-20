@@ -99,6 +99,7 @@ public class ModifyImageAttributeRequest extends RpcAcsRequest<ModifyImageAttrib
 		if (features != null) {
 			
 				putQueryParameter("Features.NvmeSupport" , features.getNvmeSupport());
+				putQueryParameter("Features.ImdsSupport" , features.getImdsSupport());
 		}	
 	}
 
@@ -194,12 +195,22 @@ public class ModifyImageAttributeRequest extends RpcAcsRequest<ModifyImageAttrib
 
 		private String nvmeSupport;
 
+		private String imdsSupport;
+
 		public String getNvmeSupport() {
 			return this.nvmeSupport;
 		}
 
 		public void setNvmeSupport(String nvmeSupport) {
 			this.nvmeSupport = nvmeSupport;
+		}
+
+		public String getImdsSupport() {
+			return this.imdsSupport;
+		}
+
+		public void setImdsSupport(String imdsSupport) {
+			this.imdsSupport = imdsSupport;
 		}
 	}
 

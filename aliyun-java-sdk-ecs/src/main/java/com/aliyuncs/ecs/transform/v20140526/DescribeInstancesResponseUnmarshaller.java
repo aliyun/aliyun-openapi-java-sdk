@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse.Instance;
+import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse.Instance.AdditionalInfo;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse.Instance.CpuOptions;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse.Instance.DedicatedHostAttribute;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse.Instance.DedicatedInstanceAttribute;
@@ -190,6 +191,10 @@ public class DescribeInstancesResponseUnmarshaller {
 			privateDnsNameOptions.setEnableIpDnsPtrRecord(_ctx.booleanValue("DescribeInstancesResponse.Instances["+ i +"].PrivateDnsNameOptions.EnableIpDnsPtrRecord"));
 			privateDnsNameOptions.setHostnameType(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].PrivateDnsNameOptions.HostnameType"));
 			instance.setPrivateDnsNameOptions(privateDnsNameOptions);
+
+			AdditionalInfo additionalInfo = new AdditionalInfo();
+			additionalInfo.setEnableHighDensityMode(_ctx.booleanValue("DescribeInstancesResponse.Instances["+ i +"].AdditionalInfo.EnableHighDensityMode"));
+			instance.setAdditionalInfo(additionalInfo);
 
 			List<NetworkInterface> networkInterfaces = new ArrayList<NetworkInterface>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeInstancesResponse.Instances["+ i +"].NetworkInterfaces.Length"); j++) {
