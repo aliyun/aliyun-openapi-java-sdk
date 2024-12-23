@@ -493,6 +493,8 @@ public class ListListenersResponse extends AcsResponse {
 
 			private Boolean xForwardedForEnabled;
 
+			private String xForwardedForProcessingMode;
+
 			private Boolean xForwardedForProtoEnabled;
 
 			private Boolean xForwardedForSLBIdEnabled;
@@ -502,6 +504,8 @@ public class ListListenersResponse extends AcsResponse {
 			private Boolean xForwardedForClientSourceIpsEnabled;
 
 			private String xForwardedForClientSourceIpsTrusted;
+
+			private Boolean xForwardedForHostEnabled;
 
 			public String getXForwardedForClientCertClientVerifyAlias() {
 				return this.xForwardedForClientCertClientVerifyAlias;
@@ -583,6 +587,14 @@ public class ListListenersResponse extends AcsResponse {
 				this.xForwardedForEnabled = xForwardedForEnabled;
 			}
 
+			public String getXForwardedForProcessingMode() {
+				return this.xForwardedForProcessingMode;
+			}
+
+			public void setXForwardedForProcessingMode(String xForwardedForProcessingMode) {
+				this.xForwardedForProcessingMode = xForwardedForProcessingMode;
+			}
+
 			public Boolean getXForwardedForProtoEnabled() {
 				return this.xForwardedForProtoEnabled;
 			}
@@ -621,6 +633,14 @@ public class ListListenersResponse extends AcsResponse {
 
 			public void setXForwardedForClientSourceIpsTrusted(String xForwardedForClientSourceIpsTrusted) {
 				this.xForwardedForClientSourceIpsTrusted = xForwardedForClientSourceIpsTrusted;
+			}
+
+			public Boolean getXForwardedForHostEnabled() {
+				return this.xForwardedForHostEnabled;
+			}
+
+			public void setXForwardedForHostEnabled(Boolean xForwardedForHostEnabled) {
+				this.xForwardedForHostEnabled = xForwardedForHostEnabled;
 			}
 		}
 	}

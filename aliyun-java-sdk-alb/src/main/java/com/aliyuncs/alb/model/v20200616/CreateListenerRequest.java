@@ -221,6 +221,8 @@ public class CreateListenerRequest extends RpcAcsRequest<CreateListenerResponse>
 				putQueryParameter("XForwardedForConfig.XForwardedForClientCertSubjectDNAlias" , xForwardedForConfig.getXForwardedForClientCertSubjectDNAlias());
 				putQueryParameter("XForwardedForConfig.XForwardedForClientSourceIpsEnabled" , xForwardedForConfig.getXForwardedForClientSourceIpsEnabled());
 				putQueryParameter("XForwardedForConfig.XForwardedForClientCertIssuerDNEnabled" , xForwardedForConfig.getXForwardedForClientCertIssuerDNEnabled());
+				putQueryParameter("XForwardedForConfig.XForwardedForHostEnabled" , xForwardedForConfig.getXForwardedForHostEnabled());
+				putQueryParameter("XForwardedForConfig.XForwardedForProcessingMode" , xForwardedForConfig.getXForwardedForProcessingMode());
 				putQueryParameter("XForwardedForConfig.XForwardedForClientCertFingerprintEnabled" , xForwardedForConfig.getXForwardedForClientCertFingerprintEnabled());
 				putQueryParameter("XForwardedForConfig.XForwardedForClientCertIssuerDNAlias" , xForwardedForConfig.getXForwardedForClientCertIssuerDNAlias());
 				putQueryParameter("XForwardedForConfig.XForwardedForProtoEnabled" , xForwardedForConfig.getXForwardedForProtoEnabled());
@@ -435,6 +437,10 @@ public class CreateListenerRequest extends RpcAcsRequest<CreateListenerResponse>
 
 		private Boolean xForwardedForClientCertIssuerDNEnabled;
 
+		private Boolean xForwardedForHostEnabled;
+
+		private String xForwardedForProcessingMode;
+
 		private Boolean xForwardedForClientCertFingerprintEnabled;
 
 		private String xForwardedForClientCertIssuerDNAlias;
@@ -487,6 +493,22 @@ public class CreateListenerRequest extends RpcAcsRequest<CreateListenerResponse>
 
 		public void setXForwardedForClientCertIssuerDNEnabled(Boolean xForwardedForClientCertIssuerDNEnabled) {
 			this.xForwardedForClientCertIssuerDNEnabled = xForwardedForClientCertIssuerDNEnabled;
+		}
+
+		public Boolean getXForwardedForHostEnabled() {
+			return this.xForwardedForHostEnabled;
+		}
+
+		public void setXForwardedForHostEnabled(Boolean xForwardedForHostEnabled) {
+			this.xForwardedForHostEnabled = xForwardedForHostEnabled;
+		}
+
+		public String getXForwardedForProcessingMode() {
+			return this.xForwardedForProcessingMode;
+		}
+
+		public void setXForwardedForProcessingMode(String xForwardedForProcessingMode) {
+			this.xForwardedForProcessingMode = xForwardedForProcessingMode;
 		}
 
 		public Boolean getXForwardedForClientCertFingerprintEnabled() {

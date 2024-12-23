@@ -94,11 +94,13 @@ public class GetListenerAttributeResponseUnmarshaller {
 		xForwardedForConfig.setXForwardedForClientCertSubjectDNEnabled(_ctx.booleanValue("GetListenerAttributeResponse.XForwardedForConfig.XForwardedForClientCertSubjectDNEnabled"));
 		xForwardedForConfig.setXForwardedForClientSrcPortEnabled(_ctx.booleanValue("GetListenerAttributeResponse.XForwardedForConfig.XForwardedForClientSrcPortEnabled"));
 		xForwardedForConfig.setXForwardedForEnabled(_ctx.booleanValue("GetListenerAttributeResponse.XForwardedForConfig.XForwardedForEnabled"));
+		xForwardedForConfig.setXForwardedForProcessingMode(_ctx.stringValue("GetListenerAttributeResponse.XForwardedForConfig.XForwardedForProcessingMode"));
 		xForwardedForConfig.setXForwardedForProtoEnabled(_ctx.booleanValue("GetListenerAttributeResponse.XForwardedForConfig.XForwardedForProtoEnabled"));
 		xForwardedForConfig.setXForwardedForSLBIdEnabled(_ctx.booleanValue("GetListenerAttributeResponse.XForwardedForConfig.XForwardedForSLBIdEnabled"));
 		xForwardedForConfig.setXForwardedForSLBPortEnabled(_ctx.booleanValue("GetListenerAttributeResponse.XForwardedForConfig.XForwardedForSLBPortEnabled"));
 		xForwardedForConfig.setXForwardedForClientSourceIpsEnabled(_ctx.booleanValue("GetListenerAttributeResponse.XForwardedForConfig.XForwardedForClientSourceIpsEnabled"));
 		xForwardedForConfig.setXForwardedForClientSourceIpsTrusted(_ctx.stringValue("GetListenerAttributeResponse.XForwardedForConfig.XForwardedForClientSourceIpsTrusted"));
+		xForwardedForConfig.setXForwardedForHostEnabled(_ctx.booleanValue("GetListenerAttributeResponse.XForwardedForConfig.XForwardedForHostEnabled"));
 		getListenerAttributeResponse.setXForwardedForConfig(xForwardedForConfig);
 
 		List<Certificate> certificates = new ArrayList<Certificate>();

@@ -83,11 +83,13 @@ public class ListListenersResponseUnmarshaller {
 			xForwardedForConfig.setXForwardedForClientCertSubjectDNEnabled(_ctx.booleanValue("ListListenersResponse.Listeners["+ i +"].XForwardedForConfig.XForwardedForClientCertSubjectDNEnabled"));
 			xForwardedForConfig.setXForwardedForClientSrcPortEnabled(_ctx.booleanValue("ListListenersResponse.Listeners["+ i +"].XForwardedForConfig.XForwardedForClientSrcPortEnabled"));
 			xForwardedForConfig.setXForwardedForEnabled(_ctx.booleanValue("ListListenersResponse.Listeners["+ i +"].XForwardedForConfig.XForwardedForEnabled"));
+			xForwardedForConfig.setXForwardedForProcessingMode(_ctx.stringValue("ListListenersResponse.Listeners["+ i +"].XForwardedForConfig.XForwardedForProcessingMode"));
 			xForwardedForConfig.setXForwardedForProtoEnabled(_ctx.booleanValue("ListListenersResponse.Listeners["+ i +"].XForwardedForConfig.XForwardedForProtoEnabled"));
 			xForwardedForConfig.setXForwardedForSLBIdEnabled(_ctx.booleanValue("ListListenersResponse.Listeners["+ i +"].XForwardedForConfig.XForwardedForSLBIdEnabled"));
 			xForwardedForConfig.setXForwardedForSLBPortEnabled(_ctx.booleanValue("ListListenersResponse.Listeners["+ i +"].XForwardedForConfig.XForwardedForSLBPortEnabled"));
 			xForwardedForConfig.setXForwardedForClientSourceIpsEnabled(_ctx.booleanValue("ListListenersResponse.Listeners["+ i +"].XForwardedForConfig.XForwardedForClientSourceIpsEnabled"));
 			xForwardedForConfig.setXForwardedForClientSourceIpsTrusted(_ctx.stringValue("ListListenersResponse.Listeners["+ i +"].XForwardedForConfig.XForwardedForClientSourceIpsTrusted"));
+			xForwardedForConfig.setXForwardedForHostEnabled(_ctx.booleanValue("ListListenersResponse.Listeners["+ i +"].XForwardedForConfig.XForwardedForHostEnabled"));
 			listener.setXForwardedForConfig(xForwardedForConfig);
 
 			List<DefaultAction> defaultActions = new ArrayList<DefaultAction>();

@@ -1,3 +1,6 @@
+2024-12-23 Version: 1.0.22
+- Generated 2020-06-16 for `Alb`.
+
 2024-12-11 Version: 1.0.21
 - Support fromData for UpdateRulesAttribute and Createrules
 
