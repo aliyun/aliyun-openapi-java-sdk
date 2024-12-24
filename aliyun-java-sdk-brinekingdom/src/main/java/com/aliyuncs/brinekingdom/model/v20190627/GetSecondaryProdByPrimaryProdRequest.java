@@ -15,38 +15,35 @@
 package com.aliyuncs.brinekingdom.model.v20190627;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
 import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
-public class QueryQuotaPlanScheduleRequest extends RpcAcsRequest<QueryQuotaPlanScheduleResponse> {
+public class GetSecondaryProdByPrimaryProdRequest extends RpcAcsRequest<GetSecondaryProdByPrimaryProdResponse> {
 	   
 
-	private List<Long> quotaPlanIdss;
-	public QueryQuotaPlanScheduleRequest() {
-		super("brinekingdom", "2019-06-27", "QueryQuotaPlanSchedule");
+	private String productLine;
+	public GetSecondaryProdByPrimaryProdRequest() {
+		super("brinekingdom", "2019-06-27", "GetSecondaryProdByPrimaryProd");
 		setMethod(MethodType.POST);
 	}
 
-	public List<Long> getQuotaPlanIdss() {
-		return this.quotaPlanIdss;
+	public String getProductLine() {
+		return this.productLine;
 	}
 
-	public void setQuotaPlanIdss(List<Long> quotaPlanIdss) {
-		this.quotaPlanIdss = quotaPlanIdss;	
-		if (quotaPlanIdss != null) {
-			for (int i = 0; i < quotaPlanIdss.size(); i++) {
-				putQueryParameter("QuotaPlanIds." + (i + 1) , quotaPlanIdss.get(i));
-			}
-		}	
+	public void setProductLine(String productLine) {
+		this.productLine = productLine;
+		if(productLine != null){
+			putQueryParameter("ProductLine", productLine);
+		}
 	}
 
 	@Override
-	public Class<QueryQuotaPlanScheduleResponse> getResponseClass() {
-		return QueryQuotaPlanScheduleResponse.class;
+	public Class<GetSecondaryProdByPrimaryProdResponse> getResponseClass() {
+		return GetSecondaryProdByPrimaryProdResponse.class;
 	}
 
 }

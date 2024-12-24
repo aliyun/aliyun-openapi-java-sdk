@@ -15,38 +15,22 @@
 package com.aliyuncs.brinekingdom.model.v20190627;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
 import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
-public class QueryQuotaPlanScheduleRequest extends RpcAcsRequest<QueryQuotaPlanScheduleResponse> {
+public class GetAllPrimaryProdRequest extends RpcAcsRequest<GetAllPrimaryProdResponse> {
 	   
-
-	private List<Long> quotaPlanIdss;
-	public QueryQuotaPlanScheduleRequest() {
-		super("brinekingdom", "2019-06-27", "QueryQuotaPlanSchedule");
+	public GetAllPrimaryProdRequest() {
+		super("brinekingdom", "2019-06-27", "GetAllPrimaryProd");
 		setMethod(MethodType.POST);
 	}
 
-	public List<Long> getQuotaPlanIdss() {
-		return this.quotaPlanIdss;
-	}
-
-	public void setQuotaPlanIdss(List<Long> quotaPlanIdss) {
-		this.quotaPlanIdss = quotaPlanIdss;	
-		if (quotaPlanIdss != null) {
-			for (int i = 0; i < quotaPlanIdss.size(); i++) {
-				putQueryParameter("QuotaPlanIds." + (i + 1) , quotaPlanIdss.get(i));
-			}
-		}	
-	}
-
 	@Override
-	public Class<QueryQuotaPlanScheduleResponse> getResponseClass() {
-		return QueryQuotaPlanScheduleResponse.class;
+	public Class<GetAllPrimaryProdResponse> getResponseClass() {
+		return GetAllPrimaryProdResponse.class;
 	}
 
 }

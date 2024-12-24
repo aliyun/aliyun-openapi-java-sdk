@@ -1,3 +1,6 @@
+2024-12-24 Version: 1.0.8
+- Generated 2019-06-27 for `brinekingdom`.
+
 2021-08-13 Version: 1.0.7
 - Add Exchange interface.
 

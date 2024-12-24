@@ -15,38 +15,35 @@
 package com.aliyuncs.brinekingdom.model.v20190627;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
 import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
-public class QueryQuotaPlanScheduleRequest extends RpcAcsRequest<QueryQuotaPlanScheduleResponse> {
+public class QueryAllOsRequest extends RpcAcsRequest<QueryAllOsResponse> {
 	   
 
-	private List<Long> quotaPlanIdss;
-	public QueryQuotaPlanScheduleRequest() {
-		super("brinekingdom", "2019-06-27", "QueryQuotaPlanSchedule");
+	private String requestId;
+	public QueryAllOsRequest() {
+		super("brinekingdom", "2019-06-27", "QueryAllOs");
 		setMethod(MethodType.POST);
 	}
 
-	public List<Long> getQuotaPlanIdss() {
-		return this.quotaPlanIdss;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setQuotaPlanIdss(List<Long> quotaPlanIdss) {
-		this.quotaPlanIdss = quotaPlanIdss;	
-		if (quotaPlanIdss != null) {
-			for (int i = 0; i < quotaPlanIdss.size(); i++) {
-				putQueryParameter("QuotaPlanIds." + (i + 1) , quotaPlanIdss.get(i));
-			}
-		}	
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+		if(requestId != null){
+			putQueryParameter("RequestId", requestId);
+		}
 	}
 
 	@Override
-	public Class<QueryQuotaPlanScheduleResponse> getResponseClass() {
-		return QueryQuotaPlanScheduleResponse.class;
+	public Class<QueryAllOsResponse> getResponseClass() {
+		return QueryAllOsResponse.class;
 	}
 
 }

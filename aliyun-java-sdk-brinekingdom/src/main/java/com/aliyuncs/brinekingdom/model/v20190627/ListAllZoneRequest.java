@@ -15,38 +15,37 @@
 package com.aliyuncs.brinekingdom.model.v20190627;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
-public class QueryQuotaPlanScheduleRequest extends RpcAcsRequest<QueryQuotaPlanScheduleResponse> {
+public class ListAllZoneRequest extends RpcAcsRequest<ListAllZoneResponse> {
 	   
 
-	private List<Long> quotaPlanIdss;
-	public QueryQuotaPlanScheduleRequest() {
-		super("brinekingdom", "2019-06-27", "QueryQuotaPlanSchedule");
+	private String keyword;
+	public ListAllZoneRequest() {
+		super("brinekingdom", "2019-06-27", "ListAllZone");
+		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
 
-	public List<Long> getQuotaPlanIdss() {
-		return this.quotaPlanIdss;
+	public String getKeyword() {
+		return this.keyword;
 	}
 
-	public void setQuotaPlanIdss(List<Long> quotaPlanIdss) {
-		this.quotaPlanIdss = quotaPlanIdss;	
-		if (quotaPlanIdss != null) {
-			for (int i = 0; i < quotaPlanIdss.size(); i++) {
-				putQueryParameter("QuotaPlanIds." + (i + 1) , quotaPlanIdss.get(i));
-			}
-		}	
+	public void setKeyword(String keyword) {
+		this.keyword = keyword;
+		if(keyword != null){
+			putQueryParameter("Keyword", keyword);
+		}
 	}
 
 	@Override
-	public Class<QueryQuotaPlanScheduleResponse> getResponseClass() {
-		return QueryQuotaPlanScheduleResponse.class;
+	public Class<ListAllZoneResponse> getResponseClass() {
+		return ListAllZoneResponse.class;
 	}
 
 }

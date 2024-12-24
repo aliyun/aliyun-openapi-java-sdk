@@ -16,37 +16,38 @@ package com.aliyuncs.brinekingdom.model.v20190627;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
-public class QueryQuotaPlanScheduleRequest extends RpcAcsRequest<QueryQuotaPlanScheduleResponse> {
+public class GetSolutionListRequest extends RpcAcsRequest<GetSolutionListResponse> {
 	   
 
-	private List<Long> quotaPlanIdss;
-	public QueryQuotaPlanScheduleRequest() {
-		super("brinekingdom", "2019-06-27", "QueryQuotaPlanSchedule");
+	@SerializedName("consistentIdList")
+	private List<Long> consistentIdList;
+	public GetSolutionListRequest() {
+		super("brinekingdom", "2019-06-27", "GetSolutionList");
 		setMethod(MethodType.POST);
 	}
 
-	public List<Long> getQuotaPlanIdss() {
-		return this.quotaPlanIdss;
+	public List<Long> getConsistentIdList() {
+		return this.consistentIdList;
 	}
 
-	public void setQuotaPlanIdss(List<Long> quotaPlanIdss) {
-		this.quotaPlanIdss = quotaPlanIdss;	
-		if (quotaPlanIdss != null) {
-			for (int i = 0; i < quotaPlanIdss.size(); i++) {
-				putQueryParameter("QuotaPlanIds." + (i + 1) , quotaPlanIdss.get(i));
-			}
+	public void setConsistentIdList(List<Long> consistentIdList) {
+		this.consistentIdList = consistentIdList;	
+		if (consistentIdList != null) {
+			putQueryParameter("ConsistentIdList" , new Gson().toJson(consistentIdList));
 		}	
 	}
 
 	@Override
-	public Class<QueryQuotaPlanScheduleResponse> getResponseClass() {
-		return QueryQuotaPlanScheduleResponse.class;
+	public Class<GetSolutionListResponse> getResponseClass() {
+		return GetSolutionListResponse.class;
 	}
 
 }

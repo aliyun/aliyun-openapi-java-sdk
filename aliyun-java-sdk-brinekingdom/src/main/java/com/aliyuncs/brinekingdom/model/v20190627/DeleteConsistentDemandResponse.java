@@ -15,30 +15,22 @@
 package com.aliyuncs.brinekingdom.model.v20190627;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.brinekingdom.transform.v20190627.SubmitPlanningResultResponseUnmarshaller;
+import com.aliyuncs.brinekingdom.transform.v20190627.DeleteConsistentDemandResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class SubmitPlanningResultResponse extends AcsResponse {
-
-	private String code;
+public class DeleteConsistentDemandResponse extends AcsResponse {
 
 	private String message;
 
-	private String requestId;
-
 	private Boolean success;
 
-	public String getCode() {
-		return this.code;
-	}
+	private Long result;
 
-	public void setCode(String code) {
-		this.code = code;
-	}
+	private String requestId;
 
 	public String getMessage() {
 		return this.message;
@@ -46,14 +38,6 @@ public class SubmitPlanningResultResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
 	}
 
 	public Boolean getSuccess() {
@@ -64,8 +48,29 @@ public class SubmitPlanningResultResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public Long getResult() {
+		return this.result;
+	}
+
+	public void setResult(Long result) {
+		this.result = result;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	@Override
-	public SubmitPlanningResultResponse getInstance(UnmarshallerContext context) {
-		return	SubmitPlanningResultResponseUnmarshaller.unmarshall(this, context);
+	public DeleteConsistentDemandResponse getInstance(UnmarshallerContext context) {
+		return	DeleteConsistentDemandResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

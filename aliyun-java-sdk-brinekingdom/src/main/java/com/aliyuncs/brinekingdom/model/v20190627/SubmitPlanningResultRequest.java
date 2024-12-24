@@ -18,7 +18,6 @@ import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
-import com.aliyuncs.brinekingdom.Endpoint;
 
 /**
  * @author auto create
@@ -42,10 +41,6 @@ public class SubmitPlanningResultRequest extends RpcAcsRequest<SubmitPlanningRes
 		super("brinekingdom", "2019-06-27", "SubmitPlanningResult");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
 	}
 
 	public Integer getRequireCnt() {
@@ -129,12 +124,12 @@ public class SubmitPlanningResultRequest extends RpcAcsRequest<SubmitPlanningRes
 						putQueryParameter("ResourceMethod." + (depth1 + 1) + ".SupplyPlan." + (depth2 + 1) + ".Product3" , resourceMethods.get(depth1).getSupplyPlans().get(depth2).getProduct3());
 					}
 				}
-				putQueryParameter("ResourceMethod." + (depth1 + 1) + ".RoomCode" , resourceMethods.get(depth1).getRoomCode());
 				putQueryParameter("ResourceMethod." + (depth1 + 1) + ".Comment" , resourceMethods.get(depth1).getComment());
+				putQueryParameter("ResourceMethod." + (depth1 + 1) + ".RoomCode" , resourceMethods.get(depth1).getRoomCode());
 				putQueryParameter("ResourceMethod." + (depth1 + 1) + ".Region" , resourceMethods.get(depth1).getRegion());
 				putQueryParameter("ResourceMethod." + (depth1 + 1) + ".ConvertHostType" , resourceMethods.get(depth1).getConvertHostType());
-				putQueryParameter("ResourceMethod." + (depth1 + 1) + ".Azone" , resourceMethods.get(depth1).getAzone());
 				putQueryParameter("ResourceMethod." + (depth1 + 1) + ".GapCnt" , resourceMethods.get(depth1).getGapCnt());
+				putQueryParameter("ResourceMethod." + (depth1 + 1) + ".Azone" , resourceMethods.get(depth1).getAzone());
 			}
 		}	
 	}
@@ -151,17 +146,17 @@ public class SubmitPlanningResultRequest extends RpcAcsRequest<SubmitPlanningRes
 
 		private List<SupplyPlan> supplyPlans;
 
-		private String roomCode;
-
 		private String comment;
+
+		private String roomCode;
 
 		private String region;
 
 		private String convertHostType;
 
-		private String azone;
-
 		private Integer gapCnt;
+
+		private String azone;
 
 		public String getFinalAvzone() {
 			return this.finalAvzone;
@@ -203,20 +198,20 @@ public class SubmitPlanningResultRequest extends RpcAcsRequest<SubmitPlanningRes
 			this.supplyPlans = supplyPlans;
 		}
 
-		public String getRoomCode() {
-			return this.roomCode;
-		}
-
-		public void setRoomCode(String roomCode) {
-			this.roomCode = roomCode;
-		}
-
 		public String getComment() {
 			return this.comment;
 		}
 
 		public void setComment(String comment) {
 			this.comment = comment;
+		}
+
+		public String getRoomCode() {
+			return this.roomCode;
+		}
+
+		public void setRoomCode(String roomCode) {
+			this.roomCode = roomCode;
 		}
 
 		public String getRegion() {
@@ -235,20 +230,20 @@ public class SubmitPlanningResultRequest extends RpcAcsRequest<SubmitPlanningRes
 			this.convertHostType = convertHostType;
 		}
 
-		public String getAzone() {
-			return this.azone;
-		}
-
-		public void setAzone(String azone) {
-			this.azone = azone;
-		}
-
 		public Integer getGapCnt() {
 			return this.gapCnt;
 		}
 
 		public void setGapCnt(Integer gapCnt) {
 			this.gapCnt = gapCnt;
+		}
+
+		public String getAzone() {
+			return this.azone;
+		}
+
+		public void setAzone(String azone) {
+			this.azone = azone;
 		}
 
 		public static class SupplyPlan {

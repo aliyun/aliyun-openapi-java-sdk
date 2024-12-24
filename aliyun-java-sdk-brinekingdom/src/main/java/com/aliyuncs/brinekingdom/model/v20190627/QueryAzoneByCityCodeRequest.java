@@ -15,38 +15,35 @@
 package com.aliyuncs.brinekingdom.model.v20190627;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
 import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
-public class QueryQuotaPlanScheduleRequest extends RpcAcsRequest<QueryQuotaPlanScheduleResponse> {
+public class QueryAzoneByCityCodeRequest extends RpcAcsRequest<QueryAzoneByCityCodeResponse> {
 	   
 
-	private List<Long> quotaPlanIdss;
-	public QueryQuotaPlanScheduleRequest() {
-		super("brinekingdom", "2019-06-27", "QueryQuotaPlanSchedule");
+	private String cityCode;
+	public QueryAzoneByCityCodeRequest() {
+		super("brinekingdom", "2019-06-27", "QueryAzoneByCityCode");
 		setMethod(MethodType.POST);
 	}
 
-	public List<Long> getQuotaPlanIdss() {
-		return this.quotaPlanIdss;
+	public String getCityCode() {
+		return this.cityCode;
 	}
 
-	public void setQuotaPlanIdss(List<Long> quotaPlanIdss) {
-		this.quotaPlanIdss = quotaPlanIdss;	
-		if (quotaPlanIdss != null) {
-			for (int i = 0; i < quotaPlanIdss.size(); i++) {
-				putQueryParameter("QuotaPlanIds." + (i + 1) , quotaPlanIdss.get(i));
-			}
-		}	
+	public void setCityCode(String cityCode) {
+		this.cityCode = cityCode;
+		if(cityCode != null){
+			putQueryParameter("CityCode", cityCode);
+		}
 	}
 
 	@Override
-	public Class<QueryQuotaPlanScheduleResponse> getResponseClass() {
-		return QueryQuotaPlanScheduleResponse.class;
+	public Class<QueryAzoneByCityCodeResponse> getResponseClass() {
+		return QueryAzoneByCityCodeResponse.class;
 	}
 
 }

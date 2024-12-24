@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryQuotaPlanScheduleResponse extends AcsResponse {
 
-	private Boolean success;
-
-	private String errorMessage;
-
 	private String resultCode;
 
 	private String requestId;
 
+	private String errorMessage;
+
+	private Boolean success;
+
 	private List<ResultItem> result;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getResultCode() {
 		return this.resultCode;
@@ -67,6 +51,22 @@ public class QueryQuotaPlanScheduleResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public List<ResultItem> getResult() {
 		return this.result;
 	}
@@ -77,40 +77,32 @@ public class QueryQuotaPlanScheduleResponse extends AcsResponse {
 
 	public static class ResultItem {
 
-		private Long quotaPlanId;
-
-		private String productCode;
+		private String status;
 
 		private String creatorNick;
 
-		private String creatorWorkNo;
-
-		private String configModel;
-
-		private Integer quantity;
+		private Long quotaPlanId;
 
 		private Long deliveryDate;
 
+		private String configModel;
+
 		private String tenantName;
 
-		private String status;
+		private String creatorWorkNo;
+
+		private Integer quantity;
+
+		private String productCode;
 
 		private List<LadingScheduleListItem> ladingScheduleList;
 
-		public Long getQuotaPlanId() {
-			return this.quotaPlanId;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setQuotaPlanId(Long quotaPlanId) {
-			this.quotaPlanId = quotaPlanId;
-		}
-
-		public String getProductCode() {
-			return this.productCode;
-		}
-
-		public void setProductCode(String productCode) {
-			this.productCode = productCode;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getCreatorNick() {
@@ -121,28 +113,12 @@ public class QueryQuotaPlanScheduleResponse extends AcsResponse {
 			this.creatorNick = creatorNick;
 		}
 
-		public String getCreatorWorkNo() {
-			return this.creatorWorkNo;
+		public Long getQuotaPlanId() {
+			return this.quotaPlanId;
 		}
 
-		public void setCreatorWorkNo(String creatorWorkNo) {
-			this.creatorWorkNo = creatorWorkNo;
-		}
-
-		public String getConfigModel() {
-			return this.configModel;
-		}
-
-		public void setConfigModel(String configModel) {
-			this.configModel = configModel;
-		}
-
-		public Integer getQuantity() {
-			return this.quantity;
-		}
-
-		public void setQuantity(Integer quantity) {
-			this.quantity = quantity;
+		public void setQuotaPlanId(Long quotaPlanId) {
+			this.quotaPlanId = quotaPlanId;
 		}
 
 		public Long getDeliveryDate() {
@@ -153,6 +129,14 @@ public class QueryQuotaPlanScheduleResponse extends AcsResponse {
 			this.deliveryDate = deliveryDate;
 		}
 
+		public String getConfigModel() {
+			return this.configModel;
+		}
+
+		public void setConfigModel(String configModel) {
+			this.configModel = configModel;
+		}
+
 		public String getTenantName() {
 			return this.tenantName;
 		}
@@ -161,12 +145,28 @@ public class QueryQuotaPlanScheduleResponse extends AcsResponse {
 			this.tenantName = tenantName;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getCreatorWorkNo() {
+			return this.creatorWorkNo;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setCreatorWorkNo(String creatorWorkNo) {
+			this.creatorWorkNo = creatorWorkNo;
+		}
+
+		public Integer getQuantity() {
+			return this.quantity;
+		}
+
+		public void setQuantity(Integer quantity) {
+			this.quantity = quantity;
+		}
+
+		public String getProductCode() {
+			return this.productCode;
+		}
+
+		public void setProductCode(String productCode) {
+			this.productCode = productCode;
 		}
 
 		public List<LadingScheduleListItem> getLadingScheduleList() {
@@ -179,22 +179,22 @@ public class QueryQuotaPlanScheduleResponse extends AcsResponse {
 
 		public static class LadingScheduleListItem {
 
-			private String ladingId;
+			private String status;
 
 			private Integer quantity;
 
 			private Integer deliveryQuantity;
 
-			private String status;
+			private String ladingId;
 
 			private List<ServerScheduleListItem> serverScheduleList;
 
-			public String getLadingId() {
-				return this.ladingId;
+			public String getStatus() {
+				return this.status;
 			}
 
-			public void setLadingId(String ladingId) {
-				this.ladingId = ladingId;
+			public void setStatus(String status) {
+				this.status = status;
 			}
 
 			public Integer getQuantity() {
@@ -213,12 +213,12 @@ public class QueryQuotaPlanScheduleResponse extends AcsResponse {
 				this.deliveryQuantity = deliveryQuantity;
 			}
 
-			public String getStatus() {
-				return this.status;
+			public String getLadingId() {
+				return this.ladingId;
 			}
 
-			public void setStatus(String status) {
-				this.status = status;
+			public void setLadingId(String ladingId) {
+				this.ladingId = ladingId;
 			}
 
 			public List<ServerScheduleListItem> getServerScheduleList() {
@@ -231,13 +231,21 @@ public class QueryQuotaPlanScheduleResponse extends AcsResponse {
 
 			public static class ServerScheduleListItem {
 
+				private String type;
+
 				private String serialNumber;
 
 				private String status;
 
 				private Boolean delivery;
 
-				private String type;
+				public String getType() {
+					return this.type;
+				}
+
+				public void setType(String type) {
+					this.type = type;
+				}
 
 				public String getSerialNumber() {
 					return this.serialNumber;
@@ -261,14 +269,6 @@ public class QueryQuotaPlanScheduleResponse extends AcsResponse {
 
 				public void setDelivery(Boolean delivery) {
 					this.delivery = delivery;
-				}
-
-				public String getType() {
-					return this.type;
-				}
-
-				public void setType(String type) {
-					this.type = type;
 				}
 			}
 		}
