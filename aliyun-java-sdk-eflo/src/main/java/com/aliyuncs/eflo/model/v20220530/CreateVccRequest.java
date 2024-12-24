@@ -33,6 +33,8 @@ public class CreateVccRequest extends RpcAcsRequest<CreateVccResponse> {
 
 	private String cenOwnerId;
 
+	private Long bgpAsn;
+
 	private Boolean accessCouldService;
 
 	private String resourceGroupId;
@@ -100,6 +102,17 @@ public class CreateVccRequest extends RpcAcsRequest<CreateVccResponse> {
 		this.cenOwnerId = cenOwnerId;
 		if(cenOwnerId != null){
 			putBodyParameter("CenOwnerId", cenOwnerId);
+		}
+	}
+
+	public Long getBgpAsn() {
+		return this.bgpAsn;
+	}
+
+	public void setBgpAsn(Long bgpAsn) {
+		this.bgpAsn = bgpAsn;
+		if(bgpAsn != null){
+			putBodyParameter("BgpAsn", bgpAsn.toString());
 		}
 	}
 

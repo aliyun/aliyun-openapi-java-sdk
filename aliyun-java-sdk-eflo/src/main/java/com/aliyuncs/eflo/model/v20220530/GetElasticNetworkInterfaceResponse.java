@@ -101,7 +101,11 @@ public class GetElasticNetworkInterfaceResponse extends AcsResponse {
 
 		private String securityGroupId;
 
+		private Boolean enableJumboFrame;
+
 		private List<PrivateIpAddress> privateIpAddresses;
+
+		private List<Ipv6Addresse> ipv6Addresses;
 
 		public String getRegionId() {
 			return this.regionId;
@@ -239,12 +243,28 @@ public class GetElasticNetworkInterfaceResponse extends AcsResponse {
 			this.securityGroupId = securityGroupId;
 		}
 
+		public Boolean getEnableJumboFrame() {
+			return this.enableJumboFrame;
+		}
+
+		public void setEnableJumboFrame(Boolean enableJumboFrame) {
+			this.enableJumboFrame = enableJumboFrame;
+		}
+
 		public List<PrivateIpAddress> getPrivateIpAddresses() {
 			return this.privateIpAddresses;
 		}
 
 		public void setPrivateIpAddresses(List<PrivateIpAddress> privateIpAddresses) {
 			this.privateIpAddresses = privateIpAddresses;
+		}
+
+		public List<Ipv6Addresse> getIpv6Addresses() {
+			return this.ipv6Addresses;
+		}
+
+		public void setIpv6Addresses(List<Ipv6Addresse> ipv6Addresses) {
+			this.ipv6Addresses = ipv6Addresses;
 		}
 
 		public static class PrivateIpAddress {
@@ -337,6 +357,99 @@ public class GetElasticNetworkInterfaceResponse extends AcsResponse {
 
 			public void setMessage(String message) {
 				this.message = message;
+			}
+		}
+
+		public static class Ipv6Addresse {
+
+			private String elasticNetworkInterfaceId;
+
+			private String ipName;
+
+			private String ipv6Address;
+
+			private String status;
+
+			private String description;
+
+			private String message;
+
+			private String regionId;
+
+			private String gmtCreate;
+
+			private String gmtModified;
+
+			public String getElasticNetworkInterfaceId() {
+				return this.elasticNetworkInterfaceId;
+			}
+
+			public void setElasticNetworkInterfaceId(String elasticNetworkInterfaceId) {
+				this.elasticNetworkInterfaceId = elasticNetworkInterfaceId;
+			}
+
+			public String getIpName() {
+				return this.ipName;
+			}
+
+			public void setIpName(String ipName) {
+				this.ipName = ipName;
+			}
+
+			public String getIpv6Address() {
+				return this.ipv6Address;
+			}
+
+			public void setIpv6Address(String ipv6Address) {
+				this.ipv6Address = ipv6Address;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
+			public String getDescription() {
+				return this.description;
+			}
+
+			public void setDescription(String description) {
+				this.description = description;
+			}
+
+			public String getMessage() {
+				return this.message;
+			}
+
+			public void setMessage(String message) {
+				this.message = message;
+			}
+
+			public String getRegionId() {
+				return this.regionId;
+			}
+
+			public void setRegionId(String regionId) {
+				this.regionId = regionId;
+			}
+
+			public String getGmtCreate() {
+				return this.gmtCreate;
+			}
+
+			public void setGmtCreate(String gmtCreate) {
+				this.gmtCreate = gmtCreate;
+			}
+
+			public String getGmtModified() {
+				return this.gmtModified;
+			}
+
+			public void setGmtModified(String gmtModified) {
+				this.gmtModified = gmtModified;
 			}
 		}
 	}

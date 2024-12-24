@@ -127,6 +127,8 @@ public class GetVccResponse extends AcsResponse {
 
 		private String cenOwnerId;
 
+		private String bgpAsn;
+
 		private List<ErInfo> erInfos;
 
 		private List<AliyunRouterInfoItem> aliyunRouterInfo;
@@ -377,6 +379,14 @@ public class GetVccResponse extends AcsResponse {
 
 		public void setCenOwnerId(String cenOwnerId) {
 			this.cenOwnerId = cenOwnerId;
+		}
+
+		public String getBgpAsn() {
+			return this.bgpAsn;
+		}
+
+		public void setBgpAsn(String bgpAsn) {
+			this.bgpAsn = bgpAsn;
 		}
 
 		public List<ErInfo> getErInfos() {

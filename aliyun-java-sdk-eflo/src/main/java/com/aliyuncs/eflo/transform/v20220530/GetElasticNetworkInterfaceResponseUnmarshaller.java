@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.eflo.model.v20220530.GetElasticNetworkInterfaceResponse;
 import com.aliyuncs.eflo.model.v20220530.GetElasticNetworkInterfaceResponse.Content;
+import com.aliyuncs.eflo.model.v20220530.GetElasticNetworkInterfaceResponse.Content.Ipv6Addresse;
 import com.aliyuncs.eflo.model.v20220530.GetElasticNetworkInterfaceResponse.Content.PrivateIpAddress;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -49,6 +50,7 @@ public class GetElasticNetworkInterfaceResponseUnmarshaller {
 		content.setGmtModified(_ctx.stringValue("GetElasticNetworkInterfaceResponse.Content.GmtModified"));
 		content.setDescription(_ctx.stringValue("GetElasticNetworkInterfaceResponse.Content.Description"));
 		content.setSecurityGroupId(_ctx.stringValue("GetElasticNetworkInterfaceResponse.Content.SecurityGroupId"));
+		content.setEnableJumboFrame(_ctx.booleanValue("GetElasticNetworkInterfaceResponse.Content.EnableJumboFrame"));
 
 		List<PrivateIpAddress> privateIpAddresses = new ArrayList<PrivateIpAddress>();
 		for (int i = 0; i < _ctx.lengthValue("GetElasticNetworkInterfaceResponse.Content.PrivateIpAddresses.Length"); i++) {
@@ -66,6 +68,23 @@ public class GetElasticNetworkInterfaceResponseUnmarshaller {
 			privateIpAddresses.add(privateIpAddress);
 		}
 		content.setPrivateIpAddresses(privateIpAddresses);
+
+		List<Ipv6Addresse> ipv6Addresses = new ArrayList<Ipv6Addresse>();
+		for (int i = 0; i < _ctx.lengthValue("GetElasticNetworkInterfaceResponse.Content.Ipv6Addresses.Length"); i++) {
+			Ipv6Addresse ipv6Addresse = new Ipv6Addresse();
+			ipv6Addresse.setElasticNetworkInterfaceId(_ctx.stringValue("GetElasticNetworkInterfaceResponse.Content.Ipv6Addresses["+ i +"].ElasticNetworkInterfaceId"));
+			ipv6Addresse.setIpName(_ctx.stringValue("GetElasticNetworkInterfaceResponse.Content.Ipv6Addresses["+ i +"].IpName"));
+			ipv6Addresse.setIpv6Address(_ctx.stringValue("GetElasticNetworkInterfaceResponse.Content.Ipv6Addresses["+ i +"].Ipv6Address"));
+			ipv6Addresse.setStatus(_ctx.stringValue("GetElasticNetworkInterfaceResponse.Content.Ipv6Addresses["+ i +"].Status"));
+			ipv6Addresse.setDescription(_ctx.stringValue("GetElasticNetworkInterfaceResponse.Content.Ipv6Addresses["+ i +"].Description"));
+			ipv6Addresse.setMessage(_ctx.stringValue("GetElasticNetworkInterfaceResponse.Content.Ipv6Addresses["+ i +"].Message"));
+			ipv6Addresse.setRegionId(_ctx.stringValue("GetElasticNetworkInterfaceResponse.Content.Ipv6Addresses["+ i +"].RegionId"));
+			ipv6Addresse.setGmtCreate(_ctx.stringValue("GetElasticNetworkInterfaceResponse.Content.Ipv6Addresses["+ i +"].GmtCreate"));
+			ipv6Addresse.setGmtModified(_ctx.stringValue("GetElasticNetworkInterfaceResponse.Content.Ipv6Addresses["+ i +"].GmtModified"));
+
+			ipv6Addresses.add(ipv6Addresse);
+		}
+		content.setIpv6Addresses(ipv6Addresses);
 		getElasticNetworkInterfaceResponse.setContent(content);
 	 
 	 	return getElasticNetworkInterfaceResponse;

@@ -32,6 +32,8 @@ public class CreateElasticNetworkInterfaceRequest extends RpcAcsRequest<CreateEl
 
 	private String nodeId;
 
+	private Boolean enableJumboFrame;
+
 	private String vSwitchId;
 
 	private String vpcId;
@@ -83,6 +85,17 @@ public class CreateElasticNetworkInterfaceRequest extends RpcAcsRequest<CreateEl
 		this.nodeId = nodeId;
 		if(nodeId != null){
 			putBodyParameter("NodeId", nodeId);
+		}
+	}
+
+	public Boolean getEnableJumboFrame() {
+		return this.enableJumboFrame;
+	}
+
+	public void setEnableJumboFrame(Boolean enableJumboFrame) {
+		this.enableJumboFrame = enableJumboFrame;
+		if(enableJumboFrame != null){
+			putBodyParameter("EnableJumboFrame", enableJumboFrame.toString());
 		}
 	}
 

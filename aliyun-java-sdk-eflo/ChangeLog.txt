@@ -1,3 +1,6 @@
+2024-12-24 Version: 1.0.16
+- Supported Jumbo for HDENI and LENI.
+
 2024-06-26 Version: 1.0.15
 - Supported AssumeRoleProxyChain for CreateHighDensityElasticNetworkInterface.
 
