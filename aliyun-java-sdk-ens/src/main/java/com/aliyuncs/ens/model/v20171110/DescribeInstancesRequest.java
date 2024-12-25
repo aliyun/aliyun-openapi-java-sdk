@@ -27,6 +27,9 @@ import com.aliyuncs.http.MethodType;
 public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesResponse> {
 	   
 
+	@SerializedName("serviceStatus")
+	private List<String> serviceStatus;
+
 	private String orderByParams;
 
 	private String ensRegionId;
@@ -68,6 +71,17 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 	public DescribeInstancesRequest() {
 		super("Ens", "2017-11-10", "DescribeInstances", "ens");
 		setMethod(MethodType.POST);
+	}
+
+	public List<String> getServiceStatus() {
+		return this.serviceStatus;
+	}
+
+	public void setServiceStatus(List<String> serviceStatus) {
+		this.serviceStatus = serviceStatus;	
+		if (serviceStatus != null) {
+			putQueryParameter("ServiceStatus" , new Gson().toJson(serviceStatus));
+		}	
 	}
 
 	public String getOrderByParams() {

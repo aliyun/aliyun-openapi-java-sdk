@@ -51,6 +51,8 @@ public class DescribeSnatAttributeResponse extends AcsResponse {
 
 	private String destCIDR;
 
+	private Boolean ispAffinity;
+
 	private List<Snatip> snatIps;
 
 	public String getRequestId() {
@@ -155,6 +157,14 @@ public class DescribeSnatAttributeResponse extends AcsResponse {
 
 	public void setDestCIDR(String destCIDR) {
 		this.destCIDR = destCIDR;
+	}
+
+	public Boolean getIspAffinity() {
+		return this.ispAffinity;
+	}
+
+	public void setIspAffinity(Boolean ispAffinity) {
+		this.ispAffinity = ispAffinity;
 	}
 
 	public List<Snatip> getSnatIps() {

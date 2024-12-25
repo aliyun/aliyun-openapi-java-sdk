@@ -64,6 +64,7 @@ public class DescribeInstancesResponseUnmarshaller {
 			instance.setAutoReleaseTime(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].AutoReleaseTime"));
 			instance.setSpotStrategy(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].SpotStrategy"));
 			instance.setKeyPairName(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].KeyPairName"));
+			instance.setServiceStatus(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].ServiceStatus"));
 
 			List<String> securityGroupIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeInstancesResponse.Instances["+ i +"].SecurityGroupIds.Length"); j++) {

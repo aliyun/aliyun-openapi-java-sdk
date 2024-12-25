@@ -127,6 +127,8 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private String keyPairName;
 
+		private String serviceStatus;
+
 		private List<DataDiskItem> dataDisk;
 
 		private List<PublicIpAddress> publicIpAddresses;
@@ -305,6 +307,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		public void setKeyPairName(String keyPairName) {
 			this.keyPairName = keyPairName;
+		}
+
+		public String getServiceStatus() {
+			return this.serviceStatus;
+		}
+
+		public void setServiceStatus(String serviceStatus) {
+			this.serviceStatus = serviceStatus;
 		}
 
 		public List<DataDiskItem> getDataDisk() {

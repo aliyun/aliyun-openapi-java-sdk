@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.ens.model.v20171110.ListObjectsResponse;
+import com.aliyuncs.ens.model.v20171110.ListObjectsResponse.CommonPrefixInfo;
 import com.aliyuncs.ens.model.v20171110.ListObjectsResponse.Content;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -57,6 +58,16 @@ public class ListObjectsResponseUnmarshaller {
 			contents.add(content);
 		}
 		listObjectsResponse.setContents(contents);
+
+		List<CommonPrefixInfo> commonPrefixInfos = new ArrayList<CommonPrefixInfo>();
+		for (int i = 0; i < _ctx.lengthValue("ListObjectsResponse.CommonPrefixInfos.Length"); i++) {
+			CommonPrefixInfo commonPrefixInfo = new CommonPrefixInfo();
+			commonPrefixInfo.setPrefix(_ctx.stringValue("ListObjectsResponse.CommonPrefixInfos["+ i +"].Prefix"));
+			commonPrefixInfo.setLastModified(_ctx.stringValue("ListObjectsResponse.CommonPrefixInfos["+ i +"].LastModified"));
+
+			commonPrefixInfos.add(commonPrefixInfo);
+		}
+		listObjectsResponse.setCommonPrefixInfos(commonPrefixInfos);
 	 
 	 	return listObjectsResponse;
 	}

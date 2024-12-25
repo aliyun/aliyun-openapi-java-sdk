@@ -39,6 +39,8 @@ public class CreateSnatEntryRequest extends RpcAcsRequest<CreateSnatEntryRespons
 	private Integer idleTimeout;
 
 	private String snatEntryName;
+
+	private Boolean ispAffinity;
 	public CreateSnatEntryRequest() {
 		super("Ens", "2017-11-10", "CreateSnatEntry", "ens");
 		setMethod(MethodType.POST);
@@ -129,6 +131,17 @@ public class CreateSnatEntryRequest extends RpcAcsRequest<CreateSnatEntryRespons
 		this.snatEntryName = snatEntryName;
 		if(snatEntryName != null){
 			putQueryParameter("SnatEntryName", snatEntryName);
+		}
+	}
+
+	public Boolean getIspAffinity() {
+		return this.ispAffinity;
+	}
+
+	public void setIspAffinity(Boolean ispAffinity) {
+		this.ispAffinity = ispAffinity;
+		if(ispAffinity != null){
+			putQueryParameter("IspAffinity", ispAffinity.toString());
 		}
 	}
 

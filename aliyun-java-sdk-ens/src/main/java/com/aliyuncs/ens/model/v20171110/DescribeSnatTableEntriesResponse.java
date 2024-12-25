@@ -99,6 +99,8 @@ public class DescribeSnatTableEntriesResponse extends AcsResponse {
 
 		private String destCIDR;
 
+		private Boolean ispAffinity;
+
 		private List<SnatIp> snatIps;
 
 		public String getNatGatewayId() {
@@ -187,6 +189,14 @@ public class DescribeSnatTableEntriesResponse extends AcsResponse {
 
 		public void setDestCIDR(String destCIDR) {
 			this.destCIDR = destCIDR;
+		}
+
+		public Boolean getIspAffinity() {
+			return this.ispAffinity;
+		}
+
+		public void setIspAffinity(Boolean ispAffinity) {
+			this.ispAffinity = ispAffinity;
 		}
 
 		public List<SnatIp> getSnatIps() {

@@ -51,6 +51,8 @@ public class ListObjectsResponse extends AcsResponse {
 
 	private List<Content> contents;
 
+	private List<CommonPrefixInfo> commonPrefixInfos;
+
 	private List<String> commonPrefixes;
 
 	public String getNextContinuationToken() {
@@ -157,6 +159,14 @@ public class ListObjectsResponse extends AcsResponse {
 		this.contents = contents;
 	}
 
+	public List<CommonPrefixInfo> getCommonPrefixInfos() {
+		return this.commonPrefixInfos;
+	}
+
+	public void setCommonPrefixInfos(List<CommonPrefixInfo> commonPrefixInfos) {
+		this.commonPrefixInfos = commonPrefixInfos;
+	}
+
 	public List<String> getCommonPrefixes() {
 		return this.commonPrefixes;
 	}
@@ -215,6 +225,29 @@ public class ListObjectsResponse extends AcsResponse {
 
 		public void setSize(Long size) {
 			this.size = size;
+		}
+	}
+
+	public static class CommonPrefixInfo {
+
+		private String prefix;
+
+		private String lastModified;
+
+		public String getPrefix() {
+			return this.prefix;
+		}
+
+		public void setPrefix(String prefix) {
+			this.prefix = prefix;
+		}
+
+		public String getLastModified() {
+			return this.lastModified;
+		}
+
+		public void setLastModified(String lastModified) {
+			this.lastModified = lastModified;
 		}
 	}
 

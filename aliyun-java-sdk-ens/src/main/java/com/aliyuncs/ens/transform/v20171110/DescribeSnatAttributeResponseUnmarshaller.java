@@ -39,6 +39,7 @@ public class DescribeSnatAttributeResponseUnmarshaller {
 		describeSnatAttributeResponse.setType(_ctx.stringValue("DescribeSnatAttributeResponse.Type"));
 		describeSnatAttributeResponse.setIdleTimeout(_ctx.integerValue("DescribeSnatAttributeResponse.IdleTimeout"));
 		describeSnatAttributeResponse.setDestCIDR(_ctx.stringValue("DescribeSnatAttributeResponse.DestCIDR"));
+		describeSnatAttributeResponse.setIspAffinity(_ctx.booleanValue("DescribeSnatAttributeResponse.IspAffinity"));
 
 		List<Snatip> snatIps = new ArrayList<Snatip>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSnatAttributeResponse.SnatIps.Length"); i++) {
