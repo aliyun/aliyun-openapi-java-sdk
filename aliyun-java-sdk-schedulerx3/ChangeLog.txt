@@ -1,0 +1,5 @@
+2024-12-26 Version: 1.0.0
+- CreateJob and UpdateJob support ExecutorBlockStrategy.
+- TimeType support fixed_delay.
+- ListJobs support return LastExecuteEndTime, LastExecuteStatus and CurrentExecuteStatus.
+
