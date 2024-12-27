@@ -15,7 +15,6 @@
 package com.aliyuncs.arms.model.v20190808;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.arms.Endpoint;
 
@@ -23,17 +22,14 @@ import com.aliyuncs.arms.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteRumAppRequest extends RpcAcsRequest<DeleteRumAppResponse> {
+public class ListEnvironmentMetricTargetsRequest extends RpcAcsRequest<ListEnvironmentMetricTargetsResponse> {
 	   
 
-	private String appGroup;
+	private String environmentId;
 
-	private String appId;
-
-	private String realRegionId;
-	public DeleteRumAppRequest() {
-		super("ARMS", "2019-08-08", "DeleteRumApp", "arms");
-		setProtocol(ProtocolType.HTTPS);
+	private String jobName;
+	public ListEnvironmentMetricTargetsRequest() {
+		super("ARMS", "2019-08-08", "ListEnvironmentMetricTargets", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -41,42 +37,31 @@ public class DeleteRumAppRequest extends RpcAcsRequest<DeleteRumAppResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getAppGroup() {
-		return this.appGroup;
+	public String getEnvironmentId() {
+		return this.environmentId;
 	}
 
-	public void setAppGroup(String appGroup) {
-		this.appGroup = appGroup;
-		if(appGroup != null){
-			putQueryParameter("AppGroup", appGroup);
+	public void setEnvironmentId(String environmentId) {
+		this.environmentId = environmentId;
+		if(environmentId != null){
+			putQueryParameter("EnvironmentId", environmentId);
 		}
 	}
 
-	public String getAppId() {
-		return this.appId;
+	public String getJobName() {
+		return this.jobName;
 	}
 
-	public void setAppId(String appId) {
-		this.appId = appId;
-		if(appId != null){
-			putQueryParameter("AppId", appId);
-		}
-	}
-
-	public String getRealRegionId() {
-		return this.realRegionId;
-	}
-
-	public void setRealRegionId(String realRegionId) {
-		this.realRegionId = realRegionId;
-		if(realRegionId != null){
-			putQueryParameter("RealRegionId", realRegionId);
+	public void setJobName(String jobName) {
+		this.jobName = jobName;
+		if(jobName != null){
+			putQueryParameter("JobName", jobName);
 		}
 	}
 
 	@Override
-	public Class<DeleteRumAppResponse> getResponseClass() {
-		return DeleteRumAppResponse.class;
+	public Class<ListEnvironmentMetricTargetsResponse> getResponseClass() {
+		return ListEnvironmentMetricTargetsResponse.class;
 	}
 
 }

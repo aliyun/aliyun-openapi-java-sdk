@@ -50,6 +50,8 @@ public class CreatePrometheusInstanceRequest extends RpcAcsRequest<CreatePrometh
 
 	private String vpcId;
 
+	private String paymentType;
+
 	private Integer archiveDuration;
 	public CreatePrometheusInstanceRequest() {
 		super("ARMS", "2019-08-08", "CreatePrometheusInstance", "arms");
@@ -192,6 +194,17 @@ public class CreatePrometheusInstanceRequest extends RpcAcsRequest<CreatePrometh
 		this.vpcId = vpcId;
 		if(vpcId != null){
 			putQueryParameter("VpcId", vpcId);
+		}
+	}
+
+	public String getPaymentType() {
+		return this.paymentType;
+	}
+
+	public void setPaymentType(String paymentType) {
+		this.paymentType = paymentType;
+		if(paymentType != null){
+			putQueryParameter("PaymentType", paymentType);
 		}
 	}
 

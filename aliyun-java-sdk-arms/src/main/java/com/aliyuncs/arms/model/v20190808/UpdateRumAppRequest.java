@@ -34,7 +34,11 @@ public class UpdateRumAppRequest extends RpcAcsRequest<UpdateRumAppResponse> {
 
 	private String pid;
 
+	private String realRegionId;
+
 	private Boolean stop;
+
+	private String backendServiceTraceRegion;
 
 	private String nickname;
 
@@ -97,6 +101,17 @@ public class UpdateRumAppRequest extends RpcAcsRequest<UpdateRumAppResponse> {
 		}
 	}
 
+	public String getRealRegionId() {
+		return this.realRegionId;
+	}
+
+	public void setRealRegionId(String realRegionId) {
+		this.realRegionId = realRegionId;
+		if(realRegionId != null){
+			putQueryParameter("RealRegionId", realRegionId);
+		}
+	}
+
 	public Boolean getStop() {
 		return this.stop;
 	}
@@ -105,6 +120,17 @@ public class UpdateRumAppRequest extends RpcAcsRequest<UpdateRumAppResponse> {
 		this.stop = stop;
 		if(stop != null){
 			putQueryParameter("Stop", stop.toString());
+		}
+	}
+
+	public String getBackendServiceTraceRegion() {
+		return this.backendServiceTraceRegion;
+	}
+
+	public void setBackendServiceTraceRegion(String backendServiceTraceRegion) {
+		this.backendServiceTraceRegion = backendServiceTraceRegion;
+		if(backendServiceTraceRegion != null){
+			putQueryParameter("BackendServiceTraceRegion", backendServiceTraceRegion);
 		}
 	}
 

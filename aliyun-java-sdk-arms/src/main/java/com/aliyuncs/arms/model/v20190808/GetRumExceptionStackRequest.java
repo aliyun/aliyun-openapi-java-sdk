@@ -34,6 +34,8 @@ public class GetRumExceptionStackRequest extends RpcAcsRequest<GetRumExceptionSt
 
 	private String exceptionBinaryImages;
 
+	private String extraInfo;
+
 	private String exceptionStack;
 	public GetRumExceptionStackRequest() {
 		super("ARMS", "2019-08-08", "GetRumExceptionStack", "arms");
@@ -86,6 +88,17 @@ public class GetRumExceptionStackRequest extends RpcAcsRequest<GetRumExceptionSt
 		this.exceptionBinaryImages = exceptionBinaryImages;
 		if(exceptionBinaryImages != null){
 			putQueryParameter("ExceptionBinaryImages", exceptionBinaryImages);
+		}
+	}
+
+	public String getExtraInfo() {
+		return this.extraInfo;
+	}
+
+	public void setExtraInfo(String extraInfo) {
+		this.extraInfo = extraInfo;
+		if(extraInfo != null){
+			putQueryParameter("ExtraInfo", extraInfo);
 		}
 	}
 

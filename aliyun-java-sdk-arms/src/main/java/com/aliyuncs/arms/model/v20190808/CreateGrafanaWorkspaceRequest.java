@@ -28,6 +28,8 @@ import com.aliyuncs.arms.Endpoint;
 public class CreateGrafanaWorkspaceRequest extends RpcAcsRequest<CreateGrafanaWorkspaceResponse> {
 	   
 
+	private String accountNumber;
+
 	private String aliyunLang;
 
 	private String description;
@@ -37,13 +39,21 @@ public class CreateGrafanaWorkspaceRequest extends RpcAcsRequest<CreateGrafanaWo
 	@SerializedName("tags")
 	private List<Tags> tags;
 
+	private String duration;
+
 	private String resourceGroupId;
 
 	private String grafanaVersion;
 
 	private String password;
 
+	private String autoRenew;
+
 	private String grafanaWorkspaceEdition;
+
+	private String customAccountNumber;
+
+	private String pricingCycle;
 	public CreateGrafanaWorkspaceRequest() {
 		super("ARMS", "2019-08-08", "CreateGrafanaWorkspace", "arms");
 		setMethod(MethodType.POST);
@@ -51,6 +61,17 @@ public class CreateGrafanaWorkspaceRequest extends RpcAcsRequest<CreateGrafanaWo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getAccountNumber() {
+		return this.accountNumber;
+	}
+
+	public void setAccountNumber(String accountNumber) {
+		this.accountNumber = accountNumber;
+		if(accountNumber != null){
+			putQueryParameter("AccountNumber", accountNumber);
+		}
 	}
 
 	public String getAliyunLang() {
@@ -97,6 +118,17 @@ public class CreateGrafanaWorkspaceRequest extends RpcAcsRequest<CreateGrafanaWo
 		}	
 	}
 
+	public String getDuration() {
+		return this.duration;
+	}
+
+	public void setDuration(String duration) {
+		this.duration = duration;
+		if(duration != null){
+			putQueryParameter("Duration", duration);
+		}
+	}
+
 	public String getResourceGroupId() {
 		return this.resourceGroupId;
 	}
@@ -130,6 +162,17 @@ public class CreateGrafanaWorkspaceRequest extends RpcAcsRequest<CreateGrafanaWo
 		}
 	}
 
+	public String getAutoRenew() {
+		return this.autoRenew;
+	}
+
+	public void setAutoRenew(String autoRenew) {
+		this.autoRenew = autoRenew;
+		if(autoRenew != null){
+			putQueryParameter("AutoRenew", autoRenew);
+		}
+	}
+
 	public String getGrafanaWorkspaceEdition() {
 		return this.grafanaWorkspaceEdition;
 	}
@@ -138,6 +181,28 @@ public class CreateGrafanaWorkspaceRequest extends RpcAcsRequest<CreateGrafanaWo
 		this.grafanaWorkspaceEdition = grafanaWorkspaceEdition;
 		if(grafanaWorkspaceEdition != null){
 			putQueryParameter("GrafanaWorkspaceEdition", grafanaWorkspaceEdition);
+		}
+	}
+
+	public String getCustomAccountNumber() {
+		return this.customAccountNumber;
+	}
+
+	public void setCustomAccountNumber(String customAccountNumber) {
+		this.customAccountNumber = customAccountNumber;
+		if(customAccountNumber != null){
+			putQueryParameter("CustomAccountNumber", customAccountNumber);
+		}
+	}
+
+	public String getPricingCycle() {
+		return this.pricingCycle;
+	}
+
+	public void setPricingCycle(String pricingCycle) {
+		this.pricingCycle = pricingCycle;
+		if(pricingCycle != null){
+			putQueryParameter("PricingCycle", pricingCycle);
 		}
 	}
 

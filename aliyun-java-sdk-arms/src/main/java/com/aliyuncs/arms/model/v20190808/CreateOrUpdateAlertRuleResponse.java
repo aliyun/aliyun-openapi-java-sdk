@@ -47,7 +47,7 @@ public class CreateOrUpdateAlertRuleResponse extends AcsResponse {
 
 	public static class AlertRule {
 
-		private Float alertId;
+		private Long alertId;
 
 		private String alertName;
 
@@ -99,11 +99,11 @@ public class CreateOrUpdateAlertRuleResponse extends AcsResponse {
 
 		private Filters filters;
 
-		public Float getAlertId() {
+		public Long getAlertId() {
 			return this.alertId;
 		}
 
-		public void setAlertId(Float alertId) {
+		public void setAlertId(Long alertId) {
 			this.alertId = alertId;
 		}
 

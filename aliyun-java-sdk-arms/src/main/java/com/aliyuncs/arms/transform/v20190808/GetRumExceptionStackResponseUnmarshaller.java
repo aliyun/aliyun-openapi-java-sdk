@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.arms.model.v20190808.GetRumExceptionStackResponse;
 import com.aliyuncs.arms.model.v20190808.GetRumExceptionStackResponse.Data;
+import com.aliyuncs.arms.model.v20190808.GetRumExceptionStackResponse.Data.ThreadInfoListItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -34,12 +35,27 @@ public class GetRumExceptionStackResponseUnmarshaller {
 
 		Data data = new Data();
 		data.setThreadId(_ctx.stringValue("GetRumExceptionStackResponse.Data.ThreadId"));
+		data.setCrashReason(_ctx.stringValue("GetRumExceptionStackResponse.Data.CrashReason"));
+		data.setCrashAddress(_ctx.stringValue("GetRumExceptionStackResponse.Data.CrashAddress"));
+		data.setModuleName(_ctx.stringValue("GetRumExceptionStackResponse.Data.ModuleName"));
+		data.setUuid(_ctx.stringValue("GetRumExceptionStackResponse.Data.Uuid"));
+		data.setBinaryImages(_ctx.stringValue("GetRumExceptionStackResponse.Data.BinaryImages"));
 
 		List<String> lines = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetRumExceptionStackResponse.Data.Lines.Length"); i++) {
 			lines.add(_ctx.stringValue("GetRumExceptionStackResponse.Data.Lines["+ i +"]"));
 		}
 		data.setLines(lines);
+
+		List<ThreadInfoListItem> threadInfoList = new ArrayList<ThreadInfoListItem>();
+		for (int i = 0; i < _ctx.lengthValue("GetRumExceptionStackResponse.Data.ThreadInfoList.Length"); i++) {
+			ThreadInfoListItem threadInfoListItem = new ThreadInfoListItem();
+			threadInfoListItem.setThreadTag(_ctx.stringValue("GetRumExceptionStackResponse.Data.ThreadInfoList["+ i +"].ThreadTag"));
+			threadInfoListItem.setThreadDetail(_ctx.stringValue("GetRumExceptionStackResponse.Data.ThreadInfoList["+ i +"].ThreadDetail"));
+
+			threadInfoList.add(threadInfoListItem);
+		}
+		data.setThreadInfoList(threadInfoList);
 		getRumExceptionStackResponse.setData(data);
 	 
 	 	return getRumExceptionStackResponse;

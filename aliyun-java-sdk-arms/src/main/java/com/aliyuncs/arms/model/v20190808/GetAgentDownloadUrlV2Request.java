@@ -23,16 +23,16 @@ import com.aliyuncs.arms.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteRumAppRequest extends RpcAcsRequest<DeleteRumAppResponse> {
+public class GetAgentDownloadUrlV2Request extends RpcAcsRequest<GetAgentDownloadUrlV2Response> {
 	   
 
-	private String appGroup;
+	private String archType;
 
-	private String appId;
+	private String osType;
 
-	private String realRegionId;
-	public DeleteRumAppRequest() {
-		super("ARMS", "2019-08-08", "DeleteRumApp", "arms");
+	private String agentType;
+	public GetAgentDownloadUrlV2Request() {
+		super("ARMS", "2019-08-08", "GetAgentDownloadUrlV2", "arms");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
@@ -41,42 +41,42 @@ public class DeleteRumAppRequest extends RpcAcsRequest<DeleteRumAppResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getAppGroup() {
-		return this.appGroup;
+	public String getArchType() {
+		return this.archType;
 	}
 
-	public void setAppGroup(String appGroup) {
-		this.appGroup = appGroup;
-		if(appGroup != null){
-			putQueryParameter("AppGroup", appGroup);
+	public void setArchType(String archType) {
+		this.archType = archType;
+		if(archType != null){
+			putQueryParameter("ArchType", archType);
 		}
 	}
 
-	public String getAppId() {
-		return this.appId;
+	public String getOsType() {
+		return this.osType;
 	}
 
-	public void setAppId(String appId) {
-		this.appId = appId;
-		if(appId != null){
-			putQueryParameter("AppId", appId);
+	public void setOsType(String osType) {
+		this.osType = osType;
+		if(osType != null){
+			putQueryParameter("OsType", osType);
 		}
 	}
 
-	public String getRealRegionId() {
-		return this.realRegionId;
+	public String getAgentType() {
+		return this.agentType;
 	}
 
-	public void setRealRegionId(String realRegionId) {
-		this.realRegionId = realRegionId;
-		if(realRegionId != null){
-			putQueryParameter("RealRegionId", realRegionId);
+	public void setAgentType(String agentType) {
+		this.agentType = agentType;
+		if(agentType != null){
+			putQueryParameter("AgentType", agentType);
 		}
 	}
 
 	@Override
-	public Class<DeleteRumAppResponse> getResponseClass() {
-		return DeleteRumAppResponse.class;
+	public Class<GetAgentDownloadUrlV2Response> getResponseClass() {
+		return GetAgentDownloadUrlV2Response.class;
 	}
 
 }

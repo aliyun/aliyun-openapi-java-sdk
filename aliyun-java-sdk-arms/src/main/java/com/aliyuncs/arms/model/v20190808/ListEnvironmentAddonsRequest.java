@@ -15,7 +15,6 @@
 package com.aliyuncs.arms.model.v20190808;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.arms.Endpoint;
 
@@ -23,17 +22,12 @@ import com.aliyuncs.arms.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteRumAppRequest extends RpcAcsRequest<DeleteRumAppResponse> {
+public class ListEnvironmentAddonsRequest extends RpcAcsRequest<ListEnvironmentAddonsResponse> {
 	   
 
-	private String appGroup;
-
-	private String appId;
-
-	private String realRegionId;
-	public DeleteRumAppRequest() {
-		super("ARMS", "2019-08-08", "DeleteRumApp", "arms");
-		setProtocol(ProtocolType.HTTPS);
+	private String environmentId;
+	public ListEnvironmentAddonsRequest() {
+		super("ARMS", "2019-08-08", "ListEnvironmentAddons", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -41,42 +35,20 @@ public class DeleteRumAppRequest extends RpcAcsRequest<DeleteRumAppResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getAppGroup() {
-		return this.appGroup;
+	public String getEnvironmentId() {
+		return this.environmentId;
 	}
 
-	public void setAppGroup(String appGroup) {
-		this.appGroup = appGroup;
-		if(appGroup != null){
-			putQueryParameter("AppGroup", appGroup);
-		}
-	}
-
-	public String getAppId() {
-		return this.appId;
-	}
-
-	public void setAppId(String appId) {
-		this.appId = appId;
-		if(appId != null){
-			putQueryParameter("AppId", appId);
-		}
-	}
-
-	public String getRealRegionId() {
-		return this.realRegionId;
-	}
-
-	public void setRealRegionId(String realRegionId) {
-		this.realRegionId = realRegionId;
-		if(realRegionId != null){
-			putQueryParameter("RealRegionId", realRegionId);
+	public void setEnvironmentId(String environmentId) {
+		this.environmentId = environmentId;
+		if(environmentId != null){
+			putQueryParameter("EnvironmentId", environmentId);
 		}
 	}
 
 	@Override
-	public Class<DeleteRumAppResponse> getResponseClass() {
-		return DeleteRumAppResponse.class;
+	public Class<ListEnvironmentAddonsResponse> getResponseClass() {
+		return ListEnvironmentAddonsResponse.class;
 	}
 
 }

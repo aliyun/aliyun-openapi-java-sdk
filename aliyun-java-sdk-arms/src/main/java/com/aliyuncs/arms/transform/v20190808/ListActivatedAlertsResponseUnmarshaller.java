@@ -30,6 +30,7 @@ public class ListActivatedAlertsResponseUnmarshaller {
 	public static ListActivatedAlertsResponse unmarshall(ListActivatedAlertsResponse listActivatedAlertsResponse, UnmarshallerContext _ctx) {
 		
 		listActivatedAlertsResponse.setRequestId(_ctx.stringValue("ListActivatedAlertsResponse.RequestId"));
+		listActivatedAlertsResponse.setMessage(_ctx.stringValue("ListActivatedAlertsResponse.Message"));
 
 		Page page = new Page();
 		page.setPageSize(_ctx.integerValue("ListActivatedAlertsResponse.Page.PageSize"));

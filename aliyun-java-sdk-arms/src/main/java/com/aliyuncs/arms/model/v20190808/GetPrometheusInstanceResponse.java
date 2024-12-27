@@ -15,6 +15,7 @@
 package com.aliyuncs.arms.model.v20190808;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.arms.transform.v20190808.GetPrometheusInstanceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -119,9 +120,23 @@ public class GetPrometheusInstanceResponse extends AcsResponse {
 
 		private String enableAuthToken;
 
+		private Boolean enableAuthFreeRead;
+
+		private String authFreeReadPolicy;
+
+		private Boolean enableAuthFreeWrite;
+
+		private String authFreeWritePolicy;
+
 		private String product;
 
 		private String dbInstanceStatus;
+
+		private String version;
+
+		private String paymentTypeUpdateTime;
+
+		private Map<Object,Object> extraInfo;
 
 		private List<TagsItem> tags;
 
@@ -335,6 +350,38 @@ public class GetPrometheusInstanceResponse extends AcsResponse {
 			this.enableAuthToken = enableAuthToken;
 		}
 
+		public Boolean getEnableAuthFreeRead() {
+			return this.enableAuthFreeRead;
+		}
+
+		public void setEnableAuthFreeRead(Boolean enableAuthFreeRead) {
+			this.enableAuthFreeRead = enableAuthFreeRead;
+		}
+
+		public String getAuthFreeReadPolicy() {
+			return this.authFreeReadPolicy;
+		}
+
+		public void setAuthFreeReadPolicy(String authFreeReadPolicy) {
+			this.authFreeReadPolicy = authFreeReadPolicy;
+		}
+
+		public Boolean getEnableAuthFreeWrite() {
+			return this.enableAuthFreeWrite;
+		}
+
+		public void setEnableAuthFreeWrite(Boolean enableAuthFreeWrite) {
+			this.enableAuthFreeWrite = enableAuthFreeWrite;
+		}
+
+		public String getAuthFreeWritePolicy() {
+			return this.authFreeWritePolicy;
+		}
+
+		public void setAuthFreeWritePolicy(String authFreeWritePolicy) {
+			this.authFreeWritePolicy = authFreeWritePolicy;
+		}
+
 		public String getProduct() {
 			return this.product;
 		}
@@ -349,6 +396,30 @@ public class GetPrometheusInstanceResponse extends AcsResponse {
 
 		public void setDbInstanceStatus(String dbInstanceStatus) {
 			this.dbInstanceStatus = dbInstanceStatus;
+		}
+
+		public String getVersion() {
+			return this.version;
+		}
+
+		public void setVersion(String version) {
+			this.version = version;
+		}
+
+		public String getPaymentTypeUpdateTime() {
+			return this.paymentTypeUpdateTime;
+		}
+
+		public void setPaymentTypeUpdateTime(String paymentTypeUpdateTime) {
+			this.paymentTypeUpdateTime = paymentTypeUpdateTime;
+		}
+
+		public Map<Object,Object> getExtraInfo() {
+			return this.extraInfo;
+		}
+
+		public void setExtraInfo(Map<Object,Object> extraInfo) {
+			this.extraInfo = extraInfo;
 		}
 
 		public List<TagsItem> getTags() {

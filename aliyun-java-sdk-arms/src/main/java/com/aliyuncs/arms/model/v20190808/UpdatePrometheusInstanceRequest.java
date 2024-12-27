@@ -29,7 +29,19 @@ public class UpdatePrometheusInstanceRequest extends RpcAcsRequest<UpdatePrometh
 
 	private String resourceGroupId;
 
+	private String authFreeReadPolicy;
+
+	private String authFreeWritePolicy;
+
+	private Boolean enableAuthFreeRead;
+
 	private Integer storageDuration;
+
+	private Boolean enableAuthToken;
+
+	private Boolean enableAuthFreeWrite;
+
+	private String paymentType;
 
 	private Integer archiveDuration;
 	public UpdatePrometheusInstanceRequest() {
@@ -63,6 +75,39 @@ public class UpdatePrometheusInstanceRequest extends RpcAcsRequest<UpdatePrometh
 		}
 	}
 
+	public String getAuthFreeReadPolicy() {
+		return this.authFreeReadPolicy;
+	}
+
+	public void setAuthFreeReadPolicy(String authFreeReadPolicy) {
+		this.authFreeReadPolicy = authFreeReadPolicy;
+		if(authFreeReadPolicy != null){
+			putQueryParameter("AuthFreeReadPolicy", authFreeReadPolicy);
+		}
+	}
+
+	public String getAuthFreeWritePolicy() {
+		return this.authFreeWritePolicy;
+	}
+
+	public void setAuthFreeWritePolicy(String authFreeWritePolicy) {
+		this.authFreeWritePolicy = authFreeWritePolicy;
+		if(authFreeWritePolicy != null){
+			putQueryParameter("AuthFreeWritePolicy", authFreeWritePolicy);
+		}
+	}
+
+	public Boolean getEnableAuthFreeRead() {
+		return this.enableAuthFreeRead;
+	}
+
+	public void setEnableAuthFreeRead(Boolean enableAuthFreeRead) {
+		this.enableAuthFreeRead = enableAuthFreeRead;
+		if(enableAuthFreeRead != null){
+			putQueryParameter("EnableAuthFreeRead", enableAuthFreeRead.toString());
+		}
+	}
+
 	public Integer getStorageDuration() {
 		return this.storageDuration;
 	}
@@ -71,6 +116,39 @@ public class UpdatePrometheusInstanceRequest extends RpcAcsRequest<UpdatePrometh
 		this.storageDuration = storageDuration;
 		if(storageDuration != null){
 			putQueryParameter("StorageDuration", storageDuration.toString());
+		}
+	}
+
+	public Boolean getEnableAuthToken() {
+		return this.enableAuthToken;
+	}
+
+	public void setEnableAuthToken(Boolean enableAuthToken) {
+		this.enableAuthToken = enableAuthToken;
+		if(enableAuthToken != null){
+			putQueryParameter("EnableAuthToken", enableAuthToken.toString());
+		}
+	}
+
+	public Boolean getEnableAuthFreeWrite() {
+		return this.enableAuthFreeWrite;
+	}
+
+	public void setEnableAuthFreeWrite(Boolean enableAuthFreeWrite) {
+		this.enableAuthFreeWrite = enableAuthFreeWrite;
+		if(enableAuthFreeWrite != null){
+			putQueryParameter("EnableAuthFreeWrite", enableAuthFreeWrite.toString());
+		}
+	}
+
+	public String getPaymentType() {
+		return this.paymentType;
+	}
+
+	public void setPaymentType(String paymentType) {
+		this.paymentType = paymentType;
+		if(paymentType != null){
+			putQueryParameter("PaymentType", paymentType);
 		}
 	}
 

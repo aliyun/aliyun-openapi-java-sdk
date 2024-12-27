@@ -37,7 +37,7 @@ public class CreateOrUpdateAlertRuleResponseUnmarshaller {
 		createOrUpdateAlertRuleResponse.setRequestId(_ctx.stringValue("CreateOrUpdateAlertRuleResponse.RequestId"));
 
 		AlertRule alertRule = new AlertRule();
-		alertRule.setAlertId(_ctx.floatValue("CreateOrUpdateAlertRuleResponse.AlertRule.AlertId"));
+		alertRule.setAlertId(_ctx.longValue("CreateOrUpdateAlertRuleResponse.AlertRule.AlertId"));
 		alertRule.setAlertName(_ctx.stringValue("CreateOrUpdateAlertRuleResponse.AlertRule.AlertName"));
 		alertRule.setUserId(_ctx.stringValue("CreateOrUpdateAlertRuleResponse.AlertRule.UserId"));
 		alertRule.setRegionId(_ctx.stringValue("CreateOrUpdateAlertRuleResponse.AlertRule.RegionId"));

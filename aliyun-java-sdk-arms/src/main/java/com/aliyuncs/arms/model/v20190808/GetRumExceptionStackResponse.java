@@ -89,6 +89,18 @@ public class GetRumExceptionStackResponse extends AcsResponse {
 
 		private String threadId;
 
+		private String crashReason;
+
+		private String crashAddress;
+
+		private String moduleName;
+
+		private String uuid;
+
+		private String binaryImages;
+
+		private List<ThreadInfoListItem> threadInfoList;
+
 		private List<String> lines;
 
 		public String getThreadId() {
@@ -99,12 +111,83 @@ public class GetRumExceptionStackResponse extends AcsResponse {
 			this.threadId = threadId;
 		}
 
+		public String getCrashReason() {
+			return this.crashReason;
+		}
+
+		public void setCrashReason(String crashReason) {
+			this.crashReason = crashReason;
+		}
+
+		public String getCrashAddress() {
+			return this.crashAddress;
+		}
+
+		public void setCrashAddress(String crashAddress) {
+			this.crashAddress = crashAddress;
+		}
+
+		public String getModuleName() {
+			return this.moduleName;
+		}
+
+		public void setModuleName(String moduleName) {
+			this.moduleName = moduleName;
+		}
+
+		public String getUuid() {
+			return this.uuid;
+		}
+
+		public void setUuid(String uuid) {
+			this.uuid = uuid;
+		}
+
+		public String getBinaryImages() {
+			return this.binaryImages;
+		}
+
+		public void setBinaryImages(String binaryImages) {
+			this.binaryImages = binaryImages;
+		}
+
+		public List<ThreadInfoListItem> getThreadInfoList() {
+			return this.threadInfoList;
+		}
+
+		public void setThreadInfoList(List<ThreadInfoListItem> threadInfoList) {
+			this.threadInfoList = threadInfoList;
+		}
+
 		public List<String> getLines() {
 			return this.lines;
 		}
 
 		public void setLines(List<String> lines) {
 			this.lines = lines;
+		}
+
+		public static class ThreadInfoListItem {
+
+			private String threadTag;
+
+			private String threadDetail;
+
+			public String getThreadTag() {
+				return this.threadTag;
+			}
+
+			public void setThreadTag(String threadTag) {
+				this.threadTag = threadTag;
+			}
+
+			public String getThreadDetail() {
+				return this.threadDetail;
+			}
+
+			public void setThreadDetail(String threadDetail) {
+				this.threadDetail = threadDetail;
+			}
 		}
 	}
 

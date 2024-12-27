@@ -30,6 +30,7 @@ public class ListAlertsResponseUnmarshaller {
 	public static ListAlertsResponse unmarshall(ListAlertsResponse listAlertsResponse, UnmarshallerContext _ctx) {
 		
 		listAlertsResponse.setRequestId(_ctx.stringValue("ListAlertsResponse.RequestId"));
+		listAlertsResponse.setMessage(_ctx.stringValue("ListAlertsResponse.Message"));
 
 		PageBean pageBean = new PageBean();
 		pageBean.setTotal(_ctx.longValue("ListAlertsResponse.PageBean.Total"));

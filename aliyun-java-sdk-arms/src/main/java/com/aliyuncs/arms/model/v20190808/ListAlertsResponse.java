@@ -27,6 +27,8 @@ public class ListAlertsResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String message;
+
 	private PageBean pageBean;
 
 	public String getRequestId() {
@@ -35,6 +37,14 @@ public class ListAlertsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public PageBean getPageBean() {

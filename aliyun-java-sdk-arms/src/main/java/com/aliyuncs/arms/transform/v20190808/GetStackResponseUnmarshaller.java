@@ -39,6 +39,7 @@ public class GetStackResponseUnmarshaller {
 			stackInfoItem.setDuration(_ctx.longValue("GetStackResponse.StackInfo["+ i +"].Duration"));
 			stackInfoItem.setRpcId(_ctx.stringValue("GetStackResponse.StackInfo["+ i +"].RpcId"));
 			stackInfoItem.setServiceName(_ctx.stringValue("GetStackResponse.StackInfo["+ i +"].ServiceName"));
+			stackInfoItem.setCallCount(_ctx.stringValue("GetStackResponse.StackInfo["+ i +"].CallCount"));
 
 			ExtInfo extInfo = new ExtInfo();
 			extInfo.setType(_ctx.stringValue("GetStackResponse.StackInfo["+ i +"].ExtInfo.Type"));

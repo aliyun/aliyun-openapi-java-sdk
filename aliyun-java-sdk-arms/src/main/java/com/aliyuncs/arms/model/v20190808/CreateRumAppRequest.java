@@ -37,6 +37,8 @@ public class CreateRumAppRequest extends RpcAcsRequest<CreateRumAppResponse> {
 
 	private String siteType;
 
+	private String realRegionId;
+
 	private String resourceGroupId;
 
 	private String appName;
@@ -98,6 +100,17 @@ public class CreateRumAppRequest extends RpcAcsRequest<CreateRumAppResponse> {
 		this.siteType = siteType;
 		if(siteType != null){
 			putQueryParameter("SiteType", siteType);
+		}
+	}
+
+	public String getRealRegionId() {
+		return this.realRegionId;
+	}
+
+	public void setRealRegionId(String realRegionId) {
+		this.realRegionId = realRegionId;
+		if(realRegionId != null){
+			putQueryParameter("RealRegionId", realRegionId);
 		}
 	}
 

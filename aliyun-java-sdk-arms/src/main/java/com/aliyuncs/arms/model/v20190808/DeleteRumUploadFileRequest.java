@@ -26,13 +26,15 @@ import com.aliyuncs.arms.Endpoint;
 public class DeleteRumUploadFileRequest extends RpcAcsRequest<DeleteRumUploadFileResponse> {
 	   
 
+	private String pid;
+
+	private String uuid;
+
 	private String versionId;
 
 	private String fileName;
 
-	private String pid;
-
-	private String uuid;
+	private String batchItems;
 	public DeleteRumUploadFileRequest() {
 		super("ARMS", "2019-08-08", "DeleteRumUploadFile", "arms");
 		setProtocol(ProtocolType.HTTPS);
@@ -41,6 +43,28 @@ public class DeleteRumUploadFileRequest extends RpcAcsRequest<DeleteRumUploadFil
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getPid() {
+		return this.pid;
+	}
+
+	public void setPid(String pid) {
+		this.pid = pid;
+		if(pid != null){
+			putQueryParameter("Pid", pid);
+		}
+	}
+
+	public String getUuid() {
+		return this.uuid;
+	}
+
+	public void setUuid(String uuid) {
+		this.uuid = uuid;
+		if(uuid != null){
+			putQueryParameter("Uuid", uuid);
+		}
 	}
 
 	public String getVersionId() {
@@ -65,25 +89,14 @@ public class DeleteRumUploadFileRequest extends RpcAcsRequest<DeleteRumUploadFil
 		}
 	}
 
-	public String getPid() {
-		return this.pid;
+	public String getBatchItems() {
+		return this.batchItems;
 	}
 
-	public void setPid(String pid) {
-		this.pid = pid;
-		if(pid != null){
-			putQueryParameter("Pid", pid);
-		}
-	}
-
-	public String getUuid() {
-		return this.uuid;
-	}
-
-	public void setUuid(String uuid) {
-		this.uuid = uuid;
-		if(uuid != null){
-			putQueryParameter("Uuid", uuid);
+	public void setBatchItems(String batchItems) {
+		this.batchItems = batchItems;
+		if(batchItems != null){
+			putQueryParameter("BatchItems", batchItems);
 		}
 	}
 

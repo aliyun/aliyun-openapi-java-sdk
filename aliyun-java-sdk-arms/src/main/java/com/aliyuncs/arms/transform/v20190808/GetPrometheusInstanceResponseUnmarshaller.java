@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.arms.model.v20190808.GetPrometheusInstanceResponse;
 import com.aliyuncs.arms.model.v20190808.GetPrometheusInstanceResponse.Data;
 import com.aliyuncs.arms.model.v20190808.GetPrometheusInstanceResponse.Data.TagsItem;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -58,8 +59,15 @@ public class GetPrometheusInstanceResponseUnmarshaller {
 		data.setResourceGroupId(_ctx.stringValue("GetPrometheusInstanceResponse.Data.ResourceGroupId"));
 		data.setResourceType(_ctx.stringValue("GetPrometheusInstanceResponse.Data.ResourceType"));
 		data.setEnableAuthToken(_ctx.stringValue("GetPrometheusInstanceResponse.Data.EnableAuthToken"));
+		data.setEnableAuthFreeRead(_ctx.booleanValue("GetPrometheusInstanceResponse.Data.EnableAuthFreeRead"));
+		data.setAuthFreeReadPolicy(_ctx.stringValue("GetPrometheusInstanceResponse.Data.AuthFreeReadPolicy"));
+		data.setEnableAuthFreeWrite(_ctx.booleanValue("GetPrometheusInstanceResponse.Data.EnableAuthFreeWrite"));
+		data.setAuthFreeWritePolicy(_ctx.stringValue("GetPrometheusInstanceResponse.Data.AuthFreeWritePolicy"));
 		data.setProduct(_ctx.stringValue("GetPrometheusInstanceResponse.Data.Product"));
 		data.setDbInstanceStatus(_ctx.stringValue("GetPrometheusInstanceResponse.Data.DbInstanceStatus"));
+		data.setVersion(_ctx.stringValue("GetPrometheusInstanceResponse.Data.Version"));
+		data.setPaymentTypeUpdateTime(_ctx.stringValue("GetPrometheusInstanceResponse.Data.PaymentTypeUpdateTime"));
+		data.setExtraInfo(_ctx.mapValue("GetPrometheusInstanceResponse.Data.ExtraInfo"));
 
 		List<String> supportAuthTypes = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetPrometheusInstanceResponse.Data.SupportAuthTypes.Length"); i++) {

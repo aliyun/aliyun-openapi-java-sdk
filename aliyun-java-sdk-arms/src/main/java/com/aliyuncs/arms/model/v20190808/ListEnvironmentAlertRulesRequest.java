@@ -15,7 +15,6 @@
 package com.aliyuncs.arms.model.v20190808;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.arms.Endpoint;
 
@@ -23,17 +22,16 @@ import com.aliyuncs.arms.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteRumAppRequest extends RpcAcsRequest<DeleteRumAppResponse> {
+public class ListEnvironmentAlertRulesRequest extends RpcAcsRequest<ListEnvironmentAlertRulesResponse> {
 	   
 
-	private String appGroup;
+	private String scene;
 
-	private String appId;
+	private String environmentId;
 
-	private String realRegionId;
-	public DeleteRumAppRequest() {
-		super("ARMS", "2019-08-08", "DeleteRumApp", "arms");
-		setProtocol(ProtocolType.HTTPS);
+	private String addonName;
+	public ListEnvironmentAlertRulesRequest() {
+		super("ARMS", "2019-08-08", "ListEnvironmentAlertRules", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -41,42 +39,42 @@ public class DeleteRumAppRequest extends RpcAcsRequest<DeleteRumAppResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getAppGroup() {
-		return this.appGroup;
+	public String getScene() {
+		return this.scene;
 	}
 
-	public void setAppGroup(String appGroup) {
-		this.appGroup = appGroup;
-		if(appGroup != null){
-			putQueryParameter("AppGroup", appGroup);
+	public void setScene(String scene) {
+		this.scene = scene;
+		if(scene != null){
+			putQueryParameter("Scene", scene);
 		}
 	}
 
-	public String getAppId() {
-		return this.appId;
+	public String getEnvironmentId() {
+		return this.environmentId;
 	}
 
-	public void setAppId(String appId) {
-		this.appId = appId;
-		if(appId != null){
-			putQueryParameter("AppId", appId);
+	public void setEnvironmentId(String environmentId) {
+		this.environmentId = environmentId;
+		if(environmentId != null){
+			putQueryParameter("EnvironmentId", environmentId);
 		}
 	}
 
-	public String getRealRegionId() {
-		return this.realRegionId;
+	public String getAddonName() {
+		return this.addonName;
 	}
 
-	public void setRealRegionId(String realRegionId) {
-		this.realRegionId = realRegionId;
-		if(realRegionId != null){
-			putQueryParameter("RealRegionId", realRegionId);
+	public void setAddonName(String addonName) {
+		this.addonName = addonName;
+		if(addonName != null){
+			putQueryParameter("AddonName", addonName);
 		}
 	}
 
 	@Override
-	public Class<DeleteRumAppResponse> getResponseClass() {
-		return DeleteRumAppResponse.class;
+	public Class<ListEnvironmentAlertRulesResponse> getResponseClass() {
+		return ListEnvironmentAlertRulesResponse.class;
 	}
 
 }

@@ -37,6 +37,7 @@ public class SearchTracesResponseUnmarshaller {
 			traceInfo.setTimestamp(_ctx.longValue("SearchTracesResponse.TraceInfos["+ i +"].Timestamp"));
 			traceInfo.setServiceName(_ctx.stringValue("SearchTracesResponse.TraceInfos["+ i +"].ServiceName"));
 			traceInfo.setTraceID(_ctx.stringValue("SearchTracesResponse.TraceInfos["+ i +"].TraceID"));
+			traceInfo.setSpanID(_ctx.stringValue("SearchTracesResponse.TraceInfos["+ i +"].SpanID"));
 
 			traceInfos.add(traceInfo);
 		}
