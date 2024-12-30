@@ -15,57 +15,33 @@
 package com.aliyuncs.quickbi_public.model.v20220101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
-public class UpdateWorkspaceUserRoleRequest extends RpcAcsRequest<UpdateWorkspaceUserRoleResponse> {
+public class ListDataSourceRequest extends RpcAcsRequest<ListDataSourceResponse> {
 	   
 
-	private Long roleId;
-
-	private String userId;
-
-	private String roleIds;
+	private String dsType;
 
 	private String workspaceId;
-	public UpdateWorkspaceUserRoleRequest() {
-		super("quickbi-public", "2022-01-01", "UpdateWorkspaceUserRole", "2.2.0");
+	public ListDataSourceRequest() {
+		super("quickbi-public", "2022-01-01", "ListDataSource", "2.2.0");
+		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
 
-	public Long getRoleId() {
-		return this.roleId;
+	public String getDsType() {
+		return this.dsType;
 	}
 
-	public void setRoleId(Long roleId) {
-		this.roleId = roleId;
-		if(roleId != null){
-			putQueryParameter("RoleId", roleId.toString());
-		}
-	}
-
-	public String getUserId() {
-		return this.userId;
-	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putQueryParameter("UserId", userId);
-		}
-	}
-
-	public String getRoleIds() {
-		return this.roleIds;
-	}
-
-	public void setRoleIds(String roleIds) {
-		this.roleIds = roleIds;
-		if(roleIds != null){
-			putQueryParameter("RoleIds", roleIds);
+	public void setDsType(String dsType) {
+		this.dsType = dsType;
+		if(dsType != null){
+			putQueryParameter("DsType", dsType);
 		}
 	}
 
@@ -81,8 +57,8 @@ public class UpdateWorkspaceUserRoleRequest extends RpcAcsRequest<UpdateWorkspac
 	}
 
 	@Override
-	public Class<UpdateWorkspaceUserRoleResponse> getResponseClass() {
-		return UpdateWorkspaceUserRoleResponse.class;
+	public Class<ListDataSourceResponse> getResponseClass() {
+		return ListDataSourceResponse.class;
 	}
 
 }

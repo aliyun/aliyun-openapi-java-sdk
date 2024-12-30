@@ -37,6 +37,7 @@ public class QueryWorksBloodRelationshipResponseUnmarshaller {
 			item.setComponentName(_ctx.stringValue("QueryWorksBloodRelationshipResponse.Result["+ i +"].ComponentName"));
 			item.setComponentType(_ctx.integerValue("QueryWorksBloodRelationshipResponse.Result["+ i +"].ComponentType"));
 			item.setComponentTypeName(_ctx.stringValue("QueryWorksBloodRelationshipResponse.Result["+ i +"].ComponentTypeName"));
+			item.setComponentTypeCnName(_ctx.stringValue("QueryWorksBloodRelationshipResponse.Result["+ i +"].ComponentTypeCnName"));
 			item.setDatasetId(_ctx.stringValue("QueryWorksBloodRelationshipResponse.Result["+ i +"].DatasetId"));
 
 			List<QueryParam> queryParams = new ArrayList<QueryParam>();
@@ -49,6 +50,7 @@ public class QueryWorksBloodRelationshipResponseUnmarshaller {
 				queryParam.setIsMeasure(_ctx.booleanValue("QueryWorksBloodRelationshipResponse.Result["+ i +"].QueryParams["+ j +"].IsMeasure"));
 				queryParam.setPathId(_ctx.stringValue("QueryWorksBloodRelationshipResponse.Result["+ i +"].QueryParams["+ j +"].PathId"));
 				queryParam.setUid(_ctx.stringValue("QueryWorksBloodRelationshipResponse.Result["+ i +"].QueryParams["+ j +"].Uid"));
+				queryParam.setExpression(_ctx.stringValue("QueryWorksBloodRelationshipResponse.Result["+ i +"].QueryParams["+ j +"].Expression"));
 
 				queryParams.add(queryParam);
 			}

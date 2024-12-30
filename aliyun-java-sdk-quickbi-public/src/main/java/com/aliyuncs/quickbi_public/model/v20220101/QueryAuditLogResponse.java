@@ -71,6 +71,8 @@ public class QueryAuditLogResponse extends AcsResponse {
 
 		private String workspaceId;
 
+		private String targetId;
+
 		public String getGmtCreate() {
 			return this.gmtCreate;
 		}
@@ -125,6 +127,14 @@ public class QueryAuditLogResponse extends AcsResponse {
 
 		public void setWorkspaceId(String workspaceId) {
 			this.workspaceId = workspaceId;
+		}
+
+		public String getTargetId() {
+			return this.targetId;
+		}
+
+		public void setTargetId(String targetId) {
+			this.targetId = targetId;
 		}
 	}
 

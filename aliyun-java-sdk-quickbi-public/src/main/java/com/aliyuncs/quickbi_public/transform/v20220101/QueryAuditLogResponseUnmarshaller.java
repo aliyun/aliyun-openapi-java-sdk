@@ -39,6 +39,7 @@ public class QueryAuditLogResponseUnmarshaller {
 			logApiResultModel.setTargetName(_ctx.stringValue("QueryAuditLogResponse.Result["+ i +"].TargetName"));
 			logApiResultModel.setTargetType(_ctx.stringValue("QueryAuditLogResponse.Result["+ i +"].TargetType"));
 			logApiResultModel.setWorkspaceId(_ctx.stringValue("QueryAuditLogResponse.Result["+ i +"].WorkspaceId"));
+			logApiResultModel.setTargetId(_ctx.stringValue("QueryAuditLogResponse.Result["+ i +"].TargetId"));
 
 			result.add(logApiResultModel);
 		}

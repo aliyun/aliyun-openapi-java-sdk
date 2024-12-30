@@ -26,11 +26,11 @@ public class CancelAuthorizationMenuRequest extends RpcAcsRequest<CancelAuthoriz
 
 	private String dataPortalId;
 
+	private String menuIds;
+
 	private String userGroupIds;
 
 	private String userIds;
-
-	private String menuIds;
 	public CancelAuthorizationMenuRequest() {
 		super("quickbi-public", "2022-01-01", "CancelAuthorizationMenu", "2.2.0");
 		setMethod(MethodType.POST);
@@ -44,6 +44,17 @@ public class CancelAuthorizationMenuRequest extends RpcAcsRequest<CancelAuthoriz
 		this.dataPortalId = dataPortalId;
 		if(dataPortalId != null){
 			putQueryParameter("DataPortalId", dataPortalId);
+		}
+	}
+
+	public String getMenuIds() {
+		return this.menuIds;
+	}
+
+	public void setMenuIds(String menuIds) {
+		this.menuIds = menuIds;
+		if(menuIds != null){
+			putQueryParameter("MenuIds", menuIds);
 		}
 	}
 
@@ -66,17 +77,6 @@ public class CancelAuthorizationMenuRequest extends RpcAcsRequest<CancelAuthoriz
 		this.userIds = userIds;
 		if(userIds != null){
 			putQueryParameter("UserIds", userIds);
-		}
-	}
-
-	public String getMenuIds() {
-		return this.menuIds;
-	}
-
-	public void setMenuIds(String menuIds) {
-		this.menuIds = menuIds;
-		if(menuIds != null){
-			putQueryParameter("MenuIds", menuIds);
 		}
 	}
 

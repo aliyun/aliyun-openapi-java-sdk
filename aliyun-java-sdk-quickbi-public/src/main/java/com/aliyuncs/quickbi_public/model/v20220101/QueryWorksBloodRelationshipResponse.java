@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryWorksBloodRelationshipResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean success;
 
+	private String requestId;
+
 	private List<Item> result;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -45,6 +37,14 @@ public class QueryWorksBloodRelationshipResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<Item> getResult() {
@@ -64,6 +64,8 @@ public class QueryWorksBloodRelationshipResponse extends AcsResponse {
 		private Integer componentType;
 
 		private String componentTypeName;
+
+		private String componentTypeCnName;
 
 		private String datasetId;
 
@@ -101,6 +103,14 @@ public class QueryWorksBloodRelationshipResponse extends AcsResponse {
 			this.componentTypeName = componentTypeName;
 		}
 
+		public String getComponentTypeCnName() {
+			return this.componentTypeCnName;
+		}
+
+		public void setComponentTypeCnName(String componentTypeCnName) {
+			this.componentTypeCnName = componentTypeCnName;
+		}
+
 		public String getDatasetId() {
 			return this.datasetId;
 		}
@@ -132,6 +142,8 @@ public class QueryWorksBloodRelationshipResponse extends AcsResponse {
 			private String pathId;
 
 			private String uid;
+
+			private String expression;
 
 			public String getAreaId() {
 				return this.areaId;
@@ -187,6 +199,14 @@ public class QueryWorksBloodRelationshipResponse extends AcsResponse {
 
 			public void setUid(String uid) {
 				this.uid = uid;
+			}
+
+			public String getExpression() {
+				return this.expression;
+			}
+
+			public void setExpression(String expression) {
+				this.expression = expression;
 			}
 		}
 	}
