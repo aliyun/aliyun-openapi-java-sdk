@@ -1,3 +1,6 @@
+2024-12-30 Version: 1.0.3
+- Dataphin openapi start.
+
 2024-10-11 Version: 1.0.2
 - Dataphin v4.3 openapi.
 
