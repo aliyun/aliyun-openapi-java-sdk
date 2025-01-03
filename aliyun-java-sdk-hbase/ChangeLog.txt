@@ -1,3 +1,6 @@
+2025-01-03 Version: 2.9.11
+- DescribeInstance taskStatus.
+
 2024-07-24 Version: 2.9.10
 - DescribeInstance taskStatus.
 
