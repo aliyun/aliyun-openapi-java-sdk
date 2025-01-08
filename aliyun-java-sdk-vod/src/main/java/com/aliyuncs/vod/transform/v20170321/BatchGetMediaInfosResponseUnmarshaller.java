@@ -23,6 +23,7 @@ import com.aliyuncs.vod.model.v20170321.BatchGetMediaInfosResponse.MediaBasicInf
 import com.aliyuncs.vod.model.v20170321.BatchGetMediaInfosResponse.MediaBasicInfo.MezzanineInfo;
 import com.aliyuncs.vod.model.v20170321.BatchGetMediaInfosResponse.MediaBasicInfo.MezzanineInfo.AudioStream;
 import com.aliyuncs.vod.model.v20170321.BatchGetMediaInfosResponse.MediaBasicInfo.MezzanineInfo.VideoStream;
+import com.aliyuncs.vod.model.v20170321.BatchGetMediaInfosResponse.MediaBasicInfo.PlayInfo;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -148,6 +149,45 @@ public class BatchGetMediaInfosResponseUnmarshaller {
 			}
 			mezzanineInfo.setVideoStreamList(videoStreamList);
 			mediaBasicInfo.setMezzanineInfo(mezzanineInfo);
+
+			List<PlayInfo> playInfoList = new ArrayList<PlayInfo>();
+			for (int j = 0; j < _ctx.lengthValue("BatchGetMediaInfosResponse.MediaInfos["+ i +"].PlayInfoList.Length"); j++) {
+				PlayInfo playInfo = new PlayInfo();
+				playInfo.setCreationTime(_ctx.stringValue("BatchGetMediaInfosResponse.MediaInfos["+ i +"].PlayInfoList["+ j +"].CreationTime"));
+				playInfo.setStatus(_ctx.stringValue("BatchGetMediaInfosResponse.MediaInfos["+ i +"].PlayInfoList["+ j +"].Status"));
+				playInfo.setSpecification(_ctx.stringValue("BatchGetMediaInfosResponse.MediaInfos["+ i +"].PlayInfoList["+ j +"].Specification"));
+				playInfo.setComplexity(_ctx.stringValue("BatchGetMediaInfosResponse.MediaInfos["+ i +"].PlayInfoList["+ j +"].Complexity"));
+				playInfo.setNarrowBandType(_ctx.stringValue("BatchGetMediaInfosResponse.MediaInfos["+ i +"].PlayInfoList["+ j +"].NarrowBandType"));
+				playInfo.setHeight(_ctx.longValue("BatchGetMediaInfosResponse.MediaInfos["+ i +"].PlayInfoList["+ j +"].Height"));
+				playInfo.setBitrate(_ctx.stringValue("BatchGetMediaInfosResponse.MediaInfos["+ i +"].PlayInfoList["+ j +"].Bitrate"));
+				playInfo.setModificationTime(_ctx.stringValue("BatchGetMediaInfosResponse.MediaInfos["+ i +"].PlayInfoList["+ j +"].ModificationTime"));
+				playInfo.setWatermarkId(_ctx.stringValue("BatchGetMediaInfosResponse.MediaInfos["+ i +"].PlayInfoList["+ j +"].WatermarkId"));
+				playInfo.setEncrypt(_ctx.longValue("BatchGetMediaInfosResponse.MediaInfos["+ i +"].PlayInfoList["+ j +"].Encrypt"));
+				playInfo.setDefinition(_ctx.stringValue("BatchGetMediaInfosResponse.MediaInfos["+ i +"].PlayInfoList["+ j +"].Definition"));
+				playInfo.setRand(_ctx.stringValue("BatchGetMediaInfosResponse.MediaInfos["+ i +"].PlayInfoList["+ j +"].Rand"));
+				playInfo.setEncryptType(_ctx.stringValue("BatchGetMediaInfosResponse.MediaInfos["+ i +"].PlayInfoList["+ j +"].EncryptType"));
+				playInfo.setEncryptMode(_ctx.stringValue("BatchGetMediaInfosResponse.MediaInfos["+ i +"].PlayInfoList["+ j +"].EncryptMode"));
+				playInfo.setPreprocessStatus(_ctx.stringValue("BatchGetMediaInfosResponse.MediaInfos["+ i +"].PlayInfoList["+ j +"].PreprocessStatus"));
+				playInfo.setStreamType(_ctx.stringValue("BatchGetMediaInfosResponse.MediaInfos["+ i +"].PlayInfoList["+ j +"].StreamType"));
+				playInfo.setJobId(_ctx.stringValue("BatchGetMediaInfosResponse.MediaInfos["+ i +"].PlayInfoList["+ j +"].JobId"));
+				playInfo.setPlaintext(_ctx.stringValue("BatchGetMediaInfosResponse.MediaInfos["+ i +"].PlayInfoList["+ j +"].Plaintext"));
+				playInfo.setSize(_ctx.longValue("BatchGetMediaInfosResponse.MediaInfos["+ i +"].PlayInfoList["+ j +"].Size"));
+				playInfo.setWidth(_ctx.longValue("BatchGetMediaInfosResponse.MediaInfos["+ i +"].PlayInfoList["+ j +"].Width"));
+				playInfo.setFps(_ctx.stringValue("BatchGetMediaInfosResponse.MediaInfos["+ i +"].PlayInfoList["+ j +"].Fps"));
+				playInfo.setDuration(_ctx.stringValue("BatchGetMediaInfosResponse.MediaInfos["+ i +"].PlayInfoList["+ j +"].Duration"));
+				playInfo.setPlayURL(_ctx.stringValue("BatchGetMediaInfosResponse.MediaInfos["+ i +"].PlayInfoList["+ j +"].PlayURL"));
+				playInfo.setFormat(_ctx.stringValue("BatchGetMediaInfosResponse.MediaInfos["+ i +"].PlayInfoList["+ j +"].Format"));
+				playInfo.setHDRType(_ctx.stringValue("BatchGetMediaInfosResponse.MediaInfos["+ i +"].PlayInfoList["+ j +"].HDRType"));
+				playInfo.setBitDepth(_ctx.integerValue("BatchGetMediaInfosResponse.MediaInfos["+ i +"].PlayInfoList["+ j +"].BitDepth"));
+				playInfo.setJobType(_ctx.integerValue("BatchGetMediaInfosResponse.MediaInfos["+ i +"].PlayInfoList["+ j +"].JobType"));
+				playInfo.setJobExt(_ctx.stringValue("BatchGetMediaInfosResponse.MediaInfos["+ i +"].PlayInfoList["+ j +"].JobExt"));
+				playInfo.setCodecName(_ctx.stringValue("BatchGetMediaInfosResponse.MediaInfos["+ i +"].PlayInfoList["+ j +"].CodecName"));
+				playInfo.setTemplateId(_ctx.stringValue("BatchGetMediaInfosResponse.MediaInfos["+ i +"].PlayInfoList["+ j +"].TemplateId"));
+				playInfo.setTemplateGroupId(_ctx.stringValue("BatchGetMediaInfosResponse.MediaInfos["+ i +"].PlayInfoList["+ j +"].TemplateGroupId"));
+
+				playInfoList.add(playInfo);
+			}
+			mediaBasicInfo.setPlayInfoList(playInfoList);
 
 			mediaInfos.add(mediaBasicInfo);
 		}
