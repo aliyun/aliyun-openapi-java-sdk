@@ -26,6 +26,8 @@ import com.aliyuncs.http.MethodType;
 public class SetApplicationSsoConfigRequest extends RpcAcsRequest<SetApplicationSsoConfigResponse> {
 	   
 
+	private String clientToken;
+
 	private String applicationId;
 
 	private String initLoginUrl;
@@ -41,6 +43,17 @@ public class SetApplicationSsoConfigRequest extends RpcAcsRequest<SetApplication
 		super("Eiam", "2021-12-01", "SetApplicationSsoConfig", "eiam");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
 	}
 
 	public String getApplicationId() {
@@ -170,6 +183,15 @@ public class SetApplicationSsoConfigRequest extends RpcAcsRequest<SetApplication
 				}
 				putQueryParameter("SamlSsoConfig.DefaultRelayState" , samlSsoConfig.getDefaultRelayState());
 				putQueryParameter("SamlSsoConfig.SpEntityId" , samlSsoConfig.getSpEntityId());
+				if (samlSsoConfig.getOptionalRelayStates() != null) {
+					for (int depth1 = 0; depth1 < samlSsoConfig.getOptionalRelayStates().size(); depth1++) {
+						if (samlSsoConfig.getOptionalRelayStates().get(depth1) != null) {
+							
+								putQueryParameter("SamlSsoConfig.OptionalRelayStates." + (depth1 + 1) + ".RelayState" , samlSsoConfig.getOptionalRelayStates().get(depth1).getRelayState());
+								putQueryParameter("SamlSsoConfig.OptionalRelayStates." + (depth1 + 1) + ".DisplayName" , samlSsoConfig.getOptionalRelayStates().get(depth1).getDisplayName());
+						}
+					}
+				}
 				putQueryParameter("SamlSsoConfig.ResponseSigned" , samlSsoConfig.getResponseSigned());
 		}	
 	}
@@ -370,6 +392,8 @@ public class SetApplicationSsoConfigRequest extends RpcAcsRequest<SetApplication
 
 		private String spEntityId;
 
+		private List<OptionalRelayStatesItem> optionalRelayStates;
+
 		private Boolean responseSigned;
 
 		public String getSignatureAlgorithm() {
@@ -444,6 +468,14 @@ public class SetApplicationSsoConfigRequest extends RpcAcsRequest<SetApplication
 			this.spEntityId = spEntityId;
 		}
 
+		public List<OptionalRelayStatesItem> getOptionalRelayStates() {
+			return this.optionalRelayStates;
+		}
+
+		public void setOptionalRelayStates(List<OptionalRelayStatesItem> optionalRelayStates) {
+			this.optionalRelayStates = optionalRelayStates;
+		}
+
 		public Boolean getResponseSigned() {
 			return this.responseSigned;
 		}
@@ -472,6 +504,29 @@ public class SetApplicationSsoConfigRequest extends RpcAcsRequest<SetApplication
 
 			public void setAttributeName(String attributeName) {
 				this.attributeName = attributeName;
+			}
+		}
+
+		public static class OptionalRelayStatesItem {
+
+			private String relayState;
+
+			private String displayName;
+
+			public String getRelayState() {
+				return this.relayState;
+			}
+
+			public void setRelayState(String relayState) {
+				this.relayState = relayState;
+			}
+
+			public String getDisplayName() {
+				return this.displayName;
+			}
+
+			public void setDisplayName(String displayName) {
+				this.displayName = displayName;
 			}
 		}
 	}

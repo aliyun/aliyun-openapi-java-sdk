@@ -41,6 +41,12 @@ public class GetPasswordExpirationConfigurationResponseUnmarshaller {
 			passwordExpirationNotificationChannels.add(_ctx.stringValue("GetPasswordExpirationConfigurationResponse.PasswordExpirationConfiguration.PasswordExpirationNotificationChannels["+ i +"]"));
 		}
 		passwordExpirationConfiguration.setPasswordExpirationNotificationChannels(passwordExpirationNotificationChannels);
+
+		List<String> effectiveAuthenticationSourceIds = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("GetPasswordExpirationConfigurationResponse.PasswordExpirationConfiguration.EffectiveAuthenticationSourceIds.Length"); i++) {
+			effectiveAuthenticationSourceIds.add(_ctx.stringValue("GetPasswordExpirationConfigurationResponse.PasswordExpirationConfiguration.EffectiveAuthenticationSourceIds["+ i +"]"));
+		}
+		passwordExpirationConfiguration.setEffectiveAuthenticationSourceIds(effectiveAuthenticationSourceIds);
 		getPasswordExpirationConfigurationResponse.setPasswordExpirationConfiguration(passwordExpirationConfiguration);
 	 
 	 	return getPasswordExpirationConfigurationResponse;

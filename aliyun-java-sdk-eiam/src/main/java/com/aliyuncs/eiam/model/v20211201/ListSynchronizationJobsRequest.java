@@ -42,6 +42,8 @@ public class ListSynchronizationJobsRequest extends RpcAcsRequest<ListSynchroniz
 
 	private Long endTime;
 
+	private List<Filters> filters;
+
 	private String instanceId;
 
 	private Long maxResults;
@@ -143,6 +145,27 @@ public class ListSynchronizationJobsRequest extends RpcAcsRequest<ListSynchroniz
 		}
 	}
 
+	public List<Filters> getFilters() {
+		return this.filters;
+	}
+
+	public void setFilters(List<Filters> filters) {
+		this.filters = filters;	
+		if (filters != null) {
+			for (int depth1 = 0; depth1 < filters.size(); depth1++) {
+				if (filters.get(depth1) != null) {
+					
+						if (filters.get(depth1).getValues() != null) {
+							for (int depth2 = 0; depth2 < filters.get(depth1).getValues().size(); depth2++) {
+								putQueryParameter("Filters." + (depth1 + 1) + ".Values." + (depth2 + 1) , filters.get(depth1).getValues().get(depth2));
+							}
+						}
+						putQueryParameter("Filters." + (depth1 + 1) + ".Key" , filters.get(depth1).getKey());
+				}
+			}
+		}	
+	}
+
 	public String getInstanceId() {
 		return this.instanceId;
 	}
@@ -173,6 +196,29 @@ public class ListSynchronizationJobsRequest extends RpcAcsRequest<ListSynchroniz
 		this.status = status;
 		if(status != null){
 			putQueryParameter("Status", status);
+		}
+	}
+
+	public static class Filters {
+
+		private List<String> values;
+
+		private String key;
+
+		public List<String> getValues() {
+			return this.values;
+		}
+
+		public void setValues(List<String> values) {
+			this.values = values;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

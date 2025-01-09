@@ -83,6 +83,8 @@ public class ListSynchronizationJobsResponse extends AcsResponse {
 
 		private String status;
 
+		private String description;
+
 		private Result result;
 
 		public String getSynchronizationJobId() {
@@ -147,6 +149,14 @@ public class ListSynchronizationJobsResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public Result getResult() {
@@ -233,6 +243,8 @@ public class ListSynchronizationJobsResponse extends AcsResponse {
 
 				private Pushed pushed;
 
+				private Exported exported;
+
 				public Created getCreated() {
 					return this.created;
 				}
@@ -279,6 +291,14 @@ public class ListSynchronizationJobsResponse extends AcsResponse {
 
 				public void setPushed(Pushed pushed) {
 					this.pushed = pushed;
+				}
+
+				public Exported getExported() {
+					return this.exported;
+				}
+
+				public void setExported(Exported exported) {
+					this.exported = exported;
 				}
 
 				public static class Created {
@@ -497,6 +517,49 @@ public class ListSynchronizationJobsResponse extends AcsResponse {
 				}
 
 				public static class Pushed {
+
+					private Long total;
+
+					private Long success;
+
+					private Long failed;
+
+					private Long skipped;
+
+					public Long getTotal() {
+						return this.total;
+					}
+
+					public void setTotal(Long total) {
+						this.total = total;
+					}
+
+					public Long getSuccess() {
+						return this.success;
+					}
+
+					public void setSuccess(Long success) {
+						this.success = success;
+					}
+
+					public Long getFailed() {
+						return this.failed;
+					}
+
+					public void setFailed(Long failed) {
+						this.failed = failed;
+					}
+
+					public Long getSkipped() {
+						return this.skipped;
+					}
+
+					public void setSkipped(Long skipped) {
+						this.skipped = skipped;
+					}
+				}
+
+				public static class Exported {
 
 					private Long total;
 

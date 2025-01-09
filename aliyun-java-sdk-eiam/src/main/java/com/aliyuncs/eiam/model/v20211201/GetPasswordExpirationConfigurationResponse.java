@@ -61,6 +61,8 @@ public class GetPasswordExpirationConfigurationResponse extends AcsResponse {
 
 		private List<String> passwordExpirationNotificationChannels;
 
+		private List<String> effectiveAuthenticationSourceIds;
+
 		public String getPasswordExpirationStatus() {
 			return this.passwordExpirationStatus;
 		}
@@ -115,6 +117,14 @@ public class GetPasswordExpirationConfigurationResponse extends AcsResponse {
 
 		public void setPasswordExpirationNotificationChannels(List<String> passwordExpirationNotificationChannels) {
 			this.passwordExpirationNotificationChannels = passwordExpirationNotificationChannels;
+		}
+
+		public List<String> getEffectiveAuthenticationSourceIds() {
+			return this.effectiveAuthenticationSourceIds;
+		}
+
+		public void setEffectiveAuthenticationSourceIds(List<String> effectiveAuthenticationSourceIds) {
+			this.effectiveAuthenticationSourceIds = effectiveAuthenticationSourceIds;
 		}
 	}
 

@@ -45,6 +45,7 @@ import com.aliyuncs.eiam.model.v20211201.ListSynchronizationJobsResponse.Synchro
 import com.aliyuncs.eiam.model.v20211201.ListSynchronizationJobsResponse.SynchronizationJob.Result.UserStatistics.Binded;
 import com.aliyuncs.eiam.model.v20211201.ListSynchronizationJobsResponse.SynchronizationJob.Result.UserStatistics.Created;
 import com.aliyuncs.eiam.model.v20211201.ListSynchronizationJobsResponse.SynchronizationJob.Result.UserStatistics.Deleted;
+import com.aliyuncs.eiam.model.v20211201.ListSynchronizationJobsResponse.SynchronizationJob.Result.UserStatistics.Exported;
 import com.aliyuncs.eiam.model.v20211201.ListSynchronizationJobsResponse.SynchronizationJob.Result.UserStatistics.Pushed;
 import com.aliyuncs.eiam.model.v20211201.ListSynchronizationJobsResponse.SynchronizationJob.Result.UserStatistics.Same;
 import com.aliyuncs.eiam.model.v20211201.ListSynchronizationJobsResponse.SynchronizationJob.Result.UserStatistics.Updated;
@@ -70,6 +71,7 @@ public class ListSynchronizationJobsResponseUnmarshaller {
 			synchronizationJob.setEndTime(_ctx.longValue("ListSynchronizationJobsResponse.SynchronizationJobs["+ i +"].EndTime"));
 			synchronizationJob.setTriggerType(_ctx.stringValue("ListSynchronizationJobsResponse.SynchronizationJobs["+ i +"].TriggerType"));
 			synchronizationJob.setStatus(_ctx.stringValue("ListSynchronizationJobsResponse.SynchronizationJobs["+ i +"].Status"));
+			synchronizationJob.setDescription(_ctx.stringValue("ListSynchronizationJobsResponse.SynchronizationJobs["+ i +"].Description"));
 
 			Result result = new Result();
 			result.setErrorMessage(_ctx.stringValue("ListSynchronizationJobsResponse.SynchronizationJobs["+ i +"].Result.ErrorMessage"));
@@ -118,6 +120,13 @@ public class ListSynchronizationJobsResponseUnmarshaller {
 			pushed.setFailed(_ctx.longValue("ListSynchronizationJobsResponse.SynchronizationJobs["+ i +"].Result.UserStatistics.Pushed.Failed"));
 			pushed.setSkipped(_ctx.longValue("ListSynchronizationJobsResponse.SynchronizationJobs["+ i +"].Result.UserStatistics.Pushed.Skipped"));
 			userStatistics.setPushed(pushed);
+
+			Exported exported = new Exported();
+			exported.setTotal(_ctx.longValue("ListSynchronizationJobsResponse.SynchronizationJobs["+ i +"].Result.UserStatistics.Exported.Total"));
+			exported.setSuccess(_ctx.longValue("ListSynchronizationJobsResponse.SynchronizationJobs["+ i +"].Result.UserStatistics.Exported.Success"));
+			exported.setFailed(_ctx.longValue("ListSynchronizationJobsResponse.SynchronizationJobs["+ i +"].Result.UserStatistics.Exported.Failed"));
+			exported.setSkipped(_ctx.longValue("ListSynchronizationJobsResponse.SynchronizationJobs["+ i +"].Result.UserStatistics.Exported.Skipped"));
+			userStatistics.setExported(exported);
 			result.setUserStatistics(userStatistics);
 
 			OrganizationalUnitStatistics organizationalUnitStatistics = new OrganizationalUnitStatistics();

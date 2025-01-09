@@ -28,6 +28,8 @@ public class SetPasswordExpirationConfigurationRequest extends RpcAcsRequest<Set
 
 	private Integer passwordForcedUpdateDuration;
 
+	private List<String> effectiveAuthenticationSourceIds;
+
 	private Integer passwordExpirationNotificationDuration;
 
 	private String passwordExpirationStatus;
@@ -56,6 +58,19 @@ public class SetPasswordExpirationConfigurationRequest extends RpcAcsRequest<Set
 		if(passwordForcedUpdateDuration != null){
 			putQueryParameter("PasswordForcedUpdateDuration", passwordForcedUpdateDuration.toString());
 		}
+	}
+
+	public List<String> getEffectiveAuthenticationSourceIds() {
+		return this.effectiveAuthenticationSourceIds;
+	}
+
+	public void setEffectiveAuthenticationSourceIds(List<String> effectiveAuthenticationSourceIds) {
+		this.effectiveAuthenticationSourceIds = effectiveAuthenticationSourceIds;	
+		if (effectiveAuthenticationSourceIds != null) {
+			for (int depth1 = 0; depth1 < effectiveAuthenticationSourceIds.size(); depth1++) {
+				putQueryParameter("EffectiveAuthenticationSourceIds." + (depth1 + 1) , effectiveAuthenticationSourceIds.get(depth1));
+			}
+		}	
 	}
 
 	public Integer getPasswordExpirationNotificationDuration() {

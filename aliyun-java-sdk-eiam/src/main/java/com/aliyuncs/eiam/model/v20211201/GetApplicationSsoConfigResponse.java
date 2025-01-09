@@ -129,6 +129,8 @@ public class GetApplicationSsoConfigResponse extends AcsResponse {
 
 			private List<AttributeStatement> attributeStatements;
 
+			private List<OptionalRelayStatesItem> optionalRelayStates;
+
 			public String getSpSsoAcsUrl() {
 				return this.spSsoAcsUrl;
 			}
@@ -209,6 +211,14 @@ public class GetApplicationSsoConfigResponse extends AcsResponse {
 				this.attributeStatements = attributeStatements;
 			}
 
+			public List<OptionalRelayStatesItem> getOptionalRelayStates() {
+				return this.optionalRelayStates;
+			}
+
+			public void setOptionalRelayStates(List<OptionalRelayStatesItem> optionalRelayStates) {
+				this.optionalRelayStates = optionalRelayStates;
+			}
+
 			public static class AttributeStatement {
 
 				private String attributeName;
@@ -229,6 +239,29 @@ public class GetApplicationSsoConfigResponse extends AcsResponse {
 
 				public void setAttributeValueExpression(String attributeValueExpression) {
 					this.attributeValueExpression = attributeValueExpression;
+				}
+			}
+
+			public static class OptionalRelayStatesItem {
+
+				private String relayState;
+
+				private String displayName;
+
+				public String getRelayState() {
+					return this.relayState;
+				}
+
+				public void setRelayState(String relayState) {
+					this.relayState = relayState;
+				}
+
+				public String getDisplayName() {
+					return this.displayName;
+				}
+
+				public void setDisplayName(String displayName) {
+					this.displayName = displayName;
 				}
 			}
 		}

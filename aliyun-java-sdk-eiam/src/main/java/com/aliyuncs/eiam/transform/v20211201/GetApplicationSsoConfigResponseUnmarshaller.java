@@ -24,6 +24,7 @@ import com.aliyuncs.eiam.model.v20211201.GetApplicationSsoConfigResponse.Applica
 import com.aliyuncs.eiam.model.v20211201.GetApplicationSsoConfigResponse.ApplicationSsoConfig.ProtocolEndpointDomain;
 import com.aliyuncs.eiam.model.v20211201.GetApplicationSsoConfigResponse.ApplicationSsoConfig.SamlSsoConfig;
 import com.aliyuncs.eiam.model.v20211201.GetApplicationSsoConfigResponse.ApplicationSsoConfig.SamlSsoConfig.AttributeStatement;
+import com.aliyuncs.eiam.model.v20211201.GetApplicationSsoConfigResponse.ApplicationSsoConfig.SamlSsoConfig.OptionalRelayStatesItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -58,6 +59,16 @@ public class GetApplicationSsoConfigResponseUnmarshaller {
 			attributeStatements.add(attributeStatement);
 		}
 		samlSsoConfig.setAttributeStatements(attributeStatements);
+
+		List<OptionalRelayStatesItem> optionalRelayStates = new ArrayList<OptionalRelayStatesItem>();
+		for (int i = 0; i < _ctx.lengthValue("GetApplicationSsoConfigResponse.ApplicationSsoConfig.SamlSsoConfig.OptionalRelayStates.Length"); i++) {
+			OptionalRelayStatesItem optionalRelayStatesItem = new OptionalRelayStatesItem();
+			optionalRelayStatesItem.setRelayState(_ctx.stringValue("GetApplicationSsoConfigResponse.ApplicationSsoConfig.SamlSsoConfig.OptionalRelayStates["+ i +"].RelayState"));
+			optionalRelayStatesItem.setDisplayName(_ctx.stringValue("GetApplicationSsoConfigResponse.ApplicationSsoConfig.SamlSsoConfig.OptionalRelayStates["+ i +"].DisplayName"));
+
+			optionalRelayStates.add(optionalRelayStatesItem);
+		}
+		samlSsoConfig.setOptionalRelayStates(optionalRelayStates);
 		applicationSsoConfig.setSamlSsoConfig(samlSsoConfig);
 
 		OidcSsoConfig oidcSsoConfig = new OidcSsoConfig();
