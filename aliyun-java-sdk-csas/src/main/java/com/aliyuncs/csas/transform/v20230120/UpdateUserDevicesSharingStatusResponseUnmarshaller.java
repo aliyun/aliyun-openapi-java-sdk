@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.csas.model.v20230120.UpdateUserDevicesSharingStatusResponse;
 import com.aliyuncs.csas.model.v20230120.UpdateUserDevicesSharingStatusResponse.Data;
+import com.aliyuncs.csas.model.v20230120.UpdateUserDevicesSharingStatusResponse.Data.NetInterfaceInfoItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -56,6 +57,16 @@ public class UpdateUserDevicesSharingStatusResponseUnmarshaller {
 			data.setNacStatus(_ctx.stringValue("UpdateUserDevicesSharingStatusResponse.Devices["+ i +"].NacStatus"));
 			data.setCreateTime(_ctx.stringValue("UpdateUserDevicesSharingStatusResponse.Devices["+ i +"].CreateTime"));
 			data.setUpdateTime(_ctx.stringValue("UpdateUserDevicesSharingStatusResponse.Devices["+ i +"].UpdateTime"));
+
+			List<NetInterfaceInfoItem> netInterfaceInfo = new ArrayList<NetInterfaceInfoItem>();
+			for (int j = 0; j < _ctx.lengthValue("UpdateUserDevicesSharingStatusResponse.Devices["+ i +"].NetInterfaceInfo.Length"); j++) {
+				NetInterfaceInfoItem netInterfaceInfoItem = new NetInterfaceInfoItem();
+				netInterfaceInfoItem.setName(_ctx.stringValue("UpdateUserDevicesSharingStatusResponse.Devices["+ i +"].NetInterfaceInfo["+ j +"].Name"));
+				netInterfaceInfoItem.setMac(_ctx.stringValue("UpdateUserDevicesSharingStatusResponse.Devices["+ i +"].NetInterfaceInfo["+ j +"].Mac"));
+
+				netInterfaceInfo.add(netInterfaceInfoItem);
+			}
+			data.setNetInterfaceInfo(netInterfaceInfo);
 
 			devices.add(data);
 		}

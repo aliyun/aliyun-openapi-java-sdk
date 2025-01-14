@@ -99,6 +99,8 @@ public class GetUserDeviceResponse extends AcsResponse {
 
 		private List<HistoryUsersItem> historyUsers;
 
+		private List<NetInterfaceInfoItem> netInterfaceInfo;
+
 		public String getDeviceTag() {
 			return this.deviceTag;
 		}
@@ -307,6 +309,14 @@ public class GetUserDeviceResponse extends AcsResponse {
 			this.historyUsers = historyUsers;
 		}
 
+		public List<NetInterfaceInfoItem> getNetInterfaceInfo() {
+			return this.netInterfaceInfo;
+		}
+
+		public void setNetInterfaceInfo(List<NetInterfaceInfoItem> netInterfaceInfo) {
+			this.netInterfaceInfo = netInterfaceInfo;
+		}
+
 		public static class HistoryUsersItem {
 
 			private String username;
@@ -327,6 +337,29 @@ public class GetUserDeviceResponse extends AcsResponse {
 
 			public void setSaseUserId(String saseUserId) {
 				this.saseUserId = saseUserId;
+			}
+		}
+
+		public static class NetInterfaceInfoItem {
+
+			private String name;
+
+			private String mac;
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getMac() {
+				return this.mac;
+			}
+
+			public void setMac(String mac) {
+				this.mac = mac;
 			}
 		}
 	}

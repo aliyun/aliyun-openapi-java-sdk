@@ -97,6 +97,8 @@ public class UpdateUserDevicesSharingStatusResponse extends AcsResponse {
 
 		private String updateTime;
 
+		private List<NetInterfaceInfoItem> netInterfaceInfo;
+
 		public String getDeviceTag() {
 			return this.deviceTag;
 		}
@@ -295,6 +297,37 @@ public class UpdateUserDevicesSharingStatusResponse extends AcsResponse {
 
 		public void setUpdateTime(String updateTime) {
 			this.updateTime = updateTime;
+		}
+
+		public List<NetInterfaceInfoItem> getNetInterfaceInfo() {
+			return this.netInterfaceInfo;
+		}
+
+		public void setNetInterfaceInfo(List<NetInterfaceInfoItem> netInterfaceInfo) {
+			this.netInterfaceInfo = netInterfaceInfo;
+		}
+
+		public static class NetInterfaceInfoItem {
+
+			private String name;
+
+			private String mac;
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getMac() {
+				return this.mac;
+			}
+
+			public void setMac(String mac) {
+				this.mac = mac;
+			}
 		}
 	}
 

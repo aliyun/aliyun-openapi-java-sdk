@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.csas.model.v20230120.UpdateUserDevicesStatusResponse;
 import com.aliyuncs.csas.model.v20230120.UpdateUserDevicesStatusResponse.Data;
+import com.aliyuncs.csas.model.v20230120.UpdateUserDevicesStatusResponse.Data.NetInterfaceInfoItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -56,6 +57,16 @@ public class UpdateUserDevicesStatusResponseUnmarshaller {
 			data.setNacStatus(_ctx.stringValue("UpdateUserDevicesStatusResponse.Devices["+ i +"].NacStatus"));
 			data.setCreateTime(_ctx.stringValue("UpdateUserDevicesStatusResponse.Devices["+ i +"].CreateTime"));
 			data.setUpdateTime(_ctx.stringValue("UpdateUserDevicesStatusResponse.Devices["+ i +"].UpdateTime"));
+
+			List<NetInterfaceInfoItem> netInterfaceInfo = new ArrayList<NetInterfaceInfoItem>();
+			for (int j = 0; j < _ctx.lengthValue("UpdateUserDevicesStatusResponse.Devices["+ i +"].NetInterfaceInfo.Length"); j++) {
+				NetInterfaceInfoItem netInterfaceInfoItem = new NetInterfaceInfoItem();
+				netInterfaceInfoItem.setName(_ctx.stringValue("UpdateUserDevicesStatusResponse.Devices["+ i +"].NetInterfaceInfo["+ j +"].Name"));
+				netInterfaceInfoItem.setMac(_ctx.stringValue("UpdateUserDevicesStatusResponse.Devices["+ i +"].NetInterfaceInfo["+ j +"].Mac"));
+
+				netInterfaceInfo.add(netInterfaceInfoItem);
+			}
+			data.setNetInterfaceInfo(netInterfaceInfo);
 
 			devices.add(data);
 		}

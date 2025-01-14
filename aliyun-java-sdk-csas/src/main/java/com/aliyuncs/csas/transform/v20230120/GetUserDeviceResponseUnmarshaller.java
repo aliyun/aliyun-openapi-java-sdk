@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.csas.model.v20230120.GetUserDeviceResponse;
 import com.aliyuncs.csas.model.v20230120.GetUserDeviceResponse.Device;
 import com.aliyuncs.csas.model.v20230120.GetUserDeviceResponse.Device.HistoryUsersItem;
+import com.aliyuncs.csas.model.v20230120.GetUserDeviceResponse.Device.NetInterfaceInfoItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -65,6 +66,16 @@ public class GetUserDeviceResponseUnmarshaller {
 			historyUsers.add(historyUsersItem);
 		}
 		device.setHistoryUsers(historyUsers);
+
+		List<NetInterfaceInfoItem> netInterfaceInfo = new ArrayList<NetInterfaceInfoItem>();
+		for (int i = 0; i < _ctx.lengthValue("GetUserDeviceResponse.Device.NetInterfaceInfo.Length"); i++) {
+			NetInterfaceInfoItem netInterfaceInfoItem = new NetInterfaceInfoItem();
+			netInterfaceInfoItem.setName(_ctx.stringValue("GetUserDeviceResponse.Device.NetInterfaceInfo["+ i +"].Name"));
+			netInterfaceInfoItem.setMac(_ctx.stringValue("GetUserDeviceResponse.Device.NetInterfaceInfo["+ i +"].Mac"));
+
+			netInterfaceInfo.add(netInterfaceInfoItem);
+		}
+		device.setNetInterfaceInfo(netInterfaceInfo);
 		getUserDeviceResponse.setDevice(device);
 	 
 	 	return getUserDeviceResponse;
