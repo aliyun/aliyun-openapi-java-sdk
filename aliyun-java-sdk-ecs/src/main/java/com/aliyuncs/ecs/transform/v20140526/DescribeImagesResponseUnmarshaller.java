@@ -88,6 +88,10 @@ public class DescribeImagesResponseUnmarshaller {
 			Features features = new Features();
 			features.setNvmeSupport(_ctx.stringValue("DescribeImagesResponse.Images["+ i +"].Features.NvmeSupport"));
 			features.setImdsSupport(_ctx.stringValue("DescribeImagesResponse.Images["+ i +"].Features.ImdsSupport"));
+			features.setCpuOnlineUpgrade(_ctx.stringValue("DescribeImagesResponse.Images["+ i +"].Features.CpuOnlineUpgrade"));
+			features.setCpuOnlineDowngrade(_ctx.stringValue("DescribeImagesResponse.Images["+ i +"].Features.CpuOnlineDowngrade"));
+			features.setMemoryOnlineUpgrade(_ctx.stringValue("DescribeImagesResponse.Images["+ i +"].Features.MemoryOnlineUpgrade"));
+			features.setMemoryOnlineDowngrade(_ctx.stringValue("DescribeImagesResponse.Images["+ i +"].Features.MemoryOnlineDowngrade"));
 			image.setFeatures(features);
 
 			List<DiskDeviceMapping> diskDeviceMappings = new ArrayList<DiskDeviceMapping>();
@@ -102,7 +106,7 @@ public class DescribeImagesResponseUnmarshaller {
 				diskDeviceMapping.setSize(_ctx.stringValue("DescribeImagesResponse.Images["+ i +"].DiskDeviceMappings["+ j +"].Size"));
 				diskDeviceMapping.setRemainTime(_ctx.integerValue("DescribeImagesResponse.Images["+ i +"].DiskDeviceMappings["+ j +"].RemainTime"));
 				diskDeviceMapping.setFormat(_ctx.stringValue("DescribeImagesResponse.Images["+ i +"].DiskDeviceMappings["+ j +"].Format"));
-				diskDeviceMapping.setEncrypted(_ctx.stringValue("DescribeImagesResponse.Images["+ i +"].DiskDeviceMappings["+ j +"].Encrypted"));
+				diskDeviceMapping.setEncrypted(_ctx.booleanValue("DescribeImagesResponse.Images["+ i +"].DiskDeviceMappings["+ j +"].Encrypted"));
 
 				diskDeviceMappings.add(diskDeviceMapping);
 			}

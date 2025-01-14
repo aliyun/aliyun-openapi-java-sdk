@@ -34,6 +34,8 @@ public class ModifyInstanceAttributeRequest extends RpcAcsRequest<ModifyInstance
 
 	private String description;
 
+	private Integer cpuOptionsThreadsPerCore;
+
 	private Boolean deletionProtection;
 
 	private String userData;
@@ -47,6 +49,8 @@ public class ModifyInstanceAttributeRequest extends RpcAcsRequest<ModifyInstance
 	private String cpuOptionsTopologyType;
 
 	private Boolean enableJumboFrame;
+
+	private Integer cpuOptionsCore;
 
 	private String resourceOwnerAccount;
 
@@ -113,6 +117,17 @@ public class ModifyInstanceAttributeRequest extends RpcAcsRequest<ModifyInstance
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public Integer getCpuOptionsThreadsPerCore() {
+		return this.cpuOptionsThreadsPerCore;
+	}
+
+	public void setCpuOptionsThreadsPerCore(Integer cpuOptionsThreadsPerCore) {
+		this.cpuOptionsThreadsPerCore = cpuOptionsThreadsPerCore;
+		if(cpuOptionsThreadsPerCore != null){
+			putQueryParameter("CpuOptions.ThreadsPerCore", cpuOptionsThreadsPerCore.toString());
 		}
 	}
 
@@ -195,6 +210,17 @@ public class ModifyInstanceAttributeRequest extends RpcAcsRequest<ModifyInstance
 		this.enableJumboFrame = enableJumboFrame;
 		if(enableJumboFrame != null){
 			putQueryParameter("EnableJumboFrame", enableJumboFrame.toString());
+		}
+	}
+
+	public Integer getCpuOptionsCore() {
+		return this.cpuOptionsCore;
+	}
+
+	public void setCpuOptionsCore(Integer cpuOptionsCore) {
+		this.cpuOptionsCore = cpuOptionsCore;
+		if(cpuOptionsCore != null){
+			putQueryParameter("CpuOptions.Core", cpuOptionsCore.toString());
 		}
 	}
 

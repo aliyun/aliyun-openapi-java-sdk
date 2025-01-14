@@ -27,6 +27,8 @@ public class ModifyDiskSpecRequest extends RpcAcsRequest<ModifyDiskSpecResponse>
 
 	private Long resourceOwnerId;
 
+	private String destinationZoneId;
+
 	private String diskCategory;
 
 	private String diskId;
@@ -61,6 +63,17 @@ public class ModifyDiskSpecRequest extends RpcAcsRequest<ModifyDiskSpecResponse>
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getDestinationZoneId() {
+		return this.destinationZoneId;
+	}
+
+	public void setDestinationZoneId(String destinationZoneId) {
+		this.destinationZoneId = destinationZoneId;
+		if(destinationZoneId != null){
+			putQueryParameter("DestinationZoneId", destinationZoneId);
 		}
 	}
 

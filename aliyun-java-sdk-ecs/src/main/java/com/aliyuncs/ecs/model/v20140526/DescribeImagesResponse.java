@@ -427,7 +427,7 @@ public class DescribeImagesResponse extends AcsResponse {
 
 			private String format;
 
-			private String encrypted;
+			private Boolean encrypted;
 
 			public String getType() {
 				return this.type;
@@ -501,11 +501,11 @@ public class DescribeImagesResponse extends AcsResponse {
 				this.format = format;
 			}
 
-			public String getEncrypted() {
+			public Boolean getEncrypted() {
 				return this.encrypted;
 			}
 
-			public void setEncrypted(String encrypted) {
+			public void setEncrypted(Boolean encrypted) {
 				this.encrypted = encrypted;
 			}
 		}
@@ -605,6 +605,14 @@ public class DescribeImagesResponse extends AcsResponse {
 
 			private String imdsSupport;
 
+			private String cpuOnlineUpgrade;
+
+			private String cpuOnlineDowngrade;
+
+			private String memoryOnlineUpgrade;
+
+			private String memoryOnlineDowngrade;
+
 			public String getNvmeSupport() {
 				return this.nvmeSupport;
 			}
@@ -619,6 +627,38 @@ public class DescribeImagesResponse extends AcsResponse {
 
 			public void setImdsSupport(String imdsSupport) {
 				this.imdsSupport = imdsSupport;
+			}
+
+			public String getCpuOnlineUpgrade() {
+				return this.cpuOnlineUpgrade;
+			}
+
+			public void setCpuOnlineUpgrade(String cpuOnlineUpgrade) {
+				this.cpuOnlineUpgrade = cpuOnlineUpgrade;
+			}
+
+			public String getCpuOnlineDowngrade() {
+				return this.cpuOnlineDowngrade;
+			}
+
+			public void setCpuOnlineDowngrade(String cpuOnlineDowngrade) {
+				this.cpuOnlineDowngrade = cpuOnlineDowngrade;
+			}
+
+			public String getMemoryOnlineUpgrade() {
+				return this.memoryOnlineUpgrade;
+			}
+
+			public void setMemoryOnlineUpgrade(String memoryOnlineUpgrade) {
+				this.memoryOnlineUpgrade = memoryOnlineUpgrade;
+			}
+
+			public String getMemoryOnlineDowngrade() {
+				return this.memoryOnlineDowngrade;
+			}
+
+			public void setMemoryOnlineDowngrade(String memoryOnlineDowngrade) {
+				this.memoryOnlineDowngrade = memoryOnlineDowngrade;
 			}
 		}
 	}

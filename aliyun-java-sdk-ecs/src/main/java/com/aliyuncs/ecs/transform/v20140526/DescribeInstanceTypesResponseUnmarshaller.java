@@ -83,6 +83,7 @@ public class DescribeInstanceTypesResponseUnmarshaller {
 			EnhancedNetwork enhancedNetwork = new EnhancedNetwork();
 			enhancedNetwork.setSriovSupport(_ctx.booleanValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].EnhancedNetwork.SriovSupport"));
 			enhancedNetwork.setVfQueueNumberPerEni(_ctx.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].EnhancedNetwork.VfQueueNumberPerEni"));
+			enhancedNetwork.setRssSupport(_ctx.booleanValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].EnhancedNetwork.RssSupport"));
 			instanceType.setEnhancedNetwork(enhancedNetwork);
 
 			CpuOptions cpuOptions = new CpuOptions();

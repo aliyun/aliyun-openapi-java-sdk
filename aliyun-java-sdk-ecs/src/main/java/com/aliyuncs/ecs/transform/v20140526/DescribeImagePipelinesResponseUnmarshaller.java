@@ -19,6 +19,10 @@ import java.util.List;
 
 import com.aliyuncs.ecs.model.v20140526.DescribeImagePipelinesResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeImagePipelinesResponse.ImagePipelineSet;
+import com.aliyuncs.ecs.model.v20140526.DescribeImagePipelinesResponse.ImagePipelineSet.AdvancedOptions;
+import com.aliyuncs.ecs.model.v20140526.DescribeImagePipelinesResponse.ImagePipelineSet.ImportImageOptions;
+import com.aliyuncs.ecs.model.v20140526.DescribeImagePipelinesResponse.ImagePipelineSet.ImportImageOptions.DiskDeviceMapping;
+import com.aliyuncs.ecs.model.v20140526.DescribeImagePipelinesResponse.ImagePipelineSet.ImportImageOptions.Features;
 import com.aliyuncs.ecs.model.v20140526.DescribeImagePipelinesResponse.ImagePipelineSet.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -52,6 +56,7 @@ public class DescribeImagePipelinesResponseUnmarshaller {
 			imagePipelineSet.setRepairMode(_ctx.stringValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].RepairMode"));
 			imagePipelineSet.setTestContent(_ctx.stringValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].TestContent"));
 			imagePipelineSet.setImageFamily(_ctx.stringValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].ImageFamily"));
+			imagePipelineSet.setNvmeSupport(_ctx.stringValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].NvmeSupport"));
 
 			List<String> toRegionIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].ToRegionIds.Length"); j++) {
@@ -64,6 +69,37 @@ public class DescribeImagePipelinesResponseUnmarshaller {
 				addAccounts.add(_ctx.stringValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].AddAccounts["+ j +"]"));
 			}
 			imagePipelineSet.setAddAccounts(addAccounts);
+
+			ImportImageOptions importImageOptions = new ImportImageOptions();
+			importImageOptions.setArchitecture(_ctx.stringValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].ImportImageOptions.Architecture"));
+			importImageOptions.setOSType(_ctx.stringValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].ImportImageOptions.OSType"));
+			importImageOptions.setPlatform(_ctx.stringValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].ImportImageOptions.Platform"));
+			importImageOptions.setBootMode(_ctx.stringValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].ImportImageOptions.BootMode"));
+			importImageOptions.setLicenseType(_ctx.stringValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].ImportImageOptions.LicenseType"));
+			importImageOptions.setRetainImportedImage(_ctx.booleanValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].ImportImageOptions.RetainImportedImage"));
+
+			Features features = new Features();
+			features.setNvmeSupport(_ctx.stringValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].ImportImageOptions.Features.NvmeSupport"));
+			importImageOptions.setFeatures(features);
+
+			List<DiskDeviceMapping> diskDeviceMappings = new ArrayList<DiskDeviceMapping>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].ImportImageOptions.DiskDeviceMappings.Length"); j++) {
+				DiskDeviceMapping diskDeviceMapping = new DiskDeviceMapping();
+				diskDeviceMapping.setOSSBucket(_ctx.stringValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].ImportImageOptions.DiskDeviceMappings["+ j +"].OSSBucket"));
+				diskDeviceMapping.setOSSObject(_ctx.stringValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].ImportImageOptions.DiskDeviceMappings["+ j +"].OSSObject"));
+				diskDeviceMapping.setFormat(_ctx.stringValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].ImportImageOptions.DiskDeviceMappings["+ j +"].Format"));
+				diskDeviceMapping.setDiskImageSize(_ctx.integerValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].ImportImageOptions.DiskDeviceMappings["+ j +"].DiskImageSize"));
+
+				diskDeviceMappings.add(diskDeviceMapping);
+			}
+			importImageOptions.setDiskDeviceMappings(diskDeviceMappings);
+			imagePipelineSet.setImportImageOptions(importImageOptions);
+
+			AdvancedOptions advancedOptions = new AdvancedOptions();
+			advancedOptions.setRetainCloudAssistant(_ctx.booleanValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].AdvancedOptions.RetainCloudAssistant"));
+			advancedOptions.setSkipBuildImage(_ctx.booleanValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].AdvancedOptions.SkipBuildImage"));
+			advancedOptions.setSkipCheckImage(_ctx.booleanValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].AdvancedOptions.SkipCheckImage"));
+			imagePipelineSet.setAdvancedOptions(advancedOptions);
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].Tags.Length"); j++) {

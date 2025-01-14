@@ -496,6 +496,8 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 
 			private Integer vfQueueNumberPerEni;
 
+			private Boolean rssSupport;
+
 			public Boolean getSriovSupport() {
 				return this.sriovSupport;
 			}
@@ -510,6 +512,14 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 
 			public void setVfQueueNumberPerEni(Integer vfQueueNumberPerEni) {
 				this.vfQueueNumberPerEni = vfQueueNumberPerEni;
+			}
+
+			public Boolean getRssSupport() {
+				return this.rssSupport;
+			}
+
+			public void setRssSupport(Boolean rssSupport) {
+				this.rssSupport = rssSupport;
 			}
 		}
 

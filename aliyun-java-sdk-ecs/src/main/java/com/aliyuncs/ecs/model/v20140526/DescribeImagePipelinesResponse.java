@@ -111,11 +111,17 @@ public class DescribeImagePipelinesResponse extends AcsResponse {
 
 		private String imageFamily;
 
+		private String nvmeSupport;
+
 		private List<Tag> tags;
 
 		private List<String> toRegionIds;
 
 		private List<String> addAccounts;
+
+		private ImportImageOptions importImageOptions;
+
+		private AdvancedOptions advancedOptions;
 
 		public String getCreationTime() {
 			return this.creationTime;
@@ -253,6 +259,14 @@ public class DescribeImagePipelinesResponse extends AcsResponse {
 			this.imageFamily = imageFamily;
 		}
 
+		public String getNvmeSupport() {
+			return this.nvmeSupport;
+		}
+
+		public void setNvmeSupport(String nvmeSupport) {
+			this.nvmeSupport = nvmeSupport;
+		}
+
 		public List<Tag> getTags() {
 			return this.tags;
 		}
@@ -277,6 +291,22 @@ public class DescribeImagePipelinesResponse extends AcsResponse {
 			this.addAccounts = addAccounts;
 		}
 
+		public ImportImageOptions getImportImageOptions() {
+			return this.importImageOptions;
+		}
+
+		public void setImportImageOptions(ImportImageOptions importImageOptions) {
+			this.importImageOptions = importImageOptions;
+		}
+
+		public AdvancedOptions getAdvancedOptions() {
+			return this.advancedOptions;
+		}
+
+		public void setAdvancedOptions(AdvancedOptions advancedOptions) {
+			this.advancedOptions = advancedOptions;
+		}
+
 		public static class Tag {
 
 			private String tagValue;
@@ -297,6 +327,178 @@ public class DescribeImagePipelinesResponse extends AcsResponse {
 
 			public void setTagKey(String tagKey) {
 				this.tagKey = tagKey;
+			}
+		}
+
+		public static class ImportImageOptions {
+
+			private String architecture;
+
+			private String oSType;
+
+			private String platform;
+
+			private String bootMode;
+
+			private String licenseType;
+
+			private Boolean retainImportedImage;
+
+			private List<DiskDeviceMapping> diskDeviceMappings;
+
+			private Features features;
+
+			public String getArchitecture() {
+				return this.architecture;
+			}
+
+			public void setArchitecture(String architecture) {
+				this.architecture = architecture;
+			}
+
+			public String getOSType() {
+				return this.oSType;
+			}
+
+			public void setOSType(String oSType) {
+				this.oSType = oSType;
+			}
+
+			public String getPlatform() {
+				return this.platform;
+			}
+
+			public void setPlatform(String platform) {
+				this.platform = platform;
+			}
+
+			public String getBootMode() {
+				return this.bootMode;
+			}
+
+			public void setBootMode(String bootMode) {
+				this.bootMode = bootMode;
+			}
+
+			public String getLicenseType() {
+				return this.licenseType;
+			}
+
+			public void setLicenseType(String licenseType) {
+				this.licenseType = licenseType;
+			}
+
+			public Boolean getRetainImportedImage() {
+				return this.retainImportedImage;
+			}
+
+			public void setRetainImportedImage(Boolean retainImportedImage) {
+				this.retainImportedImage = retainImportedImage;
+			}
+
+			public List<DiskDeviceMapping> getDiskDeviceMappings() {
+				return this.diskDeviceMappings;
+			}
+
+			public void setDiskDeviceMappings(List<DiskDeviceMapping> diskDeviceMappings) {
+				this.diskDeviceMappings = diskDeviceMappings;
+			}
+
+			public Features getFeatures() {
+				return this.features;
+			}
+
+			public void setFeatures(Features features) {
+				this.features = features;
+			}
+
+			public static class DiskDeviceMapping {
+
+				private String oSSBucket;
+
+				private String oSSObject;
+
+				private String format;
+
+				private Integer diskImageSize;
+
+				public String getOSSBucket() {
+					return this.oSSBucket;
+				}
+
+				public void setOSSBucket(String oSSBucket) {
+					this.oSSBucket = oSSBucket;
+				}
+
+				public String getOSSObject() {
+					return this.oSSObject;
+				}
+
+				public void setOSSObject(String oSSObject) {
+					this.oSSObject = oSSObject;
+				}
+
+				public String getFormat() {
+					return this.format;
+				}
+
+				public void setFormat(String format) {
+					this.format = format;
+				}
+
+				public Integer getDiskImageSize() {
+					return this.diskImageSize;
+				}
+
+				public void setDiskImageSize(Integer diskImageSize) {
+					this.diskImageSize = diskImageSize;
+				}
+			}
+
+			public static class Features {
+
+				private String nvmeSupport;
+
+				public String getNvmeSupport() {
+					return this.nvmeSupport;
+				}
+
+				public void setNvmeSupport(String nvmeSupport) {
+					this.nvmeSupport = nvmeSupport;
+				}
+			}
+		}
+
+		public static class AdvancedOptions {
+
+			private Boolean retainCloudAssistant;
+
+			private Boolean skipBuildImage;
+
+			private Boolean skipCheckImage;
+
+			public Boolean getRetainCloudAssistant() {
+				return this.retainCloudAssistant;
+			}
+
+			public void setRetainCloudAssistant(Boolean retainCloudAssistant) {
+				this.retainCloudAssistant = retainCloudAssistant;
+			}
+
+			public Boolean getSkipBuildImage() {
+				return this.skipBuildImage;
+			}
+
+			public void setSkipBuildImage(Boolean skipBuildImage) {
+				this.skipBuildImage = skipBuildImage;
+			}
+
+			public Boolean getSkipCheckImage() {
+				return this.skipCheckImage;
+			}
+
+			public void setSkipCheckImage(Boolean skipCheckImage) {
+				this.skipCheckImage = skipCheckImage;
 			}
 		}
 	}

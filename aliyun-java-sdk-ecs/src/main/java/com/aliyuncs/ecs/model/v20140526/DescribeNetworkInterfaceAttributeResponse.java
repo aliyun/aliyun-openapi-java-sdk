@@ -738,12 +738,22 @@ public class DescribeNetworkInterfaceAttributeResponse extends AcsResponse {
 
 		private Boolean enableSriov;
 
+		private Boolean enableRss;
+
 		public Boolean getEnableSriov() {
 			return this.enableSriov;
 		}
 
 		public void setEnableSriov(Boolean enableSriov) {
 			this.enableSriov = enableSriov;
+		}
+
+		public Boolean getEnableRss() {
+			return this.enableRss;
+		}
+
+		public void setEnableRss(Boolean enableRss) {
+			this.enableRss = enableRss;
 		}
 	}
 
