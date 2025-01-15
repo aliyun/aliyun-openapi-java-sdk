@@ -107,7 +107,13 @@ public class DescribeCloudSiemEventDetailResponse extends AcsResponse {
 
 		private String referAccount;
 
+		private String incidentType;
+
+		private String ruleId;
+
 		private String remark;
+
+		private List<AttckStage> attckStages;
 
 		private List<String> dataSources;
 
@@ -233,12 +239,36 @@ public class DescribeCloudSiemEventDetailResponse extends AcsResponse {
 			this.referAccount = referAccount;
 		}
 
+		public String getIncidentType() {
+			return this.incidentType;
+		}
+
+		public void setIncidentType(String incidentType) {
+			this.incidentType = incidentType;
+		}
+
+		public String getRuleId() {
+			return this.ruleId;
+		}
+
+		public void setRuleId(String ruleId) {
+			this.ruleId = ruleId;
+		}
+
 		public String getRemark() {
 			return this.remark;
 		}
 
 		public void setRemark(String remark) {
 			this.remark = remark;
+		}
+
+		public List<AttckStage> getAttckStages() {
+			return this.attckStages;
+		}
+
+		public void setAttckStages(List<AttckStage> attckStages) {
+			this.attckStages = attckStages;
 		}
 
 		public List<String> getDataSources() {
@@ -255,6 +285,39 @@ public class DescribeCloudSiemEventDetailResponse extends AcsResponse {
 
 		public void setAttCkLabels(List<String> attCkLabels) {
 			this.attCkLabels = attCkLabels;
+		}
+
+		public static class AttckStage {
+
+			private String tacticId;
+
+			private String tacticName;
+
+			private Integer alertNum;
+
+			public String getTacticId() {
+				return this.tacticId;
+			}
+
+			public void setTacticId(String tacticId) {
+				this.tacticId = tacticId;
+			}
+
+			public String getTacticName() {
+				return this.tacticName;
+			}
+
+			public void setTacticName(String tacticName) {
+				this.tacticName = tacticName;
+			}
+
+			public Integer getAlertNum() {
+				return this.alertNum;
+			}
+
+			public void setAlertNum(Integer alertNum) {
+				this.alertNum = alertNum;
+			}
 		}
 	}
 

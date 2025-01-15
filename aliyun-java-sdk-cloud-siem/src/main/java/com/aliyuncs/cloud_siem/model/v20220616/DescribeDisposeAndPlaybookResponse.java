@@ -102,6 +102,8 @@ public class DescribeDisposeAndPlaybookResponse extends AcsResponse {
 
 			private Long entityId;
 
+			private String entityType;
+
 			private Map<Object,Object> opcodeMap;
 
 			private Map<Object,Object> entityInfo;
@@ -122,6 +124,14 @@ public class DescribeDisposeAndPlaybookResponse extends AcsResponse {
 
 			public void setEntityId(Long entityId) {
 				this.entityId = entityId;
+			}
+
+			public String getEntityType() {
+				return this.entityType;
+			}
+
+			public void setEntityType(String entityType) {
+				this.entityType = entityType;
 			}
 
 			public Map<Object,Object> getOpcodeMap() {
@@ -194,7 +204,11 @@ public class DescribeDisposeAndPlaybookResponse extends AcsResponse {
 
 				private String name;
 
+				private String uuid;
+
 				private Boolean wafPlaybook;
+
+				private String available;
 
 				private List<String> paramConfig;
 
@@ -246,12 +260,28 @@ public class DescribeDisposeAndPlaybookResponse extends AcsResponse {
 					this.name = name;
 				}
 
+				public String getUuid() {
+					return this.uuid;
+				}
+
+				public void setUuid(String uuid) {
+					this.uuid = uuid;
+				}
+
 				public Boolean getWafPlaybook() {
 					return this.wafPlaybook;
 				}
 
 				public void setWafPlaybook(Boolean wafPlaybook) {
 					this.wafPlaybook = wafPlaybook;
+				}
+
+				public String getAvailable() {
+					return this.available;
+				}
+
+				public void setAvailable(String available) {
+					this.available = available;
 				}
 
 				public List<String> getParamConfig() {

@@ -52,6 +52,16 @@ public class DescribeProdCountResponse extends AcsResponse {
 
 		private Integer qcloudProdCount;
 
+		private Integer idcProdCount;
+
+		private Integer aliyunImportedCount;
+
+		private Integer hcloudImportedCount;
+
+		private Integer qcloudImportedCount;
+
+		private Integer idcImportedCount;
+
 		public Integer getAliyunProdCount() {
 			return this.aliyunProdCount;
 		}
@@ -74,6 +84,46 @@ public class DescribeProdCountResponse extends AcsResponse {
 
 		public void setQcloudProdCount(Integer qcloudProdCount) {
 			this.qcloudProdCount = qcloudProdCount;
+		}
+
+		public Integer getIdcProdCount() {
+			return this.idcProdCount;
+		}
+
+		public void setIdcProdCount(Integer idcProdCount) {
+			this.idcProdCount = idcProdCount;
+		}
+
+		public Integer getAliyunImportedCount() {
+			return this.aliyunImportedCount;
+		}
+
+		public void setAliyunImportedCount(Integer aliyunImportedCount) {
+			this.aliyunImportedCount = aliyunImportedCount;
+		}
+
+		public Integer getHcloudImportedCount() {
+			return this.hcloudImportedCount;
+		}
+
+		public void setHcloudImportedCount(Integer hcloudImportedCount) {
+			this.hcloudImportedCount = hcloudImportedCount;
+		}
+
+		public Integer getQcloudImportedCount() {
+			return this.qcloudImportedCount;
+		}
+
+		public void setQcloudImportedCount(Integer qcloudImportedCount) {
+			this.qcloudImportedCount = qcloudImportedCount;
+		}
+
+		public Integer getIdcImportedCount() {
+			return this.idcImportedCount;
+		}
+
+		public void setIdcImportedCount(Integer idcImportedCount) {
+			this.idcImportedCount = idcImportedCount;
 		}
 	}
 

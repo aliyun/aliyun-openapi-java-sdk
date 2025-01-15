@@ -153,9 +153,13 @@ public class DescribeAlertsWithEntityResponse extends AcsResponse {
 
 			private String logUuid;
 
+			private String entityList;
+
 			private String attCk;
 
 			private Long subUserId;
+
+			private String subUserName;
 
 			private String cloudCode;
 
@@ -379,6 +383,14 @@ public class DescribeAlertsWithEntityResponse extends AcsResponse {
 				this.logUuid = logUuid;
 			}
 
+			public String getEntityList() {
+				return this.entityList;
+			}
+
+			public void setEntityList(String entityList) {
+				this.entityList = entityList;
+			}
+
 			public String getAttCk() {
 				return this.attCk;
 			}
@@ -393,6 +405,14 @@ public class DescribeAlertsWithEntityResponse extends AcsResponse {
 
 			public void setSubUserId(Long subUserId) {
 				this.subUserId = subUserId;
+			}
+
+			public String getSubUserName() {
+				return this.subUserName;
+			}
+
+			public void setSubUserName(String subUserName) {
+				this.subUserName = subUserName;
 			}
 
 			public String getCloudCode() {

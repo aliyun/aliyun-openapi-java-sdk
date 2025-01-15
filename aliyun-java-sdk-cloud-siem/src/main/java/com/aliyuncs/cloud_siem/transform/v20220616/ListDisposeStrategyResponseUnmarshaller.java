@@ -56,6 +56,7 @@ public class ListDisposeStrategyResponseUnmarshaller {
 			responseDataItem.setPlaybookName(_ctx.stringValue("ListDisposeStrategyResponse.Data.ResponseData["+ i +"].PlaybookName"));
 			responseDataItem.setPlaybookUuid(_ctx.stringValue("ListDisposeStrategyResponse.Data.ResponseData["+ i +"].PlaybookUuid"));
 			responseDataItem.setPlaybookType(_ctx.stringValue("ListDisposeStrategyResponse.Data.ResponseData["+ i +"].PlaybookType"));
+			responseDataItem.setTaskUrl(_ctx.stringValue("ListDisposeStrategyResponse.Data.ResponseData["+ i +"].TaskUrl"));
 			responseDataItem.setEntityId(_ctx.longValue("ListDisposeStrategyResponse.Data.ResponseData["+ i +"].EntityId"));
 			responseDataItem.setEntityType(_ctx.stringValue("ListDisposeStrategyResponse.Data.ResponseData["+ i +"].EntityType"));
 			responseDataItem.setTaskParam(_ctx.stringValue("ListDisposeStrategyResponse.Data.ResponseData["+ i +"].TaskParam"));

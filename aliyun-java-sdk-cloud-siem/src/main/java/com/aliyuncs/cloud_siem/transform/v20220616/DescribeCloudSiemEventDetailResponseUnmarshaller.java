@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.cloud_siem.model.v20220616.DescribeCloudSiemEventDetailResponse;
 import com.aliyuncs.cloud_siem.model.v20220616.DescribeCloudSiemEventDetailResponse.Data;
+import com.aliyuncs.cloud_siem.model.v20220616.DescribeCloudSiemEventDetailResponse.Data.AttckStage;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -47,6 +48,8 @@ public class DescribeCloudSiemEventDetailResponseUnmarshaller {
 		data.setExtContent(_ctx.stringValue("DescribeCloudSiemEventDetailResponse.Data.ExtContent"));
 		data.setStatus(_ctx.integerValue("DescribeCloudSiemEventDetailResponse.Data.Status"));
 		data.setReferAccount(_ctx.stringValue("DescribeCloudSiemEventDetailResponse.Data.ReferAccount"));
+		data.setIncidentType(_ctx.stringValue("DescribeCloudSiemEventDetailResponse.Data.IncidentType"));
+		data.setRuleId(_ctx.stringValue("DescribeCloudSiemEventDetailResponse.Data.RuleId"));
 		data.setRemark(_ctx.stringValue("DescribeCloudSiemEventDetailResponse.Data.Remark"));
 
 		List<String> dataSources = new ArrayList<String>();
@@ -60,6 +63,17 @@ public class DescribeCloudSiemEventDetailResponseUnmarshaller {
 			attCkLabels.add(_ctx.stringValue("DescribeCloudSiemEventDetailResponse.Data.AttCkLabels["+ i +"]"));
 		}
 		data.setAttCkLabels(attCkLabels);
+
+		List<AttckStage> attckStages = new ArrayList<AttckStage>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeCloudSiemEventDetailResponse.Data.AttckStages.Length"); i++) {
+			AttckStage attckStage = new AttckStage();
+			attckStage.setTacticId(_ctx.stringValue("DescribeCloudSiemEventDetailResponse.Data.AttckStages["+ i +"].TacticId"));
+			attckStage.setTacticName(_ctx.stringValue("DescribeCloudSiemEventDetailResponse.Data.AttckStages["+ i +"].TacticName"));
+			attckStage.setAlertNum(_ctx.integerValue("DescribeCloudSiemEventDetailResponse.Data.AttckStages["+ i +"].AlertNum"));
+
+			attckStages.add(attckStage);
+		}
+		data.setAttckStages(attckStages);
 		describeCloudSiemEventDetailResponse.setData(data);
 	 
 	 	return describeCloudSiemEventDetailResponse;

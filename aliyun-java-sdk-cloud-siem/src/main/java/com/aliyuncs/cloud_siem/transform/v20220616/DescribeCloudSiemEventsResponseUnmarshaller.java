@@ -21,6 +21,7 @@ import com.aliyuncs.cloud_siem.model.v20220616.DescribeCloudSiemEventsResponse;
 import com.aliyuncs.cloud_siem.model.v20220616.DescribeCloudSiemEventsResponse.Data;
 import com.aliyuncs.cloud_siem.model.v20220616.DescribeCloudSiemEventsResponse.Data.PageInfo;
 import com.aliyuncs.cloud_siem.model.v20220616.DescribeCloudSiemEventsResponse.Data.ResponseDataItem;
+import com.aliyuncs.cloud_siem.model.v20220616.DescribeCloudSiemEventsResponse.Data.ResponseDataItem.AttckStage;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -59,6 +60,8 @@ public class DescribeCloudSiemEventsResponseUnmarshaller {
 			responseDataItem.setExtContent(_ctx.stringValue("DescribeCloudSiemEventsResponse.Data.ResponseData["+ i +"].ExtContent"));
 			responseDataItem.setStatus(_ctx.integerValue("DescribeCloudSiemEventsResponse.Data.ResponseData["+ i +"].Status"));
 			responseDataItem.setReferAccount(_ctx.stringValue("DescribeCloudSiemEventsResponse.Data.ResponseData["+ i +"].ReferAccount"));
+			responseDataItem.setIncidentType(_ctx.stringValue("DescribeCloudSiemEventsResponse.Data.ResponseData["+ i +"].IncidentType"));
+			responseDataItem.setRuleId(_ctx.stringValue("DescribeCloudSiemEventsResponse.Data.ResponseData["+ i +"].RuleId"));
 			responseDataItem.setRemark(_ctx.stringValue("DescribeCloudSiemEventsResponse.Data.ResponseData["+ i +"].Remark"));
 
 			List<String> dataSources = new ArrayList<String>();
@@ -72,6 +75,17 @@ public class DescribeCloudSiemEventsResponseUnmarshaller {
 				attCkLabels.add(_ctx.stringValue("DescribeCloudSiemEventsResponse.Data.ResponseData["+ i +"].AttCkLabels["+ j +"]"));
 			}
 			responseDataItem.setAttCkLabels(attCkLabels);
+
+			List<AttckStage> attckStages = new ArrayList<AttckStage>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeCloudSiemEventsResponse.Data.ResponseData["+ i +"].AttckStages.Length"); j++) {
+				AttckStage attckStage = new AttckStage();
+				attckStage.setTacticId(_ctx.stringValue("DescribeCloudSiemEventsResponse.Data.ResponseData["+ i +"].AttckStages["+ j +"].TacticId"));
+				attckStage.setTacticName(_ctx.stringValue("DescribeCloudSiemEventsResponse.Data.ResponseData["+ i +"].AttckStages["+ j +"].TacticName"));
+				attckStage.setAlertNum(_ctx.integerValue("DescribeCloudSiemEventsResponse.Data.ResponseData["+ i +"].AttckStages["+ j +"].AlertNum"));
+
+				attckStages.add(attckStage);
+			}
+			responseDataItem.setAttckStages(attckStages);
 
 			responseData.add(responseDataItem);
 		}

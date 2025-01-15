@@ -30,6 +30,8 @@ public class DescribeAlertsCountRequest extends RpcAcsRequest<DescribeAlertsCoun
 
 	private Integer roleType;
 
+	private String queryType;
+
 	private Long endTime;
 	public DescribeAlertsCountRequest() {
 		super("cloud-siem", "2022-06-16", "DescribeAlertsCount", "cloud-siem");
@@ -66,6 +68,17 @@ public class DescribeAlertsCountRequest extends RpcAcsRequest<DescribeAlertsCoun
 		this.roleType = roleType;
 		if(roleType != null){
 			putBodyParameter("RoleType", roleType.toString());
+		}
+	}
+
+	public String getQueryType() {
+		return this.queryType;
+	}
+
+	public void setQueryType(String queryType) {
+		this.queryType = queryType;
+		if(queryType != null){
+			putBodyParameter("QueryType", queryType);
 		}
 	}
 

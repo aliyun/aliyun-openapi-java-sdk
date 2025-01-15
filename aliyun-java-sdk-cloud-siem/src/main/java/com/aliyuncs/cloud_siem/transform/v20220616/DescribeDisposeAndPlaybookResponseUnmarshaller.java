@@ -47,6 +47,7 @@ public class DescribeDisposeAndPlaybookResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeDisposeAndPlaybookResponse.Data.ResponseData.Length"); i++) {
 			ResponseDataItem responseDataItem = new ResponseDataItem();
 			responseDataItem.setEntityId(_ctx.longValue("DescribeDisposeAndPlaybookResponse.Data.ResponseData["+ i +"].EntityId"));
+			responseDataItem.setEntityType(_ctx.stringValue("DescribeDisposeAndPlaybookResponse.Data.ResponseData["+ i +"].EntityType"));
 			responseDataItem.setOpcodeMap(_ctx.mapValue("DescribeDisposeAndPlaybookResponse.Data.ResponseData["+ i +"].OpcodeMap"));
 			responseDataItem.setEntityInfo(_ctx.mapValue("DescribeDisposeAndPlaybookResponse.Data.ResponseData["+ i +"].EntityInfo"));
 			responseDataItem.setDispose(_ctx.stringValue("DescribeDisposeAndPlaybookResponse.Data.ResponseData["+ i +"].Dispose"));
@@ -73,7 +74,9 @@ public class DescribeDisposeAndPlaybookResponseUnmarshaller {
 				playbookListItem.setDisplayName(_ctx.stringValue("DescribeDisposeAndPlaybookResponse.Data.ResponseData["+ i +"].PlaybookList["+ j +"].DisplayName"));
 				playbookListItem.setTaskConfig(_ctx.stringValue("DescribeDisposeAndPlaybookResponse.Data.ResponseData["+ i +"].PlaybookList["+ j +"].TaskConfig"));
 				playbookListItem.setName(_ctx.stringValue("DescribeDisposeAndPlaybookResponse.Data.ResponseData["+ i +"].PlaybookList["+ j +"].Name"));
+				playbookListItem.setUuid(_ctx.stringValue("DescribeDisposeAndPlaybookResponse.Data.ResponseData["+ i +"].PlaybookList["+ j +"].Uuid"));
 				playbookListItem.setWafPlaybook(_ctx.booleanValue("DescribeDisposeAndPlaybookResponse.Data.ResponseData["+ i +"].PlaybookList["+ j +"].WafPlaybook"));
+				playbookListItem.setAvailable(_ctx.stringValue("DescribeDisposeAndPlaybookResponse.Data.ResponseData["+ i +"].PlaybookList["+ j +"].Available"));
 
 				List<String> paramConfig = new ArrayList<String>();
 				for (int k = 0; k < _ctx.lengthValue("DescribeDisposeAndPlaybookResponse.Data.ResponseData["+ i +"].PlaybookList["+ j +"].ParamConfig.Length"); k++) {

@@ -45,6 +45,8 @@ public class DescribeCloudSiemEventsRequest extends RpcAcsRequest<DescribeCloudS
 
 	private List<String> threadLevels;
 
+	private String entityUuid;
+
 	private String assetId;
 
 	private String incidentUuid;
@@ -165,6 +167,17 @@ public class DescribeCloudSiemEventsRequest extends RpcAcsRequest<DescribeCloudS
 				putBodyParameter("ThreadLevel." + (i + 1) , threadLevels.get(i));
 			}
 		}	
+	}
+
+	public String getEntityUuid() {
+		return this.entityUuid;
+	}
+
+	public void setEntityUuid(String entityUuid) {
+		this.entityUuid = entityUuid;
+		if(entityUuid != null){
+			putBodyParameter("EntityUuid", entityUuid);
+		}
 	}
 
 	public String getAssetId() {

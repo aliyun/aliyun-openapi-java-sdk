@@ -14,6 +14,7 @@
 
 package com.aliyuncs.cloud_siem.model.v20220616;
 
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.cloud_siem.transform.v20220616.DescribeAlertsCountResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -86,6 +87,8 @@ public class DescribeAlertsCountResponse extends AcsResponse {
 
 		private Integer productNum;
 
+		private Map<Object,Object> countMap;
+
 		public Long getHigh() {
 			return this.high;
 		}
@@ -124,6 +127,14 @@ public class DescribeAlertsCountResponse extends AcsResponse {
 
 		public void setProductNum(Integer productNum) {
 			this.productNum = productNum;
+		}
+
+		public Map<Object,Object> getCountMap() {
+			return this.countMap;
+		}
+
+		public void setCountMap(Map<Object,Object> countMap) {
+			this.countMap = countMap;
 		}
 	}
 

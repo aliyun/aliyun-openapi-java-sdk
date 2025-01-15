@@ -159,6 +159,8 @@ public class DescribeAlertsWithEventResponse extends AcsResponse {
 
 			private Long subUserId;
 
+			private String subUserName;
+
 			private String cloudCode;
 
 			private String isDefend;
@@ -403,6 +405,14 @@ public class DescribeAlertsWithEventResponse extends AcsResponse {
 
 			public void setSubUserId(Long subUserId) {
 				this.subUserId = subUserId;
+			}
+
+			public String getSubUserName() {
+				return this.subUserName;
+			}
+
+			public void setSubUserName(String subUserName) {
+				this.subUserName = subUserName;
 			}
 
 			public String getCloudCode() {

@@ -16,6 +16,7 @@ package com.aliyuncs.cloud_siem.transform.v20220616;
 
 import com.aliyuncs.cloud_siem.model.v20220616.DescribeAlertsCountResponse;
 import com.aliyuncs.cloud_siem.model.v20220616.DescribeAlertsCountResponse.Data;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -34,6 +35,7 @@ public class DescribeAlertsCountResponseUnmarshaller {
 		data.setLow(_ctx.longValue("DescribeAlertsCountResponse.Data.Low"));
 		data.setAll(_ctx.longValue("DescribeAlertsCountResponse.Data.All"));
 		data.setProductNum(_ctx.integerValue("DescribeAlertsCountResponse.Data.ProductNum"));
+		data.setCountMap(_ctx.mapValue("DescribeAlertsCountResponse.Data.CountMap"));
 		describeAlertsCountResponse.setData(data);
 	 
 	 	return describeAlertsCountResponse;

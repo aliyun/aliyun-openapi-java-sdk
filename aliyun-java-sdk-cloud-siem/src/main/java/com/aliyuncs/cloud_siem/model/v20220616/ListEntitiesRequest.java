@@ -15,16 +15,21 @@
 package com.aliyuncs.cloud_siem.model.v20220616;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeDisposeAndPlaybookRequest extends RpcAcsRequest<DescribeDisposeAndPlaybookResponse> {
+public class ListEntitiesRequest extends RpcAcsRequest<ListEntitiesResponse> {
 	   
 
 	private Long roleFor;
+
+	private String malwareType;
+
+	private String entityName;
 
 	private Integer pageSize;
 
@@ -32,13 +37,16 @@ public class DescribeDisposeAndPlaybookRequest extends RpcAcsRequest<DescribeDis
 
 	private Integer currentPage;
 
+	private String isMalwareEntity;
+
 	private String entityType;
 
 	private String entityUuid;
 
 	private String incidentUuid;
-	public DescribeDisposeAndPlaybookRequest() {
-		super("cloud-siem", "2022-06-16", "DescribeDisposeAndPlaybook", "cloud-siem");
+	public ListEntitiesRequest() {
+		super("cloud-siem", "2022-06-16", "ListEntities", "cloud-siem");
+		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
 
@@ -50,6 +58,28 @@ public class DescribeDisposeAndPlaybookRequest extends RpcAcsRequest<DescribeDis
 		this.roleFor = roleFor;
 		if(roleFor != null){
 			putBodyParameter("RoleFor", roleFor.toString());
+		}
+	}
+
+	public String getMalwareType() {
+		return this.malwareType;
+	}
+
+	public void setMalwareType(String malwareType) {
+		this.malwareType = malwareType;
+		if(malwareType != null){
+			putBodyParameter("MalwareType", malwareType);
+		}
+	}
+
+	public String getEntityName() {
+		return this.entityName;
+	}
+
+	public void setEntityName(String entityName) {
+		this.entityName = entityName;
+		if(entityName != null){
+			putBodyParameter("EntityName", entityName);
 		}
 	}
 
@@ -83,6 +113,17 @@ public class DescribeDisposeAndPlaybookRequest extends RpcAcsRequest<DescribeDis
 		this.currentPage = currentPage;
 		if(currentPage != null){
 			putBodyParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
+	public String getIsMalwareEntity() {
+		return this.isMalwareEntity;
+	}
+
+	public void setIsMalwareEntity(String isMalwareEntity) {
+		this.isMalwareEntity = isMalwareEntity;
+		if(isMalwareEntity != null){
+			putBodyParameter("IsMalwareEntity", isMalwareEntity);
 		}
 	}
 
@@ -120,8 +161,8 @@ public class DescribeDisposeAndPlaybookRequest extends RpcAcsRequest<DescribeDis
 	}
 
 	@Override
-	public Class<DescribeDisposeAndPlaybookResponse> getResponseClass() {
-		return DescribeDisposeAndPlaybookResponse.class;
+	public Class<ListEntitiesResponse> getResponseClass() {
+		return ListEntitiesResponse.class;
 	}
 
 }

@@ -27,9 +27,19 @@ public class DescribeAlertsWithEventRequest extends RpcAcsRequest<DescribeAlerts
 
 	private Long roleFor;
 
+	private String alertName;
+
+	private String entityName;
+
+	private String assetName;
+
+	private String entityId;
+
 	private String source;
 
 	private String isDefend;
+
+	private Long startTime;
 
 	private Long subUserId;
 
@@ -39,9 +49,15 @@ public class DescribeAlertsWithEventRequest extends RpcAcsRequest<DescribeAlerts
 
 	private List<String> levels;
 
+	private Long endTime;
+
 	private String alertTitle;
 
 	private Integer currentPage;
+
+	private String alertType;
+
+	private String assetId;
 
 	private String incidentUuid;
 	public DescribeAlertsWithEventRequest() {
@@ -57,6 +73,50 @@ public class DescribeAlertsWithEventRequest extends RpcAcsRequest<DescribeAlerts
 		this.roleFor = roleFor;
 		if(roleFor != null){
 			putBodyParameter("RoleFor", roleFor.toString());
+		}
+	}
+
+	public String getAlertName() {
+		return this.alertName;
+	}
+
+	public void setAlertName(String alertName) {
+		this.alertName = alertName;
+		if(alertName != null){
+			putBodyParameter("AlertName", alertName);
+		}
+	}
+
+	public String getEntityName() {
+		return this.entityName;
+	}
+
+	public void setEntityName(String entityName) {
+		this.entityName = entityName;
+		if(entityName != null){
+			putBodyParameter("EntityName", entityName);
+		}
+	}
+
+	public String getAssetName() {
+		return this.assetName;
+	}
+
+	public void setAssetName(String assetName) {
+		this.assetName = assetName;
+		if(assetName != null){
+			putBodyParameter("AssetName", assetName);
+		}
+	}
+
+	public String getEntityId() {
+		return this.entityId;
+	}
+
+	public void setEntityId(String entityId) {
+		this.entityId = entityId;
+		if(entityId != null){
+			putBodyParameter("EntityId", entityId);
 		}
 	}
 
@@ -79,6 +139,17 @@ public class DescribeAlertsWithEventRequest extends RpcAcsRequest<DescribeAlerts
 		this.isDefend = isDefend;
 		if(isDefend != null){
 			putBodyParameter("IsDefend", isDefend);
+		}
+	}
+
+	public Long getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(Long startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putBodyParameter("StartTime", startTime.toString());
 		}
 	}
 
@@ -128,6 +199,17 @@ public class DescribeAlertsWithEventRequest extends RpcAcsRequest<DescribeAlerts
 		}	
 	}
 
+	public Long getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(Long endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putBodyParameter("EndTime", endTime.toString());
+		}
+	}
+
 	public String getAlertTitle() {
 		return this.alertTitle;
 	}
@@ -147,6 +229,28 @@ public class DescribeAlertsWithEventRequest extends RpcAcsRequest<DescribeAlerts
 		this.currentPage = currentPage;
 		if(currentPage != null){
 			putBodyParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
+	public String getAlertType() {
+		return this.alertType;
+	}
+
+	public void setAlertType(String alertType) {
+		this.alertType = alertType;
+		if(alertType != null){
+			putBodyParameter("AlertType", alertType);
+		}
+	}
+
+	public String getAssetId() {
+		return this.assetId;
+	}
+
+	public void setAssetId(String assetId) {
+		this.assetId = assetId;
+		if(assetId != null){
+			putBodyParameter("AssetId", assetId);
 		}
 	}
 

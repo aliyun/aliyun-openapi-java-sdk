@@ -16,14 +16,14 @@ package com.aliyuncs.cloud_siem.model.v20220616;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cloud_siem.transform.v20220616.ListDisposeStrategyResponseUnmarshaller;
+import com.aliyuncs.cloud_siem.transform.v20220616.ListEntitiesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ListDisposeStrategyResponse extends AcsResponse {
+public class ListEntitiesResponse extends AcsResponse {
 
 	private Boolean success;
 
@@ -107,41 +107,29 @@ public class ListDisposeStrategyResponse extends AcsResponse {
 
 			private Long aliuid;
 
-			private Long subAliuid;
-
-			private String incidentName;
-
 			private String incidentUuid;
 
 			private String alertUuid;
 
-			private String sophonTaskId;
+			private Integer alertNum;
 
-			private String playbookName;
+			private Integer eventNum;
 
-			private String playbookUuid;
-
-			private String playbookType;
-
-			private String taskUrl;
-
-			private Long entityId;
+			private String cloudCode;
 
 			private String entityType;
 
-			private String taskParam;
+			private String entityName;
 
-			private String errorMessage;
+			private String entityInfo;
 
-			private String finishTime;
+			private Long subUserId;
 
-			private Integer effectiveStatus;
+			private String entityId;
 
-			private Integer status;
+			private String entityUuid;
 
-			private List<String> scope;
-
-			private List<String> entity;
+			private String malwareType;
 
 			public Long getId() {
 				return this.id;
@@ -175,22 +163,6 @@ public class ListDisposeStrategyResponse extends AcsResponse {
 				this.aliuid = aliuid;
 			}
 
-			public Long getSubAliuid() {
-				return this.subAliuid;
-			}
-
-			public void setSubAliuid(Long subAliuid) {
-				this.subAliuid = subAliuid;
-			}
-
-			public String getIncidentName() {
-				return this.incidentName;
-			}
-
-			public void setIncidentName(String incidentName) {
-				this.incidentName = incidentName;
-			}
-
 			public String getIncidentUuid() {
 				return this.incidentUuid;
 			}
@@ -207,52 +179,28 @@ public class ListDisposeStrategyResponse extends AcsResponse {
 				this.alertUuid = alertUuid;
 			}
 
-			public String getSophonTaskId() {
-				return this.sophonTaskId;
+			public Integer getAlertNum() {
+				return this.alertNum;
 			}
 
-			public void setSophonTaskId(String sophonTaskId) {
-				this.sophonTaskId = sophonTaskId;
+			public void setAlertNum(Integer alertNum) {
+				this.alertNum = alertNum;
 			}
 
-			public String getPlaybookName() {
-				return this.playbookName;
+			public Integer getEventNum() {
+				return this.eventNum;
 			}
 
-			public void setPlaybookName(String playbookName) {
-				this.playbookName = playbookName;
+			public void setEventNum(Integer eventNum) {
+				this.eventNum = eventNum;
 			}
 
-			public String getPlaybookUuid() {
-				return this.playbookUuid;
+			public String getCloudCode() {
+				return this.cloudCode;
 			}
 
-			public void setPlaybookUuid(String playbookUuid) {
-				this.playbookUuid = playbookUuid;
-			}
-
-			public String getPlaybookType() {
-				return this.playbookType;
-			}
-
-			public void setPlaybookType(String playbookType) {
-				this.playbookType = playbookType;
-			}
-
-			public String getTaskUrl() {
-				return this.taskUrl;
-			}
-
-			public void setTaskUrl(String taskUrl) {
-				this.taskUrl = taskUrl;
-			}
-
-			public Long getEntityId() {
-				return this.entityId;
-			}
-
-			public void setEntityId(Long entityId) {
-				this.entityId = entityId;
+			public void setCloudCode(String cloudCode) {
+				this.cloudCode = cloudCode;
 			}
 
 			public String getEntityType() {
@@ -263,60 +211,52 @@ public class ListDisposeStrategyResponse extends AcsResponse {
 				this.entityType = entityType;
 			}
 
-			public String getTaskParam() {
-				return this.taskParam;
+			public String getEntityName() {
+				return this.entityName;
 			}
 
-			public void setTaskParam(String taskParam) {
-				this.taskParam = taskParam;
+			public void setEntityName(String entityName) {
+				this.entityName = entityName;
 			}
 
-			public String getErrorMessage() {
-				return this.errorMessage;
+			public String getEntityInfo() {
+				return this.entityInfo;
 			}
 
-			public void setErrorMessage(String errorMessage) {
-				this.errorMessage = errorMessage;
+			public void setEntityInfo(String entityInfo) {
+				this.entityInfo = entityInfo;
 			}
 
-			public String getFinishTime() {
-				return this.finishTime;
+			public Long getSubUserId() {
+				return this.subUserId;
 			}
 
-			public void setFinishTime(String finishTime) {
-				this.finishTime = finishTime;
+			public void setSubUserId(Long subUserId) {
+				this.subUserId = subUserId;
 			}
 
-			public Integer getEffectiveStatus() {
-				return this.effectiveStatus;
+			public String getEntityId() {
+				return this.entityId;
 			}
 
-			public void setEffectiveStatus(Integer effectiveStatus) {
-				this.effectiveStatus = effectiveStatus;
+			public void setEntityId(String entityId) {
+				this.entityId = entityId;
 			}
 
-			public Integer getStatus() {
-				return this.status;
+			public String getEntityUuid() {
+				return this.entityUuid;
 			}
 
-			public void setStatus(Integer status) {
-				this.status = status;
+			public void setEntityUuid(String entityUuid) {
+				this.entityUuid = entityUuid;
 			}
 
-			public List<String> getScope() {
-				return this.scope;
+			public String getMalwareType() {
+				return this.malwareType;
 			}
 
-			public void setScope(List<String> scope) {
-				this.scope = scope;
-			}
-
-			public List<String> getEntity() {
-				return this.entity;
-			}
-
-			public void setEntity(List<String> entity) {
-				this.entity = entity;
+			public void setMalwareType(String malwareType) {
+				this.malwareType = malwareType;
 			}
 		}
 
@@ -355,8 +295,8 @@ public class ListDisposeStrategyResponse extends AcsResponse {
 	}
 
 	@Override
-	public ListDisposeStrategyResponse getInstance(UnmarshallerContext context) {
-		return	ListDisposeStrategyResponseUnmarshaller.unmarshall(this, context);
+	public ListEntitiesResponse getInstance(UnmarshallerContext context) {
+		return	ListEntitiesResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

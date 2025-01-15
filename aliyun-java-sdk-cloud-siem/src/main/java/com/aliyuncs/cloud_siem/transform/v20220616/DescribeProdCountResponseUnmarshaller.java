@@ -29,6 +29,11 @@ public class DescribeProdCountResponseUnmarshaller {
 		data.setAliyunProdCount(_ctx.integerValue("DescribeProdCountResponse.Data.AliyunProdCount"));
 		data.setHcloudProdCount(_ctx.integerValue("DescribeProdCountResponse.Data.HcloudProdCount"));
 		data.setQcloudProdCount(_ctx.integerValue("DescribeProdCountResponse.Data.QcloudProdCount"));
+		data.setIdcProdCount(_ctx.integerValue("DescribeProdCountResponse.Data.IdcProdCount"));
+		data.setAliyunImportedCount(_ctx.integerValue("DescribeProdCountResponse.Data.AliyunImportedCount"));
+		data.setHcloudImportedCount(_ctx.integerValue("DescribeProdCountResponse.Data.HcloudImportedCount"));
+		data.setQcloudImportedCount(_ctx.integerValue("DescribeProdCountResponse.Data.QcloudImportedCount"));
+		data.setIdcImportedCount(_ctx.integerValue("DescribeProdCountResponse.Data.IdcImportedCount"));
 		describeProdCountResponse.setData(data);
 	 
 	 	return describeProdCountResponse;

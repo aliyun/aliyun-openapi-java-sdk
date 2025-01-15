@@ -28,13 +28,19 @@ public class DescribeAlertsWithEntityRequest extends RpcAcsRequest<DescribeAlert
 
 	private Long entityId;
 
+	private Long startTime;
+
 	private Integer pageSize;
 
 	private Integer roleType;
 
 	private String sophonTaskId;
 
+	private Long endTime;
+
 	private Integer currentPage;
+
+	private String entityUuid;
 
 	private String incidentUuid;
 	public DescribeAlertsWithEntityRequest() {
@@ -61,6 +67,17 @@ public class DescribeAlertsWithEntityRequest extends RpcAcsRequest<DescribeAlert
 		this.entityId = entityId;
 		if(entityId != null){
 			putBodyParameter("EntityId", entityId.toString());
+		}
+	}
+
+	public Long getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(Long startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putBodyParameter("StartTime", startTime.toString());
 		}
 	}
 
@@ -97,6 +114,17 @@ public class DescribeAlertsWithEntityRequest extends RpcAcsRequest<DescribeAlert
 		}
 	}
 
+	public Long getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(Long endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putBodyParameter("EndTime", endTime.toString());
+		}
+	}
+
 	public Integer getCurrentPage() {
 		return this.currentPage;
 	}
@@ -105,6 +133,17 @@ public class DescribeAlertsWithEntityRequest extends RpcAcsRequest<DescribeAlert
 		this.currentPage = currentPage;
 		if(currentPage != null){
 			putBodyParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
+	public String getEntityUuid() {
+		return this.entityUuid;
+	}
+
+	public void setEntityUuid(String entityUuid) {
+		this.entityUuid = entityUuid;
+		if(entityUuid != null){
+			putBodyParameter("EntityUuid", entityUuid);
 		}
 	}
 

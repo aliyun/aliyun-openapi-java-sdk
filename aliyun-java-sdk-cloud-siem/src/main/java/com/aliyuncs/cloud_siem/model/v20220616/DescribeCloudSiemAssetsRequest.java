@@ -26,11 +26,15 @@ public class DescribeCloudSiemAssetsRequest extends RpcAcsRequest<DescribeCloudS
 
 	private Long roleFor;
 
+	private String assetName;
+
 	private Integer pageSize;
 
 	private Integer roleType;
 
 	private String assetType;
+
+	private String assetUuid;
 
 	private Integer currentPage;
 
@@ -48,6 +52,17 @@ public class DescribeCloudSiemAssetsRequest extends RpcAcsRequest<DescribeCloudS
 		this.roleFor = roleFor;
 		if(roleFor != null){
 			putBodyParameter("RoleFor", roleFor.toString());
+		}
+	}
+
+	public String getAssetName() {
+		return this.assetName;
+	}
+
+	public void setAssetName(String assetName) {
+		this.assetName = assetName;
+		if(assetName != null){
+			putBodyParameter("AssetName", assetName);
 		}
 	}
 
@@ -81,6 +96,17 @@ public class DescribeCloudSiemAssetsRequest extends RpcAcsRequest<DescribeCloudS
 		this.assetType = assetType;
 		if(assetType != null){
 			putBodyParameter("AssetType", assetType);
+		}
+	}
+
+	public String getAssetUuid() {
+		return this.assetUuid;
+	}
+
+	public void setAssetUuid(String assetUuid) {
+		this.assetUuid = assetUuid;
+		if(assetUuid != null){
+			putBodyParameter("AssetUuid", assetUuid);
 		}
 	}
 

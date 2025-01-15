@@ -72,8 +72,10 @@ public class DescribeAlertsWithEntityResponseUnmarshaller {
 			responseDataItem.setAlertDescCode(_ctx.stringValue("DescribeAlertsWithEntityResponse.Data.ResponseData["+ i +"].AlertDescCode"));
 			responseDataItem.setAlertDetail(_ctx.stringValue("DescribeAlertsWithEntityResponse.Data.ResponseData["+ i +"].AlertDetail"));
 			responseDataItem.setLogUuid(_ctx.stringValue("DescribeAlertsWithEntityResponse.Data.ResponseData["+ i +"].LogUuid"));
+			responseDataItem.setEntityList(_ctx.stringValue("DescribeAlertsWithEntityResponse.Data.ResponseData["+ i +"].EntityList"));
 			responseDataItem.setAttCk(_ctx.stringValue("DescribeAlertsWithEntityResponse.Data.ResponseData["+ i +"].AttCk"));
 			responseDataItem.setSubUserId(_ctx.longValue("DescribeAlertsWithEntityResponse.Data.ResponseData["+ i +"].SubUserId"));
+			responseDataItem.setSubUserName(_ctx.stringValue("DescribeAlertsWithEntityResponse.Data.ResponseData["+ i +"].SubUserName"));
 			responseDataItem.setCloudCode(_ctx.stringValue("DescribeAlertsWithEntityResponse.Data.ResponseData["+ i +"].CloudCode"));
 			responseDataItem.setIsDefend(_ctx.stringValue("DescribeAlertsWithEntityResponse.Data.ResponseData["+ i +"].IsDefend"));
 

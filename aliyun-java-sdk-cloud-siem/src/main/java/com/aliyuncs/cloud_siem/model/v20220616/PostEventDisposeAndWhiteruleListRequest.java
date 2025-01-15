@@ -34,6 +34,8 @@ public class PostEventDisposeAndWhiteruleListRequest extends RpcAcsRequest<PostE
 
 	private Integer roleType;
 
+	private String threatLevel;
+
 	private String incidentUuid;
 
 	private Integer status;
@@ -94,6 +96,17 @@ public class PostEventDisposeAndWhiteruleListRequest extends RpcAcsRequest<PostE
 		this.roleType = roleType;
 		if(roleType != null){
 			putBodyParameter("RoleType", roleType.toString());
+		}
+	}
+
+	public String getThreatLevel() {
+		return this.threatLevel;
+	}
+
+	public void setThreatLevel(String threatLevel) {
+		this.threatLevel = threatLevel;
+		if(threatLevel != null){
+			putBodyParameter("ThreatLevel", threatLevel);
 		}
 	}
 

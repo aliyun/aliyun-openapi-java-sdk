@@ -27,6 +27,14 @@ public class DescribeAlertsRequest extends RpcAcsRequest<DescribeAlertsResponse>
 
 	private Long roleFor;
 
+	private String alertName;
+
+	private String entityName;
+
+	private String assetName;
+
+	private String entityId;
+
 	private String source;
 
 	private String isDefend;
@@ -47,7 +55,13 @@ public class DescribeAlertsRequest extends RpcAcsRequest<DescribeAlertsResponse>
 
 	private Integer currentPage;
 
+	private String alertType;
+
 	private String alertUuid;
+
+	private String assetId;
+
+	private String labelType;
 	public DescribeAlertsRequest() {
 		super("cloud-siem", "2022-06-16", "DescribeAlerts", "cloud-siem");
 		setMethod(MethodType.POST);
@@ -61,6 +75,50 @@ public class DescribeAlertsRequest extends RpcAcsRequest<DescribeAlertsResponse>
 		this.roleFor = roleFor;
 		if(roleFor != null){
 			putBodyParameter("RoleFor", roleFor.toString());
+		}
+	}
+
+	public String getAlertName() {
+		return this.alertName;
+	}
+
+	public void setAlertName(String alertName) {
+		this.alertName = alertName;
+		if(alertName != null){
+			putBodyParameter("AlertName", alertName);
+		}
+	}
+
+	public String getEntityName() {
+		return this.entityName;
+	}
+
+	public void setEntityName(String entityName) {
+		this.entityName = entityName;
+		if(entityName != null){
+			putBodyParameter("EntityName", entityName);
+		}
+	}
+
+	public String getAssetName() {
+		return this.assetName;
+	}
+
+	public void setAssetName(String assetName) {
+		this.assetName = assetName;
+		if(assetName != null){
+			putBodyParameter("AssetName", assetName);
+		}
+	}
+
+	public String getEntityId() {
+		return this.entityId;
+	}
+
+	public void setEntityId(String entityId) {
+		this.entityId = entityId;
+		if(entityId != null){
+			putBodyParameter("EntityId", entityId);
 		}
 	}
 
@@ -176,6 +234,17 @@ public class DescribeAlertsRequest extends RpcAcsRequest<DescribeAlertsResponse>
 		}
 	}
 
+	public String getAlertType() {
+		return this.alertType;
+	}
+
+	public void setAlertType(String alertType) {
+		this.alertType = alertType;
+		if(alertType != null){
+			putBodyParameter("AlertType", alertType);
+		}
+	}
+
 	public String getAlertUuid() {
 		return this.alertUuid;
 	}
@@ -184,6 +253,28 @@ public class DescribeAlertsRequest extends RpcAcsRequest<DescribeAlertsResponse>
 		this.alertUuid = alertUuid;
 		if(alertUuid != null){
 			putBodyParameter("AlertUuid", alertUuid);
+		}
+	}
+
+	public String getAssetId() {
+		return this.assetId;
+	}
+
+	public void setAssetId(String assetId) {
+		this.assetId = assetId;
+		if(assetId != null){
+			putBodyParameter("AssetId", assetId);
+		}
+	}
+
+	public String getLabelType() {
+		return this.labelType;
+	}
+
+	public void setLabelType(String labelType) {
+		this.labelType = labelType;
+		if(labelType != null){
+			putBodyParameter("LabelType", labelType);
 		}
 	}
 
