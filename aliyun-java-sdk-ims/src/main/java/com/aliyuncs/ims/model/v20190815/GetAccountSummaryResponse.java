@@ -88,6 +88,10 @@ public class GetAccountSummaryResponse extends AcsResponse {
 
 		private Integer mFADevicesInUse;
 
+		private Integer iPItemsPerAKPolicyQuota;
+
+		private Integer conditionsPerAKPolicyQuota;
+
 		public Integer getMFADevices() {
 			return this.mFADevices;
 		}
@@ -254,6 +258,22 @@ public class GetAccountSummaryResponse extends AcsResponse {
 
 		public void setMFADevicesInUse(Integer mFADevicesInUse) {
 			this.mFADevicesInUse = mFADevicesInUse;
+		}
+
+		public Integer getIPItemsPerAKPolicyQuota() {
+			return this.iPItemsPerAKPolicyQuota;
+		}
+
+		public void setIPItemsPerAKPolicyQuota(Integer iPItemsPerAKPolicyQuota) {
+			this.iPItemsPerAKPolicyQuota = iPItemsPerAKPolicyQuota;
+		}
+
+		public Integer getConditionsPerAKPolicyQuota() {
+			return this.conditionsPerAKPolicyQuota;
+		}
+
+		public void setConditionsPerAKPolicyQuota(Integer conditionsPerAKPolicyQuota) {
+			this.conditionsPerAKPolicyQuota = conditionsPerAKPolicyQuota;
 		}
 	}
 

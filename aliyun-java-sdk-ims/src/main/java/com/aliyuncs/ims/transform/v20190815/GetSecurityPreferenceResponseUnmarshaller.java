@@ -23,6 +23,7 @@ import com.aliyuncs.ims.model.v20190815.GetSecurityPreferenceResponse.SecurityPr
 import com.aliyuncs.ims.model.v20190815.GetSecurityPreferenceResponse.SecurityPreference.ApplicationLoginPreference;
 import com.aliyuncs.ims.model.v20190815.GetSecurityPreferenceResponse.SecurityPreference.LoginProfilePreference;
 import com.aliyuncs.ims.model.v20190815.GetSecurityPreferenceResponse.SecurityPreference.MFAPreference;
+import com.aliyuncs.ims.model.v20190815.GetSecurityPreferenceResponse.SecurityPreference.MaxIdleDays;
 import com.aliyuncs.ims.model.v20190815.GetSecurityPreferenceResponse.SecurityPreference.PersonalInfoPreference;
 import com.aliyuncs.ims.model.v20190815.GetSecurityPreferenceResponse.SecurityPreference.VerificationPreference;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -48,6 +49,7 @@ public class GetSecurityPreferenceResponseUnmarshaller {
 		loginProfilePreference.setEnforceMFAForLogin(_ctx.booleanValue("GetSecurityPreferenceResponse.SecurityPreference.LoginProfilePreference.EnforceMFAForLogin"));
 		loginProfilePreference.setOperationForRiskLogin(_ctx.stringValue("GetSecurityPreferenceResponse.SecurityPreference.LoginProfilePreference.OperationForRiskLogin"));
 		loginProfilePreference.setMFAOperationForLogin(_ctx.stringValue("GetSecurityPreferenceResponse.SecurityPreference.LoginProfilePreference.MFAOperationForLogin"));
+		loginProfilePreference.setAllowUserToLoginWithPasskey(_ctx.booleanValue("GetSecurityPreferenceResponse.SecurityPreference.LoginProfilePreference.AllowUserToLoginWithPasskey"));
 		securityPreference.setLoginProfilePreference(loginProfilePreference);
 
 		MFAPreference mFAPreference = new MFAPreference();
@@ -70,6 +72,11 @@ public class GetSecurityPreferenceResponseUnmarshaller {
 		ApplicationLoginPreference applicationLoginPreference = new ApplicationLoginPreference();
 		applicationLoginPreference.setAllowUserLongTermLogin(_ctx.booleanValue("GetSecurityPreferenceResponse.SecurityPreference.ApplicationLoginPreference.AllowUserLongTermLogin"));
 		securityPreference.setApplicationLoginPreference(applicationLoginPreference);
+
+		MaxIdleDays maxIdleDays = new MaxIdleDays();
+		maxIdleDays.setMaxIdleDaysForUsers(_ctx.integerValue("GetSecurityPreferenceResponse.SecurityPreference.MaxIdleDays.MaxIdleDaysForUsers"));
+		maxIdleDays.setMaxIdleDaysForAccessKeys(_ctx.integerValue("GetSecurityPreferenceResponse.SecurityPreference.MaxIdleDays.MaxIdleDaysForAccessKeys"));
+		securityPreference.setMaxIdleDays(maxIdleDays);
 		getSecurityPreferenceResponse.setSecurityPreference(securityPreference);
 	 
 	 	return getSecurityPreferenceResponse;

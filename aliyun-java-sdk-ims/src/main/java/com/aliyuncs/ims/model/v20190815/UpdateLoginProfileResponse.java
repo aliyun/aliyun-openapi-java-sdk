@@ -60,6 +60,8 @@ public class UpdateLoginProfileResponse extends AcsResponse {
 
 		private String createDate;
 
+		private String autoDisableLoginStatus;
+
 		public String getUserPrincipalName() {
 			return this.userPrincipalName;
 		}
@@ -114,6 +116,14 @@ public class UpdateLoginProfileResponse extends AcsResponse {
 
 		public void setCreateDate(String createDate) {
 			this.createDate = createDate;
+		}
+
+		public String getAutoDisableLoginStatus() {
+			return this.autoDisableLoginStatus;
+		}
+
+		public void setAutoDisableLoginStatus(String autoDisableLoginStatus) {
+			this.autoDisableLoginStatus = autoDisableLoginStatus;
 		}
 	}
 

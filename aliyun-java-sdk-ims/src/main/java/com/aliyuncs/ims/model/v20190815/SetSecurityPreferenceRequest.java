@@ -45,6 +45,8 @@ public class SetSecurityPreferenceRequest extends RpcAcsRequest<SetSecurityPrefe
 
 	private String operationForRiskLogin;
 
+	private Boolean allowUserToLoginWithPasskey;
+
 	private String mFAOperationForLogin;
 
 	private Boolean allowUserToManagePersonalDingTalk;
@@ -142,6 +144,17 @@ public class SetSecurityPreferenceRequest extends RpcAcsRequest<SetSecurityPrefe
 		this.operationForRiskLogin = operationForRiskLogin;
 		if(operationForRiskLogin != null){
 			putQueryParameter("OperationForRiskLogin", operationForRiskLogin);
+		}
+	}
+
+	public Boolean getAllowUserToLoginWithPasskey() {
+		return this.allowUserToLoginWithPasskey;
+	}
+
+	public void setAllowUserToLoginWithPasskey(Boolean allowUserToLoginWithPasskey) {
+		this.allowUserToLoginWithPasskey = allowUserToLoginWithPasskey;
+		if(allowUserToLoginWithPasskey != null){
+			putQueryParameter("AllowUserToLoginWithPasskey", allowUserToLoginWithPasskey.toString());
 		}
 	}
 

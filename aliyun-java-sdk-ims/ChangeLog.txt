@@ -1,3 +1,7 @@
+2025-01-17 Version: 3.3.11
+- UpdateLoginProfile/GetLoginProfile add response param AutoDisableLoginStatus
+- SetSecurityPreference/GetSecurityPreference add response param MaxIdleDays
+
 2024-12-10 Version: 3.3.10
 - SetUserSsoSettings add request param and response param SsoLoginWithDomain
 - GetUserSsoSettings add request param SsoLoginWithDomain

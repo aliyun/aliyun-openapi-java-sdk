@@ -60,6 +60,8 @@ public class GetLoginProfileResponse extends AcsResponse {
 
 		private String createDate;
 
+		private String autoDisableLoginStatus;
+
 		public String getStatus() {
 			return this.status;
 		}
@@ -114,6 +116,14 @@ public class GetLoginProfileResponse extends AcsResponse {
 
 		public void setCreateDate(String createDate) {
 			this.createDate = createDate;
+		}
+
+		public String getAutoDisableLoginStatus() {
+			return this.autoDisableLoginStatus;
+		}
+
+		public void setAutoDisableLoginStatus(String autoDisableLoginStatus) {
+			this.autoDisableLoginStatus = autoDisableLoginStatus;
 		}
 	}
 

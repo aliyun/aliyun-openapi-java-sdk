@@ -59,6 +59,8 @@ public class SetSecurityPreferenceResponse extends AcsResponse {
 
 		private ApplicationLoginPreference applicationLoginPreference;
 
+		private MaxIdleDays maxIdleDays;
+
 		public AccessKeyPreference getAccessKeyPreference() {
 			return this.accessKeyPreference;
 		}
@@ -107,6 +109,14 @@ public class SetSecurityPreferenceResponse extends AcsResponse {
 			this.applicationLoginPreference = applicationLoginPreference;
 		}
 
+		public MaxIdleDays getMaxIdleDays() {
+			return this.maxIdleDays;
+		}
+
+		public void setMaxIdleDays(MaxIdleDays maxIdleDays) {
+			this.maxIdleDays = maxIdleDays;
+		}
+
 		public static class AccessKeyPreference {
 
 			private Boolean allowUserToManageAccessKeys;
@@ -135,6 +145,8 @@ public class SetSecurityPreferenceResponse extends AcsResponse {
 			private String operationForRiskLogin;
 
 			private String mFAOperationForLogin;
+
+			private Boolean allowUserToLoginWithPasskey;
 
 			public Boolean getEnableSaveMFATicket() {
 				return this.enableSaveMFATicket;
@@ -191,6 +203,14 @@ public class SetSecurityPreferenceResponse extends AcsResponse {
 			public void setMFAOperationForLogin(String mFAOperationForLogin) {
 				this.mFAOperationForLogin = mFAOperationForLogin;
 			}
+
+			public Boolean getAllowUserToLoginWithPasskey() {
+				return this.allowUserToLoginWithPasskey;
+			}
+
+			public void setAllowUserToLoginWithPasskey(Boolean allowUserToLoginWithPasskey) {
+				this.allowUserToLoginWithPasskey = allowUserToLoginWithPasskey;
+			}
 		}
 
 		public static class MFAPreference {
@@ -242,6 +262,29 @@ public class SetSecurityPreferenceResponse extends AcsResponse {
 
 			public void setAllowUserLongTermLogin(Boolean allowUserLongTermLogin) {
 				this.allowUserLongTermLogin = allowUserLongTermLogin;
+			}
+		}
+
+		public static class MaxIdleDays {
+
+			private Integer maxIdleDaysForUsers;
+
+			private Integer maxIdleDaysForAccessKeys;
+
+			public Integer getMaxIdleDaysForUsers() {
+				return this.maxIdleDaysForUsers;
+			}
+
+			public void setMaxIdleDaysForUsers(Integer maxIdleDaysForUsers) {
+				this.maxIdleDaysForUsers = maxIdleDaysForUsers;
+			}
+
+			public Integer getMaxIdleDaysForAccessKeys() {
+				return this.maxIdleDaysForAccessKeys;
+			}
+
+			public void setMaxIdleDaysForAccessKeys(Integer maxIdleDaysForAccessKeys) {
+				this.maxIdleDaysForAccessKeys = maxIdleDaysForAccessKeys;
 			}
 		}
 	}

@@ -33,6 +33,7 @@ public class UpdateLoginProfileResponseUnmarshaller {
 		loginProfile.setPasswordResetRequired(_ctx.booleanValue("UpdateLoginProfileResponse.LoginProfile.PasswordResetRequired"));
 		loginProfile.setMFABindRequired(_ctx.booleanValue("UpdateLoginProfileResponse.LoginProfile.MFABindRequired"));
 		loginProfile.setCreateDate(_ctx.stringValue("UpdateLoginProfileResponse.LoginProfile.CreateDate"));
+		loginProfile.setAutoDisableLoginStatus(_ctx.stringValue("UpdateLoginProfileResponse.LoginProfile.AutoDisableLoginStatus"));
 		updateLoginProfileResponse.setLoginProfile(loginProfile);
 	 
 	 	return updateLoginProfileResponse;

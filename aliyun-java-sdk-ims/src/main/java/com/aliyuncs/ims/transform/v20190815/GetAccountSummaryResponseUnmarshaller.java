@@ -47,6 +47,8 @@ public class GetAccountSummaryResponseUnmarshaller {
 		summaryMap.setPolicies(_ctx.integerValue("GetAccountSummaryResponse.SummaryMap.Policies"));
 		summaryMap.setUsers(_ctx.integerValue("GetAccountSummaryResponse.SummaryMap.Users"));
 		summaryMap.setMFADevicesInUse(_ctx.integerValue("GetAccountSummaryResponse.SummaryMap.MFADevicesInUse"));
+		summaryMap.setIPItemsPerAKPolicyQuota(_ctx.integerValue("GetAccountSummaryResponse.SummaryMap.IPItemsPerAKPolicyQuota"));
+		summaryMap.setConditionsPerAKPolicyQuota(_ctx.integerValue("GetAccountSummaryResponse.SummaryMap.ConditionsPerAKPolicyQuota"));
 		getAccountSummaryResponse.setSummaryMap(summaryMap);
 	 
 	 	return getAccountSummaryResponse;
