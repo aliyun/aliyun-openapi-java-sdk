@@ -40,6 +40,8 @@ public class DescribeDBClusterTDEResponse extends AcsResponse {
 
 	private String tDEStatus;
 
+	private String encryptionKeyStatus;
+
 	public String getAutomaticRotation() {
 		return this.automaticRotation;
 	}
@@ -102,6 +104,14 @@ public class DescribeDBClusterTDEResponse extends AcsResponse {
 
 	public void setTDEStatus(String tDEStatus) {
 		this.tDEStatus = tDEStatus;
+	}
+
+	public String getEncryptionKeyStatus() {
+		return this.encryptionKeyStatus;
+	}
+
+	public void setEncryptionKeyStatus(String encryptionKeyStatus) {
+		this.encryptionKeyStatus = encryptionKeyStatus;
 	}
 
 	@Override

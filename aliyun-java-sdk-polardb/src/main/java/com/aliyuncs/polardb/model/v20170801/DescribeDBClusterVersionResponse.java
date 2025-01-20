@@ -51,6 +51,8 @@ public class DescribeDBClusterVersionResponse extends AcsResponse {
 
 	private String proxyLatestVersionAfterDBEngineUpgraded;
 
+	private String dBInnerRevisionVersion;
+
 	private List<DBRevisionVersionListItem> dBRevisionVersionList;
 
 	private List<ProxyRevisionVersionListItem> proxyRevisionVersionList;
@@ -157,6 +159,14 @@ public class DescribeDBClusterVersionResponse extends AcsResponse {
 
 	public void setProxyLatestVersionAfterDBEngineUpgraded(String proxyLatestVersionAfterDBEngineUpgraded) {
 		this.proxyLatestVersionAfterDBEngineUpgraded = proxyLatestVersionAfterDBEngineUpgraded;
+	}
+
+	public String getDBInnerRevisionVersion() {
+		return this.dBInnerRevisionVersion;
+	}
+
+	public void setDBInnerRevisionVersion(String dBInnerRevisionVersion) {
+		this.dBInnerRevisionVersion = dBInnerRevisionVersion;
 	}
 
 	public List<DBRevisionVersionListItem> getDBRevisionVersionList() {

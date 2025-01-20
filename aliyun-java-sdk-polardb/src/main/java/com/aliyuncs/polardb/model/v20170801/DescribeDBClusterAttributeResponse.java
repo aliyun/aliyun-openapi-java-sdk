@@ -161,6 +161,10 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 	private String burstingEnabled;
 
+	private String rowCompression;
+
+	private String imperceptibleSwitch;
+
 	private List<DBNode> dBNodes;
 
 	private List<Tag> tags;
@@ -709,6 +713,22 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 	public void setBurstingEnabled(String burstingEnabled) {
 		this.burstingEnabled = burstingEnabled;
+	}
+
+	public String getRowCompression() {
+		return this.rowCompression;
+	}
+
+	public void setRowCompression(String rowCompression) {
+		this.rowCompression = rowCompression;
+	}
+
+	public String getImperceptibleSwitch() {
+		return this.imperceptibleSwitch;
+	}
+
+	public void setImperceptibleSwitch(String imperceptibleSwitch) {
+		this.imperceptibleSwitch = imperceptibleSwitch;
 	}
 
 	public List<DBNode> getDBNodes() {

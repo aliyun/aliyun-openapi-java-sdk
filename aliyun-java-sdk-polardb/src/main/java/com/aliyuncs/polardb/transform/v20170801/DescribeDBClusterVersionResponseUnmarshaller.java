@@ -40,6 +40,7 @@ public class DescribeDBClusterVersionResponseUnmarshaller {
 		describeDBClusterVersionResponse.setProxyLatestVersion(_ctx.stringValue("DescribeDBClusterVersionResponse.ProxyLatestVersion"));
 		describeDBClusterVersionResponse.setDBLatestVersion(_ctx.stringValue("DescribeDBClusterVersionResponse.DBLatestVersion"));
 		describeDBClusterVersionResponse.setProxyLatestVersionAfterDBEngineUpgraded(_ctx.stringValue("DescribeDBClusterVersionResponse.ProxyLatestVersionAfterDBEngineUpgraded"));
+		describeDBClusterVersionResponse.setDBInnerRevisionVersion(_ctx.stringValue("DescribeDBClusterVersionResponse.DBInnerRevisionVersion"));
 
 		List<DBRevisionVersionListItem> dBRevisionVersionList = new ArrayList<DBRevisionVersionListItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDBClusterVersionResponse.DBRevisionVersionList.Length"); i++) {

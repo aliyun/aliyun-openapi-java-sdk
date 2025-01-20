@@ -82,6 +82,8 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 
 	private String lowerCaseTableNames;
 
+	private Boolean storageEncryption;
+
 	private String scaleRoNumMax;
 
 	private String standbyAZ;
@@ -91,6 +93,8 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 	private String defaultTimeZone;
 
 	private String clusterNetworkType;
+
+	private String storageEncryptionKey;
 
 	private String parameterGroupId;
 
@@ -455,6 +459,17 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		}
 	}
 
+	public Boolean getStorageEncryption() {
+		return this.storageEncryption;
+	}
+
+	public void setStorageEncryption(Boolean storageEncryption) {
+		this.storageEncryption = storageEncryption;
+		if(storageEncryption != null){
+			putQueryParameter("StorageEncryption", storageEncryption.toString());
+		}
+	}
+
 	public String getScaleRoNumMax() {
 		return this.scaleRoNumMax;
 	}
@@ -507,6 +522,17 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		this.clusterNetworkType = clusterNetworkType;
 		if(clusterNetworkType != null){
 			putQueryParameter("ClusterNetworkType", clusterNetworkType);
+		}
+	}
+
+	public String getStorageEncryptionKey() {
+		return this.storageEncryptionKey;
+	}
+
+	public void setStorageEncryptionKey(String storageEncryptionKey) {
+		this.storageEncryptionKey = storageEncryptionKey;
+		if(storageEncryptionKey != null){
+			putQueryParameter("StorageEncryptionKey", storageEncryptionKey);
 		}
 	}
 

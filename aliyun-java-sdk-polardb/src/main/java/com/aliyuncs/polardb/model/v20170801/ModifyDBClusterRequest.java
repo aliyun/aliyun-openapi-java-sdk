@@ -25,7 +25,11 @@ import com.aliyuncs.polardb.Endpoint;
 public class ModifyDBClusterRequest extends RpcAcsRequest<ModifyDBClusterResponse> {
 	   
 
+	private String modifyRowCompression;
+
 	private Long resourceOwnerId;
+
+	private String tableMeta;
 
 	private String standbyHAMode;
 
@@ -61,6 +65,17 @@ public class ModifyDBClusterRequest extends RpcAcsRequest<ModifyDBClusterRespons
 		} catch (Exception e) {}
 	}
 
+	public String getModifyRowCompression() {
+		return this.modifyRowCompression;
+	}
+
+	public void setModifyRowCompression(String modifyRowCompression) {
+		this.modifyRowCompression = modifyRowCompression;
+		if(modifyRowCompression != null){
+			putQueryParameter("ModifyRowCompression", modifyRowCompression);
+		}
+	}
+
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
@@ -69,6 +84,17 @@ public class ModifyDBClusterRequest extends RpcAcsRequest<ModifyDBClusterRespons
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getTableMeta() {
+		return this.tableMeta;
+	}
+
+	public void setTableMeta(String tableMeta) {
+		this.tableMeta = tableMeta;
+		if(tableMeta != null){
+			putQueryParameter("TableMeta", tableMeta);
 		}
 	}
 

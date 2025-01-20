@@ -96,6 +96,8 @@ public class DescribeDBClusterAttributeResponseUnmarshaller {
 		describeDBClusterAttributeResponse.setSourceRegionId(_ctx.stringValue("DescribeDBClusterAttributeResponse.SourceRegionId"));
 		describeDBClusterAttributeResponse.setImciAutoIndex(_ctx.stringValue("DescribeDBClusterAttributeResponse.ImciAutoIndex"));
 		describeDBClusterAttributeResponse.setBurstingEnabled(_ctx.stringValue("DescribeDBClusterAttributeResponse.BurstingEnabled"));
+		describeDBClusterAttributeResponse.setRowCompression(_ctx.stringValue("DescribeDBClusterAttributeResponse.RowCompression"));
+		describeDBClusterAttributeResponse.setImperceptibleSwitch(_ctx.stringValue("DescribeDBClusterAttributeResponse.ImperceptibleSwitch"));
 
 		RelatedAPInstance relatedAPInstance = new RelatedAPInstance();
 		relatedAPInstance.setName(_ctx.stringValue("DescribeDBClusterAttributeResponse.RelatedAPInstance.Name"));

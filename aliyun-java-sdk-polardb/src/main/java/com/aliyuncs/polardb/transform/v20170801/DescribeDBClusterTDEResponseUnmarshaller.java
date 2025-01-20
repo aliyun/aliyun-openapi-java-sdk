@@ -30,6 +30,7 @@ public class DescribeDBClusterTDEResponseUnmarshaller {
 		describeDBClusterTDEResponse.setRotationInterval(_ctx.stringValue("DescribeDBClusterTDEResponse.RotationInterval"));
 		describeDBClusterTDEResponse.setTDERegion(_ctx.stringValue("DescribeDBClusterTDEResponse.TDERegion"));
 		describeDBClusterTDEResponse.setTDEStatus(_ctx.stringValue("DescribeDBClusterTDEResponse.TDEStatus"));
+		describeDBClusterTDEResponse.setEncryptionKeyStatus(_ctx.stringValue("DescribeDBClusterTDEResponse.EncryptionKeyStatus"));
 	 
 	 	return describeDBClusterTDEResponse;
 	}
