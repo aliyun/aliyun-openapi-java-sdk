@@ -14,8 +14,14 @@
 
 package com.aliyuncs.dataworks_public.transform.v20200518;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.dataworks_public.model.v20200518.GetDISyncTaskResponse;
 import com.aliyuncs.dataworks_public.model.v20200518.GetDISyncTaskResponse.Data;
+import com.aliyuncs.dataworks_public.model.v20200518.GetDISyncTaskResponse.Data.AlarmListItem;
+import com.aliyuncs.dataworks_public.model.v20200518.GetDISyncTaskResponse.Data.AlarmListItem.AlarmRuleListItem;
+import com.aliyuncs.dataworks_public.model.v20200518.GetDISyncTaskResponse.Data.AlarmListItem.NotifyRule;
 import com.aliyuncs.dataworks_public.model.v20200518.GetDISyncTaskResponse.Data.SolutionDetail;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -45,6 +51,48 @@ public class GetDISyncTaskResponseUnmarshaller {
 		solutionDetail.setSubmitTime(_ctx.stringValue("GetDISyncTaskResponse.Data.SolutionDetail.SubmitTime"));
 		solutionDetail.setId(_ctx.longValue("GetDISyncTaskResponse.Data.SolutionDetail.Id"));
 		data.setSolutionDetail(solutionDetail);
+
+		List<AlarmListItem> alarmList = new ArrayList<AlarmListItem>();
+		for (int i = 0; i < _ctx.lengthValue("GetDISyncTaskResponse.Data.AlarmList.Length"); i++) {
+			AlarmListItem alarmListItem = new AlarmListItem();
+			alarmListItem.setId(_ctx.longValue("GetDISyncTaskResponse.Data.AlarmList["+ i +"].Id"));
+			alarmListItem.setEnabled(_ctx.booleanValue("GetDISyncTaskResponse.Data.AlarmList["+ i +"].Enabled"));
+			alarmListItem.setRuleName(_ctx.stringValue("GetDISyncTaskResponse.Data.AlarmList["+ i +"].RuleName"));
+			alarmListItem.setMetric(_ctx.stringValue("GetDISyncTaskResponse.Data.AlarmList["+ i +"].Metric"));
+			alarmListItem.setDescription(_ctx.stringValue("GetDISyncTaskResponse.Data.AlarmList["+ i +"].Description"));
+
+			NotifyRule notifyRule = new NotifyRule();
+			notifyRule.setInterval(_ctx.longValue("GetDISyncTaskResponse.Data.AlarmList["+ i +"].NotifyRule.Interval"));
+
+			List<String> warning = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("GetDISyncTaskResponse.Data.AlarmList["+ i +"].NotifyRule.Warning.Length"); j++) {
+				warning.add(_ctx.stringValue("GetDISyncTaskResponse.Data.AlarmList["+ i +"].NotifyRule.Warning["+ j +"]"));
+			}
+			notifyRule.setWarning(warning);
+
+			List<String> critical = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("GetDISyncTaskResponse.Data.AlarmList["+ i +"].NotifyRule.Critical.Length"); j++) {
+				critical.add(_ctx.stringValue("GetDISyncTaskResponse.Data.AlarmList["+ i +"].NotifyRule.Critical["+ j +"]"));
+			}
+			notifyRule.setCritical(critical);
+			alarmListItem.setNotifyRule(notifyRule);
+
+			List<AlarmRuleListItem> alarmRuleList = new ArrayList<AlarmRuleListItem>();
+			for (int j = 0; j < _ctx.lengthValue("GetDISyncTaskResponse.Data.AlarmList["+ i +"].AlarmRuleList.Length"); j++) {
+				AlarmRuleListItem alarmRuleListItem = new AlarmRuleListItem();
+				alarmRuleListItem.setLevel(_ctx.stringValue("GetDISyncTaskResponse.Data.AlarmList["+ i +"].AlarmRuleList["+ j +"].Level"));
+				alarmRuleListItem.setComparator(_ctx.stringValue("GetDISyncTaskResponse.Data.AlarmList["+ i +"].AlarmRuleList["+ j +"].Comparator"));
+				alarmRuleListItem.setThreshold(_ctx.longValue("GetDISyncTaskResponse.Data.AlarmList["+ i +"].AlarmRuleList["+ j +"].Threshold"));
+				alarmRuleListItem.setDuration(_ctx.longValue("GetDISyncTaskResponse.Data.AlarmList["+ i +"].AlarmRuleList["+ j +"].Duration"));
+				alarmRuleListItem.setAggregator(_ctx.stringValue("GetDISyncTaskResponse.Data.AlarmList["+ i +"].AlarmRuleList["+ j +"].Aggregator"));
+
+				alarmRuleList.add(alarmRuleListItem);
+			}
+			alarmListItem.setAlarmRuleList(alarmRuleList);
+
+			alarmList.add(alarmListItem);
+		}
+		data.setAlarmList(alarmList);
 		getDISyncTaskResponse.setData(data);
 	 
 	 	return getDISyncTaskResponse;

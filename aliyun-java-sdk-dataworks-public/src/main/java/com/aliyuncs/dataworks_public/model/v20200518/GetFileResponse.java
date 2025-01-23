@@ -382,6 +382,10 @@ public class GetFileResponse extends AcsResponse {
 
 			private String applyScheduleImmediately;
 
+			private String ignoreParentSkipRunningProperty;
+
+			private Integer timeout;
+
 			private List<NodeInputOutput> inputList;
 
 			private List<NodeInputOutput1> outputList;
@@ -508,6 +512,22 @@ public class GetFileResponse extends AcsResponse {
 
 			public void setApplyScheduleImmediately(String applyScheduleImmediately) {
 				this.applyScheduleImmediately = applyScheduleImmediately;
+			}
+
+			public String getIgnoreParentSkipRunningProperty() {
+				return this.ignoreParentSkipRunningProperty;
+			}
+
+			public void setIgnoreParentSkipRunningProperty(String ignoreParentSkipRunningProperty) {
+				this.ignoreParentSkipRunningProperty = ignoreParentSkipRunningProperty;
+			}
+
+			public Integer getTimeout() {
+				return this.timeout;
+			}
+
+			public void setTimeout(Integer timeout) {
+				this.timeout = timeout;
 			}
 
 			public List<NodeInputOutput> getInputList() {

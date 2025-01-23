@@ -26,7 +26,7 @@ import com.aliyuncs.dataworks_public.Endpoint;
 public class ListCheckProcessesRequest extends RpcAcsRequest<ListCheckProcessesResponse> {
 	   
 
-	private String eventCode;
+	private String messageId;
 
 	private String operator;
 
@@ -35,6 +35,8 @@ public class ListCheckProcessesRequest extends RpcAcsRequest<ListCheckProcessesR
 	private Integer pageSize;
 
 	private Long projectId;
+
+	private String eventCode;
 
 	private String status;
 	public ListCheckProcessesRequest() {
@@ -47,14 +49,14 @@ public class ListCheckProcessesRequest extends RpcAcsRequest<ListCheckProcessesR
 		} catch (Exception e) {}
 	}
 
-	public String getEventCode() {
-		return this.eventCode;
+	public String getMessageId() {
+		return this.messageId;
 	}
 
-	public void setEventCode(String eventCode) {
-		this.eventCode = eventCode;
-		if(eventCode != null){
-			putBodyParameter("EventCode", eventCode);
+	public void setMessageId(String messageId) {
+		this.messageId = messageId;
+		if(messageId != null){
+			putBodyParameter("MessageId", messageId);
 		}
 	}
 
@@ -99,6 +101,17 @@ public class ListCheckProcessesRequest extends RpcAcsRequest<ListCheckProcessesR
 		this.projectId = projectId;
 		if(projectId != null){
 			putBodyParameter("ProjectId", projectId.toString());
+		}
+	}
+
+	public String getEventCode() {
+		return this.eventCode;
+	}
+
+	public void setEventCode(String eventCode) {
+		this.eventCode = eventCode;
+		if(eventCode != null){
+			putBodyParameter("EventCode", eventCode);
 		}
 	}
 

@@ -118,6 +118,8 @@ public class GetInstanceResponse extends AcsResponse {
 
 		private Integer taskRerunTime;
 
+		private Integer periodNumber;
+
 		private Long modifyTime;
 
 		private Boolean repeatability;
@@ -141,6 +143,8 @@ public class GetInstanceResponse extends AcsResponse {
 		private Long nodeId;
 
 		private String createUser;
+
+		private String owner;
 
 		public String getStatus() {
 			return this.status;
@@ -270,6 +274,14 @@ public class GetInstanceResponse extends AcsResponse {
 			this.taskRerunTime = taskRerunTime;
 		}
 
+		public Integer getPeriodNumber() {
+			return this.periodNumber;
+		}
+
+		public void setPeriodNumber(Integer periodNumber) {
+			this.periodNumber = periodNumber;
+		}
+
 		public Long getModifyTime() {
 			return this.modifyTime;
 		}
@@ -364,6 +376,14 @@ public class GetInstanceResponse extends AcsResponse {
 
 		public void setCreateUser(String createUser) {
 			this.createUser = createUser;
+		}
+
+		public String getOwner() {
+			return this.owner;
+		}
+
+		public void setOwner(String owner) {
+			this.owner = owner;
 		}
 	}
 

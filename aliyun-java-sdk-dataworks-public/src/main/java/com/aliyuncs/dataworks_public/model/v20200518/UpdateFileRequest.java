@@ -33,6 +33,8 @@ public class UpdateFileRequest extends RpcAcsRequest<UpdateFileResponse> {
 
 	private String projectIdentifier;
 
+	private Integer timeout;
+
 	private Boolean startImmediately;
 
 	private Long projectId;
@@ -136,6 +138,17 @@ public class UpdateFileRequest extends RpcAcsRequest<UpdateFileResponse> {
 		this.projectIdentifier = projectIdentifier;
 		if(projectIdentifier != null){
 			putBodyParameter("ProjectIdentifier", projectIdentifier);
+		}
+	}
+
+	public Integer getTimeout() {
+		return this.timeout;
+	}
+
+	public void setTimeout(Integer timeout) {
+		this.timeout = timeout;
+		if(timeout != null){
+			putBodyParameter("Timeout", timeout.toString());
 		}
 	}
 

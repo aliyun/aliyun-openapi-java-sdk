@@ -33,6 +33,8 @@ public class CreateFileRequest extends RpcAcsRequest<CreateFileResponse> {
 
 	private String projectIdentifier;
 
+	private Integer timeout;
+
 	private Long resourceGroupId;
 
 	private Boolean startImmediately;
@@ -138,6 +140,17 @@ public class CreateFileRequest extends RpcAcsRequest<CreateFileResponse> {
 		this.projectIdentifier = projectIdentifier;
 		if(projectIdentifier != null){
 			putBodyParameter("ProjectIdentifier", projectIdentifier);
+		}
+	}
+
+	public Integer getTimeout() {
+		return this.timeout;
+	}
+
+	public void setTimeout(Integer timeout) {
+		this.timeout = timeout;
+		if(timeout != null){
+			putBodyParameter("Timeout", timeout.toString());
 		}
 	}
 
