@@ -34,6 +34,10 @@ public class DescribeActivationCodesRequest extends RpcAcsRequest<DescribeActiva
 
 	private String aliyunOrderId;
 
+	private String macAddress;
+
+	private String systemIdentifier;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -90,6 +94,28 @@ public class DescribeActivationCodesRequest extends RpcAcsRequest<DescribeActiva
 		this.aliyunOrderId = aliyunOrderId;
 		if(aliyunOrderId != null){
 			putQueryParameter("AliyunOrderId", aliyunOrderId);
+		}
+	}
+
+	public String getMacAddress() {
+		return this.macAddress;
+	}
+
+	public void setMacAddress(String macAddress) {
+		this.macAddress = macAddress;
+		if(macAddress != null){
+			putQueryParameter("MacAddress", macAddress);
+		}
+	}
+
+	public String getSystemIdentifier() {
+		return this.systemIdentifier;
+	}
+
+	public void setSystemIdentifier(String systemIdentifier) {
+		this.systemIdentifier = systemIdentifier;
+		if(systemIdentifier != null){
+			putQueryParameter("SystemIdentifier", systemIdentifier);
 		}
 	}
 

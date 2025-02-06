@@ -1,3 +1,6 @@
+2025-02-06 Version: 1.8.52
+- DescribeLicenseCodes support filter by mac address or system id.
+
 2025-01-20 Version: 1.8.51
 - Generated 2017-08-01 for `polardb`.
 
