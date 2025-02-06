@@ -34,14 +34,16 @@ public class CreateEaiJupyterRequest extends RpcAcsRequest<CreateEaiJupyterRespo
 
 	private String eaisType;
 
-	private String vSwitchId;
-
 	private String resourceGroupId;
+
+	private String eaisName;
+
+	private List<Tag> tags;
+
+	private String vSwitchId;
 
 	@SerializedName("environmentVar")
 	private List<EnvironmentVar> environmentVar;
-
-	private String eaisName;
 	public CreateEaiJupyterRequest() {
 		super("eais", "2019-06-24", "CreateEaiJupyter", "eais");
 		setMethod(MethodType.POST);
@@ -84,17 +86,6 @@ public class CreateEaiJupyterRequest extends RpcAcsRequest<CreateEaiJupyterRespo
 		}
 	}
 
-	public String getVSwitchId() {
-		return this.vSwitchId;
-	}
-
-	public void setVSwitchId(String vSwitchId) {
-		this.vSwitchId = vSwitchId;
-		if(vSwitchId != null){
-			putQueryParameter("VSwitchId", vSwitchId);
-		}
-	}
-
 	public String getResourceGroupId() {
 		return this.resourceGroupId;
 	}
@@ -103,6 +94,42 @@ public class CreateEaiJupyterRequest extends RpcAcsRequest<CreateEaiJupyterRespo
 		this.resourceGroupId = resourceGroupId;
 		if(resourceGroupId != null){
 			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getEaisName() {
+		return this.eaisName;
+	}
+
+	public void setEaisName(String eaisName) {
+		this.eaisName = eaisName;
+		if(eaisName != null){
+			putQueryParameter("EaisName", eaisName);
+		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
+	}
+
+	public String getVSwitchId() {
+		return this.vSwitchId;
+	}
+
+	public void setVSwitchId(String vSwitchId) {
+		this.vSwitchId = vSwitchId;
+		if(vSwitchId != null){
+			putQueryParameter("VSwitchId", vSwitchId);
 		}
 	}
 
@@ -117,14 +144,26 @@ public class CreateEaiJupyterRequest extends RpcAcsRequest<CreateEaiJupyterRespo
 		}	
 	}
 
-	public String getEaisName() {
-		return this.eaisName;
-	}
+	public static class Tag {
 
-	public void setEaisName(String eaisName) {
-		this.eaisName = eaisName;
-		if(eaisName != null){
-			putQueryParameter("EaisName", eaisName);
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

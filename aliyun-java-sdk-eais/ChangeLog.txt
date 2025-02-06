@@ -1,3 +1,6 @@
+2025-02-06 Version: 2.1.5
+- Rebuild.
+
 2024-10-22 Version: 2.1.4
 - Add openapi StartEaiJupyter.
 - Add openapi StopEaiJupyter.

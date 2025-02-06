@@ -15,6 +15,7 @@
 package com.aliyuncs.eais.model.v20190624;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.eais.Endpoint;
 
@@ -25,19 +26,21 @@ import com.aliyuncs.eais.Endpoint;
 public class CreateEaiRequest extends RpcAcsRequest<CreateEaiResponse> {
 	   
 
-	private String image;
-
 	private String clientToken;
 
 	private String securityGroupId;
 
-	private String vSwitchId;
-
 	private String resourceGroupId;
 
-	private String instanceName;
-
 	private String instanceType;
+
+	private List<Tag> tags;
+
+	private String image;
+
+	private String vSwitchId;
+
+	private String instanceName;
 	public CreateEaiRequest() {
 		super("eais", "2019-06-24", "CreateEai", "eais");
 		setMethod(MethodType.POST);
@@ -45,17 +48,6 @@ public class CreateEaiRequest extends RpcAcsRequest<CreateEaiResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getImage() {
-		return this.image;
-	}
-
-	public void setImage(String image) {
-		this.image = image;
-		if(image != null){
-			putQueryParameter("Image", image);
-		}
 	}
 
 	public String getClientToken() {
@@ -80,17 +72,6 @@ public class CreateEaiRequest extends RpcAcsRequest<CreateEaiResponse> {
 		}
 	}
 
-	public String getVSwitchId() {
-		return this.vSwitchId;
-	}
-
-	public void setVSwitchId(String vSwitchId) {
-		this.vSwitchId = vSwitchId;
-		if(vSwitchId != null){
-			putQueryParameter("VSwitchId", vSwitchId);
-		}
-	}
-
 	public String getResourceGroupId() {
 		return this.resourceGroupId;
 	}
@@ -99,6 +80,53 @@ public class CreateEaiRequest extends RpcAcsRequest<CreateEaiResponse> {
 		this.resourceGroupId = resourceGroupId;
 		if(resourceGroupId != null){
 			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getInstanceType() {
+		return this.instanceType;
+	}
+
+	public void setInstanceType(String instanceType) {
+		this.instanceType = instanceType;
+		if(instanceType != null){
+			putQueryParameter("InstanceType", instanceType);
+		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
+	}
+
+	public String getImage() {
+		return this.image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+		if(image != null){
+			putQueryParameter("Image", image);
+		}
+	}
+
+	public String getVSwitchId() {
+		return this.vSwitchId;
+	}
+
+	public void setVSwitchId(String vSwitchId) {
+		this.vSwitchId = vSwitchId;
+		if(vSwitchId != null){
+			putQueryParameter("VSwitchId", vSwitchId);
 		}
 	}
 
@@ -113,14 +141,26 @@ public class CreateEaiRequest extends RpcAcsRequest<CreateEaiResponse> {
 		}
 	}
 
-	public String getInstanceType() {
-		return this.instanceType;
-	}
+	public static class Tag {
 
-	public void setInstanceType(String instanceType) {
-		this.instanceType = instanceType;
-		if(instanceType != null){
-			putQueryParameter("InstanceType", instanceType);
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 
