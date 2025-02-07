@@ -30,6 +30,8 @@ public class DescribePackageDeductionsResponseUnmarshaller {
 		describePackageDeductionsResponse.setPageNum(_ctx.integerValue("DescribePackageDeductionsResponse.PageNum"));
 		describePackageDeductionsResponse.setPageSize(_ctx.integerValue("DescribePackageDeductionsResponse.PageSize"));
 		describePackageDeductionsResponse.setTotalCount(_ctx.longValue("DescribePackageDeductionsResponse.TotalCount"));
+		describePackageDeductionsResponse.setTotalUsedTime(_ctx.longValue("DescribePackageDeductionsResponse.TotalUsedTime"));
+		describePackageDeductionsResponse.setTotalUsedCoreTime(_ctx.floatValue("DescribePackageDeductionsResponse.TotalUsedCoreTime"));
 
 		List<Deduction> deductions = new ArrayList<Deduction>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePackageDeductionsResponse.Deductions.Length"); i++) {

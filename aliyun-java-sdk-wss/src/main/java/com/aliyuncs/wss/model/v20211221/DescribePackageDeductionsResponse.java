@@ -33,6 +33,10 @@ public class DescribePackageDeductionsResponse extends AcsResponse {
 
 	private Long totalCount;
 
+	private Long totalUsedTime;
+
+	private Float totalUsedCoreTime;
+
 	private List<Deduction> deductions;
 
 	public Integer getPageNum() {
@@ -65,6 +69,22 @@ public class DescribePackageDeductionsResponse extends AcsResponse {
 
 	public void setTotalCount(Long totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public Long getTotalUsedTime() {
+		return this.totalUsedTime;
+	}
+
+	public void setTotalUsedTime(Long totalUsedTime) {
+		this.totalUsedTime = totalUsedTime;
+	}
+
+	public Float getTotalUsedCoreTime() {
+		return this.totalUsedCoreTime;
+	}
+
+	public void setTotalUsedCoreTime(Float totalUsedCoreTime) {
+		this.totalUsedCoreTime = totalUsedCoreTime;
 	}
 
 	public List<Deduction> getDeductions() {

@@ -25,6 +25,10 @@ import com.aliyuncs.http.MethodType;
 public class DescribePackageDeductionsRequest extends RpcAcsRequest<DescribePackageDeductionsResponse> {
 	   
 
+	private Long endTime;
+
+	private Long startTime;
+
 	private Integer pageNum;
 
 	private String resourceType;
@@ -37,6 +41,28 @@ public class DescribePackageDeductionsRequest extends RpcAcsRequest<DescribePack
 	public DescribePackageDeductionsRequest() {
 		super("wss", "2021-12-21", "DescribePackageDeductions");
 		setMethod(MethodType.POST);
+	}
+
+	public Long getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(Long endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime.toString());
+		}
+	}
+
+	public Long getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(Long startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime.toString());
+		}
 	}
 
 	public Integer getPageNum() {
