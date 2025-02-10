@@ -29,6 +29,8 @@ public class DeleteAclRequest extends RpcAcsRequest<DeleteAclResponse> {
 
 	private String aclResourceType;
 
+	private String host;
+
 	private String aclOperationTypes;
 
 	private String aclOperationType;
@@ -36,8 +38,6 @@ public class DeleteAclRequest extends RpcAcsRequest<DeleteAclResponse> {
 	private String aclResourceName;
 
 	private String instanceId;
-
-	private String host;
 
 	private String aclPermissionType;
 
@@ -70,6 +70,17 @@ public class DeleteAclRequest extends RpcAcsRequest<DeleteAclResponse> {
 		this.aclResourceType = aclResourceType;
 		if(aclResourceType != null){
 			putQueryParameter("AclResourceType", aclResourceType);
+		}
+	}
+
+	public String getHost() {
+		return this.host;
+	}
+
+	public void setHost(String host) {
+		this.host = host;
+		if(host != null){
+			putQueryParameter("Host", host);
 		}
 	}
 
@@ -114,17 +125,6 @@ public class DeleteAclRequest extends RpcAcsRequest<DeleteAclResponse> {
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getHost() {
-		return this.host;
-	}
-
-	public void setHost(String host) {
-		this.host = host;
-		if(host != null){
-			putQueryParameter("Host", host);
 		}
 	}
 

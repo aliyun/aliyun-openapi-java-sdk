@@ -52,6 +52,9 @@ public class GetConsumerProgressResponseUnmarshaller {
 				offsetListItem.setBrokerOffset(_ctx.longValue("GetConsumerProgressResponse.ConsumerProgress.TopicList["+ i +"].OffsetList["+ j +"].BrokerOffset"));
 				offsetListItem.setConsumerOffset(_ctx.longValue("GetConsumerProgressResponse.ConsumerProgress.TopicList["+ i +"].OffsetList["+ j +"].ConsumerOffset"));
 				offsetListItem.setLastTimestamp(_ctx.longValue("GetConsumerProgressResponse.ConsumerProgress.TopicList["+ i +"].OffsetList["+ j +"].LastTimestamp"));
+				offsetListItem.setClientIp(_ctx.stringValue("GetConsumerProgressResponse.ConsumerProgress.TopicList["+ i +"].OffsetList["+ j +"].ClientIp"));
+				offsetListItem.setClientId(_ctx.stringValue("GetConsumerProgressResponse.ConsumerProgress.TopicList["+ i +"].OffsetList["+ j +"].ClientId"));
+				offsetListItem.setMemberId(_ctx.stringValue("GetConsumerProgressResponse.ConsumerProgress.TopicList["+ i +"].OffsetList["+ j +"].MemberId"));
 
 				offsetList.add(offsetListItem);
 			}

@@ -30,17 +30,17 @@ public class CreateTopicRequest extends RpcAcsRequest<CreateTopicResponse> {
 
 	private Long replicationFactor;
 
-	private Long minInsyncReplicas;
-
-	private String instanceId;
-
-	private String topic;
-
 	private Boolean compactTopic;
 
 	private List<Tag> tags;
 
 	private String partitionNum;
+
+	private Long minInsyncReplicas;
+
+	private String instanceId;
+
+	private String topic;
 
 	private String config;
 
@@ -73,39 +73,6 @@ public class CreateTopicRequest extends RpcAcsRequest<CreateTopicResponse> {
 		this.replicationFactor = replicationFactor;
 		if(replicationFactor != null){
 			putQueryParameter("ReplicationFactor", replicationFactor.toString());
-		}
-	}
-
-	public Long getMinInsyncReplicas() {
-		return this.minInsyncReplicas;
-	}
-
-	public void setMinInsyncReplicas(Long minInsyncReplicas) {
-		this.minInsyncReplicas = minInsyncReplicas;
-		if(minInsyncReplicas != null){
-			putQueryParameter("MinInsyncReplicas", minInsyncReplicas.toString());
-		}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getTopic() {
-		return this.topic;
-	}
-
-	public void setTopic(String topic) {
-		this.topic = topic;
-		if(topic != null){
-			putQueryParameter("Topic", topic);
 		}
 	}
 
@@ -142,6 +109,39 @@ public class CreateTopicRequest extends RpcAcsRequest<CreateTopicResponse> {
 		this.partitionNum = partitionNum;
 		if(partitionNum != null){
 			putQueryParameter("PartitionNum", partitionNum);
+		}
+	}
+
+	public Long getMinInsyncReplicas() {
+		return this.minInsyncReplicas;
+	}
+
+	public void setMinInsyncReplicas(Long minInsyncReplicas) {
+		this.minInsyncReplicas = minInsyncReplicas;
+		if(minInsyncReplicas != null){
+			putQueryParameter("MinInsyncReplicas", minInsyncReplicas.toString());
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getTopic() {
+		return this.topic;
+	}
+
+	public void setTopic(String topic) {
+		this.topic = topic;
+		if(topic != null){
+			putQueryParameter("Topic", topic);
 		}
 	}
 

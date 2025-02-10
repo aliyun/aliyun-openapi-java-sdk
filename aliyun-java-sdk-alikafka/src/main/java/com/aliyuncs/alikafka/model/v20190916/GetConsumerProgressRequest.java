@@ -27,6 +27,8 @@ public class GetConsumerProgressRequest extends RpcAcsRequest<GetConsumerProgres
 
 	private String consumerId;
 
+	private Boolean hideLastTimestamp;
+
 	private String instanceId;
 	public GetConsumerProgressRequest() {
 		super("alikafka", "2019-09-16", "GetConsumerProgress", "alikafka");
@@ -45,6 +47,17 @@ public class GetConsumerProgressRequest extends RpcAcsRequest<GetConsumerProgres
 		this.consumerId = consumerId;
 		if(consumerId != null){
 			putQueryParameter("ConsumerId", consumerId);
+		}
+	}
+
+	public Boolean getHideLastTimestamp() {
+		return this.hideLastTimestamp;
+	}
+
+	public void setHideLastTimestamp(Boolean hideLastTimestamp) {
+		this.hideLastTimestamp = hideLastTimestamp;
+		if(hideLastTimestamp != null){
+			putQueryParameter("HideLastTimestamp", hideLastTimestamp.toString());
 		}
 	}
 

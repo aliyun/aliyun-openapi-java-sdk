@@ -25,6 +25,8 @@ import com.aliyuncs.alikafka.Endpoint;
 public class ConvertPostPayOrderRequest extends RpcAcsRequest<ConvertPostPayOrderResponse> {
 	   
 
+	private Integer paidType;
+
 	private Integer duration;
 
 	private String instanceId;
@@ -35,6 +37,17 @@ public class ConvertPostPayOrderRequest extends RpcAcsRequest<ConvertPostPayOrde
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Integer getPaidType() {
+		return this.paidType;
+	}
+
+	public void setPaidType(Integer paidType) {
+		this.paidType = paidType;
+		if(paidType != null){
+			putQueryParameter("PaidType", paidType.toString());
+		}
 	}
 
 	public Integer getDuration() {

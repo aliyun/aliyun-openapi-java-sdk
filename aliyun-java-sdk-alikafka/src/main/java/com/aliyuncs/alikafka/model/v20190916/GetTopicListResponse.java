@@ -129,6 +129,8 @@ public class GetTopicListResponse extends AcsResponse {
 
 		private Boolean autoCreate;
 
+		private String topicConfig;
+
 		private List<TagVO> tags;
 
 		public Integer getStatus() {
@@ -217,6 +219,14 @@ public class GetTopicListResponse extends AcsResponse {
 
 		public void setAutoCreate(Boolean autoCreate) {
 			this.autoCreate = autoCreate;
+		}
+
+		public String getTopicConfig() {
+			return this.topicConfig;
+		}
+
+		public void setTopicConfig(String topicConfig) {
+			this.topicConfig = topicConfig;
 		}
 
 		public List<TagVO> getTags() {

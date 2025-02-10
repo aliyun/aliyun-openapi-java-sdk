@@ -29,13 +29,13 @@ public class DescribeAclsRequest extends RpcAcsRequest<DescribeAclsResponse> {
 
 	private String aclResourceType;
 
+	private String host;
+
 	private String aclOperationType;
 
 	private String aclResourceName;
 
 	private String instanceId;
-
-	private String host;
 
 	private String aclPermissionType;
 
@@ -71,6 +71,17 @@ public class DescribeAclsRequest extends RpcAcsRequest<DescribeAclsResponse> {
 		}
 	}
 
+	public String getHost() {
+		return this.host;
+	}
+
+	public void setHost(String host) {
+		this.host = host;
+		if(host != null){
+			putQueryParameter("Host", host);
+		}
+	}
+
 	public String getAclOperationType() {
 		return this.aclOperationType;
 	}
@@ -101,17 +112,6 @@ public class DescribeAclsRequest extends RpcAcsRequest<DescribeAclsResponse> {
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getHost() {
-		return this.host;
-	}
-
-	public void setHost(String host) {
-		this.host = host;
-		if(host != null){
-			putQueryParameter("Host", host);
 		}
 	}
 

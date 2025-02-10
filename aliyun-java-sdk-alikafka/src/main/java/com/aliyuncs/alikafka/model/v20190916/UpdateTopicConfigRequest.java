@@ -25,13 +25,13 @@ import com.aliyuncs.alikafka.Endpoint;
 public class UpdateTopicConfigRequest extends RpcAcsRequest<UpdateTopicConfigResponse> {
 	   
 
+	private String value;
+
 	private String instanceId;
 
 	private String topic;
 
 	private String config;
-
-	private String value;
 	public UpdateTopicConfigRequest() {
 		super("alikafka", "2019-09-16", "UpdateTopicConfig", "alikafka");
 		setMethod(MethodType.POST);
@@ -39,6 +39,17 @@ public class UpdateTopicConfigRequest extends RpcAcsRequest<UpdateTopicConfigRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getValue() {
+		return this.value;
+	}
+
+	public void setValue(String value) {
+		this.value = value;
+		if(value != null){
+			putQueryParameter("Value", value);
+		}
 	}
 
 	public String getInstanceId() {
@@ -71,17 +82,6 @@ public class UpdateTopicConfigRequest extends RpcAcsRequest<UpdateTopicConfigRes
 		this.config = config;
 		if(config != null){
 			putQueryParameter("Config", config);
-		}
-	}
-
-	public String getValue() {
-		return this.value;
-	}
-
-	public void setValue(String value) {
-		this.value = value;
-		if(value != null){
-			putQueryParameter("Value", value);
 		}
 	}
 

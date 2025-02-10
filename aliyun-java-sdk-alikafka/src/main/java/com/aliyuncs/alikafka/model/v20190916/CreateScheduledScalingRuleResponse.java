@@ -15,40 +15,22 @@
 package com.aliyuncs.alikafka.model.v20190916;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.alikafka.transform.v20190916.UpgradePrePayOrderResponseUnmarshaller;
+import com.aliyuncs.alikafka.transform.v20190916.CreateScheduledScalingRuleResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class UpgradePrePayOrderResponse extends AcsResponse {
-
-	private Integer code;
-
-	private String message;
+public class CreateScheduledScalingRuleResponse extends AcsResponse {
 
 	private String requestId;
 
 	private Boolean success;
 
-	private String orderId;
+	private Long code;
 
-	public Integer getCode() {
-		return this.code;
-	}
-
-	public void setCode(Integer code) {
-		this.code = code;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
+	private String message;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -66,16 +48,24 @@ public class UpgradePrePayOrderResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getOrderId() {
-		return this.orderId;
+	public Long getCode() {
+		return this.code;
 	}
 
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
+	public void setCode(Long code) {
+		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	@Override
-	public UpgradePrePayOrderResponse getInstance(UnmarshallerContext context) {
-		return	UpgradePrePayOrderResponseUnmarshaller.unmarshall(this, context);
+	public CreateScheduledScalingRuleResponse getInstance(UnmarshallerContext context) {
+		return	CreateScheduledScalingRuleResponseUnmarshaller.unmarshall(this, context);
 	}
 }

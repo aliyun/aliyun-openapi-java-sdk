@@ -117,6 +117,8 @@ public class GetConsumerListResponse extends AcsResponse {
 
 		private Boolean automaticallyCreatedGroup;
 
+		private Long createTime;
+
 		private List<TagVO> tags;
 
 		public String getConsumerId() {
@@ -157,6 +159,14 @@ public class GetConsumerListResponse extends AcsResponse {
 
 		public void setAutomaticallyCreatedGroup(Boolean automaticallyCreatedGroup) {
 			this.automaticallyCreatedGroup = automaticallyCreatedGroup;
+		}
+
+		public Long getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
 		}
 
 		public List<TagVO> getTags() {

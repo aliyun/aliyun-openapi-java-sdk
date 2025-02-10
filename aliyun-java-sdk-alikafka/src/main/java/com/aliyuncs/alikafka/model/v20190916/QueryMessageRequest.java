@@ -25,17 +25,17 @@ import com.aliyuncs.alikafka.Endpoint;
 public class QueryMessageRequest extends RpcAcsRequest<QueryMessageResponse> {
 	   
 
+	private String partition;
+
+	private String queryType;
+
 	private String offset;
 
 	private Long beginTime;
 
 	private String instanceId;
 
-	private String partition;
-
 	private String topic;
-
-	private String queryType;
 	public QueryMessageRequest() {
 		super("alikafka", "2019-09-16", "QueryMessage", "alikafka");
 		setMethod(MethodType.GET);
@@ -43,6 +43,28 @@ public class QueryMessageRequest extends RpcAcsRequest<QueryMessageResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getPartition() {
+		return this.partition;
+	}
+
+	public void setPartition(String partition) {
+		this.partition = partition;
+		if(partition != null){
+			putQueryParameter("Partition", partition);
+		}
+	}
+
+	public String getQueryType() {
+		return this.queryType;
+	}
+
+	public void setQueryType(String queryType) {
+		this.queryType = queryType;
+		if(queryType != null){
+			putQueryParameter("QueryType", queryType);
+		}
 	}
 
 	public String getOffset() {
@@ -78,17 +100,6 @@ public class QueryMessageRequest extends RpcAcsRequest<QueryMessageResponse> {
 		}
 	}
 
-	public String getPartition() {
-		return this.partition;
-	}
-
-	public void setPartition(String partition) {
-		this.partition = partition;
-		if(partition != null){
-			putQueryParameter("Partition", partition);
-		}
-	}
-
 	public String getTopic() {
 		return this.topic;
 	}
@@ -97,17 +108,6 @@ public class QueryMessageRequest extends RpcAcsRequest<QueryMessageResponse> {
 		this.topic = topic;
 		if(topic != null){
 			putQueryParameter("Topic", topic);
-		}
-	}
-
-	public String getQueryType() {
-		return this.queryType;
-	}
-
-	public void setQueryType(String queryType) {
-		this.queryType = queryType;
-		if(queryType != null){
-			putQueryParameter("QueryType", queryType);
 		}
 	}
 

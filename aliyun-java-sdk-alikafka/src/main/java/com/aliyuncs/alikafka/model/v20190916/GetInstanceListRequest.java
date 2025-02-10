@@ -26,13 +26,15 @@ import com.aliyuncs.alikafka.Endpoint;
 public class GetInstanceListRequest extends RpcAcsRequest<GetInstanceListResponse> {
 	   
 
-	private String orderId;
-
 	private String resourceGroupId;
+
+	private List<Tag> tags;
+
+	private String orderId;
 
 	private List<String> instanceIds;
 
-	private List<Tag> tags;
+	private String series;
 	public GetInstanceListRequest() {
 		super("alikafka", "2019-09-16", "GetInstanceList", "alikafka");
 		setMethod(MethodType.POST);
@@ -40,17 +42,6 @@ public class GetInstanceListRequest extends RpcAcsRequest<GetInstanceListRespons
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getOrderId() {
-		return this.orderId;
-	}
-
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
-		if(orderId != null){
-			putQueryParameter("OrderId", orderId);
-		}
 	}
 
 	public String getResourceGroupId() {
@@ -61,6 +52,31 @@ public class GetInstanceListRequest extends RpcAcsRequest<GetInstanceListRespons
 		this.resourceGroupId = resourceGroupId;
 		if(resourceGroupId != null){
 			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
+	}
+
+	public String getOrderId() {
+		return this.orderId;
+	}
+
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
+		if(orderId != null){
+			putQueryParameter("OrderId", orderId);
 		}
 	}
 
@@ -77,18 +93,15 @@ public class GetInstanceListRequest extends RpcAcsRequest<GetInstanceListRespons
 		}	
 	}
 
-	public List<Tag> getTags() {
-		return this.tags;
+	public String getSeries() {
+		return this.series;
 	}
 
-	public void setTags(List<Tag> tags) {
-		this.tags = tags;	
-		if (tags != null) {
-			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
-				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
-				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
-			}
-		}	
+	public void setSeries(String series) {
+		this.series = series;
+		if(series != null){
+			putQueryParameter("Series", series);
+		}
 	}
 
 	public static class Tag {

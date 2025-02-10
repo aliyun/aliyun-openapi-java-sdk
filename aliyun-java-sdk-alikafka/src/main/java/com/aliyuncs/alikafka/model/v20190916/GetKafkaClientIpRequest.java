@@ -15,6 +15,7 @@
 package com.aliyuncs.alikafka.model.v20190916;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.alikafka.Endpoint;
 
@@ -22,23 +23,39 @@ import com.aliyuncs.alikafka.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteSaslUserRequest extends RpcAcsRequest<DeleteSaslUserResponse> {
+public class GetKafkaClientIpRequest extends RpcAcsRequest<GetKafkaClientIpResponse> {
 	   
+
+	private Long startTime;
 
 	private String type;
 
-	private String mechanism;
+	private String group;
+
+	private Long endTime;
 
 	private String instanceId;
 
-	private String username;
-	public DeleteSaslUserRequest() {
-		super("alikafka", "2019-09-16", "DeleteSaslUser", "alikafka");
+	private String topic;
+	public GetKafkaClientIpRequest() {
+		super("alikafka", "2019-09-16", "GetKafkaClientIp", "alikafka");
+		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Long getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(Long startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime.toString());
+		}
 	}
 
 	public String getType() {
@@ -52,14 +69,25 @@ public class DeleteSaslUserRequest extends RpcAcsRequest<DeleteSaslUserResponse>
 		}
 	}
 
-	public String getMechanism() {
-		return this.mechanism;
+	public String getGroup() {
+		return this.group;
 	}
 
-	public void setMechanism(String mechanism) {
-		this.mechanism = mechanism;
-		if(mechanism != null){
-			putQueryParameter("Mechanism", mechanism);
+	public void setGroup(String group) {
+		this.group = group;
+		if(group != null){
+			putQueryParameter("Group", group);
+		}
+	}
+
+	public Long getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(Long endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime.toString());
 		}
 	}
 
@@ -74,20 +102,20 @@ public class DeleteSaslUserRequest extends RpcAcsRequest<DeleteSaslUserResponse>
 		}
 	}
 
-	public String getUsername() {
-		return this.username;
+	public String getTopic() {
+		return this.topic;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
-		if(username != null){
-			putQueryParameter("Username", username);
+	public void setTopic(String topic) {
+		this.topic = topic;
+		if(topic != null){
+			putQueryParameter("Topic", topic);
 		}
 	}
 
 	@Override
-	public Class<DeleteSaslUserResponse> getResponseClass() {
-		return DeleteSaslUserResponse.class;
+	public Class<GetKafkaClientIpResponse> getResponseClass() {
+		return GetKafkaClientIpResponse.class;
 	}
 
 }

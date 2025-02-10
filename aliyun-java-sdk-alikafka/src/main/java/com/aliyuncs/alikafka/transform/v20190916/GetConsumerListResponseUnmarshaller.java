@@ -43,6 +43,7 @@ public class GetConsumerListResponseUnmarshaller {
 			consumerVO.setRemark(_ctx.stringValue("GetConsumerListResponse.ConsumerList["+ i +"].Remark"));
 			consumerVO.setRegionId(_ctx.stringValue("GetConsumerListResponse.ConsumerList["+ i +"].RegionId"));
 			consumerVO.setAutomaticallyCreatedGroup(_ctx.booleanValue("GetConsumerListResponse.ConsumerList["+ i +"].AutomaticallyCreatedGroup"));
+			consumerVO.setCreateTime(_ctx.longValue("GetConsumerListResponse.ConsumerList["+ i +"].CreateTime"));
 
 			List<TagVO> tags = new ArrayList<TagVO>();
 			for (int j = 0; j < _ctx.lengthValue("GetConsumerListResponse.ConsumerList["+ i +"].Tags.Length"); j++) {

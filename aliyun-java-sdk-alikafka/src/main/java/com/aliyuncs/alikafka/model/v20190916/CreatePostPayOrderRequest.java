@@ -16,6 +16,8 @@ package com.aliyuncs.alikafka.model.v20190916;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.alikafka.Endpoint;
 
@@ -37,6 +39,11 @@ public class CreatePostPayOrderRequest extends RpcAcsRequest<CreatePostPayOrderR
 	private List<Tag> tags;
 
 	private Integer partitionNum;
+
+	private Integer paidType;
+
+	@SerializedName("serverlessConfig")
+	private ServerlessConfig serverlessConfig;
 
 	private Integer diskSize;
 
@@ -125,6 +132,28 @@ public class CreatePostPayOrderRequest extends RpcAcsRequest<CreatePostPayOrderR
 		}
 	}
 
+	public Integer getPaidType() {
+		return this.paidType;
+	}
+
+	public void setPaidType(Integer paidType) {
+		this.paidType = paidType;
+		if(paidType != null){
+			putQueryParameter("PaidType", paidType.toString());
+		}
+	}
+
+	public ServerlessConfig getServerlessConfig() {
+		return this.serverlessConfig;
+	}
+
+	public void setServerlessConfig(ServerlessConfig serverlessConfig) {
+		this.serverlessConfig = serverlessConfig;	
+		if (serverlessConfig != null) {
+			putQueryParameter("ServerlessConfig" , new Gson().toJson(serverlessConfig));
+		}	
+	}
+
 	public Integer getDiskSize() {
 		return this.diskSize;
 	}
@@ -200,6 +229,31 @@ public class CreatePostPayOrderRequest extends RpcAcsRequest<CreatePostPayOrderR
 
 		public void setKey(String key) {
 			this.key = key;
+		}
+	}
+
+	public static class ServerlessConfig {
+
+		@SerializedName("ReservedPublishCapacity")
+		private Long reservedPublishCapacity;
+
+		@SerializedName("ReservedSubscribeCapacity")
+		private Long reservedSubscribeCapacity;
+
+		public Long getReservedPublishCapacity() {
+			return this.reservedPublishCapacity;
+		}
+
+		public void setReservedPublishCapacity(Long reservedPublishCapacity) {
+			this.reservedPublishCapacity = reservedPublishCapacity;
+		}
+
+		public Long getReservedSubscribeCapacity() {
+			return this.reservedSubscribeCapacity;
+		}
+
+		public void setReservedSubscribeCapacity(Long reservedSubscribeCapacity) {
+			this.reservedSubscribeCapacity = reservedSubscribeCapacity;
 		}
 	}
 

@@ -15,14 +15,14 @@
 package com.aliyuncs.alikafka.model.v20190916;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.alikafka.transform.v20190916.UpgradePrePayOrderResponseUnmarshaller;
+import com.aliyuncs.alikafka.transform.v20190916.CreatePrePayInstanceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class UpgradePrePayOrderResponse extends AcsResponse {
+public class CreatePrePayInstanceResponse extends AcsResponse {
 
 	private Integer code;
 
@@ -32,7 +32,7 @@ public class UpgradePrePayOrderResponse extends AcsResponse {
 
 	private Boolean success;
 
-	private String orderId;
+	private Data data;
 
 	public Integer getCode() {
 		return this.code;
@@ -66,16 +66,39 @@ public class UpgradePrePayOrderResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getOrderId() {
-		return this.orderId;
+	public Data getData() {
+		return this.data;
 	}
 
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
+	public void setData(Data data) {
+		this.data = data;
+	}
+
+	public static class Data {
+
+		private Long orderId;
+
+		private String instanceId;
+
+		public Long getOrderId() {
+			return this.orderId;
+		}
+
+		public void setOrderId(Long orderId) {
+			this.orderId = orderId;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
 	}
 
 	@Override
-	public UpgradePrePayOrderResponse getInstance(UnmarshallerContext context) {
-		return	UpgradePrePayOrderResponseUnmarshaller.unmarshall(this, context);
+	public CreatePrePayInstanceResponse getInstance(UnmarshallerContext context) {
+		return	CreatePrePayInstanceResponseUnmarshaller.unmarshall(this, context);
 	}
 }

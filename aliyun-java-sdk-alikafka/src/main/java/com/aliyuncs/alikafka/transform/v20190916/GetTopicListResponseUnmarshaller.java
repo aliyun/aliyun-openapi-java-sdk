@@ -49,6 +49,7 @@ public class GetTopicListResponseUnmarshaller {
 			topicVO.setLocalTopic(_ctx.booleanValue("GetTopicListResponse.TopicList["+ i +"].LocalTopic"));
 			topicVO.setRegionId(_ctx.stringValue("GetTopicListResponse.TopicList["+ i +"].RegionId"));
 			topicVO.setAutoCreate(_ctx.booleanValue("GetTopicListResponse.TopicList["+ i +"].AutoCreate"));
+			topicVO.setTopicConfig(_ctx.stringValue("GetTopicListResponse.TopicList["+ i +"].TopicConfig"));
 
 			List<TagVO> tags = new ArrayList<TagVO>();
 			for (int j = 0; j < _ctx.lengthValue("GetTopicListResponse.TopicList["+ i +"].Tags.Length"); j++) {

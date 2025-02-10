@@ -113,6 +113,10 @@ public class GetInstanceListResponse extends AcsResponse {
 
 		private String zoneId;
 
+		private Integer ioMaxRead;
+
+		private Integer ioMaxWrite;
+
 		private Integer ioMax;
 
 		private Integer paidType;
@@ -123,9 +127,15 @@ public class GetInstanceListResponse extends AcsResponse {
 
 		private String domainEndpoint;
 
+		private String vpcSaslEndPoint;
+
+		private String saslEndPoint;
+
 		private String sslDomainEndpoint;
 
 		private String saslDomainEndpoint;
+
+		private String vpcSaslDomainEndpoint;
 
 		private String resourceGroupId;
 
@@ -147,7 +157,23 @@ public class GetInstanceListResponse extends AcsResponse {
 
 		private Integer viewInstanceStatusCode;
 
+		private String series;
+
+		private Boolean autoCreateGroupEnable;
+
+		private Boolean autoCreateTopicEnable;
+
+		private Integer defaultPartitionNum;
+
+		private Integer brokerCount;
+
+		private Integer recommendedPartitionCount;
+
+		private String backupZoneId;
+
 		private List<TagVO> tags;
+
+		private List<String> vSwitchIds;
 
 		private UpgradeServiceDetailInfo upgradeServiceDetailInfo;
 
@@ -297,6 +323,22 @@ public class GetInstanceListResponse extends AcsResponse {
 			this.zoneId = zoneId;
 		}
 
+		public Integer getIoMaxRead() {
+			return this.ioMaxRead;
+		}
+
+		public void setIoMaxRead(Integer ioMaxRead) {
+			this.ioMaxRead = ioMaxRead;
+		}
+
+		public Integer getIoMaxWrite() {
+			return this.ioMaxWrite;
+		}
+
+		public void setIoMaxWrite(Integer ioMaxWrite) {
+			this.ioMaxWrite = ioMaxWrite;
+		}
+
 		public Integer getIoMax() {
 			return this.ioMax;
 		}
@@ -337,6 +379,22 @@ public class GetInstanceListResponse extends AcsResponse {
 			this.domainEndpoint = domainEndpoint;
 		}
 
+		public String getVpcSaslEndPoint() {
+			return this.vpcSaslEndPoint;
+		}
+
+		public void setVpcSaslEndPoint(String vpcSaslEndPoint) {
+			this.vpcSaslEndPoint = vpcSaslEndPoint;
+		}
+
+		public String getSaslEndPoint() {
+			return this.saslEndPoint;
+		}
+
+		public void setSaslEndPoint(String saslEndPoint) {
+			this.saslEndPoint = saslEndPoint;
+		}
+
 		public String getSslDomainEndpoint() {
 			return this.sslDomainEndpoint;
 		}
@@ -351,6 +409,14 @@ public class GetInstanceListResponse extends AcsResponse {
 
 		public void setSaslDomainEndpoint(String saslDomainEndpoint) {
 			this.saslDomainEndpoint = saslDomainEndpoint;
+		}
+
+		public String getVpcSaslDomainEndpoint() {
+			return this.vpcSaslDomainEndpoint;
+		}
+
+		public void setVpcSaslDomainEndpoint(String vpcSaslDomainEndpoint) {
+			this.vpcSaslDomainEndpoint = vpcSaslDomainEndpoint;
 		}
 
 		public String getResourceGroupId() {
@@ -433,12 +499,76 @@ public class GetInstanceListResponse extends AcsResponse {
 			this.viewInstanceStatusCode = viewInstanceStatusCode;
 		}
 
+		public String getSeries() {
+			return this.series;
+		}
+
+		public void setSeries(String series) {
+			this.series = series;
+		}
+
+		public Boolean getAutoCreateGroupEnable() {
+			return this.autoCreateGroupEnable;
+		}
+
+		public void setAutoCreateGroupEnable(Boolean autoCreateGroupEnable) {
+			this.autoCreateGroupEnable = autoCreateGroupEnable;
+		}
+
+		public Boolean getAutoCreateTopicEnable() {
+			return this.autoCreateTopicEnable;
+		}
+
+		public void setAutoCreateTopicEnable(Boolean autoCreateTopicEnable) {
+			this.autoCreateTopicEnable = autoCreateTopicEnable;
+		}
+
+		public Integer getDefaultPartitionNum() {
+			return this.defaultPartitionNum;
+		}
+
+		public void setDefaultPartitionNum(Integer defaultPartitionNum) {
+			this.defaultPartitionNum = defaultPartitionNum;
+		}
+
+		public Integer getBrokerCount() {
+			return this.brokerCount;
+		}
+
+		public void setBrokerCount(Integer brokerCount) {
+			this.brokerCount = brokerCount;
+		}
+
+		public Integer getRecommendedPartitionCount() {
+			return this.recommendedPartitionCount;
+		}
+
+		public void setRecommendedPartitionCount(Integer recommendedPartitionCount) {
+			this.recommendedPartitionCount = recommendedPartitionCount;
+		}
+
+		public String getBackupZoneId() {
+			return this.backupZoneId;
+		}
+
+		public void setBackupZoneId(String backupZoneId) {
+			this.backupZoneId = backupZoneId;
+		}
+
 		public List<TagVO> getTags() {
 			return this.tags;
 		}
 
 		public void setTags(List<TagVO> tags) {
 			this.tags = tags;
+		}
+
+		public List<String> getVSwitchIds() {
+			return this.vSwitchIds;
+		}
+
+		public void setVSwitchIds(List<String> vSwitchIds) {
+			this.vSwitchIds = vSwitchIds;
 		}
 
 		public UpgradeServiceDetailInfo getUpgradeServiceDetailInfo() {

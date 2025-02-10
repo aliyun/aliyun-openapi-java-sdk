@@ -25,15 +25,15 @@ import com.aliyuncs.alikafka.Endpoint;
 public class UpdateAllowedIpRequest extends RpcAcsRequest<UpdateAllowedIpResponse> {
 	   
 
+	private String allowedListType;
+
+	private String description;
+
 	private String portRange;
 
 	private String allowedListIp;
 
 	private String updateType;
-
-	private String allowedListType;
-
-	private String description;
 
 	private String instanceId;
 	public UpdateAllowedIpRequest() {
@@ -43,6 +43,28 @@ public class UpdateAllowedIpRequest extends RpcAcsRequest<UpdateAllowedIpRespons
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getAllowedListType() {
+		return this.allowedListType;
+	}
+
+	public void setAllowedListType(String allowedListType) {
+		this.allowedListType = allowedListType;
+		if(allowedListType != null){
+			putQueryParameter("AllowedListType", allowedListType);
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
 	}
 
 	public String getPortRange() {
@@ -75,28 +97,6 @@ public class UpdateAllowedIpRequest extends RpcAcsRequest<UpdateAllowedIpRespons
 		this.updateType = updateType;
 		if(updateType != null){
 			putQueryParameter("UpdateType", updateType);
-		}
-	}
-
-	public String getAllowedListType() {
-		return this.allowedListType;
-	}
-
-	public void setAllowedListType(String allowedListType) {
-		this.allowedListType = allowedListType;
-		if(allowedListType != null){
-			putQueryParameter("AllowedListType", allowedListType);
-		}
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
 		}
 	}
 

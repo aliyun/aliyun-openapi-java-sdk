@@ -25,11 +25,11 @@ import com.aliyuncs.alikafka.Endpoint;
 public class GetTopicListRequest extends RpcAcsRequest<GetTopicListResponse> {
 	   
 
+	private String pageSize;
+
 	private String currentPage;
 
 	private String instanceId;
-
-	private String pageSize;
 
 	private String topic;
 	public GetTopicListRequest() {
@@ -39,6 +39,17 @@ public class GetTopicListRequest extends RpcAcsRequest<GetTopicListResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(String pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize);
+		}
 	}
 
 	public String getCurrentPage() {
@@ -60,17 +71,6 @@ public class GetTopicListRequest extends RpcAcsRequest<GetTopicListResponse> {
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(String pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize);
 		}
 	}
 

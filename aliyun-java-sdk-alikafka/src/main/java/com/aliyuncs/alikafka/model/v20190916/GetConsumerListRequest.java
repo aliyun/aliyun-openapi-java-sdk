@@ -27,11 +27,11 @@ public class GetConsumerListRequest extends RpcAcsRequest<GetConsumerListRespons
 
 	private String consumerId;
 
+	private Integer pageSize;
+
 	private Integer currentPage;
 
 	private String instanceId;
-
-	private Integer pageSize;
 	public GetConsumerListRequest() {
 		super("alikafka", "2019-09-16", "GetConsumerList", "alikafka");
 		setMethod(MethodType.POST);
@@ -49,6 +49,17 @@ public class GetConsumerListRequest extends RpcAcsRequest<GetConsumerListRespons
 		this.consumerId = consumerId;
 		if(consumerId != null){
 			putQueryParameter("ConsumerId", consumerId);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -71,17 +82,6 @@ public class GetConsumerListRequest extends RpcAcsRequest<GetConsumerListRespons
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

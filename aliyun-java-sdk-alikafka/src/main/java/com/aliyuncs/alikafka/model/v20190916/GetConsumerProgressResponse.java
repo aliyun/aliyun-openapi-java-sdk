@@ -169,6 +169,12 @@ public class GetConsumerProgressResponse extends AcsResponse {
 
 				private Long lastTimestamp;
 
+				private String clientIp;
+
+				private String clientId;
+
+				private String memberId;
+
 				public Integer getPartition() {
 					return this.partition;
 				}
@@ -199,6 +205,30 @@ public class GetConsumerProgressResponse extends AcsResponse {
 
 				public void setLastTimestamp(Long lastTimestamp) {
 					this.lastTimestamp = lastTimestamp;
+				}
+
+				public String getClientIp() {
+					return this.clientIp;
+				}
+
+				public void setClientIp(String clientIp) {
+					this.clientIp = clientIp;
+				}
+
+				public String getClientId() {
+					return this.clientId;
+				}
+
+				public void setClientId(String clientId) {
+					this.clientId = clientId;
+				}
+
+				public String getMemberId() {
+					return this.memberId;
+				}
+
+				public void setMemberId(String memberId) {
+					this.memberId = memberId;
 				}
 			}
 		}

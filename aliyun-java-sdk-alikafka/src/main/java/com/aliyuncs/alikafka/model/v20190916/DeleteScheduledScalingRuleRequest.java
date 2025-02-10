@@ -22,18 +22,14 @@ import com.aliyuncs.alikafka.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteSaslUserRequest extends RpcAcsRequest<DeleteSaslUserResponse> {
+public class DeleteScheduledScalingRuleRequest extends RpcAcsRequest<DeleteScheduledScalingRuleResponse> {
 	   
 
-	private String type;
-
-	private String mechanism;
+	private String ruleName;
 
 	private String instanceId;
-
-	private String username;
-	public DeleteSaslUserRequest() {
-		super("alikafka", "2019-09-16", "DeleteSaslUser", "alikafka");
+	public DeleteScheduledScalingRuleRequest() {
+		super("alikafka", "2019-09-16", "DeleteScheduledScalingRule", "alikafka");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -41,25 +37,14 @@ public class DeleteSaslUserRequest extends RpcAcsRequest<DeleteSaslUserResponse>
 		} catch (Exception e) {}
 	}
 
-	public String getType() {
-		return this.type;
+	public String getRuleName() {
+		return this.ruleName;
 	}
 
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type);
-		}
-	}
-
-	public String getMechanism() {
-		return this.mechanism;
-	}
-
-	public void setMechanism(String mechanism) {
-		this.mechanism = mechanism;
-		if(mechanism != null){
-			putQueryParameter("Mechanism", mechanism);
+	public void setRuleName(String ruleName) {
+		this.ruleName = ruleName;
+		if(ruleName != null){
+			putQueryParameter("RuleName", ruleName);
 		}
 	}
 
@@ -74,20 +59,9 @@ public class DeleteSaslUserRequest extends RpcAcsRequest<DeleteSaslUserResponse>
 		}
 	}
 
-	public String getUsername() {
-		return this.username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
-		if(username != null){
-			putQueryParameter("Username", username);
-		}
-	}
-
 	@Override
-	public Class<DeleteSaslUserResponse> getResponseClass() {
-		return DeleteSaslUserResponse.class;
+	public Class<DeleteScheduledScalingRuleResponse> getResponseClass() {
+		return DeleteScheduledScalingRuleResponse.class;
 	}
 
 }

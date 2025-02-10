@@ -15,8 +15,10 @@
 package com.aliyuncs.alikafka.model.v20190916;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.alikafka.Endpoint;
 
@@ -24,18 +26,20 @@ import com.aliyuncs.alikafka.Endpoint;
  * @author auto create
  * @version 
  */
-public class UpgradePostPayOrderRequest extends RpcAcsRequest<UpgradePostPayOrderResponse> {
+public class CreatePostPayInstanceRequest extends RpcAcsRequest<CreatePostPayInstanceResponse> {
 	   
-
-	private Integer ioMax;
-
-	private Boolean eipModel;
 
 	private Integer eipMax;
 
 	private String specType;
 
+	private String resourceGroupId;
+
+	private List<Tag> tags;
+
 	private Integer partitionNum;
+
+	private Integer paidType;
 
 	@SerializedName("serverlessConfig")
 	private ServerlessConfig serverlessConfig;
@@ -44,38 +48,17 @@ public class UpgradePostPayOrderRequest extends RpcAcsRequest<UpgradePostPayOrde
 
 	private String ioMaxSpec;
 
-	private Integer topicQuota;
+	private String diskType;
 
-	private String instanceId;
-	public UpgradePostPayOrderRequest() {
-		super("alikafka", "2019-09-16", "UpgradePostPayOrder", "alikafka");
+	private Integer deployType;
+	public CreatePostPayInstanceRequest() {
+		super("alikafka", "2019-09-16", "CreatePostPayInstance", "alikafka");
+		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Integer getIoMax() {
-		return this.ioMax;
-	}
-
-	public void setIoMax(Integer ioMax) {
-		this.ioMax = ioMax;
-		if(ioMax != null){
-			putQueryParameter("IoMax", ioMax.toString());
-		}
-	}
-
-	public Boolean getEipModel() {
-		return this.eipModel;
-	}
-
-	public void setEipModel(Boolean eipModel) {
-		this.eipModel = eipModel;
-		if(eipModel != null){
-			putQueryParameter("EipModel", eipModel.toString());
-		}
 	}
 
 	public Integer getEipMax() {
@@ -100,6 +83,31 @@ public class UpgradePostPayOrderRequest extends RpcAcsRequest<UpgradePostPayOrde
 		}
 	}
 
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
+	}
+
 	public Integer getPartitionNum() {
 		return this.partitionNum;
 	}
@@ -108,6 +116,17 @@ public class UpgradePostPayOrderRequest extends RpcAcsRequest<UpgradePostPayOrde
 		this.partitionNum = partitionNum;
 		if(partitionNum != null){
 			putQueryParameter("PartitionNum", partitionNum.toString());
+		}
+	}
+
+	public Integer getPaidType() {
+		return this.paidType;
+	}
+
+	public void setPaidType(Integer paidType) {
+		this.paidType = paidType;
+		if(paidType != null){
+			putQueryParameter("PaidType", paidType.toString());
 		}
 	}
 
@@ -144,25 +163,48 @@ public class UpgradePostPayOrderRequest extends RpcAcsRequest<UpgradePostPayOrde
 		}
 	}
 
-	public Integer getTopicQuota() {
-		return this.topicQuota;
+	public String getDiskType() {
+		return this.diskType;
 	}
 
-	public void setTopicQuota(Integer topicQuota) {
-		this.topicQuota = topicQuota;
-		if(topicQuota != null){
-			putQueryParameter("TopicQuota", topicQuota.toString());
+	public void setDiskType(String diskType) {
+		this.diskType = diskType;
+		if(diskType != null){
+			putQueryParameter("DiskType", diskType);
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public Integer getDeployType() {
+		return this.deployType;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
+	public void setDeployType(Integer deployType) {
+		this.deployType = deployType;
+		if(deployType != null){
+			putQueryParameter("DeployType", deployType.toString());
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 
@@ -192,8 +234,8 @@ public class UpgradePostPayOrderRequest extends RpcAcsRequest<UpgradePostPayOrde
 	}
 
 	@Override
-	public Class<UpgradePostPayOrderResponse> getResponseClass() {
-		return UpgradePostPayOrderResponse.class;
+	public Class<CreatePostPayInstanceResponse> getResponseClass() {
+		return CreatePostPayInstanceResponse.class;
 	}
 
 }

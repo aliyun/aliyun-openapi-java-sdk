@@ -55,13 +55,18 @@ public class GetInstanceListResponseUnmarshaller {
 			instanceVO.setExpiredTime(_ctx.longValue("GetInstanceListResponse.InstanceList["+ i +"].ExpiredTime"));
 			instanceVO.setTopicNumLimit(_ctx.integerValue("GetInstanceListResponse.InstanceList["+ i +"].TopicNumLimit"));
 			instanceVO.setZoneId(_ctx.stringValue("GetInstanceListResponse.InstanceList["+ i +"].ZoneId"));
+			instanceVO.setIoMaxRead(_ctx.integerValue("GetInstanceListResponse.InstanceList["+ i +"].IoMaxRead"));
+			instanceVO.setIoMaxWrite(_ctx.integerValue("GetInstanceListResponse.InstanceList["+ i +"].IoMaxWrite"));
 			instanceVO.setIoMax(_ctx.integerValue("GetInstanceListResponse.InstanceList["+ i +"].IoMax"));
 			instanceVO.setPaidType(_ctx.integerValue("GetInstanceListResponse.InstanceList["+ i +"].PaidType"));
 			instanceVO.setName(_ctx.stringValue("GetInstanceListResponse.InstanceList["+ i +"].Name"));
 			instanceVO.setEndPoint(_ctx.stringValue("GetInstanceListResponse.InstanceList["+ i +"].EndPoint"));
 			instanceVO.setDomainEndpoint(_ctx.stringValue("GetInstanceListResponse.InstanceList["+ i +"].DomainEndpoint"));
+			instanceVO.setVpcSaslEndPoint(_ctx.stringValue("GetInstanceListResponse.InstanceList["+ i +"].VpcSaslEndPoint"));
+			instanceVO.setSaslEndPoint(_ctx.stringValue("GetInstanceListResponse.InstanceList["+ i +"].SaslEndPoint"));
 			instanceVO.setSslDomainEndpoint(_ctx.stringValue("GetInstanceListResponse.InstanceList["+ i +"].SslDomainEndpoint"));
 			instanceVO.setSaslDomainEndpoint(_ctx.stringValue("GetInstanceListResponse.InstanceList["+ i +"].SaslDomainEndpoint"));
+			instanceVO.setVpcSaslDomainEndpoint(_ctx.stringValue("GetInstanceListResponse.InstanceList["+ i +"].VpcSaslDomainEndpoint"));
 			instanceVO.setResourceGroupId(_ctx.stringValue("GetInstanceListResponse.InstanceList["+ i +"].ResourceGroupId"));
 			instanceVO.setUsedTopicCount(_ctx.integerValue("GetInstanceListResponse.InstanceList["+ i +"].UsedTopicCount"));
 			instanceVO.setUsedGroupCount(_ctx.integerValue("GetInstanceListResponse.InstanceList["+ i +"].UsedGroupCount"));
@@ -72,6 +77,19 @@ public class GetInstanceListResponseUnmarshaller {
 			instanceVO.setReservedPublishCapacity(_ctx.integerValue("GetInstanceListResponse.InstanceList["+ i +"].ReservedPublishCapacity"));
 			instanceVO.setReservedSubscribeCapacity(_ctx.integerValue("GetInstanceListResponse.InstanceList["+ i +"].ReservedSubscribeCapacity"));
 			instanceVO.setViewInstanceStatusCode(_ctx.integerValue("GetInstanceListResponse.InstanceList["+ i +"].ViewInstanceStatusCode"));
+			instanceVO.setSeries(_ctx.stringValue("GetInstanceListResponse.InstanceList["+ i +"].Series"));
+			instanceVO.setAutoCreateGroupEnable(_ctx.booleanValue("GetInstanceListResponse.InstanceList["+ i +"].AutoCreateGroupEnable"));
+			instanceVO.setAutoCreateTopicEnable(_ctx.booleanValue("GetInstanceListResponse.InstanceList["+ i +"].AutoCreateTopicEnable"));
+			instanceVO.setDefaultPartitionNum(_ctx.integerValue("GetInstanceListResponse.InstanceList["+ i +"].DefaultPartitionNum"));
+			instanceVO.setBrokerCount(_ctx.integerValue("GetInstanceListResponse.InstanceList["+ i +"].BrokerCount"));
+			instanceVO.setRecommendedPartitionCount(_ctx.integerValue("GetInstanceListResponse.InstanceList["+ i +"].RecommendedPartitionCount"));
+			instanceVO.setBackupZoneId(_ctx.stringValue("GetInstanceListResponse.InstanceList["+ i +"].BackupZoneId"));
+
+			List<String> vSwitchIds = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("GetInstanceListResponse.InstanceList["+ i +"].VSwitchIds.Length"); j++) {
+				vSwitchIds.add(_ctx.stringValue("GetInstanceListResponse.InstanceList["+ i +"].VSwitchIds["+ j +"]"));
+			}
+			instanceVO.setVSwitchIds(vSwitchIds);
 
 			UpgradeServiceDetailInfo upgradeServiceDetailInfo = new UpgradeServiceDetailInfo();
 			upgradeServiceDetailInfo.setCurrent2OpenSourceVersion(_ctx.stringValue("GetInstanceListResponse.InstanceList["+ i +"].UpgradeServiceDetailInfo.Current2OpenSourceVersion"));

@@ -25,11 +25,13 @@ import com.aliyuncs.alikafka.Endpoint;
 public class EnableAutoTopicCreationRequest extends RpcAcsRequest<EnableAutoTopicCreationResponse> {
 	   
 
+	private Long partitionNum;
+
+	private Boolean updatePartition;
+
 	private String instanceId;
 
 	private String operate;
-
-	private Long partitionNum;
 	public EnableAutoTopicCreationRequest() {
 		super("alikafka", "2019-09-16", "EnableAutoTopicCreation", "alikafka");
 		setMethod(MethodType.POST);
@@ -37,6 +39,28 @@ public class EnableAutoTopicCreationRequest extends RpcAcsRequest<EnableAutoTopi
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Long getPartitionNum() {
+		return this.partitionNum;
+	}
+
+	public void setPartitionNum(Long partitionNum) {
+		this.partitionNum = partitionNum;
+		if(partitionNum != null){
+			putQueryParameter("PartitionNum", partitionNum.toString());
+		}
+	}
+
+	public Boolean getUpdatePartition() {
+		return this.updatePartition;
+	}
+
+	public void setUpdatePartition(Boolean updatePartition) {
+		this.updatePartition = updatePartition;
+		if(updatePartition != null){
+			putQueryParameter("UpdatePartition", updatePartition.toString());
+		}
 	}
 
 	public String getInstanceId() {
@@ -58,17 +82,6 @@ public class EnableAutoTopicCreationRequest extends RpcAcsRequest<EnableAutoTopi
 		this.operate = operate;
 		if(operate != null){
 			putQueryParameter("Operate", operate);
-		}
-	}
-
-	public Long getPartitionNum() {
-		return this.partitionNum;
-	}
-
-	public void setPartitionNum(Long partitionNum) {
-		this.partitionNum = partitionNum;
-		if(partitionNum != null){
-			putQueryParameter("PartitionNum", partitionNum.toString());
 		}
 	}
 

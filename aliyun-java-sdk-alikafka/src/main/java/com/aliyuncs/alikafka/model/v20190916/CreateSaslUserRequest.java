@@ -29,9 +29,9 @@ public class CreateSaslUserRequest extends RpcAcsRequest<CreateSaslUserResponse>
 
 	private String password;
 
-	private String instanceId;
-
 	private String mechanism;
+
+	private String instanceId;
 
 	private String username;
 	public CreateSaslUserRequest() {
@@ -65,17 +65,6 @@ public class CreateSaslUserRequest extends RpcAcsRequest<CreateSaslUserResponse>
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
 	public String getMechanism() {
 		return this.mechanism;
 	}
@@ -84,6 +73,17 @@ public class CreateSaslUserRequest extends RpcAcsRequest<CreateSaslUserResponse>
 		this.mechanism = mechanism;
 		if(mechanism != null){
 			putQueryParameter("Mechanism", mechanism);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
