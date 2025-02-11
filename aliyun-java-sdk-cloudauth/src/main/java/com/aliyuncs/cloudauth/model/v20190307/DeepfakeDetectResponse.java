@@ -16,14 +16,14 @@ package com.aliyuncs.cloudauth.model.v20190307;
 
 import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cloudauth.transform.v20190307.CredentialVerifyResponseUnmarshaller;
+import com.aliyuncs.cloudauth.transform.v20190307.DeepfakeDetectResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CredentialVerifyResponse extends AcsResponse {
+public class DeepfakeDetectResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -73,16 +73,6 @@ public class CredentialVerifyResponse extends AcsResponse {
 
 		private Map<Object,Object> riskScore;
 
-		private String ocrInfo;
-
-		private String verifyResult;
-
-		private String verifyDetail;
-
-		private String materialInfo;
-
-		private VlResult vlResult;
-
 		public String getResult() {
 			return this.result;
 		}
@@ -106,74 +96,11 @@ public class CredentialVerifyResponse extends AcsResponse {
 		public void setRiskScore(Map<Object,Object> riskScore) {
 			this.riskScore = riskScore;
 		}
-
-		public String getOcrInfo() {
-			return this.ocrInfo;
-		}
-
-		public void setOcrInfo(String ocrInfo) {
-			this.ocrInfo = ocrInfo;
-		}
-
-		public String getVerifyResult() {
-			return this.verifyResult;
-		}
-
-		public void setVerifyResult(String verifyResult) {
-			this.verifyResult = verifyResult;
-		}
-
-		public String getVerifyDetail() {
-			return this.verifyDetail;
-		}
-
-		public void setVerifyDetail(String verifyDetail) {
-			this.verifyDetail = verifyDetail;
-		}
-
-		public String getMaterialInfo() {
-			return this.materialInfo;
-		}
-
-		public void setMaterialInfo(String materialInfo) {
-			this.materialInfo = materialInfo;
-		}
-
-		public VlResult getVlResult() {
-			return this.vlResult;
-		}
-
-		public void setVlResult(VlResult vlResult) {
-			this.vlResult = vlResult;
-		}
-
-		public static class VlResult {
-
-			private Boolean success;
-
-			private String vlContent;
-
-			public Boolean getSuccess() {
-				return this.success;
-			}
-
-			public void setSuccess(Boolean success) {
-				this.success = success;
-			}
-
-			public String getVlContent() {
-				return this.vlContent;
-			}
-
-			public void setVlContent(String vlContent) {
-				this.vlContent = vlContent;
-			}
-		}
 	}
 
 	@Override
-	public CredentialVerifyResponse getInstance(UnmarshallerContext context) {
-		return	CredentialVerifyResponseUnmarshaller.unmarshall(this, context);
+	public DeepfakeDetectResponse getInstance(UnmarshallerContext context) {
+		return	DeepfakeDetectResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

@@ -23,16 +23,20 @@ import com.aliyuncs.cloudauth.Endpoint;
  * @author auto create
  * @version 
  */
-public class Id2MetaVerifyRequest extends RpcAcsRequest<Id2MetaVerifyResponse> {
+public class Id2MetaPeriodVerifyRequest extends RpcAcsRequest<Id2MetaPeriodVerifyResponse> {
 	   
 
 	private String paramType;
 
+	private String validityStartDate;
+
+	private String validityEndDate;
+
 	private String identifyNum;
 
 	private String userName;
-	public Id2MetaVerifyRequest() {
-		super("Cloudauth", "2019-03-07", "Id2MetaVerify", "cloudauth");
+	public Id2MetaPeriodVerifyRequest() {
+		super("Cloudauth", "2019-03-07", "Id2MetaPeriodVerify", "cloudauth");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
@@ -49,6 +53,28 @@ public class Id2MetaVerifyRequest extends RpcAcsRequest<Id2MetaVerifyResponse> {
 		this.paramType = paramType;
 		if(paramType != null){
 			putBodyParameter("ParamType", paramType);
+		}
+	}
+
+	public String getValidityStartDate() {
+		return this.validityStartDate;
+	}
+
+	public void setValidityStartDate(String validityStartDate) {
+		this.validityStartDate = validityStartDate;
+		if(validityStartDate != null){
+			putBodyParameter("ValidityStartDate", validityStartDate);
+		}
+	}
+
+	public String getValidityEndDate() {
+		return this.validityEndDate;
+	}
+
+	public void setValidityEndDate(String validityEndDate) {
+		this.validityEndDate = validityEndDate;
+		if(validityEndDate != null){
+			putBodyParameter("ValidityEndDate", validityEndDate);
 		}
 	}
 
@@ -75,8 +101,8 @@ public class Id2MetaVerifyRequest extends RpcAcsRequest<Id2MetaVerifyResponse> {
 	}
 
 	@Override
-	public Class<Id2MetaVerifyResponse> getResponseClass() {
-		return Id2MetaVerifyResponse.class;
+	public Class<Id2MetaPeriodVerifyResponse> getResponseClass() {
+		return Id2MetaPeriodVerifyResponse.class;
 	}
 
 }

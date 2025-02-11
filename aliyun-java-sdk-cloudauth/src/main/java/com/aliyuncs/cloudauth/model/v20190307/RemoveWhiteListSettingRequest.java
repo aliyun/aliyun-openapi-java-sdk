@@ -15,6 +15,9 @@
 package com.aliyuncs.cloudauth.model.v20190307;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cloudauth.Endpoint;
@@ -23,16 +26,15 @@ import com.aliyuncs.cloudauth.Endpoint;
  * @author auto create
  * @version 
  */
-public class Id2MetaVerifyRequest extends RpcAcsRequest<Id2MetaVerifyResponse> {
+public class RemoveWhiteListSettingRequest extends RpcAcsRequest<RemoveWhiteListSettingResponse> {
 	   
 
-	private String paramType;
+	private String serviceCode;
 
-	private String identifyNum;
-
-	private String userName;
-	public Id2MetaVerifyRequest() {
-		super("Cloudauth", "2019-03-07", "Id2MetaVerify", "cloudauth");
+	@SerializedName("ids")
+	private List<Long> ids;
+	public RemoveWhiteListSettingRequest() {
+		super("Cloudauth", "2019-03-07", "RemoveWhiteListSetting", "cloudauth");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
@@ -41,42 +43,31 @@ public class Id2MetaVerifyRequest extends RpcAcsRequest<Id2MetaVerifyResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getParamType() {
-		return this.paramType;
+	public String getServiceCode() {
+		return this.serviceCode;
 	}
 
-	public void setParamType(String paramType) {
-		this.paramType = paramType;
-		if(paramType != null){
-			putBodyParameter("ParamType", paramType);
+	public void setServiceCode(String serviceCode) {
+		this.serviceCode = serviceCode;
+		if(serviceCode != null){
+			putQueryParameter("ServiceCode", serviceCode);
 		}
 	}
 
-	public String getIdentifyNum() {
-		return this.identifyNum;
+	public List<Long> getIds() {
+		return this.ids;
 	}
 
-	public void setIdentifyNum(String identifyNum) {
-		this.identifyNum = identifyNum;
-		if(identifyNum != null){
-			putBodyParameter("IdentifyNum", identifyNum);
-		}
-	}
-
-	public String getUserName() {
-		return this.userName;
-	}
-
-	public void setUserName(String userName) {
-		this.userName = userName;
-		if(userName != null){
-			putBodyParameter("UserName", userName);
-		}
+	public void setIds(List<Long> ids) {
+		this.ids = ids;	
+		if (ids != null) {
+			putQueryParameter("Ids" , new Gson().toJson(ids));
+		}	
 	}
 
 	@Override
-	public Class<Id2MetaVerifyResponse> getResponseClass() {
-		return Id2MetaVerifyResponse.class;
+	public Class<RemoveWhiteListSettingResponse> getResponseClass() {
+		return RemoveWhiteListSettingResponse.class;
 	}
 
 }

@@ -30,6 +30,8 @@ public class BankMetaVerifyRequest extends RpcAcsRequest<BankMetaVerifyResponse>
 
 	private String verifyMode;
 
+	private String identityType;
+
 	private String mobile;
 
 	private String identifyNum;
@@ -68,6 +70,17 @@ public class BankMetaVerifyRequest extends RpcAcsRequest<BankMetaVerifyResponse>
 		this.verifyMode = verifyMode;
 		if(verifyMode != null){
 			putQueryParameter("VerifyMode", verifyMode);
+		}
+	}
+
+	public String getIdentityType() {
+		return this.identityType;
+	}
+
+	public void setIdentityType(String identityType) {
+		this.identityType = identityType;
+		if(identityType != null){
+			putQueryParameter("IdentityType", identityType);
 		}
 	}
 

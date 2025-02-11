@@ -50,7 +50,7 @@ public class Mobile3MetaSimpleVerifyRequest extends RpcAcsRequest<Mobile3MetaSim
 	public void setParamType(String paramType) {
 		this.paramType = paramType;
 		if(paramType != null){
-			putQueryParameter("ParamType", paramType);
+			putBodyParameter("ParamType", paramType);
 		}
 	}
 
@@ -61,7 +61,7 @@ public class Mobile3MetaSimpleVerifyRequest extends RpcAcsRequest<Mobile3MetaSim
 	public void setMobile(String mobile) {
 		this.mobile = mobile;
 		if(mobile != null){
-			putQueryParameter("Mobile", mobile);
+			putBodyParameter("Mobile", mobile);
 		}
 	}
 
@@ -72,7 +72,7 @@ public class Mobile3MetaSimpleVerifyRequest extends RpcAcsRequest<Mobile3MetaSim
 	public void setIdentifyNum(String identifyNum) {
 		this.identifyNum = identifyNum;
 		if(identifyNum != null){
-			putQueryParameter("IdentifyNum", identifyNum);
+			putBodyParameter("IdentifyNum", identifyNum);
 		}
 	}
 
@@ -83,7 +83,7 @@ public class Mobile3MetaSimpleVerifyRequest extends RpcAcsRequest<Mobile3MetaSim
 	public void setUserName(String userName) {
 		this.userName = userName;
 		if(userName != null){
-			putQueryParameter("UserName", userName);
+			putBodyParameter("UserName", userName);
 		}
 	}
 

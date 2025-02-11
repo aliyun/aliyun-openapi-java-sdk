@@ -23,16 +23,14 @@ import com.aliyuncs.cloudauth.Endpoint;
  * @author auto create
  * @version 
  */
-public class Id2MetaVerifyRequest extends RpcAcsRequest<Id2MetaVerifyResponse> {
+public class DeleteFaceVerifyResultRequest extends RpcAcsRequest<DeleteFaceVerifyResultResponse> {
 	   
 
-	private String paramType;
+	private String deleteAfterQuery;
 
-	private String identifyNum;
-
-	private String userName;
-	public Id2MetaVerifyRequest() {
-		super("Cloudauth", "2019-03-07", "Id2MetaVerify", "cloudauth");
+	private String certifyId;
+	public DeleteFaceVerifyResultRequest() {
+		super("Cloudauth", "2019-03-07", "DeleteFaceVerifyResult", "cloudauth");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
@@ -41,42 +39,31 @@ public class Id2MetaVerifyRequest extends RpcAcsRequest<Id2MetaVerifyResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getParamType() {
-		return this.paramType;
+	public String getDeleteAfterQuery() {
+		return this.deleteAfterQuery;
 	}
 
-	public void setParamType(String paramType) {
-		this.paramType = paramType;
-		if(paramType != null){
-			putBodyParameter("ParamType", paramType);
+	public void setDeleteAfterQuery(String deleteAfterQuery) {
+		this.deleteAfterQuery = deleteAfterQuery;
+		if(deleteAfterQuery != null){
+			putQueryParameter("DeleteAfterQuery", deleteAfterQuery);
 		}
 	}
 
-	public String getIdentifyNum() {
-		return this.identifyNum;
+	public String getCertifyId() {
+		return this.certifyId;
 	}
 
-	public void setIdentifyNum(String identifyNum) {
-		this.identifyNum = identifyNum;
-		if(identifyNum != null){
-			putBodyParameter("IdentifyNum", identifyNum);
-		}
-	}
-
-	public String getUserName() {
-		return this.userName;
-	}
-
-	public void setUserName(String userName) {
-		this.userName = userName;
-		if(userName != null){
-			putBodyParameter("UserName", userName);
+	public void setCertifyId(String certifyId) {
+		this.certifyId = certifyId;
+		if(certifyId != null){
+			putQueryParameter("CertifyId", certifyId);
 		}
 	}
 
 	@Override
-	public Class<Id2MetaVerifyResponse> getResponseClass() {
-		return Id2MetaVerifyResponse.class;
+	public Class<DeleteFaceVerifyResultResponse> getResponseClass() {
+		return DeleteFaceVerifyResultResponse.class;
 	}
 
 }

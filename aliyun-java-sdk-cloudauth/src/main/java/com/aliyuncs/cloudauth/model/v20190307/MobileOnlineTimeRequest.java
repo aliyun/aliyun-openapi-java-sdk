@@ -46,7 +46,7 @@ public class MobileOnlineTimeRequest extends RpcAcsRequest<MobileOnlineTimeRespo
 	public void setParamType(String paramType) {
 		this.paramType = paramType;
 		if(paramType != null){
-			putQueryParameter("ParamType", paramType);
+			putBodyParameter("ParamType", paramType);
 		}
 	}
 
@@ -57,7 +57,7 @@ public class MobileOnlineTimeRequest extends RpcAcsRequest<MobileOnlineTimeRespo
 	public void setMobile(String mobile) {
 		this.mobile = mobile;
 		if(mobile != null){
-			putQueryParameter("Mobile", mobile);
+			putBodyParameter("Mobile", mobile);
 		}
 	}
 

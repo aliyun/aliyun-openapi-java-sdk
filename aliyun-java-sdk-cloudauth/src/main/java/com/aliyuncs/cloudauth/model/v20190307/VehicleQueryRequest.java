@@ -23,22 +23,33 @@ import com.aliyuncs.cloudauth.Endpoint;
  * @author auto create
  * @version 
  */
-public class Id2MetaVerifyRequest extends RpcAcsRequest<Id2MetaVerifyResponse> {
+public class VehicleQueryRequest extends RpcAcsRequest<VehicleQueryResponse> {
 	   
+
+	private String vehicleType;
 
 	private String paramType;
 
-	private String identifyNum;
-
-	private String userName;
-	public Id2MetaVerifyRequest() {
-		super("Cloudauth", "2019-03-07", "Id2MetaVerify", "cloudauth");
+	private String vehicleNum;
+	public VehicleQueryRequest() {
+		super("Cloudauth", "2019-03-07", "VehicleQuery", "cloudauth");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getVehicleType() {
+		return this.vehicleType;
+	}
+
+	public void setVehicleType(String vehicleType) {
+		this.vehicleType = vehicleType;
+		if(vehicleType != null){
+			putQueryParameter("VehicleType", vehicleType);
+		}
 	}
 
 	public String getParamType() {
@@ -48,35 +59,24 @@ public class Id2MetaVerifyRequest extends RpcAcsRequest<Id2MetaVerifyResponse> {
 	public void setParamType(String paramType) {
 		this.paramType = paramType;
 		if(paramType != null){
-			putBodyParameter("ParamType", paramType);
+			putQueryParameter("ParamType", paramType);
 		}
 	}
 
-	public String getIdentifyNum() {
-		return this.identifyNum;
+	public String getVehicleNum() {
+		return this.vehicleNum;
 	}
 
-	public void setIdentifyNum(String identifyNum) {
-		this.identifyNum = identifyNum;
-		if(identifyNum != null){
-			putBodyParameter("IdentifyNum", identifyNum);
-		}
-	}
-
-	public String getUserName() {
-		return this.userName;
-	}
-
-	public void setUserName(String userName) {
-		this.userName = userName;
-		if(userName != null){
-			putBodyParameter("UserName", userName);
+	public void setVehicleNum(String vehicleNum) {
+		this.vehicleNum = vehicleNum;
+		if(vehicleNum != null){
+			putQueryParameter("VehicleNum", vehicleNum);
 		}
 	}
 
 	@Override
-	public Class<Id2MetaVerifyResponse> getResponseClass() {
-		return Id2MetaVerifyResponse.class;
+	public Class<VehicleQueryResponse> getResponseClass() {
+		return VehicleQueryResponse.class;
 	}
 
 }

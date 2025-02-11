@@ -16,6 +16,7 @@ package com.aliyuncs.cloudauth.transform.v20190307;
 
 import com.aliyuncs.cloudauth.model.v20190307.CredentialVerifyResponse;
 import com.aliyuncs.cloudauth.model.v20190307.CredentialVerifyResponse.ResultObject;
+import com.aliyuncs.cloudauth.model.v20190307.CredentialVerifyResponse.ResultObject.VlResult;
 import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -35,6 +36,12 @@ public class CredentialVerifyResponseUnmarshaller {
 		resultObject.setOcrInfo(_ctx.stringValue("CredentialVerifyResponse.ResultObject.OcrInfo"));
 		resultObject.setVerifyResult(_ctx.stringValue("CredentialVerifyResponse.ResultObject.VerifyResult"));
 		resultObject.setVerifyDetail(_ctx.stringValue("CredentialVerifyResponse.ResultObject.VerifyDetail"));
+		resultObject.setMaterialInfo(_ctx.stringValue("CredentialVerifyResponse.ResultObject.MaterialInfo"));
+
+		VlResult vlResult = new VlResult();
+		vlResult.setSuccess(_ctx.booleanValue("CredentialVerifyResponse.ResultObject.VlResult.Success"));
+		vlResult.setVlContent(_ctx.stringValue("CredentialVerifyResponse.ResultObject.VlResult.VlContent"));
+		resultObject.setVlResult(vlResult);
 		credentialVerifyResponse.setResultObject(resultObject);
 	 
 	 	return credentialVerifyResponse;

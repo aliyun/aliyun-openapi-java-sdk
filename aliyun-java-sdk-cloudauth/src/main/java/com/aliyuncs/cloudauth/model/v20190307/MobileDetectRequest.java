@@ -46,7 +46,7 @@ public class MobileDetectRequest extends RpcAcsRequest<MobileDetectResponse> {
 	public void setParamType(String paramType) {
 		this.paramType = paramType;
 		if(paramType != null){
-			putQueryParameter("ParamType", paramType);
+			putBodyParameter("ParamType", paramType);
 		}
 	}
 
@@ -57,7 +57,7 @@ public class MobileDetectRequest extends RpcAcsRequest<MobileDetectResponse> {
 	public void setMobiles(String mobiles) {
 		this.mobiles = mobiles;
 		if(mobiles != null){
-			putQueryParameter("Mobiles", mobiles);
+			putBodyParameter("Mobiles", mobiles);
 		}
 	}
 

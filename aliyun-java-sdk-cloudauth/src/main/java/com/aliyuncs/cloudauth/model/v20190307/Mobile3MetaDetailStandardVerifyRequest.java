@@ -23,16 +23,18 @@ import com.aliyuncs.cloudauth.Endpoint;
  * @author auto create
  * @version 
  */
-public class Id2MetaVerifyRequest extends RpcAcsRequest<Id2MetaVerifyResponse> {
+public class Mobile3MetaDetailStandardVerifyRequest extends RpcAcsRequest<Mobile3MetaDetailStandardVerifyResponse> {
 	   
 
 	private String paramType;
 
+	private String mobile;
+
 	private String identifyNum;
 
 	private String userName;
-	public Id2MetaVerifyRequest() {
-		super("Cloudauth", "2019-03-07", "Id2MetaVerify", "cloudauth");
+	public Mobile3MetaDetailStandardVerifyRequest() {
+		super("Cloudauth", "2019-03-07", "Mobile3MetaDetailStandardVerify", "cloudauth");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
@@ -49,6 +51,17 @@ public class Id2MetaVerifyRequest extends RpcAcsRequest<Id2MetaVerifyResponse> {
 		this.paramType = paramType;
 		if(paramType != null){
 			putBodyParameter("ParamType", paramType);
+		}
+	}
+
+	public String getMobile() {
+		return this.mobile;
+	}
+
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
+		if(mobile != null){
+			putBodyParameter("Mobile", mobile);
 		}
 	}
 
@@ -75,8 +88,8 @@ public class Id2MetaVerifyRequest extends RpcAcsRequest<Id2MetaVerifyResponse> {
 	}
 
 	@Override
-	public Class<Id2MetaVerifyResponse> getResponseClass() {
-		return Id2MetaVerifyResponse.class;
+	public Class<Mobile3MetaDetailStandardVerifyResponse> getResponseClass() {
+		return Mobile3MetaDetailStandardVerifyResponse.class;
 	}
 
 }

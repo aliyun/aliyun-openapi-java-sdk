@@ -15,6 +15,9 @@
 package com.aliyuncs.cloudauth.model.v20190307;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cloudauth.Endpoint;
@@ -26,6 +29,8 @@ import com.aliyuncs.cloudauth.Endpoint;
 public class CredentialVerifyRequest extends RpcAcsRequest<CredentialVerifyResponse> {
 	   
 
+	private String productCode;
+
 	private String isOCR;
 
 	private String isCheck;
@@ -34,13 +39,22 @@ public class CredentialVerifyRequest extends RpcAcsRequest<CredentialVerifyRespo
 
 	private String credType;
 
+	private String promptModel;
+
 	private String identifyNum;
 
 	private String credName;
 
+	private String merchantId;
+
+	@SerializedName("merchantDetail")
+	private List<MerchantDetail> merchantDetail;
+
 	private String imageUrl;
 
 	private String certNum;
+
+	private String prompt;
 
 	private String userName;
 	public CredentialVerifyRequest() {
@@ -51,6 +65,17 @@ public class CredentialVerifyRequest extends RpcAcsRequest<CredentialVerifyRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getProductCode() {
+		return this.productCode;
+	}
+
+	public void setProductCode(String productCode) {
+		this.productCode = productCode;
+		if(productCode != null){
+			putQueryParameter("ProductCode", productCode);
+		}
 	}
 
 	public String getIsOCR() {
@@ -97,6 +122,17 @@ public class CredentialVerifyRequest extends RpcAcsRequest<CredentialVerifyRespo
 		}
 	}
 
+	public String getPromptModel() {
+		return this.promptModel;
+	}
+
+	public void setPromptModel(String promptModel) {
+		this.promptModel = promptModel;
+		if(promptModel != null){
+			putQueryParameter("PromptModel", promptModel);
+		}
+	}
+
 	public String getIdentifyNum() {
 		return this.identifyNum;
 	}
@@ -117,6 +153,28 @@ public class CredentialVerifyRequest extends RpcAcsRequest<CredentialVerifyRespo
 		if(credName != null){
 			putQueryParameter("CredName", credName);
 		}
+	}
+
+	public String getMerchantId() {
+		return this.merchantId;
+	}
+
+	public void setMerchantId(String merchantId) {
+		this.merchantId = merchantId;
+		if(merchantId != null){
+			putQueryParameter("MerchantId", merchantId);
+		}
+	}
+
+	public List<MerchantDetail> getMerchantDetail() {
+		return this.merchantDetail;
+	}
+
+	public void setMerchantDetail(List<MerchantDetail> merchantDetail) {
+		this.merchantDetail = merchantDetail;	
+		if (merchantDetail != null) {
+			putQueryParameter("MerchantDetail" , new Gson().toJson(merchantDetail));
+		}	
 	}
 
 	public String getImageUrl() {
@@ -141,6 +199,17 @@ public class CredentialVerifyRequest extends RpcAcsRequest<CredentialVerifyRespo
 		}
 	}
 
+	public String getPrompt() {
+		return this.prompt;
+	}
+
+	public void setPrompt(String prompt) {
+		this.prompt = prompt;
+		if(prompt != null){
+			putQueryParameter("Prompt", prompt);
+		}
+	}
+
 	public String getUserName() {
 		return this.userName;
 	}
@@ -149,6 +218,31 @@ public class CredentialVerifyRequest extends RpcAcsRequest<CredentialVerifyRespo
 		this.userName = userName;
 		if(userName != null){
 			putQueryParameter("UserName", userName);
+		}
+	}
+
+	public static class MerchantDetail {
+
+		@SerializedName("Value")
+		private String value;
+
+		@SerializedName("Key")
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 
