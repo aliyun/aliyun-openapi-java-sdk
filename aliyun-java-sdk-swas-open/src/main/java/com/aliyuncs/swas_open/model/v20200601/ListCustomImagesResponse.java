@@ -111,6 +111,14 @@ public class ListCustomImagesResponse extends AcsResponse {
 
 		private String osType;
 
+		private Integer requiredSystemDiskSize;
+
+		private Integer requiredDataDiskSize;
+
+		private String sourceImageName;
+
+		private String sourceImageVersion;
+
 		private List<Tag> tags;
 
 		private List<String> createInstances;
@@ -249,6 +257,38 @@ public class ListCustomImagesResponse extends AcsResponse {
 
 		public void setOsType(String osType) {
 			this.osType = osType;
+		}
+
+		public Integer getRequiredSystemDiskSize() {
+			return this.requiredSystemDiskSize;
+		}
+
+		public void setRequiredSystemDiskSize(Integer requiredSystemDiskSize) {
+			this.requiredSystemDiskSize = requiredSystemDiskSize;
+		}
+
+		public Integer getRequiredDataDiskSize() {
+			return this.requiredDataDiskSize;
+		}
+
+		public void setRequiredDataDiskSize(Integer requiredDataDiskSize) {
+			this.requiredDataDiskSize = requiredDataDiskSize;
+		}
+
+		public String getSourceImageName() {
+			return this.sourceImageName;
+		}
+
+		public void setSourceImageName(String sourceImageName) {
+			this.sourceImageName = sourceImageName;
+		}
+
+		public String getSourceImageVersion() {
+			return this.sourceImageVersion;
+		}
+
+		public void setSourceImageVersion(String sourceImageVersion) {
+			this.sourceImageVersion = sourceImageVersion;
 		}
 
 		public List<Tag> getTags() {

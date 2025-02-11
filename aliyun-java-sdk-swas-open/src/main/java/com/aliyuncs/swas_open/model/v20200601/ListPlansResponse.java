@@ -67,6 +67,8 @@ public class ListPlansResponse extends AcsResponse {
 
 		private String supportPlatform;
 
+		private String planType;
+
 		public Integer getCore() {
 			return this.core;
 		}
@@ -145,6 +147,14 @@ public class ListPlansResponse extends AcsResponse {
 
 		public void setSupportPlatform(String supportPlatform) {
 			this.supportPlatform = supportPlatform;
+		}
+
+		public String getPlanType() {
+			return this.planType;
+		}
+
+		public void setPlanType(String planType) {
+			this.planType = planType;
 		}
 	}
 

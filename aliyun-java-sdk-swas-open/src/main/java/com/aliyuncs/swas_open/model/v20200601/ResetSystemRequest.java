@@ -28,6 +28,8 @@ public class ResetSystemRequest extends RpcAcsRequest<ResetSystemResponse> {
 
 	private String clientToken;
 
+	private LoginCredentials loginCredentials;
+
 	private String instanceId;
 	public ResetSystemRequest() {
 		super("SWAS-OPEN", "2020-06-01", "ResetSystem", "SWAS-OPEN");
@@ -56,6 +58,19 @@ public class ResetSystemRequest extends RpcAcsRequest<ResetSystemResponse> {
 		}
 	}
 
+	public LoginCredentials getLoginCredentials() {
+		return this.loginCredentials;
+	}
+
+	public void setLoginCredentials(LoginCredentials loginCredentials) {
+		this.loginCredentials = loginCredentials;	
+		if (loginCredentials != null) {
+			
+				putQueryParameter("LoginCredentials.Password" , loginCredentials.getPassword());
+				putQueryParameter("LoginCredentials.KeyPairName" , loginCredentials.getKeyPairName());
+		}	
+	}
+
 	public String getInstanceId() {
 		return this.instanceId;
 	}
@@ -64,6 +79,29 @@ public class ResetSystemRequest extends RpcAcsRequest<ResetSystemResponse> {
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public static class LoginCredentials {
+
+		private String password;
+
+		private String keyPairName;
+
+		public String getPassword() {
+			return this.password;
+		}
+
+		public void setPassword(String password) {
+			this.password = password;
+		}
+
+		public String getKeyPairName() {
+			return this.keyPairName;
+		}
+
+		public void setKeyPairName(String keyPairName) {
+			this.keyPairName = keyPairName;
 		}
 	}
 

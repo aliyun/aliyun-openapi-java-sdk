@@ -52,6 +52,10 @@ public class ListCustomImagesResponseUnmarshaller {
 			customImage.setResourceGroupId(_ctx.stringValue("ListCustomImagesResponse.CustomImages["+ i +"].ResourceGroupId"));
 			customImage.setUserId(_ctx.longValue("ListCustomImagesResponse.CustomImages["+ i +"].UserId"));
 			customImage.setOsType(_ctx.stringValue("ListCustomImagesResponse.CustomImages["+ i +"].OsType"));
+			customImage.setRequiredSystemDiskSize(_ctx.integerValue("ListCustomImagesResponse.CustomImages["+ i +"].RequiredSystemDiskSize"));
+			customImage.setRequiredDataDiskSize(_ctx.integerValue("ListCustomImagesResponse.CustomImages["+ i +"].RequiredDataDiskSize"));
+			customImage.setSourceImageName(_ctx.stringValue("ListCustomImagesResponse.CustomImages["+ i +"].SourceImageName"));
+			customImage.setSourceImageVersion(_ctx.stringValue("ListCustomImagesResponse.CustomImages["+ i +"].SourceImageVersion"));
 
 			List<String> createInstances = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListCustomImagesResponse.CustomImages["+ i +"].CreateInstances.Length"); j++) {

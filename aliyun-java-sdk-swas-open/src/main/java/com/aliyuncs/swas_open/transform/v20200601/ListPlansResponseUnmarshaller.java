@@ -41,6 +41,7 @@ public class ListPlansResponseUnmarshaller {
 			plan.setOriginPrice(_ctx.doubleValue("ListPlansResponse.Plans["+ i +"].OriginPrice"));
 			plan.setCurrency(_ctx.stringValue("ListPlansResponse.Plans["+ i +"].Currency"));
 			plan.setSupportPlatform(_ctx.stringValue("ListPlansResponse.Plans["+ i +"].SupportPlatform"));
+			plan.setPlanType(_ctx.stringValue("ListPlansResponse.Plans["+ i +"].PlanType"));
 
 			plans.add(plan);
 		}
