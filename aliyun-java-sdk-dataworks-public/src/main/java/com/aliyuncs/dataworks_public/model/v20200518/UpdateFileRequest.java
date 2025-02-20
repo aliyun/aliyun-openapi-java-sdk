@@ -27,6 +27,8 @@ public class UpdateFileRequest extends RpcAcsRequest<UpdateFileResponse> {
 
 	private String outputList;
 
+	private String imageId;
+
 	private String dependentNodeIdList;
 
 	private String content;
@@ -105,6 +107,17 @@ public class UpdateFileRequest extends RpcAcsRequest<UpdateFileResponse> {
 		this.outputList = outputList;
 		if(outputList != null){
 			putBodyParameter("OutputList", outputList);
+		}
+	}
+
+	public String getImageId() {
+		return this.imageId;
+	}
+
+	public void setImageId(String imageId) {
+		this.imageId = imageId;
+		if(imageId != null){
+			putBodyParameter("ImageId", imageId);
 		}
 	}
 

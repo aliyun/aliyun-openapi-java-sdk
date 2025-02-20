@@ -386,6 +386,8 @@ public class GetFileResponse extends AcsResponse {
 
 			private Integer timeout;
 
+			private String imageId;
+
 			private List<NodeInputOutput> inputList;
 
 			private List<NodeInputOutput1> outputList;
@@ -528,6 +530,14 @@ public class GetFileResponse extends AcsResponse {
 
 			public void setTimeout(Integer timeout) {
 				this.timeout = timeout;
+			}
+
+			public String getImageId() {
+				return this.imageId;
+			}
+
+			public void setImageId(String imageId) {
+				this.imageId = imageId;
 			}
 
 			public List<NodeInputOutput> getInputList() {

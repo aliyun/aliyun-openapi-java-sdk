@@ -27,6 +27,8 @@ public class CreateFileRequest extends RpcAcsRequest<CreateFileResponse> {
 
 	private Integer fileType;
 
+	private String imageId;
+
 	private String dependentNodeIdList;
 
 	private String content;
@@ -107,6 +109,17 @@ public class CreateFileRequest extends RpcAcsRequest<CreateFileResponse> {
 		this.fileType = fileType;
 		if(fileType != null){
 			putBodyParameter("FileType", fileType.toString());
+		}
+	}
+
+	public String getImageId() {
+		return this.imageId;
+	}
+
+	public void setImageId(String imageId) {
+		this.imageId = imageId;
+		if(imageId != null){
+			putBodyParameter("ImageId", imageId);
 		}
 	}
 
