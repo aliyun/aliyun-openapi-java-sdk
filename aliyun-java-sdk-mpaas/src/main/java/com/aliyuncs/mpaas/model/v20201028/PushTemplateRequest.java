@@ -34,6 +34,9 @@ public class PushTemplateRequest extends RpcAcsRequest<PushTemplateResponse> {
 
 	private String templateKeyValue;
 
+	@SerializedName("notifyLevel")
+	private Map<String,String> notifyLevel;
+
 	private Object transparentMessagePayload;
 
 	private Object activityContentState;
@@ -124,6 +127,17 @@ public class PushTemplateRequest extends RpcAcsRequest<PushTemplateResponse> {
 		if(templateKeyValue != null){
 			putBodyParameter("TemplateKeyValue", templateKeyValue);
 		}
+	}
+
+	public Map<String,String> getNotifyLevel() {
+		return this.notifyLevel;
+	}
+
+	public void setNotifyLevel(Map<String,String> notifyLevel) {
+		this.notifyLevel = notifyLevel;	
+		if (notifyLevel != null) {
+			putBodyParameter("NotifyLevel" , new Gson().toJson(notifyLevel));
+		}	
 	}
 
 	public Object getTransparentMessagePayload() {

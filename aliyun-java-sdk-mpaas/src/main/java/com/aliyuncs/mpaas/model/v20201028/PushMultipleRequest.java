@@ -29,9 +29,10 @@ import com.aliyuncs.mpaas.Endpoint;
 public class PushMultipleRequest extends RpcAcsRequest<PushMultipleResponse> {
 	   
 
-	private String transparentMessageUrgency;
-
 	private String taskName;
+
+	@SerializedName("notifyLevel")
+	private Map<String,String> notifyLevel;
 
 	private Object transparentMessagePayload;
 
@@ -39,19 +40,11 @@ public class PushMultipleRequest extends RpcAcsRequest<PushMultipleResponse> {
 
 	private Long pushAction;
 
-	private String tenantId;
-
 	private Long deliveryType;
-
-	private String templateName;
 
 	private String notifyType;
 
-	private String miChannelId;
-
 	private String extendedParams;
-
-	private Long silent;
 
 	private String strategyContent;
 
@@ -64,17 +57,27 @@ public class PushMultipleRequest extends RpcAcsRequest<PushMultipleResponse> {
 
 	private List<TargetMsg> targetMsgs;
 
-	private String appId;
-
-	private String activityEvent;
-
 	private Long dismissalDate;
 
 	private Integer strategyType;
 
-	private String channelId;
-
 	private String workspaceId;
+
+	private String transparentMessageUrgency;
+
+	private String tenantId;
+
+	private String templateName;
+
+	private String miChannelId;
+
+	private Long silent;
+
+	private String appId;
+
+	private String activityEvent;
+
+	private String channelId;
 	public PushMultipleRequest() {
 		super("mPaaS", "2020-10-28", "PushMultiple", "mpaas");
 		setMethod(MethodType.POST);
@@ -82,17 +85,6 @@ public class PushMultipleRequest extends RpcAcsRequest<PushMultipleResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getTransparentMessageUrgency() {
-		return this.transparentMessageUrgency;
-	}
-
-	public void setTransparentMessageUrgency(String transparentMessageUrgency) {
-		this.transparentMessageUrgency = transparentMessageUrgency;
-		if(transparentMessageUrgency != null){
-			putBodyParameter("TransparentMessageUrgency", transparentMessageUrgency);
-		}
 	}
 
 	public String getTaskName() {
@@ -104,6 +96,17 @@ public class PushMultipleRequest extends RpcAcsRequest<PushMultipleResponse> {
 		if(taskName != null){
 			putBodyParameter("TaskName", taskName);
 		}
+	}
+
+	public Map<String,String> getNotifyLevel() {
+		return this.notifyLevel;
+	}
+
+	public void setNotifyLevel(Map<String,String> notifyLevel) {
+		this.notifyLevel = notifyLevel;	
+		if (notifyLevel != null) {
+			putBodyParameter("NotifyLevel" , new Gson().toJson(notifyLevel));
+		}	
 	}
 
 	public Object getTransparentMessagePayload() {
@@ -139,17 +142,6 @@ public class PushMultipleRequest extends RpcAcsRequest<PushMultipleResponse> {
 		}
 	}
 
-	public String getTenantId() {
-		return this.tenantId;
-	}
-
-	public void setTenantId(String tenantId) {
-		this.tenantId = tenantId;
-		if(tenantId != null){
-			putBodyParameter("TenantId", tenantId);
-		}
-	}
-
 	public Long getDeliveryType() {
 		return this.deliveryType;
 	}
@@ -158,17 +150,6 @@ public class PushMultipleRequest extends RpcAcsRequest<PushMultipleResponse> {
 		this.deliveryType = deliveryType;
 		if(deliveryType != null){
 			putBodyParameter("DeliveryType", deliveryType.toString());
-		}
-	}
-
-	public String getTemplateName() {
-		return this.templateName;
-	}
-
-	public void setTemplateName(String templateName) {
-		this.templateName = templateName;
-		if(templateName != null){
-			putBodyParameter("TemplateName", templateName);
 		}
 	}
 
@@ -183,17 +164,6 @@ public class PushMultipleRequest extends RpcAcsRequest<PushMultipleResponse> {
 		}
 	}
 
-	public String getMiChannelId() {
-		return this.miChannelId;
-	}
-
-	public void setMiChannelId(String miChannelId) {
-		this.miChannelId = miChannelId;
-		if(miChannelId != null){
-			putBodyParameter("MiChannelId", miChannelId);
-		}
-	}
-
 	public String getExtendedParams() {
 		return this.extendedParams;
 	}
@@ -202,17 +172,6 @@ public class PushMultipleRequest extends RpcAcsRequest<PushMultipleResponse> {
 		this.extendedParams = extendedParams;
 		if(extendedParams != null){
 			putBodyParameter("ExtendedParams", extendedParams);
-		}
-	}
-
-	public Long getSilent() {
-		return this.silent;
-	}
-
-	public void setSilent(Long silent) {
-		this.silent = silent;
-		if(silent != null){
-			putBodyParameter("Silent", silent.toString());
 		}
 	}
 
@@ -276,28 +235,6 @@ public class PushMultipleRequest extends RpcAcsRequest<PushMultipleResponse> {
 		}	
 	}
 
-	public String getAppId() {
-		return this.appId;
-	}
-
-	public void setAppId(String appId) {
-		this.appId = appId;
-		if(appId != null){
-			putBodyParameter("AppId", appId);
-		}
-	}
-
-	public String getActivityEvent() {
-		return this.activityEvent;
-	}
-
-	public void setActivityEvent(String activityEvent) {
-		this.activityEvent = activityEvent;
-		if(activityEvent != null){
-			putBodyParameter("ActivityEvent", activityEvent);
-		}
-	}
-
 	public Long getDismissalDate() {
 		return this.dismissalDate;
 	}
@@ -320,17 +257,6 @@ public class PushMultipleRequest extends RpcAcsRequest<PushMultipleResponse> {
 		}
 	}
 
-	public String getChannelId() {
-		return this.channelId;
-	}
-
-	public void setChannelId(String channelId) {
-		this.channelId = channelId;
-		if(channelId != null){
-			putBodyParameter("ChannelId", channelId);
-		}
-	}
-
 	public String getWorkspaceId() {
 		return this.workspaceId;
 	}
@@ -339,6 +265,94 @@ public class PushMultipleRequest extends RpcAcsRequest<PushMultipleResponse> {
 		this.workspaceId = workspaceId;
 		if(workspaceId != null){
 			putBodyParameter("WorkspaceId", workspaceId);
+		}
+	}
+
+	public String getTransparentMessageUrgency() {
+		return this.transparentMessageUrgency;
+	}
+
+	public void setTransparentMessageUrgency(String transparentMessageUrgency) {
+		this.transparentMessageUrgency = transparentMessageUrgency;
+		if(transparentMessageUrgency != null){
+			putBodyParameter("TransparentMessageUrgency", transparentMessageUrgency);
+		}
+	}
+
+	public String getTenantId() {
+		return this.tenantId;
+	}
+
+	public void setTenantId(String tenantId) {
+		this.tenantId = tenantId;
+		if(tenantId != null){
+			putBodyParameter("TenantId", tenantId);
+		}
+	}
+
+	public String getTemplateName() {
+		return this.templateName;
+	}
+
+	public void setTemplateName(String templateName) {
+		this.templateName = templateName;
+		if(templateName != null){
+			putBodyParameter("TemplateName", templateName);
+		}
+	}
+
+	public String getMiChannelId() {
+		return this.miChannelId;
+	}
+
+	public void setMiChannelId(String miChannelId) {
+		this.miChannelId = miChannelId;
+		if(miChannelId != null){
+			putBodyParameter("MiChannelId", miChannelId);
+		}
+	}
+
+	public Long getSilent() {
+		return this.silent;
+	}
+
+	public void setSilent(Long silent) {
+		this.silent = silent;
+		if(silent != null){
+			putBodyParameter("Silent", silent.toString());
+		}
+	}
+
+	public String getAppId() {
+		return this.appId;
+	}
+
+	public void setAppId(String appId) {
+		this.appId = appId;
+		if(appId != null){
+			putBodyParameter("AppId", appId);
+		}
+	}
+
+	public String getActivityEvent() {
+		return this.activityEvent;
+	}
+
+	public void setActivityEvent(String activityEvent) {
+		this.activityEvent = activityEvent;
+		if(activityEvent != null){
+			putBodyParameter("ActivityEvent", activityEvent);
+		}
+	}
+
+	public String getChannelId() {
+		return this.channelId;
+	}
+
+	public void setChannelId(String channelId) {
+		this.channelId = channelId;
+		if(channelId != null){
+			putBodyParameter("ChannelId", channelId);
 		}
 	}
 
