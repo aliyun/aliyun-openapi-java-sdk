@@ -93,6 +93,8 @@ public class GetApplicationResponse extends AcsResponse {
 
 		private List<Item2> resourceList;
 
+		private List<Item3> complianceList;
+
 		public String getDescription() {
 			return this.description;
 		}
@@ -195,6 +197,14 @@ public class GetApplicationResponse extends AcsResponse {
 
 		public void setResourceList(List<Item2> resourceList) {
 			this.resourceList = resourceList;
+		}
+
+		public List<Item3> getComplianceList() {
+			return this.complianceList;
+		}
+
+		public void setComplianceList(List<Item3> complianceList) {
+			this.complianceList = complianceList;
 		}
 
 		public static class Item {
@@ -503,6 +513,62 @@ public class GetApplicationResponse extends AcsResponse {
 
 			public void setNodeLabel(String nodeLabel) {
 				this.nodeLabel = nodeLabel;
+			}
+		}
+
+		public static class Item3 {
+
+			private String resourceName;
+
+			private String resourceCode;
+
+			private List<Item4> rules;
+
+			public String getResourceName() {
+				return this.resourceName;
+			}
+
+			public void setResourceName(String resourceName) {
+				this.resourceName = resourceName;
+			}
+
+			public String getResourceCode() {
+				return this.resourceCode;
+			}
+
+			public void setResourceCode(String resourceCode) {
+				this.resourceCode = resourceCode;
+			}
+
+			public List<Item4> getRules() {
+				return this.rules;
+			}
+
+			public void setRules(List<Item4> rules) {
+				this.rules = rules;
+			}
+
+			public static class Item4 {
+
+				private String ruleId;
+
+				private String ruleDetail;
+
+				public String getRuleId() {
+					return this.ruleId;
+				}
+
+				public void setRuleId(String ruleId) {
+					this.ruleId = ruleId;
+				}
+
+				public String getRuleDetail() {
+					return this.ruleDetail;
+				}
+
+				public void setRuleDetail(String ruleDetail) {
+					this.ruleDetail = ruleDetail;
+				}
 			}
 		}
 	}

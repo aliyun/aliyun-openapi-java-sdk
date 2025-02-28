@@ -28,9 +28,6 @@ import com.aliyuncs.http.MethodType;
 public class CreateApplicationRequest extends RpcAcsRequest<CreateApplicationResponse> {
 	   
 
-	@SerializedName("variables")
-	private Map<String,Object> variables;
-
 	private String clientToken;
 
 	@SerializedName("instances")
@@ -39,27 +36,19 @@ public class CreateApplicationRequest extends RpcAcsRequest<CreateApplicationRes
 	@SerializedName("configuration")
 	private Map<String,String> configuration;
 
-	private String templateId;
-
 	private String resourceGroupId;
 
 	private String areaId;
+
+	@SerializedName("variables")
+	private Map<String,Object> variables;
+
+	private String templateId;
 
 	private String name;
 	public CreateApplicationRequest() {
 		super("BPStudio", "2021-09-31", "CreateApplication", "bpstudio");
 		setMethod(MethodType.POST);
-	}
-
-	public Map<String,Object> getVariables() {
-		return this.variables;
-	}
-
-	public void setVariables(Map<String,Object> variables) {
-		this.variables = variables;	
-		if (variables != null) {
-			putBodyParameter("Variables" , new Gson().toJson(variables));
-		}	
 	}
 
 	public String getClientToken() {
@@ -95,17 +84,6 @@ public class CreateApplicationRequest extends RpcAcsRequest<CreateApplicationRes
 		}	
 	}
 
-	public String getTemplateId() {
-		return this.templateId;
-	}
-
-	public void setTemplateId(String templateId) {
-		this.templateId = templateId;
-		if(templateId != null){
-			putBodyParameter("TemplateId", templateId);
-		}
-	}
-
 	public String getResourceGroupId() {
 		return this.resourceGroupId;
 	}
@@ -125,6 +103,28 @@ public class CreateApplicationRequest extends RpcAcsRequest<CreateApplicationRes
 		this.areaId = areaId;
 		if(areaId != null){
 			putBodyParameter("AreaId", areaId);
+		}
+	}
+
+	public Map<String,Object> getVariables() {
+		return this.variables;
+	}
+
+	public void setVariables(Map<String,Object> variables) {
+		this.variables = variables;	
+		if (variables != null) {
+			putBodyParameter("Variables" , new Gson().toJson(variables));
+		}	
+	}
+
+	public String getTemplateId() {
+		return this.templateId;
+	}
+
+	public void setTemplateId(String templateId) {
+		this.templateId = templateId;
+		if(templateId != null){
+			putBodyParameter("TemplateId", templateId);
 		}
 	}
 

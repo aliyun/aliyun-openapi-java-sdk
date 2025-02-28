@@ -22,6 +22,8 @@ import com.aliyuncs.bpstudio.model.v20210931.GetApplicationResponse.Data;
 import com.aliyuncs.bpstudio.model.v20210931.GetApplicationResponse.Data.Item;
 import com.aliyuncs.bpstudio.model.v20210931.GetApplicationResponse.Data.Item1;
 import com.aliyuncs.bpstudio.model.v20210931.GetApplicationResponse.Data.Item2;
+import com.aliyuncs.bpstudio.model.v20210931.GetApplicationResponse.Data.Item3;
+import com.aliyuncs.bpstudio.model.v20210931.GetApplicationResponse.Data.Item3.Item4;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -98,6 +100,26 @@ public class GetApplicationResponseUnmarshaller {
 			resourceList.add(item2);
 		}
 		data.setResourceList(resourceList);
+
+		List<Item3> complianceList = new ArrayList<Item3>();
+		for (int i = 0; i < _ctx.lengthValue("GetApplicationResponse.Data.ComplianceList.Length"); i++) {
+			Item3 item3 = new Item3();
+			item3.setResourceName(_ctx.stringValue("GetApplicationResponse.Data.ComplianceList["+ i +"].ResourceName"));
+			item3.setResourceCode(_ctx.stringValue("GetApplicationResponse.Data.ComplianceList["+ i +"].ResourceCode"));
+
+			List<Item4> rules = new ArrayList<Item4>();
+			for (int j = 0; j < _ctx.lengthValue("GetApplicationResponse.Data.ComplianceList["+ i +"].Rules.Length"); j++) {
+				Item4 item4 = new Item4();
+				item4.setRuleId(_ctx.stringValue("GetApplicationResponse.Data.ComplianceList["+ i +"].Rules["+ j +"].ruleId"));
+				item4.setRuleDetail(_ctx.stringValue("GetApplicationResponse.Data.ComplianceList["+ i +"].Rules["+ j +"].ruleDetail"));
+
+				rules.add(item4);
+			}
+			item3.setRules(rules);
+
+			complianceList.add(item3);
+		}
+		data.setComplianceList(complianceList);
 		getApplicationResponse.setData(data);
 	 
 	 	return getApplicationResponse;
