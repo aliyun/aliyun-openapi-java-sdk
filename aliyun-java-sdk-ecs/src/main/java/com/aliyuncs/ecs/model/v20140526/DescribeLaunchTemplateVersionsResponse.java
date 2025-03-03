@@ -848,6 +848,8 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 
 				private String networkInterfaceTrafficMode;
 
+				private Boolean deleteOnRelease;
+
 				private List<String> securityGroupIds1;
 
 				public String getNetworkInterfaceName() {
@@ -904,6 +906,14 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 
 				public void setNetworkInterfaceTrafficMode(String networkInterfaceTrafficMode) {
 					this.networkInterfaceTrafficMode = networkInterfaceTrafficMode;
+				}
+
+				public Boolean getDeleteOnRelease() {
+					return this.deleteOnRelease;
+				}
+
+				public void setDeleteOnRelease(Boolean deleteOnRelease) {
+					this.deleteOnRelease = deleteOnRelease;
 				}
 
 				public List<String> getSecurityGroupIds1() {

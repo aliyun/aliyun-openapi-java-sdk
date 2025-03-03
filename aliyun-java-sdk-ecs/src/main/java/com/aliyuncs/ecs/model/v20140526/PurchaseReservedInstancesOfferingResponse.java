@@ -27,6 +27,8 @@ public class PurchaseReservedInstancesOfferingResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String orderId;
+
 	private List<String> reservedInstanceIdSets;
 
 	public String getRequestId() {
@@ -35,6 +37,14 @@ public class PurchaseReservedInstancesOfferingResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getOrderId() {
+		return this.orderId;
+	}
+
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
 	}
 
 	public List<String> getReservedInstanceIdSets() {

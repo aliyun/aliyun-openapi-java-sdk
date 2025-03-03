@@ -15,14 +15,14 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ecs.transform.v20140526.ModifyAutoSnapshotPolicyResponseUnmarshaller;
+import com.aliyuncs.ecs.transform.v20140526.ModifyElasticityAssuranceAutoRenewAttributeResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ModifyAutoSnapshotPolicyResponse extends AcsResponse {
+public class ModifyElasticityAssuranceAutoRenewAttributeResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -35,7 +35,7 @@ public class ModifyAutoSnapshotPolicyResponse extends AcsResponse {
 	}
 
 	@Override
-	public ModifyAutoSnapshotPolicyResponse getInstance(UnmarshallerContext context) {
-		return	ModifyAutoSnapshotPolicyResponseUnmarshaller.unmarshall(this, context);
+	public ModifyElasticityAssuranceAutoRenewAttributeResponse getInstance(UnmarshallerContext context) {
+		return	ModifyElasticityAssuranceAutoRenewAttributeResponseUnmarshaller.unmarshall(this, context);
 	}
 }

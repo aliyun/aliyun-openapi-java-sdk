@@ -14,17 +14,16 @@
 
 package com.aliyuncs.ecs.transform.v20140526;
 
-import com.aliyuncs.ecs.model.v20140526.RenewDedicatedHostsResponse;
+import com.aliyuncs.ecs.model.v20140526.ModifyElasticityAssuranceAutoRenewAttributeResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class RenewDedicatedHostsResponseUnmarshaller {
+public class ModifyElasticityAssuranceAutoRenewAttributeResponseUnmarshaller {
 
-	public static RenewDedicatedHostsResponse unmarshall(RenewDedicatedHostsResponse renewDedicatedHostsResponse, UnmarshallerContext _ctx) {
+	public static ModifyElasticityAssuranceAutoRenewAttributeResponse unmarshall(ModifyElasticityAssuranceAutoRenewAttributeResponse modifyElasticityAssuranceAutoRenewAttributeResponse, UnmarshallerContext _ctx) {
 		
-		renewDedicatedHostsResponse.setRequestId(_ctx.stringValue("RenewDedicatedHostsResponse.RequestId"));
-		renewDedicatedHostsResponse.setOrderId(_ctx.stringValue("RenewDedicatedHostsResponse.OrderId"));
+		modifyElasticityAssuranceAutoRenewAttributeResponse.setRequestId(_ctx.stringValue("ModifyElasticityAssuranceAutoRenewAttributeResponse.RequestId"));
 	 
-	 	return renewDedicatedHostsResponse;
+	 	return modifyElasticityAssuranceAutoRenewAttributeResponse;
 	}
 }

@@ -15,18 +15,18 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ecs.transform.v20140526.RenewDedicatedHostsResponseUnmarshaller;
+import com.aliyuncs.ecs.transform.v20140526.ModifySnapshotCategoryResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class RenewDedicatedHostsResponse extends AcsResponse {
+public class ModifySnapshotCategoryResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String orderId;
+	private String taskId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,16 +36,16 @@ public class RenewDedicatedHostsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getOrderId() {
-		return this.orderId;
+	public String getTaskId() {
+		return this.taskId;
 	}
 
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
 	}
 
 	@Override
-	public RenewDedicatedHostsResponse getInstance(UnmarshallerContext context) {
-		return	RenewDedicatedHostsResponseUnmarshaller.unmarshall(this, context);
+	public ModifySnapshotCategoryResponse getInstance(UnmarshallerContext context) {
+		return	ModifySnapshotCategoryResponseUnmarshaller.unmarshall(this, context);
 	}
 }

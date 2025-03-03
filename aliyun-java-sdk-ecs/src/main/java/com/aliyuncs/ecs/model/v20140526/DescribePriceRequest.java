@@ -34,6 +34,8 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 
 	private String isp;
 
+	private String startTime;
+
 	private Integer dataDisk4Size;
 
 	private String priceUnit;
@@ -113,6 +115,8 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 	private Integer systemDiskSize;
 
 	private String offeringType;
+
+	private List<RecurrenceRules> recurrenceRuless;
 	public DescribePriceRequest() {
 		super("Ecs", "2014-05-26", "DescribePrice", "ecs");
 		setMethod(MethodType.POST);
@@ -163,6 +167,17 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 		this.isp = isp;
 		if(isp != null){
 			putQueryParameter("Isp", isp);
+		}
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
 		}
 	}
 
@@ -613,6 +628,22 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 		}
 	}
 
+	public List<RecurrenceRules> getRecurrenceRuless() {
+		return this.recurrenceRuless;
+	}
+
+	public void setRecurrenceRuless(List<RecurrenceRules> recurrenceRuless) {
+		this.recurrenceRuless = recurrenceRuless;	
+		if (recurrenceRuless != null) {
+			for (int depth1 = 0; depth1 < recurrenceRuless.size(); depth1++) {
+				putQueryParameter("RecurrenceRules." + (depth1 + 1) + ".EndHour" , recurrenceRuless.get(depth1).getEndHour());
+				putQueryParameter("RecurrenceRules." + (depth1 + 1) + ".StartHour" , recurrenceRuless.get(depth1).getStartHour());
+				putQueryParameter("RecurrenceRules." + (depth1 + 1) + ".RecurrenceValue" , recurrenceRuless.get(depth1).getRecurrenceValue());
+				putQueryParameter("RecurrenceRules." + (depth1 + 1) + ".RecurrenceType" , recurrenceRuless.get(depth1).getRecurrenceType());
+			}
+		}	
+	}
+
 	public static class DataDisk {
 
 		private Long provisionedIops;
@@ -653,6 +684,49 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 
 		public void setCategory(String category) {
 			this.category = category;
+		}
+	}
+
+	public static class RecurrenceRules {
+
+		private Integer endHour;
+
+		private Integer startHour;
+
+		private String recurrenceValue;
+
+		private String recurrenceType;
+
+		public Integer getEndHour() {
+			return this.endHour;
+		}
+
+		public void setEndHour(Integer endHour) {
+			this.endHour = endHour;
+		}
+
+		public Integer getStartHour() {
+			return this.startHour;
+		}
+
+		public void setStartHour(Integer startHour) {
+			this.startHour = startHour;
+		}
+
+		public String getRecurrenceValue() {
+			return this.recurrenceValue;
+		}
+
+		public void setRecurrenceValue(String recurrenceValue) {
+			this.recurrenceValue = recurrenceValue;
+		}
+
+		public String getRecurrenceType() {
+			return this.recurrenceType;
+		}
+
+		public void setRecurrenceType(String recurrenceType) {
+			this.recurrenceType = recurrenceType;
 		}
 	}
 

@@ -68,6 +68,8 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 
 	private String launchTemplateId;
 
+	private PrePaidOptions prePaidOptions;
+
 	private Long ownerId;
 
 	private String launchConfigurationImageFamily;
@@ -81,6 +83,8 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 	private String minTargetCapacity;
 
 	private Float maxSpotPrice;
+
+	private LaunchConfiguration launchConfiguration;
 
 	private List<LaunchConfigurationArn> launchConfigurationArns;
 
@@ -408,6 +412,30 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 		}
 	}
 
+	public PrePaidOptions getPrePaidOptions() {
+		return this.prePaidOptions;
+	}
+
+	public void setPrePaidOptions(PrePaidOptions prePaidOptions) {
+		this.prePaidOptions = prePaidOptions;	
+		if (prePaidOptions != null) {
+			
+				if (prePaidOptions.getSpecifyCapacityDistribution() != null) {
+					for (int depth1 = 0; depth1 < prePaidOptions.getSpecifyCapacityDistribution().size(); depth1++) {
+						if (prePaidOptions.getSpecifyCapacityDistribution().get(depth1) != null) {
+							
+								if (prePaidOptions.getSpecifyCapacityDistribution().get(depth1).getInstanceTypes() != null) {
+									for (int depth2 = 0; depth2 < prePaidOptions.getSpecifyCapacityDistribution().get(depth1).getInstanceTypes().size(); depth2++) {
+										putQueryParameter("PrePaidOptions.SpecifyCapacityDistribution." + (depth1 + 1) + ".InstanceTypes." + (depth2 + 1) , prePaidOptions.getSpecifyCapacityDistribution().get(depth1).getInstanceTypes().get(depth2));
+									}
+								}
+								putQueryParameter("PrePaidOptions.SpecifyCapacityDistribution." + (depth1 + 1) + ".MinTargetCapacity" , prePaidOptions.getSpecifyCapacityDistribution().get(depth1).getMinTargetCapacity());
+						}
+					}
+				}
+		}	
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -483,6 +511,21 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 		if(maxSpotPrice != null){
 			putQueryParameter("MaxSpotPrice", maxSpotPrice.toString());
 		}
+	}
+
+	public LaunchConfiguration getLaunchConfiguration() {
+		return this.launchConfiguration;
+	}
+
+	public void setLaunchConfiguration(LaunchConfiguration launchConfiguration) {
+		this.launchConfiguration = launchConfiguration;	
+		if (launchConfiguration != null) {
+			
+				putQueryParameter("LaunchConfiguration.Period" , launchConfiguration.getPeriod());
+				putQueryParameter("LaunchConfiguration.PeriodUnit" , launchConfiguration.getPeriodUnit());
+				putQueryParameter("LaunchConfiguration.AutoRenew" , launchConfiguration.getAutoRenew());
+				putQueryParameter("LaunchConfiguration.AutoRenewPeriod" , launchConfiguration.getAutoRenewPeriod());
+		}	
 	}
 
 	public List<LaunchConfigurationArn> getLaunchConfigurationArns() {
@@ -1107,6 +1150,85 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 
 		public void setDiskCategory(String diskCategory) {
 			this.diskCategory = diskCategory;
+		}
+	}
+
+	public static class PrePaidOptions {
+
+		private List<SpecifyCapacityDistributionItem> specifyCapacityDistribution;
+
+		public List<SpecifyCapacityDistributionItem> getSpecifyCapacityDistribution() {
+			return this.specifyCapacityDistribution;
+		}
+
+		public void setSpecifyCapacityDistribution(List<SpecifyCapacityDistributionItem> specifyCapacityDistribution) {
+			this.specifyCapacityDistribution = specifyCapacityDistribution;
+		}
+
+		public static class SpecifyCapacityDistributionItem {
+
+			private List<String> instanceTypes;
+
+			private Integer minTargetCapacity;
+
+			public List<String> getInstanceTypes() {
+				return this.instanceTypes;
+			}
+
+			public void setInstanceTypes(List<String> instanceTypes) {
+				this.instanceTypes = instanceTypes;
+			}
+
+			public Integer getMinTargetCapacity() {
+				return this.minTargetCapacity;
+			}
+
+			public void setMinTargetCapacity(Integer minTargetCapacity) {
+				this.minTargetCapacity = minTargetCapacity;
+			}
+		}
+	}
+
+	public static class LaunchConfiguration {
+
+		private Integer period;
+
+		private String periodUnit;
+
+		private Boolean autoRenew;
+
+		private Integer autoRenewPeriod;
+
+		public Integer getPeriod() {
+			return this.period;
+		}
+
+		public void setPeriod(Integer period) {
+			this.period = period;
+		}
+
+		public String getPeriodUnit() {
+			return this.periodUnit;
+		}
+
+		public void setPeriodUnit(String periodUnit) {
+			this.periodUnit = periodUnit;
+		}
+
+		public Boolean getAutoRenew() {
+			return this.autoRenew;
+		}
+
+		public void setAutoRenew(Boolean autoRenew) {
+			this.autoRenew = autoRenew;
+		}
+
+		public Integer getAutoRenewPeriod() {
+			return this.autoRenewPeriod;
+		}
+
+		public void setAutoRenewPeriod(Integer autoRenewPeriod) {
+			this.autoRenewPeriod = autoRenewPeriod;
 		}
 	}
 

@@ -28,10 +28,6 @@ public class AllocateDedicatedHostsRequest extends RpcAcsRequest<AllocateDedicat
 
 	private Long resourceOwnerId;
 
-	private String clientToken;
-
-	private String description;
-
 	private Float cpuOverCommitRatio;
 
 	private String resourceGroupId;
@@ -40,25 +36,13 @@ public class AllocateDedicatedHostsRequest extends RpcAcsRequest<AllocateDedicat
 
 	private String actionOnMaintenance;
 
-	private String dedicatedHostClusterId;
-
 	private List<Tag> tags;
-
-	private String dedicatedHostType;
 
 	private Integer autoRenewPeriod;
 
 	private Integer period;
 
-	private Integer quantity;
-
 	private String dedicatedHostName;
-
-	private String resourceOwnerAccount;
-
-	private String ownerAccount;
-
-	private String autoReleaseTime;
 
 	private Long ownerId;
 
@@ -72,9 +56,25 @@ public class AllocateDedicatedHostsRequest extends RpcAcsRequest<AllocateDedicat
 
 	private String autoPlacement;
 
-	private String chargeType;
-
 	private Integer networkAttributesUdpTimeout;
+
+	private String clientToken;
+
+	private String description;
+
+	private String dedicatedHostClusterId;
+
+	private String dedicatedHostType;
+
+	private Integer quantity;
+
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
+
+	private String autoReleaseTime;
+
+	private String chargeType;
 	public AllocateDedicatedHostsRequest() {
 		super("Ecs", "2014-05-26", "AllocateDedicatedHosts", "ecs");
 		setMethod(MethodType.POST);
@@ -92,28 +92,6 @@ public class AllocateDedicatedHostsRequest extends RpcAcsRequest<AllocateDedicat
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
 		}
 	}
 
@@ -161,17 +139,6 @@ public class AllocateDedicatedHostsRequest extends RpcAcsRequest<AllocateDedicat
 		}
 	}
 
-	public String getDedicatedHostClusterId() {
-		return this.dedicatedHostClusterId;
-	}
-
-	public void setDedicatedHostClusterId(String dedicatedHostClusterId) {
-		this.dedicatedHostClusterId = dedicatedHostClusterId;
-		if(dedicatedHostClusterId != null){
-			putQueryParameter("DedicatedHostClusterId", dedicatedHostClusterId);
-		}
-	}
-
 	public List<Tag> getTags() {
 		return this.tags;
 	}
@@ -184,17 +151,6 @@ public class AllocateDedicatedHostsRequest extends RpcAcsRequest<AllocateDedicat
 				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
 			}
 		}	
-	}
-
-	public String getDedicatedHostType() {
-		return this.dedicatedHostType;
-	}
-
-	public void setDedicatedHostType(String dedicatedHostType) {
-		this.dedicatedHostType = dedicatedHostType;
-		if(dedicatedHostType != null){
-			putQueryParameter("DedicatedHostType", dedicatedHostType);
-		}
 	}
 
 	public Integer getAutoRenewPeriod() {
@@ -219,17 +175,6 @@ public class AllocateDedicatedHostsRequest extends RpcAcsRequest<AllocateDedicat
 		}
 	}
 
-	public Integer getQuantity() {
-		return this.quantity;
-	}
-
-	public void setQuantity(Integer quantity) {
-		this.quantity = quantity;
-		if(quantity != null){
-			putQueryParameter("Quantity", quantity.toString());
-		}
-	}
-
 	public String getDedicatedHostName() {
 		return this.dedicatedHostName;
 	}
@@ -238,39 +183,6 @@ public class AllocateDedicatedHostsRequest extends RpcAcsRequest<AllocateDedicat
 		this.dedicatedHostName = dedicatedHostName;
 		if(dedicatedHostName != null){
 			putQueryParameter("DedicatedHostName", dedicatedHostName);
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getAutoReleaseTime() {
-		return this.autoReleaseTime;
-	}
-
-	public void setAutoReleaseTime(String autoReleaseTime) {
-		this.autoReleaseTime = autoReleaseTime;
-		if(autoReleaseTime != null){
-			putQueryParameter("AutoReleaseTime", autoReleaseTime);
 		}
 	}
 
@@ -340,17 +252,6 @@ public class AllocateDedicatedHostsRequest extends RpcAcsRequest<AllocateDedicat
 		}
 	}
 
-	public String getChargeType() {
-		return this.chargeType;
-	}
-
-	public void setChargeType(String chargeType) {
-		this.chargeType = chargeType;
-		if(chargeType != null){
-			putQueryParameter("ChargeType", chargeType);
-		}
-	}
-
 	public Integer getNetworkAttributesUdpTimeout() {
 		return this.networkAttributesUdpTimeout;
 	}
@@ -359,6 +260,105 @@ public class AllocateDedicatedHostsRequest extends RpcAcsRequest<AllocateDedicat
 		this.networkAttributesUdpTimeout = networkAttributesUdpTimeout;
 		if(networkAttributesUdpTimeout != null){
 			putQueryParameter("NetworkAttributes.UdpTimeout", networkAttributesUdpTimeout.toString());
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getDedicatedHostClusterId() {
+		return this.dedicatedHostClusterId;
+	}
+
+	public void setDedicatedHostClusterId(String dedicatedHostClusterId) {
+		this.dedicatedHostClusterId = dedicatedHostClusterId;
+		if(dedicatedHostClusterId != null){
+			putQueryParameter("DedicatedHostClusterId", dedicatedHostClusterId);
+		}
+	}
+
+	public String getDedicatedHostType() {
+		return this.dedicatedHostType;
+	}
+
+	public void setDedicatedHostType(String dedicatedHostType) {
+		this.dedicatedHostType = dedicatedHostType;
+		if(dedicatedHostType != null){
+			putQueryParameter("DedicatedHostType", dedicatedHostType);
+		}
+	}
+
+	public Integer getQuantity() {
+		return this.quantity;
+	}
+
+	public void setQuantity(Integer quantity) {
+		this.quantity = quantity;
+		if(quantity != null){
+			putQueryParameter("Quantity", quantity.toString());
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getAutoReleaseTime() {
+		return this.autoReleaseTime;
+	}
+
+	public void setAutoReleaseTime(String autoReleaseTime) {
+		this.autoReleaseTime = autoReleaseTime;
+		if(autoReleaseTime != null){
+			putQueryParameter("AutoReleaseTime", autoReleaseTime);
+		}
+	}
+
+	public String getChargeType() {
+		return this.chargeType;
+	}
+
+	public void setChargeType(String chargeType) {
+		this.chargeType = chargeType;
+		if(chargeType != null){
+			putQueryParameter("ChargeType", chargeType);
 		}
 	}
 

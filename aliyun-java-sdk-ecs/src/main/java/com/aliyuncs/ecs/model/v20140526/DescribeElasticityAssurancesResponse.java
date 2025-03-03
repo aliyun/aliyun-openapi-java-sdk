@@ -107,9 +107,13 @@ public class DescribeElasticityAssurancesResponse extends AcsResponse {
 
 		private String elasticityAssuranceOwnerId;
 
+		private String packageType;
+
 		private List<AllocatedResource> allocatedResources;
 
 		private List<Tag> tags;
+
+		private List<RecurrenceRule> recurrenceRules;
 
 		public String getStatus() {
 			return this.status;
@@ -231,6 +235,14 @@ public class DescribeElasticityAssurancesResponse extends AcsResponse {
 			this.elasticityAssuranceOwnerId = elasticityAssuranceOwnerId;
 		}
 
+		public String getPackageType() {
+			return this.packageType;
+		}
+
+		public void setPackageType(String packageType) {
+			this.packageType = packageType;
+		}
+
 		public List<AllocatedResource> getAllocatedResources() {
 			return this.allocatedResources;
 		}
@@ -245,6 +257,14 @@ public class DescribeElasticityAssurancesResponse extends AcsResponse {
 
 		public void setTags(List<Tag> tags) {
 			this.tags = tags;
+		}
+
+		public List<RecurrenceRule> getRecurrenceRules() {
+			return this.recurrenceRules;
+		}
+
+		public void setRecurrenceRules(List<RecurrenceRule> recurrenceRules) {
+			this.recurrenceRules = recurrenceRules;
 		}
 
 		public static class AllocatedResource {
@@ -363,6 +383,49 @@ public class DescribeElasticityAssurancesResponse extends AcsResponse {
 
 			public void setTagKey(String tagKey) {
 				this.tagKey = tagKey;
+			}
+		}
+
+		public static class RecurrenceRule {
+
+			private String recurrenceType;
+
+			private String recurrenceValue;
+
+			private Integer startHour;
+
+			private Integer endHour;
+
+			public String getRecurrenceType() {
+				return this.recurrenceType;
+			}
+
+			public void setRecurrenceType(String recurrenceType) {
+				this.recurrenceType = recurrenceType;
+			}
+
+			public String getRecurrenceValue() {
+				return this.recurrenceValue;
+			}
+
+			public void setRecurrenceValue(String recurrenceValue) {
+				this.recurrenceValue = recurrenceValue;
+			}
+
+			public Integer getStartHour() {
+				return this.startHour;
+			}
+
+			public void setStartHour(Integer startHour) {
+				this.startHour = startHour;
+			}
+
+			public Integer getEndHour() {
+				return this.endHour;
+			}
+
+			public void setEndHour(Integer endHour) {
+				this.endHour = endHour;
 			}
 		}
 	}

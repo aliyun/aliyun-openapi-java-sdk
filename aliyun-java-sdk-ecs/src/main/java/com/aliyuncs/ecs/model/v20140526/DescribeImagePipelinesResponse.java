@@ -123,6 +123,8 @@ public class DescribeImagePipelinesResponse extends AcsResponse {
 
 		private AdvancedOptions advancedOptions;
 
+		private ImageOptions imageOptions;
+
 		public String getCreationTime() {
 			return this.creationTime;
 		}
@@ -307,6 +309,14 @@ public class DescribeImagePipelinesResponse extends AcsResponse {
 			this.advancedOptions = advancedOptions;
 		}
 
+		public ImageOptions getImageOptions() {
+			return this.imageOptions;
+		}
+
+		public void setImageOptions(ImageOptions imageOptions) {
+			this.imageOptions = imageOptions;
+		}
+
 		public static class Tag {
 
 			private String tagValue;
@@ -477,6 +487,8 @@ public class DescribeImagePipelinesResponse extends AcsResponse {
 
 			private Boolean skipCheckImage;
 
+			private String imageNameSuffix;
+
 			public Boolean getRetainCloudAssistant() {
 				return this.retainCloudAssistant;
 			}
@@ -499,6 +511,103 @@ public class DescribeImagePipelinesResponse extends AcsResponse {
 
 			public void setSkipCheckImage(Boolean skipCheckImage) {
 				this.skipCheckImage = skipCheckImage;
+			}
+
+			public String getImageNameSuffix() {
+				return this.imageNameSuffix;
+			}
+
+			public void setImageNameSuffix(String imageNameSuffix) {
+				this.imageNameSuffix = imageNameSuffix;
+			}
+		}
+
+		public static class ImageOptions {
+
+			private String imageName;
+
+			private String imageFamily;
+
+			private String description;
+
+			private List<ImageTag> imageTags;
+
+			private ImageFeatures imageFeatures;
+
+			public String getImageName() {
+				return this.imageName;
+			}
+
+			public void setImageName(String imageName) {
+				this.imageName = imageName;
+			}
+
+			public String getImageFamily() {
+				return this.imageFamily;
+			}
+
+			public void setImageFamily(String imageFamily) {
+				this.imageFamily = imageFamily;
+			}
+
+			public String getDescription() {
+				return this.description;
+			}
+
+			public void setDescription(String description) {
+				this.description = description;
+			}
+
+			public List<ImageTag> getImageTags() {
+				return this.imageTags;
+			}
+
+			public void setImageTags(List<ImageTag> imageTags) {
+				this.imageTags = imageTags;
+			}
+
+			public ImageFeatures getImageFeatures() {
+				return this.imageFeatures;
+			}
+
+			public void setImageFeatures(ImageFeatures imageFeatures) {
+				this.imageFeatures = imageFeatures;
+			}
+
+			public static class ImageTag {
+
+				private String tagKey;
+
+				private String tagValue;
+
+				public String getTagKey() {
+					return this.tagKey;
+				}
+
+				public void setTagKey(String tagKey) {
+					this.tagKey = tagKey;
+				}
+
+				public String getTagValue() {
+					return this.tagValue;
+				}
+
+				public void setTagValue(String tagValue) {
+					this.tagValue = tagValue;
+				}
+			}
+
+			public static class ImageFeatures {
+
+				private String nvmeSupport;
+
+				public String getNvmeSupport() {
+					return this.nvmeSupport;
+				}
+
+				public void setNvmeSupport(String nvmeSupport) {
+					this.nvmeSupport = nvmeSupport;
+				}
 			}
 		}
 	}

@@ -42,6 +42,8 @@ public class CreateElasticityAssuranceRequest extends RpcAcsRequest<CreateElasti
 
 	private List<Tag> tags;
 
+	private Integer autoRenewPeriod;
+
 	private Integer period;
 
 	private String resourceOwnerAccount;
@@ -58,7 +60,11 @@ public class CreateElasticityAssuranceRequest extends RpcAcsRequest<CreateElasti
 
 	private String periodUnit;
 
+	private Boolean autoRenew;
+
 	private List<String> zoneIds;
+
+	private List<RecurrenceRules> recurrenceRuless;
 
 	private Integer instanceAmount;
 	public CreateElasticityAssuranceRequest() {
@@ -163,6 +169,17 @@ public class CreateElasticityAssuranceRequest extends RpcAcsRequest<CreateElasti
 		}	
 	}
 
+	public Integer getAutoRenewPeriod() {
+		return this.autoRenewPeriod;
+	}
+
+	public void setAutoRenewPeriod(Integer autoRenewPeriod) {
+		this.autoRenewPeriod = autoRenewPeriod;
+		if(autoRenewPeriod != null){
+			putQueryParameter("AutoRenewPeriod", autoRenewPeriod.toString());
+		}
+	}
+
 	public Integer getPeriod() {
 		return this.period;
 	}
@@ -251,6 +268,17 @@ public class CreateElasticityAssuranceRequest extends RpcAcsRequest<CreateElasti
 		}
 	}
 
+	public Boolean getAutoRenew() {
+		return this.autoRenew;
+	}
+
+	public void setAutoRenew(Boolean autoRenew) {
+		this.autoRenew = autoRenew;
+		if(autoRenew != null){
+			putQueryParameter("AutoRenew", autoRenew.toString());
+		}
+	}
+
 	public List<String> getZoneIds() {
 		return this.zoneIds;
 	}
@@ -260,6 +288,22 @@ public class CreateElasticityAssuranceRequest extends RpcAcsRequest<CreateElasti
 		if (zoneIds != null) {
 			for (int i = 0; i < zoneIds.size(); i++) {
 				putQueryParameter("ZoneId." + (i + 1) , zoneIds.get(i));
+			}
+		}	
+	}
+
+	public List<RecurrenceRules> getRecurrenceRuless() {
+		return this.recurrenceRuless;
+	}
+
+	public void setRecurrenceRuless(List<RecurrenceRules> recurrenceRuless) {
+		this.recurrenceRuless = recurrenceRuless;	
+		if (recurrenceRuless != null) {
+			for (int depth1 = 0; depth1 < recurrenceRuless.size(); depth1++) {
+				putQueryParameter("RecurrenceRules." + (depth1 + 1) + ".RecurrenceType" , recurrenceRuless.get(depth1).getRecurrenceType());
+				putQueryParameter("RecurrenceRules." + (depth1 + 1) + ".RecurrenceValue" , recurrenceRuless.get(depth1).getRecurrenceValue());
+				putQueryParameter("RecurrenceRules." + (depth1 + 1) + ".StartHour" , recurrenceRuless.get(depth1).getStartHour());
+				putQueryParameter("RecurrenceRules." + (depth1 + 1) + ".EndHour" , recurrenceRuless.get(depth1).getEndHour());
 			}
 		}	
 	}
@@ -295,6 +339,49 @@ public class CreateElasticityAssuranceRequest extends RpcAcsRequest<CreateElasti
 
 		public void setValue(String value) {
 			this.value = value;
+		}
+	}
+
+	public static class RecurrenceRules {
+
+		private String recurrenceType;
+
+		private String recurrenceValue;
+
+		private Integer startHour;
+
+		private Integer endHour;
+
+		public String getRecurrenceType() {
+			return this.recurrenceType;
+		}
+
+		public void setRecurrenceType(String recurrenceType) {
+			this.recurrenceType = recurrenceType;
+		}
+
+		public String getRecurrenceValue() {
+			return this.recurrenceValue;
+		}
+
+		public void setRecurrenceValue(String recurrenceValue) {
+			this.recurrenceValue = recurrenceValue;
+		}
+
+		public Integer getStartHour() {
+			return this.startHour;
+		}
+
+		public void setStartHour(Integer startHour) {
+			this.startHour = startHour;
+		}
+
+		public Integer getEndHour() {
+			return this.endHour;
+		}
+
+		public void setEndHour(Integer endHour) {
+			this.endHour = endHour;
 		}
 	}
 

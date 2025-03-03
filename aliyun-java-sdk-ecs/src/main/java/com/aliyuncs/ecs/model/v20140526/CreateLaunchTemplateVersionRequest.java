@@ -674,6 +674,7 @@ public class CreateLaunchTemplateVersionRequest extends RpcAcsRequest<CreateLaun
 				}
 				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".InstanceType" , networkInterfaces.get(depth1).getInstanceType());
 				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".NetworkInterfaceTrafficMode" , networkInterfaces.get(depth1).getNetworkInterfaceTrafficMode());
+				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".DeleteOnRelease" , networkInterfaces.get(depth1).getDeleteOnRelease());
 			}
 		}	
 	}
@@ -899,6 +900,8 @@ public class CreateLaunchTemplateVersionRequest extends RpcAcsRequest<CreateLaun
 
 		private String networkInterfaceTrafficMode;
 
+		private Boolean deleteOnRelease;
+
 		public String getVSwitchId() {
 			return this.vSwitchId;
 		}
@@ -961,6 +964,14 @@ public class CreateLaunchTemplateVersionRequest extends RpcAcsRequest<CreateLaun
 
 		public void setNetworkInterfaceTrafficMode(String networkInterfaceTrafficMode) {
 			this.networkInterfaceTrafficMode = networkInterfaceTrafficMode;
+		}
+
+		public Boolean getDeleteOnRelease() {
+			return this.deleteOnRelease;
+		}
+
+		public void setDeleteOnRelease(Boolean deleteOnRelease) {
+			this.deleteOnRelease = deleteOnRelease;
 		}
 	}
 

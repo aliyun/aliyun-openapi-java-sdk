@@ -26,6 +26,7 @@ public class PurchaseReservedInstancesOfferingResponseUnmarshaller {
 	public static PurchaseReservedInstancesOfferingResponse unmarshall(PurchaseReservedInstancesOfferingResponse purchaseReservedInstancesOfferingResponse, UnmarshallerContext _ctx) {
 		
 		purchaseReservedInstancesOfferingResponse.setRequestId(_ctx.stringValue("PurchaseReservedInstancesOfferingResponse.RequestId"));
+		purchaseReservedInstancesOfferingResponse.setOrderId(_ctx.stringValue("PurchaseReservedInstancesOfferingResponse.OrderId"));
 
 		List<String> reservedInstanceIdSets = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("PurchaseReservedInstancesOfferingResponse.ReservedInstanceIdSets.Length"); i++) {

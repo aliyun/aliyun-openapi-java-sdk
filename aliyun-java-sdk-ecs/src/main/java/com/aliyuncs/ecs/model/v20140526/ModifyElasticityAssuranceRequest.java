@@ -15,6 +15,7 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ecs.Endpoint;
 
@@ -40,6 +41,8 @@ public class ModifyElasticityAssuranceRequest extends RpcAcsRequest<ModifyElasti
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private List<RecurrenceRules> recurrenceRuless;
 
 	private Integer instanceAmount;
 	public ModifyElasticityAssuranceRequest() {
@@ -139,6 +142,22 @@ public class ModifyElasticityAssuranceRequest extends RpcAcsRequest<ModifyElasti
 		}
 	}
 
+	public List<RecurrenceRules> getRecurrenceRuless() {
+		return this.recurrenceRuless;
+	}
+
+	public void setRecurrenceRuless(List<RecurrenceRules> recurrenceRuless) {
+		this.recurrenceRuless = recurrenceRuless;	
+		if (recurrenceRuless != null) {
+			for (int depth1 = 0; depth1 < recurrenceRuless.size(); depth1++) {
+				putQueryParameter("RecurrenceRules." + (depth1 + 1) + ".RecurrenceType" , recurrenceRuless.get(depth1).getRecurrenceType());
+				putQueryParameter("RecurrenceRules." + (depth1 + 1) + ".RecurrenceValue" , recurrenceRuless.get(depth1).getRecurrenceValue());
+				putQueryParameter("RecurrenceRules." + (depth1 + 1) + ".StartHour" , recurrenceRuless.get(depth1).getStartHour());
+				putQueryParameter("RecurrenceRules." + (depth1 + 1) + ".EndHour" , recurrenceRuless.get(depth1).getEndHour());
+			}
+		}	
+	}
+
 	public Integer getInstanceAmount() {
 		return this.instanceAmount;
 	}
@@ -147,6 +166,49 @@ public class ModifyElasticityAssuranceRequest extends RpcAcsRequest<ModifyElasti
 		this.instanceAmount = instanceAmount;
 		if(instanceAmount != null){
 			putQueryParameter("InstanceAmount", instanceAmount.toString());
+		}
+	}
+
+	public static class RecurrenceRules {
+
+		private String recurrenceType;
+
+		private String recurrenceValue;
+
+		private Integer startHour;
+
+		private Integer endHour;
+
+		public String getRecurrenceType() {
+			return this.recurrenceType;
+		}
+
+		public void setRecurrenceType(String recurrenceType) {
+			this.recurrenceType = recurrenceType;
+		}
+
+		public String getRecurrenceValue() {
+			return this.recurrenceValue;
+		}
+
+		public void setRecurrenceValue(String recurrenceValue) {
+			this.recurrenceValue = recurrenceValue;
+		}
+
+		public Integer getStartHour() {
+			return this.startHour;
+		}
+
+		public void setStartHour(Integer startHour) {
+			this.startHour = startHour;
+		}
+
+		public Integer getEndHour() {
+			return this.endHour;
+		}
+
+		public void setEndHour(Integer endHour) {
+			this.endHour = endHour;
 		}
 	}
 

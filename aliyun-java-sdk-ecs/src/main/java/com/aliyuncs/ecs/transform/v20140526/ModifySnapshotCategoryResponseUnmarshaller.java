@@ -14,16 +14,17 @@
 
 package com.aliyuncs.ecs.transform.v20140526;
 
-import com.aliyuncs.ecs.model.v20140526.ModifyAutoSnapshotPolicyResponse;
+import com.aliyuncs.ecs.model.v20140526.ModifySnapshotCategoryResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class ModifyAutoSnapshotPolicyResponseUnmarshaller {
+public class ModifySnapshotCategoryResponseUnmarshaller {
 
-	public static ModifyAutoSnapshotPolicyResponse unmarshall(ModifyAutoSnapshotPolicyResponse modifyAutoSnapshotPolicyResponse, UnmarshallerContext _ctx) {
+	public static ModifySnapshotCategoryResponse unmarshall(ModifySnapshotCategoryResponse modifySnapshotCategoryResponse, UnmarshallerContext _ctx) {
 		
-		modifyAutoSnapshotPolicyResponse.setRequestId(_ctx.stringValue("ModifyAutoSnapshotPolicyResponse.RequestId"));
+		modifySnapshotCategoryResponse.setRequestId(_ctx.stringValue("ModifySnapshotCategoryResponse.RequestId"));
+		modifySnapshotCategoryResponse.setTaskId(_ctx.stringValue("ModifySnapshotCategoryResponse.TaskId"));
 	 
-	 	return modifyAutoSnapshotPolicyResponse;
+	 	return modifySnapshotCategoryResponse;
 	}
 }

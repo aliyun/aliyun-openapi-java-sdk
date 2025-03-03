@@ -21,6 +21,7 @@ import com.aliyuncs.ecs.model.v20140526.DescribeElasticityAssurancesResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeElasticityAssurancesResponse.ElasticityAssuranceItem;
 import com.aliyuncs.ecs.model.v20140526.DescribeElasticityAssurancesResponse.ElasticityAssuranceItem.AllocatedResource;
 import com.aliyuncs.ecs.model.v20140526.DescribeElasticityAssurancesResponse.ElasticityAssuranceItem.AllocatedResource.ElasticityAssuranceUsage;
+import com.aliyuncs.ecs.model.v20140526.DescribeElasticityAssurancesResponse.ElasticityAssuranceItem.RecurrenceRule;
 import com.aliyuncs.ecs.model.v20140526.DescribeElasticityAssurancesResponse.ElasticityAssuranceItem.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -52,6 +53,7 @@ public class DescribeElasticityAssurancesResponseUnmarshaller {
 			elasticityAssuranceItem.setInstanceChargeType(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].InstanceChargeType"));
 			elasticityAssuranceItem.setStartTimeType(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].StartTimeType"));
 			elasticityAssuranceItem.setElasticityAssuranceOwnerId(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].ElasticityAssuranceOwnerId"));
+			elasticityAssuranceItem.setPackageType(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].PackageType"));
 
 			List<AllocatedResource> allocatedResources = new ArrayList<AllocatedResource>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].AllocatedResources.Length"); j++) {
@@ -86,6 +88,18 @@ public class DescribeElasticityAssurancesResponseUnmarshaller {
 				tags.add(tag);
 			}
 			elasticityAssuranceItem.setTags(tags);
+
+			List<RecurrenceRule> recurrenceRules = new ArrayList<RecurrenceRule>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].RecurrenceRules.Length"); j++) {
+				RecurrenceRule recurrenceRule = new RecurrenceRule();
+				recurrenceRule.setRecurrenceType(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].RecurrenceRules["+ j +"].RecurrenceType"));
+				recurrenceRule.setRecurrenceValue(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].RecurrenceRules["+ j +"].RecurrenceValue"));
+				recurrenceRule.setStartHour(_ctx.integerValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].RecurrenceRules["+ j +"].StartHour"));
+				recurrenceRule.setEndHour(_ctx.integerValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].RecurrenceRules["+ j +"].EndHour"));
+
+				recurrenceRules.add(recurrenceRule);
+			}
+			elasticityAssuranceItem.setRecurrenceRules(recurrenceRules);
 
 			elasticityAssuranceSet.add(elasticityAssuranceItem);
 		}

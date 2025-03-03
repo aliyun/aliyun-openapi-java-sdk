@@ -24,32 +24,20 @@ import com.aliyuncs.ecs.Endpoint;
  * @author auto create
  * @version 
  */
-public class RenewElasticityAssurancesRequest extends RpcAcsRequest<RenewElasticityAssurancesResponse> {
+public class DescribeElasticityAssuranceAutoRenewAttributeRequest extends RpcAcsRequest<DescribeElasticityAssuranceAutoRenewAttributeResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String clientToken;
-
 	private List<String> privatePoolOptionsIds;
-
-	private Integer autoRenewPeriod;
-
-	private Integer period;
-
-	private Boolean autoPay;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	private String periodUnit;
-
-	private Boolean autoRenew;
-	public RenewElasticityAssurancesRequest() {
-		super("Ecs", "2014-05-26", "RenewElasticityAssurances", "ecs");
+	public DescribeElasticityAssuranceAutoRenewAttributeRequest() {
+		super("Ecs", "2014-05-26", "DescribeElasticityAssuranceAutoRenewAttribute", "ecs");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
@@ -69,17 +57,6 @@ public class RenewElasticityAssurancesRequest extends RpcAcsRequest<RenewElastic
 		}
 	}
 
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
 	public List<String> getPrivatePoolOptionsIds() {
 		return this.privatePoolOptionsIds;
 	}
@@ -91,39 +68,6 @@ public class RenewElasticityAssurancesRequest extends RpcAcsRequest<RenewElastic
 				putQueryParameter("PrivatePoolOptions.Id." + (i + 1) , privatePoolOptionsIds.get(i));
 			}
 		}	
-	}
-
-	public Integer getAutoRenewPeriod() {
-		return this.autoRenewPeriod;
-	}
-
-	public void setAutoRenewPeriod(Integer autoRenewPeriod) {
-		this.autoRenewPeriod = autoRenewPeriod;
-		if(autoRenewPeriod != null){
-			putQueryParameter("AutoRenewPeriod", autoRenewPeriod.toString());
-		}
-	}
-
-	public Integer getPeriod() {
-		return this.period;
-	}
-
-	public void setPeriod(Integer period) {
-		this.period = period;
-		if(period != null){
-			putQueryParameter("Period", period.toString());
-		}
-	}
-
-	public Boolean getAutoPay() {
-		return this.autoPay;
-	}
-
-	public void setAutoPay(Boolean autoPay) {
-		this.autoPay = autoPay;
-		if(autoPay != null){
-			putQueryParameter("AutoPay", autoPay.toString());
-		}
 	}
 
 	public String getResourceOwnerAccount() {
@@ -159,31 +103,9 @@ public class RenewElasticityAssurancesRequest extends RpcAcsRequest<RenewElastic
 		}
 	}
 
-	public String getPeriodUnit() {
-		return this.periodUnit;
-	}
-
-	public void setPeriodUnit(String periodUnit) {
-		this.periodUnit = periodUnit;
-		if(periodUnit != null){
-			putQueryParameter("PeriodUnit", periodUnit);
-		}
-	}
-
-	public Boolean getAutoRenew() {
-		return this.autoRenew;
-	}
-
-	public void setAutoRenew(Boolean autoRenew) {
-		this.autoRenew = autoRenew;
-		if(autoRenew != null){
-			putQueryParameter("AutoRenew", autoRenew.toString());
-		}
-	}
-
 	@Override
-	public Class<RenewElasticityAssurancesResponse> getResponseClass() {
-		return RenewElasticityAssurancesResponse.class;
+	public Class<DescribeElasticityAssuranceAutoRenewAttributeResponse> getResponseClass() {
+		return DescribeElasticityAssuranceAutoRenewAttributeResponse.class;
 	}
 
 }
