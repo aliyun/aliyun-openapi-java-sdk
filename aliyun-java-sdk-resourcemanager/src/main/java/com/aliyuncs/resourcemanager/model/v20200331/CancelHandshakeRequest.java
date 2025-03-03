@@ -28,7 +28,7 @@ public class CancelHandshakeRequest extends RpcAcsRequest<CancelHandshakeRespons
 
 	private String handshakeId;
 	public CancelHandshakeRequest() {
-		super("ResourceManager", "2020-03-31", "CancelHandshake");
+		super("ResourceManager", "2020-03-31", "CancelHandshake", "resourcemanager");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

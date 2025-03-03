@@ -30,7 +30,7 @@ public class AttachControlPolicyRequest extends RpcAcsRequest<AttachControlPolic
 
 	private String policyId;
 	public AttachControlPolicyRequest() {
-		super("ResourceManager", "2020-03-31", "AttachControlPolicy");
+		super("ResourceManager", "2020-03-31", "AttachControlPolicy", "resourcemanager");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

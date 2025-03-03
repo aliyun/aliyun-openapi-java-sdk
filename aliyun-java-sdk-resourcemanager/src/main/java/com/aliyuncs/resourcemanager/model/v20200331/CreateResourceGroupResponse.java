@@ -47,35 +47,19 @@ public class CreateResourceGroupResponse extends AcsResponse {
 
 	public static class ResourceGroup {
 
-		private String displayName;
-
-		private String status;
-
 		private String accountId;
-
-		private String name;
 
 		private String createDate;
 
+		private String displayName;
+
 		private String id;
 
+		private String name;
+
+		private String status;
+
 		private List<RegionStatus> regionStatuses;
-
-		public String getDisplayName() {
-			return this.displayName;
-		}
-
-		public void setDisplayName(String displayName) {
-			this.displayName = displayName;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
 
 		public String getAccountId() {
 			return this.accountId;
@@ -83,14 +67,6 @@ public class CreateResourceGroupResponse extends AcsResponse {
 
 		public void setAccountId(String accountId) {
 			this.accountId = accountId;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
 		}
 
 		public String getCreateDate() {
@@ -101,12 +77,36 @@ public class CreateResourceGroupResponse extends AcsResponse {
 			this.createDate = createDate;
 		}
 
+		public String getDisplayName() {
+			return this.displayName;
+		}
+
+		public void setDisplayName(String displayName) {
+			this.displayName = displayName;
+		}
+
 		public String getId() {
 			return this.id;
 		}
 
 		public void setId(String id) {
 			this.id = id;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public List<RegionStatus> getRegionStatuses() {
@@ -119,17 +119,9 @@ public class CreateResourceGroupResponse extends AcsResponse {
 
 		public static class RegionStatus {
 
-			private String status;
-
 			private String regionId;
 
-			public String getStatus() {
-				return this.status;
-			}
-
-			public void setStatus(String status) {
-				this.status = status;
-			}
+			private String status;
 
 			public String getRegionId() {
 				return this.regionId;
@@ -137,6 +129,14 @@ public class CreateResourceGroupResponse extends AcsResponse {
 
 			public void setRegionId(String regionId) {
 				this.regionId = regionId;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
 			}
 		}
 	}

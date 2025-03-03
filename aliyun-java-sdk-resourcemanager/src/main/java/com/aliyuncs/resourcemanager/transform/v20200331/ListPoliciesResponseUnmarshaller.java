@@ -27,20 +27,20 @@ public class ListPoliciesResponseUnmarshaller {
 	public static ListPoliciesResponse unmarshall(ListPoliciesResponse listPoliciesResponse, UnmarshallerContext _ctx) {
 		
 		listPoliciesResponse.setRequestId(_ctx.stringValue("ListPoliciesResponse.RequestId"));
-		listPoliciesResponse.setTotalCount(_ctx.integerValue("ListPoliciesResponse.TotalCount"));
-		listPoliciesResponse.setPageSize(_ctx.integerValue("ListPoliciesResponse.PageSize"));
 		listPoliciesResponse.setPageNumber(_ctx.integerValue("ListPoliciesResponse.PageNumber"));
+		listPoliciesResponse.setPageSize(_ctx.integerValue("ListPoliciesResponse.PageSize"));
+		listPoliciesResponse.setTotalCount(_ctx.integerValue("ListPoliciesResponse.TotalCount"));
 
 		List<Policy> policies = new ArrayList<Policy>();
 		for (int i = 0; i < _ctx.lengthValue("ListPoliciesResponse.Policies.Length"); i++) {
 			Policy policy = new Policy();
+			policy.setAttachmentCount(_ctx.integerValue("ListPoliciesResponse.Policies["+ i +"].AttachmentCount"));
+			policy.setCreateDate(_ctx.stringValue("ListPoliciesResponse.Policies["+ i +"].CreateDate"));
 			policy.setDefaultVersion(_ctx.stringValue("ListPoliciesResponse.Policies["+ i +"].DefaultVersion"));
 			policy.setDescription(_ctx.stringValue("ListPoliciesResponse.Policies["+ i +"].Description"));
-			policy.setUpdateDate(_ctx.stringValue("ListPoliciesResponse.Policies["+ i +"].UpdateDate"));
-			policy.setAttachmentCount(_ctx.integerValue("ListPoliciesResponse.Policies["+ i +"].AttachmentCount"));
 			policy.setPolicyName(_ctx.stringValue("ListPoliciesResponse.Policies["+ i +"].PolicyName"));
-			policy.setCreateDate(_ctx.stringValue("ListPoliciesResponse.Policies["+ i +"].CreateDate"));
 			policy.setPolicyType(_ctx.stringValue("ListPoliciesResponse.Policies["+ i +"].PolicyType"));
+			policy.setUpdateDate(_ctx.stringValue("ListPoliciesResponse.Policies["+ i +"].UpdateDate"));
 
 			policies.add(policy);
 		}

@@ -31,9 +31,9 @@ public class ListPolicyVersionsResponseUnmarshaller {
 		List<PolicyVersion> policyVersions = new ArrayList<PolicyVersion>();
 		for (int i = 0; i < _ctx.lengthValue("ListPolicyVersionsResponse.PolicyVersions.Length"); i++) {
 			PolicyVersion policyVersion = new PolicyVersion();
+			policyVersion.setCreateDate(_ctx.stringValue("ListPolicyVersionsResponse.PolicyVersions["+ i +"].CreateDate"));
 			policyVersion.setIsDefaultVersion(_ctx.booleanValue("ListPolicyVersionsResponse.PolicyVersions["+ i +"].IsDefaultVersion"));
 			policyVersion.setVersionId(_ctx.stringValue("ListPolicyVersionsResponse.PolicyVersions["+ i +"].VersionId"));
-			policyVersion.setCreateDate(_ctx.stringValue("ListPolicyVersionsResponse.PolicyVersions["+ i +"].CreateDate"));
 
 			policyVersions.add(policyVersion);
 		}

@@ -26,17 +26,17 @@ public class ResendPromoteResourceAccountEmailResponseUnmarshaller {
 		resendPromoteResourceAccountEmailResponse.setRequestId(_ctx.stringValue("ResendPromoteResourceAccountEmailResponse.RequestId"));
 
 		Account account = new Account();
-		account.setStatus(_ctx.stringValue("ResendPromoteResourceAccountEmailResponse.Account.Status"));
-		account.setType(_ctx.stringValue("ResendPromoteResourceAccountEmailResponse.Account.Type"));
+		account.setAccountId(_ctx.stringValue("ResendPromoteResourceAccountEmailResponse.Account.AccountId"));
+		account.setAccountName(_ctx.stringValue("ResendPromoteResourceAccountEmailResponse.Account.AccountName"));
 		account.setDisplayName(_ctx.stringValue("ResendPromoteResourceAccountEmailResponse.Account.DisplayName"));
 		account.setFolderId(_ctx.stringValue("ResendPromoteResourceAccountEmailResponse.Account.FolderId"));
-		account.setResourceDirectoryId(_ctx.stringValue("ResendPromoteResourceAccountEmailResponse.Account.ResourceDirectoryId"));
-		account.setRecordId(_ctx.stringValue("ResendPromoteResourceAccountEmailResponse.Account.RecordId"));
-		account.setJoinTime(_ctx.stringValue("ResendPromoteResourceAccountEmailResponse.Account.JoinTime"));
-		account.setAccountId(_ctx.stringValue("ResendPromoteResourceAccountEmailResponse.Account.AccountId"));
 		account.setJoinMethod(_ctx.stringValue("ResendPromoteResourceAccountEmailResponse.Account.JoinMethod"));
-		account.setAccountName(_ctx.stringValue("ResendPromoteResourceAccountEmailResponse.Account.AccountName"));
+		account.setJoinTime(_ctx.stringValue("ResendPromoteResourceAccountEmailResponse.Account.JoinTime"));
 		account.setModifyTime(_ctx.stringValue("ResendPromoteResourceAccountEmailResponse.Account.ModifyTime"));
+		account.setRecordId(_ctx.stringValue("ResendPromoteResourceAccountEmailResponse.Account.RecordId"));
+		account.setResourceDirectoryId(_ctx.stringValue("ResendPromoteResourceAccountEmailResponse.Account.ResourceDirectoryId"));
+		account.setStatus(_ctx.stringValue("ResendPromoteResourceAccountEmailResponse.Account.Status"));
+		account.setType(_ctx.stringValue("ResendPromoteResourceAccountEmailResponse.Account.Type"));
 		resendPromoteResourceAccountEmailResponse.setAccount(account);
 	 
 	 	return resendPromoteResourceAccountEmailResponse;

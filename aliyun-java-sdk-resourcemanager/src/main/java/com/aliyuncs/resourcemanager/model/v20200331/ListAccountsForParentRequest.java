@@ -27,36 +27,25 @@ import com.aliyuncs.resourcemanager.Endpoint;
 public class ListAccountsForParentRequest extends RpcAcsRequest<ListAccountsForParentResponse> {
 	   
 
-	private String queryKeyword;
-
 	private Integer pageNumber;
-
-	private String parentFolderId;
-
-	private Boolean includeTags;
 
 	private Integer pageSize;
 
 	private List<Tag> tag;
+
+	private String queryKeyword;
+
+	private String parentFolderId;
+
+	private Boolean includeTags;
 	public ListAccountsForParentRequest() {
-		super("ResourceManager", "2020-03-31", "ListAccountsForParent");
+		super("ResourceManager", "2020-03-31", "ListAccountsForParent", "resourcemanager");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getQueryKeyword() {
-		return this.queryKeyword;
-	}
-
-	public void setQueryKeyword(String queryKeyword) {
-		this.queryKeyword = queryKeyword;
-		if(queryKeyword != null){
-			putQueryParameter("QueryKeyword", queryKeyword);
-		}
 	}
 
 	public Integer getPageNumber() {
@@ -67,28 +56,6 @@ public class ListAccountsForParentRequest extends RpcAcsRequest<ListAccountsForP
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public String getParentFolderId() {
-		return this.parentFolderId;
-	}
-
-	public void setParentFolderId(String parentFolderId) {
-		this.parentFolderId = parentFolderId;
-		if(parentFolderId != null){
-			putQueryParameter("ParentFolderId", parentFolderId);
-		}
-	}
-
-	public Boolean getIncludeTags() {
-		return this.includeTags;
-	}
-
-	public void setIncludeTags(Boolean includeTags) {
-		this.includeTags = includeTags;
-		if(includeTags != null){
-			putQueryParameter("IncludeTags", includeTags.toString());
 		}
 	}
 
@@ -118,6 +85,39 @@ public class ListAccountsForParentRequest extends RpcAcsRequest<ListAccountsForP
 				}
 			}
 		}	
+	}
+
+	public String getQueryKeyword() {
+		return this.queryKeyword;
+	}
+
+	public void setQueryKeyword(String queryKeyword) {
+		this.queryKeyword = queryKeyword;
+		if(queryKeyword != null){
+			putQueryParameter("QueryKeyword", queryKeyword);
+		}
+	}
+
+	public String getParentFolderId() {
+		return this.parentFolderId;
+	}
+
+	public void setParentFolderId(String parentFolderId) {
+		this.parentFolderId = parentFolderId;
+		if(parentFolderId != null){
+			putQueryParameter("ParentFolderId", parentFolderId);
+		}
+	}
+
+	public Boolean getIncludeTags() {
+		return this.includeTags;
+	}
+
+	public void setIncludeTags(Boolean includeTags) {
+		this.includeTags = includeTags;
+		if(includeTags != null){
+			putQueryParameter("IncludeTags", includeTags.toString());
+		}
 	}
 
 	public static class Tag {

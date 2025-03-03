@@ -30,7 +30,7 @@ public class UpdateFolderRequest extends RpcAcsRequest<UpdateFolderResponse> {
 
 	private String newFolderName;
 	public UpdateFolderRequest() {
-		super("ResourceManager", "2020-03-31", "UpdateFolder");
+		super("ResourceManager", "2020-03-31", "UpdateFolder", "resourcemanager");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

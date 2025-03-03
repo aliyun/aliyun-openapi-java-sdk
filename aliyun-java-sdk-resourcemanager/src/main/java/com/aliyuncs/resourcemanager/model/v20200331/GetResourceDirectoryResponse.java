@@ -46,38 +46,30 @@ public class GetResourceDirectoryResponse extends AcsResponse {
 
 	public static class ResourceDirectory {
 
-		private String rootFolderId;
-
-		private String resourceDirectoryId;
+		private String controlPolicyStatus;
 
 		private String createTime;
+
+		private String identityInformation;
 
 		private String masterAccountId;
 
 		private String masterAccountName;
 
-		private String scpStatus;
-
-		private String controlPolicyStatus;
-
 		private String memberDeletionStatus;
 
-		private String identityInformation;
+		private String resourceDirectoryId;
 
-		public String getRootFolderId() {
-			return this.rootFolderId;
+		private String rootFolderId;
+
+		private String scpStatus;
+
+		public String getControlPolicyStatus() {
+			return this.controlPolicyStatus;
 		}
 
-		public void setRootFolderId(String rootFolderId) {
-			this.rootFolderId = rootFolderId;
-		}
-
-		public String getResourceDirectoryId() {
-			return this.resourceDirectoryId;
-		}
-
-		public void setResourceDirectoryId(String resourceDirectoryId) {
-			this.resourceDirectoryId = resourceDirectoryId;
+		public void setControlPolicyStatus(String controlPolicyStatus) {
+			this.controlPolicyStatus = controlPolicyStatus;
 		}
 
 		public String getCreateTime() {
@@ -86,6 +78,14 @@ public class GetResourceDirectoryResponse extends AcsResponse {
 
 		public void setCreateTime(String createTime) {
 			this.createTime = createTime;
+		}
+
+		public String getIdentityInformation() {
+			return this.identityInformation;
+		}
+
+		public void setIdentityInformation(String identityInformation) {
+			this.identityInformation = identityInformation;
 		}
 
 		public String getMasterAccountId() {
@@ -104,22 +104,6 @@ public class GetResourceDirectoryResponse extends AcsResponse {
 			this.masterAccountName = masterAccountName;
 		}
 
-		public String getScpStatus() {
-			return this.scpStatus;
-		}
-
-		public void setScpStatus(String scpStatus) {
-			this.scpStatus = scpStatus;
-		}
-
-		public String getControlPolicyStatus() {
-			return this.controlPolicyStatus;
-		}
-
-		public void setControlPolicyStatus(String controlPolicyStatus) {
-			this.controlPolicyStatus = controlPolicyStatus;
-		}
-
 		public String getMemberDeletionStatus() {
 			return this.memberDeletionStatus;
 		}
@@ -128,12 +112,28 @@ public class GetResourceDirectoryResponse extends AcsResponse {
 			this.memberDeletionStatus = memberDeletionStatus;
 		}
 
-		public String getIdentityInformation() {
-			return this.identityInformation;
+		public String getResourceDirectoryId() {
+			return this.resourceDirectoryId;
 		}
 
-		public void setIdentityInformation(String identityInformation) {
-			this.identityInformation = identityInformation;
+		public void setResourceDirectoryId(String resourceDirectoryId) {
+			this.resourceDirectoryId = resourceDirectoryId;
+		}
+
+		public String getRootFolderId() {
+			return this.rootFolderId;
+		}
+
+		public void setRootFolderId(String rootFolderId) {
+			this.rootFolderId = rootFolderId;
+		}
+
+		public String getScpStatus() {
+			return this.scpStatus;
+		}
+
+		public void setScpStatus(String scpStatus) {
+			this.scpStatus = scpStatus;
 		}
 	}
 

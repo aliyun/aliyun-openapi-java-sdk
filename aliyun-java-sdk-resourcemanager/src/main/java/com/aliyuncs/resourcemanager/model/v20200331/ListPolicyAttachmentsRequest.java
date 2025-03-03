@@ -42,7 +42,7 @@ public class ListPolicyAttachmentsRequest extends RpcAcsRequest<ListPolicyAttach
 
 	private String principalName;
 	public ListPolicyAttachmentsRequest() {
-		super("ResourceManager", "2020-03-31", "ListPolicyAttachments");
+		super("ResourceManager", "2020-03-31", "ListPolicyAttachments", "resourcemanager");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

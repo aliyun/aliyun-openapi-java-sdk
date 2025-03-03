@@ -28,7 +28,7 @@ public class ResendPromoteResourceAccountEmailRequest extends RpcAcsRequest<Rese
 
 	private String recordId;
 	public ResendPromoteResourceAccountEmailRequest() {
-		super("ResourceManager", "2020-03-31", "ResendPromoteResourceAccountEmail");
+		super("ResourceManager", "2020-03-31", "ResendPromoteResourceAccountEmail", "resourcemanager");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

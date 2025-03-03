@@ -28,7 +28,7 @@ public class CancelPromoteResourceAccountRequest extends RpcAcsRequest<CancelPro
 
 	private String recordId;
 	public CancelPromoteResourceAccountRequest() {
-		super("ResourceManager", "2020-03-31", "CancelPromoteResourceAccount");
+		super("ResourceManager", "2020-03-31", "CancelPromoteResourceAccount", "resourcemanager");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

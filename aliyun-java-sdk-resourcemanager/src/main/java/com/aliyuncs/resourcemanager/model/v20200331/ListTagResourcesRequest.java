@@ -27,23 +27,51 @@ import com.aliyuncs.resourcemanager.Endpoint;
 public class ListTagResourcesRequest extends RpcAcsRequest<ListTagResourcesResponse> {
 	   
 
+	private String nextToken;
+
+	private List<Tag> tag;
+
 	private List<String> resourceId;
 
 	private String resourceType;
 
-	private String nextToken;
-
 	private Integer maxResults;
-
-	private List<Tag> tag;
 	public ListTagResourcesRequest() {
-		super("ResourceManager", "2020-03-31", "ListTagResources");
+		super("ResourceManager", "2020-03-31", "ListTagResources", "resourcemanager");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
+		}
+	}
+
+	public List<Tag> getTag() {
+		return this.tag;
+	}
+
+	public void setTag(List<Tag> tag) {
+		this.tag = tag;	
+		if (tag != null) {
+			for (int depth1 = 0; depth1 < tag.size(); depth1++) {
+				if (tag.get(depth1) != null) {
+					
+						putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tag.get(depth1).getValue());
+						putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tag.get(depth1).getKey());
+				}
+			}
+		}	
 	}
 
 	public List<String> getResourceId() {
@@ -70,17 +98,6 @@ public class ListTagResourcesRequest extends RpcAcsRequest<ListTagResourcesRespo
 		}
 	}
 
-	public String getNextToken() {
-		return this.nextToken;
-	}
-
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
-		if(nextToken != null){
-			putQueryParameter("NextToken", nextToken);
-		}
-	}
-
 	public Integer getMaxResults() {
 		return this.maxResults;
 	}
@@ -90,23 +107,6 @@ public class ListTagResourcesRequest extends RpcAcsRequest<ListTagResourcesRespo
 		if(maxResults != null){
 			putQueryParameter("MaxResults", maxResults.toString());
 		}
-	}
-
-	public List<Tag> getTag() {
-		return this.tag;
-	}
-
-	public void setTag(List<Tag> tag) {
-		this.tag = tag;	
-		if (tag != null) {
-			for (int depth1 = 0; depth1 < tag.size(); depth1++) {
-				if (tag.get(depth1) != null) {
-					
-						putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tag.get(depth1).getValue());
-						putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tag.get(depth1).getKey());
-				}
-			}
-		}	
 	}
 
 	public static class Tag {

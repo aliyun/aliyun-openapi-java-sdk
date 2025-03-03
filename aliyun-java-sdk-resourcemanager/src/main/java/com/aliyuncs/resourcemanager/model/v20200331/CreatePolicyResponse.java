@@ -46,15 +46,23 @@ public class CreatePolicyResponse extends AcsResponse {
 
 	public static class Policy {
 
+		private String createDate;
+
 		private String defaultVersion;
 
 		private String description;
 
 		private String policyName;
 
-		private String createDate;
-
 		private String policyType;
+
+		public String getCreateDate() {
+			return this.createDate;
+		}
+
+		public void setCreateDate(String createDate) {
+			this.createDate = createDate;
+		}
 
 		public String getDefaultVersion() {
 			return this.defaultVersion;
@@ -78,14 +86,6 @@ public class CreatePolicyResponse extends AcsResponse {
 
 		public void setPolicyName(String policyName) {
 			this.policyName = policyName;
-		}
-
-		public String getCreateDate() {
-			return this.createDate;
-		}
-
-		public void setCreateDate(String createDate) {
-			this.createDate = createDate;
 		}
 
 		public String getPolicyType() {

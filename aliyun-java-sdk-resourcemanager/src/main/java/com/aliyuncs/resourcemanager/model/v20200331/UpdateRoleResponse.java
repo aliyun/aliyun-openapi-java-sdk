@@ -46,23 +46,31 @@ public class UpdateRoleResponse extends AcsResponse {
 
 	public static class Role {
 
+		private String arn;
+
 		private String assumeRolePolicyDocument;
-
-		private String rolePrincipalName;
-
-		private String description;
-
-		private String updateDate;
-
-		private Long maxSessionDuration;
-
-		private String roleName;
 
 		private String createDate;
 
+		private String description;
+
+		private Long maxSessionDuration;
+
 		private String roleId;
 
-		private String arn;
+		private String roleName;
+
+		private String rolePrincipalName;
+
+		private String updateDate;
+
+		public String getArn() {
+			return this.arn;
+		}
+
+		public void setArn(String arn) {
+			this.arn = arn;
+		}
 
 		public String getAssumeRolePolicyDocument() {
 			return this.assumeRolePolicyDocument;
@@ -70,46 +78,6 @@ public class UpdateRoleResponse extends AcsResponse {
 
 		public void setAssumeRolePolicyDocument(String assumeRolePolicyDocument) {
 			this.assumeRolePolicyDocument = assumeRolePolicyDocument;
-		}
-
-		public String getRolePrincipalName() {
-			return this.rolePrincipalName;
-		}
-
-		public void setRolePrincipalName(String rolePrincipalName) {
-			this.rolePrincipalName = rolePrincipalName;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getUpdateDate() {
-			return this.updateDate;
-		}
-
-		public void setUpdateDate(String updateDate) {
-			this.updateDate = updateDate;
-		}
-
-		public Long getMaxSessionDuration() {
-			return this.maxSessionDuration;
-		}
-
-		public void setMaxSessionDuration(Long maxSessionDuration) {
-			this.maxSessionDuration = maxSessionDuration;
-		}
-
-		public String getRoleName() {
-			return this.roleName;
-		}
-
-		public void setRoleName(String roleName) {
-			this.roleName = roleName;
 		}
 
 		public String getCreateDate() {
@@ -120,6 +88,22 @@ public class UpdateRoleResponse extends AcsResponse {
 			this.createDate = createDate;
 		}
 
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public Long getMaxSessionDuration() {
+			return this.maxSessionDuration;
+		}
+
+		public void setMaxSessionDuration(Long maxSessionDuration) {
+			this.maxSessionDuration = maxSessionDuration;
+		}
+
 		public String getRoleId() {
 			return this.roleId;
 		}
@@ -128,12 +112,28 @@ public class UpdateRoleResponse extends AcsResponse {
 			this.roleId = roleId;
 		}
 
-		public String getArn() {
-			return this.arn;
+		public String getRoleName() {
+			return this.roleName;
 		}
 
-		public void setArn(String arn) {
-			this.arn = arn;
+		public void setRoleName(String roleName) {
+			this.roleName = roleName;
+		}
+
+		public String getRolePrincipalName() {
+			return this.rolePrincipalName;
+		}
+
+		public void setRolePrincipalName(String rolePrincipalName) {
+			this.rolePrincipalName = rolePrincipalName;
+		}
+
+		public String getUpdateDate() {
+			return this.updateDate;
+		}
+
+		public void setUpdateDate(String updateDate) {
+			this.updateDate = updateDate;
 		}
 	}
 

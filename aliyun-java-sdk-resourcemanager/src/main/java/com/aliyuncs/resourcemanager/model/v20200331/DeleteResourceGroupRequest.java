@@ -28,7 +28,7 @@ public class DeleteResourceGroupRequest extends RpcAcsRequest<DeleteResourceGrou
 
 	private String resourceGroupId;
 	public DeleteResourceGroupRequest() {
-		super("ResourceManager", "2020-03-31", "DeleteResourceGroup");
+		super("ResourceManager", "2020-03-31", "DeleteResourceGroup", "resourcemanager");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

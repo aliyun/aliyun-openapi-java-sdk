@@ -39,7 +39,7 @@ public class CreateResourceAccountRequest extends RpcAcsRequest<CreateResourceAc
 
 	private String payerAccountId;
 	public CreateResourceAccountRequest() {
-		super("ResourceManager", "2020-03-31", "CreateResourceAccount");
+		super("ResourceManager", "2020-03-31", "CreateResourceAccount", "resourcemanager");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

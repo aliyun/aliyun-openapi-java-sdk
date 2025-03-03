@@ -32,7 +32,7 @@ public class CreateServiceLinkedRoleRequest extends RpcAcsRequest<CreateServiceL
 
 	private String serviceName;
 	public CreateServiceLinkedRoleRequest() {
-		super("ResourceManager", "2020-03-31", "CreateServiceLinkedRole");
+		super("ResourceManager", "2020-03-31", "CreateServiceLinkedRole", "resourcemanager");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

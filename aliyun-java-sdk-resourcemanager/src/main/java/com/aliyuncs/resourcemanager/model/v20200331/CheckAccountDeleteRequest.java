@@ -28,7 +28,7 @@ public class CheckAccountDeleteRequest extends RpcAcsRequest<CheckAccountDeleteR
 
 	private String accountId;
 	public CheckAccountDeleteRequest() {
-		super("ResourceManager", "2020-03-31", "CheckAccountDelete");
+		super("ResourceManager", "2020-03-31", "CheckAccountDelete", "resourcemanager");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

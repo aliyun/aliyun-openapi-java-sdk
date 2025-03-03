@@ -26,11 +26,11 @@ public class InitResourceDirectoryResponseUnmarshaller {
 		initResourceDirectoryResponse.setRequestId(_ctx.stringValue("InitResourceDirectoryResponse.RequestId"));
 
 		ResourceDirectory resourceDirectory = new ResourceDirectory();
-		resourceDirectory.setRootFolderId(_ctx.stringValue("InitResourceDirectoryResponse.ResourceDirectory.RootFolderId"));
-		resourceDirectory.setResourceDirectoryId(_ctx.stringValue("InitResourceDirectoryResponse.ResourceDirectory.ResourceDirectoryId"));
 		resourceDirectory.setCreateTime(_ctx.stringValue("InitResourceDirectoryResponse.ResourceDirectory.CreateTime"));
 		resourceDirectory.setMasterAccountId(_ctx.stringValue("InitResourceDirectoryResponse.ResourceDirectory.MasterAccountId"));
 		resourceDirectory.setMasterAccountName(_ctx.stringValue("InitResourceDirectoryResponse.ResourceDirectory.MasterAccountName"));
+		resourceDirectory.setResourceDirectoryId(_ctx.stringValue("InitResourceDirectoryResponse.ResourceDirectory.ResourceDirectoryId"));
+		resourceDirectory.setRootFolderId(_ctx.stringValue("InitResourceDirectoryResponse.ResourceDirectory.RootFolderId"));
 		initResourceDirectoryResponse.setResourceDirectory(resourceDirectory);
 	 
 	 	return initResourceDirectoryResponse;

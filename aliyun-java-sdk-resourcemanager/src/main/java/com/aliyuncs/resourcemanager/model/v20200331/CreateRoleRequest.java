@@ -34,7 +34,7 @@ public class CreateRoleRequest extends RpcAcsRequest<CreateRoleResponse> {
 
 	private String assumeRolePolicyDocument;
 	public CreateRoleRequest() {
-		super("ResourceManager", "2020-03-31", "CreateRole");
+		super("ResourceManager", "2020-03-31", "CreateRole", "resourcemanager");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

@@ -26,17 +26,17 @@ public class ResendCreateCloudAccountEmailResponseUnmarshaller {
 		resendCreateCloudAccountEmailResponse.setRequestId(_ctx.stringValue("ResendCreateCloudAccountEmailResponse.RequestId"));
 
 		Account account = new Account();
-		account.setStatus(_ctx.stringValue("ResendCreateCloudAccountEmailResponse.Account.Status"));
-		account.setType(_ctx.stringValue("ResendCreateCloudAccountEmailResponse.Account.Type"));
+		account.setAccountId(_ctx.stringValue("ResendCreateCloudAccountEmailResponse.Account.AccountId"));
+		account.setAccountName(_ctx.stringValue("ResendCreateCloudAccountEmailResponse.Account.AccountName"));
 		account.setDisplayName(_ctx.stringValue("ResendCreateCloudAccountEmailResponse.Account.DisplayName"));
 		account.setFolderId(_ctx.stringValue("ResendCreateCloudAccountEmailResponse.Account.FolderId"));
-		account.setResourceDirectoryId(_ctx.stringValue("ResendCreateCloudAccountEmailResponse.Account.ResourceDirectoryId"));
-		account.setRecordId(_ctx.stringValue("ResendCreateCloudAccountEmailResponse.Account.RecordId"));
-		account.setJoinTime(_ctx.stringValue("ResendCreateCloudAccountEmailResponse.Account.JoinTime"));
-		account.setAccountId(_ctx.stringValue("ResendCreateCloudAccountEmailResponse.Account.AccountId"));
 		account.setJoinMethod(_ctx.stringValue("ResendCreateCloudAccountEmailResponse.Account.JoinMethod"));
-		account.setAccountName(_ctx.stringValue("ResendCreateCloudAccountEmailResponse.Account.AccountName"));
+		account.setJoinTime(_ctx.stringValue("ResendCreateCloudAccountEmailResponse.Account.JoinTime"));
 		account.setModifyTime(_ctx.stringValue("ResendCreateCloudAccountEmailResponse.Account.ModifyTime"));
+		account.setRecordId(_ctx.stringValue("ResendCreateCloudAccountEmailResponse.Account.RecordId"));
+		account.setResourceDirectoryId(_ctx.stringValue("ResendCreateCloudAccountEmailResponse.Account.ResourceDirectoryId"));
+		account.setStatus(_ctx.stringValue("ResendCreateCloudAccountEmailResponse.Account.Status"));
+		account.setType(_ctx.stringValue("ResendCreateCloudAccountEmailResponse.Account.Type"));
 		resendCreateCloudAccountEmailResponse.setAccount(account);
 	 
 	 	return resendCreateCloudAccountEmailResponse;

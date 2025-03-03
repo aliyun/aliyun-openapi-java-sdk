@@ -15,6 +15,7 @@
 package com.aliyuncs.resourcemanager.model.v20200331;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.resourcemanager.Endpoint;
@@ -29,8 +30,10 @@ public class CreateResourceGroupRequest extends RpcAcsRequest<CreateResourceGrou
 	private String displayName;
 
 	private String name;
+
+	private List<Tag> tag;
 	public CreateResourceGroupRequest() {
-		super("ResourceManager", "2020-03-31", "CreateResourceGroup");
+		super("ResourceManager", "2020-03-31", "CreateResourceGroup", "resourcemanager");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
@@ -58,6 +61,46 @@ public class CreateResourceGroupRequest extends RpcAcsRequest<CreateResourceGrou
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
+		}
+	}
+
+	public List<Tag> getTag() {
+		return this.tag;
+	}
+
+	public void setTag(List<Tag> tag) {
+		this.tag = tag;	
+		if (tag != null) {
+			for (int depth1 = 0; depth1 < tag.size(); depth1++) {
+				if (tag.get(depth1) != null) {
+					
+						putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tag.get(depth1).getValue());
+						putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tag.get(depth1).getKey());
+				}
+			}
+		}	
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 
