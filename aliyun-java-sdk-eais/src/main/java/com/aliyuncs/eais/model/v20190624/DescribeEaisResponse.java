@@ -111,6 +111,8 @@ public class DescribeEaisResponse extends AcsResponse {
 
 		private String resourceGroupId;
 
+		private String paymentType;
+
 		private List<Tag> tags;
 
 		public String getStatus() {
@@ -247,6 +249,14 @@ public class DescribeEaisResponse extends AcsResponse {
 
 		public void setResourceGroupId(String resourceGroupId) {
 			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getPaymentType() {
+			return this.paymentType;
+		}
+
+		public void setPaymentType(String paymentType) {
+			this.paymentType = paymentType;
 		}
 
 		public List<Tag> getTags() {
