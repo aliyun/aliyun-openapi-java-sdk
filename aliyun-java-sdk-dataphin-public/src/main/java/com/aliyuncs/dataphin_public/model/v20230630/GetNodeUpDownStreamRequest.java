@@ -29,9 +29,9 @@ public class GetNodeUpDownStreamRequest extends RpcAcsRequest<GetNodeUpDownStrea
 
 	private Long opTenantId;
 
-	private Integer upStreamDepth;
-
 	private String env;
+
+	private Integer upStreamDepth;
 
 	private Long projectId;
 
@@ -56,17 +56,6 @@ public class GetNodeUpDownStreamRequest extends RpcAcsRequest<GetNodeUpDownStrea
 		}
 	}
 
-	public Integer getUpStreamDepth() {
-		return this.upStreamDepth;
-	}
-
-	public void setUpStreamDepth(Integer upStreamDepth) {
-		this.upStreamDepth = upStreamDepth;
-		if(upStreamDepth != null){
-			putQueryParameter("UpStreamDepth", upStreamDepth.toString());
-		}
-	}
-
 	public String getEnv() {
 		return this.env;
 	}
@@ -75,6 +64,17 @@ public class GetNodeUpDownStreamRequest extends RpcAcsRequest<GetNodeUpDownStrea
 		this.env = env;
 		if(env != null){
 			putQueryParameter("Env", env);
+		}
+	}
+
+	public Integer getUpStreamDepth() {
+		return this.upStreamDepth;
+	}
+
+	public void setUpStreamDepth(Integer upStreamDepth) {
+		this.upStreamDepth = upStreamDepth;
+		if(upStreamDepth != null){
+			putQueryParameter("UpStreamDepth", upStreamDepth.toString());
 		}
 	}
 

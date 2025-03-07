@@ -27,9 +27,9 @@ public class GetPhysicalNodeByOutputNameRequest extends RpcAcsRequest<GetPhysica
 
 	private Long opTenantId;
 
-	private String outputName;
-
 	private String env;
+
+	private String outputName;
 	public GetPhysicalNodeByOutputNameRequest() {
 		super("dataphin-public", "2023-06-30", "GetPhysicalNodeByOutputName");
 		setProtocol(ProtocolType.HTTPS);
@@ -47,17 +47,6 @@ public class GetPhysicalNodeByOutputNameRequest extends RpcAcsRequest<GetPhysica
 		}
 	}
 
-	public String getOutputName() {
-		return this.outputName;
-	}
-
-	public void setOutputName(String outputName) {
-		this.outputName = outputName;
-		if(outputName != null){
-			putQueryParameter("OutputName", outputName);
-		}
-	}
-
 	public String getEnv() {
 		return this.env;
 	}
@@ -66,6 +55,17 @@ public class GetPhysicalNodeByOutputNameRequest extends RpcAcsRequest<GetPhysica
 		this.env = env;
 		if(env != null){
 			putQueryParameter("Env", env);
+		}
+	}
+
+	public String getOutputName() {
+		return this.outputName;
+	}
+
+	public void setOutputName(String outputName) {
+		this.outputName = outputName;
+		if(outputName != null){
+			putQueryParameter("OutputName", outputName);
 		}
 	}
 

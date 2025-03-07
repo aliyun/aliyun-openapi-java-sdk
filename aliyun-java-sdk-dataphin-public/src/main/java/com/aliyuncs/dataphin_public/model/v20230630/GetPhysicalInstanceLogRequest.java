@@ -27,9 +27,9 @@ public class GetPhysicalInstanceLogRequest extends RpcAcsRequest<GetPhysicalInst
 
 	private Long opTenantId;
 
-	private String instanceId;
-
 	private String env;
+
+	private String instanceId;
 
 	private Long projectId;
 	public GetPhysicalInstanceLogRequest() {
@@ -49,17 +49,6 @@ public class GetPhysicalInstanceLogRequest extends RpcAcsRequest<GetPhysicalInst
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
 	public String getEnv() {
 		return this.env;
 	}
@@ -68,6 +57,17 @@ public class GetPhysicalInstanceLogRequest extends RpcAcsRequest<GetPhysicalInst
 		this.env = env;
 		if(env != null){
 			putQueryParameter("Env", env);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

@@ -30,10 +30,10 @@ public class ExecuteManualNodeRequest extends RpcAcsRequest<ExecuteManualNodeRes
 
 	private Long opTenantId;
 
+	private String env;
+
 	@SerializedName("executeCommand")
 	private ExecuteCommand executeCommand;
-
-	private String env;
 	public ExecuteManualNodeRequest() {
 		super("dataphin-public", "2023-06-30", "ExecuteManualNode");
 		setProtocol(ProtocolType.HTTPS);
@@ -51,17 +51,6 @@ public class ExecuteManualNodeRequest extends RpcAcsRequest<ExecuteManualNodeRes
 		}
 	}
 
-	public ExecuteCommand getExecuteCommand() {
-		return this.executeCommand;
-	}
-
-	public void setExecuteCommand(ExecuteCommand executeCommand) {
-		this.executeCommand = executeCommand;	
-		if (executeCommand != null) {
-			putBodyParameter("ExecuteCommand" , new Gson().toJson(executeCommand));
-		}	
-	}
-
 	public String getEnv() {
 		return this.env;
 	}
@@ -71,6 +60,17 @@ public class ExecuteManualNodeRequest extends RpcAcsRequest<ExecuteManualNodeRes
 		if(env != null){
 			putQueryParameter("Env", env);
 		}
+	}
+
+	public ExecuteCommand getExecuteCommand() {
+		return this.executeCommand;
+	}
+
+	public void setExecuteCommand(ExecuteCommand executeCommand) {
+		this.executeCommand = executeCommand;	
+		if (executeCommand != null) {
+			putBodyParameter("ExecuteCommand" , new Gson().toJson(executeCommand));
+		}	
 	}
 
 	public static class ExecuteCommand {

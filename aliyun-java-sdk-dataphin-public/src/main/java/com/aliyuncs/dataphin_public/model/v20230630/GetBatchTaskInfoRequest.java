@@ -27,9 +27,9 @@ public class GetBatchTaskInfoRequest extends RpcAcsRequest<GetBatchTaskInfoRespo
 
 	private Long opTenantId;
 
-	private Boolean includeAllUpStreams;
-
 	private String env;
+
+	private Boolean includeAllUpStreams;
 
 	private Long projectId;
 
@@ -51,17 +51,6 @@ public class GetBatchTaskInfoRequest extends RpcAcsRequest<GetBatchTaskInfoRespo
 		}
 	}
 
-	public Boolean getIncludeAllUpStreams() {
-		return this.includeAllUpStreams;
-	}
-
-	public void setIncludeAllUpStreams(Boolean includeAllUpStreams) {
-		this.includeAllUpStreams = includeAllUpStreams;
-		if(includeAllUpStreams != null){
-			putQueryParameter("IncludeAllUpStreams", includeAllUpStreams.toString());
-		}
-	}
-
 	public String getEnv() {
 		return this.env;
 	}
@@ -70,6 +59,17 @@ public class GetBatchTaskInfoRequest extends RpcAcsRequest<GetBatchTaskInfoRespo
 		this.env = env;
 		if(env != null){
 			putQueryParameter("Env", env);
+		}
+	}
+
+	public Boolean getIncludeAllUpStreams() {
+		return this.includeAllUpStreams;
+	}
+
+	public void setIncludeAllUpStreams(Boolean includeAllUpStreams) {
+		this.includeAllUpStreams = includeAllUpStreams;
+		if(includeAllUpStreams != null){
+			putQueryParameter("IncludeAllUpStreams", includeAllUpStreams.toString());
 		}
 	}
 

@@ -30,10 +30,10 @@ public class CreateNodeSupplementRequest extends RpcAcsRequest<CreateNodeSupplem
 
 	private Long opTenantId;
 
+	private String env;
+
 	@SerializedName("createCommand")
 	private CreateCommand createCommand;
-
-	private String env;
 	public CreateNodeSupplementRequest() {
 		super("dataphin-public", "2023-06-30", "CreateNodeSupplement");
 		setProtocol(ProtocolType.HTTPS);
@@ -51,17 +51,6 @@ public class CreateNodeSupplementRequest extends RpcAcsRequest<CreateNodeSupplem
 		}
 	}
 
-	public CreateCommand getCreateCommand() {
-		return this.createCommand;
-	}
-
-	public void setCreateCommand(CreateCommand createCommand) {
-		this.createCommand = createCommand;	
-		if (createCommand != null) {
-			putBodyParameter("CreateCommand" , new Gson().toJson(createCommand));
-		}	
-	}
-
 	public String getEnv() {
 		return this.env;
 	}
@@ -71,6 +60,17 @@ public class CreateNodeSupplementRequest extends RpcAcsRequest<CreateNodeSupplem
 		if(env != null){
 			putQueryParameter("Env", env);
 		}
+	}
+
+	public CreateCommand getCreateCommand() {
+		return this.createCommand;
+	}
+
+	public void setCreateCommand(CreateCommand createCommand) {
+		this.createCommand = createCommand;	
+		if (createCommand != null) {
+			putBodyParameter("CreateCommand" , new Gson().toJson(createCommand));
+		}	
 	}
 
 	public static class CreateCommand {

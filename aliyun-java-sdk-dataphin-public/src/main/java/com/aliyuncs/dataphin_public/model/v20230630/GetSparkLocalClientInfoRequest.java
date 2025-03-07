@@ -22,18 +22,16 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class UpdateFileDirectoryRequest extends RpcAcsRequest<UpdateFileDirectoryResponse> {
+public class GetSparkLocalClientInfoRequest extends RpcAcsRequest<GetSparkLocalClientInfoResponse> {
 	   
 
 	private Long opTenantId;
 
-	private String directory;
+	private String envEnum;
 
-	private Long projectId;
-
-	private Long fileId;
-	public UpdateFileDirectoryRequest() {
-		super("dataphin-public", "2023-06-30", "UpdateFileDirectory");
+	private String projectId;
+	public GetSparkLocalClientInfoRequest() {
+		super("dataphin-public", "2023-06-30", "GetSparkLocalClientInfo");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -49,42 +47,31 @@ public class UpdateFileDirectoryRequest extends RpcAcsRequest<UpdateFileDirector
 		}
 	}
 
-	public String getDirectory() {
-		return this.directory;
+	public String getEnvEnum() {
+		return this.envEnum;
 	}
 
-	public void setDirectory(String directory) {
-		this.directory = directory;
-		if(directory != null){
-			putQueryParameter("Directory", directory);
+	public void setEnvEnum(String envEnum) {
+		this.envEnum = envEnum;
+		if(envEnum != null){
+			putQueryParameter("EnvEnum", envEnum);
 		}
 	}
 
-	public Long getProjectId() {
+	public String getProjectId() {
 		return this.projectId;
 	}
 
-	public void setProjectId(Long projectId) {
+	public void setProjectId(String projectId) {
 		this.projectId = projectId;
 		if(projectId != null){
-			putQueryParameter("ProjectId", projectId.toString());
-		}
-	}
-
-	public Long getFileId() {
-		return this.fileId;
-	}
-
-	public void setFileId(Long fileId) {
-		this.fileId = fileId;
-		if(fileId != null){
-			putQueryParameter("FileId", fileId.toString());
+			putQueryParameter("ProjectId", projectId);
 		}
 	}
 
 	@Override
-	public Class<UpdateFileDirectoryResponse> getResponseClass() {
-		return UpdateFileDirectoryResponse.class;
+	public Class<GetSparkLocalClientInfoResponse> getResponseClass() {
+		return GetSparkLocalClientInfoResponse.class;
 	}
 
 }

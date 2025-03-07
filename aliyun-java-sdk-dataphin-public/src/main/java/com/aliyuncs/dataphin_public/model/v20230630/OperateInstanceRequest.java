@@ -30,10 +30,10 @@ public class OperateInstanceRequest extends RpcAcsRequest<OperateInstanceRespons
 
 	private Long opTenantId;
 
+	private String env;
+
 	@SerializedName("operateCommand")
 	private OperateCommand operateCommand;
-
-	private String env;
 	public OperateInstanceRequest() {
 		super("dataphin-public", "2023-06-30", "OperateInstance");
 		setProtocol(ProtocolType.HTTPS);
@@ -51,17 +51,6 @@ public class OperateInstanceRequest extends RpcAcsRequest<OperateInstanceRespons
 		}
 	}
 
-	public OperateCommand getOperateCommand() {
-		return this.operateCommand;
-	}
-
-	public void setOperateCommand(OperateCommand operateCommand) {
-		this.operateCommand = operateCommand;	
-		if (operateCommand != null) {
-			putBodyParameter("OperateCommand" , new Gson().toJson(operateCommand));
-		}	
-	}
-
 	public String getEnv() {
 		return this.env;
 	}
@@ -71,6 +60,17 @@ public class OperateInstanceRequest extends RpcAcsRequest<OperateInstanceRespons
 		if(env != null){
 			putQueryParameter("Env", env);
 		}
+	}
+
+	public OperateCommand getOperateCommand() {
+		return this.operateCommand;
+	}
+
+	public void setOperateCommand(OperateCommand operateCommand) {
+		this.operateCommand = operateCommand;	
+		if (operateCommand != null) {
+			putBodyParameter("OperateCommand" , new Gson().toJson(operateCommand));
+		}	
 	}
 
 	public static class OperateCommand {

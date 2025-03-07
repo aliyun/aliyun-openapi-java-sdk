@@ -31,10 +31,10 @@ public class GetInstanceDownStreamRequest extends RpcAcsRequest<GetInstanceDownS
 
 	private String runStatus;
 
+	private String env;
+
 	@SerializedName("instanceGet")
 	private InstanceGet instanceGet;
-
-	private String env;
 
 	private Integer downStreamDepth;
 	public GetInstanceDownStreamRequest() {
@@ -65,17 +65,6 @@ public class GetInstanceDownStreamRequest extends RpcAcsRequest<GetInstanceDownS
 		}
 	}
 
-	public InstanceGet getInstanceGet() {
-		return this.instanceGet;
-	}
-
-	public void setInstanceGet(InstanceGet instanceGet) {
-		this.instanceGet = instanceGet;	
-		if (instanceGet != null) {
-			putBodyParameter("InstanceGet" , new Gson().toJson(instanceGet));
-		}	
-	}
-
 	public String getEnv() {
 		return this.env;
 	}
@@ -85,6 +74,17 @@ public class GetInstanceDownStreamRequest extends RpcAcsRequest<GetInstanceDownS
 		if(env != null){
 			putQueryParameter("Env", env);
 		}
+	}
+
+	public InstanceGet getInstanceGet() {
+		return this.instanceGet;
+	}
+
+	public void setInstanceGet(InstanceGet instanceGet) {
+		this.instanceGet = instanceGet;	
+		if (instanceGet != null) {
+			putBodyParameter("InstanceGet" , new Gson().toJson(instanceGet));
+		}	
 	}
 
 	public Integer getDownStreamDepth() {

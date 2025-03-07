@@ -30,12 +30,12 @@ public class GetInstanceUpDownStreamRequest extends RpcAcsRequest<GetInstanceUpD
 
 	private Long opTenantId;
 
+	private String env;
+
 	private Integer upStreamDepth;
 
 	@SerializedName("instanceId")
 	private InstanceId instanceId;
-
-	private String env;
 
 	private Long projectId;
 
@@ -54,6 +54,17 @@ public class GetInstanceUpDownStreamRequest extends RpcAcsRequest<GetInstanceUpD
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getEnv() {
+		return this.env;
+	}
+
+	public void setEnv(String env) {
+		this.env = env;
+		if(env != null){
+			putQueryParameter("Env", env);
 		}
 	}
 
@@ -77,17 +88,6 @@ public class GetInstanceUpDownStreamRequest extends RpcAcsRequest<GetInstanceUpD
 		if (instanceId != null) {
 			putBodyParameter("InstanceId" , new Gson().toJson(instanceId));
 		}	
-	}
-
-	public String getEnv() {
-		return this.env;
-	}
-
-	public void setEnv(String env) {
-		this.env = env;
-		if(env != null){
-			putQueryParameter("Env", env);
-		}
 	}
 
 	public Long getProjectId() {

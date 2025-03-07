@@ -27,9 +27,9 @@ public class GetOperationSubmitStatusRequest extends RpcAcsRequest<GetOperationS
 
 	private Long opTenantId;
 
-	private String jobId;
-
 	private String env;
+
+	private String jobId;
 	public GetOperationSubmitStatusRequest() {
 		super("dataphin-public", "2023-06-30", "GetOperationSubmitStatus");
 		setProtocol(ProtocolType.HTTPS);
@@ -47,17 +47,6 @@ public class GetOperationSubmitStatusRequest extends RpcAcsRequest<GetOperationS
 		}
 	}
 
-	public String getJobId() {
-		return this.jobId;
-	}
-
-	public void setJobId(String jobId) {
-		this.jobId = jobId;
-		if(jobId != null){
-			putQueryParameter("JobId", jobId);
-		}
-	}
-
 	public String getEnv() {
 		return this.env;
 	}
@@ -66,6 +55,17 @@ public class GetOperationSubmitStatusRequest extends RpcAcsRequest<GetOperationS
 		this.env = env;
 		if(env != null){
 			putQueryParameter("Env", env);
+		}
+	}
+
+	public String getJobId() {
+		return this.jobId;
+	}
+
+	public void setJobId(String jobId) {
+		this.jobId = jobId;
+		if(jobId != null){
+			putQueryParameter("JobId", jobId);
 		}
 	}
 
