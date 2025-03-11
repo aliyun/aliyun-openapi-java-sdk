@@ -46,11 +46,11 @@ public class DescribeInstanceSummaryResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceSummaryResponse.InstanceSummary.RegionalInstanceSummaryList.Length"); i++) {
 			RegionalInstanceSummaryLis regionalInstanceSummaryLis = new RegionalInstanceSummaryLis();
 			regionalInstanceSummaryLis.setRegion(_ctx.stringValue("DescribeInstanceSummaryResponse.InstanceSummary.RegionalInstanceSummaryList["+ i +"].Region"));
-			regionalInstanceSummaryLis.setTotalInstancesCount(_ctx.stringValue("DescribeInstanceSummaryResponse.InstanceSummary.RegionalInstanceSummaryList["+ i +"].TotalInstancesCount"));
-			regionalInstanceSummaryLis.setImmediatelyExpiredInstancesCount(_ctx.stringValue("DescribeInstanceSummaryResponse.InstanceSummary.RegionalInstanceSummaryList["+ i +"].ImmediatelyExpiredInstancesCount"));
-			regionalInstanceSummaryLis.setRunningInstancesCount(_ctx.stringValue("DescribeInstanceSummaryResponse.InstanceSummary.RegionalInstanceSummaryList["+ i +"].RunningInstancesCount"));
-			regionalInstanceSummaryLis.setExpiredInstancesCount(_ctx.stringValue("DescribeInstanceSummaryResponse.InstanceSummary.RegionalInstanceSummaryList["+ i +"].ExpiredInstancesCount"));
-			regionalInstanceSummaryLis.setRecentCreatedInstancesCount(_ctx.stringValue("DescribeInstanceSummaryResponse.InstanceSummary.RegionalInstanceSummaryList["+ i +"].RecentCreatedInstancesCount"));
+			regionalInstanceSummaryLis.setTotalInstancesCount(_ctx.longValue("DescribeInstanceSummaryResponse.InstanceSummary.RegionalInstanceSummaryList["+ i +"].TotalInstancesCount"));
+			regionalInstanceSummaryLis.setImmediatelyExpiredInstancesCount(_ctx.longValue("DescribeInstanceSummaryResponse.InstanceSummary.RegionalInstanceSummaryList["+ i +"].ImmediatelyExpiredInstancesCount"));
+			regionalInstanceSummaryLis.setRunningInstancesCount(_ctx.longValue("DescribeInstanceSummaryResponse.InstanceSummary.RegionalInstanceSummaryList["+ i +"].RunningInstancesCount"));
+			regionalInstanceSummaryLis.setExpiredInstancesCount(_ctx.longValue("DescribeInstanceSummaryResponse.InstanceSummary.RegionalInstanceSummaryList["+ i +"].ExpiredInstancesCount"));
+			regionalInstanceSummaryLis.setRecentCreatedInstancesCount(_ctx.longValue("DescribeInstanceSummaryResponse.InstanceSummary.RegionalInstanceSummaryList["+ i +"].RecentCreatedInstancesCount"));
 
 			regionalInstanceSummaryList.add(regionalInstanceSummaryLis);
 		}

@@ -49,7 +49,7 @@ public class DescribeInstancesResponseUnmarshaller {
 			data.setMaintainTime(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].MaintainTime"));
 			data.setDeployType(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].DeployType"));
 			data.setPayType(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].PayType"));
-			data.setDiskSize(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].DiskSize"));
+			data.setDiskSize(_ctx.longValue("DescribeInstancesResponse.Instances["+ i +"].DiskSize"));
 			data.setDiskType(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].DiskType"));
 			data.setInstanceId(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].InstanceId"));
 			data.setExpireSeconds(_ctx.integerValue("DescribeInstancesResponse.Instances["+ i +"].ExpireSeconds"));
@@ -67,6 +67,7 @@ public class DescribeInstancesResponseUnmarshaller {
 			data.setEnableReadOnlyReplicaManagement(_ctx.booleanValue("DescribeInstancesResponse.Instances["+ i +"].EnableReadOnlyReplicaManagement"));
 			data.setSpecType(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].SpecType"));
 			data.setObRpmVersion(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].ObRpmVersion"));
+			data.setReplicaMode(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].ReplicaMode"));
 
 			List<String> availableZones = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeInstancesResponse.Instances["+ i +"].AvailableZones.Length"); j++) {

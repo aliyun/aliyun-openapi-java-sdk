@@ -27,8 +27,6 @@ public class DescribeInstanceRequest extends RpcAcsRequest<DescribeInstanceRespo
 
 	private Integer pageNumber;
 
-	private String maxConnectionLimit;
-
 	private String instanceId;
 	public DescribeInstanceRequest() {
 		super("OceanBasePro", "2019-09-01", "DescribeInstance", "oceanbase");
@@ -47,17 +45,6 @@ public class DescribeInstanceRequest extends RpcAcsRequest<DescribeInstanceRespo
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putBodyParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public String getMaxConnectionLimit() {
-		return this.maxConnectionLimit;
-	}
-
-	public void setMaxConnectionLimit(String maxConnectionLimit) {
-		this.maxConnectionLimit = maxConnectionLimit;
-		if(maxConnectionLimit != null){
-			putBodyParameter("MaxConnectionLimit", maxConnectionLimit);
 		}
 	}
 

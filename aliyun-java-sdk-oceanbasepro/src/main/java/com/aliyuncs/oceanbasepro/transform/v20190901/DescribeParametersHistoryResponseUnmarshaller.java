@@ -18,8 +18,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.oceanbasepro.model.v20190901.DescribeParametersHistoryResponse;
-import com.aliyuncs.oceanbasepro.model.v20190901.DescribeParametersHistoryResponse.Data;
-import com.aliyuncs.oceanbasepro.model.v20190901.DescribeParametersHistoryResponse.Data.ParametersItem;
+import com.aliyuncs.oceanbasepro.model.v20190901.DescribeParametersHistoryResponse.Respond;
+import com.aliyuncs.oceanbasepro.model.v20190901.DescribeParametersHistoryResponse.Respond.ParametersItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -29,29 +29,24 @@ public class DescribeParametersHistoryResponseUnmarshaller {
 		
 		describeParametersHistoryResponse.setRequestId(_ctx.stringValue("DescribeParametersHistoryResponse.RequestId"));
 
-		List<Data> respond = new ArrayList<Data>();
-		for (int i = 0; i < _ctx.lengthValue("DescribeParametersHistoryResponse.Respond.Length"); i++) {
-			Data data = new Data();
-			data.setTotalCount(_ctx.integerValue("DescribeParametersHistoryResponse.Respond["+ i +"].TotalCount"));
-			data.setPageNumber(_ctx.integerValue("DescribeParametersHistoryResponse.Respond["+ i +"].PageNumber"));
+		Respond respond = new Respond();
+		respond.setTotalCount(_ctx.integerValue("DescribeParametersHistoryResponse.Respond.TotalCount"));
+		respond.setPageNumber(_ctx.integerValue("DescribeParametersHistoryResponse.Respond.PageNumber"));
 
-			List<ParametersItem> parameters = new ArrayList<ParametersItem>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeParametersHistoryResponse.Respond["+ i +"].Parameters.Length"); j++) {
-				ParametersItem parametersItem = new ParametersItem();
-				parametersItem.setStatus(_ctx.stringValue("DescribeParametersHistoryResponse.Respond["+ i +"].Parameters["+ j +"].Status"));
-				parametersItem.setOldValue(_ctx.stringValue("DescribeParametersHistoryResponse.Respond["+ i +"].Parameters["+ j +"].OldValue"));
-				parametersItem.setUpdateTime(_ctx.stringValue("DescribeParametersHistoryResponse.Respond["+ i +"].Parameters["+ j +"].UpdateTime"));
-				parametersItem.setCreateTime(_ctx.stringValue("DescribeParametersHistoryResponse.Respond["+ i +"].Parameters["+ j +"].CreateTime"));
-				parametersItem.setDimensionValue(_ctx.stringValue("DescribeParametersHistoryResponse.Respond["+ i +"].Parameters["+ j +"].DimensionValue"));
-				parametersItem.setName(_ctx.stringValue("DescribeParametersHistoryResponse.Respond["+ i +"].Parameters["+ j +"].Name"));
-				parametersItem.setNewValue(_ctx.stringValue("DescribeParametersHistoryResponse.Respond["+ i +"].Parameters["+ j +"].NewValue"));
+		List<ParametersItem> parameters = new ArrayList<ParametersItem>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeParametersHistoryResponse.Respond.Parameters.Length"); i++) {
+			ParametersItem parametersItem = new ParametersItem();
+			parametersItem.setStatus(_ctx.stringValue("DescribeParametersHistoryResponse.Respond.Parameters["+ i +"].Status"));
+			parametersItem.setOldValue(_ctx.stringValue("DescribeParametersHistoryResponse.Respond.Parameters["+ i +"].OldValue"));
+			parametersItem.setUpdateTime(_ctx.stringValue("DescribeParametersHistoryResponse.Respond.Parameters["+ i +"].UpdateTime"));
+			parametersItem.setCreateTime(_ctx.stringValue("DescribeParametersHistoryResponse.Respond.Parameters["+ i +"].CreateTime"));
+			parametersItem.setDimensionValue(_ctx.stringValue("DescribeParametersHistoryResponse.Respond.Parameters["+ i +"].DimensionValue"));
+			parametersItem.setName(_ctx.stringValue("DescribeParametersHistoryResponse.Respond.Parameters["+ i +"].Name"));
+			parametersItem.setNewValue(_ctx.stringValue("DescribeParametersHistoryResponse.Respond.Parameters["+ i +"].NewValue"));
 
-				parameters.add(parametersItem);
-			}
-			data.setParameters(parameters);
-
-			respond.add(data);
+			parameters.add(parametersItem);
 		}
+		respond.setParameters(parameters);
 		describeParametersHistoryResponse.setRespond(respond);
 	 
 	 	return describeParametersHistoryResponse;

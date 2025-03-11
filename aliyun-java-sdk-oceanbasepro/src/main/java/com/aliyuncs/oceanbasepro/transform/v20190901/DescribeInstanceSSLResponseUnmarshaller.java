@@ -33,6 +33,8 @@ public class DescribeInstanceSSLResponseUnmarshaller {
 		instanceSSL.setStatus(_ctx.stringValue("DescribeInstanceSSLResponse.InstanceSSL.Status"));
 		instanceSSL.setForceSSLSupport(_ctx.booleanValue("DescribeInstanceSSLResponse.InstanceSSL.ForceSSLSupport"));
 		instanceSSL.setForceSSL(_ctx.stringValue("DescribeInstanceSSLResponse.InstanceSSL.ForceSSL"));
+		instanceSSL.setAutoUpdate(_ctx.stringValue("DescribeInstanceSSLResponse.InstanceSSL.AutoUpdate"));
+		instanceSSL.setTenantId(_ctx.stringValue("DescribeInstanceSSLResponse.InstanceSSL.TenantId"));
 		describeInstanceSSLResponse.setInstanceSSL(instanceSSL);
 	 
 	 	return describeInstanceSSLResponse;

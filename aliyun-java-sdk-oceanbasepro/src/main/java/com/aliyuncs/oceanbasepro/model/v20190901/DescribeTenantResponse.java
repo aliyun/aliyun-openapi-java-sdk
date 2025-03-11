@@ -111,6 +111,10 @@ public class DescribeTenantResponse extends AcsResponse {
 
 		private String odpVersion;
 
+		private String tenantMaxConnections;
+
+		private String parameterTemplate;
+
 		private List<TenantConnectionsItem> tenantConnections;
 
 		private List<TenantZonesItem> tenantZones;
@@ -375,6 +379,22 @@ public class DescribeTenantResponse extends AcsResponse {
 
 		public void setOdpVersion(String odpVersion) {
 			this.odpVersion = odpVersion;
+		}
+
+		public String getTenantMaxConnections() {
+			return this.tenantMaxConnections;
+		}
+
+		public void setTenantMaxConnections(String tenantMaxConnections) {
+			this.tenantMaxConnections = tenantMaxConnections;
+		}
+
+		public String getParameterTemplate() {
+			return this.parameterTemplate;
+		}
+
+		public void setParameterTemplate(String parameterTemplate) {
+			this.parameterTemplate = parameterTemplate;
 		}
 
 		public List<TenantConnectionsItem> getTenantConnections() {
@@ -736,7 +756,7 @@ public class DescribeTenantResponse extends AcsResponse {
 
 				private String zoneReplicaType;
 
-				private String zoneNodes;
+				private Long zoneNodes;
 
 				private String logicZoneName;
 
@@ -746,6 +766,8 @@ public class DescribeTenantResponse extends AcsResponse {
 
 				private String readOnlyCopyId;
 
+				private String readOnlyReplicaType;
+
 				public String getZoneReplicaType() {
 					return this.zoneReplicaType;
 				}
@@ -754,11 +776,11 @@ public class DescribeTenantResponse extends AcsResponse {
 					this.zoneReplicaType = zoneReplicaType;
 				}
 
-				public String getZoneNodes() {
+				public Long getZoneNodes() {
 					return this.zoneNodes;
 				}
 
-				public void setZoneNodes(String zoneNodes) {
+				public void setZoneNodes(Long zoneNodes) {
 					this.zoneNodes = zoneNodes;
 				}
 
@@ -792,6 +814,14 @@ public class DescribeTenantResponse extends AcsResponse {
 
 				public void setReadOnlyCopyId(String readOnlyCopyId) {
 					this.readOnlyCopyId = readOnlyCopyId;
+				}
+
+				public String getReadOnlyReplicaType() {
+					return this.readOnlyReplicaType;
+				}
+
+				public void setReadOnlyReplicaType(String readOnlyReplicaType) {
+					this.readOnlyReplicaType = readOnlyReplicaType;
 				}
 			}
 		}

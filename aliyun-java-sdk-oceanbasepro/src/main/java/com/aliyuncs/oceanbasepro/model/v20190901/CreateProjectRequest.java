@@ -305,6 +305,12 @@ public class CreateProjectRequest extends RpcAcsRequest<CreateProjectResponse> {
 
 	public static class FullTransferConfig {
 
+		@SerializedName("IndexDDLConcurrencyLimit")
+		private Integer indexDDLConcurrencyLimit;
+
+		@SerializedName("HbaseObjMigMode")
+		private String hbaseObjMigMode;
+
 		@SerializedName("NonePkUkTruncateDstTable")
 		private Boolean nonePkUkTruncateDstTable;
 
@@ -317,6 +323,12 @@ public class CreateProjectRequest extends RpcAcsRequest<CreateProjectResponse> {
 		@SerializedName("WriteWorkerNum")
 		private Integer writeWorkerNum;
 
+		@SerializedName("HbaseObjCheckMode")
+		private String hbaseObjCheckMode;
+
+		@SerializedName("MaxConcurrentIndexDDLs")
+		private Integer maxConcurrentIndexDDLs;
+
 		@SerializedName("ReadWorkerNum")
 		private Integer readWorkerNum;
 
@@ -328,6 +340,22 @@ public class CreateProjectRequest extends RpcAcsRequest<CreateProjectResponse> {
 
 		@SerializedName("ThrottleIOPS")
 		private Integer throttleIOPS;
+
+		public Integer getIndexDDLConcurrencyLimit() {
+			return this.indexDDLConcurrencyLimit;
+		}
+
+		public void setIndexDDLConcurrencyLimit(Integer indexDDLConcurrencyLimit) {
+			this.indexDDLConcurrencyLimit = indexDDLConcurrencyLimit;
+		}
+
+		public String getHbaseObjMigMode() {
+			return this.hbaseObjMigMode;
+		}
+
+		public void setHbaseObjMigMode(String hbaseObjMigMode) {
+			this.hbaseObjMigMode = hbaseObjMigMode;
+		}
 
 		public Boolean getNonePkUkTruncateDstTable() {
 			return this.nonePkUkTruncateDstTable;
@@ -359,6 +387,22 @@ public class CreateProjectRequest extends RpcAcsRequest<CreateProjectResponse> {
 
 		public void setWriteWorkerNum(Integer writeWorkerNum) {
 			this.writeWorkerNum = writeWorkerNum;
+		}
+
+		public String getHbaseObjCheckMode() {
+			return this.hbaseObjCheckMode;
+		}
+
+		public void setHbaseObjCheckMode(String hbaseObjCheckMode) {
+			this.hbaseObjCheckMode = hbaseObjCheckMode;
+		}
+
+		public Integer getMaxConcurrentIndexDDLs() {
+			return this.maxConcurrentIndexDDLs;
+		}
+
+		public void setMaxConcurrentIndexDDLs(Integer maxConcurrentIndexDDLs) {
+			this.maxConcurrentIndexDDLs = maxConcurrentIndexDDLs;
 		}
 
 		public Integer getReadWorkerNum() {
@@ -687,6 +731,9 @@ public class CreateProjectRequest extends RpcAcsRequest<CreateProjectResponse> {
 				@SerializedName("FilterColumns")
 				private List<String> filterColumns;
 
+				@SerializedName("ObkvPartitionConfig")
+				private ObkvPartitionConfig obkvPartitionConfig;
+
 				@SerializedName("AdbTableSchema")
 				private AdbTableSchema adbTableSchema;
 
@@ -716,6 +763,14 @@ public class CreateProjectRequest extends RpcAcsRequest<CreateProjectResponse> {
 
 				public void setFilterColumns(List<String> filterColumns) {
 					this.filterColumns = filterColumns;
+				}
+
+				public ObkvPartitionConfig getObkvPartitionConfig() {
+					return this.obkvPartitionConfig;
+				}
+
+				public void setObkvPartitionConfig(ObkvPartitionConfig obkvPartitionConfig) {
+					this.obkvPartitionConfig = obkvPartitionConfig;
 				}
 
 				public AdbTableSchema getAdbTableSchema() {
@@ -756,6 +811,42 @@ public class CreateProjectRequest extends RpcAcsRequest<CreateProjectResponse> {
 
 				public void setShardColumns(List<String> shardColumns) {
 					this.shardColumns = shardColumns;
+				}
+
+				public static class ObkvPartitionConfig {
+
+					@SerializedName("VirtualColumn")
+					private String virtualColumn;
+
+					@SerializedName("PartitionType")
+					private String partitionType;
+
+					@SerializedName("PartitionSize")
+					private Integer partitionSize;
+
+					public String getVirtualColumn() {
+						return this.virtualColumn;
+					}
+
+					public void setVirtualColumn(String virtualColumn) {
+						this.virtualColumn = virtualColumn;
+					}
+
+					public String getPartitionType() {
+						return this.partitionType;
+					}
+
+					public void setPartitionType(String partitionType) {
+						this.partitionType = partitionType;
+					}
+
+					public Integer getPartitionSize() {
+						return this.partitionSize;
+					}
+
+					public void setPartitionSize(Integer partitionSize) {
+						this.partitionSize = partitionSize;
+					}
 				}
 
 				public static class AdbTableSchema {

@@ -22,16 +22,12 @@ import com.aliyuncs.oceanbasepro.Endpoint;
  * @author auto create
  * @version 
  */
-public class ModifyInstanceSSLRequest extends RpcAcsRequest<ModifyInstanceSSLResponse> {
+public class DescribeProxyServiceRequest extends RpcAcsRequest<DescribeProxyServiceResponse> {
 	   
 
 	private String instanceId;
-
-	private String enableSSL;
-
-	private String tenantId;
-	public ModifyInstanceSSLRequest() {
-		super("OceanBasePro", "2019-09-01", "ModifyInstanceSSL", "oceanbase");
+	public DescribeProxyServiceRequest() {
+		super("OceanBasePro", "2019-09-01", "DescribeProxyService", "oceanbase");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -50,31 +46,9 @@ public class ModifyInstanceSSLRequest extends RpcAcsRequest<ModifyInstanceSSLRes
 		}
 	}
 
-	public String getEnableSSL() {
-		return this.enableSSL;
-	}
-
-	public void setEnableSSL(String enableSSL) {
-		this.enableSSL = enableSSL;
-		if(enableSSL != null){
-			putBodyParameter("EnableSSL", enableSSL);
-		}
-	}
-
-	public String getTenantId() {
-		return this.tenantId;
-	}
-
-	public void setTenantId(String tenantId) {
-		this.tenantId = tenantId;
-		if(tenantId != null){
-			putBodyParameter("TenantId", tenantId);
-		}
-	}
-
 	@Override
-	public Class<ModifyInstanceSSLResponse> getResponseClass() {
-		return ModifyInstanceSSLResponse.class;
+	public Class<DescribeProxyServiceResponse> getResponseClass() {
+		return DescribeProxyServiceResponse.class;
 	}
 
 }

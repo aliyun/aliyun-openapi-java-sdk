@@ -185,6 +185,8 @@ public class DescribeOasSQLHistoryListResponse extends AcsResponse {
 
 		private Double sumDbTime;
 
+		private String waitEvent;
+
 		public String getSQLId() {
 			return this.sQLId;
 		}
@@ -735,6 +737,14 @@ public class DescribeOasSQLHistoryListResponse extends AcsResponse {
 
 		public void setSumDbTime(Double sumDbTime) {
 			this.sumDbTime = sumDbTime;
+		}
+
+		public String getWaitEvent() {
+			return this.waitEvent;
+		}
+
+		public void setWaitEvent(String waitEvent) {
+			this.waitEvent = waitEvent;
 		}
 	}
 

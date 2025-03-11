@@ -51,6 +51,12 @@ public class DescribeInstanceCreatableZoneResponse extends AcsResponse {
 
 		private String zone;
 
+		private String fullCopyId;
+
+		private String logicalZoneName;
+
+		private Long replicateZoneIndex;
+
 		public Boolean getIsInCluster() {
 			return this.isInCluster;
 		}
@@ -65,6 +71,30 @@ public class DescribeInstanceCreatableZoneResponse extends AcsResponse {
 
 		public void setZone(String zone) {
 			this.zone = zone;
+		}
+
+		public String getFullCopyId() {
+			return this.fullCopyId;
+		}
+
+		public void setFullCopyId(String fullCopyId) {
+			this.fullCopyId = fullCopyId;
+		}
+
+		public String getLogicalZoneName() {
+			return this.logicalZoneName;
+		}
+
+		public void setLogicalZoneName(String logicalZoneName) {
+			this.logicalZoneName = logicalZoneName;
+		}
+
+		public Long getReplicateZoneIndex() {
+			return this.replicateZoneIndex;
+		}
+
+		public void setReplicateZoneIndex(Long replicateZoneIndex) {
+			this.replicateZoneIndex = replicateZoneIndex;
 		}
 	}
 

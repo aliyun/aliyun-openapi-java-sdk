@@ -53,6 +53,8 @@ public class CreateTenantUserResponse extends AcsResponse {
 
 		private String userName;
 
+		private String globalPermissions;
+
 		private List<RolesItem> roles;
 
 		public String getUserType() {
@@ -77,6 +79,14 @@ public class CreateTenantUserResponse extends AcsResponse {
 
 		public void setUserName(String userName) {
 			this.userName = userName;
+		}
+
+		public String getGlobalPermissions() {
+			return this.globalPermissions;
+		}
+
+		public void setGlobalPermissions(String globalPermissions) {
+			this.globalPermissions = globalPermissions;
 		}
 
 		public List<RolesItem> getRoles() {

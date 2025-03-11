@@ -171,15 +171,15 @@ public class DescribeInstanceSummaryResponse extends AcsResponse {
 
 			private String region;
 
-			private String totalInstancesCount;
+			private Long totalInstancesCount;
 
-			private String immediatelyExpiredInstancesCount;
+			private Long immediatelyExpiredInstancesCount;
 
-			private String runningInstancesCount;
+			private Long runningInstancesCount;
 
-			private String expiredInstancesCount;
+			private Long expiredInstancesCount;
 
-			private String recentCreatedInstancesCount;
+			private Long recentCreatedInstancesCount;
 
 			public String getRegion() {
 				return this.region;
@@ -189,43 +189,43 @@ public class DescribeInstanceSummaryResponse extends AcsResponse {
 				this.region = region;
 			}
 
-			public String getTotalInstancesCount() {
+			public Long getTotalInstancesCount() {
 				return this.totalInstancesCount;
 			}
 
-			public void setTotalInstancesCount(String totalInstancesCount) {
+			public void setTotalInstancesCount(Long totalInstancesCount) {
 				this.totalInstancesCount = totalInstancesCount;
 			}
 
-			public String getImmediatelyExpiredInstancesCount() {
+			public Long getImmediatelyExpiredInstancesCount() {
 				return this.immediatelyExpiredInstancesCount;
 			}
 
-			public void setImmediatelyExpiredInstancesCount(String immediatelyExpiredInstancesCount) {
+			public void setImmediatelyExpiredInstancesCount(Long immediatelyExpiredInstancesCount) {
 				this.immediatelyExpiredInstancesCount = immediatelyExpiredInstancesCount;
 			}
 
-			public String getRunningInstancesCount() {
+			public Long getRunningInstancesCount() {
 				return this.runningInstancesCount;
 			}
 
-			public void setRunningInstancesCount(String runningInstancesCount) {
+			public void setRunningInstancesCount(Long runningInstancesCount) {
 				this.runningInstancesCount = runningInstancesCount;
 			}
 
-			public String getExpiredInstancesCount() {
+			public Long getExpiredInstancesCount() {
 				return this.expiredInstancesCount;
 			}
 
-			public void setExpiredInstancesCount(String expiredInstancesCount) {
+			public void setExpiredInstancesCount(Long expiredInstancesCount) {
 				this.expiredInstancesCount = expiredInstancesCount;
 			}
 
-			public String getRecentCreatedInstancesCount() {
+			public Long getRecentCreatedInstancesCount() {
 				return this.recentCreatedInstancesCount;
 			}
 
-			public void setRecentCreatedInstancesCount(String recentCreatedInstancesCount) {
+			public void setRecentCreatedInstancesCount(Long recentCreatedInstancesCount) {
 				this.recentCreatedInstancesCount = recentCreatedInstancesCount;
 			}
 		}

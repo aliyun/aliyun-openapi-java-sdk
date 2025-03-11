@@ -190,17 +190,31 @@ public class UpdateProjectConfigRequest extends RpcAcsRequest<UpdateProjectConfi
 
 	public static class FullTransferConfig {
 
+		@SerializedName("IndexDDLConcurrencyLimit")
+		private Integer indexDDLConcurrencyLimit;
+
 		@SerializedName("ThrottleRps")
 		private Integer throttleRps;
 
 		@SerializedName("WriteWorkerNum")
 		private Integer writeWorkerNum;
 
+		@SerializedName("MaxConcurrentIndexDDLs")
+		private Integer maxConcurrentIndexDDLs;
+
 		@SerializedName("ReadWorkerNum")
 		private Integer readWorkerNum;
 
 		@SerializedName("ThrottleIOPS")
 		private Integer throttleIOPS;
+
+		public Integer getIndexDDLConcurrencyLimit() {
+			return this.indexDDLConcurrencyLimit;
+		}
+
+		public void setIndexDDLConcurrencyLimit(Integer indexDDLConcurrencyLimit) {
+			this.indexDDLConcurrencyLimit = indexDDLConcurrencyLimit;
+		}
 
 		public Integer getThrottleRps() {
 			return this.throttleRps;
@@ -216,6 +230,14 @@ public class UpdateProjectConfigRequest extends RpcAcsRequest<UpdateProjectConfi
 
 		public void setWriteWorkerNum(Integer writeWorkerNum) {
 			this.writeWorkerNum = writeWorkerNum;
+		}
+
+		public Integer getMaxConcurrentIndexDDLs() {
+			return this.maxConcurrentIndexDDLs;
+		}
+
+		public void setMaxConcurrentIndexDDLs(Integer maxConcurrentIndexDDLs) {
+			this.maxConcurrentIndexDDLs = maxConcurrentIndexDDLs;
 		}
 
 		public Integer getReadWorkerNum() {

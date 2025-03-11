@@ -70,6 +70,7 @@ public class DescribeInstanceTopologyResponseUnmarshaller {
 				tenantZonesItem.setTenantZoneId(_ctx.stringValue("DescribeInstanceTopologyResponse.InstanceTopology.Tenants["+ i +"].TenantZones["+ j +"].TenantZoneId"));
 				tenantZonesItem.setLogicalZone(_ctx.stringValue("DescribeInstanceTopologyResponse.InstanceTopology.Tenants["+ i +"].TenantZones["+ j +"].LogicalZone"));
 				tenantZonesItem.setReplicaType(_ctx.stringValue("DescribeInstanceTopologyResponse.InstanceTopology.Tenants["+ i +"].TenantZones["+ j +"].ReplicaType"));
+				tenantZonesItem.setReadOnlyReplicaType(_ctx.stringValue("DescribeInstanceTopologyResponse.InstanceTopology.Tenants["+ i +"].TenantZones["+ j +"].ReadOnlyReplicaType"));
 
 				List<UnitsItem> units = new ArrayList<UnitsItem>();
 				for (int k = 0; k < _ctx.lengthValue("DescribeInstanceTopologyResponse.InstanceTopology.Tenants["+ i +"].TenantZones["+ j +"].Units.Length"); k++) {
@@ -127,6 +128,7 @@ public class DescribeInstanceTopologyResponseUnmarshaller {
 				nodesItem.setFullCopyId(_ctx.longValue("DescribeInstanceTopologyResponse.InstanceTopology.Zones["+ i +"].Nodes["+ j +"].FullCopyId"));
 				nodesItem.setReadOnlyCopyId(_ctx.longValue("DescribeInstanceTopologyResponse.InstanceTopology.Zones["+ i +"].Nodes["+ j +"].ReadOnlyCopyId"));
 				nodesItem.setLogicalZone(_ctx.stringValue("DescribeInstanceTopologyResponse.InstanceTopology.Zones["+ i +"].Nodes["+ j +"].LogicalZone"));
+				nodesItem.setReadOnlyReplicaType(_ctx.stringValue("DescribeInstanceTopologyResponse.InstanceTopology.Zones["+ i +"].Nodes["+ j +"].ReadOnlyReplicaType"));
 
 				NodeResource nodeResource = new NodeResource();
 
@@ -164,6 +166,7 @@ public class DescribeInstanceTopologyResponseUnmarshaller {
 			replicasItem.setZoneLogicalId(_ctx.integerValue("DescribeInstanceTopologyResponse.InstanceTopology.Replicas["+ i +"].ZoneLogicalId"));
 			replicasItem.setReplicaType(_ctx.stringValue("DescribeInstanceTopologyResponse.InstanceTopology.Replicas["+ i +"].ReplicaType"));
 			replicasItem.setStatus(_ctx.stringValue("DescribeInstanceTopologyResponse.InstanceTopology.Replicas["+ i +"].Status"));
+			replicasItem.setReadOnlyReplicaType(_ctx.stringValue("DescribeInstanceTopologyResponse.InstanceTopology.Replicas["+ i +"].ReadOnlyReplicaType"));
 
 			ReplicaResource replicaResource = new ReplicaResource();
 

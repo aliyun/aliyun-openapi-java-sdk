@@ -277,6 +277,9 @@ public class CreateProjectModifyRecordsRequest extends RpcAcsRequest<CreateProje
 			@SerializedName("FilterColumns")
 			private List<String> filterColumns;
 
+			@SerializedName("ObkvPartitionConfig")
+			private ObkvPartitionConfig obkvPartitionConfig;
+
 			@SerializedName("AdbTableSchema")
 			private AdbTableSchema adbTableSchema;
 
@@ -306,6 +309,14 @@ public class CreateProjectModifyRecordsRequest extends RpcAcsRequest<CreateProje
 
 			public void setFilterColumns(List<String> filterColumns) {
 				this.filterColumns = filterColumns;
+			}
+
+			public ObkvPartitionConfig getObkvPartitionConfig() {
+				return this.obkvPartitionConfig;
+			}
+
+			public void setObkvPartitionConfig(ObkvPartitionConfig obkvPartitionConfig) {
+				this.obkvPartitionConfig = obkvPartitionConfig;
 			}
 
 			public AdbTableSchema getAdbTableSchema() {
@@ -346,6 +357,42 @@ public class CreateProjectModifyRecordsRequest extends RpcAcsRequest<CreateProje
 
 			public void setShardColumns(List<String> shardColumns) {
 				this.shardColumns = shardColumns;
+			}
+
+			public static class ObkvPartitionConfig {
+
+				@SerializedName("VirtualColumn")
+				private String virtualColumn;
+
+				@SerializedName("PartitionType")
+				private String partitionType;
+
+				@SerializedName("PartitionSize")
+				private Integer partitionSize;
+
+				public String getVirtualColumn() {
+					return this.virtualColumn;
+				}
+
+				public void setVirtualColumn(String virtualColumn) {
+					this.virtualColumn = virtualColumn;
+				}
+
+				public String getPartitionType() {
+					return this.partitionType;
+				}
+
+				public void setPartitionType(String partitionType) {
+					this.partitionType = partitionType;
+				}
+
+				public Integer getPartitionSize() {
+					return this.partitionSize;
+				}
+
+				public void setPartitionSize(Integer partitionSize) {
+					this.partitionSize = partitionSize;
+				}
 			}
 
 			public static class AdbTableSchema {

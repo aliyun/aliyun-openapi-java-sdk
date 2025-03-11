@@ -95,6 +95,8 @@ public class DescribeTenantsResponse extends AcsResponse {
 
 		private Boolean enableReadOnlyReplica;
 
+		private String parameterTemplate;
+
 		public String getVpcId() {
 			return this.vpcId;
 		}
@@ -245,6 +247,14 @@ public class DescribeTenantsResponse extends AcsResponse {
 
 		public void setEnableReadOnlyReplica(Boolean enableReadOnlyReplica) {
 			this.enableReadOnlyReplica = enableReadOnlyReplica;
+		}
+
+		public String getParameterTemplate() {
+			return this.parameterTemplate;
+		}
+
+		public void setParameterTemplate(String parameterTemplate) {
+			this.parameterTemplate = parameterTemplate;
 		}
 	}
 

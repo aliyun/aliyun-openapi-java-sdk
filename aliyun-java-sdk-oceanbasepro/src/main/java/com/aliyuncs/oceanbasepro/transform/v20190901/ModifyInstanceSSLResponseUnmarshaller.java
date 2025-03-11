@@ -28,6 +28,7 @@ public class ModifyInstanceSSLResponseUnmarshaller {
 		InstanceSSL instanceSSL = new InstanceSSL();
 		instanceSSL.setInstanceId(_ctx.stringValue("ModifyInstanceSSLResponse.InstanceSSL.InstanceId"));
 		instanceSSL.setEnableSSL(_ctx.stringValue("ModifyInstanceSSLResponse.InstanceSSL.EnableSSL"));
+		instanceSSL.setTenantId(_ctx.stringValue("ModifyInstanceSSLResponse.InstanceSSL.TenantId"));
 		modifyInstanceSSLResponse.setInstanceSSL(instanceSSL);
 	 
 	 	return modifyInstanceSSLResponse;

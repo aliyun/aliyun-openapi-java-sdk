@@ -33,6 +33,9 @@ public class DescribeInstanceCreatableZoneResponseUnmarshaller {
 			ZoneListItem zoneListItem = new ZoneListItem();
 			zoneListItem.setIsInCluster(_ctx.booleanValue("DescribeInstanceCreatableZoneResponse.ZoneList["+ i +"].IsInCluster"));
 			zoneListItem.setZone(_ctx.stringValue("DescribeInstanceCreatableZoneResponse.ZoneList["+ i +"].Zone"));
+			zoneListItem.setFullCopyId(_ctx.stringValue("DescribeInstanceCreatableZoneResponse.ZoneList["+ i +"].FullCopyId"));
+			zoneListItem.setLogicalZoneName(_ctx.stringValue("DescribeInstanceCreatableZoneResponse.ZoneList["+ i +"].LogicalZoneName"));
+			zoneListItem.setReplicateZoneIndex(_ctx.longValue("DescribeInstanceCreatableZoneResponse.ZoneList["+ i +"].ReplicateZoneIndex"));
 
 			zoneList.add(zoneListItem);
 		}

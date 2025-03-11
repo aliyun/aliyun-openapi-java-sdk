@@ -33,6 +33,7 @@ public class CreateTenantUserResponseUnmarshaller {
 		tenantUser.setUserType(_ctx.stringValue("CreateTenantUserResponse.TenantUser.UserType"));
 		tenantUser.setUserStatus(_ctx.stringValue("CreateTenantUserResponse.TenantUser.UserStatus"));
 		tenantUser.setUserName(_ctx.stringValue("CreateTenantUserResponse.TenantUser.UserName"));
+		tenantUser.setGlobalPermissions(_ctx.stringValue("CreateTenantUserResponse.TenantUser.GlobalPermissions"));
 
 		List<RolesItem> roles = new ArrayList<RolesItem>();
 		for (int i = 0; i < _ctx.lengthValue("CreateTenantUserResponse.TenantUser.Roles.Length"); i++) {

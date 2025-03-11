@@ -31,6 +31,8 @@ public class CreateTenantUserRequest extends RpcAcsRequest<CreateTenantUserRespo
 
 	private String userPassword;
 
+	private String globalPermissions;
+
 	private String tenantId;
 
 	private String encryptionType;
@@ -79,6 +81,17 @@ public class CreateTenantUserRequest extends RpcAcsRequest<CreateTenantUserRespo
 		this.userPassword = userPassword;
 		if(userPassword != null){
 			putBodyParameter("UserPassword", userPassword);
+		}
+	}
+
+	public String getGlobalPermissions() {
+		return this.globalPermissions;
+	}
+
+	public void setGlobalPermissions(String globalPermissions) {
+		this.globalPermissions = globalPermissions;
+		if(globalPermissions != null){
+			putBodyParameter("GlobalPermissions", globalPermissions);
 		}
 	}
 

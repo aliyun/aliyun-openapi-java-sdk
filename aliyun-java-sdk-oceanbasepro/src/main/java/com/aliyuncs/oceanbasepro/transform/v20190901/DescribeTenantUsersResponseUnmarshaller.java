@@ -39,6 +39,7 @@ public class DescribeTenantUsersResponseUnmarshaller {
 			tenantUsersItem.setUserName(_ctx.stringValue("DescribeTenantUsersResponse.TenantUsers["+ i +"].UserName"));
 			tenantUsersItem.setTenantId(_ctx.stringValue("DescribeTenantUsersResponse.TenantUsers["+ i +"].TenantId"));
 			tenantUsersItem.setInstanceId(_ctx.stringValue("DescribeTenantUsersResponse.TenantUsers["+ i +"].InstanceId"));
+			tenantUsersItem.setGlobalPermissions(_ctx.stringValue("DescribeTenantUsersResponse.TenantUsers["+ i +"].GlobalPermissions"));
 
 			List<DatabasesItem> databases = new ArrayList<DatabasesItem>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeTenantUsersResponse.TenantUsers["+ i +"].Databases.Length"); j++) {

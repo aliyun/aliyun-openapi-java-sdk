@@ -79,7 +79,7 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private String payType;
 
-		private String diskSize;
+		private Long diskSize;
 
 		private String diskType;
 
@@ -114,6 +114,8 @@ public class DescribeInstancesResponse extends AcsResponse {
 		private String specType;
 
 		private String obRpmVersion;
+
+		private String replicaMode;
 
 		private List<String> availableZones;
 
@@ -209,11 +211,11 @@ public class DescribeInstancesResponse extends AcsResponse {
 			this.payType = payType;
 		}
 
-		public String getDiskSize() {
+		public Long getDiskSize() {
 			return this.diskSize;
 		}
 
-		public void setDiskSize(String diskSize) {
+		public void setDiskSize(Long diskSize) {
 			this.diskSize = diskSize;
 		}
 
@@ -351,6 +353,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		public void setObRpmVersion(String obRpmVersion) {
 			this.obRpmVersion = obRpmVersion;
+		}
+
+		public String getReplicaMode() {
+			return this.replicaMode;
+		}
+
+		public void setReplicaMode(String replicaMode) {
+			this.replicaMode = replicaMode;
 		}
 
 		public List<String> getAvailableZones() {

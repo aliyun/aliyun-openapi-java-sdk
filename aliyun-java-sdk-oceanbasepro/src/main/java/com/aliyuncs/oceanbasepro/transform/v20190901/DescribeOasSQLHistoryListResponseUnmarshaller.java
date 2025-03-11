@@ -100,6 +100,7 @@ public class DescribeOasSQLHistoryListResponseUnmarshaller {
 			dataItem.setExecPs(_ctx.doubleValue("DescribeOasSQLHistoryListResponse.Data["+ i +"].ExecPs"));
 			dataItem.setAvgDbTime(_ctx.doubleValue("DescribeOasSQLHistoryListResponse.Data["+ i +"].AvgDbTime"));
 			dataItem.setSumDbTime(_ctx.doubleValue("DescribeOasSQLHistoryListResponse.Data["+ i +"].SumDbTime"));
+			dataItem.setWaitEvent(_ctx.stringValue("DescribeOasSQLHistoryListResponse.Data["+ i +"].WaitEvent"));
 
 			data.add(dataItem);
 		}

@@ -221,6 +221,8 @@ public class DescribeInstanceTopologyResponse extends AcsResponse {
 
 				private String replicaType;
 
+				private String readOnlyReplicaType;
+
 				private List<UnitsItem> units;
 
 				public String getTenantZoneRole() {
@@ -261,6 +263,14 @@ public class DescribeInstanceTopologyResponse extends AcsResponse {
 
 				public void setReplicaType(String replicaType) {
 					this.replicaType = replicaType;
+				}
+
+				public String getReadOnlyReplicaType() {
+					return this.readOnlyReplicaType;
+				}
+
+				public void setReadOnlyReplicaType(String readOnlyReplicaType) {
+					this.readOnlyReplicaType = readOnlyReplicaType;
 				}
 
 				public List<UnitsItem> getUnits() {
@@ -444,6 +454,8 @@ public class DescribeInstanceTopologyResponse extends AcsResponse {
 
 				private String logicalZone;
 
+				private String readOnlyReplicaType;
+
 				private NodeResource nodeResource;
 
 				public String getNodeId() {
@@ -500,6 +512,14 @@ public class DescribeInstanceTopologyResponse extends AcsResponse {
 
 				public void setLogicalZone(String logicalZone) {
 					this.logicalZone = logicalZone;
+				}
+
+				public String getReadOnlyReplicaType() {
+					return this.readOnlyReplicaType;
+				}
+
+				public void setReadOnlyReplicaType(String readOnlyReplicaType) {
+					this.readOnlyReplicaType = readOnlyReplicaType;
 				}
 
 				public NodeResource getNodeResource() {
@@ -666,6 +686,8 @@ public class DescribeInstanceTopologyResponse extends AcsResponse {
 
 			private String status;
 
+			private String readOnlyReplicaType;
+
 			private ReplicaResource replicaResource;
 
 			public String getLogicalZone() {
@@ -722,6 +744,14 @@ public class DescribeInstanceTopologyResponse extends AcsResponse {
 
 			public void setStatus(String status) {
 				this.status = status;
+			}
+
+			public String getReadOnlyReplicaType() {
+				return this.readOnlyReplicaType;
+			}
+
+			public void setReadOnlyReplicaType(String readOnlyReplicaType) {
+				this.readOnlyReplicaType = readOnlyReplicaType;
 			}
 
 			public ReplicaResource getReplicaResource() {

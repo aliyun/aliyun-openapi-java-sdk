@@ -25,11 +25,15 @@ import com.aliyuncs.oceanbasepro.Endpoint;
 public class ModifyTenantUserRolesRequest extends RpcAcsRequest<ModifyTenantUserRolesResponse> {
 	   
 
+	private String userType;
+
 	private String userRole;
 
 	private String instanceId;
 
 	private String modifyType;
+
+	private String globalPermissions;
 
 	private String tenantId;
 
@@ -41,6 +45,17 @@ public class ModifyTenantUserRolesRequest extends RpcAcsRequest<ModifyTenantUser
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getUserType() {
+		return this.userType;
+	}
+
+	public void setUserType(String userType) {
+		this.userType = userType;
+		if(userType != null){
+			putBodyParameter("UserType", userType);
+		}
 	}
 
 	public String getUserRole() {
@@ -73,6 +88,17 @@ public class ModifyTenantUserRolesRequest extends RpcAcsRequest<ModifyTenantUser
 		this.modifyType = modifyType;
 		if(modifyType != null){
 			putBodyParameter("ModifyType", modifyType);
+		}
+	}
+
+	public String getGlobalPermissions() {
+		return this.globalPermissions;
+	}
+
+	public void setGlobalPermissions(String globalPermissions) {
+		this.globalPermissions = globalPermissions;
+		if(globalPermissions != null){
+			putBodyParameter("GlobalPermissions", globalPermissions);
 		}
 	}
 

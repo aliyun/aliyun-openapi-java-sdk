@@ -27,7 +27,7 @@ public class DescribeParametersHistoryResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<Data> respond;
+	private Respond respond;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -37,15 +37,15 @@ public class DescribeParametersHistoryResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<Data> getRespond() {
+	public Respond getRespond() {
 		return this.respond;
 	}
 
-	public void setRespond(List<Data> respond) {
+	public void setRespond(Respond respond) {
 		this.respond = respond;
 	}
 
-	public static class Data {
+	public static class Respond {
 
 		private Integer totalCount;
 

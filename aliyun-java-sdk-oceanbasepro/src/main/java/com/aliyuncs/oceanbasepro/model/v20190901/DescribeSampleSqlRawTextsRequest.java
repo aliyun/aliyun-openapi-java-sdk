@@ -30,6 +30,8 @@ public class DescribeSampleSqlRawTextsRequest extends RpcAcsRequest<DescribeSamp
 
 	private String startTime;
 
+	private Boolean dynamicSql;
+
 	private String tenantId;
 
 	private String limit;
@@ -70,6 +72,17 @@ public class DescribeSampleSqlRawTextsRequest extends RpcAcsRequest<DescribeSamp
 		this.startTime = startTime;
 		if(startTime != null){
 			putBodyParameter("StartTime", startTime);
+		}
+	}
+
+	public Boolean getDynamicSql() {
+		return this.dynamicSql;
+	}
+
+	public void setDynamicSql(Boolean dynamicSql) {
+		this.dynamicSql = dynamicSql;
+		if(dynamicSql != null){
+			putBodyParameter("DynamicSql", dynamicSql.toString());
 		}
 	}
 

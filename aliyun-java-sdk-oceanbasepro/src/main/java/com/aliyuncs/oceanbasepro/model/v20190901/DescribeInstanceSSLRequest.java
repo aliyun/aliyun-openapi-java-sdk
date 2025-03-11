@@ -26,6 +26,8 @@ public class DescribeInstanceSSLRequest extends RpcAcsRequest<DescribeInstanceSS
 	   
 
 	private String instanceId;
+
+	private String tenantId;
 	public DescribeInstanceSSLRequest() {
 		super("OceanBasePro", "2019-09-01", "DescribeInstanceSSL", "oceanbase");
 		setMethod(MethodType.POST);
@@ -43,6 +45,17 @@ public class DescribeInstanceSSLRequest extends RpcAcsRequest<DescribeInstanceSS
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putBodyParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getTenantId() {
+		return this.tenantId;
+	}
+
+	public void setTenantId(String tenantId) {
+		this.tenantId = tenantId;
+		if(tenantId != null){
+			putBodyParameter("TenantId", tenantId);
 		}
 	}
 

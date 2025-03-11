@@ -60,6 +60,10 @@ public class DescribeInstanceSSLResponse extends AcsResponse {
 
 		private String forceSSL;
 
+		private String autoUpdate;
+
+		private String tenantId;
+
 		public String getInstanceId() {
 			return this.instanceId;
 		}
@@ -114,6 +118,22 @@ public class DescribeInstanceSSLResponse extends AcsResponse {
 
 		public void setForceSSL(String forceSSL) {
 			this.forceSSL = forceSSL;
+		}
+
+		public String getAutoUpdate() {
+			return this.autoUpdate;
+		}
+
+		public void setAutoUpdate(String autoUpdate) {
+			this.autoUpdate = autoUpdate;
+		}
+
+		public String getTenantId() {
+			return this.tenantId;
+		}
+
+		public void setTenantId(String tenantId) {
+			this.tenantId = tenantId;
 		}
 	}
 

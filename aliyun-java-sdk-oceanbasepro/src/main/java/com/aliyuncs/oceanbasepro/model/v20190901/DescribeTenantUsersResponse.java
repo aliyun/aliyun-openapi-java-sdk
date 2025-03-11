@@ -69,6 +69,8 @@ public class DescribeTenantUsersResponse extends AcsResponse {
 
 		private String instanceId;
 
+		private String globalPermissions;
+
 		private List<DatabasesItem> databases;
 
 		public String getUserType() {
@@ -117,6 +119,14 @@ public class DescribeTenantUsersResponse extends AcsResponse {
 
 		public void setInstanceId(String instanceId) {
 			this.instanceId = instanceId;
+		}
+
+		public String getGlobalPermissions() {
+			return this.globalPermissions;
+		}
+
+		public void setGlobalPermissions(String globalPermissions) {
+			this.globalPermissions = globalPermissions;
 		}
 
 		public List<DatabasesItem> getDatabases() {

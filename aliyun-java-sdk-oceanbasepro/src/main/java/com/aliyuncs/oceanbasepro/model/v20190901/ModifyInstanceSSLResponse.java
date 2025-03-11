@@ -50,6 +50,8 @@ public class ModifyInstanceSSLResponse extends AcsResponse {
 
 		private String enableSSL;
 
+		private String tenantId;
+
 		public String getInstanceId() {
 			return this.instanceId;
 		}
@@ -64,6 +66,14 @@ public class ModifyInstanceSSLResponse extends AcsResponse {
 
 		public void setEnableSSL(String enableSSL) {
 			this.enableSSL = enableSSL;
+		}
+
+		public String getTenantId() {
+			return this.tenantId;
+		}
+
+		public void setTenantId(String tenantId) {
+			this.tenantId = tenantId;
 		}
 	}
 

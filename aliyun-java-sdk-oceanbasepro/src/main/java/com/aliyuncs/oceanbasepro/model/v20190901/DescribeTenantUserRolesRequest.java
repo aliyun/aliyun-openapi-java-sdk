@@ -25,6 +25,8 @@ import com.aliyuncs.oceanbasepro.Endpoint;
 public class DescribeTenantUserRolesRequest extends RpcAcsRequest<DescribeTenantUserRolesResponse> {
 	   
 
+	private String instanceId;
+
 	private String tenantId;
 	public DescribeTenantUserRolesRequest() {
 		super("OceanBasePro", "2019-09-01", "DescribeTenantUserRoles", "oceanbase");
@@ -33,6 +35,17 @@ public class DescribeTenantUserRolesRequest extends RpcAcsRequest<DescribeTenant
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putBodyParameter("InstanceId", instanceId);
+		}
 	}
 
 	public String getTenantId() {

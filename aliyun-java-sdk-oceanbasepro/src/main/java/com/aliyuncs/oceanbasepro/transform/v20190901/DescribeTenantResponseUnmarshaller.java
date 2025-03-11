@@ -76,6 +76,8 @@ public class DescribeTenantResponseUnmarshaller {
 		tenant.setLowerCaseTableNames(_ctx.integerValue("DescribeTenantResponse.Tenant.LowerCaseTableNames"));
 		tenant.setVersion(_ctx.stringValue("DescribeTenantResponse.Tenant.Version"));
 		tenant.setOdpVersion(_ctx.stringValue("DescribeTenantResponse.Tenant.OdpVersion"));
+		tenant.setTenantMaxConnections(_ctx.stringValue("DescribeTenantResponse.Tenant.TenantMaxConnections"));
+		tenant.setParameterTemplate(_ctx.stringValue("DescribeTenantResponse.Tenant.ParameterTemplate"));
 
 		List<String> availableZones = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeTenantResponse.Tenant.AvailableZones.Length"); i++) {
@@ -201,11 +203,12 @@ public class DescribeTenantResponseUnmarshaller {
 			for (int j = 0; j < _ctx.lengthValue("DescribeTenantResponse.Tenant.TenantZones["+ i +"].TenantZoneReplicas.Length"); j++) {
 				TenantZoneReplicasItem tenantZoneReplicasItem = new TenantZoneReplicasItem();
 				tenantZoneReplicasItem.setZoneReplicaType(_ctx.stringValue("DescribeTenantResponse.Tenant.TenantZones["+ i +"].TenantZoneReplicas["+ j +"].ZoneReplicaType"));
-				tenantZoneReplicasItem.setZoneNodes(_ctx.stringValue("DescribeTenantResponse.Tenant.TenantZones["+ i +"].TenantZoneReplicas["+ j +"].ZoneNodes"));
+				tenantZoneReplicasItem.setZoneNodes(_ctx.longValue("DescribeTenantResponse.Tenant.TenantZones["+ i +"].TenantZoneReplicas["+ j +"].ZoneNodes"));
 				tenantZoneReplicasItem.setLogicZoneName(_ctx.stringValue("DescribeTenantResponse.Tenant.TenantZones["+ i +"].TenantZoneReplicas["+ j +"].LogicZoneName"));
 				tenantZoneReplicasItem.setZoneCopyId(_ctx.integerValue("DescribeTenantResponse.Tenant.TenantZones["+ i +"].TenantZoneReplicas["+ j +"].ZoneCopyId"));
 				tenantZoneReplicasItem.setFullCopyId(_ctx.integerValue("DescribeTenantResponse.Tenant.TenantZones["+ i +"].TenantZoneReplicas["+ j +"].FullCopyId"));
 				tenantZoneReplicasItem.setReadOnlyCopyId(_ctx.stringValue("DescribeTenantResponse.Tenant.TenantZones["+ i +"].TenantZoneReplicas["+ j +"].ReadOnlyCopyId"));
+				tenantZoneReplicasItem.setReadOnlyReplicaType(_ctx.stringValue("DescribeTenantResponse.Tenant.TenantZones["+ i +"].TenantZoneReplicas["+ j +"].ReadOnlyReplicaType"));
 
 				tenantZoneReplicas.add(tenantZoneReplicasItem);
 			}
