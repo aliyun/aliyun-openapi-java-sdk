@@ -29,7 +29,7 @@ public class DescribeExpandLogicTableInfoListRequest extends RpcAcsRequest<Descr
 
 	private String dbName;
 	public DescribeExpandLogicTableInfoListRequest() {
-		super("Drds", "2019-01-23", "DescribeExpandLogicTableInfoList");
+		super("Drds", "2019-01-23", "DescribeExpandLogicTableInfoList", "drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -58,6 +58,7 @@ public class DescribeDrdsInstancesResponseUnmarshaller {
 			instance.setMasterInstanceId(_ctx.stringValue("DescribeDrdsInstancesResponse.Instances["+ i +"].MasterInstanceId"));
 			instance.setOrderInstanceId(_ctx.stringValue("DescribeDrdsInstancesResponse.Instances["+ i +"].OrderInstanceId"));
 			instance.setInstRole(_ctx.stringValue("DescribeDrdsInstancesResponse.Instances["+ i +"].InstRole"));
+			instance.setSeries(_ctx.stringValue("DescribeDrdsInstancesResponse.Instances["+ i +"].series"));
 
 			List<String> readOnlyDBInstanceIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDrdsInstancesResponse.Instances["+ i +"].ReadOnlyDBInstanceIds.Length"); j++) {
@@ -73,6 +74,7 @@ public class DescribeDrdsInstancesResponseUnmarshaller {
 				vip.setVswitchId(_ctx.stringValue("DescribeDrdsInstancesResponse.Instances["+ i +"].Vips["+ j +"].VswitchId"));
 				vip.setPort(_ctx.stringValue("DescribeDrdsInstancesResponse.Instances["+ i +"].Vips["+ j +"].Port"));
 				vip.setIP(_ctx.stringValue("DescribeDrdsInstancesResponse.Instances["+ i +"].Vips["+ j +"].IP"));
+				vip.setDns(_ctx.stringValue("DescribeDrdsInstancesResponse.Instances["+ i +"].Vips["+ j +"].dns"));
 
 				vips.add(vip);
 			}

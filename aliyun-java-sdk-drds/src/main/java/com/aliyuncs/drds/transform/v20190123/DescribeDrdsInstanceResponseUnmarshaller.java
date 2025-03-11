@@ -71,6 +71,7 @@ public class DescribeDrdsInstanceResponseUnmarshaller {
 			vip.setDns(_ctx.stringValue("DescribeDrdsInstanceResponse.Data.Vips["+ i +"].Dns"));
 			vip.setPort(_ctx.stringValue("DescribeDrdsInstanceResponse.Data.Vips["+ i +"].Port"));
 			vip.setExpireDays(_ctx.longValue("DescribeDrdsInstanceResponse.Data.Vips["+ i +"].ExpireDays"));
+			vip.setRemoveWeight(_ctx.booleanValue("DescribeDrdsInstanceResponse.Data.Vips["+ i +"].RemoveWeight"));
 
 			vips.add(vip);
 		}

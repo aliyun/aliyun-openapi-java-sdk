@@ -34,7 +34,7 @@ public class SetupTableRequest extends RpcAcsRequest<SetupTableResponse> {
 
 	private List<String> tableNames;
 	public SetupTableRequest() {
-		super("Drds", "2019-01-23", "SetupTable");
+		super("Drds", "2019-01-23", "SetupTable", "drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

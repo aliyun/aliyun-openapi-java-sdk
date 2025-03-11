@@ -31,7 +31,7 @@ public class DescribeDrdsTasksRequest extends RpcAcsRequest<DescribeDrdsTasksRes
 
 	private String dbName;
 	public DescribeDrdsTasksRequest() {
-		super("Drds", "2019-01-23", "DescribeDrdsTasks");
+		super("Drds", "2019-01-23", "DescribeDrdsTasks", "drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

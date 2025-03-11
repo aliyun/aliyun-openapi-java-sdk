@@ -37,7 +37,7 @@ public class UpdatePrivateRdsClassRequest extends RpcAcsRequest<UpdatePrivateRds
 
 	private String dBInstanceId;
 	public UpdatePrivateRdsClassRequest() {
-		super("Drds", "2019-01-23", "UpdatePrivateRdsClass");
+		super("Drds", "2019-01-23", "UpdatePrivateRdsClass", "drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

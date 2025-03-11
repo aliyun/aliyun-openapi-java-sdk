@@ -27,7 +27,7 @@ public class DescribeInstanceSwitchNetworkRequest extends RpcAcsRequest<Describe
 
 	private String drdsInstanceId;
 	public DescribeInstanceSwitchNetworkRequest() {
-		super("Drds", "2019-01-23", "DescribeInstanceSwitchNetwork");
+		super("Drds", "2019-01-23", "DescribeInstanceSwitchNetwork", "drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

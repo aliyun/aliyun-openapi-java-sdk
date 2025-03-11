@@ -32,8 +32,12 @@ public class ChangeInstanceAzoneRequest extends RpcAcsRequest<ChangeInstanceAzon
 	private String drdsInstanceId;
 
 	private String originAzoneId;
+
+	private Boolean changeVSwitch;
+
+	private String newVSwitch;
 	public ChangeInstanceAzoneRequest() {
-		super("Drds", "2019-01-23", "ChangeInstanceAzone");
+		super("Drds", "2019-01-23", "ChangeInstanceAzone", "drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -82,6 +86,28 @@ public class ChangeInstanceAzoneRequest extends RpcAcsRequest<ChangeInstanceAzon
 		this.originAzoneId = originAzoneId;
 		if(originAzoneId != null){
 			putQueryParameter("OriginAzoneId", originAzoneId);
+		}
+	}
+
+	public Boolean getChangeVSwitch() {
+		return this.changeVSwitch;
+	}
+
+	public void setChangeVSwitch(Boolean changeVSwitch) {
+		this.changeVSwitch = changeVSwitch;
+		if(changeVSwitch != null){
+			putQueryParameter("ChangeVSwitch", changeVSwitch.toString());
+		}
+	}
+
+	public String getNewVSwitch() {
+		return this.newVSwitch;
+	}
+
+	public void setNewVSwitch(String newVSwitch) {
+		this.newVSwitch = newVSwitch;
+		if(newVSwitch != null){
+			putQueryParameter("NewVSwitch", newVSwitch);
 		}
 	}
 

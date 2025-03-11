@@ -33,7 +33,7 @@ public class ModifyRdsReadWeightRequest extends RpcAcsRequest<ModifyRdsReadWeigh
 
 	private String dbName;
 	public ModifyRdsReadWeightRequest() {
-		super("Drds", "2019-01-23", "ModifyRdsReadWeight");
+		super("Drds", "2019-01-23", "ModifyRdsReadWeight", "drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

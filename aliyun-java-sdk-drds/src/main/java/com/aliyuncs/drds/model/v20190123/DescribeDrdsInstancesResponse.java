@@ -123,6 +123,8 @@ public class DescribeDrdsInstancesResponse extends AcsResponse {
 
 		private String instRole;
 
+		private String series;
+
 		private List<Vip> vips;
 
 		private List<String> readOnlyDBInstanceIds;
@@ -311,6 +313,14 @@ public class DescribeDrdsInstancesResponse extends AcsResponse {
 			this.instRole = instRole;
 		}
 
+		public String getSeries() {
+			return this.series;
+		}
+
+		public void setSeries(String series) {
+			this.series = series;
+		}
+
 		public List<Vip> getVips() {
 			return this.vips;
 		}
@@ -338,6 +348,8 @@ public class DescribeDrdsInstancesResponse extends AcsResponse {
 			private String port;
 
 			private String iP;
+
+			private String dns;
 
 			public String getVpcId() {
 				return this.vpcId;
@@ -377,6 +389,14 @@ public class DescribeDrdsInstancesResponse extends AcsResponse {
 
 			public void setIP(String iP) {
 				this.iP = iP;
+			}
+
+			public String getDns() {
+				return this.dns;
+			}
+
+			public void setDns(String dns) {
+				this.dns = dns;
 			}
 		}
 	}

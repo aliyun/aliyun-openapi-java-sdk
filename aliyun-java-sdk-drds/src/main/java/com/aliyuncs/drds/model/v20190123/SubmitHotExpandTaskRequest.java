@@ -28,13 +28,13 @@ public class SubmitHotExpandTaskRequest extends RpcAcsRequest<SubmitHotExpandTas
 
 	private String taskDesc;
 
+	private String taskName;
+
 	private List<Mapping> mappings;
 
 	private List<SupperAccountMapping> supperAccountMappings;
 
 	private List<ExtendedMapping> extendedMappings;
-
-	private String taskName;
 
 	private String drdsInstanceId;
 
@@ -42,7 +42,7 @@ public class SubmitHotExpandTaskRequest extends RpcAcsRequest<SubmitHotExpandTas
 
 	private String dbName;
 	public SubmitHotExpandTaskRequest() {
-		super("Drds", "2019-01-23", "SubmitHotExpandTask");
+		super("Drds", "2019-01-23", "SubmitHotExpandTask", "drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -58,6 +58,17 @@ public class SubmitHotExpandTaskRequest extends RpcAcsRequest<SubmitHotExpandTas
 		this.taskDesc = taskDesc;
 		if(taskDesc != null){
 			putQueryParameter("TaskDesc", taskDesc);
+		}
+	}
+
+	public String getTaskName() {
+		return this.taskName;
+	}
+
+	public void setTaskName(String taskName) {
+		this.taskName = taskName;
+		if(taskName != null){
+			putQueryParameter("TaskName", taskName);
 		}
 	}
 
@@ -107,17 +118,6 @@ public class SubmitHotExpandTaskRequest extends RpcAcsRequest<SubmitHotExpandTas
 				putQueryParameter("ExtendedMapping." + (depth1 + 1) + ".SrcDb" , extendedMappings.get(depth1).getSrcDb());
 			}
 		}	
-	}
-
-	public String getTaskName() {
-		return this.taskName;
-	}
-
-	public void setTaskName(String taskName) {
-		this.taskName = taskName;
-		if(taskName != null){
-			putQueryParameter("TaskName", taskName);
-		}
 	}
 
 	public String getDrdsInstanceId() {

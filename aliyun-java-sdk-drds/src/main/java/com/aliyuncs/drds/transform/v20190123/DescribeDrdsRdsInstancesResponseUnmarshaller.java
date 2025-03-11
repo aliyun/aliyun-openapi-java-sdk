@@ -53,6 +53,8 @@ public class DescribeDrdsRdsInstancesResponseUnmarshaller {
 			dbInstance.setDBInstanceId(_ctx.stringValue("DescribeDrdsRdsInstancesResponse.DbInstances["+ i +"].DBInstanceId"));
 			dbInstance.setEngine(_ctx.stringValue("DescribeDrdsRdsInstancesResponse.DbInstances["+ i +"].Engine"));
 			dbInstance.setDbInstType(_ctx.stringValue("DescribeDrdsRdsInstancesResponse.DbInstances["+ i +"].DbInstType"));
+			dbInstance.setLockMode(_ctx.integerValue("DescribeDrdsRdsInstancesResponse.DbInstances["+ i +"].LockMode"));
+			dbInstance.setLockReason(_ctx.stringValue("DescribeDrdsRdsInstancesResponse.DbInstances["+ i +"].LockReason"));
 
 			dbInstances.add(dbInstance);
 		}

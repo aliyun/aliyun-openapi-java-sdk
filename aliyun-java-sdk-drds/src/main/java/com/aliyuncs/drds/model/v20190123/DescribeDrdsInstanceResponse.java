@@ -331,6 +331,8 @@ public class DescribeDrdsInstanceResponse extends AcsResponse {
 
 			private Long expireDays;
 
+			private Boolean removeWeight;
+
 			public String getType() {
 				return this.type;
 			}
@@ -377,6 +379,14 @@ public class DescribeDrdsInstanceResponse extends AcsResponse {
 
 			public void setExpireDays(Long expireDays) {
 				this.expireDays = expireDays;
+			}
+
+			public Boolean getRemoveWeight() {
+				return this.removeWeight;
+			}
+
+			public void setRemoveWeight(Boolean removeWeight) {
+				this.removeWeight = removeWeight;
 			}
 		}
 	}

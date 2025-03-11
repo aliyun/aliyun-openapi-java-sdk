@@ -29,7 +29,7 @@ public class GetDrdsDbRdsRelationInfoRequest extends RpcAcsRequest<GetDrdsDbRdsR
 
 	private String dbName;
 	public GetDrdsDbRdsRelationInfoRequest() {
-		super("Drds", "2019-01-23", "GetDrdsDbRdsRelationInfo");
+		super("Drds", "2019-01-23", "GetDrdsDbRdsRelationInfo", "drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

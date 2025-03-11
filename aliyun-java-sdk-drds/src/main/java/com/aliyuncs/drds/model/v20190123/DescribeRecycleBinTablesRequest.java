@@ -29,7 +29,7 @@ public class DescribeRecycleBinTablesRequest extends RpcAcsRequest<DescribeRecyc
 
 	private String dbName;
 	public DescribeRecycleBinTablesRequest() {
-		super("Drds", "2019-01-23", "DescribeRecycleBinTables");
+		super("Drds", "2019-01-23", "DescribeRecycleBinTables", "drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

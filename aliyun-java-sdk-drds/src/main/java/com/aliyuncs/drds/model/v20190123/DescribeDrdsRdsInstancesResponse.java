@@ -123,6 +123,10 @@ public class DescribeDrdsRdsInstancesResponse extends AcsResponse {
 
 		private String dbInstType;
 
+		private Integer lockMode;
+
+		private String lockReason;
+
 		public String getDBInstanceCPU() {
 			return this.dBInstanceCPU;
 		}
@@ -265,6 +269,22 @@ public class DescribeDrdsRdsInstancesResponse extends AcsResponse {
 
 		public void setDbInstType(String dbInstType) {
 			this.dbInstType = dbInstType;
+		}
+
+		public Integer getLockMode() {
+			return this.lockMode;
+		}
+
+		public void setLockMode(Integer lockMode) {
+			this.lockMode = lockMode;
+		}
+
+		public String getLockReason() {
+			return this.lockReason;
+		}
+
+		public void setLockReason(String lockReason) {
+			this.lockReason = lockReason;
 		}
 	}
 

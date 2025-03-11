@@ -65,6 +65,8 @@ public class DescribeDbInstancesResponse extends AcsResponse {
 
 		private String regionId;
 
+		private Boolean allowAllCategory;
+
 		private List<String> readOnlyDBInstanceId;
 
 		public String getInstanceNetworkType() {
@@ -137,6 +139,14 @@ public class DescribeDbInstancesResponse extends AcsResponse {
 
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
+		}
+
+		public Boolean getAllowAllCategory() {
+			return this.allowAllCategory;
+		}
+
+		public void setAllowAllCategory(Boolean allowAllCategory) {
+			this.allowAllCategory = allowAllCategory;
 		}
 
 		public List<String> getReadOnlyDBInstanceId() {

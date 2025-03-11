@@ -40,6 +40,7 @@ public class DescribeDbInstancesResponseUnmarshaller {
 			dBInstance.setDBInstanceDescription(_ctx.stringValue("DescribeDbInstancesResponse.Items["+ i +"].DBInstanceDescription"));
 			dBInstance.setEngineVersion(_ctx.stringValue("DescribeDbInstancesResponse.Items["+ i +"].EngineVersion"));
 			dBInstance.setRegionId(_ctx.stringValue("DescribeDbInstancesResponse.Items["+ i +"].RegionId"));
+			dBInstance.setAllowAllCategory(_ctx.booleanValue("DescribeDbInstancesResponse.Items["+ i +"].AllowAllCategory"));
 
 			List<String> readOnlyDBInstanceId = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDbInstancesResponse.Items["+ i +"].ReadOnlyDBInstanceId.Length"); j++) {
