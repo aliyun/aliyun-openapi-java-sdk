@@ -67,6 +67,7 @@ public class DescribeCommandsResponseUnmarshaller {
 				parameterDefinition.setDescription(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].ParameterDefinitions["+ j +"].Description"));
 				parameterDefinition.setDefaultValue(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].ParameterDefinitions["+ j +"].DefaultValue"));
 				parameterDefinition.setParameterName(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].ParameterDefinitions["+ j +"].ParameterName"));
+				parameterDefinition.setPatternRegex(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].ParameterDefinitions["+ j +"].PatternRegex"));
 
 				List<String> possibleValues = new ArrayList<String>();
 				for (int k = 0; k < _ctx.lengthValue("DescribeCommandsResponse.Commands["+ i +"].ParameterDefinitions["+ j +"].PossibleValues.Length"); k++) {

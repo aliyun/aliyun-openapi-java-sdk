@@ -36,6 +36,8 @@ public class PurchaseStorageCapacityUnitRequest extends RpcAcsRequest<PurchaseSt
 
 	private Integer capacity;
 
+	private String resourceGroupId;
+
 	private List<Tag> tags;
 
 	private Integer period;
@@ -114,6 +116,17 @@ public class PurchaseStorageCapacityUnitRequest extends RpcAcsRequest<PurchaseSt
 		this.capacity = capacity;
 		if(capacity != null){
 			putQueryParameter("Capacity", capacity.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

@@ -287,6 +287,8 @@ public class DescribeCommandsResponse extends AcsResponse {
 
 			private String parameterName;
 
+			private String patternRegex;
+
 			private List<String> possibleValues;
 
 			public Boolean getRequired() {
@@ -319,6 +321,14 @@ public class DescribeCommandsResponse extends AcsResponse {
 
 			public void setParameterName(String parameterName) {
 				this.parameterName = parameterName;
+			}
+
+			public String getPatternRegex() {
+				return this.patternRegex;
+			}
+
+			public void setPatternRegex(String patternRegex) {
+				this.patternRegex = patternRegex;
 			}
 
 			public List<String> getPossibleValues() {
