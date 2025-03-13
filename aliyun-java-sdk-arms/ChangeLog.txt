@@ -1,3 +1,7 @@
+2025-03-13 Version: 10.0.3
+- Update version No.
+- Add InstallManagedPrometheus extra Param vcExtraInfo.
+
 2025-03-13 Version: 2.8.39
 - Update version No.
 - Add InstallManagedPrometheus extra Param vcExtraInfo.
