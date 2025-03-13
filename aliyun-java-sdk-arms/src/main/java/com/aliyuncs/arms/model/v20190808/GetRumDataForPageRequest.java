@@ -26,6 +26,8 @@ import com.aliyuncs.arms.Endpoint;
 public class GetRumDataForPageRequest extends RpcAcsRequest<GetRumDataForPageResponse> {
 	   
 
+	private String workspace;
+
 	private String query;
 
 	private Integer endTime;
@@ -47,6 +49,17 @@ public class GetRumDataForPageRequest extends RpcAcsRequest<GetRumDataForPageRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getWorkspace() {
+		return this.workspace;
+	}
+
+	public void setWorkspace(String workspace) {
+		this.workspace = workspace;
+		if(workspace != null){
+			putQueryParameter("Workspace", workspace);
+		}
 	}
 
 	public String getQuery() {

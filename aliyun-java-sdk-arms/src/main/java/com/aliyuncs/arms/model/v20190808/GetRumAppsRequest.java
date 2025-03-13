@@ -29,6 +29,10 @@ import com.aliyuncs.arms.Endpoint;
 public class GetRumAppsRequest extends RpcAcsRequest<GetRumAppsResponse> {
 	   
 
+	private String workspace;
+
+	private String appType;
+
 	@SerializedName("tags")
 	private List<Tags> tags;
 
@@ -47,6 +51,28 @@ public class GetRumAppsRequest extends RpcAcsRequest<GetRumAppsResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getWorkspace() {
+		return this.workspace;
+	}
+
+	public void setWorkspace(String workspace) {
+		this.workspace = workspace;
+		if(workspace != null){
+			putQueryParameter("Workspace", workspace);
+		}
+	}
+
+	public String getAppType() {
+		return this.appType;
+	}
+
+	public void setAppType(String appType) {
+		this.appType = appType;
+		if(appType != null){
+			putQueryParameter("AppType", appType);
+		}
 	}
 
 	public List<Tags> getTags() {

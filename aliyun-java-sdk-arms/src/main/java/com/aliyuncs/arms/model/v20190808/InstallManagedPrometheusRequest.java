@@ -39,6 +39,8 @@ public class InstallManagedPrometheusRequest extends RpcAcsRequest<InstallManage
 
 	private String vSwitchId;
 
+	private String vcExtraInfo;
+
 	private String resourceGroupId;
 
 	private String vpcId;
@@ -125,6 +127,17 @@ public class InstallManagedPrometheusRequest extends RpcAcsRequest<InstallManage
 		this.vSwitchId = vSwitchId;
 		if(vSwitchId != null){
 			putQueryParameter("VSwitchId", vSwitchId);
+		}
+	}
+
+	public String getVcExtraInfo() {
+		return this.vcExtraInfo;
+	}
+
+	public void setVcExtraInfo(String vcExtraInfo) {
+		this.vcExtraInfo = vcExtraInfo;
+		if(vcExtraInfo != null){
+			putQueryParameter("VcExtraInfo", vcExtraInfo);
 		}
 	}
 

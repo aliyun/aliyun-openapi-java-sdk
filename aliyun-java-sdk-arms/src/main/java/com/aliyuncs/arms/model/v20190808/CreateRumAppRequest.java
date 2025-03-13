@@ -29,9 +29,13 @@ import com.aliyuncs.arms.Endpoint;
 public class CreateRumAppRequest extends RpcAcsRequest<CreateRumAppResponse> {
 	   
 
+	private String workspace;
+
 	private String packageName;
 
 	private String description;
+
+	private String language;
 
 	private String source;
 
@@ -59,6 +63,17 @@ public class CreateRumAppRequest extends RpcAcsRequest<CreateRumAppResponse> {
 		} catch (Exception e) {}
 	}
 
+	public String getWorkspace() {
+		return this.workspace;
+	}
+
+	public void setWorkspace(String workspace) {
+		this.workspace = workspace;
+		if(workspace != null){
+			putQueryParameter("Workspace", workspace);
+		}
+	}
+
 	public String getPackageName() {
 		return this.packageName;
 	}
@@ -78,6 +93,17 @@ public class CreateRumAppRequest extends RpcAcsRequest<CreateRumAppResponse> {
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getLanguage() {
+		return this.language;
+	}
+
+	public void setLanguage(String language) {
+		this.language = language;
+		if(language != null){
+			putQueryParameter("Language", language);
 		}
 	}
 

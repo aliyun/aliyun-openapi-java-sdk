@@ -57,6 +57,8 @@ public class ListAddonReleasesResponseUnmarshaller {
 			releasesItem.setEnvironmentId(_ctx.stringValue("ListAddonReleasesResponse.Data.Releases["+ i +"].EnvironmentId"));
 			releasesItem.setRegionId(_ctx.stringValue("ListAddonReleasesResponse.Data.Releases["+ i +"].RegionId"));
 			releasesItem.setManaged(_ctx.booleanValue("ListAddonReleasesResponse.Data.Releases["+ i +"].Managed"));
+			releasesItem.setNextVersion(_ctx.stringValue("ListAddonReleasesResponse.Data.Releases["+ i +"].NextVersion"));
+			releasesItem.setConfig(_ctx.stringValue("ListAddonReleasesResponse.Data.Releases["+ i +"].Config"));
 
 			List<ConditionsItem> conditions = new ArrayList<ConditionsItem>();
 			for (int j = 0; j < _ctx.lengthValue("ListAddonReleasesResponse.Data.Releases["+ i +"].Conditions.Length"); j++) {

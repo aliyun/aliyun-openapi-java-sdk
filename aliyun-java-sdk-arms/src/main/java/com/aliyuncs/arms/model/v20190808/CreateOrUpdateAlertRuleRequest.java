@@ -34,6 +34,8 @@ public class CreateOrUpdateAlertRuleRequest extends RpcAcsRequest<CreateOrUpdate
 
 	private String annotations;
 
+	private Long checkCycle;
+
 	private String dataConfig;
 
 	private Long duration;
@@ -131,6 +133,17 @@ public class CreateOrUpdateAlertRuleRequest extends RpcAcsRequest<CreateOrUpdate
 		this.annotations = annotations;
 		if(annotations != null){
 			putBodyParameter("Annotations", annotations);
+		}
+	}
+
+	public Long getCheckCycle() {
+		return this.checkCycle;
+	}
+
+	public void setCheckCycle(Long checkCycle) {
+		this.checkCycle = checkCycle;
+		if(checkCycle != null){
+			putBodyParameter("CheckCycle", checkCycle.toString());
 		}
 	}
 

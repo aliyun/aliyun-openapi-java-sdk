@@ -28,9 +28,13 @@ public class GetMultipleTraceRequest extends RpcAcsRequest<GetMultipleTraceRespo
 
 	private List<String> traceIDss;
 
+	private Long pageSize;
+
 	private Long endTime;
 
 	private Long startTime;
+
+	private Long pageNumber;
 	public GetMultipleTraceRequest() {
 		super("ARMS", "2019-08-08", "GetMultipleTrace", "arms");
 		setMethod(MethodType.POST);
@@ -53,6 +57,17 @@ public class GetMultipleTraceRequest extends RpcAcsRequest<GetMultipleTraceRespo
 		}	
 	}
 
+	public Long getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Long pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
 	public Long getEndTime() {
 		return this.endTime;
 	}
@@ -72,6 +87,17 @@ public class GetMultipleTraceRequest extends RpcAcsRequest<GetMultipleTraceRespo
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime.toString());
+		}
+	}
+
+	public Long getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 

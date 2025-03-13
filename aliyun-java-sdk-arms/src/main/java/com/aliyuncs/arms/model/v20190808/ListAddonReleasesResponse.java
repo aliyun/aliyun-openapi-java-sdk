@@ -135,6 +135,10 @@ public class ListAddonReleasesResponse extends AcsResponse {
 
 			private Boolean managed;
 
+			private String nextVersion;
+
+			private String config;
+
 			private List<ConditionsItem> conditions;
 
 			public String getAddonName() {
@@ -279,6 +283,22 @@ public class ListAddonReleasesResponse extends AcsResponse {
 
 			public void setManaged(Boolean managed) {
 				this.managed = managed;
+			}
+
+			public String getNextVersion() {
+				return this.nextVersion;
+			}
+
+			public void setNextVersion(String nextVersion) {
+				this.nextVersion = nextVersion;
+			}
+
+			public String getConfig() {
+				return this.config;
+			}
+
+			public void setConfig(String config) {
+				this.config = config;
 			}
 
 			public List<ConditionsItem> getConditions() {

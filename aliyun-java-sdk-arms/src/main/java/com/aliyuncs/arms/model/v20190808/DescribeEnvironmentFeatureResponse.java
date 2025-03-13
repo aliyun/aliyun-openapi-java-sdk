@@ -78,9 +78,19 @@ public class DescribeEnvironmentFeatureResponse extends AcsResponse {
 
 	public static class Data {
 
+		private String config;
+
 		private Feature feature;
 
 		private FeatureStatus featureStatus;
+
+		public String getConfig() {
+			return this.config;
+		}
+
+		public void setConfig(String config) {
+			this.config = config;
+		}
 
 		public Feature getFeature() {
 			return this.feature;

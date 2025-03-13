@@ -30,6 +30,8 @@ public class UpdateRumAppRequest extends RpcAcsRequest<UpdateRumAppResponse> {
 
 	private Boolean autoRestart;
 
+	private String appConfig;
+
 	private String description;
 
 	private String pid;
@@ -76,6 +78,17 @@ public class UpdateRumAppRequest extends RpcAcsRequest<UpdateRumAppResponse> {
 		this.autoRestart = autoRestart;
 		if(autoRestart != null){
 			putQueryParameter("AutoRestart", autoRestart.toString());
+		}
+	}
+
+	public String getAppConfig() {
+		return this.appConfig;
+	}
+
+	public void setAppConfig(String appConfig) {
+		this.appConfig = appConfig;
+		if(appConfig != null){
+			putQueryParameter("AppConfig", appConfig);
 		}
 	}
 

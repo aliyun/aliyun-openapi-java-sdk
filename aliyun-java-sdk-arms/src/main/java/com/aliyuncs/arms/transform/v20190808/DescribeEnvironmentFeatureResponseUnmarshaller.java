@@ -36,6 +36,7 @@ public class DescribeEnvironmentFeatureResponseUnmarshaller {
 		describeEnvironmentFeatureResponse.setSuccess(_ctx.booleanValue("DescribeEnvironmentFeatureResponse.Success"));
 
 		Data data = new Data();
+		data.setConfig(_ctx.stringValue("DescribeEnvironmentFeatureResponse.Data.config"));
 
 		Feature feature = new Feature();
 		feature.setAlias(_ctx.stringValue("DescribeEnvironmentFeatureResponse.Data.Feature.Alias"));
