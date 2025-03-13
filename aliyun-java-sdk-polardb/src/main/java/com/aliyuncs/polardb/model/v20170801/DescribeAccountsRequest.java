@@ -27,6 +27,8 @@ public class DescribeAccountsRequest extends RpcAcsRequest<DescribeAccountsRespo
 
 	private Long resourceOwnerId;
 
+	private String nodeType;
+
 	private Integer pageNumber;
 
 	private String accountName;
@@ -57,6 +59,17 @@ public class DescribeAccountsRequest extends RpcAcsRequest<DescribeAccountsRespo
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getNodeType() {
+		return this.nodeType;
+	}
+
+	public void setNodeType(String nodeType) {
+		this.nodeType = nodeType;
+		if(nodeType != null){
+			putQueryParameter("NodeType", nodeType);
 		}
 	}
 

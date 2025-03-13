@@ -56,6 +56,7 @@ public class DescribeDBClusterEndpointsResponseUnmarshaller {
 				address.setVpcInstanceId(_ctx.stringValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].AddressItems["+ j +"].VpcInstanceId"));
 				address.setVPCId(_ctx.stringValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].AddressItems["+ j +"].VPCId"));
 				address.setIPAddress(_ctx.stringValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].AddressItems["+ j +"].IPAddress"));
+				address.setDashboardUsed(_ctx.booleanValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].AddressItems["+ j +"].DashboardUsed"));
 
 				addressItems.add(address);
 			}

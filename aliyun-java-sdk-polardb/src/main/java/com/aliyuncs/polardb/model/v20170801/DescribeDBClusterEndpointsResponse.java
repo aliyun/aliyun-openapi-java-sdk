@@ -195,6 +195,8 @@ public class DescribeDBClusterEndpointsResponse extends AcsResponse {
 
 			private String iPAddress;
 
+			private Boolean dashboardUsed;
+
 			public String getVSwitchId() {
 				return this.vSwitchId;
 			}
@@ -257,6 +259,14 @@ public class DescribeDBClusterEndpointsResponse extends AcsResponse {
 
 			public void setIPAddress(String iPAddress) {
 				this.iPAddress = iPAddress;
+			}
+
+			public Boolean getDashboardUsed() {
+				return this.dashboardUsed;
+			}
+
+			public void setDashboardUsed(Boolean dashboardUsed) {
+				this.dashboardUsed = dashboardUsed;
 			}
 		}
 	}

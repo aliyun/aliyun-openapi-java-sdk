@@ -95,9 +95,12 @@ public class DescribeDBClusterAttributeResponseUnmarshaller {
 		describeDBClusterAttributeResponse.setRestoreDataPoint(_ctx.stringValue("DescribeDBClusterAttributeResponse.RestoreDataPoint"));
 		describeDBClusterAttributeResponse.setSourceRegionId(_ctx.stringValue("DescribeDBClusterAttributeResponse.SourceRegionId"));
 		describeDBClusterAttributeResponse.setImciAutoIndex(_ctx.stringValue("DescribeDBClusterAttributeResponse.ImciAutoIndex"));
+		describeDBClusterAttributeResponse.setOsVersion(_ctx.stringValue("DescribeDBClusterAttributeResponse.OsVersion"));
 		describeDBClusterAttributeResponse.setBurstingEnabled(_ctx.stringValue("DescribeDBClusterAttributeResponse.BurstingEnabled"));
 		describeDBClusterAttributeResponse.setRowCompression(_ctx.stringValue("DescribeDBClusterAttributeResponse.RowCompression"));
 		describeDBClusterAttributeResponse.setImperceptibleSwitch(_ctx.stringValue("DescribeDBClusterAttributeResponse.ImperceptibleSwitch"));
+		describeDBClusterAttributeResponse.setCnNodeCount(_ctx.integerValue("DescribeDBClusterAttributeResponse.CnNodeCount"));
+		describeDBClusterAttributeResponse.setDnNodeCount(_ctx.integerValue("DescribeDBClusterAttributeResponse.DnNodeCount"));
 
 		RelatedAPInstance relatedAPInstance = new RelatedAPInstance();
 		relatedAPInstance.setName(_ctx.stringValue("DescribeDBClusterAttributeResponse.RelatedAPInstance.Name"));
@@ -137,6 +140,16 @@ public class DescribeDBClusterAttributeResponseUnmarshaller {
 			dBNode.setMultiMasterLocalStandby(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].MultiMasterLocalStandby"));
 			dBNode.setMultiMasterPrimaryNode(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].MultiMasterPrimaryNode"));
 			dBNode.setDBNodeDescription(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].DBNodeDescription"));
+			dBNode.setSubGroupType(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].SubGroupType"));
+			dBNode.setSubGroupName(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].SubGroupName"));
+			dBNode.setIsPrimaryCN(_ctx.booleanValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].IsPrimaryCN"));
+			dBNode.setStandbyZoneIds(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].StandbyZoneIds"));
+			dBNode.setStorageMax(_ctx.longValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].StorageMax"));
+			dBNode.setStorageUsed(_ctx.longValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].StorageUsed"));
+			dBNode.setInodeUsed(_ctx.longValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].InodeUsed"));
+			dBNode.setInodeTotal(_ctx.longValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].InodeTotal"));
+			dBNode.setBlktagTotal(_ctx.longValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].BlktagTotal"));
+			dBNode.setBlktagUsed(_ctx.longValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].BlktagUsed"));
 
 			dBNodes.add(dBNode);
 		}

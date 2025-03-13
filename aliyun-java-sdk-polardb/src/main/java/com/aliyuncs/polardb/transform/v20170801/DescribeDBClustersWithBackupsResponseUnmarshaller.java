@@ -54,6 +54,7 @@ public class DescribeDBClustersWithBackupsResponseUnmarshaller {
 			dBCluster.setZoneId(_ctx.stringValue("DescribeDBClustersWithBackupsResponse.Items["+ i +"].ZoneId"));
 			dBCluster.setEngine(_ctx.stringValue("DescribeDBClustersWithBackupsResponse.Items["+ i +"].Engine"));
 			dBCluster.setCategory(_ctx.stringValue("DescribeDBClustersWithBackupsResponse.Items["+ i +"].Category"));
+			dBCluster.setCnClass(_ctx.stringValue("DescribeDBClustersWithBackupsResponse.Items["+ i +"].CnClass"));
 
 			items.add(dBCluster);
 		}

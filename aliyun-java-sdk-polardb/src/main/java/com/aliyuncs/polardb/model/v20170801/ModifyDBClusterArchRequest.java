@@ -15,6 +15,7 @@
 package com.aliyuncs.polardb.model.v20170801;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.polardb.Endpoint;
 
@@ -22,16 +23,17 @@ import com.aliyuncs.polardb.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeMaskingRulesRequest extends RpcAcsRequest<DescribeMaskingRulesResponse> {
+public class ModifyDBClusterArchRequest extends RpcAcsRequest<ModifyDBClusterArchResponse> {
 	   
 
-	private String interfaceVersion;
+	private String standbyAZ;
 
 	private String dBClusterId;
 
-	private String ruleNameList;
-	public DescribeMaskingRulesRequest() {
-		super("polardb", "2017-08-01", "DescribeMaskingRules", "polardb");
+	private String hotStandbyCluster;
+	public ModifyDBClusterArchRequest() {
+		super("polardb", "2017-08-01", "ModifyDBClusterArch", "polardb");
+		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,14 +41,14 @@ public class DescribeMaskingRulesRequest extends RpcAcsRequest<DescribeMaskingRu
 		} catch (Exception e) {}
 	}
 
-	public String getInterfaceVersion() {
-		return this.interfaceVersion;
+	public String getStandbyAZ() {
+		return this.standbyAZ;
 	}
 
-	public void setInterfaceVersion(String interfaceVersion) {
-		this.interfaceVersion = interfaceVersion;
-		if(interfaceVersion != null){
-			putQueryParameter("InterfaceVersion", interfaceVersion);
+	public void setStandbyAZ(String standbyAZ) {
+		this.standbyAZ = standbyAZ;
+		if(standbyAZ != null){
+			putQueryParameter("StandbyAZ", standbyAZ);
 		}
 	}
 
@@ -61,20 +63,20 @@ public class DescribeMaskingRulesRequest extends RpcAcsRequest<DescribeMaskingRu
 		}
 	}
 
-	public String getRuleNameList() {
-		return this.ruleNameList;
+	public String getHotStandbyCluster() {
+		return this.hotStandbyCluster;
 	}
 
-	public void setRuleNameList(String ruleNameList) {
-		this.ruleNameList = ruleNameList;
-		if(ruleNameList != null){
-			putQueryParameter("RuleNameList", ruleNameList);
+	public void setHotStandbyCluster(String hotStandbyCluster) {
+		this.hotStandbyCluster = hotStandbyCluster;
+		if(hotStandbyCluster != null){
+			putQueryParameter("HotStandbyCluster", hotStandbyCluster);
 		}
 	}
 
 	@Override
-	public Class<DescribeMaskingRulesResponse> getResponseClass() {
-		return DescribeMaskingRulesResponse.class;
+	public Class<ModifyDBClusterArchResponse> getResponseClass() {
+		return ModifyDBClusterArchResponse.class;
 	}
 
 }

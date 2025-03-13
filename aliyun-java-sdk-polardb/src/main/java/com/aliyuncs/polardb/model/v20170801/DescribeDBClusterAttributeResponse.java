@@ -159,11 +159,17 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 	private String imciAutoIndex;
 
+	private String osVersion;
+
 	private String burstingEnabled;
 
 	private String rowCompression;
 
 	private String imperceptibleSwitch;
+
+	private Integer cnNodeCount;
+
+	private Integer dnNodeCount;
 
 	private List<DBNode> dBNodes;
 
@@ -707,6 +713,14 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 		this.imciAutoIndex = imciAutoIndex;
 	}
 
+	public String getOsVersion() {
+		return this.osVersion;
+	}
+
+	public void setOsVersion(String osVersion) {
+		this.osVersion = osVersion;
+	}
+
 	public String getBurstingEnabled() {
 		return this.burstingEnabled;
 	}
@@ -729,6 +743,22 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 	public void setImperceptibleSwitch(String imperceptibleSwitch) {
 		this.imperceptibleSwitch = imperceptibleSwitch;
+	}
+
+	public Integer getCnNodeCount() {
+		return this.cnNodeCount;
+	}
+
+	public void setCnNodeCount(Integer cnNodeCount) {
+		this.cnNodeCount = cnNodeCount;
+	}
+
+	public Integer getDnNodeCount() {
+		return this.dnNodeCount;
+	}
+
+	public void setDnNodeCount(Integer dnNodeCount) {
+		this.dnNodeCount = dnNodeCount;
 	}
 
 	public List<DBNode> getDBNodes() {
@@ -808,6 +838,26 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 		private String multiMasterPrimaryNode;
 
 		private String dBNodeDescription;
+
+		private String subGroupType;
+
+		private String subGroupName;
+
+		private Boolean isPrimaryCN;
+
+		private String standbyZoneIds;
+
+		private Long storageMax;
+
+		private Long storageUsed;
+
+		private Long inodeUsed;
+
+		private Long inodeTotal;
+
+		private Long blktagTotal;
+
+		private Long blktagUsed;
 
 		public String getCreationTime() {
 			return this.creationTime;
@@ -1015,6 +1065,86 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 		public void setDBNodeDescription(String dBNodeDescription) {
 			this.dBNodeDescription = dBNodeDescription;
+		}
+
+		public String getSubGroupType() {
+			return this.subGroupType;
+		}
+
+		public void setSubGroupType(String subGroupType) {
+			this.subGroupType = subGroupType;
+		}
+
+		public String getSubGroupName() {
+			return this.subGroupName;
+		}
+
+		public void setSubGroupName(String subGroupName) {
+			this.subGroupName = subGroupName;
+		}
+
+		public Boolean getIsPrimaryCN() {
+			return this.isPrimaryCN;
+		}
+
+		public void setIsPrimaryCN(Boolean isPrimaryCN) {
+			this.isPrimaryCN = isPrimaryCN;
+		}
+
+		public String getStandbyZoneIds() {
+			return this.standbyZoneIds;
+		}
+
+		public void setStandbyZoneIds(String standbyZoneIds) {
+			this.standbyZoneIds = standbyZoneIds;
+		}
+
+		public Long getStorageMax() {
+			return this.storageMax;
+		}
+
+		public void setStorageMax(Long storageMax) {
+			this.storageMax = storageMax;
+		}
+
+		public Long getStorageUsed() {
+			return this.storageUsed;
+		}
+
+		public void setStorageUsed(Long storageUsed) {
+			this.storageUsed = storageUsed;
+		}
+
+		public Long getInodeUsed() {
+			return this.inodeUsed;
+		}
+
+		public void setInodeUsed(Long inodeUsed) {
+			this.inodeUsed = inodeUsed;
+		}
+
+		public Long getInodeTotal() {
+			return this.inodeTotal;
+		}
+
+		public void setInodeTotal(Long inodeTotal) {
+			this.inodeTotal = inodeTotal;
+		}
+
+		public Long getBlktagTotal() {
+			return this.blktagTotal;
+		}
+
+		public void setBlktagTotal(Long blktagTotal) {
+			this.blktagTotal = blktagTotal;
+		}
+
+		public Long getBlktagUsed() {
+			return this.blktagUsed;
+		}
+
+		public void setBlktagUsed(Long blktagUsed) {
+			this.blktagUsed = blktagUsed;
 		}
 	}
 

@@ -139,7 +139,7 @@ public class DescribeDBClustersResponse extends AcsResponse {
 
 		private String remoteMemorySize;
 
-		private String subCategory;
+		private String cpuArch;
 
 		private String deployUnit;
 
@@ -148,6 +148,18 @@ public class DescribeDBClustersResponse extends AcsResponse {
 		private String hotStandbyCluster;
 
 		private String engineMigrationStatus;
+
+		private Integer cnNodeCount;
+
+		private Integer dnNodeCount;
+
+		private String cnClass;
+
+		private String dnClass;
+
+		private String cloudInstanceIp;
+
+		private String subCategory;
 
 		private List<Tag> tags;
 
@@ -401,12 +413,12 @@ public class DescribeDBClustersResponse extends AcsResponse {
 			this.remoteMemorySize = remoteMemorySize;
 		}
 
-		public String getSubCategory() {
-			return this.subCategory;
+		public String getCpuArch() {
+			return this.cpuArch;
 		}
 
-		public void setSubCategory(String subCategory) {
-			this.subCategory = subCategory;
+		public void setCpuArch(String cpuArch) {
+			this.cpuArch = cpuArch;
 		}
 
 		public String getDeployUnit() {
@@ -439,6 +451,54 @@ public class DescribeDBClustersResponse extends AcsResponse {
 
 		public void setEngineMigrationStatus(String engineMigrationStatus) {
 			this.engineMigrationStatus = engineMigrationStatus;
+		}
+
+		public Integer getCnNodeCount() {
+			return this.cnNodeCount;
+		}
+
+		public void setCnNodeCount(Integer cnNodeCount) {
+			this.cnNodeCount = cnNodeCount;
+		}
+
+		public Integer getDnNodeCount() {
+			return this.dnNodeCount;
+		}
+
+		public void setDnNodeCount(Integer dnNodeCount) {
+			this.dnNodeCount = dnNodeCount;
+		}
+
+		public String getCnClass() {
+			return this.cnClass;
+		}
+
+		public void setCnClass(String cnClass) {
+			this.cnClass = cnClass;
+		}
+
+		public String getDnClass() {
+			return this.dnClass;
+		}
+
+		public void setDnClass(String dnClass) {
+			this.dnClass = dnClass;
+		}
+
+		public String getCloudInstanceIp() {
+			return this.cloudInstanceIp;
+		}
+
+		public void setCloudInstanceIp(String cloudInstanceIp) {
+			this.cloudInstanceIp = cloudInstanceIp;
+		}
+
+		public String getSubCategory() {
+			return this.subCategory;
+		}
+
+		public void setSubCategory(String subCategory) {
+			this.subCategory = subCategory;
 		}
 
 		public List<Tag> getTags() {
