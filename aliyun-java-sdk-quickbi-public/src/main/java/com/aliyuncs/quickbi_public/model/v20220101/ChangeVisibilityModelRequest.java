@@ -26,9 +26,9 @@ public class ChangeVisibilityModelRequest extends RpcAcsRequest<ChangeVisibility
 
 	private String dataPortalId;
 
-	private Boolean showOnlyWithAccess;
-
 	private String menuIds;
+
+	private Boolean showOnlyWithAccess;
 	public ChangeVisibilityModelRequest() {
 		super("quickbi-public", "2022-01-01", "ChangeVisibilityModel", "2.2.0");
 		setMethod(MethodType.POST);
@@ -45,17 +45,6 @@ public class ChangeVisibilityModelRequest extends RpcAcsRequest<ChangeVisibility
 		}
 	}
 
-	public Boolean getShowOnlyWithAccess() {
-		return this.showOnlyWithAccess;
-	}
-
-	public void setShowOnlyWithAccess(Boolean showOnlyWithAccess) {
-		this.showOnlyWithAccess = showOnlyWithAccess;
-		if(showOnlyWithAccess != null){
-			putQueryParameter("ShowOnlyWithAccess", showOnlyWithAccess.toString());
-		}
-	}
-
 	public String getMenuIds() {
 		return this.menuIds;
 	}
@@ -64,6 +53,17 @@ public class ChangeVisibilityModelRequest extends RpcAcsRequest<ChangeVisibility
 		this.menuIds = menuIds;
 		if(menuIds != null){
 			putQueryParameter("MenuIds", menuIds);
+		}
+	}
+
+	public Boolean getShowOnlyWithAccess() {
+		return this.showOnlyWithAccess;
+	}
+
+	public void setShowOnlyWithAccess(Boolean showOnlyWithAccess) {
+		this.showOnlyWithAccess = showOnlyWithAccess;
+		if(showOnlyWithAccess != null){
+			putQueryParameter("ShowOnlyWithAccess", showOnlyWithAccess.toString());
 		}
 	}
 

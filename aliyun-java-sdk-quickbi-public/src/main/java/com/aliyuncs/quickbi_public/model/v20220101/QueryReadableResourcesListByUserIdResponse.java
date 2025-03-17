@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryReadableResourcesListByUserIdResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean success;
 
+	private String requestId;
+
 	private List<Data> result;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -45,6 +37,14 @@ public class QueryReadableResourcesListByUserIdResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<Data> getResult() {

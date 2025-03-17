@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryUserListResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean success;
 
+	private String requestId;
+
 	private Result result;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -45,6 +37,14 @@ public class QueryUserListResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Result getResult() {
@@ -130,6 +130,8 @@ public class QueryUserListResponse extends AcsResponse {
 			private String userId;
 
 			private Integer userType;
+
+			private Boolean isDeleted;
 
 			private List<Long> roleIdList;
 
@@ -219,6 +221,14 @@ public class QueryUserListResponse extends AcsResponse {
 
 			public void setUserType(Integer userType) {
 				this.userType = userType;
+			}
+
+			public Boolean getIsDeleted() {
+				return this.isDeleted;
+			}
+
+			public void setIsDeleted(Boolean isDeleted) {
+				this.isDeleted = isDeleted;
 			}
 
 			public List<Long> getRoleIdList() {

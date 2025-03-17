@@ -24,14 +24,25 @@ import com.aliyuncs.http.MethodType;
 public class UpdateUserTagValueRequest extends RpcAcsRequest<UpdateUserTagValueResponse> {
 	   
 
+	private String userId;
+
 	private String tagValue;
 
 	private String tagId;
-
-	private String userId;
 	public UpdateUserTagValueRequest() {
 		super("quickbi-public", "2022-01-01", "UpdateUserTagValue", "2.2.0");
 		setMethod(MethodType.POST);
+	}
+
+	public String getUserId() {
+		return this.userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+		if(userId != null){
+			putQueryParameter("UserId", userId);
+		}
 	}
 
 	public String getTagValue() {
@@ -53,17 +64,6 @@ public class UpdateUserTagValueRequest extends RpcAcsRequest<UpdateUserTagValueR
 		this.tagId = tagId;
 		if(tagId != null){
 			putQueryParameter("TagId", tagId);
-		}
-	}
-
-	public String getUserId() {
-		return this.userId;
-	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putQueryParameter("UserId", userId);
 		}
 	}
 

@@ -24,23 +24,12 @@ import com.aliyuncs.http.MethodType;
 public class DeleteUserGroupMemberRequest extends RpcAcsRequest<DeleteUserGroupMemberResponse> {
 	   
 
-	private String userGroupId;
-
 	private String userId;
+
+	private String userGroupId;
 	public DeleteUserGroupMemberRequest() {
 		super("quickbi-public", "2022-01-01", "DeleteUserGroupMember", "2.2.0");
 		setMethod(MethodType.POST);
-	}
-
-	public String getUserGroupId() {
-		return this.userGroupId;
-	}
-
-	public void setUserGroupId(String userGroupId) {
-		this.userGroupId = userGroupId;
-		if(userGroupId != null){
-			putQueryParameter("UserGroupId", userGroupId);
-		}
 	}
 
 	public String getUserId() {
@@ -51,6 +40,17 @@ public class DeleteUserGroupMemberRequest extends RpcAcsRequest<DeleteUserGroupM
 		this.userId = userId;
 		if(userId != null){
 			putQueryParameter("UserId", userId);
+		}
+	}
+
+	public String getUserGroupId() {
+		return this.userGroupId;
+	}
+
+	public void setUserGroupId(String userGroupId) {
+		this.userGroupId = userGroupId;
+		if(userGroupId != null){
+			putQueryParameter("UserGroupId", userGroupId);
 		}
 	}
 

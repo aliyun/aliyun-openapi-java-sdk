@@ -26,19 +26,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryDataResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean success;
 
+	private String requestId;
+
 	private Result result;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -46,6 +38,14 @@ public class QueryDataResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Result getResult() {

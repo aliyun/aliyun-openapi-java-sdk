@@ -24,23 +24,12 @@ import com.aliyuncs.http.MethodType;
 public class ListCubeDataLevelPermissionConfigRequest extends RpcAcsRequest<ListCubeDataLevelPermissionConfigResponse> {
 	   
 
-	private String ruleType;
-
 	private String cubeId;
+
+	private String ruleType;
 	public ListCubeDataLevelPermissionConfigRequest() {
 		super("quickbi-public", "2022-01-01", "ListCubeDataLevelPermissionConfig", "2.2.0");
 		setMethod(MethodType.POST);
-	}
-
-	public String getRuleType() {
-		return this.ruleType;
-	}
-
-	public void setRuleType(String ruleType) {
-		this.ruleType = ruleType;
-		if(ruleType != null){
-			putQueryParameter("RuleType", ruleType);
-		}
 	}
 
 	public String getCubeId() {
@@ -51,6 +40,17 @@ public class ListCubeDataLevelPermissionConfigRequest extends RpcAcsRequest<List
 		this.cubeId = cubeId;
 		if(cubeId != null){
 			putQueryParameter("CubeId", cubeId);
+		}
+	}
+
+	public String getRuleType() {
+		return this.ruleType;
+	}
+
+	public void setRuleType(String ruleType) {
+		this.ruleType = ruleType;
+		if(ruleType != null){
+			putQueryParameter("RuleType", ruleType);
 		}
 	}
 

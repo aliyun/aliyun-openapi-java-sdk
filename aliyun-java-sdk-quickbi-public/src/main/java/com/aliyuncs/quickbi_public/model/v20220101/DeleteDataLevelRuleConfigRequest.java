@@ -24,23 +24,12 @@ import com.aliyuncs.http.MethodType;
 public class DeleteDataLevelRuleConfigRequest extends RpcAcsRequest<DeleteDataLevelRuleConfigResponse> {
 	   
 
-	private String ruleId;
-
 	private String cubeId;
+
+	private String ruleId;
 	public DeleteDataLevelRuleConfigRequest() {
 		super("quickbi-public", "2022-01-01", "DeleteDataLevelRuleConfig", "2.2.0");
 		setMethod(MethodType.POST);
-	}
-
-	public String getRuleId() {
-		return this.ruleId;
-	}
-
-	public void setRuleId(String ruleId) {
-		this.ruleId = ruleId;
-		if(ruleId != null){
-			putQueryParameter("RuleId", ruleId);
-		}
 	}
 
 	public String getCubeId() {
@@ -51,6 +40,17 @@ public class DeleteDataLevelRuleConfigRequest extends RpcAcsRequest<DeleteDataLe
 		this.cubeId = cubeId;
 		if(cubeId != null){
 			putQueryParameter("CubeId", cubeId);
+		}
+	}
+
+	public String getRuleId() {
+		return this.ruleId;
+	}
+
+	public void setRuleId(String ruleId) {
+		this.ruleId = ruleId;
+		if(ruleId != null){
+			putQueryParameter("RuleId", ruleId);
 		}
 	}
 

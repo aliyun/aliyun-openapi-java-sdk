@@ -24,25 +24,14 @@ import com.aliyuncs.http.MethodType;
 public class UpdateUserGroupRequest extends RpcAcsRequest<UpdateUserGroupResponse> {
 	   
 
-	private String userGroupId;
-
 	private String userGroupName;
+
+	private String userGroupId;
 
 	private String userGroupDescription;
 	public UpdateUserGroupRequest() {
 		super("quickbi-public", "2022-01-01", "UpdateUserGroup", "2.2.0");
 		setMethod(MethodType.POST);
-	}
-
-	public String getUserGroupId() {
-		return this.userGroupId;
-	}
-
-	public void setUserGroupId(String userGroupId) {
-		this.userGroupId = userGroupId;
-		if(userGroupId != null){
-			putQueryParameter("UserGroupId", userGroupId);
-		}
 	}
 
 	public String getUserGroupName() {
@@ -53,6 +42,17 @@ public class UpdateUserGroupRequest extends RpcAcsRequest<UpdateUserGroupRespons
 		this.userGroupName = userGroupName;
 		if(userGroupName != null){
 			putQueryParameter("UserGroupName", userGroupName);
+		}
+	}
+
+	public String getUserGroupId() {
+		return this.userGroupId;
+	}
+
+	public void setUserGroupId(String userGroupId) {
+		this.userGroupId = userGroupId;
+		if(userGroupId != null){
+			putQueryParameter("UserGroupId", userGroupId);
 		}
 	}
 

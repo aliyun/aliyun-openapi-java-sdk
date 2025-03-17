@@ -24,23 +24,12 @@ import com.aliyuncs.http.MethodType;
 public class QueryUserGroupMemberRequest extends RpcAcsRequest<QueryUserGroupMemberResponse> {
 	   
 
-	private String userGroupId;
-
 	private String keyword;
+
+	private String userGroupId;
 	public QueryUserGroupMemberRequest() {
 		super("quickbi-public", "2022-01-01", "QueryUserGroupMember", "2.2.0");
 		setMethod(MethodType.POST);
-	}
-
-	public String getUserGroupId() {
-		return this.userGroupId;
-	}
-
-	public void setUserGroupId(String userGroupId) {
-		this.userGroupId = userGroupId;
-		if(userGroupId != null){
-			putQueryParameter("UserGroupId", userGroupId);
-		}
 	}
 
 	public String getKeyword() {
@@ -51,6 +40,17 @@ public class QueryUserGroupMemberRequest extends RpcAcsRequest<QueryUserGroupMem
 		this.keyword = keyword;
 		if(keyword != null){
 			putQueryParameter("Keyword", keyword);
+		}
+	}
+
+	public String getUserGroupId() {
+		return this.userGroupId;
+	}
+
+	public void setUserGroupId(String userGroupId) {
+		this.userGroupId = userGroupId;
+		if(userGroupId != null){
+			putQueryParameter("UserGroupId", userGroupId);
 		}
 	}
 

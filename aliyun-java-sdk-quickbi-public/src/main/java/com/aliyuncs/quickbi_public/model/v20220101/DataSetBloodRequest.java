@@ -24,14 +24,25 @@ import com.aliyuncs.http.MethodType;
 public class DataSetBloodRequest extends RpcAcsRequest<DataSetBloodResponse> {
 	   
 
+	private String userId;
+
 	private String dataSetIds;
 
 	private String worksType;
-
-	private String userId;
 	public DataSetBloodRequest() {
 		super("quickbi-public", "2022-01-01", "DataSetBlood", "2.2.0");
 		setMethod(MethodType.POST);
+	}
+
+	public String getUserId() {
+		return this.userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+		if(userId != null){
+			putQueryParameter("UserId", userId);
+		}
 	}
 
 	public String getDataSetIds() {
@@ -53,17 +64,6 @@ public class DataSetBloodRequest extends RpcAcsRequest<DataSetBloodResponse> {
 		this.worksType = worksType;
 		if(worksType != null){
 			putQueryParameter("WorksType", worksType);
-		}
-	}
-
-	public String getUserId() {
-		return this.userId;
-	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putQueryParameter("UserId", userId);
 		}
 	}
 

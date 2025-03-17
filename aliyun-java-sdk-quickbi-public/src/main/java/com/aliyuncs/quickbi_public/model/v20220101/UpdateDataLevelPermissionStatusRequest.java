@@ -26,9 +26,9 @@ public class UpdateDataLevelPermissionStatusRequest extends RpcAcsRequest<Update
 
 	private Integer isOpen;
 
-	private String ruleType;
-
 	private String cubeId;
+
+	private String ruleType;
 	public UpdateDataLevelPermissionStatusRequest() {
 		super("quickbi-public", "2022-01-01", "UpdateDataLevelPermissionStatus", "2.2.0");
 		setMethod(MethodType.POST);
@@ -45,17 +45,6 @@ public class UpdateDataLevelPermissionStatusRequest extends RpcAcsRequest<Update
 		}
 	}
 
-	public String getRuleType() {
-		return this.ruleType;
-	}
-
-	public void setRuleType(String ruleType) {
-		this.ruleType = ruleType;
-		if(ruleType != null){
-			putQueryParameter("RuleType", ruleType);
-		}
-	}
-
 	public String getCubeId() {
 		return this.cubeId;
 	}
@@ -64,6 +53,17 @@ public class UpdateDataLevelPermissionStatusRequest extends RpcAcsRequest<Update
 		this.cubeId = cubeId;
 		if(cubeId != null){
 			putQueryParameter("CubeId", cubeId);
+		}
+	}
+
+	public String getRuleType() {
+		return this.ruleType;
+	}
+
+	public void setRuleType(String ruleType) {
+		this.ruleType = ruleType;
+		if(ruleType != null){
+			putQueryParameter("RuleType", ruleType);
 		}
 	}
 

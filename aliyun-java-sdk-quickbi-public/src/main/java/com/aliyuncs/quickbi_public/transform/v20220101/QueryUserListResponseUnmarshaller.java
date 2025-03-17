@@ -50,6 +50,7 @@ public class QueryUserListResponseUnmarshaller {
 			dataItem.setPhone(_ctx.stringValue("QueryUserListResponse.Result.Data["+ i +"].Phone"));
 			dataItem.setUserId(_ctx.stringValue("QueryUserListResponse.Result.Data["+ i +"].UserId"));
 			dataItem.setUserType(_ctx.integerValue("QueryUserListResponse.Result.Data["+ i +"].UserType"));
+			dataItem.setIsDeleted(_ctx.booleanValue("QueryUserListResponse.Result.Data["+ i +"].IsDeleted"));
 
 			List<Long> roleIdList = new ArrayList<Long>();
 			for (int j = 0; j < _ctx.lengthValue("QueryUserListResponse.Result.Data["+ i +"].RoleIdList.Length"); j++) {

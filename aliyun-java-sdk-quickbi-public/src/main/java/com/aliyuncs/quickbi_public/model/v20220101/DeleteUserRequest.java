@@ -24,23 +24,12 @@ import com.aliyuncs.http.MethodType;
 public class DeleteUserRequest extends RpcAcsRequest<DeleteUserResponse> {
 	   
 
-	private String transferUserId;
-
 	private String userId;
+
+	private String transferUserId;
 	public DeleteUserRequest() {
 		super("quickbi-public", "2022-01-01", "DeleteUser", "2.2.0");
 		setMethod(MethodType.POST);
-	}
-
-	public String getTransferUserId() {
-		return this.transferUserId;
-	}
-
-	public void setTransferUserId(String transferUserId) {
-		this.transferUserId = transferUserId;
-		if(transferUserId != null){
-			putQueryParameter("TransferUserId", transferUserId);
-		}
 	}
 
 	public String getUserId() {
@@ -51,6 +40,17 @@ public class DeleteUserRequest extends RpcAcsRequest<DeleteUserResponse> {
 		this.userId = userId;
 		if(userId != null){
 			putQueryParameter("UserId", userId);
+		}
+	}
+
+	public String getTransferUserId() {
+		return this.transferUserId;
+	}
+
+	public void setTransferUserId(String transferUserId) {
+		this.transferUserId = transferUserId;
+		if(transferUserId != null){
+			putQueryParameter("TransferUserId", transferUserId);
 		}
 	}
 
