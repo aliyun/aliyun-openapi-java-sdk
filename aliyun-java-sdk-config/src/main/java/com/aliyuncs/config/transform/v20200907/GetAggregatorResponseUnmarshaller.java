@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.config.model.v20200907.GetAggregatorResponse;
 import com.aliyuncs.config.model.v20200907.GetAggregatorResponse.Aggregator;
 import com.aliyuncs.config.model.v20200907.GetAggregatorResponse.Aggregator.AggregatorAccountsItem;
+import com.aliyuncs.config.model.v20200907.GetAggregatorResponse.Aggregator.TagsItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -51,6 +52,16 @@ public class GetAggregatorResponseUnmarshaller {
 			aggregatorAccounts.add(aggregatorAccountsItem);
 		}
 		aggregator.setAggregatorAccounts(aggregatorAccounts);
+
+		List<TagsItem> tags = new ArrayList<TagsItem>();
+		for (int i = 0; i < _ctx.lengthValue("GetAggregatorResponse.Aggregator.Tags.Length"); i++) {
+			TagsItem tagsItem = new TagsItem();
+			tagsItem.setTagKey(_ctx.stringValue("GetAggregatorResponse.Aggregator.Tags["+ i +"].TagKey"));
+			tagsItem.setTagValue(_ctx.stringValue("GetAggregatorResponse.Aggregator.Tags["+ i +"].TagValue"));
+
+			tags.add(tagsItem);
+		}
+		aggregator.setTags(tags);
 		getAggregatorResponse.setAggregator(aggregator);
 	 
 	 	return getAggregatorResponse;

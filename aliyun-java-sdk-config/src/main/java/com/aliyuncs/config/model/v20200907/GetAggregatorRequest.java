@@ -26,6 +26,8 @@ public class GetAggregatorRequest extends RpcAcsRequest<GetAggregatorResponse> {
 	   
 
 	private String aggregatorId;
+
+	private String tag;
 	public GetAggregatorRequest() {
 		super("Config", "2020-09-07", "GetAggregator", "config");
 		setMethod(MethodType.POST);
@@ -43,6 +45,17 @@ public class GetAggregatorRequest extends RpcAcsRequest<GetAggregatorResponse> {
 		this.aggregatorId = aggregatorId;
 		if(aggregatorId != null){
 			putQueryParameter("AggregatorId", aggregatorId);
+		}
+	}
+
+	public String getTag() {
+		return this.tag;
+	}
+
+	public void setTag(String tag) {
+		this.tag = tag;
+		if(tag != null){
+			putQueryParameter("Tag", tag);
 		}
 	}
 

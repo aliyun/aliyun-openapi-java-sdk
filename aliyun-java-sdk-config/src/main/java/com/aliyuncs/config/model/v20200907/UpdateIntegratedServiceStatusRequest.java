@@ -27,6 +27,8 @@ public class UpdateIntegratedServiceStatusRequest extends RpcAcsRequest<UpdateIn
 
 	private String integratedTypes;
 
+	private String aggregatorDeliveryDataType;
+
 	private String serviceCode;
 
 	private Boolean status;
@@ -47,6 +49,17 @@ public class UpdateIntegratedServiceStatusRequest extends RpcAcsRequest<UpdateIn
 		this.integratedTypes = integratedTypes;
 		if(integratedTypes != null){
 			putBodyParameter("IntegratedTypes", integratedTypes);
+		}
+	}
+
+	public String getAggregatorDeliveryDataType() {
+		return this.aggregatorDeliveryDataType;
+	}
+
+	public void setAggregatorDeliveryDataType(String aggregatorDeliveryDataType) {
+		this.aggregatorDeliveryDataType = aggregatorDeliveryDataType;
+		if(aggregatorDeliveryDataType != null){
+			putBodyParameter("AggregatorDeliveryDataType", aggregatorDeliveryDataType);
 		}
 	}
 

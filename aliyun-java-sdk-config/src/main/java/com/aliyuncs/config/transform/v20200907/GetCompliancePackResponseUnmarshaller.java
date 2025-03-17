@@ -24,6 +24,7 @@ import com.aliyuncs.config.model.v20200907.GetCompliancePackResponse.ComplianceP
 import com.aliyuncs.config.model.v20200907.GetCompliancePackResponse.CompliancePack.Scope;
 import com.aliyuncs.config.model.v20200907.GetCompliancePackResponse.CompliancePack.Scope.ExcludeTagsScopeItem;
 import com.aliyuncs.config.model.v20200907.GetCompliancePackResponse.CompliancePack.Scope.TagsScopeItem;
+import com.aliyuncs.config.model.v20200907.GetCompliancePackResponse.CompliancePack.TagsItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -99,6 +100,16 @@ public class GetCompliancePackResponseUnmarshaller {
 			configRules.add(configRulesItem);
 		}
 		compliancePack.setConfigRules(configRules);
+
+		List<TagsItem> tags = new ArrayList<TagsItem>();
+		for (int i = 0; i < _ctx.lengthValue("GetCompliancePackResponse.CompliancePack.Tags.Length"); i++) {
+			TagsItem tagsItem = new TagsItem();
+			tagsItem.setTagKey(_ctx.stringValue("GetCompliancePackResponse.CompliancePack.Tags["+ i +"].TagKey"));
+			tagsItem.setTagValue(_ctx.stringValue("GetCompliancePackResponse.CompliancePack.Tags["+ i +"].TagValue"));
+
+			tags.add(tagsItem);
+		}
+		compliancePack.setTags(tags);
 		getCompliancePackResponse.setCompliancePack(compliancePack);
 	 
 	 	return getCompliancePackResponse;

@@ -67,6 +67,8 @@ public class GetCompliancePackResponse extends AcsResponse {
 
 		private List<ConfigRulesItem> configRules;
 
+		private List<TagsItem> tags;
+
 		private Scope scope;
 
 		public String getStatus() {
@@ -147,6 +149,14 @@ public class GetCompliancePackResponse extends AcsResponse {
 
 		public void setConfigRules(List<ConfigRulesItem> configRules) {
 			this.configRules = configRules;
+		}
+
+		public List<TagsItem> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<TagsItem> tags) {
+			this.tags = tags;
 		}
 
 		public Scope getScope() {
@@ -260,6 +270,29 @@ public class GetCompliancePackResponse extends AcsResponse {
 				public void setParameterValue(String parameterValue) {
 					this.parameterValue = parameterValue;
 				}
+			}
+		}
+
+		public static class TagsItem {
+
+			private String tagKey;
+
+			private String tagValue;
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
+			}
+
+			public String getTagValue() {
+				return this.tagValue;
+			}
+
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
 			}
 		}
 

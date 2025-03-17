@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.config.model.v20200907.ListAggregateCompliancePacksResponse;
 import com.aliyuncs.config.model.v20200907.ListAggregateCompliancePacksResponse.CompliancePacksResult;
 import com.aliyuncs.config.model.v20200907.ListAggregateCompliancePacksResponse.CompliancePacksResult.CompliancePacksItem;
+import com.aliyuncs.config.model.v20200907.ListAggregateCompliancePacksResponse.CompliancePacksResult.CompliancePacksItem.TagsItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -46,6 +47,16 @@ public class ListAggregateCompliancePacksResponseUnmarshaller {
 			compliancePacksItem.setAggregatorId(_ctx.stringValue("ListAggregateCompliancePacksResponse.CompliancePacksResult.CompliancePacks["+ i +"].AggregatorId"));
 			compliancePacksItem.setCompliancePackTemplateId(_ctx.stringValue("ListAggregateCompliancePacksResponse.CompliancePacksResult.CompliancePacks["+ i +"].CompliancePackTemplateId"));
 			compliancePacksItem.setCreateTimestamp(_ctx.longValue("ListAggregateCompliancePacksResponse.CompliancePacksResult.CompliancePacks["+ i +"].CreateTimestamp"));
+
+			List<TagsItem> tags = new ArrayList<TagsItem>();
+			for (int j = 0; j < _ctx.lengthValue("ListAggregateCompliancePacksResponse.CompliancePacksResult.CompliancePacks["+ i +"].Tags.Length"); j++) {
+				TagsItem tagsItem = new TagsItem();
+				tagsItem.setTagKey(_ctx.stringValue("ListAggregateCompliancePacksResponse.CompliancePacksResult.CompliancePacks["+ i +"].Tags["+ j +"].TagKey"));
+				tagsItem.setTagValue(_ctx.stringValue("ListAggregateCompliancePacksResponse.CompliancePacksResult.CompliancePacks["+ i +"].Tags["+ j +"].TagValue"));
+
+				tags.add(tagsItem);
+			}
+			compliancePacksItem.setTags(tags);
 
 			compliancePacks.add(compliancePacksItem);
 		}

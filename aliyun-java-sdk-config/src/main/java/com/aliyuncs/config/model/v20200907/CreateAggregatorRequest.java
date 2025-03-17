@@ -36,6 +36,8 @@ public class CreateAggregatorRequest extends RpcAcsRequest<CreateAggregatorRespo
 
 	private String folderId;
 
+	private String tag;
+
 	private String aggregatorType;
 
 	@SerializedName("aggregatorAccounts")
@@ -90,6 +92,17 @@ public class CreateAggregatorRequest extends RpcAcsRequest<CreateAggregatorRespo
 		this.folderId = folderId;
 		if(folderId != null){
 			putBodyParameter("FolderId", folderId);
+		}
+	}
+
+	public String getTag() {
+		return this.tag;
+	}
+
+	public void setTag(String tag) {
+		this.tag = tag;
+		if(tag != null){
+			putQueryParameter("Tag", tag);
 		}
 	}
 

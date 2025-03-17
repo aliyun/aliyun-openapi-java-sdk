@@ -28,6 +28,8 @@ public class ListAggregatorsRequest extends RpcAcsRequest<ListAggregatorsRespons
 	private String nextToken;
 
 	private Integer maxResults;
+
+	private String tag;
 	public ListAggregatorsRequest() {
 		super("Config", "2020-09-07", "ListAggregators", "config");
 		setMethod(MethodType.POST);
@@ -56,6 +58,17 @@ public class ListAggregatorsRequest extends RpcAcsRequest<ListAggregatorsRespons
 		this.maxResults = maxResults;
 		if(maxResults != null){
 			putQueryParameter("MaxResults", maxResults.toString());
+		}
+	}
+
+	public String getTag() {
+		return this.tag;
+	}
+
+	public void setTag(String tag) {
+		this.tag = tag;
+		if(tag != null){
+			putQueryParameter("Tag", tag);
 		}
 	}
 

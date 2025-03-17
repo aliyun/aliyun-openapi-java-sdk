@@ -96,15 +96,21 @@ public class GetAggregateConfigRuleResponse extends AcsResponse {
 
 		private String excludeAccountIdsScope;
 
-		private String accountIdsScope;
+		private String resourceNameScope;
 
 		private Long accountId;
 
 		private String serviceChannel;
 
+		private String extendContent;
+
+		private String accountIdsScope;
+
 		private List<TagsScopeItem> tagsScope;
 
 		private List<ExcludeTagsScopeItem> excludeTagsScope;
+
+		private List<TagsItem> tags;
 
 		private Source source;
 
@@ -310,12 +316,12 @@ public class GetAggregateConfigRuleResponse extends AcsResponse {
 			this.excludeAccountIdsScope = excludeAccountIdsScope;
 		}
 
-		public String getAccountIdsScope() {
-			return this.accountIdsScope;
+		public String getResourceNameScope() {
+			return this.resourceNameScope;
 		}
 
-		public void setAccountIdsScope(String accountIdsScope) {
-			this.accountIdsScope = accountIdsScope;
+		public void setResourceNameScope(String resourceNameScope) {
+			this.resourceNameScope = resourceNameScope;
 		}
 
 		public Long getAccountId() {
@@ -334,6 +340,22 @@ public class GetAggregateConfigRuleResponse extends AcsResponse {
 			this.serviceChannel = serviceChannel;
 		}
 
+		public String getExtendContent() {
+			return this.extendContent;
+		}
+
+		public void setExtendContent(String extendContent) {
+			this.extendContent = extendContent;
+		}
+
+		public String getAccountIdsScope() {
+			return this.accountIdsScope;
+		}
+
+		public void setAccountIdsScope(String accountIdsScope) {
+			this.accountIdsScope = accountIdsScope;
+		}
+
 		public List<TagsScopeItem> getTagsScope() {
 			return this.tagsScope;
 		}
@@ -348,6 +370,14 @@ public class GetAggregateConfigRuleResponse extends AcsResponse {
 
 		public void setExcludeTagsScope(List<ExcludeTagsScopeItem> excludeTagsScope) {
 			this.excludeTagsScope = excludeTagsScope;
+		}
+
+		public List<TagsItem> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<TagsItem> tags) {
+			this.tags = tags;
 		}
 
 		public Source getSource() {
@@ -422,6 +452,29 @@ public class GetAggregateConfigRuleResponse extends AcsResponse {
 		}
 
 		public static class ExcludeTagsScopeItem {
+
+			private String tagKey;
+
+			private String tagValue;
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
+			}
+
+			public String getTagValue() {
+				return this.tagValue;
+			}
+
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
+			}
+		}
+
+		public static class TagsItem {
 
 			private String tagKey;
 

@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.config.model.v20200907.ListAggregatorsResponse;
 import com.aliyuncs.config.model.v20200907.ListAggregatorsResponse.AggregatorsResult;
 import com.aliyuncs.config.model.v20200907.ListAggregatorsResponse.AggregatorsResult.AggregatorsItem;
+import com.aliyuncs.config.model.v20200907.ListAggregatorsResponse.AggregatorsResult.AggregatorsItem.TagsItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -45,6 +46,16 @@ public class ListAggregatorsResponseUnmarshaller {
 			aggregatorsItem.setAccountId(_ctx.longValue("ListAggregatorsResponse.AggregatorsResult.Aggregators["+ i +"].AccountId"));
 			aggregatorsItem.setAggregatorId(_ctx.stringValue("ListAggregatorsResponse.AggregatorsResult.Aggregators["+ i +"].AggregatorId"));
 			aggregatorsItem.setFolderId(_ctx.stringValue("ListAggregatorsResponse.AggregatorsResult.Aggregators["+ i +"].FolderId"));
+
+			List<TagsItem> tags = new ArrayList<TagsItem>();
+			for (int j = 0; j < _ctx.lengthValue("ListAggregatorsResponse.AggregatorsResult.Aggregators["+ i +"].Tags.Length"); j++) {
+				TagsItem tagsItem = new TagsItem();
+				tagsItem.setTagKey(_ctx.stringValue("ListAggregatorsResponse.AggregatorsResult.Aggregators["+ i +"].Tags["+ j +"].TagKey"));
+				tagsItem.setTagValue(_ctx.stringValue("ListAggregatorsResponse.AggregatorsResult.Aggregators["+ i +"].Tags["+ j +"].TagValue"));
+
+				tags.add(tagsItem);
+			}
+			aggregatorsItem.setTags(tags);
 
 			aggregators.add(aggregatorsItem);
 		}

@@ -31,6 +31,8 @@ public class ListAggregateCompliancePacksRequest extends RpcAcsRequest<ListAggre
 
 	private Integer pageSize;
 
+	private String tag;
+
 	private String status;
 	public ListAggregateCompliancePacksRequest() {
 		super("Config", "2020-09-07", "ListAggregateCompliancePacks", "config");
@@ -71,6 +73,17 @@ public class ListAggregateCompliancePacksRequest extends RpcAcsRequest<ListAggre
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getTag() {
+		return this.tag;
+	}
+
+	public void setTag(String tag) {
+		this.tag = tag;
+		if(tag != null){
+			putQueryParameter("Tag", tag);
 		}
 	}
 

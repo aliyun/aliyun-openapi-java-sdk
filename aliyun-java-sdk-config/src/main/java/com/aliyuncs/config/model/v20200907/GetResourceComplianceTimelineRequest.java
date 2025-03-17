@@ -25,15 +25,15 @@ import com.aliyuncs.config.Endpoint;
 public class GetResourceComplianceTimelineRequest extends RpcAcsRequest<GetResourceComplianceTimelineResponse> {
 	   
 
+	private Long startTime;
+
+	private String nextToken;
+
 	private String resourceId;
 
 	private Long endTime;
 
-	private Long startTime;
-
 	private String resourceType;
-
-	private String nextToken;
 
 	private Integer maxResults;
 
@@ -45,6 +45,28 @@ public class GetResourceComplianceTimelineRequest extends RpcAcsRequest<GetResou
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Long getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(Long startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime.toString());
+		}
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
+		}
 	}
 
 	public String getResourceId() {
@@ -69,17 +91,6 @@ public class GetResourceComplianceTimelineRequest extends RpcAcsRequest<GetResou
 		}
 	}
 
-	public Long getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(Long startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime.toString());
-		}
-	}
-
 	public String getResourceType() {
 		return this.resourceType;
 	}
@@ -88,17 +99,6 @@ public class GetResourceComplianceTimelineRequest extends RpcAcsRequest<GetResou
 		this.resourceType = resourceType;
 		if(resourceType != null){
 			putQueryParameter("ResourceType", resourceType);
-		}
-	}
-
-	public String getNextToken() {
-		return this.nextToken;
-	}
-
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
-		if(nextToken != null){
-			putQueryParameter("NextToken", nextToken);
 		}
 	}
 

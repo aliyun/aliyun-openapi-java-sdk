@@ -25,17 +25,17 @@ import com.aliyuncs.config.Endpoint;
 public class ListResourceEvaluationResultsRequest extends RpcAcsRequest<ListResourceEvaluationResultsResponse> {
 	   
 
+	private String nextToken;
+
+	private String complianceType;
+
 	private String resourceId;
 
 	private String resourceType;
 
-	private String nextToken;
-
 	private Integer maxResults;
 
 	private String region;
-
-	private String complianceType;
 	public ListResourceEvaluationResultsRequest() {
 		super("Config", "2020-09-07", "ListResourceEvaluationResults", "config");
 		setMethod(MethodType.POST);
@@ -43,6 +43,28 @@ public class ListResourceEvaluationResultsRequest extends RpcAcsRequest<ListReso
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
+		}
+	}
+
+	public String getComplianceType() {
+		return this.complianceType;
+	}
+
+	public void setComplianceType(String complianceType) {
+		this.complianceType = complianceType;
+		if(complianceType != null){
+			putQueryParameter("ComplianceType", complianceType);
+		}
 	}
 
 	public String getResourceId() {
@@ -67,17 +89,6 @@ public class ListResourceEvaluationResultsRequest extends RpcAcsRequest<ListReso
 		}
 	}
 
-	public String getNextToken() {
-		return this.nextToken;
-	}
-
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
-		if(nextToken != null){
-			putQueryParameter("NextToken", nextToken);
-		}
-	}
-
 	public Integer getMaxResults() {
 		return this.maxResults;
 	}
@@ -97,17 +108,6 @@ public class ListResourceEvaluationResultsRequest extends RpcAcsRequest<ListReso
 		this.region = region;
 		if(region != null){
 			putQueryParameter("Region", region);
-		}
-	}
-
-	public String getComplianceType() {
-		return this.complianceType;
-	}
-
-	public void setComplianceType(String complianceType) {
-		this.complianceType = complianceType;
-		if(complianceType != null){
-			putQueryParameter("ComplianceType", complianceType);
 		}
 	}
 

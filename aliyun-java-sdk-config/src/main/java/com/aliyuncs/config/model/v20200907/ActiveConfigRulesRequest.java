@@ -27,6 +27,8 @@ public class ActiveConfigRulesRequest extends RpcAcsRequest<ActiveConfigRulesRes
 	   
 
 	private String configRuleIds;
+
+	private String compliancePackId;
 	public ActiveConfigRulesRequest() {
 		super("Config", "2020-09-07", "ActiveConfigRules", "config");
 		setProtocol(ProtocolType.HTTPS);
@@ -45,6 +47,17 @@ public class ActiveConfigRulesRequest extends RpcAcsRequest<ActiveConfigRulesRes
 		this.configRuleIds = configRuleIds;
 		if(configRuleIds != null){
 			putQueryParameter("ConfigRuleIds", configRuleIds);
+		}
+	}
+
+	public String getCompliancePackId() {
+		return this.compliancePackId;
+	}
+
+	public void setCompliancePackId(String compliancePackId) {
+		this.compliancePackId = compliancePackId;
+		if(compliancePackId != null){
+			putQueryParameter("CompliancePackId", compliancePackId);
 		}
 	}
 

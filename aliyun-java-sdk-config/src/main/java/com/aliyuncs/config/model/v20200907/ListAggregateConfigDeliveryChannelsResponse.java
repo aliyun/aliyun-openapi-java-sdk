@@ -47,76 +47,76 @@ public class ListAggregateConfigDeliveryChannelsResponse extends AcsResponse {
 
 	public static class DeliveryChannel {
 
-		private Long accountId;
+		private Integer status;
 
-		private String aggregatorId;
+		private String deliveryChannelName;
 
-		private Boolean compliantSnapshot;
+		private String deliveryChannelId;
 
-		private Boolean configurationItemChangeNotification;
+		private String deliveryChannelType;
 
-		private Boolean configurationSnapshot;
+		private String deliveryChannelTargetArn;
 
 		private String deliveryChannelAssumeRoleArn;
 
 		private String deliveryChannelCondition;
 
-		private String deliveryChannelId;
-
-		private String deliveryChannelName;
-
-		private String deliveryChannelTargetArn;
-
-		private String deliveryChannelType;
-
-		private String deliverySnapshotTime;
+		private String oversizedDataOSSTargetArn;
 
 		private String description;
 
+		private Boolean compliantSnapshot;
+
+		private Boolean configurationSnapshot;
+
+		private Boolean configurationItemChangeNotification;
+
 		private Boolean nonCompliantNotification;
 
-		private String oversizedDataOSSTargetArn;
+		private String aggregatorId;
 
-		private Integer status;
+		private Long accountId;
 
-		public Long getAccountId() {
-			return this.accountId;
+		private String deliverySnapshotTime;
+
+		public Integer getStatus() {
+			return this.status;
 		}
 
-		public void setAccountId(Long accountId) {
-			this.accountId = accountId;
+		public void setStatus(Integer status) {
+			this.status = status;
 		}
 
-		public String getAggregatorId() {
-			return this.aggregatorId;
+		public String getDeliveryChannelName() {
+			return this.deliveryChannelName;
 		}
 
-		public void setAggregatorId(String aggregatorId) {
-			this.aggregatorId = aggregatorId;
+		public void setDeliveryChannelName(String deliveryChannelName) {
+			this.deliveryChannelName = deliveryChannelName;
 		}
 
-		public Boolean getCompliantSnapshot() {
-			return this.compliantSnapshot;
+		public String getDeliveryChannelId() {
+			return this.deliveryChannelId;
 		}
 
-		public void setCompliantSnapshot(Boolean compliantSnapshot) {
-			this.compliantSnapshot = compliantSnapshot;
+		public void setDeliveryChannelId(String deliveryChannelId) {
+			this.deliveryChannelId = deliveryChannelId;
 		}
 
-		public Boolean getConfigurationItemChangeNotification() {
-			return this.configurationItemChangeNotification;
+		public String getDeliveryChannelType() {
+			return this.deliveryChannelType;
 		}
 
-		public void setConfigurationItemChangeNotification(Boolean configurationItemChangeNotification) {
-			this.configurationItemChangeNotification = configurationItemChangeNotification;
+		public void setDeliveryChannelType(String deliveryChannelType) {
+			this.deliveryChannelType = deliveryChannelType;
 		}
 
-		public Boolean getConfigurationSnapshot() {
-			return this.configurationSnapshot;
+		public String getDeliveryChannelTargetArn() {
+			return this.deliveryChannelTargetArn;
 		}
 
-		public void setConfigurationSnapshot(Boolean configurationSnapshot) {
-			this.configurationSnapshot = configurationSnapshot;
+		public void setDeliveryChannelTargetArn(String deliveryChannelTargetArn) {
+			this.deliveryChannelTargetArn = deliveryChannelTargetArn;
 		}
 
 		public String getDeliveryChannelAssumeRoleArn() {
@@ -135,44 +135,12 @@ public class ListAggregateConfigDeliveryChannelsResponse extends AcsResponse {
 			this.deliveryChannelCondition = deliveryChannelCondition;
 		}
 
-		public String getDeliveryChannelId() {
-			return this.deliveryChannelId;
+		public String getOversizedDataOSSTargetArn() {
+			return this.oversizedDataOSSTargetArn;
 		}
 
-		public void setDeliveryChannelId(String deliveryChannelId) {
-			this.deliveryChannelId = deliveryChannelId;
-		}
-
-		public String getDeliveryChannelName() {
-			return this.deliveryChannelName;
-		}
-
-		public void setDeliveryChannelName(String deliveryChannelName) {
-			this.deliveryChannelName = deliveryChannelName;
-		}
-
-		public String getDeliveryChannelTargetArn() {
-			return this.deliveryChannelTargetArn;
-		}
-
-		public void setDeliveryChannelTargetArn(String deliveryChannelTargetArn) {
-			this.deliveryChannelTargetArn = deliveryChannelTargetArn;
-		}
-
-		public String getDeliveryChannelType() {
-			return this.deliveryChannelType;
-		}
-
-		public void setDeliveryChannelType(String deliveryChannelType) {
-			this.deliveryChannelType = deliveryChannelType;
-		}
-
-		public String getDeliverySnapshotTime() {
-			return this.deliverySnapshotTime;
-		}
-
-		public void setDeliverySnapshotTime(String deliverySnapshotTime) {
-			this.deliverySnapshotTime = deliverySnapshotTime;
+		public void setOversizedDataOSSTargetArn(String oversizedDataOSSTargetArn) {
+			this.oversizedDataOSSTargetArn = oversizedDataOSSTargetArn;
 		}
 
 		public String getDescription() {
@@ -183,6 +151,30 @@ public class ListAggregateConfigDeliveryChannelsResponse extends AcsResponse {
 			this.description = description;
 		}
 
+		public Boolean getCompliantSnapshot() {
+			return this.compliantSnapshot;
+		}
+
+		public void setCompliantSnapshot(Boolean compliantSnapshot) {
+			this.compliantSnapshot = compliantSnapshot;
+		}
+
+		public Boolean getConfigurationSnapshot() {
+			return this.configurationSnapshot;
+		}
+
+		public void setConfigurationSnapshot(Boolean configurationSnapshot) {
+			this.configurationSnapshot = configurationSnapshot;
+		}
+
+		public Boolean getConfigurationItemChangeNotification() {
+			return this.configurationItemChangeNotification;
+		}
+
+		public void setConfigurationItemChangeNotification(Boolean configurationItemChangeNotification) {
+			this.configurationItemChangeNotification = configurationItemChangeNotification;
+		}
+
 		public Boolean getNonCompliantNotification() {
 			return this.nonCompliantNotification;
 		}
@@ -191,20 +183,28 @@ public class ListAggregateConfigDeliveryChannelsResponse extends AcsResponse {
 			this.nonCompliantNotification = nonCompliantNotification;
 		}
 
-		public String getOversizedDataOSSTargetArn() {
-			return this.oversizedDataOSSTargetArn;
+		public String getAggregatorId() {
+			return this.aggregatorId;
 		}
 
-		public void setOversizedDataOSSTargetArn(String oversizedDataOSSTargetArn) {
-			this.oversizedDataOSSTargetArn = oversizedDataOSSTargetArn;
+		public void setAggregatorId(String aggregatorId) {
+			this.aggregatorId = aggregatorId;
 		}
 
-		public Integer getStatus() {
-			return this.status;
+		public Long getAccountId() {
+			return this.accountId;
 		}
 
-		public void setStatus(Integer status) {
-			this.status = status;
+		public void setAccountId(Long accountId) {
+			this.accountId = accountId;
+		}
+
+		public String getDeliverySnapshotTime() {
+			return this.deliverySnapshotTime;
+		}
+
+		public void setDeliverySnapshotTime(String deliverySnapshotTime) {
+			this.deliverySnapshotTime = deliverySnapshotTime;
 		}
 	}
 

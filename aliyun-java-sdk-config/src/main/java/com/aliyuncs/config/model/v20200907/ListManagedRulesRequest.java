@@ -25,15 +25,17 @@ import com.aliyuncs.config.Endpoint;
 public class ListManagedRulesRequest extends RpcAcsRequest<ListManagedRulesResponse> {
 	   
 
-	private String resourceTypes;
-
-	private Integer riskLevel;
-
 	private Integer pageNumber;
+
+	private String filterType;
 
 	private Integer pageSize;
 
 	private String keyword;
+
+	private String resourceTypes;
+
+	private Integer riskLevel;
 	public ListManagedRulesRequest() {
 		super("Config", "2020-09-07", "ListManagedRules", "config");
 		setMethod(MethodType.POST);
@@ -41,28 +43,6 @@ public class ListManagedRulesRequest extends RpcAcsRequest<ListManagedRulesRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getResourceTypes() {
-		return this.resourceTypes;
-	}
-
-	public void setResourceTypes(String resourceTypes) {
-		this.resourceTypes = resourceTypes;
-		if(resourceTypes != null){
-			putQueryParameter("ResourceTypes", resourceTypes);
-		}
-	}
-
-	public Integer getRiskLevel() {
-		return this.riskLevel;
-	}
-
-	public void setRiskLevel(Integer riskLevel) {
-		this.riskLevel = riskLevel;
-		if(riskLevel != null){
-			putQueryParameter("RiskLevel", riskLevel.toString());
-		}
 	}
 
 	public Integer getPageNumber() {
@@ -73,6 +53,17 @@ public class ListManagedRulesRequest extends RpcAcsRequest<ListManagedRulesRespo
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getFilterType() {
+		return this.filterType;
+	}
+
+	public void setFilterType(String filterType) {
+		this.filterType = filterType;
+		if(filterType != null){
+			putQueryParameter("FilterType", filterType);
 		}
 	}
 
@@ -95,6 +86,28 @@ public class ListManagedRulesRequest extends RpcAcsRequest<ListManagedRulesRespo
 		this.keyword = keyword;
 		if(keyword != null){
 			putQueryParameter("Keyword", keyword);
+		}
+	}
+
+	public String getResourceTypes() {
+		return this.resourceTypes;
+	}
+
+	public void setResourceTypes(String resourceTypes) {
+		this.resourceTypes = resourceTypes;
+		if(resourceTypes != null){
+			putQueryParameter("ResourceTypes", resourceTypes);
+		}
+	}
+
+	public Integer getRiskLevel() {
+		return this.riskLevel;
+	}
+
+	public void setRiskLevel(Integer riskLevel) {
+		this.riskLevel = riskLevel;
+		if(riskLevel != null){
+			putQueryParameter("RiskLevel", riskLevel.toString());
 		}
 	}
 

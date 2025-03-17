@@ -107,6 +107,8 @@ public class ListAggregateCompliancePacksResponse extends AcsResponse {
 
 			private Long createTimestamp;
 
+			private List<TagsItem> tags;
+
 			public String getStatus() {
 				return this.status;
 			}
@@ -177,6 +179,37 @@ public class ListAggregateCompliancePacksResponse extends AcsResponse {
 
 			public void setCreateTimestamp(Long createTimestamp) {
 				this.createTimestamp = createTimestamp;
+			}
+
+			public List<TagsItem> getTags() {
+				return this.tags;
+			}
+
+			public void setTags(List<TagsItem> tags) {
+				this.tags = tags;
+			}
+
+			public static class TagsItem {
+
+				private String tagKey;
+
+				private String tagValue;
+
+				public String getTagKey() {
+					return this.tagKey;
+				}
+
+				public void setTagKey(String tagKey) {
+					this.tagKey = tagKey;
+				}
+
+				public String getTagValue() {
+					return this.tagValue;
+				}
+
+				public void setTagValue(String tagValue) {
+					this.tagValue = tagValue;
+				}
 			}
 		}
 	}

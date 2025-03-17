@@ -57,6 +57,8 @@ public class ListIntegratedServiceResponse extends AcsResponse {
 
 		private String integratedTypes;
 
+		private String aggregatorDeliveryDataType;
+
 		public Long getAccountId() {
 			return this.accountId;
 		}
@@ -95,6 +97,14 @@ public class ListIntegratedServiceResponse extends AcsResponse {
 
 		public void setIntegratedTypes(String integratedTypes) {
 			this.integratedTypes = integratedTypes;
+		}
+
+		public String getAggregatorDeliveryDataType() {
+			return this.aggregatorDeliveryDataType;
+		}
+
+		public void setAggregatorDeliveryDataType(String aggregatorDeliveryDataType) {
+			this.aggregatorDeliveryDataType = aggregatorDeliveryDataType;
 		}
 	}
 

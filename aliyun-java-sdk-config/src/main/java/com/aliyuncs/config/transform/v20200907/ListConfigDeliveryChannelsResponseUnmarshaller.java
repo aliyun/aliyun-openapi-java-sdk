@@ -31,21 +31,21 @@ public class ListConfigDeliveryChannelsResponseUnmarshaller {
 		List<DeliveryChannel> deliveryChannels = new ArrayList<DeliveryChannel>();
 		for (int i = 0; i < _ctx.lengthValue("ListConfigDeliveryChannelsResponse.DeliveryChannels.Length"); i++) {
 			DeliveryChannel deliveryChannel = new DeliveryChannel();
-			deliveryChannel.setAccountId(_ctx.longValue("ListConfigDeliveryChannelsResponse.DeliveryChannels["+ i +"].AccountId"));
-			deliveryChannel.setCompliantSnapshot(_ctx.booleanValue("ListConfigDeliveryChannelsResponse.DeliveryChannels["+ i +"].CompliantSnapshot"));
-			deliveryChannel.setConfigurationItemChangeNotification(_ctx.booleanValue("ListConfigDeliveryChannelsResponse.DeliveryChannels["+ i +"].ConfigurationItemChangeNotification"));
-			deliveryChannel.setConfigurationSnapshot(_ctx.booleanValue("ListConfigDeliveryChannelsResponse.DeliveryChannels["+ i +"].ConfigurationSnapshot"));
+			deliveryChannel.setStatus(_ctx.integerValue("ListConfigDeliveryChannelsResponse.DeliveryChannels["+ i +"].Status"));
+			deliveryChannel.setDeliveryChannelName(_ctx.stringValue("ListConfigDeliveryChannelsResponse.DeliveryChannels["+ i +"].DeliveryChannelName"));
+			deliveryChannel.setDeliveryChannelId(_ctx.stringValue("ListConfigDeliveryChannelsResponse.DeliveryChannels["+ i +"].DeliveryChannelId"));
+			deliveryChannel.setDeliveryChannelType(_ctx.stringValue("ListConfigDeliveryChannelsResponse.DeliveryChannels["+ i +"].DeliveryChannelType"));
+			deliveryChannel.setDeliveryChannelTargetArn(_ctx.stringValue("ListConfigDeliveryChannelsResponse.DeliveryChannels["+ i +"].DeliveryChannelTargetArn"));
 			deliveryChannel.setDeliveryChannelAssumeRoleArn(_ctx.stringValue("ListConfigDeliveryChannelsResponse.DeliveryChannels["+ i +"].DeliveryChannelAssumeRoleArn"));
 			deliveryChannel.setDeliveryChannelCondition(_ctx.stringValue("ListConfigDeliveryChannelsResponse.DeliveryChannels["+ i +"].DeliveryChannelCondition"));
-			deliveryChannel.setDeliveryChannelId(_ctx.stringValue("ListConfigDeliveryChannelsResponse.DeliveryChannels["+ i +"].DeliveryChannelId"));
-			deliveryChannel.setDeliveryChannelName(_ctx.stringValue("ListConfigDeliveryChannelsResponse.DeliveryChannels["+ i +"].DeliveryChannelName"));
-			deliveryChannel.setDeliveryChannelTargetArn(_ctx.stringValue("ListConfigDeliveryChannelsResponse.DeliveryChannels["+ i +"].DeliveryChannelTargetArn"));
-			deliveryChannel.setDeliveryChannelType(_ctx.stringValue("ListConfigDeliveryChannelsResponse.DeliveryChannels["+ i +"].DeliveryChannelType"));
-			deliveryChannel.setDeliverySnapshotTime(_ctx.stringValue("ListConfigDeliveryChannelsResponse.DeliveryChannels["+ i +"].DeliverySnapshotTime"));
-			deliveryChannel.setDescription(_ctx.stringValue("ListConfigDeliveryChannelsResponse.DeliveryChannels["+ i +"].Description"));
-			deliveryChannel.setNonCompliantNotification(_ctx.booleanValue("ListConfigDeliveryChannelsResponse.DeliveryChannels["+ i +"].NonCompliantNotification"));
 			deliveryChannel.setOversizedDataOSSTargetArn(_ctx.stringValue("ListConfigDeliveryChannelsResponse.DeliveryChannels["+ i +"].OversizedDataOSSTargetArn"));
-			deliveryChannel.setStatus(_ctx.integerValue("ListConfigDeliveryChannelsResponse.DeliveryChannels["+ i +"].Status"));
+			deliveryChannel.setDescription(_ctx.stringValue("ListConfigDeliveryChannelsResponse.DeliveryChannels["+ i +"].Description"));
+			deliveryChannel.setCompliantSnapshot(_ctx.booleanValue("ListConfigDeliveryChannelsResponse.DeliveryChannels["+ i +"].CompliantSnapshot"));
+			deliveryChannel.setConfigurationSnapshot(_ctx.booleanValue("ListConfigDeliveryChannelsResponse.DeliveryChannels["+ i +"].ConfigurationSnapshot"));
+			deliveryChannel.setConfigurationItemChangeNotification(_ctx.booleanValue("ListConfigDeliveryChannelsResponse.DeliveryChannels["+ i +"].ConfigurationItemChangeNotification"));
+			deliveryChannel.setNonCompliantNotification(_ctx.booleanValue("ListConfigDeliveryChannelsResponse.DeliveryChannels["+ i +"].NonCompliantNotification"));
+			deliveryChannel.setAccountId(_ctx.longValue("ListConfigDeliveryChannelsResponse.DeliveryChannels["+ i +"].AccountId"));
+			deliveryChannel.setDeliverySnapshotTime(_ctx.stringValue("ListConfigDeliveryChannelsResponse.DeliveryChannels["+ i +"].DeliverySnapshotTime"));
 
 			deliveryChannels.add(deliveryChannel);
 		}

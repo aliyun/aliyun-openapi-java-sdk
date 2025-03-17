@@ -25,17 +25,17 @@ import com.aliyuncs.config.Endpoint;
 public class ListResourceRelationsRequest extends RpcAcsRequest<ListResourceRelationsResponse> {
 	   
 
-	private String targetResourceType;
-
-	private String resourceId;
-
 	private String targetResourceId;
-
-	private String resourceType;
 
 	private String relationType;
 
 	private String nextToken;
+
+	private String targetResourceType;
+
+	private String resourceId;
+
+	private String resourceType;
 
 	private Integer maxResults;
 
@@ -47,6 +47,39 @@ public class ListResourceRelationsRequest extends RpcAcsRequest<ListResourceRela
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getTargetResourceId() {
+		return this.targetResourceId;
+	}
+
+	public void setTargetResourceId(String targetResourceId) {
+		this.targetResourceId = targetResourceId;
+		if(targetResourceId != null){
+			putQueryParameter("TargetResourceId", targetResourceId);
+		}
+	}
+
+	public String getRelationType() {
+		return this.relationType;
+	}
+
+	public void setRelationType(String relationType) {
+		this.relationType = relationType;
+		if(relationType != null){
+			putQueryParameter("RelationType", relationType);
+		}
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
+		}
 	}
 
 	public String getTargetResourceType() {
@@ -71,17 +104,6 @@ public class ListResourceRelationsRequest extends RpcAcsRequest<ListResourceRela
 		}
 	}
 
-	public String getTargetResourceId() {
-		return this.targetResourceId;
-	}
-
-	public void setTargetResourceId(String targetResourceId) {
-		this.targetResourceId = targetResourceId;
-		if(targetResourceId != null){
-			putQueryParameter("TargetResourceId", targetResourceId);
-		}
-	}
-
 	public String getResourceType() {
 		return this.resourceType;
 	}
@@ -90,28 +112,6 @@ public class ListResourceRelationsRequest extends RpcAcsRequest<ListResourceRela
 		this.resourceType = resourceType;
 		if(resourceType != null){
 			putQueryParameter("ResourceType", resourceType);
-		}
-	}
-
-	public String getRelationType() {
-		return this.relationType;
-	}
-
-	public void setRelationType(String relationType) {
-		this.relationType = relationType;
-		if(relationType != null){
-			putQueryParameter("RelationType", relationType);
-		}
-	}
-
-	public String getNextToken() {
-		return this.nextToken;
-	}
-
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
-		if(nextToken != null){
-			putQueryParameter("NextToken", nextToken);
 		}
 	}
 

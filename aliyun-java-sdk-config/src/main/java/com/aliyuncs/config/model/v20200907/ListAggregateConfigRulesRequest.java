@@ -33,6 +33,10 @@ public class ListAggregateConfigRulesRequest extends RpcAcsRequest<ListAggregate
 
 	private Integer pageSize;
 
+	private String compliancePackId;
+
+	private String tag;
+
 	private String keyword;
 
 	private String complianceType;
@@ -92,6 +96,28 @@ public class ListAggregateConfigRulesRequest extends RpcAcsRequest<ListAggregate
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getCompliancePackId() {
+		return this.compliancePackId;
+	}
+
+	public void setCompliancePackId(String compliancePackId) {
+		this.compliancePackId = compliancePackId;
+		if(compliancePackId != null){
+			putQueryParameter("CompliancePackId", compliancePackId);
+		}
+	}
+
+	public String getTag() {
+		return this.tag;
+	}
+
+	public void setTag(String tag) {
+		this.tag = tag;
+		if(tag != null){
+			putQueryParameter("Tag", tag);
 		}
 	}
 

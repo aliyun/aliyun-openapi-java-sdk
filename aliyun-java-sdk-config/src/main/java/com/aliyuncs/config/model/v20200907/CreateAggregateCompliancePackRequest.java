@@ -48,6 +48,8 @@ public class CreateAggregateCompliancePackRequest extends RpcAcsRequest<CreateAg
 
 	private String resourceIdsScope;
 
+	private String tag;
+
 	private Boolean defaultEnable;
 
 	@SerializedName("configRules")
@@ -182,6 +184,17 @@ public class CreateAggregateCompliancePackRequest extends RpcAcsRequest<CreateAg
 		this.resourceIdsScope = resourceIdsScope;
 		if(resourceIdsScope != null){
 			putBodyParameter("ResourceIdsScope", resourceIdsScope);
+		}
+	}
+
+	public String getTag() {
+		return this.tag;
+	}
+
+	public void setTag(String tag) {
+		this.tag = tag;
+		if(tag != null){
+			putQueryParameter("Tag", tag);
 		}
 	}
 

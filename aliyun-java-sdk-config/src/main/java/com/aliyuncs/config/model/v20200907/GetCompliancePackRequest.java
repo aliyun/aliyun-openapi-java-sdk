@@ -26,6 +26,8 @@ public class GetCompliancePackRequest extends RpcAcsRequest<GetCompliancePackRes
 	   
 
 	private String compliancePackId;
+
+	private String tag;
 	public GetCompliancePackRequest() {
 		super("Config", "2020-09-07", "GetCompliancePack", "config");
 		setMethod(MethodType.GET);
@@ -43,6 +45,17 @@ public class GetCompliancePackRequest extends RpcAcsRequest<GetCompliancePackRes
 		this.compliancePackId = compliancePackId;
 		if(compliancePackId != null){
 			putQueryParameter("CompliancePackId", compliancePackId);
+		}
+	}
+
+	public String getTag() {
+		return this.tag;
+	}
+
+	public void setTag(String tag) {
+		this.tag = tag;
+		if(tag != null){
+			putQueryParameter("Tag", tag);
 		}
 	}
 

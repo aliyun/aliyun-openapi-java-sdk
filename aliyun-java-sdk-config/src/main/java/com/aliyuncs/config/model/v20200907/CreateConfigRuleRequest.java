@@ -46,6 +46,8 @@ public class CreateConfigRuleRequest extends RpcAcsRequest<CreateConfigRuleRespo
 
 	private String resourceIdsScope;
 
+	private String tag;
+
 	private List<ExcludeTagsScope> excludeTagsScope;
 
 	private Integer riskLevel;
@@ -65,6 +67,8 @@ public class CreateConfigRuleRequest extends RpcAcsRequest<CreateConfigRuleRespo
 	private String configRuleName;
 
 	private String maximumExecutionFrequency;
+
+	private String extendContent;
 
 	private String excludeResourceIdsScope;
 	public CreateConfigRuleRequest() {
@@ -193,6 +197,17 @@ public class CreateConfigRuleRequest extends RpcAcsRequest<CreateConfigRuleRespo
 		}
 	}
 
+	public String getTag() {
+		return this.tag;
+	}
+
+	public void setTag(String tag) {
+		this.tag = tag;
+		if(tag != null){
+			putQueryParameter("Tag", tag);
+		}
+	}
+
 	public List<ExcludeTagsScope> getExcludeTagsScope() {
 		return this.excludeTagsScope;
 	}
@@ -312,6 +327,17 @@ public class CreateConfigRuleRequest extends RpcAcsRequest<CreateConfigRuleRespo
 		this.maximumExecutionFrequency = maximumExecutionFrequency;
 		if(maximumExecutionFrequency != null){
 			putBodyParameter("MaximumExecutionFrequency", maximumExecutionFrequency);
+		}
+	}
+
+	public String getExtendContent() {
+		return this.extendContent;
+	}
+
+	public void setExtendContent(String extendContent) {
+		this.extendContent = extendContent;
+		if(extendContent != null){
+			putBodyParameter("ExtendContent", extendContent);
 		}
 	}
 

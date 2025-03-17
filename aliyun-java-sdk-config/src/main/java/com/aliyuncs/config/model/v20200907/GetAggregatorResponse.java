@@ -67,6 +67,8 @@ public class GetAggregatorResponse extends AcsResponse {
 
 		private List<AggregatorAccountsItem> aggregatorAccounts;
 
+		private List<TagsItem> tags;
+
 		public String getAggregatorCreateTimestamp() {
 			return this.aggregatorCreateTimestamp;
 		}
@@ -147,6 +149,14 @@ public class GetAggregatorResponse extends AcsResponse {
 			this.aggregatorAccounts = aggregatorAccounts;
 		}
 
+		public List<TagsItem> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<TagsItem> tags) {
+			this.tags = tags;
+		}
+
 		public static class AggregatorAccountsItem {
 
 			private String recorderStatus;
@@ -187,6 +197,29 @@ public class GetAggregatorResponse extends AcsResponse {
 
 			public void setAccountName(String accountName) {
 				this.accountName = accountName;
+			}
+		}
+
+		public static class TagsItem {
+
+			private String tagKey;
+
+			private String tagValue;
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
+			}
+
+			public String getTagValue() {
+				return this.tagValue;
+			}
+
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
 			}
 		}
 	}

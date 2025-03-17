@@ -28,6 +28,7 @@ import com.aliyuncs.config.model.v20200907.GetAggregateConfigRuleResponse.Config
 import com.aliyuncs.config.model.v20200907.GetAggregateConfigRuleResponse.ConfigRule.Scope;
 import com.aliyuncs.config.model.v20200907.GetAggregateConfigRuleResponse.ConfigRule.Source;
 import com.aliyuncs.config.model.v20200907.GetAggregateConfigRuleResponse.ConfigRule.Source.SourceDetailsItem;
+import com.aliyuncs.config.model.v20200907.GetAggregateConfigRuleResponse.ConfigRule.TagsItem;
 import com.aliyuncs.config.model.v20200907.GetAggregateConfigRuleResponse.ConfigRule.TagsScopeItem;
 import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -64,9 +65,11 @@ public class GetAggregateConfigRuleResponseUnmarshaller {
 		configRule.setFolderIdsScope(_ctx.stringValue("GetAggregateConfigRuleResponse.ConfigRule.FolderIdsScope"));
 		configRule.setExcludeFolderIdsScope(_ctx.stringValue("GetAggregateConfigRuleResponse.ConfigRule.ExcludeFolderIdsScope"));
 		configRule.setExcludeAccountIdsScope(_ctx.stringValue("GetAggregateConfigRuleResponse.ConfigRule.ExcludeAccountIdsScope"));
-		configRule.setAccountIdsScope(_ctx.stringValue("GetAggregateConfigRuleResponse.ConfigRule.AccountIdsScope"));
+		configRule.setResourceNameScope(_ctx.stringValue("GetAggregateConfigRuleResponse.ConfigRule.ResourceNameScope"));
 		configRule.setAccountId(_ctx.longValue("GetAggregateConfigRuleResponse.ConfigRule.AccountId"));
 		configRule.setServiceChannel(_ctx.stringValue("GetAggregateConfigRuleResponse.ConfigRule.ServiceChannel"));
+		configRule.setExtendContent(_ctx.stringValue("GetAggregateConfigRuleResponse.ConfigRule.ExtendContent"));
+		configRule.setAccountIdsScope(_ctx.stringValue("GetAggregateConfigRuleResponse.ConfigRule.AccountIdsScope"));
 
 		Source source = new Source();
 		source.setOwner(_ctx.stringValue("GetAggregateConfigRuleResponse.ConfigRule.Source.Owner"));
@@ -168,6 +171,16 @@ public class GetAggregateConfigRuleResponseUnmarshaller {
 			excludeTagsScope.add(excludeTagsScopeItem);
 		}
 		configRule.setExcludeTagsScope(excludeTagsScope);
+
+		List<TagsItem> tags = new ArrayList<TagsItem>();
+		for (int i = 0; i < _ctx.lengthValue("GetAggregateConfigRuleResponse.ConfigRule.Tags.Length"); i++) {
+			TagsItem tagsItem = new TagsItem();
+			tagsItem.setTagKey(_ctx.stringValue("GetAggregateConfigRuleResponse.ConfigRule.Tags["+ i +"].TagKey"));
+			tagsItem.setTagValue(_ctx.stringValue("GetAggregateConfigRuleResponse.ConfigRule.Tags["+ i +"].TagValue"));
+
+			tags.add(tagsItem);
+		}
+		configRule.setTags(tags);
 		getAggregateConfigRuleResponse.setConfigRule(configRule);
 	 
 	 	return getAggregateConfigRuleResponse;

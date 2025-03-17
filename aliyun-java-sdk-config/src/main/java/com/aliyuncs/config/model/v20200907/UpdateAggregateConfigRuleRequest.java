@@ -50,6 +50,8 @@ public class UpdateAggregateConfigRuleRequest extends RpcAcsRequest<UpdateAggreg
 
 	private String resourceIdsScope;
 
+	private String tag;
+
 	private String excludeFolderIdsScope;
 
 	private List<ExcludeTagsScope> excludeTagsScope;
@@ -220,6 +222,17 @@ public class UpdateAggregateConfigRuleRequest extends RpcAcsRequest<UpdateAggreg
 		this.resourceIdsScope = resourceIdsScope;
 		if(resourceIdsScope != null){
 			putBodyParameter("ResourceIdsScope", resourceIdsScope);
+		}
+	}
+
+	public String getTag() {
+		return this.tag;
+	}
+
+	public void setTag(String tag) {
+		this.tag = tag;
+		if(tag != null){
+			putQueryParameter("Tag", tag);
 		}
 	}
 

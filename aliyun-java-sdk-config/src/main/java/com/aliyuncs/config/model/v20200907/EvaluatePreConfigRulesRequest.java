@@ -28,6 +28,8 @@ public class EvaluatePreConfigRulesRequest extends RpcAcsRequest<EvaluatePreConf
 	private Boolean enableManagedRules;
 
 	private String resourceEvaluateItems;
+
+	private String resourceTypeFormat;
 	public EvaluatePreConfigRulesRequest() {
 		super("Config", "2020-09-07", "EvaluatePreConfigRules", "config");
 		setMethod(MethodType.POST);
@@ -56,6 +58,17 @@ public class EvaluatePreConfigRulesRequest extends RpcAcsRequest<EvaluatePreConf
 		this.resourceEvaluateItems = resourceEvaluateItems;
 		if(resourceEvaluateItems != null){
 			putBodyParameter("ResourceEvaluateItems", resourceEvaluateItems);
+		}
+	}
+
+	public String getResourceTypeFormat() {
+		return this.resourceTypeFormat;
+	}
+
+	public void setResourceTypeFormat(String resourceTypeFormat) {
+		this.resourceTypeFormat = resourceTypeFormat;
+		if(resourceTypeFormat != null){
+			putBodyParameter("ResourceTypeFormat", resourceTypeFormat);
 		}
 	}
 

@@ -46,92 +46,44 @@ public class GetAggregateConfigDeliveryChannelResponse extends AcsResponse {
 
 	public static class DeliveryChannel {
 
-		private String accountId;
-
-		private String aggregatorId;
-
-		private Boolean compliantSnapshot;
-
-		private Boolean configurationItemChangeNotification;
-
-		private Boolean configurationSnapshot;
-
-		private String deliveryChannelAssumeRoleArn;
-
-		private String deliveryChannelCondition;
+		private Integer status;
 
 		private String deliveryChannelId;
 
 		private String deliveryChannelName;
 
-		private String deliveryChannelTargetArn;
-
 		private String deliveryChannelType;
 
-		private String deliverySnapshotTime;
+		private String deliveryChannelTargetArn;
 
-		private String description;
+		private String deliveryChannelAssumeRoleArn;
 
-		private Boolean nonCompliantNotification;
+		private String deliveryChannelCondition;
 
 		private String oversizedDataOSSTargetArn;
 
-		private Integer status;
+		private String description;
 
-		public String getAccountId() {
-			return this.accountId;
+		private Boolean compliantSnapshot;
+
+		private Boolean configurationItemChangeNotification;
+
+		private Boolean nonCompliantNotification;
+
+		private String aggregatorId;
+
+		private String accountId;
+
+		private String deliverySnapshotTime;
+
+		private Boolean configurationSnapshot;
+
+		public Integer getStatus() {
+			return this.status;
 		}
 
-		public void setAccountId(String accountId) {
-			this.accountId = accountId;
-		}
-
-		public String getAggregatorId() {
-			return this.aggregatorId;
-		}
-
-		public void setAggregatorId(String aggregatorId) {
-			this.aggregatorId = aggregatorId;
-		}
-
-		public Boolean getCompliantSnapshot() {
-			return this.compliantSnapshot;
-		}
-
-		public void setCompliantSnapshot(Boolean compliantSnapshot) {
-			this.compliantSnapshot = compliantSnapshot;
-		}
-
-		public Boolean getConfigurationItemChangeNotification() {
-			return this.configurationItemChangeNotification;
-		}
-
-		public void setConfigurationItemChangeNotification(Boolean configurationItemChangeNotification) {
-			this.configurationItemChangeNotification = configurationItemChangeNotification;
-		}
-
-		public Boolean getConfigurationSnapshot() {
-			return this.configurationSnapshot;
-		}
-
-		public void setConfigurationSnapshot(Boolean configurationSnapshot) {
-			this.configurationSnapshot = configurationSnapshot;
-		}
-
-		public String getDeliveryChannelAssumeRoleArn() {
-			return this.deliveryChannelAssumeRoleArn;
-		}
-
-		public void setDeliveryChannelAssumeRoleArn(String deliveryChannelAssumeRoleArn) {
-			this.deliveryChannelAssumeRoleArn = deliveryChannelAssumeRoleArn;
-		}
-
-		public String getDeliveryChannelCondition() {
-			return this.deliveryChannelCondition;
-		}
-
-		public void setDeliveryChannelCondition(String deliveryChannelCondition) {
-			this.deliveryChannelCondition = deliveryChannelCondition;
+		public void setStatus(Integer status) {
+			this.status = status;
 		}
 
 		public String getDeliveryChannelId() {
@@ -150,14 +102,6 @@ public class GetAggregateConfigDeliveryChannelResponse extends AcsResponse {
 			this.deliveryChannelName = deliveryChannelName;
 		}
 
-		public String getDeliveryChannelTargetArn() {
-			return this.deliveryChannelTargetArn;
-		}
-
-		public void setDeliveryChannelTargetArn(String deliveryChannelTargetArn) {
-			this.deliveryChannelTargetArn = deliveryChannelTargetArn;
-		}
-
 		public String getDeliveryChannelType() {
 			return this.deliveryChannelType;
 		}
@@ -166,28 +110,28 @@ public class GetAggregateConfigDeliveryChannelResponse extends AcsResponse {
 			this.deliveryChannelType = deliveryChannelType;
 		}
 
-		public String getDeliverySnapshotTime() {
-			return this.deliverySnapshotTime;
+		public String getDeliveryChannelTargetArn() {
+			return this.deliveryChannelTargetArn;
 		}
 
-		public void setDeliverySnapshotTime(String deliverySnapshotTime) {
-			this.deliverySnapshotTime = deliverySnapshotTime;
+		public void setDeliveryChannelTargetArn(String deliveryChannelTargetArn) {
+			this.deliveryChannelTargetArn = deliveryChannelTargetArn;
 		}
 
-		public String getDescription() {
-			return this.description;
+		public String getDeliveryChannelAssumeRoleArn() {
+			return this.deliveryChannelAssumeRoleArn;
 		}
 
-		public void setDescription(String description) {
-			this.description = description;
+		public void setDeliveryChannelAssumeRoleArn(String deliveryChannelAssumeRoleArn) {
+			this.deliveryChannelAssumeRoleArn = deliveryChannelAssumeRoleArn;
 		}
 
-		public Boolean getNonCompliantNotification() {
-			return this.nonCompliantNotification;
+		public String getDeliveryChannelCondition() {
+			return this.deliveryChannelCondition;
 		}
 
-		public void setNonCompliantNotification(Boolean nonCompliantNotification) {
-			this.nonCompliantNotification = nonCompliantNotification;
+		public void setDeliveryChannelCondition(String deliveryChannelCondition) {
+			this.deliveryChannelCondition = deliveryChannelCondition;
 		}
 
 		public String getOversizedDataOSSTargetArn() {
@@ -198,12 +142,68 @@ public class GetAggregateConfigDeliveryChannelResponse extends AcsResponse {
 			this.oversizedDataOSSTargetArn = oversizedDataOSSTargetArn;
 		}
 
-		public Integer getStatus() {
-			return this.status;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setStatus(Integer status) {
-			this.status = status;
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public Boolean getCompliantSnapshot() {
+			return this.compliantSnapshot;
+		}
+
+		public void setCompliantSnapshot(Boolean compliantSnapshot) {
+			this.compliantSnapshot = compliantSnapshot;
+		}
+
+		public Boolean getConfigurationItemChangeNotification() {
+			return this.configurationItemChangeNotification;
+		}
+
+		public void setConfigurationItemChangeNotification(Boolean configurationItemChangeNotification) {
+			this.configurationItemChangeNotification = configurationItemChangeNotification;
+		}
+
+		public Boolean getNonCompliantNotification() {
+			return this.nonCompliantNotification;
+		}
+
+		public void setNonCompliantNotification(Boolean nonCompliantNotification) {
+			this.nonCompliantNotification = nonCompliantNotification;
+		}
+
+		public String getAggregatorId() {
+			return this.aggregatorId;
+		}
+
+		public void setAggregatorId(String aggregatorId) {
+			this.aggregatorId = aggregatorId;
+		}
+
+		public String getAccountId() {
+			return this.accountId;
+		}
+
+		public void setAccountId(String accountId) {
+			this.accountId = accountId;
+		}
+
+		public String getDeliverySnapshotTime() {
+			return this.deliverySnapshotTime;
+		}
+
+		public void setDeliverySnapshotTime(String deliverySnapshotTime) {
+			this.deliverySnapshotTime = deliverySnapshotTime;
+		}
+
+		public Boolean getConfigurationSnapshot() {
+			return this.configurationSnapshot;
+		}
+
+		public void setConfigurationSnapshot(Boolean configurationSnapshot) {
+			this.configurationSnapshot = configurationSnapshot;
 		}
 	}
 

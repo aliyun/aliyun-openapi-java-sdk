@@ -36,6 +36,8 @@ public class UpdateAggregatorRequest extends RpcAcsRequest<UpdateAggregatorRespo
 
 	private String aggregatorId;
 
+	private String tag;
+
 	@SerializedName("aggregatorAccounts")
 	private List<AggregatorAccounts> aggregatorAccounts;
 	public UpdateAggregatorRequest() {
@@ -88,6 +90,17 @@ public class UpdateAggregatorRequest extends RpcAcsRequest<UpdateAggregatorRespo
 		this.aggregatorId = aggregatorId;
 		if(aggregatorId != null){
 			putBodyParameter("AggregatorId", aggregatorId);
+		}
+	}
+
+	public String getTag() {
+		return this.tag;
+	}
+
+	public void setTag(String tag) {
+		this.tag = tag;
+		if(tag != null){
+			putQueryParameter("Tag", tag);
 		}
 	}
 

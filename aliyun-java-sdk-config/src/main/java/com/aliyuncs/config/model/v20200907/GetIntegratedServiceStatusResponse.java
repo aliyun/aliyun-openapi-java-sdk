@@ -30,6 +30,8 @@ public class GetIntegratedServiceStatusResponse extends AcsResponse {
 
 	private String integratedTypes;
 
+	private String aggregatorDeliveryDataType;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -52,6 +54,14 @@ public class GetIntegratedServiceStatusResponse extends AcsResponse {
 
 	public void setIntegratedTypes(String integratedTypes) {
 		this.integratedTypes = integratedTypes;
+	}
+
+	public String getAggregatorDeliveryDataType() {
+		return this.aggregatorDeliveryDataType;
+	}
+
+	public void setAggregatorDeliveryDataType(String aggregatorDeliveryDataType) {
+		this.aggregatorDeliveryDataType = aggregatorDeliveryDataType;
 	}
 
 	@Override

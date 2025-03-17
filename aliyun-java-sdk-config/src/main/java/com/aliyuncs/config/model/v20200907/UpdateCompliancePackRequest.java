@@ -46,6 +46,8 @@ public class UpdateCompliancePackRequest extends RpcAcsRequest<UpdateComplianceP
 
 	private String resourceIdsScope;
 
+	private String tag;
+
 	@SerializedName("configRules")
 	private List<ConfigRules> configRules;
 
@@ -165,6 +167,17 @@ public class UpdateCompliancePackRequest extends RpcAcsRequest<UpdateComplianceP
 		this.resourceIdsScope = resourceIdsScope;
 		if(resourceIdsScope != null){
 			putBodyParameter("ResourceIdsScope", resourceIdsScope);
+		}
+	}
+
+	public String getTag() {
+		return this.tag;
+	}
+
+	public void setTag(String tag) {
+		this.tag = tag;
+		if(tag != null){
+			putQueryParameter("Tag", tag);
 		}
 	}
 

@@ -26,6 +26,8 @@ public class DeactiveConfigRulesRequest extends RpcAcsRequest<DeactiveConfigRule
 	   
 
 	private String configRuleIds;
+
+	private String compliancePackId;
 	public DeactiveConfigRulesRequest() {
 		super("Config", "2020-09-07", "DeactiveConfigRules", "config");
 		setMethod(MethodType.POST);
@@ -43,6 +45,17 @@ public class DeactiveConfigRulesRequest extends RpcAcsRequest<DeactiveConfigRule
 		this.configRuleIds = configRuleIds;
 		if(configRuleIds != null){
 			putQueryParameter("ConfigRuleIds", configRuleIds);
+		}
+	}
+
+	public String getCompliancePackId() {
+		return this.compliancePackId;
+	}
+
+	public void setCompliancePackId(String compliancePackId) {
+		this.compliancePackId = compliancePackId;
+		if(compliancePackId != null){
+			putQueryParameter("CompliancePackId", compliancePackId);
 		}
 	}
 

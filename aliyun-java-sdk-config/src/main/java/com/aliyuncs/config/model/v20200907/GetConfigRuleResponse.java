@@ -48,98 +48,80 @@ public class GetConfigRuleResponse extends AcsResponse {
 
 	public static class ConfigRule {
 
-		private Integer riskLevel;
-
-		private Map<Object,Object> inputParameters;
-
-		private String configRuleState;
-
-		private String maximumExecutionFrequency;
+		private Long accountId;
 
 		private String configRuleArn;
 
-		private String description;
+		private String configRuleId;
 
 		private String configRuleName;
 
-		private String configRuleId;
-
-		private Long modifiedTimestamp;
-
-		private Long createTimestamp;
-
-		private String resourceTypesScope;
-
-		private String excludeRegionIdsScope;
-
-		private String resourceIdsScope;
-
-		private String excludeResourceIdsScope;
-
-		private String excludeResourceGroupIdsScope;
-
-		private String tagKeyScope;
-
-		private String tagValueScope;
+		private String configRuleState;
 
 		private String configRuleTriggerTypes;
 
-		private String tagKeyLogicScope;
+		private Long createTimestamp;
 
-		private Long accountId;
+		private String description;
 
-		private String serviceChannel;
+		private String excludeRegionIdsScope;
+
+		private String excludeResourceGroupIdsScope;
+
+		private String excludeResourceIdsScope;
+
+		private Map<Object,Object> inputParameters;
+
+		private String maximumExecutionFrequency;
+
+		private Long modifiedTimestamp;
 
 		private String regionIdsScope;
 
 		private String resourceGroupIdsScope;
 
-		private List<TagsScopeItem> tagsScope;
+		private String resourceIdsScope;
+
+		private String resourceTypesScope;
+
+		private Integer riskLevel;
+
+		private String serviceChannel;
+
+		private String tagKeyLogicScope;
+
+		private String tagKeyScope;
+
+		private String tagValueScope;
+
+		private String resourceNameScope;
+
+		private String extendContent;
 
 		private List<ComplianceExcludeTagsScope> excludeTagsScope;
 
-		private Source source;
+		private List<TagsScopeItem> tagsScope;
 
-		private ManagedRule managedRule;
-
-		private CreateBy createBy;
-
-		private ConfigRuleEvaluationStatus configRuleEvaluationStatus;
-
-		private Scope scope;
+		private List<TagsItem> tags;
 
 		private Compliance compliance;
 
-		public Integer getRiskLevel() {
-			return this.riskLevel;
+		private ConfigRuleEvaluationStatus configRuleEvaluationStatus;
+
+		private CreateBy createBy;
+
+		private ManagedRule managedRule;
+
+		private Scope scope;
+
+		private Source source;
+
+		public Long getAccountId() {
+			return this.accountId;
 		}
 
-		public void setRiskLevel(Integer riskLevel) {
-			this.riskLevel = riskLevel;
-		}
-
-		public Map<Object,Object> getInputParameters() {
-			return this.inputParameters;
-		}
-
-		public void setInputParameters(Map<Object,Object> inputParameters) {
-			this.inputParameters = inputParameters;
-		}
-
-		public String getConfigRuleState() {
-			return this.configRuleState;
-		}
-
-		public void setConfigRuleState(String configRuleState) {
-			this.configRuleState = configRuleState;
-		}
-
-		public String getMaximumExecutionFrequency() {
-			return this.maximumExecutionFrequency;
-		}
-
-		public void setMaximumExecutionFrequency(String maximumExecutionFrequency) {
-			this.maximumExecutionFrequency = maximumExecutionFrequency;
+		public void setAccountId(Long accountId) {
+			this.accountId = accountId;
 		}
 
 		public String getConfigRuleArn() {
@@ -150,12 +132,12 @@ public class GetConfigRuleResponse extends AcsResponse {
 			this.configRuleArn = configRuleArn;
 		}
 
-		public String getDescription() {
-			return this.description;
+		public String getConfigRuleId() {
+			return this.configRuleId;
 		}
 
-		public void setDescription(String description) {
-			this.description = description;
+		public void setConfigRuleId(String configRuleId) {
+			this.configRuleId = configRuleId;
 		}
 
 		public String getConfigRuleName() {
@@ -166,84 +148,12 @@ public class GetConfigRuleResponse extends AcsResponse {
 			this.configRuleName = configRuleName;
 		}
 
-		public String getConfigRuleId() {
-			return this.configRuleId;
+		public String getConfigRuleState() {
+			return this.configRuleState;
 		}
 
-		public void setConfigRuleId(String configRuleId) {
-			this.configRuleId = configRuleId;
-		}
-
-		public Long getModifiedTimestamp() {
-			return this.modifiedTimestamp;
-		}
-
-		public void setModifiedTimestamp(Long modifiedTimestamp) {
-			this.modifiedTimestamp = modifiedTimestamp;
-		}
-
-		public Long getCreateTimestamp() {
-			return this.createTimestamp;
-		}
-
-		public void setCreateTimestamp(Long createTimestamp) {
-			this.createTimestamp = createTimestamp;
-		}
-
-		public String getResourceTypesScope() {
-			return this.resourceTypesScope;
-		}
-
-		public void setResourceTypesScope(String resourceTypesScope) {
-			this.resourceTypesScope = resourceTypesScope;
-		}
-
-		public String getExcludeRegionIdsScope() {
-			return this.excludeRegionIdsScope;
-		}
-
-		public void setExcludeRegionIdsScope(String excludeRegionIdsScope) {
-			this.excludeRegionIdsScope = excludeRegionIdsScope;
-		}
-
-		public String getResourceIdsScope() {
-			return this.resourceIdsScope;
-		}
-
-		public void setResourceIdsScope(String resourceIdsScope) {
-			this.resourceIdsScope = resourceIdsScope;
-		}
-
-		public String getExcludeResourceIdsScope() {
-			return this.excludeResourceIdsScope;
-		}
-
-		public void setExcludeResourceIdsScope(String excludeResourceIdsScope) {
-			this.excludeResourceIdsScope = excludeResourceIdsScope;
-		}
-
-		public String getExcludeResourceGroupIdsScope() {
-			return this.excludeResourceGroupIdsScope;
-		}
-
-		public void setExcludeResourceGroupIdsScope(String excludeResourceGroupIdsScope) {
-			this.excludeResourceGroupIdsScope = excludeResourceGroupIdsScope;
-		}
-
-		public String getTagKeyScope() {
-			return this.tagKeyScope;
-		}
-
-		public void setTagKeyScope(String tagKeyScope) {
-			this.tagKeyScope = tagKeyScope;
-		}
-
-		public String getTagValueScope() {
-			return this.tagValueScope;
-		}
-
-		public void setTagValueScope(String tagValueScope) {
-			this.tagValueScope = tagValueScope;
+		public void setConfigRuleState(String configRuleState) {
+			this.configRuleState = configRuleState;
 		}
 
 		public String getConfigRuleTriggerTypes() {
@@ -254,28 +164,68 @@ public class GetConfigRuleResponse extends AcsResponse {
 			this.configRuleTriggerTypes = configRuleTriggerTypes;
 		}
 
-		public String getTagKeyLogicScope() {
-			return this.tagKeyLogicScope;
+		public Long getCreateTimestamp() {
+			return this.createTimestamp;
 		}
 
-		public void setTagKeyLogicScope(String tagKeyLogicScope) {
-			this.tagKeyLogicScope = tagKeyLogicScope;
+		public void setCreateTimestamp(Long createTimestamp) {
+			this.createTimestamp = createTimestamp;
 		}
 
-		public Long getAccountId() {
-			return this.accountId;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setAccountId(Long accountId) {
-			this.accountId = accountId;
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
-		public String getServiceChannel() {
-			return this.serviceChannel;
+		public String getExcludeRegionIdsScope() {
+			return this.excludeRegionIdsScope;
 		}
 
-		public void setServiceChannel(String serviceChannel) {
-			this.serviceChannel = serviceChannel;
+		public void setExcludeRegionIdsScope(String excludeRegionIdsScope) {
+			this.excludeRegionIdsScope = excludeRegionIdsScope;
+		}
+
+		public String getExcludeResourceGroupIdsScope() {
+			return this.excludeResourceGroupIdsScope;
+		}
+
+		public void setExcludeResourceGroupIdsScope(String excludeResourceGroupIdsScope) {
+			this.excludeResourceGroupIdsScope = excludeResourceGroupIdsScope;
+		}
+
+		public String getExcludeResourceIdsScope() {
+			return this.excludeResourceIdsScope;
+		}
+
+		public void setExcludeResourceIdsScope(String excludeResourceIdsScope) {
+			this.excludeResourceIdsScope = excludeResourceIdsScope;
+		}
+
+		public Map<Object,Object> getInputParameters() {
+			return this.inputParameters;
+		}
+
+		public void setInputParameters(Map<Object,Object> inputParameters) {
+			this.inputParameters = inputParameters;
+		}
+
+		public String getMaximumExecutionFrequency() {
+			return this.maximumExecutionFrequency;
+		}
+
+		public void setMaximumExecutionFrequency(String maximumExecutionFrequency) {
+			this.maximumExecutionFrequency = maximumExecutionFrequency;
+		}
+
+		public Long getModifiedTimestamp() {
+			return this.modifiedTimestamp;
+		}
+
+		public void setModifiedTimestamp(Long modifiedTimestamp) {
+			this.modifiedTimestamp = modifiedTimestamp;
 		}
 
 		public String getRegionIdsScope() {
@@ -294,12 +244,76 @@ public class GetConfigRuleResponse extends AcsResponse {
 			this.resourceGroupIdsScope = resourceGroupIdsScope;
 		}
 
-		public List<TagsScopeItem> getTagsScope() {
-			return this.tagsScope;
+		public String getResourceIdsScope() {
+			return this.resourceIdsScope;
 		}
 
-		public void setTagsScope(List<TagsScopeItem> tagsScope) {
-			this.tagsScope = tagsScope;
+		public void setResourceIdsScope(String resourceIdsScope) {
+			this.resourceIdsScope = resourceIdsScope;
+		}
+
+		public String getResourceTypesScope() {
+			return this.resourceTypesScope;
+		}
+
+		public void setResourceTypesScope(String resourceTypesScope) {
+			this.resourceTypesScope = resourceTypesScope;
+		}
+
+		public Integer getRiskLevel() {
+			return this.riskLevel;
+		}
+
+		public void setRiskLevel(Integer riskLevel) {
+			this.riskLevel = riskLevel;
+		}
+
+		public String getServiceChannel() {
+			return this.serviceChannel;
+		}
+
+		public void setServiceChannel(String serviceChannel) {
+			this.serviceChannel = serviceChannel;
+		}
+
+		public String getTagKeyLogicScope() {
+			return this.tagKeyLogicScope;
+		}
+
+		public void setTagKeyLogicScope(String tagKeyLogicScope) {
+			this.tagKeyLogicScope = tagKeyLogicScope;
+		}
+
+		public String getTagKeyScope() {
+			return this.tagKeyScope;
+		}
+
+		public void setTagKeyScope(String tagKeyScope) {
+			this.tagKeyScope = tagKeyScope;
+		}
+
+		public String getTagValueScope() {
+			return this.tagValueScope;
+		}
+
+		public void setTagValueScope(String tagValueScope) {
+			this.tagValueScope = tagValueScope;
+		}
+
+		public String getResourceNameScope() {
+			return this.resourceNameScope;
+		}
+
+		public void setResourceNameScope(String resourceNameScope) {
+			this.resourceNameScope = resourceNameScope;
+		}
+
+		public String getExtendContent() {
+			return this.extendContent;
+		}
+
+		public void setExtendContent(String extendContent) {
+			this.extendContent = extendContent;
 		}
 
 		public List<ComplianceExcludeTagsScope> getExcludeTagsScope() {
@@ -310,44 +324,20 @@ public class GetConfigRuleResponse extends AcsResponse {
 			this.excludeTagsScope = excludeTagsScope;
 		}
 
-		public Source getSource() {
-			return this.source;
+		public List<TagsScopeItem> getTagsScope() {
+			return this.tagsScope;
 		}
 
-		public void setSource(Source source) {
-			this.source = source;
+		public void setTagsScope(List<TagsScopeItem> tagsScope) {
+			this.tagsScope = tagsScope;
 		}
 
-		public ManagedRule getManagedRule() {
-			return this.managedRule;
+		public List<TagsItem> getTags() {
+			return this.tags;
 		}
 
-		public void setManagedRule(ManagedRule managedRule) {
-			this.managedRule = managedRule;
-		}
-
-		public CreateBy getCreateBy() {
-			return this.createBy;
-		}
-
-		public void setCreateBy(CreateBy createBy) {
-			this.createBy = createBy;
-		}
-
-		public ConfigRuleEvaluationStatus getConfigRuleEvaluationStatus() {
-			return this.configRuleEvaluationStatus;
-		}
-
-		public void setConfigRuleEvaluationStatus(ConfigRuleEvaluationStatus configRuleEvaluationStatus) {
-			this.configRuleEvaluationStatus = configRuleEvaluationStatus;
-		}
-
-		public Scope getScope() {
-			return this.scope;
-		}
-
-		public void setScope(Scope scope) {
-			this.scope = scope;
+		public void setTags(List<TagsItem> tags) {
+			this.tags = tags;
 		}
 
 		public Compliance getCompliance() {
@@ -358,27 +348,44 @@ public class GetConfigRuleResponse extends AcsResponse {
 			this.compliance = compliance;
 		}
 
-		public static class TagsScopeItem {
+		public ConfigRuleEvaluationStatus getConfigRuleEvaluationStatus() {
+			return this.configRuleEvaluationStatus;
+		}
 
-			private String tagKey;
+		public void setConfigRuleEvaluationStatus(ConfigRuleEvaluationStatus configRuleEvaluationStatus) {
+			this.configRuleEvaluationStatus = configRuleEvaluationStatus;
+		}
 
-			private String tagValue;
+		public CreateBy getCreateBy() {
+			return this.createBy;
+		}
 
-			public String getTagKey() {
-				return this.tagKey;
-			}
+		public void setCreateBy(CreateBy createBy) {
+			this.createBy = createBy;
+		}
 
-			public void setTagKey(String tagKey) {
-				this.tagKey = tagKey;
-			}
+		public ManagedRule getManagedRule() {
+			return this.managedRule;
+		}
 
-			public String getTagValue() {
-				return this.tagValue;
-			}
+		public void setManagedRule(ManagedRule managedRule) {
+			this.managedRule = managedRule;
+		}
 
-			public void setTagValue(String tagValue) {
-				this.tagValue = tagValue;
-			}
+		public Scope getScope() {
+			return this.scope;
+		}
+
+		public void setScope(Scope scope) {
+			this.scope = scope;
+		}
+
+		public Source getSource() {
+			return this.source;
+		}
+
+		public void setSource(Source source) {
+			this.source = source;
 		}
 
 		public static class ComplianceExcludeTagsScope {
@@ -404,292 +411,82 @@ public class GetConfigRuleResponse extends AcsResponse {
 			}
 		}
 
-		public static class Source {
+		public static class TagsScopeItem {
 
-			private String owner;
+			private String tagKey;
 
-			private String identifier;
+			private String tagValue;
 
-			private String conditions;
-
-			private List<SourceDetailsItem> sourceDetails;
-
-			private List<Map<Object,Object>> sourceConditions;
-
-			public String getOwner() {
-				return this.owner;
+			public String getTagKey() {
+				return this.tagKey;
 			}
 
-			public void setOwner(String owner) {
-				this.owner = owner;
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
 			}
 
-			public String getIdentifier() {
-				return this.identifier;
+			public String getTagValue() {
+				return this.tagValue;
 			}
 
-			public void setIdentifier(String identifier) {
-				this.identifier = identifier;
-			}
-
-			public String getConditions() {
-				return this.conditions;
-			}
-
-			public void setConditions(String conditions) {
-				this.conditions = conditions;
-			}
-
-			public List<SourceDetailsItem> getSourceDetails() {
-				return this.sourceDetails;
-			}
-
-			public void setSourceDetails(List<SourceDetailsItem> sourceDetails) {
-				this.sourceDetails = sourceDetails;
-			}
-
-			public List<Map<Object,Object>> getSourceConditions() {
-				return this.sourceConditions;
-			}
-
-			public void setSourceConditions(List<Map<Object,Object>> sourceConditions) {
-				this.sourceConditions = sourceConditions;
-			}
-
-			public static class SourceDetailsItem {
-
-				private String messageType;
-
-				private String eventSource;
-
-				private String maximumExecutionFrequency;
-
-				public String getMessageType() {
-					return this.messageType;
-				}
-
-				public void setMessageType(String messageType) {
-					this.messageType = messageType;
-				}
-
-				public String getEventSource() {
-					return this.eventSource;
-				}
-
-				public void setEventSource(String eventSource) {
-					this.eventSource = eventSource;
-				}
-
-				public String getMaximumExecutionFrequency() {
-					return this.maximumExecutionFrequency;
-				}
-
-				public void setMaximumExecutionFrequency(String maximumExecutionFrequency) {
-					this.maximumExecutionFrequency = maximumExecutionFrequency;
-				}
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
 			}
 		}
 
-		public static class ManagedRule {
+		public static class TagsItem {
 
-			private String helpUrl;
+			private String tagKey;
 
-			private String description;
+			private String tagValue;
 
-			private String identifier;
-
-			private Map<Object,Object> optionalInputParameterDetails;
-
-			private String managedRuleName;
-
-			private Map<Object,Object> compulsoryInputParameterDetails;
-
-			private List<SourceDetailsItem2> sourceDetails1;
-
-			private List<String> labels;
-
-			public String getHelpUrl() {
-				return this.helpUrl;
+			public String getTagKey() {
+				return this.tagKey;
 			}
 
-			public void setHelpUrl(String helpUrl) {
-				this.helpUrl = helpUrl;
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
 			}
 
-			public String getDescription() {
-				return this.description;
+			public String getTagValue() {
+				return this.tagValue;
 			}
 
-			public void setDescription(String description) {
-				this.description = description;
-			}
-
-			public String getIdentifier() {
-				return this.identifier;
-			}
-
-			public void setIdentifier(String identifier) {
-				this.identifier = identifier;
-			}
-
-			public Map<Object,Object> getOptionalInputParameterDetails() {
-				return this.optionalInputParameterDetails;
-			}
-
-			public void setOptionalInputParameterDetails(Map<Object,Object> optionalInputParameterDetails) {
-				this.optionalInputParameterDetails = optionalInputParameterDetails;
-			}
-
-			public String getManagedRuleName() {
-				return this.managedRuleName;
-			}
-
-			public void setManagedRuleName(String managedRuleName) {
-				this.managedRuleName = managedRuleName;
-			}
-
-			public Map<Object,Object> getCompulsoryInputParameterDetails() {
-				return this.compulsoryInputParameterDetails;
-			}
-
-			public void setCompulsoryInputParameterDetails(Map<Object,Object> compulsoryInputParameterDetails) {
-				this.compulsoryInputParameterDetails = compulsoryInputParameterDetails;
-			}
-
-			public List<SourceDetailsItem2> getSourceDetails1() {
-				return this.sourceDetails1;
-			}
-
-			public void setSourceDetails1(List<SourceDetailsItem2> sourceDetails1) {
-				this.sourceDetails1 = sourceDetails1;
-			}
-
-			public List<String> getLabels() {
-				return this.labels;
-			}
-
-			public void setLabels(List<String> labels) {
-				this.labels = labels;
-			}
-
-			public static class SourceDetailsItem2 {
-
-				private String messageType;
-
-				private String eventSource;
-
-				private String maximumExecutionFrequency;
-
-				public String getMessageType() {
-					return this.messageType;
-				}
-
-				public void setMessageType(String messageType) {
-					this.messageType = messageType;
-				}
-
-				public String getEventSource() {
-					return this.eventSource;
-				}
-
-				public void setEventSource(String eventSource) {
-					this.eventSource = eventSource;
-				}
-
-				public String getMaximumExecutionFrequency() {
-					return this.maximumExecutionFrequency;
-				}
-
-				public void setMaximumExecutionFrequency(String maximumExecutionFrequency) {
-					this.maximumExecutionFrequency = maximumExecutionFrequency;
-				}
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
 			}
 		}
 
-		public static class CreateBy {
+		public static class Compliance {
 
-			private String compliancePackId;
+			private String complianceType;
 
-			private String aggregatorName;
+			private Integer count;
 
-			private String compliancePackName;
-
-			private String creatorName;
-
-			private String creatorType;
-
-			private String creatorId;
-
-			private String aggregatorId;
-
-			public String getCompliancePackId() {
-				return this.compliancePackId;
+			public String getComplianceType() {
+				return this.complianceType;
 			}
 
-			public void setCompliancePackId(String compliancePackId) {
-				this.compliancePackId = compliancePackId;
+			public void setComplianceType(String complianceType) {
+				this.complianceType = complianceType;
 			}
 
-			public String getAggregatorName() {
-				return this.aggregatorName;
+			public Integer getCount() {
+				return this.count;
 			}
 
-			public void setAggregatorName(String aggregatorName) {
-				this.aggregatorName = aggregatorName;
-			}
-
-			public String getCompliancePackName() {
-				return this.compliancePackName;
-			}
-
-			public void setCompliancePackName(String compliancePackName) {
-				this.compliancePackName = compliancePackName;
-			}
-
-			public String getCreatorName() {
-				return this.creatorName;
-			}
-
-			public void setCreatorName(String creatorName) {
-				this.creatorName = creatorName;
-			}
-
-			public String getCreatorType() {
-				return this.creatorType;
-			}
-
-			public void setCreatorType(String creatorType) {
-				this.creatorType = creatorType;
-			}
-
-			public String getCreatorId() {
-				return this.creatorId;
-			}
-
-			public void setCreatorId(String creatorId) {
-				this.creatorId = creatorId;
-			}
-
-			public String getAggregatorId() {
-				return this.aggregatorId;
-			}
-
-			public void setAggregatorId(String aggregatorId) {
-				this.aggregatorId = aggregatorId;
+			public void setCount(Integer count) {
+				this.count = count;
 			}
 		}
 
 		public static class ConfigRuleEvaluationStatus {
 
-			private String lastErrorCode;
-
-			private Long lastSuccessfulEvaluationTimestamp;
-
 			private Long firstActivatedTimestamp;
 
 			private Boolean firstEvaluationStarted;
 
-			private Long lastSuccessfulInvocationTimestamp;
+			private String lastErrorCode;
 
 			private String lastErrorMessage;
 
@@ -697,21 +494,9 @@ public class GetConfigRuleResponse extends AcsResponse {
 
 			private Long lastFailedInvocationTimestamp;
 
-			public String getLastErrorCode() {
-				return this.lastErrorCode;
-			}
+			private Long lastSuccessfulEvaluationTimestamp;
 
-			public void setLastErrorCode(String lastErrorCode) {
-				this.lastErrorCode = lastErrorCode;
-			}
-
-			public Long getLastSuccessfulEvaluationTimestamp() {
-				return this.lastSuccessfulEvaluationTimestamp;
-			}
-
-			public void setLastSuccessfulEvaluationTimestamp(Long lastSuccessfulEvaluationTimestamp) {
-				this.lastSuccessfulEvaluationTimestamp = lastSuccessfulEvaluationTimestamp;
-			}
+			private Long lastSuccessfulInvocationTimestamp;
 
 			public Long getFirstActivatedTimestamp() {
 				return this.firstActivatedTimestamp;
@@ -729,12 +514,12 @@ public class GetConfigRuleResponse extends AcsResponse {
 				this.firstEvaluationStarted = firstEvaluationStarted;
 			}
 
-			public Long getLastSuccessfulInvocationTimestamp() {
-				return this.lastSuccessfulInvocationTimestamp;
+			public String getLastErrorCode() {
+				return this.lastErrorCode;
 			}
 
-			public void setLastSuccessfulInvocationTimestamp(Long lastSuccessfulInvocationTimestamp) {
-				this.lastSuccessfulInvocationTimestamp = lastSuccessfulInvocationTimestamp;
+			public void setLastErrorCode(String lastErrorCode) {
+				this.lastErrorCode = lastErrorCode;
 			}
 
 			public String getLastErrorMessage() {
@@ -760,6 +545,211 @@ public class GetConfigRuleResponse extends AcsResponse {
 			public void setLastFailedInvocationTimestamp(Long lastFailedInvocationTimestamp) {
 				this.lastFailedInvocationTimestamp = lastFailedInvocationTimestamp;
 			}
+
+			public Long getLastSuccessfulEvaluationTimestamp() {
+				return this.lastSuccessfulEvaluationTimestamp;
+			}
+
+			public void setLastSuccessfulEvaluationTimestamp(Long lastSuccessfulEvaluationTimestamp) {
+				this.lastSuccessfulEvaluationTimestamp = lastSuccessfulEvaluationTimestamp;
+			}
+
+			public Long getLastSuccessfulInvocationTimestamp() {
+				return this.lastSuccessfulInvocationTimestamp;
+			}
+
+			public void setLastSuccessfulInvocationTimestamp(Long lastSuccessfulInvocationTimestamp) {
+				this.lastSuccessfulInvocationTimestamp = lastSuccessfulInvocationTimestamp;
+			}
+		}
+
+		public static class CreateBy {
+
+			private String aggregatorId;
+
+			private String aggregatorName;
+
+			private String compliancePackId;
+
+			private String compliancePackName;
+
+			private String creatorId;
+
+			private String creatorName;
+
+			private String creatorType;
+
+			public String getAggregatorId() {
+				return this.aggregatorId;
+			}
+
+			public void setAggregatorId(String aggregatorId) {
+				this.aggregatorId = aggregatorId;
+			}
+
+			public String getAggregatorName() {
+				return this.aggregatorName;
+			}
+
+			public void setAggregatorName(String aggregatorName) {
+				this.aggregatorName = aggregatorName;
+			}
+
+			public String getCompliancePackId() {
+				return this.compliancePackId;
+			}
+
+			public void setCompliancePackId(String compliancePackId) {
+				this.compliancePackId = compliancePackId;
+			}
+
+			public String getCompliancePackName() {
+				return this.compliancePackName;
+			}
+
+			public void setCompliancePackName(String compliancePackName) {
+				this.compliancePackName = compliancePackName;
+			}
+
+			public String getCreatorId() {
+				return this.creatorId;
+			}
+
+			public void setCreatorId(String creatorId) {
+				this.creatorId = creatorId;
+			}
+
+			public String getCreatorName() {
+				return this.creatorName;
+			}
+
+			public void setCreatorName(String creatorName) {
+				this.creatorName = creatorName;
+			}
+
+			public String getCreatorType() {
+				return this.creatorType;
+			}
+
+			public void setCreatorType(String creatorType) {
+				this.creatorType = creatorType;
+			}
+		}
+
+		public static class ManagedRule {
+
+			private Map<Object,Object> compulsoryInputParameterDetails;
+
+			private String description;
+
+			private String helpUrl;
+
+			private String identifier;
+
+			private String managedRuleName;
+
+			private Map<Object,Object> optionalInputParameterDetails;
+
+			private List<SourceDetailsItem> sourceDetails;
+
+			private List<String> labels;
+
+			public Map<Object,Object> getCompulsoryInputParameterDetails() {
+				return this.compulsoryInputParameterDetails;
+			}
+
+			public void setCompulsoryInputParameterDetails(Map<Object,Object> compulsoryInputParameterDetails) {
+				this.compulsoryInputParameterDetails = compulsoryInputParameterDetails;
+			}
+
+			public String getDescription() {
+				return this.description;
+			}
+
+			public void setDescription(String description) {
+				this.description = description;
+			}
+
+			public String getHelpUrl() {
+				return this.helpUrl;
+			}
+
+			public void setHelpUrl(String helpUrl) {
+				this.helpUrl = helpUrl;
+			}
+
+			public String getIdentifier() {
+				return this.identifier;
+			}
+
+			public void setIdentifier(String identifier) {
+				this.identifier = identifier;
+			}
+
+			public String getManagedRuleName() {
+				return this.managedRuleName;
+			}
+
+			public void setManagedRuleName(String managedRuleName) {
+				this.managedRuleName = managedRuleName;
+			}
+
+			public Map<Object,Object> getOptionalInputParameterDetails() {
+				return this.optionalInputParameterDetails;
+			}
+
+			public void setOptionalInputParameterDetails(Map<Object,Object> optionalInputParameterDetails) {
+				this.optionalInputParameterDetails = optionalInputParameterDetails;
+			}
+
+			public List<SourceDetailsItem> getSourceDetails() {
+				return this.sourceDetails;
+			}
+
+			public void setSourceDetails(List<SourceDetailsItem> sourceDetails) {
+				this.sourceDetails = sourceDetails;
+			}
+
+			public List<String> getLabels() {
+				return this.labels;
+			}
+
+			public void setLabels(List<String> labels) {
+				this.labels = labels;
+			}
+
+			public static class SourceDetailsItem {
+
+				private String eventSource;
+
+				private String maximumExecutionFrequency;
+
+				private String messageType;
+
+				public String getEventSource() {
+					return this.eventSource;
+				}
+
+				public void setEventSource(String eventSource) {
+					this.eventSource = eventSource;
+				}
+
+				public String getMaximumExecutionFrequency() {
+					return this.maximumExecutionFrequency;
+				}
+
+				public void setMaximumExecutionFrequency(String maximumExecutionFrequency) {
+					this.maximumExecutionFrequency = maximumExecutionFrequency;
+				}
+
+				public String getMessageType() {
+					return this.messageType;
+				}
+
+				public void setMessageType(String messageType) {
+					this.messageType = messageType;
+				}
+			}
 		}
 
 		public static class Scope {
@@ -775,26 +765,89 @@ public class GetConfigRuleResponse extends AcsResponse {
 			}
 		}
 
-		public static class Compliance {
+		public static class Source {
 
-			private String complianceType;
+			private String conditions;
 
-			private Integer count;
+			private String identifier;
 
-			public String getComplianceType() {
-				return this.complianceType;
+			private String owner;
+
+			private List<SourceDetailsItem2> sourceDetails1;
+
+			private List<Map<Object,Object>> sourceConditions;
+
+			public String getConditions() {
+				return this.conditions;
 			}
 
-			public void setComplianceType(String complianceType) {
-				this.complianceType = complianceType;
+			public void setConditions(String conditions) {
+				this.conditions = conditions;
 			}
 
-			public Integer getCount() {
-				return this.count;
+			public String getIdentifier() {
+				return this.identifier;
 			}
 
-			public void setCount(Integer count) {
-				this.count = count;
+			public void setIdentifier(String identifier) {
+				this.identifier = identifier;
+			}
+
+			public String getOwner() {
+				return this.owner;
+			}
+
+			public void setOwner(String owner) {
+				this.owner = owner;
+			}
+
+			public List<SourceDetailsItem2> getSourceDetails1() {
+				return this.sourceDetails1;
+			}
+
+			public void setSourceDetails1(List<SourceDetailsItem2> sourceDetails1) {
+				this.sourceDetails1 = sourceDetails1;
+			}
+
+			public List<Map<Object,Object>> getSourceConditions() {
+				return this.sourceConditions;
+			}
+
+			public void setSourceConditions(List<Map<Object,Object>> sourceConditions) {
+				this.sourceConditions = sourceConditions;
+			}
+
+			public static class SourceDetailsItem2 {
+
+				private String eventSource;
+
+				private String maximumExecutionFrequency;
+
+				private String messageType;
+
+				public String getEventSource() {
+					return this.eventSource;
+				}
+
+				public void setEventSource(String eventSource) {
+					this.eventSource = eventSource;
+				}
+
+				public String getMaximumExecutionFrequency() {
+					return this.maximumExecutionFrequency;
+				}
+
+				public void setMaximumExecutionFrequency(String maximumExecutionFrequency) {
+					this.maximumExecutionFrequency = maximumExecutionFrequency;
+				}
+
+				public String getMessageType() {
+					return this.messageType;
+				}
+
+				public void setMessageType(String messageType) {
+					this.messageType = messageType;
+				}
 			}
 		}
 	}
