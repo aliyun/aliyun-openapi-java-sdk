@@ -48,6 +48,8 @@ public class CreateConfigRuleRequest extends RpcAcsRequest<CreateConfigRuleRespo
 
 	private String tag;
 
+	private String resourceNameScope;
+
 	private List<ExcludeTagsScope> excludeTagsScope;
 
 	private Integer riskLevel;
@@ -205,6 +207,17 @@ public class CreateConfigRuleRequest extends RpcAcsRequest<CreateConfigRuleRespo
 		this.tag = tag;
 		if(tag != null){
 			putQueryParameter("Tag", tag);
+		}
+	}
+
+	public String getResourceNameScope() {
+		return this.resourceNameScope;
+	}
+
+	public void setResourceNameScope(String resourceNameScope) {
+		this.resourceNameScope = resourceNameScope;
+		if(resourceNameScope != null){
+			putBodyParameter("ResourceNameScope", resourceNameScope);
 		}
 	}
 

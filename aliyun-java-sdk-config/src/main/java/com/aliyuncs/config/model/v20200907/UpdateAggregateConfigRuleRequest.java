@@ -54,6 +54,8 @@ public class UpdateAggregateConfigRuleRequest extends RpcAcsRequest<UpdateAggreg
 
 	private String excludeFolderIdsScope;
 
+	private String resourceNameScope;
+
 	private List<ExcludeTagsScope> excludeTagsScope;
 
 	private Integer riskLevel;
@@ -244,6 +246,17 @@ public class UpdateAggregateConfigRuleRequest extends RpcAcsRequest<UpdateAggreg
 		this.excludeFolderIdsScope = excludeFolderIdsScope;
 		if(excludeFolderIdsScope != null){
 			putBodyParameter("ExcludeFolderIdsScope", excludeFolderIdsScope);
+		}
+	}
+
+	public String getResourceNameScope() {
+		return this.resourceNameScope;
+	}
+
+	public void setResourceNameScope(String resourceNameScope) {
+		this.resourceNameScope = resourceNameScope;
+		if(resourceNameScope != null){
+			putBodyParameter("ResourceNameScope", resourceNameScope);
 		}
 	}
 

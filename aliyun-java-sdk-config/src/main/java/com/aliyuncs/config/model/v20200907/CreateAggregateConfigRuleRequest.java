@@ -40,6 +40,8 @@ public class CreateAggregateConfigRuleRequest extends RpcAcsRequest<CreateAggreg
 
 	private String excludeFolderIdsScope;
 
+	private String resourceNameScope;
+
 	private String sourceOwner;
 
 	private String excludeRegionIdsScope;
@@ -171,6 +173,17 @@ public class CreateAggregateConfigRuleRequest extends RpcAcsRequest<CreateAggreg
 		this.excludeFolderIdsScope = excludeFolderIdsScope;
 		if(excludeFolderIdsScope != null){
 			putBodyParameter("ExcludeFolderIdsScope", excludeFolderIdsScope);
+		}
+	}
+
+	public String getResourceNameScope() {
+		return this.resourceNameScope;
+	}
+
+	public void setResourceNameScope(String resourceNameScope) {
+		this.resourceNameScope = resourceNameScope;
+		if(resourceNameScope != null){
+			putQueryParameter("ResourceNameScope", resourceNameScope);
 		}
 	}
 

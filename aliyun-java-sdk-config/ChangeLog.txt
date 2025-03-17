@@ -1,3 +1,6 @@
+2025-03-17 Version: 2.2.17
+- Support  ResourceNameScope support.
+
 2025-03-17 Version: 2.2.16
 - Support  ResourceNameScope support.
 
