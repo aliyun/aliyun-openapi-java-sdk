@@ -1,3 +1,6 @@
+2025-03-18 Version: 3.13.20
+- Supported IdempotentToken for Push and MassPush.
+
 2024-11-13 Version: 3.13.19
 - Supported AndroidMessageOppoCategory, AndroidMessageOppoNotifyLevel for Push and MassPush.
 

@@ -26,6 +26,8 @@ import com.aliyuncs.push.Endpoint;
 public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 	   
 
+	private String idempotentToken;
+
 	private List<PushTask> pushTasks;
 
 	private Long appKey;
@@ -36,6 +38,17 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getIdempotentToken() {
+		return this.idempotentToken;
+	}
+
+	public void setIdempotentToken(String idempotentToken) {
+		this.idempotentToken = idempotentToken;
+		if(idempotentToken != null){
+			putQueryParameter("IdempotentToken", idempotentToken);
+		}
 	}
 
 	public List<PushTask> getPushTasks() {

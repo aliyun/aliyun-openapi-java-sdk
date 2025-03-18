@@ -77,6 +77,8 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 
 	private String harmonyRemindTitle;
 
+	private String idempotentToken;
+
 	private String androidBadgeClass;
 
 	private Integer smsDelaySecs;
@@ -512,6 +514,17 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 		this.harmonyRemindTitle = harmonyRemindTitle;
 		if(harmonyRemindTitle != null){
 			putQueryParameter("HarmonyRemindTitle", harmonyRemindTitle);
+		}
+	}
+
+	public String getIdempotentToken() {
+		return this.idempotentToken;
+	}
+
+	public void setIdempotentToken(String idempotentToken) {
+		this.idempotentToken = idempotentToken;
+		if(idempotentToken != null){
+			putQueryParameter("IdempotentToken", idempotentToken);
 		}
 	}
 
