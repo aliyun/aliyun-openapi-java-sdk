@@ -15,6 +15,7 @@
 package com.aliyuncs.ens.model.v20171110;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 
 /**
@@ -24,29 +25,22 @@ import com.aliyuncs.http.MethodType;
 public class DescribeNetworksRequest extends RpcAcsRequest<DescribeNetworksResponse> {
 	   
 
-	private Integer pageNumber;
-
 	private String ensRegionId;
+
+	private List<String> networkIds;
+
+	private String networkId;
+
+	private Integer pageNumber;
 
 	private Integer pageSize;
 
 	private String networkName;
 
-	private String networkId;
+	private List<String> ensRegionIds;
 	public DescribeNetworksRequest() {
 		super("Ens", "2017-11-10", "DescribeNetworks", "ens");
 		setMethod(MethodType.POST);
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
 	}
 
 	public String getEnsRegionId() {
@@ -57,6 +51,41 @@ public class DescribeNetworksRequest extends RpcAcsRequest<DescribeNetworksRespo
 		this.ensRegionId = ensRegionId;
 		if(ensRegionId != null){
 			putQueryParameter("EnsRegionId", ensRegionId);
+		}
+	}
+
+	public List<String> getNetworkIds() {
+		return this.networkIds;
+	}
+
+	public void setNetworkIds(List<String> networkIds) {
+		this.networkIds = networkIds;	
+		if (networkIds != null) {
+			for (int depth1 = 0; depth1 < networkIds.size(); depth1++) {
+				putQueryParameter("NetworkIds." + (depth1 + 1) , networkIds.get(depth1));
+			}
+		}	
+	}
+
+	public String getNetworkId() {
+		return this.networkId;
+	}
+
+	public void setNetworkId(String networkId) {
+		this.networkId = networkId;
+		if(networkId != null){
+			putQueryParameter("NetworkId", networkId);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
@@ -82,15 +111,17 @@ public class DescribeNetworksRequest extends RpcAcsRequest<DescribeNetworksRespo
 		}
 	}
 
-	public String getNetworkId() {
-		return this.networkId;
+	public List<String> getEnsRegionIds() {
+		return this.ensRegionIds;
 	}
 
-	public void setNetworkId(String networkId) {
-		this.networkId = networkId;
-		if(networkId != null){
-			putQueryParameter("NetworkId", networkId);
-		}
+	public void setEnsRegionIds(List<String> ensRegionIds) {
+		this.ensRegionIds = ensRegionIds;	
+		if (ensRegionIds != null) {
+			for (int depth1 = 0; depth1 < ensRegionIds.size(); depth1++) {
+				putQueryParameter("EnsRegionIds." + (depth1 + 1) , ensRegionIds.get(depth1));
+			}
+		}	
 	}
 
 	@Override

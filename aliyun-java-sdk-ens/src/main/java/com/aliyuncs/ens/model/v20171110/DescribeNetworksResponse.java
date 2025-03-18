@@ -95,7 +95,13 @@ public class DescribeNetworksResponse extends AcsResponse {
 
 		private String networkAclId;
 
+		private String routeTableId;
+
+		private String gatewayRouteTableId;
+
 		private List<String> vSwitchIds;
+
+		private List<String> routeTableIds;
 
 		public String getEnsRegionId() {
 			return this.ensRegionId;
@@ -169,12 +175,36 @@ public class DescribeNetworksResponse extends AcsResponse {
 			this.networkAclId = networkAclId;
 		}
 
+		public String getRouteTableId() {
+			return this.routeTableId;
+		}
+
+		public void setRouteTableId(String routeTableId) {
+			this.routeTableId = routeTableId;
+		}
+
+		public String getGatewayRouteTableId() {
+			return this.gatewayRouteTableId;
+		}
+
+		public void setGatewayRouteTableId(String gatewayRouteTableId) {
+			this.gatewayRouteTableId = gatewayRouteTableId;
+		}
+
 		public List<String> getVSwitchIds() {
 			return this.vSwitchIds;
 		}
 
 		public void setVSwitchIds(List<String> vSwitchIds) {
 			this.vSwitchIds = vSwitchIds;
+		}
+
+		public List<String> getRouteTableIds() {
+			return this.routeTableIds;
+		}
+
+		public void setRouteTableIds(List<String> routeTableIds) {
+			this.routeTableIds = routeTableIds;
 		}
 	}
 

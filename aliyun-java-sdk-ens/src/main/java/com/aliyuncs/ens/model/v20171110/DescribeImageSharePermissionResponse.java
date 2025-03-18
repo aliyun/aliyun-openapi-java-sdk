@@ -35,7 +35,7 @@ public class DescribeImageSharePermissionResponse extends AcsResponse {
 
 	private String imageId;
 
-	private List<String> accounts;
+	private List<Account> accounts;
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -77,12 +77,25 @@ public class DescribeImageSharePermissionResponse extends AcsResponse {
 		this.imageId = imageId;
 	}
 
-	public List<String> getAccounts() {
+	public List<Account> getAccounts() {
 		return this.accounts;
 	}
 
-	public void setAccounts(List<String> accounts) {
+	public void setAccounts(List<Account> accounts) {
 		this.accounts = accounts;
+	}
+
+	public static class Account {
+
+		private String aliyunUid;
+
+		public String getAliyunUid() {
+			return this.aliyunUid;
+		}
+
+		public void setAliyunUid(String aliyunUid) {
+			this.aliyunUid = aliyunUid;
+		}
 	}
 
 	@Override

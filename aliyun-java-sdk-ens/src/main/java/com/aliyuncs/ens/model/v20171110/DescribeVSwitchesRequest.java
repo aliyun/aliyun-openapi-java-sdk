@@ -15,6 +15,7 @@
 package com.aliyuncs.ens.model.v20171110;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 
 /**
@@ -24,7 +25,7 @@ import com.aliyuncs.http.MethodType;
 public class DescribeVSwitchesRequest extends RpcAcsRequest<DescribeVSwitchesResponse> {
 	   
 
-	private String orderByParams;
+	private List<String> vSwitchIds;
 
 	private String ensRegionId;
 
@@ -36,21 +37,25 @@ public class DescribeVSwitchesRequest extends RpcAcsRequest<DescribeVSwitchesRes
 
 	private Integer pageSize;
 
+	private List<String> ensRegionIds;
+
 	private String vSwitchName;
 	public DescribeVSwitchesRequest() {
 		super("Ens", "2017-11-10", "DescribeVSwitches", "ens");
 		setMethod(MethodType.POST);
 	}
 
-	public String getOrderByParams() {
-		return this.orderByParams;
+	public List<String> getVSwitchIds() {
+		return this.vSwitchIds;
 	}
 
-	public void setOrderByParams(String orderByParams) {
-		this.orderByParams = orderByParams;
-		if(orderByParams != null){
-			putQueryParameter("OrderByParams", orderByParams);
-		}
+	public void setVSwitchIds(List<String> vSwitchIds) {
+		this.vSwitchIds = vSwitchIds;	
+		if (vSwitchIds != null) {
+			for (int depth1 = 0; depth1 < vSwitchIds.size(); depth1++) {
+				putQueryParameter("VSwitchIds." + (depth1 + 1) , vSwitchIds.get(depth1));
+			}
+		}	
 	}
 
 	public String getEnsRegionId() {
@@ -106,6 +111,19 @@ public class DescribeVSwitchesRequest extends RpcAcsRequest<DescribeVSwitchesRes
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
 		}
+	}
+
+	public List<String> getEnsRegionIds() {
+		return this.ensRegionIds;
+	}
+
+	public void setEnsRegionIds(List<String> ensRegionIds) {
+		this.ensRegionIds = ensRegionIds;	
+		if (ensRegionIds != null) {
+			for (int depth1 = 0; depth1 < ensRegionIds.size(); depth1++) {
+				putQueryParameter("EnsRegionIds." + (depth1 + 1) , ensRegionIds.get(depth1));
+			}
+		}	
 	}
 
 	public String getVSwitchName() {

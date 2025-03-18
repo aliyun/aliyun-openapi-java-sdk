@@ -41,11 +41,15 @@ public class DescribeNetworkInterfacesRequest extends RpcAcsRequest<DescribeNetw
 
 	private String status;
 
+	private List<String> networkInterfaceIds;
+
 	private String securityGroupId;
 
 	private String pageNumber;
 
 	private String pageSize;
+
+	private List<String> ensRegionIds;
 
 	private String primaryIpAddress;
 
@@ -128,14 +132,9 @@ public class DescribeNetworkInterfacesRequest extends RpcAcsRequest<DescribeNetw
 	public void setIpv6Address(List<String> ipv6Address) {
 		this.ipv6Address = ipv6Address;	
 		if (ipv6Address != null) {
-			String ipv6AddressArrVal = "";
-			for(int depth1 = 0; depth1 < ipv6Address.size(); depth1++) {
-				ipv6AddressArrVal += ipv6Address.get(depth1) + ",";
+			for (int depth1 = 0; depth1 < ipv6Address.size(); depth1++) {
+				putQueryParameter("Ipv6Address." + (depth1 + 1) , ipv6Address.get(depth1));
 			}
-			if (ipv6AddressArrVal.length() > 0) {
-				ipv6AddressArrVal = ipv6AddressArrVal.substring(0, ipv6AddressArrVal.length() - 1);
-			}
-			putQueryParameter("Ipv6Address" , ipv6AddressArrVal);
 		}	
 	}
 
@@ -148,6 +147,19 @@ public class DescribeNetworkInterfacesRequest extends RpcAcsRequest<DescribeNetw
 		if(status != null){
 			putQueryParameter("Status", status);
 		}
+	}
+
+	public List<String> getNetworkInterfaceIds() {
+		return this.networkInterfaceIds;
+	}
+
+	public void setNetworkInterfaceIds(List<String> networkInterfaceIds) {
+		this.networkInterfaceIds = networkInterfaceIds;	
+		if (networkInterfaceIds != null) {
+			for (int depth1 = 0; depth1 < networkInterfaceIds.size(); depth1++) {
+				putQueryParameter("NetworkInterfaceIds." + (depth1 + 1) , networkInterfaceIds.get(depth1));
+			}
+		}	
 	}
 
 	public String getSecurityGroupId() {
@@ -181,6 +193,19 @@ public class DescribeNetworkInterfacesRequest extends RpcAcsRequest<DescribeNetw
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize);
 		}
+	}
+
+	public List<String> getEnsRegionIds() {
+		return this.ensRegionIds;
+	}
+
+	public void setEnsRegionIds(List<String> ensRegionIds) {
+		this.ensRegionIds = ensRegionIds;	
+		if (ensRegionIds != null) {
+			for (int depth1 = 0; depth1 < ensRegionIds.size(); depth1++) {
+				putQueryParameter("EnsRegionIds." + (depth1 + 1) , ensRegionIds.get(depth1));
+			}
+		}	
 	}
 
 	public String getPrimaryIpAddress() {

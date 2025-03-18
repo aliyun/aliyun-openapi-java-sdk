@@ -93,6 +93,14 @@ public class DescribeEnsRouteTablesResponse extends AcsResponse {
 
 		private String networkName;
 
+		private String associateType;
+
+		private String description;
+
+		private Boolean isDefaultGatewayRouteTable;
+
+		private List<AssociatedResource> associatedResources;
+
 		private List<String> vSwitchIds;
 
 		public String getCreationTime() {
@@ -159,12 +167,77 @@ public class DescribeEnsRouteTablesResponse extends AcsResponse {
 			this.networkName = networkName;
 		}
 
+		public String getAssociateType() {
+			return this.associateType;
+		}
+
+		public void setAssociateType(String associateType) {
+			this.associateType = associateType;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public Boolean getIsDefaultGatewayRouteTable() {
+			return this.isDefaultGatewayRouteTable;
+		}
+
+		public void setIsDefaultGatewayRouteTable(Boolean isDefaultGatewayRouteTable) {
+			this.isDefaultGatewayRouteTable = isDefaultGatewayRouteTable;
+		}
+
+		public List<AssociatedResource> getAssociatedResources() {
+			return this.associatedResources;
+		}
+
+		public void setAssociatedResources(List<AssociatedResource> associatedResources) {
+			this.associatedResources = associatedResources;
+		}
+
 		public List<String> getVSwitchIds() {
 			return this.vSwitchIds;
 		}
 
 		public void setVSwitchIds(List<String> vSwitchIds) {
 			this.vSwitchIds = vSwitchIds;
+		}
+
+		public static class AssociatedResource {
+
+			private String resourceType;
+
+			private String resourceId;
+
+			private String resourceName;
+
+			public String getResourceType() {
+				return this.resourceType;
+			}
+
+			public void setResourceType(String resourceType) {
+				this.resourceType = resourceType;
+			}
+
+			public String getResourceId() {
+				return this.resourceId;
+			}
+
+			public void setResourceId(String resourceId) {
+				this.resourceId = resourceId;
+			}
+
+			public String getResourceName() {
+				return this.resourceName;
+			}
+
+			public void setResourceName(String resourceName) {
+				this.resourceName = resourceName;
+			}
 		}
 	}
 

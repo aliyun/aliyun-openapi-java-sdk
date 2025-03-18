@@ -24,14 +24,29 @@ import com.aliyuncs.http.MethodType;
 public class DescribeLoadBalancerListenersRequest extends RpcAcsRequest<DescribeLoadBalancerListenersResponse> {
 	   
 
+	private String description;
+
 	private Integer pageNumber;
 
 	private Integer pageSize;
+
+	private Integer listenerPort;
 
 	private String loadBalancerId;
 	public DescribeLoadBalancerListenersRequest() {
 		super("Ens", "2017-11-10", "DescribeLoadBalancerListeners", "ens");
 		setMethod(MethodType.POST);
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
 	}
 
 	public Integer getPageNumber() {
@@ -53,6 +68,17 @@ public class DescribeLoadBalancerListenersRequest extends RpcAcsRequest<Describe
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Integer getListenerPort() {
+		return this.listenerPort;
+	}
+
+	public void setListenerPort(Integer listenerPort) {
+		this.listenerPort = listenerPort;
+		if(listenerPort != null){
+			putQueryParameter("ListenerPort", listenerPort.toString());
 		}
 	}
 

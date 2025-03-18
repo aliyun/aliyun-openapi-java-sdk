@@ -260,6 +260,8 @@ public class DescribeLoadBalancerAttributeResponse extends AcsResponse {
 
 		private Integer forwardPort;
 
+		private Integer backendServerPort;
+
 		public Integer getListenerPort() {
 			return this.listenerPort;
 		}
@@ -298,6 +300,14 @@ public class DescribeLoadBalancerAttributeResponse extends AcsResponse {
 
 		public void setForwardPort(Integer forwardPort) {
 			this.forwardPort = forwardPort;
+		}
+
+		public Integer getBackendServerPort() {
+			return this.backendServerPort;
+		}
+
+		public void setBackendServerPort(Integer backendServerPort) {
+			this.backendServerPort = backendServerPort;
 		}
 	}
 

@@ -44,6 +44,7 @@ public class DescribeImagesResponseUnmarshaller {
 			image.setImageSize(_ctx.stringValue("DescribeImagesResponse.Images["+ i +"].ImageSize"));
 			image.setPlatform(_ctx.stringValue("DescribeImagesResponse.Images["+ i +"].Platform"));
 			image.setSnapshotId(_ctx.stringValue("DescribeImagesResponse.Images["+ i +"].SnapshotId"));
+			image.setRegionId(_ctx.stringValue("DescribeImagesResponse.Images["+ i +"].RegionId"));
 
 			List<DiskDeviceMapping> diskDeviceMappings = new ArrayList<DiskDeviceMapping>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeImagesResponse.Images["+ i +"].DiskDeviceMappings.Length"); j++) {

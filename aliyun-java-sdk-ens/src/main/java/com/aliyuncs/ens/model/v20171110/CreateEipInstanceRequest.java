@@ -35,6 +35,8 @@ public class CreateEipInstanceRequest extends RpcAcsRequest<CreateEipInstanceRes
 
 	private String name;
 
+	private String clientToken;
+
 	private String description;
 
 	private String instanceChargeType;
@@ -100,6 +102,17 @@ public class CreateEipInstanceRequest extends RpcAcsRequest<CreateEipInstanceRes
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 

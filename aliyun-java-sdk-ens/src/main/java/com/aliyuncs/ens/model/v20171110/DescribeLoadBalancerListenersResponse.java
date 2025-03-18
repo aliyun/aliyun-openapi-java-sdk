@@ -93,6 +93,8 @@ public class DescribeLoadBalancerListenersResponse extends AcsResponse {
 
 		private String createTime;
 
+		private Integer backendServerPort;
+
 		public String getLoadBalancerId() {
 			return this.loadBalancerId;
 		}
@@ -155,6 +157,14 @@ public class DescribeLoadBalancerListenersResponse extends AcsResponse {
 
 		public void setCreateTime(String createTime) {
 			this.createTime = createTime;
+		}
+
+		public Integer getBackendServerPort() {
+			return this.backendServerPort;
+		}
+
+		public void setBackendServerPort(Integer backendServerPort) {
+			this.backendServerPort = backendServerPort;
 		}
 	}
 

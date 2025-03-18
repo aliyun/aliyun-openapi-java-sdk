@@ -101,6 +101,8 @@ public class DescribeSnatTableEntriesResponse extends AcsResponse {
 
 		private Boolean ispAffinity;
 
+		private Boolean eipAffinity;
+
 		private List<SnatIp> snatIps;
 
 		public String getNatGatewayId() {
@@ -197,6 +199,14 @@ public class DescribeSnatTableEntriesResponse extends AcsResponse {
 
 		public void setIspAffinity(Boolean ispAffinity) {
 			this.ispAffinity = ispAffinity;
+		}
+
+		public Boolean getEipAffinity() {
+			return this.eipAffinity;
+		}
+
+		public void setEipAffinity(Boolean eipAffinity) {
+			this.eipAffinity = eipAffinity;
 		}
 
 		public List<SnatIp> getSnatIps() {

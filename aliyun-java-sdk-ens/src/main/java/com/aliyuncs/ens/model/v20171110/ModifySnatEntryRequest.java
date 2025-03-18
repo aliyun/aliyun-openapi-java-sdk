@@ -24,6 +24,10 @@ import com.aliyuncs.http.MethodType;
 public class ModifySnatEntryRequest extends RpcAcsRequest<ModifySnatEntryResponse> {
 	   
 
+	private String snatIp;
+
+	private Boolean eipAffinity;
+
 	private String snatEntryId;
 
 	private String snatEntryName;
@@ -32,6 +36,28 @@ public class ModifySnatEntryRequest extends RpcAcsRequest<ModifySnatEntryRespons
 	public ModifySnatEntryRequest() {
 		super("Ens", "2017-11-10", "ModifySnatEntry", "ens");
 		setMethod(MethodType.POST);
+	}
+
+	public String getSnatIp() {
+		return this.snatIp;
+	}
+
+	public void setSnatIp(String snatIp) {
+		this.snatIp = snatIp;
+		if(snatIp != null){
+			putQueryParameter("SnatIp", snatIp);
+		}
+	}
+
+	public Boolean getEipAffinity() {
+		return this.eipAffinity;
+	}
+
+	public void setEipAffinity(Boolean eipAffinity) {
+		this.eipAffinity = eipAffinity;
+		if(eipAffinity != null){
+			putQueryParameter("EipAffinity", eipAffinity.toString());
+		}
 	}
 
 	public String getSnatEntryId() {

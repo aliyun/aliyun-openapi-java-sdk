@@ -30,6 +30,8 @@ public class CreateImageRequest extends RpcAcsRequest<CreateImageResponse> {
 
 	private String imageName;
 
+	private String targetOSSRegionId;
+
 	private String instanceId;
 	public CreateImageRequest() {
 		super("Ens", "2017-11-10", "CreateImage", "ens");
@@ -66,6 +68,17 @@ public class CreateImageRequest extends RpcAcsRequest<CreateImageResponse> {
 		this.imageName = imageName;
 		if(imageName != null){
 			putQueryParameter("ImageName", imageName);
+		}
+	}
+
+	public String getTargetOSSRegionId() {
+		return this.targetOSSRegionId;
+	}
+
+	public void setTargetOSSRegionId(String targetOSSRegionId) {
+		this.targetOSSRegionId = targetOSSRegionId;
+		if(targetOSSRegionId != null){
+			putQueryParameter("TargetOSSRegionId", targetOSSRegionId);
 		}
 	}
 

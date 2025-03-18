@@ -15,6 +15,7 @@
 package com.aliyuncs.ens.model.v20171110;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 
 /**
@@ -39,6 +40,8 @@ public class DescribeLoadBalancersRequest extends RpcAcsRequest<DescribeLoadBala
 	private Integer pageNumber;
 
 	private Integer pageSize;
+
+	private List<String> ensRegionIds;
 
 	private String address;
 
@@ -134,6 +137,19 @@ public class DescribeLoadBalancersRequest extends RpcAcsRequest<DescribeLoadBala
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
 		}
+	}
+
+	public List<String> getEnsRegionIds() {
+		return this.ensRegionIds;
+	}
+
+	public void setEnsRegionIds(List<String> ensRegionIds) {
+		this.ensRegionIds = ensRegionIds;	
+		if (ensRegionIds != null) {
+			for (int depth1 = 0; depth1 < ensRegionIds.size(); depth1++) {
+				putQueryParameter("EnsRegionIds." + (depth1 + 1) , ensRegionIds.get(depth1));
+			}
+		}	
 	}
 
 	public String getAddress() {

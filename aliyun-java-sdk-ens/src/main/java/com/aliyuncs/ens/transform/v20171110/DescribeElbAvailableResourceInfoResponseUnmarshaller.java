@@ -44,6 +44,12 @@ public class DescribeElbAvailableResourceInfoResponseUnmarshaller {
 			}
 			elbAvailableResourceInfoItem.setLoadBalancerSpec(loadBalancerSpec);
 
+			List<String> ability = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeElbAvailableResourceInfoResponse.ElbAvailableResourceInfo["+ i +"].Ability.Length"); j++) {
+				ability.add(_ctx.stringValue("DescribeElbAvailableResourceInfoResponse.ElbAvailableResourceInfo["+ i +"].Ability["+ j +"]"));
+			}
+			elbAvailableResourceInfoItem.setAbility(ability);
+
 			elbAvailableResourceInfo.add(elbAvailableResourceInfoItem);
 		}
 		describeElbAvailableResourceInfoResponse.setElbAvailableResourceInfo(elbAvailableResourceInfo);

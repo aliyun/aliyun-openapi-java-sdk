@@ -14,17 +14,16 @@
 
 package com.aliyuncs.ens.transform.v20171110;
 
-import com.aliyuncs.ens.model.v20171110.ReleaseInstanceResponse;
+import com.aliyuncs.ens.model.v20171110.ModifyEnsRouteEntryResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class ReleaseInstanceResponseUnmarshaller {
+public class ModifyEnsRouteEntryResponseUnmarshaller {
 
-	public static ReleaseInstanceResponse unmarshall(ReleaseInstanceResponse releaseInstanceResponse, UnmarshallerContext _ctx) {
+	public static ModifyEnsRouteEntryResponse unmarshall(ModifyEnsRouteEntryResponse modifyEnsRouteEntryResponse, UnmarshallerContext _ctx) {
 		
-		releaseInstanceResponse.setRequestId(_ctx.stringValue("ReleaseInstanceResponse.RequestId"));
-		releaseInstanceResponse.setResourceType(_ctx.stringValue("ReleaseInstanceResponse.ResourceType"));
+		modifyEnsRouteEntryResponse.setRequestId(_ctx.stringValue("ModifyEnsRouteEntryResponse.RequestId"));
 	 
-	 	return releaseInstanceResponse;
+	 	return modifyEnsRouteEntryResponse;
 	}
 }

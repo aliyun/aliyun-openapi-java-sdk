@@ -40,6 +40,18 @@ public class DescribeSecurityGroupsResponseUnmarshaller {
 			securityGroup.setSecurityGroupId(_ctx.stringValue("DescribeSecurityGroupsResponse.SecurityGroups["+ i +"].SecurityGroupId"));
 			securityGroup.setSecurityGroupName(_ctx.stringValue("DescribeSecurityGroupsResponse.SecurityGroups["+ i +"].SecurityGroupName"));
 
+			List<String> instanceIds = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeSecurityGroupsResponse.SecurityGroups["+ i +"].InstanceIds.Length"); j++) {
+				instanceIds.add(_ctx.stringValue("DescribeSecurityGroupsResponse.SecurityGroups["+ i +"].InstanceIds["+ j +"]"));
+			}
+			securityGroup.setInstanceIds(instanceIds);
+
+			List<String> networkInterfaceIds = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeSecurityGroupsResponse.SecurityGroups["+ i +"].NetworkInterfaceIds.Length"); j++) {
+				networkInterfaceIds.add(_ctx.stringValue("DescribeSecurityGroupsResponse.SecurityGroups["+ i +"].NetworkInterfaceIds["+ j +"]"));
+			}
+			securityGroup.setNetworkInterfaceIds(networkInterfaceIds);
+
 			securityGroups.add(securityGroup);
 		}
 		describeSecurityGroupsResponse.setSecurityGroups(securityGroups);

@@ -16,14 +16,14 @@ package com.aliyuncs.ens.model.v20171110;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ens.transform.v20171110.DescribeNetworkAttributeResponseUnmarshaller;
+import com.aliyuncs.ens.transform.v20171110.DescribeVSwitchAttributesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeNetworkAttributeResponse extends AcsResponse {
+public class DescribeVSwitchAttributesResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -31,7 +31,7 @@ public class DescribeNetworkAttributeResponse extends AcsResponse {
 
 	private String networkId;
 
-	private String networkName;
+	private String vSwitchName;
 
 	private String cidrBlock;
 
@@ -41,21 +41,11 @@ public class DescribeNetworkAttributeResponse extends AcsResponse {
 
 	private String createdTime;
 
-	private String routerTableId;
+	private String vSwitchId;
 
-	private String networkAclId;
-
-	private String routeTableId;
-
-	private String gatewayRouteTableId;
-
-	private List<CloudResourceSetType> cloudResources;
-
-	private List<String> vSwitchIds;
+	private Long availableIpAddressCount;
 
 	private List<String> instanceIds;
-
-	private List<String> routeTableIds;
 
 	private List<String> networkInterfaceIds;
 
@@ -89,12 +79,12 @@ public class DescribeNetworkAttributeResponse extends AcsResponse {
 		this.networkId = networkId;
 	}
 
-	public String getNetworkName() {
-		return this.networkName;
+	public String getVSwitchName() {
+		return this.vSwitchName;
 	}
 
-	public void setNetworkName(String networkName) {
-		this.networkName = networkName;
+	public void setVSwitchName(String vSwitchName) {
+		this.vSwitchName = vSwitchName;
 	}
 
 	public String getCidrBlock() {
@@ -129,52 +119,20 @@ public class DescribeNetworkAttributeResponse extends AcsResponse {
 		this.createdTime = createdTime;
 	}
 
-	public String getRouterTableId() {
-		return this.routerTableId;
+	public String getVSwitchId() {
+		return this.vSwitchId;
 	}
 
-	public void setRouterTableId(String routerTableId) {
-		this.routerTableId = routerTableId;
+	public void setVSwitchId(String vSwitchId) {
+		this.vSwitchId = vSwitchId;
 	}
 
-	public String getNetworkAclId() {
-		return this.networkAclId;
+	public Long getAvailableIpAddressCount() {
+		return this.availableIpAddressCount;
 	}
 
-	public void setNetworkAclId(String networkAclId) {
-		this.networkAclId = networkAclId;
-	}
-
-	public String getRouteTableId() {
-		return this.routeTableId;
-	}
-
-	public void setRouteTableId(String routeTableId) {
-		this.routeTableId = routeTableId;
-	}
-
-	public String getGatewayRouteTableId() {
-		return this.gatewayRouteTableId;
-	}
-
-	public void setGatewayRouteTableId(String gatewayRouteTableId) {
-		this.gatewayRouteTableId = gatewayRouteTableId;
-	}
-
-	public List<CloudResourceSetType> getCloudResources() {
-		return this.cloudResources;
-	}
-
-	public void setCloudResources(List<CloudResourceSetType> cloudResources) {
-		this.cloudResources = cloudResources;
-	}
-
-	public List<String> getVSwitchIds() {
-		return this.vSwitchIds;
-	}
-
-	public void setVSwitchIds(List<String> vSwitchIds) {
-		this.vSwitchIds = vSwitchIds;
+	public void setAvailableIpAddressCount(Long availableIpAddressCount) {
+		this.availableIpAddressCount = availableIpAddressCount;
 	}
 
 	public List<String> getInstanceIds() {
@@ -183,14 +141,6 @@ public class DescribeNetworkAttributeResponse extends AcsResponse {
 
 	public void setInstanceIds(List<String> instanceIds) {
 		this.instanceIds = instanceIds;
-	}
-
-	public List<String> getRouteTableIds() {
-		return this.routeTableIds;
-	}
-
-	public void setRouteTableIds(List<String> routeTableIds) {
-		this.routeTableIds = routeTableIds;
 	}
 
 	public List<String> getNetworkInterfaceIds() {
@@ -225,31 +175,8 @@ public class DescribeNetworkAttributeResponse extends AcsResponse {
 		this.haVipIds = haVipIds;
 	}
 
-	public static class CloudResourceSetType {
-
-		private Integer resourceCount;
-
-		private String resourceType;
-
-		public Integer getResourceCount() {
-			return this.resourceCount;
-		}
-
-		public void setResourceCount(Integer resourceCount) {
-			this.resourceCount = resourceCount;
-		}
-
-		public String getResourceType() {
-			return this.resourceType;
-		}
-
-		public void setResourceType(String resourceType) {
-			this.resourceType = resourceType;
-		}
-	}
-
 	@Override
-	public DescribeNetworkAttributeResponse getInstance(UnmarshallerContext context) {
-		return	DescribeNetworkAttributeResponseUnmarshaller.unmarshall(this, context);
+	public DescribeVSwitchAttributesResponse getInstance(UnmarshallerContext context) {
+		return	DescribeVSwitchAttributesResponseUnmarshaller.unmarshall(this, context);
 	}
 }

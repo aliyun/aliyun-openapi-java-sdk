@@ -47,7 +47,7 @@ public class PutBucketRequest extends RpcAcsRequest<PutBucketResponse> {
 	public void setEnsRegionId(String ensRegionId) {
 		this.ensRegionId = ensRegionId;
 		if(ensRegionId != null){
-			putBodyParameter("EnsRegionId", ensRegionId);
+			putQueryParameter("EnsRegionId", ensRegionId);
 		}
 	}
 
@@ -58,7 +58,7 @@ public class PutBucketRequest extends RpcAcsRequest<PutBucketResponse> {
 	public void setLogicalBucketType(String logicalBucketType) {
 		this.logicalBucketType = logicalBucketType;
 		if(logicalBucketType != null){
-			putBodyParameter("LogicalBucketType", logicalBucketType);
+			putQueryParameter("LogicalBucketType", logicalBucketType);
 		}
 	}
 
@@ -69,7 +69,7 @@ public class PutBucketRequest extends RpcAcsRequest<PutBucketResponse> {
 	public void setBucketName(String bucketName) {
 		this.bucketName = bucketName;
 		if(bucketName != null){
-			putBodyParameter("BucketName", bucketName);
+			putQueryParameter("BucketName", bucketName);
 		}
 	}
 
@@ -80,7 +80,7 @@ public class PutBucketRequest extends RpcAcsRequest<PutBucketResponse> {
 	public void setBucketAcl(String bucketAcl) {
 		this.bucketAcl = bucketAcl;
 		if(bucketAcl != null){
-			putBodyParameter("BucketAcl", bucketAcl);
+			putQueryParameter("BucketAcl", bucketAcl);
 		}
 	}
 
@@ -91,7 +91,7 @@ public class PutBucketRequest extends RpcAcsRequest<PutBucketResponse> {
 	public void setDispatchScope(String dispatchScope) {
 		this.dispatchScope = dispatchScope;
 		if(dispatchScope != null){
-			putBodyParameter("DispatchScope", dispatchScope);
+			putQueryParameter("DispatchScope", dispatchScope);
 		}
 	}
 
@@ -102,7 +102,7 @@ public class PutBucketRequest extends RpcAcsRequest<PutBucketResponse> {
 	public void setComment(String comment) {
 		this.comment = comment;
 		if(comment != null){
-			putBodyParameter("Comment", comment);
+			putQueryParameter("Comment", comment);
 		}
 	}
 

@@ -25,9 +25,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSecurityGroupsResponse extends AcsResponse {
 
-	private Integer pageSize;
-
 	private String requestId;
+
+	private Integer pageSize;
 
 	private Integer pageNumber;
 
@@ -35,20 +35,20 @@ public class DescribeSecurityGroupsResponse extends AcsResponse {
 
 	private List<SecurityGroup> securityGroups;
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
 	}
 
 	public Integer getPageNumber() {
@@ -86,6 +86,10 @@ public class DescribeSecurityGroupsResponse extends AcsResponse {
 		private String securityGroupId;
 
 		private String securityGroupName;
+
+		private List<String> instanceIds;
+
+		private List<String> networkInterfaceIds;
 
 		public String getCreationTime() {
 			return this.creationTime;
@@ -125,6 +129,22 @@ public class DescribeSecurityGroupsResponse extends AcsResponse {
 
 		public void setSecurityGroupName(String securityGroupName) {
 			this.securityGroupName = securityGroupName;
+		}
+
+		public List<String> getInstanceIds() {
+			return this.instanceIds;
+		}
+
+		public void setInstanceIds(List<String> instanceIds) {
+			this.instanceIds = instanceIds;
+		}
+
+		public List<String> getNetworkInterfaceIds() {
+			return this.networkInterfaceIds;
+		}
+
+		public void setNetworkInterfaceIds(List<String> networkInterfaceIds) {
+			this.networkInterfaceIds = networkInterfaceIds;
 		}
 	}
 

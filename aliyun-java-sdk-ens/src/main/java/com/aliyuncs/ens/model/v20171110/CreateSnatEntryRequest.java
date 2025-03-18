@@ -28,6 +28,8 @@ public class CreateSnatEntryRequest extends RpcAcsRequest<CreateSnatEntryRespons
 
 	private String sourceVSwitchId;
 
+	private Boolean eipAffinity;
+
 	private String sourceNetworkId;
 
 	private String standbySnatIp;
@@ -65,6 +67,17 @@ public class CreateSnatEntryRequest extends RpcAcsRequest<CreateSnatEntryRespons
 		this.sourceVSwitchId = sourceVSwitchId;
 		if(sourceVSwitchId != null){
 			putQueryParameter("SourceVSwitchId", sourceVSwitchId);
+		}
+	}
+
+	public Boolean getEipAffinity() {
+		return this.eipAffinity;
+	}
+
+	public void setEipAffinity(Boolean eipAffinity) {
+		this.eipAffinity = eipAffinity;
+		if(eipAffinity != null){
+			putQueryParameter("EipAffinity", eipAffinity.toString());
 		}
 	}
 

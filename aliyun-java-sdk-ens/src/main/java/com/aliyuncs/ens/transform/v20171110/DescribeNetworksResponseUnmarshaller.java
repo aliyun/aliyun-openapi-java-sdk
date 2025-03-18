@@ -43,12 +43,20 @@ public class DescribeNetworksResponseUnmarshaller {
 			network.setCreatedTime(_ctx.stringValue("DescribeNetworksResponse.Networks["+ i +"].CreatedTime"));
 			network.setRouterTableId(_ctx.stringValue("DescribeNetworksResponse.Networks["+ i +"].RouterTableId"));
 			network.setNetworkAclId(_ctx.stringValue("DescribeNetworksResponse.Networks["+ i +"].NetworkAclId"));
+			network.setRouteTableId(_ctx.stringValue("DescribeNetworksResponse.Networks["+ i +"].RouteTableId"));
+			network.setGatewayRouteTableId(_ctx.stringValue("DescribeNetworksResponse.Networks["+ i +"].GatewayRouteTableId"));
 
 			List<String> vSwitchIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeNetworksResponse.Networks["+ i +"].VSwitchIds.Length"); j++) {
 				vSwitchIds.add(_ctx.stringValue("DescribeNetworksResponse.Networks["+ i +"].VSwitchIds["+ j +"]"));
 			}
 			network.setVSwitchIds(vSwitchIds);
+
+			List<String> routeTableIds = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeNetworksResponse.Networks["+ i +"].RouteTableIds.Length"); j++) {
+				routeTableIds.add(_ctx.stringValue("DescribeNetworksResponse.Networks["+ i +"].RouteTableIds["+ j +"]"));
+			}
+			network.setRouteTableIds(routeTableIds);
 
 			networks.add(network);
 		}

@@ -39,6 +39,12 @@ public class DescribeCloudDiskAvailableResourceInfoResponseUnmarshaller {
 			supportResource.setCategory(_ctx.stringValue("DescribeCloudDiskAvailableResourceInfoResponse.SupportResources["+ i +"].Category"));
 			supportResource.setDefaultDiskSize(_ctx.longValue("DescribeCloudDiskAvailableResourceInfoResponse.SupportResources["+ i +"].DefaultDiskSize"));
 
+			List<String> ability = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeCloudDiskAvailableResourceInfoResponse.SupportResources["+ i +"].Ability.Length"); j++) {
+				ability.add(_ctx.stringValue("DescribeCloudDiskAvailableResourceInfoResponse.SupportResources["+ i +"].Ability["+ j +"]"));
+			}
+			supportResource.setAbility(ability);
+
 			supportResources.add(supportResource);
 		}
 		describeCloudDiskAvailableResourceInfoResponse.setSupportResources(supportResources);

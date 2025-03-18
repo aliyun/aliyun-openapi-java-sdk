@@ -29,6 +29,12 @@ public class DescribeSelfImagesResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String pageSize;
+
+	private String pageNumber;
+
+	private String totalCount;
+
 	private List<Image> images;
 
 	public Integer getCode() {
@@ -45,6 +51,30 @@ public class DescribeSelfImagesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(String pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public String getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(String pageNumber) {
+		this.pageNumber = pageNumber;
+	}
+
+	public String getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(String totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<Image> getImages() {
@@ -82,6 +112,8 @@ public class DescribeSelfImagesResponse extends AcsResponse {
 		private String snapshotId;
 
 		private String imageStorageSize;
+
+		private String regionId;
 
 		private List<DiskDeviceMapping> diskDeviceMappings;
 
@@ -187,6 +219,14 @@ public class DescribeSelfImagesResponse extends AcsResponse {
 
 		public void setImageStorageSize(String imageStorageSize) {
 			this.imageStorageSize = imageStorageSize;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 
 		public List<DiskDeviceMapping> getDiskDeviceMappings() {

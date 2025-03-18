@@ -14,19 +14,20 @@
 
 package com.aliyuncs.ens.model.v20171110;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ens.transform.v20171110.CreateSecurityGroupResponseUnmarshaller;
+import com.aliyuncs.ens.transform.v20171110.ListProductAbilitiesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateSecurityGroupResponse extends AcsResponse {
+public class ListProductAbilitiesResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String securityGroupId;
+	private List<String> productAbilities;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,16 +37,21 @@ public class CreateSecurityGroupResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getSecurityGroupId() {
-		return this.securityGroupId;
+	public List<String> getProductAbilities() {
+		return this.productAbilities;
 	}
 
-	public void setSecurityGroupId(String securityGroupId) {
-		this.securityGroupId = securityGroupId;
+	public void setProductAbilities(List<String> productAbilities) {
+		this.productAbilities = productAbilities;
 	}
 
 	@Override
-	public CreateSecurityGroupResponse getInstance(UnmarshallerContext context) {
-		return	CreateSecurityGroupResponseUnmarshaller.unmarshall(this, context);
+	public ListProductAbilitiesResponse getInstance(UnmarshallerContext context) {
+		return	ListProductAbilitiesResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

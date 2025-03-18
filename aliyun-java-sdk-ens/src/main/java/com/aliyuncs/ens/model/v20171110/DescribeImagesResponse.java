@@ -103,6 +103,8 @@ public class DescribeImagesResponse extends AcsResponse {
 
 		private String snapshotId;
 
+		private String regionId;
+
 		private List<DiskDeviceMapping> diskDeviceMappings;
 
 		public String getArchitecture() {
@@ -167,6 +169,14 @@ public class DescribeImagesResponse extends AcsResponse {
 
 		public void setSnapshotId(String snapshotId) {
 			this.snapshotId = snapshotId;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 
 		public List<DiskDeviceMapping> getDiskDeviceMappings() {

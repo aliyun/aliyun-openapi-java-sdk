@@ -53,6 +53,8 @@ public class DescribeSnatAttributeResponse extends AcsResponse {
 
 	private Boolean ispAffinity;
 
+	private Boolean eipAffinity;
+
 	private List<Snatip> snatIps;
 
 	public String getRequestId() {
@@ -165,6 +167,14 @@ public class DescribeSnatAttributeResponse extends AcsResponse {
 
 	public void setIspAffinity(Boolean ispAffinity) {
 		this.ispAffinity = ispAffinity;
+	}
+
+	public Boolean getEipAffinity() {
+		return this.eipAffinity;
+	}
+
+	public void setEipAffinity(Boolean eipAffinity) {
+		this.eipAffinity = eipAffinity;
 	}
 
 	public List<Snatip> getSnatIps() {

@@ -29,6 +29,9 @@ public class DescribeSelfImagesResponseUnmarshaller {
 		
 		describeSelfImagesResponse.setRequestId(_ctx.stringValue("DescribeSelfImagesResponse.RequestId"));
 		describeSelfImagesResponse.setCode(_ctx.integerValue("DescribeSelfImagesResponse.Code"));
+		describeSelfImagesResponse.setPageSize(_ctx.stringValue("DescribeSelfImagesResponse.PageSize"));
+		describeSelfImagesResponse.setPageNumber(_ctx.stringValue("DescribeSelfImagesResponse.PageNumber"));
+		describeSelfImagesResponse.setTotalCount(_ctx.stringValue("DescribeSelfImagesResponse.TotalCount"));
 
 		List<Image> images = new ArrayList<Image>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSelfImagesResponse.Images.Length"); i++) {
@@ -46,6 +49,7 @@ public class DescribeSelfImagesResponseUnmarshaller {
 			image.setComputeType(_ctx.stringValue("DescribeSelfImagesResponse.Images["+ i +"].ComputeType"));
 			image.setSnapshotId(_ctx.stringValue("DescribeSelfImagesResponse.Images["+ i +"].SnapshotId"));
 			image.setImageStorageSize(_ctx.stringValue("DescribeSelfImagesResponse.Images["+ i +"].ImageStorageSize"));
+			image.setRegionId(_ctx.stringValue("DescribeSelfImagesResponse.Images["+ i +"].RegionId"));
 
 			List<DiskDeviceMapping> diskDeviceMappings = new ArrayList<DiskDeviceMapping>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeSelfImagesResponse.Images["+ i +"].DiskDeviceMappings.Length"); j++) {

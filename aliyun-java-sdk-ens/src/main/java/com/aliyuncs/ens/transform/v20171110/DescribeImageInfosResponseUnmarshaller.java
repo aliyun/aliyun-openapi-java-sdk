@@ -40,6 +40,7 @@ public class DescribeImageInfosResponseUnmarshaller {
 			image.setOSName(_ctx.stringValue("DescribeImageInfosResponse.Images["+ i +"].OSName"));
 			image.setOSType(_ctx.stringValue("DescribeImageInfosResponse.Images["+ i +"].OSType"));
 			image.setComputeType(_ctx.stringValue("DescribeImageInfosResponse.Images["+ i +"].ComputeType"));
+			image.setRegionId(_ctx.stringValue("DescribeImageInfosResponse.Images["+ i +"].RegionId"));
 
 			List<DiskDeviceMapping> diskDeviceMappings = new ArrayList<DiskDeviceMapping>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeImageInfosResponse.Images["+ i +"].DiskDeviceMappings.Length"); j++) {

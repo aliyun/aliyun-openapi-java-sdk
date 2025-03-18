@@ -15,6 +15,7 @@
 package com.aliyuncs.ens.model.v20171110;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 
 /**
@@ -27,6 +28,8 @@ public class DescribeSnatTableEntriesRequest extends RpcAcsRequest<DescribeSnatT
 	private String snatIp;
 
 	private String snatEntryId;
+
+	private List<String> snatIps;
 
 	private String sourceCIDR;
 
@@ -62,6 +65,19 @@ public class DescribeSnatTableEntriesRequest extends RpcAcsRequest<DescribeSnatT
 		if(snatEntryId != null){
 			putQueryParameter("SnatEntryId", snatEntryId);
 		}
+	}
+
+	public List<String> getSnatIps() {
+		return this.snatIps;
+	}
+
+	public void setSnatIps(List<String> snatIps) {
+		this.snatIps = snatIps;	
+		if (snatIps != null) {
+			for (int depth1 = 0; depth1 < snatIps.size(); depth1++) {
+				putQueryParameter("SnatIps." + (depth1 + 1) , snatIps.get(depth1));
+			}
+		}	
 	}
 
 	public String getSourceCIDR() {

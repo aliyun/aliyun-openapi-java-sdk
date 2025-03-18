@@ -61,6 +61,8 @@ public class DescribeElbAvailableResourceInfoResponse extends AcsResponse {
 
 		private List<String> loadBalancerSpec;
 
+		private List<String> ability;
+
 		public String getEnsRegionId() {
 			return this.ensRegionId;
 		}
@@ -115,6 +117,14 @@ public class DescribeElbAvailableResourceInfoResponse extends AcsResponse {
 
 		public void setLoadBalancerSpec(List<String> loadBalancerSpec) {
 			this.loadBalancerSpec = loadBalancerSpec;
+		}
+
+		public List<String> getAbility() {
+			return this.ability;
+		}
+
+		public void setAbility(List<String> ability) {
+			this.ability = ability;
 		}
 	}
 

@@ -42,6 +42,7 @@ public class DescribeLoadBalancerListenersResponseUnmarshaller {
 			listener.setListenerForward(_ctx.stringValue("DescribeLoadBalancerListenersResponse.Listeners["+ i +"].ListenerForward"));
 			listener.setForwardPort(_ctx.stringValue("DescribeLoadBalancerListenersResponse.Listeners["+ i +"].ForwardPort"));
 			listener.setCreateTime(_ctx.stringValue("DescribeLoadBalancerListenersResponse.Listeners["+ i +"].CreateTime"));
+			listener.setBackendServerPort(_ctx.integerValue("DescribeLoadBalancerListenersResponse.Listeners["+ i +"].BackendServerPort"));
 
 			listeners.add(listener);
 		}

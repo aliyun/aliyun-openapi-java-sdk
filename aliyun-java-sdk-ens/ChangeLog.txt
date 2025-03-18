@@ -1,3 +1,6 @@
+2025-03-18 Version: 3.0.21
+- Supported DescribeImageSharePermission.
+
 2024-12-25 Version: 3.0.20
 -- Supported DeleteEip
 

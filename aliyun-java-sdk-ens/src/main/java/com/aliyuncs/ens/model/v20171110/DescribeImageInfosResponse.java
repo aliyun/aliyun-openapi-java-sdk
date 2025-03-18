@@ -71,6 +71,8 @@ public class DescribeImageInfosResponse extends AcsResponse {
 
 		private String computeType;
 
+		private String regionId;
+
 		private List<DiskDeviceMapping> diskDeviceMappings;
 
 		public String getDescription() {
@@ -127,6 +129,14 @@ public class DescribeImageInfosResponse extends AcsResponse {
 
 		public void setComputeType(String computeType) {
 			this.computeType = computeType;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 
 		public List<DiskDeviceMapping> getDiskDeviceMappings() {

@@ -15,18 +15,16 @@
 package com.aliyuncs.ens.model.v20171110;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ens.transform.v20171110.CreateSecurityGroupResponseUnmarshaller;
+import com.aliyuncs.ens.transform.v20171110.ModifyEnsRouteEntryResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateSecurityGroupResponse extends AcsResponse {
+public class ModifyEnsRouteEntryResponse extends AcsResponse {
 
 	private String requestId;
-
-	private String securityGroupId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,16 +34,13 @@ public class CreateSecurityGroupResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getSecurityGroupId() {
-		return this.securityGroupId;
-	}
-
-	public void setSecurityGroupId(String securityGroupId) {
-		this.securityGroupId = securityGroupId;
+	@Override
+	public ModifyEnsRouteEntryResponse getInstance(UnmarshallerContext context) {
+		return	ModifyEnsRouteEntryResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
-	public CreateSecurityGroupResponse getInstance(UnmarshallerContext context) {
-		return	CreateSecurityGroupResponseUnmarshaller.unmarshall(this, context);
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

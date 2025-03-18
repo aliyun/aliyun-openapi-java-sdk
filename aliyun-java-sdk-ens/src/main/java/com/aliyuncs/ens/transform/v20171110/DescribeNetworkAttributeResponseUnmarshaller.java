@@ -36,12 +36,50 @@ public class DescribeNetworkAttributeResponseUnmarshaller {
 		describeNetworkAttributeResponse.setCreatedTime(_ctx.stringValue("DescribeNetworkAttributeResponse.CreatedTime"));
 		describeNetworkAttributeResponse.setRouterTableId(_ctx.stringValue("DescribeNetworkAttributeResponse.RouterTableId"));
 		describeNetworkAttributeResponse.setNetworkAclId(_ctx.stringValue("DescribeNetworkAttributeResponse.NetworkAclId"));
+		describeNetworkAttributeResponse.setRouteTableId(_ctx.stringValue("DescribeNetworkAttributeResponse.RouteTableId"));
+		describeNetworkAttributeResponse.setGatewayRouteTableId(_ctx.stringValue("DescribeNetworkAttributeResponse.GatewayRouteTableId"));
 
 		List<String> vSwitchIds = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeNetworkAttributeResponse.VSwitchIds.Length"); i++) {
 			vSwitchIds.add(_ctx.stringValue("DescribeNetworkAttributeResponse.VSwitchIds["+ i +"]"));
 		}
 		describeNetworkAttributeResponse.setVSwitchIds(vSwitchIds);
+
+		List<String> instanceIds = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeNetworkAttributeResponse.InstanceIds.Length"); i++) {
+			instanceIds.add(_ctx.stringValue("DescribeNetworkAttributeResponse.InstanceIds["+ i +"]"));
+		}
+		describeNetworkAttributeResponse.setInstanceIds(instanceIds);
+
+		List<String> routeTableIds = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeNetworkAttributeResponse.RouteTableIds.Length"); i++) {
+			routeTableIds.add(_ctx.stringValue("DescribeNetworkAttributeResponse.RouteTableIds["+ i +"]"));
+		}
+		describeNetworkAttributeResponse.setRouteTableIds(routeTableIds);
+
+		List<String> networkInterfaceIds = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeNetworkAttributeResponse.NetworkInterfaceIds.Length"); i++) {
+			networkInterfaceIds.add(_ctx.stringValue("DescribeNetworkAttributeResponse.NetworkInterfaceIds["+ i +"]"));
+		}
+		describeNetworkAttributeResponse.setNetworkInterfaceIds(networkInterfaceIds);
+
+		List<String> loadBalancerIds = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeNetworkAttributeResponse.LoadBalancerIds.Length"); i++) {
+			loadBalancerIds.add(_ctx.stringValue("DescribeNetworkAttributeResponse.LoadBalancerIds["+ i +"]"));
+		}
+		describeNetworkAttributeResponse.setLoadBalancerIds(loadBalancerIds);
+
+		List<String> natGatewayIds = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeNetworkAttributeResponse.NatGatewayIds.Length"); i++) {
+			natGatewayIds.add(_ctx.stringValue("DescribeNetworkAttributeResponse.NatGatewayIds["+ i +"]"));
+		}
+		describeNetworkAttributeResponse.setNatGatewayIds(natGatewayIds);
+
+		List<String> haVipIds = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeNetworkAttributeResponse.HaVipIds.Length"); i++) {
+			haVipIds.add(_ctx.stringValue("DescribeNetworkAttributeResponse.HaVipIds["+ i +"]"));
+		}
+		describeNetworkAttributeResponse.setHaVipIds(haVipIds);
 
 		List<CloudResourceSetType> cloudResources = new ArrayList<CloudResourceSetType>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeNetworkAttributeResponse.CloudResources.Length"); i++) {

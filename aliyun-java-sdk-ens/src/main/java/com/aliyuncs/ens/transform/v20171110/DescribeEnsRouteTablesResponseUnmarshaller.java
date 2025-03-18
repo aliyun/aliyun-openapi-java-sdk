@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.ens.model.v20171110.DescribeEnsRouteTablesResponse;
 import com.aliyuncs.ens.model.v20171110.DescribeEnsRouteTablesResponse.RouteTable;
+import com.aliyuncs.ens.model.v20171110.DescribeEnsRouteTablesResponse.RouteTable.AssociatedResource;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -42,12 +43,26 @@ public class DescribeEnsRouteTablesResponseUnmarshaller {
 			routeTable.setType(_ctx.stringValue("DescribeEnsRouteTablesResponse.RouteTables["+ i +"].Type"));
 			routeTable.setRouteTableName(_ctx.stringValue("DescribeEnsRouteTablesResponse.RouteTables["+ i +"].RouteTableName"));
 			routeTable.setNetworkName(_ctx.stringValue("DescribeEnsRouteTablesResponse.RouteTables["+ i +"].NetworkName"));
+			routeTable.setAssociateType(_ctx.stringValue("DescribeEnsRouteTablesResponse.RouteTables["+ i +"].AssociateType"));
+			routeTable.setDescription(_ctx.stringValue("DescribeEnsRouteTablesResponse.RouteTables["+ i +"].Description"));
+			routeTable.setIsDefaultGatewayRouteTable(_ctx.booleanValue("DescribeEnsRouteTablesResponse.RouteTables["+ i +"].IsDefaultGatewayRouteTable"));
 
 			List<String> vSwitchIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeEnsRouteTablesResponse.RouteTables["+ i +"].VSwitchIds.Length"); j++) {
 				vSwitchIds.add(_ctx.stringValue("DescribeEnsRouteTablesResponse.RouteTables["+ i +"].VSwitchIds["+ j +"]"));
 			}
 			routeTable.setVSwitchIds(vSwitchIds);
+
+			List<AssociatedResource> associatedResources = new ArrayList<AssociatedResource>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeEnsRouteTablesResponse.RouteTables["+ i +"].AssociatedResources.Length"); j++) {
+				AssociatedResource associatedResource = new AssociatedResource();
+				associatedResource.setResourceType(_ctx.stringValue("DescribeEnsRouteTablesResponse.RouteTables["+ i +"].AssociatedResources["+ j +"].ResourceType"));
+				associatedResource.setResourceId(_ctx.stringValue("DescribeEnsRouteTablesResponse.RouteTables["+ i +"].AssociatedResources["+ j +"].ResourceId"));
+				associatedResource.setResourceName(_ctx.stringValue("DescribeEnsRouteTablesResponse.RouteTables["+ i +"].AssociatedResources["+ j +"].ResourceName"));
+
+				associatedResources.add(associatedResource);
+			}
+			routeTable.setAssociatedResources(associatedResources);
 
 			routeTables.add(routeTable);
 		}
