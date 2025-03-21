@@ -39,6 +39,8 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 
 	private Boolean trim;
 
+	private String iOSLiveActivityAttributesType;
+
 	private String androidPopupTitle;
 
 	private String iOSApnsEnv;
@@ -61,7 +63,11 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 
 	private String iOSNotificationThreadId;
 
+	private Long iOSLiveActivityStaleDate;
+
 	private Integer androidHuaweiTargetUserType;
+
+	private String iOSLiveActivityContentState;
 
 	private String androidMessageHuaweiUrgency;
 
@@ -87,6 +93,8 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 
 	private String iOSExtParameters;
 
+	private String iOSLiveActivityAttributes;
+
 	private String androidXiaomiImageUrl;
 
 	private String harmonyUri;
@@ -98,6 +106,8 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 	private String androidBigPictureUrl;
 
 	private Boolean iOSSilentNotification;
+
+	private String iOSLiveActivityEvent;
 
 	private String harmonyNotificationSlotType;
 
@@ -143,6 +153,8 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 
 	private Boolean iOSMutableContent;
 
+	private String iOSLiveActivityId;
+
 	private String androidNotificationThreadId;
 
 	private Integer androidHonorTargetUserType;
@@ -168,6 +180,8 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 	private String jobKey;
 
 	private String harmonyReceiptId;
+
+	private Long iOSLiveActivityDismissalDate;
 
 	private String androidOpenUrl;
 
@@ -308,6 +322,17 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 		}
 	}
 
+	public String getIOSLiveActivityAttributesType() {
+		return this.iOSLiveActivityAttributesType;
+	}
+
+	public void setIOSLiveActivityAttributesType(String iOSLiveActivityAttributesType) {
+		this.iOSLiveActivityAttributesType = iOSLiveActivityAttributesType;
+		if(iOSLiveActivityAttributesType != null){
+			putQueryParameter("iOSLiveActivityAttributesType", iOSLiveActivityAttributesType);
+		}
+	}
+
 	public String getAndroidPopupTitle() {
 		return this.androidPopupTitle;
 	}
@@ -429,6 +454,17 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 		}
 	}
 
+	public Long getIOSLiveActivityStaleDate() {
+		return this.iOSLiveActivityStaleDate;
+	}
+
+	public void setIOSLiveActivityStaleDate(Long iOSLiveActivityStaleDate) {
+		this.iOSLiveActivityStaleDate = iOSLiveActivityStaleDate;
+		if(iOSLiveActivityStaleDate != null){
+			putQueryParameter("iOSLiveActivityStaleDate", iOSLiveActivityStaleDate.toString());
+		}
+	}
+
 	public Integer getAndroidHuaweiTargetUserType() {
 		return this.androidHuaweiTargetUserType;
 	}
@@ -437,6 +473,17 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 		this.androidHuaweiTargetUserType = androidHuaweiTargetUserType;
 		if(androidHuaweiTargetUserType != null){
 			putQueryParameter("AndroidHuaweiTargetUserType", androidHuaweiTargetUserType.toString());
+		}
+	}
+
+	public String getIOSLiveActivityContentState() {
+		return this.iOSLiveActivityContentState;
+	}
+
+	public void setIOSLiveActivityContentState(String iOSLiveActivityContentState) {
+		this.iOSLiveActivityContentState = iOSLiveActivityContentState;
+		if(iOSLiveActivityContentState != null){
+			putQueryParameter("iOSLiveActivityContentState", iOSLiveActivityContentState);
 		}
 	}
 
@@ -572,6 +619,17 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 		}
 	}
 
+	public String getIOSLiveActivityAttributes() {
+		return this.iOSLiveActivityAttributes;
+	}
+
+	public void setIOSLiveActivityAttributes(String iOSLiveActivityAttributes) {
+		this.iOSLiveActivityAttributes = iOSLiveActivityAttributes;
+		if(iOSLiveActivityAttributes != null){
+			putQueryParameter("iOSLiveActivityAttributes", iOSLiveActivityAttributes);
+		}
+	}
+
 	public String getAndroidXiaomiImageUrl() {
 		return this.androidXiaomiImageUrl;
 	}
@@ -635,6 +693,17 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 		this.iOSSilentNotification = iOSSilentNotification;
 		if(iOSSilentNotification != null){
 			putQueryParameter("iOSSilentNotification", iOSSilentNotification.toString());
+		}
+	}
+
+	public String getIOSLiveActivityEvent() {
+		return this.iOSLiveActivityEvent;
+	}
+
+	public void setIOSLiveActivityEvent(String iOSLiveActivityEvent) {
+		this.iOSLiveActivityEvent = iOSLiveActivityEvent;
+		if(iOSLiveActivityEvent != null){
+			putQueryParameter("iOSLiveActivityEvent", iOSLiveActivityEvent);
 		}
 	}
 
@@ -880,6 +949,17 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 		}
 	}
 
+	public String getIOSLiveActivityId() {
+		return this.iOSLiveActivityId;
+	}
+
+	public void setIOSLiveActivityId(String iOSLiveActivityId) {
+		this.iOSLiveActivityId = iOSLiveActivityId;
+		if(iOSLiveActivityId != null){
+			putQueryParameter("iOSLiveActivityId", iOSLiveActivityId);
+		}
+	}
+
 	public String getAndroidNotificationThreadId() {
 		return this.androidNotificationThreadId;
 	}
@@ -1020,6 +1100,17 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 		this.harmonyReceiptId = harmonyReceiptId;
 		if(harmonyReceiptId != null){
 			putQueryParameter("HarmonyReceiptId", harmonyReceiptId);
+		}
+	}
+
+	public Long getIOSLiveActivityDismissalDate() {
+		return this.iOSLiveActivityDismissalDate;
+	}
+
+	public void setIOSLiveActivityDismissalDate(Long iOSLiveActivityDismissalDate) {
+		this.iOSLiveActivityDismissalDate = iOSLiveActivityDismissalDate;
+		if(iOSLiveActivityDismissalDate != null){
+			putQueryParameter("iOSLiveActivityDismissalDate", iOSLiveActivityDismissalDate.toString());
 		}
 	}
 
