@@ -15,7 +15,6 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.vod.Endpoint;
 
@@ -49,7 +48,6 @@ public class SetVodDomainSSLCertificateRequest extends RpcAcsRequest<SetVodDomai
 	private String sSLPub;
 	public SetVodDomainSSLCertificateRequest() {
 		super("vod", "2017-03-21", "SetVodDomainSSLCertificate", "vod");
-		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -34,6 +34,8 @@ public class DescribeVodTieringStorageRetrievalDataRequest extends RpcAcsRequest
 
 	private String storageClass;
 
+	private String appId;
+
 	private String region;
 	public DescribeVodTieringStorageRetrievalDataRequest() {
 		super("vod", "2017-03-21", "DescribeVodTieringStorageRetrievalData", "vod");
@@ -86,6 +88,17 @@ public class DescribeVodTieringStorageRetrievalDataRequest extends RpcAcsRequest
 		this.storageClass = storageClass;
 		if(storageClass != null){
 			putQueryParameter("StorageClass", storageClass);
+		}
+	}
+
+	public String getAppId() {
+		return this.appId;
+	}
+
+	public void setAppId(String appId) {
+		this.appId = appId;
+		if(appId != null){
+			putQueryParameter("AppId", appId);
 		}
 	}
 

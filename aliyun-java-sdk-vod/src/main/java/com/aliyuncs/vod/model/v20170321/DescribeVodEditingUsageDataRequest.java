@@ -15,7 +15,6 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.vod.Endpoint;
 
@@ -23,23 +22,22 @@ import com.aliyuncs.vod.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeVodTieringStorageDataRequest extends RpcAcsRequest<DescribeVodTieringStorageDataResponse> {
+public class DescribeVodEditingUsageDataRequest extends RpcAcsRequest<DescribeVodEditingUsageDataResponse> {
 	   
 
 	private String startTime;
 
 	private String endTime;
 
-	private Long ownerId;
+	private String specification;
 
-	private String storageClass;
+	private Long ownerId;
 
 	private String appId;
 
 	private String region;
-	public DescribeVodTieringStorageDataRequest() {
-		super("vod", "2017-03-21", "DescribeVodTieringStorageData", "vod");
-		setProtocol(ProtocolType.HTTPS);
+	public DescribeVodEditingUsageDataRequest() {
+		super("vod", "2017-03-21", "DescribeVodEditingUsageData", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -69,6 +67,17 @@ public class DescribeVodTieringStorageDataRequest extends RpcAcsRequest<Describe
 		}
 	}
 
+	public String getSpecification() {
+		return this.specification;
+	}
+
+	public void setSpecification(String specification) {
+		this.specification = specification;
+		if(specification != null){
+			putQueryParameter("Specification", specification);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -77,17 +86,6 @@ public class DescribeVodTieringStorageDataRequest extends RpcAcsRequest<Describe
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getStorageClass() {
-		return this.storageClass;
-	}
-
-	public void setStorageClass(String storageClass) {
-		this.storageClass = storageClass;
-		if(storageClass != null){
-			putQueryParameter("StorageClass", storageClass);
 		}
 	}
 
@@ -114,8 +112,8 @@ public class DescribeVodTieringStorageDataRequest extends RpcAcsRequest<Describe
 	}
 
 	@Override
-	public Class<DescribeVodTieringStorageDataResponse> getResponseClass() {
-		return DescribeVodTieringStorageDataResponse.class;
+	public Class<DescribeVodEditingUsageDataResponse> getResponseClass() {
+		return DescribeVodEditingUsageDataResponse.class;
 	}
 
 }
