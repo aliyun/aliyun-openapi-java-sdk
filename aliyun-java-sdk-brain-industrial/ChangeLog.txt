@@ -1,3 +1,6 @@
+2025-03-21 Version: 1.0.3
+- AICS OpenApi Invoke
+
 2025-02-21 Version: 1.0.2
 - AIVPP api.
 
