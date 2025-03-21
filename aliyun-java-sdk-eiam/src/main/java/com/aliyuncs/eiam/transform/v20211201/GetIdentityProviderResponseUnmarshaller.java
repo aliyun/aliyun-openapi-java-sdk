@@ -98,6 +98,8 @@ public class GetIdentityProviderResponseUnmarshaller {
 		larkConfig.setAppId(_ctx.stringValue("GetIdentityProviderResponse.IdentityProviderDetail.LarkConfig.AppId"));
 		larkConfig.setAppSecret(_ctx.stringValue("GetIdentityProviderResponse.IdentityProviderDetail.LarkConfig.AppSecret"));
 		larkConfig.setEnterpriseNumber(_ctx.stringValue("GetIdentityProviderResponse.IdentityProviderDetail.LarkConfig.EnterpriseNumber"));
+		larkConfig.setEncryptKey(_ctx.stringValue("GetIdentityProviderResponse.IdentityProviderDetail.LarkConfig.EncryptKey"));
+		larkConfig.setVerificationToken(_ctx.stringValue("GetIdentityProviderResponse.IdentityProviderDetail.LarkConfig.VerificationToken"));
 		identityProviderDetail.setLarkConfig(larkConfig);
 
 		LdapConfig ldapConfig = new LdapConfig();

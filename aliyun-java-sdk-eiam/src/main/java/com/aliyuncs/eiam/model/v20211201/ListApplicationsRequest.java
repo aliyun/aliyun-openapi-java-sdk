@@ -26,7 +26,11 @@ import com.aliyuncs.http.MethodType;
 public class ListApplicationsRequest extends RpcAcsRequest<ListApplicationsResponse> {
 	   
 
+	private String resourceServerStatus;
+
 	private Long pageNumber;
+
+	private String m2MClientStatus;
 
 	private Long pageSize;
 
@@ -38,11 +42,24 @@ public class ListApplicationsRequest extends RpcAcsRequest<ListApplicationsRespo
 
 	private String instanceId;
 
+	private String ssoType;
+
 	private String status;
 	public ListApplicationsRequest() {
 		super("Eiam", "2021-12-01", "ListApplications", "eiam");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
+	}
+
+	public String getResourceServerStatus() {
+		return this.resourceServerStatus;
+	}
+
+	public void setResourceServerStatus(String resourceServerStatus) {
+		this.resourceServerStatus = resourceServerStatus;
+		if(resourceServerStatus != null){
+			putQueryParameter("ResourceServerStatus", resourceServerStatus);
+		}
 	}
 
 	public Long getPageNumber() {
@@ -53,6 +70,17 @@ public class ListApplicationsRequest extends RpcAcsRequest<ListApplicationsRespo
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getM2MClientStatus() {
+		return this.m2MClientStatus;
+	}
+
+	public void setM2MClientStatus(String m2MClientStatus) {
+		this.m2MClientStatus = m2MClientStatus;
+		if(m2MClientStatus != null){
+			putQueryParameter("M2MClientStatus", m2MClientStatus);
 		}
 	}
 
@@ -110,6 +138,17 @@ public class ListApplicationsRequest extends RpcAcsRequest<ListApplicationsRespo
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getSsoType() {
+		return this.ssoType;
+	}
+
+	public void setSsoType(String ssoType) {
+		this.ssoType = ssoType;
+		if(ssoType != null){
+			putQueryParameter("SsoType", ssoType);
 		}
 	}
 

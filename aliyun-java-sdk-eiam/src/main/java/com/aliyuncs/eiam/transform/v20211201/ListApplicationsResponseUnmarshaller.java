@@ -47,6 +47,9 @@ public class ListApplicationsResponseUnmarshaller {
 			application.setServiceManaged(_ctx.booleanValue("ListApplicationsResponse.Applications["+ i +"].ServiceManaged"));
 			application.setManagedServiceCode(_ctx.stringValue("ListApplicationsResponse.Applications["+ i +"].ManagedServiceCode"));
 			application.setApplicationTemplateId(_ctx.stringValue("ListApplicationsResponse.Applications["+ i +"].ApplicationTemplateId"));
+			application.setM2MClientStatus(_ctx.stringValue("ListApplicationsResponse.Applications["+ i +"].M2MClientStatus"));
+			application.setResourceServerStatus(_ctx.stringValue("ListApplicationsResponse.Applications["+ i +"].ResourceServerStatus"));
+			application.setResourceServerIdentifier(_ctx.stringValue("ListApplicationsResponse.Applications["+ i +"].ResourceServerIdentifier"));
 
 			applications.add(application);
 		}

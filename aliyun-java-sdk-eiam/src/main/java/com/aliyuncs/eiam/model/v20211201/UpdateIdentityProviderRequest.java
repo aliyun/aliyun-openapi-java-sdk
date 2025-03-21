@@ -107,6 +107,8 @@ public class UpdateIdentityProviderRequest extends RpcAcsRequest<UpdateIdentityP
 			
 				putQueryParameter("LarkConfig.AppId" , larkConfig.getAppId());
 				putQueryParameter("LarkConfig.AppSecret" , larkConfig.getAppSecret());
+				putQueryParameter("LarkConfig.VerificationToken" , larkConfig.getVerificationToken());
+				putQueryParameter("LarkConfig.EncryptKey" , larkConfig.getEncryptKey());
 		}	
 	}
 
@@ -231,6 +233,10 @@ public class UpdateIdentityProviderRequest extends RpcAcsRequest<UpdateIdentityP
 
 		private String appSecret;
 
+		private String verificationToken;
+
+		private String encryptKey;
+
 		public String getAppId() {
 			return this.appId;
 		}
@@ -245,6 +251,22 @@ public class UpdateIdentityProviderRequest extends RpcAcsRequest<UpdateIdentityP
 
 		public void setAppSecret(String appSecret) {
 			this.appSecret = appSecret;
+		}
+
+		public String getVerificationToken() {
+			return this.verificationToken;
+		}
+
+		public void setVerificationToken(String verificationToken) {
+			this.verificationToken = verificationToken;
+		}
+
+		public String getEncryptKey() {
+			return this.encryptKey;
+		}
+
+		public void setEncryptKey(String encryptKey) {
+			this.encryptKey = encryptKey;
 		}
 	}
 

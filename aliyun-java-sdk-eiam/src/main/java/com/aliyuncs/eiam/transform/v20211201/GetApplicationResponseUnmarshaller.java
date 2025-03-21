@@ -46,6 +46,9 @@ public class GetApplicationResponseUnmarshaller {
 		application.setSsoType(_ctx.stringValue("GetApplicationResponse.Application.SsoType"));
 		application.setStatus(_ctx.stringValue("GetApplicationResponse.Application.Status"));
 		application.setUpdateTime(_ctx.longValue("GetApplicationResponse.Application.UpdateTime"));
+		application.setM2MClientStatus(_ctx.stringValue("GetApplicationResponse.Application.M2MClientStatus"));
+		application.setResourceServerStatus(_ctx.stringValue("GetApplicationResponse.Application.ResourceServerStatus"));
+		application.setResourceServerIdentifier(_ctx.stringValue("GetApplicationResponse.Application.ResourceServerIdentifier"));
 
 		List<String> applicationVisibility = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetApplicationResponse.Application.ApplicationVisibility.Length"); i++) {

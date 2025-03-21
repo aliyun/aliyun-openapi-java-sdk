@@ -36,6 +36,8 @@ public class SetIdentityProviderUdPullConfigurationRequest extends RpcAcsRequest
 
 	private String identityProviderId;
 
+	private PeriodicSyncConfig periodicSyncConfig;
+
 	private String instanceId;
 
 	private PullProtectedRule pullProtectedRule;
@@ -112,6 +114,24 @@ public class SetIdentityProviderUdPullConfigurationRequest extends RpcAcsRequest
 		if(identityProviderId != null){
 			putQueryParameter("IdentityProviderId", identityProviderId);
 		}
+	}
+
+	public PeriodicSyncConfig getPeriodicSyncConfig() {
+		return this.periodicSyncConfig;
+	}
+
+	public void setPeriodicSyncConfig(PeriodicSyncConfig periodicSyncConfig) {
+		this.periodicSyncConfig = periodicSyncConfig;	
+		if (periodicSyncConfig != null) {
+			
+				if (periodicSyncConfig.getPeriodicSyncTimes() != null) {
+					for (int depth1 = 0; depth1 < periodicSyncConfig.getPeriodicSyncTimes().size(); depth1++) {
+						putQueryParameter("PeriodicSyncConfig.PeriodicSyncTimes." + (depth1 + 1) , periodicSyncConfig.getPeriodicSyncTimes().get(depth1));
+					}
+				}
+				putQueryParameter("PeriodicSyncConfig.PeriodicSyncCron" , periodicSyncConfig.getPeriodicSyncCron());
+				putQueryParameter("PeriodicSyncConfig.PeriodicSyncType" , periodicSyncConfig.getPeriodicSyncType());
+		}	
 	}
 
 	public String getInstanceId() {
@@ -233,6 +253,39 @@ public class SetIdentityProviderUdPullConfigurationRequest extends RpcAcsRequest
 
 		public void setOrganizationUnitObjectClass(String organizationUnitObjectClass) {
 			this.organizationUnitObjectClass = organizationUnitObjectClass;
+		}
+	}
+
+	public static class PeriodicSyncConfig {
+
+		private List<Integer> periodicSyncTimes;
+
+		private String periodicSyncCron;
+
+		private String periodicSyncType;
+
+		public List<Integer> getPeriodicSyncTimes() {
+			return this.periodicSyncTimes;
+		}
+
+		public void setPeriodicSyncTimes(List<Integer> periodicSyncTimes) {
+			this.periodicSyncTimes = periodicSyncTimes;
+		}
+
+		public String getPeriodicSyncCron() {
+			return this.periodicSyncCron;
+		}
+
+		public void setPeriodicSyncCron(String periodicSyncCron) {
+			this.periodicSyncCron = periodicSyncCron;
+		}
+
+		public String getPeriodicSyncType() {
+			return this.periodicSyncType;
+		}
+
+		public void setPeriodicSyncType(String periodicSyncType) {
+			this.periodicSyncType = periodicSyncType;
 		}
 	}
 

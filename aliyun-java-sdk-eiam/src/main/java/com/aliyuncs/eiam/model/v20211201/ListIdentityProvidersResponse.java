@@ -95,6 +95,8 @@ public class ListIdentityProvidersResponse extends AcsResponse {
 
 		private String logoUrl;
 
+		private String periodicSyncStatus;
+
 		public String getInstanceId() {
 			return this.instanceId;
 		}
@@ -245,6 +247,14 @@ public class ListIdentityProvidersResponse extends AcsResponse {
 
 		public void setLogoUrl(String logoUrl) {
 			this.logoUrl = logoUrl;
+		}
+
+		public String getPeriodicSyncStatus() {
+			return this.periodicSyncStatus;
+		}
+
+		public void setPeriodicSyncStatus(String periodicSyncStatus) {
+			this.periodicSyncStatus = periodicSyncStatus;
 		}
 	}
 

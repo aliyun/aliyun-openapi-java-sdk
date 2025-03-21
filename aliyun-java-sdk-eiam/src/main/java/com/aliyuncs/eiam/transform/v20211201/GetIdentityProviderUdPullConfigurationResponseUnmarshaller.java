@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.eiam.model.v20211201.GetIdentityProviderUdPullConfigurationResponse;
 import com.aliyuncs.eiam.model.v20211201.GetIdentityProviderUdPullConfigurationResponse.UdPullConfiguration;
 import com.aliyuncs.eiam.model.v20211201.GetIdentityProviderUdPullConfigurationResponse.UdPullConfiguration.LdapUdPullConfig;
+import com.aliyuncs.eiam.model.v20211201.GetIdentityProviderUdPullConfigurationResponse.UdPullConfiguration.PeriodicSyncConfig;
 import com.aliyuncs.eiam.model.v20211201.GetIdentityProviderUdPullConfigurationResponse.UdPullConfiguration.PullProtectedRule;
 import com.aliyuncs.eiam.model.v20211201.GetIdentityProviderUdPullConfigurationResponse.UdPullConfiguration.UdSyncScopeConfig;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -62,6 +63,12 @@ public class GetIdentityProviderUdPullConfigurationResponseUnmarshaller {
 		ldapUdPullConfig.setGroupMemberAttributeName(_ctx.stringValue("GetIdentityProviderUdPullConfigurationResponse.UdPullConfiguration.LdapUdPullConfig.GroupMemberAttributeName"));
 		ldapUdPullConfig.setGroupObjectClassCustomFilter(_ctx.stringValue("GetIdentityProviderUdPullConfigurationResponse.UdPullConfiguration.LdapUdPullConfig.GroupObjectClassCustomFilter"));
 		udPullConfiguration.setLdapUdPullConfig(ldapUdPullConfig);
+
+		PeriodicSyncConfig periodicSyncConfig = new PeriodicSyncConfig();
+		periodicSyncConfig.setPeriodicSyncType(_ctx.stringValue("GetIdentityProviderUdPullConfigurationResponse.UdPullConfiguration.PeriodicSyncConfig.PeriodicSyncType"));
+		periodicSyncConfig.setPeriodicSyncCron(_ctx.stringValue("GetIdentityProviderUdPullConfigurationResponse.UdPullConfiguration.PeriodicSyncConfig.PeriodicSyncCron"));
+		periodicSyncConfig.setPeriodicSyncTimes(_ctx.integerValue("GetIdentityProviderUdPullConfigurationResponse.UdPullConfiguration.PeriodicSyncConfig.PeriodicSyncTimes"));
+		udPullConfiguration.setPeriodicSyncConfig(periodicSyncConfig);
 		getIdentityProviderUdPullConfigurationResponse.setUdPullConfiguration(udPullConfiguration);
 	 
 	 	return getIdentityProviderUdPullConfigurationResponse;

@@ -131,6 +131,16 @@ public class CreateIdentityProviderRequest extends RpcAcsRequest<CreateIdentityP
 						}
 				}
 				putQueryParameter("UdPullConfig.PeriodicSyncStatus" , udPullConfig.getPeriodicSyncStatus());
+				if (udPullConfig.getPeriodicSyncConfig() != null) {
+					
+						if (udPullConfig.getPeriodicSyncConfig().getPeriodicSyncTimes() != null) {
+							for (int depth1 = 0; depth1 < udPullConfig.getPeriodicSyncConfig().getPeriodicSyncTimes().size(); depth1++) {
+								putQueryParameter("UdPullConfig.PeriodicSyncConfig.PeriodicSyncTimes." + (depth1 + 1) , udPullConfig.getPeriodicSyncConfig().getPeriodicSyncTimes().get(depth1));
+							}
+						}
+						putQueryParameter("UdPullConfig.PeriodicSyncConfig.PeriodicSyncCron" , udPullConfig.getPeriodicSyncConfig().getPeriodicSyncCron());
+						putQueryParameter("UdPullConfig.PeriodicSyncConfig.PeriodicSyncType" , udPullConfig.getPeriodicSyncConfig().getPeriodicSyncType());
+				}
 				putQueryParameter("UdPullConfig.IncrementalCallbackStatus" , udPullConfig.getIncrementalCallbackStatus());
 		}	
 	}
@@ -146,6 +156,8 @@ public class CreateIdentityProviderRequest extends RpcAcsRequest<CreateIdentityP
 				putQueryParameter("LarkConfig.EnterpriseNumber" , larkConfig.getEnterpriseNumber());
 				putQueryParameter("LarkConfig.AppId" , larkConfig.getAppId());
 				putQueryParameter("LarkConfig.AppSecret" , larkConfig.getAppSecret());
+				putQueryParameter("LarkConfig.VerificationToken" , larkConfig.getVerificationToken());
+				putQueryParameter("LarkConfig.EncryptKey" , larkConfig.getEncryptKey());
 		}	
 	}
 
@@ -405,6 +417,8 @@ public class CreateIdentityProviderRequest extends RpcAcsRequest<CreateIdentityP
 
 		private String periodicSyncStatus;
 
+		private PeriodicSyncConfig periodicSyncConfig;
+
 		private String incrementalCallbackStatus;
 
 		public String getGroupSyncStatus() {
@@ -429,6 +443,14 @@ public class CreateIdentityProviderRequest extends RpcAcsRequest<CreateIdentityP
 
 		public void setPeriodicSyncStatus(String periodicSyncStatus) {
 			this.periodicSyncStatus = periodicSyncStatus;
+		}
+
+		public PeriodicSyncConfig getPeriodicSyncConfig() {
+			return this.periodicSyncConfig;
+		}
+
+		public void setPeriodicSyncConfig(PeriodicSyncConfig periodicSyncConfig) {
+			this.periodicSyncConfig = periodicSyncConfig;
 		}
 
 		public String getIncrementalCallbackStatus() {
@@ -461,6 +483,39 @@ public class CreateIdentityProviderRequest extends RpcAcsRequest<CreateIdentityP
 				this.sourceScopes = sourceScopes;
 			}
 		}
+
+		public static class PeriodicSyncConfig {
+
+			private List<Integer> periodicSyncTimes;
+
+			private String periodicSyncCron;
+
+			private String periodicSyncType;
+
+			public List<Integer> getPeriodicSyncTimes() {
+				return this.periodicSyncTimes;
+			}
+
+			public void setPeriodicSyncTimes(List<Integer> periodicSyncTimes) {
+				this.periodicSyncTimes = periodicSyncTimes;
+			}
+
+			public String getPeriodicSyncCron() {
+				return this.periodicSyncCron;
+			}
+
+			public void setPeriodicSyncCron(String periodicSyncCron) {
+				this.periodicSyncCron = periodicSyncCron;
+			}
+
+			public String getPeriodicSyncType() {
+				return this.periodicSyncType;
+			}
+
+			public void setPeriodicSyncType(String periodicSyncType) {
+				this.periodicSyncType = periodicSyncType;
+			}
+		}
 	}
 
 	public static class LarkConfig {
@@ -470,6 +525,10 @@ public class CreateIdentityProviderRequest extends RpcAcsRequest<CreateIdentityP
 		private String appId;
 
 		private String appSecret;
+
+		private String verificationToken;
+
+		private String encryptKey;
 
 		public String getEnterpriseNumber() {
 			return this.enterpriseNumber;
@@ -493,6 +552,22 @@ public class CreateIdentityProviderRequest extends RpcAcsRequest<CreateIdentityP
 
 		public void setAppSecret(String appSecret) {
 			this.appSecret = appSecret;
+		}
+
+		public String getVerificationToken() {
+			return this.verificationToken;
+		}
+
+		public void setVerificationToken(String verificationToken) {
+			this.verificationToken = verificationToken;
+		}
+
+		public String getEncryptKey() {
+			return this.encryptKey;
+		}
+
+		public void setEncryptKey(String encryptKey) {
+			this.encryptKey = encryptKey;
 		}
 	}
 

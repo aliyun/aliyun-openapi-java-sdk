@@ -63,6 +63,8 @@ public class GetIdentityProviderUdPullConfigurationResponse extends AcsResponse 
 
 		private LdapUdPullConfig ldapUdPullConfig;
 
+		private PeriodicSyncConfig periodicSyncConfig;
+
 		public String getInstanceId() {
 			return this.instanceId;
 		}
@@ -125,6 +127,14 @@ public class GetIdentityProviderUdPullConfigurationResponse extends AcsResponse 
 
 		public void setLdapUdPullConfig(LdapUdPullConfig ldapUdPullConfig) {
 			this.ldapUdPullConfig = ldapUdPullConfig;
+		}
+
+		public PeriodicSyncConfig getPeriodicSyncConfig() {
+			return this.periodicSyncConfig;
+		}
+
+		public void setPeriodicSyncConfig(PeriodicSyncConfig periodicSyncConfig) {
+			this.periodicSyncConfig = periodicSyncConfig;
 		}
 
 		public static class UdSyncScopeConfig {
@@ -243,6 +253,39 @@ public class GetIdentityProviderUdPullConfigurationResponse extends AcsResponse 
 
 			public void setGroupObjectClassCustomFilter(String groupObjectClassCustomFilter) {
 				this.groupObjectClassCustomFilter = groupObjectClassCustomFilter;
+			}
+		}
+
+		public static class PeriodicSyncConfig {
+
+			private String periodicSyncType;
+
+			private String periodicSyncCron;
+
+			private Integer periodicSyncTimes;
+
+			public String getPeriodicSyncType() {
+				return this.periodicSyncType;
+			}
+
+			public void setPeriodicSyncType(String periodicSyncType) {
+				this.periodicSyncType = periodicSyncType;
+			}
+
+			public String getPeriodicSyncCron() {
+				return this.periodicSyncCron;
+			}
+
+			public void setPeriodicSyncCron(String periodicSyncCron) {
+				this.periodicSyncCron = periodicSyncCron;
+			}
+
+			public Integer getPeriodicSyncTimes() {
+				return this.periodicSyncTimes;
+			}
+
+			public void setPeriodicSyncTimes(Integer periodicSyncTimes) {
+				this.periodicSyncTimes = periodicSyncTimes;
 			}
 		}
 	}

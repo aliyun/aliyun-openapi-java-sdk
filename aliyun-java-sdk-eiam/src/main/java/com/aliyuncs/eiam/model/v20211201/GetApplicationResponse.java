@@ -81,6 +81,12 @@ public class GetApplicationResponse extends AcsResponse {
 
 		private Long updateTime;
 
+		private String m2MClientStatus;
+
+		private String resourceServerStatus;
+
+		private String resourceServerIdentifier;
+
 		private List<String> applicationVisibility;
 
 		public String getApiInvokeStatus() {
@@ -217,6 +223,30 @@ public class GetApplicationResponse extends AcsResponse {
 
 		public void setUpdateTime(Long updateTime) {
 			this.updateTime = updateTime;
+		}
+
+		public String getM2MClientStatus() {
+			return this.m2MClientStatus;
+		}
+
+		public void setM2MClientStatus(String m2MClientStatus) {
+			this.m2MClientStatus = m2MClientStatus;
+		}
+
+		public String getResourceServerStatus() {
+			return this.resourceServerStatus;
+		}
+
+		public void setResourceServerStatus(String resourceServerStatus) {
+			this.resourceServerStatus = resourceServerStatus;
+		}
+
+		public String getResourceServerIdentifier() {
+			return this.resourceServerIdentifier;
+		}
+
+		public void setResourceServerIdentifier(String resourceServerIdentifier) {
+			this.resourceServerIdentifier = resourceServerIdentifier;
 		}
 
 		public List<String> getApplicationVisibility() {

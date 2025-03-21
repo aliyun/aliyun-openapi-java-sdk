@@ -447,6 +447,10 @@ public class GetIdentityProviderResponse extends AcsResponse {
 
 			private String enterpriseNumber;
 
+			private String encryptKey;
+
+			private String verificationToken;
+
 			public String getAppId() {
 				return this.appId;
 			}
@@ -469,6 +473,22 @@ public class GetIdentityProviderResponse extends AcsResponse {
 
 			public void setEnterpriseNumber(String enterpriseNumber) {
 				this.enterpriseNumber = enterpriseNumber;
+			}
+
+			public String getEncryptKey() {
+				return this.encryptKey;
+			}
+
+			public void setEncryptKey(String encryptKey) {
+				this.encryptKey = encryptKey;
+			}
+
+			public String getVerificationToken() {
+				return this.verificationToken;
+			}
+
+			public void setVerificationToken(String verificationToken) {
+				this.verificationToken = verificationToken;
 			}
 		}
 

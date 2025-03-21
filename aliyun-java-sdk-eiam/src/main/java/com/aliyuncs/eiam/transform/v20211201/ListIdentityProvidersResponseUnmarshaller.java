@@ -51,6 +51,7 @@ public class ListIdentityProvidersResponseUnmarshaller {
 			identityProvider.setCreateTime(_ctx.longValue("ListIdentityProvidersResponse.IdentityProviders["+ i +"].CreateTime"));
 			identityProvider.setUpdateTime(_ctx.longValue("ListIdentityProvidersResponse.IdentityProviders["+ i +"].UpdateTime"));
 			identityProvider.setLogoUrl(_ctx.stringValue("ListIdentityProvidersResponse.IdentityProviders["+ i +"].LogoUrl"));
+			identityProvider.setPeriodicSyncStatus(_ctx.stringValue("ListIdentityProvidersResponse.IdentityProviders["+ i +"].PeriodicSyncStatus"));
 
 			identityProviders.add(identityProvider);
 		}
