@@ -144,6 +144,10 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 
 	private String gpuDriverVersion;
 
+	private String plainHttpRegistry;
+
+	private String insecureRegistry;
+
     public Integer getEphemeralStorage() {
         return this.ephemeralStorage;
     }
@@ -676,6 +680,28 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 		this.gpuDriverVersion = gpuDriverVersion;
 		if (gpuDriverVersion != null) {
 			putQueryParameter("GpuDriverVersion", gpuDriverVersion);
+		}
+	}
+
+	public String getPlainHttpRegistry() {
+		return plainHttpRegistry;
+	}
+
+	public void setPlainHttpRegistry(String plainHttpRegistry) {
+		this.plainHttpRegistry = plainHttpRegistry;
+		if (plainHttpRegistry != null) {
+			putQueryParameter("PlainHttpRegistry", plainHttpRegistry);
+		}
+	}
+
+	public String getInsecureRegistry() {
+		return insecureRegistry;
+	}
+
+	public void setInsecureRegistry(String insecureRegistry) {
+		this.insecureRegistry = insecureRegistry;
+		if (insecureRegistry != null) {
+			putQueryParameter("InsecureRegistry", insecureRegistry);
 		}
 	}
 
