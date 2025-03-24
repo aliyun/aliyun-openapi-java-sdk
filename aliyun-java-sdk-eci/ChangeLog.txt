@@ -1,3 +1,6 @@
+2025-03-24 Version 1.5.7
+1、CreateContainerGroup api support parameter plainHttpRegistry and insecureRegistry.
+
 2024-11-20 Version 1.5.6
 1、BatchCreateContainerGroups support gpuDriverVersion
 
