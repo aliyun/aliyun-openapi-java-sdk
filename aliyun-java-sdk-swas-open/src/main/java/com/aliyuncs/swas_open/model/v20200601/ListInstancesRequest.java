@@ -25,6 +25,8 @@ import com.aliyuncs.http.MethodType;
 public class ListInstancesRequest extends RpcAcsRequest<ListInstancesResponse> {
 	   
 
+	private String planType;
+
 	private Integer pageNumber;
 
 	private String resourceGroupId;
@@ -45,6 +47,17 @@ public class ListInstancesRequest extends RpcAcsRequest<ListInstancesResponse> {
 	public ListInstancesRequest() {
 		super("SWAS-OPEN", "2020-06-01", "ListInstances", "SWAS-OPEN");
 		setMethod(MethodType.POST);
+	}
+
+	public String getPlanType() {
+		return this.planType;
+	}
+
+	public void setPlanType(String planType) {
+		this.planType = planType;
+		if(planType != null){
+			putQueryParameter("PlanType", planType);
+		}
 	}
 
 	public Integer getPageNumber() {

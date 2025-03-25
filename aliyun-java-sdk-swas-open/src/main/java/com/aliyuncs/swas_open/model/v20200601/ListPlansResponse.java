@@ -55,19 +55,25 @@ public class ListPlansResponse extends AcsResponse {
 
 		private Integer flow;
 
-		private Integer memory;
-
 		private String planId;
 
 		private String diskType;
-
-		private Double originPrice;
 
 		private String currency;
 
 		private String supportPlatform;
 
 		private String planType;
+
+		private String publicIpNum;
+
+		private String ispType;
+
+		private Float memory;
+
+		private String originPrice;
+
+		private List<Tag> tags;
 
 		public Integer getCore() {
 			return this.core;
@@ -101,14 +107,6 @@ public class ListPlansResponse extends AcsResponse {
 			this.flow = flow;
 		}
 
-		public Integer getMemory() {
-			return this.memory;
-		}
-
-		public void setMemory(Integer memory) {
-			this.memory = memory;
-		}
-
 		public String getPlanId() {
 			return this.planId;
 		}
@@ -123,14 +121,6 @@ public class ListPlansResponse extends AcsResponse {
 
 		public void setDiskType(String diskType) {
 			this.diskType = diskType;
-		}
-
-		public Double getOriginPrice() {
-			return this.originPrice;
-		}
-
-		public void setOriginPrice(Double originPrice) {
-			this.originPrice = originPrice;
 		}
 
 		public String getCurrency() {
@@ -155,6 +145,79 @@ public class ListPlansResponse extends AcsResponse {
 
 		public void setPlanType(String planType) {
 			this.planType = planType;
+		}
+
+		public String getPublicIpNum() {
+			return this.publicIpNum;
+		}
+
+		public void setPublicIpNum(String publicIpNum) {
+			this.publicIpNum = publicIpNum;
+		}
+
+		public String getIspType() {
+			return this.ispType;
+		}
+
+		public void setIspType(String ispType) {
+			this.ispType = ispType;
+		}
+
+		public Float getMemory() {
+			return this.memory;
+		}
+
+		public void setMemory(Float memory) {
+			this.memory = memory;
+		}
+
+		public String getOriginPrice() {
+			return this.originPrice;
+		}
+
+		public void setOriginPrice(String originPrice) {
+			this.originPrice = originPrice;
+		}
+
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
+		public static class Tag {
+
+			private String cnTitle;
+
+			private String enTitle;
+
+			private String color;
+
+			public String getCnTitle() {
+				return this.cnTitle;
+			}
+
+			public void setCnTitle(String cnTitle) {
+				this.cnTitle = cnTitle;
+			}
+
+			public String getEnTitle() {
+				return this.enTitle;
+			}
+
+			public void setEnTitle(String enTitle) {
+				this.enTitle = enTitle;
+			}
+
+			public String getColor() {
+				return this.color;
+			}
+
+			public void setColor(String color) {
+				this.color = color;
+			}
 		}
 	}
 

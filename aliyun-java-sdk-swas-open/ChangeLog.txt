@@ -1,3 +1,6 @@
+2025-03-25 Version: 1.8.15
+- Generated 2020-06-01 for `SWAS-OPEN`.
+
 2025-02-11 Version: 1.8.14
 - Generated 2020-06-01 for `SWAS-OPEN`.
 

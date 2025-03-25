@@ -22,6 +22,7 @@ import com.aliyuncs.swas_open.model.v20200601.ListInstancesResponse.Instance;
 import com.aliyuncs.swas_open.model.v20200601.ListInstancesResponse.Instance.Disk;
 import com.aliyuncs.swas_open.model.v20200601.ListInstancesResponse.Instance.Disk.Tag1;
 import com.aliyuncs.swas_open.model.v20200601.ListInstancesResponse.Instance.Image;
+import com.aliyuncs.swas_open.model.v20200601.ListInstancesResponse.Instance.NetworkAttribute;
 import com.aliyuncs.swas_open.model.v20200601.ListInstancesResponse.Instance.ResourceSpec;
 import com.aliyuncs.swas_open.model.v20200601.ListInstancesResponse.Instance.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -57,6 +58,7 @@ public class ListInstancesResponseUnmarshaller {
 			instance.setCombinationInstanceId(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].CombinationInstanceId"));
 			instance.setUuid(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].Uuid"));
 			instance.setResourceGroupId(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].ResourceGroupId"));
+			instance.setPlanType(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].PlanType"));
 
 			ResourceSpec resourceSpec = new ResourceSpec();
 			resourceSpec.setDiskCategory(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].ResourceSpec.DiskCategory"));
@@ -115,6 +117,18 @@ public class ListInstancesResponseUnmarshaller {
 				disks.add(disk);
 			}
 			instance.setDisks(disks);
+
+			List<NetworkAttribute> networkAttributes = new ArrayList<NetworkAttribute>();
+			for (int j = 0; j < _ctx.lengthValue("ListInstancesResponse.Instances["+ i +"].NetworkAttributes.Length"); j++) {
+				NetworkAttribute networkAttribute = new NetworkAttribute();
+				networkAttribute.setPublicIpAddress(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].NetworkAttributes["+ j +"].PublicIpAddress"));
+				networkAttribute.setPrivateIpAddress(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].NetworkAttributes["+ j +"].PrivateIpAddress"));
+				networkAttribute.setPeakBandwidth(_ctx.integerValue("ListInstancesResponse.Instances["+ i +"].NetworkAttributes["+ j +"].PeakBandwidth"));
+				networkAttribute.setPublicIpDdosStatus(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].NetworkAttributes["+ j +"].PublicIpDdosStatus"));
+
+				networkAttributes.add(networkAttribute);
+			}
+			instance.setNetworkAttributes(networkAttributes);
 
 			instances.add(instance);
 		}

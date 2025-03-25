@@ -113,9 +113,13 @@ public class ListInstancesResponse extends AcsResponse {
 
 		private String resourceGroupId;
 
+		private String planType;
+
 		private List<Tag> tags;
 
 		private List<Disk> disks;
+
+		private List<NetworkAttribute> networkAttributes;
 
 		private ResourceSpec resourceSpec;
 
@@ -265,6 +269,14 @@ public class ListInstancesResponse extends AcsResponse {
 			this.resourceGroupId = resourceGroupId;
 		}
 
+		public String getPlanType() {
+			return this.planType;
+		}
+
+		public void setPlanType(String planType) {
+			this.planType = planType;
+		}
+
 		public List<Tag> getTags() {
 			return this.tags;
 		}
@@ -279,6 +291,14 @@ public class ListInstancesResponse extends AcsResponse {
 
 		public void setDisks(List<Disk> disks) {
 			this.disks = disks;
+		}
+
+		public List<NetworkAttribute> getNetworkAttributes() {
+			return this.networkAttributes;
+		}
+
+		public void setNetworkAttributes(List<NetworkAttribute> networkAttributes) {
+			this.networkAttributes = networkAttributes;
 		}
 
 		public ResourceSpec getResourceSpec() {
@@ -473,6 +493,49 @@ public class ListInstancesResponse extends AcsResponse {
 				public void setValue(String value) {
 					this.value = value;
 				}
+			}
+		}
+
+		public static class NetworkAttribute {
+
+			private String publicIpAddress;
+
+			private String privateIpAddress;
+
+			private Integer peakBandwidth;
+
+			private String publicIpDdosStatus;
+
+			public String getPublicIpAddress() {
+				return this.publicIpAddress;
+			}
+
+			public void setPublicIpAddress(String publicIpAddress) {
+				this.publicIpAddress = publicIpAddress;
+			}
+
+			public String getPrivateIpAddress() {
+				return this.privateIpAddress;
+			}
+
+			public void setPrivateIpAddress(String privateIpAddress) {
+				this.privateIpAddress = privateIpAddress;
+			}
+
+			public Integer getPeakBandwidth() {
+				return this.peakBandwidth;
+			}
+
+			public void setPeakBandwidth(Integer peakBandwidth) {
+				this.peakBandwidth = peakBandwidth;
+			}
+
+			public String getPublicIpDdosStatus() {
+				return this.publicIpDdosStatus;
+			}
+
+			public void setPublicIpDdosStatus(String publicIpDdosStatus) {
+				this.publicIpDdosStatus = publicIpDdosStatus;
 			}
 		}
 
