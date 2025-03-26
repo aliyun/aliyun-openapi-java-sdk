@@ -30,11 +30,15 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 
 	private String hpcClusterId;
 
+	private SecurityOptions securityOptions;
+
 	private String securityEnhancementStrategy;
 
 	private String keyPairName;
 
 	private List<SpotPriceLimit> spotPriceLimits;
+
+	private Boolean deletionProtection;
 
 	private String resourceGroupId;
 
@@ -44,17 +48,23 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 
 	private String password;
 
-	private List<String> systemDiskCategorys;
-
 	private String instanceDescription;
+
+	private Integer storageSetPartitionNumber;
+
+	private List<CustomPriorities> customPrioritiess;
 
 	private String systemDiskAutoSnapshotPolicyId;
 
 	private String privatePoolOptionsId;
 
+	private Boolean imageOptionsLoginAsNonRoot;
+
 	private Integer ipv6AddressCount;
 
 	private Integer cpu;
+
+	private List<String> systemDiskCategoriess;
 
 	private Long ownerId;
 
@@ -63,6 +73,8 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 	private String tags;
 
 	private String spotStrategy;
+
+	private Boolean systemDiskBurstingEnabled;
 
 	private String instanceName;
 
@@ -76,6 +88,8 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 
 	private String affinity;
 
+	private List<NetworkInterfaces> networkInterfacess;
+
 	private String imageId;
 
 	private Integer memory;
@@ -86,13 +100,15 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 
 	private String scalingGroupId;
 
-	private List<String> instanceTypes;
-
 	private String ioOptimized;
+
+	private List<String> instanceTypess;
 
 	private String securityGroupId;
 
 	private Integer internetMaxBandwidthOut;
+
+	private String systemDiskKMSKeyId;
 
 	private String systemDiskCategory;
 
@@ -102,7 +118,13 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 
 	private Boolean passwordInherit;
 
+	private ResourcePoolOptions resourcePoolOptions;
+
 	private String imageName;
+
+	private String httpEndpoint;
+
+	private String dedicatedHostClusterId;
 
 	private String instanceType;
 
@@ -120,25 +142,35 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 
 	private String ramRoleName;
 
+	private String systemDiskEncryptAlgorithm;
+
 	private String dedicatedHostId;
 
 	private String creditSpecification;
 
-	private List<String> securityGroupIds;
-
 	private Integer spotDuration;
+
+	private List<String> securityGroupIdss;
 
 	private List<DataDisk> dataDisks;
 
 	private List<InstanceTypeOverride> instanceTypeOverrides;
 
+	private Long systemDiskProvisionedIops;
+
 	private Integer loadBalancerWeight;
+
+	private String storageSetId;
 
 	private Integer systemDiskSize;
 
 	private String imageFamily;
 
+	private String httpTokens;
+
 	private String systemDiskDescription;
+
+	private Boolean systemDiskEncrypted;
 	public CreateScalingConfigurationRequest() {
 		super("Ess", "2014-08-28", "CreateScalingConfiguration", "ess");
 		setMethod(MethodType.POST);
@@ -157,6 +189,18 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 		if(hpcClusterId != null){
 			putQueryParameter("HpcClusterId", hpcClusterId);
 		}
+	}
+
+	public SecurityOptions getSecurityOptions() {
+		return this.securityOptions;
+	}
+
+	public void setSecurityOptions(SecurityOptions securityOptions) {
+		this.securityOptions = securityOptions;	
+		if (securityOptions != null) {
+			
+				putQueryParameter("SecurityOptions.ConfidentialComputingMode" , securityOptions.getConfidentialComputingMode());
+		}	
 	}
 
 	public String getSecurityEnhancementStrategy() {
@@ -193,6 +237,17 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 				putQueryParameter("SpotPriceLimit." + (depth1 + 1) + ".PriceLimit" , spotPriceLimits.get(depth1).getPriceLimit());
 			}
 		}	
+	}
+
+	public Boolean getDeletionProtection() {
+		return this.deletionProtection;
+	}
+
+	public void setDeletionProtection(Boolean deletionProtection) {
+		this.deletionProtection = deletionProtection;
+		if(deletionProtection != null){
+			putQueryParameter("DeletionProtection", deletionProtection.toString());
+		}
 	}
 
 	public String getResourceGroupId() {
@@ -239,19 +294,6 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 		}
 	}
 
-	public List<String> getSystemDiskCategorys() {
-		return this.systemDiskCategorys;
-	}
-
-	public void setSystemDiskCategorys(List<String> systemDiskCategorys) {
-		this.systemDiskCategorys = systemDiskCategorys;	
-		if (systemDiskCategorys != null) {
-			for (int i = 0; i < systemDiskCategorys.size(); i++) {
-				putQueryParameter("SystemDiskCategory." + (i + 1) , systemDiskCategorys.get(i));
-			}
-		}	
-	}
-
 	public String getInstanceDescription() {
 		return this.instanceDescription;
 	}
@@ -261,6 +303,31 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 		if(instanceDescription != null){
 			putQueryParameter("InstanceDescription", instanceDescription);
 		}
+	}
+
+	public Integer getStorageSetPartitionNumber() {
+		return this.storageSetPartitionNumber;
+	}
+
+	public void setStorageSetPartitionNumber(Integer storageSetPartitionNumber) {
+		this.storageSetPartitionNumber = storageSetPartitionNumber;
+		if(storageSetPartitionNumber != null){
+			putQueryParameter("StorageSetPartitionNumber", storageSetPartitionNumber.toString());
+		}
+	}
+
+	public List<CustomPriorities> getCustomPrioritiess() {
+		return this.customPrioritiess;
+	}
+
+	public void setCustomPrioritiess(List<CustomPriorities> customPrioritiess) {
+		this.customPrioritiess = customPrioritiess;	
+		if (customPrioritiess != null) {
+			for (int depth1 = 0; depth1 < customPrioritiess.size(); depth1++) {
+				putQueryParameter("CustomPriorities." + (depth1 + 1) + ".VswitchId" , customPrioritiess.get(depth1).getVswitchId());
+				putQueryParameter("CustomPriorities." + (depth1 + 1) + ".InstanceType" , customPrioritiess.get(depth1).getInstanceType());
+			}
+		}	
 	}
 
 	public String getSystemDiskAutoSnapshotPolicyId() {
@@ -285,6 +352,17 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 		}
 	}
 
+	public Boolean getImageOptionsLoginAsNonRoot() {
+		return this.imageOptionsLoginAsNonRoot;
+	}
+
+	public void setImageOptionsLoginAsNonRoot(Boolean imageOptionsLoginAsNonRoot) {
+		this.imageOptionsLoginAsNonRoot = imageOptionsLoginAsNonRoot;
+		if(imageOptionsLoginAsNonRoot != null){
+			putQueryParameter("ImageOptions.LoginAsNonRoot", imageOptionsLoginAsNonRoot.toString());
+		}
+	}
+
 	public Integer getIpv6AddressCount() {
 		return this.ipv6AddressCount;
 	}
@@ -305,6 +383,19 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 		if(cpu != null){
 			putQueryParameter("Cpu", cpu.toString());
 		}
+	}
+
+	public List<String> getSystemDiskCategoriess() {
+		return this.systemDiskCategoriess;
+	}
+
+	public void setSystemDiskCategoriess(List<String> systemDiskCategoriess) {
+		this.systemDiskCategoriess = systemDiskCategoriess;	
+		if (systemDiskCategoriess != null) {
+			for (int i = 0; i < systemDiskCategoriess.size(); i++) {
+				putQueryParameter("SystemDiskCategories." + (i + 1) , systemDiskCategoriess.get(i));
+			}
+		}	
 	}
 
 	public Long getOwnerId() {
@@ -348,6 +439,17 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 		this.spotStrategy = spotStrategy;
 		if(spotStrategy != null){
 			putQueryParameter("SpotStrategy", spotStrategy);
+		}
+	}
+
+	public Boolean getSystemDiskBurstingEnabled() {
+		return this.systemDiskBurstingEnabled;
+	}
+
+	public void setSystemDiskBurstingEnabled(Boolean systemDiskBurstingEnabled) {
+		this.systemDiskBurstingEnabled = systemDiskBurstingEnabled;
+		if(systemDiskBurstingEnabled != null){
+			putQueryParameter("SystemDisk.BurstingEnabled", systemDiskBurstingEnabled.toString());
 		}
 	}
 
@@ -403,10 +505,57 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 		this.instancePatternInfos = instancePatternInfos;	
 		if (instancePatternInfos != null) {
 			for (int depth1 = 0; depth1 < instancePatternInfos.size(); depth1++) {
-				putQueryParameter("InstancePatternInfo." + (depth1 + 1) + ".Cores" , instancePatternInfos.get(depth1).getCores());
+				if (instancePatternInfos.get(depth1).getInstanceCategoriess() != null) {
+					for (int i = 0; i < instancePatternInfos.get(depth1).getInstanceCategoriess().size(); i++) {
+						putQueryParameter("InstancePatternInfo." + (depth1 + 1) + ".InstanceCategories." + (i + 1) , instancePatternInfos.get(depth1).getInstanceCategoriess().get(i));
+					}
+				}
 				putQueryParameter("InstancePatternInfo." + (depth1 + 1) + ".Memory" , instancePatternInfos.get(depth1).getMemory());
-				putQueryParameter("InstancePatternInfo." + (depth1 + 1) + ".InstanceFamilyLevel" , instancePatternInfos.get(depth1).getInstanceFamilyLevel());
+				putQueryParameter("InstancePatternInfo." + (depth1 + 1) + ".MaximumCpuCoreCount" , instancePatternInfos.get(depth1).getMaximumCpuCoreCount());
 				putQueryParameter("InstancePatternInfo." + (depth1 + 1) + ".MaxPrice" , instancePatternInfos.get(depth1).getMaxPrice());
+				putQueryParameter("InstancePatternInfo." + (depth1 + 1) + ".MinimumGpuAmount" , instancePatternInfos.get(depth1).getMinimumGpuAmount());
+				putQueryParameter("InstancePatternInfo." + (depth1 + 1) + ".MaximumGpuAmount" , instancePatternInfos.get(depth1).getMaximumGpuAmount());
+				putQueryParameter("InstancePatternInfo." + (depth1 + 1) + ".MaximumMemorySize" , instancePatternInfos.get(depth1).getMaximumMemorySize());
+				putQueryParameter("InstancePatternInfo." + (depth1 + 1) + ".MinimumInitialCredit" , instancePatternInfos.get(depth1).getMinimumInitialCredit());
+				if (instancePatternInfos.get(depth1).getExcludedInstanceTypes() != null) {
+					for (int i = 0; i < instancePatternInfos.get(depth1).getExcludedInstanceTypes().size(); i++) {
+						putQueryParameter("InstancePatternInfo." + (depth1 + 1) + ".ExcludedInstanceType." + (i + 1) , instancePatternInfos.get(depth1).getExcludedInstanceTypes().get(i));
+					}
+				}
+				putQueryParameter("InstancePatternInfo." + (depth1 + 1) + ".MinimumEniIpv6AddressQuantity" , instancePatternInfos.get(depth1).getMinimumEniIpv6AddressQuantity());
+				putQueryParameter("InstancePatternInfo." + (depth1 + 1) + ".MinimumEniPrivateIpAddressQuantity" , instancePatternInfos.get(depth1).getMinimumEniPrivateIpAddressQuantity());
+				putQueryParameter("InstancePatternInfo." + (depth1 + 1) + ".BurstablePerformance" , instancePatternInfos.get(depth1).getBurstablePerformance());
+				if (instancePatternInfos.get(depth1).getPhysicalProcessorModelss() != null) {
+					for (int i = 0; i < instancePatternInfos.get(depth1).getPhysicalProcessorModelss().size(); i++) {
+						putQueryParameter("InstancePatternInfo." + (depth1 + 1) + ".PhysicalProcessorModels." + (i + 1) , instancePatternInfos.get(depth1).getPhysicalProcessorModelss().get(i));
+					}
+				}
+				putQueryParameter("InstancePatternInfo." + (depth1 + 1) + ".MinimumCpuCoreCount" , instancePatternInfos.get(depth1).getMinimumCpuCoreCount());
+				if (instancePatternInfos.get(depth1).getGpuSpecss() != null) {
+					for (int i = 0; i < instancePatternInfos.get(depth1).getGpuSpecss().size(); i++) {
+						putQueryParameter("InstancePatternInfo." + (depth1 + 1) + ".GpuSpecs." + (i + 1) , instancePatternInfos.get(depth1).getGpuSpecss().get(i));
+					}
+				}
+				putQueryParameter("InstancePatternInfo." + (depth1 + 1) + ".MinimumEniQuantity" , instancePatternInfos.get(depth1).getMinimumEniQuantity());
+				putQueryParameter("InstancePatternInfo." + (depth1 + 1) + ".MinimumMemorySize" , instancePatternInfos.get(depth1).getMinimumMemorySize());
+				putQueryParameter("InstancePatternInfo." + (depth1 + 1) + ".Cores" , instancePatternInfos.get(depth1).getCores());
+				putQueryParameter("InstancePatternInfo." + (depth1 + 1) + ".InstanceFamilyLevel" , instancePatternInfos.get(depth1).getInstanceFamilyLevel());
+				if (instancePatternInfos.get(depth1).getInstanceTypeFamiliess() != null) {
+					for (int i = 0; i < instancePatternInfos.get(depth1).getInstanceTypeFamiliess().size(); i++) {
+						putQueryParameter("InstancePatternInfo." + (depth1 + 1) + ".InstanceTypeFamilies." + (i + 1) , instancePatternInfos.get(depth1).getInstanceTypeFamiliess().get(i));
+					}
+				}
+				putQueryParameter("InstancePatternInfo." + (depth1 + 1) + ".MinimumBaselineCredit" , instancePatternInfos.get(depth1).getMinimumBaselineCredit());
+				if (instancePatternInfos.get(depth1).getCpuArchitecturess() != null) {
+					for (int i = 0; i < instancePatternInfos.get(depth1).getCpuArchitecturess().size(); i++) {
+						putQueryParameter("InstancePatternInfo." + (depth1 + 1) + ".CpuArchitectures." + (i + 1) , instancePatternInfos.get(depth1).getCpuArchitecturess().get(i));
+					}
+				}
+				if (instancePatternInfos.get(depth1).getArchitectures() != null) {
+					for (int i = 0; i < instancePatternInfos.get(depth1).getArchitectures().size(); i++) {
+						putQueryParameter("InstancePatternInfo." + (depth1 + 1) + ".Architecture." + (i + 1) , instancePatternInfos.get(depth1).getArchitectures().get(i));
+					}
+				}
 			}
 		}	
 	}
@@ -420,6 +569,26 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 		if(affinity != null){
 			putQueryParameter("Affinity", affinity);
 		}
+	}
+
+	public List<NetworkInterfaces> getNetworkInterfacess() {
+		return this.networkInterfacess;
+	}
+
+	public void setNetworkInterfacess(List<NetworkInterfaces> networkInterfacess) {
+		this.networkInterfacess = networkInterfacess;	
+		if (networkInterfacess != null) {
+			for (int depth1 = 0; depth1 < networkInterfacess.size(); depth1++) {
+				putQueryParameter("NetworkInterfaces." + (depth1 + 1) + ".Ipv6AddressCount" , networkInterfacess.get(depth1).getIpv6AddressCount());
+				putQueryParameter("NetworkInterfaces." + (depth1 + 1) + ".InstanceType" , networkInterfacess.get(depth1).getInstanceType());
+				if (networkInterfacess.get(depth1).getSecurityGroupIdss() != null) {
+					for (int i = 0; i < networkInterfacess.get(depth1).getSecurityGroupIdss().size(); i++) {
+						putQueryParameter("NetworkInterfaces." + (depth1 + 1) + ".SecurityGroupIds." + (i + 1) , networkInterfacess.get(depth1).getSecurityGroupIdss().get(i));
+					}
+				}
+				putQueryParameter("NetworkInterfaces." + (depth1 + 1) + ".NetworkInterfaceTrafficMode" , networkInterfacess.get(depth1).getNetworkInterfaceTrafficMode());
+			}
+		}	
 	}
 
 	public String getImageId() {
@@ -477,19 +646,6 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 		}
 	}
 
-	public List<String> getInstanceTypes() {
-		return this.instanceTypes;
-	}
-
-	public void setInstanceTypes(List<String> instanceTypes) {
-		this.instanceTypes = instanceTypes;	
-		if (instanceTypes != null) {
-			for (int i = 0; i < instanceTypes.size(); i++) {
-				putQueryParameter("InstanceTypes." + (i + 1) , instanceTypes.get(i));
-			}
-		}	
-	}
-
 	public String getIoOptimized() {
 		return this.ioOptimized;
 	}
@@ -499,6 +655,19 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 		if(ioOptimized != null){
 			putQueryParameter("IoOptimized", ioOptimized);
 		}
+	}
+
+	public List<String> getInstanceTypess() {
+		return this.instanceTypess;
+	}
+
+	public void setInstanceTypess(List<String> instanceTypess) {
+		this.instanceTypess = instanceTypess;	
+		if (instanceTypess != null) {
+			for (int i = 0; i < instanceTypess.size(); i++) {
+				putQueryParameter("InstanceTypes." + (i + 1) , instanceTypess.get(i));
+			}
+		}	
 	}
 
 	public String getSecurityGroupId() {
@@ -520,6 +689,17 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 		this.internetMaxBandwidthOut = internetMaxBandwidthOut;
 		if(internetMaxBandwidthOut != null){
 			putQueryParameter("InternetMaxBandwidthOut", internetMaxBandwidthOut.toString());
+		}
+	}
+
+	public String getSystemDiskKMSKeyId() {
+		return this.systemDiskKMSKeyId;
+	}
+
+	public void setSystemDiskKMSKeyId(String systemDiskKMSKeyId) {
+		this.systemDiskKMSKeyId = systemDiskKMSKeyId;
+		if(systemDiskKMSKeyId != null){
+			putQueryParameter("SystemDisk.KMSKeyId", systemDiskKMSKeyId);
 		}
 	}
 
@@ -567,6 +747,23 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 		}
 	}
 
+	public ResourcePoolOptions getResourcePoolOptions() {
+		return this.resourcePoolOptions;
+	}
+
+	public void setResourcePoolOptions(ResourcePoolOptions resourcePoolOptions) {
+		this.resourcePoolOptions = resourcePoolOptions;	
+		if (resourcePoolOptions != null) {
+			
+				putQueryParameter("ResourcePoolOptions.Strategy" , resourcePoolOptions.getStrategy());
+				if (resourcePoolOptions.getPrivatePoolIds() != null) {
+					for (int depth1 = 0; depth1 < resourcePoolOptions.getPrivatePoolIds().size(); depth1++) {
+						putQueryParameter("ResourcePoolOptions.PrivatePoolIds." + (depth1 + 1) , resourcePoolOptions.getPrivatePoolIds().get(depth1));
+					}
+				}
+		}	
+	}
+
 	public String getImageName() {
 		return this.imageName;
 	}
@@ -575,6 +772,28 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 		this.imageName = imageName;
 		if(imageName != null){
 			putQueryParameter("ImageName", imageName);
+		}
+	}
+
+	public String getHttpEndpoint() {
+		return this.httpEndpoint;
+	}
+
+	public void setHttpEndpoint(String httpEndpoint) {
+		this.httpEndpoint = httpEndpoint;
+		if(httpEndpoint != null){
+			putQueryParameter("HttpEndpoint", httpEndpoint);
+		}
+	}
+
+	public String getDedicatedHostClusterId() {
+		return this.dedicatedHostClusterId;
+	}
+
+	public void setDedicatedHostClusterId(String dedicatedHostClusterId) {
+		this.dedicatedHostClusterId = dedicatedHostClusterId;
+		if(dedicatedHostClusterId != null){
+			putQueryParameter("DedicatedHostClusterId", dedicatedHostClusterId);
 		}
 	}
 
@@ -666,6 +885,17 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 		}
 	}
 
+	public String getSystemDiskEncryptAlgorithm() {
+		return this.systemDiskEncryptAlgorithm;
+	}
+
+	public void setSystemDiskEncryptAlgorithm(String systemDiskEncryptAlgorithm) {
+		this.systemDiskEncryptAlgorithm = systemDiskEncryptAlgorithm;
+		if(systemDiskEncryptAlgorithm != null){
+			putQueryParameter("SystemDisk.EncryptAlgorithm", systemDiskEncryptAlgorithm);
+		}
+	}
+
 	public String getDedicatedHostId() {
 		return this.dedicatedHostId;
 	}
@@ -688,19 +918,6 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 		}
 	}
 
-	public List<String> getSecurityGroupIds() {
-		return this.securityGroupIds;
-	}
-
-	public void setSecurityGroupIds(List<String> securityGroupIds) {
-		this.securityGroupIds = securityGroupIds;	
-		if (securityGroupIds != null) {
-			for (int i = 0; i < securityGroupIds.size(); i++) {
-				putQueryParameter("SecurityGroupIds." + (i + 1) , securityGroupIds.get(i));
-			}
-		}	
-	}
-
 	public Integer getSpotDuration() {
 		return this.spotDuration;
 	}
@@ -712,6 +929,19 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 		}
 	}
 
+	public List<String> getSecurityGroupIdss() {
+		return this.securityGroupIdss;
+	}
+
+	public void setSecurityGroupIdss(List<String> securityGroupIdss) {
+		this.securityGroupIdss = securityGroupIdss;	
+		if (securityGroupIdss != null) {
+			for (int i = 0; i < securityGroupIdss.size(); i++) {
+				putQueryParameter("SecurityGroupIds." + (i + 1) , securityGroupIdss.get(i));
+			}
+		}	
+	}
+
 	public List<DataDisk> getDataDisks() {
 		return this.dataDisks;
 	}
@@ -720,18 +950,20 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 		this.dataDisks = dataDisks;	
 		if (dataDisks != null) {
 			for (int depth1 = 0; depth1 < dataDisks.size(); depth1++) {
-				putQueryParameter("DataDisk." + (depth1 + 1) + ".DiskName" , dataDisks.get(depth1).getDiskName());
-				if (dataDisks.get(depth1).getCategoryss() != null) {
-					for (int i = 0; i < dataDisks.get(depth1).getCategoryss().size(); i++) {
-						putQueryParameter("DataDisk." + (depth1 + 1) + ".Categorys." + (i + 1) , dataDisks.get(depth1).getCategoryss().get(i));
-					}
-				}
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".SnapshotId" , dataDisks.get(depth1).getSnapshotId());
-				putQueryParameter("DataDisk." + (depth1 + 1) + ".Size" , dataDisks.get(depth1).getSize());
-				putQueryParameter("DataDisk." + (depth1 + 1) + ".Encrypted" , dataDisks.get(depth1).getEncrypted());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".PerformanceLevel" , dataDisks.get(depth1).getPerformanceLevel());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".AutoSnapshotPolicyId" , dataDisks.get(depth1).getAutoSnapshotPolicyId());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".Description" , dataDisks.get(depth1).getDescription());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".BurstingEnabled" , dataDisks.get(depth1).getBurstingEnabled());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".DiskName" , dataDisks.get(depth1).getDiskName());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".ProvisionedIops" , dataDisks.get(depth1).getProvisionedIops());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".Encrypted" , dataDisks.get(depth1).getEncrypted());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".Size" , dataDisks.get(depth1).getSize());
+				if (dataDisks.get(depth1).getCategoriess() != null) {
+					for (int i = 0; i < dataDisks.get(depth1).getCategoriess().size(); i++) {
+						putQueryParameter("DataDisk." + (depth1 + 1) + ".Categories." + (i + 1) , dataDisks.get(depth1).getCategoriess().get(i));
+					}
+				}
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".Category" , dataDisks.get(depth1).getCategory());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".KMSKeyId" , dataDisks.get(depth1).getKMSKeyId());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".Device" , dataDisks.get(depth1).getDevice());
@@ -754,6 +986,17 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 		}	
 	}
 
+	public Long getSystemDiskProvisionedIops() {
+		return this.systemDiskProvisionedIops;
+	}
+
+	public void setSystemDiskProvisionedIops(Long systemDiskProvisionedIops) {
+		this.systemDiskProvisionedIops = systemDiskProvisionedIops;
+		if(systemDiskProvisionedIops != null){
+			putQueryParameter("SystemDisk.ProvisionedIops", systemDiskProvisionedIops.toString());
+		}
+	}
+
 	public Integer getLoadBalancerWeight() {
 		return this.loadBalancerWeight;
 	}
@@ -762,6 +1005,17 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 		this.loadBalancerWeight = loadBalancerWeight;
 		if(loadBalancerWeight != null){
 			putQueryParameter("LoadBalancerWeight", loadBalancerWeight.toString());
+		}
+	}
+
+	public String getStorageSetId() {
+		return this.storageSetId;
+	}
+
+	public void setStorageSetId(String storageSetId) {
+		this.storageSetId = storageSetId;
+		if(storageSetId != null){
+			putQueryParameter("StorageSetId", storageSetId);
 		}
 	}
 
@@ -787,6 +1041,17 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 		}
 	}
 
+	public String getHttpTokens() {
+		return this.httpTokens;
+	}
+
+	public void setHttpTokens(String httpTokens) {
+		this.httpTokens = httpTokens;
+		if(httpTokens != null){
+			putQueryParameter("HttpTokens", httpTokens);
+		}
+	}
+
 	public String getSystemDiskDescription() {
 		return this.systemDiskDescription;
 	}
@@ -795,6 +1060,30 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 		this.systemDiskDescription = systemDiskDescription;
 		if(systemDiskDescription != null){
 			putQueryParameter("SystemDisk.Description", systemDiskDescription);
+		}
+	}
+
+	public Boolean getSystemDiskEncrypted() {
+		return this.systemDiskEncrypted;
+	}
+
+	public void setSystemDiskEncrypted(Boolean systemDiskEncrypted) {
+		this.systemDiskEncrypted = systemDiskEncrypted;
+		if(systemDiskEncrypted != null){
+			putQueryParameter("SystemDisk.Encrypted", systemDiskEncrypted.toString());
+		}
+	}
+
+	public static class SecurityOptions {
+
+		private String confidentialComputingMode;
+
+		public String getConfidentialComputingMode() {
+			return this.confidentialComputingMode;
+		}
+
+		public void setConfidentialComputingMode(String confidentialComputingMode) {
+			this.confidentialComputingMode = confidentialComputingMode;
 		}
 	}
 
@@ -821,22 +1110,83 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 		}
 	}
 
+	public static class CustomPriorities {
+
+		private String vswitchId;
+
+		private String instanceType;
+
+		public String getVswitchId() {
+			return this.vswitchId;
+		}
+
+		public void setVswitchId(String vswitchId) {
+			this.vswitchId = vswitchId;
+		}
+
+		public String getInstanceType() {
+			return this.instanceType;
+		}
+
+		public void setInstanceType(String instanceType) {
+			this.instanceType = instanceType;
+		}
+	}
+
 	public static class InstancePatternInfo {
 
-		private Integer cores;
+		private List<String> instanceCategoriess;
 
 		private Float memory;
 
-		private String instanceFamilyLevel;
+		private Integer maximumCpuCoreCount;
 
 		private Float maxPrice;
 
-		public Integer getCores() {
-			return this.cores;
+		private Integer minimumGpuAmount;
+
+		private Integer maximumGpuAmount;
+
+		private Float maximumMemorySize;
+
+		private Integer minimumInitialCredit;
+
+		private List<String> excludedInstanceTypes;
+
+		private Integer minimumEniIpv6AddressQuantity;
+
+		private Integer minimumEniPrivateIpAddressQuantity;
+
+		private String burstablePerformance;
+
+		private List<String> physicalProcessorModelss;
+
+		private Integer minimumCpuCoreCount;
+
+		private List<String> gpuSpecss;
+
+		private Integer minimumEniQuantity;
+
+		private Float minimumMemorySize;
+
+		private Integer cores;
+
+		private String instanceFamilyLevel;
+
+		private List<String> instanceTypeFamiliess;
+
+		private Integer minimumBaselineCredit;
+
+		private List<String> cpuArchitecturess;
+
+		private List<String> architectures;
+
+		public List<String> getInstanceCategoriess() {
+			return this.instanceCategoriess;
 		}
 
-		public void setCores(Integer cores) {
-			this.cores = cores;
+		public void setInstanceCategoriess(List<String> instanceCategoriess) {
+			this.instanceCategoriess = instanceCategoriess;
 		}
 
 		public Float getMemory() {
@@ -847,12 +1197,12 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 			this.memory = memory;
 		}
 
-		public String getInstanceFamilyLevel() {
-			return this.instanceFamilyLevel;
+		public Integer getMaximumCpuCoreCount() {
+			return this.maximumCpuCoreCount;
 		}
 
-		public void setInstanceFamilyLevel(String instanceFamilyLevel) {
-			this.instanceFamilyLevel = instanceFamilyLevel;
+		public void setMaximumCpuCoreCount(Integer maximumCpuCoreCount) {
+			this.maximumCpuCoreCount = maximumCpuCoreCount;
 		}
 
 		public Float getMaxPrice() {
@@ -862,25 +1212,247 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 		public void setMaxPrice(Float maxPrice) {
 			this.maxPrice = maxPrice;
 		}
+
+		public Integer getMinimumGpuAmount() {
+			return this.minimumGpuAmount;
+		}
+
+		public void setMinimumGpuAmount(Integer minimumGpuAmount) {
+			this.minimumGpuAmount = minimumGpuAmount;
+		}
+
+		public Integer getMaximumGpuAmount() {
+			return this.maximumGpuAmount;
+		}
+
+		public void setMaximumGpuAmount(Integer maximumGpuAmount) {
+			this.maximumGpuAmount = maximumGpuAmount;
+		}
+
+		public Float getMaximumMemorySize() {
+			return this.maximumMemorySize;
+		}
+
+		public void setMaximumMemorySize(Float maximumMemorySize) {
+			this.maximumMemorySize = maximumMemorySize;
+		}
+
+		public Integer getMinimumInitialCredit() {
+			return this.minimumInitialCredit;
+		}
+
+		public void setMinimumInitialCredit(Integer minimumInitialCredit) {
+			this.minimumInitialCredit = minimumInitialCredit;
+		}
+
+		public List<String> getExcludedInstanceTypes() {
+			return this.excludedInstanceTypes;
+		}
+
+		public void setExcludedInstanceTypes(List<String> excludedInstanceTypes) {
+			this.excludedInstanceTypes = excludedInstanceTypes;
+		}
+
+		public Integer getMinimumEniIpv6AddressQuantity() {
+			return this.minimumEniIpv6AddressQuantity;
+		}
+
+		public void setMinimumEniIpv6AddressQuantity(Integer minimumEniIpv6AddressQuantity) {
+			this.minimumEniIpv6AddressQuantity = minimumEniIpv6AddressQuantity;
+		}
+
+		public Integer getMinimumEniPrivateIpAddressQuantity() {
+			return this.minimumEniPrivateIpAddressQuantity;
+		}
+
+		public void setMinimumEniPrivateIpAddressQuantity(Integer minimumEniPrivateIpAddressQuantity) {
+			this.minimumEniPrivateIpAddressQuantity = minimumEniPrivateIpAddressQuantity;
+		}
+
+		public String getBurstablePerformance() {
+			return this.burstablePerformance;
+		}
+
+		public void setBurstablePerformance(String burstablePerformance) {
+			this.burstablePerformance = burstablePerformance;
+		}
+
+		public List<String> getPhysicalProcessorModelss() {
+			return this.physicalProcessorModelss;
+		}
+
+		public void setPhysicalProcessorModelss(List<String> physicalProcessorModelss) {
+			this.physicalProcessorModelss = physicalProcessorModelss;
+		}
+
+		public Integer getMinimumCpuCoreCount() {
+			return this.minimumCpuCoreCount;
+		}
+
+		public void setMinimumCpuCoreCount(Integer minimumCpuCoreCount) {
+			this.minimumCpuCoreCount = minimumCpuCoreCount;
+		}
+
+		public List<String> getGpuSpecss() {
+			return this.gpuSpecss;
+		}
+
+		public void setGpuSpecss(List<String> gpuSpecss) {
+			this.gpuSpecss = gpuSpecss;
+		}
+
+		public Integer getMinimumEniQuantity() {
+			return this.minimumEniQuantity;
+		}
+
+		public void setMinimumEniQuantity(Integer minimumEniQuantity) {
+			this.minimumEniQuantity = minimumEniQuantity;
+		}
+
+		public Float getMinimumMemorySize() {
+			return this.minimumMemorySize;
+		}
+
+		public void setMinimumMemorySize(Float minimumMemorySize) {
+			this.minimumMemorySize = minimumMemorySize;
+		}
+
+		public Integer getCores() {
+			return this.cores;
+		}
+
+		public void setCores(Integer cores) {
+			this.cores = cores;
+		}
+
+		public String getInstanceFamilyLevel() {
+			return this.instanceFamilyLevel;
+		}
+
+		public void setInstanceFamilyLevel(String instanceFamilyLevel) {
+			this.instanceFamilyLevel = instanceFamilyLevel;
+		}
+
+		public List<String> getInstanceTypeFamiliess() {
+			return this.instanceTypeFamiliess;
+		}
+
+		public void setInstanceTypeFamiliess(List<String> instanceTypeFamiliess) {
+			this.instanceTypeFamiliess = instanceTypeFamiliess;
+		}
+
+		public Integer getMinimumBaselineCredit() {
+			return this.minimumBaselineCredit;
+		}
+
+		public void setMinimumBaselineCredit(Integer minimumBaselineCredit) {
+			this.minimumBaselineCredit = minimumBaselineCredit;
+		}
+
+		public List<String> getCpuArchitecturess() {
+			return this.cpuArchitecturess;
+		}
+
+		public void setCpuArchitecturess(List<String> cpuArchitecturess) {
+			this.cpuArchitecturess = cpuArchitecturess;
+		}
+
+		public List<String> getArchitectures() {
+			return this.architectures;
+		}
+
+		public void setArchitectures(List<String> architectures) {
+			this.architectures = architectures;
+		}
+	}
+
+	public static class NetworkInterfaces {
+
+		private Integer ipv6AddressCount;
+
+		private String instanceType;
+
+		private List<String> securityGroupIdss;
+
+		private String networkInterfaceTrafficMode;
+
+		public Integer getIpv6AddressCount() {
+			return this.ipv6AddressCount;
+		}
+
+		public void setIpv6AddressCount(Integer ipv6AddressCount) {
+			this.ipv6AddressCount = ipv6AddressCount;
+		}
+
+		public String getInstanceType() {
+			return this.instanceType;
+		}
+
+		public void setInstanceType(String instanceType) {
+			this.instanceType = instanceType;
+		}
+
+		public List<String> getSecurityGroupIdss() {
+			return this.securityGroupIdss;
+		}
+
+		public void setSecurityGroupIdss(List<String> securityGroupIdss) {
+			this.securityGroupIdss = securityGroupIdss;
+		}
+
+		public String getNetworkInterfaceTrafficMode() {
+			return this.networkInterfaceTrafficMode;
+		}
+
+		public void setNetworkInterfaceTrafficMode(String networkInterfaceTrafficMode) {
+			this.networkInterfaceTrafficMode = networkInterfaceTrafficMode;
+		}
+	}
+
+	public static class ResourcePoolOptions {
+
+		private String strategy;
+
+		private List<String> privatePoolIds;
+
+		public String getStrategy() {
+			return this.strategy;
+		}
+
+		public void setStrategy(String strategy) {
+			this.strategy = strategy;
+		}
+
+		public List<String> getPrivatePoolIds() {
+			return this.privatePoolIds;
+		}
+
+		public void setPrivatePoolIds(List<String> privatePoolIds) {
+			this.privatePoolIds = privatePoolIds;
+		}
 	}
 
 	public static class DataDisk {
 
-		private String diskName;
-
-		private List<String> categoryss;
-
 		private String snapshotId;
-
-		private Integer size;
-
-		private String encrypted;
 
 		private String performanceLevel;
 
 		private String autoSnapshotPolicyId;
 
 		private String description;
+
+		private Boolean burstingEnabled;
+
+		private String diskName;
+
+		private Long provisionedIops;
+
+		private String encrypted;
+
+		private Integer size;
+
+		private List<String> categoriess;
 
 		private String category;
 
@@ -890,44 +1462,12 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 
 		private Boolean deleteWithInstance;
 
-		public String getDiskName() {
-			return this.diskName;
-		}
-
-		public void setDiskName(String diskName) {
-			this.diskName = diskName;
-		}
-
-		public List<String> getCategoryss() {
-			return this.categoryss;
-		}
-
-		public void setCategoryss(List<String> categoryss) {
-			this.categoryss = categoryss;
-		}
-
 		public String getSnapshotId() {
 			return this.snapshotId;
 		}
 
 		public void setSnapshotId(String snapshotId) {
 			this.snapshotId = snapshotId;
-		}
-
-		public Integer getSize() {
-			return this.size;
-		}
-
-		public void setSize(Integer size) {
-			this.size = size;
-		}
-
-		public String getEncrypted() {
-			return this.encrypted;
-		}
-
-		public void setEncrypted(String encrypted) {
-			this.encrypted = encrypted;
 		}
 
 		public String getPerformanceLevel() {
@@ -952,6 +1492,54 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 
 		public void setDescription(String description) {
 			this.description = description;
+		}
+
+		public Boolean getBurstingEnabled() {
+			return this.burstingEnabled;
+		}
+
+		public void setBurstingEnabled(Boolean burstingEnabled) {
+			this.burstingEnabled = burstingEnabled;
+		}
+
+		public String getDiskName() {
+			return this.diskName;
+		}
+
+		public void setDiskName(String diskName) {
+			this.diskName = diskName;
+		}
+
+		public Long getProvisionedIops() {
+			return this.provisionedIops;
+		}
+
+		public void setProvisionedIops(Long provisionedIops) {
+			this.provisionedIops = provisionedIops;
+		}
+
+		public String getEncrypted() {
+			return this.encrypted;
+		}
+
+		public void setEncrypted(String encrypted) {
+			this.encrypted = encrypted;
+		}
+
+		public Integer getSize() {
+			return this.size;
+		}
+
+		public void setSize(Integer size) {
+			this.size = size;
+		}
+
+		public List<String> getCategoriess() {
+			return this.categoriess;
+		}
+
+		public void setCategoriess(List<String> categoriess) {
+			this.categoriess = categoriess;
 		}
 
 		public String getCategory() {

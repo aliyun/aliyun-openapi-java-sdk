@@ -1,3 +1,6 @@
+2025-03-26 Version: 1.0.1
+- 支持私有池
+
 2021-08-06 Version: 2.3.6
 1. add new OpenAPI ScaleWithAdjustment
 2. add new OpenAPI AttachAlbServerGroups

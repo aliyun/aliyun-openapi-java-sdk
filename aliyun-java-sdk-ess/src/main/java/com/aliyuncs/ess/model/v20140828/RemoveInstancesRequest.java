@@ -28,9 +28,15 @@ public class RemoveInstancesRequest extends RpcAcsRequest<RemoveInstancesRespons
 
 	private Long resourceOwnerId;
 
+	private String clientToken;
+
 	private String scalingGroupId;
 
 	private Boolean decreaseDesiredCapacity;
+
+	private Boolean ignoreInvalidInstance;
+
+	private Integer stopInstanceTimeout;
 
 	private String removePolicy;
 
@@ -61,6 +67,17 @@ public class RemoveInstancesRequest extends RpcAcsRequest<RemoveInstancesRespons
 		}
 	}
 
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
 	public String getScalingGroupId() {
 		return this.scalingGroupId;
 	}
@@ -80,6 +97,28 @@ public class RemoveInstancesRequest extends RpcAcsRequest<RemoveInstancesRespons
 		this.decreaseDesiredCapacity = decreaseDesiredCapacity;
 		if(decreaseDesiredCapacity != null){
 			putQueryParameter("DecreaseDesiredCapacity", decreaseDesiredCapacity.toString());
+		}
+	}
+
+	public Boolean getIgnoreInvalidInstance() {
+		return this.ignoreInvalidInstance;
+	}
+
+	public void setIgnoreInvalidInstance(Boolean ignoreInvalidInstance) {
+		this.ignoreInvalidInstance = ignoreInvalidInstance;
+		if(ignoreInvalidInstance != null){
+			putQueryParameter("IgnoreInvalidInstance", ignoreInvalidInstance.toString());
+		}
+	}
+
+	public Integer getStopInstanceTimeout() {
+		return this.stopInstanceTimeout;
+	}
+
+	public void setStopInstanceTimeout(Integer stopInstanceTimeout) {
+		this.stopInstanceTimeout = stopInstanceTimeout;
+		if(stopInstanceTimeout != null){
+			putQueryParameter("StopInstanceTimeout", stopInstanceTimeout.toString());
 		}
 	}
 

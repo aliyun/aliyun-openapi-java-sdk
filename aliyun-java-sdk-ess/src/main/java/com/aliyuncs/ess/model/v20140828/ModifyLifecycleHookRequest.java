@@ -37,6 +37,8 @@ public class ModifyLifecycleHookRequest extends RpcAcsRequest<ModifyLifecycleHoo
 
 	private String notificationArn;
 
+	private String lifecycleHookStatus;
+
 	private String resourceOwnerAccount;
 
 	private String lifecycleHookId;
@@ -118,6 +120,17 @@ public class ModifyLifecycleHookRequest extends RpcAcsRequest<ModifyLifecycleHoo
 		this.notificationArn = notificationArn;
 		if(notificationArn != null){
 			putQueryParameter("NotificationArn", notificationArn);
+		}
+	}
+
+	public String getLifecycleHookStatus() {
+		return this.lifecycleHookStatus;
+	}
+
+	public void setLifecycleHookStatus(String lifecycleHookStatus) {
+		this.lifecycleHookStatus = lifecycleHookStatus;
+		if(lifecycleHookStatus != null){
+			putQueryParameter("LifecycleHookStatus", lifecycleHookStatus);
 		}
 	}
 

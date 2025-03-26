@@ -30,6 +30,8 @@ public class DetachDBInstancesRequest extends RpcAcsRequest<DetachDBInstancesRes
 
 	private String scalingGroupId;
 
+	private Boolean removeSecurityGroup;
+
 	private String resourceOwnerAccount;
 
 	private List<String> dBInstances;
@@ -65,6 +67,17 @@ public class DetachDBInstancesRequest extends RpcAcsRequest<DetachDBInstancesRes
 		this.scalingGroupId = scalingGroupId;
 		if(scalingGroupId != null){
 			putQueryParameter("ScalingGroupId", scalingGroupId);
+		}
+	}
+
+	public Boolean getRemoveSecurityGroup() {
+		return this.removeSecurityGroup;
+	}
+
+	public void setRemoveSecurityGroup(Boolean removeSecurityGroup) {
+		this.removeSecurityGroup = removeSecurityGroup;
+		if(removeSecurityGroup != null){
+			putQueryParameter("RemoveSecurityGroup", removeSecurityGroup.toString());
 		}
 	}
 

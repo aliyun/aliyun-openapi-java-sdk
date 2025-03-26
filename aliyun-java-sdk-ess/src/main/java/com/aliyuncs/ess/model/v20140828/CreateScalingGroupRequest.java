@@ -26,13 +26,29 @@ import com.aliyuncs.ess.Endpoint;
 public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupResponse> {
 	   
 
-	private List<String> vSwitchIds;
+	private Boolean azBalance;
+
+	private List<String> vSwitchIdss;
+
+	private Integer maxInstanceLifetime;
 
 	private Boolean spotInstanceRemedy;
 
+	private String resourceGroupId;
+
+	private String groupType;
+
+	private String customPolicyARN;
+
 	private List<Tag> tags;
 
+	private Integer stopInstanceTimeout;
+
 	private Integer defaultCooldown;
+
+	private List<String> healthCheckTypess;
+
+	private String containerGroupId;
 
 	private String multiAZPolicy;
 
@@ -42,9 +58,13 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 
 	private Integer desiredCapacity;
 
+	private List<ServerGroup> serverGroups;
+
 	private List<LaunchTemplateOverride> launchTemplateOverrides;
 
 	private Boolean compensateWithOnDemand;
+
+	private CapacityOptions capacityOptions;
 
 	private Integer minSize;
 
@@ -64,13 +84,19 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 
 	private String clientToken;
 
+	private List<LoadBalancerConfig> loadBalancerConfigs;
+
 	private Integer onDemandBaseCapacity;
 
 	private Integer onDemandPercentageAboveBaseCapacity;
 
+	private String spotAllocationStrategy;
+
 	private String removalPolicy1;
 
 	private String removalPolicy2;
+
+	private String removalPolicy3;
 
 	private String healthCheckType;
 
@@ -82,11 +108,15 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 
 	private Integer spotInstancePools;
 
+	private List<DBInstance> dBInstances;
+
 	private Boolean groupDeletionProtection;
 
 	private String launchTemplateVersion;
 
 	private String scalingPolicy;
+
+	private String allocationStrategy;
 
 	private List<VServerGroup> vServerGroups;
 	public CreateScalingGroupRequest() {
@@ -98,17 +128,39 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 		} catch (Exception e) {}
 	}
 
-	public List<String> getVSwitchIds() {
-		return this.vSwitchIds;
+	public Boolean getAzBalance() {
+		return this.azBalance;
 	}
 
-	public void setVSwitchIds(List<String> vSwitchIds) {
-		this.vSwitchIds = vSwitchIds;	
-		if (vSwitchIds != null) {
-			for (int i = 0; i < vSwitchIds.size(); i++) {
-				putQueryParameter("VSwitchIds." + (i + 1) , vSwitchIds.get(i));
+	public void setAzBalance(Boolean azBalance) {
+		this.azBalance = azBalance;
+		if(azBalance != null){
+			putQueryParameter("AzBalance", azBalance.toString());
+		}
+	}
+
+	public List<String> getVSwitchIdss() {
+		return this.vSwitchIdss;
+	}
+
+	public void setVSwitchIdss(List<String> vSwitchIdss) {
+		this.vSwitchIdss = vSwitchIdss;	
+		if (vSwitchIdss != null) {
+			for (int i = 0; i < vSwitchIdss.size(); i++) {
+				putQueryParameter("VSwitchIds." + (i + 1) , vSwitchIdss.get(i));
 			}
 		}	
+	}
+
+	public Integer getMaxInstanceLifetime() {
+		return this.maxInstanceLifetime;
+	}
+
+	public void setMaxInstanceLifetime(Integer maxInstanceLifetime) {
+		this.maxInstanceLifetime = maxInstanceLifetime;
+		if(maxInstanceLifetime != null){
+			putQueryParameter("MaxInstanceLifetime", maxInstanceLifetime.toString());
+		}
 	}
 
 	public Boolean getSpotInstanceRemedy() {
@@ -122,6 +174,39 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 		}
 	}
 
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getGroupType() {
+		return this.groupType;
+	}
+
+	public void setGroupType(String groupType) {
+		this.groupType = groupType;
+		if(groupType != null){
+			putQueryParameter("GroupType", groupType);
+		}
+	}
+
+	public String getCustomPolicyARN() {
+		return this.customPolicyARN;
+	}
+
+	public void setCustomPolicyARN(String customPolicyARN) {
+		this.customPolicyARN = customPolicyARN;
+		if(customPolicyARN != null){
+			putQueryParameter("CustomPolicyARN", customPolicyARN);
+		}
+	}
+
 	public List<Tag> getTags() {
 		return this.tags;
 	}
@@ -130,10 +215,22 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 		this.tags = tags;	
 		if (tags != null) {
 			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Propagate" , tags.get(depth1).getPropagate());
 				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
 				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 			}
 		}	
+	}
+
+	public Integer getStopInstanceTimeout() {
+		return this.stopInstanceTimeout;
+	}
+
+	public void setStopInstanceTimeout(Integer stopInstanceTimeout) {
+		this.stopInstanceTimeout = stopInstanceTimeout;
+		if(stopInstanceTimeout != null){
+			putQueryParameter("StopInstanceTimeout", stopInstanceTimeout.toString());
+		}
 	}
 
 	public Integer getDefaultCooldown() {
@@ -144,6 +241,30 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 		this.defaultCooldown = defaultCooldown;
 		if(defaultCooldown != null){
 			putQueryParameter("DefaultCooldown", defaultCooldown.toString());
+		}
+	}
+
+	public List<String> getHealthCheckTypess() {
+		return this.healthCheckTypess;
+	}
+
+	public void setHealthCheckTypess(List<String> healthCheckTypess) {
+		this.healthCheckTypess = healthCheckTypess;	
+		if (healthCheckTypess != null) {
+			for (int i = 0; i < healthCheckTypess.size(); i++) {
+				putQueryParameter("HealthCheckTypes." + (i + 1) , healthCheckTypess.get(i));
+			}
+		}	
+	}
+
+	public String getContainerGroupId() {
+		return this.containerGroupId;
+	}
+
+	public void setContainerGroupId(String containerGroupId) {
+		this.containerGroupId = containerGroupId;
+		if(containerGroupId != null){
+			putQueryParameter("ContainerGroupId", containerGroupId);
 		}
 	}
 
@@ -191,6 +312,22 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 		}
 	}
 
+	public List<ServerGroup> getServerGroups() {
+		return this.serverGroups;
+	}
+
+	public void setServerGroups(List<ServerGroup> serverGroups) {
+		this.serverGroups = serverGroups;	
+		if (serverGroups != null) {
+			for (int depth1 = 0; depth1 < serverGroups.size(); depth1++) {
+				putQueryParameter("ServerGroup." + (depth1 + 1) + ".ServerGroupId" , serverGroups.get(depth1).getServerGroupId());
+				putQueryParameter("ServerGroup." + (depth1 + 1) + ".Port" , serverGroups.get(depth1).getPort());
+				putQueryParameter("ServerGroup." + (depth1 + 1) + ".Weight" , serverGroups.get(depth1).getWeight());
+				putQueryParameter("ServerGroup." + (depth1 + 1) + ".Type" , serverGroups.get(depth1).getType());
+			}
+		}	
+	}
+
 	public List<LaunchTemplateOverride> getLaunchTemplateOverrides() {
 		return this.launchTemplateOverrides;
 	}
@@ -201,6 +338,7 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 			for (int depth1 = 0; depth1 < launchTemplateOverrides.size(); depth1++) {
 				putQueryParameter("LaunchTemplateOverride." + (depth1 + 1) + ".WeightedCapacity" , launchTemplateOverrides.get(depth1).getWeightedCapacity());
 				putQueryParameter("LaunchTemplateOverride." + (depth1 + 1) + ".InstanceType" , launchTemplateOverrides.get(depth1).getInstanceType());
+				putQueryParameter("LaunchTemplateOverride." + (depth1 + 1) + ".SpotPriceLimit" , launchTemplateOverrides.get(depth1).getSpotPriceLimit());
 			}
 		}	
 	}
@@ -214,6 +352,22 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 		if(compensateWithOnDemand != null){
 			putQueryParameter("CompensateWithOnDemand", compensateWithOnDemand.toString());
 		}
+	}
+
+	public CapacityOptions getCapacityOptions() {
+		return this.capacityOptions;
+	}
+
+	public void setCapacityOptions(CapacityOptions capacityOptions) {
+		this.capacityOptions = capacityOptions;	
+		if (capacityOptions != null) {
+			
+				putQueryParameter("CapacityOptions.CompensateWithOnDemand" , capacityOptions.getCompensateWithOnDemand());
+				putQueryParameter("CapacityOptions.PriceComparisonMode" , capacityOptions.getPriceComparisonMode());
+				putQueryParameter("CapacityOptions.OnDemandBaseCapacity" , capacityOptions.getOnDemandBaseCapacity());
+				putQueryParameter("CapacityOptions.SpotAutoReplaceOnDemand" , capacityOptions.getSpotAutoReplaceOnDemand());
+				putQueryParameter("CapacityOptions.OnDemandPercentageAboveBaseCapacity" , capacityOptions.getOnDemandPercentageAboveBaseCapacity());
+		}	
 	}
 
 	public Integer getMinSize() {
@@ -326,6 +480,20 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 		}
 	}
 
+	public List<LoadBalancerConfig> getLoadBalancerConfigs() {
+		return this.loadBalancerConfigs;
+	}
+
+	public void setLoadBalancerConfigs(List<LoadBalancerConfig> loadBalancerConfigs) {
+		this.loadBalancerConfigs = loadBalancerConfigs;	
+		if (loadBalancerConfigs != null) {
+			for (int depth1 = 0; depth1 < loadBalancerConfigs.size(); depth1++) {
+				putQueryParameter("LoadBalancerConfig." + (depth1 + 1) + ".LoadBalancerId" , loadBalancerConfigs.get(depth1).getLoadBalancerId());
+				putQueryParameter("LoadBalancerConfig." + (depth1 + 1) + ".Weight" , loadBalancerConfigs.get(depth1).getWeight());
+			}
+		}	
+	}
+
 	public Integer getOnDemandBaseCapacity() {
 		return this.onDemandBaseCapacity;
 	}
@@ -348,6 +516,17 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 		}
 	}
 
+	public String getSpotAllocationStrategy() {
+		return this.spotAllocationStrategy;
+	}
+
+	public void setSpotAllocationStrategy(String spotAllocationStrategy) {
+		this.spotAllocationStrategy = spotAllocationStrategy;
+		if(spotAllocationStrategy != null){
+			putQueryParameter("SpotAllocationStrategy", spotAllocationStrategy);
+		}
+	}
+
 	public String getRemovalPolicy1() {
 		return this.removalPolicy1;
 	}
@@ -367,6 +546,17 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 		this.removalPolicy2 = removalPolicy2;
 		if(removalPolicy2 != null){
 			putQueryParameter("RemovalPolicy.2", removalPolicy2);
+		}
+	}
+
+	public String getRemovalPolicy3() {
+		return this.removalPolicy3;
+	}
+
+	public void setRemovalPolicy3(String removalPolicy3) {
+		this.removalPolicy3 = removalPolicy3;
+		if(removalPolicy3 != null){
+			putQueryParameter("RemovalPolicy.3", removalPolicy3);
 		}
 	}
 
@@ -425,6 +615,21 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 		}
 	}
 
+	public List<DBInstance> getDBInstances() {
+		return this.dBInstances;
+	}
+
+	public void setDBInstances(List<DBInstance> dBInstances) {
+		this.dBInstances = dBInstances;	
+		if (dBInstances != null) {
+			for (int depth1 = 0; depth1 < dBInstances.size(); depth1++) {
+				putQueryParameter("DBInstance." + (depth1 + 1) + ".DBInstanceId" , dBInstances.get(depth1).getDBInstanceId());
+				putQueryParameter("DBInstance." + (depth1 + 1) + ".Type" , dBInstances.get(depth1).getType());
+				putQueryParameter("DBInstance." + (depth1 + 1) + ".AttachMode" , dBInstances.get(depth1).getAttachMode());
+			}
+		}	
+	}
+
 	public Boolean getGroupDeletionProtection() {
 		return this.groupDeletionProtection;
 	}
@@ -458,6 +663,17 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 		}
 	}
 
+	public String getAllocationStrategy() {
+		return this.allocationStrategy;
+	}
+
+	public void setAllocationStrategy(String allocationStrategy) {
+		this.allocationStrategy = allocationStrategy;
+		if(allocationStrategy != null){
+			putQueryParameter("AllocationStrategy", allocationStrategy);
+		}
+	}
+
 	public List<VServerGroup> getVServerGroups() {
 		return this.vServerGroups;
 	}
@@ -480,9 +696,19 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 
 	public static class Tag {
 
+		private Boolean propagate;
+
 		private String value;
 
 		private String key;
+
+		public Boolean getPropagate() {
+			return this.propagate;
+		}
+
+		public void setPropagate(Boolean propagate) {
+			this.propagate = propagate;
+		}
 
 		public String getValue() {
 			return this.value;
@@ -501,11 +727,56 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 		}
 	}
 
+	public static class ServerGroup {
+
+		private String serverGroupId;
+
+		private Integer port;
+
+		private Integer weight;
+
+		private String type;
+
+		public String getServerGroupId() {
+			return this.serverGroupId;
+		}
+
+		public void setServerGroupId(String serverGroupId) {
+			this.serverGroupId = serverGroupId;
+		}
+
+		public Integer getPort() {
+			return this.port;
+		}
+
+		public void setPort(Integer port) {
+			this.port = port;
+		}
+
+		public Integer getWeight() {
+			return this.weight;
+		}
+
+		public void setWeight(Integer weight) {
+			this.weight = weight;
+		}
+
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
+		}
+	}
+
 	public static class LaunchTemplateOverride {
 
 		private Integer weightedCapacity;
 
 		private String instanceType;
+
+		private Float spotPriceLimit;
 
 		public Integer getWeightedCapacity() {
 			return this.weightedCapacity;
@@ -521,6 +792,67 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 
 		public void setInstanceType(String instanceType) {
 			this.instanceType = instanceType;
+		}
+
+		public Float getSpotPriceLimit() {
+			return this.spotPriceLimit;
+		}
+
+		public void setSpotPriceLimit(Float spotPriceLimit) {
+			this.spotPriceLimit = spotPriceLimit;
+		}
+	}
+
+	public static class CapacityOptions {
+
+		private Boolean compensateWithOnDemand;
+
+		private String priceComparisonMode;
+
+		private Integer onDemandBaseCapacity;
+
+		private Boolean spotAutoReplaceOnDemand;
+
+		private Integer onDemandPercentageAboveBaseCapacity;
+
+		public Boolean getCompensateWithOnDemand() {
+			return this.compensateWithOnDemand;
+		}
+
+		public void setCompensateWithOnDemand(Boolean compensateWithOnDemand) {
+			this.compensateWithOnDemand = compensateWithOnDemand;
+		}
+
+		public String getPriceComparisonMode() {
+			return this.priceComparisonMode;
+		}
+
+		public void setPriceComparisonMode(String priceComparisonMode) {
+			this.priceComparisonMode = priceComparisonMode;
+		}
+
+		public Integer getOnDemandBaseCapacity() {
+			return this.onDemandBaseCapacity;
+		}
+
+		public void setOnDemandBaseCapacity(Integer onDemandBaseCapacity) {
+			this.onDemandBaseCapacity = onDemandBaseCapacity;
+		}
+
+		public Boolean getSpotAutoReplaceOnDemand() {
+			return this.spotAutoReplaceOnDemand;
+		}
+
+		public void setSpotAutoReplaceOnDemand(Boolean spotAutoReplaceOnDemand) {
+			this.spotAutoReplaceOnDemand = spotAutoReplaceOnDemand;
+		}
+
+		public Integer getOnDemandPercentageAboveBaseCapacity() {
+			return this.onDemandPercentageAboveBaseCapacity;
+		}
+
+		public void setOnDemandPercentageAboveBaseCapacity(Integer onDemandPercentageAboveBaseCapacity) {
+			this.onDemandPercentageAboveBaseCapacity = onDemandPercentageAboveBaseCapacity;
 		}
 	}
 
@@ -617,6 +949,62 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 
 		public void setLifecycleTransition(String lifecycleTransition) {
 			this.lifecycleTransition = lifecycleTransition;
+		}
+	}
+
+	public static class LoadBalancerConfig {
+
+		private String loadBalancerId;
+
+		private Integer weight;
+
+		public String getLoadBalancerId() {
+			return this.loadBalancerId;
+		}
+
+		public void setLoadBalancerId(String loadBalancerId) {
+			this.loadBalancerId = loadBalancerId;
+		}
+
+		public Integer getWeight() {
+			return this.weight;
+		}
+
+		public void setWeight(Integer weight) {
+			this.weight = weight;
+		}
+	}
+
+	public static class DBInstance {
+
+		private String dBInstanceId;
+
+		private String type;
+
+		private String attachMode;
+
+		public String getDBInstanceId() {
+			return this.dBInstanceId;
+		}
+
+		public void setDBInstanceId(String dBInstanceId) {
+			this.dBInstanceId = dBInstanceId;
+		}
+
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
+		}
+
+		public String getAttachMode() {
+			return this.attachMode;
+		}
+
+		public void setAttachMode(String attachMode) {
+			this.attachMode = attachMode;
 		}
 	}
 

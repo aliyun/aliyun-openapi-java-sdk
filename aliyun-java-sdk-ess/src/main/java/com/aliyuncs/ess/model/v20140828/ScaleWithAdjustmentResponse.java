@@ -24,9 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ScaleWithAdjustmentResponse extends AcsResponse {
 
+	private String scalingActivityId;
+
 	private String requestId;
 
-	private String scalingActivityId;
+	private String activityType;
+
+	public String getScalingActivityId() {
+		return this.scalingActivityId;
+	}
+
+	public void setScalingActivityId(String scalingActivityId) {
+		this.scalingActivityId = scalingActivityId;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,12 +46,12 @@ public class ScaleWithAdjustmentResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getScalingActivityId() {
-		return this.scalingActivityId;
+	public String getActivityType() {
+		return this.activityType;
 	}
 
-	public void setScalingActivityId(String scalingActivityId) {
-		this.scalingActivityId = scalingActivityId;
+	public void setActivityType(String activityType) {
+		this.activityType = activityType;
 	}
 
 	@Override

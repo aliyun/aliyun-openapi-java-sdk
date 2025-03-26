@@ -25,22 +25,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeScalingGroupsResponse extends AcsResponse {
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageNumber;
 
 	private Integer pageSize;
 
-	private String requestId;
+	private Integer totalCount;
 
 	private List<ScalingGroup> scalingGroups;
 
-	public Integer getTotalCount() {
-		return this.totalCount;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageNumber() {
@@ -59,12 +59,12 @@ public class DescribeScalingGroupsResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<ScalingGroup> getScalingGroups() {
@@ -77,79 +77,107 @@ public class DescribeScalingGroupsResponse extends AcsResponse {
 
 	public static class ScalingGroup {
 
-		private Integer defaultCooldown;
-
-		private Integer maxSize;
-
-		private Integer pendingWaitCapacity;
-
-		private Integer removingWaitCapacity;
-
-		private Integer pendingCapacity;
-
-		private Integer removingCapacity;
-
-		private String scalingGroupName;
-
-		private Integer activeCapacity;
-
-		private Integer standbyCapacity;
-
-		private Integer protectedCapacity;
-
-		private String activeScalingConfigurationId;
-
-		private String launchTemplateId;
-
-		private String launchTemplateVersion;
-
-		private String scalingGroupId;
-
-		private String regionId;
-
-		private Integer totalCapacity;
-
-		private Integer minSize;
-
-		private String lifecycleState;
+		private String vpcId;
 
 		private String creationTime;
 
-		private String modificationTime;
+		private Integer totalInstanceCount;
 
-		private String vpcId;
-
-		private String vSwitchId;
-
-		private String multiAZPolicy;
-
-		private String healthCheckType;
-
-		private String scalingPolicy;
-
-		private Integer stoppedCapacity;
-
-		private Integer onDemandBaseCapacity;
-
-		private Integer onDemandPercentageAboveBaseCapacity;
-
-		private Boolean spotInstanceRemedy;
-
-		private Boolean compensateWithOnDemand;
-
-		private Integer spotInstancePools;
-
-		private Integer desiredCapacity;
-
-		private Boolean groupDeletionProtection;
-
-		private Boolean scaleOutAmountCheck;
+		private String scalingGroupName;
 
 		private Boolean weighted;
 
-		private Integer totalInstanceCount;
+		private Integer spotInstancePools;
+
+		private Integer stoppedCapacity;
+
+		private Integer onDemandPercentageAboveBaseCapacity;
+
+		private String modificationTime;
+
+		private Integer minSize;
+
+		private String scalingGroupId;
+
+		private Boolean compensateWithOnDemand;
+
+		private String scalingPolicy;
+
+		private Integer removingWaitCapacity;
+
+		private Integer activeCapacity;
+
+		private Integer onDemandBaseCapacity;
+
+		private Integer protectedCapacity;
+
+		private String healthCheckType;
+
+		private String lifecycleState;
+
+		private Boolean groupDeletionProtection;
+
+		private String activeScalingConfigurationId;
+
+		private String groupType;
+
+		private String multiAZPolicy;
+
+		private Integer removingCapacity;
+
+		private Integer pendingWaitCapacity;
+
+		private Integer standbyCapacity;
 
 		private String currentHostName;
+
+		private Integer pendingCapacity;
+
+		private String launchTemplateId;
+
+		private Integer totalCapacity;
+
+		private Integer desiredCapacity;
+
+		private Boolean spotInstanceRemedy;
+
+		private String launchTemplateVersion;
+
+		private String regionId;
+
+		private String vSwitchId;
+
+		private Integer maxSize;
+
+		private Boolean scaleOutAmountCheck;
+
+		private Integer defaultCooldown;
+
+		private Boolean systemSuspended;
+
+		private Boolean isElasticStrengthInAlarm;
+
+		private String monitorGroupId;
+
+		private Boolean azBalance;
+
+		private String allocationStrategy;
+
+		private String spotAllocationStrategy;
+
+		private Integer maxInstanceLifetime;
+
+		private String customPolicyARN;
+
+		private Integer initCapacity;
+
+		private String resourceGroupId;
+
+		private Boolean enableDesiredCapacity;
+
+		private Integer spotCapacity;
+
+		private Integer stopInstanceTimeout;
 
 		private List<VServerGroup> vServerGroups;
 
@@ -157,7 +185,13 @@ public class DescribeScalingGroupsResponse extends AcsResponse {
 
 		private List<AlbServerGroup> albServerGroups;
 
-		private List<String> vSwitchIds;
+		private List<ServerGroup> serverGroups;
+
+		private List<LoadBalancerConfig> loadBalancerConfigs;
+
+		private List<Tag> tags;
+
+		private List<DBInstance> dBInstances;
 
 		private List<String> removalPolicies;
 
@@ -165,150 +199,20 @@ public class DescribeScalingGroupsResponse extends AcsResponse {
 
 		private List<String> loadBalancerIds;
 
+		private List<String> vSwitchIds;
+
 		private List<String> suspendedProcesses;
 
-		public Integer getDefaultCooldown() {
-			return this.defaultCooldown;
+		private List<String> healthCheckTypes;
+
+		private CapacityOptions capacityOptions;
+
+		public String getVpcId() {
+			return this.vpcId;
 		}
 
-		public void setDefaultCooldown(Integer defaultCooldown) {
-			this.defaultCooldown = defaultCooldown;
-		}
-
-		public Integer getMaxSize() {
-			return this.maxSize;
-		}
-
-		public void setMaxSize(Integer maxSize) {
-			this.maxSize = maxSize;
-		}
-
-		public Integer getPendingWaitCapacity() {
-			return this.pendingWaitCapacity;
-		}
-
-		public void setPendingWaitCapacity(Integer pendingWaitCapacity) {
-			this.pendingWaitCapacity = pendingWaitCapacity;
-		}
-
-		public Integer getRemovingWaitCapacity() {
-			return this.removingWaitCapacity;
-		}
-
-		public void setRemovingWaitCapacity(Integer removingWaitCapacity) {
-			this.removingWaitCapacity = removingWaitCapacity;
-		}
-
-		public Integer getPendingCapacity() {
-			return this.pendingCapacity;
-		}
-
-		public void setPendingCapacity(Integer pendingCapacity) {
-			this.pendingCapacity = pendingCapacity;
-		}
-
-		public Integer getRemovingCapacity() {
-			return this.removingCapacity;
-		}
-
-		public void setRemovingCapacity(Integer removingCapacity) {
-			this.removingCapacity = removingCapacity;
-		}
-
-		public String getScalingGroupName() {
-			return this.scalingGroupName;
-		}
-
-		public void setScalingGroupName(String scalingGroupName) {
-			this.scalingGroupName = scalingGroupName;
-		}
-
-		public Integer getActiveCapacity() {
-			return this.activeCapacity;
-		}
-
-		public void setActiveCapacity(Integer activeCapacity) {
-			this.activeCapacity = activeCapacity;
-		}
-
-		public Integer getStandbyCapacity() {
-			return this.standbyCapacity;
-		}
-
-		public void setStandbyCapacity(Integer standbyCapacity) {
-			this.standbyCapacity = standbyCapacity;
-		}
-
-		public Integer getProtectedCapacity() {
-			return this.protectedCapacity;
-		}
-
-		public void setProtectedCapacity(Integer protectedCapacity) {
-			this.protectedCapacity = protectedCapacity;
-		}
-
-		public String getActiveScalingConfigurationId() {
-			return this.activeScalingConfigurationId;
-		}
-
-		public void setActiveScalingConfigurationId(String activeScalingConfigurationId) {
-			this.activeScalingConfigurationId = activeScalingConfigurationId;
-		}
-
-		public String getLaunchTemplateId() {
-			return this.launchTemplateId;
-		}
-
-		public void setLaunchTemplateId(String launchTemplateId) {
-			this.launchTemplateId = launchTemplateId;
-		}
-
-		public String getLaunchTemplateVersion() {
-			return this.launchTemplateVersion;
-		}
-
-		public void setLaunchTemplateVersion(String launchTemplateVersion) {
-			this.launchTemplateVersion = launchTemplateVersion;
-		}
-
-		public String getScalingGroupId() {
-			return this.scalingGroupId;
-		}
-
-		public void setScalingGroupId(String scalingGroupId) {
-			this.scalingGroupId = scalingGroupId;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public Integer getTotalCapacity() {
-			return this.totalCapacity;
-		}
-
-		public void setTotalCapacity(Integer totalCapacity) {
-			this.totalCapacity = totalCapacity;
-		}
-
-		public Integer getMinSize() {
-			return this.minSize;
-		}
-
-		public void setMinSize(Integer minSize) {
-			this.minSize = minSize;
-		}
-
-		public String getLifecycleState() {
-			return this.lifecycleState;
-		}
-
-		public void setLifecycleState(String lifecycleState) {
-			this.lifecycleState = lifecycleState;
+		public void setVpcId(String vpcId) {
+			this.vpcId = vpcId;
 		}
 
 		public String getCreationTime() {
@@ -319,124 +223,20 @@ public class DescribeScalingGroupsResponse extends AcsResponse {
 			this.creationTime = creationTime;
 		}
 
-		public String getModificationTime() {
-			return this.modificationTime;
+		public Integer getTotalInstanceCount() {
+			return this.totalInstanceCount;
 		}
 
-		public void setModificationTime(String modificationTime) {
-			this.modificationTime = modificationTime;
+		public void setTotalInstanceCount(Integer totalInstanceCount) {
+			this.totalInstanceCount = totalInstanceCount;
 		}
 
-		public String getVpcId() {
-			return this.vpcId;
+		public String getScalingGroupName() {
+			return this.scalingGroupName;
 		}
 
-		public void setVpcId(String vpcId) {
-			this.vpcId = vpcId;
-		}
-
-		public String getVSwitchId() {
-			return this.vSwitchId;
-		}
-
-		public void setVSwitchId(String vSwitchId) {
-			this.vSwitchId = vSwitchId;
-		}
-
-		public String getMultiAZPolicy() {
-			return this.multiAZPolicy;
-		}
-
-		public void setMultiAZPolicy(String multiAZPolicy) {
-			this.multiAZPolicy = multiAZPolicy;
-		}
-
-		public String getHealthCheckType() {
-			return this.healthCheckType;
-		}
-
-		public void setHealthCheckType(String healthCheckType) {
-			this.healthCheckType = healthCheckType;
-		}
-
-		public String getScalingPolicy() {
-			return this.scalingPolicy;
-		}
-
-		public void setScalingPolicy(String scalingPolicy) {
-			this.scalingPolicy = scalingPolicy;
-		}
-
-		public Integer getStoppedCapacity() {
-			return this.stoppedCapacity;
-		}
-
-		public void setStoppedCapacity(Integer stoppedCapacity) {
-			this.stoppedCapacity = stoppedCapacity;
-		}
-
-		public Integer getOnDemandBaseCapacity() {
-			return this.onDemandBaseCapacity;
-		}
-
-		public void setOnDemandBaseCapacity(Integer onDemandBaseCapacity) {
-			this.onDemandBaseCapacity = onDemandBaseCapacity;
-		}
-
-		public Integer getOnDemandPercentageAboveBaseCapacity() {
-			return this.onDemandPercentageAboveBaseCapacity;
-		}
-
-		public void setOnDemandPercentageAboveBaseCapacity(Integer onDemandPercentageAboveBaseCapacity) {
-			this.onDemandPercentageAboveBaseCapacity = onDemandPercentageAboveBaseCapacity;
-		}
-
-		public Boolean getSpotInstanceRemedy() {
-			return this.spotInstanceRemedy;
-		}
-
-		public void setSpotInstanceRemedy(Boolean spotInstanceRemedy) {
-			this.spotInstanceRemedy = spotInstanceRemedy;
-		}
-
-		public Boolean getCompensateWithOnDemand() {
-			return this.compensateWithOnDemand;
-		}
-
-		public void setCompensateWithOnDemand(Boolean compensateWithOnDemand) {
-			this.compensateWithOnDemand = compensateWithOnDemand;
-		}
-
-		public Integer getSpotInstancePools() {
-			return this.spotInstancePools;
-		}
-
-		public void setSpotInstancePools(Integer spotInstancePools) {
-			this.spotInstancePools = spotInstancePools;
-		}
-
-		public Integer getDesiredCapacity() {
-			return this.desiredCapacity;
-		}
-
-		public void setDesiredCapacity(Integer desiredCapacity) {
-			this.desiredCapacity = desiredCapacity;
-		}
-
-		public Boolean getGroupDeletionProtection() {
-			return this.groupDeletionProtection;
-		}
-
-		public void setGroupDeletionProtection(Boolean groupDeletionProtection) {
-			this.groupDeletionProtection = groupDeletionProtection;
-		}
-
-		public Boolean getScaleOutAmountCheck() {
-			return this.scaleOutAmountCheck;
-		}
-
-		public void setScaleOutAmountCheck(Boolean scaleOutAmountCheck) {
-			this.scaleOutAmountCheck = scaleOutAmountCheck;
+		public void setScalingGroupName(String scalingGroupName) {
+			this.scalingGroupName = scalingGroupName;
 		}
 
 		public Boolean getWeighted() {
@@ -447,12 +247,172 @@ public class DescribeScalingGroupsResponse extends AcsResponse {
 			this.weighted = weighted;
 		}
 
-		public Integer getTotalInstanceCount() {
-			return this.totalInstanceCount;
+		public Integer getSpotInstancePools() {
+			return this.spotInstancePools;
 		}
 
-		public void setTotalInstanceCount(Integer totalInstanceCount) {
-			this.totalInstanceCount = totalInstanceCount;
+		public void setSpotInstancePools(Integer spotInstancePools) {
+			this.spotInstancePools = spotInstancePools;
+		}
+
+		public Integer getStoppedCapacity() {
+			return this.stoppedCapacity;
+		}
+
+		public void setStoppedCapacity(Integer stoppedCapacity) {
+			this.stoppedCapacity = stoppedCapacity;
+		}
+
+		public Integer getOnDemandPercentageAboveBaseCapacity() {
+			return this.onDemandPercentageAboveBaseCapacity;
+		}
+
+		public void setOnDemandPercentageAboveBaseCapacity(Integer onDemandPercentageAboveBaseCapacity) {
+			this.onDemandPercentageAboveBaseCapacity = onDemandPercentageAboveBaseCapacity;
+		}
+
+		public String getModificationTime() {
+			return this.modificationTime;
+		}
+
+		public void setModificationTime(String modificationTime) {
+			this.modificationTime = modificationTime;
+		}
+
+		public Integer getMinSize() {
+			return this.minSize;
+		}
+
+		public void setMinSize(Integer minSize) {
+			this.minSize = minSize;
+		}
+
+		public String getScalingGroupId() {
+			return this.scalingGroupId;
+		}
+
+		public void setScalingGroupId(String scalingGroupId) {
+			this.scalingGroupId = scalingGroupId;
+		}
+
+		public Boolean getCompensateWithOnDemand() {
+			return this.compensateWithOnDemand;
+		}
+
+		public void setCompensateWithOnDemand(Boolean compensateWithOnDemand) {
+			this.compensateWithOnDemand = compensateWithOnDemand;
+		}
+
+		public String getScalingPolicy() {
+			return this.scalingPolicy;
+		}
+
+		public void setScalingPolicy(String scalingPolicy) {
+			this.scalingPolicy = scalingPolicy;
+		}
+
+		public Integer getRemovingWaitCapacity() {
+			return this.removingWaitCapacity;
+		}
+
+		public void setRemovingWaitCapacity(Integer removingWaitCapacity) {
+			this.removingWaitCapacity = removingWaitCapacity;
+		}
+
+		public Integer getActiveCapacity() {
+			return this.activeCapacity;
+		}
+
+		public void setActiveCapacity(Integer activeCapacity) {
+			this.activeCapacity = activeCapacity;
+		}
+
+		public Integer getOnDemandBaseCapacity() {
+			return this.onDemandBaseCapacity;
+		}
+
+		public void setOnDemandBaseCapacity(Integer onDemandBaseCapacity) {
+			this.onDemandBaseCapacity = onDemandBaseCapacity;
+		}
+
+		public Integer getProtectedCapacity() {
+			return this.protectedCapacity;
+		}
+
+		public void setProtectedCapacity(Integer protectedCapacity) {
+			this.protectedCapacity = protectedCapacity;
+		}
+
+		public String getHealthCheckType() {
+			return this.healthCheckType;
+		}
+
+		public void setHealthCheckType(String healthCheckType) {
+			this.healthCheckType = healthCheckType;
+		}
+
+		public String getLifecycleState() {
+			return this.lifecycleState;
+		}
+
+		public void setLifecycleState(String lifecycleState) {
+			this.lifecycleState = lifecycleState;
+		}
+
+		public Boolean getGroupDeletionProtection() {
+			return this.groupDeletionProtection;
+		}
+
+		public void setGroupDeletionProtection(Boolean groupDeletionProtection) {
+			this.groupDeletionProtection = groupDeletionProtection;
+		}
+
+		public String getActiveScalingConfigurationId() {
+			return this.activeScalingConfigurationId;
+		}
+
+		public void setActiveScalingConfigurationId(String activeScalingConfigurationId) {
+			this.activeScalingConfigurationId = activeScalingConfigurationId;
+		}
+
+		public String getGroupType() {
+			return this.groupType;
+		}
+
+		public void setGroupType(String groupType) {
+			this.groupType = groupType;
+		}
+
+		public String getMultiAZPolicy() {
+			return this.multiAZPolicy;
+		}
+
+		public void setMultiAZPolicy(String multiAZPolicy) {
+			this.multiAZPolicy = multiAZPolicy;
+		}
+
+		public Integer getRemovingCapacity() {
+			return this.removingCapacity;
+		}
+
+		public void setRemovingCapacity(Integer removingCapacity) {
+			this.removingCapacity = removingCapacity;
+		}
+
+		public Integer getPendingWaitCapacity() {
+			return this.pendingWaitCapacity;
+		}
+
+		public void setPendingWaitCapacity(Integer pendingWaitCapacity) {
+			this.pendingWaitCapacity = pendingWaitCapacity;
+		}
+
+		public Integer getStandbyCapacity() {
+			return this.standbyCapacity;
+		}
+
+		public void setStandbyCapacity(Integer standbyCapacity) {
+			this.standbyCapacity = standbyCapacity;
 		}
 
 		public String getCurrentHostName() {
@@ -461,6 +421,198 @@ public class DescribeScalingGroupsResponse extends AcsResponse {
 
 		public void setCurrentHostName(String currentHostName) {
 			this.currentHostName = currentHostName;
+		}
+
+		public Integer getPendingCapacity() {
+			return this.pendingCapacity;
+		}
+
+		public void setPendingCapacity(Integer pendingCapacity) {
+			this.pendingCapacity = pendingCapacity;
+		}
+
+		public String getLaunchTemplateId() {
+			return this.launchTemplateId;
+		}
+
+		public void setLaunchTemplateId(String launchTemplateId) {
+			this.launchTemplateId = launchTemplateId;
+		}
+
+		public Integer getTotalCapacity() {
+			return this.totalCapacity;
+		}
+
+		public void setTotalCapacity(Integer totalCapacity) {
+			this.totalCapacity = totalCapacity;
+		}
+
+		public Integer getDesiredCapacity() {
+			return this.desiredCapacity;
+		}
+
+		public void setDesiredCapacity(Integer desiredCapacity) {
+			this.desiredCapacity = desiredCapacity;
+		}
+
+		public Boolean getSpotInstanceRemedy() {
+			return this.spotInstanceRemedy;
+		}
+
+		public void setSpotInstanceRemedy(Boolean spotInstanceRemedy) {
+			this.spotInstanceRemedy = spotInstanceRemedy;
+		}
+
+		public String getLaunchTemplateVersion() {
+			return this.launchTemplateVersion;
+		}
+
+		public void setLaunchTemplateVersion(String launchTemplateVersion) {
+			this.launchTemplateVersion = launchTemplateVersion;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public String getVSwitchId() {
+			return this.vSwitchId;
+		}
+
+		public void setVSwitchId(String vSwitchId) {
+			this.vSwitchId = vSwitchId;
+		}
+
+		public Integer getMaxSize() {
+			return this.maxSize;
+		}
+
+		public void setMaxSize(Integer maxSize) {
+			this.maxSize = maxSize;
+		}
+
+		public Boolean getScaleOutAmountCheck() {
+			return this.scaleOutAmountCheck;
+		}
+
+		public void setScaleOutAmountCheck(Boolean scaleOutAmountCheck) {
+			this.scaleOutAmountCheck = scaleOutAmountCheck;
+		}
+
+		public Integer getDefaultCooldown() {
+			return this.defaultCooldown;
+		}
+
+		public void setDefaultCooldown(Integer defaultCooldown) {
+			this.defaultCooldown = defaultCooldown;
+		}
+
+		public Boolean getSystemSuspended() {
+			return this.systemSuspended;
+		}
+
+		public void setSystemSuspended(Boolean systemSuspended) {
+			this.systemSuspended = systemSuspended;
+		}
+
+		public Boolean getIsElasticStrengthInAlarm() {
+			return this.isElasticStrengthInAlarm;
+		}
+
+		public void setIsElasticStrengthInAlarm(Boolean isElasticStrengthInAlarm) {
+			this.isElasticStrengthInAlarm = isElasticStrengthInAlarm;
+		}
+
+		public String getMonitorGroupId() {
+			return this.monitorGroupId;
+		}
+
+		public void setMonitorGroupId(String monitorGroupId) {
+			this.monitorGroupId = monitorGroupId;
+		}
+
+		public Boolean getAzBalance() {
+			return this.azBalance;
+		}
+
+		public void setAzBalance(Boolean azBalance) {
+			this.azBalance = azBalance;
+		}
+
+		public String getAllocationStrategy() {
+			return this.allocationStrategy;
+		}
+
+		public void setAllocationStrategy(String allocationStrategy) {
+			this.allocationStrategy = allocationStrategy;
+		}
+
+		public String getSpotAllocationStrategy() {
+			return this.spotAllocationStrategy;
+		}
+
+		public void setSpotAllocationStrategy(String spotAllocationStrategy) {
+			this.spotAllocationStrategy = spotAllocationStrategy;
+		}
+
+		public Integer getMaxInstanceLifetime() {
+			return this.maxInstanceLifetime;
+		}
+
+		public void setMaxInstanceLifetime(Integer maxInstanceLifetime) {
+			this.maxInstanceLifetime = maxInstanceLifetime;
+		}
+
+		public String getCustomPolicyARN() {
+			return this.customPolicyARN;
+		}
+
+		public void setCustomPolicyARN(String customPolicyARN) {
+			this.customPolicyARN = customPolicyARN;
+		}
+
+		public Integer getInitCapacity() {
+			return this.initCapacity;
+		}
+
+		public void setInitCapacity(Integer initCapacity) {
+			this.initCapacity = initCapacity;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public Boolean getEnableDesiredCapacity() {
+			return this.enableDesiredCapacity;
+		}
+
+		public void setEnableDesiredCapacity(Boolean enableDesiredCapacity) {
+			this.enableDesiredCapacity = enableDesiredCapacity;
+		}
+
+		public Integer getSpotCapacity() {
+			return this.spotCapacity;
+		}
+
+		public void setSpotCapacity(Integer spotCapacity) {
+			this.spotCapacity = spotCapacity;
+		}
+
+		public Integer getStopInstanceTimeout() {
+			return this.stopInstanceTimeout;
+		}
+
+		public void setStopInstanceTimeout(Integer stopInstanceTimeout) {
+			this.stopInstanceTimeout = stopInstanceTimeout;
 		}
 
 		public List<VServerGroup> getVServerGroups() {
@@ -487,12 +639,36 @@ public class DescribeScalingGroupsResponse extends AcsResponse {
 			this.albServerGroups = albServerGroups;
 		}
 
-		public List<String> getVSwitchIds() {
-			return this.vSwitchIds;
+		public List<ServerGroup> getServerGroups() {
+			return this.serverGroups;
 		}
 
-		public void setVSwitchIds(List<String> vSwitchIds) {
-			this.vSwitchIds = vSwitchIds;
+		public void setServerGroups(List<ServerGroup> serverGroups) {
+			this.serverGroups = serverGroups;
+		}
+
+		public List<LoadBalancerConfig> getLoadBalancerConfigs() {
+			return this.loadBalancerConfigs;
+		}
+
+		public void setLoadBalancerConfigs(List<LoadBalancerConfig> loadBalancerConfigs) {
+			this.loadBalancerConfigs = loadBalancerConfigs;
+		}
+
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
+		public List<DBInstance> getDBInstances() {
+			return this.dBInstances;
+		}
+
+		public void setDBInstances(List<DBInstance> dBInstances) {
+			this.dBInstances = dBInstances;
 		}
 
 		public List<String> getRemovalPolicies() {
@@ -519,12 +695,36 @@ public class DescribeScalingGroupsResponse extends AcsResponse {
 			this.loadBalancerIds = loadBalancerIds;
 		}
 
+		public List<String> getVSwitchIds() {
+			return this.vSwitchIds;
+		}
+
+		public void setVSwitchIds(List<String> vSwitchIds) {
+			this.vSwitchIds = vSwitchIds;
+		}
+
 		public List<String> getSuspendedProcesses() {
 			return this.suspendedProcesses;
 		}
 
 		public void setSuspendedProcesses(List<String> suspendedProcesses) {
 			this.suspendedProcesses = suspendedProcesses;
+		}
+
+		public List<String> getHealthCheckTypes() {
+			return this.healthCheckTypes;
+		}
+
+		public void setHealthCheckTypes(List<String> healthCheckTypes) {
+			this.healthCheckTypes = healthCheckTypes;
+		}
+
+		public CapacityOptions getCapacityOptions() {
+			return this.capacityOptions;
+		}
+
+		public void setCapacityOptions(CapacityOptions capacityOptions) {
+			this.capacityOptions = capacityOptions;
 		}
 
 		public static class VServerGroup {
@@ -553,9 +753,9 @@ public class DescribeScalingGroupsResponse extends AcsResponse {
 
 				private String vServerGroupId;
 
-				private Integer port;
-
 				private Integer weight;
+
+				private Integer port;
 
 				public String getVServerGroupId() {
 					return this.vServerGroupId;
@@ -565,14 +765,6 @@ public class DescribeScalingGroupsResponse extends AcsResponse {
 					this.vServerGroupId = vServerGroupId;
 				}
 
-				public Integer getPort() {
-					return this.port;
-				}
-
-				public void setPort(Integer port) {
-					this.port = port;
-				}
-
 				public Integer getWeight() {
 					return this.weight;
 				}
@@ -580,14 +772,32 @@ public class DescribeScalingGroupsResponse extends AcsResponse {
 				public void setWeight(Integer weight) {
 					this.weight = weight;
 				}
+
+				public Integer getPort() {
+					return this.port;
+				}
+
+				public void setPort(Integer port) {
+					this.port = port;
+				}
 			}
 		}
 
 		public static class LaunchTemplateOverride {
 
+			private Integer weightedCapacity;
+
 			private String instanceType;
 
-			private Integer weightedCapacity;
+			private Float spotPriceLimit;
+
+			public Integer getWeightedCapacity() {
+				return this.weightedCapacity;
+			}
+
+			public void setWeightedCapacity(Integer weightedCapacity) {
+				this.weightedCapacity = weightedCapacity;
+			}
 
 			public String getInstanceType() {
 				return this.instanceType;
@@ -597,12 +807,12 @@ public class DescribeScalingGroupsResponse extends AcsResponse {
 				this.instanceType = instanceType;
 			}
 
-			public Integer getWeightedCapacity() {
-				return this.weightedCapacity;
+			public Float getSpotPriceLimit() {
+				return this.spotPriceLimit;
 			}
 
-			public void setWeightedCapacity(Integer weightedCapacity) {
-				this.weightedCapacity = weightedCapacity;
+			public void setSpotPriceLimit(Float spotPriceLimit) {
+				this.spotPriceLimit = spotPriceLimit;
 			}
 		}
 
@@ -610,9 +820,9 @@ public class DescribeScalingGroupsResponse extends AcsResponse {
 
 			private String albServerGroupId;
 
-			private Integer port;
-
 			private Integer weight;
+
+			private Integer port;
 
 			public String getAlbServerGroupId() {
 				return this.albServerGroupId;
@@ -622,12 +832,47 @@ public class DescribeScalingGroupsResponse extends AcsResponse {
 				this.albServerGroupId = albServerGroupId;
 			}
 
+			public Integer getWeight() {
+				return this.weight;
+			}
+
+			public void setWeight(Integer weight) {
+				this.weight = weight;
+			}
+
 			public Integer getPort() {
 				return this.port;
 			}
 
 			public void setPort(Integer port) {
 				this.port = port;
+			}
+		}
+
+		public static class ServerGroup {
+
+			private String serverGroupId;
+
+			private String type;
+
+			private Integer weight;
+
+			private Integer port;
+
+			public String getServerGroupId() {
+				return this.serverGroupId;
+			}
+
+			public void setServerGroupId(String serverGroupId) {
+				this.serverGroupId = serverGroupId;
+			}
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
 			}
 
 			public Integer getWeight() {
@@ -636,6 +881,156 @@ public class DescribeScalingGroupsResponse extends AcsResponse {
 
 			public void setWeight(Integer weight) {
 				this.weight = weight;
+			}
+
+			public Integer getPort() {
+				return this.port;
+			}
+
+			public void setPort(Integer port) {
+				this.port = port;
+			}
+		}
+
+		public static class LoadBalancerConfig {
+
+			private String loadBalancerId;
+
+			private Integer weight;
+
+			public String getLoadBalancerId() {
+				return this.loadBalancerId;
+			}
+
+			public void setLoadBalancerId(String loadBalancerId) {
+				this.loadBalancerId = loadBalancerId;
+			}
+
+			public Integer getWeight() {
+				return this.weight;
+			}
+
+			public void setWeight(Integer weight) {
+				this.weight = weight;
+			}
+		}
+
+		public static class Tag {
+
+			private String tagKey;
+
+			private String tagValue;
+
+			private Boolean propagate;
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
+			}
+
+			public String getTagValue() {
+				return this.tagValue;
+			}
+
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
+			}
+
+			public Boolean getPropagate() {
+				return this.propagate;
+			}
+
+			public void setPropagate(Boolean propagate) {
+				this.propagate = propagate;
+			}
+		}
+
+		public static class DBInstance {
+
+			private String dBInstanceId;
+
+			private String type;
+
+			private List<String> securityGroupIds;
+
+			public String getDBInstanceId() {
+				return this.dBInstanceId;
+			}
+
+			public void setDBInstanceId(String dBInstanceId) {
+				this.dBInstanceId = dBInstanceId;
+			}
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
+			}
+
+			public List<String> getSecurityGroupIds() {
+				return this.securityGroupIds;
+			}
+
+			public void setSecurityGroupIds(List<String> securityGroupIds) {
+				this.securityGroupIds = securityGroupIds;
+			}
+		}
+
+		public static class CapacityOptions {
+
+			private Integer onDemandBaseCapacity;
+
+			private Integer onDemandPercentageAboveBaseCapacity;
+
+			private Boolean compensateWithOnDemand;
+
+			private Boolean spotAutoReplaceOnDemand;
+
+			private String priceComparisonMode;
+
+			public Integer getOnDemandBaseCapacity() {
+				return this.onDemandBaseCapacity;
+			}
+
+			public void setOnDemandBaseCapacity(Integer onDemandBaseCapacity) {
+				this.onDemandBaseCapacity = onDemandBaseCapacity;
+			}
+
+			public Integer getOnDemandPercentageAboveBaseCapacity() {
+				return this.onDemandPercentageAboveBaseCapacity;
+			}
+
+			public void setOnDemandPercentageAboveBaseCapacity(Integer onDemandPercentageAboveBaseCapacity) {
+				this.onDemandPercentageAboveBaseCapacity = onDemandPercentageAboveBaseCapacity;
+			}
+
+			public Boolean getCompensateWithOnDemand() {
+				return this.compensateWithOnDemand;
+			}
+
+			public void setCompensateWithOnDemand(Boolean compensateWithOnDemand) {
+				this.compensateWithOnDemand = compensateWithOnDemand;
+			}
+
+			public Boolean getSpotAutoReplaceOnDemand() {
+				return this.spotAutoReplaceOnDemand;
+			}
+
+			public void setSpotAutoReplaceOnDemand(Boolean spotAutoReplaceOnDemand) {
+				this.spotAutoReplaceOnDemand = spotAutoReplaceOnDemand;
+			}
+
+			public String getPriceComparisonMode() {
+				return this.priceComparisonMode;
+			}
+
+			public void setPriceComparisonMode(String priceComparisonMode) {
+				this.priceComparisonMode = priceComparisonMode;
 			}
 		}
 	}

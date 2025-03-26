@@ -22,6 +22,7 @@ public class DescribeScalingActivityDetailResponseUnmarshaller {
 
 	public static DescribeScalingActivityDetailResponse unmarshall(DescribeScalingActivityDetailResponse describeScalingActivityDetailResponse, UnmarshallerContext _ctx) {
 		
+		describeScalingActivityDetailResponse.setRequestId(_ctx.stringValue("DescribeScalingActivityDetailResponse.RequestId"));
 		describeScalingActivityDetailResponse.setScalingActivityId(_ctx.stringValue("DescribeScalingActivityDetailResponse.ScalingActivityId"));
 		describeScalingActivityDetailResponse.setDetail(_ctx.stringValue("DescribeScalingActivityDetailResponse.Detail"));
 	 

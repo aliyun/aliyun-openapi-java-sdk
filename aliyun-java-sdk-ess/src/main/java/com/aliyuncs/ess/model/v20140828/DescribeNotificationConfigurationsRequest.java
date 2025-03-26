@@ -25,9 +25,9 @@ import com.aliyuncs.ess.Endpoint;
 public class DescribeNotificationConfigurationsRequest extends RpcAcsRequest<DescribeNotificationConfigurationsResponse> {
 	   
 
-	private String resourceOwnerAccount;
-
 	private String scalingGroupId;
+
+	private String resourceOwnerAccount;
 
 	private Long ownerId;
 	public DescribeNotificationConfigurationsRequest() {
@@ -39,17 +39,6 @@ public class DescribeNotificationConfigurationsRequest extends RpcAcsRequest<Des
 		} catch (Exception e) {}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
 	public String getScalingGroupId() {
 		return this.scalingGroupId;
 	}
@@ -58,6 +47,17 @@ public class DescribeNotificationConfigurationsRequest extends RpcAcsRequest<Des
 		this.scalingGroupId = scalingGroupId;
 		if(scalingGroupId != null){
 			putQueryParameter("ScalingGroupId", scalingGroupId);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 

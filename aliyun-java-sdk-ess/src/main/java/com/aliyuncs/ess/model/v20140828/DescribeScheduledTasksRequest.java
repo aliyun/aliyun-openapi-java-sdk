@@ -32,6 +32,8 @@ public class DescribeScheduledTasksRequest extends RpcAcsRequest<DescribeSchedul
 
 	private String scalingGroupId;
 
+	private String taskName;
+
 	private Integer pageNumber;
 
 	private Integer pageSize;
@@ -42,9 +44,15 @@ public class DescribeScheduledTasksRequest extends RpcAcsRequest<DescribeSchedul
 
 	private Long ownerId;
 
+	private String recurrenceValue;
+
 	private List<String> scheduledTaskNames;
 
+	private Boolean taskEnabled;
+
 	private List<String> scheduledTaskIds;
+
+	private String recurrenceType;
 	public DescribeScheduledTasksRequest() {
 		super("Ess", "2014-08-28", "DescribeScheduledTasks", "ess");
 		setMethod(MethodType.POST);
@@ -86,6 +94,17 @@ public class DescribeScheduledTasksRequest extends RpcAcsRequest<DescribeSchedul
 		this.scalingGroupId = scalingGroupId;
 		if(scalingGroupId != null){
 			putQueryParameter("ScalingGroupId", scalingGroupId);
+		}
+	}
+
+	public String getTaskName() {
+		return this.taskName;
+	}
+
+	public void setTaskName(String taskName) {
+		this.taskName = taskName;
+		if(taskName != null){
+			putQueryParameter("TaskName", taskName);
 		}
 	}
 
@@ -144,6 +163,17 @@ public class DescribeScheduledTasksRequest extends RpcAcsRequest<DescribeSchedul
 		}
 	}
 
+	public String getRecurrenceValue() {
+		return this.recurrenceValue;
+	}
+
+	public void setRecurrenceValue(String recurrenceValue) {
+		this.recurrenceValue = recurrenceValue;
+		if(recurrenceValue != null){
+			putQueryParameter("RecurrenceValue", recurrenceValue);
+		}
+	}
+
 	public List<String> getScheduledTaskNames() {
 		return this.scheduledTaskNames;
 	}
@@ -157,6 +187,17 @@ public class DescribeScheduledTasksRequest extends RpcAcsRequest<DescribeSchedul
 		}	
 	}
 
+	public Boolean getTaskEnabled() {
+		return this.taskEnabled;
+	}
+
+	public void setTaskEnabled(Boolean taskEnabled) {
+		this.taskEnabled = taskEnabled;
+		if(taskEnabled != null){
+			putQueryParameter("TaskEnabled", taskEnabled.toString());
+		}
+	}
+
 	public List<String> getScheduledTaskIds() {
 		return this.scheduledTaskIds;
 	}
@@ -168,6 +209,17 @@ public class DescribeScheduledTasksRequest extends RpcAcsRequest<DescribeSchedul
 				putQueryParameter("ScheduledTaskId." + (i + 1) , scheduledTaskIds.get(i));
 			}
 		}	
+	}
+
+	public String getRecurrenceType() {
+		return this.recurrenceType;
+	}
+
+	public void setRecurrenceType(String recurrenceType) {
+		this.recurrenceType = recurrenceType;
+		if(recurrenceType != null){
+			putQueryParameter("RecurrenceType", recurrenceType);
+		}
 	}
 
 	@Override

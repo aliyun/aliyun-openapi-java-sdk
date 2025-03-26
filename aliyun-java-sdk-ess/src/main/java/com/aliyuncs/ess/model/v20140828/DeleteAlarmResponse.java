@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DeleteAlarmResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String alarmTaskId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getAlarmTaskId() {
 		return this.alarmTaskId;
@@ -42,6 +34,14 @@ public class DeleteAlarmResponse extends AcsResponse {
 
 	public void setAlarmTaskId(String alarmTaskId) {
 		this.alarmTaskId = alarmTaskId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

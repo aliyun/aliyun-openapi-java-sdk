@@ -46,11 +46,15 @@ public class DescribeScalingInstancesRequest extends RpcAcsRequest<DescribeScali
 
 	private String scalingActivityId;
 
+	private List<String> creationTypess;
+
 	private String scalingConfigurationId;
 
 	private List<String> instanceIds;
 
 	private String healthStatus;
+
+	private List<String> lifecycleStatess;
 	public DescribeScalingInstancesRequest() {
 		super("Ess", "2014-08-28", "DescribeScalingInstances", "ess");
 		setMethod(MethodType.POST);
@@ -170,6 +174,19 @@ public class DescribeScalingInstancesRequest extends RpcAcsRequest<DescribeScali
 		}
 	}
 
+	public List<String> getCreationTypess() {
+		return this.creationTypess;
+	}
+
+	public void setCreationTypess(List<String> creationTypess) {
+		this.creationTypess = creationTypess;	
+		if (creationTypess != null) {
+			for (int i = 0; i < creationTypess.size(); i++) {
+				putQueryParameter("CreationTypes." + (i + 1) , creationTypess.get(i));
+			}
+		}	
+	}
+
 	public String getScalingConfigurationId() {
 		return this.scalingConfigurationId;
 	}
@@ -203,6 +220,19 @@ public class DescribeScalingInstancesRequest extends RpcAcsRequest<DescribeScali
 		if(healthStatus != null){
 			putQueryParameter("HealthStatus", healthStatus);
 		}
+	}
+
+	public List<String> getLifecycleStatess() {
+		return this.lifecycleStatess;
+	}
+
+	public void setLifecycleStatess(List<String> lifecycleStatess) {
+		this.lifecycleStatess = lifecycleStatess;	
+		if (lifecycleStatess != null) {
+			for (int i = 0; i < lifecycleStatess.size(); i++) {
+				putQueryParameter("LifecycleStates." + (i + 1) , lifecycleStatess.get(i));
+			}
+		}	
 	}
 
 	@Override

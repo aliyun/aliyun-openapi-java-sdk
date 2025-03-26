@@ -28,16 +28,16 @@ public class DescribeLifecycleActionsResponseUnmarshaller {
 		
 		describeLifecycleActionsResponse.setRequestId(_ctx.stringValue("DescribeLifecycleActionsResponse.RequestId"));
 		describeLifecycleActionsResponse.setNextToken(_ctx.stringValue("DescribeLifecycleActionsResponse.NextToken"));
-		describeLifecycleActionsResponse.setMaxResults(_ctx.integerValue("DescribeLifecycleActionsResponse.MaxResults"));
 		describeLifecycleActionsResponse.setTotalCount(_ctx.integerValue("DescribeLifecycleActionsResponse.TotalCount"));
+		describeLifecycleActionsResponse.setMaxResults(_ctx.integerValue("DescribeLifecycleActionsResponse.MaxResults"));
 
 		List<LifecycleAction> lifecycleActions = new ArrayList<LifecycleAction>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLifecycleActionsResponse.LifecycleActions.Length"); i++) {
 			LifecycleAction lifecycleAction = new LifecycleAction();
+			lifecycleAction.setLifecycleHookId(_ctx.stringValue("DescribeLifecycleActionsResponse.LifecycleActions["+ i +"].LifecycleHookId"));
 			lifecycleAction.setLifecycleActionToken(_ctx.stringValue("DescribeLifecycleActionsResponse.LifecycleActions["+ i +"].LifecycleActionToken"));
 			lifecycleAction.setLifecycleActionStatus(_ctx.stringValue("DescribeLifecycleActionsResponse.LifecycleActions["+ i +"].LifecycleActionStatus"));
 			lifecycleAction.setLifecycleActionResult(_ctx.stringValue("DescribeLifecycleActionsResponse.LifecycleActions["+ i +"].LifecycleActionResult"));
-			lifecycleAction.setLifecycleHookId(_ctx.stringValue("DescribeLifecycleActionsResponse.LifecycleActions["+ i +"].LifecycleHookId"));
 
 			List<String> instanceIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeLifecycleActionsResponse.LifecycleActions["+ i +"].InstanceIds.Length"); j++) {

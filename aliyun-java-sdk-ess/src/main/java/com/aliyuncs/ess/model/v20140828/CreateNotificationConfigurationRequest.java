@@ -28,6 +28,8 @@ public class CreateNotificationConfigurationRequest extends RpcAcsRequest<Create
 
 	private String scalingGroupId;
 
+	private String timeZone;
+
 	private String notificationArn;
 
 	private String resourceOwnerAccount;
@@ -52,6 +54,17 @@ public class CreateNotificationConfigurationRequest extends RpcAcsRequest<Create
 		this.scalingGroupId = scalingGroupId;
 		if(scalingGroupId != null){
 			putQueryParameter("ScalingGroupId", scalingGroupId);
+		}
+	}
+
+	public String getTimeZone() {
+		return this.timeZone;
+	}
+
+	public void setTimeZone(String timeZone) {
+		this.timeZone = timeZone;
+		if(timeZone != null){
+			putQueryParameter("TimeZone", timeZone);
 		}
 	}
 

@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateLifecycleHookResponse extends AcsResponse {
 
-	private String lifecycleHookId;
-
 	private String requestId;
 
-	public String getLifecycleHookId() {
-		return this.lifecycleHookId;
-	}
-
-	public void setLifecycleHookId(String lifecycleHookId) {
-		this.lifecycleHookId = lifecycleHookId;
-	}
+	private String lifecycleHookId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,6 +34,14 @@ public class CreateLifecycleHookResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getLifecycleHookId() {
+		return this.lifecycleHookId;
+	}
+
+	public void setLifecycleHookId(String lifecycleHookId) {
+		this.lifecycleHookId = lifecycleHookId;
 	}
 
 	@Override

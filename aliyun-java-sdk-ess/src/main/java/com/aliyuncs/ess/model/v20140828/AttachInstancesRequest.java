@@ -28,7 +28,11 @@ public class AttachInstancesRequest extends RpcAcsRequest<AttachInstancesRespons
 
 	private Long resourceOwnerId;
 
+	private String clientToken;
+
 	private String scalingGroupId;
+
+	private Boolean ignoreInvalidInstance;
 
 	private String resourceOwnerAccount;
 
@@ -41,6 +45,8 @@ public class AttachInstancesRequest extends RpcAcsRequest<AttachInstancesRespons
 	private List<String> instanceIds;
 
 	private List<Integer> loadBalancerWeights;
+
+	private Boolean lifecycleHook;
 	public AttachInstancesRequest() {
 		super("Ess", "2014-08-28", "AttachInstances", "ess");
 		setMethod(MethodType.POST);
@@ -61,6 +67,17 @@ public class AttachInstancesRequest extends RpcAcsRequest<AttachInstancesRespons
 		}
 	}
 
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
 	public String getScalingGroupId() {
 		return this.scalingGroupId;
 	}
@@ -69,6 +86,17 @@ public class AttachInstancesRequest extends RpcAcsRequest<AttachInstancesRespons
 		this.scalingGroupId = scalingGroupId;
 		if(scalingGroupId != null){
 			putQueryParameter("ScalingGroupId", scalingGroupId);
+		}
+	}
+
+	public Boolean getIgnoreInvalidInstance() {
+		return this.ignoreInvalidInstance;
+	}
+
+	public void setIgnoreInvalidInstance(Boolean ignoreInvalidInstance) {
+		this.ignoreInvalidInstance = ignoreInvalidInstance;
+		if(ignoreInvalidInstance != null){
+			putQueryParameter("IgnoreInvalidInstance", ignoreInvalidInstance.toString());
 		}
 	}
 
@@ -140,6 +168,17 @@ public class AttachInstancesRequest extends RpcAcsRequest<AttachInstancesRespons
 				putQueryParameter("LoadBalancerWeight." + (i + 1) , loadBalancerWeights.get(i));
 			}
 		}	
+	}
+
+	public Boolean getLifecycleHook() {
+		return this.lifecycleHook;
+	}
+
+	public void setLifecycleHook(Boolean lifecycleHook) {
+		this.lifecycleHook = lifecycleHook;
+		if(lifecycleHook != null){
+			putQueryParameter("LifecycleHook", lifecycleHook.toString());
+		}
 	}
 
 	@Override

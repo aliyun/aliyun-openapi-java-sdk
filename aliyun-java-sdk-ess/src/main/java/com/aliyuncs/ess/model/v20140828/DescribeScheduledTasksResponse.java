@@ -25,22 +25,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeScheduledTasksResponse extends AcsResponse {
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageNumber;
 
 	private Integer pageSize;
 
-	private String requestId;
+	private Integer totalCount;
 
 	private List<ScheduledTask> scheduledTasks;
 
-	public Integer getTotalCount() {
-		return this.totalCount;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageNumber() {
@@ -59,12 +59,12 @@ public class DescribeScheduledTasksResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<ScheduledTask> getScheduledTasks() {
@@ -77,33 +77,89 @@ public class DescribeScheduledTasksResponse extends AcsResponse {
 
 	public static class ScheduledTask {
 
-		private String scheduledTaskId;
+		private Boolean taskEnabled;
+
+		private String recurrenceValue;
+
+		private String recurrenceType;
+
+		private Integer maxValue;
 
 		private String scheduledTaskName;
+
+		private String recurrenceEndTime;
+
+		private Integer desiredCapacity;
+
+		private String scheduledTaskId;
+
+		private Integer minValue;
+
+		private String scalingGroupId;
+
+		private Integer launchExpirationTime;
 
 		private String description;
 
 		private String scheduledAction;
 
-		private String recurrenceEndTime;
-
 		private String launchTime;
 
-		private String recurrenceType;
+		public Boolean getTaskEnabled() {
+			return this.taskEnabled;
+		}
 
-		private String recurrenceValue;
+		public void setTaskEnabled(Boolean taskEnabled) {
+			this.taskEnabled = taskEnabled;
+		}
 
-		private Integer launchExpirationTime;
+		public String getRecurrenceValue() {
+			return this.recurrenceValue;
+		}
 
-		private Boolean taskEnabled;
+		public void setRecurrenceValue(String recurrenceValue) {
+			this.recurrenceValue = recurrenceValue;
+		}
 
-		private Integer maxValue;
+		public String getRecurrenceType() {
+			return this.recurrenceType;
+		}
 
-		private Integer minValue;
+		public void setRecurrenceType(String recurrenceType) {
+			this.recurrenceType = recurrenceType;
+		}
 
-		private Integer desiredCapacity;
+		public Integer getMaxValue() {
+			return this.maxValue;
+		}
 
-		private String scalingGroupId;
+		public void setMaxValue(Integer maxValue) {
+			this.maxValue = maxValue;
+		}
+
+		public String getScheduledTaskName() {
+			return this.scheduledTaskName;
+		}
+
+		public void setScheduledTaskName(String scheduledTaskName) {
+			this.scheduledTaskName = scheduledTaskName;
+		}
+
+		public String getRecurrenceEndTime() {
+			return this.recurrenceEndTime;
+		}
+
+		public void setRecurrenceEndTime(String recurrenceEndTime) {
+			this.recurrenceEndTime = recurrenceEndTime;
+		}
+
+		public Integer getDesiredCapacity() {
+			return this.desiredCapacity;
+		}
+
+		public void setDesiredCapacity(Integer desiredCapacity) {
+			this.desiredCapacity = desiredCapacity;
+		}
 
 		public String getScheduledTaskId() {
 			return this.scheduledTaskId;
@@ -113,12 +169,28 @@ public class DescribeScheduledTasksResponse extends AcsResponse {
 			this.scheduledTaskId = scheduledTaskId;
 		}
 
-		public String getScheduledTaskName() {
-			return this.scheduledTaskName;
+		public Integer getMinValue() {
+			return this.minValue;
 		}
 
-		public void setScheduledTaskName(String scheduledTaskName) {
-			this.scheduledTaskName = scheduledTaskName;
+		public void setMinValue(Integer minValue) {
+			this.minValue = minValue;
+		}
+
+		public String getScalingGroupId() {
+			return this.scalingGroupId;
+		}
+
+		public void setScalingGroupId(String scalingGroupId) {
+			this.scalingGroupId = scalingGroupId;
+		}
+
+		public Integer getLaunchExpirationTime() {
+			return this.launchExpirationTime;
+		}
+
+		public void setLaunchExpirationTime(Integer launchExpirationTime) {
+			this.launchExpirationTime = launchExpirationTime;
 		}
 
 		public String getDescription() {
@@ -137,84 +209,12 @@ public class DescribeScheduledTasksResponse extends AcsResponse {
 			this.scheduledAction = scheduledAction;
 		}
 
-		public String getRecurrenceEndTime() {
-			return this.recurrenceEndTime;
-		}
-
-		public void setRecurrenceEndTime(String recurrenceEndTime) {
-			this.recurrenceEndTime = recurrenceEndTime;
-		}
-
 		public String getLaunchTime() {
 			return this.launchTime;
 		}
 
 		public void setLaunchTime(String launchTime) {
 			this.launchTime = launchTime;
-		}
-
-		public String getRecurrenceType() {
-			return this.recurrenceType;
-		}
-
-		public void setRecurrenceType(String recurrenceType) {
-			this.recurrenceType = recurrenceType;
-		}
-
-		public String getRecurrenceValue() {
-			return this.recurrenceValue;
-		}
-
-		public void setRecurrenceValue(String recurrenceValue) {
-			this.recurrenceValue = recurrenceValue;
-		}
-
-		public Integer getLaunchExpirationTime() {
-			return this.launchExpirationTime;
-		}
-
-		public void setLaunchExpirationTime(Integer launchExpirationTime) {
-			this.launchExpirationTime = launchExpirationTime;
-		}
-
-		public Boolean getTaskEnabled() {
-			return this.taskEnabled;
-		}
-
-		public void setTaskEnabled(Boolean taskEnabled) {
-			this.taskEnabled = taskEnabled;
-		}
-
-		public Integer getMaxValue() {
-			return this.maxValue;
-		}
-
-		public void setMaxValue(Integer maxValue) {
-			this.maxValue = maxValue;
-		}
-
-		public Integer getMinValue() {
-			return this.minValue;
-		}
-
-		public void setMinValue(Integer minValue) {
-			this.minValue = minValue;
-		}
-
-		public Integer getDesiredCapacity() {
-			return this.desiredCapacity;
-		}
-
-		public void setDesiredCapacity(Integer desiredCapacity) {
-			this.desiredCapacity = desiredCapacity;
-		}
-
-		public String getScalingGroupId() {
-			return this.scalingGroupId;
-		}
-
-		public void setScalingGroupId(String scalingGroupId) {
-			this.scalingGroupId = scalingGroupId;
 		}
 	}
 

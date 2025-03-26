@@ -28,9 +28,13 @@ public class DetachInstancesRequest extends RpcAcsRequest<DetachInstancesRespons
 
 	private Long resourceOwnerId;
 
+	private String clientToken;
+
 	private String scalingGroupId;
 
 	private Boolean decreaseDesiredCapacity;
+
+	private Boolean ignoreInvalidInstance;
 
 	private String resourceOwnerAccount;
 
@@ -38,9 +42,11 @@ public class DetachInstancesRequest extends RpcAcsRequest<DetachInstancesRespons
 
 	private Long ownerId;
 
+	private String detachOption;
+
 	private List<String> instanceIds;
 
-	private String detachOption;
+	private Boolean lifecycleHook;
 	public DetachInstancesRequest() {
 		super("Ess", "2014-08-28", "DetachInstances", "ess");
 		setMethod(MethodType.POST);
@@ -58,6 +64,17 @@ public class DetachInstancesRequest extends RpcAcsRequest<DetachInstancesRespons
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
@@ -80,6 +97,17 @@ public class DetachInstancesRequest extends RpcAcsRequest<DetachInstancesRespons
 		this.decreaseDesiredCapacity = decreaseDesiredCapacity;
 		if(decreaseDesiredCapacity != null){
 			putQueryParameter("DecreaseDesiredCapacity", decreaseDesiredCapacity.toString());
+		}
+	}
+
+	public Boolean getIgnoreInvalidInstance() {
+		return this.ignoreInvalidInstance;
+	}
+
+	public void setIgnoreInvalidInstance(Boolean ignoreInvalidInstance) {
+		this.ignoreInvalidInstance = ignoreInvalidInstance;
+		if(ignoreInvalidInstance != null){
+			putQueryParameter("IgnoreInvalidInstance", ignoreInvalidInstance.toString());
 		}
 	}
 
@@ -116,6 +144,17 @@ public class DetachInstancesRequest extends RpcAcsRequest<DetachInstancesRespons
 		}
 	}
 
+	public String getDetachOption() {
+		return this.detachOption;
+	}
+
+	public void setDetachOption(String detachOption) {
+		this.detachOption = detachOption;
+		if(detachOption != null){
+			putQueryParameter("DetachOption", detachOption);
+		}
+	}
+
 	public List<String> getInstanceIds() {
 		return this.instanceIds;
 	}
@@ -129,14 +168,14 @@ public class DetachInstancesRequest extends RpcAcsRequest<DetachInstancesRespons
 		}	
 	}
 
-	public String getDetachOption() {
-		return this.detachOption;
+	public Boolean getLifecycleHook() {
+		return this.lifecycleHook;
 	}
 
-	public void setDetachOption(String detachOption) {
-		this.detachOption = detachOption;
-		if(detachOption != null){
-			putQueryParameter("DetachOption", detachOption);
+	public void setLifecycleHook(Boolean lifecycleHook) {
+		this.lifecycleHook = lifecycleHook;
+		if(lifecycleHook != null){
+			putQueryParameter("LifecycleHook", lifecycleHook.toString());
 		}
 	}
 

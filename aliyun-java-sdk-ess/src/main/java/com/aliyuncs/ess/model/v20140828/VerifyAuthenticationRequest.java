@@ -27,13 +27,13 @@ public class VerifyAuthenticationRequest extends RpcAcsRequest<VerifyAuthenticat
 
 	private Long resourceOwnerId;
 
+	private Long uid;
+
 	private String resourceOwnerAccount;
 
 	private Long ownerId;
 
 	private Boolean onlyCheck;
-
-	private Long uid;
 	public VerifyAuthenticationRequest() {
 		super("Ess", "2014-08-28", "VerifyAuthentication", "ess");
 		setMethod(MethodType.POST);
@@ -51,6 +51,17 @@ public class VerifyAuthenticationRequest extends RpcAcsRequest<VerifyAuthenticat
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public Long getUid() {
+		return this.uid;
+	}
+
+	public void setUid(Long uid) {
+		this.uid = uid;
+		if(uid != null){
+			putQueryParameter("Uid", uid.toString());
 		}
 	}
 
@@ -84,17 +95,6 @@ public class VerifyAuthenticationRequest extends RpcAcsRequest<VerifyAuthenticat
 		this.onlyCheck = onlyCheck;
 		if(onlyCheck != null){
 			putQueryParameter("OnlyCheck", onlyCheck.toString());
-		}
-	}
-
-	public Long getUid() {
-		return this.uid;
-	}
-
-	public void setUid(Long uid) {
-		this.uid = uid;
-		if(uid != null){
-			putQueryParameter("Uid", uid.toString());
 		}
 	}
 

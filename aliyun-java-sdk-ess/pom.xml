@@ -4,7 +4,7 @@
   <groupId>com.aliyun</groupId>
   <artifactId>aliyun-java-sdk-ess</artifactId>
   <packaging>jar</packaging>
-  <version>2.3.6</version>
+  <version>1.0.1</version>
   <name>aliyun-java-sdk-ess</name>
   <url>http://www.aliyun.com</url>
   <description>Aliyun Open API SDK for Java
@@ -37,9 +37,8 @@ http://www.aliyun.com</description>
   </dependencies>
   <licenses>
     <license>
-      <name/>
-      <url/>
-      <distribution/>
+      <name>The Apache License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
     </license>
   </licenses>
   <scm>
@@ -92,7 +91,7 @@ http://www.aliyun.com</description>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-gpg-plugin</artifactId>
-        <version>1.5</version>
+        <version>3.1.0</version>
         <executions>
           <execution>
             <id>sign-artifacts</id>

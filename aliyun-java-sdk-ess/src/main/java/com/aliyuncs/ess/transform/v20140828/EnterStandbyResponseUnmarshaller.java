@@ -23,6 +23,7 @@ public class EnterStandbyResponseUnmarshaller {
 	public static EnterStandbyResponse unmarshall(EnterStandbyResponse enterStandbyResponse, UnmarshallerContext _ctx) {
 		
 		enterStandbyResponse.setRequestId(_ctx.stringValue("EnterStandbyResponse.RequestId"));
+		enterStandbyResponse.setScalingActivityId(_ctx.stringValue("EnterStandbyResponse.ScalingActivityId"));
 	 
 	 	return enterStandbyResponse;
 	}
