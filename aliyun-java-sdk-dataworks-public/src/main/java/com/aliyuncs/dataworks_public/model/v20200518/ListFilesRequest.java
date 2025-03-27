@@ -39,6 +39,8 @@ public class ListFilesRequest extends RpcAcsRequest<ListFilesResponse> {
 
 	private String fileIdIn;
 
+	private String lastEditUser;
+
 	private String fileFolderPath;
 
 	private Integer pageSize;
@@ -135,6 +137,17 @@ public class ListFilesRequest extends RpcAcsRequest<ListFilesResponse> {
 		this.fileIdIn = fileIdIn;
 		if(fileIdIn != null){
 			putBodyParameter("FileIdIn", fileIdIn);
+		}
+	}
+
+	public String getLastEditUser() {
+		return this.lastEditUser;
+	}
+
+	public void setLastEditUser(String lastEditUser) {
+		this.lastEditUser = lastEditUser;
+		if(lastEditUser != null){
+			putBodyParameter("LastEditUser", lastEditUser);
 		}
 	}
 

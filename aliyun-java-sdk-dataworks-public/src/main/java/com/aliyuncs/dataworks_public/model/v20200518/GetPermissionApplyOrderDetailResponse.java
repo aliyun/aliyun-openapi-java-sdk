@@ -253,6 +253,8 @@ public class GetPermissionApplyOrderDetailResponse extends AcsResponse {
 
 					private List<ColumnMetaListItem> columnMetaList;
 
+					private List<String> actions;
+
 					public String getObjectName() {
 						return this.objectName;
 					}
@@ -269,6 +271,14 @@ public class GetPermissionApplyOrderDetailResponse extends AcsResponse {
 						this.columnMetaList = columnMetaList;
 					}
 
+					public List<String> getActions() {
+						return this.actions;
+					}
+
+					public void setActions(List<String> actions) {
+						this.actions = actions;
+					}
+
 					public static class ColumnMetaListItem {
 
 						private String columnName;
@@ -276,6 +286,8 @@ public class GetPermissionApplyOrderDetailResponse extends AcsResponse {
 						private String columnComment;
 
 						private String securityLevel;
+
+						private List<String> columnActions;
 
 						public String getColumnName() {
 							return this.columnName;
@@ -299,6 +311,14 @@ public class GetPermissionApplyOrderDetailResponse extends AcsResponse {
 
 						public void setSecurityLevel(String securityLevel) {
 							this.securityLevel = securityLevel;
+						}
+
+						public List<String> getColumnActions() {
+							return this.columnActions;
+						}
+
+						public void setColumnActions(List<String> columnActions) {
+							this.columnActions = columnActions;
 						}
 					}
 				}

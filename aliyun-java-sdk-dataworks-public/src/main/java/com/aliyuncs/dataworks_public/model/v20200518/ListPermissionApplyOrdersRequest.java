@@ -39,9 +39,13 @@ public class ListPermissionApplyOrdersRequest extends RpcAcsRequest<ListPermissi
 
 	private String maxComputeProjectName;
 
+	private String catalogName;
+
 	private Long endTime;
 
 	private Integer flowStatus;
+
+	private String applyType;
 
 	private Integer workspaceId;
 
@@ -132,6 +136,17 @@ public class ListPermissionApplyOrdersRequest extends RpcAcsRequest<ListPermissi
 		}
 	}
 
+	public String getCatalogName() {
+		return this.catalogName;
+	}
+
+	public void setCatalogName(String catalogName) {
+		this.catalogName = catalogName;
+		if(catalogName != null){
+			putQueryParameter("CatalogName", catalogName);
+		}
+	}
+
 	public Long getEndTime() {
 		return this.endTime;
 	}
@@ -151,6 +166,17 @@ public class ListPermissionApplyOrdersRequest extends RpcAcsRequest<ListPermissi
 		this.flowStatus = flowStatus;
 		if(flowStatus != null){
 			putQueryParameter("FlowStatus", flowStatus.toString());
+		}
+	}
+
+	public String getApplyType() {
+		return this.applyType;
+	}
+
+	public void setApplyType(String applyType) {
+		this.applyType = applyType;
+		if(applyType != null){
+			putQueryParameter("ApplyType", applyType);
 		}
 	}
 

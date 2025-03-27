@@ -54,12 +54,24 @@ public class GetPermissionApplyOrderDetailResponseUnmarshaller {
 			ObjectMetaListItem objectMetaListItem = new ObjectMetaListItem();
 			objectMetaListItem.setObjectName(_ctx.stringValue("GetPermissionApplyOrderDetailResponse.ApplyOrderDetail.ApproveContent.ProjectMeta.ObjectMetaList["+ i +"].ObjectName"));
 
+			List<String> actions = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("GetPermissionApplyOrderDetailResponse.ApplyOrderDetail.ApproveContent.ProjectMeta.ObjectMetaList["+ i +"].Actions.Length"); j++) {
+				actions.add(_ctx.stringValue("GetPermissionApplyOrderDetailResponse.ApplyOrderDetail.ApproveContent.ProjectMeta.ObjectMetaList["+ i +"].Actions["+ j +"]"));
+			}
+			objectMetaListItem.setActions(actions);
+
 			List<ColumnMetaListItem> columnMetaList = new ArrayList<ColumnMetaListItem>();
 			for (int j = 0; j < _ctx.lengthValue("GetPermissionApplyOrderDetailResponse.ApplyOrderDetail.ApproveContent.ProjectMeta.ObjectMetaList["+ i +"].ColumnMetaList.Length"); j++) {
 				ColumnMetaListItem columnMetaListItem = new ColumnMetaListItem();
 				columnMetaListItem.setColumnName(_ctx.stringValue("GetPermissionApplyOrderDetailResponse.ApplyOrderDetail.ApproveContent.ProjectMeta.ObjectMetaList["+ i +"].ColumnMetaList["+ j +"].ColumnName"));
 				columnMetaListItem.setColumnComment(_ctx.stringValue("GetPermissionApplyOrderDetailResponse.ApplyOrderDetail.ApproveContent.ProjectMeta.ObjectMetaList["+ i +"].ColumnMetaList["+ j +"].ColumnComment"));
 				columnMetaListItem.setSecurityLevel(_ctx.stringValue("GetPermissionApplyOrderDetailResponse.ApplyOrderDetail.ApproveContent.ProjectMeta.ObjectMetaList["+ i +"].ColumnMetaList["+ j +"].SecurityLevel"));
+
+				List<String> columnActions = new ArrayList<String>();
+				for (int k = 0; k < _ctx.lengthValue("GetPermissionApplyOrderDetailResponse.ApplyOrderDetail.ApproveContent.ProjectMeta.ObjectMetaList["+ i +"].ColumnMetaList["+ j +"].ColumnActions.Length"); k++) {
+					columnActions.add(_ctx.stringValue("GetPermissionApplyOrderDetailResponse.ApplyOrderDetail.ApproveContent.ProjectMeta.ObjectMetaList["+ i +"].ColumnMetaList["+ j +"].ColumnActions["+ k +"]"));
+				}
+				columnMetaListItem.setColumnActions(columnActions);
 
 				columnMetaList.add(columnMetaListItem);
 			}

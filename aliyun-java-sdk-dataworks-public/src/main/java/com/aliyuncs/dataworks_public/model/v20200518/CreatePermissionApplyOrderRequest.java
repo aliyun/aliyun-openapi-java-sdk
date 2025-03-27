@@ -26,21 +26,25 @@ import com.aliyuncs.dataworks_public.Endpoint;
 public class CreatePermissionApplyOrderRequest extends RpcAcsRequest<CreatePermissionApplyOrderResponse> {
 	   
 
+	private String applyUserIds;
+
+	private Long deadline;
+
+	private String engineType;
+
 	private String applyReason;
 
 	private String maxComputeProjectName;
 
 	private List<ApplyObject> applyObjects;
 
-	private String applyUserIds;
+	private String catalogName;
 
-	private Long deadline;
+	private String applyType;
 
 	private Integer workspaceId;
 
 	private Integer orderType;
-
-	private String engineType;
 	public CreatePermissionApplyOrderRequest() {
 		super("dataworks-public", "2020-05-18", "CreatePermissionApplyOrder");
 		setMethod(MethodType.POST);
@@ -48,6 +52,39 @@ public class CreatePermissionApplyOrderRequest extends RpcAcsRequest<CreatePermi
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getApplyUserIds() {
+		return this.applyUserIds;
+	}
+
+	public void setApplyUserIds(String applyUserIds) {
+		this.applyUserIds = applyUserIds;
+		if(applyUserIds != null){
+			putQueryParameter("ApplyUserIds", applyUserIds);
+		}
+	}
+
+	public Long getDeadline() {
+		return this.deadline;
+	}
+
+	public void setDeadline(Long deadline) {
+		this.deadline = deadline;
+		if(deadline != null){
+			putQueryParameter("Deadline", deadline.toString());
+		}
+	}
+
+	public String getEngineType() {
+		return this.engineType;
+	}
+
+	public void setEngineType(String engineType) {
+		this.engineType = engineType;
+		if(engineType != null){
+			putQueryParameter("EngineType", engineType);
+		}
 	}
 
 	public String getApplyReason() {
@@ -83,6 +120,7 @@ public class CreatePermissionApplyOrderRequest extends RpcAcsRequest<CreatePermi
 				if (applyObjects.get(depth1).getColumnMetaLists() != null) {
 					for (int depth2 = 0; depth2 < applyObjects.get(depth1).getColumnMetaLists().size(); depth2++) {
 						putQueryParameter("ApplyObject." + (depth1 + 1) + ".ColumnMetaList." + (depth2 + 1) + ".Name" , applyObjects.get(depth1).getColumnMetaLists().get(depth2).getName());
+						putQueryParameter("ApplyObject." + (depth1 + 1) + ".ColumnMetaList." + (depth2 + 1) + ".Actions" , applyObjects.get(depth1).getColumnMetaLists().get(depth2).getActions());
 					}
 				}
 				putQueryParameter("ApplyObject." + (depth1 + 1) + ".Name" , applyObjects.get(depth1).getName());
@@ -91,25 +129,25 @@ public class CreatePermissionApplyOrderRequest extends RpcAcsRequest<CreatePermi
 		}	
 	}
 
-	public String getApplyUserIds() {
-		return this.applyUserIds;
+	public String getCatalogName() {
+		return this.catalogName;
 	}
 
-	public void setApplyUserIds(String applyUserIds) {
-		this.applyUserIds = applyUserIds;
-		if(applyUserIds != null){
-			putQueryParameter("ApplyUserIds", applyUserIds);
+	public void setCatalogName(String catalogName) {
+		this.catalogName = catalogName;
+		if(catalogName != null){
+			putQueryParameter("CatalogName", catalogName);
 		}
 	}
 
-	public Long getDeadline() {
-		return this.deadline;
+	public String getApplyType() {
+		return this.applyType;
 	}
 
-	public void setDeadline(Long deadline) {
-		this.deadline = deadline;
-		if(deadline != null){
-			putQueryParameter("Deadline", deadline.toString());
+	public void setApplyType(String applyType) {
+		this.applyType = applyType;
+		if(applyType != null){
+			putQueryParameter("ApplyType", applyType);
 		}
 	}
 
@@ -132,17 +170,6 @@ public class CreatePermissionApplyOrderRequest extends RpcAcsRequest<CreatePermi
 		this.orderType = orderType;
 		if(orderType != null){
 			putQueryParameter("OrderType", orderType.toString());
-		}
-	}
-
-	public String getEngineType() {
-		return this.engineType;
-	}
-
-	public void setEngineType(String engineType) {
-		this.engineType = engineType;
-		if(engineType != null){
-			putQueryParameter("EngineType", engineType);
 		}
 	}
 
@@ -182,12 +209,22 @@ public class CreatePermissionApplyOrderRequest extends RpcAcsRequest<CreatePermi
 
 			private String name;
 
+			private String actions;
+
 			public String getName() {
 				return this.name;
 			}
 
 			public void setName(String name) {
 				this.name = name;
+			}
+
+			public String getActions() {
+				return this.actions;
+			}
+
+			public void setActions(String actions) {
+				this.actions = actions;
 			}
 		}
 	}
