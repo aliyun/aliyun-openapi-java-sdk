@@ -14,6 +14,7 @@
 
 package com.aliyuncs.outboundbot.model.v20191226;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.outboundbot.transform.v20191226.GetTaskByUuidResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -26,6 +27,14 @@ public class GetTaskByUuidResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String code;
+
+	private String message;
+
+	private Boolean success;
+
+	private Integer httpStatusCode;
+
 	private Task task;
 
 	public String getRequestId() {
@@ -34,6 +43,38 @@ public class GetTaskByUuidResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
 	public Task getTask() {
@@ -67,6 +108,8 @@ public class GetTaskByUuidResponse extends AcsResponse {
 		private String calledNumber;
 
 		private String id;
+
+		private List<Conversation> conversations;
 
 		public String getJobGroupId() {
 			return this.jobGroupId;
@@ -154,6 +197,67 @@ public class GetTaskByUuidResponse extends AcsResponse {
 
 		public void setId(String id) {
 			this.id = id;
+		}
+
+		public List<Conversation> getConversations() {
+			return this.conversations;
+		}
+
+		public void setConversations(List<Conversation> conversations) {
+			this.conversations = conversations;
+		}
+
+		public static class Conversation {
+
+			private String speaker;
+
+			private String script;
+
+			private Long timestamp;
+
+			private String action;
+
+			private String sequenceId;
+
+			public String getSpeaker() {
+				return this.speaker;
+			}
+
+			public void setSpeaker(String speaker) {
+				this.speaker = speaker;
+			}
+
+			public String getScript() {
+				return this.script;
+			}
+
+			public void setScript(String script) {
+				this.script = script;
+			}
+
+			public Long getTimestamp() {
+				return this.timestamp;
+			}
+
+			public void setTimestamp(Long timestamp) {
+				this.timestamp = timestamp;
+			}
+
+			public String getAction() {
+				return this.action;
+			}
+
+			public void setAction(String action) {
+				this.action = action;
+			}
+
+			public String getSequenceId() {
+				return this.sequenceId;
+			}
+
+			public void setSequenceId(String sequenceId) {
+				this.sequenceId = sequenceId;
+			}
 		}
 	}
 
