@@ -350,6 +350,8 @@ public class DescribeCasterConfigResponse extends AcsResponse {
 
 		private List<String> liveTemplateIds;
 
+		private CustomParams customParams;
+
 		public String getCasterTemplate() {
 			return this.casterTemplate;
 		}
@@ -364,6 +366,70 @@ public class DescribeCasterConfigResponse extends AcsResponse {
 
 		public void setLiveTemplateIds(List<String> liveTemplateIds) {
 			this.liveTemplateIds = liveTemplateIds;
+		}
+
+		public CustomParams getCustomParams() {
+			return this.customParams;
+		}
+
+		public void setCustomParams(CustomParams customParams) {
+			this.customParams = customParams;
+		}
+
+		public static class CustomParams {
+
+			private Video video;
+
+			public Video getVideo() {
+				return this.video;
+			}
+
+			public void setVideo(Video video) {
+				this.video = video;
+			}
+
+			public static class Video {
+
+				private Integer fps;
+
+				private Integer bitrate;
+
+				private Integer width;
+
+				private Integer height;
+
+				public Integer getFps() {
+					return this.fps;
+				}
+
+				public void setFps(Integer fps) {
+					this.fps = fps;
+				}
+
+				public Integer getBitrate() {
+					return this.bitrate;
+				}
+
+				public void setBitrate(Integer bitrate) {
+					this.bitrate = bitrate;
+				}
+
+				public Integer getWidth() {
+					return this.width;
+				}
+
+				public void setWidth(Integer width) {
+					this.width = width;
+				}
+
+				public Integer getHeight() {
+					return this.height;
+				}
+
+				public void setHeight(Integer height) {
+					this.height = height;
+				}
+			}
 		}
 	}
 

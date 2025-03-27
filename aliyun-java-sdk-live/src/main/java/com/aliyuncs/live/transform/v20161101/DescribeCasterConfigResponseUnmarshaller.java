@@ -22,6 +22,8 @@ import com.aliyuncs.live.model.v20161101.DescribeCasterConfigResponse.RecordConf
 import com.aliyuncs.live.model.v20161101.DescribeCasterConfigResponse.RecordConfig.RecordFormatItem;
 import com.aliyuncs.live.model.v20161101.DescribeCasterConfigResponse.SyncGroup;
 import com.aliyuncs.live.model.v20161101.DescribeCasterConfigResponse.TranscodeConfig;
+import com.aliyuncs.live.model.v20161101.DescribeCasterConfigResponse.TranscodeConfig.CustomParams;
+import com.aliyuncs.live.model.v20161101.DescribeCasterConfigResponse.TranscodeConfig.CustomParams.Video;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -73,6 +75,16 @@ public class DescribeCasterConfigResponseUnmarshaller {
 			liveTemplateIds.add(_ctx.stringValue("DescribeCasterConfigResponse.TranscodeConfig.LiveTemplateIds["+ i +"]"));
 		}
 		transcodeConfig.setLiveTemplateIds(liveTemplateIds);
+
+		CustomParams customParams = new CustomParams();
+
+		Video video = new Video();
+		video.setFps(_ctx.integerValue("DescribeCasterConfigResponse.TranscodeConfig.CustomParams.video.fps"));
+		video.setBitrate(_ctx.integerValue("DescribeCasterConfigResponse.TranscodeConfig.CustomParams.video.bitrate"));
+		video.setWidth(_ctx.integerValue("DescribeCasterConfigResponse.TranscodeConfig.CustomParams.video.width"));
+		video.setHeight(_ctx.integerValue("DescribeCasterConfigResponse.TranscodeConfig.CustomParams.video.height"));
+		customParams.setVideo(video);
+		transcodeConfig.setCustomParams(customParams);
 		describeCasterConfigResponse.setTranscodeConfig(transcodeConfig);
 
 		List<SyncGroup> syncGroupsConfig = new ArrayList<SyncGroup>();

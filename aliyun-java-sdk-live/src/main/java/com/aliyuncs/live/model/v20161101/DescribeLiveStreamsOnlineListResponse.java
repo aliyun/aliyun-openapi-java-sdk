@@ -139,6 +139,10 @@ public class DescribeLiveStreamsOnlineListResponse extends AcsResponse {
 
 		private Integer currVideoCodecId;
 
+		private String playDomain;
+
+		private String pushDomain;
+
 		public Integer getAudioDataRate() {
 			return this.audioDataRate;
 		}
@@ -345,6 +349,22 @@ public class DescribeLiveStreamsOnlineListResponse extends AcsResponse {
 
 		public void setCurrVideoCodecId(Integer currVideoCodecId) {
 			this.currVideoCodecId = currVideoCodecId;
+		}
+
+		public String getPlayDomain() {
+			return this.playDomain;
+		}
+
+		public void setPlayDomain(String playDomain) {
+			this.playDomain = playDomain;
+		}
+
+		public String getPushDomain() {
+			return this.pushDomain;
+		}
+
+		public void setPushDomain(String pushDomain) {
+			this.pushDomain = pushDomain;
 		}
 	}
 

@@ -38,6 +38,7 @@ public class DescribeLiveMessageGroupResponseUnmarshaller {
 		describeLiveMessageGroupResponse.setMsgAmount(_ctx.mapValue("DescribeLiveMessageGroupResponse.MsgAmount"));
 		describeLiveMessageGroupResponse.setDeletatime(_ctx.longValue("DescribeLiveMessageGroupResponse.Deletatime"));
 		describeLiveMessageGroupResponse.setDeletor(_ctx.stringValue("DescribeLiveMessageGroupResponse.Deletor"));
+		describeLiveMessageGroupResponse.setSuperLargeGroup(_ctx.booleanValue("DescribeLiveMessageGroupResponse.SuperLargeGroup"));
 
 		List<String> adminList = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLiveMessageGroupResponse.AdminList.Length"); i++) {

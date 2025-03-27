@@ -41,6 +41,8 @@ public class ListLiveMessageAppsResponseUnmarshaller {
 			apps.setCreateTime(_ctx.longValue("ListLiveMessageAppsResponse.AppList["+ i +"].CreateTime"));
 			apps.setModifyTime(_ctx.longValue("ListLiveMessageAppsResponse.AppList["+ i +"].ModifyTime"));
 			apps.setMsgLifeCycle(_ctx.integerValue("ListLiveMessageAppsResponse.AppList["+ i +"].MsgLifeCycle"));
+			apps.setStreamSupport(_ctx.integerValue("ListLiveMessageAppsResponse.AppList["+ i +"].StreamSupport"));
+			apps.setRichTextSupport(_ctx.integerValue("ListLiveMessageAppsResponse.AppList["+ i +"].RichTextSupport"));
 			apps.setDataCenter(_ctx.stringValue("ListLiveMessageAppsResponse.AppList["+ i +"].DataCenter"));
 
 			appList.add(apps);

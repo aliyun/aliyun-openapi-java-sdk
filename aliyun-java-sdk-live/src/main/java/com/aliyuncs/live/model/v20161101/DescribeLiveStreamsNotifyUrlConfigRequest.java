@@ -25,6 +25,8 @@ import com.aliyuncs.live.Endpoint;
 public class DescribeLiveStreamsNotifyUrlConfigRequest extends RpcAcsRequest<DescribeLiveStreamsNotifyUrlConfigResponse> {
 	   
 
+	private String notifyType;
+
 	private String domainName;
 
 	private Long ownerId;
@@ -35,6 +37,17 @@ public class DescribeLiveStreamsNotifyUrlConfigRequest extends RpcAcsRequest<Des
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getNotifyType() {
+		return this.notifyType;
+	}
+
+	public void setNotifyType(String notifyType) {
+		this.notifyType = notifyType;
+		if(notifyType != null){
+			putQueryParameter("NotifyType", notifyType);
+		}
 	}
 
 	public String getDomainName() {

@@ -23,6 +23,7 @@ public class SendLiveMessageUserResponseUnmarshaller {
 	public static SendLiveMessageUserResponse unmarshall(SendLiveMessageUserResponse sendLiveMessageUserResponse, UnmarshallerContext _ctx) {
 		
 		sendLiveMessageUserResponse.setRequestId(_ctx.stringValue("SendLiveMessageUserResponse.RequestId"));
+		sendLiveMessageUserResponse.setMsgTid(_ctx.stringValue("SendLiveMessageUserResponse.MsgTid"));
 	 
 	 	return sendLiveMessageUserResponse;
 	}

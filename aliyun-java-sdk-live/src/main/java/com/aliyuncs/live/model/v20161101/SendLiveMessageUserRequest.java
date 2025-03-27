@@ -26,21 +26,25 @@ import com.aliyuncs.live.Endpoint;
 public class SendLiveMessageUserRequest extends RpcAcsRequest<SendLiveMessageUserResponse> {
 	   
 
+	private Boolean storage;
+
+	private String body;
+
+	private String senderInfo;
+
+	private Long msgType;
+
+	private Boolean highReliability;
+
 	private String dataCenter;
 
 	private String msgTid;
-
-	private String body;
 
 	private String senderId;
 
 	private String receiverId;
 
 	private String appId;
-
-	private String senderInfo;
-
-	private Long msgType;
 	public SendLiveMessageUserRequest() {
 		super("live", "2016-11-01", "SendLiveMessageUser", "live");
 		setProtocol(ProtocolType.HTTPS);
@@ -49,6 +53,61 @@ public class SendLiveMessageUserRequest extends RpcAcsRequest<SendLiveMessageUse
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Boolean getStorage() {
+		return this.storage;
+	}
+
+	public void setStorage(Boolean storage) {
+		this.storage = storage;
+		if(storage != null){
+			putQueryParameter("Storage", storage.toString());
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putQueryParameter("Body", body);
+		}
+	}
+
+	public String getSenderInfo() {
+		return this.senderInfo;
+	}
+
+	public void setSenderInfo(String senderInfo) {
+		this.senderInfo = senderInfo;
+		if(senderInfo != null){
+			putQueryParameter("SenderInfo", senderInfo);
+		}
+	}
+
+	public Long getMsgType() {
+		return this.msgType;
+	}
+
+	public void setMsgType(Long msgType) {
+		this.msgType = msgType;
+		if(msgType != null){
+			putQueryParameter("MsgType", msgType.toString());
+		}
+	}
+
+	public Boolean getHighReliability() {
+		return this.highReliability;
+	}
+
+	public void setHighReliability(Boolean highReliability) {
+		this.highReliability = highReliability;
+		if(highReliability != null){
+			putQueryParameter("HighReliability", highReliability.toString());
+		}
 	}
 
 	public String getDataCenter() {
@@ -70,17 +129,6 @@ public class SendLiveMessageUserRequest extends RpcAcsRequest<SendLiveMessageUse
 		this.msgTid = msgTid;
 		if(msgTid != null){
 			putQueryParameter("MsgTid", msgTid);
-		}
-	}
-
-	public String getBody() {
-		return this.body;
-	}
-
-	public void setBody(String body) {
-		this.body = body;
-		if(body != null){
-			putQueryParameter("Body", body);
 		}
 	}
 
@@ -114,28 +162,6 @@ public class SendLiveMessageUserRequest extends RpcAcsRequest<SendLiveMessageUse
 		this.appId = appId;
 		if(appId != null){
 			putQueryParameter("AppId", appId);
-		}
-	}
-
-	public String getSenderInfo() {
-		return this.senderInfo;
-	}
-
-	public void setSenderInfo(String senderInfo) {
-		this.senderInfo = senderInfo;
-		if(senderInfo != null){
-			putQueryParameter("SenderInfo", senderInfo);
-		}
-	}
-
-	public Long getMsgType() {
-		return this.msgType;
-	}
-
-	public void setMsgType(Long msgType) {
-		this.msgType = msgType;
-		if(msgType != null){
-			putQueryParameter("MsgType", msgType.toString());
 		}
 	}
 

@@ -50,6 +50,8 @@ public class DescribeLiveMessageGroupResponse extends AcsResponse {
 
 	private String deletor;
 
+	private Boolean superLargeGroup;
+
 	private List<String> adminList;
 
 	public String getRequestId() {
@@ -146,6 +148,14 @@ public class DescribeLiveMessageGroupResponse extends AcsResponse {
 
 	public void setDeletor(String deletor) {
 		this.deletor = deletor;
+	}
+
+	public Boolean getSuperLargeGroup() {
+		return this.superLargeGroup;
+	}
+
+	public void setSuperLargeGroup(Boolean superLargeGroup) {
+		this.superLargeGroup = superLargeGroup;
 	}
 
 	public List<String> getAdminList() {

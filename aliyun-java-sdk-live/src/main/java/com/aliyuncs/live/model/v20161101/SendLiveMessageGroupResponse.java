@@ -26,12 +26,22 @@ public class SendLiveMessageGroupResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String msgTid;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getMsgTid() {
+		return this.msgTid;
+	}
+
+	public void setMsgTid(String msgTid) {
+		this.msgTid = msgTid;
 	}
 
 	@Override

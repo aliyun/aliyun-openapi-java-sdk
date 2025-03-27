@@ -23,6 +23,7 @@ public class SendLiveMessageGroupResponseUnmarshaller {
 	public static SendLiveMessageGroupResponse unmarshall(SendLiveMessageGroupResponse sendLiveMessageGroupResponse, UnmarshallerContext _ctx) {
 		
 		sendLiveMessageGroupResponse.setRequestId(_ctx.stringValue("SendLiveMessageGroupResponse.RequestId"));
+		sendLiveMessageGroupResponse.setMsgTid(_ctx.stringValue("SendLiveMessageGroupResponse.MsgTid"));
 	 
 	 	return sendLiveMessageGroupResponse;
 	}

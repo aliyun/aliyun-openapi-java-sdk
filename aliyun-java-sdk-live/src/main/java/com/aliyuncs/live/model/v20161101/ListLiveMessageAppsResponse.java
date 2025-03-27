@@ -83,6 +83,10 @@ public class ListLiveMessageAppsResponse extends AcsResponse {
 
 		private Integer msgLifeCycle;
 
+		private Integer streamSupport;
+
+		private Integer richTextSupport;
+
 		private String dataCenter;
 
 		public String getAppId() {
@@ -147,6 +151,22 @@ public class ListLiveMessageAppsResponse extends AcsResponse {
 
 		public void setMsgLifeCycle(Integer msgLifeCycle) {
 			this.msgLifeCycle = msgLifeCycle;
+		}
+
+		public Integer getStreamSupport() {
+			return this.streamSupport;
+		}
+
+		public void setStreamSupport(Integer streamSupport) {
+			this.streamSupport = streamSupport;
+		}
+
+		public Integer getRichTextSupport() {
+			return this.richTextSupport;
+		}
+
+		public void setRichTextSupport(Integer richTextSupport) {
+			this.richTextSupport = richTextSupport;
 		}
 
 		public String getDataCenter() {

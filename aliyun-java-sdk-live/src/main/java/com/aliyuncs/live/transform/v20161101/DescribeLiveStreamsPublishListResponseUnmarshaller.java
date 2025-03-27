@@ -48,6 +48,9 @@ public class DescribeLiveStreamsPublishListResponseUnmarshaller {
 			liveStreamPublishInfo.setTranscoded(_ctx.stringValue("DescribeLiveStreamsPublishListResponse.PublishInfo["+ i +"].Transcoded"));
 			liveStreamPublishInfo.setClientAddr(_ctx.stringValue("DescribeLiveStreamsPublishListResponse.PublishInfo["+ i +"].ClientAddr"));
 			liveStreamPublishInfo.setStreamUrl(_ctx.stringValue("DescribeLiveStreamsPublishListResponse.PublishInfo["+ i +"].StreamUrl"));
+			liveStreamPublishInfo.setAliInnerErrorFlags(_ctx.stringValue("DescribeLiveStreamsPublishListResponse.PublishInfo["+ i +"].AliInnerErrorFlags"));
+			liveStreamPublishInfo.setPlayDomain(_ctx.stringValue("DescribeLiveStreamsPublishListResponse.PublishInfo["+ i +"].PlayDomain"));
+			liveStreamPublishInfo.setPushDomain(_ctx.stringValue("DescribeLiveStreamsPublishListResponse.PublishInfo["+ i +"].PushDomain"));
 
 			publishInfo.add(liveStreamPublishInfo);
 		}

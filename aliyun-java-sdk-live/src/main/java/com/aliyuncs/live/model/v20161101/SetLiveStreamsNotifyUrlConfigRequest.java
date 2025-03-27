@@ -27,11 +27,17 @@ public class SetLiveStreamsNotifyUrlConfigRequest extends RpcAcsRequest<SetLiveS
 
 	private String notifyReqAuth;
 
+	private String exceptionNotifyUrl;
+
 	private String notifyUrl;
+
+	private String notifyType;
 
 	private String domainName;
 
 	private Long ownerId;
+
+	private String exceptionNotifyType;
 
 	private String notifyAuthKey;
 	public SetLiveStreamsNotifyUrlConfigRequest() {
@@ -54,6 +60,17 @@ public class SetLiveStreamsNotifyUrlConfigRequest extends RpcAcsRequest<SetLiveS
 		}
 	}
 
+	public String getExceptionNotifyUrl() {
+		return this.exceptionNotifyUrl;
+	}
+
+	public void setExceptionNotifyUrl(String exceptionNotifyUrl) {
+		this.exceptionNotifyUrl = exceptionNotifyUrl;
+		if(exceptionNotifyUrl != null){
+			putQueryParameter("ExceptionNotifyUrl", exceptionNotifyUrl);
+		}
+	}
+
 	public String getNotifyUrl() {
 		return this.notifyUrl;
 	}
@@ -62,6 +79,17 @@ public class SetLiveStreamsNotifyUrlConfigRequest extends RpcAcsRequest<SetLiveS
 		this.notifyUrl = notifyUrl;
 		if(notifyUrl != null){
 			putQueryParameter("NotifyUrl", notifyUrl);
+		}
+	}
+
+	public String getNotifyType() {
+		return this.notifyType;
+	}
+
+	public void setNotifyType(String notifyType) {
+		this.notifyType = notifyType;
+		if(notifyType != null){
+			putQueryParameter("NotifyType", notifyType);
 		}
 	}
 
@@ -84,6 +112,17 @@ public class SetLiveStreamsNotifyUrlConfigRequest extends RpcAcsRequest<SetLiveS
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getExceptionNotifyType() {
+		return this.exceptionNotifyType;
+	}
+
+	public void setExceptionNotifyType(String exceptionNotifyType) {
+		this.exceptionNotifyType = exceptionNotifyType;
+		if(exceptionNotifyType != null){
+			putQueryParameter("ExceptionNotifyType", exceptionNotifyType);
 		}
 	}
 

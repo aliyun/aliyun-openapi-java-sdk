@@ -113,6 +113,12 @@ public class DescribeLiveStreamsPublishListResponse extends AcsResponse {
 
 		private String streamUrl;
 
+		private String aliInnerErrorFlags;
+
+		private String playDomain;
+
+		private String pushDomain;
+
 		public String getEdgeNodeAddr() {
 			return this.edgeNodeAddr;
 		}
@@ -215,6 +221,30 @@ public class DescribeLiveStreamsPublishListResponse extends AcsResponse {
 
 		public void setStreamUrl(String streamUrl) {
 			this.streamUrl = streamUrl;
+		}
+
+		public String getAliInnerErrorFlags() {
+			return this.aliInnerErrorFlags;
+		}
+
+		public void setAliInnerErrorFlags(String aliInnerErrorFlags) {
+			this.aliInnerErrorFlags = aliInnerErrorFlags;
+		}
+
+		public String getPlayDomain() {
+			return this.playDomain;
+		}
+
+		public void setPlayDomain(String playDomain) {
+			this.playDomain = playDomain;
+		}
+
+		public String getPushDomain() {
+			return this.pushDomain;
+		}
+
+		public void setPushDomain(String pushDomain) {
+			this.pushDomain = pushDomain;
 		}
 	}
 

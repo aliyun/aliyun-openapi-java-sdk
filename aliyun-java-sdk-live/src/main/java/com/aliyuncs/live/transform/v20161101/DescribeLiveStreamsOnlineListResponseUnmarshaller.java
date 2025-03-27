@@ -61,6 +61,8 @@ public class DescribeLiveStreamsOnlineListResponseUnmarshaller {
 			liveStreamOnlineInfo.setCurrHeight(_ctx.integerValue("DescribeLiveStreamsOnlineListResponse.OnlineInfo["+ i +"].CurrHeight"));
 			liveStreamOnlineInfo.setCurrFrameRate(_ctx.integerValue("DescribeLiveStreamsOnlineListResponse.OnlineInfo["+ i +"].CurrFrameRate"));
 			liveStreamOnlineInfo.setCurrVideoCodecId(_ctx.integerValue("DescribeLiveStreamsOnlineListResponse.OnlineInfo["+ i +"].CurrVideoCodecId"));
+			liveStreamOnlineInfo.setPlayDomain(_ctx.stringValue("DescribeLiveStreamsOnlineListResponse.OnlineInfo["+ i +"].PlayDomain"));
+			liveStreamOnlineInfo.setPushDomain(_ctx.stringValue("DescribeLiveStreamsOnlineListResponse.OnlineInfo["+ i +"].PushDomain"));
 
 			onlineInfo.add(liveStreamOnlineInfo);
 		}
