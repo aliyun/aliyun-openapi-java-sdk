@@ -15,6 +15,7 @@
 package com.aliyuncs.ens.model.v20171110;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 
 /**
@@ -28,13 +29,15 @@ public class DescribeSecondaryPublicIpAddressesRequest extends RpcAcsRequest<Des
 
 	private String isp;
 
-	private Integer pageNumber;
-
 	private String ensRegionId;
+
+	private String secondaryPublicIpAddress;
+
+	private Integer pageNumber;
 
 	private Integer pageSize;
 
-	private String secondaryPublicIpAddress;
+	private List<String> ensRegionIds;
 	public DescribeSecondaryPublicIpAddressesRequest() {
 		super("Ens", "2017-11-10", "DescribeSecondaryPublicIpAddresses", "ens");
 		setMethod(MethodType.POST);
@@ -62,17 +65,6 @@ public class DescribeSecondaryPublicIpAddressesRequest extends RpcAcsRequest<Des
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
 	public String getEnsRegionId() {
 		return this.ensRegionId;
 	}
@@ -81,6 +73,28 @@ public class DescribeSecondaryPublicIpAddressesRequest extends RpcAcsRequest<Des
 		this.ensRegionId = ensRegionId;
 		if(ensRegionId != null){
 			putQueryParameter("EnsRegionId", ensRegionId);
+		}
+	}
+
+	public String getSecondaryPublicIpAddress() {
+		return this.secondaryPublicIpAddress;
+	}
+
+	public void setSecondaryPublicIpAddress(String secondaryPublicIpAddress) {
+		this.secondaryPublicIpAddress = secondaryPublicIpAddress;
+		if(secondaryPublicIpAddress != null){
+			putQueryParameter("SecondaryPublicIpAddress", secondaryPublicIpAddress);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
@@ -95,15 +109,17 @@ public class DescribeSecondaryPublicIpAddressesRequest extends RpcAcsRequest<Des
 		}
 	}
 
-	public String getSecondaryPublicIpAddress() {
-		return this.secondaryPublicIpAddress;
+	public List<String> getEnsRegionIds() {
+		return this.ensRegionIds;
 	}
 
-	public void setSecondaryPublicIpAddress(String secondaryPublicIpAddress) {
-		this.secondaryPublicIpAddress = secondaryPublicIpAddress;
-		if(secondaryPublicIpAddress != null){
-			putQueryParameter("SecondaryPublicIpAddress", secondaryPublicIpAddress);
-		}
+	public void setEnsRegionIds(List<String> ensRegionIds) {
+		this.ensRegionIds = ensRegionIds;	
+		if (ensRegionIds != null) {
+			for (int depth1 = 0; depth1 < ensRegionIds.size(); depth1++) {
+				putQueryParameter("EnsRegionIds." + (depth1 + 1) , ensRegionIds.get(depth1));
+			}
+		}	
 	}
 
 	@Override

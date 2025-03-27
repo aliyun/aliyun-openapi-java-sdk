@@ -14,16 +14,17 @@
 
 package com.aliyuncs.ens.transform.v20171110;
 
-import com.aliyuncs.ens.model.v20171110.RestartDeviceInstanceResponse;
+import com.aliyuncs.ens.model.v20171110.ImportImageResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class RestartDeviceInstanceResponseUnmarshaller {
+public class ImportImageResponseUnmarshaller {
 
-	public static RestartDeviceInstanceResponse unmarshall(RestartDeviceInstanceResponse restartDeviceInstanceResponse, UnmarshallerContext _ctx) {
+	public static ImportImageResponse unmarshall(ImportImageResponse importImageResponse, UnmarshallerContext _ctx) {
 		
-		restartDeviceInstanceResponse.setRequestId(_ctx.stringValue("RestartDeviceInstanceResponse.RequestId"));
+		importImageResponse.setRequestId(_ctx.stringValue("ImportImageResponse.RequestId"));
+		importImageResponse.setImageId(_ctx.stringValue("ImportImageResponse.ImageId"));
 	 
-	 	return restartDeviceInstanceResponse;
+	 	return importImageResponse;
 	}
 }

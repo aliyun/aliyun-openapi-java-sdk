@@ -15,6 +15,7 @@
 package com.aliyuncs.ens.model.v20171110;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 
 /**
@@ -41,6 +42,8 @@ public class DescribeHaVipsRequest extends RpcAcsRequest<DescribeHaVipsResponse>
 	private String pageNumber;
 
 	private String pageSize;
+
+	private List<String> ensRegionIds;
 	public DescribeHaVipsRequest() {
 		super("Ens", "2017-11-10", "DescribeHaVips", "ens");
 		setMethod(MethodType.GET);
@@ -143,6 +146,19 @@ public class DescribeHaVipsRequest extends RpcAcsRequest<DescribeHaVipsResponse>
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize);
 		}
+	}
+
+	public List<String> getEnsRegionIds() {
+		return this.ensRegionIds;
+	}
+
+	public void setEnsRegionIds(List<String> ensRegionIds) {
+		this.ensRegionIds = ensRegionIds;	
+		if (ensRegionIds != null) {
+			for (int depth1 = 0; depth1 < ensRegionIds.size(); depth1++) {
+				putQueryParameter("EnsRegionIds." + (depth1 + 1) , ensRegionIds.get(depth1));
+			}
+		}	
 	}
 
 	@Override

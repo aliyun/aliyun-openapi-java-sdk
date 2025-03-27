@@ -28,6 +28,8 @@ public class CreateImageRequest extends RpcAcsRequest<CreateImageResponse> {
 
 	private String deleteAfterImageUpload;
 
+	private Boolean withDataDisks;
+
 	private String imageName;
 
 	private String targetOSSRegionId;
@@ -57,6 +59,17 @@ public class CreateImageRequest extends RpcAcsRequest<CreateImageResponse> {
 		this.deleteAfterImageUpload = deleteAfterImageUpload;
 		if(deleteAfterImageUpload != null){
 			putQueryParameter("DeleteAfterImageUpload", deleteAfterImageUpload);
+		}
+	}
+
+	public Boolean getWithDataDisks() {
+		return this.withDataDisks;
+	}
+
+	public void setWithDataDisks(Boolean withDataDisks) {
+		this.withDataDisks = withDataDisks;
+		if(withDataDisks != null){
+			putQueryParameter("WithDataDisks", withDataDisks.toString());
 		}
 	}
 
