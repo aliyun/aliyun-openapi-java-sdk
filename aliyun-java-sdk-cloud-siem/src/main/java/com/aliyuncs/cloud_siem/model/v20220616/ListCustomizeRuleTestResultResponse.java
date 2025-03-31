@@ -129,6 +129,8 @@ public class ListCustomizeRuleTestResultResponse extends AcsResponse {
 
 			private String logTime;
 
+			private String verifyType;
+
 			public String getUuid() {
 				return this.uuid;
 			}
@@ -248,6 +250,14 @@ public class ListCustomizeRuleTestResultResponse extends AcsResponse {
 			public void setLogTime(String logTime) {
 				this.logTime = logTime;
 			}
+
+			public String getVerifyType() {
+				return this.verifyType;
+			}
+
+			public void setVerifyType(String verifyType) {
+				this.verifyType = verifyType;
+			}
 		}
 
 		public static class PageInfo {
@@ -257,6 +267,8 @@ public class ListCustomizeRuleTestResultResponse extends AcsResponse {
 			private Integer pageSize;
 
 			private Long totalCount;
+
+			private Long verifiedCount;
 
 			public Integer getCurrentPage() {
 				return this.currentPage;
@@ -280,6 +292,14 @@ public class ListCustomizeRuleTestResultResponse extends AcsResponse {
 
 			public void setTotalCount(Long totalCount) {
 				this.totalCount = totalCount;
+			}
+
+			public Long getVerifiedCount() {
+				return this.verifiedCount;
+			}
+
+			public void setVerifiedCount(Long verifiedCount) {
+				this.verifiedCount = verifiedCount;
 			}
 		}
 	}

@@ -39,6 +39,7 @@ public class ListCustomizeRuleTestResultResponseUnmarshaller {
 		pageInfo.setCurrentPage(_ctx.integerValue("ListCustomizeRuleTestResultResponse.Data.PageInfo.CurrentPage"));
 		pageInfo.setPageSize(_ctx.integerValue("ListCustomizeRuleTestResultResponse.Data.PageInfo.PageSize"));
 		pageInfo.setTotalCount(_ctx.longValue("ListCustomizeRuleTestResultResponse.Data.PageInfo.TotalCount"));
+		pageInfo.setVerifiedCount(_ctx.longValue("ListCustomizeRuleTestResultResponse.Data.PageInfo.VerifiedCount"));
 		data.setPageInfo(pageInfo);
 
 		List<ResponseDataItem> responseData = new ArrayList<ResponseDataItem>();
@@ -59,6 +60,7 @@ public class ListCustomizeRuleTestResultResponseUnmarshaller {
 			responseDataItem.setEventType(_ctx.stringValue("ListCustomizeRuleTestResultResponse.Data.ResponseData["+ i +"].EventType"));
 			responseDataItem.setAlertDetail(_ctx.stringValue("ListCustomizeRuleTestResultResponse.Data.ResponseData["+ i +"].AlertDetail"));
 			responseDataItem.setLogTime(_ctx.stringValue("ListCustomizeRuleTestResultResponse.Data.ResponseData["+ i +"].LogTime"));
+			responseDataItem.setVerifyType(_ctx.stringValue("ListCustomizeRuleTestResultResponse.Data.ResponseData["+ i +"].VerifyType"));
 
 			responseData.add(responseDataItem);
 		}

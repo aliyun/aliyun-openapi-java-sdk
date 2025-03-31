@@ -26,13 +26,21 @@ public class ListCustomizeRuleTestResultRequest extends RpcAcsRequest<ListCustom
 
 	private Long roleFor;
 
+	private Long startTime;
+
+	private String verifyType;
+
 	private Integer pageSize;
 
 	private Integer roleType;
 
 	private Long id;
 
+	private Long endTime;
+
 	private Integer currentPage;
+
+	private String detectionRuleId;
 	public ListCustomizeRuleTestResultRequest() {
 		super("cloud-siem", "2022-06-16", "ListCustomizeRuleTestResult", "cloud-siem");
 		setMethod(MethodType.POST);
@@ -46,6 +54,28 @@ public class ListCustomizeRuleTestResultRequest extends RpcAcsRequest<ListCustom
 		this.roleFor = roleFor;
 		if(roleFor != null){
 			putBodyParameter("RoleFor", roleFor.toString());
+		}
+	}
+
+	public Long getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(Long startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putBodyParameter("StartTime", startTime.toString());
+		}
+	}
+
+	public String getVerifyType() {
+		return this.verifyType;
+	}
+
+	public void setVerifyType(String verifyType) {
+		this.verifyType = verifyType;
+		if(verifyType != null){
+			putBodyParameter("VerifyType", verifyType);
 		}
 	}
 
@@ -82,6 +112,17 @@ public class ListCustomizeRuleTestResultRequest extends RpcAcsRequest<ListCustom
 		}
 	}
 
+	public Long getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(Long endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putBodyParameter("EndTime", endTime.toString());
+		}
+	}
+
 	public Integer getCurrentPage() {
 		return this.currentPage;
 	}
@@ -90,6 +131,17 @@ public class ListCustomizeRuleTestResultRequest extends RpcAcsRequest<ListCustom
 		this.currentPage = currentPage;
 		if(currentPage != null){
 			putBodyParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
+	public String getDetectionRuleId() {
+		return this.detectionRuleId;
+	}
+
+	public void setDetectionRuleId(String detectionRuleId) {
+		this.detectionRuleId = detectionRuleId;
+		if(detectionRuleId != null){
+			putBodyParameter("DetectionRuleId", detectionRuleId);
 		}
 	}
 
