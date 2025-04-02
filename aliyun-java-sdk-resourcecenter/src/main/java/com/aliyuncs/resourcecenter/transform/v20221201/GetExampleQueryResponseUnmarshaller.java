@@ -26,10 +26,10 @@ public class GetExampleQueryResponseUnmarshaller {
 		getExampleQueryResponse.setRequestId(_ctx.stringValue("GetExampleQueryResponse.RequestId"));
 
 		ExampleQuery exampleQuery = new ExampleQuery();
-		exampleQuery.setQueryId(_ctx.stringValue("GetExampleQueryResponse.ExampleQuery.QueryId"));
+		exampleQuery.setDescription(_ctx.stringValue("GetExampleQueryResponse.ExampleQuery.Description"));
 		exampleQuery.setExpression(_ctx.stringValue("GetExampleQueryResponse.ExampleQuery.Expression"));
 		exampleQuery.setName(_ctx.stringValue("GetExampleQueryResponse.ExampleQuery.Name"));
-		exampleQuery.setDescription(_ctx.stringValue("GetExampleQueryResponse.ExampleQuery.Description"));
+		exampleQuery.setQueryId(_ctx.stringValue("GetExampleQueryResponse.ExampleQuery.QueryId"));
 		getExampleQueryResponse.setExampleQuery(exampleQuery);
 	 
 	 	return getExampleQueryResponse;

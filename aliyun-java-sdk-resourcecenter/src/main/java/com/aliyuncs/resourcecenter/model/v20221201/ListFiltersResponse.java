@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListFiltersResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String defaultFilterName;
 
+	private String requestId;
+
 	private List<Filter> filters;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getDefaultFilterName() {
 		return this.defaultFilterName;
@@ -45,6 +37,14 @@ public class ListFiltersResponse extends AcsResponse {
 
 	public void setDefaultFilterName(String defaultFilterName) {
 		this.defaultFilterName = defaultFilterName;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<Filter> getFilters() {
@@ -57,17 +57,9 @@ public class ListFiltersResponse extends AcsResponse {
 
 	public static class Filter {
 
-		private String filterName;
-
 		private String filterConfiguration;
 
-		public String getFilterName() {
-			return this.filterName;
-		}
-
-		public void setFilterName(String filterName) {
-			this.filterName = filterName;
-		}
+		private String filterName;
 
 		public String getFilterConfiguration() {
 			return this.filterConfiguration;
@@ -75,6 +67,14 @@ public class ListFiltersResponse extends AcsResponse {
 
 		public void setFilterConfiguration(String filterConfiguration) {
 			this.filterConfiguration = filterConfiguration;
+		}
+
+		public String getFilterName() {
+			return this.filterName;
+		}
+
+		public void setFilterName(String filterName) {
+			this.filterName = filterName;
 		}
 	}
 

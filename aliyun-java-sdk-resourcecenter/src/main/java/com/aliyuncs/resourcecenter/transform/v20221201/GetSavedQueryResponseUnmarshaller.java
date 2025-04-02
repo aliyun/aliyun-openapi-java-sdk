@@ -26,11 +26,11 @@ public class GetSavedQueryResponseUnmarshaller {
 		getSavedQueryResponse.setRequestId(_ctx.stringValue("GetSavedQueryResponse.RequestId"));
 
 		SavedQuery savedQuery = new SavedQuery();
-		savedQuery.setQueryId(_ctx.stringValue("GetSavedQueryResponse.SavedQuery.QueryId"));
+		savedQuery.setCreateTime(_ctx.stringValue("GetSavedQueryResponse.SavedQuery.CreateTime"));
+		savedQuery.setDescription(_ctx.stringValue("GetSavedQueryResponse.SavedQuery.Description"));
 		savedQuery.setExpression(_ctx.stringValue("GetSavedQueryResponse.SavedQuery.Expression"));
 		savedQuery.setName(_ctx.stringValue("GetSavedQueryResponse.SavedQuery.Name"));
-		savedQuery.setDescription(_ctx.stringValue("GetSavedQueryResponse.SavedQuery.Description"));
-		savedQuery.setCreateTime(_ctx.stringValue("GetSavedQueryResponse.SavedQuery.CreateTime"));
+		savedQuery.setQueryId(_ctx.stringValue("GetSavedQueryResponse.SavedQuery.QueryId"));
 		savedQuery.setUpdateTime(_ctx.stringValue("GetSavedQueryResponse.SavedQuery.UpdateTime"));
 		getSavedQueryResponse.setSavedQuery(savedQuery);
 	 

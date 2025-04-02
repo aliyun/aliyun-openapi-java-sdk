@@ -26,12 +26,12 @@ public class ListTagValuesResponseUnmarshaller {
 	public static ListTagValuesResponse unmarshall(ListTagValuesResponse listTagValuesResponse, UnmarshallerContext _ctx) {
 		
 		listTagValuesResponse.setRequestId(_ctx.stringValue("ListTagValuesResponse.RequestId"));
-		listTagValuesResponse.setNextToken(_ctx.stringValue("ListTagValuesResponse.NextToken"));
-		listTagValuesResponse.setSuccess(_ctx.booleanValue("ListTagValuesResponse.Success"));
 		listTagValuesResponse.setDynamicCode(_ctx.stringValue("ListTagValuesResponse.DynamicCode"));
 		listTagValuesResponse.setDynamicMessage(_ctx.stringValue("ListTagValuesResponse.DynamicMessage"));
 		listTagValuesResponse.setErrorCode(_ctx.stringValue("ListTagValuesResponse.ErrorCode"));
 		listTagValuesResponse.setErrorMessage(_ctx.stringValue("ListTagValuesResponse.ErrorMessage"));
+		listTagValuesResponse.setNextToken(_ctx.stringValue("ListTagValuesResponse.NextToken"));
+		listTagValuesResponse.setSuccess(_ctx.booleanValue("ListTagValuesResponse.Success"));
 
 		List<String> tagValues = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("ListTagValuesResponse.TagValues.Length"); i++) {

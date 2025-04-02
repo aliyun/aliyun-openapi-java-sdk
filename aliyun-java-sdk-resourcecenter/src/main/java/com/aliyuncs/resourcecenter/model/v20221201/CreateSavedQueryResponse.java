@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateSavedQueryResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String queryId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getQueryId() {
 		return this.queryId;
@@ -42,6 +34,14 @@ public class CreateSavedQueryResponse extends AcsResponse {
 
 	public void setQueryId(String queryId) {
 		this.queryId = queryId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

@@ -23,8 +23,8 @@ public class GetMultiAccountResourceCenterServiceStatusResponseUnmarshaller {
 	public static GetMultiAccountResourceCenterServiceStatusResponse unmarshall(GetMultiAccountResourceCenterServiceStatusResponse getMultiAccountResourceCenterServiceStatusResponse, UnmarshallerContext _ctx) {
 		
 		getMultiAccountResourceCenterServiceStatusResponse.setRequestId(_ctx.stringValue("GetMultiAccountResourceCenterServiceStatusResponse.RequestId"));
-		getMultiAccountResourceCenterServiceStatusResponse.setServiceStatus(_ctx.stringValue("GetMultiAccountResourceCenterServiceStatusResponse.ServiceStatus"));
 		getMultiAccountResourceCenterServiceStatusResponse.setInitialStatus(_ctx.stringValue("GetMultiAccountResourceCenterServiceStatusResponse.InitialStatus"));
+		getMultiAccountResourceCenterServiceStatusResponse.setServiceStatus(_ctx.stringValue("GetMultiAccountResourceCenterServiceStatusResponse.ServiceStatus"));
 	 
 	 	return getMultiAccountResourceCenterServiceStatusResponse;
 	}

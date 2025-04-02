@@ -32,8 +32,8 @@ public class ListFiltersResponseUnmarshaller {
 		List<Filter> filters = new ArrayList<Filter>();
 		for (int i = 0; i < _ctx.lengthValue("ListFiltersResponse.Filters.Length"); i++) {
 			Filter filter = new Filter();
-			filter.setFilterName(_ctx.stringValue("ListFiltersResponse.Filters["+ i +"].FilterName"));
 			filter.setFilterConfiguration(_ctx.stringValue("ListFiltersResponse.Filters["+ i +"].FilterConfiguration"));
+			filter.setFilterName(_ctx.stringValue("ListFiltersResponse.Filters["+ i +"].FilterName"));
 
 			filters.add(filter);
 		}

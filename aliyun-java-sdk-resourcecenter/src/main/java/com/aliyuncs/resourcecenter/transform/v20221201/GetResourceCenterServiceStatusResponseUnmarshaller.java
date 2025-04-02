@@ -23,8 +23,8 @@ public class GetResourceCenterServiceStatusResponseUnmarshaller {
 	public static GetResourceCenterServiceStatusResponse unmarshall(GetResourceCenterServiceStatusResponse getResourceCenterServiceStatusResponse, UnmarshallerContext _ctx) {
 		
 		getResourceCenterServiceStatusResponse.setRequestId(_ctx.stringValue("GetResourceCenterServiceStatusResponse.RequestId"));
-		getResourceCenterServiceStatusResponse.setServiceStatus(_ctx.stringValue("GetResourceCenterServiceStatusResponse.ServiceStatus"));
 		getResourceCenterServiceStatusResponse.setInitialStatus(_ctx.stringValue("GetResourceCenterServiceStatusResponse.InitialStatus"));
+		getResourceCenterServiceStatusResponse.setServiceStatus(_ctx.stringValue("GetResourceCenterServiceStatusResponse.ServiceStatus"));
 	 
 	 	return getResourceCenterServiceStatusResponse;
 	}

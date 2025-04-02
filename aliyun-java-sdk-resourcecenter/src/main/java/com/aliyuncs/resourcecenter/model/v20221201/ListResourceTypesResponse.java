@@ -107,6 +107,8 @@ public class ListResourceTypesResponse extends AcsResponse {
 
 		private List<String> filterKeys;
 
+		private List<String> relatedResourceTypes;
+
 		private CodeMapping codeMapping;
 
 		private Urls urls;
@@ -149,6 +151,14 @@ public class ListResourceTypesResponse extends AcsResponse {
 
 		public void setFilterKeys(List<String> filterKeys) {
 			this.filterKeys = filterKeys;
+		}
+
+		public List<String> getRelatedResourceTypes() {
+			return this.relatedResourceTypes;
+		}
+
+		public void setRelatedResourceTypes(List<String> relatedResourceTypes) {
+			this.relatedResourceTypes = relatedResourceTypes;
 		}
 
 		public CodeMapping getCodeMapping() {

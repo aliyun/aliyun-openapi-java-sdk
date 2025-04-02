@@ -90,17 +90,9 @@ public class GetResourceCountsResponse extends AcsResponse {
 
 	public static class ResourceCount {
 
-		private String groupName;
-
 		private Long count;
 
-		public String getGroupName() {
-			return this.groupName;
-		}
-
-		public void setGroupName(String groupName) {
-			this.groupName = groupName;
-		}
+		private String groupName;
 
 		public Long getCount() {
 			return this.count;
@@ -108,6 +100,14 @@ public class GetResourceCountsResponse extends AcsResponse {
 
 		public void setCount(Long count) {
 			this.count = count;
+		}
+
+		public String getGroupName() {
+			return this.groupName;
+		}
+
+		public void setGroupName(String groupName) {
+			this.groupName = groupName;
 		}
 	}
 

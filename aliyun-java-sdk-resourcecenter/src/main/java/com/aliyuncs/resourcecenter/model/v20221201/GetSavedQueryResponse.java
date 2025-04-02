@@ -46,24 +46,32 @@ public class GetSavedQueryResponse extends AcsResponse {
 
 	public static class SavedQuery {
 
-		private String queryId;
+		private String createTime;
+
+		private String description;
 
 		private String expression;
 
 		private String name;
 
-		private String description;
-
-		private String createTime;
+		private String queryId;
 
 		private String updateTime;
 
-		public String getQueryId() {
-			return this.queryId;
+		public String getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setQueryId(String queryId) {
-			this.queryId = queryId;
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public String getExpression() {
@@ -82,20 +90,12 @@ public class GetSavedQueryResponse extends AcsResponse {
 			this.name = name;
 		}
 
-		public String getDescription() {
-			return this.description;
+		public String getQueryId() {
+			return this.queryId;
 		}
 
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
+		public void setQueryId(String queryId) {
+			this.queryId = queryId;
 		}
 
 		public String getUpdateTime() {

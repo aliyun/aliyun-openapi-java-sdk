@@ -33,10 +33,10 @@ public class ListSavedQueriesResponseUnmarshaller {
 		List<SavedQuery> savedQueries = new ArrayList<SavedQuery>();
 		for (int i = 0; i < _ctx.lengthValue("ListSavedQueriesResponse.SavedQueries.Length"); i++) {
 			SavedQuery savedQuery = new SavedQuery();
-			savedQuery.setQueryId(_ctx.stringValue("ListSavedQueriesResponse.SavedQueries["+ i +"].QueryId"));
-			savedQuery.setName(_ctx.stringValue("ListSavedQueriesResponse.SavedQueries["+ i +"].Name"));
-			savedQuery.setDescription(_ctx.stringValue("ListSavedQueriesResponse.SavedQueries["+ i +"].Description"));
 			savedQuery.setCreateTime(_ctx.stringValue("ListSavedQueriesResponse.SavedQueries["+ i +"].CreateTime"));
+			savedQuery.setDescription(_ctx.stringValue("ListSavedQueriesResponse.SavedQueries["+ i +"].Description"));
+			savedQuery.setName(_ctx.stringValue("ListSavedQueriesResponse.SavedQueries["+ i +"].Name"));
+			savedQuery.setQueryId(_ctx.stringValue("ListSavedQueriesResponse.SavedQueries["+ i +"].QueryId"));
 			savedQuery.setUpdateTime(_ctx.stringValue("ListSavedQueriesResponse.SavedQueries["+ i +"].UpdateTime"));
 
 			savedQueries.add(savedQuery);

@@ -46,20 +46,20 @@ public class GetExampleQueryResponse extends AcsResponse {
 
 	public static class ExampleQuery {
 
-		private String queryId;
+		private String description;
 
 		private String expression;
 
 		private String name;
 
-		private String description;
+		private String queryId;
 
-		public String getQueryId() {
-			return this.queryId;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setQueryId(String queryId) {
-			this.queryId = queryId;
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public String getExpression() {
@@ -78,12 +78,12 @@ public class GetExampleQueryResponse extends AcsResponse {
 			this.name = name;
 		}
 
-		public String getDescription() {
-			return this.description;
+		public String getQueryId() {
+			return this.queryId;
 		}
 
-		public void setDescription(String description) {
-			this.description = description;
+		public void setQueryId(String queryId) {
+			this.queryId = queryId;
 		}
 	}
 

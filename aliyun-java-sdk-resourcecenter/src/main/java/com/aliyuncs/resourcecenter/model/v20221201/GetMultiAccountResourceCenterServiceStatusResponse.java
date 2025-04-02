@@ -24,11 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetMultiAccountResourceCenterServiceStatusResponse extends AcsResponse {
 
+	private String initialStatus;
+
 	private String requestId;
 
 	private String serviceStatus;
 
-	private String initialStatus;
+	public String getInitialStatus() {
+		return this.initialStatus;
+	}
+
+	public void setInitialStatus(String initialStatus) {
+		this.initialStatus = initialStatus;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,14 +52,6 @@ public class GetMultiAccountResourceCenterServiceStatusResponse extends AcsRespo
 
 	public void setServiceStatus(String serviceStatus) {
 		this.serviceStatus = serviceStatus;
-	}
-
-	public String getInitialStatus() {
-		return this.initialStatus;
-	}
-
-	public void setInitialStatus(String initialStatus) {
-		this.initialStatus = initialStatus;
 	}
 
 	@Override

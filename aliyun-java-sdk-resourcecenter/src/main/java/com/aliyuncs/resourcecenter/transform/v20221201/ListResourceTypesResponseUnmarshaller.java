@@ -49,6 +49,12 @@ public class ListResourceTypesResponseUnmarshaller {
 			}
 			resourceType.setFilterKeys(filterKeys);
 
+			List<String> relatedResourceTypes = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("ListResourceTypesResponse.ResourceTypes["+ i +"].RelatedResourceTypes.Length"); j++) {
+				relatedResourceTypes.add(_ctx.stringValue("ListResourceTypesResponse.ResourceTypes["+ i +"].RelatedResourceTypes["+ j +"]"));
+			}
+			resourceType.setRelatedResourceTypes(relatedResourceTypes);
+
 			CodeMapping codeMapping = new CodeMapping();
 			codeMapping.setResourceGroup(_ctx.stringValue("ListResourceTypesResponse.ResourceTypes["+ i +"].CodeMapping.ResourceGroup"));
 			codeMapping.setTag(_ctx.stringValue("ListResourceTypesResponse.ResourceTypes["+ i +"].CodeMapping.Tag"));

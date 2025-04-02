@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListExampleQueriesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String maxResults;
 
 	private String nextToken;
 
+	private String requestId;
+
 	private List<ExampleQuery> exampleQueries;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getMaxResults() {
 		return this.maxResults;
@@ -57,6 +49,14 @@ public class ListExampleQueriesResponse extends AcsResponse {
 		this.nextToken = nextToken;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public List<ExampleQuery> getExampleQueries() {
 		return this.exampleQueries;
 	}
@@ -67,18 +67,18 @@ public class ListExampleQueriesResponse extends AcsResponse {
 
 	public static class ExampleQuery {
 
-		private String queryId;
+		private String description;
 
 		private String name;
 
-		private String description;
+		private String queryId;
 
-		public String getQueryId() {
-			return this.queryId;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setQueryId(String queryId) {
-			this.queryId = queryId;
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public String getName() {
@@ -89,12 +89,12 @@ public class ListExampleQueriesResponse extends AcsResponse {
 			this.name = name;
 		}
 
-		public String getDescription() {
-			return this.description;
+		public String getQueryId() {
+			return this.queryId;
 		}
 
-		public void setDescription(String description) {
-			this.description = description;
+		public void setQueryId(String queryId) {
+			this.queryId = queryId;
 		}
 	}
 

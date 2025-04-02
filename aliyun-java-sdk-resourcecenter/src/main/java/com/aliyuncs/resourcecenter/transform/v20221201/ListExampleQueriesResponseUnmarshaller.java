@@ -33,9 +33,9 @@ public class ListExampleQueriesResponseUnmarshaller {
 		List<ExampleQuery> exampleQueries = new ArrayList<ExampleQuery>();
 		for (int i = 0; i < _ctx.lengthValue("ListExampleQueriesResponse.ExampleQueries.Length"); i++) {
 			ExampleQuery exampleQuery = new ExampleQuery();
-			exampleQuery.setQueryId(_ctx.stringValue("ListExampleQueriesResponse.ExampleQueries["+ i +"].QueryId"));
-			exampleQuery.setName(_ctx.stringValue("ListExampleQueriesResponse.ExampleQueries["+ i +"].Name"));
 			exampleQuery.setDescription(_ctx.stringValue("ListExampleQueriesResponse.ExampleQueries["+ i +"].Description"));
+			exampleQuery.setName(_ctx.stringValue("ListExampleQueriesResponse.ExampleQueries["+ i +"].Name"));
+			exampleQuery.setQueryId(_ctx.stringValue("ListExampleQueriesResponse.ExampleQueries["+ i +"].QueryId"));
 
 			exampleQueries.add(exampleQuery);
 		}

@@ -48,8 +48,8 @@ public class GetResourceCountsResponseUnmarshaller {
 		List<ResourceCount> resourceCounts = new ArrayList<ResourceCount>();
 		for (int i = 0; i < _ctx.lengthValue("GetResourceCountsResponse.ResourceCounts.Length"); i++) {
 			ResourceCount resourceCount = new ResourceCount();
-			resourceCount.setGroupName(_ctx.stringValue("GetResourceCountsResponse.ResourceCounts["+ i +"].GroupName"));
 			resourceCount.setCount(_ctx.longValue("GetResourceCountsResponse.ResourceCounts["+ i +"].Count"));
+			resourceCount.setGroupName(_ctx.stringValue("GetResourceCountsResponse.ResourceCounts["+ i +"].GroupName"));
 
 			resourceCounts.add(resourceCount);
 		}

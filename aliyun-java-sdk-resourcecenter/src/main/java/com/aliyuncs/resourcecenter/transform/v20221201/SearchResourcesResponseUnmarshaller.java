@@ -30,8 +30,8 @@ public class SearchResourcesResponseUnmarshaller {
 	public static SearchResourcesResponse unmarshall(SearchResourcesResponse searchResourcesResponse, UnmarshallerContext _ctx) {
 		
 		searchResourcesResponse.setRequestId(_ctx.stringValue("SearchResourcesResponse.RequestId"));
-		searchResourcesResponse.setNextToken(_ctx.stringValue("SearchResourcesResponse.NextToken"));
 		searchResourcesResponse.setMaxResults(_ctx.integerValue("SearchResourcesResponse.MaxResults"));
+		searchResourcesResponse.setNextToken(_ctx.stringValue("SearchResourcesResponse.NextToken"));
 
 		List<Filter> filters = new ArrayList<Filter>();
 		for (int i = 0; i < _ctx.lengthValue("SearchResourcesResponse.Filters.Length"); i++) {
@@ -52,31 +52,21 @@ public class SearchResourcesResponseUnmarshaller {
 		List<Resource> resources = new ArrayList<Resource>();
 		for (int i = 0; i < _ctx.lengthValue("SearchResourcesResponse.Resources.Length"); i++) {
 			Resource resource = new Resource();
-			resource.setResourceType(_ctx.stringValue("SearchResourcesResponse.Resources["+ i +"].ResourceType"));
-			resource.setCreateTime(_ctx.stringValue("SearchResourcesResponse.Resources["+ i +"].CreateTime"));
-			resource.setResourceGroupId(_ctx.stringValue("SearchResourcesResponse.Resources["+ i +"].ResourceGroupId"));
-			resource.setZoneId(_ctx.stringValue("SearchResourcesResponse.Resources["+ i +"].ZoneId"));
 			resource.setAccountId(_ctx.stringValue("SearchResourcesResponse.Resources["+ i +"].AccountId"));
+			resource.setCreateTime(_ctx.stringValue("SearchResourcesResponse.Resources["+ i +"].CreateTime"));
+			resource.setExpireTime(_ctx.stringValue("SearchResourcesResponse.Resources["+ i +"].ExpireTime"));
+			resource.setRegionId(_ctx.stringValue("SearchResourcesResponse.Resources["+ i +"].RegionId"));
+			resource.setResourceGroupId(_ctx.stringValue("SearchResourcesResponse.Resources["+ i +"].ResourceGroupId"));
 			resource.setResourceId(_ctx.stringValue("SearchResourcesResponse.Resources["+ i +"].ResourceId"));
 			resource.setResourceName(_ctx.stringValue("SearchResourcesResponse.Resources["+ i +"].ResourceName"));
-			resource.setRegionId(_ctx.stringValue("SearchResourcesResponse.Resources["+ i +"].RegionId"));
-			resource.setExpireTime(_ctx.stringValue("SearchResourcesResponse.Resources["+ i +"].ExpireTime"));
+			resource.setResourceType(_ctx.stringValue("SearchResourcesResponse.Resources["+ i +"].ResourceType"));
+			resource.setZoneId(_ctx.stringValue("SearchResourcesResponse.Resources["+ i +"].ZoneId"));
 
 			List<String> ipAddresses = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("SearchResourcesResponse.Resources["+ i +"].IpAddresses.Length"); j++) {
 				ipAddresses.add(_ctx.stringValue("SearchResourcesResponse.Resources["+ i +"].IpAddresses["+ j +"]"));
 			}
 			resource.setIpAddresses(ipAddresses);
-
-			List<Tag> tags = new ArrayList<Tag>();
-			for (int j = 0; j < _ctx.lengthValue("SearchResourcesResponse.Resources["+ i +"].Tags.Length"); j++) {
-				Tag tag = new Tag();
-				tag.setKey(_ctx.stringValue("SearchResourcesResponse.Resources["+ i +"].Tags["+ j +"].Key"));
-				tag.setValue(_ctx.stringValue("SearchResourcesResponse.Resources["+ i +"].Tags["+ j +"].Value"));
-
-				tags.add(tag);
-			}
-			resource.setTags(tags);
 
 			List<IpAddressAttribute> ipAddressAttributes = new ArrayList<IpAddressAttribute>();
 			for (int j = 0; j < _ctx.lengthValue("SearchResourcesResponse.Resources["+ i +"].IpAddressAttributes.Length"); j++) {
@@ -88,6 +78,16 @@ public class SearchResourcesResponseUnmarshaller {
 				ipAddressAttributes.add(ipAddressAttribute);
 			}
 			resource.setIpAddressAttributes(ipAddressAttributes);
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("SearchResourcesResponse.Resources["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(_ctx.stringValue("SearchResourcesResponse.Resources["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("SearchResourcesResponse.Resources["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			resource.setTags(tags);
 
 			resources.add(resource);
 		}

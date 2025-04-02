@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListSavedQueriesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String maxResults;
 
 	private String nextToken;
 
+	private String requestId;
+
 	private List<SavedQuery> savedQueries;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getMaxResults() {
 		return this.maxResults;
@@ -57,6 +49,14 @@ public class ListSavedQueriesResponse extends AcsResponse {
 		this.nextToken = nextToken;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public List<SavedQuery> getSavedQueries() {
 		return this.savedQueries;
 	}
@@ -67,30 +67,22 @@ public class ListSavedQueriesResponse extends AcsResponse {
 
 	public static class SavedQuery {
 
-		private String queryId;
-
-		private String name;
+		private String createTime;
 
 		private String description;
 
-		private String createTime;
+		private String name;
+
+		private String queryId;
 
 		private String updateTime;
 
-		public String getQueryId() {
-			return this.queryId;
+		public String getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setQueryId(String queryId) {
-			this.queryId = queryId;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 
 		public String getDescription() {
@@ -101,12 +93,20 @@ public class ListSavedQueriesResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public String getCreateTime() {
-			return this.createTime;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getQueryId() {
+			return this.queryId;
+		}
+
+		public void setQueryId(String queryId) {
+			this.queryId = queryId;
 		}
 
 		public String getUpdateTime() {

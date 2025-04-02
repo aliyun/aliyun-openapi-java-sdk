@@ -25,12 +25,6 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListTagKeysResponse extends AcsResponse {
 
-	private String nextToken;
-
-	private String requestId;
-
-	private Boolean success;
-
 	private String dynamicCode;
 
 	private String dynamicMessage;
@@ -39,31 +33,13 @@ public class ListTagKeysResponse extends AcsResponse {
 
 	private String errorMessage;
 
+	private String nextToken;
+
+	private String requestId;
+
+	private Boolean success;
+
 	private List<String> tagKeys;
-
-	public String getNextToken() {
-		return this.nextToken;
-	}
-
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getDynamicCode() {
 		return this.dynamicCode;
@@ -95,6 +71,30 @@ public class ListTagKeysResponse extends AcsResponse {
 
 	public void setErrorMessage(String errorMessage) {
 		this.errorMessage = errorMessage;
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<String> getTagKeys() {
