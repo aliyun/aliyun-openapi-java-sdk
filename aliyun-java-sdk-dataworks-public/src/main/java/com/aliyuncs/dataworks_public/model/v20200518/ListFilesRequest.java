@@ -31,6 +31,8 @@ public class ListFilesRequest extends RpcAcsRequest<ListFilesResponse> {
 
 	private Boolean needContent;
 
+	private Integer commitStatus;
+
 	private Boolean needAbsoluteFolderPath;
 
 	private String projectIdentifier;
@@ -93,6 +95,17 @@ public class ListFilesRequest extends RpcAcsRequest<ListFilesResponse> {
 		this.needContent = needContent;
 		if(needContent != null){
 			putBodyParameter("NeedContent", needContent.toString());
+		}
+	}
+
+	public Integer getCommitStatus() {
+		return this.commitStatus;
+	}
+
+	public void setCommitStatus(Integer commitStatus) {
+		this.commitStatus = commitStatus;
+		if(commitStatus != null){
+			putBodyParameter("CommitStatus", commitStatus.toString());
 		}
 	}
 
