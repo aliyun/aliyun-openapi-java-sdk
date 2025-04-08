@@ -27,15 +27,17 @@ public class CreateNatGatewayRequest extends RpcAcsRequest<CreateNatGatewayRespo
 
 	private String ensRegionId;
 
-	private String instanceType;
-
 	private List<Tag> tags;
+
+	private String instanceBillingCycle;
 
 	private String vSwitchId;
 
 	private String name;
 
 	private String networkId;
+
+	private String instanceType;
 	public CreateNatGatewayRequest() {
 		super("Ens", "2017-11-10", "CreateNatGateway", "ens");
 		setMethod(MethodType.POST);
@@ -52,17 +54,6 @@ public class CreateNatGatewayRequest extends RpcAcsRequest<CreateNatGatewayRespo
 		}
 	}
 
-	public String getInstanceType() {
-		return this.instanceType;
-	}
-
-	public void setInstanceType(String instanceType) {
-		this.instanceType = instanceType;
-		if(instanceType != null){
-			putQueryParameter("InstanceType", instanceType);
-		}
-	}
-
 	public List<Tag> getTags() {
 		return this.tags;
 	}
@@ -75,6 +66,17 @@ public class CreateNatGatewayRequest extends RpcAcsRequest<CreateNatGatewayRespo
 				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 			}
 		}	
+	}
+
+	public String getInstanceBillingCycle() {
+		return this.instanceBillingCycle;
+	}
+
+	public void setInstanceBillingCycle(String instanceBillingCycle) {
+		this.instanceBillingCycle = instanceBillingCycle;
+		if(instanceBillingCycle != null){
+			putQueryParameter("InstanceBillingCycle", instanceBillingCycle);
+		}
 	}
 
 	public String getVSwitchId() {
@@ -107,6 +109,17 @@ public class CreateNatGatewayRequest extends RpcAcsRequest<CreateNatGatewayRespo
 		this.networkId = networkId;
 		if(networkId != null){
 			putQueryParameter("NetworkId", networkId);
+		}
+	}
+
+	public String getInstanceType() {
+		return this.instanceType;
+	}
+
+	public void setInstanceType(String instanceType) {
+		this.instanceType = instanceType;
+		if(instanceType != null){
+			putQueryParameter("InstanceType", instanceType);
 		}
 	}
 

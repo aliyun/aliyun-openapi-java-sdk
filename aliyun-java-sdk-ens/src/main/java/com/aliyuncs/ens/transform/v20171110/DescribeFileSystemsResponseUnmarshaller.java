@@ -45,6 +45,7 @@ public class DescribeFileSystemsResponseUnmarshaller {
 			fileSystemsItem.setStatus(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].Status"));
 			fileSystemsItem.setPayType(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].PayType"));
 			fileSystemsItem.setCreationTime(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].CreationTime"));
+			fileSystemsItem.setDescription(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].Description"));
 
 			List<MountTargetsItem> mountTargets = new ArrayList<MountTargetsItem>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeFileSystemsResponse.FileSystems["+ i +"].MountTargets.Length"); j++) {

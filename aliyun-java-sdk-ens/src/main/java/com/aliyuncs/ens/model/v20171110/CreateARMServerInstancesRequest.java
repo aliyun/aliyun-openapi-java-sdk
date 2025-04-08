@@ -46,6 +46,8 @@ public class CreateARMServerInstancesRequest extends RpcAcsRequest<CreateARMServ
 
 	private String instanceType;
 
+	private String cidr;
+
 	private Integer amount;
 
 	private String environmentVar;
@@ -178,6 +180,17 @@ public class CreateARMServerInstancesRequest extends RpcAcsRequest<CreateARMServ
 		this.instanceType = instanceType;
 		if(instanceType != null){
 			putQueryParameter("InstanceType", instanceType);
+		}
+	}
+
+	public String getCidr() {
+		return this.cidr;
+	}
+
+	public void setCidr(String cidr) {
+		this.cidr = cidr;
+		if(cidr != null){
+			putQueryParameter("Cidr", cidr);
 		}
 	}
 

@@ -97,6 +97,8 @@ public class DescribeFileSystemsResponse extends AcsResponse {
 
 		private String creationTime;
 
+		private String description;
+
 		private List<MountTargetsItem> mountTargets;
 
 		public String getFileSystemId() {
@@ -177,6 +179,14 @@ public class DescribeFileSystemsResponse extends AcsResponse {
 
 		public void setCreationTime(String creationTime) {
 			this.creationTime = creationTime;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public List<MountTargetsItem> getMountTargets() {
