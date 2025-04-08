@@ -15,6 +15,7 @@
 package com.aliyuncs.dds.model.v20151201;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.dds.Endpoint;
 
@@ -22,26 +23,23 @@ import com.aliyuncs.dds.Endpoint;
  * @author auto create
  * @version 
  */
-public class ModifyActiveOperationTasksRequest extends RpcAcsRequest<ModifyActiveOperationTasksResponse> {
+public class DescribeDBInstanceSpecInfoRequest extends RpcAcsRequest<DescribeDBInstanceSpecInfoResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String resourceGroupId;
+	private String instanceClass;
 
-	private String switchTime;
+	private String securityToken;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	private String ids;
-
-	private Integer immediateStart;
-	public ModifyActiveOperationTasksRequest() {
-		super("Dds", "2015-12-01", "ModifyActiveOperationTasks", "dds");
+	public DescribeDBInstanceSpecInfoRequest() {
+		super("Dds", "2015-12-01", "DescribeDBInstanceSpecInfo", "dds");
+		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -60,25 +58,25 @@ public class ModifyActiveOperationTasksRequest extends RpcAcsRequest<ModifyActiv
 		}
 	}
 
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
+	public String getInstanceClass() {
+		return this.instanceClass;
 	}
 
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
+	public void setInstanceClass(String instanceClass) {
+		this.instanceClass = instanceClass;
+		if(instanceClass != null){
+			putQueryParameter("InstanceClass", instanceClass);
 		}
 	}
 
-	public String getSwitchTime() {
-		return this.switchTime;
+	public String getSecurityToken() {
+		return this.securityToken;
 	}
 
-	public void setSwitchTime(String switchTime) {
-		this.switchTime = switchTime;
-		if(switchTime != null){
-			putQueryParameter("SwitchTime", switchTime);
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 
@@ -115,31 +113,9 @@ public class ModifyActiveOperationTasksRequest extends RpcAcsRequest<ModifyActiv
 		}
 	}
 
-	public String getIds() {
-		return this.ids;
-	}
-
-	public void setIds(String ids) {
-		this.ids = ids;
-		if(ids != null){
-			putQueryParameter("Ids", ids);
-		}
-	}
-
-	public Integer getImmediateStart() {
-		return this.immediateStart;
-	}
-
-	public void setImmediateStart(Integer immediateStart) {
-		this.immediateStart = immediateStart;
-		if(immediateStart != null){
-			putQueryParameter("ImmediateStart", immediateStart.toString());
-		}
-	}
-
 	@Override
-	public Class<ModifyActiveOperationTasksResponse> getResponseClass() {
-		return ModifyActiveOperationTasksResponse.class;
+	public Class<DescribeDBInstanceSpecInfoResponse> getResponseClass() {
+		return DescribeDBInstanceSpecInfoResponse.class;
 	}
 
 }

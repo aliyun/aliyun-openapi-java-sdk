@@ -721,6 +721,8 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 			private String currentKernelVersion;
 
+			private String connectString;
+
 			public String getVpcCloudInstanceId() {
 				return this.vpcCloudInstanceId;
 			}
@@ -823,6 +825,14 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 			public void setCurrentKernelVersion(String currentKernelVersion) {
 				this.currentKernelVersion = currentKernelVersion;
+			}
+
+			public String getConnectString() {
+				return this.connectString;
+			}
+
+			public void setConnectString(String connectString) {
+				this.connectString = connectString;
 			}
 		}
 

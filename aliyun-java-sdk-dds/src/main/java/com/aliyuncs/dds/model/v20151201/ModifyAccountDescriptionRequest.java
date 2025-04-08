@@ -38,6 +38,8 @@ public class ModifyAccountDescriptionRequest extends RpcAcsRequest<ModifyAccount
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private String characterType;
 	public ModifyAccountDescriptionRequest() {
 		super("Dds", "2015-12-01", "ModifyAccountDescription", "dds");
 		setMethod(MethodType.POST);
@@ -121,6 +123,17 @@ public class ModifyAccountDescriptionRequest extends RpcAcsRequest<ModifyAccount
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getCharacterType() {
+		return this.characterType;
+	}
+
+	public void setCharacterType(String characterType) {
+		this.characterType = characterType;
+		if(characterType != null){
+			putQueryParameter("CharacterType", characterType);
 		}
 	}
 

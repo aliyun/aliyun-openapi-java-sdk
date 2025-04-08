@@ -22,20 +22,16 @@ import com.aliyuncs.dds.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeActiveOperationTasksRequest extends RpcAcsRequest<DescribeActiveOperationTasksResponse> {
+public class DescribeActiveOperationTaskRequest extends RpcAcsRequest<DescribeActiveOperationTaskResponse> {
 	   
 
 	private Long resourceOwnerId;
 
 	private String productId;
 
-	private String changeLevel;
-
 	private Integer pageNumber;
 
-	private String resourceGroupId;
-
-	private String insName;
+	private Integer isHistory;
 
 	private Integer pageSize;
 
@@ -45,19 +41,11 @@ public class DescribeActiveOperationTasksRequest extends RpcAcsRequest<DescribeA
 
 	private String ownerAccount;
 
-	private Integer allowCancel;
-
 	private Long ownerId;
 
-	private String dbType;
-
-	private Integer allowChange;
-
 	private String region;
-
-	private Integer status;
-	public DescribeActiveOperationTasksRequest() {
-		super("Dds", "2015-12-01", "DescribeActiveOperationTasks", "dds");
+	public DescribeActiveOperationTaskRequest() {
+		super("Dds", "2015-12-01", "DescribeActiveOperationTask", "dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -87,17 +75,6 @@ public class DescribeActiveOperationTasksRequest extends RpcAcsRequest<DescribeA
 		}
 	}
 
-	public String getChangeLevel() {
-		return this.changeLevel;
-	}
-
-	public void setChangeLevel(String changeLevel) {
-		this.changeLevel = changeLevel;
-		if(changeLevel != null){
-			putQueryParameter("ChangeLevel", changeLevel);
-		}
-	}
-
 	public Integer getPageNumber() {
 		return this.pageNumber;
 	}
@@ -109,25 +86,14 @@ public class DescribeActiveOperationTasksRequest extends RpcAcsRequest<DescribeA
 		}
 	}
 
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
+	public Integer getIsHistory() {
+		return this.isHistory;
 	}
 
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
-		}
-	}
-
-	public String getInsName() {
-		return this.insName;
-	}
-
-	public void setInsName(String insName) {
-		this.insName = insName;
-		if(insName != null){
-			putQueryParameter("InsName", insName);
+	public void setIsHistory(Integer isHistory) {
+		this.isHistory = isHistory;
+		if(isHistory != null){
+			putQueryParameter("IsHistory", isHistory.toString());
 		}
 	}
 
@@ -175,17 +141,6 @@ public class DescribeActiveOperationTasksRequest extends RpcAcsRequest<DescribeA
 		}
 	}
 
-	public Integer getAllowCancel() {
-		return this.allowCancel;
-	}
-
-	public void setAllowCancel(Integer allowCancel) {
-		this.allowCancel = allowCancel;
-		if(allowCancel != null){
-			putQueryParameter("AllowCancel", allowCancel.toString());
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -194,28 +149,6 @@ public class DescribeActiveOperationTasksRequest extends RpcAcsRequest<DescribeA
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getDbType() {
-		return this.dbType;
-	}
-
-	public void setDbType(String dbType) {
-		this.dbType = dbType;
-		if(dbType != null){
-			putQueryParameter("DbType", dbType);
-		}
-	}
-
-	public Integer getAllowChange() {
-		return this.allowChange;
-	}
-
-	public void setAllowChange(Integer allowChange) {
-		this.allowChange = allowChange;
-		if(allowChange != null){
-			putQueryParameter("AllowChange", allowChange.toString());
 		}
 	}
 
@@ -230,20 +163,9 @@ public class DescribeActiveOperationTasksRequest extends RpcAcsRequest<DescribeA
 		}
 	}
 
-	public Integer getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(Integer status) {
-		this.status = status;
-		if(status != null){
-			putQueryParameter("Status", status.toString());
-		}
-	}
-
 	@Override
-	public Class<DescribeActiveOperationTasksResponse> getResponseClass() {
-		return DescribeActiveOperationTasksResponse.class;
+	public Class<DescribeActiveOperationTaskResponse> getResponseClass() {
+		return DescribeActiveOperationTaskResponse.class;
 	}
 
 }

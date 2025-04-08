@@ -38,6 +38,8 @@ public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
 	private Long ownerId;
 
 	private String accountPassword;
+
+	private String characterType;
 	public CreateAccountRequest() {
 		super("Dds", "2015-12-01", "CreateAccount", "dds");
 		setMethod(MethodType.POST);
@@ -121,6 +123,17 @@ public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
 		this.accountPassword = accountPassword;
 		if(accountPassword != null){
 			putQueryParameter("AccountPassword", accountPassword);
+		}
+	}
+
+	public String getCharacterType() {
+		return this.characterType;
+	}
+
+	public void setCharacterType(String characterType) {
+		this.characterType = characterType;
+		if(characterType != null){
+			putQueryParameter("CharacterType", characterType);
 		}
 	}
 

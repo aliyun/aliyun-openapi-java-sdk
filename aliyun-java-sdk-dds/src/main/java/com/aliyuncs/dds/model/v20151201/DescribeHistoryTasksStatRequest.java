@@ -29,6 +29,8 @@ public class DescribeHistoryTasksStatRequest extends RpcAcsRequest<DescribeHisto
 
 	private String toStartTime;
 
+	private String resourceGroupId;
+
 	private String taskId;
 
 	private Integer toExecTime;
@@ -72,6 +74,17 @@ public class DescribeHistoryTasksStatRequest extends RpcAcsRequest<DescribeHisto
 		this.toStartTime = toStartTime;
 		if(toStartTime != null){
 			putQueryParameter("ToStartTime", toStartTime);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

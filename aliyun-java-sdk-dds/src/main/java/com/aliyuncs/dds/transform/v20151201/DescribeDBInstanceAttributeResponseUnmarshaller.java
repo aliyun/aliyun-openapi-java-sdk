@@ -128,6 +128,7 @@ public class DescribeDBInstanceAttributeResponseUnmarshaller {
 				mongosAttribute.setNodeId(_ctx.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].MongosList["+ j +"].NodeId"));
 				mongosAttribute.setStatus(_ctx.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].MongosList["+ j +"].Status"));
 				mongosAttribute.setCurrentKernelVersion(_ctx.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].MongosList["+ j +"].CurrentKernelVersion"));
+				mongosAttribute.setConnectString(_ctx.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].MongosList["+ j +"].ConnectString"));
 
 				mongosList.add(mongosAttribute);
 			}

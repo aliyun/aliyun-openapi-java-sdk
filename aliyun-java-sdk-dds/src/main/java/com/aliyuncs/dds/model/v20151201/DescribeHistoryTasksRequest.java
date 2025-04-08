@@ -31,6 +31,8 @@ public class DescribeHistoryTasksRequest extends RpcAcsRequest<DescribeHistoryTa
 
 	private Integer pageNumber;
 
+	private String resourceGroupId;
+
 	private Integer pageSize;
 
 	private String instanceType;
@@ -89,6 +91,17 @@ public class DescribeHistoryTasksRequest extends RpcAcsRequest<DescribeHistoryTa
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

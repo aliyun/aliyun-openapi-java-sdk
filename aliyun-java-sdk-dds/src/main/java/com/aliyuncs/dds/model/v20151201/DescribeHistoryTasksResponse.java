@@ -77,7 +77,7 @@ public class DescribeHistoryTasksResponse extends AcsResponse {
 
 	public static class ItemsItem {
 
-		private Integer status;
+		private String status;
 
 		private String taskId;
 
@@ -117,11 +117,11 @@ public class DescribeHistoryTasksResponse extends AcsResponse {
 
 		private String callerUid;
 
-		public Integer getStatus() {
+		public String getStatus() {
 			return this.status;
 		}
 
-		public void setStatus(Integer status) {
+		public void setStatus(String status) {
 			this.status = status;
 		}
 

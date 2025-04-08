@@ -15,6 +15,7 @@
 package com.aliyuncs.dds.model.v20151201;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.dds.Endpoint;
 
@@ -22,26 +23,25 @@ import com.aliyuncs.dds.Endpoint;
  * @author auto create
  * @version 
  */
-public class ModifyActiveOperationTasksRequest extends RpcAcsRequest<ModifyActiveOperationTasksResponse> {
+public class ModifyDBInstanceConfigRequest extends RpcAcsRequest<ModifyDBInstanceConfigResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String resourceGroupId;
+	private String configName;
 
-	private String switchTime;
+	private String dBInstanceId;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
+	private String configValue;
+
 	private Long ownerId;
-
-	private String ids;
-
-	private Integer immediateStart;
-	public ModifyActiveOperationTasksRequest() {
-		super("Dds", "2015-12-01", "ModifyActiveOperationTasks", "dds");
+	public ModifyDBInstanceConfigRequest() {
+		super("Dds", "2015-12-01", "ModifyDBInstanceConfig", "dds");
+		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -60,25 +60,25 @@ public class ModifyActiveOperationTasksRequest extends RpcAcsRequest<ModifyActiv
 		}
 	}
 
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
+	public String getConfigName() {
+		return this.configName;
 	}
 
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
+	public void setConfigName(String configName) {
+		this.configName = configName;
+		if(configName != null){
+			putQueryParameter("ConfigName", configName);
 		}
 	}
 
-	public String getSwitchTime() {
-		return this.switchTime;
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
 	}
 
-	public void setSwitchTime(String switchTime) {
-		this.switchTime = switchTime;
-		if(switchTime != null){
-			putQueryParameter("SwitchTime", switchTime);
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
 		}
 	}
 
@@ -104,6 +104,17 @@ public class ModifyActiveOperationTasksRequest extends RpcAcsRequest<ModifyActiv
 		}
 	}
 
+	public String getConfigValue() {
+		return this.configValue;
+	}
+
+	public void setConfigValue(String configValue) {
+		this.configValue = configValue;
+		if(configValue != null){
+			putQueryParameter("ConfigValue", configValue);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -115,31 +126,9 @@ public class ModifyActiveOperationTasksRequest extends RpcAcsRequest<ModifyActiv
 		}
 	}
 
-	public String getIds() {
-		return this.ids;
-	}
-
-	public void setIds(String ids) {
-		this.ids = ids;
-		if(ids != null){
-			putQueryParameter("Ids", ids);
-		}
-	}
-
-	public Integer getImmediateStart() {
-		return this.immediateStart;
-	}
-
-	public void setImmediateStart(Integer immediateStart) {
-		this.immediateStart = immediateStart;
-		if(immediateStart != null){
-			putQueryParameter("ImmediateStart", immediateStart.toString());
-		}
-	}
-
 	@Override
-	public Class<ModifyActiveOperationTasksResponse> getResponseClass() {
-		return ModifyActiveOperationTasksResponse.class;
+	public Class<ModifyDBInstanceConfigResponse> getResponseClass() {
+		return ModifyDBInstanceConfigResponse.class;
 	}
 
 }

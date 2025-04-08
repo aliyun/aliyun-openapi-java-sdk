@@ -22,64 +22,21 @@ import com.aliyuncs.dds.Endpoint;
  * @author auto create
  * @version 
  */
-public class ModifyActiveOperationTasksRequest extends RpcAcsRequest<ModifyActiveOperationTasksResponse> {
+public class CheckServiceLinkedRoleRequest extends RpcAcsRequest<CheckServiceLinkedRoleResponse> {
 	   
-
-	private Long resourceOwnerId;
-
-	private String resourceGroupId;
-
-	private String switchTime;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	private String ids;
-
-	private Integer immediateStart;
-	public ModifyActiveOperationTasksRequest() {
-		super("Dds", "2015-12-01", "ModifyActiveOperationTasks", "dds");
+	public CheckServiceLinkedRoleRequest() {
+		super("Dds", "2015-12-01", "CheckServiceLinkedRole", "dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
-	}
-
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
-		}
-	}
-
-	public String getSwitchTime() {
-		return this.switchTime;
-	}
-
-	public void setSwitchTime(String switchTime) {
-		this.switchTime = switchTime;
-		if(switchTime != null){
-			putQueryParameter("SwitchTime", switchTime);
-		}
 	}
 
 	public String getResourceOwnerAccount() {
@@ -115,31 +72,9 @@ public class ModifyActiveOperationTasksRequest extends RpcAcsRequest<ModifyActiv
 		}
 	}
 
-	public String getIds() {
-		return this.ids;
-	}
-
-	public void setIds(String ids) {
-		this.ids = ids;
-		if(ids != null){
-			putQueryParameter("Ids", ids);
-		}
-	}
-
-	public Integer getImmediateStart() {
-		return this.immediateStart;
-	}
-
-	public void setImmediateStart(Integer immediateStart) {
-		this.immediateStart = immediateStart;
-		if(immediateStart != null){
-			putQueryParameter("ImmediateStart", immediateStart.toString());
-		}
-	}
-
 	@Override
-	public Class<ModifyActiveOperationTasksResponse> getResponseClass() {
-		return ModifyActiveOperationTasksResponse.class;
+	public Class<CheckServiceLinkedRoleResponse> getResponseClass() {
+		return CheckServiceLinkedRoleResponse.class;
 	}
 
 }

@@ -37,6 +37,8 @@ public class DescribeAvailabilityZonesRequest extends RpcAcsRequest<DescribeAvai
 
 	private String excludeZoneId;
 
+	private String instanceType;
+
 	private String excludeSecondaryZoneId;
 
 	private String instanceChargeType;
@@ -130,6 +132,17 @@ public class DescribeAvailabilityZonesRequest extends RpcAcsRequest<DescribeAvai
 		this.excludeZoneId = excludeZoneId;
 		if(excludeZoneId != null){
 			putQueryParameter("ExcludeZoneId", excludeZoneId);
+		}
+	}
+
+	public String getInstanceType() {
+		return this.instanceType;
+	}
+
+	public void setInstanceType(String instanceType) {
+		this.instanceType = instanceType;
+		if(instanceType != null){
+			putQueryParameter("InstanceType", instanceType);
 		}
 	}
 

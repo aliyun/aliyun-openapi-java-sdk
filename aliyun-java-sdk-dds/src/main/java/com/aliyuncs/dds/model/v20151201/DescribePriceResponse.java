@@ -254,6 +254,10 @@ public class DescribePriceResponse extends AcsResponse {
 
 			private Double standDiscountPrice;
 
+			private String priceUnit;
+
+			private String priceType;
+
 			private List<PromDetail> promDetailList2;
 
 			private List<ModuleAttr> moduleAttrs;
@@ -354,6 +358,22 @@ public class DescribePriceResponse extends AcsResponse {
 
 			public void setStandDiscountPrice(Double standDiscountPrice) {
 				this.standDiscountPrice = standDiscountPrice;
+			}
+
+			public String getPriceUnit() {
+				return this.priceUnit;
+			}
+
+			public void setPriceUnit(String priceUnit) {
+				this.priceUnit = priceUnit;
+			}
+
+			public String getPriceType() {
+				return this.priceType;
+			}
+
+			public void setPriceType(String priceType) {
+				this.priceType = priceType;
 			}
 
 			public List<PromDetail> getPromDetailList2() {

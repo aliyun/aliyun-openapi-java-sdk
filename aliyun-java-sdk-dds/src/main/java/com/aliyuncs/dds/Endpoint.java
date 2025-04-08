@@ -24,7 +24,7 @@ public class Endpoint {
             put("cn-beijing", "mongodb.aliyuncs.com");
             put("cn-shanghai-inner", "mongodb.aliyuncs.com");
             put("cn-hangzhou-internal-prod-1", "mongodb.aliyuncs.com");
-            put("cn-north-2-gov-1", "mongodb.aliyuncs.com");
+            put("cn-north-2-gov-1", "mongodb.cn-north-2-gov-1.aliyuncs.com");
             put("cn-yushanfang", "mongodb.aliyuncs.com");
             put("cn-qingdao-nebula", "mongodb.aliyuncs.com");
             put("cn-heyuan", "mongodb.aliyuncs.com");

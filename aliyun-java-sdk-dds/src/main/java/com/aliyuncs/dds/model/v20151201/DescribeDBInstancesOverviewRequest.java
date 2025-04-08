@@ -27,6 +27,8 @@ public class DescribeDBInstancesOverviewRequest extends RpcAcsRequest<DescribeDB
 
 	private Long resourceOwnerId;
 
+	private Boolean showTags;
+
 	private String networkType;
 
 	private String engineVersion;
@@ -71,6 +73,17 @@ public class DescribeDBInstancesOverviewRequest extends RpcAcsRequest<DescribeDB
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public Boolean getShowTags() {
+		return this.showTags;
+	}
+
+	public void setShowTags(Boolean showTags) {
+		this.showTags = showTags;
+		if(showTags != null){
+			putQueryParameter("ShowTags", showTags.toString());
 		}
 	}
 
