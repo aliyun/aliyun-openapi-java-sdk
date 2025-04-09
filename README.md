@@ -10,9 +10,7 @@ English | [简体中文](./README-CN.md)
 [![Java CI with Maven](https://github.com/aliyun/aliyun-openapi-java-sdk/actions/workflows/maven.yml/badge.svg)](https://github.com/aliyun/aliyun-openapi-java-sdk/actions/workflows/maven.yml)
 [![codecov](https://codecov.io/gh/aliyun/aliyun-openapi-java-sdk/graph/badge.svg?token=4LHp6BfqKF)](https://codecov.io/gh/aliyun/aliyun-openapi-java-sdk)
 
-The Alibaba Cloud SDK for Java allows you to access Alibaba Cloud services such as Elastic Compute Service (ECS), Server Load Balancer (SLB), and CloudMonitor. You can access Alibaba Cloud services without the need to handle API related tasks, such as signing and constructing your requests.
-
-This document introduces how to obtain and call Alibaba Cloud SDK for Java.
+The Alibaba Cloud V1.0 SDK will soon enter the Basic Security Maintenance phase and is no longer recommended for use. It is suggested to use the V2.0 SDK instead.
 
 If you have any problem while using Alibaba Cloud SDK for Java, please [submit an issue](https://github.com/aliyun/aliyun-openapi-java-sdk/issues/new).
 
