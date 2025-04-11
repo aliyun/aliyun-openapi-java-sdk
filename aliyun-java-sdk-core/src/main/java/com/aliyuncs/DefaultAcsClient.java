@@ -72,7 +72,16 @@ public class DefaultAcsClient implements IAcsClient {
     }
 
     public DefaultAcsClient(IClientProfile profile) {
-        this(profile, new StaticCredentialsProvider(profile));
+        this.clientProfile = profile;
+        AlibabaCloudCredentialsProvider provider = profile.getCredentialsProvider();
+        if (provider != null) {
+            this.credentialsProvider = provider;
+        } else {
+            this.credentialsProvider = new StaticCredentialsProvider(profile);
+        }
+        this.httpClient = HttpClientFactory.buildClient(profile);
+        this.endpointResolver = new DefaultEndpointResolver(this, profile);
+        this.appendUserAgent("HTTPClient", this.httpClient.getClass().getSimpleName());
     }
 
     public DefaultAcsClient(IClientProfile profile, AlibabaCloudCredentials credentials) {

@@ -44,6 +44,16 @@ public class DefaultProfileTest {
     }
 
     @Test
+    public void testGetCredentialsProvider() {
+        DefaultProfile profile = DefaultProfile.getProfile("regionId");
+        assertNull(profile.getCredentialsProvider());
+        StaticCredentialsProvider credentialsProvider = mock(StaticCredentialsProvider.class);
+        profile.setCredentialsProvider(credentialsProvider);
+        assertTrue(profile.getCredentialsProvider() instanceof StaticCredentialsProvider);
+        assertTrue(profile.getCredential() instanceof Credential);
+    }
+
+    @Test
     public void getRegionId() {
         DefaultProfile profile = DefaultProfile.getProfile("regionId");
         assertEquals("regionId", profile.getRegionId());

@@ -15,6 +15,7 @@ public class DefaultProfile implements IClientProfile {
     private String regionId = null;
     private FormatType acceptFormat = null;
     private ICredentialProvider icredential = null;
+    private volatile AlibabaCloudCredentialsProvider credentialsProvider = null;
     private Credential credential;
     private String certPath;
     private HttpClientConfig httpClientConfig = HttpClientConfig.getDefault();
@@ -50,6 +51,10 @@ public class DefaultProfile implements IClientProfile {
         return profile;
     }
 
+    /**
+     * @deprecated : Use DefaultAcsClient(IClientProfile profile, AlibabaCloudCredentialsProvider credentialsProvider) instead of this
+     */
+    @Deprecated
     public synchronized static DefaultProfile getProfile(String regionId, ICredentialProvider icredential) {
         profile = new DefaultProfile(regionId, icredential);
         return profile;
@@ -72,7 +77,7 @@ public class DefaultProfile implements IClientProfile {
     }
 
     /**
-     * @Deprecated : Use addEndpoint(String regionId, String product, String endpoint) instead of this
+     * @deprecated : Use addEndpoint(String regionId, String product, String endpoint) instead of this
      */
     @Deprecated
     public synchronized static void addEndpoint(String endpointName, String regionId, String product, String domain) {
@@ -80,7 +85,7 @@ public class DefaultProfile implements IClientProfile {
     }
 
     /**
-     * @Deprecated : Use addEndpoint(String regionId, String product, String endpoint) instead of this
+     * @deprecated : Use addEndpoint(String regionId, String product, String endpoint) instead of this
      */
     @Deprecated
     public synchronized static void addEndpoint(String endpointName, String regionId, String product, String domain,
@@ -105,6 +110,11 @@ public class DefaultProfile implements IClientProfile {
     }
 
     @Override
+    public AlibabaCloudCredentialsProvider getCredentialsProvider() {
+        return credentialsProvider;
+    }
+
+    @Override
     public synchronized Credential getCredential() {
         if (null == credential && null != icredential) {
             credential = icredential.fresh();
@@ -118,12 +128,17 @@ public class DefaultProfile implements IClientProfile {
         return null;
     }
 
+
+    /**
+     * @deprecated : Use DefaultAcsClient(IClientProfile profile, AlibabaCloudCredentialsProvider credentialsProvider) instead of this
+     */
     @Override
+    @Deprecated
     public void setCredentialsProvider(AlibabaCloudCredentialsProvider credentialsProvider) {
-        if (credential != null) {
-            return;
+        if (credential == null) {
+            credential = new CredentialsBackupCompatibilityAdaptor(credentialsProvider);
         }
-        credential = new CredentialsBackupCompatibilityAdaptor(credentialsProvider);
+        this.credentialsProvider = credentialsProvider;
     }
 
     @Override

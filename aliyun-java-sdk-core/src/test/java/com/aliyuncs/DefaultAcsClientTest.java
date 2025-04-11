@@ -89,6 +89,17 @@ public class DefaultAcsClientTest {
         Assert.assertTrue(profile == client.getProfile());
     }
 
+    @Test
+    public void testConstructorWithProfileAndCredentialsProvider() throws NoSuchFieldException, IllegalAccessException {
+        DefaultProfile profile = mock(DefaultProfile.class);
+        STSAssumeRoleSessionCredentialsProvider provider = mock(STSAssumeRoleSessionCredentialsProvider.class);
+        when(profile.getCredentialsProvider()).thenReturn(provider);
+        DefaultAcsClient client = new DefaultAcsClient(profile);
+        Field field = client.getClass().getDeclaredField("credentialsProvider");
+        field.setAccessible(true);
+        Assert.assertTrue(field.get(client) instanceof STSAssumeRoleSessionCredentialsProvider);
+    }
+
     @SuppressWarnings("deprecation")
     @Test
     public void testGetSetHttpClient() {
