@@ -10,7 +10,7 @@ import org.slf4j.Logger;
 public interface IClientProfile {
 
     /**
-     * @Deprecated : Use Signer.getSigner(AlibabaCloudCredentials credentials) instead of this
+     * @deprecated : Use Signer.getSigner(AlibabaCloudCredentials credentials) instead of this
      */
     @Deprecated
     ISigner getSigner();
@@ -19,8 +19,10 @@ public interface IClientProfile {
 
     FormatType getFormat();
 
+    AlibabaCloudCredentialsProvider getCredentialsProvider();
+
     /**
-     * @Deprecated : Use AlibabaCloudCredentialsProvider getCredentials() instead of this
+     * @deprecated : Use AlibabaCloudCredentialsProvider getCredentials() instead of this
      */
     @Deprecated
     Credential getCredential();
@@ -28,8 +30,9 @@ public interface IClientProfile {
     /**
      * This method exists because ClientProfile holds too much modules like endpoint management
      *
-     * @param credentialsProvider
+     * @deprecated : Use DefaultAcsClient(IClientProfile profile, AlibabaCloudCredentialsProvider credentialsProvider) instead of this
      */
+    @Deprecated
     void setCredentialsProvider(AlibabaCloudCredentialsProvider credentialsProvider);
 
     /**

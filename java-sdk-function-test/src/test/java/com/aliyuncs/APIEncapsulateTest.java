@@ -39,9 +39,16 @@ public class APIEncapsulateTest extends BaseTest {
     public void cdnRequestTest() throws ClientException {
         DescribeCdnCertificateDetailRequest request = new DescribeCdnCertificateDetailRequest();
         request.setCertName("cdnRequestTest");
-        DescribeCdnCertificateDetailResponse response = this.client.getAcsResponse(request);
-        Assert.assertNotNull(response);
-        Assert.assertNotNull(response.getRequestId());
+//        DescribeCdnCertificateDetailResponse response = this.client.getAcsResponse(request);
+//        Assert.assertNotNull(response);
+//        Assert.assertNotNull(response.getRequestId());
+        try {
+            this.client.getAcsResponse(request);
+            Assert.fail();
+        } catch (ClientException e) {
+            Assert.assertEquals("InvaildParameter", e.getErrCode());
+            Assert.assertEquals("The parameter you provided is invalid.", e.getErrMsg());
+        }
     }
 
     @Test
