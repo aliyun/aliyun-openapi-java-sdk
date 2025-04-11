@@ -1,4 +1,7 @@
-﻿2024-12-04 Version:4.7.3
+﻿2025-04-11 Version:4.7.4
+1.Improve credentials providers in profile.
+
+2024-12-04 Version:4.7.3
 1.Improve all credentials providers.
 2.Support CLI credentials provider.
 2.Support URI credentials provider.
