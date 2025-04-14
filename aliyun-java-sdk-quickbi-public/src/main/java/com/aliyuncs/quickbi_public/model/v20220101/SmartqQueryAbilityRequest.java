@@ -15,7 +15,6 @@
 package com.aliyuncs.quickbi_public.model.v20220101;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 
 /**
@@ -32,7 +31,6 @@ public class SmartqQueryAbilityRequest extends RpcAcsRequest<SmartqQueryAbilityR
 	private String cubeId;
 	public SmartqQueryAbilityRequest() {
 		super("quickbi-public", "2022-01-01", "SmartqQueryAbility", "2.2.0");
-		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
 

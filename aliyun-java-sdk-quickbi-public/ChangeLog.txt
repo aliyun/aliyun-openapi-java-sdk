@@ -1,3 +1,6 @@
+2025-04-14 Version: 2.1.14
+- Add SmartqQueryAbility api request parameters.
+
 2025-03-17 Version: 2.1.13
 - Generated 2022-01-01 for `quickbi-public`.
 

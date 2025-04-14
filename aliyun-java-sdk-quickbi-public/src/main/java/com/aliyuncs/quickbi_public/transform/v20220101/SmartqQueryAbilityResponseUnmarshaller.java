@@ -33,6 +33,8 @@ public class SmartqQueryAbilityResponseUnmarshaller {
 
 		Result result = new Result();
 		result.setChartType(_ctx.stringValue("SmartqQueryAbilityResponse.Result.ChartType"));
+		result.setLogicSql(_ctx.stringValue("SmartqQueryAbilityResponse.Result.LogicSql"));
+		result.setConclusionText(_ctx.stringValue("SmartqQueryAbilityResponse.Result.ConclusionText"));
 
 		List<MetaTypeItem> metaType = new ArrayList<MetaTypeItem>();
 		for (int i = 0; i < _ctx.lengthValue("SmartqQueryAbilityResponse.Result.MetaType.Length"); i++) {

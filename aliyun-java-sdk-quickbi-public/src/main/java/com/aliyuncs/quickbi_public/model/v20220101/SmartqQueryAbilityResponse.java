@@ -59,6 +59,10 @@ public class SmartqQueryAbilityResponse extends AcsResponse {
 
 		private String chartType;
 
+		private String logicSql;
+
+		private String conclusionText;
+
 		private List<MetaTypeItem> metaType;
 
 		private List<ValuesItem> values;
@@ -69,6 +73,22 @@ public class SmartqQueryAbilityResponse extends AcsResponse {
 
 		public void setChartType(String chartType) {
 			this.chartType = chartType;
+		}
+
+		public String getLogicSql() {
+			return this.logicSql;
+		}
+
+		public void setLogicSql(String logicSql) {
+			this.logicSql = logicSql;
+		}
+
+		public String getConclusionText() {
+			return this.conclusionText;
+		}
+
+		public void setConclusionText(String conclusionText) {
+			this.conclusionText = conclusionText;
 		}
 
 		public List<MetaTypeItem> getMetaType() {
