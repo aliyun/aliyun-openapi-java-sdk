@@ -15,26 +15,18 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ecs.transform.v20140526.CreateDemandResponseUnmarshaller;
+import com.aliyuncs.ecs.transform.v20140526.CreatePortRangeListResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateDemandResponse extends AcsResponse {
-
-	private String demandId;
+public class CreatePortRangeListResponse extends AcsResponse {
 
 	private String requestId;
 
-	public String getDemandId() {
-		return this.demandId;
-	}
-
-	public void setDemandId(String demandId) {
-		this.demandId = demandId;
-	}
+	private String portRangeListId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,8 +36,21 @@ public class CreateDemandResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getPortRangeListId() {
+		return this.portRangeListId;
+	}
+
+	public void setPortRangeListId(String portRangeListId) {
+		this.portRangeListId = portRangeListId;
+	}
+
 	@Override
-	public CreateDemandResponse getInstance(UnmarshallerContext context) {
-		return	CreateDemandResponseUnmarshaller.unmarshall(this, context);
+	public CreatePortRangeListResponse getInstance(UnmarshallerContext context) {
+		return	CreatePortRangeListResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

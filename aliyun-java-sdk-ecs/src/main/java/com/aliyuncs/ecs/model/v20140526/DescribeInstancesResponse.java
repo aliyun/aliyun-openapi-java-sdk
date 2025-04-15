@@ -183,6 +183,8 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private String spotInterruptionBehavior;
 
+		private Boolean enableNVS;
+
 		private List<NetworkInterface> networkInterfaces;
 
 		private List<LockReason> operationLocks;
@@ -601,6 +603,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		public void setSpotInterruptionBehavior(String spotInterruptionBehavior) {
 			this.spotInterruptionBehavior = spotInterruptionBehavior;
+		}
+
+		public Boolean getEnableNVS() {
+			return this.enableNVS;
+		}
+
+		public void setEnableNVS(Boolean enableNVS) {
+			this.enableNVS = enableNVS;
 		}
 
 		public List<NetworkInterface> getNetworkInterfaces() {
@@ -1146,6 +1156,12 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 			private String topologyType;
 
+			private Boolean enableVISST;
+
+			private String turboMode;
+
+			private Boolean enableVRDT;
+
 			public String getNuma() {
 				return this.numa;
 			}
@@ -1176,6 +1192,30 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 			public void setTopologyType(String topologyType) {
 				this.topologyType = topologyType;
+			}
+
+			public Boolean getEnableVISST() {
+				return this.enableVISST;
+			}
+
+			public void setEnableVISST(Boolean enableVISST) {
+				this.enableVISST = enableVISST;
+			}
+
+			public String getTurboMode() {
+				return this.turboMode;
+			}
+
+			public void setTurboMode(String turboMode) {
+				this.turboMode = turboMode;
+			}
+
+			public Boolean getEnableVRDT() {
+				return this.enableVRDT;
+			}
+
+			public void setEnableVRDT(Boolean enableVRDT) {
+				this.enableVRDT = enableVRDT;
 			}
 		}
 

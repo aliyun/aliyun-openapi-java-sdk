@@ -14,16 +14,16 @@
 
 package com.aliyuncs.ecs.transform.v20140526;
 
-import com.aliyuncs.ecs.model.v20140526.ModifyDemandResponse;
+import com.aliyuncs.ecs.model.v20140526.DeletePortRangeListResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class ModifyDemandResponseUnmarshaller {
+public class DeletePortRangeListResponseUnmarshaller {
 
-	public static ModifyDemandResponse unmarshall(ModifyDemandResponse modifyDemandResponse, UnmarshallerContext _ctx) {
+	public static DeletePortRangeListResponse unmarshall(DeletePortRangeListResponse deletePortRangeListResponse, UnmarshallerContext _ctx) {
 		
-		modifyDemandResponse.setRequestId(_ctx.stringValue("ModifyDemandResponse.RequestId"));
+		deletePortRangeListResponse.setRequestId(_ctx.stringValue("DeletePortRangeListResponse.RequestId"));
 	 
-	 	return modifyDemandResponse;
+	 	return deletePortRangeListResponse;
 	}
 }

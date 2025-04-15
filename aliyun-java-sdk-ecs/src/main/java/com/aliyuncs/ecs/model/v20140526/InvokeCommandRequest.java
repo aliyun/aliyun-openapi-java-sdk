@@ -30,13 +30,7 @@ public class InvokeCommandRequest extends RpcAcsRequest<InvokeCommandResponse> {
 
 	private Long resourceOwnerId;
 
-	private String containerName;
-
-	private String clientToken;
-
 	private String commandId;
-
-	private Long timeout;
 
 	private String frequency;
 
@@ -44,21 +38,11 @@ public class InvokeCommandRequest extends RpcAcsRequest<InvokeCommandResponse> {
 
 	private String repeatMode;
 
-	private String windowsPasswordName;
-
-	private List<ResourceTag> resourceTags;
-
 	private List<Tag> tags;
 
 	private Boolean timed;
 
-	private String resourceOwnerAccount;
-
-	private String ownerAccount;
-
 	private Long ownerId;
-
-	private String terminationMode;
 
 	private List<String> instanceIds;
 
@@ -66,9 +50,25 @@ public class InvokeCommandRequest extends RpcAcsRequest<InvokeCommandResponse> {
 
 	private Map<Object,Object> parameters;
 
-	private String username;
-
 	private String launcher;
+
+	private String containerName;
+
+	private String clientToken;
+
+	private Long timeout;
+
+	private String windowsPasswordName;
+
+	private List<ResourceTag> resourceTags;
+
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
+
+	private String terminationMode;
+
+	private String username;
 	public InvokeCommandRequest() {
 		super("Ecs", "2014-05-26", "InvokeCommand", "ecs");
 		setMethod(MethodType.POST);
@@ -89,28 +89,6 @@ public class InvokeCommandRequest extends RpcAcsRequest<InvokeCommandResponse> {
 		}
 	}
 
-	public String getContainerName() {
-		return this.containerName;
-	}
-
-	public void setContainerName(String containerName) {
-		this.containerName = containerName;
-		if(containerName != null){
-			putQueryParameter("ContainerName", containerName);
-		}
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
 	public String getCommandId() {
 		return this.commandId;
 	}
@@ -119,17 +97,6 @@ public class InvokeCommandRequest extends RpcAcsRequest<InvokeCommandResponse> {
 		this.commandId = commandId;
 		if(commandId != null){
 			putQueryParameter("CommandId", commandId);
-		}
-	}
-
-	public Long getTimeout() {
-		return this.timeout;
-	}
-
-	public void setTimeout(Long timeout) {
-		this.timeout = timeout;
-		if(timeout != null){
-			putQueryParameter("Timeout", timeout.toString());
 		}
 	}
 
@@ -166,31 +133,6 @@ public class InvokeCommandRequest extends RpcAcsRequest<InvokeCommandResponse> {
 		}
 	}
 
-	public String getWindowsPasswordName() {
-		return this.windowsPasswordName;
-	}
-
-	public void setWindowsPasswordName(String windowsPasswordName) {
-		this.windowsPasswordName = windowsPasswordName;
-		if(windowsPasswordName != null){
-			putQueryParameter("WindowsPasswordName", windowsPasswordName);
-		}
-	}
-
-	public List<ResourceTag> getResourceTags() {
-		return this.resourceTags;
-	}
-
-	public void setResourceTags(List<ResourceTag> resourceTags) {
-		this.resourceTags = resourceTags;	
-		if (resourceTags != null) {
-			for (int depth1 = 0; depth1 < resourceTags.size(); depth1++) {
-				putQueryParameter("ResourceTag." + (depth1 + 1) + ".Key" , resourceTags.get(depth1).getKey());
-				putQueryParameter("ResourceTag." + (depth1 + 1) + ".Value" , resourceTags.get(depth1).getValue());
-			}
-		}	
-	}
-
 	public List<Tag> getTags() {
 		return this.tags;
 	}
@@ -216,28 +158,6 @@ public class InvokeCommandRequest extends RpcAcsRequest<InvokeCommandResponse> {
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -246,17 +166,6 @@ public class InvokeCommandRequest extends RpcAcsRequest<InvokeCommandResponse> {
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getTerminationMode() {
-		return this.terminationMode;
-	}
-
-	public void setTerminationMode(String terminationMode) {
-		this.terminationMode = terminationMode;
-		if(terminationMode != null){
-			putQueryParameter("TerminationMode", terminationMode);
 		}
 	}
 
@@ -295,17 +204,6 @@ public class InvokeCommandRequest extends RpcAcsRequest<InvokeCommandResponse> {
 		}
 	}
 
-	public String getUsername() {
-		return this.username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
-		if(username != null){
-			putQueryParameter("Username", username);
-		}
-	}
-
 	public String getLauncher() {
 		return this.launcher;
 	}
@@ -317,7 +215,109 @@ public class InvokeCommandRequest extends RpcAcsRequest<InvokeCommandResponse> {
 		}
 	}
 
-	public static class ResourceTag {
+	public String getContainerName() {
+		return this.containerName;
+	}
+
+	public void setContainerName(String containerName) {
+		this.containerName = containerName;
+		if(containerName != null){
+			putQueryParameter("ContainerName", containerName);
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public Long getTimeout() {
+		return this.timeout;
+	}
+
+	public void setTimeout(Long timeout) {
+		this.timeout = timeout;
+		if(timeout != null){
+			putQueryParameter("Timeout", timeout.toString());
+		}
+	}
+
+	public String getWindowsPasswordName() {
+		return this.windowsPasswordName;
+	}
+
+	public void setWindowsPasswordName(String windowsPasswordName) {
+		this.windowsPasswordName = windowsPasswordName;
+		if(windowsPasswordName != null){
+			putQueryParameter("WindowsPasswordName", windowsPasswordName);
+		}
+	}
+
+	public List<ResourceTag> getResourceTags() {
+		return this.resourceTags;
+	}
+
+	public void setResourceTags(List<ResourceTag> resourceTags) {
+		this.resourceTags = resourceTags;	
+		if (resourceTags != null) {
+			for (int depth1 = 0; depth1 < resourceTags.size(); depth1++) {
+				putQueryParameter("ResourceTag." + (depth1 + 1) + ".Key" , resourceTags.get(depth1).getKey());
+				putQueryParameter("ResourceTag." + (depth1 + 1) + ".Value" , resourceTags.get(depth1).getValue());
+			}
+		}	
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getTerminationMode() {
+		return this.terminationMode;
+	}
+
+	public void setTerminationMode(String terminationMode) {
+		this.terminationMode = terminationMode;
+		if(terminationMode != null){
+			putQueryParameter("TerminationMode", terminationMode);
+		}
+	}
+
+	public String getUsername() {
+		return this.username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+		if(username != null){
+			putQueryParameter("Username", username);
+		}
+	}
+
+	public static class Tag {
 
 		private String key;
 
@@ -340,7 +340,7 @@ public class InvokeCommandRequest extends RpcAcsRequest<InvokeCommandResponse> {
 		}
 	}
 
-	public static class Tag {
+	public static class ResourceTag {
 
 		private String key;
 

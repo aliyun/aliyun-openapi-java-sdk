@@ -28,29 +28,37 @@ public class ModifyInstanceAttributeRequest extends RpcAcsRequest<ModifyInstance
 
 	private Long resourceOwnerId;
 
-	private Boolean recyclable;
-
-	private Integer networkInterfaceQueueNumber;
-
-	private String description;
-
-	private Integer cpuOptionsThreadsPerCore;
-
 	private Boolean deletionProtection;
-
-	private String userData;
 
 	private String password;
 
 	private String hostName;
 
-	private PrivateDnsNameOptions privateDnsNameOptions;
-
 	private String cpuOptionsTopologyType;
 
-	private Boolean enableJumboFrame;
-
 	private Integer cpuOptionsCore;
+
+	private Long ownerId;
+
+	private String instanceId;
+
+	private String instanceName;
+
+	private Boolean recyclable;
+
+	private Integer networkInterfaceQueueNumber;
+
+	private Boolean enableNetworkEncryption;
+
+	private String description;
+
+	private Integer cpuOptionsThreadsPerCore;
+
+	private String userData;
+
+	private PrivateDnsNameOptions privateDnsNameOptions;
+
+	private Boolean enableJumboFrame;
 
 	private String resourceOwnerAccount;
 
@@ -58,13 +66,7 @@ public class ModifyInstanceAttributeRequest extends RpcAcsRequest<ModifyInstance
 
 	private String creditSpecification;
 
-	private Long ownerId;
-
 	private List<String> securityGroupIdss;
-
-	private String instanceId;
-
-	private String instanceName;
 
 	private RemoteConnectionOptions remoteConnectionOptions;
 	public ModifyInstanceAttributeRequest() {
@@ -87,50 +89,6 @@ public class ModifyInstanceAttributeRequest extends RpcAcsRequest<ModifyInstance
 		}
 	}
 
-	public Boolean getRecyclable() {
-		return this.recyclable;
-	}
-
-	public void setRecyclable(Boolean recyclable) {
-		this.recyclable = recyclable;
-		if(recyclable != null){
-			putQueryParameter("Recyclable", recyclable.toString());
-		}
-	}
-
-	public Integer getNetworkInterfaceQueueNumber() {
-		return this.networkInterfaceQueueNumber;
-	}
-
-	public void setNetworkInterfaceQueueNumber(Integer networkInterfaceQueueNumber) {
-		this.networkInterfaceQueueNumber = networkInterfaceQueueNumber;
-		if(networkInterfaceQueueNumber != null){
-			putQueryParameter("NetworkInterfaceQueueNumber", networkInterfaceQueueNumber.toString());
-		}
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
-		}
-	}
-
-	public Integer getCpuOptionsThreadsPerCore() {
-		return this.cpuOptionsThreadsPerCore;
-	}
-
-	public void setCpuOptionsThreadsPerCore(Integer cpuOptionsThreadsPerCore) {
-		this.cpuOptionsThreadsPerCore = cpuOptionsThreadsPerCore;
-		if(cpuOptionsThreadsPerCore != null){
-			putQueryParameter("CpuOptions.ThreadsPerCore", cpuOptionsThreadsPerCore.toString());
-		}
-	}
-
 	public Boolean getDeletionProtection() {
 		return this.deletionProtection;
 	}
@@ -139,17 +97,6 @@ public class ModifyInstanceAttributeRequest extends RpcAcsRequest<ModifyInstance
 		this.deletionProtection = deletionProtection;
 		if(deletionProtection != null){
 			putQueryParameter("DeletionProtection", deletionProtection.toString());
-		}
-	}
-
-	public String getUserData() {
-		return this.userData;
-	}
-
-	public void setUserData(String userData) {
-		this.userData = userData;
-		if(userData != null){
-			putQueryParameter("UserData", userData);
 		}
 	}
 
@@ -175,6 +122,127 @@ public class ModifyInstanceAttributeRequest extends RpcAcsRequest<ModifyInstance
 		}
 	}
 
+	public String getCpuOptionsTopologyType() {
+		return this.cpuOptionsTopologyType;
+	}
+
+	public void setCpuOptionsTopologyType(String cpuOptionsTopologyType) {
+		this.cpuOptionsTopologyType = cpuOptionsTopologyType;
+		if(cpuOptionsTopologyType != null){
+			putQueryParameter("CpuOptions.TopologyType", cpuOptionsTopologyType);
+		}
+	}
+
+	public Integer getCpuOptionsCore() {
+		return this.cpuOptionsCore;
+	}
+
+	public void setCpuOptionsCore(Integer cpuOptionsCore) {
+		this.cpuOptionsCore = cpuOptionsCore;
+		if(cpuOptionsCore != null){
+			putQueryParameter("CpuOptions.Core", cpuOptionsCore.toString());
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getInstanceName() {
+		return this.instanceName;
+	}
+
+	public void setInstanceName(String instanceName) {
+		this.instanceName = instanceName;
+		if(instanceName != null){
+			putQueryParameter("InstanceName", instanceName);
+		}
+	}
+
+	public Boolean getRecyclable() {
+		return this.recyclable;
+	}
+
+	public void setRecyclable(Boolean recyclable) {
+		this.recyclable = recyclable;
+		if(recyclable != null){
+			putQueryParameter("Recyclable", recyclable.toString());
+		}
+	}
+
+	public Integer getNetworkInterfaceQueueNumber() {
+		return this.networkInterfaceQueueNumber;
+	}
+
+	public void setNetworkInterfaceQueueNumber(Integer networkInterfaceQueueNumber) {
+		this.networkInterfaceQueueNumber = networkInterfaceQueueNumber;
+		if(networkInterfaceQueueNumber != null){
+			putQueryParameter("NetworkInterfaceQueueNumber", networkInterfaceQueueNumber.toString());
+		}
+	}
+
+	public Boolean getEnableNetworkEncryption() {
+		return this.enableNetworkEncryption;
+	}
+
+	public void setEnableNetworkEncryption(Boolean enableNetworkEncryption) {
+		this.enableNetworkEncryption = enableNetworkEncryption;
+		if(enableNetworkEncryption != null){
+			putQueryParameter("EnableNetworkEncryption", enableNetworkEncryption.toString());
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
+	public Integer getCpuOptionsThreadsPerCore() {
+		return this.cpuOptionsThreadsPerCore;
+	}
+
+	public void setCpuOptionsThreadsPerCore(Integer cpuOptionsThreadsPerCore) {
+		this.cpuOptionsThreadsPerCore = cpuOptionsThreadsPerCore;
+		if(cpuOptionsThreadsPerCore != null){
+			putQueryParameter("CpuOptions.ThreadsPerCore", cpuOptionsThreadsPerCore.toString());
+		}
+	}
+
+	public String getUserData() {
+		return this.userData;
+	}
+
+	public void setUserData(String userData) {
+		this.userData = userData;
+		if(userData != null){
+			putQueryParameter("UserData", userData);
+		}
+	}
+
 	public PrivateDnsNameOptions getPrivateDnsNameOptions() {
 		return this.privateDnsNameOptions;
 	}
@@ -191,17 +259,6 @@ public class ModifyInstanceAttributeRequest extends RpcAcsRequest<ModifyInstance
 		}	
 	}
 
-	public String getCpuOptionsTopologyType() {
-		return this.cpuOptionsTopologyType;
-	}
-
-	public void setCpuOptionsTopologyType(String cpuOptionsTopologyType) {
-		this.cpuOptionsTopologyType = cpuOptionsTopologyType;
-		if(cpuOptionsTopologyType != null){
-			putQueryParameter("CpuOptions.TopologyType", cpuOptionsTopologyType);
-		}
-	}
-
 	public Boolean getEnableJumboFrame() {
 		return this.enableJumboFrame;
 	}
@@ -210,17 +267,6 @@ public class ModifyInstanceAttributeRequest extends RpcAcsRequest<ModifyInstance
 		this.enableJumboFrame = enableJumboFrame;
 		if(enableJumboFrame != null){
 			putQueryParameter("EnableJumboFrame", enableJumboFrame.toString());
-		}
-	}
-
-	public Integer getCpuOptionsCore() {
-		return this.cpuOptionsCore;
-	}
-
-	public void setCpuOptionsCore(Integer cpuOptionsCore) {
-		this.cpuOptionsCore = cpuOptionsCore;
-		if(cpuOptionsCore != null){
-			putQueryParameter("CpuOptions.Core", cpuOptionsCore.toString());
 		}
 	}
 
@@ -257,17 +303,6 @@ public class ModifyInstanceAttributeRequest extends RpcAcsRequest<ModifyInstance
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
 	public List<String> getSecurityGroupIdss() {
 		return this.securityGroupIdss;
 	}
@@ -279,28 +314,6 @@ public class ModifyInstanceAttributeRequest extends RpcAcsRequest<ModifyInstance
 				putQueryParameter("SecurityGroupIds." + (i + 1) , securityGroupIdss.get(i));
 			}
 		}	
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getInstanceName() {
-		return this.instanceName;
-	}
-
-	public void setInstanceName(String instanceName) {
-		this.instanceName = instanceName;
-		if(instanceName != null){
-			putQueryParameter("InstanceName", instanceName);
-		}
 	}
 
 	public RemoteConnectionOptions getRemoteConnectionOptions() {

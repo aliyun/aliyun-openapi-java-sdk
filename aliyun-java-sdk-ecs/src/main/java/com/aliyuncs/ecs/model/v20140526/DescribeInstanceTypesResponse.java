@@ -135,6 +135,8 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 
 		private List<NetworkCardInfo> networkCards;
 
+		private List<Attribute> attributes;
+
 		private List<String> supportedBootModes;
 
 		private EnhancedNetwork enhancedNetwork;
@@ -453,6 +455,14 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 			this.networkCards = networkCards;
 		}
 
+		public List<Attribute> getAttributes() {
+			return this.attributes;
+		}
+
+		public void setAttributes(List<Attribute> attributes) {
+			this.attributes = attributes;
+		}
+
 		public List<String> getSupportedBootModes() {
 			return this.supportedBootModes;
 		}
@@ -487,6 +497,29 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 
 			public void setNetworkCardIndex(Integer networkCardIndex) {
 				this.networkCardIndex = networkCardIndex;
+			}
+		}
+
+		public static class Attribute {
+
+			private String name;
+
+			private String value;
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
 			}
 		}
 

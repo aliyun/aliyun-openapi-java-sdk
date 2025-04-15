@@ -77,6 +77,8 @@ public class DescribeSecurityGroupAttributeResponseUnmarshaller {
 			permission.setSourceGroupOwnerAccount(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].SourceGroupOwnerAccount"));
 			permission.setSourceGroupName(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].SourceGroupName"));
 			permission.setSourcePortRange(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].SourcePortRange"));
+			permission.setPortRangeListId(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].PortRangeListId"));
+			permission.setPortRangeListName(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].PortRangeListName"));
 
 			permissions.add(permission);
 		}

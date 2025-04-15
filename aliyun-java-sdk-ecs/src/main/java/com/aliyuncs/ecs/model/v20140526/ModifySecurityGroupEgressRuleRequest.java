@@ -31,43 +31,45 @@ public class ModifySecurityGroupEgressRuleRequest extends RpcAcsRequest<ModifySe
 
 	private String sourcePortRange;
 
-	private String clientToken;
-
 	private String destPrefixListId;
-
-	private String securityGroupId;
-
-	private String description;
-
-	private String policy;
 
 	private String ipv6DestCidrIp;
 
-	private String ipv6SourceCidrIp;
-
 	private String portRange;
-
-	private String resourceOwnerAccount;
 
 	private String ipProtocol;
 
-	private String ownerAccount;
-
 	private String sourceCidrIp;
-
-	private String destGroupId;
 
 	private Long ownerId;
 
 	private String priority;
 
-	private String destGroupOwnerAccount;
-
 	private String destCidrIp;
 
-	private Long destGroupOwnerId;
-
 	private String securityGroupRuleId;
+
+	private String clientToken;
+
+	private String securityGroupId;
+
+	private String description;
+
+	private String portRangeListId;
+
+	private String policy;
+
+	private String ipv6SourceCidrIp;
+
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
+
+	private String destGroupId;
+
+	private String destGroupOwnerAccount;
+
+	private Long destGroupOwnerId;
 	public ModifySecurityGroupEgressRuleRequest() {
 		super("Ecs", "2014-05-26", "ModifySecurityGroupEgressRule", "ecs");
 		setMethod(MethodType.POST);
@@ -110,17 +112,6 @@ public class ModifySecurityGroupEgressRuleRequest extends RpcAcsRequest<ModifySe
 		}
 	}
 
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
 	public String getDestPrefixListId() {
 		return this.destPrefixListId;
 	}
@@ -129,39 +120,6 @@ public class ModifySecurityGroupEgressRuleRequest extends RpcAcsRequest<ModifySe
 		this.destPrefixListId = destPrefixListId;
 		if(destPrefixListId != null){
 			putQueryParameter("DestPrefixListId", destPrefixListId);
-		}
-	}
-
-	public String getSecurityGroupId() {
-		return this.securityGroupId;
-	}
-
-	public void setSecurityGroupId(String securityGroupId) {
-		this.securityGroupId = securityGroupId;
-		if(securityGroupId != null){
-			putQueryParameter("SecurityGroupId", securityGroupId);
-		}
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
-		}
-	}
-
-	public String getPolicy() {
-		return this.policy;
-	}
-
-	public void setPolicy(String policy) {
-		this.policy = policy;
-		if(policy != null){
-			putQueryParameter("Policy", policy);
 		}
 	}
 
@@ -176,17 +134,6 @@ public class ModifySecurityGroupEgressRuleRequest extends RpcAcsRequest<ModifySe
 		}
 	}
 
-	public String getIpv6SourceCidrIp() {
-		return this.ipv6SourceCidrIp;
-	}
-
-	public void setIpv6SourceCidrIp(String ipv6SourceCidrIp) {
-		this.ipv6SourceCidrIp = ipv6SourceCidrIp;
-		if(ipv6SourceCidrIp != null){
-			putQueryParameter("Ipv6SourceCidrIp", ipv6SourceCidrIp);
-		}
-	}
-
 	public String getPortRange() {
 		return this.portRange;
 	}
@@ -195,17 +142,6 @@ public class ModifySecurityGroupEgressRuleRequest extends RpcAcsRequest<ModifySe
 		this.portRange = portRange;
 		if(portRange != null){
 			putQueryParameter("PortRange", portRange);
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -220,17 +156,6 @@ public class ModifySecurityGroupEgressRuleRequest extends RpcAcsRequest<ModifySe
 		}
 	}
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
 	public String getSourceCidrIp() {
 		return this.sourceCidrIp;
 	}
@@ -239,17 +164,6 @@ public class ModifySecurityGroupEgressRuleRequest extends RpcAcsRequest<ModifySe
 		this.sourceCidrIp = sourceCidrIp;
 		if(sourceCidrIp != null){
 			putQueryParameter("SourceCidrIp", sourceCidrIp);
-		}
-	}
-
-	public String getDestGroupId() {
-		return this.destGroupId;
-	}
-
-	public void setDestGroupId(String destGroupId) {
-		this.destGroupId = destGroupId;
-		if(destGroupId != null){
-			putQueryParameter("DestGroupId", destGroupId);
 		}
 	}
 
@@ -275,17 +189,6 @@ public class ModifySecurityGroupEgressRuleRequest extends RpcAcsRequest<ModifySe
 		}
 	}
 
-	public String getDestGroupOwnerAccount() {
-		return this.destGroupOwnerAccount;
-	}
-
-	public void setDestGroupOwnerAccount(String destGroupOwnerAccount) {
-		this.destGroupOwnerAccount = destGroupOwnerAccount;
-		if(destGroupOwnerAccount != null){
-			putQueryParameter("DestGroupOwnerAccount", destGroupOwnerAccount);
-		}
-	}
-
 	public String getDestCidrIp() {
 		return this.destCidrIp;
 	}
@@ -297,17 +200,6 @@ public class ModifySecurityGroupEgressRuleRequest extends RpcAcsRequest<ModifySe
 		}
 	}
 
-	public Long getDestGroupOwnerId() {
-		return this.destGroupOwnerId;
-	}
-
-	public void setDestGroupOwnerId(Long destGroupOwnerId) {
-		this.destGroupOwnerId = destGroupOwnerId;
-		if(destGroupOwnerId != null){
-			putQueryParameter("DestGroupOwnerId", destGroupOwnerId.toString());
-		}
-	}
-
 	public String getSecurityGroupRuleId() {
 		return this.securityGroupRuleId;
 	}
@@ -316,6 +208,127 @@ public class ModifySecurityGroupEgressRuleRequest extends RpcAcsRequest<ModifySe
 		this.securityGroupRuleId = securityGroupRuleId;
 		if(securityGroupRuleId != null){
 			putQueryParameter("SecurityGroupRuleId", securityGroupRuleId);
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getSecurityGroupId() {
+		return this.securityGroupId;
+	}
+
+	public void setSecurityGroupId(String securityGroupId) {
+		this.securityGroupId = securityGroupId;
+		if(securityGroupId != null){
+			putQueryParameter("SecurityGroupId", securityGroupId);
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getPortRangeListId() {
+		return this.portRangeListId;
+	}
+
+	public void setPortRangeListId(String portRangeListId) {
+		this.portRangeListId = portRangeListId;
+		if(portRangeListId != null){
+			putQueryParameter("PortRangeListId", portRangeListId);
+		}
+	}
+
+	public String getPolicy() {
+		return this.policy;
+	}
+
+	public void setPolicy(String policy) {
+		this.policy = policy;
+		if(policy != null){
+			putQueryParameter("Policy", policy);
+		}
+	}
+
+	public String getIpv6SourceCidrIp() {
+		return this.ipv6SourceCidrIp;
+	}
+
+	public void setIpv6SourceCidrIp(String ipv6SourceCidrIp) {
+		this.ipv6SourceCidrIp = ipv6SourceCidrIp;
+		if(ipv6SourceCidrIp != null){
+			putQueryParameter("Ipv6SourceCidrIp", ipv6SourceCidrIp);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getDestGroupId() {
+		return this.destGroupId;
+	}
+
+	public void setDestGroupId(String destGroupId) {
+		this.destGroupId = destGroupId;
+		if(destGroupId != null){
+			putQueryParameter("DestGroupId", destGroupId);
+		}
+	}
+
+	public String getDestGroupOwnerAccount() {
+		return this.destGroupOwnerAccount;
+	}
+
+	public void setDestGroupOwnerAccount(String destGroupOwnerAccount) {
+		this.destGroupOwnerAccount = destGroupOwnerAccount;
+		if(destGroupOwnerAccount != null){
+			putQueryParameter("DestGroupOwnerAccount", destGroupOwnerAccount);
+		}
+	}
+
+	public Long getDestGroupOwnerId() {
+		return this.destGroupOwnerId;
+	}
+
+	public void setDestGroupOwnerId(Long destGroupOwnerId) {
+		this.destGroupOwnerId = destGroupOwnerId;
+		if(destGroupOwnerId != null){
+			putQueryParameter("DestGroupOwnerId", destGroupOwnerId.toString());
 		}
 	}
 

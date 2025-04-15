@@ -29,19 +29,19 @@ public class DescribeSavingsPlanPriceRequest extends RpcAcsRequest<DescribeSavin
 
 	private String instanceTypeFamilyGroup;
 
+	private String planType;
+
+	private String committedAmount;
+
 	private Integer period;
 
 	private List<String> resourceIds;
 
 	private String instanceTypeFamily;
 
-	private String planType;
-
 	private String periodUnit;
 
 	private String offeringType;
-
-	private String committedAmount;
 	public DescribeSavingsPlanPriceRequest() {
 		super("Ecs", "2014-05-26", "DescribeSavingsPlanPrice", "ecs");
 		setProtocol(ProtocolType.HTTPS);
@@ -60,6 +60,28 @@ public class DescribeSavingsPlanPriceRequest extends RpcAcsRequest<DescribeSavin
 		this.instanceTypeFamilyGroup = instanceTypeFamilyGroup;
 		if(instanceTypeFamilyGroup != null){
 			putQueryParameter("InstanceTypeFamilyGroup", instanceTypeFamilyGroup);
+		}
+	}
+
+	public String getPlanType() {
+		return this.planType;
+	}
+
+	public void setPlanType(String planType) {
+		this.planType = planType;
+		if(planType != null){
+			putQueryParameter("PlanType", planType);
+		}
+	}
+
+	public String getCommittedAmount() {
+		return this.committedAmount;
+	}
+
+	public void setCommittedAmount(String committedAmount) {
+		this.committedAmount = committedAmount;
+		if(committedAmount != null){
+			putQueryParameter("CommittedAmount", committedAmount);
 		}
 	}
 
@@ -98,17 +120,6 @@ public class DescribeSavingsPlanPriceRequest extends RpcAcsRequest<DescribeSavin
 		}
 	}
 
-	public String getPlanType() {
-		return this.planType;
-	}
-
-	public void setPlanType(String planType) {
-		this.planType = planType;
-		if(planType != null){
-			putQueryParameter("PlanType", planType);
-		}
-	}
-
 	public String getPeriodUnit() {
 		return this.periodUnit;
 	}
@@ -128,17 +139,6 @@ public class DescribeSavingsPlanPriceRequest extends RpcAcsRequest<DescribeSavin
 		this.offeringType = offeringType;
 		if(offeringType != null){
 			putQueryParameter("OfferingType", offeringType);
-		}
-	}
-
-	public String getCommittedAmount() {
-		return this.committedAmount;
-	}
-
-	public void setCommittedAmount(String committedAmount) {
-		this.committedAmount = committedAmount;
-		if(committedAmount != null){
-			putQueryParameter("CommittedAmount", committedAmount);
 		}
 	}
 

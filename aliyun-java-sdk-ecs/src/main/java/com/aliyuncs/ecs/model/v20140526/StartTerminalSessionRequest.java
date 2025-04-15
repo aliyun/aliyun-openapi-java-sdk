@@ -32,6 +32,8 @@ public class StartTerminalSessionRequest extends RpcAcsRequest<StartTerminalSess
 
 	private String targetServer;
 
+	private String connectionType;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -82,6 +84,17 @@ public class StartTerminalSessionRequest extends RpcAcsRequest<StartTerminalSess
 		this.targetServer = targetServer;
 		if(targetServer != null){
 			putQueryParameter("TargetServer", targetServer);
+		}
+	}
+
+	public String getConnectionType() {
+		return this.connectionType;
+	}
+
+	public void setConnectionType(String connectionType) {
+		this.connectionType = connectionType;
+		if(connectionType != null){
+			putQueryParameter("ConnectionType", connectionType);
 		}
 	}
 

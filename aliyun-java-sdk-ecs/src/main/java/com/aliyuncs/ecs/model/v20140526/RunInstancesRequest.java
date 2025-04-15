@@ -686,6 +686,7 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		if (networkOptions != null) {
 			
 				putQueryParameter("NetworkOptions.EnableJumboFrame" , networkOptions.getEnableJumboFrame());
+				putQueryParameter("NetworkOptions.EnableNetworkEncryption" , networkOptions.getEnableNetworkEncryption());
 		}	
 	}
 
@@ -1400,12 +1401,22 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 		private Boolean enableJumboFrame;
 
+		private Boolean enableNetworkEncryption;
+
 		public Boolean getEnableJumboFrame() {
 			return this.enableJumboFrame;
 		}
 
 		public void setEnableJumboFrame(Boolean enableJumboFrame) {
 			this.enableJumboFrame = enableJumboFrame;
+		}
+
+		public Boolean getEnableNetworkEncryption() {
+			return this.enableNetworkEncryption;
+		}
+
+		public void setEnableNetworkEncryption(Boolean enableNetworkEncryption) {
+			this.enableNetworkEncryption = enableNetworkEncryption;
 		}
 	}
 

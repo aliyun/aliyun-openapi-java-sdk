@@ -28,39 +28,43 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 
 	private String actionType;
 
-	private Long imageOwnerId;
-
 	private Long resourceOwnerId;
 
-	private String imageId;
-
-	private String snapshotId;
-
 	private String usage;
-
-	private Integer pageNumber;
 
 	private String imageOwnerAlias;
 
 	private String resourceGroupId;
 
-	private Boolean isSupportIoOptimized;
-
-	private String imageName;
-
 	private Boolean isSupportCloudinit;
 
 	private Boolean isPublic;
+
+	private List<Tag> tags;
+
+	private Boolean dryRun;
+
+	private Long ownerId;
+
+	private String status;
+
+	private Long imageOwnerId;
+
+	private String imageId;
+
+	private String snapshotId;
+
+	private Integer pageNumber;
+
+	private Boolean isSupportIoOptimized;
+
+	private String imageName;
 
 	private Integer pageSize;
 
 	private String instanceType;
 
-	private List<Tag> tags;
-
 	private String architecture;
-
-	private Boolean dryRun;
 
 	private String resourceOwnerAccount;
 
@@ -70,13 +74,9 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 
 	private String oSType;
 
-	private Long ownerId;
-
 	private List<Filter> filters;
 
 	private String imageFamily;
-
-	private String status;
 	public DescribeImagesRequest() {
 		super("Ecs", "2014-05-26", "DescribeImages", "ecs");
 		setMethod(MethodType.POST);
@@ -97,17 +97,6 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 		}
 	}
 
-	public Long getImageOwnerId() {
-		return this.imageOwnerId;
-	}
-
-	public void setImageOwnerId(Long imageOwnerId) {
-		this.imageOwnerId = imageOwnerId;
-		if(imageOwnerId != null){
-			putQueryParameter("ImageOwnerId", imageOwnerId.toString());
-		}
-	}
-
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
@@ -119,28 +108,6 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 		}
 	}
 
-	public String getImageId() {
-		return this.imageId;
-	}
-
-	public void setImageId(String imageId) {
-		this.imageId = imageId;
-		if(imageId != null){
-			putQueryParameter("ImageId", imageId);
-		}
-	}
-
-	public String getSnapshotId() {
-		return this.snapshotId;
-	}
-
-	public void setSnapshotId(String snapshotId) {
-		this.snapshotId = snapshotId;
-		if(snapshotId != null){
-			putQueryParameter("SnapshotId", snapshotId);
-		}
-	}
-
 	public String getUsage() {
 		return this.usage;
 	}
@@ -149,17 +116,6 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 		this.usage = usage;
 		if(usage != null){
 			putQueryParameter("Usage", usage);
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
@@ -185,28 +141,6 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 		}
 	}
 
-	public Boolean getIsSupportIoOptimized() {
-		return this.isSupportIoOptimized;
-	}
-
-	public void setIsSupportIoOptimized(Boolean isSupportIoOptimized) {
-		this.isSupportIoOptimized = isSupportIoOptimized;
-		if(isSupportIoOptimized != null){
-			putQueryParameter("IsSupportIoOptimized", isSupportIoOptimized.toString());
-		}
-	}
-
-	public String getImageName() {
-		return this.imageName;
-	}
-
-	public void setImageName(String imageName) {
-		this.imageName = imageName;
-		if(imageName != null){
-			putQueryParameter("ImageName", imageName);
-		}
-	}
-
 	public Boolean getIsSupportCloudinit() {
 		return this.isSupportCloudinit;
 	}
@@ -226,6 +160,119 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 		this.isPublic = isPublic;
 		if(isPublic != null){
 			putQueryParameter("IsPublic", isPublic.toString());
+		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
+	}
+
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status);
+		}
+	}
+
+	public Long getImageOwnerId() {
+		return this.imageOwnerId;
+	}
+
+	public void setImageOwnerId(Long imageOwnerId) {
+		this.imageOwnerId = imageOwnerId;
+		if(imageOwnerId != null){
+			putQueryParameter("ImageOwnerId", imageOwnerId.toString());
+		}
+	}
+
+	public String getImageId() {
+		return this.imageId;
+	}
+
+	public void setImageId(String imageId) {
+		this.imageId = imageId;
+		if(imageId != null){
+			putQueryParameter("ImageId", imageId);
+		}
+	}
+
+	public String getSnapshotId() {
+		return this.snapshotId;
+	}
+
+	public void setSnapshotId(String snapshotId) {
+		this.snapshotId = snapshotId;
+		if(snapshotId != null){
+			putQueryParameter("SnapshotId", snapshotId);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Boolean getIsSupportIoOptimized() {
+		return this.isSupportIoOptimized;
+	}
+
+	public void setIsSupportIoOptimized(Boolean isSupportIoOptimized) {
+		this.isSupportIoOptimized = isSupportIoOptimized;
+		if(isSupportIoOptimized != null){
+			putQueryParameter("IsSupportIoOptimized", isSupportIoOptimized.toString());
+		}
+	}
+
+	public String getImageName() {
+		return this.imageName;
+	}
+
+	public void setImageName(String imageName) {
+		this.imageName = imageName;
+		if(imageName != null){
+			putQueryParameter("ImageName", imageName);
 		}
 	}
 
@@ -251,20 +298,6 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 		}
 	}
 
-	public List<Tag> getTags() {
-		return this.tags;
-	}
-
-	public void setTags(List<Tag> tags) {
-		this.tags = tags;	
-		if (tags != null) {
-			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
-				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
-				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
-			}
-		}	
-	}
-
 	public String getArchitecture() {
 		return this.architecture;
 	}
@@ -273,17 +306,6 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 		this.architecture = architecture;
 		if(architecture != null){
 			putQueryParameter("Architecture", architecture);
-		}
-	}
-
-	public Boolean getDryRun() {
-		return this.dryRun;
-	}
-
-	public void setDryRun(Boolean dryRun) {
-		this.dryRun = dryRun;
-		if(dryRun != null){
-			putQueryParameter("DryRun", dryRun.toString());
 		}
 	}
 
@@ -331,17 +353,6 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
 	public List<Filter> getFilters() {
 		return this.filters;
 	}
@@ -364,17 +375,6 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 		this.imageFamily = imageFamily;
 		if(imageFamily != null){
 			putQueryParameter("ImageFamily", imageFamily);
-		}
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-		if(status != null){
-			putQueryParameter("Status", status);
 		}
 	}
 

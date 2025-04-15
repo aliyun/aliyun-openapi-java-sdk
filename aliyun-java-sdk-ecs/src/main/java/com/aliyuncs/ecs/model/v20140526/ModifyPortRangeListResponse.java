@@ -15,14 +15,14 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ecs.transform.v20140526.DeleteDemandResponseUnmarshaller;
+import com.aliyuncs.ecs.transform.v20140526.ModifyPortRangeListResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DeleteDemandResponse extends AcsResponse {
+public class ModifyPortRangeListResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -35,7 +35,12 @@ public class DeleteDemandResponse extends AcsResponse {
 	}
 
 	@Override
-	public DeleteDemandResponse getInstance(UnmarshallerContext context) {
-		return	DeleteDemandResponseUnmarshaller.unmarshall(this, context);
+	public ModifyPortRangeListResponse getInstance(UnmarshallerContext context) {
+		return	ModifyPortRangeListResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

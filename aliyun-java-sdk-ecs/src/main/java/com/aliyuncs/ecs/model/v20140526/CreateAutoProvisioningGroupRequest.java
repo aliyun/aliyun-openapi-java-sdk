@@ -188,6 +188,7 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 				putQueryParameter("LaunchConfiguration.DataDisk." + (depth1 + 1) + ".EncryptAlgorithm" , launchConfigurationDataDisks.get(depth1).getEncryptAlgorithm());
 				putQueryParameter("LaunchConfiguration.DataDisk." + (depth1 + 1) + ".ProvisionedIops" , launchConfigurationDataDisks.get(depth1).getProvisionedIops());
 				putQueryParameter("LaunchConfiguration.DataDisk." + (depth1 + 1) + ".BurstingEnabled" , launchConfigurationDataDisks.get(depth1).getBurstingEnabled());
+				putQueryParameter("LaunchConfiguration.DataDisk." + (depth1 + 1) + ".AutoSnapshotPolicyId" , launchConfigurationDataDisks.get(depth1).getAutoSnapshotPolicyId());
 			}
 		}	
 	}
@@ -525,6 +526,12 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 				putQueryParameter("LaunchConfiguration.PeriodUnit" , launchConfiguration.getPeriodUnit());
 				putQueryParameter("LaunchConfiguration.AutoRenew" , launchConfiguration.getAutoRenew());
 				putQueryParameter("LaunchConfiguration.AutoRenewPeriod" , launchConfiguration.getAutoRenewPeriod());
+				putQueryParameter("LaunchConfiguration.SpotDuration" , launchConfiguration.getSpotDuration());
+				putQueryParameter("LaunchConfiguration.SpotInterruptionBehavior" , launchConfiguration.getSpotInterruptionBehavior());
+				if (launchConfiguration.getImageOptions() != null) {
+					
+						putQueryParameter("LaunchConfiguration.ImageOptions.LoginAsNonRoot" , launchConfiguration.getImageOptions().getLoginAsNonRoot());
+				}
 		}	
 	}
 
@@ -633,6 +640,7 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 				putQueryParameter("LaunchConfiguration.SystemDisk.EncryptAlgorithm" , launchConfigurationSystemDisk.getEncryptAlgorithm());
 				putQueryParameter("LaunchConfiguration.SystemDisk.ProvisionedIops" , launchConfigurationSystemDisk.getProvisionedIops());
 				putQueryParameter("LaunchConfiguration.SystemDisk.BurstingEnabled" , launchConfigurationSystemDisk.getBurstingEnabled());
+				putQueryParameter("LaunchConfiguration.SystemDisk.AutoSnapshotPolicyId" , launchConfigurationSystemDisk.getAutoSnapshotPolicyId());
 		}	
 	}
 
@@ -999,6 +1007,8 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 
 		private Boolean burstingEnabled;
 
+		private String autoSnapshotPolicyId;
+
 		public String getPerformanceLevel() {
 			return this.performanceLevel;
 		}
@@ -1102,6 +1112,14 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 		public void setBurstingEnabled(Boolean burstingEnabled) {
 			this.burstingEnabled = burstingEnabled;
 		}
+
+		public String getAutoSnapshotPolicyId() {
+			return this.autoSnapshotPolicyId;
+		}
+
+		public void setAutoSnapshotPolicyId(String autoSnapshotPolicyId) {
+			this.autoSnapshotPolicyId = autoSnapshotPolicyId;
+		}
 	}
 
 	public static class Tag {
@@ -1199,6 +1217,12 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 
 		private Integer autoRenewPeriod;
 
+		private Integer spotDuration;
+
+		private String spotInterruptionBehavior;
+
+		private ImageOptions imageOptions;
+
 		public Integer getPeriod() {
 			return this.period;
 		}
@@ -1229,6 +1253,43 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 
 		public void setAutoRenewPeriod(Integer autoRenewPeriod) {
 			this.autoRenewPeriod = autoRenewPeriod;
+		}
+
+		public Integer getSpotDuration() {
+			return this.spotDuration;
+		}
+
+		public void setSpotDuration(Integer spotDuration) {
+			this.spotDuration = spotDuration;
+		}
+
+		public String getSpotInterruptionBehavior() {
+			return this.spotInterruptionBehavior;
+		}
+
+		public void setSpotInterruptionBehavior(String spotInterruptionBehavior) {
+			this.spotInterruptionBehavior = spotInterruptionBehavior;
+		}
+
+		public ImageOptions getImageOptions() {
+			return this.imageOptions;
+		}
+
+		public void setImageOptions(ImageOptions imageOptions) {
+			this.imageOptions = imageOptions;
+		}
+
+		public static class ImageOptions {
+
+			private Boolean loginAsNonRoot;
+
+			public Boolean getLoginAsNonRoot() {
+				return this.loginAsNonRoot;
+			}
+
+			public void setLoginAsNonRoot(Boolean loginAsNonRoot) {
+				this.loginAsNonRoot = loginAsNonRoot;
+			}
 		}
 	}
 
@@ -1277,6 +1338,8 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 
 		private Boolean burstingEnabled;
 
+		private String autoSnapshotPolicyId;
+
 		public String getEncrypted() {
 			return this.encrypted;
 		}
@@ -1315,6 +1378,14 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 
 		public void setBurstingEnabled(Boolean burstingEnabled) {
 			this.burstingEnabled = burstingEnabled;
+		}
+
+		public String getAutoSnapshotPolicyId() {
+			return this.autoSnapshotPolicyId;
+		}
+
+		public void setAutoSnapshotPolicyId(String autoSnapshotPolicyId) {
+			this.autoSnapshotPolicyId = autoSnapshotPolicyId;
 		}
 	}
 

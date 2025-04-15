@@ -32,45 +32,45 @@ public class RevokeSecurityGroupEgressRequest extends RpcAcsRequest<RevokeSecuri
 
 	private String sourcePortRange;
 
-	private String clientToken;
-
 	private String destPrefixListId;
-
-	private String securityGroupId;
-
-	private String description;
 
 	private List<Permissions> permissions;
 
-	private String policy;
-
 	private String ipv6DestCidrIp;
-
-	private String ipv6SourceCidrIp;
 
 	private String portRange;
 
-	private String resourceOwnerAccount;
-
 	private String ipProtocol;
 
-	private String ownerAccount;
-
 	private String sourceCidrIp;
-
-	private String destGroupId;
 
 	private Long ownerId;
 
 	private String priority;
 
-	private String destGroupOwnerAccount;
-
 	private String destCidrIp;
 
-	private Long destGroupOwnerId;
-
 	private List<String> securityGroupRuleIds;
+
+	private String clientToken;
+
+	private String securityGroupId;
+
+	private String description;
+
+	private String policy;
+
+	private String ipv6SourceCidrIp;
+
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
+
+	private String destGroupId;
+
+	private String destGroupOwnerAccount;
+
+	private Long destGroupOwnerId;
 	public RevokeSecurityGroupEgressRequest() {
 		super("Ecs", "2014-05-26", "RevokeSecurityGroupEgress", "ecs");
 		setMethod(MethodType.POST);
@@ -113,17 +113,6 @@ public class RevokeSecurityGroupEgressRequest extends RpcAcsRequest<RevokeSecuri
 		}
 	}
 
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
 	public String getDestPrefixListId() {
 		return this.destPrefixListId;
 	}
@@ -132,28 +121,6 @@ public class RevokeSecurityGroupEgressRequest extends RpcAcsRequest<RevokeSecuri
 		this.destPrefixListId = destPrefixListId;
 		if(destPrefixListId != null){
 			putQueryParameter("DestPrefixListId", destPrefixListId);
-		}
-	}
-
-	public String getSecurityGroupId() {
-		return this.securityGroupId;
-	}
-
-	public void setSecurityGroupId(String securityGroupId) {
-		this.securityGroupId = securityGroupId;
-		if(securityGroupId != null){
-			putQueryParameter("SecurityGroupId", securityGroupId);
-		}
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
 		}
 	}
 
@@ -182,20 +149,10 @@ public class RevokeSecurityGroupEgressRequest extends RpcAcsRequest<RevokeSecuri
 						putQueryParameter("Permissions." + (depth1 + 1) + ".DestGroupOwnerId" , permissions.get(depth1).getDestGroupOwnerId());
 						putQueryParameter("Permissions." + (depth1 + 1) + ".NicType" , permissions.get(depth1).getNicType());
 						putQueryParameter("Permissions." + (depth1 + 1) + ".Description" , permissions.get(depth1).getDescription());
+						putQueryParameter("Permissions." + (depth1 + 1) + ".PortRangeListId" , permissions.get(depth1).getPortRangeListId());
 				}
 			}
 		}	
-	}
-
-	public String getPolicy() {
-		return this.policy;
-	}
-
-	public void setPolicy(String policy) {
-		this.policy = policy;
-		if(policy != null){
-			putQueryParameter("Policy", policy);
-		}
 	}
 
 	public String getIpv6DestCidrIp() {
@@ -206,17 +163,6 @@ public class RevokeSecurityGroupEgressRequest extends RpcAcsRequest<RevokeSecuri
 		this.ipv6DestCidrIp = ipv6DestCidrIp;
 		if(ipv6DestCidrIp != null){
 			putQueryParameter("Ipv6DestCidrIp", ipv6DestCidrIp);
-		}
-	}
-
-	public String getIpv6SourceCidrIp() {
-		return this.ipv6SourceCidrIp;
-	}
-
-	public void setIpv6SourceCidrIp(String ipv6SourceCidrIp) {
-		this.ipv6SourceCidrIp = ipv6SourceCidrIp;
-		if(ipv6SourceCidrIp != null){
-			putQueryParameter("Ipv6SourceCidrIp", ipv6SourceCidrIp);
 		}
 	}
 
@@ -231,17 +177,6 @@ public class RevokeSecurityGroupEgressRequest extends RpcAcsRequest<RevokeSecuri
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
 	public String getIpProtocol() {
 		return this.ipProtocol;
 	}
@@ -253,17 +188,6 @@ public class RevokeSecurityGroupEgressRequest extends RpcAcsRequest<RevokeSecuri
 		}
 	}
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
 	public String getSourceCidrIp() {
 		return this.sourceCidrIp;
 	}
@@ -272,17 +196,6 @@ public class RevokeSecurityGroupEgressRequest extends RpcAcsRequest<RevokeSecuri
 		this.sourceCidrIp = sourceCidrIp;
 		if(sourceCidrIp != null){
 			putQueryParameter("SourceCidrIp", sourceCidrIp);
-		}
-	}
-
-	public String getDestGroupId() {
-		return this.destGroupId;
-	}
-
-	public void setDestGroupId(String destGroupId) {
-		this.destGroupId = destGroupId;
-		if(destGroupId != null){
-			putQueryParameter("DestGroupId", destGroupId);
 		}
 	}
 
@@ -308,17 +221,6 @@ public class RevokeSecurityGroupEgressRequest extends RpcAcsRequest<RevokeSecuri
 		}
 	}
 
-	public String getDestGroupOwnerAccount() {
-		return this.destGroupOwnerAccount;
-	}
-
-	public void setDestGroupOwnerAccount(String destGroupOwnerAccount) {
-		this.destGroupOwnerAccount = destGroupOwnerAccount;
-		if(destGroupOwnerAccount != null){
-			putQueryParameter("DestGroupOwnerAccount", destGroupOwnerAccount);
-		}
-	}
-
 	public String getDestCidrIp() {
 		return this.destCidrIp;
 	}
@@ -327,17 +229,6 @@ public class RevokeSecurityGroupEgressRequest extends RpcAcsRequest<RevokeSecuri
 		this.destCidrIp = destCidrIp;
 		if(destCidrIp != null){
 			putQueryParameter("DestCidrIp", destCidrIp);
-		}
-	}
-
-	public Long getDestGroupOwnerId() {
-		return this.destGroupOwnerId;
-	}
-
-	public void setDestGroupOwnerId(Long destGroupOwnerId) {
-		this.destGroupOwnerId = destGroupOwnerId;
-		if(destGroupOwnerId != null){
-			putQueryParameter("DestGroupOwnerId", destGroupOwnerId.toString());
 		}
 	}
 
@@ -352,6 +243,116 @@ public class RevokeSecurityGroupEgressRequest extends RpcAcsRequest<RevokeSecuri
 				putQueryParameter("SecurityGroupRuleId." + (i + 1) , securityGroupRuleIds.get(i));
 			}
 		}	
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getSecurityGroupId() {
+		return this.securityGroupId;
+	}
+
+	public void setSecurityGroupId(String securityGroupId) {
+		this.securityGroupId = securityGroupId;
+		if(securityGroupId != null){
+			putQueryParameter("SecurityGroupId", securityGroupId);
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getPolicy() {
+		return this.policy;
+	}
+
+	public void setPolicy(String policy) {
+		this.policy = policy;
+		if(policy != null){
+			putQueryParameter("Policy", policy);
+		}
+	}
+
+	public String getIpv6SourceCidrIp() {
+		return this.ipv6SourceCidrIp;
+	}
+
+	public void setIpv6SourceCidrIp(String ipv6SourceCidrIp) {
+		this.ipv6SourceCidrIp = ipv6SourceCidrIp;
+		if(ipv6SourceCidrIp != null){
+			putQueryParameter("Ipv6SourceCidrIp", ipv6SourceCidrIp);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getDestGroupId() {
+		return this.destGroupId;
+	}
+
+	public void setDestGroupId(String destGroupId) {
+		this.destGroupId = destGroupId;
+		if(destGroupId != null){
+			putQueryParameter("DestGroupId", destGroupId);
+		}
+	}
+
+	public String getDestGroupOwnerAccount() {
+		return this.destGroupOwnerAccount;
+	}
+
+	public void setDestGroupOwnerAccount(String destGroupOwnerAccount) {
+		this.destGroupOwnerAccount = destGroupOwnerAccount;
+		if(destGroupOwnerAccount != null){
+			putQueryParameter("DestGroupOwnerAccount", destGroupOwnerAccount);
+		}
+	}
+
+	public Long getDestGroupOwnerId() {
+		return this.destGroupOwnerId;
+	}
+
+	public void setDestGroupOwnerId(Long destGroupOwnerId) {
+		this.destGroupOwnerId = destGroupOwnerId;
+		if(destGroupOwnerId != null){
+			putQueryParameter("DestGroupOwnerId", destGroupOwnerId.toString());
+		}
 	}
 
 	public static class Permissions {
@@ -385,6 +386,8 @@ public class RevokeSecurityGroupEgressRequest extends RpcAcsRequest<RevokeSecuri
 		private String nicType;
 
 		private String description;
+
+		private String portRangeListId;
 
 		public String getPolicy() {
 			return this.policy;
@@ -504,6 +507,14 @@ public class RevokeSecurityGroupEgressRequest extends RpcAcsRequest<RevokeSecuri
 
 		public void setDescription(String description) {
 			this.description = description;
+		}
+
+		public String getPortRangeListId() {
+			return this.portRangeListId;
+		}
+
+		public void setPortRangeListId(String portRangeListId) {
+			this.portRangeListId = portRangeListId;
 		}
 	}
 

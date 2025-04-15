@@ -12,30 +12,18 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.ecs.model.v20140526;
+package com.aliyuncs.ecs.transform.v20140526;
 
-import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ecs.transform.v20140526.ModifyDemandResponseUnmarshaller;
+import com.aliyuncs.ecs.model.v20140526.ModifyPortRangeListResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-/**
- * @author auto create
- * @version 
- */
-public class ModifyDemandResponse extends AcsResponse {
 
-	private String requestId;
+public class ModifyPortRangeListResponseUnmarshaller {
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	@Override
-	public ModifyDemandResponse getInstance(UnmarshallerContext context) {
-		return	ModifyDemandResponseUnmarshaller.unmarshall(this, context);
+	public static ModifyPortRangeListResponse unmarshall(ModifyPortRangeListResponse modifyPortRangeListResponse, UnmarshallerContext _ctx) {
+		
+		modifyPortRangeListResponse.setRequestId(_ctx.stringValue("ModifyPortRangeListResponse.RequestId"));
+	 
+	 	return modifyPortRangeListResponse;
 	}
 }

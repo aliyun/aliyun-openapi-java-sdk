@@ -101,6 +101,7 @@ public class DescribeInstancesResponseUnmarshaller {
 			instance.setInstanceTypeFamily(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].InstanceTypeFamily"));
 			instance.setOSType(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].OSType"));
 			instance.setSpotInterruptionBehavior(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].SpotInterruptionBehavior"));
+			instance.setEnableNVS(_ctx.booleanValue("DescribeInstancesResponse.Instances["+ i +"].EnableNVS"));
 
 			List<String> rdmaIpAddress = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeInstancesResponse.Instances["+ i +"].RdmaIpAddress.Length"); j++) {
@@ -171,6 +172,9 @@ public class DescribeInstancesResponseUnmarshaller {
 			cpuOptions.setCoreCount(_ctx.integerValue("DescribeInstancesResponse.Instances["+ i +"].CpuOptions.CoreCount"));
 			cpuOptions.setThreadsPerCore(_ctx.integerValue("DescribeInstancesResponse.Instances["+ i +"].CpuOptions.ThreadsPerCore"));
 			cpuOptions.setTopologyType(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].CpuOptions.TopologyType"));
+			cpuOptions.setEnableVISST(_ctx.booleanValue("DescribeInstancesResponse.Instances["+ i +"].CpuOptions.EnableVISST"));
+			cpuOptions.setTurboMode(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].CpuOptions.TurboMode"));
+			cpuOptions.setEnableVRDT(_ctx.booleanValue("DescribeInstancesResponse.Instances["+ i +"].CpuOptions.EnableVRDT"));
 			instance.setCpuOptions(cpuOptions);
 
 			MetadataOptions metadataOptions = new MetadataOptions();

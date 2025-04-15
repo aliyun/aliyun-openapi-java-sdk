@@ -15,6 +15,7 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ecs.Endpoint;
 
@@ -22,40 +23,26 @@ import com.aliyuncs.ecs.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteDemandRequest extends RpcAcsRequest<DeleteDemandResponse> {
+public class DeletePortRangeListRequest extends RpcAcsRequest<DeletePortRangeListResponse> {
 	   
-
-	private String reason;
 
 	private Long resourceOwnerId;
 
-	private String clientToken;
+	private String portRangeListId;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	private String demandId;
-	public DeleteDemandRequest() {
-		super("Ecs", "2014-05-26", "DeleteDemand", "ecs");
+	public DeletePortRangeListRequest() {
+		super("Ecs", "2014-05-26", "DeletePortRangeList", "ecs");
+		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getReason() {
-		return this.reason;
-	}
-
-	public void setReason(String reason) {
-		this.reason = reason;
-		if(reason != null){
-			putQueryParameter("Reason", reason);
-		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -69,14 +56,14 @@ public class DeleteDemandRequest extends RpcAcsRequest<DeleteDemandResponse> {
 		}
 	}
 
-	public String getClientToken() {
-		return this.clientToken;
+	public String getPortRangeListId() {
+		return this.portRangeListId;
 	}
 
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
+	public void setPortRangeListId(String portRangeListId) {
+		this.portRangeListId = portRangeListId;
+		if(portRangeListId != null){
+			putQueryParameter("PortRangeListId", portRangeListId);
 		}
 	}
 
@@ -113,20 +100,9 @@ public class DeleteDemandRequest extends RpcAcsRequest<DeleteDemandResponse> {
 		}
 	}
 
-	public String getDemandId() {
-		return this.demandId;
-	}
-
-	public void setDemandId(String demandId) {
-		this.demandId = demandId;
-		if(demandId != null){
-			putQueryParameter("DemandId", demandId);
-		}
-	}
-
 	@Override
-	public Class<DeleteDemandResponse> getResponseClass() {
-		return DeleteDemandResponse.class;
+	public Class<DeletePortRangeListResponse> getResponseClass() {
+		return DeletePortRangeListResponse.class;
 	}
 
 }

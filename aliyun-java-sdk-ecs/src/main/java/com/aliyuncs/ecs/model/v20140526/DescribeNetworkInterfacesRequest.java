@@ -28,27 +28,13 @@ public class DescribeNetworkInterfacesRequest extends RpcAcsRequest<DescribeNetw
 
 	private Long resourceOwnerId;
 
-	private Boolean serviceManaged;
-
-	private String securityGroupId;
-
 	private String type;
 
-	private Integer pageNumber;
-
 	private String resourceGroupId;
-
-	private String nextToken;
-
-	private Integer pageSize;
 
 	private List<Tag> tags;
 
 	private String networkInterfaceName;
-
-	private String resourceOwnerAccount;
-
-	private String ownerAccount;
 
 	private Long ownerId;
 
@@ -58,17 +44,31 @@ public class DescribeNetworkInterfacesRequest extends RpcAcsRequest<DescribeNetw
 
 	private String instanceId;
 
-	private String vpcId;
-
-	private String primaryIpAddress;
-
 	private Integer maxResults;
-
-	private List<String> networkInterfaceIds;
 
 	private List<String> ipv6Addresss;
 
 	private String status;
+
+	private Boolean serviceManaged;
+
+	private String securityGroupId;
+
+	private Integer pageNumber;
+
+	private String nextToken;
+
+	private Integer pageSize;
+
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
+
+	private String vpcId;
+
+	private String primaryIpAddress;
+
+	private List<String> networkInterfaceIds;
 	public DescribeNetworkInterfacesRequest() {
 		super("Ecs", "2014-05-26", "DescribeNetworkInterfaces", "ecs");
 		setMethod(MethodType.POST);
@@ -89,28 +89,6 @@ public class DescribeNetworkInterfacesRequest extends RpcAcsRequest<DescribeNetw
 		}
 	}
 
-	public Boolean getServiceManaged() {
-		return this.serviceManaged;
-	}
-
-	public void setServiceManaged(Boolean serviceManaged) {
-		this.serviceManaged = serviceManaged;
-		if(serviceManaged != null){
-			putQueryParameter("ServiceManaged", serviceManaged.toString());
-		}
-	}
-
-	public String getSecurityGroupId() {
-		return this.securityGroupId;
-	}
-
-	public void setSecurityGroupId(String securityGroupId) {
-		this.securityGroupId = securityGroupId;
-		if(securityGroupId != null){
-			putQueryParameter("SecurityGroupId", securityGroupId);
-		}
-	}
-
 	public String getType() {
 		return this.type;
 	}
@@ -122,17 +100,6 @@ public class DescribeNetworkInterfacesRequest extends RpcAcsRequest<DescribeNetw
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
 	public String getResourceGroupId() {
 		return this.resourceGroupId;
 	}
@@ -141,28 +108,6 @@ public class DescribeNetworkInterfacesRequest extends RpcAcsRequest<DescribeNetw
 		this.resourceGroupId = resourceGroupId;
 		if(resourceGroupId != null){
 			putQueryParameter("ResourceGroupId", resourceGroupId);
-		}
-	}
-
-	public String getNextToken() {
-		return this.nextToken;
-	}
-
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
-		if(nextToken != null){
-			putQueryParameter("NextToken", nextToken);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -188,28 +133,6 @@ public class DescribeNetworkInterfacesRequest extends RpcAcsRequest<DescribeNetw
 		this.networkInterfaceName = networkInterfaceName;
 		if(networkInterfaceName != null){
 			putQueryParameter("NetworkInterfaceName", networkInterfaceName);
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
 		}
 	}
 
@@ -259,28 +182,6 @@ public class DescribeNetworkInterfacesRequest extends RpcAcsRequest<DescribeNetw
 		}
 	}
 
-	public String getVpcId() {
-		return this.vpcId;
-	}
-
-	public void setVpcId(String vpcId) {
-		this.vpcId = vpcId;
-		if(vpcId != null){
-			putQueryParameter("VpcId", vpcId);
-		}
-	}
-
-	public String getPrimaryIpAddress() {
-		return this.primaryIpAddress;
-	}
-
-	public void setPrimaryIpAddress(String primaryIpAddress) {
-		this.primaryIpAddress = primaryIpAddress;
-		if(primaryIpAddress != null){
-			putQueryParameter("PrimaryIpAddress", primaryIpAddress);
-		}
-	}
-
 	public Integer getMaxResults() {
 		return this.maxResults;
 	}
@@ -290,19 +191,6 @@ public class DescribeNetworkInterfacesRequest extends RpcAcsRequest<DescribeNetw
 		if(maxResults != null){
 			putQueryParameter("MaxResults", maxResults.toString());
 		}
-	}
-
-	public List<String> getNetworkInterfaceIds() {
-		return this.networkInterfaceIds;
-	}
-
-	public void setNetworkInterfaceIds(List<String> networkInterfaceIds) {
-		this.networkInterfaceIds = networkInterfaceIds;	
-		if (networkInterfaceIds != null) {
-			for (int i = 0; i < networkInterfaceIds.size(); i++) {
-				putQueryParameter("NetworkInterfaceId." + (i + 1) , networkInterfaceIds.get(i));
-			}
-		}	
 	}
 
 	public List<String> getIpv6Addresss() {
@@ -327,6 +215,118 @@ public class DescribeNetworkInterfacesRequest extends RpcAcsRequest<DescribeNetw
 		if(status != null){
 			putQueryParameter("Status", status);
 		}
+	}
+
+	public Boolean getServiceManaged() {
+		return this.serviceManaged;
+	}
+
+	public void setServiceManaged(Boolean serviceManaged) {
+		this.serviceManaged = serviceManaged;
+		if(serviceManaged != null){
+			putQueryParameter("ServiceManaged", serviceManaged.toString());
+		}
+	}
+
+	public String getSecurityGroupId() {
+		return this.securityGroupId;
+	}
+
+	public void setSecurityGroupId(String securityGroupId) {
+		this.securityGroupId = securityGroupId;
+		if(securityGroupId != null){
+			putQueryParameter("SecurityGroupId", securityGroupId);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getVpcId() {
+		return this.vpcId;
+	}
+
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+		if(vpcId != null){
+			putQueryParameter("VpcId", vpcId);
+		}
+	}
+
+	public String getPrimaryIpAddress() {
+		return this.primaryIpAddress;
+	}
+
+	public void setPrimaryIpAddress(String primaryIpAddress) {
+		this.primaryIpAddress = primaryIpAddress;
+		if(primaryIpAddress != null){
+			putQueryParameter("PrimaryIpAddress", primaryIpAddress);
+		}
+	}
+
+	public List<String> getNetworkInterfaceIds() {
+		return this.networkInterfaceIds;
+	}
+
+	public void setNetworkInterfaceIds(List<String> networkInterfaceIds) {
+		this.networkInterfaceIds = networkInterfaceIds;	
+		if (networkInterfaceIds != null) {
+			for (int i = 0; i < networkInterfaceIds.size(); i++) {
+				putQueryParameter("NetworkInterfaceId." + (i + 1) , networkInterfaceIds.get(i));
+			}
+		}	
 	}
 
 	public static class Tag {

@@ -14,17 +14,17 @@
 
 package com.aliyuncs.ecs.transform.v20140526;
 
-import com.aliyuncs.ecs.model.v20140526.CreateDemandResponse;
+import com.aliyuncs.ecs.model.v20140526.CreatePortRangeListResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class CreateDemandResponseUnmarshaller {
+public class CreatePortRangeListResponseUnmarshaller {
 
-	public static CreateDemandResponse unmarshall(CreateDemandResponse createDemandResponse, UnmarshallerContext _ctx) {
+	public static CreatePortRangeListResponse unmarshall(CreatePortRangeListResponse createPortRangeListResponse, UnmarshallerContext _ctx) {
 		
-		createDemandResponse.setRequestId(_ctx.stringValue("CreateDemandResponse.RequestId"));
-		createDemandResponse.setDemandId(_ctx.stringValue("CreateDemandResponse.DemandId"));
+		createPortRangeListResponse.setRequestId(_ctx.stringValue("CreatePortRangeListResponse.RequestId"));
+		createPortRangeListResponse.setPortRangeListId(_ctx.stringValue("CreatePortRangeListResponse.PortRangeListId"));
 	 
-	 	return createDemandResponse;
+	 	return createPortRangeListResponse;
 	}
 }

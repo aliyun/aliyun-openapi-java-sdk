@@ -26,25 +26,37 @@ import com.aliyuncs.ecs.Endpoint;
 public class DescribeInstanceHistoryEventsRequest extends RpcAcsRequest<DescribeInstanceHistoryEventsResponse> {
 	   
 
-	private List<String> eventIds;
-
 	private Long resourceOwnerId;
-
-	private String eventCycleStatus;
-
-	private Integer pageNumber;
 
 	private String impactLevel;
 
 	private String resourceGroupId;
 
-	private String nextToken;
-
-	private Integer pageSize;
-
 	private List<String> instanceEventCycleStatuss;
 
 	private List<Tag> tags;
+
+	private String notBeforeStart;
+
+	private Long ownerId;
+
+	private String instanceId;
+
+	private String notBeforeEnd;
+
+	private Long maxResults;
+
+	private String eventType;
+
+	private List<String> eventIds;
+
+	private String eventCycleStatus;
+
+	private Integer pageNumber;
+
+	private String nextToken;
+
+	private Integer pageSize;
 
 	private String eventPublishTimeEnd;
 
@@ -56,21 +68,9 @@ public class DescribeInstanceHistoryEventsRequest extends RpcAcsRequest<Describe
 
 	private String ownerAccount;
 
-	private String notBeforeStart;
-
-	private Long ownerId;
-
 	private String resourceType;
 
 	private String eventPublishTimeStart;
-
-	private String instanceId;
-
-	private String notBeforeEnd;
-
-	private Long maxResults;
-
-	private String eventType;
 	public DescribeInstanceHistoryEventsRequest() {
 		super("Ecs", "2014-05-26", "DescribeInstanceHistoryEvents", "ecs");
 		setMethod(MethodType.POST);
@@ -78,19 +78,6 @@ public class DescribeInstanceHistoryEventsRequest extends RpcAcsRequest<Describe
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public List<String> getEventIds() {
-		return this.eventIds;
-	}
-
-	public void setEventIds(List<String> eventIds) {
-		this.eventIds = eventIds;	
-		if (eventIds != null) {
-			for (int i = 0; i < eventIds.size(); i++) {
-				putQueryParameter("EventId." + (i + 1) , eventIds.get(i));
-			}
-		}	
 	}
 
 	public Long getResourceOwnerId() {
@@ -101,28 +88,6 @@ public class DescribeInstanceHistoryEventsRequest extends RpcAcsRequest<Describe
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getEventCycleStatus() {
-		return this.eventCycleStatus;
-	}
-
-	public void setEventCycleStatus(String eventCycleStatus) {
-		this.eventCycleStatus = eventCycleStatus;
-		if(eventCycleStatus != null){
-			putQueryParameter("EventCycleStatus", eventCycleStatus);
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
@@ -145,28 +110,6 @@ public class DescribeInstanceHistoryEventsRequest extends RpcAcsRequest<Describe
 		this.resourceGroupId = resourceGroupId;
 		if(resourceGroupId != null){
 			putQueryParameter("ResourceGroupId", resourceGroupId);
-		}
-	}
-
-	public String getNextToken() {
-		return this.nextToken;
-	}
-
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
-		if(nextToken != null){
-			putQueryParameter("NextToken", nextToken);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -195,6 +138,129 @@ public class DescribeInstanceHistoryEventsRequest extends RpcAcsRequest<Describe
 				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
 			}
 		}	
+	}
+
+	public String getNotBeforeStart() {
+		return this.notBeforeStart;
+	}
+
+	public void setNotBeforeStart(String notBeforeStart) {
+		this.notBeforeStart = notBeforeStart;
+		if(notBeforeStart != null){
+			putQueryParameter("NotBefore.Start", notBeforeStart);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getNotBeforeEnd() {
+		return this.notBeforeEnd;
+	}
+
+	public void setNotBeforeEnd(String notBeforeEnd) {
+		this.notBeforeEnd = notBeforeEnd;
+		if(notBeforeEnd != null){
+			putQueryParameter("NotBefore.End", notBeforeEnd);
+		}
+	}
+
+	public Long getMaxResults() {
+		return this.maxResults;
+	}
+
+	public void setMaxResults(Long maxResults) {
+		this.maxResults = maxResults;
+		if(maxResults != null){
+			putQueryParameter("MaxResults", maxResults.toString());
+		}
+	}
+
+	public String getEventType() {
+		return this.eventType;
+	}
+
+	public void setEventType(String eventType) {
+		this.eventType = eventType;
+		if(eventType != null){
+			putQueryParameter("EventType", eventType);
+		}
+	}
+
+	public List<String> getEventIds() {
+		return this.eventIds;
+	}
+
+	public void setEventIds(List<String> eventIds) {
+		this.eventIds = eventIds;	
+		if (eventIds != null) {
+			for (int i = 0; i < eventIds.size(); i++) {
+				putQueryParameter("EventId." + (i + 1) , eventIds.get(i));
+			}
+		}	
+	}
+
+	public String getEventCycleStatus() {
+		return this.eventCycleStatus;
+	}
+
+	public void setEventCycleStatus(String eventCycleStatus) {
+		this.eventCycleStatus = eventCycleStatus;
+		if(eventCycleStatus != null){
+			putQueryParameter("EventCycleStatus", eventCycleStatus);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
 	}
 
 	public String getEventPublishTimeEnd() {
@@ -256,28 +322,6 @@ public class DescribeInstanceHistoryEventsRequest extends RpcAcsRequest<Describe
 		}
 	}
 
-	public String getNotBeforeStart() {
-		return this.notBeforeStart;
-	}
-
-	public void setNotBeforeStart(String notBeforeStart) {
-		this.notBeforeStart = notBeforeStart;
-		if(notBeforeStart != null){
-			putQueryParameter("NotBefore.Start", notBeforeStart);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
 	public String getResourceType() {
 		return this.resourceType;
 	}
@@ -297,50 +341,6 @@ public class DescribeInstanceHistoryEventsRequest extends RpcAcsRequest<Describe
 		this.eventPublishTimeStart = eventPublishTimeStart;
 		if(eventPublishTimeStart != null){
 			putQueryParameter("EventPublishTime.Start", eventPublishTimeStart);
-		}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getNotBeforeEnd() {
-		return this.notBeforeEnd;
-	}
-
-	public void setNotBeforeEnd(String notBeforeEnd) {
-		this.notBeforeEnd = notBeforeEnd;
-		if(notBeforeEnd != null){
-			putQueryParameter("NotBefore.End", notBeforeEnd);
-		}
-	}
-
-	public Long getMaxResults() {
-		return this.maxResults;
-	}
-
-	public void setMaxResults(Long maxResults) {
-		this.maxResults = maxResults;
-		if(maxResults != null){
-			putQueryParameter("MaxResults", maxResults.toString());
-		}
-	}
-
-	public String getEventType() {
-		return this.eventType;
-	}
-
-	public void setEventType(String eventType) {
-		this.eventType = eventType;
-		if(eventType != null){
-			putQueryParameter("EventType", eventType);
 		}
 	}
 

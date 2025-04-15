@@ -15,7 +15,7 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ecs.Endpoint;
 
@@ -23,30 +23,21 @@ import com.aliyuncs.ecs.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteInstancesRequest extends RpcAcsRequest<DeleteInstancesResponse> {
+public class DescribePortRangeListEntriesRequest extends RpcAcsRequest<DescribePortRangeListEntriesResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String clientToken;
-
-	private Boolean forceStop;
-
-	private Boolean terminateSubscription;
-
-	private Boolean dryRun;
+	private String portRangeListId;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	private List<String> instanceIds;
-
-	private Boolean force;
-	public DeleteInstancesRequest() {
-		super("Ecs", "2014-05-26", "DeleteInstances", "ecs");
+	public DescribePortRangeListEntriesRequest() {
+		super("Ecs", "2014-05-26", "DescribePortRangeListEntries", "ecs");
+		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -65,47 +56,14 @@ public class DeleteInstancesRequest extends RpcAcsRequest<DeleteInstancesRespons
 		}
 	}
 
-	public String getClientToken() {
-		return this.clientToken;
+	public String getPortRangeListId() {
+		return this.portRangeListId;
 	}
 
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
-	public Boolean getForceStop() {
-		return this.forceStop;
-	}
-
-	public void setForceStop(Boolean forceStop) {
-		this.forceStop = forceStop;
-		if(forceStop != null){
-			putQueryParameter("ForceStop", forceStop.toString());
-		}
-	}
-
-	public Boolean getTerminateSubscription() {
-		return this.terminateSubscription;
-	}
-
-	public void setTerminateSubscription(Boolean terminateSubscription) {
-		this.terminateSubscription = terminateSubscription;
-		if(terminateSubscription != null){
-			putQueryParameter("TerminateSubscription", terminateSubscription.toString());
-		}
-	}
-
-	public Boolean getDryRun() {
-		return this.dryRun;
-	}
-
-	public void setDryRun(Boolean dryRun) {
-		this.dryRun = dryRun;
-		if(dryRun != null){
-			putQueryParameter("DryRun", dryRun.toString());
+	public void setPortRangeListId(String portRangeListId) {
+		this.portRangeListId = portRangeListId;
+		if(portRangeListId != null){
+			putQueryParameter("PortRangeListId", portRangeListId);
 		}
 	}
 
@@ -142,33 +100,9 @@ public class DeleteInstancesRequest extends RpcAcsRequest<DeleteInstancesRespons
 		}
 	}
 
-	public List<String> getInstanceIds() {
-		return this.instanceIds;
-	}
-
-	public void setInstanceIds(List<String> instanceIds) {
-		this.instanceIds = instanceIds;	
-		if (instanceIds != null) {
-			for (int i = 0; i < instanceIds.size(); i++) {
-				putQueryParameter("InstanceId." + (i + 1) , instanceIds.get(i));
-			}
-		}	
-	}
-
-	public Boolean getForce() {
-		return this.force;
-	}
-
-	public void setForce(Boolean force) {
-		this.force = force;
-		if(force != null){
-			putQueryParameter("Force", force.toString());
-		}
-	}
-
 	@Override
-	public Class<DeleteInstancesResponse> getResponseClass() {
-		return DeleteInstancesResponse.class;
+	public Class<DescribePortRangeListEntriesResponse> getResponseClass() {
+		return DescribePortRangeListEntriesResponse.class;
 	}
 
 }

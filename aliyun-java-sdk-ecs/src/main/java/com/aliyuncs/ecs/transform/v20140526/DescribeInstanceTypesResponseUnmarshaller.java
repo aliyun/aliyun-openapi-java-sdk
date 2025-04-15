@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.ecs.model.v20140526.DescribeInstanceTypesResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstanceTypesResponse.InstanceType;
+import com.aliyuncs.ecs.model.v20140526.DescribeInstanceTypesResponse.InstanceType.Attribute;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstanceTypesResponse.InstanceType.CpuOptions;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstanceTypesResponse.InstanceType.EnhancedNetwork;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstanceTypesResponse.InstanceType.NetworkCardInfo;
@@ -107,6 +108,16 @@ public class DescribeInstanceTypesResponseUnmarshaller {
 				networkCards.add(networkCardInfo);
 			}
 			instanceType.setNetworkCards(networkCards);
+
+			List<Attribute> attributes = new ArrayList<Attribute>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].Attributes.Length"); j++) {
+				Attribute attribute = new Attribute();
+				attribute.setName(_ctx.stringValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].Attributes["+ j +"].Name"));
+				attribute.setValue(_ctx.stringValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].Attributes["+ j +"].Value"));
+
+				attributes.add(attribute);
+			}
+			instanceType.setAttributes(attributes);
 
 			instanceTypes.add(instanceType);
 		}

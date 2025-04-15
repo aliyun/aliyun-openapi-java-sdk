@@ -77,6 +77,8 @@ public class DescribeInstanceAttributeResponse extends AcsResponse {
 
 	private Boolean enableJumboFrame;
 
+	private Boolean enableNetworkEncryption;
+
 	private List<LockReason> operationLocks;
 
 	private List<String> securityGroupIds;
@@ -297,6 +299,14 @@ public class DescribeInstanceAttributeResponse extends AcsResponse {
 
 	public void setEnableJumboFrame(Boolean enableJumboFrame) {
 		this.enableJumboFrame = enableJumboFrame;
+	}
+
+	public Boolean getEnableNetworkEncryption() {
+		return this.enableNetworkEncryption;
+	}
+
+	public void setEnableNetworkEncryption(Boolean enableNetworkEncryption) {
+		this.enableNetworkEncryption = enableNetworkEncryption;
 	}
 
 	public List<LockReason> getOperationLocks() {

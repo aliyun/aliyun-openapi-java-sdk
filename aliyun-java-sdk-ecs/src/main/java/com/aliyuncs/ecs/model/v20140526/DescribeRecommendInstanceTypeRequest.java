@@ -28,10 +28,6 @@ public class DescribeRecommendInstanceTypeRequest extends RpcAcsRequest<Describe
 
 	private Long resourceOwnerId;
 
-	private Float memory;
-
-	private String ioOptimized;
-
 	private String networkType;
 
 	private String scene;
@@ -40,11 +36,23 @@ public class DescribeRecommendInstanceTypeRequest extends RpcAcsRequest<Describe
 
 	private String systemDiskCategory;
 
+	private Float maxPrice;
+
+	private Long ownerId;
+
+	private String spotStrategy;
+
+	private String instanceFamilyLevel;
+
+	private String zoneId;
+
+	private Float memory;
+
+	private String ioOptimized;
+
 	private String instanceType;
 
 	private String instanceChargeType;
-
-	private Float maxPrice;
 
 	private String resourceOwnerAccount;
 
@@ -54,15 +62,7 @@ public class DescribeRecommendInstanceTypeRequest extends RpcAcsRequest<Describe
 
 	private List<String> instanceTypeFamilys;
 
-	private Long ownerId;
-
-	private String spotStrategy;
-
 	private String priorityStrategy;
-
-	private String instanceFamilyLevel;
-
-	private String zoneId;
 	public DescribeRecommendInstanceTypeRequest() {
 		super("Ecs", "2014-05-26", "DescribeRecommendInstanceType", "ecs");
 		setMethod(MethodType.POST);
@@ -80,28 +80,6 @@ public class DescribeRecommendInstanceTypeRequest extends RpcAcsRequest<Describe
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public Float getMemory() {
-		return this.memory;
-	}
-
-	public void setMemory(Float memory) {
-		this.memory = memory;
-		if(memory != null){
-			putQueryParameter("Memory", memory.toString());
-		}
-	}
-
-	public String getIoOptimized() {
-		return this.ioOptimized;
-	}
-
-	public void setIoOptimized(String ioOptimized) {
-		this.ioOptimized = ioOptimized;
-		if(ioOptimized != null){
-			putQueryParameter("IoOptimized", ioOptimized);
 		}
 	}
 
@@ -149,6 +127,83 @@ public class DescribeRecommendInstanceTypeRequest extends RpcAcsRequest<Describe
 		}
 	}
 
+	public Float getMaxPrice() {
+		return this.maxPrice;
+	}
+
+	public void setMaxPrice(Float maxPrice) {
+		this.maxPrice = maxPrice;
+		if(maxPrice != null){
+			putQueryParameter("MaxPrice", maxPrice.toString());
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getSpotStrategy() {
+		return this.spotStrategy;
+	}
+
+	public void setSpotStrategy(String spotStrategy) {
+		this.spotStrategy = spotStrategy;
+		if(spotStrategy != null){
+			putQueryParameter("SpotStrategy", spotStrategy);
+		}
+	}
+
+	public String getInstanceFamilyLevel() {
+		return this.instanceFamilyLevel;
+	}
+
+	public void setInstanceFamilyLevel(String instanceFamilyLevel) {
+		this.instanceFamilyLevel = instanceFamilyLevel;
+		if(instanceFamilyLevel != null){
+			putQueryParameter("InstanceFamilyLevel", instanceFamilyLevel);
+		}
+	}
+
+	public String getZoneId() {
+		return this.zoneId;
+	}
+
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+		if(zoneId != null){
+			putQueryParameter("ZoneId", zoneId);
+		}
+	}
+
+	public Float getMemory() {
+		return this.memory;
+	}
+
+	public void setMemory(Float memory) {
+		this.memory = memory;
+		if(memory != null){
+			putQueryParameter("Memory", memory.toString());
+		}
+	}
+
+	public String getIoOptimized() {
+		return this.ioOptimized;
+	}
+
+	public void setIoOptimized(String ioOptimized) {
+		this.ioOptimized = ioOptimized;
+		if(ioOptimized != null){
+			putQueryParameter("IoOptimized", ioOptimized);
+		}
+	}
+
 	public String getInstanceType() {
 		return this.instanceType;
 	}
@@ -168,17 +223,6 @@ public class DescribeRecommendInstanceTypeRequest extends RpcAcsRequest<Describe
 		this.instanceChargeType = instanceChargeType;
 		if(instanceChargeType != null){
 			putQueryParameter("InstanceChargeType", instanceChargeType);
-		}
-	}
-
-	public Float getMaxPrice() {
-		return this.maxPrice;
-	}
-
-	public void setMaxPrice(Float maxPrice) {
-		this.maxPrice = maxPrice;
-		if(maxPrice != null){
-			putQueryParameter("MaxPrice", maxPrice.toString());
 		}
 	}
 
@@ -228,28 +272,6 @@ public class DescribeRecommendInstanceTypeRequest extends RpcAcsRequest<Describe
 		}	
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getSpotStrategy() {
-		return this.spotStrategy;
-	}
-
-	public void setSpotStrategy(String spotStrategy) {
-		this.spotStrategy = spotStrategy;
-		if(spotStrategy != null){
-			putQueryParameter("SpotStrategy", spotStrategy);
-		}
-	}
-
 	public String getPriorityStrategy() {
 		return this.priorityStrategy;
 	}
@@ -258,28 +280,6 @@ public class DescribeRecommendInstanceTypeRequest extends RpcAcsRequest<Describe
 		this.priorityStrategy = priorityStrategy;
 		if(priorityStrategy != null){
 			putQueryParameter("PriorityStrategy", priorityStrategy);
-		}
-	}
-
-	public String getInstanceFamilyLevel() {
-		return this.instanceFamilyLevel;
-	}
-
-	public void setInstanceFamilyLevel(String instanceFamilyLevel) {
-		this.instanceFamilyLevel = instanceFamilyLevel;
-		if(instanceFamilyLevel != null){
-			putQueryParameter("InstanceFamilyLevel", instanceFamilyLevel);
-		}
-	}
-
-	public String getZoneId() {
-		return this.zoneId;
-	}
-
-	public void setZoneId(String zoneId) {
-		this.zoneId = zoneId;
-		if(zoneId != null){
-			putQueryParameter("ZoneId", zoneId);
 		}
 	}
 

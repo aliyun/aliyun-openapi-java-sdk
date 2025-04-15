@@ -16,6 +16,7 @@ package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ecs.Endpoint;
 
@@ -23,40 +24,31 @@ import com.aliyuncs.ecs.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeDemandsRequest extends RpcAcsRequest<DescribeDemandsResponse> {
+public class DescribePortRangeListsRequest extends RpcAcsRequest<DescribePortRangeListsResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private Integer pageNumber;
+	private String resourceGroupId;
 
-	private Integer pageSize;
-
-	private String instanceType;
+	private String nextToken;
 
 	private List<Tag> tags;
 
-	private String instanceChargeType;
-
-	private Boolean dryRun;
+	private List<String> portRangeListIds;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String instanceTypeFamily;
-
 	private Long ownerId;
 
-	private List<String> demandStatuss;
+	private Integer maxResults;
 
-	private String demandId;
-
-	private String zoneId;
-
-	private String demandType;
-	public DescribeDemandsRequest() {
-		super("Ecs", "2014-05-26", "DescribeDemands", "ecs");
+	private String portRangeListName;
+	public DescribePortRangeListsRequest() {
+		super("Ecs", "2014-05-26", "DescribePortRangeLists", "ecs");
+		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -75,36 +67,25 @@ public class DescribeDemandsRequest extends RpcAcsRequest<DescribeDemandsRespons
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public String getNextToken() {
+		return this.nextToken;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getInstanceType() {
-		return this.instanceType;
-	}
-
-	public void setInstanceType(String instanceType) {
-		this.instanceType = instanceType;
-		if(instanceType != null){
-			putQueryParameter("InstanceType", instanceType);
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
 		}
 	}
 
@@ -122,26 +103,17 @@ public class DescribeDemandsRequest extends RpcAcsRequest<DescribeDemandsRespons
 		}	
 	}
 
-	public String getInstanceChargeType() {
-		return this.instanceChargeType;
+	public List<String> getPortRangeListIds() {
+		return this.portRangeListIds;
 	}
 
-	public void setInstanceChargeType(String instanceChargeType) {
-		this.instanceChargeType = instanceChargeType;
-		if(instanceChargeType != null){
-			putQueryParameter("InstanceChargeType", instanceChargeType);
-		}
-	}
-
-	public Boolean getDryRun() {
-		return this.dryRun;
-	}
-
-	public void setDryRun(Boolean dryRun) {
-		this.dryRun = dryRun;
-		if(dryRun != null){
-			putQueryParameter("DryRun", dryRun.toString());
-		}
+	public void setPortRangeListIds(List<String> portRangeListIds) {
+		this.portRangeListIds = portRangeListIds;	
+		if (portRangeListIds != null) {
+			for (int i = 0; i < portRangeListIds.size(); i++) {
+				putQueryParameter("PortRangeListId." + (i + 1) , portRangeListIds.get(i));
+			}
+		}	
 	}
 
 	public String getResourceOwnerAccount() {
@@ -166,17 +138,6 @@ public class DescribeDemandsRequest extends RpcAcsRequest<DescribeDemandsRespons
 		}
 	}
 
-	public String getInstanceTypeFamily() {
-		return this.instanceTypeFamily;
-	}
-
-	public void setInstanceTypeFamily(String instanceTypeFamily) {
-		this.instanceTypeFamily = instanceTypeFamily;
-		if(instanceTypeFamily != null){
-			putQueryParameter("InstanceTypeFamily", instanceTypeFamily);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -188,49 +149,25 @@ public class DescribeDemandsRequest extends RpcAcsRequest<DescribeDemandsRespons
 		}
 	}
 
-	public List<String> getDemandStatuss() {
-		return this.demandStatuss;
+	public Integer getMaxResults() {
+		return this.maxResults;
 	}
 
-	public void setDemandStatuss(List<String> demandStatuss) {
-		this.demandStatuss = demandStatuss;	
-		if (demandStatuss != null) {
-			for (int i = 0; i < demandStatuss.size(); i++) {
-				putQueryParameter("DemandStatus." + (i + 1) , demandStatuss.get(i));
-			}
-		}	
-	}
-
-	public String getDemandId() {
-		return this.demandId;
-	}
-
-	public void setDemandId(String demandId) {
-		this.demandId = demandId;
-		if(demandId != null){
-			putQueryParameter("DemandId", demandId);
+	public void setMaxResults(Integer maxResults) {
+		this.maxResults = maxResults;
+		if(maxResults != null){
+			putQueryParameter("MaxResults", maxResults.toString());
 		}
 	}
 
-	public String getZoneId() {
-		return this.zoneId;
+	public String getPortRangeListName() {
+		return this.portRangeListName;
 	}
 
-	public void setZoneId(String zoneId) {
-		this.zoneId = zoneId;
-		if(zoneId != null){
-			putQueryParameter("ZoneId", zoneId);
-		}
-	}
-
-	public String getDemandType() {
-		return this.demandType;
-	}
-
-	public void setDemandType(String demandType) {
-		this.demandType = demandType;
-		if(demandType != null){
-			putQueryParameter("DemandType", demandType);
+	public void setPortRangeListName(String portRangeListName) {
+		this.portRangeListName = portRangeListName;
+		if(portRangeListName != null){
+			putQueryParameter("PortRangeListName", portRangeListName);
 		}
 	}
 
@@ -258,8 +195,8 @@ public class DescribeDemandsRequest extends RpcAcsRequest<DescribeDemandsRespons
 	}
 
 	@Override
-	public Class<DescribeDemandsResponse> getResponseClass() {
-		return DescribeDemandsResponse.class;
+	public Class<DescribePortRangeListsResponse> getResponseClass() {
+		return DescribePortRangeListsResponse.class;
 	}
 
 }

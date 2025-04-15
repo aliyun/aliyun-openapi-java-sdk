@@ -55,6 +55,7 @@ public class DescribeInstanceAttributeResponseUnmarshaller {
 		describeInstanceAttributeResponse.setInternetChargeType(_ctx.stringValue("DescribeInstanceAttributeResponse.InternetChargeType"));
 		describeInstanceAttributeResponse.setCreditSpecification(_ctx.stringValue("DescribeInstanceAttributeResponse.CreditSpecification"));
 		describeInstanceAttributeResponse.setEnableJumboFrame(_ctx.booleanValue("DescribeInstanceAttributeResponse.EnableJumboFrame"));
+		describeInstanceAttributeResponse.setEnableNetworkEncryption(_ctx.booleanValue("DescribeInstanceAttributeResponse.EnableNetworkEncryption"));
 
 		List<String> securityGroupIds = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceAttributeResponse.SecurityGroupIds.Length"); i++) {

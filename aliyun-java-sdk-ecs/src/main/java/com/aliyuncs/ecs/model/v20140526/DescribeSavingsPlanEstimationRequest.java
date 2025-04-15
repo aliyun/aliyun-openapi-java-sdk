@@ -26,19 +26,19 @@ import com.aliyuncs.ecs.Endpoint;
 public class DescribeSavingsPlanEstimationRequest extends RpcAcsRequest<DescribeSavingsPlanEstimationResponse> {
 	   
 
+	private String planType;
+
+	private String estimationResource;
+
 	private String resourceId;
 
 	private String period;
-
-	private String planType;
 
 	private String instanceTypeScope;
 
 	private String periodUnit;
 
 	private String offeringType;
-
-	private String estimationResource;
 	public DescribeSavingsPlanEstimationRequest() {
 		super("Ecs", "2014-05-26", "DescribeSavingsPlanEstimation", "ecs");
 		setProtocol(ProtocolType.HTTPS);
@@ -47,6 +47,28 @@ public class DescribeSavingsPlanEstimationRequest extends RpcAcsRequest<Describe
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getPlanType() {
+		return this.planType;
+	}
+
+	public void setPlanType(String planType) {
+		this.planType = planType;
+		if(planType != null){
+			putQueryParameter("PlanType", planType);
+		}
+	}
+
+	public String getEstimationResource() {
+		return this.estimationResource;
+	}
+
+	public void setEstimationResource(String estimationResource) {
+		this.estimationResource = estimationResource;
+		if(estimationResource != null){
+			putQueryParameter("EstimationResource", estimationResource);
+		}
 	}
 
 	public String getResourceId() {
@@ -68,17 +90,6 @@ public class DescribeSavingsPlanEstimationRequest extends RpcAcsRequest<Describe
 		this.period = period;
 		if(period != null){
 			putQueryParameter("Period", period);
-		}
-	}
-
-	public String getPlanType() {
-		return this.planType;
-	}
-
-	public void setPlanType(String planType) {
-		this.planType = planType;
-		if(planType != null){
-			putQueryParameter("PlanType", planType);
 		}
 	}
 
@@ -112,17 +123,6 @@ public class DescribeSavingsPlanEstimationRequest extends RpcAcsRequest<Describe
 		this.offeringType = offeringType;
 		if(offeringType != null){
 			putQueryParameter("OfferingType", offeringType);
-		}
-	}
-
-	public String getEstimationResource() {
-		return this.estimationResource;
-	}
-
-	public void setEstimationResource(String estimationResource) {
-		this.estimationResource = estimationResource;
-		if(estimationResource != null){
-			putQueryParameter("EstimationResource", estimationResource);
 		}
 	}
 
