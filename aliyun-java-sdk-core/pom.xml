@@ -4,7 +4,7 @@
     <groupId>com.aliyun</groupId>
     <artifactId>aliyun-java-sdk-core</artifactId>
     <packaging>jar</packaging>
-    <version>4.7.4</version>
+    <version>4.7.4-20250416-hotfix</version>
     <name>aliyun-java-sdk-core</name>
     <url>https://www.aliyun.com</url>
     <description>Aliyun Open API SDK for Java
@@ -96,8 +96,8 @@
         </dependency>
         <dependency>
             <groupId>org.bouncycastle</groupId>
-            <artifactId>bcprov-jdk18on</artifactId>
-            <version>1.78.1</version>
+            <artifactId>bcprov-jdk15on</artifactId>
+            <version>1.70</version>
         </dependency>
         <dependency>
             <groupId>org.mockito</groupId>

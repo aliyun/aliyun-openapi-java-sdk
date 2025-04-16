@@ -1,4 +1,7 @@
-﻿2025-04-11 Version:4.7.4
+﻿2025-04-16 Version:4.7.4-20250416-hotfix
+1.hotfix.
+
+2025-04-11 Version:4.7.4
 1.Improve credentials providers in profile.
 
 2024-12-04 Version:4.7.3
