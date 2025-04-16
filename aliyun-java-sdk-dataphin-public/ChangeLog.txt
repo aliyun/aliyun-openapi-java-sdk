@@ -1,3 +1,6 @@
+2025-04-16 Version: 1.0.5
+-- API CreateDataSource  input param fix.
+
 2025-03-07 Version: 1.0.4
 - Dataphin v4.5.1 openapi.
 
