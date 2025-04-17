@@ -24,10 +24,23 @@ import com.aliyuncs.http.MethodType;
 public class StartTerminalSessionRequest extends RpcAcsRequest<StartTerminalSessionResponse> {
 	   
 
+	private String commandLine;
+
 	private String instanceId;
 	public StartTerminalSessionRequest() {
 		super("SWAS-OPEN", "2020-06-01", "StartTerminalSession", "SWAS-OPEN");
 		setMethod(MethodType.POST);
+	}
+
+	public String getCommandLine() {
+		return this.commandLine;
+	}
+
+	public void setCommandLine(String commandLine) {
+		this.commandLine = commandLine;
+		if(commandLine != null){
+			putQueryParameter("CommandLine", commandLine);
+		}
 	}
 
 	public String getInstanceId() {
