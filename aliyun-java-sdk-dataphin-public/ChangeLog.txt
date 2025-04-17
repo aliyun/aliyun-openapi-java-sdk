@@ -1,3 +1,6 @@
+2025-04-17 Version: 1.0.6
+-- Add API ListApiByApp.
+
 2025-04-16 Version: 1.0.5
 -- API CreateDataSource  input param fix.
 
