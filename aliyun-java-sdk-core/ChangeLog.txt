@@ -1,4 +1,7 @@
-﻿2025-04-11 Version:4.7.4
+﻿2025-04-18 Version:4.7.5
+1.Support StsToken mode in cli profile.
+
+2025-04-11 Version:4.7.4
 1.Improve credentials providers in profile.
 
 2024-12-04 Version:4.7.3
