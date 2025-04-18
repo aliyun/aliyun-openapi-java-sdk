@@ -66,6 +66,9 @@ public class CLIProfileCredentialsProvider implements AlibabaCloudCredentialsPro
                     if ("AK".equals(mode)) {
                         return new StaticCredentialsProvider(
                                 new BasicCredentials(profile.getAccessKeyId(), profile.getAccessKeySecret()));
+                    } else if ("StsToken".equals(mode)) {
+                        return new StaticCredentialsProvider(
+                                new BasicSessionCredentials(profile.getAccessKeyId(), profile.getAccessKeySecret(), profile.getSecurityToken()));
                     } else if ("RamRoleArn".equals(mode)) {
                         AlibabaCloudCredentialsProvider innerProvider = new StaticCredentialsProvider(
                                 new BasicCredentials(profile.getAccessKeyId(), profile.getAccessKeySecret()));
@@ -185,6 +188,8 @@ public class CLIProfileCredentialsProvider implements AlibabaCloudCredentialsPro
         private String accessKeyId;
         @SerializedName("access_key_secret")
         private String accessKeySecret;
+        @SerializedName("sts_token")
+        private String securityToken;
         @SerializedName("ram_role_arn")
         private String roleArn;
         @SerializedName("ram_session_name")
@@ -222,6 +227,10 @@ public class CLIProfileCredentialsProvider implements AlibabaCloudCredentialsPro
 
         public String getAccessKeySecret() {
             return accessKeySecret;
+        }
+
+        public String getSecurityToken() {
+            return securityToken;
         }
 
         public String getRoleArn() {

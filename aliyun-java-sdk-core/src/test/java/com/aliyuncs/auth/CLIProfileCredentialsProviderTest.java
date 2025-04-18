@@ -96,6 +96,13 @@ public class CLIProfileCredentialsProviderTest {
         Assert.assertEquals("akid", credential.getAccessKeyId());
         Assert.assertEquals("secret", credential.getAccessKeySecret());
 
+        credentialsProvider = provider.reloadCredentialsProvider(config, "StsToken");
+        Assert.assertTrue(credentialsProvider instanceof StaticCredentialsProvider);
+        BasicSessionCredentials sessionCredentials = (BasicSessionCredentials) credentialsProvider.getCredentials();
+        Assert.assertEquals("accessKeyId", sessionCredentials.getAccessKeyId());
+        Assert.assertEquals("accessKeySecret", sessionCredentials.getAccessKeySecret());
+        Assert.assertEquals("stsToken", sessionCredentials.getSessionToken());
+
         credentialsProvider = provider.reloadCredentialsProvider(config, "RamRoleArn");
         Assert.assertTrue(credentialsProvider instanceof STSAssumeRoleSessionCredentialsProvider);
         try {
