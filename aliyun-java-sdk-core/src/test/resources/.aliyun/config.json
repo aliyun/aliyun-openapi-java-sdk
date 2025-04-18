@@ -8,6 +8,13 @@
       "access_key_secret": "secret"
     },
     {
+      "name": "StsToken",
+      "mode": "StsToken",
+      "access_key_id": "accessKeyId",
+      "access_key_secret": "accessKeySecret",
+      "sts_token": "stsToken"
+    },
+    {
       "name": "RamRoleArn",
       "mode": "RamRoleArn",
       "access_key_id": "akid",
