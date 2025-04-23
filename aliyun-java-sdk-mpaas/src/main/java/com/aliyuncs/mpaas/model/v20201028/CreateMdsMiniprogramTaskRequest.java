@@ -33,6 +33,8 @@ public class CreateMdsMiniprogramTaskRequest extends RpcAcsRequest<CreateMdsMini
 
 	private String tenantId;
 
+	private String h5Id;
+
 	private String publishMode;
 
 	private Long id;
@@ -100,6 +102,17 @@ public class CreateMdsMiniprogramTaskRequest extends RpcAcsRequest<CreateMdsMini
 		this.tenantId = tenantId;
 		if(tenantId != null){
 			putBodyParameter("TenantId", tenantId);
+		}
+	}
+
+	public String getH5Id() {
+		return this.h5Id;
+	}
+
+	public void setH5Id(String h5Id) {
+		this.h5Id = h5Id;
+		if(h5Id != null){
+			putBodyParameter("H5Id", h5Id);
 		}
 	}
 
