@@ -217,6 +217,9 @@ public class ScaleWithAdjustmentRequest extends RpcAcsRequest<ScaleWithAdjustmen
 		@SerializedName("Cpu")
 		private Float cpu;
 
+		@SerializedName("CustomLimitPriorities")
+		private List<CustomLimitPrioritiesItem> customLimitPriorities;
+
 		public Float getMemory() {
 			return this.memory;
 		}
@@ -239,6 +242,14 @@ public class ScaleWithAdjustmentRequest extends RpcAcsRequest<ScaleWithAdjustmen
 
 		public void setCpu(Float cpu) {
 			this.cpu = cpu;
+		}
+
+		public List<CustomLimitPrioritiesItem> getCustomLimitPriorities() {
+			return this.customLimitPriorities;
+		}
+
+		public void setCustomLimitPriorities(List<CustomLimitPrioritiesItem> customLimitPriorities) {
+			this.customLimitPriorities = customLimitPriorities;
 		}
 
 		public static class ContainerOverrideItem {
@@ -332,6 +343,31 @@ public class ScaleWithAdjustmentRequest extends RpcAcsRequest<ScaleWithAdjustmen
 				public void setKey(String key) {
 					this.key = key;
 				}
+			}
+		}
+
+		public static class CustomLimitPrioritiesItem {
+
+			@SerializedName("VSwitchId")
+			private String vSwitchId;
+
+			@SerializedName("InstanceType")
+			private String instanceType;
+
+			public String getVSwitchId() {
+				return this.vSwitchId;
+			}
+
+			public void setVSwitchId(String vSwitchId) {
+				this.vSwitchId = vSwitchId;
+			}
+
+			public String getInstanceType() {
+				return this.instanceType;
+			}
+
+			public void setInstanceType(String instanceType) {
+				this.instanceType = instanceType;
 			}
 		}
 	}

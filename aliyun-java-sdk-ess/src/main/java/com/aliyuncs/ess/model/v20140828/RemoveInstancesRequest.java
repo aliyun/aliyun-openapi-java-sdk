@@ -16,6 +16,8 @@ package com.aliyuncs.ess.model.v20140828;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ess.Endpoint;
 
@@ -31,6 +33,9 @@ public class RemoveInstancesRequest extends RpcAcsRequest<RemoveInstancesRespons
 	private String clientToken;
 
 	private String scalingGroupId;
+
+	@SerializedName("lifecycleHookContext")
+	private LifecycleHookContext lifecycleHookContext;
 
 	private Boolean decreaseDesiredCapacity;
 
@@ -87,6 +92,17 @@ public class RemoveInstancesRequest extends RpcAcsRequest<RemoveInstancesRespons
 		if(scalingGroupId != null){
 			putQueryParameter("ScalingGroupId", scalingGroupId);
 		}
+	}
+
+	public LifecycleHookContext getLifecycleHookContext() {
+		return this.lifecycleHookContext;
+	}
+
+	public void setLifecycleHookContext(LifecycleHookContext lifecycleHookContext) {
+		this.lifecycleHookContext = lifecycleHookContext;	
+		if (lifecycleHookContext != null) {
+			putQueryParameter("LifecycleHookContext" , new Gson().toJson(lifecycleHookContext));
+		}	
 	}
 
 	public Boolean getDecreaseDesiredCapacity() {
@@ -177,6 +193,31 @@ public class RemoveInstancesRequest extends RpcAcsRequest<RemoveInstancesRespons
 				putQueryParameter("InstanceId." + (i + 1) , instanceIds.get(i));
 			}
 		}	
+	}
+
+	public static class LifecycleHookContext {
+
+		@SerializedName("DisableLifecycleHook")
+		private Boolean disableLifecycleHook;
+
+		@SerializedName("IgnoredLifecycleHookIds")
+		private List<String> ignoredLifecycleHookIds;
+
+		public Boolean getDisableLifecycleHook() {
+			return this.disableLifecycleHook;
+		}
+
+		public void setDisableLifecycleHook(Boolean disableLifecycleHook) {
+			this.disableLifecycleHook = disableLifecycleHook;
+		}
+
+		public List<String> getIgnoredLifecycleHookIds() {
+			return this.ignoredLifecycleHookIds;
+		}
+
+		public void setIgnoredLifecycleHookIds(List<String> ignoredLifecycleHookIds) {
+			this.ignoredLifecycleHookIds = ignoredLifecycleHookIds;
+		}
 	}
 
 	@Override

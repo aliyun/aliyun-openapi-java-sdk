@@ -15,6 +15,7 @@
 package com.aliyuncs.ess.model.v20140828;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ess.Endpoint;
 
@@ -34,6 +35,8 @@ public class ModifyInstanceAttributeRequest extends RpcAcsRequest<ModifyInstance
 	private Boolean entrusted;
 
 	private String instanceId;
+
+	private List<String> instanceIdss;
 	public ModifyInstanceAttributeRequest() {
 		super("Ess", "2014-08-28", "ModifyInstanceAttribute", "ess");
 		setMethod(MethodType.POST);
@@ -96,6 +99,19 @@ public class ModifyInstanceAttributeRequest extends RpcAcsRequest<ModifyInstance
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
 		}
+	}
+
+	public List<String> getInstanceIdss() {
+		return this.instanceIdss;
+	}
+
+	public void setInstanceIdss(List<String> instanceIdss) {
+		this.instanceIdss = instanceIdss;	
+		if (instanceIdss != null) {
+			for (int i = 0; i < instanceIdss.size(); i++) {
+				putQueryParameter("InstanceIds." + (i + 1) , instanceIdss.get(i));
+			}
+		}	
 	}
 
 	@Override
