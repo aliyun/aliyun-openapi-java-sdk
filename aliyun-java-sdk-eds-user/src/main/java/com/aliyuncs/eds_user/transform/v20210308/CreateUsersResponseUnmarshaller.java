@@ -29,6 +29,7 @@ public class CreateUsersResponseUnmarshaller {
 	public static CreateUsersResponse unmarshall(CreateUsersResponse createUsersResponse, UnmarshallerContext _ctx) {
 		
 		createUsersResponse.setRequestId(_ctx.stringValue("CreateUsersResponse.RequestId"));
+		createUsersResponse.setAllSucceed(_ctx.booleanValue("CreateUsersResponse.AllSucceed"));
 
 		CreateResult createResult = new CreateResult();
 

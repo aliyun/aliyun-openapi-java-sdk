@@ -27,6 +27,8 @@ public class CreateUsersResponse extends AcsResponse {
 
 	private String requestId;
 
+	private Boolean allSucceed;
+
 	private CreateResult createResult;
 
 	public String getRequestId() {
@@ -35,6 +37,14 @@ public class CreateUsersResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getAllSucceed() {
+		return this.allSucceed;
+	}
+
+	public void setAllSucceed(Boolean allSucceed) {
+		this.allSucceed = allSucceed;
 	}
 
 	public CreateResult getCreateResult() {
