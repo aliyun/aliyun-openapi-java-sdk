@@ -42,6 +42,7 @@ public class DescribeAvailableResourceResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeAvailableResourceResponse.AvailableZoneList.Length"); i++) {
 			AvailableZone availableZone = new AvailableZone();
 			availableZone.setZoneId(_ctx.stringValue("DescribeAvailableResourceResponse.AvailableZoneList["+ i +"].ZoneId"));
+			availableZone.setZoneName(_ctx.stringValue("DescribeAvailableResourceResponse.AvailableZoneList["+ i +"].ZoneName"));
 
 			List<String> supportedComputeResource = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeAvailableResourceResponse.AvailableZoneList["+ i +"].SupportedComputeResource.Length"); j++) {

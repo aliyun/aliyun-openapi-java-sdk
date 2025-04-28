@@ -33,6 +33,8 @@ public class DescribeInclinedTablesRequest extends RpcAcsRequest<DescribeIncline
 
 	private Integer pageSize;
 
+	private String lang;
+
 	private String order;
 
 	private String resourceOwnerAccount;
@@ -92,6 +94,17 @@ public class DescribeInclinedTablesRequest extends RpcAcsRequest<DescribeIncline
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
 		}
 	}
 

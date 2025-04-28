@@ -27,13 +27,21 @@ public class DescribeAvailableAdvicesRequest extends RpcAcsRequest<DescribeAvail
 
 	private String dBClusterId;
 
+	private String schemaTableName;
+
 	private Long pageNumber;
+
+	private String adviceType;
 
 	private Long adviceDate;
 
 	private Long pageSize;
 
 	private String lang;
+
+	private String keyword;
+
+	private String order;
 	public DescribeAvailableAdvicesRequest() {
 		super("adb", "2019-03-15", "DescribeAvailableAdvices", "ads");
 		setMethod(MethodType.POST);
@@ -54,6 +62,17 @@ public class DescribeAvailableAdvicesRequest extends RpcAcsRequest<DescribeAvail
 		}
 	}
 
+	public String getSchemaTableName() {
+		return this.schemaTableName;
+	}
+
+	public void setSchemaTableName(String schemaTableName) {
+		this.schemaTableName = schemaTableName;
+		if(schemaTableName != null){
+			putQueryParameter("SchemaTableName", schemaTableName);
+		}
+	}
+
 	public Long getPageNumber() {
 		return this.pageNumber;
 	}
@@ -62,6 +81,17 @@ public class DescribeAvailableAdvicesRequest extends RpcAcsRequest<DescribeAvail
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getAdviceType() {
+		return this.adviceType;
+	}
+
+	public void setAdviceType(String adviceType) {
+		this.adviceType = adviceType;
+		if(adviceType != null){
+			putQueryParameter("AdviceType", adviceType);
 		}
 	}
 
@@ -95,6 +125,28 @@ public class DescribeAvailableAdvicesRequest extends RpcAcsRequest<DescribeAvail
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public String getKeyword() {
+		return this.keyword;
+	}
+
+	public void setKeyword(String keyword) {
+		this.keyword = keyword;
+		if(keyword != null){
+			putQueryParameter("Keyword", keyword);
+		}
+	}
+
+	public String getOrder() {
+		return this.order;
+	}
+
+	public void setOrder(String order) {
+		this.order = order;
+		if(order != null){
+			putQueryParameter("Order", order);
 		}
 	}
 

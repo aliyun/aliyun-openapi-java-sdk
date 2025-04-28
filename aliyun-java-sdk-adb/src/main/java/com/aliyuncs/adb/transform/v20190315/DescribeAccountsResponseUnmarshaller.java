@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.adb.model.v20190315.DescribeAccountsResponse;
 import com.aliyuncs.adb.model.v20190315.DescribeAccountsResponse.DBAccount;
+import com.aliyuncs.adb.model.v20190315.DescribeAccountsResponse.DBAccount.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -35,6 +36,16 @@ public class DescribeAccountsResponseUnmarshaller {
 			dBAccount.setAccountDescription(_ctx.stringValue("DescribeAccountsResponse.AccountList["+ i +"].AccountDescription"));
 			dBAccount.setAccountType(_ctx.stringValue("DescribeAccountsResponse.AccountList["+ i +"].AccountType"));
 			dBAccount.setAccountName(_ctx.stringValue("DescribeAccountsResponse.AccountList["+ i +"].AccountName"));
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeAccountsResponse.AccountList["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(_ctx.stringValue("DescribeAccountsResponse.AccountList["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("DescribeAccountsResponse.AccountList["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			dBAccount.setTags(tags);
 
 			accountList.add(dBAccount);
 		}

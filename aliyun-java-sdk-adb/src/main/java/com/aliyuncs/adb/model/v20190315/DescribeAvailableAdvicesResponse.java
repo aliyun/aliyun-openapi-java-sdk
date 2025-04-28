@@ -35,6 +35,8 @@ public class DescribeAvailableAdvicesResponse extends AcsResponse {
 
 	private List<ItemsItem> items;
 
+	private List<String> schemaTableNames;
+
 	public Long getPageNumber() {
 		return this.pageNumber;
 	}
@@ -75,6 +77,14 @@ public class DescribeAvailableAdvicesResponse extends AcsResponse {
 		this.items = items;
 	}
 
+	public List<String> getSchemaTableNames() {
+		return this.schemaTableNames;
+	}
+
+	public void setSchemaTableNames(List<String> schemaTableNames) {
+		this.schemaTableNames = schemaTableNames;
+	}
+
 	public static class ItemsItem {
 
 		private String adviceId;
@@ -94,6 +104,10 @@ public class DescribeAvailableAdvicesResponse extends AcsResponse {
 		private Long pageSize;
 
 		private Long pageNumber;
+
+		private String schemaName;
+
+		private String tableName;
 
 		public String getAdviceId() {
 			return this.adviceId;
@@ -165,6 +179,22 @@ public class DescribeAvailableAdvicesResponse extends AcsResponse {
 
 		public void setPageNumber(Long pageNumber) {
 			this.pageNumber = pageNumber;
+		}
+
+		public String getSchemaName() {
+			return this.schemaName;
+		}
+
+		public void setSchemaName(String schemaName) {
+			this.schemaName = schemaName;
+		}
+
+		public String getTableName() {
+			return this.tableName;
+		}
+
+		public void setTableName(String tableName) {
+			this.tableName = tableName;
 		}
 	}
 

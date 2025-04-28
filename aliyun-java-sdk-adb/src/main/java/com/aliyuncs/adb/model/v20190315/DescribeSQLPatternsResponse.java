@@ -111,6 +111,34 @@ public class DescribeSQLPatternsResponse extends AcsResponse {
 
 		private Boolean blockable;
 
+		private Double queryTimeSum;
+
+		private Double queryTimePercentage;
+
+		private Double peakMemorySum;
+
+		private Double peakMemoryPercentage;
+
+		private Double scanSizeSum;
+
+		private Double scanSizePercentage;
+
+		private Double averageOperatorCost;
+
+		private Double maxOperatorCost;
+
+		private Double operatorCostSum;
+
+		private Double operatorCostPercentage;
+
+		private Double averageScanCost;
+
+		private Double maxScanCost;
+
+		private Double scanCostSum;
+
+		private Double scanCostPercentage;
+
 		public String getSQLPattern() {
 			return this.sQLPattern;
 		}
@@ -245,6 +273,118 @@ public class DescribeSQLPatternsResponse extends AcsResponse {
 
 		public void setBlockable(Boolean blockable) {
 			this.blockable = blockable;
+		}
+
+		public Double getQueryTimeSum() {
+			return this.queryTimeSum;
+		}
+
+		public void setQueryTimeSum(Double queryTimeSum) {
+			this.queryTimeSum = queryTimeSum;
+		}
+
+		public Double getQueryTimePercentage() {
+			return this.queryTimePercentage;
+		}
+
+		public void setQueryTimePercentage(Double queryTimePercentage) {
+			this.queryTimePercentage = queryTimePercentage;
+		}
+
+		public Double getPeakMemorySum() {
+			return this.peakMemorySum;
+		}
+
+		public void setPeakMemorySum(Double peakMemorySum) {
+			this.peakMemorySum = peakMemorySum;
+		}
+
+		public Double getPeakMemoryPercentage() {
+			return this.peakMemoryPercentage;
+		}
+
+		public void setPeakMemoryPercentage(Double peakMemoryPercentage) {
+			this.peakMemoryPercentage = peakMemoryPercentage;
+		}
+
+		public Double getScanSizeSum() {
+			return this.scanSizeSum;
+		}
+
+		public void setScanSizeSum(Double scanSizeSum) {
+			this.scanSizeSum = scanSizeSum;
+		}
+
+		public Double getScanSizePercentage() {
+			return this.scanSizePercentage;
+		}
+
+		public void setScanSizePercentage(Double scanSizePercentage) {
+			this.scanSizePercentage = scanSizePercentage;
+		}
+
+		public Double getAverageOperatorCost() {
+			return this.averageOperatorCost;
+		}
+
+		public void setAverageOperatorCost(Double averageOperatorCost) {
+			this.averageOperatorCost = averageOperatorCost;
+		}
+
+		public Double getMaxOperatorCost() {
+			return this.maxOperatorCost;
+		}
+
+		public void setMaxOperatorCost(Double maxOperatorCost) {
+			this.maxOperatorCost = maxOperatorCost;
+		}
+
+		public Double getOperatorCostSum() {
+			return this.operatorCostSum;
+		}
+
+		public void setOperatorCostSum(Double operatorCostSum) {
+			this.operatorCostSum = operatorCostSum;
+		}
+
+		public Double getOperatorCostPercentage() {
+			return this.operatorCostPercentage;
+		}
+
+		public void setOperatorCostPercentage(Double operatorCostPercentage) {
+			this.operatorCostPercentage = operatorCostPercentage;
+		}
+
+		public Double getAverageScanCost() {
+			return this.averageScanCost;
+		}
+
+		public void setAverageScanCost(Double averageScanCost) {
+			this.averageScanCost = averageScanCost;
+		}
+
+		public Double getMaxScanCost() {
+			return this.maxScanCost;
+		}
+
+		public void setMaxScanCost(Double maxScanCost) {
+			this.maxScanCost = maxScanCost;
+		}
+
+		public Double getScanCostSum() {
+			return this.scanCostSum;
+		}
+
+		public void setScanCostSum(Double scanCostSum) {
+			this.scanCostSum = scanCostSum;
+		}
+
+		public Double getScanCostPercentage() {
+			return this.scanCostPercentage;
+		}
+
+		public void setScanCostPercentage(Double scanCostPercentage) {
+			this.scanCostPercentage = scanCostPercentage;
 		}
 	}
 

@@ -15,6 +15,9 @@
 package com.aliyuncs.adb.model.v20190315;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.adb.Endpoint;
 
@@ -26,6 +29,11 @@ public class ModifyDBResourceGroupRequest extends RpcAcsRequest<ModifyDBResource
 	   
 
 	private Long resourceOwnerId;
+
+	@SerializedName("poolUserList")
+	private List<String> poolUserList;
+
+	private String clientToken;
 
 	private Integer nodeNum;
 
@@ -57,6 +65,28 @@ public class ModifyDBResourceGroupRequest extends RpcAcsRequest<ModifyDBResource
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public List<String> getPoolUserList() {
+		return this.poolUserList;
+	}
+
+	public void setPoolUserList(List<String> poolUserList) {
+		this.poolUserList = poolUserList;	
+		if (poolUserList != null) {
+			putQueryParameter("PoolUserList" , new Gson().toJson(poolUserList));
+		}	
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 

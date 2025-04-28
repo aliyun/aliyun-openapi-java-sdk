@@ -149,7 +149,11 @@ public class DescribeDBClustersResponse extends AcsResponse {
 
 		private String innerPort;
 
+		private String productVersion;
+
 		private List<Tag> tags;
+
+		private TaskInfo taskInfo;
 
 		public String getDtsJobId() {
 			return this.dtsJobId;
@@ -439,12 +443,28 @@ public class DescribeDBClustersResponse extends AcsResponse {
 			this.innerPort = innerPort;
 		}
 
+		public String getProductVersion() {
+			return this.productVersion;
+		}
+
+		public void setProductVersion(String productVersion) {
+			this.productVersion = productVersion;
+		}
+
 		public List<Tag> getTags() {
 			return this.tags;
 		}
 
 		public void setTags(List<Tag> tags) {
 			this.tags = tags;
+		}
+
+		public TaskInfo getTaskInfo() {
+			return this.taskInfo;
+		}
+
+		public void setTaskInfo(TaskInfo taskInfo) {
+			this.taskInfo = taskInfo;
 		}
 
 		public static class Tag {
@@ -467,6 +487,112 @@ public class DescribeDBClustersResponse extends AcsResponse {
 
 			public void setValue(String value) {
 				this.value = value;
+			}
+		}
+
+		public static class TaskInfo {
+
+			private String name;
+
+			private String status;
+
+			private String progress;
+
+			private List<StepListItem> stepList;
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
+			public String getProgress() {
+				return this.progress;
+			}
+
+			public void setProgress(String progress) {
+				this.progress = progress;
+			}
+
+			public List<StepListItem> getStepList() {
+				return this.stepList;
+			}
+
+			public void setStepList(List<StepListItem> stepList) {
+				this.stepList = stepList;
+			}
+
+			public static class StepListItem {
+
+				private String stepName;
+
+				private String stepDesc;
+
+				private String stepStatus;
+
+				private String stepProgress;
+
+				private String startTime;
+
+				private String endTime;
+
+				public String getStepName() {
+					return this.stepName;
+				}
+
+				public void setStepName(String stepName) {
+					this.stepName = stepName;
+				}
+
+				public String getStepDesc() {
+					return this.stepDesc;
+				}
+
+				public void setStepDesc(String stepDesc) {
+					this.stepDesc = stepDesc;
+				}
+
+				public String getStepStatus() {
+					return this.stepStatus;
+				}
+
+				public void setStepStatus(String stepStatus) {
+					this.stepStatus = stepStatus;
+				}
+
+				public String getStepProgress() {
+					return this.stepProgress;
+				}
+
+				public void setStepProgress(String stepProgress) {
+					this.stepProgress = stepProgress;
+				}
+
+				public String getStartTime() {
+					return this.startTime;
+				}
+
+				public void setStartTime(String startTime) {
+					this.startTime = startTime;
+				}
+
+				public String getEndTime() {
+					return this.endTime;
+				}
+
+				public void setEndTime(String endTime) {
+					this.endTime = endTime;
+				}
 			}
 		}
 	}

@@ -80,13 +80,15 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 
 	private String restoreType;
 
+	private Boolean enableSSL;
+
 	private String dBNodeStorage;
 
 	private String executorCount;
 
 	private String vPCId;
 
-	private String diskEncryption;
+	private Boolean diskEncryption;
 
 	private String payType;
 	public CreateDBClusterRequest() {
@@ -398,6 +400,17 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		}
 	}
 
+	public Boolean getEnableSSL() {
+		return this.enableSSL;
+	}
+
+	public void setEnableSSL(Boolean enableSSL) {
+		this.enableSSL = enableSSL;
+		if(enableSSL != null){
+			putQueryParameter("EnableSSL", enableSSL.toString());
+		}
+	}
+
 	public String getDBNodeStorage() {
 		return this.dBNodeStorage;
 	}
@@ -431,14 +444,14 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		}
 	}
 
-	public String getDiskEncryption() {
+	public Boolean getDiskEncryption() {
 		return this.diskEncryption;
 	}
 
-	public void setDiskEncryption(String diskEncryption) {
+	public void setDiskEncryption(Boolean diskEncryption) {
 		this.diskEncryption = diskEncryption;
 		if(diskEncryption != null){
-			putQueryParameter("DiskEncryption", diskEncryption);
+			putQueryParameter("DiskEncryption", diskEncryption.toString());
 		}
 	}
 

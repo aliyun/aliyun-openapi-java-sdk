@@ -33,6 +33,8 @@ public class DescribeDBClusterPerformanceResponse extends AcsResponse {
 
 	private String dBClusterId;
 
+	private String accessDeniedDetail;
+
 	private List<PerformanceItem> performances;
 
 	public String getEndTime() {
@@ -65,6 +67,14 @@ public class DescribeDBClusterPerformanceResponse extends AcsResponse {
 
 	public void setDBClusterId(String dBClusterId) {
 		this.dBClusterId = dBClusterId;
+	}
+
+	public String getAccessDeniedDetail() {
+		return this.accessDeniedDetail;
+	}
+
+	public void setAccessDeniedDetail(String accessDeniedDetail) {
+		this.accessDeniedDetail = accessDeniedDetail;
 	}
 
 	public List<PerformanceItem> getPerformances() {
@@ -113,6 +123,8 @@ public class DescribeDBClusterPerformanceResponse extends AcsResponse {
 
 			private String tags;
 
+			private String translateKey;
+
 			private List<String> values;
 
 			public String getName() {
@@ -129,6 +141,14 @@ public class DescribeDBClusterPerformanceResponse extends AcsResponse {
 
 			public void setTags(String tags) {
 				this.tags = tags;
+			}
+
+			public String getTranslateKey() {
+				return this.translateKey;
+			}
+
+			public void setTranslateKey(String translateKey) {
+				this.translateKey = translateKey;
 			}
 
 			public List<String> getValues() {

@@ -18,7 +18,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.adb.model.v20190315.DescribeInclinedTablesResponse;
-import com.aliyuncs.adb.model.v20190315.DescribeInclinedTablesResponse.Table;
+import com.aliyuncs.adb.model.v20190315.DescribeInclinedTablesResponse.Items;
+import com.aliyuncs.adb.model.v20190315.DescribeInclinedTablesResponse.Items1;
+import com.aliyuncs.adb.model.v20190315.DescribeInclinedTablesResponse.Items1.Items2;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -31,18 +33,35 @@ public class DescribeInclinedTablesResponseUnmarshaller {
 		describeInclinedTablesResponse.setPageSize(_ctx.stringValue("DescribeInclinedTablesResponse.PageSize"));
 		describeInclinedTablesResponse.setPageNumber(_ctx.stringValue("DescribeInclinedTablesResponse.PageNumber"));
 
-		List<Table> items = new ArrayList<Table>();
-		for (int i = 0; i < _ctx.lengthValue("DescribeInclinedTablesResponse.Items.Length"); i++) {
-			Table table = new Table();
-			table.setType(_ctx.stringValue("DescribeInclinedTablesResponse.Items["+ i +"].Type"));
-			table.setSchema(_ctx.stringValue("DescribeInclinedTablesResponse.Items["+ i +"].Schema"));
-			table.setSize(_ctx.longValue("DescribeInclinedTablesResponse.Items["+ i +"].Size"));
-			table.setName(_ctx.stringValue("DescribeInclinedTablesResponse.Items["+ i +"].Name"));
-			table.setIsIncline(_ctx.booleanValue("DescribeInclinedTablesResponse.Items["+ i +"].IsIncline"));
+		Items1 items1 = new Items1();
 
-			items.add(table);
+		List<Items2> table = new ArrayList<Items2>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeInclinedTablesResponse.Items.Table.Length"); i++) {
+			Items2 items2 = new Items2();
+			items2.setType(_ctx.stringValue("DescribeInclinedTablesResponse.Items.Table["+ i +"].Type"));
+			items2.setSchema(_ctx.stringValue("DescribeInclinedTablesResponse.Items.Table["+ i +"].Schema"));
+			items2.setSize(_ctx.stringValue("DescribeInclinedTablesResponse.Items.Table["+ i +"].Size"));
+			items2.setName(_ctx.stringValue("DescribeInclinedTablesResponse.Items.Table["+ i +"].Name"));
+			items2.setIsIncline(_ctx.stringValue("DescribeInclinedTablesResponse.Items.Table["+ i +"].IsIncline"));
+			items2.setTotalSize(_ctx.longValue("DescribeInclinedTablesResponse.Items.Table["+ i +"].TotalSize"));
+			items2.setSpaceRatio(_ctx.doubleValue("DescribeInclinedTablesResponse.Items.Table["+ i +"].SpaceRatio"));
+			items2.setRowCount(_ctx.longValue("DescribeInclinedTablesResponse.Items.Table["+ i +"].RowCount"));
+
+			table.add(items2);
 		}
-		describeInclinedTablesResponse.setItems(items);
+		items1.setTable(table);
+		describeInclinedTablesResponse.setItems1(items1);
+
+		List<Items> detectionItems = new ArrayList<Items>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeInclinedTablesResponse.DetectionItems.Length"); i++) {
+			Items items = new Items();
+			items.setName(_ctx.stringValue("DescribeInclinedTablesResponse.DetectionItems["+ i +"].Name"));
+			items.setMessage(_ctx.stringValue("DescribeInclinedTablesResponse.DetectionItems["+ i +"].Message"));
+			items.setStatus(_ctx.stringValue("DescribeInclinedTablesResponse.DetectionItems["+ i +"].Status"));
+
+			detectionItems.add(items);
+		}
+		describeInclinedTablesResponse.setDetectionItems(detectionItems);
 	 
 	 	return describeInclinedTablesResponse;
 	}

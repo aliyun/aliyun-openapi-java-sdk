@@ -30,6 +30,12 @@ public class DescribePatternPerformanceResponseUnmarshaller {
 		describePatternPerformanceResponse.setRequestId(_ctx.stringValue("DescribePatternPerformanceResponse.RequestId"));
 		describePatternPerformanceResponse.setEndTime(_ctx.stringValue("DescribePatternPerformanceResponse.EndTime"));
 		describePatternPerformanceResponse.setStartTime(_ctx.stringValue("DescribePatternPerformanceResponse.StartTime"));
+		describePatternPerformanceResponse.setAccessIp(_ctx.stringValue("DescribePatternPerformanceResponse.AccessIp"));
+		describePatternPerformanceResponse.setFailedCount(_ctx.longValue("DescribePatternPerformanceResponse.FailedCount"));
+		describePatternPerformanceResponse.setQueryCount(_ctx.longValue("DescribePatternPerformanceResponse.QueryCount"));
+		describePatternPerformanceResponse.setSQLPattern(_ctx.stringValue("DescribePatternPerformanceResponse.SQLPattern"));
+		describePatternPerformanceResponse.setTables(_ctx.stringValue("DescribePatternPerformanceResponse.Tables"));
+		describePatternPerformanceResponse.setUser(_ctx.stringValue("DescribePatternPerformanceResponse.User"));
 
 		List<PerformanceItem> performances = new ArrayList<PerformanceItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePatternPerformanceResponse.Performances.Length"); i++) {

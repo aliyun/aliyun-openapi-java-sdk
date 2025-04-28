@@ -31,6 +31,18 @@ public class DescribePatternPerformanceResponse extends AcsResponse {
 
 	private String startTime;
 
+	private String accessIp;
+
+	private Long failedCount;
+
+	private Long queryCount;
+
+	private String sQLPattern;
+
+	private String tables;
+
+	private String user;
+
 	private List<PerformanceItem> performances;
 
 	public String getEndTime() {
@@ -55,6 +67,54 @@ public class DescribePatternPerformanceResponse extends AcsResponse {
 
 	public void setStartTime(String startTime) {
 		this.startTime = startTime;
+	}
+
+	public String getAccessIp() {
+		return this.accessIp;
+	}
+
+	public void setAccessIp(String accessIp) {
+		this.accessIp = accessIp;
+	}
+
+	public Long getFailedCount() {
+		return this.failedCount;
+	}
+
+	public void setFailedCount(Long failedCount) {
+		this.failedCount = failedCount;
+	}
+
+	public Long getQueryCount() {
+		return this.queryCount;
+	}
+
+	public void setQueryCount(Long queryCount) {
+		this.queryCount = queryCount;
+	}
+
+	public String getSQLPattern() {
+		return this.sQLPattern;
+	}
+
+	public void setSQLPattern(String sQLPattern) {
+		this.sQLPattern = sQLPattern;
+	}
+
+	public String getTables() {
+		return this.tables;
+	}
+
+	public void setTables(String tables) {
+		this.tables = tables;
+	}
+
+	public String getUser() {
+		return this.user;
+	}
+
+	public void setUser(String user) {
+		this.user = user;
 	}
 
 	public List<PerformanceItem> getPerformances() {

@@ -27,6 +27,12 @@ public class DescribeDBClusterPerformanceRequest extends RpcAcsRequest<DescribeD
 
 	private Long resourceOwnerId;
 
+	private String startTime;
+
+	private String resourcePools;
+
+	private String key;
+
 	private String resourceOwnerAccount;
 
 	private String dBClusterId;
@@ -35,13 +41,7 @@ public class DescribeDBClusterPerformanceRequest extends RpcAcsRequest<DescribeD
 
 	private String endTime;
 
-	private String startTime;
-
 	private Long ownerId;
-
-	private String resourcePools;
-
-	private String key;
 	public DescribeDBClusterPerformanceRequest() {
 		super("adb", "2019-03-15", "DescribeDBClusterPerformance", "ads");
 		setMethod(MethodType.POST);
@@ -59,6 +59,39 @@ public class DescribeDBClusterPerformanceRequest extends RpcAcsRequest<DescribeD
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public String getResourcePools() {
+		return this.resourcePools;
+	}
+
+	public void setResourcePools(String resourcePools) {
+		this.resourcePools = resourcePools;
+		if(resourcePools != null){
+			putQueryParameter("ResourcePools", resourcePools);
+		}
+	}
+
+	public String getKey() {
+		return this.key;
+	}
+
+	public void setKey(String key) {
+		this.key = key;
+		if(key != null){
+			putQueryParameter("Key", key);
 		}
 	}
 
@@ -106,17 +139,6 @@ public class DescribeDBClusterPerformanceRequest extends RpcAcsRequest<DescribeD
 		}
 	}
 
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -125,28 +147,6 @@ public class DescribeDBClusterPerformanceRequest extends RpcAcsRequest<DescribeD
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getResourcePools() {
-		return this.resourcePools;
-	}
-
-	public void setResourcePools(String resourcePools) {
-		this.resourcePools = resourcePools;
-		if(resourcePools != null){
-			putQueryParameter("ResourcePools", resourcePools);
-		}
-	}
-
-	public String getKey() {
-		return this.key;
-	}
-
-	public void setKey(String key) {
-		this.key = key;
-		if(key != null){
-			putQueryParameter("Key", key);
 		}
 	}
 

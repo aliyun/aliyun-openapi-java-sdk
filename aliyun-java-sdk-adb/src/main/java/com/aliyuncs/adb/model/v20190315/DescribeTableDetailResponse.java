@@ -29,7 +29,7 @@ public class DescribeTableDetailResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<Shard> items;
+	private Items items;
 
 	public Long getAvgSize() {
 		return this.avgSize;
@@ -47,39 +47,57 @@ public class DescribeTableDetailResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<Shard> getItems() {
+	public Items getItems() {
 		return this.items;
 	}
 
-	public void setItems(List<Shard> items) {
+	public void setItems(Items items) {
 		this.items = items;
 	}
 
-	public static class Shard {
+	public static class Items {
 
-		private Long size;
+		private List<ShardItem> shard;
 
-		private Integer id;
-
-		public Long getSize() {
-			return this.size;
+		public List<ShardItem> getShard() {
+			return this.shard;
 		}
 
-		public void setSize(Long size) {
-			this.size = size;
+		public void setShard(List<ShardItem> shard) {
+			this.shard = shard;
 		}
 
-		public Integer getId() {
-			return this.id;
-		}
+		public static class ShardItem {
 
-		public void setId(Integer id) {
-			this.id = id;
+			private Long size;
+
+			private Integer id;
+
+			public Long getSize() {
+				return this.size;
+			}
+
+			public void setSize(Long size) {
+				this.size = size;
+			}
+
+			public Integer getId() {
+				return this.id;
+			}
+
+			public void setId(Integer id) {
+				this.id = id;
+			}
 		}
 	}
 
 	@Override
 	public DescribeTableDetailResponse getInstance(UnmarshallerContext context) {
 		return	DescribeTableDetailResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

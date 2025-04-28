@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.adb.model.v20190315.DescribeDiagnosisRecordsResponse;
 import com.aliyuncs.adb.model.v20190315.DescribeDiagnosisRecordsResponse.Items;
+import com.aliyuncs.adb.model.v20190315.DescribeDiagnosisRecordsResponse.Items.QueryPropertiesItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -57,6 +58,17 @@ public class DescribeDiagnosisRecordsResponseUnmarshaller {
 			items.setTotalPlanningTime(_ctx.longValue("DescribeDiagnosisRecordsResponse.Querys["+ i +"].TotalPlanningTime"));
 			items.setEtlWriteRows(_ctx.longValue("DescribeDiagnosisRecordsResponse.Querys["+ i +"].EtlWriteRows"));
 			items.setTotalStages(_ctx.integerValue("DescribeDiagnosisRecordsResponse.Querys["+ i +"].TotalStages"));
+			items.setPatternId(_ctx.stringValue("DescribeDiagnosisRecordsResponse.Querys["+ i +"].PatternId"));
+
+			List<QueryPropertiesItem> queryProperties = new ArrayList<QueryPropertiesItem>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeDiagnosisRecordsResponse.Querys["+ i +"].QueryProperties.Length"); j++) {
+				QueryPropertiesItem queryPropertiesItem = new QueryPropertiesItem();
+				queryPropertiesItem.setName(_ctx.stringValue("DescribeDiagnosisRecordsResponse.Querys["+ i +"].QueryProperties["+ j +"].Name"));
+				queryPropertiesItem.setValue(_ctx.stringValue("DescribeDiagnosisRecordsResponse.Querys["+ i +"].QueryProperties["+ j +"].Value"));
+
+				queryProperties.add(queryPropertiesItem);
+			}
+			items.setQueryProperties(queryProperties);
 
 			querys.add(items);
 		}

@@ -33,6 +33,10 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 	private String pageNumber;
 
+	private Long freeBackupSize;
+
+	private Long totalBackupSize;
+
 	private List<Backup> items;
 
 	public String getTotalCount() {
@@ -67,6 +71,22 @@ public class DescribeBackupsResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
+	public Long getFreeBackupSize() {
+		return this.freeBackupSize;
+	}
+
+	public void setFreeBackupSize(Long freeBackupSize) {
+		this.freeBackupSize = freeBackupSize;
+	}
+
+	public Long getTotalBackupSize() {
+		return this.totalBackupSize;
+	}
+
+	public void setTotalBackupSize(Long totalBackupSize) {
+		this.totalBackupSize = totalBackupSize;
+	}
+
 	public List<Backup> getItems() {
 		return this.items;
 	}
@@ -86,6 +106,8 @@ public class DescribeBackupsResponse extends AcsResponse {
 		private Long backupSize;
 
 		private String backupEndTime;
+
+		private String backupExpiredTime;
 
 		private String backupId;
 
@@ -129,6 +151,14 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 		public void setBackupEndTime(String backupEndTime) {
 			this.backupEndTime = backupEndTime;
+		}
+
+		public String getBackupExpiredTime() {
+			return this.backupExpiredTime;
+		}
+
+		public void setBackupExpiredTime(String backupExpiredTime) {
+			this.backupExpiredTime = backupExpiredTime;
 		}
 
 		public String getBackupId() {

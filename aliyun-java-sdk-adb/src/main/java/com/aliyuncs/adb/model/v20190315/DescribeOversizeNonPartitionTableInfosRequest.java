@@ -22,12 +22,20 @@ import com.aliyuncs.adb.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeSlowLogTrendRequest extends RpcAcsRequest<DescribeSlowLogTrendResponse> {
+public class DescribeOversizeNonPartitionTableInfosRequest extends RpcAcsRequest<DescribeOversizeNonPartitionTableInfosResponse> {
 	   
 
 	private Long resourceOwnerId;
 
 	private String startTime;
+
+	private Integer pageNumber;
+
+	private Integer pageSize;
+
+	private String lang;
+
+	private String order;
 
 	private String resourceOwnerAccount;
 
@@ -38,10 +46,8 @@ public class DescribeSlowLogTrendRequest extends RpcAcsRequest<DescribeSlowLogTr
 	private String endTime;
 
 	private Long ownerId;
-
-	private String dBName;
-	public DescribeSlowLogTrendRequest() {
-		super("adb", "2019-03-15", "DescribeSlowLogTrend", "ads");
+	public DescribeOversizeNonPartitionTableInfosRequest() {
+		super("adb", "2019-03-15", "DescribeOversizeNonPartitionTableInfos", "ads");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -68,6 +74,50 @@ public class DescribeSlowLogTrendRequest extends RpcAcsRequest<DescribeSlowLogTr
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public String getOrder() {
+		return this.order;
+	}
+
+	public void setOrder(String order) {
+		this.order = order;
+		if(order != null){
+			putQueryParameter("Order", order);
 		}
 	}
 
@@ -126,20 +176,9 @@ public class DescribeSlowLogTrendRequest extends RpcAcsRequest<DescribeSlowLogTr
 		}
 	}
 
-	public String getDBName() {
-		return this.dBName;
-	}
-
-	public void setDBName(String dBName) {
-		this.dBName = dBName;
-		if(dBName != null){
-			putQueryParameter("DBName", dBName);
-		}
-	}
-
 	@Override
-	public Class<DescribeSlowLogTrendResponse> getResponseClass() {
-		return DescribeSlowLogTrendResponse.class;
+	public Class<DescribeOversizeNonPartitionTableInfosResponse> getResponseClass() {
+		return DescribeOversizeNonPartitionTableInfosResponse.class;
 	}
 
 }

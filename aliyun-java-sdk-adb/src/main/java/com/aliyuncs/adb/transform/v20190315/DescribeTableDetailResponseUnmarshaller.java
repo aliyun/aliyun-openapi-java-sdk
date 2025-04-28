@@ -18,7 +18,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.adb.model.v20190315.DescribeTableDetailResponse;
-import com.aliyuncs.adb.model.v20190315.DescribeTableDetailResponse.Shard;
+import com.aliyuncs.adb.model.v20190315.DescribeTableDetailResponse.Items;
+import com.aliyuncs.adb.model.v20190315.DescribeTableDetailResponse.Items.ShardItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -29,14 +30,17 @@ public class DescribeTableDetailResponseUnmarshaller {
 		describeTableDetailResponse.setRequestId(_ctx.stringValue("DescribeTableDetailResponse.RequestId"));
 		describeTableDetailResponse.setAvgSize(_ctx.longValue("DescribeTableDetailResponse.AvgSize"));
 
-		List<Shard> items = new ArrayList<Shard>();
-		for (int i = 0; i < _ctx.lengthValue("DescribeTableDetailResponse.Items.Length"); i++) {
-			Shard shard = new Shard();
-			shard.setSize(_ctx.longValue("DescribeTableDetailResponse.Items["+ i +"].Size"));
-			shard.setId(_ctx.integerValue("DescribeTableDetailResponse.Items["+ i +"].Id"));
+		Items items = new Items();
 
-			items.add(shard);
+		List<ShardItem> shard = new ArrayList<ShardItem>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeTableDetailResponse.Items.Shard.Length"); i++) {
+			ShardItem shardItem = new ShardItem();
+			shardItem.setSize(_ctx.longValue("DescribeTableDetailResponse.Items.Shard["+ i +"].Size"));
+			shardItem.setId(_ctx.integerValue("DescribeTableDetailResponse.Items.Shard["+ i +"].Id"));
+
+			shard.add(shardItem);
 		}
+		items.setShard(shard);
 		describeTableDetailResponse.setItems(items);
 	 
 	 	return describeTableDetailResponse;

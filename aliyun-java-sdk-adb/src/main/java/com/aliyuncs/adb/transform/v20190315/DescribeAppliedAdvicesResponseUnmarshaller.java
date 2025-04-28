@@ -31,6 +31,12 @@ public class DescribeAppliedAdvicesResponseUnmarshaller {
 		describeAppliedAdvicesResponse.setPageSize(_ctx.longValue("DescribeAppliedAdvicesResponse.PageSize"));
 		describeAppliedAdvicesResponse.setTotalCount(_ctx.longValue("DescribeAppliedAdvicesResponse.TotalCount"));
 
+		List<String> schemaTableNames = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeAppliedAdvicesResponse.SchemaTableNames.Length"); i++) {
+			schemaTableNames.add(_ctx.stringValue("DescribeAppliedAdvicesResponse.SchemaTableNames["+ i +"]"));
+		}
+		describeAppliedAdvicesResponse.setSchemaTableNames(schemaTableNames);
+
 		List<ItemsItem> items = new ArrayList<ItemsItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAppliedAdvicesResponse.Items.Length"); i++) {
 			ItemsItem itemsItem = new ItemsItem();
@@ -45,6 +51,8 @@ public class DescribeAppliedAdvicesResponseUnmarshaller {
 			itemsItem.setTotalCount(_ctx.longValue("DescribeAppliedAdvicesResponse.Items["+ i +"].TotalCount"));
 			itemsItem.setPageSize(_ctx.longValue("DescribeAppliedAdvicesResponse.Items["+ i +"].PageSize"));
 			itemsItem.setPageNumber(_ctx.longValue("DescribeAppliedAdvicesResponse.Items["+ i +"].PageNumber"));
+			itemsItem.setSchemaName(_ctx.stringValue("DescribeAppliedAdvicesResponse.Items["+ i +"].SchemaName"));
+			itemsItem.setTableName(_ctx.stringValue("DescribeAppliedAdvicesResponse.Items["+ i +"].TableName"));
 
 			items.add(itemsItem);
 		}

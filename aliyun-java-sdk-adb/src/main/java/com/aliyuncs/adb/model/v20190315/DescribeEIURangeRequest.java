@@ -27,6 +27,10 @@ public class DescribeEIURangeRequest extends RpcAcsRequest<DescribeEIURangeRespo
 
 	private Long resourceOwnerId;
 
+	private String storageSize;
+
+	private String productVersion;
+
 	private String resourceGroupId;
 
 	private String resourceOwnerAccount;
@@ -38,6 +42,8 @@ public class DescribeEIURangeRequest extends RpcAcsRequest<DescribeEIURangeRespo
 	private String dBClusterVersion;
 
 	private Long ownerId;
+
+	private String subOperation;
 
 	private String zoneId;
 
@@ -61,6 +67,28 @@ public class DescribeEIURangeRequest extends RpcAcsRequest<DescribeEIURangeRespo
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getStorageSize() {
+		return this.storageSize;
+	}
+
+	public void setStorageSize(String storageSize) {
+		this.storageSize = storageSize;
+		if(storageSize != null){
+			putQueryParameter("StorageSize", storageSize);
+		}
+	}
+
+	public String getProductVersion() {
+		return this.productVersion;
+	}
+
+	public void setProductVersion(String productVersion) {
+		this.productVersion = productVersion;
+		if(productVersion != null){
+			putQueryParameter("ProductVersion", productVersion);
 		}
 	}
 
@@ -127,6 +155,17 @@ public class DescribeEIURangeRequest extends RpcAcsRequest<DescribeEIURangeRespo
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getSubOperation() {
+		return this.subOperation;
+	}
+
+	public void setSubOperation(String subOperation) {
+		this.subOperation = subOperation;
+		if(subOperation != null){
+			putQueryParameter("SubOperation", subOperation);
 		}
 	}
 

@@ -20,6 +20,8 @@ import java.util.List;
 import com.aliyuncs.adb.model.v20190315.DescribeDBClusterAttributeResponse;
 import com.aliyuncs.adb.model.v20190315.DescribeDBClusterAttributeResponse.DBCluster;
 import com.aliyuncs.adb.model.v20190315.DescribeDBClusterAttributeResponse.DBCluster.Tag;
+import com.aliyuncs.adb.model.v20190315.DescribeDBClusterAttributeResponse.DBCluster.TaskInfo;
+import com.aliyuncs.adb.model.v20190315.DescribeDBClusterAttributeResponse.DBCluster.TaskInfo.StepListItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -76,6 +78,30 @@ public class DescribeDBClusterAttributeResponseUnmarshaller {
 			dBCluster.setInnerPort(_ctx.stringValue("DescribeDBClusterAttributeResponse.Items["+ i +"].InnerPort"));
 			dBCluster.setDiskPerformanceLevel(_ctx.stringValue("DescribeDBClusterAttributeResponse.Items["+ i +"].DiskPerformanceLevel"));
 			dBCluster.setElasticIOResourceSize(_ctx.stringValue("DescribeDBClusterAttributeResponse.Items["+ i +"].ElasticIOResourceSize"));
+			dBCluster.setDiskEncryption(_ctx.booleanValue("DescribeDBClusterAttributeResponse.Items["+ i +"].DiskEncryption"));
+			dBCluster.setProductVersion(_ctx.stringValue("DescribeDBClusterAttributeResponse.Items["+ i +"].ProductVersion"));
+			dBCluster.setSecondaryZoneId(_ctx.stringValue("DescribeDBClusterAttributeResponse.Items["+ i +"].SecondaryZoneId"));
+			dBCluster.setSecondaryVSwitchId(_ctx.stringValue("DescribeDBClusterAttributeResponse.Items["+ i +"].SecondaryVSwitchId"));
+
+			TaskInfo taskInfo = new TaskInfo();
+			taskInfo.setName(_ctx.stringValue("DescribeDBClusterAttributeResponse.Items["+ i +"].TaskInfo.Name"));
+			taskInfo.setStatus(_ctx.stringValue("DescribeDBClusterAttributeResponse.Items["+ i +"].TaskInfo.Status"));
+			taskInfo.setProgress(_ctx.stringValue("DescribeDBClusterAttributeResponse.Items["+ i +"].TaskInfo.Progress"));
+
+			List<StepListItem> stepList = new ArrayList<StepListItem>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeDBClusterAttributeResponse.Items["+ i +"].TaskInfo.StepList.Length"); j++) {
+				StepListItem stepListItem = new StepListItem();
+				stepListItem.setStepName(_ctx.stringValue("DescribeDBClusterAttributeResponse.Items["+ i +"].TaskInfo.StepList["+ j +"].StepName"));
+				stepListItem.setStepDesc(_ctx.stringValue("DescribeDBClusterAttributeResponse.Items["+ i +"].TaskInfo.StepList["+ j +"].StepDesc"));
+				stepListItem.setStepStatus(_ctx.stringValue("DescribeDBClusterAttributeResponse.Items["+ i +"].TaskInfo.StepList["+ j +"].StepStatus"));
+				stepListItem.setStepProgress(_ctx.stringValue("DescribeDBClusterAttributeResponse.Items["+ i +"].TaskInfo.StepList["+ j +"].StepProgress"));
+				stepListItem.setStartTime(_ctx.stringValue("DescribeDBClusterAttributeResponse.Items["+ i +"].TaskInfo.StepList["+ j +"].StartTime"));
+				stepListItem.setEndTime(_ctx.stringValue("DescribeDBClusterAttributeResponse.Items["+ i +"].TaskInfo.StepList["+ j +"].EndTime"));
+
+				stepList.add(stepListItem);
+			}
+			taskInfo.setStepList(stepList);
+			dBCluster.setTaskInfo(taskInfo);
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDBClusterAttributeResponse.Items["+ i +"].Tags.Length"); j++) {

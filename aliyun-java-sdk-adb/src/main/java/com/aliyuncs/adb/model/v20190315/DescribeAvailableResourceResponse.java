@@ -59,6 +59,8 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 
 		private String zoneId;
 
+		private String zoneName;
+
 		private List<SupportedModeItem> supportedMode;
 
 		private List<String> supportedComputeResource;
@@ -71,6 +73,14 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 
 		public void setZoneId(String zoneId) {
 			this.zoneId = zoneId;
+		}
+
+		public String getZoneName() {
+			return this.zoneName;
+		}
+
+		public void setZoneName(String zoneName) {
+			this.zoneName = zoneName;
 		}
 
 		public List<SupportedModeItem> getSupportedMode() {

@@ -69,6 +69,8 @@ public class DescribeDBResourceGroupResponse extends AcsResponse {
 
 		private Integer nodeNum;
 
+		private List<String> groupUserList;
+
 		public String getGroupType() {
 			return this.groupType;
 		}
@@ -115,6 +117,14 @@ public class DescribeDBResourceGroupResponse extends AcsResponse {
 
 		public void setNodeNum(Integer nodeNum) {
 			this.nodeNum = nodeNum;
+		}
+
+		public List<String> getGroupUserList() {
+			return this.groupUserList;
+		}
+
+		public void setGroupUserList(List<String> groupUserList) {
+			this.groupUserList = groupUserList;
 		}
 	}
 

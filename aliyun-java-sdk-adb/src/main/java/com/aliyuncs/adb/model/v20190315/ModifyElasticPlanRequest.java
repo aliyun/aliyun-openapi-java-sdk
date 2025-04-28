@@ -53,6 +53,8 @@ public class ModifyElasticPlanRequest extends RpcAcsRequest<ModifyElasticPlanRes
 
 	private String elasticPlanName;
 
+	private String elasticPlanMonthlyRepeat;
+
 	private String resourcePoolName;
 
 	private Integer elasticPlanNodeNum;
@@ -216,6 +218,17 @@ public class ModifyElasticPlanRequest extends RpcAcsRequest<ModifyElasticPlanRes
 		this.elasticPlanName = elasticPlanName;
 		if(elasticPlanName != null){
 			putQueryParameter("ElasticPlanName", elasticPlanName);
+		}
+	}
+
+	public String getElasticPlanMonthlyRepeat() {
+		return this.elasticPlanMonthlyRepeat;
+	}
+
+	public void setElasticPlanMonthlyRepeat(String elasticPlanMonthlyRepeat) {
+		this.elasticPlanMonthlyRepeat = elasticPlanMonthlyRepeat;
+		if(elasticPlanMonthlyRepeat != null){
+			putQueryParameter("ElasticPlanMonthlyRepeat", elasticPlanMonthlyRepeat);
 		}
 	}
 

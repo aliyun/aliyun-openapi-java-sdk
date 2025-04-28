@@ -25,6 +25,7 @@ public class DescribeAuditLogConfigResponseUnmarshaller {
 		describeAuditLogConfigResponse.setRequestId(_ctx.stringValue("DescribeAuditLogConfigResponse.RequestId"));
 		describeAuditLogConfigResponse.setAuditLogStatus(_ctx.stringValue("DescribeAuditLogConfigResponse.AuditLogStatus"));
 		describeAuditLogConfigResponse.setDBClusterId(_ctx.stringValue("DescribeAuditLogConfigResponse.DBClusterId"));
+		describeAuditLogConfigResponse.setAccessDeniedDetail(_ctx.stringValue("DescribeAuditLogConfigResponse.AccessDeniedDetail"));
 	 
 	 	return describeAuditLogConfigResponse;
 	}

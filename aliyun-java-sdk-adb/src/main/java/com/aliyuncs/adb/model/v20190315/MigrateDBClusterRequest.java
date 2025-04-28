@@ -27,13 +27,33 @@ public class MigrateDBClusterRequest extends RpcAcsRequest<MigrateDBClusterRespo
 
 	private Long resourceOwnerId;
 
+	private String secondaryZoneId;
+
+	private Integer reservedNodeCount;
+
+	private String productVersion;
+
+	private String storageResource;
+
 	private String resourceOwnerAccount;
 
 	private String dBClusterId;
 
 	private String ownerAccount;
 
+	private String shardNumber;
+
 	private Long ownerId;
+
+	private String productForm;
+
+	private String secondaryVSwitchId;
+
+	private String reservedNodeSize;
+
+	private String computeResource;
+
+	private String storageResourceSize;
 	public MigrateDBClusterRequest() {
 		super("adb", "2019-03-15", "MigrateDBCluster", "ads");
 		setMethod(MethodType.POST);
@@ -51,6 +71,50 @@ public class MigrateDBClusterRequest extends RpcAcsRequest<MigrateDBClusterRespo
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getSecondaryZoneId() {
+		return this.secondaryZoneId;
+	}
+
+	public void setSecondaryZoneId(String secondaryZoneId) {
+		this.secondaryZoneId = secondaryZoneId;
+		if(secondaryZoneId != null){
+			putQueryParameter("SecondaryZoneId", secondaryZoneId);
+		}
+	}
+
+	public Integer getReservedNodeCount() {
+		return this.reservedNodeCount;
+	}
+
+	public void setReservedNodeCount(Integer reservedNodeCount) {
+		this.reservedNodeCount = reservedNodeCount;
+		if(reservedNodeCount != null){
+			putQueryParameter("ReservedNodeCount", reservedNodeCount.toString());
+		}
+	}
+
+	public String getProductVersion() {
+		return this.productVersion;
+	}
+
+	public void setProductVersion(String productVersion) {
+		this.productVersion = productVersion;
+		if(productVersion != null){
+			putQueryParameter("ProductVersion", productVersion);
+		}
+	}
+
+	public String getStorageResource() {
+		return this.storageResource;
+	}
+
+	public void setStorageResource(String storageResource) {
+		this.storageResource = storageResource;
+		if(storageResource != null){
+			putQueryParameter("StorageResource", storageResource);
 		}
 	}
 
@@ -87,6 +151,17 @@ public class MigrateDBClusterRequest extends RpcAcsRequest<MigrateDBClusterRespo
 		}
 	}
 
+	public String getShardNumber() {
+		return this.shardNumber;
+	}
+
+	public void setShardNumber(String shardNumber) {
+		this.shardNumber = shardNumber;
+		if(shardNumber != null){
+			putQueryParameter("ShardNumber", shardNumber);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -95,6 +170,61 @@ public class MigrateDBClusterRequest extends RpcAcsRequest<MigrateDBClusterRespo
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getProductForm() {
+		return this.productForm;
+	}
+
+	public void setProductForm(String productForm) {
+		this.productForm = productForm;
+		if(productForm != null){
+			putQueryParameter("ProductForm", productForm);
+		}
+	}
+
+	public String getSecondaryVSwitchId() {
+		return this.secondaryVSwitchId;
+	}
+
+	public void setSecondaryVSwitchId(String secondaryVSwitchId) {
+		this.secondaryVSwitchId = secondaryVSwitchId;
+		if(secondaryVSwitchId != null){
+			putQueryParameter("SecondaryVSwitchId", secondaryVSwitchId);
+		}
+	}
+
+	public String getReservedNodeSize() {
+		return this.reservedNodeSize;
+	}
+
+	public void setReservedNodeSize(String reservedNodeSize) {
+		this.reservedNodeSize = reservedNodeSize;
+		if(reservedNodeSize != null){
+			putQueryParameter("ReservedNodeSize", reservedNodeSize);
+		}
+	}
+
+	public String getComputeResource() {
+		return this.computeResource;
+	}
+
+	public void setComputeResource(String computeResource) {
+		this.computeResource = computeResource;
+		if(computeResource != null){
+			putQueryParameter("ComputeResource", computeResource);
+		}
+	}
+
+	public String getStorageResourceSize() {
+		return this.storageResourceSize;
+	}
+
+	public void setStorageResourceSize(String storageResourceSize) {
+		this.storageResourceSize = storageResourceSize;
+		if(storageResourceSize != null){
+			putQueryParameter("StorageResourceSize", storageResourceSize);
 		}
 	}
 

@@ -30,6 +30,8 @@ public class DescribeAuditLogConfigResponse extends AcsResponse {
 
 	private String dBClusterId;
 
+	private String accessDeniedDetail;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -52,6 +54,14 @@ public class DescribeAuditLogConfigResponse extends AcsResponse {
 
 	public void setDBClusterId(String dBClusterId) {
 		this.dBClusterId = dBClusterId;
+	}
+
+	public String getAccessDeniedDetail() {
+		return this.accessDeniedDetail;
+	}
+
+	public void setAccessDeniedDetail(String accessDeniedDetail) {
+		this.accessDeniedDetail = accessDeniedDetail;
 	}
 
 	@Override

@@ -20,6 +20,8 @@ import java.util.List;
 import com.aliyuncs.adb.model.v20190315.DescribeDBClustersResponse;
 import com.aliyuncs.adb.model.v20190315.DescribeDBClustersResponse.DBCluster;
 import com.aliyuncs.adb.model.v20190315.DescribeDBClustersResponse.DBCluster.Tag;
+import com.aliyuncs.adb.model.v20190315.DescribeDBClustersResponse.DBCluster.TaskInfo;
+import com.aliyuncs.adb.model.v20190315.DescribeDBClustersResponse.DBCluster.TaskInfo.StepListItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -71,6 +73,27 @@ public class DescribeDBClustersResponseUnmarshaller {
 			dBCluster.setEngine(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].Engine"));
 			dBCluster.setInnerIp(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].InnerIp"));
 			dBCluster.setInnerPort(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].InnerPort"));
+			dBCluster.setProductVersion(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].ProductVersion"));
+
+			TaskInfo taskInfo = new TaskInfo();
+			taskInfo.setName(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].TaskInfo.Name"));
+			taskInfo.setStatus(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].TaskInfo.Status"));
+			taskInfo.setProgress(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].TaskInfo.Progress"));
+
+			List<StepListItem> stepList = new ArrayList<StepListItem>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeDBClustersResponse.Items["+ i +"].TaskInfo.StepList.Length"); j++) {
+				StepListItem stepListItem = new StepListItem();
+				stepListItem.setStepName(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].TaskInfo.StepList["+ j +"].StepName"));
+				stepListItem.setStepDesc(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].TaskInfo.StepList["+ j +"].StepDesc"));
+				stepListItem.setStepStatus(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].TaskInfo.StepList["+ j +"].StepStatus"));
+				stepListItem.setStepProgress(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].TaskInfo.StepList["+ j +"].StepProgress"));
+				stepListItem.setStartTime(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].TaskInfo.StepList["+ j +"].StartTime"));
+				stepListItem.setEndTime(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].TaskInfo.StepList["+ j +"].EndTime"));
+
+				stepList.add(stepListItem);
+			}
+			taskInfo.setStepList(stepList);
+			dBCluster.setTaskInfo(taskInfo);
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDBClustersResponse.Items["+ i +"].Tags.Length"); j++) {

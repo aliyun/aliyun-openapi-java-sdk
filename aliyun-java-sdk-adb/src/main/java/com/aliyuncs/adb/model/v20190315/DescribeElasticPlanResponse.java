@@ -51,6 +51,8 @@ public class DescribeElasticPlanResponse extends AcsResponse {
 
 		private String weeklyRepeat;
 
+		private String monthlyRepeat;
+
 		private String startTime;
 
 		private String resourcePoolName;
@@ -83,6 +85,14 @@ public class DescribeElasticPlanResponse extends AcsResponse {
 
 		public void setWeeklyRepeat(String weeklyRepeat) {
 			this.weeklyRepeat = weeklyRepeat;
+		}
+
+		public String getMonthlyRepeat() {
+			return this.monthlyRepeat;
+		}
+
+		public void setMonthlyRepeat(String monthlyRepeat) {
+			this.monthlyRepeat = monthlyRepeat;
 		}
 
 		public String getStartTime() {
