@@ -1,3 +1,20 @@
+2025-04-28 Version: 1.0.7
+- Dataphin v5.1.0 openAPI changs log.
+- Add API ListRowPermission.
+- Add API SyncDepartmentUser.
+- Add API ListRowPermissionByUserId.
+- Add API SyncDepartment.
+- Add API GetTableColumnLineageByTaskId.
+- Add API GetTableLineageByTaskId.
+- Add API GetAccountByRowPermissionId.
+- Add API CreateRowPermission.
+- Add API CreateDataServiceApi.
+- Add API UpdateRowPermission.
+- Add API DeleteRowPermission.
+- Fix API GetSupplementDagrunInstance metadata.
+- Fix API GetClusterQueueInfoByEnv metadata.
+
+
 2025-04-17 Version: 1.0.6
 -- Add API ListApiByApp.
 
