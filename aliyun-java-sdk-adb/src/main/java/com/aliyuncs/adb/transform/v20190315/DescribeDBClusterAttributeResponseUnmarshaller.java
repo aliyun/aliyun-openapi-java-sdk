@@ -82,6 +82,9 @@ public class DescribeDBClusterAttributeResponseUnmarshaller {
 			dBCluster.setProductVersion(_ctx.stringValue("DescribeDBClusterAttributeResponse.Items["+ i +"].ProductVersion"));
 			dBCluster.setSecondaryZoneId(_ctx.stringValue("DescribeDBClusterAttributeResponse.Items["+ i +"].SecondaryZoneId"));
 			dBCluster.setSecondaryVSwitchId(_ctx.stringValue("DescribeDBClusterAttributeResponse.Items["+ i +"].SecondaryVSwitchId"));
+			dBCluster.setReservedNodeSize(_ctx.stringValue("DescribeDBClusterAttributeResponse.Items["+ i +"].ReservedNodeSize"));
+			dBCluster.setReservedNodeCount(_ctx.integerValue("DescribeDBClusterAttributeResponse.Items["+ i +"].ReservedNodeCount"));
+			dBCluster.setProductForm(_ctx.stringValue("DescribeDBClusterAttributeResponse.Items["+ i +"].ProductForm"));
 
 			TaskInfo taskInfo = new TaskInfo();
 			taskInfo.setName(_ctx.stringValue("DescribeDBClusterAttributeResponse.Items["+ i +"].TaskInfo.Name"));

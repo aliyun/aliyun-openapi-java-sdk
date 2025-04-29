@@ -143,6 +143,12 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 		private String secondaryVSwitchId;
 
+		private String reservedNodeSize;
+
+		private Integer reservedNodeCount;
+
+		private String productForm;
+
 		private List<Tag> tags;
 
 		private TaskInfo taskInfo;
@@ -529,6 +535,30 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 		public void setSecondaryVSwitchId(String secondaryVSwitchId) {
 			this.secondaryVSwitchId = secondaryVSwitchId;
+		}
+
+		public String getReservedNodeSize() {
+			return this.reservedNodeSize;
+		}
+
+		public void setReservedNodeSize(String reservedNodeSize) {
+			this.reservedNodeSize = reservedNodeSize;
+		}
+
+		public Integer getReservedNodeCount() {
+			return this.reservedNodeCount;
+		}
+
+		public void setReservedNodeCount(Integer reservedNodeCount) {
+			this.reservedNodeCount = reservedNodeCount;
+		}
+
+		public String getProductForm() {
+			return this.productForm;
+		}
+
+		public void setProductForm(String productForm) {
+			this.productForm = productForm;
 		}
 
 		public List<Tag> getTags() {
