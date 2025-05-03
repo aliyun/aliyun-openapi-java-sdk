@@ -33,16 +33,6 @@ public abstract class Signer {
     private final static Signer HMAC_SM3 = new HmacSM3Signer();
     private final static Signer HMAC_SHA256 = new HmacSHA256Signer();
 
-    public static Signer getSigner(AlibabaCloudCredentials credentials) {
-        if (credentials instanceof KeyPairCredentials) {
-            return SHA256_WITH_RSA_SIGNER;
-        } else if (credentials instanceof BearerTokenCredentials) {
-            return BEARER_TOKEN_SIGNER;
-        } else {
-            return HMACSHA1_SIGNER;
-        }
-    }
-
     public static Signer getSigner(AlibabaCloudCredentials credentials, SignatureVersion signatureVersion, SignatureAlgorithm signatureAlgorithm) {
         switch (signatureVersion) {
             case V3:
