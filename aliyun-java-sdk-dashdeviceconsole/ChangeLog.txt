@@ -1,3 +1,7 @@
+2025-05-06 Version: 1.0.1
+-  delete prompt
+- PromptMaganer v1.0 sdk publish 
+
 2025-04-14 Version: 1.0.0
 - PromptMaganer v1.0 sdk publish
 
