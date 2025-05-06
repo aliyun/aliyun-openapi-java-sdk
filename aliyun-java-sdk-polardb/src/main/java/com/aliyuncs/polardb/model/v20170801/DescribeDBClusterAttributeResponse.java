@@ -161,6 +161,8 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 	private String osVersion;
 
+	private String autoUpgradeMinorVersion;
+
 	private String burstingEnabled;
 
 	private String rowCompression;
@@ -170,6 +172,10 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 	private Integer cnNodeCount;
 
 	private Integer dnNodeCount;
+
+	private String documentDB;
+
+	private String backupDowngradeLevel;
 
 	private List<DBNode> dBNodes;
 
@@ -721,6 +727,14 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 		this.osVersion = osVersion;
 	}
 
+	public String getAutoUpgradeMinorVersion() {
+		return this.autoUpgradeMinorVersion;
+	}
+
+	public void setAutoUpgradeMinorVersion(String autoUpgradeMinorVersion) {
+		this.autoUpgradeMinorVersion = autoUpgradeMinorVersion;
+	}
+
 	public String getBurstingEnabled() {
 		return this.burstingEnabled;
 	}
@@ -759,6 +773,22 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 	public void setDnNodeCount(Integer dnNodeCount) {
 		this.dnNodeCount = dnNodeCount;
+	}
+
+	public String getDocumentDB() {
+		return this.documentDB;
+	}
+
+	public void setDocumentDB(String documentDB) {
+		this.documentDB = documentDB;
+	}
+
+	public String getBackupDowngradeLevel() {
+		return this.backupDowngradeLevel;
+	}
+
+	public void setBackupDowngradeLevel(String backupDowngradeLevel) {
+		this.backupDowngradeLevel = backupDowngradeLevel;
 	}
 
 	public List<DBNode> getDBNodes() {
@@ -831,7 +861,7 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 		private String orca;
 
-		private String mirrorInsName;
+		private String osVersion;
 
 		private String multiMasterLocalStandby;
 
@@ -858,6 +888,12 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 		private Long blktagTotal;
 
 		private Long blktagUsed;
+
+		private String subGroupDescription;
+
+		private String mirrorInsName;
+
+		private String architecture;
 
 		public String getCreationTime() {
 			return this.creationTime;
@@ -1035,12 +1071,12 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 			this.orca = orca;
 		}
 
-		public String getMirrorInsName() {
-			return this.mirrorInsName;
+		public String getOsVersion() {
+			return this.osVersion;
 		}
 
-		public void setMirrorInsName(String mirrorInsName) {
-			this.mirrorInsName = mirrorInsName;
+		public void setOsVersion(String osVersion) {
+			this.osVersion = osVersion;
 		}
 
 		public String getMultiMasterLocalStandby() {
@@ -1145,6 +1181,30 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 		public void setBlktagUsed(Long blktagUsed) {
 			this.blktagUsed = blktagUsed;
+		}
+
+		public String getSubGroupDescription() {
+			return this.subGroupDescription;
+		}
+
+		public void setSubGroupDescription(String subGroupDescription) {
+			this.subGroupDescription = subGroupDescription;
+		}
+
+		public String getMirrorInsName() {
+			return this.mirrorInsName;
+		}
+
+		public void setMirrorInsName(String mirrorInsName) {
+			this.mirrorInsName = mirrorInsName;
+		}
+
+		public String getArchitecture() {
+			return this.architecture;
+		}
+
+		public void setArchitecture(String architecture) {
+			this.architecture = architecture;
 		}
 	}
 

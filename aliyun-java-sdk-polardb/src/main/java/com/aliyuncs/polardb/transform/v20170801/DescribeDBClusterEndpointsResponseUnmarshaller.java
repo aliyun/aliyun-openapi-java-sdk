@@ -32,7 +32,6 @@ public class DescribeDBClusterEndpointsResponseUnmarshaller {
 		List<DBEndpoint> items = new ArrayList<DBEndpoint>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDBClusterEndpointsResponse.Items.Length"); i++) {
 			DBEndpoint dBEndpoint = new DBEndpoint();
-			dBEndpoint.setNodeWithRoles(_ctx.stringValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].NodeWithRoles"));
 			dBEndpoint.setNodes(_ctx.stringValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].Nodes"));
 			dBEndpoint.setReadWriteMode(_ctx.stringValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].ReadWriteMode"));
 			dBEndpoint.setDBEndpointId(_ctx.stringValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].DBEndpointId"));
@@ -44,6 +43,8 @@ public class DescribeDBClusterEndpointsResponseUnmarshaller {
 			dBEndpoint.setSccMode(_ctx.stringValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].SccMode"));
 			dBEndpoint.setPolarSccTimeoutAction(_ctx.stringValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].PolarSccTimeoutAction"));
 			dBEndpoint.setPolarSccWaitTimeout(_ctx.stringValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].PolarSccWaitTimeout"));
+			dBEndpoint.setNodeWithRoles(_ctx.stringValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].NodeWithRoles"));
+			dBEndpoint.setConsistLevelControlVersion(_ctx.stringValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].ConsistLevelControlVersion"));
 
 			List<Address> addressItems = new ArrayList<Address>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].AddressItems.Length"); j++) {

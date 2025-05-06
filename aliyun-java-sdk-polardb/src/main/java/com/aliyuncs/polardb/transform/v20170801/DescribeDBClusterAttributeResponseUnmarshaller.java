@@ -96,11 +96,14 @@ public class DescribeDBClusterAttributeResponseUnmarshaller {
 		describeDBClusterAttributeResponse.setSourceRegionId(_ctx.stringValue("DescribeDBClusterAttributeResponse.SourceRegionId"));
 		describeDBClusterAttributeResponse.setImciAutoIndex(_ctx.stringValue("DescribeDBClusterAttributeResponse.ImciAutoIndex"));
 		describeDBClusterAttributeResponse.setOsVersion(_ctx.stringValue("DescribeDBClusterAttributeResponse.OsVersion"));
+		describeDBClusterAttributeResponse.setAutoUpgradeMinorVersion(_ctx.stringValue("DescribeDBClusterAttributeResponse.AutoUpgradeMinorVersion"));
 		describeDBClusterAttributeResponse.setBurstingEnabled(_ctx.stringValue("DescribeDBClusterAttributeResponse.BurstingEnabled"));
 		describeDBClusterAttributeResponse.setRowCompression(_ctx.stringValue("DescribeDBClusterAttributeResponse.RowCompression"));
 		describeDBClusterAttributeResponse.setImperceptibleSwitch(_ctx.stringValue("DescribeDBClusterAttributeResponse.ImperceptibleSwitch"));
 		describeDBClusterAttributeResponse.setCnNodeCount(_ctx.integerValue("DescribeDBClusterAttributeResponse.CnNodeCount"));
 		describeDBClusterAttributeResponse.setDnNodeCount(_ctx.integerValue("DescribeDBClusterAttributeResponse.DnNodeCount"));
+		describeDBClusterAttributeResponse.setDocumentDB(_ctx.stringValue("DescribeDBClusterAttributeResponse.DocumentDB"));
+		describeDBClusterAttributeResponse.setBackupDowngradeLevel(_ctx.stringValue("DescribeDBClusterAttributeResponse.BackupDowngradeLevel"));
 
 		RelatedAPInstance relatedAPInstance = new RelatedAPInstance();
 		relatedAPInstance.setName(_ctx.stringValue("DescribeDBClusterAttributeResponse.RelatedAPInstance.Name"));
@@ -136,7 +139,7 @@ public class DescribeDBClusterAttributeResponseUnmarshaller {
 			dBNode.setTair(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].Tair"));
 			dBNode.setRemoteMemorySize(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].RemoteMemorySize"));
 			dBNode.setOrca(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].Orca"));
-			dBNode.setMirrorInsName(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].MirrorInsName"));
+			dBNode.setOsVersion(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].OsVersion"));
 			dBNode.setMultiMasterLocalStandby(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].MultiMasterLocalStandby"));
 			dBNode.setMultiMasterPrimaryNode(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].MultiMasterPrimaryNode"));
 			dBNode.setDBNodeDescription(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].DBNodeDescription"));
@@ -150,6 +153,9 @@ public class DescribeDBClusterAttributeResponseUnmarshaller {
 			dBNode.setInodeTotal(_ctx.longValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].InodeTotal"));
 			dBNode.setBlktagTotal(_ctx.longValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].BlktagTotal"));
 			dBNode.setBlktagUsed(_ctx.longValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].BlktagUsed"));
+			dBNode.setSubGroupDescription(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].SubGroupDescription"));
+			dBNode.setMirrorInsName(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].MirrorInsName"));
+			dBNode.setArchitecture(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].Architecture"));
 
 			dBNodes.add(dBNode);
 		}

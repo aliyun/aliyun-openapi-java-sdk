@@ -25,17 +25,21 @@ import com.aliyuncs.polardb.Endpoint;
 public class ModifyMaskingRulesRequest extends RpcAcsRequest<ModifyMaskingRulesResponse> {
 	   
 
-	private String interfaceVersion;
-
-	private String dBClusterId;
+	private String maskingAlgo;
 
 	private String ruleName;
 
 	private String ruleVersion;
 
-	private String ruleConfig;
-
 	private String enable;
+
+	private String interfaceVersion;
+
+	private String dBClusterId;
+
+	private String defaultAlgo;
+
+	private String ruleConfig;
 
 	private String ruleNameList;
 	public ModifyMaskingRulesRequest() {
@@ -47,25 +51,14 @@ public class ModifyMaskingRulesRequest extends RpcAcsRequest<ModifyMaskingRulesR
 		} catch (Exception e) {}
 	}
 
-	public String getInterfaceVersion() {
-		return this.interfaceVersion;
+	public String getMaskingAlgo() {
+		return this.maskingAlgo;
 	}
 
-	public void setInterfaceVersion(String interfaceVersion) {
-		this.interfaceVersion = interfaceVersion;
-		if(interfaceVersion != null){
-			putQueryParameter("InterfaceVersion", interfaceVersion);
-		}
-	}
-
-	public String getDBClusterId() {
-		return this.dBClusterId;
-	}
-
-	public void setDBClusterId(String dBClusterId) {
-		this.dBClusterId = dBClusterId;
-		if(dBClusterId != null){
-			putQueryParameter("DBClusterId", dBClusterId);
+	public void setMaskingAlgo(String maskingAlgo) {
+		this.maskingAlgo = maskingAlgo;
+		if(maskingAlgo != null){
+			putQueryParameter("MaskingAlgo", maskingAlgo);
 		}
 	}
 
@@ -91,17 +84,6 @@ public class ModifyMaskingRulesRequest extends RpcAcsRequest<ModifyMaskingRulesR
 		}
 	}
 
-	public String getRuleConfig() {
-		return this.ruleConfig;
-	}
-
-	public void setRuleConfig(String ruleConfig) {
-		this.ruleConfig = ruleConfig;
-		if(ruleConfig != null){
-			putQueryParameter("RuleConfig", ruleConfig);
-		}
-	}
-
 	public String getEnable() {
 		return this.enable;
 	}
@@ -110,6 +92,50 @@ public class ModifyMaskingRulesRequest extends RpcAcsRequest<ModifyMaskingRulesR
 		this.enable = enable;
 		if(enable != null){
 			putQueryParameter("Enable", enable);
+		}
+	}
+
+	public String getInterfaceVersion() {
+		return this.interfaceVersion;
+	}
+
+	public void setInterfaceVersion(String interfaceVersion) {
+		this.interfaceVersion = interfaceVersion;
+		if(interfaceVersion != null){
+			putQueryParameter("InterfaceVersion", interfaceVersion);
+		}
+	}
+
+	public String getDBClusterId() {
+		return this.dBClusterId;
+	}
+
+	public void setDBClusterId(String dBClusterId) {
+		this.dBClusterId = dBClusterId;
+		if(dBClusterId != null){
+			putQueryParameter("DBClusterId", dBClusterId);
+		}
+	}
+
+	public String getDefaultAlgo() {
+		return this.defaultAlgo;
+	}
+
+	public void setDefaultAlgo(String defaultAlgo) {
+		this.defaultAlgo = defaultAlgo;
+		if(defaultAlgo != null){
+			putQueryParameter("DefaultAlgo", defaultAlgo);
+		}
+	}
+
+	public String getRuleConfig() {
+		return this.ruleConfig;
+	}
+
+	public void setRuleConfig(String ruleConfig) {
+		this.ruleConfig = ruleConfig;
+		if(ruleConfig != null){
+			putQueryParameter("RuleConfig", ruleConfig);
 		}
 	}
 

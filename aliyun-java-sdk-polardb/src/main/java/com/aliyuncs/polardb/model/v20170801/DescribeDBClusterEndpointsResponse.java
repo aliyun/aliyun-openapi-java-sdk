@@ -47,8 +47,6 @@ public class DescribeDBClusterEndpointsResponse extends AcsResponse {
 
 	public static class DBEndpoint {
 
-		private String nodeWithRoles;
-
 		private String nodes;
 
 		private String readWriteMode;
@@ -71,15 +69,11 @@ public class DescribeDBClusterEndpointsResponse extends AcsResponse {
 
 		private String polarSccWaitTimeout;
 
+		private String nodeWithRoles;
+
+		private String consistLevelControlVersion;
+
 		private List<Address> addressItems;
-
-		public String getNodeWithRoles() {
-			return this.nodeWithRoles;
-		}
-
-		public void setNodeWithRoles(String nodeWithRoles) {
-			this.nodeWithRoles = nodeWithRoles;
-		}
 
 		public String getNodes() {
 			return this.nodes;
@@ -167,6 +161,22 @@ public class DescribeDBClusterEndpointsResponse extends AcsResponse {
 
 		public void setPolarSccWaitTimeout(String polarSccWaitTimeout) {
 			this.polarSccWaitTimeout = polarSccWaitTimeout;
+		}
+
+		public String getNodeWithRoles() {
+			return this.nodeWithRoles;
+		}
+
+		public void setNodeWithRoles(String nodeWithRoles) {
+			this.nodeWithRoles = nodeWithRoles;
+		}
+
+		public String getConsistLevelControlVersion() {
+			return this.consistLevelControlVersion;
+		}
+
+		public void setConsistLevelControlVersion(String consistLevelControlVersion) {
+			this.consistLevelControlVersion = consistLevelControlVersion;
 		}
 
 		public List<Address> getAddressItems() {

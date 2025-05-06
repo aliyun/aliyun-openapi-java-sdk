@@ -93,6 +93,8 @@ public class DescribeBackupLogsResponse extends AcsResponse {
 
 		private String backupLogName;
 
+		private String dBInstanceName;
+
 		public String getBackupLogId() {
 			return this.backupLogId;
 		}
@@ -155,6 +157,14 @@ public class DescribeBackupLogsResponse extends AcsResponse {
 
 		public void setBackupLogName(String backupLogName) {
 			this.backupLogName = backupLogName;
+		}
+
+		public String getDBInstanceName() {
+			return this.dBInstanceName;
+		}
+
+		public void setDBInstanceName(String dBInstanceName) {
+			this.dBInstanceName = dBInstanceName;
 		}
 	}
 
