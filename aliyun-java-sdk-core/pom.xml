@@ -4,7 +4,7 @@
     <groupId>com.aliyun</groupId>
     <artifactId>aliyun-java-sdk-core</artifactId>
     <packaging>jar</packaging>
-    <version>4.7.4-20250416-hotfix</version>
+    <version>4.7.4-20250509-hotfix</version>
     <name>aliyun-java-sdk-core</name>
     <url>https://www.aliyun.com</url>
     <description>Aliyun Open API SDK for Java
@@ -92,7 +92,7 @@
         <dependency>
             <groupId>org.glassfish.jaxb</groupId>
             <artifactId>jaxb-runtime</artifactId>
-            <version>4.0.5</version>
+            <version>2.3.2</version>
         </dependency>
         <dependency>
             <groupId>org.bouncycastle</groupId>
