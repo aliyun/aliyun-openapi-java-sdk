@@ -15,6 +15,7 @@
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.live.Endpoint;
 
@@ -22,14 +23,13 @@ import com.aliyuncs.live.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeLiveStreamsNotifyUrlConfigRequest extends RpcAcsRequest<DescribeLiveStreamsNotifyUrlConfigResponse> {
+public class DescribeRtcCloudRecordingFilesRequest extends RpcAcsRequest<DescribeRtcCloudRecordingFilesResponse> {
 	   
 
-	private String domainName;
-
-	private Long ownerId;
-	public DescribeLiveStreamsNotifyUrlConfigRequest() {
-		super("live", "2016-11-01", "DescribeLiveStreamsNotifyUrlConfig", "live");
+	private String taskId;
+	public DescribeRtcCloudRecordingFilesRequest() {
+		super("live", "2016-11-01", "DescribeRtcCloudRecordingFiles", "live");
+		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +37,20 @@ public class DescribeLiveStreamsNotifyUrlConfigRequest extends RpcAcsRequest<Des
 		} catch (Exception e) {}
 	}
 
-	public String getDomainName() {
-		return this.domainName;
+	public String getTaskId() {
+		return this.taskId;
 	}
 
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
+		if(taskId != null){
+			putQueryParameter("TaskId", taskId);
 		}
 	}
 
 	@Override
-	public Class<DescribeLiveStreamsNotifyUrlConfigResponse> getResponseClass() {
-		return DescribeLiveStreamsNotifyUrlConfigResponse.class;
+	public Class<DescribeRtcCloudRecordingFilesResponse> getResponseClass() {
+		return DescribeRtcCloudRecordingFilesResponse.class;
 	}
 
 }

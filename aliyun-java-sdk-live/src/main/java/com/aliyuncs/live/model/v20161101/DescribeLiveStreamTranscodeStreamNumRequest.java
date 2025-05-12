@@ -28,6 +28,8 @@ public class DescribeLiveStreamTranscodeStreamNumRequest extends RpcAcsRequest<D
 	private String domainName;
 
 	private Long ownerId;
+
+	private String splitType;
 	public DescribeLiveStreamTranscodeStreamNumRequest() {
 		super("live", "2016-11-01", "DescribeLiveStreamTranscodeStreamNum", "live");
 		setMethod(MethodType.POST);
@@ -56,6 +58,17 @@ public class DescribeLiveStreamTranscodeStreamNumRequest extends RpcAcsRequest<D
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getSplitType() {
+		return this.splitType;
+	}
+
+	public void setSplitType(String splitType) {
+		this.splitType = splitType;
+		if(splitType != null){
+			putQueryParameter("SplitType", splitType);
 		}
 	}
 

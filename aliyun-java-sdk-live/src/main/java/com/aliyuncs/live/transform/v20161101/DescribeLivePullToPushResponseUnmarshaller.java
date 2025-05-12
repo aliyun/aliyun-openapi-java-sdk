@@ -50,6 +50,7 @@ public class DescribeLivePullToPushResponseUnmarshaller {
 		taskInfo.setFileIndex(_ctx.integerValue("DescribeLivePullToPushResponse.TaskInfo.FileIndex"));
 		taskInfo.setRetryCount(_ctx.integerValue("DescribeLivePullToPushResponse.TaskInfo.RetryCount"));
 		taskInfo.setRetryInterval(_ctx.integerValue("DescribeLivePullToPushResponse.TaskInfo.RetryInterval"));
+		taskInfo.setRepeatNumber(_ctx.integerValue("DescribeLivePullToPushResponse.TaskInfo.RepeatNumber"));
 
 		List<String> sourceUrls = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLivePullToPushResponse.TaskInfo.SourceUrls.Length"); i++) {

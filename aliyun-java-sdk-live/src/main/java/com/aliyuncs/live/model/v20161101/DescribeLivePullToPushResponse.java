@@ -161,6 +161,8 @@ public class DescribeLivePullToPushResponse extends AcsResponse {
 
 		private Integer retryInterval;
 
+		private Integer repeatNumber;
+
 		private List<String> sourceUrls;
 
 		public String getTaskId() {
@@ -257,6 +259,14 @@ public class DescribeLivePullToPushResponse extends AcsResponse {
 
 		public void setRetryInterval(Integer retryInterval) {
 			this.retryInterval = retryInterval;
+		}
+
+		public Integer getRepeatNumber() {
+			return this.repeatNumber;
+		}
+
+		public void setRepeatNumber(Integer repeatNumber) {
+			this.repeatNumber = repeatNumber;
 		}
 
 		public List<String> getSourceUrls() {
