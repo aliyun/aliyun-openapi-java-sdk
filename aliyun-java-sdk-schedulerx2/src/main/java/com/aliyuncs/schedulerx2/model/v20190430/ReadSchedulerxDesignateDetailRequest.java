@@ -15,6 +15,7 @@
 package com.aliyuncs.schedulerx2.model.v20190430;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.schedulerx2.Endpoint;
 
@@ -22,22 +23,21 @@ import com.aliyuncs.schedulerx2.Endpoint;
  * @author auto create
  * @version 
  */
-public class GrantPermissionRequest extends RpcAcsRequest<GrantPermissionResponse> {
+public class ReadSchedulerxDesignateDetailRequest extends RpcAcsRequest<ReadSchedulerxDesignateDetailResponse> {
 	   
 
 	private String namespaceSource;
 
-	private String userId;
-
-	private Boolean grantOption;
-
 	private String groupId;
 
-	private String namespace;
+	private Integer designateType;
 
-	private String userName;
-	public GrantPermissionRequest() {
-		super("schedulerx2", "2019-04-30", "GrantPermission", "schedulerx2");
+	private Long jobId;
+
+	private String namespace;
+	public ReadSchedulerxDesignateDetailRequest() {
+		super("schedulerx2", "2019-04-30", "ReadSchedulerxDesignateDetail", "schedulerx2");
+		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -56,28 +56,6 @@ public class GrantPermissionRequest extends RpcAcsRequest<GrantPermissionRespons
 		}
 	}
 
-	public String getUserId() {
-		return this.userId;
-	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putQueryParameter("UserId", userId);
-		}
-	}
-
-	public Boolean getGrantOption() {
-		return this.grantOption;
-	}
-
-	public void setGrantOption(Boolean grantOption) {
-		this.grantOption = grantOption;
-		if(grantOption != null){
-			putQueryParameter("GrantOption", grantOption.toString());
-		}
-	}
-
 	public String getGroupId() {
 		return this.groupId;
 	}
@@ -86,6 +64,28 @@ public class GrantPermissionRequest extends RpcAcsRequest<GrantPermissionRespons
 		this.groupId = groupId;
 		if(groupId != null){
 			putQueryParameter("GroupId", groupId);
+		}
+	}
+
+	public Integer getDesignateType() {
+		return this.designateType;
+	}
+
+	public void setDesignateType(Integer designateType) {
+		this.designateType = designateType;
+		if(designateType != null){
+			putQueryParameter("DesignateType", designateType.toString());
+		}
+	}
+
+	public Long getJobId() {
+		return this.jobId;
+	}
+
+	public void setJobId(Long jobId) {
+		this.jobId = jobId;
+		if(jobId != null){
+			putQueryParameter("JobId", jobId.toString());
 		}
 	}
 
@@ -100,20 +100,9 @@ public class GrantPermissionRequest extends RpcAcsRequest<GrantPermissionRespons
 		}
 	}
 
-	public String getUserName() {
-		return this.userName;
-	}
-
-	public void setUserName(String userName) {
-		this.userName = userName;
-		if(userName != null){
-			putQueryParameter("UserName", userName);
-		}
-	}
-
 	@Override
-	public Class<GrantPermissionResponse> getResponseClass() {
-		return GrantPermissionResponse.class;
+	public Class<ReadSchedulerxDesignateDetailResponse> getResponseClass() {
+		return ReadSchedulerxDesignateDetailResponse.class;
 	}
 
 }

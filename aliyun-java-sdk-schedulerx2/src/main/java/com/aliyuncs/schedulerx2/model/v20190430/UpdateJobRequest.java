@@ -42,6 +42,8 @@ public class UpdateJobRequest extends RpcAcsRequest<UpdateJobResponse> {
 
 	private Integer dispatcherSize;
 
+	private Integer priority;
+
 	private Integer taskAttemptInterval;
 
 	private String executeMode;
@@ -191,6 +193,17 @@ public class UpdateJobRequest extends RpcAcsRequest<UpdateJobResponse> {
 		this.dispatcherSize = dispatcherSize;
 		if(dispatcherSize != null){
 			putBodyParameter("DispatcherSize", dispatcherSize.toString());
+		}
+	}
+
+	public Integer getPriority() {
+		return this.priority;
+	}
+
+	public void setPriority(Integer priority) {
+		this.priority = priority;
+		if(priority != null){
+			putQueryParameter("Priority", priority.toString());
 		}
 	}
 

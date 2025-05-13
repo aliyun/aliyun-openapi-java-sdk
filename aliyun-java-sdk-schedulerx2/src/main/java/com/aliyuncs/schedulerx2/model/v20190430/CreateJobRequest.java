@@ -40,6 +40,8 @@ public class CreateJobRequest extends RpcAcsRequest<CreateJobResponse> {
 
 	private Integer dispatcherSize;
 
+	private Integer priority;
+
 	private String jobType;
 
 	private Integer taskAttemptInterval;
@@ -178,6 +180,17 @@ public class CreateJobRequest extends RpcAcsRequest<CreateJobResponse> {
 		this.dispatcherSize = dispatcherSize;
 		if(dispatcherSize != null){
 			putBodyParameter("DispatcherSize", dispatcherSize.toString());
+		}
+	}
+
+	public Integer getPriority() {
+		return this.priority;
+	}
+
+	public void setPriority(Integer priority) {
+		this.priority = priority;
+		if(priority != null){
+			putQueryParameter("Priority", priority.toString());
 		}
 	}
 

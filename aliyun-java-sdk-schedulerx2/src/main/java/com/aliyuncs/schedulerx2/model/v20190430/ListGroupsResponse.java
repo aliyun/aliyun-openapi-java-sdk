@@ -103,6 +103,8 @@ public class ListGroupsResponse extends AcsResponse {
 
 			private Integer appVersion;
 
+			private String namespace;
+
 			public Long getAppGroupId() {
 				return this.appGroupId;
 			}
@@ -157,6 +159,14 @@ public class ListGroupsResponse extends AcsResponse {
 
 			public void setAppVersion(Integer appVersion) {
 				this.appVersion = appVersion;
+			}
+
+			public String getNamespace() {
+				return this.namespace;
+			}
+
+			public void setNamespace(String namespace) {
+				this.namespace = namespace;
 			}
 		}
 	}

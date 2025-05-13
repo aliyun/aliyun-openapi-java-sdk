@@ -1,3 +1,6 @@
+2025-05-13 Version: 1.1.14
+- Add Api ReadSchedulerxDesignateDetail.
+
 2024-06-25 Version: 1.1.13
 - Create AppGroup Support Set AppVersion.
 - Update AppGroup Support Set AppVersion.

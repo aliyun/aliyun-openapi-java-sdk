@@ -111,6 +111,12 @@ public class GetWorkFlowResponse extends AcsResponse {
 
 			private String timeExpression;
 
+			private String groupId;
+
+			private String namespace;
+
+			private String maxConcurrency;
+
 			public Long getWorkflowId() {
 				return this.workflowId;
 			}
@@ -157,6 +163,30 @@ public class GetWorkFlowResponse extends AcsResponse {
 
 			public void setTimeExpression(String timeExpression) {
 				this.timeExpression = timeExpression;
+			}
+
+			public String getGroupId() {
+				return this.groupId;
+			}
+
+			public void setGroupId(String groupId) {
+				this.groupId = groupId;
+			}
+
+			public String getNamespace() {
+				return this.namespace;
+			}
+
+			public void setNamespace(String namespace) {
+				this.namespace = namespace;
+			}
+
+			public String getMaxConcurrency() {
+				return this.maxConcurrency;
+			}
+
+			public void setMaxConcurrency(String maxConcurrency) {
+				this.maxConcurrency = maxConcurrency;
 			}
 		}
 

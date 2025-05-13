@@ -106,6 +106,10 @@ public class GetAppGroupResponse extends AcsResponse {
 
 		private String appVersion;
 
+		private String namespace;
+
+		private String monitorContactsJson;
+
 		public String getAppName() {
 			return this.appName;
 		}
@@ -224,6 +228,22 @@ public class GetAppGroupResponse extends AcsResponse {
 
 		public void setAppVersion(String appVersion) {
 			this.appVersion = appVersion;
+		}
+
+		public String getNamespace() {
+			return this.namespace;
+		}
+
+		public void setNamespace(String namespace) {
+			this.namespace = namespace;
+		}
+
+		public String getMonitorContactsJson() {
+			return this.monitorContactsJson;
+		}
+
+		public void setMonitorContactsJson(String monitorContactsJson) {
+			this.monitorContactsJson = monitorContactsJson;
 		}
 	}
 

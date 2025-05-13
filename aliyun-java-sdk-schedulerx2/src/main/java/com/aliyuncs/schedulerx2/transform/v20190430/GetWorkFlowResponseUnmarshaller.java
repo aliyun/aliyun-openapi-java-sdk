@@ -44,6 +44,9 @@ public class GetWorkFlowResponseUnmarshaller {
 		workFlowInfo.setStatus(_ctx.stringValue("GetWorkFlowResponse.Data.WorkFlowInfo.Status"));
 		workFlowInfo.setTimeType(_ctx.stringValue("GetWorkFlowResponse.Data.WorkFlowInfo.TimeType"));
 		workFlowInfo.setTimeExpression(_ctx.stringValue("GetWorkFlowResponse.Data.WorkFlowInfo.TimeExpression"));
+		workFlowInfo.setGroupId(_ctx.stringValue("GetWorkFlowResponse.Data.WorkFlowInfo.GroupId"));
+		workFlowInfo.setNamespace(_ctx.stringValue("GetWorkFlowResponse.Data.WorkFlowInfo.Namespace"));
+		workFlowInfo.setMaxConcurrency(_ctx.stringValue("GetWorkFlowResponse.Data.WorkFlowInfo.MaxConcurrency"));
 		data.setWorkFlowInfo(workFlowInfo);
 
 		WorkFlowNodeInfo workFlowNodeInfo = new WorkFlowNodeInfo();

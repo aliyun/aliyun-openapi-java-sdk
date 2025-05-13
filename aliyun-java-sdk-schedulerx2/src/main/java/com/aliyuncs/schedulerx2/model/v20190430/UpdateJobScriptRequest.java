@@ -15,6 +15,7 @@
 package com.aliyuncs.schedulerx2.model.v20190430;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.schedulerx2.Endpoint;
 
@@ -22,22 +23,23 @@ import com.aliyuncs.schedulerx2.Endpoint;
  * @author auto create
  * @version 
  */
-public class GrantPermissionRequest extends RpcAcsRequest<GrantPermissionResponse> {
+public class UpdateJobScriptRequest extends RpcAcsRequest<UpdateJobScriptResponse> {
 	   
 
 	private String namespaceSource;
 
-	private String userId;
-
-	private Boolean grantOption;
+	private Long jobId;
 
 	private String groupId;
 
 	private String namespace;
 
-	private String userName;
-	public GrantPermissionRequest() {
-		super("schedulerx2", "2019-04-30", "GrantPermission", "schedulerx2");
+	private String scriptContent;
+
+	private String versionDescription;
+	public UpdateJobScriptRequest() {
+		super("schedulerx2", "2019-04-30", "UpdateJobScript", "schedulerx2");
+		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -52,29 +54,18 @@ public class GrantPermissionRequest extends RpcAcsRequest<GrantPermissionRespons
 	public void setNamespaceSource(String namespaceSource) {
 		this.namespaceSource = namespaceSource;
 		if(namespaceSource != null){
-			putQueryParameter("NamespaceSource", namespaceSource);
+			putBodyParameter("NamespaceSource", namespaceSource);
 		}
 	}
 
-	public String getUserId() {
-		return this.userId;
+	public Long getJobId() {
+		return this.jobId;
 	}
 
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putQueryParameter("UserId", userId);
-		}
-	}
-
-	public Boolean getGrantOption() {
-		return this.grantOption;
-	}
-
-	public void setGrantOption(Boolean grantOption) {
-		this.grantOption = grantOption;
-		if(grantOption != null){
-			putQueryParameter("GrantOption", grantOption.toString());
+	public void setJobId(Long jobId) {
+		this.jobId = jobId;
+		if(jobId != null){
+			putBodyParameter("JobId", jobId.toString());
 		}
 	}
 
@@ -85,7 +76,7 @@ public class GrantPermissionRequest extends RpcAcsRequest<GrantPermissionRespons
 	public void setGroupId(String groupId) {
 		this.groupId = groupId;
 		if(groupId != null){
-			putQueryParameter("GroupId", groupId);
+			putBodyParameter("GroupId", groupId);
 		}
 	}
 
@@ -96,24 +87,35 @@ public class GrantPermissionRequest extends RpcAcsRequest<GrantPermissionRespons
 	public void setNamespace(String namespace) {
 		this.namespace = namespace;
 		if(namespace != null){
-			putQueryParameter("Namespace", namespace);
+			putBodyParameter("Namespace", namespace);
 		}
 	}
 
-	public String getUserName() {
-		return this.userName;
+	public String getScriptContent() {
+		return this.scriptContent;
 	}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
-		if(userName != null){
-			putQueryParameter("UserName", userName);
+	public void setScriptContent(String scriptContent) {
+		this.scriptContent = scriptContent;
+		if(scriptContent != null){
+			putBodyParameter("ScriptContent", scriptContent);
+		}
+	}
+
+	public String getVersionDescription() {
+		return this.versionDescription;
+	}
+
+	public void setVersionDescription(String versionDescription) {
+		this.versionDescription = versionDescription;
+		if(versionDescription != null){
+			putBodyParameter("VersionDescription", versionDescription);
 		}
 	}
 
 	@Override
-	public Class<GrantPermissionResponse> getResponseClass() {
-		return GrantPermissionResponse.class;
+	public Class<UpdateJobScriptResponse> getResponseClass() {
+		return UpdateJobScriptResponse.class;
 	}
 
 }

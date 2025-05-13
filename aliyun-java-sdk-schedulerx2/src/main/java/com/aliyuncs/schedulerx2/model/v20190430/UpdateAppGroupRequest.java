@@ -27,9 +27,13 @@ public class UpdateAppGroupRequest extends RpcAcsRequest<UpdateAppGroupResponse>
 
 	private String description;
 
+	private String monitorContactsJson;
+
 	private String groupId;
 
 	private Integer appVersion;
+
+	private String monitorConfigJson;
 
 	private String namespace;
 
@@ -54,6 +58,17 @@ public class UpdateAppGroupRequest extends RpcAcsRequest<UpdateAppGroupResponse>
 		}
 	}
 
+	public String getMonitorContactsJson() {
+		return this.monitorContactsJson;
+	}
+
+	public void setMonitorContactsJson(String monitorContactsJson) {
+		this.monitorContactsJson = monitorContactsJson;
+		if(monitorContactsJson != null){
+			putQueryParameter("MonitorContactsJson", monitorContactsJson);
+		}
+	}
+
 	public String getGroupId() {
 		return this.groupId;
 	}
@@ -73,6 +88,17 @@ public class UpdateAppGroupRequest extends RpcAcsRequest<UpdateAppGroupResponse>
 		this.appVersion = appVersion;
 		if(appVersion != null){
 			putQueryParameter("AppVersion", appVersion.toString());
+		}
+	}
+
+	public String getMonitorConfigJson() {
+		return this.monitorConfigJson;
+	}
+
+	public void setMonitorConfigJson(String monitorConfigJson) {
+		this.monitorConfigJson = monitorConfigJson;
+		if(monitorConfigJson != null){
+			putQueryParameter("MonitorConfigJson", monitorConfigJson);
 		}
 	}
 

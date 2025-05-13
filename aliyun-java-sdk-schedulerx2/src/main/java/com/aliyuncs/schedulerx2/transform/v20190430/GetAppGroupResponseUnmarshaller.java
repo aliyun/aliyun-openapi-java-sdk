@@ -44,6 +44,8 @@ public class GetAppGroupResponseUnmarshaller {
 		data.setAppKey(_ctx.stringValue("GetAppGroupResponse.Data.AppKey"));
 		data.setXattrs(_ctx.stringValue("GetAppGroupResponse.Data.Xattrs"));
 		data.setAppVersion(_ctx.stringValue("GetAppGroupResponse.Data.AppVersion"));
+		data.setNamespace(_ctx.stringValue("GetAppGroupResponse.Data.Namespace"));
+		data.setMonitorContactsJson(_ctx.stringValue("GetAppGroupResponse.Data.MonitorContactsJson"));
 		getAppGroupResponse.setData(data);
 	 
 	 	return getAppGroupResponse;
