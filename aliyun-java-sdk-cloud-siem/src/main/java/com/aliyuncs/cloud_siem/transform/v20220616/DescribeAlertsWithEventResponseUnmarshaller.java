@@ -78,6 +78,7 @@ public class DescribeAlertsWithEventResponseUnmarshaller {
 			responseDataItem.setSubUserName(_ctx.stringValue("DescribeAlertsWithEventResponse.Data.ResponseData["+ i +"].SubUserName"));
 			responseDataItem.setCloudCode(_ctx.stringValue("DescribeAlertsWithEventResponse.Data.ResponseData["+ i +"].CloudCode"));
 			responseDataItem.setIsDefend(_ctx.stringValue("DescribeAlertsWithEventResponse.Data.ResponseData["+ i +"].IsDefend"));
+			responseDataItem.setExtendContent(_ctx.stringValue("DescribeAlertsWithEventResponse.Data.ResponseData["+ i +"].ExtendContent"));
 
 			List<AlertInfoListItem> alertInfoList = new ArrayList<AlertInfoListItem>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeAlertsWithEventResponse.Data.ResponseData["+ i +"].AlertInfoList.Length"); j++) {

@@ -165,6 +165,8 @@ public class DescribeAlertsWithEventResponse extends AcsResponse {
 
 			private String isDefend;
 
+			private String extendContent;
+
 			private List<AlertInfoListItem> alertInfoList;
 
 			public Long getId() {
@@ -429,6 +431,14 @@ public class DescribeAlertsWithEventResponse extends AcsResponse {
 
 			public void setIsDefend(String isDefend) {
 				this.isDefend = isDefend;
+			}
+
+			public String getExtendContent() {
+				return this.extendContent;
+			}
+
+			public void setExtendContent(String extendContent) {
+				this.extendContent = extendContent;
 			}
 
 			public List<AlertInfoListItem> getAlertInfoList() {
