@@ -27,6 +27,8 @@ public class RegisterCustomViewRequest extends RpcAcsRequest<RegisterCustomViewR
 
 	private Long resourceOwnerId;
 
+	private String labelPrompt;
+
 	private String algorithm;
 
 	private String customGroupId;
@@ -57,6 +59,17 @@ public class RegisterCustomViewRequest extends RpcAcsRequest<RegisterCustomViewR
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getLabelPrompt() {
+		return this.labelPrompt;
+	}
+
+	public void setLabelPrompt(String labelPrompt) {
+		this.labelPrompt = labelPrompt;
+		if(labelPrompt != null){
+			putQueryParameter("LabelPrompt", labelPrompt);
 		}
 	}
 

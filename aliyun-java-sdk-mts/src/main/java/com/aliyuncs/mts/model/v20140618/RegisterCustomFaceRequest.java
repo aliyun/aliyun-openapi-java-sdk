@@ -31,6 +31,8 @@ public class RegisterCustomFaceRequest extends RpcAcsRequest<RegisterCustomFaceR
 
 	private String categoryId;
 
+	private String personName;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -77,6 +79,17 @@ public class RegisterCustomFaceRequest extends RpcAcsRequest<RegisterCustomFaceR
 		this.categoryId = categoryId;
 		if(categoryId != null){
 			putQueryParameter("CategoryId", categoryId);
+		}
+	}
+
+	public String getPersonName() {
+		return this.personName;
+	}
+
+	public void setPersonName(String personName) {
+		this.personName = personName;
+		if(personName != null){
+			putQueryParameter("PersonName", personName);
 		}
 	}
 

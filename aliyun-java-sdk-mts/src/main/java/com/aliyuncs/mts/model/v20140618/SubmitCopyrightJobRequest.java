@@ -27,7 +27,7 @@ public class SubmitCopyrightJobRequest extends RpcAcsRequest<SubmitCopyrightJobR
 
 	private String description;
 
-	private String startTime;
+	private Long startTime;
 
 	private String output;
 
@@ -43,7 +43,7 @@ public class SubmitCopyrightJobRequest extends RpcAcsRequest<SubmitCopyrightJobR
 
 	private String input;
 
-	private String totalTime;
+	private Long totalTime;
 
 	private String callBack;
 	public SubmitCopyrightJobRequest() {
@@ -66,14 +66,14 @@ public class SubmitCopyrightJobRequest extends RpcAcsRequest<SubmitCopyrightJobR
 		}
 	}
 
-	public String getStartTime() {
+	public Long getStartTime() {
 		return this.startTime;
 	}
 
-	public void setStartTime(String startTime) {
+	public void setStartTime(Long startTime) {
 		this.startTime = startTime;
 		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
+			putQueryParameter("StartTime", startTime.toString());
 		}
 	}
 
@@ -154,14 +154,14 @@ public class SubmitCopyrightJobRequest extends RpcAcsRequest<SubmitCopyrightJobR
 		}
 	}
 
-	public String getTotalTime() {
+	public Long getTotalTime() {
 		return this.totalTime;
 	}
 
-	public void setTotalTime(String totalTime) {
+	public void setTotalTime(Long totalTime) {
 		this.totalTime = totalTime;
 		if(totalTime != null){
-			putQueryParameter("TotalTime", totalTime);
+			putQueryParameter("TotalTime", totalTime.toString());
 		}
 	}
 

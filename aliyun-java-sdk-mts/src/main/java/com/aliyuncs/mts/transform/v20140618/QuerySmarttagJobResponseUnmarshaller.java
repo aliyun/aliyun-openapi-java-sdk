@@ -28,13 +28,14 @@ public class QuerySmarttagJobResponseUnmarshaller {
 		
 		querySmarttagJobResponse.setRequestId(_ctx.stringValue("QuerySmarttagJobResponse.RequestId"));
 		querySmarttagJobResponse.setJobStatus(_ctx.stringValue("QuerySmarttagJobResponse.JobStatus"));
+		querySmarttagJobResponse.setMessage(_ctx.stringValue("QuerySmarttagJobResponse.Message"));
 		querySmarttagJobResponse.setUserData(_ctx.stringValue("QuerySmarttagJobResponse.UserData"));
 
 		List<Result> results = new ArrayList<Result>();
 		for (int i = 0; i < _ctx.lengthValue("QuerySmarttagJobResponse.Results.Length"); i++) {
 			Result result = new Result();
-			result.setType(_ctx.stringValue("QuerySmarttagJobResponse.Results["+ i +"].Type"));
 			result.setData(_ctx.stringValue("QuerySmarttagJobResponse.Results["+ i +"].Data"));
+			result.setType(_ctx.stringValue("QuerySmarttagJobResponse.Results["+ i +"].Type"));
 
 			results.add(result);
 		}

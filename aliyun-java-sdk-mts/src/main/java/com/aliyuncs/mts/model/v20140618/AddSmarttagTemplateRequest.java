@@ -33,7 +33,11 @@ public class AddSmarttagTemplateRequest extends RpcAcsRequest<AddSmarttagTemplat
 
 	private String labelVersion;
 
+	private String labelCustomParamsConfig;
+
 	private String scene;
+
+	private String templateConfig;
 
 	private String faceCustomParamsConfig;
 
@@ -50,6 +54,8 @@ public class AddSmarttagTemplateRequest extends RpcAcsRequest<AddSmarttagTemplat
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
+
+	private String labelCustomCategoryIds;
 
 	private String objectGroupIds;
 
@@ -111,6 +117,17 @@ public class AddSmarttagTemplateRequest extends RpcAcsRequest<AddSmarttagTemplat
 		}
 	}
 
+	public String getLabelCustomParamsConfig() {
+		return this.labelCustomParamsConfig;
+	}
+
+	public void setLabelCustomParamsConfig(String labelCustomParamsConfig) {
+		this.labelCustomParamsConfig = labelCustomParamsConfig;
+		if(labelCustomParamsConfig != null){
+			putQueryParameter("LabelCustomParamsConfig", labelCustomParamsConfig);
+		}
+	}
+
 	public String getScene() {
 		return this.scene;
 	}
@@ -119,6 +136,17 @@ public class AddSmarttagTemplateRequest extends RpcAcsRequest<AddSmarttagTemplat
 		this.scene = scene;
 		if(scene != null){
 			putQueryParameter("Scene", scene);
+		}
+	}
+
+	public String getTemplateConfig() {
+		return this.templateConfig;
+	}
+
+	public void setTemplateConfig(String templateConfig) {
+		this.templateConfig = templateConfig;
+		if(templateConfig != null){
+			putQueryParameter("TemplateConfig", templateConfig);
 		}
 	}
 
@@ -207,6 +235,17 @@ public class AddSmarttagTemplateRequest extends RpcAcsRequest<AddSmarttagTemplat
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getLabelCustomCategoryIds() {
+		return this.labelCustomCategoryIds;
+	}
+
+	public void setLabelCustomCategoryIds(String labelCustomCategoryIds) {
+		this.labelCustomCategoryIds = labelCustomCategoryIds;
+		if(labelCustomCategoryIds != null){
+			putQueryParameter("LabelCustomCategoryIds", labelCustomCategoryIds);
 		}
 	}
 
