@@ -29,6 +29,22 @@ public class UpgradeDBInstanceMajorVersionRequest extends RpcAcsRequest<UpgradeD
 
 	private Integer dBInstanceStorage;
 
+	private String period;
+
+	private String upgradeMode;
+
+	private String dBInstanceClass;
+
+	private String vSwitchId;
+
+	private String privateIpAddress;
+
+	private String zoneId;
+
+	private String instanceNetworkType;
+
+	private String targetMajorVersion;
+
 	private String zoneIdSlave1;
 
 	private String zoneIdSlave2;
@@ -45,25 +61,11 @@ public class UpgradeDBInstanceMajorVersionRequest extends RpcAcsRequest<UpgradeD
 
 	private String dBInstanceStorageType;
 
-	private String period;
-
 	private String usedTime;
-
-	private String dBInstanceClass;
-
-	private String vSwitchId;
-
-	private String privateIpAddress;
 
 	private String vPCId;
 
-	private String zoneId;
-
 	private String payType;
-
-	private String instanceNetworkType;
-
-	private String targetMajorVersion;
 	public UpgradeDBInstanceMajorVersionRequest() {
 		super("Rds", "2014-08-15", "UpgradeDBInstanceMajorVersion", "rds");
 		setMethod(MethodType.POST);
@@ -92,6 +94,94 @@ public class UpgradeDBInstanceMajorVersionRequest extends RpcAcsRequest<UpgradeD
 		this.dBInstanceStorage = dBInstanceStorage;
 		if(dBInstanceStorage != null){
 			putQueryParameter("DBInstanceStorage", dBInstanceStorage.toString());
+		}
+	}
+
+	public String getPeriod() {
+		return this.period;
+	}
+
+	public void setPeriod(String period) {
+		this.period = period;
+		if(period != null){
+			putQueryParameter("Period", period);
+		}
+	}
+
+	public String getUpgradeMode() {
+		return this.upgradeMode;
+	}
+
+	public void setUpgradeMode(String upgradeMode) {
+		this.upgradeMode = upgradeMode;
+		if(upgradeMode != null){
+			putQueryParameter("UpgradeMode", upgradeMode);
+		}
+	}
+
+	public String getDBInstanceClass() {
+		return this.dBInstanceClass;
+	}
+
+	public void setDBInstanceClass(String dBInstanceClass) {
+		this.dBInstanceClass = dBInstanceClass;
+		if(dBInstanceClass != null){
+			putQueryParameter("DBInstanceClass", dBInstanceClass);
+		}
+	}
+
+	public String getVSwitchId() {
+		return this.vSwitchId;
+	}
+
+	public void setVSwitchId(String vSwitchId) {
+		this.vSwitchId = vSwitchId;
+		if(vSwitchId != null){
+			putQueryParameter("VSwitchId", vSwitchId);
+		}
+	}
+
+	public String getPrivateIpAddress() {
+		return this.privateIpAddress;
+	}
+
+	public void setPrivateIpAddress(String privateIpAddress) {
+		this.privateIpAddress = privateIpAddress;
+		if(privateIpAddress != null){
+			putQueryParameter("PrivateIpAddress", privateIpAddress);
+		}
+	}
+
+	public String getZoneId() {
+		return this.zoneId;
+	}
+
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+		if(zoneId != null){
+			putQueryParameter("ZoneId", zoneId);
+		}
+	}
+
+	public String getInstanceNetworkType() {
+		return this.instanceNetworkType;
+	}
+
+	public void setInstanceNetworkType(String instanceNetworkType) {
+		this.instanceNetworkType = instanceNetworkType;
+		if(instanceNetworkType != null){
+			putQueryParameter("InstanceNetworkType", instanceNetworkType);
+		}
+	}
+
+	public String getTargetMajorVersion() {
+		return this.targetMajorVersion;
+	}
+
+	public void setTargetMajorVersion(String targetMajorVersion) {
+		this.targetMajorVersion = targetMajorVersion;
+		if(targetMajorVersion != null){
+			putQueryParameter("TargetMajorVersion", targetMajorVersion);
 		}
 	}
 
@@ -183,17 +273,6 @@ public class UpgradeDBInstanceMajorVersionRequest extends RpcAcsRequest<UpgradeD
 		}
 	}
 
-	public String getPeriod() {
-		return this.period;
-	}
-
-	public void setPeriod(String period) {
-		this.period = period;
-		if(period != null){
-			putQueryParameter("Period", period);
-		}
-	}
-
 	public String getUsedTime() {
 		return this.usedTime;
 	}
@@ -202,39 +281,6 @@ public class UpgradeDBInstanceMajorVersionRequest extends RpcAcsRequest<UpgradeD
 		this.usedTime = usedTime;
 		if(usedTime != null){
 			putQueryParameter("UsedTime", usedTime);
-		}
-	}
-
-	public String getDBInstanceClass() {
-		return this.dBInstanceClass;
-	}
-
-	public void setDBInstanceClass(String dBInstanceClass) {
-		this.dBInstanceClass = dBInstanceClass;
-		if(dBInstanceClass != null){
-			putQueryParameter("DBInstanceClass", dBInstanceClass);
-		}
-	}
-
-	public String getVSwitchId() {
-		return this.vSwitchId;
-	}
-
-	public void setVSwitchId(String vSwitchId) {
-		this.vSwitchId = vSwitchId;
-		if(vSwitchId != null){
-			putQueryParameter("VSwitchId", vSwitchId);
-		}
-	}
-
-	public String getPrivateIpAddress() {
-		return this.privateIpAddress;
-	}
-
-	public void setPrivateIpAddress(String privateIpAddress) {
-		this.privateIpAddress = privateIpAddress;
-		if(privateIpAddress != null){
-			putQueryParameter("PrivateIpAddress", privateIpAddress);
 		}
 	}
 
@@ -249,17 +295,6 @@ public class UpgradeDBInstanceMajorVersionRequest extends RpcAcsRequest<UpgradeD
 		}
 	}
 
-	public String getZoneId() {
-		return this.zoneId;
-	}
-
-	public void setZoneId(String zoneId) {
-		this.zoneId = zoneId;
-		if(zoneId != null){
-			putQueryParameter("ZoneId", zoneId);
-		}
-	}
-
 	public String getPayType() {
 		return this.payType;
 	}
@@ -268,28 +303,6 @@ public class UpgradeDBInstanceMajorVersionRequest extends RpcAcsRequest<UpgradeD
 		this.payType = payType;
 		if(payType != null){
 			putQueryParameter("PayType", payType);
-		}
-	}
-
-	public String getInstanceNetworkType() {
-		return this.instanceNetworkType;
-	}
-
-	public void setInstanceNetworkType(String instanceNetworkType) {
-		this.instanceNetworkType = instanceNetworkType;
-		if(instanceNetworkType != null){
-			putQueryParameter("InstanceNetworkType", instanceNetworkType);
-		}
-	}
-
-	public String getTargetMajorVersion() {
-		return this.targetMajorVersion;
-	}
-
-	public void setTargetMajorVersion(String targetMajorVersion) {
-		this.targetMajorVersion = targetMajorVersion;
-		if(targetMajorVersion != null){
-			putQueryParameter("TargetMajorVersion", targetMajorVersion);
 		}
 	}
 

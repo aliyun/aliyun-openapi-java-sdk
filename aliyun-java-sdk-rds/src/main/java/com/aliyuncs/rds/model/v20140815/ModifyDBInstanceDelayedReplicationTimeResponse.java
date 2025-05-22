@@ -26,11 +26,11 @@ public class ModifyDBInstanceDelayedReplicationTimeResponse extends AcsResponse 
 
 	private String dBInstanceId;
 
+	private String readSQLReplicationTime;
+
 	private String requestId;
 
 	private String taskId;
-
-	private String readSQLReplicationTime;
 
 	public String getDBInstanceId() {
 		return this.dBInstanceId;
@@ -38,6 +38,14 @@ public class ModifyDBInstanceDelayedReplicationTimeResponse extends AcsResponse 
 
 	public void setDBInstanceId(String dBInstanceId) {
 		this.dBInstanceId = dBInstanceId;
+	}
+
+	public String getReadSQLReplicationTime() {
+		return this.readSQLReplicationTime;
+	}
+
+	public void setReadSQLReplicationTime(String readSQLReplicationTime) {
+		this.readSQLReplicationTime = readSQLReplicationTime;
 	}
 
 	public String getRequestId() {
@@ -54,14 +62,6 @@ public class ModifyDBInstanceDelayedReplicationTimeResponse extends AcsResponse 
 
 	public void setTaskId(String taskId) {
 		this.taskId = taskId;
-	}
-
-	public String getReadSQLReplicationTime() {
-		return this.readSQLReplicationTime;
-	}
-
-	public void setReadSQLReplicationTime(String readSQLReplicationTime) {
-		this.readSQLReplicationTime = readSQLReplicationTime;
 	}
 
 	@Override

@@ -24,36 +24,36 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeClassDetailsResponse extends AcsResponse {
 
-	private String requestId;
+	private String category;
 
 	private String classCode;
-
-	private String maxIOMBPS;
-
-	private String maxConnections;
 
 	private String classGroup;
 
 	private String cpu;
 
+	private String dBInstanceStorageType;
+
 	private String instructionSetArch;
 
-	private String memoryClass;
+	private String maxConnections;
+
+	private String maxIOMBPS;
 
 	private String maxIOPS;
 
+	private String memoryClass;
+
 	private String referencePrice;
 
-	private String category;
+	private String requestId;
 
-	private String dBInstanceStorageType;
-
-	public String getRequestId() {
-		return this.requestId;
+	public String getCategory() {
+		return this.category;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setCategory(String category) {
+		this.category = category;
 	}
 
 	public String getClassCode() {
@@ -62,22 +62,6 @@ public class DescribeClassDetailsResponse extends AcsResponse {
 
 	public void setClassCode(String classCode) {
 		this.classCode = classCode;
-	}
-
-	public String getMaxIOMBPS() {
-		return this.maxIOMBPS;
-	}
-
-	public void setMaxIOMBPS(String maxIOMBPS) {
-		this.maxIOMBPS = maxIOMBPS;
-	}
-
-	public String getMaxConnections() {
-		return this.maxConnections;
-	}
-
-	public void setMaxConnections(String maxConnections) {
-		this.maxConnections = maxConnections;
 	}
 
 	public String getClassGroup() {
@@ -96,6 +80,14 @@ public class DescribeClassDetailsResponse extends AcsResponse {
 		this.cpu = cpu;
 	}
 
+	public String getDBInstanceStorageType() {
+		return this.dBInstanceStorageType;
+	}
+
+	public void setDBInstanceStorageType(String dBInstanceStorageType) {
+		this.dBInstanceStorageType = dBInstanceStorageType;
+	}
+
 	public String getInstructionSetArch() {
 		return this.instructionSetArch;
 	}
@@ -104,12 +96,20 @@ public class DescribeClassDetailsResponse extends AcsResponse {
 		this.instructionSetArch = instructionSetArch;
 	}
 
-	public String getMemoryClass() {
-		return this.memoryClass;
+	public String getMaxConnections() {
+		return this.maxConnections;
 	}
 
-	public void setMemoryClass(String memoryClass) {
-		this.memoryClass = memoryClass;
+	public void setMaxConnections(String maxConnections) {
+		this.maxConnections = maxConnections;
+	}
+
+	public String getMaxIOMBPS() {
+		return this.maxIOMBPS;
+	}
+
+	public void setMaxIOMBPS(String maxIOMBPS) {
+		this.maxIOMBPS = maxIOMBPS;
 	}
 
 	public String getMaxIOPS() {
@@ -120,6 +120,14 @@ public class DescribeClassDetailsResponse extends AcsResponse {
 		this.maxIOPS = maxIOPS;
 	}
 
+	public String getMemoryClass() {
+		return this.memoryClass;
+	}
+
+	public void setMemoryClass(String memoryClass) {
+		this.memoryClass = memoryClass;
+	}
+
 	public String getReferencePrice() {
 		return this.referencePrice;
 	}
@@ -128,20 +136,12 @@ public class DescribeClassDetailsResponse extends AcsResponse {
 		this.referencePrice = referencePrice;
 	}
 
-	public String getCategory() {
-		return this.category;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCategory(String category) {
-		this.category = category;
-	}
-
-	public String getDBInstanceStorageType() {
-		return this.dBInstanceStorageType;
-	}
-
-	public void setDBInstanceStorageType(String dBInstanceStorageType) {
-		this.dBInstanceStorageType = dBInstanceStorageType;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

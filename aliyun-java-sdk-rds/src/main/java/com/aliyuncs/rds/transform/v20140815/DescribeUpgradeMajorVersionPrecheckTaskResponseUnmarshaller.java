@@ -41,6 +41,10 @@ public class DescribeUpgradeMajorVersionPrecheckTaskResponseUnmarshaller {
 			tasks.setTaskId(_ctx.integerValue("DescribeUpgradeMajorVersionPrecheckTaskResponse.Items["+ i +"].TaskId"));
 			tasks.setDetail(_ctx.stringValue("DescribeUpgradeMajorVersionPrecheckTaskResponse.Items["+ i +"].Detail"));
 			tasks.setCheckTime(_ctx.stringValue("DescribeUpgradeMajorVersionPrecheckTaskResponse.Items["+ i +"].CheckTime"));
+			tasks.setRecommendDiskSize(_ctx.integerValue("DescribeUpgradeMajorVersionPrecheckTaskResponse.Items["+ i +"].RecommendDiskSize"));
+			tasks.setRecommendLeastMemSize(_ctx.integerValue("DescribeUpgradeMajorVersionPrecheckTaskResponse.Items["+ i +"].RecommendLeastMemSize"));
+			tasks.setRecommendMemSize(_ctx.integerValue("DescribeUpgradeMajorVersionPrecheckTaskResponse.Items["+ i +"].RecommendMemSize"));
+			tasks.setUpgradeMode(_ctx.stringValue("DescribeUpgradeMajorVersionPrecheckTaskResponse.Items["+ i +"].UpgradeMode"));
 
 			items.add(tasks);
 		}

@@ -24,9 +24,9 @@ public class ModifyAccountMaskingPrivilegeResponseUnmarshaller {
 	public static ModifyAccountMaskingPrivilegeResponse unmarshall(ModifyAccountMaskingPrivilegeResponse modifyAccountMaskingPrivilegeResponse, UnmarshallerContext _ctx) {
 		
 		modifyAccountMaskingPrivilegeResponse.setRequestId(_ctx.stringValue("ModifyAccountMaskingPrivilegeResponse.RequestId"));
-		modifyAccountMaskingPrivilegeResponse.setSuccess(_ctx.stringValue("ModifyAccountMaskingPrivilegeResponse.Success"));
-		modifyAccountMaskingPrivilegeResponse.setMessage(_ctx.stringValue("ModifyAccountMaskingPrivilegeResponse.Message"));
 		modifyAccountMaskingPrivilegeResponse.setData(_ctx.mapValue("ModifyAccountMaskingPrivilegeResponse.Data"));
+		modifyAccountMaskingPrivilegeResponse.setMessage(_ctx.stringValue("ModifyAccountMaskingPrivilegeResponse.Message"));
+		modifyAccountMaskingPrivilegeResponse.setSuccess(_ctx.stringValue("ModifyAccountMaskingPrivilegeResponse.Success"));
 	 
 	 	return modifyAccountMaskingPrivilegeResponse;
 	}

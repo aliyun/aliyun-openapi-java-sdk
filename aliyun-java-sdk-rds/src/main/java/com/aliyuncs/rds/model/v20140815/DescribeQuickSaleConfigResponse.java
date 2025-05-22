@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeQuickSaleConfigResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String commodity;
 
 	private Map<Object,Object> items;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getCommodity() {
 		return this.commodity;
@@ -53,6 +45,14 @@ public class DescribeQuickSaleConfigResponse extends AcsResponse {
 
 	public void setItems(Map<Object,Object> items) {
 		this.items = items;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

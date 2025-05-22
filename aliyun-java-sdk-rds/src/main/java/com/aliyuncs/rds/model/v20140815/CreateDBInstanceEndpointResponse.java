@@ -46,18 +46,18 @@ public class CreateDBInstanceEndpointResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String dBInstanceName;
+		private String connectionString;
 
 		private String dBInstanceEndpointId;
 
-		private String connectionString;
+		private String dBInstanceName;
 
-		public String getDBInstanceName() {
-			return this.dBInstanceName;
+		public String getConnectionString() {
+			return this.connectionString;
 		}
 
-		public void setDBInstanceName(String dBInstanceName) {
-			this.dBInstanceName = dBInstanceName;
+		public void setConnectionString(String connectionString) {
+			this.connectionString = connectionString;
 		}
 
 		public String getDBInstanceEndpointId() {
@@ -68,12 +68,12 @@ public class CreateDBInstanceEndpointResponse extends AcsResponse {
 			this.dBInstanceEndpointId = dBInstanceEndpointId;
 		}
 
-		public String getConnectionString() {
-			return this.connectionString;
+		public String getDBInstanceName() {
+			return this.dBInstanceName;
 		}
 
-		public void setConnectionString(String connectionString) {
-			this.connectionString = connectionString;
+		public void setDBInstanceName(String dBInstanceName) {
+			this.dBInstanceName = dBInstanceName;
 		}
 	}
 

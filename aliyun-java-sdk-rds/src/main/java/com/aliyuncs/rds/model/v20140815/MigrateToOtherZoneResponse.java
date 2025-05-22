@@ -24,19 +24,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class MigrateToOtherZoneResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String dBInstanceId;
 
 	private Long orderId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getDBInstanceId() {
 		return this.dBInstanceId;
@@ -52,6 +44,14 @@ public class MigrateToOtherZoneResponse extends AcsResponse {
 
 	public void setOrderId(Long orderId) {
 		this.orderId = orderId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

@@ -24,10 +24,10 @@ public class ModifyWhitelistTemplateResponseUnmarshaller {
 	public static ModifyWhitelistTemplateResponse unmarshall(ModifyWhitelistTemplateResponse modifyWhitelistTemplateResponse, UnmarshallerContext _ctx) {
 		
 		modifyWhitelistTemplateResponse.setRequestId(_ctx.stringValue("ModifyWhitelistTemplateResponse.RequestId"));
-		modifyWhitelistTemplateResponse.setSuccess(_ctx.booleanValue("ModifyWhitelistTemplateResponse.Success"));
 		modifyWhitelistTemplateResponse.setCode(_ctx.stringValue("ModifyWhitelistTemplateResponse.Code"));
-		modifyWhitelistTemplateResponse.setMessage(_ctx.stringValue("ModifyWhitelistTemplateResponse.Message"));
 		modifyWhitelistTemplateResponse.setHttpStatusCode(_ctx.integerValue("ModifyWhitelistTemplateResponse.HttpStatusCode"));
+		modifyWhitelistTemplateResponse.setMessage(_ctx.stringValue("ModifyWhitelistTemplateResponse.Message"));
+		modifyWhitelistTemplateResponse.setSuccess(_ctx.booleanValue("ModifyWhitelistTemplateResponse.Success"));
 
 		Data data = new Data();
 		data.setStatus(_ctx.stringValue("ModifyWhitelistTemplateResponse.Data.Status"));

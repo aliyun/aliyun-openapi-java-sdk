@@ -23,17 +23,17 @@ public class DescribeClassDetailsResponseUnmarshaller {
 	public static DescribeClassDetailsResponse unmarshall(DescribeClassDetailsResponse describeClassDetailsResponse, UnmarshallerContext _ctx) {
 		
 		describeClassDetailsResponse.setRequestId(_ctx.stringValue("DescribeClassDetailsResponse.RequestId"));
+		describeClassDetailsResponse.setCategory(_ctx.stringValue("DescribeClassDetailsResponse.Category"));
 		describeClassDetailsResponse.setClassCode(_ctx.stringValue("DescribeClassDetailsResponse.ClassCode"));
-		describeClassDetailsResponse.setMaxIOMBPS(_ctx.stringValue("DescribeClassDetailsResponse.MaxIOMBPS"));
-		describeClassDetailsResponse.setMaxConnections(_ctx.stringValue("DescribeClassDetailsResponse.MaxConnections"));
 		describeClassDetailsResponse.setClassGroup(_ctx.stringValue("DescribeClassDetailsResponse.ClassGroup"));
 		describeClassDetailsResponse.setCpu(_ctx.stringValue("DescribeClassDetailsResponse.Cpu"));
-		describeClassDetailsResponse.setInstructionSetArch(_ctx.stringValue("DescribeClassDetailsResponse.InstructionSetArch"));
-		describeClassDetailsResponse.setMemoryClass(_ctx.stringValue("DescribeClassDetailsResponse.MemoryClass"));
-		describeClassDetailsResponse.setMaxIOPS(_ctx.stringValue("DescribeClassDetailsResponse.MaxIOPS"));
-		describeClassDetailsResponse.setReferencePrice(_ctx.stringValue("DescribeClassDetailsResponse.ReferencePrice"));
-		describeClassDetailsResponse.setCategory(_ctx.stringValue("DescribeClassDetailsResponse.Category"));
 		describeClassDetailsResponse.setDBInstanceStorageType(_ctx.stringValue("DescribeClassDetailsResponse.DBInstanceStorageType"));
+		describeClassDetailsResponse.setInstructionSetArch(_ctx.stringValue("DescribeClassDetailsResponse.InstructionSetArch"));
+		describeClassDetailsResponse.setMaxConnections(_ctx.stringValue("DescribeClassDetailsResponse.MaxConnections"));
+		describeClassDetailsResponse.setMaxIOMBPS(_ctx.stringValue("DescribeClassDetailsResponse.MaxIOMBPS"));
+		describeClassDetailsResponse.setMaxIOPS(_ctx.stringValue("DescribeClassDetailsResponse.MaxIOPS"));
+		describeClassDetailsResponse.setMemoryClass(_ctx.stringValue("DescribeClassDetailsResponse.MemoryClass"));
+		describeClassDetailsResponse.setReferencePrice(_ctx.stringValue("DescribeClassDetailsResponse.ReferencePrice"));
 	 
 	 	return describeClassDetailsResponse;
 	}

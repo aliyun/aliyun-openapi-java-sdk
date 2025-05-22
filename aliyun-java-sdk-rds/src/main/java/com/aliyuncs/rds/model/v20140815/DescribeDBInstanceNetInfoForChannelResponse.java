@@ -57,73 +57,33 @@ public class DescribeDBInstanceNetInfoForChannelResponse extends AcsResponse {
 
 	public static class DBInstanceNetInfo {
 
-		private String upgradeable;
-
-		private String expiredTime;
-
-		private String iPType;
-
-		private String port;
-
-		private String vPCId;
-
 		private String availability;
-
-		private String vSwitchId;
-
-		private String connectionStringType;
 
 		private String connectionString;
 
-		private String maxDelayTime;
-
-		private String iPAddress;
+		private String connectionStringType;
 
 		private String distributionType;
 
-		private List<SecurityIPGroup> securityIPGroups;
+		private String iPAddress;
+
+		private String iPType;
+
+		private String maxDelayTime;
+
+		private String port;
+
+		private String upgradeable;
+
+		private String vPCId;
+
+		private String vSwitchId;
+
+		private String expiredTime;
 
 		private List<DBInstanceWeight> dBInstanceWeights;
 
-		public String getUpgradeable() {
-			return this.upgradeable;
-		}
-
-		public void setUpgradeable(String upgradeable) {
-			this.upgradeable = upgradeable;
-		}
-
-		public String getExpiredTime() {
-			return this.expiredTime;
-		}
-
-		public void setExpiredTime(String expiredTime) {
-			this.expiredTime = expiredTime;
-		}
-
-		public String getIPType() {
-			return this.iPType;
-		}
-
-		public void setIPType(String iPType) {
-			this.iPType = iPType;
-		}
-
-		public String getPort() {
-			return this.port;
-		}
-
-		public void setPort(String port) {
-			this.port = port;
-		}
-
-		public String getVPCId() {
-			return this.vPCId;
-		}
-
-		public void setVPCId(String vPCId) {
-			this.vPCId = vPCId;
-		}
+		private List<SecurityIPGroup> securityIPGroups;
 
 		public String getAvailability() {
 			return this.availability;
@@ -131,22 +91,6 @@ public class DescribeDBInstanceNetInfoForChannelResponse extends AcsResponse {
 
 		public void setAvailability(String availability) {
 			this.availability = availability;
-		}
-
-		public String getVSwitchId() {
-			return this.vSwitchId;
-		}
-
-		public void setVSwitchId(String vSwitchId) {
-			this.vSwitchId = vSwitchId;
-		}
-
-		public String getConnectionStringType() {
-			return this.connectionStringType;
-		}
-
-		public void setConnectionStringType(String connectionStringType) {
-			this.connectionStringType = connectionStringType;
 		}
 
 		public String getConnectionString() {
@@ -157,20 +101,12 @@ public class DescribeDBInstanceNetInfoForChannelResponse extends AcsResponse {
 			this.connectionString = connectionString;
 		}
 
-		public String getMaxDelayTime() {
-			return this.maxDelayTime;
+		public String getConnectionStringType() {
+			return this.connectionStringType;
 		}
 
-		public void setMaxDelayTime(String maxDelayTime) {
-			this.maxDelayTime = maxDelayTime;
-		}
-
-		public String getIPAddress() {
-			return this.iPAddress;
-		}
-
-		public void setIPAddress(String iPAddress) {
-			this.iPAddress = iPAddress;
+		public void setConnectionStringType(String connectionStringType) {
+			this.connectionStringType = connectionStringType;
 		}
 
 		public String getDistributionType() {
@@ -181,12 +117,68 @@ public class DescribeDBInstanceNetInfoForChannelResponse extends AcsResponse {
 			this.distributionType = distributionType;
 		}
 
-		public List<SecurityIPGroup> getSecurityIPGroups() {
-			return this.securityIPGroups;
+		public String getIPAddress() {
+			return this.iPAddress;
 		}
 
-		public void setSecurityIPGroups(List<SecurityIPGroup> securityIPGroups) {
-			this.securityIPGroups = securityIPGroups;
+		public void setIPAddress(String iPAddress) {
+			this.iPAddress = iPAddress;
+		}
+
+		public String getIPType() {
+			return this.iPType;
+		}
+
+		public void setIPType(String iPType) {
+			this.iPType = iPType;
+		}
+
+		public String getMaxDelayTime() {
+			return this.maxDelayTime;
+		}
+
+		public void setMaxDelayTime(String maxDelayTime) {
+			this.maxDelayTime = maxDelayTime;
+		}
+
+		public String getPort() {
+			return this.port;
+		}
+
+		public void setPort(String port) {
+			this.port = port;
+		}
+
+		public String getUpgradeable() {
+			return this.upgradeable;
+		}
+
+		public void setUpgradeable(String upgradeable) {
+			this.upgradeable = upgradeable;
+		}
+
+		public String getVPCId() {
+			return this.vPCId;
+		}
+
+		public void setVPCId(String vPCId) {
+			this.vPCId = vPCId;
+		}
+
+		public String getVSwitchId() {
+			return this.vSwitchId;
+		}
+
+		public void setVSwitchId(String vSwitchId) {
+			this.vSwitchId = vSwitchId;
+		}
+
+		public String getExpiredTime() {
+			return this.expiredTime;
+		}
+
+		public void setExpiredTime(String expiredTime) {
+			this.expiredTime = expiredTime;
 		}
 
 		public List<DBInstanceWeight> getDBInstanceWeights() {
@@ -197,38 +189,23 @@ public class DescribeDBInstanceNetInfoForChannelResponse extends AcsResponse {
 			this.dBInstanceWeights = dBInstanceWeights;
 		}
 
-		public static class SecurityIPGroup {
+		public List<SecurityIPGroup> getSecurityIPGroups() {
+			return this.securityIPGroups;
+		}
 
-			private String securityIPs;
-
-			private String securityIPGroupName;
-
-			public String getSecurityIPs() {
-				return this.securityIPs;
-			}
-
-			public void setSecurityIPs(String securityIPs) {
-				this.securityIPs = securityIPs;
-			}
-
-			public String getSecurityIPGroupName() {
-				return this.securityIPGroupName;
-			}
-
-			public void setSecurityIPGroupName(String securityIPGroupName) {
-				this.securityIPGroupName = securityIPGroupName;
-			}
+		public void setSecurityIPGroups(List<SecurityIPGroup> securityIPGroups) {
+			this.securityIPGroups = securityIPGroups;
 		}
 
 		public static class DBInstanceWeight {
 
 			private String availability;
 
-			private String weight;
-
 			private String dBInstanceId;
 
 			private String dBInstanceType;
+
+			private String weight;
 
 			public String getAvailability() {
 				return this.availability;
@@ -236,14 +213,6 @@ public class DescribeDBInstanceNetInfoForChannelResponse extends AcsResponse {
 
 			public void setAvailability(String availability) {
 				this.availability = availability;
-			}
-
-			public String getWeight() {
-				return this.weight;
-			}
-
-			public void setWeight(String weight) {
-				this.weight = weight;
 			}
 
 			public String getDBInstanceId() {
@@ -260,6 +229,37 @@ public class DescribeDBInstanceNetInfoForChannelResponse extends AcsResponse {
 
 			public void setDBInstanceType(String dBInstanceType) {
 				this.dBInstanceType = dBInstanceType;
+			}
+
+			public String getWeight() {
+				return this.weight;
+			}
+
+			public void setWeight(String weight) {
+				this.weight = weight;
+			}
+		}
+
+		public static class SecurityIPGroup {
+
+			private String securityIPGroupName;
+
+			private String securityIPs;
+
+			public String getSecurityIPGroupName() {
+				return this.securityIPGroupName;
+			}
+
+			public void setSecurityIPGroupName(String securityIPGroupName) {
+				this.securityIPGroupName = securityIPGroupName;
+			}
+
+			public String getSecurityIPs() {
+				return this.securityIPs;
+			}
+
+			public void setSecurityIPs(String securityIPs) {
+				this.securityIPs = securityIPs;
 			}
 		}
 	}

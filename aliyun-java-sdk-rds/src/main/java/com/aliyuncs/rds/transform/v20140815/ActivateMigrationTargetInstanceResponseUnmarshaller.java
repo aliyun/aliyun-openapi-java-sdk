@@ -24,9 +24,9 @@ public class ActivateMigrationTargetInstanceResponseUnmarshaller {
 		
 		activateMigrationTargetInstanceResponse.setRequestId(_ctx.stringValue("ActivateMigrationTargetInstanceResponse.RequestId"));
 		activateMigrationTargetInstanceResponse.setDBInstanceName(_ctx.stringValue("ActivateMigrationTargetInstanceResponse.DBInstanceName"));
-		activateMigrationTargetInstanceResponse.setTaskId(_ctx.longValue("ActivateMigrationTargetInstanceResponse.TaskId"));
 		activateMigrationTargetInstanceResponse.setSourceIpAddress(_ctx.stringValue("ActivateMigrationTargetInstanceResponse.SourceIpAddress"));
 		activateMigrationTargetInstanceResponse.setSourcePort(_ctx.longValue("ActivateMigrationTargetInstanceResponse.SourcePort"));
+		activateMigrationTargetInstanceResponse.setTaskId(_ctx.longValue("ActivateMigrationTargetInstanceResponse.TaskId"));
 	 
 	 	return activateMigrationTargetInstanceResponse;
 	}

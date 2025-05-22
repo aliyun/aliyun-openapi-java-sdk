@@ -47,18 +47,18 @@ public class DescribeCollationTimeZonesResponse extends AcsResponse {
 
 	public static class CollationTimeZone {
 
-		private String timeZone;
+		private String description;
 
 		private String standardTimeOffset;
 
-		private String description;
+		private String timeZone;
 
-		public String getTimeZone() {
-			return this.timeZone;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setTimeZone(String timeZone) {
-			this.timeZone = timeZone;
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public String getStandardTimeOffset() {
@@ -69,12 +69,12 @@ public class DescribeCollationTimeZonesResponse extends AcsResponse {
 			this.standardTimeOffset = standardTimeOffset;
 		}
 
-		public String getDescription() {
-			return this.description;
+		public String getTimeZone() {
+			return this.timeZone;
 		}
 
-		public void setDescription(String description) {
-			this.description = description;
+		public void setTimeZone(String timeZone) {
+			this.timeZone = timeZone;
 		}
 	}
 

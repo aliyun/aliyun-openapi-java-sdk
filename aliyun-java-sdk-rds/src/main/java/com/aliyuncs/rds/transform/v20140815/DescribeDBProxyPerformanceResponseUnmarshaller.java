@@ -38,6 +38,8 @@ public class DescribeDBProxyPerformanceResponseUnmarshaller {
 			PerformanceKey performanceKey = new PerformanceKey();
 			performanceKey.setValueFormat(_ctx.stringValue("DescribeDBProxyPerformanceResponse.PerformanceKeys["+ i +"].ValueFormat"));
 			performanceKey.setKey(_ctx.stringValue("DescribeDBProxyPerformanceResponse.PerformanceKeys["+ i +"].Key"));
+			performanceKey.setService(_ctx.stringValue("DescribeDBProxyPerformanceResponse.PerformanceKeys["+ i +"].Service"));
+			performanceKey.setNode(_ctx.stringValue("DescribeDBProxyPerformanceResponse.PerformanceKeys["+ i +"].Node"));
 
 			List<PerformanceValue> values = new ArrayList<PerformanceValue>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDBProxyPerformanceResponse.PerformanceKeys["+ i +"].Values.Length"); j++) {

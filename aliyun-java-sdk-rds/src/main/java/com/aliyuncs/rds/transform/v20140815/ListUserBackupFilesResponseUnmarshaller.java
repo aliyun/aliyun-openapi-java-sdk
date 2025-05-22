@@ -31,26 +31,26 @@ public class ListUserBackupFilesResponseUnmarshaller {
 		List<RecordsItem> records = new ArrayList<RecordsItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListUserBackupFilesResponse.Records.Length"); i++) {
 			RecordsItem recordsItem = new RecordsItem();
-			recordsItem.setStatus(_ctx.stringValue("ListUserBackupFilesResponse.Records["+ i +"].Status"));
-			recordsItem.setCreationTime(_ctx.stringValue("ListUserBackupFilesResponse.Records["+ i +"].CreationTime"));
-			recordsItem.setFinishTime(_ctx.stringValue("ListUserBackupFilesResponse.Records["+ i +"].FinishTime"));
-			recordsItem.setComment(_ctx.stringValue("ListUserBackupFilesResponse.Records["+ i +"].Comment"));
-			recordsItem.setOssFilePath(_ctx.stringValue("ListUserBackupFilesResponse.Records["+ i +"].OssFilePath"));
-			recordsItem.setOssBucket(_ctx.stringValue("ListUserBackupFilesResponse.Records["+ i +"].OssBucket"));
-			recordsItem.setModificationTime(_ctx.stringValue("ListUserBackupFilesResponse.Records["+ i +"].ModificationTime"));
-			recordsItem.setOssFileSize(_ctx.longValue("ListUserBackupFilesResponse.Records["+ i +"].OssFileSize"));
-			recordsItem.setOssFileName(_ctx.stringValue("ListUserBackupFilesResponse.Records["+ i +"].OssFileName"));
-			recordsItem.setEngineVersion(_ctx.stringValue("ListUserBackupFilesResponse.Records["+ i +"].EngineVersion"));
 			recordsItem.setBackupId(_ctx.stringValue("ListUserBackupFilesResponse.Records["+ i +"].BackupId"));
-			recordsItem.setRestoreSize(_ctx.stringValue("ListUserBackupFilesResponse.Records["+ i +"].RestoreSize"));
-			recordsItem.setZoneId(_ctx.stringValue("ListUserBackupFilesResponse.Records["+ i +"].ZoneId"));
-			recordsItem.setRetention(_ctx.integerValue("ListUserBackupFilesResponse.Records["+ i +"].Retention"));
+			recordsItem.setBinlogInfo(_ctx.stringValue("ListUserBackupFilesResponse.Records["+ i +"].BinlogInfo"));
+			recordsItem.setComment(_ctx.stringValue("ListUserBackupFilesResponse.Records["+ i +"].Comment"));
+			recordsItem.setCreationTime(_ctx.stringValue("ListUserBackupFilesResponse.Records["+ i +"].CreationTime"));
 			recordsItem.setDBInstanceId(_ctx.stringValue("ListUserBackupFilesResponse.Records["+ i +"].DBInstanceId"));
 			recordsItem.setEngine(_ctx.stringValue("ListUserBackupFilesResponse.Records["+ i +"].Engine"));
-			recordsItem.setOssUrl(_ctx.stringValue("ListUserBackupFilesResponse.Records["+ i +"].OssUrl"));
+			recordsItem.setEngineVersion(_ctx.stringValue("ListUserBackupFilesResponse.Records["+ i +"].EngineVersion"));
+			recordsItem.setFinishTime(_ctx.stringValue("ListUserBackupFilesResponse.Records["+ i +"].FinishTime"));
+			recordsItem.setModificationTime(_ctx.stringValue("ListUserBackupFilesResponse.Records["+ i +"].ModificationTime"));
+			recordsItem.setOssBucket(_ctx.stringValue("ListUserBackupFilesResponse.Records["+ i +"].OssBucket"));
 			recordsItem.setOssFileMetaData(_ctx.stringValue("ListUserBackupFilesResponse.Records["+ i +"].OssFileMetaData"));
-			recordsItem.setBinlogInfo(_ctx.stringValue("ListUserBackupFilesResponse.Records["+ i +"].BinlogInfo"));
+			recordsItem.setOssFileName(_ctx.stringValue("ListUserBackupFilesResponse.Records["+ i +"].OssFileName"));
+			recordsItem.setOssFilePath(_ctx.stringValue("ListUserBackupFilesResponse.Records["+ i +"].OssFilePath"));
+			recordsItem.setOssFileSize(_ctx.longValue("ListUserBackupFilesResponse.Records["+ i +"].OssFileSize"));
+			recordsItem.setOssUrl(_ctx.stringValue("ListUserBackupFilesResponse.Records["+ i +"].OssUrl"));
 			recordsItem.setReason(_ctx.stringValue("ListUserBackupFilesResponse.Records["+ i +"].Reason"));
+			recordsItem.setRestoreSize(_ctx.stringValue("ListUserBackupFilesResponse.Records["+ i +"].RestoreSize"));
+			recordsItem.setRetention(_ctx.integerValue("ListUserBackupFilesResponse.Records["+ i +"].Retention"));
+			recordsItem.setStatus(_ctx.stringValue("ListUserBackupFilesResponse.Records["+ i +"].Status"));
+			recordsItem.setZoneId(_ctx.stringValue("ListUserBackupFilesResponse.Records["+ i +"].ZoneId"));
 
 			records.add(recordsItem);
 		}

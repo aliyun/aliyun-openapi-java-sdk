@@ -44,8 +44,6 @@ public class DescribeHistoryEventsResponseUnmarshaller {
 			itemsItem.setType(_ctx.stringValue("DescribeHistoryEventsResponse.Items["+ i +"].Type"));
 
 			Data data = new Data();
-			data.setEventType(_ctx.stringValue("DescribeHistoryEventsResponse.Items["+ i +"].Data.EventType"));
-			data.setEventId(_ctx.stringValue("DescribeHistoryEventsResponse.Items["+ i +"].Data.EventId"));
 			data.setCmsProduct(_ctx.stringValue("DescribeHistoryEventsResponse.Items["+ i +"].Data.CmsProduct"));
 			data.setDbType(_ctx.stringValue("DescribeHistoryEventsResponse.Items["+ i +"].Data.DbType"));
 			data.setDetailImpact(_ctx.stringValue("DescribeHistoryEventsResponse.Items["+ i +"].Data.DetailImpact"));
@@ -54,10 +52,12 @@ public class DescribeHistoryEventsResponseUnmarshaller {
 			data.setEventCategory(_ctx.stringValue("DescribeHistoryEventsResponse.Items["+ i +"].Data.EventCategory"));
 			data.setEventCode(_ctx.stringValue("DescribeHistoryEventsResponse.Items["+ i +"].Data.EventCode"));
 			data.setEventDetail(_ctx.stringValue("DescribeHistoryEventsResponse.Items["+ i +"].Data.EventDetail"));
+			data.setEventId(_ctx.stringValue("DescribeHistoryEventsResponse.Items["+ i +"].Data.EventId"));
 			data.setEventImpact(_ctx.stringValue("DescribeHistoryEventsResponse.Items["+ i +"].Data.EventImpact"));
 			data.setEventLevel(_ctx.stringValue("DescribeHistoryEventsResponse.Items["+ i +"].Data.EventLevel"));
 			data.setEventReason(_ctx.stringValue("DescribeHistoryEventsResponse.Items["+ i +"].Data.EventReason"));
 			data.setEventStatus(_ctx.stringValue("DescribeHistoryEventsResponse.Items["+ i +"].Data.EventStatus"));
+			data.setEventType(_ctx.stringValue("DescribeHistoryEventsResponse.Items["+ i +"].Data.EventType"));
 			data.setGmtCreated(_ctx.stringValue("DescribeHistoryEventsResponse.Items["+ i +"].Data.GmtCreated"));
 			data.setGmtModified(_ctx.stringValue("DescribeHistoryEventsResponse.Items["+ i +"].Data.GmtModified"));
 			data.setHandleStatus(_ctx.stringValue("DescribeHistoryEventsResponse.Items["+ i +"].Data.HandleStatus"));

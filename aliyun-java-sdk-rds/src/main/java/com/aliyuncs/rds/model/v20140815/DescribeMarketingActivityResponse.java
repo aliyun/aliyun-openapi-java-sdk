@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeMarketingActivityResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Long aliUid;
-
-	private String regionId;
 
 	private String bid;
 
+	private String regionId;
+
+	private String requestId;
+
 	private List<ItemsItem> items;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Long getAliUid() {
 		return this.aliUid;
@@ -49,6 +41,14 @@ public class DescribeMarketingActivityResponse extends AcsResponse {
 
 	public void setAliUid(Long aliUid) {
 		this.aliUid = aliUid;
+	}
+
+	public String getBid() {
+		return this.bid;
+	}
+
+	public void setBid(String bid) {
+		this.bid = bid;
 	}
 
 	public String getRegionId() {
@@ -59,12 +59,12 @@ public class DescribeMarketingActivityResponse extends AcsResponse {
 		this.regionId = regionId;
 	}
 
-	public String getBid() {
-		return this.bid;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setBid(String bid) {
-		this.bid = bid;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<ItemsItem> getItems() {
@@ -77,59 +77,123 @@ public class DescribeMarketingActivityResponse extends AcsResponse {
 
 	public static class ItemsItem {
 
+		private String category;
+
+		private String chargeType;
+
+		private String classCode;
+
+		private String classGroup;
+
+		private String cpu;
+
+		private Integer diskSize;
+
+		private String engine;
+
+		private String engineVersion;
+
 		private String instanceId;
 
 		private String instanceName;
 
-		private String classCode;
-
-		private Integer diskSize;
-
-		private Long memory;
-
-		private String cpu;
-
-		private String category;
-
-		private String storageType;
-
-		private String classGroup;
+		private Integer maxConnections;
 
 		private Integer maxIombps;
 
 		private Integer maxIops;
 
-		private Integer maxConnections;
+		private Long memory;
 
-		private String upgradeClassCode;
-
-		private Integer upgradeDiskSize;
-
-		private Long upgradeMemory;
-
-		private String upgradeCpu;
+		private String storageType;
 
 		private String upgradeCategory;
 
-		private String upgradeStorageType;
+		private String upgradeClassCode;
 
 		private String upgradeClassGroup;
+
+		private String upgradeCpu;
+
+		private String upgradeDescContent;
+
+		private Integer upgradeDiskSize;
+
+		private Integer upgradeMaxConnections;
 
 		private Integer upgradeMaxIombps;
 
 		private Integer upgradeMaxIops;
 
-		private Integer upgradeMaxConnections;
-
-		private String upgradeDescContent;
+		private Long upgradeMemory;
 
 		private String upgradeReferencePrice;
 
-		private String chargeType;
+		private String upgradeStorageType;
 
-		private String engine;
+		public String getCategory() {
+			return this.category;
+		}
 
-		private String engineVersion;
+		public void setCategory(String category) {
+			this.category = category;
+		}
+
+		public String getChargeType() {
+			return this.chargeType;
+		}
+
+		public void setChargeType(String chargeType) {
+			this.chargeType = chargeType;
+		}
+
+		public String getClassCode() {
+			return this.classCode;
+		}
+
+		public void setClassCode(String classCode) {
+			this.classCode = classCode;
+		}
+
+		public String getClassGroup() {
+			return this.classGroup;
+		}
+
+		public void setClassGroup(String classGroup) {
+			this.classGroup = classGroup;
+		}
+
+		public String getCpu() {
+			return this.cpu;
+		}
+
+		public void setCpu(String cpu) {
+			this.cpu = cpu;
+		}
+
+		public Integer getDiskSize() {
+			return this.diskSize;
+		}
+
+		public void setDiskSize(Integer diskSize) {
+			this.diskSize = diskSize;
+		}
+
+		public String getEngine() {
+			return this.engine;
+		}
+
+		public void setEngine(String engine) {
+			this.engine = engine;
+		}
+
+		public String getEngineVersion() {
+			return this.engineVersion;
+		}
+
+		public void setEngineVersion(String engineVersion) {
+			this.engineVersion = engineVersion;
+		}
 
 		public String getInstanceId() {
 			return this.instanceId;
@@ -147,60 +211,12 @@ public class DescribeMarketingActivityResponse extends AcsResponse {
 			this.instanceName = instanceName;
 		}
 
-		public String getClassCode() {
-			return this.classCode;
+		public Integer getMaxConnections() {
+			return this.maxConnections;
 		}
 
-		public void setClassCode(String classCode) {
-			this.classCode = classCode;
-		}
-
-		public Integer getDiskSize() {
-			return this.diskSize;
-		}
-
-		public void setDiskSize(Integer diskSize) {
-			this.diskSize = diskSize;
-		}
-
-		public Long getMemory() {
-			return this.memory;
-		}
-
-		public void setMemory(Long memory) {
-			this.memory = memory;
-		}
-
-		public String getCpu() {
-			return this.cpu;
-		}
-
-		public void setCpu(String cpu) {
-			this.cpu = cpu;
-		}
-
-		public String getCategory() {
-			return this.category;
-		}
-
-		public void setCategory(String category) {
-			this.category = category;
-		}
-
-		public String getStorageType() {
-			return this.storageType;
-		}
-
-		public void setStorageType(String storageType) {
-			this.storageType = storageType;
-		}
-
-		public String getClassGroup() {
-			return this.classGroup;
-		}
-
-		public void setClassGroup(String classGroup) {
-			this.classGroup = classGroup;
+		public void setMaxConnections(Integer maxConnections) {
+			this.maxConnections = maxConnections;
 		}
 
 		public Integer getMaxIombps() {
@@ -219,44 +235,20 @@ public class DescribeMarketingActivityResponse extends AcsResponse {
 			this.maxIops = maxIops;
 		}
 
-		public Integer getMaxConnections() {
-			return this.maxConnections;
+		public Long getMemory() {
+			return this.memory;
 		}
 
-		public void setMaxConnections(Integer maxConnections) {
-			this.maxConnections = maxConnections;
+		public void setMemory(Long memory) {
+			this.memory = memory;
 		}
 
-		public String getUpgradeClassCode() {
-			return this.upgradeClassCode;
+		public String getStorageType() {
+			return this.storageType;
 		}
 
-		public void setUpgradeClassCode(String upgradeClassCode) {
-			this.upgradeClassCode = upgradeClassCode;
-		}
-
-		public Integer getUpgradeDiskSize() {
-			return this.upgradeDiskSize;
-		}
-
-		public void setUpgradeDiskSize(Integer upgradeDiskSize) {
-			this.upgradeDiskSize = upgradeDiskSize;
-		}
-
-		public Long getUpgradeMemory() {
-			return this.upgradeMemory;
-		}
-
-		public void setUpgradeMemory(Long upgradeMemory) {
-			this.upgradeMemory = upgradeMemory;
-		}
-
-		public String getUpgradeCpu() {
-			return this.upgradeCpu;
-		}
-
-		public void setUpgradeCpu(String upgradeCpu) {
-			this.upgradeCpu = upgradeCpu;
+		public void setStorageType(String storageType) {
+			this.storageType = storageType;
 		}
 
 		public String getUpgradeCategory() {
@@ -267,12 +259,12 @@ public class DescribeMarketingActivityResponse extends AcsResponse {
 			this.upgradeCategory = upgradeCategory;
 		}
 
-		public String getUpgradeStorageType() {
-			return this.upgradeStorageType;
+		public String getUpgradeClassCode() {
+			return this.upgradeClassCode;
 		}
 
-		public void setUpgradeStorageType(String upgradeStorageType) {
-			this.upgradeStorageType = upgradeStorageType;
+		public void setUpgradeClassCode(String upgradeClassCode) {
+			this.upgradeClassCode = upgradeClassCode;
 		}
 
 		public String getUpgradeClassGroup() {
@@ -281,6 +273,38 @@ public class DescribeMarketingActivityResponse extends AcsResponse {
 
 		public void setUpgradeClassGroup(String upgradeClassGroup) {
 			this.upgradeClassGroup = upgradeClassGroup;
+		}
+
+		public String getUpgradeCpu() {
+			return this.upgradeCpu;
+		}
+
+		public void setUpgradeCpu(String upgradeCpu) {
+			this.upgradeCpu = upgradeCpu;
+		}
+
+		public String getUpgradeDescContent() {
+			return this.upgradeDescContent;
+		}
+
+		public void setUpgradeDescContent(String upgradeDescContent) {
+			this.upgradeDescContent = upgradeDescContent;
+		}
+
+		public Integer getUpgradeDiskSize() {
+			return this.upgradeDiskSize;
+		}
+
+		public void setUpgradeDiskSize(Integer upgradeDiskSize) {
+			this.upgradeDiskSize = upgradeDiskSize;
+		}
+
+		public Integer getUpgradeMaxConnections() {
+			return this.upgradeMaxConnections;
+		}
+
+		public void setUpgradeMaxConnections(Integer upgradeMaxConnections) {
+			this.upgradeMaxConnections = upgradeMaxConnections;
 		}
 
 		public Integer getUpgradeMaxIombps() {
@@ -299,20 +323,12 @@ public class DescribeMarketingActivityResponse extends AcsResponse {
 			this.upgradeMaxIops = upgradeMaxIops;
 		}
 
-		public Integer getUpgradeMaxConnections() {
-			return this.upgradeMaxConnections;
+		public Long getUpgradeMemory() {
+			return this.upgradeMemory;
 		}
 
-		public void setUpgradeMaxConnections(Integer upgradeMaxConnections) {
-			this.upgradeMaxConnections = upgradeMaxConnections;
-		}
-
-		public String getUpgradeDescContent() {
-			return this.upgradeDescContent;
-		}
-
-		public void setUpgradeDescContent(String upgradeDescContent) {
-			this.upgradeDescContent = upgradeDescContent;
+		public void setUpgradeMemory(Long upgradeMemory) {
+			this.upgradeMemory = upgradeMemory;
 		}
 
 		public String getUpgradeReferencePrice() {
@@ -323,28 +339,12 @@ public class DescribeMarketingActivityResponse extends AcsResponse {
 			this.upgradeReferencePrice = upgradeReferencePrice;
 		}
 
-		public String getChargeType() {
-			return this.chargeType;
+		public String getUpgradeStorageType() {
+			return this.upgradeStorageType;
 		}
 
-		public void setChargeType(String chargeType) {
-			this.chargeType = chargeType;
-		}
-
-		public String getEngine() {
-			return this.engine;
-		}
-
-		public void setEngine(String engine) {
-			this.engine = engine;
-		}
-
-		public String getEngineVersion() {
-			return this.engineVersion;
-		}
-
-		public void setEngineVersion(String engineVersion) {
-			this.engineVersion = engineVersion;
+		public void setUpgradeStorageType(String upgradeStorageType) {
+			this.upgradeStorageType = upgradeStorageType;
 		}
 	}
 

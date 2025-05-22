@@ -28,10 +28,10 @@ public class DescribeInstanceLinkedWhitelistTemplateResponseUnmarshaller {
 	public static DescribeInstanceLinkedWhitelistTemplateResponse unmarshall(DescribeInstanceLinkedWhitelistTemplateResponse describeInstanceLinkedWhitelistTemplateResponse, UnmarshallerContext _ctx) {
 		
 		describeInstanceLinkedWhitelistTemplateResponse.setRequestId(_ctx.stringValue("DescribeInstanceLinkedWhitelistTemplateResponse.RequestId"));
-		describeInstanceLinkedWhitelistTemplateResponse.setSuccess(_ctx.booleanValue("DescribeInstanceLinkedWhitelistTemplateResponse.Success"));
 		describeInstanceLinkedWhitelistTemplateResponse.setCode(_ctx.stringValue("DescribeInstanceLinkedWhitelistTemplateResponse.Code"));
-		describeInstanceLinkedWhitelistTemplateResponse.setMessage(_ctx.stringValue("DescribeInstanceLinkedWhitelistTemplateResponse.Message"));
 		describeInstanceLinkedWhitelistTemplateResponse.setHttpStatusCode(_ctx.integerValue("DescribeInstanceLinkedWhitelistTemplateResponse.HttpStatusCode"));
+		describeInstanceLinkedWhitelistTemplateResponse.setMessage(_ctx.stringValue("DescribeInstanceLinkedWhitelistTemplateResponse.Message"));
+		describeInstanceLinkedWhitelistTemplateResponse.setSuccess(_ctx.booleanValue("DescribeInstanceLinkedWhitelistTemplateResponse.Success"));
 
 		Data data = new Data();
 		data.setInsName(_ctx.stringValue("DescribeInstanceLinkedWhitelistTemplateResponse.Data.InsName"));
@@ -40,10 +40,10 @@ public class DescribeInstanceLinkedWhitelistTemplateResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceLinkedWhitelistTemplateResponse.Data.Templates.Length"); i++) {
 			Template template = new Template();
 			template.setId(_ctx.integerValue("DescribeInstanceLinkedWhitelistTemplateResponse.Data.Templates["+ i +"].Id"));
-			template.setUserId(_ctx.integerValue("DescribeInstanceLinkedWhitelistTemplateResponse.Data.Templates["+ i +"].UserId"));
+			template.setIps(_ctx.stringValue("DescribeInstanceLinkedWhitelistTemplateResponse.Data.Templates["+ i +"].Ips"));
 			template.setTemplateId(_ctx.integerValue("DescribeInstanceLinkedWhitelistTemplateResponse.Data.Templates["+ i +"].TemplateId"));
 			template.setTemplateName(_ctx.stringValue("DescribeInstanceLinkedWhitelistTemplateResponse.Data.Templates["+ i +"].TemplateName"));
-			template.setIps(_ctx.stringValue("DescribeInstanceLinkedWhitelistTemplateResponse.Data.Templates["+ i +"].Ips"));
+			template.setUserId(_ctx.integerValue("DescribeInstanceLinkedWhitelistTemplateResponse.Data.Templates["+ i +"].UserId"));
 
 			templates.add(template);
 		}

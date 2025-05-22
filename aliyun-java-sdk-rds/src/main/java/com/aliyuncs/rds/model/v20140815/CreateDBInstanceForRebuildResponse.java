@@ -24,22 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateDBInstanceForRebuildResponse extends AcsResponse {
 
-	private String requestId;
+	private String dBInstanceId;
 
 	private String message;
 
-	private String dBInstanceId;
+	private String orderId;
+
+	private String requestId;
 
 	private String taskId;
 
-	private String orderId;
-
-	public String getRequestId() {
-		return this.requestId;
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
 	}
 
 	public String getMessage() {
@@ -50,12 +50,20 @@ public class CreateDBInstanceForRebuildResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
+	public String getOrderId() {
+		return this.orderId;
 	}
 
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getTaskId() {
@@ -64,14 +72,6 @@ public class CreateDBInstanceForRebuildResponse extends AcsResponse {
 
 	public void setTaskId(String taskId) {
 		this.taskId = taskId;
-	}
-
-	public String getOrderId() {
-		return this.orderId;
-	}
-
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
 	}
 
 	@Override

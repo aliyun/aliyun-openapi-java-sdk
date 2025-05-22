@@ -26,8 +26,8 @@ public class ModifyDBInstanceEndpointResponseUnmarshaller {
 		modifyDBInstanceEndpointResponse.setRequestId(_ctx.stringValue("ModifyDBInstanceEndpointResponse.RequestId"));
 
 		Data data = new Data();
-		data.setDBInstanceName(_ctx.stringValue("ModifyDBInstanceEndpointResponse.Data.DBInstanceName"));
 		data.setDBInstanceEndpointId(_ctx.stringValue("ModifyDBInstanceEndpointResponse.Data.DBInstanceEndpointId"));
+		data.setDBInstanceName(_ctx.stringValue("ModifyDBInstanceEndpointResponse.Data.DBInstanceName"));
 		modifyDBInstanceEndpointResponse.setData(data);
 	 
 	 	return modifyDBInstanceEndpointResponse;

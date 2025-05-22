@@ -25,25 +25,33 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDBInstanceEncryptionKeyResponse extends AcsResponse {
 
-	private String deleteDate;
+	private String creator;
 
-	private String requestId;
+	private String deleteDate;
 
 	private String description;
 
-	private String origin;
-
-	private String materialExpireTime;
+	private String encryptionKey;
 
 	private String encryptionKeyStatus;
 
 	private String keyUsage;
 
-	private String encryptionKey;
+	private String materialExpireTime;
 
-	private String creator;
+	private String origin;
+
+	private String requestId;
 
 	private List<EncryptionKeyInfo> encryptionKeyList;
+
+	public String getCreator() {
+		return this.creator;
+	}
+
+	public void setCreator(String creator) {
+		this.creator = creator;
+	}
 
 	public String getDeleteDate() {
 		return this.deleteDate;
@@ -51,14 +59,6 @@ public class DescribeDBInstanceEncryptionKeyResponse extends AcsResponse {
 
 	public void setDeleteDate(String deleteDate) {
 		this.deleteDate = deleteDate;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
 	}
 
 	public String getDescription() {
@@ -69,20 +69,12 @@ public class DescribeDBInstanceEncryptionKeyResponse extends AcsResponse {
 		this.description = description;
 	}
 
-	public String getOrigin() {
-		return this.origin;
+	public String getEncryptionKey() {
+		return this.encryptionKey;
 	}
 
-	public void setOrigin(String origin) {
-		this.origin = origin;
-	}
-
-	public String getMaterialExpireTime() {
-		return this.materialExpireTime;
-	}
-
-	public void setMaterialExpireTime(String materialExpireTime) {
-		this.materialExpireTime = materialExpireTime;
+	public void setEncryptionKey(String encryptionKey) {
+		this.encryptionKey = encryptionKey;
 	}
 
 	public String getEncryptionKeyStatus() {
@@ -101,20 +93,28 @@ public class DescribeDBInstanceEncryptionKeyResponse extends AcsResponse {
 		this.keyUsage = keyUsage;
 	}
 
-	public String getEncryptionKey() {
-		return this.encryptionKey;
+	public String getMaterialExpireTime() {
+		return this.materialExpireTime;
 	}
 
-	public void setEncryptionKey(String encryptionKey) {
-		this.encryptionKey = encryptionKey;
+	public void setMaterialExpireTime(String materialExpireTime) {
+		this.materialExpireTime = materialExpireTime;
 	}
 
-	public String getCreator() {
-		return this.creator;
+	public String getOrigin() {
+		return this.origin;
 	}
 
-	public void setCreator(String creator) {
-		this.creator = creator;
+	public void setOrigin(String origin) {
+		this.origin = origin;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<EncryptionKeyInfo> getEncryptionKeyList() {
@@ -127,66 +127,34 @@ public class DescribeDBInstanceEncryptionKeyResponse extends AcsResponse {
 
 	public static class EncryptionKeyInfo {
 
-		private String keyType;
-
-		private String encryptionKey;
-
-		private String description;
-
-		private String keyUsage;
-
-		private String deleteDate;
+		private String aliasName;
 
 		private String creator;
 
+		private String deleteDate;
+
+		private String description;
+
+		private String encryptionKey;
+
 		private String encryptionKeyStatus;
 
-		private String origin;
+		private String keyType;
+
+		private String keyUsage;
 
 		private String materialExpireTime;
 
-		private String aliasName;
+		private String origin;
 
 		private String usedBy;
 
-		public String getKeyType() {
-			return this.keyType;
+		public String getAliasName() {
+			return this.aliasName;
 		}
 
-		public void setKeyType(String keyType) {
-			this.keyType = keyType;
-		}
-
-		public String getEncryptionKey() {
-			return this.encryptionKey;
-		}
-
-		public void setEncryptionKey(String encryptionKey) {
-			this.encryptionKey = encryptionKey;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getKeyUsage() {
-			return this.keyUsage;
-		}
-
-		public void setKeyUsage(String keyUsage) {
-			this.keyUsage = keyUsage;
-		}
-
-		public String getDeleteDate() {
-			return this.deleteDate;
-		}
-
-		public void setDeleteDate(String deleteDate) {
-			this.deleteDate = deleteDate;
+		public void setAliasName(String aliasName) {
+			this.aliasName = aliasName;
 		}
 
 		public String getCreator() {
@@ -197,6 +165,30 @@ public class DescribeDBInstanceEncryptionKeyResponse extends AcsResponse {
 			this.creator = creator;
 		}
 
+		public String getDeleteDate() {
+			return this.deleteDate;
+		}
+
+		public void setDeleteDate(String deleteDate) {
+			this.deleteDate = deleteDate;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getEncryptionKey() {
+			return this.encryptionKey;
+		}
+
+		public void setEncryptionKey(String encryptionKey) {
+			this.encryptionKey = encryptionKey;
+		}
+
 		public String getEncryptionKeyStatus() {
 			return this.encryptionKeyStatus;
 		}
@@ -205,12 +197,20 @@ public class DescribeDBInstanceEncryptionKeyResponse extends AcsResponse {
 			this.encryptionKeyStatus = encryptionKeyStatus;
 		}
 
-		public String getOrigin() {
-			return this.origin;
+		public String getKeyType() {
+			return this.keyType;
 		}
 
-		public void setOrigin(String origin) {
-			this.origin = origin;
+		public void setKeyType(String keyType) {
+			this.keyType = keyType;
+		}
+
+		public String getKeyUsage() {
+			return this.keyUsage;
+		}
+
+		public void setKeyUsage(String keyUsage) {
+			this.keyUsage = keyUsage;
 		}
 
 		public String getMaterialExpireTime() {
@@ -221,12 +221,12 @@ public class DescribeDBInstanceEncryptionKeyResponse extends AcsResponse {
 			this.materialExpireTime = materialExpireTime;
 		}
 
-		public String getAliasName() {
-			return this.aliasName;
+		public String getOrigin() {
+			return this.origin;
 		}
 
-		public void setAliasName(String aliasName) {
-			this.aliasName = aliasName;
+		public void setOrigin(String origin) {
+			this.origin = origin;
 		}
 
 		public String getUsedBy() {

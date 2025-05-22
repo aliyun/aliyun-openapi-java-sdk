@@ -28,25 +28,25 @@ public class DescribeDBMiniEngineVersionsResponseUnmarshaller {
 		
 		describeDBMiniEngineVersionsResponse.setRequestId(_ctx.stringValue("DescribeDBMiniEngineVersionsResponse.RequestId"));
 		describeDBMiniEngineVersionsResponse.setDBInstanceId(_ctx.stringValue("DescribeDBMiniEngineVersionsResponse.DBInstanceId"));
-		describeDBMiniEngineVersionsResponse.setTotalCount(_ctx.integerValue("DescribeDBMiniEngineVersionsResponse.TotalCount"));
-		describeDBMiniEngineVersionsResponse.setPageNumbers(_ctx.integerValue("DescribeDBMiniEngineVersionsResponse.PageNumbers"));
 		describeDBMiniEngineVersionsResponse.setMaxRecordsPerPage(_ctx.integerValue("DescribeDBMiniEngineVersionsResponse.MaxRecordsPerPage"));
+		describeDBMiniEngineVersionsResponse.setPageNumbers(_ctx.integerValue("DescribeDBMiniEngineVersionsResponse.PageNumbers"));
+		describeDBMiniEngineVersionsResponse.setTotalCount(_ctx.integerValue("DescribeDBMiniEngineVersionsResponse.TotalCount"));
 
 		List<MinorVersionItemsItem> minorVersionItems = new ArrayList<MinorVersionItemsItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDBMiniEngineVersionsResponse.MinorVersionItems.Length"); i++) {
 			MinorVersionItemsItem minorVersionItemsItem = new MinorVersionItemsItem();
-			minorVersionItemsItem.setReleaseNote(_ctx.stringValue("DescribeDBMiniEngineVersionsResponse.MinorVersionItems["+ i +"].ReleaseNote"));
-			minorVersionItemsItem.setNodeType(_ctx.stringValue("DescribeDBMiniEngineVersionsResponse.MinorVersionItems["+ i +"].NodeType"));
-			minorVersionItemsItem.setIsHotfixVersion(_ctx.booleanValue("DescribeDBMiniEngineVersionsResponse.MinorVersionItems["+ i +"].IsHotfixVersion"));
+			minorVersionItemsItem.setCommunityMinorVersion(_ctx.stringValue("DescribeDBMiniEngineVersionsResponse.MinorVersionItems["+ i +"].CommunityMinorVersion"));
 			minorVersionItemsItem.setEngine(_ctx.stringValue("DescribeDBMiniEngineVersionsResponse.MinorVersionItems["+ i +"].Engine"));
+			minorVersionItemsItem.setEngineVersion(_ctx.stringValue("DescribeDBMiniEngineVersionsResponse.MinorVersionItems["+ i +"].EngineVersion"));
+			minorVersionItemsItem.setExpireDate(_ctx.stringValue("DescribeDBMiniEngineVersionsResponse.MinorVersionItems["+ i +"].ExpireDate"));
+			minorVersionItemsItem.setExpireStatus(_ctx.stringValue("DescribeDBMiniEngineVersionsResponse.MinorVersionItems["+ i +"].ExpireStatus"));
+			minorVersionItemsItem.setIsHotfixVersion(_ctx.booleanValue("DescribeDBMiniEngineVersionsResponse.MinorVersionItems["+ i +"].IsHotfixVersion"));
+			minorVersionItemsItem.setMinorVersion(_ctx.stringValue("DescribeDBMiniEngineVersionsResponse.MinorVersionItems["+ i +"].MinorVersion"));
+			minorVersionItemsItem.setNodeType(_ctx.stringValue("DescribeDBMiniEngineVersionsResponse.MinorVersionItems["+ i +"].NodeType"));
+			minorVersionItemsItem.setReleaseNote(_ctx.stringValue("DescribeDBMiniEngineVersionsResponse.MinorVersionItems["+ i +"].ReleaseNote"));
 			minorVersionItemsItem.setReleaseType(_ctx.stringValue("DescribeDBMiniEngineVersionsResponse.MinorVersionItems["+ i +"].ReleaseType"));
 			minorVersionItemsItem.setStatusDesc(_ctx.stringValue("DescribeDBMiniEngineVersionsResponse.MinorVersionItems["+ i +"].StatusDesc"));
-			minorVersionItemsItem.setEngineVersion(_ctx.stringValue("DescribeDBMiniEngineVersionsResponse.MinorVersionItems["+ i +"].EngineVersion"));
-			minorVersionItemsItem.setMinorVersion(_ctx.stringValue("DescribeDBMiniEngineVersionsResponse.MinorVersionItems["+ i +"].MinorVersion"));
-			minorVersionItemsItem.setCommunityMinorVersion(_ctx.stringValue("DescribeDBMiniEngineVersionsResponse.MinorVersionItems["+ i +"].CommunityMinorVersion"));
 			minorVersionItemsItem.setTag(_ctx.stringValue("DescribeDBMiniEngineVersionsResponse.MinorVersionItems["+ i +"].Tag"));
-			minorVersionItemsItem.setExpireStatus(_ctx.stringValue("DescribeDBMiniEngineVersionsResponse.MinorVersionItems["+ i +"].ExpireStatus"));
-			minorVersionItemsItem.setExpireDate(_ctx.stringValue("DescribeDBMiniEngineVersionsResponse.MinorVersionItems["+ i +"].ExpireDate"));
 
 			minorVersionItems.add(minorVersionItemsItem);
 		}

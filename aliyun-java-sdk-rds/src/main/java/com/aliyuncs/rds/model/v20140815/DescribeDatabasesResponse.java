@@ -48,81 +48,41 @@ public class DescribeDatabasesResponse extends AcsResponse {
 
 	public static class Database {
 
-		private String dBDescription;
-
-		private String dBStatus;
-
-		private String dBName;
-
-		private String dBInstanceId;
-
-		private String engine;
-
 		private String characterSetName;
 
 		private String collate;
 
-		private String ctype;
-
 		private String connLimit;
 
-		private String tablespace;
+		private String ctype;
 
-		private String resourceGroupId;
+		private String dBDescription;
+
+		private String dBInstanceId;
+
+		private String dBName;
+
+		private String dBStatus;
+
+		private String engine;
 
 		private Integer pageNumber;
 
 		private Integer pageSize;
 
+		private String resourceGroupId;
+
+		private String tablespace;
+
 		private Integer totalCount;
 
 		private List<AccountPrivilegeInfo> accounts;
 
+		private List<Map<Object,Object>> advancedInfo;
+
 		private List<Map<Object,Object>> basicInfo;
 
 		private List<Map<Object,Object>> runtimeInfo;
-
-		private List<Map<Object,Object>> advancedInfo;
-
-		public String getDBDescription() {
-			return this.dBDescription;
-		}
-
-		public void setDBDescription(String dBDescription) {
-			this.dBDescription = dBDescription;
-		}
-
-		public String getDBStatus() {
-			return this.dBStatus;
-		}
-
-		public void setDBStatus(String dBStatus) {
-			this.dBStatus = dBStatus;
-		}
-
-		public String getDBName() {
-			return this.dBName;
-		}
-
-		public void setDBName(String dBName) {
-			this.dBName = dBName;
-		}
-
-		public String getDBInstanceId() {
-			return this.dBInstanceId;
-		}
-
-		public void setDBInstanceId(String dBInstanceId) {
-			this.dBInstanceId = dBInstanceId;
-		}
-
-		public String getEngine() {
-			return this.engine;
-		}
-
-		public void setEngine(String engine) {
-			this.engine = engine;
-		}
 
 		public String getCharacterSetName() {
 			return this.characterSetName;
@@ -140,14 +100,6 @@ public class DescribeDatabasesResponse extends AcsResponse {
 			this.collate = collate;
 		}
 
-		public String getCtype() {
-			return this.ctype;
-		}
-
-		public void setCtype(String ctype) {
-			this.ctype = ctype;
-		}
-
 		public String getConnLimit() {
 			return this.connLimit;
 		}
@@ -156,20 +108,52 @@ public class DescribeDatabasesResponse extends AcsResponse {
 			this.connLimit = connLimit;
 		}
 
-		public String getTablespace() {
-			return this.tablespace;
+		public String getCtype() {
+			return this.ctype;
 		}
 
-		public void setTablespace(String tablespace) {
-			this.tablespace = tablespace;
+		public void setCtype(String ctype) {
+			this.ctype = ctype;
 		}
 
-		public String getResourceGroupId() {
-			return this.resourceGroupId;
+		public String getDBDescription() {
+			return this.dBDescription;
 		}
 
-		public void setResourceGroupId(String resourceGroupId) {
-			this.resourceGroupId = resourceGroupId;
+		public void setDBDescription(String dBDescription) {
+			this.dBDescription = dBDescription;
+		}
+
+		public String getDBInstanceId() {
+			return this.dBInstanceId;
+		}
+
+		public void setDBInstanceId(String dBInstanceId) {
+			this.dBInstanceId = dBInstanceId;
+		}
+
+		public String getDBName() {
+			return this.dBName;
+		}
+
+		public void setDBName(String dBName) {
+			this.dBName = dBName;
+		}
+
+		public String getDBStatus() {
+			return this.dBStatus;
+		}
+
+		public void setDBStatus(String dBStatus) {
+			this.dBStatus = dBStatus;
+		}
+
+		public String getEngine() {
+			return this.engine;
+		}
+
+		public void setEngine(String engine) {
+			this.engine = engine;
 		}
 
 		public Integer getPageNumber() {
@@ -188,6 +172,22 @@ public class DescribeDatabasesResponse extends AcsResponse {
 			this.pageSize = pageSize;
 		}
 
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getTablespace() {
+			return this.tablespace;
+		}
+
+		public void setTablespace(String tablespace) {
+			this.tablespace = tablespace;
+		}
+
 		public Integer getTotalCount() {
 			return this.totalCount;
 		}
@@ -204,6 +204,14 @@ public class DescribeDatabasesResponse extends AcsResponse {
 			this.accounts = accounts;
 		}
 
+		public List<Map<Object,Object>> getAdvancedInfo() {
+			return this.advancedInfo;
+		}
+
+		public void setAdvancedInfo(List<Map<Object,Object>> advancedInfo) {
+			this.advancedInfo = advancedInfo;
+		}
+
 		public List<Map<Object,Object>> getBasicInfo() {
 			return this.basicInfo;
 		}
@@ -218,14 +226,6 @@ public class DescribeDatabasesResponse extends AcsResponse {
 
 		public void setRuntimeInfo(List<Map<Object,Object>> runtimeInfo) {
 			this.runtimeInfo = runtimeInfo;
-		}
-
-		public List<Map<Object,Object>> getAdvancedInfo() {
-			return this.advancedInfo;
-		}
-
-		public void setAdvancedInfo(List<Map<Object,Object>> advancedInfo) {
-			this.advancedInfo = advancedInfo;
 		}
 
 		public static class AccountPrivilegeInfo {

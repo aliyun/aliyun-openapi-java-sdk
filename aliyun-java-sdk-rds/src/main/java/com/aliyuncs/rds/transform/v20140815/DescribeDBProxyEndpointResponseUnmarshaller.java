@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.rds.model.v20140815.DescribeDBProxyEndpointResponse;
+import com.aliyuncs.rds.model.v20140815.DescribeDBProxyEndpointResponse.DBProxyNodesItem;
 import com.aliyuncs.rds.model.v20140815.DescribeDBProxyEndpointResponse.EndpointConnectItemsItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -27,24 +28,40 @@ public class DescribeDBProxyEndpointResponseUnmarshaller {
 	public static DescribeDBProxyEndpointResponse unmarshall(DescribeDBProxyEndpointResponse describeDBProxyEndpointResponse, UnmarshallerContext _ctx) {
 		
 		describeDBProxyEndpointResponse.setRequestId(_ctx.stringValue("DescribeDBProxyEndpointResponse.RequestId"));
+		describeDBProxyEndpointResponse.setDBProxyConnectString(_ctx.stringValue("DescribeDBProxyEndpointResponse.DBProxyConnectString"));
 		describeDBProxyEndpointResponse.setDBProxyConnectStringNetType(_ctx.stringValue("DescribeDBProxyEndpointResponse.DBProxyConnectStringNetType"));
+		describeDBProxyEndpointResponse.setDBProxyConnectStringPort(_ctx.stringValue("DescribeDBProxyEndpointResponse.DBProxyConnectStringPort"));
+		describeDBProxyEndpointResponse.setDBProxyEndpointId(_ctx.stringValue("DescribeDBProxyEndpointResponse.DBProxyEndpointId"));
+		describeDBProxyEndpointResponse.setDBProxyEngineType(_ctx.stringValue("DescribeDBProxyEndpointResponse.DBProxyEngineType"));
 		describeDBProxyEndpointResponse.setDBProxyFeatures(_ctx.stringValue("DescribeDBProxyEndpointResponse.DBProxyFeatures"));
-		describeDBProxyEndpointResponse.setReadOnlyInstanceWeight(_ctx.stringValue("DescribeDBProxyEndpointResponse.ReadOnlyInstanceWeight"));
+		describeDBProxyEndpointResponse.setDbProxyEndpointAliases(_ctx.stringValue("DescribeDBProxyEndpointResponse.DbProxyEndpointAliases"));
+		describeDBProxyEndpointResponse.setDbProxyEndpointReadWriteMode(_ctx.stringValue("DescribeDBProxyEndpointResponse.DbProxyEndpointReadWriteMode"));
+		describeDBProxyEndpointResponse.setDbProxyEndpointVswitchId(_ctx.stringValue("DescribeDBProxyEndpointResponse.DbProxyEndpointVswitchId"));
+		describeDBProxyEndpointResponse.setDbProxyEndpointVpcId(_ctx.stringValue("DescribeDBProxyEndpointResponse.DbProxyEndpointVpcId"));
+		describeDBProxyEndpointResponse.setDbProxyEndpointZoneId(_ctx.stringValue("DescribeDBProxyEndpointResponse.DbProxyEndpointZoneId"));
 		describeDBProxyEndpointResponse.setReadOnlyInstanceDistributionType(_ctx.stringValue("DescribeDBProxyEndpointResponse.ReadOnlyInstanceDistributionType"));
 		describeDBProxyEndpointResponse.setReadOnlyInstanceMaxDelayTime(_ctx.stringValue("DescribeDBProxyEndpointResponse.ReadOnlyInstanceMaxDelayTime"));
-		describeDBProxyEndpointResponse.setDbProxyEndpointReadWriteMode(_ctx.stringValue("DescribeDBProxyEndpointResponse.DbProxyEndpointReadWriteMode"));
-		describeDBProxyEndpointResponse.setDbProxyEndpointAliases(_ctx.stringValue("DescribeDBProxyEndpointResponse.DbProxyEndpointAliases"));
-		describeDBProxyEndpointResponse.setDBProxyEndpointId(_ctx.stringValue("DescribeDBProxyEndpointResponse.DBProxyEndpointId"));
-		describeDBProxyEndpointResponse.setDBProxyConnectStringPort(_ctx.stringValue("DescribeDBProxyEndpointResponse.DBProxyConnectStringPort"));
-		describeDBProxyEndpointResponse.setDBProxyConnectString(_ctx.stringValue("DescribeDBProxyEndpointResponse.DBProxyConnectString"));
-		describeDBProxyEndpointResponse.setDBProxyEngineType(_ctx.stringValue("DescribeDBProxyEndpointResponse.DBProxyEngineType"));
+		describeDBProxyEndpointResponse.setCausalConsistReadTimeout(_ctx.stringValue("DescribeDBProxyEndpointResponse.CausalConsistReadTimeout"));
+		describeDBProxyEndpointResponse.setReadOnlyInstanceWeight(_ctx.stringValue("DescribeDBProxyEndpointResponse.ReadOnlyInstanceWeight"));
+		describeDBProxyEndpointResponse.setDBProxyEndpointMinSlaveCount(_ctx.stringValue("DescribeDBProxyEndpointResponse.DBProxyEndpointMinSlaveCount"));
+
+		List<DBProxyNodesItem> dBProxyNodes = new ArrayList<DBProxyNodesItem>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeDBProxyEndpointResponse.DBProxyNodes.Length"); i++) {
+			DBProxyNodesItem dBProxyNodesItem = new DBProxyNodesItem();
+			dBProxyNodesItem.setCpuCores(_ctx.stringValue("DescribeDBProxyEndpointResponse.DBProxyNodes["+ i +"].cpuCores"));
+			dBProxyNodesItem.setNodeId(_ctx.stringValue("DescribeDBProxyEndpointResponse.DBProxyNodes["+ i +"].nodeId"));
+			dBProxyNodesItem.setZoneId(_ctx.stringValue("DescribeDBProxyEndpointResponse.DBProxyNodes["+ i +"].zoneId"));
+
+			dBProxyNodes.add(dBProxyNodesItem);
+		}
+		describeDBProxyEndpointResponse.setDBProxyNodes(dBProxyNodes);
 
 		List<EndpointConnectItemsItem> endpointConnectItems = new ArrayList<EndpointConnectItemsItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDBProxyEndpointResponse.EndpointConnectItems.Length"); i++) {
 			EndpointConnectItemsItem endpointConnectItemsItem = new EndpointConnectItemsItem();
-			endpointConnectItemsItem.setDbProxyEndpointPort(_ctx.stringValue("DescribeDBProxyEndpointResponse.EndpointConnectItems["+ i +"].DbProxyEndpointPort"));
 			endpointConnectItemsItem.setDbProxyEndpointConnectString(_ctx.stringValue("DescribeDBProxyEndpointResponse.EndpointConnectItems["+ i +"].DbProxyEndpointConnectString"));
 			endpointConnectItemsItem.setDbProxyEndpointNetType(_ctx.stringValue("DescribeDBProxyEndpointResponse.EndpointConnectItems["+ i +"].DbProxyEndpointNetType"));
+			endpointConnectItemsItem.setDbProxyEndpointPort(_ctx.stringValue("DescribeDBProxyEndpointResponse.EndpointConnectItems["+ i +"].DbProxyEndpointPort"));
 
 			endpointConnectItems.add(endpointConnectItemsItem);
 		}

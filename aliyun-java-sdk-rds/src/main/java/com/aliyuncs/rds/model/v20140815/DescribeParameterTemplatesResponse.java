@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeParameterTemplatesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String engine;
-
-	private String parameterCount;
 
 	private String engineVersion;
 
+	private String parameterCount;
+
+	private String requestId;
+
 	private List<TemplateRecord> parameters;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getEngine() {
 		return this.engine;
@@ -49,6 +41,14 @@ public class DescribeParameterTemplatesResponse extends AcsResponse {
 
 	public void setEngine(String engine) {
 		this.engine = engine;
+	}
+
+	public String getEngineVersion() {
+		return this.engineVersion;
+	}
+
+	public void setEngineVersion(String engineVersion) {
+		this.engineVersion = engineVersion;
 	}
 
 	public String getParameterCount() {
@@ -59,12 +59,12 @@ public class DescribeParameterTemplatesResponse extends AcsResponse {
 		this.parameterCount = parameterCount;
 	}
 
-	public String getEngineVersion() {
-		return this.engineVersion;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setEngineVersion(String engineVersion) {
-		this.engineVersion = engineVersion;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<TemplateRecord> getParameters() {
@@ -79,15 +79,15 @@ public class DescribeParameterTemplatesResponse extends AcsResponse {
 
 		private String checkingCode;
 
-		private String parameterName;
-
-		private String parameterValue;
-
 		private String forceModify;
 
 		private String forceRestart;
 
 		private String parameterDescription;
+
+		private String parameterName;
+
+		private String parameterValue;
 
 		public String getCheckingCode() {
 			return this.checkingCode;
@@ -95,22 +95,6 @@ public class DescribeParameterTemplatesResponse extends AcsResponse {
 
 		public void setCheckingCode(String checkingCode) {
 			this.checkingCode = checkingCode;
-		}
-
-		public String getParameterName() {
-			return this.parameterName;
-		}
-
-		public void setParameterName(String parameterName) {
-			this.parameterName = parameterName;
-		}
-
-		public String getParameterValue() {
-			return this.parameterValue;
-		}
-
-		public void setParameterValue(String parameterValue) {
-			this.parameterValue = parameterValue;
 		}
 
 		public String getForceModify() {
@@ -135,6 +119,22 @@ public class DescribeParameterTemplatesResponse extends AcsResponse {
 
 		public void setParameterDescription(String parameterDescription) {
 			this.parameterDescription = parameterDescription;
+		}
+
+		public String getParameterName() {
+			return this.parameterName;
+		}
+
+		public void setParameterName(String parameterName) {
+			this.parameterName = parameterName;
+		}
+
+		public String getParameterValue() {
+			return this.parameterValue;
+		}
+
+		public void setParameterValue(String parameterValue) {
+			this.parameterValue = parameterValue;
 		}
 	}
 

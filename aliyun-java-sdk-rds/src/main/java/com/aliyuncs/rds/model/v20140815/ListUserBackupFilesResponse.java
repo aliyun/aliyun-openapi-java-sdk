@@ -47,68 +47,60 @@ public class ListUserBackupFilesResponse extends AcsResponse {
 
 	public static class RecordsItem {
 
-		private String status;
+		private String backupId;
 
-		private String creationTime;
-
-		private String finishTime;
+		private String binlogInfo;
 
 		private String comment;
 
-		private String ossFilePath;
-
-		private String ossBucket;
-
-		private String modificationTime;
-
-		private Long ossFileSize;
-
-		private String ossFileName;
-
-		private String engineVersion;
-
-		private String backupId;
-
-		private String restoreSize;
-
-		private String zoneId;
-
-		private Integer retention;
+		private String creationTime;
 
 		private String dBInstanceId;
 
 		private String engine;
 
-		private String ossUrl;
+		private String engineVersion;
+
+		private String finishTime;
+
+		private String modificationTime;
+
+		private String ossBucket;
 
 		private String ossFileMetaData;
 
-		private String binlogInfo;
+		private String ossFileName;
+
+		private String ossFilePath;
+
+		private Long ossFileSize;
+
+		private String ossUrl;
 
 		private String reason;
 
-		public String getStatus() {
-			return this.status;
+		private String restoreSize;
+
+		private Integer retention;
+
+		private String status;
+
+		private String zoneId;
+
+		public String getBackupId() {
+			return this.backupId;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setBackupId(String backupId) {
+			this.backupId = backupId;
 		}
 
-		public String getCreationTime() {
-			return this.creationTime;
+		public String getBinlogInfo() {
+			return this.binlogInfo;
 		}
 
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
-		}
-
-		public String getFinishTime() {
-			return this.finishTime;
-		}
-
-		public void setFinishTime(String finishTime) {
-			this.finishTime = finishTime;
+		public void setBinlogInfo(String binlogInfo) {
+			this.binlogInfo = binlogInfo;
 		}
 
 		public String getComment() {
@@ -119,84 +111,12 @@ public class ListUserBackupFilesResponse extends AcsResponse {
 			this.comment = comment;
 		}
 
-		public String getOssFilePath() {
-			return this.ossFilePath;
+		public String getCreationTime() {
+			return this.creationTime;
 		}
 
-		public void setOssFilePath(String ossFilePath) {
-			this.ossFilePath = ossFilePath;
-		}
-
-		public String getOssBucket() {
-			return this.ossBucket;
-		}
-
-		public void setOssBucket(String ossBucket) {
-			this.ossBucket = ossBucket;
-		}
-
-		public String getModificationTime() {
-			return this.modificationTime;
-		}
-
-		public void setModificationTime(String modificationTime) {
-			this.modificationTime = modificationTime;
-		}
-
-		public Long getOssFileSize() {
-			return this.ossFileSize;
-		}
-
-		public void setOssFileSize(Long ossFileSize) {
-			this.ossFileSize = ossFileSize;
-		}
-
-		public String getOssFileName() {
-			return this.ossFileName;
-		}
-
-		public void setOssFileName(String ossFileName) {
-			this.ossFileName = ossFileName;
-		}
-
-		public String getEngineVersion() {
-			return this.engineVersion;
-		}
-
-		public void setEngineVersion(String engineVersion) {
-			this.engineVersion = engineVersion;
-		}
-
-		public String getBackupId() {
-			return this.backupId;
-		}
-
-		public void setBackupId(String backupId) {
-			this.backupId = backupId;
-		}
-
-		public String getRestoreSize() {
-			return this.restoreSize;
-		}
-
-		public void setRestoreSize(String restoreSize) {
-			this.restoreSize = restoreSize;
-		}
-
-		public String getZoneId() {
-			return this.zoneId;
-		}
-
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
-		}
-
-		public Integer getRetention() {
-			return this.retention;
-		}
-
-		public void setRetention(Integer retention) {
-			this.retention = retention;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
 		public String getDBInstanceId() {
@@ -215,12 +135,36 @@ public class ListUserBackupFilesResponse extends AcsResponse {
 			this.engine = engine;
 		}
 
-		public String getOssUrl() {
-			return this.ossUrl;
+		public String getEngineVersion() {
+			return this.engineVersion;
 		}
 
-		public void setOssUrl(String ossUrl) {
-			this.ossUrl = ossUrl;
+		public void setEngineVersion(String engineVersion) {
+			this.engineVersion = engineVersion;
+		}
+
+		public String getFinishTime() {
+			return this.finishTime;
+		}
+
+		public void setFinishTime(String finishTime) {
+			this.finishTime = finishTime;
+		}
+
+		public String getModificationTime() {
+			return this.modificationTime;
+		}
+
+		public void setModificationTime(String modificationTime) {
+			this.modificationTime = modificationTime;
+		}
+
+		public String getOssBucket() {
+			return this.ossBucket;
+		}
+
+		public void setOssBucket(String ossBucket) {
+			this.ossBucket = ossBucket;
 		}
 
 		public String getOssFileMetaData() {
@@ -231,12 +175,36 @@ public class ListUserBackupFilesResponse extends AcsResponse {
 			this.ossFileMetaData = ossFileMetaData;
 		}
 
-		public String getBinlogInfo() {
-			return this.binlogInfo;
+		public String getOssFileName() {
+			return this.ossFileName;
 		}
 
-		public void setBinlogInfo(String binlogInfo) {
-			this.binlogInfo = binlogInfo;
+		public void setOssFileName(String ossFileName) {
+			this.ossFileName = ossFileName;
+		}
+
+		public String getOssFilePath() {
+			return this.ossFilePath;
+		}
+
+		public void setOssFilePath(String ossFilePath) {
+			this.ossFilePath = ossFilePath;
+		}
+
+		public Long getOssFileSize() {
+			return this.ossFileSize;
+		}
+
+		public void setOssFileSize(Long ossFileSize) {
+			this.ossFileSize = ossFileSize;
+		}
+
+		public String getOssUrl() {
+			return this.ossUrl;
+		}
+
+		public void setOssUrl(String ossUrl) {
+			this.ossUrl = ossUrl;
 		}
 
 		public String getReason() {
@@ -245,6 +213,38 @@ public class ListUserBackupFilesResponse extends AcsResponse {
 
 		public void setReason(String reason) {
 			this.reason = reason;
+		}
+
+		public String getRestoreSize() {
+			return this.restoreSize;
+		}
+
+		public void setRestoreSize(String restoreSize) {
+			this.restoreSize = restoreSize;
+		}
+
+		public Integer getRetention() {
+			return this.retention;
+		}
+
+		public void setRetention(Integer retention) {
+			this.retention = retention;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
 		}
 	}
 

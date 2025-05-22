@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListClassesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String regionId;
 
+	private String requestId;
+
 	private List<ClassList> items;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getRegionId() {
 		return this.regionId;
@@ -45,6 +37,14 @@ public class ListClassesResponse extends AcsResponse {
 
 	public void setRegionId(String regionId) {
 		this.regionId = regionId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<ClassList> getItems() {
@@ -57,65 +57,29 @@ public class ListClassesResponse extends AcsResponse {
 
 	public static class ClassList {
 
-		private String maxIOPS;
-
-		private String cpu;
-
-		private String referencePrice;
-
-		private String maxConnections;
-
-		private String memoryClass;
-
 		private String classCode;
 
 		private String classGroup;
 
-		private String maxIOMBPS;
+		private String cpu;
 
 		private String encryptedMemory;
 
 		private String instructionSetArch;
 
-		public String getMaxIOPS() {
-			return this.maxIOPS;
-		}
+		private String maxConnections;
 
-		public void setMaxIOPS(String maxIOPS) {
-			this.maxIOPS = maxIOPS;
-		}
+		private String maxIOMBPS;
 
-		public String getCpu() {
-			return this.cpu;
-		}
+		private String maxIOPS;
 
-		public void setCpu(String cpu) {
-			this.cpu = cpu;
-		}
+		private String memoryClass;
 
-		public String getReferencePrice() {
-			return this.referencePrice;
-		}
+		private String referencePrice;
 
-		public void setReferencePrice(String referencePrice) {
-			this.referencePrice = referencePrice;
-		}
+		private String category;
 
-		public String getMaxConnections() {
-			return this.maxConnections;
-		}
-
-		public void setMaxConnections(String maxConnections) {
-			this.maxConnections = maxConnections;
-		}
-
-		public String getMemoryClass() {
-			return this.memoryClass;
-		}
-
-		public void setMemoryClass(String memoryClass) {
-			this.memoryClass = memoryClass;
-		}
+		private String storageType;
 
 		public String getClassCode() {
 			return this.classCode;
@@ -133,12 +97,12 @@ public class ListClassesResponse extends AcsResponse {
 			this.classGroup = classGroup;
 		}
 
-		public String getMaxIOMBPS() {
-			return this.maxIOMBPS;
+		public String getCpu() {
+			return this.cpu;
 		}
 
-		public void setMaxIOMBPS(String maxIOMBPS) {
-			this.maxIOMBPS = maxIOMBPS;
+		public void setCpu(String cpu) {
+			this.cpu = cpu;
 		}
 
 		public String getEncryptedMemory() {
@@ -155,6 +119,62 @@ public class ListClassesResponse extends AcsResponse {
 
 		public void setInstructionSetArch(String instructionSetArch) {
 			this.instructionSetArch = instructionSetArch;
+		}
+
+		public String getMaxConnections() {
+			return this.maxConnections;
+		}
+
+		public void setMaxConnections(String maxConnections) {
+			this.maxConnections = maxConnections;
+		}
+
+		public String getMaxIOMBPS() {
+			return this.maxIOMBPS;
+		}
+
+		public void setMaxIOMBPS(String maxIOMBPS) {
+			this.maxIOMBPS = maxIOMBPS;
+		}
+
+		public String getMaxIOPS() {
+			return this.maxIOPS;
+		}
+
+		public void setMaxIOPS(String maxIOPS) {
+			this.maxIOPS = maxIOPS;
+		}
+
+		public String getMemoryClass() {
+			return this.memoryClass;
+		}
+
+		public void setMemoryClass(String memoryClass) {
+			this.memoryClass = memoryClass;
+		}
+
+		public String getReferencePrice() {
+			return this.referencePrice;
+		}
+
+		public void setReferencePrice(String referencePrice) {
+			this.referencePrice = referencePrice;
+		}
+
+		public String getCategory() {
+			return this.category;
+		}
+
+		public void setCategory(String category) {
+			this.category = category;
+		}
+
+		public String getStorageType() {
+			return this.storageType;
+		}
+
+		public void setStorageType(String storageType) {
+			this.storageType = storageType;
 		}
 	}
 

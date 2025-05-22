@@ -27,18 +27,18 @@ public class DescribeResourceDetailsResponseUnmarshaller {
 	public static DescribeResourceDetailsResponse unmarshall(DescribeResourceDetailsResponse describeResourceDetailsResponse, UnmarshallerContext _ctx) {
 		
 		describeResourceDetailsResponse.setRequestId(_ctx.stringValue("DescribeResourceDetailsResponse.RequestId"));
-		describeResourceDetailsResponse.setRegion(_ctx.stringValue("DescribeResourceDetailsResponse.Region"));
-		describeResourceDetailsResponse.setInstanceStorageType(_ctx.stringValue("DescribeResourceDetailsResponse.InstanceStorageType"));
-		describeResourceDetailsResponse.setDbInstanceStorage(_ctx.longValue("DescribeResourceDetailsResponse.DbInstanceStorage"));
-		describeResourceDetailsResponse.setDiskUsed(_ctx.longValue("DescribeResourceDetailsResponse.DiskUsed"));
-		describeResourceDetailsResponse.setBackupSize(_ctx.longValue("DescribeResourceDetailsResponse.BackupSize"));
-		describeResourceDetailsResponse.setVpcId(_ctx.stringValue("DescribeResourceDetailsResponse.VpcId"));
-		describeResourceDetailsResponse.setVSwitchId(_ctx.stringValue("DescribeResourceDetailsResponse.VSwitchId"));
-		describeResourceDetailsResponse.setSecurityIPList(_ctx.stringValue("DescribeResourceDetailsResponse.SecurityIPList"));
-		describeResourceDetailsResponse.setDbProxyInstanceName(_ctx.stringValue("DescribeResourceDetailsResponse.DbProxyInstanceName"));
-		describeResourceDetailsResponse.setResourceGroupId(_ctx.stringValue("DescribeResourceDetailsResponse.ResourceGroupId"));
-		describeResourceDetailsResponse.setBackupLogSize(_ctx.longValue("DescribeResourceDetailsResponse.BackupLogSize"));
 		describeResourceDetailsResponse.setBackupDataSize(_ctx.longValue("DescribeResourceDetailsResponse.BackupDataSize"));
+		describeResourceDetailsResponse.setBackupLogSize(_ctx.longValue("DescribeResourceDetailsResponse.BackupLogSize"));
+		describeResourceDetailsResponse.setBackupSize(_ctx.longValue("DescribeResourceDetailsResponse.BackupSize"));
+		describeResourceDetailsResponse.setDbInstanceStorage(_ctx.longValue("DescribeResourceDetailsResponse.DbInstanceStorage"));
+		describeResourceDetailsResponse.setDbProxyInstanceName(_ctx.stringValue("DescribeResourceDetailsResponse.DbProxyInstanceName"));
+		describeResourceDetailsResponse.setDiskUsed(_ctx.longValue("DescribeResourceDetailsResponse.DiskUsed"));
+		describeResourceDetailsResponse.setInstanceStorageType(_ctx.stringValue("DescribeResourceDetailsResponse.InstanceStorageType"));
+		describeResourceDetailsResponse.setRegion(_ctx.stringValue("DescribeResourceDetailsResponse.Region"));
+		describeResourceDetailsResponse.setResourceGroupId(_ctx.stringValue("DescribeResourceDetailsResponse.ResourceGroupId"));
+		describeResourceDetailsResponse.setSecurityIPList(_ctx.stringValue("DescribeResourceDetailsResponse.SecurityIPList"));
+		describeResourceDetailsResponse.setVSwitchId(_ctx.stringValue("DescribeResourceDetailsResponse.VSwitchId"));
+		describeResourceDetailsResponse.setVpcId(_ctx.stringValue("DescribeResourceDetailsResponse.VpcId"));
 
 		List<RdsEcsSecurityGroupRelItem> rdsEcsSecurityGroupRel = new ArrayList<RdsEcsSecurityGroupRelItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeResourceDetailsResponse.RdsEcsSecurityGroupRel.Length"); i++) {

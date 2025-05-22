@@ -25,21 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDBInstanceTDEResponse extends AcsResponse {
 
-	private String tDEStatus;
-
 	private String requestId;
 
 	private String tDEMode;
 
+	private String tDEStatus;
+
+	private String encryptionKey;
+
 	private List<Database> databases;
-
-	public String getTDEStatus() {
-		return this.tDEStatus;
-	}
-
-	public void setTDEStatus(String tDEStatus) {
-		this.tDEStatus = tDEStatus;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -55,6 +49,22 @@ public class DescribeDBInstanceTDEResponse extends AcsResponse {
 
 	public void setTDEMode(String tDEMode) {
 		this.tDEMode = tDEMode;
+	}
+
+	public String getTDEStatus() {
+		return this.tDEStatus;
+	}
+
+	public void setTDEStatus(String tDEStatus) {
+		this.tDEStatus = tDEStatus;
+	}
+
+	public String getEncryptionKey() {
+		return this.encryptionKey;
+	}
+
+	public void setEncryptionKey(String encryptionKey) {
+		this.encryptionKey = encryptionKey;
 	}
 
 	public List<Database> getDatabases() {

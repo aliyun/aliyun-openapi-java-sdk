@@ -38,6 +38,8 @@ public class ModifyResourceGroupRequest extends RpcAcsRequest<ModifyResourceGrou
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private String resourceType;
 	public ModifyResourceGroupRequest() {
 		super("Rds", "2014-08-15", "ModifyResourceGroup", "rds");
 		setMethod(MethodType.POST);
@@ -121,6 +123,17 @@ public class ModifyResourceGroupRequest extends RpcAcsRequest<ModifyResourceGrou
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getResourceType() {
+		return this.resourceType;
+	}
+
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType);
 		}
 	}
 

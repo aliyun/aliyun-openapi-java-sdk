@@ -18,7 +18,6 @@ import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
-import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.rds.Endpoint;
 
@@ -47,9 +46,10 @@ public class ModifyMaskingRulesRequest extends RpcAcsRequest<ModifyMaskingRulesR
 
 	@SerializedName("ruleConfig")
 	private RuleConfig ruleConfig;
+
+	private String dBName;
 	public ModifyMaskingRulesRequest() {
 		super("Rds", "2014-08-15", "ModifyMaskingRules", "rds");
-		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -154,6 +154,17 @@ public class ModifyMaskingRulesRequest extends RpcAcsRequest<ModifyMaskingRulesR
 		if (ruleConfig != null) {
 			putQueryParameter("RuleConfig" , new Gson().toJson(ruleConfig));
 		}	
+	}
+
+	public String getDBName() {
+		return this.dBName;
+	}
+
+	public void setDBName(String dBName) {
+		this.dBName = dBName;
+		if(dBName != null){
+			putQueryParameter("DBName", dBName);
+		}
 	}
 
 	public static class RuleConfig {

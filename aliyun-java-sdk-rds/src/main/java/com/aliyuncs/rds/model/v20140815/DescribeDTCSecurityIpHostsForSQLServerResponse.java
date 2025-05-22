@@ -27,9 +27,9 @@ public class DescribeDTCSecurityIpHostsForSQLServerResponse extends AcsResponse 
 
 	private String dBInstanceId;
 
-	private String requestId;
-
 	private String ipHostPairNum;
+
+	private String requestId;
 
 	private List<WhiteListGroups> items;
 
@@ -41,20 +41,20 @@ public class DescribeDTCSecurityIpHostsForSQLServerResponse extends AcsResponse 
 		this.dBInstanceId = dBInstanceId;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getIpHostPairNum() {
 		return this.ipHostPairNum;
 	}
 
 	public void setIpHostPairNum(String ipHostPairNum) {
 		this.ipHostPairNum = ipHostPairNum;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<WhiteListGroups> getItems() {

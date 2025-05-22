@@ -27,9 +27,9 @@ public class DescribeHistoryEventsResponse extends AcsResponse {
 
 	private Integer pageNumber;
 
-	private String requestId;
-
 	private Integer pageSize;
+
+	private String requestId;
 
 	private Integer totalCount;
 
@@ -43,20 +43,20 @@ public class DescribeHistoryEventsResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getTotalCount() {
@@ -159,10 +159,6 @@ public class DescribeHistoryEventsResponse extends AcsResponse {
 
 		public static class Data {
 
-			private String eventType;
-
-			private String eventId;
-
 			private String cmsProduct;
 
 			private String dbType;
@@ -179,6 +175,8 @@ public class DescribeHistoryEventsResponse extends AcsResponse {
 
 			private String eventDetail;
 
+			private String eventId;
+
 			private String eventImpact;
 
 			private String eventLevel;
@@ -186,6 +184,8 @@ public class DescribeHistoryEventsResponse extends AcsResponse {
 			private String eventReason;
 
 			private String eventStatus;
+
+			private String eventType;
 
 			private String gmtCreated;
 
@@ -212,22 +212,6 @@ public class DescribeHistoryEventsResponse extends AcsResponse {
 			private String startTime;
 
 			private String uid;
-
-			public String getEventType() {
-				return this.eventType;
-			}
-
-			public void setEventType(String eventType) {
-				this.eventType = eventType;
-			}
-
-			public String getEventId() {
-				return this.eventId;
-			}
-
-			public void setEventId(String eventId) {
-				this.eventId = eventId;
-			}
 
 			public String getCmsProduct() {
 				return this.cmsProduct;
@@ -293,6 +277,14 @@ public class DescribeHistoryEventsResponse extends AcsResponse {
 				this.eventDetail = eventDetail;
 			}
 
+			public String getEventId() {
+				return this.eventId;
+			}
+
+			public void setEventId(String eventId) {
+				this.eventId = eventId;
+			}
+
 			public String getEventImpact() {
 				return this.eventImpact;
 			}
@@ -323,6 +315,14 @@ public class DescribeHistoryEventsResponse extends AcsResponse {
 
 			public void setEventStatus(String eventStatus) {
 				this.eventStatus = eventStatus;
+			}
+
+			public String getEventType() {
+				return this.eventType;
+			}
+
+			public void setEventType(String eventType) {
+				this.eventType = eventType;
 			}
 
 			public String getGmtCreated() {

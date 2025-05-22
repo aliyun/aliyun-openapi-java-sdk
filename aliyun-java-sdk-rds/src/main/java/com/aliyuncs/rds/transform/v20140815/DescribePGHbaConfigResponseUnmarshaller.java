@@ -27,21 +27,21 @@ public class DescribePGHbaConfigResponseUnmarshaller {
 	public static DescribePGHbaConfigResponse unmarshall(DescribePGHbaConfigResponse describePGHbaConfigResponse, UnmarshallerContext _ctx) {
 		
 		describePGHbaConfigResponse.setRequestId(_ctx.stringValue("DescribePGHbaConfigResponse.RequestId"));
-		describePGHbaConfigResponse.setHbaModifyTime(_ctx.stringValue("DescribePGHbaConfigResponse.HbaModifyTime"));
-		describePGHbaConfigResponse.setModifyStatusReason(_ctx.stringValue("DescribePGHbaConfigResponse.ModifyStatusReason"));
-		describePGHbaConfigResponse.setLastModifyStatus(_ctx.stringValue("DescribePGHbaConfigResponse.LastModifyStatus"));
 		describePGHbaConfigResponse.setDBInstanceId(_ctx.stringValue("DescribePGHbaConfigResponse.DBInstanceId"));
+		describePGHbaConfigResponse.setHbaModifyTime(_ctx.stringValue("DescribePGHbaConfigResponse.HbaModifyTime"));
+		describePGHbaConfigResponse.setLastModifyStatus(_ctx.stringValue("DescribePGHbaConfigResponse.LastModifyStatus"));
+		describePGHbaConfigResponse.setModifyStatusReason(_ctx.stringValue("DescribePGHbaConfigResponse.ModifyStatusReason"));
 
 		List<HbaItem> defaultHbaItems = new ArrayList<HbaItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePGHbaConfigResponse.DefaultHbaItems.Length"); i++) {
 			HbaItem hbaItem = new HbaItem();
-			hbaItem.setType(_ctx.stringValue("DescribePGHbaConfigResponse.DefaultHbaItems["+ i +"].Type"));
-			hbaItem.setMask(_ctx.stringValue("DescribePGHbaConfigResponse.DefaultHbaItems["+ i +"].Mask"));
-			hbaItem.setDatabase(_ctx.stringValue("DescribePGHbaConfigResponse.DefaultHbaItems["+ i +"].Database"));
-			hbaItem.setPriorityId(_ctx.integerValue("DescribePGHbaConfigResponse.DefaultHbaItems["+ i +"].PriorityId"));
 			hbaItem.setAddress(_ctx.stringValue("DescribePGHbaConfigResponse.DefaultHbaItems["+ i +"].Address"));
-			hbaItem.setOption(_ctx.stringValue("DescribePGHbaConfigResponse.DefaultHbaItems["+ i +"].Option"));
+			hbaItem.setDatabase(_ctx.stringValue("DescribePGHbaConfigResponse.DefaultHbaItems["+ i +"].Database"));
+			hbaItem.setMask(_ctx.stringValue("DescribePGHbaConfigResponse.DefaultHbaItems["+ i +"].Mask"));
 			hbaItem.setBizMethod(_ctx.stringValue("DescribePGHbaConfigResponse.DefaultHbaItems["+ i +"].Method"));
+			hbaItem.setOption(_ctx.stringValue("DescribePGHbaConfigResponse.DefaultHbaItems["+ i +"].Option"));
+			hbaItem.setPriorityId(_ctx.integerValue("DescribePGHbaConfigResponse.DefaultHbaItems["+ i +"].PriorityId"));
+			hbaItem.setType(_ctx.stringValue("DescribePGHbaConfigResponse.DefaultHbaItems["+ i +"].Type"));
 			hbaItem.setUser(_ctx.stringValue("DescribePGHbaConfigResponse.DefaultHbaItems["+ i +"].User"));
 
 			defaultHbaItems.add(hbaItem);
@@ -51,13 +51,13 @@ public class DescribePGHbaConfigResponseUnmarshaller {
 		List<HbaItem> runningHbaItems = new ArrayList<HbaItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePGHbaConfigResponse.RunningHbaItems.Length"); i++) {
 			HbaItem hbaItem1 = new HbaItem();
-			hbaItem1.setType(_ctx.stringValue("DescribePGHbaConfigResponse.RunningHbaItems["+ i +"].Type"));
-			hbaItem1.setMask(_ctx.stringValue("DescribePGHbaConfigResponse.RunningHbaItems["+ i +"].Mask"));
-			hbaItem1.setDatabase(_ctx.stringValue("DescribePGHbaConfigResponse.RunningHbaItems["+ i +"].Database"));
-			hbaItem1.setPriorityId(_ctx.integerValue("DescribePGHbaConfigResponse.RunningHbaItems["+ i +"].PriorityId"));
 			hbaItem1.setAddress(_ctx.stringValue("DescribePGHbaConfigResponse.RunningHbaItems["+ i +"].Address"));
-			hbaItem1.setOption(_ctx.stringValue("DescribePGHbaConfigResponse.RunningHbaItems["+ i +"].Option"));
+			hbaItem1.setDatabase(_ctx.stringValue("DescribePGHbaConfigResponse.RunningHbaItems["+ i +"].Database"));
+			hbaItem1.setMask(_ctx.stringValue("DescribePGHbaConfigResponse.RunningHbaItems["+ i +"].Mask"));
 			hbaItem1.setBizMethod(_ctx.stringValue("DescribePGHbaConfigResponse.RunningHbaItems["+ i +"].Method"));
+			hbaItem1.setOption(_ctx.stringValue("DescribePGHbaConfigResponse.RunningHbaItems["+ i +"].Option"));
+			hbaItem1.setPriorityId(_ctx.integerValue("DescribePGHbaConfigResponse.RunningHbaItems["+ i +"].PriorityId"));
+			hbaItem1.setType(_ctx.stringValue("DescribePGHbaConfigResponse.RunningHbaItems["+ i +"].Type"));
 			hbaItem1.setUser(_ctx.stringValue("DescribePGHbaConfigResponse.RunningHbaItems["+ i +"].User"));
 
 			runningHbaItems.add(hbaItem1);

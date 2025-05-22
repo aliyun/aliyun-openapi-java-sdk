@@ -46,6 +46,12 @@ public class DescribeUpgradeMajorVersionTasksResponseUnmarshaller {
 			tasks.setTargetInsName(_ctx.stringValue("DescribeUpgradeMajorVersionTasksResponse.Items["+ i +"].TargetInsName"));
 			tasks.setSwitchTime(_ctx.stringValue("DescribeUpgradeMajorVersionTasksResponse.Items["+ i +"].SwitchTime"));
 			tasks.setDetail(_ctx.stringValue("DescribeUpgradeMajorVersionTasksResponse.Items["+ i +"].Detail"));
+			tasks.setSwitchEndTime(_ctx.stringValue("DescribeUpgradeMajorVersionTasksResponse.Items["+ i +"].SwitchEndTime"));
+			tasks.setTotalLogicRepLatencyMB(_ctx.integerValue("DescribeUpgradeMajorVersionTasksResponse.Items["+ i +"].totalLogicRepLatencyMB"));
+			tasks.setTotalLogicRepDelayTime(_ctx.integerValue("DescribeUpgradeMajorVersionTasksResponse.Items["+ i +"].totalLogicRepDelayTime"));
+			tasks.setZeroDownTimeConnectionString(_ctx.stringValue("DescribeUpgradeMajorVersionTasksResponse.Items["+ i +"].zeroDownTimeConnectionString"));
+			tasks.setZeroDownTimePort(_ctx.integerValue("DescribeUpgradeMajorVersionTasksResponse.Items["+ i +"].zeroDownTimePort"));
+			tasks.setCutOver(_ctx.booleanValue("DescribeUpgradeMajorVersionTasksResponse.Items["+ i +"].cutOver"));
 
 			items.add(tasks);
 		}

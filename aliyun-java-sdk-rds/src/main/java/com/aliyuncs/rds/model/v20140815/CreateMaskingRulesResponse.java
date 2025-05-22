@@ -25,13 +25,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateMaskingRulesResponse extends AcsResponse {
 
+	private Map<Object,Object> data;
+
+	private String message;
+
 	private String requestId;
 
 	private String success;
 
-	private String message;
+	public Map<Object,Object> getData() {
+		return this.data;
+	}
 
-	private Map<Object,Object> data;
+	public void setData(Map<Object,Object> data) {
+		this.data = data;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -47,22 +63,6 @@ public class CreateMaskingRulesResponse extends AcsResponse {
 
 	public void setSuccess(String success) {
 		this.success = success;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public Map<Object,Object> getData() {
-		return this.data;
-	}
-
-	public void setData(Map<Object,Object> data) {
-		this.data = data;
 	}
 
 	@Override

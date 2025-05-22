@@ -26,6 +26,8 @@ public class CheckServiceLinkedRoleResponse extends AcsResponse {
 
 	private String hasServiceLinkedRole;
 
+	private String requireServiceLinkedRole;
+
 	private String requestId;
 
 	public String getHasServiceLinkedRole() {
@@ -34,6 +36,14 @@ public class CheckServiceLinkedRoleResponse extends AcsResponse {
 
 	public void setHasServiceLinkedRole(String hasServiceLinkedRole) {
 		this.hasServiceLinkedRole = hasServiceLinkedRole;
+	}
+
+	public String getRequireServiceLinkedRole() {
+		return this.requireServiceLinkedRole;
+	}
+
+	public void setRequireServiceLinkedRole(String requireServiceLinkedRole) {
+		this.requireServiceLinkedRole = requireServiceLinkedRole;
 	}
 
 	public String getRequestId() {

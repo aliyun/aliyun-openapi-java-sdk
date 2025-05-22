@@ -34,18 +34,18 @@ public class DescribeEventsResponseUnmarshaller {
 		List<EventItemsItem> eventItems = new ArrayList<EventItemsItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeEventsResponse.EventItems.Length"); i++) {
 			EventItemsItem eventItemsItem = new EventItemsItem();
-			eventItemsItem.setEventName(_ctx.stringValue("DescribeEventsResponse.EventItems["+ i +"].EventName"));
-			eventItemsItem.setEventTime(_ctx.stringValue("DescribeEventsResponse.EventItems["+ i +"].EventTime"));
-			eventItemsItem.setEventUserType(_ctx.stringValue("DescribeEventsResponse.EventItems["+ i +"].EventUserType"));
-			eventItemsItem.setEventRecordTime(_ctx.stringValue("DescribeEventsResponse.EventItems["+ i +"].EventRecordTime"));
 			eventItemsItem.setCallerUid(_ctx.longValue("DescribeEventsResponse.EventItems["+ i +"].CallerUid"));
-			eventItemsItem.setRegionId(_ctx.stringValue("DescribeEventsResponse.EventItems["+ i +"].RegionId"));
 			eventItemsItem.setEventId(_ctx.integerValue("DescribeEventsResponse.EventItems["+ i +"].EventId"));
-			eventItemsItem.setEventType(_ctx.stringValue("DescribeEventsResponse.EventItems["+ i +"].EventType"));
-			eventItemsItem.setResourceType(_ctx.stringValue("DescribeEventsResponse.EventItems["+ i +"].ResourceType"));
+			eventItemsItem.setEventName(_ctx.stringValue("DescribeEventsResponse.EventItems["+ i +"].EventName"));
 			eventItemsItem.setEventPayload(_ctx.stringValue("DescribeEventsResponse.EventItems["+ i +"].EventPayload"));
 			eventItemsItem.setEventReason(_ctx.stringValue("DescribeEventsResponse.EventItems["+ i +"].EventReason"));
+			eventItemsItem.setEventRecordTime(_ctx.stringValue("DescribeEventsResponse.EventItems["+ i +"].EventRecordTime"));
+			eventItemsItem.setEventTime(_ctx.stringValue("DescribeEventsResponse.EventItems["+ i +"].EventTime"));
+			eventItemsItem.setEventType(_ctx.stringValue("DescribeEventsResponse.EventItems["+ i +"].EventType"));
+			eventItemsItem.setEventUserType(_ctx.stringValue("DescribeEventsResponse.EventItems["+ i +"].EventUserType"));
+			eventItemsItem.setRegionId(_ctx.stringValue("DescribeEventsResponse.EventItems["+ i +"].RegionId"));
 			eventItemsItem.setResourceName(_ctx.stringValue("DescribeEventsResponse.EventItems["+ i +"].ResourceName"));
+			eventItemsItem.setResourceType(_ctx.stringValue("DescribeEventsResponse.EventItems["+ i +"].ResourceType"));
 
 			eventItems.add(eventItemsItem);
 		}

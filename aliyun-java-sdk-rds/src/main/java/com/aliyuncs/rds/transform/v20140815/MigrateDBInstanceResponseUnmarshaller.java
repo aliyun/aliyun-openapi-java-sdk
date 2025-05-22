@@ -23,8 +23,8 @@ public class MigrateDBInstanceResponseUnmarshaller {
 	public static MigrateDBInstanceResponse unmarshall(MigrateDBInstanceResponse migrateDBInstanceResponse, UnmarshallerContext _ctx) {
 		
 		migrateDBInstanceResponse.setRequestId(_ctx.stringValue("MigrateDBInstanceResponse.RequestId"));
-		migrateDBInstanceResponse.setTaskId(_ctx.integerValue("MigrateDBInstanceResponse.TaskId"));
 		migrateDBInstanceResponse.setMigrationId(_ctx.integerValue("MigrateDBInstanceResponse.MigrationId"));
+		migrateDBInstanceResponse.setTaskId(_ctx.integerValue("MigrateDBInstanceResponse.TaskId"));
 	 
 	 	return migrateDBInstanceResponse;
 	}

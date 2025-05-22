@@ -27,11 +27,11 @@ public class DescribeReadDBInstanceDelayResponse extends AcsResponse {
 
 	private String dBInstanceId;
 
-	private String requestId;
-
 	private Integer delayTime;
 
 	private String readDBInstanceId;
+
+	private String requestId;
 
 	private List<ItemsItem> items;
 
@@ -41,14 +41,6 @@ public class DescribeReadDBInstanceDelayResponse extends AcsResponse {
 
 	public void setDBInstanceId(String dBInstanceId) {
 		this.dBInstanceId = dBInstanceId;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
 	}
 
 	public Integer getDelayTime() {
@@ -67,6 +59,14 @@ public class DescribeReadDBInstanceDelayResponse extends AcsResponse {
 		this.readDBInstanceId = readDBInstanceId;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public List<ItemsItem> getItems() {
 		return this.items;
 	}
@@ -81,9 +81,9 @@ public class DescribeReadDBInstanceDelayResponse extends AcsResponse {
 
 		private List<ReadonlyInstanceDelayItem> readonlyInstanceDelay;
 
-		private List<String> readDelayTimes;
-
 		private List<String> readDBInstanceNames;
+
+		private List<String> readDelayTimes;
 
 		public String getDBInstanceId() {
 			return this.dBInstanceId;
@@ -101,14 +101,6 @@ public class DescribeReadDBInstanceDelayResponse extends AcsResponse {
 			this.readonlyInstanceDelay = readonlyInstanceDelay;
 		}
 
-		public List<String> getReadDelayTimes() {
-			return this.readDelayTimes;
-		}
-
-		public void setReadDelayTimes(List<String> readDelayTimes) {
-			this.readDelayTimes = readDelayTimes;
-		}
-
 		public List<String> getReadDBInstanceNames() {
 			return this.readDBInstanceNames;
 		}
@@ -117,30 +109,38 @@ public class DescribeReadDBInstanceDelayResponse extends AcsResponse {
 			this.readDBInstanceNames = readDBInstanceNames;
 		}
 
+		public List<String> getReadDelayTimes() {
+			return this.readDelayTimes;
+		}
+
+		public void setReadDelayTimes(List<String> readDelayTimes) {
+			this.readDelayTimes = readDelayTimes;
+		}
+
 		public static class ReadonlyInstanceDelayItem {
 
-			private String writeLatency;
+			private String flushLag;
 
 			private String flushLatency;
 
 			private String readDBInstanceName;
 
-			private String writeLag;
-
-			private String flushLag;
-
-			private String sendLatency;
-
 			private String replayLag;
 
 			private String replayLatency;
 
-			public String getWriteLatency() {
-				return this.writeLatency;
+			private String sendLatency;
+
+			private String writeLag;
+
+			private String writeLatency;
+
+			public String getFlushLag() {
+				return this.flushLag;
 			}
 
-			public void setWriteLatency(String writeLatency) {
-				this.writeLatency = writeLatency;
+			public void setFlushLag(String flushLag) {
+				this.flushLag = flushLag;
 			}
 
 			public String getFlushLatency() {
@@ -159,30 +159,6 @@ public class DescribeReadDBInstanceDelayResponse extends AcsResponse {
 				this.readDBInstanceName = readDBInstanceName;
 			}
 
-			public String getWriteLag() {
-				return this.writeLag;
-			}
-
-			public void setWriteLag(String writeLag) {
-				this.writeLag = writeLag;
-			}
-
-			public String getFlushLag() {
-				return this.flushLag;
-			}
-
-			public void setFlushLag(String flushLag) {
-				this.flushLag = flushLag;
-			}
-
-			public String getSendLatency() {
-				return this.sendLatency;
-			}
-
-			public void setSendLatency(String sendLatency) {
-				this.sendLatency = sendLatency;
-			}
-
 			public String getReplayLag() {
 				return this.replayLag;
 			}
@@ -197,6 +173,30 @@ public class DescribeReadDBInstanceDelayResponse extends AcsResponse {
 
 			public void setReplayLatency(String replayLatency) {
 				this.replayLatency = replayLatency;
+			}
+
+			public String getSendLatency() {
+				return this.sendLatency;
+			}
+
+			public void setSendLatency(String sendLatency) {
+				this.sendLatency = sendLatency;
+			}
+
+			public String getWriteLag() {
+				return this.writeLag;
+			}
+
+			public void setWriteLag(String writeLag) {
+				this.writeLag = writeLag;
+			}
+
+			public String getWriteLatency() {
+				return this.writeLatency;
+			}
+
+			public void setWriteLatency(String writeLatency) {
+				this.writeLatency = writeLatency;
 			}
 		}
 	}

@@ -79,15 +79,23 @@ public class DescribeDBInstanceEndpointsResponse extends AcsResponse {
 
 		public static class DBInstanceEndpoint {
 
+			private String endpointDescription;
+
 			private String endpointId;
 
 			private String endpointType;
 
-			private String endpointDescription;
+			private List<AddressItem> addressItems;
 
 			private List<NodeItem> nodeItems;
 
-			private List<AddressItem> addressItems;
+			public String getEndpointDescription() {
+				return this.endpointDescription;
+			}
+
+			public void setEndpointDescription(String endpointDescription) {
+				this.endpointDescription = endpointDescription;
+			}
 
 			public String getEndpointId() {
 				return this.endpointId;
@@ -105,12 +113,12 @@ public class DescribeDBInstanceEndpointsResponse extends AcsResponse {
 				this.endpointType = endpointType;
 			}
 
-			public String getEndpointDescription() {
-				return this.endpointDescription;
+			public List<AddressItem> getAddressItems() {
+				return this.addressItems;
 			}
 
-			public void setEndpointDescription(String endpointDescription) {
-				this.endpointDescription = endpointDescription;
+			public void setAddressItems(List<AddressItem> addressItems) {
+				this.addressItems = addressItems;
 			}
 
 			public List<NodeItem> getNodeItems() {
@@ -121,75 +129,34 @@ public class DescribeDBInstanceEndpointsResponse extends AcsResponse {
 				this.nodeItems = nodeItems;
 			}
 
-			public List<AddressItem> getAddressItems() {
-				return this.addressItems;
-			}
-
-			public void setAddressItems(List<AddressItem> addressItems) {
-				this.addressItems = addressItems;
-			}
-
-			public static class NodeItem {
-
-				private String nodeId;
-
-				private String dBInstanceId;
-
-				private Integer weight;
-
-				public String getNodeId() {
-					return this.nodeId;
-				}
-
-				public void setNodeId(String nodeId) {
-					this.nodeId = nodeId;
-				}
-
-				public String getDBInstanceId() {
-					return this.dBInstanceId;
-				}
-
-				public void setDBInstanceId(String dBInstanceId) {
-					this.dBInstanceId = dBInstanceId;
-				}
-
-				public Integer getWeight() {
-					return this.weight;
-				}
-
-				public void setWeight(Integer weight) {
-					this.weight = weight;
-				}
-			}
-
 			public static class AddressItem {
-
-				private String vpcId;
-
-				private String vSwitchId;
-
-				private String ipType;
-
-				private String port;
 
 				private String connectionString;
 
 				private String ipAddress;
 
-				public String getVpcId() {
-					return this.vpcId;
+				private String ipType;
+
+				private String port;
+
+				private String vSwitchId;
+
+				private String vpcId;
+
+				public String getConnectionString() {
+					return this.connectionString;
 				}
 
-				public void setVpcId(String vpcId) {
-					this.vpcId = vpcId;
+				public void setConnectionString(String connectionString) {
+					this.connectionString = connectionString;
 				}
 
-				public String getVSwitchId() {
-					return this.vSwitchId;
+				public String getIpAddress() {
+					return this.ipAddress;
 				}
 
-				public void setVSwitchId(String vSwitchId) {
-					this.vSwitchId = vSwitchId;
+				public void setIpAddress(String ipAddress) {
+					this.ipAddress = ipAddress;
 				}
 
 				public String getIpType() {
@@ -208,20 +175,53 @@ public class DescribeDBInstanceEndpointsResponse extends AcsResponse {
 					this.port = port;
 				}
 
-				public String getConnectionString() {
-					return this.connectionString;
+				public String getVSwitchId() {
+					return this.vSwitchId;
 				}
 
-				public void setConnectionString(String connectionString) {
-					this.connectionString = connectionString;
+				public void setVSwitchId(String vSwitchId) {
+					this.vSwitchId = vSwitchId;
 				}
 
-				public String getIpAddress() {
-					return this.ipAddress;
+				public String getVpcId() {
+					return this.vpcId;
 				}
 
-				public void setIpAddress(String ipAddress) {
-					this.ipAddress = ipAddress;
+				public void setVpcId(String vpcId) {
+					this.vpcId = vpcId;
+				}
+			}
+
+			public static class NodeItem {
+
+				private String dBInstanceId;
+
+				private String nodeId;
+
+				private Integer weight;
+
+				public String getDBInstanceId() {
+					return this.dBInstanceId;
+				}
+
+				public void setDBInstanceId(String dBInstanceId) {
+					this.dBInstanceId = dBInstanceId;
+				}
+
+				public String getNodeId() {
+					return this.nodeId;
+				}
+
+				public void setNodeId(String nodeId) {
+					this.nodeId = nodeId;
+				}
+
+				public Integer getWeight() {
+					return this.weight;
+				}
+
+				public void setWeight(Integer weight) {
+					this.weight = weight;
 				}
 			}
 		}

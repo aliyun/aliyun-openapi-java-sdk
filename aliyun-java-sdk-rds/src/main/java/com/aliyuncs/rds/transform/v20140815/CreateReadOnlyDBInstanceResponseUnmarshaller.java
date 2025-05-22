@@ -23,10 +23,10 @@ public class CreateReadOnlyDBInstanceResponseUnmarshaller {
 	public static CreateReadOnlyDBInstanceResponse unmarshall(CreateReadOnlyDBInstanceResponse createReadOnlyDBInstanceResponse, UnmarshallerContext _ctx) {
 		
 		createReadOnlyDBInstanceResponse.setRequestId(_ctx.stringValue("CreateReadOnlyDBInstanceResponse.RequestId"));
-		createReadOnlyDBInstanceResponse.setDBInstanceId(_ctx.stringValue("CreateReadOnlyDBInstanceResponse.DBInstanceId"));
-		createReadOnlyDBInstanceResponse.setPort(_ctx.stringValue("CreateReadOnlyDBInstanceResponse.Port"));
 		createReadOnlyDBInstanceResponse.setConnectionString(_ctx.stringValue("CreateReadOnlyDBInstanceResponse.ConnectionString"));
+		createReadOnlyDBInstanceResponse.setDBInstanceId(_ctx.stringValue("CreateReadOnlyDBInstanceResponse.DBInstanceId"));
 		createReadOnlyDBInstanceResponse.setOrderId(_ctx.stringValue("CreateReadOnlyDBInstanceResponse.OrderId"));
+		createReadOnlyDBInstanceResponse.setPort(_ctx.stringValue("CreateReadOnlyDBInstanceResponse.Port"));
 	 
 	 	return createReadOnlyDBInstanceResponse;
 	}

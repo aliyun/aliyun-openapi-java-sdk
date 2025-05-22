@@ -23,10 +23,10 @@ public class DescribeDBInstanceConnectivityResponseUnmarshaller {
 	public static DescribeDBInstanceConnectivityResponse unmarshall(DescribeDBInstanceConnectivityResponse describeDBInstanceConnectivityResponse, UnmarshallerContext _ctx) {
 		
 		describeDBInstanceConnectivityResponse.setRequestId(_ctx.stringValue("DescribeDBInstanceConnectivityResponse.RequestId"));
-		describeDBInstanceConnectivityResponse.setDbInstanceName(_ctx.stringValue("DescribeDBInstanceConnectivityResponse.DbInstanceName"));
-		describeDBInstanceConnectivityResponse.setConnCheckResult(_ctx.stringValue("DescribeDBInstanceConnectivityResponse.ConnCheckResult"));
 		describeDBInstanceConnectivityResponse.setConnCheckErrorCode(_ctx.stringValue("DescribeDBInstanceConnectivityResponse.ConnCheckErrorCode"));
 		describeDBInstanceConnectivityResponse.setConnCheckErrorMessage(_ctx.stringValue("DescribeDBInstanceConnectivityResponse.ConnCheckErrorMessage"));
+		describeDBInstanceConnectivityResponse.setConnCheckResult(_ctx.stringValue("DescribeDBInstanceConnectivityResponse.ConnCheckResult"));
+		describeDBInstanceConnectivityResponse.setDbInstanceName(_ctx.stringValue("DescribeDBInstanceConnectivityResponse.DbInstanceName"));
 	 
 	 	return describeDBInstanceConnectivityResponse;
 	}

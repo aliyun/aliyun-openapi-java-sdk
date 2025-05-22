@@ -99,29 +99,13 @@ public class GetDBInstanceTopologyResponse extends AcsResponse {
 
 		public static class Connection {
 
-			private String zoneId;
+			private String connectionString;
 
 			private String dBInstanceName;
 
-			private String connectionString;
-
 			private String netType;
 
-			public String getZoneId() {
-				return this.zoneId;
-			}
-
-			public void setZoneId(String zoneId) {
-				this.zoneId = zoneId;
-			}
-
-			public String getDBInstanceName() {
-				return this.dBInstanceName;
-			}
-
-			public void setDBInstanceName(String dBInstanceName) {
-				this.dBInstanceName = dBInstanceName;
-			}
+			private String zoneId;
 
 			public String getConnectionString() {
 				return this.connectionString;
@@ -131,6 +115,14 @@ public class GetDBInstanceTopologyResponse extends AcsResponse {
 				this.connectionString = connectionString;
 			}
 
+			public String getDBInstanceName() {
+				return this.dBInstanceName;
+			}
+
+			public void setDBInstanceName(String dBInstanceName) {
+				this.dBInstanceName = dBInstanceName;
+			}
+
 			public String getNetType() {
 				return this.netType;
 			}
@@ -138,21 +130,29 @@ public class GetDBInstanceTopologyResponse extends AcsResponse {
 			public void setNetType(String netType) {
 				this.netType = netType;
 			}
+
+			public String getZoneId() {
+				return this.zoneId;
+			}
+
+			public void setZoneId(String zoneId) {
+				this.zoneId = zoneId;
+			}
 		}
 
 		public static class Node {
 
 			private String dBInstanceName;
 
-			private String zoneId;
+			private String dedicatedHostGroupId;
 
 			private String dedicatedHostId;
 
-			private String role;
-
 			private String nodeId;
 
-			private String dedicatedHostGroupId;
+			private String role;
+
+			private String zoneId;
 
 			public String getDBInstanceName() {
 				return this.dBInstanceName;
@@ -162,12 +162,12 @@ public class GetDBInstanceTopologyResponse extends AcsResponse {
 				this.dBInstanceName = dBInstanceName;
 			}
 
-			public String getZoneId() {
-				return this.zoneId;
+			public String getDedicatedHostGroupId() {
+				return this.dedicatedHostGroupId;
 			}
 
-			public void setZoneId(String zoneId) {
-				this.zoneId = zoneId;
+			public void setDedicatedHostGroupId(String dedicatedHostGroupId) {
+				this.dedicatedHostGroupId = dedicatedHostGroupId;
 			}
 
 			public String getDedicatedHostId() {
@@ -178,14 +178,6 @@ public class GetDBInstanceTopologyResponse extends AcsResponse {
 				this.dedicatedHostId = dedicatedHostId;
 			}
 
-			public String getRole() {
-				return this.role;
-			}
-
-			public void setRole(String role) {
-				this.role = role;
-			}
-
 			public String getNodeId() {
 				return this.nodeId;
 			}
@@ -194,12 +186,20 @@ public class GetDBInstanceTopologyResponse extends AcsResponse {
 				this.nodeId = nodeId;
 			}
 
-			public String getDedicatedHostGroupId() {
-				return this.dedicatedHostGroupId;
+			public String getRole() {
+				return this.role;
 			}
 
-			public void setDedicatedHostGroupId(String dedicatedHostGroupId) {
-				this.dedicatedHostGroupId = dedicatedHostGroupId;
+			public void setRole(String role) {
+				this.role = role;
+			}
+
+			public String getZoneId() {
+				return this.zoneId;
+			}
+
+			public void setZoneId(String zoneId) {
+				this.zoneId = zoneId;
 			}
 		}
 	}

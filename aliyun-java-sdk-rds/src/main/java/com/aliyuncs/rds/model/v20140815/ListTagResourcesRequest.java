@@ -28,6 +28,10 @@ public class ListTagResourcesRequest extends RpcAcsRequest<ListTagResourcesRespo
 
 	private Long resourceOwnerId;
 
+	private String nextToken;
+
+	private List<Tag> tags;
+
 	private List<String> resourceIds;
 
 	private String resourceOwnerAccount;
@@ -35,10 +39,6 @@ public class ListTagResourcesRequest extends RpcAcsRequest<ListTagResourcesRespo
 	private Long ownerId;
 
 	private String resourceType;
-
-	private String nextToken;
-
-	private List<Tag> tags;
 	public ListTagResourcesRequest() {
 		super("Rds", "2014-08-15", "ListTagResources", "rds");
 		setMethod(MethodType.POST);
@@ -57,6 +57,31 @@ public class ListTagResourcesRequest extends RpcAcsRequest<ListTagResourcesRespo
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
+		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
 	}
 
 	public List<String> getResourceIds() {
@@ -103,31 +128,6 @@ public class ListTagResourcesRequest extends RpcAcsRequest<ListTagResourcesRespo
 		if(resourceType != null){
 			putQueryParameter("ResourceType", resourceType);
 		}
-	}
-
-	public String getNextToken() {
-		return this.nextToken;
-	}
-
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
-		if(nextToken != null){
-			putQueryParameter("NextToken", nextToken);
-		}
-	}
-
-	public List<Tag> getTags() {
-		return this.tags;
-	}
-
-	public void setTags(List<Tag> tags) {
-		this.tags = tags;	
-		if (tags != null) {
-			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
-				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
-				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
-			}
-		}	
 	}
 
 	public static class Tag {

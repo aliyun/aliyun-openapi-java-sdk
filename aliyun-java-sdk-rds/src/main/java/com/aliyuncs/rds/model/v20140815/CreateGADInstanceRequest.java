@@ -125,15 +125,15 @@ public class CreateGADInstanceRequest extends RpcAcsRequest<CreateGADInstanceRes
 				putQueryParameter("UnitNode." + (depth1 + 1) + ".DbInstanceClass" , unitNodes.get(depth1).getDbInstanceClass());
 				putQueryParameter("UnitNode." + (depth1 + 1) + ".SecurityIPList" , unitNodes.get(depth1).getSecurityIPList());
 				putQueryParameter("UnitNode." + (depth1 + 1) + ".VSwitchID" , unitNodes.get(depth1).getVSwitchID());
-				putQueryParameter("UnitNode." + (depth1 + 1) + ".RegionID" , unitNodes.get(depth1).getRegionID());
 				putQueryParameter("UnitNode." + (depth1 + 1) + ".Engine" , unitNodes.get(depth1).getEngine());
+				putQueryParameter("UnitNode." + (depth1 + 1) + ".RegionID" , unitNodes.get(depth1).getRegionID());
 				putQueryParameter("UnitNode." + (depth1 + 1) + ".DtsInstanceClass" , unitNodes.get(depth1).getDtsInstanceClass());
 				putQueryParameter("UnitNode." + (depth1 + 1) + ".VpcID" , unitNodes.get(depth1).getVpcID());
 				putQueryParameter("UnitNode." + (depth1 + 1) + ".ZoneID" , unitNodes.get(depth1).getZoneID());
 				putQueryParameter("UnitNode." + (depth1 + 1) + ".DBInstanceDescription" , unitNodes.get(depth1).getDBInstanceDescription());
 				putQueryParameter("UnitNode." + (depth1 + 1) + ".DBInstanceStorageType" , unitNodes.get(depth1).getDBInstanceStorageType());
-				putQueryParameter("UnitNode." + (depth1 + 1) + ".PayType" , unitNodes.get(depth1).getPayType());
 				putQueryParameter("UnitNode." + (depth1 + 1) + ".DtsConflict" , unitNodes.get(depth1).getDtsConflict());
+				putQueryParameter("UnitNode." + (depth1 + 1) + ".PayType" , unitNodes.get(depth1).getPayType());
 			}
 		}	
 	}
@@ -210,9 +210,9 @@ public class CreateGADInstanceRequest extends RpcAcsRequest<CreateGADInstanceRes
 
 		private String vSwitchID;
 
-		private String regionID;
-
 		private String engine;
+
+		private String regionID;
 
 		private String dtsInstanceClass;
 
@@ -224,9 +224,9 @@ public class CreateGADInstanceRequest extends RpcAcsRequest<CreateGADInstanceRes
 
 		private String dBInstanceStorageType;
 
-		private String payType;
-
 		private String dtsConflict;
+
+		private String payType;
 
 		public Long getDBInstanceStorage() {
 			return this.dBInstanceStorage;
@@ -284,20 +284,20 @@ public class CreateGADInstanceRequest extends RpcAcsRequest<CreateGADInstanceRes
 			this.vSwitchID = vSwitchID;
 		}
 
-		public String getRegionID() {
-			return this.regionID;
-		}
-
-		public void setRegionID(String regionID) {
-			this.regionID = regionID;
-		}
-
 		public String getEngine() {
 			return this.engine;
 		}
 
 		public void setEngine(String engine) {
 			this.engine = engine;
+		}
+
+		public String getRegionID() {
+			return this.regionID;
+		}
+
+		public void setRegionID(String regionID) {
+			this.regionID = regionID;
 		}
 
 		public String getDtsInstanceClass() {
@@ -340,20 +340,20 @@ public class CreateGADInstanceRequest extends RpcAcsRequest<CreateGADInstanceRes
 			this.dBInstanceStorageType = dBInstanceStorageType;
 		}
 
-		public String getPayType() {
-			return this.payType;
-		}
-
-		public void setPayType(String payType) {
-			this.payType = payType;
-		}
-
 		public String getDtsConflict() {
 			return this.dtsConflict;
 		}
 
 		public void setDtsConflict(String dtsConflict) {
 			this.dtsConflict = dtsConflict;
+		}
+
+		public String getPayType() {
+			return this.payType;
+		}
+
+		public void setPayType(String payType) {
+			this.payType = payType;
 		}
 	}
 

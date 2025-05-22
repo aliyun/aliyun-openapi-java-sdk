@@ -24,64 +24,32 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeMigrateTaskByIdResponse extends AcsResponse {
 
-	private String status;
-
-	private String endTime;
-
-	private String dBInstanceName;
-
-	private String requestId;
-
-	private String description;
+	private String backupMode;
 
 	private String createTime;
 
+	private String dBInstanceName;
+
 	private String dBName;
 
-	private String backupMode;
+	private String description;
 
-	private String migrateTaskId;
+	private String endTime;
 
 	private String isDBReplaced;
 
-	public String getStatus() {
-		return this.status;
+	private String migrateTaskId;
+
+	private String requestId;
+
+	private String status;
+
+	public String getBackupMode() {
+		return this.backupMode;
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-	}
-
-	public String getDBInstanceName() {
-		return this.dBInstanceName;
-	}
-
-	public void setDBInstanceName(String dBInstanceName) {
-		this.dBInstanceName = dBInstanceName;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
+	public void setBackupMode(String backupMode) {
+		this.backupMode = backupMode;
 	}
 
 	public String getCreateTime() {
@@ -92,6 +60,14 @@ public class DescribeMigrateTaskByIdResponse extends AcsResponse {
 		this.createTime = createTime;
 	}
 
+	public String getDBInstanceName() {
+		return this.dBInstanceName;
+	}
+
+	public void setDBInstanceName(String dBInstanceName) {
+		this.dBInstanceName = dBInstanceName;
+	}
+
 	public String getDBName() {
 		return this.dBName;
 	}
@@ -100,12 +76,28 @@ public class DescribeMigrateTaskByIdResponse extends AcsResponse {
 		this.dBName = dBName;
 	}
 
-	public String getBackupMode() {
-		return this.backupMode;
+	public String getDescription() {
+		return this.description;
 	}
 
-	public void setBackupMode(String backupMode) {
-		this.backupMode = backupMode;
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+	}
+
+	public String getIsDBReplaced() {
+		return this.isDBReplaced;
+	}
+
+	public void setIsDBReplaced(String isDBReplaced) {
+		this.isDBReplaced = isDBReplaced;
 	}
 
 	public String getMigrateTaskId() {
@@ -116,12 +108,20 @@ public class DescribeMigrateTaskByIdResponse extends AcsResponse {
 		this.migrateTaskId = migrateTaskId;
 	}
 
-	public String getIsDBReplaced() {
-		return this.isDBReplaced;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setIsDBReplaced(String isDBReplaced) {
-		this.isDBReplaced = isDBReplaced;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 	@Override

@@ -23,8 +23,8 @@ public class ModifyDBInstanceSecurityGroupRuleResponseUnmarshaller {
 	public static ModifyDBInstanceSecurityGroupRuleResponse unmarshall(ModifyDBInstanceSecurityGroupRuleResponse modifyDBInstanceSecurityGroupRuleResponse, UnmarshallerContext _ctx) {
 		
 		modifyDBInstanceSecurityGroupRuleResponse.setRequestId(_ctx.stringValue("ModifyDBInstanceSecurityGroupRuleResponse.RequestId"));
-		modifyDBInstanceSecurityGroupRuleResponse.setMessage(_ctx.stringValue("ModifyDBInstanceSecurityGroupRuleResponse.Message"));
 		modifyDBInstanceSecurityGroupRuleResponse.setCode(_ctx.stringValue("ModifyDBInstanceSecurityGroupRuleResponse.Code"));
+		modifyDBInstanceSecurityGroupRuleResponse.setMessage(_ctx.stringValue("ModifyDBInstanceSecurityGroupRuleResponse.Message"));
 	 
 	 	return modifyDBInstanceSecurityGroupRuleResponse;
 	}

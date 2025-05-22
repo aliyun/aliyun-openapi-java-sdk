@@ -25,19 +25,19 @@ public class DescribeWhitelistTemplateResponseUnmarshaller {
 	public static DescribeWhitelistTemplateResponse unmarshall(DescribeWhitelistTemplateResponse describeWhitelistTemplateResponse, UnmarshallerContext _ctx) {
 		
 		describeWhitelistTemplateResponse.setRequestId(_ctx.stringValue("DescribeWhitelistTemplateResponse.RequestId"));
-		describeWhitelistTemplateResponse.setSuccess(_ctx.booleanValue("DescribeWhitelistTemplateResponse.Success"));
 		describeWhitelistTemplateResponse.setCode(_ctx.stringValue("DescribeWhitelistTemplateResponse.Code"));
-		describeWhitelistTemplateResponse.setMessage(_ctx.stringValue("DescribeWhitelistTemplateResponse.Message"));
 		describeWhitelistTemplateResponse.setHttpStatusCode(_ctx.integerValue("DescribeWhitelistTemplateResponse.HttpStatusCode"));
+		describeWhitelistTemplateResponse.setMessage(_ctx.stringValue("DescribeWhitelistTemplateResponse.Message"));
+		describeWhitelistTemplateResponse.setSuccess(_ctx.booleanValue("DescribeWhitelistTemplateResponse.Success"));
 
 		Data data = new Data();
 
 		Template template = new Template();
 		template.setId(_ctx.integerValue("DescribeWhitelistTemplateResponse.Data.Template.Id"));
-		template.setUserId(_ctx.integerValue("DescribeWhitelistTemplateResponse.Data.Template.UserId"));
+		template.setIps(_ctx.stringValue("DescribeWhitelistTemplateResponse.Data.Template.Ips"));
 		template.setTemplateId(_ctx.integerValue("DescribeWhitelistTemplateResponse.Data.Template.TemplateId"));
 		template.setTemplateName(_ctx.stringValue("DescribeWhitelistTemplateResponse.Data.Template.TemplateName"));
-		template.setIps(_ctx.stringValue("DescribeWhitelistTemplateResponse.Data.Template.Ips"));
+		template.setUserId(_ctx.integerValue("DescribeWhitelistTemplateResponse.Data.Template.UserId"));
 		data.setTemplate(template);
 		describeWhitelistTemplateResponse.setData(data);
 	 

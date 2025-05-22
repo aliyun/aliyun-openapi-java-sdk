@@ -57,19 +57,11 @@ public class DescribeRenewalPriceResponse extends AcsResponse {
 
 	public static class Rule {
 
-		private String name;
-
 		private String description;
 
+		private String name;
+
 		private Long ruleId;
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
 
 		public String getDescription() {
 			return this.description;
@@ -77,6 +69,14 @@ public class DescribeRenewalPriceResponse extends AcsResponse {
 
 		public void setDescription(String description) {
 			this.description = description;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public Long getRuleId() {
@@ -90,11 +90,11 @@ public class DescribeRenewalPriceResponse extends AcsResponse {
 
 	public static class PriceInfo {
 
-		private Float originalPrice;
+		private String currency;
 
 		private Float discountPrice;
 
-		private String currency;
+		private Float originalPrice;
 
 		private Float tradePrice;
 
@@ -104,12 +104,12 @@ public class DescribeRenewalPriceResponse extends AcsResponse {
 
 		private ActivityInfo activityInfo;
 
-		public Float getOriginalPrice() {
-			return this.originalPrice;
+		public String getCurrency() {
+			return this.currency;
 		}
 
-		public void setOriginalPrice(Float originalPrice) {
-			this.originalPrice = originalPrice;
+		public void setCurrency(String currency) {
+			this.currency = currency;
 		}
 
 		public Float getDiscountPrice() {
@@ -120,12 +120,12 @@ public class DescribeRenewalPriceResponse extends AcsResponse {
 			this.discountPrice = discountPrice;
 		}
 
-		public String getCurrency() {
-			return this.currency;
+		public Float getOriginalPrice() {
+			return this.originalPrice;
 		}
 
-		public void setCurrency(String currency) {
-			this.currency = currency;
+		public void setOriginalPrice(Float originalPrice) {
+			this.originalPrice = originalPrice;
 		}
 
 		public Float getTradePrice() {
@@ -162,21 +162,13 @@ public class DescribeRenewalPriceResponse extends AcsResponse {
 
 		public static class Coupon {
 
-			private String isSelected;
-
 			private String couponNo;
-
-			private String name;
 
 			private String description;
 
-			public String getIsSelected() {
-				return this.isSelected;
-			}
+			private String isSelected;
 
-			public void setIsSelected(String isSelected) {
-				this.isSelected = isSelected;
-			}
+			private String name;
 
 			public String getCouponNo() {
 				return this.couponNo;
@@ -186,20 +178,28 @@ public class DescribeRenewalPriceResponse extends AcsResponse {
 				this.couponNo = couponNo;
 			}
 
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
-
 			public String getDescription() {
 				return this.description;
 			}
 
 			public void setDescription(String description) {
 				this.description = description;
+			}
+
+			public String getIsSelected() {
+				return this.isSelected;
+			}
+
+			public void setIsSelected(String isSelected) {
+				this.isSelected = isSelected;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
 			}
 		}
 

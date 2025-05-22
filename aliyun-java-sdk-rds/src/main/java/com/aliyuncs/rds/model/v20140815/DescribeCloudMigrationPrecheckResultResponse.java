@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeCloudMigrationPrecheckResultResponse extends AcsResponse {
 
-	private Integer totalSize;
-
-	private String requestId;
-
 	private Long pageNumber;
 
 	private Long pageSize;
 
+	private String requestId;
+
+	private Integer totalSize;
+
 	private List<MigrateCloudTaskList> items;
-
-	public Integer getTotalSize() {
-		return this.totalSize;
-	}
-
-	public void setTotalSize(Integer totalSize) {
-		this.totalSize = totalSize;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Long getPageNumber() {
 		return this.pageNumber;
@@ -67,6 +51,22 @@ public class DescribeCloudMigrationPrecheckResultResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getTotalSize() {
+		return this.totalSize;
+	}
+
+	public void setTotalSize(Integer totalSize) {
+		this.totalSize = totalSize;
+	}
+
 	public List<MigrateCloudTaskList> getItems() {
 		return this.items;
 	}
@@ -77,31 +77,39 @@ public class DescribeCloudMigrationPrecheckResultResponse extends AcsResponse {
 
 	public static class MigrateCloudTaskList {
 
+		private String detail;
+
 		private String gmtCreated;
 
 		private String gmtModified;
 
-		private Long taskId;
-
-		private String taskName;
-
-		private String status;
+		private String sourceAccount;
 
 		private String sourceCategory;
 
 		private String sourceIpAddress;
 
+		private String sourcePassword;
+
 		private Long sourcePort;
 
-		private String sourceAccount;
-
-		private String sourcePassword;
+		private String status;
 
 		private String targetEip;
 
 		private String targetInstanceName;
 
-		private String detail;
+		private Long taskId;
+
+		private String taskName;
+
+		public String getDetail() {
+			return this.detail;
+		}
+
+		public void setDetail(String detail) {
+			this.detail = detail;
+		}
 
 		public String getGmtCreated() {
 			return this.gmtCreated;
@@ -119,28 +127,12 @@ public class DescribeCloudMigrationPrecheckResultResponse extends AcsResponse {
 			this.gmtModified = gmtModified;
 		}
 
-		public Long getTaskId() {
-			return this.taskId;
+		public String getSourceAccount() {
+			return this.sourceAccount;
 		}
 
-		public void setTaskId(Long taskId) {
-			this.taskId = taskId;
-		}
-
-		public String getTaskName() {
-			return this.taskName;
-		}
-
-		public void setTaskName(String taskName) {
-			this.taskName = taskName;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
+		public void setSourceAccount(String sourceAccount) {
+			this.sourceAccount = sourceAccount;
 		}
 
 		public String getSourceCategory() {
@@ -159,6 +151,14 @@ public class DescribeCloudMigrationPrecheckResultResponse extends AcsResponse {
 			this.sourceIpAddress = sourceIpAddress;
 		}
 
+		public String getSourcePassword() {
+			return this.sourcePassword;
+		}
+
+		public void setSourcePassword(String sourcePassword) {
+			this.sourcePassword = sourcePassword;
+		}
+
 		public Long getSourcePort() {
 			return this.sourcePort;
 		}
@@ -167,20 +167,12 @@ public class DescribeCloudMigrationPrecheckResultResponse extends AcsResponse {
 			this.sourcePort = sourcePort;
 		}
 
-		public String getSourceAccount() {
-			return this.sourceAccount;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setSourceAccount(String sourceAccount) {
-			this.sourceAccount = sourceAccount;
-		}
-
-		public String getSourcePassword() {
-			return this.sourcePassword;
-		}
-
-		public void setSourcePassword(String sourcePassword) {
-			this.sourcePassword = sourcePassword;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getTargetEip() {
@@ -199,12 +191,20 @@ public class DescribeCloudMigrationPrecheckResultResponse extends AcsResponse {
 			this.targetInstanceName = targetInstanceName;
 		}
 
-		public String getDetail() {
-			return this.detail;
+		public Long getTaskId() {
+			return this.taskId;
 		}
 
-		public void setDetail(String detail) {
-			this.detail = detail;
+		public void setTaskId(Long taskId) {
+			this.taskId = taskId;
+		}
+
+		public String getTaskName() {
+			return this.taskName;
+		}
+
+		public void setTaskName(String taskName) {
+			this.taskName = taskName;
 		}
 	}
 

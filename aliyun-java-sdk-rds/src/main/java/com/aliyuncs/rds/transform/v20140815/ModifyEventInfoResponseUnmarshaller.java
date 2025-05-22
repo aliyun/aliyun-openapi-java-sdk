@@ -23,9 +23,9 @@ public class ModifyEventInfoResponseUnmarshaller {
 	public static ModifyEventInfoResponse unmarshall(ModifyEventInfoResponse modifyEventInfoResponse, UnmarshallerContext _ctx) {
 		
 		modifyEventInfoResponse.setRequestId(_ctx.stringValue("ModifyEventInfoResponse.RequestId"));
+		modifyEventInfoResponse.setErrorCode(_ctx.stringValue("ModifyEventInfoResponse.ErrorCode"));
 		modifyEventInfoResponse.setErrorEventId(_ctx.stringValue("ModifyEventInfoResponse.ErrorEventId"));
 		modifyEventInfoResponse.setSuccessCount(_ctx.integerValue("ModifyEventInfoResponse.SuccessCount"));
-		modifyEventInfoResponse.setErrorCode(_ctx.stringValue("ModifyEventInfoResponse.ErrorCode"));
 		modifyEventInfoResponse.setSuccessEventId(_ctx.stringValue("ModifyEventInfoResponse.SuccessEventId"));
 	 
 	 	return modifyEventInfoResponse;

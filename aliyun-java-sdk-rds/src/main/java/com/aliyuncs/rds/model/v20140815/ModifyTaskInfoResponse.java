@@ -24,20 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ModifyTaskInfoResponse extends AcsResponse {
 
-	private String requestId;
+	private String errorCode;
 
 	private String errorTaskId;
 
+	private String requestId;
+
 	private String successCount;
 
-	private String errorCode;
-
-	public String getRequestId() {
-		return this.requestId;
+	public String getErrorCode() {
+		return this.errorCode;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	public String getErrorTaskId() {
@@ -48,20 +48,20 @@ public class ModifyTaskInfoResponse extends AcsResponse {
 		this.errorTaskId = errorTaskId;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public String getSuccessCount() {
 		return this.successCount;
 	}
 
 	public void setSuccessCount(String successCount) {
 		this.successCount = successCount;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
 	}
 
 	@Override

@@ -25,20 +25,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDBInstanceMetricsResponse extends AcsResponse {
 
-	private Integer totalRecordCount;
+	private String dBInstanceName;
 
 	private String requestId;
 
-	private String dBInstanceName;
+	private Integer totalRecordCount;
 
 	private List<Metrics> items;
 
-	public Integer getTotalRecordCount() {
-		return this.totalRecordCount;
+	public String getDBInstanceName() {
+		return this.dBInstanceName;
 	}
 
-	public void setTotalRecordCount(Integer totalRecordCount) {
-		this.totalRecordCount = totalRecordCount;
+	public void setDBInstanceName(String dBInstanceName) {
+		this.dBInstanceName = dBInstanceName;
 	}
 
 	public String getRequestId() {
@@ -49,12 +49,12 @@ public class DescribeDBInstanceMetricsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getDBInstanceName() {
-		return this.dBInstanceName;
+	public Integer getTotalRecordCount() {
+		return this.totalRecordCount;
 	}
 
-	public void setDBInstanceName(String dBInstanceName) {
-		this.dBInstanceName = dBInstanceName;
+	public void setTotalRecordCount(Integer totalRecordCount) {
+		this.totalRecordCount = totalRecordCount;
 	}
 
 	public List<Metrics> getItems() {
@@ -67,40 +67,32 @@ public class DescribeDBInstanceMetricsResponse extends AcsResponse {
 
 	public static class Metrics {
 
-		private String groupKey;
-
-		private Integer sortRule;
+		private String dbType;
 
 		private String description;
 
-		private String unit;
+		private String dimension;
 
-		private String dbType;
-
-		private String metricsKey;
+		private String groupKey;
 
 		private String groupKeyType;
 
 		private String method;
 
-		private String dimension;
+		private String metricsKey;
 
 		private String metricsKeyAlias;
 
-		public String getGroupKey() {
-			return this.groupKey;
+		private Integer sortRule;
+
+		private String unit;
+
+		public String getDbType() {
+			return this.dbType;
 		}
 
-		public void setGroupKey(String groupKey) {
-			this.groupKey = groupKey;
-		}
-
-		public Integer getSortRule() {
-			return this.sortRule;
-		}
-
-		public void setSortRule(Integer sortRule) {
-			this.sortRule = sortRule;
+		public void setDbType(String dbType) {
+			this.dbType = dbType;
 		}
 
 		public String getDescription() {
@@ -111,28 +103,20 @@ public class DescribeDBInstanceMetricsResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public String getUnit() {
-			return this.unit;
+		public String getDimension() {
+			return this.dimension;
 		}
 
-		public void setUnit(String unit) {
-			this.unit = unit;
+		public void setDimension(String dimension) {
+			this.dimension = dimension;
 		}
 
-		public String getDbType() {
-			return this.dbType;
+		public String getGroupKey() {
+			return this.groupKey;
 		}
 
-		public void setDbType(String dbType) {
-			this.dbType = dbType;
-		}
-
-		public String getMetricsKey() {
-			return this.metricsKey;
-		}
-
-		public void setMetricsKey(String metricsKey) {
-			this.metricsKey = metricsKey;
+		public void setGroupKey(String groupKey) {
+			this.groupKey = groupKey;
 		}
 
 		public String getGroupKeyType() {
@@ -151,12 +135,12 @@ public class DescribeDBInstanceMetricsResponse extends AcsResponse {
 			this.method = method;
 		}
 
-		public String getDimension() {
-			return this.dimension;
+		public String getMetricsKey() {
+			return this.metricsKey;
 		}
 
-		public void setDimension(String dimension) {
-			this.dimension = dimension;
+		public void setMetricsKey(String metricsKey) {
+			this.metricsKey = metricsKey;
 		}
 
 		public String getMetricsKeyAlias() {
@@ -165,6 +149,22 @@ public class DescribeDBInstanceMetricsResponse extends AcsResponse {
 
 		public void setMetricsKeyAlias(String metricsKeyAlias) {
 			this.metricsKeyAlias = metricsKeyAlias;
+		}
+
+		public Integer getSortRule() {
+			return this.sortRule;
+		}
+
+		public void setSortRule(Integer sortRule) {
+			this.sortRule = sortRule;
+		}
+
+		public String getUnit() {
+			return this.unit;
+		}
+
+		public void setUnit(String unit) {
+			this.unit = unit;
 		}
 	}
 

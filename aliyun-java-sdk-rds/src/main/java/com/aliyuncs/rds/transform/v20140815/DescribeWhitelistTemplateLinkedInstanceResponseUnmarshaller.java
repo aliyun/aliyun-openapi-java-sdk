@@ -27,10 +27,10 @@ public class DescribeWhitelistTemplateLinkedInstanceResponseUnmarshaller {
 	public static DescribeWhitelistTemplateLinkedInstanceResponse unmarshall(DescribeWhitelistTemplateLinkedInstanceResponse describeWhitelistTemplateLinkedInstanceResponse, UnmarshallerContext _ctx) {
 		
 		describeWhitelistTemplateLinkedInstanceResponse.setRequestId(_ctx.stringValue("DescribeWhitelistTemplateLinkedInstanceResponse.RequestId"));
-		describeWhitelistTemplateLinkedInstanceResponse.setSuccess(_ctx.booleanValue("DescribeWhitelistTemplateLinkedInstanceResponse.Success"));
 		describeWhitelistTemplateLinkedInstanceResponse.setCode(_ctx.stringValue("DescribeWhitelistTemplateLinkedInstanceResponse.Code"));
-		describeWhitelistTemplateLinkedInstanceResponse.setMessage(_ctx.stringValue("DescribeWhitelistTemplateLinkedInstanceResponse.Message"));
 		describeWhitelistTemplateLinkedInstanceResponse.setHttpStatusCode(_ctx.integerValue("DescribeWhitelistTemplateLinkedInstanceResponse.HttpStatusCode"));
+		describeWhitelistTemplateLinkedInstanceResponse.setMessage(_ctx.stringValue("DescribeWhitelistTemplateLinkedInstanceResponse.Message"));
+		describeWhitelistTemplateLinkedInstanceResponse.setSuccess(_ctx.booleanValue("DescribeWhitelistTemplateLinkedInstanceResponse.Success"));
 
 		Data data = new Data();
 		data.setTemplateId(_ctx.integerValue("DescribeWhitelistTemplateLinkedInstanceResponse.Data.TemplateId"));

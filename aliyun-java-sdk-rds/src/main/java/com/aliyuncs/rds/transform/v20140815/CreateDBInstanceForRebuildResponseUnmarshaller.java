@@ -23,10 +23,10 @@ public class CreateDBInstanceForRebuildResponseUnmarshaller {
 	public static CreateDBInstanceForRebuildResponse unmarshall(CreateDBInstanceForRebuildResponse createDBInstanceForRebuildResponse, UnmarshallerContext _ctx) {
 		
 		createDBInstanceForRebuildResponse.setRequestId(_ctx.stringValue("CreateDBInstanceForRebuildResponse.RequestId"));
-		createDBInstanceForRebuildResponse.setMessage(_ctx.stringValue("CreateDBInstanceForRebuildResponse.Message"));
 		createDBInstanceForRebuildResponse.setDBInstanceId(_ctx.stringValue("CreateDBInstanceForRebuildResponse.DBInstanceId"));
-		createDBInstanceForRebuildResponse.setTaskId(_ctx.stringValue("CreateDBInstanceForRebuildResponse.TaskId"));
+		createDBInstanceForRebuildResponse.setMessage(_ctx.stringValue("CreateDBInstanceForRebuildResponse.Message"));
 		createDBInstanceForRebuildResponse.setOrderId(_ctx.stringValue("CreateDBInstanceForRebuildResponse.OrderId"));
+		createDBInstanceForRebuildResponse.setTaskId(_ctx.stringValue("CreateDBInstanceForRebuildResponse.TaskId"));
 	 
 	 	return createDBInstanceForRebuildResponse;
 	}

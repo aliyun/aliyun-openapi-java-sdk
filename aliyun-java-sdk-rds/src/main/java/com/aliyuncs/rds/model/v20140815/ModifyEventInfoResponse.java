@@ -24,22 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ModifyEventInfoResponse extends AcsResponse {
 
-	private String requestId;
+	private String errorCode;
 
 	private String errorEventId;
 
-	private Integer successCount;
+	private String requestId;
 
-	private String errorCode;
+	private Integer successCount;
 
 	private String successEventId;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getErrorCode() {
+		return this.errorCode;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	public String getErrorEventId() {
@@ -50,20 +50,20 @@ public class ModifyEventInfoResponse extends AcsResponse {
 		this.errorEventId = errorEventId;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public Integer getSuccessCount() {
 		return this.successCount;
 	}
 
 	public void setSuccessCount(Integer successCount) {
 		this.successCount = successCount;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
 	}
 
 	public String getSuccessEventId() {

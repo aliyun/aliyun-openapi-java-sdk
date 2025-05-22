@@ -24,8 +24,8 @@ public class CreateDBNodesResponseUnmarshaller {
 		
 		createDBNodesResponse.setRequestId(_ctx.stringValue("CreateDBNodesResponse.RequestId"));
 		createDBNodesResponse.setDBInstanceId(_ctx.stringValue("CreateDBNodesResponse.DBInstanceId"));
-		createDBNodesResponse.setOrderId(_ctx.longValue("CreateDBNodesResponse.OrderId"));
 		createDBNodesResponse.setNodeIds(_ctx.stringValue("CreateDBNodesResponse.NodeIds"));
+		createDBNodesResponse.setOrderId(_ctx.longValue("CreateDBNodesResponse.OrderId"));
 	 
 	 	return createDBNodesResponse;
 	}

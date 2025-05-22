@@ -29,11 +29,15 @@ public class ModifyDBInstanceConfigRequest extends RpcAcsRequest<ModifyDBInstanc
 
 	private String clientToken;
 
+	private String switchTimeMode;
+
 	private String resourceGroupId;
 
 	private String configName;
 
 	private String dBInstanceId;
+
+	private String switchTime;
 
 	private String resourceOwnerAccount;
 
@@ -73,6 +77,17 @@ public class ModifyDBInstanceConfigRequest extends RpcAcsRequest<ModifyDBInstanc
 		}
 	}
 
+	public String getSwitchTimeMode() {
+		return this.switchTimeMode;
+	}
+
+	public void setSwitchTimeMode(String switchTimeMode) {
+		this.switchTimeMode = switchTimeMode;
+		if(switchTimeMode != null){
+			putQueryParameter("SwitchTimeMode", switchTimeMode);
+		}
+	}
+
 	public String getResourceGroupId() {
 		return this.resourceGroupId;
 	}
@@ -103,6 +118,17 @@ public class ModifyDBInstanceConfigRequest extends RpcAcsRequest<ModifyDBInstanc
 		this.dBInstanceId = dBInstanceId;
 		if(dBInstanceId != null){
 			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public String getSwitchTime() {
+		return this.switchTime;
+	}
+
+	public void setSwitchTime(String switchTime) {
+		this.switchTime = switchTime;
+		if(switchTime != null){
+			putQueryParameter("SwitchTime", switchTime);
 		}
 	}
 

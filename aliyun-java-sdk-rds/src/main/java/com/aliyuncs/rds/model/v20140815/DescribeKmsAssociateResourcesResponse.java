@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeKmsAssociateResourcesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean associateStatus;
 
+	private String requestId;
+
 	private List<DBInstance> associateDBInstances;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Boolean getAssociateStatus() {
 		return this.associateStatus;
@@ -45,6 +37,14 @@ public class DescribeKmsAssociateResourcesResponse extends AcsResponse {
 
 	public void setAssociateStatus(Boolean associateStatus) {
 		this.associateStatus = associateStatus;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<DBInstance> getAssociateDBInstances() {
@@ -61,9 +61,9 @@ public class DescribeKmsAssociateResourcesResponse extends AcsResponse {
 
 		private String engine;
 
-		private String status;
-
 		private String keyUsedBy;
+
+		private String status;
 
 		public String getDBInstanceName() {
 			return this.dBInstanceName;
@@ -81,20 +81,20 @@ public class DescribeKmsAssociateResourcesResponse extends AcsResponse {
 			this.engine = engine;
 		}
 
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
 		public String getKeyUsedBy() {
 			return this.keyUsedBy;
 		}
 
 		public void setKeyUsedBy(String keyUsedBy) {
 			this.keyUsedBy = keyUsedBy;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
 		}
 	}
 

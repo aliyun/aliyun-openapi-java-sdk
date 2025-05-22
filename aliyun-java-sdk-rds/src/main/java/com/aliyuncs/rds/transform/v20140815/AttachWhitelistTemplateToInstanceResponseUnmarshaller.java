@@ -24,10 +24,10 @@ public class AttachWhitelistTemplateToInstanceResponseUnmarshaller {
 	public static AttachWhitelistTemplateToInstanceResponse unmarshall(AttachWhitelistTemplateToInstanceResponse attachWhitelistTemplateToInstanceResponse, UnmarshallerContext _ctx) {
 		
 		attachWhitelistTemplateToInstanceResponse.setRequestId(_ctx.stringValue("AttachWhitelistTemplateToInstanceResponse.RequestId"));
-		attachWhitelistTemplateToInstanceResponse.setSuccess(_ctx.booleanValue("AttachWhitelistTemplateToInstanceResponse.Success"));
 		attachWhitelistTemplateToInstanceResponse.setCode(_ctx.stringValue("AttachWhitelistTemplateToInstanceResponse.Code"));
-		attachWhitelistTemplateToInstanceResponse.setMessage(_ctx.stringValue("AttachWhitelistTemplateToInstanceResponse.Message"));
 		attachWhitelistTemplateToInstanceResponse.setHttpStatusCode(_ctx.integerValue("AttachWhitelistTemplateToInstanceResponse.HttpStatusCode"));
+		attachWhitelistTemplateToInstanceResponse.setMessage(_ctx.stringValue("AttachWhitelistTemplateToInstanceResponse.Message"));
+		attachWhitelistTemplateToInstanceResponse.setSuccess(_ctx.booleanValue("AttachWhitelistTemplateToInstanceResponse.Success"));
 
 		Data data = new Data();
 		data.setStatus(_ctx.stringValue("AttachWhitelistTemplateToInstanceResponse.Data.Status"));

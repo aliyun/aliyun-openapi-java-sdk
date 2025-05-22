@@ -27,17 +27,17 @@ public class DescribeSecretsResponseUnmarshaller {
 	public static DescribeSecretsResponse unmarshall(DescribeSecretsResponse describeSecretsResponse, UnmarshallerContext _ctx) {
 		
 		describeSecretsResponse.setRequestId(_ctx.stringValue("DescribeSecretsResponse.RequestId"));
-		describeSecretsResponse.setPageSize(_ctx.longValue("DescribeSecretsResponse.PageSize"));
 		describeSecretsResponse.setPageNumber(_ctx.longValue("DescribeSecretsResponse.PageNumber"));
+		describeSecretsResponse.setPageSize(_ctx.longValue("DescribeSecretsResponse.PageSize"));
 
 		List<SecretsItem> secrets = new ArrayList<SecretsItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSecretsResponse.Secrets.Length"); i++) {
 			SecretsItem secretsItem = new SecretsItem();
 			secretsItem.setAccountId(_ctx.stringValue("DescribeSecretsResponse.Secrets["+ i +"].AccountId"));
-			secretsItem.setSecretName(_ctx.stringValue("DescribeSecretsResponse.Secrets["+ i +"].SecretName"));
+			secretsItem.setDescription(_ctx.stringValue("DescribeSecretsResponse.Secrets["+ i +"].Description"));
 			secretsItem.setRegionId(_ctx.stringValue("DescribeSecretsResponse.Secrets["+ i +"].RegionId"));
 			secretsItem.setSecretArn(_ctx.stringValue("DescribeSecretsResponse.Secrets["+ i +"].SecretArn"));
-			secretsItem.setDescription(_ctx.stringValue("DescribeSecretsResponse.Secrets["+ i +"].Description"));
+			secretsItem.setSecretName(_ctx.stringValue("DescribeSecretsResponse.Secrets["+ i +"].SecretName"));
 			secretsItem.setUsername(_ctx.stringValue("DescribeSecretsResponse.Secrets["+ i +"].Username"));
 
 			secrets.add(secretsItem);

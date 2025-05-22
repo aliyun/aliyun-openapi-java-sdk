@@ -26,21 +26,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribePostgresExtensionsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Map<Object,Object> overview;
 
-	private List<Extension> uninstalledExtensions;
+	private String requestId;
 
 	private List<Extension> installedExtensions;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private List<Extension> uninstalledExtensions;
 
 	public Map<Object,Object> getOverview() {
 		return this.overview;
@@ -50,12 +42,12 @@ public class DescribePostgresExtensionsResponse extends AcsResponse {
 		this.overview = overview;
 	}
 
-	public List<Extension> getUninstalledExtensions() {
-		return this.uninstalledExtensions;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setUninstalledExtensions(List<Extension> uninstalledExtensions) {
-		this.uninstalledExtensions = uninstalledExtensions;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<Extension> getInstalledExtensions() {
@@ -66,15 +58,25 @@ public class DescribePostgresExtensionsResponse extends AcsResponse {
 		this.installedExtensions = installedExtensions;
 	}
 
+	public List<Extension> getUninstalledExtensions() {
+		return this.uninstalledExtensions;
+	}
+
+	public void setUninstalledExtensions(List<Extension> uninstalledExtensions) {
+		this.uninstalledExtensions = uninstalledExtensions;
+	}
+
 	public static class Extension {
 
-		private String name;
+		private String category;
+
+		private String comment;
 
 		private String defaultVersion;
 
 		private String installedVersion;
 
-		private String comment;
+		private String name;
 
 		private String owner;
 
@@ -82,14 +84,22 @@ public class DescribePostgresExtensionsResponse extends AcsResponse {
 
 		private String requires;
 
-		private String category;
+		private String uid;
 
-		public String getName() {
-			return this.name;
+		public String getCategory() {
+			return this.category;
 		}
 
-		public void setName(String name) {
-			this.name = name;
+		public void setCategory(String category) {
+			this.category = category;
+		}
+
+		public String getComment() {
+			return this.comment;
+		}
+
+		public void setComment(String comment) {
+			this.comment = comment;
 		}
 
 		public String getDefaultVersion() {
@@ -108,12 +118,12 @@ public class DescribePostgresExtensionsResponse extends AcsResponse {
 			this.installedVersion = installedVersion;
 		}
 
-		public String getComment() {
-			return this.comment;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setComment(String comment) {
-			this.comment = comment;
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public String getOwner() {
@@ -140,12 +150,12 @@ public class DescribePostgresExtensionsResponse extends AcsResponse {
 			this.requires = requires;
 		}
 
-		public String getCategory() {
-			return this.category;
+		public String getUid() {
+			return this.uid;
 		}
 
-		public void setCategory(String category) {
-			this.category = category;
+		public void setUid(String uid) {
+			this.uid = uid;
 		}
 	}
 

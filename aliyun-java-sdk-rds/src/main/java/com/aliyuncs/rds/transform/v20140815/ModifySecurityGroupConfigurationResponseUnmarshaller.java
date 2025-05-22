@@ -33,8 +33,8 @@ public class ModifySecurityGroupConfigurationResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("ModifySecurityGroupConfigurationResponse.Items.Length"); i++) {
 			EcsSecurityGroupRelation ecsSecurityGroupRelation = new EcsSecurityGroupRelation();
 			ecsSecurityGroupRelation.setNetworkType(_ctx.stringValue("ModifySecurityGroupConfigurationResponse.Items["+ i +"].NetworkType"));
-			ecsSecurityGroupRelation.setSecurityGroupId(_ctx.stringValue("ModifySecurityGroupConfigurationResponse.Items["+ i +"].SecurityGroupId"));
 			ecsSecurityGroupRelation.setRegionId(_ctx.stringValue("ModifySecurityGroupConfigurationResponse.Items["+ i +"].RegionId"));
+			ecsSecurityGroupRelation.setSecurityGroupId(_ctx.stringValue("ModifySecurityGroupConfigurationResponse.Items["+ i +"].SecurityGroupId"));
 
 			items.add(ecsSecurityGroupRelation);
 		}

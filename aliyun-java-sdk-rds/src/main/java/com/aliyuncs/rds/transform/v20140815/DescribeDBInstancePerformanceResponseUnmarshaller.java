@@ -28,17 +28,17 @@ public class DescribeDBInstancePerformanceResponseUnmarshaller {
 	public static DescribeDBInstancePerformanceResponse unmarshall(DescribeDBInstancePerformanceResponse describeDBInstancePerformanceResponse, UnmarshallerContext _ctx) {
 		
 		describeDBInstancePerformanceResponse.setRequestId(_ctx.stringValue("DescribeDBInstancePerformanceResponse.RequestId"));
-		describeDBInstancePerformanceResponse.setEndTime(_ctx.stringValue("DescribeDBInstancePerformanceResponse.EndTime"));
-		describeDBInstancePerformanceResponse.setStartTime(_ctx.stringValue("DescribeDBInstancePerformanceResponse.StartTime"));
 		describeDBInstancePerformanceResponse.setDBInstanceId(_ctx.stringValue("DescribeDBInstancePerformanceResponse.DBInstanceId"));
+		describeDBInstancePerformanceResponse.setEndTime(_ctx.stringValue("DescribeDBInstancePerformanceResponse.EndTime"));
 		describeDBInstancePerformanceResponse.setEngine(_ctx.stringValue("DescribeDBInstancePerformanceResponse.Engine"));
+		describeDBInstancePerformanceResponse.setStartTime(_ctx.stringValue("DescribeDBInstancePerformanceResponse.StartTime"));
 
 		List<PerformanceKey> performanceKeys = new ArrayList<PerformanceKey>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDBInstancePerformanceResponse.PerformanceKeys.Length"); i++) {
 			PerformanceKey performanceKey = new PerformanceKey();
 			performanceKey.setKey(_ctx.stringValue("DescribeDBInstancePerformanceResponse.PerformanceKeys["+ i +"].Key"));
-			performanceKey.setValueFormat(_ctx.stringValue("DescribeDBInstancePerformanceResponse.PerformanceKeys["+ i +"].ValueFormat"));
 			performanceKey.setUnit(_ctx.stringValue("DescribeDBInstancePerformanceResponse.PerformanceKeys["+ i +"].Unit"));
+			performanceKey.setValueFormat(_ctx.stringValue("DescribeDBInstancePerformanceResponse.PerformanceKeys["+ i +"].ValueFormat"));
 
 			List<PerformanceValue> values = new ArrayList<PerformanceValue>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDBInstancePerformanceResponse.PerformanceKeys["+ i +"].Values.Length"); j++) {

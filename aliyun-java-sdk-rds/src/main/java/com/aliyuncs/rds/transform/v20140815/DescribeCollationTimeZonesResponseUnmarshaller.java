@@ -31,9 +31,9 @@ public class DescribeCollationTimeZonesResponseUnmarshaller {
 		List<CollationTimeZone> collationTimeZones = new ArrayList<CollationTimeZone>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCollationTimeZonesResponse.CollationTimeZones.Length"); i++) {
 			CollationTimeZone collationTimeZone = new CollationTimeZone();
-			collationTimeZone.setTimeZone(_ctx.stringValue("DescribeCollationTimeZonesResponse.CollationTimeZones["+ i +"].TimeZone"));
-			collationTimeZone.setStandardTimeOffset(_ctx.stringValue("DescribeCollationTimeZonesResponse.CollationTimeZones["+ i +"].StandardTimeOffset"));
 			collationTimeZone.setDescription(_ctx.stringValue("DescribeCollationTimeZonesResponse.CollationTimeZones["+ i +"].Description"));
+			collationTimeZone.setStandardTimeOffset(_ctx.stringValue("DescribeCollationTimeZonesResponse.CollationTimeZones["+ i +"].StandardTimeOffset"));
+			collationTimeZone.setTimeZone(_ctx.stringValue("DescribeCollationTimeZonesResponse.CollationTimeZones["+ i +"].TimeZone"));
 
 			collationTimeZones.add(collationTimeZone);
 		}

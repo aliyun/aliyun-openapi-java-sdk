@@ -24,6 +24,7 @@ public class CheckServiceLinkedRoleResponseUnmarshaller {
 		
 		checkServiceLinkedRoleResponse.setRequestId(_ctx.stringValue("CheckServiceLinkedRoleResponse.RequestId"));
 		checkServiceLinkedRoleResponse.setHasServiceLinkedRole(_ctx.stringValue("CheckServiceLinkedRoleResponse.HasServiceLinkedRole"));
+		checkServiceLinkedRoleResponse.setRequireServiceLinkedRole(_ctx.stringValue("CheckServiceLinkedRoleResponse.RequireServiceLinkedRole"));
 	 
 	 	return checkServiceLinkedRoleResponse;
 	}

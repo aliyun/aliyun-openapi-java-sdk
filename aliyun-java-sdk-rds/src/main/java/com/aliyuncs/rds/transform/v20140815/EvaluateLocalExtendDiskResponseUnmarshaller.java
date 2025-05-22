@@ -23,10 +23,10 @@ public class EvaluateLocalExtendDiskResponseUnmarshaller {
 	public static EvaluateLocalExtendDiskResponse unmarshall(EvaluateLocalExtendDiskResponse evaluateLocalExtendDiskResponse, UnmarshallerContext _ctx) {
 		
 		evaluateLocalExtendDiskResponse.setRequestId(_ctx.stringValue("EvaluateLocalExtendDiskResponse.RequestId"));
-		evaluateLocalExtendDiskResponse.setDBInstanceId(_ctx.stringValue("EvaluateLocalExtendDiskResponse.DBInstanceId"));
 		evaluateLocalExtendDiskResponse.setAvailable(_ctx.stringValue("EvaluateLocalExtendDiskResponse.Available"));
-		evaluateLocalExtendDiskResponse.setLocalUpgradeDiskLimit(_ctx.longValue("EvaluateLocalExtendDiskResponse.LocalUpgradeDiskLimit"));
+		evaluateLocalExtendDiskResponse.setDBInstanceId(_ctx.stringValue("EvaluateLocalExtendDiskResponse.DBInstanceId"));
 		evaluateLocalExtendDiskResponse.setDBInstanceTransType(_ctx.stringValue("EvaluateLocalExtendDiskResponse.DBInstanceTransType"));
+		evaluateLocalExtendDiskResponse.setLocalUpgradeDiskLimit(_ctx.longValue("EvaluateLocalExtendDiskResponse.LocalUpgradeDiskLimit"));
 	 
 	 	return evaluateLocalExtendDiskResponse;
 	}

@@ -25,17 +25,41 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeAllWhitelistTemplateResponse extends AcsResponse {
 
+	private String code;
+
+	private Integer httpStatusCode;
+
+	private String message;
+
 	private String requestId;
 
 	private Boolean success;
 
-	private String code;
-
-	private String message;
-
-	private Integer httpStatusCode;
-
 	private Data data;
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -53,30 +77,6 @@ public class DescribeAllWhitelistTemplateResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
-
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
-	}
-
 	public Data getData() {
 		return this.data;
 	}
@@ -87,35 +87,19 @@ public class DescribeAllWhitelistTemplateResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer totalRecords;
-
-		private Integer maxRecordsPerPage;
-
 		private Integer currPageNumbers;
-
-		private Integer totalPageNumbers;
 
 		private Boolean hasNext;
 
 		private Boolean hasPrev;
 
+		private Integer maxRecordsPerPage;
+
+		private Integer totalPageNumbers;
+
+		private Integer totalRecords;
+
 		private List<Template> templates;
-
-		public Integer getTotalRecords() {
-			return this.totalRecords;
-		}
-
-		public void setTotalRecords(Integer totalRecords) {
-			this.totalRecords = totalRecords;
-		}
-
-		public Integer getMaxRecordsPerPage() {
-			return this.maxRecordsPerPage;
-		}
-
-		public void setMaxRecordsPerPage(Integer maxRecordsPerPage) {
-			this.maxRecordsPerPage = maxRecordsPerPage;
-		}
 
 		public Integer getCurrPageNumbers() {
 			return this.currPageNumbers;
@@ -123,14 +107,6 @@ public class DescribeAllWhitelistTemplateResponse extends AcsResponse {
 
 		public void setCurrPageNumbers(Integer currPageNumbers) {
 			this.currPageNumbers = currPageNumbers;
-		}
-
-		public Integer getTotalPageNumbers() {
-			return this.totalPageNumbers;
-		}
-
-		public void setTotalPageNumbers(Integer totalPageNumbers) {
-			this.totalPageNumbers = totalPageNumbers;
 		}
 
 		public Boolean getHasNext() {
@@ -149,6 +125,30 @@ public class DescribeAllWhitelistTemplateResponse extends AcsResponse {
 			this.hasPrev = hasPrev;
 		}
 
+		public Integer getMaxRecordsPerPage() {
+			return this.maxRecordsPerPage;
+		}
+
+		public void setMaxRecordsPerPage(Integer maxRecordsPerPage) {
+			this.maxRecordsPerPage = maxRecordsPerPage;
+		}
+
+		public Integer getTotalPageNumbers() {
+			return this.totalPageNumbers;
+		}
+
+		public void setTotalPageNumbers(Integer totalPageNumbers) {
+			this.totalPageNumbers = totalPageNumbers;
+		}
+
+		public Integer getTotalRecords() {
+			return this.totalRecords;
+		}
+
+		public void setTotalRecords(Integer totalRecords) {
+			this.totalRecords = totalRecords;
+		}
+
 		public List<Template> getTemplates() {
 			return this.templates;
 		}
@@ -161,13 +161,13 @@ public class DescribeAllWhitelistTemplateResponse extends AcsResponse {
 
 			private Integer id;
 
-			private Integer userId;
+			private String ips;
 
 			private Integer templateId;
 
 			private String templateName;
 
-			private String ips;
+			private Integer userId;
 
 			public Integer getId() {
 				return this.id;
@@ -177,12 +177,12 @@ public class DescribeAllWhitelistTemplateResponse extends AcsResponse {
 				this.id = id;
 			}
 
-			public Integer getUserId() {
-				return this.userId;
+			public String getIps() {
+				return this.ips;
 			}
 
-			public void setUserId(Integer userId) {
-				this.userId = userId;
+			public void setIps(String ips) {
+				this.ips = ips;
 			}
 
 			public Integer getTemplateId() {
@@ -201,12 +201,12 @@ public class DescribeAllWhitelistTemplateResponse extends AcsResponse {
 				this.templateName = templateName;
 			}
 
-			public String getIps() {
-				return this.ips;
+			public Integer getUserId() {
+				return this.userId;
 			}
 
-			public void setIps(String ips) {
-				this.ips = ips;
+			public void setUserId(Integer userId) {
+				this.userId = userId;
 			}
 		}
 	}

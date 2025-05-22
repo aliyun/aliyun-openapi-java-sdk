@@ -29,6 +29,8 @@ public class UpgradeDBInstanceMajorVersionPrecheckRequest extends RpcAcsRequest<
 
 	private String dBInstanceId;
 
+	private String upgradeMode;
+
 	private String targetMajorVersion;
 	public UpgradeDBInstanceMajorVersionPrecheckRequest() {
 		super("Rds", "2014-08-15", "UpgradeDBInstanceMajorVersionPrecheck", "rds");
@@ -58,6 +60,17 @@ public class UpgradeDBInstanceMajorVersionPrecheckRequest extends RpcAcsRequest<
 		this.dBInstanceId = dBInstanceId;
 		if(dBInstanceId != null){
 			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public String getUpgradeMode() {
+		return this.upgradeMode;
+	}
+
+	public void setUpgradeMode(String upgradeMode) {
+		this.upgradeMode = upgradeMode;
+		if(upgradeMode != null){
+			putQueryParameter("UpgradeMode", upgradeMode);
 		}
 	}
 

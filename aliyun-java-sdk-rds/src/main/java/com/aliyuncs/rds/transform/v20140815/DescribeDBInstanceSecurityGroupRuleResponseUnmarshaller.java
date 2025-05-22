@@ -23,9 +23,9 @@ public class DescribeDBInstanceSecurityGroupRuleResponseUnmarshaller {
 	public static DescribeDBInstanceSecurityGroupRuleResponse unmarshall(DescribeDBInstanceSecurityGroupRuleResponse describeDBInstanceSecurityGroupRuleResponse, UnmarshallerContext _ctx) {
 		
 		describeDBInstanceSecurityGroupRuleResponse.setRequestId(_ctx.stringValue("DescribeDBInstanceSecurityGroupRuleResponse.RequestId"));
-		describeDBInstanceSecurityGroupRuleResponse.setMessage(_ctx.stringValue("DescribeDBInstanceSecurityGroupRuleResponse.Message"));
 		describeDBInstanceSecurityGroupRuleResponse.setCode(_ctx.stringValue("DescribeDBInstanceSecurityGroupRuleResponse.Code"));
 		describeDBInstanceSecurityGroupRuleResponse.setData(_ctx.stringValue("DescribeDBInstanceSecurityGroupRuleResponse.Data"));
+		describeDBInstanceSecurityGroupRuleResponse.setMessage(_ctx.stringValue("DescribeDBInstanceSecurityGroupRuleResponse.Message"));
 	 
 	 	return describeDBInstanceSecurityGroupRuleResponse;
 	}

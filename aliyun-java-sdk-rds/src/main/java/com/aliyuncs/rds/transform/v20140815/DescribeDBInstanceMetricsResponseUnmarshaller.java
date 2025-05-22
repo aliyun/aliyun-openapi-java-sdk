@@ -27,22 +27,22 @@ public class DescribeDBInstanceMetricsResponseUnmarshaller {
 	public static DescribeDBInstanceMetricsResponse unmarshall(DescribeDBInstanceMetricsResponse describeDBInstanceMetricsResponse, UnmarshallerContext _ctx) {
 		
 		describeDBInstanceMetricsResponse.setRequestId(_ctx.stringValue("DescribeDBInstanceMetricsResponse.RequestId"));
-		describeDBInstanceMetricsResponse.setTotalRecordCount(_ctx.integerValue("DescribeDBInstanceMetricsResponse.TotalRecordCount"));
 		describeDBInstanceMetricsResponse.setDBInstanceName(_ctx.stringValue("DescribeDBInstanceMetricsResponse.DBInstanceName"));
+		describeDBInstanceMetricsResponse.setTotalRecordCount(_ctx.integerValue("DescribeDBInstanceMetricsResponse.TotalRecordCount"));
 
 		List<Metrics> items = new ArrayList<Metrics>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDBInstanceMetricsResponse.Items.Length"); i++) {
 			Metrics metrics = new Metrics();
-			metrics.setGroupKey(_ctx.stringValue("DescribeDBInstanceMetricsResponse.Items["+ i +"].GroupKey"));
-			metrics.setSortRule(_ctx.integerValue("DescribeDBInstanceMetricsResponse.Items["+ i +"].SortRule"));
-			metrics.setDescription(_ctx.stringValue("DescribeDBInstanceMetricsResponse.Items["+ i +"].Description"));
-			metrics.setUnit(_ctx.stringValue("DescribeDBInstanceMetricsResponse.Items["+ i +"].Unit"));
 			metrics.setDbType(_ctx.stringValue("DescribeDBInstanceMetricsResponse.Items["+ i +"].DbType"));
-			metrics.setMetricsKey(_ctx.stringValue("DescribeDBInstanceMetricsResponse.Items["+ i +"].MetricsKey"));
+			metrics.setDescription(_ctx.stringValue("DescribeDBInstanceMetricsResponse.Items["+ i +"].Description"));
+			metrics.setDimension(_ctx.stringValue("DescribeDBInstanceMetricsResponse.Items["+ i +"].Dimension"));
+			metrics.setGroupKey(_ctx.stringValue("DescribeDBInstanceMetricsResponse.Items["+ i +"].GroupKey"));
 			metrics.setGroupKeyType(_ctx.stringValue("DescribeDBInstanceMetricsResponse.Items["+ i +"].GroupKeyType"));
 			metrics.setBizMethod(_ctx.stringValue("DescribeDBInstanceMetricsResponse.Items["+ i +"].Method"));
-			metrics.setDimension(_ctx.stringValue("DescribeDBInstanceMetricsResponse.Items["+ i +"].Dimension"));
+			metrics.setMetricsKey(_ctx.stringValue("DescribeDBInstanceMetricsResponse.Items["+ i +"].MetricsKey"));
 			metrics.setMetricsKeyAlias(_ctx.stringValue("DescribeDBInstanceMetricsResponse.Items["+ i +"].MetricsKeyAlias"));
+			metrics.setSortRule(_ctx.integerValue("DescribeDBInstanceMetricsResponse.Items["+ i +"].SortRule"));
+			metrics.setUnit(_ctx.stringValue("DescribeDBInstanceMetricsResponse.Items["+ i +"].Unit"));
 
 			items.add(metrics);
 		}

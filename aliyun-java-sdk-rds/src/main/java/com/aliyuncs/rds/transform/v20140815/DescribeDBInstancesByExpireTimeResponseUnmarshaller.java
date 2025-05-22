@@ -34,12 +34,12 @@ public class DescribeDBInstancesByExpireTimeResponseUnmarshaller {
 		List<DBInstanceExpireTime> items = new ArrayList<DBInstanceExpireTime>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDBInstancesByExpireTimeResponse.Items.Length"); i++) {
 			DBInstanceExpireTime dBInstanceExpireTime = new DBInstanceExpireTime();
-			dBInstanceExpireTime.setExpireTime(_ctx.stringValue("DescribeDBInstancesByExpireTimeResponse.Items["+ i +"].ExpireTime"));
-			dBInstanceExpireTime.setPayType(_ctx.stringValue("DescribeDBInstancesByExpireTimeResponse.Items["+ i +"].PayType"));
+			dBInstanceExpireTime.setDBInstanceDescription(_ctx.stringValue("DescribeDBInstancesByExpireTimeResponse.Items["+ i +"].DBInstanceDescription"));
 			dBInstanceExpireTime.setDBInstanceId(_ctx.stringValue("DescribeDBInstancesByExpireTimeResponse.Items["+ i +"].DBInstanceId"));
 			dBInstanceExpireTime.setDBInstanceStatus(_ctx.stringValue("DescribeDBInstancesByExpireTimeResponse.Items["+ i +"].DBInstanceStatus"));
-			dBInstanceExpireTime.setDBInstanceDescription(_ctx.stringValue("DescribeDBInstancesByExpireTimeResponse.Items["+ i +"].DBInstanceDescription"));
+			dBInstanceExpireTime.setExpireTime(_ctx.stringValue("DescribeDBInstancesByExpireTimeResponse.Items["+ i +"].ExpireTime"));
 			dBInstanceExpireTime.setLockMode(_ctx.stringValue("DescribeDBInstancesByExpireTimeResponse.Items["+ i +"].LockMode"));
+			dBInstanceExpireTime.setPayType(_ctx.stringValue("DescribeDBInstancesByExpireTimeResponse.Items["+ i +"].PayType"));
 
 			items.add(dBInstanceExpireTime);
 		}

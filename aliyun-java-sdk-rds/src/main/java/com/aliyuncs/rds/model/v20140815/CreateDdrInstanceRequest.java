@@ -37,9 +37,13 @@ public class CreateDdrInstanceRequest extends RpcAcsRequest<CreateDdrInstanceRes
 
 	private String dBInstanceDescription;
 
+	private String backupSetRegion;
+
 	private String period;
 
 	private String backupSetId;
+
+	private String encryptionKey;
 
 	private Long ownerId;
 
@@ -50,6 +54,8 @@ public class CreateDdrInstanceRequest extends RpcAcsRequest<CreateDdrInstanceRes
 	private String vSwitchId;
 
 	private String privateIpAddress;
+
+	private String roleARN;
 
 	private String zoneId;
 
@@ -157,6 +163,17 @@ public class CreateDdrInstanceRequest extends RpcAcsRequest<CreateDdrInstanceRes
 		}
 	}
 
+	public String getBackupSetRegion() {
+		return this.backupSetRegion;
+	}
+
+	public void setBackupSetRegion(String backupSetRegion) {
+		this.backupSetRegion = backupSetRegion;
+		if(backupSetRegion != null){
+			putQueryParameter("BackupSetRegion", backupSetRegion);
+		}
+	}
+
 	public String getPeriod() {
 		return this.period;
 	}
@@ -176,6 +193,17 @@ public class CreateDdrInstanceRequest extends RpcAcsRequest<CreateDdrInstanceRes
 		this.backupSetId = backupSetId;
 		if(backupSetId != null){
 			putQueryParameter("BackupSetId", backupSetId);
+		}
+	}
+
+	public String getEncryptionKey() {
+		return this.encryptionKey;
+	}
+
+	public void setEncryptionKey(String encryptionKey) {
+		this.encryptionKey = encryptionKey;
+		if(encryptionKey != null){
+			putQueryParameter("EncryptionKey", encryptionKey);
 		}
 	}
 
@@ -231,6 +259,17 @@ public class CreateDdrInstanceRequest extends RpcAcsRequest<CreateDdrInstanceRes
 		this.privateIpAddress = privateIpAddress;
 		if(privateIpAddress != null){
 			putQueryParameter("PrivateIpAddress", privateIpAddress);
+		}
+	}
+
+	public String getRoleARN() {
+		return this.roleARN;
+	}
+
+	public void setRoleARN(String roleARN) {
+		this.roleARN = roleARN;
+		if(roleARN != null){
+			putQueryParameter("RoleARN", roleARN);
 		}
 	}
 

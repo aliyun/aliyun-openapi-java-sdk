@@ -34,14 +34,14 @@ public class DescribeSQLLogRecordsResponseUnmarshaller {
 		List<SQLRecord> items = new ArrayList<SQLRecord>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSQLLogRecordsResponse.Items.Length"); i++) {
 			SQLRecord sQLRecord = new SQLRecord();
-			sQLRecord.setHostAddress(_ctx.stringValue("DescribeSQLLogRecordsResponse.Items["+ i +"].HostAddress"));
-			sQLRecord.setSQLText(_ctx.stringValue("DescribeSQLLogRecordsResponse.Items["+ i +"].SQLText"));
-			sQLRecord.setReturnRowCounts(_ctx.longValue("DescribeSQLLogRecordsResponse.Items["+ i +"].ReturnRowCounts"));
+			sQLRecord.setAccountName(_ctx.stringValue("DescribeSQLLogRecordsResponse.Items["+ i +"].AccountName"));
 			sQLRecord.setDBName(_ctx.stringValue("DescribeSQLLogRecordsResponse.Items["+ i +"].DBName"));
 			sQLRecord.setExecuteTime(_ctx.stringValue("DescribeSQLLogRecordsResponse.Items["+ i +"].ExecuteTime"));
+			sQLRecord.setHostAddress(_ctx.stringValue("DescribeSQLLogRecordsResponse.Items["+ i +"].HostAddress"));
+			sQLRecord.setReturnRowCounts(_ctx.longValue("DescribeSQLLogRecordsResponse.Items["+ i +"].ReturnRowCounts"));
+			sQLRecord.setSQLText(_ctx.stringValue("DescribeSQLLogRecordsResponse.Items["+ i +"].SQLText"));
 			sQLRecord.setThreadID(_ctx.stringValue("DescribeSQLLogRecordsResponse.Items["+ i +"].ThreadID"));
 			sQLRecord.setTotalExecutionTimes(_ctx.longValue("DescribeSQLLogRecordsResponse.Items["+ i +"].TotalExecutionTimes"));
-			sQLRecord.setAccountName(_ctx.stringValue("DescribeSQLLogRecordsResponse.Items["+ i +"].AccountName"));
 
 			items.add(sQLRecord);
 		}

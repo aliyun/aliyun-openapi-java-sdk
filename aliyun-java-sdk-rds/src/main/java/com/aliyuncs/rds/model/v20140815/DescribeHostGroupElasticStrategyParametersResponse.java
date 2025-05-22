@@ -24,25 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeHostGroupElasticStrategyParametersResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer cpuShar;
+
+	private Integer cpuZoom;
 
 	private Integer iopsZoom;
 
 	private Integer maxConnZoom;
 
-	private Integer cpuZoom;
-
 	private Integer memoryZoom;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public Integer getCpuShar() {
 		return this.cpuShar;
@@ -50,6 +42,14 @@ public class DescribeHostGroupElasticStrategyParametersResponse extends AcsRespo
 
 	public void setCpuShar(Integer cpuShar) {
 		this.cpuShar = cpuShar;
+	}
+
+	public Integer getCpuZoom() {
+		return this.cpuZoom;
+	}
+
+	public void setCpuZoom(Integer cpuZoom) {
+		this.cpuZoom = cpuZoom;
 	}
 
 	public Integer getIopsZoom() {
@@ -68,20 +68,20 @@ public class DescribeHostGroupElasticStrategyParametersResponse extends AcsRespo
 		this.maxConnZoom = maxConnZoom;
 	}
 
-	public Integer getCpuZoom() {
-		return this.cpuZoom;
-	}
-
-	public void setCpuZoom(Integer cpuZoom) {
-		this.cpuZoom = cpuZoom;
-	}
-
 	public Integer getMemoryZoom() {
 		return this.memoryZoom;
 	}
 
 	public void setMemoryZoom(Integer memoryZoom) {
 		this.memoryZoom = memoryZoom;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

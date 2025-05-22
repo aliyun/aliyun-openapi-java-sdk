@@ -47,54 +47,30 @@ public class DescribeCurrentModifyOrderResponse extends AcsResponse {
 
 	public static class ModifyOrderItem {
 
-		private String dbInstanceId;
-
-		private String targetDBInstanceClass;
-
-		private String storage;
-
-		private String memoryClass;
+		private String classGroup;
 
 		private String cpu;
 
-		private String classGroup;
+		private String dbInstanceId;
 
 		private String effectiveTime;
 
-		private String status;
-
 		private String mark;
 
-		public String getDbInstanceId() {
-			return this.dbInstanceId;
+		private String memoryClass;
+
+		private String status;
+
+		private String storage;
+
+		private String targetDBInstanceClass;
+
+		public String getClassGroup() {
+			return this.classGroup;
 		}
 
-		public void setDbInstanceId(String dbInstanceId) {
-			this.dbInstanceId = dbInstanceId;
-		}
-
-		public String getTargetDBInstanceClass() {
-			return this.targetDBInstanceClass;
-		}
-
-		public void setTargetDBInstanceClass(String targetDBInstanceClass) {
-			this.targetDBInstanceClass = targetDBInstanceClass;
-		}
-
-		public String getStorage() {
-			return this.storage;
-		}
-
-		public void setStorage(String storage) {
-			this.storage = storage;
-		}
-
-		public String getMemoryClass() {
-			return this.memoryClass;
-		}
-
-		public void setMemoryClass(String memoryClass) {
-			this.memoryClass = memoryClass;
+		public void setClassGroup(String classGroup) {
+			this.classGroup = classGroup;
 		}
 
 		public String getCpu() {
@@ -105,12 +81,12 @@ public class DescribeCurrentModifyOrderResponse extends AcsResponse {
 			this.cpu = cpu;
 		}
 
-		public String getClassGroup() {
-			return this.classGroup;
+		public String getDbInstanceId() {
+			return this.dbInstanceId;
 		}
 
-		public void setClassGroup(String classGroup) {
-			this.classGroup = classGroup;
+		public void setDbInstanceId(String dbInstanceId) {
+			this.dbInstanceId = dbInstanceId;
 		}
 
 		public String getEffectiveTime() {
@@ -121,6 +97,22 @@ public class DescribeCurrentModifyOrderResponse extends AcsResponse {
 			this.effectiveTime = effectiveTime;
 		}
 
+		public String getMark() {
+			return this.mark;
+		}
+
+		public void setMark(String mark) {
+			this.mark = mark;
+		}
+
+		public String getMemoryClass() {
+			return this.memoryClass;
+		}
+
+		public void setMemoryClass(String memoryClass) {
+			this.memoryClass = memoryClass;
+		}
+
 		public String getStatus() {
 			return this.status;
 		}
@@ -129,12 +121,20 @@ public class DescribeCurrentModifyOrderResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getMark() {
-			return this.mark;
+		public String getStorage() {
+			return this.storage;
 		}
 
-		public void setMark(String mark) {
-			this.mark = mark;
+		public void setStorage(String storage) {
+			this.storage = storage;
+		}
+
+		public String getTargetDBInstanceClass() {
+			return this.targetDBInstanceClass;
+		}
+
+		public void setTargetDBInstanceClass(String targetDBInstanceClass) {
+			this.targetDBInstanceClass = targetDBInstanceClass;
 		}
 	}
 

@@ -34,11 +34,11 @@ public class DescribeInstanceAutoRenewalAttributeResponseUnmarshaller {
 		List<Item> items = new ArrayList<Item>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceAutoRenewalAttributeResponse.Items.Length"); i++) {
 			Item item = new Item();
-			item.setStatus(_ctx.stringValue("DescribeInstanceAutoRenewalAttributeResponse.Items["+ i +"].Status"));
-			item.setDuration(_ctx.integerValue("DescribeInstanceAutoRenewalAttributeResponse.Items["+ i +"].Duration"));
-			item.setDBInstanceId(_ctx.stringValue("DescribeInstanceAutoRenewalAttributeResponse.Items["+ i +"].DBInstanceId"));
 			item.setAutoRenew(_ctx.stringValue("DescribeInstanceAutoRenewalAttributeResponse.Items["+ i +"].AutoRenew"));
+			item.setDBInstanceId(_ctx.stringValue("DescribeInstanceAutoRenewalAttributeResponse.Items["+ i +"].DBInstanceId"));
+			item.setDuration(_ctx.integerValue("DescribeInstanceAutoRenewalAttributeResponse.Items["+ i +"].Duration"));
 			item.setRegionId(_ctx.stringValue("DescribeInstanceAutoRenewalAttributeResponse.Items["+ i +"].RegionId"));
+			item.setStatus(_ctx.stringValue("DescribeInstanceAutoRenewalAttributeResponse.Items["+ i +"].Status"));
 
 			items.add(item);
 		}

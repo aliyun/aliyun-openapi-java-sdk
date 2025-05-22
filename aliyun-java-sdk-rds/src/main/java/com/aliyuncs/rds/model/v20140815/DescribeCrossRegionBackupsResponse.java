@@ -27,17 +27,17 @@ public class DescribeCrossRegionBackupsResponse extends AcsResponse {
 
 	private String endTime;
 
-	private String startTime;
-
-	private String requestId;
+	private Integer pageNumber;
 
 	private Integer pageRecordCount;
 
-	private Integer totalRecordCount;
-
-	private Integer pageNumber;
-
 	private String regionId;
+
+	private String requestId;
+
+	private String startTime;
+
+	private Integer totalRecordCount;
 
 	private List<Item> items;
 
@@ -49,20 +49,12 @@ public class DescribeCrossRegionBackupsResponse extends AcsResponse {
 		this.endTime = endTime;
 	}
 
-	public String getStartTime() {
-		return this.startTime;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public Integer getPageRecordCount() {
@@ -73,28 +65,36 @@ public class DescribeCrossRegionBackupsResponse extends AcsResponse {
 		this.pageRecordCount = pageRecordCount;
 	}
 
-	public Integer getTotalRecordCount() {
-		return this.totalRecordCount;
-	}
-
-	public void setTotalRecordCount(Integer totalRecordCount) {
-		this.totalRecordCount = totalRecordCount;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public String getRegionId() {
 		return this.regionId;
 	}
 
 	public void setRegionId(String regionId) {
 		this.regionId = regionId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+	}
+
+	public Integer getTotalRecordCount() {
+		return this.totalRecordCount;
+	}
+
+	public void setTotalRecordCount(Integer totalRecordCount) {
+		this.totalRecordCount = totalRecordCount;
 	}
 
 	public List<Item> getItems() {
@@ -107,109 +107,45 @@ public class DescribeCrossRegionBackupsResponse extends AcsResponse {
 
 	public static class Item {
 
-		private String consistentTime;
-
-		private String dBInstanceStorageType;
-
-		private Integer crossBackupId;
-
-		private String backupType;
-
-		private String backupStartTime;
-
-		private String crossBackupSetLocation;
-
-		private Integer instanceId;
-
-		private String crossBackupDownloadLink;
-
 		private String backupEndTime;
-
-		private String engineVersion;
-
-		private Integer backupSetStatus;
-
-		private String crossBackupSetFile;
-
-		private Integer backupSetScale;
-
-		private Long crossBackupSetSize;
-
-		private String hasBackupTableMeta;
-
-		private String crossBackupRegion;
-
-		private String category;
-
-		private String engine;
 
 		private String backupMethod;
 
+		private Integer backupSetScale;
+
+		private Integer backupSetStatus;
+
+		private String backupStartTime;
+
+		private String backupType;
+
+		private String category;
+
+		private String consistentTime;
+
+		private String crossBackupDownloadLink;
+
+		private Integer crossBackupId;
+
+		private String crossBackupRegion;
+
+		private String crossBackupSetFile;
+
+		private String crossBackupSetLocation;
+
+		private Long crossBackupSetSize;
+
+		private String dBInstanceStorageType;
+
+		private String engine;
+
+		private String engineVersion;
+
+		private String hasBackupTableMeta;
+
+		private Integer instanceId;
+
 		private List<String> restoreRegions;
-
-		public String getConsistentTime() {
-			return this.consistentTime;
-		}
-
-		public void setConsistentTime(String consistentTime) {
-			this.consistentTime = consistentTime;
-		}
-
-		public String getDBInstanceStorageType() {
-			return this.dBInstanceStorageType;
-		}
-
-		public void setDBInstanceStorageType(String dBInstanceStorageType) {
-			this.dBInstanceStorageType = dBInstanceStorageType;
-		}
-
-		public Integer getCrossBackupId() {
-			return this.crossBackupId;
-		}
-
-		public void setCrossBackupId(Integer crossBackupId) {
-			this.crossBackupId = crossBackupId;
-		}
-
-		public String getBackupType() {
-			return this.backupType;
-		}
-
-		public void setBackupType(String backupType) {
-			this.backupType = backupType;
-		}
-
-		public String getBackupStartTime() {
-			return this.backupStartTime;
-		}
-
-		public void setBackupStartTime(String backupStartTime) {
-			this.backupStartTime = backupStartTime;
-		}
-
-		public String getCrossBackupSetLocation() {
-			return this.crossBackupSetLocation;
-		}
-
-		public void setCrossBackupSetLocation(String crossBackupSetLocation) {
-			this.crossBackupSetLocation = crossBackupSetLocation;
-		}
-
-		public Integer getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(Integer instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getCrossBackupDownloadLink() {
-			return this.crossBackupDownloadLink;
-		}
-
-		public void setCrossBackupDownloadLink(String crossBackupDownloadLink) {
-			this.crossBackupDownloadLink = crossBackupDownloadLink;
-		}
 
 		public String getBackupEndTime() {
 			return this.backupEndTime;
@@ -219,28 +155,12 @@ public class DescribeCrossRegionBackupsResponse extends AcsResponse {
 			this.backupEndTime = backupEndTime;
 		}
 
-		public String getEngineVersion() {
-			return this.engineVersion;
+		public String getBackupMethod() {
+			return this.backupMethod;
 		}
 
-		public void setEngineVersion(String engineVersion) {
-			this.engineVersion = engineVersion;
-		}
-
-		public Integer getBackupSetStatus() {
-			return this.backupSetStatus;
-		}
-
-		public void setBackupSetStatus(Integer backupSetStatus) {
-			this.backupSetStatus = backupSetStatus;
-		}
-
-		public String getCrossBackupSetFile() {
-			return this.crossBackupSetFile;
-		}
-
-		public void setCrossBackupSetFile(String crossBackupSetFile) {
-			this.crossBackupSetFile = crossBackupSetFile;
+		public void setBackupMethod(String backupMethod) {
+			this.backupMethod = backupMethod;
 		}
 
 		public Integer getBackupSetScale() {
@@ -251,28 +171,28 @@ public class DescribeCrossRegionBackupsResponse extends AcsResponse {
 			this.backupSetScale = backupSetScale;
 		}
 
-		public Long getCrossBackupSetSize() {
-			return this.crossBackupSetSize;
+		public Integer getBackupSetStatus() {
+			return this.backupSetStatus;
 		}
 
-		public void setCrossBackupSetSize(Long crossBackupSetSize) {
-			this.crossBackupSetSize = crossBackupSetSize;
+		public void setBackupSetStatus(Integer backupSetStatus) {
+			this.backupSetStatus = backupSetStatus;
 		}
 
-		public String getHasBackupTableMeta() {
-			return this.hasBackupTableMeta;
+		public String getBackupStartTime() {
+			return this.backupStartTime;
 		}
 
-		public void setHasBackupTableMeta(String hasBackupTableMeta) {
-			this.hasBackupTableMeta = hasBackupTableMeta;
+		public void setBackupStartTime(String backupStartTime) {
+			this.backupStartTime = backupStartTime;
 		}
 
-		public String getCrossBackupRegion() {
-			return this.crossBackupRegion;
+		public String getBackupType() {
+			return this.backupType;
 		}
 
-		public void setCrossBackupRegion(String crossBackupRegion) {
-			this.crossBackupRegion = crossBackupRegion;
+		public void setBackupType(String backupType) {
+			this.backupType = backupType;
 		}
 
 		public String getCategory() {
@@ -283,6 +203,70 @@ public class DescribeCrossRegionBackupsResponse extends AcsResponse {
 			this.category = category;
 		}
 
+		public String getConsistentTime() {
+			return this.consistentTime;
+		}
+
+		public void setConsistentTime(String consistentTime) {
+			this.consistentTime = consistentTime;
+		}
+
+		public String getCrossBackupDownloadLink() {
+			return this.crossBackupDownloadLink;
+		}
+
+		public void setCrossBackupDownloadLink(String crossBackupDownloadLink) {
+			this.crossBackupDownloadLink = crossBackupDownloadLink;
+		}
+
+		public Integer getCrossBackupId() {
+			return this.crossBackupId;
+		}
+
+		public void setCrossBackupId(Integer crossBackupId) {
+			this.crossBackupId = crossBackupId;
+		}
+
+		public String getCrossBackupRegion() {
+			return this.crossBackupRegion;
+		}
+
+		public void setCrossBackupRegion(String crossBackupRegion) {
+			this.crossBackupRegion = crossBackupRegion;
+		}
+
+		public String getCrossBackupSetFile() {
+			return this.crossBackupSetFile;
+		}
+
+		public void setCrossBackupSetFile(String crossBackupSetFile) {
+			this.crossBackupSetFile = crossBackupSetFile;
+		}
+
+		public String getCrossBackupSetLocation() {
+			return this.crossBackupSetLocation;
+		}
+
+		public void setCrossBackupSetLocation(String crossBackupSetLocation) {
+			this.crossBackupSetLocation = crossBackupSetLocation;
+		}
+
+		public Long getCrossBackupSetSize() {
+			return this.crossBackupSetSize;
+		}
+
+		public void setCrossBackupSetSize(Long crossBackupSetSize) {
+			this.crossBackupSetSize = crossBackupSetSize;
+		}
+
+		public String getDBInstanceStorageType() {
+			return this.dBInstanceStorageType;
+		}
+
+		public void setDBInstanceStorageType(String dBInstanceStorageType) {
+			this.dBInstanceStorageType = dBInstanceStorageType;
+		}
+
 		public String getEngine() {
 			return this.engine;
 		}
@@ -291,12 +275,28 @@ public class DescribeCrossRegionBackupsResponse extends AcsResponse {
 			this.engine = engine;
 		}
 
-		public String getBackupMethod() {
-			return this.backupMethod;
+		public String getEngineVersion() {
+			return this.engineVersion;
 		}
 
-		public void setBackupMethod(String backupMethod) {
-			this.backupMethod = backupMethod;
+		public void setEngineVersion(String engineVersion) {
+			this.engineVersion = engineVersion;
+		}
+
+		public String getHasBackupTableMeta() {
+			return this.hasBackupTableMeta;
+		}
+
+		public void setHasBackupTableMeta(String hasBackupTableMeta) {
+			this.hasBackupTableMeta = hasBackupTableMeta;
+		}
+
+		public Integer getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(Integer instanceId) {
+			this.instanceId = instanceId;
 		}
 
 		public List<String> getRestoreRegions() {

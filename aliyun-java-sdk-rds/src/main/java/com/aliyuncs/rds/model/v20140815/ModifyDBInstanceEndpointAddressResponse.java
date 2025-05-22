@@ -46,17 +46,9 @@ public class ModifyDBInstanceEndpointAddressResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String dBInstanceName;
-
 		private String dBInstanceEndpointId;
 
-		public String getDBInstanceName() {
-			return this.dBInstanceName;
-		}
-
-		public void setDBInstanceName(String dBInstanceName) {
-			this.dBInstanceName = dBInstanceName;
-		}
+		private String dBInstanceName;
 
 		public String getDBInstanceEndpointId() {
 			return this.dBInstanceEndpointId;
@@ -64,6 +56,14 @@ public class ModifyDBInstanceEndpointAddressResponse extends AcsResponse {
 
 		public void setDBInstanceEndpointId(String dBInstanceEndpointId) {
 			this.dBInstanceEndpointId = dBInstanceEndpointId;
+		}
+
+		public String getDBInstanceName() {
+			return this.dBInstanceName;
+		}
+
+		public void setDBInstanceName(String dBInstanceName) {
+			this.dBInstanceName = dBInstanceName;
 		}
 	}
 

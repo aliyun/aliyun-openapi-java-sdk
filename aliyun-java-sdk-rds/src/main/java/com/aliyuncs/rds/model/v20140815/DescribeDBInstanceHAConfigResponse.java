@@ -27,9 +27,9 @@ public class DescribeDBInstanceHAConfigResponse extends AcsResponse {
 
 	private String dBInstanceId;
 
-	private String requestId;
-
 	private String hAMode;
+
+	private String requestId;
 
 	private String syncMode;
 
@@ -43,20 +43,20 @@ public class DescribeDBInstanceHAConfigResponse extends AcsResponse {
 		this.dBInstanceId = dBInstanceId;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getHAMode() {
 		return this.hAMode;
 	}
 
 	public void setHAMode(String hAMode) {
 		this.hAMode = hAMode;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getSyncMode() {
@@ -77,51 +77,19 @@ public class DescribeDBInstanceHAConfigResponse extends AcsResponse {
 
 	public static class NodeInfo {
 
-		private String logSyncTime;
-
-		private String nodeType;
-
-		private String zoneId;
-
-		private String syncStatus;
-
 		private String dataSyncTime;
+
+		private String logSyncTime;
 
 		private String nodeId;
 
+		private String nodeType;
+
 		private String regionId;
 
-		public String getLogSyncTime() {
-			return this.logSyncTime;
-		}
+		private String syncStatus;
 
-		public void setLogSyncTime(String logSyncTime) {
-			this.logSyncTime = logSyncTime;
-		}
-
-		public String getNodeType() {
-			return this.nodeType;
-		}
-
-		public void setNodeType(String nodeType) {
-			this.nodeType = nodeType;
-		}
-
-		public String getZoneId() {
-			return this.zoneId;
-		}
-
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
-		}
-
-		public String getSyncStatus() {
-			return this.syncStatus;
-		}
-
-		public void setSyncStatus(String syncStatus) {
-			this.syncStatus = syncStatus;
-		}
+		private String zoneId;
 
 		public String getDataSyncTime() {
 			return this.dataSyncTime;
@@ -129,6 +97,14 @@ public class DescribeDBInstanceHAConfigResponse extends AcsResponse {
 
 		public void setDataSyncTime(String dataSyncTime) {
 			this.dataSyncTime = dataSyncTime;
+		}
+
+		public String getLogSyncTime() {
+			return this.logSyncTime;
+		}
+
+		public void setLogSyncTime(String logSyncTime) {
+			this.logSyncTime = logSyncTime;
 		}
 
 		public String getNodeId() {
@@ -139,12 +115,36 @@ public class DescribeDBInstanceHAConfigResponse extends AcsResponse {
 			this.nodeId = nodeId;
 		}
 
+		public String getNodeType() {
+			return this.nodeType;
+		}
+
+		public void setNodeType(String nodeType) {
+			this.nodeType = nodeType;
+		}
+
 		public String getRegionId() {
 			return this.regionId;
 		}
 
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
+		}
+
+		public String getSyncStatus() {
+			return this.syncStatus;
+		}
+
+		public void setSyncStatus(String syncStatus) {
+			this.syncStatus = syncStatus;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
 		}
 	}
 

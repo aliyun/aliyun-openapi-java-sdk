@@ -26,11 +26,11 @@ public class ModifyDTCSecurityIpHostsForSQLServerResponse extends AcsResponse {
 
 	private String dBInstanceId;
 
+	private String dTCSetResult;
+
 	private String requestId;
 
 	private String taskId;
-
-	private String dTCSetResult;
 
 	public String getDBInstanceId() {
 		return this.dBInstanceId;
@@ -38,6 +38,14 @@ public class ModifyDTCSecurityIpHostsForSQLServerResponse extends AcsResponse {
 
 	public void setDBInstanceId(String dBInstanceId) {
 		this.dBInstanceId = dBInstanceId;
+	}
+
+	public String getDTCSetResult() {
+		return this.dTCSetResult;
+	}
+
+	public void setDTCSetResult(String dTCSetResult) {
+		this.dTCSetResult = dTCSetResult;
 	}
 
 	public String getRequestId() {
@@ -54,14 +62,6 @@ public class ModifyDTCSecurityIpHostsForSQLServerResponse extends AcsResponse {
 
 	public void setTaskId(String taskId) {
 		this.taskId = taskId;
-	}
-
-	public String getDTCSetResult() {
-		return this.dTCSetResult;
-	}
-
-	public void setDTCSetResult(String dTCSetResult) {
-		this.dTCSetResult = dTCSetResult;
 	}
 
 	@Override

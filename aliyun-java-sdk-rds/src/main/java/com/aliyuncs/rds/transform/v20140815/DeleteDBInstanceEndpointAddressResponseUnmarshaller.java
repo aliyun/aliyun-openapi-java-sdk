@@ -26,8 +26,8 @@ public class DeleteDBInstanceEndpointAddressResponseUnmarshaller {
 		deleteDBInstanceEndpointAddressResponse.setRequestId(_ctx.stringValue("DeleteDBInstanceEndpointAddressResponse.RequestId"));
 
 		Data data = new Data();
-		data.setDBInstanceName(_ctx.stringValue("DeleteDBInstanceEndpointAddressResponse.Data.DBInstanceName"));
 		data.setDBInstanceEndpointId(_ctx.stringValue("DeleteDBInstanceEndpointAddressResponse.Data.DBInstanceEndpointId"));
+		data.setDBInstanceName(_ctx.stringValue("DeleteDBInstanceEndpointAddressResponse.Data.DBInstanceName"));
 		deleteDBInstanceEndpointAddressResponse.setData(data);
 	 
 	 	return deleteDBInstanceEndpointAddressResponse;

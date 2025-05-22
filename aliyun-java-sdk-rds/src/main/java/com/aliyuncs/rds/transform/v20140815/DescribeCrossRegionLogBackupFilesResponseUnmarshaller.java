@@ -27,27 +27,27 @@ public class DescribeCrossRegionLogBackupFilesResponseUnmarshaller {
 	public static DescribeCrossRegionLogBackupFilesResponse unmarshall(DescribeCrossRegionLogBackupFilesResponse describeCrossRegionLogBackupFilesResponse, UnmarshallerContext _ctx) {
 		
 		describeCrossRegionLogBackupFilesResponse.setRequestId(_ctx.stringValue("DescribeCrossRegionLogBackupFilesResponse.RequestId"));
-		describeCrossRegionLogBackupFilesResponse.setEndTime(_ctx.stringValue("DescribeCrossRegionLogBackupFilesResponse.EndTime"));
-		describeCrossRegionLogBackupFilesResponse.setStartTime(_ctx.stringValue("DescribeCrossRegionLogBackupFilesResponse.StartTime"));
-		describeCrossRegionLogBackupFilesResponse.setPageRecordCount(_ctx.integerValue("DescribeCrossRegionLogBackupFilesResponse.PageRecordCount"));
-		describeCrossRegionLogBackupFilesResponse.setTotalRecordCount(_ctx.integerValue("DescribeCrossRegionLogBackupFilesResponse.TotalRecordCount"));
 		describeCrossRegionLogBackupFilesResponse.setDBInstanceId(_ctx.stringValue("DescribeCrossRegionLogBackupFilesResponse.DBInstanceId"));
+		describeCrossRegionLogBackupFilesResponse.setEndTime(_ctx.stringValue("DescribeCrossRegionLogBackupFilesResponse.EndTime"));
 		describeCrossRegionLogBackupFilesResponse.setPageNumber(_ctx.integerValue("DescribeCrossRegionLogBackupFilesResponse.PageNumber"));
+		describeCrossRegionLogBackupFilesResponse.setPageRecordCount(_ctx.integerValue("DescribeCrossRegionLogBackupFilesResponse.PageRecordCount"));
 		describeCrossRegionLogBackupFilesResponse.setRegionId(_ctx.stringValue("DescribeCrossRegionLogBackupFilesResponse.RegionId"));
+		describeCrossRegionLogBackupFilesResponse.setStartTime(_ctx.stringValue("DescribeCrossRegionLogBackupFilesResponse.StartTime"));
+		describeCrossRegionLogBackupFilesResponse.setTotalRecordCount(_ctx.integerValue("DescribeCrossRegionLogBackupFilesResponse.TotalRecordCount"));
 
 		List<Item> items = new ArrayList<Item>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCrossRegionLogBackupFilesResponse.Items.Length"); i++) {
 			Item item = new Item();
-			item.setLogBeginTime(_ctx.stringValue("DescribeCrossRegionLogBackupFilesResponse.Items["+ i +"].LogBeginTime"));
-			item.setLinkExpiredTime(_ctx.stringValue("DescribeCrossRegionLogBackupFilesResponse.Items["+ i +"].LinkExpiredTime"));
-			item.setCrossIntranetDownloadLink(_ctx.stringValue("DescribeCrossRegionLogBackupFilesResponse.Items["+ i +"].CrossIntranetDownloadLink"));
-			item.setLogFileName(_ctx.stringValue("DescribeCrossRegionLogBackupFilesResponse.Items["+ i +"].LogFileName"));
 			item.setCrossBackupRegion(_ctx.stringValue("DescribeCrossRegionLogBackupFilesResponse.Items["+ i +"].CrossBackupRegion"));
 			item.setCrossDownloadLink(_ctx.stringValue("DescribeCrossRegionLogBackupFilesResponse.Items["+ i +"].CrossDownloadLink"));
+			item.setCrossIntranetDownloadLink(_ctx.stringValue("DescribeCrossRegionLogBackupFilesResponse.Items["+ i +"].CrossIntranetDownloadLink"));
+			item.setCrossLogBackupId(_ctx.integerValue("DescribeCrossRegionLogBackupFilesResponse.Items["+ i +"].CrossLogBackupId"));
 			item.setCrossLogBackupSize(_ctx.longValue("DescribeCrossRegionLogBackupFilesResponse.Items["+ i +"].CrossLogBackupSize"));
 			item.setInstanceId(_ctx.integerValue("DescribeCrossRegionLogBackupFilesResponse.Items["+ i +"].InstanceId"));
-			item.setCrossLogBackupId(_ctx.integerValue("DescribeCrossRegionLogBackupFilesResponse.Items["+ i +"].CrossLogBackupId"));
+			item.setLinkExpiredTime(_ctx.stringValue("DescribeCrossRegionLogBackupFilesResponse.Items["+ i +"].LinkExpiredTime"));
+			item.setLogBeginTime(_ctx.stringValue("DescribeCrossRegionLogBackupFilesResponse.Items["+ i +"].LogBeginTime"));
 			item.setLogEndTime(_ctx.stringValue("DescribeCrossRegionLogBackupFilesResponse.Items["+ i +"].LogEndTime"));
+			item.setLogFileName(_ctx.stringValue("DescribeCrossRegionLogBackupFilesResponse.Items["+ i +"].LogFileName"));
 
 			items.add(item);
 		}

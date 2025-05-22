@@ -24,9 +24,9 @@ public class DescribeHostGroupElasticStrategyParametersResponseUnmarshaller {
 		
 		describeHostGroupElasticStrategyParametersResponse.setRequestId(_ctx.stringValue("DescribeHostGroupElasticStrategyParametersResponse.RequestId"));
 		describeHostGroupElasticStrategyParametersResponse.setCpuShar(_ctx.integerValue("DescribeHostGroupElasticStrategyParametersResponse.CpuShar"));
+		describeHostGroupElasticStrategyParametersResponse.setCpuZoom(_ctx.integerValue("DescribeHostGroupElasticStrategyParametersResponse.CpuZoom"));
 		describeHostGroupElasticStrategyParametersResponse.setIopsZoom(_ctx.integerValue("DescribeHostGroupElasticStrategyParametersResponse.IopsZoom"));
 		describeHostGroupElasticStrategyParametersResponse.setMaxConnZoom(_ctx.integerValue("DescribeHostGroupElasticStrategyParametersResponse.MaxConnZoom"));
-		describeHostGroupElasticStrategyParametersResponse.setCpuZoom(_ctx.integerValue("DescribeHostGroupElasticStrategyParametersResponse.CpuZoom"));
 		describeHostGroupElasticStrategyParametersResponse.setMemoryZoom(_ctx.integerValue("DescribeHostGroupElasticStrategyParametersResponse.MemoryZoom"));
 	 
 	 	return describeHostGroupElasticStrategyParametersResponse;

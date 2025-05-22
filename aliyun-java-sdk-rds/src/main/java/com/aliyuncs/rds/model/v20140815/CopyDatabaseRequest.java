@@ -25,13 +25,21 @@ import com.aliyuncs.rds.Endpoint;
 public class CopyDatabaseRequest extends RpcAcsRequest<CopyDatabaseResponse> {
 	   
 
+	private String dBInstanceName;
+
 	private Long resourceOwnerId;
 
 	private String resourceGroupId;
 
+	private Integer reserveAccount;
+
+	private String srcDBName;
+
 	private String resourceOwnerAccount;
 
 	private Long ownerId;
+
+	private String dstDBName;
 	public CopyDatabaseRequest() {
 		super("Rds", "2014-08-15", "CopyDatabase", "rds");
 		setMethod(MethodType.POST);
@@ -39,6 +47,17 @@ public class CopyDatabaseRequest extends RpcAcsRequest<CopyDatabaseResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getDBInstanceName() {
+		return this.dBInstanceName;
+	}
+
+	public void setDBInstanceName(String dBInstanceName) {
+		this.dBInstanceName = dBInstanceName;
+		if(dBInstanceName != null){
+			putQueryParameter("DBInstanceName", dBInstanceName);
+		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -63,6 +82,28 @@ public class CopyDatabaseRequest extends RpcAcsRequest<CopyDatabaseResponse> {
 		}
 	}
 
+	public Integer getReserveAccount() {
+		return this.reserveAccount;
+	}
+
+	public void setReserveAccount(Integer reserveAccount) {
+		this.reserveAccount = reserveAccount;
+		if(reserveAccount != null){
+			putQueryParameter("ReserveAccount", reserveAccount.toString());
+		}
+	}
+
+	public String getSrcDBName() {
+		return this.srcDBName;
+	}
+
+	public void setSrcDBName(String srcDBName) {
+		this.srcDBName = srcDBName;
+		if(srcDBName != null){
+			putQueryParameter("SrcDBName", srcDBName);
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -82,6 +123,17 @@ public class CopyDatabaseRequest extends RpcAcsRequest<CopyDatabaseResponse> {
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getDstDBName() {
+		return this.dstDBName;
+	}
+
+	public void setDstDBName(String dstDBName) {
+		this.dstDBName = dstDBName;
+		if(dstDBName != null){
+			putQueryParameter("DstDBName", dstDBName);
 		}
 	}
 

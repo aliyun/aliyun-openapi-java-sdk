@@ -34,8 +34,8 @@ public class DescribeKmsAssociateResourcesResponseUnmarshaller {
 			DBInstance dBInstance = new DBInstance();
 			dBInstance.setDBInstanceName(_ctx.stringValue("DescribeKmsAssociateResourcesResponse.AssociateDBInstances["+ i +"].DBInstanceName"));
 			dBInstance.setEngine(_ctx.stringValue("DescribeKmsAssociateResourcesResponse.AssociateDBInstances["+ i +"].Engine"));
-			dBInstance.setStatus(_ctx.stringValue("DescribeKmsAssociateResourcesResponse.AssociateDBInstances["+ i +"].Status"));
 			dBInstance.setKeyUsedBy(_ctx.stringValue("DescribeKmsAssociateResourcesResponse.AssociateDBInstances["+ i +"].KeyUsedBy"));
+			dBInstance.setStatus(_ctx.stringValue("DescribeKmsAssociateResourcesResponse.AssociateDBInstances["+ i +"].Status"));
 
 			associateDBInstances.add(dBInstance);
 		}

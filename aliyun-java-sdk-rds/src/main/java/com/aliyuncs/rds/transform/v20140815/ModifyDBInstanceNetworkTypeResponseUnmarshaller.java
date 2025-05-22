@@ -23,8 +23,8 @@ public class ModifyDBInstanceNetworkTypeResponseUnmarshaller {
 	public static ModifyDBInstanceNetworkTypeResponse unmarshall(ModifyDBInstanceNetworkTypeResponse modifyDBInstanceNetworkTypeResponse, UnmarshallerContext _ctx) {
 		
 		modifyDBInstanceNetworkTypeResponse.setRequestId(_ctx.stringValue("ModifyDBInstanceNetworkTypeResponse.RequestId"));
-		modifyDBInstanceNetworkTypeResponse.setTaskId(_ctx.stringValue("ModifyDBInstanceNetworkTypeResponse.TaskId"));
 		modifyDBInstanceNetworkTypeResponse.setConnectionString(_ctx.stringValue("ModifyDBInstanceNetworkTypeResponse.ConnectionString"));
+		modifyDBInstanceNetworkTypeResponse.setTaskId(_ctx.stringValue("ModifyDBInstanceNetworkTypeResponse.TaskId"));
 	 
 	 	return modifyDBInstanceNetworkTypeResponse;
 	}

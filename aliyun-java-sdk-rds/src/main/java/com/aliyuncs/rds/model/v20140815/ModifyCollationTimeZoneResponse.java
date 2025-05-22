@@ -30,9 +30,9 @@ public class ModifyCollationTimeZoneResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String timezone;
-
 	private String taskId;
+
+	private String timezone;
 
 	public String getCollation() {
 		return this.collation;
@@ -58,20 +58,20 @@ public class ModifyCollationTimeZoneResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getTimezone() {
-		return this.timezone;
-	}
-
-	public void setTimezone(String timezone) {
-		this.timezone = timezone;
-	}
-
 	public String getTaskId() {
 		return this.taskId;
 	}
 
 	public void setTaskId(String taskId) {
 		this.taskId = taskId;
+	}
+
+	public String getTimezone() {
+		return this.timezone;
+	}
+
+	public void setTimezone(String timezone) {
+		this.timezone = timezone;
 	}
 
 	@Override

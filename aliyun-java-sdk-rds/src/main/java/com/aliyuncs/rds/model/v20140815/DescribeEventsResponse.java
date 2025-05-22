@@ -27,9 +27,9 @@ public class DescribeEventsResponse extends AcsResponse {
 
 	private Integer pageNumber;
 
-	private String requestId;
-
 	private Integer pageSize;
+
+	private String requestId;
 
 	private Integer totalRecordCount;
 
@@ -43,20 +43,20 @@ public class DescribeEventsResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getTotalRecordCount() {
@@ -77,61 +77,29 @@ public class DescribeEventsResponse extends AcsResponse {
 
 	public static class EventItemsItem {
 
-		private String eventName;
-
-		private String eventTime;
-
-		private String eventUserType;
-
-		private String eventRecordTime;
-
 		private Long callerUid;
-
-		private String regionId;
 
 		private Integer eventId;
 
-		private String eventType;
-
-		private String resourceType;
+		private String eventName;
 
 		private String eventPayload;
 
 		private String eventReason;
 
+		private String eventRecordTime;
+
+		private String eventTime;
+
+		private String eventType;
+
+		private String eventUserType;
+
+		private String regionId;
+
 		private String resourceName;
 
-		public String getEventName() {
-			return this.eventName;
-		}
-
-		public void setEventName(String eventName) {
-			this.eventName = eventName;
-		}
-
-		public String getEventTime() {
-			return this.eventTime;
-		}
-
-		public void setEventTime(String eventTime) {
-			this.eventTime = eventTime;
-		}
-
-		public String getEventUserType() {
-			return this.eventUserType;
-		}
-
-		public void setEventUserType(String eventUserType) {
-			this.eventUserType = eventUserType;
-		}
-
-		public String getEventRecordTime() {
-			return this.eventRecordTime;
-		}
-
-		public void setEventRecordTime(String eventRecordTime) {
-			this.eventRecordTime = eventRecordTime;
-		}
+		private String resourceType;
 
 		public Long getCallerUid() {
 			return this.callerUid;
@@ -139,14 +107,6 @@ public class DescribeEventsResponse extends AcsResponse {
 
 		public void setCallerUid(Long callerUid) {
 			this.callerUid = callerUid;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
 		}
 
 		public Integer getEventId() {
@@ -157,20 +117,12 @@ public class DescribeEventsResponse extends AcsResponse {
 			this.eventId = eventId;
 		}
 
-		public String getEventType() {
-			return this.eventType;
+		public String getEventName() {
+			return this.eventName;
 		}
 
-		public void setEventType(String eventType) {
-			this.eventType = eventType;
-		}
-
-		public String getResourceType() {
-			return this.resourceType;
-		}
-
-		public void setResourceType(String resourceType) {
-			this.resourceType = resourceType;
+		public void setEventName(String eventName) {
+			this.eventName = eventName;
 		}
 
 		public String getEventPayload() {
@@ -189,12 +141,60 @@ public class DescribeEventsResponse extends AcsResponse {
 			this.eventReason = eventReason;
 		}
 
+		public String getEventRecordTime() {
+			return this.eventRecordTime;
+		}
+
+		public void setEventRecordTime(String eventRecordTime) {
+			this.eventRecordTime = eventRecordTime;
+		}
+
+		public String getEventTime() {
+			return this.eventTime;
+		}
+
+		public void setEventTime(String eventTime) {
+			this.eventTime = eventTime;
+		}
+
+		public String getEventType() {
+			return this.eventType;
+		}
+
+		public void setEventType(String eventType) {
+			this.eventType = eventType;
+		}
+
+		public String getEventUserType() {
+			return this.eventUserType;
+		}
+
+		public void setEventUserType(String eventUserType) {
+			this.eventUserType = eventUserType;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
 		public String getResourceName() {
 			return this.resourceName;
 		}
 
 		public void setResourceName(String resourceName) {
 			this.resourceName = resourceName;
+		}
+
+		public String getResourceType() {
+			return this.resourceType;
+		}
+
+		public void setResourceType(String resourceType) {
+			this.resourceType = resourceType;
 		}
 	}
 

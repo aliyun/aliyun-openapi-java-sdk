@@ -27,13 +27,13 @@ public class ModifyDBInstanceDelayedReplicationTimeRequest extends RpcAcsRequest
 
 	private Long resourceOwnerId;
 
+	private String dBInstanceId;
+
 	private String resourceOwnerAccount;
 
 	private Long ownerId;
 
 	private String readSQLReplicationTime;
-
-	private String dBInstanceId;
 	public ModifyDBInstanceDelayedReplicationTimeRequest() {
 		super("Rds", "2014-08-15", "ModifyDBInstanceDelayedReplicationTime", "rds");
 		setMethod(MethodType.POST);
@@ -51,6 +51,17 @@ public class ModifyDBInstanceDelayedReplicationTimeRequest extends RpcAcsRequest
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
 		}
 	}
 
@@ -84,17 +95,6 @@ public class ModifyDBInstanceDelayedReplicationTimeRequest extends RpcAcsRequest
 		this.readSQLReplicationTime = readSQLReplicationTime;
 		if(readSQLReplicationTime != null){
 			putQueryParameter("ReadSQLReplicationTime", readSQLReplicationTime);
-		}
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
 		}
 	}
 

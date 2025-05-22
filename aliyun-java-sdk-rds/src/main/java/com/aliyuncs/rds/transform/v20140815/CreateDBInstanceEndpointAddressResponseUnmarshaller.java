@@ -26,9 +26,9 @@ public class CreateDBInstanceEndpointAddressResponseUnmarshaller {
 		createDBInstanceEndpointAddressResponse.setRequestId(_ctx.stringValue("CreateDBInstanceEndpointAddressResponse.RequestId"));
 
 		Data data = new Data();
-		data.setDBInstanceName(_ctx.stringValue("CreateDBInstanceEndpointAddressResponse.Data.DBInstanceName"));
-		data.setDBInstanceEndpointId(_ctx.stringValue("CreateDBInstanceEndpointAddressResponse.Data.DBInstanceEndpointId"));
 		data.setConnectionString(_ctx.stringValue("CreateDBInstanceEndpointAddressResponse.Data.ConnectionString"));
+		data.setDBInstanceEndpointId(_ctx.stringValue("CreateDBInstanceEndpointAddressResponse.Data.DBInstanceEndpointId"));
+		data.setDBInstanceName(_ctx.stringValue("CreateDBInstanceEndpointAddressResponse.Data.DBInstanceName"));
 		createDBInstanceEndpointAddressResponse.setData(data);
 	 
 	 	return createDBInstanceEndpointAddressResponse;

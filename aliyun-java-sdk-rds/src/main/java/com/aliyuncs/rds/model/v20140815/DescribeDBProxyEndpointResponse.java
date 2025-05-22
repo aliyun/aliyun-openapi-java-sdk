@@ -25,31 +25,51 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDBProxyEndpointResponse extends AcsResponse {
 
+	private String dBProxyConnectString;
+
 	private String dBProxyConnectStringNetType;
+
+	private String dBProxyConnectStringPort;
+
+	private String dBProxyEndpointId;
+
+	private String dBProxyEngineType;
 
 	private String dBProxyFeatures;
 
-	private String requestId;
+	private String dbProxyEndpointAliases;
 
-	private String readOnlyInstanceWeight;
+	private String dbProxyEndpointReadWriteMode;
+
+	private String dbProxyEndpointVswitchId;
+
+	private String dbProxyEndpointVpcId;
+
+	private String dbProxyEndpointZoneId;
 
 	private String readOnlyInstanceDistributionType;
 
 	private String readOnlyInstanceMaxDelayTime;
 
-	private String dbProxyEndpointReadWriteMode;
+	private String causalConsistReadTimeout;
 
-	private String dbProxyEndpointAliases;
+	private String readOnlyInstanceWeight;
 
-	private String dBProxyEndpointId;
+	private String requestId;
 
-	private String dBProxyConnectStringPort;
+	private String dBProxyEndpointMinSlaveCount;
 
-	private String dBProxyConnectString;
-
-	private String dBProxyEngineType;
+	private List<DBProxyNodesItem> dBProxyNodes;
 
 	private List<EndpointConnectItemsItem> endpointConnectItems;
+
+	public String getDBProxyConnectString() {
+		return this.dBProxyConnectString;
+	}
+
+	public void setDBProxyConnectString(String dBProxyConnectString) {
+		this.dBProxyConnectString = dBProxyConnectString;
+	}
 
 	public String getDBProxyConnectStringNetType() {
 		return this.dBProxyConnectStringNetType;
@@ -57,6 +77,30 @@ public class DescribeDBProxyEndpointResponse extends AcsResponse {
 
 	public void setDBProxyConnectStringNetType(String dBProxyConnectStringNetType) {
 		this.dBProxyConnectStringNetType = dBProxyConnectStringNetType;
+	}
+
+	public String getDBProxyConnectStringPort() {
+		return this.dBProxyConnectStringPort;
+	}
+
+	public void setDBProxyConnectStringPort(String dBProxyConnectStringPort) {
+		this.dBProxyConnectStringPort = dBProxyConnectStringPort;
+	}
+
+	public String getDBProxyEndpointId() {
+		return this.dBProxyEndpointId;
+	}
+
+	public void setDBProxyEndpointId(String dBProxyEndpointId) {
+		this.dBProxyEndpointId = dBProxyEndpointId;
+	}
+
+	public String getDBProxyEngineType() {
+		return this.dBProxyEngineType;
+	}
+
+	public void setDBProxyEngineType(String dBProxyEngineType) {
+		this.dBProxyEngineType = dBProxyEngineType;
 	}
 
 	public String getDBProxyFeatures() {
@@ -67,20 +111,44 @@ public class DescribeDBProxyEndpointResponse extends AcsResponse {
 		this.dBProxyFeatures = dBProxyFeatures;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getDbProxyEndpointAliases() {
+		return this.dbProxyEndpointAliases;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setDbProxyEndpointAliases(String dbProxyEndpointAliases) {
+		this.dbProxyEndpointAliases = dbProxyEndpointAliases;
 	}
 
-	public String getReadOnlyInstanceWeight() {
-		return this.readOnlyInstanceWeight;
+	public String getDbProxyEndpointReadWriteMode() {
+		return this.dbProxyEndpointReadWriteMode;
 	}
 
-	public void setReadOnlyInstanceWeight(String readOnlyInstanceWeight) {
-		this.readOnlyInstanceWeight = readOnlyInstanceWeight;
+	public void setDbProxyEndpointReadWriteMode(String dbProxyEndpointReadWriteMode) {
+		this.dbProxyEndpointReadWriteMode = dbProxyEndpointReadWriteMode;
+	}
+
+	public String getDbProxyEndpointVswitchId() {
+		return this.dbProxyEndpointVswitchId;
+	}
+
+	public void setDbProxyEndpointVswitchId(String dbProxyEndpointVswitchId) {
+		this.dbProxyEndpointVswitchId = dbProxyEndpointVswitchId;
+	}
+
+	public String getDbProxyEndpointVpcId() {
+		return this.dbProxyEndpointVpcId;
+	}
+
+	public void setDbProxyEndpointVpcId(String dbProxyEndpointVpcId) {
+		this.dbProxyEndpointVpcId = dbProxyEndpointVpcId;
+	}
+
+	public String getDbProxyEndpointZoneId() {
+		return this.dbProxyEndpointZoneId;
+	}
+
+	public void setDbProxyEndpointZoneId(String dbProxyEndpointZoneId) {
+		this.dbProxyEndpointZoneId = dbProxyEndpointZoneId;
 	}
 
 	public String getReadOnlyInstanceDistributionType() {
@@ -99,52 +167,44 @@ public class DescribeDBProxyEndpointResponse extends AcsResponse {
 		this.readOnlyInstanceMaxDelayTime = readOnlyInstanceMaxDelayTime;
 	}
 
-	public String getDbProxyEndpointReadWriteMode() {
-		return this.dbProxyEndpointReadWriteMode;
+	public String getCausalConsistReadTimeout() {
+		return this.causalConsistReadTimeout;
 	}
 
-	public void setDbProxyEndpointReadWriteMode(String dbProxyEndpointReadWriteMode) {
-		this.dbProxyEndpointReadWriteMode = dbProxyEndpointReadWriteMode;
+	public void setCausalConsistReadTimeout(String causalConsistReadTimeout) {
+		this.causalConsistReadTimeout = causalConsistReadTimeout;
 	}
 
-	public String getDbProxyEndpointAliases() {
-		return this.dbProxyEndpointAliases;
+	public String getReadOnlyInstanceWeight() {
+		return this.readOnlyInstanceWeight;
 	}
 
-	public void setDbProxyEndpointAliases(String dbProxyEndpointAliases) {
-		this.dbProxyEndpointAliases = dbProxyEndpointAliases;
+	public void setReadOnlyInstanceWeight(String readOnlyInstanceWeight) {
+		this.readOnlyInstanceWeight = readOnlyInstanceWeight;
 	}
 
-	public String getDBProxyEndpointId() {
-		return this.dBProxyEndpointId;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setDBProxyEndpointId(String dBProxyEndpointId) {
-		this.dBProxyEndpointId = dBProxyEndpointId;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
-	public String getDBProxyConnectStringPort() {
-		return this.dBProxyConnectStringPort;
+	public String getDBProxyEndpointMinSlaveCount() {
+		return this.dBProxyEndpointMinSlaveCount;
 	}
 
-	public void setDBProxyConnectStringPort(String dBProxyConnectStringPort) {
-		this.dBProxyConnectStringPort = dBProxyConnectStringPort;
+	public void setDBProxyEndpointMinSlaveCount(String dBProxyEndpointMinSlaveCount) {
+		this.dBProxyEndpointMinSlaveCount = dBProxyEndpointMinSlaveCount;
 	}
 
-	public String getDBProxyConnectString() {
-		return this.dBProxyConnectString;
+	public List<DBProxyNodesItem> getDBProxyNodes() {
+		return this.dBProxyNodes;
 	}
 
-	public void setDBProxyConnectString(String dBProxyConnectString) {
-		this.dBProxyConnectString = dBProxyConnectString;
-	}
-
-	public String getDBProxyEngineType() {
-		return this.dBProxyEngineType;
-	}
-
-	public void setDBProxyEngineType(String dBProxyEngineType) {
-		this.dBProxyEngineType = dBProxyEngineType;
+	public void setDBProxyNodes(List<DBProxyNodesItem> dBProxyNodes) {
+		this.dBProxyNodes = dBProxyNodes;
 	}
 
 	public List<EndpointConnectItemsItem> getEndpointConnectItems() {
@@ -155,21 +215,46 @@ public class DescribeDBProxyEndpointResponse extends AcsResponse {
 		this.endpointConnectItems = endpointConnectItems;
 	}
 
-	public static class EndpointConnectItemsItem {
+	public static class DBProxyNodesItem {
 
-		private String dbProxyEndpointPort;
+		private String cpuCores;
+
+		private String nodeId;
+
+		private String zoneId;
+
+		public String getCpuCores() {
+			return this.cpuCores;
+		}
+
+		public void setCpuCores(String cpuCores) {
+			this.cpuCores = cpuCores;
+		}
+
+		public String getNodeId() {
+			return this.nodeId;
+		}
+
+		public void setNodeId(String nodeId) {
+			this.nodeId = nodeId;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
+	}
+
+	public static class EndpointConnectItemsItem {
 
 		private String dbProxyEndpointConnectString;
 
 		private String dbProxyEndpointNetType;
 
-		public String getDbProxyEndpointPort() {
-			return this.dbProxyEndpointPort;
-		}
-
-		public void setDbProxyEndpointPort(String dbProxyEndpointPort) {
-			this.dbProxyEndpointPort = dbProxyEndpointPort;
-		}
+		private String dbProxyEndpointPort;
 
 		public String getDbProxyEndpointConnectString() {
 			return this.dbProxyEndpointConnectString;
@@ -185,6 +270,14 @@ public class DescribeDBProxyEndpointResponse extends AcsResponse {
 
 		public void setDbProxyEndpointNetType(String dbProxyEndpointNetType) {
 			this.dbProxyEndpointNetType = dbProxyEndpointNetType;
+		}
+
+		public String getDbProxyEndpointPort() {
+			return this.dbProxyEndpointPort;
+		}
+
+		public void setDbProxyEndpointPort(String dbProxyEndpointPort) {
+			this.dbProxyEndpointPort = dbProxyEndpointPort;
 		}
 	}
 

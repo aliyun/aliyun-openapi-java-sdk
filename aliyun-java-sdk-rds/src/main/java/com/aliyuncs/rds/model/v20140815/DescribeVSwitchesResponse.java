@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeVSwitchesResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Integer totalCount;
-
 	private Integer pageNumber;
 
 	private Integer pageSize;
 
+	private String requestId;
+
+	private Integer totalCount;
+
 	private List<VSwitch> vSwitchs;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
-	}
 
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -67,6 +51,22 @@ public class DescribeVSwitchesResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
+
 	public List<VSwitch> getVSwitchs() {
 		return this.vSwitchs;
 	}
@@ -78,6 +78,8 @@ public class DescribeVSwitchesResponse extends AcsResponse {
 	public static class VSwitch {
 
 		private String aliUid;
+
+		private String availableIpAddressCount;
 
 		private String bid;
 
@@ -101,14 +103,20 @@ public class DescribeVSwitchesResponse extends AcsResponse {
 
 		private String vSwitchName;
 
-		private String availableIpAddressCount;
-
 		public String getAliUid() {
 			return this.aliUid;
 		}
 
 		public void setAliUid(String aliUid) {
 			this.aliUid = aliUid;
+		}
+
+		public String getAvailableIpAddressCount() {
+			return this.availableIpAddressCount;
+		}
+
+		public void setAvailableIpAddressCount(String availableIpAddressCount) {
+			this.availableIpAddressCount = availableIpAddressCount;
 		}
 
 		public String getBid() {
@@ -197,14 +205,6 @@ public class DescribeVSwitchesResponse extends AcsResponse {
 
 		public void setVSwitchName(String vSwitchName) {
 			this.vSwitchName = vSwitchName;
-		}
-
-		public String getAvailableIpAddressCount() {
-			return this.availableIpAddressCount;
-		}
-
-		public void setAvailableIpAddressCount(String availableIpAddressCount) {
-			this.availableIpAddressCount = availableIpAddressCount;
 		}
 	}
 

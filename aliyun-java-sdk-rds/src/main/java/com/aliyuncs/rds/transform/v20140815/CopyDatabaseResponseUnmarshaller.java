@@ -24,8 +24,8 @@ public class CopyDatabaseResponseUnmarshaller {
 		
 		copyDatabaseResponse.setRequestId(_ctx.stringValue("CopyDatabaseResponse.RequestId"));
 		copyDatabaseResponse.setDBName(_ctx.stringValue("CopyDatabaseResponse.DBName"));
-		copyDatabaseResponse.setTaskId(_ctx.stringValue("CopyDatabaseResponse.TaskId"));
 		copyDatabaseResponse.setDBStatus(_ctx.stringValue("CopyDatabaseResponse.DBStatus"));
+		copyDatabaseResponse.setTaskId(_ctx.stringValue("CopyDatabaseResponse.TaskId"));
 	 
 	 	return copyDatabaseResponse;
 	}

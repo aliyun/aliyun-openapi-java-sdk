@@ -29,6 +29,8 @@ public class RenewInstanceRequest extends RpcAcsRequest<RenewInstanceResponse> {
 
 	private String clientToken;
 
+	private Boolean autoUseCoupon;
+
 	private String dBInstanceId;
 
 	private Integer period;
@@ -40,6 +42,8 @@ public class RenewInstanceRequest extends RpcAcsRequest<RenewInstanceResponse> {
 	private Long ownerId;
 
 	private String autoRenew;
+
+	private String promotionCode;
 	public RenewInstanceRequest() {
 		super("Rds", "2014-08-15", "RenewInstance", "rds");
 		setMethod(MethodType.POST);
@@ -68,6 +72,17 @@ public class RenewInstanceRequest extends RpcAcsRequest<RenewInstanceResponse> {
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public Boolean getAutoUseCoupon() {
+		return this.autoUseCoupon;
+	}
+
+	public void setAutoUseCoupon(Boolean autoUseCoupon) {
+		this.autoUseCoupon = autoUseCoupon;
+		if(autoUseCoupon != null){
+			putQueryParameter("AutoUseCoupon", autoUseCoupon.toString());
 		}
 	}
 
@@ -134,6 +149,17 @@ public class RenewInstanceRequest extends RpcAcsRequest<RenewInstanceResponse> {
 		this.autoRenew = autoRenew;
 		if(autoRenew != null){
 			putQueryParameter("AutoRenew", autoRenew);
+		}
+	}
+
+	public String getPromotionCode() {
+		return this.promotionCode;
+	}
+
+	public void setPromotionCode(String promotionCode) {
+		this.promotionCode = promotionCode;
+		if(promotionCode != null){
+			putQueryParameter("PromotionCode", promotionCode);
 		}
 	}
 

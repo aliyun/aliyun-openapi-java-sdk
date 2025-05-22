@@ -48,66 +48,98 @@ public class DescribeDedicatedHostGroupsResponse extends AcsResponse {
 
 	public static class DedicatedHostGroupsItem {
 
-		private Float diskAllocateRation;
+		private String allocationPolicy;
+
+		private String bastionInstanceId;
+
+		private Float cpuAllocateRation;
+
+		private Float cpuAllocatedAmount;
+
+		private Integer cpuAllocationRatio;
 
 		private String createTime;
 
 		private Map<Object,Object> dedicatedHostCountGroupByHostType;
 
-		private String text;
+		private String dedicatedHostGroupDesc;
 
 		private String dedicatedHostGroupId;
 
-		private Float diskUtility;
-
-		private Float memUsedAmount;
-
-		private Float memAllocatedAmount;
-
-		private Integer cpuAllocationRatio;
-
-		private Integer memAllocationRatio;
-
-		private Float memUtility;
-
-		private Float memAllocateRation;
-
-		private Float cpuAllocatedAmount;
-
-		private String dedicatedHostGroupDesc;
-
-		private Float cpuAllocateRation;
-
-		private Integer instanceNumber;
-
-		private String openPermission;
-
-		private String vPCId;
+		private Float diskAllocateRation;
 
 		private Float diskAllocatedAmount;
 
-		private Integer hostNumber;
+		private Integer diskAllocationRatio;
 
 		private Float diskUsedAmount;
 
-		private String allocationPolicy;
+		private Float diskUtility;
 
 		private String engine;
 
-		private Integer diskAllocationRatio;
-
-		private String bastionInstanceId;
+		private Integer hostNumber;
 
 		private String hostReplacePolicy;
 
+		private Integer instanceNumber;
+
+		private Float memAllocateRation;
+
+		private Float memAllocatedAmount;
+
+		private Integer memAllocationRatio;
+
+		private Float memUsedAmount;
+
+		private Float memUtility;
+
+		private String openPermission;
+
+		private String text;
+
+		private String vPCId;
+
 		private List<String> zoneIDList;
 
-		public Float getDiskAllocateRation() {
-			return this.diskAllocateRation;
+		public String getAllocationPolicy() {
+			return this.allocationPolicy;
 		}
 
-		public void setDiskAllocateRation(Float diskAllocateRation) {
-			this.diskAllocateRation = diskAllocateRation;
+		public void setAllocationPolicy(String allocationPolicy) {
+			this.allocationPolicy = allocationPolicy;
+		}
+
+		public String getBastionInstanceId() {
+			return this.bastionInstanceId;
+		}
+
+		public void setBastionInstanceId(String bastionInstanceId) {
+			this.bastionInstanceId = bastionInstanceId;
+		}
+
+		public Float getCpuAllocateRation() {
+			return this.cpuAllocateRation;
+		}
+
+		public void setCpuAllocateRation(Float cpuAllocateRation) {
+			this.cpuAllocateRation = cpuAllocateRation;
+		}
+
+		public Float getCpuAllocatedAmount() {
+			return this.cpuAllocatedAmount;
+		}
+
+		public void setCpuAllocatedAmount(Float cpuAllocatedAmount) {
+			this.cpuAllocatedAmount = cpuAllocatedAmount;
+		}
+
+		public Integer getCpuAllocationRatio() {
+			return this.cpuAllocationRatio;
+		}
+
+		public void setCpuAllocationRatio(Integer cpuAllocationRatio) {
+			this.cpuAllocationRatio = cpuAllocationRatio;
 		}
 
 		public String getCreateTime() {
@@ -126,12 +158,12 @@ public class DescribeDedicatedHostGroupsResponse extends AcsResponse {
 			this.dedicatedHostCountGroupByHostType = dedicatedHostCountGroupByHostType;
 		}
 
-		public String getText() {
-			return this.text;
+		public String getDedicatedHostGroupDesc() {
+			return this.dedicatedHostGroupDesc;
 		}
 
-		public void setText(String text) {
-			this.text = text;
+		public void setDedicatedHostGroupDesc(String dedicatedHostGroupDesc) {
+			this.dedicatedHostGroupDesc = dedicatedHostGroupDesc;
 		}
 
 		public String getDedicatedHostGroupId() {
@@ -142,108 +174,12 @@ public class DescribeDedicatedHostGroupsResponse extends AcsResponse {
 			this.dedicatedHostGroupId = dedicatedHostGroupId;
 		}
 
-		public Float getDiskUtility() {
-			return this.diskUtility;
+		public Float getDiskAllocateRation() {
+			return this.diskAllocateRation;
 		}
 
-		public void setDiskUtility(Float diskUtility) {
-			this.diskUtility = diskUtility;
-		}
-
-		public Float getMemUsedAmount() {
-			return this.memUsedAmount;
-		}
-
-		public void setMemUsedAmount(Float memUsedAmount) {
-			this.memUsedAmount = memUsedAmount;
-		}
-
-		public Float getMemAllocatedAmount() {
-			return this.memAllocatedAmount;
-		}
-
-		public void setMemAllocatedAmount(Float memAllocatedAmount) {
-			this.memAllocatedAmount = memAllocatedAmount;
-		}
-
-		public Integer getCpuAllocationRatio() {
-			return this.cpuAllocationRatio;
-		}
-
-		public void setCpuAllocationRatio(Integer cpuAllocationRatio) {
-			this.cpuAllocationRatio = cpuAllocationRatio;
-		}
-
-		public Integer getMemAllocationRatio() {
-			return this.memAllocationRatio;
-		}
-
-		public void setMemAllocationRatio(Integer memAllocationRatio) {
-			this.memAllocationRatio = memAllocationRatio;
-		}
-
-		public Float getMemUtility() {
-			return this.memUtility;
-		}
-
-		public void setMemUtility(Float memUtility) {
-			this.memUtility = memUtility;
-		}
-
-		public Float getMemAllocateRation() {
-			return this.memAllocateRation;
-		}
-
-		public void setMemAllocateRation(Float memAllocateRation) {
-			this.memAllocateRation = memAllocateRation;
-		}
-
-		public Float getCpuAllocatedAmount() {
-			return this.cpuAllocatedAmount;
-		}
-
-		public void setCpuAllocatedAmount(Float cpuAllocatedAmount) {
-			this.cpuAllocatedAmount = cpuAllocatedAmount;
-		}
-
-		public String getDedicatedHostGroupDesc() {
-			return this.dedicatedHostGroupDesc;
-		}
-
-		public void setDedicatedHostGroupDesc(String dedicatedHostGroupDesc) {
-			this.dedicatedHostGroupDesc = dedicatedHostGroupDesc;
-		}
-
-		public Float getCpuAllocateRation() {
-			return this.cpuAllocateRation;
-		}
-
-		public void setCpuAllocateRation(Float cpuAllocateRation) {
-			this.cpuAllocateRation = cpuAllocateRation;
-		}
-
-		public Integer getInstanceNumber() {
-			return this.instanceNumber;
-		}
-
-		public void setInstanceNumber(Integer instanceNumber) {
-			this.instanceNumber = instanceNumber;
-		}
-
-		public String getOpenPermission() {
-			return this.openPermission;
-		}
-
-		public void setOpenPermission(String openPermission) {
-			this.openPermission = openPermission;
-		}
-
-		public String getVPCId() {
-			return this.vPCId;
-		}
-
-		public void setVPCId(String vPCId) {
-			this.vPCId = vPCId;
+		public void setDiskAllocateRation(Float diskAllocateRation) {
+			this.diskAllocateRation = diskAllocateRation;
 		}
 
 		public Float getDiskAllocatedAmount() {
@@ -254,12 +190,12 @@ public class DescribeDedicatedHostGroupsResponse extends AcsResponse {
 			this.diskAllocatedAmount = diskAllocatedAmount;
 		}
 
-		public Integer getHostNumber() {
-			return this.hostNumber;
+		public Integer getDiskAllocationRatio() {
+			return this.diskAllocationRatio;
 		}
 
-		public void setHostNumber(Integer hostNumber) {
-			this.hostNumber = hostNumber;
+		public void setDiskAllocationRatio(Integer diskAllocationRatio) {
+			this.diskAllocationRatio = diskAllocationRatio;
 		}
 
 		public Float getDiskUsedAmount() {
@@ -270,12 +206,12 @@ public class DescribeDedicatedHostGroupsResponse extends AcsResponse {
 			this.diskUsedAmount = diskUsedAmount;
 		}
 
-		public String getAllocationPolicy() {
-			return this.allocationPolicy;
+		public Float getDiskUtility() {
+			return this.diskUtility;
 		}
 
-		public void setAllocationPolicy(String allocationPolicy) {
-			this.allocationPolicy = allocationPolicy;
+		public void setDiskUtility(Float diskUtility) {
+			this.diskUtility = diskUtility;
 		}
 
 		public String getEngine() {
@@ -286,20 +222,12 @@ public class DescribeDedicatedHostGroupsResponse extends AcsResponse {
 			this.engine = engine;
 		}
 
-		public Integer getDiskAllocationRatio() {
-			return this.diskAllocationRatio;
+		public Integer getHostNumber() {
+			return this.hostNumber;
 		}
 
-		public void setDiskAllocationRatio(Integer diskAllocationRatio) {
-			this.diskAllocationRatio = diskAllocationRatio;
-		}
-
-		public String getBastionInstanceId() {
-			return this.bastionInstanceId;
-		}
-
-		public void setBastionInstanceId(String bastionInstanceId) {
-			this.bastionInstanceId = bastionInstanceId;
+		public void setHostNumber(Integer hostNumber) {
+			this.hostNumber = hostNumber;
 		}
 
 		public String getHostReplacePolicy() {
@@ -308,6 +236,78 @@ public class DescribeDedicatedHostGroupsResponse extends AcsResponse {
 
 		public void setHostReplacePolicy(String hostReplacePolicy) {
 			this.hostReplacePolicy = hostReplacePolicy;
+		}
+
+		public Integer getInstanceNumber() {
+			return this.instanceNumber;
+		}
+
+		public void setInstanceNumber(Integer instanceNumber) {
+			this.instanceNumber = instanceNumber;
+		}
+
+		public Float getMemAllocateRation() {
+			return this.memAllocateRation;
+		}
+
+		public void setMemAllocateRation(Float memAllocateRation) {
+			this.memAllocateRation = memAllocateRation;
+		}
+
+		public Float getMemAllocatedAmount() {
+			return this.memAllocatedAmount;
+		}
+
+		public void setMemAllocatedAmount(Float memAllocatedAmount) {
+			this.memAllocatedAmount = memAllocatedAmount;
+		}
+
+		public Integer getMemAllocationRatio() {
+			return this.memAllocationRatio;
+		}
+
+		public void setMemAllocationRatio(Integer memAllocationRatio) {
+			this.memAllocationRatio = memAllocationRatio;
+		}
+
+		public Float getMemUsedAmount() {
+			return this.memUsedAmount;
+		}
+
+		public void setMemUsedAmount(Float memUsedAmount) {
+			this.memUsedAmount = memUsedAmount;
+		}
+
+		public Float getMemUtility() {
+			return this.memUtility;
+		}
+
+		public void setMemUtility(Float memUtility) {
+			this.memUtility = memUtility;
+		}
+
+		public String getOpenPermission() {
+			return this.openPermission;
+		}
+
+		public void setOpenPermission(String openPermission) {
+			this.openPermission = openPermission;
+		}
+
+		public String getText() {
+			return this.text;
+		}
+
+		public void setText(String text) {
+			this.text = text;
+		}
+
+		public String getVPCId() {
+			return this.vPCId;
+		}
+
+		public void setVPCId(String vPCId) {
+			this.vPCId = vPCId;
 		}
 
 		public List<String> getZoneIDList() {

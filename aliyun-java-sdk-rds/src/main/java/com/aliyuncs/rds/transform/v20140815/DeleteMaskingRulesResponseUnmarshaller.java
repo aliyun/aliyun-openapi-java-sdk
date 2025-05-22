@@ -24,9 +24,9 @@ public class DeleteMaskingRulesResponseUnmarshaller {
 	public static DeleteMaskingRulesResponse unmarshall(DeleteMaskingRulesResponse deleteMaskingRulesResponse, UnmarshallerContext _ctx) {
 		
 		deleteMaskingRulesResponse.setRequestId(_ctx.stringValue("DeleteMaskingRulesResponse.RequestId"));
-		deleteMaskingRulesResponse.setSuccess(_ctx.stringValue("DeleteMaskingRulesResponse.Success"));
-		deleteMaskingRulesResponse.setMessage(_ctx.stringValue("DeleteMaskingRulesResponse.Message"));
 		deleteMaskingRulesResponse.setData(_ctx.mapValue("DeleteMaskingRulesResponse.Data"));
+		deleteMaskingRulesResponse.setMessage(_ctx.stringValue("DeleteMaskingRulesResponse.Message"));
+		deleteMaskingRulesResponse.setSuccess(_ctx.stringValue("DeleteMaskingRulesResponse.Success"));
 	 
 	 	return deleteMaskingRulesResponse;
 	}

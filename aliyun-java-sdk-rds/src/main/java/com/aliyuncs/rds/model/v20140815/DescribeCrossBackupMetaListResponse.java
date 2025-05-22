@@ -27,15 +27,15 @@ public class DescribeCrossBackupMetaListResponse extends AcsResponse {
 
 	private String dBInstanceName;
 
-	private Integer totalPageCount;
-
-	private String requestId;
+	private Integer pageNumber;
 
 	private Integer pageRecordCount;
 
-	private Integer totalRecordCount;
+	private String requestId;
 
-	private Integer pageNumber;
+	private Integer totalPageCount;
+
+	private Integer totalRecordCount;
 
 	private List<Meta> items;
 
@@ -47,20 +47,12 @@ public class DescribeCrossBackupMetaListResponse extends AcsResponse {
 		this.dBInstanceName = dBInstanceName;
 	}
 
-	public Integer getTotalPageCount() {
-		return this.totalPageCount;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setTotalPageCount(Integer totalPageCount) {
-		this.totalPageCount = totalPageCount;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public Integer getPageRecordCount() {
@@ -71,20 +63,28 @@ public class DescribeCrossBackupMetaListResponse extends AcsResponse {
 		this.pageRecordCount = pageRecordCount;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getTotalPageCount() {
+		return this.totalPageCount;
+	}
+
+	public void setTotalPageCount(Integer totalPageCount) {
+		this.totalPageCount = totalPageCount;
+	}
+
 	public Integer getTotalRecordCount() {
 		return this.totalRecordCount;
 	}
 
 	public void setTotalRecordCount(Integer totalRecordCount) {
 		this.totalRecordCount = totalRecordCount;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
 	}
 
 	public List<Meta> getItems() {
@@ -97,19 +97,11 @@ public class DescribeCrossBackupMetaListResponse extends AcsResponse {
 
 	public static class Meta {
 
-		private String tables;
-
 		private String database;
 
 		private String size;
 
-		public String getTables() {
-			return this.tables;
-		}
-
-		public void setTables(String tables) {
-			this.tables = tables;
-		}
+		private String tables;
 
 		public String getDatabase() {
 			return this.database;
@@ -125,6 +117,14 @@ public class DescribeCrossBackupMetaListResponse extends AcsResponse {
 
 		public void setSize(String size) {
 			this.size = size;
+		}
+
+		public String getTables() {
+			return this.tables;
+		}
+
+		public void setTables(String tables) {
+			this.tables = tables;
 		}
 	}
 

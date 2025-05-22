@@ -26,8 +26,8 @@ public class CreateGadInstanceMemberResponseUnmarshaller {
 		createGadInstanceMemberResponse.setRequestId(_ctx.stringValue("CreateGadInstanceMemberResponse.RequestId"));
 
 		Result result = new Result();
-		result.setGadInstanceName(_ctx.stringValue("CreateGadInstanceMemberResponse.Result.GadInstanceName"));
 		result.setCreateCount(_ctx.stringValue("CreateGadInstanceMemberResponse.Result.CreateCount"));
+		result.setGadInstanceName(_ctx.stringValue("CreateGadInstanceMemberResponse.Result.GadInstanceName"));
 		createGadInstanceMemberResponse.setResult(result);
 	 
 	 	return createGadInstanceMemberResponse;

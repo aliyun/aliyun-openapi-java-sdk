@@ -33,6 +33,8 @@ public class DescribeDBProxyPerformanceRequest extends RpcAcsRequest<DescribeDBP
 
 	private String dBInstanceId;
 
+	private String dimension;
+
 	private String resourceOwnerAccount;
 
 	private String endTime;
@@ -92,6 +94,17 @@ public class DescribeDBProxyPerformanceRequest extends RpcAcsRequest<DescribeDBP
 		this.dBInstanceId = dBInstanceId;
 		if(dBInstanceId != null){
 			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public String getDimension() {
+		return this.dimension;
+	}
+
+	public void setDimension(String dimension) {
+		this.dimension = dimension;
+		if(dimension != null){
+			putQueryParameter("Dimension", dimension);
 		}
 	}
 

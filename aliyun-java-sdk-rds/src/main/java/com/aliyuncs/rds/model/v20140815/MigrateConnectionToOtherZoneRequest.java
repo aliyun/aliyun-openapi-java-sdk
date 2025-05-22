@@ -29,11 +29,11 @@ public class MigrateConnectionToOtherZoneRequest extends RpcAcsRequest<MigrateCo
 
 	private String connectionString;
 
+	private String dBInstanceId;
+
 	private Long ownerId;
 
 	private String zoneId;
-
-	private String dBInstanceId;
 	public MigrateConnectionToOtherZoneRequest() {
 		super("Rds", "2014-08-15", "MigrateConnectionToOtherZone", "rds");
 		setMethod(MethodType.POST);
@@ -65,6 +65,17 @@ public class MigrateConnectionToOtherZoneRequest extends RpcAcsRequest<MigrateCo
 		}
 	}
 
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -84,17 +95,6 @@ public class MigrateConnectionToOtherZoneRequest extends RpcAcsRequest<MigrateCo
 		this.zoneId = zoneId;
 		if(zoneId != null){
 			putQueryParameter("ZoneId", zoneId);
-		}
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
 		}
 	}
 

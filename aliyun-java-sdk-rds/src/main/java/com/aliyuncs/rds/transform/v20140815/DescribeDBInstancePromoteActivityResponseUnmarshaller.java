@@ -23,12 +23,12 @@ public class DescribeDBInstancePromoteActivityResponseUnmarshaller {
 	public static DescribeDBInstancePromoteActivityResponse unmarshall(DescribeDBInstancePromoteActivityResponse describeDBInstancePromoteActivityResponse, UnmarshallerContext _ctx) {
 		
 		describeDBInstancePromoteActivityResponse.setRequestId(_ctx.stringValue("DescribeDBInstancePromoteActivityResponse.RequestId"));
-		describeDBInstancePromoteActivityResponse.setDBInstanceName(_ctx.stringValue("DescribeDBInstancePromoteActivityResponse.DBInstanceName"));
 		describeDBInstancePromoteActivityResponse.setAliUid(_ctx.stringValue("DescribeDBInstancePromoteActivityResponse.AliUid"));
-		describeDBInstancePromoteActivityResponse.setDBType(_ctx.stringValue("DescribeDBInstancePromoteActivityResponse.DBType"));
-		describeDBInstancePromoteActivityResponse.setDBInstanceId(_ctx.stringValue("DescribeDBInstancePromoteActivityResponse.DBInstanceId"));
-		describeDBInstancePromoteActivityResponse.setIsActivity(_ctx.stringValue("DescribeDBInstancePromoteActivityResponse.IsActivity"));
 		describeDBInstancePromoteActivityResponse.setBid(_ctx.stringValue("DescribeDBInstancePromoteActivityResponse.Bid"));
+		describeDBInstancePromoteActivityResponse.setDBInstanceId(_ctx.stringValue("DescribeDBInstancePromoteActivityResponse.DBInstanceId"));
+		describeDBInstancePromoteActivityResponse.setDBInstanceName(_ctx.stringValue("DescribeDBInstancePromoteActivityResponse.DBInstanceName"));
+		describeDBInstancePromoteActivityResponse.setDBType(_ctx.stringValue("DescribeDBInstancePromoteActivityResponse.DBType"));
+		describeDBInstancePromoteActivityResponse.setIsActivity(_ctx.stringValue("DescribeDBInstancePromoteActivityResponse.IsActivity"));
 	 
 	 	return describeDBInstancePromoteActivityResponse;
 	}

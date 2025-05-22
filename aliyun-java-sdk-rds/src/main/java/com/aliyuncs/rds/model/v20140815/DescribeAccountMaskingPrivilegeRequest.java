@@ -15,7 +15,6 @@
 package com.aliyuncs.rds.model.v20140815;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.rds.Endpoint;
 
@@ -34,10 +33,11 @@ public class DescribeAccountMaskingPrivilegeRequest extends RpcAcsRequest<Descri
 
 	private String ownerId;
 
+	private String dBName;
+
 	private String userName;
 	public DescribeAccountMaskingPrivilegeRequest() {
 		super("Rds", "2014-08-15", "DescribeAccountMaskingPrivilege", "rds");
-		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -86,6 +86,17 @@ public class DescribeAccountMaskingPrivilegeRequest extends RpcAcsRequest<Descri
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId);
+		}
+	}
+
+	public String getDBName() {
+		return this.dBName;
+	}
+
+	public void setDBName(String dBName) {
+		this.dBName = dBName;
+		if(dBName != null){
+			putQueryParameter("DBName", dBName);
 		}
 	}
 

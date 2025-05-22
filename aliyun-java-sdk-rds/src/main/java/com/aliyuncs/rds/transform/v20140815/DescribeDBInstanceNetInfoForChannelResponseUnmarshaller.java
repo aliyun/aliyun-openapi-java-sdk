@@ -34,40 +34,40 @@ public class DescribeDBInstanceNetInfoForChannelResponseUnmarshaller {
 		List<DBInstanceNetInfo> dBInstanceNetInfos = new ArrayList<DBInstanceNetInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDBInstanceNetInfoForChannelResponse.DBInstanceNetInfos.Length"); i++) {
 			DBInstanceNetInfo dBInstanceNetInfo = new DBInstanceNetInfo();
-			dBInstanceNetInfo.setUpgradeable(_ctx.stringValue("DescribeDBInstanceNetInfoForChannelResponse.DBInstanceNetInfos["+ i +"].Upgradeable"));
-			dBInstanceNetInfo.setExpiredTime(_ctx.stringValue("DescribeDBInstanceNetInfoForChannelResponse.DBInstanceNetInfos["+ i +"].expiredTime"));
-			dBInstanceNetInfo.setIPType(_ctx.stringValue("DescribeDBInstanceNetInfoForChannelResponse.DBInstanceNetInfos["+ i +"].IPType"));
-			dBInstanceNetInfo.setPort(_ctx.stringValue("DescribeDBInstanceNetInfoForChannelResponse.DBInstanceNetInfos["+ i +"].Port"));
-			dBInstanceNetInfo.setVPCId(_ctx.stringValue("DescribeDBInstanceNetInfoForChannelResponse.DBInstanceNetInfos["+ i +"].VPCId"));
 			dBInstanceNetInfo.setAvailability(_ctx.stringValue("DescribeDBInstanceNetInfoForChannelResponse.DBInstanceNetInfos["+ i +"].Availability"));
-			dBInstanceNetInfo.setVSwitchId(_ctx.stringValue("DescribeDBInstanceNetInfoForChannelResponse.DBInstanceNetInfos["+ i +"].VSwitchId"));
-			dBInstanceNetInfo.setConnectionStringType(_ctx.stringValue("DescribeDBInstanceNetInfoForChannelResponse.DBInstanceNetInfos["+ i +"].ConnectionStringType"));
 			dBInstanceNetInfo.setConnectionString(_ctx.stringValue("DescribeDBInstanceNetInfoForChannelResponse.DBInstanceNetInfos["+ i +"].ConnectionString"));
-			dBInstanceNetInfo.setMaxDelayTime(_ctx.stringValue("DescribeDBInstanceNetInfoForChannelResponse.DBInstanceNetInfos["+ i +"].MaxDelayTime"));
-			dBInstanceNetInfo.setIPAddress(_ctx.stringValue("DescribeDBInstanceNetInfoForChannelResponse.DBInstanceNetInfos["+ i +"].IPAddress"));
+			dBInstanceNetInfo.setConnectionStringType(_ctx.stringValue("DescribeDBInstanceNetInfoForChannelResponse.DBInstanceNetInfos["+ i +"].ConnectionStringType"));
 			dBInstanceNetInfo.setDistributionType(_ctx.stringValue("DescribeDBInstanceNetInfoForChannelResponse.DBInstanceNetInfos["+ i +"].DistributionType"));
-
-			List<SecurityIPGroup> securityIPGroups = new ArrayList<SecurityIPGroup>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeDBInstanceNetInfoForChannelResponse.DBInstanceNetInfos["+ i +"].SecurityIPGroups.Length"); j++) {
-				SecurityIPGroup securityIPGroup = new SecurityIPGroup();
-				securityIPGroup.setSecurityIPs(_ctx.stringValue("DescribeDBInstanceNetInfoForChannelResponse.DBInstanceNetInfos["+ i +"].SecurityIPGroups["+ j +"].SecurityIPs"));
-				securityIPGroup.setSecurityIPGroupName(_ctx.stringValue("DescribeDBInstanceNetInfoForChannelResponse.DBInstanceNetInfos["+ i +"].SecurityIPGroups["+ j +"].SecurityIPGroupName"));
-
-				securityIPGroups.add(securityIPGroup);
-			}
-			dBInstanceNetInfo.setSecurityIPGroups(securityIPGroups);
+			dBInstanceNetInfo.setIPAddress(_ctx.stringValue("DescribeDBInstanceNetInfoForChannelResponse.DBInstanceNetInfos["+ i +"].IPAddress"));
+			dBInstanceNetInfo.setIPType(_ctx.stringValue("DescribeDBInstanceNetInfoForChannelResponse.DBInstanceNetInfos["+ i +"].IPType"));
+			dBInstanceNetInfo.setMaxDelayTime(_ctx.stringValue("DescribeDBInstanceNetInfoForChannelResponse.DBInstanceNetInfos["+ i +"].MaxDelayTime"));
+			dBInstanceNetInfo.setPort(_ctx.stringValue("DescribeDBInstanceNetInfoForChannelResponse.DBInstanceNetInfos["+ i +"].Port"));
+			dBInstanceNetInfo.setUpgradeable(_ctx.stringValue("DescribeDBInstanceNetInfoForChannelResponse.DBInstanceNetInfos["+ i +"].Upgradeable"));
+			dBInstanceNetInfo.setVPCId(_ctx.stringValue("DescribeDBInstanceNetInfoForChannelResponse.DBInstanceNetInfos["+ i +"].VPCId"));
+			dBInstanceNetInfo.setVSwitchId(_ctx.stringValue("DescribeDBInstanceNetInfoForChannelResponse.DBInstanceNetInfos["+ i +"].VSwitchId"));
+			dBInstanceNetInfo.setExpiredTime(_ctx.stringValue("DescribeDBInstanceNetInfoForChannelResponse.DBInstanceNetInfos["+ i +"].expiredTime"));
 
 			List<DBInstanceWeight> dBInstanceWeights = new ArrayList<DBInstanceWeight>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDBInstanceNetInfoForChannelResponse.DBInstanceNetInfos["+ i +"].DBInstanceWeights.Length"); j++) {
 				DBInstanceWeight dBInstanceWeight = new DBInstanceWeight();
 				dBInstanceWeight.setAvailability(_ctx.stringValue("DescribeDBInstanceNetInfoForChannelResponse.DBInstanceNetInfos["+ i +"].DBInstanceWeights["+ j +"].Availability"));
-				dBInstanceWeight.setWeight(_ctx.stringValue("DescribeDBInstanceNetInfoForChannelResponse.DBInstanceNetInfos["+ i +"].DBInstanceWeights["+ j +"].Weight"));
 				dBInstanceWeight.setDBInstanceId(_ctx.stringValue("DescribeDBInstanceNetInfoForChannelResponse.DBInstanceNetInfos["+ i +"].DBInstanceWeights["+ j +"].DBInstanceId"));
 				dBInstanceWeight.setDBInstanceType(_ctx.stringValue("DescribeDBInstanceNetInfoForChannelResponse.DBInstanceNetInfos["+ i +"].DBInstanceWeights["+ j +"].DBInstanceType"));
+				dBInstanceWeight.setWeight(_ctx.stringValue("DescribeDBInstanceNetInfoForChannelResponse.DBInstanceNetInfos["+ i +"].DBInstanceWeights["+ j +"].Weight"));
 
 				dBInstanceWeights.add(dBInstanceWeight);
 			}
 			dBInstanceNetInfo.setDBInstanceWeights(dBInstanceWeights);
+
+			List<SecurityIPGroup> securityIPGroups = new ArrayList<SecurityIPGroup>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeDBInstanceNetInfoForChannelResponse.DBInstanceNetInfos["+ i +"].SecurityIPGroups.Length"); j++) {
+				SecurityIPGroup securityIPGroup = new SecurityIPGroup();
+				securityIPGroup.setSecurityIPGroupName(_ctx.stringValue("DescribeDBInstanceNetInfoForChannelResponse.DBInstanceNetInfos["+ i +"].SecurityIPGroups["+ j +"].SecurityIPGroupName"));
+				securityIPGroup.setSecurityIPs(_ctx.stringValue("DescribeDBInstanceNetInfoForChannelResponse.DBInstanceNetInfos["+ i +"].SecurityIPGroups["+ j +"].SecurityIPs"));
+
+				securityIPGroups.add(securityIPGroup);
+			}
+			dBInstanceNetInfo.setSecurityIPGroups(securityIPGroups);
 
 			dBInstanceNetInfos.add(dBInstanceNetInfo);
 		}

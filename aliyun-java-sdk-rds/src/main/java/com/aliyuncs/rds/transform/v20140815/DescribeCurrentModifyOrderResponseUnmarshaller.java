@@ -31,15 +31,15 @@ public class DescribeCurrentModifyOrderResponseUnmarshaller {
 		List<ModifyOrderItem> modifyOrder = new ArrayList<ModifyOrderItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCurrentModifyOrderResponse.ModifyOrder.Length"); i++) {
 			ModifyOrderItem modifyOrderItem = new ModifyOrderItem();
-			modifyOrderItem.setDbInstanceId(_ctx.stringValue("DescribeCurrentModifyOrderResponse.ModifyOrder["+ i +"].DbInstanceId"));
-			modifyOrderItem.setTargetDBInstanceClass(_ctx.stringValue("DescribeCurrentModifyOrderResponse.ModifyOrder["+ i +"].TargetDBInstanceClass"));
-			modifyOrderItem.setStorage(_ctx.stringValue("DescribeCurrentModifyOrderResponse.ModifyOrder["+ i +"].Storage"));
-			modifyOrderItem.setMemoryClass(_ctx.stringValue("DescribeCurrentModifyOrderResponse.ModifyOrder["+ i +"].MemoryClass"));
-			modifyOrderItem.setCpu(_ctx.stringValue("DescribeCurrentModifyOrderResponse.ModifyOrder["+ i +"].Cpu"));
 			modifyOrderItem.setClassGroup(_ctx.stringValue("DescribeCurrentModifyOrderResponse.ModifyOrder["+ i +"].ClassGroup"));
+			modifyOrderItem.setCpu(_ctx.stringValue("DescribeCurrentModifyOrderResponse.ModifyOrder["+ i +"].Cpu"));
+			modifyOrderItem.setDbInstanceId(_ctx.stringValue("DescribeCurrentModifyOrderResponse.ModifyOrder["+ i +"].DbInstanceId"));
 			modifyOrderItem.setEffectiveTime(_ctx.stringValue("DescribeCurrentModifyOrderResponse.ModifyOrder["+ i +"].EffectiveTime"));
-			modifyOrderItem.setStatus(_ctx.stringValue("DescribeCurrentModifyOrderResponse.ModifyOrder["+ i +"].Status"));
 			modifyOrderItem.setMark(_ctx.stringValue("DescribeCurrentModifyOrderResponse.ModifyOrder["+ i +"].Mark"));
+			modifyOrderItem.setMemoryClass(_ctx.stringValue("DescribeCurrentModifyOrderResponse.ModifyOrder["+ i +"].MemoryClass"));
+			modifyOrderItem.setStatus(_ctx.stringValue("DescribeCurrentModifyOrderResponse.ModifyOrder["+ i +"].Status"));
+			modifyOrderItem.setStorage(_ctx.stringValue("DescribeCurrentModifyOrderResponse.ModifyOrder["+ i +"].Storage"));
+			modifyOrderItem.setTargetDBInstanceClass(_ctx.stringValue("DescribeCurrentModifyOrderResponse.ModifyOrder["+ i +"].TargetDBInstanceClass"));
 
 			modifyOrder.add(modifyOrderItem);
 		}

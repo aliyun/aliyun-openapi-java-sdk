@@ -27,9 +27,9 @@ public class DescribeHistoryTasksResponse extends AcsResponse {
 
 	private Integer pageNumber;
 
-	private String requestId;
-
 	private Integer pageSize;
+
+	private String requestId;
 
 	private Integer totalCount;
 
@@ -43,20 +43,20 @@ public class DescribeHistoryTasksResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getTotalCount() {
@@ -77,60 +77,68 @@ public class DescribeHistoryTasksResponse extends AcsResponse {
 
 	public static class ItemsItem {
 
-		private String status;
-
-		private String taskId;
-
-		private String currentStepName;
-
-		private String startTime;
-
-		private String endTime;
-
-		private String taskType;
-
-		private Integer remainTime;
-
-		private Float progress;
-
-		private String regionId;
-
-		private String instanceType;
-
-		private String instanceId;
-
-		private String instanceName;
-
-		private String dbType;
-
-		private String product;
-
-		private String taskDetail;
-
-		private String reasonCode;
-
 		private String actionInfo;
-
-		private String uid;
 
 		private String callerSource;
 
 		private String callerUid;
 
-		public String getStatus() {
-			return this.status;
+		private String currentStepName;
+
+		private String dbType;
+
+		private String endTime;
+
+		private String instanceId;
+
+		private String instanceName;
+
+		private String instanceType;
+
+		private String product;
+
+		private Float progress;
+
+		private String reasonCode;
+
+		private String regionId;
+
+		private Integer remainTime;
+
+		private String startTime;
+
+		private String status;
+
+		private String taskDetail;
+
+		private String taskId;
+
+		private String taskType;
+
+		private String uid;
+
+		public String getActionInfo() {
+			return this.actionInfo;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setActionInfo(String actionInfo) {
+			this.actionInfo = actionInfo;
 		}
 
-		public String getTaskId() {
-			return this.taskId;
+		public String getCallerSource() {
+			return this.callerSource;
 		}
 
-		public void setTaskId(String taskId) {
-			this.taskId = taskId;
+		public void setCallerSource(String callerSource) {
+			this.callerSource = callerSource;
+		}
+
+		public String getCallerUid() {
+			return this.callerUid;
+		}
+
+		public void setCallerUid(String callerUid) {
+			this.callerUid = callerUid;
 		}
 
 		public String getCurrentStepName() {
@@ -141,12 +149,12 @@ public class DescribeHistoryTasksResponse extends AcsResponse {
 			this.currentStepName = currentStepName;
 		}
 
-		public String getStartTime() {
-			return this.startTime;
+		public String getDbType() {
+			return this.dbType;
 		}
 
-		public void setStartTime(String startTime) {
-			this.startTime = startTime;
+		public void setDbType(String dbType) {
+			this.dbType = dbType;
 		}
 
 		public String getEndTime() {
@@ -155,46 +163,6 @@ public class DescribeHistoryTasksResponse extends AcsResponse {
 
 		public void setEndTime(String endTime) {
 			this.endTime = endTime;
-		}
-
-		public String getTaskType() {
-			return this.taskType;
-		}
-
-		public void setTaskType(String taskType) {
-			this.taskType = taskType;
-		}
-
-		public Integer getRemainTime() {
-			return this.remainTime;
-		}
-
-		public void setRemainTime(Integer remainTime) {
-			this.remainTime = remainTime;
-		}
-
-		public Float getProgress() {
-			return this.progress;
-		}
-
-		public void setProgress(Float progress) {
-			this.progress = progress;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getInstanceType() {
-			return this.instanceType;
-		}
-
-		public void setInstanceType(String instanceType) {
-			this.instanceType = instanceType;
 		}
 
 		public String getInstanceId() {
@@ -213,12 +181,12 @@ public class DescribeHistoryTasksResponse extends AcsResponse {
 			this.instanceName = instanceName;
 		}
 
-		public String getDbType() {
-			return this.dbType;
+		public String getInstanceType() {
+			return this.instanceType;
 		}
 
-		public void setDbType(String dbType) {
-			this.dbType = dbType;
+		public void setInstanceType(String instanceType) {
+			this.instanceType = instanceType;
 		}
 
 		public String getProduct() {
@@ -229,12 +197,12 @@ public class DescribeHistoryTasksResponse extends AcsResponse {
 			this.product = product;
 		}
 
-		public String getTaskDetail() {
-			return this.taskDetail;
+		public Float getProgress() {
+			return this.progress;
 		}
 
-		public void setTaskDetail(String taskDetail) {
-			this.taskDetail = taskDetail;
+		public void setProgress(Float progress) {
+			this.progress = progress;
 		}
 
 		public String getReasonCode() {
@@ -245,12 +213,60 @@ public class DescribeHistoryTasksResponse extends AcsResponse {
 			this.reasonCode = reasonCode;
 		}
 
-		public String getActionInfo() {
-			return this.actionInfo;
+		public String getRegionId() {
+			return this.regionId;
 		}
 
-		public void setActionInfo(String actionInfo) {
-			this.actionInfo = actionInfo;
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public Integer getRemainTime() {
+			return this.remainTime;
+		}
+
+		public void setRemainTime(Integer remainTime) {
+			this.remainTime = remainTime;
+		}
+
+		public String getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getTaskDetail() {
+			return this.taskDetail;
+		}
+
+		public void setTaskDetail(String taskDetail) {
+			this.taskDetail = taskDetail;
+		}
+
+		public String getTaskId() {
+			return this.taskId;
+		}
+
+		public void setTaskId(String taskId) {
+			this.taskId = taskId;
+		}
+
+		public String getTaskType() {
+			return this.taskType;
+		}
+
+		public void setTaskType(String taskType) {
+			this.taskType = taskType;
 		}
 
 		public String getUid() {
@@ -259,22 +275,6 @@ public class DescribeHistoryTasksResponse extends AcsResponse {
 
 		public void setUid(String uid) {
 			this.uid = uid;
-		}
-
-		public String getCallerSource() {
-			return this.callerSource;
-		}
-
-		public void setCallerSource(String callerSource) {
-			this.callerSource = callerSource;
-		}
-
-		public String getCallerUid() {
-			return this.callerUid;
-		}
-
-		public void setCallerUid(String callerUid) {
-			this.callerUid = callerUid;
 		}
 	}
 

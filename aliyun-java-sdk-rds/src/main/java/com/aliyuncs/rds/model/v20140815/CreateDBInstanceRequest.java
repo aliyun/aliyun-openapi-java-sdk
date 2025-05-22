@@ -42,6 +42,8 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 
 	private Boolean autoCreateProxy;
 
+	private String optimizedWrites;
+
 	private String engineVersion;
 
 	private Boolean deletionProtection;
@@ -80,6 +82,8 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 
 	private String roleARN;
 
+	private String promotionCode;
+
 	private String zoneId;
 
 	private String storageAutoScale;
@@ -95,6 +99,8 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 	private String zoneIdSlave1;
 
 	private String zoneIdSlave2;
+
+	private Boolean autoUseCoupon;
 
 	private String dBIsIgnoreCase;
 
@@ -223,6 +229,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.autoCreateProxy = autoCreateProxy;
 		if(autoCreateProxy != null){
 			putQueryParameter("AutoCreateProxy", autoCreateProxy.toString());
+		}
+	}
+
+	public String getOptimizedWrites() {
+		return this.optimizedWrites;
+	}
+
+	public void setOptimizedWrites(String optimizedWrites) {
+		this.optimizedWrites = optimizedWrites;
+		if(optimizedWrites != null){
+			putQueryParameter("OptimizedWrites", optimizedWrites);
 		}
 	}
 
@@ -438,6 +455,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		}
 	}
 
+	public String getPromotionCode() {
+		return this.promotionCode;
+	}
+
+	public void setPromotionCode(String promotionCode) {
+		this.promotionCode = promotionCode;
+		if(promotionCode != null){
+			putQueryParameter("PromotionCode", promotionCode);
+		}
+	}
+
 	public String getZoneId() {
 		return this.zoneId;
 	}
@@ -523,6 +551,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.zoneIdSlave2 = zoneIdSlave2;
 		if(zoneIdSlave2 != null){
 			putQueryParameter("ZoneIdSlave2", zoneIdSlave2);
+		}
+	}
+
+	public Boolean getAutoUseCoupon() {
+		return this.autoUseCoupon;
+	}
+
+	public void setAutoUseCoupon(Boolean autoUseCoupon) {
+		this.autoUseCoupon = autoUseCoupon;
+		if(autoUseCoupon != null){
+			putQueryParameter("AutoUseCoupon", autoUseCoupon.toString());
 		}
 	}
 

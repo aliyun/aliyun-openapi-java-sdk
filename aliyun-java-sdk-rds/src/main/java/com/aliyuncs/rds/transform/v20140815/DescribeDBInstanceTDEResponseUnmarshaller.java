@@ -27,8 +27,9 @@ public class DescribeDBInstanceTDEResponseUnmarshaller {
 	public static DescribeDBInstanceTDEResponse unmarshall(DescribeDBInstanceTDEResponse describeDBInstanceTDEResponse, UnmarshallerContext _ctx) {
 		
 		describeDBInstanceTDEResponse.setRequestId(_ctx.stringValue("DescribeDBInstanceTDEResponse.RequestId"));
-		describeDBInstanceTDEResponse.setTDEStatus(_ctx.stringValue("DescribeDBInstanceTDEResponse.TDEStatus"));
 		describeDBInstanceTDEResponse.setTDEMode(_ctx.stringValue("DescribeDBInstanceTDEResponse.TDEMode"));
+		describeDBInstanceTDEResponse.setTDEStatus(_ctx.stringValue("DescribeDBInstanceTDEResponse.TDEStatus"));
+		describeDBInstanceTDEResponse.setEncryptionKey(_ctx.stringValue("DescribeDBInstanceTDEResponse.EncryptionKey"));
 
 		List<Database> databases = new ArrayList<Database>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDBInstanceTDEResponse.Databases.Length"); i++) {

@@ -25,45 +25,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeModifyParameterLogResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Integer pageRecordCount;
-
-	private Integer totalRecordCount;
-
 	private String dBInstanceId;
 
 	private String engine;
 
-	private Integer pageNumber;
-
 	private String engineVersion;
 
+	private Integer pageNumber;
+
+	private Integer pageRecordCount;
+
+	private String requestId;
+
+	private Integer totalRecordCount;
+
 	private List<ParameterChangeLog> items;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Integer getPageRecordCount() {
-		return this.pageRecordCount;
-	}
-
-	public void setPageRecordCount(Integer pageRecordCount) {
-		this.pageRecordCount = pageRecordCount;
-	}
-
-	public Integer getTotalRecordCount() {
-		return this.totalRecordCount;
-	}
-
-	public void setTotalRecordCount(Integer totalRecordCount) {
-		this.totalRecordCount = totalRecordCount;
-	}
 
 	public String getDBInstanceId() {
 		return this.dBInstanceId;
@@ -81,6 +57,14 @@ public class DescribeModifyParameterLogResponse extends AcsResponse {
 		this.engine = engine;
 	}
 
+	public String getEngineVersion() {
+		return this.engineVersion;
+	}
+
+	public void setEngineVersion(String engineVersion) {
+		this.engineVersion = engineVersion;
+	}
+
 	public Integer getPageNumber() {
 		return this.pageNumber;
 	}
@@ -89,12 +73,28 @@ public class DescribeModifyParameterLogResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public String getEngineVersion() {
-		return this.engineVersion;
+	public Integer getPageRecordCount() {
+		return this.pageRecordCount;
 	}
 
-	public void setEngineVersion(String engineVersion) {
-		this.engineVersion = engineVersion;
+	public void setPageRecordCount(Integer pageRecordCount) {
+		this.pageRecordCount = pageRecordCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getTotalRecordCount() {
+		return this.totalRecordCount;
+	}
+
+	public void setTotalRecordCount(Integer totalRecordCount) {
+		this.totalRecordCount = totalRecordCount;
 	}
 
 	public List<ParameterChangeLog> getItems() {
@@ -107,22 +107,30 @@ public class DescribeModifyParameterLogResponse extends AcsResponse {
 
 	public static class ParameterChangeLog {
 
-		private String status;
+		private String modifyTime;
+
+		private String newParameterValue;
 
 		private String oldParameterValue;
 
 		private String parameterName;
 
-		private String newParameterValue;
+		private String status;
 
-		private String modifyTime;
-
-		public String getStatus() {
-			return this.status;
+		public String getModifyTime() {
+			return this.modifyTime;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setModifyTime(String modifyTime) {
+			this.modifyTime = modifyTime;
+		}
+
+		public String getNewParameterValue() {
+			return this.newParameterValue;
+		}
+
+		public void setNewParameterValue(String newParameterValue) {
+			this.newParameterValue = newParameterValue;
 		}
 
 		public String getOldParameterValue() {
@@ -141,20 +149,12 @@ public class DescribeModifyParameterLogResponse extends AcsResponse {
 			this.parameterName = parameterName;
 		}
 
-		public String getNewParameterValue() {
-			return this.newParameterValue;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setNewParameterValue(String newParameterValue) {
-			this.newParameterValue = newParameterValue;
-		}
-
-		public String getModifyTime() {
-			return this.modifyTime;
-		}
-
-		public void setModifyTime(String modifyTime) {
-			this.modifyTime = modifyTime;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 	}
 

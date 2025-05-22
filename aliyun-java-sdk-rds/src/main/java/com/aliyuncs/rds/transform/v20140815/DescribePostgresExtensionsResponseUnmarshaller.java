@@ -30,37 +30,39 @@ public class DescribePostgresExtensionsResponseUnmarshaller {
 		describePostgresExtensionsResponse.setRequestId(_ctx.stringValue("DescribePostgresExtensionsResponse.RequestId"));
 		describePostgresExtensionsResponse.setOverview(_ctx.mapValue("DescribePostgresExtensionsResponse.Overview"));
 
-		List<Extension> uninstalledExtensions = new ArrayList<Extension>();
-		for (int i = 0; i < _ctx.lengthValue("DescribePostgresExtensionsResponse.UninstalledExtensions.Length"); i++) {
-			Extension extension = new Extension();
-			extension.setName(_ctx.stringValue("DescribePostgresExtensionsResponse.UninstalledExtensions["+ i +"].Name"));
-			extension.setDefaultVersion(_ctx.stringValue("DescribePostgresExtensionsResponse.UninstalledExtensions["+ i +"].DefaultVersion"));
-			extension.setInstalledVersion(_ctx.stringValue("DescribePostgresExtensionsResponse.UninstalledExtensions["+ i +"].InstalledVersion"));
-			extension.setComment(_ctx.stringValue("DescribePostgresExtensionsResponse.UninstalledExtensions["+ i +"].Comment"));
-			extension.setOwner(_ctx.stringValue("DescribePostgresExtensionsResponse.UninstalledExtensions["+ i +"].Owner"));
-			extension.setPriority(_ctx.stringValue("DescribePostgresExtensionsResponse.UninstalledExtensions["+ i +"].Priority"));
-			extension.setRequires(_ctx.stringValue("DescribePostgresExtensionsResponse.UninstalledExtensions["+ i +"].Requires"));
-			extension.setCategory(_ctx.stringValue("DescribePostgresExtensionsResponse.UninstalledExtensions["+ i +"].Category"));
-
-			uninstalledExtensions.add(extension);
-		}
-		describePostgresExtensionsResponse.setUninstalledExtensions(uninstalledExtensions);
-
 		List<Extension> installedExtensions = new ArrayList<Extension>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePostgresExtensionsResponse.InstalledExtensions.Length"); i++) {
-			Extension extension1 = new Extension();
-			extension1.setName(_ctx.stringValue("DescribePostgresExtensionsResponse.InstalledExtensions["+ i +"].Name"));
-			extension1.setDefaultVersion(_ctx.stringValue("DescribePostgresExtensionsResponse.InstalledExtensions["+ i +"].DefaultVersion"));
-			extension1.setInstalledVersion(_ctx.stringValue("DescribePostgresExtensionsResponse.InstalledExtensions["+ i +"].InstalledVersion"));
-			extension1.setComment(_ctx.stringValue("DescribePostgresExtensionsResponse.InstalledExtensions["+ i +"].Comment"));
-			extension1.setOwner(_ctx.stringValue("DescribePostgresExtensionsResponse.InstalledExtensions["+ i +"].Owner"));
-			extension1.setPriority(_ctx.stringValue("DescribePostgresExtensionsResponse.InstalledExtensions["+ i +"].Priority"));
-			extension1.setRequires(_ctx.stringValue("DescribePostgresExtensionsResponse.InstalledExtensions["+ i +"].Requires"));
-			extension1.setCategory(_ctx.stringValue("DescribePostgresExtensionsResponse.InstalledExtensions["+ i +"].Category"));
+			Extension extension = new Extension();
+			extension.setCategory(_ctx.stringValue("DescribePostgresExtensionsResponse.InstalledExtensions["+ i +"].Category"));
+			extension.setComment(_ctx.stringValue("DescribePostgresExtensionsResponse.InstalledExtensions["+ i +"].Comment"));
+			extension.setDefaultVersion(_ctx.stringValue("DescribePostgresExtensionsResponse.InstalledExtensions["+ i +"].DefaultVersion"));
+			extension.setInstalledVersion(_ctx.stringValue("DescribePostgresExtensionsResponse.InstalledExtensions["+ i +"].InstalledVersion"));
+			extension.setName(_ctx.stringValue("DescribePostgresExtensionsResponse.InstalledExtensions["+ i +"].Name"));
+			extension.setOwner(_ctx.stringValue("DescribePostgresExtensionsResponse.InstalledExtensions["+ i +"].Owner"));
+			extension.setPriority(_ctx.stringValue("DescribePostgresExtensionsResponse.InstalledExtensions["+ i +"].Priority"));
+			extension.setRequires(_ctx.stringValue("DescribePostgresExtensionsResponse.InstalledExtensions["+ i +"].Requires"));
+			extension.setUid(_ctx.stringValue("DescribePostgresExtensionsResponse.InstalledExtensions["+ i +"].Uid"));
 
-			installedExtensions.add(extension1);
+			installedExtensions.add(extension);
 		}
 		describePostgresExtensionsResponse.setInstalledExtensions(installedExtensions);
+
+		List<Extension> uninstalledExtensions = new ArrayList<Extension>();
+		for (int i = 0; i < _ctx.lengthValue("DescribePostgresExtensionsResponse.UninstalledExtensions.Length"); i++) {
+			Extension extension1 = new Extension();
+			extension1.setCategory(_ctx.stringValue("DescribePostgresExtensionsResponse.UninstalledExtensions["+ i +"].Category"));
+			extension1.setComment(_ctx.stringValue("DescribePostgresExtensionsResponse.UninstalledExtensions["+ i +"].Comment"));
+			extension1.setDefaultVersion(_ctx.stringValue("DescribePostgresExtensionsResponse.UninstalledExtensions["+ i +"].DefaultVersion"));
+			extension1.setInstalledVersion(_ctx.stringValue("DescribePostgresExtensionsResponse.UninstalledExtensions["+ i +"].InstalledVersion"));
+			extension1.setName(_ctx.stringValue("DescribePostgresExtensionsResponse.UninstalledExtensions["+ i +"].Name"));
+			extension1.setOwner(_ctx.stringValue("DescribePostgresExtensionsResponse.UninstalledExtensions["+ i +"].Owner"));
+			extension1.setPriority(_ctx.stringValue("DescribePostgresExtensionsResponse.UninstalledExtensions["+ i +"].Priority"));
+			extension1.setRequires(_ctx.stringValue("DescribePostgresExtensionsResponse.UninstalledExtensions["+ i +"].Requires"));
+			extension1.setUid(_ctx.stringValue("DescribePostgresExtensionsResponse.UninstalledExtensions["+ i +"].Uid"));
+
+			uninstalledExtensions.add(extension1);
+		}
+		describePostgresExtensionsResponse.setUninstalledExtensions(uninstalledExtensions);
 	 
 	 	return describePostgresExtensionsResponse;
 	}

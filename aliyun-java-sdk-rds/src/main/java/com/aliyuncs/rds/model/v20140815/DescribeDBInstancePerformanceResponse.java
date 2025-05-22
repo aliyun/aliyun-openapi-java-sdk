@@ -25,33 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDBInstancePerformanceResponse extends AcsResponse {
 
-	private String endTime;
-
-	private String startTime;
-
 	private String dBInstanceId;
+
+	private String endTime;
 
 	private String engine;
 
 	private String requestId;
 
+	private String startTime;
+
 	private List<PerformanceKey> performanceKeys;
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-	}
 
 	public String getDBInstanceId() {
 		return this.dBInstanceId;
@@ -59,6 +43,14 @@ public class DescribeDBInstancePerformanceResponse extends AcsResponse {
 
 	public void setDBInstanceId(String dBInstanceId) {
 		this.dBInstanceId = dBInstanceId;
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
 	}
 
 	public String getEngine() {
@@ -77,6 +69,14 @@ public class DescribeDBInstancePerformanceResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+	}
+
 	public List<PerformanceKey> getPerformanceKeys() {
 		return this.performanceKeys;
 	}
@@ -89,9 +89,9 @@ public class DescribeDBInstancePerformanceResponse extends AcsResponse {
 
 		private String key;
 
-		private String valueFormat;
-
 		private String unit;
+
+		private String valueFormat;
 
 		private List<PerformanceValue> values;
 
@@ -103,20 +103,20 @@ public class DescribeDBInstancePerformanceResponse extends AcsResponse {
 			this.key = key;
 		}
 
-		public String getValueFormat() {
-			return this.valueFormat;
-		}
-
-		public void setValueFormat(String valueFormat) {
-			this.valueFormat = valueFormat;
-		}
-
 		public String getUnit() {
 			return this.unit;
 		}
 
 		public void setUnit(String unit) {
 			this.unit = unit;
+		}
+
+		public String getValueFormat() {
+			return this.valueFormat;
+		}
+
+		public void setValueFormat(String valueFormat) {
+			this.valueFormat = valueFormat;
 		}
 
 		public List<PerformanceValue> getValues() {

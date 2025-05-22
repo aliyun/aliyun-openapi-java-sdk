@@ -33,29 +33,29 @@ public class DescribeDatabasesResponseUnmarshaller {
 		List<Database> databases = new ArrayList<Database>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDatabasesResponse.Databases.Length"); i++) {
 			Database database = new Database();
-			database.setDBDescription(_ctx.stringValue("DescribeDatabasesResponse.Databases["+ i +"].DBDescription"));
-			database.setDBStatus(_ctx.stringValue("DescribeDatabasesResponse.Databases["+ i +"].DBStatus"));
-			database.setDBName(_ctx.stringValue("DescribeDatabasesResponse.Databases["+ i +"].DBName"));
-			database.setDBInstanceId(_ctx.stringValue("DescribeDatabasesResponse.Databases["+ i +"].DBInstanceId"));
-			database.setEngine(_ctx.stringValue("DescribeDatabasesResponse.Databases["+ i +"].Engine"));
 			database.setCharacterSetName(_ctx.stringValue("DescribeDatabasesResponse.Databases["+ i +"].CharacterSetName"));
 			database.setCollate(_ctx.stringValue("DescribeDatabasesResponse.Databases["+ i +"].Collate"));
-			database.setCtype(_ctx.stringValue("DescribeDatabasesResponse.Databases["+ i +"].Ctype"));
 			database.setConnLimit(_ctx.stringValue("DescribeDatabasesResponse.Databases["+ i +"].ConnLimit"));
-			database.setTablespace(_ctx.stringValue("DescribeDatabasesResponse.Databases["+ i +"].Tablespace"));
-			database.setResourceGroupId(_ctx.stringValue("DescribeDatabasesResponse.Databases["+ i +"].ResourceGroupId"));
+			database.setCtype(_ctx.stringValue("DescribeDatabasesResponse.Databases["+ i +"].Ctype"));
+			database.setDBDescription(_ctx.stringValue("DescribeDatabasesResponse.Databases["+ i +"].DBDescription"));
+			database.setDBInstanceId(_ctx.stringValue("DescribeDatabasesResponse.Databases["+ i +"].DBInstanceId"));
+			database.setDBName(_ctx.stringValue("DescribeDatabasesResponse.Databases["+ i +"].DBName"));
+			database.setDBStatus(_ctx.stringValue("DescribeDatabasesResponse.Databases["+ i +"].DBStatus"));
+			database.setEngine(_ctx.stringValue("DescribeDatabasesResponse.Databases["+ i +"].Engine"));
 			database.setPageNumber(_ctx.integerValue("DescribeDatabasesResponse.Databases["+ i +"].PageNumber"));
 			database.setPageSize(_ctx.integerValue("DescribeDatabasesResponse.Databases["+ i +"].PageSize"));
+			database.setResourceGroupId(_ctx.stringValue("DescribeDatabasesResponse.Databases["+ i +"].ResourceGroupId"));
+			database.setTablespace(_ctx.stringValue("DescribeDatabasesResponse.Databases["+ i +"].Tablespace"));
 			database.setTotalCount(_ctx.integerValue("DescribeDatabasesResponse.Databases["+ i +"].TotalCount"));
+
+			List<Map<Object, Object>> advancedInfo = _ctx.listMapValue("DescribeDatabasesResponse.Databases["+ i +"].AdvancedInfo");
+			database.setAdvancedInfo(advancedInfo);
 
 			List<Map<Object, Object>> basicInfo = _ctx.listMapValue("DescribeDatabasesResponse.Databases["+ i +"].BasicInfo");
 			database.setBasicInfo(basicInfo);
 
 			List<Map<Object, Object>> runtimeInfo = _ctx.listMapValue("DescribeDatabasesResponse.Databases["+ i +"].RuntimeInfo");
 			database.setRuntimeInfo(runtimeInfo);
-
-			List<Map<Object, Object>> advancedInfo = _ctx.listMapValue("DescribeDatabasesResponse.Databases["+ i +"].AdvancedInfo");
-			database.setAdvancedInfo(advancedInfo);
 
 			List<AccountPrivilegeInfo> accounts = new ArrayList<AccountPrivilegeInfo>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDatabasesResponse.Databases["+ i +"].Accounts.Length"); j++) {

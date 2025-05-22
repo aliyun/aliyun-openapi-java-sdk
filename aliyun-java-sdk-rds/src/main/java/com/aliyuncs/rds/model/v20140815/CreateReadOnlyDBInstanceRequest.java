@@ -59,6 +59,8 @@ public class CreateReadOnlyDBInstanceRequest extends RpcAcsRequest<CreateReadOnl
 
 	private String port;
 
+	private String promotionCode;
+
 	private String zoneId;
 
 	private String instanceNetworkType;
@@ -66,6 +68,8 @@ public class CreateReadOnlyDBInstanceRequest extends RpcAcsRequest<CreateReadOnl
 	private String clientToken;
 
 	private String instructionSetArch;
+
+	private Boolean autoUseCoupon;
 
 	private String ioAccelerationEnabled;
 
@@ -290,6 +294,17 @@ public class CreateReadOnlyDBInstanceRequest extends RpcAcsRequest<CreateReadOnl
 		}
 	}
 
+	public String getPromotionCode() {
+		return this.promotionCode;
+	}
+
+	public void setPromotionCode(String promotionCode) {
+		this.promotionCode = promotionCode;
+		if(promotionCode != null){
+			putQueryParameter("PromotionCode", promotionCode);
+		}
+	}
+
 	public String getZoneId() {
 		return this.zoneId;
 	}
@@ -331,6 +346,17 @@ public class CreateReadOnlyDBInstanceRequest extends RpcAcsRequest<CreateReadOnl
 		this.instructionSetArch = instructionSetArch;
 		if(instructionSetArch != null){
 			putQueryParameter("InstructionSetArch", instructionSetArch);
+		}
+	}
+
+	public Boolean getAutoUseCoupon() {
+		return this.autoUseCoupon;
+	}
+
+	public void setAutoUseCoupon(Boolean autoUseCoupon) {
+		this.autoUseCoupon = autoUseCoupon;
+		if(autoUseCoupon != null){
+			putQueryParameter("AutoUseCoupon", autoUseCoupon.toString());
 		}
 	}
 

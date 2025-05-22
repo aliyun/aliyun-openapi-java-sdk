@@ -23,8 +23,8 @@ public class CheckCloudResourceAuthorizedResponseUnmarshaller {
 	public static CheckCloudResourceAuthorizedResponse unmarshall(CheckCloudResourceAuthorizedResponse checkCloudResourceAuthorizedResponse, UnmarshallerContext _ctx) {
 		
 		checkCloudResourceAuthorizedResponse.setRequestId(_ctx.stringValue("CheckCloudResourceAuthorizedResponse.RequestId"));
-		checkCloudResourceAuthorizedResponse.setRoleArn(_ctx.stringValue("CheckCloudResourceAuthorizedResponse.RoleArn"));
 		checkCloudResourceAuthorizedResponse.setAuthorizationState(_ctx.integerValue("CheckCloudResourceAuthorizedResponse.AuthorizationState"));
+		checkCloudResourceAuthorizedResponse.setRoleArn(_ctx.stringValue("CheckCloudResourceAuthorizedResponse.RoleArn"));
 	 
 	 	return checkCloudResourceAuthorizedResponse;
 	}

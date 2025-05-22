@@ -26,9 +26,9 @@ import com.aliyuncs.rds.Endpoint;
 public class UntagResourcesRequest extends RpcAcsRequest<UntagResourcesResponse> {
 	   
 
-	private Boolean all;
-
 	private Long resourceOwnerId;
+
+	private Boolean all;
 
 	private List<String> resourceIds;
 
@@ -48,17 +48,6 @@ public class UntagResourcesRequest extends RpcAcsRequest<UntagResourcesResponse>
 		} catch (Exception e) {}
 	}
 
-	public Boolean getAll() {
-		return this.all;
-	}
-
-	public void setAll(Boolean all) {
-		this.all = all;
-		if(all != null){
-			putQueryParameter("All", all.toString());
-		}
-	}
-
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
@@ -67,6 +56,17 @@ public class UntagResourcesRequest extends RpcAcsRequest<UntagResourcesResponse>
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public Boolean getAll() {
+		return this.all;
+	}
+
+	public void setAll(Boolean all) {
+		this.all = all;
+		if(all != null){
+			putQueryParameter("All", all.toString());
 		}
 	}
 

@@ -33,14 +33,14 @@ public class DescribeOssDownloadsResponseUnmarshaller {
 		List<OssDownload> items = new ArrayList<OssDownload>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeOssDownloadsResponse.Items.Length"); i++) {
 			OssDownload ossDownload = new OssDownload();
-			ossDownload.setEndTime(_ctx.stringValue("DescribeOssDownloadsResponse.Items["+ i +"].EndTime"));
-			ossDownload.setStatus(_ctx.stringValue("DescribeOssDownloadsResponse.Items["+ i +"].Status"));
-			ossDownload.setDescription(_ctx.stringValue("DescribeOssDownloadsResponse.Items["+ i +"].Description"));
-			ossDownload.setCreateTime(_ctx.stringValue("DescribeOssDownloadsResponse.Items["+ i +"].CreateTime"));
 			ossDownload.setBackupMode(_ctx.stringValue("DescribeOssDownloadsResponse.Items["+ i +"].BackupMode"));
-			ossDownload.setIsAvailable(_ctx.stringValue("DescribeOssDownloadsResponse.Items["+ i +"].IsAvailable"));
+			ossDownload.setCreateTime(_ctx.stringValue("DescribeOssDownloadsResponse.Items["+ i +"].CreateTime"));
+			ossDownload.setDescription(_ctx.stringValue("DescribeOssDownloadsResponse.Items["+ i +"].Description"));
+			ossDownload.setEndTime(_ctx.stringValue("DescribeOssDownloadsResponse.Items["+ i +"].EndTime"));
 			ossDownload.setFileName(_ctx.stringValue("DescribeOssDownloadsResponse.Items["+ i +"].FileName"));
 			ossDownload.setFileSize(_ctx.stringValue("DescribeOssDownloadsResponse.Items["+ i +"].FileSize"));
+			ossDownload.setIsAvailable(_ctx.stringValue("DescribeOssDownloadsResponse.Items["+ i +"].IsAvailable"));
+			ossDownload.setStatus(_ctx.stringValue("DescribeOssDownloadsResponse.Items["+ i +"].Status"));
 
 			items.add(ossDownload);
 		}

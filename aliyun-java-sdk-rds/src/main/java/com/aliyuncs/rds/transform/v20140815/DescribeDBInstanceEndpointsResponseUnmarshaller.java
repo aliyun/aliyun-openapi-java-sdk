@@ -38,34 +38,34 @@ public class DescribeDBInstanceEndpointsResponseUnmarshaller {
 		List<DBInstanceEndpoint> dBInstanceEndpoints = new ArrayList<DBInstanceEndpoint>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDBInstanceEndpointsResponse.Data.DBInstanceEndpoints.Length"); i++) {
 			DBInstanceEndpoint dBInstanceEndpoint = new DBInstanceEndpoint();
+			dBInstanceEndpoint.setEndpointDescription(_ctx.stringValue("DescribeDBInstanceEndpointsResponse.Data.DBInstanceEndpoints["+ i +"].EndpointDescription"));
 			dBInstanceEndpoint.setEndpointId(_ctx.stringValue("DescribeDBInstanceEndpointsResponse.Data.DBInstanceEndpoints["+ i +"].EndpointId"));
 			dBInstanceEndpoint.setEndpointType(_ctx.stringValue("DescribeDBInstanceEndpointsResponse.Data.DBInstanceEndpoints["+ i +"].EndpointType"));
-			dBInstanceEndpoint.setEndpointDescription(_ctx.stringValue("DescribeDBInstanceEndpointsResponse.Data.DBInstanceEndpoints["+ i +"].EndpointDescription"));
+
+			List<AddressItem> addressItems = new ArrayList<AddressItem>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeDBInstanceEndpointsResponse.Data.DBInstanceEndpoints["+ i +"].AddressItems.Length"); j++) {
+				AddressItem addressItem = new AddressItem();
+				addressItem.setConnectionString(_ctx.stringValue("DescribeDBInstanceEndpointsResponse.Data.DBInstanceEndpoints["+ i +"].AddressItems["+ j +"].ConnectionString"));
+				addressItem.setIpAddress(_ctx.stringValue("DescribeDBInstanceEndpointsResponse.Data.DBInstanceEndpoints["+ i +"].AddressItems["+ j +"].IpAddress"));
+				addressItem.setIpType(_ctx.stringValue("DescribeDBInstanceEndpointsResponse.Data.DBInstanceEndpoints["+ i +"].AddressItems["+ j +"].IpType"));
+				addressItem.setPort(_ctx.stringValue("DescribeDBInstanceEndpointsResponse.Data.DBInstanceEndpoints["+ i +"].AddressItems["+ j +"].Port"));
+				addressItem.setVSwitchId(_ctx.stringValue("DescribeDBInstanceEndpointsResponse.Data.DBInstanceEndpoints["+ i +"].AddressItems["+ j +"].VSwitchId"));
+				addressItem.setVpcId(_ctx.stringValue("DescribeDBInstanceEndpointsResponse.Data.DBInstanceEndpoints["+ i +"].AddressItems["+ j +"].VpcId"));
+
+				addressItems.add(addressItem);
+			}
+			dBInstanceEndpoint.setAddressItems(addressItems);
 
 			List<NodeItem> nodeItems = new ArrayList<NodeItem>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDBInstanceEndpointsResponse.Data.DBInstanceEndpoints["+ i +"].NodeItems.Length"); j++) {
 				NodeItem nodeItem = new NodeItem();
-				nodeItem.setNodeId(_ctx.stringValue("DescribeDBInstanceEndpointsResponse.Data.DBInstanceEndpoints["+ i +"].NodeItems["+ j +"].NodeId"));
 				nodeItem.setDBInstanceId(_ctx.stringValue("DescribeDBInstanceEndpointsResponse.Data.DBInstanceEndpoints["+ i +"].NodeItems["+ j +"].DBInstanceId"));
+				nodeItem.setNodeId(_ctx.stringValue("DescribeDBInstanceEndpointsResponse.Data.DBInstanceEndpoints["+ i +"].NodeItems["+ j +"].NodeId"));
 				nodeItem.setWeight(_ctx.integerValue("DescribeDBInstanceEndpointsResponse.Data.DBInstanceEndpoints["+ i +"].NodeItems["+ j +"].Weight"));
 
 				nodeItems.add(nodeItem);
 			}
 			dBInstanceEndpoint.setNodeItems(nodeItems);
-
-			List<AddressItem> addressItems = new ArrayList<AddressItem>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeDBInstanceEndpointsResponse.Data.DBInstanceEndpoints["+ i +"].AddressItems.Length"); j++) {
-				AddressItem addressItem = new AddressItem();
-				addressItem.setVpcId(_ctx.stringValue("DescribeDBInstanceEndpointsResponse.Data.DBInstanceEndpoints["+ i +"].AddressItems["+ j +"].VpcId"));
-				addressItem.setVSwitchId(_ctx.stringValue("DescribeDBInstanceEndpointsResponse.Data.DBInstanceEndpoints["+ i +"].AddressItems["+ j +"].VSwitchId"));
-				addressItem.setIpType(_ctx.stringValue("DescribeDBInstanceEndpointsResponse.Data.DBInstanceEndpoints["+ i +"].AddressItems["+ j +"].IpType"));
-				addressItem.setPort(_ctx.stringValue("DescribeDBInstanceEndpointsResponse.Data.DBInstanceEndpoints["+ i +"].AddressItems["+ j +"].Port"));
-				addressItem.setConnectionString(_ctx.stringValue("DescribeDBInstanceEndpointsResponse.Data.DBInstanceEndpoints["+ i +"].AddressItems["+ j +"].ConnectionString"));
-				addressItem.setIpAddress(_ctx.stringValue("DescribeDBInstanceEndpointsResponse.Data.DBInstanceEndpoints["+ i +"].AddressItems["+ j +"].IpAddress"));
-
-				addressItems.add(addressItem);
-			}
-			dBInstanceEndpoint.setAddressItems(addressItems);
 
 			dBInstanceEndpoints.add(dBInstanceEndpoint);
 		}

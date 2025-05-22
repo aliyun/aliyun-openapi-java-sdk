@@ -101,6 +101,18 @@ public class DescribeUpgradeMajorVersionTasksResponse extends AcsResponse {
 
 		private String detail;
 
+		private String switchEndTime;
+
+		private Integer totalLogicRepLatencyMB;
+
+		private Integer totalLogicRepDelayTime;
+
+		private String zeroDownTimeConnectionString;
+
+		private Integer zeroDownTimePort;
+
+		private Boolean cutOver;
+
 		public String getTargetMajorVersion() {
 			return this.targetMajorVersion;
 		}
@@ -195,6 +207,54 @@ public class DescribeUpgradeMajorVersionTasksResponse extends AcsResponse {
 
 		public void setDetail(String detail) {
 			this.detail = detail;
+		}
+
+		public String getSwitchEndTime() {
+			return this.switchEndTime;
+		}
+
+		public void setSwitchEndTime(String switchEndTime) {
+			this.switchEndTime = switchEndTime;
+		}
+
+		public Integer getTotalLogicRepLatencyMB() {
+			return this.totalLogicRepLatencyMB;
+		}
+
+		public void setTotalLogicRepLatencyMB(Integer totalLogicRepLatencyMB) {
+			this.totalLogicRepLatencyMB = totalLogicRepLatencyMB;
+		}
+
+		public Integer getTotalLogicRepDelayTime() {
+			return this.totalLogicRepDelayTime;
+		}
+
+		public void setTotalLogicRepDelayTime(Integer totalLogicRepDelayTime) {
+			this.totalLogicRepDelayTime = totalLogicRepDelayTime;
+		}
+
+		public String getZeroDownTimeConnectionString() {
+			return this.zeroDownTimeConnectionString;
+		}
+
+		public void setZeroDownTimeConnectionString(String zeroDownTimeConnectionString) {
+			this.zeroDownTimeConnectionString = zeroDownTimeConnectionString;
+		}
+
+		public Integer getZeroDownTimePort() {
+			return this.zeroDownTimePort;
+		}
+
+		public void setZeroDownTimePort(Integer zeroDownTimePort) {
+			this.zeroDownTimePort = zeroDownTimePort;
+		}
+
+		public Boolean getCutOver() {
+			return this.cutOver;
+		}
+
+		public void setCutOver(Boolean cutOver) {
+			this.cutOver = cutOver;
 		}
 	}
 

@@ -26,9 +26,9 @@ public class UpgradeDBInstanceMajorVersionPrecheckResponse extends AcsResponse {
 
 	private String dBInstanceName;
 
-	private String targetMajorVersion;
-
 	private String requestId;
+
+	private String targetMajorVersion;
 
 	private String taskId;
 
@@ -40,20 +40,20 @@ public class UpgradeDBInstanceMajorVersionPrecheckResponse extends AcsResponse {
 		this.dBInstanceName = dBInstanceName;
 	}
 
-	public String getTargetMajorVersion() {
-		return this.targetMajorVersion;
-	}
-
-	public void setTargetMajorVersion(String targetMajorVersion) {
-		this.targetMajorVersion = targetMajorVersion;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getTargetMajorVersion() {
+		return this.targetMajorVersion;
+	}
+
+	public void setTargetMajorVersion(String targetMajorVersion) {
+		this.targetMajorVersion = targetMajorVersion;
 	}
 
 	public String getTaskId() {

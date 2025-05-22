@@ -23,25 +23,25 @@ public class DescribeDBInstanceSSLResponseUnmarshaller {
 	public static DescribeDBInstanceSSLResponse unmarshall(DescribeDBInstanceSSLResponse describeDBInstanceSSLResponse, UnmarshallerContext _ctx) {
 		
 		describeDBInstanceSSLResponse.setRequestId(_ctx.stringValue("DescribeDBInstanceSSLResponse.RequestId"));
-		describeDBInstanceSSLResponse.setServerCert(_ctx.stringValue("DescribeDBInstanceSSLResponse.ServerCert"));
-		describeDBInstanceSSLResponse.setClientCACertExpireTime(_ctx.stringValue("DescribeDBInstanceSSLResponse.ClientCACertExpireTime"));
-		describeDBInstanceSSLResponse.setRequireUpdateItem(_ctx.stringValue("DescribeDBInstanceSSLResponse.RequireUpdateItem"));
-		describeDBInstanceSSLResponse.setServerCAUrl(_ctx.stringValue("DescribeDBInstanceSSLResponse.ServerCAUrl"));
-		describeDBInstanceSSLResponse.setRequireUpdate(_ctx.stringValue("DescribeDBInstanceSSLResponse.RequireUpdate"));
-		describeDBInstanceSSLResponse.setClientCertRevocationList(_ctx.stringValue("DescribeDBInstanceSSLResponse.ClientCertRevocationList"));
-		describeDBInstanceSSLResponse.setSSLExpireTime(_ctx.stringValue("DescribeDBInstanceSSLResponse.SSLExpireTime"));
-		describeDBInstanceSSLResponse.setCAType(_ctx.stringValue("DescribeDBInstanceSSLResponse.CAType"));
-		describeDBInstanceSSLResponse.setSSLCreateTime(_ctx.stringValue("DescribeDBInstanceSSLResponse.SSLCreateTime"));
-		describeDBInstanceSSLResponse.setReplicationACL(_ctx.stringValue("DescribeDBInstanceSSLResponse.ReplicationACL"));
 		describeDBInstanceSSLResponse.setACL(_ctx.stringValue("DescribeDBInstanceSSLResponse.ACL"));
-		describeDBInstanceSSLResponse.setLastModifyStatus(_ctx.stringValue("DescribeDBInstanceSSLResponse.LastModifyStatus"));
-		describeDBInstanceSSLResponse.setSSLEnabled(_ctx.stringValue("DescribeDBInstanceSSLResponse.SSLEnabled"));
-		describeDBInstanceSSLResponse.setConnectionString(_ctx.stringValue("DescribeDBInstanceSSLResponse.ConnectionString"));
-		describeDBInstanceSSLResponse.setRequireUpdateReason(_ctx.stringValue("DescribeDBInstanceSSLResponse.RequireUpdateReason"));
+		describeDBInstanceSSLResponse.setCAType(_ctx.stringValue("DescribeDBInstanceSSLResponse.CAType"));
 		describeDBInstanceSSLResponse.setClientCACert(_ctx.stringValue("DescribeDBInstanceSSLResponse.ClientCACert"));
-		describeDBInstanceSSLResponse.setServerKey(_ctx.stringValue("DescribeDBInstanceSSLResponse.ServerKey"));
-		describeDBInstanceSSLResponse.setModifyStatusReason(_ctx.stringValue("DescribeDBInstanceSSLResponse.ModifyStatusReason"));
+		describeDBInstanceSSLResponse.setClientCACertExpireTime(_ctx.stringValue("DescribeDBInstanceSSLResponse.ClientCACertExpireTime"));
+		describeDBInstanceSSLResponse.setClientCertRevocationList(_ctx.stringValue("DescribeDBInstanceSSLResponse.ClientCertRevocationList"));
+		describeDBInstanceSSLResponse.setConnectionString(_ctx.stringValue("DescribeDBInstanceSSLResponse.ConnectionString"));
 		describeDBInstanceSSLResponse.setForceEncryption(_ctx.stringValue("DescribeDBInstanceSSLResponse.ForceEncryption"));
+		describeDBInstanceSSLResponse.setLastModifyStatus(_ctx.stringValue("DescribeDBInstanceSSLResponse.LastModifyStatus"));
+		describeDBInstanceSSLResponse.setModifyStatusReason(_ctx.stringValue("DescribeDBInstanceSSLResponse.ModifyStatusReason"));
+		describeDBInstanceSSLResponse.setReplicationACL(_ctx.stringValue("DescribeDBInstanceSSLResponse.ReplicationACL"));
+		describeDBInstanceSSLResponse.setRequireUpdate(_ctx.stringValue("DescribeDBInstanceSSLResponse.RequireUpdate"));
+		describeDBInstanceSSLResponse.setRequireUpdateItem(_ctx.stringValue("DescribeDBInstanceSSLResponse.RequireUpdateItem"));
+		describeDBInstanceSSLResponse.setRequireUpdateReason(_ctx.stringValue("DescribeDBInstanceSSLResponse.RequireUpdateReason"));
+		describeDBInstanceSSLResponse.setSSLCreateTime(_ctx.stringValue("DescribeDBInstanceSSLResponse.SSLCreateTime"));
+		describeDBInstanceSSLResponse.setSSLEnabled(_ctx.stringValue("DescribeDBInstanceSSLResponse.SSLEnabled"));
+		describeDBInstanceSSLResponse.setSSLExpireTime(_ctx.stringValue("DescribeDBInstanceSSLResponse.SSLExpireTime"));
+		describeDBInstanceSSLResponse.setServerCAUrl(_ctx.stringValue("DescribeDBInstanceSSLResponse.ServerCAUrl"));
+		describeDBInstanceSSLResponse.setServerCert(_ctx.stringValue("DescribeDBInstanceSSLResponse.ServerCert"));
+		describeDBInstanceSSLResponse.setServerKey(_ctx.stringValue("DescribeDBInstanceSSLResponse.ServerKey"));
 		describeDBInstanceSSLResponse.setTlsVersion(_ctx.stringValue("DescribeDBInstanceSSLResponse.TlsVersion"));
 	 
 	 	return describeDBInstanceSSLResponse;

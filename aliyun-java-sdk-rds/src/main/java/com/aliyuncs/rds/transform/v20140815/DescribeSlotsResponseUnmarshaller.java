@@ -31,14 +31,14 @@ public class DescribeSlotsResponseUnmarshaller {
 		List<Slot> slots = new ArrayList<Slot>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSlotsResponse.Slots.Length"); i++) {
 			Slot slot = new Slot();
-			slot.setSlotName(_ctx.stringValue("DescribeSlotsResponse.Slots["+ i +"].SlotName"));
-			slot.setPlugin(_ctx.stringValue("DescribeSlotsResponse.Slots["+ i +"].Plugin"));
-			slot.setSlotType(_ctx.stringValue("DescribeSlotsResponse.Slots["+ i +"].SlotType"));
 			slot.setDatabase(_ctx.stringValue("DescribeSlotsResponse.Slots["+ i +"].Database"));
-			slot.setTemporary(_ctx.stringValue("DescribeSlotsResponse.Slots["+ i +"].Temporary"));
+			slot.setPlugin(_ctx.stringValue("DescribeSlotsResponse.Slots["+ i +"].Plugin"));
+			slot.setSlotName(_ctx.stringValue("DescribeSlotsResponse.Slots["+ i +"].SlotName"));
 			slot.setSlotStatus(_ctx.stringValue("DescribeSlotsResponse.Slots["+ i +"].SlotStatus"));
-			slot.setWalDelay(_ctx.stringValue("DescribeSlotsResponse.Slots["+ i +"].WalDelay"));
+			slot.setSlotType(_ctx.stringValue("DescribeSlotsResponse.Slots["+ i +"].SlotType"));
 			slot.setSubReplayLag(_ctx.stringValue("DescribeSlotsResponse.Slots["+ i +"].SubReplayLag"));
+			slot.setTemporary(_ctx.stringValue("DescribeSlotsResponse.Slots["+ i +"].Temporary"));
+			slot.setWalDelay(_ctx.stringValue("DescribeSlotsResponse.Slots["+ i +"].WalDelay"));
 
 			slots.add(slot);
 		}

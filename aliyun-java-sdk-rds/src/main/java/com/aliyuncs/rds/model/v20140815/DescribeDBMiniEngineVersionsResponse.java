@@ -27,13 +27,13 @@ public class DescribeDBMiniEngineVersionsResponse extends AcsResponse {
 
 	private String dBInstanceId;
 
-	private String requestId;
-
-	private Integer totalCount;
+	private Integer maxRecordsPerPage;
 
 	private Integer pageNumbers;
 
-	private Integer maxRecordsPerPage;
+	private String requestId;
+
+	private Integer totalCount;
 
 	private List<MinorVersionItemsItem> minorVersionItems;
 
@@ -43,6 +43,22 @@ public class DescribeDBMiniEngineVersionsResponse extends AcsResponse {
 
 	public void setDBInstanceId(String dBInstanceId) {
 		this.dBInstanceId = dBInstanceId;
+	}
+
+	public Integer getMaxRecordsPerPage() {
+		return this.maxRecordsPerPage;
+	}
+
+	public void setMaxRecordsPerPage(Integer maxRecordsPerPage) {
+		this.maxRecordsPerPage = maxRecordsPerPage;
+	}
+
+	public Integer getPageNumbers() {
+		return this.pageNumbers;
+	}
+
+	public void setPageNumbers(Integer pageNumbers) {
+		this.pageNumbers = pageNumbers;
 	}
 
 	public String getRequestId() {
@@ -61,22 +77,6 @@ public class DescribeDBMiniEngineVersionsResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageNumbers() {
-		return this.pageNumbers;
-	}
-
-	public void setPageNumbers(Integer pageNumbers) {
-		this.pageNumbers = pageNumbers;
-	}
-
-	public Integer getMaxRecordsPerPage() {
-		return this.maxRecordsPerPage;
-	}
-
-	public void setMaxRecordsPerPage(Integer maxRecordsPerPage) {
-		this.maxRecordsPerPage = maxRecordsPerPage;
-	}
-
 	public List<MinorVersionItemsItem> getMinorVersionItems() {
 		return this.minorVersionItems;
 	}
@@ -87,44 +87,68 @@ public class DescribeDBMiniEngineVersionsResponse extends AcsResponse {
 
 	public static class MinorVersionItemsItem {
 
-		private String releaseNote;
+		private String communityMinorVersion;
 
-		private String nodeType;
+		private String engine;
+
+		private String engineVersion;
+
+		private String expireDate;
+
+		private String expireStatus;
 
 		private Boolean isHotfixVersion;
 
-		private String engine;
+		private String minorVersion;
+
+		private String nodeType;
+
+		private String releaseNote;
 
 		private String releaseType;
 
 		private String statusDesc;
 
-		private String engineVersion;
-
-		private String minorVersion;
-
-		private String communityMinorVersion;
-
 		private String tag;
 
-		private String expireStatus;
-
-		private String expireDate;
-
-		public String getReleaseNote() {
-			return this.releaseNote;
+		public String getCommunityMinorVersion() {
+			return this.communityMinorVersion;
 		}
 
-		public void setReleaseNote(String releaseNote) {
-			this.releaseNote = releaseNote;
+		public void setCommunityMinorVersion(String communityMinorVersion) {
+			this.communityMinorVersion = communityMinorVersion;
 		}
 
-		public String getNodeType() {
-			return this.nodeType;
+		public String getEngine() {
+			return this.engine;
 		}
 
-		public void setNodeType(String nodeType) {
-			this.nodeType = nodeType;
+		public void setEngine(String engine) {
+			this.engine = engine;
+		}
+
+		public String getEngineVersion() {
+			return this.engineVersion;
+		}
+
+		public void setEngineVersion(String engineVersion) {
+			this.engineVersion = engineVersion;
+		}
+
+		public String getExpireDate() {
+			return this.expireDate;
+		}
+
+		public void setExpireDate(String expireDate) {
+			this.expireDate = expireDate;
+		}
+
+		public String getExpireStatus() {
+			return this.expireStatus;
+		}
+
+		public void setExpireStatus(String expireStatus) {
+			this.expireStatus = expireStatus;
 		}
 
 		public Boolean getIsHotfixVersion() {
@@ -135,12 +159,28 @@ public class DescribeDBMiniEngineVersionsResponse extends AcsResponse {
 			this.isHotfixVersion = isHotfixVersion;
 		}
 
-		public String getEngine() {
-			return this.engine;
+		public String getMinorVersion() {
+			return this.minorVersion;
 		}
 
-		public void setEngine(String engine) {
-			this.engine = engine;
+		public void setMinorVersion(String minorVersion) {
+			this.minorVersion = minorVersion;
+		}
+
+		public String getNodeType() {
+			return this.nodeType;
+		}
+
+		public void setNodeType(String nodeType) {
+			this.nodeType = nodeType;
+		}
+
+		public String getReleaseNote() {
+			return this.releaseNote;
+		}
+
+		public void setReleaseNote(String releaseNote) {
+			this.releaseNote = releaseNote;
 		}
 
 		public String getReleaseType() {
@@ -159,52 +199,12 @@ public class DescribeDBMiniEngineVersionsResponse extends AcsResponse {
 			this.statusDesc = statusDesc;
 		}
 
-		public String getEngineVersion() {
-			return this.engineVersion;
-		}
-
-		public void setEngineVersion(String engineVersion) {
-			this.engineVersion = engineVersion;
-		}
-
-		public String getMinorVersion() {
-			return this.minorVersion;
-		}
-
-		public void setMinorVersion(String minorVersion) {
-			this.minorVersion = minorVersion;
-		}
-
-		public String getCommunityMinorVersion() {
-			return this.communityMinorVersion;
-		}
-
-		public void setCommunityMinorVersion(String communityMinorVersion) {
-			this.communityMinorVersion = communityMinorVersion;
-		}
-
 		public String getTag() {
 			return this.tag;
 		}
 
 		public void setTag(String tag) {
 			this.tag = tag;
-		}
-
-		public String getExpireStatus() {
-			return this.expireStatus;
-		}
-
-		public void setExpireStatus(String expireStatus) {
-			this.expireStatus = expireStatus;
-		}
-
-		public String getExpireDate() {
-			return this.expireDate;
-		}
-
-		public void setExpireDate(String expireDate) {
-			this.expireDate = expireDate;
 		}
 	}
 

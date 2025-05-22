@@ -25,25 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeParametersResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String engine;
 
 	private String engineVersion;
+
+	private String requestId;
 
 	private List<DBInstanceParameter> configParameters;
 
 	private List<DBInstanceParameter1> runningParameters;
 
 	private ParamGroupInfo paramGroupInfo;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getEngine() {
 		return this.engine;
@@ -59,6 +51,14 @@ public class DescribeParametersResponse extends AcsResponse {
 
 	public void setEngineVersion(String engineVersion) {
 		this.engineVersion = engineVersion;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<DBInstanceParameter> getConfigParameters() {
@@ -120,6 +120,8 @@ public class DescribeParametersResponse extends AcsResponse {
 
 	public static class DBInstanceParameter1 {
 
+		private String parameterDefaultValue;
+
 		private String parameterDescription;
 
 		private String parameterName;
@@ -128,7 +130,13 @@ public class DescribeParametersResponse extends AcsResponse {
 
 		private String parameterValueRange;
 
-		private String parameterDefaultValue;
+		public String getParameterDefaultValue() {
+			return this.parameterDefaultValue;
+		}
+
+		public void setParameterDefaultValue(String parameterDefaultValue) {
+			this.parameterDefaultValue = parameterDefaultValue;
+		}
 
 		public String getParameterDescription() {
 			return this.parameterDescription;
@@ -161,32 +169,24 @@ public class DescribeParametersResponse extends AcsResponse {
 		public void setParameterValueRange(String parameterValueRange) {
 			this.parameterValueRange = parameterValueRange;
 		}
-
-		public String getParameterDefaultValue() {
-			return this.parameterDefaultValue;
-		}
-
-		public void setParameterDefaultValue(String parameterDefaultValue) {
-			this.parameterDefaultValue = parameterDefaultValue;
-		}
 	}
 
 	public static class ParamGroupInfo {
 
-		private String parameterGroupName;
+		private String paramGroupId;
 
 		private String parameterGroupDesc;
 
+		private String parameterGroupName;
+
 		private String parameterGroupType;
 
-		private String paramGroupId;
-
-		public String getParameterGroupName() {
-			return this.parameterGroupName;
+		public String getParamGroupId() {
+			return this.paramGroupId;
 		}
 
-		public void setParameterGroupName(String parameterGroupName) {
-			this.parameterGroupName = parameterGroupName;
+		public void setParamGroupId(String paramGroupId) {
+			this.paramGroupId = paramGroupId;
 		}
 
 		public String getParameterGroupDesc() {
@@ -197,20 +197,20 @@ public class DescribeParametersResponse extends AcsResponse {
 			this.parameterGroupDesc = parameterGroupDesc;
 		}
 
+		public String getParameterGroupName() {
+			return this.parameterGroupName;
+		}
+
+		public void setParameterGroupName(String parameterGroupName) {
+			this.parameterGroupName = parameterGroupName;
+		}
+
 		public String getParameterGroupType() {
 			return this.parameterGroupType;
 		}
 
 		public void setParameterGroupType(String parameterGroupType) {
 			this.parameterGroupType = parameterGroupType;
-		}
-
-		public String getParamGroupId() {
-			return this.paramGroupId;
-		}
-
-		public void setParamGroupId(String paramGroupId) {
-			this.paramGroupId = paramGroupId;
 		}
 	}
 

@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDBInstancesForCloneResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer pageNumber;
 
 	private Integer pageRecordCount;
 
+	private String requestId;
+
 	private Integer totalRecordCount;
 
 	private List<DBInstance> items;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -57,6 +49,14 @@ public class DescribeDBInstancesForCloneResponse extends AcsResponse {
 
 	public void setPageRecordCount(Integer pageRecordCount) {
 		this.pageRecordCount = pageRecordCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getTotalRecordCount() {
@@ -77,122 +77,74 @@ public class DescribeDBInstancesForCloneResponse extends AcsResponse {
 
 	public static class DBInstance {
 
-		private String vpcId;
-
-		private String replicateId;
-
-		private String tempDBInstanceId;
-
-		private String dBInstanceStorageType;
-
-		private String createTime;
-
-		private String payType;
-
-		private Boolean mutriORsignle;
+		private String category;
 
 		private String connectionMode;
 
-		private String lockMode;
+		private String createTime;
 
-		private String engineVersion;
-
-		private String vpcCloudInstanceId;
-
-		private Integer insId;
-
-		private String instanceNetworkType;
-
-		private String masterInstanceId;
+		private String dBInstanceClass;
 
 		private String dBInstanceDescription;
 
-		private String expireTime;
+		private String dBInstanceId;
 
 		private String dBInstanceNetType;
+
+		private String dBInstanceStatus;
+
+		private String dBInstanceStorageType;
 
 		private String dBInstanceType;
 
 		private String destroyTime;
 
-		private String lockReason;
+		private String engine;
 
-		private String dBInstanceStatus;
+		private String engineVersion;
+
+		private String expireTime;
 
 		private String guardDBInstanceId;
 
+		private Integer insId;
+
+		private String instanceNetworkType;
+
+		private String lockMode;
+
+		private String lockReason;
+
+		private String masterInstanceId;
+
+		private Boolean mutriORsignle;
+
+		private String payType;
+
 		private String regionId;
 
-		private String vSwitchId;
+		private String replicateId;
 
 		private String resourceGroupId;
 
+		private String tempDBInstanceId;
+
+		private String vSwitchId;
+
+		private String vpcCloudInstanceId;
+
+		private String vpcId;
+
 		private String zoneId;
-
-		private String dBInstanceId;
-
-		private String category;
-
-		private String engine;
-
-		private String dBInstanceClass;
 
 		private List<ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
 
-		public String getVpcId() {
-			return this.vpcId;
+		public String getCategory() {
+			return this.category;
 		}
 
-		public void setVpcId(String vpcId) {
-			this.vpcId = vpcId;
-		}
-
-		public String getReplicateId() {
-			return this.replicateId;
-		}
-
-		public void setReplicateId(String replicateId) {
-			this.replicateId = replicateId;
-		}
-
-		public String getTempDBInstanceId() {
-			return this.tempDBInstanceId;
-		}
-
-		public void setTempDBInstanceId(String tempDBInstanceId) {
-			this.tempDBInstanceId = tempDBInstanceId;
-		}
-
-		public String getDBInstanceStorageType() {
-			return this.dBInstanceStorageType;
-		}
-
-		public void setDBInstanceStorageType(String dBInstanceStorageType) {
-			this.dBInstanceStorageType = dBInstanceStorageType;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-
-		public String getPayType() {
-			return this.payType;
-		}
-
-		public void setPayType(String payType) {
-			this.payType = payType;
-		}
-
-		public Boolean getMutriORsignle() {
-			return this.mutriORsignle;
-		}
-
-		public void setMutriORsignle(Boolean mutriORsignle) {
-			this.mutriORsignle = mutriORsignle;
+		public void setCategory(String category) {
+			this.category = category;
 		}
 
 		public String getConnectionMode() {
@@ -203,52 +155,20 @@ public class DescribeDBInstancesForCloneResponse extends AcsResponse {
 			this.connectionMode = connectionMode;
 		}
 
-		public String getLockMode() {
-			return this.lockMode;
+		public String getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setLockMode(String lockMode) {
-			this.lockMode = lockMode;
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 
-		public String getEngineVersion() {
-			return this.engineVersion;
+		public String getDBInstanceClass() {
+			return this.dBInstanceClass;
 		}
 
-		public void setEngineVersion(String engineVersion) {
-			this.engineVersion = engineVersion;
-		}
-
-		public String getVpcCloudInstanceId() {
-			return this.vpcCloudInstanceId;
-		}
-
-		public void setVpcCloudInstanceId(String vpcCloudInstanceId) {
-			this.vpcCloudInstanceId = vpcCloudInstanceId;
-		}
-
-		public Integer getInsId() {
-			return this.insId;
-		}
-
-		public void setInsId(Integer insId) {
-			this.insId = insId;
-		}
-
-		public String getInstanceNetworkType() {
-			return this.instanceNetworkType;
-		}
-
-		public void setInstanceNetworkType(String instanceNetworkType) {
-			this.instanceNetworkType = instanceNetworkType;
-		}
-
-		public String getMasterInstanceId() {
-			return this.masterInstanceId;
-		}
-
-		public void setMasterInstanceId(String masterInstanceId) {
-			this.masterInstanceId = masterInstanceId;
+		public void setDBInstanceClass(String dBInstanceClass) {
+			this.dBInstanceClass = dBInstanceClass;
 		}
 
 		public String getDBInstanceDescription() {
@@ -259,12 +179,12 @@ public class DescribeDBInstancesForCloneResponse extends AcsResponse {
 			this.dBInstanceDescription = dBInstanceDescription;
 		}
 
-		public String getExpireTime() {
-			return this.expireTime;
+		public String getDBInstanceId() {
+			return this.dBInstanceId;
 		}
 
-		public void setExpireTime(String expireTime) {
-			this.expireTime = expireTime;
+		public void setDBInstanceId(String dBInstanceId) {
+			this.dBInstanceId = dBInstanceId;
 		}
 
 		public String getDBInstanceNetType() {
@@ -273,6 +193,22 @@ public class DescribeDBInstancesForCloneResponse extends AcsResponse {
 
 		public void setDBInstanceNetType(String dBInstanceNetType) {
 			this.dBInstanceNetType = dBInstanceNetType;
+		}
+
+		public String getDBInstanceStatus() {
+			return this.dBInstanceStatus;
+		}
+
+		public void setDBInstanceStatus(String dBInstanceStatus) {
+			this.dBInstanceStatus = dBInstanceStatus;
+		}
+
+		public String getDBInstanceStorageType() {
+			return this.dBInstanceStorageType;
+		}
+
+		public void setDBInstanceStorageType(String dBInstanceStorageType) {
+			this.dBInstanceStorageType = dBInstanceStorageType;
 		}
 
 		public String getDBInstanceType() {
@@ -291,20 +227,28 @@ public class DescribeDBInstancesForCloneResponse extends AcsResponse {
 			this.destroyTime = destroyTime;
 		}
 
-		public String getLockReason() {
-			return this.lockReason;
+		public String getEngine() {
+			return this.engine;
 		}
 
-		public void setLockReason(String lockReason) {
-			this.lockReason = lockReason;
+		public void setEngine(String engine) {
+			this.engine = engine;
 		}
 
-		public String getDBInstanceStatus() {
-			return this.dBInstanceStatus;
+		public String getEngineVersion() {
+			return this.engineVersion;
 		}
 
-		public void setDBInstanceStatus(String dBInstanceStatus) {
-			this.dBInstanceStatus = dBInstanceStatus;
+		public void setEngineVersion(String engineVersion) {
+			this.engineVersion = engineVersion;
+		}
+
+		public String getExpireTime() {
+			return this.expireTime;
+		}
+
+		public void setExpireTime(String expireTime) {
+			this.expireTime = expireTime;
 		}
 
 		public String getGuardDBInstanceId() {
@@ -315,6 +259,62 @@ public class DescribeDBInstancesForCloneResponse extends AcsResponse {
 			this.guardDBInstanceId = guardDBInstanceId;
 		}
 
+		public Integer getInsId() {
+			return this.insId;
+		}
+
+		public void setInsId(Integer insId) {
+			this.insId = insId;
+		}
+
+		public String getInstanceNetworkType() {
+			return this.instanceNetworkType;
+		}
+
+		public void setInstanceNetworkType(String instanceNetworkType) {
+			this.instanceNetworkType = instanceNetworkType;
+		}
+
+		public String getLockMode() {
+			return this.lockMode;
+		}
+
+		public void setLockMode(String lockMode) {
+			this.lockMode = lockMode;
+		}
+
+		public String getLockReason() {
+			return this.lockReason;
+		}
+
+		public void setLockReason(String lockReason) {
+			this.lockReason = lockReason;
+		}
+
+		public String getMasterInstanceId() {
+			return this.masterInstanceId;
+		}
+
+		public void setMasterInstanceId(String masterInstanceId) {
+			this.masterInstanceId = masterInstanceId;
+		}
+
+		public Boolean getMutriORsignle() {
+			return this.mutriORsignle;
+		}
+
+		public void setMutriORsignle(Boolean mutriORsignle) {
+			this.mutriORsignle = mutriORsignle;
+		}
+
+		public String getPayType() {
+			return this.payType;
+		}
+
+		public void setPayType(String payType) {
+			this.payType = payType;
+		}
+
 		public String getRegionId() {
 			return this.regionId;
 		}
@@ -323,12 +323,12 @@ public class DescribeDBInstancesForCloneResponse extends AcsResponse {
 			this.regionId = regionId;
 		}
 
-		public String getVSwitchId() {
-			return this.vSwitchId;
+		public String getReplicateId() {
+			return this.replicateId;
 		}
 
-		public void setVSwitchId(String vSwitchId) {
-			this.vSwitchId = vSwitchId;
+		public void setReplicateId(String replicateId) {
+			this.replicateId = replicateId;
 		}
 
 		public String getResourceGroupId() {
@@ -339,44 +339,44 @@ public class DescribeDBInstancesForCloneResponse extends AcsResponse {
 			this.resourceGroupId = resourceGroupId;
 		}
 
+		public String getTempDBInstanceId() {
+			return this.tempDBInstanceId;
+		}
+
+		public void setTempDBInstanceId(String tempDBInstanceId) {
+			this.tempDBInstanceId = tempDBInstanceId;
+		}
+
+		public String getVSwitchId() {
+			return this.vSwitchId;
+		}
+
+		public void setVSwitchId(String vSwitchId) {
+			this.vSwitchId = vSwitchId;
+		}
+
+		public String getVpcCloudInstanceId() {
+			return this.vpcCloudInstanceId;
+		}
+
+		public void setVpcCloudInstanceId(String vpcCloudInstanceId) {
+			this.vpcCloudInstanceId = vpcCloudInstanceId;
+		}
+
+		public String getVpcId() {
+			return this.vpcId;
+		}
+
+		public void setVpcId(String vpcId) {
+			this.vpcId = vpcId;
+		}
+
 		public String getZoneId() {
 			return this.zoneId;
 		}
 
 		public void setZoneId(String zoneId) {
 			this.zoneId = zoneId;
-		}
-
-		public String getDBInstanceId() {
-			return this.dBInstanceId;
-		}
-
-		public void setDBInstanceId(String dBInstanceId) {
-			this.dBInstanceId = dBInstanceId;
-		}
-
-		public String getCategory() {
-			return this.category;
-		}
-
-		public void setCategory(String category) {
-			this.category = category;
-		}
-
-		public String getEngine() {
-			return this.engine;
-		}
-
-		public void setEngine(String engine) {
-			this.engine = engine;
-		}
-
-		public String getDBInstanceClass() {
-			return this.dBInstanceClass;
-		}
-
-		public void setDBInstanceClass(String dBInstanceClass) {
-			this.dBInstanceClass = dBInstanceClass;
 		}
 
 		public List<ReadOnlyDBInstanceId> getReadOnlyDBInstanceIds() {

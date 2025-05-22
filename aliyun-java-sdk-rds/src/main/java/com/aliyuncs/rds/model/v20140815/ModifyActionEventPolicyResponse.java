@@ -26,9 +26,9 @@ public class ModifyActionEventPolicyResponse extends AcsResponse {
 
 	private String enableEventLog;
 
-	private String requestId;
-
 	private String regionId;
+
+	private String requestId;
 
 	public String getEnableEventLog() {
 		return this.enableEventLog;
@@ -38,20 +38,20 @@ public class ModifyActionEventPolicyResponse extends AcsResponse {
 		this.enableEventLog = enableEventLog;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getRegionId() {
 		return this.regionId;
 	}
 
 	public void setRegionId(String regionId) {
 		this.regionId = regionId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

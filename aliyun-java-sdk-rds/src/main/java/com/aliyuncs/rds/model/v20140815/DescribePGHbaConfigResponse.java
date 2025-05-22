@@ -25,19 +25,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribePGHbaConfigResponse extends AcsResponse {
 
+	private String dBInstanceId;
+
 	private String hbaModifyTime;
+
+	private String lastModifyStatus;
 
 	private String modifyStatusReason;
 
 	private String requestId;
 
-	private String lastModifyStatus;
-
-	private String dBInstanceId;
-
 	private List<HbaItem> defaultHbaItems;
 
 	private List<HbaItem> runningHbaItems;
+
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+	}
 
 	public String getHbaModifyTime() {
 		return this.hbaModifyTime;
@@ -45,6 +53,14 @@ public class DescribePGHbaConfigResponse extends AcsResponse {
 
 	public void setHbaModifyTime(String hbaModifyTime) {
 		this.hbaModifyTime = hbaModifyTime;
+	}
+
+	public String getLastModifyStatus() {
+		return this.lastModifyStatus;
+	}
+
+	public void setLastModifyStatus(String lastModifyStatus) {
+		this.lastModifyStatus = lastModifyStatus;
 	}
 
 	public String getModifyStatusReason() {
@@ -61,22 +77,6 @@ public class DescribePGHbaConfigResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getLastModifyStatus() {
-		return this.lastModifyStatus;
-	}
-
-	public void setLastModifyStatus(String lastModifyStatus) {
-		this.lastModifyStatus = lastModifyStatus;
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
 	}
 
 	public List<HbaItem> getDefaultHbaItems() {
@@ -97,36 +97,28 @@ public class DescribePGHbaConfigResponse extends AcsResponse {
 
 	public static class HbaItem {
 
-		private String type;
-
-		private String mask;
+		private String address;
 
 		private String database;
 
-		private Integer priorityId;
-
-		private String address;
-
-		private String option;
+		private String mask;
 
 		private String method;
 
+		private String option;
+
+		private Integer priorityId;
+
+		private String type;
+
 		private String user;
 
-		public String getType() {
-			return this.type;
+		public String getAddress() {
+			return this.address;
 		}
 
-		public void setType(String type) {
-			this.type = type;
-		}
-
-		public String getMask() {
-			return this.mask;
-		}
-
-		public void setMask(String mask) {
-			this.mask = mask;
+		public void setAddress(String address) {
+			this.address = address;
 		}
 
 		public String getDatabase() {
@@ -137,20 +129,20 @@ public class DescribePGHbaConfigResponse extends AcsResponse {
 			this.database = database;
 		}
 
-		public Integer getPriorityId() {
-			return this.priorityId;
+		public String getMask() {
+			return this.mask;
 		}
 
-		public void setPriorityId(Integer priorityId) {
-			this.priorityId = priorityId;
+		public void setMask(String mask) {
+			this.mask = mask;
 		}
 
-		public String getAddress() {
-			return this.address;
+		public String getBizMethod() {
+			return this.method;
 		}
 
-		public void setAddress(String address) {
-			this.address = address;
+		public void setBizMethod(String method) {
+			this.method = method;
 		}
 
 		public String getOption() {
@@ -161,12 +153,20 @@ public class DescribePGHbaConfigResponse extends AcsResponse {
 			this.option = option;
 		}
 
-		public String getBizMethod() {
-			return this.method;
+		public Integer getPriorityId() {
+			return this.priorityId;
 		}
 
-		public void setBizMethod(String method) {
-			this.method = method;
+		public void setPriorityId(Integer priorityId) {
+			this.priorityId = priorityId;
+		}
+
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
 		}
 
 		public String getUser() {

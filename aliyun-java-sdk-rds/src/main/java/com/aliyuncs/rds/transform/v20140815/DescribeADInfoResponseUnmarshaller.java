@@ -23,9 +23,9 @@ public class DescribeADInfoResponseUnmarshaller {
 	public static DescribeADInfoResponse unmarshall(DescribeADInfoResponse describeADInfoResponse, UnmarshallerContext _ctx) {
 		
 		describeADInfoResponse.setRequestId(_ctx.stringValue("DescribeADInfoResponse.RequestId"));
-		describeADInfoResponse.setADStatus(_ctx.stringValue("DescribeADInfoResponse.ADStatus"));
 		describeADInfoResponse.setADDNS(_ctx.stringValue("DescribeADInfoResponse.ADDNS"));
 		describeADInfoResponse.setADServerIpAddress(_ctx.stringValue("DescribeADInfoResponse.ADServerIpAddress"));
+		describeADInfoResponse.setADStatus(_ctx.stringValue("DescribeADInfoResponse.ADStatus"));
 		describeADInfoResponse.setAbnormalReason(_ctx.stringValue("DescribeADInfoResponse.AbnormalReason"));
 		describeADInfoResponse.setUserName(_ctx.stringValue("DescribeADInfoResponse.UserName"));
 	 

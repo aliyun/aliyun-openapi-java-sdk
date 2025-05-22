@@ -31,9 +31,9 @@ public class DeleteDBInstanceEndpointAddressRequest extends RpcAcsRequest<Delete
 
 	private String connectionString;
 
-	private String dBInstanceEndpointId;
-
 	private String dBInstanceId;
+
+	private String dBInstanceEndpointId;
 	public DeleteDBInstanceEndpointAddressRequest() {
 		super("Rds", "2014-08-15", "DeleteDBInstanceEndpointAddress", "rds");
 		setMethod(MethodType.POST);
@@ -76,17 +76,6 @@ public class DeleteDBInstanceEndpointAddressRequest extends RpcAcsRequest<Delete
 		}
 	}
 
-	public String getDBInstanceEndpointId() {
-		return this.dBInstanceEndpointId;
-	}
-
-	public void setDBInstanceEndpointId(String dBInstanceEndpointId) {
-		this.dBInstanceEndpointId = dBInstanceEndpointId;
-		if(dBInstanceEndpointId != null){
-			putBodyParameter("DBInstanceEndpointId", dBInstanceEndpointId);
-		}
-	}
-
 	public String getDBInstanceId() {
 		return this.dBInstanceId;
 	}
@@ -95,6 +84,17 @@ public class DeleteDBInstanceEndpointAddressRequest extends RpcAcsRequest<Delete
 		this.dBInstanceId = dBInstanceId;
 		if(dBInstanceId != null){
 			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public String getDBInstanceEndpointId() {
+		return this.dBInstanceEndpointId;
+	}
+
+	public void setDBInstanceEndpointId(String dBInstanceEndpointId) {
+		this.dBInstanceEndpointId = dBInstanceEndpointId;
+		if(dBInstanceEndpointId != null){
+			putBodyParameter("DBInstanceEndpointId", dBInstanceEndpointId);
 		}
 	}
 

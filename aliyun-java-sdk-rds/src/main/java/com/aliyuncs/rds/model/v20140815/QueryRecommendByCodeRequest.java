@@ -25,7 +25,7 @@ import com.aliyuncs.rds.Endpoint;
 public class QueryRecommendByCodeRequest extends RpcAcsRequest<QueryRecommendByCodeResponse> {
 	   
 
-	private String resourceOwnerId;
+	private Long resourceOwnerId;
 
 	private String code;
 
@@ -43,14 +43,14 @@ public class QueryRecommendByCodeRequest extends RpcAcsRequest<QueryRecommendByC
 		} catch (Exception e) {}
 	}
 
-	public String getResourceOwnerId() {
+	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
 
-	public void setResourceOwnerId(String resourceOwnerId) {
+	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId);
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
 	}
 

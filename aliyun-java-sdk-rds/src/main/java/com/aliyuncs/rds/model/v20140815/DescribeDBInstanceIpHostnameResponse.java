@@ -26,9 +26,9 @@ public class DescribeDBInstanceIpHostnameResponse extends AcsResponse {
 
 	private String dBInstanceId;
 
-	private String requestId;
-
 	private String ipHostnameInfos;
+
+	private String requestId;
 
 	public String getDBInstanceId() {
 		return this.dBInstanceId;
@@ -38,20 +38,20 @@ public class DescribeDBInstanceIpHostnameResponse extends AcsResponse {
 		this.dBInstanceId = dBInstanceId;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getIpHostnameInfos() {
 		return this.ipHostnameInfos;
 	}
 
 	public void setIpHostnameInfos(String ipHostnameInfos) {
 		this.ipHostnameInfos = ipHostnameInfos;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

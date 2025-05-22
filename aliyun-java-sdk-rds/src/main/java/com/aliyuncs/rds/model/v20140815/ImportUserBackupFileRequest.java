@@ -31,6 +31,8 @@ public class ImportUserBackupFileRequest extends RpcAcsRequest<ImportUserBackupF
 
 	private String resourceGroupId;
 
+	private String dBInstanceId;
+
 	private Integer retention;
 
 	private String resourceOwnerAccount;
@@ -85,6 +87,17 @@ public class ImportUserBackupFileRequest extends RpcAcsRequest<ImportUserBackupF
 		this.resourceGroupId = resourceGroupId;
 		if(resourceGroupId != null){
 			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
 		}
 	}
 

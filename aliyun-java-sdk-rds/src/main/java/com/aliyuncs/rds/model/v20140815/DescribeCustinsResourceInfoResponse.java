@@ -47,194 +47,58 @@ public class DescribeCustinsResourceInfoResponse extends AcsResponse {
 
 	public static class DataItem {
 
-		private String maxIopsIncreaseRatio;
-
-		private String maxConnIncreaseRatioValue;
-
-		private String memoryAdjustDeadline;
-
-		private String memAdjustableMaxValue;
-
-		private String iopsAdjustableMaxValue;
-
-		private String cpuIncreaseRatio;
-
-		private String maxIopsIncreaseRatioValue;
-
-		private String originMaxConn;
-
-		private String memoryIncreaseRatioValue;
-
-		private String maxConnIncreaseRatio;
-
-		private String cpuIncreaseRatioValue;
-
-		private String originMaxIops;
-
-		private String maxConnAdjustableMaxValue;
-
-		private String maxConnAdjustDeadline;
-
-		private String maxIopsAdjustDeadline;
-
-		private String originMemory;
-
-		private String memAdjustableMaxRatio;
-
-		private String cpuAdjustableMaxValue;
+		private String cpuAdjustDeadline;
 
 		private String cpuAdjustableMaxRatio;
 
-		private String cpuAdjustDeadline;
+		private String cpuAdjustableMaxValue;
 
-		private String memoryIncreaseRatio;
+		private String cpuIncreaseRatio;
 
-		private String originCpu;
+		private String cpuIncreaseRatioValue;
 
 		private String dBInstanceId;
 
-		public String getMaxIopsIncreaseRatio() {
-			return this.maxIopsIncreaseRatio;
+		private String iopsAdjustableMaxValue;
+
+		private String maxConnAdjustDeadline;
+
+		private String maxConnAdjustableMaxValue;
+
+		private String maxConnIncreaseRatio;
+
+		private String maxConnIncreaseRatioValue;
+
+		private String maxIopsAdjustDeadline;
+
+		private String maxIopsIncreaseRatio;
+
+		private String maxIopsIncreaseRatioValue;
+
+		private String memAdjustableMaxRatio;
+
+		private String memAdjustableMaxValue;
+
+		private String memoryAdjustDeadline;
+
+		private String memoryIncreaseRatio;
+
+		private String memoryIncreaseRatioValue;
+
+		private String originCpu;
+
+		private String originMaxConn;
+
+		private String originMaxIops;
+
+		private String originMemory;
+
+		public String getCpuAdjustDeadline() {
+			return this.cpuAdjustDeadline;
 		}
 
-		public void setMaxIopsIncreaseRatio(String maxIopsIncreaseRatio) {
-			this.maxIopsIncreaseRatio = maxIopsIncreaseRatio;
-		}
-
-		public String getMaxConnIncreaseRatioValue() {
-			return this.maxConnIncreaseRatioValue;
-		}
-
-		public void setMaxConnIncreaseRatioValue(String maxConnIncreaseRatioValue) {
-			this.maxConnIncreaseRatioValue = maxConnIncreaseRatioValue;
-		}
-
-		public String getMemoryAdjustDeadline() {
-			return this.memoryAdjustDeadline;
-		}
-
-		public void setMemoryAdjustDeadline(String memoryAdjustDeadline) {
-			this.memoryAdjustDeadline = memoryAdjustDeadline;
-		}
-
-		public String getMemAdjustableMaxValue() {
-			return this.memAdjustableMaxValue;
-		}
-
-		public void setMemAdjustableMaxValue(String memAdjustableMaxValue) {
-			this.memAdjustableMaxValue = memAdjustableMaxValue;
-		}
-
-		public String getIopsAdjustableMaxValue() {
-			return this.iopsAdjustableMaxValue;
-		}
-
-		public void setIopsAdjustableMaxValue(String iopsAdjustableMaxValue) {
-			this.iopsAdjustableMaxValue = iopsAdjustableMaxValue;
-		}
-
-		public String getCpuIncreaseRatio() {
-			return this.cpuIncreaseRatio;
-		}
-
-		public void setCpuIncreaseRatio(String cpuIncreaseRatio) {
-			this.cpuIncreaseRatio = cpuIncreaseRatio;
-		}
-
-		public String getMaxIopsIncreaseRatioValue() {
-			return this.maxIopsIncreaseRatioValue;
-		}
-
-		public void setMaxIopsIncreaseRatioValue(String maxIopsIncreaseRatioValue) {
-			this.maxIopsIncreaseRatioValue = maxIopsIncreaseRatioValue;
-		}
-
-		public String getOriginMaxConn() {
-			return this.originMaxConn;
-		}
-
-		public void setOriginMaxConn(String originMaxConn) {
-			this.originMaxConn = originMaxConn;
-		}
-
-		public String getMemoryIncreaseRatioValue() {
-			return this.memoryIncreaseRatioValue;
-		}
-
-		public void setMemoryIncreaseRatioValue(String memoryIncreaseRatioValue) {
-			this.memoryIncreaseRatioValue = memoryIncreaseRatioValue;
-		}
-
-		public String getMaxConnIncreaseRatio() {
-			return this.maxConnIncreaseRatio;
-		}
-
-		public void setMaxConnIncreaseRatio(String maxConnIncreaseRatio) {
-			this.maxConnIncreaseRatio = maxConnIncreaseRatio;
-		}
-
-		public String getCpuIncreaseRatioValue() {
-			return this.cpuIncreaseRatioValue;
-		}
-
-		public void setCpuIncreaseRatioValue(String cpuIncreaseRatioValue) {
-			this.cpuIncreaseRatioValue = cpuIncreaseRatioValue;
-		}
-
-		public String getOriginMaxIops() {
-			return this.originMaxIops;
-		}
-
-		public void setOriginMaxIops(String originMaxIops) {
-			this.originMaxIops = originMaxIops;
-		}
-
-		public String getMaxConnAdjustableMaxValue() {
-			return this.maxConnAdjustableMaxValue;
-		}
-
-		public void setMaxConnAdjustableMaxValue(String maxConnAdjustableMaxValue) {
-			this.maxConnAdjustableMaxValue = maxConnAdjustableMaxValue;
-		}
-
-		public String getMaxConnAdjustDeadline() {
-			return this.maxConnAdjustDeadline;
-		}
-
-		public void setMaxConnAdjustDeadline(String maxConnAdjustDeadline) {
-			this.maxConnAdjustDeadline = maxConnAdjustDeadline;
-		}
-
-		public String getMaxIopsAdjustDeadline() {
-			return this.maxIopsAdjustDeadline;
-		}
-
-		public void setMaxIopsAdjustDeadline(String maxIopsAdjustDeadline) {
-			this.maxIopsAdjustDeadline = maxIopsAdjustDeadline;
-		}
-
-		public String getOriginMemory() {
-			return this.originMemory;
-		}
-
-		public void setOriginMemory(String originMemory) {
-			this.originMemory = originMemory;
-		}
-
-		public String getMemAdjustableMaxRatio() {
-			return this.memAdjustableMaxRatio;
-		}
-
-		public void setMemAdjustableMaxRatio(String memAdjustableMaxRatio) {
-			this.memAdjustableMaxRatio = memAdjustableMaxRatio;
-		}
-
-		public String getCpuAdjustableMaxValue() {
-			return this.cpuAdjustableMaxValue;
-		}
-
-		public void setCpuAdjustableMaxValue(String cpuAdjustableMaxValue) {
-			this.cpuAdjustableMaxValue = cpuAdjustableMaxValue;
+		public void setCpuAdjustDeadline(String cpuAdjustDeadline) {
+			this.cpuAdjustDeadline = cpuAdjustDeadline;
 		}
 
 		public String getCpuAdjustableMaxRatio() {
@@ -245,12 +109,124 @@ public class DescribeCustinsResourceInfoResponse extends AcsResponse {
 			this.cpuAdjustableMaxRatio = cpuAdjustableMaxRatio;
 		}
 
-		public String getCpuAdjustDeadline() {
-			return this.cpuAdjustDeadline;
+		public String getCpuAdjustableMaxValue() {
+			return this.cpuAdjustableMaxValue;
 		}
 
-		public void setCpuAdjustDeadline(String cpuAdjustDeadline) {
-			this.cpuAdjustDeadline = cpuAdjustDeadline;
+		public void setCpuAdjustableMaxValue(String cpuAdjustableMaxValue) {
+			this.cpuAdjustableMaxValue = cpuAdjustableMaxValue;
+		}
+
+		public String getCpuIncreaseRatio() {
+			return this.cpuIncreaseRatio;
+		}
+
+		public void setCpuIncreaseRatio(String cpuIncreaseRatio) {
+			this.cpuIncreaseRatio = cpuIncreaseRatio;
+		}
+
+		public String getCpuIncreaseRatioValue() {
+			return this.cpuIncreaseRatioValue;
+		}
+
+		public void setCpuIncreaseRatioValue(String cpuIncreaseRatioValue) {
+			this.cpuIncreaseRatioValue = cpuIncreaseRatioValue;
+		}
+
+		public String getDBInstanceId() {
+			return this.dBInstanceId;
+		}
+
+		public void setDBInstanceId(String dBInstanceId) {
+			this.dBInstanceId = dBInstanceId;
+		}
+
+		public String getIopsAdjustableMaxValue() {
+			return this.iopsAdjustableMaxValue;
+		}
+
+		public void setIopsAdjustableMaxValue(String iopsAdjustableMaxValue) {
+			this.iopsAdjustableMaxValue = iopsAdjustableMaxValue;
+		}
+
+		public String getMaxConnAdjustDeadline() {
+			return this.maxConnAdjustDeadline;
+		}
+
+		public void setMaxConnAdjustDeadline(String maxConnAdjustDeadline) {
+			this.maxConnAdjustDeadline = maxConnAdjustDeadline;
+		}
+
+		public String getMaxConnAdjustableMaxValue() {
+			return this.maxConnAdjustableMaxValue;
+		}
+
+		public void setMaxConnAdjustableMaxValue(String maxConnAdjustableMaxValue) {
+			this.maxConnAdjustableMaxValue = maxConnAdjustableMaxValue;
+		}
+
+		public String getMaxConnIncreaseRatio() {
+			return this.maxConnIncreaseRatio;
+		}
+
+		public void setMaxConnIncreaseRatio(String maxConnIncreaseRatio) {
+			this.maxConnIncreaseRatio = maxConnIncreaseRatio;
+		}
+
+		public String getMaxConnIncreaseRatioValue() {
+			return this.maxConnIncreaseRatioValue;
+		}
+
+		public void setMaxConnIncreaseRatioValue(String maxConnIncreaseRatioValue) {
+			this.maxConnIncreaseRatioValue = maxConnIncreaseRatioValue;
+		}
+
+		public String getMaxIopsAdjustDeadline() {
+			return this.maxIopsAdjustDeadline;
+		}
+
+		public void setMaxIopsAdjustDeadline(String maxIopsAdjustDeadline) {
+			this.maxIopsAdjustDeadline = maxIopsAdjustDeadline;
+		}
+
+		public String getMaxIopsIncreaseRatio() {
+			return this.maxIopsIncreaseRatio;
+		}
+
+		public void setMaxIopsIncreaseRatio(String maxIopsIncreaseRatio) {
+			this.maxIopsIncreaseRatio = maxIopsIncreaseRatio;
+		}
+
+		public String getMaxIopsIncreaseRatioValue() {
+			return this.maxIopsIncreaseRatioValue;
+		}
+
+		public void setMaxIopsIncreaseRatioValue(String maxIopsIncreaseRatioValue) {
+			this.maxIopsIncreaseRatioValue = maxIopsIncreaseRatioValue;
+		}
+
+		public String getMemAdjustableMaxRatio() {
+			return this.memAdjustableMaxRatio;
+		}
+
+		public void setMemAdjustableMaxRatio(String memAdjustableMaxRatio) {
+			this.memAdjustableMaxRatio = memAdjustableMaxRatio;
+		}
+
+		public String getMemAdjustableMaxValue() {
+			return this.memAdjustableMaxValue;
+		}
+
+		public void setMemAdjustableMaxValue(String memAdjustableMaxValue) {
+			this.memAdjustableMaxValue = memAdjustableMaxValue;
+		}
+
+		public String getMemoryAdjustDeadline() {
+			return this.memoryAdjustDeadline;
+		}
+
+		public void setMemoryAdjustDeadline(String memoryAdjustDeadline) {
+			this.memoryAdjustDeadline = memoryAdjustDeadline;
 		}
 
 		public String getMemoryIncreaseRatio() {
@@ -261,6 +237,14 @@ public class DescribeCustinsResourceInfoResponse extends AcsResponse {
 			this.memoryIncreaseRatio = memoryIncreaseRatio;
 		}
 
+		public String getMemoryIncreaseRatioValue() {
+			return this.memoryIncreaseRatioValue;
+		}
+
+		public void setMemoryIncreaseRatioValue(String memoryIncreaseRatioValue) {
+			this.memoryIncreaseRatioValue = memoryIncreaseRatioValue;
+		}
+
 		public String getOriginCpu() {
 			return this.originCpu;
 		}
@@ -269,12 +253,28 @@ public class DescribeCustinsResourceInfoResponse extends AcsResponse {
 			this.originCpu = originCpu;
 		}
 
-		public String getDBInstanceId() {
-			return this.dBInstanceId;
+		public String getOriginMaxConn() {
+			return this.originMaxConn;
 		}
 
-		public void setDBInstanceId(String dBInstanceId) {
-			this.dBInstanceId = dBInstanceId;
+		public void setOriginMaxConn(String originMaxConn) {
+			this.originMaxConn = originMaxConn;
+		}
+
+		public String getOriginMaxIops() {
+			return this.originMaxIops;
+		}
+
+		public void setOriginMaxIops(String originMaxIops) {
+			this.originMaxIops = originMaxIops;
+		}
+
+		public String getOriginMemory() {
+			return this.originMemory;
+		}
+
+		public void setOriginMemory(String originMemory) {
+			this.originMemory = originMemory;
 		}
 	}
 

@@ -24,33 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeADInfoResponse extends AcsResponse {
 
-	private String aDStatus;
-
-	private String requestId;
-
 	private String aDDNS;
 
 	private String aDServerIpAddress;
 
+	private String aDStatus;
+
 	private String abnormalReason;
 
+	private String requestId;
+
 	private String userName;
-
-	public String getADStatus() {
-		return this.aDStatus;
-	}
-
-	public void setADStatus(String aDStatus) {
-		this.aDStatus = aDStatus;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getADDNS() {
 		return this.aDDNS;
@@ -68,12 +52,28 @@ public class DescribeADInfoResponse extends AcsResponse {
 		this.aDServerIpAddress = aDServerIpAddress;
 	}
 
+	public String getADStatus() {
+		return this.aDStatus;
+	}
+
+	public void setADStatus(String aDStatus) {
+		this.aDStatus = aDStatus;
+	}
+
 	public String getAbnormalReason() {
 		return this.abnormalReason;
 	}
 
 	public void setAbnormalReason(String abnormalReason) {
 		this.abnormalReason = abnormalReason;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getUserName() {

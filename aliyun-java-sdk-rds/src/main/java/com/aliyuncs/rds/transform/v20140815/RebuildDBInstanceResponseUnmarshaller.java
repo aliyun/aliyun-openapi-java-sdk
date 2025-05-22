@@ -23,8 +23,8 @@ public class RebuildDBInstanceResponseUnmarshaller {
 	public static RebuildDBInstanceResponse unmarshall(RebuildDBInstanceResponse rebuildDBInstanceResponse, UnmarshallerContext _ctx) {
 		
 		rebuildDBInstanceResponse.setRequestId(_ctx.stringValue("RebuildDBInstanceResponse.RequestId"));
-		rebuildDBInstanceResponse.setTaskId(_ctx.integerValue("RebuildDBInstanceResponse.TaskId"));
 		rebuildDBInstanceResponse.setMigrationId(_ctx.integerValue("RebuildDBInstanceResponse.MigrationId"));
+		rebuildDBInstanceResponse.setTaskId(_ctx.integerValue("RebuildDBInstanceResponse.TaskId"));
 	 
 	 	return rebuildDBInstanceResponse;
 	}

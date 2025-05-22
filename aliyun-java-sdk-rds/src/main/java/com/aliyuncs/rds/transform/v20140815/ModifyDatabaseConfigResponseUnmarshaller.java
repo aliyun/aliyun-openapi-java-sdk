@@ -23,8 +23,8 @@ public class ModifyDatabaseConfigResponseUnmarshaller {
 	public static ModifyDatabaseConfigResponse unmarshall(ModifyDatabaseConfigResponse modifyDatabaseConfigResponse, UnmarshallerContext _ctx) {
 		
 		modifyDatabaseConfigResponse.setRequestId(_ctx.stringValue("ModifyDatabaseConfigResponse.RequestId"));
-		modifyDatabaseConfigResponse.setMessage(_ctx.stringValue("ModifyDatabaseConfigResponse.Message"));
 		modifyDatabaseConfigResponse.setCode(_ctx.stringValue("ModifyDatabaseConfigResponse.Code"));
+		modifyDatabaseConfigResponse.setMessage(_ctx.stringValue("ModifyDatabaseConfigResponse.Message"));
 	 
 	 	return modifyDatabaseConfigResponse;
 	}

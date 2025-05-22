@@ -33,6 +33,8 @@ public class CloneDBInstanceRequest extends RpcAcsRequest<CloneDBInstanceRespons
 
 	private Boolean deletionProtection;
 
+	private String dBInstanceDescription;
+
 	private String backupType;
 
 	private String period;
@@ -126,6 +128,17 @@ public class CloneDBInstanceRequest extends RpcAcsRequest<CloneDBInstanceRespons
 		this.deletionProtection = deletionProtection;
 		if(deletionProtection != null){
 			putQueryParameter("DeletionProtection", deletionProtection.toString());
+		}
+	}
+
+	public String getDBInstanceDescription() {
+		return this.dBInstanceDescription;
+	}
+
+	public void setDBInstanceDescription(String dBInstanceDescription) {
+		this.dBInstanceDescription = dBInstanceDescription;
+		if(dBInstanceDescription != null){
+			putQueryParameter("DBInstanceDescription", dBInstanceDescription);
 		}
 	}
 

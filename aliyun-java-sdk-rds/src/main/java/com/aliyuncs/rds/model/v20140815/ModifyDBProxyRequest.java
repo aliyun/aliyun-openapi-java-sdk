@@ -15,6 +15,9 @@
 package com.aliyuncs.rds.model.v20140815;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.rds.Endpoint;
 
@@ -28,6 +31,9 @@ public class ModifyDBProxyRequest extends RpcAcsRequest<ModifyDBProxyResponse> {
 	private Long resourceOwnerId;
 
 	private String resourceGroupId;
+
+	@SerializedName("dBProxyNodes")
+	private List<DBProxyNodes> dBProxyNodes;
 
 	private String dBInstanceId;
 
@@ -79,6 +85,17 @@ public class ModifyDBProxyRequest extends RpcAcsRequest<ModifyDBProxyResponse> {
 		if(resourceGroupId != null){
 			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
+	}
+
+	public List<DBProxyNodes> getDBProxyNodes() {
+		return this.dBProxyNodes;
+	}
+
+	public void setDBProxyNodes(List<DBProxyNodes> dBProxyNodes) {
+		this.dBProxyNodes = dBProxyNodes;	
+		if (dBProxyNodes != null) {
+			putQueryParameter("DBProxyNodes" , new Gson().toJson(dBProxyNodes));
+		}	
 	}
 
 	public String getDBInstanceId() {
@@ -199,6 +216,42 @@ public class ModifyDBProxyRequest extends RpcAcsRequest<ModifyDBProxyResponse> {
 		this.instanceNetworkType = instanceNetworkType;
 		if(instanceNetworkType != null){
 			putQueryParameter("InstanceNetworkType", instanceNetworkType);
+		}
+	}
+
+	public static class DBProxyNodes {
+
+		@SerializedName("cpuCores")
+		private String cpuCores;
+
+		@SerializedName("zoneId")
+		private String zoneId;
+
+		@SerializedName("nodeCounts")
+		private String nodeCounts;
+
+		public String getCpuCores() {
+			return this.cpuCores;
+		}
+
+		public void setCpuCores(String cpuCores) {
+			this.cpuCores = cpuCores;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
+
+		public String getNodeCounts() {
+			return this.nodeCounts;
+		}
+
+		public void setNodeCounts(String nodeCounts) {
+			this.nodeCounts = nodeCounts;
 		}
 	}
 

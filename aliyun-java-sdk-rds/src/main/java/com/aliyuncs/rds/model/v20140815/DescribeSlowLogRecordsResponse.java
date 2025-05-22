@@ -25,98 +25,42 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSlowLogRecordsResponse extends AcsResponse {
 
-	private Long rowsAffectedCount;
-
-	private Integer pageRecordCount;
-
-	private Long writesIOCount;
-
-	private String sQLHash;
-
-	private Long logicalIORead;
-
-	private String requestId;
-
-	private Long physicalIORead;
-
-	private Integer totalRecordCount;
+	private Long cPUTime;
 
 	private String dBInstanceId;
 
 	private String engine;
 
+	private Long lastRowsAffectedCount;
+
+	private Long logicalIORead;
+
 	private Integer pageNumber;
 
-	private Long cPUTime;
+	private Integer pageRecordCount;
+
+	private Long physicalIORead;
+
+	private String requestId;
+
+	private Long rowsAffectedCount;
+
+	private String sQLHash;
+
+	private Integer totalRecordCount;
 
 	private String userName;
 
-	private Long lastRowsAffectedCount;
+	private Long writesIOCount;
 
 	private List<SQLSlowRecord> items;
 
-	public Long getRowsAffectedCount() {
-		return this.rowsAffectedCount;
+	public Long getCPUTime() {
+		return this.cPUTime;
 	}
 
-	public void setRowsAffectedCount(Long rowsAffectedCount) {
-		this.rowsAffectedCount = rowsAffectedCount;
-	}
-
-	public Integer getPageRecordCount() {
-		return this.pageRecordCount;
-	}
-
-	public void setPageRecordCount(Integer pageRecordCount) {
-		this.pageRecordCount = pageRecordCount;
-	}
-
-	public Long getWritesIOCount() {
-		return this.writesIOCount;
-	}
-
-	public void setWritesIOCount(Long writesIOCount) {
-		this.writesIOCount = writesIOCount;
-	}
-
-	public String getSQLHash() {
-		return this.sQLHash;
-	}
-
-	public void setSQLHash(String sQLHash) {
-		this.sQLHash = sQLHash;
-	}
-
-	public Long getLogicalIORead() {
-		return this.logicalIORead;
-	}
-
-	public void setLogicalIORead(Long logicalIORead) {
-		this.logicalIORead = logicalIORead;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Long getPhysicalIORead() {
-		return this.physicalIORead;
-	}
-
-	public void setPhysicalIORead(Long physicalIORead) {
-		this.physicalIORead = physicalIORead;
-	}
-
-	public Integer getTotalRecordCount() {
-		return this.totalRecordCount;
-	}
-
-	public void setTotalRecordCount(Integer totalRecordCount) {
-		this.totalRecordCount = totalRecordCount;
+	public void setCPUTime(Long cPUTime) {
+		this.cPUTime = cPUTime;
 	}
 
 	public String getDBInstanceId() {
@@ -135,6 +79,22 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 		this.engine = engine;
 	}
 
+	public Long getLastRowsAffectedCount() {
+		return this.lastRowsAffectedCount;
+	}
+
+	public void setLastRowsAffectedCount(Long lastRowsAffectedCount) {
+		this.lastRowsAffectedCount = lastRowsAffectedCount;
+	}
+
+	public Long getLogicalIORead() {
+		return this.logicalIORead;
+	}
+
+	public void setLogicalIORead(Long logicalIORead) {
+		this.logicalIORead = logicalIORead;
+	}
+
 	public Integer getPageNumber() {
 		return this.pageNumber;
 	}
@@ -143,12 +103,52 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Long getCPUTime() {
-		return this.cPUTime;
+	public Integer getPageRecordCount() {
+		return this.pageRecordCount;
 	}
 
-	public void setCPUTime(Long cPUTime) {
-		this.cPUTime = cPUTime;
+	public void setPageRecordCount(Integer pageRecordCount) {
+		this.pageRecordCount = pageRecordCount;
+	}
+
+	public Long getPhysicalIORead() {
+		return this.physicalIORead;
+	}
+
+	public void setPhysicalIORead(Long physicalIORead) {
+		this.physicalIORead = physicalIORead;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Long getRowsAffectedCount() {
+		return this.rowsAffectedCount;
+	}
+
+	public void setRowsAffectedCount(Long rowsAffectedCount) {
+		this.rowsAffectedCount = rowsAffectedCount;
+	}
+
+	public String getSQLHash() {
+		return this.sQLHash;
+	}
+
+	public void setSQLHash(String sQLHash) {
+		this.sQLHash = sQLHash;
+	}
+
+	public Integer getTotalRecordCount() {
+		return this.totalRecordCount;
+	}
+
+	public void setTotalRecordCount(Integer totalRecordCount) {
+		this.totalRecordCount = totalRecordCount;
 	}
 
 	public String getUserName() {
@@ -159,12 +159,12 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 		this.userName = userName;
 	}
 
-	public Long getLastRowsAffectedCount() {
-		return this.lastRowsAffectedCount;
+	public Long getWritesIOCount() {
+		return this.writesIOCount;
 	}
 
-	public void setLastRowsAffectedCount(Long lastRowsAffectedCount) {
-		this.lastRowsAffectedCount = lastRowsAffectedCount;
+	public void setWritesIOCount(Long writesIOCount) {
+		this.writesIOCount = writesIOCount;
 	}
 
 	public List<SQLSlowRecord> getItems() {
@@ -177,91 +177,43 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 
 	public static class SQLSlowRecord {
 
-		private String hostAddress;
-
-		private Long rowsAffectedCount;
-
-		private Long queryTimes;
-
-		private String sQLText;
-
-		private Long cpuTime;
-
-		private Long queryTimeMS;
-
 		private String applicationName;
-
-		private Long lockTimes;
-
-		private String executionStartTime;
-
-		private Long logicalIORead;
-
-		private Long writeIOCount;
-
-		private Long physicalIORead;
-
-		private Long returnRowCounts;
-
-		private Long parseRowCounts;
-
-		private String dBName;
 
 		private String clientHostName;
 
-		private String userName;
+		private Long cpuTime;
+
+		private String dBName;
+
+		private String executionStartTime;
+
+		private String hostAddress;
 
 		private Long lastRowsAffectedCount;
 
+		private Long lockTimes;
+
+		private Long logicalIORead;
+
+		private Long parseRowCounts;
+
+		private Long physicalIORead;
+
+		private Long queryTimeMS;
+
+		private Long queryTimes;
+
+		private Long returnRowCounts;
+
+		private Long rowsAffectedCount;
+
 		private String sQLHash;
 
-		public String getHostAddress() {
-			return this.hostAddress;
-		}
+		private String sQLText;
 
-		public void setHostAddress(String hostAddress) {
-			this.hostAddress = hostAddress;
-		}
+		private String userName;
 
-		public Long getRowsAffectedCount() {
-			return this.rowsAffectedCount;
-		}
-
-		public void setRowsAffectedCount(Long rowsAffectedCount) {
-			this.rowsAffectedCount = rowsAffectedCount;
-		}
-
-		public Long getQueryTimes() {
-			return this.queryTimes;
-		}
-
-		public void setQueryTimes(Long queryTimes) {
-			this.queryTimes = queryTimes;
-		}
-
-		public String getSQLText() {
-			return this.sQLText;
-		}
-
-		public void setSQLText(String sQLText) {
-			this.sQLText = sQLText;
-		}
-
-		public Long getCpuTime() {
-			return this.cpuTime;
-		}
-
-		public void setCpuTime(Long cpuTime) {
-			this.cpuTime = cpuTime;
-		}
-
-		public Long getQueryTimeMS() {
-			return this.queryTimeMS;
-		}
-
-		public void setQueryTimeMS(Long queryTimeMS) {
-			this.queryTimeMS = queryTimeMS;
-		}
+		private Long writeIOCount;
 
 		public String getApplicationName() {
 			return this.applicationName;
@@ -269,70 +221,6 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 
 		public void setApplicationName(String applicationName) {
 			this.applicationName = applicationName;
-		}
-
-		public Long getLockTimes() {
-			return this.lockTimes;
-		}
-
-		public void setLockTimes(Long lockTimes) {
-			this.lockTimes = lockTimes;
-		}
-
-		public String getExecutionStartTime() {
-			return this.executionStartTime;
-		}
-
-		public void setExecutionStartTime(String executionStartTime) {
-			this.executionStartTime = executionStartTime;
-		}
-
-		public Long getLogicalIORead() {
-			return this.logicalIORead;
-		}
-
-		public void setLogicalIORead(Long logicalIORead) {
-			this.logicalIORead = logicalIORead;
-		}
-
-		public Long getWriteIOCount() {
-			return this.writeIOCount;
-		}
-
-		public void setWriteIOCount(Long writeIOCount) {
-			this.writeIOCount = writeIOCount;
-		}
-
-		public Long getPhysicalIORead() {
-			return this.physicalIORead;
-		}
-
-		public void setPhysicalIORead(Long physicalIORead) {
-			this.physicalIORead = physicalIORead;
-		}
-
-		public Long getReturnRowCounts() {
-			return this.returnRowCounts;
-		}
-
-		public void setReturnRowCounts(Long returnRowCounts) {
-			this.returnRowCounts = returnRowCounts;
-		}
-
-		public Long getParseRowCounts() {
-			return this.parseRowCounts;
-		}
-
-		public void setParseRowCounts(Long parseRowCounts) {
-			this.parseRowCounts = parseRowCounts;
-		}
-
-		public String getDBName() {
-			return this.dBName;
-		}
-
-		public void setDBName(String dBName) {
-			this.dBName = dBName;
 		}
 
 		public String getClientHostName() {
@@ -343,12 +231,36 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 			this.clientHostName = clientHostName;
 		}
 
-		public String getUserName() {
-			return this.userName;
+		public Long getCpuTime() {
+			return this.cpuTime;
 		}
 
-		public void setUserName(String userName) {
-			this.userName = userName;
+		public void setCpuTime(Long cpuTime) {
+			this.cpuTime = cpuTime;
+		}
+
+		public String getDBName() {
+			return this.dBName;
+		}
+
+		public void setDBName(String dBName) {
+			this.dBName = dBName;
+		}
+
+		public String getExecutionStartTime() {
+			return this.executionStartTime;
+		}
+
+		public void setExecutionStartTime(String executionStartTime) {
+			this.executionStartTime = executionStartTime;
+		}
+
+		public String getHostAddress() {
+			return this.hostAddress;
+		}
+
+		public void setHostAddress(String hostAddress) {
+			this.hostAddress = hostAddress;
 		}
 
 		public Long getLastRowsAffectedCount() {
@@ -359,12 +271,100 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 			this.lastRowsAffectedCount = lastRowsAffectedCount;
 		}
 
+		public Long getLockTimes() {
+			return this.lockTimes;
+		}
+
+		public void setLockTimes(Long lockTimes) {
+			this.lockTimes = lockTimes;
+		}
+
+		public Long getLogicalIORead() {
+			return this.logicalIORead;
+		}
+
+		public void setLogicalIORead(Long logicalIORead) {
+			this.logicalIORead = logicalIORead;
+		}
+
+		public Long getParseRowCounts() {
+			return this.parseRowCounts;
+		}
+
+		public void setParseRowCounts(Long parseRowCounts) {
+			this.parseRowCounts = parseRowCounts;
+		}
+
+		public Long getPhysicalIORead() {
+			return this.physicalIORead;
+		}
+
+		public void setPhysicalIORead(Long physicalIORead) {
+			this.physicalIORead = physicalIORead;
+		}
+
+		public Long getQueryTimeMS() {
+			return this.queryTimeMS;
+		}
+
+		public void setQueryTimeMS(Long queryTimeMS) {
+			this.queryTimeMS = queryTimeMS;
+		}
+
+		public Long getQueryTimes() {
+			return this.queryTimes;
+		}
+
+		public void setQueryTimes(Long queryTimes) {
+			this.queryTimes = queryTimes;
+		}
+
+		public Long getReturnRowCounts() {
+			return this.returnRowCounts;
+		}
+
+		public void setReturnRowCounts(Long returnRowCounts) {
+			this.returnRowCounts = returnRowCounts;
+		}
+
+		public Long getRowsAffectedCount() {
+			return this.rowsAffectedCount;
+		}
+
+		public void setRowsAffectedCount(Long rowsAffectedCount) {
+			this.rowsAffectedCount = rowsAffectedCount;
+		}
+
 		public String getSQLHash() {
 			return this.sQLHash;
 		}
 
 		public void setSQLHash(String sQLHash) {
 			this.sQLHash = sQLHash;
+		}
+
+		public String getSQLText() {
+			return this.sQLText;
+		}
+
+		public void setSQLText(String sQLText) {
+			this.sQLText = sQLText;
+		}
+
+		public String getUserName() {
+			return this.userName;
+		}
+
+		public void setUserName(String userName) {
+			this.userName = userName;
+		}
+
+		public Long getWriteIOCount() {
+			return this.writeIOCount;
+		}
+
+		public void setWriteIOCount(Long writeIOCount) {
+			this.writeIOCount = writeIOCount;
 		}
 	}
 

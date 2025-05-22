@@ -47,21 +47,13 @@ public class QueryNotifyResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer pageSize;
-
 		private Integer pageNumber;
+
+		private Integer pageSize;
 
 		private Integer totalRecordCount;
 
 		private List<NotifyItemListItem> notifyItemList;
-
-		public Integer getPageSize() {
-			return this.pageSize;
-		}
-
-		public void setPageSize(Integer pageSize) {
-			this.pageSize = pageSize;
-		}
 
 		public Integer getPageNumber() {
 			return this.pageNumber;
@@ -69,6 +61,14 @@ public class QueryNotifyResponse extends AcsResponse {
 
 		public void setPageNumber(Integer pageNumber) {
 			this.pageNumber = pageNumber;
+		}
+
+		public Integer getPageSize() {
+			return this.pageSize;
+		}
+
+		public void setPageSize(Integer pageSize) {
+			this.pageSize = pageSize;
 		}
 
 		public Integer getTotalRecordCount() {
@@ -89,36 +89,52 @@ public class QueryNotifyResponse extends AcsResponse {
 
 		public static class NotifyItemListItem {
 
-			private Long id;
-
-			private String gmtCreated;
-
-			private String gmtModified;
-
 			private Long aliUid;
-
-			private String idempotentId;
-
-			private String idempotentCount;
-
-			private String type;
-
-			private String level;
-
-			private String templateName;
-
-			private String notifyElement;
 
 			private Boolean confirmFlag;
 
 			private Long confirmor;
 
-			public Long getId() {
-				return this.id;
+			private String gmtCreated;
+
+			private String gmtModified;
+
+			private Long id;
+
+			private String idempotentCount;
+
+			private String idempotentId;
+
+			private String level;
+
+			private String notifyElement;
+
+			private String templateName;
+
+			private String type;
+
+			public Long getAliUid() {
+				return this.aliUid;
 			}
 
-			public void setId(Long id) {
-				this.id = id;
+			public void setAliUid(Long aliUid) {
+				this.aliUid = aliUid;
+			}
+
+			public Boolean getConfirmFlag() {
+				return this.confirmFlag;
+			}
+
+			public void setConfirmFlag(Boolean confirmFlag) {
+				this.confirmFlag = confirmFlag;
+			}
+
+			public Long getConfirmor() {
+				return this.confirmor;
+			}
+
+			public void setConfirmor(Long confirmor) {
+				this.confirmor = confirmor;
 			}
 
 			public String getGmtCreated() {
@@ -137,20 +153,12 @@ public class QueryNotifyResponse extends AcsResponse {
 				this.gmtModified = gmtModified;
 			}
 
-			public Long getAliUid() {
-				return this.aliUid;
+			public Long getId() {
+				return this.id;
 			}
 
-			public void setAliUid(Long aliUid) {
-				this.aliUid = aliUid;
-			}
-
-			public String getIdempotentId() {
-				return this.idempotentId;
-			}
-
-			public void setIdempotentId(String idempotentId) {
-				this.idempotentId = idempotentId;
+			public void setId(Long id) {
+				this.id = id;
 			}
 
 			public String getIdempotentCount() {
@@ -161,12 +169,12 @@ public class QueryNotifyResponse extends AcsResponse {
 				this.idempotentCount = idempotentCount;
 			}
 
-			public String getType() {
-				return this.type;
+			public String getIdempotentId() {
+				return this.idempotentId;
 			}
 
-			public void setType(String type) {
-				this.type = type;
+			public void setIdempotentId(String idempotentId) {
+				this.idempotentId = idempotentId;
 			}
 
 			public String getLevel() {
@@ -177,14 +185,6 @@ public class QueryNotifyResponse extends AcsResponse {
 				this.level = level;
 			}
 
-			public String getTemplateName() {
-				return this.templateName;
-			}
-
-			public void setTemplateName(String templateName) {
-				this.templateName = templateName;
-			}
-
 			public String getNotifyElement() {
 				return this.notifyElement;
 			}
@@ -193,20 +193,20 @@ public class QueryNotifyResponse extends AcsResponse {
 				this.notifyElement = notifyElement;
 			}
 
-			public Boolean getConfirmFlag() {
-				return this.confirmFlag;
+			public String getTemplateName() {
+				return this.templateName;
 			}
 
-			public void setConfirmFlag(Boolean confirmFlag) {
-				this.confirmFlag = confirmFlag;
+			public void setTemplateName(String templateName) {
+				this.templateName = templateName;
 			}
 
-			public Long getConfirmor() {
-				return this.confirmor;
+			public String getType() {
+				return this.type;
 			}
 
-			public void setConfirmor(Long confirmor) {
-				this.confirmor = confirmor;
+			public void setType(String type) {
+				this.type = type;
 			}
 		}
 	}

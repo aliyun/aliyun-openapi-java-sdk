@@ -29,6 +29,10 @@ public class ModifyDBProxyEndpointRequest extends RpcAcsRequest<ModifyDBProxyEnd
 
 	private String configDBProxyFeatures;
 
+	private String effectiveTime;
+
+	private String effectiveSpecificTime;
+
 	private String dBInstanceId;
 
 	private String readOnlyInstanceWeight;
@@ -37,9 +41,13 @@ public class ModifyDBProxyEndpointRequest extends RpcAcsRequest<ModifyDBProxyEnd
 
 	private String resourceOwnerAccount;
 
+	private String dbEndpointMinSlaveCount;
+
 	private String dbEndpointAliases;
 
 	private String dBProxyEngineType;
+
+	private String causalConsistReadTimeout;
 
 	private String dbEndpointOperator;
 
@@ -49,7 +57,11 @@ public class ModifyDBProxyEndpointRequest extends RpcAcsRequest<ModifyDBProxyEnd
 
 	private String dbEndpointReadWriteMode;
 
+	private String vSwitchId;
+
 	private String dBProxyEndpointId;
+
+	private String vpcId;
 
 	private String readOnlyInstanceDistributionType;
 	public ModifyDBProxyEndpointRequest() {
@@ -80,6 +92,28 @@ public class ModifyDBProxyEndpointRequest extends RpcAcsRequest<ModifyDBProxyEnd
 		this.configDBProxyFeatures = configDBProxyFeatures;
 		if(configDBProxyFeatures != null){
 			putQueryParameter("ConfigDBProxyFeatures", configDBProxyFeatures);
+		}
+	}
+
+	public String getEffectiveTime() {
+		return this.effectiveTime;
+	}
+
+	public void setEffectiveTime(String effectiveTime) {
+		this.effectiveTime = effectiveTime;
+		if(effectiveTime != null){
+			putQueryParameter("EffectiveTime", effectiveTime);
+		}
+	}
+
+	public String getEffectiveSpecificTime() {
+		return this.effectiveSpecificTime;
+	}
+
+	public void setEffectiveSpecificTime(String effectiveSpecificTime) {
+		this.effectiveSpecificTime = effectiveSpecificTime;
+		if(effectiveSpecificTime != null){
+			putQueryParameter("EffectiveSpecificTime", effectiveSpecificTime);
 		}
 	}
 
@@ -127,6 +161,17 @@ public class ModifyDBProxyEndpointRequest extends RpcAcsRequest<ModifyDBProxyEnd
 		}
 	}
 
+	public String getDbEndpointMinSlaveCount() {
+		return this.dbEndpointMinSlaveCount;
+	}
+
+	public void setDbEndpointMinSlaveCount(String dbEndpointMinSlaveCount) {
+		this.dbEndpointMinSlaveCount = dbEndpointMinSlaveCount;
+		if(dbEndpointMinSlaveCount != null){
+			putQueryParameter("DbEndpointMinSlaveCount", dbEndpointMinSlaveCount);
+		}
+	}
+
 	public String getDbEndpointAliases() {
 		return this.dbEndpointAliases;
 	}
@@ -146,6 +191,17 @@ public class ModifyDBProxyEndpointRequest extends RpcAcsRequest<ModifyDBProxyEnd
 		this.dBProxyEngineType = dBProxyEngineType;
 		if(dBProxyEngineType != null){
 			putQueryParameter("DBProxyEngineType", dBProxyEngineType);
+		}
+	}
+
+	public String getCausalConsistReadTimeout() {
+		return this.causalConsistReadTimeout;
+	}
+
+	public void setCausalConsistReadTimeout(String causalConsistReadTimeout) {
+		this.causalConsistReadTimeout = causalConsistReadTimeout;
+		if(causalConsistReadTimeout != null){
+			putQueryParameter("CausalConsistReadTimeout", causalConsistReadTimeout);
 		}
 	}
 
@@ -193,6 +249,17 @@ public class ModifyDBProxyEndpointRequest extends RpcAcsRequest<ModifyDBProxyEnd
 		}
 	}
 
+	public String getVSwitchId() {
+		return this.vSwitchId;
+	}
+
+	public void setVSwitchId(String vSwitchId) {
+		this.vSwitchId = vSwitchId;
+		if(vSwitchId != null){
+			putQueryParameter("VSwitchId", vSwitchId);
+		}
+	}
+
 	public String getDBProxyEndpointId() {
 		return this.dBProxyEndpointId;
 	}
@@ -201,6 +268,17 @@ public class ModifyDBProxyEndpointRequest extends RpcAcsRequest<ModifyDBProxyEnd
 		this.dBProxyEndpointId = dBProxyEndpointId;
 		if(dBProxyEndpointId != null){
 			putQueryParameter("DBProxyEndpointId", dBProxyEndpointId);
+		}
+	}
+
+	public String getVpcId() {
+		return this.vpcId;
+	}
+
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+		if(vpcId != null){
+			putQueryParameter("VpcId", vpcId);
 		}
 	}
 

@@ -25,120 +25,40 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeResourceDetailsResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String region;
-
-	private String instanceStorageType;
-
-	private Long dbInstanceStorage;
-
-	private Long diskUsed;
-
-	private Long backupSize;
-
-	private String vpcId;
-
-	private String vSwitchId;
-
-	private String securityIPList;
-
-	private String dbProxyInstanceName;
-
-	private String resourceGroupId;
+	private Long backupDataSize;
 
 	private Long backupLogSize;
 
-	private Long backupDataSize;
+	private Long backupSize;
+
+	private Long dbInstanceStorage;
+
+	private String dbProxyInstanceName;
+
+	private Long diskUsed;
+
+	private String instanceStorageType;
+
+	private String region;
+
+	private String requestId;
+
+	private String resourceGroupId;
+
+	private String securityIPList;
+
+	private String vSwitchId;
+
+	private String vpcId;
 
 	private List<RdsEcsSecurityGroupRelItem> rdsEcsSecurityGroupRel;
 
-	public String getRequestId() {
-		return this.requestId;
+	public Long getBackupDataSize() {
+		return this.backupDataSize;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getRegion() {
-		return this.region;
-	}
-
-	public void setRegion(String region) {
-		this.region = region;
-	}
-
-	public String getInstanceStorageType() {
-		return this.instanceStorageType;
-	}
-
-	public void setInstanceStorageType(String instanceStorageType) {
-		this.instanceStorageType = instanceStorageType;
-	}
-
-	public Long getDbInstanceStorage() {
-		return this.dbInstanceStorage;
-	}
-
-	public void setDbInstanceStorage(Long dbInstanceStorage) {
-		this.dbInstanceStorage = dbInstanceStorage;
-	}
-
-	public Long getDiskUsed() {
-		return this.diskUsed;
-	}
-
-	public void setDiskUsed(Long diskUsed) {
-		this.diskUsed = diskUsed;
-	}
-
-	public Long getBackupSize() {
-		return this.backupSize;
-	}
-
-	public void setBackupSize(Long backupSize) {
-		this.backupSize = backupSize;
-	}
-
-	public String getVpcId() {
-		return this.vpcId;
-	}
-
-	public void setVpcId(String vpcId) {
-		this.vpcId = vpcId;
-	}
-
-	public String getVSwitchId() {
-		return this.vSwitchId;
-	}
-
-	public void setVSwitchId(String vSwitchId) {
-		this.vSwitchId = vSwitchId;
-	}
-
-	public String getSecurityIPList() {
-		return this.securityIPList;
-	}
-
-	public void setSecurityIPList(String securityIPList) {
-		this.securityIPList = securityIPList;
-	}
-
-	public String getDbProxyInstanceName() {
-		return this.dbProxyInstanceName;
-	}
-
-	public void setDbProxyInstanceName(String dbProxyInstanceName) {
-		this.dbProxyInstanceName = dbProxyInstanceName;
-	}
-
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
-	}
-
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
+	public void setBackupDataSize(Long backupDataSize) {
+		this.backupDataSize = backupDataSize;
 	}
 
 	public Long getBackupLogSize() {
@@ -149,12 +69,92 @@ public class DescribeResourceDetailsResponse extends AcsResponse {
 		this.backupLogSize = backupLogSize;
 	}
 
-	public Long getBackupDataSize() {
-		return this.backupDataSize;
+	public Long getBackupSize() {
+		return this.backupSize;
 	}
 
-	public void setBackupDataSize(Long backupDataSize) {
-		this.backupDataSize = backupDataSize;
+	public void setBackupSize(Long backupSize) {
+		this.backupSize = backupSize;
+	}
+
+	public Long getDbInstanceStorage() {
+		return this.dbInstanceStorage;
+	}
+
+	public void setDbInstanceStorage(Long dbInstanceStorage) {
+		this.dbInstanceStorage = dbInstanceStorage;
+	}
+
+	public String getDbProxyInstanceName() {
+		return this.dbProxyInstanceName;
+	}
+
+	public void setDbProxyInstanceName(String dbProxyInstanceName) {
+		this.dbProxyInstanceName = dbProxyInstanceName;
+	}
+
+	public Long getDiskUsed() {
+		return this.diskUsed;
+	}
+
+	public void setDiskUsed(Long diskUsed) {
+		this.diskUsed = diskUsed;
+	}
+
+	public String getInstanceStorageType() {
+		return this.instanceStorageType;
+	}
+
+	public void setInstanceStorageType(String instanceStorageType) {
+		this.instanceStorageType = instanceStorageType;
+	}
+
+	public String getRegion() {
+		return this.region;
+	}
+
+	public void setRegion(String region) {
+		this.region = region;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+	}
+
+	public String getSecurityIPList() {
+		return this.securityIPList;
+	}
+
+	public void setSecurityIPList(String securityIPList) {
+		this.securityIPList = securityIPList;
+	}
+
+	public String getVSwitchId() {
+		return this.vSwitchId;
+	}
+
+	public void setVSwitchId(String vSwitchId) {
+		this.vSwitchId = vSwitchId;
+	}
+
+	public String getVpcId() {
+		return this.vpcId;
+	}
+
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
 	}
 
 	public List<RdsEcsSecurityGroupRelItem> getRdsEcsSecurityGroupRel() {

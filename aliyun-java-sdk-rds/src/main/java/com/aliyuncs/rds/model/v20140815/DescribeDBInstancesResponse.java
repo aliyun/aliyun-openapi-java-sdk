@@ -25,24 +25,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDBInstancesResponse extends AcsResponse {
 
-	private String requestId;
+	private String nextToken;
 
 	private Integer pageNumber;
 
 	private Integer pageRecordCount;
 
-	private Integer totalRecordCount;
+	private String requestId;
 
-	private String nextToken;
+	private Integer totalRecordCount;
 
 	private List<DBInstance> items;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getNextToken() {
+		return this.nextToken;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
 	}
 
 	public Integer getPageNumber() {
@@ -61,20 +61,20 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 		this.pageRecordCount = pageRecordCount;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public Integer getTotalRecordCount() {
 		return this.totalRecordCount;
 	}
 
 	public void setTotalRecordCount(Integer totalRecordCount) {
 		this.totalRecordCount = totalRecordCount;
-	}
-
-	public String getNextToken() {
-		return this.nextToken;
-	}
-
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
 	}
 
 	public List<DBInstance> getItems() {
@@ -87,237 +87,123 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 
 	public static class DBInstance {
 
-		private String vpcId;
-
-		private String dedicatedHostIdForLog;
-
-		private String createTime;
-
-		private String payType;
-
-		private String dedicatedHostNameForLog;
-
-		private Boolean mutriORsignle;
-
-		private String dedicatedHostGroupName;
-
-		private String engineVersion;
-
-		private String dedicatedHostGroupId;
-
-		private String vpcName;
-
-		private String dedicatedHostZoneIdForMaster;
-
-		private Integer insId;
-
-		private String connectionString;
-
-		private String instanceNetworkType;
-
-		private String masterInstanceId;
-
 		private String autoUpgradeMinorVersion;
 
-		private String expireTime;
+		private String bpeEnabled;
 
-		private String destroyTime;
+		private Boolean burstingEnabled;
 
-		private String guardDBInstanceId;
+		private String category;
 
-		private String dedicatedHostNameForMaster;
-
-		private String zoneId;
-
-		private Integer tipsLevel;
-
-		private String dBInstanceId;
-
-		private String dedicatedHostIdForMaster;
-
-		private String replicateId;
-
-		private String tempDBInstanceId;
-
-		private String dBInstanceStorageType;
+		private Boolean coldDataEnabled;
 
 		private String connectionMode;
 
-		private String lockMode;
+		private String connectionString;
 
-		private String generalGroupName;
+		private String createTime;
 
-		private String vpcCloudInstanceId;
+		private String dBInstanceCPU;
 
-		private String dedicatedHostZoneIdForSlave;
-
-		private String tips;
-
-		private String dedicatedHostZoneIdForLog;
-
-		private String dedicatedHostNameForSlave;
+		private String dBInstanceClass;
 
 		private String dBInstanceDescription;
 
-		private String dBInstanceCPU;
+		private String dBInstanceId;
 
 		private Integer dBInstanceMemory;
 
 		private String dBInstanceNetType;
 
-		private String dBInstanceType;
-
-		private String lockReason;
-
 		private String dBInstanceStatus;
 
-		private String regionId;
+		private String dBInstanceStorageType;
 
-		private String vSwitchId;
+		private String dBInstanceType;
+
+		private String dedicatedHostGroupId;
+
+		private String dedicatedHostGroupName;
+
+		private String dedicatedHostIdForLog;
+
+		private String dedicatedHostIdForMaster;
 
 		private String dedicatedHostIdForSlave;
 
-		private String resourceGroupId;
+		private String dedicatedHostNameForLog;
 
-		private String category;
+		private String dedicatedHostNameForMaster;
 
-		private String engine;
+		private String dedicatedHostNameForSlave;
 
-		private String dBInstanceClass;
+		private String dedicatedHostZoneIdForLog;
 
-		private Integer switchWeight;
+		private String dedicatedHostZoneIdForMaster;
+
+		private String dedicatedHostZoneIdForSlave;
 
 		private Boolean deletionProtection;
 
-		private Boolean burstingEnabled;
+		private String destroyTime;
 
-		private String bpeEnabled;
+		private String engine;
+
+		private String engineVersion;
+
+		private String expireTime;
+
+		private String generalGroupName;
+
+		private String guardDBInstanceId;
+
+		private Integer insId;
+
+		private String instanceNetworkType;
 
 		private String ioAccelerationEnabled;
 
-		private Boolean coldDataEnabled;
+		private String lockMode;
+
+		private String lockReason;
+
+		private String masterInstanceId;
+
+		private Boolean mutriORsignle;
+
+		private String payType;
+
+		private String regionId;
+
+		private String replicateId;
+
+		private String resourceGroupId;
+
+		private Integer switchWeight;
+
+		private String tempDBInstanceId;
+
+		private String tips;
+
+		private Integer tipsLevel;
+
+		private String vSwitchId;
+
+		private String vpcCloudInstanceId;
+
+		private String vpcId;
+
+		private String vpcName;
+
+		private String zoneId;
+
+		private String blueGreenDeploymentName;
+
+		private String blueInstanceName;
+
+		private String greenInstanceName;
 
 		private List<ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
-
-		public String getVpcId() {
-			return this.vpcId;
-		}
-
-		public void setVpcId(String vpcId) {
-			this.vpcId = vpcId;
-		}
-
-		public String getDedicatedHostIdForLog() {
-			return this.dedicatedHostIdForLog;
-		}
-
-		public void setDedicatedHostIdForLog(String dedicatedHostIdForLog) {
-			this.dedicatedHostIdForLog = dedicatedHostIdForLog;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-
-		public String getPayType() {
-			return this.payType;
-		}
-
-		public void setPayType(String payType) {
-			this.payType = payType;
-		}
-
-		public String getDedicatedHostNameForLog() {
-			return this.dedicatedHostNameForLog;
-		}
-
-		public void setDedicatedHostNameForLog(String dedicatedHostNameForLog) {
-			this.dedicatedHostNameForLog = dedicatedHostNameForLog;
-		}
-
-		public Boolean getMutriORsignle() {
-			return this.mutriORsignle;
-		}
-
-		public void setMutriORsignle(Boolean mutriORsignle) {
-			this.mutriORsignle = mutriORsignle;
-		}
-
-		public String getDedicatedHostGroupName() {
-			return this.dedicatedHostGroupName;
-		}
-
-		public void setDedicatedHostGroupName(String dedicatedHostGroupName) {
-			this.dedicatedHostGroupName = dedicatedHostGroupName;
-		}
-
-		public String getEngineVersion() {
-			return this.engineVersion;
-		}
-
-		public void setEngineVersion(String engineVersion) {
-			this.engineVersion = engineVersion;
-		}
-
-		public String getDedicatedHostGroupId() {
-			return this.dedicatedHostGroupId;
-		}
-
-		public void setDedicatedHostGroupId(String dedicatedHostGroupId) {
-			this.dedicatedHostGroupId = dedicatedHostGroupId;
-		}
-
-		public String getVpcName() {
-			return this.vpcName;
-		}
-
-		public void setVpcName(String vpcName) {
-			this.vpcName = vpcName;
-		}
-
-		public String getDedicatedHostZoneIdForMaster() {
-			return this.dedicatedHostZoneIdForMaster;
-		}
-
-		public void setDedicatedHostZoneIdForMaster(String dedicatedHostZoneIdForMaster) {
-			this.dedicatedHostZoneIdForMaster = dedicatedHostZoneIdForMaster;
-		}
-
-		public Integer getInsId() {
-			return this.insId;
-		}
-
-		public void setInsId(Integer insId) {
-			this.insId = insId;
-		}
-
-		public String getConnectionString() {
-			return this.connectionString;
-		}
-
-		public void setConnectionString(String connectionString) {
-			this.connectionString = connectionString;
-		}
-
-		public String getInstanceNetworkType() {
-			return this.instanceNetworkType;
-		}
-
-		public void setInstanceNetworkType(String instanceNetworkType) {
-			this.instanceNetworkType = instanceNetworkType;
-		}
-
-		public String getMasterInstanceId() {
-			return this.masterInstanceId;
-		}
-
-		public void setMasterInstanceId(String masterInstanceId) {
-			this.masterInstanceId = masterInstanceId;
-		}
 
 		public String getAutoUpgradeMinorVersion() {
 			return this.autoUpgradeMinorVersion;
@@ -327,92 +213,36 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 			this.autoUpgradeMinorVersion = autoUpgradeMinorVersion;
 		}
 
-		public String getExpireTime() {
-			return this.expireTime;
+		public String getBpeEnabled() {
+			return this.bpeEnabled;
 		}
 
-		public void setExpireTime(String expireTime) {
-			this.expireTime = expireTime;
+		public void setBpeEnabled(String bpeEnabled) {
+			this.bpeEnabled = bpeEnabled;
 		}
 
-		public String getDestroyTime() {
-			return this.destroyTime;
+		public Boolean getBurstingEnabled() {
+			return this.burstingEnabled;
 		}
 
-		public void setDestroyTime(String destroyTime) {
-			this.destroyTime = destroyTime;
+		public void setBurstingEnabled(Boolean burstingEnabled) {
+			this.burstingEnabled = burstingEnabled;
 		}
 
-		public String getGuardDBInstanceId() {
-			return this.guardDBInstanceId;
+		public String getCategory() {
+			return this.category;
 		}
 
-		public void setGuardDBInstanceId(String guardDBInstanceId) {
-			this.guardDBInstanceId = guardDBInstanceId;
+		public void setCategory(String category) {
+			this.category = category;
 		}
 
-		public String getDedicatedHostNameForMaster() {
-			return this.dedicatedHostNameForMaster;
+		public Boolean getColdDataEnabled() {
+			return this.coldDataEnabled;
 		}
 
-		public void setDedicatedHostNameForMaster(String dedicatedHostNameForMaster) {
-			this.dedicatedHostNameForMaster = dedicatedHostNameForMaster;
-		}
-
-		public String getZoneId() {
-			return this.zoneId;
-		}
-
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
-		}
-
-		public Integer getTipsLevel() {
-			return this.tipsLevel;
-		}
-
-		public void setTipsLevel(Integer tipsLevel) {
-			this.tipsLevel = tipsLevel;
-		}
-
-		public String getDBInstanceId() {
-			return this.dBInstanceId;
-		}
-
-		public void setDBInstanceId(String dBInstanceId) {
-			this.dBInstanceId = dBInstanceId;
-		}
-
-		public String getDedicatedHostIdForMaster() {
-			return this.dedicatedHostIdForMaster;
-		}
-
-		public void setDedicatedHostIdForMaster(String dedicatedHostIdForMaster) {
-			this.dedicatedHostIdForMaster = dedicatedHostIdForMaster;
-		}
-
-		public String getReplicateId() {
-			return this.replicateId;
-		}
-
-		public void setReplicateId(String replicateId) {
-			this.replicateId = replicateId;
-		}
-
-		public String getTempDBInstanceId() {
-			return this.tempDBInstanceId;
-		}
-
-		public void setTempDBInstanceId(String tempDBInstanceId) {
-			this.tempDBInstanceId = tempDBInstanceId;
-		}
-
-		public String getDBInstanceStorageType() {
-			return this.dBInstanceStorageType;
-		}
-
-		public void setDBInstanceStorageType(String dBInstanceStorageType) {
-			this.dBInstanceStorageType = dBInstanceStorageType;
+		public void setColdDataEnabled(Boolean coldDataEnabled) {
+			this.coldDataEnabled = coldDataEnabled;
 		}
 
 		public String getConnectionMode() {
@@ -423,60 +253,36 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 			this.connectionMode = connectionMode;
 		}
 
-		public String getLockMode() {
-			return this.lockMode;
+		public String getConnectionString() {
+			return this.connectionString;
 		}
 
-		public void setLockMode(String lockMode) {
-			this.lockMode = lockMode;
+		public void setConnectionString(String connectionString) {
+			this.connectionString = connectionString;
 		}
 
-		public String getGeneralGroupName() {
-			return this.generalGroupName;
+		public String getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setGeneralGroupName(String generalGroupName) {
-			this.generalGroupName = generalGroupName;
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 
-		public String getVpcCloudInstanceId() {
-			return this.vpcCloudInstanceId;
+		public String getDBInstanceCPU() {
+			return this.dBInstanceCPU;
 		}
 
-		public void setVpcCloudInstanceId(String vpcCloudInstanceId) {
-			this.vpcCloudInstanceId = vpcCloudInstanceId;
+		public void setDBInstanceCPU(String dBInstanceCPU) {
+			this.dBInstanceCPU = dBInstanceCPU;
 		}
 
-		public String getDedicatedHostZoneIdForSlave() {
-			return this.dedicatedHostZoneIdForSlave;
+		public String getDBInstanceClass() {
+			return this.dBInstanceClass;
 		}
 
-		public void setDedicatedHostZoneIdForSlave(String dedicatedHostZoneIdForSlave) {
-			this.dedicatedHostZoneIdForSlave = dedicatedHostZoneIdForSlave;
-		}
-
-		public String getTips() {
-			return this.tips;
-		}
-
-		public void setTips(String tips) {
-			this.tips = tips;
-		}
-
-		public String getDedicatedHostZoneIdForLog() {
-			return this.dedicatedHostZoneIdForLog;
-		}
-
-		public void setDedicatedHostZoneIdForLog(String dedicatedHostZoneIdForLog) {
-			this.dedicatedHostZoneIdForLog = dedicatedHostZoneIdForLog;
-		}
-
-		public String getDedicatedHostNameForSlave() {
-			return this.dedicatedHostNameForSlave;
-		}
-
-		public void setDedicatedHostNameForSlave(String dedicatedHostNameForSlave) {
-			this.dedicatedHostNameForSlave = dedicatedHostNameForSlave;
+		public void setDBInstanceClass(String dBInstanceClass) {
+			this.dBInstanceClass = dBInstanceClass;
 		}
 
 		public String getDBInstanceDescription() {
@@ -487,12 +293,12 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 			this.dBInstanceDescription = dBInstanceDescription;
 		}
 
-		public String getDBInstanceCPU() {
-			return this.dBInstanceCPU;
+		public String getDBInstanceId() {
+			return this.dBInstanceId;
 		}
 
-		public void setDBInstanceCPU(String dBInstanceCPU) {
-			this.dBInstanceCPU = dBInstanceCPU;
+		public void setDBInstanceId(String dBInstanceId) {
+			this.dBInstanceId = dBInstanceId;
 		}
 
 		public Integer getDBInstanceMemory() {
@@ -511,22 +317,6 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 			this.dBInstanceNetType = dBInstanceNetType;
 		}
 
-		public String getDBInstanceType() {
-			return this.dBInstanceType;
-		}
-
-		public void setDBInstanceType(String dBInstanceType) {
-			this.dBInstanceType = dBInstanceType;
-		}
-
-		public String getLockReason() {
-			return this.lockReason;
-		}
-
-		public void setLockReason(String lockReason) {
-			this.lockReason = lockReason;
-		}
-
 		public String getDBInstanceStatus() {
 			return this.dBInstanceStatus;
 		}
@@ -535,20 +325,52 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 			this.dBInstanceStatus = dBInstanceStatus;
 		}
 
-		public String getRegionId() {
-			return this.regionId;
+		public String getDBInstanceStorageType() {
+			return this.dBInstanceStorageType;
 		}
 
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
+		public void setDBInstanceStorageType(String dBInstanceStorageType) {
+			this.dBInstanceStorageType = dBInstanceStorageType;
 		}
 
-		public String getVSwitchId() {
-			return this.vSwitchId;
+		public String getDBInstanceType() {
+			return this.dBInstanceType;
 		}
 
-		public void setVSwitchId(String vSwitchId) {
-			this.vSwitchId = vSwitchId;
+		public void setDBInstanceType(String dBInstanceType) {
+			this.dBInstanceType = dBInstanceType;
+		}
+
+		public String getDedicatedHostGroupId() {
+			return this.dedicatedHostGroupId;
+		}
+
+		public void setDedicatedHostGroupId(String dedicatedHostGroupId) {
+			this.dedicatedHostGroupId = dedicatedHostGroupId;
+		}
+
+		public String getDedicatedHostGroupName() {
+			return this.dedicatedHostGroupName;
+		}
+
+		public void setDedicatedHostGroupName(String dedicatedHostGroupName) {
+			this.dedicatedHostGroupName = dedicatedHostGroupName;
+		}
+
+		public String getDedicatedHostIdForLog() {
+			return this.dedicatedHostIdForLog;
+		}
+
+		public void setDedicatedHostIdForLog(String dedicatedHostIdForLog) {
+			this.dedicatedHostIdForLog = dedicatedHostIdForLog;
+		}
+
+		public String getDedicatedHostIdForMaster() {
+			return this.dedicatedHostIdForMaster;
+		}
+
+		public void setDedicatedHostIdForMaster(String dedicatedHostIdForMaster) {
+			this.dedicatedHostIdForMaster = dedicatedHostIdForMaster;
 		}
 
 		public String getDedicatedHostIdForSlave() {
@@ -559,44 +381,52 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 			this.dedicatedHostIdForSlave = dedicatedHostIdForSlave;
 		}
 
-		public String getResourceGroupId() {
-			return this.resourceGroupId;
+		public String getDedicatedHostNameForLog() {
+			return this.dedicatedHostNameForLog;
 		}
 
-		public void setResourceGroupId(String resourceGroupId) {
-			this.resourceGroupId = resourceGroupId;
+		public void setDedicatedHostNameForLog(String dedicatedHostNameForLog) {
+			this.dedicatedHostNameForLog = dedicatedHostNameForLog;
 		}
 
-		public String getCategory() {
-			return this.category;
+		public String getDedicatedHostNameForMaster() {
+			return this.dedicatedHostNameForMaster;
 		}
 
-		public void setCategory(String category) {
-			this.category = category;
+		public void setDedicatedHostNameForMaster(String dedicatedHostNameForMaster) {
+			this.dedicatedHostNameForMaster = dedicatedHostNameForMaster;
 		}
 
-		public String getEngine() {
-			return this.engine;
+		public String getDedicatedHostNameForSlave() {
+			return this.dedicatedHostNameForSlave;
 		}
 
-		public void setEngine(String engine) {
-			this.engine = engine;
+		public void setDedicatedHostNameForSlave(String dedicatedHostNameForSlave) {
+			this.dedicatedHostNameForSlave = dedicatedHostNameForSlave;
 		}
 
-		public String getDBInstanceClass() {
-			return this.dBInstanceClass;
+		public String getDedicatedHostZoneIdForLog() {
+			return this.dedicatedHostZoneIdForLog;
 		}
 
-		public void setDBInstanceClass(String dBInstanceClass) {
-			this.dBInstanceClass = dBInstanceClass;
+		public void setDedicatedHostZoneIdForLog(String dedicatedHostZoneIdForLog) {
+			this.dedicatedHostZoneIdForLog = dedicatedHostZoneIdForLog;
 		}
 
-		public Integer getSwitchWeight() {
-			return this.switchWeight;
+		public String getDedicatedHostZoneIdForMaster() {
+			return this.dedicatedHostZoneIdForMaster;
 		}
 
-		public void setSwitchWeight(Integer switchWeight) {
-			this.switchWeight = switchWeight;
+		public void setDedicatedHostZoneIdForMaster(String dedicatedHostZoneIdForMaster) {
+			this.dedicatedHostZoneIdForMaster = dedicatedHostZoneIdForMaster;
+		}
+
+		public String getDedicatedHostZoneIdForSlave() {
+			return this.dedicatedHostZoneIdForSlave;
+		}
+
+		public void setDedicatedHostZoneIdForSlave(String dedicatedHostZoneIdForSlave) {
+			this.dedicatedHostZoneIdForSlave = dedicatedHostZoneIdForSlave;
 		}
 
 		public Boolean getDeletionProtection() {
@@ -607,20 +437,68 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 			this.deletionProtection = deletionProtection;
 		}
 
-		public Boolean getBurstingEnabled() {
-			return this.burstingEnabled;
+		public String getDestroyTime() {
+			return this.destroyTime;
 		}
 
-		public void setBurstingEnabled(Boolean burstingEnabled) {
-			this.burstingEnabled = burstingEnabled;
+		public void setDestroyTime(String destroyTime) {
+			this.destroyTime = destroyTime;
 		}
 
-		public String getBpeEnabled() {
-			return this.bpeEnabled;
+		public String getEngine() {
+			return this.engine;
 		}
 
-		public void setBpeEnabled(String bpeEnabled) {
-			this.bpeEnabled = bpeEnabled;
+		public void setEngine(String engine) {
+			this.engine = engine;
+		}
+
+		public String getEngineVersion() {
+			return this.engineVersion;
+		}
+
+		public void setEngineVersion(String engineVersion) {
+			this.engineVersion = engineVersion;
+		}
+
+		public String getExpireTime() {
+			return this.expireTime;
+		}
+
+		public void setExpireTime(String expireTime) {
+			this.expireTime = expireTime;
+		}
+
+		public String getGeneralGroupName() {
+			return this.generalGroupName;
+		}
+
+		public void setGeneralGroupName(String generalGroupName) {
+			this.generalGroupName = generalGroupName;
+		}
+
+		public String getGuardDBInstanceId() {
+			return this.guardDBInstanceId;
+		}
+
+		public void setGuardDBInstanceId(String guardDBInstanceId) {
+			this.guardDBInstanceId = guardDBInstanceId;
+		}
+
+		public Integer getInsId() {
+			return this.insId;
+		}
+
+		public void setInsId(Integer insId) {
+			this.insId = insId;
+		}
+
+		public String getInstanceNetworkType() {
+			return this.instanceNetworkType;
+		}
+
+		public void setInstanceNetworkType(String instanceNetworkType) {
+			this.instanceNetworkType = instanceNetworkType;
 		}
 
 		public String getIoAccelerationEnabled() {
@@ -631,12 +509,164 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 			this.ioAccelerationEnabled = ioAccelerationEnabled;
 		}
 
-		public Boolean getColdDataEnabled() {
-			return this.coldDataEnabled;
+		public String getLockMode() {
+			return this.lockMode;
 		}
 
-		public void setColdDataEnabled(Boolean coldDataEnabled) {
-			this.coldDataEnabled = coldDataEnabled;
+		public void setLockMode(String lockMode) {
+			this.lockMode = lockMode;
+		}
+
+		public String getLockReason() {
+			return this.lockReason;
+		}
+
+		public void setLockReason(String lockReason) {
+			this.lockReason = lockReason;
+		}
+
+		public String getMasterInstanceId() {
+			return this.masterInstanceId;
+		}
+
+		public void setMasterInstanceId(String masterInstanceId) {
+			this.masterInstanceId = masterInstanceId;
+		}
+
+		public Boolean getMutriORsignle() {
+			return this.mutriORsignle;
+		}
+
+		public void setMutriORsignle(Boolean mutriORsignle) {
+			this.mutriORsignle = mutriORsignle;
+		}
+
+		public String getPayType() {
+			return this.payType;
+		}
+
+		public void setPayType(String payType) {
+			this.payType = payType;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public String getReplicateId() {
+			return this.replicateId;
+		}
+
+		public void setReplicateId(String replicateId) {
+			this.replicateId = replicateId;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public Integer getSwitchWeight() {
+			return this.switchWeight;
+		}
+
+		public void setSwitchWeight(Integer switchWeight) {
+			this.switchWeight = switchWeight;
+		}
+
+		public String getTempDBInstanceId() {
+			return this.tempDBInstanceId;
+		}
+
+		public void setTempDBInstanceId(String tempDBInstanceId) {
+			this.tempDBInstanceId = tempDBInstanceId;
+		}
+
+		public String getTips() {
+			return this.tips;
+		}
+
+		public void setTips(String tips) {
+			this.tips = tips;
+		}
+
+		public Integer getTipsLevel() {
+			return this.tipsLevel;
+		}
+
+		public void setTipsLevel(Integer tipsLevel) {
+			this.tipsLevel = tipsLevel;
+		}
+
+		public String getVSwitchId() {
+			return this.vSwitchId;
+		}
+
+		public void setVSwitchId(String vSwitchId) {
+			this.vSwitchId = vSwitchId;
+		}
+
+		public String getVpcCloudInstanceId() {
+			return this.vpcCloudInstanceId;
+		}
+
+		public void setVpcCloudInstanceId(String vpcCloudInstanceId) {
+			this.vpcCloudInstanceId = vpcCloudInstanceId;
+		}
+
+		public String getVpcId() {
+			return this.vpcId;
+		}
+
+		public void setVpcId(String vpcId) {
+			this.vpcId = vpcId;
+		}
+
+		public String getVpcName() {
+			return this.vpcName;
+		}
+
+		public void setVpcName(String vpcName) {
+			this.vpcName = vpcName;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
+
+		public String getBlueGreenDeploymentName() {
+			return this.blueGreenDeploymentName;
+		}
+
+		public void setBlueGreenDeploymentName(String blueGreenDeploymentName) {
+			this.blueGreenDeploymentName = blueGreenDeploymentName;
+		}
+
+		public String getBlueInstanceName() {
+			return this.blueInstanceName;
+		}
+
+		public void setBlueInstanceName(String blueInstanceName) {
+			this.blueInstanceName = blueInstanceName;
+		}
+
+		public String getGreenInstanceName() {
+			return this.greenInstanceName;
+		}
+
+		public void setGreenInstanceName(String greenInstanceName) {
+			this.greenInstanceName = greenInstanceName;
 		}
 
 		public List<ReadOnlyDBInstanceId> getReadOnlyDBInstanceIds() {

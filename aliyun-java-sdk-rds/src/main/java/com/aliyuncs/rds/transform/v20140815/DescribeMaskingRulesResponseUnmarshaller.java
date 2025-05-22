@@ -35,12 +35,18 @@ public class DescribeMaskingRulesResponseUnmarshaller {
 		List<EncDBInfo> rules = new ArrayList<EncDBInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeMaskingRulesResponse.Data.Rules.Length"); i++) {
 			EncDBInfo encDBInfo = new EncDBInfo();
-			encDBInfo.setRuleName(_ctx.stringValue("DescribeMaskingRulesResponse.Data.Rules["+ i +"].RuleName"));
-			encDBInfo.setEnabled(_ctx.stringValue("DescribeMaskingRulesResponse.Data.Rules["+ i +"].Enabled"));
 			encDBInfo.setDefaultAlgo(_ctx.stringValue("DescribeMaskingRulesResponse.Data.Rules["+ i +"].DefaultAlgo"));
+			encDBInfo.setEnabled(_ctx.stringValue("DescribeMaskingRulesResponse.Data.Rules["+ i +"].Enabled"));
 			encDBInfo.setMaskingAlgo(_ctx.stringValue("DescribeMaskingRulesResponse.Data.Rules["+ i +"].MaskingAlgo"));
+			encDBInfo.setRuleName(_ctx.stringValue("DescribeMaskingRulesResponse.Data.Rules["+ i +"].RuleName"));
 
 			RuleConfig ruleConfig = new RuleConfig();
+
+			List<String> columns = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeMaskingRulesResponse.Data.Rules["+ i +"].RuleConfig.Columns.Length"); j++) {
+				columns.add(_ctx.stringValue("DescribeMaskingRulesResponse.Data.Rules["+ i +"].RuleConfig.Columns["+ j +"]"));
+			}
+			ruleConfig.setColumns(columns);
 
 			List<String> databases = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeMaskingRulesResponse.Data.Rules["+ i +"].RuleConfig.Databases.Length"); j++) {
@@ -53,12 +59,6 @@ public class DescribeMaskingRulesResponseUnmarshaller {
 				tables.add(_ctx.stringValue("DescribeMaskingRulesResponse.Data.Rules["+ i +"].RuleConfig.Tables["+ j +"]"));
 			}
 			ruleConfig.setTables(tables);
-
-			List<String> columns = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeMaskingRulesResponse.Data.Rules["+ i +"].RuleConfig.Columns.Length"); j++) {
-				columns.add(_ctx.stringValue("DescribeMaskingRulesResponse.Data.Rules["+ i +"].RuleConfig.Columns["+ j +"]"));
-			}
-			ruleConfig.setColumns(columns);
 			encDBInfo.setRuleConfig(ruleConfig);
 
 			rules.add(encDBInfo);

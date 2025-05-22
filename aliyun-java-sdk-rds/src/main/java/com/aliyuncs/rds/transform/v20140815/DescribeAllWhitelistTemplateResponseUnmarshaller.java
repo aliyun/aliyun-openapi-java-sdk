@@ -28,27 +28,27 @@ public class DescribeAllWhitelistTemplateResponseUnmarshaller {
 	public static DescribeAllWhitelistTemplateResponse unmarshall(DescribeAllWhitelistTemplateResponse describeAllWhitelistTemplateResponse, UnmarshallerContext _ctx) {
 		
 		describeAllWhitelistTemplateResponse.setRequestId(_ctx.stringValue("DescribeAllWhitelistTemplateResponse.RequestId"));
-		describeAllWhitelistTemplateResponse.setSuccess(_ctx.booleanValue("DescribeAllWhitelistTemplateResponse.Success"));
 		describeAllWhitelistTemplateResponse.setCode(_ctx.stringValue("DescribeAllWhitelistTemplateResponse.Code"));
-		describeAllWhitelistTemplateResponse.setMessage(_ctx.stringValue("DescribeAllWhitelistTemplateResponse.Message"));
 		describeAllWhitelistTemplateResponse.setHttpStatusCode(_ctx.integerValue("DescribeAllWhitelistTemplateResponse.HttpStatusCode"));
+		describeAllWhitelistTemplateResponse.setMessage(_ctx.stringValue("DescribeAllWhitelistTemplateResponse.Message"));
+		describeAllWhitelistTemplateResponse.setSuccess(_ctx.booleanValue("DescribeAllWhitelistTemplateResponse.Success"));
 
 		Data data = new Data();
-		data.setTotalRecords(_ctx.integerValue("DescribeAllWhitelistTemplateResponse.Data.TotalRecords"));
-		data.setMaxRecordsPerPage(_ctx.integerValue("DescribeAllWhitelistTemplateResponse.Data.MaxRecordsPerPage"));
 		data.setCurrPageNumbers(_ctx.integerValue("DescribeAllWhitelistTemplateResponse.Data.CurrPageNumbers"));
-		data.setTotalPageNumbers(_ctx.integerValue("DescribeAllWhitelistTemplateResponse.Data.TotalPageNumbers"));
 		data.setHasNext(_ctx.booleanValue("DescribeAllWhitelistTemplateResponse.Data.HasNext"));
 		data.setHasPrev(_ctx.booleanValue("DescribeAllWhitelistTemplateResponse.Data.HasPrev"));
+		data.setMaxRecordsPerPage(_ctx.integerValue("DescribeAllWhitelistTemplateResponse.Data.MaxRecordsPerPage"));
+		data.setTotalPageNumbers(_ctx.integerValue("DescribeAllWhitelistTemplateResponse.Data.TotalPageNumbers"));
+		data.setTotalRecords(_ctx.integerValue("DescribeAllWhitelistTemplateResponse.Data.TotalRecords"));
 
 		List<Template> templates = new ArrayList<Template>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAllWhitelistTemplateResponse.Data.Templates.Length"); i++) {
 			Template template = new Template();
 			template.setId(_ctx.integerValue("DescribeAllWhitelistTemplateResponse.Data.Templates["+ i +"].Id"));
-			template.setUserId(_ctx.integerValue("DescribeAllWhitelistTemplateResponse.Data.Templates["+ i +"].UserId"));
+			template.setIps(_ctx.stringValue("DescribeAllWhitelistTemplateResponse.Data.Templates["+ i +"].Ips"));
 			template.setTemplateId(_ctx.integerValue("DescribeAllWhitelistTemplateResponse.Data.Templates["+ i +"].TemplateId"));
 			template.setTemplateName(_ctx.stringValue("DescribeAllWhitelistTemplateResponse.Data.Templates["+ i +"].TemplateName"));
-			template.setIps(_ctx.stringValue("DescribeAllWhitelistTemplateResponse.Data.Templates["+ i +"].Ips"));
+			template.setUserId(_ctx.integerValue("DescribeAllWhitelistTemplateResponse.Data.Templates["+ i +"].UserId"));
 
 			templates.add(template);
 		}

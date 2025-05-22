@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeHADiagnoseConfigResponse extends AcsResponse {
 
-	private String tcpConnectionType;
-
 	private String requestId;
 
-	public String getTcpConnectionType() {
-		return this.tcpConnectionType;
-	}
-
-	public void setTcpConnectionType(String tcpConnectionType) {
-		this.tcpConnectionType = tcpConnectionType;
-	}
+	private String tcpConnectionType;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,6 +34,14 @@ public class DescribeHADiagnoseConfigResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getTcpConnectionType() {
+		return this.tcpConnectionType;
+	}
+
+	public void setTcpConnectionType(String tcpConnectionType) {
+		this.tcpConnectionType = tcpConnectionType;
 	}
 
 	@Override

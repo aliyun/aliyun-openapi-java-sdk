@@ -24,8 +24,8 @@ public class ModifyDBInstanceDelayedReplicationTimeResponseUnmarshaller {
 		
 		modifyDBInstanceDelayedReplicationTimeResponse.setRequestId(_ctx.stringValue("ModifyDBInstanceDelayedReplicationTimeResponse.RequestId"));
 		modifyDBInstanceDelayedReplicationTimeResponse.setDBInstanceId(_ctx.stringValue("ModifyDBInstanceDelayedReplicationTimeResponse.DBInstanceId"));
-		modifyDBInstanceDelayedReplicationTimeResponse.setTaskId(_ctx.stringValue("ModifyDBInstanceDelayedReplicationTimeResponse.TaskId"));
 		modifyDBInstanceDelayedReplicationTimeResponse.setReadSQLReplicationTime(_ctx.stringValue("ModifyDBInstanceDelayedReplicationTimeResponse.ReadSQLReplicationTime"));
+		modifyDBInstanceDelayedReplicationTimeResponse.setTaskId(_ctx.stringValue("ModifyDBInstanceDelayedReplicationTimeResponse.TaskId"));
 	 
 	 	return modifyDBInstanceDelayedReplicationTimeResponse;
 	}

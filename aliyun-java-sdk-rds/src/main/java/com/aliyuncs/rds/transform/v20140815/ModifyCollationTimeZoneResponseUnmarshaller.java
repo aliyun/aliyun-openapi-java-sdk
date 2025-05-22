@@ -25,8 +25,8 @@ public class ModifyCollationTimeZoneResponseUnmarshaller {
 		modifyCollationTimeZoneResponse.setRequestId(_ctx.stringValue("ModifyCollationTimeZoneResponse.RequestId"));
 		modifyCollationTimeZoneResponse.setCollation(_ctx.stringValue("ModifyCollationTimeZoneResponse.Collation"));
 		modifyCollationTimeZoneResponse.setDBInstanceId(_ctx.stringValue("ModifyCollationTimeZoneResponse.DBInstanceId"));
-		modifyCollationTimeZoneResponse.setTimezone(_ctx.stringValue("ModifyCollationTimeZoneResponse.Timezone"));
 		modifyCollationTimeZoneResponse.setTaskId(_ctx.stringValue("ModifyCollationTimeZoneResponse.TaskId"));
+		modifyCollationTimeZoneResponse.setTimezone(_ctx.stringValue("ModifyCollationTimeZoneResponse.Timezone"));
 	 
 	 	return modifyCollationTimeZoneResponse;
 	}

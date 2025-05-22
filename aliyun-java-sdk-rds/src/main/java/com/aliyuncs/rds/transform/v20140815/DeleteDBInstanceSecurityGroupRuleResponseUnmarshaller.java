@@ -23,8 +23,8 @@ public class DeleteDBInstanceSecurityGroupRuleResponseUnmarshaller {
 	public static DeleteDBInstanceSecurityGroupRuleResponse unmarshall(DeleteDBInstanceSecurityGroupRuleResponse deleteDBInstanceSecurityGroupRuleResponse, UnmarshallerContext _ctx) {
 		
 		deleteDBInstanceSecurityGroupRuleResponse.setRequestId(_ctx.stringValue("DeleteDBInstanceSecurityGroupRuleResponse.RequestId"));
-		deleteDBInstanceSecurityGroupRuleResponse.setMessage(_ctx.stringValue("DeleteDBInstanceSecurityGroupRuleResponse.Message"));
 		deleteDBInstanceSecurityGroupRuleResponse.setCode(_ctx.stringValue("DeleteDBInstanceSecurityGroupRuleResponse.Code"));
+		deleteDBInstanceSecurityGroupRuleResponse.setMessage(_ctx.stringValue("DeleteDBInstanceSecurityGroupRuleResponse.Message"));
 	 
 	 	return deleteDBInstanceSecurityGroupRuleResponse;
 	}

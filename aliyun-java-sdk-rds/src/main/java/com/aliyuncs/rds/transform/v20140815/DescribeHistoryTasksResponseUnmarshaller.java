@@ -34,26 +34,26 @@ public class DescribeHistoryTasksResponseUnmarshaller {
 		List<ItemsItem> items = new ArrayList<ItemsItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeHistoryTasksResponse.Items.Length"); i++) {
 			ItemsItem itemsItem = new ItemsItem();
-			itemsItem.setStatus(_ctx.stringValue("DescribeHistoryTasksResponse.Items["+ i +"].Status"));
-			itemsItem.setTaskId(_ctx.stringValue("DescribeHistoryTasksResponse.Items["+ i +"].TaskId"));
-			itemsItem.setCurrentStepName(_ctx.stringValue("DescribeHistoryTasksResponse.Items["+ i +"].CurrentStepName"));
-			itemsItem.setStartTime(_ctx.stringValue("DescribeHistoryTasksResponse.Items["+ i +"].StartTime"));
-			itemsItem.setEndTime(_ctx.stringValue("DescribeHistoryTasksResponse.Items["+ i +"].EndTime"));
-			itemsItem.setTaskType(_ctx.stringValue("DescribeHistoryTasksResponse.Items["+ i +"].TaskType"));
-			itemsItem.setRemainTime(_ctx.integerValue("DescribeHistoryTasksResponse.Items["+ i +"].RemainTime"));
-			itemsItem.setProgress(_ctx.floatValue("DescribeHistoryTasksResponse.Items["+ i +"].Progress"));
-			itemsItem.setRegionId(_ctx.stringValue("DescribeHistoryTasksResponse.Items["+ i +"].RegionId"));
-			itemsItem.setInstanceType(_ctx.stringValue("DescribeHistoryTasksResponse.Items["+ i +"].InstanceType"));
-			itemsItem.setInstanceId(_ctx.stringValue("DescribeHistoryTasksResponse.Items["+ i +"].InstanceId"));
-			itemsItem.setInstanceName(_ctx.stringValue("DescribeHistoryTasksResponse.Items["+ i +"].InstanceName"));
-			itemsItem.setDbType(_ctx.stringValue("DescribeHistoryTasksResponse.Items["+ i +"].DbType"));
-			itemsItem.setProduct(_ctx.stringValue("DescribeHistoryTasksResponse.Items["+ i +"].Product"));
-			itemsItem.setTaskDetail(_ctx.stringValue("DescribeHistoryTasksResponse.Items["+ i +"].TaskDetail"));
-			itemsItem.setReasonCode(_ctx.stringValue("DescribeHistoryTasksResponse.Items["+ i +"].ReasonCode"));
 			itemsItem.setActionInfo(_ctx.stringValue("DescribeHistoryTasksResponse.Items["+ i +"].ActionInfo"));
-			itemsItem.setUid(_ctx.stringValue("DescribeHistoryTasksResponse.Items["+ i +"].Uid"));
 			itemsItem.setCallerSource(_ctx.stringValue("DescribeHistoryTasksResponse.Items["+ i +"].CallerSource"));
 			itemsItem.setCallerUid(_ctx.stringValue("DescribeHistoryTasksResponse.Items["+ i +"].CallerUid"));
+			itemsItem.setCurrentStepName(_ctx.stringValue("DescribeHistoryTasksResponse.Items["+ i +"].CurrentStepName"));
+			itemsItem.setDbType(_ctx.stringValue("DescribeHistoryTasksResponse.Items["+ i +"].DbType"));
+			itemsItem.setEndTime(_ctx.stringValue("DescribeHistoryTasksResponse.Items["+ i +"].EndTime"));
+			itemsItem.setInstanceId(_ctx.stringValue("DescribeHistoryTasksResponse.Items["+ i +"].InstanceId"));
+			itemsItem.setInstanceName(_ctx.stringValue("DescribeHistoryTasksResponse.Items["+ i +"].InstanceName"));
+			itemsItem.setInstanceType(_ctx.stringValue("DescribeHistoryTasksResponse.Items["+ i +"].InstanceType"));
+			itemsItem.setProduct(_ctx.stringValue("DescribeHistoryTasksResponse.Items["+ i +"].Product"));
+			itemsItem.setProgress(_ctx.floatValue("DescribeHistoryTasksResponse.Items["+ i +"].Progress"));
+			itemsItem.setReasonCode(_ctx.stringValue("DescribeHistoryTasksResponse.Items["+ i +"].ReasonCode"));
+			itemsItem.setRegionId(_ctx.stringValue("DescribeHistoryTasksResponse.Items["+ i +"].RegionId"));
+			itemsItem.setRemainTime(_ctx.integerValue("DescribeHistoryTasksResponse.Items["+ i +"].RemainTime"));
+			itemsItem.setStartTime(_ctx.stringValue("DescribeHistoryTasksResponse.Items["+ i +"].StartTime"));
+			itemsItem.setStatus(_ctx.stringValue("DescribeHistoryTasksResponse.Items["+ i +"].Status"));
+			itemsItem.setTaskDetail(_ctx.stringValue("DescribeHistoryTasksResponse.Items["+ i +"].TaskDetail"));
+			itemsItem.setTaskId(_ctx.stringValue("DescribeHistoryTasksResponse.Items["+ i +"].TaskId"));
+			itemsItem.setTaskType(_ctx.stringValue("DescribeHistoryTasksResponse.Items["+ i +"].TaskType"));
+			itemsItem.setUid(_ctx.stringValue("DescribeHistoryTasksResponse.Items["+ i +"].Uid"));
 
 			items.add(itemsItem);
 		}

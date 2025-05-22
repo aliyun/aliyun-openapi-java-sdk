@@ -26,9 +26,9 @@ public class UpgradeDBInstanceKernelVersionResponse extends AcsResponse {
 
 	private String dBInstanceName;
 
-	private String targetMinorVersion;
-
 	private String requestId;
+
+	private String targetMinorVersion;
 
 	private String taskId;
 
@@ -40,20 +40,20 @@ public class UpgradeDBInstanceKernelVersionResponse extends AcsResponse {
 		this.dBInstanceName = dBInstanceName;
 	}
 
-	public String getTargetMinorVersion() {
-		return this.targetMinorVersion;
-	}
-
-	public void setTargetMinorVersion(String targetMinorVersion) {
-		this.targetMinorVersion = targetMinorVersion;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getTargetMinorVersion() {
+		return this.targetMinorVersion;
+	}
+
+	public void setTargetMinorVersion(String targetMinorVersion) {
+		this.targetMinorVersion = targetMinorVersion;
 	}
 
 	public String getTaskId() {

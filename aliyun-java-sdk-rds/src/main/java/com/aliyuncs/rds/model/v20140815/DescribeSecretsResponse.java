@@ -25,20 +25,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSecretsResponse extends AcsResponse {
 
-	private String requestId;
+	private Long pageNumber;
 
 	private Long pageSize;
 
-	private Long pageNumber;
+	private String requestId;
 
 	private List<SecretsItem> secrets;
 
-	public String getRequestId() {
-		return this.requestId;
+	public Long getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public Long getPageSize() {
@@ -49,12 +49,12 @@ public class DescribeSecretsResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Long getPageNumber() {
-		return this.pageNumber;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setPageNumber(Long pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<SecretsItem> getSecrets() {
@@ -69,13 +69,13 @@ public class DescribeSecretsResponse extends AcsResponse {
 
 		private String accountId;
 
-		private String secretName;
+		private String description;
 
 		private String regionId;
 
 		private String secretArn;
 
-		private String description;
+		private String secretName;
 
 		private String username;
 
@@ -87,12 +87,12 @@ public class DescribeSecretsResponse extends AcsResponse {
 			this.accountId = accountId;
 		}
 
-		public String getSecretName() {
-			return this.secretName;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setSecretName(String secretName) {
-			this.secretName = secretName;
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public String getRegionId() {
@@ -111,12 +111,12 @@ public class DescribeSecretsResponse extends AcsResponse {
 			this.secretArn = secretArn;
 		}
 
-		public String getDescription() {
-			return this.description;
+		public String getSecretName() {
+			return this.secretName;
 		}
 
-		public void setDescription(String description) {
-			this.description = description;
+		public void setSecretName(String secretName) {
+			this.secretName = secretName;
 		}
 
 		public String getUsername() {

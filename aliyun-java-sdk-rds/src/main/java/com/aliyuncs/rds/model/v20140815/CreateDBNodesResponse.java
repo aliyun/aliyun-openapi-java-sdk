@@ -24,21 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateDBNodesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String dBInstanceId;
-
-	private Long orderId;
 
 	private String nodeIds;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+	private Long orderId;
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getDBInstanceId() {
 		return this.dBInstanceId;
@@ -46,6 +38,14 @@ public class CreateDBNodesResponse extends AcsResponse {
 
 	public void setDBInstanceId(String dBInstanceId) {
 		this.dBInstanceId = dBInstanceId;
+	}
+
+	public String getNodeIds() {
+		return this.nodeIds;
+	}
+
+	public void setNodeIds(String nodeIds) {
+		this.nodeIds = nodeIds;
 	}
 
 	public Long getOrderId() {
@@ -56,12 +56,12 @@ public class CreateDBNodesResponse extends AcsResponse {
 		this.orderId = orderId;
 	}
 
-	public String getNodeIds() {
-		return this.nodeIds;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setNodeIds(String nodeIds) {
-		this.nodeIds = nodeIds;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

@@ -24,29 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDBInstanceSecurityGroupRuleResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String message;
-
 	private String code;
 
 	private String data;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+	private String message;
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
+	private String requestId;
 
 	public String getCode() {
 		return this.code;
@@ -62,6 +46,22 @@ public class DescribeDBInstanceSecurityGroupRuleResponse extends AcsResponse {
 
 	public void setData(String data) {
 		this.data = data;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

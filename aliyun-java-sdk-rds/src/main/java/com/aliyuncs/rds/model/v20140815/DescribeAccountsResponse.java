@@ -25,33 +25,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeAccountsResponse extends AcsResponse {
 
-	private String systemAdminAccountStatus;
-
-	private String systemAdminAccountFirstActivationTime;
-
 	private Integer pageNumber;
 
 	private String requestId;
 
+	private String systemAdminAccountFirstActivationTime;
+
+	private String systemAdminAccountStatus;
+
 	private Integer totalRecordCount;
 
+	private String resourceGroupId;
+
 	private List<DBInstanceAccount> accounts;
-
-	public String getSystemAdminAccountStatus() {
-		return this.systemAdminAccountStatus;
-	}
-
-	public void setSystemAdminAccountStatus(String systemAdminAccountStatus) {
-		this.systemAdminAccountStatus = systemAdminAccountStatus;
-	}
-
-	public String getSystemAdminAccountFirstActivationTime() {
-		return this.systemAdminAccountFirstActivationTime;
-	}
-
-	public void setSystemAdminAccountFirstActivationTime(String systemAdminAccountFirstActivationTime) {
-		this.systemAdminAccountFirstActivationTime = systemAdminAccountFirstActivationTime;
-	}
 
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -69,12 +55,36 @@ public class DescribeAccountsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getSystemAdminAccountFirstActivationTime() {
+		return this.systemAdminAccountFirstActivationTime;
+	}
+
+	public void setSystemAdminAccountFirstActivationTime(String systemAdminAccountFirstActivationTime) {
+		this.systemAdminAccountFirstActivationTime = systemAdminAccountFirstActivationTime;
+	}
+
+	public String getSystemAdminAccountStatus() {
+		return this.systemAdminAccountStatus;
+	}
+
+	public void setSystemAdminAccountStatus(String systemAdminAccountStatus) {
+		this.systemAdminAccountStatus = systemAdminAccountStatus;
+	}
+
 	public Integer getTotalRecordCount() {
 		return this.totalRecordCount;
 	}
 
 	public void setTotalRecordCount(Integer totalRecordCount) {
 		this.totalRecordCount = totalRecordCount;
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
 	}
 
 	public List<DBInstanceAccount> getAccounts() {
@@ -87,37 +97,33 @@ public class DescribeAccountsResponse extends AcsResponse {
 
 	public static class DBInstanceAccount {
 
-		private String accountStatus;
-
 		private String accountDescription;
-
-		private String dBInstanceId;
-
-		private String privExceeded;
-
-		private String accountType;
 
 		private String accountName;
 
-		private String validUntil;
+		private String accountStatus;
 
-		private String createDB;
-
-		private String replication;
-
-		private String createRole;
+		private String accountType;
 
 		private String bypassRLS;
 
+		private Boolean checkPolicy;
+
+		private String createDB;
+
+		private String createRole;
+
+		private String dBInstanceId;
+
+		private String passwordExpireTime;
+
+		private String privExceeded;
+
+		private String replication;
+
+		private String validUntil;
+
 		private List<DatabasePrivilege> databasePrivileges;
-
-		public String getAccountStatus() {
-			return this.accountStatus;
-		}
-
-		public void setAccountStatus(String accountStatus) {
-			this.accountStatus = accountStatus;
-		}
 
 		public String getAccountDescription() {
 			return this.accountDescription;
@@ -125,30 +131,6 @@ public class DescribeAccountsResponse extends AcsResponse {
 
 		public void setAccountDescription(String accountDescription) {
 			this.accountDescription = accountDescription;
-		}
-
-		public String getDBInstanceId() {
-			return this.dBInstanceId;
-		}
-
-		public void setDBInstanceId(String dBInstanceId) {
-			this.dBInstanceId = dBInstanceId;
-		}
-
-		public String getPrivExceeded() {
-			return this.privExceeded;
-		}
-
-		public void setPrivExceeded(String privExceeded) {
-			this.privExceeded = privExceeded;
-		}
-
-		public String getAccountType() {
-			return this.accountType;
-		}
-
-		public void setAccountType(String accountType) {
-			this.accountType = accountType;
 		}
 
 		public String getAccountName() {
@@ -159,12 +141,36 @@ public class DescribeAccountsResponse extends AcsResponse {
 			this.accountName = accountName;
 		}
 
-		public String getValidUntil() {
-			return this.validUntil;
+		public String getAccountStatus() {
+			return this.accountStatus;
 		}
 
-		public void setValidUntil(String validUntil) {
-			this.validUntil = validUntil;
+		public void setAccountStatus(String accountStatus) {
+			this.accountStatus = accountStatus;
+		}
+
+		public String getAccountType() {
+			return this.accountType;
+		}
+
+		public void setAccountType(String accountType) {
+			this.accountType = accountType;
+		}
+
+		public String getBypassRLS() {
+			return this.bypassRLS;
+		}
+
+		public void setBypassRLS(String bypassRLS) {
+			this.bypassRLS = bypassRLS;
+		}
+
+		public Boolean getCheckPolicy() {
+			return this.checkPolicy;
+		}
+
+		public void setCheckPolicy(Boolean checkPolicy) {
+			this.checkPolicy = checkPolicy;
 		}
 
 		public String getCreateDB() {
@@ -175,14 +181,6 @@ public class DescribeAccountsResponse extends AcsResponse {
 			this.createDB = createDB;
 		}
 
-		public String getReplication() {
-			return this.replication;
-		}
-
-		public void setReplication(String replication) {
-			this.replication = replication;
-		}
-
 		public String getCreateRole() {
 			return this.createRole;
 		}
@@ -191,12 +189,44 @@ public class DescribeAccountsResponse extends AcsResponse {
 			this.createRole = createRole;
 		}
 
-		public String getBypassRLS() {
-			return this.bypassRLS;
+		public String getDBInstanceId() {
+			return this.dBInstanceId;
 		}
 
-		public void setBypassRLS(String bypassRLS) {
-			this.bypassRLS = bypassRLS;
+		public void setDBInstanceId(String dBInstanceId) {
+			this.dBInstanceId = dBInstanceId;
+		}
+
+		public String getPasswordExpireTime() {
+			return this.passwordExpireTime;
+		}
+
+		public void setPasswordExpireTime(String passwordExpireTime) {
+			this.passwordExpireTime = passwordExpireTime;
+		}
+
+		public String getPrivExceeded() {
+			return this.privExceeded;
+		}
+
+		public void setPrivExceeded(String privExceeded) {
+			this.privExceeded = privExceeded;
+		}
+
+		public String getReplication() {
+			return this.replication;
+		}
+
+		public void setReplication(String replication) {
+			this.replication = replication;
+		}
+
+		public String getValidUntil() {
+			return this.validUntil;
+		}
+
+		public void setValidUntil(String validUntil) {
+			this.validUntil = validUntil;
 		}
 
 		public List<DatabasePrivilege> getDatabasePrivileges() {
@@ -209,19 +239,11 @@ public class DescribeAccountsResponse extends AcsResponse {
 
 		public static class DatabasePrivilege {
 
-			private String dBName;
-
 			private String accountPrivilege;
 
 			private String accountPrivilegeDetail;
 
-			public String getDBName() {
-				return this.dBName;
-			}
-
-			public void setDBName(String dBName) {
-				this.dBName = dBName;
-			}
+			private String dBName;
 
 			public String getAccountPrivilege() {
 				return this.accountPrivilege;
@@ -237,6 +259,14 @@ public class DescribeAccountsResponse extends AcsResponse {
 
 			public void setAccountPrivilegeDetail(String accountPrivilegeDetail) {
 				this.accountPrivilegeDetail = accountPrivilegeDetail;
+			}
+
+			public String getDBName() {
+				return this.dBName;
+			}
+
+			public void setDBName(String dBName) {
+				this.dBName = dBName;
 			}
 		}
 	}

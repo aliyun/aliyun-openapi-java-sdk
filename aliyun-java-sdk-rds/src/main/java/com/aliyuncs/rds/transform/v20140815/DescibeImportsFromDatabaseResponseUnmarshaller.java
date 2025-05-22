@@ -34,11 +34,11 @@ public class DescibeImportsFromDatabaseResponseUnmarshaller {
 		List<ImportResultFromDB> items = new ArrayList<ImportResultFromDB>();
 		for (int i = 0; i < _ctx.lengthValue("DescibeImportsFromDatabaseResponse.Items.Length"); i++) {
 			ImportResultFromDB importResultFromDB = new ImportResultFromDB();
-			importResultFromDB.setIncrementalImportingTime(_ctx.stringValue("DescibeImportsFromDatabaseResponse.Items["+ i +"].IncrementalImportingTime"));
-			importResultFromDB.setImportId(_ctx.integerValue("DescibeImportsFromDatabaseResponse.Items["+ i +"].ImportId"));
 			importResultFromDB.setImportDataStatus(_ctx.stringValue("DescibeImportsFromDatabaseResponse.Items["+ i +"].ImportDataStatus"));
-			importResultFromDB.setImportDataType(_ctx.stringValue("DescibeImportsFromDatabaseResponse.Items["+ i +"].ImportDataType"));
 			importResultFromDB.setImportDataStatusDescription(_ctx.stringValue("DescibeImportsFromDatabaseResponse.Items["+ i +"].ImportDataStatusDescription"));
+			importResultFromDB.setImportDataType(_ctx.stringValue("DescibeImportsFromDatabaseResponse.Items["+ i +"].ImportDataType"));
+			importResultFromDB.setImportId(_ctx.integerValue("DescibeImportsFromDatabaseResponse.Items["+ i +"].ImportId"));
+			importResultFromDB.setIncrementalImportingTime(_ctx.stringValue("DescibeImportsFromDatabaseResponse.Items["+ i +"].IncrementalImportingTime"));
 
 			items.add(importResultFromDB);
 		}

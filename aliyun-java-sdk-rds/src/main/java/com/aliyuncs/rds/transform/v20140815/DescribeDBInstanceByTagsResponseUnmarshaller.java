@@ -40,8 +40,8 @@ public class DescribeDBInstanceByTagsResponseUnmarshaller {
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDBInstanceByTagsResponse.Items["+ i +"].Tags.Length"); j++) {
 				Tag tag = new Tag();
-				tag.setTagValue(_ctx.stringValue("DescribeDBInstanceByTagsResponse.Items["+ i +"].Tags["+ j +"].TagValue"));
 				tag.setTagKey(_ctx.stringValue("DescribeDBInstanceByTagsResponse.Items["+ i +"].Tags["+ j +"].TagKey"));
+				tag.setTagValue(_ctx.stringValue("DescribeDBInstanceByTagsResponse.Items["+ i +"].Tags["+ j +"].TagValue"));
 
 				tags.add(tag);
 			}

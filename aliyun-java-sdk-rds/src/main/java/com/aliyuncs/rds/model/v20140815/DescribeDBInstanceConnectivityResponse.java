@@ -24,39 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDBInstanceConnectivityResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String dbInstanceName;
-
-	private String connCheckResult;
-
 	private String connCheckErrorCode;
 
 	private String connCheckErrorMessage;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+	private String connCheckResult;
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String dbInstanceName;
 
-	public String getDbInstanceName() {
-		return this.dbInstanceName;
-	}
-
-	public void setDbInstanceName(String dbInstanceName) {
-		this.dbInstanceName = dbInstanceName;
-	}
-
-	public String getConnCheckResult() {
-		return this.connCheckResult;
-	}
-
-	public void setConnCheckResult(String connCheckResult) {
-		this.connCheckResult = connCheckResult;
-	}
+	private String requestId;
 
 	public String getConnCheckErrorCode() {
 		return this.connCheckErrorCode;
@@ -72,6 +48,30 @@ public class DescribeDBInstanceConnectivityResponse extends AcsResponse {
 
 	public void setConnCheckErrorMessage(String connCheckErrorMessage) {
 		this.connCheckErrorMessage = connCheckErrorMessage;
+	}
+
+	public String getConnCheckResult() {
+		return this.connCheckResult;
+	}
+
+	public void setConnCheckResult(String connCheckResult) {
+		this.connCheckResult = connCheckResult;
+	}
+
+	public String getDbInstanceName() {
+		return this.dbInstanceName;
+	}
+
+	public void setDbInstanceName(String dbInstanceName) {
+		this.dbInstanceName = dbInstanceName;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

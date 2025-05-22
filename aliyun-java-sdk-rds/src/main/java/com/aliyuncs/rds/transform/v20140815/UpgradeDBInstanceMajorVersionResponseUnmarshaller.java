@@ -23,10 +23,10 @@ public class UpgradeDBInstanceMajorVersionResponseUnmarshaller {
 	public static UpgradeDBInstanceMajorVersionResponse unmarshall(UpgradeDBInstanceMajorVersionResponse upgradeDBInstanceMajorVersionResponse, UnmarshallerContext _ctx) {
 		
 		upgradeDBInstanceMajorVersionResponse.setRequestId(_ctx.stringValue("UpgradeDBInstanceMajorVersionResponse.RequestId"));
-		upgradeDBInstanceMajorVersionResponse.setDBInstanceId(_ctx.stringValue("UpgradeDBInstanceMajorVersionResponse.DBInstanceId"));
-		upgradeDBInstanceMajorVersionResponse.setPort(_ctx.stringValue("UpgradeDBInstanceMajorVersionResponse.Port"));
 		upgradeDBInstanceMajorVersionResponse.setConnectionString(_ctx.stringValue("UpgradeDBInstanceMajorVersionResponse.ConnectionString"));
+		upgradeDBInstanceMajorVersionResponse.setDBInstanceId(_ctx.stringValue("UpgradeDBInstanceMajorVersionResponse.DBInstanceId"));
 		upgradeDBInstanceMajorVersionResponse.setOrderId(_ctx.stringValue("UpgradeDBInstanceMajorVersionResponse.OrderId"));
+		upgradeDBInstanceMajorVersionResponse.setPort(_ctx.stringValue("UpgradeDBInstanceMajorVersionResponse.Port"));
 		upgradeDBInstanceMajorVersionResponse.setTaskId(_ctx.longValue("UpgradeDBInstanceMajorVersionResponse.TaskId"));
 	 
 	 	return upgradeDBInstanceMajorVersionResponse;

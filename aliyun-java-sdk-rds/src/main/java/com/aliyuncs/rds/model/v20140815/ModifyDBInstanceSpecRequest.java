@@ -31,7 +31,26 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 
 	private Integer dBInstanceStorage;
 
+	private String optimizedWrites;
+
 	private String engineVersion;
+
+	private String resourceGroupId;
+
+	@SerializedName("serverlessConfiguration")
+	private ServerlessConfiguration serverlessConfiguration;
+
+	private Long ownerId;
+
+	private String dBInstanceClass;
+
+	private String vSwitchId;
+
+	private String promotionCode;
+
+	private String zoneId;
+
+	private String zoneIdSlave1;
 
 	private Boolean autoUseCoupon;
 
@@ -39,12 +58,9 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 
 	private Boolean coldDataEnabled;
 
-	private String resourceGroupId;
-
-	@SerializedName("serverlessConfiguration")
-	private ServerlessConfiguration serverlessConfiguration;
-
 	private String effectiveTime;
+
+	private String readOnlyDBInstanceClass;
 
 	private String dBInstanceId;
 
@@ -58,11 +74,11 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 
 	private String direction;
 
+	private String compressionMode;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
-
-	private Long ownerId;
 
 	private Long usedTime;
 
@@ -70,9 +86,7 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 
 	private String targetMinorVersion;
 
-	private String dBInstanceClass;
-
-	private String zoneId;
+	private Boolean allowMajorVersionUpgrade;
 
 	private String category;
 
@@ -108,6 +122,17 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 		}
 	}
 
+	public String getOptimizedWrites() {
+		return this.optimizedWrites;
+	}
+
+	public void setOptimizedWrites(String optimizedWrites) {
+		this.optimizedWrites = optimizedWrites;
+		if(optimizedWrites != null){
+			putQueryParameter("OptimizedWrites", optimizedWrites);
+		}
+	}
+
 	public String getEngineVersion() {
 		return this.engineVersion;
 	}
@@ -116,6 +141,94 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 		this.engineVersion = engineVersion;
 		if(engineVersion != null){
 			putQueryParameter("EngineVersion", engineVersion);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public ServerlessConfiguration getServerlessConfiguration() {
+		return this.serverlessConfiguration;
+	}
+
+	public void setServerlessConfiguration(ServerlessConfiguration serverlessConfiguration) {
+		this.serverlessConfiguration = serverlessConfiguration;	
+		if (serverlessConfiguration != null) {
+			putQueryParameter("ServerlessConfiguration" , new Gson().toJson(serverlessConfiguration));
+		}	
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getDBInstanceClass() {
+		return this.dBInstanceClass;
+	}
+
+	public void setDBInstanceClass(String dBInstanceClass) {
+		this.dBInstanceClass = dBInstanceClass;
+		if(dBInstanceClass != null){
+			putQueryParameter("DBInstanceClass", dBInstanceClass);
+		}
+	}
+
+	public String getVSwitchId() {
+		return this.vSwitchId;
+	}
+
+	public void setVSwitchId(String vSwitchId) {
+		this.vSwitchId = vSwitchId;
+		if(vSwitchId != null){
+			putQueryParameter("VSwitchId", vSwitchId);
+		}
+	}
+
+	public String getPromotionCode() {
+		return this.promotionCode;
+	}
+
+	public void setPromotionCode(String promotionCode) {
+		this.promotionCode = promotionCode;
+		if(promotionCode != null){
+			putQueryParameter("PromotionCode", promotionCode);
+		}
+	}
+
+	public String getZoneId() {
+		return this.zoneId;
+	}
+
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+		if(zoneId != null){
+			putQueryParameter("ZoneId", zoneId);
+		}
+	}
+
+	public String getZoneIdSlave1() {
+		return this.zoneIdSlave1;
+	}
+
+	public void setZoneIdSlave1(String zoneIdSlave1) {
+		this.zoneIdSlave1 = zoneIdSlave1;
+		if(zoneIdSlave1 != null){
+			putQueryParameter("ZoneIdSlave1", zoneIdSlave1);
 		}
 	}
 
@@ -152,28 +265,6 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 		}
 	}
 
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
-	}
-
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
-		}
-	}
-
-	public ServerlessConfiguration getServerlessConfiguration() {
-		return this.serverlessConfiguration;
-	}
-
-	public void setServerlessConfiguration(ServerlessConfiguration serverlessConfiguration) {
-		this.serverlessConfiguration = serverlessConfiguration;	
-		if (serverlessConfiguration != null) {
-			putQueryParameter("ServerlessConfiguration" , new Gson().toJson(serverlessConfiguration));
-		}	
-	}
-
 	public String getEffectiveTime() {
 		return this.effectiveTime;
 	}
@@ -182,6 +273,17 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 		this.effectiveTime = effectiveTime;
 		if(effectiveTime != null){
 			putQueryParameter("EffectiveTime", effectiveTime);
+		}
+	}
+
+	public String getReadOnlyDBInstanceClass() {
+		return this.readOnlyDBInstanceClass;
+	}
+
+	public void setReadOnlyDBInstanceClass(String readOnlyDBInstanceClass) {
+		this.readOnlyDBInstanceClass = readOnlyDBInstanceClass;
+		if(readOnlyDBInstanceClass != null){
+			putQueryParameter("ReadOnlyDBInstanceClass", readOnlyDBInstanceClass);
 		}
 	}
 
@@ -251,6 +353,17 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 		}
 	}
 
+	public String getCompressionMode() {
+		return this.compressionMode;
+	}
+
+	public void setCompressionMode(String compressionMode) {
+		this.compressionMode = compressionMode;
+		if(compressionMode != null){
+			putQueryParameter("CompressionMode", compressionMode);
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -270,17 +383,6 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
@@ -317,25 +419,14 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 		}
 	}
 
-	public String getDBInstanceClass() {
-		return this.dBInstanceClass;
+	public Boolean getAllowMajorVersionUpgrade() {
+		return this.allowMajorVersionUpgrade;
 	}
 
-	public void setDBInstanceClass(String dBInstanceClass) {
-		this.dBInstanceClass = dBInstanceClass;
-		if(dBInstanceClass != null){
-			putQueryParameter("DBInstanceClass", dBInstanceClass);
-		}
-	}
-
-	public String getZoneId() {
-		return this.zoneId;
-	}
-
-	public void setZoneId(String zoneId) {
-		this.zoneId = zoneId;
-		if(zoneId != null){
-			putQueryParameter("ZoneId", zoneId);
+	public void setAllowMajorVersionUpgrade(Boolean allowMajorVersionUpgrade) {
+		this.allowMajorVersionUpgrade = allowMajorVersionUpgrade;
+		if(allowMajorVersionUpgrade != null){
+			putQueryParameter("AllowMajorVersionUpgrade", allowMajorVersionUpgrade.toString());
 		}
 	}
 

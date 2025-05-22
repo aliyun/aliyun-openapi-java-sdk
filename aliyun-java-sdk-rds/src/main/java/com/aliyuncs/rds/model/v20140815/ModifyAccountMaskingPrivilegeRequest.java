@@ -15,7 +15,6 @@
 package com.aliyuncs.rds.model.v20140815;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.rds.Endpoint;
 
@@ -28,20 +27,21 @@ public class ModifyAccountMaskingPrivilegeRequest extends RpcAcsRequest<ModifyAc
 
 	private String dBInstanceName;
 
-	private String expireTime;
-
 	private Long resourceOwnerId;
-
-	private String resourceOwnerAccount;
 
 	private String privilege;
 
+	private String expireTime;
+
+	private String resourceOwnerAccount;
+
 	private String ownerId;
+
+	private String dBName;
 
 	private String userName;
 	public ModifyAccountMaskingPrivilegeRequest() {
 		super("Rds", "2014-08-15", "ModifyAccountMaskingPrivilege", "rds");
-		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -60,17 +60,6 @@ public class ModifyAccountMaskingPrivilegeRequest extends RpcAcsRequest<ModifyAc
 		}
 	}
 
-	public String getExpireTime() {
-		return this.expireTime;
-	}
-
-	public void setExpireTime(String expireTime) {
-		this.expireTime = expireTime;
-		if(expireTime != null){
-			putQueryParameter("ExpireTime", expireTime);
-		}
-	}
-
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
@@ -79,17 +68,6 @@ public class ModifyAccountMaskingPrivilegeRequest extends RpcAcsRequest<ModifyAc
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -104,6 +82,28 @@ public class ModifyAccountMaskingPrivilegeRequest extends RpcAcsRequest<ModifyAc
 		}
 	}
 
+	public String getExpireTime() {
+		return this.expireTime;
+	}
+
+	public void setExpireTime(String expireTime) {
+		this.expireTime = expireTime;
+		if(expireTime != null){
+			putQueryParameter("ExpireTime", expireTime);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
 	public String getOwnerId() {
 		return this.ownerId;
 	}
@@ -112,6 +112,17 @@ public class ModifyAccountMaskingPrivilegeRequest extends RpcAcsRequest<ModifyAc
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId);
+		}
+	}
+
+	public String getDBName() {
+		return this.dBName;
+	}
+
+	public void setDBName(String dBName) {
+		this.dBName = dBName;
+		if(dBName != null){
+			putQueryParameter("DBName", dBName);
 		}
 	}
 

@@ -27,22 +27,22 @@ public class DescribeAvailableMetricsResponseUnmarshaller {
 	public static DescribeAvailableMetricsResponse unmarshall(DescribeAvailableMetricsResponse describeAvailableMetricsResponse, UnmarshallerContext _ctx) {
 		
 		describeAvailableMetricsResponse.setRequestId(_ctx.stringValue("DescribeAvailableMetricsResponse.RequestId"));
-		describeAvailableMetricsResponse.setTotalRecordCount(_ctx.integerValue("DescribeAvailableMetricsResponse.TotalRecordCount"));
 		describeAvailableMetricsResponse.setDBInstanceName(_ctx.stringValue("DescribeAvailableMetricsResponse.DBInstanceName"));
+		describeAvailableMetricsResponse.setTotalRecordCount(_ctx.integerValue("DescribeAvailableMetricsResponse.TotalRecordCount"));
 
 		List<Metrics> items = new ArrayList<Metrics>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAvailableMetricsResponse.Items.Length"); i++) {
 			Metrics metrics = new Metrics();
-			metrics.setGroupKey(_ctx.stringValue("DescribeAvailableMetricsResponse.Items["+ i +"].GroupKey"));
-			metrics.setSortRule(_ctx.integerValue("DescribeAvailableMetricsResponse.Items["+ i +"].SortRule"));
-			metrics.setDescription(_ctx.stringValue("DescribeAvailableMetricsResponse.Items["+ i +"].Description"));
-			metrics.setUnit(_ctx.stringValue("DescribeAvailableMetricsResponse.Items["+ i +"].Unit"));
 			metrics.setDbType(_ctx.stringValue("DescribeAvailableMetricsResponse.Items["+ i +"].DbType"));
-			metrics.setMetricsKey(_ctx.stringValue("DescribeAvailableMetricsResponse.Items["+ i +"].MetricsKey"));
-			metrics.setGroupKeyType(_ctx.stringValue("DescribeAvailableMetricsResponse.Items["+ i +"].GroupKeyType"));
-			metrics.setMetricsKeyAlias(_ctx.stringValue("DescribeAvailableMetricsResponse.Items["+ i +"].MetricsKeyAlias"));
-			metrics.setBizMethod(_ctx.stringValue("DescribeAvailableMetricsResponse.Items["+ i +"].Method"));
+			metrics.setDescription(_ctx.stringValue("DescribeAvailableMetricsResponse.Items["+ i +"].Description"));
 			metrics.setDimension(_ctx.stringValue("DescribeAvailableMetricsResponse.Items["+ i +"].Dimension"));
+			metrics.setGroupKey(_ctx.stringValue("DescribeAvailableMetricsResponse.Items["+ i +"].GroupKey"));
+			metrics.setGroupKeyType(_ctx.stringValue("DescribeAvailableMetricsResponse.Items["+ i +"].GroupKeyType"));
+			metrics.setBizMethod(_ctx.stringValue("DescribeAvailableMetricsResponse.Items["+ i +"].Method"));
+			metrics.setMetricsKey(_ctx.stringValue("DescribeAvailableMetricsResponse.Items["+ i +"].MetricsKey"));
+			metrics.setMetricsKeyAlias(_ctx.stringValue("DescribeAvailableMetricsResponse.Items["+ i +"].MetricsKeyAlias"));
+			metrics.setSortRule(_ctx.integerValue("DescribeAvailableMetricsResponse.Items["+ i +"].SortRule"));
+			metrics.setUnit(_ctx.stringValue("DescribeAvailableMetricsResponse.Items["+ i +"].Unit"));
 
 			items.add(metrics);
 		}

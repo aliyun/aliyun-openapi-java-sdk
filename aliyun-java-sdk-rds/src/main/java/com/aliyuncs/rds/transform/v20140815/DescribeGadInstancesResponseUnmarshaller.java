@@ -32,24 +32,24 @@ public class DescribeGadInstancesResponseUnmarshaller {
 		List<GadInstancesItem> gadInstances = new ArrayList<GadInstancesItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeGadInstancesResponse.GadInstances.Length"); i++) {
 			GadInstancesItem gadInstancesItem = new GadInstancesItem();
-			gadInstancesItem.setGadInstanceName(_ctx.stringValue("DescribeGadInstancesResponse.GadInstances["+ i +"].GadInstanceName"));
-			gadInstancesItem.setDescription(_ctx.stringValue("DescribeGadInstancesResponse.GadInstances["+ i +"].Description"));
-			gadInstancesItem.setStatus(_ctx.stringValue("DescribeGadInstancesResponse.GadInstances["+ i +"].Status"));
 			gadInstancesItem.setCreationTime(_ctx.stringValue("DescribeGadInstancesResponse.GadInstances["+ i +"].CreationTime"));
+			gadInstancesItem.setDescription(_ctx.stringValue("DescribeGadInstancesResponse.GadInstances["+ i +"].Description"));
+			gadInstancesItem.setGadInstanceName(_ctx.stringValue("DescribeGadInstancesResponse.GadInstances["+ i +"].GadInstanceName"));
 			gadInstancesItem.setModificationTime(_ctx.stringValue("DescribeGadInstancesResponse.GadInstances["+ i +"].ModificationTime"));
 			gadInstancesItem.setService(_ctx.stringValue("DescribeGadInstancesResponse.GadInstances["+ i +"].Service"));
+			gadInstancesItem.setStatus(_ctx.stringValue("DescribeGadInstancesResponse.GadInstances["+ i +"].Status"));
 
 			List<GadInstanceMembersItem> gadInstanceMembers = new ArrayList<GadInstanceMembersItem>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeGadInstancesResponse.GadInstances["+ i +"].GadInstanceMembers.Length"); j++) {
 				GadInstanceMembersItem gadInstanceMembersItem = new GadInstanceMembersItem();
 				gadInstanceMembersItem.setDBInstanceID(_ctx.stringValue("DescribeGadInstancesResponse.GadInstances["+ i +"].GadInstanceMembers["+ j +"].DBInstanceID"));
+				gadInstanceMembersItem.setDtsInstance(_ctx.stringValue("DescribeGadInstancesResponse.GadInstances["+ i +"].GadInstanceMembers["+ j +"].DtsInstance"));
 				gadInstanceMembersItem.setEngine(_ctx.stringValue("DescribeGadInstancesResponse.GadInstances["+ i +"].GadInstanceMembers["+ j +"].Engine"));
 				gadInstanceMembersItem.setEngineVersion(_ctx.stringValue("DescribeGadInstancesResponse.GadInstances["+ i +"].GadInstanceMembers["+ j +"].EngineVersion"));
 				gadInstanceMembersItem.setRegionId(_ctx.stringValue("DescribeGadInstancesResponse.GadInstances["+ i +"].GadInstanceMembers["+ j +"].RegionId"));
+				gadInstanceMembersItem.setResourceGroupId(_ctx.stringValue("DescribeGadInstancesResponse.GadInstances["+ i +"].GadInstanceMembers["+ j +"].ResourceGroupId"));
 				gadInstanceMembersItem.setRole(_ctx.stringValue("DescribeGadInstancesResponse.GadInstances["+ i +"].GadInstanceMembers["+ j +"].Role"));
 				gadInstanceMembersItem.setStatus(_ctx.stringValue("DescribeGadInstancesResponse.GadInstances["+ i +"].GadInstanceMembers["+ j +"].Status"));
-				gadInstanceMembersItem.setDtsInstance(_ctx.stringValue("DescribeGadInstancesResponse.GadInstances["+ i +"].GadInstanceMembers["+ j +"].DtsInstance"));
-				gadInstanceMembersItem.setResourceGroupId(_ctx.stringValue("DescribeGadInstancesResponse.GadInstances["+ i +"].GadInstanceMembers["+ j +"].ResourceGroupId"));
 
 				gadInstanceMembers.add(gadInstanceMembersItem);
 			}

@@ -24,11 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ModifyDBInstanceNetworkTypeResponse extends AcsResponse {
 
+	private String connectionString;
+
 	private String requestId;
 
 	private String taskId;
 
-	private String connectionString;
+	public String getConnectionString() {
+		return this.connectionString;
+	}
+
+	public void setConnectionString(String connectionString) {
+		this.connectionString = connectionString;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,14 +52,6 @@ public class ModifyDBInstanceNetworkTypeResponse extends AcsResponse {
 
 	public void setTaskId(String taskId) {
 		this.taskId = taskId;
-	}
-
-	public String getConnectionString() {
-		return this.connectionString;
-	}
-
-	public void setConnectionString(String connectionString) {
-		this.connectionString = connectionString;
 	}
 
 	@Override

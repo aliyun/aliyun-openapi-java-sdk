@@ -25,17 +25,41 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeInstanceLinkedWhitelistTemplateResponse extends AcsResponse {
 
+	private String code;
+
+	private Integer httpStatusCode;
+
+	private String message;
+
 	private String requestId;
 
 	private Boolean success;
 
-	private String code;
-
-	private String message;
-
-	private Integer httpStatusCode;
-
 	private Data data;
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -51,30 +75,6 @@ public class DescribeInstanceLinkedWhitelistTemplateResponse extends AcsResponse
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
-
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
 	}
 
 	public Data getData() {
@@ -111,13 +111,13 @@ public class DescribeInstanceLinkedWhitelistTemplateResponse extends AcsResponse
 
 			private Integer id;
 
-			private Integer userId;
+			private String ips;
 
 			private Integer templateId;
 
 			private String templateName;
 
-			private String ips;
+			private Integer userId;
 
 			public Integer getId() {
 				return this.id;
@@ -127,12 +127,12 @@ public class DescribeInstanceLinkedWhitelistTemplateResponse extends AcsResponse
 				this.id = id;
 			}
 
-			public Integer getUserId() {
-				return this.userId;
+			public String getIps() {
+				return this.ips;
 			}
 
-			public void setUserId(Integer userId) {
-				this.userId = userId;
+			public void setIps(String ips) {
+				this.ips = ips;
 			}
 
 			public Integer getTemplateId() {
@@ -151,12 +151,12 @@ public class DescribeInstanceLinkedWhitelistTemplateResponse extends AcsResponse
 				this.templateName = templateName;
 			}
 
-			public String getIps() {
-				return this.ips;
+			public Integer getUserId() {
+				return this.userId;
 			}
 
-			public void setIps(String ips) {
-				this.ips = ips;
+			public void setUserId(Integer userId) {
+				this.userId = userId;
 			}
 		}
 	}

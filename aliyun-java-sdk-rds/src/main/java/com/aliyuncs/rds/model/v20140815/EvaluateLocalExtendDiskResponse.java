@@ -24,22 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class EvaluateLocalExtendDiskResponse extends AcsResponse {
 
-	private String requestId;
+	private String available;
 
 	private String dBInstanceId;
 
-	private String available;
+	private String dBInstanceTransType;
 
 	private Long localUpgradeDiskLimit;
 
-	private String dBInstanceTransType;
+	private String requestId;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getAvailable() {
+		return this.available;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setAvailable(String available) {
+		this.available = available;
 	}
 
 	public String getDBInstanceId() {
@@ -50,12 +50,12 @@ public class EvaluateLocalExtendDiskResponse extends AcsResponse {
 		this.dBInstanceId = dBInstanceId;
 	}
 
-	public String getAvailable() {
-		return this.available;
+	public String getDBInstanceTransType() {
+		return this.dBInstanceTransType;
 	}
 
-	public void setAvailable(String available) {
-		this.available = available;
+	public void setDBInstanceTransType(String dBInstanceTransType) {
+		this.dBInstanceTransType = dBInstanceTransType;
 	}
 
 	public Long getLocalUpgradeDiskLimit() {
@@ -66,12 +66,12 @@ public class EvaluateLocalExtendDiskResponse extends AcsResponse {
 		this.localUpgradeDiskLimit = localUpgradeDiskLimit;
 	}
 
-	public String getDBInstanceTransType() {
-		return this.dBInstanceTransType;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setDBInstanceTransType(String dBInstanceTransType) {
-		this.dBInstanceTransType = dBInstanceTransType;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

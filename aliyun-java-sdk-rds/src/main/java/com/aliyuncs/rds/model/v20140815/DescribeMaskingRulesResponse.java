@@ -59,22 +59,22 @@ public class DescribeMaskingRulesResponse extends AcsResponse {
 
 		public static class EncDBInfo {
 
-			private String ruleName;
+			private String defaultAlgo;
 
 			private String enabled;
 
-			private String defaultAlgo;
-
 			private String maskingAlgo;
+
+			private String ruleName;
 
 			private RuleConfig ruleConfig;
 
-			public String getRuleName() {
-				return this.ruleName;
+			public String getDefaultAlgo() {
+				return this.defaultAlgo;
 			}
 
-			public void setRuleName(String ruleName) {
-				this.ruleName = ruleName;
+			public void setDefaultAlgo(String defaultAlgo) {
+				this.defaultAlgo = defaultAlgo;
 			}
 
 			public String getEnabled() {
@@ -85,20 +85,20 @@ public class DescribeMaskingRulesResponse extends AcsResponse {
 				this.enabled = enabled;
 			}
 
-			public String getDefaultAlgo() {
-				return this.defaultAlgo;
-			}
-
-			public void setDefaultAlgo(String defaultAlgo) {
-				this.defaultAlgo = defaultAlgo;
-			}
-
 			public String getMaskingAlgo() {
 				return this.maskingAlgo;
 			}
 
 			public void setMaskingAlgo(String maskingAlgo) {
 				this.maskingAlgo = maskingAlgo;
+			}
+
+			public String getRuleName() {
+				return this.ruleName;
+			}
+
+			public void setRuleName(String ruleName) {
+				this.ruleName = ruleName;
 			}
 
 			public RuleConfig getRuleConfig() {
@@ -111,11 +111,19 @@ public class DescribeMaskingRulesResponse extends AcsResponse {
 
 			public static class RuleConfig {
 
+				private List<String> columns;
+
 				private List<String> databases;
 
 				private List<String> tables;
 
-				private List<String> columns;
+				public List<String> getColumns() {
+					return this.columns;
+				}
+
+				public void setColumns(List<String> columns) {
+					this.columns = columns;
+				}
 
 				public List<String> getDatabases() {
 					return this.databases;
@@ -131,14 +139,6 @@ public class DescribeMaskingRulesResponse extends AcsResponse {
 
 				public void setTables(List<String> tables) {
 					this.tables = tables;
-				}
-
-				public List<String> getColumns() {
-					return this.columns;
-				}
-
-				public void setColumns(List<String> columns) {
-					this.columns = columns;
 				}
 			}
 		}

@@ -57,20 +57,20 @@ public class ListTagResourcesResponse extends AcsResponse {
 
 	public static class TagResource {
 
-		private String tagValue;
+		private String resourceId;
 
 		private String resourceType;
 
-		private String resourceId;
-
 		private String tagKey;
 
-		public String getTagValue() {
-			return this.tagValue;
+		private String tagValue;
+
+		public String getResourceId() {
+			return this.resourceId;
 		}
 
-		public void setTagValue(String tagValue) {
-			this.tagValue = tagValue;
+		public void setResourceId(String resourceId) {
+			this.resourceId = resourceId;
 		}
 
 		public String getResourceType() {
@@ -81,20 +81,20 @@ public class ListTagResourcesResponse extends AcsResponse {
 			this.resourceType = resourceType;
 		}
 
-		public String getResourceId() {
-			return this.resourceId;
-		}
-
-		public void setResourceId(String resourceId) {
-			this.resourceId = resourceId;
-		}
-
 		public String getTagKey() {
 			return this.tagKey;
 		}
 
 		public void setTagKey(String tagKey) {
 			this.tagKey = tagKey;
+		}
+
+		public String getTagValue() {
+			return this.tagValue;
+		}
+
+		public void setTagValue(String tagValue) {
+			this.tagValue = tagValue;
 		}
 	}
 

@@ -47,26 +47,26 @@ public class DescribeGadInstancesResponse extends AcsResponse {
 
 	public static class GadInstancesItem {
 
-		private String gadInstanceName;
+		private String creationTime;
 
 		private String description;
 
-		private String status;
-
-		private String creationTime;
+		private String gadInstanceName;
 
 		private String modificationTime;
 
 		private String service;
 
+		private String status;
+
 		private List<GadInstanceMembersItem> gadInstanceMembers;
 
-		public String getGadInstanceName() {
-			return this.gadInstanceName;
+		public String getCreationTime() {
+			return this.creationTime;
 		}
 
-		public void setGadInstanceName(String gadInstanceName) {
-			this.gadInstanceName = gadInstanceName;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
 		public String getDescription() {
@@ -77,20 +77,12 @@ public class DescribeGadInstancesResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getGadInstanceName() {
+			return this.gadInstanceName;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getCreationTime() {
-			return this.creationTime;
-		}
-
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
+		public void setGadInstanceName(String gadInstanceName) {
+			this.gadInstanceName = gadInstanceName;
 		}
 
 		public String getModificationTime() {
@@ -109,6 +101,14 @@ public class DescribeGadInstancesResponse extends AcsResponse {
 			this.service = service;
 		}
 
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
 		public List<GadInstanceMembersItem> getGadInstanceMembers() {
 			return this.gadInstanceMembers;
 		}
@@ -121,19 +121,19 @@ public class DescribeGadInstancesResponse extends AcsResponse {
 
 			private String dBInstanceID;
 
+			private String dtsInstance;
+
 			private String engine;
 
 			private String engineVersion;
 
 			private String regionId;
 
+			private String resourceGroupId;
+
 			private String role;
 
 			private String status;
-
-			private String dtsInstance;
-
-			private String resourceGroupId;
 
 			public String getDBInstanceID() {
 				return this.dBInstanceID;
@@ -141,6 +141,14 @@ public class DescribeGadInstancesResponse extends AcsResponse {
 
 			public void setDBInstanceID(String dBInstanceID) {
 				this.dBInstanceID = dBInstanceID;
+			}
+
+			public String getDtsInstance() {
+				return this.dtsInstance;
+			}
+
+			public void setDtsInstance(String dtsInstance) {
+				this.dtsInstance = dtsInstance;
 			}
 
 			public String getEngine() {
@@ -167,6 +175,14 @@ public class DescribeGadInstancesResponse extends AcsResponse {
 				this.regionId = regionId;
 			}
 
+			public String getResourceGroupId() {
+				return this.resourceGroupId;
+			}
+
+			public void setResourceGroupId(String resourceGroupId) {
+				this.resourceGroupId = resourceGroupId;
+			}
+
 			public String getRole() {
 				return this.role;
 			}
@@ -181,22 +197,6 @@ public class DescribeGadInstancesResponse extends AcsResponse {
 
 			public void setStatus(String status) {
 				this.status = status;
-			}
-
-			public String getDtsInstance() {
-				return this.dtsInstance;
-			}
-
-			public void setDtsInstance(String dtsInstance) {
-				this.dtsInstance = dtsInstance;
-			}
-
-			public String getResourceGroupId() {
-				return this.resourceGroupId;
-			}
-
-			public void setResourceGroupId(String resourceGroupId) {
-				this.resourceGroupId = resourceGroupId;
 			}
 		}
 	}

@@ -30,9 +30,9 @@ public class DescribeDBInstanceDetailResponse extends AcsResponse {
 
 	private String licenseType;
 
-	private String requestId;
-
 	private String regionId;
+
+	private String requestId;
 
 	public String getActivationState() {
 		return this.activationState;
@@ -58,20 +58,20 @@ public class DescribeDBInstanceDetailResponse extends AcsResponse {
 		this.licenseType = licenseType;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getRegionId() {
 		return this.regionId;
 	}
 
 	public void setRegionId(String regionId) {
 		this.regionId = regionId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

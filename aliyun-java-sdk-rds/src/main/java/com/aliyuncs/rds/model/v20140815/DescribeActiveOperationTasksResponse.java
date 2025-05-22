@@ -27,9 +27,9 @@ public class DescribeActiveOperationTasksResponse extends AcsResponse {
 
 	private Integer pageNumber;
 
-	private String requestId;
-
 	private Integer pageSize;
+
+	private String requestId;
 
 	private Integer totalRecordCount;
 
@@ -43,20 +43,20 @@ public class DescribeActiveOperationTasksResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getTotalRecordCount() {
@@ -77,172 +77,68 @@ public class DescribeActiveOperationTasksResponse extends AcsResponse {
 
 	public static class ItemsItem {
 
-		private Integer status;
-
-		private String changeLevelEn;
-
-		private String taskType;
-
-		private String insName;
-
-		private String region;
-
-		private String impactZh;
-
-		private String createdTime;
-
-		private String switchTime;
-
-		private String changeLevelZh;
-
-		private String deadline;
-
-		private String prepareInterval;
-
-		private String impact;
-
-		private String taskTypeZh;
-
-		private String currentAVZ;
+		private String allowCancel;
 
 		private String allowChange;
 
-		private String dbVersion;
+		private String changeLevel;
 
-		private String impactEn;
+		private String changeLevelEn;
 
-		private String insComment;
+		private String changeLevelZh;
 
-		private String startTime;
+		private String createdTime;
 
-		private String modifiedTime;
-
-		private String allowCancel;
+		private String currentAVZ;
 
 		private String dbType;
 
-		private String changeLevel;
+		private String dbVersion;
 
-		private String taskTypeEn;
-
-		private String resultInfo;
+		private String deadline;
 
 		private Integer id;
 
+		private String impact;
+
+		private String impactEn;
+
+		private String impactZh;
+
+		private String insComment;
+
+		private String insName;
+
+		private String modifiedTime;
+
+		private String prepareInterval;
+
+		private String region;
+
+		private String resultInfo;
+
+		private String startTime;
+
+		private Integer status;
+
+		private String switchTime;
+
 		private String taskParams;
+
+		private String taskType;
+
+		private String taskTypeEn;
+
+		private String taskTypeZh;
 
 		private List<String> subInsNames;
 
-		public Integer getStatus() {
-			return this.status;
+		public String getAllowCancel() {
+			return this.allowCancel;
 		}
 
-		public void setStatus(Integer status) {
-			this.status = status;
-		}
-
-		public String getChangeLevelEn() {
-			return this.changeLevelEn;
-		}
-
-		public void setChangeLevelEn(String changeLevelEn) {
-			this.changeLevelEn = changeLevelEn;
-		}
-
-		public String getTaskType() {
-			return this.taskType;
-		}
-
-		public void setTaskType(String taskType) {
-			this.taskType = taskType;
-		}
-
-		public String getInsName() {
-			return this.insName;
-		}
-
-		public void setInsName(String insName) {
-			this.insName = insName;
-		}
-
-		public String getRegion() {
-			return this.region;
-		}
-
-		public void setRegion(String region) {
-			this.region = region;
-		}
-
-		public String getImpactZh() {
-			return this.impactZh;
-		}
-
-		public void setImpactZh(String impactZh) {
-			this.impactZh = impactZh;
-		}
-
-		public String getCreatedTime() {
-			return this.createdTime;
-		}
-
-		public void setCreatedTime(String createdTime) {
-			this.createdTime = createdTime;
-		}
-
-		public String getSwitchTime() {
-			return this.switchTime;
-		}
-
-		public void setSwitchTime(String switchTime) {
-			this.switchTime = switchTime;
-		}
-
-		public String getChangeLevelZh() {
-			return this.changeLevelZh;
-		}
-
-		public void setChangeLevelZh(String changeLevelZh) {
-			this.changeLevelZh = changeLevelZh;
-		}
-
-		public String getDeadline() {
-			return this.deadline;
-		}
-
-		public void setDeadline(String deadline) {
-			this.deadline = deadline;
-		}
-
-		public String getPrepareInterval() {
-			return this.prepareInterval;
-		}
-
-		public void setPrepareInterval(String prepareInterval) {
-			this.prepareInterval = prepareInterval;
-		}
-
-		public String getImpact() {
-			return this.impact;
-		}
-
-		public void setImpact(String impact) {
-			this.impact = impact;
-		}
-
-		public String getTaskTypeZh() {
-			return this.taskTypeZh;
-		}
-
-		public void setTaskTypeZh(String taskTypeZh) {
-			this.taskTypeZh = taskTypeZh;
-		}
-
-		public String getCurrentAVZ() {
-			return this.currentAVZ;
-		}
-
-		public void setCurrentAVZ(String currentAVZ) {
-			this.currentAVZ = currentAVZ;
+		public void setAllowCancel(String allowCancel) {
+			this.allowCancel = allowCancel;
 		}
 
 		public String getAllowChange() {
@@ -253,52 +149,44 @@ public class DescribeActiveOperationTasksResponse extends AcsResponse {
 			this.allowChange = allowChange;
 		}
 
-		public String getDbVersion() {
-			return this.dbVersion;
+		public String getChangeLevel() {
+			return this.changeLevel;
 		}
 
-		public void setDbVersion(String dbVersion) {
-			this.dbVersion = dbVersion;
+		public void setChangeLevel(String changeLevel) {
+			this.changeLevel = changeLevel;
 		}
 
-		public String getImpactEn() {
-			return this.impactEn;
+		public String getChangeLevelEn() {
+			return this.changeLevelEn;
 		}
 
-		public void setImpactEn(String impactEn) {
-			this.impactEn = impactEn;
+		public void setChangeLevelEn(String changeLevelEn) {
+			this.changeLevelEn = changeLevelEn;
 		}
 
-		public String getInsComment() {
-			return this.insComment;
+		public String getChangeLevelZh() {
+			return this.changeLevelZh;
 		}
 
-		public void setInsComment(String insComment) {
-			this.insComment = insComment;
+		public void setChangeLevelZh(String changeLevelZh) {
+			this.changeLevelZh = changeLevelZh;
 		}
 
-		public String getStartTime() {
-			return this.startTime;
+		public String getCreatedTime() {
+			return this.createdTime;
 		}
 
-		public void setStartTime(String startTime) {
-			this.startTime = startTime;
+		public void setCreatedTime(String createdTime) {
+			this.createdTime = createdTime;
 		}
 
-		public String getModifiedTime() {
-			return this.modifiedTime;
+		public String getCurrentAVZ() {
+			return this.currentAVZ;
 		}
 
-		public void setModifiedTime(String modifiedTime) {
-			this.modifiedTime = modifiedTime;
-		}
-
-		public String getAllowCancel() {
-			return this.allowCancel;
-		}
-
-		public void setAllowCancel(String allowCancel) {
-			this.allowCancel = allowCancel;
+		public void setCurrentAVZ(String currentAVZ) {
+			this.currentAVZ = currentAVZ;
 		}
 
 		public String getDbType() {
@@ -309,28 +197,20 @@ public class DescribeActiveOperationTasksResponse extends AcsResponse {
 			this.dbType = dbType;
 		}
 
-		public String getChangeLevel() {
-			return this.changeLevel;
+		public String getDbVersion() {
+			return this.dbVersion;
 		}
 
-		public void setChangeLevel(String changeLevel) {
-			this.changeLevel = changeLevel;
+		public void setDbVersion(String dbVersion) {
+			this.dbVersion = dbVersion;
 		}
 
-		public String getTaskTypeEn() {
-			return this.taskTypeEn;
+		public String getDeadline() {
+			return this.deadline;
 		}
 
-		public void setTaskTypeEn(String taskTypeEn) {
-			this.taskTypeEn = taskTypeEn;
-		}
-
-		public String getResultInfo() {
-			return this.resultInfo;
-		}
-
-		public void setResultInfo(String resultInfo) {
-			this.resultInfo = resultInfo;
+		public void setDeadline(String deadline) {
+			this.deadline = deadline;
 		}
 
 		public Integer getId() {
@@ -341,12 +221,132 @@ public class DescribeActiveOperationTasksResponse extends AcsResponse {
 			this.id = id;
 		}
 
+		public String getImpact() {
+			return this.impact;
+		}
+
+		public void setImpact(String impact) {
+			this.impact = impact;
+		}
+
+		public String getImpactEn() {
+			return this.impactEn;
+		}
+
+		public void setImpactEn(String impactEn) {
+			this.impactEn = impactEn;
+		}
+
+		public String getImpactZh() {
+			return this.impactZh;
+		}
+
+		public void setImpactZh(String impactZh) {
+			this.impactZh = impactZh;
+		}
+
+		public String getInsComment() {
+			return this.insComment;
+		}
+
+		public void setInsComment(String insComment) {
+			this.insComment = insComment;
+		}
+
+		public String getInsName() {
+			return this.insName;
+		}
+
+		public void setInsName(String insName) {
+			this.insName = insName;
+		}
+
+		public String getModifiedTime() {
+			return this.modifiedTime;
+		}
+
+		public void setModifiedTime(String modifiedTime) {
+			this.modifiedTime = modifiedTime;
+		}
+
+		public String getPrepareInterval() {
+			return this.prepareInterval;
+		}
+
+		public void setPrepareInterval(String prepareInterval) {
+			this.prepareInterval = prepareInterval;
+		}
+
+		public String getRegion() {
+			return this.region;
+		}
+
+		public void setRegion(String region) {
+			this.region = region;
+		}
+
+		public String getResultInfo() {
+			return this.resultInfo;
+		}
+
+		public void setResultInfo(String resultInfo) {
+			this.resultInfo = resultInfo;
+		}
+
+		public String getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
+		}
+
+		public Integer getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(Integer status) {
+			this.status = status;
+		}
+
+		public String getSwitchTime() {
+			return this.switchTime;
+		}
+
+		public void setSwitchTime(String switchTime) {
+			this.switchTime = switchTime;
+		}
+
 		public String getTaskParams() {
 			return this.taskParams;
 		}
 
 		public void setTaskParams(String taskParams) {
 			this.taskParams = taskParams;
+		}
+
+		public String getTaskType() {
+			return this.taskType;
+		}
+
+		public void setTaskType(String taskType) {
+			this.taskType = taskType;
+		}
+
+		public String getTaskTypeEn() {
+			return this.taskTypeEn;
+		}
+
+		public void setTaskTypeEn(String taskTypeEn) {
+			this.taskTypeEn = taskTypeEn;
+		}
+
+		public String getTaskTypeZh() {
+			return this.taskTypeZh;
+		}
+
+		public void setTaskTypeZh(String taskTypeZh) {
+			this.taskTypeZh = taskTypeZh;
 		}
 
 		public List<String> getSubInsNames() {

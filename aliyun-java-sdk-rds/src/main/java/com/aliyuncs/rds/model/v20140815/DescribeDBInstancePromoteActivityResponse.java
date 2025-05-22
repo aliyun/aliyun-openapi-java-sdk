@@ -24,35 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDBInstancePromoteActivityResponse extends AcsResponse {
 
-	private String dBInstanceName;
-
-	private String requestId;
-
 	private String aliUid;
-
-	private String dBType;
-
-	private String dBInstanceId;
-
-	private String isActivity;
 
 	private String bid;
 
-	public String getDBInstanceName() {
-		return this.dBInstanceName;
-	}
+	private String dBInstanceId;
 
-	public void setDBInstanceName(String dBInstanceName) {
-		this.dBInstanceName = dBInstanceName;
-	}
+	private String dBInstanceName;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+	private String dBType;
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String isActivity;
+
+	private String requestId;
 
 	public String getAliUid() {
 		return this.aliUid;
@@ -62,12 +46,12 @@ public class DescribeDBInstancePromoteActivityResponse extends AcsResponse {
 		this.aliUid = aliUid;
 	}
 
-	public String getDBType() {
-		return this.dBType;
+	public String getBid() {
+		return this.bid;
 	}
 
-	public void setDBType(String dBType) {
-		this.dBType = dBType;
+	public void setBid(String bid) {
+		this.bid = bid;
 	}
 
 	public String getDBInstanceId() {
@@ -78,6 +62,22 @@ public class DescribeDBInstancePromoteActivityResponse extends AcsResponse {
 		this.dBInstanceId = dBInstanceId;
 	}
 
+	public String getDBInstanceName() {
+		return this.dBInstanceName;
+	}
+
+	public void setDBInstanceName(String dBInstanceName) {
+		this.dBInstanceName = dBInstanceName;
+	}
+
+	public String getDBType() {
+		return this.dBType;
+	}
+
+	public void setDBType(String dBType) {
+		this.dBType = dBType;
+	}
+
 	public String getIsActivity() {
 		return this.isActivity;
 	}
@@ -86,12 +86,12 @@ public class DescribeDBInstancePromoteActivityResponse extends AcsResponse {
 		this.isActivity = isActivity;
 	}
 
-	public String getBid() {
-		return this.bid;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setBid(String bid) {
-		this.bid = bid;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

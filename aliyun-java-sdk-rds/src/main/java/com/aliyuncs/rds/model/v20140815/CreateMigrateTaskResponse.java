@@ -24,33 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateMigrateTaskResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String dBName;
-
 	private String backupMode;
 
 	private String dBInstanceId;
 
+	private String dBName;
+
 	private String migrateTaskId;
 
+	private String requestId;
+
 	private String taskId;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getDBName() {
-		return this.dBName;
-	}
-
-	public void setDBName(String dBName) {
-		this.dBName = dBName;
-	}
 
 	public String getBackupMode() {
 		return this.backupMode;
@@ -68,12 +52,28 @@ public class CreateMigrateTaskResponse extends AcsResponse {
 		this.dBInstanceId = dBInstanceId;
 	}
 
+	public String getDBName() {
+		return this.dBName;
+	}
+
+	public void setDBName(String dBName) {
+		this.dBName = dBName;
+	}
+
 	public String getMigrateTaskId() {
 		return this.migrateTaskId;
 	}
 
 	public void setMigrateTaskId(String migrateTaskId) {
 		this.migrateTaskId = migrateTaskId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getTaskId() {

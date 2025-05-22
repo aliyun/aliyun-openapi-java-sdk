@@ -47,39 +47,23 @@ public class DescribeRdsResourceSettingsResponse extends AcsResponse {
 
 	public static class RdsInstanceResourceSetting {
 
-		private String poppedUpButtonType;
-
-		private String noticeBarContent;
-
 		private String endDate;
-
-		private String poppedUpContent;
-
-		private String startDate;
-
-		private String poppedUpButtonText;
 
 		private String isTop;
 
-		private String resourceNiche;
+		private String noticeBarContent;
+
+		private String poppedUpButtonText;
+
+		private String poppedUpButtonType;
 
 		private String poppedUpButtonUrl;
 
-		public String getPoppedUpButtonType() {
-			return this.poppedUpButtonType;
-		}
+		private String poppedUpContent;
 
-		public void setPoppedUpButtonType(String poppedUpButtonType) {
-			this.poppedUpButtonType = poppedUpButtonType;
-		}
+		private String resourceNiche;
 
-		public String getNoticeBarContent() {
-			return this.noticeBarContent;
-		}
-
-		public void setNoticeBarContent(String noticeBarContent) {
-			this.noticeBarContent = noticeBarContent;
-		}
+		private String startDate;
 
 		public String getEndDate() {
 			return this.endDate;
@@ -87,30 +71,6 @@ public class DescribeRdsResourceSettingsResponse extends AcsResponse {
 
 		public void setEndDate(String endDate) {
 			this.endDate = endDate;
-		}
-
-		public String getPoppedUpContent() {
-			return this.poppedUpContent;
-		}
-
-		public void setPoppedUpContent(String poppedUpContent) {
-			this.poppedUpContent = poppedUpContent;
-		}
-
-		public String getStartDate() {
-			return this.startDate;
-		}
-
-		public void setStartDate(String startDate) {
-			this.startDate = startDate;
-		}
-
-		public String getPoppedUpButtonText() {
-			return this.poppedUpButtonText;
-		}
-
-		public void setPoppedUpButtonText(String poppedUpButtonText) {
-			this.poppedUpButtonText = poppedUpButtonText;
 		}
 
 		public String getIsTop() {
@@ -121,12 +81,28 @@ public class DescribeRdsResourceSettingsResponse extends AcsResponse {
 			this.isTop = isTop;
 		}
 
-		public String getResourceNiche() {
-			return this.resourceNiche;
+		public String getNoticeBarContent() {
+			return this.noticeBarContent;
 		}
 
-		public void setResourceNiche(String resourceNiche) {
-			this.resourceNiche = resourceNiche;
+		public void setNoticeBarContent(String noticeBarContent) {
+			this.noticeBarContent = noticeBarContent;
+		}
+
+		public String getPoppedUpButtonText() {
+			return this.poppedUpButtonText;
+		}
+
+		public void setPoppedUpButtonText(String poppedUpButtonText) {
+			this.poppedUpButtonText = poppedUpButtonText;
+		}
+
+		public String getPoppedUpButtonType() {
+			return this.poppedUpButtonType;
+		}
+
+		public void setPoppedUpButtonType(String poppedUpButtonType) {
+			this.poppedUpButtonType = poppedUpButtonType;
 		}
 
 		public String getPoppedUpButtonUrl() {
@@ -135,6 +111,30 @@ public class DescribeRdsResourceSettingsResponse extends AcsResponse {
 
 		public void setPoppedUpButtonUrl(String poppedUpButtonUrl) {
 			this.poppedUpButtonUrl = poppedUpButtonUrl;
+		}
+
+		public String getPoppedUpContent() {
+			return this.poppedUpContent;
+		}
+
+		public void setPoppedUpContent(String poppedUpContent) {
+			this.poppedUpContent = poppedUpContent;
+		}
+
+		public String getResourceNiche() {
+			return this.resourceNiche;
+		}
+
+		public void setResourceNiche(String resourceNiche) {
+			this.resourceNiche = resourceNiche;
+		}
+
+		public String getStartDate() {
+			return this.startDate;
+		}
+
+		public void setStartDate(String startDate) {
+			this.startDate = startDate;
 		}
 	}
 

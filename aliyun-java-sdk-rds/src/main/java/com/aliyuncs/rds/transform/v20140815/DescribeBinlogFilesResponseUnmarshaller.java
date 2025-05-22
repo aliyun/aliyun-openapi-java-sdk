@@ -27,24 +27,24 @@ public class DescribeBinlogFilesResponseUnmarshaller {
 	public static DescribeBinlogFilesResponse unmarshall(DescribeBinlogFilesResponse describeBinlogFilesResponse, UnmarshallerContext _ctx) {
 		
 		describeBinlogFilesResponse.setRequestId(_ctx.stringValue("DescribeBinlogFilesResponse.RequestId"));
-		describeBinlogFilesResponse.setTotalFileSize(_ctx.longValue("DescribeBinlogFilesResponse.TotalFileSize"));
 		describeBinlogFilesResponse.setPageNumber(_ctx.integerValue("DescribeBinlogFilesResponse.PageNumber"));
 		describeBinlogFilesResponse.setPageRecordCount(_ctx.integerValue("DescribeBinlogFilesResponse.PageRecordCount"));
+		describeBinlogFilesResponse.setTotalFileSize(_ctx.longValue("DescribeBinlogFilesResponse.TotalFileSize"));
 		describeBinlogFilesResponse.setTotalRecordCount(_ctx.integerValue("DescribeBinlogFilesResponse.TotalRecordCount"));
 
 		List<BinLogFile> items = new ArrayList<BinLogFile>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeBinlogFilesResponse.Items.Length"); i++) {
 			BinLogFile binLogFile = new BinLogFile();
-			binLogFile.setRemoteStatus(_ctx.stringValue("DescribeBinlogFilesResponse.Items["+ i +"].RemoteStatus"));
-			binLogFile.setIntranetDownloadLink(_ctx.stringValue("DescribeBinlogFilesResponse.Items["+ i +"].IntranetDownloadLink"));
-			binLogFile.setLogBeginTime(_ctx.stringValue("DescribeBinlogFilesResponse.Items["+ i +"].LogBeginTime"));
-			binLogFile.setLinkExpiredTime(_ctx.stringValue("DescribeBinlogFilesResponse.Items["+ i +"].LinkExpiredTime"));
-			binLogFile.setDownloadLink(_ctx.stringValue("DescribeBinlogFilesResponse.Items["+ i +"].DownloadLink"));
-			binLogFile.setLogFileName(_ctx.stringValue("DescribeBinlogFilesResponse.Items["+ i +"].LogFileName"));
 			binLogFile.setChecksum(_ctx.stringValue("DescribeBinlogFilesResponse.Items["+ i +"].Checksum"));
-			binLogFile.setLogEndTime(_ctx.stringValue("DescribeBinlogFilesResponse.Items["+ i +"].LogEndTime"));
-			binLogFile.setHostInstanceID(_ctx.stringValue("DescribeBinlogFilesResponse.Items["+ i +"].HostInstanceID"));
+			binLogFile.setDownloadLink(_ctx.stringValue("DescribeBinlogFilesResponse.Items["+ i +"].DownloadLink"));
 			binLogFile.setFileSize(_ctx.longValue("DescribeBinlogFilesResponse.Items["+ i +"].FileSize"));
+			binLogFile.setHostInstanceID(_ctx.stringValue("DescribeBinlogFilesResponse.Items["+ i +"].HostInstanceID"));
+			binLogFile.setIntranetDownloadLink(_ctx.stringValue("DescribeBinlogFilesResponse.Items["+ i +"].IntranetDownloadLink"));
+			binLogFile.setLinkExpiredTime(_ctx.stringValue("DescribeBinlogFilesResponse.Items["+ i +"].LinkExpiredTime"));
+			binLogFile.setLogBeginTime(_ctx.stringValue("DescribeBinlogFilesResponse.Items["+ i +"].LogBeginTime"));
+			binLogFile.setLogEndTime(_ctx.stringValue("DescribeBinlogFilesResponse.Items["+ i +"].LogEndTime"));
+			binLogFile.setLogFileName(_ctx.stringValue("DescribeBinlogFilesResponse.Items["+ i +"].LogFileName"));
+			binLogFile.setRemoteStatus(_ctx.stringValue("DescribeBinlogFilesResponse.Items["+ i +"].RemoteStatus"));
 
 			items.add(binLogFile);
 		}

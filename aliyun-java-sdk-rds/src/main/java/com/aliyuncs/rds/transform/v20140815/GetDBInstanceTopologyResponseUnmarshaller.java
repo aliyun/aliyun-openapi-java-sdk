@@ -38,10 +38,10 @@ public class GetDBInstanceTopologyResponseUnmarshaller {
 		List<Connection> connections = new ArrayList<Connection>();
 		for (int i = 0; i < _ctx.lengthValue("GetDBInstanceTopologyResponse.Data.Connections.Length"); i++) {
 			Connection connection = new Connection();
-			connection.setZoneId(_ctx.stringValue("GetDBInstanceTopologyResponse.Data.Connections["+ i +"].ZoneId"));
-			connection.setDBInstanceName(_ctx.stringValue("GetDBInstanceTopologyResponse.Data.Connections["+ i +"].DBInstanceName"));
 			connection.setConnectionString(_ctx.stringValue("GetDBInstanceTopologyResponse.Data.Connections["+ i +"].ConnectionString"));
+			connection.setDBInstanceName(_ctx.stringValue("GetDBInstanceTopologyResponse.Data.Connections["+ i +"].DBInstanceName"));
 			connection.setNetType(_ctx.stringValue("GetDBInstanceTopologyResponse.Data.Connections["+ i +"].NetType"));
+			connection.setZoneId(_ctx.stringValue("GetDBInstanceTopologyResponse.Data.Connections["+ i +"].ZoneId"));
 
 			connections.add(connection);
 		}
@@ -51,11 +51,11 @@ public class GetDBInstanceTopologyResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("GetDBInstanceTopologyResponse.Data.Nodes.Length"); i++) {
 			Node node = new Node();
 			node.setDBInstanceName(_ctx.stringValue("GetDBInstanceTopologyResponse.Data.Nodes["+ i +"].DBInstanceName"));
-			node.setZoneId(_ctx.stringValue("GetDBInstanceTopologyResponse.Data.Nodes["+ i +"].ZoneId"));
-			node.setDedicatedHostId(_ctx.stringValue("GetDBInstanceTopologyResponse.Data.Nodes["+ i +"].DedicatedHostId"));
-			node.setRole(_ctx.stringValue("GetDBInstanceTopologyResponse.Data.Nodes["+ i +"].Role"));
-			node.setNodeId(_ctx.stringValue("GetDBInstanceTopologyResponse.Data.Nodes["+ i +"].NodeId"));
 			node.setDedicatedHostGroupId(_ctx.stringValue("GetDBInstanceTopologyResponse.Data.Nodes["+ i +"].DedicatedHostGroupId"));
+			node.setDedicatedHostId(_ctx.stringValue("GetDBInstanceTopologyResponse.Data.Nodes["+ i +"].DedicatedHostId"));
+			node.setNodeId(_ctx.stringValue("GetDBInstanceTopologyResponse.Data.Nodes["+ i +"].NodeId"));
+			node.setRole(_ctx.stringValue("GetDBInstanceTopologyResponse.Data.Nodes["+ i +"].Role"));
+			node.setZoneId(_ctx.stringValue("GetDBInstanceTopologyResponse.Data.Nodes["+ i +"].ZoneId"));
 
 			nodes.add(node);
 		}

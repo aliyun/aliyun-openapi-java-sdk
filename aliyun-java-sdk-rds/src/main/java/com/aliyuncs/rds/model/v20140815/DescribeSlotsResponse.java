@@ -47,28 +47,28 @@ public class DescribeSlotsResponse extends AcsResponse {
 
 	public static class Slot {
 
-		private String slotName;
+		private String database;
 
 		private String plugin;
 
-		private String slotType;
-
-		private String database;
-
-		private String temporary;
+		private String slotName;
 
 		private String slotStatus;
 
-		private String walDelay;
+		private String slotType;
 
 		private String subReplayLag;
 
-		public String getSlotName() {
-			return this.slotName;
+		private String temporary;
+
+		private String walDelay;
+
+		public String getDatabase() {
+			return this.database;
 		}
 
-		public void setSlotName(String slotName) {
-			this.slotName = slotName;
+		public void setDatabase(String database) {
+			this.database = database;
 		}
 
 		public String getPlugin() {
@@ -79,28 +79,12 @@ public class DescribeSlotsResponse extends AcsResponse {
 			this.plugin = plugin;
 		}
 
-		public String getSlotType() {
-			return this.slotType;
+		public String getSlotName() {
+			return this.slotName;
 		}
 
-		public void setSlotType(String slotType) {
-			this.slotType = slotType;
-		}
-
-		public String getDatabase() {
-			return this.database;
-		}
-
-		public void setDatabase(String database) {
-			this.database = database;
-		}
-
-		public String getTemporary() {
-			return this.temporary;
-		}
-
-		public void setTemporary(String temporary) {
-			this.temporary = temporary;
+		public void setSlotName(String slotName) {
+			this.slotName = slotName;
 		}
 
 		public String getSlotStatus() {
@@ -111,12 +95,12 @@ public class DescribeSlotsResponse extends AcsResponse {
 			this.slotStatus = slotStatus;
 		}
 
-		public String getWalDelay() {
-			return this.walDelay;
+		public String getSlotType() {
+			return this.slotType;
 		}
 
-		public void setWalDelay(String walDelay) {
-			this.walDelay = walDelay;
+		public void setSlotType(String slotType) {
+			this.slotType = slotType;
 		}
 
 		public String getSubReplayLag() {
@@ -125,6 +109,22 @@ public class DescribeSlotsResponse extends AcsResponse {
 
 		public void setSubReplayLag(String subReplayLag) {
 			this.subReplayLag = subReplayLag;
+		}
+
+		public String getTemporary() {
+			return this.temporary;
+		}
+
+		public void setTemporary(String temporary) {
+			this.temporary = temporary;
+		}
+
+		public String getWalDelay() {
+			return this.walDelay;
+		}
+
+		public void setWalDelay(String walDelay) {
+			this.walDelay = walDelay;
 		}
 	}
 

@@ -24,9 +24,9 @@ public class ModifyMaskingRulesResponseUnmarshaller {
 	public static ModifyMaskingRulesResponse unmarshall(ModifyMaskingRulesResponse modifyMaskingRulesResponse, UnmarshallerContext _ctx) {
 		
 		modifyMaskingRulesResponse.setRequestId(_ctx.stringValue("ModifyMaskingRulesResponse.RequestId"));
-		modifyMaskingRulesResponse.setSuccess(_ctx.stringValue("ModifyMaskingRulesResponse.Success"));
-		modifyMaskingRulesResponse.setMessage(_ctx.stringValue("ModifyMaskingRulesResponse.Message"));
 		modifyMaskingRulesResponse.setData(_ctx.mapValue("ModifyMaskingRulesResponse.Data"));
+		modifyMaskingRulesResponse.setMessage(_ctx.stringValue("ModifyMaskingRulesResponse.Message"));
+		modifyMaskingRulesResponse.setSuccess(_ctx.stringValue("ModifyMaskingRulesResponse.Success"));
 	 
 	 	return modifyMaskingRulesResponse;
 	}

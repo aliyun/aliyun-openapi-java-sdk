@@ -47,194 +47,98 @@ public class DescribeDBInstancesAsCsvResponse extends AcsResponse {
 
 	public static class DBInstanceAttribute {
 
-		private String vpcId;
-
-		private String creationTime;
-
-		private String tempDBInstanceId;
-
-		private String supportUpgradeAccountType;
-
-		private String incrementSourceDBInstanceId;
-
-		private Long dBInstanceMemory;
-
-		private String maintainTime;
-
-		private String payType;
-
-		private String tags;
-
-		private String availabilityValue;
-
-		private String readDelayTime;
-
-		private String connectionMode;
-
-		private String port;
+		private Integer accountMaxQuantity;
 
 		private String accountType;
 
-		private String lockMode;
+		private String availabilityValue;
 
-		private String engineVersion;
+		private String category;
 
-		private Integer maxIOPS;
+		private String connectionMode;
 
 		private String connectionString;
 
-		private String instanceNetworkType;
+		private String creationTime;
 
-		private String securityIPList;
+		private String dBInstanceCPU;
 
-		private String masterInstanceId;
+		private String dBInstanceClass;
 
 		private String dBInstanceClassType;
 
 		private String dBInstanceDescription;
 
-		private String dBInstanceCPU;
+		private String dBInstanceId;
 
-		private String expireTime;
+		private Long dBInstanceMemory;
 
 		private String dBInstanceNetType;
 
-		private String dBInstanceType;
-
-		private Integer accountMaxQuantity;
-
-		private String lockReason;
-
 		private String dBInstanceStatus;
-
-		private Integer dBMaxQuantity;
-
-		private String guardDBInstanceId;
-
-		private String regionId;
 
 		private Integer dBInstanceStorage;
 
-		private String vSwitchId;
+		private String dBInstanceType;
 
-		private String zoneId;
-
-		private String category;
-
-		private Integer maxConnections;
-
-		private String dBInstanceId;
-
-		private String dBInstanceClass;
+		private Integer dBMaxQuantity;
 
 		private String engine;
 
+		private String engineVersion;
+
+		private String expireTime;
+
 		private String exportKey;
+
+		private String guardDBInstanceId;
+
+		private String incrementSourceDBInstanceId;
+
+		private String instanceNetworkType;
+
+		private String lockMode;
+
+		private String lockReason;
+
+		private String maintainTime;
+
+		private String masterInstanceId;
+
+		private Integer maxConnections;
+
+		private Integer maxIOPS;
+
+		private String payType;
+
+		private String port;
+
+		private String readDelayTime;
+
+		private String regionId;
+
+		private String securityIPList;
+
+		private String supportUpgradeAccountType;
+
+		private String tags;
+
+		private String tempDBInstanceId;
+
+		private String vSwitchId;
+
+		private String vpcId;
+
+		private String zoneId;
 
 		private List<String> slaveZones;
 
-		public String getVpcId() {
-			return this.vpcId;
+		public Integer getAccountMaxQuantity() {
+			return this.accountMaxQuantity;
 		}
 
-		public void setVpcId(String vpcId) {
-			this.vpcId = vpcId;
-		}
-
-		public String getCreationTime() {
-			return this.creationTime;
-		}
-
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
-		}
-
-		public String getTempDBInstanceId() {
-			return this.tempDBInstanceId;
-		}
-
-		public void setTempDBInstanceId(String tempDBInstanceId) {
-			this.tempDBInstanceId = tempDBInstanceId;
-		}
-
-		public String getSupportUpgradeAccountType() {
-			return this.supportUpgradeAccountType;
-		}
-
-		public void setSupportUpgradeAccountType(String supportUpgradeAccountType) {
-			this.supportUpgradeAccountType = supportUpgradeAccountType;
-		}
-
-		public String getIncrementSourceDBInstanceId() {
-			return this.incrementSourceDBInstanceId;
-		}
-
-		public void setIncrementSourceDBInstanceId(String incrementSourceDBInstanceId) {
-			this.incrementSourceDBInstanceId = incrementSourceDBInstanceId;
-		}
-
-		public Long getDBInstanceMemory() {
-			return this.dBInstanceMemory;
-		}
-
-		public void setDBInstanceMemory(Long dBInstanceMemory) {
-			this.dBInstanceMemory = dBInstanceMemory;
-		}
-
-		public String getMaintainTime() {
-			return this.maintainTime;
-		}
-
-		public void setMaintainTime(String maintainTime) {
-			this.maintainTime = maintainTime;
-		}
-
-		public String getPayType() {
-			return this.payType;
-		}
-
-		public void setPayType(String payType) {
-			this.payType = payType;
-		}
-
-		public String getTags() {
-			return this.tags;
-		}
-
-		public void setTags(String tags) {
-			this.tags = tags;
-		}
-
-		public String getAvailabilityValue() {
-			return this.availabilityValue;
-		}
-
-		public void setAvailabilityValue(String availabilityValue) {
-			this.availabilityValue = availabilityValue;
-		}
-
-		public String getReadDelayTime() {
-			return this.readDelayTime;
-		}
-
-		public void setReadDelayTime(String readDelayTime) {
-			this.readDelayTime = readDelayTime;
-		}
-
-		public String getConnectionMode() {
-			return this.connectionMode;
-		}
-
-		public void setConnectionMode(String connectionMode) {
-			this.connectionMode = connectionMode;
-		}
-
-		public String getPort() {
-			return this.port;
-		}
-
-		public void setPort(String port) {
-			this.port = port;
+		public void setAccountMaxQuantity(Integer accountMaxQuantity) {
+			this.accountMaxQuantity = accountMaxQuantity;
 		}
 
 		public String getAccountType() {
@@ -245,28 +149,28 @@ public class DescribeDBInstancesAsCsvResponse extends AcsResponse {
 			this.accountType = accountType;
 		}
 
-		public String getLockMode() {
-			return this.lockMode;
+		public String getAvailabilityValue() {
+			return this.availabilityValue;
 		}
 
-		public void setLockMode(String lockMode) {
-			this.lockMode = lockMode;
+		public void setAvailabilityValue(String availabilityValue) {
+			this.availabilityValue = availabilityValue;
 		}
 
-		public String getEngineVersion() {
-			return this.engineVersion;
+		public String getCategory() {
+			return this.category;
 		}
 
-		public void setEngineVersion(String engineVersion) {
-			this.engineVersion = engineVersion;
+		public void setCategory(String category) {
+			this.category = category;
 		}
 
-		public Integer getMaxIOPS() {
-			return this.maxIOPS;
+		public String getConnectionMode() {
+			return this.connectionMode;
 		}
 
-		public void setMaxIOPS(Integer maxIOPS) {
-			this.maxIOPS = maxIOPS;
+		public void setConnectionMode(String connectionMode) {
+			this.connectionMode = connectionMode;
 		}
 
 		public String getConnectionString() {
@@ -277,28 +181,28 @@ public class DescribeDBInstancesAsCsvResponse extends AcsResponse {
 			this.connectionString = connectionString;
 		}
 
-		public String getInstanceNetworkType() {
-			return this.instanceNetworkType;
+		public String getCreationTime() {
+			return this.creationTime;
 		}
 
-		public void setInstanceNetworkType(String instanceNetworkType) {
-			this.instanceNetworkType = instanceNetworkType;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
-		public String getSecurityIPList() {
-			return this.securityIPList;
+		public String getDBInstanceCPU() {
+			return this.dBInstanceCPU;
 		}
 
-		public void setSecurityIPList(String securityIPList) {
-			this.securityIPList = securityIPList;
+		public void setDBInstanceCPU(String dBInstanceCPU) {
+			this.dBInstanceCPU = dBInstanceCPU;
 		}
 
-		public String getMasterInstanceId() {
-			return this.masterInstanceId;
+		public String getDBInstanceClass() {
+			return this.dBInstanceClass;
 		}
 
-		public void setMasterInstanceId(String masterInstanceId) {
-			this.masterInstanceId = masterInstanceId;
+		public void setDBInstanceClass(String dBInstanceClass) {
+			this.dBInstanceClass = dBInstanceClass;
 		}
 
 		public String getDBInstanceClassType() {
@@ -317,20 +221,20 @@ public class DescribeDBInstancesAsCsvResponse extends AcsResponse {
 			this.dBInstanceDescription = dBInstanceDescription;
 		}
 
-		public String getDBInstanceCPU() {
-			return this.dBInstanceCPU;
+		public String getDBInstanceId() {
+			return this.dBInstanceId;
 		}
 
-		public void setDBInstanceCPU(String dBInstanceCPU) {
-			this.dBInstanceCPU = dBInstanceCPU;
+		public void setDBInstanceId(String dBInstanceId) {
+			this.dBInstanceId = dBInstanceId;
 		}
 
-		public String getExpireTime() {
-			return this.expireTime;
+		public Long getDBInstanceMemory() {
+			return this.dBInstanceMemory;
 		}
 
-		public void setExpireTime(String expireTime) {
-			this.expireTime = expireTime;
+		public void setDBInstanceMemory(Long dBInstanceMemory) {
+			this.dBInstanceMemory = dBInstanceMemory;
 		}
 
 		public String getDBInstanceNetType() {
@@ -341,60 +245,12 @@ public class DescribeDBInstancesAsCsvResponse extends AcsResponse {
 			this.dBInstanceNetType = dBInstanceNetType;
 		}
 
-		public String getDBInstanceType() {
-			return this.dBInstanceType;
-		}
-
-		public void setDBInstanceType(String dBInstanceType) {
-			this.dBInstanceType = dBInstanceType;
-		}
-
-		public Integer getAccountMaxQuantity() {
-			return this.accountMaxQuantity;
-		}
-
-		public void setAccountMaxQuantity(Integer accountMaxQuantity) {
-			this.accountMaxQuantity = accountMaxQuantity;
-		}
-
-		public String getLockReason() {
-			return this.lockReason;
-		}
-
-		public void setLockReason(String lockReason) {
-			this.lockReason = lockReason;
-		}
-
 		public String getDBInstanceStatus() {
 			return this.dBInstanceStatus;
 		}
 
 		public void setDBInstanceStatus(String dBInstanceStatus) {
 			this.dBInstanceStatus = dBInstanceStatus;
-		}
-
-		public Integer getDBMaxQuantity() {
-			return this.dBMaxQuantity;
-		}
-
-		public void setDBMaxQuantity(Integer dBMaxQuantity) {
-			this.dBMaxQuantity = dBMaxQuantity;
-		}
-
-		public String getGuardDBInstanceId() {
-			return this.guardDBInstanceId;
-		}
-
-		public void setGuardDBInstanceId(String guardDBInstanceId) {
-			this.guardDBInstanceId = guardDBInstanceId;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
 		}
 
 		public Integer getDBInstanceStorage() {
@@ -405,52 +261,20 @@ public class DescribeDBInstancesAsCsvResponse extends AcsResponse {
 			this.dBInstanceStorage = dBInstanceStorage;
 		}
 
-		public String getVSwitchId() {
-			return this.vSwitchId;
+		public String getDBInstanceType() {
+			return this.dBInstanceType;
 		}
 
-		public void setVSwitchId(String vSwitchId) {
-			this.vSwitchId = vSwitchId;
+		public void setDBInstanceType(String dBInstanceType) {
+			this.dBInstanceType = dBInstanceType;
 		}
 
-		public String getZoneId() {
-			return this.zoneId;
+		public Integer getDBMaxQuantity() {
+			return this.dBMaxQuantity;
 		}
 
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
-		}
-
-		public String getCategory() {
-			return this.category;
-		}
-
-		public void setCategory(String category) {
-			this.category = category;
-		}
-
-		public Integer getMaxConnections() {
-			return this.maxConnections;
-		}
-
-		public void setMaxConnections(Integer maxConnections) {
-			this.maxConnections = maxConnections;
-		}
-
-		public String getDBInstanceId() {
-			return this.dBInstanceId;
-		}
-
-		public void setDBInstanceId(String dBInstanceId) {
-			this.dBInstanceId = dBInstanceId;
-		}
-
-		public String getDBInstanceClass() {
-			return this.dBInstanceClass;
-		}
-
-		public void setDBInstanceClass(String dBInstanceClass) {
-			this.dBInstanceClass = dBInstanceClass;
+		public void setDBMaxQuantity(Integer dBMaxQuantity) {
+			this.dBMaxQuantity = dBMaxQuantity;
 		}
 
 		public String getEngine() {
@@ -461,12 +285,188 @@ public class DescribeDBInstancesAsCsvResponse extends AcsResponse {
 			this.engine = engine;
 		}
 
+		public String getEngineVersion() {
+			return this.engineVersion;
+		}
+
+		public void setEngineVersion(String engineVersion) {
+			this.engineVersion = engineVersion;
+		}
+
+		public String getExpireTime() {
+			return this.expireTime;
+		}
+
+		public void setExpireTime(String expireTime) {
+			this.expireTime = expireTime;
+		}
+
 		public String getExportKey() {
 			return this.exportKey;
 		}
 
 		public void setExportKey(String exportKey) {
 			this.exportKey = exportKey;
+		}
+
+		public String getGuardDBInstanceId() {
+			return this.guardDBInstanceId;
+		}
+
+		public void setGuardDBInstanceId(String guardDBInstanceId) {
+			this.guardDBInstanceId = guardDBInstanceId;
+		}
+
+		public String getIncrementSourceDBInstanceId() {
+			return this.incrementSourceDBInstanceId;
+		}
+
+		public void setIncrementSourceDBInstanceId(String incrementSourceDBInstanceId) {
+			this.incrementSourceDBInstanceId = incrementSourceDBInstanceId;
+		}
+
+		public String getInstanceNetworkType() {
+			return this.instanceNetworkType;
+		}
+
+		public void setInstanceNetworkType(String instanceNetworkType) {
+			this.instanceNetworkType = instanceNetworkType;
+		}
+
+		public String getLockMode() {
+			return this.lockMode;
+		}
+
+		public void setLockMode(String lockMode) {
+			this.lockMode = lockMode;
+		}
+
+		public String getLockReason() {
+			return this.lockReason;
+		}
+
+		public void setLockReason(String lockReason) {
+			this.lockReason = lockReason;
+		}
+
+		public String getMaintainTime() {
+			return this.maintainTime;
+		}
+
+		public void setMaintainTime(String maintainTime) {
+			this.maintainTime = maintainTime;
+		}
+
+		public String getMasterInstanceId() {
+			return this.masterInstanceId;
+		}
+
+		public void setMasterInstanceId(String masterInstanceId) {
+			this.masterInstanceId = masterInstanceId;
+		}
+
+		public Integer getMaxConnections() {
+			return this.maxConnections;
+		}
+
+		public void setMaxConnections(Integer maxConnections) {
+			this.maxConnections = maxConnections;
+		}
+
+		public Integer getMaxIOPS() {
+			return this.maxIOPS;
+		}
+
+		public void setMaxIOPS(Integer maxIOPS) {
+			this.maxIOPS = maxIOPS;
+		}
+
+		public String getPayType() {
+			return this.payType;
+		}
+
+		public void setPayType(String payType) {
+			this.payType = payType;
+		}
+
+		public String getPort() {
+			return this.port;
+		}
+
+		public void setPort(String port) {
+			this.port = port;
+		}
+
+		public String getReadDelayTime() {
+			return this.readDelayTime;
+		}
+
+		public void setReadDelayTime(String readDelayTime) {
+			this.readDelayTime = readDelayTime;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public String getSecurityIPList() {
+			return this.securityIPList;
+		}
+
+		public void setSecurityIPList(String securityIPList) {
+			this.securityIPList = securityIPList;
+		}
+
+		public String getSupportUpgradeAccountType() {
+			return this.supportUpgradeAccountType;
+		}
+
+		public void setSupportUpgradeAccountType(String supportUpgradeAccountType) {
+			this.supportUpgradeAccountType = supportUpgradeAccountType;
+		}
+
+		public String getTags() {
+			return this.tags;
+		}
+
+		public void setTags(String tags) {
+			this.tags = tags;
+		}
+
+		public String getTempDBInstanceId() {
+			return this.tempDBInstanceId;
+		}
+
+		public void setTempDBInstanceId(String tempDBInstanceId) {
+			this.tempDBInstanceId = tempDBInstanceId;
+		}
+
+		public String getVSwitchId() {
+			return this.vSwitchId;
+		}
+
+		public void setVSwitchId(String vSwitchId) {
+			this.vSwitchId = vSwitchId;
+		}
+
+		public String getVpcId() {
+			return this.vpcId;
+		}
+
+		public void setVpcId(String vpcId) {
+			this.vpcId = vpcId;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
 		}
 
 		public List<String> getSlaveZones() {

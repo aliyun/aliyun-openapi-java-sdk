@@ -29,6 +29,8 @@ public class TransformDBInstancePayTypeRequest extends RpcAcsRequest<TransformDB
 
 	private String clientToken;
 
+	private Boolean autoUseCoupon;
+
 	private String dBInstanceId;
 
 	private String businessInfo;
@@ -44,6 +46,8 @@ public class TransformDBInstancePayTypeRequest extends RpcAcsRequest<TransformDB
 	private Integer usedTime;
 
 	private String autoRenew;
+
+	private String promotionCode;
 
 	private String payType;
 	public TransformDBInstancePayTypeRequest() {
@@ -74,6 +78,17 @@ public class TransformDBInstancePayTypeRequest extends RpcAcsRequest<TransformDB
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public Boolean getAutoUseCoupon() {
+		return this.autoUseCoupon;
+	}
+
+	public void setAutoUseCoupon(Boolean autoUseCoupon) {
+		this.autoUseCoupon = autoUseCoupon;
+		if(autoUseCoupon != null){
+			putQueryParameter("AutoUseCoupon", autoUseCoupon.toString());
 		}
 	}
 
@@ -162,6 +177,17 @@ public class TransformDBInstancePayTypeRequest extends RpcAcsRequest<TransformDB
 		this.autoRenew = autoRenew;
 		if(autoRenew != null){
 			putQueryParameter("AutoRenew", autoRenew);
+		}
+	}
+
+	public String getPromotionCode() {
+		return this.promotionCode;
+	}
+
+	public void setPromotionCode(String promotionCode) {
+		this.promotionCode = promotionCode;
+		if(promotionCode != null){
+			putQueryParameter("PromotionCode", promotionCode);
 		}
 	}
 

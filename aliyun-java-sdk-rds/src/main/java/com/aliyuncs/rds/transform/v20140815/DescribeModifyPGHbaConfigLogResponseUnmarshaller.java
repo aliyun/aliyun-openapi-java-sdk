@@ -35,40 +35,40 @@ public class DescribeModifyPGHbaConfigLogResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeModifyPGHbaConfigLogResponse.HbaLogItems.Length"); i++) {
 			HbaLogItem hbaLogItem = new HbaLogItem();
 			hbaLogItem.setModifyStatus(_ctx.stringValue("DescribeModifyPGHbaConfigLogResponse.HbaLogItems["+ i +"].ModifyStatus"));
-			hbaLogItem.setStatusReason(_ctx.stringValue("DescribeModifyPGHbaConfigLogResponse.HbaLogItems["+ i +"].StatusReason"));
 			hbaLogItem.setModifyTime(_ctx.stringValue("DescribeModifyPGHbaConfigLogResponse.HbaLogItems["+ i +"].ModifyTime"));
-
-			List<HbaItem> beforeHbaItems = new ArrayList<HbaItem>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeModifyPGHbaConfigLogResponse.HbaLogItems["+ i +"].BeforeHbaItems.Length"); j++) {
-				HbaItem hbaItem = new HbaItem();
-				hbaItem.setType(_ctx.stringValue("DescribeModifyPGHbaConfigLogResponse.HbaLogItems["+ i +"].BeforeHbaItems["+ j +"].Type"));
-				hbaItem.setMask(_ctx.stringValue("DescribeModifyPGHbaConfigLogResponse.HbaLogItems["+ i +"].BeforeHbaItems["+ j +"].Mask"));
-				hbaItem.setDatabase(_ctx.stringValue("DescribeModifyPGHbaConfigLogResponse.HbaLogItems["+ i +"].BeforeHbaItems["+ j +"].Database"));
-				hbaItem.setPriorityId(_ctx.integerValue("DescribeModifyPGHbaConfigLogResponse.HbaLogItems["+ i +"].BeforeHbaItems["+ j +"].PriorityId"));
-				hbaItem.setAddress(_ctx.stringValue("DescribeModifyPGHbaConfigLogResponse.HbaLogItems["+ i +"].BeforeHbaItems["+ j +"].Address"));
-				hbaItem.setOption(_ctx.stringValue("DescribeModifyPGHbaConfigLogResponse.HbaLogItems["+ i +"].BeforeHbaItems["+ j +"].Option"));
-				hbaItem.setBizMethod(_ctx.stringValue("DescribeModifyPGHbaConfigLogResponse.HbaLogItems["+ i +"].BeforeHbaItems["+ j +"].Method"));
-				hbaItem.setUser(_ctx.stringValue("DescribeModifyPGHbaConfigLogResponse.HbaLogItems["+ i +"].BeforeHbaItems["+ j +"].User"));
-
-				beforeHbaItems.add(hbaItem);
-			}
-			hbaLogItem.setBeforeHbaItems(beforeHbaItems);
+			hbaLogItem.setStatusReason(_ctx.stringValue("DescribeModifyPGHbaConfigLogResponse.HbaLogItems["+ i +"].StatusReason"));
 
 			List<HbaItem> afterHbaItems = new ArrayList<HbaItem>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeModifyPGHbaConfigLogResponse.HbaLogItems["+ i +"].AfterHbaItems.Length"); j++) {
-				HbaItem hbaItem1 = new HbaItem();
-				hbaItem1.setType(_ctx.stringValue("DescribeModifyPGHbaConfigLogResponse.HbaLogItems["+ i +"].AfterHbaItems["+ j +"].Type"));
-				hbaItem1.setMask(_ctx.stringValue("DescribeModifyPGHbaConfigLogResponse.HbaLogItems["+ i +"].AfterHbaItems["+ j +"].Mask"));
-				hbaItem1.setDatabase(_ctx.stringValue("DescribeModifyPGHbaConfigLogResponse.HbaLogItems["+ i +"].AfterHbaItems["+ j +"].Database"));
-				hbaItem1.setPriorityId(_ctx.integerValue("DescribeModifyPGHbaConfigLogResponse.HbaLogItems["+ i +"].AfterHbaItems["+ j +"].PriorityId"));
-				hbaItem1.setAddress(_ctx.stringValue("DescribeModifyPGHbaConfigLogResponse.HbaLogItems["+ i +"].AfterHbaItems["+ j +"].Address"));
-				hbaItem1.setOption(_ctx.stringValue("DescribeModifyPGHbaConfigLogResponse.HbaLogItems["+ i +"].AfterHbaItems["+ j +"].Option"));
-				hbaItem1.setBizMethod(_ctx.stringValue("DescribeModifyPGHbaConfigLogResponse.HbaLogItems["+ i +"].AfterHbaItems["+ j +"].Method"));
-				hbaItem1.setUser(_ctx.stringValue("DescribeModifyPGHbaConfigLogResponse.HbaLogItems["+ i +"].AfterHbaItems["+ j +"].User"));
+				HbaItem hbaItem = new HbaItem();
+				hbaItem.setAddress(_ctx.stringValue("DescribeModifyPGHbaConfigLogResponse.HbaLogItems["+ i +"].AfterHbaItems["+ j +"].Address"));
+				hbaItem.setDatabase(_ctx.stringValue("DescribeModifyPGHbaConfigLogResponse.HbaLogItems["+ i +"].AfterHbaItems["+ j +"].Database"));
+				hbaItem.setMask(_ctx.stringValue("DescribeModifyPGHbaConfigLogResponse.HbaLogItems["+ i +"].AfterHbaItems["+ j +"].Mask"));
+				hbaItem.setBizMethod(_ctx.stringValue("DescribeModifyPGHbaConfigLogResponse.HbaLogItems["+ i +"].AfterHbaItems["+ j +"].Method"));
+				hbaItem.setOption(_ctx.stringValue("DescribeModifyPGHbaConfigLogResponse.HbaLogItems["+ i +"].AfterHbaItems["+ j +"].Option"));
+				hbaItem.setPriorityId(_ctx.integerValue("DescribeModifyPGHbaConfigLogResponse.HbaLogItems["+ i +"].AfterHbaItems["+ j +"].PriorityId"));
+				hbaItem.setType(_ctx.stringValue("DescribeModifyPGHbaConfigLogResponse.HbaLogItems["+ i +"].AfterHbaItems["+ j +"].Type"));
+				hbaItem.setUser(_ctx.stringValue("DescribeModifyPGHbaConfigLogResponse.HbaLogItems["+ i +"].AfterHbaItems["+ j +"].User"));
 
-				afterHbaItems.add(hbaItem1);
+				afterHbaItems.add(hbaItem);
 			}
 			hbaLogItem.setAfterHbaItems(afterHbaItems);
+
+			List<HbaItem> beforeHbaItems = new ArrayList<HbaItem>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeModifyPGHbaConfigLogResponse.HbaLogItems["+ i +"].BeforeHbaItems.Length"); j++) {
+				HbaItem hbaItem1 = new HbaItem();
+				hbaItem1.setAddress(_ctx.stringValue("DescribeModifyPGHbaConfigLogResponse.HbaLogItems["+ i +"].BeforeHbaItems["+ j +"].Address"));
+				hbaItem1.setDatabase(_ctx.stringValue("DescribeModifyPGHbaConfigLogResponse.HbaLogItems["+ i +"].BeforeHbaItems["+ j +"].Database"));
+				hbaItem1.setMask(_ctx.stringValue("DescribeModifyPGHbaConfigLogResponse.HbaLogItems["+ i +"].BeforeHbaItems["+ j +"].Mask"));
+				hbaItem1.setBizMethod(_ctx.stringValue("DescribeModifyPGHbaConfigLogResponse.HbaLogItems["+ i +"].BeforeHbaItems["+ j +"].Method"));
+				hbaItem1.setOption(_ctx.stringValue("DescribeModifyPGHbaConfigLogResponse.HbaLogItems["+ i +"].BeforeHbaItems["+ j +"].Option"));
+				hbaItem1.setPriorityId(_ctx.integerValue("DescribeModifyPGHbaConfigLogResponse.HbaLogItems["+ i +"].BeforeHbaItems["+ j +"].PriorityId"));
+				hbaItem1.setType(_ctx.stringValue("DescribeModifyPGHbaConfigLogResponse.HbaLogItems["+ i +"].BeforeHbaItems["+ j +"].Type"));
+				hbaItem1.setUser(_ctx.stringValue("DescribeModifyPGHbaConfigLogResponse.HbaLogItems["+ i +"].BeforeHbaItems["+ j +"].User"));
+
+				beforeHbaItems.add(hbaItem1);
+			}
+			hbaLogItem.setBeforeHbaItems(beforeHbaItems);
 
 			hbaLogItems.add(hbaLogItem);
 		}

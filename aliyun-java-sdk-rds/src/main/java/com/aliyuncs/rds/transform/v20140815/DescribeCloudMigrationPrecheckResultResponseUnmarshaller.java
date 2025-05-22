@@ -27,26 +27,26 @@ public class DescribeCloudMigrationPrecheckResultResponseUnmarshaller {
 	public static DescribeCloudMigrationPrecheckResultResponse unmarshall(DescribeCloudMigrationPrecheckResultResponse describeCloudMigrationPrecheckResultResponse, UnmarshallerContext _ctx) {
 		
 		describeCloudMigrationPrecheckResultResponse.setRequestId(_ctx.stringValue("DescribeCloudMigrationPrecheckResultResponse.RequestId"));
-		describeCloudMigrationPrecheckResultResponse.setTotalSize(_ctx.integerValue("DescribeCloudMigrationPrecheckResultResponse.TotalSize"));
 		describeCloudMigrationPrecheckResultResponse.setPageNumber(_ctx.longValue("DescribeCloudMigrationPrecheckResultResponse.PageNumber"));
 		describeCloudMigrationPrecheckResultResponse.setPageSize(_ctx.longValue("DescribeCloudMigrationPrecheckResultResponse.PageSize"));
+		describeCloudMigrationPrecheckResultResponse.setTotalSize(_ctx.integerValue("DescribeCloudMigrationPrecheckResultResponse.TotalSize"));
 
 		List<MigrateCloudTaskList> items = new ArrayList<MigrateCloudTaskList>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCloudMigrationPrecheckResultResponse.Items.Length"); i++) {
 			MigrateCloudTaskList migrateCloudTaskList = new MigrateCloudTaskList();
+			migrateCloudTaskList.setDetail(_ctx.stringValue("DescribeCloudMigrationPrecheckResultResponse.Items["+ i +"].Detail"));
 			migrateCloudTaskList.setGmtCreated(_ctx.stringValue("DescribeCloudMigrationPrecheckResultResponse.Items["+ i +"].GmtCreated"));
 			migrateCloudTaskList.setGmtModified(_ctx.stringValue("DescribeCloudMigrationPrecheckResultResponse.Items["+ i +"].GmtModified"));
-			migrateCloudTaskList.setTaskId(_ctx.longValue("DescribeCloudMigrationPrecheckResultResponse.Items["+ i +"].TaskId"));
-			migrateCloudTaskList.setTaskName(_ctx.stringValue("DescribeCloudMigrationPrecheckResultResponse.Items["+ i +"].TaskName"));
-			migrateCloudTaskList.setStatus(_ctx.stringValue("DescribeCloudMigrationPrecheckResultResponse.Items["+ i +"].Status"));
+			migrateCloudTaskList.setSourceAccount(_ctx.stringValue("DescribeCloudMigrationPrecheckResultResponse.Items["+ i +"].SourceAccount"));
 			migrateCloudTaskList.setSourceCategory(_ctx.stringValue("DescribeCloudMigrationPrecheckResultResponse.Items["+ i +"].SourceCategory"));
 			migrateCloudTaskList.setSourceIpAddress(_ctx.stringValue("DescribeCloudMigrationPrecheckResultResponse.Items["+ i +"].SourceIpAddress"));
-			migrateCloudTaskList.setSourcePort(_ctx.longValue("DescribeCloudMigrationPrecheckResultResponse.Items["+ i +"].SourcePort"));
-			migrateCloudTaskList.setSourceAccount(_ctx.stringValue("DescribeCloudMigrationPrecheckResultResponse.Items["+ i +"].SourceAccount"));
 			migrateCloudTaskList.setSourcePassword(_ctx.stringValue("DescribeCloudMigrationPrecheckResultResponse.Items["+ i +"].SourcePassword"));
+			migrateCloudTaskList.setSourcePort(_ctx.longValue("DescribeCloudMigrationPrecheckResultResponse.Items["+ i +"].SourcePort"));
+			migrateCloudTaskList.setStatus(_ctx.stringValue("DescribeCloudMigrationPrecheckResultResponse.Items["+ i +"].Status"));
 			migrateCloudTaskList.setTargetEip(_ctx.stringValue("DescribeCloudMigrationPrecheckResultResponse.Items["+ i +"].TargetEip"));
 			migrateCloudTaskList.setTargetInstanceName(_ctx.stringValue("DescribeCloudMigrationPrecheckResultResponse.Items["+ i +"].TargetInstanceName"));
-			migrateCloudTaskList.setDetail(_ctx.stringValue("DescribeCloudMigrationPrecheckResultResponse.Items["+ i +"].Detail"));
+			migrateCloudTaskList.setTaskId(_ctx.longValue("DescribeCloudMigrationPrecheckResultResponse.Items["+ i +"].TaskId"));
+			migrateCloudTaskList.setTaskName(_ctx.stringValue("DescribeCloudMigrationPrecheckResultResponse.Items["+ i +"].TaskName"));
 
 			items.add(migrateCloudTaskList);
 		}
