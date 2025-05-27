@@ -143,6 +143,8 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 
 		private CpuOptions cpuOptions;
 
+		private Clock clock;
+
 		public Integer getEniTotalQuantity() {
 			return this.eniTotalQuantity;
 		}
@@ -487,6 +489,14 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 			this.cpuOptions = cpuOptions;
 		}
 
+		public Clock getClock() {
+			return this.clock;
+		}
+
+		public void setClock(Clock clock) {
+			this.clock = clock;
+		}
+
 		public static class NetworkCardInfo {
 
 			private Integer networkCardIndex;
@@ -606,6 +616,19 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 
 			public void setSupportedTopologyTypes(List<String> supportedTopologyTypes) {
 				this.supportedTopologyTypes = supportedTopologyTypes;
+			}
+		}
+
+		public static class Clock {
+
+			private String ptpSupport;
+
+			public String getPtpSupport() {
+				return this.ptpSupport;
+			}
+
+			public void setPtpSupport(String ptpSupport) {
+				this.ptpSupport = ptpSupport;
 			}
 		}
 	}

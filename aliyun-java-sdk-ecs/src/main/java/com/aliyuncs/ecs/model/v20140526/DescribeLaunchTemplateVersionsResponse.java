@@ -269,6 +269,8 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 
 			private Integer httpPutResponseHopLimit;
 
+			private String systemDiskKMSKeyId;
+
 			private List<DataDisk> dataDisks;
 
 			private List<NetworkInterface> networkInterfaces;
@@ -677,6 +679,14 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 				this.httpPutResponseHopLimit = httpPutResponseHopLimit;
 			}
 
+			public String getSystemDiskKMSKeyId() {
+				return this.systemDiskKMSKeyId;
+			}
+
+			public void setSystemDiskKMSKeyId(String systemDiskKMSKeyId) {
+				this.systemDiskKMSKeyId = systemDiskKMSKeyId;
+			}
+
 			public List<DataDisk> getDataDisks() {
 				return this.dataDisks;
 			}
@@ -734,6 +744,8 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 				private Boolean burstingEnabled;
 
 				private String autoSnapshotPolicyId;
+
+				private String kMSKeyId;
 
 				public String getPerformanceLevel() {
 					return this.performanceLevel;
@@ -829,6 +841,14 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 
 				public void setAutoSnapshotPolicyId(String autoSnapshotPolicyId) {
 					this.autoSnapshotPolicyId = autoSnapshotPolicyId;
+				}
+
+				public String getKMSKeyId() {
+					return this.kMSKeyId;
+				}
+
+				public void setKMSKeyId(String kMSKeyId) {
+					this.kMSKeyId = kMSKeyId;
 				}
 			}
 

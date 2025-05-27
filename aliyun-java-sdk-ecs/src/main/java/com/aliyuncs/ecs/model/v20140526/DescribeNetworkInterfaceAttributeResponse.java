@@ -740,6 +740,10 @@ public class DescribeNetworkInterfaceAttributeResponse extends AcsResponse {
 
 		private Boolean enableRss;
 
+		private Integer virtualFunctionTotalQueueNumber;
+
+		private Integer virtualFunctionQuantity;
+
 		public Boolean getEnableSriov() {
 			return this.enableSriov;
 		}
@@ -754,6 +758,22 @@ public class DescribeNetworkInterfaceAttributeResponse extends AcsResponse {
 
 		public void setEnableRss(Boolean enableRss) {
 			this.enableRss = enableRss;
+		}
+
+		public Integer getVirtualFunctionTotalQueueNumber() {
+			return this.virtualFunctionTotalQueueNumber;
+		}
+
+		public void setVirtualFunctionTotalQueueNumber(Integer virtualFunctionTotalQueueNumber) {
+			this.virtualFunctionTotalQueueNumber = virtualFunctionTotalQueueNumber;
+		}
+
+		public Integer getVirtualFunctionQuantity() {
+			return this.virtualFunctionQuantity;
+		}
+
+		public void setVirtualFunctionQuantity(Integer virtualFunctionQuantity) {
+			this.virtualFunctionQuantity = virtualFunctionQuantity;
 		}
 	}
 

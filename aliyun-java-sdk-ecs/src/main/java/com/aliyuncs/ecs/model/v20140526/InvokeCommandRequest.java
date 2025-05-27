@@ -30,6 +30,8 @@ public class InvokeCommandRequest extends RpcAcsRequest<InvokeCommandResponse> {
 
 	private Long resourceOwnerId;
 
+	private String workingDir;
+
 	private String commandId;
 
 	private String frequency;
@@ -86,6 +88,17 @@ public class InvokeCommandRequest extends RpcAcsRequest<InvokeCommandResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getWorkingDir() {
+		return this.workingDir;
+	}
+
+	public void setWorkingDir(String workingDir) {
+		this.workingDir = workingDir;
+		if(workingDir != null){
+			putQueryParameter("WorkingDir", workingDir);
 		}
 	}
 

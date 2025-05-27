@@ -98,6 +98,7 @@ public class DescribeLaunchTemplateVersionsResponseUnmarshaller {
 			launchTemplateData.setHttpEndpoint(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.HttpEndpoint"));
 			launchTemplateData.setHttpTokens(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.HttpTokens"));
 			launchTemplateData.setHttpPutResponseHopLimit(_ctx.integerValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.HttpPutResponseHopLimit"));
+			launchTemplateData.setSystemDiskKMSKeyId(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.SystemDisk.KMSKeyId"));
 
 			List<String> securityGroupIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.SecurityGroupIds.Length"); j++) {
@@ -120,6 +121,7 @@ public class DescribeLaunchTemplateVersionsResponseUnmarshaller {
 				dataDisk.setProvisionedIops(_ctx.longValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.DataDisks["+ j +"].ProvisionedIops"));
 				dataDisk.setBurstingEnabled(_ctx.booleanValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.DataDisks["+ j +"].BurstingEnabled"));
 				dataDisk.setAutoSnapshotPolicyId(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.DataDisks["+ j +"].AutoSnapshotPolicyId"));
+				dataDisk.setKMSKeyId(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.DataDisks["+ j +"].KMSKeyId"));
 
 				dataDisks.add(dataDisk);
 			}

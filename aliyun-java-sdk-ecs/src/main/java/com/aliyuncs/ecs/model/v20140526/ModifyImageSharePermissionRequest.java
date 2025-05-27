@@ -34,6 +34,8 @@ public class ModifyImageSharePermissionRequest extends RpcAcsRequest<ModifyImage
 
 	private String launchPermission;
 
+	private Boolean dryRun;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -93,6 +95,17 @@ public class ModifyImageSharePermissionRequest extends RpcAcsRequest<ModifyImage
 		this.launchPermission = launchPermission;
 		if(launchPermission != null){
 			putQueryParameter("LaunchPermission", launchPermission);
+		}
+	}
+
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
 		}
 	}
 

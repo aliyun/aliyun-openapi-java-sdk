@@ -196,6 +196,8 @@ public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkIn
 			
 				putQueryParameter("EnhancedNetwork.EnableSriov" , enhancedNetwork.getEnableSriov());
 				putQueryParameter("EnhancedNetwork.EnableRss" , enhancedNetwork.getEnableRss());
+				putQueryParameter("EnhancedNetwork.VirtualFunctionTotalQueueNumber" , enhancedNetwork.getVirtualFunctionTotalQueueNumber());
+				putQueryParameter("EnhancedNetwork.VirtualFunctionQuantity" , enhancedNetwork.getVirtualFunctionQuantity());
 		}	
 	}
 
@@ -558,6 +560,10 @@ public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkIn
 
 		private Boolean enableRss;
 
+		private Integer virtualFunctionTotalQueueNumber;
+
+		private Integer virtualFunctionQuantity;
+
 		public Boolean getEnableSriov() {
 			return this.enableSriov;
 		}
@@ -572,6 +578,22 @@ public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkIn
 
 		public void setEnableRss(Boolean enableRss) {
 			this.enableRss = enableRss;
+		}
+
+		public Integer getVirtualFunctionTotalQueueNumber() {
+			return this.virtualFunctionTotalQueueNumber;
+		}
+
+		public void setVirtualFunctionTotalQueueNumber(Integer virtualFunctionTotalQueueNumber) {
+			this.virtualFunctionTotalQueueNumber = virtualFunctionTotalQueueNumber;
+		}
+
+		public Integer getVirtualFunctionQuantity() {
+			return this.virtualFunctionQuantity;
+		}
+
+		public void setVirtualFunctionQuantity(Integer virtualFunctionQuantity) {
+			this.virtualFunctionQuantity = virtualFunctionQuantity;
 		}
 	}
 

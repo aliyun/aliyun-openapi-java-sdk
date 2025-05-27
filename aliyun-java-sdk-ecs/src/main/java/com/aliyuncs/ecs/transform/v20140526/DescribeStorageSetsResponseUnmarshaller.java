@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.ecs.model.v20140526.DescribeStorageSetsResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeStorageSetsResponse.StorageSet;
+import com.aliyuncs.ecs.model.v20140526.DescribeStorageSetsResponse.StorageSet.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -41,6 +42,17 @@ public class DescribeStorageSetsResponseUnmarshaller {
 			storageSet.setStorageSetPartitionNumber(_ctx.integerValue("DescribeStorageSetsResponse.StorageSets["+ i +"].StorageSetPartitionNumber"));
 			storageSet.setStorageSetName(_ctx.stringValue("DescribeStorageSetsResponse.StorageSets["+ i +"].StorageSetName"));
 			storageSet.setRegionId(_ctx.stringValue("DescribeStorageSetsResponse.StorageSets["+ i +"].RegionId"));
+			storageSet.setResourceGroupId(_ctx.stringValue("DescribeStorageSetsResponse.StorageSets["+ i +"].ResourceGroupId"));
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeStorageSetsResponse.StorageSets["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(_ctx.stringValue("DescribeStorageSetsResponse.StorageSets["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("DescribeStorageSetsResponse.StorageSets["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			storageSet.setTags(tags);
 
 			storageSets.add(storageSet);
 		}

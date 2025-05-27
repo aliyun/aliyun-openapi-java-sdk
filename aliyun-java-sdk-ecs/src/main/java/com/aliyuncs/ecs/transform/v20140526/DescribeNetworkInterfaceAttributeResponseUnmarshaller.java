@@ -123,6 +123,8 @@ public class DescribeNetworkInterfaceAttributeResponseUnmarshaller {
 		EnhancedNetwork enhancedNetwork = new EnhancedNetwork();
 		enhancedNetwork.setEnableSriov(_ctx.booleanValue("DescribeNetworkInterfaceAttributeResponse.EnhancedNetwork.EnableSriov"));
 		enhancedNetwork.setEnableRss(_ctx.booleanValue("DescribeNetworkInterfaceAttributeResponse.EnhancedNetwork.EnableRss"));
+		enhancedNetwork.setVirtualFunctionTotalQueueNumber(_ctx.integerValue("DescribeNetworkInterfaceAttributeResponse.EnhancedNetwork.VirtualFunctionTotalQueueNumber"));
+		enhancedNetwork.setVirtualFunctionQuantity(_ctx.integerValue("DescribeNetworkInterfaceAttributeResponse.EnhancedNetwork.VirtualFunctionQuantity"));
 		describeNetworkInterfaceAttributeResponse.setEnhancedNetwork(enhancedNetwork);
 
 		List<PrivateIpSet> privateIpSets = new ArrayList<PrivateIpSet>();

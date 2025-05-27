@@ -100,6 +100,8 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 
 	private String description;
 
+	private String systemDiskKMSKeyId;
+
 	private String systemDiskCategory;
 
 	private String systemDiskPerformanceLevel;
@@ -571,6 +573,17 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 		}
 	}
 
+	public String getSystemDiskKMSKeyId() {
+		return this.systemDiskKMSKeyId;
+	}
+
+	public void setSystemDiskKMSKeyId(String systemDiskKMSKeyId) {
+		this.systemDiskKMSKeyId = systemDiskKMSKeyId;
+		if(systemDiskKMSKeyId != null){
+			putQueryParameter("SystemDisk.KMSKeyId", systemDiskKMSKeyId);
+		}
+	}
+
 	public String getSystemDiskCategory() {
 		return this.systemDiskCategory;
 	}
@@ -805,6 +818,7 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".AutoSnapshotPolicyId" , dataDisks.get(depth1).getAutoSnapshotPolicyId());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".ProvisionedIops" , dataDisks.get(depth1).getProvisionedIops());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".BurstingEnabled" , dataDisks.get(depth1).getBurstingEnabled());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".KMSKeyId" , dataDisks.get(depth1).getKMSKeyId());
 			}
 		}	
 	}
@@ -1040,6 +1054,8 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 
 		private Boolean burstingEnabled;
 
+		private String kMSKeyId;
+
 		public String getPerformanceLevel() {
 			return this.performanceLevel;
 		}
@@ -1134,6 +1150,14 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 
 		public void setBurstingEnabled(Boolean burstingEnabled) {
 			this.burstingEnabled = burstingEnabled;
+		}
+
+		public String getKMSKeyId() {
+			return this.kMSKeyId;
+		}
+
+		public void setKMSKeyId(String kMSKeyId) {
+			this.kMSKeyId = kMSKeyId;
 		}
 	}
 

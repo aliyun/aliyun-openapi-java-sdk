@@ -39,6 +39,8 @@ public class ModifyImageAttributeRequest extends RpcAcsRequest<ModifyImageAttrib
 
 	private String licenseType;
 
+	private Boolean dryRun;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -133,6 +135,17 @@ public class ModifyImageAttributeRequest extends RpcAcsRequest<ModifyImageAttrib
 		this.licenseType = licenseType;
 		if(licenseType != null){
 			putQueryParameter("LicenseType", licenseType);
+		}
+	}
+
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
 		}
 	}
 

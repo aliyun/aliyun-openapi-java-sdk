@@ -26,9 +26,23 @@ import com.aliyuncs.ecs.Endpoint;
 public class CreateImageRequest extends RpcAcsRequest<CreateImageResponse> {
 	   
 
-	private List<DiskDeviceMapping> diskDeviceMappings;
-
 	private Long resourceOwnerId;
+
+	private String resourceGroupId;
+
+	private Features features;
+
+	private String bootMode;
+
+	private List<Tag> tags;
+
+	private Boolean dryRun;
+
+	private Long ownerId;
+
+	private String instanceId;
+
+	private List<DiskDeviceMapping> diskDeviceMappings;
 
 	private String snapshotId;
 
@@ -38,15 +52,7 @@ public class CreateImageRequest extends RpcAcsRequest<CreateImageResponse> {
 
 	private String platform;
 
-	private String resourceGroupId;
-
-	private Features features;
-
-	private String bootMode;
-
 	private String imageName;
-
-	private List<Tag> tags;
 
 	private String architecture;
 
@@ -55,10 +61,6 @@ public class CreateImageRequest extends RpcAcsRequest<CreateImageResponse> {
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
-
-	private Long ownerId;
-
-	private String instanceId;
 
 	private String imageFamily;
 
@@ -70,6 +72,98 @@ public class CreateImageRequest extends RpcAcsRequest<CreateImageResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public Features getFeatures() {
+		return this.features;
+	}
+
+	public void setFeatures(Features features) {
+		this.features = features;	
+		if (features != null) {
+			
+				putQueryParameter("Features.ImdsSupport" , features.getImdsSupport());
+		}	
+	}
+
+	public String getBootMode() {
+		return this.bootMode;
+	}
+
+	public void setBootMode(String bootMode) {
+		this.bootMode = bootMode;
+		if(bootMode != null){
+			putQueryParameter("BootMode", bootMode);
+		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
+	}
+
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
 	}
 
 	public List<DiskDeviceMapping> getDiskDeviceMappings() {
@@ -86,17 +180,6 @@ public class CreateImageRequest extends RpcAcsRequest<CreateImageResponse> {
 				putQueryParameter("DiskDeviceMapping." + (depth1 + 1) + ".Device" , diskDeviceMappings.get(depth1).getDevice());
 			}
 		}	
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
 	}
 
 	public String getSnapshotId() {
@@ -143,40 +226,6 @@ public class CreateImageRequest extends RpcAcsRequest<CreateImageResponse> {
 		}
 	}
 
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
-	}
-
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
-		}
-	}
-
-	public Features getFeatures() {
-		return this.features;
-	}
-
-	public void setFeatures(Features features) {
-		this.features = features;	
-		if (features != null) {
-			
-				putQueryParameter("Features.ImdsSupport" , features.getImdsSupport());
-		}	
-	}
-
-	public String getBootMode() {
-		return this.bootMode;
-	}
-
-	public void setBootMode(String bootMode) {
-		this.bootMode = bootMode;
-		if(bootMode != null){
-			putQueryParameter("BootMode", bootMode);
-		}
-	}
-
 	public String getImageName() {
 		return this.imageName;
 	}
@@ -186,20 +235,6 @@ public class CreateImageRequest extends RpcAcsRequest<CreateImageResponse> {
 		if(imageName != null){
 			putQueryParameter("ImageName", imageName);
 		}
-	}
-
-	public List<Tag> getTags() {
-		return this.tags;
-	}
-
-	public void setTags(List<Tag> tags) {
-		this.tags = tags;	
-		if (tags != null) {
-			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
-				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
-				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
-			}
-		}	
 	}
 
 	public String getArchitecture() {
@@ -246,28 +281,6 @@ public class CreateImageRequest extends RpcAcsRequest<CreateImageResponse> {
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
 	public String getImageFamily() {
 		return this.imageFamily;
 	}
@@ -287,6 +300,42 @@ public class CreateImageRequest extends RpcAcsRequest<CreateImageResponse> {
 		this.imageVersion = imageVersion;
 		if(imageVersion != null){
 			putQueryParameter("ImageVersion", imageVersion);
+		}
+	}
+
+	public static class Features {
+
+		private String imdsSupport;
+
+		public String getImdsSupport() {
+			return this.imdsSupport;
+		}
+
+		public void setImdsSupport(String imdsSupport) {
+			this.imdsSupport = imdsSupport;
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 
@@ -330,42 +379,6 @@ public class CreateImageRequest extends RpcAcsRequest<CreateImageResponse> {
 
 		public void setDevice(String device) {
 			this.device = device;
-		}
-	}
-
-	public static class Features {
-
-		private String imdsSupport;
-
-		public String getImdsSupport() {
-			return this.imdsSupport;
-		}
-
-		public void setImdsSupport(String imdsSupport) {
-			this.imdsSupport = imdsSupport;
-		}
-	}
-
-	public static class Tag {
-
-		private String value;
-
-		private String key;
-
-		public String getValue() {
-			return this.value;
-		}
-
-		public void setValue(String value) {
-			this.value = value;
-		}
-
-		public String getKey() {
-			return this.key;
-		}
-
-		public void setKey(String key) {
-			this.key = key;
 		}
 	}
 

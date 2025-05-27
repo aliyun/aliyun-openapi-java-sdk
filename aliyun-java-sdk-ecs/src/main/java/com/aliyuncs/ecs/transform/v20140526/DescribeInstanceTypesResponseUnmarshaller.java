@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstanceTypesResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstanceTypesResponse.InstanceType;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstanceTypesResponse.InstanceType.Attribute;
+import com.aliyuncs.ecs.model.v20140526.DescribeInstanceTypesResponse.InstanceType.Clock;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstanceTypesResponse.InstanceType.CpuOptions;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstanceTypesResponse.InstanceType.EnhancedNetwork;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstanceTypesResponse.InstanceType.NetworkCardInfo;
@@ -99,6 +100,10 @@ public class DescribeInstanceTypesResponseUnmarshaller {
 			}
 			cpuOptions.setSupportedTopologyTypes(supportedTopologyTypes);
 			instanceType.setCpuOptions(cpuOptions);
+
+			Clock clock = new Clock();
+			clock.setPtpSupport(_ctx.stringValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].Clock.PtpSupport"));
+			instanceType.setClock(clock);
 
 			List<NetworkCardInfo> networkCards = new ArrayList<NetworkCardInfo>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].NetworkCards.Length"); j++) {
