@@ -29,6 +29,8 @@ public class SmartqAuthorizeRequest extends RpcAcsRequest<SmartqAuthorizeRespons
 
 	private String llmCubes;
 
+	private String cubeIds;
+
 	private Integer operationType;
 
 	private String expireDay;
@@ -59,6 +61,17 @@ public class SmartqAuthorizeRequest extends RpcAcsRequest<SmartqAuthorizeRespons
 		this.llmCubes = llmCubes;
 		if(llmCubes != null){
 			putQueryParameter("LlmCubes", llmCubes);
+		}
+	}
+
+	public String getCubeIds() {
+		return this.cubeIds;
+	}
+
+	public void setCubeIds(String cubeIds) {
+		this.cubeIds = cubeIds;
+		if(cubeIds != null){
+			putQueryParameter("CubeIds", cubeIds);
 		}
 	}
 

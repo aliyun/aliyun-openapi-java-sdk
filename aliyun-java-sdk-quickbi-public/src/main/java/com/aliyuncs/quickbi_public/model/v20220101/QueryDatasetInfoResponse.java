@@ -342,6 +342,8 @@ public class QueryDatasetInfoResponse extends AcsResponse {
 
 			private String uid;
 
+			private String expressionV2;
+
 			public String getCaption() {
 				return this.caption;
 			}
@@ -421,6 +423,14 @@ public class QueryDatasetInfoResponse extends AcsResponse {
 			public void setUid(String uid) {
 				this.uid = uid;
 			}
+
+			public String getExpressionV2() {
+				return this.expressionV2;
+			}
+
+			public void setExpressionV2(String expressionV2) {
+				this.expressionV2 = expressionV2;
+			}
 		}
 
 		public static class MeasureListItem {
@@ -440,6 +450,8 @@ public class QueryDatasetInfoResponse extends AcsResponse {
 			private String tableUniqueId;
 
 			private String uid;
+
+			private String expressionV2;
 
 			public String getCaption() {
 				return this.caption;
@@ -503,6 +515,14 @@ public class QueryDatasetInfoResponse extends AcsResponse {
 
 			public void setUid(String uid) {
 				this.uid = uid;
+			}
+
+			public String getExpressionV2() {
+				return this.expressionV2;
+			}
+
+			public void setExpressionV2(String expressionV2) {
+				this.expressionV2 = expressionV2;
 			}
 		}
 

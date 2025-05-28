@@ -41,6 +41,7 @@ public class SmartqQueryAbilityResponseUnmarshaller {
 			MetaTypeItem metaTypeItem = new MetaTypeItem();
 			metaTypeItem.setKey(_ctx.stringValue("SmartqQueryAbilityResponse.Result.MetaType["+ i +"].Key"));
 			metaTypeItem.setValue(_ctx.stringValue("SmartqQueryAbilityResponse.Result.MetaType["+ i +"].Value"));
+			metaTypeItem.setType(_ctx.stringValue("SmartqQueryAbilityResponse.Result.MetaType["+ i +"].Type"));
 
 			metaType.add(metaTypeItem);
 		}

@@ -1,3 +1,6 @@
+2025-05-28 Version: 2.1.15
+- Add api request parameters and error code.
+
 2025-04-14 Version: 2.1.14
 - Add SmartqQueryAbility api request parameters.
 

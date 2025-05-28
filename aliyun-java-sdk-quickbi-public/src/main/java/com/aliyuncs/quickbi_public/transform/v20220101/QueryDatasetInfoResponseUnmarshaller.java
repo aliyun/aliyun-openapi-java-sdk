@@ -85,6 +85,7 @@ public class QueryDatasetInfoResponseUnmarshaller {
 			dimensionListItem.setRefUid(_ctx.stringValue("QueryDatasetInfoResponse.Result.DimensionList["+ i +"].RefUid"));
 			dimensionListItem.setTableUniqueId(_ctx.stringValue("QueryDatasetInfoResponse.Result.DimensionList["+ i +"].TableUniqueId"));
 			dimensionListItem.setUid(_ctx.stringValue("QueryDatasetInfoResponse.Result.DimensionList["+ i +"].Uid"));
+			dimensionListItem.setExpressionV2(_ctx.stringValue("QueryDatasetInfoResponse.Result.DimensionList["+ i +"].ExpressionV2"));
 
 			dimensionList.add(dimensionListItem);
 		}
@@ -101,6 +102,7 @@ public class QueryDatasetInfoResponseUnmarshaller {
 			measureListItem.setMeasureType(_ctx.stringValue("QueryDatasetInfoResponse.Result.MeasureList["+ i +"].MeasureType"));
 			measureListItem.setTableUniqueId(_ctx.stringValue("QueryDatasetInfoResponse.Result.MeasureList["+ i +"].TableUniqueId"));
 			measureListItem.setUid(_ctx.stringValue("QueryDatasetInfoResponse.Result.MeasureList["+ i +"].Uid"));
+			measureListItem.setExpressionV2(_ctx.stringValue("QueryDatasetInfoResponse.Result.MeasureList["+ i +"].ExpressionV2"));
 
 			measureList.add(measureListItem);
 		}

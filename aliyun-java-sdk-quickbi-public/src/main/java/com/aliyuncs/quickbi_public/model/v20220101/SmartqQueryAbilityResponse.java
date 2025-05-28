@@ -113,6 +113,8 @@ public class SmartqQueryAbilityResponse extends AcsResponse {
 
 			private String value;
 
+			private String type;
+
 			public String getKey() {
 				return this.key;
 			}
@@ -127,6 +129,14 @@ public class SmartqQueryAbilityResponse extends AcsResponse {
 
 			public void setValue(String value) {
 				this.value = value;
+			}
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
 			}
 		}
 
