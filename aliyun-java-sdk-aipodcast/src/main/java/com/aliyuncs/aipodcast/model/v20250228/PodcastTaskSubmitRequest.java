@@ -28,6 +28,8 @@ import com.aliyuncs.http.MethodType;
 public class PodcastTaskSubmitRequest extends RoaAcsRequest<PodcastTaskSubmitResponse> {
 	   
 
+	private String sourceLang;
+
 	private Integer counts;
 
 	@SerializedName("fileUrls")
@@ -46,6 +48,17 @@ public class PodcastTaskSubmitRequest extends RoaAcsRequest<PodcastTaskSubmitRes
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/podcast/task/submit");
 		setMethod(MethodType.POST);
+	}
+
+	public String getSourceLang() {
+		return this.sourceLang;
+	}
+
+	public void setSourceLang(String sourceLang) {
+		this.sourceLang = sourceLang;
+		if(sourceLang != null){
+			putBodyParameter("sourceLang", sourceLang);
+		}
 	}
 
 	public Integer getCounts() {
