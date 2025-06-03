@@ -28,6 +28,8 @@ import com.aliyuncs.mpaas.Endpoint;
 public class PushBroadcastRequest extends RpcAcsRequest<PushBroadcastResponse> {
 	   
 
+	private Long bindEndTime;
+
 	private String taskName;
 
 	private String templateKeyValue;
@@ -35,7 +37,11 @@ public class PushBroadcastRequest extends RpcAcsRequest<PushBroadcastResponse> {
 	@SerializedName("notifyLevel")
 	private Map<String,String> notifyLevel;
 
+	private Long bindStartTime;
+
 	private Object transparentMessagePayload;
+
+	private Long unBindEndTime;
 
 	private Long pushAction;
 
@@ -49,6 +55,8 @@ public class PushBroadcastRequest extends RpcAcsRequest<PushBroadcastResponse> {
 
 	@SerializedName("thirdChannelCategory")
 	private Map<String,String> thirdChannelCategory;
+
+	private Long unBindStartTime;
 
 	private String classification;
 
@@ -65,6 +73,8 @@ public class PushBroadcastRequest extends RpcAcsRequest<PushBroadcastResponse> {
 	private String transparentMessageUrgency;
 
 	private Integer androidChannel;
+
+	private Integer timeMode;
 
 	private String tenantId;
 
@@ -88,6 +98,17 @@ public class PushBroadcastRequest extends RpcAcsRequest<PushBroadcastResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Long getBindEndTime() {
+		return this.bindEndTime;
+	}
+
+	public void setBindEndTime(Long bindEndTime) {
+		this.bindEndTime = bindEndTime;
+		if(bindEndTime != null){
+			putBodyParameter("BindEndTime", bindEndTime.toString());
+		}
 	}
 
 	public String getTaskName() {
@@ -123,6 +144,17 @@ public class PushBroadcastRequest extends RpcAcsRequest<PushBroadcastResponse> {
 		}	
 	}
 
+	public Long getBindStartTime() {
+		return this.bindStartTime;
+	}
+
+	public void setBindStartTime(Long bindStartTime) {
+		this.bindStartTime = bindStartTime;
+		if(bindStartTime != null){
+			putBodyParameter("BindStartTime", bindStartTime.toString());
+		}
+	}
+
 	public Object getTransparentMessagePayload() {
 		return this.transparentMessagePayload;
 	}
@@ -131,6 +163,17 @@ public class PushBroadcastRequest extends RpcAcsRequest<PushBroadcastResponse> {
 		this.transparentMessagePayload = transparentMessagePayload;
 		if(transparentMessagePayload != null){
 			putBodyParameter("TransparentMessagePayload", transparentMessagePayload.toString());
+		}
+	}
+
+	public Long getUnBindEndTime() {
+		return this.unBindEndTime;
+	}
+
+	public void setUnBindEndTime(Long unBindEndTime) {
+		this.unBindEndTime = unBindEndTime;
+		if(unBindEndTime != null){
+			putBodyParameter("UnBindEndTime", unBindEndTime.toString());
 		}
 	}
 
@@ -198,6 +241,17 @@ public class PushBroadcastRequest extends RpcAcsRequest<PushBroadcastResponse> {
 		if (thirdChannelCategory != null) {
 			putBodyParameter("ThirdChannelCategory" , new Gson().toJson(thirdChannelCategory));
 		}	
+	}
+
+	public Long getUnBindStartTime() {
+		return this.unBindStartTime;
+	}
+
+	public void setUnBindStartTime(Long unBindStartTime) {
+		this.unBindStartTime = unBindStartTime;
+		if(unBindStartTime != null){
+			putBodyParameter("UnBindStartTime", unBindStartTime.toString());
+		}
 	}
 
 	public String getClassification() {
@@ -285,6 +339,17 @@ public class PushBroadcastRequest extends RpcAcsRequest<PushBroadcastResponse> {
 		this.androidChannel = androidChannel;
 		if(androidChannel != null){
 			putBodyParameter("AndroidChannel", androidChannel.toString());
+		}
+	}
+
+	public Integer getTimeMode() {
+		return this.timeMode;
+	}
+
+	public void setTimeMode(Integer timeMode) {
+		this.timeMode = timeMode;
+		if(timeMode != null){
+			putBodyParameter("TimeMode", timeMode.toString());
 		}
 	}
 
