@@ -184,33 +184,40 @@ public abstract class RoaAcsRequest<T extends AcsResponse> extends AcsRequest<T>
             imutableMap.put("RegionId", getSysRegionId());
         }
         if (null != signer && null != credentials && !(credentials instanceof AnonymousCredentials)) {
-            String accessKeyId = credentials.getAccessKeyId();
-            if (credentials instanceof BasicSessionCredentials) {
-                String sessionToken = ((BasicSessionCredentials) credentials).getSessionToken();
-                if (null != sessionToken) {
-                    imutableMap.put("x-acs-accesskey-id", accessKeyId);
-                    imutableMap.put("x-acs-security-token", sessionToken);
-                }
-            }
             if (credentials instanceof BearerTokenCredentials) {
                 String bearerToken = ((BearerTokenCredentials) credentials).getBearerToken();
-                if (null != ((BearerTokenCredentials) credentials).getBearerToken()) {
+                if (null != bearerToken) {
                     imutableMap.put("x-acs-bearer-token", bearerToken);
+                    imutableMap.put("x-acs-signature-type", "BEARERTOKEN");
                 }
+            } else if (credentials instanceof IDTokenCredentials) {
+                String idToken = ((IDTokenCredentials) credentials).getIDToken();
+                if (null != idToken) {
+                    imutableMap.put("x-acs-zero-trust-idtoken", idToken);
+                }
+            } else {
+                String accessKeyId = credentials.getAccessKeyId();
+                if (credentials instanceof BasicSessionCredentials) {
+                    String sessionToken = ((BasicSessionCredentials) credentials).getSessionToken();
+                    if (null != sessionToken) {
+                        imutableMap.put("x-acs-accesskey-id", accessKeyId);
+                        imutableMap.put("x-acs-security-token", sessionToken);
+                    }
+                }
+                if (signer.getContent() != null && hashedRequestPayload != null) {
+                    imutableMap.put(signer.getContent(), hashedRequestPayload);
+                }
+                String strToSign = this.composer.composeStringToSign(this.getSysMethod(), this.getSysUriPattern(), signer,
+                        this.getSysQueryParameters(), imutableMap, this.getPathParameters());
+                if (this.getSysSignatureVersion() == SignatureVersion.V3) {
+                    strToSign += "\n" + hashedRequestPayload;
+                    strToSign = signer.getSignerName() + "\n" + hexEncode(signer.hash(strToSign.getBytes("UTF-8")));
+                }
+                this.strToSign = strToSign;
+                String signature = signer.signString(strToSign, credentials);
+                imutableMap.put("Authorization", this.composer.getAuthorization(signer, accessKeyId, signature)
+                        + (this.getSysSignatureVersion() == SignatureVersion.V3 ? ",SignedHeaders=" + this.getSysSignedHeaders(imutableMap) : ""));
             }
-            if (signer.getContent() != null && hashedRequestPayload != null) {
-                imutableMap.put(signer.getContent(), hashedRequestPayload);
-            }
-            String strToSign = this.composer.composeStringToSign(this.getSysMethod(), this.getSysUriPattern(), signer,
-                    this.getSysQueryParameters(), imutableMap, this.getPathParameters());
-            if (this.getSysSignatureVersion() == SignatureVersion.V3) {
-                strToSign += "\n" + hashedRequestPayload;
-                strToSign = signer.getSignerName() + "\n" + hexEncode(signer.hash(strToSign.getBytes("UTF-8")));
-            }
-            this.strToSign = strToSign;
-            String signature = signer.signString(strToSign, credentials);
-            imutableMap.put("Authorization", this.composer.getAuthorization(signer, accessKeyId, signature)
-                    + (this.getSysSignatureVersion() == SignatureVersion.V3 ? ",SignedHeaders=" + this.getSysSignedHeaders(imutableMap) : ""));
         }
         this.setSysUrl(this.composeUrl(domain.getDomainName(), this.getSysQueryParameters()));
         this.headers = imutableMap;

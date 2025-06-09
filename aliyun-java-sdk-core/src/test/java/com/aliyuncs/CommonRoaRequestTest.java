@@ -6,6 +6,7 @@ import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.aliyuncs.auth.*;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -15,11 +16,7 @@ import org.powermock.api.mockito.PowerMockito;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
 
-import com.aliyuncs.auth.AlibabaCloudCredentials;
-import com.aliyuncs.auth.BasicSessionCredentials;
-import com.aliyuncs.auth.BearerTokenCredentials;
 import com.aliyuncs.auth.signers.HmacSHA1Signer;
-import com.aliyuncs.auth.RoaSignatureComposer;
 import com.aliyuncs.http.FormatType;
 import com.aliyuncs.http.HttpRequest;
 import com.aliyuncs.http.MethodType;
@@ -180,6 +177,14 @@ public class CommonRoaRequestTest {
         Mockito.when(bearerCredentials.getBearerToken()).thenReturn("bearerToken");
         Assert.assertTrue(
                 request.signRequest(signer, bearerCredentials, FormatType.JSON, productDomain) instanceof HttpRequest);
+
+        IDTokenCredentials idTokenCredentials = Mockito.mock(IDTokenCredentials.class);
+        Mockito.when(idTokenCredentials.getIDToken()).thenReturn(null);
+        Assert.assertTrue(
+                request.signRequest(signer, idTokenCredentials, FormatType.JSON, productDomain) instanceof HttpRequest);
+        Mockito.when(idTokenCredentials.getIDToken()).thenReturn("token");
+        Assert.assertTrue(
+                request.signRequest(signer, idTokenCredentials, FormatType.JSON, productDomain) instanceof HttpRequest);
     }
 
 }
