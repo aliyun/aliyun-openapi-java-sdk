@@ -175,6 +175,7 @@ public class DescribeTenantResponseUnmarshaller {
 			tenantConnectionsItem.setInternetRpcPort(_ctx.integerValue("DescribeTenantResponse.Tenant.TenantConnections["+ i +"].InternetRpcPort"));
 			tenantConnectionsItem.setIntranetSqlPort(_ctx.integerValue("DescribeTenantResponse.Tenant.TenantConnections["+ i +"].IntranetSqlPort"));
 			tenantConnectionsItem.setOdpVersion(_ctx.stringValue("DescribeTenantResponse.Tenant.TenantConnections["+ i +"].OdpVersion"));
+			tenantConnectionsItem.setInternetSqlPort(_ctx.integerValue("DescribeTenantResponse.Tenant.TenantConnections["+ i +"].InternetSqlPort"));
 
 			List<String> connectionZones = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeTenantResponse.Tenant.TenantConnections["+ i +"].ConnectionZones.Length"); j++) {

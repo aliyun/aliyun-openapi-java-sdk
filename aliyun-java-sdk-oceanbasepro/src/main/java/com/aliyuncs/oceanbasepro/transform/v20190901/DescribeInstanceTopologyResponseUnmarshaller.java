@@ -167,6 +167,7 @@ public class DescribeInstanceTopologyResponseUnmarshaller {
 			replicasItem.setReplicaType(_ctx.stringValue("DescribeInstanceTopologyResponse.InstanceTopology.Replicas["+ i +"].ReplicaType"));
 			replicasItem.setStatus(_ctx.stringValue("DescribeInstanceTopologyResponse.InstanceTopology.Replicas["+ i +"].Status"));
 			replicasItem.setReadOnlyReplicaType(_ctx.stringValue("DescribeInstanceTopologyResponse.InstanceTopology.Replicas["+ i +"].ReadOnlyReplicaType"));
+			replicasItem.setOnlineNodeNum(_ctx.longValue("DescribeInstanceTopologyResponse.InstanceTopology.Replicas["+ i +"].OnlineNodeNum"));
 
 			ReplicaResource replicaResource = new ReplicaResource();
 

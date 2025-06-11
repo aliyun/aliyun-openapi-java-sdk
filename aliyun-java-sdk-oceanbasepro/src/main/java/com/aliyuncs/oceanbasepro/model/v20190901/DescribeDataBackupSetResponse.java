@@ -69,7 +69,7 @@ public class DescribeDataBackupSetResponse extends AcsResponse {
 
 		private String policy;
 
-		private Integer setId;
+		private String setId;
 
 		private String method;
 
@@ -141,11 +141,11 @@ public class DescribeDataBackupSetResponse extends AcsResponse {
 			this.policy = policy;
 		}
 
-		public Integer getSetId() {
+		public String getSetId() {
 			return this.setId;
 		}
 
-		public void setSetId(Integer setId) {
+		public void setSetId(String setId) {
 			this.setId = setId;
 		}
 

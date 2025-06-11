@@ -207,7 +207,11 @@ public class DescribeOasTopSQLListResponse extends AcsResponse {
 
 		private Double sumDbTime;
 
+		private String obDbId;
+
 		private List<SqlListItem> sqlList;
+
+		private CustomColumns customColumns;
 
 		public Long getExecutions() {
 			return this.executions;
@@ -849,12 +853,28 @@ public class DescribeOasTopSQLListResponse extends AcsResponse {
 			this.sumDbTime = sumDbTime;
 		}
 
+		public String getObDbId() {
+			return this.obDbId;
+		}
+
+		public void setObDbId(String obDbId) {
+			this.obDbId = obDbId;
+		}
+
 		public List<SqlListItem> getSqlList() {
 			return this.sqlList;
 		}
 
 		public void setSqlList(List<SqlListItem> sqlList) {
 			this.sqlList = sqlList;
+		}
+
+		public CustomColumns getCustomColumns() {
+			return this.customColumns;
+		}
+
+		public void setCustomColumns(CustomColumns customColumns) {
+			this.customColumns = customColumns;
 		}
 
 		public static class SqlListItem {
@@ -1637,6 +1657,29 @@ public class DescribeOasTopSQLListResponse extends AcsResponse {
 
 			public void setSumDbTime(Double sumDbTime) {
 				this.sumDbTime = sumDbTime;
+			}
+		}
+
+		public static class CustomColumns {
+
+			private String expression;
+
+			private String value;
+
+			public String getExpression() {
+				return this.expression;
+			}
+
+			public void setExpression(String expression) {
+				this.expression = expression;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
 			}
 		}
 	}

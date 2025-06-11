@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.oceanbasepro.model.v20190901.DescribeOasTopSQLListResponse;
 import com.aliyuncs.oceanbasepro.model.v20190901.DescribeOasTopSQLListResponse.DataItem;
+import com.aliyuncs.oceanbasepro.model.v20190901.DescribeOasTopSQLListResponse.DataItem.CustomColumns;
 import com.aliyuncs.oceanbasepro.model.v20190901.DescribeOasTopSQLListResponse.DataItem.SqlListItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -112,6 +113,12 @@ public class DescribeOasTopSQLListResponseUnmarshaller {
 			dataItem.setLastFailCode(_ctx.longValue("DescribeOasTopSQLListResponse.Data["+ i +"].LastFailCode"));
 			dataItem.setAvgDbTime(_ctx.doubleValue("DescribeOasTopSQLListResponse.Data["+ i +"].AvgDbTime"));
 			dataItem.setSumDbTime(_ctx.doubleValue("DescribeOasTopSQLListResponse.Data["+ i +"].SumDbTime"));
+			dataItem.setObDbId(_ctx.stringValue("DescribeOasTopSQLListResponse.Data["+ i +"].ObDbId"));
+
+			CustomColumns customColumns = new CustomColumns();
+			customColumns.setExpression(_ctx.stringValue("DescribeOasTopSQLListResponse.Data["+ i +"].CustomColumns.Expression"));
+			customColumns.setValue(_ctx.stringValue("DescribeOasTopSQLListResponse.Data["+ i +"].CustomColumns.Value"));
+			dataItem.setCustomColumns(customColumns);
 
 			List<SqlListItem> sqlList = new ArrayList<SqlListItem>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeOasTopSQLListResponse.Data["+ i +"].SqlList.Length"); j++) {

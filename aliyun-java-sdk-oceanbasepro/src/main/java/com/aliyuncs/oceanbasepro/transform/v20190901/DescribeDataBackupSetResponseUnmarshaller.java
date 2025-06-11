@@ -42,7 +42,7 @@ public class DescribeDataBackupSetResponseUnmarshaller {
 			dataItem.setStartTime(_ctx.stringValue("DescribeDataBackupSetResponse.Data["+ i +"].StartTime"));
 			dataItem.setDataSize(_ctx.integerValue("DescribeDataBackupSetResponse.Data["+ i +"].DataSize"));
 			dataItem.setPolicy(_ctx.stringValue("DescribeDataBackupSetResponse.Data["+ i +"].Policy"));
-			dataItem.setSetId(_ctx.integerValue("DescribeDataBackupSetResponse.Data["+ i +"].SetId"));
+			dataItem.setSetId(_ctx.stringValue("DescribeDataBackupSetResponse.Data["+ i +"].SetId"));
 			dataItem.setBizMethod(_ctx.stringValue("DescribeDataBackupSetResponse.Data["+ i +"].Method"));
 			dataItem.setCheckpoint(_ctx.stringValue("DescribeDataBackupSetResponse.Data["+ i +"].Checkpoint"));
 			dataItem.setDataVersion(_ctx.integerValue("DescribeDataBackupSetResponse.Data["+ i +"].DataVersion"));

@@ -31,11 +31,13 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 
 	private String resourceGroupId;
 
+	private Integer pageSize;
+
 	private String instanceId;
 
 	private String instanceName;
 
-	private Integer pageSize;
+	private Boolean withOBCloudInstances;
 	public DescribeInstancesRequest() {
 		super("OceanBasePro", "2019-09-01", "DescribeInstances", "oceanbase");
 		setMethod(MethodType.POST);
@@ -78,6 +80,17 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 		}
 	}
 
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putBodyParameter("PageSize", pageSize.toString());
+		}
+	}
+
 	public String getInstanceId() {
 		return this.instanceId;
 	}
@@ -100,14 +113,14 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Boolean getWithOBCloudInstances() {
+		return this.withOBCloudInstances;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putBodyParameter("PageSize", pageSize.toString());
+	public void setWithOBCloudInstances(Boolean withOBCloudInstances) {
+		this.withOBCloudInstances = withOBCloudInstances;
+		if(withOBCloudInstances != null){
+			putBodyParameter("WithOBCloudInstances", withOBCloudInstances.toString());
 		}
 	}
 

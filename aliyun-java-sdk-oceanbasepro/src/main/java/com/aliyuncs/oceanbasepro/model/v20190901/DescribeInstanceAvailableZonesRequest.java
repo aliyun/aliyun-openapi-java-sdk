@@ -15,6 +15,7 @@
 package com.aliyuncs.oceanbasepro.model.v20190901;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.oceanbasepro.Endpoint;
 
@@ -22,45 +23,18 @@ import com.aliyuncs.oceanbasepro.Endpoint;
  * @author auto create
  * @version 
  */
-public class BatchKillProcessListRequest extends RpcAcsRequest<BatchKillProcessListResponse> {
+public class DescribeInstanceAvailableZonesRequest extends RpcAcsRequest<DescribeInstanceAvailableZonesResponse> {
 	   
 
-	private String sessionList;
-
-	private Boolean byObSessionId;
-
 	private String instanceId;
-
-	private String tenantId;
-	public BatchKillProcessListRequest() {
-		super("OceanBasePro", "2019-09-01", "BatchKillProcessList", "oceanbase");
+	public DescribeInstanceAvailableZonesRequest() {
+		super("OceanBasePro", "2019-09-01", "DescribeInstanceAvailableZones", "oceanbase");
+		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getSessionList() {
-		return this.sessionList;
-	}
-
-	public void setSessionList(String sessionList) {
-		this.sessionList = sessionList;
-		if(sessionList != null){
-			putBodyParameter("SessionList", sessionList);
-		}
-	}
-
-	public Boolean getByObSessionId() {
-		return this.byObSessionId;
-	}
-
-	public void setByObSessionId(Boolean byObSessionId) {
-		this.byObSessionId = byObSessionId;
-		if(byObSessionId != null){
-			putBodyParameter("ByObSessionId", byObSessionId.toString());
-		}
 	}
 
 	public String getInstanceId() {
@@ -74,20 +48,9 @@ public class BatchKillProcessListRequest extends RpcAcsRequest<BatchKillProcessL
 		}
 	}
 
-	public String getTenantId() {
-		return this.tenantId;
-	}
-
-	public void setTenantId(String tenantId) {
-		this.tenantId = tenantId;
-		if(tenantId != null){
-			putBodyParameter("TenantId", tenantId);
-		}
-	}
-
 	@Override
-	public Class<BatchKillProcessListResponse> getResponseClass() {
-		return BatchKillProcessListResponse.class;
+	public Class<DescribeInstanceAvailableZonesResponse> getResponseClass() {
+		return DescribeInstanceAvailableZonesResponse.class;
 	}
 
 }

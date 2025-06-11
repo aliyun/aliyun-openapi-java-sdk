@@ -139,6 +139,12 @@ public class DescribeProcessStatsCompositionResponse extends AcsResponse {
 
 			private String planId;
 
+			private String dynamicSql;
+
+			private String serverSn;
+
+			private List<ProcessSqlListsItem> processSqlLists;
+
 			public String getSqlText() {
 				return this.sqlText;
 			}
@@ -257,6 +263,366 @@ public class DescribeProcessStatsCompositionResponse extends AcsResponse {
 
 			public void setPlanId(String planId) {
 				this.planId = planId;
+			}
+
+			public String getDynamicSql() {
+				return this.dynamicSql;
+			}
+
+			public void setDynamicSql(String dynamicSql) {
+				this.dynamicSql = dynamicSql;
+			}
+
+			public String getServerSn() {
+				return this.serverSn;
+			}
+
+			public void setServerSn(String serverSn) {
+				this.serverSn = serverSn;
+			}
+
+			public List<ProcessSqlListsItem> getProcessSqlLists() {
+				return this.processSqlLists;
+			}
+
+			public void setProcessSqlLists(List<ProcessSqlListsItem> processSqlLists) {
+				this.processSqlLists = processSqlLists;
+			}
+
+			public static class ProcessSqlListsItem {
+
+				private String sqlText;
+
+				private String tenantId;
+
+				private String database;
+
+				private String user;
+
+				private Long executeTime;
+
+				private Long cpuTime;
+
+				private String serverIp;
+
+				private String clientIp;
+
+				private Long sessionId;
+
+				private String proxySessId;
+
+				private String command;
+
+				private String status;
+
+				private String sqlId;
+
+				private String traceId;
+
+				private String planId;
+
+				private String dynamicSql;
+
+				private List<ProcessSqlListItem> processSqlList;
+
+				public String getSqlText() {
+					return this.sqlText;
+				}
+
+				public void setSqlText(String sqlText) {
+					this.sqlText = sqlText;
+				}
+
+				public String getTenantId() {
+					return this.tenantId;
+				}
+
+				public void setTenantId(String tenantId) {
+					this.tenantId = tenantId;
+				}
+
+				public String getDatabase() {
+					return this.database;
+				}
+
+				public void setDatabase(String database) {
+					this.database = database;
+				}
+
+				public String getUser() {
+					return this.user;
+				}
+
+				public void setUser(String user) {
+					this.user = user;
+				}
+
+				public Long getExecuteTime() {
+					return this.executeTime;
+				}
+
+				public void setExecuteTime(Long executeTime) {
+					this.executeTime = executeTime;
+				}
+
+				public Long getCpuTime() {
+					return this.cpuTime;
+				}
+
+				public void setCpuTime(Long cpuTime) {
+					this.cpuTime = cpuTime;
+				}
+
+				public String getServerIp() {
+					return this.serverIp;
+				}
+
+				public void setServerIp(String serverIp) {
+					this.serverIp = serverIp;
+				}
+
+				public String getClientIp() {
+					return this.clientIp;
+				}
+
+				public void setClientIp(String clientIp) {
+					this.clientIp = clientIp;
+				}
+
+				public Long getSessionId() {
+					return this.sessionId;
+				}
+
+				public void setSessionId(Long sessionId) {
+					this.sessionId = sessionId;
+				}
+
+				public String getProxySessId() {
+					return this.proxySessId;
+				}
+
+				public void setProxySessId(String proxySessId) {
+					this.proxySessId = proxySessId;
+				}
+
+				public String getCommand() {
+					return this.command;
+				}
+
+				public void setCommand(String command) {
+					this.command = command;
+				}
+
+				public String getStatus() {
+					return this.status;
+				}
+
+				public void setStatus(String status) {
+					this.status = status;
+				}
+
+				public String getSqlId() {
+					return this.sqlId;
+				}
+
+				public void setSqlId(String sqlId) {
+					this.sqlId = sqlId;
+				}
+
+				public String getTraceId() {
+					return this.traceId;
+				}
+
+				public void setTraceId(String traceId) {
+					this.traceId = traceId;
+				}
+
+				public String getPlanId() {
+					return this.planId;
+				}
+
+				public void setPlanId(String planId) {
+					this.planId = planId;
+				}
+
+				public String getDynamicSql() {
+					return this.dynamicSql;
+				}
+
+				public void setDynamicSql(String dynamicSql) {
+					this.dynamicSql = dynamicSql;
+				}
+
+				public List<ProcessSqlListItem> getProcessSqlList() {
+					return this.processSqlList;
+				}
+
+				public void setProcessSqlList(List<ProcessSqlListItem> processSqlList) {
+					this.processSqlList = processSqlList;
+				}
+
+				public static class ProcessSqlListItem {
+
+					private String sqlText;
+
+					private String tenantId;
+
+					private String database;
+
+					private String user;
+
+					private Long executeTime;
+
+					private Long cpuTime;
+
+					private String serverIp;
+
+					private String clientIp;
+
+					private Long sessionId;
+
+					private String proxySessId;
+
+					private String command;
+
+					private String status;
+
+					private String sqlId;
+
+					private String traceId;
+
+					private String planId;
+
+					private String dynamicSql;
+
+					public String getSqlText() {
+						return this.sqlText;
+					}
+
+					public void setSqlText(String sqlText) {
+						this.sqlText = sqlText;
+					}
+
+					public String getTenantId() {
+						return this.tenantId;
+					}
+
+					public void setTenantId(String tenantId) {
+						this.tenantId = tenantId;
+					}
+
+					public String getDatabase() {
+						return this.database;
+					}
+
+					public void setDatabase(String database) {
+						this.database = database;
+					}
+
+					public String getUser() {
+						return this.user;
+					}
+
+					public void setUser(String user) {
+						this.user = user;
+					}
+
+					public Long getExecuteTime() {
+						return this.executeTime;
+					}
+
+					public void setExecuteTime(Long executeTime) {
+						this.executeTime = executeTime;
+					}
+
+					public Long getCpuTime() {
+						return this.cpuTime;
+					}
+
+					public void setCpuTime(Long cpuTime) {
+						this.cpuTime = cpuTime;
+					}
+
+					public String getServerIp() {
+						return this.serverIp;
+					}
+
+					public void setServerIp(String serverIp) {
+						this.serverIp = serverIp;
+					}
+
+					public String getClientIp() {
+						return this.clientIp;
+					}
+
+					public void setClientIp(String clientIp) {
+						this.clientIp = clientIp;
+					}
+
+					public Long getSessionId() {
+						return this.sessionId;
+					}
+
+					public void setSessionId(Long sessionId) {
+						this.sessionId = sessionId;
+					}
+
+					public String getProxySessId() {
+						return this.proxySessId;
+					}
+
+					public void setProxySessId(String proxySessId) {
+						this.proxySessId = proxySessId;
+					}
+
+					public String getCommand() {
+						return this.command;
+					}
+
+					public void setCommand(String command) {
+						this.command = command;
+					}
+
+					public String getStatus() {
+						return this.status;
+					}
+
+					public void setStatus(String status) {
+						this.status = status;
+					}
+
+					public String getSqlId() {
+						return this.sqlId;
+					}
+
+					public void setSqlId(String sqlId) {
+						this.sqlId = sqlId;
+					}
+
+					public String getTraceId() {
+						return this.traceId;
+					}
+
+					public void setTraceId(String traceId) {
+						this.traceId = traceId;
+					}
+
+					public String getPlanId() {
+						return this.planId;
+					}
+
+					public void setPlanId(String planId) {
+						this.planId = planId;
+					}
+
+					public String getDynamicSql() {
+						return this.dynamicSql;
+					}
+
+					public void setDynamicSql(String dynamicSql) {
+						this.dynamicSql = dynamicSql;
+					}
+				}
 			}
 		}
 

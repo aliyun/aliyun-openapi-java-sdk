@@ -27,6 +27,8 @@ public class DescribeOasTopSQLListRequest extends RpcAcsRequest<DescribeOasTopSQ
 
 	private String startTime;
 
+	private String customColumns;
+
 	private String searchRule;
 
 	private Boolean mergeDynamicSql;
@@ -73,6 +75,17 @@ public class DescribeOasTopSQLListRequest extends RpcAcsRequest<DescribeOasTopSQ
 		this.startTime = startTime;
 		if(startTime != null){
 			putBodyParameter("StartTime", startTime);
+		}
+	}
+
+	public String getCustomColumns() {
+		return this.customColumns;
+	}
+
+	public void setCustomColumns(String customColumns) {
+		this.customColumns = customColumns;
+		if(customColumns != null){
+			putBodyParameter("CustomColumns", customColumns);
 		}
 	}
 

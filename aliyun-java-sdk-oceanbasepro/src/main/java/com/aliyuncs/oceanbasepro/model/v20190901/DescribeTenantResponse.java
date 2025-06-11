@@ -489,6 +489,8 @@ public class DescribeTenantResponse extends AcsResponse {
 
 			private String odpVersion;
 
+			private Integer internetSqlPort;
+
 			private List<String> connectionZones;
 
 			private List<String> connectionLogicalZones;
@@ -691,6 +693,14 @@ public class DescribeTenantResponse extends AcsResponse {
 
 			public void setOdpVersion(String odpVersion) {
 				this.odpVersion = odpVersion;
+			}
+
+			public Integer getInternetSqlPort() {
+				return this.internetSqlPort;
+			}
+
+			public void setInternetSqlPort(Integer internetSqlPort) {
+				this.internetSqlPort = internetSqlPort;
 			}
 
 			public List<String> getConnectionZones() {

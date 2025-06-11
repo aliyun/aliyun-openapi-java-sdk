@@ -90,6 +90,7 @@ public class DescribeOasSQLPlansResponseUnmarshaller {
 				plansItem.setTableScan(_ctx.booleanValue("DescribeOasSQLPlansResponse.Data["+ i +"].Plans["+ j +"].TableScan"));
 				plansItem.setPlanUnionHash(_ctx.stringValue("DescribeOasSQLPlansResponse.Data["+ i +"].Plans["+ j +"].PlanUnionHash"));
 				plansItem.setSqlId(_ctx.stringValue("DescribeOasSQLPlansResponse.Data["+ i +"].Plans["+ j +"].SqlId"));
+				plansItem.setSqlText(_ctx.stringValue("DescribeOasSQLPlansResponse.Data["+ i +"].Plans["+ j +"].SqlText"));
 
 				plans.add(plansItem);
 			}

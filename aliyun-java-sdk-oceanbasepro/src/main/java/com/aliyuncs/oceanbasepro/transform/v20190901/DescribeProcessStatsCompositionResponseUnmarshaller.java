@@ -20,6 +20,8 @@ import java.util.List;
 import com.aliyuncs.oceanbasepro.model.v20190901.DescribeProcessStatsCompositionResponse;
 import com.aliyuncs.oceanbasepro.model.v20190901.DescribeProcessStatsCompositionResponse.Data;
 import com.aliyuncs.oceanbasepro.model.v20190901.DescribeProcessStatsCompositionResponse.Data.AllProcessListItem;
+import com.aliyuncs.oceanbasepro.model.v20190901.DescribeProcessStatsCompositionResponse.Data.AllProcessListItem.ProcessSqlListsItem;
+import com.aliyuncs.oceanbasepro.model.v20190901.DescribeProcessStatsCompositionResponse.Data.AllProcessListItem.ProcessSqlListsItem.ProcessSqlListItem;
 import com.aliyuncs.oceanbasepro.model.v20190901.DescribeProcessStatsCompositionResponse.Data.SessionStatistics;
 import com.aliyuncs.oceanbasepro.model.v20190901.DescribeProcessStatsCompositionResponse.Data.SessionStatistics.DataBaseStatisticsItem;
 import com.aliyuncs.oceanbasepro.model.v20190901.DescribeProcessStatsCompositionResponse.Data.SessionStatistics.SourceStatisticsItem;
@@ -96,6 +98,56 @@ public class DescribeProcessStatsCompositionResponseUnmarshaller {
 			allProcessListItem.setSqlId(_ctx.stringValue("DescribeProcessStatsCompositionResponse.Data.AllProcessList["+ i +"].SqlId"));
 			allProcessListItem.setTraceId(_ctx.stringValue("DescribeProcessStatsCompositionResponse.Data.AllProcessList["+ i +"].TraceId"));
 			allProcessListItem.setPlanId(_ctx.stringValue("DescribeProcessStatsCompositionResponse.Data.AllProcessList["+ i +"].PlanId"));
+			allProcessListItem.setDynamicSql(_ctx.stringValue("DescribeProcessStatsCompositionResponse.Data.AllProcessList["+ i +"].DynamicSql"));
+			allProcessListItem.setServerSn(_ctx.stringValue("DescribeProcessStatsCompositionResponse.Data.AllProcessList["+ i +"].ServerSn"));
+
+			List<ProcessSqlListsItem> processSqlLists = new ArrayList<ProcessSqlListsItem>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeProcessStatsCompositionResponse.Data.AllProcessList["+ i +"].ProcessSqlLists.Length"); j++) {
+				ProcessSqlListsItem processSqlListsItem = new ProcessSqlListsItem();
+				processSqlListsItem.setSqlText(_ctx.stringValue("DescribeProcessStatsCompositionResponse.Data.AllProcessList["+ i +"].ProcessSqlLists["+ j +"].SqlText"));
+				processSqlListsItem.setTenantId(_ctx.stringValue("DescribeProcessStatsCompositionResponse.Data.AllProcessList["+ i +"].ProcessSqlLists["+ j +"].TenantId"));
+				processSqlListsItem.setDatabase(_ctx.stringValue("DescribeProcessStatsCompositionResponse.Data.AllProcessList["+ i +"].ProcessSqlLists["+ j +"].Database"));
+				processSqlListsItem.setUser(_ctx.stringValue("DescribeProcessStatsCompositionResponse.Data.AllProcessList["+ i +"].ProcessSqlLists["+ j +"].User"));
+				processSqlListsItem.setExecuteTime(_ctx.longValue("DescribeProcessStatsCompositionResponse.Data.AllProcessList["+ i +"].ProcessSqlLists["+ j +"].ExecuteTime"));
+				processSqlListsItem.setCpuTime(_ctx.longValue("DescribeProcessStatsCompositionResponse.Data.AllProcessList["+ i +"].ProcessSqlLists["+ j +"].CpuTime"));
+				processSqlListsItem.setServerIp(_ctx.stringValue("DescribeProcessStatsCompositionResponse.Data.AllProcessList["+ i +"].ProcessSqlLists["+ j +"].ServerIp"));
+				processSqlListsItem.setClientIp(_ctx.stringValue("DescribeProcessStatsCompositionResponse.Data.AllProcessList["+ i +"].ProcessSqlLists["+ j +"].ClientIp"));
+				processSqlListsItem.setSessionId(_ctx.longValue("DescribeProcessStatsCompositionResponse.Data.AllProcessList["+ i +"].ProcessSqlLists["+ j +"].SessionId"));
+				processSqlListsItem.setProxySessId(_ctx.stringValue("DescribeProcessStatsCompositionResponse.Data.AllProcessList["+ i +"].ProcessSqlLists["+ j +"].ProxySessId"));
+				processSqlListsItem.setCommand(_ctx.stringValue("DescribeProcessStatsCompositionResponse.Data.AllProcessList["+ i +"].ProcessSqlLists["+ j +"].Command"));
+				processSqlListsItem.setStatus(_ctx.stringValue("DescribeProcessStatsCompositionResponse.Data.AllProcessList["+ i +"].ProcessSqlLists["+ j +"].Status"));
+				processSqlListsItem.setSqlId(_ctx.stringValue("DescribeProcessStatsCompositionResponse.Data.AllProcessList["+ i +"].ProcessSqlLists["+ j +"].SqlId"));
+				processSqlListsItem.setTraceId(_ctx.stringValue("DescribeProcessStatsCompositionResponse.Data.AllProcessList["+ i +"].ProcessSqlLists["+ j +"].TraceId"));
+				processSqlListsItem.setPlanId(_ctx.stringValue("DescribeProcessStatsCompositionResponse.Data.AllProcessList["+ i +"].ProcessSqlLists["+ j +"].PlanId"));
+				processSqlListsItem.setDynamicSql(_ctx.stringValue("DescribeProcessStatsCompositionResponse.Data.AllProcessList["+ i +"].ProcessSqlLists["+ j +"].DynamicSql"));
+
+				List<ProcessSqlListItem> processSqlList = new ArrayList<ProcessSqlListItem>();
+				for (int k = 0; k < _ctx.lengthValue("DescribeProcessStatsCompositionResponse.Data.AllProcessList["+ i +"].ProcessSqlLists["+ j +"].ProcessSqlList.Length"); k++) {
+					ProcessSqlListItem processSqlListItem = new ProcessSqlListItem();
+					processSqlListItem.setSqlText(_ctx.stringValue("DescribeProcessStatsCompositionResponse.Data.AllProcessList["+ i +"].ProcessSqlLists["+ j +"].ProcessSqlList["+ k +"].SqlText"));
+					processSqlListItem.setTenantId(_ctx.stringValue("DescribeProcessStatsCompositionResponse.Data.AllProcessList["+ i +"].ProcessSqlLists["+ j +"].ProcessSqlList["+ k +"].TenantId"));
+					processSqlListItem.setDatabase(_ctx.stringValue("DescribeProcessStatsCompositionResponse.Data.AllProcessList["+ i +"].ProcessSqlLists["+ j +"].ProcessSqlList["+ k +"].Database"));
+					processSqlListItem.setUser(_ctx.stringValue("DescribeProcessStatsCompositionResponse.Data.AllProcessList["+ i +"].ProcessSqlLists["+ j +"].ProcessSqlList["+ k +"].User"));
+					processSqlListItem.setExecuteTime(_ctx.longValue("DescribeProcessStatsCompositionResponse.Data.AllProcessList["+ i +"].ProcessSqlLists["+ j +"].ProcessSqlList["+ k +"].ExecuteTime"));
+					processSqlListItem.setCpuTime(_ctx.longValue("DescribeProcessStatsCompositionResponse.Data.AllProcessList["+ i +"].ProcessSqlLists["+ j +"].ProcessSqlList["+ k +"].CpuTime"));
+					processSqlListItem.setServerIp(_ctx.stringValue("DescribeProcessStatsCompositionResponse.Data.AllProcessList["+ i +"].ProcessSqlLists["+ j +"].ProcessSqlList["+ k +"].ServerIp"));
+					processSqlListItem.setClientIp(_ctx.stringValue("DescribeProcessStatsCompositionResponse.Data.AllProcessList["+ i +"].ProcessSqlLists["+ j +"].ProcessSqlList["+ k +"].ClientIp"));
+					processSqlListItem.setSessionId(_ctx.longValue("DescribeProcessStatsCompositionResponse.Data.AllProcessList["+ i +"].ProcessSqlLists["+ j +"].ProcessSqlList["+ k +"].SessionId"));
+					processSqlListItem.setProxySessId(_ctx.stringValue("DescribeProcessStatsCompositionResponse.Data.AllProcessList["+ i +"].ProcessSqlLists["+ j +"].ProcessSqlList["+ k +"].ProxySessId"));
+					processSqlListItem.setCommand(_ctx.stringValue("DescribeProcessStatsCompositionResponse.Data.AllProcessList["+ i +"].ProcessSqlLists["+ j +"].ProcessSqlList["+ k +"].Command"));
+					processSqlListItem.setStatus(_ctx.stringValue("DescribeProcessStatsCompositionResponse.Data.AllProcessList["+ i +"].ProcessSqlLists["+ j +"].ProcessSqlList["+ k +"].Status"));
+					processSqlListItem.setSqlId(_ctx.stringValue("DescribeProcessStatsCompositionResponse.Data.AllProcessList["+ i +"].ProcessSqlLists["+ j +"].ProcessSqlList["+ k +"].SqlId"));
+					processSqlListItem.setTraceId(_ctx.stringValue("DescribeProcessStatsCompositionResponse.Data.AllProcessList["+ i +"].ProcessSqlLists["+ j +"].ProcessSqlList["+ k +"].TraceId"));
+					processSqlListItem.setPlanId(_ctx.stringValue("DescribeProcessStatsCompositionResponse.Data.AllProcessList["+ i +"].ProcessSqlLists["+ j +"].ProcessSqlList["+ k +"].PlanId"));
+					processSqlListItem.setDynamicSql(_ctx.stringValue("DescribeProcessStatsCompositionResponse.Data.AllProcessList["+ i +"].ProcessSqlLists["+ j +"].ProcessSqlList["+ k +"].DynamicSql"));
+
+					processSqlList.add(processSqlListItem);
+				}
+				processSqlListsItem.setProcessSqlList(processSqlList);
+
+				processSqlLists.add(processSqlListsItem);
+			}
+			allProcessListItem.setProcessSqlLists(processSqlLists);
 
 			allProcessList.add(allProcessListItem);
 		}

@@ -20,6 +20,8 @@ import java.util.List;
 import com.aliyuncs.oceanbasepro.model.v20190901.DescribeInstancesResponse;
 import com.aliyuncs.oceanbasepro.model.v20190901.DescribeInstancesResponse.Data;
 import com.aliyuncs.oceanbasepro.model.v20190901.DescribeInstancesResponse.Data.DataDiskAutoScaleConfig;
+import com.aliyuncs.oceanbasepro.model.v20190901.DescribeInstancesResponse.Data.MigrationInfo;
+import com.aliyuncs.oceanbasepro.model.v20190901.DescribeInstancesResponse.Data.MigrationInfo.CheckResult;
 import com.aliyuncs.oceanbasepro.model.v20190901.DescribeInstancesResponse.Data.Resource;
 import com.aliyuncs.oceanbasepro.model.v20190901.DescribeInstancesResponse.Data.Resource.CapacityUnit;
 import com.aliyuncs.oceanbasepro.model.v20190901.DescribeInstancesResponse.Data.Resource.Cpu;
@@ -68,6 +70,7 @@ public class DescribeInstancesResponseUnmarshaller {
 			data.setSpecType(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].SpecType"));
 			data.setObRpmVersion(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].ObRpmVersion"));
 			data.setReplicaMode(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].ReplicaMode"));
+			data.setMigratable(_ctx.booleanValue("DescribeInstancesResponse.Instances["+ i +"].Migratable"));
 
 			List<String> availableZones = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeInstancesResponse.Instances["+ i +"].AvailableZones.Length"); j++) {
@@ -116,6 +119,20 @@ public class DescribeInstancesResponseUnmarshaller {
 			dataDiskAutoScaleConfig.setScaleStepInMerge(_ctx.doubleValue("DescribeInstancesResponse.Instances["+ i +"].DataDiskAutoScaleConfig.ScaleStepInMerge"));
 			dataDiskAutoScaleConfig.setUpperScaleStrategy(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].DataDiskAutoScaleConfig.UpperScaleStrategy"));
 			data.setDataDiskAutoScaleConfig(dataDiskAutoScaleConfig);
+
+			MigrationInfo migrationInfo = new MigrationInfo();
+			migrationInfo.setMigratable(_ctx.booleanValue("DescribeInstancesResponse.Instances["+ i +"].MigrationInfo.Migratable"));
+
+			CheckResult checkResult = new CheckResult();
+			checkResult.setLevel(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].MigrationInfo.CheckResult.Level"));
+			checkResult.setCode(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].MigrationInfo.CheckResult.Code"));
+			checkResult.setCodeName(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].MigrationInfo.CheckResult.CodeName"));
+			checkResult.setModule(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].MigrationInfo.CheckResult.Module"));
+			checkResult.setModuleName(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].MigrationInfo.CheckResult.ModuleName"));
+			checkResult.setSubModule(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].MigrationInfo.CheckResult.SubModule"));
+			checkResult.setSubModuleName(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].MigrationInfo.CheckResult.SubModuleName"));
+			migrationInfo.setCheckResult(checkResult);
+			data.setMigrationInfo(migrationInfo);
 
 			instances.add(data);
 		}

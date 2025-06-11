@@ -279,6 +279,8 @@ public class DescribeOasSQLPlansResponse extends AcsResponse {
 
 			private String sqlId;
 
+			private String sqlText;
+
 			public String getUid() {
 				return this.uid;
 			}
@@ -557,6 +559,14 @@ public class DescribeOasSQLPlansResponse extends AcsResponse {
 
 			public void setSqlId(String sqlId) {
 				this.sqlId = sqlId;
+			}
+
+			public String getSqlText() {
+				return this.sqlText;
+			}
+
+			public void setSqlText(String sqlText) {
+				this.sqlText = sqlText;
 			}
 		}
 

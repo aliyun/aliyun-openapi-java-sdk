@@ -27,6 +27,8 @@ public class DescribeProcessStatsCompositionRequest extends RpcAcsRequest<Descri
 
 	private String uId;
 
+	private Boolean mergeDynamicSql;
+
 	private String sqlText;
 
 	private String clientIp;
@@ -57,6 +59,17 @@ public class DescribeProcessStatsCompositionRequest extends RpcAcsRequest<Descri
 		this.uId = uId;
 		if(uId != null){
 			putBodyParameter("UId", uId);
+		}
+	}
+
+	public Boolean getMergeDynamicSql() {
+		return this.mergeDynamicSql;
+	}
+
+	public void setMergeDynamicSql(Boolean mergeDynamicSql) {
+		this.mergeDynamicSql = mergeDynamicSql;
+		if(mergeDynamicSql != null){
+			putBodyParameter("MergeDynamicSql", mergeDynamicSql.toString());
 		}
 	}
 

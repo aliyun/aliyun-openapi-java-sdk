@@ -688,6 +688,8 @@ public class DescribeInstanceTopologyResponse extends AcsResponse {
 
 			private String readOnlyReplicaType;
 
+			private Long onlineNodeNum;
+
 			private ReplicaResource replicaResource;
 
 			public String getLogicalZone() {
@@ -752,6 +754,14 @@ public class DescribeInstanceTopologyResponse extends AcsResponse {
 
 			public void setReadOnlyReplicaType(String readOnlyReplicaType) {
 				this.readOnlyReplicaType = readOnlyReplicaType;
+			}
+
+			public Long getOnlineNodeNum() {
+				return this.onlineNodeNum;
+			}
+
+			public void setOnlineNodeNum(Long onlineNodeNum) {
+				this.onlineNodeNum = onlineNodeNum;
 			}
 
 			public ReplicaResource getReplicaResource() {

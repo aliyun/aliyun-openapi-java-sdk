@@ -117,11 +117,15 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private String replicaMode;
 
+		private Boolean migratable;
+
 		private List<String> availableZones;
 
 		private Resource resource;
 
 		private DataDiskAutoScaleConfig dataDiskAutoScaleConfig;
+
+		private MigrationInfo migrationInfo;
 
 		public String getVpcId() {
 			return this.vpcId;
@@ -363,6 +367,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 			this.replicaMode = replicaMode;
 		}
 
+		public Boolean getMigratable() {
+			return this.migratable;
+		}
+
+		public void setMigratable(Boolean migratable) {
+			this.migratable = migratable;
+		}
+
 		public List<String> getAvailableZones() {
 			return this.availableZones;
 		}
@@ -385,6 +397,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		public void setDataDiskAutoScaleConfig(DataDiskAutoScaleConfig dataDiskAutoScaleConfig) {
 			this.dataDiskAutoScaleConfig = dataDiskAutoScaleConfig;
+		}
+
+		public MigrationInfo getMigrationInfo() {
+			return this.migrationInfo;
+		}
+
+		public void setMigrationInfo(MigrationInfo migrationInfo) {
+			this.migrationInfo = migrationInfo;
 		}
 
 		public static class Resource {
@@ -682,6 +702,102 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 			public void setUpperScaleStrategy(String upperScaleStrategy) {
 				this.upperScaleStrategy = upperScaleStrategy;
+			}
+		}
+
+		public static class MigrationInfo {
+
+			private Boolean migratable;
+
+			private CheckResult checkResult;
+
+			public Boolean getMigratable() {
+				return this.migratable;
+			}
+
+			public void setMigratable(Boolean migratable) {
+				this.migratable = migratable;
+			}
+
+			public CheckResult getCheckResult() {
+				return this.checkResult;
+			}
+
+			public void setCheckResult(CheckResult checkResult) {
+				this.checkResult = checkResult;
+			}
+
+			public static class CheckResult {
+
+				private String level;
+
+				private String code;
+
+				private String codeName;
+
+				private String module;
+
+				private String moduleName;
+
+				private String subModule;
+
+				private String subModuleName;
+
+				public String getLevel() {
+					return this.level;
+				}
+
+				public void setLevel(String level) {
+					this.level = level;
+				}
+
+				public String getCode() {
+					return this.code;
+				}
+
+				public void setCode(String code) {
+					this.code = code;
+				}
+
+				public String getCodeName() {
+					return this.codeName;
+				}
+
+				public void setCodeName(String codeName) {
+					this.codeName = codeName;
+				}
+
+				public String getModule() {
+					return this.module;
+				}
+
+				public void setModule(String module) {
+					this.module = module;
+				}
+
+				public String getModuleName() {
+					return this.moduleName;
+				}
+
+				public void setModuleName(String moduleName) {
+					this.moduleName = moduleName;
+				}
+
+				public String getSubModule() {
+					return this.subModule;
+				}
+
+				public void setSubModule(String subModule) {
+					this.subModule = subModule;
+				}
+
+				public String getSubModuleName() {
+					return this.subModuleName;
+				}
+
+				public void setSubModuleName(String subModuleName) {
+					this.subModuleName = subModuleName;
+				}
 			}
 		}
 	}

@@ -56,6 +56,10 @@ public class DescribeOutlineBindingResponse extends AcsResponse {
 
 		private String tableName;
 
+		private String sqlText;
+
+		private Long sqlTextConcurrentNum;
+
 		public String getBindPlan() {
 			return this.bindPlan;
 		}
@@ -94,6 +98,22 @@ public class DescribeOutlineBindingResponse extends AcsResponse {
 
 		public void setTableName(String tableName) {
 			this.tableName = tableName;
+		}
+
+		public String getSqlText() {
+			return this.sqlText;
+		}
+
+		public void setSqlText(String sqlText) {
+			this.sqlText = sqlText;
+		}
+
+		public Long getSqlTextConcurrentNum() {
+			return this.sqlTextConcurrentNum;
+		}
+
+		public void setSqlTextConcurrentNum(Long sqlTextConcurrentNum) {
+			this.sqlTextConcurrentNum = sqlTextConcurrentNum;
 		}
 	}
 
