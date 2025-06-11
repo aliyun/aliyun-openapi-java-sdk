@@ -31,6 +31,8 @@ public class SetLiveStreamsNotifyUrlConfigRequest extends RpcAcsRequest<SetLiveS
 
 	private String notifyUrl;
 
+	private String switchNotifyUrl;
+
 	private String domainName;
 
 	private Long ownerId;
@@ -75,6 +77,17 @@ public class SetLiveStreamsNotifyUrlConfigRequest extends RpcAcsRequest<SetLiveS
 		this.notifyUrl = notifyUrl;
 		if(notifyUrl != null){
 			putQueryParameter("NotifyUrl", notifyUrl);
+		}
+	}
+
+	public String getSwitchNotifyUrl() {
+		return this.switchNotifyUrl;
+	}
+
+	public void setSwitchNotifyUrl(String switchNotifyUrl) {
+		this.switchNotifyUrl = switchNotifyUrl;
+		if(switchNotifyUrl != null){
+			putQueryParameter("SwitchNotifyUrl", switchNotifyUrl);
 		}
 	}
 

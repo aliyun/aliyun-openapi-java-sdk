@@ -1,3 +1,6 @@
+2025-06-11 Version: 3.9.67
+支持创建RTC WHIP推流地址
+
 2025-05-12 Version: 3.9.66
 - Generated 2016-11-01 for `live`.
 
