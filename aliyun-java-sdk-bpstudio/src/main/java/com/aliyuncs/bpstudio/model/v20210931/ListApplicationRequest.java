@@ -24,17 +24,19 @@ import com.aliyuncs.http.MethodType;
 public class ListApplicationRequest extends RpcAcsRequest<ListApplicationResponse> {
 	   
 
-	private String resourceId;
-
-	private String templateId;
-
 	private String resourceGroupId;
 
 	private Integer nextToken;
 
-	private Integer maxResults;
-
 	private String keyword;
+
+	private String resourceId;
+
+	private Boolean showHide;
+
+	private String templateId;
+
+	private Integer maxResults;
 
 	private Long orderType;
 
@@ -42,28 +44,6 @@ public class ListApplicationRequest extends RpcAcsRequest<ListApplicationRespons
 	public ListApplicationRequest() {
 		super("BPStudio", "2021-09-31", "ListApplication", "bpstudio");
 		setMethod(MethodType.POST);
-	}
-
-	public String getResourceId() {
-		return this.resourceId;
-	}
-
-	public void setResourceId(String resourceId) {
-		this.resourceId = resourceId;
-		if(resourceId != null){
-			putBodyParameter("ResourceId", resourceId);
-		}
-	}
-
-	public String getTemplateId() {
-		return this.templateId;
-	}
-
-	public void setTemplateId(String templateId) {
-		this.templateId = templateId;
-		if(templateId != null){
-			putBodyParameter("TemplateId", templateId);
-		}
 	}
 
 	public String getResourceGroupId() {
@@ -88,17 +68,6 @@ public class ListApplicationRequest extends RpcAcsRequest<ListApplicationRespons
 		}
 	}
 
-	public Integer getMaxResults() {
-		return this.maxResults;
-	}
-
-	public void setMaxResults(Integer maxResults) {
-		this.maxResults = maxResults;
-		if(maxResults != null){
-			putBodyParameter("MaxResults", maxResults.toString());
-		}
-	}
-
 	public String getKeyword() {
 		return this.keyword;
 	}
@@ -107,6 +76,50 @@ public class ListApplicationRequest extends RpcAcsRequest<ListApplicationRespons
 		this.keyword = keyword;
 		if(keyword != null){
 			putBodyParameter("Keyword", keyword);
+		}
+	}
+
+	public String getResourceId() {
+		return this.resourceId;
+	}
+
+	public void setResourceId(String resourceId) {
+		this.resourceId = resourceId;
+		if(resourceId != null){
+			putBodyParameter("ResourceId", resourceId);
+		}
+	}
+
+	public Boolean getShowHide() {
+		return this.showHide;
+	}
+
+	public void setShowHide(Boolean showHide) {
+		this.showHide = showHide;
+		if(showHide != null){
+			putBodyParameter("ShowHide", showHide.toString());
+		}
+	}
+
+	public String getTemplateId() {
+		return this.templateId;
+	}
+
+	public void setTemplateId(String templateId) {
+		this.templateId = templateId;
+		if(templateId != null){
+			putBodyParameter("TemplateId", templateId);
+		}
+	}
+
+	public Integer getMaxResults() {
+		return this.maxResults;
+	}
+
+	public void setMaxResults(Integer maxResults) {
+		this.maxResults = maxResults;
+		if(maxResults != null){
+			putBodyParameter("MaxResults", maxResults.toString());
 		}
 	}
 
