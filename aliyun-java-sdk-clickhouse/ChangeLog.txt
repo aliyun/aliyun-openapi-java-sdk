@@ -1,3 +1,6 @@
+2025-06-12 Version: 3.1.9
+- Support restart node list and re-elect zookeeper.
+
 2024-02-04 Version: 3.1.8
 -support modify  cluster disk performance level
 

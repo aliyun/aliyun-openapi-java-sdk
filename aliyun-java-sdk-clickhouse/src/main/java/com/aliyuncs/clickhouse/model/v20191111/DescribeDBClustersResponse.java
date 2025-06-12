@@ -97,6 +97,8 @@ public class DescribeDBClustersResponse extends AcsResponse {
 
 		private String vpcCloudInstanceId;
 
+		private String scaleOutDisableWriteWindows;
+
 		private String dBClusterId;
 
 		private String connectionString;
@@ -134,6 +136,8 @@ public class DescribeDBClustersResponse extends AcsResponse {
 		private Integer extStorageSize;
 
 		private String resourceGroupId;
+
+		private String dbVersion;
 
 		private List<Tag> tags;
 
@@ -217,6 +221,14 @@ public class DescribeDBClustersResponse extends AcsResponse {
 
 		public void setVpcCloudInstanceId(String vpcCloudInstanceId) {
 			this.vpcCloudInstanceId = vpcCloudInstanceId;
+		}
+
+		public String getScaleOutDisableWriteWindows() {
+			return this.scaleOutDisableWriteWindows;
+		}
+
+		public void setScaleOutDisableWriteWindows(String scaleOutDisableWriteWindows) {
+			this.scaleOutDisableWriteWindows = scaleOutDisableWriteWindows;
 		}
 
 		public String getDBClusterId() {
@@ -369,6 +381,14 @@ public class DescribeDBClustersResponse extends AcsResponse {
 
 		public void setResourceGroupId(String resourceGroupId) {
 			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getDbVersion() {
+			return this.dbVersion;
+		}
+
+		public void setDbVersion(String dbVersion) {
+			this.dbVersion = dbVersion;
 		}
 
 		public List<Tag> getTags() {

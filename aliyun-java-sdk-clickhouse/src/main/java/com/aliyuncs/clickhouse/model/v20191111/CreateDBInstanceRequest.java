@@ -53,6 +53,8 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 
 	private String vSwitchId;
 
+	private Boolean autoRenew;
+
 	private String zoneId;
 
 	private String clientToken;
@@ -240,6 +242,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.vSwitchId = vSwitchId;
 		if(vSwitchId != null){
 			putQueryParameter("VSwitchId", vSwitchId);
+		}
+	}
+
+	public Boolean getAutoRenew() {
+		return this.autoRenew;
+	}
+
+	public void setAutoRenew(Boolean autoRenew) {
+		this.autoRenew = autoRenew;
+		if(autoRenew != null){
+			putQueryParameter("AutoRenew", autoRenew.toString());
 		}
 	}
 

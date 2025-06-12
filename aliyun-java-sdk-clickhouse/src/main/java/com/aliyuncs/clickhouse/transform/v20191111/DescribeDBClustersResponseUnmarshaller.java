@@ -46,6 +46,7 @@ public class DescribeDBClustersResponseUnmarshaller {
 			dBCluster.setBid(_ctx.stringValue("DescribeDBClustersResponse.DBClusters["+ i +"].Bid"));
 			dBCluster.setIsExpired(_ctx.stringValue("DescribeDBClustersResponse.DBClusters["+ i +"].IsExpired"));
 			dBCluster.setVpcCloudInstanceId(_ctx.stringValue("DescribeDBClustersResponse.DBClusters["+ i +"].VpcCloudInstanceId"));
+			dBCluster.setScaleOutDisableWriteWindows(_ctx.stringValue("DescribeDBClustersResponse.DBClusters["+ i +"].ScaleOutDisableWriteWindows"));
 			dBCluster.setDBClusterId(_ctx.stringValue("DescribeDBClustersResponse.DBClusters["+ i +"].DBClusterId"));
 			dBCluster.setConnectionString(_ctx.stringValue("DescribeDBClustersResponse.DBClusters["+ i +"].ConnectionString"));
 			dBCluster.setCommodityCode(_ctx.stringValue("DescribeDBClustersResponse.DBClusters["+ i +"].CommodityCode"));
@@ -65,6 +66,7 @@ public class DescribeDBClustersResponseUnmarshaller {
 			dBCluster.setExtStorageType(_ctx.stringValue("DescribeDBClustersResponse.DBClusters["+ i +"].ExtStorageType"));
 			dBCluster.setExtStorageSize(_ctx.integerValue("DescribeDBClustersResponse.DBClusters["+ i +"].ExtStorageSize"));
 			dBCluster.setResourceGroupId(_ctx.stringValue("DescribeDBClustersResponse.DBClusters["+ i +"].ResourceGroupId"));
+			dBCluster.setDbVersion(_ctx.stringValue("DescribeDBClustersResponse.DBClusters["+ i +"].DbVersion"));
 
 			ScaleOutStatus scaleOutStatus = new ScaleOutStatus();
 			scaleOutStatus.setProgress(_ctx.stringValue("DescribeDBClustersResponse.DBClusters["+ i +"].ScaleOutStatus.Progress"));

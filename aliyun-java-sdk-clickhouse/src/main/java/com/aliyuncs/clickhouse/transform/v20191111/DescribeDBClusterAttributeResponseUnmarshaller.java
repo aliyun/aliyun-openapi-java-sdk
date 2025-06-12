@@ -81,6 +81,11 @@ public class DescribeDBClusterAttributeResponseUnmarshaller {
 		dBCluster.setZookeeperClass(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBCluster.ZookeeperClass"));
 		dBCluster.setAppointmentRestartTime(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBCluster.AppointmentRestartTime"));
 		dBCluster.setZoneIdVswitchMap(_ctx.mapValue("DescribeDBClusterAttributeResponse.DBCluster.ZoneIdVswitchMap"));
+		dBCluster.setAvailableUpgradeMajorVersion(_ctx.mapValue("DescribeDBClusterAttributeResponse.DBCluster.AvailableUpgradeMajorVersion"));
+		dBCluster.setAppointmentRestartNodeTime(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBCluster.AppointmentRestartNodeTime"));
+		dBCluster.setAppointmentRestartNodeList(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBCluster.AppointmentRestartNodeList"));
+		dBCluster.setAppointmentElectZookeeperTime(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBCluster.AppointmentElectZookeeperTime"));
+		dBCluster.setAppointmentElectZookeeperDisableWrite(_ctx.booleanValue("DescribeDBClusterAttributeResponse.DBCluster.AppointmentElectZookeeperDisableWrite"));
 
 		ScaleOutStatus scaleOutStatus = new ScaleOutStatus();
 		scaleOutStatus.setProgress(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBCluster.ScaleOutStatus.Progress"));

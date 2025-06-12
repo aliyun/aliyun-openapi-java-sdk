@@ -29,6 +29,8 @@ public class ModifyDBClusterRequest extends RpcAcsRequest<ModifyDBClusterRespons
 
 	private String dbNodeStorageType;
 
+	private String disableWriteWindows;
+
 	private String resourceOwnerAccount;
 
 	private String dBClusterId;
@@ -70,6 +72,17 @@ public class ModifyDBClusterRequest extends RpcAcsRequest<ModifyDBClusterRespons
 		this.dbNodeStorageType = dbNodeStorageType;
 		if(dbNodeStorageType != null){
 			putQueryParameter("DbNodeStorageType", dbNodeStorageType);
+		}
+	}
+
+	public String getDisableWriteWindows() {
+		return this.disableWriteWindows;
+	}
+
+	public void setDisableWriteWindows(String disableWriteWindows) {
+		this.disableWriteWindows = disableWriteWindows;
+		if(disableWriteWindows != null){
+			putQueryParameter("DisableWriteWindows", disableWriteWindows);
 		}
 	}
 

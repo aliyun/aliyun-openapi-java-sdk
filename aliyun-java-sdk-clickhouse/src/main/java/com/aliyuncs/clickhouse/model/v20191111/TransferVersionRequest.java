@@ -33,9 +33,13 @@ public class TransferVersionRequest extends RpcAcsRequest<TransferVersionRespons
 
 	private String targetAccount;
 
+	private String sourceClusterName;
+
 	private Integer pageSize;
 
 	private String sourcePassword;
+
+	private String disableWriteWindows;
 
 	private String resourceOwnerAccount;
 
@@ -48,6 +52,8 @@ public class TransferVersionRequest extends RpcAcsRequest<TransferVersionRespons
 	private Long ownerId;
 
 	private String targetDbClusterId;
+
+	private String sourceShards;
 	public TransferVersionRequest() {
 		super("clickhouse", "2019-11-11", "TransferVersion", "service");
 		setMethod(MethodType.POST);
@@ -101,6 +107,17 @@ public class TransferVersionRequest extends RpcAcsRequest<TransferVersionRespons
 		}
 	}
 
+	public String getSourceClusterName() {
+		return this.sourceClusterName;
+	}
+
+	public void setSourceClusterName(String sourceClusterName) {
+		this.sourceClusterName = sourceClusterName;
+		if(sourceClusterName != null){
+			putQueryParameter("SourceClusterName", sourceClusterName);
+		}
+	}
+
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -120,6 +137,17 @@ public class TransferVersionRequest extends RpcAcsRequest<TransferVersionRespons
 		this.sourcePassword = sourcePassword;
 		if(sourcePassword != null){
 			putQueryParameter("SourcePassword", sourcePassword);
+		}
+	}
+
+	public String getDisableWriteWindows() {
+		return this.disableWriteWindows;
+	}
+
+	public void setDisableWriteWindows(String disableWriteWindows) {
+		this.disableWriteWindows = disableWriteWindows;
+		if(disableWriteWindows != null){
+			putQueryParameter("DisableWriteWindows", disableWriteWindows);
 		}
 	}
 
@@ -186,6 +214,17 @@ public class TransferVersionRequest extends RpcAcsRequest<TransferVersionRespons
 		this.targetDbClusterId = targetDbClusterId;
 		if(targetDbClusterId != null){
 			putQueryParameter("TargetDbClusterId", targetDbClusterId);
+		}
+	}
+
+	public String getSourceShards() {
+		return this.sourceShards;
+	}
+
+	public void setSourceShards(String sourceShards) {
+		this.sourceShards = sourceShards;
+		if(sourceShards != null){
+			putQueryParameter("SourceShards", sourceShards);
 		}
 	}
 

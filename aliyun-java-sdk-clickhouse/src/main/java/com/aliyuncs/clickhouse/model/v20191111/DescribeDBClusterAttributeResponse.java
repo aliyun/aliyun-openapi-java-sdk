@@ -146,6 +146,16 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 		private Map<Object,Object> zoneIdVswitchMap;
 
+		private Map<Object,Object> availableUpgradeMajorVersion;
+
+		private String appointmentRestartNodeTime;
+
+		private String appointmentRestartNodeList;
+
+		private String appointmentElectZookeeperTime;
+
+		private Boolean appointmentElectZookeeperDisableWrite;
+
 		private List<Tag> tags;
 
 		private ScaleOutStatus scaleOutStatus;
@@ -540,6 +550,46 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 		public void setZoneIdVswitchMap(Map<Object,Object> zoneIdVswitchMap) {
 			this.zoneIdVswitchMap = zoneIdVswitchMap;
+		}
+
+		public Map<Object,Object> getAvailableUpgradeMajorVersion() {
+			return this.availableUpgradeMajorVersion;
+		}
+
+		public void setAvailableUpgradeMajorVersion(Map<Object,Object> availableUpgradeMajorVersion) {
+			this.availableUpgradeMajorVersion = availableUpgradeMajorVersion;
+		}
+
+		public String getAppointmentRestartNodeTime() {
+			return this.appointmentRestartNodeTime;
+		}
+
+		public void setAppointmentRestartNodeTime(String appointmentRestartNodeTime) {
+			this.appointmentRestartNodeTime = appointmentRestartNodeTime;
+		}
+
+		public String getAppointmentRestartNodeList() {
+			return this.appointmentRestartNodeList;
+		}
+
+		public void setAppointmentRestartNodeList(String appointmentRestartNodeList) {
+			this.appointmentRestartNodeList = appointmentRestartNodeList;
+		}
+
+		public String getAppointmentElectZookeeperTime() {
+			return this.appointmentElectZookeeperTime;
+		}
+
+		public void setAppointmentElectZookeeperTime(String appointmentElectZookeeperTime) {
+			this.appointmentElectZookeeperTime = appointmentElectZookeeperTime;
+		}
+
+		public Boolean getAppointmentElectZookeeperDisableWrite() {
+			return this.appointmentElectZookeeperDisableWrite;
+		}
+
+		public void setAppointmentElectZookeeperDisableWrite(Boolean appointmentElectZookeeperDisableWrite) {
+			this.appointmentElectZookeeperDisableWrite = appointmentElectZookeeperDisableWrite;
 		}
 
 		public List<Tag> getTags() {

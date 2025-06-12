@@ -49,11 +49,29 @@ public class DescribeTransferHistoryResponse extends AcsResponse {
 
 		private String sourceDBCluster;
 
+		private String sourceControlVersion;
+
 		private String targetDBCluster;
+
+		private String targetControlVersion;
 
 		private String status;
 
 		private String progress;
+
+		private String disableWriteWindows;
+
+		private Long unsyncedBytes;
+
+		private Long unsyncedParts;
+
+		private Double partsPerMinute;
+
+		private Long bytesPerMinute;
+
+		private String subJob;
+
+		private String subJobStatus;
 
 		public String getSourceDBCluster() {
 			return this.sourceDBCluster;
@@ -63,12 +81,28 @@ public class DescribeTransferHistoryResponse extends AcsResponse {
 			this.sourceDBCluster = sourceDBCluster;
 		}
 
+		public String getSourceControlVersion() {
+			return this.sourceControlVersion;
+		}
+
+		public void setSourceControlVersion(String sourceControlVersion) {
+			this.sourceControlVersion = sourceControlVersion;
+		}
+
 		public String getTargetDBCluster() {
 			return this.targetDBCluster;
 		}
 
 		public void setTargetDBCluster(String targetDBCluster) {
 			this.targetDBCluster = targetDBCluster;
+		}
+
+		public String getTargetControlVersion() {
+			return this.targetControlVersion;
+		}
+
+		public void setTargetControlVersion(String targetControlVersion) {
+			this.targetControlVersion = targetControlVersion;
 		}
 
 		public String getStatus() {
@@ -85,6 +119,62 @@ public class DescribeTransferHistoryResponse extends AcsResponse {
 
 		public void setProgress(String progress) {
 			this.progress = progress;
+		}
+
+		public String getDisableWriteWindows() {
+			return this.disableWriteWindows;
+		}
+
+		public void setDisableWriteWindows(String disableWriteWindows) {
+			this.disableWriteWindows = disableWriteWindows;
+		}
+
+		public Long getUnsyncedBytes() {
+			return this.unsyncedBytes;
+		}
+
+		public void setUnsyncedBytes(Long unsyncedBytes) {
+			this.unsyncedBytes = unsyncedBytes;
+		}
+
+		public Long getUnsyncedParts() {
+			return this.unsyncedParts;
+		}
+
+		public void setUnsyncedParts(Long unsyncedParts) {
+			this.unsyncedParts = unsyncedParts;
+		}
+
+		public Double getPartsPerMinute() {
+			return this.partsPerMinute;
+		}
+
+		public void setPartsPerMinute(Double partsPerMinute) {
+			this.partsPerMinute = partsPerMinute;
+		}
+
+		public Long getBytesPerMinute() {
+			return this.bytesPerMinute;
+		}
+
+		public void setBytesPerMinute(Long bytesPerMinute) {
+			this.bytesPerMinute = bytesPerMinute;
+		}
+
+		public String getSubJob() {
+			return this.subJob;
+		}
+
+		public void setSubJob(String subJob) {
+			this.subJob = subJob;
+		}
+
+		public String getSubJobStatus() {
+			return this.subJobStatus;
+		}
+
+		public void setSubJobStatus(String subJobStatus) {
+			this.subJobStatus = subJobStatus;
 		}
 	}
 
