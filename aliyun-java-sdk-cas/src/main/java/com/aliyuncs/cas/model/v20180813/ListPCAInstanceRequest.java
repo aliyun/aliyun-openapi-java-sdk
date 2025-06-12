@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.cas.model.v20200407;
+package com.aliyuncs.cas.model.v20180813;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -22,14 +22,16 @@ import com.aliyuncs.cas.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetUserCertificateDetailRequest extends RpcAcsRequest<GetUserCertificateDetailResponse> {
+public class ListPCAInstanceRequest extends RpcAcsRequest<ListPCAInstanceResponse> {
 	   
 
-	private Long certId;
+	private Long showSize;
 
-	private Boolean certFilter;
-	public GetUserCertificateDetailRequest() {
-		super("cas", "2020-04-07", "GetUserCertificateDetail", "cas");
+	private Long currentPage;
+
+	private String type;
+	public ListPCAInstanceRequest() {
+		super("cas", "2018-08-13", "ListPCAInstance", "cas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +39,42 @@ public class GetUserCertificateDetailRequest extends RpcAcsRequest<GetUserCertif
 		} catch (Exception e) {}
 	}
 
-	public Long getCertId() {
-		return this.certId;
+	public Long getShowSize() {
+		return this.showSize;
 	}
 
-	public void setCertId(Long certId) {
-		this.certId = certId;
-		if(certId != null){
-			putQueryParameter("CertId", certId.toString());
+	public void setShowSize(Long showSize) {
+		this.showSize = showSize;
+		if(showSize != null){
+			putQueryParameter("ShowSize", showSize.toString());
 		}
 	}
 
-	public Boolean getCertFilter() {
-		return this.certFilter;
+	public Long getCurrentPage() {
+		return this.currentPage;
 	}
 
-	public void setCertFilter(Boolean certFilter) {
-		this.certFilter = certFilter;
-		if(certFilter != null){
-			putQueryParameter("CertFilter", certFilter.toString());
+	public void setCurrentPage(Long currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
 		}
 	}
 
 	@Override
-	public Class<GetUserCertificateDetailResponse> getResponseClass() {
-		return GetUserCertificateDetailResponse.class;
+	public Class<ListPCAInstanceResponse> getResponseClass() {
+		return ListPCAInstanceResponse.class;
 	}
 
 }
