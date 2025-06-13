@@ -28,7 +28,7 @@ public class DeleteUserRequest extends RpcAcsRequest<DeleteUserResponse> {
 
 	private String userName;
 	public DeleteUserRequest() {
-		super("Ram", "2015-05-01", "DeleteUser");
+		super("Ram", "2015-05-01", "DeleteUser", "ram");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

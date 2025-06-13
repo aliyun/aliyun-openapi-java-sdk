@@ -28,7 +28,7 @@ public class UnbindMFADeviceRequest extends RpcAcsRequest<UnbindMFADeviceRespons
 
 	private String userName;
 	public UnbindMFADeviceRequest() {
-		super("Ram", "2015-05-01", "UnbindMFADevice");
+		super("Ram", "2015-05-01", "UnbindMFADevice", "ram");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

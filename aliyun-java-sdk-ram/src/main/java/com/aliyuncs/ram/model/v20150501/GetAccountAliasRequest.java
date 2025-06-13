@@ -26,7 +26,7 @@ import com.aliyuncs.ram.Endpoint;
 public class GetAccountAliasRequest extends RpcAcsRequest<GetAccountAliasResponse> {
 	   
 	public GetAccountAliasRequest() {
-		super("Ram", "2015-05-01", "GetAccountAlias");
+		super("Ram", "2015-05-01", "GetAccountAlias", "ram");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

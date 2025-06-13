@@ -30,7 +30,7 @@ public class GetAccessKeyLastUsedRequest extends RpcAcsRequest<GetAccessKeyLastU
 
 	private String userName;
 	public GetAccessKeyLastUsedRequest() {
-		super("Ram", "2015-05-01", "GetAccessKeyLastUsed");
+		super("Ram", "2015-05-01", "GetAccessKeyLastUsed", "ram");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

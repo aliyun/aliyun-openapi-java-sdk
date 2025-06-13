@@ -32,7 +32,7 @@ public class UpdateAccessKeyRequest extends RpcAcsRequest<UpdateAccessKeyRespons
 
 	private String status;
 	public UpdateAccessKeyRequest() {
-		super("Ram", "2015-05-01", "UpdateAccessKey");
+		super("Ram", "2015-05-01", "UpdateAccessKey", "ram");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

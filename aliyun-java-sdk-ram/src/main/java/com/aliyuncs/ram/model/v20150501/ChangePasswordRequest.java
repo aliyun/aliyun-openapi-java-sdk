@@ -30,7 +30,7 @@ public class ChangePasswordRequest extends RpcAcsRequest<ChangePasswordResponse>
 
 	private String newPassword;
 	public ChangePasswordRequest() {
-		super("Ram", "2015-05-01", "ChangePassword");
+		super("Ram", "2015-05-01", "ChangePassword", "ram");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

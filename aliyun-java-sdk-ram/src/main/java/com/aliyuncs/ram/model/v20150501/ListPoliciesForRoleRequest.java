@@ -28,7 +28,7 @@ public class ListPoliciesForRoleRequest extends RpcAcsRequest<ListPoliciesForRol
 
 	private String roleName;
 	public ListPoliciesForRoleRequest() {
-		super("Ram", "2015-05-01", "ListPoliciesForRole");
+		super("Ram", "2015-05-01", "ListPoliciesForRole", "ram");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

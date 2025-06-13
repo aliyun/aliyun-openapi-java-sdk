@@ -26,7 +26,7 @@ import com.aliyuncs.ram.Endpoint;
 public class ClearAccountAliasRequest extends RpcAcsRequest<ClearAccountAliasResponse> {
 	   
 	public ClearAccountAliasRequest() {
-		super("Ram", "2015-05-01", "ClearAccountAlias");
+		super("Ram", "2015-05-01", "ClearAccountAlias", "ram");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

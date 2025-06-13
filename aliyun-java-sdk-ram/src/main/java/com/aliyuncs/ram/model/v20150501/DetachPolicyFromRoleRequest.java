@@ -32,7 +32,7 @@ public class DetachPolicyFromRoleRequest extends RpcAcsRequest<DetachPolicyFromR
 
 	private String policyName;
 	public DetachPolicyFromRoleRequest() {
-		super("Ram", "2015-05-01", "DetachPolicyFromRole");
+		super("Ram", "2015-05-01", "DetachPolicyFromRole", "ram");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

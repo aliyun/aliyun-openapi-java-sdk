@@ -36,7 +36,7 @@ public class CreateUserRequest extends RpcAcsRequest<CreateUserResponse> {
 
 	private String userName;
 	public CreateUserRequest() {
-		super("Ram", "2015-05-01", "CreateUser");
+		super("Ram", "2015-05-01", "CreateUser", "ram");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

@@ -28,7 +28,7 @@ public class DeleteRoleRequest extends RpcAcsRequest<DeleteRoleResponse> {
 
 	private String roleName;
 	public DeleteRoleRequest() {
-		super("Ram", "2015-05-01", "DeleteRole");
+		super("Ram", "2015-05-01", "DeleteRole", "ram");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

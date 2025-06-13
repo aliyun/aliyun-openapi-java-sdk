@@ -15,6 +15,9 @@
 package com.aliyuncs.ram.model.v20150501;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ram.Endpoint;
@@ -28,11 +31,14 @@ public class CreatePolicyRequest extends RpcAcsRequest<CreatePolicyResponse> {
 
 	private String description;
 
+	@SerializedName("tag")
+	private List<Tag> tag;
+
 	private String policyName;
 
 	private String policyDocument;
 	public CreatePolicyRequest() {
-		super("Ram", "2015-05-01", "CreatePolicy");
+		super("Ram", "2015-05-01", "CreatePolicy", "ram");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
@@ -50,6 +56,17 @@ public class CreatePolicyRequest extends RpcAcsRequest<CreatePolicyResponse> {
 		if(description != null){
 			putQueryParameter("Description", description);
 		}
+	}
+
+	public List<Tag> getTag() {
+		return this.tag;
+	}
+
+	public void setTag(List<Tag> tag) {
+		this.tag = tag;	
+		if (tag != null) {
+			putQueryParameter("Tag" , new Gson().toJson(tag));
+		}	
 	}
 
 	public String getPolicyName() {
@@ -71,6 +88,31 @@ public class CreatePolicyRequest extends RpcAcsRequest<CreatePolicyResponse> {
 		this.policyDocument = policyDocument;
 		if(policyDocument != null){
 			putQueryParameter("PolicyDocument", policyDocument);
+		}
+	}
+
+	public static class Tag {
+
+		@SerializedName("Value")
+		private String value;
+
+		@SerializedName("Key")
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

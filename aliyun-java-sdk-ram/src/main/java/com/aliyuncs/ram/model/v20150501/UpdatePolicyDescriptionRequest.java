@@ -30,7 +30,7 @@ public class UpdatePolicyDescriptionRequest extends RpcAcsRequest<UpdatePolicyDe
 
 	private String newDescription;
 	public UpdatePolicyDescriptionRequest() {
-		super("Ram", "2015-05-01", "UpdatePolicyDescription");
+		super("Ram", "2015-05-01", "UpdatePolicyDescription", "ram");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

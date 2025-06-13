@@ -32,7 +32,7 @@ public class AttachPolicyToRoleRequest extends RpcAcsRequest<AttachPolicyToRoleR
 
 	private String policyName;
 	public AttachPolicyToRoleRequest() {
-		super("Ram", "2015-05-01", "AttachPolicyToRole");
+		super("Ram", "2015-05-01", "AttachPolicyToRole", "ram");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

@@ -28,7 +28,7 @@ public class GetGroupRequest extends RpcAcsRequest<GetGroupResponse> {
 
 	private String groupName;
 	public GetGroupRequest() {
-		super("Ram", "2015-05-01", "GetGroup");
+		super("Ram", "2015-05-01", "GetGroup", "ram");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

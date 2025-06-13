@@ -30,7 +30,7 @@ public class RemoveUserFromGroupRequest extends RpcAcsRequest<RemoveUserFromGrou
 
 	private String userName;
 	public RemoveUserFromGroupRequest() {
-		super("Ram", "2015-05-01", "RemoveUserFromGroup");
+		super("Ram", "2015-05-01", "RemoveUserFromGroup", "ram");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

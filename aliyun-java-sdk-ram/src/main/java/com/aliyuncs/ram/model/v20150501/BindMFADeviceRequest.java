@@ -34,7 +34,7 @@ public class BindMFADeviceRequest extends RpcAcsRequest<BindMFADeviceResponse> {
 
 	private String userName;
 	public BindMFADeviceRequest() {
-		super("Ram", "2015-05-01", "BindMFADevice");
+		super("Ram", "2015-05-01", "BindMFADevice", "ram");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

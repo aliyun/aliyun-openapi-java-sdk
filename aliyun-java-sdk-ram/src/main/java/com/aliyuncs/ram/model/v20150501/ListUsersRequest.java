@@ -30,7 +30,7 @@ public class ListUsersRequest extends RpcAcsRequest<ListUsersResponse> {
 
 	private Integer maxItems;
 	public ListUsersRequest() {
-		super("Ram", "2015-05-01", "ListUsers");
+		super("Ram", "2015-05-01", "ListUsers", "ram");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

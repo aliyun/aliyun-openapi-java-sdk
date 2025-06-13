@@ -28,7 +28,7 @@ public class ListGroupsForUserRequest extends RpcAcsRequest<ListGroupsForUserRes
 
 	private String userName;
 	public ListGroupsForUserRequest() {
-		super("Ram", "2015-05-01", "ListGroupsForUser");
+		super("Ram", "2015-05-01", "ListGroupsForUser", "ram");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

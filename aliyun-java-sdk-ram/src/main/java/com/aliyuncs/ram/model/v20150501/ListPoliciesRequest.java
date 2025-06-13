@@ -15,6 +15,9 @@
 package com.aliyuncs.ram.model.v20150501;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ram.Endpoint;
@@ -26,19 +29,33 @@ import com.aliyuncs.ram.Endpoint;
 public class ListPoliciesRequest extends RpcAcsRequest<ListPoliciesResponse> {
 	   
 
+	@SerializedName("tag")
+	private List<Tag> tag;
+
 	private String policyType;
 
 	private String marker;
 
 	private Integer maxItems;
 	public ListPoliciesRequest() {
-		super("Ram", "2015-05-01", "ListPolicies");
+		super("Ram", "2015-05-01", "ListPolicies", "ram");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public List<Tag> getTag() {
+		return this.tag;
+	}
+
+	public void setTag(List<Tag> tag) {
+		this.tag = tag;	
+		if (tag != null) {
+			putQueryParameter("Tag" , new Gson().toJson(tag));
+		}	
 	}
 
 	public String getPolicyType() {
@@ -71,6 +88,31 @@ public class ListPoliciesRequest extends RpcAcsRequest<ListPoliciesResponse> {
 		this.maxItems = maxItems;
 		if(maxItems != null){
 			putQueryParameter("MaxItems", maxItems.toString());
+		}
+	}
+
+	public static class Tag {
+
+		@SerializedName("Value")
+		private String value;
+
+		@SerializedName("Key")
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

@@ -28,7 +28,7 @@ public class DeleteGroupRequest extends RpcAcsRequest<DeleteGroupResponse> {
 
 	private String groupName;
 	public DeleteGroupRequest() {
-		super("Ram", "2015-05-01", "DeleteGroup");
+		super("Ram", "2015-05-01", "DeleteGroup", "ram");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

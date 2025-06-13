@@ -28,7 +28,7 @@ public class SetAccountAliasRequest extends RpcAcsRequest<SetAccountAliasRespons
 
 	private String accountAlias;
 	public SetAccountAliasRequest() {
-		super("Ram", "2015-05-01", "SetAccountAlias");
+		super("Ram", "2015-05-01", "SetAccountAlias", "ram");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

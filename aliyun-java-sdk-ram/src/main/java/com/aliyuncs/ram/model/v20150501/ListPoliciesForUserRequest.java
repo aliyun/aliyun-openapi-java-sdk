@@ -28,7 +28,7 @@ public class ListPoliciesForUserRequest extends RpcAcsRequest<ListPoliciesForUse
 
 	private String userName;
 	public ListPoliciesForUserRequest() {
-		super("Ram", "2015-05-01", "ListPoliciesForUser");
+		super("Ram", "2015-05-01", "ListPoliciesForUser", "ram");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

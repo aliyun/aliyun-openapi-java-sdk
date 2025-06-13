@@ -32,7 +32,7 @@ public class AttachPolicyToGroupRequest extends RpcAcsRequest<AttachPolicyToGrou
 
 	private String policyName;
 	public AttachPolicyToGroupRequest() {
-		super("Ram", "2015-05-01", "AttachPolicyToGroup");
+		super("Ram", "2015-05-01", "AttachPolicyToGroup", "ram");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

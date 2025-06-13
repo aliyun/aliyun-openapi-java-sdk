@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.ram.model.v20150501.ListRolesResponse;
 import com.aliyuncs.ram.model.v20150501.ListRolesResponse.Role;
+import com.aliyuncs.ram.model.v20150501.ListRolesResponse.Role.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -40,6 +41,16 @@ public class ListRolesResponseUnmarshaller {
 			role.setCreateDate(_ctx.stringValue("ListRolesResponse.Roles["+ i +"].CreateDate"));
 			role.setRoleId(_ctx.stringValue("ListRolesResponse.Roles["+ i +"].RoleId"));
 			role.setArn(_ctx.stringValue("ListRolesResponse.Roles["+ i +"].Arn"));
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("ListRolesResponse.Roles["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setTagKey(_ctx.stringValue("ListRolesResponse.Roles["+ i +"].Tags["+ j +"].TagKey"));
+				tag.setTagValue(_ctx.stringValue("ListRolesResponse.Roles["+ i +"].Tags["+ j +"].TagValue"));
+
+				tags.add(tag);
+			}
+			role.setTags(tags);
 
 			roles.add(role);
 		}

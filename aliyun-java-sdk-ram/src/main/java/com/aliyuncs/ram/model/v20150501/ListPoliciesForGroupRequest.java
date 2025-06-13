@@ -28,7 +28,7 @@ public class ListPoliciesForGroupRequest extends RpcAcsRequest<ListPoliciesForGr
 
 	private String groupName;
 	public ListPoliciesForGroupRequest() {
-		super("Ram", "2015-05-01", "ListPoliciesForGroup");
+		super("Ram", "2015-05-01", "ListPoliciesForGroup", "ram");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

@@ -28,7 +28,7 @@ public class DecodeDiagnosticMessageRequest extends RpcAcsRequest<DecodeDiagnost
 
 	private String encodedDiagnosticMessage;
 	public DecodeDiagnosticMessageRequest() {
-		super("Ram", "2015-05-01", "DecodeDiagnosticMessage");
+		super("Ram", "2015-05-01", "DecodeDiagnosticMessage", "ram");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

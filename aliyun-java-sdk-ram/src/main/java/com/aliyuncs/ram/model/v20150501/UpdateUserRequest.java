@@ -38,7 +38,7 @@ public class UpdateUserRequest extends RpcAcsRequest<UpdateUserResponse> {
 
 	private String userName;
 	public UpdateUserRequest() {
-		super("Ram", "2015-05-01", "UpdateUser");
+		super("Ram", "2015-05-01", "UpdateUser", "ram");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

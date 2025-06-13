@@ -26,21 +26,22 @@ import com.aliyuncs.ram.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateRoleRequest extends RpcAcsRequest<CreateRoleResponse> {
+public class ListTagResourcesRequest extends RpcAcsRequest<ListTagResourcesResponse> {
 	   
 
-	private String description;
+	@SerializedName("resourceNames")
+	private List<String> resourceNames;
 
-	private String assumeRolePolicyDocument;
+	private String nextToken;
+
+	private Integer pageSize;
 
 	@SerializedName("tag")
 	private List<Tag> tag;
 
-	private Long maxSessionDuration;
-
-	private String roleName;
-	public CreateRoleRequest() {
-		super("Ram", "2015-05-01", "CreateRole", "ram");
+	private String resourceType;
+	public ListTagResourcesRequest() {
+		super("Ram", "2015-05-01", "ListTagResources", "ram");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
@@ -49,25 +50,36 @@ public class CreateRoleRequest extends RpcAcsRequest<CreateRoleResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getDescription() {
-		return this.description;
+	public List<String> getResourceNames() {
+		return this.resourceNames;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
+	public void setResourceNames(List<String> resourceNames) {
+		this.resourceNames = resourceNames;	
+		if (resourceNames != null) {
+			putQueryParameter("ResourceNames" , new Gson().toJson(resourceNames));
+		}	
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
 		}
 	}
 
-	public String getAssumeRolePolicyDocument() {
-		return this.assumeRolePolicyDocument;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setAssumeRolePolicyDocument(String assumeRolePolicyDocument) {
-		this.assumeRolePolicyDocument = assumeRolePolicyDocument;
-		if(assumeRolePolicyDocument != null){
-			putQueryParameter("AssumeRolePolicyDocument", assumeRolePolicyDocument);
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -82,25 +94,14 @@ public class CreateRoleRequest extends RpcAcsRequest<CreateRoleResponse> {
 		}	
 	}
 
-	public Long getMaxSessionDuration() {
-		return this.maxSessionDuration;
+	public String getResourceType() {
+		return this.resourceType;
 	}
 
-	public void setMaxSessionDuration(Long maxSessionDuration) {
-		this.maxSessionDuration = maxSessionDuration;
-		if(maxSessionDuration != null){
-			putQueryParameter("MaxSessionDuration", maxSessionDuration.toString());
-		}
-	}
-
-	public String getRoleName() {
-		return this.roleName;
-	}
-
-	public void setRoleName(String roleName) {
-		this.roleName = roleName;
-		if(roleName != null){
-			putQueryParameter("RoleName", roleName);
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType);
 		}
 	}
 
@@ -130,8 +131,8 @@ public class CreateRoleRequest extends RpcAcsRequest<CreateRoleResponse> {
 	}
 
 	@Override
-	public Class<CreateRoleResponse> getResponseClass() {
-		return CreateRoleResponse.class;
+	public Class<ListTagResourcesResponse> getResponseClass() {
+		return ListTagResourcesResponse.class;
 	}
 
 }

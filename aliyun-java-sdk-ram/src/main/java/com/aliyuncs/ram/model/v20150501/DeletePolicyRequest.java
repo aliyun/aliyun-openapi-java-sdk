@@ -26,15 +26,28 @@ import com.aliyuncs.ram.Endpoint;
 public class DeletePolicyRequest extends RpcAcsRequest<DeletePolicyResponse> {
 	   
 
+	private Boolean cascadingDelete;
+
 	private String policyName;
 	public DeletePolicyRequest() {
-		super("Ram", "2015-05-01", "DeletePolicy");
+		super("Ram", "2015-05-01", "DeletePolicy", "ram");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Boolean getCascadingDelete() {
+		return this.cascadingDelete;
+	}
+
+	public void setCascadingDelete(Boolean cascadingDelete) {
+		this.cascadingDelete = cascadingDelete;
+		if(cascadingDelete != null){
+			putQueryParameter("CascadingDelete", cascadingDelete.toString());
+		}
 	}
 
 	public String getPolicyName() {

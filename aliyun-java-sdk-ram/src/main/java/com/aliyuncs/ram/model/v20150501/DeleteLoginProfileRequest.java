@@ -28,7 +28,7 @@ public class DeleteLoginProfileRequest extends RpcAcsRequest<DeleteLoginProfileR
 
 	private String userName;
 	public DeleteLoginProfileRequest() {
-		super("Ram", "2015-05-01", "DeleteLoginProfile");
+		super("Ram", "2015-05-01", "DeleteLoginProfile", "ram");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

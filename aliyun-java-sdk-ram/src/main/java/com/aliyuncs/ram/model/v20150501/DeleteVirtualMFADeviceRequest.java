@@ -28,7 +28,7 @@ public class DeleteVirtualMFADeviceRequest extends RpcAcsRequest<DeleteVirtualMF
 
 	private String serialNumber;
 	public DeleteVirtualMFADeviceRequest() {
-		super("Ram", "2015-05-01", "DeleteVirtualMFADevice");
+		super("Ram", "2015-05-01", "DeleteVirtualMFADevice", "ram");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
