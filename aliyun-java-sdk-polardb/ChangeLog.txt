@@ -1,3 +1,6 @@
+2025-06-13 Version: 1.8.55
+- Support DescribeHaLogs.
+
 2025-05-06 Version: 1.8.54
 - Generated 2017-08-01 for `polardb`.
 

@@ -104,6 +104,7 @@ public class DescribeDBClusterAttributeResponseUnmarshaller {
 		describeDBClusterAttributeResponse.setDnNodeCount(_ctx.integerValue("DescribeDBClusterAttributeResponse.DnNodeCount"));
 		describeDBClusterAttributeResponse.setDocumentDB(_ctx.stringValue("DescribeDBClusterAttributeResponse.DocumentDB"));
 		describeDBClusterAttributeResponse.setBackupDowngradeLevel(_ctx.stringValue("DescribeDBClusterAttributeResponse.BackupDowngradeLevel"));
+		describeDBClusterAttributeResponse.setRelativeAICluster(_ctx.stringValue("DescribeDBClusterAttributeResponse.RelativeAICluster"));
 
 		RelatedAPInstance relatedAPInstance = new RelatedAPInstance();
 		relatedAPInstance.setName(_ctx.stringValue("DescribeDBClusterAttributeResponse.RelatedAPInstance.Name"));

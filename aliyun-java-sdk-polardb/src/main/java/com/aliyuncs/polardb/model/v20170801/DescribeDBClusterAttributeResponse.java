@@ -177,6 +177,8 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 	private String backupDowngradeLevel;
 
+	private String relativeAICluster;
+
 	private List<DBNode> dBNodes;
 
 	private List<Tag> tags;
@@ -789,6 +791,14 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 	public void setBackupDowngradeLevel(String backupDowngradeLevel) {
 		this.backupDowngradeLevel = backupDowngradeLevel;
+	}
+
+	public String getRelativeAICluster() {
+		return this.relativeAICluster;
+	}
+
+	public void setRelativeAICluster(String relativeAICluster) {
+		this.relativeAICluster = relativeAICluster;
 	}
 
 	public List<DBNode> getDBNodes() {

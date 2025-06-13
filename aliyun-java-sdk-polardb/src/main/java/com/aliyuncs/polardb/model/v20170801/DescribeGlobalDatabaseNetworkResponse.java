@@ -49,6 +49,8 @@ public class DescribeGlobalDatabaseNetworkResponse extends AcsResponse {
 
 	private List<DBCluster> dBClusters;
 
+	private Labels labels;
+
 	public String getGDNStatus() {
 		return this.gDNStatus;
 	}
@@ -143,6 +145,14 @@ public class DescribeGlobalDatabaseNetworkResponse extends AcsResponse {
 
 	public void setDBClusters(List<DBCluster> dBClusters) {
 		this.dBClusters = dBClusters;
+	}
+
+	public Labels getLabels() {
+		return this.labels;
+	}
+
+	public void setLabels(Labels labels) {
+		this.labels = labels;
 	}
 
 	public static class Connection {
@@ -441,6 +451,19 @@ public class DescribeGlobalDatabaseNetworkResponse extends AcsResponse {
 			public void setDBNodeId(String dBNodeId) {
 				this.dBNodeId = dBNodeId;
 			}
+		}
+	}
+
+	public static class Labels {
+
+		private String gDNVersion;
+
+		public String getGDNVersion() {
+			return this.gDNVersion;
+		}
+
+		public void setGDNVersion(String gDNVersion) {
+			this.gDNVersion = gDNVersion;
 		}
 	}
 

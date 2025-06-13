@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.polardb.model.v20170801.DescribeGlobalDatabaseNetworksResponse;
 import com.aliyuncs.polardb.model.v20170801.DescribeGlobalDatabaseNetworksResponse.GlobalDatabaseNetwork;
 import com.aliyuncs.polardb.model.v20170801.DescribeGlobalDatabaseNetworksResponse.GlobalDatabaseNetwork.DBCluster;
+import com.aliyuncs.polardb.model.v20170801.DescribeGlobalDatabaseNetworksResponse.GlobalDatabaseNetwork.Labels;
 import com.aliyuncs.polardb.model.v20170801.DescribeGlobalDatabaseNetworksResponse.GlobalDatabaseNetwork.OutCloudDBCluster;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -43,6 +44,10 @@ public class DescribeGlobalDatabaseNetworksResponseUnmarshaller {
 			globalDatabaseNetwork.setDBType(_ctx.stringValue("DescribeGlobalDatabaseNetworksResponse.Items["+ i +"].DBType"));
 			globalDatabaseNetwork.setGDNDescription(_ctx.stringValue("DescribeGlobalDatabaseNetworksResponse.Items["+ i +"].GDNDescription"));
 			globalDatabaseNetwork.setZoneId(_ctx.stringValue("DescribeGlobalDatabaseNetworksResponse.Items["+ i +"].ZoneId"));
+
+			Labels labels = new Labels();
+			labels.setGDNVersion(_ctx.stringValue("DescribeGlobalDatabaseNetworksResponse.Items["+ i +"].Labels.GDNVersion"));
+			globalDatabaseNetwork.setLabels(labels);
 
 			List<DBCluster> dBClusters = new ArrayList<DBCluster>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeGlobalDatabaseNetworksResponse.Items["+ i +"].DBClusters.Length"); j++) {

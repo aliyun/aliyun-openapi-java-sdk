@@ -38,6 +38,8 @@ public class RemoveDBClusterFromGDNRequest extends RpcAcsRequest<RemoveDBCluster
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private Boolean force;
 	public RemoveDBClusterFromGDNRequest() {
 		super("polardb", "2017-08-01", "RemoveDBClusterFromGDN", "polardb");
 		setMethod(MethodType.POST);
@@ -121,6 +123,17 @@ public class RemoveDBClusterFromGDNRequest extends RpcAcsRequest<RemoveDBCluster
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Boolean getForce() {
+		return this.force;
+	}
+
+	public void setForce(Boolean force) {
+		this.force = force;
+		if(force != null){
+			putQueryParameter("Force", force.toString());
 		}
 	}
 

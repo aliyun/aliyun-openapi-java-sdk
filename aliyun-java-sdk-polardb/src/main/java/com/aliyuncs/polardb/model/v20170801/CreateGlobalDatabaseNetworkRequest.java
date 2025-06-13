@@ -42,6 +42,8 @@ public class CreateGlobalDatabaseNetworkRequest extends RpcAcsRequest<CreateGlob
 	private Boolean enableGlobalDomainName;
 
 	private Long ownerId;
+
+	private String gDNVersion;
 	public CreateGlobalDatabaseNetworkRequest() {
 		super("polardb", "2017-08-01", "CreateGlobalDatabaseNetwork", "polardb");
 		setMethod(MethodType.POST);
@@ -147,6 +149,17 @@ public class CreateGlobalDatabaseNetworkRequest extends RpcAcsRequest<CreateGlob
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getGDNVersion() {
+		return this.gDNVersion;
+	}
+
+	public void setGDNVersion(String gDNVersion) {
+		this.gDNVersion = gDNVersion;
+		if(gDNVersion != null){
+			putQueryParameter("GDNVersion", gDNVersion);
 		}
 	}
 

@@ -95,6 +95,8 @@ public class DescribeGlobalDatabaseNetworksResponse extends AcsResponse {
 
 		private List<OutCloudDBCluster> outCloudDBClusters;
 
+		private Labels labels;
+
 		public String getDBVersion() {
 			return this.dBVersion;
 		}
@@ -165,6 +167,14 @@ public class DescribeGlobalDatabaseNetworksResponse extends AcsResponse {
 
 		public void setOutCloudDBClusters(List<OutCloudDBCluster> outCloudDBClusters) {
 			this.outCloudDBClusters = outCloudDBClusters;
+		}
+
+		public Labels getLabels() {
+			return this.labels;
+		}
+
+		public void setLabels(Labels labels) {
+			this.labels = labels;
 		}
 
 		public static class DBCluster {
@@ -240,6 +250,19 @@ public class DescribeGlobalDatabaseNetworksResponse extends AcsResponse {
 
 			public void setRegionId(String regionId) {
 				this.regionId = regionId;
+			}
+		}
+
+		public static class Labels {
+
+			private String gDNVersion;
+
+			public String getGDNVersion() {
+				return this.gDNVersion;
+			}
+
+			public void setGDNVersion(String gDNVersion) {
+				this.gDNVersion = gDNVersion;
 			}
 		}
 	}
