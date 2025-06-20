@@ -401,6 +401,8 @@ public class SubmitMediaInfoJobResponse extends AcsResponse {
 
 					private String colorPrimaries;
 
+					private String durationInaccurate;
+
 					private NetworkCost networkCost;
 
 					public String getSar() {
@@ -611,6 +613,14 @@ public class SubmitMediaInfoJobResponse extends AcsResponse {
 						this.colorPrimaries = colorPrimaries;
 					}
 
+					public String getDurationInaccurate() {
+						return this.durationInaccurate;
+					}
+
+					public void setDurationInaccurate(String durationInaccurate) {
+						this.durationInaccurate = durationInaccurate;
+					}
+
 					public NetworkCost getNetworkCost() {
 						return this.networkCost;
 					}
@@ -686,6 +696,8 @@ public class SubmitMediaInfoJobResponse extends AcsResponse {
 					private String codecTag;
 
 					private String codecTimeBase;
+
+					private String durationInaccurate;
 
 					public String getTimebase() {
 						return this.timebase;
@@ -813,6 +825,14 @@ public class SubmitMediaInfoJobResponse extends AcsResponse {
 
 					public void setCodecTimeBase(String codecTimeBase) {
 						this.codecTimeBase = codecTimeBase;
+					}
+
+					public String getDurationInaccurate() {
+						return this.durationInaccurate;
+					}
+
+					public void setDurationInaccurate(String durationInaccurate) {
+						this.durationInaccurate = durationInaccurate;
 					}
 				}
 

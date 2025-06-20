@@ -99,6 +99,7 @@ public class SubmitMediaInfoJobResponseUnmarshaller {
 			videoStream.setColorRange(_ctx.stringValue("SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Streams.VideoStreamList["+ i +"].ColorRange"));
 			videoStream.setColorTransfer(_ctx.stringValue("SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Streams.VideoStreamList["+ i +"].ColorTransfer"));
 			videoStream.setColorPrimaries(_ctx.stringValue("SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Streams.VideoStreamList["+ i +"].ColorPrimaries"));
+			videoStream.setDurationInaccurate(_ctx.stringValue("SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Streams.VideoStreamList["+ i +"].DurationInaccurate"));
 
 			NetworkCost networkCost = new NetworkCost();
 			networkCost.setPreloadTime(_ctx.stringValue("SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Streams.VideoStreamList["+ i +"].NetworkCost.PreloadTime"));
@@ -129,6 +130,7 @@ public class SubmitMediaInfoJobResponseUnmarshaller {
 			audioStream.setDuration(_ctx.stringValue("SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Streams.AudioStreamList["+ i +"].Duration"));
 			audioStream.setCodecTag(_ctx.stringValue("SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Streams.AudioStreamList["+ i +"].CodecTag"));
 			audioStream.setCodecTimeBase(_ctx.stringValue("SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Streams.AudioStreamList["+ i +"].CodecTimeBase"));
+			audioStream.setDurationInaccurate(_ctx.stringValue("SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Streams.AudioStreamList["+ i +"].DurationInaccurate"));
 
 			audioStreamList.add(audioStream);
 		}
