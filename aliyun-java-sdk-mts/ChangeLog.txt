@@ -1,3 +1,6 @@
+2025-06-20 Version: 3.3.65
+- Add DurationInaccurate flag to SubmitMediaInfoJob and QueryMediaInfoJobList for media duration accuracy tracking.
+
 2025-05-14 Version: 3.3.64
 - Update water-mark params.
 
