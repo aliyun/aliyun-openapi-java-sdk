@@ -43,6 +43,9 @@ public class CreateApplicationRequest extends RpcAcsRequest<CreateApplicationRes
 	@SerializedName("variables")
 	private Map<String,Object> variables;
 
+	@SerializedName("processVariables")
+	private Map<String,Object> processVariables;
+
 	private String templateId;
 
 	private String name;
@@ -114,6 +117,17 @@ public class CreateApplicationRequest extends RpcAcsRequest<CreateApplicationRes
 		this.variables = variables;	
 		if (variables != null) {
 			putBodyParameter("Variables" , new Gson().toJson(variables));
+		}	
+	}
+
+	public Map<String,Object> getProcessVariables() {
+		return this.processVariables;
+	}
+
+	public void setProcessVariables(Map<String,Object> processVariables) {
+		this.processVariables = processVariables;	
+		if (processVariables != null) {
+			putBodyParameter("ProcessVariables" , new Gson().toJson(processVariables));
 		}	
 	}
 
