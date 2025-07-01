@@ -44,6 +44,8 @@ public class StartTerminalSessionRequest extends RpcAcsRequest<StartTerminalSess
 
 	private Integer portNumber;
 
+	private String passwordName;
+
 	private String username;
 	public StartTerminalSessionRequest() {
 		super("Ecs", "2014-05-26", "StartTerminalSession", "ecs");
@@ -152,6 +154,17 @@ public class StartTerminalSessionRequest extends RpcAcsRequest<StartTerminalSess
 		this.portNumber = portNumber;
 		if(portNumber != null){
 			putQueryParameter("PortNumber", portNumber.toString());
+		}
+	}
+
+	public String getPasswordName() {
+		return this.passwordName;
+	}
+
+	public void setPasswordName(String passwordName) {
+		this.passwordName = passwordName;
+		if(passwordName != null){
+			putQueryParameter("PasswordName", passwordName);
 		}
 	}
 

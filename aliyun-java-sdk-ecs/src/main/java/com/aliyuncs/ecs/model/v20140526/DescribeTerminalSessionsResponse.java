@@ -57,23 +57,47 @@ public class DescribeTerminalSessionsResponse extends AcsResponse {
 
 	public static class Session {
 
+		private String identityType;
+
+		private String principalId;
+
+		private String username;
+
 		private String creationTime;
 
 		private String targetServer;
 
 		private Integer portNumber;
 
-		private String principalId;
-
-		private String username;
-
 		private String clientIP;
-
-		private String identityType;
 
 		private String sessionId;
 
 		private List<Connection> connections;
+
+		public String getIdentityType() {
+			return this.identityType;
+		}
+
+		public void setIdentityType(String identityType) {
+			this.identityType = identityType;
+		}
+
+		public String getPrincipalId() {
+			return this.principalId;
+		}
+
+		public void setPrincipalId(String principalId) {
+			this.principalId = principalId;
+		}
+
+		public String getUsername() {
+			return this.username;
+		}
+
+		public void setUsername(String username) {
+			this.username = username;
+		}
 
 		public String getCreationTime() {
 			return this.creationTime;
@@ -99,36 +123,12 @@ public class DescribeTerminalSessionsResponse extends AcsResponse {
 			this.portNumber = portNumber;
 		}
 
-		public String getPrincipalId() {
-			return this.principalId;
-		}
-
-		public void setPrincipalId(String principalId) {
-			this.principalId = principalId;
-		}
-
-		public String getUsername() {
-			return this.username;
-		}
-
-		public void setUsername(String username) {
-			this.username = username;
-		}
-
 		public String getClientIP() {
 			return this.clientIP;
 		}
 
 		public void setClientIP(String clientIP) {
 			this.clientIP = clientIP;
-		}
-
-		public String getIdentityType() {
-			return this.identityType;
-		}
-
-		public void setIdentityType(String identityType) {
-			this.identityType = identityType;
 		}
 
 		public String getSessionId() {
@@ -149,22 +149,32 @@ public class DescribeTerminalSessionsResponse extends AcsResponse {
 
 		public static class Connection {
 
-			private String closedReason;
+			private String status;
+
+			private String failedDetail;
 
 			private String endTime;
 
-			private String status;
+			private String instanceId;
 
 			private String startTime;
 
-			private String instanceId;
+			private String closedReason;
 
-			public String getClosedReason() {
-				return this.closedReason;
+			public String getStatus() {
+				return this.status;
 			}
 
-			public void setClosedReason(String closedReason) {
-				this.closedReason = closedReason;
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
+			public String getFailedDetail() {
+				return this.failedDetail;
+			}
+
+			public void setFailedDetail(String failedDetail) {
+				this.failedDetail = failedDetail;
 			}
 
 			public String getEndTime() {
@@ -175,12 +185,12 @@ public class DescribeTerminalSessionsResponse extends AcsResponse {
 				this.endTime = endTime;
 			}
 
-			public String getStatus() {
-				return this.status;
+			public String getInstanceId() {
+				return this.instanceId;
 			}
 
-			public void setStatus(String status) {
-				this.status = status;
+			public void setInstanceId(String instanceId) {
+				this.instanceId = instanceId;
 			}
 
 			public String getStartTime() {
@@ -191,12 +201,12 @@ public class DescribeTerminalSessionsResponse extends AcsResponse {
 				this.startTime = startTime;
 			}
 
-			public String getInstanceId() {
-				return this.instanceId;
+			public String getClosedReason() {
+				return this.closedReason;
 			}
 
-			public void setInstanceId(String instanceId) {
-				this.instanceId = instanceId;
+			public void setClosedReason(String closedReason) {
+				this.closedReason = closedReason;
 			}
 		}
 	}

@@ -26,6 +26,8 @@ public class ResetDiskDefaultKMSKeyIdRequest extends RpcAcsRequest<ResetDiskDefa
 	   
 
 	private Long resourceOwnerId;
+
+	private Long ownerId;
 	public ResetDiskDefaultKMSKeyIdRequest() {
 		super("Ecs", "2014-05-26", "ResetDiskDefaultKMSKeyId", "ecs");
 		setMethod(MethodType.POST);
@@ -43,6 +45,17 @@ public class ResetDiskDefaultKMSKeyIdRequest extends RpcAcsRequest<ResetDiskDefa
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

@@ -21,6 +21,7 @@ import com.aliyuncs.ecs.model.v20140526.DescribeInstanceAttributeResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstanceAttributeResponse.DedicatedHostAttribute;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstanceAttributeResponse.EipAddress;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstanceAttributeResponse.LockReason;
+import com.aliyuncs.ecs.model.v20140526.DescribeInstanceAttributeResponse.NetworkOptions;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstanceAttributeResponse.VpcAttributes;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -98,6 +99,11 @@ public class DescribeInstanceAttributeResponseUnmarshaller {
 		dedicatedHostAttribute.setDedicatedHostName(_ctx.stringValue("DescribeInstanceAttributeResponse.DedicatedHostAttribute.DedicatedHostName"));
 		dedicatedHostAttribute.setDedicatedHostId(_ctx.stringValue("DescribeInstanceAttributeResponse.DedicatedHostAttribute.DedicatedHostId"));
 		describeInstanceAttributeResponse.setDedicatedHostAttribute(dedicatedHostAttribute);
+
+		NetworkOptions networkOptions = new NetworkOptions();
+		networkOptions.setEnableJumboFrame(_ctx.booleanValue("DescribeInstanceAttributeResponse.NetworkOptions.EnableJumboFrame"));
+		networkOptions.setEnableNetworkEncryption(_ctx.booleanValue("DescribeInstanceAttributeResponse.NetworkOptions.EnableNetworkEncryption"));
+		describeInstanceAttributeResponse.setNetworkOptions(networkOptions);
 
 		List<LockReason> operationLocks = new ArrayList<LockReason>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceAttributeResponse.OperationLocks.Length"); i++) {

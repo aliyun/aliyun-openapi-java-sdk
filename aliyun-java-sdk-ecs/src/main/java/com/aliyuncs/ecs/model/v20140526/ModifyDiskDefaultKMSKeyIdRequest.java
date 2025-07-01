@@ -27,6 +27,8 @@ public class ModifyDiskDefaultKMSKeyIdRequest extends RpcAcsRequest<ModifyDiskDe
 
 	private Long resourceOwnerId;
 
+	private Long ownerId;
+
 	private String kMSKeyId;
 	public ModifyDiskDefaultKMSKeyIdRequest() {
 		super("Ecs", "2014-05-26", "ModifyDiskDefaultKMSKeyId", "ecs");
@@ -45,6 +47,17 @@ public class ModifyDiskDefaultKMSKeyIdRequest extends RpcAcsRequest<ModifyDiskDe
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

@@ -21,6 +21,7 @@ import com.aliyuncs.ecs.model.v20140526.DescribeLaunchTemplateVersionsResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSet;
 import com.aliyuncs.ecs.model.v20140526.DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSet.LaunchTemplateData;
 import com.aliyuncs.ecs.model.v20140526.DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSet.LaunchTemplateData.DataDisk;
+import com.aliyuncs.ecs.model.v20140526.DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSet.LaunchTemplateData.ImageOptions;
 import com.aliyuncs.ecs.model.v20140526.DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSet.LaunchTemplateData.InstanceTag;
 import com.aliyuncs.ecs.model.v20140526.DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSet.LaunchTemplateData.NetworkInterface;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -105,6 +106,10 @@ public class DescribeLaunchTemplateVersionsResponseUnmarshaller {
 				securityGroupIds.add(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.SecurityGroupIds["+ j +"]"));
 			}
 			launchTemplateData.setSecurityGroupIds(securityGroupIds);
+
+			ImageOptions imageOptions = new ImageOptions();
+			imageOptions.setLoginAsNonRoot(_ctx.booleanValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.ImageOptions.LoginAsNonRoot"));
+			launchTemplateData.setImageOptions(imageOptions);
 
 			List<DataDisk> dataDisks = new ArrayList<DataDisk>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.DataDisks.Length"); j++) {

@@ -532,6 +532,11 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 					
 						putQueryParameter("LaunchConfiguration.ImageOptions.LoginAsNonRoot" , launchConfiguration.getImageOptions().getLoginAsNonRoot());
 				}
+				if (launchConfiguration.getSchedulerOptions() != null) {
+					
+						putQueryParameter("LaunchConfiguration.SchedulerOptions.DedicatedHostId" , launchConfiguration.getSchedulerOptions().getDedicatedHostId());
+						putQueryParameter("LaunchConfiguration.SchedulerOptions.DedicatedHostClusterId" , launchConfiguration.getSchedulerOptions().getDedicatedHostClusterId());
+				}
 		}	
 	}
 
@@ -1223,6 +1228,8 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 
 		private ImageOptions imageOptions;
 
+		private SchedulerOptions schedulerOptions;
+
 		public Integer getPeriod() {
 			return this.period;
 		}
@@ -1279,6 +1286,14 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 			this.imageOptions = imageOptions;
 		}
 
+		public SchedulerOptions getSchedulerOptions() {
+			return this.schedulerOptions;
+		}
+
+		public void setSchedulerOptions(SchedulerOptions schedulerOptions) {
+			this.schedulerOptions = schedulerOptions;
+		}
+
 		public static class ImageOptions {
 
 			private Boolean loginAsNonRoot;
@@ -1289,6 +1304,29 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 
 			public void setLoginAsNonRoot(Boolean loginAsNonRoot) {
 				this.loginAsNonRoot = loginAsNonRoot;
+			}
+		}
+
+		public static class SchedulerOptions {
+
+			private String dedicatedHostId;
+
+			private String dedicatedHostClusterId;
+
+			public String getDedicatedHostId() {
+				return this.dedicatedHostId;
+			}
+
+			public void setDedicatedHostId(String dedicatedHostId) {
+				this.dedicatedHostId = dedicatedHostId;
+			}
+
+			public String getDedicatedHostClusterId() {
+				return this.dedicatedHostClusterId;
+			}
+
+			public void setDedicatedHostClusterId(String dedicatedHostClusterId) {
+				this.dedicatedHostClusterId = dedicatedHostClusterId;
 			}
 		}
 	}

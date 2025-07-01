@@ -93,6 +93,8 @@ public class DescribeInstanceAttributeResponse extends AcsResponse {
 
 	private DedicatedHostAttribute dedicatedHostAttribute;
 
+	private NetworkOptions networkOptions;
+
 	public String getStatus() {
 		return this.status;
 	}
@@ -365,6 +367,14 @@ public class DescribeInstanceAttributeResponse extends AcsResponse {
 		this.dedicatedHostAttribute = dedicatedHostAttribute;
 	}
 
+	public NetworkOptions getNetworkOptions() {
+		return this.networkOptions;
+	}
+
+	public void setNetworkOptions(NetworkOptions networkOptions) {
+		this.networkOptions = networkOptions;
+	}
+
 	public static class LockReason {
 
 		private String lockReason;
@@ -484,6 +494,29 @@ public class DescribeInstanceAttributeResponse extends AcsResponse {
 
 		public void setDedicatedHostId(String dedicatedHostId) {
 			this.dedicatedHostId = dedicatedHostId;
+		}
+	}
+
+	public static class NetworkOptions {
+
+		private Boolean enableJumboFrame;
+
+		private Boolean enableNetworkEncryption;
+
+		public Boolean getEnableJumboFrame() {
+			return this.enableJumboFrame;
+		}
+
+		public void setEnableJumboFrame(Boolean enableJumboFrame) {
+			this.enableJumboFrame = enableJumboFrame;
+		}
+
+		public Boolean getEnableNetworkEncryption() {
+			return this.enableNetworkEncryption;
+		}
+
+		public void setEnableNetworkEncryption(Boolean enableNetworkEncryption) {
+			this.enableNetworkEncryption = enableNetworkEncryption;
 		}
 	}
 

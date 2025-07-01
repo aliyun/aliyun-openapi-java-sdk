@@ -48,6 +48,8 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 
 	private String hostName;
 
+	private ImageOptions imageOptions;
+
 	private Integer systemDiskIops;
 
 	private List<TemplateTag> templateTags;
@@ -279,6 +281,18 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 		if(hostName != null){
 			putQueryParameter("HostName", hostName);
 		}
+	}
+
+	public ImageOptions getImageOptions() {
+		return this.imageOptions;
+	}
+
+	public void setImageOptions(ImageOptions imageOptions) {
+		this.imageOptions = imageOptions;	
+		if (imageOptions != null) {
+			
+				putQueryParameter("ImageOptions.LoginAsNonRoot" , imageOptions.getLoginAsNonRoot());
+		}	
 	}
 
 	public Integer getSystemDiskIops() {
@@ -886,6 +900,19 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 		this.systemDiskEncrypted = systemDiskEncrypted;
 		if(systemDiskEncrypted != null){
 			putQueryParameter("SystemDisk.Encrypted", systemDiskEncrypted);
+		}
+	}
+
+	public static class ImageOptions {
+
+		private Boolean loginAsNonRoot;
+
+		public Boolean getLoginAsNonRoot() {
+			return this.loginAsNonRoot;
+		}
+
+		public void setLoginAsNonRoot(Boolean loginAsNonRoot) {
+			this.loginAsNonRoot = loginAsNonRoot;
 		}
 	}
 

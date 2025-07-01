@@ -279,6 +279,8 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 
 			private List<String> securityGroupIds;
 
+			private ImageOptions imageOptions;
+
 			public String getDeploymentSetId() {
 				return this.deploymentSetId;
 			}
@@ -719,6 +721,14 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 				this.securityGroupIds = securityGroupIds;
 			}
 
+			public ImageOptions getImageOptions() {
+				return this.imageOptions;
+			}
+
+			public void setImageOptions(ImageOptions imageOptions) {
+				this.imageOptions = imageOptions;
+			}
+
 			public static class DataDisk {
 
 				private String performanceLevel;
@@ -965,6 +975,19 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 
 				public void setValue(String value) {
 					this.value = value;
+				}
+			}
+
+			public static class ImageOptions {
+
+				private Boolean loginAsNonRoot;
+
+				public Boolean getLoginAsNonRoot() {
+					return this.loginAsNonRoot;
+				}
+
+				public void setLoginAsNonRoot(Boolean loginAsNonRoot) {
+					this.loginAsNonRoot = loginAsNonRoot;
 				}
 			}
 		}

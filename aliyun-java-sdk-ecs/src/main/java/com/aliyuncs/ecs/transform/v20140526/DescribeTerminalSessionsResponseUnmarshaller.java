@@ -33,23 +33,24 @@ public class DescribeTerminalSessionsResponseUnmarshaller {
 		List<Session> sessions = new ArrayList<Session>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeTerminalSessionsResponse.Sessions.Length"); i++) {
 			Session session = new Session();
+			session.setIdentityType(_ctx.stringValue("DescribeTerminalSessionsResponse.Sessions["+ i +"].IdentityType"));
+			session.setPrincipalId(_ctx.stringValue("DescribeTerminalSessionsResponse.Sessions["+ i +"].PrincipalId"));
+			session.setUsername(_ctx.stringValue("DescribeTerminalSessionsResponse.Sessions["+ i +"].Username"));
 			session.setCreationTime(_ctx.stringValue("DescribeTerminalSessionsResponse.Sessions["+ i +"].CreationTime"));
 			session.setTargetServer(_ctx.stringValue("DescribeTerminalSessionsResponse.Sessions["+ i +"].TargetServer"));
 			session.setPortNumber(_ctx.integerValue("DescribeTerminalSessionsResponse.Sessions["+ i +"].PortNumber"));
-			session.setPrincipalId(_ctx.stringValue("DescribeTerminalSessionsResponse.Sessions["+ i +"].PrincipalId"));
-			session.setUsername(_ctx.stringValue("DescribeTerminalSessionsResponse.Sessions["+ i +"].Username"));
 			session.setClientIP(_ctx.stringValue("DescribeTerminalSessionsResponse.Sessions["+ i +"].ClientIP"));
-			session.setIdentityType(_ctx.stringValue("DescribeTerminalSessionsResponse.Sessions["+ i +"].IdentityType"));
 			session.setSessionId(_ctx.stringValue("DescribeTerminalSessionsResponse.Sessions["+ i +"].SessionId"));
 
 			List<Connection> connections = new ArrayList<Connection>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeTerminalSessionsResponse.Sessions["+ i +"].Connections.Length"); j++) {
 				Connection connection = new Connection();
-				connection.setClosedReason(_ctx.stringValue("DescribeTerminalSessionsResponse.Sessions["+ i +"].Connections["+ j +"].ClosedReason"));
-				connection.setEndTime(_ctx.stringValue("DescribeTerminalSessionsResponse.Sessions["+ i +"].Connections["+ j +"].EndTime"));
 				connection.setStatus(_ctx.stringValue("DescribeTerminalSessionsResponse.Sessions["+ i +"].Connections["+ j +"].Status"));
-				connection.setStartTime(_ctx.stringValue("DescribeTerminalSessionsResponse.Sessions["+ i +"].Connections["+ j +"].StartTime"));
+				connection.setFailedDetail(_ctx.stringValue("DescribeTerminalSessionsResponse.Sessions["+ i +"].Connections["+ j +"].FailedDetail"));
+				connection.setEndTime(_ctx.stringValue("DescribeTerminalSessionsResponse.Sessions["+ i +"].Connections["+ j +"].EndTime"));
 				connection.setInstanceId(_ctx.stringValue("DescribeTerminalSessionsResponse.Sessions["+ i +"].Connections["+ j +"].InstanceId"));
+				connection.setStartTime(_ctx.stringValue("DescribeTerminalSessionsResponse.Sessions["+ i +"].Connections["+ j +"].StartTime"));
+				connection.setClosedReason(_ctx.stringValue("DescribeTerminalSessionsResponse.Sessions["+ i +"].Connections["+ j +"].ClosedReason"));
 
 				connections.add(connection);
 			}
