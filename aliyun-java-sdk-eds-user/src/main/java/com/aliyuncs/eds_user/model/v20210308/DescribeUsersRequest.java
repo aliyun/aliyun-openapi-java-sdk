@@ -57,6 +57,8 @@ public class DescribeUsersRequest extends RpcAcsRequest<DescribeUsersResponse> {
 
 	@SerializedName("showExtras")
 	private Map<String,Object> showExtras;
+
+	private Integer status;
 	public DescribeUsersRequest() {
 		super("eds-user", "2021-03-08", "DescribeUsers", "eds-user");
 		setMethod(MethodType.POST);
@@ -211,6 +213,17 @@ public class DescribeUsersRequest extends RpcAcsRequest<DescribeUsersResponse> {
 		if (showExtras != null) {
 			putBodyParameter("ShowExtras" , new Gson().toJson(showExtras));
 		}	
+	}
+
+	public Integer getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(Integer status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status.toString());
+		}
 	}
 
 	@Override

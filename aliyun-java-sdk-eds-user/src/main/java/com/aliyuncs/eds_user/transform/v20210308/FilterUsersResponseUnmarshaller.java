@@ -86,6 +86,7 @@ public class FilterUsersResponseUnmarshaller {
 				OrgListItem orgListItem = new OrgListItem();
 				orgListItem.setOrgId(_ctx.stringValue("FilterUsersResponse.Users["+ i +"].OrgList["+ j +"].OrgId"));
 				orgListItem.setOrgName(_ctx.stringValue("FilterUsersResponse.Users["+ i +"].OrgList["+ j +"].OrgName"));
+				orgListItem.setOrgNamePath(_ctx.stringValue("FilterUsersResponse.Users["+ i +"].OrgList["+ j +"].OrgNamePath"));
 
 				orgList.add(orgListItem);
 			}

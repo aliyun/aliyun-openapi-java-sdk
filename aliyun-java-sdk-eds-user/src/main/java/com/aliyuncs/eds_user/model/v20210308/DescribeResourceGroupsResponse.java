@@ -71,6 +71,8 @@ public class DescribeResourceGroupsResponse extends AcsResponse {
 
 		private List<Timer> timers;
 
+		private List<AppRule> appRules;
+
 		public String getResourceGroupId() {
 			return this.resourceGroupId;
 		}
@@ -127,6 +129,14 @@ public class DescribeResourceGroupsResponse extends AcsResponse {
 			this.timers = timers;
 		}
 
+		public List<AppRule> getAppRules() {
+			return this.appRules;
+		}
+
+		public void setAppRules(List<AppRule> appRules) {
+			this.appRules = appRules;
+		}
+
 		public static class Policy {
 
 			private String id;
@@ -166,6 +176,10 @@ public class DescribeResourceGroupsResponse extends AcsResponse {
 
 			private String name;
 
+			private String timerStatus;
+
+			private String bindStatus;
+
 			public String getId() {
 				return this.id;
 			}
@@ -180,6 +194,55 @@ public class DescribeResourceGroupsResponse extends AcsResponse {
 
 			public void setName(String name) {
 				this.name = name;
+			}
+
+			public String getTimerStatus() {
+				return this.timerStatus;
+			}
+
+			public void setTimerStatus(String timerStatus) {
+				this.timerStatus = timerStatus;
+			}
+
+			public String getBindStatus() {
+				return this.bindStatus;
+			}
+
+			public void setBindStatus(String bindStatus) {
+				this.bindStatus = bindStatus;
+			}
+		}
+
+		public static class AppRule {
+
+			private String id;
+
+			private String name;
+
+			private Integer type;
+
+			public String getId() {
+				return this.id;
+			}
+
+			public void setId(String id) {
+				this.id = id;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public Integer getType() {
+				return this.type;
+			}
+
+			public void setType(Integer type) {
+				this.type = type;
 			}
 		}
 	}

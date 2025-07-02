@@ -73,6 +73,7 @@ public class DescribeUsersResponseUnmarshaller {
 				Org org = new Org();
 				org.setOrgId(_ctx.stringValue("DescribeUsersResponse.Users["+ i +"].Orgs["+ j +"].OrgId"));
 				org.setOrgName(_ctx.stringValue("DescribeUsersResponse.Users["+ i +"].Orgs["+ j +"].OrgName"));
+				org.setOrgNamePath(_ctx.stringValue("DescribeUsersResponse.Users["+ i +"].Orgs["+ j +"].OrgNamePath"));
 
 				orgs.add(org);
 			}

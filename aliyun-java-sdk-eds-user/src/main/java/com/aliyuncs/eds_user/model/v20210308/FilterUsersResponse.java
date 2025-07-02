@@ -339,6 +339,8 @@ public class FilterUsersResponse extends AcsResponse {
 
 			private String orgName;
 
+			private String orgNamePath;
+
 			public String getOrgId() {
 				return this.orgId;
 			}
@@ -353,6 +355,14 @@ public class FilterUsersResponse extends AcsResponse {
 
 			public void setOrgName(String orgName) {
 				this.orgName = orgName;
+			}
+
+			public String getOrgNamePath() {
+				return this.orgNamePath;
+			}
+
+			public void setOrgNamePath(String orgNamePath) {
+				this.orgNamePath = orgNamePath;
 			}
 		}
 

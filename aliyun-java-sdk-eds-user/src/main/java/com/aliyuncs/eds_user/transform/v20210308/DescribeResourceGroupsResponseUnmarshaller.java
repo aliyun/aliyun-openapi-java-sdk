@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.eds_user.model.v20210308.DescribeResourceGroupsResponse;
 import com.aliyuncs.eds_user.model.v20210308.DescribeResourceGroupsResponse.ResourceGroupItem;
+import com.aliyuncs.eds_user.model.v20210308.DescribeResourceGroupsResponse.ResourceGroupItem.AppRule;
 import com.aliyuncs.eds_user.model.v20210308.DescribeResourceGroupsResponse.ResourceGroupItem.Policy;
 import com.aliyuncs.eds_user.model.v20210308.DescribeResourceGroupsResponse.ResourceGroupItem.Timer;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -56,10 +57,23 @@ public class DescribeResourceGroupsResponseUnmarshaller {
 				Timer timer = new Timer();
 				timer.setId(_ctx.stringValue("DescribeResourceGroupsResponse.ResourceGroup["+ i +"].Timers["+ j +"].Id"));
 				timer.setName(_ctx.stringValue("DescribeResourceGroupsResponse.ResourceGroup["+ i +"].Timers["+ j +"].Name"));
+				timer.setTimerStatus(_ctx.stringValue("DescribeResourceGroupsResponse.ResourceGroup["+ i +"].Timers["+ j +"].TimerStatus"));
+				timer.setBindStatus(_ctx.stringValue("DescribeResourceGroupsResponse.ResourceGroup["+ i +"].Timers["+ j +"].BindStatus"));
 
 				timers.add(timer);
 			}
 			resourceGroupItem.setTimers(timers);
+
+			List<AppRule> appRules = new ArrayList<AppRule>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeResourceGroupsResponse.ResourceGroup["+ i +"].AppRules.Length"); j++) {
+				AppRule appRule = new AppRule();
+				appRule.setId(_ctx.stringValue("DescribeResourceGroupsResponse.ResourceGroup["+ i +"].AppRules["+ j +"].Id"));
+				appRule.setName(_ctx.stringValue("DescribeResourceGroupsResponse.ResourceGroup["+ i +"].AppRules["+ j +"].Name"));
+				appRule.setType(_ctx.integerValue("DescribeResourceGroupsResponse.ResourceGroup["+ i +"].AppRules["+ j +"].Type"));
+
+				appRules.add(appRule);
+			}
+			resourceGroupItem.setAppRules(appRules);
 
 			resourceGroup.add(resourceGroupItem);
 		}
