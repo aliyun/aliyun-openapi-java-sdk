@@ -1,3 +1,6 @@
+2025-07-03 Version: 2.1.16
+- QueryAuditLog API add request parameters.
+
 2025-05-28 Version: 2.1.15
 - Add api request parameters and error code.
 

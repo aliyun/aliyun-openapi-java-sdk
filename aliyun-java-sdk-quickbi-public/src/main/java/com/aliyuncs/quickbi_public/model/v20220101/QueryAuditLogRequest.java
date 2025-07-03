@@ -24,6 +24,8 @@ import com.aliyuncs.http.MethodType;
 public class QueryAuditLogRequest extends RpcAcsRequest<QueryAuditLogResponse> {
 	   
 
+	private String accessSourceFlag;
+
 	private String startDate;
 
 	private String logType;
@@ -37,9 +39,22 @@ public class QueryAuditLogRequest extends RpcAcsRequest<QueryAuditLogResponse> {
 	private String operatorId;
 
 	private String workspaceId;
+
+	private String userAccessDevice;
 	public QueryAuditLogRequest() {
 		super("quickbi-public", "2022-01-01", "QueryAuditLog", "2.2.0");
 		setMethod(MethodType.POST);
+	}
+
+	public String getAccessSourceFlag() {
+		return this.accessSourceFlag;
+	}
+
+	public void setAccessSourceFlag(String accessSourceFlag) {
+		this.accessSourceFlag = accessSourceFlag;
+		if(accessSourceFlag != null){
+			putQueryParameter("AccessSourceFlag", accessSourceFlag);
+		}
 	}
 
 	public String getStartDate() {
@@ -116,6 +131,17 @@ public class QueryAuditLogRequest extends RpcAcsRequest<QueryAuditLogResponse> {
 		this.workspaceId = workspaceId;
 		if(workspaceId != null){
 			putQueryParameter("WorkspaceId", workspaceId);
+		}
+	}
+
+	public String getUserAccessDevice() {
+		return this.userAccessDevice;
+	}
+
+	public void setUserAccessDevice(String userAccessDevice) {
+		this.userAccessDevice = userAccessDevice;
+		if(userAccessDevice != null){
+			putQueryParameter("UserAccessDevice", userAccessDevice);
 		}
 	}
 
