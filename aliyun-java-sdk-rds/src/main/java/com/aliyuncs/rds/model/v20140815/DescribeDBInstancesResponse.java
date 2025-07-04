@@ -203,6 +203,8 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 
 		private String greenInstanceName;
 
+		private Boolean autoRenewal;
+
 		private List<ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
 
 		public String getAutoUpgradeMinorVersion() {
@@ -667,6 +669,14 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 
 		public void setGreenInstanceName(String greenInstanceName) {
 			this.greenInstanceName = greenInstanceName;
+		}
+
+		public Boolean getAutoRenewal() {
+			return this.autoRenewal;
+		}
+
+		public void setAutoRenewal(Boolean autoRenewal) {
+			this.autoRenewal = autoRenewal;
 		}
 
 		public List<ReadOnlyDBInstanceId> getReadOnlyDBInstanceIds() {

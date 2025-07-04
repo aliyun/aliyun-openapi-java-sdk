@@ -15,16 +15,26 @@
 package com.aliyuncs.rds.model.v20140815;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.rds.transform.v20140815.AcceptRCInquiredSystemEventResponseUnmarshaller;
+import com.aliyuncs.rds.transform.v20140815.RedeployRCInstanceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class AcceptRCInquiredSystemEventResponse extends AcsResponse {
+public class RedeployRCInstanceResponse extends AcsResponse {
+
+	private String taskId;
 
 	private String requestId;
+
+	public String getTaskId() {
+		return this.taskId;
+	}
+
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -35,8 +45,8 @@ public class AcceptRCInquiredSystemEventResponse extends AcsResponse {
 	}
 
 	@Override
-	public AcceptRCInquiredSystemEventResponse getInstance(UnmarshallerContext context) {
-		return	AcceptRCInquiredSystemEventResponseUnmarshaller.unmarshall(this, context);
+	public RedeployRCInstanceResponse getInstance(UnmarshallerContext context) {
+		return	RedeployRCInstanceResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

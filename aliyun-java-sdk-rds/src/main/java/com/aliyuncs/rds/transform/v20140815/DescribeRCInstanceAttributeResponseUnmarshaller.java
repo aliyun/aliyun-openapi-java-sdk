@@ -68,6 +68,11 @@ public class DescribeRCInstanceAttributeResponseUnmarshaller {
 		describeRCInstanceAttributeResponse.setSpotStrategy(_ctx.stringValue("DescribeRCInstanceAttributeResponse.SpotStrategy"));
 		describeRCInstanceAttributeResponse.setCreateMode(_ctx.integerValue("DescribeRCInstanceAttributeResponse.CreateMode"));
 		describeRCInstanceAttributeResponse.setAutoRenew(_ctx.booleanValue("DescribeRCInstanceAttributeResponse.AutoRenew"));
+		describeRCInstanceAttributeResponse.setDeletionProtection(_ctx.booleanValue("DescribeRCInstanceAttributeResponse.DeletionProtection"));
+		describeRCInstanceAttributeResponse.setGpu(_ctx.integerValue("DescribeRCInstanceAttributeResponse.Gpu"));
+		describeRCInstanceAttributeResponse.setGpuTypes(_ctx.stringValue("DescribeRCInstanceAttributeResponse.GpuTypes"));
+		describeRCInstanceAttributeResponse.setNodeType(_ctx.stringValue("DescribeRCInstanceAttributeResponse.NodeType"));
+		describeRCInstanceAttributeResponse.setUserData(_ctx.stringValue("DescribeRCInstanceAttributeResponse.UserData"));
 
 		List<String> innerIpAddress = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeRCInstanceAttributeResponse.InnerIpAddress.Length"); i++) {
@@ -123,10 +128,10 @@ public class DescribeRCInstanceAttributeResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeRCInstanceAttributeResponse.DataDisks.Length"); i++) {
 			DataDisk dataDisk = new DataDisk();
 			dataDisk.setCategory(_ctx.stringValue("DescribeRCInstanceAttributeResponse.DataDisks["+ i +"].Category"));
-			dataDisk.setDeleteWithInstance(_ctx.booleanValue("DescribeRCInstanceAttributeResponse.DataDisks["+ i +"].DeleteWithInstance"));
 			dataDisk.setEncrypted(_ctx.stringValue("DescribeRCInstanceAttributeResponse.DataDisks["+ i +"].Encrypted"));
 			dataDisk.setPerformanceLevel(_ctx.stringValue("DescribeRCInstanceAttributeResponse.DataDisks["+ i +"].PerformanceLevel"));
 			dataDisk.setSize(_ctx.longValue("DescribeRCInstanceAttributeResponse.DataDisks["+ i +"].Size"));
+			dataDisk.setDeleteWithInstance(_ctx.booleanValue("DescribeRCInstanceAttributeResponse.DataDisks["+ i +"].DeleteWithInstance"));
 
 			dataDisks.add(dataDisk);
 		}
@@ -136,8 +141,8 @@ public class DescribeRCInstanceAttributeResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeRCInstanceAttributeResponse.Tags.Length"); i++) {
 			Tag tag = new Tag();
 			tag.setResourceId(_ctx.stringValue("DescribeRCInstanceAttributeResponse.Tags["+ i +"].ResourceId"));
-			tag.setResourceType(_ctx.stringValue("DescribeRCInstanceAttributeResponse.Tags["+ i +"].ResourceType"));
 			tag.setTagKey(_ctx.stringValue("DescribeRCInstanceAttributeResponse.Tags["+ i +"].TagKey"));
+			tag.setResourceType(_ctx.stringValue("DescribeRCInstanceAttributeResponse.Tags["+ i +"].ResourceType"));
 			tag.setTagValue(_ctx.stringValue("DescribeRCInstanceAttributeResponse.Tags["+ i +"].TagValue"));
 
 			tags.add(tag);

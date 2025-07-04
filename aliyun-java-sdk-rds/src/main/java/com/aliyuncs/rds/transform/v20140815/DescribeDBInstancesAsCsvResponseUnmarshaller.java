@@ -73,6 +73,7 @@ public class DescribeDBInstancesAsCsvResponseUnmarshaller {
 			dBInstanceAttribute.setVSwitchId(_ctx.stringValue("DescribeDBInstancesAsCsvResponse.Items["+ i +"].VSwitchId"));
 			dBInstanceAttribute.setVpcId(_ctx.stringValue("DescribeDBInstancesAsCsvResponse.Items["+ i +"].VpcId"));
 			dBInstanceAttribute.setZoneId(_ctx.stringValue("DescribeDBInstancesAsCsvResponse.Items["+ i +"].ZoneId"));
+			dBInstanceAttribute.setDBInstanceStorageType(_ctx.stringValue("DescribeDBInstancesAsCsvResponse.Items["+ i +"].DBInstanceStorageType"));
 
 			List<String> slaveZones = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDBInstancesAsCsvResponse.Items["+ i +"].SlaveZones.Length"); j++) {

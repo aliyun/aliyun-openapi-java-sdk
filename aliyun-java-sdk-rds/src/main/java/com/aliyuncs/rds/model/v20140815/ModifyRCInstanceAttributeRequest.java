@@ -15,6 +15,9 @@
 package com.aliyuncs.rds.model.v20140815;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.rds.Endpoint;
 
@@ -25,15 +28,23 @@ import com.aliyuncs.rds.Endpoint;
 public class ModifyRCInstanceAttributeRequest extends RpcAcsRequest<ModifyRCInstanceAttributeResponse> {
 	   
 
-	private Boolean reboot;
-
 	private String securityGroupId;
+
+	private Boolean deletionProtection;
 
 	private String password;
 
 	private String hostName;
 
+	private Boolean reboot;
+
+	@SerializedName("securityGroupIds")
+	private List<String> securityGroupIds;
+
 	private String instanceId;
+
+	@SerializedName("instanceIds")
+	private List<String> instanceIds;
 	public ModifyRCInstanceAttributeRequest() {
 		super("Rds", "2014-08-15", "ModifyRCInstanceAttribute", "rds");
 		setMethod(MethodType.POST);
@@ -41,17 +52,6 @@ public class ModifyRCInstanceAttributeRequest extends RpcAcsRequest<ModifyRCInst
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Boolean getReboot() {
-		return this.reboot;
-	}
-
-	public void setReboot(Boolean reboot) {
-		this.reboot = reboot;
-		if(reboot != null){
-			putQueryParameter("Reboot", reboot.toString());
-		}
 	}
 
 	public String getSecurityGroupId() {
@@ -62,6 +62,17 @@ public class ModifyRCInstanceAttributeRequest extends RpcAcsRequest<ModifyRCInst
 		this.securityGroupId = securityGroupId;
 		if(securityGroupId != null){
 			putQueryParameter("SecurityGroupId", securityGroupId);
+		}
+	}
+
+	public Boolean getDeletionProtection() {
+		return this.deletionProtection;
+	}
+
+	public void setDeletionProtection(Boolean deletionProtection) {
+		this.deletionProtection = deletionProtection;
+		if(deletionProtection != null){
+			putQueryParameter("DeletionProtection", deletionProtection.toString());
 		}
 	}
 
@@ -87,6 +98,28 @@ public class ModifyRCInstanceAttributeRequest extends RpcAcsRequest<ModifyRCInst
 		}
 	}
 
+	public Boolean getReboot() {
+		return this.reboot;
+	}
+
+	public void setReboot(Boolean reboot) {
+		this.reboot = reboot;
+		if(reboot != null){
+			putQueryParameter("Reboot", reboot.toString());
+		}
+	}
+
+	public List<String> getSecurityGroupIds() {
+		return this.securityGroupIds;
+	}
+
+	public void setSecurityGroupIds(List<String> securityGroupIds) {
+		this.securityGroupIds = securityGroupIds;	
+		if (securityGroupIds != null) {
+			putQueryParameter("SecurityGroupIds" , new Gson().toJson(securityGroupIds));
+		}	
+	}
+
 	public String getInstanceId() {
 		return this.instanceId;
 	}
@@ -96,6 +129,17 @@ public class ModifyRCInstanceAttributeRequest extends RpcAcsRequest<ModifyRCInst
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
 		}
+	}
+
+	public List<String> getInstanceIds() {
+		return this.instanceIds;
+	}
+
+	public void setInstanceIds(List<String> instanceIds) {
+		this.instanceIds = instanceIds;	
+		if (instanceIds != null) {
+			putQueryParameter("InstanceIds" , new Gson().toJson(instanceIds));
+		}	
 	}
 
 	@Override

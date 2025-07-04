@@ -14,17 +14,38 @@
 
 package com.aliyuncs.rds.model.v20140815;
 
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.rds.transform.v20140815.AcceptRCInquiredSystemEventResponseUnmarshaller;
+import com.aliyuncs.rds.transform.v20140815.DescribeComputeBurstConfigResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class AcceptRCInquiredSystemEventResponse extends AcsResponse {
+public class DescribeComputeBurstConfigResponse extends AcsResponse {
+
+	private Boolean computeBurstEnabled;
+
+	private Map<Object,Object> computeBurstConfig;
 
 	private String requestId;
+
+	public Boolean getComputeBurstEnabled() {
+		return this.computeBurstEnabled;
+	}
+
+	public void setComputeBurstEnabled(Boolean computeBurstEnabled) {
+		this.computeBurstEnabled = computeBurstEnabled;
+	}
+
+	public Map<Object,Object> getComputeBurstConfig() {
+		return this.computeBurstConfig;
+	}
+
+	public void setComputeBurstConfig(Map<Object,Object> computeBurstConfig) {
+		this.computeBurstConfig = computeBurstConfig;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -35,8 +56,8 @@ public class AcceptRCInquiredSystemEventResponse extends AcsResponse {
 	}
 
 	@Override
-	public AcceptRCInquiredSystemEventResponse getInstance(UnmarshallerContext context) {
-		return	AcceptRCInquiredSystemEventResponseUnmarshaller.unmarshall(this, context);
+	public DescribeComputeBurstConfigResponse getInstance(UnmarshallerContext context) {
+		return	DescribeComputeBurstConfigResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

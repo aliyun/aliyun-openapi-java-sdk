@@ -60,6 +60,7 @@ public class DescribeRCInstancesResponseUnmarshaller {
 			rCInstancesItem.setExpiredTime(_ctx.stringValue("DescribeRCInstancesResponse.RCInstances["+ i +"].ExpiredTime"));
 			rCInstancesItem.setDeploymentSetId(_ctx.stringValue("DescribeRCInstancesResponse.RCInstances["+ i +"].DeploymentSetId"));
 			rCInstancesItem.setImageId(_ctx.stringValue("DescribeRCInstancesResponse.RCInstances["+ i +"].ImageId"));
+			rCInstancesItem.setNodeType(_ctx.stringValue("DescribeRCInstancesResponse.RCInstances["+ i +"].NodeType"));
 
 			VpcAttributes vpcAttributes = new VpcAttributes();
 			vpcAttributes.setNatIpAddress(_ctx.stringValue("DescribeRCInstancesResponse.RCInstances["+ i +"].VpcAttributes.NatIpAddress"));

@@ -67,6 +67,7 @@ public class DescribeBackupsResponseUnmarshaller {
 			backup.setStorageClass(_ctx.stringValue("DescribeBackupsResponse.Items["+ i +"].StorageClass"));
 			backup.setStoreStatus(_ctx.stringValue("DescribeBackupsResponse.Items["+ i +"].StoreStatus"));
 			backup.setTotalBackupSize(_ctx.longValue("DescribeBackupsResponse.Items["+ i +"].TotalBackupSize"));
+			backup.setExpectExpireTime(_ctx.stringValue("DescribeBackupsResponse.Items["+ i +"].ExpectExpireTime"));
 
 			List<BackupDownloadLinkByDBItem> backupDownloadLinkByDB = new ArrayList<BackupDownloadLinkByDBItem>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeBackupsResponse.Items["+ i +"].BackupDownloadLinkByDB.Length"); j++) {

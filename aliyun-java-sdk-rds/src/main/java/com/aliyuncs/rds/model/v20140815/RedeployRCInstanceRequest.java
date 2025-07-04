@@ -22,16 +22,14 @@ import com.aliyuncs.rds.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeRCInstanceAttributeRequest extends RpcAcsRequest<DescribeRCInstanceAttributeResponse> {
+public class RedeployRCInstanceRequest extends RpcAcsRequest<RedeployRCInstanceResponse> {
 	   
 
-	private String privateIpAddress;
+	private Boolean forceStop;
 
 	private String instanceId;
-
-	private Long maxDisksResults;
-	public DescribeRCInstanceAttributeRequest() {
-		super("Rds", "2014-08-15", "DescribeRCInstanceAttribute", "rds");
+	public RedeployRCInstanceRequest() {
+		super("Rds", "2014-08-15", "RedeployRCInstance", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,14 +37,14 @@ public class DescribeRCInstanceAttributeRequest extends RpcAcsRequest<DescribeRC
 		} catch (Exception e) {}
 	}
 
-	public String getPrivateIpAddress() {
-		return this.privateIpAddress;
+	public Boolean getForceStop() {
+		return this.forceStop;
 	}
 
-	public void setPrivateIpAddress(String privateIpAddress) {
-		this.privateIpAddress = privateIpAddress;
-		if(privateIpAddress != null){
-			putQueryParameter("PrivateIpAddress", privateIpAddress);
+	public void setForceStop(Boolean forceStop) {
+		this.forceStop = forceStop;
+		if(forceStop != null){
+			putQueryParameter("ForceStop", forceStop.toString());
 		}
 	}
 
@@ -61,20 +59,9 @@ public class DescribeRCInstanceAttributeRequest extends RpcAcsRequest<DescribeRC
 		}
 	}
 
-	public Long getMaxDisksResults() {
-		return this.maxDisksResults;
-	}
-
-	public void setMaxDisksResults(Long maxDisksResults) {
-		this.maxDisksResults = maxDisksResults;
-		if(maxDisksResults != null){
-			putQueryParameter("MaxDisksResults", maxDisksResults.toString());
-		}
-	}
-
 	@Override
-	public Class<DescribeRCInstanceAttributeResponse> getResponseClass() {
-		return DescribeRCInstanceAttributeResponse.class;
+	public Class<RedeployRCInstanceResponse> getResponseClass() {
+		return RedeployRCInstanceResponse.class;
 	}
 
 }

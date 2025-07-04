@@ -14,16 +14,17 @@
 
 package com.aliyuncs.rds.transform.v20140815;
 
-import com.aliyuncs.rds.model.v20140815.AcceptRCInquiredSystemEventResponse;
+import com.aliyuncs.rds.model.v20140815.RedeployRCInstanceResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class AcceptRCInquiredSystemEventResponseUnmarshaller {
+public class RedeployRCInstanceResponseUnmarshaller {
 
-	public static AcceptRCInquiredSystemEventResponse unmarshall(AcceptRCInquiredSystemEventResponse acceptRCInquiredSystemEventResponse, UnmarshallerContext _ctx) {
+	public static RedeployRCInstanceResponse unmarshall(RedeployRCInstanceResponse redeployRCInstanceResponse, UnmarshallerContext _ctx) {
 		
-		acceptRCInquiredSystemEventResponse.setRequestId(_ctx.stringValue("AcceptRCInquiredSystemEventResponse.RequestId"));
+		redeployRCInstanceResponse.setRequestId(_ctx.stringValue("RedeployRCInstanceResponse.RequestId"));
+		redeployRCInstanceResponse.setTaskId(_ctx.stringValue("RedeployRCInstanceResponse.TaskId"));
 	 
-	 	return acceptRCInquiredSystemEventResponse;
+	 	return redeployRCInstanceResponse;
 	}
 }

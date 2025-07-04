@@ -34,6 +34,8 @@ public class RunRCInstancesRequest extends RpcAcsRequest<RunRCInstancesResponse>
 
 	private String keyPairName;
 
+	private Boolean deletionProtection;
+
 	private String resourceGroupId;
 
 	private String password;
@@ -141,6 +143,17 @@ public class RunRCInstancesRequest extends RpcAcsRequest<RunRCInstancesResponse>
 		this.keyPairName = keyPairName;
 		if(keyPairName != null){
 			putQueryParameter("KeyPairName", keyPairName);
+		}
+	}
+
+	public Boolean getDeletionProtection() {
+		return this.deletionProtection;
+	}
+
+	public void setDeletionProtection(Boolean deletionProtection) {
+		this.deletionProtection = deletionProtection;
+		if(deletionProtection != null){
+			putQueryParameter("DeletionProtection", deletionProtection.toString());
 		}
 	}
 

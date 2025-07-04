@@ -123,6 +123,8 @@ public class DescribeRCInstancesResponse extends AcsResponse {
 
 		private String imageId;
 
+		private String nodeType;
+
 		private List<TagResource> tagResources;
 
 		private List<Tag> tags;
@@ -311,6 +313,14 @@ public class DescribeRCInstancesResponse extends AcsResponse {
 
 		public void setImageId(String imageId) {
 			this.imageId = imageId;
+		}
+
+		public String getNodeType() {
+			return this.nodeType;
+		}
+
+		public void setNodeType(String nodeType) {
+			this.nodeType = nodeType;
 		}
 
 		public List<TagResource> getTagResources() {

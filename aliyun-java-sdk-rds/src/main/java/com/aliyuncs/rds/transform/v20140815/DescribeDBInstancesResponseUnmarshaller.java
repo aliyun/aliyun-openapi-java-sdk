@@ -94,6 +94,7 @@ public class DescribeDBInstancesResponseUnmarshaller {
 			dBInstance.setBlueGreenDeploymentName(_ctx.stringValue("DescribeDBInstancesResponse.Items["+ i +"].BlueGreenDeploymentName"));
 			dBInstance.setBlueInstanceName(_ctx.stringValue("DescribeDBInstancesResponse.Items["+ i +"].BlueInstanceName"));
 			dBInstance.setGreenInstanceName(_ctx.stringValue("DescribeDBInstancesResponse.Items["+ i +"].GreenInstanceName"));
+			dBInstance.setAutoRenewal(_ctx.booleanValue("DescribeDBInstancesResponse.Items["+ i +"].AutoRenewal"));
 
 			List<ReadOnlyDBInstanceId> readOnlyDBInstanceIds = new ArrayList<ReadOnlyDBInstanceId>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDBInstancesResponse.Items["+ i +"].ReadOnlyDBInstanceIds.Length"); j++) {

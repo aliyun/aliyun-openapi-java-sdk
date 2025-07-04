@@ -15,16 +15,18 @@
 package com.aliyuncs.rds.model.v20140815;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.rds.transform.v20140815.AcceptRCInquiredSystemEventResponseUnmarshaller;
+import com.aliyuncs.rds.transform.v20140815.DescribeRCVClusterResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class AcceptRCInquiredSystemEventResponse extends AcsResponse {
+public class DescribeRCVClusterResponse extends AcsResponse {
 
 	private String requestId;
+
+	private String vClusterStatus;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -34,9 +36,17 @@ public class AcceptRCInquiredSystemEventResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getVClusterStatus() {
+		return this.vClusterStatus;
+	}
+
+	public void setVClusterStatus(String vClusterStatus) {
+		this.vClusterStatus = vClusterStatus;
+	}
+
 	@Override
-	public AcceptRCInquiredSystemEventResponse getInstance(UnmarshallerContext context) {
-		return	AcceptRCInquiredSystemEventResponseUnmarshaller.unmarshall(this, context);
+	public DescribeRCVClusterResponse getInstance(UnmarshallerContext context) {
+		return	DescribeRCVClusterResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

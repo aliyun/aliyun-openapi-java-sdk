@@ -14,16 +14,16 @@
 
 package com.aliyuncs.rds.transform.v20140815;
 
-import com.aliyuncs.rds.model.v20140815.AcceptRCInquiredSystemEventResponse;
+import com.aliyuncs.rds.model.v20140815.InstallRCCloudAssistantResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class AcceptRCInquiredSystemEventResponseUnmarshaller {
+public class InstallRCCloudAssistantResponseUnmarshaller {
 
-	public static AcceptRCInquiredSystemEventResponse unmarshall(AcceptRCInquiredSystemEventResponse acceptRCInquiredSystemEventResponse, UnmarshallerContext _ctx) {
+	public static InstallRCCloudAssistantResponse unmarshall(InstallRCCloudAssistantResponse installRCCloudAssistantResponse, UnmarshallerContext _ctx) {
 		
-		acceptRCInquiredSystemEventResponse.setRequestId(_ctx.stringValue("AcceptRCInquiredSystemEventResponse.RequestId"));
+		installRCCloudAssistantResponse.setRequestId(_ctx.stringValue("InstallRCCloudAssistantResponse.RequestId"));
 	 
-	 	return acceptRCInquiredSystemEventResponse;
+	 	return installRCCloudAssistantResponse;
 	}
 }

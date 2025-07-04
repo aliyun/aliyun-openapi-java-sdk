@@ -22,24 +22,18 @@ import com.aliyuncs.rds.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateBackupRequest extends RpcAcsRequest<CreateBackupResponse> {
+public class ModifyBackupSetExpireTimeRequest extends RpcAcsRequest<ModifyBackupSetExpireTimeResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String backupStrategy;
+	private String expectExpireTime;
 
 	private String dBInstanceId;
 
-	private String backupType;
-
-	private String backupMethod;
-
-	private Long backupRetentionPeriod;
-
-	private String dBName;
-	public CreateBackupRequest() {
-		super("Rds", "2014-08-15", "CreateBackup", "rds");
+	private Long backupId;
+	public ModifyBackupSetExpireTimeRequest() {
+		super("Rds", "2014-08-15", "ModifyBackupSetExpireTime", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -58,14 +52,14 @@ public class CreateBackupRequest extends RpcAcsRequest<CreateBackupResponse> {
 		}
 	}
 
-	public String getBackupStrategy() {
-		return this.backupStrategy;
+	public String getExpectExpireTime() {
+		return this.expectExpireTime;
 	}
 
-	public void setBackupStrategy(String backupStrategy) {
-		this.backupStrategy = backupStrategy;
-		if(backupStrategy != null){
-			putQueryParameter("BackupStrategy", backupStrategy);
+	public void setExpectExpireTime(String expectExpireTime) {
+		this.expectExpireTime = expectExpireTime;
+		if(expectExpireTime != null){
+			putQueryParameter("ExpectExpireTime", expectExpireTime);
 		}
 	}
 
@@ -80,53 +74,20 @@ public class CreateBackupRequest extends RpcAcsRequest<CreateBackupResponse> {
 		}
 	}
 
-	public String getBackupType() {
-		return this.backupType;
+	public Long getBackupId() {
+		return this.backupId;
 	}
 
-	public void setBackupType(String backupType) {
-		this.backupType = backupType;
-		if(backupType != null){
-			putQueryParameter("BackupType", backupType);
-		}
-	}
-
-	public String getBackupMethod() {
-		return this.backupMethod;
-	}
-
-	public void setBackupMethod(String backupMethod) {
-		this.backupMethod = backupMethod;
-		if(backupMethod != null){
-			putQueryParameter("BackupMethod", backupMethod);
-		}
-	}
-
-	public Long getBackupRetentionPeriod() {
-		return this.backupRetentionPeriod;
-	}
-
-	public void setBackupRetentionPeriod(Long backupRetentionPeriod) {
-		this.backupRetentionPeriod = backupRetentionPeriod;
-		if(backupRetentionPeriod != null){
-			putQueryParameter("BackupRetentionPeriod", backupRetentionPeriod.toString());
-		}
-	}
-
-	public String getDBName() {
-		return this.dBName;
-	}
-
-	public void setDBName(String dBName) {
-		this.dBName = dBName;
-		if(dBName != null){
-			putQueryParameter("DBName", dBName);
+	public void setBackupId(Long backupId) {
+		this.backupId = backupId;
+		if(backupId != null){
+			putQueryParameter("BackupId", backupId.toString());
 		}
 	}
 
 	@Override
-	public Class<CreateBackupResponse> getResponseClass() {
-		return CreateBackupResponse.class;
+	public Class<ModifyBackupSetExpireTimeResponse> getResponseClass() {
+		return ModifyBackupSetExpireTimeResponse.class;
 	}
 
 }

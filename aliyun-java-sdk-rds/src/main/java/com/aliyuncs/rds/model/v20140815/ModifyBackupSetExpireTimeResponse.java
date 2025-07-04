@@ -15,16 +15,24 @@
 package com.aliyuncs.rds.model.v20140815;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.rds.transform.v20140815.AcceptRCInquiredSystemEventResponseUnmarshaller;
+import com.aliyuncs.rds.transform.v20140815.ModifyBackupSetExpireTimeResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class AcceptRCInquiredSystemEventResponse extends AcsResponse {
+public class ModifyBackupSetExpireTimeResponse extends AcsResponse {
 
 	private String requestId;
+
+	private String message;
+
+	private String code;
+
+	private Boolean success;
+
+	private String data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -34,9 +42,41 @@ public class AcceptRCInquiredSystemEventResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
+	public String getData() {
+		return this.data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
+	}
+
 	@Override
-	public AcceptRCInquiredSystemEventResponse getInstance(UnmarshallerContext context) {
-		return	AcceptRCInquiredSystemEventResponseUnmarshaller.unmarshall(this, context);
+	public ModifyBackupSetExpireTimeResponse getInstance(UnmarshallerContext context) {
+		return	ModifyBackupSetExpireTimeResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

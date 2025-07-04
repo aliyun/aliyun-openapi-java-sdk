@@ -157,6 +157,8 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 		private Long totalBackupSize;
 
+		private String expectExpireTime;
+
 		private List<BackupDownloadLinkByDBItem> backupDownloadLinkByDB;
 
 		public String getBackupDBNames() {
@@ -397,6 +399,14 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 		public void setTotalBackupSize(Long totalBackupSize) {
 			this.totalBackupSize = totalBackupSize;
+		}
+
+		public String getExpectExpireTime() {
+			return this.expectExpireTime;
+		}
+
+		public void setExpectExpireTime(String expectExpireTime) {
+			this.expectExpireTime = expectExpireTime;
 		}
 
 		public List<BackupDownloadLinkByDBItem> getBackupDownloadLinkByDB() {

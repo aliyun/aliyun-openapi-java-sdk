@@ -96,6 +96,8 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 
 	private String targetDedicatedHostIdForSlave;
 
+	private Boolean externalReplication;
+
 	private String zoneIdSlave1;
 
 	private String zoneIdSlave2;
@@ -529,6 +531,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.targetDedicatedHostIdForSlave = targetDedicatedHostIdForSlave;
 		if(targetDedicatedHostIdForSlave != null){
 			putQueryParameter("TargetDedicatedHostIdForSlave", targetDedicatedHostIdForSlave);
+		}
+	}
+
+	public Boolean getExternalReplication() {
+		return this.externalReplication;
+	}
+
+	public void setExternalReplication(Boolean externalReplication) {
+		this.externalReplication = externalReplication;
+		if(externalReplication != null){
+			putQueryParameter("ExternalReplication", externalReplication.toString());
 		}
 	}
 

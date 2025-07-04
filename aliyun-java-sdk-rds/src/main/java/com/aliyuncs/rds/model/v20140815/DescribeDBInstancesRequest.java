@@ -63,6 +63,8 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 
 	private String expired;
 
+	private Boolean queryAutoRenewal;
+
 	private String engine;
 
 	private String nextToken;
@@ -303,6 +305,17 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		this.expired = expired;
 		if(expired != null){
 			putQueryParameter("Expired", expired);
+		}
+	}
+
+	public Boolean getQueryAutoRenewal() {
+		return this.queryAutoRenewal;
+	}
+
+	public void setQueryAutoRenewal(Boolean queryAutoRenewal) {
+		this.queryAutoRenewal = queryAutoRenewal;
+		if(queryAutoRenewal != null){
+			putQueryParameter("QueryAutoRenewal", queryAutoRenewal.toString());
 		}
 	}
 

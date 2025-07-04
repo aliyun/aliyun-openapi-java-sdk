@@ -111,6 +111,10 @@ public class DescribeRCSnapshotsResponse extends AcsResponse {
 
 		private String usage;
 
+		private String resourceGroupId;
+
+		private List<TagItem> tag;
+
 		public Boolean getAvailable() {
 			return this.available;
 		}
@@ -245,6 +249,45 @@ public class DescribeRCSnapshotsResponse extends AcsResponse {
 
 		public void setUsage(String usage) {
 			this.usage = usage;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public List<TagItem> getTag() {
+			return this.tag;
+		}
+
+		public void setTag(List<TagItem> tag) {
+			this.tag = tag;
+		}
+
+		public static class TagItem {
+
+			private String tagKey;
+
+			private String tagValue;
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
+			}
+
+			public String getTagValue() {
+				return this.tagValue;
+			}
+
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
+			}
 		}
 	}
 

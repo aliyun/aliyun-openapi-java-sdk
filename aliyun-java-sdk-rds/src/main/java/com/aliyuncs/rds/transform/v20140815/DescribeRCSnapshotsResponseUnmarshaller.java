@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.rds.model.v20140815.DescribeRCSnapshotsResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeRCSnapshotsResponse.Snapshot;
+import com.aliyuncs.rds.model.v20140815.DescribeRCSnapshotsResponse.Snapshot.TagItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -51,6 +52,17 @@ public class DescribeRCSnapshotsResponseUnmarshaller {
 			snapshot.setSourceStorageType(_ctx.stringValue("DescribeRCSnapshotsResponse.Snapshots["+ i +"].SourceStorageType"));
 			snapshot.setStatus(_ctx.stringValue("DescribeRCSnapshotsResponse.Snapshots["+ i +"].Status"));
 			snapshot.setUsage(_ctx.stringValue("DescribeRCSnapshotsResponse.Snapshots["+ i +"].Usage"));
+			snapshot.setResourceGroupId(_ctx.stringValue("DescribeRCSnapshotsResponse.Snapshots["+ i +"].ResourceGroupId"));
+
+			List<TagItem> tag = new ArrayList<TagItem>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeRCSnapshotsResponse.Snapshots["+ i +"].Tag.Length"); j++) {
+				TagItem tagItem = new TagItem();
+				tagItem.setTagKey(_ctx.stringValue("DescribeRCSnapshotsResponse.Snapshots["+ i +"].Tag["+ j +"].TagKey"));
+				tagItem.setTagValue(_ctx.stringValue("DescribeRCSnapshotsResponse.Snapshots["+ i +"].Tag["+ j +"].TagValue"));
+
+				tag.add(tagItem);
+			}
+			snapshot.setTag(tag);
 
 			snapshots.add(snapshot);
 		}

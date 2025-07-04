@@ -131,6 +131,8 @@ public class DescribeDBInstancesAsCsvResponse extends AcsResponse {
 
 		private String zoneId;
 
+		private String dBInstanceStorageType;
+
 		private List<String> slaveZones;
 
 		public Integer getAccountMaxQuantity() {
@@ -467,6 +469,14 @@ public class DescribeDBInstancesAsCsvResponse extends AcsResponse {
 
 		public void setZoneId(String zoneId) {
 			this.zoneId = zoneId;
+		}
+
+		public String getDBInstanceStorageType() {
+			return this.dBInstanceStorageType;
+		}
+
+		public void setDBInstanceStorageType(String dBInstanceStorageType) {
+			this.dBInstanceStorageType = dBInstanceStorageType;
 		}
 
 		public List<String> getSlaveZones() {

@@ -97,6 +97,16 @@ public class DescribeRCInstanceAttributeResponse extends AcsResponse {
 
 	private Boolean autoRenew;
 
+	private Boolean deletionProtection;
+
+	private Integer gpu;
+
+	private String gpuTypes;
+
+	private String nodeType;
+
+	private String userData;
+
 	private List<DataDisk> dataDisks;
 
 	private List<Tag> tags;
@@ -405,6 +415,46 @@ public class DescribeRCInstanceAttributeResponse extends AcsResponse {
 		this.autoRenew = autoRenew;
 	}
 
+	public Boolean getDeletionProtection() {
+		return this.deletionProtection;
+	}
+
+	public void setDeletionProtection(Boolean deletionProtection) {
+		this.deletionProtection = deletionProtection;
+	}
+
+	public Integer getGpu() {
+		return this.gpu;
+	}
+
+	public void setGpu(Integer gpu) {
+		this.gpu = gpu;
+	}
+
+	public String getGpuTypes() {
+		return this.gpuTypes;
+	}
+
+	public void setGpuTypes(String gpuTypes) {
+		this.gpuTypes = gpuTypes;
+	}
+
+	public String getNodeType() {
+		return this.nodeType;
+	}
+
+	public void setNodeType(String nodeType) {
+		this.nodeType = nodeType;
+	}
+
+	public String getUserData() {
+		return this.userData;
+	}
+
+	public void setUserData(String userData) {
+		this.userData = userData;
+	}
+
 	public List<DataDisk> getDataDisks() {
 		return this.dataDisks;
 	}
@@ -489,13 +539,13 @@ public class DescribeRCInstanceAttributeResponse extends AcsResponse {
 
 		private String category;
 
-		private Boolean deleteWithInstance;
-
 		private String encrypted;
 
 		private String performanceLevel;
 
 		private Long size;
+
+		private Boolean deleteWithInstance;
 
 		public String getCategory() {
 			return this.category;
@@ -503,14 +553,6 @@ public class DescribeRCInstanceAttributeResponse extends AcsResponse {
 
 		public void setCategory(String category) {
 			this.category = category;
-		}
-
-		public Boolean getDeleteWithInstance() {
-			return this.deleteWithInstance;
-		}
-
-		public void setDeleteWithInstance(Boolean deleteWithInstance) {
-			this.deleteWithInstance = deleteWithInstance;
 		}
 
 		public String getEncrypted() {
@@ -536,15 +578,23 @@ public class DescribeRCInstanceAttributeResponse extends AcsResponse {
 		public void setSize(Long size) {
 			this.size = size;
 		}
+
+		public Boolean getDeleteWithInstance() {
+			return this.deleteWithInstance;
+		}
+
+		public void setDeleteWithInstance(Boolean deleteWithInstance) {
+			this.deleteWithInstance = deleteWithInstance;
+		}
 	}
 
 	public static class Tag {
 
 		private String resourceId;
 
-		private String resourceType;
-
 		private String tagKey;
+
+		private String resourceType;
 
 		private String tagValue;
 
@@ -556,20 +606,20 @@ public class DescribeRCInstanceAttributeResponse extends AcsResponse {
 			this.resourceId = resourceId;
 		}
 
-		public String getResourceType() {
-			return this.resourceType;
-		}
-
-		public void setResourceType(String resourceType) {
-			this.resourceType = resourceType;
-		}
-
 		public String getTagKey() {
 			return this.tagKey;
 		}
 
 		public void setTagKey(String tagKey) {
 			this.tagKey = tagKey;
+		}
+
+		public String getResourceType() {
+			return this.resourceType;
+		}
+
+		public void setResourceType(String resourceType) {
+			this.resourceType = resourceType;
 		}
 
 		public String getTagValue() {

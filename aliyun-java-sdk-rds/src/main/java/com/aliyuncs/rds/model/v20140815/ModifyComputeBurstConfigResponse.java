@@ -15,14 +15,14 @@
 package com.aliyuncs.rds.model.v20140815;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.rds.transform.v20140815.AcceptRCInquiredSystemEventResponseUnmarshaller;
+import com.aliyuncs.rds.transform.v20140815.ModifyComputeBurstConfigResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class AcceptRCInquiredSystemEventResponse extends AcsResponse {
+public class ModifyComputeBurstConfigResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -35,8 +35,8 @@ public class AcceptRCInquiredSystemEventResponse extends AcsResponse {
 	}
 
 	@Override
-	public AcceptRCInquiredSystemEventResponse getInstance(UnmarshallerContext context) {
-		return	AcceptRCInquiredSystemEventResponseUnmarshaller.unmarshall(this, context);
+	public ModifyComputeBurstConfigResponse getInstance(UnmarshallerContext context) {
+		return	ModifyComputeBurstConfigResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
