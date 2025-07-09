@@ -47,7 +47,7 @@ public class DescribeSQLSamplesResponse extends AcsResponse {
 
 	public static class DataItem {
 
-		private String requestId;
+		private Long requestId;
 
 		private String traceId;
 
@@ -57,7 +57,7 @@ public class DescribeSQLSamplesResponse extends AcsResponse {
 
 		private String clientIp;
 
-		private String clientPort;
+		private Integer clientPort;
 
 		private String dbName;
 
@@ -65,23 +65,23 @@ public class DescribeSQLSamplesResponse extends AcsResponse {
 
 		private String sqlType;
 
-		private Double planId;
+		private Long planId;
 
-		private Double affectedRows;
+		private Long affectedRows;
 
-		private Double returnRows;
+		private Long returnRows;
 
-		private Double partitionCount;
+		private Long partitionCount;
 
-		private Double retCode;
+		private Integer retCode;
 
 		private String waitEvent;
 
 		private Double waitTime;
 
-		private Double waitCount;
+		private Long waitCount;
 
-		private Double rpcCount;
+		private Long rpcCount;
 
 		private String planType;
 
@@ -125,25 +125,25 @@ public class DescribeSQLSamplesResponse extends AcsResponse {
 
 		private Double diskReads;
 
-		private Double retryCount;
+		private Long retryCount;
 
 		private Boolean tableScan;
 
 		private String consistencyLevel;
 
-		private Double memstoreReadRows;
+		private Long memstoreReadRows;
 
-		private Double expectedWorkerCount;
+		private Long expectedWorkerCount;
 
-		private Double usedWorkerCount;
+		private Long usedWorkerCount;
 
-		private Double ssstoreReadRows;
+		private Long ssstoreReadRows;
 
-		private Double obServerId;
+		private Long obServerId;
 
-		private Double obUserId;
+		private Long obUserId;
 
-		private Double obDbId;
+		private Long obDbId;
 
 		private String statement;
 
@@ -155,11 +155,11 @@ public class DescribeSQLSamplesResponse extends AcsResponse {
 
 		private String paramsValue;
 
-		public String getRequestId() {
+		public Long getRequestId() {
 			return this.requestId;
 		}
 
-		public void setRequestId(String requestId) {
+		public void setRequestId(Long requestId) {
 			this.requestId = requestId;
 		}
 
@@ -195,11 +195,11 @@ public class DescribeSQLSamplesResponse extends AcsResponse {
 			this.clientIp = clientIp;
 		}
 
-		public String getClientPort() {
+		public Integer getClientPort() {
 			return this.clientPort;
 		}
 
-		public void setClientPort(String clientPort) {
+		public void setClientPort(Integer clientPort) {
 			this.clientPort = clientPort;
 		}
 
@@ -227,43 +227,43 @@ public class DescribeSQLSamplesResponse extends AcsResponse {
 			this.sqlType = sqlType;
 		}
 
-		public Double getPlanId() {
+		public Long getPlanId() {
 			return this.planId;
 		}
 
-		public void setPlanId(Double planId) {
+		public void setPlanId(Long planId) {
 			this.planId = planId;
 		}
 
-		public Double getAffectedRows() {
+		public Long getAffectedRows() {
 			return this.affectedRows;
 		}
 
-		public void setAffectedRows(Double affectedRows) {
+		public void setAffectedRows(Long affectedRows) {
 			this.affectedRows = affectedRows;
 		}
 
-		public Double getReturnRows() {
+		public Long getReturnRows() {
 			return this.returnRows;
 		}
 
-		public void setReturnRows(Double returnRows) {
+		public void setReturnRows(Long returnRows) {
 			this.returnRows = returnRows;
 		}
 
-		public Double getPartitionCount() {
+		public Long getPartitionCount() {
 			return this.partitionCount;
 		}
 
-		public void setPartitionCount(Double partitionCount) {
+		public void setPartitionCount(Long partitionCount) {
 			this.partitionCount = partitionCount;
 		}
 
-		public Double getRetCode() {
+		public Integer getRetCode() {
 			return this.retCode;
 		}
 
-		public void setRetCode(Double retCode) {
+		public void setRetCode(Integer retCode) {
 			this.retCode = retCode;
 		}
 
@@ -283,19 +283,19 @@ public class DescribeSQLSamplesResponse extends AcsResponse {
 			this.waitTime = waitTime;
 		}
 
-		public Double getWaitCount() {
+		public Long getWaitCount() {
 			return this.waitCount;
 		}
 
-		public void setWaitCount(Double waitCount) {
+		public void setWaitCount(Long waitCount) {
 			this.waitCount = waitCount;
 		}
 
-		public Double getRpcCount() {
+		public Long getRpcCount() {
 			return this.rpcCount;
 		}
 
-		public void setRpcCount(Double rpcCount) {
+		public void setRpcCount(Long rpcCount) {
 			this.rpcCount = rpcCount;
 		}
 
@@ -467,11 +467,11 @@ public class DescribeSQLSamplesResponse extends AcsResponse {
 			this.diskReads = diskReads;
 		}
 
-		public Double getRetryCount() {
+		public Long getRetryCount() {
 			return this.retryCount;
 		}
 
-		public void setRetryCount(Double retryCount) {
+		public void setRetryCount(Long retryCount) {
 			this.retryCount = retryCount;
 		}
 
@@ -491,59 +491,59 @@ public class DescribeSQLSamplesResponse extends AcsResponse {
 			this.consistencyLevel = consistencyLevel;
 		}
 
-		public Double getMemstoreReadRows() {
+		public Long getMemstoreReadRows() {
 			return this.memstoreReadRows;
 		}
 
-		public void setMemstoreReadRows(Double memstoreReadRows) {
+		public void setMemstoreReadRows(Long memstoreReadRows) {
 			this.memstoreReadRows = memstoreReadRows;
 		}
 
-		public Double getExpectedWorkerCount() {
+		public Long getExpectedWorkerCount() {
 			return this.expectedWorkerCount;
 		}
 
-		public void setExpectedWorkerCount(Double expectedWorkerCount) {
+		public void setExpectedWorkerCount(Long expectedWorkerCount) {
 			this.expectedWorkerCount = expectedWorkerCount;
 		}
 
-		public Double getUsedWorkerCount() {
+		public Long getUsedWorkerCount() {
 			return this.usedWorkerCount;
 		}
 
-		public void setUsedWorkerCount(Double usedWorkerCount) {
+		public void setUsedWorkerCount(Long usedWorkerCount) {
 			this.usedWorkerCount = usedWorkerCount;
 		}
 
-		public Double getSsstoreReadRows() {
+		public Long getSsstoreReadRows() {
 			return this.ssstoreReadRows;
 		}
 
-		public void setSsstoreReadRows(Double ssstoreReadRows) {
+		public void setSsstoreReadRows(Long ssstoreReadRows) {
 			this.ssstoreReadRows = ssstoreReadRows;
 		}
 
-		public Double getObServerId() {
+		public Long getObServerId() {
 			return this.obServerId;
 		}
 
-		public void setObServerId(Double obServerId) {
+		public void setObServerId(Long obServerId) {
 			this.obServerId = obServerId;
 		}
 
-		public Double getObUserId() {
+		public Long getObUserId() {
 			return this.obUserId;
 		}
 
-		public void setObUserId(Double obUserId) {
+		public void setObUserId(Long obUserId) {
 			this.obUserId = obUserId;
 		}
 
-		public Double getObDbId() {
+		public Long getObDbId() {
 			return this.obDbId;
 		}
 
-		public void setObDbId(Double obDbId) {
+		public void setObDbId(Long obDbId) {
 			this.obDbId = obDbId;
 		}
 

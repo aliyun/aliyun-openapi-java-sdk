@@ -97,6 +97,8 @@ public class DescribeTenantsResponse extends AcsResponse {
 
 		private String parameterTemplate;
 
+		private Integer iops;
+
 		public String getVpcId() {
 			return this.vpcId;
 		}
@@ -255,6 +257,14 @@ public class DescribeTenantsResponse extends AcsResponse {
 
 		public void setParameterTemplate(String parameterTemplate) {
 			this.parameterTemplate = parameterTemplate;
+		}
+
+		public Integer getIops() {
+			return this.iops;
+		}
+
+		public void setIops(Integer iops) {
+			this.iops = iops;
 		}
 	}
 

@@ -32,10 +32,10 @@ public class DescribeOasSlowSQLListResponseUnmarshaller {
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeOasSlowSQLListResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setExecutions(_ctx.doubleValue("DescribeOasSlowSQLListResponse.Data["+ i +"].Executions"));
+			dataItem.setExecutions(_ctx.longValue("DescribeOasSlowSQLListResponse.Data["+ i +"].Executions"));
 			dataItem.setRpcCount(_ctx.doubleValue("DescribeOasSlowSQLListResponse.Data["+ i +"].RpcCount"));
-			dataItem.setRemotePlans(_ctx.doubleValue("DescribeOasSlowSQLListResponse.Data["+ i +"].RemotePlans"));
-			dataItem.setMissPlans(_ctx.doubleValue("DescribeOasSlowSQLListResponse.Data["+ i +"].MissPlans"));
+			dataItem.setRemotePlans(_ctx.longValue("DescribeOasSlowSQLListResponse.Data["+ i +"].RemotePlans"));
+			dataItem.setMissPlans(_ctx.longValue("DescribeOasSlowSQLListResponse.Data["+ i +"].MissPlans"));
 			dataItem.setMaxElapsedTime(_ctx.doubleValue("DescribeOasSlowSQLListResponse.Data["+ i +"].MaxElapsedTime"));
 			dataItem.setTotalWaitTime(_ctx.doubleValue("DescribeOasSlowSQLListResponse.Data["+ i +"].TotalWaitTime"));
 			dataItem.setExecPs(_ctx.doubleValue("DescribeOasSlowSQLListResponse.Data["+ i +"].ExecPs"));
@@ -45,11 +45,11 @@ public class DescribeOasSlowSQLListResponseUnmarshaller {
 			dataItem.setDbName(_ctx.stringValue("DescribeOasSlowSQLListResponse.Data["+ i +"].DbName"));
 			dataItem.setRetCode4012Count(_ctx.longValue("DescribeOasSlowSQLListResponse.Data["+ i +"].RetCode4012Count"));
 			dataItem.setRetCode4013Count(_ctx.longValue("DescribeOasSlowSQLListResponse.Data["+ i +"].RetCode4013Count"));
-			dataItem.setRetCode5001Count(_ctx.doubleValue("DescribeOasSlowSQLListResponse.Data["+ i +"].RetCode5001Count"));
-			dataItem.setRetCode5024Count(_ctx.doubleValue("DescribeOasSlowSQLListResponse.Data["+ i +"].RetCode5024Count"));
-			dataItem.setRetCode5167Count(_ctx.doubleValue("DescribeOasSlowSQLListResponse.Data["+ i +"].RetCode5167Count"));
-			dataItem.setRetCode5217Count(_ctx.doubleValue("DescribeOasSlowSQLListResponse.Data["+ i +"].RetCode5217Count"));
-			dataItem.setRetCode6002Count(_ctx.doubleValue("DescribeOasSlowSQLListResponse.Data["+ i +"].RetCode6002Count"));
+			dataItem.setRetCode5001Count(_ctx.longValue("DescribeOasSlowSQLListResponse.Data["+ i +"].RetCode5001Count"));
+			dataItem.setRetCode5024Count(_ctx.longValue("DescribeOasSlowSQLListResponse.Data["+ i +"].RetCode5024Count"));
+			dataItem.setRetCode5167Count(_ctx.longValue("DescribeOasSlowSQLListResponse.Data["+ i +"].RetCode5167Count"));
+			dataItem.setRetCode5217Count(_ctx.longValue("DescribeOasSlowSQLListResponse.Data["+ i +"].RetCode5217Count"));
+			dataItem.setRetCode6002Count(_ctx.longValue("DescribeOasSlowSQLListResponse.Data["+ i +"].RetCode6002Count"));
 			dataItem.setFailPercentage(_ctx.doubleValue("DescribeOasSlowSQLListResponse.Data["+ i +"].FailPercentage"));
 			dataItem.setSumWaitTime(_ctx.doubleValue("DescribeOasSlowSQLListResponse.Data["+ i +"].SumWaitTime"));
 			dataItem.setAvgWaitCount(_ctx.doubleValue("DescribeOasSlowSQLListResponse.Data["+ i +"].AvgWaitCount"));
@@ -85,7 +85,7 @@ public class DescribeOasSlowSQLListResponseUnmarshaller {
 			dataItem.setAvgAffectedRows(_ctx.doubleValue("DescribeOasSlowSQLListResponse.Data["+ i +"].AvgAffectedRows"));
 			dataItem.setAvgReturnRows(_ctx.doubleValue("DescribeOasSlowSQLListResponse.Data["+ i +"].AvgReturnRows"));
 			dataItem.setAvgPartitionCount(_ctx.doubleValue("DescribeOasSlowSQLListResponse.Data["+ i +"].AvgPartitionCount"));
-			dataItem.setFailCount(_ctx.doubleValue("DescribeOasSlowSQLListResponse.Data["+ i +"].FailCount"));
+			dataItem.setFailCount(_ctx.longValue("DescribeOasSlowSQLListResponse.Data["+ i +"].FailCount"));
 			dataItem.setAvgWaitTime(_ctx.doubleValue("DescribeOasSlowSQLListResponse.Data["+ i +"].AvgWaitTime"));
 			dataItem.setAvgElapsedTime(_ctx.doubleValue("DescribeOasSlowSQLListResponse.Data["+ i +"].AvgElapsedTime"));
 			dataItem.setAvgCpuTime(_ctx.doubleValue("DescribeOasSlowSQLListResponse.Data["+ i +"].AvgCpuTime"));
@@ -103,7 +103,7 @@ public class DescribeOasSlowSQLListResponseUnmarshaller {
 			dataItem.setAvgBlockCacheHit(_ctx.doubleValue("DescribeOasSlowSQLListResponse.Data["+ i +"].AvgBlockCacheHit"));
 			dataItem.setAvgBlockIndexCacheHit(_ctx.doubleValue("DescribeOasSlowSQLListResponse.Data["+ i +"].AvgBlockIndexCacheHit"));
 			dataItem.setAvgDiskReads(_ctx.doubleValue("DescribeOasSlowSQLListResponse.Data["+ i +"].AvgDiskReads"));
-			dataItem.setRetryCount(_ctx.doubleValue("DescribeOasSlowSQLListResponse.Data["+ i +"].RetryCount"));
+			dataItem.setRetryCount(_ctx.longValue("DescribeOasSlowSQLListResponse.Data["+ i +"].RetryCount"));
 			dataItem.setAvgMemstoreReadRows(_ctx.doubleValue("DescribeOasSlowSQLListResponse.Data["+ i +"].AvgMemstoreReadRows"));
 			dataItem.setAvgSsstoreReadRows(_ctx.doubleValue("DescribeOasSlowSQLListResponse.Data["+ i +"].AvgSsstoreReadRows"));
 			dataItem.setAvgLogicalReads(_ctx.doubleValue("DescribeOasSlowSQLListResponse.Data["+ i +"].AvgLogicalReads"));
@@ -114,10 +114,10 @@ public class DescribeOasSlowSQLListResponseUnmarshaller {
 			List<SqlListItem> sqlList = new ArrayList<SqlListItem>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeOasSlowSQLListResponse.Data["+ i +"].SqlList.Length"); j++) {
 				SqlListItem sqlListItem = new SqlListItem();
-				sqlListItem.setExecutions(_ctx.doubleValue("DescribeOasSlowSQLListResponse.Data["+ i +"].SqlList["+ j +"].Executions"));
+				sqlListItem.setExecutions(_ctx.longValue("DescribeOasSlowSQLListResponse.Data["+ i +"].SqlList["+ j +"].Executions"));
 				sqlListItem.setRpcCount(_ctx.doubleValue("DescribeOasSlowSQLListResponse.Data["+ i +"].SqlList["+ j +"].RpcCount"));
-				sqlListItem.setRemotePlans(_ctx.doubleValue("DescribeOasSlowSQLListResponse.Data["+ i +"].SqlList["+ j +"].RemotePlans"));
-				sqlListItem.setMissPlans(_ctx.doubleValue("DescribeOasSlowSQLListResponse.Data["+ i +"].SqlList["+ j +"].MissPlans"));
+				sqlListItem.setRemotePlans(_ctx.longValue("DescribeOasSlowSQLListResponse.Data["+ i +"].SqlList["+ j +"].RemotePlans"));
+				sqlListItem.setMissPlans(_ctx.longValue("DescribeOasSlowSQLListResponse.Data["+ i +"].SqlList["+ j +"].MissPlans"));
 				sqlListItem.setMaxElapsedTime(_ctx.doubleValue("DescribeOasSlowSQLListResponse.Data["+ i +"].SqlList["+ j +"].MaxElapsedTime"));
 				sqlListItem.setTotalWaitTime(_ctx.doubleValue("DescribeOasSlowSQLListResponse.Data["+ i +"].SqlList["+ j +"].TotalWaitTime"));
 				sqlListItem.setExecPs(_ctx.doubleValue("DescribeOasSlowSQLListResponse.Data["+ i +"].SqlList["+ j +"].ExecPs"));
@@ -167,7 +167,7 @@ public class DescribeOasSlowSQLListResponseUnmarshaller {
 				sqlListItem.setAvgAffectedRows(_ctx.doubleValue("DescribeOasSlowSQLListResponse.Data["+ i +"].SqlList["+ j +"].AvgAffectedRows"));
 				sqlListItem.setAvgReturnRows(_ctx.doubleValue("DescribeOasSlowSQLListResponse.Data["+ i +"].SqlList["+ j +"].AvgReturnRows"));
 				sqlListItem.setAvgPartitionCount(_ctx.doubleValue("DescribeOasSlowSQLListResponse.Data["+ i +"].SqlList["+ j +"].AvgPartitionCount"));
-				sqlListItem.setFailCount(_ctx.doubleValue("DescribeOasSlowSQLListResponse.Data["+ i +"].SqlList["+ j +"].FailCount"));
+				sqlListItem.setFailCount(_ctx.longValue("DescribeOasSlowSQLListResponse.Data["+ i +"].SqlList["+ j +"].FailCount"));
 				sqlListItem.setAvgWaitTime(_ctx.doubleValue("DescribeOasSlowSQLListResponse.Data["+ i +"].SqlList["+ j +"].AvgWaitTime"));
 				sqlListItem.setAvgElapsedTime(_ctx.doubleValue("DescribeOasSlowSQLListResponse.Data["+ i +"].SqlList["+ j +"].AvgElapsedTime"));
 				sqlListItem.setAvgCpuTime(_ctx.doubleValue("DescribeOasSlowSQLListResponse.Data["+ i +"].SqlList["+ j +"].AvgCpuTime"));
@@ -185,7 +185,7 @@ public class DescribeOasSlowSQLListResponseUnmarshaller {
 				sqlListItem.setAvgBlockCacheHit(_ctx.doubleValue("DescribeOasSlowSQLListResponse.Data["+ i +"].SqlList["+ j +"].AvgBlockCacheHit"));
 				sqlListItem.setAvgBlockIndexCacheHit(_ctx.doubleValue("DescribeOasSlowSQLListResponse.Data["+ i +"].SqlList["+ j +"].AvgBlockIndexCacheHit"));
 				sqlListItem.setAvgDiskReads(_ctx.doubleValue("DescribeOasSlowSQLListResponse.Data["+ i +"].SqlList["+ j +"].AvgDiskReads"));
-				sqlListItem.setRetryCount(_ctx.doubleValue("DescribeOasSlowSQLListResponse.Data["+ i +"].SqlList["+ j +"].RetryCount"));
+				sqlListItem.setRetryCount(_ctx.longValue("DescribeOasSlowSQLListResponse.Data["+ i +"].SqlList["+ j +"].RetryCount"));
 				sqlListItem.setAvgMemstoreReadRows(_ctx.doubleValue("DescribeOasSlowSQLListResponse.Data["+ i +"].SqlList["+ j +"].AvgMemstoreReadRows"));
 				sqlListItem.setAvgSsstoreReadRows(_ctx.doubleValue("DescribeOasSlowSQLListResponse.Data["+ i +"].SqlList["+ j +"].AvgSsstoreReadRows"));
 				sqlListItem.setAvgLogicalReads(_ctx.doubleValue("DescribeOasSlowSQLListResponse.Data["+ i +"].SqlList["+ j +"].AvgLogicalReads"));

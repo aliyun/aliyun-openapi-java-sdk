@@ -28,6 +28,8 @@ public class DescribeSqlAuditStatRequest extends RpcAcsRequest<DescribeSqlAuditS
 
 	private String startTime;
 
+	private String operatorType;
+
 	private Integer pageNumber;
 
 	private String tenantId;
@@ -55,6 +57,17 @@ public class DescribeSqlAuditStatRequest extends RpcAcsRequest<DescribeSqlAuditS
 		this.startTime = startTime;
 		if(startTime != null){
 			putBodyParameter("StartTime", startTime);
+		}
+	}
+
+	public String getOperatorType() {
+		return this.operatorType;
+	}
+
+	public void setOperatorType(String operatorType) {
+		this.operatorType = operatorType;
+		if(operatorType != null){
+			putBodyParameter("OperatorType", operatorType);
 		}
 	}
 

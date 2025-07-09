@@ -78,6 +78,7 @@ public class DescribeTenantResponseUnmarshaller {
 		tenant.setOdpVersion(_ctx.stringValue("DescribeTenantResponse.Tenant.OdpVersion"));
 		tenant.setTenantMaxConnections(_ctx.stringValue("DescribeTenantResponse.Tenant.TenantMaxConnections"));
 		tenant.setParameterTemplate(_ctx.stringValue("DescribeTenantResponse.Tenant.ParameterTemplate"));
+		tenant.setIops(_ctx.integerValue("DescribeTenantResponse.Tenant.Iops"));
 
 		List<String> availableZones = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeTenantResponse.Tenant.AvailableZones.Length"); i++) {

@@ -35,8 +35,8 @@ public class DescribeOasTopSQLListResponseUnmarshaller {
 			DataItem dataItem = new DataItem();
 			dataItem.setExecutions(_ctx.longValue("DescribeOasTopSQLListResponse.Data["+ i +"].Executions"));
 			dataItem.setRpcCount(_ctx.doubleValue("DescribeOasTopSQLListResponse.Data["+ i +"].RpcCount"));
-			dataItem.setRemotePlans(_ctx.doubleValue("DescribeOasTopSQLListResponse.Data["+ i +"].RemotePlans"));
-			dataItem.setMissPlans(_ctx.doubleValue("DescribeOasTopSQLListResponse.Data["+ i +"].MissPlans"));
+			dataItem.setRemotePlans(_ctx.longValue("DescribeOasTopSQLListResponse.Data["+ i +"].RemotePlans"));
+			dataItem.setMissPlans(_ctx.longValue("DescribeOasTopSQLListResponse.Data["+ i +"].MissPlans"));
 			dataItem.setMaxElapsedTime(_ctx.doubleValue("DescribeOasTopSQLListResponse.Data["+ i +"].MaxElapsedTime"));
 			dataItem.setTotalWaitTime(_ctx.doubleValue("DescribeOasTopSQLListResponse.Data["+ i +"].TotalWaitTime"));
 			dataItem.setExecPs(_ctx.doubleValue("DescribeOasTopSQLListResponse.Data["+ i +"].ExecPs"));
@@ -87,7 +87,7 @@ public class DescribeOasTopSQLListResponseUnmarshaller {
 			dataItem.setAvgAffectedRows(_ctx.doubleValue("DescribeOasTopSQLListResponse.Data["+ i +"].AvgAffectedRows"));
 			dataItem.setAvgReturnRows(_ctx.doubleValue("DescribeOasTopSQLListResponse.Data["+ i +"].AvgReturnRows"));
 			dataItem.setAvgPartitionCount(_ctx.doubleValue("DescribeOasTopSQLListResponse.Data["+ i +"].AvgPartitionCount"));
-			dataItem.setFailCount(_ctx.doubleValue("DescribeOasTopSQLListResponse.Data["+ i +"].FailCount"));
+			dataItem.setFailCount(_ctx.longValue("DescribeOasTopSQLListResponse.Data["+ i +"].FailCount"));
 			dataItem.setAvgWaitTime(_ctx.doubleValue("DescribeOasTopSQLListResponse.Data["+ i +"].AvgWaitTime"));
 			dataItem.setAvgElapsedTime(_ctx.doubleValue("DescribeOasTopSQLListResponse.Data["+ i +"].AvgElapsedTime"));
 			dataItem.setAvgCpuTime(_ctx.doubleValue("DescribeOasTopSQLListResponse.Data["+ i +"].AvgCpuTime"));
@@ -105,7 +105,7 @@ public class DescribeOasTopSQLListResponseUnmarshaller {
 			dataItem.setAvgBlockCacheHit(_ctx.doubleValue("DescribeOasTopSQLListResponse.Data["+ i +"].AvgBlockCacheHit"));
 			dataItem.setAvgBlockIndexCacheHit(_ctx.doubleValue("DescribeOasTopSQLListResponse.Data["+ i +"].AvgBlockIndexCacheHit"));
 			dataItem.setAvgDiskReads(_ctx.doubleValue("DescribeOasTopSQLListResponse.Data["+ i +"].AvgDiskReads"));
-			dataItem.setRetryCount(_ctx.doubleValue("DescribeOasTopSQLListResponse.Data["+ i +"].RetryCount"));
+			dataItem.setRetryCount(_ctx.longValue("DescribeOasTopSQLListResponse.Data["+ i +"].RetryCount"));
 			dataItem.setAvgMemstoreReadRows(_ctx.doubleValue("DescribeOasTopSQLListResponse.Data["+ i +"].AvgMemstoreReadRows"));
 			dataItem.setAvgSsstoreReadRows(_ctx.doubleValue("DescribeOasTopSQLListResponse.Data["+ i +"].AvgSsstoreReadRows"));
 			dataItem.setAvgLogicalReads(_ctx.doubleValue("DescribeOasTopSQLListResponse.Data["+ i +"].AvgLogicalReads"));
@@ -113,7 +113,7 @@ public class DescribeOasTopSQLListResponseUnmarshaller {
 			dataItem.setLastFailCode(_ctx.longValue("DescribeOasTopSQLListResponse.Data["+ i +"].LastFailCode"));
 			dataItem.setAvgDbTime(_ctx.doubleValue("DescribeOasTopSQLListResponse.Data["+ i +"].AvgDbTime"));
 			dataItem.setSumDbTime(_ctx.doubleValue("DescribeOasTopSQLListResponse.Data["+ i +"].SumDbTime"));
-			dataItem.setObDbId(_ctx.stringValue("DescribeOasTopSQLListResponse.Data["+ i +"].ObDbId"));
+			dataItem.setObDbId(_ctx.longValue("DescribeOasTopSQLListResponse.Data["+ i +"].ObDbId"));
 
 			CustomColumns customColumns = new CustomColumns();
 			customColumns.setExpression(_ctx.stringValue("DescribeOasTopSQLListResponse.Data["+ i +"].CustomColumns.Expression"));
@@ -125,8 +125,8 @@ public class DescribeOasTopSQLListResponseUnmarshaller {
 				SqlListItem sqlListItem = new SqlListItem();
 				sqlListItem.setExecutions(_ctx.longValue("DescribeOasTopSQLListResponse.Data["+ i +"].SqlList["+ j +"].Executions"));
 				sqlListItem.setRpcCount(_ctx.doubleValue("DescribeOasTopSQLListResponse.Data["+ i +"].SqlList["+ j +"].RpcCount"));
-				sqlListItem.setRemotePlans(_ctx.doubleValue("DescribeOasTopSQLListResponse.Data["+ i +"].SqlList["+ j +"].RemotePlans"));
-				sqlListItem.setMissPlans(_ctx.doubleValue("DescribeOasTopSQLListResponse.Data["+ i +"].SqlList["+ j +"].MissPlans"));
+				sqlListItem.setRemotePlans(_ctx.longValue("DescribeOasTopSQLListResponse.Data["+ i +"].SqlList["+ j +"].RemotePlans"));
+				sqlListItem.setMissPlans(_ctx.longValue("DescribeOasTopSQLListResponse.Data["+ i +"].SqlList["+ j +"].MissPlans"));
 				sqlListItem.setMaxElapsedTime(_ctx.doubleValue("DescribeOasTopSQLListResponse.Data["+ i +"].SqlList["+ j +"].MaxElapsedTime"));
 				sqlListItem.setTotalWaitTime(_ctx.doubleValue("DescribeOasTopSQLListResponse.Data["+ i +"].SqlList["+ j +"].TotalWaitTime"));
 				sqlListItem.setExecPs(_ctx.doubleValue("DescribeOasTopSQLListResponse.Data["+ i +"].SqlList["+ j +"].ExecPs"));
@@ -177,7 +177,7 @@ public class DescribeOasTopSQLListResponseUnmarshaller {
 				sqlListItem.setAvgAffectedRows(_ctx.doubleValue("DescribeOasTopSQLListResponse.Data["+ i +"].SqlList["+ j +"].AvgAffectedRows"));
 				sqlListItem.setAvgReturnRows(_ctx.doubleValue("DescribeOasTopSQLListResponse.Data["+ i +"].SqlList["+ j +"].AvgReturnRows"));
 				sqlListItem.setAvgPartitionCount(_ctx.doubleValue("DescribeOasTopSQLListResponse.Data["+ i +"].SqlList["+ j +"].AvgPartitionCount"));
-				sqlListItem.setFailCount(_ctx.doubleValue("DescribeOasTopSQLListResponse.Data["+ i +"].SqlList["+ j +"].FailCount"));
+				sqlListItem.setFailCount(_ctx.longValue("DescribeOasTopSQLListResponse.Data["+ i +"].SqlList["+ j +"].FailCount"));
 				sqlListItem.setAvgWaitTime(_ctx.doubleValue("DescribeOasTopSQLListResponse.Data["+ i +"].SqlList["+ j +"].AvgWaitTime"));
 				sqlListItem.setAvgElapsedTime(_ctx.doubleValue("DescribeOasTopSQLListResponse.Data["+ i +"].SqlList["+ j +"].AvgElapsedTime"));
 				sqlListItem.setAvgCpuTime(_ctx.doubleValue("DescribeOasTopSQLListResponse.Data["+ i +"].SqlList["+ j +"].AvgCpuTime"));
@@ -195,7 +195,7 @@ public class DescribeOasTopSQLListResponseUnmarshaller {
 				sqlListItem.setAvgBlockCacheHit(_ctx.doubleValue("DescribeOasTopSQLListResponse.Data["+ i +"].SqlList["+ j +"].AvgBlockCacheHit"));
 				sqlListItem.setAvgBlockIndexCacheHit(_ctx.doubleValue("DescribeOasTopSQLListResponse.Data["+ i +"].SqlList["+ j +"].AvgBlockIndexCacheHit"));
 				sqlListItem.setAvgDiskReads(_ctx.doubleValue("DescribeOasTopSQLListResponse.Data["+ i +"].SqlList["+ j +"].AvgDiskReads"));
-				sqlListItem.setRetryCount(_ctx.doubleValue("DescribeOasTopSQLListResponse.Data["+ i +"].SqlList["+ j +"].RetryCount"));
+				sqlListItem.setRetryCount(_ctx.longValue("DescribeOasTopSQLListResponse.Data["+ i +"].SqlList["+ j +"].RetryCount"));
 				sqlListItem.setAvgMemstoreReadRows(_ctx.doubleValue("DescribeOasTopSQLListResponse.Data["+ i +"].SqlList["+ j +"].AvgMemstoreReadRows"));
 				sqlListItem.setAvgSsstoreReadRows(_ctx.doubleValue("DescribeOasTopSQLListResponse.Data["+ i +"].SqlList["+ j +"].AvgSsstoreReadRows"));
 				sqlListItem.setAvgLogicalReads(_ctx.doubleValue("DescribeOasTopSQLListResponse.Data["+ i +"].SqlList["+ j +"].AvgLogicalReads"));

@@ -121,7 +121,7 @@ public class DescribeSQLTuningAdvicesResponse extends AcsResponse {
 
 			private String columnName;
 
-			private Float ndv;
+			private Double ndv;
 
 			private String minValue;
 
@@ -135,11 +135,11 @@ public class DescribeSQLTuningAdvicesResponse extends AcsResponse {
 				this.columnName = columnName;
 			}
 
-			public Float getNdv() {
+			public Double getNdv() {
 				return this.ndv;
 			}
 
-			public void setNdv(Float ndv) {
+			public void setNdv(Double ndv) {
 				this.ndv = ndv;
 			}
 

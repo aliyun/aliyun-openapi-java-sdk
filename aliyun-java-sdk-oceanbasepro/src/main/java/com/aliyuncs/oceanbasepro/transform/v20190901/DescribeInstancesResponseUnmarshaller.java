@@ -71,6 +71,7 @@ public class DescribeInstancesResponseUnmarshaller {
 			data.setObRpmVersion(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].ObRpmVersion"));
 			data.setReplicaMode(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].ReplicaMode"));
 			data.setMigratable(_ctx.booleanValue("DescribeInstancesResponse.Instances["+ i +"].Migratable"));
+			data.setIops(_ctx.integerValue("DescribeInstancesResponse.Instances["+ i +"].Iops"));
 
 			List<String> availableZones = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeInstancesResponse.Instances["+ i +"].AvailableZones.Length"); j++) {

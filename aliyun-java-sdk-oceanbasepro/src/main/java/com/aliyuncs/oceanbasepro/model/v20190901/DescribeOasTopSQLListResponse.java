@@ -51,9 +51,9 @@ public class DescribeOasTopSQLListResponse extends AcsResponse {
 
 		private Double rpcCount;
 
-		private Double remotePlans;
+		private Long remotePlans;
 
-		private Double missPlans;
+		private Long missPlans;
 
 		private Double maxElapsedTime;
 
@@ -155,7 +155,7 @@ public class DescribeOasTopSQLListResponse extends AcsResponse {
 
 		private Double avgPartitionCount;
 
-		private Double failCount;
+		private Long failCount;
 
 		private Double avgWaitTime;
 
@@ -191,7 +191,7 @@ public class DescribeOasTopSQLListResponse extends AcsResponse {
 
 		private Double avgDiskReads;
 
-		private Double retryCount;
+		private Long retryCount;
 
 		private Double avgMemstoreReadRows;
 
@@ -207,7 +207,7 @@ public class DescribeOasTopSQLListResponse extends AcsResponse {
 
 		private Double sumDbTime;
 
-		private String obDbId;
+		private Long obDbId;
 
 		private List<SqlListItem> sqlList;
 
@@ -229,19 +229,19 @@ public class DescribeOasTopSQLListResponse extends AcsResponse {
 			this.rpcCount = rpcCount;
 		}
 
-		public Double getRemotePlans() {
+		public Long getRemotePlans() {
 			return this.remotePlans;
 		}
 
-		public void setRemotePlans(Double remotePlans) {
+		public void setRemotePlans(Long remotePlans) {
 			this.remotePlans = remotePlans;
 		}
 
-		public Double getMissPlans() {
+		public Long getMissPlans() {
 			return this.missPlans;
 		}
 
-		public void setMissPlans(Double missPlans) {
+		public void setMissPlans(Long missPlans) {
 			this.missPlans = missPlans;
 		}
 
@@ -645,11 +645,11 @@ public class DescribeOasTopSQLListResponse extends AcsResponse {
 			this.avgPartitionCount = avgPartitionCount;
 		}
 
-		public Double getFailCount() {
+		public Long getFailCount() {
 			return this.failCount;
 		}
 
-		public void setFailCount(Double failCount) {
+		public void setFailCount(Long failCount) {
 			this.failCount = failCount;
 		}
 
@@ -789,11 +789,11 @@ public class DescribeOasTopSQLListResponse extends AcsResponse {
 			this.avgDiskReads = avgDiskReads;
 		}
 
-		public Double getRetryCount() {
+		public Long getRetryCount() {
 			return this.retryCount;
 		}
 
-		public void setRetryCount(Double retryCount) {
+		public void setRetryCount(Long retryCount) {
 			this.retryCount = retryCount;
 		}
 
@@ -853,11 +853,11 @@ public class DescribeOasTopSQLListResponse extends AcsResponse {
 			this.sumDbTime = sumDbTime;
 		}
 
-		public String getObDbId() {
+		public Long getObDbId() {
 			return this.obDbId;
 		}
 
-		public void setObDbId(String obDbId) {
+		public void setObDbId(Long obDbId) {
 			this.obDbId = obDbId;
 		}
 
@@ -883,9 +883,9 @@ public class DescribeOasTopSQLListResponse extends AcsResponse {
 
 			private Double rpcCount;
 
-			private Double remotePlans;
+			private Long remotePlans;
 
-			private Double missPlans;
+			private Long missPlans;
 
 			private Double maxElapsedTime;
 
@@ -987,7 +987,7 @@ public class DescribeOasTopSQLListResponse extends AcsResponse {
 
 			private Double avgPartitionCount;
 
-			private Double failCount;
+			private Long failCount;
 
 			private Double avgWaitTime;
 
@@ -1023,7 +1023,7 @@ public class DescribeOasTopSQLListResponse extends AcsResponse {
 
 			private Double avgDiskReads;
 
-			private Double retryCount;
+			private Long retryCount;
 
 			private Double avgMemstoreReadRows;
 
@@ -1051,19 +1051,19 @@ public class DescribeOasTopSQLListResponse extends AcsResponse {
 				this.rpcCount = rpcCount;
 			}
 
-			public Double getRemotePlans() {
+			public Long getRemotePlans() {
 				return this.remotePlans;
 			}
 
-			public void setRemotePlans(Double remotePlans) {
+			public void setRemotePlans(Long remotePlans) {
 				this.remotePlans = remotePlans;
 			}
 
-			public Double getMissPlans() {
+			public Long getMissPlans() {
 				return this.missPlans;
 			}
 
-			public void setMissPlans(Double missPlans) {
+			public void setMissPlans(Long missPlans) {
 				this.missPlans = missPlans;
 			}
 
@@ -1467,11 +1467,11 @@ public class DescribeOasTopSQLListResponse extends AcsResponse {
 				this.avgPartitionCount = avgPartitionCount;
 			}
 
-			public Double getFailCount() {
+			public Long getFailCount() {
 				return this.failCount;
 			}
 
-			public void setFailCount(Double failCount) {
+			public void setFailCount(Long failCount) {
 				this.failCount = failCount;
 			}
 
@@ -1611,11 +1611,11 @@ public class DescribeOasTopSQLListResponse extends AcsResponse {
 				this.avgDiskReads = avgDiskReads;
 			}
 
-			public Double getRetryCount() {
+			public Long getRetryCount() {
 				return this.retryCount;
 			}
 
-			public void setRetryCount(Double retryCount) {
+			public void setRetryCount(Long retryCount) {
 				this.retryCount = retryCount;
 			}
 

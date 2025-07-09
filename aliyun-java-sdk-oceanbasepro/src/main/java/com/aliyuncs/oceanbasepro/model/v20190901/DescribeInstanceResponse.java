@@ -129,6 +129,8 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 		private Boolean allowCreateProxySqlFirewallRule;
 
+		private Integer iops;
+
 		private List<String> availableZones;
 
 		private List<String> zones;
@@ -467,6 +469,14 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 		public void setAllowCreateProxySqlFirewallRule(Boolean allowCreateProxySqlFirewallRule) {
 			this.allowCreateProxySqlFirewallRule = allowCreateProxySqlFirewallRule;
+		}
+
+		public Integer getIops() {
+			return this.iops;
+		}
+
+		public void setIops(Integer iops) {
+			this.iops = iops;
 		}
 
 		public List<String> getAvailableZones() {

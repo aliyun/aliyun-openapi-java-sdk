@@ -27,6 +27,8 @@ public class DescribeSqlAuditStatResponse extends AcsResponse {
 
 	private String requestId;
 
+	private Long totalCount;
+
 	private List<DataItem> data;
 
 	public String getRequestId() {
@@ -35,6 +37,14 @@ public class DescribeSqlAuditStatResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Long getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Long totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<DataItem> getData() {

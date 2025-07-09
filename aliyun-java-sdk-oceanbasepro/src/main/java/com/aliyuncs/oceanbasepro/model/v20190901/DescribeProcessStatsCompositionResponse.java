@@ -139,7 +139,7 @@ public class DescribeProcessStatsCompositionResponse extends AcsResponse {
 
 			private String planId;
 
-			private String dynamicSql;
+			private Boolean dynamicSql;
 
 			private String serverSn;
 
@@ -265,11 +265,11 @@ public class DescribeProcessStatsCompositionResponse extends AcsResponse {
 				this.planId = planId;
 			}
 
-			public String getDynamicSql() {
+			public Boolean getDynamicSql() {
 				return this.dynamicSql;
 			}
 
-			public void setDynamicSql(String dynamicSql) {
+			public void setDynamicSql(Boolean dynamicSql) {
 				this.dynamicSql = dynamicSql;
 			}
 
@@ -321,7 +321,7 @@ public class DescribeProcessStatsCompositionResponse extends AcsResponse {
 
 				private String planId;
 
-				private String dynamicSql;
+				private Boolean dynamicSql;
 
 				private List<ProcessSqlListItem> processSqlList;
 
@@ -445,11 +445,11 @@ public class DescribeProcessStatsCompositionResponse extends AcsResponse {
 					this.planId = planId;
 				}
 
-				public String getDynamicSql() {
+				public Boolean getDynamicSql() {
 					return this.dynamicSql;
 				}
 
-				public void setDynamicSql(String dynamicSql) {
+				public void setDynamicSql(Boolean dynamicSql) {
 					this.dynamicSql = dynamicSql;
 				}
 
@@ -493,7 +493,7 @@ public class DescribeProcessStatsCompositionResponse extends AcsResponse {
 
 					private String planId;
 
-					private String dynamicSql;
+					private Boolean dynamicSql;
 
 					public String getSqlText() {
 						return this.sqlText;
@@ -615,11 +615,11 @@ public class DescribeProcessStatsCompositionResponse extends AcsResponse {
 						this.planId = planId;
 					}
 
-					public String getDynamicSql() {
+					public Boolean getDynamicSql() {
 						return this.dynamicSql;
 					}
 
-					public void setDynamicSql(String dynamicSql) {
+					public void setDynamicSql(Boolean dynamicSql) {
 						this.dynamicSql = dynamicSql;
 					}
 				}

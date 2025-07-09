@@ -51,37 +51,37 @@ public class DescribeOasSQLHistoryListResponse extends AcsResponse {
 
 		private String dbName;
 
-		private Long avgAffectedRows;
+		private Double avgAffectedRows;
 
-		private Long avgBlockCacheHit;
+		private Double avgBlockCacheHit;
 
-		private Long avgBlockIndexCacheHit;
+		private Double avgBlockIndexCacheHit;
 
-		private Long avgBloomFilterCacheHit;
+		private Double avgBloomFilterCacheHit;
 
 		private Long executions;
 
 		private Long failCount;
 
-		private Long avgRpcCount;
+		private Double avgRpcCount;
 
 		private Long remotePlans;
 
 		private Long missPlans;
 
-		private Long avgReturnRows;
+		private Double avgReturnRows;
 
-		private Long avgLogicalReads;
+		private Double avgLogicalReads;
 
 		private Long retryCount;
 
-		private Long avgRowCacheHit;
+		private Double avgRowCacheHit;
 
-		private Long avgDiskReads;
+		private Double avgDiskReads;
 
-		private Long avgMemstoreReadRows;
+		private Double avgMemstoreReadRows;
 
-		private Long avgSsstoreReadRows;
+		private Double avgSsstoreReadRows;
 
 		private Double avgApplicationWaitTime;
 
@@ -123,19 +123,19 @@ public class DescribeOasSQLHistoryListResponse extends AcsResponse {
 
 		private Double failPercentage;
 
-		private Double retCode4012Count;
+		private Long retCode4012Count;
 
-		private Double retCode4013Count;
+		private Long retCode4013Count;
 
-		private Double retCode5001Count;
+		private Long retCode5001Count;
 
-		private Double retCode5024Count;
+		private Long retCode5024Count;
 
-		private Double retCode5167Count;
+		private Long retCode5167Count;
 
-		private Double retCode5217Count;
+		private Long retCode5217Count;
 
-		private Double retCode6002Count;
+		private Long retCode6002Count;
 
 		private Double avgWaitTime;
 
@@ -203,35 +203,35 @@ public class DescribeOasSQLHistoryListResponse extends AcsResponse {
 			this.dbName = dbName;
 		}
 
-		public Long getAvgAffectedRows() {
+		public Double getAvgAffectedRows() {
 			return this.avgAffectedRows;
 		}
 
-		public void setAvgAffectedRows(Long avgAffectedRows) {
+		public void setAvgAffectedRows(Double avgAffectedRows) {
 			this.avgAffectedRows = avgAffectedRows;
 		}
 
-		public Long getAvgBlockCacheHit() {
+		public Double getAvgBlockCacheHit() {
 			return this.avgBlockCacheHit;
 		}
 
-		public void setAvgBlockCacheHit(Long avgBlockCacheHit) {
+		public void setAvgBlockCacheHit(Double avgBlockCacheHit) {
 			this.avgBlockCacheHit = avgBlockCacheHit;
 		}
 
-		public Long getAvgBlockIndexCacheHit() {
+		public Double getAvgBlockIndexCacheHit() {
 			return this.avgBlockIndexCacheHit;
 		}
 
-		public void setAvgBlockIndexCacheHit(Long avgBlockIndexCacheHit) {
+		public void setAvgBlockIndexCacheHit(Double avgBlockIndexCacheHit) {
 			this.avgBlockIndexCacheHit = avgBlockIndexCacheHit;
 		}
 
-		public Long getAvgBloomFilterCacheHit() {
+		public Double getAvgBloomFilterCacheHit() {
 			return this.avgBloomFilterCacheHit;
 		}
 
-		public void setAvgBloomFilterCacheHit(Long avgBloomFilterCacheHit) {
+		public void setAvgBloomFilterCacheHit(Double avgBloomFilterCacheHit) {
 			this.avgBloomFilterCacheHit = avgBloomFilterCacheHit;
 		}
 
@@ -251,11 +251,11 @@ public class DescribeOasSQLHistoryListResponse extends AcsResponse {
 			this.failCount = failCount;
 		}
 
-		public Long getAvgRpcCount() {
+		public Double getAvgRpcCount() {
 			return this.avgRpcCount;
 		}
 
-		public void setAvgRpcCount(Long avgRpcCount) {
+		public void setAvgRpcCount(Double avgRpcCount) {
 			this.avgRpcCount = avgRpcCount;
 		}
 
@@ -275,19 +275,19 @@ public class DescribeOasSQLHistoryListResponse extends AcsResponse {
 			this.missPlans = missPlans;
 		}
 
-		public Long getAvgReturnRows() {
+		public Double getAvgReturnRows() {
 			return this.avgReturnRows;
 		}
 
-		public void setAvgReturnRows(Long avgReturnRows) {
+		public void setAvgReturnRows(Double avgReturnRows) {
 			this.avgReturnRows = avgReturnRows;
 		}
 
-		public Long getAvgLogicalReads() {
+		public Double getAvgLogicalReads() {
 			return this.avgLogicalReads;
 		}
 
-		public void setAvgLogicalReads(Long avgLogicalReads) {
+		public void setAvgLogicalReads(Double avgLogicalReads) {
 			this.avgLogicalReads = avgLogicalReads;
 		}
 
@@ -299,35 +299,35 @@ public class DescribeOasSQLHistoryListResponse extends AcsResponse {
 			this.retryCount = retryCount;
 		}
 
-		public Long getAvgRowCacheHit() {
+		public Double getAvgRowCacheHit() {
 			return this.avgRowCacheHit;
 		}
 
-		public void setAvgRowCacheHit(Long avgRowCacheHit) {
+		public void setAvgRowCacheHit(Double avgRowCacheHit) {
 			this.avgRowCacheHit = avgRowCacheHit;
 		}
 
-		public Long getAvgDiskReads() {
+		public Double getAvgDiskReads() {
 			return this.avgDiskReads;
 		}
 
-		public void setAvgDiskReads(Long avgDiskReads) {
+		public void setAvgDiskReads(Double avgDiskReads) {
 			this.avgDiskReads = avgDiskReads;
 		}
 
-		public Long getAvgMemstoreReadRows() {
+		public Double getAvgMemstoreReadRows() {
 			return this.avgMemstoreReadRows;
 		}
 
-		public void setAvgMemstoreReadRows(Long avgMemstoreReadRows) {
+		public void setAvgMemstoreReadRows(Double avgMemstoreReadRows) {
 			this.avgMemstoreReadRows = avgMemstoreReadRows;
 		}
 
-		public Long getAvgSsstoreReadRows() {
+		public Double getAvgSsstoreReadRows() {
 			return this.avgSsstoreReadRows;
 		}
 
-		public void setAvgSsstoreReadRows(Long avgSsstoreReadRows) {
+		public void setAvgSsstoreReadRows(Double avgSsstoreReadRows) {
 			this.avgSsstoreReadRows = avgSsstoreReadRows;
 		}
 
@@ -491,59 +491,59 @@ public class DescribeOasSQLHistoryListResponse extends AcsResponse {
 			this.failPercentage = failPercentage;
 		}
 
-		public Double getRetCode4012Count() {
+		public Long getRetCode4012Count() {
 			return this.retCode4012Count;
 		}
 
-		public void setRetCode4012Count(Double retCode4012Count) {
+		public void setRetCode4012Count(Long retCode4012Count) {
 			this.retCode4012Count = retCode4012Count;
 		}
 
-		public Double getRetCode4013Count() {
+		public Long getRetCode4013Count() {
 			return this.retCode4013Count;
 		}
 
-		public void setRetCode4013Count(Double retCode4013Count) {
+		public void setRetCode4013Count(Long retCode4013Count) {
 			this.retCode4013Count = retCode4013Count;
 		}
 
-		public Double getRetCode5001Count() {
+		public Long getRetCode5001Count() {
 			return this.retCode5001Count;
 		}
 
-		public void setRetCode5001Count(Double retCode5001Count) {
+		public void setRetCode5001Count(Long retCode5001Count) {
 			this.retCode5001Count = retCode5001Count;
 		}
 
-		public Double getRetCode5024Count() {
+		public Long getRetCode5024Count() {
 			return this.retCode5024Count;
 		}
 
-		public void setRetCode5024Count(Double retCode5024Count) {
+		public void setRetCode5024Count(Long retCode5024Count) {
 			this.retCode5024Count = retCode5024Count;
 		}
 
-		public Double getRetCode5167Count() {
+		public Long getRetCode5167Count() {
 			return this.retCode5167Count;
 		}
 
-		public void setRetCode5167Count(Double retCode5167Count) {
+		public void setRetCode5167Count(Long retCode5167Count) {
 			this.retCode5167Count = retCode5167Count;
 		}
 
-		public Double getRetCode5217Count() {
+		public Long getRetCode5217Count() {
 			return this.retCode5217Count;
 		}
 
-		public void setRetCode5217Count(Double retCode5217Count) {
+		public void setRetCode5217Count(Long retCode5217Count) {
 			this.retCode5217Count = retCode5217Count;
 		}
 
-		public Double getRetCode6002Count() {
+		public Long getRetCode6002Count() {
 			return this.retCode6002Count;
 		}
 
-		public void setRetCode6002Count(Double retCode6002Count) {
+		public void setRetCode6002Count(Long retCode6002Count) {
 			this.retCode6002Count = retCode6002Count;
 		}
 

@@ -119,6 +119,8 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private Boolean migratable;
 
+		private Integer iops;
+
 		private List<String> availableZones;
 
 		private Resource resource;
@@ -373,6 +375,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		public void setMigratable(Boolean migratable) {
 			this.migratable = migratable;
+		}
+
+		public Integer getIops() {
+			return this.iops;
+		}
+
+		public void setIops(Integer iops) {
+			this.iops = iops;
 		}
 
 		public List<String> getAvailableZones() {

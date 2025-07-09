@@ -35,6 +35,8 @@ public class ModifyTenantResourceRequest extends RpcAcsRequest<ModifyTenantResou
 
 	private String tenantId;
 
+	private String iops;
+
 	private String readOnlyZoneList;
 	public ModifyTenantResourceRequest() {
 		super("OceanBasePro", "2019-09-01", "ModifyTenantResource", "oceanbase");
@@ -97,6 +99,17 @@ public class ModifyTenantResourceRequest extends RpcAcsRequest<ModifyTenantResou
 		this.tenantId = tenantId;
 		if(tenantId != null){
 			putBodyParameter("TenantId", tenantId);
+		}
+	}
+
+	public String getIops() {
+		return this.iops;
+	}
+
+	public void setIops(String iops) {
+		this.iops = iops;
+		if(iops != null){
+			putBodyParameter("Iops", iops);
 		}
 	}
 

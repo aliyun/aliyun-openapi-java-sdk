@@ -47,13 +47,13 @@ public class DescribeOasSlowSQLListResponse extends AcsResponse {
 
 	public static class DataItem {
 
-		private Double executions;
+		private Long executions;
 
 		private Double rpcCount;
 
-		private Double remotePlans;
+		private Long remotePlans;
 
-		private Double missPlans;
+		private Long missPlans;
 
 		private Double maxElapsedTime;
 
@@ -73,15 +73,15 @@ public class DescribeOasSlowSQLListResponse extends AcsResponse {
 
 		private Long retCode4013Count;
 
-		private Double retCode5001Count;
+		private Long retCode5001Count;
 
-		private Double retCode5024Count;
+		private Long retCode5024Count;
 
-		private Double retCode5167Count;
+		private Long retCode5167Count;
 
-		private Double retCode5217Count;
+		private Long retCode5217Count;
 
-		private Double retCode6002Count;
+		private Long retCode6002Count;
 
 		private Double failPercentage;
 
@@ -153,7 +153,7 @@ public class DescribeOasSlowSQLListResponse extends AcsResponse {
 
 		private Double avgPartitionCount;
 
-		private Double failCount;
+		private Long failCount;
 
 		private Double avgWaitTime;
 
@@ -189,7 +189,7 @@ public class DescribeOasSlowSQLListResponse extends AcsResponse {
 
 		private Double avgDiskReads;
 
-		private Double retryCount;
+		private Long retryCount;
 
 		private Double avgMemstoreReadRows;
 
@@ -205,11 +205,11 @@ public class DescribeOasSlowSQLListResponse extends AcsResponse {
 
 		private List<SqlListItem> sqlList;
 
-		public Double getExecutions() {
+		public Long getExecutions() {
 			return this.executions;
 		}
 
-		public void setExecutions(Double executions) {
+		public void setExecutions(Long executions) {
 			this.executions = executions;
 		}
 
@@ -221,19 +221,19 @@ public class DescribeOasSlowSQLListResponse extends AcsResponse {
 			this.rpcCount = rpcCount;
 		}
 
-		public Double getRemotePlans() {
+		public Long getRemotePlans() {
 			return this.remotePlans;
 		}
 
-		public void setRemotePlans(Double remotePlans) {
+		public void setRemotePlans(Long remotePlans) {
 			this.remotePlans = remotePlans;
 		}
 
-		public Double getMissPlans() {
+		public Long getMissPlans() {
 			return this.missPlans;
 		}
 
-		public void setMissPlans(Double missPlans) {
+		public void setMissPlans(Long missPlans) {
 			this.missPlans = missPlans;
 		}
 
@@ -309,43 +309,43 @@ public class DescribeOasSlowSQLListResponse extends AcsResponse {
 			this.retCode4013Count = retCode4013Count;
 		}
 
-		public Double getRetCode5001Count() {
+		public Long getRetCode5001Count() {
 			return this.retCode5001Count;
 		}
 
-		public void setRetCode5001Count(Double retCode5001Count) {
+		public void setRetCode5001Count(Long retCode5001Count) {
 			this.retCode5001Count = retCode5001Count;
 		}
 
-		public Double getRetCode5024Count() {
+		public Long getRetCode5024Count() {
 			return this.retCode5024Count;
 		}
 
-		public void setRetCode5024Count(Double retCode5024Count) {
+		public void setRetCode5024Count(Long retCode5024Count) {
 			this.retCode5024Count = retCode5024Count;
 		}
 
-		public Double getRetCode5167Count() {
+		public Long getRetCode5167Count() {
 			return this.retCode5167Count;
 		}
 
-		public void setRetCode5167Count(Double retCode5167Count) {
+		public void setRetCode5167Count(Long retCode5167Count) {
 			this.retCode5167Count = retCode5167Count;
 		}
 
-		public Double getRetCode5217Count() {
+		public Long getRetCode5217Count() {
 			return this.retCode5217Count;
 		}
 
-		public void setRetCode5217Count(Double retCode5217Count) {
+		public void setRetCode5217Count(Long retCode5217Count) {
 			this.retCode5217Count = retCode5217Count;
 		}
 
-		public Double getRetCode6002Count() {
+		public Long getRetCode6002Count() {
 			return this.retCode6002Count;
 		}
 
-		public void setRetCode6002Count(Double retCode6002Count) {
+		public void setRetCode6002Count(Long retCode6002Count) {
 			this.retCode6002Count = retCode6002Count;
 		}
 
@@ -629,11 +629,11 @@ public class DescribeOasSlowSQLListResponse extends AcsResponse {
 			this.avgPartitionCount = avgPartitionCount;
 		}
 
-		public Double getFailCount() {
+		public Long getFailCount() {
 			return this.failCount;
 		}
 
-		public void setFailCount(Double failCount) {
+		public void setFailCount(Long failCount) {
 			this.failCount = failCount;
 		}
 
@@ -773,11 +773,11 @@ public class DescribeOasSlowSQLListResponse extends AcsResponse {
 			this.avgDiskReads = avgDiskReads;
 		}
 
-		public Double getRetryCount() {
+		public Long getRetryCount() {
 			return this.retryCount;
 		}
 
-		public void setRetryCount(Double retryCount) {
+		public void setRetryCount(Long retryCount) {
 			this.retryCount = retryCount;
 		}
 
@@ -839,13 +839,13 @@ public class DescribeOasSlowSQLListResponse extends AcsResponse {
 
 		public static class SqlListItem {
 
-			private Double executions;
+			private Long executions;
 
 			private Double rpcCount;
 
-			private Double remotePlans;
+			private Long remotePlans;
 
-			private Double missPlans;
+			private Long missPlans;
 
 			private Double maxElapsedTime;
 
@@ -945,7 +945,7 @@ public class DescribeOasSlowSQLListResponse extends AcsResponse {
 
 			private Double avgPartitionCount;
 
-			private Double failCount;
+			private Long failCount;
 
 			private Double avgWaitTime;
 
@@ -981,7 +981,7 @@ public class DescribeOasSlowSQLListResponse extends AcsResponse {
 
 			private Double avgDiskReads;
 
-			private Double retryCount;
+			private Long retryCount;
 
 			private Double avgMemstoreReadRows;
 
@@ -993,11 +993,11 @@ public class DescribeOasSlowSQLListResponse extends AcsResponse {
 
 			private Double sumDbTime;
 
-			public Double getExecutions() {
+			public Long getExecutions() {
 				return this.executions;
 			}
 
-			public void setExecutions(Double executions) {
+			public void setExecutions(Long executions) {
 				this.executions = executions;
 			}
 
@@ -1009,19 +1009,19 @@ public class DescribeOasSlowSQLListResponse extends AcsResponse {
 				this.rpcCount = rpcCount;
 			}
 
-			public Double getRemotePlans() {
+			public Long getRemotePlans() {
 				return this.remotePlans;
 			}
 
-			public void setRemotePlans(Double remotePlans) {
+			public void setRemotePlans(Long remotePlans) {
 				this.remotePlans = remotePlans;
 			}
 
-			public Double getMissPlans() {
+			public Long getMissPlans() {
 				return this.missPlans;
 			}
 
-			public void setMissPlans(Double missPlans) {
+			public void setMissPlans(Long missPlans) {
 				this.missPlans = missPlans;
 			}
 
@@ -1417,11 +1417,11 @@ public class DescribeOasSlowSQLListResponse extends AcsResponse {
 				this.avgPartitionCount = avgPartitionCount;
 			}
 
-			public Double getFailCount() {
+			public Long getFailCount() {
 				return this.failCount;
 			}
 
-			public void setFailCount(Double failCount) {
+			public void setFailCount(Long failCount) {
 				this.failCount = failCount;
 			}
 
@@ -1561,11 +1561,11 @@ public class DescribeOasSlowSQLListResponse extends AcsResponse {
 				this.avgDiskReads = avgDiskReads;
 			}
 
-			public Double getRetryCount() {
+			public Long getRetryCount() {
 				return this.retryCount;
 			}
 
-			public void setRetryCount(Double retryCount) {
+			public void setRetryCount(Long retryCount) {
 				this.retryCount = retryCount;
 			}
 

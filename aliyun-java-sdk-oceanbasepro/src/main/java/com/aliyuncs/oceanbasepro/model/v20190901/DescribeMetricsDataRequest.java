@@ -37,6 +37,8 @@ public class DescribeMetricsDataRequest extends RpcAcsRequest<DescribeMetricsDat
 
 	private String replicaType;
 
+	private String metricScope;
+
 	private String endTime;
 
 	private String labels;
@@ -116,6 +118,17 @@ public class DescribeMetricsDataRequest extends RpcAcsRequest<DescribeMetricsDat
 		this.replicaType = replicaType;
 		if(replicaType != null){
 			putBodyParameter("ReplicaType", replicaType);
+		}
+	}
+
+	public String getMetricScope() {
+		return this.metricScope;
+	}
+
+	public void setMetricScope(String metricScope) {
+		this.metricScope = metricScope;
+		if(metricScope != null){
+			putBodyParameter("MetricScope", metricScope);
 		}
 	}
 

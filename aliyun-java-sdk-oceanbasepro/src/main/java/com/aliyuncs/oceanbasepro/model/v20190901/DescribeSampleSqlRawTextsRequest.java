@@ -34,7 +34,7 @@ public class DescribeSampleSqlRawTextsRequest extends RpcAcsRequest<DescribeSamp
 
 	private String tenantId;
 
-	private String limit;
+	private Integer limit;
 
 	private String sqlId;
 
@@ -97,14 +97,14 @@ public class DescribeSampleSqlRawTextsRequest extends RpcAcsRequest<DescribeSamp
 		}
 	}
 
-	public String getLimit() {
+	public Integer getLimit() {
 		return this.limit;
 	}
 
-	public void setLimit(String limit) {
+	public void setLimit(Integer limit) {
 		this.limit = limit;
 		if(limit != null){
-			putBodyParameter("Limit", limit);
+			putBodyParameter("Limit", limit.toString());
 		}
 	}
 

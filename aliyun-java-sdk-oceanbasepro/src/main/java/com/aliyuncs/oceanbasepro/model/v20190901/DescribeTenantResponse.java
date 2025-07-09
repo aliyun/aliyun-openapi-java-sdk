@@ -115,6 +115,8 @@ public class DescribeTenantResponse extends AcsResponse {
 
 		private String parameterTemplate;
 
+		private Integer iops;
+
 		private List<TenantConnectionsItem> tenantConnections;
 
 		private List<TenantZonesItem> tenantZones;
@@ -395,6 +397,14 @@ public class DescribeTenantResponse extends AcsResponse {
 
 		public void setParameterTemplate(String parameterTemplate) {
 			this.parameterTemplate = parameterTemplate;
+		}
+
+		public Integer getIops() {
+			return this.iops;
+		}
+
+		public void setIops(Integer iops) {
+			this.iops = iops;
 		}
 
 		public List<TenantConnectionsItem> getTenantConnections() {

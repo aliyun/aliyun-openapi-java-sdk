@@ -1,3 +1,6 @@
+2025-07-09 Version: 1.1.28
+- Generated 2019-09-01 for `OceanBasePro`.
+
 2025-06-11 Version: 1.1.27
 - Generated 2019-09-01 for `OceanBasePro`.
 

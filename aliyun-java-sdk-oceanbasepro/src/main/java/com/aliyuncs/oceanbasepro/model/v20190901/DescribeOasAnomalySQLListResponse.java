@@ -71,7 +71,7 @@ public class DescribeOasAnomalySQLListResponse extends AcsResponse {
 
 		private Double executions;
 
-		private Double lastExecutedTime;
+		private String lastExecutedTime;
 
 		private String riskLevel;
 
@@ -157,11 +157,11 @@ public class DescribeOasAnomalySQLListResponse extends AcsResponse {
 			this.executions = executions;
 		}
 
-		public Double getLastExecutedTime() {
+		public String getLastExecutedTime() {
 			return this.lastExecutedTime;
 		}
 
-		public void setLastExecutedTime(Double lastExecutedTime) {
+		public void setLastExecutedTime(String lastExecutedTime) {
 			this.lastExecutedTime = lastExecutedTime;
 		}
 

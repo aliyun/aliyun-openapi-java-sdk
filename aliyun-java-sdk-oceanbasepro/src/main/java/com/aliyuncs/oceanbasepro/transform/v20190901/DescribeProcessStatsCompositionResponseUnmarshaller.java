@@ -98,7 +98,7 @@ public class DescribeProcessStatsCompositionResponseUnmarshaller {
 			allProcessListItem.setSqlId(_ctx.stringValue("DescribeProcessStatsCompositionResponse.Data.AllProcessList["+ i +"].SqlId"));
 			allProcessListItem.setTraceId(_ctx.stringValue("DescribeProcessStatsCompositionResponse.Data.AllProcessList["+ i +"].TraceId"));
 			allProcessListItem.setPlanId(_ctx.stringValue("DescribeProcessStatsCompositionResponse.Data.AllProcessList["+ i +"].PlanId"));
-			allProcessListItem.setDynamicSql(_ctx.stringValue("DescribeProcessStatsCompositionResponse.Data.AllProcessList["+ i +"].DynamicSql"));
+			allProcessListItem.setDynamicSql(_ctx.booleanValue("DescribeProcessStatsCompositionResponse.Data.AllProcessList["+ i +"].DynamicSql"));
 			allProcessListItem.setServerSn(_ctx.stringValue("DescribeProcessStatsCompositionResponse.Data.AllProcessList["+ i +"].ServerSn"));
 
 			List<ProcessSqlListsItem> processSqlLists = new ArrayList<ProcessSqlListsItem>();
@@ -119,7 +119,7 @@ public class DescribeProcessStatsCompositionResponseUnmarshaller {
 				processSqlListsItem.setSqlId(_ctx.stringValue("DescribeProcessStatsCompositionResponse.Data.AllProcessList["+ i +"].ProcessSqlLists["+ j +"].SqlId"));
 				processSqlListsItem.setTraceId(_ctx.stringValue("DescribeProcessStatsCompositionResponse.Data.AllProcessList["+ i +"].ProcessSqlLists["+ j +"].TraceId"));
 				processSqlListsItem.setPlanId(_ctx.stringValue("DescribeProcessStatsCompositionResponse.Data.AllProcessList["+ i +"].ProcessSqlLists["+ j +"].PlanId"));
-				processSqlListsItem.setDynamicSql(_ctx.stringValue("DescribeProcessStatsCompositionResponse.Data.AllProcessList["+ i +"].ProcessSqlLists["+ j +"].DynamicSql"));
+				processSqlListsItem.setDynamicSql(_ctx.booleanValue("DescribeProcessStatsCompositionResponse.Data.AllProcessList["+ i +"].ProcessSqlLists["+ j +"].DynamicSql"));
 
 				List<ProcessSqlListItem> processSqlList = new ArrayList<ProcessSqlListItem>();
 				for (int k = 0; k < _ctx.lengthValue("DescribeProcessStatsCompositionResponse.Data.AllProcessList["+ i +"].ProcessSqlLists["+ j +"].ProcessSqlList.Length"); k++) {
@@ -139,7 +139,7 @@ public class DescribeProcessStatsCompositionResponseUnmarshaller {
 					processSqlListItem.setSqlId(_ctx.stringValue("DescribeProcessStatsCompositionResponse.Data.AllProcessList["+ i +"].ProcessSqlLists["+ j +"].ProcessSqlList["+ k +"].SqlId"));
 					processSqlListItem.setTraceId(_ctx.stringValue("DescribeProcessStatsCompositionResponse.Data.AllProcessList["+ i +"].ProcessSqlLists["+ j +"].ProcessSqlList["+ k +"].TraceId"));
 					processSqlListItem.setPlanId(_ctx.stringValue("DescribeProcessStatsCompositionResponse.Data.AllProcessList["+ i +"].ProcessSqlLists["+ j +"].ProcessSqlList["+ k +"].PlanId"));
-					processSqlListItem.setDynamicSql(_ctx.stringValue("DescribeProcessStatsCompositionResponse.Data.AllProcessList["+ i +"].ProcessSqlLists["+ j +"].ProcessSqlList["+ k +"].DynamicSql"));
+					processSqlListItem.setDynamicSql(_ctx.booleanValue("DescribeProcessStatsCompositionResponse.Data.AllProcessList["+ i +"].ProcessSqlLists["+ j +"].ProcessSqlList["+ k +"].DynamicSql"));
 
 					processSqlList.add(processSqlListItem);
 				}

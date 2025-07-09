@@ -27,6 +27,7 @@ public class DescribeSqlAuditStatResponseUnmarshaller {
 	public static DescribeSqlAuditStatResponse unmarshall(DescribeSqlAuditStatResponse describeSqlAuditStatResponse, UnmarshallerContext _ctx) {
 		
 		describeSqlAuditStatResponse.setRequestId(_ctx.stringValue("DescribeSqlAuditStatResponse.RequestId"));
+		describeSqlAuditStatResponse.setTotalCount(_ctx.longValue("DescribeSqlAuditStatResponse.TotalCount"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSqlAuditStatResponse.Data.Length"); i++) {

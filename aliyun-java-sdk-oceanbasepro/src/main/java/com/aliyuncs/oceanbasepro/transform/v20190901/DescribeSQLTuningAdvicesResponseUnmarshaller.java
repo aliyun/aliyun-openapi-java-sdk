@@ -78,7 +78,7 @@ public class DescribeSQLTuningAdvicesResponseUnmarshaller {
 			for (int j = 0; j < _ctx.lengthValue("DescribeSQLTuningAdvicesResponse.Data["+ i +"].Columns.Length"); j++) {
 				ColumnsItem columnsItem = new ColumnsItem();
 				columnsItem.setColumnName(_ctx.stringValue("DescribeSQLTuningAdvicesResponse.Data["+ i +"].Columns["+ j +"].ColumnName"));
-				columnsItem.setNdv(_ctx.floatValue("DescribeSQLTuningAdvicesResponse.Data["+ i +"].Columns["+ j +"].Ndv"));
+				columnsItem.setNdv(_ctx.doubleValue("DescribeSQLTuningAdvicesResponse.Data["+ i +"].Columns["+ j +"].Ndv"));
 				columnsItem.setMinValue(_ctx.stringValue("DescribeSQLTuningAdvicesResponse.Data["+ i +"].Columns["+ j +"].MinValue"));
 				columnsItem.setMaxValue(_ctx.stringValue("DescribeSQLTuningAdvicesResponse.Data["+ i +"].Columns["+ j +"].MaxValue"));
 

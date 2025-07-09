@@ -52,6 +52,7 @@ public class DescribeTenantsResponseUnmarshaller {
 			data.setCollation(_ctx.stringValue("DescribeTenantsResponse.Tenants["+ i +"].Collation"));
 			data.setEnableReadOnlyReplica(_ctx.booleanValue("DescribeTenantsResponse.Tenants["+ i +"].EnableReadOnlyReplica"));
 			data.setParameterTemplate(_ctx.stringValue("DescribeTenantsResponse.Tenants["+ i +"].ParameterTemplate"));
+			data.setIops(_ctx.integerValue("DescribeTenantsResponse.Tenants["+ i +"].Iops"));
 
 			tenants.add(data);
 		}

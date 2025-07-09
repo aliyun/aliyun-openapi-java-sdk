@@ -84,6 +84,7 @@ public class DescribeInstanceResponseUnmarshaller {
 		instance.setSpecType(_ctx.stringValue("DescribeInstanceResponse.Instance.SpecType"));
 		instance.setAllowModifyInternetAddressConnectionLimit(_ctx.booleanValue("DescribeInstanceResponse.Instance.AllowModifyInternetAddressConnectionLimit"));
 		instance.setAllowCreateProxySqlFirewallRule(_ctx.booleanValue("DescribeInstanceResponse.Instance.AllowCreateProxySqlFirewallRule"));
+		instance.setIops(_ctx.integerValue("DescribeInstanceResponse.Instance.Iops"));
 
 		List<String> availableZones = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceResponse.Instance.AvailableZones.Length"); i++) {

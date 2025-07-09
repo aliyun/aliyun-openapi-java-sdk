@@ -40,7 +40,7 @@ public class DescribeOasAnomalySQLListResponseUnmarshaller {
 			dataItem.setDbName(_ctx.stringValue("DescribeOasAnomalySQLListResponse.Data["+ i +"].DbName"));
 			dataItem.setDiagnosis(_ctx.stringValue("DescribeOasAnomalySQLListResponse.Data["+ i +"].Diagnosis"));
 			dataItem.setExecutions(_ctx.doubleValue("DescribeOasAnomalySQLListResponse.Data["+ i +"].Executions"));
-			dataItem.setLastExecutedTime(_ctx.doubleValue("DescribeOasAnomalySQLListResponse.Data["+ i +"].LastExecutedTime"));
+			dataItem.setLastExecutedTime(_ctx.stringValue("DescribeOasAnomalySQLListResponse.Data["+ i +"].LastExecutedTime"));
 			dataItem.setRiskLevel(_ctx.stringValue("DescribeOasAnomalySQLListResponse.Data["+ i +"].RiskLevel"));
 			dataItem.setSqlId(_ctx.stringValue("DescribeOasAnomalySQLListResponse.Data["+ i +"].SqlId"));
 			dataItem.setSqlTextShort(_ctx.stringValue("DescribeOasAnomalySQLListResponse.Data["+ i +"].SqlTextShort"));
