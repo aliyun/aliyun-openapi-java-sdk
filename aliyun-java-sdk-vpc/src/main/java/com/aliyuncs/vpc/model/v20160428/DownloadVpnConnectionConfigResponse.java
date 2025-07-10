@@ -57,6 +57,8 @@ public class DownloadVpnConnectionConfigResponse extends AcsResponse {
 
 		private List<TunnelConfig> tunnelsConfig;
 
+		private List<BgpConfig> bgpConfigs;
+
 		private IkeConfig ikeConfig;
 
 		private IpsecConfig ipsecConfig;
@@ -99,6 +101,14 @@ public class DownloadVpnConnectionConfigResponse extends AcsResponse {
 
 		public void setTunnelsConfig(List<TunnelConfig> tunnelsConfig) {
 			this.tunnelsConfig = tunnelsConfig;
+		}
+
+		public List<BgpConfig> getBgpConfigs() {
+			return this.bgpConfigs;
+		}
+
+		public void setBgpConfigs(List<BgpConfig> bgpConfigs) {
+			this.bgpConfigs = bgpConfigs;
 		}
 
 		public IkeConfig getIkeConfig() {
@@ -303,6 +313,69 @@ public class DownloadVpnConnectionConfigResponse extends AcsResponse {
 				public void setIpsecLifetime(Long ipsecLifetime) {
 					this.ipsecLifetime = ipsecLifetime;
 				}
+			}
+		}
+
+		public static class BgpConfig {
+
+			private String localAsn;
+
+			private String localBgpIp;
+
+			private String peerAsn;
+
+			private String peerBgpIp;
+
+			private String tunnelCidr;
+
+			private String tunnelId;
+
+			public String getLocalAsn() {
+				return this.localAsn;
+			}
+
+			public void setLocalAsn(String localAsn) {
+				this.localAsn = localAsn;
+			}
+
+			public String getLocalBgpIp() {
+				return this.localBgpIp;
+			}
+
+			public void setLocalBgpIp(String localBgpIp) {
+				this.localBgpIp = localBgpIp;
+			}
+
+			public String getPeerAsn() {
+				return this.peerAsn;
+			}
+
+			public void setPeerAsn(String peerAsn) {
+				this.peerAsn = peerAsn;
+			}
+
+			public String getPeerBgpIp() {
+				return this.peerBgpIp;
+			}
+
+			public void setPeerBgpIp(String peerBgpIp) {
+				this.peerBgpIp = peerBgpIp;
+			}
+
+			public String getTunnelCidr() {
+				return this.tunnelCidr;
+			}
+
+			public void setTunnelCidr(String tunnelCidr) {
+				this.tunnelCidr = tunnelCidr;
+			}
+
+			public String getTunnelId() {
+				return this.tunnelId;
+			}
+
+			public void setTunnelId(String tunnelId) {
+				this.tunnelId = tunnelId;
 			}
 		}
 

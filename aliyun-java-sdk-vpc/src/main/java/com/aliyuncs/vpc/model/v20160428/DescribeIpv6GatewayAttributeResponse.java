@@ -53,6 +53,8 @@ public class DescribeIpv6GatewayAttributeResponse extends AcsResponse {
 
 	private String gatewayRouteTableId;
 
+	private Long ownerId;
+
 	private List<Tag> tags;
 
 	public String getVpcId() {
@@ -165,6 +167,14 @@ public class DescribeIpv6GatewayAttributeResponse extends AcsResponse {
 
 	public void setGatewayRouteTableId(String gatewayRouteTableId) {
 		this.gatewayRouteTableId = gatewayRouteTableId;
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
 	}
 
 	public List<Tag> getTags() {

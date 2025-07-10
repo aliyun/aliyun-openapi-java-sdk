@@ -155,6 +155,8 @@ public class DescribeEipAddressesResponse extends AcsResponse {
 
 		private String bizType;
 
+		private Long serviceID;
+
 		private List<LockReason> operationLocks;
 
 		private List<Tag> tags;
@@ -473,6 +475,14 @@ public class DescribeEipAddressesResponse extends AcsResponse {
 
 		public void setBizType(String bizType) {
 			this.bizType = bizType;
+		}
+
+		public Long getServiceID() {
+			return this.serviceID;
+		}
+
+		public void setServiceID(Long serviceID) {
+			this.serviceID = serviceID;
 		}
 
 		public List<LockReason> getOperationLocks() {

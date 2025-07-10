@@ -95,6 +95,8 @@ public class ListTrafficMirrorSessionsResponse extends AcsResponse {
 
 		private String creationTime;
 
+		private Integer trafficMirrorSourceTruncateMode;
+
 		private List<Tag> tags;
 
 		private List<String> trafficMirrorSourceIds;
@@ -209,6 +211,14 @@ public class ListTrafficMirrorSessionsResponse extends AcsResponse {
 
 		public void setCreationTime(String creationTime) {
 			this.creationTime = creationTime;
+		}
+
+		public Integer getTrafficMirrorSourceTruncateMode() {
+			return this.trafficMirrorSourceTruncateMode;
+		}
+
+		public void setTrafficMirrorSourceTruncateMode(Integer trafficMirrorSourceTruncateMode) {
+			this.trafficMirrorSourceTruncateMode = trafficMirrorSourceTruncateMode;
 		}
 
 		public List<Tag> getTags() {

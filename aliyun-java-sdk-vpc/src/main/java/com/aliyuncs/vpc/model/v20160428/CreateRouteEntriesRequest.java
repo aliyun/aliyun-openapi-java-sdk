@@ -28,6 +28,8 @@ public class CreateRouteEntriesRequest extends RpcAcsRequest<CreateRouteEntriesR
 
 	private Long resourceOwnerId;
 
+	private Boolean dryRun;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -52,6 +54,17 @@ public class CreateRouteEntriesRequest extends RpcAcsRequest<CreateRouteEntriesR
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
 		}
 	}
 
@@ -102,7 +115,6 @@ public class CreateRouteEntriesRequest extends RpcAcsRequest<CreateRouteEntriesR
 				putQueryParameter("RouteEntries." + (depth1 + 1) + ".NextHop" , routeEntriess.get(depth1).getNextHop());
 				putQueryParameter("RouteEntries." + (depth1 + 1) + ".NextHopType" , routeEntriess.get(depth1).getNextHopType());
 				putQueryParameter("RouteEntries." + (depth1 + 1) + ".Name" , routeEntriess.get(depth1).getName());
-				putQueryParameter("RouteEntries." + (depth1 + 1) + ".Describption" , routeEntriess.get(depth1).getDescribption());
 				putQueryParameter("RouteEntries." + (depth1 + 1) + ".Description" , routeEntriess.get(depth1).getDescription());
 			}
 		}	
@@ -121,8 +133,6 @@ public class CreateRouteEntriesRequest extends RpcAcsRequest<CreateRouteEntriesR
 		private String nextHopType;
 
 		private String name;
-
-		private String describption;
 
 		private String description;
 
@@ -172,14 +182,6 @@ public class CreateRouteEntriesRequest extends RpcAcsRequest<CreateRouteEntriesR
 
 		public void setName(String name) {
 			this.name = name;
-		}
-
-		public String getDescribption() {
-			return this.describption;
-		}
-
-		public void setDescribption(String describption) {
-			this.describption = describption;
 		}
 
 		public String getDescription() {

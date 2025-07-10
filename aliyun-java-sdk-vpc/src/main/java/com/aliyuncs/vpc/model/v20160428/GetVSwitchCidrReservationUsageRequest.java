@@ -27,13 +27,13 @@ public class GetVSwitchCidrReservationUsageRequest extends RpcAcsRequest<GetVSwi
 
 	private Long resourceOwnerId;
 
+	private String nextToken;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	private String nextToken;
 
 	private Long maxResults;
 
@@ -55,6 +55,17 @@ public class GetVSwitchCidrReservationUsageRequest extends RpcAcsRequest<GetVSwi
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
 		}
 	}
 
@@ -88,17 +99,6 @@ public class GetVSwitchCidrReservationUsageRequest extends RpcAcsRequest<GetVSwi
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getNextToken() {
-		return this.nextToken;
-	}
-
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
-		if(nextToken != null){
-			putQueryParameter("NextToken", nextToken);
 		}
 	}
 

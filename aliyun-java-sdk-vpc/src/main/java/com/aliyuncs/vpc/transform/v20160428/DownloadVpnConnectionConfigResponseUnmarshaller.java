@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.vpc.model.v20160428.DownloadVpnConnectionConfigResponse;
 import com.aliyuncs.vpc.model.v20160428.DownloadVpnConnectionConfigResponse.VpnConnectionConfig;
+import com.aliyuncs.vpc.model.v20160428.DownloadVpnConnectionConfigResponse.VpnConnectionConfig.BgpConfig;
 import com.aliyuncs.vpc.model.v20160428.DownloadVpnConnectionConfigResponse.VpnConnectionConfig.IkeConfig;
 import com.aliyuncs.vpc.model.v20160428.DownloadVpnConnectionConfigResponse.VpnConnectionConfig.IpsecConfig;
 import com.aliyuncs.vpc.model.v20160428.DownloadVpnConnectionConfigResponse.VpnConnectionConfig.TunnelConfig;
@@ -87,6 +88,20 @@ public class DownloadVpnConnectionConfigResponseUnmarshaller {
 			tunnelsConfig.add(tunnelConfig);
 		}
 		vpnConnectionConfig.setTunnelsConfig(tunnelsConfig);
+
+		List<BgpConfig> bgpConfigs = new ArrayList<BgpConfig>();
+		for (int i = 0; i < _ctx.lengthValue("DownloadVpnConnectionConfigResponse.VpnConnectionConfig.BgpConfigs.Length"); i++) {
+			BgpConfig bgpConfig = new BgpConfig();
+			bgpConfig.setLocalAsn(_ctx.stringValue("DownloadVpnConnectionConfigResponse.VpnConnectionConfig.BgpConfigs["+ i +"].LocalAsn"));
+			bgpConfig.setLocalBgpIp(_ctx.stringValue("DownloadVpnConnectionConfigResponse.VpnConnectionConfig.BgpConfigs["+ i +"].LocalBgpIp"));
+			bgpConfig.setPeerAsn(_ctx.stringValue("DownloadVpnConnectionConfigResponse.VpnConnectionConfig.BgpConfigs["+ i +"].PeerAsn"));
+			bgpConfig.setPeerBgpIp(_ctx.stringValue("DownloadVpnConnectionConfigResponse.VpnConnectionConfig.BgpConfigs["+ i +"].PeerBgpIp"));
+			bgpConfig.setTunnelCidr(_ctx.stringValue("DownloadVpnConnectionConfigResponse.VpnConnectionConfig.BgpConfigs["+ i +"].TunnelCidr"));
+			bgpConfig.setTunnelId(_ctx.stringValue("DownloadVpnConnectionConfigResponse.VpnConnectionConfig.BgpConfigs["+ i +"].TunnelId"));
+
+			bgpConfigs.add(bgpConfig);
+		}
+		vpnConnectionConfig.setBgpConfigs(bgpConfigs);
 		downloadVpnConnectionConfigResponse.setVpnConnectionConfig(vpnConnectionConfig);
 	 
 	 	return downloadVpnConnectionConfigResponse;

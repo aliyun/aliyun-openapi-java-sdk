@@ -40,6 +40,8 @@ public class CreateVpnAttachmentRequest extends RpcAcsRequest<CreateVpnAttachmen
 
 	private Boolean effectImmediately;
 
+	private Boolean dryRun;
+
 	private Boolean enableDpd;
 
 	private List<Tags> tagss;
@@ -152,6 +154,17 @@ public class CreateVpnAttachmentRequest extends RpcAcsRequest<CreateVpnAttachmen
 		this.effectImmediately = effectImmediately;
 		if(effectImmediately != null){
 			putQueryParameter("EffectImmediately", effectImmediately.toString());
+		}
+	}
+
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
 		}
 	}
 

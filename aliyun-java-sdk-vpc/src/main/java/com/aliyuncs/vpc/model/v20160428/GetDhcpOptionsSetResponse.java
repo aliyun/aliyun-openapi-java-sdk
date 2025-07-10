@@ -39,6 +39,8 @@ public class GetDhcpOptionsSetResponse extends AcsResponse {
 
 	private String resourceGroupId;
 
+	private String creationTime;
+
 	private List<AssociateVpc> associateVpcs;
 
 	private List<Tag> tags;
@@ -99,6 +101,14 @@ public class GetDhcpOptionsSetResponse extends AcsResponse {
 
 	public void setResourceGroupId(String resourceGroupId) {
 		this.resourceGroupId = resourceGroupId;
+	}
+
+	public String getCreationTime() {
+		return this.creationTime;
+	}
+
+	public void setCreationTime(String creationTime) {
+		this.creationTime = creationTime;
 	}
 
 	public List<AssociateVpc> getAssociateVpcs() {

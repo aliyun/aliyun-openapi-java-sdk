@@ -22,24 +22,22 @@ import com.aliyuncs.vpc.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetVpcPrefixListEntriesRequest extends RpcAcsRequest<GetVpcPrefixListEntriesResponse> {
+public class ModifyEipForwardModeRequest extends RpcAcsRequest<ModifyEipForwardModeResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String prefixListId;
+	private String clientToken;
 
-	private String nextToken;
+	private String mode;
 
 	private String resourceOwnerAccount;
 
-	private String ownerAccount;
-
 	private Long ownerId;
 
-	private Long maxResults;
-	public GetVpcPrefixListEntriesRequest() {
-		super("Vpc", "2016-04-28", "GetVpcPrefixListEntries", "vpc");
+	private String instanceId;
+	public ModifyEipForwardModeRequest() {
+		super("Vpc", "2016-04-28", "ModifyEipForwardMode", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -58,25 +56,25 @@ public class GetVpcPrefixListEntriesRequest extends RpcAcsRequest<GetVpcPrefixLi
 		}
 	}
 
-	public String getPrefixListId() {
-		return this.prefixListId;
+	public String getClientToken() {
+		return this.clientToken;
 	}
 
-	public void setPrefixListId(String prefixListId) {
-		this.prefixListId = prefixListId;
-		if(prefixListId != null){
-			putQueryParameter("PrefixListId", prefixListId);
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
-	public String getNextToken() {
-		return this.nextToken;
+	public String getMode() {
+		return this.mode;
 	}
 
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
-		if(nextToken != null){
-			putQueryParameter("NextToken", nextToken);
+	public void setMode(String mode) {
+		this.mode = mode;
+		if(mode != null){
+			putQueryParameter("Mode", mode);
 		}
 	}
 
@@ -91,17 +89,6 @@ public class GetVpcPrefixListEntriesRequest extends RpcAcsRequest<GetVpcPrefixLi
 		}
 	}
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -113,20 +100,20 @@ public class GetVpcPrefixListEntriesRequest extends RpcAcsRequest<GetVpcPrefixLi
 		}
 	}
 
-	public Long getMaxResults() {
-		return this.maxResults;
+	public String getInstanceId() {
+		return this.instanceId;
 	}
 
-	public void setMaxResults(Long maxResults) {
-		this.maxResults = maxResults;
-		if(maxResults != null){
-			putQueryParameter("MaxResults", maxResults.toString());
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
 	@Override
-	public Class<GetVpcPrefixListEntriesResponse> getResponseClass() {
-		return GetVpcPrefixListEntriesResponse.class;
+	public Class<ModifyEipForwardModeResponse> getResponseClass() {
+		return ModifyEipForwardModeResponse.class;
 	}
 
 }

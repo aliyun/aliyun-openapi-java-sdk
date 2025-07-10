@@ -35,6 +35,8 @@ public class DescribeNatGatewayAssociateNetworkInterfacesResponse extends AcsRes
 
 	private Integer totalCount;
 
+	private Integer count;
+
 	private List<AssociateNetworkInterface> associateNetworkInterfaces;
 
 	public String getRequestId() {
@@ -75,6 +77,14 @@ public class DescribeNatGatewayAssociateNetworkInterfacesResponse extends AcsRes
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public Integer getCount() {
+		return this.count;
+	}
+
+	public void setCount(Integer count) {
+		this.count = count;
 	}
 
 	public List<AssociateNetworkInterface> getAssociateNetworkInterfaces() {

@@ -21,6 +21,7 @@ import com.aliyuncs.vpc.model.v20160428.DescribeExpressConnectTrafficQosResponse
 import com.aliyuncs.vpc.model.v20160428.DescribeExpressConnectTrafficQosResponse.QosListItem;
 import com.aliyuncs.vpc.model.v20160428.DescribeExpressConnectTrafficQosResponse.QosListItem.AssociatedInstanceListItem;
 import com.aliyuncs.vpc.model.v20160428.DescribeExpressConnectTrafficQosResponse.QosListItem.QueueListItem;
+import com.aliyuncs.vpc.model.v20160428.DescribeExpressConnectTrafficQosResponse.QosListItem.TagsItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -42,6 +43,7 @@ public class DescribeExpressConnectTrafficQosResponseUnmarshaller {
 			qosListItem.setQosDescription(_ctx.stringValue("DescribeExpressConnectTrafficQosResponse.QosList["+ i +"].QosDescription"));
 			qosListItem.setStatus(_ctx.stringValue("DescribeExpressConnectTrafficQosResponse.QosList["+ i +"].Status"));
 			qosListItem.setProgressing(_ctx.integerValue("DescribeExpressConnectTrafficQosResponse.QosList["+ i +"].Progressing"));
+			qosListItem.setResourceGroupId(_ctx.stringValue("DescribeExpressConnectTrafficQosResponse.QosList["+ i +"].ResourceGroupId"));
 
 			List<AssociatedInstanceListItem> associatedInstanceList = new ArrayList<AssociatedInstanceListItem>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeExpressConnectTrafficQosResponse.QosList["+ i +"].AssociatedInstanceList.Length"); j++) {
@@ -69,6 +71,16 @@ public class DescribeExpressConnectTrafficQosResponseUnmarshaller {
 				queueList.add(queueListItem);
 			}
 			qosListItem.setQueueList(queueList);
+
+			List<TagsItem> tags = new ArrayList<TagsItem>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeExpressConnectTrafficQosResponse.QosList["+ i +"].Tags.Length"); j++) {
+				TagsItem tagsItem = new TagsItem();
+				tagsItem.setKey(_ctx.stringValue("DescribeExpressConnectTrafficQosResponse.QosList["+ i +"].Tags["+ j +"].Key"));
+				tagsItem.setValue(_ctx.stringValue("DescribeExpressConnectTrafficQosResponse.QosList["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tagsItem);
+			}
+			qosListItem.setTags(tags);
 
 			qosList.add(qosListItem);
 		}

@@ -45,6 +45,8 @@ public class ModifySslVpnServerRequest extends RpcAcsRequest<ModifySslVpnServerR
 
 	private String clientIpPool;
 
+	private Boolean dryRun;
+
 	private String resourceOwnerAccount;
 
 	private Boolean compress;
@@ -174,6 +176,17 @@ public class ModifySslVpnServerRequest extends RpcAcsRequest<ModifySslVpnServerR
 		this.clientIpPool = clientIpPool;
 		if(clientIpPool != null){
 			putQueryParameter("ClientIpPool", clientIpPool);
+		}
+	}
+
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
 		}
 	}
 

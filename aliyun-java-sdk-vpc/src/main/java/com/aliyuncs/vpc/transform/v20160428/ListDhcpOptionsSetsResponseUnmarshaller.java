@@ -42,6 +42,7 @@ public class ListDhcpOptionsSetsResponseUnmarshaller {
 			dhcpOptionsSet.setAssociateVpcCount(_ctx.integerValue("ListDhcpOptionsSetsResponse.DhcpOptionsSets["+ i +"].AssociateVpcCount"));
 			dhcpOptionsSet.setOwnerId(_ctx.longValue("ListDhcpOptionsSetsResponse.DhcpOptionsSets["+ i +"].OwnerId"));
 			dhcpOptionsSet.setResourceGroupId(_ctx.stringValue("ListDhcpOptionsSetsResponse.DhcpOptionsSets["+ i +"].ResourceGroupId"));
+			dhcpOptionsSet.setCreationTime(_ctx.stringValue("ListDhcpOptionsSetsResponse.DhcpOptionsSets["+ i +"].CreationTime"));
 
 			DhcpOptions dhcpOptions = new DhcpOptions();
 			dhcpOptions.setDomainNameServers(_ctx.stringValue("ListDhcpOptionsSetsResponse.DhcpOptionsSets["+ i +"].DhcpOptions.DomainNameServers"));

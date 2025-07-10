@@ -32,6 +32,7 @@ public class DescribeNatGatewayAssociateNetworkInterfacesResponseUnmarshaller {
 		describeNatGatewayAssociateNetworkInterfacesResponse.setMaxResults(_ctx.integerValue("DescribeNatGatewayAssociateNetworkInterfacesResponse.MaxResults"));
 		describeNatGatewayAssociateNetworkInterfacesResponse.setNatGatewayId(_ctx.stringValue("DescribeNatGatewayAssociateNetworkInterfacesResponse.NatGatewayId"));
 		describeNatGatewayAssociateNetworkInterfacesResponse.setTotalCount(_ctx.integerValue("DescribeNatGatewayAssociateNetworkInterfacesResponse.TotalCount"));
+		describeNatGatewayAssociateNetworkInterfacesResponse.setCount(_ctx.integerValue("DescribeNatGatewayAssociateNetworkInterfacesResponse.Count"));
 
 		List<AssociateNetworkInterface> associateNetworkInterfaces = new ArrayList<AssociateNetworkInterface>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeNatGatewayAssociateNetworkInterfacesResponse.AssociateNetworkInterfaces.Length"); i++) {

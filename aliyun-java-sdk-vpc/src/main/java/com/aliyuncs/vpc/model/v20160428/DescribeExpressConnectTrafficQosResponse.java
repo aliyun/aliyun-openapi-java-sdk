@@ -97,9 +97,13 @@ public class DescribeExpressConnectTrafficQosResponse extends AcsResponse {
 
 		private Integer progressing;
 
+		private String resourceGroupId;
+
 		private List<AssociatedInstanceListItem> associatedInstanceList;
 
 		private List<QueueListItem> queueList;
+
+		private List<TagsItem> tags;
 
 		public String getQosId() {
 			return this.qosId;
@@ -141,6 +145,14 @@ public class DescribeExpressConnectTrafficQosResponse extends AcsResponse {
 			this.progressing = progressing;
 		}
 
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
 		public List<AssociatedInstanceListItem> getAssociatedInstanceList() {
 			return this.associatedInstanceList;
 		}
@@ -155,6 +167,14 @@ public class DescribeExpressConnectTrafficQosResponse extends AcsResponse {
 
 		public void setQueueList(List<QueueListItem> queueList) {
 			this.queueList = queueList;
+		}
+
+		public List<TagsItem> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<TagsItem> tags) {
+			this.tags = tags;
 		}
 
 		public static class AssociatedInstanceListItem {
@@ -270,6 +290,29 @@ public class DescribeExpressConnectTrafficQosResponse extends AcsResponse {
 
 			public void setStatus(String status) {
 				this.status = status;
+			}
+		}
+
+		public static class TagsItem {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
 			}
 		}
 	}

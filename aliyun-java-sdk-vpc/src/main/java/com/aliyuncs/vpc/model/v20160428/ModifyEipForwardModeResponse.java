@@ -15,20 +15,16 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.vpc.transform.v20160428.AssociateVpcCidrBlockResponseUnmarshaller;
+import com.aliyuncs.vpc.transform.v20160428.ModifyEipForwardModeResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class AssociateVpcCidrBlockResponse extends AcsResponse {
+public class ModifyEipForwardModeResponse extends AcsResponse {
 
 	private String requestId;
-
-	private String cidrBlock;
-
-	private String ipVersion;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,24 +34,8 @@ public class AssociateVpcCidrBlockResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getCidrBlock() {
-		return this.cidrBlock;
-	}
-
-	public void setCidrBlock(String cidrBlock) {
-		this.cidrBlock = cidrBlock;
-	}
-
-	public String getIpVersion() {
-		return this.ipVersion;
-	}
-
-	public void setIpVersion(String ipVersion) {
-		this.ipVersion = ipVersion;
-	}
-
 	@Override
-	public AssociateVpcCidrBlockResponse getInstance(UnmarshallerContext context) {
-		return	AssociateVpcCidrBlockResponseUnmarshaller.unmarshall(this, context);
+	public ModifyEipForwardModeResponse getInstance(UnmarshallerContext context) {
+		return	ModifyEipForwardModeResponseUnmarshaller.unmarshall(this, context);
 	}
 }

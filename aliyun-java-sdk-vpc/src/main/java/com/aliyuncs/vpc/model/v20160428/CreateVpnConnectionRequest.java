@@ -50,6 +50,8 @@ public class CreateVpnConnectionRequest extends RpcAcsRequest<CreateVpnConnectio
 
 	private Boolean effectImmediately;
 
+	private Boolean dryRun;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -207,6 +209,17 @@ public class CreateVpnConnectionRequest extends RpcAcsRequest<CreateVpnConnectio
 		this.effectImmediately = effectImmediately;
 		if(effectImmediately != null){
 			putQueryParameter("EffectImmediately", effectImmediately.toString());
+		}
+	}
+
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
 		}
 	}
 

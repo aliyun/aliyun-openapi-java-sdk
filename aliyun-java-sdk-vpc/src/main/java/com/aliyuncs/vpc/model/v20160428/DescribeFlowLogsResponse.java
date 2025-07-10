@@ -123,6 +123,12 @@ public class DescribeFlowLogsResponse extends AcsResponse {
 
 		private String ipVersion;
 
+		private String trafficAnalyzerId;
+
+		private Boolean enableTrafficAnalyze;
+
+		private Boolean enableLogDelivery;
+
 		private List<Tag> tags;
 
 		private List<String> trafficPath;
@@ -269,6 +275,30 @@ public class DescribeFlowLogsResponse extends AcsResponse {
 
 		public void setIpVersion(String ipVersion) {
 			this.ipVersion = ipVersion;
+		}
+
+		public String getTrafficAnalyzerId() {
+			return this.trafficAnalyzerId;
+		}
+
+		public void setTrafficAnalyzerId(String trafficAnalyzerId) {
+			this.trafficAnalyzerId = trafficAnalyzerId;
+		}
+
+		public Boolean getEnableTrafficAnalyze() {
+			return this.enableTrafficAnalyze;
+		}
+
+		public void setEnableTrafficAnalyze(Boolean enableTrafficAnalyze) {
+			this.enableTrafficAnalyze = enableTrafficAnalyze;
+		}
+
+		public Boolean getEnableLogDelivery() {
+			return this.enableLogDelivery;
+		}
+
+		public void setEnableLogDelivery(Boolean enableLogDelivery) {
+			this.enableLogDelivery = enableLogDelivery;
 		}
 
 		public List<Tag> getTags() {

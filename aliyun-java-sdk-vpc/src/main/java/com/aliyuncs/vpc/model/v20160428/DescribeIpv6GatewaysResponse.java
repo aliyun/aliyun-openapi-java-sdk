@@ -101,6 +101,8 @@ public class DescribeIpv6GatewaysResponse extends AcsResponse {
 
 		private String resourceGroupId;
 
+		private Long ownerId;
+
 		private List<Tag> tags;
 
 		public String getCreationTime() {
@@ -197,6 +199,14 @@ public class DescribeIpv6GatewaysResponse extends AcsResponse {
 
 		public void setResourceGroupId(String resourceGroupId) {
 			this.resourceGroupId = resourceGroupId;
+		}
+
+		public Long getOwnerId() {
+			return this.ownerId;
+		}
+
+		public void setOwnerId(Long ownerId) {
+			this.ownerId = ownerId;
 		}
 
 		public List<Tag> getTags() {

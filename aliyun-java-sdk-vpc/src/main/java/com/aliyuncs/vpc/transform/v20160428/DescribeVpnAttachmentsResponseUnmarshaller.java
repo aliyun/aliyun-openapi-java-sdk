@@ -42,6 +42,7 @@ public class DescribeVpnAttachmentsResponseUnmarshaller {
 			vpnAttachment.setTransitRouterId(_ctx.stringValue("DescribeVpnAttachmentsResponse.VpnAttachments["+ i +"].TransitRouterId"));
 			vpnAttachment.setTransitRouterName(_ctx.stringValue("DescribeVpnAttachmentsResponse.VpnAttachments["+ i +"].TransitRouterName"));
 			vpnAttachment.setCrossAccountAuthorized(_ctx.booleanValue("DescribeVpnAttachmentsResponse.VpnAttachments["+ i +"].CrossAccountAuthorized"));
+			vpnAttachment.setTag(_ctx.stringValue("DescribeVpnAttachmentsResponse.VpnAttachments["+ i +"].Tag"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeVpnAttachmentsResponse.VpnAttachments["+ i +"].Tags.Length"); j++) {

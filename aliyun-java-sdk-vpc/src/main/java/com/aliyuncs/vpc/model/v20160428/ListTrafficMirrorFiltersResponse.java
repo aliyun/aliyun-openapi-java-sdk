@@ -189,6 +189,8 @@ public class ListTrafficMirrorFiltersResponse extends AcsResponse {
 
 			private String protocol;
 
+			private String ipVersion;
+
 			private String destinationPortRange;
 
 			private String trafficMirrorFilterRuleId;
@@ -239,6 +241,14 @@ public class ListTrafficMirrorFiltersResponse extends AcsResponse {
 
 			public void setBizProtocol(String protocol) {
 				this.protocol = protocol;
+			}
+
+			public String getIpVersion() {
+				return this.ipVersion;
+			}
+
+			public void setIpVersion(String ipVersion) {
+				this.ipVersion = ipVersion;
 			}
 
 			public String getDestinationPortRange() {

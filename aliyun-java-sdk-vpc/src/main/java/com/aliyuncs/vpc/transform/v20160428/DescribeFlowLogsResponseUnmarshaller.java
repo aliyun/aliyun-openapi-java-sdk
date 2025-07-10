@@ -54,6 +54,9 @@ public class DescribeFlowLogsResponseUnmarshaller {
 			flowLog.setFlowLogDeliverStatus(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].FlowLogDeliverStatus"));
 			flowLog.setFlowLogDeliverErrorMessage(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].FlowLogDeliverErrorMessage"));
 			flowLog.setIpVersion(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].IpVersion"));
+			flowLog.setTrafficAnalyzerId(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].TrafficAnalyzerId"));
+			flowLog.setEnableTrafficAnalyze(_ctx.booleanValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].EnableTrafficAnalyze"));
+			flowLog.setEnableLogDelivery(_ctx.booleanValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].EnableLogDelivery"));
 
 			List<String> trafficPath = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].TrafficPath.Length"); j++) {

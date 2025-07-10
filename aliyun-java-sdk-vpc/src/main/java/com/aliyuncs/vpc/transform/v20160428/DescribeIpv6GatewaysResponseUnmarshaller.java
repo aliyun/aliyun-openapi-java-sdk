@@ -47,6 +47,7 @@ public class DescribeIpv6GatewaysResponseUnmarshaller {
 			ipv6Gateway.setInstanceChargeType(_ctx.stringValue("DescribeIpv6GatewaysResponse.Ipv6Gateways["+ i +"].InstanceChargeType"));
 			ipv6Gateway.setRegionId(_ctx.stringValue("DescribeIpv6GatewaysResponse.Ipv6Gateways["+ i +"].RegionId"));
 			ipv6Gateway.setResourceGroupId(_ctx.stringValue("DescribeIpv6GatewaysResponse.Ipv6Gateways["+ i +"].ResourceGroupId"));
+			ipv6Gateway.setOwnerId(_ctx.longValue("DescribeIpv6GatewaysResponse.Ipv6Gateways["+ i +"].OwnerId"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeIpv6GatewaysResponse.Ipv6Gateways["+ i +"].Tags.Length"); j++) {

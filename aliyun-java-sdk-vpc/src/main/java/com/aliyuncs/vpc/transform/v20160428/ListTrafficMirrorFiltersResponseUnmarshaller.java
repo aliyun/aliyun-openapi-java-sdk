@@ -52,6 +52,7 @@ public class ListTrafficMirrorFiltersResponseUnmarshaller {
 				trafficMirrorRule.setSourceCidrBlock(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].IngressRules["+ j +"].SourceCidrBlock"));
 				trafficMirrorRule.setTrafficDirection(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].IngressRules["+ j +"].TrafficDirection"));
 				trafficMirrorRule.setBizProtocol(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].IngressRules["+ j +"].Protocol"));
+				trafficMirrorRule.setIpVersion(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].IngressRules["+ j +"].IpVersion"));
 				trafficMirrorRule.setDestinationPortRange(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].IngressRules["+ j +"].DestinationPortRange"));
 				trafficMirrorRule.setTrafficMirrorFilterRuleId(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].IngressRules["+ j +"].TrafficMirrorFilterRuleId"));
 				trafficMirrorRule.setDestinationCidrBlock(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].IngressRules["+ j +"].DestinationCidrBlock"));
@@ -71,6 +72,7 @@ public class ListTrafficMirrorFiltersResponseUnmarshaller {
 				trafficMirrorRule1.setSourceCidrBlock(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].EgressRules["+ j +"].SourceCidrBlock"));
 				trafficMirrorRule1.setTrafficDirection(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].EgressRules["+ j +"].TrafficDirection"));
 				trafficMirrorRule1.setBizProtocol(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].EgressRules["+ j +"].Protocol"));
+				trafficMirrorRule1.setIpVersion(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].EgressRules["+ j +"].IpVersion"));
 				trafficMirrorRule1.setDestinationPortRange(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].EgressRules["+ j +"].DestinationPortRange"));
 				trafficMirrorRule1.setTrafficMirrorFilterRuleId(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].EgressRules["+ j +"].TrafficMirrorFilterRuleId"));
 				trafficMirrorRule1.setDestinationCidrBlock(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].EgressRules["+ j +"].DestinationCidrBlock"));

@@ -46,6 +46,8 @@ public class ListVpcGatewayEndpointsRequest extends RpcAcsRequest<ListVpcGateway
 
 	private String endpointName;
 
+	private String vpcId;
+
 	private Long maxResults;
 	public ListVpcGatewayEndpointsRequest() {
 		super("Vpc", "2016-04-28", "ListVpcGatewayEndpoints", "vpc");
@@ -166,6 +168,17 @@ public class ListVpcGatewayEndpointsRequest extends RpcAcsRequest<ListVpcGateway
 		this.endpointName = endpointName;
 		if(endpointName != null){
 			putQueryParameter("EndpointName", endpointName);
+		}
+	}
+
+	public String getVpcId() {
+		return this.vpcId;
+	}
+
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+		if(vpcId != null){
+			putQueryParameter("VpcId", vpcId);
 		}
 	}
 

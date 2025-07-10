@@ -35,6 +35,7 @@ public class GetDhcpOptionsSetResponseUnmarshaller {
 		getDhcpOptionsSetResponse.setDhcpOptionsSetName(_ctx.stringValue("GetDhcpOptionsSetResponse.DhcpOptionsSetName"));
 		getDhcpOptionsSetResponse.setOwnerId(_ctx.longValue("GetDhcpOptionsSetResponse.OwnerId"));
 		getDhcpOptionsSetResponse.setResourceGroupId(_ctx.stringValue("GetDhcpOptionsSetResponse.ResourceGroupId"));
+		getDhcpOptionsSetResponse.setCreationTime(_ctx.stringValue("GetDhcpOptionsSetResponse.CreationTime"));
 
 		DhcpOptions dhcpOptions = new DhcpOptions();
 		dhcpOptions.setTFTPServerName(_ctx.stringValue("GetDhcpOptionsSetResponse.DhcpOptions.TFTPServerName"));

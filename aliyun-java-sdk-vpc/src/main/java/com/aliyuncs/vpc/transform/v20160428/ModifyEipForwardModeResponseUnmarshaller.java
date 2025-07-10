@@ -14,18 +14,16 @@
 
 package com.aliyuncs.vpc.transform.v20160428;
 
-import com.aliyuncs.vpc.model.v20160428.AssociateVpcCidrBlockResponse;
+import com.aliyuncs.vpc.model.v20160428.ModifyEipForwardModeResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class AssociateVpcCidrBlockResponseUnmarshaller {
+public class ModifyEipForwardModeResponseUnmarshaller {
 
-	public static AssociateVpcCidrBlockResponse unmarshall(AssociateVpcCidrBlockResponse associateVpcCidrBlockResponse, UnmarshallerContext _ctx) {
+	public static ModifyEipForwardModeResponse unmarshall(ModifyEipForwardModeResponse modifyEipForwardModeResponse, UnmarshallerContext _ctx) {
 		
-		associateVpcCidrBlockResponse.setRequestId(_ctx.stringValue("AssociateVpcCidrBlockResponse.RequestId"));
-		associateVpcCidrBlockResponse.setCidrBlock(_ctx.stringValue("AssociateVpcCidrBlockResponse.CidrBlock"));
-		associateVpcCidrBlockResponse.setIpVersion(_ctx.stringValue("AssociateVpcCidrBlockResponse.IpVersion"));
+		modifyEipForwardModeResponse.setRequestId(_ctx.stringValue("ModifyEipForwardModeResponse.RequestId"));
 	 
-	 	return associateVpcCidrBlockResponse;
+	 	return modifyEipForwardModeResponse;
 	}
 }

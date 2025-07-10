@@ -31,6 +31,8 @@ public class CreateVcoRouteEntryRequest extends RpcAcsRequest<CreateVcoRouteEntr
 
 	private String description;
 
+	private Boolean dryRun;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -83,6 +85,17 @@ public class CreateVcoRouteEntryRequest extends RpcAcsRequest<CreateVcoRouteEntr
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
 		}
 	}
 

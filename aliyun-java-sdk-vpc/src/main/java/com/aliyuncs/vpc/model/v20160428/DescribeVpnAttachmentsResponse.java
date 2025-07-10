@@ -91,6 +91,8 @@ public class DescribeVpnAttachmentsResponse extends AcsResponse {
 
 		private Boolean crossAccountAuthorized;
 
+		private String tag;
+
 		private List<Tag> tags;
 
 		public String getInstanceId() {
@@ -147,6 +149,14 @@ public class DescribeVpnAttachmentsResponse extends AcsResponse {
 
 		public void setCrossAccountAuthorized(Boolean crossAccountAuthorized) {
 			this.crossAccountAuthorized = crossAccountAuthorized;
+		}
+
+		public String getTag() {
+			return this.tag;
+		}
+
+		public void setTag(String tag) {
+			this.tag = tag;
 		}
 
 		public List<Tag> getTags() {
