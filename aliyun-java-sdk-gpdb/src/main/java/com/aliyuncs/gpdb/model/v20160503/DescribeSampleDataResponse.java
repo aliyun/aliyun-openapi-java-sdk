@@ -32,6 +32,8 @@ public class DescribeSampleDataResponse extends AcsResponse {
 
 	private String dBInstanceId;
 
+	private String sampleDataStatus;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -62,6 +64,14 @@ public class DescribeSampleDataResponse extends AcsResponse {
 
 	public void setDBInstanceId(String dBInstanceId) {
 		this.dBInstanceId = dBInstanceId;
+	}
+
+	public String getSampleDataStatus() {
+		return this.sampleDataStatus;
+	}
+
+	public void setSampleDataStatus(String sampleDataStatus) {
+		this.sampleDataStatus = sampleDataStatus;
 	}
 
 	@Override

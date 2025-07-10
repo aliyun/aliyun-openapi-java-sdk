@@ -32,6 +32,8 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 
 	private String storageType;
 
+	private String deployMode;
+
 	private String resourceGroupId;
 
 	private String encryptionType;
@@ -45,6 +47,8 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 	private String period;
 
 	private String vectorConfigurationStatus;
+
+	private String backupId;
 
 	private String encryptionKey;
 
@@ -60,7 +64,11 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 
 	private String privateIpAddress;
 
+	private Integer masterCU;
+
 	private String zoneId;
+
+	private String prodType;
 
 	private String instanceNetworkType;
 
@@ -80,11 +88,21 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 
 	private Boolean createSampleData;
 
+	private String standbyVSwitchId;
+
 	private String dBInstanceGroupCount;
+
+	private String standbyZoneId;
+
+	private String cacheStorageSize;
 
 	private String dBInstanceMode;
 
+	private String masterAISpec;
+
 	private String usedTime;
+
+	private Boolean enableSSL;
 
 	private String vPCId;
 
@@ -93,8 +111,12 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 	private Integer idleTime;
 
 	private String payType;
+
+	private String srcDbInstanceName;
+
+	private List<AINodeSpecInfos> aINodeSpecInfoss;
 	public CreateDBInstanceRequest() {
-		super("gpdb", "2016-05-03", "CreateDBInstance");
+		super("gpdb", "2016-05-03", "CreateDBInstance", "gpdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -132,6 +154,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.storageType = storageType;
 		if(storageType != null){
 			putQueryParameter("StorageType", storageType);
+		}
+	}
+
+	public String getDeployMode() {
+		return this.deployMode;
+	}
+
+	public void setDeployMode(String deployMode) {
+		this.deployMode = deployMode;
+		if(deployMode != null){
+			putQueryParameter("DeployMode", deployMode);
 		}
 	}
 
@@ -215,6 +248,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		}
 	}
 
+	public String getBackupId() {
+		return this.backupId;
+	}
+
+	public void setBackupId(String backupId) {
+		this.backupId = backupId;
+		if(backupId != null){
+			putQueryParameter("BackupId", backupId);
+		}
+	}
+
 	public String getEncryptionKey() {
 		return this.encryptionKey;
 	}
@@ -292,6 +336,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		}
 	}
 
+	public Integer getMasterCU() {
+		return this.masterCU;
+	}
+
+	public void setMasterCU(Integer masterCU) {
+		this.masterCU = masterCU;
+		if(masterCU != null){
+			putQueryParameter("MasterCU", masterCU.toString());
+		}
+	}
+
 	public String getZoneId() {
 		return this.zoneId;
 	}
@@ -300,6 +355,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.zoneId = zoneId;
 		if(zoneId != null){
 			putQueryParameter("ZoneId", zoneId);
+		}
+	}
+
+	public String getProdType() {
+		return this.prodType;
+	}
+
+	public void setProdType(String prodType) {
+		this.prodType = prodType;
+		if(prodType != null){
+			putQueryParameter("ProdType", prodType);
 		}
 	}
 
@@ -402,6 +468,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		}
 	}
 
+	public String getStandbyVSwitchId() {
+		return this.standbyVSwitchId;
+	}
+
+	public void setStandbyVSwitchId(String standbyVSwitchId) {
+		this.standbyVSwitchId = standbyVSwitchId;
+		if(standbyVSwitchId != null){
+			putQueryParameter("StandbyVSwitchId", standbyVSwitchId);
+		}
+	}
+
 	public String getDBInstanceGroupCount() {
 		return this.dBInstanceGroupCount;
 	}
@@ -410,6 +487,28 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.dBInstanceGroupCount = dBInstanceGroupCount;
 		if(dBInstanceGroupCount != null){
 			putQueryParameter("DBInstanceGroupCount", dBInstanceGroupCount);
+		}
+	}
+
+	public String getStandbyZoneId() {
+		return this.standbyZoneId;
+	}
+
+	public void setStandbyZoneId(String standbyZoneId) {
+		this.standbyZoneId = standbyZoneId;
+		if(standbyZoneId != null){
+			putQueryParameter("StandbyZoneId", standbyZoneId);
+		}
+	}
+
+	public String getCacheStorageSize() {
+		return this.cacheStorageSize;
+	}
+
+	public void setCacheStorageSize(String cacheStorageSize) {
+		this.cacheStorageSize = cacheStorageSize;
+		if(cacheStorageSize != null){
+			putQueryParameter("CacheStorageSize", cacheStorageSize);
 		}
 	}
 
@@ -424,6 +523,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		}
 	}
 
+	public String getMasterAISpec() {
+		return this.masterAISpec;
+	}
+
+	public void setMasterAISpec(String masterAISpec) {
+		this.masterAISpec = masterAISpec;
+		if(masterAISpec != null){
+			putQueryParameter("MasterAISpec", masterAISpec);
+		}
+	}
+
 	public String getUsedTime() {
 		return this.usedTime;
 	}
@@ -432,6 +542,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.usedTime = usedTime;
 		if(usedTime != null){
 			putQueryParameter("UsedTime", usedTime);
+		}
+	}
+
+	public Boolean getEnableSSL() {
+		return this.enableSSL;
+	}
+
+	public void setEnableSSL(Boolean enableSSL) {
+		this.enableSSL = enableSSL;
+		if(enableSSL != null){
+			putQueryParameter("EnableSSL", enableSSL.toString());
 		}
 	}
 
@@ -479,6 +600,31 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		}
 	}
 
+	public String getSrcDbInstanceName() {
+		return this.srcDbInstanceName;
+	}
+
+	public void setSrcDbInstanceName(String srcDbInstanceName) {
+		this.srcDbInstanceName = srcDbInstanceName;
+		if(srcDbInstanceName != null){
+			putQueryParameter("SrcDbInstanceName", srcDbInstanceName);
+		}
+	}
+
+	public List<AINodeSpecInfos> getAINodeSpecInfoss() {
+		return this.aINodeSpecInfoss;
+	}
+
+	public void setAINodeSpecInfoss(List<AINodeSpecInfos> aINodeSpecInfoss) {
+		this.aINodeSpecInfoss = aINodeSpecInfoss;	
+		if (aINodeSpecInfoss != null) {
+			for (int depth1 = 0; depth1 < aINodeSpecInfoss.size(); depth1++) {
+				putQueryParameter("AINodeSpecInfos." + (depth1 + 1) + ".AINodeSpec" , aINodeSpecInfoss.get(depth1).getAINodeSpec());
+				putQueryParameter("AINodeSpecInfos." + (depth1 + 1) + ".AINodeNum" , aINodeSpecInfoss.get(depth1).getAINodeNum());
+			}
+		}	
+	}
+
 	public static class Tag {
 
 		private String value;
@@ -499,6 +645,29 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 
 		public void setKey(String key) {
 			this.key = key;
+		}
+	}
+
+	public static class AINodeSpecInfos {
+
+		private String aINodeSpec;
+
+		private String aINodeNum;
+
+		public String getAINodeSpec() {
+			return this.aINodeSpec;
+		}
+
+		public void setAINodeSpec(String aINodeSpec) {
+			this.aINodeSpec = aINodeSpec;
+		}
+
+		public String getAINodeNum() {
+			return this.aINodeNum;
+		}
+
+		public void setAINodeNum(String aINodeNum) {
+			this.aINodeNum = aINodeNum;
 		}
 	}
 

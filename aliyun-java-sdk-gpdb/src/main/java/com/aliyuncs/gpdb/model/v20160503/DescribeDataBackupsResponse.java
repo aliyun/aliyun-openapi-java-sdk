@@ -33,6 +33,8 @@ public class DescribeDataBackupsResponse extends AcsResponse {
 
 	private Integer totalCount;
 
+	private Long totalBackupSize;
+
 	private List<Backup> items;
 
 	public Integer getPageSize() {
@@ -65,6 +67,14 @@ public class DescribeDataBackupsResponse extends AcsResponse {
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public Long getTotalBackupSize() {
+		return this.totalBackupSize;
+	}
+
+	public void setTotalBackupSize(Long totalBackupSize) {
+		this.totalBackupSize = totalBackupSize;
 	}
 
 	public List<Backup> getItems() {
@@ -100,6 +110,8 @@ public class DescribeDataBackupsResponse extends AcsResponse {
 		private String backupStartTimeLocal;
 
 		private String dBInstanceId;
+
+		private String backupMethod;
 
 		public String getDataType() {
 			return this.dataType;
@@ -195,6 +207,14 @@ public class DescribeDataBackupsResponse extends AcsResponse {
 
 		public void setDBInstanceId(String dBInstanceId) {
 			this.dBInstanceId = dBInstanceId;
+		}
+
+		public String getBackupMethod() {
+			return this.backupMethod;
+		}
+
+		public void setBackupMethod(String backupMethod) {
+			this.backupMethod = backupMethod;
 		}
 	}
 

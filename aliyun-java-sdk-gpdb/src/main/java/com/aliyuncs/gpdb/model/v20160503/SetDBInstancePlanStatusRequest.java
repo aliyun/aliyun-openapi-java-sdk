@@ -33,7 +33,7 @@ public class SetDBInstancePlanStatusRequest extends RpcAcsRequest<SetDBInstanceP
 
 	private String planId;
 	public SetDBInstancePlanStatusRequest() {
-		super("gpdb", "2016-05-03", "SetDBInstancePlanStatus");
+		super("gpdb", "2016-05-03", "SetDBInstancePlanStatus", "gpdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

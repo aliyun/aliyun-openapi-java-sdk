@@ -31,7 +31,7 @@ public class DescribeWaitingSQLInfoRequest extends RpcAcsRequest<DescribeWaiting
 
 	private String dBInstanceId;
 	public DescribeWaitingSQLInfoRequest() {
-		super("gpdb", "2016-05-03", "DescribeWaitingSQLInfo");
+		super("gpdb", "2016-05-03", "DescribeWaitingSQLInfo", "gpdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

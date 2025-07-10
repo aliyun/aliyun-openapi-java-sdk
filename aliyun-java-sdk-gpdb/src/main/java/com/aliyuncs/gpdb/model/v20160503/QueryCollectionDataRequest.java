@@ -16,6 +16,7 @@ package com.aliyuncs.gpdb.model.v20160503;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import java.util.Map;
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
@@ -30,12 +31,27 @@ public class QueryCollectionDataRequest extends RpcAcsRequest<QueryCollectionDat
 
 	private Long topK;
 
+	private String includeMetadataFields;
+
+	@SerializedName("relationalTableFilter")
+	private RelationalTableFilter relationalTableFilter;
+
 	private String content;
+
+	@SerializedName("hybridSearchArgs")
+	private Map<String,Map<String,Object>> hybridSearchArgs;
 
 	private String dBInstanceId;
 
 	@SerializedName("vector")
 	private List<Double> vector;
+
+	@SerializedName("sparseVector")
+	private SparseVector sparseVector;
+
+	private Integer offset;
+
+	private String orderBy;
 
 	private String collection;
 
@@ -46,8 +62,16 @@ public class QueryCollectionDataRequest extends RpcAcsRequest<QueryCollectionDat
 	private String filter;
 
 	private String namespace;
+
+	private String metrics;
+
+	private String hybridSearch;
+
+	private Boolean includeValues;
+
+	private String workspaceId;
 	public QueryCollectionDataRequest() {
-		super("gpdb", "2016-05-03", "QueryCollectionData");
+		super("gpdb", "2016-05-03", "QueryCollectionData", "gpdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -66,6 +90,28 @@ public class QueryCollectionDataRequest extends RpcAcsRequest<QueryCollectionDat
 		}
 	}
 
+	public String getIncludeMetadataFields() {
+		return this.includeMetadataFields;
+	}
+
+	public void setIncludeMetadataFields(String includeMetadataFields) {
+		this.includeMetadataFields = includeMetadataFields;
+		if(includeMetadataFields != null){
+			putQueryParameter("IncludeMetadataFields", includeMetadataFields);
+		}
+	}
+
+	public RelationalTableFilter getRelationalTableFilter() {
+		return this.relationalTableFilter;
+	}
+
+	public void setRelationalTableFilter(RelationalTableFilter relationalTableFilter) {
+		this.relationalTableFilter = relationalTableFilter;	
+		if (relationalTableFilter != null) {
+			putQueryParameter("RelationalTableFilter" , new Gson().toJson(relationalTableFilter));
+		}	
+	}
+
 	public String getContent() {
 		return this.content;
 	}
@@ -75,6 +121,17 @@ public class QueryCollectionDataRequest extends RpcAcsRequest<QueryCollectionDat
 		if(content != null){
 			putQueryParameter("Content", content);
 		}
+	}
+
+	public Map<String,Map<String,Object>> getHybridSearchArgs() {
+		return this.hybridSearchArgs;
+	}
+
+	public void setHybridSearchArgs(Map<String,Map<String,Object>> hybridSearchArgs) {
+		this.hybridSearchArgs = hybridSearchArgs;	
+		if (hybridSearchArgs != null) {
+			putQueryParameter("HybridSearchArgs" , new Gson().toJson(hybridSearchArgs));
+		}	
 	}
 
 	public String getDBInstanceId() {
@@ -97,6 +154,39 @@ public class QueryCollectionDataRequest extends RpcAcsRequest<QueryCollectionDat
 		if (vector != null) {
 			putQueryParameter("Vector" , new Gson().toJson(vector));
 		}	
+	}
+
+	public SparseVector getSparseVector() {
+		return this.sparseVector;
+	}
+
+	public void setSparseVector(SparseVector sparseVector) {
+		this.sparseVector = sparseVector;	
+		if (sparseVector != null) {
+			putQueryParameter("SparseVector" , new Gson().toJson(sparseVector));
+		}	
+	}
+
+	public Integer getOffset() {
+		return this.offset;
+	}
+
+	public void setOffset(Integer offset) {
+		this.offset = offset;
+		if(offset != null){
+			putQueryParameter("Offset", offset.toString());
+		}
+	}
+
+	public String getOrderBy() {
+		return this.orderBy;
+	}
+
+	public void setOrderBy(String orderBy) {
+		this.orderBy = orderBy;
+		if(orderBy != null){
+			putQueryParameter("OrderBy", orderBy);
+		}
 	}
 
 	public String getCollection() {
@@ -139,7 +229,7 @@ public class QueryCollectionDataRequest extends RpcAcsRequest<QueryCollectionDat
 	public void setFilter(String filter) {
 		this.filter = filter;
 		if(filter != null){
-			putQueryParameter("Filter", filter);
+			putBodyParameter("Filter", filter);
 		}
 	}
 
@@ -151,6 +241,122 @@ public class QueryCollectionDataRequest extends RpcAcsRequest<QueryCollectionDat
 		this.namespace = namespace;
 		if(namespace != null){
 			putQueryParameter("Namespace", namespace);
+		}
+	}
+
+	public String getMetrics() {
+		return this.metrics;
+	}
+
+	public void setMetrics(String metrics) {
+		this.metrics = metrics;
+		if(metrics != null){
+			putQueryParameter("Metrics", metrics);
+		}
+	}
+
+	public String getHybridSearch() {
+		return this.hybridSearch;
+	}
+
+	public void setHybridSearch(String hybridSearch) {
+		this.hybridSearch = hybridSearch;
+		if(hybridSearch != null){
+			putQueryParameter("HybridSearch", hybridSearch);
+		}
+	}
+
+	public Boolean getIncludeValues() {
+		return this.includeValues;
+	}
+
+	public void setIncludeValues(Boolean includeValues) {
+		this.includeValues = includeValues;
+		if(includeValues != null){
+			putQueryParameter("IncludeValues", includeValues.toString());
+		}
+	}
+
+	public String getWorkspaceId() {
+		return this.workspaceId;
+	}
+
+	public void setWorkspaceId(String workspaceId) {
+		this.workspaceId = workspaceId;
+		if(workspaceId != null){
+			putQueryParameter("WorkspaceId", workspaceId);
+		}
+	}
+
+	public static class RelationalTableFilter {
+
+		@SerializedName("Condition")
+		private String condition;
+
+		@SerializedName("CollectionMetadataField")
+		private String collectionMetadataField;
+
+		@SerializedName("TableName")
+		private String tableName;
+
+		@SerializedName("TableField")
+		private String tableField;
+
+		public String getCondition() {
+			return this.condition;
+		}
+
+		public void setCondition(String condition) {
+			this.condition = condition;
+		}
+
+		public String getCollectionMetadataField() {
+			return this.collectionMetadataField;
+		}
+
+		public void setCollectionMetadataField(String collectionMetadataField) {
+			this.collectionMetadataField = collectionMetadataField;
+		}
+
+		public String getTableName() {
+			return this.tableName;
+		}
+
+		public void setTableName(String tableName) {
+			this.tableName = tableName;
+		}
+
+		public String getTableField() {
+			return this.tableField;
+		}
+
+		public void setTableField(String tableField) {
+			this.tableField = tableField;
+		}
+	}
+
+	public static class SparseVector {
+
+		@SerializedName("Indices")
+		private List<Long> indices;
+
+		@SerializedName("Values")
+		private List<Double> values;
+
+		public List<Long> getIndices() {
+			return this.indices;
+		}
+
+		public void setIndices(List<Long> indices) {
+			this.indices = indices;
+		}
+
+		public List<Double> getValues() {
+			return this.values;
+		}
+
+		public void setValues(List<Double> values) {
+			this.values = values;
 		}
 	}
 

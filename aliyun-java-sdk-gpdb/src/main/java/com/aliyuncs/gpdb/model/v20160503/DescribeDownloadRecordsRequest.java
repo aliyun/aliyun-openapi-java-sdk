@@ -25,14 +25,27 @@ import com.aliyuncs.gpdb.Endpoint;
 public class DescribeDownloadRecordsRequest extends RpcAcsRequest<DescribeDownloadRecordsResponse> {
 	   
 
+	private String downloadTaskType;
+
 	private String dBInstanceId;
 	public DescribeDownloadRecordsRequest() {
-		super("gpdb", "2016-05-03", "DescribeDownloadRecords");
+		super("gpdb", "2016-05-03", "DescribeDownloadRecords", "gpdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getDownloadTaskType() {
+		return this.downloadTaskType;
+	}
+
+	public void setDownloadTaskType(String downloadTaskType) {
+		this.downloadTaskType = downloadTaskType;
+		if(downloadTaskType != null){
+			putQueryParameter("DownloadTaskType", downloadTaskType);
+		}
 	}
 
 	public String getDBInstanceId() {

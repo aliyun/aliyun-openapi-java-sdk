@@ -27,11 +27,15 @@ public class DescribeDBInstanceDataSkewRequest extends RpcAcsRequest<DescribeDBI
 
 	private Integer pageNumber;
 
+	private String database;
+
 	private Integer pageSize;
 
 	private String dBInstanceId;
+
+	private String orderBy;
 	public DescribeDBInstanceDataSkewRequest() {
-		super("gpdb", "2016-05-03", "DescribeDBInstanceDataSkew");
+		super("gpdb", "2016-05-03", "DescribeDBInstanceDataSkew", "gpdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -47,6 +51,17 @@ public class DescribeDBInstanceDataSkewRequest extends RpcAcsRequest<DescribeDBI
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getDatabase() {
+		return this.database;
+	}
+
+	public void setDatabase(String database) {
+		this.database = database;
+		if(database != null){
+			putQueryParameter("Database", database);
 		}
 	}
 
@@ -69,6 +84,17 @@ public class DescribeDBInstanceDataSkewRequest extends RpcAcsRequest<DescribeDBI
 		this.dBInstanceId = dBInstanceId;
 		if(dBInstanceId != null){
 			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public String getOrderBy() {
+		return this.orderBy;
+	}
+
+	public void setOrderBy(String orderBy) {
+		this.orderBy = orderBy;
+		if(orderBy != null){
+			putQueryParameter("OrderBy", orderBy);
 		}
 	}
 

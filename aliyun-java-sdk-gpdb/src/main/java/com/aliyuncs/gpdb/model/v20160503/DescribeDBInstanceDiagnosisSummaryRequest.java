@@ -37,7 +37,7 @@ public class DescribeDBInstanceDiagnosisSummaryRequest extends RpcAcsRequest<Des
 
 	private String rolePreferd;
 	public DescribeDBInstanceDiagnosisSummaryRequest() {
-		super("gpdb", "2016-05-03", "DescribeDBInstanceDiagnosisSummary");
+		super("gpdb", "2016-05-03", "DescribeDBInstanceDiagnosisSummary", "gpdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

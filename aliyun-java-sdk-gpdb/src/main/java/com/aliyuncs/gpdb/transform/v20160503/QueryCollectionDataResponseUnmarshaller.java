@@ -30,13 +30,14 @@ public class QueryCollectionDataResponseUnmarshaller {
 		queryCollectionDataResponse.setRequestId(_ctx.stringValue("QueryCollectionDataResponse.RequestId"));
 		queryCollectionDataResponse.setStatus(_ctx.stringValue("QueryCollectionDataResponse.Status"));
 		queryCollectionDataResponse.setMessage(_ctx.stringValue("QueryCollectionDataResponse.Message"));
+		queryCollectionDataResponse.setTotal(_ctx.integerValue("QueryCollectionDataResponse.Total"));
 
 		List<Match> matches = new ArrayList<Match>();
 		for (int i = 0; i < _ctx.lengthValue("QueryCollectionDataResponse.Matches.Length"); i++) {
 			Match match = new Match();
 			match.setId(_ctx.stringValue("QueryCollectionDataResponse.Matches["+ i +"].Id"));
 			match.setMetadata(_ctx.mapValue("QueryCollectionDataResponse.Matches["+ i +"].Metadata"));
-			match.setSimilarity(_ctx.doubleValue("QueryCollectionDataResponse.Matches["+ i +"].Similarity"));
+			match.setScore(_ctx.doubleValue("QueryCollectionDataResponse.Matches["+ i +"].Score"));
 
 			List<Double> values = new ArrayList<Double>();
 			for (int j = 0; j < _ctx.lengthValue("QueryCollectionDataResponse.Matches["+ i +"].Values.Length"); j++) {

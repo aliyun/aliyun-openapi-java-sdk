@@ -32,8 +32,10 @@ public class InitVectorDatabaseRequest extends RpcAcsRequest<InitVectorDatabaseR
 	private String managerAccountPassword;
 
 	private Long ownerId;
+
+	private String workspaceId;
 	public InitVectorDatabaseRequest() {
-		super("gpdb", "2016-05-03", "InitVectorDatabase");
+		super("gpdb", "2016-05-03", "InitVectorDatabase", "gpdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -82,6 +84,17 @@ public class InitVectorDatabaseRequest extends RpcAcsRequest<InitVectorDatabaseR
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getWorkspaceId() {
+		return this.workspaceId;
+	}
+
+	public void setWorkspaceId(String workspaceId) {
+		this.workspaceId = workspaceId;
+		if(workspaceId != null){
+			putQueryParameter("WorkspaceId", workspaceId);
 		}
 	}
 

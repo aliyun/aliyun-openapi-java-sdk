@@ -25,6 +25,8 @@ import com.aliyuncs.gpdb.Endpoint;
 public class DeleteVectorIndexRequest extends RpcAcsRequest<DeleteVectorIndexResponse> {
 	   
 
+	private String type;
+
 	private String managerAccount;
 
 	private String dBInstanceId;
@@ -37,12 +39,23 @@ public class DeleteVectorIndexRequest extends RpcAcsRequest<DeleteVectorIndexRes
 
 	private String namespace;
 	public DeleteVectorIndexRequest() {
-		super("gpdb", "2016-05-03", "DeleteVectorIndex");
+		super("gpdb", "2016-05-03", "DeleteVectorIndex", "gpdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
+		}
 	}
 
 	public String getManagerAccount() {

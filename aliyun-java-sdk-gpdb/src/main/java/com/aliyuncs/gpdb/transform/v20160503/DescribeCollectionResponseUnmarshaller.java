@@ -34,6 +34,8 @@ public class DescribeCollectionResponseUnmarshaller {
 		describeCollectionResponse.setNamespace(_ctx.stringValue("DescribeCollectionResponse.Namespace"));
 		describeCollectionResponse.setMessage(_ctx.stringValue("DescribeCollectionResponse.Message"));
 		describeCollectionResponse.setStatus(_ctx.stringValue("DescribeCollectionResponse.Status"));
+		describeCollectionResponse.setSupportSparse(_ctx.booleanValue("DescribeCollectionResponse.SupportSparse"));
+		describeCollectionResponse.setSparseVectorMetrics(_ctx.stringValue("DescribeCollectionResponse.SparseVectorMetrics"));
 	 
 	 	return describeCollectionResponse;
 	}

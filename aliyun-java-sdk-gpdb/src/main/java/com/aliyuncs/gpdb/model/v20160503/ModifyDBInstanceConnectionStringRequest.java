@@ -27,13 +27,15 @@ public class ModifyDBInstanceConnectionStringRequest extends RpcAcsRequest<Modif
 
 	private String connectionStringPrefix;
 
+	private String clientToken;
+
 	private String dBInstanceId;
 
 	private String currentConnectionString;
 
 	private String port;
 	public ModifyDBInstanceConnectionStringRequest() {
-		super("gpdb", "2016-05-03", "ModifyDBInstanceConnectionString");
+		super("gpdb", "2016-05-03", "ModifyDBInstanceConnectionString", "gpdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -49,6 +51,17 @@ public class ModifyDBInstanceConnectionStringRequest extends RpcAcsRequest<Modif
 		this.connectionStringPrefix = connectionStringPrefix;
 		if(connectionStringPrefix != null){
 			putQueryParameter("ConnectionStringPrefix", connectionStringPrefix);
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 

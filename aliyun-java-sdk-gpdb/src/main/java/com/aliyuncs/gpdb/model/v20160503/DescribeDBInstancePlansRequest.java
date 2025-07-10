@@ -39,7 +39,7 @@ public class DescribeDBInstancePlansRequest extends RpcAcsRequest<DescribeDBInst
 
 	private String planId;
 	public DescribeDBInstancePlansRequest() {
-		super("gpdb", "2016-05-03", "DescribeDBInstancePlans");
+		super("gpdb", "2016-05-03", "DescribeDBInstancePlans", "gpdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -32,8 +32,10 @@ public class ListCollectionsRequest extends RpcAcsRequest<ListCollectionsRespons
 	private String namespacePassword;
 
 	private String namespace;
+
+	private String workspaceId;
 	public ListCollectionsRequest() {
-		super("gpdb", "2016-05-03", "ListCollections");
+		super("gpdb", "2016-05-03", "ListCollections", "gpdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -82,6 +84,17 @@ public class ListCollectionsRequest extends RpcAcsRequest<ListCollectionsRespons
 		this.namespace = namespace;
 		if(namespace != null){
 			putQueryParameter("Namespace", namespace);
+		}
+	}
+
+	public String getWorkspaceId() {
+		return this.workspaceId;
+	}
+
+	public void setWorkspaceId(String workspaceId) {
+		this.workspaceId = workspaceId;
+		if(workspaceId != null){
+			putQueryParameter("WorkspaceId", workspaceId);
 		}
 	}
 

@@ -29,7 +29,7 @@ public class DescribeSupportFeaturesRequest extends RpcAcsRequest<DescribeSuppor
 
 	private Long ownerId;
 	public DescribeSupportFeaturesRequest() {
-		super("gpdb", "2016-05-03", "DescribeSupportFeatures");
+		super("gpdb", "2016-05-03", "DescribeSupportFeatures", "gpdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

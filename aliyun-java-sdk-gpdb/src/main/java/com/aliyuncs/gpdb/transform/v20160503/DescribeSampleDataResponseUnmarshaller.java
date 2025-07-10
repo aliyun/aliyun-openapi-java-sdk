@@ -26,6 +26,7 @@ public class DescribeSampleDataResponseUnmarshaller {
 		describeSampleDataResponse.setHasSampleData(_ctx.booleanValue("DescribeSampleDataResponse.HasSampleData"));
 		describeSampleDataResponse.setErrorMessage(_ctx.stringValue("DescribeSampleDataResponse.ErrorMessage"));
 		describeSampleDataResponse.setDBInstanceId(_ctx.stringValue("DescribeSampleDataResponse.DBInstanceId"));
+		describeSampleDataResponse.setSampleDataStatus(_ctx.stringValue("DescribeSampleDataResponse.SampleDataStatus"));
 	 
 	 	return describeSampleDataResponse;
 	}

@@ -35,7 +35,7 @@ public class SetDataShareInstanceRequest extends RpcAcsRequest<SetDataShareInsta
 
 	private Long ownerId;
 	public SetDataShareInstanceRequest() {
-		super("gpdb", "2016-05-03", "SetDataShareInstance");
+		super("gpdb", "2016-05-03", "SetDataShareInstance", "gpdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

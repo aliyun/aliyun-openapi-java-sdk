@@ -27,7 +27,7 @@ public class DescribeDiagnosisDimensionsRequest extends RpcAcsRequest<DescribeDi
 
 	private String dBInstanceId;
 	public DescribeDiagnosisDimensionsRequest() {
-		super("gpdb", "2016-05-03", "DescribeDiagnosisDimensions");
+		super("gpdb", "2016-05-03", "DescribeDiagnosisDimensions", "gpdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

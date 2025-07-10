@@ -35,7 +35,7 @@ public class DescribeDataShareInstancesRequest extends RpcAcsRequest<DescribeDat
 
 	private Long ownerId;
 	public DescribeDataShareInstancesRequest() {
-		super("gpdb", "2016-05-03", "DescribeDataShareInstances");
+		super("gpdb", "2016-05-03", "DescribeDataShareInstances", "gpdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

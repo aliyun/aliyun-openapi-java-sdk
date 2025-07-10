@@ -25,16 +25,29 @@ import com.aliyuncs.gpdb.Endpoint;
 public class DescribeDBInstanceIPArrayListRequest extends RpcAcsRequest<DescribeDBInstanceIPArrayListResponse> {
 	   
 
+	private String dBInstanceIPArrayName;
+
 	private String resourceGroupId;
 
 	private String dBInstanceId;
 	public DescribeDBInstanceIPArrayListRequest() {
-		super("gpdb", "2016-05-03", "DescribeDBInstanceIPArrayList");
+		super("gpdb", "2016-05-03", "DescribeDBInstanceIPArrayList", "gpdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getDBInstanceIPArrayName() {
+		return this.dBInstanceIPArrayName;
+	}
+
+	public void setDBInstanceIPArrayName(String dBInstanceIPArrayName) {
+		this.dBInstanceIPArrayName = dBInstanceIPArrayName;
+		if(dBInstanceIPArrayName != null){
+			putQueryParameter("DBInstanceIPArrayName", dBInstanceIPArrayName);
+		}
 	}
 
 	public String getResourceGroupId() {

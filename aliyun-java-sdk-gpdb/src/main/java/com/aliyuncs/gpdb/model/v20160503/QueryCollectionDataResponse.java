@@ -32,6 +32,8 @@ public class QueryCollectionDataResponse extends AcsResponse {
 
 	private String message;
 
+	private Integer total;
+
 	private List<Match> matches;
 
 	public String getRequestId() {
@@ -58,6 +60,14 @@ public class QueryCollectionDataResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public Integer getTotal() {
+		return this.total;
+	}
+
+	public void setTotal(Integer total) {
+		this.total = total;
+	}
+
 	public List<Match> getMatches() {
 		return this.matches;
 	}
@@ -72,7 +82,7 @@ public class QueryCollectionDataResponse extends AcsResponse {
 
 		private Map<Object,Object> metadata;
 
-		private Double similarity;
+		private Double score;
 
 		private List<Double> values;
 
@@ -92,12 +102,12 @@ public class QueryCollectionDataResponse extends AcsResponse {
 			this.metadata = metadata;
 		}
 
-		public Double getSimilarity() {
-			return this.similarity;
+		public Double getScore() {
+			return this.score;
 		}
 
-		public void setSimilarity(Double similarity) {
-			this.similarity = similarity;
+		public void setScore(Double score) {
+			this.score = score;
 		}
 
 		public List<Double> getValues() {

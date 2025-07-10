@@ -29,7 +29,7 @@ public class RebalanceDBInstanceRequest extends RpcAcsRequest<RebalanceDBInstanc
 
 	private String dBInstanceId;
 	public RebalanceDBInstanceRequest() {
-		super("gpdb", "2016-05-03", "RebalanceDBInstance");
+		super("gpdb", "2016-05-03", "RebalanceDBInstance", "gpdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

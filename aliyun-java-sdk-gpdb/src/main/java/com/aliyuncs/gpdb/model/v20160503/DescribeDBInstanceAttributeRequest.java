@@ -31,7 +31,7 @@ public class DescribeDBInstanceAttributeRequest extends RpcAcsRequest<DescribeDB
 
 	private Long ownerId;
 	public DescribeDBInstanceAttributeRequest() {
-		super("gpdb", "2016-05-03", "DescribeDBInstanceAttribute");
+		super("gpdb", "2016-05-03", "DescribeDBInstanceAttribute", "gpdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

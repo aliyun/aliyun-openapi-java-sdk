@@ -43,7 +43,7 @@ public class CreateDBInstancePlanRequest extends RpcAcsRequest<CreateDBInstanceP
 
 	private String planScheduleType;
 	public CreateDBInstancePlanRequest() {
-		super("gpdb", "2016-05-03", "CreateDBInstancePlan");
+		super("gpdb", "2016-05-03", "CreateDBInstancePlan", "gpdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class ModifyVectorConfigurationRequest extends RpcAcsRequest<ModifyVector
 
 	private Long ownerId;
 	public ModifyVectorConfigurationRequest() {
-		super("gpdb", "2016-05-03", "ModifyVectorConfiguration");
+		super("gpdb", "2016-05-03", "ModifyVectorConfiguration", "gpdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

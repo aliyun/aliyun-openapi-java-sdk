@@ -39,7 +39,7 @@ public class ModifyDBInstanceResourceGroupRequest extends RpcAcsRequest<ModifyDB
 
 	private String newResourceGroupId;
 	public ModifyDBInstanceResourceGroupRequest() {
-		super("gpdb", "2016-05-03", "ModifyDBInstanceResourceGroup");
+		super("gpdb", "2016-05-03", "ModifyDBInstanceResourceGroup", "gpdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -81,7 +81,7 @@ public class DescribeDBInstanceIndexUsageResponse extends AcsResponse {
 
 		private String indexSize;
 
-		private Integer indexScanTimes;
+		private Long indexScanTimes;
 
 		private String indexDef;
 
@@ -143,11 +143,11 @@ public class DescribeDBInstanceIndexUsageResponse extends AcsResponse {
 			this.indexSize = indexSize;
 		}
 
-		public Integer getIndexScanTimes() {
+		public Long getIndexScanTimes() {
 			return this.indexScanTimes;
 		}
 
-		public void setIndexScanTimes(Integer indexScanTimes) {
+		public void setIndexScanTimes(Long indexScanTimes) {
 			this.indexScanTimes = indexScanTimes;
 		}
 

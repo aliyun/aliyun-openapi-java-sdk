@@ -34,8 +34,10 @@ public class DescribeNamespaceRequest extends RpcAcsRequest<DescribeNamespaceRes
 	private Long ownerId;
 
 	private String namespace;
+
+	private String workspaceId;
 	public DescribeNamespaceRequest() {
-		super("gpdb", "2016-05-03", "DescribeNamespace");
+		super("gpdb", "2016-05-03", "DescribeNamespace", "gpdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -95,6 +97,17 @@ public class DescribeNamespaceRequest extends RpcAcsRequest<DescribeNamespaceRes
 		this.namespace = namespace;
 		if(namespace != null){
 			putQueryParameter("Namespace", namespace);
+		}
+	}
+
+	public String getWorkspaceId() {
+		return this.workspaceId;
+	}
+
+	public void setWorkspaceId(String workspaceId) {
+		this.workspaceId = workspaceId;
+		if(workspaceId != null){
+			putQueryParameter("WorkspaceId", workspaceId);
 		}
 	}
 

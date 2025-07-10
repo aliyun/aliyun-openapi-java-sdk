@@ -37,7 +37,7 @@ public class UpgradeDBVersionRequest extends RpcAcsRequest<UpgradeDBVersionRespo
 
 	private Long ownerId;
 	public UpgradeDBVersionRequest() {
-		super("gpdb", "2016-05-03", "UpgradeDBVersion");
+		super("gpdb", "2016-05-03", "UpgradeDBVersion", "gpdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -45,7 +45,7 @@ public class DescribeDiagnosisRecordsRequest extends RpcAcsRequest<DescribeDiagn
 
 	private String user;
 	public DescribeDiagnosisRecordsRequest() {
-		super("gpdb", "2016-05-03", "DescribeDiagnosisRecords");
+		super("gpdb", "2016-05-03", "DescribeDiagnosisRecords", "gpdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

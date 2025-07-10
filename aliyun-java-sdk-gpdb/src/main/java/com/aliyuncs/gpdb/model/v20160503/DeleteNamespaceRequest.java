@@ -34,8 +34,10 @@ public class DeleteNamespaceRequest extends RpcAcsRequest<DeleteNamespaceRespons
 	private Long ownerId;
 
 	private String namespace;
+
+	private String workspaceId;
 	public DeleteNamespaceRequest() {
-		super("gpdb", "2016-05-03", "DeleteNamespace");
+		super("gpdb", "2016-05-03", "DeleteNamespace", "gpdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -95,6 +97,17 @@ public class DeleteNamespaceRequest extends RpcAcsRequest<DeleteNamespaceRespons
 		this.namespace = namespace;
 		if(namespace != null){
 			putQueryParameter("Namespace", namespace);
+		}
+	}
+
+	public String getWorkspaceId() {
+		return this.workspaceId;
+	}
+
+	public void setWorkspaceId(String workspaceId) {
+		this.workspaceId = workspaceId;
+		if(workspaceId != null){
+			putQueryParameter("WorkspaceId", workspaceId);
 		}
 	}
 

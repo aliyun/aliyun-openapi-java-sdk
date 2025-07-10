@@ -25,6 +25,10 @@ import com.aliyuncs.gpdb.Endpoint;
 public class CreateVectorIndexRequest extends RpcAcsRequest<CreateVectorIndexResponse> {
 	   
 
+	private String type;
+
+	private Integer externalStorage;
+
 	private String managerAccount;
 
 	private String dBInstanceId;
@@ -33,20 +37,48 @@ public class CreateVectorIndexRequest extends RpcAcsRequest<CreateVectorIndexRes
 
 	private String managerAccountPassword;
 
+	private Integer hnswEfConstruction;
+
 	private String collection;
 
 	private Long ownerId;
 
+	private Integer hnswM;
+
 	private String namespace;
 
 	private String metrics;
+
+	private Integer pqEnable;
 	public CreateVectorIndexRequest() {
-		super("gpdb", "2016-05-03", "CreateVectorIndex");
+		super("gpdb", "2016-05-03", "CreateVectorIndex", "gpdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
+		}
+	}
+
+	public Integer getExternalStorage() {
+		return this.externalStorage;
+	}
+
+	public void setExternalStorage(Integer externalStorage) {
+		this.externalStorage = externalStorage;
+		if(externalStorage != null){
+			putQueryParameter("ExternalStorage", externalStorage.toString());
+		}
 	}
 
 	public String getManagerAccount() {
@@ -93,6 +125,17 @@ public class CreateVectorIndexRequest extends RpcAcsRequest<CreateVectorIndexRes
 		}
 	}
 
+	public Integer getHnswEfConstruction() {
+		return this.hnswEfConstruction;
+	}
+
+	public void setHnswEfConstruction(Integer hnswEfConstruction) {
+		this.hnswEfConstruction = hnswEfConstruction;
+		if(hnswEfConstruction != null){
+			putQueryParameter("HnswEfConstruction", hnswEfConstruction.toString());
+		}
+	}
+
 	public String getCollection() {
 		return this.collection;
 	}
@@ -115,6 +158,17 @@ public class CreateVectorIndexRequest extends RpcAcsRequest<CreateVectorIndexRes
 		}
 	}
 
+	public Integer getHnswM() {
+		return this.hnswM;
+	}
+
+	public void setHnswM(Integer hnswM) {
+		this.hnswM = hnswM;
+		if(hnswM != null){
+			putQueryParameter("HnswM", hnswM.toString());
+		}
+	}
+
 	public String getNamespace() {
 		return this.namespace;
 	}
@@ -134,6 +188,17 @@ public class CreateVectorIndexRequest extends RpcAcsRequest<CreateVectorIndexRes
 		this.metrics = metrics;
 		if(metrics != null){
 			putQueryParameter("Metrics", metrics);
+		}
+	}
+
+	public Integer getPqEnable() {
+		return this.pqEnable;
+	}
+
+	public void setPqEnable(Integer pqEnable) {
+		this.pqEnable = pqEnable;
+		if(pqEnable != null){
+			putQueryParameter("PqEnable", pqEnable.toString());
 		}
 	}
 

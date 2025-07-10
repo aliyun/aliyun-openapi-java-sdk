@@ -25,6 +25,8 @@ import com.aliyuncs.gpdb.Endpoint;
 public class DescribeDBClusterPerformanceRequest extends RpcAcsRequest<DescribeDBClusterPerformanceResponse> {
 	   
 
+	private String resourceGroupName;
+
 	private String nodeType;
 
 	private String startTime;
@@ -37,12 +39,23 @@ public class DescribeDBClusterPerformanceRequest extends RpcAcsRequest<DescribeD
 
 	private String nodes;
 	public DescribeDBClusterPerformanceRequest() {
-		super("gpdb", "2016-05-03", "DescribeDBClusterPerformance");
+		super("gpdb", "2016-05-03", "DescribeDBClusterPerformance", "gpdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getResourceGroupName() {
+		return this.resourceGroupName;
+	}
+
+	public void setResourceGroupName(String resourceGroupName) {
+		this.resourceGroupName = resourceGroupName;
+		if(resourceGroupName != null){
+			putQueryParameter("ResourceGroupName", resourceGroupName);
+		}
 	}
 
 	public String getNodeType() {

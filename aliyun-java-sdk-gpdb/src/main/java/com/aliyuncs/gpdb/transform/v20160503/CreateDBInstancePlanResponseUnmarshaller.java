@@ -23,10 +23,10 @@ public class CreateDBInstancePlanResponseUnmarshaller {
 	public static CreateDBInstancePlanResponse unmarshall(CreateDBInstancePlanResponse createDBInstancePlanResponse, UnmarshallerContext _ctx) {
 		
 		createDBInstancePlanResponse.setRequestId(_ctx.stringValue("CreateDBInstancePlanResponse.RequestId"));
-		createDBInstancePlanResponse.setStatus(_ctx.stringValue("CreateDBInstancePlanResponse.Status"));
-		createDBInstancePlanResponse.setErrorMessage(_ctx.stringValue("CreateDBInstancePlanResponse.ErrorMessage"));
 		createDBInstancePlanResponse.setDBInstanceId(_ctx.stringValue("CreateDBInstancePlanResponse.DBInstanceId"));
+		createDBInstancePlanResponse.setErrorMessage(_ctx.stringValue("CreateDBInstancePlanResponse.ErrorMessage"));
 		createDBInstancePlanResponse.setPlanId(_ctx.stringValue("CreateDBInstancePlanResponse.PlanId"));
+		createDBInstancePlanResponse.setStatus(_ctx.stringValue("CreateDBInstancePlanResponse.Status"));
 	 
 	 	return createDBInstancePlanResponse;
 	}

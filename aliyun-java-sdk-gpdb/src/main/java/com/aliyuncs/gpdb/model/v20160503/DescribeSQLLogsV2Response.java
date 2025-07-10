@@ -25,13 +25,31 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSQLLogsV2Response extends AcsResponse {
 
+	private String accessDeniedDetail;
+
+	private Integer pageNumber;
+
 	private Integer pageRecordCount;
 
 	private String requestId;
 
-	private Integer pageNumber;
-
 	private List<Item> items;
+
+	public String getAccessDeniedDetail() {
+		return this.accessDeniedDetail;
+	}
+
+	public void setAccessDeniedDetail(String accessDeniedDetail) {
+		this.accessDeniedDetail = accessDeniedDetail;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
 
 	public Integer getPageRecordCount() {
 		return this.pageRecordCount;
@@ -49,14 +67,6 @@ public class DescribeSQLLogsV2Response extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public List<Item> getItems() {
 		return this.items;
 	}
@@ -67,102 +77,46 @@ public class DescribeSQLLogsV2Response extends AcsResponse {
 
 	public static class Item {
 
-		private String operationClass;
-
-		private String executeState;
-
-		private Float executeCost;
-
-		private String sQLText;
-
-		private Integer sourcePort;
-
-		private String dBRole;
-
-		private String operationType;
-
-		private String sourceIP;
-
-		private Long returnRowCounts;
+		private String accountName;
 
 		private String dBName;
 
+		private String dBRole;
+
+		private String errorCode;
+
+		private String errorMsg;
+
+		private Float executeCost;
+
+		private String executeState;
+
+		private String operationClass;
+
 		private String operationExecuteTime;
+
+		private String operationType;
+
+		private Long returnRowCounts;
+
+		private String sQLText;
 
 		private Long scanRowCounts;
 
-		private String accountName;
+		private String sourceIP;
 
-		public String getOperationClass() {
-			return this.operationClass;
+		private Integer sourcePort;
+
+		private String queryId;
+
+		private String sessionId;
+
+		public String getAccountName() {
+			return this.accountName;
 		}
 
-		public void setOperationClass(String operationClass) {
-			this.operationClass = operationClass;
-		}
-
-		public String getExecuteState() {
-			return this.executeState;
-		}
-
-		public void setExecuteState(String executeState) {
-			this.executeState = executeState;
-		}
-
-		public Float getExecuteCost() {
-			return this.executeCost;
-		}
-
-		public void setExecuteCost(Float executeCost) {
-			this.executeCost = executeCost;
-		}
-
-		public String getSQLText() {
-			return this.sQLText;
-		}
-
-		public void setSQLText(String sQLText) {
-			this.sQLText = sQLText;
-		}
-
-		public Integer getSourcePort() {
-			return this.sourcePort;
-		}
-
-		public void setSourcePort(Integer sourcePort) {
-			this.sourcePort = sourcePort;
-		}
-
-		public String getDBRole() {
-			return this.dBRole;
-		}
-
-		public void setDBRole(String dBRole) {
-			this.dBRole = dBRole;
-		}
-
-		public String getOperationType() {
-			return this.operationType;
-		}
-
-		public void setOperationType(String operationType) {
-			this.operationType = operationType;
-		}
-
-		public String getSourceIP() {
-			return this.sourceIP;
-		}
-
-		public void setSourceIP(String sourceIP) {
-			this.sourceIP = sourceIP;
-		}
-
-		public Long getReturnRowCounts() {
-			return this.returnRowCounts;
-		}
-
-		public void setReturnRowCounts(Long returnRowCounts) {
-			this.returnRowCounts = returnRowCounts;
+		public void setAccountName(String accountName) {
+			this.accountName = accountName;
 		}
 
 		public String getDBName() {
@@ -173,12 +127,84 @@ public class DescribeSQLLogsV2Response extends AcsResponse {
 			this.dBName = dBName;
 		}
 
+		public String getDBRole() {
+			return this.dBRole;
+		}
+
+		public void setDBRole(String dBRole) {
+			this.dBRole = dBRole;
+		}
+
+		public String getErrorCode() {
+			return this.errorCode;
+		}
+
+		public void setErrorCode(String errorCode) {
+			this.errorCode = errorCode;
+		}
+
+		public String getErrorMsg() {
+			return this.errorMsg;
+		}
+
+		public void setErrorMsg(String errorMsg) {
+			this.errorMsg = errorMsg;
+		}
+
+		public Float getExecuteCost() {
+			return this.executeCost;
+		}
+
+		public void setExecuteCost(Float executeCost) {
+			this.executeCost = executeCost;
+		}
+
+		public String getExecuteState() {
+			return this.executeState;
+		}
+
+		public void setExecuteState(String executeState) {
+			this.executeState = executeState;
+		}
+
+		public String getOperationClass() {
+			return this.operationClass;
+		}
+
+		public void setOperationClass(String operationClass) {
+			this.operationClass = operationClass;
+		}
+
 		public String getOperationExecuteTime() {
 			return this.operationExecuteTime;
 		}
 
 		public void setOperationExecuteTime(String operationExecuteTime) {
 			this.operationExecuteTime = operationExecuteTime;
+		}
+
+		public String getOperationType() {
+			return this.operationType;
+		}
+
+		public void setOperationType(String operationType) {
+			this.operationType = operationType;
+		}
+
+		public Long getReturnRowCounts() {
+			return this.returnRowCounts;
+		}
+
+		public void setReturnRowCounts(Long returnRowCounts) {
+			this.returnRowCounts = returnRowCounts;
+		}
+
+		public String getSQLText() {
+			return this.sQLText;
+		}
+
+		public void setSQLText(String sQLText) {
+			this.sQLText = sQLText;
 		}
 
 		public Long getScanRowCounts() {
@@ -189,12 +215,36 @@ public class DescribeSQLLogsV2Response extends AcsResponse {
 			this.scanRowCounts = scanRowCounts;
 		}
 
-		public String getAccountName() {
-			return this.accountName;
+		public String getSourceIP() {
+			return this.sourceIP;
 		}
 
-		public void setAccountName(String accountName) {
-			this.accountName = accountName;
+		public void setSourceIP(String sourceIP) {
+			this.sourceIP = sourceIP;
+		}
+
+		public Integer getSourcePort() {
+			return this.sourcePort;
+		}
+
+		public void setSourcePort(Integer sourcePort) {
+			this.sourcePort = sourcePort;
+		}
+
+		public String getQueryId() {
+			return this.queryId;
+		}
+
+		public void setQueryId(String queryId) {
+			this.queryId = queryId;
+		}
+
+		public String getSessionId() {
+			return this.sessionId;
+		}
+
+		public void setSessionId(String sessionId) {
+			this.sessionId = sessionId;
 		}
 	}
 

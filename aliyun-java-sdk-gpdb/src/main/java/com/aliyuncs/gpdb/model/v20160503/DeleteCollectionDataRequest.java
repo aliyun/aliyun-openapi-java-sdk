@@ -38,8 +38,10 @@ public class DeleteCollectionDataRequest extends RpcAcsRequest<DeleteCollectionD
 	private String namespacePassword;
 
 	private String namespace;
+
+	private String workspaceId;
 	public DeleteCollectionDataRequest() {
-		super("gpdb", "2016-05-03", "DeleteCollectionData");
+		super("gpdb", "2016-05-03", "DeleteCollectionData", "gpdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -121,6 +123,17 @@ public class DeleteCollectionDataRequest extends RpcAcsRequest<DeleteCollectionD
 		this.namespace = namespace;
 		if(namespace != null){
 			putQueryParameter("Namespace", namespace);
+		}
+	}
+
+	public String getWorkspaceId() {
+		return this.workspaceId;
+	}
+
+	public void setWorkspaceId(String workspaceId) {
+		this.workspaceId = workspaceId;
+		if(workspaceId != null){
+			putQueryParameter("WorkspaceId", workspaceId);
 		}
 	}
 

@@ -40,7 +40,7 @@ public class DescribeDBInstanceIndexUsageResponseUnmarshaller {
 			itemsItem.setParentTableName(_ctx.stringValue("DescribeDBInstanceIndexUsageResponse.Items["+ i +"].ParentTableName"));
 			itemsItem.setIndexName(_ctx.stringValue("DescribeDBInstanceIndexUsageResponse.Items["+ i +"].IndexName"));
 			itemsItem.setIndexSize(_ctx.stringValue("DescribeDBInstanceIndexUsageResponse.Items["+ i +"].IndexSize"));
-			itemsItem.setIndexScanTimes(_ctx.integerValue("DescribeDBInstanceIndexUsageResponse.Items["+ i +"].IndexScanTimes"));
+			itemsItem.setIndexScanTimes(_ctx.longValue("DescribeDBInstanceIndexUsageResponse.Items["+ i +"].IndexScanTimes"));
 			itemsItem.setIndexDef(_ctx.stringValue("DescribeDBInstanceIndexUsageResponse.Items["+ i +"].IndexDef"));
 			itemsItem.setTimeLastUpdated(_ctx.stringValue("DescribeDBInstanceIndexUsageResponse.Items["+ i +"].TimeLastUpdated"));
 

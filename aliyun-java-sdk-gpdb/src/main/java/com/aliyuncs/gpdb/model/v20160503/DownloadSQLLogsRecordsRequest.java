@@ -57,7 +57,7 @@ public class DownloadSQLLogsRecordsRequest extends RpcAcsRequest<DownloadSQLLogs
 
 	private String user;
 	public DownloadSQLLogsRecordsRequest() {
-		super("gpdb", "2016-05-03", "DownloadSQLLogsRecords");
+		super("gpdb", "2016-05-03", "DownloadSQLLogsRecords", "gpdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

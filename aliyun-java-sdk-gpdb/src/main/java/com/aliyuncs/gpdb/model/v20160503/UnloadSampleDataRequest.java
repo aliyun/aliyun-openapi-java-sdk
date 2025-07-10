@@ -29,7 +29,7 @@ public class UnloadSampleDataRequest extends RpcAcsRequest<UnloadSampleDataRespo
 
 	private Long ownerId;
 	public UnloadSampleDataRequest() {
-		super("gpdb", "2016-05-03", "UnloadSampleData");
+		super("gpdb", "2016-05-03", "UnloadSampleData", "gpdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

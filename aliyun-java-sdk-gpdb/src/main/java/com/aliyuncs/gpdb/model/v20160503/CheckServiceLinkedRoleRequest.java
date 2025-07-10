@@ -25,7 +25,7 @@ import com.aliyuncs.gpdb.Endpoint;
 public class CheckServiceLinkedRoleRequest extends RpcAcsRequest<CheckServiceLinkedRoleResponse> {
 	   
 	public CheckServiceLinkedRoleRequest() {
-		super("gpdb", "2016-05-03", "CheckServiceLinkedRole");
+		super("gpdb", "2016-05-03", "CheckServiceLinkedRole", "gpdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

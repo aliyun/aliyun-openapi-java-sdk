@@ -41,8 +41,10 @@ public class UpsertCollectionDataRequest extends RpcAcsRequest<UpsertCollectionD
 	private String namespacePassword;
 
 	private String namespace;
+
+	private String workspaceId;
 	public UpsertCollectionDataRequest() {
-		super("gpdb", "2016-05-03", "UpsertCollectionData");
+		super("gpdb", "2016-05-03", "UpsertCollectionData", "gpdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -90,7 +92,7 @@ public class UpsertCollectionDataRequest extends RpcAcsRequest<UpsertCollectionD
 	public void setRows(List<Rows> rows) {
 		this.rows = rows;	
 		if (rows != null) {
-			putQueryParameter("Rows" , new Gson().toJson(rows));
+			putBodyParameter("Rows" , new Gson().toJson(rows));
 		}	
 	}
 
@@ -116,6 +118,17 @@ public class UpsertCollectionDataRequest extends RpcAcsRequest<UpsertCollectionD
 		}
 	}
 
+	public String getWorkspaceId() {
+		return this.workspaceId;
+	}
+
+	public void setWorkspaceId(String workspaceId) {
+		this.workspaceId = workspaceId;
+		if(workspaceId != null){
+			putQueryParameter("WorkspaceId", workspaceId);
+		}
+	}
+
 	public static class Rows {
 
 		@SerializedName("Metadata")
@@ -126,6 +139,9 @@ public class UpsertCollectionDataRequest extends RpcAcsRequest<UpsertCollectionD
 
 		@SerializedName("Id")
 		private String id;
+
+		@SerializedName("SparseVector")
+		private SparseVector sparseVector;
 
 		public Map<String,String> getMetadata() {
 			return this.metadata;
@@ -149,6 +165,39 @@ public class UpsertCollectionDataRequest extends RpcAcsRequest<UpsertCollectionD
 
 		public void setId(String id) {
 			this.id = id;
+		}
+
+		public SparseVector getSparseVector() {
+			return this.sparseVector;
+		}
+
+		public void setSparseVector(SparseVector sparseVector) {
+			this.sparseVector = sparseVector;
+		}
+
+		public static class SparseVector {
+
+			@SerializedName("Indices")
+			private List<Long> indices;
+
+			@SerializedName("Values")
+			private List<Double> values;
+
+			public List<Long> getIndices() {
+				return this.indices;
+			}
+
+			public void setIndices(List<Long> indices) {
+				this.indices = indices;
+			}
+
+			public List<Double> getValues() {
+				return this.values;
+			}
+
+			public void setValues(List<Double> values) {
+				this.values = values;
+			}
 		}
 	}
 

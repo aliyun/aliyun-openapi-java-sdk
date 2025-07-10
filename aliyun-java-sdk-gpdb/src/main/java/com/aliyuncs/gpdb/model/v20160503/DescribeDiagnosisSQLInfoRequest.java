@@ -31,7 +31,7 @@ public class DescribeDiagnosisSQLInfoRequest extends RpcAcsRequest<DescribeDiagn
 
 	private String queryID;
 	public DescribeDiagnosisSQLInfoRequest() {
-		super("gpdb", "2016-05-03", "DescribeDiagnosisSQLInfo");
+		super("gpdb", "2016-05-03", "DescribeDiagnosisSQLInfo", "gpdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

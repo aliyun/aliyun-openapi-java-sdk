@@ -48,9 +48,11 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 
 	private List<String> instanceDeployTypes;
 
+	private String vpcId;
+
 	private String instanceNetworkType;
 	public DescribeDBInstancesRequest() {
-		super("gpdb", "2016-05-03", "DescribeDBInstances");
+		super("gpdb", "2016-05-03", "DescribeDBInstances", "gpdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -208,6 +210,17 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 			}
 			putQueryParameter("InstanceDeployTypes" , instanceDeployTypesArrVal);
 		}	
+	}
+
+	public String getVpcId() {
+		return this.vpcId;
+	}
+
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+		if(vpcId != null){
+			putQueryParameter("VpcId", vpcId);
+		}
 	}
 
 	public String getInstanceNetworkType() {

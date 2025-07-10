@@ -29,7 +29,7 @@ public class PauseInstanceRequest extends RpcAcsRequest<PauseInstanceResponse> {
 
 	private Long ownerId;
 	public PauseInstanceRequest() {
-		super("gpdb", "2016-05-03", "PauseInstance");
+		super("gpdb", "2016-05-03", "PauseInstance", "gpdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

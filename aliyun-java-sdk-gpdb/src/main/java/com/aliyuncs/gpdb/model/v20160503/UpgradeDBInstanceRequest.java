@@ -43,15 +43,19 @@ public class UpgradeDBInstanceRequest extends RpcAcsRequest<UpgradeDBInstanceRes
 
 	private String dBInstanceGroupCount;
 
+	private String cacheStorageSize;
+
 	private Long ownerId;
 
 	private String segDiskPerformanceLevel;
 
 	private String dBInstanceClass;
 
+	private String serverlessResource;
+
 	private String payType;
 	public UpgradeDBInstanceRequest() {
-		super("gpdb", "2016-05-03", "UpgradeDBInstance");
+		super("gpdb", "2016-05-03", "UpgradeDBInstance", "gpdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -158,6 +162,17 @@ public class UpgradeDBInstanceRequest extends RpcAcsRequest<UpgradeDBInstanceRes
 		}
 	}
 
+	public String getCacheStorageSize() {
+		return this.cacheStorageSize;
+	}
+
+	public void setCacheStorageSize(String cacheStorageSize) {
+		this.cacheStorageSize = cacheStorageSize;
+		if(cacheStorageSize != null){
+			putQueryParameter("CacheStorageSize", cacheStorageSize);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -188,6 +203,17 @@ public class UpgradeDBInstanceRequest extends RpcAcsRequest<UpgradeDBInstanceRes
 		this.dBInstanceClass = dBInstanceClass;
 		if(dBInstanceClass != null){
 			putQueryParameter("DBInstanceClass", dBInstanceClass);
+		}
+	}
+
+	public String getServerlessResource() {
+		return this.serverlessResource;
+	}
+
+	public void setServerlessResource(String serverlessResource) {
+		this.serverlessResource = serverlessResource;
+		if(serverlessResource != null){
+			putQueryParameter("ServerlessResource", serverlessResource);
 		}
 	}
 

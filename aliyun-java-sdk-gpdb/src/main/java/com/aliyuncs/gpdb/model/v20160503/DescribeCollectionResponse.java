@@ -47,6 +47,10 @@ public class DescribeCollectionResponse extends AcsResponse {
 
 	private String status;
 
+	private Boolean supportSparse;
+
+	private String sparseVectorMetrics;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -133,6 +137,22 @@ public class DescribeCollectionResponse extends AcsResponse {
 
 	public void setStatus(String status) {
 		this.status = status;
+	}
+
+	public Boolean getSupportSparse() {
+		return this.supportSparse;
+	}
+
+	public void setSupportSparse(Boolean supportSparse) {
+		this.supportSparse = supportSparse;
+	}
+
+	public String getSparseVectorMetrics() {
+		return this.sparseVectorMetrics;
+	}
+
+	public void setSparseVectorMetrics(String sparseVectorMetrics) {
+		this.sparseVectorMetrics = sparseVectorMetrics;
 	}
 
 	@Override

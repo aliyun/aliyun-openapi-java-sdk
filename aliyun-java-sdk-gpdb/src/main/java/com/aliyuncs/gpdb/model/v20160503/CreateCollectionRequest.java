@@ -15,6 +15,8 @@
 package com.aliyuncs.gpdb.model.v20160503;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.gpdb.Endpoint;
 
@@ -27,6 +29,11 @@ public class CreateCollectionRequest extends RpcAcsRequest<CreateCollectionRespo
 
 	private String metadata;
 
+	@SerializedName("sparseVectorIndexConfig")
+	private SparseVectorIndexConfig sparseVectorIndexConfig;
+
+	private Integer externalStorage;
+
 	private String fullTextRetrievalFields;
 
 	private String managerAccount;
@@ -37,15 +44,29 @@ public class CreateCollectionRequest extends RpcAcsRequest<CreateCollectionRespo
 
 	private String managerAccountPassword;
 
+	private String hnswEfConstruction;
+
 	private String collection;
 
 	private Long ownerId;
 
+	private Integer hnswM;
+
 	private String parser;
 
+	private String metadataIndices;
+
 	private String namespace;
+
+	private Boolean supportSparse;
+
+	private String metrics;
+
+	private Integer pqEnable;
+
+	private String workspaceId;
 	public CreateCollectionRequest() {
-		super("gpdb", "2016-05-03", "CreateCollection");
+		super("gpdb", "2016-05-03", "CreateCollection", "gpdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -61,6 +82,28 @@ public class CreateCollectionRequest extends RpcAcsRequest<CreateCollectionRespo
 		this.metadata = metadata;
 		if(metadata != null){
 			putQueryParameter("Metadata", metadata);
+		}
+	}
+
+	public SparseVectorIndexConfig getSparseVectorIndexConfig() {
+		return this.sparseVectorIndexConfig;
+	}
+
+	public void setSparseVectorIndexConfig(SparseVectorIndexConfig sparseVectorIndexConfig) {
+		this.sparseVectorIndexConfig = sparseVectorIndexConfig;	
+		if (sparseVectorIndexConfig != null) {
+			putQueryParameter("SparseVectorIndexConfig" , new Gson().toJson(sparseVectorIndexConfig));
+		}	
+	}
+
+	public Integer getExternalStorage() {
+		return this.externalStorage;
+	}
+
+	public void setExternalStorage(Integer externalStorage) {
+		this.externalStorage = externalStorage;
+		if(externalStorage != null){
+			putQueryParameter("ExternalStorage", externalStorage.toString());
 		}
 	}
 
@@ -119,6 +162,17 @@ public class CreateCollectionRequest extends RpcAcsRequest<CreateCollectionRespo
 		}
 	}
 
+	public String getHnswEfConstruction() {
+		return this.hnswEfConstruction;
+	}
+
+	public void setHnswEfConstruction(String hnswEfConstruction) {
+		this.hnswEfConstruction = hnswEfConstruction;
+		if(hnswEfConstruction != null){
+			putQueryParameter("HnswEfConstruction", hnswEfConstruction);
+		}
+	}
+
 	public String getCollection() {
 		return this.collection;
 	}
@@ -141,6 +195,17 @@ public class CreateCollectionRequest extends RpcAcsRequest<CreateCollectionRespo
 		}
 	}
 
+	public Integer getHnswM() {
+		return this.hnswM;
+	}
+
+	public void setHnswM(Integer hnswM) {
+		this.hnswM = hnswM;
+		if(hnswM != null){
+			putQueryParameter("HnswM", hnswM.toString());
+		}
+	}
+
 	public String getParser() {
 		return this.parser;
 	}
@@ -152,6 +217,17 @@ public class CreateCollectionRequest extends RpcAcsRequest<CreateCollectionRespo
 		}
 	}
 
+	public String getMetadataIndices() {
+		return this.metadataIndices;
+	}
+
+	public void setMetadataIndices(String metadataIndices) {
+		this.metadataIndices = metadataIndices;
+		if(metadataIndices != null){
+			putQueryParameter("MetadataIndices", metadataIndices);
+		}
+	}
+
 	public String getNamespace() {
 		return this.namespace;
 	}
@@ -160,6 +236,75 @@ public class CreateCollectionRequest extends RpcAcsRequest<CreateCollectionRespo
 		this.namespace = namespace;
 		if(namespace != null){
 			putQueryParameter("Namespace", namespace);
+		}
+	}
+
+	public Boolean getSupportSparse() {
+		return this.supportSparse;
+	}
+
+	public void setSupportSparse(Boolean supportSparse) {
+		this.supportSparse = supportSparse;
+		if(supportSparse != null){
+			putQueryParameter("SupportSparse", supportSparse.toString());
+		}
+	}
+
+	public String getMetrics() {
+		return this.metrics;
+	}
+
+	public void setMetrics(String metrics) {
+		this.metrics = metrics;
+		if(metrics != null){
+			putQueryParameter("Metrics", metrics);
+		}
+	}
+
+	public Integer getPqEnable() {
+		return this.pqEnable;
+	}
+
+	public void setPqEnable(Integer pqEnable) {
+		this.pqEnable = pqEnable;
+		if(pqEnable != null){
+			putQueryParameter("PqEnable", pqEnable.toString());
+		}
+	}
+
+	public String getWorkspaceId() {
+		return this.workspaceId;
+	}
+
+	public void setWorkspaceId(String workspaceId) {
+		this.workspaceId = workspaceId;
+		if(workspaceId != null){
+			putQueryParameter("WorkspaceId", workspaceId);
+		}
+	}
+
+	public static class SparseVectorIndexConfig {
+
+		@SerializedName("HnswM")
+		private Integer hnswM;
+
+		@SerializedName("HnswEfConstruction")
+		private Integer hnswEfConstruction;
+
+		public Integer getHnswM() {
+			return this.hnswM;
+		}
+
+		public void setHnswM(Integer hnswM) {
+			this.hnswM = hnswM;
+		}
+
+		public Integer getHnswEfConstruction() {
+			return this.hnswEfConstruction;
+		}
+
+		public void setHnswEfConstruction(Integer hnswEfConstruction) {
+			this.hnswEfConstruction = hnswEfConstruction;
 		}
 	}
 

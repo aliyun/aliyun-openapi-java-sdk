@@ -35,6 +35,7 @@ public class DescribeAccountsResponseUnmarshaller {
 			dBInstanceAccount.setAccountDescription(_ctx.stringValue("DescribeAccountsResponse.Accounts["+ i +"].AccountDescription"));
 			dBInstanceAccount.setDBInstanceId(_ctx.stringValue("DescribeAccountsResponse.Accounts["+ i +"].DBInstanceId"));
 			dBInstanceAccount.setAccountName(_ctx.stringValue("DescribeAccountsResponse.Accounts["+ i +"].AccountName"));
+			dBInstanceAccount.setAccountType(_ctx.stringValue("DescribeAccountsResponse.Accounts["+ i +"].AccountType"));
 
 			accounts.add(dBInstanceAccount);
 		}

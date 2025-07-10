@@ -23,9 +23,9 @@ public class CreateSampleDataResponseUnmarshaller {
 	public static CreateSampleDataResponse unmarshall(CreateSampleDataResponse createSampleDataResponse, UnmarshallerContext _ctx) {
 		
 		createSampleDataResponse.setRequestId(_ctx.stringValue("CreateSampleDataResponse.RequestId"));
-		createSampleDataResponse.setStatus(_ctx.booleanValue("CreateSampleDataResponse.Status"));
-		createSampleDataResponse.setErrorMessage(_ctx.stringValue("CreateSampleDataResponse.ErrorMessage"));
 		createSampleDataResponse.setDBInstanceId(_ctx.stringValue("CreateSampleDataResponse.DBInstanceId"));
+		createSampleDataResponse.setErrorMessage(_ctx.stringValue("CreateSampleDataResponse.ErrorMessage"));
+		createSampleDataResponse.setStatus(_ctx.booleanValue("CreateSampleDataResponse.Status"));
 	 
 	 	return createSampleDataResponse;
 	}
