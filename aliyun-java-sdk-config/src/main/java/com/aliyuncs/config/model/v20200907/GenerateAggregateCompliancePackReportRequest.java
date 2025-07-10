@@ -27,6 +27,8 @@ public class GenerateAggregateCompliancePackReportRequest extends RpcAcsRequest<
 
 	private String clientToken;
 
+	private Boolean multiFiles;
+
 	private String aggregatorId;
 
 	private String compliancePackId;
@@ -47,6 +49,17 @@ public class GenerateAggregateCompliancePackReportRequest extends RpcAcsRequest<
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putBodyParameter("ClientToken", clientToken);
+		}
+	}
+
+	public Boolean getMultiFiles() {
+		return this.multiFiles;
+	}
+
+	public void setMultiFiles(Boolean multiFiles) {
+		this.multiFiles = multiFiles;
+		if(multiFiles != null){
+			putBodyParameter("MultiFiles", multiFiles.toString());
 		}
 	}
 

@@ -113,6 +113,10 @@ public class ListDiscoveredResourcesResponse extends AcsResponse {
 
 			private Long version;
 
+			private String vpcId;
+
+			private String vSwitchId;
+
 			public Long getAccountId() {
 				return this.accountId;
 			}
@@ -207,6 +211,22 @@ public class ListDiscoveredResourcesResponse extends AcsResponse {
 
 			public void setVersion(Long version) {
 				this.version = version;
+			}
+
+			public String getVpcId() {
+				return this.vpcId;
+			}
+
+			public void setVpcId(String vpcId) {
+				this.vpcId = vpcId;
+			}
+
+			public String getVSwitchId() {
+				return this.vSwitchId;
+			}
+
+			public void setVSwitchId(String vSwitchId) {
+				this.vSwitchId = vSwitchId;
 			}
 		}
 	}

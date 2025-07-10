@@ -49,6 +49,8 @@ public class ListDiscoveredResourcesResponseUnmarshaller {
 			discoveredResourceProfile.setTags(_ctx.stringValue("ListDiscoveredResourcesResponse.DiscoveredResourceProfiles.DiscoveredResourceProfileList["+ i +"].Tags"));
 			discoveredResourceProfile.setUpdateTime(_ctx.longValue("ListDiscoveredResourcesResponse.DiscoveredResourceProfiles.DiscoveredResourceProfileList["+ i +"].UpdateTime"));
 			discoveredResourceProfile.setVersion(_ctx.longValue("ListDiscoveredResourcesResponse.DiscoveredResourceProfiles.DiscoveredResourceProfileList["+ i +"].Version"));
+			discoveredResourceProfile.setVpcId(_ctx.stringValue("ListDiscoveredResourcesResponse.DiscoveredResourceProfiles.DiscoveredResourceProfileList["+ i +"].VpcId"));
+			discoveredResourceProfile.setVSwitchId(_ctx.stringValue("ListDiscoveredResourcesResponse.DiscoveredResourceProfiles.DiscoveredResourceProfileList["+ i +"].VSwitchId"));
 
 			discoveredResourceProfileList.add(discoveredResourceProfile);
 		}

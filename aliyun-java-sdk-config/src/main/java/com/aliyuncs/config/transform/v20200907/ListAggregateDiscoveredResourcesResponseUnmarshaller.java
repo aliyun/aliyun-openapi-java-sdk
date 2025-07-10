@@ -50,6 +50,8 @@ public class ListAggregateDiscoveredResourcesResponseUnmarshaller {
 			discoveredResourceProfile.setTags(_ctx.stringValue("ListAggregateDiscoveredResourcesResponse.DiscoveredResourceProfiles.DiscoveredResourceProfileList["+ i +"].Tags"));
 			discoveredResourceProfile.setUpdateTime(_ctx.longValue("ListAggregateDiscoveredResourcesResponse.DiscoveredResourceProfiles.DiscoveredResourceProfileList["+ i +"].UpdateTime"));
 			discoveredResourceProfile.setVersion(_ctx.longValue("ListAggregateDiscoveredResourcesResponse.DiscoveredResourceProfiles.DiscoveredResourceProfileList["+ i +"].Version"));
+			discoveredResourceProfile.setVpcId(_ctx.stringValue("ListAggregateDiscoveredResourcesResponse.DiscoveredResourceProfiles.DiscoveredResourceProfileList["+ i +"].VpcId"));
+			discoveredResourceProfile.setVSwitchId(_ctx.stringValue("ListAggregateDiscoveredResourcesResponse.DiscoveredResourceProfiles.DiscoveredResourceProfileList["+ i +"].VSwitchId"));
 
 			discoveredResourceProfileList.add(discoveredResourceProfile);
 		}

@@ -36,6 +36,8 @@ public class UpdateAggregatorRequest extends RpcAcsRequest<UpdateAggregatorRespo
 
 	private String aggregatorId;
 
+	private String folderId;
+
 	private String tag;
 
 	@SerializedName("aggregatorAccounts")
@@ -90,6 +92,17 @@ public class UpdateAggregatorRequest extends RpcAcsRequest<UpdateAggregatorRespo
 		this.aggregatorId = aggregatorId;
 		if(aggregatorId != null){
 			putBodyParameter("AggregatorId", aggregatorId);
+		}
+	}
+
+	public String getFolderId() {
+		return this.folderId;
+	}
+
+	public void setFolderId(String folderId) {
+		this.folderId = folderId;
+		if(folderId != null){
+			putBodyParameter("FolderId", folderId);
 		}
 	}
 

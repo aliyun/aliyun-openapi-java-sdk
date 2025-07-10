@@ -93,6 +93,10 @@ public class ListResourceEvaluationResultsResponse extends AcsResponse {
 
 			private Boolean remediationEnabled;
 
+			private String evaluationId;
+
+			private Long lastNonCompliantRecordTimestamp;
+
 			private EvaluationResultIdentifier evaluationResultIdentifier;
 
 			public Integer getRiskLevel() {
@@ -149,6 +153,22 @@ public class ListResourceEvaluationResultsResponse extends AcsResponse {
 
 			public void setRemediationEnabled(Boolean remediationEnabled) {
 				this.remediationEnabled = remediationEnabled;
+			}
+
+			public String getEvaluationId() {
+				return this.evaluationId;
+			}
+
+			public void setEvaluationId(String evaluationId) {
+				this.evaluationId = evaluationId;
+			}
+
+			public Long getLastNonCompliantRecordTimestamp() {
+				return this.lastNonCompliantRecordTimestamp;
+			}
+
+			public void setLastNonCompliantRecordTimestamp(Long lastNonCompliantRecordTimestamp) {
+				this.lastNonCompliantRecordTimestamp = lastNonCompliantRecordTimestamp;
 			}
 
 			public EvaluationResultIdentifier getEvaluationResultIdentifier() {
