@@ -47,11 +47,11 @@ public class DescribeProcessStatsCompositionResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer totalSessionCount;
+		private Long totalSessionCount;
 
-		private Integer activeSessionCount;
+		private Long activeSessionCount;
 
-		private Integer idleSessionCount;
+		private Long idleSessionCount;
 
 		private String obVersion;
 
@@ -59,27 +59,27 @@ public class DescribeProcessStatsCompositionResponse extends AcsResponse {
 
 		private SessionStatistics sessionStatistics;
 
-		public Integer getTotalSessionCount() {
+		public Long getTotalSessionCount() {
 			return this.totalSessionCount;
 		}
 
-		public void setTotalSessionCount(Integer totalSessionCount) {
+		public void setTotalSessionCount(Long totalSessionCount) {
 			this.totalSessionCount = totalSessionCount;
 		}
 
-		public Integer getActiveSessionCount() {
+		public Long getActiveSessionCount() {
 			return this.activeSessionCount;
 		}
 
-		public void setActiveSessionCount(Integer activeSessionCount) {
+		public void setActiveSessionCount(Long activeSessionCount) {
 			this.activeSessionCount = activeSessionCount;
 		}
 
-		public Integer getIdleSessionCount() {
+		public Long getIdleSessionCount() {
 			return this.idleSessionCount;
 		}
 
-		public void setIdleSessionCount(Integer idleSessionCount) {
+		public void setIdleSessionCount(Long idleSessionCount) {
 			this.idleSessionCount = idleSessionCount;
 		}
 
@@ -137,7 +137,7 @@ public class DescribeProcessStatsCompositionResponse extends AcsResponse {
 
 			private String traceId;
 
-			private String planId;
+			private Long planId;
 
 			private Boolean dynamicSql;
 
@@ -257,11 +257,11 @@ public class DescribeProcessStatsCompositionResponse extends AcsResponse {
 				this.traceId = traceId;
 			}
 
-			public String getPlanId() {
+			public Long getPlanId() {
 				return this.planId;
 			}
 
-			public void setPlanId(String planId) {
+			public void setPlanId(Long planId) {
 				this.planId = planId;
 			}
 
@@ -319,7 +319,7 @@ public class DescribeProcessStatsCompositionResponse extends AcsResponse {
 
 				private String traceId;
 
-				private String planId;
+				private Long planId;
 
 				private Boolean dynamicSql;
 
@@ -437,11 +437,11 @@ public class DescribeProcessStatsCompositionResponse extends AcsResponse {
 					this.traceId = traceId;
 				}
 
-				public String getPlanId() {
+				public Long getPlanId() {
 					return this.planId;
 				}
 
-				public void setPlanId(String planId) {
+				public void setPlanId(Long planId) {
 					this.planId = planId;
 				}
 
@@ -491,7 +491,7 @@ public class DescribeProcessStatsCompositionResponse extends AcsResponse {
 
 					private String traceId;
 
-					private String planId;
+					private Long planId;
 
 					private Boolean dynamicSql;
 
@@ -607,11 +607,11 @@ public class DescribeProcessStatsCompositionResponse extends AcsResponse {
 						this.traceId = traceId;
 					}
 
-					public String getPlanId() {
+					public Long getPlanId() {
 						return this.planId;
 					}
 
-					public void setPlanId(String planId) {
+					public void setPlanId(Long planId) {
 						this.planId = planId;
 					}
 

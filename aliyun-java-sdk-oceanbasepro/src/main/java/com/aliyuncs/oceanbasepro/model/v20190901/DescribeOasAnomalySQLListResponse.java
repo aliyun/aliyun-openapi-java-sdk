@@ -81,7 +81,7 @@ public class DescribeOasAnomalySQLListResponse extends AcsResponse {
 
 		private String suggestion;
 
-		private String sumElapsedTime;
+		private Double sumElapsedTime;
 
 		private String userName;
 
@@ -91,11 +91,11 @@ public class DescribeOasAnomalySQLListResponse extends AcsResponse {
 
 		private Double sumDbTime;
 
-		private Float avgRetryCount;
+		private Double avgRetryCount;
 
-		private Float sumRetryCount;
+		private Double sumRetryCount;
 
-		private Float avgLogicalReads;
+		private Double avgLogicalReads;
 
 		private List<SqlListItem> sqlList;
 
@@ -197,11 +197,11 @@ public class DescribeOasAnomalySQLListResponse extends AcsResponse {
 			this.suggestion = suggestion;
 		}
 
-		public String getSumElapsedTime() {
+		public Double getSumElapsedTime() {
 			return this.sumElapsedTime;
 		}
 
-		public void setSumElapsedTime(String sumElapsedTime) {
+		public void setSumElapsedTime(Double sumElapsedTime) {
 			this.sumElapsedTime = sumElapsedTime;
 		}
 
@@ -237,27 +237,27 @@ public class DescribeOasAnomalySQLListResponse extends AcsResponse {
 			this.sumDbTime = sumDbTime;
 		}
 
-		public Float getAvgRetryCount() {
+		public Double getAvgRetryCount() {
 			return this.avgRetryCount;
 		}
 
-		public void setAvgRetryCount(Float avgRetryCount) {
+		public void setAvgRetryCount(Double avgRetryCount) {
 			this.avgRetryCount = avgRetryCount;
 		}
 
-		public Float getSumRetryCount() {
+		public Double getSumRetryCount() {
 			return this.sumRetryCount;
 		}
 
-		public void setSumRetryCount(Float sumRetryCount) {
+		public void setSumRetryCount(Double sumRetryCount) {
 			this.sumRetryCount = sumRetryCount;
 		}
 
-		public Float getAvgLogicalReads() {
+		public Double getAvgLogicalReads() {
 			return this.avgLogicalReads;
 		}
 
-		public void setAvgLogicalReads(Float avgLogicalReads) {
+		public void setAvgLogicalReads(Double avgLogicalReads) {
 			this.avgLogicalReads = avgLogicalReads;
 		}
 
@@ -303,7 +303,7 @@ public class DescribeOasAnomalySQLListResponse extends AcsResponse {
 
 			private String suggestion;
 
-			private String sumElapsedTime;
+			private Double sumElapsedTime;
 
 			private String userName;
 
@@ -311,11 +311,11 @@ public class DescribeOasAnomalySQLListResponse extends AcsResponse {
 
 			private Double sumDbTime;
 
-			private Float avgRetryCount;
+			private Double avgRetryCount;
 
-			private Float sumRetryCount;
+			private Double sumRetryCount;
 
-			private Float avgLogicalReads;
+			private Double avgLogicalReads;
 
 			private List<String> diagTypes1;
 
@@ -415,11 +415,11 @@ public class DescribeOasAnomalySQLListResponse extends AcsResponse {
 				this.suggestion = suggestion;
 			}
 
-			public String getSumElapsedTime() {
+			public Double getSumElapsedTime() {
 				return this.sumElapsedTime;
 			}
 
-			public void setSumElapsedTime(String sumElapsedTime) {
+			public void setSumElapsedTime(Double sumElapsedTime) {
 				this.sumElapsedTime = sumElapsedTime;
 			}
 
@@ -447,27 +447,27 @@ public class DescribeOasAnomalySQLListResponse extends AcsResponse {
 				this.sumDbTime = sumDbTime;
 			}
 
-			public Float getAvgRetryCount() {
+			public Double getAvgRetryCount() {
 				return this.avgRetryCount;
 			}
 
-			public void setAvgRetryCount(Float avgRetryCount) {
+			public void setAvgRetryCount(Double avgRetryCount) {
 				this.avgRetryCount = avgRetryCount;
 			}
 
-			public Float getSumRetryCount() {
+			public Double getSumRetryCount() {
 				return this.sumRetryCount;
 			}
 
-			public void setSumRetryCount(Float sumRetryCount) {
+			public void setSumRetryCount(Double sumRetryCount) {
 				this.sumRetryCount = sumRetryCount;
 			}
 
-			public Float getAvgLogicalReads() {
+			public Double getAvgLogicalReads() {
 				return this.avgLogicalReads;
 			}
 
-			public void setAvgLogicalReads(Float avgLogicalReads) {
+			public void setAvgLogicalReads(Double avgLogicalReads) {
 				this.avgLogicalReads = avgLogicalReads;
 			}
 
