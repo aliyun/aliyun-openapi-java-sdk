@@ -1,3 +1,6 @@
+2025-07-14 Version: 2.1.17
+- Add QueryReadableResourcesListByUserIdV2 API.
+
 2025-07-03 Version: 2.1.16
 - QueryAuditLog API add request parameters.
 
