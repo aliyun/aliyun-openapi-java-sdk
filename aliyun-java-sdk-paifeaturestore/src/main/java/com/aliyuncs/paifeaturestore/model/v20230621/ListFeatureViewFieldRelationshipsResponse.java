@@ -93,6 +93,8 @@ public class ListFeatureViewFieldRelationshipsResponse extends AcsResponse {
 
 			private String modelName;
 
+			private String featureAliasName;
+
 			public String getModelId() {
 				return this.modelId;
 			}
@@ -107,6 +109,14 @@ public class ListFeatureViewFieldRelationshipsResponse extends AcsResponse {
 
 			public void setModelName(String modelName) {
 				this.modelName = modelName;
+			}
+
+			public String getFeatureAliasName() {
+				return this.featureAliasName;
+			}
+
+			public void setFeatureAliasName(String featureAliasName) {
+				this.featureAliasName = featureAliasName;
 			}
 		}
 	}

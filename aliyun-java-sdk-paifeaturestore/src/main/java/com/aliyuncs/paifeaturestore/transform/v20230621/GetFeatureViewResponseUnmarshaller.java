@@ -19,6 +19,8 @@ import java.util.List;
 
 import com.aliyuncs.paifeaturestore.model.v20230621.GetFeatureViewResponse;
 import com.aliyuncs.paifeaturestore.model.v20230621.GetFeatureViewResponse.FieldsItem;
+import com.aliyuncs.paifeaturestore.model.v20230621.GetFeatureViewResponse.FieldsItem.TransformItem;
+import com.aliyuncs.paifeaturestore.model.v20230621.GetFeatureViewResponse.FieldsItem.TransformItem.InputItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -67,6 +69,26 @@ public class GetFeatureViewResponseUnmarshaller {
 				attributes.add(_ctx.stringValue("GetFeatureViewResponse.Fields["+ i +"].Attributes["+ j +"]"));
 			}
 			fieldsItem.setAttributes(attributes);
+
+			List<TransformItem> transform = new ArrayList<TransformItem>();
+			for (int j = 0; j < _ctx.lengthValue("GetFeatureViewResponse.Fields["+ i +"].Transform.Length"); j++) {
+				TransformItem transformItem = new TransformItem();
+				transformItem.setType(_ctx.stringValue("GetFeatureViewResponse.Fields["+ i +"].Transform["+ j +"].Type"));
+				transformItem.setLLMConfigId(_ctx.integerValue("GetFeatureViewResponse.Fields["+ i +"].Transform["+ j +"].LLMConfigId"));
+
+				List<InputItem> input = new ArrayList<InputItem>();
+				for (int k = 0; k < _ctx.lengthValue("GetFeatureViewResponse.Fields["+ i +"].Transform["+ j +"].Input.Length"); k++) {
+					InputItem inputItem = new InputItem();
+					inputItem.setName(_ctx.stringValue("GetFeatureViewResponse.Fields["+ i +"].Transform["+ j +"].Input["+ k +"].Name"));
+					inputItem.setType(_ctx.stringValue("GetFeatureViewResponse.Fields["+ i +"].Transform["+ j +"].Input["+ k +"].Type"));
+
+					input.add(inputItem);
+				}
+				transformItem.setInput(input);
+
+				transform.add(transformItem);
+			}
+			fieldsItem.setTransform(transform);
 
 			fields.add(fieldsItem);
 		}

@@ -41,6 +41,7 @@ public class ListFeatureViewFieldRelationshipsResponseUnmarshaller {
 				ModelsItem modelsItem = new ModelsItem();
 				modelsItem.setModelId(_ctx.stringValue("ListFeatureViewFieldRelationshipsResponse.Relationships["+ i +"].Models["+ j +"].ModelId"));
 				modelsItem.setModelName(_ctx.stringValue("ListFeatureViewFieldRelationshipsResponse.Relationships["+ i +"].Models["+ j +"].ModelName"));
+				modelsItem.setFeatureAliasName(_ctx.stringValue("ListFeatureViewFieldRelationshipsResponse.Relationships["+ i +"].Models["+ j +"].FeatureAliasName"));
 
 				models.add(modelsItem);
 			}

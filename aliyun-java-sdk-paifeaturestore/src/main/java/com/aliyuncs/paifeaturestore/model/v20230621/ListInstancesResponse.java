@@ -71,6 +71,8 @@ public class ListInstancesResponse extends AcsResponse {
 
 		private FeatureDBInstanceInfo featureDBInstanceInfo;
 
+		private FeatureDBInfo featureDBInfo;
+
 		public String getInstanceId() {
 			return this.instanceId;
 		}
@@ -127,7 +129,28 @@ public class ListInstancesResponse extends AcsResponse {
 			this.featureDBInstanceInfo = featureDBInstanceInfo;
 		}
 
+		public FeatureDBInfo getFeatureDBInfo() {
+			return this.featureDBInfo;
+		}
+
+		public void setFeatureDBInfo(FeatureDBInfo featureDBInfo) {
+			this.featureDBInfo = featureDBInfo;
+		}
+
 		public static class FeatureDBInstanceInfo {
+
+			private String status;
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+		}
+
+		public static class FeatureDBInfo {
 
 			private String status;
 

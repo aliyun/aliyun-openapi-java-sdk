@@ -281,6 +281,8 @@ public class GetFeatureViewResponse extends AcsResponse {
 
 		private String type;
 
+		private List<TransformItem> transform;
+
 		private List<String> attributes;
 
 		public String getName() {
@@ -299,12 +301,76 @@ public class GetFeatureViewResponse extends AcsResponse {
 			this.type = type;
 		}
 
+		public List<TransformItem> getTransform() {
+			return this.transform;
+		}
+
+		public void setTransform(List<TransformItem> transform) {
+			this.transform = transform;
+		}
+
 		public List<String> getAttributes() {
 			return this.attributes;
 		}
 
 		public void setAttributes(List<String> attributes) {
 			this.attributes = attributes;
+		}
+
+		public static class TransformItem {
+
+			private String type;
+
+			private Integer lLMConfigId;
+
+			private List<InputItem> input;
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
+			}
+
+			public Integer getLLMConfigId() {
+				return this.lLMConfigId;
+			}
+
+			public void setLLMConfigId(Integer lLMConfigId) {
+				this.lLMConfigId = lLMConfigId;
+			}
+
+			public List<InputItem> getInput() {
+				return this.input;
+			}
+
+			public void setInput(List<InputItem> input) {
+				this.input = input;
+			}
+
+			public static class InputItem {
+
+				private String name;
+
+				private String type;
+
+				public String getName() {
+					return this.name;
+				}
+
+				public void setName(String name) {
+					this.name = name;
+				}
+
+				public String getType() {
+					return this.type;
+				}
+
+				public void setType(String type) {
+					this.type = type;
+				}
+			}
 		}
 	}
 

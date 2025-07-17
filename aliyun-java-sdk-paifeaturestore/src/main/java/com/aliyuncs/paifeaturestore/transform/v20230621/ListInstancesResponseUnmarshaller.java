@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.paifeaturestore.model.v20230621.ListInstancesResponse;
 import com.aliyuncs.paifeaturestore.model.v20230621.ListInstancesResponse.InstancesItem;
+import com.aliyuncs.paifeaturestore.model.v20230621.ListInstancesResponse.InstancesItem.FeatureDBInfo;
 import com.aliyuncs.paifeaturestore.model.v20230621.ListInstancesResponse.InstancesItem.FeatureDBInstanceInfo;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -43,6 +44,10 @@ public class ListInstancesResponseUnmarshaller {
 			FeatureDBInstanceInfo featureDBInstanceInfo = new FeatureDBInstanceInfo();
 			featureDBInstanceInfo.setStatus(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].FeatureDBInstanceInfo.Status"));
 			instancesItem.setFeatureDBInstanceInfo(featureDBInstanceInfo);
+
+			FeatureDBInfo featureDBInfo = new FeatureDBInfo();
+			featureDBInfo.setStatus(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].FeatureDBInfo.Status"));
+			instancesItem.setFeatureDBInfo(featureDBInfo);
 
 			instances.add(instancesItem);
 		}
