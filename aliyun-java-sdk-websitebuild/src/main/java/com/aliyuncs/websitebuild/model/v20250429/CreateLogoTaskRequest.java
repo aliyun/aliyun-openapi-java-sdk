@@ -27,11 +27,11 @@ public class CreateLogoTaskRequest extends RpcAcsRequest<CreateLogoTaskResponse>
 
 	private String negativePrompt;
 
-	private String version;
-
 	private String prompt;
 
 	private String parameters;
+
+	private String logoVersion;
 	public CreateLogoTaskRequest() {
 		super("WebsiteBuild", "2025-04-29", "CreateLogoTask");
 		setProtocol(ProtocolType.HTTPS);
@@ -46,17 +46,6 @@ public class CreateLogoTaskRequest extends RpcAcsRequest<CreateLogoTaskResponse>
 		this.negativePrompt = negativePrompt;
 		if(negativePrompt != null){
 			putQueryParameter("NegativePrompt", negativePrompt);
-		}
-	}
-
-	public String getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
 		}
 	}
 
@@ -79,6 +68,17 @@ public class CreateLogoTaskRequest extends RpcAcsRequest<CreateLogoTaskResponse>
 		this.parameters = parameters;
 		if(parameters != null){
 			putQueryParameter("Parameters", parameters);
+		}
+	}
+
+	public String getLogoVersion() {
+		return this.logoVersion;
+	}
+
+	public void setLogoVersion(String logoVersion) {
+		this.logoVersion = logoVersion;
+		if(logoVersion != null){
+			putQueryParameter("LogoVersion", logoVersion);
 		}
 	}
 
