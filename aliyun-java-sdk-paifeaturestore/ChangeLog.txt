@@ -1,3 +1,6 @@
+2025-07-24 Version: 1.0.17
+- Update GetInstance and ListInstances.
+
 2025-07-17 Version: 1.0.16
 - Update GetInstance and ListInstances.
 
