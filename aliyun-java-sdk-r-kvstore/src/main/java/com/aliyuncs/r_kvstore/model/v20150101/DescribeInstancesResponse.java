@@ -157,9 +157,15 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private String editionType;
 
+		private String shardClass;
+
+		private Integer replicaCount;
+
+		private Integer slaveReplicaCount;
+
 		private String readOnlyCount;
 
-		private String shardClass;
+		private Integer slaveReadOnlyCount;
 
 		private List<Tag> tags;
 
@@ -483,6 +489,30 @@ public class DescribeInstancesResponse extends AcsResponse {
 			this.editionType = editionType;
 		}
 
+		public String getShardClass() {
+			return this.shardClass;
+		}
+
+		public void setShardClass(String shardClass) {
+			this.shardClass = shardClass;
+		}
+
+		public Integer getReplicaCount() {
+			return this.replicaCount;
+		}
+
+		public void setReplicaCount(Integer replicaCount) {
+			this.replicaCount = replicaCount;
+		}
+
+		public Integer getSlaveReplicaCount() {
+			return this.slaveReplicaCount;
+		}
+
+		public void setSlaveReplicaCount(Integer slaveReplicaCount) {
+			this.slaveReplicaCount = slaveReplicaCount;
+		}
+
 		public String getReadOnlyCount() {
 			return this.readOnlyCount;
 		}
@@ -491,12 +521,12 @@ public class DescribeInstancesResponse extends AcsResponse {
 			this.readOnlyCount = readOnlyCount;
 		}
 
-		public String getShardClass() {
-			return this.shardClass;
+		public Integer getSlaveReadOnlyCount() {
+			return this.slaveReadOnlyCount;
 		}
 
-		public void setShardClass(String shardClass) {
-			this.shardClass = shardClass;
+		public void setSlaveReadOnlyCount(Integer slaveReadOnlyCount) {
+			this.slaveReadOnlyCount = slaveReadOnlyCount;
 		}
 
 		public List<Tag> getTags() {

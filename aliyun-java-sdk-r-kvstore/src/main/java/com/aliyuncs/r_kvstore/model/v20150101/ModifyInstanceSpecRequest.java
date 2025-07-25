@@ -35,7 +35,11 @@ public class ModifyInstanceSpecRequest extends RpcAcsRequest<ModifyInstanceSpecR
 
 	private String couponNo;
 
+	private Integer storage;
+
 	private String instanceClass;
+
+	private String storageType;
 
 	private String securityToken;
 
@@ -65,7 +69,11 @@ public class ModifyInstanceSpecRequest extends RpcAcsRequest<ModifyInstanceSpecR
 
 	private Boolean forceUpgrade;
 
+	private Integer slaveReplicaCount;
+
 	private String orderType;
+
+	private Integer replicaCount;
 	public ModifyInstanceSpecRequest() {
 		super("R-kvstore", "2015-01-01", "ModifyInstanceSpec", "redisa");
 		setMethod(MethodType.POST);
@@ -130,6 +138,17 @@ public class ModifyInstanceSpecRequest extends RpcAcsRequest<ModifyInstanceSpecR
 		}
 	}
 
+	public Integer getStorage() {
+		return this.storage;
+	}
+
+	public void setStorage(Integer storage) {
+		this.storage = storage;
+		if(storage != null){
+			putQueryParameter("Storage", storage.toString());
+		}
+	}
+
 	public String getInstanceClass() {
 		return this.instanceClass;
 	}
@@ -138,6 +157,17 @@ public class ModifyInstanceSpecRequest extends RpcAcsRequest<ModifyInstanceSpecR
 		this.instanceClass = instanceClass;
 		if(instanceClass != null){
 			putQueryParameter("InstanceClass", instanceClass);
+		}
+	}
+
+	public String getStorageType() {
+		return this.storageType;
+	}
+
+	public void setStorageType(String storageType) {
+		this.storageType = storageType;
+		if(storageType != null){
+			putQueryParameter("StorageType", storageType);
 		}
 	}
 
@@ -295,6 +325,17 @@ public class ModifyInstanceSpecRequest extends RpcAcsRequest<ModifyInstanceSpecR
 		}
 	}
 
+	public Integer getSlaveReplicaCount() {
+		return this.slaveReplicaCount;
+	}
+
+	public void setSlaveReplicaCount(Integer slaveReplicaCount) {
+		this.slaveReplicaCount = slaveReplicaCount;
+		if(slaveReplicaCount != null){
+			putQueryParameter("SlaveReplicaCount", slaveReplicaCount.toString());
+		}
+	}
+
 	public String getOrderType() {
 		return this.orderType;
 	}
@@ -303,6 +344,17 @@ public class ModifyInstanceSpecRequest extends RpcAcsRequest<ModifyInstanceSpecR
 		this.orderType = orderType;
 		if(orderType != null){
 			putQueryParameter("OrderType", orderType);
+		}
+	}
+
+	public Integer getReplicaCount() {
+		return this.replicaCount;
+	}
+
+	public void setReplicaCount(Integer replicaCount) {
+		this.replicaCount = replicaCount;
+		if(replicaCount != null){
+			putQueryParameter("ReplicaCount", replicaCount.toString());
 		}
 	}
 

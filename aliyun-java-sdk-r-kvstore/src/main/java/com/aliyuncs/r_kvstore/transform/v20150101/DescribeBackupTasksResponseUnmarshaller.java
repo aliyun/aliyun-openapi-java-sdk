@@ -50,6 +50,7 @@ public class DescribeBackupTasksResponseUnmarshaller {
 			backupJob.setBackupProgressStatus(_ctx.stringValue("DescribeBackupTasksResponse.BackupJobs["+ i +"].BackupProgressStatus"));
 			backupJob.setNodeId(_ctx.stringValue("DescribeBackupTasksResponse.BackupJobs["+ i +"].NodeId"));
 			backupJob.setTaskAction(_ctx.stringValue("DescribeBackupTasksResponse.BackupJobs["+ i +"].TaskAction"));
+			backupJob.setProgress(_ctx.stringValue("DescribeBackupTasksResponse.BackupJobs["+ i +"].Progress"));
 
 			backupJobs.add(backupJob);
 		}

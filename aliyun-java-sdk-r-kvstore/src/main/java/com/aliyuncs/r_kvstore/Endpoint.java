@@ -28,7 +28,6 @@ public class Endpoint {
             put("cn-shenzhen-st4-d01", "r-kvstore.aliyuncs.com");
             put("cn-haidian-cm12-c01", "r-kvstore.aliyuncs.com");
             put("cn-hangzhou-internal-prod-1", "r-kvstore.aliyuncs.com");
-            put("cn-north-2-gov-1", "r-kvstore.aliyuncs.com");
             put("cn-yushanfang", "r-kvstore.aliyuncs.com");
             put("cn-qingdao", "r-kvstore.aliyuncs.com");
             put("cn-hongkong-finance-pop", "r-kvstore.aliyuncs.com");
@@ -49,7 +48,6 @@ public class Endpoint {
             put("cn-zhangbei-na61-b01", "r-kvstore.aliyuncs.com");
             put("cn-beijing-finance-1", "r-kvstore.aliyuncs.com");
             put("cn-hangzhou-internal-test-3", "r-kvstore.aliyuncs.com");
-            put("cn-shenzhen-finance-1", "r-kvstore.aliyuncs.com");
             put("cn-hangzhou-internal-test-2", "r-kvstore.aliyuncs.com");
             put("cn-hangzhou-test-306", "r-kvstore.aliyuncs.com");
             put("cn-shanghai-et2-b01", "r-kvstore.aliyuncs.com");

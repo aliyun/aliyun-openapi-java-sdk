@@ -45,6 +45,8 @@ public class DescribeClusterBackupListRequest extends RpcAcsRequest<DescribeClus
 
 	private String instanceId;
 
+	private String noShardBackup;
+
 	private String clusterBackupId;
 	public DescribeClusterBackupListRequest() {
 		super("R-kvstore", "2015-01-01", "DescribeClusterBackupList", "redisa");
@@ -162,6 +164,17 @@ public class DescribeClusterBackupListRequest extends RpcAcsRequest<DescribeClus
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getNoShardBackup() {
+		return this.noShardBackup;
+	}
+
+	public void setNoShardBackup(String noShardBackup) {
+		this.noShardBackup = noShardBackup;
+		if(noShardBackup != null){
+			putQueryParameter("NoShardBackup", noShardBackup);
 		}
 	}
 

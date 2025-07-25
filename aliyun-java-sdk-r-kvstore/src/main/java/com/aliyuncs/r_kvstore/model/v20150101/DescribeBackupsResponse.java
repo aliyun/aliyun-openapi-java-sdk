@@ -147,6 +147,8 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 		private String recoverConfigMode;
 
+		private String expectExpireTime;
+
 		public String getBackupStatus() {
 			return this.backupStatus;
 		}
@@ -265,6 +267,14 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 		public void setRecoverConfigMode(String recoverConfigMode) {
 			this.recoverConfigMode = recoverConfigMode;
+		}
+
+		public String getExpectExpireTime() {
+			return this.expectExpireTime;
+		}
+
+		public void setExpectExpireTime(String expectExpireTime) {
+			this.expectExpireTime = expectExpireTime;
 		}
 	}
 

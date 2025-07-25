@@ -22,32 +22,22 @@ import com.aliyuncs.r_kvstore.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeTasksRequest extends RpcAcsRequest<DescribeTasksResponse> {
+public class CancelActiveOperationTasksRequest extends RpcAcsRequest<CancelActiveOperationTasksResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String startTime;
-
-	private Integer pageNumber;
-
 	private String securityToken;
-
-	private Integer pageSize;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String endTime;
-
 	private Long ownerId;
 
-	private String instanceId;
-
-	private String status;
-	public DescribeTasksRequest() {
-		super("R-kvstore", "2015-01-01", "DescribeTasks", "redisa");
+	private String ids;
+	public CancelActiveOperationTasksRequest() {
+		super("R-kvstore", "2015-01-01", "CancelActiveOperationTasks", "redisa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -66,28 +56,6 @@ public class DescribeTasksRequest extends RpcAcsRequest<DescribeTasksResponse> {
 		}
 	}
 
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
@@ -96,17 +64,6 @@ public class DescribeTasksRequest extends RpcAcsRequest<DescribeTasksResponse> {
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -132,17 +89,6 @@ public class DescribeTasksRequest extends RpcAcsRequest<DescribeTasksResponse> {
 		}
 	}
 
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -154,31 +100,20 @@ public class DescribeTasksRequest extends RpcAcsRequest<DescribeTasksResponse> {
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public String getIds() {
+		return this.ids;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-		if(status != null){
-			putQueryParameter("Status", status);
+	public void setIds(String ids) {
+		this.ids = ids;
+		if(ids != null){
+			putQueryParameter("Ids", ids);
 		}
 	}
 
 	@Override
-	public Class<DescribeTasksResponse> getResponseClass() {
-		return DescribeTasksResponse.class;
+	public Class<CancelActiveOperationTasksResponse> getResponseClass() {
+		return CancelActiveOperationTasksResponse.class;
 	}
 
 }

@@ -125,6 +125,8 @@ public class DescribeClusterBackupListResponse extends AcsResponse {
 
 		private String progress;
 
+		private String expectExpireTime;
+
 		private List<Backup> backups;
 
 		private ExtraInfo extraInfo;
@@ -199,6 +201,14 @@ public class DescribeClusterBackupListResponse extends AcsResponse {
 
 		public void setProgress(String progress) {
 			this.progress = progress;
+		}
+
+		public String getExpectExpireTime() {
+			return this.expectExpireTime;
+		}
+
+		public void setExpectExpireTime(String expectExpireTime) {
+			this.expectExpireTime = expectExpireTime;
 		}
 
 		public List<Backup> getBackups() {

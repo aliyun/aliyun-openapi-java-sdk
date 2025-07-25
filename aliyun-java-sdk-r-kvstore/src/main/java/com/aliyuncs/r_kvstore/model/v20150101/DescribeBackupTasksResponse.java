@@ -81,6 +81,8 @@ public class DescribeBackupTasksResponse extends AcsResponse {
 
 		private String taskAction;
 
+		private String progress;
+
 		public String getStartTime() {
 			return this.startTime;
 		}
@@ -135,6 +137,14 @@ public class DescribeBackupTasksResponse extends AcsResponse {
 
 		public void setTaskAction(String taskAction) {
 			this.taskAction = taskAction;
+		}
+
+		public String getProgress() {
+			return this.progress;
+		}
+
+		public void setProgress(String progress) {
+			this.progress = progress;
 		}
 	}
 

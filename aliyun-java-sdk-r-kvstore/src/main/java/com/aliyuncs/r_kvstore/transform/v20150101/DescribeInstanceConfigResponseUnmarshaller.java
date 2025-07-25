@@ -24,6 +24,12 @@ public class DescribeInstanceConfigResponseUnmarshaller {
 		
 		describeInstanceConfigResponse.setRequestId(_ctx.stringValue("DescribeInstanceConfigResponse.RequestId"));
 		describeInstanceConfigResponse.setConfig(_ctx.stringValue("DescribeInstanceConfigResponse.Config"));
+		describeInstanceConfigResponse.setParamReplMode(_ctx.stringValue("DescribeInstanceConfigResponse.ParamReplMode"));
+		describeInstanceConfigResponse.setParamReplTimeout(_ctx.stringValue("DescribeInstanceConfigResponse.ParamReplTimeout"));
+		describeInstanceConfigResponse.setParamNoLooseSentinelEnabled(_ctx.stringValue("DescribeInstanceConfigResponse.ParamNoLooseSentinelEnabled"));
+		describeInstanceConfigResponse.setParamSentinelCompatEnable(_ctx.stringValue("DescribeInstanceConfigResponse.ParamSentinelCompatEnable"));
+		describeInstanceConfigResponse.setParamNoLooseSentinelPasswordFreeAccess(_ctx.stringValue("DescribeInstanceConfigResponse.ParamNoLooseSentinelPasswordFreeAccess"));
+		describeInstanceConfigResponse.setParamNoLooseSentinelPasswordFreeCommands(_ctx.stringValue("DescribeInstanceConfigResponse.ParamNoLooseSentinelPasswordFreeCommands"));
 	 
 	 	return describeInstanceConfigResponse;
 	}

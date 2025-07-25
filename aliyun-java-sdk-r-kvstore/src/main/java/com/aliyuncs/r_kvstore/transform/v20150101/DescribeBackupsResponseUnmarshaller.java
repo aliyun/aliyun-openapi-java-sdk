@@ -63,6 +63,7 @@ public class DescribeBackupsResponseUnmarshaller {
 			backup.setBackupMethod(_ctx.stringValue("DescribeBackupsResponse.Backups["+ i +"].BackupMethod"));
 			backup.setBackupJobID(_ctx.longValue("DescribeBackupsResponse.Backups["+ i +"].BackupJobID"));
 			backup.setRecoverConfigMode(_ctx.stringValue("DescribeBackupsResponse.Backups["+ i +"].RecoverConfigMode"));
+			backup.setExpectExpireTime(_ctx.stringValue("DescribeBackupsResponse.Backups["+ i +"].ExpectExpireTime"));
 
 			backups.add(backup);
 		}

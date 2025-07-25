@@ -26,12 +26,32 @@ public class CreateGlobalDistributeCacheResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String globalInstanceId;
+
+	private String instanceId;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getGlobalInstanceId() {
+		return this.globalInstanceId;
+	}
+
+	public void setGlobalInstanceId(String globalInstanceId) {
+		this.globalInstanceId = globalInstanceId;
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
 	}
 
 	@Override

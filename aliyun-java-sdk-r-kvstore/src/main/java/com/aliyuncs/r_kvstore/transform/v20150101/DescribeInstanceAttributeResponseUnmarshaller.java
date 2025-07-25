@@ -54,7 +54,10 @@ public class DescribeInstanceAttributeResponseUnmarshaller {
 			dBInstanceAttribute.setInstanceName(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].InstanceName"));
 			dBInstanceAttribute.setSecurityIPList(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].SecurityIPList"));
 			dBInstanceAttribute.setShardCount(_ctx.integerValue("DescribeInstanceAttributeResponse.Instances["+ i +"].ShardCount"));
+			dBInstanceAttribute.setReplicaCount(_ctx.integerValue("DescribeInstanceAttributeResponse.Instances["+ i +"].ReplicaCount"));
+			dBInstanceAttribute.setSlaveReplicaCount(_ctx.integerValue("DescribeInstanceAttributeResponse.Instances["+ i +"].SlaveReplicaCount"));
 			dBInstanceAttribute.setReadOnlyCount(_ctx.integerValue("DescribeInstanceAttributeResponse.Instances["+ i +"].ReadOnlyCount"));
+			dBInstanceAttribute.setSlaveReadOnlyCount(_ctx.longValue("DescribeInstanceAttributeResponse.Instances["+ i +"].SlaveReadOnlyCount"));
 			dBInstanceAttribute.setGlobalInstanceId(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].GlobalInstanceId"));
 			dBInstanceAttribute.setQPS(_ctx.longValue("DescribeInstanceAttributeResponse.Instances["+ i +"].QPS"));
 			dBInstanceAttribute.setAuditLogRetention(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].AuditLogRetention"));
@@ -75,7 +78,6 @@ public class DescribeInstanceAttributeResponseUnmarshaller {
 			dBInstanceAttribute.setNodeType(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].NodeType"));
 			dBInstanceAttribute.setConnections(_ctx.longValue("DescribeInstanceAttributeResponse.Instances["+ i +"].Connections"));
 			dBInstanceAttribute.setBackupLogStartTime(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].BackupLogStartTime"));
-			dBInstanceAttribute.setSlaveReadOnlyCount(_ctx.longValue("DescribeInstanceAttributeResponse.Instances["+ i +"].SlaveReadOnlyCount"));
 			dBInstanceAttribute.setResourceGroupId(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].ResourceGroupId"));
 			dBInstanceAttribute.setZoneId(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].ZoneId"));
 			dBInstanceAttribute.setInstanceStatus(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].InstanceStatus"));
@@ -84,6 +86,7 @@ public class DescribeInstanceAttributeResponseUnmarshaller {
 			dBInstanceAttribute.setCloudType(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].CloudType"));
 			dBInstanceAttribute.setIsOrderCompleted(_ctx.booleanValue("DescribeInstanceAttributeResponse.Instances["+ i +"].IsOrderCompleted"));
 			dBInstanceAttribute.setIsSupportTDE(_ctx.booleanValue("DescribeInstanceAttributeResponse.Instances["+ i +"].IsSupportTDE"));
+			dBInstanceAttribute.setAutoSecondaryZone(_ctx.booleanValue("DescribeInstanceAttributeResponse.Instances["+ i +"].AutoSecondaryZone"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeInstanceAttributeResponse.Instances["+ i +"].Tags.Length"); j++) {

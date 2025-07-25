@@ -34,7 +34,7 @@ public class DescribeHistoryTasksResponseUnmarshaller {
 		List<ItemsItem> items = new ArrayList<ItemsItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeHistoryTasksResponse.Items.Length"); i++) {
 			ItemsItem itemsItem = new ItemsItem();
-			itemsItem.setStatus(_ctx.integerValue("DescribeHistoryTasksResponse.Items["+ i +"].Status"));
+			itemsItem.setStatus(_ctx.stringValue("DescribeHistoryTasksResponse.Items["+ i +"].Status"));
 			itemsItem.setTaskId(_ctx.stringValue("DescribeHistoryTasksResponse.Items["+ i +"].TaskId"));
 			itemsItem.setCurrentStepName(_ctx.stringValue("DescribeHistoryTasksResponse.Items["+ i +"].CurrentStepName"));
 			itemsItem.setStartTime(_ctx.stringValue("DescribeHistoryTasksResponse.Items["+ i +"].StartTime"));

@@ -27,11 +27,23 @@ public class ModifyInstanceConfigRequest extends RpcAcsRequest<ModifyInstanceCon
 
 	private Long resourceOwnerId;
 
+	private String paramSemisyncReplTimeout;
+
+	private String paramNoLooseSentinelPasswordFreeCommands;
+
+	private String paramNoLooseSentinelPasswordFreeAccess;
+
+	private String paramReplMode;
+
 	private String securityToken;
+
+	private String paramNoLooseSentinelEnabled;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
+
+	private String paramSentinelCompatEnable;
 
 	private Long ownerId;
 
@@ -58,6 +70,50 @@ public class ModifyInstanceConfigRequest extends RpcAcsRequest<ModifyInstanceCon
 		}
 	}
 
+	public String getParamSemisyncReplTimeout() {
+		return this.paramSemisyncReplTimeout;
+	}
+
+	public void setParamSemisyncReplTimeout(String paramSemisyncReplTimeout) {
+		this.paramSemisyncReplTimeout = paramSemisyncReplTimeout;
+		if(paramSemisyncReplTimeout != null){
+			putQueryParameter("ParamSemisyncReplTimeout", paramSemisyncReplTimeout);
+		}
+	}
+
+	public String getParamNoLooseSentinelPasswordFreeCommands() {
+		return this.paramNoLooseSentinelPasswordFreeCommands;
+	}
+
+	public void setParamNoLooseSentinelPasswordFreeCommands(String paramNoLooseSentinelPasswordFreeCommands) {
+		this.paramNoLooseSentinelPasswordFreeCommands = paramNoLooseSentinelPasswordFreeCommands;
+		if(paramNoLooseSentinelPasswordFreeCommands != null){
+			putQueryParameter("ParamNoLooseSentinelPasswordFreeCommands", paramNoLooseSentinelPasswordFreeCommands);
+		}
+	}
+
+	public String getParamNoLooseSentinelPasswordFreeAccess() {
+		return this.paramNoLooseSentinelPasswordFreeAccess;
+	}
+
+	public void setParamNoLooseSentinelPasswordFreeAccess(String paramNoLooseSentinelPasswordFreeAccess) {
+		this.paramNoLooseSentinelPasswordFreeAccess = paramNoLooseSentinelPasswordFreeAccess;
+		if(paramNoLooseSentinelPasswordFreeAccess != null){
+			putQueryParameter("ParamNoLooseSentinelPasswordFreeAccess", paramNoLooseSentinelPasswordFreeAccess);
+		}
+	}
+
+	public String getParamReplMode() {
+		return this.paramReplMode;
+	}
+
+	public void setParamReplMode(String paramReplMode) {
+		this.paramReplMode = paramReplMode;
+		if(paramReplMode != null){
+			putQueryParameter("ParamReplMode", paramReplMode);
+		}
+	}
+
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
@@ -66,6 +122,17 @@ public class ModifyInstanceConfigRequest extends RpcAcsRequest<ModifyInstanceCon
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getParamNoLooseSentinelEnabled() {
+		return this.paramNoLooseSentinelEnabled;
+	}
+
+	public void setParamNoLooseSentinelEnabled(String paramNoLooseSentinelEnabled) {
+		this.paramNoLooseSentinelEnabled = paramNoLooseSentinelEnabled;
+		if(paramNoLooseSentinelEnabled != null){
+			putQueryParameter("ParamNoLooseSentinelEnabled", paramNoLooseSentinelEnabled);
 		}
 	}
 
@@ -88,6 +155,17 @@ public class ModifyInstanceConfigRequest extends RpcAcsRequest<ModifyInstanceCon
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getParamSentinelCompatEnable() {
+		return this.paramSentinelCompatEnable;
+	}
+
+	public void setParamSentinelCompatEnable(String paramSentinelCompatEnable) {
+		this.paramSentinelCompatEnable = paramSentinelCompatEnable;
+		if(paramSentinelCompatEnable != null){
+			putQueryParameter("ParamSentinelCompatEnable", paramSentinelCompatEnable);
 		}
 	}
 

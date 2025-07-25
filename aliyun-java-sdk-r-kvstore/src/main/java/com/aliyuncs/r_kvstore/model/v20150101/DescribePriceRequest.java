@@ -33,6 +33,8 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 
 	private String couponNo;
 
+	private String engineVersion;
+
 	private String instanceClass;
 
 	private Long capacity;
@@ -114,6 +116,17 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 		this.couponNo = couponNo;
 		if(couponNo != null){
 			putQueryParameter("CouponNo", couponNo);
+		}
+	}
+
+	public String getEngineVersion() {
+		return this.engineVersion;
+	}
+
+	public void setEngineVersion(String engineVersion) {
+		this.engineVersion = engineVersion;
+		if(engineVersion != null){
+			putQueryParameter("EngineVersion", engineVersion);
 		}
 	}
 

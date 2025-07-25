@@ -33,6 +33,8 @@ public class ModifyInstanceAutoRenewalAttributeRequest extends RpcAcsRequest<Mod
 
 	private String dBInstanceId;
 
+	private String product;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -90,6 +92,17 @@ public class ModifyInstanceAutoRenewalAttributeRequest extends RpcAcsRequest<Mod
 		this.dBInstanceId = dBInstanceId;
 		if(dBInstanceId != null){
 			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public String getProduct() {
+		return this.product;
+	}
+
+	public void setProduct(String product) {
+		this.product = product;
+		if(product != null){
+			putQueryParameter("Product", product);
 		}
 	}
 

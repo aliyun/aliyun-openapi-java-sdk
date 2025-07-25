@@ -31,6 +31,8 @@ public class DescribeHistoryMonitorValuesRequest extends RpcAcsRequest<DescribeH
 
 	private String startTime;
 
+	private String type;
+
 	private String securityToken;
 
 	private String intervalForHistory;
@@ -87,6 +89,17 @@ public class DescribeHistoryMonitorValuesRequest extends RpcAcsRequest<DescribeH
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
 		}
 	}
 

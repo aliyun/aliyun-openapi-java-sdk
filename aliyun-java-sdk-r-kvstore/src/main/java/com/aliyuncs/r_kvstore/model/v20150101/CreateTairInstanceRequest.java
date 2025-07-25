@@ -28,6 +28,8 @@ public class CreateTairInstanceRequest extends RpcAcsRequest<CreateTairInstanceR
 
 	private Long resourceOwnerId;
 
+	private String connectionStringPrefix;
+
 	private String secondaryZoneId;
 
 	private Integer slaveReadOnlyCount;
@@ -76,6 +78,8 @@ public class CreateTairInstanceRequest extends RpcAcsRequest<CreateTairInstanceR
 
 	private String zoneId;
 
+	private Integer replicaCount;
+
 	private String clientToken;
 
 	private String autoUseCoupon;
@@ -108,6 +112,8 @@ public class CreateTairInstanceRequest extends RpcAcsRequest<CreateTairInstanceR
 
 	private String chargeType;
 
+	private Integer slaveReplicaCount;
+
 	private String clusterBackupId;
 	public CreateTairInstanceRequest() {
 		super("R-kvstore", "2015-01-01", "CreateTairInstance", "redisa");
@@ -126,6 +132,17 @@ public class CreateTairInstanceRequest extends RpcAcsRequest<CreateTairInstanceR
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getConnectionStringPrefix() {
+		return this.connectionStringPrefix;
+	}
+
+	public void setConnectionStringPrefix(String connectionStringPrefix) {
+		this.connectionStringPrefix = connectionStringPrefix;
+		if(connectionStringPrefix != null){
+			putQueryParameter("ConnectionStringPrefix", connectionStringPrefix);
 		}
 	}
 
@@ -396,6 +413,17 @@ public class CreateTairInstanceRequest extends RpcAcsRequest<CreateTairInstanceR
 		}
 	}
 
+	public Integer getReplicaCount() {
+		return this.replicaCount;
+	}
+
+	public void setReplicaCount(Integer replicaCount) {
+		this.replicaCount = replicaCount;
+		if(replicaCount != null){
+			putQueryParameter("ReplicaCount", replicaCount.toString());
+		}
+	}
+
 	public String getClientToken() {
 		return this.clientToken;
 	}
@@ -569,6 +597,17 @@ public class CreateTairInstanceRequest extends RpcAcsRequest<CreateTairInstanceR
 		this.chargeType = chargeType;
 		if(chargeType != null){
 			putQueryParameter("ChargeType", chargeType);
+		}
+	}
+
+	public Integer getSlaveReplicaCount() {
+		return this.slaveReplicaCount;
+	}
+
+	public void setSlaveReplicaCount(Integer slaveReplicaCount) {
+		this.slaveReplicaCount = slaveReplicaCount;
+		if(slaveReplicaCount != null){
+			putQueryParameter("SlaveReplicaCount", slaveReplicaCount.toString());
 		}
 	}
 

@@ -76,6 +76,8 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	private String zoneId;
 
+	private Integer replicaCount;
+
 	private String appendonly;
 
 	private String nodeType;
@@ -113,6 +115,8 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 	private Integer readOnlyCount;
 
 	private String chargeType;
+
+	private Integer slaveReplicaCount;
 
 	private String clusterBackupId;
 	public CreateInstanceRequest() {
@@ -402,6 +406,17 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		}
 	}
 
+	public Integer getReplicaCount() {
+		return this.replicaCount;
+	}
+
+	public void setReplicaCount(Integer replicaCount) {
+		this.replicaCount = replicaCount;
+		if(replicaCount != null){
+			putQueryParameter("ReplicaCount", replicaCount.toString());
+		}
+	}
+
 	public String getAppendonly() {
 		return this.appendonly;
 	}
@@ -608,6 +623,17 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		this.chargeType = chargeType;
 		if(chargeType != null){
 			putQueryParameter("ChargeType", chargeType);
+		}
+	}
+
+	public Integer getSlaveReplicaCount() {
+		return this.slaveReplicaCount;
+	}
+
+	public void setSlaveReplicaCount(Integer slaveReplicaCount) {
+		this.slaveReplicaCount = slaveReplicaCount;
+		if(slaveReplicaCount != null){
+			putQueryParameter("SlaveReplicaCount", slaveReplicaCount.toString());
 		}
 	}
 

@@ -91,7 +91,13 @@ public class DescribeInstanceAttributeResponse extends AcsResponse {
 
 		private Integer shardCount;
 
+		private Integer replicaCount;
+
+		private Integer slaveReplicaCount;
+
 		private Integer readOnlyCount;
+
+		private Long slaveReadOnlyCount;
 
 		private String globalInstanceId;
 
@@ -133,8 +139,6 @@ public class DescribeInstanceAttributeResponse extends AcsResponse {
 
 		private String backupLogStartTime;
 
-		private Long slaveReadOnlyCount;
-
 		private String resourceGroupId;
 
 		private String zoneId;
@@ -150,6 +154,8 @@ public class DescribeInstanceAttributeResponse extends AcsResponse {
 		private Boolean isOrderCompleted;
 
 		private Boolean isSupportTDE;
+
+		private Boolean autoSecondaryZone;
 
 		private List<Tag> tags;
 
@@ -329,12 +335,36 @@ public class DescribeInstanceAttributeResponse extends AcsResponse {
 			this.shardCount = shardCount;
 		}
 
+		public Integer getReplicaCount() {
+			return this.replicaCount;
+		}
+
+		public void setReplicaCount(Integer replicaCount) {
+			this.replicaCount = replicaCount;
+		}
+
+		public Integer getSlaveReplicaCount() {
+			return this.slaveReplicaCount;
+		}
+
+		public void setSlaveReplicaCount(Integer slaveReplicaCount) {
+			this.slaveReplicaCount = slaveReplicaCount;
+		}
+
 		public Integer getReadOnlyCount() {
 			return this.readOnlyCount;
 		}
 
 		public void setReadOnlyCount(Integer readOnlyCount) {
 			this.readOnlyCount = readOnlyCount;
+		}
+
+		public Long getSlaveReadOnlyCount() {
+			return this.slaveReadOnlyCount;
+		}
+
+		public void setSlaveReadOnlyCount(Long slaveReadOnlyCount) {
+			this.slaveReadOnlyCount = slaveReadOnlyCount;
 		}
 
 		public String getGlobalInstanceId() {
@@ -497,14 +527,6 @@ public class DescribeInstanceAttributeResponse extends AcsResponse {
 			this.backupLogStartTime = backupLogStartTime;
 		}
 
-		public Long getSlaveReadOnlyCount() {
-			return this.slaveReadOnlyCount;
-		}
-
-		public void setSlaveReadOnlyCount(Long slaveReadOnlyCount) {
-			this.slaveReadOnlyCount = slaveReadOnlyCount;
-		}
-
 		public String getResourceGroupId() {
 			return this.resourceGroupId;
 		}
@@ -567,6 +589,14 @@ public class DescribeInstanceAttributeResponse extends AcsResponse {
 
 		public void setIsSupportTDE(Boolean isSupportTDE) {
 			this.isSupportTDE = isSupportTDE;
+		}
+
+		public Boolean getAutoSecondaryZone() {
+			return this.autoSecondaryZone;
+		}
+
+		public void setAutoSecondaryZone(Boolean autoSecondaryZone) {
+			this.autoSecondaryZone = autoSecondaryZone;
 		}
 
 		public List<Tag> getTags() {

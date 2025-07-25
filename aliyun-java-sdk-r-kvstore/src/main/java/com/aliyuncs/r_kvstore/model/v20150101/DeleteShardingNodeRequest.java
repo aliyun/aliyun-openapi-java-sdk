@@ -29,6 +29,8 @@ public class DeleteShardingNodeRequest extends RpcAcsRequest<DeleteShardingNodeR
 
 	private String securityToken;
 
+	private String effectiveTime;
+
 	private String nodeId;
 
 	private Integer shardCount;
@@ -70,6 +72,17 @@ public class DeleteShardingNodeRequest extends RpcAcsRequest<DeleteShardingNodeR
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getEffectiveTime() {
+		return this.effectiveTime;
+	}
+
+	public void setEffectiveTime(String effectiveTime) {
+		this.effectiveTime = effectiveTime;
+		if(effectiveTime != null){
+			putQueryParameter("EffectiveTime", effectiveTime);
 		}
 	}
 

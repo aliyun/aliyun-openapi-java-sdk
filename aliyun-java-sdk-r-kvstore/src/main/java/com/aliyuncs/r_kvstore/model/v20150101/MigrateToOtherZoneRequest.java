@@ -29,6 +29,8 @@ public class MigrateToOtherZoneRequest extends RpcAcsRequest<MigrateToOtherZoneR
 
 	private String secondaryZoneId;
 
+	private Integer slaveReadOnlyCount;
+
 	private String securityToken;
 
 	private String effectiveTime;
@@ -44,6 +46,12 @@ public class MigrateToOtherZoneRequest extends RpcAcsRequest<MigrateToOtherZoneR
 	private String vSwitchId;
 
 	private String zoneId;
+
+	private Integer readOnlyCount;
+
+	private Integer slaveReplicaCount;
+
+	private Integer replicaCount;
 	public MigrateToOtherZoneRequest() {
 		super("R-kvstore", "2015-01-01", "MigrateToOtherZone", "redisa");
 		setMethod(MethodType.POST);
@@ -72,6 +80,17 @@ public class MigrateToOtherZoneRequest extends RpcAcsRequest<MigrateToOtherZoneR
 		this.secondaryZoneId = secondaryZoneId;
 		if(secondaryZoneId != null){
 			putQueryParameter("SecondaryZoneId", secondaryZoneId);
+		}
+	}
+
+	public Integer getSlaveReadOnlyCount() {
+		return this.slaveReadOnlyCount;
+	}
+
+	public void setSlaveReadOnlyCount(Integer slaveReadOnlyCount) {
+		this.slaveReadOnlyCount = slaveReadOnlyCount;
+		if(slaveReadOnlyCount != null){
+			putQueryParameter("SlaveReadOnlyCount", slaveReadOnlyCount.toString());
 		}
 	}
 
@@ -160,6 +179,39 @@ public class MigrateToOtherZoneRequest extends RpcAcsRequest<MigrateToOtherZoneR
 		this.zoneId = zoneId;
 		if(zoneId != null){
 			putQueryParameter("ZoneId", zoneId);
+		}
+	}
+
+	public Integer getReadOnlyCount() {
+		return this.readOnlyCount;
+	}
+
+	public void setReadOnlyCount(Integer readOnlyCount) {
+		this.readOnlyCount = readOnlyCount;
+		if(readOnlyCount != null){
+			putQueryParameter("ReadOnlyCount", readOnlyCount.toString());
+		}
+	}
+
+	public Integer getSlaveReplicaCount() {
+		return this.slaveReplicaCount;
+	}
+
+	public void setSlaveReplicaCount(Integer slaveReplicaCount) {
+		this.slaveReplicaCount = slaveReplicaCount;
+		if(slaveReplicaCount != null){
+			putQueryParameter("SlaveReplicaCount", slaveReplicaCount.toString());
+		}
+	}
+
+	public Integer getReplicaCount() {
+		return this.replicaCount;
+	}
+
+	public void setReplicaCount(Integer replicaCount) {
+		this.replicaCount = replicaCount;
+		if(replicaCount != null){
+			putQueryParameter("ReplicaCount", replicaCount.toString());
 		}
 	}
 

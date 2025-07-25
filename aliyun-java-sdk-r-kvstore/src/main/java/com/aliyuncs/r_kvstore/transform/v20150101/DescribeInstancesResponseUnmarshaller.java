@@ -75,8 +75,11 @@ public class DescribeInstancesResponseUnmarshaller {
 			kVStoreInstance.setComputingType(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].ComputingType"));
 			kVStoreInstance.setCloudType(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].CloudType"));
 			kVStoreInstance.setEditionType(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].EditionType"));
-			kVStoreInstance.setReadOnlyCount(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].ReadOnlyCount"));
 			kVStoreInstance.setShardClass(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].ShardClass"));
+			kVStoreInstance.setReplicaCount(_ctx.integerValue("DescribeInstancesResponse.Instances["+ i +"].ReplicaCount"));
+			kVStoreInstance.setSlaveReplicaCount(_ctx.integerValue("DescribeInstancesResponse.Instances["+ i +"].SlaveReplicaCount"));
+			kVStoreInstance.setReadOnlyCount(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].ReadOnlyCount"));
+			kVStoreInstance.setSlaveReadOnlyCount(_ctx.integerValue("DescribeInstancesResponse.Instances["+ i +"].SlaveReadOnlyCount"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeInstancesResponse.Instances["+ i +"].Tags.Length"); j++) {
