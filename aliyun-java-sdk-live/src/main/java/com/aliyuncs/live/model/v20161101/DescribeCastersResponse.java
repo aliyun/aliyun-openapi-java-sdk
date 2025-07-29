@@ -85,9 +85,9 @@ public class DescribeCastersResponse extends AcsResponse {
 
 		private Integer status;
 
-		private Integer resourceGroupId;
-
 		private String clientTokenId;
+
+		private String resourceGroupId;
 
 		private List<Tag> tags;
 
@@ -203,20 +203,20 @@ public class DescribeCastersResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public Integer getResourceGroupId() {
-			return this.resourceGroupId;
-		}
-
-		public void setResourceGroupId(Integer resourceGroupId) {
-			this.resourceGroupId = resourceGroupId;
-		}
-
 		public String getClientTokenId() {
 			return this.clientTokenId;
 		}
 
 		public void setClientTokenId(String clientTokenId) {
 			this.clientTokenId = clientTokenId;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 
 		public List<Tag> getTags() {

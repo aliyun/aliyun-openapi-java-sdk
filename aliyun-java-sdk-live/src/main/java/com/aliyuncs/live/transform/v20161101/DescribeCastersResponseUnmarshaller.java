@@ -47,8 +47,8 @@ public class DescribeCastersResponseUnmarshaller {
 			caster.setRoomId(_ctx.integerValue("DescribeCastersResponse.CasterList["+ i +"].RoomId"));
 			caster.setStartTime(_ctx.stringValue("DescribeCastersResponse.CasterList["+ i +"].StartTime"));
 			caster.setStatus(_ctx.integerValue("DescribeCastersResponse.CasterList["+ i +"].Status"));
-			caster.setResourceGroupId(_ctx.integerValue("DescribeCastersResponse.CasterList["+ i +"].ResourceGroupId"));
 			caster.setClientTokenId(_ctx.stringValue("DescribeCastersResponse.CasterList["+ i +"].ClientTokenId"));
+			caster.setResourceGroupId(_ctx.stringValue("DescribeCastersResponse.CasterList["+ i +"].ResourceGroupId"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeCastersResponse.CasterList["+ i +"].Tags.Length"); j++) {
