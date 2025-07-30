@@ -51,7 +51,6 @@ public class Endpoint {
             put("cn-hangzhou-internal-test-2", "r-kvstore.aliyuncs.com");
             put("cn-hangzhou-test-306", "r-kvstore.aliyuncs.com");
             put("cn-shanghai-et2-b01", "r-kvstore.aliyuncs.com");
-            put("cn-guangzhou", "r-kvstore.aliyuncs.com");
             put("cn-hangzhou-finance", "r-kvstore.aliyuncs.com");
             put("cn-beijing-nu16-b01", "r-kvstore.aliyuncs.com");
             put("cn-edge-1", "r-kvstore.aliyuncs.com");

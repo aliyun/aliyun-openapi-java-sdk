@@ -1,3 +1,6 @@
+2025-07-30 Version: 2.20.23
+- Backup OpenAPI update.
+
 2025-07-25 Version: 2.20.22
 - Backup OpenAPI update.
 
