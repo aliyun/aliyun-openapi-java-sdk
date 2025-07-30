@@ -143,6 +143,14 @@ public class GetBatchTaskInfoResponse extends AcsResponse {
 
 		private String dataSourceSchema;
 
+		private String developOwnerId;
+
+		private String developOwnerName;
+
+		private String opsOwnerId;
+
+		private String opsOwnerName;
+
 		private List<Param> paramList;
 
 		private List<NodeRelation> upStreamList;
@@ -377,6 +385,38 @@ public class GetBatchTaskInfoResponse extends AcsResponse {
 			this.dataSourceSchema = dataSourceSchema;
 		}
 
+		public String getDevelopOwnerId() {
+			return this.developOwnerId;
+		}
+
+		public void setDevelopOwnerId(String developOwnerId) {
+			this.developOwnerId = developOwnerId;
+		}
+
+		public String getDevelopOwnerName() {
+			return this.developOwnerName;
+		}
+
+		public void setDevelopOwnerName(String developOwnerName) {
+			this.developOwnerName = developOwnerName;
+		}
+
+		public String getOpsOwnerId() {
+			return this.opsOwnerId;
+		}
+
+		public void setOpsOwnerId(String opsOwnerId) {
+			this.opsOwnerId = opsOwnerId;
+		}
+
+		public String getOpsOwnerName() {
+			return this.opsOwnerName;
+		}
+
+		public void setOpsOwnerName(String opsOwnerName) {
+			this.opsOwnerName = opsOwnerName;
+		}
+
 		public List<Param> getParamList() {
 			return this.paramList;
 		}
@@ -419,17 +459,9 @@ public class GetBatchTaskInfoResponse extends AcsResponse {
 
 		public static class Param {
 
-			private String key;
-
 			private String value;
 
-			public String getKey() {
-				return this.key;
-			}
-
-			public void setKey(String key) {
-				this.key = key;
-			}
+			private String key;
 
 			public String getValue() {
 				return this.value;
@@ -438,38 +470,46 @@ public class GetBatchTaskInfoResponse extends AcsResponse {
 			public void setValue(String value) {
 				this.value = value;
 			}
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
 		}
 
 		public static class NodeRelation {
 
-			private String nodeType;
+			private String sourceTableName;
 
 			private String sourceNodeId;
+
+			private Integer periodDiff;
+
+			private String nodeType;
 
 			private String sourceNodeName;
 
 			private String sourceNodeUserName;
 
+			private Boolean sourceNodeEnabled;
+
 			private String sourceNodeOutputName;
 
-			private String sourceTableName;
-
-			private Integer periodDiff;
-
 			private String dependStrategy;
-
-			private Boolean sourceNodeEnabled;
 
 			private List<String> fieldList;
 
 			private DependPeriod dependPeriod;
 
-			public String getNodeType() {
-				return this.nodeType;
+			public String getSourceTableName() {
+				return this.sourceTableName;
 			}
 
-			public void setNodeType(String nodeType) {
-				this.nodeType = nodeType;
+			public void setSourceTableName(String sourceTableName) {
+				this.sourceTableName = sourceTableName;
 			}
 
 			public String getSourceNodeId() {
@@ -478,6 +518,22 @@ public class GetBatchTaskInfoResponse extends AcsResponse {
 
 			public void setSourceNodeId(String sourceNodeId) {
 				this.sourceNodeId = sourceNodeId;
+			}
+
+			public Integer getPeriodDiff() {
+				return this.periodDiff;
+			}
+
+			public void setPeriodDiff(Integer periodDiff) {
+				this.periodDiff = periodDiff;
+			}
+
+			public String getNodeType() {
+				return this.nodeType;
+			}
+
+			public void setNodeType(String nodeType) {
+				this.nodeType = nodeType;
 			}
 
 			public String getSourceNodeName() {
@@ -496,6 +552,14 @@ public class GetBatchTaskInfoResponse extends AcsResponse {
 				this.sourceNodeUserName = sourceNodeUserName;
 			}
 
+			public Boolean getSourceNodeEnabled() {
+				return this.sourceNodeEnabled;
+			}
+
+			public void setSourceNodeEnabled(Boolean sourceNodeEnabled) {
+				this.sourceNodeEnabled = sourceNodeEnabled;
+			}
+
 			public String getSourceNodeOutputName() {
 				return this.sourceNodeOutputName;
 			}
@@ -504,36 +568,12 @@ public class GetBatchTaskInfoResponse extends AcsResponse {
 				this.sourceNodeOutputName = sourceNodeOutputName;
 			}
 
-			public String getSourceTableName() {
-				return this.sourceTableName;
-			}
-
-			public void setSourceTableName(String sourceTableName) {
-				this.sourceTableName = sourceTableName;
-			}
-
-			public Integer getPeriodDiff() {
-				return this.periodDiff;
-			}
-
-			public void setPeriodDiff(Integer periodDiff) {
-				this.periodDiff = periodDiff;
-			}
-
 			public String getDependStrategy() {
 				return this.dependStrategy;
 			}
 
 			public void setDependStrategy(String dependStrategy) {
 				this.dependStrategy = dependStrategy;
-			}
-
-			public Boolean getSourceNodeEnabled() {
-				return this.sourceNodeEnabled;
-			}
-
-			public void setSourceNodeEnabled(Boolean sourceNodeEnabled) {
-				this.sourceNodeEnabled = sourceNodeEnabled;
 			}
 
 			public List<String> getFieldList() {

@@ -1,3 +1,6 @@
+2025-07-30 Version: 1.0.9
+- Generated 2023-06-30 for `dataphin-public`.
+
 2025-04-28 Version: 1.0.7
 - Dataphin v5.1.0 openAPI changs log.
 - Add API ListRowPermission.

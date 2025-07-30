@@ -120,6 +120,9 @@ public class ListInstancesRequest extends RpcAcsRequest<ListInstancesResponse> {
 		@SerializedName("ProjectId")
 		private Long projectId;
 
+		@SerializedName("FlowId")
+		private String flowId;
+
 		@SerializedName("BizUnitId")
 		private Long bizUnitId;
 
@@ -247,6 +250,14 @@ public class ListInstancesRequest extends RpcAcsRequest<ListInstancesResponse> {
 
 		public void setProjectId(Long projectId) {
 			this.projectId = projectId;
+		}
+
+		public String getFlowId() {
+			return this.flowId;
+		}
+
+		public void setFlowId(String flowId) {
+			this.flowId = flowId;
 		}
 
 		public Long getBizUnitId() {

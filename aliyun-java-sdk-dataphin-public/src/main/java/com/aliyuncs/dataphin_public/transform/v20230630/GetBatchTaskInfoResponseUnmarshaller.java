@@ -66,6 +66,10 @@ public class GetBatchTaskInfoResponseUnmarshaller {
 		taskInfo.setDataSourceId(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.DataSourceId"));
 		taskInfo.setDataSourceCatalog(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.DataSourceCatalog"));
 		taskInfo.setDataSourceSchema(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.DataSourceSchema"));
+		taskInfo.setDevelopOwnerId(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.DevelopOwnerId"));
+		taskInfo.setDevelopOwnerName(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.DevelopOwnerName"));
+		taskInfo.setOpsOwnerId(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.OpsOwnerId"));
+		taskInfo.setOpsOwnerName(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.OpsOwnerName"));
 
 		List<String> nodeOutputNameList = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetBatchTaskInfoResponse.TaskInfo.NodeOutputNameList.Length"); i++) {
@@ -88,8 +92,8 @@ public class GetBatchTaskInfoResponseUnmarshaller {
 		List<Param> paramList = new ArrayList<Param>();
 		for (int i = 0; i < _ctx.lengthValue("GetBatchTaskInfoResponse.TaskInfo.ParamList.Length"); i++) {
 			Param param = new Param();
-			param.setKey(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.ParamList["+ i +"].Key"));
 			param.setValue(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.ParamList["+ i +"].Value"));
+			param.setKey(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.ParamList["+ i +"].Key"));
 
 			paramList.add(param);
 		}
@@ -98,15 +102,15 @@ public class GetBatchTaskInfoResponseUnmarshaller {
 		List<NodeRelation> upStreamList = new ArrayList<NodeRelation>();
 		for (int i = 0; i < _ctx.lengthValue("GetBatchTaskInfoResponse.TaskInfo.UpStreamList.Length"); i++) {
 			NodeRelation nodeRelation = new NodeRelation();
-			nodeRelation.setNodeType(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.UpStreamList["+ i +"].NodeType"));
+			nodeRelation.setSourceTableName(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.UpStreamList["+ i +"].SourceTableName"));
 			nodeRelation.setSourceNodeId(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.UpStreamList["+ i +"].SourceNodeId"));
+			nodeRelation.setPeriodDiff(_ctx.integerValue("GetBatchTaskInfoResponse.TaskInfo.UpStreamList["+ i +"].PeriodDiff"));
+			nodeRelation.setNodeType(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.UpStreamList["+ i +"].NodeType"));
 			nodeRelation.setSourceNodeName(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.UpStreamList["+ i +"].SourceNodeName"));
 			nodeRelation.setSourceNodeUserName(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.UpStreamList["+ i +"].SourceNodeUserName"));
-			nodeRelation.setSourceNodeOutputName(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.UpStreamList["+ i +"].SourceNodeOutputName"));
-			nodeRelation.setSourceTableName(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.UpStreamList["+ i +"].SourceTableName"));
-			nodeRelation.setPeriodDiff(_ctx.integerValue("GetBatchTaskInfoResponse.TaskInfo.UpStreamList["+ i +"].PeriodDiff"));
-			nodeRelation.setDependStrategy(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.UpStreamList["+ i +"].DependStrategy"));
 			nodeRelation.setSourceNodeEnabled(_ctx.booleanValue("GetBatchTaskInfoResponse.TaskInfo.UpStreamList["+ i +"].SourceNodeEnabled"));
+			nodeRelation.setSourceNodeOutputName(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.UpStreamList["+ i +"].SourceNodeOutputName"));
+			nodeRelation.setDependStrategy(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.UpStreamList["+ i +"].DependStrategy"));
 
 			List<String> fieldList = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("GetBatchTaskInfoResponse.TaskInfo.UpStreamList["+ i +"].FieldList.Length"); j++) {
