@@ -74,6 +74,7 @@ public class ListSchemeTaskConfigResponseUnmarshaller {
 			dataItem.setNumberFail(_ctx.integerValue("ListSchemeTaskConfigResponse.Data["+ i +"].NumberFail"));
 			dataItem.setFinishRate(_ctx.doubleValue("ListSchemeTaskConfigResponse.Data["+ i +"].FinishRate"));
 			dataItem.setNumberExecuting(_ctx.integerValue("ListSchemeTaskConfigResponse.Data["+ i +"].NumberExecuting"));
+			dataItem.setAsrVersion(_ctx.integerValue("ListSchemeTaskConfigResponse.Data["+ i +"].AsrVersion"));
 
 			List<Long> schemeIdList = new ArrayList<Long>();
 			for (int j = 0; j < _ctx.lengthValue("ListSchemeTaskConfigResponse.Data["+ i +"].SchemeIdList.Length"); j++) {

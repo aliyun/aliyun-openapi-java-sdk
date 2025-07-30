@@ -39,6 +39,8 @@ public class ListAsrVocabResponseUnmarshaller {
 			asrVocab.setName(_ctx.stringValue("ListAsrVocabResponse.Data["+ i +"].Name"));
 			asrVocab.setCreateTime(_ctx.stringValue("ListAsrVocabResponse.Data["+ i +"].CreateTime"));
 			asrVocab.setId(_ctx.stringValue("ListAsrVocabResponse.Data["+ i +"].Id"));
+			asrVocab.setAsrVersion(_ctx.integerValue("ListAsrVocabResponse.Data["+ i +"].AsrVersion"));
+			asrVocab.setModelCustomizationId(_ctx.stringValue("ListAsrVocabResponse.Data["+ i +"].ModelCustomizationId"));
 
 			data.add(asrVocab);
 		}

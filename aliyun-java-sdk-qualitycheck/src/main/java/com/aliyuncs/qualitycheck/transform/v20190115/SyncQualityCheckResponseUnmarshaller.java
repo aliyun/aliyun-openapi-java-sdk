@@ -23,6 +23,7 @@ import com.aliyuncs.qualitycheck.model.v20190115.SyncQualityCheckResponse.Data.R
 import com.aliyuncs.qualitycheck.model.v20190115.SyncQualityCheckResponse.Data.RuleHitInfo.ConditionHitInfo;
 import com.aliyuncs.qualitycheck.model.v20190115.SyncQualityCheckResponse.Data.RuleHitInfo.ConditionHitInfo.HitKeyWord;
 import com.aliyuncs.qualitycheck.model.v20190115.SyncQualityCheckResponse.Data.RuleHitInfo.ConditionHitInfo.Phrase;
+import com.aliyuncs.qualitycheck.model.v20190115.SyncQualityCheckResponse.Data.RuleHitInfo.RuleInfoBase;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -46,6 +47,16 @@ public class SyncQualityCheckResponseUnmarshaller {
 			RuleHitInfo ruleHitInfo = new RuleHitInfo();
 			ruleHitInfo.setRuleName(_ctx.stringValue("SyncQualityCheckResponse.Data.Rules["+ i +"].RuleName"));
 			ruleHitInfo.setRid(_ctx.stringValue("SyncQualityCheckResponse.Data.Rules["+ i +"].Rid"));
+
+			RuleInfoBase ruleInfoBase = new RuleInfoBase();
+			ruleInfoBase.setLevel(_ctx.integerValue("SyncQualityCheckResponse.Data.Rules["+ i +"].RuleInfoBase.Level"));
+			ruleInfoBase.setComments(_ctx.stringValue("SyncQualityCheckResponse.Data.Rules["+ i +"].RuleInfoBase.Comments"));
+			ruleInfoBase.setScoreNum(_ctx.integerValue("SyncQualityCheckResponse.Data.Rules["+ i +"].RuleInfoBase.ScoreNum"));
+			ruleInfoBase.setScoreType(_ctx.integerValue("SyncQualityCheckResponse.Data.Rules["+ i +"].RuleInfoBase.ScoreType"));
+			ruleInfoBase.setScoreNumType(_ctx.integerValue("SyncQualityCheckResponse.Data.Rules["+ i +"].RuleInfoBase.ScoreNumType"));
+			ruleInfoBase.setType(_ctx.integerValue("SyncQualityCheckResponse.Data.Rules["+ i +"].RuleInfoBase.Type"));
+			ruleInfoBase.setRuleCategoryName(_ctx.stringValue("SyncQualityCheckResponse.Data.Rules["+ i +"].RuleInfoBase.RuleCategoryName"));
+			ruleHitInfo.setRuleInfoBase(ruleInfoBase);
 
 			List<ConditionHitInfo> hit = new ArrayList<ConditionHitInfo>();
 			for (int j = 0; j < _ctx.lengthValue("SyncQualityCheckResponse.Data.Rules["+ i +"].Hit.Length"); j++) {

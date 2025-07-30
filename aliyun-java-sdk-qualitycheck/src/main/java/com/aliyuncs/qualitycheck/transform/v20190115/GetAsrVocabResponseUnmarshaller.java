@@ -34,6 +34,8 @@ public class GetAsrVocabResponseUnmarshaller {
 
 		Data data = new Data();
 		data.setName(_ctx.stringValue("GetAsrVocabResponse.Data.Name"));
+		data.setAsrVersion(_ctx.integerValue("GetAsrVocabResponse.Data.AsrVersion"));
+		data.setModelCustomizationId(_ctx.stringValue("GetAsrVocabResponse.Data.ModelCustomizationId"));
 
 		List<Word> words = new ArrayList<Word>();
 		for (int i = 0; i < _ctx.lengthValue("GetAsrVocabResponse.Data.Words.Length"); i++) {

@@ -14,41 +14,28 @@
 
 package com.aliyuncs.qualitycheck.model.v20190115;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.qualitycheck.transform.v20190115.InsertSubScoreForApiResponseUnmarshaller;
+import com.aliyuncs.qualitycheck.transform.v20190115.DeleteCheckTypeToSchemeResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class InsertSubScoreForApiResponse extends AcsResponse {
-
-	private String code;
-
-	private String message;
+public class DeleteCheckTypeToSchemeResponse extends AcsResponse {
 
 	private String requestId;
 
 	private Boolean success;
 
-	private Data data;
+	private String data;
 
-	public String getCode() {
-		return this.code;
-	}
+	private String code;
 
-	public void setCode(String code) {
-		this.code = code;
-	}
+	private String message;
 
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
+	private List<String> messages;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -66,39 +53,45 @@ public class InsertSubScoreForApiResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public Data getData() {
+	public String getData() {
 		return this.data;
 	}
 
-	public void setData(Data data) {
+	public void setData(String data) {
 		this.data = data;
 	}
 
-	public static class Data {
+	public String getCode() {
+		return this.code;
+	}
 
-		private Long scoreSubId;
+	public void setCode(String code) {
+		this.code = code;
+	}
 
-		private String scoreSubName;
+	public String getMessage() {
+		return this.message;
+	}
 
-		public Long getScoreSubId() {
-			return this.scoreSubId;
-		}
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
-		public void setScoreSubId(Long scoreSubId) {
-			this.scoreSubId = scoreSubId;
-		}
+	public List<String> getMessages() {
+		return this.messages;
+	}
 
-		public String getScoreSubName() {
-			return this.scoreSubName;
-		}
-
-		public void setScoreSubName(String scoreSubName) {
-			this.scoreSubName = scoreSubName;
-		}
+	public void setMessages(List<String> messages) {
+		this.messages = messages;
 	}
 
 	@Override
-	public InsertSubScoreForApiResponse getInstance(UnmarshallerContext context) {
-		return	InsertSubScoreForApiResponseUnmarshaller.unmarshall(this, context);
+	public DeleteCheckTypeToSchemeResponse getInstance(UnmarshallerContext context) {
+		return	DeleteCheckTypeToSchemeResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

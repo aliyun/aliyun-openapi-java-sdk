@@ -15,20 +15,22 @@
 package com.aliyuncs.qualitycheck.model.v20190115;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
-public class DeleteSubScoreForApiRequest extends RpcAcsRequest<DeleteSubScoreForApiResponse> {
+public class ApplyWsTokenRequest extends RpcAcsRequest<ApplyWsTokenResponse> {
 	   
 
 	private String jsonStr;
 
 	private Long baseMeAgentId;
-	public DeleteSubScoreForApiRequest() {
-		super("Qualitycheck", "2019-01-15", "DeleteSubScoreForApi");
+	public ApplyWsTokenRequest() {
+		super("Qualitycheck", "2019-01-15", "ApplyWsToken");
+		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
 
@@ -55,8 +57,8 @@ public class DeleteSubScoreForApiRequest extends RpcAcsRequest<DeleteSubScoreFor
 	}
 
 	@Override
-	public Class<DeleteSubScoreForApiResponse> getResponseClass() {
-		return DeleteSubScoreForApiResponse.class;
+	public Class<ApplyWsTokenResponse> getResponseClass() {
+		return ApplyWsTokenResponse.class;
 	}
 
 }

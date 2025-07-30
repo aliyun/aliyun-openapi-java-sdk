@@ -15,20 +15,22 @@
 package com.aliyuncs.qualitycheck.model.v20190115;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
-public class InsertSubScoreForApiRequest extends RpcAcsRequest<InsertSubScoreForApiResponse> {
+public class GetSchemeTaskConfigRequest extends RpcAcsRequest<GetSchemeTaskConfigResponse> {
 	   
 
 	private String jsonStr;
 
 	private Long baseMeAgentId;
-	public InsertSubScoreForApiRequest() {
-		super("Qualitycheck", "2019-01-15", "InsertSubScoreForApi");
+	public GetSchemeTaskConfigRequest() {
+		super("Qualitycheck", "2019-01-15", "GetSchemeTaskConfig");
+		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
 
@@ -55,8 +57,8 @@ public class InsertSubScoreForApiRequest extends RpcAcsRequest<InsertSubScoreFor
 	}
 
 	@Override
-	public Class<InsertSubScoreForApiResponse> getResponseClass() {
-		return InsertSubScoreForApiResponse.class;
+	public Class<GetSchemeTaskConfigResponse> getResponseClass() {
+		return GetSchemeTaskConfigResponse.class;
 	}
 
 }

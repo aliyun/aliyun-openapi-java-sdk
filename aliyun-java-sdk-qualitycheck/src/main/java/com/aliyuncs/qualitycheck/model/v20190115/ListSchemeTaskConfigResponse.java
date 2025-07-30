@@ -203,6 +203,8 @@ public class ListSchemeTaskConfigResponse extends AcsResponse {
 
 		private Integer numberExecuting;
 
+		private Integer asrVersion;
+
 		private List<SchemeListItem> schemeList;
 
 		private List<Long> schemeIdList;
@@ -391,6 +393,14 @@ public class ListSchemeTaskConfigResponse extends AcsResponse {
 
 		public void setNumberExecuting(Integer numberExecuting) {
 			this.numberExecuting = numberExecuting;
+		}
+
+		public Integer getAsrVersion() {
+			return this.asrVersion;
+		}
+
+		public void setAsrVersion(Integer asrVersion) {
+			this.asrVersion = asrVersion;
 		}
 
 		public List<SchemeListItem> getSchemeList() {

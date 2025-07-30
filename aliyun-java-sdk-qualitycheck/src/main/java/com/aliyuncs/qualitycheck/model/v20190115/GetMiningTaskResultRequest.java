@@ -15,32 +15,23 @@
 package com.aliyuncs.qualitycheck.model.v20190115;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateUserRequest extends RpcAcsRequest<CreateUserResponse> {
+public class GetMiningTaskResultRequest extends RpcAcsRequest<GetMiningTaskResultResponse> {
 	   
 
-	private String jsonStr;
-
 	private Long baseMeAgentId;
-	public CreateUserRequest() {
-		super("Qualitycheck", "2019-01-15", "CreateUser");
+
+	private String taskId;
+	public GetMiningTaskResultRequest() {
+		super("Qualitycheck", "2019-01-15", "GetMiningTaskResult");
+		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
-	}
-
-	public String getJsonStr() {
-		return this.jsonStr;
-	}
-
-	public void setJsonStr(String jsonStr) {
-		this.jsonStr = jsonStr;
-		if(jsonStr != null){
-			putQueryParameter("JsonStr", jsonStr);
-		}
 	}
 
 	public Long getBaseMeAgentId() {
@@ -54,9 +45,20 @@ public class CreateUserRequest extends RpcAcsRequest<CreateUserResponse> {
 		}
 	}
 
+	public String getTaskId() {
+		return this.taskId;
+	}
+
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
+		if(taskId != null){
+			putQueryParameter("TaskId", taskId);
+		}
+	}
+
 	@Override
-	public Class<CreateUserResponse> getResponseClass() {
-		return CreateUserResponse.class;
+	public Class<GetMiningTaskResultResponse> getResponseClass() {
+		return GetMiningTaskResultResponse.class;
 	}
 
 }

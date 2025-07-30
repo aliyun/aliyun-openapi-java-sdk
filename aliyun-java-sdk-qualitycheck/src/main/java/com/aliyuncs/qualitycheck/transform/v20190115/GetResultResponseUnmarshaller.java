@@ -76,6 +76,7 @@ public class GetResultResponseUnmarshaller {
 			resultInfo.setTaskId(_ctx.stringValue("GetResultResponse.Data["+ i +"].TaskId"));
 			resultInfo.setReviewType(_ctx.integerValue("GetResultResponse.Data["+ i +"].ReviewType"));
 			resultInfo.setResolver(_ctx.stringValue("GetResultResponse.Data["+ i +"].Resolver"));
+			resultInfo.setVid(_ctx.stringValue("GetResultResponse.Data["+ i +"].Vid"));
 
 			List<Long> schemeIdList = new ArrayList<Long>();
 			for (int j = 0; j < _ctx.lengthValue("GetResultResponse.Data["+ i +"].SchemeIdList.Length"); j++) {
@@ -151,6 +152,7 @@ public class GetResultResponseUnmarshaller {
 				hitResultItem.setRid(_ctx.stringValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Rid"));
 				hitResultItem.setSchemeId(_ctx.longValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].SchemeId"));
 				hitResultItem.setSchemeVersion(_ctx.longValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].SchemeVersion"));
+				hitResultItem.setScore(_ctx.integerValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Score"));
 
 				List<Hit> hits = new ArrayList<Hit>();
 				for (int k = 0; k < _ctx.lengthValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Hits.Length"); k++) {

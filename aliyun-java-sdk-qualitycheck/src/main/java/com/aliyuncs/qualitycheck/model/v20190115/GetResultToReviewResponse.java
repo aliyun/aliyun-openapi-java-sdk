@@ -289,6 +289,8 @@ public class GetResultToReviewResponse extends AcsResponse {
 
 			private String hourMinSec;
 
+			private Long beginTimeMs;
+
 			public String getWords() {
 				return this.words;
 			}
@@ -367,6 +369,14 @@ public class GetResultToReviewResponse extends AcsResponse {
 
 			public void setHourMinSec(String hourMinSec) {
 				this.hourMinSec = hourMinSec;
+			}
+
+			public Long getBeginTimeMs() {
+				return this.beginTimeMs;
+			}
+
+			public void setBeginTimeMs(Long beginTimeMs) {
+				this.beginTimeMs = beginTimeMs;
 			}
 		}
 
@@ -480,6 +490,10 @@ public class GetResultToReviewResponse extends AcsResponse {
 
 			private Long rid;
 
+			private Integer machineHitResult;
+
+			private Integer reviewHitResult;
+
 			private List<ConditionHitInfo> conditionHitInfoList;
 
 			private List<ComplainHistoriesItem> complainHistories;
@@ -574,6 +588,22 @@ public class GetResultToReviewResponse extends AcsResponse {
 				this.rid = rid;
 			}
 
+			public Integer getMachineHitResult() {
+				return this.machineHitResult;
+			}
+
+			public void setMachineHitResult(Integer machineHitResult) {
+				this.machineHitResult = machineHitResult;
+			}
+
+			public Integer getReviewHitResult() {
+				return this.reviewHitResult;
+			}
+
+			public void setReviewHitResult(Integer reviewHitResult) {
+				this.reviewHitResult = reviewHitResult;
+			}
+
 			public List<ConditionHitInfo> getConditionHitInfoList() {
 				return this.conditionHitInfoList;
 			}
@@ -646,6 +676,8 @@ public class GetResultToReviewResponse extends AcsResponse {
 
 					private String customizeCode;
 
+					private Boolean isMatch;
+
 					public Integer getFrom() {
 						return this.from;
 					}
@@ -700,6 +732,14 @@ public class GetResultToReviewResponse extends AcsResponse {
 
 					public void setCustomizeCode(String customizeCode) {
 						this.customizeCode = customizeCode;
+					}
+
+					public Boolean getIsMatch() {
+						return this.isMatch;
+					}
+
+					public void setIsMatch(Boolean isMatch) {
+						this.isMatch = isMatch;
 					}
 				}
 

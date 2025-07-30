@@ -73,6 +73,7 @@ public class GetResultToReviewResponseUnmarshaller {
 			dialogue.setRole(_ctx.stringValue("GetResultToReviewResponse.Data.Dialogues["+ i +"].Role"));
 			dialogue.setSilenceDuration(_ctx.integerValue("GetResultToReviewResponse.Data.Dialogues["+ i +"].SilenceDuration"));
 			dialogue.setHourMinSec(_ctx.stringValue("GetResultToReviewResponse.Data.Dialogues["+ i +"].HourMinSec"));
+			dialogue.setBeginTimeMs(_ctx.longValue("GetResultToReviewResponse.Data.Dialogues["+ i +"].BeginTimeMs"));
 
 			dialogues.add(dialogue);
 		}
@@ -115,6 +116,8 @@ public class GetResultToReviewResponseUnmarshaller {
 			hitRuleReviewInfo.setScoreId(_ctx.longValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ScoreId"));
 			hitRuleReviewInfo.setRuleName(_ctx.stringValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].RuleName"));
 			hitRuleReviewInfo.setRid(_ctx.longValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].Rid"));
+			hitRuleReviewInfo.setMachineHitResult(_ctx.integerValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].MachineHitResult"));
+			hitRuleReviewInfo.setReviewHitResult(_ctx.integerValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ReviewHitResult"));
 
 			ReviewInfo reviewInfo = new ReviewInfo();
 			reviewInfo.setReviewResult(_ctx.integerValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ReviewInfo.ReviewResult"));
@@ -154,6 +157,7 @@ public class GetResultToReviewResponseUnmarshaller {
 					keyWord.setCid(_ctx.stringValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList["+ j +"].KeyWords["+ k +"].Cid"));
 					keyWord.setTo(_ctx.integerValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList["+ j +"].KeyWords["+ k +"].To"));
 					keyWord.setCustomizeCode(_ctx.stringValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList["+ j +"].KeyWords["+ k +"].CustomizeCode"));
+					keyWord.setIsMatch(_ctx.booleanValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList["+ j +"].KeyWords["+ k +"].IsMatch"));
 
 					keyWords.add(keyWord);
 				}

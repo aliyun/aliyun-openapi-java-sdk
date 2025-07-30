@@ -151,6 +151,8 @@ public class GetResultResponse extends AcsResponse {
 
 		private String resolver;
 
+		private String vid;
+
 		private List<AsrResultItem> asrResult;
 
 		private List<HitResultItem> hitResult;
@@ -303,6 +305,14 @@ public class GetResultResponse extends AcsResponse {
 
 		public void setResolver(String resolver) {
 			this.resolver = resolver;
+		}
+
+		public String getVid() {
+			return this.vid;
+		}
+
+		public void setVid(String vid) {
+			this.vid = vid;
 		}
 
 		public List<AsrResultItem> getAsrResult() {
@@ -464,6 +474,8 @@ public class GetResultResponse extends AcsResponse {
 
 			private Long schemeVersion;
 
+			private Integer score;
+
 			private List<Hit> hits;
 
 			private List<ConditionsItem> conditions;
@@ -514,6 +526,14 @@ public class GetResultResponse extends AcsResponse {
 
 			public void setSchemeVersion(Long schemeVersion) {
 				this.schemeVersion = schemeVersion;
+			}
+
+			public Integer getScore() {
+				return this.score;
+			}
+
+			public void setScore(Integer score) {
+				this.score = score;
 			}
 
 			public List<Hit> getHits() {

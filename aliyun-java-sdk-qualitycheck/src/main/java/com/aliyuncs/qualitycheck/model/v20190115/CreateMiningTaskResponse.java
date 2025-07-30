@@ -15,24 +15,42 @@
 package com.aliyuncs.qualitycheck.model.v20190115;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.qualitycheck.transform.v20190115.InsertScoreForApiResponseUnmarshaller;
+import com.aliyuncs.qualitycheck.transform.v20190115.CreateMiningTaskResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class InsertScoreForApiResponse extends AcsResponse {
+public class CreateMiningTaskResponse extends AcsResponse {
+
+	private String requestId;
+
+	private String success;
 
 	private String code;
 
 	private String message;
 
-	private String requestId;
-
-	private Boolean success;
+	private String httpStatusCode;
 
 	private Data data;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(String success) {
+		this.success = success;
+	}
 
 	public String getCode() {
 		return this.code;
@@ -50,20 +68,12 @@ public class InsertScoreForApiResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getHttpStatusCode() {
+		return this.httpStatusCode;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setHttpStatusCode(String httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
 	public Data getData() {
@@ -76,29 +86,24 @@ public class InsertScoreForApiResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Long scoreId;
+		private String taskId;
 
-		private String scoreName;
-
-		public Long getScoreId() {
-			return this.scoreId;
+		public String getTaskId() {
+			return this.taskId;
 		}
 
-		public void setScoreId(Long scoreId) {
-			this.scoreId = scoreId;
-		}
-
-		public String getScoreName() {
-			return this.scoreName;
-		}
-
-		public void setScoreName(String scoreName) {
-			this.scoreName = scoreName;
+		public void setTaskId(String taskId) {
+			this.taskId = taskId;
 		}
 	}
 
 	@Override
-	public InsertScoreForApiResponse getInstance(UnmarshallerContext context) {
-		return	InsertScoreForApiResponseUnmarshaller.unmarshall(this, context);
+	public CreateMiningTaskResponse getInstance(UnmarshallerContext context) {
+		return	CreateMiningTaskResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

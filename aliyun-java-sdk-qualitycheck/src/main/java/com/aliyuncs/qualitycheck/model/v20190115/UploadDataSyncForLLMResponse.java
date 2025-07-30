@@ -16,14 +16,14 @@ package com.aliyuncs.qualitycheck.model.v20190115;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.qualitycheck.transform.v20190115.SyncQualityCheckResponseUnmarshaller;
+import com.aliyuncs.qualitycheck.transform.v20190115.UploadDataSyncForLLMResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class SyncQualityCheckResponse extends AcsResponse {
+public class UploadDataSyncForLLMResponse extends AcsResponse {
 
 	private String code;
 
@@ -33,7 +33,7 @@ public class SyncQualityCheckResponse extends AcsResponse {
 
 	private Boolean success;
 
-	private Data data;
+	private List<ResultInfo> data;
 
 	public String getCode() {
 		return this.code;
@@ -67,23 +67,17 @@ public class SyncQualityCheckResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public Data getData() {
+	public List<ResultInfo> getData() {
 		return this.data;
 	}
 
-	public void setData(Data data) {
+	public void setData(List<ResultInfo> data) {
 		this.data = data;
 	}
 
-	public static class Data {
+	public static class ResultInfo {
 
 		private Integer score;
-
-		private String taskId;
-
-		private String tid;
-
-		private Long beginTime;
 
 		private List<RuleHitInfo> rules;
 
@@ -93,30 +87,6 @@ public class SyncQualityCheckResponse extends AcsResponse {
 
 		public void setScore(Integer score) {
 			this.score = score;
-		}
-
-		public String getTaskId() {
-			return this.taskId;
-		}
-
-		public void setTaskId(String taskId) {
-			this.taskId = taskId;
-		}
-
-		public String getTid() {
-			return this.tid;
-		}
-
-		public void setTid(String tid) {
-			this.tid = tid;
-		}
-
-		public Long getBeginTime() {
-			return this.beginTime;
-		}
-
-		public void setBeginTime(Long beginTime) {
-			this.beginTime = beginTime;
 		}
 
 		public List<RuleHitInfo> getRules() {
@@ -129,20 +99,20 @@ public class SyncQualityCheckResponse extends AcsResponse {
 
 		public static class RuleHitInfo {
 
-			private String ruleName;
+			private String tid;
 
 			private String rid;
 
 			private List<ConditionHitInfo> hit;
 
-			private RuleInfoBase ruleInfoBase;
+			private List<ConditionBasicInfo> conditionInfo;
 
-			public String getRuleName() {
-				return this.ruleName;
+			public String getTid() {
+				return this.tid;
 			}
 
-			public void setRuleName(String ruleName) {
-				this.ruleName = ruleName;
+			public void setTid(String tid) {
+				this.tid = tid;
 			}
 
 			public String getRid() {
@@ -161,17 +131,19 @@ public class SyncQualityCheckResponse extends AcsResponse {
 				this.hit = hit;
 			}
 
-			public RuleInfoBase getRuleInfoBase() {
-				return this.ruleInfoBase;
+			public List<ConditionBasicInfo> getConditionInfo() {
+				return this.conditionInfo;
 			}
 
-			public void setRuleInfoBase(RuleInfoBase ruleInfoBase) {
-				this.ruleInfoBase = ruleInfoBase;
+			public void setConditionInfo(List<ConditionBasicInfo> conditionInfo) {
+				this.conditionInfo = conditionInfo;
 			}
 
 			public static class ConditionHitInfo {
 
 				private List<HitKeyWord> hitKeyWords;
+
+				private List<String> hitCids;
 
 				private Phrase phrase;
 
@@ -181,6 +153,14 @@ public class SyncQualityCheckResponse extends AcsResponse {
 
 				public void setHitKeyWords(List<HitKeyWord> hitKeyWords) {
 					this.hitKeyWords = hitKeyWords;
+				}
+
+				public List<String> getHitCids() {
+					return this.hitCids;
+				}
+
+				public void setHitCids(List<String> hitCids) {
+					this.hitCids = hitCids;
 				}
 
 				public Phrase getPhrase() {
@@ -199,7 +179,7 @@ public class SyncQualityCheckResponse extends AcsResponse {
 
 					private String val;
 
-					private Integer cid;
+					private String tid;
 
 					private Integer pid;
 
@@ -227,12 +207,12 @@ public class SyncQualityCheckResponse extends AcsResponse {
 						this.val = val;
 					}
 
-					public Integer getCid() {
-						return this.cid;
+					public String getTid() {
+						return this.tid;
 					}
 
-					public void setCid(Integer cid) {
-						this.cid = cid;
+					public void setTid(String tid) {
+						this.tid = tid;
 					}
 
 					public Integer getPid() {
@@ -252,15 +232,11 @@ public class SyncQualityCheckResponse extends AcsResponse {
 
 					private Long begin;
 
-					private Integer emotionValue;
+					private String beginTime;
 
 					private Long end;
 
-					private Integer speechRate;
-
 					private String role;
-
-					private Integer silenceDuration;
 
 					public String getWords() {
 						return this.words;
@@ -286,12 +262,12 @@ public class SyncQualityCheckResponse extends AcsResponse {
 						this.begin = begin;
 					}
 
-					public Integer getEmotionValue() {
-						return this.emotionValue;
+					public String getBeginTime() {
+						return this.beginTime;
 					}
 
-					public void setEmotionValue(Integer emotionValue) {
-						this.emotionValue = emotionValue;
+					public void setBeginTime(String beginTime) {
+						this.beginTime = beginTime;
 					}
 
 					public Long getEnd() {
@@ -302,14 +278,6 @@ public class SyncQualityCheckResponse extends AcsResponse {
 						this.end = end;
 					}
 
-					public Integer getSpeechRate() {
-						return this.speechRate;
-					}
-
-					public void setSpeechRate(Integer speechRate) {
-						this.speechRate = speechRate;
-					}
-
 					public String getRole() {
 						return this.role;
 					}
@@ -317,99 +285,26 @@ public class SyncQualityCheckResponse extends AcsResponse {
 					public void setRole(String role) {
 						this.role = role;
 					}
-
-					public Integer getSilenceDuration() {
-						return this.silenceDuration;
-					}
-
-					public void setSilenceDuration(Integer silenceDuration) {
-						this.silenceDuration = silenceDuration;
-					}
 				}
 			}
 
-			public static class RuleInfoBase {
+			public static class ConditionBasicInfo {
 
-				private Integer level;
+				private String conditionInfoCid;
 
-				private String comments;
-
-				private Integer scoreNum;
-
-				private Integer scoreType;
-
-				private Integer scoreNumType;
-
-				private Integer type;
-
-				private String ruleCategoryName;
-
-				public Integer getLevel() {
-					return this.level;
+				public String getConditionInfoCid() {
+					return this.conditionInfoCid;
 				}
 
-				public void setLevel(Integer level) {
-					this.level = level;
-				}
-
-				public String getComments() {
-					return this.comments;
-				}
-
-				public void setComments(String comments) {
-					this.comments = comments;
-				}
-
-				public Integer getScoreNum() {
-					return this.scoreNum;
-				}
-
-				public void setScoreNum(Integer scoreNum) {
-					this.scoreNum = scoreNum;
-				}
-
-				public Integer getScoreType() {
-					return this.scoreType;
-				}
-
-				public void setScoreType(Integer scoreType) {
-					this.scoreType = scoreType;
-				}
-
-				public Integer getScoreNumType() {
-					return this.scoreNumType;
-				}
-
-				public void setScoreNumType(Integer scoreNumType) {
-					this.scoreNumType = scoreNumType;
-				}
-
-				public Integer getType() {
-					return this.type;
-				}
-
-				public void setType(Integer type) {
-					this.type = type;
-				}
-
-				public String getRuleCategoryName() {
-					return this.ruleCategoryName;
-				}
-
-				public void setRuleCategoryName(String ruleCategoryName) {
-					this.ruleCategoryName = ruleCategoryName;
+				public void setConditionInfoCid(String conditionInfoCid) {
+					this.conditionInfoCid = conditionInfoCid;
 				}
 			}
 		}
 	}
 
 	@Override
-	public SyncQualityCheckResponse getInstance(UnmarshallerContext context) {
-		return	SyncQualityCheckResponseUnmarshaller.unmarshall(this, context);
-	}
-
-	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
+	public UploadDataSyncForLLMResponse getInstance(UnmarshallerContext context) {
+		return	UploadDataSyncForLLMResponseUnmarshaller.unmarshall(this, context);
 	}
 }
