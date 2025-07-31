@@ -27,6 +27,8 @@ public class ModifyParametersRequest extends RpcAcsRequest<ModifyParametersRespo
 
 	private Long resourceOwnerId;
 
+	private String switchMode;
+
 	private String dBInstanceId;
 
 	private String nodeId;
@@ -57,6 +59,17 @@ public class ModifyParametersRequest extends RpcAcsRequest<ModifyParametersRespo
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getSwitchMode() {
+		return this.switchMode;
+	}
+
+	public void setSwitchMode(String switchMode) {
+		this.switchMode = switchMode;
+		if(switchMode != null){
+			putQueryParameter("SwitchMode", switchMode);
 		}
 	}
 

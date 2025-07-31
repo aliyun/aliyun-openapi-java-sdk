@@ -58,6 +58,7 @@ public class DescribePriceResponseUnmarshaller {
 		order.setCode(_ctx.stringValue("DescribePriceResponse.Order.Code"));
 		order.setMessage(_ctx.stringValue("DescribePriceResponse.Order.Message"));
 		order.setIsContractActivity(_ctx.booleanValue("DescribePriceResponse.Order.IsContractActivity"));
+		order.setTotalCostAmount(_ctx.doubleValue("DescribePriceResponse.Order.TotalCostAmount"));
 
 		List<String> ruleIds4 = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePriceResponse.Order.RuleIds.Length"); i++) {

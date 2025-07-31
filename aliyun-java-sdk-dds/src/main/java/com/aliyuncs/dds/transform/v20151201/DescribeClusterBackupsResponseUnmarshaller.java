@@ -47,6 +47,7 @@ public class DescribeClusterBackupsResponseUnmarshaller {
 			clusterBackup.setProgress(_ctx.stringValue("DescribeClusterBackupsResponse.ClusterBackups["+ i +"].Progress"));
 			clusterBackup.setAttachLogStatus(_ctx.stringValue("DescribeClusterBackupsResponse.ClusterBackups["+ i +"].AttachLogStatus"));
 			clusterBackup.setEngineVersion(_ctx.stringValue("DescribeClusterBackupsResponse.ClusterBackups["+ i +"].EngineVersion"));
+			clusterBackup.setBackupExpireTime(_ctx.stringValue("DescribeClusterBackupsResponse.ClusterBackups["+ i +"].BackupExpireTime"));
 
 			ExtraInfo extraInfo = new ExtraInfo();
 			extraInfo.setRegistryFromHistory(_ctx.stringValue("DescribeClusterBackupsResponse.ClusterBackups["+ i +"].ExtraInfo.RegistryFromHistory"));

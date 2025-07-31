@@ -50,6 +50,7 @@ public class DescribeBackupsResponseUnmarshaller {
 			backup.setBackupScale(_ctx.stringValue("DescribeBackupsResponse.Backups["+ i +"].BackupScale"));
 			backup.setIsAvail(_ctx.booleanValue("DescribeBackupsResponse.Backups["+ i +"].IsAvail"));
 			backup.setEngineVersion(_ctx.stringValue("DescribeBackupsResponse.Backups["+ i +"].EngineVersion"));
+			backup.setBackupExpireTime(_ctx.stringValue("DescribeBackupsResponse.Backups["+ i +"].BackupExpireTime"));
 
 			backups.add(backup);
 		}

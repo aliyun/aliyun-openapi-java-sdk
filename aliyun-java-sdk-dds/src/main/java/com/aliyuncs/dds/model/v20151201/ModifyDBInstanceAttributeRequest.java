@@ -22,31 +22,38 @@ import com.aliyuncs.dds.Endpoint;
  * @author auto create
  * @version 
  */
-public class RestartNodeRequest extends RpcAcsRequest<RestartNodeResponse> {
+public class ModifyDBInstanceAttributeRequest extends RpcAcsRequest<ModifyDBInstanceAttributeResponse> {
 	   
+
+	private Boolean dBInstanceReleaseProtection;
 
 	private Long resourceOwnerId;
 
-	private String roleId;
-
-	private String switchMode;
-
 	private String dBInstanceId;
-
-	private String nodeId;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-	public RestartNodeRequest() {
-		super("Dds", "2015-12-01", "RestartNode", "dds");
+	public ModifyDBInstanceAttributeRequest() {
+		super("Dds", "2015-12-01", "ModifyDBInstanceAttribute", "dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Boolean getDBInstanceReleaseProtection() {
+		return this.dBInstanceReleaseProtection;
+	}
+
+	public void setDBInstanceReleaseProtection(Boolean dBInstanceReleaseProtection) {
+		this.dBInstanceReleaseProtection = dBInstanceReleaseProtection;
+		if(dBInstanceReleaseProtection != null){
+			putQueryParameter("DBInstanceReleaseProtection", dBInstanceReleaseProtection.toString());
+		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -60,28 +67,6 @@ public class RestartNodeRequest extends RpcAcsRequest<RestartNodeResponse> {
 		}
 	}
 
-	public String getRoleId() {
-		return this.roleId;
-	}
-
-	public void setRoleId(String roleId) {
-		this.roleId = roleId;
-		if(roleId != null){
-			putQueryParameter("RoleId", roleId);
-		}
-	}
-
-	public String getSwitchMode() {
-		return this.switchMode;
-	}
-
-	public void setSwitchMode(String switchMode) {
-		this.switchMode = switchMode;
-		if(switchMode != null){
-			putQueryParameter("SwitchMode", switchMode);
-		}
-	}
-
 	public String getDBInstanceId() {
 		return this.dBInstanceId;
 	}
@@ -90,17 +75,6 @@ public class RestartNodeRequest extends RpcAcsRequest<RestartNodeResponse> {
 		this.dBInstanceId = dBInstanceId;
 		if(dBInstanceId != null){
 			putQueryParameter("DBInstanceId", dBInstanceId);
-		}
-	}
-
-	public String getNodeId() {
-		return this.nodeId;
-	}
-
-	public void setNodeId(String nodeId) {
-		this.nodeId = nodeId;
-		if(nodeId != null){
-			putQueryParameter("NodeId", nodeId);
 		}
 	}
 
@@ -138,8 +112,8 @@ public class RestartNodeRequest extends RpcAcsRequest<RestartNodeResponse> {
 	}
 
 	@Override
-	public Class<RestartNodeResponse> getResponseClass() {
-		return RestartNodeResponse.class;
+	public Class<ModifyDBInstanceAttributeResponse> getResponseClass() {
+		return ModifyDBInstanceAttributeResponse.class;
 	}
 
 }

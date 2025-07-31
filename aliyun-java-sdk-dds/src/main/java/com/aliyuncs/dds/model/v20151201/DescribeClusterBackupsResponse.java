@@ -97,6 +97,8 @@ public class DescribeClusterBackupsResponse extends AcsResponse {
 
 		private String engineVersion;
 
+		private String backupExpireTime;
+
 		private List<Backup> backups;
 
 		private ExtraInfo extraInfo;
@@ -179,6 +181,14 @@ public class DescribeClusterBackupsResponse extends AcsResponse {
 
 		public void setEngineVersion(String engineVersion) {
 			this.engineVersion = engineVersion;
+		}
+
+		public String getBackupExpireTime() {
+			return this.backupExpireTime;
+		}
+
+		public void setBackupExpireTime(String backupExpireTime) {
+			this.backupExpireTime = backupExpireTime;
 		}
 
 		public List<Backup> getBackups() {

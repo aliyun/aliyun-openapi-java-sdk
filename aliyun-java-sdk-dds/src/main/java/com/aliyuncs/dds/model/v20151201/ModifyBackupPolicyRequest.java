@@ -72,6 +72,8 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 	private String crossLogRetentionType;
 
 	private Long logBackupRetentionPeriod;
+
+	private Boolean preserveOneEachHour;
 	public ModifyBackupPolicyRequest() {
 		super("Dds", "2015-12-01", "ModifyBackupPolicy", "dds");
 		setMethod(MethodType.POST);
@@ -342,6 +344,17 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 		this.logBackupRetentionPeriod = logBackupRetentionPeriod;
 		if(logBackupRetentionPeriod != null){
 			putQueryParameter("LogBackupRetentionPeriod", logBackupRetentionPeriod.toString());
+		}
+	}
+
+	public Boolean getPreserveOneEachHour() {
+		return this.preserveOneEachHour;
+	}
+
+	public void setPreserveOneEachHour(Boolean preserveOneEachHour) {
+		this.preserveOneEachHour = preserveOneEachHour;
+		if(preserveOneEachHour != null){
+			putQueryParameter("PreserveOneEachHour", preserveOneEachHour.toString());
 		}
 	}
 

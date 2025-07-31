@@ -27,6 +27,8 @@ public class ModifyDBInstanceSSLRequest extends RpcAcsRequest<ModifyDBInstanceSS
 
 	private Long resourceOwnerId;
 
+	private String switchMode;
+
 	private String dBInstanceId;
 
 	private String resourceOwnerAccount;
@@ -53,6 +55,17 @@ public class ModifyDBInstanceSSLRequest extends RpcAcsRequest<ModifyDBInstanceSS
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getSwitchMode() {
+		return this.switchMode;
+	}
+
+	public void setSwitchMode(String switchMode) {
+		this.switchMode = switchMode;
+		if(switchMode != null){
+			putQueryParameter("SwitchMode", switchMode);
 		}
 	}
 

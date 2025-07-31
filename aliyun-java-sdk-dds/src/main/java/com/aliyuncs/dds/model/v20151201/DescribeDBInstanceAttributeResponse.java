@@ -145,6 +145,8 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		private Long provisionedIops;
 
+		private String disasterRecoveryInfo;
+
 		private List<ReplicaSet> replicaSets;
 
 		private List<Tag> tags;
@@ -549,6 +551,14 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 			this.provisionedIops = provisionedIops;
 		}
 
+		public String getDisasterRecoveryInfo() {
+			return this.disasterRecoveryInfo;
+		}
+
+		public void setDisasterRecoveryInfo(String disasterRecoveryInfo) {
+			this.disasterRecoveryInfo = disasterRecoveryInfo;
+		}
+
 		public List<ReplicaSet> getReplicaSets() {
 			return this.replicaSets;
 		}
@@ -864,6 +874,8 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 			private String currentKernelVersion;
 
+			private String replicaSetName;
+
 			public String getLockMode() {
 				return this.lockMode;
 			}
@@ -966,6 +978,14 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 			public void setCurrentKernelVersion(String currentKernelVersion) {
 				this.currentKernelVersion = currentKernelVersion;
+			}
+
+			public String getReplicaSetName() {
+				return this.replicaSetName;
+			}
+
+			public void setReplicaSetName(String replicaSetName) {
+				this.replicaSetName = replicaSetName;
 			}
 		}
 

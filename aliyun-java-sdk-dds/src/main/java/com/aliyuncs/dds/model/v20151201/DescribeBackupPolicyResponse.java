@@ -62,6 +62,8 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 
 	private Integer crossLogRetentionValue;
 
+	private Boolean preserveOneEachHour;
+
 	public String getPreferredBackupPeriod() {
 		return this.preferredBackupPeriod;
 	}
@@ -212,6 +214,14 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 
 	public void setCrossLogRetentionValue(Integer crossLogRetentionValue) {
 		this.crossLogRetentionValue = crossLogRetentionValue;
+	}
+
+	public Boolean getPreserveOneEachHour() {
+		return this.preserveOneEachHour;
+	}
+
+	public void setPreserveOneEachHour(Boolean preserveOneEachHour) {
+		this.preserveOneEachHour = preserveOneEachHour;
 	}
 
 	@Override

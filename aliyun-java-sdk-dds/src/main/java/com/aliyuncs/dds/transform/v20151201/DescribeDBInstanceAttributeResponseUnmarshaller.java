@@ -86,6 +86,7 @@ public class DescribeDBInstanceAttributeResponseUnmarshaller {
 			dBInstance.setUseClusterBackup(_ctx.booleanValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].UseClusterBackup"));
 			dBInstance.setBurstingEnabled(_ctx.booleanValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].BurstingEnabled"));
 			dBInstance.setProvisionedIops(_ctx.longValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].ProvisionedIops"));
+			dBInstance.setDisasterRecoveryInfo(_ctx.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].DisasterRecoveryInfo"));
 
 			List<ReplicaSet> replicaSets = new ArrayList<ReplicaSet>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].ReplicaSets.Length"); j++) {
@@ -150,6 +151,7 @@ public class DescribeDBInstanceAttributeResponseUnmarshaller {
 				shardAttribute.setStatus(_ctx.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].ShardList["+ j +"].Status"));
 				shardAttribute.setMaxDiskMbps(_ctx.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].ShardList["+ j +"].MaxDiskMbps"));
 				shardAttribute.setCurrentKernelVersion(_ctx.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].ShardList["+ j +"].CurrentKernelVersion"));
+				shardAttribute.setReplicaSetName(_ctx.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].ShardList["+ j +"].ReplicaSetName"));
 
 				shardList.add(shardAttribute);
 			}

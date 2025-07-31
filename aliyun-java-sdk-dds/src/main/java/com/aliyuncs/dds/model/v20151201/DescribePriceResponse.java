@@ -1054,6 +1054,8 @@ public class DescribePriceResponse extends AcsResponse {
 
 		private Boolean isContractActivity;
 
+		private Double totalCostAmount;
+
 		private List<Coupon> coupons;
 
 		private List<String> ruleIds4;
@@ -1162,6 +1164,14 @@ public class DescribePriceResponse extends AcsResponse {
 
 		public void setIsContractActivity(Boolean isContractActivity) {
 			this.isContractActivity = isContractActivity;
+		}
+
+		public Double getTotalCostAmount() {
+			return this.totalCostAmount;
+		}
+
+		public void setTotalCostAmount(Double totalCostAmount) {
+			this.totalCostAmount = totalCostAmount;
 		}
 
 		public List<Coupon> getCoupons() {

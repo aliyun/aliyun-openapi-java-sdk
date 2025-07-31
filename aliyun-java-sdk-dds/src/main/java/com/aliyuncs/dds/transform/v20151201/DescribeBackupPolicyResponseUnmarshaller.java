@@ -41,6 +41,7 @@ public class DescribeBackupPolicyResponseUnmarshaller {
 		describeBackupPolicyResponse.setEnableCrossLogBackup(_ctx.integerValue("DescribeBackupPolicyResponse.EnableCrossLogBackup"));
 		describeBackupPolicyResponse.setCrossLogRetentionType(_ctx.stringValue("DescribeBackupPolicyResponse.CrossLogRetentionType"));
 		describeBackupPolicyResponse.setCrossLogRetentionValue(_ctx.integerValue("DescribeBackupPolicyResponse.CrossLogRetentionValue"));
+		describeBackupPolicyResponse.setPreserveOneEachHour(_ctx.booleanValue("DescribeBackupPolicyResponse.PreserveOneEachHour"));
 	 
 	 	return describeBackupPolicyResponse;
 	}
