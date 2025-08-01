@@ -385,9 +385,7 @@ public class DefaultAcsClient implements IAcsClient {
                             ex = new ClientException(error.getErrorCode(), error.getErrorMessage(), error.getRequestId(), error.getErrorDescription(), error.getAccessDeniedDetail());
                         }
                     }
-                } catch (SocketTimeoutException exp) {
-                    ex = exp;
-                } catch (IOException exp) {
+                } catch (Exception exp) {
                     ex = exp;
                 }
                 context = RetryPolicyContext.builder()
@@ -435,7 +433,7 @@ public class DefaultAcsClient implements IAcsClient {
                 throw (ClientException) exp;
             } else {
                 throw new ClientException("SDK.RequestTryOrRetryFailed",
-                        "Some errors occurred. Error message for latest request is " + exp.getMessage(), exp);
+                        "Some errors occurred. Error message for latest request is " + errorMessage, exp);
             }
         } finally {
             if (null != logger) {
