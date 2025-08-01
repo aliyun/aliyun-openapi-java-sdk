@@ -1,0 +1,90 @@
+/*
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.aliyuncs.eds_aic.model.v20230930;
+
+import java.util.List;
+import com.aliyuncs.AcsResponse;
+import com.aliyuncs.eds_aic.transform.v20230930.SendFileResponseUnmarshaller;
+import com.aliyuncs.transform.UnmarshallerContext;
+
+/**
+ * @author auto create
+ * @version 
+ */
+public class SendFileResponse extends AcsResponse {
+
+	private String requestId;
+
+	private String taskId;
+
+	private List<InstanceTask> data;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getTaskId() {
+		return this.taskId;
+	}
+
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
+	}
+
+	public List<InstanceTask> getData() {
+		return this.data;
+	}
+
+	public void setData(List<InstanceTask> data) {
+		this.data = data;
+	}
+
+	public static class InstanceTask {
+
+		private String androidInstanceId;
+
+		private String taskId;
+
+		public String getAndroidInstanceId() {
+			return this.androidInstanceId;
+		}
+
+		public void setAndroidInstanceId(String androidInstanceId) {
+			this.androidInstanceId = androidInstanceId;
+		}
+
+		public String getTaskId() {
+			return this.taskId;
+		}
+
+		public void setTaskId(String taskId) {
+			this.taskId = taskId;
+		}
+	}
+
+	@Override
+	public SendFileResponse getInstance(UnmarshallerContext context) {
+		return	SendFileResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
+	}
+}
