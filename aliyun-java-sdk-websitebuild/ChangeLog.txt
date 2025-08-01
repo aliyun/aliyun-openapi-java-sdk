@@ -1,3 +1,6 @@
+2025-08-01 Version: 1.0.5
+- Add image search api.
+
 2025-07-23 Version: 1.0.4
 - Generated 2025-04-29 for `WebsiteBuild`.
 
