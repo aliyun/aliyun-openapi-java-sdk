@@ -73,6 +73,10 @@ public class DescribeLiveStreamMergeResponse extends AcsResponse {
 
 		private String streamUsing;
 
+		private String liveMerger;
+
+		private String mergeParameters;
+
 		public String getAppName() {
 			return this.appName;
 		}
@@ -175,6 +179,22 @@ public class DescribeLiveStreamMergeResponse extends AcsResponse {
 
 		public void setStreamUsing(String streamUsing) {
 			this.streamUsing = streamUsing;
+		}
+
+		public String getLiveMerger() {
+			return this.liveMerger;
+		}
+
+		public void setLiveMerger(String liveMerger) {
+			this.liveMerger = liveMerger;
+		}
+
+		public String getMergeParameters() {
+			return this.mergeParameters;
+		}
+
+		public void setMergeParameters(String mergeParameters) {
+			this.mergeParameters = mergeParameters;
 		}
 	}
 

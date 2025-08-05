@@ -35,6 +35,8 @@ public class AddLiveStreamMergeRequest extends RpcAcsRequest<AddLiveStreamMergeR
 
 	private String appName;
 
+	private String liveMerger;
+
 	private String inStreamName2;
 
 	private String streamName;
@@ -46,6 +48,8 @@ public class AddLiveStreamMergeRequest extends RpcAcsRequest<AddLiveStreamMergeR
 	private String endTime;
 
 	private Long ownerId;
+
+	private String mergeParameters;
 	public AddLiveStreamMergeRequest() {
 		super("live", "2016-11-01", "AddLiveStreamMerge", "live");
 		setMethod(MethodType.POST);
@@ -107,6 +111,17 @@ public class AddLiveStreamMergeRequest extends RpcAcsRequest<AddLiveStreamMergeR
 		this.appName = appName;
 		if(appName != null){
 			putQueryParameter("AppName", appName);
+		}
+	}
+
+	public String getLiveMerger() {
+		return this.liveMerger;
+	}
+
+	public void setLiveMerger(String liveMerger) {
+		this.liveMerger = liveMerger;
+		if(liveMerger != null){
+			putQueryParameter("LiveMerger", liveMerger);
 		}
 	}
 
@@ -173,6 +188,17 @@ public class AddLiveStreamMergeRequest extends RpcAcsRequest<AddLiveStreamMergeR
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getMergeParameters() {
+		return this.mergeParameters;
+	}
+
+	public void setMergeParameters(String mergeParameters) {
+		this.mergeParameters = mergeParameters;
+		if(mergeParameters != null){
+			putQueryParameter("MergeParameters", mergeParameters);
 		}
 	}
 

@@ -44,6 +44,8 @@ public class DescribeLiveStreamMergeResponseUnmarshaller {
 			liveStreamMerge.setStartTime(_ctx.stringValue("DescribeLiveStreamMergeResponse.LiveStreamMergeList["+ i +"].StartTime"));
 			liveStreamMerge.setStreamName(_ctx.stringValue("DescribeLiveStreamMergeResponse.LiveStreamMergeList["+ i +"].StreamName"));
 			liveStreamMerge.setStreamUsing(_ctx.stringValue("DescribeLiveStreamMergeResponse.LiveStreamMergeList["+ i +"].StreamUsing"));
+			liveStreamMerge.setLiveMerger(_ctx.stringValue("DescribeLiveStreamMergeResponse.LiveStreamMergeList["+ i +"].LiveMerger"));
+			liveStreamMerge.setMergeParameters(_ctx.stringValue("DescribeLiveStreamMergeResponse.LiveStreamMergeList["+ i +"].MergeParameters"));
 
 			liveStreamMergeList.add(liveStreamMerge);
 		}

@@ -123,6 +123,8 @@ public class DescribeLiveRecordNotifyRecordsResponse extends AcsResponse {
 
 		private String notifyUrl;
 
+		private String notifyResponse;
+
 		private String streamName;
 
 		public String getAppName() {
@@ -187,6 +189,14 @@ public class DescribeLiveRecordNotifyRecordsResponse extends AcsResponse {
 
 		public void setNotifyUrl(String notifyUrl) {
 			this.notifyUrl = notifyUrl;
+		}
+
+		public String getNotifyResponse() {
+			return this.notifyResponse;
+		}
+
+		public void setNotifyResponse(String notifyResponse) {
+			this.notifyResponse = notifyResponse;
 		}
 
 		public String getStreamName() {

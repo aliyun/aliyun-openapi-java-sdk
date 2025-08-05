@@ -26,12 +26,22 @@ public class AddLiveStreamMergeResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String message;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	@Override

@@ -23,6 +23,7 @@ public class AddLiveStreamMergeResponseUnmarshaller {
 	public static AddLiveStreamMergeResponse unmarshall(AddLiveStreamMergeResponse addLiveStreamMergeResponse, UnmarshallerContext _ctx) {
 		
 		addLiveStreamMergeResponse.setRequestId(_ctx.stringValue("AddLiveStreamMergeResponse.RequestId"));
+		addLiveStreamMergeResponse.setMessage(_ctx.stringValue("AddLiveStreamMergeResponse.Message"));
 	 
 	 	return addLiveStreamMergeResponse;
 	}

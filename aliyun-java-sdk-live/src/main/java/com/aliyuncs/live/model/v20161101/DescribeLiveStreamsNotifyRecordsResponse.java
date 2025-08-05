@@ -87,30 +87,32 @@ public class DescribeLiveStreamsNotifyRecordsResponse extends AcsResponse {
 
 	public static class LiveStreamNotifyRecordsInfo {
 
-		private String appName;
+		private String notifyType;
 
 		private String description;
+
+		private String streamName;
+
+		private String notifyTime;
 
 		private String domainName;
 
 		private String notifyContent;
 
-		private String notifyResult;
-
-		private String notifyTime;
-
-		private String notifyType;
+		private String notifyResponse;
 
 		private String notifyUrl;
 
-		private String streamName;
+		private String notifyResult;
 
-		public String getAppName() {
-			return this.appName;
+		private String appName;
+
+		public String getNotifyType() {
+			return this.notifyType;
 		}
 
-		public void setAppName(String appName) {
-			this.appName = appName;
+		public void setNotifyType(String notifyType) {
+			this.notifyType = notifyType;
 		}
 
 		public String getDescription() {
@@ -119,6 +121,22 @@ public class DescribeLiveStreamsNotifyRecordsResponse extends AcsResponse {
 
 		public void setDescription(String description) {
 			this.description = description;
+		}
+
+		public String getStreamName() {
+			return this.streamName;
+		}
+
+		public void setStreamName(String streamName) {
+			this.streamName = streamName;
+		}
+
+		public String getNotifyTime() {
+			return this.notifyTime;
+		}
+
+		public void setNotifyTime(String notifyTime) {
+			this.notifyTime = notifyTime;
 		}
 
 		public String getDomainName() {
@@ -137,28 +155,12 @@ public class DescribeLiveStreamsNotifyRecordsResponse extends AcsResponse {
 			this.notifyContent = notifyContent;
 		}
 
-		public String getNotifyResult() {
-			return this.notifyResult;
+		public String getNotifyResponse() {
+			return this.notifyResponse;
 		}
 
-		public void setNotifyResult(String notifyResult) {
-			this.notifyResult = notifyResult;
-		}
-
-		public String getNotifyTime() {
-			return this.notifyTime;
-		}
-
-		public void setNotifyTime(String notifyTime) {
-			this.notifyTime = notifyTime;
-		}
-
-		public String getNotifyType() {
-			return this.notifyType;
-		}
-
-		public void setNotifyType(String notifyType) {
-			this.notifyType = notifyType;
+		public void setNotifyResponse(String notifyResponse) {
+			this.notifyResponse = notifyResponse;
 		}
 
 		public String getNotifyUrl() {
@@ -169,12 +171,20 @@ public class DescribeLiveStreamsNotifyRecordsResponse extends AcsResponse {
 			this.notifyUrl = notifyUrl;
 		}
 
-		public String getStreamName() {
-			return this.streamName;
+		public String getNotifyResult() {
+			return this.notifyResult;
 		}
 
-		public void setStreamName(String streamName) {
-			this.streamName = streamName;
+		public void setNotifyResult(String notifyResult) {
+			this.notifyResult = notifyResult;
+		}
+
+		public String getAppName() {
+			return this.appName;
+		}
+
+		public void setAppName(String appName) {
+			this.appName = appName;
 		}
 	}
 

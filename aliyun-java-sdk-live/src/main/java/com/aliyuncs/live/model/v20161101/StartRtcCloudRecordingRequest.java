@@ -40,8 +40,12 @@ public class StartRtcCloudRecordingRequest extends RpcAcsRequest<StartRtcCloudRe
 	@SerializedName("recordParams")
 	private RecordParams recordParams;
 
+	private Long maxIdleTime;
+
 	@SerializedName("mixTranscodeParams")
 	private MixTranscodeParams mixTranscodeParams;
+
+	private String notifyAuthKey;
 
 	private String appId;
 
@@ -103,6 +107,17 @@ public class StartRtcCloudRecordingRequest extends RpcAcsRequest<StartRtcCloudRe
 		}	
 	}
 
+	public Long getMaxIdleTime() {
+		return this.maxIdleTime;
+	}
+
+	public void setMaxIdleTime(Long maxIdleTime) {
+		this.maxIdleTime = maxIdleTime;
+		if(maxIdleTime != null){
+			putQueryParameter("MaxIdleTime", maxIdleTime.toString());
+		}
+	}
+
 	public MixTranscodeParams getMixTranscodeParams() {
 		return this.mixTranscodeParams;
 	}
@@ -112,6 +127,17 @@ public class StartRtcCloudRecordingRequest extends RpcAcsRequest<StartRtcCloudRe
 		if (mixTranscodeParams != null) {
 			putQueryParameter("MixTranscodeParams" , new Gson().toJson(mixTranscodeParams));
 		}	
+	}
+
+	public String getNotifyAuthKey() {
+		return this.notifyAuthKey;
+	}
+
+	public void setNotifyAuthKey(String notifyAuthKey) {
+		this.notifyAuthKey = notifyAuthKey;
+		if(notifyAuthKey != null){
+			putQueryParameter("NotifyAuthKey", notifyAuthKey);
+		}
 	}
 
 	public String getAppId() {
@@ -149,6 +175,9 @@ public class StartRtcCloudRecordingRequest extends RpcAcsRequest<StartRtcCloudRe
 
 	public static class StorageParams {
 
+		@SerializedName("VodParams")
+		private VodParams vodParams;
+
 		@SerializedName("FileInfo")
 		private List<FileInfoItem> fileInfo;
 
@@ -157,6 +186,14 @@ public class StartRtcCloudRecordingRequest extends RpcAcsRequest<StartRtcCloudRe
 
 		@SerializedName("OSSParams")
 		private OSSParams oSSParams;
+
+		public VodParams getVodParams() {
+			return this.vodParams;
+		}
+
+		public void setVodParams(VodParams vodParams) {
+			this.vodParams = vodParams;
+		}
 
 		public List<FileInfoItem> getFileInfo() {
 			return this.fileInfo;
@@ -182,6 +219,53 @@ public class StartRtcCloudRecordingRequest extends RpcAcsRequest<StartRtcCloudRe
 			this.oSSParams = oSSParams;
 		}
 
+		public static class VodParams {
+
+			@SerializedName("AutoCompose")
+			private Integer autoCompose;
+
+			@SerializedName("ComposeVodTranscodeGroupId")
+			private String composeVodTranscodeGroupId;
+
+			@SerializedName("VodTranscodeGroupId")
+			private String vodTranscodeGroupId;
+
+			@SerializedName("StorageLocation")
+			private String storageLocation;
+
+			public Integer getAutoCompose() {
+				return this.autoCompose;
+			}
+
+			public void setAutoCompose(Integer autoCompose) {
+				this.autoCompose = autoCompose;
+			}
+
+			public String getComposeVodTranscodeGroupId() {
+				return this.composeVodTranscodeGroupId;
+			}
+
+			public void setComposeVodTranscodeGroupId(String composeVodTranscodeGroupId) {
+				this.composeVodTranscodeGroupId = composeVodTranscodeGroupId;
+			}
+
+			public String getVodTranscodeGroupId() {
+				return this.vodTranscodeGroupId;
+			}
+
+			public void setVodTranscodeGroupId(String vodTranscodeGroupId) {
+				this.vodTranscodeGroupId = vodTranscodeGroupId;
+			}
+
+			public String getStorageLocation() {
+				return this.storageLocation;
+			}
+
+			public void setStorageLocation(String storageLocation) {
+				this.storageLocation = storageLocation;
+			}
+		}
+
 		public static class FileInfoItem {
 
 			@SerializedName("FileNamePattern")
@@ -192,6 +276,9 @@ public class StartRtcCloudRecordingRequest extends RpcAcsRequest<StartRtcCloudRe
 
 			@SerializedName("SliceNamePattern")
 			private String sliceNamePattern;
+
+			@SerializedName("FilePathPrefix")
+			private List<String> filePathPrefix;
 
 			public String getFileNamePattern() {
 				return this.fileNamePattern;
@@ -215,6 +302,14 @@ public class StartRtcCloudRecordingRequest extends RpcAcsRequest<StartRtcCloudRe
 
 			public void setSliceNamePattern(String sliceNamePattern) {
 				this.sliceNamePattern = sliceNamePattern;
+			}
+
+			public List<String> getFilePathPrefix() {
+				return this.filePathPrefix;
+			}
+
+			public void setFilePathPrefix(List<String> filePathPrefix) {
+				this.filePathPrefix = filePathPrefix;
 			}
 		}
 

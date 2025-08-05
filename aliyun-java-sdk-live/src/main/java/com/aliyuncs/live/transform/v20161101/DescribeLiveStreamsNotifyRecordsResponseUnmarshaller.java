@@ -35,15 +35,16 @@ public class DescribeLiveStreamsNotifyRecordsResponseUnmarshaller {
 		List<LiveStreamNotifyRecordsInfo> notifyRecordsInfo = new ArrayList<LiveStreamNotifyRecordsInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLiveStreamsNotifyRecordsResponse.NotifyRecordsInfo.Length"); i++) {
 			LiveStreamNotifyRecordsInfo liveStreamNotifyRecordsInfo = new LiveStreamNotifyRecordsInfo();
-			liveStreamNotifyRecordsInfo.setAppName(_ctx.stringValue("DescribeLiveStreamsNotifyRecordsResponse.NotifyRecordsInfo["+ i +"].AppName"));
+			liveStreamNotifyRecordsInfo.setNotifyType(_ctx.stringValue("DescribeLiveStreamsNotifyRecordsResponse.NotifyRecordsInfo["+ i +"].NotifyType"));
 			liveStreamNotifyRecordsInfo.setDescription(_ctx.stringValue("DescribeLiveStreamsNotifyRecordsResponse.NotifyRecordsInfo["+ i +"].Description"));
+			liveStreamNotifyRecordsInfo.setStreamName(_ctx.stringValue("DescribeLiveStreamsNotifyRecordsResponse.NotifyRecordsInfo["+ i +"].StreamName"));
+			liveStreamNotifyRecordsInfo.setNotifyTime(_ctx.stringValue("DescribeLiveStreamsNotifyRecordsResponse.NotifyRecordsInfo["+ i +"].NotifyTime"));
 			liveStreamNotifyRecordsInfo.setDomainName(_ctx.stringValue("DescribeLiveStreamsNotifyRecordsResponse.NotifyRecordsInfo["+ i +"].DomainName"));
 			liveStreamNotifyRecordsInfo.setNotifyContent(_ctx.stringValue("DescribeLiveStreamsNotifyRecordsResponse.NotifyRecordsInfo["+ i +"].NotifyContent"));
-			liveStreamNotifyRecordsInfo.setNotifyResult(_ctx.stringValue("DescribeLiveStreamsNotifyRecordsResponse.NotifyRecordsInfo["+ i +"].NotifyResult"));
-			liveStreamNotifyRecordsInfo.setNotifyTime(_ctx.stringValue("DescribeLiveStreamsNotifyRecordsResponse.NotifyRecordsInfo["+ i +"].NotifyTime"));
-			liveStreamNotifyRecordsInfo.setNotifyType(_ctx.stringValue("DescribeLiveStreamsNotifyRecordsResponse.NotifyRecordsInfo["+ i +"].NotifyType"));
+			liveStreamNotifyRecordsInfo.setNotifyResponse(_ctx.stringValue("DescribeLiveStreamsNotifyRecordsResponse.NotifyRecordsInfo["+ i +"].NotifyResponse"));
 			liveStreamNotifyRecordsInfo.setNotifyUrl(_ctx.stringValue("DescribeLiveStreamsNotifyRecordsResponse.NotifyRecordsInfo["+ i +"].NotifyUrl"));
-			liveStreamNotifyRecordsInfo.setStreamName(_ctx.stringValue("DescribeLiveStreamsNotifyRecordsResponse.NotifyRecordsInfo["+ i +"].StreamName"));
+			liveStreamNotifyRecordsInfo.setNotifyResult(_ctx.stringValue("DescribeLiveStreamsNotifyRecordsResponse.NotifyRecordsInfo["+ i +"].NotifyResult"));
+			liveStreamNotifyRecordsInfo.setAppName(_ctx.stringValue("DescribeLiveStreamsNotifyRecordsResponse.NotifyRecordsInfo["+ i +"].AppName"));
 
 			notifyRecordsInfo.add(liveStreamNotifyRecordsInfo);
 		}
