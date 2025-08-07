@@ -111,7 +111,7 @@ public class DescribeTenantResponse extends AcsResponse {
 
 		private String odpVersion;
 
-		private String tenantMaxConnections;
+		private Long tenantMaxConnections;
 
 		private String parameterTemplate;
 
@@ -383,11 +383,11 @@ public class DescribeTenantResponse extends AcsResponse {
 			this.odpVersion = odpVersion;
 		}
 
-		public String getTenantMaxConnections() {
+		public Long getTenantMaxConnections() {
 			return this.tenantMaxConnections;
 		}
 
-		public void setTenantMaxConnections(String tenantMaxConnections) {
+		public void setTenantMaxConnections(Long tenantMaxConnections) {
 			this.tenantMaxConnections = tenantMaxConnections;
 		}
 
@@ -500,6 +500,10 @@ public class DescribeTenantResponse extends AcsResponse {
 			private String odpVersion;
 
 			private Integer internetSqlPort;
+
+			private String internetAddressServiceType;
+
+			private String intranetAddressServiceType;
 
 			private List<String> connectionZones;
 
@@ -711,6 +715,22 @@ public class DescribeTenantResponse extends AcsResponse {
 
 			public void setInternetSqlPort(Integer internetSqlPort) {
 				this.internetSqlPort = internetSqlPort;
+			}
+
+			public String getInternetAddressServiceType() {
+				return this.internetAddressServiceType;
+			}
+
+			public void setInternetAddressServiceType(String internetAddressServiceType) {
+				this.internetAddressServiceType = internetAddressServiceType;
+			}
+
+			public String getIntranetAddressServiceType() {
+				return this.intranetAddressServiceType;
+			}
+
+			public void setIntranetAddressServiceType(String intranetAddressServiceType) {
+				this.intranetAddressServiceType = intranetAddressServiceType;
 			}
 
 			public List<String> getConnectionZones() {

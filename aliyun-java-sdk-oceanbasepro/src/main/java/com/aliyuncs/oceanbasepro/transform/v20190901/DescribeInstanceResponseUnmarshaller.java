@@ -64,7 +64,7 @@ public class DescribeInstanceResponseUnmarshaller {
 		instance.setIsLatestObVersion(_ctx.booleanValue("DescribeInstanceResponse.Instance.IsLatestObVersion"));
 		instance.setEnableUpgradeLogDisk(_ctx.booleanValue("DescribeInstanceResponse.Instance.EnableUpgradeLogDisk"));
 		instance.setInstanceRole(_ctx.stringValue("DescribeInstanceResponse.Instance.InstanceRole"));
-		instance.setNodeNum(_ctx.stringValue("DescribeInstanceResponse.Instance.NodeNum"));
+		instance.setNodeNum(_ctx.longValue("DescribeInstanceResponse.Instance.NodeNum"));
 		instance.setReplicaMode(_ctx.stringValue("DescribeInstanceResponse.Instance.ReplicaMode"));
 		instance.setIsolationOptimization(_ctx.booleanValue("DescribeInstanceResponse.Instance.IsolationOptimization"));
 		instance.setEnableIsolationOptimization(_ctx.booleanValue("DescribeInstanceResponse.Instance.EnableIsolationOptimization"));

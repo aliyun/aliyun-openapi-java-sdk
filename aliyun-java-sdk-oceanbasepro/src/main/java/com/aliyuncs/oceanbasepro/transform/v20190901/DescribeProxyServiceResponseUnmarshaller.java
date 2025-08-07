@@ -39,6 +39,11 @@ public class DescribeProxyServiceResponseUnmarshaller {
 		data.setExpireTime(_ctx.stringValue("DescribeProxyServiceResponse.Data.ExpireTime"));
 		data.setUnitNumLimit(_ctx.longValue("DescribeProxyServiceResponse.Data.UnitNumLimit"));
 		data.setProxyVersion(_ctx.stringValue("DescribeProxyServiceResponse.Data.ProxyVersion"));
+		data.setDeployMode(_ctx.stringValue("DescribeProxyServiceResponse.Data.DeployMode"));
+		data.setServerNumLimit(_ctx.longValue("DescribeProxyServiceResponse.Data.ServerNumLimit"));
+		data.setAllowModifyServerNum(_ctx.booleanValue("DescribeProxyServiceResponse.Data.AllowModifyServerNum"));
+		data.setSharedUnitNumLimit(_ctx.longValue("DescribeProxyServiceResponse.Data.SharedUnitNumLimit"));
+		data.setExclusiveUnitNumLimit(_ctx.longValue("DescribeProxyServiceResponse.Data.ExclusiveUnitNumLimit"));
 		describeProxyServiceResponse.setData(data);
 	 
 	 	return describeProxyServiceResponse;

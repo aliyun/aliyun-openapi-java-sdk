@@ -72,6 +72,16 @@ public class DescribeProxyServiceResponse extends AcsResponse {
 
 		private String proxyVersion;
 
+		private String deployMode;
+
+		private Long serverNumLimit;
+
+		private Boolean allowModifyServerNum;
+
+		private Long sharedUnitNumLimit;
+
+		private Long exclusiveUnitNumLimit;
+
 		public String getProxyClusterId() {
 			return this.proxyClusterId;
 		}
@@ -174,6 +184,46 @@ public class DescribeProxyServiceResponse extends AcsResponse {
 
 		public void setProxyVersion(String proxyVersion) {
 			this.proxyVersion = proxyVersion;
+		}
+
+		public String getDeployMode() {
+			return this.deployMode;
+		}
+
+		public void setDeployMode(String deployMode) {
+			this.deployMode = deployMode;
+		}
+
+		public Long getServerNumLimit() {
+			return this.serverNumLimit;
+		}
+
+		public void setServerNumLimit(Long serverNumLimit) {
+			this.serverNumLimit = serverNumLimit;
+		}
+
+		public Boolean getAllowModifyServerNum() {
+			return this.allowModifyServerNum;
+		}
+
+		public void setAllowModifyServerNum(Boolean allowModifyServerNum) {
+			this.allowModifyServerNum = allowModifyServerNum;
+		}
+
+		public Long getSharedUnitNumLimit() {
+			return this.sharedUnitNumLimit;
+		}
+
+		public void setSharedUnitNumLimit(Long sharedUnitNumLimit) {
+			this.sharedUnitNumLimit = sharedUnitNumLimit;
+		}
+
+		public Long getExclusiveUnitNumLimit() {
+			return this.exclusiveUnitNumLimit;
+		}
+
+		public void setExclusiveUnitNumLimit(Long exclusiveUnitNumLimit) {
+			this.exclusiveUnitNumLimit = exclusiveUnitNumLimit;
 		}
 	}
 

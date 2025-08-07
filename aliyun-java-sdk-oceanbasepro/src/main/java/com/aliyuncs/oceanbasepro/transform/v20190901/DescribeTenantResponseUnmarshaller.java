@@ -76,7 +76,7 @@ public class DescribeTenantResponseUnmarshaller {
 		tenant.setLowerCaseTableNames(_ctx.integerValue("DescribeTenantResponse.Tenant.LowerCaseTableNames"));
 		tenant.setVersion(_ctx.stringValue("DescribeTenantResponse.Tenant.Version"));
 		tenant.setOdpVersion(_ctx.stringValue("DescribeTenantResponse.Tenant.OdpVersion"));
-		tenant.setTenantMaxConnections(_ctx.stringValue("DescribeTenantResponse.Tenant.TenantMaxConnections"));
+		tenant.setTenantMaxConnections(_ctx.longValue("DescribeTenantResponse.Tenant.TenantMaxConnections"));
 		tenant.setParameterTemplate(_ctx.stringValue("DescribeTenantResponse.Tenant.ParameterTemplate"));
 		tenant.setIops(_ctx.integerValue("DescribeTenantResponse.Tenant.Iops"));
 
@@ -177,6 +177,8 @@ public class DescribeTenantResponseUnmarshaller {
 			tenantConnectionsItem.setIntranetSqlPort(_ctx.integerValue("DescribeTenantResponse.Tenant.TenantConnections["+ i +"].IntranetSqlPort"));
 			tenantConnectionsItem.setOdpVersion(_ctx.stringValue("DescribeTenantResponse.Tenant.TenantConnections["+ i +"].OdpVersion"));
 			tenantConnectionsItem.setInternetSqlPort(_ctx.integerValue("DescribeTenantResponse.Tenant.TenantConnections["+ i +"].InternetSqlPort"));
+			tenantConnectionsItem.setInternetAddressServiceType(_ctx.stringValue("DescribeTenantResponse.Tenant.TenantConnections["+ i +"].InternetAddressServiceType"));
+			tenantConnectionsItem.setIntranetAddressServiceType(_ctx.stringValue("DescribeTenantResponse.Tenant.TenantConnections["+ i +"].IntranetAddressServiceType"));
 
 			List<String> connectionZones = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeTenantResponse.Tenant.TenantConnections["+ i +"].ConnectionZones.Length"); j++) {

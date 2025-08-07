@@ -89,7 +89,7 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 		private String instanceRole;
 
-		private String nodeNum;
+		private Long nodeNum;
 
 		private String replicaMode;
 
@@ -311,11 +311,11 @@ public class DescribeInstanceResponse extends AcsResponse {
 			this.instanceRole = instanceRole;
 		}
 
-		public String getNodeNum() {
+		public Long getNodeNum() {
 			return this.nodeNum;
 		}
 
-		public void setNodeNum(String nodeNum) {
+		public void setNodeNum(Long nodeNum) {
 			this.nodeNum = nodeNum;
 		}
 

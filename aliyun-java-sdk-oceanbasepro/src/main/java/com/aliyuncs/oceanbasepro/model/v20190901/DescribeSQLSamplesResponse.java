@@ -155,6 +155,10 @@ public class DescribeSQLSamplesResponse extends AcsResponse {
 
 		private String paramsValue;
 
+		private String sqlId;
+
+		private String sqlTextShort;
+
 		public Long getRequestId() {
 			return this.requestId;
 		}
@@ -585,6 +589,22 @@ public class DescribeSQLSamplesResponse extends AcsResponse {
 
 		public void setParamsValue(String paramsValue) {
 			this.paramsValue = paramsValue;
+		}
+
+		public String getSqlId() {
+			return this.sqlId;
+		}
+
+		public void setSqlId(String sqlId) {
+			this.sqlId = sqlId;
+		}
+
+		public String getSqlTextShort() {
+			return this.sqlTextShort;
+		}
+
+		public void setSqlTextShort(String sqlTextShort) {
+			this.sqlTextShort = sqlTextShort;
 		}
 	}
 

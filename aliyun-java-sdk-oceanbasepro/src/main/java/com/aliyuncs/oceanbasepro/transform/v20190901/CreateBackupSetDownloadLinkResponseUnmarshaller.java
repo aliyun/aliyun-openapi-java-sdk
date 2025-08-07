@@ -15,6 +15,7 @@
 package com.aliyuncs.oceanbasepro.transform.v20190901;
 
 import com.aliyuncs.oceanbasepro.model.v20190901.CreateBackupSetDownloadLinkResponse;
+import com.aliyuncs.oceanbasepro.model.v20190901.CreateBackupSetDownloadLinkResponse.Data;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -23,7 +24,10 @@ public class CreateBackupSetDownloadLinkResponseUnmarshaller {
 	public static CreateBackupSetDownloadLinkResponse unmarshall(CreateBackupSetDownloadLinkResponse createBackupSetDownloadLinkResponse, UnmarshallerContext _ctx) {
 		
 		createBackupSetDownloadLinkResponse.setRequestId(_ctx.stringValue("CreateBackupSetDownloadLinkResponse.RequestId"));
-		createBackupSetDownloadLinkResponse.setDownloadTaskId(_ctx.longValue("CreateBackupSetDownloadLinkResponse.DownloadTaskId"));
+
+		Data data = new Data();
+		data.setDownloadTaskId(_ctx.longValue("CreateBackupSetDownloadLinkResponse.Data.DownloadTaskId"));
+		createBackupSetDownloadLinkResponse.setData(data);
 	 
 	 	return createBackupSetDownloadLinkResponse;
 	}

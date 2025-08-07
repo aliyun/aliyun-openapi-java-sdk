@@ -26,7 +26,7 @@ public class CreateBackupSetDownloadLinkResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Long downloadTaskId;
+	private Data data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,12 +36,25 @@ public class CreateBackupSetDownloadLinkResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Long getDownloadTaskId() {
-		return this.downloadTaskId;
+	public Data getData() {
+		return this.data;
 	}
 
-	public void setDownloadTaskId(Long downloadTaskId) {
-		this.downloadTaskId = downloadTaskId;
+	public void setData(Data data) {
+		this.data = data;
+	}
+
+	public static class Data {
+
+		private Long downloadTaskId;
+
+		public Long getDownloadTaskId() {
+			return this.downloadTaskId;
+		}
+
+		public void setDownloadTaskId(Long downloadTaskId) {
+			this.downloadTaskId = downloadTaskId;
+		}
 	}
 
 	@Override
