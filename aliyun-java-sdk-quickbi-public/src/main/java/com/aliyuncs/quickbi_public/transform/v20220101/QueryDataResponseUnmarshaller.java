@@ -46,6 +46,7 @@ public class QueryDataResponseUnmarshaller {
 			headersItem.setGranularity(_ctx.stringValue("QueryDataResponse.Result.Headers["+ i +"].Granularity"));
 			headersItem.setLabel(_ctx.stringValue("QueryDataResponse.Result.Headers["+ i +"].Label"));
 			headersItem.setType(_ctx.stringValue("QueryDataResponse.Result.Headers["+ i +"].Type"));
+			headersItem.setOriginalColumn(_ctx.stringValue("QueryDataResponse.Result.Headers["+ i +"].OriginalColumn"));
 
 			headers.add(headersItem);
 		}

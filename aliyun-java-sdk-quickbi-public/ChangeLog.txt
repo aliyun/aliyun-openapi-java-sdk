@@ -1,3 +1,6 @@
+2025-08-11 Version: 2.1.18
+- Add QueryDashboardNl2sql, QueryLastAccelerationEngineJob APIs.
+
 2025-07-14 Version: 2.1.17
 - Add QueryReadableResourcesListByUserIdV2 API.
 

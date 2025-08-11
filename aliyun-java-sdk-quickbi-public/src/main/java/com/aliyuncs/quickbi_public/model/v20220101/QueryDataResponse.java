@@ -102,6 +102,8 @@ public class QueryDataResponse extends AcsResponse {
 
 			private String type;
 
+			private String originalColumn;
+
 			public String getAggregator() {
 				return this.aggregator;
 			}
@@ -148,6 +150,14 @@ public class QueryDataResponse extends AcsResponse {
 
 			public void setType(String type) {
 				this.type = type;
+			}
+
+			public String getOriginalColumn() {
+				return this.originalColumn;
+			}
+
+			public void setOriginalColumn(String originalColumn) {
+				this.originalColumn = originalColumn;
 			}
 		}
 	}

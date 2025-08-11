@@ -41,6 +41,7 @@ public class ListPortalMenuAuthorizationResponseUnmarshaller {
 				ReceiversItem receiversItem = new ReceiversItem();
 				receiversItem.setReceiverId(_ctx.stringValue("ListPortalMenuAuthorizationResponse.Result["+ i +"].Receivers["+ j +"].ReceiverId"));
 				receiversItem.setReceiverType(_ctx.integerValue("ListPortalMenuAuthorizationResponse.Result["+ i +"].Receivers["+ j +"].ReceiverType"));
+				receiversItem.setAuthPointsValue(_ctx.integerValue("ListPortalMenuAuthorizationResponse.Result["+ i +"].Receivers["+ j +"].AuthPointsValue"));
 
 				receivers.add(receiversItem);
 			}

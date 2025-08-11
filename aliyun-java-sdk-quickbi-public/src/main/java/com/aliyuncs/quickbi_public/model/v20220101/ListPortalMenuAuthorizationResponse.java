@@ -93,6 +93,8 @@ public class ListPortalMenuAuthorizationResponse extends AcsResponse {
 
 			private Integer receiverType;
 
+			private Integer authPointsValue;
+
 			public String getReceiverId() {
 				return this.receiverId;
 			}
@@ -107,6 +109,14 @@ public class ListPortalMenuAuthorizationResponse extends AcsResponse {
 
 			public void setReceiverType(Integer receiverType) {
 				this.receiverType = receiverType;
+			}
+
+			public Integer getAuthPointsValue() {
+				return this.authPointsValue;
+			}
+
+			public void setAuthPointsValue(Integer authPointsValue) {
+				this.authPointsValue = authPointsValue;
 			}
 		}
 	}
