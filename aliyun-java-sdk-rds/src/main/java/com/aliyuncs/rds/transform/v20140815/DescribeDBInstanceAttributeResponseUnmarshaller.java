@@ -43,7 +43,7 @@ public class DescribeDBInstanceAttributeResponseUnmarshaller {
 			dBInstanceAttribute.setAutoUpgradeMinorVersion(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].AutoUpgradeMinorVersion"));
 			dBInstanceAttribute.setAvailabilityValue(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].AvailabilityValue"));
 			dBInstanceAttribute.setBpeEnabled(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].BpeEnabled"));
-			dBInstanceAttribute.setBurstingEnabled(_ctx.booleanValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].BurstingEnabled"));
+			dBInstanceAttribute.setIsAnalyticReadOnlyIns(_ctx.booleanValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].IsAnalyticReadOnlyIns"));
 			dBInstanceAttribute.setCanTempUpgrade(_ctx.booleanValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].CanTempUpgrade"));
 			dBInstanceAttribute.setCategory(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].Category"));
 			dBInstanceAttribute.setColdDataEnabled(_ctx.booleanValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].ColdDataEnabled"));
@@ -134,6 +134,7 @@ public class DescribeDBInstanceAttributeResponseUnmarshaller {
 			dBInstanceAttribute.setBlueInstanceName(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].BlueInstanceName"));
 			dBInstanceAttribute.setComputeBurstEnabled(_ctx.booleanValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].ComputeBurstEnabled"));
 			dBInstanceAttribute.setReadOnlyStatus(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].ReadOnlyStatus"));
+			dBInstanceAttribute.setBurstingEnabled(_ctx.booleanValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].BurstingEnabled"));
 
 			BabelfishConfig babelfishConfig = new BabelfishConfig();
 			babelfishConfig.setBabelfishEnabled(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].BabelfishConfig.BabelfishEnabled"));

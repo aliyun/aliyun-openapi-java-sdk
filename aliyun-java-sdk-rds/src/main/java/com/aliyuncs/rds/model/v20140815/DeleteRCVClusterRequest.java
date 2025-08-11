@@ -22,16 +22,12 @@ import com.aliyuncs.rds.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateDiagnosticReportRequest extends RpcAcsRequest<CreateDiagnosticReportResponse> {
+public class DeleteRCVClusterRequest extends RpcAcsRequest<DeleteRCVClusterResponse> {
 	   
 
-	private String endTime;
-
-	private String startTime;
-
-	private String dBInstanceId;
-	public CreateDiagnosticReportRequest() {
-		super("Rds", "2014-08-15", "CreateDiagnosticReport", "rds");
+	private String clusterId;
+	public DeleteRCVClusterRequest() {
+		super("Rds", "2014-08-15", "DeleteRCVCluster", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,42 +35,20 @@ public class CreateDiagnosticReportRequest extends RpcAcsRequest<CreateDiagnosti
 		} catch (Exception e) {}
 	}
 
-	public String getEndTime() {
-		return this.endTime;
+	public String getClusterId() {
+		return this.clusterId;
 	}
 
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
-		}
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
-		}
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
 		}
 	}
 
 	@Override
-	public Class<CreateDiagnosticReportResponse> getResponseClass() {
-		return CreateDiagnosticReportResponse.class;
+	public Class<DeleteRCVClusterResponse> getResponseClass() {
+		return DeleteRCVClusterResponse.class;
 	}
 
 }

@@ -35,6 +35,8 @@ public class ModifyDBInstanceConnectionStringRequest extends RpcAcsRequest<Modif
 
 	private String dBInstanceId;
 
+	private Boolean retainVip;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -46,6 +48,8 @@ public class ModifyDBInstanceConnectionStringRequest extends RpcAcsRequest<Modif
 	private String currentConnectionString;
 
 	private String port;
+
+	private String targetDBInstanceId;
 	public ModifyDBInstanceConnectionStringRequest() {
 		super("Rds", "2014-08-15", "ModifyDBInstanceConnectionString", "rds");
 		setMethod(MethodType.POST);
@@ -107,6 +111,17 @@ public class ModifyDBInstanceConnectionStringRequest extends RpcAcsRequest<Modif
 		this.dBInstanceId = dBInstanceId;
 		if(dBInstanceId != null){
 			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public Boolean getRetainVip() {
+		return this.retainVip;
+	}
+
+	public void setRetainVip(Boolean retainVip) {
+		this.retainVip = retainVip;
+		if(retainVip != null){
+			putQueryParameter("RetainVip", retainVip.toString());
 		}
 	}
 
@@ -173,6 +188,17 @@ public class ModifyDBInstanceConnectionStringRequest extends RpcAcsRequest<Modif
 		this.port = port;
 		if(port != null){
 			putQueryParameter("Port", port);
+		}
+	}
+
+	public String getTargetDBInstanceId() {
+		return this.targetDBInstanceId;
+	}
+
+	public void setTargetDBInstanceId(String targetDBInstanceId) {
+		this.targetDBInstanceId = targetDBInstanceId;
+		if(targetDBInstanceId != null){
+			putQueryParameter("TargetDBInstanceId", targetDBInstanceId);
 		}
 	}
 

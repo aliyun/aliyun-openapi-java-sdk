@@ -95,6 +95,8 @@ public class DescribeDBProxyPerformanceResponse extends AcsResponse {
 
 		private String node;
 
+		private String server;
+
 		private List<PerformanceValue> values;
 
 		public String getValueFormat() {
@@ -127,6 +129,14 @@ public class DescribeDBProxyPerformanceResponse extends AcsResponse {
 
 		public void setNode(String node) {
 			this.node = node;
+		}
+
+		public String getServer() {
+			return this.server;
+		}
+
+		public void setServer(String server) {
+			this.server = server;
 		}
 
 		public List<PerformanceValue> getValues() {

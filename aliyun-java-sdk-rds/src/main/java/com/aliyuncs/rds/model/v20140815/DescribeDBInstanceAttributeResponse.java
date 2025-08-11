@@ -59,7 +59,7 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		private String bpeEnabled;
 
-		private Boolean burstingEnabled;
+		private Boolean isAnalyticReadOnlyIns;
 
 		private Boolean canTempUpgrade;
 
@@ -241,6 +241,8 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		private String readOnlyStatus;
 
+		private Boolean burstingEnabled;
+
 		private List<DBClusterNode> dBClusterNodes;
 
 		private List<ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
@@ -301,12 +303,12 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 			this.bpeEnabled = bpeEnabled;
 		}
 
-		public Boolean getBurstingEnabled() {
-			return this.burstingEnabled;
+		public Boolean getIsAnalyticReadOnlyIns() {
+			return this.isAnalyticReadOnlyIns;
 		}
 
-		public void setBurstingEnabled(Boolean burstingEnabled) {
-			this.burstingEnabled = burstingEnabled;
+		public void setIsAnalyticReadOnlyIns(Boolean isAnalyticReadOnlyIns) {
+			this.isAnalyticReadOnlyIns = isAnalyticReadOnlyIns;
 		}
 
 		public Boolean getCanTempUpgrade() {
@@ -1027,6 +1029,14 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		public void setReadOnlyStatus(String readOnlyStatus) {
 			this.readOnlyStatus = readOnlyStatus;
+		}
+
+		public Boolean getBurstingEnabled() {
+			return this.burstingEnabled;
+		}
+
+		public void setBurstingEnabled(Boolean burstingEnabled) {
+			this.burstingEnabled = burstingEnabled;
 		}
 
 		public List<DBClusterNode> getDBClusterNodes() {

@@ -22,14 +22,10 @@ import com.aliyuncs.rds.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeDiagnosticReportListRequest extends RpcAcsRequest<DescribeDiagnosticReportListResponse> {
+public class ListRCVClustersRequest extends RpcAcsRequest<ListRCVClustersResponse> {
 	   
-
-	private String resourceGroupId;
-
-	private String dBInstanceId;
-	public DescribeDiagnosticReportListRequest() {
-		super("Rds", "2014-08-15", "DescribeDiagnosticReportList", "rds");
+	public ListRCVClustersRequest() {
+		super("Rds", "2014-08-15", "ListRCVClusters", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +33,9 @@ public class DescribeDiagnosticReportListRequest extends RpcAcsRequest<DescribeD
 		} catch (Exception e) {}
 	}
 
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
-	}
-
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
-		}
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
-		}
-	}
-
 	@Override
-	public Class<DescribeDiagnosticReportListResponse> getResponseClass() {
-		return DescribeDiagnosticReportListResponse.class;
+	public Class<ListRCVClustersResponse> getResponseClass() {
+		return ListRCVClustersResponse.class;
 	}
 
 }

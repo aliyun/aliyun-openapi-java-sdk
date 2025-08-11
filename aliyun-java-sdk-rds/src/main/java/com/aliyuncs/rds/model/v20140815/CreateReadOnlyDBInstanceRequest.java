@@ -93,6 +93,8 @@ public class CreateReadOnlyDBInstanceRequest extends RpcAcsRequest<CreateReadOnl
 
 	private String vPCId;
 
+	private Boolean isAnalyticReadOnlyIns;
+
 	private String category;
 
 	private String payType;
@@ -478,6 +480,17 @@ public class CreateReadOnlyDBInstanceRequest extends RpcAcsRequest<CreateReadOnl
 		this.vPCId = vPCId;
 		if(vPCId != null){
 			putQueryParameter("VPCId", vPCId);
+		}
+	}
+
+	public Boolean getIsAnalyticReadOnlyIns() {
+		return this.isAnalyticReadOnlyIns;
+	}
+
+	public void setIsAnalyticReadOnlyIns(Boolean isAnalyticReadOnlyIns) {
+		this.isAnalyticReadOnlyIns = isAnalyticReadOnlyIns;
+		if(isAnalyticReadOnlyIns != null){
+			putQueryParameter("IsAnalyticReadOnlyIns", isAnalyticReadOnlyIns.toString());
 		}
 	}
 

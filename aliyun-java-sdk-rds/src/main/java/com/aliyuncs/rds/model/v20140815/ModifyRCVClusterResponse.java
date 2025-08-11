@@ -15,26 +15,16 @@
 package com.aliyuncs.rds.model.v20140815;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.rds.transform.v20140815.CreateDiagnosticReportResponseUnmarshaller;
+import com.aliyuncs.rds.transform.v20140815.ModifyRCVClusterResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateDiagnosticReportResponse extends AcsResponse {
-
-	private String reportId;
+public class ModifyRCVClusterResponse extends AcsResponse {
 
 	private String requestId;
-
-	public String getReportId() {
-		return this.reportId;
-	}
-
-	public void setReportId(String reportId) {
-		this.reportId = reportId;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,7 +35,12 @@ public class CreateDiagnosticReportResponse extends AcsResponse {
 	}
 
 	@Override
-	public CreateDiagnosticReportResponse getInstance(UnmarshallerContext context) {
-		return	CreateDiagnosticReportResponseUnmarshaller.unmarshall(this, context);
+	public ModifyRCVClusterResponse getInstance(UnmarshallerContext context) {
+		return	ModifyRCVClusterResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

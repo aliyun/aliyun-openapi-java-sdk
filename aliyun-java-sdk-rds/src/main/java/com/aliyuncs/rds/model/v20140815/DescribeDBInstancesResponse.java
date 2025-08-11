@@ -95,7 +95,7 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 
 		private String category;
 
-		private Boolean coldDataEnabled;
+		private Boolean isAnalyticReadOnlyIns;
 
 		private String connectionMode;
 
@@ -205,6 +205,8 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 
 		private Boolean autoRenewal;
 
+		private Boolean coldDataEnabled;
+
 		private List<ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
 
 		public String getAutoUpgradeMinorVersion() {
@@ -239,12 +241,12 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 			this.category = category;
 		}
 
-		public Boolean getColdDataEnabled() {
-			return this.coldDataEnabled;
+		public Boolean getIsAnalyticReadOnlyIns() {
+			return this.isAnalyticReadOnlyIns;
 		}
 
-		public void setColdDataEnabled(Boolean coldDataEnabled) {
-			this.coldDataEnabled = coldDataEnabled;
+		public void setIsAnalyticReadOnlyIns(Boolean isAnalyticReadOnlyIns) {
+			this.isAnalyticReadOnlyIns = isAnalyticReadOnlyIns;
 		}
 
 		public String getConnectionMode() {
@@ -677,6 +679,14 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 
 		public void setAutoRenewal(Boolean autoRenewal) {
 			this.autoRenewal = autoRenewal;
+		}
+
+		public Boolean getColdDataEnabled() {
+			return this.coldDataEnabled;
+		}
+
+		public void setColdDataEnabled(Boolean coldDataEnabled) {
+			this.coldDataEnabled = coldDataEnabled;
 		}
 
 		public List<ReadOnlyDBInstanceId> getReadOnlyDBInstanceIds() {

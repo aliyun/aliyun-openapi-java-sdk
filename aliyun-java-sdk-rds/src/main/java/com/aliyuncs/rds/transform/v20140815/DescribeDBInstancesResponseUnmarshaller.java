@@ -40,7 +40,7 @@ public class DescribeDBInstancesResponseUnmarshaller {
 			dBInstance.setBpeEnabled(_ctx.stringValue("DescribeDBInstancesResponse.Items["+ i +"].BpeEnabled"));
 			dBInstance.setBurstingEnabled(_ctx.booleanValue("DescribeDBInstancesResponse.Items["+ i +"].BurstingEnabled"));
 			dBInstance.setCategory(_ctx.stringValue("DescribeDBInstancesResponse.Items["+ i +"].Category"));
-			dBInstance.setColdDataEnabled(_ctx.booleanValue("DescribeDBInstancesResponse.Items["+ i +"].ColdDataEnabled"));
+			dBInstance.setIsAnalyticReadOnlyIns(_ctx.booleanValue("DescribeDBInstancesResponse.Items["+ i +"].IsAnalyticReadOnlyIns"));
 			dBInstance.setConnectionMode(_ctx.stringValue("DescribeDBInstancesResponse.Items["+ i +"].ConnectionMode"));
 			dBInstance.setConnectionString(_ctx.stringValue("DescribeDBInstancesResponse.Items["+ i +"].ConnectionString"));
 			dBInstance.setCreateTime(_ctx.stringValue("DescribeDBInstancesResponse.Items["+ i +"].CreateTime"));
@@ -95,6 +95,7 @@ public class DescribeDBInstancesResponseUnmarshaller {
 			dBInstance.setBlueInstanceName(_ctx.stringValue("DescribeDBInstancesResponse.Items["+ i +"].BlueInstanceName"));
 			dBInstance.setGreenInstanceName(_ctx.stringValue("DescribeDBInstancesResponse.Items["+ i +"].GreenInstanceName"));
 			dBInstance.setAutoRenewal(_ctx.booleanValue("DescribeDBInstancesResponse.Items["+ i +"].AutoRenewal"));
+			dBInstance.setColdDataEnabled(_ctx.booleanValue("DescribeDBInstancesResponse.Items["+ i +"].ColdDataEnabled"));
 
 			List<ReadOnlyDBInstanceId> readOnlyDBInstanceIds = new ArrayList<ReadOnlyDBInstanceId>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDBInstancesResponse.Items["+ i +"].ReadOnlyDBInstanceIds.Length"); j++) {

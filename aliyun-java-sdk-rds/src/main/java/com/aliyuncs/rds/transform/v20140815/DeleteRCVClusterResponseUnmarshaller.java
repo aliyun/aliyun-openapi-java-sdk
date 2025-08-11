@@ -14,17 +14,16 @@
 
 package com.aliyuncs.rds.transform.v20140815;
 
-import com.aliyuncs.rds.model.v20140815.CreateDiagnosticReportResponse;
+import com.aliyuncs.rds.model.v20140815.DeleteRCVClusterResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class CreateDiagnosticReportResponseUnmarshaller {
+public class DeleteRCVClusterResponseUnmarshaller {
 
-	public static CreateDiagnosticReportResponse unmarshall(CreateDiagnosticReportResponse createDiagnosticReportResponse, UnmarshallerContext _ctx) {
+	public static DeleteRCVClusterResponse unmarshall(DeleteRCVClusterResponse deleteRCVClusterResponse, UnmarshallerContext _ctx) {
 		
-		createDiagnosticReportResponse.setRequestId(_ctx.stringValue("CreateDiagnosticReportResponse.RequestId"));
-		createDiagnosticReportResponse.setReportId(_ctx.stringValue("CreateDiagnosticReportResponse.ReportId"));
+		deleteRCVClusterResponse.setRequestId(_ctx.stringValue("DeleteRCVClusterResponse.RequestId"));
 	 
-	 	return createDiagnosticReportResponse;
+	 	return deleteRCVClusterResponse;
 	}
 }
