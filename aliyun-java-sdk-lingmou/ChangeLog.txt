@@ -1,3 +1,7 @@
+2025-08-20 Version: 1.0.1
+- Add Chat Session Query Support.
+- Add Chat Session Close Support.
+
 2025-07-16 Version: 1.0.0
 - Add Support For Create Chat Session.
 
