@@ -1,0 +1,3 @@
+2025-08-20 Version: 1.0.0
+- Generated 2025-08-12 for `IntlMarket`.
+
