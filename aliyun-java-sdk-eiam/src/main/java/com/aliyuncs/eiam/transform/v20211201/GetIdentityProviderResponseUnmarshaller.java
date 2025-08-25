@@ -67,6 +67,8 @@ public class GetIdentityProviderResponseUnmarshaller {
 		dingtalkAppConfig.setAppSecret(_ctx.stringValue("GetIdentityProviderResponse.IdentityProviderDetail.DingtalkAppConfig.AppSecret"));
 		dingtalkAppConfig.setCorpId(_ctx.stringValue("GetIdentityProviderResponse.IdentityProviderDetail.DingtalkAppConfig.CorpId"));
 		dingtalkAppConfig.setDingtalkVersion(_ctx.stringValue("GetIdentityProviderResponse.IdentityProviderDetail.DingtalkAppConfig.DingtalkVersion"));
+		dingtalkAppConfig.setEncryptKey(_ctx.stringValue("GetIdentityProviderResponse.IdentityProviderDetail.DingtalkAppConfig.EncryptKey"));
+		dingtalkAppConfig.setVerificationToken(_ctx.stringValue("GetIdentityProviderResponse.IdentityProviderDetail.DingtalkAppConfig.VerificationToken"));
 		identityProviderDetail.setDingtalkAppConfig(dingtalkAppConfig);
 
 		DingtalkProvisioningConfig dingtalkProvisioningConfig = new DingtalkProvisioningConfig();

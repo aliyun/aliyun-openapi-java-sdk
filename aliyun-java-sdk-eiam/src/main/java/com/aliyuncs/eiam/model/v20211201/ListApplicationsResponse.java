@@ -87,12 +87,6 @@ public class ListApplicationsResponse extends AcsResponse {
 
 		private String applicationTemplateId;
 
-		private String m2MClientStatus;
-
-		private String resourceServerStatus;
-
-		private String resourceServerIdentifier;
-
 		public String getInstanceId() {
 			return this.instanceId;
 		}
@@ -211,30 +205,6 @@ public class ListApplicationsResponse extends AcsResponse {
 
 		public void setApplicationTemplateId(String applicationTemplateId) {
 			this.applicationTemplateId = applicationTemplateId;
-		}
-
-		public String getM2MClientStatus() {
-			return this.m2MClientStatus;
-		}
-
-		public void setM2MClientStatus(String m2MClientStatus) {
-			this.m2MClientStatus = m2MClientStatus;
-		}
-
-		public String getResourceServerStatus() {
-			return this.resourceServerStatus;
-		}
-
-		public void setResourceServerStatus(String resourceServerStatus) {
-			this.resourceServerStatus = resourceServerStatus;
-		}
-
-		public String getResourceServerIdentifier() {
-			return this.resourceServerIdentifier;
-		}
-
-		public void setResourceServerIdentifier(String resourceServerIdentifier) {
-			this.resourceServerIdentifier = resourceServerIdentifier;
 		}
 	}
 

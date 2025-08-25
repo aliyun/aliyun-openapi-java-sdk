@@ -49,6 +49,7 @@ public class GetApplicationResponseUnmarshaller {
 		application.setM2MClientStatus(_ctx.stringValue("GetApplicationResponse.Application.M2MClientStatus"));
 		application.setResourceServerStatus(_ctx.stringValue("GetApplicationResponse.Application.ResourceServerStatus"));
 		application.setResourceServerIdentifier(_ctx.stringValue("GetApplicationResponse.Application.ResourceServerIdentifier"));
+		application.setCustomSubjectStatus(_ctx.stringValue("GetApplicationResponse.Application.CustomSubjectStatus"));
 
 		List<String> applicationVisibility = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetApplicationResponse.Application.ApplicationVisibility.Length"); i++) {

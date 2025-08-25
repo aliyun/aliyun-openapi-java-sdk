@@ -61,6 +61,8 @@ public class GetApplicationProvisioningConfigResponse extends AcsResponse {
 
 		private String configOperateMode;
 
+		private String networkAccessEndpointId;
+
 		private CallbackProvisioningConfig callbackProvisioningConfig;
 
 		private ScimProvisioningConfig scimProvisioningConfig;
@@ -119,6 +121,14 @@ public class GetApplicationProvisioningConfigResponse extends AcsResponse {
 
 		public void setConfigOperateMode(String configOperateMode) {
 			this.configOperateMode = configOperateMode;
+		}
+
+		public String getNetworkAccessEndpointId() {
+			return this.networkAccessEndpointId;
+		}
+
+		public void setNetworkAccessEndpointId(String networkAccessEndpointId) {
+			this.networkAccessEndpointId = networkAccessEndpointId;
 		}
 
 		public CallbackProvisioningConfig getCallbackProvisioningConfig() {

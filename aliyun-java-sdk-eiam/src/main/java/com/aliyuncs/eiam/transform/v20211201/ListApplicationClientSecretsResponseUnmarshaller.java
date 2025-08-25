@@ -39,6 +39,7 @@ public class ListApplicationClientSecretsResponseUnmarshaller {
 			applicationClientSecret.setClientSecret(_ctx.stringValue("ListApplicationClientSecretsResponse.ApplicationClientSecrets["+ i +"].ClientSecret"));
 			applicationClientSecret.setStatus(_ctx.stringValue("ListApplicationClientSecretsResponse.ApplicationClientSecrets["+ i +"].Status"));
 			applicationClientSecret.setLastUsedTime(_ctx.longValue("ListApplicationClientSecretsResponse.ApplicationClientSecrets["+ i +"].LastUsedTime"));
+			applicationClientSecret.setExpirationTime(_ctx.longValue("ListApplicationClientSecretsResponse.ApplicationClientSecrets["+ i +"].ExpirationTime"));
 
 			applicationClientSecrets.add(applicationClientSecret);
 		}

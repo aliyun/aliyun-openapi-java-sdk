@@ -150,6 +150,7 @@ public class SetApplicationSsoConfigRequest extends RpcAcsRequest<SetApplication
 				}
 				putQueryParameter("OidcSsoConfig.SubjectIdExpression" , oidcSsoConfig.getSubjectIdExpression());
 				putQueryParameter("OidcSsoConfig.PkceRequired" , oidcSsoConfig.getPkceRequired());
+				putQueryParameter("OidcSsoConfig.AllowedPublicClient" , oidcSsoConfig.getAllowedPublicClient());
 				if (oidcSsoConfig.getRedirectUris() != null) {
 					for (int depth1 = 0; depth1 < oidcSsoConfig.getRedirectUris().size(); depth1++) {
 						putQueryParameter("OidcSsoConfig.RedirectUris." + (depth1 + 1) , oidcSsoConfig.getRedirectUris().get(depth1));
@@ -225,6 +226,8 @@ public class SetApplicationSsoConfigRequest extends RpcAcsRequest<SetApplication
 		private String subjectIdExpression;
 
 		private Boolean pkceRequired;
+
+		private Boolean allowedPublicClient;
 
 		private List<String> redirectUris;
 
@@ -338,6 +341,14 @@ public class SetApplicationSsoConfigRequest extends RpcAcsRequest<SetApplication
 
 		public void setPkceRequired(Boolean pkceRequired) {
 			this.pkceRequired = pkceRequired;
+		}
+
+		public Boolean getAllowedPublicClient() {
+			return this.allowedPublicClient;
+		}
+
+		public void setAllowedPublicClient(Boolean allowedPublicClient) {
+			this.allowedPublicClient = allowedPublicClient;
 		}
 
 		public List<String> getRedirectUris() {

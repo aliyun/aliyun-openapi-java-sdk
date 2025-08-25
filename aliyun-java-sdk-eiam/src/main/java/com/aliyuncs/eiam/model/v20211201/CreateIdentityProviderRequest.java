@@ -28,6 +28,8 @@ public class CreateIdentityProviderRequest extends RpcAcsRequest<CreateIdentityP
 
 	private DingtalkAppConfig dingtalkAppConfig;
 
+	private String clientToken;
+
 	private String networkAccessEndpointId;
 
 	private AutoUpdateUserConfig autoUpdateUserConfig;
@@ -74,8 +76,21 @@ public class CreateIdentityProviderRequest extends RpcAcsRequest<CreateIdentityP
 				putQueryParameter("DingtalkAppConfig.CorpId" , dingtalkAppConfig.getCorpId());
 				putQueryParameter("DingtalkAppConfig.DingtalkVersion" , dingtalkAppConfig.getDingtalkVersion());
 				putQueryParameter("DingtalkAppConfig.AppSecret" , dingtalkAppConfig.getAppSecret());
+				putQueryParameter("DingtalkAppConfig.VerificationToken" , dingtalkAppConfig.getVerificationToken());
 				putQueryParameter("DingtalkAppConfig.AppKey" , dingtalkAppConfig.getAppKey());
+				putQueryParameter("DingtalkAppConfig.EncryptKey" , dingtalkAppConfig.getEncryptKey());
 		}	
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
 	}
 
 	public String getNetworkAccessEndpointId() {
@@ -361,7 +376,11 @@ public class CreateIdentityProviderRequest extends RpcAcsRequest<CreateIdentityP
 
 		private String appSecret;
 
+		private String verificationToken;
+
 		private String appKey;
+
+		private String encryptKey;
 
 		public String getCorpId() {
 			return this.corpId;
@@ -387,12 +406,28 @@ public class CreateIdentityProviderRequest extends RpcAcsRequest<CreateIdentityP
 			this.appSecret = appSecret;
 		}
 
+		public String getVerificationToken() {
+			return this.verificationToken;
+		}
+
+		public void setVerificationToken(String verificationToken) {
+			this.verificationToken = verificationToken;
+		}
+
 		public String getAppKey() {
 			return this.appKey;
 		}
 
 		public void setAppKey(String appKey) {
 			this.appKey = appKey;
+		}
+
+		public String getEncryptKey() {
+			return this.encryptKey;
+		}
+
+		public void setEncryptKey(String encryptKey) {
+			this.encryptKey = encryptKey;
 		}
 	}
 

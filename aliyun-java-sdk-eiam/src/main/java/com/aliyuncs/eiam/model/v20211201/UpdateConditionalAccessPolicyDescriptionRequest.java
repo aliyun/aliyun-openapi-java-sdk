@@ -25,6 +25,8 @@ import com.aliyuncs.http.MethodType;
 public class UpdateConditionalAccessPolicyDescriptionRequest extends RpcAcsRequest<UpdateConditionalAccessPolicyDescriptionResponse> {
 	   
 
+	private String clientToken;
+
 	private String description;
 
 	private String conditionalAccessPolicyId;
@@ -34,6 +36,17 @@ public class UpdateConditionalAccessPolicyDescriptionRequest extends RpcAcsReque
 		super("Eiam", "2021-12-01", "UpdateConditionalAccessPolicyDescription", "eiam");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
 	}
 
 	public String getDescription() {

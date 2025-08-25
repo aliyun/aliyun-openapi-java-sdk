@@ -317,6 +317,10 @@ public class GetIdentityProviderResponse extends AcsResponse {
 
 			private String dingtalkVersion;
 
+			private String encryptKey;
+
+			private String verificationToken;
+
 			public String getAppKey() {
 				return this.appKey;
 			}
@@ -347,6 +351,22 @@ public class GetIdentityProviderResponse extends AcsResponse {
 
 			public void setDingtalkVersion(String dingtalkVersion) {
 				this.dingtalkVersion = dingtalkVersion;
+			}
+
+			public String getEncryptKey() {
+				return this.encryptKey;
+			}
+
+			public void setEncryptKey(String encryptKey) {
+				this.encryptKey = encryptKey;
+			}
+
+			public String getVerificationToken() {
+				return this.verificationToken;
+			}
+
+			public void setVerificationToken(String verificationToken) {
+				this.verificationToken = verificationToken;
 			}
 		}
 

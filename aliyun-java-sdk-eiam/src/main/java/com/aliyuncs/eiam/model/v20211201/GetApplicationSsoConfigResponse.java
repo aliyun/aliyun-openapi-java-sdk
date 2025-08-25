@@ -284,6 +284,8 @@ public class GetApplicationSsoConfigResponse extends AcsResponse {
 
 			private String subjectIdExpression;
 
+			private String allowedPublicClient;
+
 			private List<CustomClaim> customClaims;
 
 			private List<String> redirectUris;
@@ -360,6 +362,14 @@ public class GetApplicationSsoConfigResponse extends AcsResponse {
 
 			public void setSubjectIdExpression(String subjectIdExpression) {
 				this.subjectIdExpression = subjectIdExpression;
+			}
+
+			public String getAllowedPublicClient() {
+				return this.allowedPublicClient;
+			}
+
+			public void setAllowedPublicClient(String allowedPublicClient) {
+				this.allowedPublicClient = allowedPublicClient;
 			}
 
 			public List<CustomClaim> getCustomClaims() {

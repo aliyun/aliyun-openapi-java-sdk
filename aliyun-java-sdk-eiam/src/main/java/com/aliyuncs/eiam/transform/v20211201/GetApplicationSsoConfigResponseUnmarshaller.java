@@ -80,6 +80,7 @@ public class GetApplicationSsoConfigResponseUnmarshaller {
 		oidcSsoConfig.setIdTokenEffectiveTime(_ctx.longValue("GetApplicationSsoConfigResponse.ApplicationSsoConfig.OidcSsoConfig.IdTokenEffectiveTime"));
 		oidcSsoConfig.setRefreshTokenEffective(_ctx.longValue("GetApplicationSsoConfigResponse.ApplicationSsoConfig.OidcSsoConfig.RefreshTokenEffective"));
 		oidcSsoConfig.setSubjectIdExpression(_ctx.stringValue("GetApplicationSsoConfigResponse.ApplicationSsoConfig.OidcSsoConfig.SubjectIdExpression"));
+		oidcSsoConfig.setAllowedPublicClient(_ctx.stringValue("GetApplicationSsoConfigResponse.ApplicationSsoConfig.OidcSsoConfig.AllowedPublicClient"));
 
 		List<String> redirectUris = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetApplicationSsoConfigResponse.ApplicationSsoConfig.OidcSsoConfig.RedirectUris.Length"); i++) {

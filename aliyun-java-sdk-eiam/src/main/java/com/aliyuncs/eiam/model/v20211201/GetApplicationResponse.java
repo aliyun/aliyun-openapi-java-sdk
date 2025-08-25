@@ -87,6 +87,8 @@ public class GetApplicationResponse extends AcsResponse {
 
 		private String resourceServerIdentifier;
 
+		private String customSubjectStatus;
+
 		private List<String> applicationVisibility;
 
 		public String getApiInvokeStatus() {
@@ -247,6 +249,14 @@ public class GetApplicationResponse extends AcsResponse {
 
 		public void setResourceServerIdentifier(String resourceServerIdentifier) {
 			this.resourceServerIdentifier = resourceServerIdentifier;
+		}
+
+		public String getCustomSubjectStatus() {
+			return this.customSubjectStatus;
+		}
+
+		public void setCustomSubjectStatus(String customSubjectStatus) {
+			this.customSubjectStatus = customSubjectStatus;
 		}
 
 		public List<String> getApplicationVisibility() {

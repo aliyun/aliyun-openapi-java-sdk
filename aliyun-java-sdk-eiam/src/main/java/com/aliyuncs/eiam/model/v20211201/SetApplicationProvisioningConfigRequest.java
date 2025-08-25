@@ -26,6 +26,8 @@ import com.aliyuncs.http.MethodType;
 public class SetApplicationProvisioningConfigRequest extends RpcAcsRequest<SetApplicationProvisioningConfigResponse> {
 	   
 
+	private String networkAccessEndpointId;
+
 	private String provisionProtocolType;
 
 	private String applicationId;
@@ -41,6 +43,17 @@ public class SetApplicationProvisioningConfigRequest extends RpcAcsRequest<SetAp
 		super("Eiam", "2021-12-01", "SetApplicationProvisioningConfig", "eiam");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
+	}
+
+	public String getNetworkAccessEndpointId() {
+		return this.networkAccessEndpointId;
+	}
+
+	public void setNetworkAccessEndpointId(String networkAccessEndpointId) {
+		this.networkAccessEndpointId = networkAccessEndpointId;
+		if(networkAccessEndpointId != null){
+			putQueryParameter("NetworkAccessEndpointId", networkAccessEndpointId);
+		}
 	}
 
 	public String getProvisionProtocolType() {

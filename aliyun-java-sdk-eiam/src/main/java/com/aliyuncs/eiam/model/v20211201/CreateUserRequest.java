@@ -26,6 +26,8 @@ import com.aliyuncs.http.MethodType;
 public class CreateUserRequest extends RpcAcsRequest<CreateUserResponse> {
 	   
 
+	private String clientToken;
+
 	private String phoneNumber;
 
 	private String description;
@@ -59,6 +61,17 @@ public class CreateUserRequest extends RpcAcsRequest<CreateUserResponse> {
 		super("Eiam", "2021-12-01", "CreateUser", "eiam");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
 	}
 
 	public String getPhoneNumber() {
