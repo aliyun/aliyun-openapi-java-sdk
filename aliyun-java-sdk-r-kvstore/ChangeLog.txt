@@ -1,3 +1,6 @@
+2025-08-28 Version: 2.20.24
+- Generated 2015-01-01 for `R-kvstore`.
+
 2025-07-30 Version: 2.20.23
 - Backup OpenAPI update.
 

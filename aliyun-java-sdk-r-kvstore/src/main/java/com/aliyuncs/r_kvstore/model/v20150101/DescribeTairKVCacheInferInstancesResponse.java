@@ -119,6 +119,10 @@ public class DescribeTairKVCacheInferInstancesResponse extends AcsResponse {
 
 		private String vNodeName;
 
+		private String ackId;
+
+		private Integer vNodeCount;
+
 		private List<Tag> tags;
 
 		public String getVpcId() {
@@ -287,6 +291,22 @@ public class DescribeTairKVCacheInferInstancesResponse extends AcsResponse {
 
 		public void setVNodeName(String vNodeName) {
 			this.vNodeName = vNodeName;
+		}
+
+		public String getAckId() {
+			return this.ackId;
+		}
+
+		public void setAckId(String ackId) {
+			this.ackId = ackId;
+		}
+
+		public Integer getVNodeCount() {
+			return this.vNodeCount;
+		}
+
+		public void setVNodeCount(Integer vNodeCount) {
+			this.vNodeCount = vNodeCount;
 		}
 
 		public List<Tag> getTags() {

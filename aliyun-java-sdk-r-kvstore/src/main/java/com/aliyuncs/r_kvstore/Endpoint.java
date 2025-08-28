@@ -33,7 +33,6 @@ public class Endpoint {
             put("cn-hongkong-finance-pop", "r-kvstore.aliyuncs.com");
             put("cn-qingdao-nebula", "r-kvstore.aliyuncs.com");
             put("cn-shanghai", "r-kvstore.aliyuncs.com");
-            put("cn-shanghai-finance-1", "r-kvstore.aliyuncs.com");
             put("cn-heyuan", "r-kvstore.aliyuncs.com");
             put("cn-beijing-finance-pop", "r-kvstore.aliyuncs.com");
             put("cn-wuhan", "r-kvstore.aliyuncs.com");

@@ -16,6 +16,7 @@ package com.aliyuncs.r_kvstore.model.v20150101;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.r_kvstore.Endpoint;
 
@@ -23,51 +24,58 @@ import com.aliyuncs.r_kvstore.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeTairKVCacheInferInstancesRequest extends RpcAcsRequest<DescribeTairKVCacheInferInstancesResponse> {
+public class CreateTairKVCacheVNodeRequest extends RpcAcsRequest<CreateTairKVCacheVNodeResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String searchKey;
+	private String clientToken;
 
-	private String networkType;
+	private String couponNo;
+
+	private Boolean autoUseCoupon;
 
 	private String instanceClass;
 
-	private Integer pageNumber;
-
 	private String resourceGroupId;
-
-	private String expired;
 
 	private String securityToken;
 
-	private Integer pageSize;
-
 	private List<Tag> tags;
 
-	private String instanceStatus;
+	private String businessInfo;
+
+	private String autoRenewPeriod;
+
+	private Integer period;
+
+	private Boolean autoPay;
+
+	private Boolean dryRun;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String privateIp;
-
 	private Long ownerId;
 
 	private String vSwitchId;
 
-	private String instanceIds;
+	private String instanceName;
 
-	private String vpcId;
+	private String vkName;
+
+	private Boolean autoRenew;
+
+	private Integer computeUnitNum;
 
 	private String zoneId;
 
 	private String chargeType;
-	public DescribeTairKVCacheInferInstancesRequest() {
-		super("R-kvstore", "2015-01-01", "DescribeTairKVCacheInferInstances", "redisa");
-		setMethod(MethodType.GET);
+	public CreateTairKVCacheVNodeRequest() {
+		super("R-kvstore", "2015-01-01", "CreateTairKVCacheVNode", "redisa");
+		setProtocol(ProtocolType.HTTPS);
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -85,25 +93,36 @@ public class DescribeTairKVCacheInferInstancesRequest extends RpcAcsRequest<Desc
 		}
 	}
 
-	public String getSearchKey() {
-		return this.searchKey;
+	public String getClientToken() {
+		return this.clientToken;
 	}
 
-	public void setSearchKey(String searchKey) {
-		this.searchKey = searchKey;
-		if(searchKey != null){
-			putQueryParameter("SearchKey", searchKey);
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
-	public String getNetworkType() {
-		return this.networkType;
+	public String getCouponNo() {
+		return this.couponNo;
 	}
 
-	public void setNetworkType(String networkType) {
-		this.networkType = networkType;
-		if(networkType != null){
-			putQueryParameter("NetworkType", networkType);
+	public void setCouponNo(String couponNo) {
+		this.couponNo = couponNo;
+		if(couponNo != null){
+			putQueryParameter("CouponNo", couponNo);
+		}
+	}
+
+	public Boolean getAutoUseCoupon() {
+		return this.autoUseCoupon;
+	}
+
+	public void setAutoUseCoupon(Boolean autoUseCoupon) {
+		this.autoUseCoupon = autoUseCoupon;
+		if(autoUseCoupon != null){
+			putQueryParameter("AutoUseCoupon", autoUseCoupon.toString());
 		}
 	}
 
@@ -118,17 +137,6 @@ public class DescribeTairKVCacheInferInstancesRequest extends RpcAcsRequest<Desc
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
 	public String getResourceGroupId() {
 		return this.resourceGroupId;
 	}
@@ -140,17 +148,6 @@ public class DescribeTairKVCacheInferInstancesRequest extends RpcAcsRequest<Desc
 		}
 	}
 
-	public String getExpired() {
-		return this.expired;
-	}
-
-	public void setExpired(String expired) {
-		this.expired = expired;
-		if(expired != null){
-			putQueryParameter("Expired", expired);
-		}
-	}
-
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
@@ -159,17 +156,6 @@ public class DescribeTairKVCacheInferInstancesRequest extends RpcAcsRequest<Desc
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -187,14 +173,58 @@ public class DescribeTairKVCacheInferInstancesRequest extends RpcAcsRequest<Desc
 		}	
 	}
 
-	public String getInstanceStatus() {
-		return this.instanceStatus;
+	public String getBusinessInfo() {
+		return this.businessInfo;
 	}
 
-	public void setInstanceStatus(String instanceStatus) {
-		this.instanceStatus = instanceStatus;
-		if(instanceStatus != null){
-			putQueryParameter("InstanceStatus", instanceStatus);
+	public void setBusinessInfo(String businessInfo) {
+		this.businessInfo = businessInfo;
+		if(businessInfo != null){
+			putQueryParameter("BusinessInfo", businessInfo);
+		}
+	}
+
+	public String getAutoRenewPeriod() {
+		return this.autoRenewPeriod;
+	}
+
+	public void setAutoRenewPeriod(String autoRenewPeriod) {
+		this.autoRenewPeriod = autoRenewPeriod;
+		if(autoRenewPeriod != null){
+			putQueryParameter("AutoRenewPeriod", autoRenewPeriod);
+		}
+	}
+
+	public Integer getPeriod() {
+		return this.period;
+	}
+
+	public void setPeriod(Integer period) {
+		this.period = period;
+		if(period != null){
+			putQueryParameter("Period", period.toString());
+		}
+	}
+
+	public Boolean getAutoPay() {
+		return this.autoPay;
+	}
+
+	public void setAutoPay(Boolean autoPay) {
+		this.autoPay = autoPay;
+		if(autoPay != null){
+			putQueryParameter("AutoPay", autoPay.toString());
+		}
+	}
+
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
 		}
 	}
 
@@ -220,17 +250,6 @@ public class DescribeTairKVCacheInferInstancesRequest extends RpcAcsRequest<Desc
 		}
 	}
 
-	public String getPrivateIp() {
-		return this.privateIp;
-	}
-
-	public void setPrivateIp(String privateIp) {
-		this.privateIp = privateIp;
-		if(privateIp != null){
-			putQueryParameter("PrivateIp", privateIp);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -253,25 +272,47 @@ public class DescribeTairKVCacheInferInstancesRequest extends RpcAcsRequest<Desc
 		}
 	}
 
-	public String getInstanceIds() {
-		return this.instanceIds;
+	public String getInstanceName() {
+		return this.instanceName;
 	}
 
-	public void setInstanceIds(String instanceIds) {
-		this.instanceIds = instanceIds;
-		if(instanceIds != null){
-			putQueryParameter("InstanceIds", instanceIds);
+	public void setInstanceName(String instanceName) {
+		this.instanceName = instanceName;
+		if(instanceName != null){
+			putQueryParameter("InstanceName", instanceName);
 		}
 	}
 
-	public String getVpcId() {
-		return this.vpcId;
+	public String getVkName() {
+		return this.vkName;
 	}
 
-	public void setVpcId(String vpcId) {
-		this.vpcId = vpcId;
-		if(vpcId != null){
-			putQueryParameter("VpcId", vpcId);
+	public void setVkName(String vkName) {
+		this.vkName = vkName;
+		if(vkName != null){
+			putQueryParameter("VkName", vkName);
+		}
+	}
+
+	public Boolean getAutoRenew() {
+		return this.autoRenew;
+	}
+
+	public void setAutoRenew(Boolean autoRenew) {
+		this.autoRenew = autoRenew;
+		if(autoRenew != null){
+			putQueryParameter("AutoRenew", autoRenew.toString());
+		}
+	}
+
+	public Integer getComputeUnitNum() {
+		return this.computeUnitNum;
+	}
+
+	public void setComputeUnitNum(Integer computeUnitNum) {
+		this.computeUnitNum = computeUnitNum;
+		if(computeUnitNum != null){
+			putQueryParameter("ComputeUnitNum", computeUnitNum.toString());
 		}
 	}
 
@@ -321,8 +362,8 @@ public class DescribeTairKVCacheInferInstancesRequest extends RpcAcsRequest<Desc
 	}
 
 	@Override
-	public Class<DescribeTairKVCacheInferInstancesResponse> getResponseClass() {
-		return DescribeTairKVCacheInferInstancesResponse.class;
+	public Class<CreateTairKVCacheVNodeResponse> getResponseClass() {
+		return CreateTairKVCacheVNodeResponse.class;
 	}
 
 }
