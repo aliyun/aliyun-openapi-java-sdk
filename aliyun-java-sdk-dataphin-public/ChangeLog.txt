@@ -1,3 +1,9 @@
+2025-08-29 Version: 1.0.10
+- Dataphin OpenAPI v5.3.0 changes
+- Add api GetTransferInfo.
+- Add api RetryTransferOwnership.
+- Add api TransferOwnershipForAllObject.
+
 2025-07-30 Version: 1.0.9
 - Generated 2023-06-30 for `dataphin-public`.
 

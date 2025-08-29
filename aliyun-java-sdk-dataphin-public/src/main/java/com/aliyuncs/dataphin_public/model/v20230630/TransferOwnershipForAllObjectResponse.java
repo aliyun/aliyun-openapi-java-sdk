@@ -15,14 +15,14 @@
 package com.aliyuncs.dataphin_public.model.v20230630;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.dataphin_public.transform.v20230630.CreateStreamBatchJobMappingResponseUnmarshaller;
+import com.aliyuncs.dataphin_public.transform.v20230630.TransferOwnershipForAllObjectResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateStreamBatchJobMappingResponse extends AcsResponse {
+public class TransferOwnershipForAllObjectResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -34,7 +34,7 @@ public class CreateStreamBatchJobMappingResponse extends AcsResponse {
 
 	private String message;
 
-	private Data data;
+	private Long data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -76,50 +76,17 @@ public class CreateStreamBatchJobMappingResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Data getData() {
+	public Long getData() {
 		return this.data;
 	}
 
-	public void setData(Data data) {
+	public void setData(Long data) {
 		this.data = data;
 	}
 
-	public static class Data {
-
-		private String fileId;
-
-		private String url;
-
-		private Long jobId;
-
-		public String getFileId() {
-			return this.fileId;
-		}
-
-		public void setFileId(String fileId) {
-			this.fileId = fileId;
-		}
-
-		public String getUrl() {
-			return this.url;
-		}
-
-		public void setUrl(String url) {
-			this.url = url;
-		}
-
-		public Long getJobId() {
-			return this.jobId;
-		}
-
-		public void setJobId(Long jobId) {
-			this.jobId = jobId;
-		}
-	}
-
 	@Override
-	public CreateStreamBatchJobMappingResponse getInstance(UnmarshallerContext context) {
-		return	CreateStreamBatchJobMappingResponseUnmarshaller.unmarshall(this, context);
+	public TransferOwnershipForAllObjectResponse getInstance(UnmarshallerContext context) {
+		return	TransferOwnershipForAllObjectResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

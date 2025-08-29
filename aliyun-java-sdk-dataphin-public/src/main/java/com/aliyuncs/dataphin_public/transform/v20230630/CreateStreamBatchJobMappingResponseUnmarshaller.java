@@ -32,6 +32,7 @@ public class CreateStreamBatchJobMappingResponseUnmarshaller {
 		Data data = new Data();
 		data.setFileId(_ctx.stringValue("CreateStreamBatchJobMappingResponse.Data.FileId"));
 		data.setUrl(_ctx.stringValue("CreateStreamBatchJobMappingResponse.Data.Url"));
+		data.setJobId(_ctx.longValue("CreateStreamBatchJobMappingResponse.Data.JobId"));
 		createStreamBatchJobMappingResponse.setData(data);
 	 
 	 	return createStreamBatchJobMappingResponse;
