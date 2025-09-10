@@ -29,6 +29,8 @@ public class UpgradeDBInstanceMajorVersionRequest extends RpcAcsRequest<UpgradeD
 
 	private Integer dBInstanceStorage;
 
+	private String customExtraInfo;
+
 	private String period;
 
 	private String upgradeMode;
@@ -94,6 +96,17 @@ public class UpgradeDBInstanceMajorVersionRequest extends RpcAcsRequest<UpgradeD
 		this.dBInstanceStorage = dBInstanceStorage;
 		if(dBInstanceStorage != null){
 			putQueryParameter("DBInstanceStorage", dBInstanceStorage.toString());
+		}
+	}
+
+	public String getCustomExtraInfo() {
+		return this.customExtraInfo;
+	}
+
+	public void setCustomExtraInfo(String customExtraInfo) {
+		this.customExtraInfo = customExtraInfo;
+		if(customExtraInfo != null){
+			putQueryParameter("CustomExtraInfo", customExtraInfo);
 		}
 	}
 

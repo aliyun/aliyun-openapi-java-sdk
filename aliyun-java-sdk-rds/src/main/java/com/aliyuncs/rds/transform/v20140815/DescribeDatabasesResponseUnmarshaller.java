@@ -47,6 +47,7 @@ public class DescribeDatabasesResponseUnmarshaller {
 			database.setResourceGroupId(_ctx.stringValue("DescribeDatabasesResponse.Databases["+ i +"].ResourceGroupId"));
 			database.setTablespace(_ctx.stringValue("DescribeDatabasesResponse.Databases["+ i +"].Tablespace"));
 			database.setTotalCount(_ctx.integerValue("DescribeDatabasesResponse.Databases["+ i +"].TotalCount"));
+			database.setDuckDBEnabled(_ctx.booleanValue("DescribeDatabasesResponse.Databases["+ i +"].DuckDBEnabled"));
 
 			List<Map<Object, Object>> advancedInfo = _ctx.listMapValue("DescribeDatabasesResponse.Databases["+ i +"].AdvancedInfo");
 			database.setAdvancedInfo(advancedInfo);

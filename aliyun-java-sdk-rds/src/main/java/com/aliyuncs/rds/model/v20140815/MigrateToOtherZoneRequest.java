@@ -45,6 +45,8 @@ public class MigrateToOtherZoneRequest extends RpcAcsRequest<MigrateToOtherZoneR
 
 	private String dBInstanceStorageType;
 
+	private String customExtraInfo;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -176,6 +178,17 @@ public class MigrateToOtherZoneRequest extends RpcAcsRequest<MigrateToOtherZoneR
 		this.dBInstanceStorageType = dBInstanceStorageType;
 		if(dBInstanceStorageType != null){
 			putQueryParameter("DBInstanceStorageType", dBInstanceStorageType);
+		}
+	}
+
+	public String getCustomExtraInfo() {
+		return this.customExtraInfo;
+	}
+
+	public void setCustomExtraInfo(String customExtraInfo) {
+		this.customExtraInfo = customExtraInfo;
+		if(customExtraInfo != null){
+			putQueryParameter("CustomExtraInfo", customExtraInfo);
 		}
 	}
 

@@ -28,6 +28,8 @@ public class DescribeDBInstanceReplicationResponseUnmarshaller {
 		describeDBInstanceReplicationResponse.setReplicationState(_ctx.stringValue("DescribeDBInstanceReplicationResponse.ReplicationState"));
 		describeDBInstanceReplicationResponse.setReplicationDelay(_ctx.stringValue("DescribeDBInstanceReplicationResponse.ReplicationDelay"));
 		describeDBInstanceReplicationResponse.setReplicationErrorMessage(_ctx.stringValue("DescribeDBInstanceReplicationResponse.ReplicationErrorMessage"));
+		describeDBInstanceReplicationResponse.setReplicationIp(_ctx.stringValue("DescribeDBInstanceReplicationResponse.ReplicationIp"));
+		describeDBInstanceReplicationResponse.setReplicationPort(_ctx.stringValue("DescribeDBInstanceReplicationResponse.ReplicationPort"));
 	 
 	 	return describeDBInstanceReplicationResponse;
 	}

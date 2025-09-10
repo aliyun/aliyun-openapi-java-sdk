@@ -43,6 +43,8 @@ public class CreateReadOnlyDBInstanceRequest extends RpcAcsRequest<CreateReadOnl
 
 	private String gdnInstanceName;
 
+	private String customExtraInfo;
+
 	private String tddlBizType;
 
 	private String period;
@@ -205,6 +207,17 @@ public class CreateReadOnlyDBInstanceRequest extends RpcAcsRequest<CreateReadOnl
 		this.gdnInstanceName = gdnInstanceName;
 		if(gdnInstanceName != null){
 			putQueryParameter("GdnInstanceName", gdnInstanceName);
+		}
+	}
+
+	public String getCustomExtraInfo() {
+		return this.customExtraInfo;
+	}
+
+	public void setCustomExtraInfo(String customExtraInfo) {
+		this.customExtraInfo = customExtraInfo;
+		if(customExtraInfo != null){
+			putQueryParameter("CustomExtraInfo", customExtraInfo);
 		}
 	}
 

@@ -76,6 +76,8 @@ public class DescribeDatabasesResponse extends AcsResponse {
 
 		private Integer totalCount;
 
+		private Boolean duckDBEnabled;
+
 		private List<AccountPrivilegeInfo> accounts;
 
 		private List<Map<Object,Object>> advancedInfo;
@@ -194,6 +196,14 @@ public class DescribeDatabasesResponse extends AcsResponse {
 
 		public void setTotalCount(Integer totalCount) {
 			this.totalCount = totalCount;
+		}
+
+		public Boolean getDuckDBEnabled() {
+			return this.duckDBEnabled;
+		}
+
+		public void setDuckDBEnabled(Boolean duckDBEnabled) {
+			this.duckDBEnabled = duckDBEnabled;
 		}
 
 		public List<AccountPrivilegeInfo> getAccounts() {

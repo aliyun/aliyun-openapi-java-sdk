@@ -36,6 +36,10 @@ public class DescribeDBInstanceReplicationResponse extends AcsResponse {
 
 	private String replicationErrorMessage;
 
+	private String replicationIp;
+
+	private String replicationPort;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -82,6 +86,22 @@ public class DescribeDBInstanceReplicationResponse extends AcsResponse {
 
 	public void setReplicationErrorMessage(String replicationErrorMessage) {
 		this.replicationErrorMessage = replicationErrorMessage;
+	}
+
+	public String getReplicationIp() {
+		return this.replicationIp;
+	}
+
+	public void setReplicationIp(String replicationIp) {
+		this.replicationIp = replicationIp;
+	}
+
+	public String getReplicationPort() {
+		return this.replicationPort;
+	}
+
+	public void setReplicationPort(String replicationPort) {
+		this.replicationPort = replicationPort;
 	}
 
 	@Override

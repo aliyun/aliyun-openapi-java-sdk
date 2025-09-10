@@ -35,6 +35,8 @@ public class CloneDBInstanceRequest extends RpcAcsRequest<CloneDBInstanceRespons
 
 	private String dBInstanceDescription;
 
+	private String customExtraInfo;
+
 	private String backupType;
 
 	private String period;
@@ -139,6 +141,17 @@ public class CloneDBInstanceRequest extends RpcAcsRequest<CloneDBInstanceRespons
 		this.dBInstanceDescription = dBInstanceDescription;
 		if(dBInstanceDescription != null){
 			putQueryParameter("DBInstanceDescription", dBInstanceDescription);
+		}
+	}
+
+	public String getCustomExtraInfo() {
+		return this.customExtraInfo;
+	}
+
+	public void setCustomExtraInfo(String customExtraInfo) {
+		this.customExtraInfo = customExtraInfo;
+		if(customExtraInfo != null){
+			putQueryParameter("CustomExtraInfo", customExtraInfo);
 		}
 	}
 
