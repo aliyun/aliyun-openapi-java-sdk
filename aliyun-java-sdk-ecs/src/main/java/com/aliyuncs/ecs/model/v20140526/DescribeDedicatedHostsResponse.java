@@ -518,6 +518,8 @@ public class DescribeDedicatedHostsResponse extends AcsResponse {
 
 			private List<SocketCapacity> socketCapacities;
 
+			private List<AvailableInstanceType> availableInstanceTypes;
+
 			public Float getAvailableMemory() {
 				return this.availableMemory;
 			}
@@ -598,6 +600,14 @@ public class DescribeDedicatedHostsResponse extends AcsResponse {
 				this.socketCapacities = socketCapacities;
 			}
 
+			public List<AvailableInstanceType> getAvailableInstanceTypes() {
+				return this.availableInstanceTypes;
+			}
+
+			public void setAvailableInstanceTypes(List<AvailableInstanceType> availableInstanceTypes) {
+				this.availableInstanceTypes = availableInstanceTypes;
+			}
+
 			public static class SocketCapacity {
 
 				private Integer socketId;
@@ -648,6 +658,29 @@ public class DescribeDedicatedHostsResponse extends AcsResponse {
 
 				public void setTotalVcpu(Integer totalVcpu) {
 					this.totalVcpu = totalVcpu;
+				}
+			}
+
+			public static class AvailableInstanceType {
+
+				private Integer availableInstanceCapacity;
+
+				private String instanceType;
+
+				public Integer getAvailableInstanceCapacity() {
+					return this.availableInstanceCapacity;
+				}
+
+				public void setAvailableInstanceCapacity(Integer availableInstanceCapacity) {
+					this.availableInstanceCapacity = availableInstanceCapacity;
+				}
+
+				public String getInstanceType() {
+					return this.instanceType;
+				}
+
+				public void setInstanceType(String instanceType) {
+					this.instanceType = instanceType;
 				}
 			}
 		}

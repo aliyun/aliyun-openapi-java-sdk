@@ -15,6 +15,7 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ecs.Endpoint;
 
@@ -22,20 +23,16 @@ import com.aliyuncs.ecs.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeSecurityGroupAttributeRequest extends RpcAcsRequest<DescribeSecurityGroupAttributeResponse> {
+public class DescribeAutoSnapshotPolicyAssociationsRequest extends RpcAcsRequest<DescribeAutoSnapshotPolicyAssociationsResponse> {
 	   
-
-	private String nicType;
 
 	private Long resourceOwnerId;
 
-	private String securityGroupId;
+	private String autoSnapshotPolicyId;
 
 	private String nextToken;
 
-	private String attribute;
-
-	private String direction;
+	private String diskId;
 
 	private String resourceOwnerAccount;
 
@@ -44,24 +41,14 @@ public class DescribeSecurityGroupAttributeRequest extends RpcAcsRequest<Describ
 	private Long ownerId;
 
 	private Integer maxResults;
-	public DescribeSecurityGroupAttributeRequest() {
-		super("Ecs", "2014-05-26", "DescribeSecurityGroupAttribute", "ecs");
+	public DescribeAutoSnapshotPolicyAssociationsRequest() {
+		super("Ecs", "2014-05-26", "DescribeAutoSnapshotPolicyAssociations", "ecs");
+		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getNicType() {
-		return this.nicType;
-	}
-
-	public void setNicType(String nicType) {
-		this.nicType = nicType;
-		if(nicType != null){
-			putQueryParameter("NicType", nicType);
-		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -75,14 +62,14 @@ public class DescribeSecurityGroupAttributeRequest extends RpcAcsRequest<Describ
 		}
 	}
 
-	public String getSecurityGroupId() {
-		return this.securityGroupId;
+	public String getAutoSnapshotPolicyId() {
+		return this.autoSnapshotPolicyId;
 	}
 
-	public void setSecurityGroupId(String securityGroupId) {
-		this.securityGroupId = securityGroupId;
-		if(securityGroupId != null){
-			putQueryParameter("SecurityGroupId", securityGroupId);
+	public void setAutoSnapshotPolicyId(String autoSnapshotPolicyId) {
+		this.autoSnapshotPolicyId = autoSnapshotPolicyId;
+		if(autoSnapshotPolicyId != null){
+			putQueryParameter("AutoSnapshotPolicyId", autoSnapshotPolicyId);
 		}
 	}
 
@@ -97,25 +84,14 @@ public class DescribeSecurityGroupAttributeRequest extends RpcAcsRequest<Describ
 		}
 	}
 
-	public String getAttribute() {
-		return this.attribute;
+	public String getDiskId() {
+		return this.diskId;
 	}
 
-	public void setAttribute(String attribute) {
-		this.attribute = attribute;
-		if(attribute != null){
-			putQueryParameter("Attribute", attribute);
-		}
-	}
-
-	public String getDirection() {
-		return this.direction;
-	}
-
-	public void setDirection(String direction) {
-		this.direction = direction;
-		if(direction != null){
-			putQueryParameter("Direction", direction);
+	public void setDiskId(String diskId) {
+		this.diskId = diskId;
+		if(diskId != null){
+			putQueryParameter("DiskId", diskId);
 		}
 	}
 
@@ -164,8 +140,8 @@ public class DescribeSecurityGroupAttributeRequest extends RpcAcsRequest<Describ
 	}
 
 	@Override
-	public Class<DescribeSecurityGroupAttributeResponse> getResponseClass() {
-		return DescribeSecurityGroupAttributeResponse.class;
+	public Class<DescribeAutoSnapshotPolicyAssociationsResponse> getResponseClass() {
+		return DescribeAutoSnapshotPolicyAssociationsResponse.class;
 	}
 
 }

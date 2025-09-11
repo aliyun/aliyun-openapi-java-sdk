@@ -56,6 +56,8 @@ public class InvokeCommandRequest extends RpcAcsRequest<InvokeCommandResponse> {
 
 	private String containerName;
 
+	private String ossOutputDelivery;
+
 	private String clientToken;
 
 	private Long timeout;
@@ -154,8 +156,8 @@ public class InvokeCommandRequest extends RpcAcsRequest<InvokeCommandResponse> {
 		this.tags = tags;	
 		if (tags != null) {
 			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
-				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 			}
 		}	
 	}
@@ -239,6 +241,17 @@ public class InvokeCommandRequest extends RpcAcsRequest<InvokeCommandResponse> {
 		}
 	}
 
+	public String getOssOutputDelivery() {
+		return this.ossOutputDelivery;
+	}
+
+	public void setOssOutputDelivery(String ossOutputDelivery) {
+		this.ossOutputDelivery = ossOutputDelivery;
+		if(ossOutputDelivery != null){
+			putQueryParameter("OssOutputDelivery", ossOutputDelivery);
+		}
+	}
+
 	public String getClientToken() {
 		return this.clientToken;
 	}
@@ -280,8 +293,8 @@ public class InvokeCommandRequest extends RpcAcsRequest<InvokeCommandResponse> {
 		this.resourceTags = resourceTags;	
 		if (resourceTags != null) {
 			for (int depth1 = 0; depth1 < resourceTags.size(); depth1++) {
-				putQueryParameter("ResourceTag." + (depth1 + 1) + ".Key" , resourceTags.get(depth1).getKey());
 				putQueryParameter("ResourceTag." + (depth1 + 1) + ".Value" , resourceTags.get(depth1).getValue());
+				putQueryParameter("ResourceTag." + (depth1 + 1) + ".Key" , resourceTags.get(depth1).getKey());
 			}
 		}	
 	}
@@ -332,17 +345,9 @@ public class InvokeCommandRequest extends RpcAcsRequest<InvokeCommandResponse> {
 
 	public static class Tag {
 
-		private String key;
-
 		private String value;
 
-		public String getKey() {
-			return this.key;
-		}
-
-		public void setKey(String key) {
-			this.key = key;
-		}
+		private String key;
 
 		public String getValue() {
 			return this.value;
@@ -350,22 +355,22 @@ public class InvokeCommandRequest extends RpcAcsRequest<InvokeCommandResponse> {
 
 		public void setValue(String value) {
 			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 
 	public static class ResourceTag {
 
-		private String key;
-
 		private String value;
 
-		public String getKey() {
-			return this.key;
-		}
-
-		public void setKey(String key) {
-			this.key = key;
-		}
+		private String key;
 
 		public String getValue() {
 			return this.value;
@@ -373,6 +378,14 @@ public class InvokeCommandRequest extends RpcAcsRequest<InvokeCommandResponse> {
 
 		public void setValue(String value) {
 			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

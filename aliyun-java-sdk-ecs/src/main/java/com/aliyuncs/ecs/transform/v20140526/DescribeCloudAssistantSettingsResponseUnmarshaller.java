@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.ecs.model.v20140526.DescribeCloudAssistantSettingsResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeCloudAssistantSettingsResponse.AgentUpgradeConfig;
 import com.aliyuncs.ecs.model.v20140526.DescribeCloudAssistantSettingsResponse.OssDeliveryConfig;
+import com.aliyuncs.ecs.model.v20140526.DescribeCloudAssistantSettingsResponse.SessionManagerConfig;
 import com.aliyuncs.ecs.model.v20140526.DescribeCloudAssistantSettingsResponse.SlsDeliveryConfig;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -40,6 +41,10 @@ public class DescribeCloudAssistantSettingsResponseUnmarshaller {
 		}
 		agentUpgradeConfig.setAllowedUpgradeWindows(allowedUpgradeWindows);
 		describeCloudAssistantSettingsResponse.setAgentUpgradeConfig(agentUpgradeConfig);
+
+		SessionManagerConfig sessionManagerConfig = new SessionManagerConfig();
+		sessionManagerConfig.setSessionManagerEnabled(_ctx.booleanValue("DescribeCloudAssistantSettingsResponse.SessionManagerConfig.SessionManagerEnabled"));
+		describeCloudAssistantSettingsResponse.setSessionManagerConfig(sessionManagerConfig);
 
 		List<OssDeliveryConfig> ossDeliveryConfigs = new ArrayList<OssDeliveryConfig>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCloudAssistantSettingsResponse.OssDeliveryConfigs.Length"); i++) {

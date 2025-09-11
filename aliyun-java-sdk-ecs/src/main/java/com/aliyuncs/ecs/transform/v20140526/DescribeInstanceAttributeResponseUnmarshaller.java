@@ -103,6 +103,7 @@ public class DescribeInstanceAttributeResponseUnmarshaller {
 		NetworkOptions networkOptions = new NetworkOptions();
 		networkOptions.setEnableJumboFrame(_ctx.booleanValue("DescribeInstanceAttributeResponse.NetworkOptions.EnableJumboFrame"));
 		networkOptions.setEnableNetworkEncryption(_ctx.booleanValue("DescribeInstanceAttributeResponse.NetworkOptions.EnableNetworkEncryption"));
+		networkOptions.setBandwidthWeighting(_ctx.stringValue("DescribeInstanceAttributeResponse.NetworkOptions.BandwidthWeighting"));
 		describeInstanceAttributeResponse.setNetworkOptions(networkOptions);
 
 		List<LockReason> operationLocks = new ArrayList<LockReason>();

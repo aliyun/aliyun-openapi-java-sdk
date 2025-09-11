@@ -43,6 +43,8 @@ public class DescribeSecurityGroupAttributeResponse extends AcsResponse {
 
 	private List<Permission> permissions;
 
+	private List<String> snapshotPolicyIds;
+
 	private ReferencedInfo referencedInfo;
 
 	public String getVpcId() {
@@ -115,6 +117,14 @@ public class DescribeSecurityGroupAttributeResponse extends AcsResponse {
 
 	public void setPermissions(List<Permission> permissions) {
 		this.permissions = permissions;
+	}
+
+	public List<String> getSnapshotPolicyIds() {
+		return this.snapshotPolicyIds;
+	}
+
+	public void setSnapshotPolicyIds(List<String> snapshotPolicyIds) {
+		this.snapshotPolicyIds = snapshotPolicyIds;
 	}
 
 	public ReferencedInfo getReferencedInfo() {

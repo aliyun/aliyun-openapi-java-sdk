@@ -33,6 +33,8 @@ public class DescribeCloudAssistantSettingsResponse extends AcsResponse {
 
 	private AgentUpgradeConfig agentUpgradeConfig;
 
+	private SessionManagerConfig sessionManagerConfig;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -63,6 +65,14 @@ public class DescribeCloudAssistantSettingsResponse extends AcsResponse {
 
 	public void setAgentUpgradeConfig(AgentUpgradeConfig agentUpgradeConfig) {
 		this.agentUpgradeConfig = agentUpgradeConfig;
+	}
+
+	public SessionManagerConfig getSessionManagerConfig() {
+		return this.sessionManagerConfig;
+	}
+
+	public void setSessionManagerConfig(SessionManagerConfig sessionManagerConfig) {
+		this.sessionManagerConfig = sessionManagerConfig;
 	}
 
 	public static class OssDeliveryConfig {
@@ -211,6 +221,19 @@ public class DescribeCloudAssistantSettingsResponse extends AcsResponse {
 
 		public void setAllowedUpgradeWindows(List<String> allowedUpgradeWindows) {
 			this.allowedUpgradeWindows = allowedUpgradeWindows;
+		}
+	}
+
+	public static class SessionManagerConfig {
+
+		private Boolean sessionManagerEnabled;
+
+		public Boolean getSessionManagerEnabled() {
+			return this.sessionManagerEnabled;
+		}
+
+		public void setSessionManagerEnabled(Boolean sessionManagerEnabled) {
+			this.sessionManagerEnabled = sessionManagerEnabled;
 		}
 	}
 

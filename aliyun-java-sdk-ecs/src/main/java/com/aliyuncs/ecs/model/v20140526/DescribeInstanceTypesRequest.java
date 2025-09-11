@@ -74,6 +74,8 @@ public class DescribeInstanceTypesRequest extends RpcAcsRequest<DescribeInstance
 
 	private Integer minimumEniQuantity;
 
+	private List<String> additionalAttributess;
+
 	private String instanceFamilyLevel;
 
 	private Integer minimumQueuePairNumber;
@@ -400,6 +402,19 @@ public class DescribeInstanceTypesRequest extends RpcAcsRequest<DescribeInstance
 		if(minimumEniQuantity != null){
 			putQueryParameter("MinimumEniQuantity", minimumEniQuantity.toString());
 		}
+	}
+
+	public List<String> getAdditionalAttributess() {
+		return this.additionalAttributess;
+	}
+
+	public void setAdditionalAttributess(List<String> additionalAttributess) {
+		this.additionalAttributess = additionalAttributess;	
+		if (additionalAttributess != null) {
+			for (int i = 0; i < additionalAttributess.size(); i++) {
+				putQueryParameter("AdditionalAttributes." + (i + 1) , additionalAttributess.get(i));
+			}
+		}	
 	}
 
 	public String getInstanceFamilyLevel() {

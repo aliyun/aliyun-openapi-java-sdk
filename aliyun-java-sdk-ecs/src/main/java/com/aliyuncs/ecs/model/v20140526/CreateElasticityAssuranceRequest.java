@@ -128,8 +128,8 @@ public class CreateElasticityAssuranceRequest extends RpcAcsRequest<CreateElasti
 		this.tags = tags;	
 		if (tags != null) {
 			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
-				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 			}
 		}	
 	}
@@ -311,27 +311,19 @@ public class CreateElasticityAssuranceRequest extends RpcAcsRequest<CreateElasti
 		this.recurrenceRuless = recurrenceRuless;	
 		if (recurrenceRuless != null) {
 			for (int depth1 = 0; depth1 < recurrenceRuless.size(); depth1++) {
-				putQueryParameter("RecurrenceRules." + (depth1 + 1) + ".RecurrenceType" , recurrenceRuless.get(depth1).getRecurrenceType());
-				putQueryParameter("RecurrenceRules." + (depth1 + 1) + ".RecurrenceValue" , recurrenceRuless.get(depth1).getRecurrenceValue());
 				putQueryParameter("RecurrenceRules." + (depth1 + 1) + ".StartHour" , recurrenceRuless.get(depth1).getStartHour());
+				putQueryParameter("RecurrenceRules." + (depth1 + 1) + ".RecurrenceType" , recurrenceRuless.get(depth1).getRecurrenceType());
 				putQueryParameter("RecurrenceRules." + (depth1 + 1) + ".EndHour" , recurrenceRuless.get(depth1).getEndHour());
+				putQueryParameter("RecurrenceRules." + (depth1 + 1) + ".RecurrenceValue" , recurrenceRuless.get(depth1).getRecurrenceValue());
 			}
 		}	
 	}
 
 	public static class Tag {
 
-		private String key;
-
 		private String value;
 
-		public String getKey() {
-			return this.key;
-		}
-
-		public void setKey(String key) {
-			this.key = key;
-		}
+		private String key;
 
 		public String getValue() {
 			return this.value;
@@ -340,33 +332,25 @@ public class CreateElasticityAssuranceRequest extends RpcAcsRequest<CreateElasti
 		public void setValue(String value) {
 			this.value = value;
 		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
 	}
 
 	public static class RecurrenceRules {
 
-		private String recurrenceType;
-
-		private String recurrenceValue;
-
 		private Integer startHour;
+
+		private String recurrenceType;
 
 		private Integer endHour;
 
-		public String getRecurrenceType() {
-			return this.recurrenceType;
-		}
-
-		public void setRecurrenceType(String recurrenceType) {
-			this.recurrenceType = recurrenceType;
-		}
-
-		public String getRecurrenceValue() {
-			return this.recurrenceValue;
-		}
-
-		public void setRecurrenceValue(String recurrenceValue) {
-			this.recurrenceValue = recurrenceValue;
-		}
+		private String recurrenceValue;
 
 		public Integer getStartHour() {
 			return this.startHour;
@@ -376,12 +360,28 @@ public class CreateElasticityAssuranceRequest extends RpcAcsRequest<CreateElasti
 			this.startHour = startHour;
 		}
 
+		public String getRecurrenceType() {
+			return this.recurrenceType;
+		}
+
+		public void setRecurrenceType(String recurrenceType) {
+			this.recurrenceType = recurrenceType;
+		}
+
 		public Integer getEndHour() {
 			return this.endHour;
 		}
 
 		public void setEndHour(Integer endHour) {
 			this.endHour = endHour;
+		}
+
+		public String getRecurrenceValue() {
+			return this.recurrenceValue;
+		}
+
+		public void setRecurrenceValue(String recurrenceValue) {
+			this.recurrenceValue = recurrenceValue;
 		}
 	}
 

@@ -107,6 +107,8 @@ public class DescribeTasksResponse extends AcsResponse {
 
 		private String taskGroupId;
 
+		private String failedCode;
+
 		private List<String> resourceIds;
 
 		public String getCreationTime() {
@@ -187,6 +189,14 @@ public class DescribeTasksResponse extends AcsResponse {
 
 		public void setTaskGroupId(String taskGroupId) {
 			this.taskGroupId = taskGroupId;
+		}
+
+		public String getFailedCode() {
+			return this.failedCode;
+		}
+
+		public void setFailedCode(String failedCode) {
+			this.failedCode = failedCode;
 		}
 
 		public List<String> getResourceIds() {

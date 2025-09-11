@@ -45,6 +45,7 @@ public class DescribeTasksResponseUnmarshaller {
 			task.setSource(_ctx.stringValue("DescribeTasksResponse.TaskSet["+ i +"].Source"));
 			task.setFailedReason(_ctx.stringValue("DescribeTasksResponse.TaskSet["+ i +"].FailedReason"));
 			task.setTaskGroupId(_ctx.stringValue("DescribeTasksResponse.TaskSet["+ i +"].TaskGroupId"));
+			task.setFailedCode(_ctx.stringValue("DescribeTasksResponse.TaskSet["+ i +"].FailedCode"));
 
 			List<String> resourceIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeTasksResponse.TaskSet["+ i +"].ResourceIds.Length"); j++) {

@@ -16,6 +16,8 @@ package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ecs.Endpoint;
 
@@ -29,6 +31,9 @@ public class StartTerminalSessionRequest extends RpcAcsRequest<StartTerminalSess
 	private Long resourceOwnerId;
 
 	private String commandLine;
+
+	@SerializedName("encryptionOptions")
+	private EncryptionOptions encryptionOptions;
 
 	private String targetServer;
 
@@ -76,6 +81,17 @@ public class StartTerminalSessionRequest extends RpcAcsRequest<StartTerminalSess
 		if(commandLine != null){
 			putQueryParameter("CommandLine", commandLine);
 		}
+	}
+
+	public EncryptionOptions getEncryptionOptions() {
+		return this.encryptionOptions;
+	}
+
+	public void setEncryptionOptions(EncryptionOptions encryptionOptions) {
+		this.encryptionOptions = encryptionOptions;	
+		if (encryptionOptions != null) {
+			putQueryParameter("EncryptionOptions" , new Gson().toJson(encryptionOptions));
+		}	
 	}
 
 	public String getTargetServer() {
@@ -176,6 +192,42 @@ public class StartTerminalSessionRequest extends RpcAcsRequest<StartTerminalSess
 		this.username = username;
 		if(username != null){
 			putQueryParameter("Username", username);
+		}
+	}
+
+	public static class EncryptionOptions {
+
+		@SerializedName("Enabled")
+		private Boolean enabled;
+
+		@SerializedName("KMSKeyId")
+		private String kMSKeyId;
+
+		@SerializedName("Mode")
+		private String mode;
+
+		public Boolean getEnabled() {
+			return this.enabled;
+		}
+
+		public void setEnabled(Boolean enabled) {
+			this.enabled = enabled;
+		}
+
+		public String getKMSKeyId() {
+			return this.kMSKeyId;
+		}
+
+		public void setKMSKeyId(String kMSKeyId) {
+			this.kMSKeyId = kMSKeyId;
+		}
+
+		public String getMode() {
+			return this.mode;
+		}
+
+		public void setMode(String mode) {
+			this.mode = mode;
 		}
 	}
 

@@ -87,64 +87,58 @@ public class DescribeInvocationsResponse extends AcsResponse {
 
 	public static class Invocation {
 
-		private String creationTime;
-
-		private String frequency;
+		private String ossOutputDelivery;
 
 		private String invocationStatus;
-
-		private String repeatMode;
-
-		private String commandId;
-
-		private String commandType;
-
-		private String invokeStatus;
 
 		private String parameters;
 
 		private Boolean timed;
 
-		private String commandContent;
-
-		private String commandName;
-
 		private String commandDescription;
 
-		private String invokeId;
+		private Long timeout;
 
-		private String username;
+		private String commandContent;
 
 		private String workingDir;
 
-		private Long timeout;
+		private String repeatMode;
+
+		private String invokeStatus;
+
+		private String commandType;
+
+		private String username;
 
 		private String containerId;
 
 		private String containerName;
 
-		private String terminationMode;
+		private String creationTime;
+
+		private String frequency;
 
 		private String launcher;
+
+		private String commandId;
+
+		private String commandName;
+
+		private String invokeId;
+
+		private String terminationMode;
 
 		private List<InvokeInstance> invokeInstances;
 
 		private List<Tag> tags;
 
-		public String getCreationTime() {
-			return this.creationTime;
+		public String getOssOutputDelivery() {
+			return this.ossOutputDelivery;
 		}
 
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
-		}
-
-		public String getFrequency() {
-			return this.frequency;
-		}
-
-		public void setFrequency(String frequency) {
-			this.frequency = frequency;
+		public void setOssOutputDelivery(String ossOutputDelivery) {
+			this.ossOutputDelivery = ossOutputDelivery;
 		}
 
 		public String getInvocationStatus() {
@@ -153,38 +147,6 @@ public class DescribeInvocationsResponse extends AcsResponse {
 
 		public void setInvocationStatus(String invocationStatus) {
 			this.invocationStatus = invocationStatus;
-		}
-
-		public String getRepeatMode() {
-			return this.repeatMode;
-		}
-
-		public void setRepeatMode(String repeatMode) {
-			this.repeatMode = repeatMode;
-		}
-
-		public String getCommandId() {
-			return this.commandId;
-		}
-
-		public void setCommandId(String commandId) {
-			this.commandId = commandId;
-		}
-
-		public String getCommandType() {
-			return this.commandType;
-		}
-
-		public void setCommandType(String commandType) {
-			this.commandType = commandType;
-		}
-
-		public String getInvokeStatus() {
-			return this.invokeStatus;
-		}
-
-		public void setInvokeStatus(String invokeStatus) {
-			this.invokeStatus = invokeStatus;
 		}
 
 		public String getParameters() {
@@ -203,22 +165,6 @@ public class DescribeInvocationsResponse extends AcsResponse {
 			this.timed = timed;
 		}
 
-		public String getCommandContent() {
-			return this.commandContent;
-		}
-
-		public void setCommandContent(String commandContent) {
-			this.commandContent = commandContent;
-		}
-
-		public String getCommandName() {
-			return this.commandName;
-		}
-
-		public void setCommandName(String commandName) {
-			this.commandName = commandName;
-		}
-
 		public String getCommandDescription() {
 			return this.commandDescription;
 		}
@@ -227,20 +173,20 @@ public class DescribeInvocationsResponse extends AcsResponse {
 			this.commandDescription = commandDescription;
 		}
 
-		public String getInvokeId() {
-			return this.invokeId;
+		public Long getTimeout() {
+			return this.timeout;
 		}
 
-		public void setInvokeId(String invokeId) {
-			this.invokeId = invokeId;
+		public void setTimeout(Long timeout) {
+			this.timeout = timeout;
 		}
 
-		public String getUsername() {
-			return this.username;
+		public String getCommandContent() {
+			return this.commandContent;
 		}
 
-		public void setUsername(String username) {
-			this.username = username;
+		public void setCommandContent(String commandContent) {
+			this.commandContent = commandContent;
 		}
 
 		public String getWorkingDir() {
@@ -251,12 +197,36 @@ public class DescribeInvocationsResponse extends AcsResponse {
 			this.workingDir = workingDir;
 		}
 
-		public Long getTimeout() {
-			return this.timeout;
+		public String getRepeatMode() {
+			return this.repeatMode;
 		}
 
-		public void setTimeout(Long timeout) {
-			this.timeout = timeout;
+		public void setRepeatMode(String repeatMode) {
+			this.repeatMode = repeatMode;
+		}
+
+		public String getInvokeStatus() {
+			return this.invokeStatus;
+		}
+
+		public void setInvokeStatus(String invokeStatus) {
+			this.invokeStatus = invokeStatus;
+		}
+
+		public String getCommandType() {
+			return this.commandType;
+		}
+
+		public void setCommandType(String commandType) {
+			this.commandType = commandType;
+		}
+
+		public String getUsername() {
+			return this.username;
+		}
+
+		public void setUsername(String username) {
+			this.username = username;
 		}
 
 		public String getContainerId() {
@@ -275,12 +245,20 @@ public class DescribeInvocationsResponse extends AcsResponse {
 			this.containerName = containerName;
 		}
 
-		public String getTerminationMode() {
-			return this.terminationMode;
+		public String getCreationTime() {
+			return this.creationTime;
 		}
 
-		public void setTerminationMode(String terminationMode) {
-			this.terminationMode = terminationMode;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
+		}
+
+		public String getFrequency() {
+			return this.frequency;
+		}
+
+		public void setFrequency(String frequency) {
+			this.frequency = frequency;
 		}
 
 		public String getLauncher() {
@@ -289,6 +267,38 @@ public class DescribeInvocationsResponse extends AcsResponse {
 
 		public void setLauncher(String launcher) {
 			this.launcher = launcher;
+		}
+
+		public String getCommandId() {
+			return this.commandId;
+		}
+
+		public void setCommandId(String commandId) {
+			this.commandId = commandId;
+		}
+
+		public String getCommandName() {
+			return this.commandName;
+		}
+
+		public void setCommandName(String commandName) {
+			this.commandName = commandName;
+		}
+
+		public String getInvokeId() {
+			return this.invokeId;
+		}
+
+		public void setInvokeId(String invokeId) {
+			this.invokeId = invokeId;
+		}
+
+		public String getTerminationMode() {
+			return this.terminationMode;
+		}
+
+		public void setTerminationMode(String terminationMode) {
+			this.terminationMode = terminationMode;
 		}
 
 		public List<InvokeInstance> getInvokeInstances() {
@@ -309,35 +319,143 @@ public class DescribeInvocationsResponse extends AcsResponse {
 
 		public static class InvokeInstance {
 
+			private Integer dropped;
+
+			private String invocationStatus;
+
+			private String instanceId;
+
+			private Boolean timed;
+
+			private String instanceInvokeStatus;
+
+			private Long exitCode;
+
+			private String errorInfo;
+
+			private String startTime;
+
+			private Integer repeats;
+
+			private String ossOutputUri;
+
+			private String ossOutputStatus;
+
+			private String finishTime;
+
+			private String output;
+
 			private String creationTime;
 
 			private String updateTime;
 
-			private String finishTime;
-
-			private String invocationStatus;
-
-			private Integer repeats;
-
-			private String instanceId;
-
-			private String output;
-
-			private Integer dropped;
+			private String errorCode;
 
 			private String stopTime;
 
-			private Long exitCode;
+			public Integer getDropped() {
+				return this.dropped;
+			}
 
-			private String startTime;
+			public void setDropped(Integer dropped) {
+				this.dropped = dropped;
+			}
 
-			private String errorInfo;
+			public String getInvocationStatus() {
+				return this.invocationStatus;
+			}
 
-			private Boolean timed;
+			public void setInvocationStatus(String invocationStatus) {
+				this.invocationStatus = invocationStatus;
+			}
 
-			private String errorCode;
+			public String getInstanceId() {
+				return this.instanceId;
+			}
 
-			private String instanceInvokeStatus;
+			public void setInstanceId(String instanceId) {
+				this.instanceId = instanceId;
+			}
+
+			public Boolean getTimed() {
+				return this.timed;
+			}
+
+			public void setTimed(Boolean timed) {
+				this.timed = timed;
+			}
+
+			public String getInstanceInvokeStatus() {
+				return this.instanceInvokeStatus;
+			}
+
+			public void setInstanceInvokeStatus(String instanceInvokeStatus) {
+				this.instanceInvokeStatus = instanceInvokeStatus;
+			}
+
+			public Long getExitCode() {
+				return this.exitCode;
+			}
+
+			public void setExitCode(Long exitCode) {
+				this.exitCode = exitCode;
+			}
+
+			public String getErrorInfo() {
+				return this.errorInfo;
+			}
+
+			public void setErrorInfo(String errorInfo) {
+				this.errorInfo = errorInfo;
+			}
+
+			public String getStartTime() {
+				return this.startTime;
+			}
+
+			public void setStartTime(String startTime) {
+				this.startTime = startTime;
+			}
+
+			public Integer getRepeats() {
+				return this.repeats;
+			}
+
+			public void setRepeats(Integer repeats) {
+				this.repeats = repeats;
+			}
+
+			public String getOssOutputUri() {
+				return this.ossOutputUri;
+			}
+
+			public void setOssOutputUri(String ossOutputUri) {
+				this.ossOutputUri = ossOutputUri;
+			}
+
+			public String getOssOutputStatus() {
+				return this.ossOutputStatus;
+			}
+
+			public void setOssOutputStatus(String ossOutputStatus) {
+				this.ossOutputStatus = ossOutputStatus;
+			}
+
+			public String getFinishTime() {
+				return this.finishTime;
+			}
+
+			public void setFinishTime(String finishTime) {
+				this.finishTime = finishTime;
+			}
+
+			public String getOutput() {
+				return this.output;
+			}
+
+			public void setOutput(String output) {
+				this.output = output;
+			}
 
 			public String getCreationTime() {
 				return this.creationTime;
@@ -355,94 +473,6 @@ public class DescribeInvocationsResponse extends AcsResponse {
 				this.updateTime = updateTime;
 			}
 
-			public String getFinishTime() {
-				return this.finishTime;
-			}
-
-			public void setFinishTime(String finishTime) {
-				this.finishTime = finishTime;
-			}
-
-			public String getInvocationStatus() {
-				return this.invocationStatus;
-			}
-
-			public void setInvocationStatus(String invocationStatus) {
-				this.invocationStatus = invocationStatus;
-			}
-
-			public Integer getRepeats() {
-				return this.repeats;
-			}
-
-			public void setRepeats(Integer repeats) {
-				this.repeats = repeats;
-			}
-
-			public String getInstanceId() {
-				return this.instanceId;
-			}
-
-			public void setInstanceId(String instanceId) {
-				this.instanceId = instanceId;
-			}
-
-			public String getOutput() {
-				return this.output;
-			}
-
-			public void setOutput(String output) {
-				this.output = output;
-			}
-
-			public Integer getDropped() {
-				return this.dropped;
-			}
-
-			public void setDropped(Integer dropped) {
-				this.dropped = dropped;
-			}
-
-			public String getStopTime() {
-				return this.stopTime;
-			}
-
-			public void setStopTime(String stopTime) {
-				this.stopTime = stopTime;
-			}
-
-			public Long getExitCode() {
-				return this.exitCode;
-			}
-
-			public void setExitCode(Long exitCode) {
-				this.exitCode = exitCode;
-			}
-
-			public String getStartTime() {
-				return this.startTime;
-			}
-
-			public void setStartTime(String startTime) {
-				this.startTime = startTime;
-			}
-
-			public String getErrorInfo() {
-				return this.errorInfo;
-			}
-
-			public void setErrorInfo(String errorInfo) {
-				this.errorInfo = errorInfo;
-			}
-
-			public Boolean getTimed() {
-				return this.timed;
-			}
-
-			public void setTimed(Boolean timed) {
-				this.timed = timed;
-			}
-
 			public String getErrorCode() {
 				return this.errorCode;
 			}
@@ -451,12 +481,12 @@ public class DescribeInvocationsResponse extends AcsResponse {
 				this.errorCode = errorCode;
 			}
 
-			public String getInstanceInvokeStatus() {
-				return this.instanceInvokeStatus;
+			public String getStopTime() {
+				return this.stopTime;
 			}
 
-			public void setInstanceInvokeStatus(String instanceInvokeStatus) {
-				this.instanceInvokeStatus = instanceInvokeStatus;
+			public void setStopTime(String stopTime) {
+				this.stopTime = stopTime;
 			}
 		}
 

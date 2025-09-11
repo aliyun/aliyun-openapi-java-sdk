@@ -37,22 +37,22 @@ public class DescribeCommandsResponseUnmarshaller {
 		List<Command> commands = new ArrayList<Command>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCommandsResponse.Commands.Length"); i++) {
 			Command command = new Command();
-			command.setCreationTime(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].CreationTime"));
-			command.setType(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].Type"));
-			command.setTimeout(_ctx.longValue("DescribeCommandsResponse.Commands["+ i +"].Timeout"));
-			command.setInvokeTimes(_ctx.integerValue("DescribeCommandsResponse.Commands["+ i +"].InvokeTimes"));
-			command.setCommandId(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].CommandId"));
-			command.setWorkingDir(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].WorkingDir"));
 			command.setDescription(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].Description"));
-			command.setVersion(_ctx.integerValue("DescribeCommandsResponse.Commands["+ i +"].Version"));
-			command.setProvider(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].Provider"));
-			command.setCommandContent(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].CommandContent"));
 			command.setCategory(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].Category"));
-			command.setLatest(_ctx.booleanValue("DescribeCommandsResponse.Commands["+ i +"].Latest"));
-			command.setName(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].Name"));
-			command.setEnableParameter(_ctx.booleanValue("DescribeCommandsResponse.Commands["+ i +"].EnableParameter"));
 			command.setResourceGroupId(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].ResourceGroupId"));
+			command.setTimeout(_ctx.longValue("DescribeCommandsResponse.Commands["+ i +"].Timeout"));
+			command.setProvider(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].Provider"));
+			command.setName(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].Name"));
+			command.setWorkingDir(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].WorkingDir"));
+			command.setCommandContent(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].CommandContent"));
+			command.setType(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].Type"));
+			command.setVersion(_ctx.integerValue("DescribeCommandsResponse.Commands["+ i +"].Version"));
+			command.setInvokeTimes(_ctx.integerValue("DescribeCommandsResponse.Commands["+ i +"].InvokeTimes"));
+			command.setCreationTime(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].CreationTime"));
 			command.setLauncher(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].Launcher"));
+			command.setLatest(_ctx.booleanValue("DescribeCommandsResponse.Commands["+ i +"].Latest"));
+			command.setEnableParameter(_ctx.booleanValue("DescribeCommandsResponse.Commands["+ i +"].EnableParameter"));
+			command.setCommandId(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].CommandId"));
 
 			List<String> parameterNames = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeCommandsResponse.Commands["+ i +"].ParameterNames.Length"); j++) {
@@ -63,9 +63,9 @@ public class DescribeCommandsResponseUnmarshaller {
 			List<ParameterDefinition> parameterDefinitions = new ArrayList<ParameterDefinition>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeCommandsResponse.Commands["+ i +"].ParameterDefinitions.Length"); j++) {
 				ParameterDefinition parameterDefinition = new ParameterDefinition();
-				parameterDefinition.setRequired(_ctx.booleanValue("DescribeCommandsResponse.Commands["+ i +"].ParameterDefinitions["+ j +"].Required"));
-				parameterDefinition.setDescription(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].ParameterDefinitions["+ j +"].Description"));
 				parameterDefinition.setDefaultValue(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].ParameterDefinitions["+ j +"].DefaultValue"));
+				parameterDefinition.setDescription(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].ParameterDefinitions["+ j +"].Description"));
+				parameterDefinition.setRequired(_ctx.booleanValue("DescribeCommandsResponse.Commands["+ i +"].ParameterDefinitions["+ j +"].Required"));
 				parameterDefinition.setParameterName(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].ParameterDefinitions["+ j +"].ParameterName"));
 				parameterDefinition.setPatternRegex(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].ParameterDefinitions["+ j +"].PatternRegex"));
 

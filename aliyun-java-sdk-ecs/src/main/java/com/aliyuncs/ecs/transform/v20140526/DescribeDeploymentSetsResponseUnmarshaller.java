@@ -39,6 +39,7 @@ public class DescribeDeploymentSetsResponseUnmarshaller {
 			deploymentSet.setCreationTime(_ctx.stringValue("DescribeDeploymentSetsResponse.DeploymentSets["+ i +"].CreationTime"));
 			deploymentSet.setStrategy(_ctx.stringValue("DescribeDeploymentSetsResponse.DeploymentSets["+ i +"].Strategy"));
 			deploymentSet.setDeploymentSetId(_ctx.stringValue("DescribeDeploymentSetsResponse.DeploymentSets["+ i +"].DeploymentSetId"));
+			deploymentSet.setAccountId(_ctx.longValue("DescribeDeploymentSetsResponse.DeploymentSets["+ i +"].AccountId"));
 			deploymentSet.setDeploymentStrategy(_ctx.stringValue("DescribeDeploymentSetsResponse.DeploymentSets["+ i +"].DeploymentStrategy"));
 			deploymentSet.setDeploymentSetDescription(_ctx.stringValue("DescribeDeploymentSetsResponse.DeploymentSets["+ i +"].DeploymentSetDescription"));
 			deploymentSet.setDomain(_ctx.stringValue("DescribeDeploymentSetsResponse.DeploymentSets["+ i +"].Domain"));

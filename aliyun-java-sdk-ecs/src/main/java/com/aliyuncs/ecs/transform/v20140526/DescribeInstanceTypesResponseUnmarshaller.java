@@ -24,6 +24,9 @@ import com.aliyuncs.ecs.model.v20140526.DescribeInstanceTypesResponse.InstanceTy
 import com.aliyuncs.ecs.model.v20140526.DescribeInstanceTypesResponse.InstanceType.CpuOptions;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstanceTypesResponse.InstanceType.EnhancedNetwork;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstanceTypesResponse.InstanceType.NetworkCardInfo;
+import com.aliyuncs.ecs.model.v20140526.DescribeInstanceTypesResponse.InstanceType.NetworkInfo;
+import com.aliyuncs.ecs.model.v20140526.DescribeInstanceTypesResponse.InstanceType.NetworkInfo.BandwidthWeighting;
+import com.aliyuncs.ecs.model.v20140526.DescribeInstanceTypesResponse.InstanceType.NetworkInfo.BandwidthWeighting.WeightingInfo;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -104,6 +107,25 @@ public class DescribeInstanceTypesResponseUnmarshaller {
 			Clock clock = new Clock();
 			clock.setPtpSupport(_ctx.stringValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].Clock.PtpSupport"));
 			instanceType.setClock(clock);
+
+			NetworkInfo networkInfo = new NetworkInfo();
+
+			BandwidthWeighting bandwidthWeighting = new BandwidthWeighting();
+
+			List<WeightingInfo> weightingInfos = new ArrayList<WeightingInfo>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].NetworkInfo.BandwidthWeighting.WeightingInfos.Length"); j++) {
+				WeightingInfo weightingInfo = new WeightingInfo();
+				weightingInfo.setVpcBandwidth(_ctx.longValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].NetworkInfo.BandwidthWeighting.WeightingInfos["+ j +"].VpcBandwidth"));
+				weightingInfo.setEbsBurstBandwidth(_ctx.longValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].NetworkInfo.BandwidthWeighting.WeightingInfos["+ j +"].EbsBurstBandwidth"));
+				weightingInfo.setEbsBandwidth(_ctx.longValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].NetworkInfo.BandwidthWeighting.WeightingInfos["+ j +"].EbsBandwidth"));
+				weightingInfo.setVpcBurstBandwidth(_ctx.longValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].NetworkInfo.BandwidthWeighting.WeightingInfos["+ j +"].VpcBurstBandwidth"));
+				weightingInfo.setName(_ctx.stringValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].NetworkInfo.BandwidthWeighting.WeightingInfos["+ j +"].Name"));
+
+				weightingInfos.add(weightingInfo);
+			}
+			bandwidthWeighting.setWeightingInfos(weightingInfos);
+			networkInfo.setBandwidthWeighting(bandwidthWeighting);
+			instanceType.setNetworkInfo(networkInfo);
 
 			List<NetworkCardInfo> networkCards = new ArrayList<NetworkCardInfo>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].NetworkCards.Length"); j++) {

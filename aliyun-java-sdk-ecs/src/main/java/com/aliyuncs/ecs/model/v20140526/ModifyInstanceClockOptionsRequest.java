@@ -15,6 +15,7 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ecs.Endpoint;
 
@@ -22,20 +23,16 @@ import com.aliyuncs.ecs.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeSecurityGroupAttributeRequest extends RpcAcsRequest<DescribeSecurityGroupAttributeResponse> {
+public class ModifyInstanceClockOptionsRequest extends RpcAcsRequest<ModifyInstanceClockOptionsResponse> {
 	   
-
-	private String nicType;
 
 	private Long resourceOwnerId;
 
-	private String securityGroupId;
+	private String clientToken;
 
-	private String nextToken;
+	private String ptpStatus;
 
-	private String attribute;
-
-	private String direction;
+	private Boolean dryRun;
 
 	private String resourceOwnerAccount;
 
@@ -43,25 +40,15 @@ public class DescribeSecurityGroupAttributeRequest extends RpcAcsRequest<Describ
 
 	private Long ownerId;
 
-	private Integer maxResults;
-	public DescribeSecurityGroupAttributeRequest() {
-		super("Ecs", "2014-05-26", "DescribeSecurityGroupAttribute", "ecs");
+	private String instanceId;
+	public ModifyInstanceClockOptionsRequest() {
+		super("Ecs", "2014-05-26", "ModifyInstanceClockOptions", "ecs");
+		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getNicType() {
-		return this.nicType;
-	}
-
-	public void setNicType(String nicType) {
-		this.nicType = nicType;
-		if(nicType != null){
-			putQueryParameter("NicType", nicType);
-		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -75,47 +62,36 @@ public class DescribeSecurityGroupAttributeRequest extends RpcAcsRequest<Describ
 		}
 	}
 
-	public String getSecurityGroupId() {
-		return this.securityGroupId;
+	public String getClientToken() {
+		return this.clientToken;
 	}
 
-	public void setSecurityGroupId(String securityGroupId) {
-		this.securityGroupId = securityGroupId;
-		if(securityGroupId != null){
-			putQueryParameter("SecurityGroupId", securityGroupId);
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
-	public String getNextToken() {
-		return this.nextToken;
+	public String getPtpStatus() {
+		return this.ptpStatus;
 	}
 
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
-		if(nextToken != null){
-			putQueryParameter("NextToken", nextToken);
+	public void setPtpStatus(String ptpStatus) {
+		this.ptpStatus = ptpStatus;
+		if(ptpStatus != null){
+			putQueryParameter("PtpStatus", ptpStatus);
 		}
 	}
 
-	public String getAttribute() {
-		return this.attribute;
+	public Boolean getDryRun() {
+		return this.dryRun;
 	}
 
-	public void setAttribute(String attribute) {
-		this.attribute = attribute;
-		if(attribute != null){
-			putQueryParameter("Attribute", attribute);
-		}
-	}
-
-	public String getDirection() {
-		return this.direction;
-	}
-
-	public void setDirection(String direction) {
-		this.direction = direction;
-		if(direction != null){
-			putQueryParameter("Direction", direction);
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
 		}
 	}
 
@@ -152,20 +128,20 @@ public class DescribeSecurityGroupAttributeRequest extends RpcAcsRequest<Describ
 		}
 	}
 
-	public Integer getMaxResults() {
-		return this.maxResults;
+	public String getInstanceId() {
+		return this.instanceId;
 	}
 
-	public void setMaxResults(Integer maxResults) {
-		this.maxResults = maxResults;
-		if(maxResults != null){
-			putQueryParameter("MaxResults", maxResults.toString());
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
 	@Override
-	public Class<DescribeSecurityGroupAttributeResponse> getResponseClass() {
-		return DescribeSecurityGroupAttributeResponse.class;
+	public Class<ModifyInstanceClockOptionsResponse> getResponseClass() {
+		return ModifyInstanceClockOptionsResponse.class;
 	}
 
 }

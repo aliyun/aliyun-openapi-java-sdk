@@ -145,6 +145,8 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 
 		private Clock clock;
 
+		private NetworkInfo networkInfo;
+
 		public Integer getEniTotalQuantity() {
 			return this.eniTotalQuantity;
 		}
@@ -497,6 +499,14 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 			this.clock = clock;
 		}
 
+		public NetworkInfo getNetworkInfo() {
+			return this.networkInfo;
+		}
+
+		public void setNetworkInfo(NetworkInfo networkInfo) {
+			this.networkInfo = networkInfo;
+		}
+
 		public static class NetworkCardInfo {
 
 			private Integer networkCardIndex;
@@ -629,6 +639,85 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 
 			public void setPtpSupport(String ptpSupport) {
 				this.ptpSupport = ptpSupport;
+			}
+		}
+
+		public static class NetworkInfo {
+
+			private BandwidthWeighting bandwidthWeighting;
+
+			public BandwidthWeighting getBandwidthWeighting() {
+				return this.bandwidthWeighting;
+			}
+
+			public void setBandwidthWeighting(BandwidthWeighting bandwidthWeighting) {
+				this.bandwidthWeighting = bandwidthWeighting;
+			}
+
+			public static class BandwidthWeighting {
+
+				private List<WeightingInfo> weightingInfos;
+
+				public List<WeightingInfo> getWeightingInfos() {
+					return this.weightingInfos;
+				}
+
+				public void setWeightingInfos(List<WeightingInfo> weightingInfos) {
+					this.weightingInfos = weightingInfos;
+				}
+
+				public static class WeightingInfo {
+
+					private Long vpcBandwidth;
+
+					private Long ebsBurstBandwidth;
+
+					private Long ebsBandwidth;
+
+					private Long vpcBurstBandwidth;
+
+					private String name;
+
+					public Long getVpcBandwidth() {
+						return this.vpcBandwidth;
+					}
+
+					public void setVpcBandwidth(Long vpcBandwidth) {
+						this.vpcBandwidth = vpcBandwidth;
+					}
+
+					public Long getEbsBurstBandwidth() {
+						return this.ebsBurstBandwidth;
+					}
+
+					public void setEbsBurstBandwidth(Long ebsBurstBandwidth) {
+						this.ebsBurstBandwidth = ebsBurstBandwidth;
+					}
+
+					public Long getEbsBandwidth() {
+						return this.ebsBandwidth;
+					}
+
+					public void setEbsBandwidth(Long ebsBandwidth) {
+						this.ebsBandwidth = ebsBandwidth;
+					}
+
+					public Long getVpcBurstBandwidth() {
+						return this.vpcBurstBandwidth;
+					}
+
+					public void setVpcBurstBandwidth(Long vpcBurstBandwidth) {
+						this.vpcBurstBandwidth = vpcBurstBandwidth;
+					}
+
+					public String getName() {
+						return this.name;
+					}
+
+					public void setName(String name) {
+						this.name = name;
+					}
+				}
 			}
 		}
 	}

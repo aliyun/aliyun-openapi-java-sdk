@@ -284,27 +284,19 @@ public class DescribePriceResponse extends AcsResponse {
 
 			public static class Coupon {
 
-				private Boolean isSelected;
-
 				private String couponNo;
-
-				private String description;
-
-				private String name;
 
 				private Float discountOff;
 
+				private String description;
+
+				private Boolean isSelected;
+
 				private String optionCode;
 
+				private String name;
+
 				private List<Long> ruleIds;
-
-				public Boolean getIsSelected() {
-					return this.isSelected;
-				}
-
-				public void setIsSelected(Boolean isSelected) {
-					this.isSelected = isSelected;
-				}
 
 				public String getCouponNo() {
 					return this.couponNo;
@@ -312,22 +304,6 @@ public class DescribePriceResponse extends AcsResponse {
 
 				public void setCouponNo(String couponNo) {
 					this.couponNo = couponNo;
-				}
-
-				public String getDescription() {
-					return this.description;
-				}
-
-				public void setDescription(String description) {
-					this.description = description;
-				}
-
-				public String getName() {
-					return this.name;
-				}
-
-				public void setName(String name) {
-					this.name = name;
 				}
 
 				public Float getDiscountOff() {
@@ -338,12 +314,36 @@ public class DescribePriceResponse extends AcsResponse {
 					this.discountOff = discountOff;
 				}
 
+				public String getDescription() {
+					return this.description;
+				}
+
+				public void setDescription(String description) {
+					this.description = description;
+				}
+
+				public Boolean getIsSelected() {
+					return this.isSelected;
+				}
+
+				public void setIsSelected(Boolean isSelected) {
+					this.isSelected = isSelected;
+				}
+
 				public String getOptionCode() {
 					return this.optionCode;
 				}
 
 				public void setOptionCode(String optionCode) {
 					this.optionCode = optionCode;
+				}
+
+				public String getName() {
+					return this.name;
+				}
+
+				public void setName(String name) {
+					this.name = name;
 				}
 
 				public List<Long> getRuleIds() {
@@ -357,17 +357,17 @@ public class DescribePriceResponse extends AcsResponse {
 
 			public static class DetailInfo {
 
-				private String resource;
-
 				private Float originalPrice;
 
 				private Float discountPrice;
 
-				private Float tradePrice;
+				private String resource;
 
 				private Float standardPrice;
 
 				private Float standardDiscountPrice;
+
+				private Float tradePrice;
 
 				private Boolean isContractPromotion;
 
@@ -376,14 +376,6 @@ public class DescribePriceResponse extends AcsResponse {
 				private List<Attribute> attributes;
 
 				private DepreciateInfo1 depreciateInfo1;
-
-				public String getResource() {
-					return this.resource;
-				}
-
-				public void setResource(String resource) {
-					this.resource = resource;
-				}
 
 				public Float getOriginalPrice() {
 					return this.originalPrice;
@@ -401,12 +393,12 @@ public class DescribePriceResponse extends AcsResponse {
 					this.discountPrice = discountPrice;
 				}
 
-				public Float getTradePrice() {
-					return this.tradePrice;
+				public String getResource() {
+					return this.resource;
 				}
 
-				public void setTradePrice(Float tradePrice) {
-					this.tradePrice = tradePrice;
+				public void setResource(String resource) {
+					this.resource = resource;
 				}
 
 				public Float getStandardPrice() {
@@ -423,6 +415,14 @@ public class DescribePriceResponse extends AcsResponse {
 
 				public void setStandardDiscountPrice(Float standardDiscountPrice) {
 					this.standardDiscountPrice = standardDiscountPrice;
+				}
+
+				public Float getTradePrice() {
+					return this.tradePrice;
+				}
+
+				public void setTradePrice(Float tradePrice) {
+					this.tradePrice = tradePrice;
 				}
 
 				public Boolean getIsContractPromotion() {
@@ -482,17 +482,9 @@ public class DescribePriceResponse extends AcsResponse {
 
 				public static class Attribute {
 
-					private String code;
-
 					private String value;
 
-					public String getCode() {
-						return this.code;
-					}
-
-					public void setCode(String code) {
-						this.code = code;
-					}
+					private String code;
 
 					public String getValue() {
 						return this.value;
@@ -501,43 +493,35 @@ public class DescribePriceResponse extends AcsResponse {
 					public void setValue(String value) {
 						this.value = value;
 					}
+
+					public String getCode() {
+						return this.code;
+					}
+
+					public void setCode(String code) {
+						this.code = code;
+					}
 				}
 
 				public static class DepreciateInfo1 {
-
-					private Float listPrice;
-
-					private Float originalStandardPrice;
 
 					private Float cheapStandardPrice;
 
 					private Float cheapRate;
 
-					private Float differentialPrice;
-
 					private String differentialName;
 
 					private Float monthPrice;
 
-					private Boolean isShow;
+					private Float originalStandardPrice;
+
+					private Float differentialPrice;
 
 					private String startTime;
 
-					public Float getListPrice() {
-						return this.listPrice;
-					}
+					private Boolean isShow;
 
-					public void setListPrice(Float listPrice) {
-						this.listPrice = listPrice;
-					}
-
-					public Float getOriginalStandardPrice() {
-						return this.originalStandardPrice;
-					}
-
-					public void setOriginalStandardPrice(Float originalStandardPrice) {
-						this.originalStandardPrice = originalStandardPrice;
-					}
+					private Float listPrice;
 
 					public Float getCheapStandardPrice() {
 						return this.cheapStandardPrice;
@@ -553,14 +537,6 @@ public class DescribePriceResponse extends AcsResponse {
 
 					public void setCheapRate(Float cheapRate) {
 						this.cheapRate = cheapRate;
-					}
-
-					public Float getDifferentialPrice() {
-						return this.differentialPrice;
-					}
-
-					public void setDifferentialPrice(Float differentialPrice) {
-						this.differentialPrice = differentialPrice;
 					}
 
 					public String getDifferentialName() {
@@ -579,12 +555,20 @@ public class DescribePriceResponse extends AcsResponse {
 						this.monthPrice = monthPrice;
 					}
 
-					public Boolean getIsShow() {
-						return this.isShow;
+					public Float getOriginalStandardPrice() {
+						return this.originalStandardPrice;
 					}
 
-					public void setIsShow(Boolean isShow) {
-						this.isShow = isShow;
+					public void setOriginalStandardPrice(Float originalStandardPrice) {
+						this.originalStandardPrice = originalStandardPrice;
+					}
+
+					public Float getDifferentialPrice() {
+						return this.differentialPrice;
+					}
+
+					public void setDifferentialPrice(Float differentialPrice) {
+						this.differentialPrice = differentialPrice;
 					}
 
 					public String getStartTime() {
@@ -594,12 +578,26 @@ public class DescribePriceResponse extends AcsResponse {
 					public void setStartTime(String startTime) {
 						this.startTime = startTime;
 					}
+
+					public Boolean getIsShow() {
+						return this.isShow;
+					}
+
+					public void setIsShow(Boolean isShow) {
+						this.isShow = isShow;
+					}
+
+					public Float getListPrice() {
+						return this.listPrice;
+					}
+
+					public void setListPrice(Float listPrice) {
+						this.listPrice = listPrice;
+					}
 				}
 			}
 
 			public static class Promotion {
-
-				private String name;
 
 				private Float discountOff;
 
@@ -607,15 +605,9 @@ public class DescribePriceResponse extends AcsResponse {
 
 				private Float remainQuota;
 
+				private String name;
+
 				private List<Long> ruleIds3;
-
-				public String getName() {
-					return this.name;
-				}
-
-				public void setName(String name) {
-					this.name = name;
-				}
 
 				public Float getDiscountOff() {
 					return this.discountOff;
@@ -639,6 +631,14 @@ public class DescribePriceResponse extends AcsResponse {
 
 				public void setRemainQuota(Float remainQuota) {
 					this.remainQuota = remainQuota;
+				}
+
+				public String getName() {
+					return this.name;
+				}
+
+				public void setName(String name) {
+					this.name = name;
 				}
 
 				public List<Long> getRuleIds3() {

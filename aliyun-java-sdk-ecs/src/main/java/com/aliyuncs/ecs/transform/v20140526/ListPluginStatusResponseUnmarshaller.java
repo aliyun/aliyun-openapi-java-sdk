@@ -41,11 +41,11 @@ public class ListPluginStatusResponseUnmarshaller {
 			List<PluginStatus> pluginStatusSet = new ArrayList<PluginStatus>();
 			for (int j = 0; j < _ctx.lengthValue("ListPluginStatusResponse.InstancePluginStatusSet["+ i +"].PluginStatusSet.Length"); j++) {
 				PluginStatus pluginStatus = new PluginStatus();
+				pluginStatus.setPluginStatus(_ctx.stringValue("ListPluginStatusResponse.InstancePluginStatusSet["+ i +"].PluginStatusSet["+ j +"].PluginStatus"));
 				pluginStatus.setPluginVersion(_ctx.stringValue("ListPluginStatusResponse.InstancePluginStatusSet["+ i +"].PluginStatusSet["+ j +"].PluginVersion"));
 				pluginStatus.setPluginName(_ctx.stringValue("ListPluginStatusResponse.InstancePluginStatusSet["+ i +"].PluginStatusSet["+ j +"].PluginName"));
 				pluginStatus.setFirstHeartbeatTime(_ctx.stringValue("ListPluginStatusResponse.InstancePluginStatusSet["+ i +"].PluginStatusSet["+ j +"].FirstHeartbeatTime"));
 				pluginStatus.setLastHeartbeatTime(_ctx.stringValue("ListPluginStatusResponse.InstancePluginStatusSet["+ i +"].PluginStatusSet["+ j +"].LastHeartbeatTime"));
-				pluginStatus.setPluginStatus(_ctx.stringValue("ListPluginStatusResponse.InstancePluginStatusSet["+ i +"].PluginStatusSet["+ j +"].PluginStatus"));
 
 				pluginStatusSet.add(pluginStatus);
 			}

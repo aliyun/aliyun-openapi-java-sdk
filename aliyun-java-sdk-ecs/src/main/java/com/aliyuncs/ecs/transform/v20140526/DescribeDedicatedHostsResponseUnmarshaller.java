@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.ecs.model.v20140526.DescribeDedicatedHostsResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeDedicatedHostsResponse.DedicatedHost;
 import com.aliyuncs.ecs.model.v20140526.DescribeDedicatedHostsResponse.DedicatedHost.Capacity;
+import com.aliyuncs.ecs.model.v20140526.DescribeDedicatedHostsResponse.DedicatedHost.Capacity.AvailableInstanceType;
 import com.aliyuncs.ecs.model.v20140526.DescribeDedicatedHostsResponse.DedicatedHost.Capacity.SocketCapacity;
 import com.aliyuncs.ecs.model.v20140526.DescribeDedicatedHostsResponse.DedicatedHost.HostDetailInfo;
 import com.aliyuncs.ecs.model.v20140526.DescribeDedicatedHostsResponse.DedicatedHost.Instance;
@@ -108,6 +109,16 @@ public class DescribeDedicatedHostsResponseUnmarshaller {
 				socketCapacities.add(socketCapacity);
 			}
 			capacity.setSocketCapacities(socketCapacities);
+
+			List<AvailableInstanceType> availableInstanceTypes = new ArrayList<AvailableInstanceType>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Capacity.AvailableInstanceTypes.Length"); j++) {
+				AvailableInstanceType availableInstanceType = new AvailableInstanceType();
+				availableInstanceType.setAvailableInstanceCapacity(_ctx.integerValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Capacity.AvailableInstanceTypes["+ j +"].AvailableInstanceCapacity"));
+				availableInstanceType.setInstanceType(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Capacity.AvailableInstanceTypes["+ j +"].InstanceType"));
+
+				availableInstanceTypes.add(availableInstanceType);
+			}
+			capacity.setAvailableInstanceTypes(availableInstanceTypes);
 			dedicatedHost.setCapacity(capacity);
 
 			NetworkAttributes networkAttributes = new NetworkAttributes();

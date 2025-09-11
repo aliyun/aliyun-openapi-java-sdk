@@ -15,6 +15,7 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ecs.Endpoint;
 
@@ -22,20 +23,21 @@ import com.aliyuncs.ecs.Endpoint;
  * @author auto create
  * @version 
  */
-public class CancelAutoSnapshotPolicyRequest extends RpcAcsRequest<CancelAutoSnapshotPolicyResponse> {
+public class ModifyInstanceNetworkOptionsRequest extends RpcAcsRequest<ModifyInstanceNetworkOptionsResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String autoSnapshotPolicyId;
-
-	private String diskIds;
+	private String bandwidthWeighting;
 
 	private String resourceOwnerAccount;
 
 	private Long ownerId;
-	public CancelAutoSnapshotPolicyRequest() {
-		super("Ecs", "2014-05-26", "CancelAutoSnapshotPolicy", "ecs");
+
+	private String instanceId;
+	public ModifyInstanceNetworkOptionsRequest() {
+		super("Ecs", "2014-05-26", "ModifyInstanceNetworkOptions", "ecs");
+		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -54,25 +56,14 @@ public class CancelAutoSnapshotPolicyRequest extends RpcAcsRequest<CancelAutoSna
 		}
 	}
 
-	public String getAutoSnapshotPolicyId() {
-		return this.autoSnapshotPolicyId;
+	public String getBandwidthWeighting() {
+		return this.bandwidthWeighting;
 	}
 
-	public void setAutoSnapshotPolicyId(String autoSnapshotPolicyId) {
-		this.autoSnapshotPolicyId = autoSnapshotPolicyId;
-		if(autoSnapshotPolicyId != null){
-			putQueryParameter("autoSnapshotPolicyId", autoSnapshotPolicyId);
-		}
-	}
-
-	public String getDiskIds() {
-		return this.diskIds;
-	}
-
-	public void setDiskIds(String diskIds) {
-		this.diskIds = diskIds;
-		if(diskIds != null){
-			putQueryParameter("diskIds", diskIds);
+	public void setBandwidthWeighting(String bandwidthWeighting) {
+		this.bandwidthWeighting = bandwidthWeighting;
+		if(bandwidthWeighting != null){
+			putQueryParameter("BandwidthWeighting", bandwidthWeighting);
 		}
 	}
 
@@ -98,9 +89,20 @@ public class CancelAutoSnapshotPolicyRequest extends RpcAcsRequest<CancelAutoSna
 		}
 	}
 
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
 	@Override
-	public Class<CancelAutoSnapshotPolicyResponse> getResponseClass() {
-		return CancelAutoSnapshotPolicyResponse.class;
+	public Class<ModifyInstanceNetworkOptionsResponse> getResponseClass() {
+		return ModifyInstanceNetworkOptionsResponse.class;
 	}
 
 }

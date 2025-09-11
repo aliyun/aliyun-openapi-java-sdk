@@ -503,6 +503,8 @@ public class DescribeInstanceAttributeResponse extends AcsResponse {
 
 		private Boolean enableNetworkEncryption;
 
+		private String bandwidthWeighting;
+
 		public Boolean getEnableJumboFrame() {
 			return this.enableJumboFrame;
 		}
@@ -517,6 +519,14 @@ public class DescribeInstanceAttributeResponse extends AcsResponse {
 
 		public void setEnableNetworkEncryption(Boolean enableNetworkEncryption) {
 			this.enableNetworkEncryption = enableNetworkEncryption;
+		}
+
+		public String getBandwidthWeighting() {
+			return this.bandwidthWeighting;
+		}
+
+		public void setBandwidthWeighting(String bandwidthWeighting) {
+			this.bandwidthWeighting = bandwidthWeighting;
 		}
 	}
 

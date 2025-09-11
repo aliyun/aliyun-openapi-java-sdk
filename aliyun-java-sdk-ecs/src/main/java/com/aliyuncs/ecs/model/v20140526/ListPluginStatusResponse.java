@@ -109,6 +109,8 @@ public class ListPluginStatusResponse extends AcsResponse {
 
 		public static class PluginStatus {
 
+			private String pluginStatus;
+
 			private String pluginVersion;
 
 			private String pluginName;
@@ -117,7 +119,13 @@ public class ListPluginStatusResponse extends AcsResponse {
 
 			private String lastHeartbeatTime;
 
-			private String pluginStatus;
+			public String getPluginStatus() {
+				return this.pluginStatus;
+			}
+
+			public void setPluginStatus(String pluginStatus) {
+				this.pluginStatus = pluginStatus;
+			}
 
 			public String getPluginVersion() {
 				return this.pluginVersion;
@@ -149,14 +157,6 @@ public class ListPluginStatusResponse extends AcsResponse {
 
 			public void setLastHeartbeatTime(String lastHeartbeatTime) {
 				this.lastHeartbeatTime = lastHeartbeatTime;
-			}
-
-			public String getPluginStatus() {
-				return this.pluginStatus;
-			}
-
-			public void setPluginStatus(String pluginStatus) {
-				this.pluginStatus = pluginStatus;
 			}
 		}
 	}

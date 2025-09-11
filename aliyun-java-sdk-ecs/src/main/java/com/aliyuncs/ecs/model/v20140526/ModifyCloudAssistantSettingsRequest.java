@@ -36,6 +36,9 @@ public class ModifyCloudAssistantSettingsRequest extends RpcAcsRequest<ModifyClo
 	@SerializedName("ossDeliveryConfig")
 	private OssDeliveryConfig ossDeliveryConfig;
 
+	@SerializedName("sessionManagerConfig")
+	private SessionManagerConfig sessionManagerConfig;
+
 	private String settingType;
 
 	@SerializedName("slsDeliveryConfig")
@@ -85,6 +88,17 @@ public class ModifyCloudAssistantSettingsRequest extends RpcAcsRequest<ModifyClo
 		this.ossDeliveryConfig = ossDeliveryConfig;	
 		if (ossDeliveryConfig != null) {
 			putQueryParameter("OssDeliveryConfig" , new Gson().toJson(ossDeliveryConfig));
+		}	
+	}
+
+	public SessionManagerConfig getSessionManagerConfig() {
+		return this.sessionManagerConfig;
+	}
+
+	public void setSessionManagerConfig(SessionManagerConfig sessionManagerConfig) {
+		this.sessionManagerConfig = sessionManagerConfig;	
+		if (sessionManagerConfig != null) {
+			putQueryParameter("SessionManagerConfig" , new Gson().toJson(sessionManagerConfig));
 		}	
 	}
 
@@ -245,6 +259,20 @@ public class ModifyCloudAssistantSettingsRequest extends RpcAcsRequest<ModifyClo
 
 		public void setEncryptionKeyId(String encryptionKeyId) {
 			this.encryptionKeyId = encryptionKeyId;
+		}
+	}
+
+	public static class SessionManagerConfig {
+
+		@SerializedName("SessionManagerEnabled")
+		private Boolean sessionManagerEnabled;
+
+		public Boolean getSessionManagerEnabled() {
+			return this.sessionManagerEnabled;
+		}
+
+		public void setSessionManagerEnabled(Boolean sessionManagerEnabled) {
+			this.sessionManagerEnabled = sessionManagerEnabled;
 		}
 	}
 

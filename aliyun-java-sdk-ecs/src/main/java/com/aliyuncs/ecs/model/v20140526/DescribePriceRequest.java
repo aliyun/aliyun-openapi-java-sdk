@@ -56,6 +56,8 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 
 	private String zoneId;
 
+	private String schedulerOptionsDeploymentSetStrategy;
+
 	private String instanceNetworkType;
 
 	private Integer instanceAmount;
@@ -288,6 +290,17 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 		this.zoneId = zoneId;
 		if(zoneId != null){
 			putQueryParameter("ZoneId", zoneId);
+		}
+	}
+
+	public String getSchedulerOptionsDeploymentSetStrategy() {
+		return this.schedulerOptionsDeploymentSetStrategy;
+	}
+
+	public void setSchedulerOptionsDeploymentSetStrategy(String schedulerOptionsDeploymentSetStrategy) {
+		this.schedulerOptionsDeploymentSetStrategy = schedulerOptionsDeploymentSetStrategy;
+		if(schedulerOptionsDeploymentSetStrategy != null){
+			putQueryParameter("SchedulerOptions.DeploymentSetStrategy", schedulerOptionsDeploymentSetStrategy);
 		}
 	}
 

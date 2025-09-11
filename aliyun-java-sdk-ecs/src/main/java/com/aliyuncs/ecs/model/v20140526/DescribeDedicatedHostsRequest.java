@@ -54,6 +54,8 @@ public class DescribeDedicatedHostsRequest extends RpcAcsRequest<DescribeDedicat
 
 	private String ownerAccount;
 
+	private Boolean queryInventory;
+
 	private Long ownerId;
 
 	private String zoneId;
@@ -224,6 +226,17 @@ public class DescribeDedicatedHostsRequest extends RpcAcsRequest<DescribeDedicat
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Boolean getQueryInventory() {
+		return this.queryInventory;
+	}
+
+	public void setQueryInventory(Boolean queryInventory) {
+		this.queryInventory = queryInventory;
+		if(queryInventory != null){
+			putQueryParameter("QueryInventory", queryInventory.toString());
 		}
 	}
 

@@ -37,6 +37,12 @@ public class DescribeSecurityGroupAttributeResponseUnmarshaller {
 		describeSecurityGroupAttributeResponse.setRegionId(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.RegionId"));
 		describeSecurityGroupAttributeResponse.setNextToken(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.NextToken"));
 
+		List<String> snapshotPolicyIds = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeSecurityGroupAttributeResponse.SnapshotPolicyIds.Length"); i++) {
+			snapshotPolicyIds.add(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.SnapshotPolicyIds["+ i +"]"));
+		}
+		describeSecurityGroupAttributeResponse.setSnapshotPolicyIds(snapshotPolicyIds);
+
 		ReferencedInfo referencedInfo = new ReferencedInfo();
 
 		List<ReferencedPrefixListInfo> referencedPrefixListInfos = new ArrayList<ReferencedPrefixListInfo>();

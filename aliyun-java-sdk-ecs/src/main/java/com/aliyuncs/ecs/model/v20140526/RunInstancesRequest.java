@@ -194,6 +194,8 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 	private List<DataDisk> dataDisks;
 
+	private ClockOptions clockOptions;
+
 	private String storageSetId;
 
 	private String httpTokens;
@@ -602,9 +604,9 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		this.arns = arns;	
 		if (arns != null) {
 			for (int depth1 = 0; depth1 < arns.size(); depth1++) {
+				putQueryParameter("Arn." + (depth1 + 1) + ".AssumeRoleFor" , arns.get(depth1).getAssumeRoleFor());
 				putQueryParameter("Arn." + (depth1 + 1) + ".RoleType" , arns.get(depth1).getRoleType());
 				putQueryParameter("Arn." + (depth1 + 1) + ".Rolearn" , arns.get(depth1).getRolearn());
-				putQueryParameter("Arn." + (depth1 + 1) + ".AssumeRoleFor" , arns.get(depth1).getAssumeRoleFor());
 			}
 		}	
 	}
@@ -687,6 +689,7 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 			
 				putQueryParameter("NetworkOptions.EnableJumboFrame" , networkOptions.getEnableJumboFrame());
 				putQueryParameter("NetworkOptions.EnableNetworkEncryption" , networkOptions.getEnableNetworkEncryption());
+				putQueryParameter("NetworkOptions.BandwidthWeighting" , networkOptions.getBandwidthWeighting());
 		}	
 	}
 
@@ -819,8 +822,8 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		this.tags = tags;	
 		if (tags != null) {
 			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
-				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 			}
 		}	
 	}
@@ -1057,32 +1060,32 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		this.networkInterfaces = networkInterfaces;	
 		if (networkInterfaces != null) {
 			for (int depth1 = 0; depth1 < networkInterfaces.size(); depth1++) {
-				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".VSwitchId" , networkInterfaces.get(depth1).getVSwitchId());
-				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".NetworkInterfaceName" , networkInterfaces.get(depth1).getNetworkInterfaceName());
+				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".NetworkInterfaceTrafficMode" , networkInterfaces.get(depth1).getNetworkInterfaceTrafficMode());
 				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".Description" , networkInterfaces.get(depth1).getDescription());
+				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".DeleteOnRelease" , networkInterfaces.get(depth1).getDeleteOnRelease());
+				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".VSwitchId" , networkInterfaces.get(depth1).getVSwitchId());
 				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".SecurityGroupId" , networkInterfaces.get(depth1).getSecurityGroupId());
+				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".NetworkInterfaceName" , networkInterfaces.get(depth1).getNetworkInterfaceName());
 				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".PrimaryIpAddress" , networkInterfaces.get(depth1).getPrimaryIpAddress());
-				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".QueueNumber" , networkInterfaces.get(depth1).getQueueNumber());
+				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".NetworkCardIndex" , networkInterfaces.get(depth1).getNetworkCardIndex());
+				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".NetworkInterfaceId" , networkInterfaces.get(depth1).getNetworkInterfaceId());
 				if (networkInterfaces.get(depth1).getSecurityGroupIdss() != null) {
 					for (int i = 0; i < networkInterfaces.get(depth1).getSecurityGroupIdss().size(); i++) {
 						putQueryParameter("NetworkInterface." + (depth1 + 1) + ".SecurityGroupIds." + (i + 1) , networkInterfaces.get(depth1).getSecurityGroupIdss().get(i));
 					}
 				}
-				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".NetworkInterfaceTrafficMode" , networkInterfaces.get(depth1).getNetworkInterfaceTrafficMode());
+				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".SourceDestCheck" , networkInterfaces.get(depth1).getSourceDestCheck());
+				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".QueueNumber" , networkInterfaces.get(depth1).getQueueNumber());
 				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".QueuePairNumber" , networkInterfaces.get(depth1).getQueuePairNumber());
-				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".InstanceType" , networkInterfaces.get(depth1).getInstanceType());
+				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".TxQueueSize" , networkInterfaces.get(depth1).getTxQueueSize());
 				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".Ipv6AddressCount" , networkInterfaces.get(depth1).getIpv6AddressCount());
+				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".InstanceType" , networkInterfaces.get(depth1).getInstanceType());
+				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".RxQueueSize" , networkInterfaces.get(depth1).getRxQueueSize());
 				if (networkInterfaces.get(depth1).getIpv6Addresss() != null) {
 					for (int i = 0; i < networkInterfaces.get(depth1).getIpv6Addresss().size(); i++) {
 						putQueryParameter("NetworkInterface." + (depth1 + 1) + ".Ipv6Address." + (i + 1) , networkInterfaces.get(depth1).getIpv6Addresss().get(i));
 					}
 				}
-				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".NetworkCardIndex" , networkInterfaces.get(depth1).getNetworkCardIndex());
-				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".DeleteOnRelease" , networkInterfaces.get(depth1).getDeleteOnRelease());
-				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".NetworkInterfaceId" , networkInterfaces.get(depth1).getNetworkInterfaceId());
-				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".RxQueueSize" , networkInterfaces.get(depth1).getRxQueueSize());
-				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".TxQueueSize" , networkInterfaces.get(depth1).getTxQueueSize());
-				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".SourceDestCheck" , networkInterfaces.get(depth1).getSourceDestCheck());
 			}
 		}	
 	}
@@ -1183,22 +1186,34 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		this.dataDisks = dataDisks;	
 		if (dataDisks != null) {
 			for (int depth1 = 0; depth1 < dataDisks.size(); depth1++) {
-				putQueryParameter("DataDisk." + (depth1 + 1) + ".PerformanceLevel" , dataDisks.get(depth1).getPerformanceLevel());
-				putQueryParameter("DataDisk." + (depth1 + 1) + ".AutoSnapshotPolicyId" , dataDisks.get(depth1).getAutoSnapshotPolicyId());
-				putQueryParameter("DataDisk." + (depth1 + 1) + ".Encrypted" , dataDisks.get(depth1).getEncrypted());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".BurstingEnabled" , dataDisks.get(depth1).getBurstingEnabled());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".StorageClusterId" , dataDisks.get(depth1).getStorageClusterId());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".Description" , dataDisks.get(depth1).getDescription());
-				putQueryParameter("DataDisk." + (depth1 + 1) + ".SnapshotId" , dataDisks.get(depth1).getSnapshotId());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".Category" , dataDisks.get(depth1).getCategory());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".KMSKeyId" , dataDisks.get(depth1).getKMSKeyId());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".PerformanceLevel" , dataDisks.get(depth1).getPerformanceLevel());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".Encrypted" , dataDisks.get(depth1).getEncrypted());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".Device" , dataDisks.get(depth1).getDevice());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".Size" , dataDisks.get(depth1).getSize());
-				putQueryParameter("DataDisk." + (depth1 + 1) + ".DiskName" , dataDisks.get(depth1).getDiskName());
-				putQueryParameter("DataDisk." + (depth1 + 1) + ".Category" , dataDisks.get(depth1).getCategory());
-				putQueryParameter("DataDisk." + (depth1 + 1) + ".EncryptAlgorithm" , dataDisks.get(depth1).getEncryptAlgorithm());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".DeleteWithInstance" , dataDisks.get(depth1).getDeleteWithInstance());
-				putQueryParameter("DataDisk." + (depth1 + 1) + ".KMSKeyId" , dataDisks.get(depth1).getKMSKeyId());
-				putQueryParameter("DataDisk." + (depth1 + 1) + ".StorageClusterId" , dataDisks.get(depth1).getStorageClusterId());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".AutoSnapshotPolicyId" , dataDisks.get(depth1).getAutoSnapshotPolicyId());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".DiskName" , dataDisks.get(depth1).getDiskName());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".ProvisionedIops" , dataDisks.get(depth1).getProvisionedIops());
-				putQueryParameter("DataDisk." + (depth1 + 1) + ".BurstingEnabled" , dataDisks.get(depth1).getBurstingEnabled());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".EncryptAlgorithm" , dataDisks.get(depth1).getEncryptAlgorithm());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".SnapshotId" , dataDisks.get(depth1).getSnapshotId());
 			}
+		}	
+	}
+
+	public ClockOptions getClockOptions() {
+		return this.clockOptions;
+	}
+
+	public void setClockOptions(ClockOptions clockOptions) {
+		this.clockOptions = clockOptions;	
+		if (clockOptions != null) {
+			
+				putQueryParameter("ClockOptions.PtpStatus" , clockOptions.getPtpStatus());
 		}	
 	}
 
@@ -1366,11 +1381,19 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 	public static class Arn {
 
+		private Long assumeRoleFor;
+
 		private String roleType;
 
 		private String rolearn;
 
-		private Long assumeRoleFor;
+		public Long getAssumeRoleFor() {
+			return this.assumeRoleFor;
+		}
+
+		public void setAssumeRoleFor(Long assumeRoleFor) {
+			this.assumeRoleFor = assumeRoleFor;
+		}
 
 		public String getRoleType() {
 			return this.roleType;
@@ -1387,14 +1410,6 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		public void setRolearn(String rolearn) {
 			this.rolearn = rolearn;
 		}
-
-		public Long getAssumeRoleFor() {
-			return this.assumeRoleFor;
-		}
-
-		public void setAssumeRoleFor(Long assumeRoleFor) {
-			this.assumeRoleFor = assumeRoleFor;
-		}
 	}
 
 	public static class NetworkOptions {
@@ -1402,6 +1417,8 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		private Boolean enableJumboFrame;
 
 		private Boolean enableNetworkEncryption;
+
+		private String bandwidthWeighting;
 
 		public Boolean getEnableJumboFrame() {
 			return this.enableJumboFrame;
@@ -1418,21 +1435,21 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		public void setEnableNetworkEncryption(Boolean enableNetworkEncryption) {
 			this.enableNetworkEncryption = enableNetworkEncryption;
 		}
+
+		public String getBandwidthWeighting() {
+			return this.bandwidthWeighting;
+		}
+
+		public void setBandwidthWeighting(String bandwidthWeighting) {
+			this.bandwidthWeighting = bandwidthWeighting;
+		}
 	}
 
 	public static class Tag {
 
-		private String key;
-
 		private String value;
 
-		public String getKey() {
-			return this.key;
-		}
-
-		public void setKey(String key) {
-			this.key = key;
-		}
+		private String key;
 
 		public String getValue() {
 			return this.value;
@@ -1441,101 +1458,53 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		public void setValue(String value) {
 			this.value = value;
 		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
 	}
 
 	public static class NetworkInterface {
 
-		private String vSwitchId;
-
-		private String networkInterfaceName;
+		private String networkInterfaceTrafficMode;
 
 		private String description;
 
+		private Boolean deleteOnRelease;
+
+		private String vSwitchId;
+
 		private String securityGroupId;
+
+		private String networkInterfaceName;
 
 		private String primaryIpAddress;
 
-		private Integer queueNumber;
-
-		private List<String> securityGroupIdss;
-
-		private String networkInterfaceTrafficMode;
-
-		private Long queuePairNumber;
-
-		private String instanceType;
-
-		private Long ipv6AddressCount;
-
-		private List<String> ipv6Addresss;
-
 		private Integer networkCardIndex;
-
-		private Boolean deleteOnRelease;
 
 		private String networkInterfaceId;
 
-		private Integer rxQueueSize;
-
-		private Integer txQueueSize;
+		private List<String> securityGroupIdss;
 
 		private Boolean sourceDestCheck;
 
-		public String getVSwitchId() {
-			return this.vSwitchId;
-		}
+		private Integer queueNumber;
 
-		public void setVSwitchId(String vSwitchId) {
-			this.vSwitchId = vSwitchId;
-		}
+		private Long queuePairNumber;
 
-		public String getNetworkInterfaceName() {
-			return this.networkInterfaceName;
-		}
+		private Integer txQueueSize;
 
-		public void setNetworkInterfaceName(String networkInterfaceName) {
-			this.networkInterfaceName = networkInterfaceName;
-		}
+		private Long ipv6AddressCount;
 
-		public String getDescription() {
-			return this.description;
-		}
+		private String instanceType;
 
-		public void setDescription(String description) {
-			this.description = description;
-		}
+		private Integer rxQueueSize;
 
-		public String getSecurityGroupId() {
-			return this.securityGroupId;
-		}
-
-		public void setSecurityGroupId(String securityGroupId) {
-			this.securityGroupId = securityGroupId;
-		}
-
-		public String getPrimaryIpAddress() {
-			return this.primaryIpAddress;
-		}
-
-		public void setPrimaryIpAddress(String primaryIpAddress) {
-			this.primaryIpAddress = primaryIpAddress;
-		}
-
-		public Integer getQueueNumber() {
-			return this.queueNumber;
-		}
-
-		public void setQueueNumber(Integer queueNumber) {
-			this.queueNumber = queueNumber;
-		}
-
-		public List<String> getSecurityGroupIdss() {
-			return this.securityGroupIdss;
-		}
-
-		public void setSecurityGroupIdss(List<String> securityGroupIdss) {
-			this.securityGroupIdss = securityGroupIdss;
-		}
+		private List<String> ipv6Addresss;
 
 		public String getNetworkInterfaceTrafficMode() {
 			return this.networkInterfaceTrafficMode;
@@ -1545,44 +1514,12 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 			this.networkInterfaceTrafficMode = networkInterfaceTrafficMode;
 		}
 
-		public Long getQueuePairNumber() {
-			return this.queuePairNumber;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setQueuePairNumber(Long queuePairNumber) {
-			this.queuePairNumber = queuePairNumber;
-		}
-
-		public String getInstanceType() {
-			return this.instanceType;
-		}
-
-		public void setInstanceType(String instanceType) {
-			this.instanceType = instanceType;
-		}
-
-		public Long getIpv6AddressCount() {
-			return this.ipv6AddressCount;
-		}
-
-		public void setIpv6AddressCount(Long ipv6AddressCount) {
-			this.ipv6AddressCount = ipv6AddressCount;
-		}
-
-		public List<String> getIpv6Addresss() {
-			return this.ipv6Addresss;
-		}
-
-		public void setIpv6Addresss(List<String> ipv6Addresss) {
-			this.ipv6Addresss = ipv6Addresss;
-		}
-
-		public Integer getNetworkCardIndex() {
-			return this.networkCardIndex;
-		}
-
-		public void setNetworkCardIndex(Integer networkCardIndex) {
-			this.networkCardIndex = networkCardIndex;
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public Boolean getDeleteOnRelease() {
@@ -1593,6 +1530,46 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 			this.deleteOnRelease = deleteOnRelease;
 		}
 
+		public String getVSwitchId() {
+			return this.vSwitchId;
+		}
+
+		public void setVSwitchId(String vSwitchId) {
+			this.vSwitchId = vSwitchId;
+		}
+
+		public String getSecurityGroupId() {
+			return this.securityGroupId;
+		}
+
+		public void setSecurityGroupId(String securityGroupId) {
+			this.securityGroupId = securityGroupId;
+		}
+
+		public String getNetworkInterfaceName() {
+			return this.networkInterfaceName;
+		}
+
+		public void setNetworkInterfaceName(String networkInterfaceName) {
+			this.networkInterfaceName = networkInterfaceName;
+		}
+
+		public String getPrimaryIpAddress() {
+			return this.primaryIpAddress;
+		}
+
+		public void setPrimaryIpAddress(String primaryIpAddress) {
+			this.primaryIpAddress = primaryIpAddress;
+		}
+
+		public Integer getNetworkCardIndex() {
+			return this.networkCardIndex;
+		}
+
+		public void setNetworkCardIndex(Integer networkCardIndex) {
+			this.networkCardIndex = networkCardIndex;
+		}
+
 		public String getNetworkInterfaceId() {
 			return this.networkInterfaceId;
 		}
@@ -1601,12 +1578,36 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 			this.networkInterfaceId = networkInterfaceId;
 		}
 
-		public Integer getRxQueueSize() {
-			return this.rxQueueSize;
+		public List<String> getSecurityGroupIdss() {
+			return this.securityGroupIdss;
 		}
 
-		public void setRxQueueSize(Integer rxQueueSize) {
-			this.rxQueueSize = rxQueueSize;
+		public void setSecurityGroupIdss(List<String> securityGroupIdss) {
+			this.securityGroupIdss = securityGroupIdss;
+		}
+
+		public Boolean getSourceDestCheck() {
+			return this.sourceDestCheck;
+		}
+
+		public void setSourceDestCheck(Boolean sourceDestCheck) {
+			this.sourceDestCheck = sourceDestCheck;
+		}
+
+		public Integer getQueueNumber() {
+			return this.queueNumber;
+		}
+
+		public void setQueueNumber(Integer queueNumber) {
+			this.queueNumber = queueNumber;
+		}
+
+		public Long getQueuePairNumber() {
+			return this.queuePairNumber;
+		}
+
+		public void setQueuePairNumber(Long queuePairNumber) {
+			this.queuePairNumber = queuePairNumber;
 		}
 
 		public Integer getTxQueueSize() {
@@ -1617,69 +1618,85 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 			this.txQueueSize = txQueueSize;
 		}
 
-		public Boolean getSourceDestCheck() {
-			return this.sourceDestCheck;
+		public Long getIpv6AddressCount() {
+			return this.ipv6AddressCount;
 		}
 
-		public void setSourceDestCheck(Boolean sourceDestCheck) {
-			this.sourceDestCheck = sourceDestCheck;
+		public void setIpv6AddressCount(Long ipv6AddressCount) {
+			this.ipv6AddressCount = ipv6AddressCount;
+		}
+
+		public String getInstanceType() {
+			return this.instanceType;
+		}
+
+		public void setInstanceType(String instanceType) {
+			this.instanceType = instanceType;
+		}
+
+		public Integer getRxQueueSize() {
+			return this.rxQueueSize;
+		}
+
+		public void setRxQueueSize(Integer rxQueueSize) {
+			this.rxQueueSize = rxQueueSize;
+		}
+
+		public List<String> getIpv6Addresss() {
+			return this.ipv6Addresss;
+		}
+
+		public void setIpv6Addresss(List<String> ipv6Addresss) {
+			this.ipv6Addresss = ipv6Addresss;
 		}
 	}
 
 	public static class DataDisk {
 
-		private String performanceLevel;
+		private Boolean burstingEnabled;
 
-		private String autoSnapshotPolicyId;
-
-		private String encrypted;
+		private String storageClusterId;
 
 		private String description;
 
-		private String snapshotId;
+		private String category;
+
+		private String kMSKeyId;
+
+		private String performanceLevel;
+
+		private String encrypted;
 
 		private String device;
 
 		private Integer size;
 
-		private String diskName;
-
-		private String category;
-
-		private String encryptAlgorithm;
-
 		private Boolean deleteWithInstance;
 
-		private String kMSKeyId;
+		private String autoSnapshotPolicyId;
 
-		private String storageClusterId;
+		private String diskName;
 
 		private Long provisionedIops;
 
-		private Boolean burstingEnabled;
+		private String encryptAlgorithm;
 
-		public String getPerformanceLevel() {
-			return this.performanceLevel;
+		private String snapshotId;
+
+		public Boolean getBurstingEnabled() {
+			return this.burstingEnabled;
 		}
 
-		public void setPerformanceLevel(String performanceLevel) {
-			this.performanceLevel = performanceLevel;
+		public void setBurstingEnabled(Boolean burstingEnabled) {
+			this.burstingEnabled = burstingEnabled;
 		}
 
-		public String getAutoSnapshotPolicyId() {
-			return this.autoSnapshotPolicyId;
+		public String getStorageClusterId() {
+			return this.storageClusterId;
 		}
 
-		public void setAutoSnapshotPolicyId(String autoSnapshotPolicyId) {
-			this.autoSnapshotPolicyId = autoSnapshotPolicyId;
-		}
-
-		public String getEncrypted() {
-			return this.encrypted;
-		}
-
-		public void setEncrypted(String encrypted) {
-			this.encrypted = encrypted;
+		public void setStorageClusterId(String storageClusterId) {
+			this.storageClusterId = storageClusterId;
 		}
 
 		public String getDescription() {
@@ -1690,12 +1707,36 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 			this.description = description;
 		}
 
-		public String getSnapshotId() {
-			return this.snapshotId;
+		public String getCategory() {
+			return this.category;
 		}
 
-		public void setSnapshotId(String snapshotId) {
-			this.snapshotId = snapshotId;
+		public void setCategory(String category) {
+			this.category = category;
+		}
+
+		public String getKMSKeyId() {
+			return this.kMSKeyId;
+		}
+
+		public void setKMSKeyId(String kMSKeyId) {
+			this.kMSKeyId = kMSKeyId;
+		}
+
+		public String getPerformanceLevel() {
+			return this.performanceLevel;
+		}
+
+		public void setPerformanceLevel(String performanceLevel) {
+			this.performanceLevel = performanceLevel;
+		}
+
+		public String getEncrypted() {
+			return this.encrypted;
+		}
+
+		public void setEncrypted(String encrypted) {
+			this.encrypted = encrypted;
 		}
 
 		public String getDevice() {
@@ -1714,30 +1755,6 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 			this.size = size;
 		}
 
-		public String getDiskName() {
-			return this.diskName;
-		}
-
-		public void setDiskName(String diskName) {
-			this.diskName = diskName;
-		}
-
-		public String getCategory() {
-			return this.category;
-		}
-
-		public void setCategory(String category) {
-			this.category = category;
-		}
-
-		public String getEncryptAlgorithm() {
-			return this.encryptAlgorithm;
-		}
-
-		public void setEncryptAlgorithm(String encryptAlgorithm) {
-			this.encryptAlgorithm = encryptAlgorithm;
-		}
-
 		public Boolean getDeleteWithInstance() {
 			return this.deleteWithInstance;
 		}
@@ -1746,20 +1763,20 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 			this.deleteWithInstance = deleteWithInstance;
 		}
 
-		public String getKMSKeyId() {
-			return this.kMSKeyId;
+		public String getAutoSnapshotPolicyId() {
+			return this.autoSnapshotPolicyId;
 		}
 
-		public void setKMSKeyId(String kMSKeyId) {
-			this.kMSKeyId = kMSKeyId;
+		public void setAutoSnapshotPolicyId(String autoSnapshotPolicyId) {
+			this.autoSnapshotPolicyId = autoSnapshotPolicyId;
 		}
 
-		public String getStorageClusterId() {
-			return this.storageClusterId;
+		public String getDiskName() {
+			return this.diskName;
 		}
 
-		public void setStorageClusterId(String storageClusterId) {
-			this.storageClusterId = storageClusterId;
+		public void setDiskName(String diskName) {
+			this.diskName = diskName;
 		}
 
 		public Long getProvisionedIops() {
@@ -1770,12 +1787,33 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 			this.provisionedIops = provisionedIops;
 		}
 
-		public Boolean getBurstingEnabled() {
-			return this.burstingEnabled;
+		public String getEncryptAlgorithm() {
+			return this.encryptAlgorithm;
 		}
 
-		public void setBurstingEnabled(Boolean burstingEnabled) {
-			this.burstingEnabled = burstingEnabled;
+		public void setEncryptAlgorithm(String encryptAlgorithm) {
+			this.encryptAlgorithm = encryptAlgorithm;
+		}
+
+		public String getSnapshotId() {
+			return this.snapshotId;
+		}
+
+		public void setSnapshotId(String snapshotId) {
+			this.snapshotId = snapshotId;
+		}
+	}
+
+	public static class ClockOptions {
+
+		private String ptpStatus;
+
+		public String getPtpStatus() {
+			return this.ptpStatus;
+		}
+
+		public void setPtpStatus(String ptpStatus) {
+			this.ptpStatus = ptpStatus;
 		}
 	}
 

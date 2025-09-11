@@ -77,12 +77,12 @@ public class DescribePriceResponseUnmarshaller {
 		List<Coupon> coupons = new ArrayList<Coupon>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePriceResponse.PriceInfo.Price.Coupons.Length"); i++) {
 			Coupon coupon = new Coupon();
-			coupon.setIsSelected(_ctx.booleanValue("DescribePriceResponse.PriceInfo.Price.Coupons["+ i +"].IsSelected"));
 			coupon.setCouponNo(_ctx.stringValue("DescribePriceResponse.PriceInfo.Price.Coupons["+ i +"].CouponNo"));
-			coupon.setDescription(_ctx.stringValue("DescribePriceResponse.PriceInfo.Price.Coupons["+ i +"].Description"));
-			coupon.setName(_ctx.stringValue("DescribePriceResponse.PriceInfo.Price.Coupons["+ i +"].Name"));
 			coupon.setDiscountOff(_ctx.floatValue("DescribePriceResponse.PriceInfo.Price.Coupons["+ i +"].DiscountOff"));
+			coupon.setDescription(_ctx.stringValue("DescribePriceResponse.PriceInfo.Price.Coupons["+ i +"].Description"));
+			coupon.setIsSelected(_ctx.booleanValue("DescribePriceResponse.PriceInfo.Price.Coupons["+ i +"].IsSelected"));
 			coupon.setOptionCode(_ctx.stringValue("DescribePriceResponse.PriceInfo.Price.Coupons["+ i +"].OptionCode"));
+			coupon.setName(_ctx.stringValue("DescribePriceResponse.PriceInfo.Price.Coupons["+ i +"].Name"));
 
 			List<Long> ruleIds = new ArrayList<Long>();
 			for (int j = 0; j < _ctx.lengthValue("DescribePriceResponse.PriceInfo.Price.Coupons["+ i +"].RuleIds.Length"); j++) {
@@ -97,24 +97,24 @@ public class DescribePriceResponseUnmarshaller {
 		List<DetailInfo> detailInfos = new ArrayList<DetailInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePriceResponse.PriceInfo.Price.DetailInfos.Length"); i++) {
 			DetailInfo detailInfo = new DetailInfo();
-			detailInfo.setResource(_ctx.stringValue("DescribePriceResponse.PriceInfo.Price.DetailInfos["+ i +"].Resource"));
 			detailInfo.setOriginalPrice(_ctx.floatValue("DescribePriceResponse.PriceInfo.Price.DetailInfos["+ i +"].OriginalPrice"));
 			detailInfo.setDiscountPrice(_ctx.floatValue("DescribePriceResponse.PriceInfo.Price.DetailInfos["+ i +"].DiscountPrice"));
-			detailInfo.setTradePrice(_ctx.floatValue("DescribePriceResponse.PriceInfo.Price.DetailInfos["+ i +"].TradePrice"));
+			detailInfo.setResource(_ctx.stringValue("DescribePriceResponse.PriceInfo.Price.DetailInfos["+ i +"].Resource"));
 			detailInfo.setStandardPrice(_ctx.floatValue("DescribePriceResponse.PriceInfo.Price.DetailInfos["+ i +"].StandardPrice"));
 			detailInfo.setStandardDiscountPrice(_ctx.floatValue("DescribePriceResponse.PriceInfo.Price.DetailInfos["+ i +"].StandardDiscountPrice"));
+			detailInfo.setTradePrice(_ctx.floatValue("DescribePriceResponse.PriceInfo.Price.DetailInfos["+ i +"].TradePrice"));
 			detailInfo.setIsContractPromotion(_ctx.booleanValue("DescribePriceResponse.PriceInfo.Price.DetailInfos["+ i +"].IsContractPromotion"));
 
 			DepreciateInfo1 depreciateInfo1 = new DepreciateInfo1();
-			depreciateInfo1.setListPrice(_ctx.floatValue("DescribePriceResponse.PriceInfo.Price.DetailInfos["+ i +"].DepreciateInfo.ListPrice"));
-			depreciateInfo1.setOriginalStandardPrice(_ctx.floatValue("DescribePriceResponse.PriceInfo.Price.DetailInfos["+ i +"].DepreciateInfo.OriginalStandardPrice"));
 			depreciateInfo1.setCheapStandardPrice(_ctx.floatValue("DescribePriceResponse.PriceInfo.Price.DetailInfos["+ i +"].DepreciateInfo.CheapStandardPrice"));
 			depreciateInfo1.setCheapRate(_ctx.floatValue("DescribePriceResponse.PriceInfo.Price.DetailInfos["+ i +"].DepreciateInfo.CheapRate"));
-			depreciateInfo1.setDifferentialPrice(_ctx.floatValue("DescribePriceResponse.PriceInfo.Price.DetailInfos["+ i +"].DepreciateInfo.DifferentialPrice"));
 			depreciateInfo1.setDifferentialName(_ctx.stringValue("DescribePriceResponse.PriceInfo.Price.DetailInfos["+ i +"].DepreciateInfo.DifferentialName"));
 			depreciateInfo1.setMonthPrice(_ctx.floatValue("DescribePriceResponse.PriceInfo.Price.DetailInfos["+ i +"].DepreciateInfo.MonthPrice"));
-			depreciateInfo1.setIsShow(_ctx.booleanValue("DescribePriceResponse.PriceInfo.Price.DetailInfos["+ i +"].DepreciateInfo.IsShow"));
+			depreciateInfo1.setOriginalStandardPrice(_ctx.floatValue("DescribePriceResponse.PriceInfo.Price.DetailInfos["+ i +"].DepreciateInfo.OriginalStandardPrice"));
+			depreciateInfo1.setDifferentialPrice(_ctx.floatValue("DescribePriceResponse.PriceInfo.Price.DetailInfos["+ i +"].DepreciateInfo.DifferentialPrice"));
 			depreciateInfo1.setStartTime(_ctx.stringValue("DescribePriceResponse.PriceInfo.Price.DetailInfos["+ i +"].DepreciateInfo.StartTime"));
+			depreciateInfo1.setIsShow(_ctx.booleanValue("DescribePriceResponse.PriceInfo.Price.DetailInfos["+ i +"].DepreciateInfo.IsShow"));
+			depreciateInfo1.setListPrice(_ctx.floatValue("DescribePriceResponse.PriceInfo.Price.DetailInfos["+ i +"].DepreciateInfo.ListPrice"));
 			detailInfo.setDepreciateInfo1(depreciateInfo1);
 
 			List<Rule2> subRules = new ArrayList<Rule2>();
@@ -130,8 +130,8 @@ public class DescribePriceResponseUnmarshaller {
 			List<Attribute> attributes = new ArrayList<Attribute>();
 			for (int j = 0; j < _ctx.lengthValue("DescribePriceResponse.PriceInfo.Price.DetailInfos["+ i +"].Attributes.Length"); j++) {
 				Attribute attribute = new Attribute();
-				attribute.setCode(_ctx.stringValue("DescribePriceResponse.PriceInfo.Price.DetailInfos["+ i +"].Attributes["+ j +"].Code"));
 				attribute.setValue(_ctx.stringValue("DescribePriceResponse.PriceInfo.Price.DetailInfos["+ i +"].Attributes["+ j +"].Value"));
+				attribute.setCode(_ctx.stringValue("DescribePriceResponse.PriceInfo.Price.DetailInfos["+ i +"].Attributes["+ j +"].Code"));
 
 				attributes.add(attribute);
 			}
@@ -144,10 +144,10 @@ public class DescribePriceResponseUnmarshaller {
 		List<Promotion> promotions = new ArrayList<Promotion>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePriceResponse.PriceInfo.Price.Promotions.Length"); i++) {
 			Promotion promotion = new Promotion();
-			promotion.setName(_ctx.stringValue("DescribePriceResponse.PriceInfo.Price.Promotions["+ i +"].Name"));
 			promotion.setDiscountOff(_ctx.floatValue("DescribePriceResponse.PriceInfo.Price.Promotions["+ i +"].DiscountOff"));
 			promotion.setType(_ctx.stringValue("DescribePriceResponse.PriceInfo.Price.Promotions["+ i +"].Type"));
 			promotion.setRemainQuota(_ctx.floatValue("DescribePriceResponse.PriceInfo.Price.Promotions["+ i +"].RemainQuota"));
+			promotion.setName(_ctx.stringValue("DescribePriceResponse.PriceInfo.Price.Promotions["+ i +"].Name"));
 
 			List<Long> ruleIds3 = new ArrayList<Long>();
 			for (int j = 0; j < _ctx.lengthValue("DescribePriceResponse.PriceInfo.Price.Promotions["+ i +"].RuleIds.Length"); j++) {
