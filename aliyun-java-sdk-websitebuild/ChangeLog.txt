@@ -1,3 +1,6 @@
+2025-09-12 Version: 1.0.7
+- Add image search api.
+
 2025-09-09 Version: 1.0.6
 - Add image search api.
 
