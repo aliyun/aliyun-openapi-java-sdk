@@ -281,6 +281,8 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 
 			private ImageOptions imageOptions;
 
+			private SecurityOptions securityOptions;
+
 			public String getDeploymentSetId() {
 				return this.deploymentSetId;
 			}
@@ -729,6 +731,14 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 				this.imageOptions = imageOptions;
 			}
 
+			public SecurityOptions getSecurityOptions() {
+				return this.securityOptions;
+			}
+
+			public void setSecurityOptions(SecurityOptions securityOptions) {
+				this.securityOptions = securityOptions;
+			}
+
 			public static class DataDisk {
 
 				private String performanceLevel;
@@ -988,6 +998,19 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 
 				public void setLoginAsNonRoot(Boolean loginAsNonRoot) {
 					this.loginAsNonRoot = loginAsNonRoot;
+				}
+			}
+
+			public static class SecurityOptions {
+
+				private String trustedSystemMode;
+
+				public String getTrustedSystemMode() {
+					return this.trustedSystemMode;
+				}
+
+				public void setTrustedSystemMode(String trustedSystemMode) {
+					this.trustedSystemMode = trustedSystemMode;
 				}
 			}
 		}

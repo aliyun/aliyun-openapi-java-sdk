@@ -32,6 +32,8 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 
 	private Integer httpPutResponseHopLimit;
 
+	private SecurityOptions securityOptions;
+
 	private String securityEnhancementStrategy;
 
 	private String networkType;
@@ -193,6 +195,18 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 		if(httpPutResponseHopLimit != null){
 			putQueryParameter("HttpPutResponseHopLimit", httpPutResponseHopLimit.toString());
 		}
+	}
+
+	public SecurityOptions getSecurityOptions() {
+		return this.securityOptions;
+	}
+
+	public void setSecurityOptions(SecurityOptions securityOptions) {
+		this.securityOptions = securityOptions;	
+		if (securityOptions != null) {
+			
+				putQueryParameter("SecurityOptions.TrustedSystemMode" , securityOptions.getTrustedSystemMode());
+		}	
 	}
 
 	public String getSecurityEnhancementStrategy() {
@@ -900,6 +914,19 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 		this.systemDiskEncrypted = systemDiskEncrypted;
 		if(systemDiskEncrypted != null){
 			putQueryParameter("SystemDisk.Encrypted", systemDiskEncrypted);
+		}
+	}
+
+	public static class SecurityOptions {
+
+		private String trustedSystemMode;
+
+		public String getTrustedSystemMode() {
+			return this.trustedSystemMode;
+		}
+
+		public void setTrustedSystemMode(String trustedSystemMode) {
+			this.trustedSystemMode = trustedSystemMode;
 		}
 	}
 
