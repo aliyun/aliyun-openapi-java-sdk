@@ -121,6 +121,8 @@ public class GetDataServicePublishedApiResponse extends AcsResponse {
 
 		private String apiPath;
 
+		private Integer sqlMode;
+
 		private List<Integer> protocols;
 
 		private RegistrationDetails registrationDetails;
@@ -263,6 +265,14 @@ public class GetDataServicePublishedApiResponse extends AcsResponse {
 
 		public void setApiPath(String apiPath) {
 			this.apiPath = apiPath;
+		}
+
+		public Integer getSqlMode() {
+			return this.sqlMode;
+		}
+
+		public void setSqlMode(Integer sqlMode) {
+			this.sqlMode = sqlMode;
 		}
 
 		public List<Integer> getProtocols() {
