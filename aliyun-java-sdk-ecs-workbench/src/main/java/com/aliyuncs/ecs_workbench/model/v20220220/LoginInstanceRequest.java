@@ -65,6 +65,12 @@ public class LoginInstanceRequest extends RpcAcsRequest<LoginInstanceResponse> {
 				putQueryParameter("InstanceLoginInfo.DockerExec" , instanceLoginInfo.getDockerExec());
 				putQueryParameter("InstanceLoginInfo.ShortcutToken" , instanceLoginInfo.getShortcutToken());
 				putQueryParameter("InstanceLoginInfo.ResourceGroupId" , instanceLoginInfo.getResourceGroupId());
+				if (instanceLoginInfo.getEncryptionOptions() != null) {
+					
+						putQueryParameter("InstanceLoginInfo.EncryptionOptions.Mode" , instanceLoginInfo.getEncryptionOptions().getMode());
+						putQueryParameter("InstanceLoginInfo.EncryptionOptions.KMSKeyId" , instanceLoginInfo.getEncryptionOptions().getKMSKeyId());
+						putQueryParameter("InstanceLoginInfo.EncryptionOptions.Enabled" , instanceLoginInfo.getEncryptionOptions().getEnabled());
+				}
 				putQueryParameter("InstanceLoginInfo.Protocol" , instanceLoginInfo.getBizProtocol());
 				putQueryParameter("InstanceLoginInfo.Password" , instanceLoginInfo.getPassword());
 				putQueryParameter("InstanceLoginInfo.LoginByInstanceCredential" , instanceLoginInfo.getLoginByInstanceCredential());
@@ -173,6 +179,8 @@ public class LoginInstanceRequest extends RpcAcsRequest<LoginInstanceResponse> {
 
 		private String resourceGroupId;
 
+		private EncryptionOptions encryptionOptions;
+
 		private String protocol;
 
 		private String password;
@@ -259,6 +267,14 @@ public class LoginInstanceRequest extends RpcAcsRequest<LoginInstanceResponse> {
 
 		public void setResourceGroupId(String resourceGroupId) {
 			this.resourceGroupId = resourceGroupId;
+		}
+
+		public EncryptionOptions getEncryptionOptions() {
+			return this.encryptionOptions;
+		}
+
+		public void setEncryptionOptions(EncryptionOptions encryptionOptions) {
+			this.encryptionOptions = encryptionOptions;
 		}
 
 		public String getBizProtocol() {
@@ -387,6 +403,39 @@ public class LoginInstanceRequest extends RpcAcsRequest<LoginInstanceResponse> {
 
 		public void setUsername(String username) {
 			this.username = username;
+		}
+
+		public static class EncryptionOptions {
+
+			private String mode;
+
+			private String kMSKeyId;
+
+			private Boolean enabled;
+
+			public String getMode() {
+				return this.mode;
+			}
+
+			public void setMode(String mode) {
+				this.mode = mode;
+			}
+
+			public String getKMSKeyId() {
+				return this.kMSKeyId;
+			}
+
+			public void setKMSKeyId(String kMSKeyId) {
+				this.kMSKeyId = kMSKeyId;
+			}
+
+			public Boolean getEnabled() {
+				return this.enabled;
+			}
+
+			public void setEnabled(Boolean enabled) {
+				this.enabled = enabled;
+			}
 		}
 
 		public static class Options {
