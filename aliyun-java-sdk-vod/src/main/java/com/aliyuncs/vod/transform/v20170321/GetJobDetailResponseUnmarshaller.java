@@ -18,6 +18,8 @@ import com.aliyuncs.vod.model.v20170321.GetJobDetailResponse;
 import com.aliyuncs.vod.model.v20170321.GetJobDetailResponse.AIJobDetail;
 import com.aliyuncs.vod.model.v20170321.GetJobDetailResponse.SnapshotJobDetail;
 import com.aliyuncs.vod.model.v20170321.GetJobDetailResponse.TranscodeJobDetail;
+import com.aliyuncs.vod.model.v20170321.GetJobDetailResponse.WorkflowTaskDetail;
+import com.aliyuncs.vod.model.v20170321.GetJobDetailResponse.WorkflowTaskDetail.Workflow;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -62,6 +64,26 @@ public class GetJobDetailResponseUnmarshaller {
 		aIJobDetail.setCreateTime(_ctx.stringValue("GetJobDetailResponse.AIJobDetail.CreateTime"));
 		aIJobDetail.setCompleteTime(_ctx.stringValue("GetJobDetailResponse.AIJobDetail.CompleteTime"));
 		getJobDetailResponse.setAIJobDetail(aIJobDetail);
+
+		WorkflowTaskDetail workflowTaskDetail = new WorkflowTaskDetail();
+		workflowTaskDetail.setTaskId(_ctx.stringValue("GetJobDetailResponse.WorkflowTaskDetail.TaskId"));
+		workflowTaskDetail.setStatus(_ctx.stringValue("GetJobDetailResponse.WorkflowTaskDetail.Status"));
+		workflowTaskDetail.setTaskInput(_ctx.stringValue("GetJobDetailResponse.WorkflowTaskDetail.TaskInput"));
+		workflowTaskDetail.setCreateTime(_ctx.stringValue("GetJobDetailResponse.WorkflowTaskDetail.CreateTime"));
+		workflowTaskDetail.setFinishTime(_ctx.stringValue("GetJobDetailResponse.WorkflowTaskDetail.FinishTime"));
+		workflowTaskDetail.setActivityResults(_ctx.stringValue("GetJobDetailResponse.WorkflowTaskDetail.ActivityResults"));
+		workflowTaskDetail.setUserData(_ctx.stringValue("GetJobDetailResponse.WorkflowTaskDetail.UserData"));
+
+		Workflow workflow = new Workflow();
+		workflow.setWorkflowId(_ctx.stringValue("GetJobDetailResponse.WorkflowTaskDetail.Workflow.WorkflowId"));
+		workflow.setName(_ctx.stringValue("GetJobDetailResponse.WorkflowTaskDetail.Workflow.Name"));
+		workflow.setStatus(_ctx.stringValue("GetJobDetailResponse.WorkflowTaskDetail.Workflow.Status"));
+		workflow.setType(_ctx.stringValue("GetJobDetailResponse.WorkflowTaskDetail.Workflow.Type"));
+		workflow.setCreateTime(_ctx.stringValue("GetJobDetailResponse.WorkflowTaskDetail.Workflow.CreateTime"));
+		workflow.setModifiedTime(_ctx.stringValue("GetJobDetailResponse.WorkflowTaskDetail.Workflow.ModifiedTime"));
+		workflow.setAppId(_ctx.stringValue("GetJobDetailResponse.WorkflowTaskDetail.Workflow.AppId"));
+		workflowTaskDetail.setWorkflow(workflow);
+		getJobDetailResponse.setWorkflowTaskDetail(workflowTaskDetail);
 	 
 	 	return getJobDetailResponse;
 	}

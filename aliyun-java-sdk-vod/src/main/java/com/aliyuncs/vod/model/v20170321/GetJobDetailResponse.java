@@ -34,6 +34,8 @@ public class GetJobDetailResponse extends AcsResponse {
 
 	private AIJobDetail aIJobDetail;
 
+	private WorkflowTaskDetail workflowTaskDetail;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -72,6 +74,14 @@ public class GetJobDetailResponse extends AcsResponse {
 
 	public void setAIJobDetail(AIJobDetail aIJobDetail) {
 		this.aIJobDetail = aIJobDetail;
+	}
+
+	public WorkflowTaskDetail getWorkflowTaskDetail() {
+		return this.workflowTaskDetail;
+	}
+
+	public void setWorkflowTaskDetail(WorkflowTaskDetail workflowTaskDetail) {
+		this.workflowTaskDetail = workflowTaskDetail;
 	}
 
 	public static class TranscodeJobDetail {
@@ -340,6 +350,162 @@ public class GetJobDetailResponse extends AcsResponse {
 
 		public void setCompleteTime(String completeTime) {
 			this.completeTime = completeTime;
+		}
+	}
+
+	public static class WorkflowTaskDetail {
+
+		private String taskId;
+
+		private String status;
+
+		private String taskInput;
+
+		private String createTime;
+
+		private String finishTime;
+
+		private String activityResults;
+
+		private String userData;
+
+		private Workflow workflow;
+
+		public String getTaskId() {
+			return this.taskId;
+		}
+
+		public void setTaskId(String taskId) {
+			this.taskId = taskId;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getTaskInput() {
+			return this.taskInput;
+		}
+
+		public void setTaskInput(String taskInput) {
+			this.taskInput = taskInput;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getFinishTime() {
+			return this.finishTime;
+		}
+
+		public void setFinishTime(String finishTime) {
+			this.finishTime = finishTime;
+		}
+
+		public String getActivityResults() {
+			return this.activityResults;
+		}
+
+		public void setActivityResults(String activityResults) {
+			this.activityResults = activityResults;
+		}
+
+		public String getUserData() {
+			return this.userData;
+		}
+
+		public void setUserData(String userData) {
+			this.userData = userData;
+		}
+
+		public Workflow getWorkflow() {
+			return this.workflow;
+		}
+
+		public void setWorkflow(Workflow workflow) {
+			this.workflow = workflow;
+		}
+
+		public static class Workflow {
+
+			private String workflowId;
+
+			private String name;
+
+			private String status;
+
+			private String type;
+
+			private String createTime;
+
+			private String modifiedTime;
+
+			private String appId;
+
+			public String getWorkflowId() {
+				return this.workflowId;
+			}
+
+			public void setWorkflowId(String workflowId) {
+				this.workflowId = workflowId;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
+			}
+
+			public String getCreateTime() {
+				return this.createTime;
+			}
+
+			public void setCreateTime(String createTime) {
+				this.createTime = createTime;
+			}
+
+			public String getModifiedTime() {
+				return this.modifiedTime;
+			}
+
+			public void setModifiedTime(String modifiedTime) {
+				this.modifiedTime = modifiedTime;
+			}
+
+			public String getAppId() {
+				return this.appId;
+			}
+
+			public void setAppId(String appId) {
+				this.appId = appId;
+			}
 		}
 	}
 

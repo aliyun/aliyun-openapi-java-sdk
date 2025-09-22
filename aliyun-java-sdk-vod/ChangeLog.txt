@@ -1,3 +1,6 @@
+2025-09-22 Version: 2.16.33
+- support DescribeVodUserVipsByDomain.
+
 2025-03-21 Version: 2.16.32
 - GetDailyPlayRegionStatis
 

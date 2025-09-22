@@ -25,9 +25,9 @@ import com.aliyuncs.vod.Endpoint;
 public class MoveAppResourceRequest extends RpcAcsRequest<MoveAppResourceResponse> {
 	   
 
-	private String resourceType;
-
 	private String targetAppId;
+
+	private String resourceType;
 
 	private String resourceIds;
 	public MoveAppResourceRequest() {
@@ -39,17 +39,6 @@ public class MoveAppResourceRequest extends RpcAcsRequest<MoveAppResourceRespons
 		} catch (Exception e) {}
 	}
 
-	public String getResourceType() {
-		return this.resourceType;
-	}
-
-	public void setResourceType(String resourceType) {
-		this.resourceType = resourceType;
-		if(resourceType != null){
-			putQueryParameter("ResourceType", resourceType);
-		}
-	}
-
 	public String getTargetAppId() {
 		return this.targetAppId;
 	}
@@ -58,6 +47,17 @@ public class MoveAppResourceRequest extends RpcAcsRequest<MoveAppResourceRespons
 		this.targetAppId = targetAppId;
 		if(targetAppId != null){
 			putQueryParameter("TargetAppId", targetAppId);
+		}
+	}
+
+	public String getResourceType() {
+		return this.resourceType;
+	}
+
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType);
 		}
 	}
 

@@ -14,19 +14,20 @@
 
 package com.aliyuncs.vod.model.v20170321;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.vod.transform.v20170321.SubmitWorkflowJobResponseUnmarshaller;
+import com.aliyuncs.vod.transform.v20170321.DescribeVodPlayerDimensionDataResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class SubmitWorkflowJobResponse extends AcsResponse {
+public class DescribeVodPlayerDimensionDataResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String taskId;
+	private List<String> dataList;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,16 +37,21 @@ public class SubmitWorkflowJobResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getTaskId() {
-		return this.taskId;
+	public List<String> getDataList() {
+		return this.dataList;
 	}
 
-	public void setTaskId(String taskId) {
-		this.taskId = taskId;
+	public void setDataList(List<String> dataList) {
+		this.dataList = dataList;
 	}
 
 	@Override
-	public SubmitWorkflowJobResponse getInstance(UnmarshallerContext context) {
-		return	SubmitWorkflowJobResponseUnmarshaller.unmarshall(this, context);
+	public DescribeVodPlayerDimensionDataResponse getInstance(UnmarshallerContext context) {
+		return	DescribeVodPlayerDimensionDataResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

@@ -15,7 +15,6 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.vod.Endpoint;
 
@@ -23,19 +22,26 @@ import com.aliyuncs.vod.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeMediaDistributionRequest extends RpcAcsRequest<DescribeMediaDistributionResponse> {
+public class DescribeVodPlayerCollectDataRequest extends RpcAcsRequest<DescribeVodPlayerCollectDataResponse> {
 	   
 
 	private String startTime;
 
+	private String period;
+
+	private String os;
+
 	private String endTime;
 
-	private String storageClass;
+	private String appId;
 
 	private String interval;
-	public DescribeMediaDistributionRequest() {
-		super("vod", "2017-03-21", "DescribeMediaDistribution", "vod");
-		setProtocol(ProtocolType.HTTPS);
+
+	private String metrics;
+
+	private String terminalType;
+	public DescribeVodPlayerCollectDataRequest() {
+		super("vod", "2017-03-21", "DescribeVodPlayerCollectData", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -54,6 +60,28 @@ public class DescribeMediaDistributionRequest extends RpcAcsRequest<DescribeMedi
 		}
 	}
 
+	public String getPeriod() {
+		return this.period;
+	}
+
+	public void setPeriod(String period) {
+		this.period = period;
+		if(period != null){
+			putQueryParameter("Period", period);
+		}
+	}
+
+	public String getOs() {
+		return this.os;
+	}
+
+	public void setOs(String os) {
+		this.os = os;
+		if(os != null){
+			putQueryParameter("Os", os);
+		}
+	}
+
 	public String getEndTime() {
 		return this.endTime;
 	}
@@ -65,14 +93,14 @@ public class DescribeMediaDistributionRequest extends RpcAcsRequest<DescribeMedi
 		}
 	}
 
-	public String getStorageClass() {
-		return this.storageClass;
+	public String getAppId() {
+		return this.appId;
 	}
 
-	public void setStorageClass(String storageClass) {
-		this.storageClass = storageClass;
-		if(storageClass != null){
-			putQueryParameter("StorageClass", storageClass);
+	public void setAppId(String appId) {
+		this.appId = appId;
+		if(appId != null){
+			putQueryParameter("AppId", appId);
 		}
 	}
 
@@ -87,9 +115,31 @@ public class DescribeMediaDistributionRequest extends RpcAcsRequest<DescribeMedi
 		}
 	}
 
+	public String getMetrics() {
+		return this.metrics;
+	}
+
+	public void setMetrics(String metrics) {
+		this.metrics = metrics;
+		if(metrics != null){
+			putQueryParameter("Metrics", metrics);
+		}
+	}
+
+	public String getTerminalType() {
+		return this.terminalType;
+	}
+
+	public void setTerminalType(String terminalType) {
+		this.terminalType = terminalType;
+		if(terminalType != null){
+			putQueryParameter("TerminalType", terminalType);
+		}
+	}
+
 	@Override
-	public Class<DescribeMediaDistributionResponse> getResponseClass() {
-		return DescribeMediaDistributionResponse.class;
+	public Class<DescribeVodPlayerCollectDataResponse> getResponseClass() {
+		return DescribeVodPlayerCollectDataResponse.class;
 	}
 
 }

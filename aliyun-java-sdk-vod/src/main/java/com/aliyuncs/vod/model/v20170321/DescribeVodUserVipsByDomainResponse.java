@@ -14,19 +14,30 @@
 
 package com.aliyuncs.vod.model.v20170321;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.vod.transform.v20170321.SubmitWorkflowJobResponseUnmarshaller;
+import com.aliyuncs.vod.transform.v20170321.DescribeVodUserVipsByDomainResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class SubmitWorkflowJobResponse extends AcsResponse {
+public class DescribeVodUserVipsByDomainResponse extends AcsResponse {
+
+	private String domainName;
 
 	private String requestId;
 
-	private String taskId;
+	private List<String> vips;
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,16 +47,16 @@ public class SubmitWorkflowJobResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getTaskId() {
-		return this.taskId;
+	public List<String> getVips() {
+		return this.vips;
 	}
 
-	public void setTaskId(String taskId) {
-		this.taskId = taskId;
+	public void setVips(List<String> vips) {
+		this.vips = vips;
 	}
 
 	@Override
-	public SubmitWorkflowJobResponse getInstance(UnmarshallerContext context) {
-		return	SubmitWorkflowJobResponseUnmarshaller.unmarshall(this, context);
+	public DescribeVodUserVipsByDomainResponse getInstance(UnmarshallerContext context) {
+		return	DescribeVodUserVipsByDomainResponseUnmarshaller.unmarshall(this, context);
 	}
 }

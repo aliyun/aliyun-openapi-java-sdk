@@ -27,11 +27,11 @@ public class UpdateTranscodeTemplateGroupRequest extends RpcAcsRequest<UpdateTra
 
 	private String transcodeTemplateList;
 
+	private String locked;
+
 	private String transcodeTemplateGroupId;
 
 	private String name;
-
-	private String locked;
 	public UpdateTranscodeTemplateGroupRequest() {
 		super("vod", "2017-03-21", "UpdateTranscodeTemplateGroup", "vod");
 		setMethod(MethodType.POST);
@@ -49,6 +49,17 @@ public class UpdateTranscodeTemplateGroupRequest extends RpcAcsRequest<UpdateTra
 		this.transcodeTemplateList = transcodeTemplateList;
 		if(transcodeTemplateList != null){
 			putQueryParameter("TranscodeTemplateList", transcodeTemplateList);
+		}
+	}
+
+	public String getLocked() {
+		return this.locked;
+	}
+
+	public void setLocked(String locked) {
+		this.locked = locked;
+		if(locked != null){
+			putQueryParameter("Locked", locked);
 		}
 	}
 
@@ -71,17 +82,6 @@ public class UpdateTranscodeTemplateGroupRequest extends RpcAcsRequest<UpdateTra
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
-		}
-	}
-
-	public String getLocked() {
-		return this.locked;
-	}
-
-	public void setLocked(String locked) {
-		this.locked = locked;
-		if(locked != null){
-			putQueryParameter("Locked", locked);
 		}
 	}
 

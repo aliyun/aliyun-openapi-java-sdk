@@ -22,18 +22,20 @@ import com.aliyuncs.vod.Endpoint;
  * @author auto create
  * @version 
  */
-public class DetachAppPolicyFromIdentityRequest extends RpcAcsRequest<DetachAppPolicyFromIdentityResponse> {
+public class DescribeVodPlayerDimensionDataRequest extends RpcAcsRequest<DescribeVodPlayerDimensionDataResponse> {
 	   
 
-	private String policyNames;
+	private String startTime;
 
-	private String identityName;
+	private String dimension;
 
-	private String identityType;
+	private String endTime;
 
 	private String appId;
-	public DetachAppPolicyFromIdentityRequest() {
-		super("vod", "2017-03-21", "DetachAppPolicyFromIdentity", "vod");
+
+	private String region;
+	public DescribeVodPlayerDimensionDataRequest() {
+		super("vod", "2017-03-21", "DescribeVodPlayerDimensionData", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -41,36 +43,36 @@ public class DetachAppPolicyFromIdentityRequest extends RpcAcsRequest<DetachAppP
 		} catch (Exception e) {}
 	}
 
-	public String getPolicyNames() {
-		return this.policyNames;
+	public String getStartTime() {
+		return this.startTime;
 	}
 
-	public void setPolicyNames(String policyNames) {
-		this.policyNames = policyNames;
-		if(policyNames != null){
-			putQueryParameter("PolicyNames", policyNames);
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
 		}
 	}
 
-	public String getIdentityName() {
-		return this.identityName;
+	public String getDimension() {
+		return this.dimension;
 	}
 
-	public void setIdentityName(String identityName) {
-		this.identityName = identityName;
-		if(identityName != null){
-			putQueryParameter("IdentityName", identityName);
+	public void setDimension(String dimension) {
+		this.dimension = dimension;
+		if(dimension != null){
+			putQueryParameter("Dimension", dimension);
 		}
 	}
 
-	public String getIdentityType() {
-		return this.identityType;
+	public String getEndTime() {
+		return this.endTime;
 	}
 
-	public void setIdentityType(String identityType) {
-		this.identityType = identityType;
-		if(identityType != null){
-			putQueryParameter("IdentityType", identityType);
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
 		}
 	}
 
@@ -85,9 +87,20 @@ public class DetachAppPolicyFromIdentityRequest extends RpcAcsRequest<DetachAppP
 		}
 	}
 
+	public String getRegion() {
+		return this.region;
+	}
+
+	public void setRegion(String region) {
+		this.region = region;
+		if(region != null){
+			putQueryParameter("Region", region);
+		}
+	}
+
 	@Override
-	public Class<DetachAppPolicyFromIdentityResponse> getResponseClass() {
-		return DetachAppPolicyFromIdentityResponse.class;
+	public Class<DescribeVodPlayerDimensionDataResponse> getResponseClass() {
+		return DescribeVodPlayerDimensionDataResponse.class;
 	}
 
 }

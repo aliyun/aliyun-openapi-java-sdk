@@ -27,11 +27,11 @@ public class RegisterMediaRequest extends RpcAcsRequest<RegisterMediaResponse> {
 
 	private String userData;
 
-	private String templateGroupId;
-
 	private String registerMetadatas;
 
 	private String workflowId;
+
+	private String templateGroupId;
 	public RegisterMediaRequest() {
 		super("vod", "2017-03-21", "RegisterMedia", "vod");
 		setMethod(MethodType.POST);
@@ -49,17 +49,6 @@ public class RegisterMediaRequest extends RpcAcsRequest<RegisterMediaResponse> {
 		this.userData = userData;
 		if(userData != null){
 			putQueryParameter("UserData", userData);
-		}
-	}
-
-	public String getTemplateGroupId() {
-		return this.templateGroupId;
-	}
-
-	public void setTemplateGroupId(String templateGroupId) {
-		this.templateGroupId = templateGroupId;
-		if(templateGroupId != null){
-			putQueryParameter("TemplateGroupId", templateGroupId);
 		}
 	}
 
@@ -82,6 +71,17 @@ public class RegisterMediaRequest extends RpcAcsRequest<RegisterMediaResponse> {
 		this.workflowId = workflowId;
 		if(workflowId != null){
 			putQueryParameter("WorkflowId", workflowId);
+		}
+	}
+
+	public String getTemplateGroupId() {
+		return this.templateGroupId;
+	}
+
+	public void setTemplateGroupId(String templateGroupId) {
+		this.templateGroupId = templateGroupId;
+		if(templateGroupId != null){
+			putQueryParameter("TemplateGroupId", templateGroupId);
 		}
 	}
 
