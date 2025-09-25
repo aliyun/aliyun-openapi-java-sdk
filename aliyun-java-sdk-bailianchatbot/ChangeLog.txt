@@ -1,3 +1,6 @@
+2025-09-25 Version: 1.0.1
+- update dependency.
+
 2025-03-07 Version: 1.0.0
 - first publish.
 - publish ssechat api.
