@@ -35,6 +35,8 @@ public class SendSmsVerifyCodeRequest extends RpcAcsRequest<SendSmsVerifyCodeRes
 
 	private String signName;
 
+	private Long autoRetry;
+
 	private String resourceOwnerAccount;
 
 	private Long validTime;
@@ -119,6 +121,17 @@ public class SendSmsVerifyCodeRequest extends RpcAcsRequest<SendSmsVerifyCodeRes
 		this.signName = signName;
 		if(signName != null){
 			putQueryParameter("SignName", signName);
+		}
+	}
+
+	public Long getAutoRetry() {
+		return this.autoRetry;
+	}
+
+	public void setAutoRetry(Long autoRetry) {
+		this.autoRetry = autoRetry;
+		if(autoRetry != null){
+			putQueryParameter("AutoRetry", autoRetry.toString());
 		}
 	}
 

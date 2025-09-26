@@ -23,6 +23,7 @@ public class SendSmsVerifyCodeResponseUnmarshaller {
 
 	public static SendSmsVerifyCodeResponse unmarshall(SendSmsVerifyCodeResponse sendSmsVerifyCodeResponse, UnmarshallerContext _ctx) {
 		
+		sendSmsVerifyCodeResponse.setRequestId(_ctx.stringValue("SendSmsVerifyCodeResponse.RequestId"));
 		sendSmsVerifyCodeResponse.setAccessDeniedDetail(_ctx.stringValue("SendSmsVerifyCodeResponse.AccessDeniedDetail"));
 		sendSmsVerifyCodeResponse.setMessage(_ctx.stringValue("SendSmsVerifyCodeResponse.Message"));
 		sendSmsVerifyCodeResponse.setCode(_ctx.stringValue("SendSmsVerifyCodeResponse.Code"));

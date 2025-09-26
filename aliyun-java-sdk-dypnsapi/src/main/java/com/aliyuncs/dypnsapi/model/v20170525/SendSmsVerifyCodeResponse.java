@@ -28,6 +28,8 @@ public class SendSmsVerifyCodeResponse extends AcsResponse {
 
 	private String message;
 
+	private String requestId;
+
 	private String code;
 
 	private Boolean success;
@@ -48,6 +50,14 @@ public class SendSmsVerifyCodeResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getCode() {

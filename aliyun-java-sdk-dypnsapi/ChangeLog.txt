@@ -1,3 +1,6 @@
+2025-09-26 Version: 1.2.12
+- Publish sdk.
+
 2024-10-24 Version: 1.2.11
 - Publish sdk.
 
