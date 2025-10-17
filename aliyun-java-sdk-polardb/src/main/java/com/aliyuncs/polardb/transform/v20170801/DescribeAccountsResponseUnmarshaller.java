@@ -34,21 +34,22 @@ public class DescribeAccountsResponseUnmarshaller {
 		List<DBAccount> accounts = new ArrayList<DBAccount>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAccountsResponse.Accounts.Length"); i++) {
 			DBAccount dBAccount = new DBAccount();
-			dBAccount.setAccountStatus(_ctx.stringValue("DescribeAccountsResponse.Accounts["+ i +"].AccountStatus"));
 			dBAccount.setAccountDescription(_ctx.stringValue("DescribeAccountsResponse.Accounts["+ i +"].AccountDescription"));
+			dBAccount.setAccountStatus(_ctx.stringValue("DescribeAccountsResponse.Accounts["+ i +"].AccountStatus"));
 			dBAccount.setPrivilegeExceeded(_ctx.stringValue("DescribeAccountsResponse.Accounts["+ i +"].PrivilegeExceeded"));
+			dBAccount.setDynamoDBAuthPassword(_ctx.stringValue("DescribeAccountsResponse.Accounts["+ i +"].DynamoDBAuthPassword"));
+			dBAccount.setAccountLockState(_ctx.stringValue("DescribeAccountsResponse.Accounts["+ i +"].AccountLockState"));
 			dBAccount.setAccountPasswordValidTime(_ctx.stringValue("DescribeAccountsResponse.Accounts["+ i +"].AccountPasswordValidTime"));
 			dBAccount.setAccountType(_ctx.stringValue("DescribeAccountsResponse.Accounts["+ i +"].AccountType"));
-			dBAccount.setAccountLockState(_ctx.stringValue("DescribeAccountsResponse.Accounts["+ i +"].AccountLockState"));
+			dBAccount.setTairPasswordSetted(_ctx.stringValue("DescribeAccountsResponse.Accounts["+ i +"].TairPasswordSetted"));
 			dBAccount.setAccountName(_ctx.stringValue("DescribeAccountsResponse.Accounts["+ i +"].AccountName"));
 			dBAccount.setAccountPassword(_ctx.stringValue("DescribeAccountsResponse.Accounts["+ i +"].AccountPassword"));
-			dBAccount.setTairPasswordSetted(_ctx.stringValue("DescribeAccountsResponse.Accounts["+ i +"].TairPasswordSetted"));
 
 			List<DatabasePrivilege> databasePrivileges = new ArrayList<DatabasePrivilege>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeAccountsResponse.Accounts["+ i +"].DatabasePrivileges.Length"); j++) {
 				DatabasePrivilege databasePrivilege = new DatabasePrivilege();
-				databasePrivilege.setDBName(_ctx.stringValue("DescribeAccountsResponse.Accounts["+ i +"].DatabasePrivileges["+ j +"].DBName"));
 				databasePrivilege.setAccountPrivilege(_ctx.stringValue("DescribeAccountsResponse.Accounts["+ i +"].DatabasePrivileges["+ j +"].AccountPrivilege"));
+				databasePrivilege.setDBName(_ctx.stringValue("DescribeAccountsResponse.Accounts["+ i +"].DatabasePrivileges["+ j +"].DBName"));
 
 				databasePrivileges.add(databasePrivilege);
 			}

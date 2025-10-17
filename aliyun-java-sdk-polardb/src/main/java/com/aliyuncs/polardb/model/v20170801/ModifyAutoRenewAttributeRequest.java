@@ -29,6 +29,8 @@ public class ModifyAutoRenewAttributeRequest extends RpcAcsRequest<ModifyAutoRen
 
 	private String duration;
 
+	private String cloudProvider;
+
 	private String resourceGroupId;
 
 	private String renewalStatus;
@@ -70,6 +72,17 @@ public class ModifyAutoRenewAttributeRequest extends RpcAcsRequest<ModifyAutoRen
 		this.duration = duration;
 		if(duration != null){
 			putQueryParameter("Duration", duration);
+		}
+	}
+
+	public String getCloudProvider() {
+		return this.cloudProvider;
+	}
+
+	public void setCloudProvider(String cloudProvider) {
+		this.cloudProvider = cloudProvider;
+		if(cloudProvider != null){
+			putQueryParameter("CloudProvider", cloudProvider);
 		}
 	}
 

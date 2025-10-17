@@ -40,9 +40,15 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 
 	private String creationCategory;
 
+	private String cloudProvider;
+
 	private String resourceGroupId;
 
+	private Long sourceUid;
+
 	private String dBNodeClass;
+
+	private String ensRegionId;
 
 	private String creationOption;
 
@@ -225,6 +231,17 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		}
 	}
 
+	public String getCloudProvider() {
+		return this.cloudProvider;
+	}
+
+	public void setCloudProvider(String cloudProvider) {
+		this.cloudProvider = cloudProvider;
+		if(cloudProvider != null){
+			putQueryParameter("CloudProvider", cloudProvider);
+		}
+	}
+
 	public String getResourceGroupId() {
 		return this.resourceGroupId;
 	}
@@ -236,6 +253,17 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		}
 	}
 
+	public Long getSourceUid() {
+		return this.sourceUid;
+	}
+
+	public void setSourceUid(Long sourceUid) {
+		this.sourceUid = sourceUid;
+		if(sourceUid != null){
+			putQueryParameter("SourceUid", sourceUid.toString());
+		}
+	}
+
 	public String getDBNodeClass() {
 		return this.dBNodeClass;
 	}
@@ -244,6 +272,17 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		this.dBNodeClass = dBNodeClass;
 		if(dBNodeClass != null){
 			putQueryParameter("DBNodeClass", dBNodeClass);
+		}
+	}
+
+	public String getEnsRegionId() {
+		return this.ensRegionId;
+	}
+
+	public void setEnsRegionId(String ensRegionId) {
+		this.ensRegionId = ensRegionId;
+		if(ensRegionId != null){
+			putQueryParameter("EnsRegionId", ensRegionId);
 		}
 	}
 

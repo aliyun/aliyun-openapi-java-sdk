@@ -29,6 +29,8 @@ public class DescribeDBClusterPerformanceRequest extends RpcAcsRequest<DescribeD
 
 	private String type;
 
+	private String subGroupName;
+
 	private String key;
 
 	private String dBClusterId;
@@ -64,6 +66,17 @@ public class DescribeDBClusterPerformanceRequest extends RpcAcsRequest<DescribeD
 		this.type = type;
 		if(type != null){
 			putQueryParameter("Type", type);
+		}
+	}
+
+	public String getSubGroupName() {
+		return this.subGroupName;
+	}
+
+	public void setSubGroupName(String subGroupName) {
+		this.subGroupName = subGroupName;
+		if(subGroupName != null){
+			putQueryParameter("SubGroupName", subGroupName);
 		}
 	}
 

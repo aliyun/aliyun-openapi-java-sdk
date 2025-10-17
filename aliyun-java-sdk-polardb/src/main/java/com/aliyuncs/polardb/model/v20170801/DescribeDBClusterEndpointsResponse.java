@@ -73,6 +73,10 @@ public class DescribeDBClusterEndpointsResponse extends AcsResponse {
 
 		private String consistLevelControlVersion;
 
+		private String dBEndpointCreateTime;
+
+		private String dBEndpointStatus;
+
 		private List<Address> addressItems;
 
 		public String getNodes() {
@@ -177,6 +181,22 @@ public class DescribeDBClusterEndpointsResponse extends AcsResponse {
 
 		public void setConsistLevelControlVersion(String consistLevelControlVersion) {
 			this.consistLevelControlVersion = consistLevelControlVersion;
+		}
+
+		public String getDBEndpointCreateTime() {
+			return this.dBEndpointCreateTime;
+		}
+
+		public void setDBEndpointCreateTime(String dBEndpointCreateTime) {
+			this.dBEndpointCreateTime = dBEndpointCreateTime;
+		}
+
+		public String getDBEndpointStatus() {
+			return this.dBEndpointStatus;
+		}
+
+		public void setDBEndpointStatus(String dBEndpointStatus) {
+			this.dBEndpointStatus = dBEndpointStatus;
 		}
 
 		public List<Address> getAddressItems() {

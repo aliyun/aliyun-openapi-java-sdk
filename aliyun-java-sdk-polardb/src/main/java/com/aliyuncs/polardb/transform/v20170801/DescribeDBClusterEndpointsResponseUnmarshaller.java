@@ -45,6 +45,8 @@ public class DescribeDBClusterEndpointsResponseUnmarshaller {
 			dBEndpoint.setPolarSccWaitTimeout(_ctx.stringValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].PolarSccWaitTimeout"));
 			dBEndpoint.setNodeWithRoles(_ctx.stringValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].NodeWithRoles"));
 			dBEndpoint.setConsistLevelControlVersion(_ctx.stringValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].ConsistLevelControlVersion"));
+			dBEndpoint.setDBEndpointCreateTime(_ctx.stringValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].DBEndpointCreateTime"));
+			dBEndpoint.setDBEndpointStatus(_ctx.stringValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].DBEndpointStatus"));
 
 			List<Address> addressItems = new ArrayList<Address>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].AddressItems.Length"); j++) {

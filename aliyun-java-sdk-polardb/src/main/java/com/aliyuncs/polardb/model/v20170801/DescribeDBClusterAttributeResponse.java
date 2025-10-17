@@ -81,9 +81,9 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 	private String lockMode;
 
-	private Long storageUsed;
+	private Long searchStorageUsed;
 
-	private Long compressStorageUsed;
+	private Long searchCompressStorageUsed;
 
 	private Long storageSpace;
 
@@ -178,6 +178,16 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 	private String backupDowngradeLevel;
 
 	private String relativeAICluster;
+
+	private String dynamoDB;
+
+	private String supportCXLMemPool;
+
+	private String apiKeys;
+
+	private Long storageUsed;
+
+	private Long compressStorageUsed;
 
 	private List<DBNode> dBNodes;
 
@@ -409,20 +419,20 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 		this.lockMode = lockMode;
 	}
 
-	public Long getStorageUsed() {
-		return this.storageUsed;
+	public Long getSearchStorageUsed() {
+		return this.searchStorageUsed;
 	}
 
-	public void setStorageUsed(Long storageUsed) {
-		this.storageUsed = storageUsed;
+	public void setSearchStorageUsed(Long searchStorageUsed) {
+		this.searchStorageUsed = searchStorageUsed;
 	}
 
-	public Long getCompressStorageUsed() {
-		return this.compressStorageUsed;
+	public Long getSearchCompressStorageUsed() {
+		return this.searchCompressStorageUsed;
 	}
 
-	public void setCompressStorageUsed(Long compressStorageUsed) {
-		this.compressStorageUsed = compressStorageUsed;
+	public void setSearchCompressStorageUsed(Long searchCompressStorageUsed) {
+		this.searchCompressStorageUsed = searchCompressStorageUsed;
 	}
 
 	public Long getStorageSpace() {
@@ -801,6 +811,46 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 		this.relativeAICluster = relativeAICluster;
 	}
 
+	public String getDynamoDB() {
+		return this.dynamoDB;
+	}
+
+	public void setDynamoDB(String dynamoDB) {
+		this.dynamoDB = dynamoDB;
+	}
+
+	public String getSupportCXLMemPool() {
+		return this.supportCXLMemPool;
+	}
+
+	public void setSupportCXLMemPool(String supportCXLMemPool) {
+		this.supportCXLMemPool = supportCXLMemPool;
+	}
+
+	public String getApiKeys() {
+		return this.apiKeys;
+	}
+
+	public void setApiKeys(String apiKeys) {
+		this.apiKeys = apiKeys;
+	}
+
+	public Long getStorageUsed() {
+		return this.storageUsed;
+	}
+
+	public void setStorageUsed(Long storageUsed) {
+		this.storageUsed = storageUsed;
+	}
+
+	public Long getCompressStorageUsed() {
+		return this.compressStorageUsed;
+	}
+
+	public void setCompressStorageUsed(Long compressStorageUsed) {
+		this.compressStorageUsed = compressStorageUsed;
+	}
+
 	public List<DBNode> getDBNodes() {
 		return this.dBNodes;
 	}
@@ -904,6 +954,12 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 		private String mirrorInsName;
 
 		private String architecture;
+
+		private String supportMemPool;
+
+		private String supportCXLMemPool;
+
+		private String dBNodeCXLRemoteMemory;
 
 		public String getCreationTime() {
 			return this.creationTime;
@@ -1215,6 +1271,30 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 		public void setArchitecture(String architecture) {
 			this.architecture = architecture;
+		}
+
+		public String getSupportMemPool() {
+			return this.supportMemPool;
+		}
+
+		public void setSupportMemPool(String supportMemPool) {
+			this.supportMemPool = supportMemPool;
+		}
+
+		public String getSupportCXLMemPool() {
+			return this.supportCXLMemPool;
+		}
+
+		public void setSupportCXLMemPool(String supportCXLMemPool) {
+			this.supportCXLMemPool = supportCXLMemPool;
+		}
+
+		public String getDBNodeCXLRemoteMemory() {
+			return this.dBNodeCXLRemoteMemory;
+		}
+
+		public void setDBNodeCXLRemoteMemory(String dBNodeCXLRemoteMemory) {
+			this.dBNodeCXLRemoteMemory = dBNodeCXLRemoteMemory;
 		}
 	}
 

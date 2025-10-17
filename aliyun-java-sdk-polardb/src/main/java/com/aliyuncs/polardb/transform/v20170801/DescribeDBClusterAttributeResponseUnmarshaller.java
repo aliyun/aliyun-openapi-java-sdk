@@ -56,8 +56,8 @@ public class DescribeDBClusterAttributeResponseUnmarshaller {
 		describeDBClusterAttributeResponse.setPayType(_ctx.stringValue("DescribeDBClusterAttributeResponse.PayType"));
 		describeDBClusterAttributeResponse.setStoragePayType(_ctx.stringValue("DescribeDBClusterAttributeResponse.StoragePayType"));
 		describeDBClusterAttributeResponse.setLockMode(_ctx.stringValue("DescribeDBClusterAttributeResponse.LockMode"));
-		describeDBClusterAttributeResponse.setStorageUsed(_ctx.longValue("DescribeDBClusterAttributeResponse.StorageUsed"));
-		describeDBClusterAttributeResponse.setCompressStorageUsed(_ctx.longValue("DescribeDBClusterAttributeResponse.CompressStorageUsed"));
+		describeDBClusterAttributeResponse.setSearchStorageUsed(_ctx.longValue("DescribeDBClusterAttributeResponse.SearchStorageUsed"));
+		describeDBClusterAttributeResponse.setSearchCompressStorageUsed(_ctx.longValue("DescribeDBClusterAttributeResponse.SearchCompressStorageUsed"));
 		describeDBClusterAttributeResponse.setStorageSpace(_ctx.longValue("DescribeDBClusterAttributeResponse.StorageSpace"));
 		describeDBClusterAttributeResponse.setDBVersionStatus(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBVersionStatus"));
 		describeDBClusterAttributeResponse.setCreationTime(_ctx.stringValue("DescribeDBClusterAttributeResponse.CreationTime"));
@@ -105,6 +105,11 @@ public class DescribeDBClusterAttributeResponseUnmarshaller {
 		describeDBClusterAttributeResponse.setDocumentDB(_ctx.stringValue("DescribeDBClusterAttributeResponse.DocumentDB"));
 		describeDBClusterAttributeResponse.setBackupDowngradeLevel(_ctx.stringValue("DescribeDBClusterAttributeResponse.BackupDowngradeLevel"));
 		describeDBClusterAttributeResponse.setRelativeAICluster(_ctx.stringValue("DescribeDBClusterAttributeResponse.RelativeAICluster"));
+		describeDBClusterAttributeResponse.setDynamoDB(_ctx.stringValue("DescribeDBClusterAttributeResponse.DynamoDB"));
+		describeDBClusterAttributeResponse.setSupportCXLMemPool(_ctx.stringValue("DescribeDBClusterAttributeResponse.SupportCXLMemPool"));
+		describeDBClusterAttributeResponse.setApiKeys(_ctx.stringValue("DescribeDBClusterAttributeResponse.ApiKeys"));
+		describeDBClusterAttributeResponse.setStorageUsed(_ctx.longValue("DescribeDBClusterAttributeResponse.StorageUsed"));
+		describeDBClusterAttributeResponse.setCompressStorageUsed(_ctx.longValue("DescribeDBClusterAttributeResponse.CompressStorageUsed"));
 
 		RelatedAPInstance relatedAPInstance = new RelatedAPInstance();
 		relatedAPInstance.setName(_ctx.stringValue("DescribeDBClusterAttributeResponse.RelatedAPInstance.Name"));
@@ -157,6 +162,9 @@ public class DescribeDBClusterAttributeResponseUnmarshaller {
 			dBNode.setSubGroupDescription(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].SubGroupDescription"));
 			dBNode.setMirrorInsName(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].MirrorInsName"));
 			dBNode.setArchitecture(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].Architecture"));
+			dBNode.setSupportMemPool(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].SupportMemPool"));
+			dBNode.setSupportCXLMemPool(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].SupportCXLMemPool"));
+			dBNode.setDBNodeCXLRemoteMemory(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].DBNodeCXLRemoteMemory"));
 
 			dBNodes.add(dBNode);
 		}

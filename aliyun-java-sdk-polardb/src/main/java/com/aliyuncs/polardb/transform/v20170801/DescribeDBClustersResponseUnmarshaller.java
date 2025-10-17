@@ -55,8 +55,8 @@ public class DescribeDBClustersResponseUnmarshaller {
 			dBCluster.setDBClusterId(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].DBClusterId"));
 			dBCluster.setDBClusterStatus(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].DBClusterStatus"));
 			dBCluster.setResourceGroupId(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].ResourceGroupId"));
-			dBCluster.setStorageUsed(_ctx.longValue("DescribeDBClustersResponse.Items["+ i +"].StorageUsed"));
-			dBCluster.setCompressStorageUsed(_ctx.longValue("DescribeDBClustersResponse.Items["+ i +"].CompressStorageUsed"));
+			dBCluster.setSearchStorageUsed(_ctx.longValue("DescribeDBClustersResponse.Items["+ i +"].SearchStorageUsed"));
+			dBCluster.setSearchCompressStorageUsed(_ctx.longValue("DescribeDBClustersResponse.Items["+ i +"].SearchCompressStorageUsed"));
 			dBCluster.setStorageSpace(_ctx.longValue("DescribeDBClustersResponse.Items["+ i +"].StorageSpace"));
 			dBCluster.setDBClusterNetworkType(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].DBClusterNetworkType"));
 			dBCluster.setDBClusterDescription(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].DBClusterDescription"));
@@ -78,6 +78,8 @@ public class DescribeDBClustersResponseUnmarshaller {
 			dBCluster.setDnClass(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].DnClass"));
 			dBCluster.setCloudInstanceIp(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].CloudInstanceIp"));
 			dBCluster.setSubCategory(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].SubCategory"));
+			dBCluster.setStorageUsed(_ctx.longValue("DescribeDBClustersResponse.Items["+ i +"].StorageUsed"));
+			dBCluster.setCompressStorageUsed(_ctx.longValue("DescribeDBClustersResponse.Items["+ i +"].CompressStorageUsed"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDBClustersResponse.Items["+ i +"].Tags.Length"); j++) {

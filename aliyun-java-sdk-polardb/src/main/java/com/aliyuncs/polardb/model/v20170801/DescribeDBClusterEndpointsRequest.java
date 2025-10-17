@@ -38,6 +38,8 @@ public class DescribeDBClusterEndpointsRequest extends RpcAcsRequest<DescribeDBC
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private String polarFsInstanceId;
 	public DescribeDBClusterEndpointsRequest() {
 		super("polardb", "2017-08-01", "DescribeDBClusterEndpoints", "polardb");
 		setMethod(MethodType.POST);
@@ -121,6 +123,17 @@ public class DescribeDBClusterEndpointsRequest extends RpcAcsRequest<DescribeDBC
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getPolarFsInstanceId() {
+		return this.polarFsInstanceId;
+	}
+
+	public void setPolarFsInstanceId(String polarFsInstanceId) {
+		this.polarFsInstanceId = polarFsInstanceId;
+		if(polarFsInstanceId != null){
+			putQueryParameter("PolarFsInstanceId", polarFsInstanceId);
 		}
 	}
 

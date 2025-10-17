@@ -29,11 +29,17 @@ public class RestartDBNodeRequest extends RpcAcsRequest<RestartDBNodeResponse> {
 
 	private String dBNodeId;
 
+	private String plannedEndTime;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private String plannedStartTime;
+
+	private String fromTimeService;
 	public RestartDBNodeRequest() {
 		super("polardb", "2017-08-01", "RestartDBNode", "polardb");
 		setMethod(MethodType.POST);
@@ -62,6 +68,17 @@ public class RestartDBNodeRequest extends RpcAcsRequest<RestartDBNodeResponse> {
 		this.dBNodeId = dBNodeId;
 		if(dBNodeId != null){
 			putQueryParameter("DBNodeId", dBNodeId);
+		}
+	}
+
+	public String getPlannedEndTime() {
+		return this.plannedEndTime;
+	}
+
+	public void setPlannedEndTime(String plannedEndTime) {
+		this.plannedEndTime = plannedEndTime;
+		if(plannedEndTime != null){
+			putQueryParameter("PlannedEndTime", plannedEndTime);
 		}
 	}
 
@@ -95,6 +112,28 @@ public class RestartDBNodeRequest extends RpcAcsRequest<RestartDBNodeResponse> {
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getPlannedStartTime() {
+		return this.plannedStartTime;
+	}
+
+	public void setPlannedStartTime(String plannedStartTime) {
+		this.plannedStartTime = plannedStartTime;
+		if(plannedStartTime != null){
+			putQueryParameter("PlannedStartTime", plannedStartTime);
+		}
+	}
+
+	public String getFromTimeService() {
+		return this.fromTimeService;
+	}
+
+	public void setFromTimeService(String fromTimeService) {
+		this.fromTimeService = fromTimeService;
+		if(fromTimeService != null){
+			putQueryParameter("FromTimeService", fromTimeService);
 		}
 	}
 

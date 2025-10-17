@@ -31,6 +31,8 @@ public class ModifyDBClusterStorageSpaceRequest extends RpcAcsRequest<ModifyDBCl
 
 	private String plannedEndTime;
 
+	private String cloudProvider;
+
 	private String resourceOwnerAccount;
 
 	private String dBClusterId;
@@ -83,6 +85,17 @@ public class ModifyDBClusterStorageSpaceRequest extends RpcAcsRequest<ModifyDBCl
 		this.plannedEndTime = plannedEndTime;
 		if(plannedEndTime != null){
 			putQueryParameter("PlannedEndTime", plannedEndTime);
+		}
+	}
+
+	public String getCloudProvider() {
+		return this.cloudProvider;
+	}
+
+	public void setCloudProvider(String cloudProvider) {
+		this.cloudProvider = cloudProvider;
+		if(cloudProvider != null){
+			putQueryParameter("CloudProvider", cloudProvider);
 		}
 	}
 

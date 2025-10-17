@@ -32,6 +32,8 @@ public class ModifyDBNodesClassRequest extends RpcAcsRequest<ModifyDBNodesClassR
 
 	private String plannedEndTime;
 
+	private String cloudProvider;
+
 	private String resourceOwnerAccount;
 
 	private String dBClusterId;
@@ -88,6 +90,17 @@ public class ModifyDBNodesClassRequest extends RpcAcsRequest<ModifyDBNodesClassR
 		this.plannedEndTime = plannedEndTime;
 		if(plannedEndTime != null){
 			putQueryParameter("PlannedEndTime", plannedEndTime);
+		}
+	}
+
+	public String getCloudProvider() {
+		return this.cloudProvider;
+	}
+
+	public void setCloudProvider(String cloudProvider) {
+		this.cloudProvider = cloudProvider;
+		if(cloudProvider != null){
+			putQueryParameter("CloudProvider", cloudProvider);
 		}
 	}
 

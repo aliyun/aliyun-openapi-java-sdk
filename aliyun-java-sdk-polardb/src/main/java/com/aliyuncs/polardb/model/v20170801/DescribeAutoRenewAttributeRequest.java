@@ -29,6 +29,8 @@ public class DescribeAutoRenewAttributeRequest extends RpcAcsRequest<DescribeAut
 
 	private Integer pageNumber;
 
+	private String cloudProvider;
+
 	private String resourceGroupId;
 
 	private Integer pageSize;
@@ -68,6 +70,17 @@ public class DescribeAutoRenewAttributeRequest extends RpcAcsRequest<DescribeAut
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getCloudProvider() {
+		return this.cloudProvider;
+	}
+
+	public void setCloudProvider(String cloudProvider) {
+		this.cloudProvider = cloudProvider;
+		if(cloudProvider != null){
+			putQueryParameter("CloudProvider", cloudProvider);
 		}
 	}
 

@@ -36,6 +36,8 @@ public class DescribeParameterGroupRequest extends RpcAcsRequest<DescribeParamet
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private String dBType;
 	public DescribeParameterGroupRequest() {
 		super("polardb", "2017-08-01", "DescribeParameterGroup", "polardb");
 		setMethod(MethodType.POST);
@@ -108,6 +110,17 @@ public class DescribeParameterGroupRequest extends RpcAcsRequest<DescribeParamet
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getDBType() {
+		return this.dBType;
+	}
+
+	public void setDBType(String dBType) {
+		this.dBType = dBType;
+		if(dBType != null){
+			putQueryParameter("DBType", dBType);
 		}
 	}
 

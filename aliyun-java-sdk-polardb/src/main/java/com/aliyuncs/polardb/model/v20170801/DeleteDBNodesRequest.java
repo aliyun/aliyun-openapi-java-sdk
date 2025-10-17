@@ -32,6 +32,8 @@ public class DeleteDBNodesRequest extends RpcAcsRequest<DeleteDBNodesResponse> {
 
 	private String clientToken;
 
+	private String cloudProvider;
+
 	private String dBNodeType;
 
 	private String resourceOwnerAccount;
@@ -82,6 +84,17 @@ public class DeleteDBNodesRequest extends RpcAcsRequest<DeleteDBNodesResponse> {
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getCloudProvider() {
+		return this.cloudProvider;
+	}
+
+	public void setCloudProvider(String cloudProvider) {
+		this.cloudProvider = cloudProvider;
+		if(cloudProvider != null){
+			putQueryParameter("CloudProvider", cloudProvider);
 		}
 	}
 

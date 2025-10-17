@@ -65,7 +65,11 @@ public class DescribeDBClusterMigrationResponse extends AcsResponse {
 
 	private List<SrcDtsJob> srcDtsJobList;
 
+	private List<SrcBidirectionalDtsJob> srcBidirectionalDtsJobList;
+
 	private List<DstDtsJob> dstDtsJobList;
+
+	private List<DstBidirectionalDtsJob> dstBidirectionalDtsJobList;
 
 	public String getComment() {
 		return this.comment;
@@ -227,12 +231,28 @@ public class DescribeDBClusterMigrationResponse extends AcsResponse {
 		this.srcDtsJobList = srcDtsJobList;
 	}
 
+	public List<SrcBidirectionalDtsJob> getSrcBidirectionalDtsJobList() {
+		return this.srcBidirectionalDtsJobList;
+	}
+
+	public void setSrcBidirectionalDtsJobList(List<SrcBidirectionalDtsJob> srcBidirectionalDtsJobList) {
+		this.srcBidirectionalDtsJobList = srcBidirectionalDtsJobList;
+	}
+
 	public List<DstDtsJob> getDstDtsJobList() {
 		return this.dstDtsJobList;
 	}
 
 	public void setDstDtsJobList(List<DstDtsJob> dstDtsJobList) {
 		this.dstDtsJobList = dstDtsJobList;
+	}
+
+	public List<DstBidirectionalDtsJob> getDstBidirectionalDtsJobList() {
+		return this.dstBidirectionalDtsJobList;
+	}
+
+	public void setDstBidirectionalDtsJobList(List<DstBidirectionalDtsJob> dstBidirectionalDtsJobList) {
+		this.dstBidirectionalDtsJobList = dstBidirectionalDtsJobList;
 	}
 
 	public static class DBClusterEndpoint {
@@ -540,9 +560,9 @@ public class DescribeDBClusterMigrationResponse extends AcsResponse {
 		}
 	}
 
-	public static class DstDtsJob {
+	public static class SrcBidirectionalDtsJob {
 
-		private String dtsJobId;
+		private String reverseDtsJobId;
 
 		private String dtsJobName;
 
@@ -556,12 +576,14 @@ public class DescribeDBClusterMigrationResponse extends AcsResponse {
 
 		private String destinationEndpoint;
 
-		public String getDtsJobId() {
-			return this.dtsJobId;
+		private String dtsJobId;
+
+		public String getReverseDtsJobId() {
+			return this.reverseDtsJobId;
 		}
 
-		public void setDtsJobId(String dtsJobId) {
-			this.dtsJobId = dtsJobId;
+		public void setReverseDtsJobId(String reverseDtsJobId) {
+			this.reverseDtsJobId = reverseDtsJobId;
 		}
 
 		public String getDtsJobName() {
@@ -610,6 +632,180 @@ public class DescribeDBClusterMigrationResponse extends AcsResponse {
 
 		public void setDestinationEndpoint(String destinationEndpoint) {
 			this.destinationEndpoint = destinationEndpoint;
+		}
+
+		public String getDtsJobId() {
+			return this.dtsJobId;
+		}
+
+		public void setDtsJobId(String dtsJobId) {
+			this.dtsJobId = dtsJobId;
+		}
+	}
+
+	public static class DstDtsJob {
+
+		private String reverseDtsJobId;
+
+		private String dtsJobName;
+
+		private String dtsInstanceId;
+
+		private String dtsJobDirection;
+
+		private String status;
+
+		private String sourceEndpoint;
+
+		private String destinationEndpoint;
+
+		private String dtsJobId;
+
+		public String getReverseDtsJobId() {
+			return this.reverseDtsJobId;
+		}
+
+		public void setReverseDtsJobId(String reverseDtsJobId) {
+			this.reverseDtsJobId = reverseDtsJobId;
+		}
+
+		public String getDtsJobName() {
+			return this.dtsJobName;
+		}
+
+		public void setDtsJobName(String dtsJobName) {
+			this.dtsJobName = dtsJobName;
+		}
+
+		public String getDtsInstanceId() {
+			return this.dtsInstanceId;
+		}
+
+		public void setDtsInstanceId(String dtsInstanceId) {
+			this.dtsInstanceId = dtsInstanceId;
+		}
+
+		public String getDtsJobDirection() {
+			return this.dtsJobDirection;
+		}
+
+		public void setDtsJobDirection(String dtsJobDirection) {
+			this.dtsJobDirection = dtsJobDirection;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getSourceEndpoint() {
+			return this.sourceEndpoint;
+		}
+
+		public void setSourceEndpoint(String sourceEndpoint) {
+			this.sourceEndpoint = sourceEndpoint;
+		}
+
+		public String getDestinationEndpoint() {
+			return this.destinationEndpoint;
+		}
+
+		public void setDestinationEndpoint(String destinationEndpoint) {
+			this.destinationEndpoint = destinationEndpoint;
+		}
+
+		public String getDtsJobId() {
+			return this.dtsJobId;
+		}
+
+		public void setDtsJobId(String dtsJobId) {
+			this.dtsJobId = dtsJobId;
+		}
+	}
+
+	public static class DstBidirectionalDtsJob {
+
+		private String reverseDtsJobId;
+
+		private String dtsJobName;
+
+		private String dtsInstanceId;
+
+		private String dtsJobDirection;
+
+		private String status;
+
+		private String sourceEndpoint;
+
+		private String destinationEndpoint;
+
+		private String dtsJobId;
+
+		public String getReverseDtsJobId() {
+			return this.reverseDtsJobId;
+		}
+
+		public void setReverseDtsJobId(String reverseDtsJobId) {
+			this.reverseDtsJobId = reverseDtsJobId;
+		}
+
+		public String getDtsJobName() {
+			return this.dtsJobName;
+		}
+
+		public void setDtsJobName(String dtsJobName) {
+			this.dtsJobName = dtsJobName;
+		}
+
+		public String getDtsInstanceId() {
+			return this.dtsInstanceId;
+		}
+
+		public void setDtsInstanceId(String dtsInstanceId) {
+			this.dtsInstanceId = dtsInstanceId;
+		}
+
+		public String getDtsJobDirection() {
+			return this.dtsJobDirection;
+		}
+
+		public void setDtsJobDirection(String dtsJobDirection) {
+			this.dtsJobDirection = dtsJobDirection;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getSourceEndpoint() {
+			return this.sourceEndpoint;
+		}
+
+		public void setSourceEndpoint(String sourceEndpoint) {
+			this.sourceEndpoint = sourceEndpoint;
+		}
+
+		public String getDestinationEndpoint() {
+			return this.destinationEndpoint;
+		}
+
+		public void setDestinationEndpoint(String destinationEndpoint) {
+			this.destinationEndpoint = destinationEndpoint;
+		}
+
+		public String getDtsJobId() {
+			return this.dtsJobId;
+		}
+
+		public void setDtsJobId(String dtsJobId) {
+			this.dtsJobId = dtsJobId;
 		}
 	}
 

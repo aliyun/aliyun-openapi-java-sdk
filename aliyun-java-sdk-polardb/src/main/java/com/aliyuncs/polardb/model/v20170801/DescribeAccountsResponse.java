@@ -67,33 +67,27 @@ public class DescribeAccountsResponse extends AcsResponse {
 
 	public static class DBAccount {
 
-		private String accountStatus;
-
 		private String accountDescription;
 
+		private String accountStatus;
+
 		private String privilegeExceeded;
+
+		private String dynamoDBAuthPassword;
+
+		private String accountLockState;
 
 		private String accountPasswordValidTime;
 
 		private String accountType;
 
-		private String accountLockState;
+		private String tairPasswordSetted;
 
 		private String accountName;
 
 		private String accountPassword;
 
-		private String tairPasswordSetted;
-
 		private List<DatabasePrivilege> databasePrivileges;
-
-		public String getAccountStatus() {
-			return this.accountStatus;
-		}
-
-		public void setAccountStatus(String accountStatus) {
-			this.accountStatus = accountStatus;
-		}
 
 		public String getAccountDescription() {
 			return this.accountDescription;
@@ -103,12 +97,36 @@ public class DescribeAccountsResponse extends AcsResponse {
 			this.accountDescription = accountDescription;
 		}
 
+		public String getAccountStatus() {
+			return this.accountStatus;
+		}
+
+		public void setAccountStatus(String accountStatus) {
+			this.accountStatus = accountStatus;
+		}
+
 		public String getPrivilegeExceeded() {
 			return this.privilegeExceeded;
 		}
 
 		public void setPrivilegeExceeded(String privilegeExceeded) {
 			this.privilegeExceeded = privilegeExceeded;
+		}
+
+		public String getDynamoDBAuthPassword() {
+			return this.dynamoDBAuthPassword;
+		}
+
+		public void setDynamoDBAuthPassword(String dynamoDBAuthPassword) {
+			this.dynamoDBAuthPassword = dynamoDBAuthPassword;
+		}
+
+		public String getAccountLockState() {
+			return this.accountLockState;
+		}
+
+		public void setAccountLockState(String accountLockState) {
+			this.accountLockState = accountLockState;
 		}
 
 		public String getAccountPasswordValidTime() {
@@ -127,12 +145,12 @@ public class DescribeAccountsResponse extends AcsResponse {
 			this.accountType = accountType;
 		}
 
-		public String getAccountLockState() {
-			return this.accountLockState;
+		public String getTairPasswordSetted() {
+			return this.tairPasswordSetted;
 		}
 
-		public void setAccountLockState(String accountLockState) {
-			this.accountLockState = accountLockState;
+		public void setTairPasswordSetted(String tairPasswordSetted) {
+			this.tairPasswordSetted = tairPasswordSetted;
 		}
 
 		public String getAccountName() {
@@ -151,14 +169,6 @@ public class DescribeAccountsResponse extends AcsResponse {
 			this.accountPassword = accountPassword;
 		}
 
-		public String getTairPasswordSetted() {
-			return this.tairPasswordSetted;
-		}
-
-		public void setTairPasswordSetted(String tairPasswordSetted) {
-			this.tairPasswordSetted = tairPasswordSetted;
-		}
-
 		public List<DatabasePrivilege> getDatabasePrivileges() {
 			return this.databasePrivileges;
 		}
@@ -169,17 +179,9 @@ public class DescribeAccountsResponse extends AcsResponse {
 
 		public static class DatabasePrivilege {
 
-			private String dBName;
-
 			private String accountPrivilege;
 
-			public String getDBName() {
-				return this.dBName;
-			}
-
-			public void setDBName(String dBName) {
-				this.dBName = dBName;
-			}
+			private String dBName;
 
 			public String getAccountPrivilege() {
 				return this.accountPrivilege;
@@ -187,6 +189,14 @@ public class DescribeAccountsResponse extends AcsResponse {
 
 			public void setAccountPrivilege(String accountPrivilege) {
 				this.accountPrivilege = accountPrivilege;
+			}
+
+			public String getDBName() {
+				return this.dBName;
+			}
+
+			public void setDBName(String dBName) {
+				this.dBName = dBName;
 			}
 		}
 	}

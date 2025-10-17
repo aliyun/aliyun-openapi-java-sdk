@@ -35,6 +35,8 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 	private String totalLevel2BackupSize;
 
+	private Boolean allowShareBackup;
+
 	private List<Backup> items;
 
 	public String getTotalRecordCount() {
@@ -77,6 +79,14 @@ public class DescribeBackupsResponse extends AcsResponse {
 		this.totalLevel2BackupSize = totalLevel2BackupSize;
 	}
 
+	public Boolean getAllowShareBackup() {
+		return this.allowShareBackup;
+	}
+
+	public void setAllowShareBackup(Boolean allowShareBackup) {
+		this.allowShareBackup = allowShareBackup;
+	}
+
 	public List<Backup> getItems() {
 		return this.items;
 	}
@@ -116,6 +126,8 @@ public class DescribeBackupsResponse extends AcsResponse {
 		private String backupMode;
 
 		private String backupMethod;
+
+		private String shareType;
 
 		public String getBackupSetSize() {
 			return this.backupSetSize;
@@ -235,6 +247,14 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 		public void setBackupMethod(String backupMethod) {
 			this.backupMethod = backupMethod;
+		}
+
+		public String getShareType() {
+			return this.shareType;
+		}
+
+		public void setShareType(String shareType) {
+			this.shareType = shareType;
 		}
 	}
 

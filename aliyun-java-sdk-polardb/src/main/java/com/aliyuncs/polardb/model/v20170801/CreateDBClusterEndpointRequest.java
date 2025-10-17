@@ -51,6 +51,8 @@ public class CreateDBClusterEndpointRequest extends RpcAcsRequest<CreateDBCluste
 
 	private Long ownerId;
 
+	private String polarFsInstanceId;
+
 	private String nodes;
 
 	private String sccMode;
@@ -203,6 +205,17 @@ public class CreateDBClusterEndpointRequest extends RpcAcsRequest<CreateDBCluste
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getPolarFsInstanceId() {
+		return this.polarFsInstanceId;
+	}
+
+	public void setPolarFsInstanceId(String polarFsInstanceId) {
+		this.polarFsInstanceId = polarFsInstanceId;
+		if(polarFsInstanceId != null){
+			putQueryParameter("PolarFsInstanceId", polarFsInstanceId);
 		}
 	}
 

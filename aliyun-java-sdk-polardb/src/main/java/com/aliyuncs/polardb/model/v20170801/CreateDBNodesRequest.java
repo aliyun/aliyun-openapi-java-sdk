@@ -34,6 +34,8 @@ public class CreateDBNodesRequest extends RpcAcsRequest<CreateDBNodesResponse> {
 
 	private String plannedEndTime;
 
+	private String cloudProvider;
+
 	private String resourceGroupId;
 
 	private String dBNodeType;
@@ -101,6 +103,17 @@ public class CreateDBNodesRequest extends RpcAcsRequest<CreateDBNodesResponse> {
 		this.plannedEndTime = plannedEndTime;
 		if(plannedEndTime != null){
 			putQueryParameter("PlannedEndTime", plannedEndTime);
+		}
+	}
+
+	public String getCloudProvider() {
+		return this.cloudProvider;
+	}
+
+	public void setCloudProvider(String cloudProvider) {
+		this.cloudProvider = cloudProvider;
+		if(cloudProvider != null){
+			putQueryParameter("CloudProvider", cloudProvider);
 		}
 	}
 

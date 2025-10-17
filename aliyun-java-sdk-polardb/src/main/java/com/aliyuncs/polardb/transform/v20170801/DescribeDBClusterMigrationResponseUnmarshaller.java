@@ -20,9 +20,11 @@ import java.util.List;
 import com.aliyuncs.polardb.model.v20170801.DescribeDBClusterMigrationResponse;
 import com.aliyuncs.polardb.model.v20170801.DescribeDBClusterMigrationResponse.DBClusterEndpoint;
 import com.aliyuncs.polardb.model.v20170801.DescribeDBClusterMigrationResponse.DBClusterEndpoint.Address;
+import com.aliyuncs.polardb.model.v20170801.DescribeDBClusterMigrationResponse.DstBidirectionalDtsJob;
 import com.aliyuncs.polardb.model.v20170801.DescribeDBClusterMigrationResponse.DstDtsJob;
 import com.aliyuncs.polardb.model.v20170801.DescribeDBClusterMigrationResponse.RdsEndpoint;
 import com.aliyuncs.polardb.model.v20170801.DescribeDBClusterMigrationResponse.RdsEndpoint.Address2;
+import com.aliyuncs.polardb.model.v20170801.DescribeDBClusterMigrationResponse.SrcBidirectionalDtsJob;
 import com.aliyuncs.polardb.model.v20170801.DescribeDBClusterMigrationResponse.SrcDtsJob;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -116,20 +118,53 @@ public class DescribeDBClusterMigrationResponseUnmarshaller {
 		}
 		describeDBClusterMigrationResponse.setSrcDtsJobList(srcDtsJobList);
 
+		List<SrcBidirectionalDtsJob> srcBidirectionalDtsJobList = new ArrayList<SrcBidirectionalDtsJob>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeDBClusterMigrationResponse.SrcBidirectionalDtsJobList.Length"); i++) {
+			SrcBidirectionalDtsJob srcBidirectionalDtsJob = new SrcBidirectionalDtsJob();
+			srcBidirectionalDtsJob.setReverseDtsJobId(_ctx.stringValue("DescribeDBClusterMigrationResponse.SrcBidirectionalDtsJobList["+ i +"].ReverseDtsJobId"));
+			srcBidirectionalDtsJob.setDtsJobName(_ctx.stringValue("DescribeDBClusterMigrationResponse.SrcBidirectionalDtsJobList["+ i +"].DtsJobName"));
+			srcBidirectionalDtsJob.setDtsInstanceId(_ctx.stringValue("DescribeDBClusterMigrationResponse.SrcBidirectionalDtsJobList["+ i +"].DtsInstanceId"));
+			srcBidirectionalDtsJob.setDtsJobDirection(_ctx.stringValue("DescribeDBClusterMigrationResponse.SrcBidirectionalDtsJobList["+ i +"].DtsJobDirection"));
+			srcBidirectionalDtsJob.setStatus(_ctx.stringValue("DescribeDBClusterMigrationResponse.SrcBidirectionalDtsJobList["+ i +"].Status"));
+			srcBidirectionalDtsJob.setSourceEndpoint(_ctx.stringValue("DescribeDBClusterMigrationResponse.SrcBidirectionalDtsJobList["+ i +"].SourceEndpoint"));
+			srcBidirectionalDtsJob.setDestinationEndpoint(_ctx.stringValue("DescribeDBClusterMigrationResponse.SrcBidirectionalDtsJobList["+ i +"].DestinationEndpoint"));
+			srcBidirectionalDtsJob.setDtsJobId(_ctx.stringValue("DescribeDBClusterMigrationResponse.SrcBidirectionalDtsJobList["+ i +"].DtsJobId"));
+
+			srcBidirectionalDtsJobList.add(srcBidirectionalDtsJob);
+		}
+		describeDBClusterMigrationResponse.setSrcBidirectionalDtsJobList(srcBidirectionalDtsJobList);
+
 		List<DstDtsJob> dstDtsJobList = new ArrayList<DstDtsJob>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDBClusterMigrationResponse.DstDtsJobList.Length"); i++) {
 			DstDtsJob dstDtsJob = new DstDtsJob();
-			dstDtsJob.setDtsJobId(_ctx.stringValue("DescribeDBClusterMigrationResponse.DstDtsJobList["+ i +"].DtsJobId"));
+			dstDtsJob.setReverseDtsJobId(_ctx.stringValue("DescribeDBClusterMigrationResponse.DstDtsJobList["+ i +"].ReverseDtsJobId"));
 			dstDtsJob.setDtsJobName(_ctx.stringValue("DescribeDBClusterMigrationResponse.DstDtsJobList["+ i +"].DtsJobName"));
 			dstDtsJob.setDtsInstanceId(_ctx.stringValue("DescribeDBClusterMigrationResponse.DstDtsJobList["+ i +"].DtsInstanceId"));
 			dstDtsJob.setDtsJobDirection(_ctx.stringValue("DescribeDBClusterMigrationResponse.DstDtsJobList["+ i +"].DtsJobDirection"));
 			dstDtsJob.setStatus(_ctx.stringValue("DescribeDBClusterMigrationResponse.DstDtsJobList["+ i +"].Status"));
 			dstDtsJob.setSourceEndpoint(_ctx.stringValue("DescribeDBClusterMigrationResponse.DstDtsJobList["+ i +"].SourceEndpoint"));
 			dstDtsJob.setDestinationEndpoint(_ctx.stringValue("DescribeDBClusterMigrationResponse.DstDtsJobList["+ i +"].DestinationEndpoint"));
+			dstDtsJob.setDtsJobId(_ctx.stringValue("DescribeDBClusterMigrationResponse.DstDtsJobList["+ i +"].DtsJobId"));
 
 			dstDtsJobList.add(dstDtsJob);
 		}
 		describeDBClusterMigrationResponse.setDstDtsJobList(dstDtsJobList);
+
+		List<DstBidirectionalDtsJob> dstBidirectionalDtsJobList = new ArrayList<DstBidirectionalDtsJob>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeDBClusterMigrationResponse.DstBidirectionalDtsJobList.Length"); i++) {
+			DstBidirectionalDtsJob dstBidirectionalDtsJob = new DstBidirectionalDtsJob();
+			dstBidirectionalDtsJob.setReverseDtsJobId(_ctx.stringValue("DescribeDBClusterMigrationResponse.DstBidirectionalDtsJobList["+ i +"].ReverseDtsJobId"));
+			dstBidirectionalDtsJob.setDtsJobName(_ctx.stringValue("DescribeDBClusterMigrationResponse.DstBidirectionalDtsJobList["+ i +"].DtsJobName"));
+			dstBidirectionalDtsJob.setDtsInstanceId(_ctx.stringValue("DescribeDBClusterMigrationResponse.DstBidirectionalDtsJobList["+ i +"].DtsInstanceId"));
+			dstBidirectionalDtsJob.setDtsJobDirection(_ctx.stringValue("DescribeDBClusterMigrationResponse.DstBidirectionalDtsJobList["+ i +"].DtsJobDirection"));
+			dstBidirectionalDtsJob.setStatus(_ctx.stringValue("DescribeDBClusterMigrationResponse.DstBidirectionalDtsJobList["+ i +"].Status"));
+			dstBidirectionalDtsJob.setSourceEndpoint(_ctx.stringValue("DescribeDBClusterMigrationResponse.DstBidirectionalDtsJobList["+ i +"].SourceEndpoint"));
+			dstBidirectionalDtsJob.setDestinationEndpoint(_ctx.stringValue("DescribeDBClusterMigrationResponse.DstBidirectionalDtsJobList["+ i +"].DestinationEndpoint"));
+			dstBidirectionalDtsJob.setDtsJobId(_ctx.stringValue("DescribeDBClusterMigrationResponse.DstBidirectionalDtsJobList["+ i +"].DtsJobId"));
+
+			dstBidirectionalDtsJobList.add(dstBidirectionalDtsJob);
+		}
+		describeDBClusterMigrationResponse.setDstBidirectionalDtsJobList(dstBidirectionalDtsJobList);
 	 
 	 	return describeDBClusterMigrationResponse;
 	}

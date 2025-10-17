@@ -15,6 +15,9 @@
 package com.aliyuncs.polardb.model.v20170801;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.polardb.Endpoint;
 
@@ -28,6 +31,9 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 	private Long resourceOwnerId;
 
 	private String dataLevel2BackupRetentionPeriod;
+
+	@SerializedName("advancedDataPolicies")
+	private List<AdvancedDataPolicies> advancedDataPolicies;
 
 	private String dataLevel1BackupPeriod;
 
@@ -46,6 +52,8 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 	private String ownerAccount;
 
 	private String dataLevel2BackupAnotherRegionRetentionPeriod;
+
+	private String backupPolicyLevel;
 
 	private Long ownerId;
 
@@ -87,6 +95,17 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 		if(dataLevel2BackupRetentionPeriod != null){
 			putQueryParameter("DataLevel2BackupRetentionPeriod", dataLevel2BackupRetentionPeriod);
 		}
+	}
+
+	public List<AdvancedDataPolicies> getAdvancedDataPolicies() {
+		return this.advancedDataPolicies;
+	}
+
+	public void setAdvancedDataPolicies(List<AdvancedDataPolicies> advancedDataPolicies) {
+		this.advancedDataPolicies = advancedDataPolicies;	
+		if (advancedDataPolicies != null) {
+			putQueryParameter("AdvancedDataPolicies" , new Gson().toJson(advancedDataPolicies));
+		}	
 	}
 
 	public String getDataLevel1BackupPeriod() {
@@ -188,6 +207,17 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 		}
 	}
 
+	public String getBackupPolicyLevel() {
+		return this.backupPolicyLevel;
+	}
+
+	public void setBackupPolicyLevel(String backupPolicyLevel) {
+		this.backupPolicyLevel = backupPolicyLevel;
+		if(backupPolicyLevel != null){
+			putQueryParameter("BackupPolicyLevel", backupPolicyLevel);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -251,6 +281,185 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 		this.dataLevel1BackupTime = dataLevel1BackupTime;
 		if(dataLevel1BackupTime != null){
 			putQueryParameter("DataLevel1BackupTime", dataLevel1BackupTime);
+		}
+	}
+
+	public static class AdvancedDataPolicies {
+
+		@SerializedName("ActionType")
+		private String actionType;
+
+		@SerializedName("SrcType")
+		private String srcType;
+
+		@SerializedName("RetentionValue")
+		private String retentionValue;
+
+		@SerializedName("DestRegion")
+		private String destRegion;
+
+		@SerializedName("BakType")
+		private String bakType;
+
+		@SerializedName("OnlyPreserveOneEachDay")
+		private Boolean onlyPreserveOneEachDay;
+
+		@SerializedName("FilterValue")
+		private String filterValue;
+
+		@SerializedName("DumpAction")
+		private String dumpAction;
+
+		@SerializedName("OnlyPreserveOneEachHour")
+		private Boolean onlyPreserveOneEachHour;
+
+		@SerializedName("SrcRegion")
+		private String srcRegion;
+
+		@SerializedName("FilterType")
+		private String filterType;
+
+		@SerializedName("RetentionType")
+		private String retentionType;
+
+		@SerializedName("FilterKey")
+		private String filterKey;
+
+		@SerializedName("AutoCreated")
+		private Boolean autoCreated;
+
+		@SerializedName("PolicyId")
+		private String policyId;
+
+		@SerializedName("DestType")
+		private String destType;
+
+		public String getActionType() {
+			return this.actionType;
+		}
+
+		public void setActionType(String actionType) {
+			this.actionType = actionType;
+		}
+
+		public String getSrcType() {
+			return this.srcType;
+		}
+
+		public void setSrcType(String srcType) {
+			this.srcType = srcType;
+		}
+
+		public String getRetentionValue() {
+			return this.retentionValue;
+		}
+
+		public void setRetentionValue(String retentionValue) {
+			this.retentionValue = retentionValue;
+		}
+
+		public String getDestRegion() {
+			return this.destRegion;
+		}
+
+		public void setDestRegion(String destRegion) {
+			this.destRegion = destRegion;
+		}
+
+		public String getBakType() {
+			return this.bakType;
+		}
+
+		public void setBakType(String bakType) {
+			this.bakType = bakType;
+		}
+
+		public Boolean getOnlyPreserveOneEachDay() {
+			return this.onlyPreserveOneEachDay;
+		}
+
+		public void setOnlyPreserveOneEachDay(Boolean onlyPreserveOneEachDay) {
+			this.onlyPreserveOneEachDay = onlyPreserveOneEachDay;
+		}
+
+		public String getFilterValue() {
+			return this.filterValue;
+		}
+
+		public void setFilterValue(String filterValue) {
+			this.filterValue = filterValue;
+		}
+
+		public String getDumpAction() {
+			return this.dumpAction;
+		}
+
+		public void setDumpAction(String dumpAction) {
+			this.dumpAction = dumpAction;
+		}
+
+		public Boolean getOnlyPreserveOneEachHour() {
+			return this.onlyPreserveOneEachHour;
+		}
+
+		public void setOnlyPreserveOneEachHour(Boolean onlyPreserveOneEachHour) {
+			this.onlyPreserveOneEachHour = onlyPreserveOneEachHour;
+		}
+
+		public String getSrcRegion() {
+			return this.srcRegion;
+		}
+
+		public void setSrcRegion(String srcRegion) {
+			this.srcRegion = srcRegion;
+		}
+
+		public String getFilterType() {
+			return this.filterType;
+		}
+
+		public void setFilterType(String filterType) {
+			this.filterType = filterType;
+		}
+
+		public String getRetentionType() {
+			return this.retentionType;
+		}
+
+		public void setRetentionType(String retentionType) {
+			this.retentionType = retentionType;
+		}
+
+		public String getFilterKey() {
+			return this.filterKey;
+		}
+
+		public void setFilterKey(String filterKey) {
+			this.filterKey = filterKey;
+		}
+
+		public Boolean getAutoCreated() {
+			return this.autoCreated;
+		}
+
+		public void setAutoCreated(Boolean autoCreated) {
+			this.autoCreated = autoCreated;
+		}
+
+		public String getPolicyId() {
+			return this.policyId;
+		}
+
+		public void setPolicyId(String policyId) {
+			this.policyId = policyId;
+		}
+
+		public String getDestType() {
+			return this.destType;
+		}
+
+		public void setDestType(String destType) {
+			this.destType = destType;
 		}
 	}
 

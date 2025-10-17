@@ -115,9 +115,9 @@ public class DescribeDBClustersResponse extends AcsResponse {
 
 		private String resourceGroupId;
 
-		private Long storageUsed;
+		private Long searchStorageUsed;
 
-		private Long compressStorageUsed;
+		private Long searchCompressStorageUsed;
 
 		private Long storageSpace;
 
@@ -160,6 +160,10 @@ public class DescribeDBClustersResponse extends AcsResponse {
 		private String cloudInstanceIp;
 
 		private String subCategory;
+
+		private Long storageUsed;
+
+		private Long compressStorageUsed;
 
 		private List<Tag> tags;
 
@@ -317,20 +321,20 @@ public class DescribeDBClustersResponse extends AcsResponse {
 			this.resourceGroupId = resourceGroupId;
 		}
 
-		public Long getStorageUsed() {
-			return this.storageUsed;
+		public Long getSearchStorageUsed() {
+			return this.searchStorageUsed;
 		}
 
-		public void setStorageUsed(Long storageUsed) {
-			this.storageUsed = storageUsed;
+		public void setSearchStorageUsed(Long searchStorageUsed) {
+			this.searchStorageUsed = searchStorageUsed;
 		}
 
-		public Long getCompressStorageUsed() {
-			return this.compressStorageUsed;
+		public Long getSearchCompressStorageUsed() {
+			return this.searchCompressStorageUsed;
 		}
 
-		public void setCompressStorageUsed(Long compressStorageUsed) {
-			this.compressStorageUsed = compressStorageUsed;
+		public void setSearchCompressStorageUsed(Long searchCompressStorageUsed) {
+			this.searchCompressStorageUsed = searchCompressStorageUsed;
 		}
 
 		public Long getStorageSpace() {
@@ -499,6 +503,22 @@ public class DescribeDBClustersResponse extends AcsResponse {
 
 		public void setSubCategory(String subCategory) {
 			this.subCategory = subCategory;
+		}
+
+		public Long getStorageUsed() {
+			return this.storageUsed;
+		}
+
+		public void setStorageUsed(Long storageUsed) {
+			this.storageUsed = storageUsed;
+		}
+
+		public Long getCompressStorageUsed() {
+			return this.compressStorageUsed;
+		}
+
+		public void setCompressStorageUsed(Long compressStorageUsed) {
+			this.compressStorageUsed = compressStorageUsed;
 		}
 
 		public List<Tag> getTags() {
