@@ -40,6 +40,7 @@ public class ListDomainsResponseUnmarshaller {
 			domain.setDefaultDomain(_ctx.booleanValue("ListDomainsResponse.Domains["+ i +"].DefaultDomain"));
 			domain.setCreateTime(_ctx.longValue("ListDomainsResponse.Domains["+ i +"].CreateTime"));
 			domain.setUpdateTime(_ctx.longValue("ListDomainsResponse.Domains["+ i +"].UpdateTime"));
+			domain.setBrandId(_ctx.stringValue("ListDomainsResponse.Domains["+ i +"].BrandId"));
 
 			Filing filing = new Filing();
 			filing.setIcpNumber(_ctx.stringValue("ListDomainsResponse.Domains["+ i +"].Filing.IcpNumber"));

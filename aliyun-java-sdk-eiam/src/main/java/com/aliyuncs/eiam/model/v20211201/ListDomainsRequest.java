@@ -26,6 +26,8 @@ public class ListDomainsRequest extends RpcAcsRequest<ListDomainsResponse> {
 	   
 
 	private String instanceId;
+
+	private String brandId;
 	public ListDomainsRequest() {
 		super("Eiam", "2021-12-01", "ListDomains", "eiam");
 		setProtocol(ProtocolType.HTTPS);
@@ -40,6 +42,17 @@ public class ListDomainsRequest extends RpcAcsRequest<ListDomainsResponse> {
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getBrandId() {
+		return this.brandId;
+	}
+
+	public void setBrandId(String brandId) {
+		this.brandId = brandId;
+		if(brandId != null){
+			putQueryParameter("BrandId", brandId);
 		}
 	}
 

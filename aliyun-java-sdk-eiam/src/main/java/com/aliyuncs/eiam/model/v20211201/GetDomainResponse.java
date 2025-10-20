@@ -62,6 +62,8 @@ public class GetDomainResponse extends AcsResponse {
 
 		private Long updateTime;
 
+		private String brandId;
+
 		private Filing filing;
 
 		public String getInstanceId() {
@@ -126,6 +128,14 @@ public class GetDomainResponse extends AcsResponse {
 
 		public void setUpdateTime(Long updateTime) {
 			this.updateTime = updateTime;
+		}
+
+		public String getBrandId() {
+			return this.brandId;
+		}
+
+		public void setBrandId(String brandId) {
+			this.brandId = brandId;
 		}
 
 		public Filing getFiling() {

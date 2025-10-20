@@ -35,6 +35,7 @@ public class GetDomainResponseUnmarshaller {
 		domain.setDefaultDomain(_ctx.booleanValue("GetDomainResponse.Domain.DefaultDomain"));
 		domain.setCreateTime(_ctx.longValue("GetDomainResponse.Domain.CreateTime"));
 		domain.setUpdateTime(_ctx.longValue("GetDomainResponse.Domain.UpdateTime"));
+		domain.setBrandId(_ctx.stringValue("GetDomainResponse.Domain.BrandId"));
 
 		Filing filing = new Filing();
 		filing.setIcpNumber(_ctx.stringValue("GetDomainResponse.Domain.Filing.IcpNumber"));
