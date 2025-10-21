@@ -30,6 +30,8 @@ public class ApplyIdentityRegistrationRequest extends RpcAcsRequest<ApplyIdentit
 
 	private String docFrontPic;
 
+	private String source;
+
 	private String docType;
 
 	private String registeredNum;
@@ -82,6 +84,17 @@ public class ApplyIdentityRegistrationRequest extends RpcAcsRequest<ApplyIdentit
 		this.docFrontPic = docFrontPic;
 		if(docFrontPic != null){
 			putQueryParameter("DocFrontPic", docFrontPic);
+		}
+	}
+
+	public String getSource() {
+		return this.source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
+		if(source != null){
+			putQueryParameter("Source", source);
 		}
 	}
 

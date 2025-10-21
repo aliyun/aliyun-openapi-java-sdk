@@ -21,30 +21,19 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class FindAllContacterRequest extends RpcAcsRequest<FindAllContacterResponse> {
+public class JudgeAgExistQuietPeriodRequest extends RpcAcsRequest<JudgeAgExistQuietPeriodResponse> {
 	   
-
-	private String localeString;
 
 	private String appName;
 
-	private String type;
+	private String mpk;
 
-	private Long userId;
-	public FindAllContacterRequest() {
-		super("account-crm", "2016-06-06", "FindAllContacter");
+	private String pk;
+
+	private String agAccountType;
+	public JudgeAgExistQuietPeriodRequest() {
+		super("account-crm", "2016-06-06", "JudgeAgExistQuietPeriod");
 		setMethod(MethodType.POST);
-	}
-
-	public String getLocaleString() {
-		return this.localeString;
-	}
-
-	public void setLocaleString(String localeString) {
-		this.localeString = localeString;
-		if(localeString != null){
-			putQueryParameter("LocaleString", localeString);
-		}
 	}
 
 	public String getAppName() {
@@ -58,31 +47,42 @@ public class FindAllContacterRequest extends RpcAcsRequest<FindAllContacterRespo
 		}
 	}
 
-	public String getType() {
-		return this.type;
+	public String getMpk() {
+		return this.mpk;
 	}
 
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type);
+	public void setMpk(String mpk) {
+		this.mpk = mpk;
+		if(mpk != null){
+			putQueryParameter("Mpk", mpk);
 		}
 	}
 
-	public Long getUserId() {
-		return this.userId;
+	public String getPk() {
+		return this.pk;
 	}
 
-	public void setUserId(Long userId) {
-		this.userId = userId;
-		if(userId != null){
-			putQueryParameter("UserId", userId.toString());
+	public void setPk(String pk) {
+		this.pk = pk;
+		if(pk != null){
+			putQueryParameter("Pk", pk);
+		}
+	}
+
+	public String getAgAccountType() {
+		return this.agAccountType;
+	}
+
+	public void setAgAccountType(String agAccountType) {
+		this.agAccountType = agAccountType;
+		if(agAccountType != null){
+			putQueryParameter("AgAccountType", agAccountType);
 		}
 	}
 
 	@Override
-	public Class<FindAllContacterResponse> getResponseClass() {
-		return FindAllContacterResponse.class;
+	public Class<JudgeAgExistQuietPeriodResponse> getResponseClass() {
+		return JudgeAgExistQuietPeriodResponse.class;
 	}
 
 }

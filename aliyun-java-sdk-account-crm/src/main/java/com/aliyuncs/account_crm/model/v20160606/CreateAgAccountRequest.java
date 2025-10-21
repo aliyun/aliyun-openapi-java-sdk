@@ -24,39 +24,34 @@ import com.aliyuncs.http.MethodType;
 public class CreateAgAccountRequest extends RpcAcsRequest<CreateAgAccountResponse> {
 	   
 
-	private String securityMobile;
-
-	private String loginEmail;
+	private String siteNick;
 
 	private String own;
 
 	private String mpk;
 
 	private String nationCode;
+
+	private String securityMobile;
+
+	private String loginEmail;
+
+	private String realParentPk;
+
+	private String showNickName;
 	public CreateAgAccountRequest() {
 		super("account-crm", "2016-06-06", "CreateAgAccount");
 		setMethod(MethodType.POST);
 	}
 
-	public String getSecurityMobile() {
-		return this.securityMobile;
+	public String getSiteNick() {
+		return this.siteNick;
 	}
 
-	public void setSecurityMobile(String securityMobile) {
-		this.securityMobile = securityMobile;
-		if(securityMobile != null){
-			putQueryParameter("SecurityMobile", securityMobile);
-		}
-	}
-
-	public String getLoginEmail() {
-		return this.loginEmail;
-	}
-
-	public void setLoginEmail(String loginEmail) {
-		this.loginEmail = loginEmail;
-		if(loginEmail != null){
-			putQueryParameter("LoginEmail", loginEmail);
+	public void setSiteNick(String siteNick) {
+		this.siteNick = siteNick;
+		if(siteNick != null){
+			putQueryParameter("SiteNick", siteNick);
 		}
 	}
 
@@ -90,6 +85,50 @@ public class CreateAgAccountRequest extends RpcAcsRequest<CreateAgAccountRespons
 		this.nationCode = nationCode;
 		if(nationCode != null){
 			putQueryParameter("NationCode", nationCode);
+		}
+	}
+
+	public String getSecurityMobile() {
+		return this.securityMobile;
+	}
+
+	public void setSecurityMobile(String securityMobile) {
+		this.securityMobile = securityMobile;
+		if(securityMobile != null){
+			putQueryParameter("SecurityMobile", securityMobile);
+		}
+	}
+
+	public String getLoginEmail() {
+		return this.loginEmail;
+	}
+
+	public void setLoginEmail(String loginEmail) {
+		this.loginEmail = loginEmail;
+		if(loginEmail != null){
+			putQueryParameter("LoginEmail", loginEmail);
+		}
+	}
+
+	public String getRealParentPk() {
+		return this.realParentPk;
+	}
+
+	public void setRealParentPk(String realParentPk) {
+		this.realParentPk = realParentPk;
+		if(realParentPk != null){
+			putQueryParameter("RealParentPk", realParentPk);
+		}
+	}
+
+	public String getShowNickName() {
+		return this.showNickName;
+	}
+
+	public void setShowNickName(String showNickName) {
+		this.showNickName = showNickName;
+		if(showNickName != null){
+			putQueryParameter("ShowNickName", showNickName);
 		}
 	}
 

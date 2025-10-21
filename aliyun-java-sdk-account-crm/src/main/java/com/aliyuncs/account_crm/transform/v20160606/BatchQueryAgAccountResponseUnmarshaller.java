@@ -36,6 +36,7 @@ public class BatchQueryAgAccountResponseUnmarshaller {
 			AgAccount agAccount = new AgAccount();
 			agAccount.setLoginEmail(_ctx.stringValue("BatchQueryAgAccountResponse.AgAccounts["+ i +"].LoginEmail"));
 			agAccount.setPk(_ctx.stringValue("BatchQueryAgAccountResponse.AgAccounts["+ i +"].Pk"));
+			agAccount.setShowNickName(_ctx.stringValue("BatchQueryAgAccountResponse.AgAccounts["+ i +"].ShowNickName"));
 
 			agAccounts.add(agAccount);
 		}

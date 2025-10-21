@@ -21,36 +21,27 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class UpdateAccountAddressInfoRequest extends RpcAcsRequest<UpdateAccountAddressInfoResponse> {
+public class UpdateAgAccountAddressInfoRequest extends RpcAcsRequest<UpdateAgAccountAddressInfoResponse> {
 	   
-
-	private String cityJsonString;
 
 	private String address;
 
 	private String address2;
 
+	private String city;
+
 	private String postCode;
 
+	private String mpk;
+
+	private String province;
+
+	private String appName;
+
 	private String pK;
-
-	private String districtJsonString;
-
-	private String provinceJsonString;
-	public UpdateAccountAddressInfoRequest() {
-		super("account-crm", "2016-06-06", "UpdateAccountAddressInfo");
+	public UpdateAgAccountAddressInfoRequest() {
+		super("account-crm", "2016-06-06", "UpdateAgAccountAddressInfo");
 		setMethod(MethodType.POST);
-	}
-
-	public String getCityJsonString() {
-		return this.cityJsonString;
-	}
-
-	public void setCityJsonString(String cityJsonString) {
-		this.cityJsonString = cityJsonString;
-		if(cityJsonString != null){
-			putQueryParameter("CityJsonString", cityJsonString);
-		}
 	}
 
 	public String getAddress() {
@@ -75,6 +66,17 @@ public class UpdateAccountAddressInfoRequest extends RpcAcsRequest<UpdateAccount
 		}
 	}
 
+	public String getCity() {
+		return this.city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+		if(city != null){
+			putQueryParameter("City", city);
+		}
+	}
+
 	public String getPostCode() {
 		return this.postCode;
 	}
@@ -83,6 +85,39 @@ public class UpdateAccountAddressInfoRequest extends RpcAcsRequest<UpdateAccount
 		this.postCode = postCode;
 		if(postCode != null){
 			putQueryParameter("PostCode", postCode);
+		}
+	}
+
+	public String getMpk() {
+		return this.mpk;
+	}
+
+	public void setMpk(String mpk) {
+		this.mpk = mpk;
+		if(mpk != null){
+			putQueryParameter("Mpk", mpk);
+		}
+	}
+
+	public String getProvince() {
+		return this.province;
+	}
+
+	public void setProvince(String province) {
+		this.province = province;
+		if(province != null){
+			putQueryParameter("Province", province);
+		}
+	}
+
+	public String getAppName() {
+		return this.appName;
+	}
+
+	public void setAppName(String appName) {
+		this.appName = appName;
+		if(appName != null){
+			putQueryParameter("AppName", appName);
 		}
 	}
 
@@ -97,31 +132,9 @@ public class UpdateAccountAddressInfoRequest extends RpcAcsRequest<UpdateAccount
 		}
 	}
 
-	public String getDistrictJsonString() {
-		return this.districtJsonString;
-	}
-
-	public void setDistrictJsonString(String districtJsonString) {
-		this.districtJsonString = districtJsonString;
-		if(districtJsonString != null){
-			putQueryParameter("DistrictJsonString", districtJsonString);
-		}
-	}
-
-	public String getProvinceJsonString() {
-		return this.provinceJsonString;
-	}
-
-	public void setProvinceJsonString(String provinceJsonString) {
-		this.provinceJsonString = provinceJsonString;
-		if(provinceJsonString != null){
-			putQueryParameter("ProvinceJsonString", provinceJsonString);
-		}
-	}
-
 	@Override
-	public Class<UpdateAccountAddressInfoResponse> getResponseClass() {
-		return UpdateAccountAddressInfoResponse.class;
+	public Class<UpdateAgAccountAddressInfoResponse> getResponseClass() {
+		return UpdateAgAccountAddressInfoResponse.class;
 	}
 
 }

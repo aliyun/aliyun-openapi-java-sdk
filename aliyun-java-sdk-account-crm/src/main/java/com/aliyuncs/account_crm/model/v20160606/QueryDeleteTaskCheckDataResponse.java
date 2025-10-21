@@ -16,14 +16,14 @@ package com.aliyuncs.account_crm.model.v20160606;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.account_crm.transform.v20160606.BatchQueryAgAccountResponseUnmarshaller;
+import com.aliyuncs.account_crm.transform.v20160606.QueryDeleteTaskCheckDataResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class BatchQueryAgAccountResponse extends AcsResponse {
+public class QueryDeleteTaskCheckDataResponse extends AcsResponse {
 
 	private String code;
 
@@ -33,7 +33,7 @@ public class BatchQueryAgAccountResponse extends AcsResponse {
 
 	private Boolean success;
 
-	private List<AgAccount> agAccounts;
+	private List<TaskCheckDataDto> taskCheckDataDtoList;
 
 	public String getCode() {
 		return this.code;
@@ -67,50 +67,60 @@ public class BatchQueryAgAccountResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public List<AgAccount> getAgAccounts() {
-		return this.agAccounts;
+	public List<TaskCheckDataDto> getTaskCheckDataDtoList() {
+		return this.taskCheckDataDtoList;
 	}
 
-	public void setAgAccounts(List<AgAccount> agAccounts) {
-		this.agAccounts = agAccounts;
+	public void setTaskCheckDataDtoList(List<TaskCheckDataDto> taskCheckDataDtoList) {
+		this.taskCheckDataDtoList = taskCheckDataDtoList;
 	}
 
-	public static class AgAccount {
+	public static class TaskCheckDataDto {
 
-		private String loginEmail;
+		private String checkerName;
 
-		private String pk;
+		private String checkerDesc;
 
-		private String showNickName;
+		private String checkerUniKey;
 
-		public String getLoginEmail() {
-			return this.loginEmail;
+		private String dependencyLevel;
+
+		public String getCheckerName() {
+			return this.checkerName;
 		}
 
-		public void setLoginEmail(String loginEmail) {
-			this.loginEmail = loginEmail;
+		public void setCheckerName(String checkerName) {
+			this.checkerName = checkerName;
 		}
 
-		public String getPk() {
-			return this.pk;
+		public String getCheckerDesc() {
+			return this.checkerDesc;
 		}
 
-		public void setPk(String pk) {
-			this.pk = pk;
+		public void setCheckerDesc(String checkerDesc) {
+			this.checkerDesc = checkerDesc;
 		}
 
-		public String getShowNickName() {
-			return this.showNickName;
+		public String getCheckerUniKey() {
+			return this.checkerUniKey;
 		}
 
-		public void setShowNickName(String showNickName) {
-			this.showNickName = showNickName;
+		public void setCheckerUniKey(String checkerUniKey) {
+			this.checkerUniKey = checkerUniKey;
+		}
+
+		public String getDependencyLevel() {
+			return this.dependencyLevel;
+		}
+
+		public void setDependencyLevel(String dependencyLevel) {
+			this.dependencyLevel = dependencyLevel;
 		}
 	}
 
 	@Override
-	public BatchQueryAgAccountResponse getInstance(UnmarshallerContext context) {
-		return	BatchQueryAgAccountResponseUnmarshaller.unmarshall(this, context);
+	public QueryDeleteTaskCheckDataResponse getInstance(UnmarshallerContext context) {
+		return	QueryDeleteTaskCheckDataResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

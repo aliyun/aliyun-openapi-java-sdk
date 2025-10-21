@@ -15,24 +15,26 @@
 package com.aliyuncs.account_crm.model.v20160606;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.account_crm.transform.v20160606.GetCustomerInformationResponseUnmarshaller;
+import com.aliyuncs.account_crm.transform.v20160606.ApplyAgOneKeyDeleteTaskResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetCustomerInformationResponse extends AcsResponse {
+public class ApplyAgOneKeyDeleteTaskResponse extends AcsResponse {
 
 	private String code;
 
 	private String message;
 
+	private String data;
+
 	private String requestId;
 
 	private Boolean success;
 
-	private Data data;
+	private Boolean needAbandonSpAfterPay;
 
 	public String getCode() {
 		return this.code;
@@ -48,6 +50,14 @@ public class GetCustomerInformationResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getData() {
+		return this.data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
 	}
 
 	public String getRequestId() {
@@ -66,49 +76,21 @@ public class GetCustomerInformationResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public Data getData() {
-		return this.data;
+	public Boolean getNeedAbandonSpAfterPay() {
+		return this.needAbandonSpAfterPay;
 	}
 
-	public void setData(Data data) {
-		this.data = data;
-	}
-
-	public static class Data {
-
-		private String biz;
-
-		private String website;
-
-		private String customerCategory;
-
-		public String getBiz() {
-			return this.biz;
-		}
-
-		public void setBiz(String biz) {
-			this.biz = biz;
-		}
-
-		public String getWebsite() {
-			return this.website;
-		}
-
-		public void setWebsite(String website) {
-			this.website = website;
-		}
-
-		public String getCustomerCategory() {
-			return this.customerCategory;
-		}
-
-		public void setCustomerCategory(String customerCategory) {
-			this.customerCategory = customerCategory;
-		}
+	public void setNeedAbandonSpAfterPay(Boolean needAbandonSpAfterPay) {
+		this.needAbandonSpAfterPay = needAbandonSpAfterPay;
 	}
 
 	@Override
-	public GetCustomerInformationResponse getInstance(UnmarshallerContext context) {
-		return	GetCustomerInformationResponseUnmarshaller.unmarshall(this, context);
+	public ApplyAgOneKeyDeleteTaskResponse getInstance(UnmarshallerContext context) {
+		return	ApplyAgOneKeyDeleteTaskResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

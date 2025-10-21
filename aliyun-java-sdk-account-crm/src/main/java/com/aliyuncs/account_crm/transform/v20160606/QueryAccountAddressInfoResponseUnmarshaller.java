@@ -17,6 +17,7 @@ package com.aliyuncs.account_crm.transform.v20160606;
 import com.aliyuncs.account_crm.model.v20160606.QueryAccountAddressInfoResponse;
 import com.aliyuncs.account_crm.model.v20160606.QueryAccountAddressInfoResponse.ProfileInfo;
 import com.aliyuncs.account_crm.model.v20160606.QueryAccountAddressInfoResponse.ProfileInfo.City;
+import com.aliyuncs.account_crm.model.v20160606.QueryAccountAddressInfoResponse.ProfileInfo.District;
 import com.aliyuncs.account_crm.model.v20160606.QueryAccountAddressInfoResponse.ProfileInfo.Province;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -44,16 +45,23 @@ public class QueryAccountAddressInfoResponseUnmarshaller {
 		profileInfo.setNationalityCode(_ctx.stringValue("QueryAccountAddressInfoResponse.ProfileInfo.NationalityCode"));
 		profileInfo.setAddress2(_ctx.stringValue("QueryAccountAddressInfoResponse.ProfileInfo.Address2"));
 		profileInfo.setTrueName(_ctx.stringValue("QueryAccountAddressInfoResponse.ProfileInfo.TrueName"));
+		profileInfo.setSelfServicingBusinessRegNum(_ctx.stringValue("QueryAccountAddressInfoResponse.ProfileInfo.SelfServicingBusinessRegNum"));
+		profileInfo.setSelfServicingIdentificationNum(_ctx.stringValue("QueryAccountAddressInfoResponse.ProfileInfo.SelfServicingIdentificationNum"));
 
-		Province province = new Province();
-		province.setName(_ctx.stringValue("QueryAccountAddressInfoResponse.ProfileInfo.Province.Name"));
-		province.setId(_ctx.stringValue("QueryAccountAddressInfoResponse.ProfileInfo.Province.Id"));
-		profileInfo.setProvince(province);
+		District district = new District();
+		district.setName(_ctx.stringValue("QueryAccountAddressInfoResponse.ProfileInfo.District.Name"));
+		district.setId(_ctx.stringValue("QueryAccountAddressInfoResponse.ProfileInfo.District.Id"));
+		profileInfo.setDistrict(district);
 
 		City city = new City();
 		city.setName(_ctx.stringValue("QueryAccountAddressInfoResponse.ProfileInfo.City.Name"));
 		city.setId(_ctx.stringValue("QueryAccountAddressInfoResponse.ProfileInfo.City.Id"));
 		profileInfo.setCity(city);
+
+		Province province = new Province();
+		province.setName(_ctx.stringValue("QueryAccountAddressInfoResponse.ProfileInfo.Province.Name"));
+		province.setId(_ctx.stringValue("QueryAccountAddressInfoResponse.ProfileInfo.Province.Id"));
+		profileInfo.setProvince(province);
 		queryAccountAddressInfoResponse.setProfileInfo(profileInfo);
 	 
 	 	return queryAccountAddressInfoResponse;

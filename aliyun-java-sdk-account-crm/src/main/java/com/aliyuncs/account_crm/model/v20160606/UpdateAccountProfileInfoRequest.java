@@ -52,7 +52,13 @@ public class UpdateAccountProfileInfoRequest extends RpcAcsRequest<UpdateAccount
 
 	private String pK;
 
+	private String districtJsonString;
+
 	private String fax;
+
+	private String selfServicingBusinessRegNum;
+
+	private String selfServicingIdentificationNum;
 
 	private String provinceJsonString;
 	public UpdateAccountProfileInfoRequest() {
@@ -214,6 +220,17 @@ public class UpdateAccountProfileInfoRequest extends RpcAcsRequest<UpdateAccount
 		}
 	}
 
+	public String getDistrictJsonString() {
+		return this.districtJsonString;
+	}
+
+	public void setDistrictJsonString(String districtJsonString) {
+		this.districtJsonString = districtJsonString;
+		if(districtJsonString != null){
+			putQueryParameter("DistrictJsonString", districtJsonString);
+		}
+	}
+
 	public String getFax() {
 		return this.fax;
 	}
@@ -222,6 +239,28 @@ public class UpdateAccountProfileInfoRequest extends RpcAcsRequest<UpdateAccount
 		this.fax = fax;
 		if(fax != null){
 			putQueryParameter("Fax", fax);
+		}
+	}
+
+	public String getSelfServicingBusinessRegNum() {
+		return this.selfServicingBusinessRegNum;
+	}
+
+	public void setSelfServicingBusinessRegNum(String selfServicingBusinessRegNum) {
+		this.selfServicingBusinessRegNum = selfServicingBusinessRegNum;
+		if(selfServicingBusinessRegNum != null){
+			putQueryParameter("SelfServicingBusinessRegNum", selfServicingBusinessRegNum);
+		}
+	}
+
+	public String getSelfServicingIdentificationNum() {
+		return this.selfServicingIdentificationNum;
+	}
+
+	public void setSelfServicingIdentificationNum(String selfServicingIdentificationNum) {
+		this.selfServicingIdentificationNum = selfServicingIdentificationNum;
+		if(selfServicingIdentificationNum != null){
+			putQueryParameter("SelfServicingIdentificationNum", selfServicingIdentificationNum);
 		}
 	}
 

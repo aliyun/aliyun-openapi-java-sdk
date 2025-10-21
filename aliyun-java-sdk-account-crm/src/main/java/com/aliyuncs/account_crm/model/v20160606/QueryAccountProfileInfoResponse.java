@@ -158,7 +158,15 @@ public class QueryAccountProfileInfoResponse extends AcsResponse {
 
 		private String lastName;
 
+		private String selfServicingBusinessRegNum;
+
+		private String selfServicingIdentificationNum;
+
+		private String showNickName;
+
 		private Province province;
+
+		private District district;
 
 		private City city;
 
@@ -610,12 +618,44 @@ public class QueryAccountProfileInfoResponse extends AcsResponse {
 			this.lastName = lastName;
 		}
 
+		public String getSelfServicingBusinessRegNum() {
+			return this.selfServicingBusinessRegNum;
+		}
+
+		public void setSelfServicingBusinessRegNum(String selfServicingBusinessRegNum) {
+			this.selfServicingBusinessRegNum = selfServicingBusinessRegNum;
+		}
+
+		public String getSelfServicingIdentificationNum() {
+			return this.selfServicingIdentificationNum;
+		}
+
+		public void setSelfServicingIdentificationNum(String selfServicingIdentificationNum) {
+			this.selfServicingIdentificationNum = selfServicingIdentificationNum;
+		}
+
+		public String getShowNickName() {
+			return this.showNickName;
+		}
+
+		public void setShowNickName(String showNickName) {
+			this.showNickName = showNickName;
+		}
+
 		public Province getProvince() {
 			return this.province;
 		}
 
 		public void setProvince(Province province) {
 			this.province = province;
+		}
+
+		public District getDistrict() {
+			return this.district;
+		}
+
+		public void setDistrict(District district) {
+			this.district = district;
 		}
 
 		public City getCity() {
@@ -627,6 +667,29 @@ public class QueryAccountProfileInfoResponse extends AcsResponse {
 		}
 
 		public static class Province {
+
+			private String name;
+
+			private String id;
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getId() {
+				return this.id;
+			}
+
+			public void setId(String id) {
+				this.id = id;
+			}
+		}
+
+		public static class District {
 
 			private String name;
 

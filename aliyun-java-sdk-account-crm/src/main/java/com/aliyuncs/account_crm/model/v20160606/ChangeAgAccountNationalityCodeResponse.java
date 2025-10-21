@@ -15,14 +15,14 @@
 package com.aliyuncs.account_crm.model.v20160606;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.account_crm.transform.v20160606.GetCustomerInformationResponseUnmarshaller;
+import com.aliyuncs.account_crm.transform.v20160606.ChangeAgAccountNationalityCodeResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetCustomerInformationResponse extends AcsResponse {
+public class ChangeAgAccountNationalityCodeResponse extends AcsResponse {
 
 	private String code;
 
@@ -31,8 +31,6 @@ public class GetCustomerInformationResponse extends AcsResponse {
 	private String requestId;
 
 	private Boolean success;
-
-	private Data data;
 
 	public String getCode() {
 		return this.code;
@@ -66,49 +64,8 @@ public class GetCustomerInformationResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public Data getData() {
-		return this.data;
-	}
-
-	public void setData(Data data) {
-		this.data = data;
-	}
-
-	public static class Data {
-
-		private String biz;
-
-		private String website;
-
-		private String customerCategory;
-
-		public String getBiz() {
-			return this.biz;
-		}
-
-		public void setBiz(String biz) {
-			this.biz = biz;
-		}
-
-		public String getWebsite() {
-			return this.website;
-		}
-
-		public void setWebsite(String website) {
-			this.website = website;
-		}
-
-		public String getCustomerCategory() {
-			return this.customerCategory;
-		}
-
-		public void setCustomerCategory(String customerCategory) {
-			this.customerCategory = customerCategory;
-		}
-	}
-
 	@Override
-	public GetCustomerInformationResponse getInstance(UnmarshallerContext context) {
-		return	GetCustomerInformationResponseUnmarshaller.unmarshall(this, context);
+	public ChangeAgAccountNationalityCodeResponse getInstance(UnmarshallerContext context) {
+		return	ChangeAgAccountNationalityCodeResponseUnmarshaller.unmarshall(this, context);
 	}
 }

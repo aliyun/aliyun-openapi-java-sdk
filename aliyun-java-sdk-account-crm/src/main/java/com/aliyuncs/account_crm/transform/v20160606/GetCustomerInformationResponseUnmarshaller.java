@@ -31,6 +31,7 @@ public class GetCustomerInformationResponseUnmarshaller {
 		Data data = new Data();
 		data.setBiz(_ctx.stringValue("GetCustomerInformationResponse.Data.Biz"));
 		data.setWebsite(_ctx.stringValue("GetCustomerInformationResponse.Data.Website"));
+		data.setCustomerCategory(_ctx.stringValue("GetCustomerInformationResponse.Data.CustomerCategory"));
 		getCustomerInformationResponse.setData(data);
 	 
 	 	return getCustomerInformationResponse;

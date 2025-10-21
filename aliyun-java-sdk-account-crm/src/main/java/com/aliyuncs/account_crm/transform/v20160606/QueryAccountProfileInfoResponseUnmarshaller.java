@@ -17,6 +17,7 @@ package com.aliyuncs.account_crm.transform.v20160606;
 import com.aliyuncs.account_crm.model.v20160606.QueryAccountProfileInfoResponse;
 import com.aliyuncs.account_crm.model.v20160606.QueryAccountProfileInfoResponse.ProfileInfo;
 import com.aliyuncs.account_crm.model.v20160606.QueryAccountProfileInfoResponse.ProfileInfo.City;
+import com.aliyuncs.account_crm.model.v20160606.QueryAccountProfileInfoResponse.ProfileInfo.District;
 import com.aliyuncs.account_crm.model.v20160606.QueryAccountProfileInfoResponse.ProfileInfo.Province;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -84,11 +85,19 @@ public class QueryAccountProfileInfoResponseUnmarshaller {
 		profileInfo.setAccountCertifyType(_ctx.stringValue("QueryAccountProfileInfoResponse.ProfileInfo.AccountCertifyType"));
 		profileInfo.setBankName(_ctx.stringValue("QueryAccountProfileInfoResponse.ProfileInfo.BankName"));
 		profileInfo.setLastName(_ctx.stringValue("QueryAccountProfileInfoResponse.ProfileInfo.LastName"));
+		profileInfo.setSelfServicingBusinessRegNum(_ctx.stringValue("QueryAccountProfileInfoResponse.ProfileInfo.SelfServicingBusinessRegNum"));
+		profileInfo.setSelfServicingIdentificationNum(_ctx.stringValue("QueryAccountProfileInfoResponse.ProfileInfo.SelfServicingIdentificationNum"));
+		profileInfo.setShowNickName(_ctx.stringValue("QueryAccountProfileInfoResponse.ProfileInfo.ShowNickName"));
 
 		Province province = new Province();
 		province.setName(_ctx.stringValue("QueryAccountProfileInfoResponse.ProfileInfo.Province.Name"));
 		province.setId(_ctx.stringValue("QueryAccountProfileInfoResponse.ProfileInfo.Province.Id"));
 		profileInfo.setProvince(province);
+
+		District district = new District();
+		district.setName(_ctx.stringValue("QueryAccountProfileInfoResponse.ProfileInfo.District.Name"));
+		district.setId(_ctx.stringValue("QueryAccountProfileInfoResponse.ProfileInfo.District.Id"));
+		profileInfo.setDistrict(district);
 
 		City city = new City();
 		city.setName(_ctx.stringValue("QueryAccountProfileInfoResponse.ProfileInfo.City.Name"));

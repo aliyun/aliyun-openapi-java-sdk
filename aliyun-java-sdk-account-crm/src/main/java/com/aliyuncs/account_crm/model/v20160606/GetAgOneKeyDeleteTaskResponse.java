@@ -15,14 +15,14 @@
 package com.aliyuncs.account_crm.model.v20160606;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.account_crm.transform.v20160606.GetCustomerInformationResponseUnmarshaller;
+import com.aliyuncs.account_crm.transform.v20160606.GetAgOneKeyDeleteTaskResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetCustomerInformationResponse extends AcsResponse {
+public class GetAgOneKeyDeleteTaskResponse extends AcsResponse {
 
 	private String code;
 
@@ -32,7 +32,7 @@ public class GetCustomerInformationResponse extends AcsResponse {
 
 	private Boolean success;
 
-	private Data data;
+	private TaskDto taskDto;
 
 	public String getCode() {
 		return this.code;
@@ -66,49 +66,54 @@ public class GetCustomerInformationResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public Data getData() {
-		return this.data;
+	public TaskDto getTaskDto() {
+		return this.taskDto;
 	}
 
-	public void setData(Data data) {
-		this.data = data;
+	public void setTaskDto(TaskDto taskDto) {
+		this.taskDto = taskDto;
 	}
 
-	public static class Data {
+	public static class TaskDto {
 
-		private String biz;
+		private String deleteStatus;
 
-		private String website;
+		private Boolean existQuietPeriod;
 
-		private String customerCategory;
+		private String quietPeriodEndTime;
 
-		public String getBiz() {
-			return this.biz;
+		public String getDeleteStatus() {
+			return this.deleteStatus;
 		}
 
-		public void setBiz(String biz) {
-			this.biz = biz;
+		public void setDeleteStatus(String deleteStatus) {
+			this.deleteStatus = deleteStatus;
 		}
 
-		public String getWebsite() {
-			return this.website;
+		public Boolean getExistQuietPeriod() {
+			return this.existQuietPeriod;
 		}
 
-		public void setWebsite(String website) {
-			this.website = website;
+		public void setExistQuietPeriod(Boolean existQuietPeriod) {
+			this.existQuietPeriod = existQuietPeriod;
 		}
 
-		public String getCustomerCategory() {
-			return this.customerCategory;
+		public String getQuietPeriodEndTime() {
+			return this.quietPeriodEndTime;
 		}
 
-		public void setCustomerCategory(String customerCategory) {
-			this.customerCategory = customerCategory;
+		public void setQuietPeriodEndTime(String quietPeriodEndTime) {
+			this.quietPeriodEndTime = quietPeriodEndTime;
 		}
 	}
 
 	@Override
-	public GetCustomerInformationResponse getInstance(UnmarshallerContext context) {
-		return	GetCustomerInformationResponseUnmarshaller.unmarshall(this, context);
+	public GetAgOneKeyDeleteTaskResponse getInstance(UnmarshallerContext context) {
+		return	GetAgOneKeyDeleteTaskResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }
