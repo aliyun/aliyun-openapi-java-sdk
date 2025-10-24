@@ -4,7 +4,7 @@
   <groupId>com.aliyun</groupId>
   <artifactId>aliyun-java-sdk-account-crm</artifactId>
   <packaging>jar</packaging>
-  <version>3.31.1</version>
+  <version>3.38.6</version>
   <name>aliyun-java-sdk-account-crm</name>
   <url>http://www.aliyun.com</url>
   <description>Aliyun Open API SDK for Java
