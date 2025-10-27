@@ -249,6 +249,8 @@ public class QueryMediaInfoJobListResponse extends AcsResponse {
 
 			private String fileSize;
 
+			private String fileMd5;
+
 			private Streams streams;
 
 			private Format format;
@@ -307,6 +309,14 @@ public class QueryMediaInfoJobListResponse extends AcsResponse {
 
 			public void setFileSize(String fileSize) {
 				this.fileSize = fileSize;
+			}
+
+			public String getFileMd5() {
+				return this.fileMd5;
+			}
+
+			public void setFileMd5(String fileMd5) {
+				this.fileMd5 = fileMd5;
 			}
 
 			public Streams getStreams() {

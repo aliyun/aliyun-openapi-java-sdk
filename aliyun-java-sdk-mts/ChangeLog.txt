@@ -1,3 +1,6 @@
+2025-10-27 Version: 3.3.67
+- Add FileMd5 for SubmitMediaInfoJob and QueryMediaInfoJobList.
+
 2025-06-20 Version: 3.3.66
 - Add DurationInaccurate flag to SubmitMediaInfoJob and QueryMediaInfoJobList for media duration accuracy tracking.
 

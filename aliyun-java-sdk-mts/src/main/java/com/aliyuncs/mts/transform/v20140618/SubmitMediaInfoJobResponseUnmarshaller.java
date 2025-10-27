@@ -67,6 +67,7 @@ public class SubmitMediaInfoJobResponseUnmarshaller {
 		properties.setBitrate(_ctx.stringValue("SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Bitrate"));
 		properties.setFileFormat(_ctx.stringValue("SubmitMediaInfoJobResponse.MediaInfoJob.Properties.FileFormat"));
 		properties.setFileSize(_ctx.stringValue("SubmitMediaInfoJobResponse.MediaInfoJob.Properties.FileSize"));
+		properties.setMD5(_ctx.stringValue("SubmitMediaInfoJobResponse.MediaInfoJob.Properties.MD5"));
 
 		Streams streams = new Streams();
 

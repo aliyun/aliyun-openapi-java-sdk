@@ -239,6 +239,8 @@ public class SubmitMediaInfoJobResponse extends AcsResponse {
 
 			private String fileSize;
 
+			private String mD5;
+
 			private Streams streams;
 
 			private Format format;
@@ -297,6 +299,14 @@ public class SubmitMediaInfoJobResponse extends AcsResponse {
 
 			public void setFileSize(String fileSize) {
 				this.fileSize = fileSize;
+			}
+
+			public String getMD5() {
+				return this.mD5;
+			}
+
+			public void setMD5(String mD5) {
+				this.mD5 = mD5;
 			}
 
 			public Streams getStreams() {

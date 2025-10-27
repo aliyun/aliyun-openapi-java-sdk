@@ -75,6 +75,7 @@ public class QueryMediaInfoJobListResponseUnmarshaller {
 			properties.setBitrate(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Bitrate"));
 			properties.setFileFormat(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.FileFormat"));
 			properties.setFileSize(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.FileSize"));
+			properties.setFileMd5(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.FileMd5"));
 
 			Streams streams = new Streams();
 
