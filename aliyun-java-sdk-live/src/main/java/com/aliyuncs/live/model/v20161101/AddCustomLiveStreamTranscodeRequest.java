@@ -47,6 +47,8 @@ public class AddCustomLiveStreamTranscodeRequest extends RpcAcsRequest<AddCustom
 
 	private String domain;
 
+	private Boolean deInterlaced;
+
 	private String template;
 
 	private String lazy;
@@ -201,6 +203,17 @@ public class AddCustomLiveStreamTranscodeRequest extends RpcAcsRequest<AddCustom
 		this.domain = domain;
 		if(domain != null){
 			putQueryParameter("Domain", domain);
+		}
+	}
+
+	public Boolean getDeInterlaced() {
+		return this.deInterlaced;
+	}
+
+	public void setDeInterlaced(Boolean deInterlaced) {
+		this.deInterlaced = deInterlaced;
+		if(deInterlaced != null){
+			putQueryParameter("DeInterlaced", deInterlaced.toString());
 		}
 	}
 

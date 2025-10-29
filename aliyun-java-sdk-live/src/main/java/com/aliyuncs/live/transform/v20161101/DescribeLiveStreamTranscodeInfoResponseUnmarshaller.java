@@ -58,6 +58,7 @@ public class DescribeLiveStreamTranscodeInfoResponseUnmarshaller {
 			customTranscodeParameters.setAudioChannelNum(_ctx.integerValue("DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeList["+ i +"].CustomTranscodeParameters.AudioChannelNum"));
 			customTranscodeParameters.setAudioProfile(_ctx.stringValue("DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeList["+ i +"].CustomTranscodeParameters.AudioProfile"));
 			customTranscodeParameters.setResWithSource(_ctx.mapValue("DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeList["+ i +"].CustomTranscodeParameters.ResWithSource"));
+			customTranscodeParameters.setDeInterlaced(_ctx.booleanValue("DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeList["+ i +"].CustomTranscodeParameters.DeInterlaced"));
 			domainTranscodeInfo.setCustomTranscodeParameters(customTranscodeParameters);
 
 			EncryptParameters encryptParameters = new EncryptParameters();

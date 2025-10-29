@@ -146,6 +146,8 @@ public class DescribeLiveStreamTranscodeInfoResponse extends AcsResponse {
 
 			private Map<Object,Object> resWithSource;
 
+			private Boolean deInterlaced;
+
 			public Map<Object,Object> getBitrateWithSource() {
 				return this.bitrateWithSource;
 			}
@@ -288,6 +290,14 @@ public class DescribeLiveStreamTranscodeInfoResponse extends AcsResponse {
 
 			public void setResWithSource(Map<Object,Object> resWithSource) {
 				this.resWithSource = resWithSource;
+			}
+
+			public Boolean getDeInterlaced() {
+				return this.deInterlaced;
+			}
+
+			public void setDeInterlaced(Boolean deInterlaced) {
+				this.deInterlaced = deInterlaced;
 			}
 		}
 

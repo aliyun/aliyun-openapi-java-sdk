@@ -25,31 +25,17 @@ import com.aliyuncs.live.Endpoint;
 public class UpdateCustomLiveStreamTranscodeRequest extends RpcAcsRequest<UpdateCustomLiveStreamTranscodeResponse> {
 	   
 
-	private String template;
-
 	private String resWithSource;
-
-	private String lazy;
 
 	private String gop;
 
 	private String audioCodec;
 
-	private String templateType;
-
-	private String audioProfile;
-
 	private Integer height;
 
 	private String app;
 
-	private String encryptParameters;
-
-	private Integer audioChannelNum;
-
 	private Integer profile;
-
-	private Integer fPS;
 
 	private Long ownerId;
 
@@ -57,13 +43,29 @@ public class UpdateCustomLiveStreamTranscodeRequest extends RpcAcsRequest<Update
 
 	private String bitrateWithSource;
 
+	private String domain;
+
+	private Boolean deInterlaced;
+
+	private String template;
+
+	private String lazy;
+
+	private String templateType;
+
+	private String audioProfile;
+
+	private String encryptParameters;
+
+	private Integer audioChannelNum;
+
+	private Integer fPS;
+
 	private Integer audioRate;
 
 	private String fpsWithSource;
 
 	private Integer audioBitrate;
-
-	private String domain;
 
 	private Integer width;
 
@@ -77,17 +79,6 @@ public class UpdateCustomLiveStreamTranscodeRequest extends RpcAcsRequest<Update
 		} catch (Exception e) {}
 	}
 
-	public String getTemplate() {
-		return this.template;
-	}
-
-	public void setTemplate(String template) {
-		this.template = template;
-		if(template != null){
-			putQueryParameter("Template", template);
-		}
-	}
-
 	public String getResWithSource() {
 		return this.resWithSource;
 	}
@@ -96,17 +87,6 @@ public class UpdateCustomLiveStreamTranscodeRequest extends RpcAcsRequest<Update
 		this.resWithSource = resWithSource;
 		if(resWithSource != null){
 			putQueryParameter("ResWithSource", resWithSource);
-		}
-	}
-
-	public String getLazy() {
-		return this.lazy;
-	}
-
-	public void setLazy(String lazy) {
-		this.lazy = lazy;
-		if(lazy != null){
-			putQueryParameter("Lazy", lazy);
 		}
 	}
 
@@ -132,28 +112,6 @@ public class UpdateCustomLiveStreamTranscodeRequest extends RpcAcsRequest<Update
 		}
 	}
 
-	public String getTemplateType() {
-		return this.templateType;
-	}
-
-	public void setTemplateType(String templateType) {
-		this.templateType = templateType;
-		if(templateType != null){
-			putQueryParameter("TemplateType", templateType);
-		}
-	}
-
-	public String getAudioProfile() {
-		return this.audioProfile;
-	}
-
-	public void setAudioProfile(String audioProfile) {
-		this.audioProfile = audioProfile;
-		if(audioProfile != null){
-			putQueryParameter("AudioProfile", audioProfile);
-		}
-	}
-
 	public Integer getHeight() {
 		return this.height;
 	}
@@ -176,28 +134,6 @@ public class UpdateCustomLiveStreamTranscodeRequest extends RpcAcsRequest<Update
 		}
 	}
 
-	public String getEncryptParameters() {
-		return this.encryptParameters;
-	}
-
-	public void setEncryptParameters(String encryptParameters) {
-		this.encryptParameters = encryptParameters;
-		if(encryptParameters != null){
-			putQueryParameter("EncryptParameters", encryptParameters);
-		}
-	}
-
-	public Integer getAudioChannelNum() {
-		return this.audioChannelNum;
-	}
-
-	public void setAudioChannelNum(Integer audioChannelNum) {
-		this.audioChannelNum = audioChannelNum;
-		if(audioChannelNum != null){
-			putQueryParameter("AudioChannelNum", audioChannelNum.toString());
-		}
-	}
-
 	public Integer getProfile() {
 		return this.profile;
 	}
@@ -206,17 +142,6 @@ public class UpdateCustomLiveStreamTranscodeRequest extends RpcAcsRequest<Update
 		this.profile = profile;
 		if(profile != null){
 			putQueryParameter("Profile", profile.toString());
-		}
-	}
-
-	public Integer getFPS() {
-		return this.fPS;
-	}
-
-	public void setFPS(Integer fPS) {
-		this.fPS = fPS;
-		if(fPS != null){
-			putQueryParameter("FPS", fPS.toString());
 		}
 	}
 
@@ -253,6 +178,105 @@ public class UpdateCustomLiveStreamTranscodeRequest extends RpcAcsRequest<Update
 		}
 	}
 
+	public String getDomain() {
+		return this.domain;
+	}
+
+	public void setDomain(String domain) {
+		this.domain = domain;
+		if(domain != null){
+			putQueryParameter("Domain", domain);
+		}
+	}
+
+	public Boolean getDeInterlaced() {
+		return this.deInterlaced;
+	}
+
+	public void setDeInterlaced(Boolean deInterlaced) {
+		this.deInterlaced = deInterlaced;
+		if(deInterlaced != null){
+			putQueryParameter("DeInterlaced", deInterlaced.toString());
+		}
+	}
+
+	public String getTemplate() {
+		return this.template;
+	}
+
+	public void setTemplate(String template) {
+		this.template = template;
+		if(template != null){
+			putQueryParameter("Template", template);
+		}
+	}
+
+	public String getLazy() {
+		return this.lazy;
+	}
+
+	public void setLazy(String lazy) {
+		this.lazy = lazy;
+		if(lazy != null){
+			putQueryParameter("Lazy", lazy);
+		}
+	}
+
+	public String getTemplateType() {
+		return this.templateType;
+	}
+
+	public void setTemplateType(String templateType) {
+		this.templateType = templateType;
+		if(templateType != null){
+			putQueryParameter("TemplateType", templateType);
+		}
+	}
+
+	public String getAudioProfile() {
+		return this.audioProfile;
+	}
+
+	public void setAudioProfile(String audioProfile) {
+		this.audioProfile = audioProfile;
+		if(audioProfile != null){
+			putQueryParameter("AudioProfile", audioProfile);
+		}
+	}
+
+	public String getEncryptParameters() {
+		return this.encryptParameters;
+	}
+
+	public void setEncryptParameters(String encryptParameters) {
+		this.encryptParameters = encryptParameters;
+		if(encryptParameters != null){
+			putQueryParameter("EncryptParameters", encryptParameters);
+		}
+	}
+
+	public Integer getAudioChannelNum() {
+		return this.audioChannelNum;
+	}
+
+	public void setAudioChannelNum(Integer audioChannelNum) {
+		this.audioChannelNum = audioChannelNum;
+		if(audioChannelNum != null){
+			putQueryParameter("AudioChannelNum", audioChannelNum.toString());
+		}
+	}
+
+	public Integer getFPS() {
+		return this.fPS;
+	}
+
+	public void setFPS(Integer fPS) {
+		this.fPS = fPS;
+		if(fPS != null){
+			putQueryParameter("FPS", fPS.toString());
+		}
+	}
+
 	public Integer getAudioRate() {
 		return this.audioRate;
 	}
@@ -283,17 +307,6 @@ public class UpdateCustomLiveStreamTranscodeRequest extends RpcAcsRequest<Update
 		this.audioBitrate = audioBitrate;
 		if(audioBitrate != null){
 			putQueryParameter("AudioBitrate", audioBitrate.toString());
-		}
-	}
-
-	public String getDomain() {
-		return this.domain;
-	}
-
-	public void setDomain(String domain) {
-		this.domain = domain;
-		if(domain != null){
-			putQueryParameter("Domain", domain);
 		}
 	}
 

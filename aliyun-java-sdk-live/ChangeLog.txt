@@ -1,3 +1,6 @@
+2025-10-29 Version: 3.9.73
+- Generated 2016-11-01 for `live`.
+
 2025-09-09 Version: 3.9.72
 - support query rtc live rooms
 
