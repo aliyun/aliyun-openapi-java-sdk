@@ -78,6 +78,12 @@ public class GrantDataServiceApiRequest extends RpcAcsRequest<GrantDataServiceAp
 		@SerializedName("Reason")
 		private String reason;
 
+		@SerializedName("ApplyProd")
+		private Boolean applyProd;
+
+		@SerializedName("ApplyDev")
+		private Boolean applyDev;
+
 		@SerializedName("AppId")
 		private Integer appId;
 
@@ -99,6 +105,22 @@ public class GrantDataServiceApiRequest extends RpcAcsRequest<GrantDataServiceAp
 
 		public void setReason(String reason) {
 			this.reason = reason;
+		}
+
+		public Boolean getApplyProd() {
+			return this.applyProd;
+		}
+
+		public void setApplyProd(Boolean applyProd) {
+			this.applyProd = applyProd;
+		}
+
+		public Boolean getApplyDev() {
+			return this.applyDev;
+		}
+
+		public void setApplyDev(Boolean applyDev) {
+			this.applyDev = applyDev;
 		}
 
 		public Integer getAppId() {
