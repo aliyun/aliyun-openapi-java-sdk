@@ -1,3 +1,6 @@
+2025-10-30 Version: 1.0.13
+- Supported Custom Privacy Policy.
+
 2025-10-20 Version: 1.0.12
 - Supported Brand.
 
