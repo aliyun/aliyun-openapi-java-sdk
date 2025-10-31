@@ -178,6 +178,8 @@ public class GetRuleResponse extends AcsResponse {
 
 			private DeadLetterQueue deadLetterQueue;
 
+			private ConcurrentConfig concurrentConfig;
+
 			public Map<Object,Object> getDetailMap() {
 				return this.detailMap;
 			}
@@ -250,6 +252,14 @@ public class GetRuleResponse extends AcsResponse {
 				this.deadLetterQueue = deadLetterQueue;
 			}
 
+			public ConcurrentConfig getConcurrentConfig() {
+				return this.concurrentConfig;
+			}
+
+			public void setConcurrentConfig(ConcurrentConfig concurrentConfig) {
+				this.concurrentConfig = concurrentConfig;
+			}
+
 			public static class ParamListItem {
 
 				private String value;
@@ -297,12 +307,65 @@ public class GetRuleResponse extends AcsResponse {
 
 				private String arn;
 
+				private String network;
+
+				private String vpcId;
+
+				private String vSwitchIds;
+
+				private String securityGroupId;
+
 				public String getArn() {
 					return this.arn;
 				}
 
 				public void setArn(String arn) {
 					this.arn = arn;
+				}
+
+				public String getNetwork() {
+					return this.network;
+				}
+
+				public void setNetwork(String network) {
+					this.network = network;
+				}
+
+				public String getVpcId() {
+					return this.vpcId;
+				}
+
+				public void setVpcId(String vpcId) {
+					this.vpcId = vpcId;
+				}
+
+				public String getVSwitchIds() {
+					return this.vSwitchIds;
+				}
+
+				public void setVSwitchIds(String vSwitchIds) {
+					this.vSwitchIds = vSwitchIds;
+				}
+
+				public String getSecurityGroupId() {
+					return this.securityGroupId;
+				}
+
+				public void setSecurityGroupId(String securityGroupId) {
+					this.securityGroupId = securityGroupId;
+				}
+			}
+
+			public static class ConcurrentConfig {
+
+				private Long concurrency;
+
+				public Long getConcurrency() {
+					return this.concurrency;
+				}
+
+				public void setConcurrency(Long concurrency) {
+					this.concurrency = concurrency;
 				}
 			}
 		}

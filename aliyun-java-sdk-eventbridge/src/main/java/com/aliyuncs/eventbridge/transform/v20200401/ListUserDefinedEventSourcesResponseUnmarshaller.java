@@ -23,6 +23,7 @@ import com.aliyuncs.eventbridge.model.v20200401.ListUserDefinedEventSourcesRespo
 import com.aliyuncs.eventbridge.model.v20200401.ListUserDefinedEventSourcesResponse.Data.EventSourceListItem.SourceHttpEventParameters;
 import com.aliyuncs.eventbridge.model.v20200401.ListUserDefinedEventSourcesResponse.Data.EventSourceListItem.SourceKafkaParameters;
 import com.aliyuncs.eventbridge.model.v20200401.ListUserDefinedEventSourcesResponse.Data.EventSourceListItem.SourceMNSParameters;
+import com.aliyuncs.eventbridge.model.v20200401.ListUserDefinedEventSourcesResponse.Data.EventSourceListItem.SourceOSSEventParameters;
 import com.aliyuncs.eventbridge.model.v20200401.ListUserDefinedEventSourcesResponse.Data.EventSourceListItem.SourceRabbitMQParameters;
 import com.aliyuncs.eventbridge.model.v20200401.ListUserDefinedEventSourcesResponse.Data.EventSourceListItem.SourceRocketMQParameters;
 import com.aliyuncs.eventbridge.model.v20200401.ListUserDefinedEventSourcesResponse.Data.EventSourceListItem.SourceSLSParameters;
@@ -149,6 +150,16 @@ public class ListUserDefinedEventSourcesResponseUnmarshaller {
 			sourceScheduledEventParameters.setTimeZone(_ctx.stringValue("ListUserDefinedEventSourcesResponse.Data.EventSourceList["+ i +"].SourceScheduledEventParameters.TimeZone"));
 			sourceScheduledEventParameters.setUserData(_ctx.stringValue("ListUserDefinedEventSourcesResponse.Data.EventSourceList["+ i +"].SourceScheduledEventParameters.UserData"));
 			eventSourceListItem.setSourceScheduledEventParameters(sourceScheduledEventParameters);
+
+			SourceOSSEventParameters sourceOSSEventParameters = new SourceOSSEventParameters();
+			sourceOSSEventParameters.setStsRoleArn(_ctx.stringValue("ListUserDefinedEventSourcesResponse.Data.EventSourceList["+ i +"].SourceOSSEventParameters.StsRoleArn"));
+
+			List<String> eventTypes = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("ListUserDefinedEventSourcesResponse.Data.EventSourceList["+ i +"].SourceOSSEventParameters.EventTypes.Length"); j++) {
+				eventTypes.add(_ctx.stringValue("ListUserDefinedEventSourcesResponse.Data.EventSourceList["+ i +"].SourceOSSEventParameters.EventTypes["+ j +"]"));
+			}
+			sourceOSSEventParameters.setEventTypes(eventTypes);
+			eventSourceListItem.setSourceOSSEventParameters(sourceOSSEventParameters);
 
 			eventSourceList.add(eventSourceListItem);
 		}

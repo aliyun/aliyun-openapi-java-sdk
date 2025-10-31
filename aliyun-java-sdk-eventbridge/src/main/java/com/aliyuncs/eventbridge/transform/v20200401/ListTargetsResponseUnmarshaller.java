@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.eventbridge.model.v20200401.ListTargetsResponse;
 import com.aliyuncs.eventbridge.model.v20200401.ListTargetsResponse.Data;
 import com.aliyuncs.eventbridge.model.v20200401.ListTargetsResponse.Data.TargetsItem;
+import com.aliyuncs.eventbridge.model.v20200401.ListTargetsResponse.Data.TargetsItem.ConcurrentConfig;
 import com.aliyuncs.eventbridge.model.v20200401.ListTargetsResponse.Data.TargetsItem.ParamListItem;
 import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -49,6 +50,10 @@ public class ListTargetsResponseUnmarshaller {
 			targetsItem.setId(_ctx.stringValue("ListTargetsResponse.Data.Targets["+ i +"].Id"));
 			targetsItem.setEventBusName(_ctx.stringValue("ListTargetsResponse.Data.Targets["+ i +"].EventBusName"));
 			targetsItem.setRuleName(_ctx.stringValue("ListTargetsResponse.Data.Targets["+ i +"].RuleName"));
+
+			ConcurrentConfig concurrentConfig = new ConcurrentConfig();
+			concurrentConfig.setConcurrency(_ctx.longValue("ListTargetsResponse.Data.Targets["+ i +"].ConcurrentConfig.Concurrency"));
+			targetsItem.setConcurrentConfig(concurrentConfig);
 
 			List<ParamListItem> paramList = new ArrayList<ParamListItem>();
 			for (int j = 0; j < _ctx.lengthValue("ListTargetsResponse.Data.Targets["+ i +"].ParamList.Length"); j++) {

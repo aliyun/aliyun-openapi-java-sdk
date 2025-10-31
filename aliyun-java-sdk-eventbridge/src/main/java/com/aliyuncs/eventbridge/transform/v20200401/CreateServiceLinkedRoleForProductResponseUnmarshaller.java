@@ -26,6 +26,7 @@ public class CreateServiceLinkedRoleForProductResponseUnmarshaller {
 		createServiceLinkedRoleForProductResponse.setMessage(_ctx.stringValue("CreateServiceLinkedRoleForProductResponse.Message"));
 		createServiceLinkedRoleForProductResponse.setCode(_ctx.stringValue("CreateServiceLinkedRoleForProductResponse.Code"));
 		createServiceLinkedRoleForProductResponse.setSuccess(_ctx.booleanValue("CreateServiceLinkedRoleForProductResponse.Success"));
+		createServiceLinkedRoleForProductResponse.setHttpCode(_ctx.integerValue("CreateServiceLinkedRoleForProductResponse.HttpCode"));
 	 
 	 	return createServiceLinkedRoleForProductResponse;
 	}

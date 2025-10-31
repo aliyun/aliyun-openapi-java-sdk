@@ -14,25 +14,34 @@
 
 package com.aliyuncs.eventbridge.model.v20200401;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.eventbridge.transform.v20200401.CreateServiceLinkedRoleForProductResponseUnmarshaller;
+import com.aliyuncs.eventbridge.transform.v20200401.TestEventSourceConfigResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateServiceLinkedRoleForProductResponse extends AcsResponse {
+public class TestEventSourceConfigResponse extends AcsResponse {
+
+	private String code;
 
 	private String message;
 
 	private String requestId;
 
-	private String code;
-
 	private Boolean success;
 
-	private Integer httpCode;
+	private List<DataItem> data;
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
 
 	public String getMessage() {
 		return this.message;
@@ -50,14 +59,6 @@ public class CreateServiceLinkedRoleForProductResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
 	public Boolean getSuccess() {
 		return this.success;
 	}
@@ -66,17 +67,50 @@ public class CreateServiceLinkedRoleForProductResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public Integer getHttpCode() {
-		return this.httpCode;
+	public List<DataItem> getData() {
+		return this.data;
 	}
 
-	public void setHttpCode(Integer httpCode) {
-		this.httpCode = httpCode;
+	public void setData(List<DataItem> data) {
+		this.data = data;
+	}
+
+	public static class DataItem {
+
+		private String checkItem;
+
+		private String errorMsg;
+
+		private String isSucceed;
+
+		public String getCheckItem() {
+			return this.checkItem;
+		}
+
+		public void setCheckItem(String checkItem) {
+			this.checkItem = checkItem;
+		}
+
+		public String getErrorMsg() {
+			return this.errorMsg;
+		}
+
+		public void setErrorMsg(String errorMsg) {
+			this.errorMsg = errorMsg;
+		}
+
+		public String getIsSucceed() {
+			return this.isSucceed;
+		}
+
+		public void setIsSucceed(String isSucceed) {
+			this.isSucceed = isSucceed;
+		}
 	}
 
 	@Override
-	public CreateServiceLinkedRoleForProductResponse getInstance(UnmarshallerContext context) {
-		return	CreateServiceLinkedRoleForProductResponseUnmarshaller.unmarshall(this, context);
+	public TestEventSourceConfigResponse getInstance(UnmarshallerContext context) {
+		return	TestEventSourceConfigResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

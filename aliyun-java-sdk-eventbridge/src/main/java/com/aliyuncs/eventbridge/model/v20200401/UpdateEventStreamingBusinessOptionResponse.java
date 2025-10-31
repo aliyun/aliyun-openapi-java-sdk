@@ -15,14 +15,14 @@
 package com.aliyuncs.eventbridge.model.v20200401;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.eventbridge.transform.v20200401.CreateServiceLinkedRoleForProductResponseUnmarshaller;
+import com.aliyuncs.eventbridge.transform.v20200401.UpdateEventStreamingBusinessOptionResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateServiceLinkedRoleForProductResponse extends AcsResponse {
+public class UpdateEventStreamingBusinessOptionResponse extends AcsResponse {
 
 	private String message;
 
@@ -32,7 +32,7 @@ public class CreateServiceLinkedRoleForProductResponse extends AcsResponse {
 
 	private Boolean success;
 
-	private Integer httpCode;
+	private Boolean data;
 
 	public String getMessage() {
 		return this.message;
@@ -66,17 +66,17 @@ public class CreateServiceLinkedRoleForProductResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public Integer getHttpCode() {
-		return this.httpCode;
+	public Boolean getData() {
+		return this.data;
 	}
 
-	public void setHttpCode(Integer httpCode) {
-		this.httpCode = httpCode;
+	public void setData(Boolean data) {
+		this.data = data;
 	}
 
 	@Override
-	public CreateServiceLinkedRoleForProductResponse getInstance(UnmarshallerContext context) {
-		return	CreateServiceLinkedRoleForProductResponseUnmarshaller.unmarshall(this, context);
+	public UpdateEventStreamingBusinessOptionResponse getInstance(UnmarshallerContext context) {
+		return	UpdateEventStreamingBusinessOptionResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

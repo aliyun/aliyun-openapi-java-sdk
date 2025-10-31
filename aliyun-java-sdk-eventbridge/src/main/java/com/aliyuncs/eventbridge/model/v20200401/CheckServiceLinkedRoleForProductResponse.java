@@ -15,14 +15,14 @@
 package com.aliyuncs.eventbridge.model.v20200401;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.eventbridge.transform.v20200401.CreateServiceLinkedRoleForProductResponseUnmarshaller;
+import com.aliyuncs.eventbridge.transform.v20200401.CheckServiceLinkedRoleForProductResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateServiceLinkedRoleForProductResponse extends AcsResponse {
+public class CheckServiceLinkedRoleForProductResponse extends AcsResponse {
 
 	private String message;
 
@@ -32,7 +32,7 @@ public class CreateServiceLinkedRoleForProductResponse extends AcsResponse {
 
 	private Boolean success;
 
-	private Integer httpCode;
+	private Data data;
 
 	public String getMessage() {
 		return this.message;
@@ -66,17 +66,50 @@ public class CreateServiceLinkedRoleForProductResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public Integer getHttpCode() {
-		return this.httpCode;
+	public Data getData() {
+		return this.data;
 	}
 
-	public void setHttpCode(Integer httpCode) {
-		this.httpCode = httpCode;
+	public void setData(Data data) {
+		this.data = data;
+	}
+
+	public static class Data {
+
+		private String stsRoleName;
+
+		private String stsRoleAuthURL;
+
+		private Boolean checkPass;
+
+		public String getStsRoleName() {
+			return this.stsRoleName;
+		}
+
+		public void setStsRoleName(String stsRoleName) {
+			this.stsRoleName = stsRoleName;
+		}
+
+		public String getStsRoleAuthURL() {
+			return this.stsRoleAuthURL;
+		}
+
+		public void setStsRoleAuthURL(String stsRoleAuthURL) {
+			this.stsRoleAuthURL = stsRoleAuthURL;
+		}
+
+		public Boolean getCheckPass() {
+			return this.checkPass;
+		}
+
+		public void setCheckPass(Boolean checkPass) {
+			this.checkPass = checkPass;
+		}
 	}
 
 	@Override
-	public CreateServiceLinkedRoleForProductResponse getInstance(UnmarshallerContext context) {
-		return	CreateServiceLinkedRoleForProductResponseUnmarshaller.unmarshall(this, context);
+	public CheckServiceLinkedRoleForProductResponse getInstance(UnmarshallerContext context) {
+		return	CheckServiceLinkedRoleForProductResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

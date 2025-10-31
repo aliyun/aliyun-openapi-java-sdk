@@ -142,6 +142,8 @@ public class ListUserDefinedEventSourcesResponse extends AcsResponse {
 
 			private SourceScheduledEventParameters sourceScheduledEventParameters;
 
+			private SourceOSSEventParameters sourceOSSEventParameters;
+
 			public String getName() {
 				return this.name;
 			}
@@ -268,6 +270,14 @@ public class ListUserDefinedEventSourcesResponse extends AcsResponse {
 
 			public void setSourceScheduledEventParameters(SourceScheduledEventParameters sourceScheduledEventParameters) {
 				this.sourceScheduledEventParameters = sourceScheduledEventParameters;
+			}
+
+			public SourceOSSEventParameters getSourceOSSEventParameters() {
+				return this.sourceOSSEventParameters;
+			}
+
+			public void setSourceOSSEventParameters(SourceOSSEventParameters sourceOSSEventParameters) {
+				this.sourceOSSEventParameters = sourceOSSEventParameters;
 			}
 
 			public static class SourceMNSParameters {
@@ -758,6 +768,39 @@ public class ListUserDefinedEventSourcesResponse extends AcsResponse {
 
 				public void setUserData(String userData) {
 					this.userData = userData;
+				}
+			}
+
+			public static class SourceOSSEventParameters {
+
+				private String stsRoleArn;
+
+				private Object matchRules;
+
+				private List<String> eventTypes;
+
+				public String getStsRoleArn() {
+					return this.stsRoleArn;
+				}
+
+				public void setStsRoleArn(String stsRoleArn) {
+					this.stsRoleArn = stsRoleArn;
+				}
+
+				public Object getMatchRules() {
+					return this.matchRules;
+				}
+
+				public void setMatchRules(Object matchRules) {
+					this.matchRules = matchRules;
+				}
+
+				public List<String> getEventTypes() {
+					return this.eventTypes;
+				}
+
+				public void setEventTypes(List<String> eventTypes) {
+					this.eventTypes = eventTypes;
 				}
 			}
 		}

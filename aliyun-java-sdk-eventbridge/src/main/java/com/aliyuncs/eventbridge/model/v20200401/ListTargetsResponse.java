@@ -128,6 +128,8 @@ public class ListTargetsResponse extends AcsResponse {
 
 			private List<ParamListItem> paramList;
 
+			private ConcurrentConfig concurrentConfig;
+
 			public Map<Object,Object> getDetailMap() {
 				return this.detailMap;
 			}
@@ -200,6 +202,14 @@ public class ListTargetsResponse extends AcsResponse {
 				this.paramList = paramList;
 			}
 
+			public ConcurrentConfig getConcurrentConfig() {
+				return this.concurrentConfig;
+			}
+
+			public void setConcurrentConfig(ConcurrentConfig concurrentConfig) {
+				this.concurrentConfig = concurrentConfig;
+			}
+
 			public static class ParamListItem {
 
 				private String value;
@@ -240,6 +250,19 @@ public class ListTargetsResponse extends AcsResponse {
 
 				public void setResourceKey(String resourceKey) {
 					this.resourceKey = resourceKey;
+				}
+			}
+
+			public static class ConcurrentConfig {
+
+				private Long concurrency;
+
+				public Long getConcurrency() {
+					return this.concurrency;
+				}
+
+				public void setConcurrency(Long concurrency) {
+					this.concurrency = concurrency;
 				}
 			}
 		}

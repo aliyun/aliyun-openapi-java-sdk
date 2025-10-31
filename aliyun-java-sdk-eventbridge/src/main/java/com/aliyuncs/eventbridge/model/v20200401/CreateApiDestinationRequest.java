@@ -27,28 +27,17 @@ import com.aliyuncs.http.MethodType;
 public class CreateApiDestinationRequest extends RpcAcsRequest<CreateApiDestinationResponse> {
 	   
 
-	private String connectionName;
-
 	private String description;
+
+	private String apiDestinationName;
+
+	private String connectionName;
 
 	@SerializedName("httpApiParameters")
 	private HttpApiParameters httpApiParameters;
-
-	private String apiDestinationName;
 	public CreateApiDestinationRequest() {
 		super("eventbridge", "2020-04-01", "CreateApiDestination");
 		setMethod(MethodType.POST);
-	}
-
-	public String getConnectionName() {
-		return this.connectionName;
-	}
-
-	public void setConnectionName(String connectionName) {
-		this.connectionName = connectionName;
-		if(connectionName != null){
-			putQueryParameter("ConnectionName", connectionName);
-		}
 	}
 
 	public String getDescription() {
@@ -62,17 +51,6 @@ public class CreateApiDestinationRequest extends RpcAcsRequest<CreateApiDestinat
 		}
 	}
 
-	public HttpApiParameters getHttpApiParameters() {
-		return this.httpApiParameters;
-	}
-
-	public void setHttpApiParameters(HttpApiParameters httpApiParameters) {
-		this.httpApiParameters = httpApiParameters;	
-		if (httpApiParameters != null) {
-			putQueryParameter("HttpApiParameters" , new Gson().toJson(httpApiParameters));
-		}	
-	}
-
 	public String getApiDestinationName() {
 		return this.apiDestinationName;
 	}
@@ -82,6 +60,28 @@ public class CreateApiDestinationRequest extends RpcAcsRequest<CreateApiDestinat
 		if(apiDestinationName != null){
 			putQueryParameter("ApiDestinationName", apiDestinationName);
 		}
+	}
+
+	public String getConnectionName() {
+		return this.connectionName;
+	}
+
+	public void setConnectionName(String connectionName) {
+		this.connectionName = connectionName;
+		if(connectionName != null){
+			putQueryParameter("ConnectionName", connectionName);
+		}
+	}
+
+	public HttpApiParameters getHttpApiParameters() {
+		return this.httpApiParameters;
+	}
+
+	public void setHttpApiParameters(HttpApiParameters httpApiParameters) {
+		this.httpApiParameters = httpApiParameters;	
+		if (httpApiParameters != null) {
+			putQueryParameter("HttpApiParameters" , new Gson().toJson(httpApiParameters));
+		}	
 	}
 
 	public static class HttpApiParameters {

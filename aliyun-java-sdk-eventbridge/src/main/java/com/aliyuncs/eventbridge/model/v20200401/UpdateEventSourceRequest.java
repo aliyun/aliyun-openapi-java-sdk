@@ -34,6 +34,15 @@ public class UpdateEventSourceRequest extends RpcAcsRequest<UpdateEventSourceRes
 	@SerializedName("sourceMNSParameters")
 	private SourceMNSParameters sourceMNSParameters;
 
+	@SerializedName("sourceOSSEventParameters")
+	private SourceOSSEventParameters sourceOSSEventParameters;
+
+	private Boolean linkedExternalSource;
+
+	private String externalSourceType;
+
+	private String externalSourceConfig;
+
 	@SerializedName("sourceRabbitMQParameters")
 	private SourceRabbitMQParameters sourceRabbitMQParameters;
 
@@ -89,6 +98,50 @@ public class UpdateEventSourceRequest extends RpcAcsRequest<UpdateEventSourceRes
 		if (sourceMNSParameters != null) {
 			putBodyParameter("SourceMNSParameters" , new Gson().toJson(sourceMNSParameters));
 		}	
+	}
+
+	public SourceOSSEventParameters getSourceOSSEventParameters() {
+		return this.sourceOSSEventParameters;
+	}
+
+	public void setSourceOSSEventParameters(SourceOSSEventParameters sourceOSSEventParameters) {
+		this.sourceOSSEventParameters = sourceOSSEventParameters;	
+		if (sourceOSSEventParameters != null) {
+			putBodyParameter("SourceOSSEventParameters" , new Gson().toJson(sourceOSSEventParameters));
+		}	
+	}
+
+	public Boolean getLinkedExternalSource() {
+		return this.linkedExternalSource;
+	}
+
+	public void setLinkedExternalSource(Boolean linkedExternalSource) {
+		this.linkedExternalSource = linkedExternalSource;
+		if(linkedExternalSource != null){
+			putBodyParameter("LinkedExternalSource", linkedExternalSource.toString());
+		}
+	}
+
+	public String getExternalSourceType() {
+		return this.externalSourceType;
+	}
+
+	public void setExternalSourceType(String externalSourceType) {
+		this.externalSourceType = externalSourceType;
+		if(externalSourceType != null){
+			putBodyParameter("ExternalSourceType", externalSourceType);
+		}
+	}
+
+	public String getExternalSourceConfig() {
+		return this.externalSourceConfig;
+	}
+
+	public void setExternalSourceConfig(String externalSourceConfig) {
+		this.externalSourceConfig = externalSourceConfig;
+		if(externalSourceConfig != null){
+			putBodyParameter("ExternalSourceConfig", externalSourceConfig);
+		}
 	}
 
 	public SourceRabbitMQParameters getSourceRabbitMQParameters() {
@@ -201,6 +254,89 @@ public class UpdateEventSourceRequest extends RpcAcsRequest<UpdateEventSourceRes
 
 		public void setIsBase64Decode(Boolean isBase64Decode) {
 			this.isBase64Decode = isBase64Decode;
+		}
+	}
+
+	public static class SourceOSSEventParameters {
+
+		@SerializedName("EventTypes")
+		private List<String> eventTypes;
+
+		@SerializedName("MatchRules")
+		private List<List<NullItem>> matchRules;
+
+		@SerializedName("StsRoleArn")
+		private String stsRoleArn;
+
+		public List<String> getEventTypes() {
+			return this.eventTypes;
+		}
+
+		public void setEventTypes(List<String> eventTypes) {
+			this.eventTypes = eventTypes;
+		}
+
+		public List<List<NullItem>> getMatchRules() {
+			return this.matchRules;
+		}
+
+		public void setMatchRules(List<List<NullItem>> matchRules) {
+			this.matchRules = matchRules;
+		}
+
+		public String getStsRoleArn() {
+			return this.stsRoleArn;
+		}
+
+		public void setStsRoleArn(String stsRoleArn) {
+			this.stsRoleArn = stsRoleArn;
+		}
+
+		public static class NullItem {
+
+			@SerializedName("Prefix")
+			private String prefix;
+
+			@SerializedName("Name")
+			private String name;
+
+			@SerializedName("MatchState")
+			private Boolean matchState;
+
+			@SerializedName("Suffix")
+			private String suffix;
+
+			public String getPrefix() {
+				return this.prefix;
+			}
+
+			public void setPrefix(String prefix) {
+				this.prefix = prefix;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public Boolean getMatchState() {
+				return this.matchState;
+			}
+
+			public void setMatchState(Boolean matchState) {
+				this.matchState = matchState;
+			}
+
+			public String getSuffix() {
+				return this.suffix;
+			}
+
+			public void setSuffix(String suffix) {
+				this.suffix = suffix;
+			}
 		}
 	}
 

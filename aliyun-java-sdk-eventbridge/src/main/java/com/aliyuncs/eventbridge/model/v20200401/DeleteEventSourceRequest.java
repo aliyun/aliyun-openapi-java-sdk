@@ -24,10 +24,23 @@ import com.aliyuncs.http.MethodType;
 public class DeleteEventSourceRequest extends RpcAcsRequest<DeleteEventSourceResponse> {
 	   
 
+	private String eventBusName;
+
 	private String eventSourceName;
 	public DeleteEventSourceRequest() {
 		super("eventbridge", "2020-04-01", "DeleteEventSource");
 		setMethod(MethodType.POST);
+	}
+
+	public String getEventBusName() {
+		return this.eventBusName;
+	}
+
+	public void setEventBusName(String eventBusName) {
+		this.eventBusName = eventBusName;
+		if(eventBusName != null){
+			putBodyParameter("EventBusName", eventBusName);
+		}
 	}
 
 	public String getEventSourceName() {

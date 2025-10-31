@@ -91,6 +91,9 @@ public class PutTargetsRequest extends RpcAcsRequest<PutTargetsResponse> {
 		@SerializedName("Type")
 		private String type;
 
+		@SerializedName("ConcurrentConfig")
+		private ConcurrentConfig concurrentConfig;
+
 		@SerializedName("ErrorsTolerance")
 		private String errorsTolerance;
 
@@ -140,6 +143,14 @@ public class PutTargetsRequest extends RpcAcsRequest<PutTargetsResponse> {
 
 		public void setType(String type) {
 			this.type = type;
+		}
+
+		public ConcurrentConfig getConcurrentConfig() {
+			return this.concurrentConfig;
+		}
+
+		public void setConcurrentConfig(ConcurrentConfig concurrentConfig) {
+			this.concurrentConfig = concurrentConfig;
 		}
 
 		public String getErrorsTolerance() {
@@ -199,8 +210,44 @@ public class PutTargetsRequest extends RpcAcsRequest<PutTargetsResponse> {
 
 		public static class DeadLetterQueue {
 
+			@SerializedName("VSwitchIds")
+			private String vSwitchIds;
+
+			@SerializedName("VpcId")
+			private String vpcId;
+
+			@SerializedName("SecurityGroupId")
+			private String securityGroupId;
+
 			@SerializedName("Arn")
 			private String arn;
+
+			@SerializedName("Network")
+			private String network;
+
+			public String getVSwitchIds() {
+				return this.vSwitchIds;
+			}
+
+			public void setVSwitchIds(String vSwitchIds) {
+				this.vSwitchIds = vSwitchIds;
+			}
+
+			public String getVpcId() {
+				return this.vpcId;
+			}
+
+			public void setVpcId(String vpcId) {
+				this.vpcId = vpcId;
+			}
+
+			public String getSecurityGroupId() {
+				return this.securityGroupId;
+			}
+
+			public void setSecurityGroupId(String securityGroupId) {
+				this.securityGroupId = securityGroupId;
+			}
 
 			public String getArn() {
 				return this.arn;
@@ -208,6 +255,28 @@ public class PutTargetsRequest extends RpcAcsRequest<PutTargetsResponse> {
 
 			public void setArn(String arn) {
 				this.arn = arn;
+			}
+
+			public String getNetwork() {
+				return this.network;
+			}
+
+			public void setNetwork(String network) {
+				this.network = network;
+			}
+		}
+
+		public static class ConcurrentConfig {
+
+			@SerializedName("Concurrency")
+			private Long concurrency;
+
+			public Long getConcurrency() {
+				return this.concurrency;
+			}
+
+			public void setConcurrency(Long concurrency) {
+				this.concurrency = concurrency;
 			}
 		}
 	}

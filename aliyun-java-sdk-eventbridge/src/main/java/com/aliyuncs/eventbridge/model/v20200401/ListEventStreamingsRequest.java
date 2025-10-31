@@ -15,6 +15,7 @@
 package com.aliyuncs.eventbridge.model.v20200401;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 
 /**
@@ -24,40 +25,20 @@ import com.aliyuncs.http.MethodType;
 public class ListEventStreamingsRequest extends RpcAcsRequest<ListEventStreamingsResponse> {
 	   
 
-	private String sourceArn;
-
-	private String sinkArn;
-
 	private String nextToken;
 
 	private Integer limit;
 
 	private String namePrefix;
+
+	private String sourceArn;
+
+	private List<Tags> tagss;
+
+	private String sinkArn;
 	public ListEventStreamingsRequest() {
 		super("eventbridge", "2020-04-01", "ListEventStreamings");
 		setMethod(MethodType.POST);
-	}
-
-	public String getSourceArn() {
-		return this.sourceArn;
-	}
-
-	public void setSourceArn(String sourceArn) {
-		this.sourceArn = sourceArn;
-		if(sourceArn != null){
-			putBodyParameter("SourceArn", sourceArn);
-		}
-	}
-
-	public String getSinkArn() {
-		return this.sinkArn;
-	}
-
-	public void setSinkArn(String sinkArn) {
-		this.sinkArn = sinkArn;
-		if(sinkArn != null){
-			putBodyParameter("SinkArn", sinkArn);
-		}
 	}
 
 	public String getNextToken() {
@@ -90,6 +71,65 @@ public class ListEventStreamingsRequest extends RpcAcsRequest<ListEventStreaming
 		this.namePrefix = namePrefix;
 		if(namePrefix != null){
 			putBodyParameter("NamePrefix", namePrefix);
+		}
+	}
+
+	public String getSourceArn() {
+		return this.sourceArn;
+	}
+
+	public void setSourceArn(String sourceArn) {
+		this.sourceArn = sourceArn;
+		if(sourceArn != null){
+			putBodyParameter("SourceArn", sourceArn);
+		}
+	}
+
+	public List<Tags> getTagss() {
+		return this.tagss;
+	}
+
+	public void setTagss(List<Tags> tagss) {
+		this.tagss = tagss;	
+		if (tagss != null) {
+			for (int depth1 = 0; depth1 < tagss.size(); depth1++) {
+				putBodyParameter("Tags." + (depth1 + 1) + ".Value" , tagss.get(depth1).getValue());
+				putBodyParameter("Tags." + (depth1 + 1) + ".Key" , tagss.get(depth1).getKey());
+			}
+		}	
+	}
+
+	public String getSinkArn() {
+		return this.sinkArn;
+	}
+
+	public void setSinkArn(String sinkArn) {
+		this.sinkArn = sinkArn;
+		if(sinkArn != null){
+			putBodyParameter("SinkArn", sinkArn);
+		}
+	}
+
+	public static class Tags {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

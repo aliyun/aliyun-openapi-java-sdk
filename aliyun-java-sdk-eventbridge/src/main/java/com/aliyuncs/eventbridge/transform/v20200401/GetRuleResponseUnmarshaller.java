@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.eventbridge.model.v20200401.GetRuleResponse;
 import com.aliyuncs.eventbridge.model.v20200401.GetRuleResponse.Data;
 import com.aliyuncs.eventbridge.model.v20200401.GetRuleResponse.Data.TargetsItem;
+import com.aliyuncs.eventbridge.model.v20200401.GetRuleResponse.Data.TargetsItem.ConcurrentConfig;
 import com.aliyuncs.eventbridge.model.v20200401.GetRuleResponse.Data.TargetsItem.DeadLetterQueue;
 import com.aliyuncs.eventbridge.model.v20200401.GetRuleResponse.Data.TargetsItem.ParamListItem;
 import java.util.Map;
@@ -57,7 +58,15 @@ public class GetRuleResponseUnmarshaller {
 
 			DeadLetterQueue deadLetterQueue = new DeadLetterQueue();
 			deadLetterQueue.setArn(_ctx.stringValue("GetRuleResponse.Data.Targets["+ i +"].DeadLetterQueue.Arn"));
+			deadLetterQueue.setNetwork(_ctx.stringValue("GetRuleResponse.Data.Targets["+ i +"].DeadLetterQueue.Network"));
+			deadLetterQueue.setVpcId(_ctx.stringValue("GetRuleResponse.Data.Targets["+ i +"].DeadLetterQueue.VpcId"));
+			deadLetterQueue.setVSwitchIds(_ctx.stringValue("GetRuleResponse.Data.Targets["+ i +"].DeadLetterQueue.VSwitchIds"));
+			deadLetterQueue.setSecurityGroupId(_ctx.stringValue("GetRuleResponse.Data.Targets["+ i +"].DeadLetterQueue.SecurityGroupId"));
 			targetsItem.setDeadLetterQueue(deadLetterQueue);
+
+			ConcurrentConfig concurrentConfig = new ConcurrentConfig();
+			concurrentConfig.setConcurrency(_ctx.longValue("GetRuleResponse.Data.Targets["+ i +"].ConcurrentConfig.Concurrency"));
+			targetsItem.setConcurrentConfig(concurrentConfig);
 
 			List<ParamListItem> paramList = new ArrayList<ParamListItem>();
 			for (int j = 0; j < _ctx.lengthValue("GetRuleResponse.Data.Targets["+ i +"].ParamList.Length"); j++) {

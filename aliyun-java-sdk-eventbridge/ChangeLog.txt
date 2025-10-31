@@ -1,3 +1,6 @@
+2025-10-31 Version: 1.0.13
+- RabbitMQMetaSourceTask add InnerNameSuffix param.
+
 2024-03-14 Version: 1.0.12
 - Fixed bugs for PauseEventStreaming and DeleteEventStreaming
 
