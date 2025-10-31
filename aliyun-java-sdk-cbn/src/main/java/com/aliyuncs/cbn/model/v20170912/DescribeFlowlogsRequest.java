@@ -50,7 +50,13 @@ public class DescribeFlowlogsRequest extends RpcAcsRequest<DescribeFlowlogsRespo
 
 	private Long ownerId;
 
+	private String transitRouterId;
+
 	private String transitRouterAttachmentId;
+
+	private String flowLogVersion;
+
+	private Integer interval;
 
 	private String flowLogId;
 
@@ -201,6 +207,17 @@ public class DescribeFlowlogsRequest extends RpcAcsRequest<DescribeFlowlogsRespo
 		}
 	}
 
+	public String getTransitRouterId() {
+		return this.transitRouterId;
+	}
+
+	public void setTransitRouterId(String transitRouterId) {
+		this.transitRouterId = transitRouterId;
+		if(transitRouterId != null){
+			putQueryParameter("TransitRouterId", transitRouterId);
+		}
+	}
+
 	public String getTransitRouterAttachmentId() {
 		return this.transitRouterAttachmentId;
 	}
@@ -209,6 +226,28 @@ public class DescribeFlowlogsRequest extends RpcAcsRequest<DescribeFlowlogsRespo
 		this.transitRouterAttachmentId = transitRouterAttachmentId;
 		if(transitRouterAttachmentId != null){
 			putQueryParameter("TransitRouterAttachmentId", transitRouterAttachmentId);
+		}
+	}
+
+	public String getFlowLogVersion() {
+		return this.flowLogVersion;
+	}
+
+	public void setFlowLogVersion(String flowLogVersion) {
+		this.flowLogVersion = flowLogVersion;
+		if(flowLogVersion != null){
+			putQueryParameter("FlowLogVersion", flowLogVersion);
+		}
+	}
+
+	public Integer getInterval() {
+		return this.interval;
+	}
+
+	public void setInterval(Integer interval) {
+		this.interval = interval;
+		if(interval != null){
+			putQueryParameter("Interval", interval.toString());
 		}
 	}
 

@@ -44,6 +44,8 @@ public class DescribeGrantRulesToCenRequest extends RpcAcsRequest<DescribeGrantR
 	private String childInstanceId;
 
 	private Long maxResults;
+
+	private Boolean enabledIpv6;
 	public DescribeGrantRulesToCenRequest() {
 		super("Cbn", "2017-09-12", "DescribeGrantRulesToCen", "cbn");
 		setMethod(MethodType.POST);
@@ -160,6 +162,17 @@ public class DescribeGrantRulesToCenRequest extends RpcAcsRequest<DescribeGrantR
 		this.maxResults = maxResults;
 		if(maxResults != null){
 			putQueryParameter("MaxResults", maxResults.toString());
+		}
+	}
+
+	public Boolean getEnabledIpv6() {
+		return this.enabledIpv6;
+	}
+
+	public void setEnabledIpv6(Boolean enabledIpv6) {
+		this.enabledIpv6 = enabledIpv6;
+		if(enabledIpv6 != null){
+			putQueryParameter("EnabledIpv6", enabledIpv6.toString());
 		}
 	}
 

@@ -111,6 +111,8 @@ public class ListTransitRouterRouteEntriesResponse extends AcsResponse {
 
 		private Integer preference;
 
+		private String vpnTunnelIp;
+
 		private List<String> communities;
 
 		private List<String> asPaths;
@@ -253,6 +255,14 @@ public class ListTransitRouterRouteEntriesResponse extends AcsResponse {
 			this.preference = preference;
 		}
 
+		public String getVpnTunnelIp() {
+			return this.vpnTunnelIp;
+		}
+
+		public void setVpnTunnelIp(String vpnTunnelIp) {
+			this.vpnTunnelIp = vpnTunnelIp;
+		}
+
 		public List<String> getCommunities() {
 			return this.communities;
 		}
@@ -286,6 +296,8 @@ public class ListTransitRouterRouteEntriesResponse extends AcsResponse {
 			private String originRouteType;
 
 			private Integer preference;
+
+			private Long med;
 
 			private List<String> communities1;
 
@@ -321,6 +333,14 @@ public class ListTransitRouterRouteEntriesResponse extends AcsResponse {
 
 			public void setPreference(Integer preference) {
 				this.preference = preference;
+			}
+
+			public Long getMed() {
+				return this.med;
+			}
+
+			public void setMed(Long med) {
+				this.med = med;
 			}
 
 			public List<String> getCommunities1() {

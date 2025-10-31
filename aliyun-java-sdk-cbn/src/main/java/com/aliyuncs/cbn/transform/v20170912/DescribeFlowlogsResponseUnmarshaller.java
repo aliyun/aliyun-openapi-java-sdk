@@ -47,6 +47,9 @@ public class DescribeFlowlogsResponseUnmarshaller {
 			flowLog.setFlowLogId(_ctx.stringValue("DescribeFlowlogsResponse.FlowLogs["+ i +"].FlowLogId"));
 			flowLog.setPeerRegionId(_ctx.stringValue("DescribeFlowlogsResponse.FlowLogs["+ i +"].PeerRegionId"));
 			flowLog.setTransitRouterAttachmentId(_ctx.stringValue("DescribeFlowlogsResponse.FlowLogs["+ i +"].TransitRouterAttachmentId"));
+			flowLog.setTransitRouterId(_ctx.stringValue("DescribeFlowlogsResponse.FlowLogs["+ i +"].TransitRouterId"));
+			flowLog.setLogFormatString(_ctx.stringValue("DescribeFlowlogsResponse.FlowLogs["+ i +"].LogFormatString"));
+			flowLog.setFlowLogVersion(_ctx.stringValue("DescribeFlowlogsResponse.FlowLogs["+ i +"].FlowLogVersion"));
 			flowLog.setInterval(_ctx.longValue("DescribeFlowlogsResponse.FlowLogs["+ i +"].Interval"));
 
 			List<Tag> tags = new ArrayList<Tag>();

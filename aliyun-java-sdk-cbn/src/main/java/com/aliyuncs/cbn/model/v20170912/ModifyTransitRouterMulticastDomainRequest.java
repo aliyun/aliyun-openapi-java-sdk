@@ -35,6 +35,8 @@ public class ModifyTransitRouterMulticastDomainRequest extends RpcAcsRequest<Mod
 
 	private String transitRouterMulticastDomainName;
 
+	private Options options;
+
 	private Boolean dryRun;
 
 	private String resourceOwnerAccount;
@@ -106,6 +108,19 @@ public class ModifyTransitRouterMulticastDomainRequest extends RpcAcsRequest<Mod
 		}
 	}
 
+	public Options getOptions() {
+		return this.options;
+	}
+
+	public void setOptions(Options options) {
+		this.options = options;	
+		if (options != null) {
+			
+				putQueryParameter("Options.StrictSourceControl" , options.getStrictSourceControl());
+				putQueryParameter("Options.Igmpv2Support" , options.getIgmpv2Support());
+		}	
+	}
+
 	public Boolean getDryRun() {
 		return this.dryRun;
 	}
@@ -147,6 +162,29 @@ public class ModifyTransitRouterMulticastDomainRequest extends RpcAcsRequest<Mod
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public static class Options {
+
+		private String strictSourceControl;
+
+		private String igmpv2Support;
+
+		public String getStrictSourceControl() {
+			return this.strictSourceControl;
+		}
+
+		public void setStrictSourceControl(String strictSourceControl) {
+			this.strictSourceControl = strictSourceControl;
+		}
+
+		public String getIgmpv2Support() {
+			return this.igmpv2Support;
+		}
+
+		public void setIgmpv2Support(String igmpv2Support) {
+			this.igmpv2Support = igmpv2Support;
 		}
 	}
 

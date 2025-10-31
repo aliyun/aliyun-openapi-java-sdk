@@ -101,6 +101,7 @@ public class UpdateTrafficMarkingPolicyAttributeRequest extends RpcAcsRequest<Up
 				}
 				putQueryParameter("AddTrafficMatchRules." + (depth1 + 1) + ".DstCidr" , addTrafficMatchRuless.get(depth1).getDstCidr());
 				putQueryParameter("AddTrafficMatchRules." + (depth1 + 1) + ".TrafficMatchRuleName" , addTrafficMatchRuless.get(depth1).getTrafficMatchRuleName());
+				putQueryParameter("AddTrafficMatchRules." + (depth1 + 1) + ".AddressFamily" , addTrafficMatchRuless.get(depth1).getAddressFamily());
 				putQueryParameter("AddTrafficMatchRules." + (depth1 + 1) + ".SrcCidr" , addTrafficMatchRuless.get(depth1).getSrcCidr());
 			}
 		}	
@@ -206,6 +207,7 @@ public class UpdateTrafficMarkingPolicyAttributeRequest extends RpcAcsRequest<Up
 				}
 				putQueryParameter("DeleteTrafficMatchRules." + (depth1 + 1) + ".DstCidr" , deleteTrafficMatchRuless.get(depth1).getDstCidr());
 				putQueryParameter("DeleteTrafficMatchRules." + (depth1 + 1) + ".TrafficMatchRuleName" , deleteTrafficMatchRuless.get(depth1).getTrafficMatchRuleName());
+				putQueryParameter("DeleteTrafficMatchRules." + (depth1 + 1) + ".AddressFamily" , deleteTrafficMatchRuless.get(depth1).getAddressFamily());
 				putQueryParameter("DeleteTrafficMatchRules." + (depth1 + 1) + ".SrcCidr" , deleteTrafficMatchRuless.get(depth1).getSrcCidr());
 			}
 		}	
@@ -226,6 +228,8 @@ public class UpdateTrafficMarkingPolicyAttributeRequest extends RpcAcsRequest<Up
 		private String dstCidr;
 
 		private String trafficMatchRuleName;
+
+		private String addressFamily;
 
 		private String srcCidr;
 
@@ -283,6 +287,14 @@ public class UpdateTrafficMarkingPolicyAttributeRequest extends RpcAcsRequest<Up
 
 		public void setTrafficMatchRuleName(String trafficMatchRuleName) {
 			this.trafficMatchRuleName = trafficMatchRuleName;
+		}
+
+		public String getAddressFamily() {
+			return this.addressFamily;
+		}
+
+		public void setAddressFamily(String addressFamily) {
+			this.addressFamily = addressFamily;
 		}
 
 		public String getSrcCidr() {
@@ -310,6 +322,8 @@ public class UpdateTrafficMarkingPolicyAttributeRequest extends RpcAcsRequest<Up
 
 		private String trafficMatchRuleName;
 
+		private String addressFamily;
+
 		private String srcCidr;
 
 		public List<Integer> getDstPortRanges() {
@@ -366,6 +380,14 @@ public class UpdateTrafficMarkingPolicyAttributeRequest extends RpcAcsRequest<Up
 
 		public void setTrafficMatchRuleName(String trafficMatchRuleName) {
 			this.trafficMatchRuleName = trafficMatchRuleName;
+		}
+
+		public String getAddressFamily() {
+			return this.addressFamily;
+		}
+
+		public void setAddressFamily(String addressFamily) {
+			this.addressFamily = addressFamily;
 		}
 
 		public String getSrcCidr() {

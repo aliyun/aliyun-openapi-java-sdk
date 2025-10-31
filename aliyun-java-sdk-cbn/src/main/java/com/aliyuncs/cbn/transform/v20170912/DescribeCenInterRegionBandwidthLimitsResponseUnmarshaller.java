@@ -42,6 +42,7 @@ public class DescribeCenInterRegionBandwidthLimitsResponseUnmarshaller {
 			cenInterRegionBandwidthLimit.setCenId(_ctx.stringValue("DescribeCenInterRegionBandwidthLimitsResponse.CenInterRegionBandwidthLimits["+ i +"].CenId"));
 			cenInterRegionBandwidthLimit.setLocalRegionId(_ctx.stringValue("DescribeCenInterRegionBandwidthLimitsResponse.CenInterRegionBandwidthLimits["+ i +"].LocalRegionId"));
 			cenInterRegionBandwidthLimit.setBandwidthLimit(_ctx.longValue("DescribeCenInterRegionBandwidthLimitsResponse.CenInterRegionBandwidthLimits["+ i +"].BandwidthLimit"));
+			cenInterRegionBandwidthLimit.setBandwidthType(_ctx.stringValue("DescribeCenInterRegionBandwidthLimitsResponse.CenInterRegionBandwidthLimits["+ i +"].BandwidthType"));
 
 			cenInterRegionBandwidthLimits.add(cenInterRegionBandwidthLimit);
 		}

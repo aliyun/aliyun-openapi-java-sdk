@@ -1,3 +1,6 @@
+2025-10-31 Version: 1.0.41
+- TR Flowlog support nis.
+
 2024-03-26 Version: 1.0.40
 - Supported ECR Attachment.
 

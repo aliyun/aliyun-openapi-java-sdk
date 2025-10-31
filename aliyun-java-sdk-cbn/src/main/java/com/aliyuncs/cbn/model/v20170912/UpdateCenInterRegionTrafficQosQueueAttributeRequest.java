@@ -40,6 +40,8 @@ public class UpdateCenInterRegionTrafficQosQueueAttributeRequest extends RpcAcsR
 
 	private String resourceOwnerAccount;
 
+	private Long bandwidth;
+
 	private String ownerAccount;
 
 	private Long ownerId;
@@ -132,6 +134,17 @@ public class UpdateCenInterRegionTrafficQosQueueAttributeRequest extends RpcAcsR
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public Long getBandwidth() {
+		return this.bandwidth;
+	}
+
+	public void setBandwidth(Long bandwidth) {
+		this.bandwidth = bandwidth;
+		if(bandwidth != null){
+			putQueryParameter("Bandwidth", bandwidth.toString());
 		}
 	}
 

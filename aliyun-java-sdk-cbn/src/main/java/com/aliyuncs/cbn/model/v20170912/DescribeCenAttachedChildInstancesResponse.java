@@ -87,9 +87,11 @@ public class DescribeCenAttachedChildInstancesResponse extends AcsResponse {
 
 		private String childInstanceId;
 
-		private String cenId;
+		private String managedService;
 
 		private String childInstanceAttachTime;
+
+		private String cenId;
 
 		public String getChildInstanceType() {
 			return this.childInstanceType;
@@ -131,12 +133,12 @@ public class DescribeCenAttachedChildInstancesResponse extends AcsResponse {
 			this.childInstanceId = childInstanceId;
 		}
 
-		public String getCenId() {
-			return this.cenId;
+		public String getManagedService() {
+			return this.managedService;
 		}
 
-		public void setCenId(String cenId) {
-			this.cenId = cenId;
+		public void setManagedService(String managedService) {
+			this.managedService = managedService;
 		}
 
 		public String getChildInstanceAttachTime() {
@@ -145,6 +147,14 @@ public class DescribeCenAttachedChildInstancesResponse extends AcsResponse {
 
 		public void setChildInstanceAttachTime(String childInstanceAttachTime) {
 			this.childInstanceAttachTime = childInstanceAttachTime;
+		}
+
+		public String getCenId() {
+			return this.cenId;
+		}
+
+		public void setCenId(String cenId) {
+			this.cenId = cenId;
 		}
 	}
 

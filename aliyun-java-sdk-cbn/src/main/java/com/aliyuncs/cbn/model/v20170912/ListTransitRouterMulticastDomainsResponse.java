@@ -93,6 +93,8 @@ public class ListTransitRouterMulticastDomainsResponse extends AcsResponse {
 
 		private List<Tag> tags;
 
+		private Options options;
+
 		public String getTransitRouterMulticastDomainId() {
 			return this.transitRouterMulticastDomainId;
 		}
@@ -157,6 +159,14 @@ public class ListTransitRouterMulticastDomainsResponse extends AcsResponse {
 			this.tags = tags;
 		}
 
+		public Options getOptions() {
+			return this.options;
+		}
+
+		public void setOptions(Options options) {
+			this.options = options;
+		}
+
 		public static class Tag {
 
 			private String key;
@@ -177,6 +187,29 @@ public class ListTransitRouterMulticastDomainsResponse extends AcsResponse {
 
 			public void setValue(String value) {
 				this.value = value;
+			}
+		}
+
+		public static class Options {
+
+			private String igmpv2Support;
+
+			private String strictSourceControl;
+
+			public String getIgmpv2Support() {
+				return this.igmpv2Support;
+			}
+
+			public void setIgmpv2Support(String igmpv2Support) {
+				this.igmpv2Support = igmpv2Support;
+			}
+
+			public String getStrictSourceControl() {
+				return this.strictSourceControl;
+			}
+
+			public void setStrictSourceControl(String strictSourceControl) {
+				this.strictSourceControl = strictSourceControl;
 			}
 		}
 	}

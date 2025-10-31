@@ -93,6 +93,8 @@ public class DescribeTransitRouteTableAggregationResponse extends AcsResponse {
 
 		private String status;
 
+		private List<String> scopeList;
+
 		public String getName() {
 			return this.name;
 		}
@@ -155,6 +157,14 @@ public class DescribeTransitRouteTableAggregationResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public List<String> getScopeList() {
+			return this.scopeList;
+		}
+
+		public void setScopeList(List<String> scopeList) {
+			this.scopeList = scopeList;
 		}
 	}
 

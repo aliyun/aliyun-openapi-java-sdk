@@ -39,6 +39,7 @@ public class ListCenInterRegionTrafficQosPoliciesResponseUnmarshaller {
 			trafficQosPolicy.setTrafficQosPolicyStatus(_ctx.stringValue("ListCenInterRegionTrafficQosPoliciesResponse.TrafficQosPolicies["+ i +"].TrafficQosPolicyStatus"));
 			trafficQosPolicy.setTrafficQosPolicyId(_ctx.stringValue("ListCenInterRegionTrafficQosPoliciesResponse.TrafficQosPolicies["+ i +"].TrafficQosPolicyId"));
 			trafficQosPolicy.setTrafficQosPolicyDescription(_ctx.stringValue("ListCenInterRegionTrafficQosPoliciesResponse.TrafficQosPolicies["+ i +"].TrafficQosPolicyDescription"));
+			trafficQosPolicy.setBandwidthGuaranteeMode(_ctx.stringValue("ListCenInterRegionTrafficQosPoliciesResponse.TrafficQosPolicies["+ i +"].BandwidthGuaranteeMode"));
 			trafficQosPolicy.setTransitRouterId(_ctx.stringValue("ListCenInterRegionTrafficQosPoliciesResponse.TrafficQosPolicies["+ i +"].TransitRouterId"));
 			trafficQosPolicy.setTransitRouterAttachmentId(_ctx.stringValue("ListCenInterRegionTrafficQosPoliciesResponse.TrafficQosPolicies["+ i +"].TransitRouterAttachmentId"));
 
@@ -47,8 +48,10 @@ public class ListCenInterRegionTrafficQosPoliciesResponseUnmarshaller {
 				TrafficQosQueue trafficQosQueue = new TrafficQosQueue();
 				trafficQosQueue.setQosQueueName(_ctx.stringValue("ListCenInterRegionTrafficQosPoliciesResponse.TrafficQosPolicies["+ i +"].TrafficQosQueues["+ j +"].QosQueueName"));
 				trafficQosQueue.setRemainBandwidthPercent(_ctx.integerValue("ListCenInterRegionTrafficQosPoliciesResponse.TrafficQosPolicies["+ i +"].TrafficQosQueues["+ j +"].RemainBandwidthPercent"));
+				trafficQosQueue.setBandwidth(_ctx.stringValue("ListCenInterRegionTrafficQosPoliciesResponse.TrafficQosPolicies["+ i +"].TrafficQosQueues["+ j +"].Bandwidth"));
 				trafficQosQueue.setQosQueueId(_ctx.stringValue("ListCenInterRegionTrafficQosPoliciesResponse.TrafficQosPolicies["+ i +"].TrafficQosQueues["+ j +"].QosQueueId"));
 				trafficQosQueue.setQosQueueDescription(_ctx.stringValue("ListCenInterRegionTrafficQosPoliciesResponse.TrafficQosPolicies["+ i +"].TrafficQosQueues["+ j +"].QosQueueDescription"));
+				trafficQosQueue.setEffectiveBandwidth(_ctx.stringValue("ListCenInterRegionTrafficQosPoliciesResponse.TrafficQosPolicies["+ i +"].TrafficQosQueues["+ j +"].EffectiveBandwidth"));
 
 				List<Integer> dscps = new ArrayList<Integer>();
 				for (int k = 0; k < _ctx.lengthValue("ListCenInterRegionTrafficQosPoliciesResponse.TrafficQosPolicies["+ i +"].TrafficQosQueues["+ j +"].Dscps.Length"); k++) {

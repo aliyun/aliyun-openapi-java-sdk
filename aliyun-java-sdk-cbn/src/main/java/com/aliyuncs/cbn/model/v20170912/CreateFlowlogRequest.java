@@ -46,9 +46,13 @@ public class CreateFlowlogRequest extends RpcAcsRequest<CreateFlowlogResponse> {
 
 	private Long ownerId;
 
+	private String transitRouterId;
+
 	private String transitRouterAttachmentId;
 
 	private Long interval;
+
+	private String logFormatString;
 
 	private String flowLogName;
 	public CreateFlowlogRequest() {
@@ -173,6 +177,17 @@ public class CreateFlowlogRequest extends RpcAcsRequest<CreateFlowlogResponse> {
 		}
 	}
 
+	public String getTransitRouterId() {
+		return this.transitRouterId;
+	}
+
+	public void setTransitRouterId(String transitRouterId) {
+		this.transitRouterId = transitRouterId;
+		if(transitRouterId != null){
+			putQueryParameter("TransitRouterId", transitRouterId);
+		}
+	}
+
 	public String getTransitRouterAttachmentId() {
 		return this.transitRouterAttachmentId;
 	}
@@ -192,6 +207,17 @@ public class CreateFlowlogRequest extends RpcAcsRequest<CreateFlowlogResponse> {
 		this.interval = interval;
 		if(interval != null){
 			putQueryParameter("Interval", interval.toString());
+		}
+	}
+
+	public String getLogFormatString() {
+		return this.logFormatString;
+	}
+
+	public void setLogFormatString(String logFormatString) {
+		this.logFormatString = logFormatString;
+		if(logFormatString != null){
+			putQueryParameter("LogFormatString", logFormatString);
 		}
 	}
 

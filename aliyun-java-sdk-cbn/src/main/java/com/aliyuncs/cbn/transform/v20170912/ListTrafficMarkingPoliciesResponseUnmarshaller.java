@@ -54,6 +54,7 @@ public class ListTrafficMarkingPoliciesResponseUnmarshaller {
 				trafficMatchRule.setSrcCidr(_ctx.stringValue("ListTrafficMarkingPoliciesResponse.TrafficMarkingPolicies["+ i +"].TrafficMatchRules["+ j +"].SrcCidr"));
 				trafficMatchRule.setTrafficMatchRuleName(_ctx.stringValue("ListTrafficMarkingPoliciesResponse.TrafficMarkingPolicies["+ i +"].TrafficMatchRules["+ j +"].TrafficMatchRuleName"));
 				trafficMatchRule.setTrafficMatchRuleStatus(_ctx.stringValue("ListTrafficMarkingPoliciesResponse.TrafficMarkingPolicies["+ i +"].TrafficMatchRules["+ j +"].TrafficMatchRuleStatus"));
+				trafficMatchRule.setAddressFamily(_ctx.stringValue("ListTrafficMarkingPoliciesResponse.TrafficMarkingPolicies["+ i +"].TrafficMatchRules["+ j +"].AddressFamily"));
 
 				List<Integer> dstPortRange = new ArrayList<Integer>();
 				for (int k = 0; k < _ctx.lengthValue("ListTrafficMarkingPoliciesResponse.TrafficMarkingPolicies["+ i +"].TrafficMatchRules["+ j +"].DstPortRange.Length"); k++) {

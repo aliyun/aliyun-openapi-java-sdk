@@ -15,6 +15,9 @@
 package com.aliyuncs.cbn.model.v20170912;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.Map;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cbn.Endpoint;
 
@@ -28,6 +31,9 @@ public class UpdateTransitRouterVpcAttachmentAttributeRequest extends RpcAcsRequ
 	private Long resourceOwnerId;
 
 	private String clientToken;
+
+	@SerializedName("transitRouterVPCAttachmentOptions")
+	private Map<String,String> transitRouterVPCAttachmentOptions;
 
 	private String transitRouterAttachmentName;
 
@@ -73,6 +79,17 @@ public class UpdateTransitRouterVpcAttachmentAttributeRequest extends RpcAcsRequ
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
 		}
+	}
+
+	public Map<String,String> getTransitRouterVPCAttachmentOptions() {
+		return this.transitRouterVPCAttachmentOptions;
+	}
+
+	public void setTransitRouterVPCAttachmentOptions(Map<String,String> transitRouterVPCAttachmentOptions) {
+		this.transitRouterVPCAttachmentOptions = transitRouterVPCAttachmentOptions;	
+		if (transitRouterVPCAttachmentOptions != null) {
+			putQueryParameter("TransitRouterVPCAttachmentOptions" , new Gson().toJson(transitRouterVPCAttachmentOptions));
+		}	
 	}
 
 	public String getTransitRouterAttachmentName() {

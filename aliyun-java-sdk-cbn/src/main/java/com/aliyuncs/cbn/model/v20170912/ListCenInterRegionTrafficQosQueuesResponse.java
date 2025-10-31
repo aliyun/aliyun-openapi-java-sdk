@@ -65,6 +65,10 @@ public class ListCenInterRegionTrafficQosQueuesResponse extends AcsResponse {
 
 		private Integer remainBandwidthPercent;
 
+		private String bandwidth;
+
+		private String effectiveBandwidth;
+
 		private String trafficQosPolicyId;
 
 		private String trafficQosQueueId;
@@ -105,6 +109,22 @@ public class ListCenInterRegionTrafficQosQueuesResponse extends AcsResponse {
 
 		public void setRemainBandwidthPercent(Integer remainBandwidthPercent) {
 			this.remainBandwidthPercent = remainBandwidthPercent;
+		}
+
+		public String getBandwidth() {
+			return this.bandwidth;
+		}
+
+		public void setBandwidth(String bandwidth) {
+			this.bandwidth = bandwidth;
+		}
+
+		public String getEffectiveBandwidth() {
+			return this.effectiveBandwidth;
+		}
+
+		public void setEffectiveBandwidth(String effectiveBandwidth) {
+			this.effectiveBandwidth = effectiveBandwidth;
 		}
 
 		public String getTrafficQosPolicyId() {

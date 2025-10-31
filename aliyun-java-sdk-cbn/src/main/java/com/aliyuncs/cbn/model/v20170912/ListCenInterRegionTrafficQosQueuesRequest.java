@@ -33,6 +33,8 @@ public class ListCenInterRegionTrafficQosQueuesRequest extends RpcAcsRequest<Lis
 
 	private String trafficQosQueueDescription;
 
+	private EffectiveBandwidthFilter effectiveBandwidthFilter;
+
 	private String nextToken;
 
 	private String trafficQosPolicyId;
@@ -99,6 +101,19 @@ public class ListCenInterRegionTrafficQosQueuesRequest extends RpcAcsRequest<Lis
 		if(trafficQosQueueDescription != null){
 			putQueryParameter("TrafficQosQueueDescription", trafficQosQueueDescription);
 		}
+	}
+
+	public EffectiveBandwidthFilter getEffectiveBandwidthFilter() {
+		return this.effectiveBandwidthFilter;
+	}
+
+	public void setEffectiveBandwidthFilter(EffectiveBandwidthFilter effectiveBandwidthFilter) {
+		this.effectiveBandwidthFilter = effectiveBandwidthFilter;	
+		if (effectiveBandwidthFilter != null) {
+			
+				putQueryParameter("EffectiveBandwidthFilter.Gte" , effectiveBandwidthFilter.getGte());
+				putQueryParameter("EffectiveBandwidthFilter.Lte" , effectiveBandwidthFilter.getLte());
+		}	
 	}
 
 	public String getNextToken() {
@@ -186,6 +201,29 @@ public class ListCenInterRegionTrafficQosQueuesRequest extends RpcAcsRequest<Lis
 		this.maxResults = maxResults;
 		if(maxResults != null){
 			putQueryParameter("MaxResults", maxResults.toString());
+		}
+	}
+
+	public static class EffectiveBandwidthFilter {
+
+		private Long gte;
+
+		private Long lte;
+
+		public Long getGte() {
+			return this.gte;
+		}
+
+		public void setGte(Long gte) {
+			this.gte = gte;
+		}
+
+		public Long getLte() {
+			return this.lte;
+		}
+
+		public void setLte(Long lte) {
+			this.lte = lte;
 		}
 	}
 

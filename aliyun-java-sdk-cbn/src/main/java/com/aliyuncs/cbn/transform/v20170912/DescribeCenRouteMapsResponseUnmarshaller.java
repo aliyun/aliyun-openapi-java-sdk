@@ -54,6 +54,8 @@ public class DescribeCenRouteMapsResponseUnmarshaller {
 			routeMap.setMatchAddressType(_ctx.stringValue("DescribeCenRouteMapsResponse.RouteMaps["+ i +"].MatchAddressType"));
 			routeMap.setGatewayZoneId(_ctx.stringValue("DescribeCenRouteMapsResponse.RouteMaps["+ i +"].GatewayZoneId"));
 			routeMap.setGatewayRegionId(_ctx.stringValue("DescribeCenRouteMapsResponse.RouteMaps["+ i +"].GatewayRegionId"));
+			routeMap.setMedMatchMode(_ctx.stringValue("DescribeCenRouteMapsResponse.RouteMaps["+ i +"].MedMatchMode"));
+			routeMap.setOperateMed(_ctx.longValue("DescribeCenRouteMapsResponse.RouteMaps["+ i +"].OperateMed"));
 
 			List<String> sourceRegionIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeCenRouteMapsResponse.RouteMaps["+ i +"].SourceRegionIds.Length"); j++) {
@@ -150,6 +152,12 @@ public class DescribeCenRouteMapsResponseUnmarshaller {
 				srcZoneIds.add(_ctx.stringValue("DescribeCenRouteMapsResponse.RouteMaps["+ i +"].SrcZoneIds["+ j +"]"));
 			}
 			routeMap.setSrcZoneIds(srcZoneIds);
+
+			List<Long> matchMeds = new ArrayList<Long>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeCenRouteMapsResponse.RouteMaps["+ i +"].MatchMeds.Length"); j++) {
+				matchMeds.add(_ctx.longValue("DescribeCenRouteMapsResponse.RouteMaps["+ i +"].MatchMeds["+ j +"]"));
+			}
+			routeMap.setMatchMeds(matchMeds);
 
 			routeMaps.add(routeMap);
 		}

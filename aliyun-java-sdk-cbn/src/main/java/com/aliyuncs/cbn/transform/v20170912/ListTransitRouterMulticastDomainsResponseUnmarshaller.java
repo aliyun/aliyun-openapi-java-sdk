@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.cbn.model.v20170912.ListTransitRouterMulticastDomainsResponse;
 import com.aliyuncs.cbn.model.v20170912.ListTransitRouterMulticastDomainsResponse.TransitRouterMulticastDomain;
+import com.aliyuncs.cbn.model.v20170912.ListTransitRouterMulticastDomainsResponse.TransitRouterMulticastDomain.Options;
 import com.aliyuncs.cbn.model.v20170912.ListTransitRouterMulticastDomainsResponse.TransitRouterMulticastDomain.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -42,6 +43,11 @@ public class ListTransitRouterMulticastDomainsResponseUnmarshaller {
 			transitRouterMulticastDomain.setTransitRouterId(_ctx.stringValue("ListTransitRouterMulticastDomainsResponse.TransitRouterMulticastDomains["+ i +"].TransitRouterId"));
 			transitRouterMulticastDomain.setRegionId(_ctx.stringValue("ListTransitRouterMulticastDomainsResponse.TransitRouterMulticastDomains["+ i +"].RegionId"));
 			transitRouterMulticastDomain.setCenId(_ctx.stringValue("ListTransitRouterMulticastDomainsResponse.TransitRouterMulticastDomains["+ i +"].CenId"));
+
+			Options options = new Options();
+			options.setIgmpv2Support(_ctx.stringValue("ListTransitRouterMulticastDomainsResponse.TransitRouterMulticastDomains["+ i +"].Options.Igmpv2Support"));
+			options.setStrictSourceControl(_ctx.stringValue("ListTransitRouterMulticastDomainsResponse.TransitRouterMulticastDomains["+ i +"].Options.StrictSourceControl"));
+			transitRouterMulticastDomain.setOptions(options);
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("ListTransitRouterMulticastDomainsResponse.TransitRouterMulticastDomains["+ i +"].Tags.Length"); j++) {

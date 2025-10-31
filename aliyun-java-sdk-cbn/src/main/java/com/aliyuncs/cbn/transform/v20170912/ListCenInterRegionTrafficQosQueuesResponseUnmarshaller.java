@@ -36,6 +36,8 @@ public class ListCenInterRegionTrafficQosQueuesResponseUnmarshaller {
 			trafficQosQueue.setTransitRouterId(_ctx.stringValue("ListCenInterRegionTrafficQosQueuesResponse.TrafficQosQueues["+ i +"].TransitRouterId"));
 			trafficQosQueue.setTrafficQosQueueName(_ctx.stringValue("ListCenInterRegionTrafficQosQueuesResponse.TrafficQosQueues["+ i +"].TrafficQosQueueName"));
 			trafficQosQueue.setRemainBandwidthPercent(_ctx.integerValue("ListCenInterRegionTrafficQosQueuesResponse.TrafficQosQueues["+ i +"].RemainBandwidthPercent"));
+			trafficQosQueue.setBandwidth(_ctx.stringValue("ListCenInterRegionTrafficQosQueuesResponse.TrafficQosQueues["+ i +"].Bandwidth"));
+			trafficQosQueue.setEffectiveBandwidth(_ctx.stringValue("ListCenInterRegionTrafficQosQueuesResponse.TrafficQosQueues["+ i +"].EffectiveBandwidth"));
 			trafficQosQueue.setTrafficQosPolicyId(_ctx.stringValue("ListCenInterRegionTrafficQosQueuesResponse.TrafficQosQueues["+ i +"].TrafficQosPolicyId"));
 			trafficQosQueue.setTrafficQosQueueId(_ctx.stringValue("ListCenInterRegionTrafficQosQueuesResponse.TrafficQosQueues["+ i +"].TrafficQosQueueId"));
 			trafficQosQueue.setTrafficQosQueueDescription(_ctx.stringValue("ListCenInterRegionTrafficQosQueuesResponse.TrafficQosQueues["+ i +"].TrafficQosQueueDescription"));

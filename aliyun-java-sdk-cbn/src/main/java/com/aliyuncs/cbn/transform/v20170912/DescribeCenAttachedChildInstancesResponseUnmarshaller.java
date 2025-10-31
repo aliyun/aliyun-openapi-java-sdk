@@ -39,8 +39,9 @@ public class DescribeCenAttachedChildInstancesResponseUnmarshaller {
 			childInstance.setChildInstanceRegionId(_ctx.stringValue("DescribeCenAttachedChildInstancesResponse.ChildInstances["+ i +"].ChildInstanceRegionId"));
 			childInstance.setChildInstanceOwnerId(_ctx.longValue("DescribeCenAttachedChildInstancesResponse.ChildInstances["+ i +"].ChildInstanceOwnerId"));
 			childInstance.setChildInstanceId(_ctx.stringValue("DescribeCenAttachedChildInstancesResponse.ChildInstances["+ i +"].ChildInstanceId"));
-			childInstance.setCenId(_ctx.stringValue("DescribeCenAttachedChildInstancesResponse.ChildInstances["+ i +"].CenId"));
+			childInstance.setManagedService(_ctx.stringValue("DescribeCenAttachedChildInstancesResponse.ChildInstances["+ i +"].ManagedService"));
 			childInstance.setChildInstanceAttachTime(_ctx.stringValue("DescribeCenAttachedChildInstancesResponse.ChildInstances["+ i +"].ChildInstanceAttachTime"));
+			childInstance.setCenId(_ctx.stringValue("DescribeCenAttachedChildInstancesResponse.ChildInstances["+ i +"].CenId"));
 
 			childInstances.add(childInstance);
 		}

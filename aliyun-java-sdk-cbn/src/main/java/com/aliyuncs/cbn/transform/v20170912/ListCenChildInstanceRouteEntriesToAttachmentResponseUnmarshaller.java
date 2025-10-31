@@ -38,6 +38,9 @@ public class ListCenChildInstanceRouteEntriesToAttachmentResponseUnmarshaller {
 			transitRouterAssociation.setServiceType(_ctx.stringValue("ListCenChildInstanceRouteEntriesToAttachmentResponse.RouteEntry["+ i +"].ServiceType"));
 			transitRouterAssociation.setDestinationCidrBlock(_ctx.stringValue("ListCenChildInstanceRouteEntriesToAttachmentResponse.RouteEntry["+ i +"].DestinationCidrBlock"));
 			transitRouterAssociation.setChildInstanceRouteTableId(_ctx.stringValue("ListCenChildInstanceRouteEntriesToAttachmentResponse.RouteEntry["+ i +"].ChildInstanceRouteTableId"));
+			transitRouterAssociation.setChildInstanceId(_ctx.stringValue("ListCenChildInstanceRouteEntriesToAttachmentResponse.RouteEntry["+ i +"].ChildInstanceId"));
+			transitRouterAssociation.setChildInstanceRouteNextHopType(_ctx.stringValue("ListCenChildInstanceRouteEntriesToAttachmentResponse.RouteEntry["+ i +"].ChildInstanceRouteNextHopType"));
+			transitRouterAssociation.setChildInstanceRouteNextHopInstanceId(_ctx.stringValue("ListCenChildInstanceRouteEntriesToAttachmentResponse.RouteEntry["+ i +"].ChildInstanceRouteNextHopInstanceId"));
 
 			routeEntry.add(transitRouterAssociation);
 		}

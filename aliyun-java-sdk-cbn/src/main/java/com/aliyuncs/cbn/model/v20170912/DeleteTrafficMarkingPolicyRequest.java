@@ -38,6 +38,8 @@ public class DeleteTrafficMarkingPolicyRequest extends RpcAcsRequest<DeleteTraff
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private Boolean force;
 	public DeleteTrafficMarkingPolicyRequest() {
 		super("Cbn", "2017-09-12", "DeleteTrafficMarkingPolicy", "cbn");
 		setMethod(MethodType.POST);
@@ -121,6 +123,17 @@ public class DeleteTrafficMarkingPolicyRequest extends RpcAcsRequest<DeleteTraff
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Boolean getForce() {
+		return this.force;
+	}
+
+	public void setForce(Boolean force) {
+		this.force = force;
+		if(force != null){
+			putQueryParameter("Force", force.toString());
 		}
 	}
 

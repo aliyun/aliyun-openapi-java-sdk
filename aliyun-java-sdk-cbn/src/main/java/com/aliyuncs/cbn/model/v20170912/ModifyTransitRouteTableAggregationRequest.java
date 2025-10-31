@@ -18,6 +18,7 @@ import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cbn.Endpoint;
 
@@ -25,7 +26,7 @@ import com.aliyuncs.cbn.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateTransitRouteTableAggregationRequest extends RpcAcsRequest<CreateTransitRouteTableAggregationResponse> {
+public class ModifyTransitRouteTableAggregationRequest extends RpcAcsRequest<ModifyTransitRouteTableAggregationResponse> {
 	   
 
 	private Long resourceOwnerId;
@@ -52,8 +53,9 @@ public class CreateTransitRouteTableAggregationRequest extends RpcAcsRequest<Cre
 	private List<String> transitRouteTableAggregationScopeList;
 
 	private String transitRouteTableAggregationCidr;
-	public CreateTransitRouteTableAggregationRequest() {
-		super("Cbn", "2017-09-12", "CreateTransitRouteTableAggregation", "cbn");
+	public ModifyTransitRouteTableAggregationRequest() {
+		super("Cbn", "2017-09-12", "ModifyTransitRouteTableAggregation", "cbn");
+		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -194,8 +196,8 @@ public class CreateTransitRouteTableAggregationRequest extends RpcAcsRequest<Cre
 	}
 
 	@Override
-	public Class<CreateTransitRouteTableAggregationResponse> getResponseClass() {
-		return CreateTransitRouteTableAggregationResponse.class;
+	public Class<ModifyTransitRouteTableAggregationResponse> getResponseClass() {
+		return ModifyTransitRouteTableAggregationResponse.class;
 	}
 
 }

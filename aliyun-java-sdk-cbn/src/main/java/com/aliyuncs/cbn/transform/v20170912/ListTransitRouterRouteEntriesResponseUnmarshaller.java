@@ -52,6 +52,7 @@ public class ListTransitRouterRouteEntriesResponseUnmarshaller {
 			transitRouterRouteEntry.setTransitRouterRouteEntryOriginResourceId(_ctx.stringValue("ListTransitRouterRouteEntriesResponse.TransitRouterRouteEntries["+ i +"].TransitRouterRouteEntryOriginResourceId"));
 			transitRouterRouteEntry.setPrefixListId(_ctx.stringValue("ListTransitRouterRouteEntriesResponse.TransitRouterRouteEntries["+ i +"].PrefixListId"));
 			transitRouterRouteEntry.setPreference(_ctx.integerValue("ListTransitRouterRouteEntriesResponse.TransitRouterRouteEntries["+ i +"].Preference"));
+			transitRouterRouteEntry.setVpnTunnelIp(_ctx.stringValue("ListTransitRouterRouteEntriesResponse.TransitRouterRouteEntries["+ i +"].VpnTunnelIp"));
 
 			List<String> communities = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListTransitRouterRouteEntriesResponse.TransitRouterRouteEntries["+ i +"].Communities.Length"); j++) {
@@ -70,6 +71,7 @@ public class ListTransitRouterRouteEntriesResponseUnmarshaller {
 			pathAttributes.setOriginInstanceType(_ctx.stringValue("ListTransitRouterRouteEntriesResponse.TransitRouterRouteEntries["+ i +"].PathAttributes.OriginInstanceType"));
 			pathAttributes.setOriginRouteType(_ctx.stringValue("ListTransitRouterRouteEntriesResponse.TransitRouterRouteEntries["+ i +"].PathAttributes.OriginRouteType"));
 			pathAttributes.setPreference(_ctx.integerValue("ListTransitRouterRouteEntriesResponse.TransitRouterRouteEntries["+ i +"].PathAttributes.Preference"));
+			pathAttributes.setMed(_ctx.longValue("ListTransitRouterRouteEntriesResponse.TransitRouterRouteEntries["+ i +"].PathAttributes.Med"));
 
 			List<String> communities1 = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListTransitRouterRouteEntriesResponse.TransitRouterRouteEntries["+ i +"].PathAttributes.Communities.Length"); j++) {

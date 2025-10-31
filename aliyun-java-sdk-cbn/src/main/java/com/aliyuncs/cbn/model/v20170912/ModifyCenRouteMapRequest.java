@@ -32,6 +32,8 @@ public class ModifyCenRouteMapRequest extends RpcAcsRequest<ModifyCenRouteMapRes
 
 	private String mapResult;
 
+	private List<String> destinationRegionIdss;
+
 	private Integer nextPriority;
 
 	private List<String> destinationCidrBlockss;
@@ -129,6 +131,19 @@ public class ModifyCenRouteMapRequest extends RpcAcsRequest<ModifyCenRouteMapRes
 		if(mapResult != null){
 			putQueryParameter("MapResult", mapResult);
 		}
+	}
+
+	public List<String> getDestinationRegionIdss() {
+		return this.destinationRegionIdss;
+	}
+
+	public void setDestinationRegionIdss(List<String> destinationRegionIdss) {
+		this.destinationRegionIdss = destinationRegionIdss;	
+		if (destinationRegionIdss != null) {
+			for (int i = 0; i < destinationRegionIdss.size(); i++) {
+				putQueryParameter("DestinationRegionIds." + (i + 1) , destinationRegionIdss.get(i));
+			}
+		}	
 	}
 
 	public Integer getNextPriority() {

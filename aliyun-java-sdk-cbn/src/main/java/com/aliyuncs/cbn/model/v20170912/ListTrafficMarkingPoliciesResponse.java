@@ -175,6 +175,8 @@ public class ListTrafficMarkingPoliciesResponse extends AcsResponse {
 
 			private String trafficMatchRuleStatus;
 
+			private String addressFamily;
+
 			private List<Integer> dstPortRange;
 
 			private List<Integer> srcPortRange;
@@ -241,6 +243,14 @@ public class ListTrafficMarkingPoliciesResponse extends AcsResponse {
 
 			public void setTrafficMatchRuleStatus(String trafficMatchRuleStatus) {
 				this.trafficMatchRuleStatus = trafficMatchRuleStatus;
+			}
+
+			public String getAddressFamily() {
+				return this.addressFamily;
+			}
+
+			public void setAddressFamily(String addressFamily) {
+				this.addressFamily = addressFamily;
 			}
 
 			public List<Integer> getDstPortRange() {

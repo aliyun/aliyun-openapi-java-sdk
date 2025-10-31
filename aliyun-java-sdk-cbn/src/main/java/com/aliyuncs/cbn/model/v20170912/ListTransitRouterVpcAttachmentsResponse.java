@@ -15,6 +15,7 @@
 package com.aliyuncs.cbn.model.v20170912;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.cbn.transform.v20170912.ListTransitRouterVpcAttachmentsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -105,11 +106,17 @@ public class ListTransitRouterVpcAttachmentsResponse extends AcsResponse {
 
 		private String orderType;
 
+		private String managedService;
+
+		private Map<Object,Object> transitRouterVPCAttachmentOptions;
+
 		private String cenId;
 
 		private List<ZoneMapping> zoneMappings;
 
 		private List<Tag> tags;
+
+		private Options options;
 
 		public String getCreationTime() {
 			return this.creationTime;
@@ -223,6 +230,22 @@ public class ListTransitRouterVpcAttachmentsResponse extends AcsResponse {
 			this.orderType = orderType;
 		}
 
+		public String getManagedService() {
+			return this.managedService;
+		}
+
+		public void setManagedService(String managedService) {
+			this.managedService = managedService;
+		}
+
+		public Map<Object,Object> getTransitRouterVPCAttachmentOptions() {
+			return this.transitRouterVPCAttachmentOptions;
+		}
+
+		public void setTransitRouterVPCAttachmentOptions(Map<Object,Object> transitRouterVPCAttachmentOptions) {
+			this.transitRouterVPCAttachmentOptions = transitRouterVPCAttachmentOptions;
+		}
+
 		public String getCenId() {
 			return this.cenId;
 		}
@@ -245,6 +268,14 @@ public class ListTransitRouterVpcAttachmentsResponse extends AcsResponse {
 
 		public void setTags(List<Tag> tags) {
 			this.tags = tags;
+		}
+
+		public Options getOptions() {
+			return this.options;
+		}
+
+		public void setOptions(Options options) {
+			this.options = options;
 		}
 
 		public static class ZoneMapping {
@@ -300,6 +331,29 @@ public class ListTransitRouterVpcAttachmentsResponse extends AcsResponse {
 
 			public void setValue(String value) {
 				this.value = value;
+			}
+		}
+
+		public static class Options {
+
+			private String ipv6Support;
+
+			private String applianceModeSupport;
+
+			public String getIpv6Support() {
+				return this.ipv6Support;
+			}
+
+			public void setIpv6Support(String ipv6Support) {
+				this.ipv6Support = ipv6Support;
+			}
+
+			public String getApplianceModeSupport() {
+				return this.applianceModeSupport;
+			}
+
+			public void setApplianceModeSupport(String applianceModeSupport) {
+				this.applianceModeSupport = applianceModeSupport;
 			}
 		}
 	}

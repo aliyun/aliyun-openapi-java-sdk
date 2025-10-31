@@ -39,11 +39,13 @@ public class DescribeCenAttachedChildInstanceAttributeResponse extends AcsRespon
 
 	private String cenId;
 
-	private String childInstanceName;
+	private String managedService;
 
 	private String ipv6StatusInCen;
 
 	private String childInstanceAttachTime;
+
+	private String childInstanceName;
 
 	private List<ChildInstanceRouteTable> childInstanceRouteTables;
 
@@ -105,12 +107,12 @@ public class DescribeCenAttachedChildInstanceAttributeResponse extends AcsRespon
 		this.cenId = cenId;
 	}
 
-	public String getChildInstanceName() {
-		return this.childInstanceName;
+	public String getManagedService() {
+		return this.managedService;
 	}
 
-	public void setChildInstanceName(String childInstanceName) {
-		this.childInstanceName = childInstanceName;
+	public void setManagedService(String managedService) {
+		this.managedService = managedService;
 	}
 
 	public String getIpv6StatusInCen() {
@@ -127,6 +129,14 @@ public class DescribeCenAttachedChildInstanceAttributeResponse extends AcsRespon
 
 	public void setChildInstanceAttachTime(String childInstanceAttachTime) {
 		this.childInstanceAttachTime = childInstanceAttachTime;
+	}
+
+	public String getChildInstanceName() {
+		return this.childInstanceName;
+	}
+
+	public void setChildInstanceName(String childInstanceName) {
+		this.childInstanceName = childInstanceName;
 	}
 
 	public List<ChildInstanceRouteTable> getChildInstanceRouteTables() {

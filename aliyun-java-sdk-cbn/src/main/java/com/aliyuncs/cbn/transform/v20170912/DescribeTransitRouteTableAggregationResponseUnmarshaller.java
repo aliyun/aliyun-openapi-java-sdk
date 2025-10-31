@@ -43,6 +43,12 @@ public class DescribeTransitRouteTableAggregationResponseUnmarshaller {
 			dataItem.setTrRouteTableId(_ctx.stringValue("DescribeTransitRouteTableAggregationResponse.Data["+ i +"].TrRouteTableId"));
 			dataItem.setStatus(_ctx.stringValue("DescribeTransitRouteTableAggregationResponse.Data["+ i +"].Status"));
 
+			List<String> scopeList = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeTransitRouteTableAggregationResponse.Data["+ i +"].ScopeList.Length"); j++) {
+				scopeList.add(_ctx.stringValue("DescribeTransitRouteTableAggregationResponse.Data["+ i +"].ScopeList["+ j +"]"));
+			}
+			dataItem.setScopeList(scopeList);
+
 			data.add(dataItem);
 		}
 		describeTransitRouteTableAggregationResponse.setData(data);

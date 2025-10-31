@@ -69,6 +69,12 @@ public class ListCenChildInstanceRouteEntriesToAttachmentResponse extends AcsRes
 
 		private String childInstanceRouteTableId;
 
+		private String childInstanceId;
+
+		private String childInstanceRouteNextHopType;
+
+		private String childInstanceRouteNextHopInstanceId;
+
 		public String getCenId() {
 			return this.cenId;
 		}
@@ -115,6 +121,30 @@ public class ListCenChildInstanceRouteEntriesToAttachmentResponse extends AcsRes
 
 		public void setChildInstanceRouteTableId(String childInstanceRouteTableId) {
 			this.childInstanceRouteTableId = childInstanceRouteTableId;
+		}
+
+		public String getChildInstanceId() {
+			return this.childInstanceId;
+		}
+
+		public void setChildInstanceId(String childInstanceId) {
+			this.childInstanceId = childInstanceId;
+		}
+
+		public String getChildInstanceRouteNextHopType() {
+			return this.childInstanceRouteNextHopType;
+		}
+
+		public void setChildInstanceRouteNextHopType(String childInstanceRouteNextHopType) {
+			this.childInstanceRouteNextHopType = childInstanceRouteNextHopType;
+		}
+
+		public String getChildInstanceRouteNextHopInstanceId() {
+			return this.childInstanceRouteNextHopInstanceId;
+		}
+
+		public void setChildInstanceRouteNextHopInstanceId(String childInstanceRouteNextHopInstanceId) {
+			this.childInstanceRouteNextHopInstanceId = childInstanceRouteNextHopInstanceId;
 		}
 	}
 

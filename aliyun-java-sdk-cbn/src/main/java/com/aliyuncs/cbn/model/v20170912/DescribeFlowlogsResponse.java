@@ -109,6 +109,12 @@ public class DescribeFlowlogsResponse extends AcsResponse {
 
 		private String transitRouterAttachmentId;
 
+		private String transitRouterId;
+
+		private String logFormatString;
+
+		private String flowLogVersion;
+
 		private Long interval;
 
 		private List<Tag> tags;
@@ -199,6 +205,30 @@ public class DescribeFlowlogsResponse extends AcsResponse {
 
 		public void setTransitRouterAttachmentId(String transitRouterAttachmentId) {
 			this.transitRouterAttachmentId = transitRouterAttachmentId;
+		}
+
+		public String getTransitRouterId() {
+			return this.transitRouterId;
+		}
+
+		public void setTransitRouterId(String transitRouterId) {
+			this.transitRouterId = transitRouterId;
+		}
+
+		public String getLogFormatString() {
+			return this.logFormatString;
+		}
+
+		public void setLogFormatString(String logFormatString) {
+			this.logFormatString = logFormatString;
+		}
+
+		public String getFlowLogVersion() {
+			return this.flowLogVersion;
+		}
+
+		public void setFlowLogVersion(String flowLogVersion) {
+			this.flowLogVersion = flowLogVersion;
 		}
 
 		public Long getInterval() {

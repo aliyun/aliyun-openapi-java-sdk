@@ -27,6 +27,8 @@ public class SetCenInterRegionBandwidthLimitRequest extends RpcAcsRequest<SetCen
 
 	private Long resourceOwnerId;
 
+	private String bandwidthType;
+
 	private String cenId;
 
 	private String resourceOwnerAccount;
@@ -57,6 +59,17 @@ public class SetCenInterRegionBandwidthLimitRequest extends RpcAcsRequest<SetCen
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getBandwidthType() {
+		return this.bandwidthType;
+	}
+
+	public void setBandwidthType(String bandwidthType) {
+		this.bandwidthType = bandwidthType;
+		if(bandwidthType != null){
+			putQueryParameter("BandwidthType", bandwidthType);
 		}
 	}
 

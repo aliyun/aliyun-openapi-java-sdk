@@ -42,6 +42,8 @@ public class ListGrantVSwitchesToCenRequest extends RpcAcsRequest<ListGrantVSwit
 	private String vpcId;
 
 	private String zoneId;
+
+	private Boolean enabledIpv6;
 	public ListGrantVSwitchesToCenRequest() {
 		super("Cbn", "2017-09-12", "ListGrantVSwitchesToCen", "cbn");
 		setMethod(MethodType.POST);
@@ -147,6 +149,17 @@ public class ListGrantVSwitchesToCenRequest extends RpcAcsRequest<ListGrantVSwit
 		this.zoneId = zoneId;
 		if(zoneId != null){
 			putQueryParameter("ZoneId", zoneId);
+		}
+	}
+
+	public Boolean getEnabledIpv6() {
+		return this.enabledIpv6;
+	}
+
+	public void setEnabledIpv6(Boolean enabledIpv6) {
+		this.enabledIpv6 = enabledIpv6;
+		if(enabledIpv6 != null){
+			putQueryParameter("EnabledIpv6", enabledIpv6.toString());
 		}
 	}
 

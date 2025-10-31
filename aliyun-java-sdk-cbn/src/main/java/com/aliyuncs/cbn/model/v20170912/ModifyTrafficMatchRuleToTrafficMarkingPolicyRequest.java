@@ -15,6 +15,7 @@
 package com.aliyuncs.cbn.model.v20170912;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cbn.Endpoint;
 
@@ -22,35 +23,47 @@ import com.aliyuncs.cbn.Endpoint;
  * @author auto create
  * @version 
  */
-public class ModifyFlowLogAttributeRequest extends RpcAcsRequest<ModifyFlowLogAttributeResponse> {
+public class ModifyTrafficMatchRuleToTrafficMarkingPolicyRequest extends RpcAcsRequest<ModifyTrafficMatchRuleToTrafficMarkingPolicyResponse> {
 	   
+
+	private String trafficMatchRuleId;
 
 	private Long resourceOwnerId;
 
+	private String trafficMatchRuleDescription;
+
 	private String clientToken;
 
-	private String cenId;
+	private String trafficMarkingPolicyId;
 
-	private String description;
+	private Boolean dryRun;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
+	private String trafficMatchRuleName;
+
 	private Long ownerId;
-
-	private Long interval;
-
-	private String flowLogId;
-
-	private String flowLogName;
-	public ModifyFlowLogAttributeRequest() {
-		super("Cbn", "2017-09-12", "ModifyFlowLogAttribute", "cbn");
+	public ModifyTrafficMatchRuleToTrafficMarkingPolicyRequest() {
+		super("Cbn", "2017-09-12", "ModifyTrafficMatchRuleToTrafficMarkingPolicy", "cbn");
+		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getTrafficMatchRuleId() {
+		return this.trafficMatchRuleId;
+	}
+
+	public void setTrafficMatchRuleId(String trafficMatchRuleId) {
+		this.trafficMatchRuleId = trafficMatchRuleId;
+		if(trafficMatchRuleId != null){
+			putQueryParameter("TrafficMatchRuleId", trafficMatchRuleId);
+		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -61,6 +74,17 @@ public class ModifyFlowLogAttributeRequest extends RpcAcsRequest<ModifyFlowLogAt
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getTrafficMatchRuleDescription() {
+		return this.trafficMatchRuleDescription;
+	}
+
+	public void setTrafficMatchRuleDescription(String trafficMatchRuleDescription) {
+		this.trafficMatchRuleDescription = trafficMatchRuleDescription;
+		if(trafficMatchRuleDescription != null){
+			putQueryParameter("TrafficMatchRuleDescription", trafficMatchRuleDescription);
 		}
 	}
 
@@ -75,25 +99,25 @@ public class ModifyFlowLogAttributeRequest extends RpcAcsRequest<ModifyFlowLogAt
 		}
 	}
 
-	public String getCenId() {
-		return this.cenId;
+	public String getTrafficMarkingPolicyId() {
+		return this.trafficMarkingPolicyId;
 	}
 
-	public void setCenId(String cenId) {
-		this.cenId = cenId;
-		if(cenId != null){
-			putQueryParameter("CenId", cenId);
+	public void setTrafficMarkingPolicyId(String trafficMarkingPolicyId) {
+		this.trafficMarkingPolicyId = trafficMarkingPolicyId;
+		if(trafficMarkingPolicyId != null){
+			putQueryParameter("TrafficMarkingPolicyId", trafficMarkingPolicyId);
 		}
 	}
 
-	public String getDescription() {
-		return this.description;
+	public Boolean getDryRun() {
+		return this.dryRun;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
 		}
 	}
 
@@ -119,6 +143,17 @@ public class ModifyFlowLogAttributeRequest extends RpcAcsRequest<ModifyFlowLogAt
 		}
 	}
 
+	public String getTrafficMatchRuleName() {
+		return this.trafficMatchRuleName;
+	}
+
+	public void setTrafficMatchRuleName(String trafficMatchRuleName) {
+		this.trafficMatchRuleName = trafficMatchRuleName;
+		if(trafficMatchRuleName != null){
+			putQueryParameter("TrafficMatchRuleName", trafficMatchRuleName);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -130,42 +165,9 @@ public class ModifyFlowLogAttributeRequest extends RpcAcsRequest<ModifyFlowLogAt
 		}
 	}
 
-	public Long getInterval() {
-		return this.interval;
-	}
-
-	public void setInterval(Long interval) {
-		this.interval = interval;
-		if(interval != null){
-			putQueryParameter("Interval", interval.toString());
-		}
-	}
-
-	public String getFlowLogId() {
-		return this.flowLogId;
-	}
-
-	public void setFlowLogId(String flowLogId) {
-		this.flowLogId = flowLogId;
-		if(flowLogId != null){
-			putQueryParameter("FlowLogId", flowLogId);
-		}
-	}
-
-	public String getFlowLogName() {
-		return this.flowLogName;
-	}
-
-	public void setFlowLogName(String flowLogName) {
-		this.flowLogName = flowLogName;
-		if(flowLogName != null){
-			putQueryParameter("FlowLogName", flowLogName);
-		}
-	}
-
 	@Override
-	public Class<ModifyFlowLogAttributeResponse> getResponseClass() {
-		return ModifyFlowLogAttributeResponse.class;
+	public Class<ModifyTrafficMatchRuleToTrafficMarkingPolicyResponse> getResponseClass() {
+		return ModifyTrafficMatchRuleToTrafficMarkingPolicyResponse.class;
 	}
 
 }

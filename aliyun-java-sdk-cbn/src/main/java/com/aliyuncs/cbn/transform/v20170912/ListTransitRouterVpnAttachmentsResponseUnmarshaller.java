@@ -49,6 +49,7 @@ public class ListTransitRouterVpnAttachmentsResponseUnmarshaller {
 			transitRouterAttachment.setTransitRouterAttachmentName(_ctx.stringValue("ListTransitRouterVpnAttachmentsResponse.TransitRouterAttachments["+ i +"].TransitRouterAttachmentName"));
 			transitRouterAttachment.setChargeType(_ctx.stringValue("ListTransitRouterVpnAttachmentsResponse.TransitRouterAttachments["+ i +"].ChargeType"));
 			transitRouterAttachment.setCenId(_ctx.stringValue("ListTransitRouterVpnAttachmentsResponse.TransitRouterAttachments["+ i +"].CenId"));
+			transitRouterAttachment.setOrderType(_ctx.stringValue("ListTransitRouterVpnAttachmentsResponse.TransitRouterAttachments["+ i +"].OrderType"));
 
 			List<ZoneMapping> zones = new ArrayList<ZoneMapping>();
 			for (int j = 0; j < _ctx.lengthValue("ListTransitRouterVpnAttachmentsResponse.TransitRouterAttachments["+ i +"].Zones.Length"); j++) {
