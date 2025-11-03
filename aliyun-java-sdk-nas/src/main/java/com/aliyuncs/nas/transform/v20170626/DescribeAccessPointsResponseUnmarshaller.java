@@ -21,6 +21,7 @@ import com.aliyuncs.nas.model.v20170626.DescribeAccessPointsResponse;
 import com.aliyuncs.nas.model.v20170626.DescribeAccessPointsResponse.AccessPoint;
 import com.aliyuncs.nas.model.v20170626.DescribeAccessPointsResponse.AccessPoint.PosixUser;
 import com.aliyuncs.nas.model.v20170626.DescribeAccessPointsResponse.AccessPoint.RootPathPermission;
+import com.aliyuncs.nas.model.v20170626.DescribeAccessPointsResponse.AccessPoint.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -66,6 +67,16 @@ public class DescribeAccessPointsResponseUnmarshaller {
 			rootPathPermission.setOwnerUserId(_ctx.longValue("DescribeAccessPointsResponse.AccessPoints["+ i +"].RootPathPermission.OwnerUserId"));
 			rootPathPermission.setPermission(_ctx.stringValue("DescribeAccessPointsResponse.AccessPoints["+ i +"].RootPathPermission.Permission"));
 			accessPoint.setRootPathPermission(rootPathPermission);
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeAccessPointsResponse.AccessPoints["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(_ctx.stringValue("DescribeAccessPointsResponse.AccessPoints["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("DescribeAccessPointsResponse.AccessPoints["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			accessPoint.setTags(tags);
 
 			accessPoints.add(accessPoint);
 		}

@@ -15,6 +15,7 @@
 package com.aliyuncs.nas.model.v20170626;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.nas.Endpoint;
 
@@ -32,6 +33,8 @@ public class CreateAccessPointRequest extends RpcAcsRequest<CreateAccessPointRes
 	private Integer posixGroupId;
 
 	private String posixSecondaryGroupIds;
+
+	private List<Tag> tags;
 
 	private String fileSystemId;
 
@@ -101,6 +104,20 @@ public class CreateAccessPointRequest extends RpcAcsRequest<CreateAccessPointRes
 		if(posixSecondaryGroupIds != null){
 			putQueryParameter("PosixSecondaryGroupIds", posixSecondaryGroupIds);
 		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
 	}
 
 	public String getFileSystemId() {
@@ -199,6 +216,29 @@ public class CreateAccessPointRequest extends RpcAcsRequest<CreateAccessPointRes
 		this.posixUserId = posixUserId;
 		if(posixUserId != null){
 			putQueryParameter("PosixUserId", posixUserId.toString());
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

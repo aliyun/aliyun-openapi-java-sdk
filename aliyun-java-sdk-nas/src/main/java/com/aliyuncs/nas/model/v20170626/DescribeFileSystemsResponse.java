@@ -133,6 +133,12 @@ public class DescribeFileSystemsResponse extends AcsResponse {
 
 		private String quorumVswId;
 
+		private Long secondaryCapacity;
+
+		private Integer secondaryBandwidth;
+
+		private String vscTarget;
+
 		private List<Tag> tags;
 
 		private List<MountTarget> mountTargets;
@@ -371,6 +377,30 @@ public class DescribeFileSystemsResponse extends AcsResponse {
 
 		public void setQuorumVswId(String quorumVswId) {
 			this.quorumVswId = quorumVswId;
+		}
+
+		public Long getSecondaryCapacity() {
+			return this.secondaryCapacity;
+		}
+
+		public void setSecondaryCapacity(Long secondaryCapacity) {
+			this.secondaryCapacity = secondaryCapacity;
+		}
+
+		public Integer getSecondaryBandwidth() {
+			return this.secondaryBandwidth;
+		}
+
+		public void setSecondaryBandwidth(Integer secondaryBandwidth) {
+			this.secondaryBandwidth = secondaryBandwidth;
+		}
+
+		public String getVscTarget() {
+			return this.vscTarget;
+		}
+
+		public void setVscTarget(String vscTarget) {
+			this.vscTarget = vscTarget;
 		}
 
 		public List<Tag> getTags() {

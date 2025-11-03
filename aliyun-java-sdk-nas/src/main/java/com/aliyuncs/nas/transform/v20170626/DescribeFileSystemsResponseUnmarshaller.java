@@ -70,6 +70,9 @@ public class DescribeFileSystemsResponseUnmarshaller {
 			fileSystem.setResourceGroupId(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].ResourceGroupId"));
 			fileSystem.setMeteredArchiveSize(_ctx.longValue("DescribeFileSystemsResponse.FileSystems["+ i +"].MeteredArchiveSize"));
 			fileSystem.setQuorumVswId(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].QuorumVswId"));
+			fileSystem.setSecondaryCapacity(_ctx.longValue("DescribeFileSystemsResponse.FileSystems["+ i +"].SecondaryCapacity"));
+			fileSystem.setSecondaryBandwidth(_ctx.integerValue("DescribeFileSystemsResponse.FileSystems["+ i +"].SecondaryBandwidth"));
+			fileSystem.setVscTarget(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].VscTarget"));
 
 			List<String> supportedFeatures = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeFileSystemsResponse.FileSystems["+ i +"].SupportedFeatures.Length"); j++) {

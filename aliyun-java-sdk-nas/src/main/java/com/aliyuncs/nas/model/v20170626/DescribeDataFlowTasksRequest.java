@@ -26,6 +26,8 @@ import com.aliyuncs.nas.Endpoint;
 public class DescribeDataFlowTasksRequest extends RpcAcsRequest<DescribeDataFlowTasksResponse> {
 	   
 
+	private Boolean withReports;
+
 	private String nextToken;
 
 	private String fileSystemId;
@@ -40,6 +42,17 @@ public class DescribeDataFlowTasksRequest extends RpcAcsRequest<DescribeDataFlow
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Boolean getWithReports() {
+		return this.withReports;
+	}
+
+	public void setWithReports(Boolean withReports) {
+		this.withReports = withReports;
+		if(withReports != null){
+			putQueryParameter("WithReports", withReports.toString());
+		}
 	}
 
 	public String getNextToken() {

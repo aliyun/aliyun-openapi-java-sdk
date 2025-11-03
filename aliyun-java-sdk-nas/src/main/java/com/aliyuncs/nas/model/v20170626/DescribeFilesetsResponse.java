@@ -31,6 +31,12 @@ public class DescribeFilesetsResponse extends AcsResponse {
 
 	private String fileSystemId;
 
+	private Integer totalCount;
+
+	private Integer pageSize;
+
+	private Integer pageNumber;
+
 	private List<Entrie> entries;
 
 	public String getRequestId() {
@@ -55,6 +61,30 @@ public class DescribeFilesetsResponse extends AcsResponse {
 
 	public void setFileSystemId(String fileSystemId) {
 		this.fileSystemId = fileSystemId;
+	}
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<Entrie> getEntries() {

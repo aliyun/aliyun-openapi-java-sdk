@@ -26,7 +26,11 @@ import com.aliyuncs.nas.Endpoint;
 public class DescribeFilesetsRequest extends RpcAcsRequest<DescribeFilesetsResponse> {
 	   
 
+	private String orderByField;
+
 	private String nextToken;
+
+	private String sortOrder;
 
 	private String fileSystemId;
 
@@ -42,6 +46,17 @@ public class DescribeFilesetsRequest extends RpcAcsRequest<DescribeFilesetsRespo
 		} catch (Exception e) {}
 	}
 
+	public String getOrderByField() {
+		return this.orderByField;
+	}
+
+	public void setOrderByField(String orderByField) {
+		this.orderByField = orderByField;
+		if(orderByField != null){
+			putQueryParameter("OrderByField", orderByField);
+		}
+	}
+
 	public String getNextToken() {
 		return this.nextToken;
 	}
@@ -50,6 +65,17 @@ public class DescribeFilesetsRequest extends RpcAcsRequest<DescribeFilesetsRespo
 		this.nextToken = nextToken;
 		if(nextToken != null){
 			putQueryParameter("NextToken", nextToken);
+		}
+	}
+
+	public String getSortOrder() {
+		return this.sortOrder;
+	}
+
+	public void setSortOrder(String sortOrder) {
+		this.sortOrder = sortOrder;
+		if(sortOrder != null){
+			putQueryParameter("SortOrder", sortOrder);
 		}
 	}
 

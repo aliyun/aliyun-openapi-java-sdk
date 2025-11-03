@@ -45,9 +45,13 @@ public class CreateDataFlowTaskRequest extends RpcAcsRequest<CreateDataFlowTaskR
 
 	private String entryList;
 
+	private String includes;
+
 	private String conflictPolicy;
 
 	private String taskAction;
+
+	private String transferFileListPath;
 	public CreateDataFlowTaskRequest() {
 		super("NAS", "2017-06-26", "CreateDataFlowTask", "nas");
 		setMethod(MethodType.POST);
@@ -167,6 +171,17 @@ public class CreateDataFlowTaskRequest extends RpcAcsRequest<CreateDataFlowTaskR
 		}
 	}
 
+	public String getIncludes() {
+		return this.includes;
+	}
+
+	public void setIncludes(String includes) {
+		this.includes = includes;
+		if(includes != null){
+			putQueryParameter("Includes", includes);
+		}
+	}
+
 	public String getConflictPolicy() {
 		return this.conflictPolicy;
 	}
@@ -186,6 +201,17 @@ public class CreateDataFlowTaskRequest extends RpcAcsRequest<CreateDataFlowTaskR
 		this.taskAction = taskAction;
 		if(taskAction != null){
 			putQueryParameter("TaskAction", taskAction);
+		}
+	}
+
+	public String getTransferFileListPath() {
+		return this.transferFileListPath;
+	}
+
+	public void setTransferFileListPath(String transferFileListPath) {
+		this.transferFileListPath = transferFileListPath;
+		if(transferFileListPath != null){
+			putQueryParameter("TransferFileListPath", transferFileListPath);
 		}
 	}
 

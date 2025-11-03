@@ -53,6 +53,8 @@ public class DescribeDataFlowTasksResponseUnmarshaller {
 			task.setDirectory(_ctx.stringValue("DescribeDataFlowTasksResponse.TaskInfo["+ i +"].Directory"));
 			task.setDstDirectory(_ctx.stringValue("DescribeDataFlowTasksResponse.TaskInfo["+ i +"].DstDirectory"));
 			task.setErrorMsg(_ctx.stringValue("DescribeDataFlowTasksResponse.TaskInfo["+ i +"].ErrorMsg"));
+			task.setIncludes(_ctx.stringValue("DescribeDataFlowTasksResponse.TaskInfo["+ i +"].Includes"));
+			task.setTransferFileListPath(_ctx.stringValue("DescribeDataFlowTasksResponse.TaskInfo["+ i +"].TransferFileListPath"));
 
 			ProgressStats progressStats = new ProgressStats();
 			progressStats.setFilesTotal(_ctx.longValue("DescribeDataFlowTasksResponse.TaskInfo["+ i +"].ProgressStats.FilesTotal"));

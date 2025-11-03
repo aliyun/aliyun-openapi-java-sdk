@@ -15,14 +15,14 @@
 package com.aliyuncs.nas.model.v20170626;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.nas.transform.v20170626.AddTagsResponseUnmarshaller;
+import com.aliyuncs.nas.transform.v20170626.DetachVscFromFilesystemsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class AddTagsResponse extends AcsResponse {
+public class DetachVscFromFilesystemsResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -35,7 +35,7 @@ public class AddTagsResponse extends AcsResponse {
 	}
 
 	@Override
-	public AddTagsResponse getInstance(UnmarshallerContext context) {
-		return	AddTagsResponseUnmarshaller.unmarshall(this, context);
+	public DetachVscFromFilesystemsResponse getInstance(UnmarshallerContext context) {
+		return	DetachVscFromFilesystemsResponseUnmarshaller.unmarshall(this, context);
 	}
 }

@@ -95,6 +95,10 @@ public class DescribeDataFlowTasksResponse extends AcsResponse {
 
 		private String errorMsg;
 
+		private String includes;
+
+		private String transferFileListPath;
+
 		private List<Report> reports;
 
 		private ProgressStats progressStats;
@@ -249,6 +253,22 @@ public class DescribeDataFlowTasksResponse extends AcsResponse {
 
 		public void setErrorMsg(String errorMsg) {
 			this.errorMsg = errorMsg;
+		}
+
+		public String getIncludes() {
+			return this.includes;
+		}
+
+		public void setIncludes(String includes) {
+			this.includes = includes;
+		}
+
+		public String getTransferFileListPath() {
+			return this.transferFileListPath;
+		}
+
+		public void setTransferFileListPath(String transferFileListPath) {
+			this.transferFileListPath = transferFileListPath;
 		}
 
 		public List<Report> getReports() {

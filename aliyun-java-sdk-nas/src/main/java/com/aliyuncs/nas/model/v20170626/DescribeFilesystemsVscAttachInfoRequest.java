@@ -16,6 +16,7 @@ package com.aliyuncs.nas.model.v20170626;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.nas.Endpoint;
 
@@ -23,20 +24,17 @@ import com.aliyuncs.nas.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeAccessPointsRequest extends RpcAcsRequest<DescribeAccessPointsResponse> {
+public class DescribeFilesystemsVscAttachInfoRequest extends RpcAcsRequest<DescribeFilesystemsVscAttachInfoResponse> {
 	   
 
 	private String nextToken;
 
-	private List<Tag> tags;
-
-	private String fileSystemId;
-
 	private Integer maxResults;
 
-	private String accessGroup;
-	public DescribeAccessPointsRequest() {
-		super("NAS", "2017-06-26", "DescribeAccessPoints", "nas");
+	private List<ResourceIds> resourceIds;
+	public DescribeFilesystemsVscAttachInfoRequest() {
+		super("NAS", "2017-06-26", "DescribeFilesystemsVscAttachInfo", "nas");
+		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -55,31 +53,6 @@ public class DescribeAccessPointsRequest extends RpcAcsRequest<DescribeAccessPoi
 		}
 	}
 
-	public List<Tag> getTags() {
-		return this.tags;
-	}
-
-	public void setTags(List<Tag> tags) {
-		this.tags = tags;	
-		if (tags != null) {
-			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
-				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
-				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
-			}
-		}	
-	}
-
-	public String getFileSystemId() {
-		return this.fileSystemId;
-	}
-
-	public void setFileSystemId(String fileSystemId) {
-		this.fileSystemId = fileSystemId;
-		if(fileSystemId != null){
-			putQueryParameter("FileSystemId", fileSystemId);
-		}
-	}
-
 	public Integer getMaxResults() {
 		return this.maxResults;
 	}
@@ -91,43 +64,49 @@ public class DescribeAccessPointsRequest extends RpcAcsRequest<DescribeAccessPoi
 		}
 	}
 
-	public String getAccessGroup() {
-		return this.accessGroup;
+	public List<ResourceIds> getResourceIds() {
+		return this.resourceIds;
 	}
 
-	public void setAccessGroup(String accessGroup) {
-		this.accessGroup = accessGroup;
-		if(accessGroup != null){
-			putQueryParameter("AccessGroup", accessGroup);
-		}
+	public void setResourceIds(List<ResourceIds> resourceIds) {
+		this.resourceIds = resourceIds;	
+		if (resourceIds != null) {
+			for (int depth1 = 0; depth1 < resourceIds.size(); depth1++) {
+				if (resourceIds.get(depth1) != null) {
+					
+						putQueryParameter("ResourceIds." + (depth1 + 1) + ".VscId" , resourceIds.get(depth1).getVscId());
+						putQueryParameter("ResourceIds." + (depth1 + 1) + ".FileSystemId" , resourceIds.get(depth1).getFileSystemId());
+				}
+			}
+		}	
 	}
 
-	public static class Tag {
+	public static class ResourceIds {
 
-		private String value;
+		private String vscId;
 
-		private String key;
+		private String fileSystemId;
 
-		public String getValue() {
-			return this.value;
+		public String getVscId() {
+			return this.vscId;
 		}
 
-		public void setValue(String value) {
-			this.value = value;
+		public void setVscId(String vscId) {
+			this.vscId = vscId;
 		}
 
-		public String getKey() {
-			return this.key;
+		public String getFileSystemId() {
+			return this.fileSystemId;
 		}
 
-		public void setKey(String key) {
-			this.key = key;
+		public void setFileSystemId(String fileSystemId) {
+			this.fileSystemId = fileSystemId;
 		}
 	}
 
 	@Override
-	public Class<DescribeAccessPointsResponse> getResponseClass() {
-		return DescribeAccessPointsResponse.class;
+	public Class<DescribeFilesystemsVscAttachInfoResponse> getResponseClass() {
+		return DescribeFilesystemsVscAttachInfoResponse.class;
 	}
 
 }

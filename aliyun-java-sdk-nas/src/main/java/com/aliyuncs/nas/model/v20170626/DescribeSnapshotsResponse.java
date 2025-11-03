@@ -105,6 +105,8 @@ public class DescribeSnapshotsResponse extends AcsResponse {
 
 		private String snapshotType;
 
+		private String completedTime;
+
 		public String getStatus() {
 			return this.status;
 		}
@@ -215,6 +217,14 @@ public class DescribeSnapshotsResponse extends AcsResponse {
 
 		public void setSnapshotType(String snapshotType) {
 			this.snapshotType = snapshotType;
+		}
+
+		public String getCompletedTime() {
+			return this.completedTime;
+		}
+
+		public void setCompletedTime(String completedTime) {
+			this.completedTime = completedTime;
 		}
 	}
 

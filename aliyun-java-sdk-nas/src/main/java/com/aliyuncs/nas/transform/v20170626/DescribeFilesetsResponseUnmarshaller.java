@@ -30,6 +30,9 @@ public class DescribeFilesetsResponseUnmarshaller {
 		describeFilesetsResponse.setRequestId(_ctx.stringValue("DescribeFilesetsResponse.RequestId"));
 		describeFilesetsResponse.setNextToken(_ctx.stringValue("DescribeFilesetsResponse.NextToken"));
 		describeFilesetsResponse.setFileSystemId(_ctx.stringValue("DescribeFilesetsResponse.FileSystemId"));
+		describeFilesetsResponse.setTotalCount(_ctx.integerValue("DescribeFilesetsResponse.TotalCount"));
+		describeFilesetsResponse.setPageSize(_ctx.integerValue("DescribeFilesetsResponse.PageSize"));
+		describeFilesetsResponse.setPageNumber(_ctx.integerValue("DescribeFilesetsResponse.PageNumber"));
 
 		List<Entrie> entries = new ArrayList<Entrie>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeFilesetsResponse.Entries.Length"); i++) {

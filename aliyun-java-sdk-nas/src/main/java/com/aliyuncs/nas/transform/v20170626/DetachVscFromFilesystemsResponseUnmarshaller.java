@@ -14,16 +14,16 @@
 
 package com.aliyuncs.nas.transform.v20170626;
 
-import com.aliyuncs.nas.model.v20170626.RemoveTagsResponse;
+import com.aliyuncs.nas.model.v20170626.DetachVscFromFilesystemsResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class RemoveTagsResponseUnmarshaller {
+public class DetachVscFromFilesystemsResponseUnmarshaller {
 
-	public static RemoveTagsResponse unmarshall(RemoveTagsResponse removeTagsResponse, UnmarshallerContext _ctx) {
+	public static DetachVscFromFilesystemsResponse unmarshall(DetachVscFromFilesystemsResponse detachVscFromFilesystemsResponse, UnmarshallerContext _ctx) {
 		
-		removeTagsResponse.setRequestId(_ctx.stringValue("RemoveTagsResponse.RequestId"));
+		detachVscFromFilesystemsResponse.setRequestId(_ctx.stringValue("DetachVscFromFilesystemsResponse.RequestId"));
 	 
-	 	return removeTagsResponse;
+	 	return detachVscFromFilesystemsResponse;
 	}
 }
