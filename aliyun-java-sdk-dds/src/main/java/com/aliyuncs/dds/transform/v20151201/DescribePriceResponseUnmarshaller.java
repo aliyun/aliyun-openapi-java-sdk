@@ -189,6 +189,7 @@ public class DescribePriceResponseUnmarshaller {
 				moduleInstanceItem.setStandDiscountPrice(_ctx.doubleValue("DescribePriceResponse.SubOrders["+ i +"].ModuleInstance["+ j +"].StandDiscountPrice"));
 				moduleInstanceItem.setPriceUnit(_ctx.stringValue("DescribePriceResponse.SubOrders["+ i +"].ModuleInstance["+ j +"].priceUnit"));
 				moduleInstanceItem.setPriceType(_ctx.stringValue("DescribePriceResponse.SubOrders["+ i +"].ModuleInstance["+ j +"].priceType"));
+				moduleInstanceItem.setUnitPriceUnit4Buy(_ctx.stringValue("DescribePriceResponse.SubOrders["+ i +"].ModuleInstance["+ j +"].UnitPriceUnit4Buy"));
 
 				DepreciateInfo1 depreciateInfo1 = new DepreciateInfo1();
 				depreciateInfo1.setListPrice(_ctx.doubleValue("DescribePriceResponse.SubOrders["+ i +"].ModuleInstance["+ j +"].DepreciateInfo.ListPrice"));

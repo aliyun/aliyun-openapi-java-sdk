@@ -87,6 +87,9 @@ public class DescribeDBInstanceAttributeResponseUnmarshaller {
 			dBInstance.setBurstingEnabled(_ctx.booleanValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].BurstingEnabled"));
 			dBInstance.setProvisionedIops(_ctx.longValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].ProvisionedIops"));
 			dBInstance.setDisasterRecoveryInfo(_ctx.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].DisasterRecoveryInfo"));
+			dBInstance.setSearchNodeClass(_ctx.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].SearchNodeClass"));
+			dBInstance.setSearchNodeStorage(_ctx.integerValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].SearchNodeStorage"));
+			dBInstance.setSearchNodeCount(_ctx.integerValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].SearchNodeCount"));
 
 			List<ReplicaSet> replicaSets = new ArrayList<ReplicaSet>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].ReplicaSets.Length"); j++) {

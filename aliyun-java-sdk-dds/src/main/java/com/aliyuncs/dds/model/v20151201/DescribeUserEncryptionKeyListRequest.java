@@ -35,6 +35,8 @@ public class DescribeUserEncryptionKeyListRequest extends RpcAcsRequest<Describe
 
 	private Long ownerId;
 
+	private String roleARN;
+
 	private String targetRegionId;
 	public DescribeUserEncryptionKeyListRequest() {
 		super("Dds", "2015-12-01", "DescribeUserEncryptionKeyList", "dds");
@@ -97,6 +99,17 @@ public class DescribeUserEncryptionKeyListRequest extends RpcAcsRequest<Describe
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getRoleARN() {
+		return this.roleARN;
+	}
+
+	public void setRoleARN(String roleARN) {
+		this.roleARN = roleARN;
+		if(roleARN != null){
+			putQueryParameter("RoleARN", roleARN);
 		}
 	}
 

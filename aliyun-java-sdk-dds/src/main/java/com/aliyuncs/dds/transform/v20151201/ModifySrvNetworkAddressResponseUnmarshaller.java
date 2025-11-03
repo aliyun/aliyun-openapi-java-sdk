@@ -14,18 +14,16 @@
 
 package com.aliyuncs.dds.transform.v20151201;
 
-import com.aliyuncs.dds.model.v20151201.CreateBackupResponse;
+import com.aliyuncs.dds.model.v20151201.ModifySrvNetworkAddressResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class CreateBackupResponseUnmarshaller {
+public class ModifySrvNetworkAddressResponseUnmarshaller {
 
-	public static CreateBackupResponse unmarshall(CreateBackupResponse createBackupResponse, UnmarshallerContext _ctx) {
+	public static ModifySrvNetworkAddressResponse unmarshall(ModifySrvNetworkAddressResponse modifySrvNetworkAddressResponse, UnmarshallerContext _ctx) {
 		
-		createBackupResponse.setRequestId(_ctx.stringValue("CreateBackupResponse.RequestId"));
-		createBackupResponse.setBackupId(_ctx.stringValue("CreateBackupResponse.BackupId"));
-		createBackupResponse.setBackupJobId(_ctx.stringValue("CreateBackupResponse.BackupJobId"));
+		modifySrvNetworkAddressResponse.setRequestId(_ctx.stringValue("ModifySrvNetworkAddressResponse.RequestId"));
 	 
-	 	return createBackupResponse;
+	 	return modifySrvNetworkAddressResponse;
 	}
 }

@@ -31,9 +31,13 @@ public class ModifyNodeSpecRequest extends RpcAcsRequest<ModifyNodeSpecResponse>
 
 	private Integer readonlyReplicas;
 
+	private String targetSecondaryZoneId;
+
 	private String couponNo;
 
 	private String nodeClass;
+
+	private String targetZoneId;
 
 	private String effectiveTime;
 
@@ -55,7 +59,11 @@ public class ModifyNodeSpecRequest extends RpcAcsRequest<ModifyNodeSpecResponse>
 
 	private String ownerAccount;
 
+	private String targetVswitchId;
+
 	private Long ownerId;
+
+	private String targetHiddenZoneId;
 
 	private String orderType;
 	public ModifyNodeSpecRequest() {
@@ -100,6 +108,17 @@ public class ModifyNodeSpecRequest extends RpcAcsRequest<ModifyNodeSpecResponse>
 		}
 	}
 
+	public String getTargetSecondaryZoneId() {
+		return this.targetSecondaryZoneId;
+	}
+
+	public void setTargetSecondaryZoneId(String targetSecondaryZoneId) {
+		this.targetSecondaryZoneId = targetSecondaryZoneId;
+		if(targetSecondaryZoneId != null){
+			putQueryParameter("TargetSecondaryZoneId", targetSecondaryZoneId);
+		}
+	}
+
 	public String getCouponNo() {
 		return this.couponNo;
 	}
@@ -119,6 +138,17 @@ public class ModifyNodeSpecRequest extends RpcAcsRequest<ModifyNodeSpecResponse>
 		this.nodeClass = nodeClass;
 		if(nodeClass != null){
 			putQueryParameter("NodeClass", nodeClass);
+		}
+	}
+
+	public String getTargetZoneId() {
+		return this.targetZoneId;
+	}
+
+	public void setTargetZoneId(String targetZoneId) {
+		this.targetZoneId = targetZoneId;
+		if(targetZoneId != null){
+			putQueryParameter("TargetZoneId", targetZoneId);
 		}
 	}
 
@@ -232,6 +262,17 @@ public class ModifyNodeSpecRequest extends RpcAcsRequest<ModifyNodeSpecResponse>
 		}
 	}
 
+	public String getTargetVswitchId() {
+		return this.targetVswitchId;
+	}
+
+	public void setTargetVswitchId(String targetVswitchId) {
+		this.targetVswitchId = targetVswitchId;
+		if(targetVswitchId != null){
+			putQueryParameter("TargetVswitchId", targetVswitchId);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -240,6 +281,17 @@ public class ModifyNodeSpecRequest extends RpcAcsRequest<ModifyNodeSpecResponse>
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getTargetHiddenZoneId() {
+		return this.targetHiddenZoneId;
+	}
+
+	public void setTargetHiddenZoneId(String targetHiddenZoneId) {
+		this.targetHiddenZoneId = targetHiddenZoneId;
+		if(targetHiddenZoneId != null){
+			putQueryParameter("TargetHiddenZoneId", targetHiddenZoneId);
 		}
 	}
 

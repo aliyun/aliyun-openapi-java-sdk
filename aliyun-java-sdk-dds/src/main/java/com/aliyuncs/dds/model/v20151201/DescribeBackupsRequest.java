@@ -25,6 +25,8 @@ import com.aliyuncs.dds.Endpoint;
 public class DescribeBackupsRequest extends RpcAcsRequest<DescribeBackupsResponse> {
 	   
 
+	private String backupJobId;
+
 	private Long resourceOwnerId;
 
 	private String startTime;
@@ -32,6 +34,8 @@ public class DescribeBackupsRequest extends RpcAcsRequest<DescribeBackupsRespons
 	private String srcRegion;
 
 	private Integer pageNumber;
+
+	private String resourceGroupId;
 
 	private Integer pageSize;
 
@@ -57,6 +61,17 @@ public class DescribeBackupsRequest extends RpcAcsRequest<DescribeBackupsRespons
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getBackupJobId() {
+		return this.backupJobId;
+	}
+
+	public void setBackupJobId(String backupJobId) {
+		this.backupJobId = backupJobId;
+		if(backupJobId != null){
+			putQueryParameter("BackupJobId", backupJobId);
+		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -100,6 +115,17 @@ public class DescribeBackupsRequest extends RpcAcsRequest<DescribeBackupsRespons
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

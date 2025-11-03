@@ -59,6 +59,7 @@ public class DescribeActiveOperationTasksResponseUnmarshaller {
 			itemsItem.setTaskTypeEn(_ctx.stringValue("DescribeActiveOperationTasksResponse.Items["+ i +"].TaskTypeEn"));
 			itemsItem.setResultInfo(_ctx.stringValue("DescribeActiveOperationTasksResponse.Items["+ i +"].ResultInfo"));
 			itemsItem.setId(_ctx.integerValue("DescribeActiveOperationTasksResponse.Items["+ i +"].Id"));
+			itemsItem.setTaskParams(_ctx.stringValue("DescribeActiveOperationTasksResponse.Items["+ i +"].TaskParams"));
 
 			List<String> subInsNames = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeActiveOperationTasksResponse.Items["+ i +"].SubInsNames.Length"); j++) {

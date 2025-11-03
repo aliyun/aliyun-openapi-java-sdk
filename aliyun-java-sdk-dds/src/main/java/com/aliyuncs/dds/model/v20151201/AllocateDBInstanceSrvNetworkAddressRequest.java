@@ -22,27 +22,25 @@ import com.aliyuncs.dds.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeClusterRecoverTimeRequest extends RpcAcsRequest<DescribeClusterRecoverTimeResponse> {
+public class AllocateDBInstanceSrvNetworkAddressRequest extends RpcAcsRequest<AllocateDBInstanceSrvNetworkAddressResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String srcRegion;
-
-	private String resourceGroupId;
-
 	private String dBInstanceId;
 
-	private String destRegion;
+	private String nodeId;
 
 	private String resourceOwnerAccount;
+
+	private String srvConnectionType;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-	public DescribeClusterRecoverTimeRequest() {
-		super("Dds", "2015-12-01", "DescribeClusterRecoverTime", "dds");
-		setMethod(MethodType.GET);
+	public AllocateDBInstanceSrvNetworkAddressRequest() {
+		super("Dds", "2015-12-01", "AllocateDBInstanceSrvNetworkAddress", "dds");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -60,28 +58,6 @@ public class DescribeClusterRecoverTimeRequest extends RpcAcsRequest<DescribeClu
 		}
 	}
 
-	public String getSrcRegion() {
-		return this.srcRegion;
-	}
-
-	public void setSrcRegion(String srcRegion) {
-		this.srcRegion = srcRegion;
-		if(srcRegion != null){
-			putQueryParameter("SrcRegion", srcRegion);
-		}
-	}
-
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
-	}
-
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
-		}
-	}
-
 	public String getDBInstanceId() {
 		return this.dBInstanceId;
 	}
@@ -93,14 +69,14 @@ public class DescribeClusterRecoverTimeRequest extends RpcAcsRequest<DescribeClu
 		}
 	}
 
-	public String getDestRegion() {
-		return this.destRegion;
+	public String getNodeId() {
+		return this.nodeId;
 	}
 
-	public void setDestRegion(String destRegion) {
-		this.destRegion = destRegion;
-		if(destRegion != null){
-			putQueryParameter("DestRegion", destRegion);
+	public void setNodeId(String nodeId) {
+		this.nodeId = nodeId;
+		if(nodeId != null){
+			putQueryParameter("NodeId", nodeId);
 		}
 	}
 
@@ -112,6 +88,17 @@ public class DescribeClusterRecoverTimeRequest extends RpcAcsRequest<DescribeClu
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getSrvConnectionType() {
+		return this.srvConnectionType;
+	}
+
+	public void setSrvConnectionType(String srvConnectionType) {
+		this.srvConnectionType = srvConnectionType;
+		if(srvConnectionType != null){
+			putQueryParameter("SrvConnectionType", srvConnectionType);
 		}
 	}
 
@@ -138,8 +125,8 @@ public class DescribeClusterRecoverTimeRequest extends RpcAcsRequest<DescribeClu
 	}
 
 	@Override
-	public Class<DescribeClusterRecoverTimeResponse> getResponseClass() {
-		return DescribeClusterRecoverTimeResponse.class;
+	public Class<AllocateDBInstanceSrvNetworkAddressResponse> getResponseClass() {
+		return AllocateDBInstanceSrvNetworkAddressResponse.class;
 	}
 
 }

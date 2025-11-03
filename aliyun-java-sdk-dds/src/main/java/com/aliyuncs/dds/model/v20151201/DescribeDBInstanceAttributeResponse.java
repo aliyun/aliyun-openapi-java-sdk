@@ -147,6 +147,12 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		private String disasterRecoveryInfo;
 
+		private String searchNodeClass;
+
+		private Integer searchNodeStorage;
+
+		private Integer searchNodeCount;
+
 		private List<ReplicaSet> replicaSets;
 
 		private List<Tag> tags;
@@ -557,6 +563,30 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		public void setDisasterRecoveryInfo(String disasterRecoveryInfo) {
 			this.disasterRecoveryInfo = disasterRecoveryInfo;
+		}
+
+		public String getSearchNodeClass() {
+			return this.searchNodeClass;
+		}
+
+		public void setSearchNodeClass(String searchNodeClass) {
+			this.searchNodeClass = searchNodeClass;
+		}
+
+		public Integer getSearchNodeStorage() {
+			return this.searchNodeStorage;
+		}
+
+		public void setSearchNodeStorage(Integer searchNodeStorage) {
+			this.searchNodeStorage = searchNodeStorage;
+		}
+
+		public Integer getSearchNodeCount() {
+			return this.searchNodeCount;
+		}
+
+		public void setSearchNodeCount(Integer searchNodeCount) {
+			this.searchNodeCount = searchNodeCount;
 		}
 
 		public List<ReplicaSet> getReplicaSets() {

@@ -27,9 +27,15 @@ public class DescribeInstanceRecoverTimeRequest extends RpcAcsRequest<DescribeIn
 
 	private Long resourceOwnerId;
 
+	private String srcRegion;
+
+	private String resourceGroupId;
+
 	private String securityToken;
 
 	private String dBInstanceId;
+
+	private String destRegion;
 
 	private String resourceOwnerAccount;
 
@@ -56,6 +62,28 @@ public class DescribeInstanceRecoverTimeRequest extends RpcAcsRequest<DescribeIn
 		}
 	}
 
+	public String getSrcRegion() {
+		return this.srcRegion;
+	}
+
+	public void setSrcRegion(String srcRegion) {
+		this.srcRegion = srcRegion;
+		if(srcRegion != null){
+			putQueryParameter("SrcRegion", srcRegion);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
@@ -75,6 +103,17 @@ public class DescribeInstanceRecoverTimeRequest extends RpcAcsRequest<DescribeIn
 		this.dBInstanceId = dBInstanceId;
 		if(dBInstanceId != null){
 			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public String getDestRegion() {
+		return this.destRegion;
+	}
+
+	public void setDestRegion(String destRegion) {
+		this.destRegion = destRegion;
+		if(destRegion != null){
+			putQueryParameter("DestRegion", destRegion);
 		}
 	}
 

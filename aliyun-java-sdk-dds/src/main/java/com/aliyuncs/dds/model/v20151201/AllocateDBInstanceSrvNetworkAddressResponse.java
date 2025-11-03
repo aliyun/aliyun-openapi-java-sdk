@@ -15,28 +15,16 @@
 package com.aliyuncs.dds.model.v20151201;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.dds.transform.v20151201.CreateBackupResponseUnmarshaller;
+import com.aliyuncs.dds.transform.v20151201.AllocateDBInstanceSrvNetworkAddressResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateBackupResponse extends AcsResponse {
-
-	private String backupId;
+public class AllocateDBInstanceSrvNetworkAddressResponse extends AcsResponse {
 
 	private String requestId;
-
-	private String backupJobId;
-
-	public String getBackupId() {
-		return this.backupId;
-	}
-
-	public void setBackupId(String backupId) {
-		this.backupId = backupId;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -46,16 +34,8 @@ public class CreateBackupResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getBackupJobId() {
-		return this.backupJobId;
-	}
-
-	public void setBackupJobId(String backupJobId) {
-		this.backupJobId = backupJobId;
-	}
-
 	@Override
-	public CreateBackupResponse getInstance(UnmarshallerContext context) {
-		return	CreateBackupResponseUnmarshaller.unmarshall(this, context);
+	public AllocateDBInstanceSrvNetworkAddressResponse getInstance(UnmarshallerContext context) {
+		return	AllocateDBInstanceSrvNetworkAddressResponseUnmarshaller.unmarshall(this, context);
 	}
 }

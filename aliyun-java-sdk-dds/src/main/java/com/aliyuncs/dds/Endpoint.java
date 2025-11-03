@@ -28,7 +28,6 @@ public class Endpoint {
             put("cn-yushanfang", "mongodb.aliyuncs.com");
             put("cn-qingdao-nebula", "mongodb.aliyuncs.com");
             put("cn-heyuan", "mongodb.aliyuncs.com");
-            put("na-south-1", "mongodb.na-south-1.aliyuncs.com");
             put("cn-beijing-finance-pop", "mongodb.aliyuncs.com");
             put("cn-wuhan", "mongodb.aliyuncs.com");
             put("cn-zhangjiakou", "mongodb.cn-zhangjiakou.aliyuncs.com");
@@ -56,7 +55,7 @@ public class Endpoint {
             put("cn-qingdao", "mongodb.aliyuncs.com");
             put("cn-hongkong-finance-pop", "mongodb.aliyuncs.com");
             put("cn-shanghai", "mongodb.aliyuncs.com");
-            put("cn-shanghai-finance-1", "mongodb.aliyuncs.com");
+            put("cn-shanghai-finance-1", "mongodb.cn-shanghai-finance-1.aliyuncs.com");
             put("cn-hongkong", "mongodb.cn-hongkong.aliyuncs.com");
             put("eu-central-1", "mongodb.eu-central-1.aliyuncs.com");
             put("cn-shenzhen", "mongodb.aliyuncs.com");

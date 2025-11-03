@@ -258,6 +258,8 @@ public class DescribePriceResponse extends AcsResponse {
 
 			private String priceType;
 
+			private String unitPriceUnit4Buy;
+
 			private List<PromDetail> promDetailList2;
 
 			private List<ModuleAttr> moduleAttrs;
@@ -374,6 +376,14 @@ public class DescribePriceResponse extends AcsResponse {
 
 			public void setPriceType(String priceType) {
 				this.priceType = priceType;
+			}
+
+			public String getUnitPriceUnit4Buy() {
+				return this.unitPriceUnit4Buy;
+			}
+
+			public void setUnitPriceUnit4Buy(String unitPriceUnit4Buy) {
+				this.unitPriceUnit4Buy = unitPriceUnit4Buy;
 			}
 
 			public List<PromDetail> getPromDetailList2() {

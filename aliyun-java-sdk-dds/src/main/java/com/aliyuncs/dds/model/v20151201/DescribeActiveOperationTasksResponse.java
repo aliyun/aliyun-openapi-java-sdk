@@ -127,6 +127,8 @@ public class DescribeActiveOperationTasksResponse extends AcsResponse {
 
 		private Integer id;
 
+		private String taskParams;
+
 		private List<String> subInsNames;
 
 		public Integer getStatus() {
@@ -327,6 +329,14 @@ public class DescribeActiveOperationTasksResponse extends AcsResponse {
 
 		public void setId(Integer id) {
 			this.id = id;
+		}
+
+		public String getTaskParams() {
+			return this.taskParams;
+		}
+
+		public void setTaskParams(String taskParams) {
+			this.taskParams = taskParams;
 		}
 
 		public List<String> getSubInsNames() {
