@@ -1,3 +1,6 @@
+2025-11-05 Version: 3.15.11
+- Added query domain real time price API.
+
 2024-10-18 Version: 3.15.10
 - 基于转移码的转出接口
 - SaveSingleTaskForTransferOutByAuthorizationCode

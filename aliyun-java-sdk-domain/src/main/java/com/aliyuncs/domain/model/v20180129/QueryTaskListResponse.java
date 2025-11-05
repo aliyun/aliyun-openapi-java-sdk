@@ -127,6 +127,12 @@ public class QueryTaskListResponse extends AcsResponse {
 
 		private String clientip;
 
+		private String taskBizType;
+
+		private String taskResult;
+
+		private Integer taskTypeCode;
+
 		public String getTaskType() {
 			return this.taskType;
 		}
@@ -205,6 +211,30 @@ public class QueryTaskListResponse extends AcsResponse {
 
 		public void setClientip(String clientip) {
 			this.clientip = clientip;
+		}
+
+		public String getTaskBizType() {
+			return this.taskBizType;
+		}
+
+		public void setTaskBizType(String taskBizType) {
+			this.taskBizType = taskBizType;
+		}
+
+		public String getTaskResult() {
+			return this.taskResult;
+		}
+
+		public void setTaskResult(String taskResult) {
+			this.taskResult = taskResult;
+		}
+
+		public Integer getTaskTypeCode() {
+			return this.taskTypeCode;
+		}
+
+		public void setTaskTypeCode(Integer taskTypeCode) {
+			this.taskTypeCode = taskTypeCode;
 		}
 	}
 

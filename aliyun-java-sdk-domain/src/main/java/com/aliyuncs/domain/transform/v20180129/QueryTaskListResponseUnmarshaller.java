@@ -47,6 +47,9 @@ public class QueryTaskListResponseUnmarshaller {
 			taskInfo.setTaskNum(_ctx.integerValue("QueryTaskListResponse.Data["+ i +"].TaskNum"));
 			taskInfo.setCreateTime(_ctx.stringValue("QueryTaskListResponse.Data["+ i +"].CreateTime"));
 			taskInfo.setClientip(_ctx.stringValue("QueryTaskListResponse.Data["+ i +"].Clientip"));
+			taskInfo.setTaskBizType(_ctx.stringValue("QueryTaskListResponse.Data["+ i +"].TaskBizType"));
+			taskInfo.setTaskResult(_ctx.stringValue("QueryTaskListResponse.Data["+ i +"].TaskResult"));
+			taskInfo.setTaskTypeCode(_ctx.integerValue("QueryTaskListResponse.Data["+ i +"].TaskTypeCode"));
 
 			data.add(taskInfo);
 		}

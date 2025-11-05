@@ -147,6 +147,8 @@ public class QueryDomainListResponse extends AcsResponse {
 
 		private String chgholderStatus;
 
+		private String registrar;
+
 		private List<TagItem> tag;
 
 		public String getDomainAuditStatus() {
@@ -307,6 +309,14 @@ public class QueryDomainListResponse extends AcsResponse {
 
 		public void setChgholderStatus(String chgholderStatus) {
 			this.chgholderStatus = chgholderStatus;
+		}
+
+		public String getRegistrar() {
+			return this.registrar;
+		}
+
+		public void setRegistrar(String registrar) {
+			this.registrar = registrar;
 		}
 
 		public List<TagItem> getTag() {

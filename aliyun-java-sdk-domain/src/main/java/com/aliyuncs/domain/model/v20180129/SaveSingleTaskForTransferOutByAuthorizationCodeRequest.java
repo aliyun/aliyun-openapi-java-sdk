@@ -29,10 +29,6 @@ public class SaveSingleTaskForTransferOutByAuthorizationCodeRequest extends RpcA
 	private String domainName;
 
 	private String authorizationCode;
-
-	private String userClientIp;
-
-	private String lang;
 	public SaveSingleTaskForTransferOutByAuthorizationCodeRequest() {
 		super("Domain", "2018-01-29", "SaveSingleTaskForTransferOutByAuthorizationCode", "domain");
 		setProtocol(ProtocolType.HTTPS);
@@ -62,28 +58,6 @@ public class SaveSingleTaskForTransferOutByAuthorizationCodeRequest extends RpcA
 		this.authorizationCode = authorizationCode;
 		if(authorizationCode != null){
 			putQueryParameter("AuthorizationCode", authorizationCode);
-		}
-	}
-
-	public String getUserClientIp() {
-		return this.userClientIp;
-	}
-
-	public void setUserClientIp(String userClientIp) {
-		this.userClientIp = userClientIp;
-		if(userClientIp != null){
-			putQueryParameter("UserClientIp", userClientIp);
-		}
-	}
-
-	public String getLang() {
-		return this.lang;
-	}
-
-	public void setLang(String lang) {
-		this.lang = lang;
-		if(lang != null){
-			putQueryParameter("Lang", lang);
 		}
 	}
 

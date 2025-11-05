@@ -64,6 +64,7 @@ public class QueryRegistrantProfilesResponseUnmarshaller {
 			registrantProfile.setCredentialNo(_ctx.stringValue("QueryRegistrantProfilesResponse.RegistrantProfiles["+ i +"].CredentialNo"));
 			registrantProfile.setCredentialType(_ctx.stringValue("QueryRegistrantProfilesResponse.RegistrantProfiles["+ i +"].CredentialType"));
 			registrantProfile.setRemark(_ctx.stringValue("QueryRegistrantProfilesResponse.RegistrantProfiles["+ i +"].Remark"));
+			registrantProfile.setParams(_ctx.stringValue("QueryRegistrantProfilesResponse.RegistrantProfiles["+ i +"].Params"));
 
 			registrantProfiles.add(registrantProfile);
 		}

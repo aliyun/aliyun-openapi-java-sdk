@@ -44,6 +44,7 @@ public class QueryChangeLogListResponseUnmarshaller {
 			changeLog.setDomainName(_ctx.stringValue("QueryChangeLogListResponse.Data["+ i +"].DomainName"));
 			changeLog.setOperationIPAddress(_ctx.stringValue("QueryChangeLogListResponse.Data["+ i +"].OperationIPAddress"));
 			changeLog.setDetails(_ctx.stringValue("QueryChangeLogListResponse.Data["+ i +"].Details"));
+			changeLog.setRemark(_ctx.stringValue("QueryChangeLogListResponse.Data["+ i +"].Remark"));
 
 			data.add(changeLog);
 		}

@@ -89,6 +89,10 @@ public class QueryDomainByInstanceIdResponse extends AcsResponse {
 
 	private String resourceGroupId;
 
+	private String domainLifecycleStatus;
+
+	private String privacyServiceStatus;
+
 	private List<TagItem> tag;
 
 	private List<String> dnsList;
@@ -347,6 +351,22 @@ public class QueryDomainByInstanceIdResponse extends AcsResponse {
 
 	public void setResourceGroupId(String resourceGroupId) {
 		this.resourceGroupId = resourceGroupId;
+	}
+
+	public String getDomainLifecycleStatus() {
+		return this.domainLifecycleStatus;
+	}
+
+	public void setDomainLifecycleStatus(String domainLifecycleStatus) {
+		this.domainLifecycleStatus = domainLifecycleStatus;
+	}
+
+	public String getPrivacyServiceStatus() {
+		return this.privacyServiceStatus;
+	}
+
+	public void setPrivacyServiceStatus(String privacyServiceStatus) {
+		this.privacyServiceStatus = privacyServiceStatus;
 	}
 
 	public List<TagItem> getTag() {

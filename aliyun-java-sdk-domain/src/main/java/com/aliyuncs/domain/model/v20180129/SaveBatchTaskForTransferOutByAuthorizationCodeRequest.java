@@ -27,11 +27,7 @@ import com.aliyuncs.domain.Endpoint;
 public class SaveBatchTaskForTransferOutByAuthorizationCodeRequest extends RpcAcsRequest<SaveBatchTaskForTransferOutByAuthorizationCodeResponse> {
 	   
 
-	private String _long;
-
 	private List<TransferOutParamList> transferOutParamLists;
-
-	private String userClientIp;
 	public SaveBatchTaskForTransferOutByAuthorizationCodeRequest() {
 		super("Domain", "2018-01-29", "SaveBatchTaskForTransferOutByAuthorizationCode", "domain");
 		setProtocol(ProtocolType.HTTPS);
@@ -40,17 +36,6 @@ public class SaveBatchTaskForTransferOutByAuthorizationCodeRequest extends RpcAc
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String get_Long() {
-		return this._long;
-	}
-
-	public void set_Long(String _long) {
-		this._long = _long;
-		if(_long != null){
-			putQueryParameter("Long", _long);
-		}
 	}
 
 	public List<TransferOutParamList> getTransferOutParamLists() {
@@ -65,17 +50,6 @@ public class SaveBatchTaskForTransferOutByAuthorizationCodeRequest extends RpcAc
 				putQueryParameter("TransferOutParamList." + (depth1 + 1) + ".DomainName" , transferOutParamLists.get(depth1).getDomainName());
 			}
 		}	
-	}
-
-	public String getUserClientIp() {
-		return this.userClientIp;
-	}
-
-	public void setUserClientIp(String userClientIp) {
-		this.userClientIp = userClientIp;
-		if(userClientIp != null){
-			putQueryParameter("UserClientIp", userClientIp);
-		}
 	}
 
 	public static class TransferOutParamList {

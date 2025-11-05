@@ -32,6 +32,8 @@ public class QueryDomainListRequest extends RpcAcsRequest<QueryDomainListRespons
 
 	private String orderKeyType;
 
+	private String registrar;
+
 	private Integer pageNum;
 
 	private String orderByType;
@@ -98,6 +100,17 @@ public class QueryDomainListRequest extends RpcAcsRequest<QueryDomainListRespons
 		this.orderKeyType = orderKeyType;
 		if(orderKeyType != null){
 			putQueryParameter("OrderKeyType", orderKeyType);
+		}
+	}
+
+	public String getRegistrar() {
+		return this.registrar;
+	}
+
+	public void setRegistrar(String registrar) {
+		this.registrar = registrar;
+		if(registrar != null){
+			putQueryParameter("Registrar", registrar);
 		}
 	}
 

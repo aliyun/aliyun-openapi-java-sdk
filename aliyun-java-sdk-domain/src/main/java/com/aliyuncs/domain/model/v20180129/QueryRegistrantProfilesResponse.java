@@ -161,6 +161,8 @@ public class QueryRegistrantProfilesResponse extends AcsResponse {
 
 		private String remark;
 
+		private String params;
+
 		public String getTelExt() {
 			return this.telExt;
 		}
@@ -375,6 +377,14 @@ public class QueryRegistrantProfilesResponse extends AcsResponse {
 
 		public void setRemark(String remark) {
 			this.remark = remark;
+		}
+
+		public String getParams() {
+			return this.params;
+		}
+
+		public void setParams(String params) {
+			this.params = params;
 		}
 	}
 

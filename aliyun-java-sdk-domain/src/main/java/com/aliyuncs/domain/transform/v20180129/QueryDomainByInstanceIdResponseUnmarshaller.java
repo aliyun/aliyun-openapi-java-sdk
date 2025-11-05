@@ -58,6 +58,8 @@ public class QueryDomainByInstanceIdResponseUnmarshaller {
 		queryDomainByInstanceIdResponse.setDomainType(_ctx.stringValue("QueryDomainByInstanceIdResponse.DomainType"));
 		queryDomainByInstanceIdResponse.setDomainStatus(_ctx.stringValue("QueryDomainByInstanceIdResponse.DomainStatus"));
 		queryDomainByInstanceIdResponse.setResourceGroupId(_ctx.stringValue("QueryDomainByInstanceIdResponse.ResourceGroupId"));
+		queryDomainByInstanceIdResponse.setDomainLifecycleStatus(_ctx.stringValue("QueryDomainByInstanceIdResponse.DomainLifecycleStatus"));
+		queryDomainByInstanceIdResponse.setPrivacyServiceStatus(_ctx.stringValue("QueryDomainByInstanceIdResponse.PrivacyServiceStatus"));
 
 		List<String> dnsList = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("QueryDomainByInstanceIdResponse.DnsList.Length"); i++) {
