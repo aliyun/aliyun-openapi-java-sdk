@@ -39,16 +39,16 @@ public class SearchImageResponseUnmarshaller {
 		List<Image> imageList = new ArrayList<Image>();
 		for (int i = 0; i < _ctx.lengthValue("SearchImageResponse.ImageResponse.ImageList.Length"); i++) {
 			Image image = new Image();
-			image.setImageRatio(_ctx.stringValue("SearchImageResponse.ImageResponse.ImageList["+ i +"].ImageRatio"));
-			image.setDescriptiveTones(_ctx.stringValue("SearchImageResponse.ImageResponse.ImageList["+ i +"].DescriptiveTones"));
-			image.setOssKey(_ctx.stringValue("SearchImageResponse.ImageResponse.ImageList["+ i +"].OssKey"));
-			image.setImageCategory(_ctx.stringValue("SearchImageResponse.ImageResponse.ImageList["+ i +"].ImageCategory"));
-			image.setHeight(_ctx.integerValue("SearchImageResponse.ImageResponse.ImageList["+ i +"].Height"));
-			image.setQuantitativePalette(_ctx.stringValue("SearchImageResponse.ImageResponse.ImageList["+ i +"].QuantitativePalette"));
 			image.setImageUuid(_ctx.stringValue("SearchImageResponse.ImageResponse.ImageList["+ i +"].ImageUuid"));
-			image.setWidth(_ctx.integerValue("SearchImageResponse.ImageResponse.ImageList["+ i +"].Width"));
+			image.setOssKey(_ctx.stringValue("SearchImageResponse.ImageResponse.ImageList["+ i +"].OssKey"));
 			image.setUrl(_ctx.stringValue("SearchImageResponse.ImageResponse.ImageList["+ i +"].Url"));
+			image.setWidth(_ctx.integerValue("SearchImageResponse.ImageResponse.ImageList["+ i +"].Width"));
+			image.setHeight(_ctx.integerValue("SearchImageResponse.ImageResponse.ImageList["+ i +"].Height"));
+			image.setImageRatio(_ctx.stringValue("SearchImageResponse.ImageResponse.ImageList["+ i +"].ImageRatio"));
+			image.setImageCategory(_ctx.stringValue("SearchImageResponse.ImageResponse.ImageList["+ i +"].ImageCategory"));
 			image.setTagsFromImage(_ctx.stringValue("SearchImageResponse.ImageResponse.ImageList["+ i +"].TagsFromImage"));
+			image.setDescriptiveTones(_ctx.stringValue("SearchImageResponse.ImageResponse.ImageList["+ i +"].DescriptiveTones"));
+			image.setQuantitativePalette(_ctx.stringValue("SearchImageResponse.ImageResponse.ImageList["+ i +"].QuantitativePalette"));
 
 			imageList.add(image);
 		}

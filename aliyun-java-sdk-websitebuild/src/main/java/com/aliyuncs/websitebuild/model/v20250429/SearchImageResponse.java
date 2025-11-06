@@ -109,40 +109,32 @@ public class SearchImageResponse extends AcsResponse {
 
 		public static class Image {
 
-			private String imageRatio;
-
-			private String descriptiveTones;
+			private String imageUuid;
 
 			private String ossKey;
 
-			private String imageCategory;
-
-			private Integer height;
-
-			private String quantitativePalette;
-
-			private String imageUuid;
+			private String url;
 
 			private Integer width;
 
-			private String url;
+			private Integer height;
+
+			private String imageRatio;
+
+			private String imageCategory;
 
 			private String tagsFromImage;
 
-			public String getImageRatio() {
-				return this.imageRatio;
+			private String descriptiveTones;
+
+			private String quantitativePalette;
+
+			public String getImageUuid() {
+				return this.imageUuid;
 			}
 
-			public void setImageRatio(String imageRatio) {
-				this.imageRatio = imageRatio;
-			}
-
-			public String getDescriptiveTones() {
-				return this.descriptiveTones;
-			}
-
-			public void setDescriptiveTones(String descriptiveTones) {
-				this.descriptiveTones = descriptiveTones;
+			public void setImageUuid(String imageUuid) {
+				this.imageUuid = imageUuid;
 			}
 
 			public String getOssKey() {
@@ -153,36 +145,12 @@ public class SearchImageResponse extends AcsResponse {
 				this.ossKey = ossKey;
 			}
 
-			public String getImageCategory() {
-				return this.imageCategory;
+			public String getUrl() {
+				return this.url;
 			}
 
-			public void setImageCategory(String imageCategory) {
-				this.imageCategory = imageCategory;
-			}
-
-			public Integer getHeight() {
-				return this.height;
-			}
-
-			public void setHeight(Integer height) {
-				this.height = height;
-			}
-
-			public String getQuantitativePalette() {
-				return this.quantitativePalette;
-			}
-
-			public void setQuantitativePalette(String quantitativePalette) {
-				this.quantitativePalette = quantitativePalette;
-			}
-
-			public String getImageUuid() {
-				return this.imageUuid;
-			}
-
-			public void setImageUuid(String imageUuid) {
-				this.imageUuid = imageUuid;
+			public void setUrl(String url) {
+				this.url = url;
 			}
 
 			public Integer getWidth() {
@@ -193,12 +161,28 @@ public class SearchImageResponse extends AcsResponse {
 				this.width = width;
 			}
 
-			public String getUrl() {
-				return this.url;
+			public Integer getHeight() {
+				return this.height;
 			}
 
-			public void setUrl(String url) {
-				this.url = url;
+			public void setHeight(Integer height) {
+				this.height = height;
+			}
+
+			public String getImageRatio() {
+				return this.imageRatio;
+			}
+
+			public void setImageRatio(String imageRatio) {
+				this.imageRatio = imageRatio;
+			}
+
+			public String getImageCategory() {
+				return this.imageCategory;
+			}
+
+			public void setImageCategory(String imageCategory) {
+				this.imageCategory = imageCategory;
 			}
 
 			public String getTagsFromImage() {
@@ -207,6 +191,22 @@ public class SearchImageResponse extends AcsResponse {
 
 			public void setTagsFromImage(String tagsFromImage) {
 				this.tagsFromImage = tagsFromImage;
+			}
+
+			public String getDescriptiveTones() {
+				return this.descriptiveTones;
+			}
+
+			public void setDescriptiveTones(String descriptiveTones) {
+				this.descriptiveTones = descriptiveTones;
+			}
+
+			public String getQuantitativePalette() {
+				return this.quantitativePalette;
+			}
+
+			public void setQuantitativePalette(String quantitativePalette) {
+				this.quantitativePalette = quantitativePalette;
 			}
 		}
 	}
