@@ -1,4 +1,7 @@
-﻿2025-06-10 Version:4.7.6
+﻿2025-11-11 Version:4.7.7
+1.Resolve exception and remove ini4j.
+
+2025-06-10 Version:4.7.6
 1.Support IDToken.
 
 2025-04-18 Version:4.7.5
