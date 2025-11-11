@@ -1,3 +1,6 @@
+2025-11-11 Version: 1.0.14
+- Supported bind idp user api.
+
 2025-10-30 Version: 1.0.13
 - Supported Custom Privacy Policy.
 
