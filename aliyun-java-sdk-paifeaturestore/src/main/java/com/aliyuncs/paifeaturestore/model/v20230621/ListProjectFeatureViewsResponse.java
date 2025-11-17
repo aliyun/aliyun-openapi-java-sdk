@@ -63,6 +63,10 @@ public class ListProjectFeatureViewsResponse extends AcsResponse {
 
 		private String type;
 
+		private String joinId;
+
+		private String parentJoinId;
+
 		private List<FeaturesItem> features;
 
 		public String getName() {
@@ -87,6 +91,22 @@ public class ListProjectFeatureViewsResponse extends AcsResponse {
 
 		public void setType(String type) {
 			this.type = type;
+		}
+
+		public String getJoinId() {
+			return this.joinId;
+		}
+
+		public void setJoinId(String joinId) {
+			this.joinId = joinId;
+		}
+
+		public String getParentJoinId() {
+			return this.parentJoinId;
+		}
+
+		public void setParentJoinId(String parentJoinId) {
+			this.parentJoinId = parentJoinId;
 		}
 
 		public List<FeaturesItem> getFeatures() {

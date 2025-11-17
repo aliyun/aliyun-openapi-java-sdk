@@ -29,6 +29,9 @@ public class GetFeatureEntityResponseUnmarshaller {
 		getFeatureEntityResponse.setJoinId(_ctx.stringValue("GetFeatureEntityResponse.JoinId"));
 		getFeatureEntityResponse.setOwner(_ctx.stringValue("GetFeatureEntityResponse.Owner"));
 		getFeatureEntityResponse.setGmtCreateTime(_ctx.stringValue("GetFeatureEntityResponse.GmtCreateTime"));
+		getFeatureEntityResponse.setParentFeatureEntityId(_ctx.stringValue("GetFeatureEntityResponse.ParentFeatureEntityId"));
+		getFeatureEntityResponse.setParentFeatureEntityName(_ctx.stringValue("GetFeatureEntityResponse.ParentFeatureEntityName"));
+		getFeatureEntityResponse.setParentJoinId(_ctx.stringValue("GetFeatureEntityResponse.ParentJoinId"));
 	 
 	 	return getFeatureEntityResponse;
 	}

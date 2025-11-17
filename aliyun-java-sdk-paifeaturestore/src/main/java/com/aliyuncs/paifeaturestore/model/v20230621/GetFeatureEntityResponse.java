@@ -38,6 +38,12 @@ public class GetFeatureEntityResponse extends AcsResponse {
 
 	private String gmtCreateTime;
 
+	private String parentFeatureEntityId;
+
+	private String parentFeatureEntityName;
+
+	private String parentJoinId;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -92,6 +98,30 @@ public class GetFeatureEntityResponse extends AcsResponse {
 
 	public void setGmtCreateTime(String gmtCreateTime) {
 		this.gmtCreateTime = gmtCreateTime;
+	}
+
+	public String getParentFeatureEntityId() {
+		return this.parentFeatureEntityId;
+	}
+
+	public void setParentFeatureEntityId(String parentFeatureEntityId) {
+		this.parentFeatureEntityId = parentFeatureEntityId;
+	}
+
+	public String getParentFeatureEntityName() {
+		return this.parentFeatureEntityName;
+	}
+
+	public void setParentFeatureEntityName(String parentFeatureEntityName) {
+		this.parentFeatureEntityName = parentFeatureEntityName;
+	}
+
+	public String getParentJoinId() {
+		return this.parentJoinId;
+	}
+
+	public void setParentJoinId(String parentJoinId) {
+		this.parentJoinId = parentJoinId;
 	}
 
 	@Override

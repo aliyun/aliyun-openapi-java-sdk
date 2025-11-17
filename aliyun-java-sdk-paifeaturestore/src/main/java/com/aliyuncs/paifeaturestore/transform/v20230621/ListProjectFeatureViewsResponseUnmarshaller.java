@@ -36,6 +36,8 @@ public class ListProjectFeatureViewsResponseUnmarshaller {
 			featureViewsItem.setName(_ctx.stringValue("ListProjectFeatureViewsResponse.FeatureViews["+ i +"].Name"));
 			featureViewsItem.setFeatureViewId(_ctx.stringValue("ListProjectFeatureViewsResponse.FeatureViews["+ i +"].FeatureViewId"));
 			featureViewsItem.setType(_ctx.stringValue("ListProjectFeatureViewsResponse.FeatureViews["+ i +"].Type"));
+			featureViewsItem.setJoinId(_ctx.stringValue("ListProjectFeatureViewsResponse.FeatureViews["+ i +"].JoinId"));
+			featureViewsItem.setParentJoinId(_ctx.stringValue("ListProjectFeatureViewsResponse.FeatureViews["+ i +"].ParentJoinId"));
 
 			List<FeaturesItem> features = new ArrayList<FeaturesItem>();
 			for (int j = 0; j < _ctx.lengthValue("ListProjectFeatureViewsResponse.FeatureViews["+ i +"].Features.Length"); j++) {

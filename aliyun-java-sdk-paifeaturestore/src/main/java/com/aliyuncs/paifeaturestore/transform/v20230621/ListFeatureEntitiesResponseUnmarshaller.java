@@ -39,6 +39,9 @@ public class ListFeatureEntitiesResponseUnmarshaller {
 			featureEntitiesItem.setOwner(_ctx.stringValue("ListFeatureEntitiesResponse.FeatureEntities["+ i +"].Owner"));
 			featureEntitiesItem.setProjectId(_ctx.stringValue("ListFeatureEntitiesResponse.FeatureEntities["+ i +"].ProjectId"));
 			featureEntitiesItem.setProjectName(_ctx.stringValue("ListFeatureEntitiesResponse.FeatureEntities["+ i +"].ProjectName"));
+			featureEntitiesItem.setParentFeatureEntityId(_ctx.stringValue("ListFeatureEntitiesResponse.FeatureEntities["+ i +"].ParentFeatureEntityId"));
+			featureEntitiesItem.setParentFeatureEntityName(_ctx.stringValue("ListFeatureEntitiesResponse.FeatureEntities["+ i +"].ParentFeatureEntityName"));
+			featureEntitiesItem.setParentJoinId(_ctx.stringValue("ListFeatureEntitiesResponse.FeatureEntities["+ i +"].ParentJoinId"));
 
 			featureEntities.add(featureEntitiesItem);
 		}

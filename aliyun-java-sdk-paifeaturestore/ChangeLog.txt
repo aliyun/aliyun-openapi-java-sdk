@@ -1,3 +1,6 @@
+2025-11-17 Version: 1.0.18
+- Add sub-feature entity support.
+
 2025-07-24 Version: 1.0.17
 - Update GetInstance and ListInstances.
 

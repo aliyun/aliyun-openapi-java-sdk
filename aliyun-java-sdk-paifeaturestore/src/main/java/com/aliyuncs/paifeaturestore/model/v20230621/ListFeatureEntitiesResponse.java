@@ -71,6 +71,12 @@ public class ListFeatureEntitiesResponse extends AcsResponse {
 
 		private String projectName;
 
+		private String parentFeatureEntityId;
+
+		private String parentFeatureEntityName;
+
+		private String parentJoinId;
+
 		public String getFeatureEntityId() {
 			return this.featureEntityId;
 		}
@@ -125,6 +131,30 @@ public class ListFeatureEntitiesResponse extends AcsResponse {
 
 		public void setProjectName(String projectName) {
 			this.projectName = projectName;
+		}
+
+		public String getParentFeatureEntityId() {
+			return this.parentFeatureEntityId;
+		}
+
+		public void setParentFeatureEntityId(String parentFeatureEntityId) {
+			this.parentFeatureEntityId = parentFeatureEntityId;
+		}
+
+		public String getParentFeatureEntityName() {
+			return this.parentFeatureEntityName;
+		}
+
+		public void setParentFeatureEntityName(String parentFeatureEntityName) {
+			this.parentFeatureEntityName = parentFeatureEntityName;
+		}
+
+		public String getParentJoinId() {
+			return this.parentJoinId;
+		}
+
+		public void setParentJoinId(String parentJoinId) {
+			this.parentJoinId = parentJoinId;
 		}
 	}
 

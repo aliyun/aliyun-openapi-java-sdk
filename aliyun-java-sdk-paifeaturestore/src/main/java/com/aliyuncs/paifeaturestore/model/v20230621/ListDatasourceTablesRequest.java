@@ -24,6 +24,8 @@ import com.aliyuncs.http.MethodType;
 public class ListDatasourceTablesRequest extends RoaAcsRequest<ListDatasourceTablesResponse> {
 	   
 
+	private String schemaName;
+
 	private String instanceId;
 
 	private String datasourceId;
@@ -33,6 +35,17 @@ public class ListDatasourceTablesRequest extends RoaAcsRequest<ListDatasourceTab
 		super("PaiFeatureStore", "2023-06-21", "ListDatasourceTables");
 		setUriPattern("/api/v1/instances/[InstanceId]/datasources/[DatasourceId]/tables");
 		setMethod(MethodType.GET);
+	}
+
+	public String getSchemaName() {
+		return this.schemaName;
+	}
+
+	public void setSchemaName(String schemaName) {
+		this.schemaName = schemaName;
+		if(schemaName != null){
+			putQueryParameter("SchemaName", schemaName);
+		}
 	}
 
 	public String getInstanceId() {

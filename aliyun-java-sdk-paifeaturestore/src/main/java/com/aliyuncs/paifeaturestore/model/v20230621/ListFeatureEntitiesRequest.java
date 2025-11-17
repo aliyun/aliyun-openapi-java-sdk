@@ -24,35 +24,37 @@ import com.aliyuncs.http.MethodType;
 public class ListFeatureEntitiesRequest extends RoaAcsRequest<ListFeatureEntitiesResponse> {
 	   
 
-	private String owner;
+	private String parentFeatureEntityId;
 
 	private Integer pageNumber;
+
+	private Integer pageSize;
+
+	private String projectId;
+
+	private String order;
+
+	private String owner;
 
 	private String instanceId;
 
 	private String name;
 
-	private Integer pageSize;
-
 	private String sortBy;
-
-	private String projectId;
-
-	private String order;
 	public ListFeatureEntitiesRequest() {
 		super("PaiFeatureStore", "2023-06-21", "ListFeatureEntities");
 		setUriPattern("/api/v1/instances/[InstanceId]/featureentities");
 		setMethod(MethodType.GET);
 	}
 
-	public String getOwner() {
-		return this.owner;
+	public String getParentFeatureEntityId() {
+		return this.parentFeatureEntityId;
 	}
 
-	public void setOwner(String owner) {
-		this.owner = owner;
-		if(owner != null){
-			putQueryParameter("Owner", owner);
+	public void setParentFeatureEntityId(String parentFeatureEntityId) {
+		this.parentFeatureEntityId = parentFeatureEntityId;
+		if(parentFeatureEntityId != null){
+			putQueryParameter("ParentFeatureEntityId", parentFeatureEntityId);
 		}
 	}
 
@@ -64,6 +66,50 @@ public class ListFeatureEntitiesRequest extends RoaAcsRequest<ListFeatureEntitie
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getProjectId() {
+		return this.projectId;
+	}
+
+	public void setProjectId(String projectId) {
+		this.projectId = projectId;
+		if(projectId != null){
+			putQueryParameter("ProjectId", projectId);
+		}
+	}
+
+	public String getOrder() {
+		return this.order;
+	}
+
+	public void setOrder(String order) {
+		this.order = order;
+		if(order != null){
+			putQueryParameter("Order", order);
+		}
+	}
+
+	public String getOwner() {
+		return this.owner;
+	}
+
+	public void setOwner(String owner) {
+		this.owner = owner;
+		if(owner != null){
+			putQueryParameter("Owner", owner);
 		}
 	}
 
@@ -89,17 +135,6 @@ public class ListFeatureEntitiesRequest extends RoaAcsRequest<ListFeatureEntitie
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
 	public String getSortBy() {
 		return this.sortBy;
 	}
@@ -108,28 +143,6 @@ public class ListFeatureEntitiesRequest extends RoaAcsRequest<ListFeatureEntitie
 		this.sortBy = sortBy;
 		if(sortBy != null){
 			putQueryParameter("SortBy", sortBy);
-		}
-	}
-
-	public String getProjectId() {
-		return this.projectId;
-	}
-
-	public void setProjectId(String projectId) {
-		this.projectId = projectId;
-		if(projectId != null){
-			putQueryParameter("ProjectId", projectId);
-		}
-	}
-
-	public String getOrder() {
-		return this.order;
-	}
-
-	public void setOrder(String order) {
-		this.order = order;
-		if(order != null){
-			putQueryParameter("Order", order);
 		}
 	}
 
