@@ -36,6 +36,12 @@ public class SmartqQueryAbilityResponseUnmarshaller {
 		result.setLogicSql(_ctx.stringValue("SmartqQueryAbilityResponse.Result.LogicSql"));
 		result.setConclusionText(_ctx.stringValue("SmartqQueryAbilityResponse.Result.ConclusionText"));
 
+		List<String> dataList = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("SmartqQueryAbilityResponse.Result.DataList.Length"); i++) {
+			dataList.add(_ctx.stringValue("SmartqQueryAbilityResponse.Result.DataList["+ i +"]"));
+		}
+		result.setDataList(dataList);
+
 		List<MetaTypeItem> metaType = new ArrayList<MetaTypeItem>();
 		for (int i = 0; i < _ctx.lengthValue("SmartqQueryAbilityResponse.Result.MetaType.Length"); i++) {
 			MetaTypeItem metaTypeItem = new MetaTypeItem();

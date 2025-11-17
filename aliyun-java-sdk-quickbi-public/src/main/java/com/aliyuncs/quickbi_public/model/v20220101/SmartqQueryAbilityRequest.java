@@ -29,6 +29,8 @@ public class SmartqQueryAbilityRequest extends RpcAcsRequest<SmartqQueryAbilityR
 	private String userQuestion;
 
 	private String cubeId;
+
+	private String multipleCubeIds;
 	public SmartqQueryAbilityRequest() {
 		super("quickbi-public", "2022-01-01", "SmartqQueryAbility", "2.2.0");
 		setMethod(MethodType.POST);
@@ -64,6 +66,17 @@ public class SmartqQueryAbilityRequest extends RpcAcsRequest<SmartqQueryAbilityR
 		this.cubeId = cubeId;
 		if(cubeId != null){
 			putQueryParameter("CubeId", cubeId);
+		}
+	}
+
+	public String getMultipleCubeIds() {
+		return this.multipleCubeIds;
+	}
+
+	public void setMultipleCubeIds(String multipleCubeIds) {
+		this.multipleCubeIds = multipleCubeIds;
+		if(multipleCubeIds != null){
+			putQueryParameter("MultipleCubeIds", multipleCubeIds);
 		}
 	}
 

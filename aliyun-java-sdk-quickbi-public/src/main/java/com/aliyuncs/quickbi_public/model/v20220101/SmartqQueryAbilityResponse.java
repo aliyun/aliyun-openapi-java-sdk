@@ -67,6 +67,8 @@ public class SmartqQueryAbilityResponse extends AcsResponse {
 
 		private List<ValuesItem> values;
 
+		private List<String> dataList;
+
 		public String getChartType() {
 			return this.chartType;
 		}
@@ -105,6 +107,14 @@ public class SmartqQueryAbilityResponse extends AcsResponse {
 
 		public void setValues(List<ValuesItem> values) {
 			this.values = values;
+		}
+
+		public List<String> getDataList() {
+			return this.dataList;
+		}
+
+		public void setDataList(List<String> dataList) {
+			this.dataList = dataList;
 		}
 
 		public static class MetaTypeItem {
