@@ -1,3 +1,6 @@
+2025-11-26 Version: 1.0.1
+- Generated 2025-07-07 for `AnyTrans`.
+
 2025-09-22 Version: 1.0.0
 - Generated 2025-07-07 for `AnyTrans`.
 

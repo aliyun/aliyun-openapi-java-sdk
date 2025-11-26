@@ -25,7 +25,7 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class SubmitDocTranslateTaskRequest extends RoaAcsRequest<SubmitDocTranslateTaskResponse> {
+public class TermEditRequest extends RoaAcsRequest<TermEditResponse> {
 	   
 
 	@SerializedName("ext")
@@ -33,19 +33,15 @@ public class SubmitDocTranslateTaskRequest extends RoaAcsRequest<SubmitDocTransl
 
 	private String sourceLanguage;
 
-	private String format;
-
 	private String scene;
 
 	private String targetLanguage;
 
-	private String text;
-
 	private String workspaceId;
-	public SubmitDocTranslateTaskRequest() {
-		super("AnyTrans", "2025-07-07", "SubmitDocTranslateTask");
+	public TermEditRequest() {
+		super("AnyTrans", "2025-07-07", "TermEdit");
 		setProtocol(ProtocolType.HTTPS);
-		setUriPattern("/anytrans/translate/doc/submit");
+		setUriPattern("/anytrans/translate/intervene/edit");
 		setMethod(MethodType.POST);
 	}
 
@@ -71,17 +67,6 @@ public class SubmitDocTranslateTaskRequest extends RoaAcsRequest<SubmitDocTransl
 		}
 	}
 
-	public String getFormat() {
-		return this.format;
-	}
-
-	public void setFormat(String format) {
-		this.format = format;
-		if(format != null){
-			putBodyParameter("format", format);
-		}
-	}
-
 	public String getScene() {
 		return this.scene;
 	}
@@ -104,17 +89,6 @@ public class SubmitDocTranslateTaskRequest extends RoaAcsRequest<SubmitDocTransl
 		}
 	}
 
-	public String getText() {
-		return this.text;
-	}
-
-	public void setText(String text) {
-		this.text = text;
-		if(text != null){
-			putBodyParameter("text", text);
-		}
-	}
-
 	public String getWorkspaceId() {
 		return this.workspaceId;
 	}
@@ -128,43 +102,24 @@ public class SubmitDocTranslateTaskRequest extends RoaAcsRequest<SubmitDocTransl
 
 	public static class Ext {
 
-		@SerializedName("terminologies")
-		private List<TerminologiesItem> terminologies;
+		@SerializedName("terms")
+		private List<TermsItem> terms;
 
-		@SerializedName("config")
-		private Config config;
-
-		@SerializedName("domainHint")
-		private String domainHint;
-
-		public List<TerminologiesItem> getTerminologies() {
-			return this.terminologies;
+		public List<TermsItem> getTerms() {
+			return this.terms;
 		}
 
-		public void setTerminologies(List<TerminologiesItem> terminologies) {
-			this.terminologies = terminologies;
+		public void setTerms(List<TermsItem> terms) {
+			this.terms = terms;
 		}
 
-		public Config getConfig() {
-			return this.config;
-		}
-
-		public void setConfig(Config config) {
-			this.config = config;
-		}
-
-		public String getDomainHint() {
-			return this.domainHint;
-		}
-
-		public void setDomainHint(String domainHint) {
-			this.domainHint = domainHint;
-		}
-
-		public static class TerminologiesItem {
+		public static class TermsItem {
 
 			@SerializedName("tgt")
 			private String tgt;
+
+			@SerializedName("termId")
+			private String termId;
 
 			@SerializedName("src")
 			private String src;
@@ -177,6 +132,14 @@ public class SubmitDocTranslateTaskRequest extends RoaAcsRequest<SubmitDocTransl
 				this.tgt = tgt;
 			}
 
+			public String getTermId() {
+				return this.termId;
+			}
+
+			public void setTermId(String termId) {
+				this.termId = termId;
+			}
+
 			public String getSrc() {
 				return this.src;
 			}
@@ -185,25 +148,11 @@ public class SubmitDocTranslateTaskRequest extends RoaAcsRequest<SubmitDocTransl
 				this.src = src;
 			}
 		}
-
-		public static class Config {
-
-			@SerializedName("skipImgTrans")
-			private Boolean skipImgTrans;
-
-			public Boolean getSkipImgTrans() {
-				return this.skipImgTrans;
-			}
-
-			public void setSkipImgTrans(Boolean skipImgTrans) {
-				this.skipImgTrans = skipImgTrans;
-			}
-		}
 	}
 
 	@Override
-	public Class<SubmitDocTranslateTaskResponse> getResponseClass() {
-		return SubmitDocTranslateTaskResponse.class;
+	public Class<TermEditResponse> getResponseClass() {
+		return TermEditResponse.class;
 	}
 
 }

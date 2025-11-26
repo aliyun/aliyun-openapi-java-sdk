@@ -140,6 +140,9 @@ public class SubmitHtmlTranslateTaskRequest extends RoaAcsRequest<SubmitHtmlTran
 		@SerializedName("examples")
 		private List<ExamplesItem> examples;
 
+		@SerializedName("config")
+		private Config config;
+
 		@SerializedName("domainHint")
 		private String domainHint;
 
@@ -173,6 +176,14 @@ public class SubmitHtmlTranslateTaskRequest extends RoaAcsRequest<SubmitHtmlTran
 
 		public void setExamples(List<ExamplesItem> examples) {
 			this.examples = examples;
+		}
+
+		public Config getConfig() {
+			return this.config;
+		}
+
+		public void setConfig(Config config) {
+			this.config = config;
 		}
 
 		public String getDomainHint() {
@@ -266,6 +277,31 @@ public class SubmitHtmlTranslateTaskRequest extends RoaAcsRequest<SubmitHtmlTran
 
 			public void setSrc(String src) {
 				this.src = src;
+			}
+		}
+
+		public static class Config {
+
+			@SerializedName("skipCsiCheck")
+			private Boolean skipCsiCheck;
+
+			@SerializedName("callbackUrl")
+			private String callbackUrl;
+
+			public Boolean getSkipCsiCheck() {
+				return this.skipCsiCheck;
+			}
+
+			public void setSkipCsiCheck(Boolean skipCsiCheck) {
+				this.skipCsiCheck = skipCsiCheck;
+			}
+
+			public String getCallbackUrl() {
+				return this.callbackUrl;
+			}
+
+			public void setCallbackUrl(String callbackUrl) {
+				this.callbackUrl = callbackUrl;
 			}
 		}
 	}

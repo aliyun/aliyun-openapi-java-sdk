@@ -137,8 +137,14 @@ public class TextTranslateRequest extends RoaAcsRequest<TextTranslateResponse> {
 		@SerializedName("textTransform")
 		private TextTransform textTransform;
 
+		@SerializedName("agent")
+		private String agent;
+
 		@SerializedName("examples")
 		private List<ExamplesItem> examples;
+
+		@SerializedName("config")
+		private Config config;
 
 		@SerializedName("domainHint")
 		private String domainHint;
@@ -167,12 +173,28 @@ public class TextTranslateRequest extends RoaAcsRequest<TextTranslateResponse> {
 			this.textTransform = textTransform;
 		}
 
+		public String getAgent() {
+			return this.agent;
+		}
+
+		public void setAgent(String agent) {
+			this.agent = agent;
+		}
+
 		public List<ExamplesItem> getExamples() {
 			return this.examples;
 		}
 
 		public void setExamples(List<ExamplesItem> examples) {
 			this.examples = examples;
+		}
+
+		public Config getConfig() {
+			return this.config;
+		}
+
+		public void setConfig(Config config) {
+			this.config = config;
 		}
 
 		public String getDomainHint() {
@@ -266,6 +288,20 @@ public class TextTranslateRequest extends RoaAcsRequest<TextTranslateResponse> {
 
 			public void setSrc(String src) {
 				this.src = src;
+			}
+		}
+
+		public static class Config {
+
+			@SerializedName("skipCsiCheck")
+			private Boolean skipCsiCheck;
+
+			public Boolean getSkipCsiCheck() {
+				return this.skipCsiCheck;
+			}
+
+			public void setSkipCsiCheck(Boolean skipCsiCheck) {
+				this.skipCsiCheck = skipCsiCheck;
 			}
 		}
 	}

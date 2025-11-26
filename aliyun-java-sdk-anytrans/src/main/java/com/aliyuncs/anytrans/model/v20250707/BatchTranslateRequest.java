@@ -38,6 +38,8 @@ public class BatchTranslateRequest extends RoaAcsRequest<BatchTranslateResponse>
 
 	private String scene;
 
+	private String appName;
+
 	private String targetLanguage;
 
 	@SerializedName("text")
@@ -95,6 +97,17 @@ public class BatchTranslateRequest extends RoaAcsRequest<BatchTranslateResponse>
 		}
 	}
 
+	public String getAppName() {
+		return this.appName;
+	}
+
+	public void setAppName(String appName) {
+		this.appName = appName;
+		if(appName != null){
+			putBodyParameter("appName", appName);
+		}
+	}
+
 	public String getTargetLanguage() {
 		return this.targetLanguage;
 	}
@@ -142,6 +155,9 @@ public class BatchTranslateRequest extends RoaAcsRequest<BatchTranslateResponse>
 		@SerializedName("examples")
 		private List<ExamplesItem> examples;
 
+		@SerializedName("config")
+		private Config config;
+
 		@SerializedName("domainHint")
 		private String domainHint;
 
@@ -175,6 +191,14 @@ public class BatchTranslateRequest extends RoaAcsRequest<BatchTranslateResponse>
 
 		public void setExamples(List<ExamplesItem> examples) {
 			this.examples = examples;
+		}
+
+		public Config getConfig() {
+			return this.config;
+		}
+
+		public void setConfig(Config config) {
+			this.config = config;
 		}
 
 		public String getDomainHint() {
@@ -268,6 +292,20 @@ public class BatchTranslateRequest extends RoaAcsRequest<BatchTranslateResponse>
 
 			public void setSrc(String src) {
 				this.src = src;
+			}
+		}
+
+		public static class Config {
+
+			@SerializedName("skipCsiCheck")
+			private Boolean skipCsiCheck;
+
+			public Boolean getSkipCsiCheck() {
+				return this.skipCsiCheck;
+			}
+
+			public void setSkipCsiCheck(Boolean skipCsiCheck) {
+				this.skipCsiCheck = skipCsiCheck;
 			}
 		}
 	}
