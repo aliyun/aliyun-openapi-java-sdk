@@ -36,6 +36,8 @@ public class ModifyScriptRequest extends RpcAcsRequest<ModifyScriptResponse> {
 
 	private String nluEngine;
 
+	private String labelConfig;
+
 	private String scene;
 
 	private String scriptId;
@@ -132,6 +134,17 @@ public class ModifyScriptRequest extends RpcAcsRequest<ModifyScriptResponse> {
 		this.nluEngine = nluEngine;
 		if(nluEngine != null){
 			putQueryParameter("NluEngine", nluEngine);
+		}
+	}
+
+	public String getLabelConfig() {
+		return this.labelConfig;
+	}
+
+	public void setLabelConfig(String labelConfig) {
+		this.labelConfig = labelConfig;
+		if(labelConfig != null){
+			putQueryParameter("LabelConfig", labelConfig);
 		}
 	}
 

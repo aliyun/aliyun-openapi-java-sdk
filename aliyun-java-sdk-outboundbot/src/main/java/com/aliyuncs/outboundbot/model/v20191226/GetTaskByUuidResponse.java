@@ -91,8 +91,6 @@ public class GetTaskByUuidResponse extends AcsResponse {
 
 		private Long endTime;
 
-		private Integer endReason;
-
 		private Long plannedTime;
 
 		private String jobId;
@@ -108,6 +106,8 @@ public class GetTaskByUuidResponse extends AcsResponse {
 		private String calledNumber;
 
 		private String id;
+
+		private String endReason;
 
 		private List<Conversation> conversations;
 
@@ -125,14 +125,6 @@ public class GetTaskByUuidResponse extends AcsResponse {
 
 		public void setEndTime(Long endTime) {
 			this.endTime = endTime;
-		}
-
-		public Integer getEndReason() {
-			return this.endReason;
-		}
-
-		public void setEndReason(Integer endReason) {
-			this.endReason = endReason;
 		}
 
 		public Long getPlannedTime() {
@@ -197,6 +189,14 @@ public class GetTaskByUuidResponse extends AcsResponse {
 
 		public void setId(String id) {
 			this.id = id;
+		}
+
+		public String getEndReason() {
+			return this.endReason;
+		}
+
+		public void setEndReason(String endReason) {
+			this.endReason = endReason;
 		}
 
 		public List<Conversation> getConversations() {

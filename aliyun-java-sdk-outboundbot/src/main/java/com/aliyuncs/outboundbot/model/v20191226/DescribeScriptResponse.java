@@ -168,6 +168,12 @@ public class DescribeScriptResponse extends AcsResponse {
 
 		private String chatConfig;
 
+		private String nluEngine;
+
+		private String labelConfig;
+
+		private NluProfile nluProfile;
+
 		public String getStatus() {
 			return this.status;
 		}
@@ -334,6 +340,73 @@ public class DescribeScriptResponse extends AcsResponse {
 
 		public void setChatConfig(String chatConfig) {
 			this.chatConfig = chatConfig;
+		}
+
+		public String getNluEngine() {
+			return this.nluEngine;
+		}
+
+		public void setNluEngine(String nluEngine) {
+			this.nluEngine = nluEngine;
+		}
+
+		public String getLabelConfig() {
+			return this.labelConfig;
+		}
+
+		public void setLabelConfig(String labelConfig) {
+			this.labelConfig = labelConfig;
+		}
+
+		public NluProfile getNluProfile() {
+			return this.nluProfile;
+		}
+
+		public void setNluProfile(NluProfile nluProfile) {
+			this.nluProfile = nluProfile;
+		}
+
+		public static class NluProfile {
+
+			private String fcFunction;
+
+			private String fcRegion;
+
+			private String fcHttpTriggerUrl;
+
+			private Boolean supportBeebotPrompts;
+
+			public String getFcFunction() {
+				return this.fcFunction;
+			}
+
+			public void setFcFunction(String fcFunction) {
+				this.fcFunction = fcFunction;
+			}
+
+			public String getFcRegion() {
+				return this.fcRegion;
+			}
+
+			public void setFcRegion(String fcRegion) {
+				this.fcRegion = fcRegion;
+			}
+
+			public String getFcHttpTriggerUrl() {
+				return this.fcHttpTriggerUrl;
+			}
+
+			public void setFcHttpTriggerUrl(String fcHttpTriggerUrl) {
+				this.fcHttpTriggerUrl = fcHttpTriggerUrl;
+			}
+
+			public Boolean getSupportBeebotPrompts() {
+				return this.supportBeebotPrompts;
+			}
+
+			public void setSupportBeebotPrompts(Boolean supportBeebotPrompts) {
+				this.supportBeebotPrompts = supportBeebotPrompts;
+			}
 		}
 	}
 

@@ -18,7 +18,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.outboundbot.model.v20191226.SearchTaskResponse;
+import com.aliyuncs.outboundbot.model.v20191226.SearchTaskResponse.Label2;
 import com.aliyuncs.outboundbot.model.v20191226.SearchTaskResponse.SearchTaskInfo;
+import com.aliyuncs.outboundbot.model.v20191226.SearchTaskResponse.SearchTaskInfo.Label;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -34,6 +36,12 @@ public class SearchTaskResponseUnmarshaller {
 		searchTaskResponse.setMessage(_ctx.stringValue("SearchTaskResponse.Message"));
 		searchTaskResponse.setPageSize(_ctx.integerValue("SearchTaskResponse.PageSize"));
 		searchTaskResponse.setTotal(_ctx.longValue("SearchTaskResponse.Total"));
+
+		List<String> variableNames = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("SearchTaskResponse.VariableNames.Length"); i++) {
+			variableNames.add(_ctx.stringValue("SearchTaskResponse.VariableNames["+ i +"]"));
+		}
+		searchTaskResponse.setVariableNames(variableNames);
 
 		List<SearchTaskInfo> searchTaskInfoList = new ArrayList<SearchTaskInfo>();
 		for (int i = 0; i < _ctx.lengthValue("SearchTaskResponse.SearchTaskInfoList.Length"); i++) {
@@ -65,6 +73,7 @@ public class SearchTaskResponseUnmarshaller {
 			searchTaskInfo.setDialExceptionOld(_ctx.stringValue("SearchTaskResponse.SearchTaskInfoList["+ i +"].DialExceptionOld"));
 			searchTaskInfo.setHasLastPlaybackCompleted(_ctx.booleanValue("SearchTaskResponse.SearchTaskInfoList["+ i +"].HasLastPlaybackCompleted"));
 			searchTaskInfo.setScriptName(_ctx.stringValue("SearchTaskResponse.SearchTaskInfoList["+ i +"].ScriptName"));
+			searchTaskInfo.setCallingNumber(_ctx.stringValue("SearchTaskResponse.SearchTaskInfoList["+ i +"].CallingNumber"));
 
 			List<String> dialExceptionCodes = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("SearchTaskResponse.SearchTaskInfoList["+ i +"].DialExceptionCodes.Length"); j++) {
@@ -72,9 +81,34 @@ public class SearchTaskResponseUnmarshaller {
 			}
 			searchTaskInfo.setDialExceptionCodes(dialExceptionCodes);
 
+			List<Label> labels1 = new ArrayList<Label>();
+			for (int j = 0; j < _ctx.lengthValue("SearchTaskResponse.SearchTaskInfoList["+ i +"].Labels.Length"); j++) {
+				Label label = new Label();
+				label.setK(_ctx.stringValue("SearchTaskResponse.SearchTaskInfoList["+ i +"].Labels["+ j +"].K"));
+				label.setV(_ctx.stringValue("SearchTaskResponse.SearchTaskInfoList["+ i +"].Labels["+ j +"].V"));
+
+				labels1.add(label);
+			}
+			searchTaskInfo.setLabels1(labels1);
+
 			searchTaskInfoList.add(searchTaskInfo);
 		}
 		searchTaskResponse.setSearchTaskInfoList(searchTaskInfoList);
+
+		List<Label2> labels = new ArrayList<Label2>();
+		for (int i = 0; i < _ctx.lengthValue("SearchTaskResponse.Labels.Length"); i++) {
+			Label2 label2 = new Label2();
+			label2.setName(_ctx.stringValue("SearchTaskResponse.Labels["+ i +"].Name"));
+
+			List<String> valueList = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("SearchTaskResponse.Labels["+ i +"].ValueList.Length"); j++) {
+				valueList.add(_ctx.stringValue("SearchTaskResponse.Labels["+ i +"].ValueList["+ j +"]"));
+			}
+			label2.setValueList(valueList);
+
+			labels.add(label2);
+		}
+		searchTaskResponse.setLabels(labels);
 	 
 	 	return searchTaskResponse;
 	}

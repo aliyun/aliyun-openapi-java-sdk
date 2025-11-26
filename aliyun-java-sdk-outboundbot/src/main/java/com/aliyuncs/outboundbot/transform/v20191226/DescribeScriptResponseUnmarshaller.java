@@ -16,6 +16,7 @@ package com.aliyuncs.outboundbot.transform.v20191226;
 
 import com.aliyuncs.outboundbot.model.v20191226.DescribeScriptResponse;
 import com.aliyuncs.outboundbot.model.v20191226.DescribeScriptResponse.Script;
+import com.aliyuncs.outboundbot.model.v20191226.DescribeScriptResponse.Script.NluProfile;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -55,6 +56,15 @@ public class DescribeScriptResponseUnmarshaller {
 		script.setAgentKey(_ctx.stringValue("DescribeScriptResponse.Script.AgentKey"));
 		script.setAgentLlm(_ctx.booleanValue("DescribeScriptResponse.Script.AgentLlm"));
 		script.setChatConfig(_ctx.stringValue("DescribeScriptResponse.Script.ChatConfig"));
+		script.setNluEngine(_ctx.stringValue("DescribeScriptResponse.Script.NluEngine"));
+		script.setLabelConfig(_ctx.stringValue("DescribeScriptResponse.Script.LabelConfig"));
+
+		NluProfile nluProfile = new NluProfile();
+		nluProfile.setFcFunction(_ctx.stringValue("DescribeScriptResponse.Script.NluProfile.FcFunction"));
+		nluProfile.setFcRegion(_ctx.stringValue("DescribeScriptResponse.Script.NluProfile.FcRegion"));
+		nluProfile.setFcHttpTriggerUrl(_ctx.stringValue("DescribeScriptResponse.Script.NluProfile.FcHttpTriggerUrl"));
+		nluProfile.setSupportBeebotPrompts(_ctx.booleanValue("DescribeScriptResponse.Script.NluProfile.SupportBeebotPrompts"));
+		script.setNluProfile(nluProfile);
 		describeScriptResponse.setScript(script);
 	 
 	 	return describeScriptResponse;

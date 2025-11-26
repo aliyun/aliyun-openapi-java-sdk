@@ -175,6 +175,8 @@ public class ListScriptsResponse extends AcsResponse {
 
 			private Long createTime;
 
+			private NluProfile nluProfile;
+
 			public String getStatus() {
 				return this.status;
 			}
@@ -357,6 +359,47 @@ public class ListScriptsResponse extends AcsResponse {
 
 			public void setCreateTime(Long createTime) {
 				this.createTime = createTime;
+			}
+
+			public NluProfile getNluProfile() {
+				return this.nluProfile;
+			}
+
+			public void setNluProfile(NluProfile nluProfile) {
+				this.nluProfile = nluProfile;
+			}
+
+			public static class NluProfile {
+
+				private String fcFunction;
+
+				private String fcRegion;
+
+				private String fcHttpTriggerUrl;
+
+				public String getFcFunction() {
+					return this.fcFunction;
+				}
+
+				public void setFcFunction(String fcFunction) {
+					this.fcFunction = fcFunction;
+				}
+
+				public String getFcRegion() {
+					return this.fcRegion;
+				}
+
+				public void setFcRegion(String fcRegion) {
+					this.fcRegion = fcRegion;
+				}
+
+				public String getFcHttpTriggerUrl() {
+					return this.fcHttpTriggerUrl;
+				}
+
+				public void setFcHttpTriggerUrl(String fcHttpTriggerUrl) {
+					this.fcHttpTriggerUrl = fcHttpTriggerUrl;
+				}
 			}
 		}
 	}

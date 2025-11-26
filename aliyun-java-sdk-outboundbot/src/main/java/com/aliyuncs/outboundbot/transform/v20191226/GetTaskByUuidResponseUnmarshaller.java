@@ -36,7 +36,6 @@ public class GetTaskByUuidResponseUnmarshaller {
 		Task task = new Task();
 		task.setJobGroupId(_ctx.stringValue("GetTaskByUuidResponse.Task.JobGroupId"));
 		task.setEndTime(_ctx.longValue("GetTaskByUuidResponse.Task.EndTime"));
-		task.setEndReason(_ctx.integerValue("GetTaskByUuidResponse.Task.EndReason"));
 		task.setPlannedTime(_ctx.longValue("GetTaskByUuidResponse.Task.PlannedTime"));
 		task.setJobId(_ctx.stringValue("GetTaskByUuidResponse.Task.JobId"));
 		task.setCallId(_ctx.stringValue("GetTaskByUuidResponse.Task.CallId"));
@@ -45,6 +44,7 @@ public class GetTaskByUuidResponseUnmarshaller {
 		task.setInstanceId(_ctx.stringValue("GetTaskByUuidResponse.Task.InstanceId"));
 		task.setCalledNumber(_ctx.stringValue("GetTaskByUuidResponse.Task.CalledNumber"));
 		task.setId(_ctx.stringValue("GetTaskByUuidResponse.Task.Id"));
+		task.setEndReason(_ctx.stringValue("GetTaskByUuidResponse.Task.EndReason"));
 
 		List<Conversation> conversations = new ArrayList<Conversation>();
 		for (int i = 0; i < _ctx.lengthValue("GetTaskByUuidResponse.Task.Conversations.Length"); i++) {

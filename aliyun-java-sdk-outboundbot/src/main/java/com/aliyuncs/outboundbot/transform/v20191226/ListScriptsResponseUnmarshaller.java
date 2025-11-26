@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.outboundbot.model.v20191226.ListScriptsResponse;
 import com.aliyuncs.outboundbot.model.v20191226.ListScriptsResponse.Scripts;
 import com.aliyuncs.outboundbot.model.v20191226.ListScriptsResponse.Scripts.Script;
+import com.aliyuncs.outboundbot.model.v20191226.ListScriptsResponse.Scripts.Script.NluProfile;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -64,6 +65,12 @@ public class ListScriptsResponseUnmarshaller {
 			script.setNluEngine(_ctx.stringValue("ListScriptsResponse.Scripts.List["+ i +"].NluEngine"));
 			script.setNluAccessType(_ctx.stringValue("ListScriptsResponse.Scripts.List["+ i +"].NluAccessType"));
 			script.setCreateTime(_ctx.longValue("ListScriptsResponse.Scripts.List["+ i +"].CreateTime"));
+
+			NluProfile nluProfile = new NluProfile();
+			nluProfile.setFcFunction(_ctx.stringValue("ListScriptsResponse.Scripts.List["+ i +"].NluProfile.FcFunction"));
+			nluProfile.setFcRegion(_ctx.stringValue("ListScriptsResponse.Scripts.List["+ i +"].NluProfile.FcRegion"));
+			nluProfile.setFcHttpTriggerUrl(_ctx.stringValue("ListScriptsResponse.Scripts.List["+ i +"].NluProfile.FcHttpTriggerUrl"));
+			script.setNluProfile(nluProfile);
 
 			list.add(script);
 		}

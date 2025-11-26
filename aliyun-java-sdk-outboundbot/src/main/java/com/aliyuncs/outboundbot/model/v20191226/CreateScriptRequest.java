@@ -52,6 +52,8 @@ public class CreateScriptRequest extends RpcAcsRequest<CreateScriptResponse> {
 
 	private String agentKey;
 
+	private String scriptNluProfileJsonString;
+
 	private Boolean miniPlaybackEnable;
 
 	private String chatbotId;
@@ -214,6 +216,17 @@ public class CreateScriptRequest extends RpcAcsRequest<CreateScriptResponse> {
 		this.agentKey = agentKey;
 		if(agentKey != null){
 			putQueryParameter("AgentKey", agentKey);
+		}
+	}
+
+	public String getScriptNluProfileJsonString() {
+		return this.scriptNluProfileJsonString;
+	}
+
+	public void setScriptNluProfileJsonString(String scriptNluProfileJsonString) {
+		this.scriptNluProfileJsonString = scriptNluProfileJsonString;
+		if(scriptNluProfileJsonString != null){
+			putQueryParameter("ScriptNluProfileJsonString", scriptNluProfileJsonString);
 		}
 	}
 

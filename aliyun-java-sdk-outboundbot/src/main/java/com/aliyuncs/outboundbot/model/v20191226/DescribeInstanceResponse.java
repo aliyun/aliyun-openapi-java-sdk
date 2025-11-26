@@ -232,6 +232,8 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 			private String llmAgentKey;
 
+			private Boolean supportBeebotPrompts;
+
 			public String getAccessKey() {
 				return this.accessKey;
 			}
@@ -286,6 +288,14 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 			public void setLlmAgentKey(String llmAgentKey) {
 				this.llmAgentKey = llmAgentKey;
+			}
+
+			public Boolean getSupportBeebotPrompts() {
+				return this.supportBeebotPrompts;
+			}
+
+			public void setSupportBeebotPrompts(Boolean supportBeebotPrompts) {
+				this.supportBeebotPrompts = supportBeebotPrompts;
 			}
 		}
 	}

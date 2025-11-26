@@ -35,6 +35,8 @@ public class QueryJobsWithResultResponse extends AcsResponse {
 
 	private Boolean success;
 
+	private List<Label> labels;
+
 	private List<String> variableNames;
 
 	private Jobs jobs;
@@ -79,6 +81,14 @@ public class QueryJobsWithResultResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public List<Label> getLabels() {
+		return this.labels;
+	}
+
+	public void setLabels(List<Label> labels) {
+		this.labels = labels;
+	}
+
 	public List<String> getVariableNames() {
 		return this.variableNames;
 	}
@@ -93,6 +103,29 @@ public class QueryJobsWithResultResponse extends AcsResponse {
 
 	public void setJobs(Jobs jobs) {
 		this.jobs = jobs;
+	}
+
+	public static class Label {
+
+		private String name;
+
+		private List<String> valueList;
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public List<String> getValueList() {
+			return this.valueList;
+		}
+
+		public void setValueList(List<String> valueList) {
+			this.valueList = valueList;
+		}
 	}
 
 	public static class Jobs {

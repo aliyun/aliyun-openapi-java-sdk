@@ -52,6 +52,7 @@ public class DescribeInstanceResponseUnmarshaller {
 		nluProfile.setAgentKey(_ctx.stringValue("DescribeInstanceResponse.Instance.NluProfile.AgentKey"));
 		nluProfile.setLlmAgentId(_ctx.stringValue("DescribeInstanceResponse.Instance.NluProfile.LlmAgentId"));
 		nluProfile.setLlmAgentKey(_ctx.stringValue("DescribeInstanceResponse.Instance.NluProfile.LlmAgentKey"));
+		nluProfile.setSupportBeebotPrompts(_ctx.booleanValue("DescribeInstanceResponse.Instance.NluProfile.SupportBeebotPrompts"));
 		instance.setNluProfile(nluProfile);
 		describeInstanceResponse.setInstance(instance);
 	 
