@@ -47,6 +47,8 @@ public class DescribeApplicationsResponseUnmarshaller {
 			applications.setRegionId(_ctx.stringValue("DescribeApplicationsResponse.Items["+ i +"].RegionId"));
 			applications.setApplicationId(_ctx.stringValue("DescribeApplicationsResponse.Items["+ i +"].ApplicationId"));
 			applications.setExpireTime(_ctx.stringValue("DescribeApplicationsResponse.Items["+ i +"].ExpireTime"));
+			applications.setDBClusterId(_ctx.stringValue("DescribeApplicationsResponse.Items["+ i +"].DBClusterId"));
+			applications.setCategory(_ctx.stringValue("DescribeApplicationsResponse.Items["+ i +"].Category"));
 
 			List<Endpoint> endpoints = new ArrayList<Endpoint>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeApplicationsResponse.Items["+ i +"].Endpoints.Length"); j++) {

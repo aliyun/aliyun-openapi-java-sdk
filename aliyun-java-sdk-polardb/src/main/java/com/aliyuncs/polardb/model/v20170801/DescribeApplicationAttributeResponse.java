@@ -69,6 +69,8 @@ public class DescribeApplicationAttributeResponse extends AcsResponse {
 
 	private String serverlessType;
 
+	private String category;
+
 	private List<SecurityGroup> securityGroups;
 
 	private List<SecurityIPArray> securityIPArrays;
@@ -251,6 +253,14 @@ public class DescribeApplicationAttributeResponse extends AcsResponse {
 
 	public void setServerlessType(String serverlessType) {
 		this.serverlessType = serverlessType;
+	}
+
+	public String getCategory() {
+		return this.category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
 	}
 
 	public List<SecurityGroup> getSecurityGroups() {
@@ -627,6 +637,8 @@ public class DescribeApplicationAttributeResponse extends AcsResponse {
 
 		private String description;
 
+		private String portDescription;
+
 		private String endpointId;
 
 		private String iP;
@@ -641,6 +653,14 @@ public class DescribeApplicationAttributeResponse extends AcsResponse {
 
 		public void setDescription(String description) {
 			this.description = description;
+		}
+
+		public String getPortDescription() {
+			return this.portDescription;
+		}
+
+		public void setPortDescription(String portDescription) {
+			this.portDescription = portDescription;
 		}
 
 		public String getEndpointId() {

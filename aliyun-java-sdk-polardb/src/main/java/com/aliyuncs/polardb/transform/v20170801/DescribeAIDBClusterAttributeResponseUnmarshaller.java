@@ -53,6 +53,7 @@ public class DescribeAIDBClusterAttributeResponseUnmarshaller {
 		describeAIDBClusterAttributeResponse.setModelName(_ctx.stringValue("DescribeAIDBClusterAttributeResponse.ModelName"));
 		describeAIDBClusterAttributeResponse.setMaxQPM(_ctx.stringValue("DescribeAIDBClusterAttributeResponse.MaxQPM"));
 		describeAIDBClusterAttributeResponse.setPublicIp(_ctx.stringValue("DescribeAIDBClusterAttributeResponse.PublicIp"));
+		describeAIDBClusterAttributeResponse.setKVCacheInstanceId(_ctx.stringValue("DescribeAIDBClusterAttributeResponse.KVCacheInstanceId"));
 
 		List<DBNode> dBNodes = new ArrayList<DBNode>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAIDBClusterAttributeResponse.DBNodes.Length"); i++) {
@@ -69,6 +70,8 @@ public class DescribeAIDBClusterAttributeResponseUnmarshaller {
 			dBNode.setZoneId(_ctx.stringValue("DescribeAIDBClusterAttributeResponse.DBNodes["+ i +"].ZoneId"));
 			dBNode.setVNodeId(_ctx.stringValue("DescribeAIDBClusterAttributeResponse.DBNodes["+ i +"].VNodeId"));
 			dBNode.setLinkIP(_ctx.stringValue("DescribeAIDBClusterAttributeResponse.DBNodes["+ i +"].LinkIP"));
+			dBNode.setPublicIp(_ctx.stringValue("DescribeAIDBClusterAttributeResponse.DBNodes["+ i +"].PublicIp"));
+			dBNode.setCreationTime(_ctx.stringValue("DescribeAIDBClusterAttributeResponse.DBNodes["+ i +"].CreationTime"));
 
 			List<Volumes> childVolumes = new ArrayList<Volumes>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeAIDBClusterAttributeResponse.DBNodes["+ i +"].ChildVolumes.Length"); j++) {

@@ -15,6 +15,9 @@
 package com.aliyuncs.polardb.model.v20170801;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.polardb.Endpoint;
 
@@ -26,6 +29,9 @@ public class ModifyLogBackupPolicyRequest extends RpcAcsRequest<ModifyLogBackupP
 	   
 
 	private Long resourceOwnerId;
+
+	@SerializedName("advancedLogPolicies")
+	private List<AdvancedLogPolicies> advancedLogPolicies;
 
 	private String logBackupAnotherRegionRegion;
 
@@ -58,6 +64,17 @@ public class ModifyLogBackupPolicyRequest extends RpcAcsRequest<ModifyLogBackupP
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
+	}
+
+	public List<AdvancedLogPolicies> getAdvancedLogPolicies() {
+		return this.advancedLogPolicies;
+	}
+
+	public void setAdvancedLogPolicies(List<AdvancedLogPolicies> advancedLogPolicies) {
+		this.advancedLogPolicies = advancedLogPolicies;	
+		if (advancedLogPolicies != null) {
+			putQueryParameter("AdvancedLogPolicies" , new Gson().toJson(advancedLogPolicies));
+		}	
 	}
 
 	public String getLogBackupAnotherRegionRegion() {
@@ -134,6 +151,108 @@ public class ModifyLogBackupPolicyRequest extends RpcAcsRequest<ModifyLogBackupP
 		this.logBackupRetentionPeriod = logBackupRetentionPeriod;
 		if(logBackupRetentionPeriod != null){
 			putQueryParameter("LogBackupRetentionPeriod", logBackupRetentionPeriod);
+		}
+	}
+
+	public static class AdvancedLogPolicies {
+
+		@SerializedName("ActionType")
+		private String actionType;
+
+		@SerializedName("SrcType")
+		private String srcType;
+
+		@SerializedName("PolicyId")
+		private String policyId;
+
+		@SerializedName("DestRegion")
+		private String destRegion;
+
+		@SerializedName("LogRetentionValue")
+		private String logRetentionValue;
+
+		@SerializedName("LogRetentionType")
+		private String logRetentionType;
+
+		@SerializedName("SrcRegion")
+		private String srcRegion;
+
+		@SerializedName("DestType")
+		private String destType;
+
+		@SerializedName("EnableLogBackup")
+		private Integer enableLogBackup;
+
+		public String getActionType() {
+			return this.actionType;
+		}
+
+		public void setActionType(String actionType) {
+			this.actionType = actionType;
+		}
+
+		public String getSrcType() {
+			return this.srcType;
+		}
+
+		public void setSrcType(String srcType) {
+			this.srcType = srcType;
+		}
+
+		public String getPolicyId() {
+			return this.policyId;
+		}
+
+		public void setPolicyId(String policyId) {
+			this.policyId = policyId;
+		}
+
+		public String getDestRegion() {
+			return this.destRegion;
+		}
+
+		public void setDestRegion(String destRegion) {
+			this.destRegion = destRegion;
+		}
+
+		public String getLogRetentionValue() {
+			return this.logRetentionValue;
+		}
+
+		public void setLogRetentionValue(String logRetentionValue) {
+			this.logRetentionValue = logRetentionValue;
+		}
+
+		public String getLogRetentionType() {
+			return this.logRetentionType;
+		}
+
+		public void setLogRetentionType(String logRetentionType) {
+			this.logRetentionType = logRetentionType;
+		}
+
+		public String getSrcRegion() {
+			return this.srcRegion;
+		}
+
+		public void setSrcRegion(String srcRegion) {
+			this.srcRegion = srcRegion;
+		}
+
+		public String getDestType() {
+			return this.destType;
+		}
+
+		public void setDestType(String destType) {
+			this.destType = destType;
+		}
+
+		public Integer getEnableLogBackup() {
+			return this.enableLogBackup;
+		}
+
+		public void setEnableLogBackup(Integer enableLogBackup) {
+			this.enableLogBackup = enableLogBackup;
 		}
 	}
 

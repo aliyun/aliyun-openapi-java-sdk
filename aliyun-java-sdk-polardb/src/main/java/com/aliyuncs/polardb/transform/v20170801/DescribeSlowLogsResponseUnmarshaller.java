@@ -52,6 +52,7 @@ public class DescribeSlowLogsResponseUnmarshaller {
 			sQLSlowLog.setReturnTotalRowCounts(_ctx.longValue("DescribeSlowLogsResponse.Items["+ i +"].ReturnTotalRowCounts"));
 			sQLSlowLog.setDBName(_ctx.stringValue("DescribeSlowLogsResponse.Items["+ i +"].DBName"));
 			sQLSlowLog.setTotalExecutionCounts(_ctx.longValue("DescribeSlowLogsResponse.Items["+ i +"].TotalExecutionCounts"));
+			sQLSlowLog.setMaxExecutionTimeMs(_ctx.stringValue("DescribeSlowLogsResponse.Items["+ i +"].MaxExecutionTimeMs"));
 
 			items.add(sQLSlowLog);
 		}

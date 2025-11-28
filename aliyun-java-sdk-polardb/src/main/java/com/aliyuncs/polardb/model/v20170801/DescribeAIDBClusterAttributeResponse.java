@@ -71,6 +71,8 @@ public class DescribeAIDBClusterAttributeResponse extends AcsResponse {
 
 	private String publicIp;
 
+	private String kVCacheInstanceId;
+
 	private List<DBNode> dBNodes;
 
 	private List<VolumesItem> volumes;
@@ -261,6 +263,14 @@ public class DescribeAIDBClusterAttributeResponse extends AcsResponse {
 		this.publicIp = publicIp;
 	}
 
+	public String getKVCacheInstanceId() {
+		return this.kVCacheInstanceId;
+	}
+
+	public void setKVCacheInstanceId(String kVCacheInstanceId) {
+		this.kVCacheInstanceId = kVCacheInstanceId;
+	}
+
 	public List<DBNode> getDBNodes() {
 		return this.dBNodes;
 	}
@@ -310,6 +320,10 @@ public class DescribeAIDBClusterAttributeResponse extends AcsResponse {
 		private String vNodeId;
 
 		private String linkIP;
+
+		private String publicIp;
+
+		private String creationTime;
 
 		private List<Volumes> childVolumes;
 
@@ -407,6 +421,22 @@ public class DescribeAIDBClusterAttributeResponse extends AcsResponse {
 
 		public void setLinkIP(String linkIP) {
 			this.linkIP = linkIP;
+		}
+
+		public String getPublicIp() {
+			return this.publicIp;
+		}
+
+		public void setPublicIp(String publicIp) {
+			this.publicIp = publicIp;
+		}
+
+		public String getCreationTime() {
+			return this.creationTime;
+		}
+
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
 		public List<Volumes> getChildVolumes() {

@@ -44,6 +44,12 @@ public class DescribeMetaListResponseUnmarshaller {
 			}
 			metaItem.setTables(tables);
 
+			List<Long> size = new ArrayList<Long>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeMetaListResponse.Items["+ i +"].Size.Length"); j++) {
+				size.add(_ctx.longValue("DescribeMetaListResponse.Items["+ i +"].Size["+ j +"]"));
+			}
+			metaItem.setSize(size);
+
 			items.add(metaItem);
 		}
 		describeMetaListResponse.setItems(items);

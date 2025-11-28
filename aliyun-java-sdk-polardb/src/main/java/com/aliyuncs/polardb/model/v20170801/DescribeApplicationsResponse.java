@@ -101,6 +101,10 @@ public class DescribeApplicationsResponse extends AcsResponse {
 
 		private String expireTime;
 
+		private String dBClusterId;
+
+		private String category;
+
 		private List<Endpoint> endpoints;
 
 		public String getStatus() {
@@ -197,6 +201,22 @@ public class DescribeApplicationsResponse extends AcsResponse {
 
 		public void setExpireTime(String expireTime) {
 			this.expireTime = expireTime;
+		}
+
+		public String getDBClusterId() {
+			return this.dBClusterId;
+		}
+
+		public void setDBClusterId(String dBClusterId) {
+			this.dBClusterId = dBClusterId;
+		}
+
+		public String getCategory() {
+			return this.category;
+		}
+
+		public void setCategory(String category) {
+			this.category = category;
 		}
 
 		public List<Endpoint> getEndpoints() {

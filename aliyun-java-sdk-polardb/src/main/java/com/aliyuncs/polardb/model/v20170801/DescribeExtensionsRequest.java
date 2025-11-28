@@ -36,6 +36,8 @@ public class DescribeExtensionsRequest extends RpcAcsRequest<DescribeExtensionsR
 
 	private Long ownerId;
 
+	private String extensionName;
+
 	private String dBName;
 	public DescribeExtensionsRequest() {
 		super("polardb", "2017-08-01", "DescribeExtensions", "polardb");
@@ -99,6 +101,17 @@ public class DescribeExtensionsRequest extends RpcAcsRequest<DescribeExtensionsR
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getExtensionName() {
+		return this.extensionName;
+	}
+
+	public void setExtensionName(String extensionName) {
+		this.extensionName = extensionName;
+		if(extensionName != null){
+			putQueryParameter("ExtensionName", extensionName);
 		}
 	}
 

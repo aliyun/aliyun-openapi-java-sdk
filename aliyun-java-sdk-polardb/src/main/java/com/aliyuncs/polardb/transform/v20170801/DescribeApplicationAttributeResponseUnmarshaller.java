@@ -54,6 +54,7 @@ public class DescribeApplicationAttributeResponseUnmarshaller {
 		describeApplicationAttributeResponse.setZoneId(_ctx.stringValue("DescribeApplicationAttributeResponse.ZoneId"));
 		describeApplicationAttributeResponse.setPolarFSInstanceId(_ctx.stringValue("DescribeApplicationAttributeResponse.PolarFSInstanceId"));
 		describeApplicationAttributeResponse.setServerlessType(_ctx.stringValue("DescribeApplicationAttributeResponse.ServerlessType"));
+		describeApplicationAttributeResponse.setCategory(_ctx.stringValue("DescribeApplicationAttributeResponse.Category"));
 
 		List<SecurityGroup> securityGroups = new ArrayList<SecurityGroup>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeApplicationAttributeResponse.SecurityGroups.Length"); i++) {
@@ -141,6 +142,7 @@ public class DescribeApplicationAttributeResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeApplicationAttributeResponse.Endpoints.Length"); i++) {
 			Endpoint endpoint = new Endpoint();
 			endpoint.setDescription(_ctx.stringValue("DescribeApplicationAttributeResponse.Endpoints["+ i +"].Description"));
+			endpoint.setPortDescription(_ctx.stringValue("DescribeApplicationAttributeResponse.Endpoints["+ i +"].PortDescription"));
 			endpoint.setEndpointId(_ctx.stringValue("DescribeApplicationAttributeResponse.Endpoints["+ i +"].EndpointId"));
 			endpoint.setIP(_ctx.stringValue("DescribeApplicationAttributeResponse.Endpoints["+ i +"].IP"));
 			endpoint.setPort(_ctx.stringValue("DescribeApplicationAttributeResponse.Endpoints["+ i +"].Port"));

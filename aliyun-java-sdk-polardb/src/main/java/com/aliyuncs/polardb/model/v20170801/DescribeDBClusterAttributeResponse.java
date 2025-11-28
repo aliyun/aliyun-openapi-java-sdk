@@ -67,7 +67,7 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 	private String vPCId;
 
-	private String dBClusterStatus;
+	private String searchClusterStatus;
 
 	private String vSwitchId;
 
@@ -188,6 +188,8 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 	private Long storageUsed;
 
 	private Long compressStorageUsed;
+
+	private String dBClusterStatus;
 
 	private List<DBNode> dBNodes;
 
@@ -363,12 +365,12 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 		this.vPCId = vPCId;
 	}
 
-	public String getDBClusterStatus() {
-		return this.dBClusterStatus;
+	public String getSearchClusterStatus() {
+		return this.searchClusterStatus;
 	}
 
-	public void setDBClusterStatus(String dBClusterStatus) {
-		this.dBClusterStatus = dBClusterStatus;
+	public void setSearchClusterStatus(String searchClusterStatus) {
+		this.searchClusterStatus = searchClusterStatus;
 	}
 
 	public String getVSwitchId() {
@@ -849,6 +851,14 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 	public void setCompressStorageUsed(Long compressStorageUsed) {
 		this.compressStorageUsed = compressStorageUsed;
+	}
+
+	public String getDBClusterStatus() {
+		return this.dBClusterStatus;
+	}
+
+	public void setDBClusterStatus(String dBClusterStatus) {
+		this.dBClusterStatus = dBClusterStatus;
 	}
 
 	public List<DBNode> getDBNodes() {
