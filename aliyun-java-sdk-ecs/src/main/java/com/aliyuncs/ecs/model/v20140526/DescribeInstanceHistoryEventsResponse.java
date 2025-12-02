@@ -279,6 +279,10 @@ public class DescribeInstanceHistoryEventsResponse extends AcsResponse {
 
 			private String responseResult;
 
+			private String metricValue;
+
+			private String metricName;
+
 			private List<InactiveDisk> inactiveDisks;
 
 			private List<String> migrationOptions;
@@ -377,6 +381,22 @@ public class DescribeInstanceHistoryEventsResponse extends AcsResponse {
 
 			public void setResponseResult(String responseResult) {
 				this.responseResult = responseResult;
+			}
+
+			public String getMetricValue() {
+				return this.metricValue;
+			}
+
+			public void setMetricValue(String metricValue) {
+				this.metricValue = metricValue;
+			}
+
+			public String getMetricName() {
+				return this.metricName;
+			}
+
+			public void setMetricName(String metricName) {
+				this.metricName = metricName;
 			}
 
 			public List<InactiveDisk> getInactiveDisks() {

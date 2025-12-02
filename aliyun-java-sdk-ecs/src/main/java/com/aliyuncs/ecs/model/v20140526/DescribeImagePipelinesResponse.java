@@ -354,7 +354,17 @@ public class DescribeImagePipelinesResponse extends AcsResponse {
 
 			private Boolean retainImportedImage;
 
+			private String retentionStrategy;
+
+			private String imageName;
+
+			private String description;
+
+			private String roleName;
+
 			private List<DiskDeviceMapping> diskDeviceMappings;
+
+			private List<ImportImageTag> importImageTags;
 
 			private Features features;
 
@@ -406,12 +416,52 @@ public class DescribeImagePipelinesResponse extends AcsResponse {
 				this.retainImportedImage = retainImportedImage;
 			}
 
+			public String getRetentionStrategy() {
+				return this.retentionStrategy;
+			}
+
+			public void setRetentionStrategy(String retentionStrategy) {
+				this.retentionStrategy = retentionStrategy;
+			}
+
+			public String getImageName() {
+				return this.imageName;
+			}
+
+			public void setImageName(String imageName) {
+				this.imageName = imageName;
+			}
+
+			public String getDescription() {
+				return this.description;
+			}
+
+			public void setDescription(String description) {
+				this.description = description;
+			}
+
+			public String getRoleName() {
+				return this.roleName;
+			}
+
+			public void setRoleName(String roleName) {
+				this.roleName = roleName;
+			}
+
 			public List<DiskDeviceMapping> getDiskDeviceMappings() {
 				return this.diskDeviceMappings;
 			}
 
 			public void setDiskDeviceMappings(List<DiskDeviceMapping> diskDeviceMappings) {
 				this.diskDeviceMappings = diskDeviceMappings;
+			}
+
+			public List<ImportImageTag> getImportImageTags() {
+				return this.importImageTags;
+			}
+
+			public void setImportImageTags(List<ImportImageTag> importImageTags) {
+				this.importImageTags = importImageTags;
 			}
 
 			public Features getFeatures() {
@@ -465,9 +515,34 @@ public class DescribeImagePipelinesResponse extends AcsResponse {
 				}
 			}
 
+			public static class ImportImageTag {
+
+				private String key;
+
+				private String value;
+
+				public String getKey() {
+					return this.key;
+				}
+
+				public void setKey(String key) {
+					this.key = key;
+				}
+
+				public String getValue() {
+					return this.value;
+				}
+
+				public void setValue(String value) {
+					this.value = value;
+				}
+			}
+
 			public static class Features {
 
 				private String nvmeSupport;
+
+				private String imdsSupport;
 
 				public String getNvmeSupport() {
 					return this.nvmeSupport;
@@ -475,6 +550,14 @@ public class DescribeImagePipelinesResponse extends AcsResponse {
 
 				public void setNvmeSupport(String nvmeSupport) {
 					this.nvmeSupport = nvmeSupport;
+				}
+
+				public String getImdsSupport() {
+					return this.imdsSupport;
+				}
+
+				public void setImdsSupport(String imdsSupport) {
+					this.imdsSupport = imdsSupport;
 				}
 			}
 		}

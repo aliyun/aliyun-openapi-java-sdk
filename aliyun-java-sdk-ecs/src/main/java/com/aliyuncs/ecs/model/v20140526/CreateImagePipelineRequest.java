@@ -283,8 +283,22 @@ public class CreateImagePipelineRequest extends RpcAcsRequest<CreateImagePipelin
 				if (importImageOptions.getFeatures() != null) {
 					
 						putQueryParameter("ImportImageOptions.Features.NvmeSupport" , importImageOptions.getFeatures().getNvmeSupport());
+						putQueryParameter("ImportImageOptions.Features.ImdsSupport" , importImageOptions.getFeatures().getImdsSupport());
 				}
 				putQueryParameter("ImportImageOptions.RetainImportedImage" , importImageOptions.getRetainImportedImage());
+				putQueryParameter("ImportImageOptions.RetentionStrategy" , importImageOptions.getRetentionStrategy());
+				putQueryParameter("ImportImageOptions.ImageName" , importImageOptions.getImageName());
+				putQueryParameter("ImportImageOptions.Description" , importImageOptions.getDescription());
+				putQueryParameter("ImportImageOptions.RoleName" , importImageOptions.getRoleName());
+				if (importImageOptions.getImportImageTags() != null) {
+					for (int depth1 = 0; depth1 < importImageOptions.getImportImageTags().size(); depth1++) {
+						if (importImageOptions.getImportImageTags().get(depth1) != null) {
+							
+								putQueryParameter("ImportImageOptions.ImportImageTags." + (depth1 + 1) + ".Key" , importImageOptions.getImportImageTags().get(depth1).getKey());
+								putQueryParameter("ImportImageOptions.ImportImageTags." + (depth1 + 1) + ".Value" , importImageOptions.getImportImageTags().get(depth1).getValue());
+						}
+					}
+				}
 		}	
 	}
 
@@ -606,6 +620,16 @@ public class CreateImagePipelineRequest extends RpcAcsRequest<CreateImagePipelin
 
 		private Boolean retainImportedImage;
 
+		private String retentionStrategy;
+
+		private String imageName;
+
+		private String description;
+
+		private String roleName;
+
+		private List<ImportImageTagsItem> importImageTags;
+
 		public String getArchitecture() {
 			return this.architecture;
 		}
@@ -670,6 +694,46 @@ public class CreateImagePipelineRequest extends RpcAcsRequest<CreateImagePipelin
 			this.retainImportedImage = retainImportedImage;
 		}
 
+		public String getRetentionStrategy() {
+			return this.retentionStrategy;
+		}
+
+		public void setRetentionStrategy(String retentionStrategy) {
+			this.retentionStrategy = retentionStrategy;
+		}
+
+		public String getImageName() {
+			return this.imageName;
+		}
+
+		public void setImageName(String imageName) {
+			this.imageName = imageName;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getRoleName() {
+			return this.roleName;
+		}
+
+		public void setRoleName(String roleName) {
+			this.roleName = roleName;
+		}
+
+		public List<ImportImageTagsItem> getImportImageTags() {
+			return this.importImageTags;
+		}
+
+		public void setImportImageTags(List<ImportImageTagsItem> importImageTags) {
+			this.importImageTags = importImageTags;
+		}
+
 		public static class DiskDeviceMappingsItem {
 
 			private String oSSBucket;
@@ -717,12 +781,45 @@ public class CreateImagePipelineRequest extends RpcAcsRequest<CreateImagePipelin
 
 			private String nvmeSupport;
 
+			private String imdsSupport;
+
 			public String getNvmeSupport() {
 				return this.nvmeSupport;
 			}
 
 			public void setNvmeSupport(String nvmeSupport) {
 				this.nvmeSupport = nvmeSupport;
+			}
+
+			public String getImdsSupport() {
+				return this.imdsSupport;
+			}
+
+			public void setImdsSupport(String imdsSupport) {
+				this.imdsSupport = imdsSupport;
+			}
+		}
+
+		public static class ImportImageTagsItem {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
 			}
 		}
 	}

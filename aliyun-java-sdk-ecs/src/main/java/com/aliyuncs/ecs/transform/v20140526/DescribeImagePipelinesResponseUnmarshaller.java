@@ -26,6 +26,7 @@ import com.aliyuncs.ecs.model.v20140526.DescribeImagePipelinesResponse.ImagePipe
 import com.aliyuncs.ecs.model.v20140526.DescribeImagePipelinesResponse.ImagePipelineSet.ImportImageOptions;
 import com.aliyuncs.ecs.model.v20140526.DescribeImagePipelinesResponse.ImagePipelineSet.ImportImageOptions.DiskDeviceMapping;
 import com.aliyuncs.ecs.model.v20140526.DescribeImagePipelinesResponse.ImagePipelineSet.ImportImageOptions.Features;
+import com.aliyuncs.ecs.model.v20140526.DescribeImagePipelinesResponse.ImagePipelineSet.ImportImageOptions.ImportImageTag;
 import com.aliyuncs.ecs.model.v20140526.DescribeImagePipelinesResponse.ImagePipelineSet.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -80,9 +81,14 @@ public class DescribeImagePipelinesResponseUnmarshaller {
 			importImageOptions.setBootMode(_ctx.stringValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].ImportImageOptions.BootMode"));
 			importImageOptions.setLicenseType(_ctx.stringValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].ImportImageOptions.LicenseType"));
 			importImageOptions.setRetainImportedImage(_ctx.booleanValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].ImportImageOptions.RetainImportedImage"));
+			importImageOptions.setRetentionStrategy(_ctx.stringValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].ImportImageOptions.RetentionStrategy"));
+			importImageOptions.setImageName(_ctx.stringValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].ImportImageOptions.ImageName"));
+			importImageOptions.setDescription(_ctx.stringValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].ImportImageOptions.Description"));
+			importImageOptions.setRoleName(_ctx.stringValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].ImportImageOptions.RoleName"));
 
 			Features features = new Features();
 			features.setNvmeSupport(_ctx.stringValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].ImportImageOptions.Features.NvmeSupport"));
+			features.setImdsSupport(_ctx.stringValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].ImportImageOptions.Features.ImdsSupport"));
 			importImageOptions.setFeatures(features);
 
 			List<DiskDeviceMapping> diskDeviceMappings = new ArrayList<DiskDeviceMapping>();
@@ -96,6 +102,16 @@ public class DescribeImagePipelinesResponseUnmarshaller {
 				diskDeviceMappings.add(diskDeviceMapping);
 			}
 			importImageOptions.setDiskDeviceMappings(diskDeviceMappings);
+
+			List<ImportImageTag> importImageTags = new ArrayList<ImportImageTag>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].ImportImageOptions.ImportImageTags.Length"); j++) {
+				ImportImageTag importImageTag = new ImportImageTag();
+				importImageTag.setKey(_ctx.stringValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].ImportImageOptions.ImportImageTags["+ j +"].Key"));
+				importImageTag.setValue(_ctx.stringValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].ImportImageOptions.ImportImageTags["+ j +"].Value"));
+
+				importImageTags.add(importImageTag);
+			}
+			importImageOptions.setImportImageTags(importImageTags);
 			imagePipelineSet.setImportImageOptions(importImageOptions);
 
 			AdvancedOptions advancedOptions = new AdvancedOptions();

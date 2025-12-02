@@ -21,6 +21,7 @@ import com.aliyuncs.ecs.model.v20140526.DescribeRenewalPriceResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeRenewalPriceResponse.PriceInfo;
 import com.aliyuncs.ecs.model.v20140526.DescribeRenewalPriceResponse.PriceInfo.Price;
 import com.aliyuncs.ecs.model.v20140526.DescribeRenewalPriceResponse.PriceInfo.Price.Coupon;
+import com.aliyuncs.ecs.model.v20140526.DescribeRenewalPriceResponse.PriceInfo.Price.Coupon.AdditionalInfo;
 import com.aliyuncs.ecs.model.v20140526.DescribeRenewalPriceResponse.PriceInfo.Price.DepreciateInfo;
 import com.aliyuncs.ecs.model.v20140526.DescribeRenewalPriceResponse.PriceInfo.Price.DetailInfo;
 import com.aliyuncs.ecs.model.v20140526.DescribeRenewalPriceResponse.PriceInfo.Price.DetailInfo.Attribute;
@@ -126,12 +127,25 @@ public class DescribeRenewalPriceResponseUnmarshaller {
 			coupon.setName(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.Price.Coupons["+ i +"].Name"));
 			coupon.setDiscountOff(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.Price.Coupons["+ i +"].DiscountOff"));
 			coupon.setOptionCode(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.Price.Coupons["+ i +"].OptionCode"));
+			coupon.setEffective(_ctx.booleanValue("DescribeRenewalPriceResponse.PriceInfo.Price.Coupons["+ i +"].Effective"));
 
 			List<Long> ruleIds = new ArrayList<Long>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeRenewalPriceResponse.PriceInfo.Price.Coupons["+ i +"].RuleIds.Length"); j++) {
 				ruleIds.add(_ctx.longValue("DescribeRenewalPriceResponse.PriceInfo.Price.Coupons["+ i +"].RuleIds["+ j +"]"));
 			}
 			coupon.setRuleIds(ruleIds);
+
+			AdditionalInfo additionalInfo = new AdditionalInfo();
+			additionalInfo.setCouponType(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.Price.Coupons["+ i +"].AdditionalInfo.CouponType"));
+			additionalInfo.setAvailableAmount(_ctx.doubleValue("DescribeRenewalPriceResponse.PriceInfo.Price.Coupons["+ i +"].AdditionalInfo.AvailableAmount"));
+			additionalInfo.setUpperLimitAmount(_ctx.doubleValue("DescribeRenewalPriceResponse.PriceInfo.Price.Coupons["+ i +"].AdditionalInfo.UpperLimitAmount"));
+			additionalInfo.setStartTime(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.Price.Coupons["+ i +"].AdditionalInfo.StartTime"));
+			additionalInfo.setEndTime(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.Price.Coupons["+ i +"].AdditionalInfo.EndTime"));
+			additionalInfo.setIneffectiveReason(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.Price.Coupons["+ i +"].AdditionalInfo.IneffectiveReason"));
+			additionalInfo.setDiscountRate(_ctx.doubleValue("DescribeRenewalPriceResponse.PriceInfo.Price.Coupons["+ i +"].AdditionalInfo.DiscountRate"));
+			additionalInfo.setCertainAmount(_ctx.doubleValue("DescribeRenewalPriceResponse.PriceInfo.Price.Coupons["+ i +"].AdditionalInfo.CertainAmount"));
+			additionalInfo.setVoucherTotalAmount(_ctx.doubleValue("DescribeRenewalPriceResponse.PriceInfo.Price.Coupons["+ i +"].AdditionalInfo.VoucherTotalAmount"));
+			coupon.setAdditionalInfo(additionalInfo);
 
 			coupons.add(coupon);
 		}

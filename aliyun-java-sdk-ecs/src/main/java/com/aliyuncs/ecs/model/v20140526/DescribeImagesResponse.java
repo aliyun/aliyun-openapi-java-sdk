@@ -143,6 +143,8 @@ public class DescribeImagesResponse extends AcsResponse {
 
 		private String supplierName;
 
+		private String licenseType;
+
 		private List<DiskDeviceMapping> diskDeviceMappings;
 
 		private List<Tag> tags;
@@ -373,6 +375,14 @@ public class DescribeImagesResponse extends AcsResponse {
 
 		public void setSupplierName(String supplierName) {
 			this.supplierName = supplierName;
+		}
+
+		public String getLicenseType() {
+			return this.licenseType;
+		}
+
+		public void setLicenseType(String licenseType) {
+			this.licenseType = licenseType;
 		}
 
 		public List<DiskDeviceMapping> getDiskDeviceMappings() {

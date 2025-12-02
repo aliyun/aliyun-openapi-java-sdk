@@ -15,6 +15,7 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ecs.Endpoint;
 
@@ -22,22 +23,17 @@ import com.aliyuncs.ecs.Endpoint;
  * @author auto create
  * @version 
  */
-public class ReleaseDedicatedHostRequest extends RpcAcsRequest<ReleaseDedicatedHostResponse> {
+public class OpenSnapshotServiceRequest extends RpcAcsRequest<OpenSnapshotServiceResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private Boolean terminateSubscription;
-
 	private String resourceOwnerAccount;
 
-	private String ownerAccount;
-
-	private String dedicatedHostId;
-
 	private Long ownerId;
-	public ReleaseDedicatedHostRequest() {
-		super("Ecs", "2014-05-26", "ReleaseDedicatedHost", "ecs");
+	public OpenSnapshotServiceRequest() {
+		super("Ecs", "2014-05-26", "OpenSnapshotService", "ecs");
+		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -56,17 +52,6 @@ public class ReleaseDedicatedHostRequest extends RpcAcsRequest<ReleaseDedicatedH
 		}
 	}
 
-	public Boolean getTerminateSubscription() {
-		return this.terminateSubscription;
-	}
-
-	public void setTerminateSubscription(Boolean terminateSubscription) {
-		this.terminateSubscription = terminateSubscription;
-		if(terminateSubscription != null){
-			putQueryParameter("TerminateSubscription", terminateSubscription.toString());
-		}
-	}
-
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -75,28 +60,6 @@ public class ReleaseDedicatedHostRequest extends RpcAcsRequest<ReleaseDedicatedH
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getDedicatedHostId() {
-		return this.dedicatedHostId;
-	}
-
-	public void setDedicatedHostId(String dedicatedHostId) {
-		this.dedicatedHostId = dedicatedHostId;
-		if(dedicatedHostId != null){
-			putQueryParameter("DedicatedHostId", dedicatedHostId);
 		}
 	}
 
@@ -112,8 +75,8 @@ public class ReleaseDedicatedHostRequest extends RpcAcsRequest<ReleaseDedicatedH
 	}
 
 	@Override
-	public Class<ReleaseDedicatedHostResponse> getResponseClass() {
-		return ReleaseDedicatedHostResponse.class;
+	public Class<OpenSnapshotServiceResponse> getResponseClass() {
+		return OpenSnapshotServiceResponse.class;
 	}
 
 }

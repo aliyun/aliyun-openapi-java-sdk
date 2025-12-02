@@ -488,7 +488,11 @@ public class DescribeRenewalPriceResponse extends AcsResponse {
 
 				private String optionCode;
 
+				private Boolean effective;
+
 				private List<Long> ruleIds;
+
+				private AdditionalInfo additionalInfo;
 
 				public Boolean getIsSelected() {
 					return this.isSelected;
@@ -538,12 +542,121 @@ public class DescribeRenewalPriceResponse extends AcsResponse {
 					this.optionCode = optionCode;
 				}
 
+				public Boolean getEffective() {
+					return this.effective;
+				}
+
+				public void setEffective(Boolean effective) {
+					this.effective = effective;
+				}
+
 				public List<Long> getRuleIds() {
 					return this.ruleIds;
 				}
 
 				public void setRuleIds(List<Long> ruleIds) {
 					this.ruleIds = ruleIds;
+				}
+
+				public AdditionalInfo getAdditionalInfo() {
+					return this.additionalInfo;
+				}
+
+				public void setAdditionalInfo(AdditionalInfo additionalInfo) {
+					this.additionalInfo = additionalInfo;
+				}
+
+				public static class AdditionalInfo {
+
+					private String couponType;
+
+					private Double availableAmount;
+
+					private Double upperLimitAmount;
+
+					private String startTime;
+
+					private String endTime;
+
+					private String ineffectiveReason;
+
+					private Double discountRate;
+
+					private Double certainAmount;
+
+					private Double voucherTotalAmount;
+
+					public String getCouponType() {
+						return this.couponType;
+					}
+
+					public void setCouponType(String couponType) {
+						this.couponType = couponType;
+					}
+
+					public Double getAvailableAmount() {
+						return this.availableAmount;
+					}
+
+					public void setAvailableAmount(Double availableAmount) {
+						this.availableAmount = availableAmount;
+					}
+
+					public Double getUpperLimitAmount() {
+						return this.upperLimitAmount;
+					}
+
+					public void setUpperLimitAmount(Double upperLimitAmount) {
+						this.upperLimitAmount = upperLimitAmount;
+					}
+
+					public String getStartTime() {
+						return this.startTime;
+					}
+
+					public void setStartTime(String startTime) {
+						this.startTime = startTime;
+					}
+
+					public String getEndTime() {
+						return this.endTime;
+					}
+
+					public void setEndTime(String endTime) {
+						this.endTime = endTime;
+					}
+
+					public String getIneffectiveReason() {
+						return this.ineffectiveReason;
+					}
+
+					public void setIneffectiveReason(String ineffectiveReason) {
+						this.ineffectiveReason = ineffectiveReason;
+					}
+
+					public Double getDiscountRate() {
+						return this.discountRate;
+					}
+
+					public void setDiscountRate(Double discountRate) {
+						this.discountRate = discountRate;
+					}
+
+					public Double getCertainAmount() {
+						return this.certainAmount;
+					}
+
+					public void setCertainAmount(Double certainAmount) {
+						this.certainAmount = certainAmount;
+					}
+
+					public Double getVoucherTotalAmount() {
+						return this.voucherTotalAmount;
+					}
+
+					public void setVoucherTotalAmount(Double voucherTotalAmount) {
+						this.voucherTotalAmount = voucherTotalAmount;
+					}
 				}
 			}
 

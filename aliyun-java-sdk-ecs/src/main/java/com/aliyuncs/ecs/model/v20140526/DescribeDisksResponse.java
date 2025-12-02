@@ -664,6 +664,8 @@ public class DescribeDisksResponse extends AcsResponse {
 
 			private String accessToken;
 
+			private String vuid;
+
 			public String getInstanceId() {
 				return this.instanceId;
 			}
@@ -726,6 +728,14 @@ public class DescribeDisksResponse extends AcsResponse {
 
 			public void setAccessToken(String accessToken) {
 				this.accessToken = accessToken;
+			}
+
+			public String getVuid() {
+				return this.vuid;
+			}
+
+			public void setVuid(String vuid) {
+				this.vuid = vuid;
 			}
 		}
 

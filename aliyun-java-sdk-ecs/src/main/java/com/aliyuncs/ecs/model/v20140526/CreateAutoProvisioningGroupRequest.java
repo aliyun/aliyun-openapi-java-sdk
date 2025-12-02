@@ -537,6 +537,15 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 						putQueryParameter("LaunchConfiguration.SchedulerOptions.DedicatedHostId" , launchConfiguration.getSchedulerOptions().getDedicatedHostId());
 						putQueryParameter("LaunchConfiguration.SchedulerOptions.DedicatedHostClusterId" , launchConfiguration.getSchedulerOptions().getDedicatedHostClusterId());
 				}
+				if (launchConfiguration.getSecurityOptions() != null) {
+					
+						putQueryParameter("LaunchConfiguration.SecurityOptions.TrustedSystemMode" , launchConfiguration.getSecurityOptions().getTrustedSystemMode());
+				}
+				if (launchConfiguration.getCpuOptions() != null) {
+					
+						putQueryParameter("LaunchConfiguration.CpuOptions.Core" , launchConfiguration.getCpuOptions().getCore());
+						putQueryParameter("LaunchConfiguration.CpuOptions.ThreadsPerCore" , launchConfiguration.getCpuOptions().getThreadsPerCore());
+				}
 		}	
 	}
 
@@ -1230,6 +1239,10 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 
 		private SchedulerOptions schedulerOptions;
 
+		private SecurityOptions securityOptions;
+
+		private CpuOptions cpuOptions;
+
 		public Integer getPeriod() {
 			return this.period;
 		}
@@ -1294,6 +1307,22 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 			this.schedulerOptions = schedulerOptions;
 		}
 
+		public SecurityOptions getSecurityOptions() {
+			return this.securityOptions;
+		}
+
+		public void setSecurityOptions(SecurityOptions securityOptions) {
+			this.securityOptions = securityOptions;
+		}
+
+		public CpuOptions getCpuOptions() {
+			return this.cpuOptions;
+		}
+
+		public void setCpuOptions(CpuOptions cpuOptions) {
+			this.cpuOptions = cpuOptions;
+		}
+
 		public static class ImageOptions {
 
 			private Boolean loginAsNonRoot;
@@ -1327,6 +1356,42 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 
 			public void setDedicatedHostClusterId(String dedicatedHostClusterId) {
 				this.dedicatedHostClusterId = dedicatedHostClusterId;
+			}
+		}
+
+		public static class SecurityOptions {
+
+			private String trustedSystemMode;
+
+			public String getTrustedSystemMode() {
+				return this.trustedSystemMode;
+			}
+
+			public void setTrustedSystemMode(String trustedSystemMode) {
+				this.trustedSystemMode = trustedSystemMode;
+			}
+		}
+
+		public static class CpuOptions {
+
+			private Integer core;
+
+			private Integer threadsPerCore;
+
+			public Integer getCore() {
+				return this.core;
+			}
+
+			public void setCore(Integer core) {
+				this.core = core;
+			}
+
+			public Integer getThreadsPerCore() {
+				return this.threadsPerCore;
+			}
+
+			public void setThreadsPerCore(Integer threadsPerCore) {
+				this.threadsPerCore = threadsPerCore;
 			}
 		}
 	}

@@ -130,6 +130,7 @@ public class DescribeDisksResponseUnmarshaller {
 				attachment.setIdentifier(_ctx.stringValue("DescribeDisksResponse.Disks["+ i +"].Attachments["+ j +"].Identifier"));
 				attachment.setTargetDevice(_ctx.stringValue("DescribeDisksResponse.Disks["+ i +"].Attachments["+ j +"].TargetDevice"));
 				attachment.setAccessToken(_ctx.stringValue("DescribeDisksResponse.Disks["+ i +"].Attachments["+ j +"].AccessToken"));
+				attachment.setVuid(_ctx.stringValue("DescribeDisksResponse.Disks["+ i +"].Attachments["+ j +"].Vuid"));
 
 				attachments.add(attachment);
 			}

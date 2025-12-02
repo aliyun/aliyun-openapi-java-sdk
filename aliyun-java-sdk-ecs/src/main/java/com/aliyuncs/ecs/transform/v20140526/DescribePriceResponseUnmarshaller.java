@@ -21,6 +21,7 @@ import com.aliyuncs.ecs.model.v20140526.DescribePriceResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribePriceResponse.PriceInfo;
 import com.aliyuncs.ecs.model.v20140526.DescribePriceResponse.PriceInfo.Price;
 import com.aliyuncs.ecs.model.v20140526.DescribePriceResponse.PriceInfo.Price.Coupon;
+import com.aliyuncs.ecs.model.v20140526.DescribePriceResponse.PriceInfo.Price.Coupon.AdditionalInfo;
 import com.aliyuncs.ecs.model.v20140526.DescribePriceResponse.PriceInfo.Price.DepreciateInfo;
 import com.aliyuncs.ecs.model.v20140526.DescribePriceResponse.PriceInfo.Price.DetailInfo;
 import com.aliyuncs.ecs.model.v20140526.DescribePriceResponse.PriceInfo.Price.DetailInfo.Attribute;
@@ -83,12 +84,25 @@ public class DescribePriceResponseUnmarshaller {
 			coupon.setIsSelected(_ctx.booleanValue("DescribePriceResponse.PriceInfo.Price.Coupons["+ i +"].IsSelected"));
 			coupon.setOptionCode(_ctx.stringValue("DescribePriceResponse.PriceInfo.Price.Coupons["+ i +"].OptionCode"));
 			coupon.setName(_ctx.stringValue("DescribePriceResponse.PriceInfo.Price.Coupons["+ i +"].Name"));
+			coupon.setEffective(_ctx.booleanValue("DescribePriceResponse.PriceInfo.Price.Coupons["+ i +"].Effective"));
 
 			List<Long> ruleIds = new ArrayList<Long>();
 			for (int j = 0; j < _ctx.lengthValue("DescribePriceResponse.PriceInfo.Price.Coupons["+ i +"].RuleIds.Length"); j++) {
 				ruleIds.add(_ctx.longValue("DescribePriceResponse.PriceInfo.Price.Coupons["+ i +"].RuleIds["+ j +"]"));
 			}
 			coupon.setRuleIds(ruleIds);
+
+			AdditionalInfo additionalInfo = new AdditionalInfo();
+			additionalInfo.setCouponType(_ctx.stringValue("DescribePriceResponse.PriceInfo.Price.Coupons["+ i +"].AdditionalInfo.CouponType"));
+			additionalInfo.setAvailableAmount(_ctx.doubleValue("DescribePriceResponse.PriceInfo.Price.Coupons["+ i +"].AdditionalInfo.AvailableAmount"));
+			additionalInfo.setUpperLimitAmount(_ctx.doubleValue("DescribePriceResponse.PriceInfo.Price.Coupons["+ i +"].AdditionalInfo.UpperLimitAmount"));
+			additionalInfo.setStartTime(_ctx.stringValue("DescribePriceResponse.PriceInfo.Price.Coupons["+ i +"].AdditionalInfo.StartTime"));
+			additionalInfo.setEndTime(_ctx.stringValue("DescribePriceResponse.PriceInfo.Price.Coupons["+ i +"].AdditionalInfo.EndTime"));
+			additionalInfo.setIneffectiveReason(_ctx.stringValue("DescribePriceResponse.PriceInfo.Price.Coupons["+ i +"].AdditionalInfo.IneffectiveReason"));
+			additionalInfo.setDiscountRate(_ctx.doubleValue("DescribePriceResponse.PriceInfo.Price.Coupons["+ i +"].AdditionalInfo.DiscountRate"));
+			additionalInfo.setCertainAmount(_ctx.doubleValue("DescribePriceResponse.PriceInfo.Price.Coupons["+ i +"].AdditionalInfo.CertainAmount"));
+			additionalInfo.setVoucherTotalAmount(_ctx.doubleValue("DescribePriceResponse.PriceInfo.Price.Coupons["+ i +"].AdditionalInfo.VoucherTotalAmount"));
+			coupon.setAdditionalInfo(additionalInfo);
 
 			coupons.add(coupon);
 		}

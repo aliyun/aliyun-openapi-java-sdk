@@ -32,6 +32,8 @@ public class DescribeManagedInstancesRequest extends RpcAcsRequest<DescribeManag
 
 	private String resourceGroupId;
 
+	private String machineId;
+
 	private String nextToken;
 
 	private Long pageSize;
@@ -94,6 +96,17 @@ public class DescribeManagedInstancesRequest extends RpcAcsRequest<DescribeManag
 		this.resourceGroupId = resourceGroupId;
 		if(resourceGroupId != null){
 			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getMachineId() {
+		return this.machineId;
+	}
+
+	public void setMachineId(String machineId) {
+		this.machineId = machineId;
+		if(machineId != null){
+			putQueryParameter("MachineId", machineId);
 		}
 	}
 
