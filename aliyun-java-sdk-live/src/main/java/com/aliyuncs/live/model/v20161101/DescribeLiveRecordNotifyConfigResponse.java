@@ -46,28 +46,32 @@ public class DescribeLiveRecordNotifyConfigResponse extends AcsResponse {
 
 	public static class LiveRecordNotifyConfig {
 
-		private Boolean needStatusNotify;
+		private Boolean notifyReqAuth;
 
-		private String onDemandUrl;
+		private String notifyAuthKey;
 
 		private String domainName;
 
 		private String notifyUrl;
 
-		public Boolean getNeedStatusNotify() {
-			return this.needStatusNotify;
+		private Boolean needStatusNotify;
+
+		private String onDemandUrl;
+
+		public Boolean getNotifyReqAuth() {
+			return this.notifyReqAuth;
 		}
 
-		public void setNeedStatusNotify(Boolean needStatusNotify) {
-			this.needStatusNotify = needStatusNotify;
+		public void setNotifyReqAuth(Boolean notifyReqAuth) {
+			this.notifyReqAuth = notifyReqAuth;
 		}
 
-		public String getOnDemandUrl() {
-			return this.onDemandUrl;
+		public String getNotifyAuthKey() {
+			return this.notifyAuthKey;
 		}
 
-		public void setOnDemandUrl(String onDemandUrl) {
-			this.onDemandUrl = onDemandUrl;
+		public void setNotifyAuthKey(String notifyAuthKey) {
+			this.notifyAuthKey = notifyAuthKey;
 		}
 
 		public String getDomainName() {
@@ -84,6 +88,22 @@ public class DescribeLiveRecordNotifyConfigResponse extends AcsResponse {
 
 		public void setNotifyUrl(String notifyUrl) {
 			this.notifyUrl = notifyUrl;
+		}
+
+		public Boolean getNeedStatusNotify() {
+			return this.needStatusNotify;
+		}
+
+		public void setNeedStatusNotify(Boolean needStatusNotify) {
+			this.needStatusNotify = needStatusNotify;
+		}
+
+		public String getOnDemandUrl() {
+			return this.onDemandUrl;
+		}
+
+		public void setOnDemandUrl(String onDemandUrl) {
+			this.onDemandUrl = onDemandUrl;
 		}
 	}
 

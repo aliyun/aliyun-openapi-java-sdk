@@ -99,13 +99,15 @@ public class DescribeLiveStreamsNotifyRecordsResponse extends AcsResponse {
 
 		private String notifyContent;
 
-		private String notifyResponse;
-
 		private String notifyUrl;
 
 		private String notifyResult;
 
 		private String appName;
+
+		private String notifyResponse;
+
+		private String notifyHeader;
 
 		public String getNotifyType() {
 			return this.notifyType;
@@ -155,14 +157,6 @@ public class DescribeLiveStreamsNotifyRecordsResponse extends AcsResponse {
 			this.notifyContent = notifyContent;
 		}
 
-		public String getNotifyResponse() {
-			return this.notifyResponse;
-		}
-
-		public void setNotifyResponse(String notifyResponse) {
-			this.notifyResponse = notifyResponse;
-		}
-
 		public String getNotifyUrl() {
 			return this.notifyUrl;
 		}
@@ -185,6 +179,22 @@ public class DescribeLiveStreamsNotifyRecordsResponse extends AcsResponse {
 
 		public void setAppName(String appName) {
 			this.appName = appName;
+		}
+
+		public String getNotifyResponse() {
+			return this.notifyResponse;
+		}
+
+		public void setNotifyResponse(String notifyResponse) {
+			this.notifyResponse = notifyResponse;
+		}
+
+		public String getNotifyHeader() {
+			return this.notifyHeader;
+		}
+
+		public void setNotifyHeader(String notifyHeader) {
+			this.notifyHeader = notifyHeader;
 		}
 	}
 

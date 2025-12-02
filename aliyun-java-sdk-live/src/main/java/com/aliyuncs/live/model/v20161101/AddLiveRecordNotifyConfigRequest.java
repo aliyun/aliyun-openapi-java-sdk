@@ -27,6 +27,8 @@ public class AddLiveRecordNotifyConfigRequest extends RpcAcsRequest<AddLiveRecor
 
 	private String onDemandUrl;
 
+	private Boolean notifyReqAuth;
+
 	private String securityToken;
 
 	private String notifyUrl;
@@ -36,6 +38,8 @@ public class AddLiveRecordNotifyConfigRequest extends RpcAcsRequest<AddLiveRecor
 	private String domainName;
 
 	private Long ownerId;
+
+	private String notifyAuthKey;
 	public AddLiveRecordNotifyConfigRequest() {
 		super("live", "2016-11-01", "AddLiveRecordNotifyConfig", "live");
 		setMethod(MethodType.POST);
@@ -53,6 +57,17 @@ public class AddLiveRecordNotifyConfigRequest extends RpcAcsRequest<AddLiveRecor
 		this.onDemandUrl = onDemandUrl;
 		if(onDemandUrl != null){
 			putQueryParameter("OnDemandUrl", onDemandUrl);
+		}
+	}
+
+	public Boolean getNotifyReqAuth() {
+		return this.notifyReqAuth;
+	}
+
+	public void setNotifyReqAuth(Boolean notifyReqAuth) {
+		this.notifyReqAuth = notifyReqAuth;
+		if(notifyReqAuth != null){
+			putQueryParameter("NotifyReqAuth", notifyReqAuth.toString());
 		}
 	}
 
@@ -108,6 +123,17 @@ public class AddLiveRecordNotifyConfigRequest extends RpcAcsRequest<AddLiveRecor
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getNotifyAuthKey() {
+		return this.notifyAuthKey;
+	}
+
+	public void setNotifyAuthKey(String notifyAuthKey) {
+		this.notifyAuthKey = notifyAuthKey;
+		if(notifyAuthKey != null){
+			putQueryParameter("NotifyAuthKey", notifyAuthKey);
 		}
 	}
 

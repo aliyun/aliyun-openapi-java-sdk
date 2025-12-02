@@ -26,10 +26,12 @@ public class DescribeLiveRecordNotifyConfigResponseUnmarshaller {
 		describeLiveRecordNotifyConfigResponse.setRequestId(_ctx.stringValue("DescribeLiveRecordNotifyConfigResponse.RequestId"));
 
 		LiveRecordNotifyConfig liveRecordNotifyConfig = new LiveRecordNotifyConfig();
-		liveRecordNotifyConfig.setNeedStatusNotify(_ctx.booleanValue("DescribeLiveRecordNotifyConfigResponse.LiveRecordNotifyConfig.NeedStatusNotify"));
-		liveRecordNotifyConfig.setOnDemandUrl(_ctx.stringValue("DescribeLiveRecordNotifyConfigResponse.LiveRecordNotifyConfig.OnDemandUrl"));
+		liveRecordNotifyConfig.setNotifyReqAuth(_ctx.booleanValue("DescribeLiveRecordNotifyConfigResponse.LiveRecordNotifyConfig.NotifyReqAuth"));
+		liveRecordNotifyConfig.setNotifyAuthKey(_ctx.stringValue("DescribeLiveRecordNotifyConfigResponse.LiveRecordNotifyConfig.NotifyAuthKey"));
 		liveRecordNotifyConfig.setDomainName(_ctx.stringValue("DescribeLiveRecordNotifyConfigResponse.LiveRecordNotifyConfig.DomainName"));
 		liveRecordNotifyConfig.setNotifyUrl(_ctx.stringValue("DescribeLiveRecordNotifyConfigResponse.LiveRecordNotifyConfig.NotifyUrl"));
+		liveRecordNotifyConfig.setNeedStatusNotify(_ctx.booleanValue("DescribeLiveRecordNotifyConfigResponse.LiveRecordNotifyConfig.NeedStatusNotify"));
+		liveRecordNotifyConfig.setOnDemandUrl(_ctx.stringValue("DescribeLiveRecordNotifyConfigResponse.LiveRecordNotifyConfig.OnDemandUrl"));
 		describeLiveRecordNotifyConfigResponse.setLiveRecordNotifyConfig(liveRecordNotifyConfig);
 	 
 	 	return describeLiveRecordNotifyConfigResponse;

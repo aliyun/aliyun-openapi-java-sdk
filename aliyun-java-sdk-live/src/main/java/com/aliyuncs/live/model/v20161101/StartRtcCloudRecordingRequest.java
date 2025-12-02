@@ -45,6 +45,8 @@ public class StartRtcCloudRecordingRequest extends RpcAcsRequest<StartRtcCloudRe
 	@SerializedName("mixTranscodeParams")
 	private MixTranscodeParams mixTranscodeParams;
 
+	private List<String> notifyFileUploadedFormats;
+
 	private String notifyAuthKey;
 
 	private String appId;
@@ -126,6 +128,19 @@ public class StartRtcCloudRecordingRequest extends RpcAcsRequest<StartRtcCloudRe
 		this.mixTranscodeParams = mixTranscodeParams;	
 		if (mixTranscodeParams != null) {
 			putQueryParameter("MixTranscodeParams" , new Gson().toJson(mixTranscodeParams));
+		}	
+	}
+
+	public List<String> getNotifyFileUploadedFormats() {
+		return this.notifyFileUploadedFormats;
+	}
+
+	public void setNotifyFileUploadedFormats(List<String> notifyFileUploadedFormats) {
+		this.notifyFileUploadedFormats = notifyFileUploadedFormats;	
+		if (notifyFileUploadedFormats != null) {
+			for (int i = 0; i < notifyFileUploadedFormats.size(); i++) {
+				putQueryParameter("NotifyFileUploadedFormat." + (i + 1) , notifyFileUploadedFormats.get(i));
+			}
 		}	
 	}
 

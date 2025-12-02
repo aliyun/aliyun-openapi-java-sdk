@@ -45,8 +45,9 @@ public class DescribeLiveRecordNotifyRecordsResponseUnmarshaller {
 			callback.setNotifyTime(_ctx.stringValue("DescribeLiveRecordNotifyRecordsResponse.CallbackList["+ i +"].NotifyTime"));
 			callback.setNotifyType(_ctx.stringValue("DescribeLiveRecordNotifyRecordsResponse.CallbackList["+ i +"].NotifyType"));
 			callback.setNotifyUrl(_ctx.stringValue("DescribeLiveRecordNotifyRecordsResponse.CallbackList["+ i +"].NotifyUrl"));
-			callback.setNotifyResponse(_ctx.stringValue("DescribeLiveRecordNotifyRecordsResponse.CallbackList["+ i +"].NotifyResponse"));
+			callback.setNotifyHeader(_ctx.stringValue("DescribeLiveRecordNotifyRecordsResponse.CallbackList["+ i +"].NotifyHeader"));
 			callback.setStreamName(_ctx.stringValue("DescribeLiveRecordNotifyRecordsResponse.CallbackList["+ i +"].StreamName"));
+			callback.setNotifyResponse(_ctx.stringValue("DescribeLiveRecordNotifyRecordsResponse.CallbackList["+ i +"].NotifyResponse"));
 
 			callbackList.add(callback);
 		}
