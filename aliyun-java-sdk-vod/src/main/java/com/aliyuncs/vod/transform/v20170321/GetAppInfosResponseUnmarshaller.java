@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.vod.model.v20170321.GetAppInfosResponse;
 import com.aliyuncs.vod.model.v20170321.GetAppInfosResponse.AppInfo;
+import com.aliyuncs.vod.model.v20170321.GetAppInfosResponse.AppInfo.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -46,6 +47,16 @@ public class GetAppInfosResponseUnmarshaller {
 			appInfo.setAppId(_ctx.stringValue("GetAppInfosResponse.AppInfoList["+ i +"].AppId"));
 			appInfo.setModificationTime(_ctx.stringValue("GetAppInfosResponse.AppInfoList["+ i +"].ModificationTime"));
 			appInfo.setResourceGroupId(_ctx.stringValue("GetAppInfosResponse.AppInfoList["+ i +"].ResourceGroupId"));
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("GetAppInfosResponse.AppInfoList["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setTagKey(_ctx.stringValue("GetAppInfosResponse.AppInfoList["+ i +"].Tags["+ j +"].TagKey"));
+				tag.setTagValue(_ctx.stringValue("GetAppInfosResponse.AppInfoList["+ i +"].Tags["+ j +"].TagValue"));
+
+				tags.add(tag);
+			}
+			appInfo.setTags(tags);
 
 			appInfoList.add(appInfo);
 		}

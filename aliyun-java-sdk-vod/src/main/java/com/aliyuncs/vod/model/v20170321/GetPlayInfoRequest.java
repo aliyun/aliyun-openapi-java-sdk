@@ -47,6 +47,8 @@ public class GetPlayInfoRequest extends RpcAcsRequest<GetPlayInfoResponse> {
 
 	private String resultType;
 
+	private String referenceId;
+
 	private String additionType;
 	public GetPlayInfoRequest() {
 		super("vod", "2017-03-21", "GetPlayInfo", "vod");
@@ -175,6 +177,17 @@ public class GetPlayInfoRequest extends RpcAcsRequest<GetPlayInfoResponse> {
 		this.resultType = resultType;
 		if(resultType != null){
 			putQueryParameter("ResultType", resultType);
+		}
+	}
+
+	public String getReferenceId() {
+		return this.referenceId;
+	}
+
+	public void setReferenceId(String referenceId) {
+		this.referenceId = referenceId;
+		if(referenceId != null){
+			putQueryParameter("ReferenceId", referenceId);
 		}
 	}
 

@@ -75,7 +75,7 @@ public class ListAppInfoResponse extends AcsResponse {
 
 		private String resourceGroupId;
 
-		private List<TagsItem> tags;
+		private List<Tag> tags;
 
 		public String getType() {
 			return this.type;
@@ -149,15 +149,15 @@ public class ListAppInfoResponse extends AcsResponse {
 			this.resourceGroupId = resourceGroupId;
 		}
 
-		public List<TagsItem> getTags() {
+		public List<Tag> getTags() {
 			return this.tags;
 		}
 
-		public void setTags(List<TagsItem> tags) {
+		public void setTags(List<Tag> tags) {
 			this.tags = tags;
 		}
 
-		public static class TagsItem {
+		public static class Tag {
 
 			private String tagKey;
 

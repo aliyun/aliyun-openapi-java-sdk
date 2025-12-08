@@ -22,20 +22,18 @@ import com.aliyuncs.vod.Endpoint;
  * @author auto create
  * @version 
  */
-public class RefreshUploadVideoRequest extends RpcAcsRequest<RefreshUploadVideoResponse> {
+public class GetAppPlayKeyRequest extends RpcAcsRequest<GetAppPlayKeyResponse> {
 	   
 
 	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
-	private String videoId;
-
 	private Long ownerId;
 
-	private String referenceId;
-	public RefreshUploadVideoRequest() {
-		super("vod", "2017-03-21", "RefreshUploadVideo", "vod");
+	private String appId;
+	public GetAppPlayKeyRequest() {
+		super("vod", "2017-03-21", "GetAppPlayKey", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -65,17 +63,6 @@ public class RefreshUploadVideoRequest extends RpcAcsRequest<RefreshUploadVideoR
 		}
 	}
 
-	public String getVideoId() {
-		return this.videoId;
-	}
-
-	public void setVideoId(String videoId) {
-		this.videoId = videoId;
-		if(videoId != null){
-			putQueryParameter("VideoId", videoId);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -87,20 +74,20 @@ public class RefreshUploadVideoRequest extends RpcAcsRequest<RefreshUploadVideoR
 		}
 	}
 
-	public String getReferenceId() {
-		return this.referenceId;
+	public String getAppId() {
+		return this.appId;
 	}
 
-	public void setReferenceId(String referenceId) {
-		this.referenceId = referenceId;
-		if(referenceId != null){
-			putQueryParameter("ReferenceId", referenceId);
+	public void setAppId(String appId) {
+		this.appId = appId;
+		if(appId != null){
+			putQueryParameter("AppId", appId);
 		}
 	}
 
 	@Override
-	public Class<RefreshUploadVideoResponse> getResponseClass() {
-		return RefreshUploadVideoResponse.class;
+	public Class<GetAppPlayKeyResponse> getResponseClass() {
+		return GetAppPlayKeyResponse.class;
 	}
 
 }

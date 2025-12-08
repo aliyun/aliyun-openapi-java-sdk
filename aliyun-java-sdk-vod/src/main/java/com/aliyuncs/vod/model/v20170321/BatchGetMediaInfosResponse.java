@@ -31,6 +31,8 @@ public class BatchGetMediaInfosResponse extends AcsResponse {
 
 	private List<String> nonExistMediaIds;
 
+	private List<String> nonExistReferenceIds;
+
 	private List<String> forbiddenMediaIds;
 
 	public String getRequestId() {
@@ -55,6 +57,14 @@ public class BatchGetMediaInfosResponse extends AcsResponse {
 
 	public void setNonExistMediaIds(List<String> nonExistMediaIds) {
 		this.nonExistMediaIds = nonExistMediaIds;
+	}
+
+	public List<String> getNonExistReferenceIds() {
+		return this.nonExistReferenceIds;
+	}
+
+	public void setNonExistReferenceIds(List<String> nonExistReferenceIds) {
+		this.nonExistReferenceIds = nonExistReferenceIds;
 	}
 
 	public List<String> getForbiddenMediaIds() {
@@ -462,6 +472,8 @@ public class BatchGetMediaInfosResponse extends AcsResponse {
 
 			private String userData;
 
+			private String referenceId;
+
 			private List<String> snapshots;
 
 			public String getStorageLocation() {
@@ -624,6 +636,14 @@ public class BatchGetMediaInfosResponse extends AcsResponse {
 				this.userData = userData;
 			}
 
+			public String getReferenceId() {
+				return this.referenceId;
+			}
+
+			public void setReferenceId(String referenceId) {
+				this.referenceId = referenceId;
+			}
+
 			public List<String> getSnapshots() {
 				return this.snapshots;
 			}
@@ -658,6 +678,8 @@ public class BatchGetMediaInfosResponse extends AcsResponse {
 			private String duration;
 
 			private String fps;
+
+			private String fileMD5;
 
 			private List<AudioStream> audioStreamList;
 
@@ -757,6 +779,14 @@ public class BatchGetMediaInfosResponse extends AcsResponse {
 
 			public void setFps(String fps) {
 				this.fps = fps;
+			}
+
+			public String getFileMD5() {
+				return this.fileMD5;
+			}
+
+			public void setFileMD5(String fileMD5) {
+				this.fileMD5 = fileMD5;
 			}
 
 			public List<AudioStream> getAudioStreamList() {

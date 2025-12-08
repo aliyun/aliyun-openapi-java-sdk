@@ -39,6 +39,12 @@ public class BatchGetMediaInfosResponseUnmarshaller {
 		}
 		batchGetMediaInfosResponse.setNonExistMediaIds(nonExistMediaIds);
 
+		List<String> nonExistReferenceIds = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("BatchGetMediaInfosResponse.NonExistReferenceIds.Length"); i++) {
+			nonExistReferenceIds.add(_ctx.stringValue("BatchGetMediaInfosResponse.NonExistReferenceIds["+ i +"]"));
+		}
+		batchGetMediaInfosResponse.setNonExistReferenceIds(nonExistReferenceIds);
+
 		List<String> forbiddenMediaIds = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("BatchGetMediaInfosResponse.ForbiddenMediaIds.Length"); i++) {
 			forbiddenMediaIds.add(_ctx.stringValue("BatchGetMediaInfosResponse.ForbiddenMediaIds["+ i +"]"));
@@ -71,6 +77,7 @@ public class BatchGetMediaInfosResponseUnmarshaller {
 			mediaInfo.setRestoreStatus(_ctx.stringValue("BatchGetMediaInfosResponse.MediaInfos["+ i +"].MediaInfo.RestoreStatus"));
 			mediaInfo.setRestoreExpiration(_ctx.stringValue("BatchGetMediaInfosResponse.MediaInfos["+ i +"].MediaInfo.RestoreExpiration"));
 			mediaInfo.setUserData(_ctx.stringValue("BatchGetMediaInfosResponse.MediaInfos["+ i +"].MediaInfo.UserData"));
+			mediaInfo.setReferenceId(_ctx.stringValue("BatchGetMediaInfosResponse.MediaInfos["+ i +"].MediaInfo.ReferenceId"));
 
 			List<String> snapshots = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("BatchGetMediaInfosResponse.MediaInfos["+ i +"].MediaInfo.Snapshots.Length"); j++) {
@@ -92,6 +99,7 @@ public class BatchGetMediaInfosResponseUnmarshaller {
 			mezzanineInfo.setCRC64(_ctx.stringValue("BatchGetMediaInfosResponse.MediaInfos["+ i +"].MezzanineInfo.CRC64"));
 			mezzanineInfo.setDuration(_ctx.stringValue("BatchGetMediaInfosResponse.MediaInfos["+ i +"].MezzanineInfo.Duration"));
 			mezzanineInfo.setFps(_ctx.stringValue("BatchGetMediaInfosResponse.MediaInfos["+ i +"].MezzanineInfo.Fps"));
+			mezzanineInfo.setFileMD5(_ctx.stringValue("BatchGetMediaInfosResponse.MediaInfos["+ i +"].MezzanineInfo.FileMD5"));
 
 			List<AudioStream> audioStreamList = new ArrayList<AudioStream>();
 			for (int j = 0; j < _ctx.lengthValue("BatchGetMediaInfosResponse.MediaInfos["+ i +"].MezzanineInfo.AudioStreamList.Length"); j++) {

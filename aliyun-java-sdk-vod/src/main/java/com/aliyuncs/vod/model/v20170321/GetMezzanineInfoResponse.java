@@ -81,6 +81,8 @@ public class GetMezzanineInfoResponse extends AcsResponse {
 
 		private String restoreExpiration;
 
+		private String fileMD5;
+
 		private List<AudioStream> audioStreamList;
 
 		private List<VideoStream> videoStreamList;
@@ -219,6 +221,14 @@ public class GetMezzanineInfoResponse extends AcsResponse {
 
 		public void setRestoreExpiration(String restoreExpiration) {
 			this.restoreExpiration = restoreExpiration;
+		}
+
+		public String getFileMD5() {
+			return this.fileMD5;
+		}
+
+		public void setFileMD5(String fileMD5) {
+			this.fileMD5 = fileMD5;
 		}
 
 		public List<AudioStream> getAudioStreamList() {

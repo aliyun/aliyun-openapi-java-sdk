@@ -97,6 +97,8 @@ public class GetVideoListResponse extends AcsResponse {
 
 		private String userData;
 
+		private String referenceId;
+
 		private List<String> snapshots;
 
 		public String getStorageLocation() {
@@ -257,6 +259,14 @@ public class GetVideoListResponse extends AcsResponse {
 
 		public void setUserData(String userData) {
 			this.userData = userData;
+		}
+
+		public String getReferenceId() {
+			return this.referenceId;
+		}
+
+		public void setReferenceId(String referenceId) {
+			this.referenceId = referenceId;
 		}
 
 		public List<String> getSnapshots() {

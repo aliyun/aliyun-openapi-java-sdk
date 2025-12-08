@@ -31,6 +31,8 @@ public class GetVideoInfosResponse extends AcsResponse {
 
 	private List<String> nonExistVideoIds;
 
+	private List<String> nonExistReferenceIds;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -53,6 +55,14 @@ public class GetVideoInfosResponse extends AcsResponse {
 
 	public void setNonExistVideoIds(List<String> nonExistVideoIds) {
 		this.nonExistVideoIds = nonExistVideoIds;
+	}
+
+	public List<String> getNonExistReferenceIds() {
+		return this.nonExistReferenceIds;
+	}
+
+	public void setNonExistReferenceIds(List<String> nonExistReferenceIds) {
+		this.nonExistReferenceIds = nonExistReferenceIds;
 	}
 
 	public static class Video {
@@ -102,6 +112,8 @@ public class GetVideoInfosResponse extends AcsResponse {
 		private String restoreExpiration;
 
 		private String userData;
+
+		private String referenceId;
 
 		private List<Thumbnail> thumbnailList;
 
@@ -289,6 +301,14 @@ public class GetVideoInfosResponse extends AcsResponse {
 
 		public void setUserData(String userData) {
 			this.userData = userData;
+		}
+
+		public String getReferenceId() {
+			return this.referenceId;
+		}
+
+		public void setReferenceId(String referenceId) {
+			this.referenceId = referenceId;
 		}
 
 		public List<Thumbnail> getThumbnailList() {

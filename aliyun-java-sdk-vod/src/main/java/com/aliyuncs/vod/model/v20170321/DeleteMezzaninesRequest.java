@@ -25,6 +25,8 @@ import com.aliyuncs.vod.Endpoint;
 public class DeleteMezzaninesRequest extends RpcAcsRequest<DeleteMezzaninesResponse> {
 	   
 
+	private String referenceIds;
+
 	private Boolean force;
 
 	private String videoIds;
@@ -35,6 +37,17 @@ public class DeleteMezzaninesRequest extends RpcAcsRequest<DeleteMezzaninesRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getReferenceIds() {
+		return this.referenceIds;
+	}
+
+	public void setReferenceIds(String referenceIds) {
+		this.referenceIds = referenceIds;
+		if(referenceIds != null){
+			putQueryParameter("ReferenceIds", referenceIds);
+		}
 	}
 
 	public Boolean getForce() {

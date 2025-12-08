@@ -35,6 +35,8 @@ public class SubmitTranscodeJobsRequest extends RpcAcsRequest<SubmitTranscodeJob
 
 	private String priority;
 
+	private String referenceId;
+
 	private String pipelineId;
 
 	private String templateGroupId;
@@ -101,6 +103,17 @@ public class SubmitTranscodeJobsRequest extends RpcAcsRequest<SubmitTranscodeJob
 		this.priority = priority;
 		if(priority != null){
 			putQueryParameter("Priority", priority);
+		}
+	}
+
+	public String getReferenceId() {
+		return this.referenceId;
+	}
+
+	public void setReferenceId(String referenceId) {
+		this.referenceId = referenceId;
+		if(referenceId != null){
+			putQueryParameter("ReferenceId", referenceId);
 		}
 	}
 

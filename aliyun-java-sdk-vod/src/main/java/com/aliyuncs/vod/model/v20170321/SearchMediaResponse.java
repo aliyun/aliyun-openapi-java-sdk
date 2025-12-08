@@ -221,6 +221,8 @@ public class SearchMediaResponse extends AcsResponse {
 
 			private String title;
 
+			private String referenceId;
+
 			private List<PlayInfo> playInfoList;
 
 			private List<String> spriteSnapshots;
@@ -475,6 +477,14 @@ public class SearchMediaResponse extends AcsResponse {
 				this.title = title;
 			}
 
+			public String getReferenceId() {
+				return this.referenceId;
+			}
+
+			public void setReferenceId(String referenceId) {
+				this.referenceId = referenceId;
+			}
+
 			public List<PlayInfo> getPlayInfoList() {
 				return this.playInfoList;
 			}
@@ -711,6 +721,8 @@ public class SearchMediaResponse extends AcsResponse {
 
 			private String title;
 
+			private String referenceId;
+
 			private List<PlayInfo4> playInfoList3;
 
 			private List<String> spriteSnapshots1;
@@ -939,6 +951,14 @@ public class SearchMediaResponse extends AcsResponse {
 
 			public void setTitle(String title) {
 				this.title = title;
+			}
+
+			public String getReferenceId() {
+				return this.referenceId;
+			}
+
+			public void setReferenceId(String referenceId) {
+				this.referenceId = referenceId;
 			}
 
 			public List<PlayInfo4> getPlayInfoList3() {

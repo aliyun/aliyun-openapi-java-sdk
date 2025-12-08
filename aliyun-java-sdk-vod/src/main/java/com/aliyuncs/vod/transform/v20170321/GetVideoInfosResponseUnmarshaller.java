@@ -35,6 +35,12 @@ public class GetVideoInfosResponseUnmarshaller {
 		}
 		getVideoInfosResponse.setNonExistVideoIds(nonExistVideoIds);
 
+		List<String> nonExistReferenceIds = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("GetVideoInfosResponse.NonExistReferenceIds.Length"); i++) {
+			nonExistReferenceIds.add(_ctx.stringValue("GetVideoInfosResponse.NonExistReferenceIds["+ i +"]"));
+		}
+		getVideoInfosResponse.setNonExistReferenceIds(nonExistReferenceIds);
+
 		List<Video> videoList = new ArrayList<Video>();
 		for (int i = 0; i < _ctx.lengthValue("GetVideoInfosResponse.VideoList.Length"); i++) {
 			Video video = new Video();
@@ -61,6 +67,7 @@ public class GetVideoInfosResponseUnmarshaller {
 			video.setRestoreStatus(_ctx.stringValue("GetVideoInfosResponse.VideoList["+ i +"].RestoreStatus"));
 			video.setRestoreExpiration(_ctx.stringValue("GetVideoInfosResponse.VideoList["+ i +"].RestoreExpiration"));
 			video.setUserData(_ctx.stringValue("GetVideoInfosResponse.VideoList["+ i +"].UserData"));
+			video.setReferenceId(_ctx.stringValue("GetVideoInfosResponse.VideoList["+ i +"].ReferenceId"));
 
 			List<String> snapshots = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("GetVideoInfosResponse.VideoList["+ i +"].Snapshots.Length"); j++) {

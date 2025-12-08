@@ -81,6 +81,7 @@ public class SearchMediaResponseUnmarshaller {
 			video.setSize(_ctx.longValue("SearchMediaResponse.MediaList["+ i +"].Video.Size"));
 			video.setDuration(_ctx.floatValue("SearchMediaResponse.MediaList["+ i +"].Video.Duration"));
 			video.setTitle(_ctx.stringValue("SearchMediaResponse.MediaList["+ i +"].Video.Title"));
+			video.setReferenceId(_ctx.stringValue("SearchMediaResponse.MediaList["+ i +"].Video.ReferenceId"));
 
 			List<String> spriteSnapshots = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("SearchMediaResponse.MediaList["+ i +"].Video.SpriteSnapshots.Length"); j++) {
@@ -147,6 +148,7 @@ public class SearchMediaResponseUnmarshaller {
 			audio.setSize(_ctx.longValue("SearchMediaResponse.MediaList["+ i +"].Audio.Size"));
 			audio.setDuration(_ctx.floatValue("SearchMediaResponse.MediaList["+ i +"].Audio.Duration"));
 			audio.setTitle(_ctx.stringValue("SearchMediaResponse.MediaList["+ i +"].Audio.Title"));
+			audio.setReferenceId(_ctx.stringValue("SearchMediaResponse.MediaList["+ i +"].Audio.ReferenceId"));
 
 			List<String> spriteSnapshots1 = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("SearchMediaResponse.MediaList["+ i +"].Audio.SpriteSnapshots.Length"); j++) {

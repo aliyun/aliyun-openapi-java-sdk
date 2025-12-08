@@ -31,6 +31,8 @@ public class DeleteMezzaninesResponse extends AcsResponse {
 
 	private List<String> nonExistVideoIds;
 
+	private List<String> nonExistReferenceIds;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -53,6 +55,14 @@ public class DeleteMezzaninesResponse extends AcsResponse {
 
 	public void setNonExistVideoIds(List<String> nonExistVideoIds) {
 		this.nonExistVideoIds = nonExistVideoIds;
+	}
+
+	public List<String> getNonExistReferenceIds() {
+		return this.nonExistReferenceIds;
+	}
+
+	public void setNonExistReferenceIds(List<String> nonExistReferenceIds) {
+		this.nonExistReferenceIds = nonExistReferenceIds;
 	}
 
 	@Override

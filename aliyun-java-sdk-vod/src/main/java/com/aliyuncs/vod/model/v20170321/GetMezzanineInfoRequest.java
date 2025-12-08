@@ -31,6 +31,8 @@ public class GetMezzanineInfoRequest extends RpcAcsRequest<GetMezzanineInfoRespo
 
 	private String videoId;
 
+	private String referenceId;
+
 	private String additionType;
 	public GetMezzanineInfoRequest() {
 		super("vod", "2017-03-21", "GetMezzanineInfo", "vod");
@@ -71,6 +73,17 @@ public class GetMezzanineInfoRequest extends RpcAcsRequest<GetMezzanineInfoRespo
 		this.videoId = videoId;
 		if(videoId != null){
 			putQueryParameter("VideoId", videoId);
+		}
+	}
+
+	public String getReferenceId() {
+		return this.referenceId;
+	}
+
+	public void setReferenceId(String referenceId) {
+		this.referenceId = referenceId;
+		if(referenceId != null){
+			putQueryParameter("ReferenceId", referenceId);
 		}
 	}
 
