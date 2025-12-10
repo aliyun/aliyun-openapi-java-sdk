@@ -76,8 +76,11 @@ public class DescribeAlertsWithEntityResponseUnmarshaller {
 			responseDataItem.setAttCk(_ctx.stringValue("DescribeAlertsWithEntityResponse.Data.ResponseData["+ i +"].AttCk"));
 			responseDataItem.setSubUserId(_ctx.longValue("DescribeAlertsWithEntityResponse.Data.ResponseData["+ i +"].SubUserId"));
 			responseDataItem.setSubUserName(_ctx.stringValue("DescribeAlertsWithEntityResponse.Data.ResponseData["+ i +"].SubUserName"));
-			responseDataItem.setCloudCode(_ctx.stringValue("DescribeAlertsWithEntityResponse.Data.ResponseData["+ i +"].CloudCode"));
 			responseDataItem.setIsDefend(_ctx.stringValue("DescribeAlertsWithEntityResponse.Data.ResponseData["+ i +"].IsDefend"));
+			responseDataItem.setCloudCode(_ctx.stringValue("DescribeAlertsWithEntityResponse.Data.ResponseData["+ i +"].CloudCode"));
+			responseDataItem.setProductId(_ctx.stringValue("DescribeAlertsWithEntityResponse.Data.ResponseData["+ i +"].ProductId"));
+			responseDataItem.setVendorId(_ctx.stringValue("DescribeAlertsWithEntityResponse.Data.ResponseData["+ i +"].VendorId"));
+			responseDataItem.setDetectionRuleId(_ctx.stringValue("DescribeAlertsWithEntityResponse.Data.ResponseData["+ i +"].DetectionRuleId"));
 
 			List<AlertInfoListItem> alertInfoList = new ArrayList<AlertInfoListItem>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeAlertsWithEntityResponse.Data.ResponseData["+ i +"].AlertInfoList.Length"); j++) {

@@ -161,9 +161,15 @@ public class DescribeAlertsWithEntityResponse extends AcsResponse {
 
 			private String subUserName;
 
+			private String isDefend;
+
 			private String cloudCode;
 
-			private String isDefend;
+			private String productId;
+
+			private String vendorId;
+
+			private String detectionRuleId;
 
 			private List<AlertInfoListItem> alertInfoList;
 
@@ -415,6 +421,14 @@ public class DescribeAlertsWithEntityResponse extends AcsResponse {
 				this.subUserName = subUserName;
 			}
 
+			public String getIsDefend() {
+				return this.isDefend;
+			}
+
+			public void setIsDefend(String isDefend) {
+				this.isDefend = isDefend;
+			}
+
 			public String getCloudCode() {
 				return this.cloudCode;
 			}
@@ -423,12 +437,28 @@ public class DescribeAlertsWithEntityResponse extends AcsResponse {
 				this.cloudCode = cloudCode;
 			}
 
-			public String getIsDefend() {
-				return this.isDefend;
+			public String getProductId() {
+				return this.productId;
 			}
 
-			public void setIsDefend(String isDefend) {
-				this.isDefend = isDefend;
+			public void setProductId(String productId) {
+				this.productId = productId;
+			}
+
+			public String getVendorId() {
+				return this.vendorId;
+			}
+
+			public void setVendorId(String vendorId) {
+				this.vendorId = vendorId;
+			}
+
+			public String getDetectionRuleId() {
+				return this.detectionRuleId;
+			}
+
+			public void setDetectionRuleId(String detectionRuleId) {
+				this.detectionRuleId = detectionRuleId;
 			}
 
 			public List<AlertInfoListItem> getAlertInfoList() {

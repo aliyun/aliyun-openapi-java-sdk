@@ -86,6 +86,10 @@ public class DescribeEventCountByThreatLevelResponse extends AcsResponse {
 
 		private Long lowLevelEventNum;
 
+		private Long seriousLevelEventNum;
+
+		private Long infoLevelEventNum;
+
 		public Long getEventNum() {
 			return this.eventNum;
 		}
@@ -124,6 +128,22 @@ public class DescribeEventCountByThreatLevelResponse extends AcsResponse {
 
 		public void setLowLevelEventNum(Long lowLevelEventNum) {
 			this.lowLevelEventNum = lowLevelEventNum;
+		}
+
+		public Long getSeriousLevelEventNum() {
+			return this.seriousLevelEventNum;
+		}
+
+		public void setSeriousLevelEventNum(Long seriousLevelEventNum) {
+			this.seriousLevelEventNum = seriousLevelEventNum;
+		}
+
+		public Long getInfoLevelEventNum() {
+			return this.infoLevelEventNum;
+		}
+
+		public void setInfoLevelEventNum(Long infoLevelEventNum) {
+			this.infoLevelEventNum = infoLevelEventNum;
 		}
 	}
 

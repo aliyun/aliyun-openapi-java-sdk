@@ -161,11 +161,19 @@ public class DescribeAlertsResponse extends AcsResponse {
 
 			private String subUserName;
 
-			private String cloudCode;
+			private String vendorId;
 
 			private String isDefend;
 
 			private String extendContent;
+
+			private String productId;
+
+			private String cloudCode;
+
+			private String detectionRuleId;
+
+			private String alertStatus;
 
 			private List<AlertInfoListItem> alertInfoList;
 
@@ -417,12 +425,12 @@ public class DescribeAlertsResponse extends AcsResponse {
 				this.subUserName = subUserName;
 			}
 
-			public String getCloudCode() {
-				return this.cloudCode;
+			public String getVendorId() {
+				return this.vendorId;
 			}
 
-			public void setCloudCode(String cloudCode) {
-				this.cloudCode = cloudCode;
+			public void setVendorId(String vendorId) {
+				this.vendorId = vendorId;
 			}
 
 			public String getIsDefend() {
@@ -439,6 +447,38 @@ public class DescribeAlertsResponse extends AcsResponse {
 
 			public void setExtendContent(String extendContent) {
 				this.extendContent = extendContent;
+			}
+
+			public String getProductId() {
+				return this.productId;
+			}
+
+			public void setProductId(String productId) {
+				this.productId = productId;
+			}
+
+			public String getCloudCode() {
+				return this.cloudCode;
+			}
+
+			public void setCloudCode(String cloudCode) {
+				this.cloudCode = cloudCode;
+			}
+
+			public String getDetectionRuleId() {
+				return this.detectionRuleId;
+			}
+
+			public void setDetectionRuleId(String detectionRuleId) {
+				this.detectionRuleId = detectionRuleId;
+			}
+
+			public String getAlertStatus() {
+				return this.alertStatus;
+			}
+
+			public void setAlertStatus(String alertStatus) {
+				this.alertStatus = alertStatus;
 			}
 
 			public List<AlertInfoListItem> getAlertInfoList() {

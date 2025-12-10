@@ -37,6 +37,8 @@ public class ListEntitiesRequest extends RpcAcsRequest<ListEntitiesResponse> {
 
 	private Integer currentPage;
 
+	private String tags;
+
 	private String isMalwareEntity;
 
 	private String entityType;
@@ -113,6 +115,17 @@ public class ListEntitiesRequest extends RpcAcsRequest<ListEntitiesResponse> {
 		this.currentPage = currentPage;
 		if(currentPage != null){
 			putBodyParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
+	public String getTags() {
+		return this.tags;
+	}
+
+	public void setTags(String tags) {
+		this.tags = tags;
+		if(tags != null){
+			putBodyParameter("Tags", tags);
 		}
 	}
 

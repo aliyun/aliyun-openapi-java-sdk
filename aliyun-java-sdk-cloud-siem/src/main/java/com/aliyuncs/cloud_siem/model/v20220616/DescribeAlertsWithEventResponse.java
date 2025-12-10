@@ -167,6 +167,12 @@ public class DescribeAlertsWithEventResponse extends AcsResponse {
 
 			private String extendContent;
 
+			private String productId;
+
+			private String vendorId;
+
+			private String detectionRuleId;
+
 			private List<AlertInfoListItem> alertInfoList;
 
 			public Long getId() {
@@ -439,6 +445,30 @@ public class DescribeAlertsWithEventResponse extends AcsResponse {
 
 			public void setExtendContent(String extendContent) {
 				this.extendContent = extendContent;
+			}
+
+			public String getProductId() {
+				return this.productId;
+			}
+
+			public void setProductId(String productId) {
+				this.productId = productId;
+			}
+
+			public String getVendorId() {
+				return this.vendorId;
+			}
+
+			public void setVendorId(String vendorId) {
+				this.vendorId = vendorId;
+			}
+
+			public String getDetectionRuleId() {
+				return this.detectionRuleId;
+			}
+
+			public void setDetectionRuleId(String detectionRuleId) {
+				this.detectionRuleId = detectionRuleId;
 			}
 
 			public List<AlertInfoListItem> getAlertInfoList() {

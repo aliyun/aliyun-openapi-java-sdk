@@ -123,6 +123,8 @@ public class ListAutomateResponseConfigsResponse extends AcsResponse {
 
 			private Integer dataType;
 
+			private String responseRuleType;
+
 			public Long getId() {
 				return this.id;
 			}
@@ -217,6 +219,14 @@ public class ListAutomateResponseConfigsResponse extends AcsResponse {
 
 			public void setDataType(Integer dataType) {
 				this.dataType = dataType;
+			}
+
+			public String getResponseRuleType() {
+				return this.responseRuleType;
+			}
+
+			public void setResponseRuleType(String responseRuleType) {
+				this.responseRuleType = responseRuleType;
 			}
 		}
 

@@ -34,6 +34,8 @@ public class PostEventDisposeAndWhiteruleListRequest extends RpcAcsRequest<PostE
 
 	private Integer roleType;
 
+	private String owner;
+
 	private String threatLevel;
 
 	private String incidentUuid;
@@ -96,6 +98,17 @@ public class PostEventDisposeAndWhiteruleListRequest extends RpcAcsRequest<PostE
 		this.roleType = roleType;
 		if(roleType != null){
 			putBodyParameter("RoleType", roleType.toString());
+		}
+	}
+
+	public String getOwner() {
+		return this.owner;
+	}
+
+	public void setOwner(String owner) {
+		this.owner = owner;
+		if(owner != null){
+			putBodyParameter("Owner", owner);
 		}
 	}
 

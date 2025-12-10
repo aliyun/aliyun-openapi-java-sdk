@@ -131,6 +131,12 @@ public class ListEntitiesResponse extends AcsResponse {
 
 			private String malwareType;
 
+			private String isAsset;
+
+			private String isMalware;
+
+			private String tags;
+
 			public Long getId() {
 				return this.id;
 			}
@@ -257,6 +263,30 @@ public class ListEntitiesResponse extends AcsResponse {
 
 			public void setMalwareType(String malwareType) {
 				this.malwareType = malwareType;
+			}
+
+			public String getIsAsset() {
+				return this.isAsset;
+			}
+
+			public void setIsAsset(String isAsset) {
+				this.isAsset = isAsset;
+			}
+
+			public String getIsMalware() {
+				return this.isMalware;
+			}
+
+			public void setIsMalware(String isMalware) {
+				this.isMalware = isMalware;
+			}
+
+			public String getTags() {
+				return this.tags;
+			}
+
+			public void setTags(String tags) {
+				this.tags = tags;
 			}
 		}
 

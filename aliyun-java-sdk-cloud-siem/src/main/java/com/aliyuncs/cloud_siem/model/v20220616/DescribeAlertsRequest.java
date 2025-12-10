@@ -29,6 +29,8 @@ public class DescribeAlertsRequest extends RpcAcsRequest<DescribeAlertsResponse>
 
 	private String alertName;
 
+	private List<String> alertStatuss;
+
 	private String entityName;
 
 	private String assetName;
@@ -87,6 +89,19 @@ public class DescribeAlertsRequest extends RpcAcsRequest<DescribeAlertsResponse>
 		if(alertName != null){
 			putBodyParameter("AlertName", alertName);
 		}
+	}
+
+	public List<String> getAlertStatuss() {
+		return this.alertStatuss;
+	}
+
+	public void setAlertStatuss(List<String> alertStatuss) {
+		this.alertStatuss = alertStatuss;	
+		if (alertStatuss != null) {
+			for (int i = 0; i < alertStatuss.size(); i++) {
+				putBodyParameter("AlertStatus." + (i + 1) , alertStatuss.get(i));
+			}
+		}	
 	}
 
 	public String getEntityName() {

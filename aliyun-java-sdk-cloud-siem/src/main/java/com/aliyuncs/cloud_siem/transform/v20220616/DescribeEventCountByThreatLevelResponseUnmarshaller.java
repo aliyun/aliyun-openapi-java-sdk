@@ -34,6 +34,8 @@ public class DescribeEventCountByThreatLevelResponseUnmarshaller {
 		data.setHighLevelEventNum(_ctx.longValue("DescribeEventCountByThreatLevelResponse.Data.HighLevelEventNum"));
 		data.setMediumLevelEventNum(_ctx.longValue("DescribeEventCountByThreatLevelResponse.Data.MediumLevelEventNum"));
 		data.setLowLevelEventNum(_ctx.longValue("DescribeEventCountByThreatLevelResponse.Data.LowLevelEventNum"));
+		data.setSeriousLevelEventNum(_ctx.longValue("DescribeEventCountByThreatLevelResponse.Data.SeriousLevelEventNum"));
+		data.setInfoLevelEventNum(_ctx.longValue("DescribeEventCountByThreatLevelResponse.Data.InfoLevelEventNum"));
 		describeEventCountByThreatLevelResponse.setData(data);
 	 
 	 	return describeEventCountByThreatLevelResponse;

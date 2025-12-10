@@ -40,6 +40,8 @@ public class ListAutomateResponseConfigsRequest extends RpcAcsRequest<ListAutoma
 
 	private Long id;
 
+	private String responseRuleType;
+
 	private Integer currentPage;
 
 	private String playbookUuid;
@@ -135,6 +137,17 @@ public class ListAutomateResponseConfigsRequest extends RpcAcsRequest<ListAutoma
 		this.id = id;
 		if(id != null){
 			putBodyParameter("Id", id.toString());
+		}
+	}
+
+	public String getResponseRuleType() {
+		return this.responseRuleType;
+	}
+
+	public void setResponseRuleType(String responseRuleType) {
+		this.responseRuleType = responseRuleType;
+		if(responseRuleType != null){
+			putBodyParameter("ResponseRuleType", responseRuleType);
 		}
 	}
 
