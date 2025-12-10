@@ -55,6 +55,7 @@ public class DescribePolarFsAttributeResponseUnmarshaller {
 		describePolarFsAttributeResponse.setRelativePfsClusterId(_ctx.stringValue("DescribePolarFsAttributeResponse.RelativePfsClusterId"));
 		describePolarFsAttributeResponse.setBucketId(_ctx.stringValue("DescribePolarFsAttributeResponse.BucketId"));
 		describePolarFsAttributeResponse.setFileSystemId(_ctx.stringValue("DescribePolarFsAttributeResponse.FileSystemId"));
+		describePolarFsAttributeResponse.setCustomBucketPath(_ctx.stringValue("DescribePolarFsAttributeResponse.CustomBucketPath"));
 
 		MountInfo mountInfo = new MountInfo();
 		mountInfo.setPolarFsCluster(_ctx.stringValue("DescribePolarFsAttributeResponse.MountInfo.PolarFsCluster"));

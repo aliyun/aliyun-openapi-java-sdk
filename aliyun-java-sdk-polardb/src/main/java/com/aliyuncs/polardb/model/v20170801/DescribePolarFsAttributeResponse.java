@@ -88,6 +88,8 @@ public class DescribePolarFsAttributeResponse extends AcsResponse {
 
 	private String fileSystemId;
 
+	private String customBucketPath;
+
 	private MountInfo mountInfo;
 
 	public String getRequestId() {
@@ -344,6 +346,14 @@ public class DescribePolarFsAttributeResponse extends AcsResponse {
 
 	public void setFileSystemId(String fileSystemId) {
 		this.fileSystemId = fileSystemId;
+	}
+
+	public String getCustomBucketPath() {
+		return this.customBucketPath;
+	}
+
+	public void setCustomBucketPath(String customBucketPath) {
+		this.customBucketPath = customBucketPath;
 	}
 
 	public MountInfo getMountInfo() {

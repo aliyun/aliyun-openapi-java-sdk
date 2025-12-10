@@ -28,9 +28,13 @@ public class ModifyDBClusterArchRequest extends RpcAcsRequest<ModifyDBClusterArc
 
 	private String standbyAZ;
 
+	private Boolean autoUseCoupon;
+
 	private String dBClusterId;
 
 	private String hotStandbyCluster;
+
+	private String promotionCode;
 	public ModifyDBClusterArchRequest() {
 		super("polardb", "2017-08-01", "ModifyDBClusterArch", "polardb");
 		setProtocol(ProtocolType.HTTPS);
@@ -49,6 +53,17 @@ public class ModifyDBClusterArchRequest extends RpcAcsRequest<ModifyDBClusterArc
 		this.standbyAZ = standbyAZ;
 		if(standbyAZ != null){
 			putQueryParameter("StandbyAZ", standbyAZ);
+		}
+	}
+
+	public Boolean getAutoUseCoupon() {
+		return this.autoUseCoupon;
+	}
+
+	public void setAutoUseCoupon(Boolean autoUseCoupon) {
+		this.autoUseCoupon = autoUseCoupon;
+		if(autoUseCoupon != null){
+			putQueryParameter("AutoUseCoupon", autoUseCoupon.toString());
 		}
 	}
 
@@ -71,6 +86,17 @@ public class ModifyDBClusterArchRequest extends RpcAcsRequest<ModifyDBClusterArc
 		this.hotStandbyCluster = hotStandbyCluster;
 		if(hotStandbyCluster != null){
 			putQueryParameter("HotStandbyCluster", hotStandbyCluster);
+		}
+	}
+
+	public String getPromotionCode() {
+		return this.promotionCode;
+	}
+
+	public void setPromotionCode(String promotionCode) {
+		this.promotionCode = promotionCode;
+		if(promotionCode != null){
+			putQueryParameter("PromotionCode", promotionCode);
 		}
 	}
 

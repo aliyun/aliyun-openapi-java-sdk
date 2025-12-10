@@ -34,6 +34,8 @@ public class CreateApplicationRequest extends RpcAcsRequest<CreateApplicationRes
 
 	private String description;
 
+	private Boolean autoUseCoupon;
+
 	private String resourceGroupId;
 
 	private String architecture;
@@ -54,6 +56,8 @@ public class CreateApplicationRequest extends RpcAcsRequest<CreateApplicationRes
 	private String polarFSInstanceId;
 
 	private Boolean autoRenew;
+
+	private String promotionCode;
 
 	private String vpcId;
 
@@ -91,6 +95,17 @@ public class CreateApplicationRequest extends RpcAcsRequest<CreateApplicationRes
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public Boolean getAutoUseCoupon() {
+		return this.autoUseCoupon;
+	}
+
+	public void setAutoUseCoupon(Boolean autoUseCoupon) {
+		this.autoUseCoupon = autoUseCoupon;
+		if(autoUseCoupon != null){
+			putQueryParameter("AutoUseCoupon", autoUseCoupon.toString());
 		}
 	}
 
@@ -201,6 +216,17 @@ public class CreateApplicationRequest extends RpcAcsRequest<CreateApplicationRes
 		this.autoRenew = autoRenew;
 		if(autoRenew != null){
 			putQueryParameter("AutoRenew", autoRenew.toString());
+		}
+	}
+
+	public String getPromotionCode() {
+		return this.promotionCode;
+	}
+
+	public void setPromotionCode(String promotionCode) {
+		this.promotionCode = promotionCode;
+		if(promotionCode != null){
+			putQueryParameter("PromotionCode", promotionCode);
 		}
 	}
 

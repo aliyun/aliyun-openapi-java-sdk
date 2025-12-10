@@ -30,6 +30,8 @@ public class TempModifyDBNodeRequest extends RpcAcsRequest<TempModifyDBNodeRespo
 
 	private String clientToken;
 
+	private Boolean autoUseCoupon;
+
 	private String restoreTime;
 
 	private String resourceOwnerAccount;
@@ -41,6 +43,8 @@ public class TempModifyDBNodeRequest extends RpcAcsRequest<TempModifyDBNodeRespo
 	private String operationType;
 
 	private Long ownerId;
+
+	private String promotionCode;
 
 	private String modifyType;
 
@@ -73,6 +77,17 @@ public class TempModifyDBNodeRequest extends RpcAcsRequest<TempModifyDBNodeRespo
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public Boolean getAutoUseCoupon() {
+		return this.autoUseCoupon;
+	}
+
+	public void setAutoUseCoupon(Boolean autoUseCoupon) {
+		this.autoUseCoupon = autoUseCoupon;
+		if(autoUseCoupon != null){
+			putQueryParameter("AutoUseCoupon", autoUseCoupon.toString());
 		}
 	}
 
@@ -139,6 +154,17 @@ public class TempModifyDBNodeRequest extends RpcAcsRequest<TempModifyDBNodeRespo
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getPromotionCode() {
+		return this.promotionCode;
+	}
+
+	public void setPromotionCode(String promotionCode) {
+		this.promotionCode = promotionCode;
+		if(promotionCode != null){
+			putQueryParameter("PromotionCode", promotionCode);
 		}
 	}
 

@@ -29,6 +29,8 @@ public class TransformDBClusterPayTypeRequest extends RpcAcsRequest<TransformDBC
 
 	private String clientToken;
 
+	private Boolean autoUseCoupon;
+
 	private String resourceGroupId;
 
 	private String period;
@@ -42,6 +44,8 @@ public class TransformDBClusterPayTypeRequest extends RpcAcsRequest<TransformDBC
 	private Long ownerId;
 
 	private String usedTime;
+
+	private String promotionCode;
 
 	private String payType;
 	public TransformDBClusterPayTypeRequest() {
@@ -72,6 +76,17 @@ public class TransformDBClusterPayTypeRequest extends RpcAcsRequest<TransformDBC
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public Boolean getAutoUseCoupon() {
+		return this.autoUseCoupon;
+	}
+
+	public void setAutoUseCoupon(Boolean autoUseCoupon) {
+		this.autoUseCoupon = autoUseCoupon;
+		if(autoUseCoupon != null){
+			putQueryParameter("AutoUseCoupon", autoUseCoupon.toString());
 		}
 	}
 
@@ -149,6 +164,17 @@ public class TransformDBClusterPayTypeRequest extends RpcAcsRequest<TransformDBC
 		this.usedTime = usedTime;
 		if(usedTime != null){
 			putQueryParameter("UsedTime", usedTime);
+		}
+	}
+
+	public String getPromotionCode() {
+		return this.promotionCode;
+	}
+
+	public void setPromotionCode(String promotionCode) {
+		this.promotionCode = promotionCode;
+		if(promotionCode != null){
+			putQueryParameter("PromotionCode", promotionCode);
 		}
 	}
 

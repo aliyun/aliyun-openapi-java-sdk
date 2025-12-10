@@ -73,6 +73,8 @@ public class DescribeAIDBClusterAttributeResponse extends AcsResponse {
 
 	private String kVCacheInstanceId;
 
+	private String ecsSecurityGroupId;
+
 	private List<DBNode> dBNodes;
 
 	private List<VolumesItem> volumes;
@@ -269,6 +271,14 @@ public class DescribeAIDBClusterAttributeResponse extends AcsResponse {
 
 	public void setKVCacheInstanceId(String kVCacheInstanceId) {
 		this.kVCacheInstanceId = kVCacheInstanceId;
+	}
+
+	public String getEcsSecurityGroupId() {
+		return this.ecsSecurityGroupId;
+	}
+
+	public void setEcsSecurityGroupId(String ecsSecurityGroupId) {
+		this.ecsSecurityGroupId = ecsSecurityGroupId;
 	}
 
 	public List<DBNode> getDBNodes() {

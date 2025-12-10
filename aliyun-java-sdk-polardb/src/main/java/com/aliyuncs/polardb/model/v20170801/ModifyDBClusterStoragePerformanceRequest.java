@@ -29,6 +29,8 @@ public class ModifyDBClusterStoragePerformanceRequest extends RpcAcsRequest<Modi
 
 	private String clientToken;
 
+	private Boolean autoUseCoupon;
+
 	private String storageType;
 
 	private String dBClusterId;
@@ -36,6 +38,8 @@ public class ModifyDBClusterStoragePerformanceRequest extends RpcAcsRequest<Modi
 	private String burstingEnabled;
 
 	private Integer provisionedIops;
+
+	private String promotionCode;
 
 	private String modifyType;
 	public ModifyDBClusterStoragePerformanceRequest() {
@@ -66,6 +70,17 @@ public class ModifyDBClusterStoragePerformanceRequest extends RpcAcsRequest<Modi
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public Boolean getAutoUseCoupon() {
+		return this.autoUseCoupon;
+	}
+
+	public void setAutoUseCoupon(Boolean autoUseCoupon) {
+		this.autoUseCoupon = autoUseCoupon;
+		if(autoUseCoupon != null){
+			putQueryParameter("AutoUseCoupon", autoUseCoupon.toString());
 		}
 	}
 
@@ -110,6 +125,17 @@ public class ModifyDBClusterStoragePerformanceRequest extends RpcAcsRequest<Modi
 		this.provisionedIops = provisionedIops;
 		if(provisionedIops != null){
 			putQueryParameter("ProvisionedIops", provisionedIops.toString());
+		}
+	}
+
+	public String getPromotionCode() {
+		return this.promotionCode;
+	}
+
+	public void setPromotionCode(String promotionCode) {
+		this.promotionCode = promotionCode;
+		if(promotionCode != null){
+			putQueryParameter("PromotionCode", promotionCode);
 		}
 	}
 

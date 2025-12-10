@@ -1,3 +1,6 @@
+2025-12-10 Version: 1.8.58
+- Generated 2017-08-01 for `polardb`.
+
 2025-11-28 Version: 1.8.57
 - Update endpoint info.
 

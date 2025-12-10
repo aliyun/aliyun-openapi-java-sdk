@@ -29,6 +29,8 @@ public class CreateStoragePlanRequest extends RpcAcsRequest<CreateStoragePlanRes
 
 	private String clientToken;
 
+	private Boolean autoUseCoupon;
+
 	private String storageType;
 
 	private String period;
@@ -42,6 +44,8 @@ public class CreateStoragePlanRequest extends RpcAcsRequest<CreateStoragePlanRes
 	private String usedTime;
 
 	private String storageClass;
+
+	private String promotionCode;
 	public CreateStoragePlanRequest() {
 		super("polardb", "2017-08-01", "CreateStoragePlan", "polardb");
 		setMethod(MethodType.POST);
@@ -70,6 +74,17 @@ public class CreateStoragePlanRequest extends RpcAcsRequest<CreateStoragePlanRes
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public Boolean getAutoUseCoupon() {
+		return this.autoUseCoupon;
+	}
+
+	public void setAutoUseCoupon(Boolean autoUseCoupon) {
+		this.autoUseCoupon = autoUseCoupon;
+		if(autoUseCoupon != null){
+			putQueryParameter("AutoUseCoupon", autoUseCoupon.toString());
 		}
 	}
 
@@ -147,6 +162,17 @@ public class CreateStoragePlanRequest extends RpcAcsRequest<CreateStoragePlanRes
 		this.storageClass = storageClass;
 		if(storageClass != null){
 			putQueryParameter("StorageClass", storageClass);
+		}
+	}
+
+	public String getPromotionCode() {
+		return this.promotionCode;
+	}
+
+	public void setPromotionCode(String promotionCode) {
+		this.promotionCode = promotionCode;
+		if(promotionCode != null){
+			putQueryParameter("PromotionCode", promotionCode);
 		}
 	}
 

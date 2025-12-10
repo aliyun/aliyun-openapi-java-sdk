@@ -78,6 +78,8 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 
 	private String storagePayType;
 
+	private String promotionCode;
+
 	private String zoneId;
 
 	private String storageAutoScale;
@@ -97,6 +99,8 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 	private String clientToken;
 
 	private String defaultTimeZone;
+
+	private Boolean autoUseCoupon;
 
 	private String clusterNetworkType;
 
@@ -443,6 +447,17 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		}
 	}
 
+	public String getPromotionCode() {
+		return this.promotionCode;
+	}
+
+	public void setPromotionCode(String promotionCode) {
+		this.promotionCode = promotionCode;
+		if(promotionCode != null){
+			putQueryParameter("PromotionCode", promotionCode);
+		}
+	}
+
 	public String getZoneId() {
 		return this.zoneId;
 	}
@@ -550,6 +565,17 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		this.defaultTimeZone = defaultTimeZone;
 		if(defaultTimeZone != null){
 			putQueryParameter("DefaultTimeZone", defaultTimeZone);
+		}
+	}
+
+	public Boolean getAutoUseCoupon() {
+		return this.autoUseCoupon;
+	}
+
+	public void setAutoUseCoupon(Boolean autoUseCoupon) {
+		this.autoUseCoupon = autoUseCoupon;
+		if(autoUseCoupon != null){
+			putQueryParameter("AutoUseCoupon", autoUseCoupon.toString());
 		}
 	}
 
