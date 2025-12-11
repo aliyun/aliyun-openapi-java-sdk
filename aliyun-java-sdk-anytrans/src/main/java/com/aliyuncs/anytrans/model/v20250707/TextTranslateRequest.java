@@ -143,6 +143,9 @@ public class TextTranslateRequest extends RoaAcsRequest<TextTranslateResponse> {
 		@SerializedName("examples")
 		private List<ExamplesItem> examples;
 
+		@SerializedName("prefix")
+		private String prefix;
+
 		@SerializedName("config")
 		private Config config;
 
@@ -187,6 +190,14 @@ public class TextTranslateRequest extends RoaAcsRequest<TextTranslateResponse> {
 
 		public void setExamples(List<ExamplesItem> examples) {
 			this.examples = examples;
+		}
+
+		public String getPrefix() {
+			return this.prefix;
+		}
+
+		public void setPrefix(String prefix) {
+			this.prefix = prefix;
 		}
 
 		public Config getConfig() {
