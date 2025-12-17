@@ -157,6 +157,8 @@ public class DescribeInstanceAttributeResponse extends AcsResponse {
 
 		private Boolean autoSecondaryZone;
 
+		private String computingType;
+
 		private List<Tag> tags;
 
 		public String getVpcId() {
@@ -597,6 +599,14 @@ public class DescribeInstanceAttributeResponse extends AcsResponse {
 
 		public void setAutoSecondaryZone(Boolean autoSecondaryZone) {
 			this.autoSecondaryZone = autoSecondaryZone;
+		}
+
+		public String getComputingType() {
+			return this.computingType;
+		}
+
+		public void setComputingType(String computingType) {
+			this.computingType = computingType;
 		}
 
 		public List<Tag> getTags() {

@@ -87,6 +87,7 @@ public class DescribeInstanceAttributeResponseUnmarshaller {
 			dBInstanceAttribute.setIsOrderCompleted(_ctx.booleanValue("DescribeInstanceAttributeResponse.Instances["+ i +"].IsOrderCompleted"));
 			dBInstanceAttribute.setIsSupportTDE(_ctx.booleanValue("DescribeInstanceAttributeResponse.Instances["+ i +"].IsSupportTDE"));
 			dBInstanceAttribute.setAutoSecondaryZone(_ctx.booleanValue("DescribeInstanceAttributeResponse.Instances["+ i +"].AutoSecondaryZone"));
+			dBInstanceAttribute.setComputingType(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].ComputingType"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeInstanceAttributeResponse.Instances["+ i +"].Tags.Length"); j++) {

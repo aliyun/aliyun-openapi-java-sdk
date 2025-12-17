@@ -65,9 +65,13 @@ public class CreateTairKVCacheVNodeRequest extends RpcAcsRequest<CreateTairKVCac
 
 	private String vkName;
 
+	private String elasticTimeRange;
+
 	private Boolean autoRenew;
 
 	private Integer computeUnitNum;
+
+	private String vNodeType;
 
 	private String zoneId;
 
@@ -294,6 +298,17 @@ public class CreateTairKVCacheVNodeRequest extends RpcAcsRequest<CreateTairKVCac
 		}
 	}
 
+	public String getElasticTimeRange() {
+		return this.elasticTimeRange;
+	}
+
+	public void setElasticTimeRange(String elasticTimeRange) {
+		this.elasticTimeRange = elasticTimeRange;
+		if(elasticTimeRange != null){
+			putQueryParameter("ElasticTimeRange", elasticTimeRange);
+		}
+	}
+
 	public Boolean getAutoRenew() {
 		return this.autoRenew;
 	}
@@ -313,6 +328,17 @@ public class CreateTairKVCacheVNodeRequest extends RpcAcsRequest<CreateTairKVCac
 		this.computeUnitNum = computeUnitNum;
 		if(computeUnitNum != null){
 			putQueryParameter("ComputeUnitNum", computeUnitNum.toString());
+		}
+	}
+
+	public String getVNodeType() {
+		return this.vNodeType;
+	}
+
+	public void setVNodeType(String vNodeType) {
+		this.vNodeType = vNodeType;
+		if(vNodeType != null){
+			putQueryParameter("VNodeType", vNodeType);
 		}
 	}
 

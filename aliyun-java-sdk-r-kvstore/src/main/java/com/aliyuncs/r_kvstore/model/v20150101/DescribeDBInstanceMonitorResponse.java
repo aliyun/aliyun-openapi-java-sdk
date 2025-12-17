@@ -15,22 +15,26 @@
 package com.aliyuncs.r_kvstore.model.v20150101;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.r_kvstore.transform.v20150101.CreateAccountResponseUnmarshaller;
+import com.aliyuncs.r_kvstore.transform.v20150101.DescribeDBInstanceMonitorResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateAccountResponse extends AcsResponse {
+public class DescribeDBInstanceMonitorResponse extends AcsResponse {
+
+	private String interval;
 
 	private String requestId;
 
-	private String instanceId;
+	public String getInterval() {
+		return this.interval;
+	}
 
-	private String acountName;
-
-	private String accountName;
+	public void setInterval(String interval) {
+		this.interval = interval;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,32 +44,8 @@ public class CreateAccountResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-	}
-
-	public String getAcountName() {
-		return this.acountName;
-	}
-
-	public void setAcountName(String acountName) {
-		this.acountName = acountName;
-	}
-
-	public String getAccountName() {
-		return this.accountName;
-	}
-
-	public void setAccountName(String accountName) {
-		this.accountName = accountName;
-	}
-
 	@Override
-	public CreateAccountResponse getInstance(UnmarshallerContext context) {
-		return	CreateAccountResponseUnmarshaller.unmarshall(this, context);
+	public DescribeDBInstanceMonitorResponse getInstance(UnmarshallerContext context) {
+		return	DescribeDBInstanceMonitorResponseUnmarshaller.unmarshall(this, context);
 	}
 }

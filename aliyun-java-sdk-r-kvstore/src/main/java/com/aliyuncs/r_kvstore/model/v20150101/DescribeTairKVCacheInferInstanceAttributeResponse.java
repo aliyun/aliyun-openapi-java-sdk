@@ -95,6 +95,8 @@ public class DescribeTairKVCacheInferInstanceAttributeResponse extends AcsRespon
 
 		private Integer computeUnitNum;
 
+		private String replicaNum;
+
 		private List<Tag> tags;
 
 		public String getInstanceId() {
@@ -287,6 +289,14 @@ public class DescribeTairKVCacheInferInstanceAttributeResponse extends AcsRespon
 
 		public void setComputeUnitNum(Integer computeUnitNum) {
 			this.computeUnitNum = computeUnitNum;
+		}
+
+		public String getReplicaNum() {
+			return this.replicaNum;
+		}
+
+		public void setReplicaNum(String replicaNum) {
+			this.replicaNum = replicaNum;
 		}
 
 		public List<Tag> getTags() {

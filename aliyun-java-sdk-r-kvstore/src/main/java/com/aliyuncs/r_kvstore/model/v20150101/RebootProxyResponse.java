@@ -15,22 +15,16 @@
 package com.aliyuncs.r_kvstore.model.v20150101;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.r_kvstore.transform.v20150101.CreateAccountResponseUnmarshaller;
+import com.aliyuncs.r_kvstore.transform.v20150101.RebootProxyResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateAccountResponse extends AcsResponse {
+public class RebootProxyResponse extends AcsResponse {
 
 	private String requestId;
-
-	private String instanceId;
-
-	private String acountName;
-
-	private String accountName;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,32 +34,8 @@ public class CreateAccountResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-	}
-
-	public String getAcountName() {
-		return this.acountName;
-	}
-
-	public void setAcountName(String acountName) {
-		this.acountName = acountName;
-	}
-
-	public String getAccountName() {
-		return this.accountName;
-	}
-
-	public void setAccountName(String accountName) {
-		this.accountName = accountName;
-	}
-
 	@Override
-	public CreateAccountResponse getInstance(UnmarshallerContext context) {
-		return	CreateAccountResponseUnmarshaller.unmarshall(this, context);
+	public RebootProxyResponse getInstance(UnmarshallerContext context) {
+		return	RebootProxyResponseUnmarshaller.unmarshall(this, context);
 	}
 }

@@ -33,6 +33,8 @@ public class DescribeGlobalSecurityIPGroupRequest extends RpcAcsRequest<Describe
 
 	private String securityToken;
 
+	private String engine;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -40,7 +42,7 @@ public class DescribeGlobalSecurityIPGroupRequest extends RpcAcsRequest<Describe
 	private Long ownerId;
 	public DescribeGlobalSecurityIPGroupRequest() {
 		super("R-kvstore", "2015-01-01", "DescribeGlobalSecurityIPGroup", "redisa");
-		setMethod(MethodType.GET);
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -88,6 +90,17 @@ public class DescribeGlobalSecurityIPGroupRequest extends RpcAcsRequest<Describe
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getEngine() {
+		return this.engine;
+	}
+
+	public void setEngine(String engine) {
+		this.engine = engine;
+		if(engine != null){
+			putQueryParameter("Engine", engine);
 		}
 	}
 

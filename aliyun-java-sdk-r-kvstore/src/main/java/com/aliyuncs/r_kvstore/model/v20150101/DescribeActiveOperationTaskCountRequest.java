@@ -22,24 +22,20 @@ import com.aliyuncs.r_kvstore.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeGlobalSecurityIPGroupRelationRequest extends RpcAcsRequest<DescribeGlobalSecurityIPGroupRelationResponse> {
+public class DescribeActiveOperationTaskCountRequest extends RpcAcsRequest<DescribeActiveOperationTaskCountResponse> {
 	   
 
 	private Long resourceOwnerId;
-
-	private String resourceGroupId;
 
 	private String securityToken;
 
 	private String resourceOwnerAccount;
 
-	private String dBClusterId;
-
 	private String ownerAccount;
 
 	private Long ownerId;
-	public DescribeGlobalSecurityIPGroupRelationRequest() {
-		super("R-kvstore", "2015-01-01", "DescribeGlobalSecurityIPGroupRelation", "redisa");
+	public DescribeActiveOperationTaskCountRequest() {
+		super("R-kvstore", "2015-01-01", "DescribeActiveOperationTaskCount", "redisa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -55,17 +51,6 @@ public class DescribeGlobalSecurityIPGroupRelationRequest extends RpcAcsRequest<
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
-	}
-
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 
@@ -88,17 +73,6 @@ public class DescribeGlobalSecurityIPGroupRelationRequest extends RpcAcsRequest<
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getDBClusterId() {
-		return this.dBClusterId;
-	}
-
-	public void setDBClusterId(String dBClusterId) {
-		this.dBClusterId = dBClusterId;
-		if(dBClusterId != null){
-			putQueryParameter("DBClusterId", dBClusterId);
 		}
 	}
 
@@ -125,8 +99,8 @@ public class DescribeGlobalSecurityIPGroupRelationRequest extends RpcAcsRequest<
 	}
 
 	@Override
-	public Class<DescribeGlobalSecurityIPGroupRelationResponse> getResponseClass() {
-		return DescribeGlobalSecurityIPGroupRelationResponse.class;
+	public Class<DescribeActiveOperationTaskCountResponse> getResponseClass() {
+		return DescribeActiveOperationTaskCountResponse.class;
 	}
 
 }

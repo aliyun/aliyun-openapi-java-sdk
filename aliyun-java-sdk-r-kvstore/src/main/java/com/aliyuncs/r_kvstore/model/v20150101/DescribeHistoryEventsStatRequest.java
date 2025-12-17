@@ -22,24 +22,26 @@ import com.aliyuncs.r_kvstore.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeGlobalSecurityIPGroupRelationRequest extends RpcAcsRequest<DescribeGlobalSecurityIPGroupRelationResponse> {
+public class DescribeHistoryEventsStatRequest extends RpcAcsRequest<DescribeHistoryEventsStatResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String resourceGroupId;
+	private String toStartTime;
 
 	private String securityToken;
 
 	private String resourceOwnerAccount;
 
-	private String dBClusterId;
+	private String fromStartTime;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-	public DescribeGlobalSecurityIPGroupRelationRequest() {
-		super("R-kvstore", "2015-01-01", "DescribeGlobalSecurityIPGroupRelation", "redisa");
+
+	private String archiveStatus;
+	public DescribeHistoryEventsStatRequest() {
+		super("R-kvstore", "2015-01-01", "DescribeHistoryEventsStat", "redisa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -58,14 +60,14 @@ public class DescribeGlobalSecurityIPGroupRelationRequest extends RpcAcsRequest<
 		}
 	}
 
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
+	public String getToStartTime() {
+		return this.toStartTime;
 	}
 
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
+	public void setToStartTime(String toStartTime) {
+		this.toStartTime = toStartTime;
+		if(toStartTime != null){
+			putQueryParameter("ToStartTime", toStartTime);
 		}
 	}
 
@@ -91,14 +93,14 @@ public class DescribeGlobalSecurityIPGroupRelationRequest extends RpcAcsRequest<
 		}
 	}
 
-	public String getDBClusterId() {
-		return this.dBClusterId;
+	public String getFromStartTime() {
+		return this.fromStartTime;
 	}
 
-	public void setDBClusterId(String dBClusterId) {
-		this.dBClusterId = dBClusterId;
-		if(dBClusterId != null){
-			putQueryParameter("DBClusterId", dBClusterId);
+	public void setFromStartTime(String fromStartTime) {
+		this.fromStartTime = fromStartTime;
+		if(fromStartTime != null){
+			putQueryParameter("FromStartTime", fromStartTime);
 		}
 	}
 
@@ -124,9 +126,20 @@ public class DescribeGlobalSecurityIPGroupRelationRequest extends RpcAcsRequest<
 		}
 	}
 
+	public String getArchiveStatus() {
+		return this.archiveStatus;
+	}
+
+	public void setArchiveStatus(String archiveStatus) {
+		this.archiveStatus = archiveStatus;
+		if(archiveStatus != null){
+			putQueryParameter("ArchiveStatus", archiveStatus);
+		}
+	}
+
 	@Override
-	public Class<DescribeGlobalSecurityIPGroupRelationResponse> getResponseClass() {
-		return DescribeGlobalSecurityIPGroupRelationResponse.class;
+	public Class<DescribeHistoryEventsStatResponse> getResponseClass() {
+		return DescribeHistoryEventsStatResponse.class;
 	}
 
 }

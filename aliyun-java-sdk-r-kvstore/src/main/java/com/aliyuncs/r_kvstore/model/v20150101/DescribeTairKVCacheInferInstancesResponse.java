@@ -123,6 +123,10 @@ public class DescribeTairKVCacheInferInstancesResponse extends AcsResponse {
 
 		private Integer vNodeCount;
 
+		private Integer fixedVNodeCount;
+
+		private Integer elasticVNodeCount;
+
 		private List<Tag> tags;
 
 		public String getVpcId() {
@@ -307,6 +311,22 @@ public class DescribeTairKVCacheInferInstancesResponse extends AcsResponse {
 
 		public void setVNodeCount(Integer vNodeCount) {
 			this.vNodeCount = vNodeCount;
+		}
+
+		public Integer getFixedVNodeCount() {
+			return this.fixedVNodeCount;
+		}
+
+		public void setFixedVNodeCount(Integer fixedVNodeCount) {
+			this.fixedVNodeCount = fixedVNodeCount;
+		}
+
+		public Integer getElasticVNodeCount() {
+			return this.elasticVNodeCount;
+		}
+
+		public void setElasticVNodeCount(Integer elasticVNodeCount) {
+			this.elasticVNodeCount = elasticVNodeCount;
 		}
 
 		public List<Tag> getTags() {

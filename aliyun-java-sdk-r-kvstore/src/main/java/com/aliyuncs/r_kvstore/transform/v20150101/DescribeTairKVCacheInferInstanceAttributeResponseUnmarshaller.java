@@ -56,6 +56,7 @@ public class DescribeTairKVCacheInferInstanceAttributeResponseUnmarshaller {
 			dBInstanceAttribute.setModel(_ctx.stringValue("DescribeTairKVCacheInferInstanceAttributeResponse.Instances["+ i +"].Model"));
 			dBInstanceAttribute.setModelServiceNum(_ctx.integerValue("DescribeTairKVCacheInferInstanceAttributeResponse.Instances["+ i +"].ModelServiceNum"));
 			dBInstanceAttribute.setComputeUnitNum(_ctx.integerValue("DescribeTairKVCacheInferInstanceAttributeResponse.Instances["+ i +"].ComputeUnitNum"));
+			dBInstanceAttribute.setReplicaNum(_ctx.stringValue("DescribeTairKVCacheInferInstanceAttributeResponse.Instances["+ i +"].ReplicaNum"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeTairKVCacheInferInstanceAttributeResponse.Instances["+ i +"].Tags.Length"); j++) {

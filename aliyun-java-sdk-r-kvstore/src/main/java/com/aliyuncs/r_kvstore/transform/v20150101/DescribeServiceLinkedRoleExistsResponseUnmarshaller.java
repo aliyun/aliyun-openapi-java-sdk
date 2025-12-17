@@ -14,19 +14,17 @@
 
 package com.aliyuncs.r_kvstore.transform.v20150101;
 
-import com.aliyuncs.r_kvstore.model.v20150101.CreateAccountResponse;
+import com.aliyuncs.r_kvstore.model.v20150101.DescribeServiceLinkedRoleExistsResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class CreateAccountResponseUnmarshaller {
+public class DescribeServiceLinkedRoleExistsResponseUnmarshaller {
 
-	public static CreateAccountResponse unmarshall(CreateAccountResponse createAccountResponse, UnmarshallerContext _ctx) {
+	public static DescribeServiceLinkedRoleExistsResponse unmarshall(DescribeServiceLinkedRoleExistsResponse describeServiceLinkedRoleExistsResponse, UnmarshallerContext _ctx) {
 		
-		createAccountResponse.setRequestId(_ctx.stringValue("CreateAccountResponse.RequestId"));
-		createAccountResponse.setInstanceId(_ctx.stringValue("CreateAccountResponse.InstanceId"));
-		createAccountResponse.setAcountName(_ctx.stringValue("CreateAccountResponse.AcountName"));
-		createAccountResponse.setAccountName(_ctx.stringValue("CreateAccountResponse.AccountName"));
+		describeServiceLinkedRoleExistsResponse.setRequestId(_ctx.stringValue("DescribeServiceLinkedRoleExistsResponse.RequestId"));
+		describeServiceLinkedRoleExistsResponse.setExistsServiceLinkedRole(_ctx.booleanValue("DescribeServiceLinkedRoleExistsResponse.ExistsServiceLinkedRole"));
 	 
-	 	return createAccountResponse;
+	 	return describeServiceLinkedRoleExistsResponse;
 	}
 }

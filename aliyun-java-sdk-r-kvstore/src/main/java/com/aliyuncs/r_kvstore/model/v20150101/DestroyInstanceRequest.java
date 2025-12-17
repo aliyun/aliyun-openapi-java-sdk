@@ -22,24 +22,22 @@ import com.aliyuncs.r_kvstore.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeGlobalSecurityIPGroupRelationRequest extends RpcAcsRequest<DescribeGlobalSecurityIPGroupRelationResponse> {
+public class DestroyInstanceRequest extends RpcAcsRequest<DestroyInstanceResponse> {
 	   
 
 	private Long resourceOwnerId;
-
-	private String resourceGroupId;
 
 	private String securityToken;
 
 	private String resourceOwnerAccount;
 
-	private String dBClusterId;
-
 	private String ownerAccount;
 
 	private Long ownerId;
-	public DescribeGlobalSecurityIPGroupRelationRequest() {
-		super("R-kvstore", "2015-01-01", "DescribeGlobalSecurityIPGroupRelation", "redisa");
+
+	private String instanceId;
+	public DestroyInstanceRequest() {
+		super("R-kvstore", "2015-01-01", "DestroyInstance", "redisa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -55,17 +53,6 @@ public class DescribeGlobalSecurityIPGroupRelationRequest extends RpcAcsRequest<
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
-	}
-
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 
@@ -91,17 +78,6 @@ public class DescribeGlobalSecurityIPGroupRelationRequest extends RpcAcsRequest<
 		}
 	}
 
-	public String getDBClusterId() {
-		return this.dBClusterId;
-	}
-
-	public void setDBClusterId(String dBClusterId) {
-		this.dBClusterId = dBClusterId;
-		if(dBClusterId != null){
-			putQueryParameter("DBClusterId", dBClusterId);
-		}
-	}
-
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -124,9 +100,20 @@ public class DescribeGlobalSecurityIPGroupRelationRequest extends RpcAcsRequest<
 		}
 	}
 
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
 	@Override
-	public Class<DescribeGlobalSecurityIPGroupRelationResponse> getResponseClass() {
-		return DescribeGlobalSecurityIPGroupRelationResponse.class;
+	public Class<DestroyInstanceResponse> getResponseClass() {
+		return DestroyInstanceResponse.class;
 	}
 
 }

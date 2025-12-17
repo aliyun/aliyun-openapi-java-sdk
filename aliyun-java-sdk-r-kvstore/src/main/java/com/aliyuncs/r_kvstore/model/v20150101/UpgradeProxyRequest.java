@@ -22,24 +22,26 @@ import com.aliyuncs.r_kvstore.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeGlobalSecurityIPGroupRelationRequest extends RpcAcsRequest<DescribeGlobalSecurityIPGroupRelationResponse> {
+public class UpgradeProxyRequest extends RpcAcsRequest<UpgradeProxyResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String resourceGroupId;
+	private Integer switchTimeMode;
 
 	private String securityToken;
 
-	private String resourceOwnerAccount;
+	private String proxyInstanceIds;
 
-	private String dBClusterId;
+	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-	public DescribeGlobalSecurityIPGroupRelationRequest() {
-		super("R-kvstore", "2015-01-01", "DescribeGlobalSecurityIPGroupRelation", "redisa");
+
+	private String instanceId;
+	public UpgradeProxyRequest() {
+		super("R-kvstore", "2015-01-01", "UpgradeProxy", "redisa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -58,14 +60,14 @@ public class DescribeGlobalSecurityIPGroupRelationRequest extends RpcAcsRequest<
 		}
 	}
 
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
+	public Integer getSwitchTimeMode() {
+		return this.switchTimeMode;
 	}
 
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
+	public void setSwitchTimeMode(Integer switchTimeMode) {
+		this.switchTimeMode = switchTimeMode;
+		if(switchTimeMode != null){
+			putQueryParameter("SwitchTimeMode", switchTimeMode.toString());
 		}
 	}
 
@@ -80,6 +82,17 @@ public class DescribeGlobalSecurityIPGroupRelationRequest extends RpcAcsRequest<
 		}
 	}
 
+	public String getProxyInstanceIds() {
+		return this.proxyInstanceIds;
+	}
+
+	public void setProxyInstanceIds(String proxyInstanceIds) {
+		this.proxyInstanceIds = proxyInstanceIds;
+		if(proxyInstanceIds != null){
+			putQueryParameter("ProxyInstanceIds", proxyInstanceIds);
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -88,17 +101,6 @@ public class DescribeGlobalSecurityIPGroupRelationRequest extends RpcAcsRequest<
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getDBClusterId() {
-		return this.dBClusterId;
-	}
-
-	public void setDBClusterId(String dBClusterId) {
-		this.dBClusterId = dBClusterId;
-		if(dBClusterId != null){
-			putQueryParameter("DBClusterId", dBClusterId);
 		}
 	}
 
@@ -124,9 +126,20 @@ public class DescribeGlobalSecurityIPGroupRelationRequest extends RpcAcsRequest<
 		}
 	}
 
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
 	@Override
-	public Class<DescribeGlobalSecurityIPGroupRelationResponse> getResponseClass() {
-		return DescribeGlobalSecurityIPGroupRelationResponse.class;
+	public Class<UpgradeProxyResponse> getResponseClass() {
+		return UpgradeProxyResponse.class;
 	}
 
 }

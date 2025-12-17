@@ -22,24 +22,24 @@ import com.aliyuncs.r_kvstore.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeGlobalSecurityIPGroupRelationRequest extends RpcAcsRequest<DescribeGlobalSecurityIPGroupRelationResponse> {
+public class DescribeDbInstanceConnectivityRequest extends RpcAcsRequest<DescribeDbInstanceConnectivityResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String resourceGroupId;
+	private String srcIp;
 
 	private String securityToken;
 
-	private String resourceOwnerAccount;
+	private String dBInstanceId;
 
-	private String dBClusterId;
+	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-	public DescribeGlobalSecurityIPGroupRelationRequest() {
-		super("R-kvstore", "2015-01-01", "DescribeGlobalSecurityIPGroupRelation", "redisa");
+	public DescribeDbInstanceConnectivityRequest() {
+		super("R-kvstore", "2015-01-01", "DescribeDbInstanceConnectivity", "redisa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -58,14 +58,14 @@ public class DescribeGlobalSecurityIPGroupRelationRequest extends RpcAcsRequest<
 		}
 	}
 
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
+	public String getSrcIp() {
+		return this.srcIp;
 	}
 
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
+	public void setSrcIp(String srcIp) {
+		this.srcIp = srcIp;
+		if(srcIp != null){
+			putQueryParameter("SrcIp", srcIp);
 		}
 	}
 
@@ -80,6 +80,17 @@ public class DescribeGlobalSecurityIPGroupRelationRequest extends RpcAcsRequest<
 		}
 	}
 
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -88,17 +99,6 @@ public class DescribeGlobalSecurityIPGroupRelationRequest extends RpcAcsRequest<
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getDBClusterId() {
-		return this.dBClusterId;
-	}
-
-	public void setDBClusterId(String dBClusterId) {
-		this.dBClusterId = dBClusterId;
-		if(dBClusterId != null){
-			putQueryParameter("DBClusterId", dBClusterId);
 		}
 	}
 
@@ -125,8 +125,8 @@ public class DescribeGlobalSecurityIPGroupRelationRequest extends RpcAcsRequest<
 	}
 
 	@Override
-	public Class<DescribeGlobalSecurityIPGroupRelationResponse> getResponseClass() {
-		return DescribeGlobalSecurityIPGroupRelationResponse.class;
+	public Class<DescribeDbInstanceConnectivityResponse> getResponseClass() {
+		return DescribeDbInstanceConnectivityResponse.class;
 	}
 
 }

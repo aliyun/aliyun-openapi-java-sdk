@@ -14,19 +14,16 @@
 
 package com.aliyuncs.r_kvstore.transform.v20150101;
 
-import com.aliyuncs.r_kvstore.model.v20150101.CreateAccountResponse;
+import com.aliyuncs.r_kvstore.model.v20150101.UpgradeProxyResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class CreateAccountResponseUnmarshaller {
+public class UpgradeProxyResponseUnmarshaller {
 
-	public static CreateAccountResponse unmarshall(CreateAccountResponse createAccountResponse, UnmarshallerContext _ctx) {
+	public static UpgradeProxyResponse unmarshall(UpgradeProxyResponse upgradeProxyResponse, UnmarshallerContext _ctx) {
 		
-		createAccountResponse.setRequestId(_ctx.stringValue("CreateAccountResponse.RequestId"));
-		createAccountResponse.setInstanceId(_ctx.stringValue("CreateAccountResponse.InstanceId"));
-		createAccountResponse.setAcountName(_ctx.stringValue("CreateAccountResponse.AcountName"));
-		createAccountResponse.setAccountName(_ctx.stringValue("CreateAccountResponse.AccountName"));
+		upgradeProxyResponse.setRequestId(_ctx.stringValue("UpgradeProxyResponse.RequestId"));
 	 
-	 	return createAccountResponse;
+	 	return upgradeProxyResponse;
 	}
 }

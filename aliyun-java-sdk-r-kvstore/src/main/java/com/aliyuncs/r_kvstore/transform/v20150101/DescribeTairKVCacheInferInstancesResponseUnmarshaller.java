@@ -58,6 +58,8 @@ public class DescribeTairKVCacheInferInstancesResponseUnmarshaller {
 			tairInferInstanceDTO.setVNodeName(_ctx.stringValue("DescribeTairKVCacheInferInstancesResponse.Instances["+ i +"].VNodeName"));
 			tairInferInstanceDTO.setAckId(_ctx.stringValue("DescribeTairKVCacheInferInstancesResponse.Instances["+ i +"].AckId"));
 			tairInferInstanceDTO.setVNodeCount(_ctx.integerValue("DescribeTairKVCacheInferInstancesResponse.Instances["+ i +"].VNodeCount"));
+			tairInferInstanceDTO.setFixedVNodeCount(_ctx.integerValue("DescribeTairKVCacheInferInstancesResponse.Instances["+ i +"].FixedVNodeCount"));
+			tairInferInstanceDTO.setElasticVNodeCount(_ctx.integerValue("DescribeTairKVCacheInferInstancesResponse.Instances["+ i +"].ElasticVNodeCount"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeTairKVCacheInferInstancesResponse.Instances["+ i +"].Tags.Length"); j++) {
