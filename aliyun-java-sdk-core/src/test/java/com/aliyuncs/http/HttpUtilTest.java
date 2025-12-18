@@ -3,10 +3,15 @@ package com.aliyuncs.http;
 import static org.mockito.Mockito.mock;
 
 import java.net.Proxy;
+import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.sun.org.apache.xalan.internal.lib.ExsltBase;
 import org.apache.http.HttpHost;
+import org.apache.http.auth.AuthScope;
+import org.apache.http.auth.Credentials;
+import org.apache.http.impl.client.BasicCredentialsProvider;
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
@@ -215,5 +220,33 @@ public class HttpUtilTest {
     public void testNeedProxyHasEnvProxyList() {
         boolean need = HttpUtil.needProxy("http://targethost.com", "", "http://www.aliyun.com,http://targethost.com");
         Assert.assertFalse(need);
+    }
+
+    @Test
+    public void testReadCredentialsFromApacheProxy() throws Exception {
+        BasicCredentialsProvider crePro = new BasicCredentialsProvider();
+        String proxy = "http://www.aliyun.com:80";
+        URL proxyUrl = new URL(proxy);
+        try {
+            // proxy without auth
+            HttpUtil.readCredentialsFromApacheProxy(crePro, proxy);
+            Assert.assertNull(crePro.getCredentials(new AuthScope(proxyUrl.getHost(),
+                    proxyUrl.getPort())));
+            // proxy with auth
+            proxy = "http://user:passwd@www.aliyun.com";
+            proxyUrl = new URL(proxy);
+            HttpUtil.readCredentialsFromApacheProxy(crePro, proxy);
+            Credentials credentials = crePro.getCredentials(new AuthScope(proxyUrl.getHost(),
+                    proxyUrl.getPort()));
+            Assert.assertEquals("user", credentials.getUserPrincipal().getName());
+            Assert.assertEquals("passwd", credentials.getPassword());
+            // invalid proxy
+            proxy = "http0://www.aliyun.com";
+            HttpUtil.readCredentialsFromApacheProxy(crePro, proxy);
+            Assert.fail();
+        } catch (ClientException e) {
+            Assert.assertEquals("SDK.InvalidProxy : proxy url is invalid", e.getMessage());
+        }
+
     }
 }
