@@ -1,3 +1,6 @@
+2025-12-19 Version: 1.0.9
+- add lifecycle api
+
 2025-11-06 Version: 1.0.8
 - Generated 2025-04-29 for `WebsiteBuild`.
 
