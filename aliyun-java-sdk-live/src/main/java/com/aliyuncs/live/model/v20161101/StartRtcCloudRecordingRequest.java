@@ -283,6 +283,9 @@ public class StartRtcCloudRecordingRequest extends RpcAcsRequest<StartRtcCloudRe
 
 		public static class FileInfoItem {
 
+			@SerializedName("SliceDuration")
+			private Long sliceDuration;
+
 			@SerializedName("FileNamePattern")
 			private String fileNamePattern;
 
@@ -294,6 +297,14 @@ public class StartRtcCloudRecordingRequest extends RpcAcsRequest<StartRtcCloudRe
 
 			@SerializedName("FilePathPrefix")
 			private List<String> filePathPrefix;
+
+			public Long getSliceDuration() {
+				return this.sliceDuration;
+			}
+
+			public void setSliceDuration(Long sliceDuration) {
+				this.sliceDuration = sliceDuration;
+			}
 
 			public String getFileNamePattern() {
 				return this.fileNamePattern;
