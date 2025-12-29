@@ -31,6 +31,8 @@ public class ModifyDBInstanceSSLRequest extends RpcAcsRequest<ModifyDBInstanceSS
 
 	private String dBInstanceId;
 
+	private String forceEncryption;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -77,6 +79,17 @@ public class ModifyDBInstanceSSLRequest extends RpcAcsRequest<ModifyDBInstanceSS
 		this.dBInstanceId = dBInstanceId;
 		if(dBInstanceId != null){
 			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public String getForceEncryption() {
+		return this.forceEncryption;
+	}
+
+	public void setForceEncryption(String forceEncryption) {
+		this.forceEncryption = forceEncryption;
+		if(forceEncryption != null){
+			putQueryParameter("ForceEncryption", forceEncryption);
 		}
 	}
 

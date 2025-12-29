@@ -42,7 +42,7 @@ public class DescribeClusterRecoverTimeRequest extends RpcAcsRequest<DescribeClu
 	private Long ownerId;
 	public DescribeClusterRecoverTimeRequest() {
 		super("Dds", "2015-12-01", "DescribeClusterRecoverTime", "dds");
-		setMethod(MethodType.GET);
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);

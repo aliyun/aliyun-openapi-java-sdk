@@ -47,6 +47,8 @@ public class DescribeDBInstancePerformanceRequest extends RpcAcsRequest<Describe
 
 	private Long ownerId;
 
+	private String searchId;
+
 	private String interval;
 	public DescribeDBInstancePerformanceRequest() {
 		super("Dds", "2015-12-01", "DescribeDBInstancePerformance", "dds");
@@ -175,6 +177,17 @@ public class DescribeDBInstancePerformanceRequest extends RpcAcsRequest<Describe
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getSearchId() {
+		return this.searchId;
+	}
+
+	public void setSearchId(String searchId) {
+		this.searchId = searchId;
+		if(searchId != null){
+			putQueryParameter("SearchId", searchId);
 		}
 	}
 

@@ -22,28 +22,22 @@ import com.aliyuncs.dds.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeInstanceRecoverTimeRequest extends RpcAcsRequest<DescribeInstanceRecoverTimeResponse> {
+public class DescribeRdsVpcsRequest extends RpcAcsRequest<DescribeRdsVpcsResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String srcRegion;
-
 	private String resourceGroupId;
-
-	private String securityToken;
-
-	private String dBInstanceId;
-
-	private String destRegion;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-	public DescribeInstanceRecoverTimeRequest() {
-		super("Dds", "2015-12-01", "DescribeInstanceRecoverTime", "dds");
+
+	private String zoneId;
+	public DescribeRdsVpcsRequest() {
+		super("Dds", "2015-12-01", "DescribeRdsVpcs", "dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -62,17 +56,6 @@ public class DescribeInstanceRecoverTimeRequest extends RpcAcsRequest<DescribeIn
 		}
 	}
 
-	public String getSrcRegion() {
-		return this.srcRegion;
-	}
-
-	public void setSrcRegion(String srcRegion) {
-		this.srcRegion = srcRegion;
-		if(srcRegion != null){
-			putQueryParameter("SrcRegion", srcRegion);
-		}
-	}
-
 	public String getResourceGroupId() {
 		return this.resourceGroupId;
 	}
@@ -81,39 +64,6 @@ public class DescribeInstanceRecoverTimeRequest extends RpcAcsRequest<DescribeIn
 		this.resourceGroupId = resourceGroupId;
 		if(resourceGroupId != null){
 			putQueryParameter("ResourceGroupId", resourceGroupId);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
-		}
-	}
-
-	public String getDestRegion() {
-		return this.destRegion;
-	}
-
-	public void setDestRegion(String destRegion) {
-		this.destRegion = destRegion;
-		if(destRegion != null){
-			putQueryParameter("DestRegion", destRegion);
 		}
 	}
 
@@ -150,9 +100,20 @@ public class DescribeInstanceRecoverTimeRequest extends RpcAcsRequest<DescribeIn
 		}
 	}
 
+	public String getZoneId() {
+		return this.zoneId;
+	}
+
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+		if(zoneId != null){
+			putQueryParameter("ZoneId", zoneId);
+		}
+	}
+
 	@Override
-	public Class<DescribeInstanceRecoverTimeResponse> getResponseClass() {
-		return DescribeInstanceRecoverTimeResponse.class;
+	public Class<DescribeRdsVpcsResponse> getResponseClass() {
+		return DescribeRdsVpcsResponse.class;
 	}
 
 }

@@ -22,28 +22,26 @@ import com.aliyuncs.dds.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeInstanceRecoverTimeRequest extends RpcAcsRequest<DescribeInstanceRecoverTimeResponse> {
+public class DescribeVpcsForMongoDBRequest extends RpcAcsRequest<DescribeVpcsForMongoDBResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String srcRegion;
+	private Integer pageNumber;
 
 	private String resourceGroupId;
 
-	private String securityToken;
-
-	private String dBInstanceId;
-
-	private String destRegion;
+	private Integer pageSize;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-	public DescribeInstanceRecoverTimeRequest() {
-		super("Dds", "2015-12-01", "DescribeInstanceRecoverTime", "dds");
+
+	private String zoneId;
+	public DescribeVpcsForMongoDBRequest() {
+		super("Dds", "2015-12-01", "DescribeVpcsForMongoDB", "dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -62,14 +60,14 @@ public class DescribeInstanceRecoverTimeRequest extends RpcAcsRequest<DescribeIn
 		}
 	}
 
-	public String getSrcRegion() {
-		return this.srcRegion;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setSrcRegion(String srcRegion) {
-		this.srcRegion = srcRegion;
-		if(srcRegion != null){
-			putQueryParameter("SrcRegion", srcRegion);
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
@@ -84,36 +82,14 @@ public class DescribeInstanceRecoverTimeRequest extends RpcAcsRequest<DescribeIn
 		}
 	}
 
-	public String getSecurityToken() {
-		return this.securityToken;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
-		}
-	}
-
-	public String getDestRegion() {
-		return this.destRegion;
-	}
-
-	public void setDestRegion(String destRegion) {
-		this.destRegion = destRegion;
-		if(destRegion != null){
-			putQueryParameter("DestRegion", destRegion);
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -150,9 +126,20 @@ public class DescribeInstanceRecoverTimeRequest extends RpcAcsRequest<DescribeIn
 		}
 	}
 
+	public String getZoneId() {
+		return this.zoneId;
+	}
+
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+		if(zoneId != null){
+			putQueryParameter("ZoneId", zoneId);
+		}
+	}
+
 	@Override
-	public Class<DescribeInstanceRecoverTimeResponse> getResponseClass() {
-		return DescribeInstanceRecoverTimeResponse.class;
+	public Class<DescribeVpcsForMongoDBResponse> getResponseClass() {
+		return DescribeVpcsForMongoDBResponse.class;
 	}
 
 }

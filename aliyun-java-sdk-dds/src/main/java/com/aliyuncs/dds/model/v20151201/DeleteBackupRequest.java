@@ -15,6 +15,7 @@
 package com.aliyuncs.dds.model.v20151201;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.dds.Endpoint;
 
@@ -22,28 +23,23 @@ import com.aliyuncs.dds.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeInstanceRecoverTimeRequest extends RpcAcsRequest<DescribeInstanceRecoverTimeResponse> {
+public class DeleteBackupRequest extends RpcAcsRequest<DeleteBackupResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String srcRegion;
-
-	private String resourceGroupId;
-
-	private String securityToken;
-
 	private String dBInstanceId;
-
-	private String destRegion;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
+	private String backupId;
+
 	private Long ownerId;
-	public DescribeInstanceRecoverTimeRequest() {
-		super("Dds", "2015-12-01", "DescribeInstanceRecoverTime", "dds");
+	public DeleteBackupRequest() {
+		super("Dds", "2015-12-01", "DeleteBackup", "dds");
+		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -62,39 +58,6 @@ public class DescribeInstanceRecoverTimeRequest extends RpcAcsRequest<DescribeIn
 		}
 	}
 
-	public String getSrcRegion() {
-		return this.srcRegion;
-	}
-
-	public void setSrcRegion(String srcRegion) {
-		this.srcRegion = srcRegion;
-		if(srcRegion != null){
-			putQueryParameter("SrcRegion", srcRegion);
-		}
-	}
-
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
-	}
-
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
 	public String getDBInstanceId() {
 		return this.dBInstanceId;
 	}
@@ -103,17 +66,6 @@ public class DescribeInstanceRecoverTimeRequest extends RpcAcsRequest<DescribeIn
 		this.dBInstanceId = dBInstanceId;
 		if(dBInstanceId != null){
 			putQueryParameter("DBInstanceId", dBInstanceId);
-		}
-	}
-
-	public String getDestRegion() {
-		return this.destRegion;
-	}
-
-	public void setDestRegion(String destRegion) {
-		this.destRegion = destRegion;
-		if(destRegion != null){
-			putQueryParameter("DestRegion", destRegion);
 		}
 	}
 
@@ -139,6 +91,17 @@ public class DescribeInstanceRecoverTimeRequest extends RpcAcsRequest<DescribeIn
 		}
 	}
 
+	public String getBackupId() {
+		return this.backupId;
+	}
+
+	public void setBackupId(String backupId) {
+		this.backupId = backupId;
+		if(backupId != null){
+			putQueryParameter("BackupId", backupId);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -151,8 +114,8 @@ public class DescribeInstanceRecoverTimeRequest extends RpcAcsRequest<DescribeIn
 	}
 
 	@Override
-	public Class<DescribeInstanceRecoverTimeResponse> getResponseClass() {
-		return DescribeInstanceRecoverTimeResponse.class;
+	public Class<DeleteBackupResponse> getResponseClass() {
+		return DeleteBackupResponse.class;
 	}
 
 }

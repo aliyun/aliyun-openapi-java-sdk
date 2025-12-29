@@ -27,6 +27,8 @@ public class DescribeShardingNetworkAddressRequest extends RpcAcsRequest<Describ
 
 	private Long resourceOwnerId;
 
+	private String networkType;
+
 	private String dBInstanceId;
 
 	private String nodeId;
@@ -53,6 +55,17 @@ public class DescribeShardingNetworkAddressRequest extends RpcAcsRequest<Describ
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getNetworkType() {
+		return this.networkType;
+	}
+
+	public void setNetworkType(String networkType) {
+		this.networkType = networkType;
+		if(networkType != null){
+			putQueryParameter("NetworkType", networkType);
 		}
 	}
 

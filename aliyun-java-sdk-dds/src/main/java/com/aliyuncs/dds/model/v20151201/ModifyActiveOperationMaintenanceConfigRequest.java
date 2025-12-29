@@ -22,28 +22,28 @@ import com.aliyuncs.dds.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeInstanceRecoverTimeRequest extends RpcAcsRequest<DescribeInstanceRecoverTimeResponse> {
+public class ModifyActiveOperationMaintenanceConfigRequest extends RpcAcsRequest<ModifyActiveOperationMaintenanceConfigResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String srcRegion;
+	private String cycleTime;
 
-	private String resourceGroupId;
+	private String maintainStartTime;
 
-	private String securityToken;
-
-	private String dBInstanceId;
-
-	private String destRegion;
+	private String cycleType;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-	public DescribeInstanceRecoverTimeRequest() {
-		super("Dds", "2015-12-01", "DescribeInstanceRecoverTime", "dds");
+
+	private String maintainEndTime;
+
+	private Integer status;
+	public ModifyActiveOperationMaintenanceConfigRequest() {
+		super("Dds", "2015-12-01", "ModifyActiveOperationMaintenanceConfig", "dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -62,58 +62,36 @@ public class DescribeInstanceRecoverTimeRequest extends RpcAcsRequest<DescribeIn
 		}
 	}
 
-	public String getSrcRegion() {
-		return this.srcRegion;
+	public String getCycleTime() {
+		return this.cycleTime;
 	}
 
-	public void setSrcRegion(String srcRegion) {
-		this.srcRegion = srcRegion;
-		if(srcRegion != null){
-			putQueryParameter("SrcRegion", srcRegion);
+	public void setCycleTime(String cycleTime) {
+		this.cycleTime = cycleTime;
+		if(cycleTime != null){
+			putQueryParameter("CycleTime", cycleTime);
 		}
 	}
 
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
+	public String getMaintainStartTime() {
+		return this.maintainStartTime;
 	}
 
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
+	public void setMaintainStartTime(String maintainStartTime) {
+		this.maintainStartTime = maintainStartTime;
+		if(maintainStartTime != null){
+			putQueryParameter("MaintainStartTime", maintainStartTime);
 		}
 	}
 
-	public String getSecurityToken() {
-		return this.securityToken;
+	public String getCycleType() {
+		return this.cycleType;
 	}
 
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
-		}
-	}
-
-	public String getDestRegion() {
-		return this.destRegion;
-	}
-
-	public void setDestRegion(String destRegion) {
-		this.destRegion = destRegion;
-		if(destRegion != null){
-			putQueryParameter("DestRegion", destRegion);
+	public void setCycleType(String cycleType) {
+		this.cycleType = cycleType;
+		if(cycleType != null){
+			putQueryParameter("CycleType", cycleType);
 		}
 	}
 
@@ -150,9 +128,31 @@ public class DescribeInstanceRecoverTimeRequest extends RpcAcsRequest<DescribeIn
 		}
 	}
 
+	public String getMaintainEndTime() {
+		return this.maintainEndTime;
+	}
+
+	public void setMaintainEndTime(String maintainEndTime) {
+		this.maintainEndTime = maintainEndTime;
+		if(maintainEndTime != null){
+			putQueryParameter("MaintainEndTime", maintainEndTime);
+		}
+	}
+
+	public Integer getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(Integer status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status.toString());
+		}
+	}
+
 	@Override
-	public Class<DescribeInstanceRecoverTimeResponse> getResponseClass() {
-		return DescribeInstanceRecoverTimeResponse.class;
+	public Class<ModifyActiveOperationMaintenanceConfigResponse> getResponseClass() {
+		return ModifyActiveOperationMaintenanceConfigResponse.class;
 	}
 
 }

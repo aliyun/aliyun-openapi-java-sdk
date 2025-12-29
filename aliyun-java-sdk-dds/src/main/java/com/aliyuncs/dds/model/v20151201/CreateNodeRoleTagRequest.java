@@ -22,28 +22,22 @@ import com.aliyuncs.dds.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeInstanceRecoverTimeRequest extends RpcAcsRequest<DescribeInstanceRecoverTimeResponse> {
+public class CreateNodeRoleTagRequest extends RpcAcsRequest<CreateNodeRoleTagResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String srcRegion;
-
-	private String resourceGroupId;
-
-	private String securityToken;
+	private String shardList;
 
 	private String dBInstanceId;
-
-	private String destRegion;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-	public DescribeInstanceRecoverTimeRequest() {
-		super("Dds", "2015-12-01", "DescribeInstanceRecoverTime", "dds");
+	public CreateNodeRoleTagRequest() {
+		super("Dds", "2015-12-01", "CreateNodeRoleTag", "dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -62,36 +56,14 @@ public class DescribeInstanceRecoverTimeRequest extends RpcAcsRequest<DescribeIn
 		}
 	}
 
-	public String getSrcRegion() {
-		return this.srcRegion;
+	public String getShardList() {
+		return this.shardList;
 	}
 
-	public void setSrcRegion(String srcRegion) {
-		this.srcRegion = srcRegion;
-		if(srcRegion != null){
-			putQueryParameter("SrcRegion", srcRegion);
-		}
-	}
-
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
-	}
-
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
+	public void setShardList(String shardList) {
+		this.shardList = shardList;
+		if(shardList != null){
+			putQueryParameter("ShardList", shardList);
 		}
 	}
 
@@ -103,17 +75,6 @@ public class DescribeInstanceRecoverTimeRequest extends RpcAcsRequest<DescribeIn
 		this.dBInstanceId = dBInstanceId;
 		if(dBInstanceId != null){
 			putQueryParameter("DBInstanceId", dBInstanceId);
-		}
-	}
-
-	public String getDestRegion() {
-		return this.destRegion;
-	}
-
-	public void setDestRegion(String destRegion) {
-		this.destRegion = destRegion;
-		if(destRegion != null){
-			putQueryParameter("DestRegion", destRegion);
 		}
 	}
 
@@ -151,8 +112,8 @@ public class DescribeInstanceRecoverTimeRequest extends RpcAcsRequest<DescribeIn
 	}
 
 	@Override
-	public Class<DescribeInstanceRecoverTimeResponse> getResponseClass() {
-		return DescribeInstanceRecoverTimeResponse.class;
+	public Class<CreateNodeRoleTagResponse> getResponseClass() {
+		return CreateNodeRoleTagResponse.class;
 	}
 
 }
