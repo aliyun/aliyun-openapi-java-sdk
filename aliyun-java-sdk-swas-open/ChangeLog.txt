@@ -1,3 +1,6 @@
+2025-12-29 Version: 1.8.17
+- SDK update.
+
 2025-04-17 Version: 1.8.16
 - Generated 2020-06-01 for `SWAS-OPEN`.
 
