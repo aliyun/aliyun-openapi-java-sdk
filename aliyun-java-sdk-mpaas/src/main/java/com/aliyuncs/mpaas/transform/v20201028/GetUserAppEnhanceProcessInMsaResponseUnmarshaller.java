@@ -51,12 +51,7 @@ public class GetUserAppEnhanceProcessInMsaResponseUnmarshaller {
 		data.setBeforeMd5(_ctx.stringValue("GetUserAppEnhanceProcessInMsaResponse.ResultContent.Data.BeforeMd5"));
 		data.setVersionCode(_ctx.stringValue("GetUserAppEnhanceProcessInMsaResponse.ResultContent.Data.VersionCode"));
 		data.setId(_ctx.longValue("GetUserAppEnhanceProcessInMsaResponse.ResultContent.Data.Id"));
-
-		List<String> classForest = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("GetUserAppEnhanceProcessInMsaResponse.ResultContent.Data.ClassForest.Length"); i++) {
-			classForest.add(_ctx.stringValue("GetUserAppEnhanceProcessInMsaResponse.ResultContent.Data.ClassForest["+ i +"]"));
-		}
-		data.setClassForest(classForest);
+		data.setClassForest(_ctx.stringValue("GetUserAppEnhanceProcessInMsaResponse.ResultContent.Data.ClassForest"));
 
 		List<String> enhancedClasses = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetUserAppEnhanceProcessInMsaResponse.ResultContent.Data.EnhancedClasses.Length"); i++) {

@@ -135,9 +135,9 @@ public class GetUserAppEnhanceProcessInMsaResponse extends AcsResponse {
 
 			private Long id;
 
-			private List<EnhanceMappingItem> enhanceMapping;
+			private String classForest;
 
-			private List<String> classForest;
+			private List<EnhanceMappingItem> enhanceMapping;
 
 			private List<String> enhancedClasses;
 
@@ -255,20 +255,20 @@ public class GetUserAppEnhanceProcessInMsaResponse extends AcsResponse {
 				this.id = id;
 			}
 
+			public String getClassForest() {
+				return this.classForest;
+			}
+
+			public void setClassForest(String classForest) {
+				this.classForest = classForest;
+			}
+
 			public List<EnhanceMappingItem> getEnhanceMapping() {
 				return this.enhanceMapping;
 			}
 
 			public void setEnhanceMapping(List<EnhanceMappingItem> enhanceMapping) {
 				this.enhanceMapping = enhanceMapping;
-			}
-
-			public List<String> getClassForest() {
-				return this.classForest;
-			}
-
-			public void setClassForest(List<String> classForest) {
-				this.classForest = classForest;
 			}
 
 			public List<String> getEnhancedClasses() {
