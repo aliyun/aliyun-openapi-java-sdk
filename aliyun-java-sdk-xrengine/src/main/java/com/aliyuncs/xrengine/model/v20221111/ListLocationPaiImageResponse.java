@@ -1,0 +1,147 @@
+/*
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.aliyuncs.xrengine.model.v20221111;
+
+import java.util.Map;
+import com.aliyuncs.AcsResponse;
+import com.aliyuncs.xrengine.transform.v20221111.ListLocationPaiImageResponseUnmarshaller;
+import com.aliyuncs.transform.UnmarshallerContext;
+
+/**
+ * @author auto create
+ * @version 
+ */
+public class ListLocationPaiImageResponse extends AcsResponse {
+
+	private Map<Object,Object> data;
+
+	private Integer current;
+
+	private Integer size;
+
+	private Integer total;
+
+	private Integer pages;
+
+	private Boolean success;
+
+	private String code;
+
+	private String message;
+
+	private String errorName;
+
+	private String requestId;
+
+	private Integer httpCode;
+
+	public Map<Object,Object> getData() {
+		return this.data;
+	}
+
+	public void setData(Map<Object,Object> data) {
+		this.data = data;
+	}
+
+	public Integer getCurrent() {
+		return this.current;
+	}
+
+	public void setCurrent(Integer current) {
+		this.current = current;
+	}
+
+	public Integer getSize() {
+		return this.size;
+	}
+
+	public void setSize(Integer size) {
+		this.size = size;
+	}
+
+	public Integer getTotal() {
+		return this.total;
+	}
+
+	public void setTotal(Integer total) {
+		this.total = total;
+	}
+
+	public Integer getPages() {
+		return this.pages;
+	}
+
+	public void setPages(Integer pages) {
+		this.pages = pages;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public String getErrorName() {
+		return this.errorName;
+	}
+
+	public void setErrorName(String errorName) {
+		this.errorName = errorName;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getHttpCode() {
+		return this.httpCode;
+	}
+
+	public void setHttpCode(Integer httpCode) {
+		this.httpCode = httpCode;
+	}
+
+	@Override
+	public ListLocationPaiImageResponse getInstance(UnmarshallerContext context) {
+		return	ListLocationPaiImageResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
+	}
+}
