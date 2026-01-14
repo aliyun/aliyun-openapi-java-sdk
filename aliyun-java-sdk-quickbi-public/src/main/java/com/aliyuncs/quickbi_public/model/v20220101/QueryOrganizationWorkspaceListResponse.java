@@ -137,6 +137,8 @@ public class QueryOrganizationWorkspaceListResponse extends AcsResponse {
 
 			private String workspaceName;
 
+			private String realOwnerAccountName;
+
 			public Boolean getAllowPublishOperation() {
 				return this.allowPublishOperation;
 			}
@@ -247,6 +249,14 @@ public class QueryOrganizationWorkspaceListResponse extends AcsResponse {
 
 			public void setWorkspaceName(String workspaceName) {
 				this.workspaceName = workspaceName;
+			}
+
+			public String getRealOwnerAccountName() {
+				return this.realOwnerAccountName;
+			}
+
+			public void setRealOwnerAccountName(String realOwnerAccountName) {
+				this.realOwnerAccountName = realOwnerAccountName;
 			}
 		}
 	}

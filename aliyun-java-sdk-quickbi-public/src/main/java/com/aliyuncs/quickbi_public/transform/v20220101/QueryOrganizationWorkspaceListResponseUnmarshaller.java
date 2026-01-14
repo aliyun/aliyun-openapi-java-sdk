@@ -53,6 +53,7 @@ public class QueryOrganizationWorkspaceListResponseUnmarshaller {
 			dataItem.setWorkspaceDescription(_ctx.stringValue("QueryOrganizationWorkspaceListResponse.Result.Data["+ i +"].WorkspaceDescription"));
 			dataItem.setWorkspaceId(_ctx.stringValue("QueryOrganizationWorkspaceListResponse.Result.Data["+ i +"].WorkspaceId"));
 			dataItem.setWorkspaceName(_ctx.stringValue("QueryOrganizationWorkspaceListResponse.Result.Data["+ i +"].WorkspaceName"));
+			dataItem.setRealOwnerAccountName(_ctx.stringValue("QueryOrganizationWorkspaceListResponse.Result.Data["+ i +"].RealOwnerAccountName"));
 
 			data.add(dataItem);
 		}
