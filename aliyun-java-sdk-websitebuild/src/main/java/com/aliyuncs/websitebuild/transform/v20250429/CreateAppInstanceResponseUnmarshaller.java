@@ -46,6 +46,7 @@ public class CreateAppInstanceResponseUnmarshaller {
 		module.setBizId(_ctx.stringValue("CreateAppInstanceResponse.Module.BizId"));
 		module.setInstanceId(_ctx.stringValue("CreateAppInstanceResponse.Module.InstanceId"));
 		module.setOrderId(_ctx.stringValue("CreateAppInstanceResponse.Module.OrderId"));
+		module.setSiteHost(_ctx.stringValue("CreateAppInstanceResponse.Module.SiteHost"));
 		createAppInstanceResponse.setModule(module);
 	 
 	 	return createAppInstanceResponse;

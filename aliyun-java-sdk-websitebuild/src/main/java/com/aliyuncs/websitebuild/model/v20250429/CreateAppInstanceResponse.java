@@ -143,6 +143,8 @@ public class CreateAppInstanceResponse extends AcsResponse {
 
 		private String orderId;
 
+		private String siteHost;
+
 		public String getBizId() {
 			return this.bizId;
 		}
@@ -165,6 +167,14 @@ public class CreateAppInstanceResponse extends AcsResponse {
 
 		public void setOrderId(String orderId) {
 			this.orderId = orderId;
+		}
+
+		public String getSiteHost() {
+			return this.siteHost;
+		}
+
+		public void setSiteHost(String siteHost) {
+			this.siteHost = siteHost;
 		}
 	}
 
