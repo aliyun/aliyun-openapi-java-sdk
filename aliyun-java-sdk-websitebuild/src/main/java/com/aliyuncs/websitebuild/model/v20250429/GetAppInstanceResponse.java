@@ -187,13 +187,19 @@ public class GetAppInstanceResponse extends AcsResponse {
 
 		private String sourceType;
 
+		private String resourceGroupId;
+
 		private List<AiStaffListItem> aiStaffList;
 
 		private List<AppServiceListItem> appServiceList;
 
+		private List<TagsItem> tags;
+
 		private Profile profile;
 
 		private AppOperationAddress appOperationAddress;
+
+		private PartnerDetail partnerDetail;
 
 		public String getCreateTime() {
 			return this.createTime;
@@ -395,6 +401,14 @@ public class GetAppInstanceResponse extends AcsResponse {
 			this.sourceType = sourceType;
 		}
 
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
 		public List<AiStaffListItem> getAiStaffList() {
 			return this.aiStaffList;
 		}
@@ -411,6 +425,14 @@ public class GetAppInstanceResponse extends AcsResponse {
 			this.appServiceList = appServiceList;
 		}
 
+		public List<TagsItem> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<TagsItem> tags) {
+			this.tags = tags;
+		}
+
 		public Profile getProfile() {
 			return this.profile;
 		}
@@ -425,6 +447,14 @@ public class GetAppInstanceResponse extends AcsResponse {
 
 		public void setAppOperationAddress(AppOperationAddress appOperationAddress) {
 			this.appOperationAddress = appOperationAddress;
+		}
+
+		public PartnerDetail getPartnerDetail() {
+			return this.partnerDetail;
+		}
+
+		public void setPartnerDetail(PartnerDetail partnerDetail) {
+			this.partnerDetail = partnerDetail;
 		}
 
 		public static class AiStaffListItem {
@@ -762,6 +792,29 @@ public class GetAppInstanceResponse extends AcsResponse {
 			}
 		}
 
+		public static class TagsItem {
+
+			private String tagKey;
+
+			private String tagValue;
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
+			}
+
+			public String getTagValue() {
+				return this.tagValue;
+			}
+
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
+			}
+		}
+
 		public static class Profile {
 
 			private String commodityCode;
@@ -977,6 +1030,122 @@ public class GetAppInstanceResponse extends AcsResponse {
 
 				public void setEnable(Boolean enable) {
 					this.enable = enable;
+				}
+			}
+		}
+
+		public static class PartnerDetail {
+
+			private String status;
+
+			private String partnerId;
+
+			private BindData bindData;
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
+			public String getPartnerId() {
+				return this.partnerId;
+			}
+
+			public void setPartnerId(String partnerId) {
+				this.partnerId = partnerId;
+			}
+
+			public BindData getBindData() {
+				return this.bindData;
+			}
+
+			public void setBindData(BindData bindData) {
+				this.bindData = bindData;
+			}
+
+			public static class BindData {
+
+				private String id;
+
+				private String gmtCreate;
+
+				private String gmtModified;
+
+				private String partnerId;
+
+				private String userId;
+
+				private String parentPk;
+
+				private String mobile;
+
+				private String bizId;
+
+				public String getId() {
+					return this.id;
+				}
+
+				public void setId(String id) {
+					this.id = id;
+				}
+
+				public String getGmtCreate() {
+					return this.gmtCreate;
+				}
+
+				public void setGmtCreate(String gmtCreate) {
+					this.gmtCreate = gmtCreate;
+				}
+
+				public String getGmtModified() {
+					return this.gmtModified;
+				}
+
+				public void setGmtModified(String gmtModified) {
+					this.gmtModified = gmtModified;
+				}
+
+				public String getPartnerId() {
+					return this.partnerId;
+				}
+
+				public void setPartnerId(String partnerId) {
+					this.partnerId = partnerId;
+				}
+
+				public String getUserId() {
+					return this.userId;
+				}
+
+				public void setUserId(String userId) {
+					this.userId = userId;
+				}
+
+				public String getParentPk() {
+					return this.parentPk;
+				}
+
+				public void setParentPk(String parentPk) {
+					this.parentPk = parentPk;
+				}
+
+				public String getMobile() {
+					return this.mobile;
+				}
+
+				public void setMobile(String mobile) {
+					this.mobile = mobile;
+				}
+
+				public String getBizId() {
+					return this.bizId;
+				}
+
+				public void setBizId(String bizId) {
+					this.bizId = bizId;
 				}
 			}
 		}

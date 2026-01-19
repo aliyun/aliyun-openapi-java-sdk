@@ -26,7 +26,10 @@ import com.aliyuncs.websitebuild.model.v20250429.ListAppInstancesResponse.DataIt
 import com.aliyuncs.websitebuild.model.v20250429.ListAppInstancesResponse.DataItem.AppServiceListItem.OperationAddress;
 import com.aliyuncs.websitebuild.model.v20250429.ListAppInstancesResponse.DataItem.AppServiceListItem.OperationAddress.ActionsItem;
 import com.aliyuncs.websitebuild.model.v20250429.ListAppInstancesResponse.DataItem.AppServiceListItem.Profile1;
+import com.aliyuncs.websitebuild.model.v20250429.ListAppInstancesResponse.DataItem.PartnerDetail;
+import com.aliyuncs.websitebuild.model.v20250429.ListAppInstancesResponse.DataItem.PartnerDetail.BindData;
 import com.aliyuncs.websitebuild.model.v20250429.ListAppInstancesResponse.DataItem.Profile;
+import com.aliyuncs.websitebuild.model.v20250429.ListAppInstancesResponse.DataItem.TagsItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -86,6 +89,7 @@ public class ListAppInstancesResponseUnmarshaller {
 			dataItem.setDeleted(_ctx.integerValue("ListAppInstancesResponse.Data["+ i +"].Deleted"));
 			dataItem.setDesignSpecBizId(_ctx.stringValue("ListAppInstancesResponse.Data["+ i +"].DesignSpecBizId"));
 			dataItem.setSourceType(_ctx.stringValue("ListAppInstancesResponse.Data["+ i +"].SourceType"));
+			dataItem.setResourceGroupId(_ctx.stringValue("ListAppInstancesResponse.Data["+ i +"].ResourceGroupId"));
 
 			Profile profile = new Profile();
 			profile.setCommodityCode(_ctx.stringValue("ListAppInstancesResponse.Data["+ i +"].Profile.CommodityCode"));
@@ -120,6 +124,22 @@ public class ListAppInstancesResponseUnmarshaller {
 			}
 			appOperationAddress.setActions2(actions2);
 			dataItem.setAppOperationAddress(appOperationAddress);
+
+			PartnerDetail partnerDetail = new PartnerDetail();
+			partnerDetail.setStatus(_ctx.stringValue("ListAppInstancesResponse.Data["+ i +"].PartnerDetail.Status"));
+			partnerDetail.setPartnerId(_ctx.stringValue("ListAppInstancesResponse.Data["+ i +"].PartnerDetail.PartnerId"));
+
+			BindData bindData = new BindData();
+			bindData.setId(_ctx.stringValue("ListAppInstancesResponse.Data["+ i +"].PartnerDetail.BindData.Id"));
+			bindData.setGmtCreate(_ctx.stringValue("ListAppInstancesResponse.Data["+ i +"].PartnerDetail.BindData.GmtCreate"));
+			bindData.setGmtModified(_ctx.stringValue("ListAppInstancesResponse.Data["+ i +"].PartnerDetail.BindData.GmtModified"));
+			bindData.setPartnerId(_ctx.stringValue("ListAppInstancesResponse.Data["+ i +"].PartnerDetail.BindData.PartnerId"));
+			bindData.setUserId(_ctx.stringValue("ListAppInstancesResponse.Data["+ i +"].PartnerDetail.BindData.UserId"));
+			bindData.setParentPk(_ctx.stringValue("ListAppInstancesResponse.Data["+ i +"].PartnerDetail.BindData.ParentPk"));
+			bindData.setMobile(_ctx.stringValue("ListAppInstancesResponse.Data["+ i +"].PartnerDetail.BindData.Mobile"));
+			bindData.setBizId(_ctx.stringValue("ListAppInstancesResponse.Data["+ i +"].PartnerDetail.BindData.BizId"));
+			partnerDetail.setBindData(bindData);
+			dataItem.setPartnerDetail(partnerDetail);
 
 			List<AiStaffListItem> aiStaffList = new ArrayList<AiStaffListItem>();
 			for (int j = 0; j < _ctx.lengthValue("ListAppInstancesResponse.Data["+ i +"].AiStaffList.Length"); j++) {
@@ -179,6 +199,16 @@ public class ListAppInstancesResponseUnmarshaller {
 				appServiceList.add(appServiceListItem);
 			}
 			dataItem.setAppServiceList(appServiceList);
+
+			List<TagsItem> tags = new ArrayList<TagsItem>();
+			for (int j = 0; j < _ctx.lengthValue("ListAppInstancesResponse.Data["+ i +"].Tags.Length"); j++) {
+				TagsItem tagsItem = new TagsItem();
+				tagsItem.setTagKey(_ctx.stringValue("ListAppInstancesResponse.Data["+ i +"].Tags["+ j +"].TagKey"));
+				tagsItem.setTagValue(_ctx.stringValue("ListAppInstancesResponse.Data["+ i +"].Tags["+ j +"].TagValue"));
+
+				tags.add(tagsItem);
+			}
+			dataItem.setTags(tags);
 
 			data.add(dataItem);
 		}

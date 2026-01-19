@@ -26,7 +26,10 @@ import com.aliyuncs.websitebuild.model.v20250429.GetAppInstanceResponse.Module.A
 import com.aliyuncs.websitebuild.model.v20250429.GetAppInstanceResponse.Module.AppServiceListItem.OperationAddress;
 import com.aliyuncs.websitebuild.model.v20250429.GetAppInstanceResponse.Module.AppServiceListItem.OperationAddress.ActionsItem;
 import com.aliyuncs.websitebuild.model.v20250429.GetAppInstanceResponse.Module.AppServiceListItem.Profile1;
+import com.aliyuncs.websitebuild.model.v20250429.GetAppInstanceResponse.Module.PartnerDetail;
+import com.aliyuncs.websitebuild.model.v20250429.GetAppInstanceResponse.Module.PartnerDetail.BindData;
 import com.aliyuncs.websitebuild.model.v20250429.GetAppInstanceResponse.Module.Profile;
+import com.aliyuncs.websitebuild.model.v20250429.GetAppInstanceResponse.Module.TagsItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -76,6 +79,7 @@ public class GetAppInstanceResponseUnmarshaller {
 		module.setDeleted(_ctx.integerValue("GetAppInstanceResponse.Module.Deleted"));
 		module.setDesignSpecBizId(_ctx.stringValue("GetAppInstanceResponse.Module.DesignSpecBizId"));
 		module.setSourceType(_ctx.stringValue("GetAppInstanceResponse.Module.SourceType"));
+		module.setResourceGroupId(_ctx.stringValue("GetAppInstanceResponse.Module.ResourceGroupId"));
 
 		Profile profile = new Profile();
 		profile.setCommodityCode(_ctx.stringValue("GetAppInstanceResponse.Module.Profile.CommodityCode"));
@@ -110,6 +114,22 @@ public class GetAppInstanceResponseUnmarshaller {
 		}
 		appOperationAddress.setActions2(actions2);
 		module.setAppOperationAddress(appOperationAddress);
+
+		PartnerDetail partnerDetail = new PartnerDetail();
+		partnerDetail.setStatus(_ctx.stringValue("GetAppInstanceResponse.Module.PartnerDetail.Status"));
+		partnerDetail.setPartnerId(_ctx.stringValue("GetAppInstanceResponse.Module.PartnerDetail.PartnerId"));
+
+		BindData bindData = new BindData();
+		bindData.setId(_ctx.stringValue("GetAppInstanceResponse.Module.PartnerDetail.BindData.Id"));
+		bindData.setGmtCreate(_ctx.stringValue("GetAppInstanceResponse.Module.PartnerDetail.BindData.GmtCreate"));
+		bindData.setGmtModified(_ctx.stringValue("GetAppInstanceResponse.Module.PartnerDetail.BindData.GmtModified"));
+		bindData.setPartnerId(_ctx.stringValue("GetAppInstanceResponse.Module.PartnerDetail.BindData.PartnerId"));
+		bindData.setUserId(_ctx.stringValue("GetAppInstanceResponse.Module.PartnerDetail.BindData.UserId"));
+		bindData.setParentPk(_ctx.stringValue("GetAppInstanceResponse.Module.PartnerDetail.BindData.ParentPk"));
+		bindData.setMobile(_ctx.stringValue("GetAppInstanceResponse.Module.PartnerDetail.BindData.Mobile"));
+		bindData.setBizId(_ctx.stringValue("GetAppInstanceResponse.Module.PartnerDetail.BindData.BizId"));
+		partnerDetail.setBindData(bindData);
+		module.setPartnerDetail(partnerDetail);
 
 		List<AiStaffListItem> aiStaffList = new ArrayList<AiStaffListItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetAppInstanceResponse.Module.AiStaffList.Length"); i++) {
@@ -169,6 +189,16 @@ public class GetAppInstanceResponseUnmarshaller {
 			appServiceList.add(appServiceListItem);
 		}
 		module.setAppServiceList(appServiceList);
+
+		List<TagsItem> tags = new ArrayList<TagsItem>();
+		for (int i = 0; i < _ctx.lengthValue("GetAppInstanceResponse.Module.Tags.Length"); i++) {
+			TagsItem tagsItem = new TagsItem();
+			tagsItem.setTagKey(_ctx.stringValue("GetAppInstanceResponse.Module.Tags["+ i +"].TagKey"));
+			tagsItem.setTagValue(_ctx.stringValue("GetAppInstanceResponse.Module.Tags["+ i +"].TagValue"));
+
+			tags.add(tagsItem);
+		}
+		module.setTags(tags);
 		getAppInstanceResponse.setModule(module);
 	 
 	 	return getAppInstanceResponse;

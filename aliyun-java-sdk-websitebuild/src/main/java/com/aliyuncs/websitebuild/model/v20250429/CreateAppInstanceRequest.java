@@ -15,6 +15,9 @@
 package com.aliyuncs.websitebuild.model.v20250429;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 
@@ -29,11 +32,16 @@ public class CreateAppInstanceRequest extends RpcAcsRequest<CreateAppInstanceRes
 
 	private Integer duration;
 
+	private String resourceGroupId;
+
 	private String siteVersion;
 
 	private String deployArea;
 
 	private Integer quantity;
+
+	@SerializedName("tags")
+	private List<Tags> tags;
 
 	private String extend;
 
@@ -72,6 +80,17 @@ public class CreateAppInstanceRequest extends RpcAcsRequest<CreateAppInstanceRes
 		}
 	}
 
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putBodyParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
 	public String getSiteVersion() {
 		return this.siteVersion;
 	}
@@ -103,6 +122,17 @@ public class CreateAppInstanceRequest extends RpcAcsRequest<CreateAppInstanceRes
 		if(quantity != null){
 			putQueryParameter("Quantity", quantity.toString());
 		}
+	}
+
+	public List<Tags> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tags> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			putBodyParameter("Tags" , new Gson().toJson(tags));
+		}	
 	}
 
 	public String getExtend() {
@@ -157,6 +187,31 @@ public class CreateAppInstanceRequest extends RpcAcsRequest<CreateAppInstanceRes
 		this.paymentType = paymentType;
 		if(paymentType != null){
 			putQueryParameter("PaymentType", paymentType);
+		}
+	}
+
+	public static class Tags {
+
+		@SerializedName("TagValue")
+		private String tagValue;
+
+		@SerializedName("TagKey")
+		private String tagKey;
+
+		public String getTagValue() {
+			return this.tagValue;
+		}
+
+		public void setTagValue(String tagValue) {
+			this.tagValue = tagValue;
+		}
+
+		public String getTagKey() {
+			return this.tagKey;
+		}
+
+		public void setTagKey(String tagKey) {
+			this.tagKey = tagKey;
 		}
 	}
 

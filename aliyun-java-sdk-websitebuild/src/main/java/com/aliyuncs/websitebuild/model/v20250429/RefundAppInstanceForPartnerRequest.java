@@ -25,6 +25,8 @@ import com.aliyuncs.http.MethodType;
 public class RefundAppInstanceForPartnerRequest extends RpcAcsRequest<RefundAppInstanceForPartnerResponse> {
 	   
 
+	private String clientToken;
+
 	private String refundReason;
 
 	private String userId;
@@ -34,6 +36,17 @@ public class RefundAppInstanceForPartnerRequest extends RpcAcsRequest<RefundAppI
 		super("WebsiteBuild", "2025-04-29", "RefundAppInstanceForPartner");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
 	}
 
 	public String getRefundReason() {
