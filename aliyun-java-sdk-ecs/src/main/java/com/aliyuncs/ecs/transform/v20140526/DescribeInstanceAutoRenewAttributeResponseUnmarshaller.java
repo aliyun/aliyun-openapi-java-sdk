@@ -39,6 +39,7 @@ public class DescribeInstanceAutoRenewAttributeResponseUnmarshaller {
 			instanceRenewAttribute.setRenewalStatus(_ctx.stringValue("DescribeInstanceAutoRenewAttributeResponse.InstanceRenewAttributes["+ i +"].RenewalStatus"));
 			instanceRenewAttribute.setInstanceId(_ctx.stringValue("DescribeInstanceAutoRenewAttributeResponse.InstanceRenewAttributes["+ i +"].InstanceId"));
 			instanceRenewAttribute.setAutoRenewEnabled(_ctx.booleanValue("DescribeInstanceAutoRenewAttributeResponse.InstanceRenewAttributes["+ i +"].AutoRenewEnabled"));
+			instanceRenewAttribute.setEnableExpectedRenewDay(_ctx.booleanValue("DescribeInstanceAutoRenewAttributeResponse.InstanceRenewAttributes["+ i +"].EnableExpectedRenewDay"));
 
 			instanceRenewAttributes.add(instanceRenewAttribute);
 		}

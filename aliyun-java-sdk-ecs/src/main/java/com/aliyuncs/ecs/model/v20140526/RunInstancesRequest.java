@@ -1086,6 +1086,7 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".RxQueueSize" , networkInterfaces.get(depth1).getRxQueueSize());
 				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".TxQueueSize" , networkInterfaces.get(depth1).getTxQueueSize());
 				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".SourceDestCheck" , networkInterfaces.get(depth1).getSourceDestCheck());
+				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".SecondaryPrivateIpAddressCount" , networkInterfaces.get(depth1).getSecondaryPrivateIpAddressCount());
 			}
 		}	
 	}
@@ -1506,6 +1507,8 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 		private Boolean sourceDestCheck;
 
+		private Integer secondaryPrivateIpAddressCount;
+
 		public String getVSwitchId() {
 			return this.vSwitchId;
 		}
@@ -1648,6 +1651,14 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 		public void setSourceDestCheck(Boolean sourceDestCheck) {
 			this.sourceDestCheck = sourceDestCheck;
+		}
+
+		public Integer getSecondaryPrivateIpAddressCount() {
+			return this.secondaryPrivateIpAddressCount;
+		}
+
+		public void setSecondaryPrivateIpAddressCount(Integer secondaryPrivateIpAddressCount) {
+			this.secondaryPrivateIpAddressCount = secondaryPrivateIpAddressCount;
 		}
 	}
 

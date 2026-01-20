@@ -113,8 +113,8 @@ public class DescribeDedicatedHostsResponseUnmarshaller {
 			List<AvailableInstanceType> availableInstanceTypes = new ArrayList<AvailableInstanceType>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Capacity.AvailableInstanceTypes.Length"); j++) {
 				AvailableInstanceType availableInstanceType = new AvailableInstanceType();
-				availableInstanceType.setAvailableInstanceCapacity(_ctx.integerValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Capacity.AvailableInstanceTypes["+ j +"].AvailableInstanceCapacity"));
 				availableInstanceType.setInstanceType(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Capacity.AvailableInstanceTypes["+ j +"].InstanceType"));
+				availableInstanceType.setAvailableInstanceCapacity(_ctx.integerValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Capacity.AvailableInstanceTypes["+ j +"].AvailableInstanceCapacity"));
 
 				availableInstanceTypes.add(availableInstanceType);
 			}

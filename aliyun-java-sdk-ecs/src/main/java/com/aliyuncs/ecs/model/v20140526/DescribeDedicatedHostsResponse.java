@@ -663,17 +663,9 @@ public class DescribeDedicatedHostsResponse extends AcsResponse {
 
 			public static class AvailableInstanceType {
 
-				private Integer availableInstanceCapacity;
-
 				private String instanceType;
 
-				public Integer getAvailableInstanceCapacity() {
-					return this.availableInstanceCapacity;
-				}
-
-				public void setAvailableInstanceCapacity(Integer availableInstanceCapacity) {
-					this.availableInstanceCapacity = availableInstanceCapacity;
-				}
+				private Integer availableInstanceCapacity;
 
 				public String getInstanceType() {
 					return this.instanceType;
@@ -681,6 +673,14 @@ public class DescribeDedicatedHostsResponse extends AcsResponse {
 
 				public void setInstanceType(String instanceType) {
 					this.instanceType = instanceType;
+				}
+
+				public Integer getAvailableInstanceCapacity() {
+					return this.availableInstanceCapacity;
+				}
+
+				public void setAvailableInstanceCapacity(Integer availableInstanceCapacity) {
+					this.availableInstanceCapacity = availableInstanceCapacity;
 				}
 			}
 		}

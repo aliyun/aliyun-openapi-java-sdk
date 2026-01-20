@@ -82,6 +82,8 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 
 	private String minTargetCapacity;
 
+	private String executionMode;
+
 	private Float maxSpotPrice;
 
 	private LaunchConfiguration launchConfiguration;
@@ -500,6 +502,17 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 		this.minTargetCapacity = minTargetCapacity;
 		if(minTargetCapacity != null){
 			putQueryParameter("MinTargetCapacity", minTargetCapacity);
+		}
+	}
+
+	public String getExecutionMode() {
+		return this.executionMode;
+	}
+
+	public void setExecutionMode(String executionMode) {
+		this.executionMode = executionMode;
+		if(executionMode != null){
+			putQueryParameter("ExecutionMode", executionMode);
 		}
 	}
 

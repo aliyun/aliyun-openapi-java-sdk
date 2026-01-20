@@ -48,6 +48,8 @@ public class DescribeManagedInstancesRequest extends RpcAcsRequest<DescribeManag
 
 	private Long ownerId;
 
+	private String connected;
+
 	private String instanceName;
 
 	private List<String> instanceIds;
@@ -187,6 +189,17 @@ public class DescribeManagedInstancesRequest extends RpcAcsRequest<DescribeManag
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getConnected() {
+		return this.connected;
+	}
+
+	public void setConnected(String connected) {
+		this.connected = connected;
+		if(connected != null){
+			putQueryParameter("Connected", connected);
 		}
 	}
 

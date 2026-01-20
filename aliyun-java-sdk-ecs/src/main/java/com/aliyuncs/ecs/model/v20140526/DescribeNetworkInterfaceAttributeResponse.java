@@ -97,6 +97,8 @@ public class DescribeNetworkInterfaceAttributeResponse extends AcsResponse {
 
 	private EnhancedNetwork enhancedNetwork;
 
+	private QoSConfig qoSConfig;
+
 	public String getCreationTime() {
 		return this.creationTime;
 	}
@@ -383,6 +385,14 @@ public class DescribeNetworkInterfaceAttributeResponse extends AcsResponse {
 
 	public void setEnhancedNetwork(EnhancedNetwork enhancedNetwork) {
 		this.enhancedNetwork = enhancedNetwork;
+	}
+
+	public QoSConfig getQoSConfig() {
+		return this.qoSConfig;
+	}
+
+	public void setQoSConfig(QoSConfig qoSConfig) {
+		this.qoSConfig = qoSConfig;
 	}
 
 	public static class PrivateIpSet {
@@ -774,6 +784,82 @@ public class DescribeNetworkInterfaceAttributeResponse extends AcsResponse {
 
 		public void setVirtualFunctionQuantity(Integer virtualFunctionQuantity) {
 			this.virtualFunctionQuantity = virtualFunctionQuantity;
+		}
+	}
+
+	public static class QoSConfig {
+
+		private Boolean enableQoS;
+
+		private QoS qoS;
+
+		public Boolean getEnableQoS() {
+			return this.enableQoS;
+		}
+
+		public void setEnableQoS(Boolean enableQoS) {
+			this.enableQoS = enableQoS;
+		}
+
+		public QoS getQoS() {
+			return this.qoS;
+		}
+
+		public void setQoS(QoS qoS) {
+			this.qoS = qoS;
+		}
+
+		public static class QoS {
+
+			private Long bandwidthTx;
+
+			private Long bandwidthRx;
+
+			private Long ppsTx;
+
+			private Long ppsRx;
+
+			private Long concurrentConnections;
+
+			public Long getBandwidthTx() {
+				return this.bandwidthTx;
+			}
+
+			public void setBandwidthTx(Long bandwidthTx) {
+				this.bandwidthTx = bandwidthTx;
+			}
+
+			public Long getBandwidthRx() {
+				return this.bandwidthRx;
+			}
+
+			public void setBandwidthRx(Long bandwidthRx) {
+				this.bandwidthRx = bandwidthRx;
+			}
+
+			public Long getPpsTx() {
+				return this.ppsTx;
+			}
+
+			public void setPpsTx(Long ppsTx) {
+				this.ppsTx = ppsTx;
+			}
+
+			public Long getPpsRx() {
+				return this.ppsRx;
+			}
+
+			public void setPpsRx(Long ppsRx) {
+				this.ppsRx = ppsRx;
+			}
+
+			public Long getConcurrentConnections() {
+				return this.concurrentConnections;
+			}
+
+			public void setConcurrentConnections(Long concurrentConnections) {
+				this.concurrentConnections = concurrentConnections;
+			}
 		}
 	}
 

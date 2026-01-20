@@ -30,6 +30,8 @@ import com.aliyuncs.ecs.model.v20140526.DescribeNetworkInterfaceAttributeRespons
 import com.aliyuncs.ecs.model.v20140526.DescribeNetworkInterfaceAttributeResponse.NetworkInterfaceTrafficConfig;
 import com.aliyuncs.ecs.model.v20140526.DescribeNetworkInterfaceAttributeResponse.PrivateIpSet;
 import com.aliyuncs.ecs.model.v20140526.DescribeNetworkInterfaceAttributeResponse.PrivateIpSet.AssociatedPublicIp1;
+import com.aliyuncs.ecs.model.v20140526.DescribeNetworkInterfaceAttributeResponse.QoSConfig;
+import com.aliyuncs.ecs.model.v20140526.DescribeNetworkInterfaceAttributeResponse.QoSConfig.QoS;
 import com.aliyuncs.ecs.model.v20140526.DescribeNetworkInterfaceAttributeResponse.SlaveInterfaceSpecification;
 import com.aliyuncs.ecs.model.v20140526.DescribeNetworkInterfaceAttributeResponse.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -126,6 +128,18 @@ public class DescribeNetworkInterfaceAttributeResponseUnmarshaller {
 		enhancedNetwork.setVirtualFunctionTotalQueueNumber(_ctx.integerValue("DescribeNetworkInterfaceAttributeResponse.EnhancedNetwork.VirtualFunctionTotalQueueNumber"));
 		enhancedNetwork.setVirtualFunctionQuantity(_ctx.integerValue("DescribeNetworkInterfaceAttributeResponse.EnhancedNetwork.VirtualFunctionQuantity"));
 		describeNetworkInterfaceAttributeResponse.setEnhancedNetwork(enhancedNetwork);
+
+		QoSConfig qoSConfig = new QoSConfig();
+		qoSConfig.setEnableQoS(_ctx.booleanValue("DescribeNetworkInterfaceAttributeResponse.QoSConfig.EnableQoS"));
+
+		QoS qoS = new QoS();
+		qoS.setBandwidthTx(_ctx.longValue("DescribeNetworkInterfaceAttributeResponse.QoSConfig.QoS.BandwidthTx"));
+		qoS.setBandwidthRx(_ctx.longValue("DescribeNetworkInterfaceAttributeResponse.QoSConfig.QoS.BandwidthRx"));
+		qoS.setPpsTx(_ctx.longValue("DescribeNetworkInterfaceAttributeResponse.QoSConfig.QoS.PpsTx"));
+		qoS.setPpsRx(_ctx.longValue("DescribeNetworkInterfaceAttributeResponse.QoSConfig.QoS.PpsRx"));
+		qoS.setConcurrentConnections(_ctx.longValue("DescribeNetworkInterfaceAttributeResponse.QoSConfig.QoS.ConcurrentConnections"));
+		qoSConfig.setQoS(qoS);
+		describeNetworkInterfaceAttributeResponse.setQoSConfig(qoSConfig);
 
 		List<PrivateIpSet> privateIpSets = new ArrayList<PrivateIpSet>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeNetworkInterfaceAttributeResponse.PrivateIpSets.Length"); i++) {

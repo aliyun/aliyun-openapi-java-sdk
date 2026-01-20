@@ -87,6 +87,8 @@ public class DescribeInstanceAutoRenewAttributeResponse extends AcsResponse {
 
 		private Boolean autoRenewEnabled;
 
+		private Boolean enableExpectedRenewDay;
+
 		public String getPeriodUnit() {
 			return this.periodUnit;
 		}
@@ -125,6 +127,14 @@ public class DescribeInstanceAutoRenewAttributeResponse extends AcsResponse {
 
 		public void setAutoRenewEnabled(Boolean autoRenewEnabled) {
 			this.autoRenewEnabled = autoRenewEnabled;
+		}
+
+		public Boolean getEnableExpectedRenewDay() {
+			return this.enableExpectedRenewDay;
+		}
+
+		public void setEnableExpectedRenewDay(Boolean enableExpectedRenewDay) {
+			this.enableExpectedRenewDay = enableExpectedRenewDay;
 		}
 	}
 
