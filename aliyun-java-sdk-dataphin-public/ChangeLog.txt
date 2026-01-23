@@ -1,3 +1,8 @@
+2026-01-23 Version: 1.0.14
+- Add apis about data standard.
+- Add apis about data quality.
+- Add apis about data security.
+
 2025-12-30 Version: 1.0.13
 - Add api GetCheckConnectivityJobs
 - Add api CreateBizMetric
