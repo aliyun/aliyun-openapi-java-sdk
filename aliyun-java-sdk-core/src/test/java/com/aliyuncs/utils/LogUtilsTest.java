@@ -164,7 +164,7 @@ public class LogUtilsTest {
                 null, resHeaders);
         mockLogUtils();
         LogUtils.LogUnit logUnit = new LogUtils.LogUnit(httpRequest, httpResponse);
-        HttpRequest request = mock(HttpRequest.class);
+        HttpRequest request = new HttpRequest("mock url");
         logUnit.setHttpRequest(request);
         Assert.assertEquals(request, logUnit.getHttpRequest());
 
