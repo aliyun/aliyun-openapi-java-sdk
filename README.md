@@ -13,7 +13,7 @@ English | [简体中文](./README-CN.md)
 <a href="https://ci.appveyor.com/project/aliyun/aliyun-openapi-java-sdk"><img src="https://ci.appveyor.com/api/projects/status/levg38kb55k0pn1v/branch/master?svg=true"/></a>
 </p>
 
-> ⚠️ **Important Notice**: Alibaba Cloud V1.0 Java SDK has entered End-of-Support (March 1, 2025) and is no longer recommended for use. New users should directly use the [V2.0 Java SDK](https://github.com/aliyun/alibabacloud-java-sdk); users who have already integrated the V1.0 Java SDK are also advised to migrate to the [V2.0 Java SDK](https://github.com/aliyun/alibabacloud-java-sdk). 
+> ⚠️ **Important Notice**: Alibaba Cloud V1.0 Java SDK has entered the basic security maintenance phase and is no longer recommended for use. New users should directly use the [V2.0 Java SDK](https://github.com/aliyun/alibabacloud-java-sdk); users who have already integrated the V1.0 Java SDK are also advised to migrate to the [V2.0 Java SDK](https://github.com/aliyun/alibabacloud-java-sdk). 
 >
 > V2.0 Java SDK usage please refer to [Help Center Documentation](https://help.aliyun.com/zh/sdk/developer-reference/v2-java-sdk) and [Alibaba Cloud OpenAPI Developer Portal](https://next.api.aliyun.com/).
 
@@ -25,7 +25,7 @@ If you have any problem while using Alibaba Cloud SDK for Java (V1.0), please [s
 
 ## ⚠️ Migration Notice
 
-**Alibaba Cloud V1.0 Java SDK is deprecated and will no longer receive updates after March 1, 2025.**
+**Alibaba Cloud V1.0 Java SDK has entered the basic security maintenance phase and is no longer recommended for use.**
 
 ### Why migrate to V2.0?
 - **Better Performance**: Improved architecture and optimized performance
