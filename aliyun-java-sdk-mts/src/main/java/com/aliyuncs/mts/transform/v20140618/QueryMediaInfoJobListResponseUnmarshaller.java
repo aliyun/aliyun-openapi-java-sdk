@@ -27,7 +27,9 @@ import com.aliyuncs.mts.model.v20140618.QueryMediaInfoJobListResponse.MediaInfoJ
 import com.aliyuncs.mts.model.v20140618.QueryMediaInfoJobListResponse.MediaInfoJob.Properties.Streams.AudioStream;
 import com.aliyuncs.mts.model.v20140618.QueryMediaInfoJobListResponse.MediaInfoJob.Properties.Streams.SubtitleStream;
 import com.aliyuncs.mts.model.v20140618.QueryMediaInfoJobListResponse.MediaInfoJob.Properties.Streams.VideoStream;
+import com.aliyuncs.mts.model.v20140618.QueryMediaInfoJobListResponse.MediaInfoJob.Properties.Streams.VideoStream.DolbyVision;
 import com.aliyuncs.mts.model.v20140618.QueryMediaInfoJobListResponse.MediaInfoJob.Properties.Streams.VideoStream.NetworkCost;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -116,6 +118,11 @@ public class QueryMediaInfoJobListResponseUnmarshaller {
 				networkCost.setCostBandwidth(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].NetworkCost.CostBandwidth"));
 				videoStream.setNetworkCost(networkCost);
 
+				DolbyVision dolbyVision = new DolbyVision();
+				dolbyVision.setProfile(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].DolbyVision.Profile"));
+				dolbyVision.setLevel(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].DolbyVision.Level"));
+				videoStream.setDolbyVision(dolbyVision);
+
 				videoStreamList.add(videoStream);
 			}
 			streams.setVideoStreamList(videoStreamList);
@@ -173,6 +180,7 @@ public class QueryMediaInfoJobListResponseUnmarshaller {
 			format.setDuration(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Format.Duration"));
 			format.setBitrate(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Format.Bitrate"));
 			format.setFormatName(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Format.FormatName"));
+			format.setTags(_ctx.mapValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Format.Tags"));
 			properties.setFormat(format);
 			mediaInfoJob.setProperties(properties);
 

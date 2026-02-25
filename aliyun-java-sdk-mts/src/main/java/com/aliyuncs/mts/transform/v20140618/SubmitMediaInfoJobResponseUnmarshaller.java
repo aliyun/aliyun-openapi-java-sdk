@@ -27,7 +27,9 @@ import com.aliyuncs.mts.model.v20140618.SubmitMediaInfoJobResponse.MediaInfoJob.
 import com.aliyuncs.mts.model.v20140618.SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Streams.AudioStream;
 import com.aliyuncs.mts.model.v20140618.SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Streams.SubtitleStream;
 import com.aliyuncs.mts.model.v20140618.SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Streams.VideoStream;
+import com.aliyuncs.mts.model.v20140618.SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Streams.VideoStream.DolbyVision;
 import com.aliyuncs.mts.model.v20140618.SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Streams.VideoStream.NetworkCost;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -108,6 +110,11 @@ public class SubmitMediaInfoJobResponseUnmarshaller {
 			networkCost.setCostBandwidth(_ctx.stringValue("SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Streams.VideoStreamList["+ i +"].NetworkCost.CostBandwidth"));
 			videoStream.setNetworkCost(networkCost);
 
+			DolbyVision dolbyVision = new DolbyVision();
+			dolbyVision.setProfile(_ctx.stringValue("SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Streams.VideoStreamList["+ i +"].DolbyVision.Profile"));
+			dolbyVision.setLevel(_ctx.stringValue("SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Streams.VideoStreamList["+ i +"].DolbyVision.Level"));
+			videoStream.setDolbyVision(dolbyVision);
+
 			videoStreamList.add(videoStream);
 		}
 		streams.setVideoStreamList(videoStreamList);
@@ -165,6 +172,7 @@ public class SubmitMediaInfoJobResponseUnmarshaller {
 		format.setDuration(_ctx.stringValue("SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Format.Duration"));
 		format.setBitrate(_ctx.stringValue("SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Format.Bitrate"));
 		format.setFormatName(_ctx.stringValue("SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Format.FormatName"));
+		format.setTags(_ctx.mapValue("SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Format.Tags"));
 		properties.setFormat(format);
 		mediaInfoJob.setProperties(properties);
 		submitMediaInfoJobResponse.setMediaInfoJob(mediaInfoJob);

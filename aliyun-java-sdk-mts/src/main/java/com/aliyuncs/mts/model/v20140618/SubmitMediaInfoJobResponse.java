@@ -15,6 +15,7 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.mts.transform.v20140618.SubmitMediaInfoJobResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -415,6 +416,8 @@ public class SubmitMediaInfoJobResponse extends AcsResponse {
 
 					private NetworkCost networkCost;
 
+					private DolbyVision dolbyVision;
+
 					public String getSar() {
 						return this.sar;
 					}
@@ -639,6 +642,14 @@ public class SubmitMediaInfoJobResponse extends AcsResponse {
 						this.networkCost = networkCost;
 					}
 
+					public DolbyVision getDolbyVision() {
+						return this.dolbyVision;
+					}
+
+					public void setDolbyVision(DolbyVision dolbyVision) {
+						this.dolbyVision = dolbyVision;
+					}
+
 					public static class NetworkCost {
 
 						private String preloadTime;
@@ -669,6 +680,29 @@ public class SubmitMediaInfoJobResponse extends AcsResponse {
 
 						public void setCostBandwidth(String costBandwidth) {
 							this.costBandwidth = costBandwidth;
+						}
+					}
+
+					public static class DolbyVision {
+
+						private String profile;
+
+						private String level;
+
+						public String getProfile() {
+							return this.profile;
+						}
+
+						public void setProfile(String profile) {
+							this.profile = profile;
+						}
+
+						public String getLevel() {
+							return this.level;
+						}
+
+						public void setLevel(String level) {
+							this.level = level;
 						}
 					}
 				}
@@ -968,6 +1002,8 @@ public class SubmitMediaInfoJobResponse extends AcsResponse {
 
 				private String formatName;
 
+				private Map<Object,Object> tags;
+
 				public String getStartTime() {
 					return this.startTime;
 				}
@@ -1030,6 +1066,14 @@ public class SubmitMediaInfoJobResponse extends AcsResponse {
 
 				public void setFormatName(String formatName) {
 					this.formatName = formatName;
+				}
+
+				public Map<Object,Object> getTags() {
+					return this.tags;
+				}
+
+				public void setTags(Map<Object,Object> tags) {
+					this.tags = tags;
 				}
 			}
 		}

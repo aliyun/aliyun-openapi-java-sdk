@@ -1,3 +1,7 @@
+2026-02-25 Version: 3.3.68
+- Add Tags And DolbyVision for MediaInfoJob.
+- Add SpecialConfig param for SubmitUrlUploadJob.
+
 2025-10-27 Version: 3.3.67
 - Add FileMd5 for SubmitMediaInfoJob and QueryMediaInfoJobList.
 
